@@ -1,6 +1,6 @@
 ---
-title: Kenmerken synchroniseren met Azure Active Directory voor toewijzing
-description: Bij het configureren van gebruikers inrichten met Azure Active Directory en SaaS-apps, gebruikt u de functie Directory-extensie om bron kenmerken toe te voegen die niet standaard worden gesynchroniseerd.
+title: Kenmerken synchroniseren naar Azure Active Directory voor toewijzing
+description: Wanneer u het inrichten van gebruikers configureert met Azure Active Directory- en SaaS-apps, gebruikt u de functie voor directory-extensies om bronkenmerken toe te voegen die niet standaard worden gesynchroniseerd.
 services: active-directory
 author: kenwith
 manager: daveba
@@ -10,36 +10,36 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 03/31/2021
 ms.author: kenwith
-ms.openlocfilehash: 102c0f7363b8d4f635762a33b82825e9ae71dfc6
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: f7a2429161cebe867d844b4ca7aa08ec3613edcd
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106120789"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388207"
 ---
-# <a name="syncing-extension-attributes-for-app-provisioning"></a>Extensie kenmerken voor het inrichten van apps synchroniseren
+# <a name="syncing-extension-attributes-for-app-provisioning"></a>Extensiekenmerken synchroniseren voor app-inrichting
 
-Azure Active Directory (Azure AD) moet alle gegevens (kenmerken) bevatten die nodig zijn voor het maken van een gebruikers profiel bij het inrichten van gebruikers accounts van Azure AD naar een [SaaS-app](../saas-apps/tutorial-list.md). Bij het aanpassen van kenmerk toewijzingen voor het inrichten van gebruikers, kan het kenmerk dat u wilt toewijzen, niet worden weer gegeven in de lijst **bron kenmerk** . In dit artikel leest u hoe u het ontbrekende kenmerk kunt toevoegen.
+Azure Active Directory (Azure AD) moet alle gegevens (kenmerken) bevatten die nodig zijn om een gebruikersprofiel te maken bij het inrichten van gebruikersaccounts van Azure AD naar een [SaaS-app.](../saas-apps/tutorial-list.md) Wanneer u kenmerktoewijzingen voor het inrichten van gebruikers aanwijst,  wordt het kenmerk dat u wilt toewijzen mogelijk niet weergegeven in de lijst Bronkenmerk. In dit artikel wordt beschreven hoe u het ontbrekende kenmerk toevoegt.
 
-Alleen voor gebruikers in azure AD kunt u [schema-uitbrei dingen maken met behulp van Power shell of Microsoft Graph](#create-an-extension-attribute-on-a-cloud-only-user).
+Voor gebruikers alleen in Azure AD kunt u [schema-extensies maken met behulp van PowerShell of Microsoft Graph.](#create-an-extension-attribute-on-a-cloud-only-user)
 
-Voor gebruikers in een on-premises Active Directory moet u de gebruikers synchroniseren met Azure AD. U kunt gebruikers en kenmerken synchroniseren met [Azure AD Connect](../hybrid/whatis-azure-ad-connect.md). Azure AD Connect worden automatisch bepaalde kenmerken gesynchroniseerd met Azure AD, maar niet alle kenmerken. Bovendien worden sommige kenmerken (zoals SAMAccountName) die standaard worden gesynchroniseerd, mogelijk niet weer gegeven met de Azure AD-Graph API. In dergelijke gevallen kunt u [de functie Directory-extensie Azure AD Connect gebruiken om het kenmerk te synchroniseren met Azure AD](#create-an-extension-attribute-using-azure-ad-connect). Op die manier is het kenmerk zichtbaar voor de Azure AD-Graph API en de Azure AD-inrichtings service.
+Voor gebruikers in on-premises Active Directory moet u de gebruikers synchroniseren met Azure AD. U kunt gebruikers en kenmerken synchroniseren met behulp [van Azure AD Connect.](../hybrid/whatis-azure-ad-connect.md) Azure AD Connect worden bepaalde kenmerken automatisch gesynchroniseerd met Azure AD, maar niet alle kenmerken. Bovendien worden sommige kenmerken (zoals SAMAccountName) die standaard worden gesynchroniseerd, mogelijk niet weergegeven met behulp van de Azure AD-Graph API. In dergelijke gevallen kunt u de functie Azure AD Connect [directory-extensie gebruiken](#create-an-extension-attribute-using-azure-ad-connect)om het kenmerk te synchroniseren met Azure AD. Op die manier is het kenmerk zichtbaar voor de Azure AD-Graph API en de Azure AD-inrichtingsservice.
 
-## <a name="create-an-extension-attribute-on-a-cloud-only-user"></a>Een uitbreidings kenmerk maken op een alleen Cloud gebruiker
-U kunt Microsoft Graph en Power shell gebruiken om het gebruikers schema uit te breiden voor gebruikers in azure AD. Deze extensie kenmerken worden in de meeste gevallen automatisch gedetecteerd.
+## <a name="create-an-extension-attribute-on-a-cloud-only-user"></a>Een extensiekenmerk maken voor een cloudgebruiker
+U kunt Microsoft Graph en PowerShell gebruiken om het gebruikersschema voor gebruikers in Azure AD uit te breiden. Deze extensiekenmerken worden in de meeste gevallen automatisch ontdekt.
 
-Wanneer u meer dan 1000 service-principals hebt, kunt u de uitbrei dingen die ontbreken in de lijst met bron kenmerken vinden. Als een kenmerk dat u hebt gemaakt, niet automatisch wordt weer gegeven, controleert u of het kenmerk is gemaakt en voegt u het hand matig toe aan het schema. Gebruik Microsoft Graph en [Graph Explorer](/graph/graph-explorer/graph-explorer-overview.md)om te controleren of deze is gemaakt. Zie [de lijst met ondersteunde kenmerken bewerken](customize-application-attributes.md#editing-the-list-of-supported-attributes)als u deze hand matig aan uw schema wilt toevoegen.
+Wanneer u meer dan 1000 service-principals hebt, ontbreken extensies mogelijk in de lijst met bronkenmerken. Als een kenmerk dat u hebt gemaakt niet automatisch wordt weergegeven, controleert u of het kenmerk is gemaakt en voegt u het handmatig toe aan uw schema. Gebruik Microsoft Graph Graph Explorer om te controleren [of het is gemaakt.](/graph/graph-explorer/graph-explorer-overview) Zie De lijst met ondersteunde kenmerken bewerken om deze handmatig toe te voegen [aan uw](customize-application-attributes.md#editing-the-list-of-supported-attributes)schema.
 
-### <a name="create-an-extension-attribute-on-a-cloud-only-user-using-microsoft-graph"></a>Een uitbreidings kenmerk maken op een alleen Cloud gebruiker die gebruikmaakt van Microsoft Graph
-U kunt het schema van Azure AD-gebruikers uitbreiden met behulp van [Microsoft Graph](/graph/overview.md). 
+### <a name="create-an-extension-attribute-on-a-cloud-only-user-using-microsoft-graph"></a>Een extensiekenmerk voor een cloudgebruiker maken met behulp van Microsoft Graph
+U kunt het schema van Azure AD-gebruikers uitbreiden met behulp [van Microsoft Graph](/graph/overview). 
 
-Eerst vermeldt u de apps in uw Tenant om de ID op te halen van de app waaraan u werkt. Zie [List extensionProperties](/graph/api/application-list-extensionproperty?view=graph-rest-1.0&tabs=http&preserve-view=true)voor meer informatie.
+Vermeld eerst de apps in uw tenant om de id op te halen van de app waarmee u werkt. Zie [LijstextensieProperties voor meer informatie.](/graph/api/application-list-extensionproperty?view=graph-rest-1.0&tabs=http&preserve-view=true)
 
 ```json
 GET https://graph.microsoft.com/v1.0/applications
 ```
 
-Maak vervolgens het uitbreidings kenmerk. Vervang de eigenschap **id** hieronder door de **id** die u in de vorige stap hebt opgehaald. U moet het kenmerk **' id '** en niet de ' AppID ' gebruiken. Zie [Create extensionProperty]/Graph/API/Application-post-extensionproperty.MD? View = Graph-rest-1.0&tabs = http&pres Erve-View = True) voor meer informatie.
+Maak vervolgens het extensiekenmerk. Vervang de **onderstaande** id-eigenschap door de **id** die u in de vorige stap hebt opgehaald. U moet het kenmerk **Id** gebruiken en niet de appId. Zie [Create extensionProperty]/graph/api/application-post-extensionproperty.md?view=graph-rest-1.0&tabs=http&preserve-view=true) voor meer informatie.
 
 ```json
 POST https://graph.microsoft.com/v1.0/applications/{id}/extensionProperties
@@ -54,7 +54,7 @@ Content-type: application/json
 }
 ```
 
-De vorige aanvraag heeft een uitbreidings kenmerk met de indeling gemaakt `extension_appID_extensionName` . U kunt nu een gebruiker met dit extensie kenmerk bijwerken. Zie [gebruiker bijwerken](/graph/api/user-update.md?view=graph-rest-1.0&tabs=http&preserve-view=true)voor meer informatie.
+Met de vorige aanvraag is een extensiekenmerk gemaakt met de indeling `extension_appID_extensionName` . U kunt nu een gebruiker bijwerken met dit extensiekenmerk. Zie Gebruiker bijwerken [voor meer informatie.](/graph/api/user-update?view=graph-rest-1.0&tabs=http&preserve-view=true)
 ```json
 PATCH https://graph.microsoft.com/v1.0/users/{id}
 Content-type: application/json
@@ -63,15 +63,15 @@ Content-type: application/json
   "extension_inputAppId_extensionName": "extensionValue"
 }
 ```
-Controleer ten slotte het kenmerk voor de gebruiker. Zie [een gebruiker ophalen](/graph/api/user-get.md?view=graph-rest-1.0&tabs=http#example-3-users-request-using-select&preserve-view=true)voor meer informatie.
+Controleer ten slotte het kenmerk voor de gebruiker. Zie Een gebruiker krijgen [voor meer informatie.](/graph/api/user-get?view=graph-rest-1.0&tabs=http#example-3-users-request-using-select&preserve-view=true)
 
 ```json
 GET https://graph.microsoft.com/v1.0/users/{id}?$select=displayName,extension_inputAppId_extensionName
 ```
 
 
-### <a name="create-an-extension-attribute-on-a-cloud-only-user-using-powershell"></a>Een uitbreidings kenmerk maken op een alleen Cloud gebruiker die gebruikmaakt van Power shell
-Een aangepaste extensie maken met behulp van Power shell en een waarde toewijzen aan een gebruiker. 
+### <a name="create-an-extension-attribute-on-a-cloud-only-user-using-powershell"></a>Een extensiekenmerk voor een cloudgebruiker maken met behulp van PowerShell
+Maak een aangepaste extensie met behulp van PowerShell en wijs een waarde toe aan een gebruiker. 
 
 ```
 #Connect to your Azure AD tenant   
@@ -97,34 +97,34 @@ Get-AzureADUser -ObjectId 0ccf8df6-62f1-4175-9e55-73da9e742690 | Select -ExpandP
 
 ```
 
-## <a name="create-an-extension-attribute-using-azure-ad-connect"></a>Een uitbreidings kenmerk maken met behulp van Azure AD Connect
+## <a name="create-an-extension-attribute-using-azure-ad-connect"></a>Een extensiekenmerk maken met Azure AD Connect
 
-1. Open de wizard Azure AD Connect, kies taken en kies vervolgens **synchronisatie opties aanpassen**.
+1. Open de wizard Azure AD Connect, kies Taken en kies vervolgens **Synchronisatieopties aanpassen.**
 
-   ![Pagina extra taken Azure Active Directory Connect wizard](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-customize.png)
+   ![Azure Active Directory Connect wizard Aanvullende taken](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-customize.png)
  
-2. Meld u aan als een globale Azure AD-beheerder. 
+2. Meld u aan als globale beheerder van Azure AD. 
 
-3. Selecteer op de pagina **optionele functies** de optie **synchronisatie van Directory-extensie kenmerken**.
+3. Selecteer op **de pagina Optionele** functies de optie **Synchronisatie van directory-extensiekenmerken.**
  
-   ![Pagina optionele functies van Azure Active Directory Connect wizard](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extension-attribute-sync.png)
+   ![Azure Active Directory Connect wizard Optionele functies](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extension-attribute-sync.png)
 
-4. Selecteer de kenmerk (en) die u wilt uitbreiden naar Azure AD.
+4. Selecteer de kenmerken die u wilt uitbreiden naar Azure AD.
    > [!NOTE]
-   > De zoek opdracht onder **beschik bare kenmerken** is hoofdletter gevoelig.
+   > De zoekopdracht onder **Beschikbare kenmerken** is casegevoelig.
 
-   ![Scherm afbeelding van de selectie pagina Directory-extensies](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extensions.png)
+   ![Schermopname van de selectiepagina Mapextensies](./media/user-provisioning-sync-attributes-for-mapping/active-directory-connect-directory-extensions.png)
 
-5. Voltooi de Azure AD Connect wizard en sta toe dat een volledige synchronisatie cyclus kan worden uitgevoerd. Wanneer de cyclus is voltooid, wordt het schema uitgebreid en worden de nieuwe waarden gesynchroniseerd tussen uw on-premises AD en Azure AD.
+5. Voer de Azure AD Connect uit en sta toe dat een volledige synchronisatiecyclus wordt uitgevoerd. Wanneer de cyclus is voltooid, wordt het schema uitgebreid en worden de nieuwe waarden gesynchroniseerd tussen uw on-premises AD en Azure AD.
  
-6. In de Azure Portal, terwijl u de [toewijzingen van gebruikers kenmerken bewerkt](customize-application-attributes.md), bevat de lijst met **bron kenmerken** nu het kenmerk toegevoegd in de indeling `<attributename> (extension_<appID>_<attributename>)` . Selecteer het kenmerk en wijs dit toe aan de doel toepassing voor inrichting.
+6. In de Azure Portal, terwijl u toewijzingen van gebruikerskenmerken [bewerkt,](customize-application-attributes.md)bevat de lijst Bronkenmerk nu het toegevoegde kenmerk in de indeling  `<attributename> (extension_<appID>_<attributename>)` . Selecteer het kenmerk en wijs het toe aan de doeltoepassing voor inrichting.
 
-   ![Pagina Azure Active Directory Connect Directory uitbreidingen selecteren](./media/user-provisioning-sync-attributes-for-mapping/attribute-mapping-extensions.png)
+   ![Azure Active Directory Connect wizard Directory-extensies selecteren](./media/user-provisioning-sync-attributes-for-mapping/attribute-mapping-extensions.png)
 
 > [!NOTE]
-> De mogelijkheid om referentie kenmerken in te richten vanuit een on-premises AD, zoals **managedby** of **DN/DN**, wordt momenteel niet ondersteund. U kunt deze functie aanvragen op de [gebruikers stem](https://feedback.azure.com/forums/169401-azure-active-directory). 
+> De mogelijkheid om referentiekenmerken van on-premises AD in terichten, zoals **managedby** of **DN/DistinguishedName,** wordt momenteel niet ondersteund. U kunt deze functie aanvragen via [User Voice.](https://feedback.azure.com/forums/169401-azure-active-directory) 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Definiëren wie binnen het bereik van de inrichting valt](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)
+* [Definieer wie binnen het bereik voor inrichting valt](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)

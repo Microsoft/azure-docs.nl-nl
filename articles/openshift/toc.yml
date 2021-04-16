@@ -26,7 +26,7 @@
           href: howto-create-private-cluster-4x.md
         - name: DNS-forwarding configureren
           href: dns-forwarding.md
-        - name: Beperk het verkeer voor toegangsverkeer
+        - name: Beperk het verkeer voorgressie
           href: howto-restrict-egress.md
     - name: Storage
       items:
@@ -46,7 +46,7 @@
           href: configure-azure-ad-ui.md
         - name: Pull-geheim bijwerken voor een ARO-cluster
           href: howto-add-update-pull-secret.md
-    - name: Back-ups en herstellen
+    - name: Back-up en herstel
       items:
         - name: Een back-up maken van een clustertoepassing met Velero
           href: howto-create-a-backup.md
@@ -121,6 +121,8 @@
       href: support-policies-v4.md
     - name: Ondersteuningslevenscyclus voor ARO 4
       href: support-lifecycle.md
+    - name: Verantwoordelijkheidsmatrix
+      href: responsibility-matrix.md
     - name: Regionale beschikbaarheid
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Red Hat OpenShift 4-documentatie

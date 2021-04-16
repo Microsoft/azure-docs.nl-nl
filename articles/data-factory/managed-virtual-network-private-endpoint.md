@@ -9,12 +9,12 @@ ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: d777588f0abdd1f771deb259c597f6407e61d874
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: 1213d5f7421cc71255f29d013fa47878559110ee
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107364602"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481579"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Azure Data Factory Managed Virtual Network (preview)
 
@@ -70,7 +70,7 @@ Als de eigenaar de verbinding goedkeurt, wordt de privé-koppeling tot stand geb
 Alleen een beheerd privé-eindpunt met een goedgekeurde status kan verkeer verzenden naar een gegeven privé-koppelingsresource.
 
 ## <a name="interactive-authoring"></a>Interactief schrijven
-Interactieve ontwerpmogelijkheden worden gebruikt voor functies zoals een testverbinding, bladeren in mappenlijst en tabellijst, schema op halen en voorbeeldgegevens bekijken. U kunt interactief schrijven inschakelen bij het maken of bewerken van een Azure Integration Runtime in een door ADF beheerd virtueel netwerk. De back-endservice wijst vooraf rekenkracht toe voor interactieve ontwerpfunctionaliteiten. Anders wordt de berekening elke keer toegewezen als een interactieve bewerking wordt uitgevoerd, wat meer tijd in neemt. De Time To Live (TTL) voor interactief schrijven is 60 minuten, wat betekent dat deze automatisch wordt uitgeschakeld na 60 minuten van de laatste interactieve bewerking.
+Interactieve ontwerpmogelijkheden worden gebruikt voor functies zoals een testverbinding, bladeren in mappenlijst en tabellijst, schema op halen en voorbeeldgegevens bekijken. U kunt interactief schrijven inschakelen bij het maken of bewerken van een Azure Integration Runtime in een door ADF beheerd virtueel netwerk. De back-endservice wijst rekenkracht vooraf toe voor interactieve ontwerpfunctionaliteiten. Anders wordt de berekening elke keer toegewezen als een interactieve bewerking wordt uitgevoerd, wat meer tijd in neemt. De Time To Live (TTL) voor interactief schrijven is 60 minuten, wat betekent dat deze automatisch wordt uitgeschakeld na 60 minuten van de laatste interactieve bewerking.
 
 ![Interactieve creatie](./media/managed-vnet/interactive-authoring.png)
 
@@ -121,9 +121,9 @@ New-AzResource -ApiVersion "${apiVersion}" -ResourceId "${integrationRuntimeReso
 ## <a name="limitations-and-known-issues"></a>Beperkingen en bekende problemen
 ### <a name="supported-data-sources"></a>Ondersteunde gegevensbronnen
 Onderstaande gegevensbronnen worden ondersteund om verbinding te maken via private link vanuit ADF Managed Virtual Network.
-- Azure Blob Storage
-- Azure Table Storage
-- Azure Files
+- Azure Blob Storage (exclusief Opslagaccount V1)
+- Azure Table Storage (exclusief Opslagaccount V1)
+- Azure Files (exclusief Opslagaccount V1)
 - Azure Data Lake Gen2
 - Azure SQL Database (inclusief Azure SQL Managed Instance)
 - Azure Synapse Analytics
@@ -161,7 +161,7 @@ Onderstaande gegevensbronnen worden ondersteund om verbinding te maken via priva
 - Canada - midden
 
 ### <a name="outbound-communications-through-public-endpoint-from-adf-managed-virtual-network"></a>Uitgaande communicatie via een openbaar eindpunt van ADF Managed Virtual Network
-- Alleen poort 443 is geopend voor uitgaande communicatie.
+- Alleen poort 443 wordt geopend voor uitgaande communicatie.
 - Azure Storage en Azure Data Lake Gen2 worden niet ondersteund om te worden verbonden via een openbaar eindpunt vanuit door ADF beheerd Virtual Network.
 
 ### <a name="linked-service-creation-of-azure-key-vault"></a>Gekoppelde service voor het maken van Azure Key Vault 

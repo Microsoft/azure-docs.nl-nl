@@ -8,22 +8,21 @@ ms.author: arthiaga
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
-ms.subservice: migration-guide
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/24/2020
-ms.openlocfilehash: 2be824c89ac1e6b900dc9b67e046e2be2c7f8919
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 76ab2204a81d3cbfb559bfa4591f1f332b1707ee
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103562821"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388071"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Zelfstudie: Oracle online migreren naar Azure Database for PostgreSQL met DMS (preview)
 
 > [!IMPORTANT]
-> **Oracle to Azure database for PostgreSQL** Migration scenario (momenteel in Preview) is na 1 mei 2021 niet meer beschikbaar. We blijven ondersteuning bieden via alternatieve hulp middelen (zoals Ora2pg) en bieden de beste migratie-ervaring voor Oracle naar PostgreSQL-migraties. Zie voor aanbevolen procedures voor het migreren van [Oracle naar Azure database for PostgreSQL-migratie handleiding](https://aka.ms/OracletoPGguide). 
+> **Oracle voor Azure Database for PostgreSQL** migratiescenario (momenteel in preview) is niet meer beschikbaar na 1 mei 2021. We blijven ondersteuning bieden via alternatieve hulpprogramma's (zoals Ora2pg) en bieden de beste migratie-ervaring voor Migraties van Oracle naar PostgreSQL. Zie Oracle to [Azure Database for PostgreSQL migration guide (Oracle to Azure Database for PostgreSQL migratiehandleiding) voor de best practices voor migratie.](https://aka.ms/OracletoPGguide) 
 
 U kunt Azure Database Migration Service gebruiken om Oracle-databases die on-premises worden gehost of op virtuele machines met minimale downtime te migreren van een on-premises PostgreSQL-exemplaar naar [Azure Database for PostgreSql](../postgresql/index.yml). Met andere woorden, u kunt de migratie voltooien met minimale downtime voor de toepassing. In deze zelfstudie migreert u de voorbeelddatabase **HR** van een on-premises exemplaar of virtuele machine met Oracle 11g naar Azure Database for PostgreSQL met behulp van de online-migratieactiviteit in Azure Database Migration Service.
 
@@ -67,7 +66,7 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
   >
   > Deze configuratie is noodzakelijk omdat Azure Database Migration Service geen internetverbinding biedt.
 
-* Zorg ervoor dat uw NSG-regels (netwerk beveiligings groep) voor het virtuele netwerk niet de uitgaande poort 443 van ServiceTag voor ServiceBus, Storage en AzureMonitor blok keren. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
+* Zorg ervoor dat de regels voor de netwerkbeveiligingsgroep (NSG) van uw virtuele netwerk de uitgaande poort 443 van ServiceTag voor ServiceBus, Storage en AzureMonitor niet blokkeren. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
 * Configureer uw [Windows Firewall voor toegang tot de database-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Stel uw Windows-firewall open voor toegang van Azure Database Migration Service tot de bronserver van Oracle. Standaard verloopt dit via TCP-poort 1521.
 * Wanneer u een firewallapparaat gebruikt voor de brondatabase(s), moet u mogelijk firewallregels toevoegen om voor Azure Database Migration Service toegang tot de brondatabase(s) voor de migratie toe te staan.

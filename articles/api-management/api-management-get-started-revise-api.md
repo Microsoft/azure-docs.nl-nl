@@ -6,16 +6,16 @@ services: api-management
 documentationcenter: ''
 author: vladvino
 ms.service: api-management
-ms.custom: mvc
+ms.custom: mvc, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: acb121bb00df481c926ebed9594bf0fe1b9b17ed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1d99d6f876e4896bb4321afb8dc4d8e7c3a404e7
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100546632"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483551"
 ---
 # <a name="tutorial-use-revisions-to-make-non-breaking-api-changes-safely"></a>Zelfstudie: Revisies gebruiken om vaste API-wijzigingen veilig aan te brengen
 Wanneer uw API klaar is voor gebruik en daadwerkelijk wordt ingezet door ontwikkelaars, moet u op een bepaald moment wijzigingen aanbrengen aan die API, zonder dat dit gevolgen heeft voor clients die de API aanroepen. Het is ook handig om ontwikkelaars te informeren over de aangebrachte wijzigingen. 
@@ -90,22 +90,22 @@ In deze zelfstudie leert u het volgende:
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u Azure CLI wilt gaan gebruiken:
+Als u Azure CLI wilt gaan gebruiken, gaat u als volgende te werk:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 Gebruik deze procedure om een release te maken en bij te werken.
 
-1. Voer de opdracht [AZ APIM API List](/cli/azure/apim/api#az_apim_api_list) uit om uw API-id's te bekijken:
+1. Voer de [opdracht az apim api list](/cli/azure/apim/api#az_apim_api_list) uit om uw API-ID's te zien:
 
    ```azurecli
    az apim api list --resource-group apim-hello-word-resource-group \
        --service-name apim-hello-world --output table
    ```
 
-   De API-ID voor gebruik in de volgende opdracht is de `Name` waarde. De API-revisie bevindt zich in de `ApiRevision` kolom.
+   De API-id die in de volgende opdracht moet worden gebruikt, is de `Name` waarde. De API-revisie staat in de `ApiRevision` kolom .
 
-1. Als u de release wilt maken, met een release opmerking, voert u de opdracht [AZ APIM API release Create](/cli/azure/apim/api/release#az_apim_api_release_create) uit:
+1. Voer de opdracht [az apim api release create](/cli/azure/apim/api/release#az_apim_api_release_create) uit om de release te maken met een release-opmerking:
 
    ```azurecli
    az apim api release create --resource-group apim-hello-word-resource-group \
@@ -113,18 +113,18 @@ Gebruik deze procedure om een release te maken en bij te werken.
        --notes 'Testing revisions. Added new "test" operation.'
    ```
 
-   De revisie die u uitgeeft, wordt de huidige revisie.
+   De revisie die u vrijgave wordt de huidige revisie.
 
-1. Als u uw releases wilt bekijken, gebruikt u de opdracht [AZ APIM API release List](/cli/azure/apim/api/release#az_apim_api_release_list) :
+1. Als u uw releases wilt zien, gebruikt u [de opdracht az apim api release list:](/cli/azure/apim/api/release#az_apim_api_release_list)
 
    ```azurecli
    az apim api release list --resource-group apim-hello-word-resource-group \
        --api-id echo-api --service-name apim-hello-world --output table
    ```
 
-   De notities die u opgeeft, worden weer gegeven in de wijzigingen logboek. U kunt deze weer geven in de uitvoer van de vorige opdracht.
+   De notities die u opgeeft, worden weergegeven in het wijzigingslogo. U kunt ze zien in de uitvoer van de vorige opdracht.
 
-1. Wanneer u een release maakt, `--notes` is de para meter optioneel. U kunt de notities later toevoegen of wijzigen met behulp van de opdracht [AZ APIM API Release Update](/cli/azure/apim/api/release#az_apim_api_release_update) :
+1. Wanneer u een release maakt, is `--notes` de parameter optioneel. U kunt de notities later toevoegen of wijzigen met behulp van de [opdracht az apim api release update:](/cli/azure/apim/api/release#az_apim_api_release_update)
 
    ```azurecli
    az apim api release update --resource-group apim-hello-word-resource-group \
@@ -134,7 +134,7 @@ Gebruik deze procedure om een release te maken en bij te werken.
 
    Gebruik de waarde in de `Name` kolom voor de release-id.
 
-U kunt elke wille keurige versie verwijderen door de opdracht [AZ APIM API release delete ](/cli/azure/apim/api/release#az_apim_api_release_delete) uit te voeren:
+U kunt elke release verwijderen door de opdracht [az apim api release delete uit te ](/cli/azure/apim/api/release#az_apim_api_release_delete) voeren:
 
 ```azurecli
 az apim api release delete --resource-group apim-hello-word-resource-group \

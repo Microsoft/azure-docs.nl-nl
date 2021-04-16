@@ -9,12 +9,12 @@ metadata:
   author: jimzim
   ms.author: jzim
   ms.date: 03/06/2020
-  ms.openlocfilehash: 06c6b14d62bb471ecc6dee50d72f11469e3cd161
-  ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+  ms.openlocfilehash: fad34c10d02d4a9daa8795cf77ab76903d8360f4
+  ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/17/2021
-  ms.locfileid: "100633203"
+  ms.lasthandoff: 04/14/2021
+  ms.locfileid: "107501192"
 landingContent:
 - title: Over Azure Red Hat OpenShift
   linkLists:
@@ -26,23 +26,23 @@ landingContent:
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Een Azure Red Hat OpenShift 4-cluster maken
+    - text: Een Azure Red Hat OpenShift-cluster maken
       url: tutorial-create-cluster.md
-    - text: Verbinding maken met een Azure Red Hat OpenShift 4-cluster
+    - text: Verbinding maken met een Azure Red Hat OpenShift-cluster
       url: tutorial-connect-cluster.md
-    - text: Een Azure Red Hat OpenShift 4-cluster verwijderen
+    - text: Een Azure Red Hat OpenShift-cluster verwijderen
       url: tutorial-delete-cluster.md
 - title: Instellen
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Een Azure Red Hat OpenShift 4-privécluster maken
-      url: ./howto-create-private-cluster-3x.md
-    - text: DNS forwarding configureren voor een Azure Red Hat OpenShift 4-cluster
+    - text: Een privé-Azure Red Hat OpenShift maken
+      url: ./howto-create-private-cluster-4x.md
+    - text: DNS-doorsturen configureren voor een Azure Red Hat OpenShift cluster
       url: dns-forwarding.md
-    - text: Ingebouwd containerregister voor Azure Red Hat OpenShift 4 configureren
+    - text: Ingebouwd containerregister configureren voor Azure Red Hat OpenShift
       url: built-in-container-registry.md
-    - text: Een Open Liberty/WebSphere Liberty-toepassing implementeren in een Azure Red Hat OpenShift 4-cluster
+    - text: Een open-/WebSphere-app implementeren op een Azure Red Hat OpenShift cluster
       url: howto-deploy-java-liberty-app.md
 - title: Naslaginformatie
   linkLists:

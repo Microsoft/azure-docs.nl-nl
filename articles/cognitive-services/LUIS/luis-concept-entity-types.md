@@ -1,166 +1,168 @@
 ---
-title: Entiteits typen-LUIS
-description: Een entiteit extraheert gegevens uit een utterance tijdens de Voorspellings runtime. Een _optioneel_, secundair doel is het verhogen van de voor spelling van de intentie of andere entiteiten door gebruik te maken van de entiteit als een functie.
+title: Entiteitstypen - LUIS
+description: Een entiteit extraheert gegevens uit een uiting van een gebruiker tijdens de voorspellingsruntime. Een _optioneel_, secundair doel is om de voorspelling van de intentie of andere entiteiten te verbeteren door de entiteit als een functie te gebruiken.
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 08/06/2020
-ms.openlocfilehash: 398d18642052726af4d4920443bad515ec0b5bef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/13/2021
+ms.openlocfilehash: 44cffecd653ec2ec748e73d01dc86a87cfcd7de9
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "91316559"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500325"
 ---
-# <a name="extract-data-with-entities"></a>Gegevens ophalen met entiteiten
+# <a name="entities-in-luis"></a>Entiteiten in LUIS
 
-Een entiteit extraheert gegevens uit een utterance tijdens de Voorspellings runtime. Een _optioneel_, secundair doel is het verhogen van de voor spelling van de intentie of andere entiteiten door gebruik te maken van de entiteit als een functie.
+Een entiteit is een item of een element dat relevant is voor de intentie van de gebruiker. Entiteiten definiëren gegevens die kunnen worden geëxtraheerd uit de utterance en zijn essentieel voor het voltooien van de vereiste actie van een gebruiker. Bijvoorbeeld:
 
-Er zijn verschillende typen entiteiten:
-
-* [machine learning-entiteit](reference-entity-machine-learned-entity.md) : dit is de primaire entiteit. U moet uw schema ontwerpen met dit entiteits type voordat u andere entiteiten gebruikt.
-* Niet machine learning gebruikt als een vereiste [functie](luis-concept-feature.md) : voor exacte tekst overeenkomsten, patroon overeenkomsten of detectie door vooraf gemaakte entiteiten
-* [Patroon. any](#patternany-entity) : om vrije-vorm tekst uit een [patroon](reference-entity-pattern-any.md) te halen, zoals Boek titels
-
-machine learning-entiteiten bieden een breed scala aan opties voor gegevens extractie. Niet-machine learning-entiteiten werken met tekst overeenkomst en worden gebruikt als een [vereiste functie](#design-entities-for-decomposition) voor een machine learning-entiteit of intentie.
-
-## <a name="entities-represent-data"></a>Entiteiten vertegenwoordigen gegevens
-
-Entiteiten zijn gegevens die u wilt ophalen uit de utterance, zoals namen, datums, product namen of een belang rijke groep woorden. Een utterance kan veel entiteiten bevatten of helemaal geen. Een client toepassing heeft _mogelijk_ de gegevens nodig om de taak uit te voeren.
-
-Entiteiten moeten consistent worden gelabeld voor alle trainings uitingen voor elke intentie in een model.
-
- U kunt uw eigen entiteiten definiëren of vooraf gemaakte entiteiten gebruiken om tijd te besparen op algemene concepten, zoals [datetimeV2](luis-reference-prebuilt-datetimev2.md), [rang telwoord](luis-reference-prebuilt-ordinal.md), [e-mail adres](luis-reference-prebuilt-email.md)en [telefoon nummer](luis-reference-prebuilt-phonenumber.md).
-
-|Uiting|Entiteit|Gegevens|
-|--|--|--|
-|3 tickets kopen voor New York|Vooraf gebouwd nummer<br>Doel|3<br>New York|
-
-
-### <a name="entities-are-optional-but-recommended"></a>Entiteiten zijn optioneel, maar aanbevolen
-
-Hoewel [intenties](luis-concept-intent.md) vereist zijn, zijn entiteiten optioneel. U hoeft geen entiteiten te maken voor elk concept in uw app, maar alleen voor degenen waarbij de client toepassing de gegevens moet hebben of de entiteit fungeert als hint of signaal voor een andere entiteit of intentie.
-
-Als uw toepassing zich ontwikkelt en er een nieuwe nood zaak voor gegevens wordt geïdentificeerd, kunt u later de juiste entiteiten aan uw LUIS-model toevoegen.
-
-<a name="entity-compared-to-intent"></a>
-
-## <a name="entity-represents-data-extraction"></a>Entiteit vertegenwoordigt gegevens extractie
-
-De entiteit vertegenwoordigt een gegevens concept _binnen de utterance_. Een intentie classificeert de _hele utterance_.
-
-Houd rekening met de volgende vier uitingen:
-
-|Uiting|Intentie voor speld|Geëxtraheerde entiteiten|Uitleg|
+|Uiting|Voorspelde intentie|Geëxtraheerde entiteiten|Uitleg|
 |--|--|--|--|
-|Help|help|-|Niets te extra heren.|
-|Iets verzenden|sendSomething|-|Niets te extra heren. Het model bevat geen vereiste functie om `something` in deze context op te halen en er is geen ontvanger opgegeven.|
-|Bob een huidige verzenden|sendSomething|`Bob`, `present`|Het model wordt uitgepakt `Bob` door een vereiste functie van vooraf gedefinieerde entiteit toe te voegen `personName` . Er is een machine learning-entiteit gebruikt om uit te pakken `present` .|
-|Een doos van Choco lade verzenden|sendSomething|`Bob`, `box of chocolates`|De twee belang rijke gegevens, `Bob` en de `box of chocolates` , zijn geëxtraheerd door de machine learning-entiteiten.|
+|Hallo hoe gaat het?|Begroeting|-|Er is niets om uit te extraheren.|
+|Ik wil een kleine pizza bestellen|orderPizza| 'klein' | De entiteit 'Grootte' wordt geëxtraheerd als 'klein'.|
+|Het slaaplicht uitschakelen|Afslag| 'slaapkamers' | De entiteit 'Ruimte' wordt geëxtraheerd als 'slaapkamers'.|
+|Saldo controleren op mijn spaarrekening die eindigt op 4406|checkBalance| "besparingen", "4406" | De entiteit accountType wordt geëxtraheerd als 'savings' en de entiteit accountNumber wordt geëxtraheerd als '4406'.|
+|3 tickets naar New York kopen|buyTickets| "3", "New York" | De entiteit ticketsCount wordt geëxtraheerd als '3' en de entiteit 'Destination' wordt geëxtraheerd als 'New York'.|
 
-## <a name="label-entities-in-all-intents"></a>Entiteiten in alle intenties labelen
+Entiteiten zijn optioneel, maar worden aanbevolen. U hoeft geen entiteiten te maken voor elk concept in uw app, alleen voor de volgende dingen:
 
-Entiteiten halen gegevens op, ongeacht het voorspelde doel. Zorg ervoor dat u _alle_ voor beeld-uitingen in alle intenties labelt. Het `None` doel van de intentie is dat Verwar ring wordt veroorzaakt, zelfs als er veel trainings uitingen voor de andere intentie zijn.
+* De clienttoepassing heeft de gegevens nodig, of 
+* De entiteit fungeert als hint of signaal naar een andere entiteit of intentie. Ga naar Entiteiten als functies voor meer informatie [over entiteiten als Functies.](#entities-as-features)
 
-## <a name="design-entities-for-decomposition"></a>Entiteiten voor ontleding ontwerpen
+## <a name="entity-types"></a>Entiteitstypen
 
-met machine learning-entiteiten kunt u uw app-schema ontwerpen voor ontdubbeling en een groot concept in subentiteiten opsplitsen.
+Als u een entiteit wilt maken, moet u deze een naam en een type geven. Er zijn verschillende typen entiteiten in LUIS. 
 
-Als u ontwerpt voor ontleding, kan LUIS de nauw keurigheid van entiteits omzetting naar uw client toepassing retour neren. Op deze manier kan uw client toepassing zich richten op bedrijfs regels en de gegevens omzetting voor LUIS behouden.
+### <a name="list-entity"></a>Entiteit list
 
-Een machine learning-entiteit activeert op basis van de context die is geleerd via voor beeld uitingen.
+Een entiteit List vertegenwoordigt een vaste, gesloten set gerelateerde woorden samen met hun synoniemen. U kunt lijstentiteiten gebruiken om meerdere synoniemen of variaties te herkennen en een genormaliseerde uitvoer voor deze entiteiten te extraheren. Gebruik de *aanbevelingsoptie* om suggesties te zien voor nieuwe woorden op basis van de huidige lijst. 
 
-[**machine learning-entiteiten**](tutorial-machine-learned-entity.md) zijn de extracten op het hoogste niveau. Subentiteiten zijn onderliggende entiteiten van machine learning-entiteiten.
+Een entiteit list is niet machine-learned, wat betekent dat LUIS geen aanvullende waarden voor lijstentiteiten detecteert. LUIS markeert een overeenkomst met een item in een lijst als een entiteit in het antwoord.
 
-## <a name="effective-machine-learned-entities"></a>Effectief door de machine geleerde entiteiten
+Overeenkomst in lijstentiteiten is zowel casegevoelig als moet een exacte overeenkomst zijn om te worden geëxtraheerd. Genormaliseerde waarden worden ook gebruikt bij het overeenkomen met de lijstentiteit. Bijvoorbeeld:
 
-Voor het effectief bouwen van de door de machine geleerde entiteiten:
-
-* Het labelen moet consistent zijn voor de doel stellingen. Dit omvat zelfs uitingen die u opgeeft in de **geen** intentie die deze entiteit bevat. Anders kan het model de volg orde niet effectief bepalen.
-* Als u een door een machine geleerde entiteit met subentiteiten hebt, moet u ervoor zorgen dat de verschillende orders en varianten van de entiteit en subentiteiten worden weer gegeven in de gelabelde uitingen. Het label voorbeeld uitingen moet alle geldige formulieren bevatten en entiteiten bevatten die worden weer gegeven en die zich niet in de utterance bevinden.
-* Vermijd het aanpassen van de entiteiten tot een zeer vaste set. De **overmontage** vindt plaats wanneer het model niet goed kan worden gegeneraliseerd en een veelvoorkomend probleem is in machine learning modellen. Dit betekent dat de app niet voldoende goed werkt voor nieuwe gegevens. U moet op zijn beurt het gelabelde voor beeld uitingen, zodat de app kan generaliseren buiten de beperkte voor beelden die u opgeeft. U moet de verschillende subentiteiten met voldoende wijziging voor het model variëren om meer van het concept te zien in plaats van alleen de voor beelden die worden weer gegeven.
-
-## <a name="effective-prebuilt-entities"></a>Efficiënte, vooraf gemaakte entiteiten
-
-Voor het bouwen van doel matige entiteiten die algemene gegevens extra heren, zoals die van de [vooraf gemaakte entiteiten](luis-reference-prebuilt-entities.md), wordt het volgende proces aangeraden.
-
-Verbeter het uitpakken van gegevens door uw eigen gegevens als een functie naar een entiteit te brengen. Op die manier krijgen alle extra labels van uw gegevens de context van waar persoons namen in uw toepassing bestaan.
-
-<a name="composite-entity"></a>
-<a name="list-entity"></a>
-<a name="patternany-entity"></a>
-<a name="prebuilt-entity"></a>
-<a name="regular-expression-entity"></a>
-<a name="simple-entity"></a>
-
-## <a name="types-of-entities"></a>Typen entiteiten
-
-Een subentiteit naar een bovenliggend item moet een machine learning-entiteit zijn. De subentiteit kan gebruikmaken van een niet-machine learning-entiteit als een [functie](luis-concept-feature.md).
-
-Kies de entiteit op basis van de manier waarop de gegevens moeten worden geëxtraheerd en hoe deze moeten worden weer gegeven nadat deze is geëxtraheerd.
-
-|Entiteitstype|Doel|
+|Genormaliseerde waarde|Synoniemen|
 |--|--|
-|[**Machine-geleerd**](tutorial-machine-learned-entity.md)|Extraheer geneste, complexe gegevens die zijn geleerd van voor beelden met labels. |
-|[**Orderverzamellijst**](reference-entity-list.md)|Lijst met items en de bijbehorende synoniemen die zijn geëxtraheerd met **exact overeenkomende tekst**.|
-|[**Patroon. alle**](#patternany-entity)|Entiteit waarvan het einde van de entiteit moeilijk te bepalen is, omdat de entiteit vrije vorm is. Alleen beschikbaar in [patronen](luis-concept-patterns.md).|
-|[**Vooraf samengesteld**](luis-reference-prebuilt-entities.md)|Al getraind voor het extra heren van specifieke soorten gegevens, zoals URL of e-mail. Sommige van deze vooraf gemaakte entiteiten worden gedefinieerd in het open source- [tekst](https://github.com/Microsoft/Recognizers-Text) project voor herkenning. Als uw specifieke cultuur of entiteit momenteel niet wordt ondersteund, draagt u bij aan het project.|
-|[**Reguliere expressie**](reference-entity-regular-expression.md)|Gebruikt reguliere expressie voor **exacte tekst overeenkomst**.|
+|Klein|sm, sml, zeer klein, kleinste|
+|Middelgroot|md, mdm, normaal, gemiddeld, midden|
+|Groot|lg, lrg, groot|
+
+Zie het [naslagartikel over entiteiten in de lijst](reference-entity-list.md) voor meer informatie.
+
+### <a name="regex-entity"></a>Regex-entiteit
+
+Een entiteit in de reguliere expressie extraheert een entiteit op basis van een patroon voor reguliere expressies dat u op geeft. Het negeert het geval en negeert culturele variant. Reguliere expressie is het beste voor gestructureerde tekst of een vooraf gedefinieerde reeks alfanumerieke waarden die in een bepaalde indeling worden verwacht. Bijvoorbeeld:
+
+|Entiteit|Reguliere expressie|Voorbeeld|
+|--|--|--|
+|Vluchtnummer|flight [A-Z] {2} [0-9]{4}| flight AS 1234|
+|Creditcardnummer|[0-9]{16}|5478789865437632|
+
+Zie het [naslagartikel over regex-entiteiten](reference-entity-regular-expression.md) voor meer informatie.
+
+### <a name="prebuilt-entity"></a>Vooraf gemaakte entiteit
+
+LUIS biedt een set vooraf gebouwde entiteiten voor het herkennen van algemene typen gegevens, zoals naam, datum, nummer en valuta.  Het gedrag van vooraf gebouwde entiteiten is vast. De ondersteuning voor vooraf gebouwde entiteiten is afhankelijk van de cultuur van de LUIS-app. Bijvoorbeeld:
+
+|Vooraf gebouwde entiteit|Voorbeeldwaarde|
+|--|--|
+|PersonName|James, Bill, Tom|
+|DatetimeV2|02-05-2019 2 mei 2019 om 8:00 uur op 2 mei 2019|
+
+Zie het [naslagartikel over vooraf gebouwde entiteiten](./luis-reference-prebuilt-entities.md) voor meer informatie.
+
+### <a name="patternany-entity"></a>Pattern.Any-entiteit
+
+Een patroon. Elke entiteit is een tijdelijke aanduiding met variabele lengte die alleen wordt gebruikt in de sjabloonuiting van een patroon om te markeren waar de entiteit begint en eindigt. Het volgt een specifieke regel of een specifiek patroon en wordt het beste gebruikt voor zinnen met een vaste lexicale structuur. Bijvoorbeeld:
+
+|Voorbeeld van een utterance|Patroon|Entiteit|
+|--|--|--|
+|Kan ik een burger a.u.u.a. hebben?|Kan ik een {100} [please][?] hebben| burger
+|Kan ik een pizza hebben?|Kan ik een {100} [please][?] hebben| Pizza
+|Waar vind ik The Great Gatsby?|Waar vind ik {bookName}?| The Great Gatsby|
+
+Zie het [referentieartikel over Pattern.Any-entiteiten](./reference-entity-pattern-any.md) voor meer informatie.
+
+### <a name="machine-learned-ml-entity"></a>Machine learned -entiteit (ML)
+
+De entiteit Machine Learned maakt gebruik van context om entiteiten te extraheren op basis van gelabelde voorbeelden. Het is de voorkeursentiteit voor het bouwen van LUIS-toepassingen. Het is afhankelijk van machine learning algoritmen en vereist dat labels met succes worden aangepast aan uw toepassing. Gebruik een ML-entiteit om gegevens te identificeren die niet altijd goed zijn opgemaakt, maar die dezelfde betekenis hebben. 
+
+|Voorbeeld van een utterance|*Geëxtraheerde productentiteit*|
+|--|--|
+|Ik wil een boek kopen.|"book"|
+|Kan ik deze schoenen kopen?|"schoenen"|
+|Voeg deze shorts toe aan mijn winkelwagen.|"shorts"|
+
+Meer informatie over machine learned-entiteiten vindt u [hier.](./reference-entity-machine-learned-entity.md)
+
+Zie het [naslagartikel over door machine geleerde entiteiten](./reference-entity-pattern-any.md) voor meer informatie.
+
+#### <a name="ml-entity-with-structure"></a>ML-entiteit met structuur
+
+Een ML-entiteit kan bestaan uit kleinere subentiteiten, die elk hun eigen eigenschappen kunnen hebben. Adres kan *bijvoorbeeld* de volgende structuur hebben:
+
+* Adres: 4567 Main Street, NY, 98052, USA
+    * Gebouwnummer: 4567
+    * Straatnaam: Hoofdweg
+    * Staat: NY
+    * Postcode: 98052
+    * Land: Verenigde Staten
 
 
-## <a name="extraction-versus-resolution"></a>Extractie versus oplossing
+### <a name="building-effective-ml-entities"></a>Effectieve ML-entiteiten bouwen
 
-Entiteiten nemen gegevens op als de gegevens worden weer gegeven in de utterance. De gegevens worden niet door entiteiten gewijzigd of omgezet. De entiteit biedt geen oplossing als de tekst een geldige waarde voor de entiteit is of niet.
+Volg deze best practices om effectief door machine geleerde entiteiten te bouwen:
 
-Er zijn manieren om oplossing in te stellen voor de extractie, maar u moet er rekening mee houden dat de mogelijkheid van de app ongevoelig is voor variaties en fouten.
+* Als u een machine learned-entiteit met subentiteiten hebt, moet u ervoor zorgen dat de verschillende orders en varianten van de entiteit en subentiteiten worden weergegeven in de gelabelde utterances. Gelabelde voorbeelduitingen moeten alle geldige formulieren bevatten en entiteiten bevatten die worden weergegeven en die niet aanwezig zijn en die ook opnieuw worden rangschikken binnen de utterance.
 
-Entiteiten voor lijsten en reguliere expressies (tekst-matching) kunnen worden gebruikt als [vereiste functies](luis-concept-feature.md#required-features) voor een subentiteit en die fungeert als een filter voor de extractie. U moet dit zorgvuldig gebruiken om de mogelijkheid van de app om te voors pellen.
+* Vermijd overfitting van de entiteiten naar een zeer vaste set. Overfitting vindt plaats wanneer het model niet goed generaliseert en een veelvoorkomende probleem is in machine learning modellen. Dit impliceert dat de app niet op de juiste manier zou werken met nieuwe typen voorbeelden. Op zijn beurt moet u de gelabelde voorbeeld-utterances variëren, zodat de app verder kan generaliseren dan de beperkte voorbeelden die u op biedt.
 
-## <a name="extracting-contextually-related-data"></a>Contextuele gerelateerde gegevens extra heren
+* Uw labels moeten consistent zijn voor alle intenties. Dit omvat zelfs utterances die u op geeft in de *intentie None* die deze entiteit bevat. Anders kan het model de reeksen niet effectief bepalen.
 
-Een utterance kan twee of meer exemplaren van een entiteit bevatten waarbij de betekenis van de gegevens is gebaseerd op de context binnen de utterance. Een voor beeld is een utterance voor het reserveren van een vlucht met twee geografische locaties, oorsprong en bestemming.
+## <a name="entities-as-features"></a>Entiteiten als functies
 
-`Book a flight from Seattle to Cairo`
+Een andere belangrijke functie van entiteiten is om ze te gebruiken als kenmerken of eigenschappen voor andere intenties of entiteiten te onderscheiden, zodat uw systeem deze geobserveert en leert.
 
-De twee locaties moeten worden geëxtraheerd op een manier die de client toepassing het type van elke locatie kent om de aankoop van het ticket te volt ooien.
+### <a name="entities-as-features-for-intents"></a>Entiteiten als functies voor intenties
 
-Als u de oorsprong en bestemming wilt extra heren, maakt u twee subentiteiten als onderdeel van de entiteit voor de ticket order-learning. Maak voor elk van de subentiteiten een vereiste functie die gebruikmaakt van geographyV2.
+U kunt entiteiten gebruiken als signaal voor een intentie. De aanwezigheid van een bepaalde entiteit in de utterance kan bijvoorbeeld onderscheiden van welke intentie deze valt.
 
-<a name="using-component-constraints-to-help-define-entity"></a>
-<a name="using-subentity-constraints-to-help-define-entity"></a>
+|Voorbeeld van een utterance|Entiteit|Intentie|
+|--|--|--|
+|Boek me een *strijd met New York.*|Plaats|Vlucht boeken|
+|Boek de belangrijkste *vergaderruimte voor mij.*|Room|Ruimte reserveren|
 
-### <a name="using-required-features-to-constrain-entities"></a>De vereiste functies gebruiken om entiteiten te beperken
+### <a name="entities-as-feature-for-entities"></a>Entiteiten als functie voor entiteiten
 
-Meer informatie over [vereiste onderdelen](luis-concept-feature.md)
+U kunt ook entiteiten gebruiken als indicator van de aanwezigheid van andere entiteiten. Een veelvoorkomende voorbeeld hiervan is het gebruik van een vooraf gebouwde entiteit als een functie voor een andere ML-entiteit.
+Als u een vluchtboekingssysteem bouwt en uw uiting lijkt op 'Book me a flight from Seattle', dan hebt u *Origin City* en *Destination City* als ML-entiteiten. Het is een goed idee om de vooraf gebouwde entiteit als `GeographyV2` een functie voor beide entiteiten te gebruiken.
 
-## <a name="patternany-entity"></a>Pattern.any-entiteit
+Zie het [referentieartikel GeographyV2-entiteiten](./luis-reference-prebuilt-geographyv2.md) voor meer informatie.
 
-Een patroon. alle zijn alleen beschikbaar in een [patroon](luis-concept-patterns.md).
+U kunt entiteiten ook gebruiken als vereiste functies voor andere entiteiten. Dit helpt bij het oplossen van geëxtraheerde entiteiten. Als u bijvoorbeeld een toepassing voor het bestellen van pizza's maakt en u een ML-entiteit hebt, kunt u een entiteit list maken en deze gebruiken als een vereiste functie `Size` `SizeList` voor de `Size` entiteit. Uw toepassing retourneert de genormaliseerde waarde als de geëxtraheerde entiteit uit de utterance. 
 
-<a name="if-you-need-more-than-the-maximum-number-of-entities"></a>
-## <a name="exceeding-app-limits-for-entities"></a>App-limieten voor entiteiten overschrijden
+Zie [functies](luis-concept-feature.md) voor meer informatie en vooraf gebouwde [entiteiten](./luis-reference-prebuilt-entities.md) voor meer informatie over de oplossing van vooraf gebouwde entiteiten die beschikbaar zijn in uw cultuur. 
 
-Neem contact op met de ondersteuning als u meer nodig hebt dan de [limiet](luis-limits.md#model-limits). Als u dit wilt doen, verzamelt u gedetailleerde informatie over uw systeem, gaat u naar de [Luis](luis-reference-regions.md#luis-website) -website en selecteert u vervolgens **ondersteuning**. Als uw Azure-abonnement ondersteunings services bevat, neemt u contact op met de [technische ondersteuning van Azure](https://azure.microsoft.com/support/options/).
 
-## <a name="entity-prediction-status-and-errors"></a>Status en fouten van de voor spelling van de entiteit
+## <a name="entity-prediction-status-and-errors"></a>Voorspellingsstatus en -fouten voor entiteiten
 
-In de LUIS-portal wordt weer gegeven wanneer de entiteit een andere voor spelling heeft dan de entiteit die u hebt geselecteerd voor een voor beeld-utterance. Deze andere score is gebaseerd op het huidige getrainde model. 
+In de LUIS-portal ziet u het volgende wanneer de entiteit een andere entiteitsvoorspelling heeft dan de entiteit die u hebt gelabeld voor een voorbeelduiting. Deze andere score is gebaseerd op het huidige getrainde model. 
 
-:::image type="content" source="./media/luis-concept-entities/portal-entity-prediction-error.png" alt-text="In de LUIS-portal wordt weer gegeven wanneer de entiteit een andere voor spelling heeft dan de entiteit die u hebt geselecteerd voor een voor beeld-utterance.":::
+:::image type="content" source="./media/luis-concept-entities/portal-entity-prediction-error.png" alt-text="In de LUIS-portal ziet u wanneer de entiteit een andere entiteitsvoorspelling heeft dan de entiteit die u hebt geselecteerd voor een voorbeelduiting":::
 
-De tekst die wordt weer gegeven, is gemarkeerd in het voor beeld utterance en de utterance-regel bevat een fout indicator aan de rechter kant, zoals in een rode drie hoek. 
+De tekst die de fout veroorzaakt, wordt gemarkeerd in de voorbeelduiting en de voorbeelduitingsregel heeft een foutindicator aan de rechterkant, weergegeven als een rode driehoek. 
 
-Gebruik deze informatie om entiteits fouten op te lossen met behulp van een of meer van de volgende:
-* De gemarkeerde tekst heeft een niet-label. Om het probleem op te lossen, te controleren, te corrigeren en opnieuw te trainen. 
-* Een [functie](luis-concept-feature.md) voor de entiteit maken om het concept van de entiteit te identificeren
-* Meer [voor beeld-uitingen](luis-concept-utterance.md) en-labels toevoegen aan de entiteit
-* [Bekijk actieve Learning-suggesties](luis-concept-review-endpoint-utterances.md) voor alle uitingen die zijn ontvangen op het Voorspellings eindpunt, waarmee u het concept van de entiteit kunt identificeren.
+Probeer een of meer van de volgende opties om entiteitsfouten op te lossen:
+
+* De gemarkeerde tekst is verkeerd gelabeld. Als u dit wilt oplossen, controleert u het label, corrigeert u het en gaat u de app opnieuw trainen. 
+* Maak een [functie](luis-concept-feature.md) voor de entiteit om het concept van de entiteit te identificeren.
+* Voeg meer [voorbeeld-utterances toe](luis-concept-utterance.md) en label met de entiteit .
+* [Bekijk actieve leersuggesties](luis-concept-review-endpoint-utterances.md) voor alle uitingen die worden ontvangen op het voorspellings-eindpunt, zodat u het concept van de entiteit kunt identificeren.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Leer concepten over goede [uitingen](luis-concept-utterance.md).
-
-Zie [entiteiten toevoegen](luis-how-to-add-entities.md) voor meer informatie over het toevoegen van entiteiten aan uw Luis-app.
-
-Zie [zelf studie: gestructureerde gegevens uit de gebruiker Utterance ophalen met machine learning-entiteiten in language Understanding (Luis)](tutorial-machine-learned-entity.md) voor meer informatie over het extra heren van gestructureerde gegevens uit een utterance met behulp van de machine learning-entiteit.
-
+* Meer informatie over goede [voorbeeld-utterances.](luis-concept-utterance.md)
+* Zie [Entiteiten toevoegen voor](luis-how-to-add-entities.md) meer informatie over het toevoegen van entiteiten aan uw LUIS-app.
+* Meer informatie over [LUIS-toepassingslimieten.](./luis-limits.md) 
+* Gebruik een [zelfstudie](tutorial-machine-learned-entity.md) om te leren hoe u gestructureerde gegevens kunt extraheren uit een utterance met behulp van de machine learning-entiteit.

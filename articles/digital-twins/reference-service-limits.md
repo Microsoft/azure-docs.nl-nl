@@ -1,33 +1,41 @@
 ---
 title: Servicelimieten
 titleSuffix: Azure Digital Twins
-description: Grafiek met de limieten van de Azure Digital Apparaatdubbels-service.
+description: Grafiek met de limieten van de Azure Digital Twins service.
 author: baanders
 ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: article
 ms.service: digital-twins
-ms.openlocfilehash: 165fa23cf3965d3017b15c27fedc2846f97d8d11
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 46f378baad51e959f8b3c074cc24e5bbdfdd95d4
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "99054396"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389601"
 ---
-# <a name="azure-digital-twins-service-limits"></a>Azure Digital Apparaatdubbels-service limieten
+# <a name="azure-digital-twins-service-limits"></a>Azure Digital Twins servicelimieten
 
-Dit zijn de service limieten van Azure Digital Apparaatdubbels.
+Dit zijn de servicelimieten van Azure Digital Twins.
 
 > [!NOTE]
-> Sommige gebieden van deze service hebben aanpas bare limieten. Dit wordt weer gegeven in de tabellen hieronder met de kolom *aanpasbaar?* . Wanneer de limiet kan worden aangepast, is de *aanpas bare?* -waarde *Ja*.
+> Sommige gebieden van deze service hebben aanpasbare limieten. Dit wordt weergegeven in de onderstaande tabellen met de *kolom Aanpasbaar?* . Wanneer de limiet kan worden aangepast, is de waarde *Aanpasbaar?* *Ja.*
 >
-> Als uw bedrijf een aanpas bare limiet of een quotum moet verhogen dat hoger is dan de standaard limiet, kunt u aanvullende resources aanvragen door [een ondersteunings ticket te openen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+> Als uw bedrijf een aanpasbare limiet of quotum boven de standaardlimiet moet verhogen, kunt u aanvullende resources aanvragen door [een ondersteuningsticket te openen.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-## <a name="limits-by-type"></a>Limieten op type
+## <a name="limits-by-type"></a>Limieten per type
 
 [!INCLUDE [Azure Digital Twins limits](../../includes/digital-twins-limits.md)]
 
+## <a name="working-with-limits"></a>Werken met limieten
+
+Wanneer een limiet is bereikt, beperkt de service extra aanvragen. Dit resulteert in een 404-foutreactie van deze aanvragen.
+
+Hier volgen enkele aanbevelingen voor het werken met limieten om dit te beheren.
+* **Logica voor opnieuw proberen gebruiken.** De [Azure Digital Twins SDK's](how-to-use-apis-sdks.md) implementeren logica voor opnieuw proberen voor mislukte aanvragen, dus als u met een opgegeven SDK werkt, is dit al ingebouwd. U kunt ook logica voor opnieuw proberen implementeren in uw eigen toepassing. De service stuurt een header terug in de foutreactie, die u kunt gebruiken om te bepalen hoe lang moet worden gewacht `Retry-After` voordat het opnieuw wordt gedaan.
+* **Gebruik drempelwaarden en meldingen om te waarschuwen over bijna-limieten.** Sommige van de servicelimieten voor Azure Digital Twins hebben bijbehorende metrische gegevens [die](troubleshoot-metrics.md) kunnen worden gebruikt om het gebruik in deze gebieden bij te houden. Zie de instructies in Problemen oplossen: Waarschuwingen instellen als u drempelwaarden wilt configureren en een waarschuwing wilt instellen voor metrische gegevens wanneer een drempelwaarde [*wordt bereikt.*](troubleshoot-alerts.md) Als u meldingen wilt instellen voor andere limieten waar geen metrische gegevens worden opgegeven, kunt u deze logica implementeren in uw eigen toepassingscode.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de huidige versie van Azure Digital Apparaatdubbels vindt u in het overzicht van de service:
-* [*Overzicht: wat is Azure Digital Apparaatdubbels?*](overview.md)
+Meer informatie over de huidige versie van Azure Digital Twins in het serviceoverzicht:
+* [*Overzicht: Wat is Azure Digital Twins?*](overview.md)

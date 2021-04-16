@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 50266e81cc149aaaa682a5edfe518109fcc61cb7
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: f9c07e10fe76eaac89b1085d3ef16f046efa0478
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106090495"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107499684"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -20,7 +20,7 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Logboekregistratie en detectie van bedreigingen |LT-4 |Logboek registratie inschakelen voor Azure-resources |[Bron Logboeken in IoT Hub moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
+|Logboekregistratie en detectie van bedreigingen |LT-4 |Logboekregistratie inschakelen voor Azure-resources |[Resourcelogboeken in IoT Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
 
 ## <a name="azure-security-benchmark-v1"></a>Azure Security Benchmark v1
 
@@ -30,25 +30,25 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Logboekregistratie en bewaking |2.3 |Auditlogboekregistratie voor Azure-resources inschakelen |[Bron Logboeken in IoT Hub moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
+|Logboekregistratie en bewaking |2.3 |Auditlogboekregistratie voor Azure-resources inschakelen |[Resourcelogboeken in IoT Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
 
-## <a name="cis-microsoft-azure-foundations-benchmark-130"></a>CIS Microsoft Azure Stichting-benchmark 1.3.0
+## <a name="cis-microsoft-azure-foundations-benchmark-130"></a>CIS Microsoft Azure Foundations Benchmark 1.3.0
 
-Zie [Azure Policy regelgevings naleving-CIS Microsoft Azure stichtings Bench Mark 1.3.0](../../../../articles/governance/policy/samples/cis-azure-1-3-0.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
+Zie [Azure Policy Regulatory Compliance - CIS Microsoft Azure Foundations Benchmark 1.3.0 (Naleving van regelgeving - CIS Microsoft Azure Foundations Benchmark 1.3.0)](../../../../articles/governance/policy/samples/cis-azure-1-3-0.md)om te zien hoe de beschikbare Azure Policy-ingebouwde Azure Policy voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
 Zie [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Logboekregistratie en bewaking |5.3 |Zorg ervoor dat Diagnostische logboeken zijn ingeschakeld voor alle services die dit ondersteunen. |[Bron Logboeken in IoT Hub moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
+|Logboekregistratie en bewaking |5.3 |Zorg ervoor dat diagnostische logboeken zijn ingeschakeld voor alle services die dit ondersteunen. |[Resourcelogboeken in IoT Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
 
-## <a name="cmmc-level-3"></a>CMMC niveau 3
+## <a name="cmmc-level-3"></a>CMMC-niveau 3
 
-Zie [Azure Policy regelgevings naleving-CMMC niveau 3](../../../../articles/governance/policy/samples/cmmc-l3.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
-Zie [Cyber beveiliging rijpheid-model certificering (CMMC)](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)voor meer informatie over deze nalevings standaard.
+Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving [- CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
+Zie Cybersecurity [Maturity Model Certification (CMMC) voor](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Controle en verantwoordelijkheid |AU. 3.048 |Verzamel controle-informatie (bijvoorbeeld Logboeken) in een of meer centrale opslag plaatsen. |[Bron Logboeken in IoT Hub moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
+|Controle en verantwoordelijkheid |AU.3.048 |Verzamel controlegegevens (bijvoorbeeld logboeken) in een of meer centrale opslagplaatsen. |[Resourcelogboeken in IoT Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
 
 ## <a name="hipaa-hitrust-92"></a>HIPAA HITRUST 9.2
 
@@ -57,5 +57,5 @@ Zie [HIPAA HITRUST 9.2](https://www.hhs.gov/hipaa/for-professionals/security/law
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Auditlogboekregistratie |1204.09aa1System.3 - 09.aa |De activiteiten van bevoegde gebruikers (beheerders, operators, enzovoort) omvatten het slagen of mislukken van de gebeurtenis, het tijdstip waarop de gebeurtenis is opgetreden, het betrokken account, de betrokken processen en aanvullende informatie over de gebeurtenis. |[Bron Logboeken in IoT Hub moeten worden ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
+|Auditlogboekregistratie |1204.09aa1System.3 - 09.aa |De activiteiten van bevoegde gebruikers (beheerders, operators, enzovoort) omvatten het slagen of mislukken van de gebeurtenis, het tijdstip waarop de gebeurtenis is opgetreden, het betrokken account, de betrokken processen en aanvullende informatie over de gebeurtenis. |[Resourcelogboeken in IoT Hub moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F383856f8-de7f-44a2-81fc-e5135b5c2aa4) |[3.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Internet%20of%20Things/IoTHub_AuditDiagnosticLog_Audit.json) |
 

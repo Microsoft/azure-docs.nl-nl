@@ -1,7 +1,7 @@
 ---
 title: Modellen implementeren in Azure Container Instances
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het implementeren van uw Azure Machine Learning-modellen als een webservice met behulp van Azure Container Instances.
+description: Leer hoe u uw Azure Machine Learning als webservice implementeert met behulp van Azure Container Instances.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,60 +11,60 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
-ms.openlocfilehash: 5bf3c92f07cc33b35a070a3479e0063a63c9e43a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1eaf58f4f951547e6e4e461803e79844f99e630a
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102522016"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107501736"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Een model implementeren op Azure Container Instances
 
-Meer informatie over het gebruik van Azure Machine Learning voor het implementeren van een model als een webservice op Azure Container Instances (ACI). Gebruik Azure Container Instances als aan een van de volgende voor waarden wordt voldaan:
+Meer informatie over het gebruik Azure Machine Learning om een model te implementeren als een webservice op Azure Container Instances (ACI). Gebruik Azure Container Instances als aan een van de volgende voorwaarden wordt voldaan:
 
-- U moet uw model snel implementeren en valideren. U hoeft geen ACI-containers vooraf te maken. Ze worden gemaakt als onderdeel van het implementatie proces.
-- U test een model dat wordt ontwikkeld. 
+- U moet uw model snel implementeren en valideren. U hoeft ACI-containers niet van tevoren te maken. Ze worden gemaakt als onderdeel van het implementatieproces.
+- U test een model dat in ontwikkeling is. 
 
-Zie [quota's en regionale Beschik baarheid voor Azure container instances](../container-instances/container-instances-quotas.md) artikel voor meer informatie over de beschik baarheid van quota en REGIO'S voor ACI.
+Zie het artikel Quota and region [availability](../container-instances/container-instances-quotas.md) for Azure Container Instances (Quota- en regiobeschikbaarheid voor ACI) voor meer informatie Azure Container Instances beschikbaarheid in regio's.
 
 > [!IMPORTANT]
-> Het wordt ten zeerste aanbevolen om lokaal fouten op te sporen voordat u de webservice implementeert, voor meer informatie. Raadpleeg [lokaal fouten opsporen](./how-to-troubleshoot-deployment-local.md)
+> Het wordt ten zeerste aangeraden om lokaal fouten op te sporen voordat u implementeert in de [webservice.](./how-to-troubleshoot-deployment-local.md) Zie Lokaal fouten opsporen voor meer informatie
 >
 > U kunt ook verwijzen naar Azure Machine Learning: [Deploy to Local Notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local) (Implementeren naar lokale notebook)
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
+- Een Azure Machine Learning-werkruimte. Zie Create [an Azure Machine Learning workspace (Een werkruimte Azure Machine Learning maken) voor meer informatie.](how-to-manage-workspace.md)
 
-- Een machine learning model dat in uw werk ruimte is geregistreerd. Als u geen geregistreerd model hebt, raadpleegt u [hoe en hoe u modellen implementeert](how-to-deploy-and-where.md).
+- Een machine learning dat is geregistreerd in uw werkruimte. Zie Modellen implementeren als u geen geregistreerd model [hebt.](how-to-deploy-and-where.md)
 
-- De [Azure cli-extensie voor machine learning service](reference-azure-machine-learning-cli.md), [Azure machine learning python SDK](/python/api/overview/azure/ml/intro)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
+- De [Azure CLI-extensie voor Machine Learning service](reference-azure-machine-learning-cli.md), Azure Machine Learning Python [SDK](/python/api/overview/azure/ml/intro)of de [Azure Machine Learning Visual Studio Code-extensie](tutorial-setup-vscode-extension.md).
 
-- In de code fragmenten van __python__ in dit artikel wordt ervan uitgegaan dat de volgende variabelen zijn ingesteld:
+- In de Python-codefragmenten in dit artikel wordt ervan uitgenomen dat de volgende variabelen zijn ingesteld: 
 
-    * `ws` -Ingesteld op uw werk ruimte.
-    * `model` -Ingesteld op uw geregistreerde model.
-    * `inference_config` -Stel in op de configuratie voor het afstellen van het model.
+    * `ws` - Stel in op uw werkruimte.
+    * `model` - Stel in op uw geregistreerde model.
+    * `inference_config` - Stel in op de deferentieconfiguratie voor het model.
 
-    Zie [hoe en wanneer u modellen wilt implementeren](how-to-deploy-and-where.md)voor meer informatie over het instellen van deze variabelen.
+    Zie Modellen implementeren voor meer informatie over het instellen [van deze variabelen.](how-to-deploy-and-where.md)
 
-- In het __cli__ -fragment in dit artikel wordt ervan uitgegaan dat u een document hebt gemaakt `inferenceconfig.json` . Zie [hoe en wanneer u modellen wilt implementeren](how-to-deploy-and-where.md)voor meer informatie over het maken van dit document.
+- In __de CLI-fragmenten__ in dit artikel wordt ervan uitgenomen dat u een document hebt `inferenceconfig.json` gemaakt. Zie How and where to deploy models (Modellen implementeren) voor meer informatie [over het maken van dit document.](how-to-deploy-and-where.md)
 
 ## <a name="limitations"></a>Beperkingen
 
-* Als Azure Container Instances in een virtueel netwerk wordt gebruikt, moet het virtuele netwerk zich in dezelfde resource groep bevinden als uw Azure Machine Learning-werk ruimte.
-* Wanneer u Azure Container Instances in het virtuele netwerk gebruikt, kan de Azure Container Registry (ACR) voor uw werk ruimte zich ook niet in het virtuele netwerk bevinden.
+* Wanneer u Azure Container Instances in een virtueel netwerk gebruikt, moet het virtuele netwerk zich in dezelfde resourcegroep als uw Azure Machine Learning werkruimte.
+* Wanneer u Azure Container Instances in het virtuele netwerk gebruikt, kan de Azure Container Registry (ACR) voor uw werkruimte zich niet ook in het virtuele netwerk.
 
-Zie voor meer informatie [beveiligings problemen beveiligen met virtuele netwerken](how-to-secure-inferencing-vnet.md#enable-azure-container-instances-aci).
+Zie De [deferencing beveiligen](how-to-secure-inferencing-vnet.md#enable-azure-container-instances-aci)met virtuele netwerken voor meer informatie.
 
 ## <a name="deploy-to-aci"></a>Implementeren naar ACI
 
-Als u een model wilt implementeren in Azure Container Instances, maakt u een __implementatie configuratie__ waarin de benodigde reken resources worden beschreven. Bijvoorbeeld het aantal kernen en het geheugen. U hebt ook een Afleidings __configuratie__ nodig, waarmee de omgeving wordt beschreven die nodig is voor het hosten van het model en de webservice. Zie [hoe en wanneer u modellen wilt implementeren](how-to-deploy-and-where.md)voor meer informatie over het maken van de configuratie voor demijnen.
+Als u een model wilt implementeren Azure Container Instances, maakt u een __implementatieconfiguratie__ die de benodigde rekenbronnen beschrijft. Bijvoorbeeld het aantal kernen en het geheugen. U hebt ook een __deferentieconfiguratie nodig,__ die de omgeving beschrijft die nodig is om het model en de webservice te hosten. Zie How and where to deploy models (Modellen implementeren) voor meer informatie over het maken van de [deference-configuratie.](how-to-deploy-and-where.md)
 
 > [!NOTE]
-> * ACI is alleen geschikt voor kleine modellen met een grootte van 1 GB. 
-> * We raden u aan om één knoop punt AKS te gebruiken voor ontwikkel-en test grotere modellen.
-> * Het aantal modellen dat moet worden geïmplementeerd, is beperkt tot 1.000 modellen per implementatie (per container). 
+> * ACI is alleen geschikt voor kleine modellen van minder dan 1 GB. 
+> * We raden u aan AKS met één knooppunt te gebruiken om grotere modellen te ontwikkelen en te testen.
+> * Het aantal modellen dat moet worden geïmplementeerd, is beperkt tot 1000 modellen per implementatie (per container). 
 
 ### <a name="using-the-sdk"></a>De SDK gebruiken
 
@@ -78,15 +78,15 @@ service.wait_for_deployment(show_output = True)
 print(service.state)
 ```
 
-Voor meer informatie over de klassen, methoden en para meters die in dit voor beeld worden gebruikt, raadpleegt u de volgende referentie documenten:
+Zie de volgende referentiedocumenten voor meer informatie over de klassen, methoden en parameters die in dit voorbeeld worden gebruikt:
 
 * [AciWebservice.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.aciwebservice#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none-)
-* [Model. implementeren](/python/api/azureml-core/azureml.core.model.model#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
+* [Model.deploy](/python/api/azureml-core/azureml.core.model.model#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
 * [Webservice.wait_for_deployment](/python/api/azureml-core/azureml.core.webservice%28class%29#wait-for-deployment-show-output-false-)
 
-### <a name="using-the-cli"></a>De CLI gebruiken
+### <a name="using-the-azure-cli"></a>Met behulp van de Azure CLI
 
-Als u wilt implementeren met behulp van de CLI, gebruikt u de volgende opdracht. Vervang door `mymodel:1` de naam en versie van het geregistreerde model. Vervang door `myservice` de naam om deze service te verlenen:
+Gebruik de volgende opdracht om te implementeren met behulp van de CLI. Vervang `mymodel:1` door de naam en versie van het geregistreerde model. Vervang `myservice` door de naam om deze service te geven:
 
 ```azurecli-interactive
 az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploymentconfig.json
@@ -94,24 +94,24 @@ az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploy
 
 [!INCLUDE [deploymentconfig](../../includes/machine-learning-service-aci-deploy-config.md)]
 
-Zie voor meer informatie de referentie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy) . 
+Zie de naslaginformatie over [az ml model deploy voor meer](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy) informatie. 
 
 ## <a name="using-vs-code"></a>VS Code gebruiken
 
-Zie [uw modellen implementeren met VS code](tutorial-train-deploy-image-classification-model-vscode.md#deploy-the-model).
+Zie [Uw modellen implementeren met VS Code.](tutorial-train-deploy-image-classification-model-vscode.md#deploy-the-model)
 
 > [!IMPORTANT]
-> U hoeft geen ACI-container te maken om vooraf te testen. ACI-containers worden zo nodig gemaakt.
+> U hoeft geen ACI-container te maken om van tevoren te testen. ACI-containers worden naar behoefte gemaakt.
 
 > [!IMPORTANT]
-> We voegen de werk ruimte-id van de hash toe aan alle onderliggende ACI-resources die worden gemaakt. alle ACI-namen van dezelfde werk ruimte hebben hetzelfde achtervoegsel. De naam van de Azure Machine Learning-service is nog steeds dezelfde klant als ' service_name ' en alle gebruikers die zijn gericht op Azure Machine Learning SDK-Api's, hoeven niets te wijzigen. We geven geen garanties met betrekking tot de namen van de onderliggende resources die worden gemaakt.
+> We hebben de id van de gehashte werkruimte aan alle onderliggende ACI-resources die worden gemaakt, alle ACI-namen uit dezelfde werkruimte hebben hetzelfde achtervoegsel. De Azure Machine Learning Service is nog steeds dezelfde klant die 'service_name' heeft opgegeven en alle gebruikers met Azure Machine Learning SDK-API's hoeven niets te wijzigen. We geven geen garanties voor de namen van de onderliggende resources die worden gemaakt.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een model implementeren met behulp van een aangepaste docker-installatie kopie](how-to-deploy-custom-docker-image.md)
-* [Problemen met implementatie oplossen](how-to-troubleshoot-deployment.md)
+* [Een model implementeren met een aangepaste Docker-afbeelding](how-to-deploy-custom-docker-image.md)
+* [Problemen met de implementatie oplossen](how-to-troubleshoot-deployment.md)
 * [De webservice bijwerken](how-to-deploy-update-web-service.md)
 * [TLS gebruiken om een webservice te beveiligen via Azure Machine Learning](how-to-secure-web-service.md)
 * [Een ML-model gebruiken dat is geïmplementeerd als een webservice](how-to-consume-web-service.md)
-* [Uw Azure Machine Learning modellen bewaken met Application Insights](how-to-enable-app-insights.md)
+* [Uw Azure Machine Learning bewaken met Application Insights](how-to-enable-app-insights.md)
 * [Gegevens verzamelen voor modellen in productie](how-to-enable-data-collection.md)

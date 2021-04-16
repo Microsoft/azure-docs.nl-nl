@@ -7,22 +7,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 03/19/2021
+ms.date: 04/09/2021
 ms.author: lajanuar
-ms.openlocfilehash: e37ff8a003bc10d69fd32794f26acfa8f5326423
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 606755333856f6dd97ab6c5158ac67f122a1237d
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107073296"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516424"
 ---
-<!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD034 -->
 > [!IMPORTANT]
 >
-> * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
+> * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder.
 
 [Referentiedocumentatie](/python/api/azure-ai-formrecognizer) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/azure/ai/formrecognizer) | [Package (PyPi)](https://pypi.org/project/azure-ai-formrecognizer/) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples)
 
@@ -30,7 +29,7 @@ ms.locfileid: "107073296"
 
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services)
 * [Python 3.x](https://www.python.org/)
-  * De python-installatie moet [PIP](https://pip.pypa.io/en/stable/)bevatten. U kunt controleren of u PIP hebt geïnstalleerd door uit te voeren `pip --version` op de opdracht regel. Ontvang PIP door de meest recente versie van python te installeren.
+  * Uw Python-installatie moet [pip bevatten.](https://pip.pypa.io/en/stable/) U kunt controleren of pip is geïnstalleerd door uit te voeren `pip --version` op de opdrachtregel. Haal pip op door de nieuwste versie van Python te installeren.
 * Een Azure Storage-blob die een set trainingsgegevens bevat. Zie [Een set met trainingsgegevens voor een aangepast model bouwen](../../build-training-data-set.md) voor tips en opties voor het samenstellen van uw set met trainingsgegevens. Voor deze quickstart kunt u de bestanden in de map **Trainen** van de [set met voorbeeldgegevens](https://go.microsoft.com/fwlink/?linkid=2090451) gebruiken (downloaden en extraheren van *sample_data.zip*).
 * Wanneer u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title="Een Form Recognizer-resource maken"  target="_blank">een Form Recognizer-resource maken </a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
   * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Form Recognizer API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
@@ -49,7 +48,7 @@ pip install azure-ai-formrecognizer --pre
 ```
 
 > [!NOTE]
-> De 3.1.0 SDK van Form Recognizer weerspiegelt _API versie 2,1 Preview. 2_. Gebruik de [**rest API**](../../quickstarts/client-library.md) voor _API versie 2,1 Preview. 3_.
+> De Form Recognizer 3.1.0b4 is de nieuwste SDK-previewversie en weerspiegelt _API-versie 2.1 preview.3._
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 
@@ -58,7 +57,7 @@ pip install azure-ai-formrecognizer
 ```
 
 > [!NOTE]
-> De 3.0.0 SDK van de formulier herkenning weerspiegelt API v 2.0
+> De Form Recognizer 3.0.0 SDK weerspiegelt API v2.0
 
 ---
 
@@ -71,19 +70,19 @@ Maak een nieuwe Python-toepassing in uw favoriete editor of IDE. Importeer vervo
 > [!TIP]
 > Wilt u het codebestand voor de quickstart in één keer weergeven? Die is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/FormRecognizerQuickstart.py), waar de codevoorbeelden uit deze quickstart zich bevinden.
 
-Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource. 
+Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_creds)]
 
 ## <a name="object-model"></a>Objectmodel
 
-Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `form_recognizer_client` wordt gebruikt om de service te vragen om formulier velden en-inhoud te herkennen. De tweede, `form_training_client` wordt gebruikt voor het maken en beheren van aangepaste modellen die u kunt gebruiken om de herkenning te verbeteren. 
+Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, , `form_recognizer_client` wordt gebruikt om een query uit te voeren op de service om formuliervelden en -inhoud te herkennen. De tweede wordt `form_training_client` gebruikt voor het maken en beheren van aangepaste modellen die u kunt gebruiken om de herkenning te verbeteren. 
 
 ### <a name="formrecognizerclient"></a>FormRecognizerClient
 
 `form_recognizer_client` biedt bewerkingen voor:
 
-* Het herkennen van formulier velden en inhoud met aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren.
+* Het herkennen van formuliervelden en -inhoud met behulp van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren.
 * Het herkennen van formulierinhoud, met inbegrip van tabellen, regels en woorden, zonder dat u een model hoeft te trainen.
 * Het herkennen van algemene velden van ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel in de Form Recognizer-service.
 
@@ -91,8 +90,8 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `for
 
 `form_training_client` biedt bewerkingen voor:
 
-* Aangepaste modellen trainen om alle velden en waarden te analyseren die in uw aangepaste formulieren worden gevonden. Raadpleeg de [servicedocumentatie over het trainen van niet-gelabelde modellen](#train-a-model-without-labels) voor een meer gedetailleerde beschrijving van het maken van een set met trainingsgegevens.
-* Aangepaste modellen trainen om specifieke velden en waarden te analyseren die u opgeeft door uw aangepaste formulieren te labelen. Raadpleeg de [servicedocumentatie over het trainen van niet-gelabelde modellen](#train-a-model-with-labels) voor een meer gedetailleerde beschrijving van het toepassen van labels op een set met trainingsgegevens.
+* Aangepaste modellen trainen om alle velden en waarden in uw aangepaste formulieren te analyseren. Raadpleeg de [servicedocumentatie over het trainen van niet-gelabelde modellen](#train-a-model-without-labels) voor een meer gedetailleerde beschrijving van het maken van een set met trainingsgegevens.
+* Aangepaste modellen trainen voor het analyseren van specifieke velden en waarden die u opgeeft door uw aangepaste formulieren te labelen. Raadpleeg de [servicedocumentatie over het trainen van niet-gelabelde modellen](#train-a-model-with-labels) voor een meer gedetailleerde beschrijving van het toepassen van labels op een set met trainingsgegevens.
 * Modellen beheren die zijn gemaakt in uw account.
 * Het kopiëren van een aangepast model van de ene Form Recognizer-resource naar de andere.
 
@@ -111,8 +110,9 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Visitekaartjes analyseren](#analyze-business-cards)
 * [Facturen analyseren](#analyze-invoices)
-* [Aangepast model trainen](#train-a-custom-model)
+* [Identiteitsdocumenten analyseren](#analyze-identity-documents)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
+* [Aangepast model trainen](#train-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
@@ -137,18 +137,19 @@ Hier gaat u twee clientobjecten verifiëren met behulp van de abonnementsvariabe
 U moet verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens.
 
 * [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
-  
+
    :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
-* Gebruik het voorbeeld formulier en de ontvangstbewijs afbeeldingen die zijn opgenomen in de onderstaande voor beelden (ook beschikbaar op [github](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms) , of u kunt de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen. 
+
+* Gebruik het voorbeeldformulier en de ontvangstbewijsafbeeldingen die zijn opgenomen in de onderstaande voorbeelden (ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms) of u kunt de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in blobopslag op te halen. 
 
 > [!NOTE]
 > De codefragmenten in deze gids gebruiken externe formulieren die worden geopend middels URL's. Als u in plaats daarvan lokale formulierdocumenten wilt verwerken, raadpleegt u de gerelateerde methoden in de [referentiedocumentatie](/python/api/azure-ai-formrecognizer) en [voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples).
 
 ## <a name="analyze-layout"></a>Indeling analyseren
 
-U kunt de formulier herkenner gebruiken voor het analyseren van tabellen, lijnen en woorden in documenten, zonder dat u een model hoeft te trainen. Zie de [conceptuele hand leiding voor lay-out](../../concept-layout.md)voor meer informatie over indelings extractie.
+U kunt Form Recognizer gebruiken om tabellen, lijnen en woorden in documenten te analyseren, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding indeling voor meer informatie over [indelingextractie.](../../concept-layout.md)
 
-Als u de inhoud van een bestand op een bepaalde URL wilt analyseren, gebruikt u de- `begin_recognize_content_from_url` methode. De geretourneerde waarde is een verzameling `FormPage`-objecten: één voor elke pagina in het ingediende document. Met de volgende code worden deze objecten doorlopen en worden de uitgepakte sleutel-/waardeparen en tabelgegevens afgedrukt.
+Als u de inhoud van een bestand op een bepaalde URL wilt analyseren, gebruikt u de `begin_recognize_content_from_url` methode . De geretourneerde waarde is een verzameling `FormPage`-objecten: één voor elke pagina in het ingediende document. Met de volgende code worden deze objecten doorlopen en worden de uitgepakte sleutel-/waardeparen en tabelgegevens afgedrukt.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_getcontent)]
 
@@ -178,16 +179,89 @@ Confidence score: 1.0
 
 ```
 
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
+
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [de ontvangstbewijsanalyse.](../../concept-receipts.md) Als u ontvangstbewijzen van een URL wilt analyseren, gebruikt u de `begin_recognize_receipts_from_url` methode .
+
+[!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_receipts)]
+
+> [!TIP]
+> U kunt ook afbeeldingen van lokale ontvangstbewijzen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_receipts`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+
+### <a name="output"></a>Uitvoer
+
+```console
+ReceiptType: Itemized has confidence 0.659
+MerchantName: Contoso Contoso has confidence 0.516
+MerchantAddress: 123 Main Street Redmond, WA 98052 has confidence 0.986
+MerchantPhoneNumber: None has confidence 0.99
+TransactionDate: 2019-06-10 has confidence 0.985
+TransactionTime: 13:59:00 has confidence 0.968
+Receipt Items:
+...Item #1
+......Name: 8GB RAM (Black) has confidence 0.916
+......TotalPrice: 999.0 has confidence 0.559
+...Item #2
+......Quantity: None has confidence 0.858
+......Name: SurfacePen has confidence 0.858
+......TotalPrice: 99.99 has confidence 0.386
+Subtotal: 1098.99 has confidence 0.964
+Tax: 104.4 has confidence 0.713
+Total: 1203.39 has confidence 0.774
+```
+
+## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
+
+#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
+
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelse visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding visitekaartjes voor meer informatie over [visitekaartjesanalyse.](../../concept-business-cards.md) 
+
+Als u visitekaartjes wilt analyseren vanuit een URL, gebruikt u de `begin_recognize_business_cards_from_url` methode .
+
+[!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_bc)]
+
+> [!TIP]
+> U kunt ook lokale visitekaartjesafbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+
+#### <a name="v20"></a>[v2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
 ## <a name="analyze-invoices"></a>Facturen analyseren
 
 #### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
 
-In deze sectie wordt beschreven hoe u algemene velden van verkoop facturen kunt analyseren en extra heren met behulp van een vooraf getraind model. Zie de [hand leiding voor factuur begrippen](../../concept-invoices.md)voor meer informatie over het analyseren van facturen. Als u facturen van een URL wilt analyseren, gebruikt u de- `begin_recognize_invoices_from_url` methode. 
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit verkoopfacturen met behulp van een vooraf getraind model. Zie de conceptuele handleiding voor facturen voor meer informatie over [factuuranalyse.](../../concept-invoices.md) 
+
+Als u facturen van een URL wilt analyseren, gebruikt u de `begin_recognize_invoices_from_url` methode .
 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_invoice)]
 
 > [!TIP]
-> U kunt ook lokale factuur afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_invoices`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale factuurafbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_invoices`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+
+#### <a name="v20"></a>[v2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
+## <a name="analyze-identity-documents"></a>Identiteitsdocumenten analyseren
+
+#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
+
+In deze sectie wordt gedemonstreerd hoe u belangrijke informatie analyseert en extraheert uit door de overheid uitgegeven identificatiedocumenten ( wereldwijd paspoorten en Licenties van Amerikaanse stuurprogramma's) met behulp van het vooraf gebouwde Form Recognizer-id-model. Zie onze conceptuele handleiding voor het vooraf gebouwde identificatiemodel voor meer informatie over [factuuranalyse.](../../concept-identification-cards.md)
+
+Als u identiteitsdocumenten wilt analyseren vanuit een URL, gebruikt u de `begin_recognize_id_documents_from_url` methode .
+
+:::code language="python" source="~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py" id="snippet_id":::
+
+> [!TIP]
+> U kunt ook afbeeldingen van identiteitsdocumentatie analyseren. _Zie_ de [FormRecognizerClient-methoden,](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python&preserve-view=true#methods) zoals `begin_recognize_id_documents` . _Zie ook de_ voorbeeldcode op [GitHub voor](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) scenario's met lokale afbeeldingen.
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 
@@ -205,12 +279,11 @@ In deze sectie ziet u hoe u een model kunt trainen met uw eigen gegevens. Met ee
 
 ### <a name="train-a-model-without-labels"></a>Een model trainen zonder labels
 
-Train aangepaste modellen om alle velden en waarden te analyseren die in uw aangepaste formulieren worden gevonden zonder hand matig labels te krijgen voor de trainings documenten.
+Train aangepaste modellen om alle velden en waarden in uw aangepaste formulieren te analyseren zonder de trainingsdocumenten handmatig te labelen.
 
-De volgende code gebruikt de training-client met de `begin_training`-functie om een model op een bepaalde set documenten te trainen. Het geretourneerde `CustomFormModel` object bevat informatie over het formulier. het model kan worden geanalyseerd en de velden die het kan extra heren uit elk formulier type. In het volgende codeblok wordt deze informatie op de console weergegeven.
+De volgende code gebruikt de training-client met de `begin_training`-functie om een model op een bepaalde set documenten te trainen. Het geretourneerde object bevat informatie over de formuliertypen die het model kan analyseren en de velden die het uit `CustomFormModel` elk formuliertype kan extraheren. In het volgende codeblok wordt deze informatie op de console weergegeven.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_train)]
-
 
 ### <a name="output"></a>Uitvoer
 
@@ -304,7 +377,6 @@ U gebruikt de methode `begin_recognize_custom_forms_from_url`. De geretourneerde
 > [!TIP]
 > U kunt ook lokale afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_custom_forms`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
-
 ### <a name="output"></a>Uitvoer
 
 Als u het model uit het vorige voorbeeld gebruikt, wordt de volgende uitvoer gegeven.
@@ -328,58 +400,10 @@ Field 'Tax' has label 'Tax' with value 'None' and a confidence score of None
 Field 'Total' has label 'Total' with value 'None' and a confidence score of None
 ```
 
-## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
-
-In deze sectie wordt beschreven hoe u algemene velden van Amerikaanse ontvangsten analyseert en extraheert met behulp van een vooraf getraind ontvangst model. Zie de [conceptuele hand leiding voor bevestigingen](../../concept-receipts.md)voor meer informatie over de ontvangst analyse. Als u de ontvangst van een URL wilt analyseren, gebruikt u de- `begin_recognize_receipts_from_url` methode. 
-
-[!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_receipts)]
-
-> [!TIP]
-> U kunt ook lokale ontvangstbewijs afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_receipts`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
-
-### <a name="output"></a>Uitvoer
-
-```console
-ReceiptType: Itemized has confidence 0.659
-MerchantName: Contoso Contoso has confidence 0.516
-MerchantAddress: 123 Main Street Redmond, WA 98052 has confidence 0.986
-MerchantPhoneNumber: None has confidence 0.99
-TransactionDate: 2019-06-10 has confidence 0.985
-TransactionTime: 13:59:00 has confidence 0.968
-Receipt Items:
-...Item #1
-......Name: 8GB RAM (Black) has confidence 0.916
-......TotalPrice: 999.0 has confidence 0.559
-...Item #2
-......Quantity: None has confidence 0.858
-......Name: SurfacePen has confidence 0.858
-......TotalPrice: 99.99 has confidence 0.386
-Subtotal: 1098.99 has confidence 0.964
-Tax: 104.4 has confidence 0.713
-Total: 1203.39 has confidence 0.774
-```
-
-## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
-
-#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
-
-In deze sectie wordt beschreven hoe u algemene velden uit de Engelse visite kaartjes analyseert en extraheert met behulp van een vooraf getraind model. Zie de [conceptuele hand leiding voor visite](../../concept-business-cards.md)kaartjes voor meer informatie over het analyseren van bedrijfs kaarten. Als u visite kaartjes wilt analyseren vanuit een URL, gebruikt u de- `begin_recognize_business_cards_from_url` methode. 
-
-[!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_bc)]
-
-> [!TIP]
-> U kunt ook lokale visite kaart afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
-
-#### <a name="v20"></a>[v2.0](#tab/ga)
-
-> [!IMPORTANT]
-> Deze functie is niet beschikbaar in de geselecteerde API-versie.
-
----
 
 ## <a name="manage-your-custom-models"></a>Uw aangepaste modellen beheren
 
-In deze sectie wordt beschreven hoe u de aangepaste modellen beheert die zijn opgeslagen in uw account. 
+In deze sectie wordt beschreven hoe u de aangepaste modellen beheert die zijn opgeslagen in uw account.
 
 ### <a name="check-the-number-of-models-in-the-formrecognizer-resource-account"></a>Het aantal modellen in het FormRecognizer-resourceaccount controleren
 

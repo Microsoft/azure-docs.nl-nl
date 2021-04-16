@@ -6,16 +6,16 @@ author: dlepow
 ms.author: apimpm
 ms.topic: tutorial
 ms.date: 12/10/2020
-ms.openlocfilehash: 0dea8e43d5f09b84c5795bc257cf3331ad919fcb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0090d981e93cee12f2feaaf7d2c12f341564f6ec
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101649543"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482327"
 ---
 # <a name="tutorial-use-the-api-management-extension-for-visual-studio-code-to-import-and-manage-apis"></a>Zelfstudie: Gebruik de API Management-extensie voor Visual Studio Code om API's te importeren en te beheren
 
-In deze zelf studie leert u hoe u de API Management-extensie voor Visual Studio code kunt gebruiken voor algemene bewerkingen in API Management. Gebruik de vertrouwde Visual Studio Code-omgeving om API's te importeren, te testen en te beheren.
+In deze zelfstudie leert u hoe u de extensie API Management voor Visual Studio Code kunt gebruiken voor algemene bewerkingen in API Management. Gebruik de vertrouwde Visual Studio Code-omgeving om API's te importeren, te testen en te beheren.
 
 In deze zelfstudie leert u procedures om het volgende te doen:
 
@@ -32,7 +32,7 @@ Raadpleeg de zelfstudies voor API Management met behulp van de [Azure-portal](im
 
 ## <a name="prerequisites"></a>Vereisten
 - Kennis van de [terminologie van Azure API Management](api-management-terminology.md)
-- Zorg ervoor dat u [Visual Studio code](https://code.visualstudio.com/) en de nieuwste [Azure API Management-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview) hebt geïnstalleerd
+- Zorg ervoor dat u Visual Studio [Code en](https://code.visualstudio.com/) de nieuwste [Azure API Management-extensie voor Visual Studio Code hebt geïnstalleerd](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview)
 - [Een API Management-exemplaar maken](vscode-create-service-instance.md)
 
 ## <a name="import-an-api"></a>Een API importeren
@@ -101,7 +101,7 @@ Als u de geïmporteerde API en de toegepaste beleidsregels wilt testen, hebt u e
 ### <a name="test-an-api-operation"></a>Een API-bewerking testen
 
 1. Vouw in het deelvenster Verkenner het knooppunt **Bewerkingen** uit onder de *demo-conference-api* die u hebt geïmporteerd.
-1. Selecteer een bewerking, zoals *GetSpeakers*.
+1. Selecteer een bewerking zoals *GetSpeakers* en klik vervolgens met de rechtermuisknop op de bewerking en **selecteer Testbewerking.**
 1. Vervang in het editorvenster, naast **Ocp-Apim-Subscription-Key**, `{{SubscriptionKey}}` door de abonnementssleutel die u hebt gekopieerd.
 1. Selecteer **Verzoek verzenden**. 
 

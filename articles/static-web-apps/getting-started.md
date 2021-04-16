@@ -7,16 +7,16 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: 335f78bba24947b1b6c3d6132bc38f237b3298b9
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: fb874c25ab688cc5e6723d1023157b8acd9478b9
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106449139"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483837"
 ---
 # <a name="quickstart-building-your-first-static-site-with-azure-static-web-apps"></a>Quickstart: Uw eerste statische site bouwen met Azure Static Web Apps
 
-Azure static Web Apps een website publiceert door apps te bouwen vanuit een code opslagplaats. In deze Quick Start implementeert u een toepassing in azure static web apps met behulp van de Visual Studio code extension.
+Azure Static Web Apps publiceert een website door apps te bouwen vanuit een codeopslagplaats. In deze quickstart implementeert u een toepassing in Azure Static Web Apps met behulp van de Visual Studio Code-extensie.
 
 Als u nog geen Azure-abonnement hebt, [maakt u een gratis proefaccount](https://azure.microsoft.com/free).
 
@@ -32,7 +32,7 @@ Als u nog geen Azure-abonnement hebt, [maakt u een gratis proefaccount](https://
 
 [!INCLUDE [clone the repository](../../includes/static-web-apps-get-started-clone-repo.md)]
 
-Open vervolgens Visual Studio code en ga naar de **map bestand > openen** om de opslag plaats te openen die u hebt gekloond naar uw computer in de editor.
+Open vervolgens Visual Studio Code en ga naar **Bestand > Map** openen om de opslagplaats te openen die u in de editor naar uw computer hebt gekloond.
 
 ## <a name="create-a-static-web-app"></a>Statische web-app maken
 
@@ -43,7 +43,7 @@ Open vervolgens Visual Studio code en ga naar de **map bestand > openen** om de 
     > [!NOTE]
     > Aanmelding bij Azure en GitHub zijn vereist. Als u zich nog niet hebt aangemeld bij Azure en GitHub via Visual Studio Code, wordt u tijdens het aanmaakproces gevraagd om u bij beide aan te melden.
 
-1. Selecteer het **plus teken** onder het label _statische web apps_ .
+1. Selecteer onder _Static Web Apps_ label het **plusteken**.
 
     :::image type="content" source="media/getting-started/extension-create-button.png" alt-text="Toepassingsnaam":::
 
@@ -53,34 +53,48 @@ Open vervolgens Visual Studio code en ga naar de **map bestand > openen** om de 
 
     :::image type="content" source="media/getting-started/extension-create-app.png" alt-text="Statische web-app maken":::
 
-1. Selecteer de voor instellingen die overeenkomen met uw toepassings type.
+1. Selecteer de voorinstellingen die overeenkomen met uw toepassingstype.
 
     # <a name="no-framework"></a>[Geen framework](#tab/vanilla-javascript)
-    :::image type="content" source="media/getting-started/extension-presets-no-framework.png" alt-text="Voor instellingen van toepassing: geen Framework":::
+    :::image type="content" source="media/getting-started/extension-presets-no-framework.png" alt-text="Toepassingsvoorinstellingen: Geen framework":::
 
-    Voer **./** als de locatie voor de toepassings bestanden
+    Voer **./ in** als de locatie voor de toepassingsbestanden.
 
-    :::image type="content" source="media/getting-started/extension-app-location.png" alt-text="Locatie van toepassings bestanden":::
+    :::image type="content" source="media/getting-started/extension-app-location.png" alt-text="Locatie van toepassingsbestanden":::
 
-    Selecteer **nu overs Laan** als locatie voor de Azure functions-API
+    Selecteer **Nu overslaan als** de locatie voor de Azure Functions API.
 
     :::image type="content" source="media/getting-started/extension-api-location.png" alt-text="API-locatie":::
 
-    Enter **./** als de uitvoer locatie van de build
+    Voer **./ in** als de uitvoerlocatie van de build.
 
-    :::image type="content" source="media/getting-started/extension-build-location.png" alt-text="Uitvoer locatie van de toepassings build":::
+    :::image type="content" source="media/getting-started/extension-build-location.png" alt-text="Uitvoerlocatie van toepassingsbouw":::
 
     # <a name="angular"></a>[Angular](#tab/angular)
 
-    :::image type="content" source="media/getting-started/extension-presets-angular.png" alt-text="Voor instellingen van toepassing: hoek":::
+    Hoewel er een Angular-voorinstelling is, selecteert u de optie Aangepast zodat u een geschikte uitvoerlocatie voor deze toepassing kunt bieden. 
+
+    :::image type="content" source="media/getting-started/extension-presets-no-framework.png" alt-text="Toepassingsvoorinstellingen: Angular":::
+
+    Voer **./ in** als de locatie voor de toepassingsbestanden.
+
+    :::image type="content" source="media/getting-started/extension-app-location.png" alt-text="Locatie van toepassingsbestanden: Angular":::
+
+    Selecteer **Nu overslaan als** de locatie voor de Azure Functions API.
+
+    :::image type="content" source="media/getting-started/extension-api-location.png" alt-text="API-locatie: Angular":::
+
+    Voer **dist/angular-basic in** als de uitvoerlocatie van de build.
+
+    :::image type="content" source="media/getting-started/extension-angular.png" alt-text="Uitvoerlocatie van toepassings build: Angular":::
 
     # <a name="react"></a>[React](#tab/react)
 
-    :::image type="content" source="media/getting-started/extension-presets-react.png" alt-text="Voor instellingen van toepassing: reageren":::
+    :::image type="content" source="media/getting-started/extension-presets-react.png" alt-text="Toepassingsvoorinstellingen: React":::
 
     # <a name="vue"></a>[Vue](#tab/vue)
 
-    :::image type="content" source="media/getting-started/extension-presets-vue.png" alt-text="Voor instellingen van toepassing: Vue":::
+    :::image type="content" source="media/getting-started/extension-presets-vue.png" alt-text="Toepassingsvoorinstellingen: Vue":::
 
     ---
 
@@ -92,13 +106,13 @@ Open vervolgens Visual Studio code en ga naar de **map bestand > openen** om de 
 
     :::image type="content" source="media/getting-started/extension-confirmation.png" alt-text="Bevestiging dat de app is gemaakt":::
 
-    Klik vervolgens op de knop **acties openen in github**. Op deze pagina wordt de bouw status van de toepassing weer gegeven.
+    Klik vervolgens op de knop **Acties openen in GitHub.** Op deze pagina ziet u de buildstatus van de toepassing.
 
     Zodra de GitHub-actie is voltooid, kunt u naar de gepubliceerde website bladeren.
 
-1. Als u de website in de browser wilt weer geven, klikt u met de rechter muisknop op het project in de extensie statische Web Apps en selecteert u **Bladeren naar site**.
+1. Als u de website in de browser wilt weergeven, klikt u met de rechtermuisknop op het project in Static Web Apps extensie en selecteert u **Bladeren door site.**
 
-    :::image type="content" source="media/getting-started/extension-browse-site.png" alt-text="Door site bladeren":::
+    :::image type="content" source="media/getting-started/extension-browse-site.png" alt-text="Bladeren door site":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

@@ -1,6 +1,6 @@
 ---
-title: Een virtuele machine maken op basis van een gegeneraliseerde installatie kopie met behulp van de Azure CLI
-description: Maak een virtuele machine op basis van een gegeneraliseerde installatie kopie versie met behulp van de Azure CLI.
+title: Een VM maken op basis van een ge generaliseerde afbeelding met behulp van de Azure CLI
+description: Maak een VM op basis van een ge generaliseerde versie van de afbeelding met behulp van de Azure CLI.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: shared-image-gallery
@@ -9,21 +9,21 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2bcaf85f61a4d8cf4d23c9c5be7f46d765d77dbb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 41c6995f16b836231142520362f9aace7d91ffe0
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102551039"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500308"
 ---
-# <a name="create-a-vm-from-a-generalized-image-version-using-the-cli"></a>Een virtuele machine maken op basis van een gegeneraliseerde installatie kopie met behulp van de CLI
+# <a name="create-a-vm-from-a-generalized-image-version-using-the-azure-cli"></a>Een VM maken op basis van een ge generaliseerde versie van de afbeelding met behulp van de Azure CLI
 
-Een virtuele machine maken op basis van een [gegeneraliseerde installatie kopie-versie](./shared-image-galleries.md#generalized-and-specialized-images) die is opgeslagen in een galerie met gedeelde afbeeldingen. Als u een virtuele machine wilt maken met behulp van een gespecialiseerde installatie kopie, raadpleegt u [een virtuele machine maken op basis van een gespecialiseerde installatie kopie](vm-specialized-image-version-powershell.md). 
+Maak een VM van een [ge generaliseerde versie van de afbeelding die](./shared-image-galleries.md#generalized-and-specialized-images) is opgeslagen in een Shared Image Gallery. Zie Create a VM from a specialized image (Een VM maken op basis van een gespecialiseerde afbeelding) als u een VM wilt maken met behulp van een [gespecialiseerde -afbeelding.](vm-specialized-image-version-powershell.md) 
 
 
-## <a name="get-the-image-id"></a>De afbeeldings-ID ophalen
+## <a name="get-the-image-id"></a>De id van de afbeelding op halen
 
-De afbeeldings definities in een galerie weer geven met behulp van [AZ sig Image List-definitie lijst](/cli/azure/sig/image-definition#az-sig-image-definition-list) om de naam en id van de definities weer te geven.
+Gebruik az [sig image-definition list](/cli/azure/sig/image-definition#az-sig-image-definition-list) om de naam en id van de definities weer te geven in een galerie.
 
 ```azurecli-interactive 
 resourceGroup=myGalleryRG
@@ -33,7 +33,7 @@ az sig image-definition list --resource-group $resourceGroup --gallery-name $gal
 
 ## <a name="create-the-vm"></a>De VM maken
 
-Maak een VM met [az vm create](/cli/azure/vm#az-vm-create). Als u de meest recente versie van de installatie kopie wilt gebruiken, stelt `--image` u de id van de definitie van de installatie kopie in. 
+Maak een VM met [az vm create](/cli/azure/vm#az-vm-create). Als u de nieuwste versie van de afbeelding wilt gebruiken, stelt u `--image` in op de id van de definitie van de afbeelding. 
 
 Vervang resourcenamen naar behoefte in dit voorbeeld. 
 
@@ -55,8 +55,8 @@ az vm create\
    --generate-ssh-keys
 ```
 
-U kunt ook een specifieke versie gebruiken met de versie-ID van de installatie kopie voor de `--image` para meter. Als u bijvoorbeeld de afbeeldings versie *1.0.0* type: wilt gebruiken `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"` .
+U kunt ook een specifieke versie gebruiken met behulp van de versie-id van de afbeelding voor de `--image` parameter . Als u bijvoorbeeld versie *1.0.0* van de afbeelding wilt gebruiken, typt u: `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"` .
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Met [Azure Image Builder (preview)](./image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md).
+[Azure Image Builder (preview)](./image-builder-overview.md) kan helpen bij het automatiseren van het maken van de versie van de afbeelding. U kunt deze zelfs gebruiken om een nieuwe versie van de afbeelding bij te werken en te maken van een [bestaande versie van de afbeelding.](./linux/image-builder-gallery-update-image-version.md)

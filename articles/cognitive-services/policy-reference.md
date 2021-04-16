@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Cognitive Services
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Cognitive Services. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 author: nitinme
 ms.author: nitinme
 ms.service: cognitive-services
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 82d3469a33228a0ce4dda4d4d31e649aa2969e15
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: bf97c37f370b0250203757c37928be38e51175d7
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106093590"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500976"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-cognitive-services"></a>Ingebouwde Azure Policy-beleidsdefinities voor Azure Cognitive Services
 

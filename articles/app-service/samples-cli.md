@@ -5,13 +5,13 @@ tags: azure-service-management
 ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
 ms.topic: sample
 ms.date: 07/07/2020
-ms.custom: mvc
-ms.openlocfilehash: 61ce290f8ed5e8ad919a253d426d3278233caa3f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: mvc, devx-track-azurecli
+ms.openlocfilehash: 51cdd470c9ae970d5945f8d5399cea67a44037f0
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98747287"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483381"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>CLI-voorbeelden voor Azure App Service
 
@@ -40,8 +40,8 @@ De volgende tabel bevat koppelingen naar bash-scripts die zijn gebouwd met behul
 | [Een app verbinden met een opslagaccount](./scripts/cli-connect-to-storage.md?toc=%2fcli%2fazure%2ftoc.json)| Hiermee maakt u een App Service-app en een opslagaccount, waarna u de verbindingsreeks van de opslag toevoegt aan de app-instellingen. |
 | [Een app verbinden met Azure Cache voor Redis](./scripts/cli-connect-to-redis.md?toc=%2fcli%2fazure%2ftoc.json) | Hiermee maakt u een App Service-app en een Azure Cache voor Redis en voegt u de details van de redis-verbinding toe aan de app-instellingen. |
 | [Een app verbinden met Cosmos DB](./scripts/cli-connect-to-documentdb.md?toc=%2fcli%2fazure%2ftoc.json) | Hiermee maakt u een App Service-app en een Cosmos DB en voegt u de details van de Cosmos DB-verbinding toe aan de app-instellingen. |
-|**App voor back-up en herstel**||
-| [Back-up maken van een app](./scripts/cli-backup-onetime.md?toc=%2fcli%2fazure%2ftoc.json) | Hiermee maakt u een App Service-app en maakt u er een eenmalige back-up van. |
+|**Back-up en herstel van app**||
+| [Een back-up maken van een app](./scripts/cli-backup-onetime.md?toc=%2fcli%2fazure%2ftoc.json) | Hiermee maakt u een App Service-app en maakt u er een eenmalige back-up van. |
 | [Een geplande back-up maken voor een app](./scripts/cli-backup-scheduled.md?toc=%2fcli%2fazure%2ftoc.json) | Hiermee maakt u een App Service-app en stelt u een geplande back-up in voor de app. |
 | [Een app terugzetten vanuit een back-up](./scripts/cli-backup-restore.md?toc=%2fcli%2fazure%2ftoc.json) | Hiermee zet u een App Service-app terug vanuit een back-up. |
 |**App controleren**||

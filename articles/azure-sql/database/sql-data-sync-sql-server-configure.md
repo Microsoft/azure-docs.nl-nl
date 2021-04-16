@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: 6b7ead2e54889327bfbea188ad464012c3861556
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 75de7b122bff75ea13e3b66bb0b79452142dc36c
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105968608"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500087"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-databases-in-azure-sql-database-and-sql-server"></a>Zelfstudie: SQL Data Sync instellen tussen databases in Azure SQL Database en SQL Server
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -64,7 +64,7 @@ Zie [Synchroniseren tussen databases in SQL Database](scripts/sql-data-sync-sync
    | **Private Link gebruiken** | Kies een door de service beheerd privé-eindpunt om een beveiligde verbinding tot stand te brengen tussen de synchronisatieservice en de hub-database. |
 
    > [!NOTE]
-   > U wordt aangeraden een nieuwe, lege database te maken die als **Database met metagegevens van synchronisatie** wordt gebruikt. Met Data Sync worden tabellen in deze database gemaakt en een regelmatige workload uitgevoerd. Deze database wordt gedeeld als de **Database met metagegevens van synchronisatie** voor alle synchronisatiegroepen in een geselecteerde regio en een geselecteerd abonnement. U kunt de database of de naam ervan niet wijzigen zonder alle synchronisatiegroepen en synchronisatieagents in de regio te verwijderen. Daarnaast kan een Elastic Jobs-data base niet worden gebruikt als de SQL Data Sync meta gegevens database en andersom.  
+   > U wordt aangeraden een nieuwe, lege database te maken die als **Database met metagegevens van synchronisatie** wordt gebruikt. Met Data Sync worden tabellen in deze database gemaakt en een regelmatige workload uitgevoerd. Deze database wordt gedeeld als de **Database met metagegevens van synchronisatie** voor alle synchronisatiegroepen in een geselecteerde regio en een geselecteerd abonnement. U kunt de database of de naam ervan niet wijzigen zonder alle synchronisatiegroepen en synchronisatieagents in de regio te verwijderen. Daarnaast kan een database voor elastische taken niet worden gebruikt als de SQL Data Sync metagegevensdatabase en vice versa.  
 
    Selecteer **OK** en wacht tot de synchronisatiegroep is gemaakt en geïmplementeerd.
    
@@ -236,6 +236,11 @@ Zie [Veelgestelde vragen over agents](sql-data-sync-agent-overview.md#agent-faq)
 **Moet de koppeling naar het privé-eindpunt handmatig worden goedgekeurd voordat ik deze kan gaan gebruiken?**
 
 Ja, u moet het door de service beheerde privé-eindpunt handmatig goedkeuren op de pagina Verbindingen met privé-eindpunten van Azure Portal tijdens de implementatie van de synchronisatiegroep of met behulp van PowerShell.
+
+**Waarom krijg ik een firewallfout wanneer de synchronisatie-taak mijn Azure-database inrichten?**
+
+Dit kan gebeuren omdat Azure-resources geen toegang hebben tot uw server. Zorg ervoor dat voor de firewall in de Azure-database de instelling 'Azure-services en -resources toegang tot deze server toestaan' is ingesteld op Ja.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

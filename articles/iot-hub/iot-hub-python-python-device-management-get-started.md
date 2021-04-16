@@ -1,6 +1,6 @@
 ---
-title: Aan de slag met Azure IoT Hub Device Management (python) | Microsoft Docs
-description: IoT Hub Apparaatbeheer gebruiken om het opnieuw opstarten van een extern apparaat te initiëren. U gebruikt de Azure IoT SDK voor python voor het implementeren van een gesimuleerde apparaat-app die een directe methode en een service-app bevat die de directe methode aanroept.
+title: Aan de slag met Azure IoT Hub -apparaatbeheer (Python) | Microsoft Docs
+description: Het gebruik van IoT Hub om het opnieuw opstarten van een extern apparaat te starten. U gebruikt de Azure IoT SDK voor Python om een gesimuleerde apparaat-app te implementeren die een directe methode en een service-app bevat die de directe methode aanroept.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -8,31 +8,31 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: robinsh
-ms.custom: mqtt, devx-track-python
-ms.openlocfilehash: d4c514042b89341b90b0bb9c939ef4b463741916
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: mqtt, devx-track-python, devx-track-azurecli
+ms.openlocfilehash: c07d26715aff2c8dd5e00a7d7adbb548adf00a28
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87872715"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482497"
 ---
-# <a name="get-started-with-device-management-python"></a>Aan de slag met Apparaatbeheer (python)
+# <a name="get-started-with-device-management-python"></a>Aan de slag met apparaatbeheer (Python)
 
 [!INCLUDE [iot-hub-selector-dm-getstarted](../../includes/iot-hub-selector-dm-getstarted.md)]
 
 In deze zelfstudie ontdekt u hoe u:
 
-* Gebruik de Azure Portal voor het maken van een IoT Hub en het maken van een apparaat-id in uw IoT-hub.
+* Gebruik de Azure Portal om een IoT Hub en maak een apparaat-id in uw IoT-hub.
 
-* Maak een gesimuleerde apparaat-app die een directe methode bevat waarmee dat apparaat opnieuw wordt opgestart. Directe methoden worden vanuit de Cloud aangeroepen.
+* Maak een gesimuleerde apparaat-app die een directe methode bevat waarmee dat apparaat opnieuw wordt opgestart. Directe methoden worden aangeroepen vanuit de cloud.
 
-* Maak een python-console-app die de directe methode voor opnieuw opstarten aanroept in de gesimuleerde apparaat-app via uw IoT-hub.
+* Maak een Python-console-app die de directe methode voor opnieuw opstarten aanroept in de gesimuleerde apparaat-app via uw IoT-hub.
 
-Aan het einde van deze zelf studie hebt u twee python-console-apps:
+Aan het einde van deze zelfstudie hebt u twee Python-console-apps:
 
-* **dmpatterns_getstarted_device. py**, dat verbinding maakt met uw IOT-hub met de apparaat-id die u eerder hebt gemaakt, ontvangt een directe methode voor opnieuw opstarten, simuleert fysieke opnieuw opstarten en rapporteert de tijd voor de laatste keer opnieuw opstarten.
+* **dmpatterns_getstarted_device.py,** dat verbinding maakt met uw IoT-hub met de apparaat-id die u eerder hebt gemaakt, een directe methode voor opnieuw opstarten ontvangt, een fysieke herstart simuleert en de tijd rapporteert voor de laatste keer opnieuw opstarten.
 
-* **dmpatterns_getstarted_service. py**, waarmee een directe methode wordt aangeroepen in de gesimuleerde apparaat-app, het antwoord wordt weer gegeven en de bijgewerkte gerapporteerde eigenschappen worden weer gegeven.
+* **dmpatterns_getstarted_service.py,** waarmee een directe methode wordt aanroept in de gesimuleerde apparaat-app, het antwoord wordt weergegeven en de bijgewerkte gerapporteerde eigenschappen worden weergegeven.
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
@@ -40,7 +40,7 @@ Aan het einde van deze zelf studie hebt u twee python-console-apps:
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-v2-installation-notes.md)]
 
-* Zorg ervoor dat de poort 8883 is geopend in de firewall. Het voor beeld van het apparaat in dit artikel maakt gebruik van het MQTT-protocol, dat communiceert via poort 8883. Deze poort is in sommige netwerkomgevingen van bedrijven en onderwijsinstellingen mogelijk geblokkeerd. Zie [Verbinding maken met IoT Hub (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub) voor meer informatie en manieren om dit probleem te omzeilen.
+* Zorg ervoor dat de poort 8883 is geopend in de firewall. In het apparaatvoorbeeld in dit artikel wordt het MQTT-protocol gebruikt, dat communiceert via poort 8883. Deze poort is in sommige netwerkomgevingen van bedrijven en onderwijsinstellingen mogelijk geblokkeerd. Zie [Verbinding maken met IoT Hub (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub) voor meer informatie en manieren om dit probleem te omzeilen.
 
 ## <a name="create-an-iot-hub"></a>Een IoT Hub maken
 
@@ -54,21 +54,21 @@ Aan het einde van deze zelf studie hebt u twee python-console-apps:
 
 In deze sectie doet u het volgende:
 
-* Een python-console-app maken die reageert op een directe methode die wordt aangeroepen door de Cloud
+* Een Python-console-app maken die reageert op een directe methode met de naam door de cloud
 
 * Opnieuw opstarten van een apparaat simuleren
 
-* Gebruik de gerapporteerde eigenschappen om Device-dubbele query's in te scha kelen om apparaten te identificeren en wanneer deze voor het laatst opnieuw zijn opgestart
+* Gebruik de gerapporteerde eigenschappen om query's voor apparaat dubbels in te stellen om apparaten te identificeren en wanneer ze voor het laatst opnieuw zijn opgestart
 
-1. Voer bij de opdracht prompt de volgende opdracht uit om het **Azure-IOT-Device-** pakket te installeren:
+1. Voer bij de opdrachtprompt de volgende opdracht uit om het **pakket azure-iot-device te** installeren:
 
     ```cmd/sh
     pip install azure-iot-device
     ```
 
-2. Maak met behulp van een tekst editor een bestand met de naam **dmpatterns_getstarted_device. py** in uw werkmap.
+2. Maak met een teksteditor een bestand met de **naam dmpatterns_getstarted_device.py** in uw werkmap.
 
-3. Voeg de volgende- `import` instructies toe aan het begin van het bestand **dmpatterns_getstarted_device. py** .
+3. Voeg de volgende `import` -instructies toe aan het begin **van dmpatterns_getstarted_device.py-bestand.**
 
     ```python
     import threading
@@ -77,13 +77,13 @@ In deze sectie doet u het volgende:
     from azure.iot.device import IoTHubDeviceClient, MethodResponse
     ```
 
-4. Voeg de variabele **CONNECTION_STRING** toe. Vervang de `{deviceConnectionString}` waarde van de tijdelijke aanduiding door de Connection String van uw apparaat. U hebt dit connection string eerder in [de IOT-hub van een nieuw apparaat geregistreerd](#register-a-new-device-in-the-iot-hub).  
+4. Voeg de **CONNECTION_STRING** toe. Vervang de `{deviceConnectionString}` waarde van de tijdelijke aanduiding door de connection string. U hebt deze connection string gekopieerd in [Een nieuw apparaat registreren in de IoT-hub](#register-a-new-device-in-the-iot-hub).  
 
     ```python
     CONNECTION_STRING = "{deviceConnectionString}"
     ```
 
-5. Voeg de volgende functie-call backs toe om de directe methode op het apparaat te implementeren.
+5. Voeg de volgende functie-callbacks toe om de directe methode op het apparaat te implementeren.
 
     ```python
     def reboot_listener(client):
@@ -109,7 +109,7 @@ In deze sectie doet u het volgende:
             client.send_method_response(method_response)
     ```
 
-6. Start de listener voor directe methoden en wacht.
+6. Start de directe methodelistener en wacht.
 
     ```python
     def iothub_client_init():
@@ -138,30 +138,30 @@ In deze sectie doet u het volgende:
         iothub_client_sample_run()
     ```
 
-7. Sla het bestand **dmpatterns_getstarted_device. py** op en sluit het.
+7. Sla het bestand **dmpatterns_getstarted_device.py op en** sluit het.
 
 > [!NOTE]
-> Om de zaken niet nodeloos ingewikkeld te maken, is in deze handleiding geen beleid voor opnieuw proberen geïmplementeerd. In productie code moet u beleid voor opnieuw proberen implementeren (zoals een exponentiële uitstel), zoals wordt voorgesteld in het artikel, [tijdelijke fout afhandeling](/azure/architecture/best-practices/transient-faults).
+> Om de zaken niet nodeloos ingewikkeld te maken, is in deze handleiding geen beleid voor opnieuw proberen geïmplementeerd. In productiecode moet u beleidsregels voor opnieuw proberen implementeren (zoals exponentieel uitvalt), zoals wordt voorgesteld in het artikel Transient Fault Handling ( [Afhandeling van tijdelijke fouten).](/azure/architecture/best-practices/transient-faults)
 
-## <a name="get-the-iot-hub-connection-string"></a>De IoT hub-connection string ophalen
+## <a name="get-the-iot-hub-connection-string"></a>De IoT Hub-connection string
 
 [!INCLUDE [iot-hub-howto-device-management-shared-access-policy-text](../../includes/iot-hub-howto-device-management-shared-access-policy-text.md)]
 
 [!INCLUDE [iot-hub-include-find-service-connection-string](../../includes/iot-hub-include-find-service-connection-string.md)]
 
-## <a name="trigger-a-remote-reboot-on-the-device-using-a-direct-method"></a>Een externe keer opnieuw opstarten op het apparaat activeren met behulp van een directe methode
+## <a name="trigger-a-remote-reboot-on-the-device-using-a-direct-method"></a>Een externe herstart op het apparaat activeren met behulp van een directe methode
 
-In deze sectie maakt u een python-console-app die extern opnieuw opstarten op een apparaat initieert via een directe methode. De app maakt gebruik van Device-dubbele query's om de tijd van de laatste keer opnieuw opstarten voor dat apparaat te detecteren.
+In deze sectie maakt u een Python-console-app die extern opnieuw opstarten op een apparaat start met behulp van een directe methode. De app maakt gebruik van query's voor apparaattwee om de laatste keer dat het apparaat opnieuw wordt opgestart te achterhalen.
 
-1. Voer bij de opdracht prompt de volgende opdracht uit om het **Azure-IOT-hub-** pakket te installeren:
+1. Voer bij de opdrachtprompt de volgende opdracht uit om het **pakket azure-iot-hub te** installeren:
 
     ```cmd/sh
     pip install azure-iot-hub
     ```
 
-2. Maak met behulp van een tekst editor een bestand met de naam **dmpatterns_getstarted_service. py** in uw werkmap.
+2. Maak met behulp van een teksteditor een **bestand dmpatterns_getstarted_service.py** in uw werkmap.
 
-3. Voeg de volgende- `import` instructies toe aan het begin van het bestand **dmpatterns_getstarted_service. py** .
+3. Voeg de volgende `import` -instructies toe aan het begin van **dmpatterns_getstarted_service.py-bestand.**
 
     ```python
     import sys, time
@@ -170,7 +170,7 @@ In deze sectie maakt u een python-console-app die extern opnieuw opstarten op ee
     from azure.iot.hub.models import CloudToDeviceMethod, CloudToDeviceMethodResult, Twin
     ```
 
-4. Voeg de volgende variabelen declaraties toe. Vervang de `{IoTHubConnectionString}` waarde van de tijdelijke aanduiding door de IOT hub-Connection String die u eerder hebt gekopieerd in [de IOT hub-Connection String ophalen](#get-the-iot-hub-connection-string). Vervang de `{deviceId}` waarde van de tijdelijke aanduiding door de apparaat-id die u hebt geregistreerd in [Registreer een nieuw apparaat in de IOT-hub](#register-a-new-device-in-the-iot-hub).
+4. Voeg de volgende variabeledeclaraties toe. Vervang de waarde van de tijdelijke aanduiding door de IoT-hub connection string u eerder hebt gekopieerd in De `{IoTHubConnectionString}` [IoT-hub connection string.](#get-the-iot-hub-connection-string) Vervang de `{deviceId}` waarde van de tijdelijke aanduiding door de apparaat-id die u hebt geregistreerd in Een nieuw apparaat registreren in de [IoT-hub](#register-a-new-device-in-the-iot-hub).
 
     ```python
     CONNECTION_STRING = "{IoTHubConnectionString}"
@@ -182,7 +182,7 @@ In deze sectie maakt u een python-console-app die extern opnieuw opstarten op ee
     WAIT_COUNT = 10
     ```
 
-5. Voeg de volgende functie toe om de methode van het apparaat aan te roepen om het doel apparaat opnieuw op te starten en zoek vervolgens naar het apparaat apparaatdubbels en ontvang de laatste keer opnieuw opstarten.
+5. Voeg de volgende functie toe om de apparaatmethode aan te roepen om het doelapparaat opnieuw op te starten, zoek vervolgens naar de apparaattweeling en haal de laatste keer dat het apparaat opnieuw wordt opgestart op.
 
     ```python
     def iothub_devicemethod_sample_run():
@@ -235,32 +235,32 @@ In deze sectie maakt u een python-console-app die extern opnieuw opstarten op ee
         iothub_devicemethod_sample_run()
     ```
 
-6. Sla het bestand **dmpatterns_getstarted_service. py** op en sluit het.
+6. Sla het bestand **dmpatterns_getstarted_service.py op en** sluit het.
 
 ## <a name="run-the-apps"></a>De apps uitvoeren
 
 U bent nu klaar om de apps uit te voeren.
 
-1. Voer bij de opdracht prompt de volgende opdracht uit om te beginnen met Luis teren naar de methode voor direct opnieuw opstarten.
+1. Voer bij de opdrachtprompt de volgende opdracht uit om te luisteren naar de directe methode voor opnieuw opstarten.
 
     ```cmd/sh
     python dmpatterns_getstarted_device.py
     ```
 
-2. Voer bij een andere opdracht prompt de volgende opdracht uit om het apparaat op afstand opnieuw op te starten en de query uit te voeren op de tijd van de laatste keer opnieuw opstarten.
+2. Voer bij een andere opdrachtprompt de volgende opdracht uit om het extern opnieuw opstarten te activeren en voer een query uit voor de apparaat dubbel om de laatste keer opnieuw op te starten.
 
     ```cmd/sh
     python dmpatterns_getstarted_service.py
     ```
 
-3. U ziet de reactie van het apparaat op de directe methode in de-console.
+3. U ziet de reactie van het apparaat op de directe methode in de console.
 
    Hieronder ziet u de reactie van het apparaat op de directe methode voor opnieuw opstarten:
 
    ![Uitvoer van gesimuleerde apparaat-app](./media/iot-hub-python-python-device-management-get-started/device.png)
 
-   Hieronder ziet u de service die de directe methode voor opnieuw opstarten aanroept en het apparaat navraagt naar de status:
+   Hieronder ziet u de service die de directe methode voor opnieuw opstarten aanroept en de apparaattweeling peilt op status:
 
-   ![Uitvoer van start service activeren](./media/iot-hub-python-python-device-management-get-started/service.png)
+   ![Service-uitvoer voor opnieuw opstarten activeren](./media/iot-hub-python-python-device-management-get-started/service.png)
 
 [!INCLUDE [iot-hub-dm-followup](../../includes/iot-hub-dm-followup.md)]

@@ -6,13 +6,13 @@ ms.author: weetok
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 12/09/2020
-ms.openlocfilehash: fa424f7e1f5e1f885dd433b8abc8aae1dc1bc206
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/14/2021
+ms.openlocfilehash: d3924c38f760a9698735a2757bdad2af5beb0e24
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97006154"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107518731"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Gegevensintegratie met behulp van Azure Data Factory en Azure Data Share
 
@@ -64,12 +64,9 @@ Met gekoppelde services van Azure Data Factory wordt de verbindingsinformatie na
 
 ### <a name="create-an-azure-sql-database-linked-service"></a>Een gekoppelde Azure SQL Database-service maken
 
-1. Op de ontwerppagina kunt u data factory-resources maken, zoals pijplijnen, gegevenssets, gegevensstromen, triggers en gekoppelde services. Als u een gekoppelde service wilt maken, klikt u op de knop **Verbindingen** in de rechterbenedenhoek.
+1. Als u een gekoppelde service wilt maken, selecteert  u Hub beheren in de linkerzijbalk, selecteert u in het deelvenster Verbindingen gekoppelde **services** en selecteert u vervolgens **Nieuw** om een nieuwe gekoppelde service toe te voegen. 
 
     ![Portal configureren 2](media/lab-data-flow-data-share/configure2.png)
-1. Klik op het tabblad verbindingen op **Nieuw** om een nieuwe gekoppelde service toe te voegen.
-
-    ![Portal configureren 3](media/lab-data-flow-data-share/configure3.png)
 1. De eerste gekoppelde service die u configureert, is een Azure SQL-database. U kunt de zoekbalk gebruiken om de lijst met gegevensarchieven te filteren. Klik op de tegel **Azure SQL Database** en klik op doorgaan.
 
     ![Portal configureren 4](media/lab-data-flow-data-share/configure-4.png)
@@ -99,9 +96,11 @@ Met gekoppelde services van Azure Data Factory wordt de verbindingsinformatie na
 
 In het gedeelte *Gegevens transformeren met behulp van toewijzingsgegevensstroom* gaat uw toewijzingsgegevensstromen bouwen. Een best practice voordat u toewijzingsgegevensstromen bouwt, is het inschakelen van de foutopsporingsmodus, waarmee u de transformatielogica in een paar seconden kunt testen op een actief Spark-cluster.
 
-Als u foutopsporing wilt inschakelen, klikt u op de schuifregelaar **Foutopsporing gegevensstroom** in de bovenste balk van de factory. Klik op OK als het bevestigingsvenster wordt weergegeven. Het duurt ongeveer 5-7 minuten om het cluster op te starten. Ga door met *Gegevens opnemen vanuit Azure SQL DB in ADLS Gen2 met behulp van de kopieeractiviteit* tijdens de initialisatie.
+Als u fouten wilt  opsporen, klikt u op de schuifregelaar Gegevensstroom voor foutopsporing in de bovenste balk van het canvas van de gegevensstroom of op het pijplijn-canvas wanneer u **gegevensstroomactiviteiten** hebt. Klik op OK als het bevestigingsvenster wordt weergegeven. Het duurt ongeveer 5-7 minuten om het cluster op te starten. Ga door met *Gegevens opnemen vanuit Azure SQL DB in ADLS Gen2 met behulp van de kopieeractiviteit* tijdens de initialisatie.
 
 ![Portal configureren 10](media/lab-data-flow-data-share/configure10.png)
+
+![Portal configureren 11](media/lab-data-flow-data-share/configure11.png)
 
 ## <a name="ingest-data-using-the-copy-activity"></a>Gegevens opnemen met behulp van de kopieeractiviteit
 

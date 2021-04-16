@@ -1,60 +1,60 @@
 ---
-title: 'Zelf studie: configuraties implementeren met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster'
-description: In deze zelf studie wordt gedemonstreerd hoe u configuraties toepast op een Azure Arc enabled Kubernetes-cluster. Zie het artikel configuraties en GitOps-Azure-Arc Kubernetes voor een conceptueel overzicht van dit proces.
+title: 'Zelfstudie: Configuraties implementeren met GitOps op een Azure Arc Kubernetes-cluster'
+description: In deze zelfstudie wordt gedemonstreerd hoe u configuraties op een Azure Arc Kubernetes-cluster kunt toepassen. Zie het artikel Configurations and GitOps - Azure Arc enabled Kubernetes (Configuraties en GitOps - kubernetes met ingeschakelde Kubernetes) voor een conceptuele versie van dit proces.
 author: shashankbarsin
 ms.author: shasb
 ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/02/2021
-ms.custom: template-tutorial
-ms.openlocfilehash: ec83d8d56ad67d8c64c6ac3151ca3819e88c0616
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.custom: template-tutorial , devx-track-azurecli
+ms.openlocfilehash: 0f1172ffa0d29734e7ec005bf2812eeca215aa0d
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106449593"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484163"
 ---
-# <a name="tutorial-deploy-configurations-using-gitops-on-an-azure-arc-enabled-kubernetes-cluster"></a>Zelf studie: configuraties implementeren met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster 
+# <a name="tutorial-deploy-configurations-using-gitops-on-an-azure-arc-enabled-kubernetes-cluster"></a>Zelfstudie: Configuraties implementeren met GitOps op een Azure Arc Kubernetes-cluster 
 
-In deze zelf studie past u configuraties toe met behulp van GitOps op een Azure Arc enabled Kubernetes-cluster. U leert het volgende:
+In deze zelfstudie gaat u configuraties toepassen met behulp van GitOps op een kubernetes-cluster Azure Arc kubernetes-cluster. U leert het volgende:
 
 > [!div class="checklist"]
-> * Een configuratie maken op een Azure Arc enabled Kubernetes-cluster met behulp van een voor beeld van een Git-opslag plaats.
+> * Maak een configuratie op een kubernetes Azure Arc cluster met een voorbeeld van een Git-opslagplaats.
 > * Controleer of de configuratie is gemaakt.
-> * Configuratie Toep assen vanuit een persoonlijke Git-opslag plaats.
+> * Pas configuratie toe vanuit een persoonlijke Git-opslagplaats.
 > * Valideer de Kubernetes-configuratie.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Er is een bestaand Kubernetes-verbonden Azure-Arc-cluster ingeschakeld.
-    - Als u nog geen cluster hebt verbonden, doorloopt u [de Snelstartgids een Azure Arc enabled Kubernetes-cluster maken](quickstart-connect-cluster.md).
-- Een goed idee van de voor delen en architectuur van deze functie. Meer informatie vindt u in [configuraties en GitOps-Azure Arc enabled Kubernetes-artikel](conceptual-configurations.md).
-- Installeer de `k8s-configuration` Azure cli-extensie van versie >= 1.0.0:
+- Een bestaand Azure Arc verbonden Kubernetes-cluster.
+    - Als u nog geen cluster hebt verbonden, doorloop dan onze quickstart Connect [an Azure Arc enabled Kubernetes cluster (Een kubernetes-cluster verbinden).](quickstart-connect-cluster.md)
+- Kennis van de voordelen en architectuur van deze functie. Lees meer in [het artikel Configuraties en GitOps - Azure Arc Kubernetes ingeschakeld.](conceptual-configurations.md)
+- Installeer de `k8s-configuration` Azure CLI-extensie van versie >= 1.0.0:
   
   ```azurecli
   az extension add --name k8s-configuration
   ```
 
     >[!TIP]
-    > Als de `k8s-configuration` uitbrei ding al is geïnstalleerd, kunt u deze bijwerken naar de nieuwste versie met behulp van de volgende opdracht: `az extension update --name k8s-configuration`
+    > Als de `k8s-configuration` extensie al is geïnstalleerd, kunt u deze bijwerken naar de nieuwste versie met behulp van de volgende opdracht: `az extension update --name k8s-configuration`
 
 ## <a name="create-a-configuration"></a>Een configuratie maken
 
-De [voor beeld-opslag plaats](https://github.com/Azure/arc-k8s-demo) die in dit artikel wordt gebruikt, is gestructureerd rond de persoon van een cluster operator. In de manifesten in deze opslag plaats worden enkele naam ruimten ingericht, worden werk belastingen geïmplementeerd en wordt een bepaalde specifieke configuratie voor het team geboden. Door deze opslag plaats met GitOps te gebruiken, maakt u de volgende resources op het cluster:
+De [voorbeeldopslagplaats](https://github.com/Azure/arc-k8s-demo) die in dit artikel wordt gebruikt, is gestructureerd rond de persona van een clusteroperator. De manifesten in deze opslagplaats bieden enkele naamruimten, implementeren workloads en bieden een teamspecifieke configuratie. Als u deze opslagplaats gebruikt met GitOps, worden de volgende resources in uw cluster gemaakt:
 
-* Naam ruimten: `cluster-config` , `team-a` , `team-b`
-* Inhoudsdistributiepad `cluster-config/azure-vote`
+* Naamruimten: `cluster-config` , `team-a` , `team-b`
+* Implementatie: `cluster-config/azure-vote`
 * ConfigMap: `team-a/endpoints`
 
-De `config-agent` pollt Azure voor nieuwe of bijgewerkte configuraties. Het duurt Maxi maal 30 seconden voordat deze taak is uitgevoerd.
+De `config-agent` pollt Azure naar nieuwe of bijgewerkte configuraties. Deze taak duurt maximaal 30 seconden.
 
-Als u een persoonlijke opslag plaats koppelt aan de configuratie, voert u de onderstaande stappen uit in [configuratie Toep assen vanuit een privé Git-opslag plaats](#apply-configuration-from-a-private-git-repository).
+Als u een privéopslagplaats aan de configuratie wilt koppelen, voltooit u de onderstaande stappen in [Configuratie toepassen vanuit een persoonlijke Git-opslagplaats.](#apply-configuration-from-a-private-git-repository)
 
 ## <a name="use-azure-cli"></a>Azure CLI gebruiken
-Gebruik de Azure CLI-extensie om `k8s-configuration` een verbonden cluster te koppelen aan het [voor beeld van de Git-opslag plaats](https://github.com/Azure/arc-k8s-demo). 
-1. Geef deze configuratie een naam `cluster-config` .
-1. Geef de agent de opdracht om de operator in de `cluster-config` naam ruimte te implementeren.
+Gebruik de Azure CLI-extensie voor `k8s-configuration` om een verbonden cluster te koppelen aan de [Git-voorbeeldopslagplaats](https://github.com/Azure/arc-k8s-demo). 
+1. Noem deze configuratie `cluster-config` .
+1. Instrueer de agent om de operator in de `cluster-config` naamruimte te implementeren.
 1. Geef de operator `cluster-admin` machtigingen.
 
     ```azurecli
@@ -95,95 +95,95 @@ Gebruik de Azure CLI-extensie om `k8s-configuration` een verbonden cluster te ko
       "type": "Microsoft.KubernetesConfiguration/sourceControlConfigurations"
       ```
 
-### <a name="use-a-public-git-repository"></a>Een open bare Git-opslag plaats gebruiken
+### <a name="use-a-public-git-repository"></a>Een openbare Git-opslagplaats gebruiken
 
 | Parameter | Indeling |
 | ------------- | ------------- |
-| `--repository-url` | http [s]://Server/repo [. git] of git://Server/repo [. git]
+| `--repository-url` | http[s]://server/repo[.git] of git://server/repo[.git]
 
-### <a name="use-a-private-git-repository-with-ssh-and-flux-created-keys"></a>Een persoonlijke Git-opslag plaats met SSH-en met stromen gemaakte sleutels gebruiken
+### <a name="use-a-private-git-repository-with-ssh-and-flux-created-keys"></a>Een persoonlijke Git-opslagplaats gebruiken met door SSH en Flux gemaakte sleutels
 
-Voeg de open bare sleutel die wordt gegenereerd door stroom toe aan het gebruikers account in uw Git-service provider. Als de sleutel wordt toegevoegd aan de opslag plaats in plaats van het gebruikers account, gebruikt u `git@` in plaats van `user@` in de URL. 
+Voeg de openbare sleutel die is gegenereerd door Flux toe aan het gebruikersaccount in uw Git-serviceprovider. Als de sleutel wordt toegevoegd aan de opslagplaats in plaats van het gebruikersaccount, gebruikt `git@` u in plaats van in de `user@` URL. 
 
-Ga naar de sectie [configuratie Toep assen vanuit een persoonlijke Git-opslag plaats](#apply-configuration-from-a-private-git-repository) voor meer informatie.
+Ga naar de [sectie Configuratie toepassen vanuit een persoonlijke Git-opslagplaats](#apply-configuration-from-a-private-git-repository) voor meer informatie.
 
 
 | Parameter | Indeling | Notities
 | ------------- | ------------- | ------------- |
-| `--repository-url` | ssh://user@server/repo[. git] of user@server:repo [. git] | `git@` vervangen `user@`
+| `--repository-url` | ssh://user@server/repo[.git] of user@server:repo [.git] | `git@` kan vervangen `user@`
 
-### <a name="use-a-private-git-repository-with-ssh-and-user-provided-keys"></a>Een persoonlijke Git-opslag plaats gebruiken met SSH en door de gebruiker verschafte sleutels
+### <a name="use-a-private-git-repository-with-ssh-and-user-provided-keys"></a>Een persoonlijke Git-opslagplaats gebruiken met SSH en door de gebruiker geleverde sleutels
 
-Geef rechtstreeks of in een bestand uw eigen persoonlijke sleutel op. De sleutel moet de [indeling PEM](https://aka.ms/PEMformat) hebben en eindigen op een nieuwe regel (\n). 
+Geef uw eigen persoonlijke sleutel rechtstreeks of in een bestand op. De sleutel moet de [PEM-indeling hebben](https://aka.ms/PEMformat) en eindigen op newline (\n). 
 
-Voeg de bijbehorende open bare sleutel toe aan het gebruikers account in uw Git-service provider. Als de sleutel wordt toegevoegd aan de opslag plaats in plaats van het gebruikers account, gebruikt u `git@` in plaats van `user@` . 
+Voeg de bijbehorende openbare sleutel toe aan het gebruikersaccount in uw Git-serviceprovider. Als de sleutel wordt toegevoegd aan de opslagplaats in plaats van het gebruikersaccount, gebruikt `git@` u in plaats van `user@` . 
 
-Ga naar de sectie [configuratie Toep assen vanuit een persoonlijke Git-opslag plaats](#apply-configuration-from-a-private-git-repository) voor meer informatie.  
-
-| Parameter | Indeling | Notities |
-| ------------- | ------------- | ------------- |
-| `--repository-url`  | ssh://user@server/repo[. git] of user@server:repo [. git] | `git@` vervangen `user@` |
-| `--ssh-private-key` | met base64 gecodeerde sleutel in de [PEM-indeling](https://aka.ms/PEMformat) | Sleutel rechtstreeks opgeven |
-| `--ssh-private-key-file` | volledig pad naar lokaal bestand | Geef het volledige pad naar het lokale bestand dat de PEM-indelings sleutel bevat
-
-### <a name="use-a-private-git-host-with-ssh-and-user-provided-known-hosts"></a>Een privé Git-host gebruiken met SSH en door de gebruiker verschafte bekende hosts
-
-De stroom operator houdt een lijst bij van algemene Git-hosts in het bestand met bekende hosts om de Git-opslag plaats te verifiëren voordat de SSH-verbinding tot stand wordt gebracht. Als u een *ongebruikelijke* Git-opslag plaats of uw eigen Git-host gebruikt, kunt u de host-sleutel opgeven zodat de stroom uw opslag plaats kan identificeren. 
-
-Net als persoonlijke sleutels kunt u uw known_hosts inhoud rechtstreeks of in een bestand opgeven. Wanneer u uw eigen inhoud opgeeft, gebruikt u de [known_hosts indelings specificaties voor inhoud](https://aka.ms/KnownHostsFormat), samen met een van de bovenstaande SSH-sleutel scenario's.
+Ga naar de [sectie Configuratie toepassen vanuit een persoonlijke Git-opslagplaats](#apply-configuration-from-a-private-git-repository) voor meer informatie.  
 
 | Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
-| `--repository-url`  | ssh://user@server/repo[. git] of user@server:repo [. git] | `git@` vervangen `user@` |
-| `--ssh-known-hosts` | Base64-gecodeerd | Direct bekende hosts-inhoud leveren |
-| `--ssh-known-hosts-file` | volledig pad naar lokaal bestand | Bekende hosts-inhoud in een lokaal bestand opgeven |
+| `--repository-url`  | ssh://user@server/repo[.git] of user@server:repo [.git] | `git@` kan vervangen `user@` |
+| `--ssh-private-key` | met base64 gecodeerde sleutel in [PEM-indeling](https://aka.ms/PEMformat) | Geef de sleutel rechtstreeks op |
+| `--ssh-private-key-file` | volledig pad naar lokaal bestand | Geef het volledige pad op naar het lokale bestand dat de PEM-indelingssleutel bevat
 
-### <a name="use-a-private-git-repository-with-https"></a>Een persoonlijke Git-opslag plaats met HTTPS gebruiken
+### <a name="use-a-private-git-host-with-ssh-and-user-provided-known-hosts"></a>Een persoonlijke Git-host gebruiken met SSH en door de gebruiker opgegeven bekende hosts
+
+De Flux-operator houdt een lijst bij met algemene Git-hosts in het bekende hosts-bestand om de Git-opslagplaats te verifiëren voordat de SSH-verbinding tot stand wordt brengen. Als u een  ongebruikelijke Git-opslagplaats of uw eigen Git-host gebruikt, kunt u de hostsleutel leveren zodat Flux uw opslagplaats kan identificeren. 
+
+Net als persoonlijke sleutels kunt u uw persoonlijke known_hosts rechtstreeks of in een bestand. Gebruik bij het leveren van uw eigen inhoud known_hosts [specificaties](https://aka.ms/KnownHostsFormat)voor de inhoudsindeling, samen met een van de bovenstaande SSH-sleutelscenario's.
 
 | Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
-| `--repository-url` | https://server/repo[. git] | HTTPS met basis verificatie |
-| `--https-user` | RAW of Base64-gecodeerd | HTTPS-gebruikers naam |
-| `--https-key` | RAW of Base64-gecodeerd | HTTPS persoonlijk toegangs token of wacht woord
+| `--repository-url`  | ssh://user@server/repo[.git] of user@server:repo [.git] | `git@` kan vervangen `user@` |
+| `--ssh-known-hosts` | base64-gecodeerd | Bekende hosts rechtstreeks inhoud geven |
+| `--ssh-known-hosts-file` | volledig pad naar lokaal bestand | Bekende hosts-inhoud in een lokaal bestand verstrekken |
+
+### <a name="use-a-private-git-repository-with-https"></a>Een persoonlijke Git-opslagplaats gebruiken met HTTPS
+
+| Parameter | Indeling | Notities |
+| ------------- | ------------- | ------------- |
+| `--repository-url` | https://server/repo[.git] | HTTPS met basis auth |
+| `--https-user` | raw of base64-encoded | HTTPS-gebruikersnaam |
+| `--https-key` | raw of base64-encoded | Persoonlijk HTTPS-toegangs token of wachtwoord
 
 >[!NOTE]
->* Helm-operator grafiek versie 1.2.0 + ondersteunt de persoonlijke verificatie van de HTTPS helm-versie.
->* De HTTPS helm-versie wordt niet ondersteund voor door AKS beheerde clusters.
->* Als u een stroom nodig hebt om toegang te krijgen tot de Git-opslag plaats via uw proxy, moet u de Azure Arc-agents bijwerken met de proxy instellingen. Zie [verbinding maken met een uitgaande proxy server](./quickstart-connect-cluster.md#connect-using-an-outbound-proxy-server)voor meer informatie.
+>* Grafiekversie 1.2.0+ van de Helm-operator ondersteunt de privé-auth van de HTTPS Helm-release.
+>* De HTTPS Helm-release wordt niet ondersteund voor door AKS beheerde clusters.
+>* Als u Flux nodig hebt voor toegang tot de Git-opslagplaats via uw proxy, moet u de Azure Arc agents bijwerken met de proxyinstellingen. Zie Verbinding maken met een uitgaande [proxyserver voor meer informatie.](./quickstart-connect-cluster.md#connect-using-an-outbound-proxy-server)
 
 
-## <a name="additional-parameters"></a>Aanvullende para meters
+## <a name="additional-parameters"></a>Aanvullende parameters
 
-Pas de configuratie aan met de volgende optionele para meters:
+Pas de configuratie aan met de volgende optionele parameters:
 
 | Parameter | Beschrijving |
 | ------------- | ------------- |
-| `--enable-helm-operator`| Schakel deze optie in om ondersteuning voor helm-grafiek implementaties in te scha kelen. |
-| `--helm-operator-params` | Grafiek waarden voor de operator helm (indien ingeschakeld). Bijvoorbeeld `--set helm.versions=v3`. |
-| `--helm-operator-chart-version` | Grafiek versie voor de helm-operator (indien ingeschakeld). Gebruik versie 1.2.0 +. Standaard: ' 1.2.0 '. |
-| `--operator-namespace` | Naam voor de operator naam ruimte. Standaard: standaard. Max.: 23 tekens. |
-| `--operator-params` | Para meters voor operator. Moet binnen enkele aanhalings tekens worden opgegeven. Bijvoorbeeld: ```--operator-params='--git-readonly --sync-garbage-collection --git-branch=main'``` 
+| `--enable-helm-operator`| Schakel over om ondersteuning voor Helm-grafiekimplementaties in te schakelen. |
+| `--helm-operator-params` | Grafiekwaarden voor Helm-operator (indien ingeschakeld). Bijvoorbeeld `--set helm.versions=v3`. |
+| `--helm-operator-chart-version` | Grafiekversie voor Helm-operator (indien ingeschakeld). Gebruik versie 1.2.0+. Standaardinstelling: '1.2.0'. |
+| `--operator-namespace` | Naam voor de operatornaamruimte. Standaardinstelling: 'standaard'. Maximaal: 23 tekens. |
+| `--operator-params` | Parameters voor operator. Moet worden opgegeven tussen enkele aanhalingstekens. Bijvoorbeeld: ```--operator-params='--git-readonly --sync-garbage-collection --git-branch=main'``` 
 
 ### <a name="options-supported-in----operator-params"></a>Opties die worden ondersteund in  `--operator-params` :
 
 | Optie | Beschrijving |
 | ------------- | ------------- |
-| `--git-branch`  | Vertakking van de Git-opslag plaats die moet worden gebruikt voor Kubernetes-manifesten. De standaard waarde is ' Master '. Nieuwere opslag plaatsen hebben een hoofd vertakking `main` met de naam, in welk geval u moet instellen `--git-branch=main` . |
-| `--git-path`  | Relatief pad binnen de Git-opslag plaats voor stroom om Kubernetes-manifesten te zoeken. |
-| `--git-readonly` | Git-opslag plaats wordt als alleen-lezen beschouwd. Er wordt geen poging gedaan om te schrijven naar de stroom. |
-| `--manifest-generation`  | Als deze functie is ingeschakeld, zoekt stroom. stroom. yaml en voert u Kustomize of andere manifest generatoren uit. |
-| `--git-poll-interval`  | Periode waarbij de Git-opslag plaats wordt gecontroleerd op nieuwe door voeringen. De standaard waarde is `5m` (5 minuten). |
-| `--sync-garbage-collection`  | Als deze functie is ingeschakeld, worden door stroom gemaakte resources verwijderd, maar zijn ze niet meer aanwezig in Git. |
-| `--git-label`  | Label om de voortgang van de synchronisatie bij te houden. Wordt gebruikt om de Git-vertakking te labelen.  De standaardinstelling is `flux-sync`. |
-| `--git-user`  | Gebruikers naam voor git-door voer. |
-| `--git-email`  | E-mail die moet worden gebruikt voor git-door voer. 
+| `--git-branch`  | Vertakking van Git-opslagplaats die moet worden gebruikt voor Kubernetes-manifesten. De standaardwaarde is master. Nieuwere opslagplaatsen hebben een hoofdvertakking met de `main` naam . In dat geval moet u `--git-branch=main` instellen. |
+| `--git-path`  | Relatief pad binnen de Git-opslagplaats voor Flux om Kubernetes-manifesten te vinden. |
+| `--git-readonly` | Git-opslagplaats wordt beschouwd als alleen-lezen. Flux probeert er niet naar te schrijven. |
+| `--manifest-generation`  | Als deze functie is ingeschakeld, zal Flux zoeken naar .flux.yaml en Kustomize of andere manifestgeneratoren uitvoeren. |
+| `--git-poll-interval`  | Periode waarin git-opslagplaatsen moeten worden gepeild voor nieuwe door commits. De standaardwaarde is `5m` (5 minuten). |
+| `--sync-garbage-collection`  | Als deze functie is ingeschakeld, verwijdert Flux de resources die zijn gemaakt, maar zijn ze niet meer aanwezig in Git. |
+| `--git-label`  | Label om de voortgang van de synchronisatie bij te houden. Wordt gebruikt om de Git-vertakking te taggen.  De standaardinstelling is `flux-sync`. |
+| `--git-user`  | Gebruikersnaam voor Git-door commit. |
+| `--git-email`  | E-mail die moet worden gebruikt voor Git-door commit. 
 
-Als u niet wilt dat stroom naar de opslag plaats schrijft en `--git-user` of `--git-email` niet is ingesteld, `--git-readonly` wordt automatisch ingesteld.
+Als u niet wilt dat Flux naar de opslagplaats schrijft en of niet is ingesteld, wordt `--git-user` `--git-email` dit automatisch `--git-readonly` ingesteld.
 
-Zie de documentatie van de [stroom](https://aka.ms/FluxcdReadme)voor meer informatie.
+Zie de [Flux-documentatie voor meer informatie.](https://aka.ms/FluxcdReadme)
 
 > [!TIP]
-> U kunt een configuratie maken in de Azure Portal op het tabblad **GitOps** van de Kubernetes-resource van Azure Arc enabled.
+> U kunt een configuratie maken in de Azure Portal op het **tabblad GitOps** van Azure Arc Kubernetes-resource.
 
 ## <a name="validate-the-configuration"></a>De configuratie valideren
 
@@ -193,7 +193,7 @@ Gebruik de Azure CLI om te controleren of de configuratie is gemaakt.
 az k8s-configuration show --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 
-De configuratie bron wordt bijgewerkt met de nalevings status, berichten en informatie over fout opsporing.
+De configuratieresource wordt bijgewerkt met informatie over de nalevingsstatus, berichten en debuggen.
 
 ```output
 {
@@ -233,84 +233,84 @@ De configuratie bron wordt bijgewerkt met de nalevings status, berichten en info
 }
 ```
 
-Wanneer een configuratie wordt gemaakt of bijgewerkt, gebeurt er een aantal dingen:
+Wanneer een configuratie wordt gemaakt of bijgewerkt, gebeuren er een paar dingen:
 
-1. De Azure-Arc `config-agent` bewaakt Azure Resource Manager voor nieuwe of bijgewerkte configuraties ( `Microsoft.KubernetesConfiguration/sourceControlConfigurations` ) en kennisgevingen de nieuwe `Pending` configuratie.
-1. De `config-agent` configuratie-eigenschappen worden gelezen en de doel naam ruimte wordt gemaakt.
-1. De Azure-Arc `controller-manager` maakt een Kubernetes-service account en wijst deze toe aan [ClusterRoleBinding of RoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) voor de juiste machtigingen ( `cluster` of `namespace` bereik). Vervolgens wordt een exemplaar van geïmplementeerd `flux` .
-1. Als u de optie SSH gebruikt met door stromen gegenereerde sleutels, `flux` genereert een SSH-sleutel en registreert de open bare sleutel.
-1. De `config-agent` status rapporteert terug naar de configuratie bron in Azure.
+1. De Azure Arc controleert Azure Resource Manager nieuwe of bijgewerkte configuraties ( ) en `config-agent` ziet de nieuwe `Microsoft.KubernetesConfiguration/sourceControlConfigurations` `Pending` configuratie.
+1. De `config-agent` leest de configuratie-eigenschappen en maakt de doelnaamruimte.
+1. De Azure Arc maakt een Kubernetes-serviceaccount en wijs dit toe aan `controller-manager` [ClusterRoleBinding of RoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) voor de juiste machtigingen ( `cluster` of `namespace` bereik). Vervolgens wordt een exemplaar van `flux` geïmplementeerd.
+1. Als u de optie SSH gebruikt met door Flux gegenereerde sleutels, genereert een `flux` SSH-sleutel en registreert u de openbare sleutel.
+1. De `config-agent` rapporteert de status terug naar de configuratieresource in Azure.
 
-Tijdens het inrichtings proces wordt de configuratie bron door een paar status wijzigingen verplaatst. Bewaak de voortgang met de `az k8s-configuration show ...` bovenstaande opdracht:
+Tijdens het inrichtingsproces doorstaat de configuratieresource enkele statuswijzigingen. Controleer de voortgang met de `az k8s-configuration show ...` bovenstaande opdracht:
 
-| Wijziging fase | Beschrijving |
+| Fasewijziging | Beschrijving |
 | ------------- | ------------- |
-| `complianceStatus`-> `Pending` | Hiermee worden de initiële en in uitvoering zijnde statussen aangegeven. |
-| `complianceStatus` -> `Installed`  | `config-agent` het cluster is geconfigureerd en `flux` zonder fouten geïmplementeerd. |
-| `complianceStatus` -> `Failed` | `config-agent` Er is een fout opgetreden tijdens de implementatie `flux` . Details vindt u in `complianceStatus.message` antwoord tekst. |
+| `complianceStatus`-> `Pending` | Vertegenwoordigt de begin- en voortgangsfase. |
+| `complianceStatus` -> `Installed`  | `config-agent` het cluster is geconfigureerd en zonder fouten `flux` is geïmplementeerd. |
+| `complianceStatus` -> `Failed` | `config-agent` er is een fout opgetreden bij het implementeren `flux` van . Details worden gegeven in `complianceStatus.message` de antwoord-body. |
 
-## <a name="apply-configuration-from-a-private-git-repository"></a>Configuratie Toep assen vanuit een persoonlijke Git-opslag plaats
+## <a name="apply-configuration-from-a-private-git-repository"></a>Configuratie toepassen vanuit een persoonlijke Git-opslagplaats
 
-Als u een privé Git-opslag plaats gebruikt, moet u de open bare SSH-sleutel configureren in uw opslag plaats. Ofwel u opgeeft of stroomt de open bare SSH-sleutel. U kunt de open bare sleutel configureren in de specifieke Git-opslag plaats of op de Git-gebruiker die toegang heeft tot de opslag plaats. 
+Als u een persoonlijke Git-opslagplaats gebruikt, moet u de openbare SSH-sleutel in uw opslagplaats configureren. U geeft of Flux genereert de openbare SSH-sleutel. U kunt de openbare sleutel configureren in de specifieke Git-opslagplaats of op de Git-gebruiker die toegang heeft tot de opslagplaats. 
 
-### <a name="get-your-own-public-key"></a>Uw eigen open bare sleutel ophalen
+### <a name="get-your-own-public-key"></a>Uw eigen openbare sleutel op halen
 
-Als u uw eigen SSH-sleutels hebt gegenereerd, beschikt u al over de persoonlijke en open bare sleutels.
+Als u uw eigen SSH-sleutels hebt gegenereerd, hebt u al de persoonlijke en openbare sleutels.
 
-#### <a name="get-the-public-key-using-azure-cli"></a>De open bare sleutel ophalen met behulp van Azure CLI 
+#### <a name="get-the-public-key-using-azure-cli"></a>De openbare sleutel op te halen met behulp van Azure CLI 
 
-Gebruik het volgende in azure CLI als de sleutels door stroom worden gegenereerd.
+Gebruik het volgende in Azure CLI als Flux de sleutels genereert.
 
 ```console
 $ az k8s-configuration show --resource-group <resource group name> --cluster-name <connected cluster name> --name <configuration name> --cluster-type connectedClusters --query 'repositoryPublicKey' 
 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAREDACTED"
 ```
 
-#### <a name="get-the-public-key-from-the-azure-portal"></a>De open bare sleutel ophalen uit de Azure Portal
+#### <a name="get-the-public-key-from-the-azure-portal"></a>Haal de openbare sleutel op uit de Azure Portal
 
-Door loop het volgende in Azure Portal als de sleutels door stroom worden gegenereerd.
+Doorloop het volgende in Azure Portal flux de sleutels genereert.
 
-1. Navigeer in het Azure Portal naar de verbonden cluster bron.
-2. Selecteer op de pagina Resource ' GitOps ' en Bekijk de lijst met configuraties voor dit cluster.
-3. Selecteer de configuratie die gebruikmaakt van de persoonlijke Git-opslag plaats.
-4. Kopieer in het context venster dat wordt geopend onder aan het venster de **open bare sleutel van de opslag plaats**.
+1. Navigeer in Azure Portal naar de verbonden clusterresource.
+2. Selecteer 'GitOps' op de resourcepagina en bekijk de lijst met configuraties voor dit cluster.
+3. Selecteer de configuratie die gebruikmaakt van de persoonlijke Git-opslagplaats.
+4. Kopieer in het contextvenster dat wordt geopend onderaan het venster de openbare **sleutel van de opslagplaats.**
 
-#### <a name="add-public-key-using-github"></a>Open bare sleutel toevoegen met behulp van GitHub
+#### <a name="add-public-key-using-github"></a>Openbare sleutel toevoegen met GitHub
 
 Gebruik een van de volgende opties:
 
-* Optie 1: de open bare sleutel toevoegen aan uw gebruikers account (is van toepassing op alle opslag plaatsen in uw account):  
-    1. Open GitHub en klik op uw profiel pictogram in de rechter bovenhoek van de pagina.
+* Optie 1: voeg de openbare sleutel toe aan uw gebruikersaccount (van toepassing op alle opslagplaatsen in uw account):  
+    1. Open GitHub en klik op het profielpictogram in de rechterbovenhoek van de pagina.
     2. Klik op **Instellingen**.
-    3. Klik op **SSH-en GPG-sleutels**.
-    4. Klik op **nieuwe SSH-sleutel**.
-    5. Geef een titel op.
-    6. Plak de open bare sleutel zonder omringende aanhalings tekens.
-    7. Klik op **SSH-sleutel toevoegen**.
+    3. Klik op **SSH- en GPG-sleutels.**
+    4. Klik op **Nieuwe SSH-sleutel.**
+    5. Een titel op te leveren.
+    6. Plak de openbare sleutel zonder omliggende aanhalingstekens.
+    7. Klik op **SSH-sleutel toevoegen.**
 
-* Optie 2: Voeg de open bare sleutel als een Deploy-sleutel toe aan de Git-opslag plaats (alleen van toepassing op deze opslag plaats):  
-    1. Open GitHub en navigeer naar uw opslag plaats.
+* Optie 2: voeg de openbare sleutel toe als een implementatiesleutel aan de Git-opslagplaats (alleen van toepassing op deze opslagplaats):  
+    1. Open GitHub en navigeer naar uw opslagplaats.
     1. Klik op **Instellingen**.
-    1. Klik op **sleutels implementeren**.
-    1. Klik op **Deploy-sleutel toevoegen**.
-    1. Geef een titel op.
-    1. Controleer **toegang voor schrijven toestaan**.
-    1. Plak de open bare sleutel zonder omringende aanhalings tekens.
-    1. Klik op **sleutel toevoegen**.
+    1. Klik op **Sleutels implementeren.**
+    1. Klik op **Implementatiesleutel toevoegen.**
+    1. Een titel op te leveren.
+    1. Controleer **Schrijftoegang toestaan.**
+    1. Plak de openbare sleutel zonder omliggende aanhalingstekens.
+    1. Klik op **Sleutel toevoegen.**
 
-#### <a name="add-public-key-using-an-azure-devops-repository"></a>Open bare sleutel toevoegen met behulp van een Azure DevOps-opslag plaats
+#### <a name="add-public-key-using-an-azure-devops-repository"></a>Openbare sleutel toevoegen met behulp van een Azure DevOps-opslagplaats
 
 Gebruik de volgende stappen om de sleutel toe te voegen aan uw SSH-sleutels:
 
-1. Klik onder **gebruikers instellingen** in de rechter bovenhoek (naast de profiel afbeelding) op **open bare SSH-sleutels**.
-1. Selecteer  **+ nieuwe sleutel**.
-1. Geef een naam op.
-1. Plak de open bare sleutel zonder omringende aanhalings tekens.
+1. Klik **onder Gebruikersinstellingen** rechtsboven (naast de profielafbeelding) op **Openbare SSH-sleutels.**
+1. Selecteer  **+ Nieuwe sleutel**.
+1. Een naam op te geven.
+1. Plak de openbare sleutel zonder omliggende aanhalingstekens.
 1. Klik op **Add**.
 
 ## <a name="validate-the-kubernetes-configuration"></a>De Kubernetes-configuratie valideren
 
-Nadat `config-agent` het exemplaar is geïnstalleerd `flux` , moeten de resources in de Git-opslag plaats naar het cluster gaan. Controleer of de naam ruimten, implementaties en resources zijn gemaakt met de volgende opdracht:
+Nadat `config-agent` het exemplaar is `flux` geïnstalleerd, worden de resources in de Git-opslagplaats naar het cluster gestroomd. Controleer of de naamruimten, implementaties en resources zijn gemaakt met de volgende opdracht:
 
 ```console
 kubectl get ns --show-labels
@@ -329,9 +329,9 @@ team-a            Active   177m   fluxcd.io/sync-gc-mark=sha256.CS5boSi8kg_vyxfA
 team-b            Active   177m   fluxcd.io/sync-gc-mark=sha256.vF36thDIFnDDI2VEttBp5jgdxvEuaLmm7yT_cuA2UEw,name=team-b
 ```
 
-We kunnen zien dat de,, en `team-a` `team-b` `itops` `cluster-config` naam ruimten zijn gemaakt.
+We kunnen zien dat `team-a` `team-b` , , en `itops` `cluster-config` naamruimten zijn gemaakt.
 
-De `flux` operator is geïmplementeerd in `cluster-config` de naam ruimte, zoals door de configuratie bron is doorgestuurd:
+De `flux` operator is geïmplementeerd in de `cluster-config` naamruimte, zoals wordt aangegeven door de configuratieresource:
 
 ```console
 kubectl -n cluster-config get deploy  -o wide
@@ -345,7 +345,7 @@ memcached        1/1     1            1           3h    memcached    memcached:1
 
 ## <a name="further-exploration"></a>Verdere verkenning
 
-U kunt de andere resources die zijn geïmplementeerd als onderdeel van de configuratie opslagplaats verkennen met behulp van:
+U kunt de andere resources verkennen die zijn geïmplementeerd als onderdeel van de configuratieopslagplaats met behulp van:
 
 ```console
 kubectl -n team-a get cm -o yaml
@@ -353,19 +353,19 @@ kubectl -n itops get all
 ```
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Verwijder een configuratie met behulp van Azure CLI of Azure Portal. Nadat u de opdracht verwijderen hebt uitgevoerd, wordt de configuratie bron direct verwijderd in Azure. Het volledig verwijderen van de bijbehorende objecten uit het cluster moet binnen 10 minuten plaatsvinden. Als de configuratie de status Mislukt heeft wanneer deze wordt verwijderd, kan het tot een uur duren voordat de gekoppelde objecten zijn gewist.
+Verwijder een configuratie met behulp van de Azure CLI of Azure Portal. Nadat u de opdracht delete hebt uitgevoerd, wordt de configuratieresource onmiddellijk verwijderd in Azure. De gekoppelde objecten uit het cluster moeten binnen tien minuten volledig worden verwijderd. Als de configuratie de status Mislukt heeft wanneer deze wordt verwijderd, kan het volledig verwijderen van gekoppelde objecten tot een uur duren.
 
-Wanneer een configuratie met `namespace` Scope wordt verwijderd, wordt de naam ruimte niet verwijderd door Azure Arc om te voor komen dat bestaande workloads worden verbroken. Als dat nodig is, kunt u deze naam ruimte hand matig verwijderen met `kubectl` .
+Wanneer een configuratie met bereik wordt verwijderd, wordt de naamruimte niet door de Azure Arc om te voorkomen dat bestaande `namespace` workloads worden geschonden. Indien nodig kunt u deze naamruimte handmatig verwijderen met behulp van `kubectl` .
 
 ```azurecli
 az k8s-configuration delete --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 
 > [!NOTE]
-> Wijzigingen in het cluster die het resultaat zijn van implementaties uit de getraceerde Git-opslag plaats, worden niet verwijderd wanneer de configuratie wordt verwijderd.
+> Eventuele wijzigingen in het cluster die het resultaat zijn van implementaties vanuit de bij te houden Git-opslagplaats, worden niet verwijderd wanneer de configuratie wordt verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga naar de volgende zelf studie voor meer informatie over het implementeren van CI/CD met GitOps.
+Ga naar de volgende zelfstudie voor informatie over het implementeren van CI/CD met GitOps.
 > [!div class="nextstepaction"]
 > [CI/CD implementeren met GitOps](./tutorial-gitops-ci-cd.md)

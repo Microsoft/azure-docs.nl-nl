@@ -1,60 +1,60 @@
 ---
 title: Problemen met omleiding naar App Service-URL oplossen
 titleSuffix: Azure Application Gateway
-description: Dit artikel bevat informatie over het oplossen van het probleem met de omleiding wanneer Azure-toepassing gateway wordt gebruikt met Azure App Service
+description: Dit artikel bevat informatie over het oplossen van het omleidingsprobleem wanneer Azure Application Gateway wordt gebruikt met Azure App Service
 services: application-gateway
-author: abshamsft
+author: jaesoni
 ms.service: application-gateway
 ms.topic: troubleshooting
-ms.date: 11/14/2019
-ms.author: absha
-ms.openlocfilehash: 1cc7df755198461643703cac988c8c31f2ac25db
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/15/2021
+ms.author: jaysoni
+ms.openlocfilehash: 6aad1cf1269a7c3dc082482c39fdc4a079fc3240
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96182883"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107514883"
 ---
-# <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Problemen met App Service oplossen in Application Gateway
+# <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Problemen App Service in Application Gateway
 
-Meer informatie over het vaststellen en oplossen van problemen die kunnen optreden wanneer Azure App Service wordt gebruikt als een back-end-doel met Azure-toepassing gateway.
+Meer informatie over het vaststellen en oplossen van problemen die kunnen Azure App Service wanneer een back-enddoel wordt gebruikt met Azure Application Gateway.
 
 ## <a name="overview"></a>Overzicht
 
 In dit artikel leert u hoe u de volgende problemen kunt oplossen:
 
-* De app service-URL wordt weer gegeven in de browser wanneer er een omleiding wordt gemaakt.
-* Het domein app service ARRAffinity cookie is ingesteld op de naam van de app service-host, example.azurewebsites.net in plaats van de oorspronkelijke host.
+* De URL van de App Service wordt weergegeven in de browser wanneer er een omleiding is.
+* Het ARRAffinity-cookiedomein van de app-service is ingesteld op de hostnaam van de app-service, example.azurewebsites.net, in plaats van de oorspronkelijke host.
 
-Wanneer een back-end-toepassing een omleidings reactie verzendt, wilt u mogelijk de client omleiden naar een andere URL dan die opgegeven door de back-end-toepassing. U kunt dit doen wanneer een app service wordt gehost achter een toepassings gateway en moet de client een omleiding naar het relatieve pad omleiden. Een voor beeld is een omleiding van contoso.azurewebsites.net/path1 naar contoso.azurewebsites.net/path2. 
+Wanneer een back-endtoepassing een omleidingsreactie verzendt, kunt u de client omleiden naar een andere URL dan de URL die is opgegeven door de back-endtoepassing. Mogelijk wilt u dit doen wanneer een app-service wordt gehost achter een toepassingsgateway en de client een omleiding naar het relatieve pad vereist. Een voorbeeld is een omleiding van contoso.azurewebsites.net/path1 naar contoso.azurewebsites.net/path2. 
 
-Wanneer de app-service een omleidings reactie verzendt, gebruikt deze dezelfde hostnaam in de locatie header van de reactie als de naam van de aanvraag die wordt ontvangen van de toepassings gateway. De client maakt de aanvraag bijvoorbeeld rechtstreeks naar contoso.azurewebsites.net/path2 in plaats van de Application Gateway contoso.com/path2 te passeren. U wilt de toepassings gateway niet overs Laan.
+Wanneer de app-service een omleidingsreactie verzendt, gebruikt deze dezelfde hostnaam in de locatieheader van het antwoord als de naam in de aanvraag die wordt ontvangen van de toepassingsgateway. De client doet de aanvraag bijvoorbeeld rechtstreeks naar contoso.azurewebsites.net/path2 in plaats van via de toepassingsgateway te contoso.com/path2. U wilt de toepassingsgateway niet omzeilen.
 
-Dit probleem kan de volgende oorzaken hebben:
+Dit probleem kan de volgende hoofdredenen hebben:
 
-- U hebt omleiding geconfigureerd op uw app service. Omleiding kan net zo eenvoudig zijn als het toevoegen van een afsluitende schuine streep aan de aanvraag.
-- U hebt Azure Active Directory-verificatie, waardoor de omleiding wordt veroorzaakt.
+- U hebt omleiding geconfigureerd in uw app-service. Omleiding kan net zo eenvoudig zijn als het toevoegen van een schuine streep aan de aanvraag.
+- U hebt Azure Active Directory verificatie, waardoor de omleiding wordt veroorzaakt.
 
-Wanneer u app-Services achter een toepassings gateway gebruikt, is de domein naam die is gekoppeld aan de Application Gateway (example.com) niet hetzelfde als de domein naam van de app service (zeg example.azurewebsites.net). De domein waarde voor het ARRAffinity-cookie dat door de app service is ingesteld, bevat de domein naam example.azurewebsites.net. Dit is niet gewenst. De oorspronkelijke hostnaam, example.com, moet de waarde voor de domein naam in de cookie zijn.
+Wanneer u app-services achter een toepassingsgateway gebruikt, verschilt de domeinnaam die is gekoppeld aan de toepassingsgateway (example.com) van de domeinnaam van de app-service (bijvoorbeeld example.azurewebsites.net). De domeinwaarde voor de ARRAffinity-cookie die door de app-service is ingesteld, bevat de example.azurewebsites.net domeinnaam, wat niet wenselijk is. De oorspronkelijke hostnaam, example.com, moet de domeinnaamwaarde in de cookie zijn.
 
-## <a name="sample-configuration"></a>Voorbeeld configuratie
+## <a name="sample-configuration"></a>Voorbeeldconfiguratie
 
 - HTTP-listener: Basic of multi-site
-- Back-end-adres groep: App Service
-- HTTP-instellingen: **Kies hostname van back-end-adres** ingeschakeld
-- Test: **Kies een hostnaam uit de HTTP-instellingen** ingeschakeld
+- Back-endadresgroep: App Service
+- HTTP-instellingen: **Kies Hostnaam uit Back-mailadres** ingeschakeld
+- Test: **Kies Hostnaam uit HTTP-instellingen** ingeschakeld
 
 ## <a name="cause"></a>Oorzaak
 
-App Service is een service met meerdere tenants, zodat de host-header in de aanvraag wordt gebruikt om de aanvraag naar het juiste eind punt te sturen. De standaard domeinnaam van App Services, *. azurewebsites.net (zeg, contoso.azurewebsites.net), wijkt af van de domein naam van de toepassings gateway (zeg, contoso.com). 
+App Service is een multitenant-service, dus wordt de hostheader in de aanvraag gebruikt om de aanvraag naar het juiste eindpunt te sturen. De standaarddomeinnaam van App Services, *.azurewebsites.net (bijvoorbeeld contoso.azurewebsites.net), verschilt van de domeinnaam van de toepassingsgateway (bijvoorbeeld contoso.com). 
 
-De oorspronkelijke aanvraag van de client heeft de domein naam van de toepassings gateway, contoso.com, als de hostnaam. U moet de toepassings gateway configureren om de hostnaam in de oorspronkelijke aanvraag te wijzigen in de hostnaam van de app service wanneer de aanvraag wordt doorgestuurd naar de back-end van de app service. Gebruik de optie **hostnaam kiezen op basis van het back-upadres** in de configuratie van de http-instelling van de toepassings gateway. Gebruik de switch **hostname van de back-end-HTTP-instellingen** in de status test configuratie.
+De oorspronkelijke aanvraag van de client heeft de domeinnaam van de toepassingsgateway, contoso.com, als hostnaam. U moet de toepassingsgateway configureren om de hostnaam in de oorspronkelijke aanvraag te wijzigen in de hostnaam van de App Service wanneer deze de aanvraag doorspoort naar de back-end van de App Service. Gebruik de schakelknop **Hostnaam kiezen uit back-endadres** in de CONFIGURATIE van de HTTP-instelling van de toepassingsgateway. Gebruik de schakelknop **Hostnaam kiezen uit HTTP-instellingen voor back-enden** in de statustestconfiguratie.
 
 
 
-![Toepassings gateway wijzigt hostnaam](./media/troubleshoot-app-service-redirection-app-service-url/appservice-1.png)
+![Toepassingsgateway wijzigt hostnaam](./media/troubleshoot-app-service-redirection-app-service-url/appservice-1.png)
 
-Wanneer de app-service een omleiding doet, wordt de overschreven hostnaam contoso.azurewebsites.net in de locatie header gebruikt in plaats van de oorspronkelijke hostnaam contoso.com, tenzij anders is geconfigureerd. Controleer de volgende voorbeeld aanvraag en-antwoord headers.
+Wanneer de app-service een omleiding doet, wordt de overschrijvende hostnaam contoso.azurewebsites.net in de locatieheader gebruikt in plaats van de oorspronkelijke hostnaam contoso.com, tenzij anders geconfigureerd. Controleer de volgende voorbeeldheaders voor aanvragen en antwoorden.
 ```
 ## Request headers to Application Gateway:
 
@@ -76,43 +76,41 @@ Set-Cookie: ARRAffinity=b5b1b14066f35b3e4533a1974cacfbbd969bf1960b6518aa2c2e2619
 
 X-Powered-By: ASP.NET
 ```
-In het vorige voor beeld ziet u dat de antwoord header de status code 301 voor omleiding heeft. De locatie header heeft de hostnaam van de app service in plaats van de oorspronkelijke hostnaam `www.contoso.com` .
+In het vorige voorbeeld ziet u dat de antwoordheader de statuscode 301 heeft voor omleiding. De locatieheader heeft de hostnaam van de App Service in plaats van de oorspronkelijke hostnaam `www.contoso.com` .
 
-## <a name="solution-rewrite-the-location-header"></a>Oplossing: de locatie header opnieuw schrijven
+## <a name="solution-rewrite-the-location-header"></a>Oplossing: De locatieheader herschrijven
 
-Stel de hostnaam in de locatie header in op de domein naam van de toepassings gateway. U doet dit door een [regel voor herschrijven](./rewrite-http-headers.md) te maken met een voor waarde die evalueert of de locatie header in het antwoord azurewebsites.net bevat. Ook moet er een actie worden uitgevoerd voor het herschrijven van de locatie header om de hostnaam van de toepassings gateway te hebben. Zie instructies voor [het herschrijven van de locatie header](./rewrite-http-headers.md#modify-a-redirection-url)voor meer informatie.
+Stel de hostnaam in de locatieheader in op de domeinnaam van de toepassingsgateway. Hiervoor maakt u een [herschrijfregel](./rewrite-http-headers.md) met een voorwaarde die evalueert of de locatieheader in het antwoord azurewebsites.net. Er moet ook een actie worden ondernomen om de locatieheader te herschrijven, om de hostnaam van de toepassingsgateway te krijgen. Zie instructies voor het herschrijven van de [locatieheader voor meer informatie.](./rewrite-http-headers.md#modify-a-redirection-url)
 
 > [!NOTE]
-> De ondersteuning voor het opnieuw schrijven van HTTP-headers is alleen beschikbaar voor de [Standard_v2 en WAF_V2 SKU](./application-gateway-autoscaling-zone-redundant.md) van Application Gateway. Als u v1 SKU gebruikt, raden we u [aan om te migreren van v1 naar v2](./migrate-v1-v2.md). U wilt herschrijven en andere [geavanceerde mogelijkheden](./application-gateway-autoscaling-zone-redundant.md#feature-comparison-between-v1-sku-and-v2-sku) gebruiken die beschikbaar zijn met v2 SKU.
+> De ondersteuning voor het herschrijven van HTTP-headers is alleen beschikbaar voor de [Standard_v2 en WAF_v2 SKU](./application-gateway-autoscaling-zone-redundant.md) van Application Gateway. U wordt [aangeraden te migreren naar v2](./migrate-v1-v2.md) voor herschrijven van [headers](./application-gateway-autoscaling-zone-redundant.md#feature-comparison-between-v1-sku-and-v2-sku) en andere geavanceerde mogelijkheden die beschikbaar zijn met v2 SKU.
 
-## <a name="alternate-solution-use-a-custom-domain-name"></a>Alternatieve oplossing: gebruik een aangepaste domein naam
+## <a name="alternate-solution-use-a-custom-domain-name"></a>Alternatieve oplossing: Een aangepaste domeinnaam gebruiken
 
-Als u v1 SKU gebruikt, kunt u de locatie header niet herschrijven. Deze mogelijkheid is alleen beschikbaar voor v2 SKU. Om het omleidings probleem op te lossen, geeft u dezelfde hostnaam door die de toepassings gateway naar de app service ontvangt, in plaats van een host te overschrijven.
+Het App Service van Custom Domain is een andere oplossing om het verkeer altijd om te leiden naar Application Gateway domeinnaam van de gebruiker ( `www.contoso.com` in ons voorbeeld). Deze configuratie fungeert ook als oplossing voor het cookieprobleem ARR-affiniteit. Standaard wordt het cookiedomein ARRAffinity ingesteld op de standaardhostnaam (example.azurewebsites.net) van de App Service in plaats van de domeinnaam van de Application Gateway. Daarom weigert de browser in dergelijke gevallen de cookie vanwege het verschil in de domeinnamen van de aanvraag en de cookie.
 
-De app service doet nu de omleiding (indien van toepassing) op dezelfde oorspronkelijke host-header die verwijst naar de toepassings gateway en niet zijn eigen.
+U kunt de opgegeven methode volgen voor problemen met omleiding en het cookiedomein van ARRAffinity. Voor deze methode moet u toegang hebben tot de DNS-zone van uw aangepaste domein.
 
-U moet eigenaar zijn van een aangepast domein en dit proces volgen:
+**Stap 1:** stel een Custom Domain in App Service en controleer het eigendom van het domein door de [CNAME-& TXT DNS-records toe te voegen.](../app-service/app-service-web-tutorial-custom-domain.md#get-a-domain-verification-id)
+De records zien er ongeveer als
+-  `www.contoso.com` IN CNAME `contoso.azurewebsite.net`
+-  `asuid.www.contoso.com` IN TXT " `<verification id string>` "
 
-- Registreer het domein bij de lijst met aangepaste domeinen van de app service. U moet een CNAME in uw aangepaste domein hebben dat verwijst naar de FQDN van de app-service. Zie [een bestaande aangepaste DNS-naam toewijzen aan Azure app service](../app-service/app-service-web-tutorial-custom-domain.md)voor meer informatie.
 
-    ![Lijst met aangepaste domeinen voor app service](./media/troubleshoot-app-service-redirection-app-service-url/appservice-2.png)
+**Stap 2:** de CNAME-record in de vorige stap was alleen nodig voor de domeinverificatie. Uiteindelijk hebben we het verkeer nodig om via een Application Gateway. U kunt dus `www.contoso.com` 's CNAME nu wijzigen zodat deze naar Application Gateway FQDN van de Application Gateway wijzen. Als u een FQDN voor uw Application Gateway, gaat u naar de resource van het openbare IP-adres en wijst u er een 'DNS-naamlabel' voor toe. De bijgewerkte CNAME-record moet er nu uitzien als 
+-  `www.contoso.com` IN CNAME `contoso.eastus.cloudapp.azure.com`
 
-- Uw app service is gereed om de hostnaam te accepteren `www.contoso.com` . Wijzig uw CNAME-vermelding in DNS zodat deze terug naar de FQDN van de toepassings gateway verwijst, bijvoorbeeld `appgw.eastus.cloudapp.azure.com` .
 
-- Zorg ervoor dat uw domein wordt `www.contoso.com` omgezet naar de FQDN van de toepassings gateway wanneer u een DNS-query uitvoert.
+**Stap 3:** schakel 'Hostnaam kiezen uit back-endadres' uit voor de bijbehorende HTTP-instelling.
 
-- Stel de aangepaste test voor het uitschakelen **van de hostnaam van de back-end-HTTP-instellingen** uit. Schakel in het Azure Portal het selectie vakje in de instellingen testen uit. Gebruik in Power shell niet de schakel optie **-PickHostNameFromBackendHttpSettings** in de opdracht **set-AzApplicationGatewayProbeConfig** . Voer in het veld hostnaam van de test de FQDN-naam van uw app service in, example.azurewebsites.net. De test aanvragen die vanuit de toepassings gateway worden verzonden, hebben deze FQDN in de hostheader.
+Gebruik in PowerShell de schakelknop `-PickHostNameFromBackendAddress` niet in de opdracht `Set-AzApplicationGatewayBackendHttpSettings` .
 
-  > [!NOTE]
-  > Voor de volgende stap zorgt u ervoor dat uw aangepaste test niet is gekoppeld aan uw back-end-HTTP-instellingen. Uw HTTP-instellingen hebben nog steeds de optie **hostnaam kiezen van back-end-adres** switch op dit punt ingeschakeld.
 
-- Stel de HTTP-instellingen van uw toepassings gateway in op het uitschakelen **van de hostnaam uit het back-upadres**. Schakel in het Azure Portal het selectie vakje uit. Gebruik in Power shell niet de schakel optie **-PickHostNameFromBackendAddress** in de opdracht **set-AzApplicationGatewayBackendHttpSettings** .
+**Stap 4:** stel een aangepaste statustest met het veld Host in als aangepast of standaarddomein van de App Service om de back-end te bepalen als in orde en operationeel verkeer.
 
-- Koppel de aangepaste test terug naar de HTTP-instellingen van de back-end en controleer of de back-end in orde is.
+Gebruik in PowerShell niet de schakelknop in de opdracht en gebruik het aangepaste of standaarddomein van de App Service in de `-PickHostNameFromBackendHttpSettings` `Set-AzApplicationGatewayProbeConfig` switch -HostName van de test.
 
-- De toepassings gateway moet nu dezelfde hostnaam door sturen `www.contoso.com` naar de app service. De omleiding gebeurt op dezelfde hostnaam. Controleer de volgende voorbeeld aanvraag en-antwoord headers.
-
-Als u de voor gaande stappen wilt implementeren met behulp van Power shell voor een bestaande configuratie, gebruikt u het Power shell-voorbeeld script dat volgt. Houd er rekening mee dat de Schakel opties **-PickHostname niet zijn** gebruikt in de configuratie van de test en de HTTP-instellingen.
+Als u de vorige stappen wilt implementeren met behulp van PowerShell voor een bestaande installatie, gebruikt u het volgende PowerShell-voorbeeldscript. Merk op dat we de schakelopties **-PickHostname** niet hebben gebruikt in de configuratie van de test- en HTTP-instellingen.
 
 ```azurepowershell-interactive
 $gw=Get-AzApplicationGateway -Name AppGw1 -ResourceGroupName AppGwRG
@@ -144,4 +142,4 @@ Set-AzApplicationGateway -ApplicationGateway $gw
   ```
   ## <a name="next-steps"></a>Volgende stappen
 
-Als de voor gaande stappen het probleem niet hebben opgelost, opent u een [ondersteunings ticket](https://azure.microsoft.com/support/options/).
+Als het probleem niet is opgelost met de voorgaande stappen, opent u een [ondersteuningsticket](https://azure.microsoft.com/support/options/).

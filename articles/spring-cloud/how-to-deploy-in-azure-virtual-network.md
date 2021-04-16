@@ -1,33 +1,33 @@
 ---
-title: Azure lente-Cloud in een virtueel netwerk implementeren
+title: Een Azure Spring Cloud implementeren in een virtueel netwerk
 description: Azure Spring Cloud implementeren in een virtueel netwerk (VNet-injectie).
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 07/21/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 82dcd8c59c55a2866b51fd6dee896ea1298b6cf6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: b0ea5728618c7b69403fcc4c0a3575b70fac6038
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104877979"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482599"
 ---
-# <a name="deploy-azure-spring-cloud-in-a-virtual-network"></a>Azure lente-Cloud in een virtueel netwerk implementeren
+# <a name="deploy-azure-spring-cloud-in-a-virtual-network"></a>Een Azure Spring Cloud implementeren in een virtueel netwerk
 
-**Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
+**Dit artikel is van toepassing op:** ââ"ï ̧ Java ââ"ï ̧ C #
 
 In deze zelfstudie wordt uitgelegd hoe u een Azure Spring Cloud-exemplaar implementeert in uw virtuele netwerk. Deze implementatie wordt ook wel VNet-injectie genoemd.
 
 De implementatie maakt het volgende mogelijk:
 
-* Isolatie van Azure Spring Cloud-apps en -serviceruntime vanaf internet in uw bedrijfsnetwerk.
-* Azure Spring Cloud-interactie met systemen in on-premises datacentrums of Azure-services in andere virtuele netwerken.
+* Isolatie van Azure Spring Cloud apps en serviceruntime van internetâ€™ in uw bedrijfsnetwerkâ€™.
+* Azure Spring Cloud interactie met systemen in â€™on-premises datacenters â€™, of Azure-services in andere virtuele netwerken.
 * Klanten kunnen de inkomende en uitgaande netwerkcommunicatie voor Azure Spring Cloud beheren.
 
 > [!Note]
-> U kunt alleen uw virtuele Azure-netwerk selecteren wanneer u een nieuw Azure lente-Cloud service-exemplaar maakt. U kunt niet wijzigen om een ander virtueel netwerk te gebruiken nadat de Azure lente-Cloud is gemaakt.
+> U kunt uw virtuele Azure-netwerk alleen selecteren wanneer u een nieuw Azure Spring Cloud service-exemplaar maakt. U kunt niet wijzigen om een ander virtueel netwerk te gebruiken nadat Azure Spring Cloud is gemaakt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,7 +50,7 @@ Het virtuele netwerk waarin u het Azure Spring Cloud-exemplaar implementeert, mo
     * Eén voor uw Spring Boot-microservicetoepassingen.
     * Er is een een-op-een-relatie tussen deze subnetten en een Azure Spring Cloud-exemplaar. Gebruik een nieuw subnet voor elk service-exemplaar dat u implementeert. Elk subnet kan slechts één service-exemplaar bevatten.
 * **Adresruimte**: CIDR blokkeert maximaal */28* voor het subnet van de serviceruntime en het subnet van de Spring Boot-microservicetoepassingen.
-* **Route tabel**: standaard moeten aan de subnetten geen bestaande route tabellen zijn gekoppeld. U kunt [uw eigen route tabel meenemen](#bring-your-own-route-table).
+* **Routetabel:** voor de subnetten zijn standaard geen bestaande routetabellen gekoppeld. U kunt [uw eigen routetabel meenemen.](#bring-your-own-route-table)
 
 In de volgende procedures wordt de installatie van het virtuele netwerk voor het Azure Spring Cloud-exemplaar beschreven.
 
@@ -80,7 +80,7 @@ Sla stap 1, 2 en 3 over als u al een virtueel netwerk hebt voor het hosten van e
 1. Selecteer **Controleren en maken**. Laat voor de rest de standaardwaarden staan, en selecteer **Maken**.
 
 ## <a name="grant-service-permission-to-the-virtual-network"></a>Machtiging voor service verlenen aan het virtuele netwerk
-De Azure lente-Cloud vereist **eigenaars** machtigingen voor uw virtuele netwerk om een speciale en dynamische service-principal in het virtuele netwerk te kunnen verlenen voor verdere implementatie en onderhoud.
+Azure Spring Cloud hebt **eigenaarsmachtiging** voor uw virtuele netwerk nodig om een toegewezen en dynamische service-principal op het virtuele netwerk te verlenen voor verdere implementatie en onderhoud.
 
 Selecteer het virtuele netwerk **azure-spring-cloud-vnet** dat u eerder hebt gemaakt.
 
@@ -164,9 +164,9 @@ Deze netwerkresources zijn verbonden met het virtuele netwerk dat is gemaakt in 
    > [!Important]
    > De resourcegroepen worden volledig beheerd met de Azure Spring Cloud-service. Verwijder of wijzig resources *niet* handmatig.
 
-## <a name="using-smaller-subnet-ranges"></a>Kleinere subnet bereiken gebruiken
+## <a name="using-smaller-subnet-ranges"></a>Kleinere subnetbereiken gebruiken
 
-In deze tabel wordt het maximum aantal app-exemplaren weer gegeven dat wordt ondersteund door kleinere subnetten.
+In deze tabel ziet u het maximum aantal app-exemplaren dat Azure Spring Cloud met behulp van kleinere subnetbereiken.
 
 | CIDR voor app-subnet | Totaal aantal IP's | Beschikbare IP's | Maximum aantal app-exemplaren                                        |
 | --------------- | --------- | ------------- | ------------------------------------------------------------ |
@@ -180,25 +180,25 @@ Voor subnetten zijn vijf IP-adressen gereserveerd in Azure, en er zijn minstens 
 
 Voor een subnet voor een serviceruntime is /28 de minimale grootte. De grootte heeft geen invloed op het aantal app-exemplaren.
 
-## <a name="bring-your-own-route-table"></a>Uw eigen route tabel meenemen
+## <a name="bring-your-own-route-table"></a>Bring Your Own Route-tabel
 
-Azure lente Cloud ondersteunt het gebruik van bestaande subnetten en route tabellen.
+Azure Spring Cloud ondersteunt het gebruik van bestaande subnetten en routetabellen.
 
-Als uw aangepaste subnetten geen route tabellen bevatten, maakt Azure lente-Cloud deze voor elk van de subnetten en voegt er regels aan toe tijdens de levens cyclus van het exemplaar. Als uw aangepaste subnetten route tabellen bevatten, erkent Azure lente-Cloud de bestaande route tabellen tijdens de bewerkingen van het exemplaar en worden er dienovereenkomstig/updates en/of regels toegevoegd voor bewerkingen.
+Als uw aangepaste subnetten geen routetabellen bevatten, maakt Azure Spring Cloud ze voor elk van de subnetten en voegt u er regels aan toe gedurende de levenscyclus van het exemplaar. Als uw aangepaste subnetten routetabellen bevatten, Azure Spring Cloud de bestaande routetabellen tijdens exemplaarbewerkingen bevestigd en voegt/updates en/of regels dienovereenkomstig toe voor bewerkingen.
 
 > [!Warning] 
-> Aangepaste regels kunnen worden toegevoegd aan de aangepaste route tabellen en worden bijgewerkt. Regels worden echter toegevoegd door de Azure lente-Cloud en ze mogen niet worden bijgewerkt of verwijderd. Regels, zoals 0.0.0.0/0, moeten altijd voor komen in een bepaalde route tabel en worden toegewezen aan het doel van uw Internet gateway, zoals een NVA of een andere uitgangs gateway. Wees voorzichtig wanneer u regels bijwerkt wanneer alleen uw aangepaste regels worden gewijzigd.
+> Aangepaste regels kunnen worden toegevoegd aan de aangepaste routetabellen en worden bijgewerkt. Regels worden echter wel toegevoegd door Azure Spring Cloud en deze mogen niet worden bijgewerkt of verwijderd. Regels zoals 0.0.0.0/0 moeten altijd aanwezig zijn in een bepaalde routetabel en zijn toe te staan aan het doel van uw internetgateway, zoals een NVA of een andere gateway voor een ingang. Wees voorzichtig bij het bijwerken van regels wanneer alleen uw aangepaste regels worden gewijzigd.
 
 
-### <a name="route-table-requirements"></a>Vereisten voor de route tabel
+### <a name="route-table-requirements"></a>Vereisten voor routetabel
 
-De route tabellen waaraan uw aangepaste vnet is gekoppeld, moeten voldoen aan de volgende vereisten:
+De routetabellen waaraan uw aangepaste vnet is gekoppeld, moeten voldoen aan de volgende vereisten:
 
-* U kunt uw Azure-route tabellen alleen koppelen aan uw vnet wanneer u een nieuw Azure lente-Cloud service-exemplaar maakt. U kunt niet wijzigen om een andere route tabel te gebruiken nadat de Azure lente-Cloud is gemaakt.
-* Zowel het subnet van de micro service-toepassing als het runtime-subnet van de service moet worden gekoppeld aan verschillende route tabellen of geen van beide.
-* Machtigingen moeten worden toegewezen voordat het exemplaar kan worden gemaakt. Zorg ervoor dat u de Azure *lente-Cloud eigenaar* toestemming verleent voor uw route tabellen.
-* De gekoppelde resource van de route tabel kan niet worden bijgewerkt nadat het cluster is gemaakt. De resource van de route tabel kan niet worden bijgewerkt, maar aangepaste regels kunnen worden gewijzigd in de route tabel.
-* U kunt een route tabel met meerdere exemplaren niet opnieuw gebruiken vanwege mogelijke conflicterende routerings regels.
+* U kunt uw Azure-routetabellen alleen aan uw vnet koppelen wanneer u een nieuw Azure Spring Cloud service-exemplaar. U kunt niet wijzigen om een andere routetabel te gebruiken nadat Azure Spring Cloud is gemaakt.
+* Zowel het subnet van de microservicetoepassing als het subnet van de serviceruntime moet zijn verbonden met verschillende routetabellen of aan geen van beide.
+* Machtigingen moeten worden toegewezen voordat het exemplaar wordt gemaakt. Zorg ervoor dat u Azure *Spring Cloud-eigenaar toe* te staan aan uw routetabellen.
+* De gekoppelde routetabelresource kan niet worden bijgewerkt nadat het cluster is gemaakt. Hoewel de resource van de routetabel niet kan worden bijgewerkt, kunnen aangepaste regels worden gewijzigd in de routetabel.
+* U kunt een routetabel met meerdere exemplaren niet opnieuw gebruiken vanwege mogelijke conflicterende routeringsregels.
 
 ## <a name="next-steps"></a>Volgende stappen
 

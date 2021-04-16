@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure RBAC
 description: Overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure RBAC. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.topic: reference
 author: rolyon
 ms.author: rolyon
 ms.service: role-based-access-control
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 792e984f8b717c7ec5474df7021a72b5e3b49ca4
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 0517a273684c26001af5a8e7e11eb5df56e04f86
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106094814"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500108"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-rbac"></a>Ingebouwde Azure Policy-definities voor Azure RBAC
 

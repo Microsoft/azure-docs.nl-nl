@@ -5,7 +5,7 @@
   items:
     - name: Wat is Azure Communication Services?
       href: overview.md
-    - name: Ondersteunings-en Help-opties
+    - name: Ondersteunings- en Help-opties
       href: support.md
 - name: Quickstarts
   expanded: true
@@ -28,7 +28,7 @@
       items:
         - name: Een telefoonnummer ophalen
           href: quickstarts/telephony-sms/get-phone-number.md
-        - name: Poort een telefoon nummer in azure
+        - name: Een telefoonnummer via een poort naar Azure
           href: quickstarts/telephony-sms/port-phone-number.md
         - name: Spraakoproepen toevoegen aan uw app
           href: quickstarts/voice-video-calling/pstn-call.md
@@ -42,17 +42,17 @@
       items:
         - name: Audiobellen toevoegen aan uw app
           href: quickstarts/voice-video-calling/getting-started-with-calling.md
-        - name: Video toevoegen aan uw app (Java script)
+        - name: Video-oproepen toevoegen aan uw app (JavaScript)
           href: quickstarts/voice-video-calling/get-started-with-video-calling.md
         - name: De aanroepende SDK gebruiken
           href: quickstarts/voice-video-calling/calling-client-samples.md
         - name: Voeg u aanroepende app toe aan een Teams-meeting
           href: quickstarts/voice-video-calling/get-started-teams-interop.md
-    - name: UI-Framework
+    - name: UI Framework
       items:
         - name: Aan de slag met samengestelde onderdelen
           href: quickstarts/ui-framework/get-started-with-composites.md
-        - name: Aan de slag met basis onderdelen
+        - name: Aan de slag met basisonderdelen
           href: quickstarts/ui-framework/get-started-with-components.md
         - name: Uw eigen UI Framework-onderdeel maken
           href: quickstarts/ui-framework/create-your-own-components.md
@@ -61,11 +61,11 @@
   items:
     - name: Een vertrouwde verificatieservice maken met behulp van Azure Functions
       href: tutorials/trusted-service-tutorial.md
-    - name: 'Een HTTP-aanvraag met een HMAC-hand tekening ondertekenen met C #'
+    - name: 'Een HTTP-aanvraag ondertekenen met een HMAC-handtekening met C #'
       href: tutorials/hmac-header-tutorial.md
-    - name: Een web-app voorbereiden voor communicatie Services (Node.js)
+    - name: Een web-app voorbereiden voor Communication Services (Node.js)
       href: tutorials/building-app-start.md
-    - name: Ondertekenen en aanvragen indienen bij de SMS-API van de ACS met postman
+    - name: Aanvragen ondertekenen en aanvragen indienen voor acs-sms-API postman
       href: tutorials/postman-tutorial.md
 - name: Concepten
   expanded: false
@@ -78,25 +78,25 @@
           href: concepts/chat/concepts.md
     - name: Telefonie en sms
       items:
-        - name: SMS-SDK-overzicht
+        - name: Overzicht van sms-SDK
           href: concepts/telephony-sms/sdk-features.md
         - name: Sms-concepten
           href: concepts/telephony-sms/concepts.md
-        - name: Telefonie concepten
+        - name: Concepten van telefonie
           href: concepts/telephony-sms/telephony-concept.md
-        - name: Telefoon nummer typen
+        - name: Typen telefoonnummers
           href: concepts/telephony-sms/plan-solution.md
-        - name: Vereisten voor de infra structuur van de SIP-interface
+        - name: Vereisten voor SIP Interface-infrastructuur
           href: concepts/telephony-sms/sip-interface-infrastructure.md
-        - name: VEELGESTELDE VRAGEN OVER SMS
+        - name: Veelgestelde vragen over SMS
           href: concepts/telephony-sms/sms-faq.md
-        - name: Bericht beleid
+        - name: Berichtenbeleid
           href: concepts/telephony-sms/messaging-policy.md
     - name: Audio- en videobellen
       items:
         - name: Bekende problemen
           href: concepts/known-issues.md
-        - name: Overzicht van de SDK
+        - name: Overzicht van het aanroepen van de SDK
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Voice- en videoconcepten
           href: concepts/voice-video-calling/about-call-types.md
@@ -104,26 +104,15 @@
           href: concepts/voice-video-calling/network-requirements.md
         - name: Aanroepstromen
           href: concepts/call-flows.md
-        - name: Topologieën voor oproep stromen
+        - name: Stroom-topologies aanroepen
           href: concepts/detailed-call-flows.md
-    - name: UI-Framework
+    - name: UI Framework
       items:
         - name: Overzicht van UI Framework
           href: concepts/ui-framework/ui-sdk-overview.md
-        - name: Mogelijkheden van UI-Framework
+        - name: Mogelijkheden van UI Framework
           href: concepts/ui-framework/ui-sdk-features.md
-    - name: Gegevens en bewerkingen
-      items:
-        - name: Service gebeurtenissen (EventGrid)
-          href: ../event-grid/event-schema-communication-services.md
-          maintainContext: true
-        - name: Logboekregistratie en diagnostische gegevens
-          href: concepts/logging-and-diagnostics.md
-        - name: Metrische gegevens
-          href: concepts/metrics.md
-        - name: Problemen oplossen
-          href: concepts/troubleshooting-info.md
-    - name: Sdk's en REST-Api's
+    - name: SDK's en REST API's
       href: concepts/sdk-options.md
     - name: Architectuur van client en server
       href: concepts/client-and-server-architecture.md
@@ -139,6 +128,15 @@
       href: concepts/notifications.md
     - name: Interoperabiliteit met Teams
       href: concepts/teams-interop.md
+    - name: Servicegebeurtenissen (EventGrid)
+      href: ../event-grid/event-schema-communication-services.md
+      maintainContext: true
+    - name: Logboekregistratie en diagnostische gegevens
+      href: concepts/logging-and-diagnostics.md
+    - name: Metrische gegevens
+      href: concepts/metrics.md
+    - name: Problemen oplossen
+      href: concepts/troubleshooting-info.md
 - name: Voorbeelden
   items:
     - name: Overzicht
@@ -173,7 +171,7 @@
           href: 'https://azure.github.io/azure-sdk-for-net/communication.html#azurecommunicationchat'
         - name: Chat (Android/Java)
           href: 'https://azure.github.io/azure-sdk-for-java/communication.html#azure-communication-chat'
-        - name: Chat (python)
+        - name: Chat (Python)
           href: 'https://azure.github.io/azure-sdk-for-python/communication.html#azure-communication-chat'
     - name: SMS-bibliotheken
       items:
@@ -183,17 +181,17 @@
           href: 'https://azure.github.io/azure-sdk-for-net/communication.html#azurecommunicationsms'
         - name: SMS (Android/Java)
           href: 'https://azure.github.io/azure-sdk-for-java/communication.html#azure-communication-sms'
-        - name: SMS (python)
+        - name: Sms (Python)
           href: 'https://azure.github.io/azure-sdk-for-python/communication.html#azure-communication-sms'
-    - name: Identiteits bibliotheken
+    - name: Identiteitsbibliotheken
       items:
-        - name: Identiteit (Java script)
+        - name: Identiteit (JavaScript)
           href: 'https://azure.github.io/azure-sdk-for-js/communication.html#azure-communication-identity'
         - name: Identiteit (.NET)
           href: 'https://azure.github.io/azure-sdk-for-net/communication.html#azurecommunicationidentity'
         - name: Identiteit (Android/Java)
           href: 'https://azure.github.io/azure-sdk-for-java/communication.html#azure-communication-identity'
-        - name: Identiteit (python)
+        - name: Identiteit (Python)
           href: 'https://azure.github.io/azure-sdk-for-python/communication.html#azure-communication-identity'
     - name: Algemene bibliotheken
       items:
@@ -203,7 +201,7 @@
           href: 'https://azure.github.io/azure-sdk-for-net/communication.html#azurecommunicationcommon'
         - name: Algemeen (Android/Java)
           href: 'https://azure.github.io/azure-sdk-for-java/communication.html#azure-communication-common'
-        - name: Algemeen (python)
+        - name: Algemeen (Python)
           href: 'https://azure.github.io/azure-sdk-for-python/communication.html#azure-communication-common'
 - name: Resources
   items:

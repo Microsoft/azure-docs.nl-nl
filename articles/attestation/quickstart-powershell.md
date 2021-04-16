@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: cbc415411e05d6fdecee1acf2fbc02b3c170b9d6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 80f0efe0894c54d1499bbfdce2317a38dff9299d
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102501121"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481613"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-powershell"></a>Quickstart: Azure Attestation instellen met behulp van Microsoft Azure PowerShell
 
@@ -170,12 +170,12 @@ Voor het beheren van beleid, heeft een Azure AD-gebruiker de volgende machtiging
 - Microsoft.Attestation/attestationProviders/attestation/write
 - Microsoft.Attestation/attestationProviders/attestation/delete
 
-Deze machtigingen kunnen worden toegewezen aan een AD-gebruiker via een rol zoals 'Eigenaar' (machtigingen voor jokertekens), 'Inzender' (machtigingen voor jokertekens) of 'Attestation-inzender' (alleen specifieke machtigingen voor Azure Attestation).  
+Als u deze acties wilt uitvoeren, moet een Azure AD-gebruiker de rol 'Attestation-inzender' hebben voor de Attestation-provider. Deze machtigingen kunnen ook worden overgenomen met rollen zoals 'Eigenaar' (machtigingen voor jokertekens), 'Inzender' (machtigingen met jokertekens) op het niveau van het abonnement/de resourcegroep.  
 
 Voor het lezen van beleid, heeft een Azure AD-gebruiker de volgende machtigingen nodig voor 'Acties':
 - Microsoft.Attestation/attestationProviders/attestation/read
 
-Deze machtiging kan worden toegewezen aan een AD-gebruiker via een rol zoals 'Lezer' (machtigingen voor jokertekens) of 'Attestation-lezer' (alleen specifieke machtigingen voor Azure Attestation).
+Als u deze actie wilt uitvoeren, moet een Azure AD-gebruiker de rol 'Attestation-lezer' hebben voor de Attestation-provider. De leesmachtiging kan ook worden overgenomen met rollen zoals Lezer (machtigingen voor jokertekens) op het niveau van het abonnement of de resourcegroep.  
 
 Onderstaande PowerShell-cmdlets bieden het beheer van beleid voor een Attestation-provider geboden (één TEE per keer).
 

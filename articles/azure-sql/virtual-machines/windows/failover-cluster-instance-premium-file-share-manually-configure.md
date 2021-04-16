@@ -1,6 +1,6 @@
 ---
 title: Een FCI maken met een Premium-bestands share
-description: Gebruik een Premium-bestands share (PFS) om een FCI (failover cluster instance) te maken met SQL Server op virtuele machines van Azure.
+description: Gebruik een Premium-bestands share (PFS) om een failovercluster-exemplaar (FCI) te maken met SQL Server op virtuele Azure-machines.
 services: virtual-machines
 documentationCenter: na
 author: MashaMSFT
@@ -14,69 +14,69 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: 80fe9f03f2c57eab8527e553153f3e65315a54bf
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ddd25c605ef159bddfb8a9c7cb4d02ac7094c511
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102034843"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482191"
 ---
-# <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Een FCI maken met een Premium-bestands share (SQL Server op Azure Vm's)
+# <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Een FCI maken met een Premium-bestands share (SQL Server azure-VM's)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-In dit artikel wordt uitgelegd hoe u een FCI (failover cluster instance) maakt met SQL Server op Azure Virtual Machines (Vm's) met behulp van een [Premium-bestands share](../../../storage/files/storage-how-to-create-file-share.md).
+In dit artikel wordt uitgelegd hoe u een exemplaar van een failovercluster (FCI) maakt met SQL Server op Azure Virtual Machines (VM's) met behulp van een [Premium-bestands share.](../../../storage/files/storage-how-to-create-file-share.md)
 
-Premium-bestands shares zijn Opslagruimten Direct (SSD), consistente bestands shares met een lage latentie die volledig worden ondersteund voor gebruik met failoverclusters voor SQL Server 2012 of hoger op Windows Server 2012 of hoger. Premium-bestands shares bieden meer flexibiliteit, waardoor u een bestands share zonder uitval tijd kunt verg Roten of verkleinen en schalen.
+Premium-bestands shares worden Opslagruimten Direct (SSD) ondersteund, consistent bestands shares met lage latentie die volledig worden ondersteund voor gebruik met exemplaren van failovercluster voor SQL Server 2012 of hoger op Windows Server 2012 of hoger. Premium-bestands shares bieden u meer flexibiliteit, zodat u de omvang en schaal van een bestands share zonder uitvaltijd kunt schalen.
 
-Zie voor meer informatie een overzicht van [FCI met SQL Server op Azure vm's](failover-cluster-instance-overview.md) en [Aanbevolen procedures voor clusters](hadr-cluster-best-practices.md). 
+Zie voor meer informatie een overzicht van FCI met [SQL Server over Azure-VM's](failover-cluster-instance-overview.md) en [best practices voor clusters.](hadr-cluster-best-practices.md) 
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u de instructies in dit artikel hebt voltooid, hebt u het volgende nodig:
+Voordat u de instructies in dit artikel voltooit, moet u al het volgende hebben:
 
 - Een Azure-abonnement.
 - Een account met machtigingen voor het maken van objecten op zowel virtuele Azure-machines als in Active Directory.
-- [Twee of meer voor bereide virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md) in een [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) of verschillende [beschikbaarheids zones](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address).
-- Een [Premium-bestands share](../../../storage/files/storage-how-to-create-file-share.md) die moet worden gebruikt als het geclusterde station, op basis van de opslag quota van uw Data Base voor uw gegevens bestanden.
-- De meest recente versie van [Power shell](/powershell/azure/install-az-ps). 
+- [Twee of meer voorbereide virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md) in een [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) of verschillende [beschikbaarheidszones](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address).
+- Een [Premium-bestands share](../../../storage/files/storage-how-to-create-file-share.md) die moet worden gebruikt als het geclusterde station, op basis van het opslagquotum van uw database voor uw gegevensbestanden.
+- De nieuwste versie van [PowerShell](/powershell/azure/install-az-ps). 
 
-## <a name="mount-premium-file-share"></a>Premium-bestands share koppelen
+## <a name="mount-premium-file-share"></a>Premium-bestands share toevoegen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). en ga naar uw opslag account.
-1. Ga naar **Bestands shares** onder **File Service** en selecteer vervolgens de Premium-bestands share die u wilt gebruiken voor uw SQL-opslag.
-1. Selecteer **verbinding** om de Connection String voor uw bestands share weer te geven.
-1. Selecteer in de vervolg keuzelijst de stationsletter die u wilt gebruiken en Kopieer beide code blokken naar Klad blok.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). en ga naar uw opslagaccount.
+1. Ga naar **Bestands shares** onder **Bestandsservice** en selecteer vervolgens de Premium-bestands share die u wilt gebruiken voor uw SQL-opslag.
+1. Selecteer **Verbinding maken** om de connection string voor uw bestands share weer te geven.
+1. Selecteer in de vervolgkeuzelijst de stationletter die u wilt gebruiken en kopieer beide codeblokken naar Kladblok.
 
-   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/premium-file-storage-commands.png" alt-text="Beide Power shell-opdrachten kopiëren van de bestands share Connect Portal":::
+   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/premium-file-storage-commands.png" alt-text="Kopieer beide PowerShell-opdrachten vanuit de connect-portal voor bestands delen":::
 
-1. Gebruik Remote Desktop Protocol (RDP) om verbinding te maken met de SQL Server virtuele machine met het account dat door uw SQL Server FCI wordt gebruikt voor het service account.
-1. Open een Power shell-opdracht console voor beheer.
-1. Voer de opdrachten uit die u eerder hebt opgeslagen tijdens het werken in de portal.
-1. Ga naar de share via Verkenner of het dialoog venster **uitvoeren** (Selecteer Windows + R). Gebruik het netwerkpad `\\storageaccountname.file.core.windows.net\filesharename` . Bijvoorbeeld: `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`
+1. Gebruik Remote Desktop Protocol (RDP) om verbinding te maken met de SQL Server-VM met het account dat uw SQL Server FCI gebruikt voor het serviceaccount.
+1. Open een PowerShell-opdrachtconsole voor beheer.
+1. Voer de opdrachten uit die u eerder hebt opgeslagen toen u in de portal werkte.
+1. Ga naar de share met behulp van Verkenner of **het** dialoogvenster Uitvoeren (selecteer Windows + R). Gebruik het netwerkpad `\\storageaccountname.file.core.windows.net\filesharename` . Bijvoorbeeld: `\\sqlvmstorageaccount.file.core.windows.net\sqlpremiumfileshare`
 
-1. Maak ten minste één map op de zojuist verbonden bestands share om uw SQL-gegevens bestanden in te brengen.
-1. Herhaal deze stappen op elke SQL Server virtuele machine die u aan het cluster wilt deel nemen.
+1. Maak ten minste één map op de zojuist verbonden bestands share om uw SQL-gegevensbestanden in te plaatsen.
+1. Herhaal deze stappen op elke SQL Server VM die deelneemt aan het cluster.
 
   > [!IMPORTANT]
-  > - Overweeg het gebruik van een afzonderlijke bestands share voor back-upbestanden om de invoer/uitvoer-bewerkingen per seconde (IOPS) en de ruimte capaciteit van deze share voor gegevens en logboek bestanden op te slaan. U kunt een Premium-of standaard bestands share gebruiken voor back-upbestanden.
-  > - Als u zich in Windows 2012 R2 of eerder bevindt, volgt u dezelfde stappen voor het koppelen van de bestands share die u als de bestandssharewitness gaat gebruiken. 
+  > - Overweeg het gebruik van een afzonderlijke bestands share voor back-upbestanden om de invoer-/uitvoerbewerkingen per seconde (IOPS) en de ruimtecapaciteit van deze share op te slaan voor gegevens en logboekbestanden. U kunt een Premium- of Standard-bestands share gebruiken voor back-upbestanden.
+  > - Als u windows 2012 R2 of eerder gebruikt, volgt u dezelfde stappen om de bestands share te installeren die u gaat gebruiken als de bestandsdeel witness. 
   > 
 
 
-## <a name="add-windows-cluster-feature"></a>Windows-cluster functie toevoegen
+## <a name="add-windows-cluster-feature"></a>Windows-clusterfunctie toevoegen
 
-1. Maak verbinding met de eerste virtuele machine met RDP met behulp van een domein account dat lid is van de lokale beheerders en dat gemachtigd is om objecten te maken in Active Directory. Gebruik dit account voor de rest van de configuratie.
+1. Maak verbinding met de eerste virtuele machine met RDP met behulp van een domeinaccount dat lid is van de lokale beheerders en dat is machtigingen heeft om objecten te maken in Active Directory. Gebruik dit account voor de rest van de configuratie.
 
-1. [Voeg Failover Clustering toe aan elke virtuele machine](availability-group-manually-configure-prerequisites-tutorial.md#add-failover-clustering-features-to-both-sql-server-vms).
+1. [Voeg failoverclustering toe aan elke virtuele machine.](availability-group-manually-configure-prerequisites-tutorial.md#add-failover-clustering-features-to-both-sql-server-vms)
 
-   Ga als volgt te werk om failover clustering te installeren vanuit de gebruikers interface:
-   1. Selecteer in **Serverbeheer** **beheren** en selecteer vervolgens **functies en onderdelen toevoegen**.
-   1. Selecteer in de wizard **functies en onderdelen toevoegen** de optie **volgende** totdat u **onderdelen selecteert**.
-   1. Selecteer in **functies selecteren** de optie **failover clustering**. Neem alle vereiste functies en de beheer hulpprogramma's op. 
-   1. Selecteer **onderdelen toevoegen**.
-   1. Selecteer **volgende** en selecteer vervolgens **volt ooien** om de functies te installeren.
+   Als u failoverclustering wilt installeren vanuit de gebruikersinterface, doet u het volgende op beide virtuele machines:
+   1. Selecteer **Serverbeheer** beheren **en** selecteer vervolgens **Functies en onderdelen toevoegen.**
+   1. Selecteer in de wizard **Functies en onderdelen** toevoegen de optie **Volgende** totdat u Functies **selecteren krijgt.**
+   1. Selecteer **failoverclustering in Functies selecteren.**  Neem alle vereiste functies en de beheerhulpprogramma's op. 
+   1. Selecteer **Onderdelen toevoegen.**
+   1. Selecteer **Volgende** en selecteer vervolgens **Voltooien om** de functies te installeren.
 
-   Als u Failover Clustering wilt installeren met behulp van Power shell, voert u het volgende script uit vanuit een Power shell-beheer sessie op een van de virtuele machines:
+   Als u failoverclustering wilt installeren met behulp van PowerShell, moet u het volgende script uitvoeren vanuit een PowerShell-sessie van een beheerder op een van de virtuele machines:
 
    ```powershell
    $nodes = ("<node1>","<node2>")
@@ -85,26 +85,26 @@ Voordat u de instructies in dit artikel hebt voltooid, hebt u het volgende nodig
 
 ## <a name="validate-cluster"></a>Cluster valideren
 
-Valideer het cluster in de gebruikers interface of met behulp van Power shell.
+Valideer het cluster in de gebruikersinterface of met behulp van PowerShell.
 
-Als u het cluster wilt valideren met behulp van de gebruikers interface, gaat u als volgt te werk op een van de virtuele machines:
+Als u het cluster wilt valideren met behulp van de gebruikersinterface, doet u het volgende op een van de virtuele machines:
 
-1. Klik onder **Serverbeheer** op **extra** en selecteer vervolgens **Failoverclusterbeheer**.
-1. Selecteer onder **Failoverclusterbeheer** **actie** en selecteer vervolgens **configuratie valideren**.
+1. Selecteer **Serverbeheer** **hulpprogramma's** en selecteer vervolgens **Failoverclusterbeheer**.
+1. Selecteer **onder Failoverclusterbeheer** actie en selecteer vervolgens Configuratie **valideren.**
 1. Selecteer **Next**.
-1. Voer onder **servers of een cluster selecteren** de namen van beide virtuele machines in.
-1. Onder **test opties** selecteert u **alleen geselecteerde tests uitvoeren**. 
+1. Voer **onder Servers of een cluster selecteren** de namen van beide virtuele machines in.
+1. Selecteer **onder Testopties** de optie **Alleen tests uitvoeren ik selecteer**. 
 1. Selecteer **Next**.
-1. Selecteer onder **selectie testen** alle tests, met uitzonde ring van **opslag** en **opslagruimten direct**, zoals hier wordt weer gegeven:
+1. Selecteer **onder Testselectie** alle tests, met uitzondering van **Storage** **en Opslagruimten Direct,** zoals hier wordt weergegeven:
 
-   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/cluster-validation.png" alt-text="Cluster validatie tests selecteren":::
+   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/cluster-validation.png" alt-text="Clustervalidatietests selecteren":::
 
 1. Selecteer **Next**.
-1. Klik onder **bevestiging** op **volgende**.
+1. Selecteer **onder Bevestiging** de optie **Volgende.**
 
-Met de wizard **een configuratie valideren** worden de validatie tests uitgevoerd.
+De **wizard Een configuratie valideren** voert de validatietests uit.
 
-Als u het cluster wilt valideren met behulp van Power shell, voert u het volgende script uit vanuit een Power shell-beheer sessie op een van de virtuele machines:
+Als u het cluster wilt valideren met behulp van PowerShell, moet u het volgende script uitvoeren vanuit een PowerShell-beheerderssessie op een van de virtuele machines:
 
    ```powershell
    Test-Cluster –Node ("<node1>","<node2>") –Include "Inventory", "Network", "System Configuration"
@@ -115,16 +115,16 @@ Nadat u het cluster hebt gevalideerd, maakt u het failovercluster.
 
 ## <a name="create-failover-cluster"></a>Failovercluster maken
 
-Als u het failovercluster wilt maken, hebt u het volgende nodig:
+Voor het maken van het failovercluster hebt u het volgende nodig:
 
-- De namen van de virtuele machines die worden de cluster knooppunten.
+- De namen van de virtuele machines die de clusterknooppunten worden.
 - Een naam voor het failovercluster.
-- Een IP-adres voor het failovercluster. U kunt een IP-adres gebruiken dat niet wordt gebruikt in hetzelfde virtuele Azure-netwerk en subnet als de cluster knooppunten.
+- Een IP-adres voor het failovercluster. U kunt een IP-adres gebruiken dat niet wordt gebruikt in hetzelfde virtuele Azure-netwerk en subnet als de clusterknooppunten.
 
 
-# <a name="windows-server-2012---2016"></a>[Windows Server 2012-2016](#tab/windows2012)
+# <a name="windows-server-2012---2016"></a>[Windows Server 2012 - 2016](#tab/windows2012)
 
-Met het volgende Power shell-script maakt u een failovercluster voor Windows Server 2012 via Windows Server 2016. Werk het script bij met de namen van de knoop punten (de namen van de virtuele machines) en een beschikbaar IP-adres van het virtuele Azure-netwerk.
+Met het volgende PowerShell-script maakt u een failovercluster voor Windows Server 2012 tot en met Windows Server 2016. Werk het script bij met de namen van de knooppunten (de namen van de virtuele machines) en een beschikbaar IP-adres uit het virtuele Azure-netwerk.
 
 ```powershell
 New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAddress <n.n.n.n> -NoStorage
@@ -132,67 +132,67 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 # <a name="windows-server-2019"></a>[Windows Server 2019](#tab/windows2019)
 
-Met het volgende Power shell-script maakt u een failovercluster voor Windows Server 2019.  Werk het script bij met de namen van de knoop punten (de namen van de virtuele machines) en een beschikbaar IP-adres van het virtuele Azure-netwerk.
+Met het volgende PowerShell-script maakt u een failovercluster voor Windows Server 2019.  Werk het script bij met de namen van de knooppunten (de namen van de virtuele machines) en een beschikbaar IP-adres uit het virtuele Azure-netwerk.
 
 ```powershell
 New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAddress <n.n.n.n> -NoStorage -ManagementPointNetworkType Singleton 
 ```
 
-Zie voor meer informatie [failover cluster: Cluster Network object](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97).
+Zie [Failovercluster: Cluster Network Object voor meer informatie.](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97)
 
 ---
 
 
 ## <a name="configure-quorum"></a>Quorum configureren
 
-Configureer de quorum oplossing die het beste past bij uw bedrijfs behoeften. U kunt een schijfwitness [, een](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum) [Cloudwitness](/windows-server/failover-clustering/deploy-cloud-witness)of een [Bestands share-Witness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)configureren. Zie voor meer informatie [quorum met SQL Server vm's](hadr-cluster-best-practices.md#quorum). 
+Configureer de quorumoplossing die het beste past bij de behoeften van uw bedrijf. U kunt een [schijf-witness,](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)een [cloud-witness](/windows-server/failover-clustering/deploy-cloud-witness)of een [bestandsdeel witness configureren.](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum) Zie Quorum met virtuele SQL Server [voor meer informatie.](hadr-cluster-best-practices.md#quorum) 
 
 
-## <a name="test-cluster-failover"></a>Cluster-Failover testen
+## <a name="test-cluster-failover"></a>Failover van cluster testen
 
-Test de failover van het cluster. Klik in **Failoverclusterbeheer** met de rechter muisknop op uw cluster, selecteer **meer acties**  >  **basis cluster resource verplaatsen**  >  **knoop punt selecteren** en selecteer vervolgens het andere knoop punt van het cluster. Verplaats de kern cluster bron naar elk knoop punt van het cluster en verplaats deze vervolgens terug naar het primaire knoop punt. Als u het cluster kunt verplaatsen naar elk knoop punt, bent u klaar om SQL Server te installeren.  
+Test de failover van uw cluster. Klik **Failoverclusterbeheer** met de rechtermuisknop op uw cluster, selecteer Meer acties Knooppunt Kerncluster selecteren verplaatsen en selecteer vervolgens het  >    >  andere knooppunt van het cluster. Verplaats de kernclusterresource naar elk knooppunt van het cluster en verplaats deze vervolgens terug naar het primaire knooppunt. Als u het cluster naar elk knooppunt kunt verplaatsen, kunt u het cluster SQL Server.  
 
-:::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/test-cluster-failover.png" alt-text="Cluster-Failover testen door de kern bron te verplaatsen naar de andere knoop punten":::
+:::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/test-cluster-failover.png" alt-text="Failover van cluster testen door de kernresource naar de andere knooppunten te verplaatsen":::
 
 
-## <a name="create-sql-server-fci"></a>SQL Server FCI maken
+## <a name="create-sql-server-fci"></a>Een SQL Server-FCI maken
 
-Nadat u het failovercluster hebt geconfigureerd, kunt u de SQL Server FCI maken.
+Nadat u het failovercluster hebt geconfigureerd, kunt u de FCI SQL Server maken.
 
 1. Maak verbinding met de eerste virtuele machine met behulp van RDP.
 
-1. In **Failoverclusterbeheer** moet u ervoor zorgen dat alle kern cluster bronnen zich op de eerste virtuele machine bevinden. Verplaats, indien nodig, alle resources naar deze virtuele machine.
+1. Zorg **Failoverclusterbeheer** ervoor dat alle kernclusterbronnen zich op de eerste virtuele machine hebben. Verplaats indien nodig alle resources naar deze virtuele machine.
 
-1. Zoek het installatie medium. Als de virtuele machine een van de installatie kopieën van Azure Marketplace gebruikt, bevindt de media zich op `C:\SQLServer_<version number>_Full` . 
+1. Zoek het installatiemedia. Als de virtuele machine een van de Azure Marketplace gebruikt, bevindt de media zich op `C:\SQLServer_<version number>_Full` . 
 
-1. Selecteer **Setup**.
+1. Selecteer **Setup.**
 
-1. Selecteer in het **SQL Server-installatie centrum** de optie **installatie**.
+1. Selecteer in **SQL Server Installatiecentrum** de **optie Installatie.**
 
-1. Selecteer **nieuwe SQL Server failover-cluster installatie** en volg de instructies in de wizard om de SQL Server FCI te installeren.
+1. Selecteer **Nieuwe SQL Server failoverclusterinstallatie** en volg de instructies in de wizard om de FCI SQL Server installeren.
 
-   De FCI-gegevens directory's moeten zich op de Premium-bestands share bestaan. Voer het volledige pad van de share in, in deze indeling: `\\storageaccountname.file.core.windows.net\filesharename\foldername` . Er wordt een waarschuwing weer gegeven met de mede deling dat u een bestands server hebt opgegeven als de data directory. Deze waarschuwing wordt verwacht. Zorg ervoor dat het gebruikers account dat u hebt gebruikt voor toegang tot de virtuele machine via RDP wanneer u de bestands share persistent maakt, hetzelfde account is dat door de SQL Server-service wordt gebruikt om mogelijke storingen te voor komen.
+   De FCI-gegevensdirecties moeten zich op de Premium-bestands share. Voer het volledige pad van de share in, in deze indeling: `\\storageaccountname.file.core.windows.net\filesharename\foldername` . Er wordt een waarschuwing weergegeven met de melding dat u een bestandsserver hebt opgegeven als de gegevensmap. Deze waarschuwing wordt verwacht. Zorg ervoor dat het gebruikersaccount dat u hebt gebruikt voor toegang tot de VM via RDP wanneer u de bestands share persistent hebt gemaakt, hetzelfde account is dat de SQL Server-service gebruikt om mogelijke fouten te voorkomen.
 
-   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/use-file-share-as-data-directories.png" alt-text="Bestands share gebruiken als SQL-gegevens mappen":::
+   :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/use-file-share-as-data-directories.png" alt-text="Bestands share gebruiken als SQL-gegevensdirecties":::
 
-1. Nadat u de stappen in de wizard hebt voltooid, installeert Setup een SQL Server FCI op het eerste knoop punt.
+1. Nadat u de stappen in de wizard hebt voltooid, installeert Setup een SQL Server FCI op het eerste knooppunt.
 
-1. Nadat de FCI op het eerste knoop punt is geïnstalleerd, maakt u verbinding met het tweede knoop punt met behulp van RDP.
+1. Nadat Setup de FCI op het eerste knooppunt heeft geïnstalleerd, maakt u via RDP verbinding met het tweede knooppunt.
 
-1. Open het **SQL Server-installatie centrum** en selecteer vervolgens **installatie**.
+1. Open het **SQL Server Installation Center** en selecteer vervolgens **Installatie**.
 
-1. Selecteer **knoop punt toevoegen aan een SQL Server-failovercluster**. Volg de instructies in de wizard om SQL Server te installeren en de server toe te voegen aan de FCI.
+1. Selecteer **Knooppunt toevoegen aan een SQL Server failovercluster.** Volg de instructies in de wizard om de SQL Server server toe te voegen aan de FCI.
 
    >[!NOTE]
-   >Als u een installatie kopie van een Azure Marketplace-galerie hebt gebruikt met SQL Server, zijn er SQL Server-hulpprogram ma's in de installatie kopie opgenomen. Als u een van deze installatie kopieën niet hebt gebruikt, installeert u de SQL Server-hulpprogram ma's afzonderlijk. Zie [down load SQL Server Management Studio (SSMS) (Engelstalig)](/sql/ssms/download-sql-server-management-studio-ssms)voor meer informatie.
+   >Als u een galerie-Azure Marketplace gebruikt met SQL Server, SQL Server hulpprogramma's in de afbeelding opgenomen. Als u niet een van deze installatieprogramma's hebt gebruikt, installeert SQL Server hulpprogramma's afzonderlijk. Zie Download SQL Server Management Studio [(SSMS) voor meer informatie.](/sql/ssms/download-sql-server-management-studio-ssms)
 
-1. Herhaal deze stappen op alle andere knoop punten die u wilt toevoegen aan het SQL Server failover-cluster exemplaar. 
+1. Herhaal deze stappen op alle andere knooppunten die u wilt toevoegen aan het SQL Server failovercluster-exemplaar. 
 
-## <a name="register-with-the-sql-vm-rp"></a>Registreren bij de SQL-VM RP
+## <a name="register-with-the-sql-vm-rp"></a>Registreren bij de SQL VM RP
 
-Als u uw SQL Server-VM wilt beheren vanuit de portal, registreert u deze bij de SQL IaaS agent-extensie (RP) in de [modus voor licht gewicht beheer](sql-agent-extension-manually-register-single-vm.md#lightweight-management-mode), momenteel de enige modus die wordt ondersteund door FCI en SQL Server op Azure-vm's. 
+Als u uw SQL Server-VM wilt beheren vanuit de portal, registreert u deze bij de SQL IaaS Agent-extensie (RP) [in](sql-agent-extension-manually-register-single-vm.md#lightweight-management-mode)de lichtgewicht beheermodus, momenteel de enige modus die wordt ondersteund met FCI en SQL Server op Virtuele Azure-VM's. 
 
-Een SQL Server VM registreren in de licht gewicht modus met Power shell (-License type kan zijn `PAYG` of `AHUB` ):
+Registreer een SQL Server-VM in de lichtgewicht modus met PowerShell (-LicenseType kan `PAYG` of `AHUB` zijn):
 
 ```powershell-interactive
 # Get the existing compute VM
@@ -205,24 +205,25 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 ## <a name="configure-connectivity"></a>Connectiviteit configureren 
 
-Als u verkeer op de juiste manier wilt door sturen naar het huidige primaire knoop punt, configureert u de connectiviteits optie die geschikt is voor uw omgeving. U kunt een [Azure Load Balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) maken of als u SQL Server 2019 Cu2 (of hoger) en Windows Server 2016 (of hoger) gebruikt, kunt u in plaats daarvan de functie [gedistribueerde netwerk naam](failover-cluster-instance-distributed-network-name-dnn-configure.md) gebruiken. 
+Configureer de connectiviteitsoptie die geschikt is voor uw omgeving om verkeer op de juiste manier naar het huidige primaire knooppunt te laten doorstromen. U kunt een [Azure-load balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) maken. Als u SQL Server 2019 CU2 (of hoger) en Windows Server 2016 (of hoger) gebruikt, kunt u in plaats daarvan de functie gedistribueerde netwerknaam gebruiken. [](failover-cluster-instance-distributed-network-name-dnn-configure.md) 
 
 Raadpleeg [HADR-verbindingen routeren naar SQL Server in Azure-VM's](hadr-cluster-best-practices.md#connectivity) voor meer informatie over opties voor clusterconnectiviteit. 
 
 ## <a name="limitations"></a>Beperkingen
 
-- Micro soft gedistribueerde transactie (MSDTC) wordt niet ondersteund in Windows Server 2016 en lager. 
-- FileStream wordt niet ondersteund voor een failovercluster met een Premium-bestands share. Als u FileStream wilt gebruiken, implementeert u het cluster met behulp van [opslagruimten direct](failover-cluster-instance-storage-spaces-direct-manually-configure.md) of [gedeelde Azure-schijven](failover-cluster-instance-azure-shared-disks-manually-configure.md) .
-- Alleen registreren met de SQL IaaS agent-extensie in de [Lightweight-beheer modus](sql-server-iaas-agent-extension-automate-management.md#management-modes) wordt ondersteund. 
+- Microsoft Distributed Transaction Coordinator (MSDTC) wordt niet ondersteund in Windows Server 2016 en eerder. 
+- Filestream wordt niet ondersteund voor een failovercluster met een Premium-bestands share. Als u filestream wilt gebruiken, implementeert u uw cluster met behulp [van Opslagruimten Direct](failover-cluster-instance-storage-spaces-direct-manually-configure.md) [of gedeelde Azure-schijven.](failover-cluster-instance-azure-shared-disks-manually-configure.md)
+- Alleen registratie bij de SQL IaaS Agent-extensie in de [lichtgewicht beheermodus](sql-server-iaas-agent-extension-automate-management.md#management-modes) wordt ondersteund. 
+- Databasemomentopnamen worden momenteel niet ondersteund met [Azure Files vanwege sparse bestandsbeperkingen.](/rest/api/storageservices/features-not-supported-by-the-azure-file-service)  
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u dit nog niet hebt gedaan, configureert u de connectiviteit met uw FCI met de naam van een [virtueel netwerk en een Azure Load Balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) of [gedistribueerde netwerk naam (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md). 
+Als u dit nog niet hebt gedaan, configureert u connectiviteit met uw FCI met een naam voor een virtueel netwerk en een [Azure load balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) of gedistribueerde netwerknaam [(DNN).](failover-cluster-instance-distributed-network-name-dnn-configure.md) 
 
 
-Als Premium-bestands shares niet de juiste FCI-opslag oplossing voor u zijn, kunt u overwegen om uw FCI te maken met behulp van [gedeelde Azure-schijven](failover-cluster-instance-azure-shared-disks-manually-configure.md) of [opslagruimten direct](failover-cluster-instance-storage-spaces-direct-manually-configure.md) in plaats daarvan. 
+Als Premium-bestands shares niet de juiste FCI-opslagoplossing [voor](failover-cluster-instance-storage-spaces-direct-manually-configure.md) u zijn, kunt u overwegen om uw FCI te maken met gedeelde [Azure-schijven](failover-cluster-instance-azure-shared-disks-manually-configure.md) of Opslagruimten Direct. 
 
-Zie voor meer informatie een overzicht van [FCI met SQL Server op Azure vm's](failover-cluster-instance-overview.md) en [Aanbevolen procedures voor cluster configuratie](hadr-cluster-best-practices.md). 
+Zie voor meer informatie een overzicht van FCI met [SQL Server azure-VM's](failover-cluster-instance-overview.md) en [best practices voor clusterconfiguratie.](hadr-cluster-best-practices.md) 
 
 Zie voor meer informatie: 
 - [Windows-clustertechnologieën](/windows-server/failover-clustering/failover-clustering-overview)   

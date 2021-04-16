@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 03/07/2021
-ms.custom: devx-track-dotnet
-ms.openlocfilehash: c7dc3a230e2cd3f990771c297de29891de347089
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.custom: devx-track-dotnet, devx-track-azurecli
+ms.openlocfilehash: 21b2459294b3465ba147cb454b93ac0da0081c5d
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107363407"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107480882"
 ---
 # <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Quickstart: Een .NET console-app bouwen om Azure Cosmos DB SQL-API-resources te beheren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "107363407"
 
 Ga aan de slag met de Azure Cosmos DB SQL API-clientbibliotheek voor .NET. Volg de stappen in dit document om het .NET-pakket te installeren, een app te bouwen en de voorbeeldcode voor basis CRUD-bewerkingen uit te proberen voor de gegevens die zijn opgeslagen in Azure Cosmos DB. 
 
-Azure Cosmos DB is de snelle NoSQL-database van Microsoft, met open API's voor elke schaal. U kunt Azure Cosmos DB gebruiken om snel databases voor belangrijke/waardevolle documenten en grafieken te maken en doorzoeken. Gebruik de Azure Cosmos DB SQL API-clientbibliotheek voor .NET om:
+Azure Cosmos DB is een snelle NoSQL™database van Microsoft met open API's voor elke schaal. U kunt Azure Cosmos DB gebruiken om snel databases voor belangrijke/waardevolle documenten en grafieken te maken en doorzoeken. Gebruik de Azure Cosmos DB SQL API-clientbibliotheek voor .NET om:
 
 * Een Azure Cosmos-database en een container te maken
 * Voorbeeldgegevens toe te voegen aan de container

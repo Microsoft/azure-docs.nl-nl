@@ -1,32 +1,34 @@
 ---
-title: 'Snelstartgids: REST API voor formulier herkenning'
-description: Gebruik de REST API voor formulier herkenning voor het maken van een app voor het verwerken van formulieren waarmee sleutel-waardeparen en tabel gegevens uit uw aangepaste documenten worden geëxtraheerd.
+title: 'Quickstart: Form Recognizer REST API'
+description: Gebruik de Form Recognizer REST API een app voor het verwerken van formulieren te maken waarmee sleutel-waardeparen en tabelgegevens uit uw aangepaste documenten worden geëxtraheert.
 services: cognitive-services
 author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 03/15/2021
+ms.date: 04/14/2021
 ms.author: lajanuar
-ms.openlocfilehash: e0769f77bffaab0e04b492b19a5ea131cec64f06
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.openlocfilehash: 8f729d3d2ebc41552919634c68557042a95649ec
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105105652"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516423"
 ---
 <!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD034 -->
 > [!NOTE]
-> In deze handleiding wordt gebruikgemaakt van cURL om REST API-aanroepen uit te voeren. Er is ook [voorbeeldcode op GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/FormRecognizer/rest) die laat zien hoe u de REST-API‘s aanroept met Python.
+> In deze handleiding wordt gebruikgemaakt van cURL om REST API-aanroepen uit te voeren.
+
+| [Form Recognizer REST API](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm) | [Naslag REST API Azure-gegevens](/rest/api/azure/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/curl/form-recognizer)|
 
 ## <a name="prerequisites"></a>Vereisten
 
 * [cURL](https://curl.haxx.se/windows/) moet zijn geïnstalleerd.
-* [Power shell versie 6.0 +](/powershell/scripting/install/installing-powershell-core-on-windows), of een vergelijk bare opdracht regel toepassing.
+* [PowerShell versie 6.0+](/powershell/scripting/install/installing-powershell-core-on-windows)of een vergelijkbare opdrachtregeltoepassing.
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services/)
 * Een Azure Storage-blob die een set trainingsgegevens bevat. Zie [Een set met trainingsgegevens voor een aangepast model bouwen](../../build-training-data-set.md) voor tips en opties voor het samenstellen van uw set met trainingsgegevens. Voor deze quickstart kunt u de bestanden in de map **Trainen** van de [set met voorbeeldgegevens](https://go.microsoft.com/fwlink/?linkid=2090451) gebruiken (downloaden en extraheren van *sample_data.zip*).
 * Wanneer u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title="Een Form Recognizer-resource maken"  target="_blank">een Form Recognizer-resource maken </a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
@@ -38,11 +40,11 @@ ms.locfileid: "105105652"
 
 ## <a name="analyze-layout"></a>Indeling analyseren
 
-U kunt de formulier Recognizer gebruiken om tabellen, selectie markeringen, tekst en structuur in documenten te analyseren en uit te pakken, zonder dat u een model hoeft te trainen. Zie de [conceptuele hand leiding voor lay-out](../../concept-layout.md)voor meer informatie over indelings extractie. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+U kunt deze Form Recognizer tabellen, selectiemarkeringen, tekst en structuur in documenten te analyseren en te extraheren, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding indeling voor meer informatie over [indelingsextractie.](../../concept-layout.md) Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
-1. Vervang door `\"{your-document-url}` een van de voor beeld-url's.
+1. Vervang `\"{your-document-url}` door een van de voorbeeld-URL's.
 
 ### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
@@ -92,15 +94,15 @@ curl -v -X GET "https://{Endpoint}/formrecognizer/v2.0/layout/analyzeResults/{re
 U ontvangt een `200 (success)`-antwoord met JSON-inhoud.
 
 Bekijk de volgende factuurafbeelding en de bijbehorende JSON-uitvoer.
-* Het knooppunt `"readResults"` bevat elke tekstregel met het bijbehorende begrenzingsvak op de pagina. 
-* Het knooppunt `"selectionMarks"` (in preview 2.1) toont elke selectiemarkering (selectievakje, keuzerondje) en of de status ervan 'ingeschakeld' of 'niet ingeschakeld' is. 
-* De `"pageResults"` sectie bevat de tabellen die zijn geëxtraheerd. Voor elke tabel worden de tekst-, rij-en kolom index, de rij-en kolom spanning, het begrenzingsvak en meer geëxtraheerd.
+* Het knooppunt `"readResults"` bevat elke tekstregel met het bijbehorende begrenzingsvak op de pagina.
+* Het knooppunt `"selectionMarks"` (in preview 2.1) toont elke selectiemarkering (selectievakje, keuzerondje) en of de status ervan 'ingeschakeld' of 'niet ingeschakeld' is.
+* De `"pageResults"` sectie bevat de tabellen die zijn geëxtraheerd. Voor elke tabel worden de tekst-, rij- en kolomindex, de rij- en kolom-spanning, het begrensingsvak en meer geëxtraheerd.
 
 :::image type="content" source="../../media/contoso-invoice.png" alt-text="Document met een Contoso-projectinstructie met een tabel.":::
 
 ### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-Deze uitvoer is inge kort voor eenvoud. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-layout-output.json).
+Deze uitvoer is voor het gemak ingekort. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-layout-output.json)
 
 ```json
 {
@@ -223,7 +225,7 @@ Deze uitvoer is inge kort voor eenvoud. Bekijk de [volledige voorbeeld uitvoer o
 
 ### <a name="v20"></a>[v2.0](#tab/v2-0)
 
-Deze uitvoer is inge kort voor eenvoud. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-layout-output.json).
+Deze uitvoer is voor het gemak ingekort. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-layout-output.json)
 
 ```json
 {
@@ -328,704 +330,9 @@ Deze uitvoer is inge kort voor eenvoud. Bekijk de [volledige voorbeeld uitvoer o
 
 ---
 
-## <a name="analyze-invoices"></a>Facturen analyseren
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-Gebruik de krul opdracht hieronder om te beginnen met het analyseren van een factuur. Zie de [hand leiding voor factuur begrippen](../../concept-invoices.md)voor meer informatie over het analyseren van facturen. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
-1. Vervang `{your invoice URL}` door het URL-adres van een factuurdocument.
-1. Vervang `{subscription key}` door uw abonnementssleutel.
-
-```bash
-curl -v -i POST "https://{Endpoint}/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key:  {subscription key}" --data-ascii "{'source': '{your invoice URL}'}"
-```
-
-U ontvangt een `202 (Success)` antwoord met am **Operation-Location**-koptekst. Deze waarde van deze header bevat een bewerkings-id die u kunt gebruiken om query's uit te voeren op de status van de asynchrone bewerking en de resultaten op te halen.
-
-```console
-https://cognitiveservice/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyzeResults/54f0b076-4e38-43e5-81bd-b85b8835fdfb
-```
-
-### <a name="get-invoice-results"></a>Factuurresultaten ophalen
-
-Nadat u de **[Analyse factuur](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9843c2794cbb1a96291)** -API hebt aangeroepen, roept u de API **[analyse van factuur resultaat ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9acb78c40a2533aee83)** om de status van de bewerking en de geëxtraheerde gegevens op te halen. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
-1. Vervang `{resultId}` door de bewerkings-id uit de vorige stap.
-1. Vervang `{subscription key}` door uw abonnementssleutel.
-
-```bash
-curl -v -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyzeResults/{resultId}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
-```
-
-### <a name="examine-the-response"></a>Het antwoord bekijken
-
-U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. 
-* Het `"readResults"` veld bevat elke tekst regel die uit de factuur is opgehaald.
-* De `"pageResults"` bevat de tabellen en selectie markeringen die zijn opgehaald uit de factuur.
-* Het `"documentResults"` veld bevat sleutel/waarde-informatie voor de meest relevante onderdelen van de factuur.
-
-Bekijk het volgende factuurdocument en de bijbehorende JSON-uitvoer. 
-
-* [Voorbeeldfactuur](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/curl/form-recognizer/sample-invoice.pdf)
-
-Deze JSON-inhoud is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-invoice-output.json).
-
-```json
-{
-    "status": "succeeded",
-    "createdDateTime": "2020-11-06T23:32:11Z",
-    "lastUpdatedDateTime": "2020-11-06T23:32:20Z",
-    "analyzeResult": {
-        "version": "2.1.0",
-        "readResults": [{
-            "page": 1,
-            "angle": 0,
-            "width": 8.5,
-            "height": 11,
-            "unit": "inch"
-        }],
-        "pageResults": [{
-            "page": 1,
-            "tables": [{
-                "rows": 3,
-                "columns": 4,
-                "cells": [{
-                    "rowIndex": 0,
-                    "columnIndex": 0,
-                    "text": "QUANTITY",
-                    "boundingBox": [0.4953,
-                    5.7306,
-                    1.8097,
-                    5.7306,
-                    1.7942,
-                    6.0122,
-                    0.4953,
-                    6.0122]
-                },
-                {
-                    "rowIndex": 0,
-                    "columnIndex": 1,
-                    "text": "DESCRIPTION",
-                    "boundingBox": [1.8097,
-                    5.7306,
-                    5.7529,
-                    5.7306,
-                    5.7452,
-                    6.0122,
-                    1.7942,
-                    6.0122]
-                },
-                ...
-                ],
-                "boundingBox": [0.4794,
-                5.7132,
-                8.0158,
-                5.714,
-                8.0118,
-                6.5627,
-                0.4757,
-                6.5619]
-            },
-            {
-                "rows": 2,
-                "columns": 6,
-                "cells": [{
-                    "rowIndex": 0,
-                    "columnIndex": 0,
-                    "text": "SALESPERSON",
-                    "boundingBox": [0.4979,
-                    4.963,
-                    1.8051,
-                    4.963,
-                    1.7975,
-                    5.2398,
-                    0.5056,
-                    5.2398]
-                },
-                {
-                    "rowIndex": 0,
-                    "columnIndex": 1,
-                    "text": "P.O. NUMBER",
-                    "boundingBox": [1.8051,
-                    4.963,
-                    3.3047,
-                    4.963,
-                    3.3124,
-                    5.2398,
-                    1.7975,
-                    5.2398]
-                },
-                ...
-                ],
-                "boundingBox": [0.4976,
-                4.961,
-                7.9959,
-                4.9606,
-                7.9959,
-                5.5204,
-                0.4972,
-                5.5209]
-            }]
-        }],
-        "documentResults": [{
-            "docType": "prebuilt:invoice",
-            "pageRange": [1,
-            1],
-            "fields": {
-                "AmountDue": {
-                    "type": "number",
-                    "valueNumber": 610,
-                    "text": "$610.00",
-                    "boundingBox": [7.3809,
-                    7.8153,
-                    7.9167,
-                    7.8153,
-                    7.9167,
-                    7.9591,
-                    7.3809,
-                    7.9591],
-                    "page": 1,
-                    "confidence": 0.875
-                },
-                "BillingAddress": {
-                    "type": "string",
-                    "valueString": "123 Bill St, Redmond WA, 98052",
-                    "text": "123 Bill St, Redmond WA, 98052",
-                    "boundingBox": [0.594,
-                    4.3724,
-                    2.0125,
-                    4.3724,
-                    2.0125,
-                    4.7125,
-                    0.594,
-                    4.7125],
-                    "page": 1,
-                    "confidence": 0.997
-                },
-                "BillingAddressRecipient": {
-                    "type": "string",
-                    "valueString": "Microsoft Finance",
-                    "text": "Microsoft Finance",
-                    "boundingBox": [0.594,
-                    4.1684,
-                    1.7907,
-                    4.1684,
-                    1.7907,
-                    4.2837,
-                    0.594,
-                    4.2837],
-                    "page": 1,
-                    "confidence": 0.998
-                },
-                ...                
-            }
-        }]
-    }
-}
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-> [!IMPORTANT]
-> Deze functie is niet beschikbaar in de geselecteerde API-versie.
-
----
-
-## <a name="train-a-custom-model"></a>Aangepast model trainen
-
-Voor het trainen van een aangepast model hebt u een set trainingsgegevens in een Azure Storage-blob nodig. U hebt mini maal vijf ingevulde formulieren (PDF-documenten en/of afbeeldingen) van hetzelfde type/dezelfde structuur nodig. Zie [Een set met trainingsgegevens voor een aangepast model bouwen](../../build-training-data-set.md) voor tips en opties voor het samenstellen van uw trainingsgegevens.
-
-Training zonder gelabelde gegevens is de standaard bewerking en is eenvoudiger. U kunt ook hand matig een aantal of al uw trainings gegevens vooraf labelen. Dit is een complexer proces, maar resulteert in een beter getraind model.
-
-> [!NOTE]
-> U kunt ook modellen trainen met een grafische gebruikersinterface, zoals het [voorbeeldhulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md).
-
-
-### <a name="train-a-model-without-labels"></a>Een model trainen zonder labels
-
-Als u een Form Recognizer-model wilt trainen met de documenten in uw Azure Blob-container, roept u de API **[Aangepast model trainen](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync)** aan door de volgende cURL-opdracht uit te voeren. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
-1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
-1. Vervang `{SAS URL}` door de URL van de SAS (Shared Access Signature) van de Azure Blob Storage-container. [!INCLUDE [get SAS URL](../sas-instructions.md)]
-
-   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-```bash
-curl -i -X POST "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}'}"
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-```bash
-curl -i -X POST "https://{Endpoint}/formrecognizer/v2.0/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}'}"
-```
-
----
-
-U ontvangt een `201 (Success)` antwoord met een **Locatie**-header. De waarde van deze header is de id van het nieuwe model dat wordt getraind.
-
-### <a name="train-a-model-with-labels"></a>Een model trainen met labels
-
-Als u met labels wilt trainen, moet uw Blob Storage-container naast de trainingsdocumenten ook speciale bestanden met labelinformatie (`\<filename\>.pdf.labels.json`) bevatten. Het [hulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md) beschikt over een gebruikersinterface die u kan helpen bij het maken van deze labelbestanden. Zodra u deze hebt, kunt u de API voor het **[trainen van aangepaste modellen](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync)** aanroepen, waarbij de `"useLabelFile"` para meter is ingesteld op `true` in de JSON-hoofd tekst.
-
-Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
-1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
-1. Vervang `{SAS URL}` door de URL van de SAS (Shared Access Signature) van de Azure Blob Storage-container. [!INCLUDE [get SAS URL](../sas-instructions.md)]
-
-   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-```bash
-curl -i -X POST "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}', 'useLabelFile':true}"
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-```bash
-curl -i -X POST "https://{Endpoint}/formrecognizer/v2.0/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}', 'useLabelFile':true }"
-```
-
----
-
-U ontvangt een `201 (Success)` antwoord met een **Locatie**-header. De waarde van deze header is de id van het nieuwe model dat wordt getraind.
-
-### <a name="get-training-results"></a>Trainingsresultaten ophalen
-
-Nadat u de trainbewerking hebt gestart, gebruikt u een nieuwe bewerking **[Aangepast model ophalen](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModel)** om de trainingsstatus te controleren. Geef de model-id door aan deze API-aanroep om de trainingsstatus te controleren:
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnementssleutel.
-1. Vervang `{subscription key}` door uw abonnementssleutel.
-1. Vervang `{model ID}` door de model-id in de vorige stap.
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-```bash
-curl -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models/{model ID}" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}"
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-```bash
-curl -X GET "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}"
-```
-
----
-
-U ontvangt een `200 (Success)`-antwoord met een JSON-hoofdtekst in de volgende indeling. Let op het veld `"status"`. Dit heeft de waarde `"ready"` zodra de training is voltooid. Als de training van het model niet is voltooid, moet u opnieuw een query uitvoeren op de service door de opdracht opnieuw uit te voeren. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
-
-Het veld `"modelId"` bevat de id van het model dat u traint. U hebt deze nodig voor de volgende stap.
-
-```json
-{
-  "modelInfo":{
-    "status":"ready",
-    "createdDateTime":"2019-10-08T10:20:31.957784",
-    "lastUpdatedDateTime":"2019-10-08T14:20:41+00:00",
-    "modelId":"1cfb372bab404ba3aa59481ab2c63da5"
-  },
-  "trainResult":{
-    "trainingDocuments":[
-      {
-        "documentName":"invoices\\Invoice_1.pdf",
-        "pages":1,
-        "errors":[
-
-        ],
-        "status":"succeeded"
-      },
-      {
-        "documentName":"invoices\\Invoice_2.pdf",
-        "pages":1,
-        "errors":[
-
-        ],
-        "status":"succeeded"
-      },
-      {
-        "documentName":"invoices\\Invoice_3.pdf",
-        "pages":1,
-        "errors":[
-
-        ],
-        "status":"succeeded"
-      },
-      {
-        "documentName":"invoices\\Invoice_4.pdf",
-        "pages":1,
-        "errors":[
-
-        ],
-        "status":"succeeded"
-      },
-      {
-        "documentName":"invoices\\Invoice_5.pdf",
-        "pages":1,
-        "errors":[
-
-        ],
-        "status":"succeeded"
-      }
-    ],
-    "errors":[
-
-    ]
-  },
-  "keys":{
-    "0":[
-      "Address:",
-      "Invoice For:",
-      "Microsoft",
-      "Page"
-    ]
-  }
-}
-```
-
-## <a name="analyze-forms-with-a-custom-model"></a>Formulieren analyseren met een aangepast model
-
-Vervolgens gebruikt u uw pas getrainde model voor het analyseren van een document en het extraheren van de sleutel-waardeparen en tabellen ervan. Roep de API **[Formulier analyseren](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm)** aan door de volgende cURL-opdracht uit te voeren. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen van uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
-1. Vervang `{model ID}` door de model-id die u in de vorige sectie hebt gekregen.
-1. Vervang `{SAS URL}` door een SAS-URL naar uw bestand in Azure Storage. Volg de stappen in de sectie Training, maar in plaats van een SAS-URL voor de hele blobcontainer op te halen, haalt u er een op voor het specifieke bestand dat u wilt analyseren.
-1. Vervang `{subscription key}` door uw abonnementssleutel.
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-```bash
-curl -v "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models/{model ID}/analyze?includeTextDetails=true" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" -d "{ 'source': '{SAS URL}' } "
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-```bash
-curl -v "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}/analyze?includeTextDetails=true" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" -d "{ 'source': '{SAS URL}' } "
-```
-
----
-
-U ontvangt een `202 (Success)`-antwoord met een **Bewerking-Locatie**-header. De waarde van deze header bevat een resultaten-id die u gebruikt om de resultaten van de analysebewerking bij te houden. Sla deze resultaten-id op voor de volgende stap.
-
-### <a name="get-the-analyze-results"></a>De resultaten van de analyse ophalen
-
-Roep de resultaat-API voor het analyseren van het **[formulier](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetAnalyzeFormResult)** op om een query uit te voeren op de resultaten van de analyse bewerking.
-
-1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen van uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
-1. Vervang `{result ID}` door de id die u in de vorige sectie hebt gekregen.
-1. Vervang `{subscription key}` door uw abonnementssleutel.
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-```bash
-curl -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models/{model ID}/analyzeResults/{result ID}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-```bash
-curl -X GET "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}/analyzeResults/{result ID}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
-```
-
----
-
-U ontvangt een `200 (Success)`-antwoord met een JSON-hoofdtekst in de volgende indeling. De uitvoer is voor het gemak ingekort. U ziet het veld `"status"` onderaan. Dit heeft de waarde `"succeeded"` wanneer de analysebewerking is voltooid. Als de bewerking Analyse niet is voltooid, moet u opnieuw een query uitvoeren op de service door de opdracht opnieuw uit te voeren. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
-
-In aangepaste modellen die zijn getraind zonder labels, bevinden de koppelingen en tabellen voor sleutel/waarde-paren zich in het `"pageResults"` knoop punt van de JSON-uitvoer. In aangepaste modellen die zijn getraind met labels, bevinden de koppelingen sleutel/waarde-paar zich in het `"documentResults"` knoop punt. Als u ook extractie voor tekst zonder opmaak hebt opgegeven via de URL-parameter *includeTextDetails*, worden in het knooppunt `"readResults"` de inhoud en posities van alle tekst in het document weergegeven.
-
-Dit voorbeeld van een JSON-bestand is voor het gemak ingekort. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/analyze-result-invoice-6.pdf.json).
-
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-
-```JSON
-{
-  "status": "succeeded",
-  "createdDateTime": "2020-08-21T01:13:28Z",
-  "lastUpdatedDateTime": "2020-08-21T01:13:42Z",
-  "analyzeResult": {
-    "version": "2.1.0",
-    "readResults": [
-      {
-        "page": 1,
-        "angle": 0,
-        "width": 8.5,
-        "height": 11,
-        "unit": "inch",
-        "lines": [
-          {
-            "text": "Project Statement",
-            "boundingBox": [
-              5.0444,
-              0.3613,
-              8.0917,
-              0.3613,
-              8.0917,
-              0.6718,
-              5.0444,
-              0.6718
-            ],
-            "words": [
-              {
-                "text": "Project",
-                "boundingBox": [
-                  5.0444,
-                  0.3587,
-                  6.2264,
-                  0.3587,
-                  6.2264,
-                  0.708,
-                  5.0444,
-                  0.708
-                ]
-              },
-              {
-                "text": "Statement",
-                "boundingBox": [
-                  6.3361,
-                  0.3635,
-                  8.0917,
-                  0.3635,
-                  8.0917,
-                  0.6396,
-                  6.3361,
-                  0.6396
-                ]
-              }
-            ]
-          }, 
-          ...
-        ] 
-      }
-    ],
-    "pageResults": [
-      {
-        "page": 1,
-        "keyValuePairs": [
-          {
-            "key": {
-              "text": "Date:",
-              "boundingBox": [
-                6.9833,
-                1.0615,
-                7.3333,
-                1.0615,
-                7.3333,
-                1.1649,
-                6.9833,
-                1.1649
-              ],
-              "elements": [
-                "#/readResults/0/lines/2/words/0"
-              ]
-            },
-            "value": {
-              "text": "9/10/2020",
-              "boundingBox": [
-                7.3833,
-                1.0802,
-                7.925,
-                1.0802,
-                7.925,
-                1.174,
-                7.3833,
-                1.174
-              ],
-              "elements": [
-                "#/readResults/0/lines/3/words/0"
-              ]
-            },
-            "confidence": 1
-          },
-          ...
-        ], 
-        "tables": [
-          {
-            "rows": 5,
-            "columns": 5,
-            "cells": [
-              {
-                "text": "Training Date",
-                "rowIndex": 0,
-                "columnIndex": 0,
-                "boundingBox": [
-                  0.6944,
-                  4.2779,
-                  1.5625,
-                  4.2779,
-                  1.5625,
-                  4.4005,
-                  0.6944,
-                  4.4005
-                ],
-                "confidence": 1,
-                "rowSpan": 1,
-                "columnSpan": 1,
-                "elements": [
-                  "#/readResults/0/lines/15/words/0",
-                  "#/readResults/0/lines/15/words/1"
-                ],
-                "isHeader": true,
-                "isFooter": false
-              },
-              ...
-            ]
-          }
-        ], 
-        "clusterId": 0
-      }
-    ], 
-    "documentResults": [],
-    "errors": []
-  }
-}
-```
-
-### <a name="v20"></a>[v2.0](#tab/v2-0)
-
-```JSON
-{
-  "status": "succeeded",
-  "createdDateTime": "2020-08-21T00:46:25Z",
-  "lastUpdatedDateTime": "2020-08-21T00:46:32Z",
-  "analyzeResult": {
-    "version": "2.0.0",
-    "readResults": [
-      {
-        "page": 1,
-        "angle": 0,
-        "width": 8.5,
-        "height": 11,
-        "unit": "inch",
-        "lines": [
-          {
-            "text": "Project Statement",
-            "boundingBox": [
-              5.0153,
-              0.275,
-              8.0944,
-              0.275,
-              8.0944,
-              0.7125,
-              5.0153,
-              0.7125
-            ],
-            "words": [
-              {
-                "text": "Project",
-                "boundingBox": [
-                  5.0153,
-                  0.275,
-                  6.2278,
-                  0.275,
-                  6.2278,
-                  0.7125,
-                  5.0153,
-                  0.7125
-                ]
-              },
-              {
-                "text": "Statement",
-                "boundingBox": [
-                  6.3292,
-                  0.275,
-                  8.0944,
-                  0.275,
-                  8.0944,
-                  0.7125,
-                  6.3292,
-                  0.7125
-                ]
-              }
-            ]
-          }, 
-        ...
-        ]
-      }
-    ],
-    "pageResults": [
-      {
-        "page": 1,
-        "keyValuePairs": [
-          {
-            "key": {
-              "text": "Date:",
-              "boundingBox": [
-                6.9722,
-                1.0264,
-                7.3417,
-                1.0264,
-                7.3417,
-                1.1931,
-                6.9722,
-                1.1931
-              ],
-              "elements": [
-                "#/readResults/0/lines/2/words/0"
-              ]
-            },
-            "confidence": 1
-          },
-         ...
-        ],
-        "tables": [
-          {
-            "rows": 4,
-            "columns": 5,
-            "cells": [
-              {
-                "text": "Training Date",
-                "rowIndex": 0,
-                "columnIndex": 0,
-                "boundingBox": [
-                  0.6931,
-                  4.2444,
-                  1.5681,
-                  4.2444,
-                  1.5681,
-                  4.4125,
-                  0.6931,
-                  4.4125
-                ],
-                "confidence": 1,
-                "rowSpan": 1,
-                "columnSpan": 1,
-                "elements": [
-                  "#/readResults/0/lines/15/words/0",
-                  "#/readResults/0/lines/15/words/1"
-                ],
-                "isHeader": true,
-                "isFooter": false
-              },
-              ...
-            ]
-          }
-        ], 
-        "clusterId": 0
-      }
-    ],
-    "documentResults": [],
-    "errors": []
-  }
-}
-```  
-
----
-
-### <a name="improve-results"></a>Resultaten verbeteren
-
-[!INCLUDE [improve results](../improve-results-unlabeled.md)]
-
 ## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
-In deze sectie wordt beschreven hoe u algemene velden van Amerikaanse ontvangsten analyseert en extraheert met behulp van een vooraf getraind ontvangst model. Zie de [conceptuele hand leiding voor bevestigingen](../../concept-receipts.md)voor meer informatie over de ontvangst analyse. Als u wilt beginnen met het analyseren van een ontvangstbewijs, roept u de **[Ontvangstbewijs analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeReceiptAsync)** -API aan met de cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [bonanalyse.](../../concept-receipts.md) Als u wilt beginnen met het analyseren van een ontvangstbewijs, roept u de **[Ontvangstbewijs analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeReceiptAsync)** -API aan met de cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{your receipt URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
@@ -1083,7 +390,7 @@ Bekijk de volgende afbeelding van het ontvangstbewijs en de bijbehorende JSON-ui
 
 ![Een ontvangstbewijs van Contoso Store](../../media/contoso-allinone.jpg)
 
-Deze uitvoer is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/receipt-result.json).
+Deze uitvoer is ingekort voor de leesbaarheid. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/receipt-result.json)
 
 ```json
 {
@@ -1412,9 +719,9 @@ Deze uitvoer is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld 
 
 ## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
 
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)  
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-In deze sectie wordt beschreven hoe u algemene velden uit de Engelse visite kaartjes analyseert en extraheert met behulp van een vooraf getraind model. Zie de [conceptuele hand leiding voor visite](../../concept-business-cards.md)kaartjes voor meer informatie over het analyseren van bedrijfs kaarten. Als u wilt beginnen met het analyseren van een visitekaartje, roept u de **[Visitekaartje analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeBusinessCardAsync)** -API aan met het cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelse visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding visitekaartjes voor meer informatie over [visitekaartjesanalyse.](../../concept-business-cards.md) Als u wilt beginnen met het analyseren van een visitekaartje, roept u de **[Visitekaartje analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeBusinessCardAsync)** -API aan met het cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{your business card URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
@@ -1445,13 +752,13 @@ curl -v -X GET "https://westcentralus.api.cognitive.microsoft.com/formrecognizer
 
 ### <a name="examine-the-response"></a>Het antwoord bekijken
 
-U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. 
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer.
 
 Het knooppunt `"readResults"` bevat alle herkende tekst. De tekst wordt geordend op pagina, vervolgens per regel en vervolgens op afzonderlijke woorden. Het knooppunt `"documentResults"` bevat de visitekaartjeswaarden die het model heeft gedetecteerd. Hier vindt u nuttige contactgegevens zoals bedrijfsnaam, voornaam, achternaam, telefoonnummer, enzovoort.
 
 ![Een visitekaartje van het Contoso-bedrijf](../../media/business-card-english.jpg)
 
-Deze voor beeld-JSON-uitvoer is inge kort voor de Lees baarheid. Bekijk de [volledige voorbeeld uitvoer op github](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/business-card-result.json).
+Deze voorbeeld-JSON-uitvoer is ingekort voor leesbaarheid. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/business-card-result.json)
 
 ```json
 {
@@ -1567,18 +874,936 @@ Deze voor beeld-JSON-uitvoer is inge kort voor de Lees baarheid. Bekijk de [voll
 
 Met het script worden antwoorden naar de console afgedrukt totdat de **Visitekaartje analyseren**-bewerking is voltooid.
 
-### <a name="v20"></a>[v2.0](#tab/v2-0)  
+### <a name="v20"></a>[v2.0](#tab/v2-0)
 
 > [!IMPORTANT]
 > Deze functie is niet beschikbaar in de geselecteerde API-versie.
 
 ---
 
+## <a name="analyze-invoices"></a>Facturen analyseren
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+Gebruik de onderstaande cURL-opdracht om een factuur te analyseren. Zie de conceptuele handleiding voor facturen voor meer informatie over [factuuranalyse.](../../concept-invoices.md) Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
+1. Vervang `{your invoice URL}` door het URL-adres van een factuurdocument.
+1. Vervang `{subscription key}` door uw abonnementssleutel.
+
+```bash
+curl -v -i POST "https://{Endpoint}/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key:  {subscription key}" --data-ascii "{'source': '{your invoice URL}'}"
+```
+
+U ontvangt een `202 (Success)` antwoord met am **Operation-Location**-koptekst. Deze waarde van deze header bevat een bewerkings-id die u kunt gebruiken om query's uit te voeren op de status van de asynchrone bewerking en de resultaten op te halen.
+
+```console
+https://cognitiveservice/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyzeResults/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+```
+
+### <a name="get-invoice-results"></a>Factuurresultaten ophalen
+
+Nadat u de Factuur-API analyseren hebt **[](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9acb78c40a2533aee83)** aangeroepen, roept u de API Factuurresultaat analyseren op om de status van de bewerking en de geëxtraheerde gegevens op te halen. **[](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5ed8c9843c2794cbb1a96291)** Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
+1. Vervang `{resultId}` door de bewerkings-id uit de vorige stap.
+1. Vervang `{subscription key}` door uw abonnementssleutel.
+
+```bash
+curl -v -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.3/prebuilt/invoice/analyzeResults/{resultId}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
+```
+
+### <a name="examine-the-response"></a>Het antwoord bekijken
+
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer.
+
+* Het `"readResults"` veld bevat elke regel tekst die is geëxtraheerd uit de factuur.
+* De `"pageResults"` bevat de tabellen en selectiemarkeringen die zijn geëxtraheerd uit de factuur.
+* Het `"documentResults"` veld bevat sleutel-/waardegegevens voor de meest relevante onderdelen van de factuur.
+
+Bekijk het volgende factuurdocument en de bijbehorende JSON-uitvoer.
+
+* [Voorbeeldfactuur](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/curl/form-recognizer/sample-invoice.pdf)
+
+Deze JSON-inhoud is ingekort voor leesbaarheid. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample-invoice-output.json)
+
+```json
+{
+    "status": "succeeded",
+    "createdDateTime": "2020-11-06T23:32:11Z",
+    "lastUpdatedDateTime": "2020-11-06T23:32:20Z",
+    "analyzeResult": {
+        "version": "2.1.0",
+        "readResults": [{
+            "page": 1,
+            "angle": 0,
+            "width": 8.5,
+            "height": 11,
+            "unit": "inch"
+        }],
+        "pageResults": [{
+            "page": 1,
+            "tables": [{
+                "rows": 3,
+                "columns": 4,
+                "cells": [{
+                    "rowIndex": 0,
+                    "columnIndex": 0,
+                    "text": "QUANTITY",
+                    "boundingBox": [0.4953,
+                    5.7306,
+                    1.8097,
+                    5.7306,
+                    1.7942,
+                    6.0122,
+                    0.4953,
+                    6.0122]
+                },
+                {
+                    "rowIndex": 0,
+                    "columnIndex": 1,
+                    "text": "DESCRIPTION",
+                    "boundingBox": [1.8097,
+                    5.7306,
+                    5.7529,
+                    5.7306,
+                    5.7452,
+                    6.0122,
+                    1.7942,
+                    6.0122]
+                },
+                ...
+                ],
+                "boundingBox": [0.4794,
+                5.7132,
+                8.0158,
+                5.714,
+                8.0118,
+                6.5627,
+                0.4757,
+                6.5619]
+            },
+            {
+                "rows": 2,
+                "columns": 6,
+                "cells": [{
+                    "rowIndex": 0,
+                    "columnIndex": 0,
+                    "text": "SALESPERSON",
+                    "boundingBox": [0.4979,
+                    4.963,
+                    1.8051,
+                    4.963,
+                    1.7975,
+                    5.2398,
+                    0.5056,
+                    5.2398]
+                },
+                {
+                    "rowIndex": 0,
+                    "columnIndex": 1,
+                    "text": "P.O. NUMBER",
+                    "boundingBox": [1.8051,
+                    4.963,
+                    3.3047,
+                    4.963,
+                    3.3124,
+                    5.2398,
+                    1.7975,
+                    5.2398]
+                },
+                ...
+                ],
+                "boundingBox": [0.4976,
+                4.961,
+                7.9959,
+                4.9606,
+                7.9959,
+                5.5204,
+                0.4972,
+                5.5209]
+            }]
+        }],
+        "documentResults": [{
+            "docType": "prebuilt:invoice",
+            "pageRange": [1,
+            1],
+            "fields": {
+                "AmountDue": {
+                    "type": "number",
+                    "valueNumber": 610,
+                    "text": "$610.00",
+                    "boundingBox": [7.3809,
+                    7.8153,
+                    7.9167,
+                    7.8153,
+                    7.9167,
+                    7.9591,
+                    7.3809,
+                    7.9591],
+                    "page": 1,
+                    "confidence": 0.875
+                },
+                "BillingAddress": {
+                    "type": "string",
+                    "valueString": "123 Bill St, Redmond WA, 98052",
+                    "text": "123 Bill St, Redmond WA, 98052",
+                    "boundingBox": [0.594,
+                    4.3724,
+                    2.0125,
+                    4.3724,
+                    2.0125,
+                    4.7125,
+                    0.594,
+                    4.7125],
+                    "page": 1,
+                    "confidence": 0.997
+                },
+                "BillingAddressRecipient": {
+                    "type": "string",
+                    "valueString": "Microsoft Finance",
+                    "text": "Microsoft Finance",
+                    "boundingBox": [0.594,
+                    4.1684,
+                    1.7907,
+                    4.1684,
+                    1.7907,
+                    4.2837,
+                    0.594,
+                    4.2837],
+                    "page": 1,
+                    "confidence": 0.998
+                },
+                ...
+            }
+        }]
+    }
+}
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
+## <a name="analyze-id-document"></a>Id-document analyseren
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+Gebruik de onderstaande cURL-opdracht om te beginnen met het analyseren van een identificatiedocument. Zie de conceptuele handleiding identiteitsdocumenten voor meer informatie over de analyse van [identiteitsdocumenten.](../../concept-identification-cards.md) Als u een identiteitsdocument wilt analyseren, roept u de **API [Analyze ID Document] https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5f74a7738978e467c5fb8707)** aan met behulp van de onderstaande cURL-opdracht. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
+1. Vervang `{your ID document URL}` door het URL-adres van een afbeelding van het ontvangstbewijs.
+1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
+
+### <a name="v21-previewtabv2-1"></a>[v2.1 preview] (#tab/v2-1
+
+```bash
+curl -i -X POST "https://{endpoint}/formrecognizer/v2.1-preview.3/prebuilt/idDocument/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{your  ID document URL}'}"
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
+U ontvangt een antwoord `202 (Success)` met een **Operation-Location-header.** De waarde van deze header bevat een resultaat-id die u kunt gebruiken om de status van de asynchrone bewerking op te vragen en de resultaten op te halen. In het volgende voorbeeld is de tekenreeks na `analyzeResults/` de resultaat-id.
+
+```console
+https://westus.api.cognitive.microsoft.com/formrecognizer/v2.1-preview.3/prebuilt/idDocument/analyzeResults/0c6cb19e-538f-4b8d-98b7-e105c9995ba6
+```
+
+### <a name="get-the-analyze-id-document-result"></a>Het resultaat van het document analyseren-id op halen
+
+Nadat u de Document-API voor **analyse-id's** hebt aangeroepen, roept u de Documentresultaat-API voor **[analyse-id's](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/5f74a7daad1f2612c46f5822)** op om de status van de bewerking en de geëxtraheerde gegevens op te halen.  Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
+1. Vervang `{resultId}` door de bewerkings-id uit de vorige stap.
+1. Vervang `{subscription key}` door uw abonnementssleutel.
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```bash
+curl -X GET "https://{endpoint}/formrecognizer/v2.1-preview.3/prebuilt/idDocument/analyzeResults/{resultId}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
+```
+
+### <a name="examine-the-response"></a>Het antwoord bekijken
+
+U ontvangt een `200 (Success)` antwoord met JSON-uitvoer. Het eerste veld, `"status"`, geeft de status van de bewerking aan. Als de bewerking niet is voltooid, wordt de waarde van of en moet u de API opnieuw aanroepen, handmatig of via een script totdat u `"status"` `"running"` de waarde `"notStarted"` `succeeded` ontvangt. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
+
+* Het `"readResults"` veld bevat elke regel tekst die is geëxtraheerd uit het identiteitsdocument.
+* Het `"documentResults"` veld bevat een matrix met objecten, die elk een id-document vertegenwoordigen dat in het invoerdocument is gedetecteerd.
+
+Hieronder vindt u een voorbeeld van een identiteitsdocument en de bijbehorende JSON-uitvoer
+
+* :::image type="content" source="https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/id-license.jpg" alt-text="voorbeeld van een stuurprogrammalicentie":::
+
+```json
+{
+    "status": "succeeded",
+    "createdDateTime": "2021-04-13T17:24:52Z",
+    "lastUpdatedDateTime": "2021-04-13T17:24:55Z",
+    "analyzeResult": {
+      "version": "2.1.0",
+      "readResults": [
+        {
+          "page": 1,
+          "angle": -0.2823,
+          "width": 450,
+          "height": 294,
+          "unit": "pixel"
+        }
+      ],
+      "documentResults": [
+        {
+          "docType": "prebuilt:idDocument:driverLicense",
+          "docTypeConfidence": 0.995,
+          "pageRange": [
+            1,
+            1
+          ],
+          "fields": {
+            "Address": {
+              "type": "string",
+              "valueString": "123 STREET ADDRESS YOUR CITY WA 99999-1234",
+              "text": "123 STREET ADDRESS YOUR CITY WA 99999-1234",
+              "boundingBox": [
+                158,
+                151,
+                326,
+                151,
+                326,
+                177,
+                158,
+                177
+              ],
+              "page": 1,
+              "confidence": 0.965
+            },
+            "Country": {
+              "type": "country",
+              "valueCountry": "USA",
+              "confidence": 0.99
+            },
+            "DateOfBirth": {
+              "type": "date",
+              "valueDate": "1958-01-06",
+              "text": "01/06/1958",
+              "boundingBox": [
+                187,
+                133,
+                272,
+                132,
+                272,
+                148,
+                187,
+                149
+              ],
+              "page": 1,
+              "confidence": 0.99
+            },
+            "DateOfExpiration": {
+              "type": "date",
+              "valueDate": "2020-08-12",
+              "text": "08/12/2020",
+              "boundingBox": [
+                332,
+                230,
+                414,
+                228,
+                414,
+                244,
+                332,
+                245
+              ],
+              "page": 1,
+              "confidence": 0.99
+            },
+            "DocumentNumber": {
+              "type": "string",
+              "valueString": "LICWDLACD5DG",
+              "text": "LIC#WDLABCD456DG",
+              "boundingBox": [
+                162,
+                70,
+                307,
+                68,
+                307,
+                84,
+                163,
+                85
+              ],
+              "page": 1,
+              "confidence": 0.99
+            },
+            "FirstName": {
+              "type": "string",
+              "valueString": "LIAM R.",
+              "text": "LIAM R.",
+              "boundingBox": [
+                158,
+                102,
+                216,
+                102,
+                216,
+                116,
+                158,
+                116
+              ],
+              "page": 1,
+              "confidence": 0.985
+            },
+            "LastName": {
+              "type": "string",
+              "valueString": "TALBOT",
+              "text": "TALBOT",
+              "boundingBox": [
+                160,
+                86,
+                213,
+                85,
+                213,
+                99,
+                160,
+                100
+              ],
+              "page": 1,
+              "confidence": 0.987
+            },
+            "Region": {
+              "type": "string",
+              "valueString": "Washington",
+              "confidence": 0.99
+            },
+            "Sex": {
+              "type": "gender",
+              "valueGender": "M",
+              "text": "M",
+              "boundingBox": [
+                226,
+                190,
+                232,
+                190,
+                233,
+                201,
+                226,
+                201
+              ],
+              "page": 1,
+              "confidence": 0.99
+            }
+          }
+        }
+      ]
+    }
+  }
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
+## <a name="train-a-custom-model"></a>Aangepast model trainen
+
+Voor het trainen van een aangepast model hebt u een set trainingsgegevens in een Azure Storage-blob nodig. U hebt minimaal vijf ingevulde formulieren (PDF-documenten en/of afbeeldingen) van hetzelfde type/dezelfde structuur nodig. Zie [Een set met trainingsgegevens voor een aangepast model bouwen](../../build-training-data-set.md) voor tips en opties voor het samenstellen van uw trainingsgegevens.
+
+Training zonder gelabelde gegevens is de standaardbewerking en is eenvoudiger. U kunt ook vooraf enkele of al uw trainingsgegevens handmatig labelen. Dit is een complexer proces, maar resulteert in een beter getraind model.
+
+> [!NOTE]
+> U kunt ook modellen trainen met een grafische gebruikersinterface, zoals het [voorbeeldhulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md).
+
+
+### <a name="train-a-model-without-labels"></a>Een model trainen zonder labels
+
+Als u een Form Recognizer-model wilt trainen met de documenten in uw Azure Blob-container, roept u de API **[Aangepast model trainen](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync)** aan door de volgende cURL-opdracht uit te voeren. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
+1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
+1. Vervang `{SAS URL}` door de URL van de SAS (Shared Access Signature) van de Azure Blob Storage-container. [!INCLUDE [get SAS URL](../sas-instructions.md)]
+
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```bash
+curl -i -X POST "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}'}"
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```bash
+curl -i -X POST "https://{Endpoint}/formrecognizer/v2.0/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}'}"
+```
+
+---
+
+U ontvangt een `201 (Success)` antwoord met een **Locatie**-header. De waarde van deze header is de id van het nieuwe model dat wordt getraind.
+
+### <a name="train-a-model-with-labels"></a>Een model trainen met labels
+
+Als u met labels wilt trainen, moet uw Blob Storage-container naast de trainingsdocumenten ook speciale bestanden met labelinformatie (`\<filename\>.pdf.labels.json`) bevatten. Het [hulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md) beschikt over een gebruikersinterface die u kan helpen bij het maken van deze labelbestanden. Zodra u deze hebt, kunt u de API Aangepast **[model](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync)** trainen aanroepen, met de `"useLabelFile"` parameter ingesteld op in de `true` JSON-body.
+
+Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
+1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
+1. Vervang `{SAS URL}` door de URL van de SAS (Shared Access Signature) van de Azure Blob Storage-container. [!INCLUDE [get SAS URL](../sas-instructions.md)]
+
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```bash
+curl -i -X POST "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}', 'useLabelFile':true}"
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```bash
+curl -i -X POST "https://{Endpoint}/formrecognizer/v2.0/custom/models" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" --data-ascii "{ 'source': '{SAS URL}', 'useLabelFile':true }"
+```
+
+---
+
+U ontvangt een `201 (Success)` antwoord met een **Locatie**-header. De waarde van deze header is de id van het nieuwe model dat wordt getraind.
+
+### <a name="get-training-results"></a>Trainingsresultaten ophalen
+
+Nadat u de trainbewerking hebt gestart, gebruikt u een nieuwe bewerking **[Aangepast model ophalen](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModel)** om de trainingsstatus te controleren. Geef de model-id door aan deze API-aanroep om de trainingsstatus te controleren:
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnementssleutel.
+1. Vervang `{subscription key}` door uw abonnementssleutel.
+1. Vervang `{model ID}` door de model-id in de vorige stap.
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```bash
+curl -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models/{model ID}" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}"
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```bash
+curl -X GET "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}"
+```
+
+---
+
+U ontvangt een `200 (Success)`-antwoord met een JSON-hoofdtekst in de volgende indeling. Let op het veld `"status"`. Dit heeft de waarde `"ready"` zodra de training is voltooid. Als de training van het model niet is voltooid, moet u opnieuw een query uitvoeren op de service door de opdracht opnieuw uit te voeren. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
+
+Het veld `"modelId"` bevat de id van het model dat u traint. U hebt deze nodig voor de volgende stap.
+
+```json
+{
+  "modelInfo":{
+    "status":"ready",
+    "createdDateTime":"2019-10-08T10:20:31.957784",
+    "lastUpdatedDateTime":"2019-10-08T14:20:41+00:00",
+    "modelId":"1cfb372bab404ba3aa59481ab2c63da5"
+  },
+  "trainResult":{
+    "trainingDocuments":[
+      {
+        "documentName":"invoices\\Invoice_1.pdf",
+        "pages":1,
+        "errors":[
+
+        ],
+        "status":"succeeded"
+      },
+      {
+        "documentName":"invoices\\Invoice_2.pdf",
+        "pages":1,
+        "errors":[
+
+        ],
+        "status":"succeeded"
+      },
+      {
+        "documentName":"invoices\\Invoice_3.pdf",
+        "pages":1,
+        "errors":[
+
+        ],
+        "status":"succeeded"
+      },
+      {
+        "documentName":"invoices\\Invoice_4.pdf",
+        "pages":1,
+        "errors":[
+
+        ],
+        "status":"succeeded"
+      },
+      {
+        "documentName":"invoices\\Invoice_5.pdf",
+        "pages":1,
+        "errors":[
+
+        ],
+        "status":"succeeded"
+      }
+    ],
+    "errors":[
+
+    ]
+  },
+  "keys":{
+    "0":[
+      "Address:",
+      "Invoice For:",
+      "Microsoft",
+      "Page"
+    ]
+  }
+}
+```
+
+## <a name="analyze-forms-with-a-custom-model"></a>Formulieren analyseren met een aangepast model
+
+Vervolgens gebruikt u uw pas getrainde model voor het analyseren van een document en het extraheren van de sleutel-waardeparen en tabellen ervan. Roep de API **[Formulier analyseren](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm)** aan door de volgende cURL-opdracht uit te voeren. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen van uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
+1. Vervang `{model ID}` door de model-id die u in de vorige sectie hebt gekregen.
+1. Vervang `{SAS URL}` door een SAS-URL naar uw bestand in Azure Storage. Volg de stappen in de sectie Training, maar in plaats van een SAS-URL voor de hele blobcontainer op te halen, haalt u er een op voor het specifieke bestand dat u wilt analyseren.
+1. Vervang `{subscription key}` door uw abonnementssleutel.
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```bash
+curl -v "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models/{model ID}/analyze?includeTextDetails=true" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" -d "{ 'source': '{SAS URL}' } "
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```bash
+curl -v "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}/analyze?includeTextDetails=true" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: {subscription key}" -d "{ 'source': '{SAS URL}' } "
+```
+
+---
+
+U ontvangt een `202 (Success)`-antwoord met een **Bewerking-Locatie**-header. De waarde van deze header bevat een resultaten-id die u gebruikt om de resultaten van de analysebewerking bij te houden. Sla deze resultaten-id op voor de volgende stap.
+
+### <a name="get-the-analyze-results"></a>De resultaten van de analyse ophalen
+
+Roep de GET **[Analyze Form Result-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetAnalyzeFormResult)** aan om een query uit te voeren op de resultaten van de analysebewerking.
+
+1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen van uw Form Recognizer-abonnementssleutel. U vindt deze op het tabblad **Overzicht** van uw Form Recognizer-resource.
+1. Vervang `{result ID}` door de id die u in de vorige sectie hebt gekregen.
+1. Vervang `{subscription key}` door uw abonnementssleutel.
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```bash
+curl -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.3/custom/models/{model ID}/analyzeResults/{result ID}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```bash
+curl -X GET "https://{Endpoint}/formrecognizer/v2.0/custom/models/{model ID}/analyzeResults/{result ID}" -H "Ocp-Apim-Subscription-Key: {subscription key}"
+```
+
+---
+
+U ontvangt een `200 (Success)`-antwoord met een JSON-hoofdtekst in de volgende indeling. De uitvoer is voor het gemak ingekort. U ziet het veld `"status"` onderaan. Dit heeft de waarde `"succeeded"` wanneer de analysebewerking is voltooid. Als de bewerking Analyse niet is voltooid, moet u opnieuw een query uitvoeren op de service door de opdracht opnieuw uit te voeren. Een interval van één seconde of meer tussen oproepen wordt aanbevolen.
+
+In aangepaste modellen die zijn getraind zonder labels, staan de koppelingen tussen sleutel-waardeparen en tabellen in het `"pageResults"` knooppunt van de JSON-uitvoer. In aangepaste modellen die zijn getraind met labels, zijn de koppelingen tussen sleutel-waardeparen in het `"documentResults"` knooppunt. Als u ook extractie voor tekst zonder opmaak hebt opgegeven via de URL-parameter *includeTextDetails*, worden in het knooppunt `"readResults"` de inhoud en posities van alle tekst in het document weergegeven.
+
+Dit voorbeeld van een JSON-bestand is voor het gemak ingekort. Bekijk de [volledige voorbeelduitvoer op GitHub.](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/analyze-result-invoice-6.pdf.json)
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+```JSON
+{
+  "status": "succeeded",
+  "createdDateTime": "2020-08-21T01:13:28Z",
+  "lastUpdatedDateTime": "2020-08-21T01:13:42Z",
+  "analyzeResult": {
+    "version": "2.1.0",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": 0,
+        "width": 8.5,
+        "height": 11,
+        "unit": "inch",
+        "lines": [
+          {
+            "text": "Project Statement",
+            "boundingBox": [
+              5.0444,
+              0.3613,
+              8.0917,
+              0.3613,
+              8.0917,
+              0.6718,
+              5.0444,
+              0.6718
+            ],
+            "words": [
+              {
+                "text": "Project",
+                "boundingBox": [
+                  5.0444,
+                  0.3587,
+                  6.2264,
+                  0.3587,
+                  6.2264,
+                  0.708,
+                  5.0444,
+                  0.708
+                ]
+              },
+              {
+                "text": "Statement",
+                "boundingBox": [
+                  6.3361,
+                  0.3635,
+                  8.0917,
+                  0.3635,
+                  8.0917,
+                  0.6396,
+                  6.3361,
+                  0.6396
+                ]
+              }
+            ]
+          },
+          ...
+        ]
+      }
+    ],
+    "pageResults": [
+      {
+        "page": 1,
+        "keyValuePairs": [
+          {
+            "key": {
+              "text": "Date:",
+              "boundingBox": [
+                6.9833,
+                1.0615,
+                7.3333,
+                1.0615,
+                7.3333,
+                1.1649,
+                6.9833,
+                1.1649
+              ],
+              "elements": [
+                "#/readResults/0/lines/2/words/0"
+              ]
+            },
+            "value": {
+              "text": "9/10/2020",
+              "boundingBox": [
+                7.3833,
+                1.0802,
+                7.925,
+                1.0802,
+                7.925,
+                1.174,
+                7.3833,
+                1.174
+              ],
+              "elements": [
+                "#/readResults/0/lines/3/words/0"
+              ]
+            },
+            "confidence": 1
+          },
+          ...
+        ],
+        "tables": [
+          {
+            "rows": 5,
+            "columns": 5,
+            "cells": [
+              {
+                "text": "Training Date",
+                "rowIndex": 0,
+                "columnIndex": 0,
+                "boundingBox": [
+                  0.6944,
+                  4.2779,
+                  1.5625,
+                  4.2779,
+                  1.5625,
+                  4.4005,
+                  0.6944,
+                  4.4005
+                ],
+                "confidence": 1,
+                "rowSpan": 1,
+                "columnSpan": 1,
+                "elements": [
+                  "#/readResults/0/lines/15/words/0",
+                  "#/readResults/0/lines/15/words/1"
+                ],
+                "isHeader": true,
+                "isFooter": false
+              },
+              ...
+            ]
+          }
+        ],
+        "clusterId": 0
+      }
+    ],
+    "documentResults": [],
+    "errors": []
+  }
+}
+```
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```JSON
+{
+  "status": "succeeded",
+  "createdDateTime": "2020-08-21T00:46:25Z",
+  "lastUpdatedDateTime": "2020-08-21T00:46:32Z",
+  "analyzeResult": {
+    "version": "2.0.0",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": 0,
+        "width": 8.5,
+        "height": 11,
+        "unit": "inch",
+        "lines": [
+          {
+            "text": "Project Statement",
+            "boundingBox": [
+              5.0153,
+              0.275,
+              8.0944,
+              0.275,
+              8.0944,
+              0.7125,
+              5.0153,
+              0.7125
+            ],
+            "words": [
+              {
+                "text": "Project",
+                "boundingBox": [
+                  5.0153,
+                  0.275,
+                  6.2278,
+                  0.275,
+                  6.2278,
+                  0.7125,
+                  5.0153,
+                  0.7125
+                ]
+              },
+              {
+                "text": "Statement",
+                "boundingBox": [
+                  6.3292,
+                  0.275,
+                  8.0944,
+                  0.275,
+                  8.0944,
+                  0.7125,
+                  6.3292,
+                  0.7125
+                ]
+              }
+            ]
+          },
+        ...
+        ]
+      }
+    ],
+    "pageResults": [
+      {
+        "page": 1,
+        "keyValuePairs": [
+          {
+            "key": {
+              "text": "Date:",
+              "boundingBox": [
+                6.9722,
+                1.0264,
+                7.3417,
+                1.0264,
+                7.3417,
+                1.1931,
+                6.9722,
+                1.1931
+              ],
+              "elements": [
+                "#/readResults/0/lines/2/words/0"
+              ]
+            },
+            "confidence": 1
+          },
+         ...
+        ],
+        "tables": [
+          {
+            "rows": 4,
+            "columns": 5,
+            "cells": [
+              {
+                "text": "Training Date",
+                "rowIndex": 0,
+                "columnIndex": 0,
+                "boundingBox": [
+                  0.6931,
+                  4.2444,
+                  1.5681,
+                  4.2444,
+                  1.5681,
+                  4.4125,
+                  0.6931,
+                  4.4125
+                ],
+                "confidence": 1,
+                "rowSpan": 1,
+                "columnSpan": 1,
+                "elements": [
+                  "#/readResults/0/lines/15/words/0",
+                  "#/readResults/0/lines/15/words/1"
+                ],
+                "isHeader": true,
+                "isFooter": false
+              },
+              ...
+            ]
+          }
+        ],
+        "clusterId": 0
+      }
+    ],
+    "documentResults": [],
+    "errors": []
+  }
+}
+```
+
+---
+
+### <a name="improve-results"></a>Resultaten verbeteren
+
+[!INCLUDE [improve results](../improve-results-unlabeled.md)]
+
 ## <a name="manage-custom-models"></a>Aangepaste modellen beheren
 
 ### <a name="get-a-list-of-custom-models"></a>Een lijst met aangepaste modellen ophalen
 
-Gebruik de **[lijst met aangepaste modellen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModels)** -API in de volgende opdracht om een lijst te retour neren van alle aangepaste modellen die deel uitmaken van uw abonnement.
+Gebruik de **[API Aangepaste modellen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModels)** lijst in de volgende opdracht om een lijst met alle aangepaste modellen te retourneren die deel uitmaken van uw abonnement.
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
@@ -1622,7 +1847,7 @@ U ontvangt een `200`-bericht dat aangeeft dat de bewerking is geslaagd. Dit beri
 
 ### <a name="get-a-specific-model"></a>Een specifiek model ophalen
 
-Als u gedetailleerde informatie over een specifiek aangepast model wilt ophalen, gebruikt u de API voor **[aangepast model ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModel)** in de volgende opdracht.
+Als u gedetailleerde informatie over een specifiek aangepast model wilt ophalen, gebruikt u de **[API Aangepast model](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetCustomModel)** ophalen in de volgende opdracht.
 
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
@@ -1684,8 +1909,8 @@ U ontvangt een `200`-bericht dat aangeeft dat de bewerking is geslaagd. Dit beri
 
 ### <a name="delete-a-model-from-the-resource-account"></a>Een model uit het resourceaccount verwijderen
 
-U kunt een model ook uit uw account verwijderen door naar de id te verwijzen. Met deze opdracht wordt de API voor het verwijderen van een **[aangepast model](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/DeleteCustomModel)** aangeroepen om het model dat in de vorige sectie wordt gebruikt, te verwijderen.
-
+U kunt een model ook uit uw account verwijderen door naar de id te verwijzen. Met deze opdracht wordt de **[API Aangepast model verwijderen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/DeleteCustomModel)** aangeroepen om het model te verwijderen dat in de vorige sectie is gebruikt.
+code
 1. Vervang `{Endpoint}` door het eindpunt dat u hebt verkregen met uw Form Recognizer-abonnement.
 1. Vervang `{subscription key}` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
 1. Vervang `{modelId}` door de id van het aangepaste model dat u wilt opzoeken.
@@ -1704,7 +1929,7 @@ curl -v -X DELETE "https://{Endpoint}/formrecognizer/v2.0/custom/models/{modelId
 
 ---
 
-U ontvangt een `204` antwoord om aan te geven dat uw model is gemarkeerd voor verwijdering. Model artefacten worden binnen 48 uur verwijderd.
+U ontvangt een geslaagd antwoord dat aangeeft dat `204` uw model is gemarkeerd voor verwijdering. Modelartefacten worden binnen 48 uur verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

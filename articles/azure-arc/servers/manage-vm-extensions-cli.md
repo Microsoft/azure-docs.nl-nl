@@ -1,25 +1,28 @@
 ---
-title: VM-extensie inschakelen met behulp van Azure CLI
-description: In dit artikel wordt beschreven hoe u virtuele-machine uitbreidingen implementeert voor Azure Arc-servers die worden uitgevoerd in hybride Cloud omgevingen met behulp van de Azure CLI.
-ms.date: 01/05/2021
+title: VM-extensie inschakelen met Behulp van Azure CLI
+description: In dit artikel wordt beschreven hoe u extensies van virtuele machines implementeert op Azure Arc servers die worden uitgevoerd in hybride cloudomgevingen met behulp van de Azure CLI.
+ms.date: 04/13/2021
 ms.topic: conceptual
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6edb7d55e542f963c75693d535fa3b50dc5b827b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 25e75ede30139201789cd86e6ebddda09a664eb4
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97916198"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388734"
 ---
-# <a name="enable-azure-vm-extensions-using-the-azure-cli"></a>Azure-VM-extensies inschakelen met behulp van Azure CLI
+# <a name="enable-azure-vm-extensions-using-the-azure-cli"></a>Azure VM-extensies inschakelen met de Azure CLI
 
-In dit artikel wordt beschreven hoe u VM-extensies die worden ondersteund door Azure Arc-servers, kunt implementeren en verwijderen naar een virtuele Linux-of Windows-machine met behulp van de Azure CLI.
+In dit artikel wordt beschreven hoe u VM-extensies, ondersteund door Azure Arc-servers, implementeert en verwijdert op een hybride Linux- of Windows-machine met behulp van de Azure CLI.
+
+> [!NOTE]
+> Azure Arc-servers biedt geen ondersteuning voor het implementeren en beheren van VM-extensies op virtuele Azure-machines. Zie het volgende artikel overzicht van VM-extensies voor [Azure-VM's.](../../virtual-machines/extensions/overview.md)
 
 [!INCLUDE [Azure CLI Prepare your environment](../../../includes/azure-cli-prepare-your-environment.md)]
 
 ## <a name="install-the-azure-cli-extension"></a>De Azure CLI-extensie installeren
 
-De ConnectedMachine-opdrachten worden niet verzonden als onderdeel van de Azure CLI. Voordat u de Azure CLI gebruikt om VM-extensies te beheren op uw hybride server die wordt beheerd door servers met Arc-functionaliteit, moet u de ConnectedMachine-extensie laden. Voer de volgende opdracht uit om het te verkrijgen:
+De ConnectedMachine-opdrachten worden niet verzonden als onderdeel van de Azure CLI. Voordat u de Azure CLI gebruikt voor het beheren van VM-extensies op uw hybride server die wordt beheerd door Servers met Arc, moet u de ConnectedMachine-extensie laden. Voer de volgende opdracht uit om deze op te halen:
 
 ```azurecli
 az extension add --name connectedmachine
@@ -27,29 +30,29 @@ az extension add --name connectedmachine
 
 ## <a name="enable-extension"></a>Extensie inschakelen
 
-Gebruik [AZ connectedmachine extension Create](/cli/azure/ext/connectedmachine/connectedmachine/extension#ext_connectedmachine_az_connectedmachine_extension_create) with the,,,, `--machine-name` `--extension-name` `--location` `--type` `settings` en `--publisher` para meters om een VM-extensie in te scha kelen op uw met Arc ingeschakelde server.
+Als u een VM-extensie op uw [](/cli/azure/ext/connectedmachine/connectedmachine/extension#ext_connectedmachine_az_connectedmachine_extension_create) Arc-server wilt `--machine-name` `--extension-name` `--location` `--type` `settings` `--publisher` inschakelen, gebruikt u az connectedmachine extension create met de parameters , , , , en .
 
-In het volgende voor beeld wordt de Log Analytics VM-extensie ingeschakeld op een server met Arc-functionaliteit:
+In het volgende voorbeeld wordt de Log Analytics VM-extensie op een Arc-server ingeschakeld:
 
 ```azurecli
 az connectedmachine extension create --machine-name "myMachineName" --name "OmsAgentForLinux or MicrosoftMonitoringAgent" --location "eastus" --settings '{\"workspaceId\":\"myWorkspaceId\"}' --protected-settings '{\"workspaceKey\":\"myWorkspaceKey\"}' --resource-group "myResourceGroup" --type-handler-version "1.13" --type "OmsAgentForLinux or MicrosoftMonitoringAgent" --publisher "Microsoft.EnterpriseCloud.Monitoring" 
 ```
 
-In het volgende voor beeld wordt de aangepaste script extensie ingeschakeld op een server met Arc-functionaliteit:
+In het volgende voorbeeld wordt de aangepaste scriptextensie ingeschakeld op een Arc-server:
 
 ```azurecli
 az connectedmachine extension create --machine-name "myMachineName" --name "CustomScriptExtension" --location "eastus" --type "CustomScriptExtension" --publisher "Microsoft.Compute" --settings "{\"commandToExecute\":\"powershell.exe -c \\\"Get-Process | Where-Object { $_.CPU -gt 10000 }\\\"\"}" --type-handler-version "1.10" --resource-group "myResourceGroup"
 ```
 
-In het volgende voor beeld wordt de Key Vault VM-extensie (preview) ingeschakeld op een server met Arc-functionaliteit:
+In het volgende voorbeeld wordt de Key Vault VM-extensie (preview) ingeschakeld op een Arc-server:
 
 ```azurecli
 az connectedmachine extension create --resource-group "resourceGroupName" --machine-name "myMachineName" --location "regionName" --publisher "Microsoft.Azure.KeyVault" --type "KeyVaultForLinux or KeyVaultForWindows" --name "KeyVaultForLinux or KeyVaultForWindows" --settings '{"secretsManagementSettings": { "pollingIntervalInS": "60", "observedCertificates": ["observedCert1"] }, "authenticationSettings": { "msiEndpoint": "http://localhost:40342/metadata/identity" }}'
 ```
 
-## <a name="list-extensions-installed"></a>Lijst met geïnstalleerde uitbrei dingen
+## <a name="list-extensions-installed"></a>Lijst met geïnstalleerde extensies
 
-Als u een lijst wilt weer geven met de VM-extensies op de server waarop u een Arc hebt ingeschakeld, gebruikt u [AZ connectedmachine Extension List](/cli/azure/ext/connectedmachine/connectedmachine/extension#ext_connectedmachine_az_connectedmachine_extension_list) with `--machine-name` `--resource-group` para meters.
+Gebruik az [connectedmachine extension list](/cli/azure/ext/connectedmachine/connectedmachine/extension#ext_connectedmachine_az_connectedmachine_extension_list) met de parameters en om een lijst met VM-extensies op te halen op uw Arc-server. `--machine-name` `--resource-group`
 
 Voorbeeld:
 
@@ -57,9 +60,9 @@ Voorbeeld:
 az connectedmachine extension list --machine-name "myMachineName" --resource-group "myResourceGroup"
 ```
 
-De uitvoer van Azure CLI-opdrachten bevindt zich standaard in JSON (JavaScript Object Notation). Als u de standaard uitvoer wilt wijzigen in een lijst of tabel, gebruikt u bijvoorbeeld [AZ Configure--Output](/cli/azure/reference-index). U kunt ook toevoegen `--output` aan elke opdracht voor eenmalige wijziging in uitvoer indeling.
+Standaard is de uitvoer van Azure CLI-opdrachten in JSON (JavaScript Object Notation). Als u de standaarduitvoer wilt wijzigen in een lijst of tabel, gebruikt u [bijvoorbeeld az configure --output](/cli/azure/reference-index). U kunt ook toevoegen `--output` aan een opdracht voor een een keer wijzigen in de uitvoerindeling.
 
-In het volgende voor beeld wordt de gedeeltelijke JSON-uitvoer van de opdracht weer gegeven `az connectedmachine extension -list` :
+In het volgende voorbeeld ziet u de gedeeltelijke JSON-uitvoer van de `az connectedmachine extension -list` opdracht :
 
 ```json
 [
@@ -74,9 +77,9 @@ In het volgende voor beeld wordt de gedeeltelijke JSON-uitvoer van de opdracht w
 
 ## <a name="remove-an-installed-extension"></a>Een geïnstalleerde extensie verwijderen
 
-Als u een geïnstalleerde VM-extensie wilt verwijderen op de server waarop u een Arc hebt ingeschakeld, gebruikt u [AZ connectedmachine extension delete](/cli/azure/ext/connectedmachine/connectedmachine/extension#ext_connectedmachine_az_connectedmachine_extension_delete) met de `--extension-name` `--machine-name` `--resource-group` para meters en.
+Als u een geïnstalleerde VM-extensie op uw Arc-server wilt verwijderen, gebruikt u [az connectedmachine extension delete met](/cli/azure/ext/connectedmachine/connectedmachine/extension#ext_connectedmachine_az_connectedmachine_extension_delete) de parameters , en `--extension-name` `--machine-name` `--resource-group` .
 
-Als u de Log Analytics VM-extensie voor Linux bijvoorbeeld wilt verwijderen, voert u de volgende opdracht uit:
+Als u bijvoorbeeld de Log Analytics VM-extensie voor Linux wilt verwijderen, moet u de volgende opdracht uitvoeren:
 
 ```azurecli
 az connectedmachine extension delete --machine-name "myMachineName" --name "OmsAgentForLinux" --resource-group "myResourceGroup"
@@ -84,8 +87,8 @@ az connectedmachine extension delete --machine-name "myMachineName" --name "OmsA
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- U kunt VM-extensies implementeren, beheren en verwijderen met behulp van de [Azure PowerShell](manage-vm-extensions-powershell.md), vanuit de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen](manage-vm-extensions-template.md).
+- U kunt VM-extensies implementeren, beheren en verwijderen met behulp van [de Azure PowerShell](manage-vm-extensions-powershell.md), uit de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen.](manage-vm-extensions-template.md)
 
-- Informatie over probleem oplossing vindt u in de [gids voor het oplossen van problemen met VM-extensies](troubleshoot-vm-extensions.md).
+- Informatie over probleemoplossing vindt u in de handleiding Problemen met [VM-extensies oplossen.](troubleshoot-vm-extensions.md)
 
-- Raadpleeg het [overzichts](/cli/azure/ext/connectedmachine/connectedmachine/extension) artikel over Azure cli VM Extension voor meer informatie over de opdrachten.
+- Lees het artikel Overzicht van de Azure CLI [VM-extensie](/cli/azure/ext/connectedmachine/connectedmachine/extension) voor meer informatie over de opdrachten.

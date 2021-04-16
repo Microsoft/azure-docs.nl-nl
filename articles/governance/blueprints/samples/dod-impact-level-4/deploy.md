@@ -1,14 +1,14 @@
 ---
 title: DoD Impact Level 4-blauwdrukvoorbeeld
 description: Implementeer stappen voor het DoD Impact Level 4-blauwdrukvoorbeeld, inclusief de parametergegevens voor blauwdrukartefacten.
-ms.date: 04/02/2021
+ms.date: 04/13/2021
 ms.topic: sample
-ms.openlocfilehash: fcea8dab551be18b4dfca81bd179f89d17b01bdf
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: ce0d2d162bf77c147e0e4bc26e68964cd50f4372
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106386938"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378445"
 ---
 # <a name="deploy-the-dod-impact-level-4-blueprint-sample"></a>Het DoD Impact Level 4-blauwdrukvoorbeeld implementeren
 
@@ -19,7 +19,7 @@ Als u het DoD IL 4-blauwdrukvoorbeeld (Department of Defense Impact Level 4) van
 > - Uw kopie van het voorbeeld markeren als **Gepubliceerd**
 > - Uw kopie van de blauwdruk toewijzen aan een bestaand abonnement
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
+Als u nog geen abonnement Azure Government, vraagt u een proefabonnement [aan](https://azure.microsoft.com/global-infrastructure/government/request/) voordat u begint.
 
 ## <a name="create-blueprint-from-sample"></a>Een blauwdruk maken op basis van een voorbeeld
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/04/2020
+ms.date: 04/13/2021
 ms.author: jeedes
-ms.openlocfilehash: 29e19eea51b5ee55831bf1d694a9a6473a62d471
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8c0ffe4affb6b30f2e2a1aa97a0f4795c130f59b
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97504046"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107517603"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met New Relic
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u New Relic integreert met Azure Active Directory
 * In Azure AD bepalen wie er toegang heeft tot New Relic.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij New Relic.
 * Uw accounts op één centrale locatie beheren: de Azure-portal.
-
-Als u meer wilt weten over de integratie van SaaS-apps (Software as a Service) met Azure AD, gaat u naar [Eenmalige aanmelding voor toepassingen in Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,13 +38,12 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Nieuwe Relic biedt ondersteuning voor eenmalige aanmelding die is geïnitieerd met de serviceprovider of de id-provider.
-* Zodra u New Relic hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="add-new-relic-from-the-gallery"></a>New Relic toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van New Relic met Azure AD moet u **New Relic (By Organization)** vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u aan bij de Azure-portal met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer de service **Azure Active Directory**.
 1. Selecteer **Bedrijfstoepassingen** > **Nieuwe toepassing**.
 1. Typ op de pagina **Bladeren in Azure DA-galerie** **New Relic (By Organization)** in het zoekvak.
@@ -69,7 +66,7 @@ Als u eenmalige aanmelding van Azure AD wilt configureren en testen met New Reli
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **New Relic by Organization** de sectie **Beheren**. Selecteer vervolgens **Eenmalige aanmelding**.
+1. Zoek in Azure Portal op **de New Relic de** integratiepagina van de toepassing New Relic organisatie de **sectie** Beheren. Selecteer vervolgens **Eenmalige aanmelding**.
 
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 
@@ -98,32 +95,27 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-Hier ziet u hoe u een testgebruiker met de naam B.Simon maakt in de Azure-portal.
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in de Azure-portal de optie **Azure Active Directory**.
-1. Selecteer **Gebruikers** > **Nieuwe gebruiker**.
-1. Op de pagina **Nieuwe gebruiker**:
-   1. Voer `username@companydomain.extension` in het veld **Gebruikersnaam** in. Bijvoorbeeld `b.simon@contoso.com`. Dit moet overeenkomen met het e-mailadres dat u aan de zijde van New Relic wilt gebruiken.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
-   1. Selecteer **Wachtwoord weergeven**, en sla de waarde op die wordt weergegeven.
-   1. Selecteer **Maken**.
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-Hier ziet u hoe u B.Simon toestemming geeft om eenmalige aanmelding van Azure AD te gebruiken door toegang te verlenen tot New Relic by Organization.
+In deze sectie geeft u B.Simon toestemming om een aanmelding van Azure te gebruiken door toegang te verlenen tot New Relic.
 
-1. Selecteer in de Azure-portal de optie **Azure Active Directory**.
-1. Selecteer **Bedrijfstoepassingen** > **New Relic by Organization**.
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst met **toepassingen New Relic**.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![Schermopname van de sectie Beheren, met Gebruikers en groepen gemarkeerd.](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen**. Selecteer in **Toewijzing toevoegen** de optie **Gebruikers en groepen** (of **Gebruikers**, afhankelijk van het abonnementsniveau).
-
-   ![Schermopname van de optie Gebruiker toevoegen.](common/add-assign-user.png)
-
-1. Selecteer in **Gebruikers en groepen** (of **Gebruikers**) **B.Simon** in de lijst **Gebruikers**, en kies vervolgens **Selecteren** onderaan het scherm.
-1. Selecteer **Toewijzen** in **Toewijzing toevoegen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-new-relic-sso"></a>Eenmalige aanmelding voor New Relic configureren
 
@@ -167,18 +159,20 @@ In deze sectie maakt u in New Relic een gebruiker met de naam B. Simon.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-Hier ziet u hoe u de configuratie voor eenmalige aanmelding van Azure AD kunt testen met behulp van het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster **New Relic by Organization** selecteert, wordt u automatisch aangemeld bij New Relic. Zie [Aanmelden bij en starten van apps vanuit de Mijn apps-portal](../user-help/my-apps-portal-end-user-access.md) voor meer informatie over het Toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid New Relic aanmeldings-URL waar u de aanmeldingsstroom kunt initiëren.  
 
-- [Tutorials for integrating SaaS applications with Azure Active Directory](./tutorial-list.md) (Zelfstudies voor het integreren van SaaS-toepassingen met Azure Active Directory)
+* Ga rechtstreeks New Relic aanmeldings-URL en initieer de aanmeldingsstroom daar.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik op **Deze toepassing testen** in Azure Portal. U wordt automatisch aangemeld bij de New Relic waarvoor u eenmalige aanmelding hebt ingesteld. 
 
-- [Try New Relic with Azure AD](https://aad.portal.azure.com/) (New Relic uitproberen met Azure AD)
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel New Relic in de Mijn apps klikt en als deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij de New Relic waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u de New Relic kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

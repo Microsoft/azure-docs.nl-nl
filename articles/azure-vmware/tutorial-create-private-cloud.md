@@ -1,16 +1,16 @@
 ---
-title: Zelf studie-een persoonlijke cloud van Azure VMware-oplossing implementeren
-description: Meer informatie over het maken en implementeren van een Azure VMware-oplossing privécloud
+title: 'Zelfstudie: Een privécloud Azure VMware Solution implementeren'
+description: Meer informatie over het maken en implementeren van Azure VMware Solution privécloud
 ms.topic: tutorial
 ms.date: 02/22/2021
-ms.openlocfilehash: ed916305cd1a67162f07c24e3bf97766e5389b74
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 89a44ce7e5910609068f72c321971ced2e3646b4
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103462164"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374842"
 ---
-# <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud"></a>Zelf studie: een persoonlijke cloud van Azure VMware-oplossing implementeren
+# <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Een privécloud Azure VMware Solution implementeren
 
 Met Azure VMware Solution kunt u een vSphere-cluster in Azure implementeren. De minimale initiële implementatie is drie hosts. Extra hosts kunnen een voor een worden toegevoegd, maximaal 16 hosts per cluster.
 
@@ -25,10 +25,10 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- De juiste beheerdersrechten en machtigingen voor het maken van een privécloud. U moet mini maal een bijdrager niveau in het abonnement hebben.
-- Volg de informatie die u hebt verzameld in het [plannings](production-ready-deployment-steps.md) artikel om Azure VMware-oplossing te implementeren.
+- De juiste beheerdersrechten en machtigingen voor het maken van een privécloud. U moet minimaal het niveau inzender in het abonnement hebben.
+- Volg de informatie die u hebt verzameld in [het planningsartikel](production-ready-deployment-steps.md) voor het implementeren Azure VMware Solution.
 - Zorg ervoor dat de juiste netwerken zijn geconfigureerd zoals beschreven in [ Zelfstudie: Controlelijst voor netwerken](tutorial-network-checklist.md).
-- Er zijn hosts ingericht en de resource provider micro soft. AVS is geregistreerd zoals beschreven in [de aanvragen hosts en de resource provider micro soft. AVS in te scha kelen](enable-azure-vmware-solution.md).
+- Hosts zijn ingericht en de Microsoft.AVS-resourceprovider is geregistreerd zoals beschreven in Hosts aanvragen en de [Microsoft.AVS-resourceprovider inschakelen.](enable-azure-vmware-solution.md)
 
 ## <a name="create-a-private-cloud"></a>Een privécloud maken
 
@@ -48,7 +48,7 @@ Selecteer **Nu proberen** in de rechterbovenhoek van een codeblok. U kunt Cloud 
 
 #### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een resource groep met de opdracht [AZ Group Create](/cli/azure/group) . Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
+Maak een resourcegroep met de [opdracht 'az group create'.](/cli/azure/group) Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 

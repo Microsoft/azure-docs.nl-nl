@@ -1,7 +1,7 @@
 ---
-title: Machine Learning pijplijn YAML
+title: Machine Learning-pijplijn YAML
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het definiëren van een machine learning pijp lijn met behulp van een YAML-bestand. YAML pijplijn definities worden gebruikt met de extensie machine learning voor de Azure CLI.
+description: Informatie over het definiëren van een machine learning pijplijn met behulp van een YAML-bestand. YAML-pijplijndefinities worden gebruikt met machine learning-extensie voor de Azure CLI.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,56 +10,56 @@ ms.reviewer: larryfr
 ms.author: nilsp
 author: NilsPohlmann
 ms.date: 07/31/2020
-ms.custom: devx-track-python
-ms.openlocfilehash: 2a92fa8fd242482585ab3785e99f8239548ce369
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 1c44f018d558b9426ba6271c0cbb1c2356a2a9b2
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104868338"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107478281"
 ---
-# <a name="define-machine-learning-pipelines-in-yaml"></a>machine learning pijp lijnen definiëren in YAML
+# <a name="define-machine-learning-pipelines-in-yaml"></a>Definieer machine learning pijplijnen in YAML
 
-Meer informatie over het definiëren van uw machine learning-pijp lijnen in [yaml](https://yaml.org/). Wanneer u de extensie machine learning gebruikt voor de Azure CLI, verwachten veel van de aan de pipeline gerelateerde opdrachten een YAML-bestand dat de pijp lijn definieert.
+Meer informatie over het definiëren van machine learning pijplijnen in [YAML](https://yaml.org/). Wanneer u de machine learning voor de Azure CLI gebruikt, verwachten veel van de pijplijnopdrachten een YAML-bestand dat de pijplijn definieert.
 
-De volgende tabel bevat een overzicht van wat is en wordt momenteel niet ondersteund bij het definiëren van een pijp lijn in YAML:
+In de volgende tabel wordt vermeld wat wel en niet wordt ondersteund bij het definiëren van een pijplijn in YAML:
 
-| Type stap | Ondersteund? |
+| Staptype | Ondersteund? |
 | ----- | :-----: |
-| PythonScriptStep | Yes |
-| ParallelRunStep | Yes |
-| AdlaStep | Yes |
-| AzureBatchStep | Yes |
-| DatabricksStep | Yes |
-| DataTransferStep | Yes |
-| AutoMLStep | No |
-| HyperDriveStep | No |
-| ModuleStep | Yes |
-| MPIStep | No |
-| EstimatorStep | No |
+| PythonScriptStep | Ja |
+| ParallelRunStep | Ja |
+| AdlaStep | Ja |
+| AzureBatchStep | Ja |
+| DatabricksStep | Ja |
+| DataTransferStep | Ja |
+| AutoMLStep | Nee |
+| HyperDriveStep | Nee |
+| ModuleStep | Ja |
+| MPIStep | Nee |
+| EstimatorStep | Nee |
 
-## <a name="pipeline-definition"></a>Pijplijn definitie
+## <a name="pipeline-definition"></a>Pijplijndefinitie
 
-Een pijplijn definitie maakt gebruik van de volgende sleutels, die overeenkomen met de klasse [pijp lijnen](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline.pipeline) :
+Een pijplijndefinitie maakt gebruik van de volgende sleutels, die overeenkomen met de [klasse Pipelines:](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline.pipeline)
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `name` | De beschrijving van de pijp lijn. |
-| `parameters` | Para meter (s) naar de pijp lijn. |
-| `data_reference` | Hiermee definieert u hoe en waar gegevens beschikbaar moeten worden gemaakt in een run. |
-| `default_compute` | Standaard Compute target waarbij alle stappen in de pijplijn worden uitgevoerd. |
-| `steps` | De stappen die worden gebruikt in de pijp lijn. |
+| `name` | De beschrijving van de pijplijn. |
+| `parameters` | Parameter(s) voor de pijplijn. |
+| `data_reference` | Definieert hoe en waar gegevens beschikbaar moeten worden gesteld in een run. |
+| `default_compute` | Standaardrekendoel waar alle stappen in de pijplijn worden uitgevoerd. |
+| `steps` | De stappen die in de pijplijn worden gebruikt. |
 
 ## <a name="parameters"></a>Parameters
 
-`parameters`In de sectie worden de volgende sleutels gebruikt, die overeenkomen met de klasse [PipelineParameter](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter) :
+In `parameters` de sectie worden de volgende sleutels gebruikt, die overeenkomen met de klasse [PipelineParameter:](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter)
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ---- | ---- |
-| `type` | Het waardetype van de para meter. Geldige typen zijn `string` , `int` , `float` , `bool` , of `datapath` . |
-| `default` | De standaard waarde. |
+| `type` | Het waardetype van de parameter. Geldige typen zijn `string` , , , of `int` `float` `bool` `datapath` . |
+| `default` | De standaardwaarde. |
 
-Elke para meter heeft de naam. Het volgende YAML-code fragment definieert bijvoorbeeld drie para meters met de naam `NumIterationsParameter` , `DataPathParameter` en `NodeCountParameter` :
+Elke parameter heeft de naam . Het volgende YAML-fragment definieert bijvoorbeeld drie parameters `NumIterationsParameter` met de naam , en `DataPathParameter` `NodeCountParameter` :
 
 ```yaml
 pipeline:
@@ -80,14 +80,14 @@ pipeline:
 
 ## <a name="data-reference"></a>Verwijzing naar gegevens
 
-`data_references`In het gedeelte worden de volgende sleutels gebruikt, die overeenkomen met de [DataReference](/python/api/azureml-core/azureml.data.data_reference.datareference):
+In `data_references` de sectie worden de volgende sleutels gebruikt, die overeenkomen met de [DataReference](/python/api/azureml-core/azureml.data.data_reference.datareference):
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `datastore` | De gegevens opslag waarnaar wordt verwezen. |
-| `path_on_datastore` | Het relatieve pad in de back-upopslag voor de gegevens verwijzing. |
+| `datastore` | Het gegevensstore waarnaar moet worden verwezen. |
+| `path_on_datastore` | Het relatieve pad in de back-opslag voor de gegevensverwijzing. |
 
-Elke gegevens verwijzing bevindt zich in een sleutel. Met het volgende YAML-code fragment wordt bijvoorbeeld een gegevens referentie gedefinieerd die is opgeslagen in de sleutel met de naam `employee_data` :
+Elke gegevensverwijzing is opgenomen in een sleutel. Het volgende YAML-fragment definieert bijvoorbeeld een gegevensverwijzing die is opgeslagen in de sleutel met de naam `employee_data` :
 
 ```yaml
 pipeline:
@@ -104,34 +104,34 @@ pipeline:
 
 ## <a name="steps"></a>Stappen
 
-In stappen wordt een reken omgeving gedefinieerd, samen met de bestanden die in de omgeving moeten worden uitgevoerd. Als u het type van een stap wilt definiëren, gebruikt u de `type` sleutel:
+Stappen definiëren een rekenomgeving, samen met de bestanden die in de omgeving moeten worden uitgevoerd. Gebruik de sleutel om het type stap te `type` definiëren:
 
-| Type stap | Description |
+| Staptype | Beschrijving |
 | ----- | ----- |
-| `AdlaStep` | Voert een U-SQL-script uit met Azure Data Lake Analytics. Komt overeen met de [AdlaStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.adlastep) -klasse. |
-| `AzureBatchStep` | Voert taken uit met Azure Batch. Komt overeen met de [AzureBatchStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.azurebatchstep) -klasse. |
-| `DatabricsStep` | Hiermee voegt u een Databricks-notebook, python-script of JAR toe. Komt overeen met de [DatabricksStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricksstep) -klasse. |
-| `DataTransferStep` | Hiermee worden gegevens overgebracht tussen opslag opties. Komt overeen met de [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep) -klasse. |
-| `PythonScriptStep` | Voert een python-script uit. Komt overeen met de [PythonScriptStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep) -klasse. |
-| `ParallelRunStep` | Voert een python-script uit om grote hoeveel heden gegevens asynchroon en parallel te verwerken. Komt overeen met de [ParallelRunStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep) -klasse. |
+| `AdlaStep` | Voert een U-SQL-script uit met Azure Data Lake Analytics. Komt overeen met de [AdlaStep-klasse.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.adlastep) |
+| `AzureBatchStep` | Taken worden uitgevoerd met Azure Batch. Komt overeen met de [klasse AzureBatchStep.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.azurebatchstep) |
+| `DatabricsStep` | Voegt een Databricks-notebook, Python-script of JAR toe. Komt overeen met de [DatabricksStep-klasse.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricksstep) |
+| `DataTransferStep` | Brengt gegevens over tussen opslagopties. Komt overeen met de [klasse DataTransferStep.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep) |
+| `PythonScriptStep` | Voert een Python-script uit. Komt overeen met de [klasse PythonScriptStep.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep) |
+| `ParallelRunStep` | Hiermee wordt een Python-script uitgevoerd om grote hoeveelheden gegevens asynchroon en parallel te verwerken. Komt overeen met de [klasse ParallelRunStep.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep) |
 
-### <a name="adla-step"></a>ADLA stap
+### <a name="adla-step"></a>ADLA-stap
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
 | `script_name` | De naam van het U-SQL-script (ten opzichte van de `source_directory` ). |
-| `compute` | Het Azure Data Lake Compute-doel dat moet worden gebruikt voor deze stap. |
-| `parameters` | [Para meters](#parameters) voor de pijp lijn. |
-| `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
-| `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
-| `source_directory` | Map die het script, assembly's, enzovoort bevat. |
-| `priority` | De prioriteits waarde die voor de huidige taak moet worden gebruikt. |
-| `params` | Woorden lijst met naam/waarde-paren. |
-| `degree_of_parallelism` | De mate van parallelle uitvoering die moet worden gebruikt voor deze taak. |
-| `runtime_version` | De runtime versie van de Data Lake Analytics-engine. |
-| `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |
+| `compute` | Het Azure Data Lake-rekendoel dat voor deze stap moet worden gebruikt. |
+| `parameters` | [Parameters](#parameters) voor de pijplijn. |
+| `inputs` | Invoer kan [InputPortBinding,](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding) [DataReference,](#data-reference) [PortDataReference,](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference) [PipelineData,](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [Dataset,](/python/api/azureml-core/azureml.core.dataset%28class%29) [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset) |
+| `outputs` | Uitvoer kan [PipelineData of](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [OutputPortBinding zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding) |
+| `source_directory` | Map die het script, de assemblies, enzovoort bevat. |
+| `priority` | De prioriteitswaarde die moet worden gebruikt voor de huidige taak. |
+| `params` | Woordenlijst met naam-waardeparen. |
+| `degree_of_parallelism` | De mate van parallellelisme die moet worden gebruikt voor deze taak. |
+| `runtime_version` | De runtimeversie van de Data Lake Analytics engine. |
+| `allow_reuse` | Hiermee bepaalt u of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw worden uitgevoerd met dezelfde instellingen. |
 
-Het volgende voor beeld bevat een ADLA-stap definitie:
+Het volgende voorbeeld bevat de definitie van een ADLA-stap:
 
 ```yaml
 pipeline:
@@ -168,22 +168,22 @@ pipeline:
 
 ### <a name="azure-batch-step"></a>Azure Batch stap
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `compute` | Het Azure Batch Compute-doel dat moet worden gebruikt voor deze stap. |
-| `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
-| `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
-| `source_directory` | Map die de module binaire bestanden, uitvoer bare onderdelen, enzovoort bevat. |
-| `executable` | De naam van de opdracht/het uitvoer bare bestand dat wordt uitgevoerd als onderdeel van deze taak. |
-| `create_pool` | Een Booleaanse vlag die aangeeft of de groep moet worden gemaakt voordat de taak wordt uitgevoerd. |
-| `delete_batch_job_after_finish` | Een Booleaanse vlag die aangeeft of de taak moet worden verwijderd uit het batch-account nadat deze is voltooid. |
-| `delete_batch_pool_after_finish` | Een Booleaanse vlag die aangeeft of de groep moet worden verwijderd nadat de taak is voltooid. |
-| `is_positive_exit_code_failure` | Een Booleaanse vlag die aangeeft of de taak mislukt als de taak wordt afgesloten met een positieve code. |
-| `vm_image_urn` | Als dat het geval `create_pool` is `True` , en VM gebruikt `VirtualMachineConfiguration` . |
-| `pool_id` | De ID van de pool waarin de taak wordt uitgevoerd. |
-| `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |
+| `compute` | Het Azure Batch rekendoel dat voor deze stap moet worden gebruikt. |
+| `inputs` | Invoer kan [InputPortBinding,](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding) [DataReference,](#data-reference) [PortDataReference,](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference) [PipelineData,](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [Dataset,](/python/api/azureml-core/azureml.core.dataset%28class%29) [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset) |
+| `outputs` | Uitvoer kan [PipelineData of](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [OutputPortBinding zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding) |
+| `source_directory` | Map die de binaire bestanden van de module, het uitvoerbare bestand, de assemblies, enzovoort bevat. |
+| `executable` | Naam van de opdracht/het uitvoerbare bestand dat wordt uitgevoerd als onderdeel van deze taak. |
+| `create_pool` | Booleaanse vlag om aan te geven of de pool moet worden aan te maken voordat de taak wordt uitgevoerd. |
+| `delete_batch_job_after_finish` | Booleaanse vlag om aan te geven of de taak moet worden verwijderd uit het Batch-account nadat deze is voltooid. |
+| `delete_batch_pool_after_finish` | Booleaanse vlag om aan te geven of de pool moet worden verwijderd nadat de taak is voltooien. |
+| `is_positive_exit_code_failure` | Booleaanse vlag om aan te geven of de taak mislukt als de taak wordt afgesloten met een positieve code. |
+| `vm_image_urn` | Als `create_pool` is `True` en VM `VirtualMachineConfiguration` gebruikt. |
+| `pool_id` | De id van de pool waarin de taak wordt uitgevoerd. |
+| `allow_reuse` | Hiermee bepaalt u of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw worden uitgevoerd met dezelfde instellingen. |
 
-Het volgende voor beeld bevat een Azure Batch stap definitie:
+Het volgende voorbeeld bevat een definitie Azure Batch stap:
 
 ```yaml
 pipeline:
@@ -220,20 +220,20 @@ pipeline:
                     datastore: workspaceblobstore
 ```
 
-### <a name="databricks-step"></a>Databricks stap
+### <a name="databricks-step"></a>Databricks-stap
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `compute` | Het Azure Databricks Compute-doel dat moet worden gebruikt voor deze stap. |
-| `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
-| `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
-| `run_name` | De naam in Databricks voor deze uitvoering. |
+| `compute` | Het Azure Databricks rekendoel dat voor deze stap moet worden gebruikt. |
+| `inputs` | Invoer kan [InputPortBinding,](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding) [DataReference,](#data-reference) [PortDataReference,](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference) [PipelineData,](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [Dataset,](/python/api/azureml-core/azureml.core.dataset%28class%29) [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset) |
+| `outputs` | Uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding) |
+| `run_name` | De naam in Databricks voor deze run. |
 | `source_directory` | Map die het script en andere bestanden bevat. |
-| `num_workers` | Het statische aantal werk rollen voor het Databricks-uitvoerings cluster. |
-| `runconfig` | Het pad naar een `.runconfig` bestand. Dit bestand is een YAMLe weer gave van de klasse [RunConfiguration](/python/api/azureml-core/azureml.core.runconfiguration) . Zie [runconfigschema.jsop](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json)voor meer informatie over de structuur van dit bestand. |
-| `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |
+| `num_workers` | Het statische aantal werksters voor het Databricks-runcluster. |
+| `runconfig` | Het pad naar een `.runconfig` bestand. Dit bestand is een YAML-weergave van de [RunConfiguration-klasse.](/python/api/azureml-core/azureml.core.runconfiguration) Zie voor meer informatie over de structuur van [ dit bestandrunconfigschema.jsop](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json). |
+| `allow_reuse` | Hiermee bepaalt u of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw worden uitgevoerd met dezelfde instellingen. |
 
-Het volgende voor beeld bevat een Databricks-stap:
+Het volgende voorbeeld bevat een Databricks-stap:
 
 ```yaml
 pipeline:
@@ -274,16 +274,16 @@ pipeline:
                     bind_mode: mount
 ```
 
-### <a name="data-transfer-step"></a>Stap voor gegevens overdracht
+### <a name="data-transfer-step"></a>Stap voor gegevensoverdracht
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `compute` | Het Azure Data Factory Compute-doel dat moet worden gebruikt voor deze stap. |
-| `source_data_reference` | Invoer verbinding die fungeert als bron van bewerkingen voor gegevens overdracht. Ondersteunde waarden zijn [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset). |
-| `destination_data_reference` | Invoer verbinding die fungeert als bestemming voor de overdracht van gegevens. Ondersteunde waarden zijn [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) en [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding). |
-| `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |
+| `compute` | Het Azure Data Factory rekendoel dat voor deze stap moet worden gebruikt. |
+| `source_data_reference` | Invoerverbinding die fungeert als de bron van gegevensoverdrachtsbewerkingen. Ondersteunde waarden zijn [InputPortBinding,](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding) [DataReference,](#data-reference) [PortDataReference,](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference) [PipelineData,](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [Dataset,](/python/api/azureml-core/azureml.core.dataset%28class%29) [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset.](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset) |
+| `destination_data_reference` | Invoerverbinding die fungeert als het doel van gegevensoverdrachtsbewerkingen. Ondersteunde waarden [zijn PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) en [OutputPortBinding.](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding) |
+| `allow_reuse` | Hiermee bepaalt u of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw worden uitgevoerd met dezelfde instellingen. |
 
-Het volgende voor beeld bevat een stap voor gegevens overdracht:
+Het volgende voorbeeld bevat een gegevensoverdrachtstap:
 
 ```yaml
 pipeline:
@@ -318,18 +318,18 @@ pipeline:
                     source: blob_test_data
 ```
 
-### <a name="python-script-step"></a>Python-script stap
+### <a name="python-script-step"></a>Stap voor Python-script
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `inputs` | Invoer kan [InputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding), [DataReference](#data-reference), [PortDataReference](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference), [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata), [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
-| `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
-| `script_name` | De naam van het python-script (relatief aan `source_directory` ). |
-| `source_directory` | De map die het script, de Conda-omgeving bevat, enzovoort. |
-| `runconfig` | Het pad naar een `.runconfig` bestand. Dit bestand is een YAMLe weer gave van de klasse [RunConfiguration](/python/api/azureml-core/azureml.core.runconfiguration) . Zie [runconfig.jsop](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json)voor meer informatie over de structuur van dit bestand. |
-| `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |
+| `inputs` | Invoer kan [InputPortBinding,](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.inputportbinding) [DataReference,](#data-reference) [PortDataReference,](/python/api/azureml-pipeline-core/azureml.pipeline.core.portdatareference) [PipelineData,](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [Dataset,](/python/api/azureml-core/azureml.core.dataset%28class%29) [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset) |
+| `outputs` | Uitvoer kan [PipelineData of](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) [OutputPortBinding zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding) |
+| `script_name` | De naam van het Python-script (ten opzichte van `source_directory` ). |
+| `source_directory` | Map met het script, de Conda-omgeving, enzovoort. |
+| `runconfig` | Het pad naar een `.runconfig` bestand. Dit bestand is een YAML-weergave van de [RunConfiguration-klasse.](/python/api/azureml-core/azureml.core.runconfiguration) Zie voor meer informatie over de structuur van [ dit bestandrunconfig.jsop](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json). |
+| `allow_reuse` | Hiermee bepaalt u of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw worden uitgevoerd met dezelfde instellingen. |
 
-Het volgende voor beeld bevat een python-script stap:
+Het volgende voorbeeld bevat een Python-scriptstap:
 
 ```yaml
 pipeline:
@@ -365,18 +365,18 @@ pipeline:
                     bind_mode: mount
 ```
 
-### <a name="parallel-run-step"></a>Parallelle uitvoerings stap
+### <a name="parallel-run-step"></a>Parallelle run-stap
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `inputs` | Invoer kan [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29), [DatasetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset)zijn. |
-| `outputs` | De uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding)zijn. |
-| `script_name` | De naam van het python-script (relatief aan `source_directory` ). |
-| `source_directory` | De map die het script, de Conda-omgeving bevat, enzovoort. |
-| `parallel_run_config` | Het pad naar een `parallel_run_config.yml` bestand. Dit bestand is een YAMLe weer gave van de klasse [ParallelRunConfig](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunconfig) . |
-| `allow_reuse` | Hiermee wordt bepaald of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw wordt uitgevoerd met dezelfde instellingen. |
+| `inputs` | Invoer kan [Gegevensset,](/python/api/azureml-core/azureml.core.dataset%28class%29) [GegevenssetDefinition](/python/api/azureml-core/azureml.data.dataset_definition.datasetdefinition)of [PipelineDataset zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedataset) |
+| `outputs` | Uitvoer kan [PipelineData](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata) of [OutputPortBinding zijn.](/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.outputportbinding) |
+| `script_name` | De naam van het Python-script (ten opzichte van `source_directory` ). |
+| `source_directory` | Map die het script, de Conda-omgeving, enzovoort bevat. |
+| `parallel_run_config` | Het pad naar een `parallel_run_config.yml` bestand. Dit bestand is een YAML-weergave van de [klasse ParallelRunConfig.](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunconfig) |
+| `allow_reuse` | Hiermee bepaalt u of de stap eerdere resultaten opnieuw moet gebruiken wanneer deze opnieuw worden uitgevoerd met dezelfde instellingen. |
 
-Het volgende voor beeld bevat een parallelle uitvoerings stap:
+Het volgende voorbeeld bevat een parallelle run-stap:
 
 ```yaml
 pipeline:
@@ -417,11 +417,11 @@ pipeline:
                     bind_mode: mount
 ```
 
-### <a name="pipeline-with-multiple-steps"></a>Pijp lijn met meerdere stappen 
+### <a name="pipeline-with-multiple-steps"></a>Pijplijn met meerdere stappen 
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `steps` | Reeks van een of meer PipelineStep definities. Houd er rekening mee dat de `destination` sleutels van de ene stap `outputs` de `source` sleutels worden naar de `inputs` volgende stap.| 
+| `steps` | Volgorde van een of meer PipelineStep-definities. Houd er rekening `destination` mee dat de sleutels van de ene stap de sleutels worden voor de van de volgende `outputs` `source` `inputs` stap.| 
 
 ```yaml
 pipeline:
@@ -478,22 +478,22 @@ pipeline:
 
 ## <a name="schedules"></a>Schema's
 
-Bij het definiëren van het schema voor een pijp lijn kan het gegevens archief worden geactiveerd of terugkerend op basis van een tijds interval. Hieronder vindt u de sleutels die worden gebruikt voor het definiëren van een planning:
+Bij het definiëren van het schema voor een pijplijn kan deze worden geactiveerd door een gegevensstore of worden terugkerende op basis van een tijdsinterval. Hier volgen de sleutels die worden gebruikt om een planning te definiëren:
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `description` | Een beschrijving van het schema. |
-| `recurrence` | Bevat de instellingen van het terugkeer patroon als de planning terugkerend is. |
-| `pipeline_parameters` | Alle para meters die vereist zijn voor de pijp lijn. |
-| `wait_for_provisioning` | Hiermee wordt aangegeven of moet worden gewacht tot de inrichting van het schema is voltooid. |
-| `wait_timeout` | Het aantal seconden dat moet worden gewacht voordat een time-out optreedt. |
-| `datastore_name` | De gegevens opslag die moet worden bewaakt voor gewijzigde/toegevoegde blobs. |
-| `polling_interval` | Hoe lang, in minuten, tussen polling voor gewijzigde/toegevoegde blobs. Standaard waarde: 5 minuten. Alleen ondersteund voor Data Store-schema's. |
-| `data_path_parameter_name` | De naam van de pijplijn parameter van het gegevenspad dat moet worden ingesteld met het gewijzigde BLOB-pad. Alleen ondersteund voor Data Store-schema's. |
-| `continue_on_step_failure` | Hiermee wordt aangegeven of de uitvoering van andere stappen in de verzonden PipelineRun moet blijven werken als een stap mislukt. Als deze optie wordt gegeven, wordt de `continue_on_step_failure` instelling van de pijp lijn overschreven.
-| `path_on_datastore` | Optioneel. Het pad naar het gegevens archief dat moet worden bewaakt voor gewijzigde/toegevoegde blobs. Het pad bevindt zich onder de container voor de gegevens opslag, dus het werkelijke pad van de plannings monitors is container/ `path_on_datastore` . Als geen, wordt de Data Store-container gecontroleerd. Toevoegingen/wijzigingen die zijn aangebracht in een submap van de `path_on_datastore` worden niet bewaakt. Alleen ondersteund voor Data Store-schema's. |
+| `description` | Een beschrijving van de planning. |
+| `recurrence` | Bevat terugkeerpatrooninstellingen als de planning terugkerend is. |
+| `pipeline_parameters` | Parameters die vereist zijn voor de pijplijn. |
+| `wait_for_provisioning` | Of moet worden gewacht tot het inrichten van de planning is voltooid. |
+| `wait_timeout` | Het aantal seconden dat moet worden gewacht voordat er een time-out wordt uitgevoerd. |
+| `datastore_name` | Het gegevensopslag dat moet worden gecontroleerd op gewijzigde/toegevoegde blobs. |
+| `polling_interval` | Hoe lang, in minuten, tussen polling voor gewijzigde/toegevoegde blobs. Standaardwaarde: 5 minuten. Alleen ondersteund voor gegevensstoreschema's. |
+| `data_path_parameter_name` | De naam van de pijplijnparameter voor het gegevenspad die moet worden ingesteld met het gewijzigde blobpad. Alleen ondersteund voor gegevensstoreschema's. |
+| `continue_on_step_failure` | Of de uitvoering van andere stappen in de ingediende PipelineRun moet worden voortgezet als een stap mislukt. Indien opgegeven, overschrijven de instelling `continue_on_step_failure` van de pijplijn.
+| `path_on_datastore` | Optioneel. Het pad naar het gegevensopslag dat moet worden gecontroleerd op gewijzigde/toegevoegde blobs. Het pad is onder de container voor de gegevensstore, dus het werkelijke pad dat door de planning wordt bewaakt, is container/ `path_on_datastore` . Als er geen is, wordt de gegevensstore-container bewaakt. Toevoegingen/wijzigingen die zijn aangebracht in een submap van de `path_on_datastore` worden niet bewaakt. Alleen ondersteund voor gegevensstoreschema's. |
 
-Het volgende voor beeld bevat de definitie voor een planning die wordt geactiveerd door een Data Store:
+Het volgende voorbeeld bevat de definitie voor een schema dat door een gegevensstore wordt geactiveerd:
 
 ```yaml
 Schedule: 
@@ -509,20 +509,20 @@ Schedule:
       path_on_datastore: "file/path" 
 ```
 
-Bij het definiëren van een **terugkerend schema** gebruikt u de volgende sleutels onder `recurrence` :
+Gebruik bij het definiëren van **een terugkerend schema** de volgende sleutels onder `recurrence` :
 
-| YAML-sleutel | Description |
+| YAML-sleutel | Beschrijving |
 | ----- | ----- |
-| `frequency` | Hoe vaak de planning wordt herhaald. Geldige waarden zijn,,, en `"Minute"` `"Hour"` `"Day"` `"Week"` `"Month"` . |
-| `interval` | Hoe vaak de planning wordt geactiveerd. De waarde van het gehele getal is het aantal tijds eenheden dat moet worden gewacht tot de planning opnieuw wordt geactiveerd. |
-| `start_time` | De begin tijd voor de planning. De teken reeks notatie van de waarde is `YYYY-MM-DDThh:mm:ss` . Als er geen start tijd wordt gegeven, wordt de eerste werk belasting onmiddellijk uitgevoerd en worden toekomstige werk belastingen uitgevoerd op basis van de planning. Als de begin tijd in het verleden ligt, wordt de eerste werk belasting uitgevoerd op de volgende berekende uitvoerings tijd. |
-| `time_zone` | De tijd zone voor de begin tijd. Als er geen tijd zone wordt gegeven, wordt UTC gebruikt. |
-| `hours` | Als `frequency` dat zo is `"Day"` `"Week"` , kunt u een of meer gehele getallen van 0 tot en met 23, gescheiden door komma's, opgeven als de uren van de dag waarop de pijp lijn moet worden uitgevoerd. Alleen `time_of_day` of `hours` en `minutes` kunnen worden gebruikt. |
-| `minutes` | Als `frequency` dat zo is `"Day"` `"Week"` , kunt u een of meer gehele getallen van 0 tot en met 59 opgeven, gescheiden door komma's, als de minuten van het uur waarop de pijp lijn moet worden uitgevoerd. Alleen `time_of_day` of `hours` en `minutes` kunnen worden gebruikt. |
-| `time_of_day` | Als dat zo `frequency` is `"Day"` `"Week"` , kunt u een tijdstip opgeven waarop het schema moet worden uitgevoerd. De teken reeks notatie van de waarde is `hh:mm` . Alleen `time_of_day` of `hours` en `minutes` kunnen worden gebruikt. |
-| `week_days` | Als `frequency` `"Week"` dat het geval is, kunt u een of meer dagen opgeven, gescheiden door komma's, wanneer het schema moet worden uitgevoerd. Geldige waarden zijn,,,,, en `"Monday"` `"Tuesday"` `"Wednesday"` `"Thursday"` `"Friday"` `"Saturday"` `"Sunday"` . |
+| `frequency` | Hoe vaak het schema wordt recurseert. Geldige waarden zijn `"Minute"` , , , of `"Hour"` `"Day"` `"Week"` `"Month"` . |
+| `interval` | Hoe vaak het schema wordt gebruikt. De waarde voor een geheel getal is het aantal tijdseenheden dat moet worden gewacht totdat het schema opnieuw wordt in gebruik. |
+| `start_time` | De begintijd voor de planning. De tekenreeksindeling van de waarde is `YYYY-MM-DDThh:mm:ss` . Als er geen begintijd is opgegeven, wordt de eerste workload onmiddellijk uitgevoerd en worden toekomstige workloads uitgevoerd op basis van de planning. Als de begintijd in het verleden ligt, wordt de eerste workload uitgevoerd op de volgende berekende run time. |
+| `time_zone` | De tijdzone voor de begintijd. Als er geen tijdzone is opgegeven, wordt UTC gebruikt. |
+| `hours` | Als of is, kunt u een of meer gehele getallen van 0 tot 23 opgeven, gescheiden door komma's, als de uren van de dag waarop de `frequency` `"Day"` `"Week"` pijplijn moet worden uitgevoerd. Alleen `time_of_day` of en kunnen worden `hours` `minutes` gebruikt. |
+| `minutes` | Als of is, kunt u een of meer gehele getallen van 0 tot 59 opgeven, gescheiden door komma's, als de minuten van het uur waarop de `frequency` `"Day"` `"Week"` pijplijn moet worden uitgevoerd. Alleen `time_of_day` of en kunnen worden `hours` `minutes` gebruikt. |
+| `time_of_day` | Als `frequency` of `"Day"` `"Week"` is, kunt u een tijdstip van de dag opgeven voor de planning die moet worden uitgevoerd. De tekenreeksindeling van de waarde is `hh:mm` . Alleen `time_of_day` of en kunnen worden `hours` `minutes` gebruikt. |
+| `week_days` | Als `frequency` `"Week"` is, kunt u een of meer dagen opgeven, gescheiden door komma's, wanneer de planning moet worden uitgevoerd. Geldige waarden zijn `"Monday"` , , , , , en `"Tuesday"` `"Wednesday"` `"Thursday"` `"Friday"` `"Saturday"` `"Sunday"` . |
 
-Het volgende voor beeld bevat de definitie van een terugkerend schema:
+Het volgende voorbeeld bevat de definitie voor een terugkerend schema:
 
 ```yaml
 Schedule: 
@@ -552,4 +552,4 @@ Schedule:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [het gebruik van de CLI-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
+Meer informatie over [het gebruik van de CLI-extensie voor Azure Machine Learning](reference-azure-machine-learning-cli.md).

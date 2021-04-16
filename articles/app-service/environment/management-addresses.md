@@ -1,28 +1,28 @@
 ---
 title: Beheeradressen
-description: Zoek de beheer adressen die worden gebruikt voor het beheren van een App Service Environment. Ze zijn geconfigureerd in een route tabel om problemen met asymmetrische route ring te voor komen.
+description: Zoek de beheeradressen die worden gebruikt om een App Service Environment. Ze geconfigureerd in een routetabel om asymmetrische routeringsproblemen te voorkomen.
 author: ccompy
 ms.assetid: a7738a24-89ef-43d3-bff1-77f43d5a3952
 ms.topic: article
 ms.date: 03/22/2021
 ms.author: ccompy
-ms.custom: seodec18, references_regions
-ms.openlocfilehash: 25bdfb7a0301af472baa89d3d9e73aacf8cff139
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: seodec18, references_regions, devx-track-azurecli
+ms.openlocfilehash: aaaa190935da8c016c43832712f553a116332974
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104954612"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482565"
 ---
-# <a name="app-service-environment-management-addresses"></a>App Service Environment-beheer adressen
+# <a name="app-service-environment-management-addresses"></a>App Service Environment-beheeradressen
 
-De App Service Environment (ASE) is een implementatie met één Tenant van de Azure App Service die wordt uitgevoerd in uw Azure-Virtual Network (VNet).  Terwijl de ASE wordt uitgevoerd in uw VNet, moet deze nog steeds toegankelijk zijn vanaf een aantal toegewezen IP-adressen die worden gebruikt door de Azure App Service voor het beheren van de service.  In het geval van een ASE passeert het beheer verkeer het door de gebruiker beheerde netwerk. Als dit verkeer wordt geblokkeerd of niet wordt gerouteerd, wordt de ASE onderbroken. Lees voor meer informatie over de ASE-netwerk afhankelijkheden [en de app service Environment][networking]. Voor algemene informatie over de ASE kunt u beginnen met [Inleiding tot de app service Environment][intro].
+De App Service Environment (ASE) is een implementatie met één tenant van de Azure App Service die wordt uitgevoerd in uw Azure Virtual Network (VNet).  Hoewel de ASE wel wordt uitgevoerd in uw VNet, moet deze nog steeds toegankelijk zijn vanaf een aantal toegewezen IP-adressen die worden gebruikt door de Azure App Service om de service te beheren.  In het geval van een AS-omgeving passeert het beheerverkeer het door de gebruiker beheerde netwerk. Als dit verkeer wordt geblokkeerd of verkeerd wordt omgeleid, wordt de ASE geblokkeerd. Lees Netwerkoverwegingen en de App Service Environment voor meer informatie [over de ASE-App Service Environment.][networking] Voor algemene informatie over de ASE kunt u beginnen met [Inleiding tot de App Service Environment.][intro]
 
-Alle as hebben een open bare VIP waar beheer verkeer binnenkomt. Het binnenkomende beheer verkeer van deze adressen wordt opgehaald van op de poorten 454 en 455 op het open bare VIP van uw ASE. Dit document bevat de App Service bron adressen voor beheer verkeer naar het ASE. Deze adressen bevinden zich ook in het IP-service label met de naam AppServiceManagement.
+Alle ASE's hebben een openbaar VIP waarmee beheerverkeer binnenkomt. Het binnenkomende beheerverkeer van deze adressen komt binnen van naar de poorten 454 en 455 op het openbare VIP van uw ASE. Dit document bevat de App Service bronadressen voor beheerverkeer naar de ASE. Deze adressen zijn ook in de IP-servicetag met de naam AppServiceManagement.
 
-De hieronder vermelde adressen kunnen in een route tabel worden geconfigureerd om asymmetrische routerings problemen met het beheer verkeer te voor komen. Routes handelen op het IP-niveau naar het verkeer en hebben geen inzicht in de richting van het verkeer of het verkeer maakt deel uit van een TCP-antwoord bericht. Als het antwoord adres voor een TCP-aanvraag afwijkt van het adres dat is verzonden naar, hebt u een asymmetrisch routerings probleem. Om te voor komen dat er asymmetrische routerings problemen optreden met uw ASE-beheer verkeer, moet u ervoor zorgen dat antwoorden worden verzonden vanaf hetzelfde adres waarnaar ze zijn verzonden. Lees voor meer informatie over het configureren van uw ASE voor het uitvoeren van een omgeving waar uitgaand verkeer on-premises wordt verzonden [uw ASE configureren met geforceerde tunneling][forcedtunnel]
+De onderstaande adressen kunnen worden geconfigureerd in een routetabel om asymmetrische routeringsproblemen met het beheerverkeer te voorkomen. Routes reageren op verkeer op IP-niveau en zijn niet op de hoogte van de richting van het verkeer of maken deel uit van een TCP-antwoordbericht. Als het antwoordadres voor een TCP-aanvraag verschilt van het adres waar deze naar is verzonden, is er een probleem met asymmetrische routering. Om problemen met asymmetrische routering met uw ASE-beheerverkeer te voorkomen, moet u ervoor zorgen dat antwoorden worden teruggestuurd vanaf hetzelfde adres waar ze naar zijn verzonden. Lees Configure [your ASE with forced tunneling][forcedtunnel] (Uw ASE configureren met geforceerd tunnelen) voor meer informatie over het configureren van uw ASE voor gebruik in een omgeving waarin uitgaand verkeer on-premises wordt verzonden.
 
-## <a name="list-of-management-addresses"></a>Lijst met beheer adressen ##
+## <a name="list-of-management-addresses"></a>Lijst met beheeradressen ##
 
 | Region | Adressen |
 |--------|-----------|
@@ -30,15 +30,15 @@ De hieronder vermelde adressen kunnen in een route tabel worden geconfigureerd o
 | Microsoft Azure Government | 23.97.29.209, 13.72.53.37, 13.72.180.105, 52.181.183.11, 52.227.80.100, 52.182.93.40, 52.244.79.34, 52.238.74.16 |
 | Azure China | 42.159.4.236, 42.159.80.125 |
 
-## <a name="configuring-a-network-security-group"></a>Een netwerk beveiligings groep configureren
+## <a name="configuring-a-network-security-group"></a>Een netwerkbeveiligingsgroep configureren
 
-Met netwerk beveiligings groepen hoeft u zich geen zorgen te maken over de afzonderlijke adressen of om uw eigen configuratie te behouden. Er is een IP-service-tag met de naam AppServiceManagement die up-to-date wordt gehouden met alle adressen. Als u dit IP-service label in uw NSG wilt gebruiken, gaat u naar de portal, opent u de gebruikers interface voor netwerk beveiligings groepen en selecteert u regels voor binnenkomende beveiliging. Als u een vooraf bestaande regel voor het inkomende beheer verkeer hebt, bewerkt u deze. Als deze NSG niet is gemaakt met uw ASE, of als het om een nieuw item gaat, selecteert u **toevoegen**. Selecteer in de vervolg keuzelijst bron de optie **service label**.  Selecteer in het label bron service de optie **AppServiceManagement**. Stel de bronbereiken van de bron poort in op \* een doel poort **454-455** bereik op **een wille keurige** locatie en op het **TCP**-protocol, en op te **geven** actie. Als u de regel maakt, moet u de prioriteit instellen. 
+Met netwerkbeveiligingsgroepen hoeft u zich geen zorgen te maken over de afzonderlijke adressen of uw eigen configuratie te onderhouden. Er is een IP-servicetag met de naam AppServiceManagement die up-to-date blijft met alle adressen. Als u deze IP-servicetag in uw NSG wilt gebruiken, gaat u naar de portal, opent u de gebruikersinterface van uw netwerkbeveiligingsgroepen en selecteert u Inkomende beveiligingsregels. Als u een bestaande regel voor het binnenkomende beheerverkeer hebt, bewerkt u deze. Als deze NSG niet is gemaakt met uw ASE of als deze allemaal nieuw is, selecteert u **Toevoegen.** Selecteer servicetag in de **vervolgkeuzekeuzeop De bron.**  Selecteer appServiceManagement onder de tag **Bronservice.** Stel de bronpoortbereiken in op , Bestemming op Alle , Doelpoortbereiken \* **op 454-455,** Protocol op **TCP** en Actie op **Toestaan.**  Als u de regel maakt, moet u de Prioriteit instellen. 
 
-![een NSG maken met het servicetag][1]
+![een NSG maken met de servicetag][1]
 
-## <a name="configuring-a-route-table"></a>Een route tabel configureren
+## <a name="configuring-a-route-table"></a>Een routetabel configureren
 
-De beheer adressen kunnen in een route tabel met de volgende hop van Internet worden geplaatst om ervoor te zorgen dat alle inkomende beheer verkeer kan terugvallen op hetzelfde pad. Deze routes zijn nodig bij het configureren van geforceerde tunneling. Als u de route tabel wilt maken, kunt u de portal, Power shell of Azure CLI gebruiken.  De opdrachten voor het maken van een route tabel met behulp van Azure CLI vanuit een Power shell-prompt vindt u hieronder. 
+De beheeradressen kunnen in een routetabel met een volgende hop internet worden geplaatst om ervoor te zorgen dat al het inkomende beheerverkeer via hetzelfde pad kan teruggaan. Deze routes zijn nodig bij het configureren van geforceerd tunnelen. Als u de routetabel wilt maken, kunt u de portal, PowerShell of Azure CLI gebruiken.  Hieronder vindt u de opdrachten voor het maken van een routetabel met behulp van Azure CLI vanuit een PowerShell-prompt. 
 
 ```azurepowershell-interactive
 $rg = "resource group name"
@@ -52,19 +52,19 @@ foreach ($ip in $managementAddresses) {
 }
 ```
 
-Nadat de route tabel is gemaakt, moet u deze instellen in het ASE-subnet.  
+Nadat de routetabel is gemaakt, moet u deze instellen op uw ASE-subnet.  
 
-## <a name="get-your-management-addresses-from-api"></a>Uw beheer adressen ophalen van API ##
+## <a name="get-your-management-addresses-from-api"></a>Uw beheeradressen van de API op halen ##
 
-U kunt de beheer adressen die overeenkomen met uw ASE weer geven met de volgende API-aanroepen.
+U kunt de beheeradressen die overeenkomen met uw ASE, met de volgende API-aanroep.
 
 ```http
 get /subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Web/hostingEnvironments/<ASE Name>/inboundnetworkdependenciesendpoints?api-version=2016-09-01
 ```
 
-De API retourneert een JSON-document dat alle inkomende adressen voor uw ASE bevat. De lijst met adressen bevat de beheer adressen, het VIP dat door uw ASE wordt gebruikt en het adres bereik van het ASE-subnet zelf.  
+De API retourneert een JSON-document met alle binnenkomende adressen voor uw ASE. De lijst met adressen bevat de beheeradressen, het VIP dat wordt gebruikt door uw ASE en het adresbereik van het ASE-subnet zelf.  
 
-Als u de API wilt aanroepen met de [armclient](https://github.com/projectkudu/ARMClient) , gebruikt u de volgende opdrachten, maar vervangt u de naam van uw abonnements-id, resource groep en ASE.  
+Als u de API wilt aanroepen [met de armclient,](https://github.com/projectkudu/ARMClient) gebruikt u de volgende opdrachten, maar vervangt u uw abonnements-id, resourcegroep en ASE-naam.  
 
 ```azurepowershell-interactive
 armclient login

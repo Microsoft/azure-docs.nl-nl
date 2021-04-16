@@ -1,26 +1,24 @@
 ---
 title: Een functie maken die kan worden geïntegreerd met Azure Logic Apps
-description: Maak een functie die met Azure Logic Apps en Azure Cognitive Services integreert om het gevoel van een tweet te categoriseren en meldingen te verzenden wanneer het gevoel slecht is.
+description: Maak een functie die kan worden geïntegreerd met Azure Logic Apps en Azure Cognitive Services. Met de resulterende werkstroom worden tweetsentimenten gecategoriseerd en worden er e-mailmeldingen verzonden.
 author: craigshoemaker
 ms.assetid: 60495cc5-1638-4bf0-8174-52786d227734
 ms.topic: tutorial
-ms.date: 04/27/2020
+ms.date: 04/10/2021
 ms.author: cshoe
 ms.custom: devx-track-csharp, mvc, cc996988-fb4f-47
-ms.openlocfilehash: 5750597d7d4d372be975aa64ce8db11859791da2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3517835859de82117de07ad67cdf8027960ab777
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98674315"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388647"
 ---
-# <a name="create-a-function-that-integrates-with-azure-logic-apps"></a>Een functie maken die kan worden geïntegreerd met Azure Logic Apps
+# <a name="tutorial-create-a-function-to-integrate-with-azure-logic-apps"></a>Zelfstudie: Een functie maken om te integreren met Azure Logic Apps
 
-Azure Functions integreert met Azure Logic Apps in de Logic Apps Designer. Met deze integratie kunt u de rekenkracht van Functions gebruiken in indelingen met andere Azure-services en services van derden. 
+Azure Functions integreert met Azure Logic Apps in de Logic Apps Designer. Met deze integratie kunt u de rekenkracht van Functions gebruiken in orchestrations met andere Azure- en services van derden.
 
-In deze zelfstudie wordt getoond hoe u in Azure Functions gebruikt met Logic Apps en Cognitive Services om gevoelsanalyse van Twitter-posts uit te voeren. Een HTTP-triggerfunctie categoriseert tweets als groen, geel of rood, op basis van de gevoelsscore. Er wordt een e-mail verzonden als er een slecht gevoel wordt gedetecteerd. 
-
-![afbeelding van de eerste twee stappen van de app in Logic App Designer](media/functions-twitter-email/00-logic-app-overview.png)
+In deze zelfstudie leert u hoe u een werkstroom maakt om Twitter-activiteiten te analyseren. Wanneer tweets worden geëvalueerd, verzendt de werkstroom meldingen wanneer positieve gevoelens worden gedetecteerd.
 
 In deze zelfstudie leert u het volgende:
 
@@ -28,67 +26,102 @@ In deze zelfstudie leert u het volgende:
 > * Een API-resource voor Cognitive Services maken.
 > * Een functie maken die tweetgevoelens categoriseert.
 > * Een logische app maken die verbinding maakt met Twitter.
-> * Detectie van gevoelens toevoegen aan de logische app. 
+> * Detectie van gevoelens toevoegen aan de logische app.
 > * De logische app verbinden met de functie.
 > * Een e-mail versturen op basis van de reactie van de functie.
 
 ## <a name="prerequisites"></a>Vereisten
 
-+ Een actief [Twitter](https://twitter.com/)-account. 
-+ Een [Outlook.com](https://outlook.com/)-account (om meldingen te verzenden).
+* Een actief [Twitter](https://twitter.com/)-account.
+* Een [Outlook.com](https://outlook.com/)-account (om meldingen te verzenden).
 
 > [!NOTE]
-> Als u de Gmail-connector wilt gebruiken, kunnen alleen bedrijfsaccounts van G Suite deze connector zonder beperkingen in logische apps gebruiken. Als u een Gmail-consumentenaccount hebt, kunt u de Gmail-connector alleen gebruiken met specifieke door Google goedgekeurde apps en services, of u kunt [een Google-client-app maken voor verificatie in uw Gmail-connector](/connectors/gmail/#authentication-and-bring-your-own-application). Zie [Beleid voor gegevensbeveiliging en privacybeleid voor Google-connectors in Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md) voor meer informatie.
+> Als u de Gmail-connector wilt gebruiken, kunnen alleen bedrijfsaccounts van G Suite deze connector zonder beperkingen in logische apps gebruiken. Als u een Gmail-consumentenaccount hebt, kunt u de Gmail-connector alleen gebruiken met specifieke door Google goedgekeurde apps en services, of u kunt [een Google-client-app maken voor verificatie in uw Gmail-connector](/connectors/gmail/#authentication-and-bring-your-own-application). <br><br>Zie [Beleid voor gegevensbeveiliging en privacybeleid voor Google-connectors in Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md) voor meer informatie.
 
-+ Als startpunt van dit artikel dienen de resources die zijn gemaakt in [Uw eerste functie maken in de Azure-portal](./functions-get-started.md).
-Doorloop nu deze stappen om de functie-app te maken, als u dit nog niet hebt gedaan.
+## <a name="create-text-analytics-resource"></a>Een Text Analytics maken
 
-## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
-
-De Cognitive Services-API's zijn als afzonderlijke resources beschikbaar in Azure. Gebruik de Text Analytics API om het gevoel van de tweets te detecteren die worden bijgehouden.
+De Cognitive Services-API's zijn als afzonderlijke resources beschikbaar in Azure. Gebruik de Text Analytics-API om het gevoel van geplaatste tweets te detecteren.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-2. Klik in de linkerbovenhoek van Azure Portal op **Een resource maken**.
+1. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken**.
 
-3. Klik op **AI + Machine Learning** > **Text Analytics**. Gebruik vervolgens de instellingen zoals die in de tabel zijn opgegeven om de resource te maken.
+1. Selecteer _ai_+ Machine Learning onder **Categorieën**
 
-    ![Cognitieve resourcepagina maken](media/functions-twitter-email/01-create-text-analytics.png)
+1. Selecteer _Text Analytics_ onder **Maken.**
 
-    | Instelling      |  Voorgestelde waarde   | Beschrijving                                        |
-    | --- | --- | --- |
-    | **Naam** | MyCognitiveServicesAccnt | Kies een unieke naam voor het account. |
-    | **Locatie** | VS - west | Gebruik de dichtstbijzijnde locatie. |
-    | **Prijscategorie** | F0 | Begin met de laagste categorie. Als u geen aanroepen meer hebt, schaalt u naar een hogere categorie.|
-    | **Resourcegroep** | myResourceGroup | Gebruik dezelfde resourcegroep voor alle services in deze tutorial.|
+1. Voer de volgende waarden in het _scherm Text Analytics_ in.
 
-4. Klik op **Maken** om de resource te maken. 
+    | Instelling | Waarde | Opmerkingen |
+    | ------- | ----- | ------- |
+    | Abonnement | De naam van uw Azure-abonnement | |
+    | Resourcegroep | Maak een nieuwe resourcegroep met de **naam tweet-sentiment-tutorial** | Later verwijdert u deze resourcegroep om alle resources te verwijderen die tijdens deze zelfstudie zijn gemaakt. |
+    | Regio | Selecteer de regio het dichtst bij u in de buurt | |
+    | Name | **TweetSentimentApp** | |
+    | Prijscategorie | Selecteer **Gratis F0** | |
 
-5. Klik op **Overzicht** en kopieer de waarde van het **eindpunt** in een teksteditor. Deze waarde wordt gebruikt als er verbinding wordt gemaakt met de Cognitive Services-API.
+1. Selecteer **Controleren + maken**.
 
-    ![Instellingen Cognitive Services](media/functions-twitter-email/02-cognitive-services.png)
+1. Selecteer **Maken**.
 
-6. Klik in de linkernavigatiekolom op **Sleutels**, kopieer de waarde van **Sleutel 1** en plaats deze in een teksteditor. U gebruikt de sleutel om uw logische app te verbinden met uw Cognitive Services-API. 
- 
-    ![Sleutels van Cognitive Services](media/functions-twitter-email/03-cognitive-serviecs-keys.png)
+1. Zodra de implementatie is voltooid, selecteert **u Ga naar resource**.
+
+## <a name="get-text-analytics-settings"></a>Instellingen voor Text Analytics op halen
+
+Nu Text Analytics resource hebt gemaakt, kopieert u enkele instellingen en stelt u deze in voor later gebruik.
+
+1. Selecteer **Sleutels en eindpunt.**
+
+1. Kopieer **sleutel 1** door op het pictogram aan het einde van het invoervak te klikken.
+
+1. Plak de waarde in een teksteditor.
+
+1. Kopieer het **eindpunt door** op het pictogram aan het einde van het invoervak te klikken.
+
+1. Plak de waarde in een teksteditor.
 
 ## <a name="create-the-function-app"></a>De functie-app maken
 
-Azure Functions biedt een handige manier voor offload van verwerkingstaken in een werkstroom van een logische app. In deze zelfstudie wordt een HTTP-triggerfunctie gebruikt om de gevoelsscore van Cognitive Services voor tweets te categoriseren en een categoriewaarde te retourneren.  
+1. Zoek en selecteer Functie-app in het **bovenste zoekvak.**
 
-[!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
+1. Selecteer **Maken**.
 
-## <a name="create-an-http-trigger-function"></a>Een HTTP-triggerfunctie maken  
+1. Voer de volgende waarden in.
 
-1. Selecteer in het menu links van het venster **Functies** de optie **Functies** en selecteer vervolgens **Toevoegen** in het bovenste menu.
+    | Instelling | Voorgestelde waarde | Opmerkingen |
+    | ------- | ----- | ------- |
+    | Abonnement | De naam van uw Azure-abonnement | |
+    | Resourcegroep | **tweet-sentiment-tutorial** | Gebruik dezelfde naam voor de resourcegroep in deze zelfstudie. |
+    | Functions App-naam | **TweetSentimentAPI** + een uniek achtervoegsel | Namen van functie-toepassingen zijn wereldwijd uniek. Geldige tekens zijn `a-z` (hoofdlettergevoelig), `0-9` en `-`. |
+    | Publiceren | **Code** | |
+    | Runtimestack | **.NET** | De voor u opgegeven functiecode is in C#. |
+    | Versie | Selecteer het meest recente versienummer | |
+    | Regio | Selecteer de regio het dichtst bij u in de buurt | |
 
-2. Selecteer **HTTP-trigger** in het venster **Nieuwe functie**.
+1. Selecteer **Controleren + maken**.
 
-    ![HTTP-triggerfunctie kiezen](./media/functions-twitter-email/06-function-http-trigger.png)
+1. Selecteer **Maken**.
 
-3. Selecteer op de pagina **Nieuwe functie** de optie **Functie maken**.
+1. Zodra de implementatie is voltooid, selecteert **u Ga naar resource**.
 
-4. Selecteer in de nieuwe HTTP-triggerfunctie **Code + testen** in het menu links, vervang de inhoud van het bestand `run.csx` door de volgende code en selecteer **Opslaan**:
+## <a name="create-an-http-triggered-function"></a>Een met HTTP geactiveerde functie maken  
+
+1. Selecteer functies in het linkermenu _van_ het **venster Functions.**
+
+1. Selecteer **Toevoegen** in het bovenste menu en voer de volgende waarden in.
+
+    | Instelling | Waarde | Opmerkingen |
+    | ------- | ----- | ------- |
+    | Ontwikkelomgeving | **Ontwikkelen in portal** | |
+    | Sjabloon | **HTTP-trigger** | |
+    | Nieuwe functie | **TweetSentimentFunction** | Dit is de naam van uw functie. |
+    | Autorisatieniveau | **Functie** | |
+
+1. Selecteer de knop **Add**.
+
+1. Selecteer de **knop Code + Testen.**
+
+1. Plak de volgende code in het venster van de code-editor.
 
     ```csharp
     #r "Newtonsoft.Json"
@@ -102,205 +135,224 @@ Azure Functions biedt een handige manier voor offload van verwerkingstaken in ee
     
     public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     {
-        string category = "GREEN";
     
-        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-        log.LogInformation(string.Format("The sentiment score received is '{0}'.", requestBody));
+        string requestBody = String.Empty;
+        using (StreamReader streamReader =  new  StreamReader(req.Body))
+        {
+            requestBody = await streamReader.ReadToEndAsync();
+        }
     
-        double score = Convert.ToDouble(requestBody);
+        dynamic score = JsonConvert.DeserializeObject(requestBody);
+        string value = "Positive";
     
         if(score < .3)
         {
-            category = "RED";
+            value = "Negative";
         }
         else if (score < .6) 
         {
-            category = "YELLOW";
+            value = "Neutral";
         }
     
         return requestBody != null
-            ? (ActionResult)new OkObjectResult(category)
-            : new BadRequestObjectResult("Please pass a value on the query string or in the request body");
+            ? (ActionResult)new OkObjectResult(value)
+           : new BadRequestObjectResult("Pass a sentiment score in the request body.");
     }
     ```
 
-    Deze functiecode retourneert een kleurcategorie op basis van de gevoelsscore die in de aanvraag is ontvangen. 
+    Er wordt een gevoelsscore doorgegeven aan de functie , die een categorienaam voor de waarde retourneert.
 
-5. Als u de functie wilt testen, selecteert u **Testen** in het bovenste menu. Voer op het tabblad **Invoer** de waarde `0.2` in **Hoofdgedeelte** in en selecteer **Uitvoeren**. De waarde **RED** wordt geretourneerd in de **inhoud van de HTTP-reactie** op het tabblad **Uitvoer**. 
+1. Selecteer de **knop Opslaan** op de werkbalk om uw wijzigingen op te slaan.
 
-    :::image type="content" source="./media/functions-twitter-email/07-function-test.png" alt-text="Definieer de proxyinstellingen":::
+    > [!NOTE]
+    > Als u de functie wilt testen, **selecteert u Testen/Uitvoeren** in het bovenste menu. Voer op _het_ tabblad Invoer een waarde `0.9` van in het invoervak _Hoofdinvoer_ en selecteer vervolgens **Uitvoeren.** Controleer of de waarde _Positief_ wordt geretourneerd in het _vak HTTP-antwoordinhoud_ in de _sectie_ Uitvoer.
 
-U hebt nu een functie die gevoelsscores categoriseert. Maak vervolgens een logische app die uw functie integreert met uw Twitter-account en Cognitive Services-API. 
+Maak vervolgens een logische app die kan worden geïntegreerd met Azure Functions, Twitter en Cognitive Services API.
 
-## <a name="create-a-logic-app"></a>Een logische app maken   
+## <a name="create-a-logic-app"></a>Een logische app maken
 
-1. Klik op de knop **Een resource maken** in de linkerbovenhoek van de Azure-portal.
+1. Zoek in het bovenste zoekvak naar en selecteer **Logic Apps**.
 
-2. Klik op **Web** > **Logische app**.
- 
-3. Typ vervolgens een waarde voor **Naam**, bijvoorbeeld `TweetSentiment`, en gebruik de instellingen zoals opgegeven in de tabel.
+1. Selecteer **Toevoegen**.
 
-    ![Logische app maken in Azure Portal](./media/functions-twitter-email/08-logic-app-create.png)
+1. Selecteer **Verbruik** en voer de volgende waarden in.
 
-    | Instelling      |  Voorgestelde waarde   | Beschrijving                                        |
-    | ----------------- | ------------ | ------------- |
-    | **Naam** | TweetSentiment | Kies een passende naam voor uw app. |
-    | **Resourcegroep** | myResourceGroup | Kies dezelfde bestaande resourcegroep als eerder. |
-    | **Locatie** | VS - oost | Kies een locatie dicht bij u in de buurt. |    
+    | Instelling | Voorgestelde waarde |
+    | ------- | --------------- |
+    | Abonnement | De naam van uw Azure-abonnement |
+    | Resourcegroep | **tweet-sentiment-tutorial** |
+    | Naam van logische app | **TweetSentimentApp** |
+    | Region | Selecteer de regio het dichtst bij u in de buurt, bij voorkeur dezelfde regio die u in de vorige stappen hebt geselecteerd. |
 
-4. Als u de juiste waarden voor de instellingen hebt ingevoerd, klikt u op **Maken** om de logische app te maken. 
+    Accepteer de standaardwaarden voor alle andere instellingen.
 
-5. Nadat de app is gemaakt, klikt u op de nieuwe logische app die is vastgemaakt aan het dashboard. Scrol vervolgens in de Logic Apps Designer naar beneden en klik op de sjabloon **Lege logische app**. 
+1. Selecteer **Controleren + maken**.
 
-    ![Sjabloon Lege logische app](media/functions-twitter-email/09-logic-app-create-blank.png)
+1. Selecteer **Maken**.
 
-U kunt nu de Logic Apps Designer gebruiken om services en triggers toe te voegen aan uw app.
+1. Zodra de implementatie is voltooid, selecteert **u Ga naar resource**.
+
+1. Selecteer de **knop Lege logische app.**
+
+    :::image type="content" source="media/functions-twitter-email/blank-logic-app-button.png" alt-text="Knop Lege logische app":::
+
+1. Selecteer de **knop Opslaan** op de werkbalk om de voortgang op te slaan.
+
+U kunt nu de Logic Apps designer gebruiken om services en triggers toe te voegen aan uw toepassing.
 
 ## <a name="connect-to-twitter"></a>Verbinding maken met Twitter
 
-Maak eerst verbinding met uw Twitter-account. De logische app peilt tweets, waardoor de app wordt geactiveerd.
+Maak een verbinding met Twitter zodat uw app pollt naar nieuwe tweets.
 
-1. Klik in de Logic Apps Designer op de service **Twitter** en klik vervolgens op de trigger **Wanneer er een nieuwe tweet wordt gepost**. Meld u aan bij uw Twitter-account en sta Logic Apps toe om uw account te gebruiken.
+1. Zoek naar **Twitter** in het bovenste zoekvak.
 
-2. Gebruik de activeringsinstellingen van Twitter zoals die zijn opgegeven in de tabel. 
+1. Selecteer het **Twitter-pictogram.**
 
-    ![Connectorinstellingen voor Twitter](media/functions-twitter-email/10-tweet-settings.png)
+1. Selecteer de trigger **Wanneer een nieuwe tweet word geplaatst**.
 
-    | Instelling      |  Voorgestelde waarde   | Beschrijving                                        |
-    | ----------------- | ------------ | ------------- |
-    | **Zoektekst** | #Azure | Gebruik een hashtag die populair genoeg is om in het gekozen interval nieuwe tweets te genereren. Wanneer u gebruikmaakt van de gratis categorie en uw hashtag is te populair, wordt het transactiequotum in uw Cognitive Services-API mogelijk snel verbruikt. |
-    | **Interval** | 15 | De tijd tussen Twitter-aanvragen, in frequentie-eenheden. |
-    | **Frequentie** | Minuut | De frequentie-eenheid die wordt gebruikt om Twitter te peilen.  |
+1. Voer de volgende waarden in om de verbinding in te stellen.
 
-3.  Klik op **Opslaan** om verbinding te maken met uw Twitter-account. 
+    | Instelling |  Waarde |
+    | ------- | ---------------- |
+    | Verbindingsnaam | **MyTwitterConnection** |
+    | Verificatietype | **Standaard gedeelde toepassing gebruiken** |
 
-Uw app is nu verbonden met Twitter. Vervolgens maakt u verbinding met Text Analytics om het gevoel van de verzamelde tweets te detecteren.
+1. Selecteer **Aanmelden**.
 
-## <a name="add-sentiment-detection"></a>Gevoelsdetectie toevoegen
+1. Volg de aanwijzingen in het pop-upvenster om het aanmelden bij Twitter te voltooien.
 
-1. Klik op **Nieuwe stap** en vervolgens op **Een actie toevoegen**.
+1. Voer vervolgens de volgende waarden in het _vak Wanneer een nieuwe tweet wordt geplaatst_ in.
 
-2. Typ **Tekstanalyse** in **Een actie kiezen** en klik vervolgens op de actie **Gevoel detecteren**.
-    
-    ![Schermopname van de sectie 'Kies een actie' met 'Tekstanalyse' in het zoekvak en de actie 'Sentiment detecteren' geselecteerd. ](media/functions-twitter-email/11-detect-sentiment.png)
+    | Instelling | Waarde |
+    | ------- | ----- |
+    | Zoektekst | **#my-twitter-tutorial** |
+    | Hoe wilt u controleren op items? | **15** in het tekstvak, en <br> **Minuut** in de vervolgkeuzekeuze |
 
-3. Typ een verbindingsnaam, bijvoorbeeld `MyCognitiveServicesConnection`, plak de sleutel voor de Cognitive Services-API en het Cognitive Services-eindpunt dat u in de teksteditor hebt geplaatst en klik op **Maken**.
+1. Selecteer de **knop Opslaan** op de werkbalk om de voortgang op te slaan.
 
-    ![Nieuwe stap en vervolgens Een actie toevoegen](media/functions-twitter-email/12-connection-settings.png)
+Maak vervolgens verbinding met text analytics om het gevoel van verzamelde tweets te detecteren.
 
-4. Voer vervolgens **tekst voor de tweet** in het tekstvak in en klik op **Nieuwe stap**.
+## <a name="add-text-analytics-sentiment-detection"></a>Detectie van Text Analytics toevoegen
 
-    ![Te analyseren tekst definiëren](media/functions-twitter-email/13-analyze-tweet-text.png)
+1. Selecteer **Nieuwe stap**.
 
-Nu de gevoelsdetectie is geconfigureerd, kunt u een verbinding met uw functie toevoegen die de uitvoer van de gevoelsscore opneemt.
+1. Zoek naar **Text Analytics** in het zoekvak.
 
-## <a name="connect-sentiment-output-to-your-function"></a>Gevoelsuitvoer verbinden met functie
+1. Selecteer het **Text Analytics** pictogram.
 
-1. Klik in de ontwerpfunctie van logische apps op **Nieuwe stap** > **Een actie toevoegen**, filter op **Azure Functions** en klik op **Een Azure-functie kiezen**.
+1. Selecteer **Gevoel detecteren** en voer de volgende waarden in.
 
-    ![Gevoel detecteren](media/functions-twitter-email/14-azure-functions.png)
-  
-4. Selecteer de functie-app die u eerder hebt gemaakt.
+    | Instelling | Waarde |
+    | ------- | ----- |
+    | Verbindingsnaam | **TextAnalyticsConnection** |
+    | Accountsleutel | Plak de sleutel Text Analytics account die u eerder hebt gereserveerd. |
+    | Site-URL | Plak het eindpunt Text Analytics u eerder hebt gereserveerd. |
 
-    ![Schermopname met de sectie 'Kies een actie' waarvoor een functie-app is geselecteerd.](media/functions-twitter-email/15-select-function.png)
+1. Selecteer **Maken**.
 
-5. Selecteer de functie die u voor deze zelfstudie hebt gemaakt.
+1. Klik in _het vak Nieuwe parameter_ toevoegen en vink het selectievakje aan naast **documenten** die in het pop-upvenster worden weergegeven.
 
-    ![Functie selecteren](media/functions-twitter-email/16-select-function.png)
+1. Klik in het _tekstvak Id - 1 van_ de documenten om de pop-up van dynamische inhoud te openen.
 
-4. Klik in **Aanvraagtekst** op **Score** en vervolgens op **Opslaan**.
+1. Zoek in _het zoekvak voor_ dynamische inhoud naar **id** en klik op **Tweet-id.**
 
-    ![Score](media/functions-twitter-email/17-function-input-score.png)
+1. Klik in het _tekstvak Text - 1 van_ de documenten om de pop-up van dynamische inhoud te openen.
 
-Uw functie wordt nu geactiveerd wanneer er een gevoelsscore wordt verzonden vanuit de logische app. De functie retourneert een kleurgecodeerde categorie aan de logische app. Vervolgens voegt u een e-mailmelding toe die wordt verzonden wanneer vanuit de functie de gevoelswaarde **RED** wordt geretourneerd. 
+1. Zoek in _het zoekvak_ voor dynamische inhoud naar **tekst** en klik op **Tweettekst.**
+
+1. Typ **Tekstanalyse** in **Een actie kiezen** en klik vervolgens op de actie **Gevoel detecteren**.
+
+1. Selecteer de **knop Opslaan** op de werkbalk om de voortgang op te slaan.
+
+Het _vak Gevoel detecteren_ moet lijken op de volgende schermopname.
+
+:::image type="content" source="media/functions-twitter-email/detect-sentiment.png" alt-text="Gevoelsinstellingen detecteren":::
+
+## <a name="connect-sentiment-output-to-function-endpoint"></a>Gevoelsuitvoer verbinden met het functie-eindpunt
+
+1. Selecteer **Nieuwe stap**.
+
+1. Zoek naar **Azure Functions** in het zoekvak.
+
+1. Selecteer het **Azure Functions** pictogram.
+
+1. Zoek de naam van uw functie in het zoekvak. Als u de bovenstaande richtlijnen hebt gevolgd, begint uw functienaam met **TweetSentimentAPI.**
+
+1. Selecteer het functiepictogram.
+
+1. Selecteer het **item TweetSentimentFunction.**
+
+1. Klik in het _vak Aanvraag body_ en selecteer het item _Gevoelsscore_  detecteren in het pop-upvenster.
+
+1. Selecteer de **knop Opslaan** op de werkbalk om de voortgang op te slaan.
+
+## <a name="add-conditional-step"></a>Voorwaardelijke stap toevoegen
+
+1. Selecteer de **knop Een actie** toevoegen.
+
+1. Klik in het _vak_ Besturingselement en zoek en selecteer **Control** in het pop-upvenster.
+
+1. Selecteer **Voorwaarde**.
+
+1. Klik in _het vak Een waarde_ kiezen en selecteer het item _TweetSentimentFunction_ **Body** in het pop-upvenster.
+
+1. Typ **Positief** in het _vak Een waarde_ kiezen.
+
+1. Selecteer de **knop Opslaan** op de werkbalk om de voortgang op te slaan.
 
 ## <a name="add-email-notifications"></a>E-mailmeldingen toevoegen
 
-Het laatste deel van de werkstroom bestaat uit het activeren van een e-mail wanneer de gevoelsscore _RED_ is. In dit artikel wordt een Outlook.com-connector gebruikt. U kunt dezelfde stappen uitvoeren als u een Gmail- of Office 365 Outlook-connector wilt gebruiken.   
+1. Selecteer onder _het_ vak Waar de knop **Een actie** toevoegen.
 
-1. Klik in de Logic Apps Designer op **Nieuwe stap** > **Een voorwaarde toevoegen**. 
+1. Zoek en selecteer **Office 365 Outlook** in het tekstvak.
 
-    ![Voeg een voorwaarde aan de logische app toe.](media/functions-twitter-email/18-add-condition.png)
+1. Zoek naar **verzenden** en selecteer **Een e-mail verzenden** in het tekstvak.
 
-2. Klik op **Een waarde kiezen** en vervolgens op **Hoofdtekst**. Selecteer **Is gelijk aan**, klik op **Een waarde kiezen**, voer `RED` in en klik op **Opslaan**. 
+1. Selecteer de **knop Aanmelden.**
 
-    ![Kies een actie voor de voorwaarde.](media/functions-twitter-email/19-condition-settings.png)    
+1. Volg de aanwijzingen in het pop-upvenster om het aanmelden bij Office 365 Outlook te voltooien.
 
-3. Klik in **INDIEN WAAR** op **Een actie toevoegen**, zoek naar `outlook.com`, klik op **Een e-mail verzenden** en meld u aan bij uw Outlook.com-account.
+1. Voer uw e-mailadres in het _vak Aan_ in.
 
-    ![Schermopname van de sectie 'IF TRUE' met 'outlook.com' in het zoekvak en de actie 'Een e-mail verzenden' geselecteerd.](media/functions-twitter-email/20-add-outlook.png)
+1. Klik in _het vak_ Onderwerp en klik op het item **Body** onder _TweetSentimentFunction._ Als het _item Body_ niet wordt weergegeven in de lijst, klikt u op de **koppeling Meer** bekijken om de lijst met opties uit te vouwen.
 
-    > [!NOTE]
-    > Als u geen Outlook.com-account hebt, kunt u een andere connector kiezen, bijvoorbeeld voor Gmail of Office 365 Outlook
+1. Voer na het item _Body_ in _het onderwerp_ de tekst Tweet van **in:**.
 
-4. Gebruik in de actie **Een e-mail verzenden** de e-mailinstellingen zoals die zijn opgegeven in de tabel. 
+1. Klik na _de tekst Tweet van:_ opnieuw op het vak en selecteer Gebruikersnaam **in** de optieslijst Wanneer _een nieuwe tweet wordt_ geplaatst.
 
-    ![De e-mail configureren voor de actie Een e-mail verzenden.](media/functions-twitter-email/21-configure-email.png)
-    
-| Instelling      |  Voorgestelde waarde   | Beschrijving  |
-| ----------------- | ------------ | ------------- |
-| **Aan** | Voer uw e-mailadres in | Het e-mailadres dat de melding ontvangt. |
-| **Onderwerp** | Negatief gevoel in tweet gedetecteerd  | De onderwerpregel van de e-mailmelding.  |
-| **Hoofdtekst** | Tweettekst, locatie | Klik op de parameters **Tweettekst** en **Locatie**. |
+1. Klik in het _vak Hoofdtekst_ en selecteer **Tweettekst** onder de optieslijst _Wanneer een nieuwe tweet_ wordt geplaatst. Als het _tekstitem_ Tweet niet wordt weergegeven in de lijst, klikt u op de koppeling **Meer** bekijken om de lijst met opties uit te vouwen.
 
-1. Klik op **Opslaan**.
+1. Selecteer de **knop Opslaan** op de werkbalk om de voortgang op te slaan.
 
-Nu uw werkstroom is voltooid, kunt u de logische app inschakelen en de functie aan het werk zien.
+Het e-mailvak moet er nu uitzien als deze schermopname.
 
-## <a name="test-the-workflow"></a>De werkstroom testen
+:::image type="content" source="media/functions-twitter-email/email-notification.png" alt-text="E-mailmeldingen":::
 
-1. Klik in de Logic App Designer op **Uitvoeren** om de app te starten.
+## <a name="run-the-workflow"></a>De werkstroom uitvoeren
 
-2. Klik in de linkerkolom op **Overzicht** om de status van de logische app te bekijken. 
- 
-    ![Uitvoeringsstatus van logische app](media/functions-twitter-email/22-execution-history.png)
+1. Tweet vanuit uw Twitter-account de volgende tekst: **I'm enjoying #my-twitter-tutorial**.
 
-3. (Optioneel) Klik op een uitvoering om de details ervan te bekijken.
+1. Ga terug naar Logic Apps Designer en selecteer de **knop** Uitvoeren.
 
-4. Ga naar uw functie, bekijk de logboeken en controleer of de gevoelswaarden zijn ontvangen en verwerkt.
- 
-    ![Functielogboeken bekijken](media/functions-twitter-email/sent.png)
+1. Controleer uw e-mail op een bericht uit de werkstroom.
 
-5. Wanneer er een mogelijk negatief gevoel wordt gedetecteerd, ontvangt u een e-mail. Als u geen e-mail hebt ontvangen, kunt u de functiecode aanpassen om elke keer RED te retourneren:
+## <a name="clean-up-resources"></a>Resources opschonen
 
-    ```csharp
-    return (ActionResult)new OkObjectResult("RED");
-    ```
+Als u alle Azure-services en -accounts wilt ops schonen die tijdens deze zelfstudie zijn gemaakt, verwijdert u de resourcegroep.
 
-    Nadat u de e-mailmeldingen hebt geverifieerd, kunt u de originele code herstellen:
+1. Zoek in het bovenste zoekvak naar **Resourcegroepen.**
 
-    ```csharp
-    return requestBody != null
-        ? (ActionResult)new OkObjectResult(category)
-        : new BadRequestObjectResult("Please pass a value on the query string or in the request body");
-    ```
+1. Selecteer de **zelfstudie tweet-sentiment.**
 
-    > [!IMPORTANT]
-    > Na voltooiing van deze zelfstudie moet u de logische app uitschakelen. Door de app uit te schakelen, voorkomt u dat u moet betalen voor uitvoeringen en dat u de transacties in uw Cognitive Services-API verbruikt.
+1. Resourcegroep **verwijderen selecteren**
 
-U hebt nu gezien hoe eenvoudig het is om Functions in een Logic Apps-werkstroom te integreren.
+1. Voer **tweet-sentiment-tutorial** in het tekstvak in.
 
-## <a name="disable-the-logic-app"></a>De logische app uitschakelen
+1. Selecteer de knop **Verwijderen**.
 
-Klik op **Overzicht** en vervolgens op **Uitschakelen** bovenaan het scherm om de logische app uit te schakelen. Als de logische app wordt uitgeschakeld, wordt deze niet meer uitgevoerd. Zo voorkomt u kosten zonder dat u de app hoeft te verwijderen.
-
-![Functielogboeken](media/functions-twitter-email/disable-logic-app.png)
+U kunt eventueel terugkeren naar uw Twitter-account en eventuele testtweets uit uw feed verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie heeft u het volgende geleerd:
-
-> [!div class="checklist"]
-> * Een API-resource voor Cognitive Services maken.
-> * Een functie maken die tweetgevoelens categoriseert.
-> * Een logische app maken die verbinding maakt met Twitter.
-> * Detectie van gevoelens toevoegen aan de logische app. 
-> * De logische app verbinden met de functie.
-> * Een e-mail versturen op basis van de reactie van de functie.
-
-Ga door naar de volgende zelfstudie om te leren hoe u een serverloze API maakt voor uw functie.
-
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [Een serverloze API maken met behulp van Azure Functions](functions-create-serverless-api.md)
-
-Raadpleeg [Azure Logic Apps](../logic-apps/logic-apps-overview.md) om meer te leren over Logic Apps.

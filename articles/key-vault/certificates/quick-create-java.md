@@ -2,18 +2,18 @@
 title: Quickstart voor Azure Key Vault-clientbibliotheek met certificaten - Java
 description: Meer informatie over de Azure Key Vault-clientbibliotheek met certificaten voor Java met de stappen in deze quickstart.
 author: msmbaldwin
-ms.custom: devx-track-java, devx-track-azurecli
+ms.custom: devx-track-java
 ms.author: mbaldwin
 ms.date: 12/18/2020
 ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
-ms.openlocfilehash: 99b8c63060cebeffea0f3473e03b5f49a415230b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: db69258a774343af18e683444d22530a32f85555
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97936036"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374944"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-java-certificates"></a>Quickstart: Azure Key Vault-clientbibliotheek met certificaten voor Java (certificaten)
 Aan de slag met de Azure Key Vault-clientbibliotheek met certificaten voor Java. Volg de onderstaande stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.

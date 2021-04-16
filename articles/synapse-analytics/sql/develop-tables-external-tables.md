@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1977663f4661fca316e4839671abd76e07b5acda
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 0986a1d6a75f0d464eb405841af821c606c68200
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107304797"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107565318"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Externe tabellen gebruiken met Synapse SQL
 
@@ -325,7 +325,7 @@ De uit een tot drie delen bestaande naam van de tabel die u wilt maken. Voor een
 
 <column_definition>, ...*n* ]
 
-EXTERNE tabel maken ondersteunt de mogelijkheid om de kolom naam, het gegevens type en de sortering te configureren. U kunt de STANDAARDBEPERKING niet gebruiken voor externe tabellen.
+CREATE EXTERNAL TABLE ondersteunt de mogelijkheid om de kolomnaam, het gegevenstype en de collatie te configureren. U kunt de STANDAARDBEPERKING niet gebruiken voor externe tabellen.
 
 >[!IMPORTANT]
 >De kolomdefinities, waaronder de gegevenstypen en het aantal kolommen, moeten overeenkomen met de gegevens in de externe bestanden. Als deze niet overeenkomen, worden de bestandsrijen afgewezen bij het uitvoeren van query's op de werkelijke gegevens.
@@ -339,9 +339,9 @@ Hiermee geeft u de map of het bestandspad en de bestandsnaam op voor de werkelij
 Als u een map LOCATION opgeeft, wordt een serverloze SQL-pool-query geselecteerd in de externe tabel en worden de bestanden opgehaald uit de map.
 
 > [!NOTE]
-> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt.
+> In tegenstelling tot Hadoop en PolyBase, retourneert een serverloze SQL-pool geen submappen tenzij u /* * aan het einde van het pad toevoegt. Net als Bij Hadoop en PolyBase worden er geen bestanden retourneerd waarvoor de bestandsnaam begint met een onderstreping (_) of een punt (.).
 
-Als locatie = '/webdata/', een serverloze SQL-groeps query, wordt in dit voor beeld rijen geretourneerd van mydata.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
+Als in dit voorbeeld LOCATION='/webdata/', een serverloze SQL-poolquery, rijen retourneren van mydata.txt. Het retourneert niet mydata2.txt en mydata3.txt omdat deze bestanden zich in een submap bevinden.
 
 ![Recursieve gegevens voor externe tabellen](./media/develop-tables-external-tables/folder-traversal.png)
 

@@ -1,128 +1,128 @@
 ---
-title: Data bases migreren naar een door SQL beheerd exemplaar met de replay-service voor logboek registratie
-description: Meer informatie over het migreren van data bases van SQL Server naar SQL Managed instance met behulp van de replay-service voor logboek registratie
+title: Databases migreren naar SQL Managed Instance met behulp van de Log Replay-service
+description: Meer informatie over het migreren van databases van SQL Server naar SQL Managed Instance met behulp van Log Replay Service
 services: sql-database
 ms.service: sql-managed-instance
-ms.custom: seo-lt-2019, sqldbrb=1
+ms.custom: seo-lt-2019, sqldbrb=1, devx-track-azurecli
 ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: sstein
 ms.date: 03/31/2021
-ms.openlocfilehash: 8e78db5b9d496c2ac13c9f1214b386770c11e21e
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: 522f4ec2f28f9d8975a8a7a7b10e435f602af855
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106075880"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484027"
 ---
-# <a name="migrate-databases-from-sql-server-to-sql-managed-instance-by-using-log-replay-service-preview"></a>Data bases migreren van SQL Server naar een door SQL beheerd exemplaar met behulp van de replay-service voor logboeken (preview)
+# <a name="migrate-databases-from-sql-server-to-sql-managed-instance-by-using-log-replay-service-preview"></a>Databases migreren van SQL Server naar SQL Managed Instance met behulp van Log Replay Service (preview)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-In dit artikel wordt uitgelegd hoe u de database migratie van SQL Server 2008-2019 naar Azure SQL Managed instance hand matig kunt configureren met behulp van LRS (log replay service), die momenteel beschikbaar is als open bare preview. LRS is een Cloud service die is ingeschakeld voor SQL Managed instance en is gebaseerd op SQL Server technologie voor het verzenden van Logboeken. 
+In dit artikel wordt uitgelegd hoe u handmatig databasemigratie configureert van SQL Server 2008-2019 naar Azure SQL Managed Instance met behulp van Log Replay Service (LRS), momenteel in openbare preview. LRS is een cloudservice die is ingeschakeld voor SQL Managed Instance en is gebaseerd SQL Server technologie voor logboekverzending. 
 
-[Azure database Migration service](../../dms/tutorial-sql-server-to-managed-instance.md) en LRS gebruiken dezelfde onderliggende migratie technologie en dezelfde api's. Door LRS vrij te maken, kunnen we complexe aangepaste migraties en hybride architectuur maken tussen on-premises SQL Server en SQL Managed instance.
+[Azure Database Migration Service](../../dms/tutorial-sql-server-to-managed-instance.md) LRS gebruiken dezelfde onderliggende migratietechnologie en dezelfde API's. Door LRS uit te brengen, maken we complexere aangepaste migraties en hybride architectuur mogelijk tussen on-premises SQL Server en SQL Managed Instance.
 
-## <a name="when-to-use-log-replay-service"></a>Wanneer moet u de replay-service voor logboek registratie gebruiken?
+## <a name="when-to-use-log-replay-service"></a>Wanneer u de Log Replay-service gebruikt
 
-Wanneer u Azure Database Migration Service niet kunt gebruiken voor migratie, kunt u LRS rechtstreeks gebruiken met Power shell, Azure CLI-cmdlets of Api's om database migraties hand matig te bouwen en te organiseren in een door SQL beheerd exemplaar. 
+Wanneer u Azure Database Migration Service niet kunt gebruiken voor migratie, kunt u LRS rechtstreeks gebruiken met PowerShell, Azure CLI-cmdlets of API's om databasemigraties handmatig te bouwen en te SQL Managed Instance. 
 
-U kunt overwegen om LRS in de volgende gevallen te gebruiken:
-- U hebt meer controle over uw database migratie project nodig.
-- Er is weinig tolerantie voor de uitval tijd voor de migratie cutover.
-- Het uitvoer bare bestand van Database Migration Service kan niet worden geïnstalleerd in uw omgeving.
-- Het uitvoer bare bestand van Database Migration Service heeft geen bestands toegang tot back-ups van data bases.
-- Er is geen toegang tot het hostbesturingssysteem beschikbaar of er zijn geen beheerders bevoegdheden.
-- U kunt geen netwerk poorten openen vanuit uw omgeving naar Azure.
-- Problemen met netwerk beperking of proxy blok keren in uw omgeving.
-- Back-ups worden direct opgeslagen in Azure Blob Storage via de `TO URL` optie.
+In de volgende gevallen kunt u LRS gebruiken:
+- U hebt meer controle nodig voor uw databasemigratieproject.
+- Er is weinig tolerantie voor downtime bij de migratie-cutover.
+- Het Database Migration Service uitvoerbare bestand kan niet worden geïnstalleerd in uw omgeving.
+- Het Database Migration Service het uitvoerbare bestand heeft geen bestandstoegang tot databaseback-ups.
+- Er is geen toegang tot het host-besturingssysteem beschikbaar of er zijn geen beheerdersbevoegdheden.
+- U kunt geen netwerkpoorten openen vanuit uw omgeving naar Azure.
+- Netwerkbeperking of proxyblokkeringsproblemen in uw omgeving.
+- Back-ups worden rechtstreeks opgeslagen Azure Blob Storage via de `TO URL` optie .
 - U moet differentiële back-ups gebruiken.
 
 > [!NOTE]
-> Het is raadzaam om de migratie van data bases van SQL Server naar SQL Managed instance te automatiseren met behulp van Database Migration Service. Deze service maakt gebruik van dezelfde LRS-Cloud service aan de back-end, met logboek verzending in de `NORECOVERY` modus. Overweeg hand matig met LRS om migraties te organiseren wanneer Database Migration Service uw scenario's niet volledig ondersteunt.
+> We raden u aan om de migratie van databases van SQL Server naar SQL Managed Instance te automatiseren met behulp van Database Migration Service. Deze service maakt gebruik van dezelfde LRS-cloudservice aan de back-end, met logboekverzending in de `NORECOVERY` modus. Overweeg handmatig LRS te gebruiken om migraties te Database Migration Service uw scenario's niet volledig ondersteunt.
 
 ## <a name="how-it-works"></a>Uitleg
 
-Het bouwen van een aangepaste oplossing met behulp van LRS voor het migreren van data bases naar de Cloud vereist verschillende indelings stappen, zoals wordt weer gegeven in het diagram en de tabel verderop in deze sectie.
+Voor het bouwen van een aangepaste oplossing met behulp van LRS voor het migreren van databases naar de cloud zijn verschillende orchestration-stappen vereist, zoals wordt weergegeven in het diagram en de tabel later in deze sectie.
 
-De migratie bestaat uit het maken van volledige database back-ups op SQL Server met `CHECKSUM` ingeschakelde en het kopiëren van back-upbestanden naar Azure Blob Storage. LRS wordt gebruikt om back-upbestanden van Blob Storage naar een door SQL beheerd exemplaar te herstellen. Blob Storage is de tussenliggende opslag tussen SQL Server en SQL Managed instance.
+De migratie bestaat uit het maken van volledige databaseback-ups op SQL Server ingeschakeld en het kopiëren van back-upbestanden `CHECKSUM` naar Azure Blob Storage. LRS wordt gebruikt om back-upbestanden te herstellen van Blob Storage naar SQL Managed Instance. Blob Storage is een intermediaire opslag tussen SQL Server en SQL Managed Instance.
 
-LRS bewaakt Blob Storage voor nieuwe differentiële of logboek back-ups die zijn toegevoegd nadat de volledige back-up is hersteld. LRS herstelt deze nieuwe bestanden vervolgens automatisch. U kunt de service gebruiken om de voortgang te bewaken van back-upbestanden die worden hersteld op een SQL Managed instance, en u kunt het proces zo nodig stoppen.
+LRS controleert Blob Storage op nieuwe differentiële back-ups of logboekback-ups die worden toegevoegd nadat de volledige back-up is hersteld. LRS herstelt deze nieuwe bestanden vervolgens automatisch. U kunt de service gebruiken om de voortgang te bewaken van back-upbestanden die worden hersteld op SQL Managed Instance en u kunt het proces zo nodig stoppen.
 
-LRS vereist geen specifieke naamgevings Conventie voor back-upbestanden. Hiermee worden alle bestanden gescand die op Blob Storage worden geplaatst en wordt de back-upketen alleen de bestands koppen gelezen. Data bases bevinden zich in de status ' herstellen ' tijdens het migratie proces. Data bases worden hersteld in de modus [norecovery](/sql/t-sql/statements/restore-statements-transact-sql#comparison-of-recovery-and-norecovery) , zodat ze niet kunnen worden gebruikt voor lezen of schrijven totdat het migratie proces is voltooid. 
+LRS vereist geen specifieke naamconventie voor back-upbestanden. Alle bestanden die op de back-Blob Storage en de back-upketen wordt samengesteld om alleen de bestandskopteksten te lezen. Databases hebben de status Herstellen tijdens het migratieproces. Databases worden hersteld in [de NORECOVERY-modus,](/sql/t-sql/statements/restore-statements-transact-sql#comparison-of-recovery-and-norecovery) zodat ze pas kunnen worden gebruikt voor lezen of schrijven als het migratieproces is voltooid. 
 
-Als u verschillende data bases migreert, moet u het volgende doen:
+Als u verschillende databases migreert, moet u het volgende doen:
  
-- Plaats back-ups voor elke data base in een afzonderlijke map op Blob Storage.
-- LRS voor elke Data Base afzonderlijk starten.
-- Geef verschillende paden op om Blob Storage mappen te scheiden. 
+- Plaats back-ups voor elke database in een afzonderlijke map op Blob Storage.
+- Start LRS afzonderlijk voor elke database.
+- Geef verschillende paden op om de Blob Storage te scheiden. 
 
-U kunt LRS starten in de modus *automatisch aanvullen* of *doorlopend* . Wanneer u het in de modus automatisch aanvullen start, wordt de migratie automatisch voltooid wanneer de laatste van de opgegeven back-upbestanden zijn hersteld. Wanneer u LRS in de continue modus start, worden nieuwe back-upbestanden die worden toegevoegd, voortdurend teruggezet en wordt de migratie alleen op de hand matige cutover voltooid. 
+U kunt LRS starten in de *modus automatisch aanvullen* of *doorlopende* modus. Wanneer u de migratie start in de modus voor automatisch aanvullen, wordt de migratie automatisch voltooien wanneer de laatste van de opgegeven back-upbestanden is hersteld. Wanneer u LRS in de continue modus start, herstelt de service voortdurend nieuwe back-upbestanden die zijn toegevoegd en wordt de migratie alleen voor de handmatige cutover voltooien. 
 
-We raden u aan hand matig over te nemen nadat de laatste back-up op basis van het logboek is gemaakt en wordt weer gegeven als hersteld op een SQL-beheerd exemplaar. Met de laatste cutover stap wordt de data base online gezet en beschikbaar voor het gebruik van lees-en schrijf bewerkingen op een SQL-beheerd exemplaar.
+U wordt aangeraden handmatig over te loggen nadat de laatste back-up van het logboek is gemaakt en wordt weergegeven als hersteld op SQL Managed Instance. De laatste cutover-stap zorgt ervoor dat de database online komt en beschikbaar is voor lees- en schrijfgebruik op SQL Managed Instance.
 
-Nadat LRS is gestopt, kunt u automatisch aanvullen of hand matig volt ooien via cutover, het herstel proces niet hervatten voor een Data Base die online is gebracht op een SQL Managed instance. Als u aanvullende back-upbestanden wilt herstellen nadat de migratie is voltooid via automatisch aanvullen of cutover, moet u de data base verwijderen. U moet ook de volledige back-upketen herstellen door LRS opnieuw te starten.
+Nadat LRS is gestopt, automatisch of handmatig via cutover, kunt u het herstelproces niet hervatten voor een database die online is gebracht op SQL Managed Instance. Als u aanvullende back-upbestanden wilt herstellen nadat de migratie is voltooien via automatisch aanvullen of cutover, moet u de database verwijderen. U moet ook de volledige back-upketen opnieuw herstellen door LRS opnieuw op te starten.
 
-:::image type="content" source="./media/log-replay-service-migrate/log-replay-service-conceptual.png" alt-text="Diagram met uitleg over de Orchestrator-service voor het opnieuw afspelen van Logboeken voor SQL Managed instance." border="false":::
+:::image type="content" source="./media/log-replay-service-migrate/log-replay-service-conceptual.png" alt-text="Diagram waarin de orchestration-stappen voor log Replay Service voor SQL Managed Instance." border="false":::
     
 | Bewerking | Details |
 | :----------------------------- | :------------------------- |
-| **1. Kopieer back-ups van de data base van SQL Server naar Blob Storage**. | Kopieer volledige, differentiële en logboek back-ups van SQL Server naar een Blob Storage-container met behulp van [Azcopy](../../storage/common/storage-use-azcopy-v10.md) of [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/). <br /><br />Gebruik bestands namen. LRS vereist geen specifieke Conventie voor bestands namen.<br /><br />Bij het migreren van verschillende data bases hebt u een afzonderlijke map voor elke data base nodig. |
-| **2. Start LRS in de Cloud**. | U kunt de service opnieuw starten met een keuze uit de volgende cmdlets: Power shell ([Start-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/start-azsqlinstancedatabaselogreplay)) of Azure CLI ([az_sql_midb_log_replay_start-cmdlets](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_start)). <br /><br /> Start LRS afzonderlijk voor elke Data Base die naar een map met back-ups op Blob Storage wijst. <br /><br /> Nadat u de service hebt gestart, worden er back-ups gemaakt van de Blob Storage-container en worden ze teruggezet op een SQL-beheerd exemplaar.<br /><br /> Als u de LRS in de continue modus hebt gestart, worden alle nieuwe bestanden die naar de map worden geüpload, door de service gecontroleerd. De service past voortdurend Logboeken toe op basis van de LSN-keten (log Sequence Number) totdat deze wordt gestopt. |
-| **2,1. Controleer de voortgang van de bewerking**. | U kunt de voortgang van de herstel bewerking bewaken met een keuze uit cmdlets: Power shell ([Get-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/get-azsqlinstancedatabaselogreplay)) of Azure CLI ([az_sql_midb_log_replay_show-cmdlets](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_show)). |
-| **2,2. Stop de bewerking indien nodig**. | Als u het migratie proces wilt stoppen, kunt u kiezen uit de volgende cmdlets: Power shell ([Stop-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/stop-azsqlinstancedatabaselogreplay)) of Azure CLI ([az_sql_midb_log_replay_stop](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_stop)). <br /><br /> Als u de bewerking stopt, wordt de data base die u herstelt, verwijderd uit het SQL-beheerde exemplaar. Nadat u een bewerking hebt gestopt, kunt u LRS voor een Data Base niet meer hervatten. U moet het migratie proces helemaal opnieuw starten. |
-| **3. Als u klaar bent, gaat u naar de Cloud**. | Stop de toepassing en de werk belasting. Haal de laatste back-up voor het einde van het logboek op en upload deze naar Azure Blob Storage.<br /><br /> Voltooi de cutover door een LRS-bewerking te initiëren `complete` met een keuze uit cmdlets: Power shell ([complete-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/complete-azsqlinstancedatabaselogreplay)) of Azure cli [az_sql_midb_log_replay_complete](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_complete). Met deze bewerking wordt LRS gestopt en wordt de data base online gezet voor lees-en schrijf bewerkingen op een SQL-beheerd exemplaar.<br /><br /> De toepassing connection string opnieuw laten verwijzen van SQL Server naar een door SQL beheerd exemplaar. U moet deze stap zelf indelen, hetzij door een hand matige connection string wijziging in uw toepassing, of automatisch (bijvoorbeeld als uw toepassing bijvoorbeeld de connection string van een eigenschap of een Data Base kan lezen. |
+| **1. Databaseback-ups kopiëren van SQL Server naar Blob Storage**. | Kopieer volledige, differentiële en logboekback-ups van SQL Server naar Blob Storage container met behulp van [Azcopy](../../storage/common/storage-use-azcopy-v10.md) [of Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/). <br /><br />Gebruik bestandsnamen. LRS vereist geen specifieke bestandsnaamconventie.<br /><br />Bij het migreren van verschillende databases hebt u een afzonderlijke map voor elke database nodig. |
+| **2. Start LRS in de cloud**. | U kunt de service opnieuw starten met een keuze uit cmdlets: PowerShell ([start-azsqlinstancedatabaselogreplay](/powershell/module/az.sql/start-azsqlinstancedatabaselogreplay)) of Azure CLI[(az_sql_midb_log_replay_start cmdlets).](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_start) <br /><br /> Start LRS afzonderlijk voor elke database die naar een back-upmap op de Blob Storage. <br /><br /> Nadat u de service hebt starten, worden er back-ups gemaakt van de Blob Storage container en worden deze hersteld op SQL Managed Instance.<br /><br /> Als u LRS in de continue modus hebt gestart en alle aanvankelijk geüploade back-ups zijn hersteld, kijkt de service naar nieuwe bestanden die naar de map zijn geüpload. De service zal continu logboeken toepassen op basis van de LSN-keten (Log Sequence Number) totdat deze is gestopt. |
+| **2.1. Controleer de voortgang van de bewerking.** | U kunt de voortgang van de herstelbewerking bewaken met een keuze uit cmdlets: PowerShell ([get-azsqlinstancedatabaselogreplay)](/powershell/module/az.sql/get-azsqlinstancedatabaselogreplay)of Azure CLI[(az_sql_midb_log_replay_show cmdlets).](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_show) |
+| **2.2. Stop de bewerking indien nodig.** | Als u het migratieproces wilt stoppen, kunt u kiezen uit cmdlets: PowerShell[(stop-azsqlinstancedatabaselogreplay)](/powershell/module/az.sql/stop-azsqlinstancedatabaselogreplay)of Azure CLI[(az_sql_midb_log_replay_stop).](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_stop) <br /><br /> Als u de bewerking stopt, wordt de database verwijderd die u wilt herstellen op SQL Managed Instance. Nadat u een bewerking hebt gestopt, kunt u LRS niet meer hervatten voor een database. U moet het migratieproces opnieuw starten. |
+| **3. Ga naar de cloud wanneer u klaar bent.** | Stop de toepassing en de workload. Neem de laatste back-up van het logboek en upload deze naar Azure Blob Storage.<br /><br /> Voltooi de cutover door een LRS-bewerking te starten met een keuze uit `complete` cmdlets: PowerShell ([complete-azsqlinstancedatabaselogreplay)](/powershell/module/az.sql/complete-azsqlinstancedatabaselogreplay)of Azure CLI [az_sql_midb_log_replay_complete](/cli/azure/sql/midb/log-replay#az_sql_midb_log_replay_complete). Deze bewerking stopt LRS en zorgt ervoor dat de database online komt voor lees- en schrijfgebruik op SQL Managed Instance.<br /><br /> Wijs de toepassings connection string van SQL Server naar SQL Managed Instance. U moet deze stap zelf ins orchestraeren, hetzij via een handmatige connection string-wijziging in uw toepassing, hetzij automatisch (bijvoorbeeld als uw toepassing bijvoorbeeld de connection string kan lezen vanuit een eigenschap of een database). |
 
-## <a name="requirements-for-getting-started"></a>Vereisten voor aan de slag
+## <a name="requirements-for-getting-started"></a>Vereisten om aan de slag te gaan
 
-### <a name="sql-server-side"></a>SQL Server zijde
+### <a name="sql-server-side"></a>SQL Server-zijde
 - SQL Server 2008-2019
-- Volledige back-up van data bases (een of meer bestanden)
+- Volledige back-up van databases (een of meer bestanden)
 - Differentiële back-up (een of meer bestanden)
-- Logboek back-up (niet gesplitst voor een transactie logboek bestand)
+- Logboekback-up (niet gesplitst voor een transactielogboekbestand)
 - `CHECKSUM` ingeschakeld voor back-ups (verplicht)
 
 ### <a name="azure-side"></a>Azure-zijde
-- Power shell AZ. SQL module versie 2.16.0 of hoger ([geïnstalleerd](https://www.powershellgallery.com/packages/Az.Sql/) of geopend via [Azure Cloud shell](/azure/cloud-shell/))
-- Azure CLI-versie 2.19.0 of hoger ([geïnstalleerd](/cli/azure/install-azure-cli))
-- Ingerichte Azure Blob Storage-container
-- Beveiligings token voor Shared Access Signature (SAS) met lees-en lijst machtigingen die zijn gegenereerd voor de Blob Storage container
+- PowerShell Az.SQL module versie 2.16.0 of hoger[(](https://www.powershellgallery.com/packages/Az.Sql/) geïnstalleerd of toegankelijk via [Azure Cloud Shell](/azure/cloud-shell/))
+- Azure CLI versie 2.19.0 of hoger ([geïnstalleerd](/cli/azure/install-azure-cli))
+- Azure Blob Storage container ingericht
+- Sas-beveiliging token (Shared Access Signature) met lees- en lijstmachtigingen die zijn gegenereerd voor Blob Storage container
 
-### <a name="migration-of-multiple-databases"></a>Migratie van meerdere data bases
-U moet back-upbestanden voor verschillende data bases in afzonderlijke mappen op Blob Storage plaatsen.
+### <a name="migration-of-multiple-databases"></a>Migratie van meerdere databases
+U moet back-upbestanden voor verschillende databases in afzonderlijke mappen op Blob Storage.
 
-Start LRS afzonderlijk voor elke Data Base door naar een geschikte map op Blob Storage te wijzen. LRS kan Maxi maal 100 gelijktijdige herstel processen per één beheerd exemplaar ondersteunen.
+Start LRS afzonderlijk voor elke database door te wijzen naar een geschikte map op Blob Storage. LRS kan maximaal 100 gelijktijdige herstelprocessen per beheerd exemplaar ondersteunen.
 
 ### <a name="azure-rbac-permissions"></a>Azure RBAC-machtigingen
-Voor het uitvoeren van LRS via de gegeven clients is een van de volgende Azure-rollen vereist:
-- Rol abonnements eigenaar
-- Rol [Inzender beheerde instantie](../../role-based-access-control/built-in-roles.md#sql-managed-instance-contributor)
+LRS uitvoeren via de opgegeven clients vereist een van de volgende Azure-rollen:
+- Rol van abonnementseigenaar
+- [Rol Inzender voor beheerd](../../role-based-access-control/built-in-roles.md#sql-managed-instance-contributor) exemplaar
 - Aangepaste rol met de volgende machtiging: `Microsoft.Sql/managedInstances/databases/*`
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
-We raden u aan de volgende aanbevolen procedures uit te voeren:
-- Voer [Data Migration Assistant](/sql/dma/dma-overview) uit om te controleren of uw data bases klaar zijn om te worden gemigreerd naar een SQL-beheerd exemplaar. 
-- U kunt volledige en differentiële back-ups in meerdere bestanden splitsen, in plaats van één bestand te gebruiken.
-- Back-upcompressie inschakelen.
-- Gebruik Cloud Shell om scripts uit te voeren, omdat deze altijd worden bijgewerkt naar de nieuwste cmdlets die zijn uitgebracht.
-- Plan de migratie binnen 47 uur uit te voeren nadat u LRS hebt gestart. Dit is een respijt periode die voor komt dat door de systeem beheerde software patches worden geïnstalleerd.
+We raden de volgende best practices aan:
+- Voer [Data Migration Assistant](/sql/dma/dma-overview) uit om te controleren of uw databases gereed zijn om te worden gemigreerd naar SQL Managed Instance. 
+- Splits volledige en differentiële back-ups in meerdere bestanden, in plaats van één bestand te gebruiken.
+- Schakel back-upcompressie in.
+- Gebruik Cloud Shell om scripts uit te voeren, omdat deze altijd worden bijgewerkt naar de meest recente cmdlets die zijn uitgebracht.
+- Plan de migratie binnen 47 uur na het starten van LRS. Dit is een respijtperiode die de installatie van door het systeem beheerde softwarepatches voorkomt.
 
 > [!IMPORTANT]
-> - U kunt de data base die wordt hersteld via LRS pas gebruiken als het migratie proces is voltooid. 
-> - LRS biedt geen ondersteuning voor alleen-lezen toegang tot data bases tijdens de migratie.
-> - Nadat de migratie is voltooid, wordt het migratie proces voltooid, omdat LRS het herstel proces niet kan hervatten.
+> - U kunt de database die wordt hersteld via LRS niet gebruiken totdat het migratieproces is voltooien. 
+> - LRS biedt geen ondersteuning voor alleen-lezentoegang tot databases tijdens de migratie.
+> - Nadat de migratie is afgerond, wordt het migratieproces afgerond omdat LRS geen ondersteuning biedt voor het hervatting van het herstelproces.
 
-## <a name="steps-to-execute"></a>Stappen om uit te voeren
+## <a name="steps-to-execute"></a>Uit te voeren stappen
 
 ### <a name="make-backups-of-sql-server"></a>Back-ups maken van SQL Server
 
-U kunt back-ups maken van SQL Server met behulp van een van de volgende opties:
+U kunt back-ups van SQL Server met behulp van een van de volgende opties:
 
-- Maak een back-up naar de lokale schijf opslag en upload bestanden naar Azure Blob Storage als uw omgeving directe back-ups naar Blob Storage beperkt.
-- Maak rechtstreeks een back-up van Blob Storage met de `TO URL` optie in T-SQL, als uw omgeving en beveiligings procedures dit toestaan. 
+- Back-up naar lokale schijfopslag en upload vervolgens bestanden naar Azure Blob Storage, als uw omgeving directe back-ups beperkt tot Blob Storage.
+- Back-up rechtstreeks naar Blob Storage met de optie `TO URL` in T-SQL, als uw omgeving en beveiligingsprocedures dit toestaan. 
 
-Stel de data bases in die u wilt migreren naar de volledige herstel modus om logboek back-ups toe te staan.
+Stel databases in die u wilt migreren naar de modus volledig herstel om logboekback-ups toe te staan.
 
 ```SQL
 -- To permit log backups, before the full database backup, modify the database to use the full recovery
@@ -132,7 +132,7 @@ SET RECOVERY FULL
 GO
 ```
 
-Als u hand matig volledige, differentiële en logboek back-ups van uw Data Base op lokale opslag wilt maken, gebruikt u de volgende voor beelden van T-SQL-scripts. Zorg ervoor dat de `CHECKSUM` optie is ingeschakeld, omdat deze verplicht is voor LRS.
+Als u handmatig volledige, differentiële en logboekback-ups van uw database in lokale opslag wilt maken, gebruikt u de volgende T-SQL-voorbeeldscripts. Zorg ervoor `CHECKSUM` dat de optie is ingeschakeld, omdat deze verplicht is voor LRS.
 
 ```SQL
 -- Example of how to make a full database backup to the local disk
@@ -156,24 +156,24 @@ GO
 
 ### <a name="create-a-storage-account"></a>Een opslagaccount maken
 
-Azure Blob Storage wordt gebruikt als de tussenliggende opslag voor back-upbestanden tussen SQL Server en SQL Managed instance. Voer de volgende stappen uit om een nieuw opslag account en een BLOB-container in het opslag account te maken:
+Azure Blob Storage wordt gebruikt als intermediaire opslag voor back-upbestanden tussen SQL Server en SQL Managed Instance. Volg deze stappen om een nieuw opslagaccount en een blobcontainer in het opslagaccount te maken:
 
 1. [Een opslagaccount maken](../../storage/common/storage-account-create.md?tabs=azure-portal).
-2. [Crete een BLOB-container](../../storage/blobs/storage-quickstart-blobs-portal.md) in het opslag account.
+2. [Een blobcontainer maken in](../../storage/blobs/storage-quickstart-blobs-portal.md) het opslagaccount.
 
 ### <a name="copy-backups-from-sql-server-to-blob-storage"></a>Back-ups kopiëren van SQL Server naar Blob Storage
 
-Bij het migreren van data bases naar een beheerd exemplaar met behulp van LRS, kunt u de volgende benaderingen gebruiken om back-ups te uploaden naar Blob Storage:
-- De functionaliteit van SQL Server native [back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) gebruiken
-- Back-ups naar een BLOB-container uploaden met behulp van [Azcopy](../../storage/common/storage-use-azcopy-v10.md) of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer)
-- Storage Explorer gebruiken in de Azure Portal
+Bij het migreren van databases naar een beheerd exemplaar met behulp van LRS kunt u de volgende methoden gebruiken om back-ups te uploaden naar Blob Storage:
+- Systeemeigen SQL Server [VAN BACK-UP NAAR URL gebruiken](/sql/relational-databases/backup-restore/sql-server-backup-to-url)
+- [Azcopy](../../storage/common/storage-use-azcopy-v10.md) of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer) back-ups uploaden naar een blobcontainer
+- Gebruik Storage Explorer in de Azure Portal
 
-### <a name="make-backups-from-sql-server-directly-to-blob-storage"></a>Back-ups rechtstreeks van SQL Server naar Blob Storage maken
-Als uw bedrijfs-en netwerk beleid dit toestaat, is het een alternatief om back-ups rechtstreeks van SQL Server naar Blob Storage te maken met behulp van de optie SQL Server systeem eigen [back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) . Als u deze optie kunt uitvoeren, hoeft u geen back-ups te maken op de lokale opslag en deze te uploaden naar Blob Storage.
+### <a name="make-backups-from-sql-server-directly-to-blob-storage"></a>Back-ups van SQL Server rechtstreeks naar Blob Storage
+Als uw bedrijfsbeleid en netwerkbeleid dit toestaan, kunt u ook rechtstreeks back-ups maken van SQL Server naar Blob Storage met behulp van de SQL Server systeemeigen back-up naar [URL.](/sql/relational-databases/backup-restore/sql-server-backup-to-url) Als u deze optie kunt gebruiken, hoeft u geen back-ups te maken op de lokale opslag en deze te uploaden naar Blob Storage.
 
-Als eerste stap moet u voor deze bewerking een SAS-verificatie token genereren voor Blob Storage en vervolgens het token importeren in SQL Server. De tweede stap is het maken van back-ups met de `TO URL` optie in T-SQL. Zorg ervoor dat alle back-ups zijn gemaakt met de `CHEKSUM` optie ingeschakeld.
+Als eerste stap moet u voor deze bewerking een SAS-verificatie token genereren voor Blob Storage en het token vervolgens importeren in SQL Server. De tweede stap is het maken van back-ups met `TO URL` de optie in T-SQL. Zorg ervoor dat alle back-ups worden gemaakt met `CHEKSUM` de optie ingeschakeld.
 
-Ter referentie: de volgende voorbeeld code maakt back-ups Blob Storage. Dit voor beeld bevat geen instructies voor het importeren van het SAS-token. U vindt gedetailleerde instructies, zoals hoe u het SAS-token kunt genereren en importeren in SQL Server, in de zelf studie [Azure Blob Storage gebruiken met SQL Server](/sql/relational-databases/tutorial-use-azure-blob-storage-service-with-sql-server-2016#1---create-stored-access-policy-and-shared-access-storage). 
+Ter referentie maakt de volgende voorbeeldcode back-ups naar Blob Storage. Dit voorbeeld bevat geen instructies voor het importeren van het SAS-token. Gedetailleerde instructies, waaronder het genereren en importeren van het SAS-token in SQL Server, vindt u in de zelfstudie Use [Azure Blob Storage with SQL Server](/sql/relational-databases/tutorial-use-azure-blob-storage-service-with-sql-server-2016#1---create-stored-access-policy-and-shared-access-storage). 
 
 ```SQL
 -- Example of how to make a full database backup to a URL
@@ -193,67 +193,67 @@ TO URL = 'https://<mystorageaccountname>.blob.core.windows.net/<mycontainername>
 WITH COMPRESSION, CHECKSUM
 ```
 
-### <a name="generate-a-blob-storage-sas-authentication-token-for-lrs"></a>Een Blob Storage SAS-verificatie token genereren voor LRS
+### <a name="generate-a-blob-storage-sas-authentication-token-for-lrs"></a>Een sas Blob Storage-verificatie-token genereren voor LRS
 
-Azure Blob Storage wordt gebruikt als de tussenliggende opslag voor back-upbestanden tussen SQL Server en SQL Managed instance. U moet een SAS-verificatie token genereren, met alleen lijst-en lees machtigingen voor LRS. Met het token kan LRS toegang krijgen tot Blob Storage en de back-upbestanden gebruiken om ze te herstellen op een SQL-beheerd exemplaar. 
+Azure Blob Storage wordt gebruikt als intermediaire opslag voor back-upbestanden tussen SQL Server en SQL Managed Instance. U moet voor LRS een SAS-verificatie token genereren, met alleen de machtigingen list en read. Met het token kan LRS toegang krijgen tot Blob Storage en de back-upbestanden gebruiken om ze te herstellen op SQL Managed Instance. 
 
 Volg deze stappen om het token te genereren:
 
 1. Open Storage Explorer vanuit de Azure Portal.
-2. Vouw **BLOB-containers** uit.
-3. Klik met de rechter muisknop op de BLOB-container en selecteer **ophalen Shared Access Signature**.
+2. Vouw **BlobContainers uit.**
+3. Klik met de rechtermuisknop op de blobcontainer en selecteer **Get Shared Access Signature**.
 
-   :::image type="content" source="./media/log-replay-service-migrate/lrs-sas-token-01.png" alt-text="Scherm opname van selecties voor het genereren van een s-verificatie token van S.":::
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-sas-token-01.png" alt-text="Schermopname met selecties voor het genereren van een S A S-verificatie token.":::
 
-4. Selecteer het tijds bestek voor de verval datum van het token. Zorg ervoor dat het token geldig is voor de duur van de migratie.
-5. Selecteer de tijd zone voor het token: UTC of uw lokale tijd.
+4. Selecteer het tijdsbestek voor het verlopen van het token. Zorg ervoor dat het token geldig is voor de duur van de migratie.
+5. Selecteer de tijdzone voor het token: UTC of uw lokale tijd.
     
    > [!IMPORTANT]
-   > De tijd zone van het token en uw beheerde exemplaar komen mogelijk niet overeen. Zorg ervoor dat de SAS-token de juiste geldigheids duur heeft, waarbij tijd zones in overweging worden genomen. Stel, indien mogelijk, de tijd zone in op een eerdere en latere tijd van uw geplande migratie venster.
-6. Selecteer alleen **Lees** -en **lijst** machtigingen.
+   > De tijdzone van het token en uw beheerde exemplaar komen mogelijk niet overeen. Zorg ervoor dat het SAS-token de juiste geldigheidsduur heeft, waarbij u rekening houdt met tijdzones. Stel indien mogelijk de tijdzone in op een eerder en later tijdstip van het geplande migratievenster.
+6. Selecteer **alleen** de **machtigingen** Lezen en Lijst.
 
    > [!IMPORTANT]
-   > Selecteer geen andere machtigingen. Als u dit wel doet, wordt LRS niet gestart. Deze beveiligings vereiste is standaard.
+   > Selecteer geen andere machtigingen. Als u dit doet, wordt LRS niet start. Deze beveiligingsvereiste is ontworpen.
 7. Selecteer **Maken**.
 
-   :::image type="content" source="./media/log-replay-service-migrate/lrs-sas-token-02.png" alt-text="Scherm afbeelding met selecties voor S A S-token verloop, een tijd zone en machtigingen, samen met de knop maken.":::
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-sas-token-02.png" alt-text="Schermopname met selecties voor S A S-tokenverlooptijd, tijdzone en machtigingen, samen met de knop Maken.":::
 
-De SAS-verificatie wordt gegenereerd met de geldigheid van de tijd die u hebt opgegeven. U hebt de URI-versie van het token nodig, zoals wordt weer gegeven in de volgende scherm afbeelding.
+De SAS-verificatie wordt gegenereerd met de geldigheidsduur die u hebt opgegeven. U hebt de URI-versie van het token nodig, zoals wordt weergegeven in de volgende schermopname.
 
-:::image type="content" source="./media/log-replay-service-migrate/lrs-generated-uri-token.png" alt-text="Scherm afbeelding met een voor beeld van de U R I-versie van een s-token van S.":::
+:::image type="content" source="./media/log-replay-service-migrate/lrs-generated-uri-token.png" alt-text="Schermopname van een voorbeeld van de U R I-versie van een S A S-token.":::
 
-### <a name="copy-parameters-from-the-sas-token"></a>Para meters kopiëren uit het SAS-token
+### <a name="copy-parameters-from-the-sas-token"></a>Parameters kopiëren vanuit het SAS-token
 
-Voordat u het SAS-token gebruikt om LRS te starten, moet u de structuur ervan begrijpen. De URI van de gegenereerde SAS-token bestaat uit twee delen, gescheiden door een vraag teken ( `?` ), zoals wordt weer gegeven in dit voor beeld:
+Voordat u het SAS-token gebruikt om LRS te starten, moet u de structuur ervan begrijpen. De URI van het gegenereerde SAS-token bestaat uit twee delen gescheiden door een vraagteken ( `?` ), zoals wordt weergegeven in dit voorbeeld:
 
-:::image type="content" source="./media/log-replay-service-migrate/lrs-token-structure.png" alt-text="Voor beeld U R I voor een S-token gegenereerd S voor de replay-service voor logboek registratie." border="false":::
+:::image type="content" source="./media/log-replay-service-migrate/lrs-token-structure.png" alt-text="Voorbeeld-U R I voor een gegenereerd S A S-token voor Log Replay Service." border="false":::
 
-Het eerste deel, beginnend met `https://` totdat het vraag teken ( `?` ) wordt gebruikt voor de `StorageContainerURI` para meter die wordt ingevoerd als in de invoer voor LRS. Het biedt LRS informatie over de map waarin de database back-upbestanden worden opgeslagen.
+Het eerste deel, beginnend met tot het vraagteken ( ), wordt gebruikt voor de parameter die als `https://` `?` invoer voor `StorageContainerURI` LRS wordt ingevoerd. Het geeft LRS informatie over de map waarin back-upbestanden van de database worden opgeslagen.
 
-Het tweede deel, vanaf het vraag teken ( `?` ) en de andere manier tot het einde van de teken reeks, is de `StorageContainerSasToken` para meter. Dit is het werkelijke ondertekende verificatie token, dat geldig is voor de duur van de opgegeven tijd. Dit onderdeel hoeft niet noodzakelijkerwijs te beginnen `sp=` , zoals wordt weer gegeven in het voor beeld. Uw aanvraag kan anders zijn.
+Het tweede deel, beginnend na het vraagteken ( ) en helemaal tot het einde van de tekenreeks `?` gaat, is de `StorageContainerSasToken` parameter . Dit is het daadwerkelijk ondertekende verificatie-token, dat geldig is voor de duur van de opgegeven tijd. Dit onderdeel hoeft niet per se te beginnen met `sp=` , zoals wordt weergegeven in het voorbeeld. Uw case kan verschillen.
 
-Kopieer de para meters als volgt:
+Kopieer de parameters als volgt:
 
-1. Kopieer het eerste deel van het token, beginnend bij de `https://` weg tot het vraag teken ( `?` ). Gebruik deze als de `StorageContainerUri` para meter in Power shell of de Azure CLI voor het starten van LRS.
+1. Kopieer het eerste deel van het token, vanaf helemaal tot `https://` aan het vraagteken ( `?` ). Gebruik deze als `StorageContainerUri` parameter in PowerShell of de Azure CLI voor het starten van LRS.
 
-   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-uri-copy-part-01.png" alt-text="Scherm opname van het kopiëren van het eerste deel van het token.":::
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-uri-copy-part-01.png" alt-text="Schermopname van het kopiëren van het eerste deel van het token.":::
 
-2. Kopieer het tweede gedeelte van het token, beginnend bij het vraag teken ( `?` ), helemaal tot het einde van de teken reeks. Gebruik deze als de `StorageContainerSasToken` para meter in Power shell of de Azure CLI voor het starten van LRS.
+2. Kopieer het tweede deel van het token, beginnend vanaf het vraagteken ( ) tot aan `?` het einde van de tekenreeks. Gebruik deze als `StorageContainerSasToken` parameter in PowerShell of de Azure CLI voor het starten van LRS.
 
-   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-uri-copy-part-02.png" alt-text="Scherm opname van het kopiëren van het tweede gedeelte van het token.":::
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-uri-copy-part-02.png" alt-text="Schermopname van het kopiëren van het tweede deel van het token.":::
    
 > [!NOTE]
-> Neem het vraag teken niet op wanneer u een deel van het token kopieert.
+> Neem het vraagteken niet op wanneer u een van beide gedeelten van het token kopieert.
 
 ### <a name="log-in-to-azure-and-select-a-subscription"></a>Meld u aan bij Azure en selecteer een abonnement
 
-Gebruik de volgende Power shell-cmdlet om u aan te melden bij Azure:
+Gebruik de volgende PowerShell-cmdlet om u aan te melden bij Azure:
 
 ```powershell
 Login-AzAccount
 ```
 
-Selecteer het juiste abonnement waarin uw beheerde exemplaar zich bevindt met behulp van de volgende Power shell-cmdlet:
+Selecteer het juiste abonnement waarin uw beheerde exemplaar zich bevindt met behulp van de volgende PowerShell-cmdlet:
 
 ```powershell
 Select-AzSubscription -SubscriptionId <subscription ID>
@@ -261,17 +261,17 @@ Select-AzSubscription -SubscriptionId <subscription ID>
 
 ## <a name="start-the-migration"></a>De migratie starten
 
-U start de migratie door LRS te starten. U kunt de service starten in de modus automatisch aanvullen of doorlopend. 
+U start de migratie door LRS te starten. U kunt de service starten in de modus automatisch aanvullen of doorlopende modus. 
 
-Wanneer u de modus AutoAanvullen gebruikt, wordt de migratie automatisch voltooid wanneer de laatste van de opgegeven back-upbestanden zijn hersteld. Deze optie vereist dat de start opdracht de bestands naam van het laatste back-upbestand opgeeft. 
+Wanneer u de modus voor automatisch aanvullen gebruikt, wordt de migratie automatisch voltooien wanneer de laatste van de opgegeven back-upbestanden is hersteld. Voor deze optie is de startopdracht vereist om de bestandsnaam van het laatste back-upbestand op te geven. 
 
-Wanneer u de doorlopende modus gebruikt, herstelt de service voortdurend nieuwe back-upbestanden die zijn toegevoegd. De migratie wordt alleen op de hand matige cutover voltooid. 
+Wanneer u de continue modus gebruikt, herstelt de service voortdurend nieuwe back-upbestanden die zijn toegevoegd. De migratie wordt alleen voor de handmatige cutover voltooien. 
 
-### <a name="start-lrs-in-autocomplete-mode"></a>LRS starten in de modus automatisch aanvullen
+### <a name="start-lrs-in-autocomplete-mode"></a>LRS starten in de modus voor automatisch aanvullen
 
-Als u LRS in de modus automatisch aanvullen wilt starten, gebruikt u de volgende Power shell-of Azure CLI-opdrachten. Geef de naam van het laatste back-upbestand op met behulp van de `-LastBackupName` para meter. Wanneer de laatste van de opgegeven back-upbestanden worden teruggezet, initieert de service automatisch een cutover.
+Als u LRS in de modus voor automatisch aanvullen wilt starten, gebruikt u de volgende PowerShell- of Azure CLI-opdrachten. Geef de naam van het laatste back-upbestand op met behulp van de `-LastBackupName` parameter . Bij het herstellen van de laatste van de opgegeven back-upbestanden, start de service automatisch een cutover.
 
-Hier volgt een voor beeld van het starten van LRS in de modus automatisch volt ooien met behulp van Power shell:
+Hier is een voorbeeld van het starten van LRS in de modus voor automatisch aanvullen met behulp van PowerShell:
 
 ```PowerShell
 Start-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
@@ -284,7 +284,7 @@ Start-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
     -LastBackupName "last_backup.bak"
 ```
 
-Hier volgt een voor beeld van het starten van LRS in de modus automatisch volt ooien met behulp van de Azure CLI:
+Hier is een voorbeeld van het starten van LRS in de modus voor automatisch aanvullen met behulp van de Azure CLI:
 
 ```CLI
 az sql midb log-replay start -g mygroup --mi myinstance -n mymanageddb -a --last-bn "backup.bak"
@@ -292,9 +292,9 @@ az sql midb log-replay start -g mygroup --mi myinstance -n mymanageddb -a --last
     --storage-sas "sv=2019-02-02&ss=b&srt=sco&sp=rl&se=2023-12-02T00:09:14Z&st=2019-11-25T16:09:14Z&spr=https&sig=92kAe4QYmXaht%2Fgjocqwerqwer41s%3D"
 ```
 
-### <a name="start-lrs-in-continuous-mode"></a>LRS starten in doorlopende modus
+### <a name="start-lrs-in-continuous-mode"></a>LRS starten in continue modus
 
-Hier volgt een voor beeld van het starten van LRS in doorlopende modus met behulp van Power shell:
+Hier is een voorbeeld van het starten van LRS in de continue modus met behulp van PowerShell:
 
 ```PowerShell
 Start-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
@@ -304,7 +304,7 @@ Start-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
     -StorageContainerSasToken "sv=2019-02-02&ss=b&srt=sco&sp=rl&se=2023-12-02T00:09:14Z&st=2019-11-25T16:09:14Z&spr=https&sig=92kAe4QYmXaht%2Fgjocqwerqwer41s%3D"
 ```
 
-Hier volgt een voor beeld van het starten van LRS in de continue modus met behulp van de Azure CLI:
+Hier is een voorbeeld van het starten van LRS in de continue modus met behulp van de Azure CLI:
 
 ```CLI
 az sql midb log-replay start -g mygroup --mi myinstance -n mymanageddb
@@ -312,28 +312,28 @@ az sql midb log-replay start -g mygroup --mi myinstance -n mymanageddb
     --storage-sas "sv=2019-02-02&ss=b&srt=sco&sp=rl&se=2023-12-02T00:09:14Z&st=2019-11-25T16:09:14Z&spr=https&sig=92kAe4QYmXaht%2Fgjocqwerqwer41s%3D"
 ```
 
-Power shell-en CLI-clients om LRS te starten in de continue modus zijn synchroon. Dit betekent dat clients wachten tot de API-reactie rapporteert over geslaagde of mislukte pogingen om de taak te starten. 
+PowerShell- en CLI-clients om LRS in de continue modus te starten, zijn synchroon. Dit betekent dat clients wachten tot de API-reactie rapporteert dat de taak is geslaagd of mislukt. 
 
-Tijdens deze wacht tijd wordt de opdracht niet teruggestuurd naar de opdracht prompt. Als u de migratie-ervaring bijwerkt en u de LRS-start opdracht nodig hebt om het besturings element direct te laten door gaan met de rest van het script, kunt u Power shell uitvoeren als een achtergrond taak met de `-AsJob` Switch. Bijvoorbeeld:
+Tijdens deze wachttijd wordt het besturingselement niet door de opdrachtprompt terug gegeven. Als u een script maakt voor de migratie-ervaring en u de LRS-startopdracht nodig hebt om het beheer direct terug te geven om door te gaan met de rest van het script, kunt u PowerShell uitvoeren als achtergrondopdracht met de `-AsJob` switch. Bijvoorbeeld:
 
 ```PowerShell
 $lrsjob = Start-AzSqlInstanceDatabaseLogReplay <required parameters> -AsJob
 ```
 
-Wanneer u een achtergrond taak start, retourneert een taak object onmiddellijk, zelfs als de taak een lange tijd kost om te volt ooien. U kunt zonder onderbreking in de sessie blijven werken terwijl de taak wordt uitgevoerd. Zie de documentatie voor [Power shell-start taken](/powershell/module/microsoft.powershell.core/start-job#description) voor meer informatie over het uitvoeren van Power shell als een achtergrond taak.
+Wanneer u een achtergrond job start, retourneert een taakobject onmiddellijk, zelfs als het langer duurt om de taak te voltooien. U kunt zonder onderbreking in de sessie blijven werken terwijl de taak wordt uitgevoerd. Zie de PowerShell [Start-Job-documentatie](/powershell/module/microsoft.powershell.core/start-job#description) voor meer informatie over het uitvoeren van PowerShell als achtergrond taak.
 
-Als u een Azure CLI-opdracht op Linux als achtergrond proces wilt starten, gebruikt u het en `&` -teken () aan het einde van de LRS-start opdracht:
+Als u een Azure CLI-opdracht in Linux wilt starten als achtergrondproces, gebruikt u ook het en-en-achteren () aan het einde van de `&` LRS-startopdracht:
 
 ```CLI
 az sql midb log-replay start <required parameters> &
 ```
 
 > [!IMPORTANT]
-> Nadat u LRS hebt gestart, worden alle door het systeem beheerde software patches gedurende 47 uur gestopt. Na dit venster wordt de volgende geautomatiseerde software patch automatisch gestopt LRS. Als dat gebeurt, kunt u de migratie niet hervatten en moet u deze helemaal opnieuw opstarten. 
+> Nadat u LRS hebt start, worden alle door het systeem beheerde softwarepatches 47 uur gestopt. Na dit venster stopt de volgende geautomatiseerde softwarepatch LRS automatisch. Als dat gebeurt, kunt u de migratie niet hervatten en moet u de migratie opnieuw starten. 
 
 ## <a name="monitor-the-migration-progress"></a>De voortgang van de migratie bewaken
 
-Als u de voortgang van de migratie via Power shell wilt controleren, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om de voortgang van de migratie te controleren via PowerShell:
 
 ```PowerShell
 Get-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
@@ -341,7 +341,7 @@ Get-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
     -Name "ManagedDatabaseName"
 ```
 
-Als u de voortgang van de migratie via de Azure CLI wilt bewaken, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om de voortgang van de migratie via de Azure CLI te bewaken:
 
 ```CLI
 az sql midb log-replay show -g mygroup --mi myinstance -n mymanageddb
@@ -349,9 +349,9 @@ az sql midb log-replay show -g mygroup --mi myinstance -n mymanageddb
 
 ## <a name="stop-the-migration"></a>De migratie stoppen
 
-Als u de migratie wilt stoppen, gebruikt u de volgende cmdlets. Als de migratie wordt gestopt, wordt de data base die wordt teruggezet op een SQL-beheerd exemplaar verwijderd, waardoor het hervatten van de migratie niet mogelijk is.
+Als u de migratie wilt stoppen, gebruikt u de volgende cmdlets. Als u de migratie stopt, wordt de herstellende database op SQL Managed Instance verwijderd, dus het is niet mogelijk om de migratie te hervat.
 
-Als u wilt stoppen met het migratie proces via Power shell, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om het migratieproces via PowerShell te stoppen:
 
 ```PowerShell
 Stop-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
@@ -359,17 +359,17 @@ Stop-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
     -Name "ManagedDatabaseName"
 ```
 
-Als u het migratie proces wilt stoppen via de Azure CLI, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om het migratieproces via de Azure CLI te stoppen:
 
 ```CLI
 az sql midb log-replay stop -g mygroup --mi myinstance -n mymanageddb
 ```
 
-## <a name="complete-the-migration-continuous-mode"></a>De migratie volt ooien (doorlopende modus)
+## <a name="complete-the-migration-continuous-mode"></a>De migratie voltooien (continue modus)
 
-Als u de LRS in de continue modus hebt gestart, kunt u, nadat u hebt gecontroleerd of alle back-ups zijn hersteld, de migratie volt ooien door de cutover te initiëren. Na de cutover wordt de data base gemigreerd en gereed voor lees-en schrijf toegang.
+Als u LRS in de continue modus hebt gestart en u ervoor hebt gezorgd dat alle back-ups zijn hersteld, wordt de migratie voltooid door de cutover te initiëren. Na de cutover wordt de database gemigreerd en gereed voor lees- en schrijftoegang.
 
-Gebruik de volgende opdracht om het migratie proces in de doorlopende modus LRS via Power shell te volt ooien:
+Gebruik de volgende opdracht om het migratieproces in de continue modus van LRS via PowerShell te voltooien:
 
 ```PowerShell
 Complete-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
@@ -378,7 +378,7 @@ Complete-AzSqlInstanceDatabaseLogReplay -ResourceGroupName "ResourceGroup01" `
 -LastBackupName "last_backup.bak"
 ```
 
-Gebruik de volgende opdracht om het migratie proces in de doorlopende modus LRS te volt ooien via de Azure CLI:
+Gebruik de volgende opdracht om het migratieproces in de continue modus van LRS via de Azure CLI te voltooien:
 
 ```CLI
 az sql midb log-replay complete -g mygroup --mi myinstance -n mymanageddb --last-backup-name "backup.bak"
@@ -386,28 +386,28 @@ az sql midb log-replay complete -g mygroup --mi myinstance -n mymanageddb --last
 
 ## <a name="functional-limitations"></a>Functionele beperkingen
 
-De functionele beperkingen van LRS zijn:
-- De data base die u wilt herstellen, kan niet worden gebruikt voor alleen-lezen toegang tijdens het migratie proces.
-- Door het systeem beheerde software patches worden gedurende 47 uur geblokkeerd nadat LRS is gestart. Nadat dit tijd venster is verlopen, stopt de volgende software-update LRS. U moet LRS vervolgens helemaal opnieuw opstarten.
-- LRS vereist dat er een back-up van de data bases op SQL Server worden gemaakt met de `CHECKSUM` optie ingeschakeld.
-- Het SAS-token dat LRS gebruikt, moet worden gegenereerd voor de hele Azure Blob Storage-container en mag alleen lees-en lijst machtigingen hebben.
-- Back-upbestanden voor verschillende data bases moeten in afzonderlijke mappen op Blob Storage worden geplaatst.
-- LRS moet afzonderlijk worden gestart voor elke Data Base die verwijst naar mappen met back-upbestanden op Blob Storage.
-- LRS kan Maxi maal 100 gelijktijdige herstel processen per één beheerd exemplaar ondersteunen.
+Functionele beperkingen van LRS zijn:
+- De database die u herstelt, kan niet worden gebruikt voor alleen-lezentoegang tijdens het migratieproces.
+- Door het systeem beheerde softwarepatches worden 47 uur na het starten van LRS geblokkeerd. Nadat dit tijdvenster is verlopen, stopt de volgende software-update LRS. Vervolgens moet u LRS opnieuw opstarten.
+- LRS vereist dat er back SQL Server databases worden opgeslagen met `CHECKSUM` de optie ingeschakeld.
+- Het SAS-token dat door LRS wordt gebruikt, moet worden gegenereerd voor de Azure Blob Storage container en moet alleen lees- en lijstmachtigingen hebben.
+- Back-upbestanden voor verschillende databases moeten worden geplaatst in afzonderlijke mappen op Blob Storage.
+- LRS moet afzonderlijk worden gestart voor elke database die naar afzonderlijke mappen met back-upbestanden op Blob Storage.
+- LRS kan maximaal 100 gelijktijdige herstelprocessen per beheerd exemplaar ondersteunen.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Nadat u LRS hebt gestart, gebruikt u de bewakings-cmdlet ( `get-azsqlinstancedatabaselogreplay` of `az_sql_midb_log_replay_show` ) om de status van de bewerking weer te geven. Als LRS na enige tijd niet kan worden gestart en u een fout melding krijgt, controleert u de meest voorkomende problemen:
+Nadat u LRS hebt start, gebruikt u de bewakings-cmdlet ( `get-azsqlinstancedatabaselogreplay` of ) om de status van de bewerking te `az_sql_midb_log_replay_show` bekijken. Als LRS na enige tijd niet kan worden starten en er een foutmelding wordt weergegeven, controleert u op de meest voorkomende problemen:
 
-- Heeft een bestaande data base in een SQL Managed instance dezelfde naam als het exemplaar dat u probeert te migreren van SQL Server? Los dit conflict op door de naam van een van de data bases te wijzigen.
-- Is de data base-back-up op SQL Server gemaakt via de `CHECKSUM` optie?
-- Zijn de machtigingen voor de SAS-token alleen lezen en worden ze weer geven voor LRS?
-- Hebt u het SAS-token voor LRS gekopieerd na het vraag teken ( `?` ), waarbij inhoud begint als volgt: `sv=2020-02-10...` ? 
-- Is de geldigheids duur van het SAS-token van toepassing op het tijd venster voor het starten en volt ooien van de migratie? Er zijn mogelijk niet-overeenkomende problemen als gevolg van de verschillende tijd zones die worden gebruikt voor SQL Managed instance en het SAS-token. Probeer het SAS-token opnieuw te genereren en de geldigheid van het token uit te breiden van het tijd venster vóór en na de huidige datum.
-- Zijn de database naam, de naam van de resource groep en de naam van de beheerde instantie correct gespeld?
-- Als u LRS in de modus AutoAanvullen hebt gestart, was een geldige bestands naam voor het laatst opgegeven back-upbestand?
+- Heeft een bestaande database SQL Managed Instance dezelfde naam als de database die u wilt migreren vanuit SQL Server? Los dit conflict op door de naam van een van de databases te wijzigen.
+- Is de back-up van de database SQL Server gemaakt via de `CHECKSUM` optie ?
+- Worden de machtigingen voor het SAS-token alleen gelezen en vermeld voor LRS?
+- Hebt u het SAS-token voor LRS na het vraagteken ( ) kopiëren, met `?` inhoud die als het volgende begint: `sv=2020-02-10...` ? Â 
+- Is de geldigheidsduur van het SAS-token van toepassing op het tijdvenster van het starten en voltooien van de migratie? Er kunnen verschillen zijn vanwege de verschillende tijdzones die worden gebruikt voor SQL Managed Instance en het SAS-token. Probeer het SAS-token opnieuw te maken en de geldigheid van het token voor en na de huidige datum uit te breiden.
+- Zijn de databasenaam, de naam van de resourcegroep en de naam van het beheerde exemplaar correct gespeld?
+- Als u LRS in de modus voor automatisch aanvullen hebt gestart, is er dan een geldige bestandsnaam opgegeven voor het laatste back-upbestand?
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [het migreren van SQL Server naar SQL Managed instance](../migration-guides/managed-instance/sql-server-to-managed-instance-guide.md).
-- Meer informatie over [verschillen tussen SQL Server en SQL Managed instance](transact-sql-tsql-differences-sql-server.md).
-- Meer informatie over [Best practices voor werk belastingen die zijn gemigreerd naar Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-costs).
+- Meer informatie over [het migreren van SQL Server naar SQL Managed Instance](../migration-guides/managed-instance/sql-server-to-managed-instance-guide.md).
+- Meer informatie over [de verschillen SQL Server en SQL Managed Instance](transact-sql-tsql-differences-sql-server.md).
+- Meer informatie over [best practices voor kosten en grootte van workloads die naar Azure zijn gemigreerd.](/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-costs)

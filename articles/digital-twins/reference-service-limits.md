@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: article
 ms.service: digital-twins
-ms.openlocfilehash: 46f378baad51e959f8b3c074cc24e5bbdfdd95d4
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 15c76bc042cb66dafbdeebac2951f5cb68310aa4
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389601"
+ms.locfileid: "107482788"
 ---
 # <a name="azure-digital-twins-service-limits"></a>Azure Digital Twins servicelimieten
 
@@ -29,7 +29,7 @@ Dit zijn de servicelimieten van Azure Digital Twins.
 
 ## <a name="working-with-limits"></a>Werken met limieten
 
-Wanneer een limiet is bereikt, beperkt de service extra aanvragen. Dit resulteert in een 404-foutreactie van deze aanvragen.
+Wanneer een limiet is bereikt, beperkt de service extra aanvragen. Dit resulteert in een 429-foutreactie van deze aanvragen.
 
 Hier volgen enkele aanbevelingen voor het werken met limieten om dit te beheren.
 * **Logica voor opnieuw proberen gebruiken.** De [Azure Digital Twins SDK's](how-to-use-apis-sdks.md) implementeren logica voor opnieuw proberen voor mislukte aanvragen, dus als u met een opgegeven SDK werkt, is dit al ingebouwd. U kunt ook logica voor opnieuw proberen implementeren in uw eigen toepassing. De service stuurt een header terug in de foutreactie, die u kunt gebruiken om te bepalen hoe lang moet worden gewacht `Retry-After` voordat het opnieuw wordt gedaan.

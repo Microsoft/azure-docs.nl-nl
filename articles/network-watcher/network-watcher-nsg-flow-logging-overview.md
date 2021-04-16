@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: 206bcfaeb5cb13d3ecf1e5f6335518c42df21eb8
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: f737be68a28f95ab5402ba5ea08e85fcf1b04d37
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/16/2021
-ms.locfileid: "107535286"
+ms.locfileid: "107565896"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
@@ -39,7 +39,7 @@ Stroomlogboeken zijn de bron van waarheid voor alle netwerkactiviteit in uw clou
 
 **Bewaking en optimalisatie van gebruik:** Identificeer de belangrijkste gespreksmakers in uw netwerk. Combineren met GeoIP-gegevens om verkeer tussen regio's te identificeren. Meer inzicht in de groei van het verkeer voor capaciteitsprognoses. Gebruik gegevens om al te beperkende verkeersregels te verwijderen.
 
-**Naleving:** Stroomgegevens gebruiken om netwerkisolatie en naleving van toegangsregels voor ondernemingen te controleren
+**Naleving:** stroomgegevens gebruiken om netwerkisolatie en naleving van toegangsregels voor ondernemingen te controleren
 
 **Forensische netwerkanalyse & beveiligingsanalyse:** analyseer netwerkstromen van aangetaste IP's en netwerkinterfaces. Stroomlogboeken exporteren naar een SIEM- of IDS-hulpprogramma van uw keuze.
 
@@ -62,18 +62,18 @@ Stroomlogboeken zijn de bron van waarheid voor alle netwerkactiviteit in uw clou
 - Een netwerkbeveiligingsgroep (NSG) bevat een lijst met beveiligingsregels die netwerkverkeer toestaan _of_ weigeren in resources waarmee deze is verbonden. NSG's kunnen worden gekoppeld aan subnetten, afzonderlijke VM's of afzonderlijke netwerkinterfaces (NIC's) die zijn gekoppeld aan VM's (Resource Manager). Zie Overzicht van netwerkbeveiligingsgroep [voor meer informatie.](../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)
 - Alle verkeersstromen in uw netwerk worden geëvalueerd met behulp van de regels in de toepasselijke NSG.
 - Het resultaat van deze evaluaties zijn NSG-stroomlogboeken. Stroomlogboeken worden verzameld via het Azure-platform en hoeven niet te worden gewijzigd in de resources van de klant.
-- Opmerking: regels zijn van twee typen: het beëindigen & niet-beëindigen, elk met verschillende gedragingen voor logboekregistratie.
-- - NSG-regels voor weigeren worden beëindigen. De NSG die het verkeer weigert, registreert het in stroomlogboeken en de verwerking wordt in dit geval gestopt nadat een NSG het verkeer weigert. 
-- - Regels voor het toestaan van NSG's zijn niet-beëindigend, wat betekent dat zelfs als één NSG dit toestaat, de verwerking wordt voortgezet naar de volgende NSG. De laatste NSG die verkeer toestaat, registreert het verkeer in Flow-logboeken.
+- Opmerking: regels zijn van twee typen: het & beëindigen, elk met verschillende gedragingen voor logboekregistratie.
+- - NSG-regels voor weigeren worden beëindigen. De NSG die het verkeer weigert, registreert het in Flow-logboeken en de verwerking in dit geval wordt gestopt nadat een NSG verkeer weigert. 
+- - Regels voor het toestaan van NSG's zijn niet-af te ronden, wat betekent dat zelfs als één NSG dit toestaat, de verwerking wordt voortgezet naar de volgende NSG. De laatste NSG die verkeer toestaat, registreert het verkeer in Flow-logboeken.
 - NSG-stroomlogboeken worden geschreven naar opslagaccounts van waar ze toegankelijk zijn.
-- U kunt stroomlogboeken exporteren, verwerken, analyseren en visualiseren met behulp van hulpprogramma's zoals TA, Splunk, Grafana, Stealthwatch, enzovoort.
+- U kunt stroomlogboeken exporteren, verwerken, analyseren en visualiseren met hulpprogramma's zoals TA, Splunk, Grafana, Stealthwatch, enzovoort.
 
 ## <a name="log-format"></a>Logboekindeling
 
 Stroomlogboeken bevatten de volgende eigenschappen:
 
 * **time:** het tijdstip waarop de gebeurtenis is geregistreerd
-* **systemId:** systeem-id van netwerkbeveiligingsgroep.
+* **systemId** : systeem-id van netwerkbeveiligingsgroep.
 * **category:** de categorie van de gebeurtenis. De categorie is altijd **NetworkSecurityGroupFlowEvent**
 * **resourceid:** de resource-id van de NSG
 * **operationName** - Altijd NetworkSecurityGroupFlowEvents
@@ -83,27 +83,27 @@ Stroomlogboeken bevatten de volgende eigenschappen:
         * **regel:** regel waarvoor de stromen worden vermeld
             * **flows:** een verzameling stromen
                 * **mac:** het MAC-adres van de NIC voor de VM waarop de stroom is verzameld
-                * **flowTuples:** een tekenreeks met meerdere eigenschappen voor de stroom-tuple in door komma's gescheiden indeling
-                    * **Tijdstempel:** deze waarde is het tijdstempel van wanneer de stroom heeft plaatsgevonden in UNIX-epoche-indeling
+                * **flowTuples:** een tekenreeks die meerdere eigenschappen bevat voor de stroom-tuple in door komma's gescheiden indeling
+                    * **Tijdstempel:** deze waarde is het tijdstempel van wanneer de stroom zich in UNIX-epoche-indeling heeft voorgedaan
                     * **Bron-IP:** het bron-IP-adres
-                    * **Doel-IP:** het doel-IP-adres
+                    * **Doel-IP-** het doel-IP-adres
                     * **Bronpoort:** de bronpoort
                     * **Doelpoort:** de doelpoort
                     * **Protocol:** het protocol van de stroom. Geldige waarden zijn **T** voor TCP en **U** voor UDP
                     * **Verkeersstroom:** de richting van de verkeersstroom. Geldige waarden zijn **I** voor inkomende en **O** voor uitgaand verkeer.
-                    * **Beslissing over verkeer:** of verkeer is toegestaan of geweigerd. Geldige waarden zijn **A** voor toegestaan en **D** voor geweigerd.
-                    * **Stroomtoestand : alleen versie 2:** legt de status van de stroom vast. Mogelijke statussen zijn **B**: Begin, wanneer een stroom wordt gemaakt. Er worden geen statistische gegevens geleverd. **C**: Continu, voor een actieve stroom. Statistische gegevens worden geleverd met intervallen van 5 minuten. **E**: Eind, wanneer een stroom is beëindigd. Er worden statistische gegevens geleverd.
-                    * **Pakketten - bron naar doel - alleen versie 2** Het totale aantal TCP- of UDP-pakketten dat sinds de laatste update van de bron naar de bestemming is verzonden.
-                    * **Verzonden bytes - bron naar doel - alleen versie 2** Het totale aantal TCP- of UDP-pakket bytes dat sinds de laatste update van de bron naar de bestemming is verzonden. Pakketbytes omvatten de pakket-header en -nettolading.
-                    * **Pakketten - Doel naar bron - alleen versie 2** Het totale aantal TCP- of UDP-pakketten dat sinds de laatste update van het doel naar de bron is verzonden.
-                    * **Verzonden bytes - Doel naar bron - alleen versie 2** Het totale aantal TCP- en UDP-pakket bytes dat sinds de laatste update van het doel naar de bron is verzonden. Pakketbytes omvatten een pakket-header en -nettolading.
+                    * **Verkeersbeslissing:** of verkeer is toegestaan of geweigerd. Geldige waarden zijn **A** voor toegestaan en **D** voor geweigerd.
+                    * **Stroomtoestand: alleen versie 2:** legt de status van de stroom vast. Mogelijke statussen zijn **B**: Begin, wanneer een stroom wordt gemaakt. Er worden geen statistische gegevens geleverd. **C**: Continu, voor een actieve stroom. Statistische gegevens worden geleverd met intervallen van 5 minuten. **E**: Eind, wanneer een stroom is beëindigd. Er worden statistische gegevens geleverd.
+                    * **Pakketten - bron naar doel - alleen versie 2** Het totale aantal TCP-pakketten dat sinds de laatste update van de bron naar de bestemming is verzonden.
+                    * **Verzonden bytes - bron naar doel - alleen versie 2** Het totale aantal TCP-pakket bytes dat sinds de laatste update is verzonden van de bron naar het doel. Pakketbytes omvatten de pakket-header en -nettolading.
+                    * **Pakketten - Doel naar bron - alleen versie 2** Het totale aantal TCP-pakketten dat sinds de laatste update van het doel naar de bron is verzonden.
+                    * **Verzonden bytes - doel naar bron - alleen versie 2** Het totale aantal TCP-pakket bytes dat sinds de laatste update van doel naar bron is verzonden. Pakketbytes omvatten een pakket-header en -nettolading.
 
 
 **NSG-stroomlogboeken versie 2 (versus versie 1)** 
 
 Versie 2 van de logboeken introduceert het concept stroomtoestand. U kunt configureren welke versie van stroomlogboeken u ontvangt.
 
-Stroomtoestand _B_ wordt vastgelegd wanneer een stroom wordt gestart. Stroomtoestand _C_ en stroomtoestand _E_ zijn statussen die respectievelijk het vervolg van een stroom en stroombeëindiging markeren. Beide _C-_ en _E-staten_ bevatten informatie over de bandbreedte van het verkeer.
+Stroomtoestand _B_ wordt vastgelegd wanneer een stroom wordt gestart. Stroomtoestand _C_ en stroomtoestand _E_ zijn statussen die respectievelijk het vervolg van een stroom en stroombeëindiging markeren. De _C-_ en _E-staten_ bevatten informatie over de bandbreedte van het verkeer.
 
 ### <a name="sample-log-records"></a>Voorbeeldlogboekrecords
 
@@ -298,16 +298,16 @@ De volgende tekst is een voorbeeld van een stroomlogboek. Zoals u ziet, zijn er 
 
 **Berekening van steekproefbandbreedte**
 
-Stroom-tuples van een TCP-gesprek tussen 185.170.185.105:35370 en 10.2.0.4:23:
+Flow tuples from a TCP conversation between 185.170.185.105:35370 and 10.2.0.4:23:
 
-"1493763938,185.170.185.105,10.2.0.4,35370,23,T,I,A,B,,,," "1493695838,185.170.185.105,10.2.0.4,35370,23,T,I,A,C,1021,588096,8005,4610880" "1493696138,185.170.18 5.105,10.2.0.4,35370,23,T,I,A,E,52,29952,47,27072"
+"1493763938,185.170.185.105,10.2.0.4,35370,23,T,I,A,B,,,," "1493695838,185.170.185.105,10.2.0.4,35370,23,T,I,A,C,1021,588096,8005,4610880" "1493696138,185.170.18 5.105.10.2.0.4.35370,23,T,I,A,E,52.29952,47.27072"
 
-Voor de _vervolg-C-_ en _eind-E-stroom_ zijn het aantal byten en pakketten geaggregeerde tellingen van het tijdstip van de vorige stroom-tuplerecord. Verwijzend naar het vorige voorbeeldgesprek is het totale aantal overgedragen pakketten 1021+52+8005+47 = 9125. Het totale aantal overgedragen bytes is 588096+29952+4610880+27072 = 5256000.
+Voor de _vervolg-C-_ en _eind-E-stroom_ worden het aantal byten en pakketten geaggregeerd vanaf het tijdstip van de vorige stroom-tuplerecord. Verwijzend naar het vorige voorbeeldgesprek is het totale aantal overgedragen pakketten 1021+52+8005+47 = 9125. Het totale aantal overgedragen bytes is 588096+29952+4610880+27072 = 5256000.
 
 
 ## <a name="enabling-nsg-flow-logs"></a>NSG-stroomlogboeken inschakelen
 
-Gebruik de relevante koppeling van hieronder voor hulp bij het inschakelen van stroomlogboeken.
+Gebruik de relevante koppeling hieronder voor hulp bij het inschakelen van stroomlogboeken.
 
 - [Azure-portal](./network-watcher-nsg-flow-logging-portal.md)
 - [PowerShell](./network-watcher-nsg-flow-logging-powershell.md)
@@ -323,7 +323,7 @@ Navigeer Azure Portal de sectie NSG-stroomlogboeken in Network Watcher. Klik ver
 
 **PS/CLI/REST/ARM**
 
-Als u parameters wilt bijwerken via opdrachtregelprogramma's, gebruikt u dezelfde opdracht als voor het inschakelen van stroomlogboeken (van hierboven), maar met bijgewerkte parameters die u wilt wijzigen.
+Als u parameters wilt bijwerken via opdrachtregelprogramma's, gebruikt u dezelfde opdracht als voor het inschakelen van stroomlogboeken (hierboven), maar met bijgewerkte parameters die u wilt wijzigen.
 
 ## <a name="working-with-flow-logs"></a>Werken met Stroomlogboeken
 
@@ -372,11 +372,11 @@ Wanneer een NSG wordt verwijderd, wordt standaard ook de bijbehorende stroomlogb
 
 **Problemen met door de gebruiker gedefinieerde binnenkomende TCP-regels:** [netwerkbeveiligingsgroepen (NSG's)](../virtual-network/network-security-groups-overview.md) worden geïmplementeerd als een [stateful firewall.](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true) Vanwege de huidige platformbeperkingen worden door de gebruiker gedefinieerde regels die van invloed zijn op binnenkomende TCP-stromen echter op een staatloze manier geïmplementeerd. Als gevolg dit worden stromen die worden beïnvloed door door de gebruiker gedefinieerde regels voor binnenkomende gegevens, niet-beëindigend. Daarnaast worden byte- en pakkettellingen niet vastgelegd voor deze stromen. Het aantal bytes en pakketten dat wordt gerapporteerd in NSG-stroomlogboeken (en Traffic Analytics) kan daarom verschillen van het werkelijke aantal. Een opt-in-vlag die deze problemen verhelpt, is gepland om beschikbaar te zijn vanaf maart 2021. In de tussentijd kunnen klanten die ernstige problemen hebben als gevolg van dit gedrag zich via ondersteuning aanvragen. U kunt een ondersteuningsaanvraag indienen onder Network Watcher > NSG-stroomlogboeken.  
 
-Binnenkomende stromen die zijn geregistreerd van internet-IP's naar VM's zonder openbare IP-adressen: VM's die geen openbaar IP-adres hebben dat is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als een openbaar IP-adres op exemplaarniveau of die deel uitmaken van een basis-load balancer-back-endpool, gebruiken [standaard-SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat is toegewezen door Azure om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk vermeldingen in het stroomlogboek voor stromen van IP-adressen via internet, als de stroom is bestemd voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel deze stromen niet naar de VM worden toegestaan, wordt de poging geregistreerd en wordt deze Network Watcher in het NSG-stroomlogboek van de VM weergegeven. We raden u aan om ongewenst inkomende internetverkeer expliciet te blokkeren met NSG.
+Binnenkomende stromen die zijn geregistreerd van internet-IP's naar VM's zonder openbare IP-adressen: VM's die geen openbaar IP-adres hebben dat is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als een openbaar IP-adres op exemplaarniveau of die deel uitmaken van een basis-load balancer-back-endpool, gebruiken [standaard-SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat door Azure is toegewezen om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk vermeldingen in het stroomlogboek voor stromen van IP-adressen via internet, als de stroom is bestemd voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel deze stromen niet naar de VM worden toegestaan, wordt de poging geregistreerd en wordt deze Network Watcher in het NSG-stroomlogboek van de VM weergegeven. We raden u aan om ongewenst inkomende internetverkeer expliciet te blokkeren met NSG.
 
 **Probleem met Application Gateway V2-subnet-NSG:** stroomregistratie op de toepassingsgateway V2-subnet-NSG [wordt momenteel niet](../application-gateway/application-gateway-faq.yml#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) ondersteund. Dit probleem heeft geen invloed op Application Gateway V1.
 
-**Niet-compatibele** services: Vanwege de huidige platformbeperkingen wordt een kleine set Azure-services niet ondersteund door NSG-stroomlogboeken. De huidige lijst met niet-compatibele services is
+**Niet-compatibele** services: Vanwege de huidige platformbeperkingen wordt een kleine set Azure-services niet ondersteund door NSG-stroomlogboeken. De huidige lijst met incompatibele services is
 - [Azure Kubernetes Services (AKS)](https://azure.microsoft.com/services/kubernetes-service/)
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 
@@ -444,7 +444,7 @@ NSG-stroomlogboeken zijn compatibel met service-eindpunten zonder extra configur
 
 **Wat is het verschil tussen stroomlogboeken versie 1 & 2?**
 
-Stroomlogboeken versie 2 introduceert het concept _stroomtoestand_ & slaat informatie op over verzonden bytes en pakketten. [Meer informatie](#log-format)
+Stroomlogboeken versie 2 introduceert het concept stroomtoestand _&_ slaat informatie op over verzonden bytes en pakketten. [Meer informatie](#log-format)
 
 ## <a name="pricing"></a>Prijzen
 

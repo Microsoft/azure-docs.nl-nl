@@ -215,7 +215,7 @@
             - name: Aanbevelingen voor prestaties
               href: concepts-performance-recommendations.md
               displayName: 'query store, performance, optimize, recommendations'
-            - name: Aanbevelingen voor Azure Advisor
+            - name: Azure Advisor aanbevelingen
               href: concepts-azure-advisor-recommendations.md
         - name: Ontwikkeling van apps
           items:
@@ -569,7 +569,7 @@
       items:
         - name: Servergroep maken
           items:
-            - name: Basic-laag (preview-versie)
+            - name: Basic-laag (preview)
               href: quickstart-create-hyperscale-basic-tier.md
             - name: Standaardlaag
               href: quickstart-create-hyperscale-portal.md
@@ -630,7 +630,7 @@
               href: concepts-hyperscale-monitoring.md
             - name: Auditlogboeken
               href: concepts-hyperscale-audit.md
-        - name: Kolom opslag
+        - name: Kolomopslag
           href: concepts-hyperscale-columnar.md
         - name: Configuratie-opties
           href: concepts-hyperscale-configuration-options.md
@@ -684,6 +684,10 @@
             - name: Toegang tot logboeken van database
               href: howto-hyperscale-logging.md
               displayName: 'log, hyperscale'
+        - name: Servergroep herstellen
+          items:
+            - name: Azure Portal
+              href: howto-hyperscale-restore-portal.md
         - name: Belangrijke versie-upgrades
           href: howto-hyperscale-upgrade.md
         - name: Problemen oplossen

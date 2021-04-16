@@ -1,21 +1,21 @@
 ---
 title: Contactgegevens voor een Azure-factureringsaccount wijzigen
 description: Beschrijft hoe u de contactgegevens voor uw Azure-factureringsaccount kunt wijzigen
-author: genlin
-ms.reviewer: dcscontentpm
+author: bandersmsft
+ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/26/2020
+ms.date: 04/08/2021
 ms.author: banders
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 776c207387ee55b998615131baf77e6c13655b49
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: f394b6b44b2030253f7b78ec68459819c82c3c27
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033934"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107480899"
 ---
 # <a name="change-contact-information-for-an-azure-billing-account"></a>Contactgegevens voor een Azure-factureringsaccount wijzigen
 
@@ -64,6 +64,21 @@ Als u de gegevens van uw Azure Active Directory-gebruikersprofiel wilt bijwerken
     ![Schermopname die laat zien waar het adres wordt bijgewerkt](./media/change-azure-account-profile/update-bill-to-list-properties-mca.png)
 1. Voer het nieuwe adres in en selecteer vervolgens **Opslaan**.  
     ![Schermopname van het bijwerken van het adres](./media/change-azure-account-profile/update-bill-to-save-mca.png)
+
+## <a name="update-a-po-number"></a>Een po-nummer bijwerken
+
+Een factuur voor het factureringsprofiel heeft standaard geen bijbehorend po-nummer. Nadat u een po-nummer voor een factureringsprofiel hebt toevoegen, wordt dit weergegeven op facturen voor het factureringsprofiel.
+
+Gebruik de volgende stappen om het po-nummer voor een factureringsprofiel toe te voegen of te wijzigen.
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Zoek naar **Cost Management + Billing** selecteer vervolgens **Factureringsbereiken.**
+1. Selecteer uw factureringsbereik.
+1. Selecteer in het menu links **onder Facturering** de optie **Factureringsprofielen.**
+1. Selecteer het juiste factureringsprofiel.
+1. Selecteer eigenschappen in het menu links **onder** **Instellingen.**
+1. Selecteer **Po-nummer bijwerken.**
+1. Voer een po-nummer in en selecteer **bijwerken.**
 
 ## <a name="service-and-marketing-emails"></a>E-mail voor service en marketing
 

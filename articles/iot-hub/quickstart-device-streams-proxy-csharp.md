@@ -1,20 +1,20 @@
 ---
-title: Quick Start-Azure IoT Hub Device streams C# Quick start voor SSH en RDP
+title: 'Quickstart: Azure IoT Hub C#-snelstart voor SSH en RDP'
 description: In deze quickstart voert u twee C#-voorbeeldtoepassingen uit waarmee SSH- en RDP-scenario's via een IoT Hub-apparaatstream mogelijk zijn.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: quickstart
-ms.custom: references_regions
+ms.custom: references_regions, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 12e26818f86fc4abdc1873d031182fd994c04687
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3bca2701b708bfb957dce1c954f43f60f55b7dae
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98624368"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107479938"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Snelstart: Schakel SSH en RDP in via een IoT Hub-apparaatstream, met behulp van een C#-proxy-toepassing (preview)
 

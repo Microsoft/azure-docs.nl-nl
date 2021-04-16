@@ -1,41 +1,41 @@
 ---
-title: Gegevens extractie-LUIS
-description: Gegevens uit utterance-tekst ophalen met intents en entiteiten. Meer informatie over wat voor soort gegevens kan worden geëxtraheerd uit Language Understanding (LUIS).
+title: Gegevensextractie - LUIS
+description: Extraheert gegevens uit utterancetekst met intenties en entiteiten. Ontdek wat voor soort gegevens kunnen worden geëxtraheerd uit Language Understanding (LUIS).
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/01/2020
-ms.openlocfilehash: e6f01354bb5aa2b78d3c9962bac49be39dd2c81f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/13/2021
+ms.openlocfilehash: dd7d113b1c23a0afec82a346e0f7baa1254ebbed
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "95025990"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500138"
 ---
-# <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Gegevens uit utterance-tekst ophalen met intents en entiteiten
-LUIS biedt u de mogelijkheid om gegevens op te halen uit de uitingen van de natuurlijke taal van een gebruiker. De gegevens worden geëxtraheerd op een manier die kan worden gebruikt door een programma, toepassing of chat-bot om actie te ondernemen. In de volgende secties vindt u informatie over de gegevens die worden geretourneerd door intenties en entiteiten met voor beelden van JSON.
+# <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Gegevens extraheren uit utterancetekst met intenties en entiteiten
+LUIS biedt u de mogelijkheid om informatie op te halen uit uitingen in natuurlijke taal van een gebruiker. De informatie wordt geëxtraheerd op een manier die kan worden gebruikt door een programma, toepassing of chatbot om actie te ondernemen. In de volgende secties leert u welke gegevens worden geretourneerd uit intenties en entiteiten met voorbeelden van JSON.
 
-De hardste gegevens die u wilt extra heren, zijn de gegevens van de machine learning, omdat deze niet exact overeenkomen met de tekst. Het ophalen van gegevens van de machine learning- [entiteiten](luis-concept-entity-types.md) moet deel uitmaken van de [ontwerp cyclus](luis-concept-app-iteration.md) totdat u zeker weet dat u de verwachte gegevens ontvangt.
+De lastigste gegevens om te extraheren zijn de machine learning-gegevens, omdat het geen exacte tekstmatch is. Gegevensextractie van de [](luis-concept-entity-types.md) machine learning-entiteiten moet deel uitmaken van de [ontwerpcyclus](luis-concept-app-iteration.md) totdat u zeker weet dat u de gegevens ontvangt die u verwacht.
 
-## <a name="data-location-and-key-usage"></a>Gegevens locatie en sleutel gebruik
-LUIS extraheert gegevens van de utterance van de gebruiker op het gepubliceerde [eind punt](luis-glossary.md#endpoint). De **HTTPS-aanvraag** (post of Get) bevat de utterance en enkele optionele configuraties zoals staging of productie omgevingen.
+## <a name="data-location-and-key-usage"></a>Gegevenslocatie en sleutelgebruik
+LUIS extraheert gegevens uit de uiting van de gebruiker op het [gepubliceerde eindpunt](luis-glossary.md#endpoint). De **HTTPS-aanvraag** (POST of GET) bevat de utterance en een aantal optionele configuraties, zoals faserings- of productieomgevingen.
 
-**V2-aanvraag voor Voorspellings eindpunt**
+**Aanvraag voor V2-voorspellings-eindpunt**
 
 `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/<appID>?subscription-key=<subscription-key>&verbose=true&timezoneOffset=0&q=book 2 tickets to paris`
 
-**V3-Voorspellings eindpunt aanvraag**
+**V3-voorspellings-eindpuntaanvraag**
 
 `https://westus.api.cognitive.microsoft.com/luis/v3.0-preview/apps/<appID>/slots/<slot-type>/predict?subscription-key=<subscription-key>&verbose=true&timezoneOffset=0&query=book 2 tickets to paris`
 
-De `appID` is beschikbaar op de pagina **instellingen** van uw Luis-app, evenals een deel van de URL (na `/apps/` ) wanneer u die Luis-app bewerkt. De `subscription-key` is de eindpunt sleutel die wordt gebruikt voor het uitvoeren van query's op uw app. Hoewel u uw gratis versie van authoring/starter kunt gebruiken terwijl u LUIS Learning, is het belang rijk dat u de eindpunt sleutel wijzigt in een sleutel die het [verwachte Luis gebruik](luis-limits.md#key-limits)ondersteunt. De `timezoneOffset` eenheid is minuten.
+De is beschikbaar op de pagina Instellingen van uw LUIS-app en als onderdeel van de URL (na ) wanneer u `appID` die  `/apps/` LUIS-app bewerkt. De `subscription-key` is de eindpuntsleutel die wordt gebruikt voor het uitvoeren van query's op uw app. Hoewel u tijdens het leren van LUIS uw gratis ontwerp-/startersleutel kunt gebruiken, is het belangrijk om de eindpuntsleutel te wijzigen in een sleutel die uw verwachte [LUIS-gebruik ondersteunt.](luis-limits.md#key-limits) De `timezoneOffset` eenheid is minuten.
 
-Het **https-antwoord** bevat alle intentie-en entiteits gegevens Luis kunnen bepalen op basis van het huidige gepubliceerde model van het faserings-of productie-eind punt. De eind punt-URL is te vinden op de [Luis](luis-reference-regions.md) -website, in de sectie **beheren** op de pagina **sleutels en eind punten** .
+Het **HTTPS-antwoord** bevat alle intentie- en entiteitsinformatie die LUIS kan bepalen op basis van het huidige gepubliceerde model van het faserings- of productie-eindpunt. De eindpunt-URL vindt u op de [website van LUIS,](luis-reference-regions.md) in de **sectie Beheren,** op de **pagina Sleutels en** eindpunten.
 
-## <a name="data-from-intents"></a>Gegevens uit de intenties
-De primaire gegevens zijn de naam van het bovenste score **doel**. Het eindpunt antwoord is:
+## <a name="data-from-intents"></a>Gegevens van intenties
+De primaire gegevens zijn de naam van de **best scorende intentie.** Het antwoord op het eindpunt is:
 
-#### <a name="v2-prediction-endpoint-response"></a>[V2-antwoord op Voorspellings eindpunt](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Antwoord van V2-voorspellings-eindpunt](#tab/V2)
 
 ```JSON
 {
@@ -48,7 +48,7 @@ De primaire gegevens zijn de naam van het bovenste score **doel**. Het eindpunt 
 }
 ```
 
-#### <a name="v3-prediction-endpoint-response"></a>[V3-Voorspellings eindpunt antwoord](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Antwoord van V3-voorspellings-eindpunt](#tab/V3)
 
 ```JSON
 {
@@ -70,16 +70,16 @@ Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 * * *
 
-|Gegevens object|Gegevenstype|Locatie van gegevens|Waarde|
+|Gegevensobject|Gegevenstype|Locatie van gegevens|Waarde|
 |--|--|--|--|
-|Intentie|Tekenreeks|topScoringIntent. intentie|"GetStoreInfo"|
+|Intentie|Tekenreeks|topScoringIntent.intent|"GetStoreInfo"|
 
-Als uw chatbot-of LUIS-app een beslissing neemt op basis van meer dan één intentie Score, kunt u alle uitstaande scores voor intenties retour neren.
+Als uw chatbot of LUIS-app een beslissing neemt op basis van meer dan één intentiescore, retourneert u de scores van alle intenties.
 
 
-#### <a name="v2-prediction-endpoint-response"></a>[V2-antwoord op Voorspellings eindpunt](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Antwoord van V2-voorspellings-eindpunt](#tab/V2)
 
-Stel de query string-para meter in `verbose=true` . Het eindpunt antwoord is:
+Stel de queryreeksparameter in, `verbose=true` . Het antwoord op het eindpunt is:
 
 ```JSON
 {
@@ -102,9 +102,9 @@ Stel de query string-para meter in `verbose=true` . Het eindpunt antwoord is:
 }
 ```
 
-#### <a name="v3-prediction-endpoint-response"></a>[V3-Voorspellings eindpunt antwoord](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Antwoord van V3-voorspellings-eindpunt](#tab/V3)
 
-Stel de query string-para meter in `show-all-intents=true` . Het eindpunt antwoord is:
+Stel de parameter querystring in, `show-all-intents=true` . Het antwoord op het eindpunt is:
 
 ```JSON
 {
@@ -130,16 +130,16 @@ Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 * * *
 
-De intenties worden besteld van hoogste naar laagste score.
+De intenties worden geordend van de hoogste naar de laagste score.
 
-|Gegevens object|Gegevenstype|Locatie van gegevens|Waarde|Score|
+|Gegevensobject|Gegevenstype|Locatie van gegevens|Waarde|Score|
 |--|--|--|--|:--|
-|Intentie|Tekenreeks|intents [0]. intentie|"GetStoreInfo"|0,984749258|
-|Intentie|Tekenreeks|intentie [1]. intentie|Geen|0,0168218873|
+|Intentie|Tekenreeks|intents[0].intent|"GetStoreInfo"|0.984749258|
+|Intentie|Tekenreeks|intents [1].intent|'Geen'|0.0168218873|
 
-Als u vooraf gemaakte domeinen toevoegt, geeft de naam van het doel het domein aan, zoals of, evenals `Utilties` `Communication` de bedoeling:
+Als u vooraf gebouwde domeinen toevoegt, geeft de naam van de intentie het domein aan, zoals `Utilties` `Communication` of, evenals de intentie:
 
-#### <a name="v2-prediction-endpoint-response"></a>[V2-antwoord op Voorspellings eindpunt](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Antwoord van V2-voorspellings-eindpunt](#tab/V2)
 
 ```JSON
 {
@@ -165,7 +165,7 @@ Als u vooraf gemaakte domeinen toevoegt, geeft de naam van het doel het domein a
 }
 ```
 
-#### <a name="v3-prediction-endpoint-response"></a>[V3-Voorspellings eindpunt antwoord](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Antwoord van V3-voorspellings-eindpunt](#tab/V3)
 
 ```JSON
 {
@@ -193,77 +193,77 @@ Meer informatie over het [V3-voorspellingseindpunt](luis-migration-api-v3.md).
 
 * * *
 
-|Domain|Gegevens object|Gegevenstype|Locatie van gegevens|Waarde|
+|Domain|Gegevensobject|Gegevenstype|Locatie van gegevens|Waarde|
 |--|--|--|--|--|
-|Hulpprogramma's|Intentie|Tekenreeks|intents [0]. intentie|"<b>Hulpprogram ma's</b>. ShowNext"|
-|Communicatie|Intentie|Tekenreeks|intentie [1]. intentie|<b>Communicatie</b>. StartOver"|
-||Intentie|Tekenreeks|intentie [2]. intentie|Geen|
+|Hulpprogramma's|Intentie|Tekenreeks|intents[0].intent|"<b>Hulpprogramma's</b>. ShowNext"|
+|Communicatie|Intentie|Tekenreeks|intents [1].intent|<b>Communicatie</b>. StartOver'|
+||Intentie|Tekenreeks|intents [2].intent|'Geen'|
 
 
 ## <a name="data-from-entities"></a>Gegevens van entiteiten
-De meeste chat bots en toepassingen hebben meer dan de naam van het doel nodig. Deze aanvullende, optionele gegevens zijn afkomstig van entiteiten die zijn gedetecteerd in de utterance. Elk type entiteit retourneert verschillende informatie over de overeenkomst.
+De meeste chatbots en -toepassingen hebben meer nodig dan de naam van de intentie. Deze aanvullende, optionele gegevens zijn afkomstig van entiteiten die in de utterance zijn ontdekt. Elk type entiteit retourneert verschillende informatie over de overeenkomst.
 
-Eén woord of zinsdeel in een utterance kan overeenkomen met meer dan één entiteit. In dat geval wordt elke overeenkomende entiteit geretourneerd met de bijbehorende Score.
+Eén woord of woordgroep in een utterance kan overeenkomen met meer dan één entiteit. In dat geval wordt elke overeenkomende entiteit geretourneerd met de bijbehorende score.
 
-Alle entiteiten worden geretourneerd in de matrix **entiteiten** van de reactie van het eind punt
+Alle entiteiten worden geretourneerd in de **entiteiten-matrix** van het antwoord van het eindpunt
 
-## <a name="tokenized-entity-returned"></a>Tokend geretourneerde entiteit
+## <a name="tokenized-entity-returned"></a>Tokenized entiteit geretourneerd
 
-Controleer de [token ondersteuning](luis-language-support.md#tokenization) in Luis.
+Controleer de [tokenondersteuning](luis-language-support.md#tokenization) in LUIS.
 
 
-## <a name="prebuilt-entity-data"></a>Vooraf samengestelde entiteits gegevens
-[Vooraf gemaakte](luis-concept-entity-types.md) entiteiten worden gedetecteerd op basis van een reguliere expressie die overeenkomt met het open-source [recognizers-tekst](https://github.com/Microsoft/Recognizers-Text) project. Vooraf gemaakte entiteiten worden geretourneerd in de matrix entities en gebruiken de type naam voorafgegaan door `builtin::` .
+## <a name="prebuilt-entity-data"></a>Vooraf gebouwde entiteitsgegevens
+[Vooraf gebouwde](luis-concept-entity-types.md) entiteiten worden ontdekt op basis van een reguliere expressiematch met behulp van het [opensource-project Recognizers-Text.](https://github.com/Microsoft/Recognizers-Text) Vooraf gebouwde entiteiten worden geretourneerd in de entiteiten-matrix en gebruiken de typenaam met het voorvoegsel `builtin::` .
 
-## <a name="list-entity-data"></a>Entiteits gegevens weer geven
+## <a name="list-entity-data"></a>Entiteitsgegevens opslijst
 
-[Lijst entiteiten](reference-entity-list.md) vertegenwoordigen een vaste, gesloten set verwante woorden samen met hun synoniemen. LUIS detecteert geen aanvullende waarden voor lijst entiteiten. Gebruik de functie **Aanbevolen** om suggesties voor nieuwe woorden op basis van de huidige lijst te bekijken. Als er meer dan één lijst entiteit met dezelfde waarde is, wordt elke entiteit geretourneerd in de eindpunt query.
+[Lijstentiteiten](reference-entity-list.md) vertegenwoordigen een vaste, gesloten set gerelateerde woorden samen met hun synoniemen. LUIS detecteert geen aanvullende waarden voor lijstentiteiten. Gebruik de **functie** Aanbevelen om suggesties te zien voor nieuwe woorden op basis van de huidige lijst. Als er meer dan één lijstentiteit met dezelfde waarde is, wordt elke entiteit geretourneerd in de eindpuntquery.
 
-## <a name="regular-expression-entity-data"></a>Entiteits gegevens voor reguliere expressies
+## <a name="regular-expression-entity-data"></a>Entiteitsgegevens van reguliere expressie
 
-Een [reguliere expressie-entiteit](reference-entity-regular-expression.md) extraheert een entiteit op basis van een reguliere expressie die u opgeeft.
+Een [entiteit in de reguliere expressie](reference-entity-regular-expression.md) extraheert een entiteit op basis van een reguliere expressie die u op geeft.
 
-## <a name="extracting-names"></a>Namen extra heren
-Het ophalen van namen van een utterance is moeilijk omdat een naam bijna elke combi natie van letters en woorden kan zijn. Afhankelijk van het type naam dat u uitpakt, hebt u verschillende opties. De volgende suggesties zijn geen regels, maar ook meer richt lijnen.
+## <a name="extracting-names"></a>Namen extraheren
+Het is lastig om namen op te vragen uit een utterance, omdat een naam vrijwel elke combinatie van letters en woorden kan zijn. Afhankelijk van het type naam dat u uitpakken, hebt u verschillende opties. De volgende suggesties zijn geen regels, maar meer richtlijnen.
 
-### <a name="add-prebuilt-personname-and-geographyv2-entities"></a>Preconstrueerde persoons-en GeographyV2-entiteiten toevoegen
+### <a name="add-prebuilt-personname-and-geographyv2-entities"></a>Vooraf gebouwde entiteiten PersonName en GeographyV2 toevoegen
 
-De entiteiten [persoons](luis-reference-prebuilt-person.md) -en [GeographyV2](luis-reference-prebuilt-geographyV2.md) zijn beschikbaar in sommige [taal culturen](luis-reference-prebuilt-entities.md).
+[PersonName-](luis-reference-prebuilt-person.md) [en GeographyV2-entiteiten](luis-reference-prebuilt-geographyV2.md) zijn beschikbaar in sommige [taalcultuuren.](luis-reference-prebuilt-entities.md)
 
 ### <a name="names-of-people"></a>Namen van personen
 
-De naam van een persoon kan een geringe indeling hebben, afhankelijk van de taal en de cultuur. Gebruik een vooraf gedefinieerde entiteit **[persoon](luis-reference-prebuilt-person.md)** of een **[eenvoudige entiteit](luis-concept-entity-types.md)** met rollen van de voor-en achternaam.
+De naam van personen kan enigszins worden opgemaakt, afhankelijk van de taal en cultuur. Gebruik een vooraf gebouwde **[entiteit personName](luis-reference-prebuilt-person.md)** of een **[eenvoudige entiteit](luis-concept-entity-types.md)** met de rollen voor- en achternaam.
 
-Als u de eenvoudige entiteit gebruikt, moet u voor beelden opgeven die gebruikmaken van de voor-en achternaam in verschillende delen van de utterance, in uitingen met verschillende lengten en uitingen voor alle intenten, inclusief de geen intentie. [Bekijk](./luis-how-to-review-endpoint-utterances.md) de eind punten uitingen regel matig om namen te labelen die niet correct zijn voor speld.
+Als u de entiteit Simple gebruikt, moet u voorbeelden geven die de voor- en achternaam in verschillende delen van de utterance gebruiken, in utterances met verschillende lengten en utterances voor alle intenties, inclusief de intentie None. [Controleer](./luis-how-to-review-endpoint-utterances.md) regelmatig eindpunt-utterances om namen te labelen die niet correct zijn voorspeld.
 
-### <a name="names-of-places"></a>Namen van locaties
+### <a name="names-of-places"></a>Namen van plaatsen
 
-Locatie namen worden ingesteld en bekend, zoals steden, regio's, provincies, provincies en landen/regio's. Gebruik de vooraf samengestelde entiteit **[geographyV2](luis-reference-prebuilt-geographyv2.md)** om locatie gegevens te extra heren.
+Locatienamen zijn ingesteld en bekend, zoals steden, regio's, staten, provincies en landen/regio's. Gebruik de vooraf gebouwde entiteit **[geographyV2 om](luis-reference-prebuilt-geographyv2.md)** locatiegegevens te extraheren.
 
 ### <a name="new-and-emerging-names"></a>Nieuwe en opkomende namen
 
-Sommige apps moeten nieuwe en opkomende namen kunnen vinden, zoals producten of bedrijven. Deze typen namen zijn het lastigste type gegevens extractie. Begin met een **[eenvoudige entiteit](luis-concept-entity-types.md#simple-entity)** en voeg een [woordgroepen lijst](luis-concept-feature.md)toe. [Bekijk](./luis-how-to-review-endpoint-utterances.md) de eind punten uitingen regel matig om namen te labelen die niet correct zijn voor speld.
+Sommige apps moeten nieuwe en opkomende namen kunnen vinden, zoals producten of bedrijven. Deze typen namen zijn het moeilijkst type gegevensextractie. Begin met een **[entiteit Simple en](luis-concept-entity-types.md)** voeg een [frasenlijst toe.](luis-concept-feature.md) [Controleer](./luis-how-to-review-endpoint-utterances.md) regelmatig eindpunt-utterances om namen te labelen die niet correct zijn voorspeld.
 
-## <a name="patternany-entity-data"></a>Patroon. alle entiteits gegevens
+## <a name="patternany-entity-data"></a>Pattern.any-entiteitsgegevens
 
-[Patroon. any](reference-entity-pattern-any.md) is een tijdelijke aanduiding met variabele lengte die alleen wordt gebruikt in de sjabloon van een patroon utterance om te markeren waar de entiteit begint en eindigt. De entiteit die in het patroon wordt gebruikt, moet worden gevonden om het patroon te kunnen Toep assen.
+[Pattern.any](reference-entity-pattern-any.md) is een tijdelijke aanduiding met variabele lengte die alleen wordt gebruikt in de sjabloonuiting van een patroon om te markeren waar de entiteit begint en eindigt. De entiteit die in het patroon wordt gebruikt, moet worden gevonden om het patroon toe te passen.
 
 ## <a name="sentiment-analysis"></a>Sentimentanalyse
-Als sentiment-analyse is geconfigureerd tijdens het [publiceren](luis-how-to-publish-app.md#sentiment-analysis), omvat het JSON-antwoord Luis sentiment analyse. Meer informatie over sentiment analyse vindt u in de [Text Analytics](../text-analytics/index.yml) -documentatie.
+Als Sentimentanalyse is geconfigureerd tijdens het [publiceren,](luis-how-to-publish-app.md#sentiment-analysis)bevat het JSON-antwoord van LUIS sentimentanalyse. Meer informatie over sentimentanalyse in de [](../text-analytics/index.yml) Text Analytics documentatie.
 
-## <a name="key-phrase-extraction-entity-data"></a>Entiteits gegevens voor de extractie van sleutel zinnen
-De [sleutel frase extractie-entiteit](luis-reference-prebuilt-keyphrase.md) retourneert sleutel zinnen in de utterance, die door [Text Analytics](../text-analytics/index.yml)worden gegeven.
+## <a name="key-phrase-extraction-entity-data"></a>Entiteitsgegevens voor sleuteltermextractie
+De [entiteit sleuteltermextractie](luis-reference-prebuilt-keyphrase.md) retourneert sleuteltermen in de utterance, geleverd door [Text Analytics](../text-analytics/index.yml).
 
 ## <a name="data-matching-multiple-entities"></a>Gegevens die overeenkomen met meerdere entiteiten
 
-LUIS retourneert alle entiteiten die zijn gedetecteerd in de utterance. Als gevolg hiervan moet uw chat-bot mogelijk een beslissing nemen op basis van de resultaten.
+LUIS retourneert alle entiteiten die in de utterance zijn ontdekt. Als gevolg hiervan moet uw chatbot mogelijk een beslissing nemen op basis van de resultaten.
 
-## <a name="data-matching-multiple-list-entities"></a>Gegevens die overeenkomen met meerdere lijst entiteiten
+## <a name="data-matching-multiple-list-entities"></a>Gegevens die overeenkomen met meerdere lijstentiteiten
 
-Als een woord of woord groep overeenkomt met meer dan één lijst entiteit, retourneert de eindpunt query elke lijst entiteit.
+Als een woord of woordgroep overeenkomt met meer dan één lijstentiteit, retourneert de eindpuntquery elke List-entiteit.
 
-Voor de query `when is the best time to go to red rock?` , en de app heeft het woord `red` in meer dan één lijst, herkent Luis alle entiteiten en retourneert een matrix van entiteiten als onderdeel van het JSON-eindpunt antwoord.
+Voor de query , en de app heeft het woord in meer dan één lijst, herkent LUIS alle entiteiten en retourneert een matrix met entiteiten als onderdeel van het `when is the best time to go to red rock?` `red` JSON-eindpuntreactie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [entiteiten toevoegen](luis-how-to-add-entities.md) voor meer informatie over het toevoegen van entiteiten aan uw Luis-app.
+Zie [Entiteiten toevoegen voor](luis-how-to-add-entities.md) meer informatie over het toevoegen van entiteiten aan uw LUIS-app.

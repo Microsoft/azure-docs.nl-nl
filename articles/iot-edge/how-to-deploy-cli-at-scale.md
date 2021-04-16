@@ -1,6 +1,6 @@
 ---
-title: Modules op schaal implementeren met behulp van Azure CLI-Azure IoT Edge
-description: Gebruik de IoT-extensie voor Azure CLI om automatische implementaties te maken voor groepen IoT Edge apparaten
+title: Modules op schaal implementeren met behulp van Azure CLI - Azure IoT Edge
+description: De IoT-extensie voor Azure CLI gebruiken om automatische implementaties te maken voor groepen IoT Edge apparaten
 keywords: ''
 author: kgremban
 manager: philmea
@@ -10,43 +10,43 @@ ms.topic: conceptual
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 7b12b6c1cdc85eaba531f34b23aa74bee6b38f7b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c502a9c02160c5a92d78ccdbb0532e6f173122da
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103201127"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107479505"
 ---
-# <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>IoT Edge modules op schaal implementeren en bewaken met behulp van de Azure CLI
+# <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Uw modules op IoT Edge schalen implementeren en bewaken met behulp van de Azure CLI
 
 [!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
-Maak een **IOT Edge automatische implementatie** met behulp van de Azure-opdracht regel interface voor het beheren van doorlopende implementaties voor veel apparaten tegelijk. Automatische implementaties voor IoT Edge maken deel uit van de functie voor het [automatisch beheren van apparaten](../iot-hub/iot-hub-automatic-device-management.md) van IOT hub. Implementaties zijn dynamische processen waarmee u meerdere modules op meerdere apparaten kunt implementeren, de status en status van de modules kunt volgen en waar nodig wijzigingen kunt aanbrengen.
+Maak een **IoT Edge automatische implementatie met behulp** van de Azure-opdrachtregelinterface om lopende implementaties voor veel apparaten tegelijk te beheren. Automatische implementaties voor IoT Edge maken deel uit van de [functie voor automatisch](../iot-hub/iot-hub-automatic-device-management.md) apparaatbeheer van IoT Hub. Implementaties zijn dynamische processen waarmee u meerdere modules op meerdere apparaten kunt implementeren, de status en status van de modules kunt bijhouden en indien nodig wijzigingen kunt aanbrengen.
 
-Zie [informatie over IOT Edge automatische implementaties voor één apparaat of op schaal](module-deployment-monitoring.md)voor meer informatie.
+Zie Understand [IoT Edge automatic deployments for single devices or at scale (Meer informatie over automatische implementaties voor individuele apparaten of op schaal) voor meer informatie.](module-deployment-monitoring.md)
 
-In dit artikel stelt u Azure CLI en de IoT-uitbrei ding in. U leert hoe u modules implementeert op een set IoT Edge-apparaten en de voortgang kunt controleren met behulp van de beschik bare CLI-opdrachten.
+In dit artikel gaat u Azure CLI en de IoT-extensie instellen. Vervolgens leert u hoe u modules implementeert op een set IoT Edge apparaten en hoe u de voortgang bewaakt met behulp van de beschikbare CLI-opdrachten.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een [IOT-hub](../iot-hub/iot-hub-create-using-cli.md) in uw Azure-abonnement.
+* Een [IoT-hub](../iot-hub/iot-hub-create-using-cli.md) in uw Azure-abonnement.
 * Een of meer IoT Edge apparaten.
 
-  Als u geen IoT Edge apparaat hebt ingesteld, kunt u er een maken in een virtuele Azure-machine. Volg de stappen in een van de Quick Start-artikelen voor het [maken van een virtueel Linux-apparaat](quickstart-linux.md) of [het maken van een virtueel Windows-apparaat](quickstart.md).
+  Als u nog geen apparaat IoT Edge ingesteld, kunt u er een maken op een virtuele Azure-machine. Volg de stappen in een van de quickstart-artikelen voor [Een virtueel Linux-apparaat](quickstart-linux.md) maken of [Een virtueel Windows-apparaat maken.](quickstart.md)
 
-* [Azure cli](/cli/azure/install-azure-cli) in uw omgeving. Uw Azure CLI-versie moet mini maal 2.0.70 of hoger zijn. Gebruik `az --version` om de versie te valideren. In deze versie worden az-extensie-opdrachten ondersteund en is voor het eerst het Knack-opdrachtframework opgenomen.
-* De [IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension).
+* [Azure CLI](/cli/azure/install-azure-cli) in uw omgeving. Uw Azure CLI-versie moet minimaal 2.0.70 of hoger zijn. Gebruik `az --version` om de versie te valideren. In deze versie worden az-extensie-opdrachten ondersteund en is voor het eerst het Knack-opdrachtframework opgenomen.
+* De [IoT-extensie voor Azure CLI.](https://github.com/Azure/azure-iot-cli-extension)
 
-## <a name="configure-a-deployment-manifest"></a>Een implementatie manifest configureren
+## <a name="configure-a-deployment-manifest"></a>Een implementatiemanifest configureren
 
-Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. Zie [informatie over het implementeren van modules en het tot stand brengen van routes in IOT Edge](module-composition.md)voor meer informatie.
+Een implementatiemanifest is een JSON-document dat beschrijft welke modules moeten worden geïmplementeerd, hoe gegevens tussen de modules stromen en de gewenste eigenschappen van de module-tweelingen. Zie Meer informatie over het implementeren van modules en het maken van [routes in IoT Edge.](module-composition.md)
 
-Als u modules wilt implementeren met behulp van Azure CLI, slaat u het manifest van de implementatie lokaal op als een. txt-bestand. U gebruikt het bestandspad in de volgende sectie wanneer u de opdracht uitvoert om de configuratie toe te passen op uw apparaat.
+Als u modules wilt implementeren met behulp van Azure CLI, moet u het implementatiemanifest lokaal opslaan als een TXT-bestand. U gebruikt het bestandspad in de volgende sectie bij het uitvoeren van de opdracht om de configuratie op uw apparaat toe te passen.
 
-Hier volgt een basis implementatie manifest met een module als voor beeld:
+Hier is een basisimplementatiemanifest met één module als voorbeeld:
 
 >[!NOTE]
->In dit voor beeld-implementatie manifest wordt schema versie 1,1 gebruikt voor de IoT Edge agent en hub. Schema versie 1,1 is uitgebracht samen met IoT Edge versie 1.0.10 en biedt functies als opstart volgorde voor modules en prioriteiten voor route ring.
+>Dit voorbeeld van een implementatiemanifest maakt gebruik van schemaversie 1.1 voor de IoT Edge agent en hub. Schemaversie 1.1 is uitgebracht samen met IoT Edge versie 1.0.10 en maakt functies mogelijk zoals opstartorder van modules en routeprioriteit.
 
 ```json
 {
@@ -119,13 +119,13 @@ Hier volgt een basis implementatie manifest met een module als voor beeld:
 
 ## <a name="layered-deployment"></a>Gelaagde implementatie
 
-Gelaagde implementaties zijn een type automatische implementatie dat boven op elkaar kan worden geplaatst. Zie voor meer informatie over gelaagde implementaties [begrijpen IOT Edge automatische implementaties voor afzonderlijke apparaten of op schaal](module-deployment-monitoring.md).
+Gelaagde implementaties zijn een type automatische implementatie dat op elkaar kan worden gestapeld. Zie Understand IoT Edge automatic deployments for single devices or at scale (Meer informatie over automatische implementaties voor één apparaat of op schaal) voor meer informatie [over gelaagde implementaties.](module-deployment-monitoring.md)
 
-U kunt gelaagde implementaties maken en beheren met de Azure CLI, zoals elke automatische implementatie, met slechts enkele verschillen. Zodra een gelaagde implementatie is gemaakt, werkt dezelfde Azure CLI voor gelaagde implementaties hetzelfde als elke implementatie. Als u een gelaagde implementatie wilt maken, voegt `--layered` u de markering toe aan de opdracht Create.
+Gelaagde implementaties kunnen worden gemaakt en beheerd met de Azure CLI, net als bij elke automatische implementatie, met slechts enkele verschillen. Zodra een gelaagde implementatie is gemaakt, werkt dezelfde Azure CLI voor gelaagde implementaties hetzelfde als voor elke implementatie. Als u een gelaagde implementatie wilt maken, voegt u de `--layered` vlag toe aan de opdracht create.
 
-Het tweede verschil bevindt zich in de constructie van het implementatie manifest. Hoewel standaard automatische implementatie de System runtime-modules moet bevatten naast eventuele gebruikers modules, kunnen gelaagde implementaties alleen gebruikers modules bevatten. In plaats daarvan moet er ook een standaard automatische implementatie op een apparaat worden uitgevoerd om de vereiste onderdelen van elk IoT Edge apparaat op te geven, zoals de System runtime-modules.
+Het tweede verschil zit in de constructie van het implementatiemanifest. Hoewel standaard automatische implementatie naast alle gebruikersmodules ook de systeemruntimemodules moet bevatten, kunnen gelaagde implementaties alleen gebruikersmodules bevatten. In plaats daarvan moeten gelaagde implementaties ook een standaard automatische implementatie op een apparaat hebben, om de vereiste onderdelen van elk IoT Edge-apparaat te leveren, zoals de systeemruntimemodules.
 
-Hier volgt een eenvoudig gelaagd implementatie manifest met een module als voor beeld:
+Hier is een eenvoudig gelaagd implementatiemanifest met één module als voorbeeld:
 
 ```json
 {
@@ -157,7 +157,7 @@ Hier volgt een eenvoudig gelaagd implementatie manifest met een module als voor 
 }
 ```
 
-In het vorige voor beeld is een gelaagde implementatie ingesteld `properties.desired` voor een module. Als deze gelaagde implementatie gericht is op een apparaat waarop dezelfde module al was toegepast, worden de bestaande gewenste eigenschappen overschreven. Als u een update wilt gebruiken in plaats van overschrijven, gewenste eigenschappen, kunt u een nieuwe Subsectie definiëren. Bijvoorbeeld:
+In het vorige voorbeeld werd een gelaagde implementatie-instelling voor `properties.desired` de voor een module getoond. Als deze gelaagde implementatie is gericht op een apparaat waarop dezelfde module al is toegepast, worden alle bestaande gewenste eigenschappen overschreven. Als u de gewenste eigenschappen wilt bijwerken in plaats van te overschrijven, kunt u een nieuwe subsectie definiëren. Bijvoorbeeld:
 
 ```json
 "SimulatedTEmperatureSensor": {
@@ -168,11 +168,11 @@ In het vorige voor beeld is een gelaagde implementatie ingesteld `properties.des
 }
 ```
 
-Zie [gelaagde implementatie](module-deployment-monitoring.md#layered-deployment) voor meer informatie over het configureren van module apparaatdubbels in gelaagde implementaties.
+Zie Gelaagde implementatie voor meer informatie over het configureren van module-tweelingen in [gelaagde implementaties](module-deployment-monitoring.md#layered-deployment)
 
-## <a name="identify-devices-using-tags"></a>Apparaten identificeren met behulp van Tags
+## <a name="identify-devices-using-tags"></a>Apparaten identificeren met behulp van tags
 
-Voordat u een implementatie kunt maken, moet u kunnen opgeven welke apparaten u wilt beïnvloeden. Azure IoT Edge identificeert apparaten met behulp van **Tags** op het apparaat. Elk apparaat kan meerdere labels hebben die u op een wille keurige manier definieert voor uw oplossing. Als u bijvoorbeeld een universiteit van Smart gebouwen beheert, kunt u de volgende Tags toevoegen aan een apparaat:
+Voordat u een implementatie kunt maken, moet u kunnen opgeven welke apparaten u wilt beïnvloeden. Azure IoT Edge identificeert apparaten met **behulp van tags** in de apparaat dubbel. Elk apparaat kan meerdere tags hebben die u definieert op een manier die zinvol is voor uw oplossing. Als u bijvoorbeeld een campus met slimme gebouwen beheert, kunt u de volgende tags toevoegen aan een apparaat:
 
 ```json
 "tags":{
@@ -185,77 +185,77 @@ Voordat u een implementatie kunt maken, moet u kunnen opgeven welke apparaten u 
 }
 ```
 
-Zie voor meer informatie over apparaatdubbels en tags voor apparaten [inzicht in de apparaatdubbels in IOT hub](../iot-hub/iot-hub-devguide-device-twins.md).
+Zie Apparaattweeling begrijpen en gebruiken in IoT Hub voor meer informatie [over apparaattweeling IoT Hub.](../iot-hub/iot-hub-devguide-device-twins.md)
 
 ## <a name="create-a-deployment"></a>Een implementatie maken
 
-U implementeert modules op uw doel apparaten door een implementatie te maken die bestaat uit het implementatie manifest en andere para meters.
+U implementeert modules op uw doelapparaten door een implementatie te maken die bestaat uit het implementatiemanifest en andere parameters.
 
-Gebruik de opdracht [AZ IOT Edge Deployment Create](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-create) om een implementatie te maken:
+Gebruik de [opdracht az iot edge deployment create](/cli/azure/iot/edge/deployment) om een implementatie te maken:
 
 ```azurecli
 az iot edge deployment create --deployment-id [deployment id] --hub-name [hub name] --content [file path] --labels "[labels]" --target-condition "[target query]" --priority [int]
 ```
 
-Gebruik dezelfde opdracht met de `--layered` vlag voor het maken van een gelaagde implementatie.
+Gebruik dezelfde opdracht met de vlag `--layered` om een gelaagde implementatie te maken.
 
-De opdracht voor het maken van de implementatie heeft de volgende para meters:
+De opdracht voor het maken van de implementatie heeft de volgende parameters:
 
-* **--laagst** : een optionele vlag voor het identificeren van de implementatie als een gelaagde implementatie.
-* **--implementatie-id** : de naam van de implementatie die wordt gemaakt in de IOT-hub. Geef uw implementatie een unieke naam van Maxi maal 128 kleine letters. Vermijd spaties en de volgende ongeldige tekens: `& ^ [ ] { } \ | " < > /` . Vereiste parameter.
-* **--Content** -filepath naar de JSON van het implementatie manifest. Vereiste parameter.
-* **--hub-naam** -naam van de IOT-hub waarin de implementatie wordt gemaakt. De hub moet zich in het huidige abonnement benemen. Wijzig uw huidige abonnement met de `az account set -s [subscription name]` opdracht.
-* **--labels** : Voeg labels toe om uw implementaties bij te houden. Labels zijn naam-, waardeparen die uw implementatie beschrijven. Labels maken de JSON-indeling voor de namen en waarden. Bijvoorbeeld: `{"HostPlatform":"Linux", "Version:"3.0.1"}`
-* **--doel-condition** : Voer een doel voorwaarde in om te bepalen welke apparaten worden bedoeld voor deze implementatie. De voor waarde is gebaseerd op apparaatspecifieke Tags of dubbele gerapporteerde eigenschappen van het apparaat en moet overeenkomen met de indeling van de expressie. Bijvoorbeeld `tags.environment='test' and properties.reported.devicemodel='4000x'`.
-* **--Priority** : een positief geheel getal. In het geval van twee of meer implementaties op hetzelfde apparaat is de implementatie met de hoogste numerieke waarde voor prioriteit van toepassing.
-* **--metrische gegevens** : Maak metrische gegevens die de edgeHub-gerapporteerde eigenschappen doorzoeken om de status van een implementatie bij te houden. Metrische gegevens hebben een JSON-invoer of een filepath. Bijvoorbeeld `'{"queries": {"mymetric": "SELECT deviceId FROM devices WHERE properties.reported.lastDesiredStatus.code = 200"}}'`.
+* **--layered:** een optionele vlag om de implementatie te identificeren als een gelaagde implementatie.
+* **--deployment-id:** de naam van de implementatie die wordt gemaakt in de IoT-hub. Geef uw implementatie een unieke naam van maximaal 128 kleine letters. Vermijd spaties en de volgende ongeldige tekens: `& ^ [ ] { } \ | " < > /` . Vereiste parameter.
+* **--content:** bestandspad naar de JSON van het implementatiemanifest. Vereiste parameter.
+* **--hub-name:** de naam van de IoT-hub waarin de implementatie wordt gemaakt. De hub moet zich in het huidige abonnement. Wijzig uw huidige abonnement met de `az account set -s [subscription name]` opdracht .
+* **--labels:** voeg labels toe om uw implementaties bij te houden. Labels zijn naam- en waardeparen die uw implementatie beschrijven. Labels gebruiken JSON-opmaak voor de namen en waarden. Bijvoorbeeld: `{"HostPlatform":"Linux", "Version:"3.0.1"}`
+* **--target-condition:** voer een doelvoorwaarde in om te bepalen op welke apparaten deze implementatie wordt gericht. De voorwaarde is gebaseerd op tags van apparaattwee of gerapporteerde eigenschappen van apparaattwee en moet overeenkomen met de expressie-indeling. Bijvoorbeeld `tags.environment='test' and properties.reported.devicemodel='4000x'`.
+* **--priority:** een positief geheel getal. In het geval dat twee of meer implementaties op hetzelfde apparaat zijn gericht, is de implementatie met de hoogste numerieke waarde voor Prioriteit van toepassing.
+* **--metrics:** maak metrische gegevens die een query uitvoeren op de gerapporteerde edgeHub-eigenschappen om de status van een implementatie bij te houden. Metrische gegevens gebruiken JSON-invoer of een bestandspad. Bijvoorbeeld `'{"queries": {"mymetric": "SELECT deviceId FROM devices WHERE properties.reported.lastDesiredStatus.code = 200"}}'`.
 
-Zie [IOT Edge-implementaties controleren](how-to-monitor-iot-edge-deployments.md#monitor-a-deployment-with-azure-cli)voor het bewaken van een implementatie met behulp van Azure cli.
+Zie Implementaties bewaken om een implementatie met behulp van Azure CLI [IoT Edge bewaken.](how-to-monitor-iot-edge-deployments.md#monitor-a-deployment-with-azure-cli)
 
 ## <a name="modify-a-deployment"></a>Een implementatie wijzigen
 
-Wanneer u een implementatie wijzigt, worden de wijzigingen onmiddellijk gerepliceerd naar alle doel apparaten.
+Wanneer u een implementatie wijzigt, worden de wijzigingen onmiddellijk gerepliceerd naar alle doelapparaten.
 
-Als u de doel voorwaarde bijwerkt, worden de volgende updates uitgevoerd:
+Als u de doelvoorwaarde bij werkt, worden de volgende updates uitgevoerd:
 
-* Als een apparaat niet voldoet aan de oude doel voorwaarde, maar voldoet aan de nieuwe doel voorwaarde en deze implementatie de hoogste prioriteit voor dat apparaat is, wordt deze implementatie toegepast op het apparaat.
-* Als een apparaat waarop deze implementatie momenteel wordt uitgevoerd niet meer voldoet aan de doel voorwaarde, wordt deze implementatie verwijderd en neemt de implementatie van de volgende met de hoogste prioriteit in beslag.
-* Als een apparaat dat deze implementatie momenteel uitvoert niet meer voldoet aan de doel voorwaarde en niet voldoet aan de doel voorwaarde van andere implementaties, vindt er geen wijzigingen plaats op het apparaat. Het apparaat blijft de huidige modules in hun huidige staat uitvoeren, maar wordt niet meer beheerd als onderdeel van deze implementatie. Zodra de app aan de doel voorwaarde van een andere implementatie voldoet, wordt deze implementatie verwijderd en wordt de nieuwe geïmplementeerd.
+* Als een apparaat niet aan de oude doelvoorwaarde voldoet, maar voldoet aan de nieuwe doelvoorwaarde en deze implementatie de hoogste prioriteit voor dat apparaat heeft, wordt deze implementatie toegepast op het apparaat.
+* Als een apparaat met deze implementatie niet langer voldoet aan de doelvoorwaarde, wordt deze implementatie verwijderd en wordt de implementatie met de volgende hoogste prioriteit uitgevoerd.
+* Als een apparaat met deze implementatie momenteel niet meer voldoet aan de doelvoorwaarde en niet voldoet aan de doelvoorwaarde van andere implementaties, wordt er geen wijziging op het apparaat uitgevoerd. Het apparaat blijft de huidige modules uitvoeren in hun huidige status, maar wordt niet meer beheerd als onderdeel van deze implementatie. Zodra het voldoet aan de doelvoorwaarde van een andere implementatie, wordt deze implementatie verwijderd en wordt de nieuwe geïmplementeerd.
 
-U kunt de inhoud van een implementatie niet bijwerken, die de modules en routes bevat die in het implementatie manifest zijn gedefinieerd. Als u de inhoud van een implementatie wilt bijwerken, kunt u dit doen door een nieuwe implementatie te maken die gericht is op dezelfde apparaten met een hogere prioriteit. U kunt bepaalde eigenschappen van een bestaande module wijzigen, met inbegrip van de doel voorwaarde, labels, metrische gegevens en prioriteit.
+U kunt de inhoud van een implementatie, waaronder de modules en routes die zijn gedefinieerd in het implementatiemanifest, niet bijwerken. Als u de inhoud van een implementatie wilt bijwerken, maakt u een nieuwe implementatie die gericht is op dezelfde apparaten met een hogere prioriteit. U kunt bepaalde eigenschappen van een bestaande module wijzigen, waaronder de doelvoorwaarde, labels, metrische gegevens en prioriteit.
 
-Gebruik de opdracht [AZ IOT Edge Deployment update](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-update) om een implementatie bij te werken:
+Gebruik de [opdracht az iot edge deployment update om](/cli/azure/iot/edge/deployment) een implementatie bij te werken:
 
 ```azurecli
 az iot edge deployment update --deployment-id [deployment id] --hub-name [hub name] --set [property1.property2='value']
 ```
 
-De implementatie-update opdracht heeft de volgende para meters:
+De opdracht voor het bijwerken van de implementatie heeft de volgende parameters:
 
-* **--implementatie-id** : de naam van de implementatie die in de IOT-hub bestaat.
-* **--hub-name** -naam van de IOT-hub waarin de implementatie bestaat. De hub moet zich in het huidige abonnement benemen. Overschakelen naar het gewenste abonnement met de opdracht `az account set -s [subscription name]`
-* **--set** -een eigenschap in de implementatie bijwerken. U kunt de volgende eigenschappen bijwerken:
-  * targetCondition-bijvoorbeeld `targetCondition=tags.location.state='Oregon'`
-  * Labels
+* **--deployment-id:** de naam van de implementatie die in de IoT-hub bestaat.
+* **--hub-name:** de naam van de IoT-hub waarin de implementatie bestaat. De hub moet zich in het huidige abonnement. Schakel over naar het gewenste abonnement met de opdracht `az account set -s [subscription name]`
+* **--set:** werk een eigenschap bij in de implementatie. U kunt de volgende eigenschappen bijwerken:
+  * targetCondition- bijvoorbeeld `targetCondition=tags.location.state='Oregon'`
+  * labels
   * priority
-* **--Voeg** een nieuwe eigenschap toe aan de implementatie, met inbegrip van de doel voorwaarden of labels.
-* **--Remove** -een bestaande eigenschap verwijderen, met inbegrip van de doel voorwaarden of labels.
+* **--add:** voeg een nieuwe eigenschap toe aan de implementatie, inclusief doelvoorwaarden of labels.
+* **--remove:** verwijder een bestaande eigenschap, inclusief doelvoorwaarden of labels.
 
 ## <a name="delete-a-deployment"></a>Een implementatie verwijderen
 
-Wanneer u een implementatie verwijdert, nemen alle apparaten de volgende implementatie van de hoogste prioriteit. Als uw apparaten niet voldoen aan de doel voorwaarde van een andere implementatie, worden de modules niet verwijderd wanneer de implementatie wordt verwijderd.
+Wanneer u een implementatie verwijdert, krijgen alle apparaten de eerstvolgende implementatie met de hoogste prioriteit. Als uw apparaten niet voldoen aan de doelvoorwaarde van een andere implementatie, worden de modules niet verwijderd wanneer de implementatie wordt verwijderd.
 
-Gebruik de opdracht [AZ IOT Edge Deployment delete](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-delete) om een implementatie te verwijderen:
+Gebruik de [opdracht az iot edge deployment delete](/cli/azure/iot/edge/deployment) om een implementatie te verwijderen:
 
 ```azurecli
 az iot edge deployment delete --deployment-id [deployment id] --hub-name [hub name]
 ```
 
-De opdracht voor het verwijderen van de implementatie heeft de volgende para meters:
+De opdracht voor het verwijderen van de implementatie heeft de volgende parameters:
 
-* **--implementatie-id** : de naam van de implementatie die in de IOT-hub bestaat.
-* **--hub-name** -naam van de IOT-hub waarin de implementatie bestaat. De hub moet zich in het huidige abonnement benemen. Overschakelen naar het gewenste abonnement met de opdracht `az account set -s [subscription name]`
+* **--deployment-id:** de naam van de implementatie die in de IoT-hub bestaat.
+* **--hub-name:** de naam van de IoT-hub waarin de implementatie bestaat. De hub moet zich in het huidige abonnement. Schakel over naar het gewenste abonnement met de opdracht `az account set -s [subscription name]`
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [het implementeren van modules voor het IOT Edge van apparaten](module-deployment-monitoring.md).
+Meer informatie over [Modules implementeren op IoT Edge apparaten.](module-deployment-monitoring.md)

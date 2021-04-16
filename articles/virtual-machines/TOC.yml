@@ -805,7 +805,7 @@
           href: managed-disk-from-image-version.md
         - name: Aankoopplaninformatie
           href: marketplace-images.md
-    - name: Opbouwer van afbeeldingen (preview)
+    - name: Opbouw van afbeeldingen (preview)
       items:
         - name: Overzicht
           displayName: 'Image builder, images, building'
@@ -1139,7 +1139,7 @@
           href: ./linux/snapshot-copy-managed-disk.md
         - name: Momentopname van een schijf maken - PowerShell
           href: ./windows/snapshot-copy-managed-disk.md
-        - name: Back-up maken van niet-managede schijven
+        - name: Back-up maken van niet-mande schijven
           href: ./linux/incremental-snapshots.md
     - name: Kortstondige besturingssysteemschijven
       href: ephemeral-os-disks.md
@@ -1153,7 +1153,7 @@
             - name: PowerShell
               displayName: Convert disk to another disk type
               href: ./windows/convert-disk-storage.md
-        - name: Migreren naar Premium-SD's met Azure Site Recovery
+        - name: Migreren naar Premium -SSD's met Azure Site Recovery
           items:
             - name: Linux
               displayName: Migrate to premium SSDs with Azure Site Recovery
@@ -1199,13 +1199,13 @@
         - name: Windows
           displayName: detach a disk
           href: ./windows/detach-disk.md
-    - name: Een besturingssysteemschijf uitbreiden
+    - name: Een schijf uitbreiden
       items:
         - name: Linux
-          displayName: Expand OS disk
+          displayName: Expand a disk - Linux
           href: ./linux/expand-disks.md
         - name: Windows
-          displayName: Expand OS disk
+          displayName: Expand a disk - Windows
           href: ./windows/expand-os-disk.md
     - name: Opslag beheren
       items:
@@ -1236,7 +1236,7 @@
           href: ./linux/os-disk-swap.md
         - name: De besturingssysteemschijf wisselen - PowerShell
           href: ./windows/os-disk-swap.md
-        - name: Beheerde schijf aan gastschijf wijsen - Linux
+        - name: Beheerde schijf aan gastschijf toe te wijsen - Linux
           href: ./linux/azure-to-guest-disk-mapping.md
         - name: Beheerde schijf aan gastschijf wijsen - Windows
           href: ./windows/azure-to-guest-disk-mapping.md
@@ -1344,7 +1344,7 @@
           href: ./windows/security-baseline.md
     - name: Aanbevelingen
       href: security-recommendations.md
-    - name: Vertrouwd starten
+    - name: Vertrouwde start
       items:
         - name: Overzicht
           href: trusted-launch.md
@@ -1449,7 +1449,7 @@
         - name: Overzicht
           displayName: 'Automatic OS image upgrade, image, upgrade, OS'
           href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?context=/azure/virtual-machines/context/context
-        - name: Onderhoudsbeheer voor upgrade van besturingssysteemafbeelding
+        - name: Onderhoudsbeheer voor upgrade van besturingssysteemafbeeldingen
           items:
             - name: Overzicht (Preview)
               displayName: 'Maintenance control for OS image upgrade, OS, image, upgrade'
@@ -1728,7 +1728,7 @@
               href: ./windows/tutorial-disaster-recovery.md
         - name: Failover van een virtuele machine naar een andere regio uitvoeren
           href: ../site-recovery/azure-to-azure-tutorial-failover-failback.md
-        - name: Een failback van een VM naar de primaire regio
+        - name: Failback van een VM naar de primaire regio
           href: ../site-recovery/azure-to-azure-tutorial-failback.md
     - name: Virtuele machines verplaatsen en migreren
       items:

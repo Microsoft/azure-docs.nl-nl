@@ -1,7 +1,7 @@
 ---
-title: Overzicht van de chat-SDK voor Azure Communication Services
+title: Overzicht van chat-SDK voor Azure Communication Services
 titleSuffix: An Azure Communication Services concept document
-description: Meer informatie over de Azure Communication Services chat SDK.
+description: Meer informatie over de Azure Communication Services Chat SDK.
 author: mikben
 manager: jken
 services: azure-communication-services
@@ -9,57 +9,57 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 520dc611e49675f35b8ba0330448438192770773
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 561855704d157f9ad826b5db83600a79d9437fc6
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168872"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500682"
 ---
 # <a name="chat-sdk-overview"></a>Overzicht van chat-SDK 
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include-chat.md)]
 
-De Sdk's van Azure Communication Services kunnen worden gebruikt voor het toevoegen van een rijke, realtime chat voor uw toepassingen.
+Azure Communication Services Chat-SDK's kunnen worden gebruikt om uitgebreide, realtime chat aan uw toepassingen toe te voegen.
     
 ## <a name="chat-sdk-capabilities"></a>Chat-SDK-mogelijkheden    
 
-De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de chat-Sdk's voor communicatie Services.  
+De volgende lijst bevat de set functies die momenteel beschikbaar zijn in de Communication Services chat-SDK's.  
 
 | Groep van functies | Mogelijkheid | Javascript  | Java | .NET | Python | iOS | Android |
 |-----------------|-------------------|---|-----|----|-----|----|----|
-| Belangrijkste mogelijkheden | Een chat-thread maken tussen twee of meer gebruikers                                                     | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |    
+| Belangrijkste mogelijkheden | Een chatgesprek maken tussen 2 of meer gebruikers                                                     | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |    
 |                   | Het onderwerp van een chatgesprek bijwerken                                                                              | ✔️   | ✔️ | ✔️    | ✔️   |  ✔️    | ✔️   |   
-|                   | Deel nemers toevoegen aan of verwijderen uit een chat-thread                                                                           | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
-|                   | Kies of u de chat bericht geschiedenis wilt delen met de deel nemer die wordt toegevoegd                                   | ✔️   | ✔️   | ✔️    | ✔️  |  ✔️    | ✔️   | 
-|                   | Een lijst met deel nemers in een chat-thread ophalen                                                                          | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   | 
+|                   | Deelnemers toevoegen aan of verwijderen uit een chatgesprek                                                                           | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
+|                   | Kies of u de geschiedenis van chatberichten wilt delen met de deelnemer die wordt toegevoegd                                   | ✔️   | ✔️   | ✔️    | ✔️  |  ✔️    | ✔️   | 
+|                   | Een lijst met deelnemers in een chatgesprek op halen                                                                          | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   | 
 |                   | Een chatgesprek verwijderen                                                                                              | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
-|                   | Bekijk aan de hand van een communicatie gebruiker de lijst met chat-threads waarvan de gebruiker deel uitmaakt                                           | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |   
+|                   | Als u een communicatiegebruiker bent, kunt u de lijst met chatthreads op halen waar de gebruiker deel van uitmaakt                                           | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |   
 |                   | Informatie ophalen voor een bepaald chatgesprek                                                                              | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |   
 |                   | Berichten verzenden en ontvangen in een chatgesprek                                                                            | ✔️   | ✔️   | ✔️    | ✔️  |  ✔️    | ✔️   |   
 |                   | De inhoud van het verzonden bericht bijwerken                                                                               | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |    
 |                   | Een bericht verwijderen dat u eerder hebt verzonden                                                                                                      | ✔️   | ✔️  | ✔️ | ✔️ |  ✔️    | ✔️   |    
-|                   | Lees bevestigingen voor berichten die door andere deel nemers zijn gelezen in een chat sessie                                        | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |   
-|                   | Ontvang een melding wanneer deel nemers een bericht in een chat-thread actief typen                                         | ✔️   | ✔️   | ✔️    | ✔️    |  ✔️    | ✔️   | 
+|                   | Ontvangstbewijzen lezen voor berichten die zijn gelezen door andere deelnemers in een chatgesprek                                        | ✔️   | ✔️  | ✔️    | ✔️   |  ✔️    | ✔️   |   
+|                   | Ontvang een melding wanneer deelnemers actief een bericht in een chatgesprek typen                                         | ✔️   | ✔️   | ✔️    | ✔️    |  ✔️    | ✔️   | 
 |                   | Alle berichten in een chatgesprek ophalen                                                                        | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   | 
-|                   | Unicode-emojis verzenden als onderdeel van de bericht inhoud                                                                            | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
-|Realtime meldingen (ingeschakeld door een specifiek signalerings pakket * *)|  Chat-clients kunnen zich abonneren om realtime updates te ontvangen voor inkomende berichten en andere bewerkingen die in een chat-thread optreden. Zie [Chat concepten](concepts.md#real-time-notifications) (Engelstalig) voor een lijst met ondersteunde updates voor realtime meldingen                                     | ✔️   | ❌    | ❌  | ❌  | ❌  | ❌  | 
-| Integratie met Azure Event Grid             | Gebruik de chat gebeurtenissen die beschikbaar zijn in Azure Event Grid om aangepaste meldings services te koppelen of deze gebeurtenis te plaatsen in een webhook om bedrijfs logica uit te voeren, zoals het bijwerken van CRM-records nadat een chat is voltooid   | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
-| Rapportages </br>(Deze informatie is beschikbaar op het tabblad controle voor uw communicatie Services-resource op Azure Portal)      | Inzicht in API-verkeer van uw chat-app door de gepubliceerde metrische gegevens in azure Metrics Explorer te controleren en waarschuwingen in te stellen voor het detecteren van afwijkingen     | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
-|                   | De oplossing voor communicatie Services controleren en fouten opsporen door diagnostische logboek registratie in te scha kelen voor uw resource    | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |   
+|                   | Unicode-emoji's verzenden als onderdeel van berichtinhoud                                                                            | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
+|Realtimemeldingen (ingeschakeld door een eigen signaleringspakket**)|  Chat-clients kunnen zich abonneren om realtime updates te krijgen voor binnenkomende berichten en andere bewerkingen die in een chatgesprek plaatsvinden. Zie Chatconcepten voor een lijst met ondersteunde updates voor realtime [meldingen](concepts.md#real-time-notifications)                                     | ✔️   | ❌    | ❌  | ❌  | ✔️  | ✔️  |   
+| Integratie met Azure Event Grid             | Gebruik de chatgebeurtenissen die beschikbaar zijn in Azure Event Grid om aangepaste meldingsservices te plaatsen of om die gebeurtenis te posten op een webhook om bedrijfslogica uit te voeren, zoals het bijwerken van CRM-records nadat een chat is voltooid   | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |    
+| Rapportages </br>(Deze informatie is beschikbaar op het tabblad Bewaking voor uw Communication Services resource op Azure Portal)      | Inzicht in API-verkeer van uw chat-app door de gepubliceerde metrische gegevens in Azure Metrics Explorer en waarschuwingen in te stellen om afwijkingen te detecteren     | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |  
+|                   | Monitor and debug your Communication Services solution by enabling diagnostic logging for your resource (Uw oplossing bewaken en fouten opsporen door diagnostische logboekregistratie in te stellen voor uw resource)    | ✔️   | ✔️  | ✔️    | ✔️  |  ✔️    | ✔️   |   
 
 
-* * Het pakket met de eigen signalering wordt geïmplementeerd met behulp van web sockets. Dit leidt tot een lange polling als web sockets niet worden ondersteund.  
+**Het eigen signaleringspakket wordt geïmplementeerd met behulp van websockers. Deze wordt terugvallen op lange polling als websockers niet worden ondersteund.  
 
-## <a name="javascript-chat-sdk-support-by-os-and-browser"></a>Java script chat SDK-ondersteuning per besturings systeem en browser    
+## <a name="javascript-chat-sdk-support-by-os-and-browser"></a>Ondersteuning voor JavaScript Chat SDK per besturingssysteem en browser    
 
 De volgende tabel bevat de set van ondersteunde browsers en versies die momenteel beschikbaar zijn.
     
 |                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    | iPad OS|
 |--------------------------------|----------------|--------------|-------|------|------|------|-------|
-| **Chat-SDK** | Firefox *, Chrome*, nieuwe Edge | Firefox *, Chrome*, Safari * | Chrome*  | Chrome* | Chrome* | Safari | Safari |
+| **Chat-SDK** | Firefox,*Chrome,* nieuwe Edge | Firefox,*Chrome,* Safari* | Chrome*  | Chrome* | Chrome* | Safari* | Safari* |
 
-* Naast de vorige twee releases wordt de meest recente versie ondersteund.<br/>   
+*Houd er rekening mee dat de nieuwste versie wordt ondersteund naast de vorige twee releases.<br/>   
 
 ## <a name="next-steps"></a>Volgende stappen   
 
@@ -68,4 +68,4 @@ De volgende tabel bevat de set van ondersteunde browsers en versies die momentee
 
 De volgende documenten zijn mogelijk interessant voor u:  
 - Uzelf bekend maken met de [chatconcepten](../chat/concepts.md)
-- Begrijpen hoe [prijzen](../pricing.md#chat) werken voor chat
+- Inzicht in [de prijzen](../pricing.md#chat) voor chat

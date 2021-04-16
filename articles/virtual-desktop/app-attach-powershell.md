@@ -1,17 +1,17 @@
 ---
 title: Windows Virtual Desktop MSIX-app koppelen PowerShell - Azure
-description: MsIX-app-attach instellen voor Windows Virtual Desktop behulp van PowerShell.
+description: MsIX-app-attach instellen voor Windows Virtual Desktop met behulp van PowerShell.
 author: Heidilohr
 ms.topic: how-to
 ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: f44cbf3764063c511c896f11bb7ebfaae2973f0c
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: ebc403553443a9ea04525323b751fbdb51d23c6e
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107365396"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107500580"
 ---
 # <a name="set-up-msix-app-attach-using-powershell"></a>MSIX-app-attach instellen met behulp van PowerShell
 
@@ -19,21 +19,17 @@ Naast de Azure Portal kunt u de MSIX-app ook handmatig koppelen met PowerShell. 
 
 ## <a name="requirements"></a>Vereisten
 
->[!IMPORTANT]
->Voordat u aan de slag gaat, [](https://aka.ms/enablemsixappattach) moet u dit formulier invullen en verzenden om MSIX-app-koppelen in te kunnenschakelen in uw abonnement. Als u geen goedgekeurde aanvraag hebt, werkt het koppelen van de MSIX-app niet. Het goedkeuren van aanvragen kan tijdens werkdagen maximaal 24 uur duren. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
+Dit is wat u nodig hebt om een MSIX-app-bijlage te configureren:
 
-Dit is wat u nodig hebt om een MSIX-app-attach te configureren:
-
-- Een werkende Windows Virtual Desktop implementatie. Zie Een tenant maken in Windows Virtual Desktop voor meer informatie over het implementeren [Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Zie Een hostgroep maken met de Windows Virtual Desktop voor meer informatie over het implementeren van Azure Resource Manager met [Azure Portal.](./create-host-pools-azure-marketplace.md)
+- Een werkende Windows Virtual Desktop implementatie. Zie Een tenant maken in Windows Virtual Desktop voor meer informatie over het implementeren [Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Zie Create a host pool with the Azure Portal (Een hostgroep maken met de Azure Portal) voor meer informatie over het implementeren van Windows Virtual Desktop [met Azure Resource Manager-integratie.](./create-host-pools-azure-marketplace.md)
 - Een Windows Virtual Desktop hostgroep met ten minste één actieve sessiehost.
-- Deze hostgroep moet zich in de validatieomgeving.
 - Een externe bureaublad-app-groep.
 - Het MSIX-pakkethulpprogramma.
 - Een toepassing met MSIX-pakket uitgebreid naar een MSIX-afbeelding die wordt geüpload naar een bestands share.
-- Een bestands share in uw Windows Virtual Desktop implementatie waar het MSIX-pakket wordt opgeslagen.
+- Een bestands share in uw Windows Virtual Desktop implementatie waarin het MSIX-pakket wordt opgeslagen.
 - De bestands share waar u de MSIX-afbeelding hebt geüpload, moet ook toegankelijk zijn voor alle virtuele machines (VM's) in de hostgroep. Gebruikers hebben alleen-lezenmachtigingen nodig voor toegang tot de afbeelding.
 - Download en installeer PowerShell Core.
-- Download de openbare preview Azure PowerShell module en vouw deze uit naar een lokale map.
+- Download de openbare preview-Azure PowerShell module en vouw deze uit naar een lokale map.
 - Installeer de Azure-module door de volgende cmdlet uit te uitvoeren:
 
     ```powershell
@@ -242,7 +238,7 @@ Stel onze communityvragen over deze functie op de [Windows Virtual Desktop TechC
 
 U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)
 
-Hier zijn enkele andere artikelen die mogelijk nuttig zijn:
+Hier zijn enkele andere artikelen die u mogelijk nuttig vindt:
 
-- [Verklarende woordenlijst voor het koppelen van MSIX-apps](app-attach-glossary.md)
+- [Verklarende woordenlijst voor msix-app-attach](app-attach-glossary.md)
 - [Veelgestelde vragen over het koppelen van MSIX-apps](app-attach-faq.md)

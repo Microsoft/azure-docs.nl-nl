@@ -16,11 +16,11 @@
   items:
     - name: De clientbibliotheek of REST API gebruiken
       href: client-libraries.md
-    - name: De op het web gebaseerde gebruikers interface gebruiken
+    - name: De webgebaseerde gebruikersinterface gebruiken
       href: quick-start.md
 - name: Voorbeelden
   items:
-    - name: Voor beelden van browser
+    - name: Voorbeeldenbrowser
       href: /samples/browse/?terms=content+moderator
     - name: .NET SDK-voorbeelden
       href: samples-dotnet.md
@@ -78,10 +78,16 @@
       href: Review-Tool-User-Guide/Configure.md
     - name: Accountgegevens exporteren of verwijderen
       href: ./export-delete-data.md
-    - name: Content Moderator aanpassen
+    - name: De Content Moderator
       items:
         - name: 'Beoordelingen, werkstromen en taken'
           href: review-api.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/content-moderator/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
 - name: Concepten
   items:
     - name: Beheer van afbeeldingen
@@ -114,19 +120,21 @@
       href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/contentmoderator'
 - name: Resources
   items:
-    - name: Azure-webinarserie
-      href: 'https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html'
-    - name: Ondersteuning voor regio
-      href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Microsoft Learn modules
-      href: /learn/browse/?terms=content+moderator
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/content-moderator/context/context
-    - name: Azure Government en wereld wijd Azure
+    - name: Microsoft Learn modules
+      href: /learn/browse/?terms=content+moderator
+    - name: Azure-webinarserie
+      href: 'https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html'
+    - name: Azure Government en wereldwijd Azure
       href: ../../azure-government/compare-azure-government-global-azure.md
     - name: Azure-updates
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Naleving
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md

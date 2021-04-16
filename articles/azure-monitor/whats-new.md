@@ -1,6 +1,6 @@
 ---
 title: 'Azure Monitor docs: Wat is er nieuw voor maart 2021'
-description: Wat is er nieuw in de Azure Monitor documenten voor maart 2021.
+description: Wat is er nieuw in de Azure Monitor voor maart 2021.
 ms.topic: conceptual
 ms.date: 04/10/2021
 ms.openlocfilehash: 8444089683484318a8802afae62a3121d0b535dd
@@ -12,7 +12,7 @@ ms.locfileid: "107498234"
 ---
 # <a name="azure-monitor-docs-whats-new-for-march-2021"></a>Azure Monitor docs: Wat is er nieuw voor maart 2021
 
-Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot en met 31 maart 2021. In dit artikel worden enkele belangrijke wijzigingen in documenten in deze periode beschreven.
+Welkom bij wat er nieuw is in de Azure Monitor docs van 1 maart 2021 tot en met 31 maart 2021. In dit artikel worden enkele belangrijke wijzigingen in documenten in deze periode beschreven.
 
 ## <a name="general"></a>Algemeen
 
@@ -29,7 +29,7 @@ Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot e
 
 - [Gegevensverzameling configureren voor de Azure Monitor agent (preview)](agents/data-collection-rule-azure-monitor-agent.md)
 - [Overzicht van Azure Monitor agents](agents/agents-overview.md)
-- [Prestatiegegevensbronnen voor Windows en Linux verzamelen met log analytics-agent](agents/data-sources-performance-counters.md)
+- [Prestatiegegevensbronnen voor Windows en Linux verzamelen met Log Analytics-agent](agents/data-sources-performance-counters.md)
 
 ## <a name="alerts"></a>Waarschuwingen
 
@@ -55,10 +55,10 @@ Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot e
 - [Gebruik wijzigingsanalyse voor toepassingen (preview) in Azure Monitor](app/change-analysis.md)
 - [Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens](app/api-custom-events-metrics.md)
 - [Java-toepassingsbewaking zonder code Azure Monitor Application Insights](app/java-in-process-agent.md)
-- [De Snapshot Debugger voor .NET-apps inschakelen in Azure App Service](app/snapshot-debugger-appservice.md)
-- [De Snapshot Debugger voor .NET- en .NET Core-apps inschakelen in Azure Functions](app/snapshot-debugger-function-app.md)
+- [De Snapshot Debugger inschakelen voor .NET-apps in Azure App Service](app/snapshot-debugger-appservice.md)
+- [Schakel Snapshot Debugger in voor .NET- en .NET Core-apps in Azure Functions](app/snapshot-debugger-function-app.md)
 - [<a id=troubleshooting></a> Problemen met het inschakelen Application Insights Snapshot Debugger weergeven van momentopnamen oplossen](app/snapshot-debugger-troubleshoot.md)
-- [Opmerkingen bij de release van de Azure Web App-extensie voor Application Insights](app/web-app-extension-release-notes.md)
+- [Release-opmerkingen voor Azure Web App-extensie voor Application Insights](app/web-app-extension-release-notes.md)
 - [Een Azure Monitor voor uw Python-toepassing instellen](app/opencensus-python.md)
 - [Upgraden van Application Insights Java 2.x SDK](app/java-standalone-upgrade-from-2x.md)
 - [Gebruik Stream Analytics voor het verwerken van geëxporteerde gegevens uit Application Insights](app/export-stream-analytics.md)
@@ -69,16 +69,16 @@ Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot e
 **Bijgewerkte artikelen**
 
 - [Problemen met Container Insights oplossen](containers/container-insights-troubleshoot.md)
-- [Kubernetes-logboeken, gebeurtenissen en metrische podgegevens in realtime weergeven](containers/container-insights-livedata-overview.md)
+- [Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pods in realtime weergeven](containers/container-insights-livedata-overview.md)
 - [Logboeken opvragen vanuit Container Insights](containers/container-insights-log-search.md)
 - [PV-bewaking configureren met Container Insights](containers/container-insights-persistent-volumes.md)
 - [De prestaties van uw Kubernetes-cluster bewaken met Container Insights](containers/container-insights-analyze.md)
 - [Een Azure Red Hat OpenShift v3 configureren met Container Insights](containers/container-insights-azure-redhat-setup.md)
-- [Configureer Azure Red Hat OpenShift v4.x met Container Insights](containers/container-insights-azure-redhat4-setup.md)
+- [Azure Red Hat OpenShift v4.x configureren met Container Insights](containers/container-insights-azure-redhat4-setup.md)
 - [De bewaking van een Kubernetes-cluster met Azure Arc inschakelen](containers/container-insights-enable-arc-enabled-clusters.md)
 - [Hybride Kubernetes-clusters configureren met Container Insights](containers/container-insights-hybrid-setup.md)
-- [Aanbevolen waarschuwingen voor metrische gegevens (preview) van Container Insights](containers/container-insights-metric-alerts.md)
-- [Container insights inschakelen](containers/container-insights-onboard.md)
+- [Aanbevolen metrische waarschuwingen (preview) van Container Insights](containers/container-insights-metric-alerts.md)
+- [Containerinzichten inschakelen](containers/container-insights-onboard.md)
 - [Overzicht van Container Insights](containers/container-insights-overview.md)
 - [Scraping van metrische Prometheus-gegevens configureren met Container Insights](containers/container-insights-prometheus-integration.md)
 
@@ -87,7 +87,7 @@ Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot e
 **Bijgewerkte artikelen**
 
 - [Geavanceerde functies van De Verkenner voor metrische gegevens van Azure](essentials/metrics-charts.md)
-- [Application Insights op logboek gebaseerde metrische gegevens](essentials/app-insights-metrics.md)
+- [Application Insights op logboeken gebaseerde metrische gegevens](essentials/app-insights-metrics.md)
 - [Aan de slag met Azure Metrics Explorer](essentials/metrics-getting-started.md)
 
 
@@ -96,7 +96,7 @@ Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot e
 **Bijgewerkte artikelen**
 
 - [Azure Monitor Network Insights](insights/network-insights-overview.md)
-- [Wire Data 2.0 (preview)-oplossing in Azure Monitor (teruggetrokken)](insights/wire-data.md)
+- [Wire Data 2.0 (preview)-oplossing in Azure Monitor (ingetrokken)](insights/wire-data.md)
 - [Uw SQL-implementaties bewaken met SQL-inzichten (preview)](insights/sql-insights-overview.md)
 
 ## <a name="logs"></a>Logboeken
@@ -126,7 +126,7 @@ Welkom bij wat er nieuw is in de Azure Monitor documenten van 1 maart 2021 tot e
 - [VM-inzichten inschakelen met behulp Resource Manager sjablonen](vm/vminsights-enable-resource-manager.md)
 - [Veelgestelde vragen over algemeen beschikbare VM-inzichten (GA)](vm/vminsights-ga-release-faq.md)
 - [Gasttoestand van VM-inzichten inschakelen (preview)](vm/vminsights-health-enable.md)
-- [Bewaking van uw VM's uitschakelen in VM-inzichten](vm/vminsights-optout.md)
+- [Bewaking van uw VM's in VM-inzichten uitschakelen](vm/vminsights-optout.md)
 - [Overzicht van VM-inzichten](vm/vminsights-overview.md)
 - [Prestaties in kaart brengen met VM-inzichten](vm/vminsights-performance.md)
 

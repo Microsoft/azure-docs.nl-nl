@@ -1,63 +1,63 @@
 ---
-title: Toestemming van groeps eigenaar configureren voor apps die toegang hebben tot groeps gegevens met behulp van Azure AD
-description: Meer informatie over het beheren of groeps-en team eigenaren kunnen toestemming geven voor toepassingen die toegang hebben tot de gegevens van de groep of het team.
+title: Toestemming van groepseigenaar configureren voor apps die toegang hebben tot groepsgegevens met behulp van Azure AD
+description: Meer informatie over beheren of groeps- en teameigenaren toestemming kunnen geven voor toepassingen die toegang hebben tot de gegevens van de groep of het team.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
 ms.date: 05/19/2020
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 8d8604a1dd54ed819bb9e27c46d61a46466bf3da
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: be28148aacf270f2f3cfabad4cbd5f03afa05d3b
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102548798"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374417"
 ---
-# <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Toestemming van groeps eigenaar configureren voor apps die toegang hebben tot groeps gegevens
+# <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Toestemming van groepseigenaar configureren voor apps die toegang hebben tot groepsgegevens
 
-Groeps-en team eigenaren kunnen toepassingen, zoals toepassingen die door derden worden gepubliceerd, machtigen om toegang te krijgen tot de gegevens van uw organisatie die aan een groep zijn gekoppeld. Een team eigenaar in micro soft teams kan bijvoorbeeld toestaan dat een app alle teams berichten in het team leest of het basis profiel van de leden van een groep vermeldt. Zie [resource-specifieke toestemming in micro soft teams](/microsoftteams/resource-specific-consent) voor meer informatie.
+Groeps- en teameigenaren kunnen toepassingen, zoals toepassingen die zijn gepubliceerd door externe leveranciers, autoreren voor toegang tot de gegevens van uw organisatie die aan een groep zijn gekoppeld. Een teameigenaar in Microsoft Teams kan bijvoorbeeld toestaan dat een app alle Teams-berichten in het team kan lezen of het basisprofiel van de leden van een groep kan bekijken. Zie [Resourcespecifieke toestemming in Microsoft Teams](/microsoftteams/resource-specific-consent) voor meer informatie.
 
-## <a name="manage-group-owner-consent-to-apps"></a>Toestemming van groeps eigenaar beheren voor apps
+## <a name="manage-group-owner-consent-to-apps"></a>Toestemming van groepseigenaar voor apps beheren
 
-U kunt configureren welke gebruikers toestemming mogen geven om toegang te krijgen tot de gegevens van hun groepen of teams, of u kunt dit uitschakelen voor alle gebruikers.
+U kunt configureren welke gebruikers toestemming mogen geven voor apps die toegang hebben tot de gegevens van hun groepen of teams, of u kunt dit uitschakelen voor alle gebruikers.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Volg deze stappen om de groeps eigenaar toestemming te geven voor het openen van groeps gegevens door apps:
+Volg deze stappen om toestemming van groepseigenaar te beheren voor apps die toegang hebben tot groepsgegevens:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator).
-2. Selecteer **Azure Active Directory**  >  toestemming van **bedrijfs toepassingen**  >  **en machtigingen**  >  **instellingen voor gebruikers toestemming**.
-3. Selecteer onder **toestemming van groeps eigenaar voor apps die toegang krijgen tot gegevens** de optie die u wilt inschakelen.
-4. Selecteer **Opslaan** om uw instellingen op te slaan.
+1. Meld u als globale [Azure Portal](https://portal.azure.com) aan bij [de Azure Portal.](../roles/permissions-reference.md#global-administrator)
+2. Selecteer **Azure Active Directory**  >  **Bedrijfstoepassingen Toestemming** en  >  **machtigingen Instellingen** voor toestemming van de  >  **gebruiker.**
+3. Selecteer **onder Toestemming van groepseigenaar voor apps die toegang hebben** tot gegevens de optie die u wilt inschakelen.
+4. Selecteer **Opslaan om** uw instellingen op te slaan.
 
-In dit voor beeld mogen alle groeps eigenaren toestemming geven voor apps die toegang hebben tot de gegevens van hun groepen:
+In dit voorbeeld mogen alle groepseigenaren toestemming geven voor apps die toegang hebben tot de gegevens van hun groepen:
 
-:::image type="content" source="media/configure-user-consent-groups/group-owner-consent.png" alt-text="Instellingen voor toestemming van groeps eigenaar":::
+:::image type="content" source="media/configure-user-consent-groups/group-owner-consent.png" alt-text="Toestemmingsinstellingen voor groepseigenaar":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview), gebruiken om de mogelijkheid van de groeps eigenaren in of uit te scha kelen, zodat toepassingen toegang krijgen tot de gegevens van uw organisatie voor de groepen waarvan ze eigenaar zijn.
+U kunt de Azure AD PowerShell Preview-module, [AzureADPreview,](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview)gebruiken om de mogelijkheid van groepseigenaren in of uit te schakelen om toestemming te geven voor toepassingen die toegang hebben tot de gegevens van uw organisatie voor de groepen waar ze eigenaar van zijn.
 
-1. Zorg ervoor dat u de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module gebruikt. Deze stap is belang rijk als u de [AzureAD](/powershell/module/azuread/) -module en de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module hebt geïnstalleerd.
+1. Zorg ervoor dat u de [AzureADPreview-module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) gebruikt. Deze stap is belangrijk als u zowel de [AzureAD-module](/powershell/module/azuread/) als de [AzureADPreview-module hebt](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) geïnstalleerd.
 
     ```powershell
     Remove-Module AzureAD
     Import-Module AzureADPreview
     ```
 
-1. Verbinding maken met Azure AD Power shell.
+1. Maak verbinding met Azure AD PowerShell.
 
    ```powershell
    Connect-AzureAD
    ```
 
-1. Haal de huidige waarde op voor de instellingen van de map met instellingen voor het **toestemming beleid** in uw Tenant. Hiervoor moet worden gecontroleerd of de Directory-instellingen voor deze functie zijn gemaakt en als dat niet het geval is, gebruikt u de waarden uit de bijbehorende sjabloon voor Directory-instellingen.
+1. Haal de huidige waarde op voor de **directory-instellingen voor toestemmingsbeleid** in uw tenant. Hiervoor moet worden gecontroleerd of de directory-instellingen voor deze functie zijn gemaakt, en zo niet, met behulp van de waarden uit de bijbehorende directory-instellingensjabloon.
 
     ```powershell
     $consentSettingsTemplateId = "dffd5d46-495d-40a9-8e21-954ff55e198a" # Consent Policy Settings
@@ -72,14 +72,14 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
     $limitedToValue = $settings.Values | ? { $_.Name -eq "ConstrainGroupSpecificConsentToMembersOfGroupId" }
     ```
 
-1. Meer informatie over de instellings waarden. Er zijn twee instellingen waarden die bepalen welke gebruikers een app kunnen gebruiken om toegang te krijgen tot de gegevens van de groep:
+1. Inzicht in de instellingswaarden. Er zijn twee instellingenwaarden waarmee wordt bepaald welke gebruikers een app toegang kunnen geven tot de gegevens van hun groep:
 
     | Instelling       | Type         | Description  |
     | ------------- | ------------ | ------------ |
-    | _EnableGroupSpecificConsent_   | Booleaans | Vlag waarmee wordt aangegeven of groeps eigenaren specifieke machtigingen mogen verlenen. |
-    | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Als _EnableGroupSpecificConsent_ is ingesteld op ' True ' en deze waarde is ingesteld op de object-id van een groep, worden leden van de geïdentificeerde groep gemachtigd om groeps-specifieke machtigingen te verlenen aan de groepen waarvan ze eigenaar zijn. |
+    | _EnableGroupSpecificConsent_   | Booleaans | Vlag die aangeeft of groepseigenaren groepspecifieke machtigingen mogen verlenen. |
+    | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Als _EnableGroupSpecificConsent_ is ingesteld op 'True' en deze waarde is ingesteld op de object-id van een groep, worden leden van de geïdentificeerde groep gemachtigd om groepsspecifieke machtigingen te verlenen aan de groepen waar ze eigenaar van zijn. |
 
-1. Update-instellingen waarden voor de gewenste configuratie:
+1. Werk instellingenwaarden bij voor de gewenste configuratie:
 
     ```powershell
     # Disable group-specific consent entirely
@@ -117,11 +117,11 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
 Zie voor meer informatie:
 
-* [Instellingen voor gebruikers toestemming configureren](configure-user-consent.md)
-* [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
-* [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen](manage-consent-requests.md)
+* [Toestemmingsinstellingen voor gebruikers configureren](configure-user-consent.md)
+* [De werkstroom voor beheerders toestemming configureren](configure-admin-consent-workflow.md)
+* [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemmingsaanvragen](manage-consent-requests.md)
 * [Een toepassing beheerderstoestemming verlenen voor de hele tenant](grant-admin-consent.md)
-* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
+* [Machtigingen en toestemming in het Microsoft Identity Platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
-* [Azure AD op micro soft Q&A ](/answers/topics/azure-active-directory.html)
+* [Azure AD in Microsoft Q&A ](/answers/topics/azure-active-directory.html)

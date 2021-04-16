@@ -3,11 +3,11 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Computer Vision overzicht
+    - name: Wat is Computer Vision?
       href: overview.md
     - name: Taalondersteuning
       href: language-support.md
-    - name: Prijzen en beperkingen
+    - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/computer-vision'
     - name: Nieuw
       href: whats-new.md
@@ -180,21 +180,23 @@
               href: /azure/cognitive-services/containers/index?context=/azure/cognitive-services/computer-vision/context/context
 - name: Instructiegidsen
   items:
-    - name: Virtuele netwerken configureren
-      href: /azure/cognitive-services/cognitive-services-virtual-networks?context=/azure/cognitive-services/computer-vision/context/context
-    - name: AAD-verificatie configureren
-      href: /azure/cognitive-services/authentication?tabs=powershell?context=/azure/cognitive-services/computer-vision/context/context
-    - name: Door de klant beheerde sleutels gebruiken
-      href: /azure/cognitive-services/encryption/cognitive-services-encryption-keys-portal?context=/azure/cognitive-services/computer-vision/context/context
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: /azure/cognitive-services/cognitive-services-virtual-networks?context=/azure/cognitive-services/computer-vision/context/context
+        - name: Azure AD-verificatie gebruiken
+          href: /azure/cognitive-services/authentication?tabs=powershell?context=/azure/cognitive-services/computer-vision/context/context
 - name: Resources
   items:
-    - name: Ondersteuning voor regio
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: LEARN-modules
-      href: /learn/paths/explore-computer-vision-microsoft-azure/
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/computer-vision/context/context
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Microsoft Learn modules
+      href: /learn/paths/explore-computer-vision-microsoft-azure/
     - name: Azure-updates
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'

@@ -7,7 +7,7 @@
     - name: Berichtenservices vergelijken
       href: ../event-grid/compare-messaging-services.md
       maintainContext: true
-    - name: 'Service Bus gebruiken met de Java-bericht service (JMS) 2,0'
+    - name: Gebruik Service Bus Java Message Service (JMS) 2.0
       href: how-to-use-java-message-service-20.md
 - name: Snelstartgidsen
   items:
@@ -92,22 +92,34 @@
   items:
     - name: 'Wachtrijen, onderwerpen en abonnementen'
       href: service-bus-queues-topics-subscriptions.md
-    - name: Berichtsessies
-      href: message-sessions.md
-    - name: Onderwerpfilters en acties
-      href: topic-filters.md
     - name: Premium Messaging
       href: service-bus-premium-messaging.md
     - name: Azure Queues en Service Bus-wachtrijen vergelijken
       href: service-bus-azure-and-service-bus-queues-compared-contrasted.md
-    - name: 'Berichten overdragen, vergrendelen en verwerken'
-      href: message-transfers-locks-settlement.md
-    - name: Wachtrijen voor onbestelbare berichten
-      href: service-bus-dead-letter-queues.md
-    - name: Berichtentellers
-      href: message-counters.md
-    - name: Prestaties optimaliseren
-      href: service-bus-performance-improvements.md
+    - name: Geavanceerde functies
+      items:
+        - name: Berichtsessies
+          href: message-sessions.md
+        - name: Onderwerpfilters en acties
+          href: topic-filters.md
+        - name: Berichten doorzoeken
+          href: message-browsing.md
+        - name: 'Berichten overdragen, vergrendelen en verwerken'
+          href: message-transfers-locks-settlement.md
+        - name: Wachtrijen voor onbestelbare berichten
+          href: service-bus-dead-letter-queues.md
+        - name: Berichtentellers
+          href: message-counters.md
+        - name: Prestaties optimaliseren
+          href: service-bus-performance-improvements.md
+        - name: Geo-herstel na noodgeval en geo-replicatie
+          href: service-bus-geo-dr.md
+        - name: Asynchrone berichten en hoge beschikbaarheid
+          href: service-bus-async-messaging.md
+        - name: Uitval en -noodgevallen afhandelen
+          href: service-bus-outages-disasters.md
+        - name: Beperking
+          href: service-bus-throttling.md
     - name: Federatie
       items:
         - name: Berichtreplicatie en federatie in meerdere regio's
@@ -124,14 +136,6 @@
           href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub'
         - name: Berichten ophalen uit Event Hubs
           href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus'
-    - name: Geo-herstel na noodgeval en geo-replicatie
-      href: service-bus-geo-dr.md
-    - name: Asynchrone berichten en hoge beschikbaarheid
-      href: service-bus-async-messaging.md
-    - name: Uitval en -noodgevallen afhandelen
-      href: service-bus-outages-disasters.md
-    - name: Beperking
-      href: service-bus-throttling.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
@@ -158,7 +162,7 @@
           href: network-security.md
     - name: Integratie met andere services
       items:
-        - name: Integratie van Azure Service Bus en Azure Event Grid
+        - name: Azure Service Bus en Azure Event Grid integratie
           href: service-bus-to-event-grid-integration-concept.md
 - name: Instructiegidsen
   items:
@@ -166,13 +170,13 @@
       items:
         - name: Een naamruimte maken
           href: service-bus-create-namespace-portal.md
-        - name: Abonnements filters en-acties instellen
+        - name: Abonnementsfilters en -acties instellen
           href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
           items:
-            - name: 'JMS-entiteiten (Java Message Service) 2,0'
+            - name: JMS-entiteiten (Java Message Service) 2.0
               href: java-message-service-20-entities.md
-            - name: JMS-ontwikkelaar (Java Message Service) guide.md
+            - name: JMS-ontwikkelaarsaccounts (Java Message Service) guide.md
               href: jms-developer-guide.md
             - name: 'Berichten, nettoladingen en serialisatie'
               href: service-bus-messages-payloads.md
@@ -206,8 +210,6 @@
               href: duplicate-detection.md
             - name: Berichten uitstellen
               href: message-deferral.md
-            - name: Berichten doorzoeken
-              href: message-browsing.md
             - name: Entiteiten koppelen met automatisch doorsturen
               href: service-bus-auto-forwarding.md
             - name: Transactieverwerking

@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: eigendom bewijzen van CA-certificaten in azure IoT Hub | Microsoft Docs'
-description: 'Zelf studie: bewijs dat u eigenaar bent van een CA-certificaat voor Azure IoT Hub'
+title: 'Zelfstudie: Eigendom van CA-certificaten bewijzen in Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: bewijzen dat u eigenaar bent van een CA-certificaat voor Azure IoT Hub'
 author: v-gpettibone
 manager: philmea
 ms.service: iot-hub
@@ -12,41 +12,40 @@ ms.custom:
 - mvc
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
-- devx-track-azurecli
-ms.openlocfilehash: 5e2827a4f87398f0a37ef04f797d2c7276d1a66d
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: b7740fa1f6a54dcfcc1181dddedcdd5fdb50402c
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106384167"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378224"
 ---
-# <a name="tutorial-proving-possession-of-a-ca-certificate"></a>Zelf studie: het bezit zijn van een CA-certificaat
+# <a name="tutorial-proving-possession-of-a-ca-certificate"></a>Zelfstudie: Bezit van een CA-certificaat bewijzen
 
-Nadat u uw CA-certificaat (basis certificerings instantie) of een onderliggend CA-certificaat hebt geüpload naar uw IoT-hub, moet u bewijzen dat u eigenaar bent van het certificaat:
+Nadat u uw basiscertificeringsinstantiecertificaat (CA) of onderliggend CA-certificaat hebt geüpload naar uw IoT-hub, moet u bewijzen dat u eigenaar bent van het certificaat:
 
-1. Ga in het Azure Portal naar uw IoTHub en selecteer **instellingen > certificaten**.
+1. Navigeer Azure Portal naar uw IoTHub en selecteer **Instellingen > certificaten.**
 
-2. Selecteer **toevoegen** om een nieuw CA-certificaat toe te voegen.
+2. Selecteer **Toevoegen om** een nieuw CA-certificaat toe te voegen.
 
-3. Voer een weergave naam in het veld **certificaat naam** in en selecteer het PEM-certificaat dat u wilt toevoegen.
+3. Voer een weergavenaam in het **veld Certificaatnaam** in en selecteer het PEM-certificaat dat u wilt toevoegen.
 
-4. Selecteer **Opslaan**. Uw certificaat wordt weer gegeven in de lijst certificaten met de status niet **geverifieerd**. Dit verificatie proces bewijst dat u het certificaat hebt.
+4. Selecteer **Opslaan**. Uw certificaat wordt weergegeven in de lijst met certificaten met de status **Niet geverifieerd.** Dit verificatieproces zal bewijzen dat u het certificaat in bezit hebt.
 
-5. Selecteer het certificaat om het dialoog venster **certificaat Details** weer te geven.
+5. Selecteer het certificaat om het dialoogvenster **Certificaatdetails weer te** geven.
 
-6. Selecteer **verificatie code genereren** in het dialoog venster.
+6. Selecteer **Verificatiecode genereren** in het dialoogvenster.
 
-  :::image type="content" source="media/tutorial-x509-prove-possession/certificate-details.png" alt-text="{Dialoog venster certificaat Details}":::
+  :::image type="content" source="media/tutorial-x509-prove-possession/certificate-details.png" alt-text="Dialoogvenster {Certificaatdetails}":::
 
-7. Kopieer de verificatiecode naar het klembord. U moet de verificatie code instellen als het certificaat onderwerp. Als de verificatie code bijvoorbeeld 75B86466DA34D2B04C0C4C9557A119687ADAE7D4732BDDB3 is, voegt u deze toe als het onderwerp van het certificaat, zoals in de volgende stap wordt weer gegeven.
+7. Kopieer de verificatiecode naar het klembord. U moet de verificatiecode instellen als het certificaatonderwerp. Als de verificatiecode bijvoorbeeld 75B86466DA34D2B04C0C4C9557A119687ADAE7D4732BDDB3 is, voegt u dat toe als onderwerp van uw certificaat, zoals wordt weergegeven in de volgende stap.
 
-8. Er zijn drie manieren om een verificatie certificaat te genereren:
+8. Er zijn drie manieren om een verificatiecertificaat te genereren:
 
-    * Als u het Power shell-script gebruikt dat door micro soft wordt geleverd, voert u uit `New-CACertsVerificationCert "75B86466DA34D2B04C0C4C9557A119687ADAE7D4732BDDB3"` om een certificaat met de naam te maken `VerifyCert4.cer` . Zie [gebruikmaken van door micro soft geleverde scripts](tutorial-x509-scripts.md)voor meer informatie.
+    * Als u het PowerShell-script gebruikt dat door Microsoft is geleverd, voer dan uit om `New-CACertsVerificationCert "75B86466DA34D2B04C0C4C9557A119687ADAE7D4732BDDB3"` een certificaat met de naam te `VerifyCert4.cer` maken. Zie Using [Microsoft-supplied Scripts (Door Microsoft geleverde scripts gebruiken) voor meer informatie.](tutorial-x509-scripts.md)
 
-    * Als u het bash-script gebruikt dat door micro soft wordt geleverd, voert u uit `./certGen.sh create_verification_certificate "75B86466DA34D2B04C0C4C9557A119687ADAE7D4732BDDB3"` om een certificaat met de naam te maken `verification-code.cert.pem` . Zie [gebruikmaken van door micro soft geleverde scripts](tutorial-x509-scripts.md)voor meer informatie.
+    * Als u het Bash-script gebruikt dat door Microsoft is geleverd, voer dan uit om `./certGen.sh create_verification_certificate "75B86466DA34D2B04C0C4C9557A119687ADAE7D4732BDDB3"` een certificaat met de naam te `verification-code.cert.pem` maken. Zie Using [Microsoft-supplied Scripts (Door Microsoft geleverde scripts gebruiken) voor meer informatie.](tutorial-x509-scripts.md)
 
-    * Als u OpenSSL gebruikt om uw certificaten te genereren, moet u eerst een persoonlijke sleutel genereren en vervolgens een aanvraag voor certificaat ondertekening (CSR):
+    * Als u OpenSSL gebruikt om uw certificaten te genereren, moet u eerst een persoonlijke sleutel genereren en vervolgens een aanvraag voor certificaat-ondertekening (CSR):
 
       ```bash
       $ openssl genpkey -out pop.key -algorithm RSA -pkeyopt rsa_keygen_bits:2048
@@ -69,15 +68,15 @@ Nadat u uw CA-certificaat (basis certificerings instantie) of een onderliggend C
  
       ```
 
-      Maak vervolgens een certificaat met behulp van het configuratie bestand van de basis-CA (hieronder weer gegeven) of het configuratie bestand van de onderliggende CA en de CSR.
+      Maak vervolgens een certificaat met behulp van het basis-CA-configuratiebestand (zie hieronder) of het onderliggende CA-configuratiebestand en de CSR.
 
       ```bash
       openssl ca -config rootca.conf -in pop.csr -out pop.crt -extensions client_ext
 
       ```
 
-    Zie [openssl gebruiken om test certificaten te maken](tutorial-x509-openssl.md)voor meer informatie.
+    Zie OpenSSL gebruiken om [testcertificaten te maken voor meer informatie.](tutorial-x509-openssl.md)
 
-10. Selecteer in de weer gave **certificaat Details** het nieuwe certificaat.
+10. Selecteer het nieuwe certificaat in de weergave **Certificaatdetails.**
 
-11. Nadat het certificaat is geüpload, selecteert u **verifiëren**. De status van het CA-certificaat moet worden gewijzigd in **gecontroleerd**.
+11. Nadat het certificaat is geüpload, selecteert **u Verifiëren.** De ca-certificaatstatus moet worden gewijzigd **in Geverifieerd.**

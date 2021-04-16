@@ -1,6 +1,6 @@
 ---
-title: azcopy maken | Microsoft Docs
-description: In dit artikel vindt u Naslag informatie voor de opdracht azcopy.
+title: azcopy make | Microsoft Docs
+description: Dit artikel bevat naslaginformatie voor de opdracht azcopy make.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -8,20 +8,20 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: f6d9645e614730d2eb5fad8bca30486e9afef618
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1e5b142d36266d5b6a333a0fa5cd233bac71849e
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98878338"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107503028"
 ---
 # <a name="azcopy-make"></a>azcopy make
 
 Hiermee maakt u een container of bestands share.
 
-## <a name="synopsis"></a>Samen vatting
+## <a name="synopsis"></a>Synopsis
 
-Maak een container of bestands share die wordt vertegenwoordigd door de opgegeven bron-URL.
+Maak een container of bestands share die wordt vertegenwoordigd door de opgegeven resource-URL.
 
 ```azcopy
 azcopy make [resourceURL] [flags]
@@ -32,7 +32,6 @@ azcopy make [resourceURL] [flags]
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 - [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
-- [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -44,16 +43,16 @@ azcopy make "https://[account-name].[blob,file,dfs].core.windows.net/[top-level-
 
 |Optie|Beschrijving|
 |--|--|
-|-h,--Help|Help-inhoud voor de opdracht maken weer geven. |
-|--quota-GB uint32|Hiermee geeft u de maximale grootte van de share in gigabytes (GB), nul betekent dat u het standaard quotum van de bestands service accepteert.|
+|-h, --help|Help-inhoud voor de make-opdracht tonen. |
+|--quota-gb uint32|Hiermee geeft u de maximale grootte van de share in gigabytes (GB), nul betekent dat u het standaardquotum van de bestandsservice accepteert.|
 
-## <a name="options-inherited-from-parent-commands"></a>Opties overgenomen van bovenliggende opdrachten
+## <a name="options-inherited-from-parent-commands"></a>Opties die zijn overgenomen van bovenliggende opdrachten
 
 |Optie|Beschrijving|
 |---|---|
-|--Cap-Mbps-float|De overdrachts frequentie in megabits per seconde. Even door Voer kan enigszins afwijken van het kapje. Als deze optie is ingesteld op nul of wordt wegge laten, wordt de door Voer niet afgetopt.|
-|--type teken reeks voor uitvoer|De indeling van de uitvoer van de opdracht. De opties zijn onder andere: Text, JSON. De standaard waarde is "text".|
-|--vertrouwd-micro soft-achtervoegsels teken reeks   |Hiermee geeft u aanvullende domein achtervoegsels op waar Azure Active Directory aanmeldings tokens kunnen worden verzonden.  De standaard waarde is *. core.Windows.net;*. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. Alle hier vermelde waarden worden toegevoegd aan de standaard instelling. Voor beveiliging moet u Microsoft Azure domeinen hier alleen plaatsen. Scheid meerdere vermeldingen met een punt komma.|
+|--cap-mbps float|Beperk de overdrachtssnelheid, in megabits per seconde. De doorvoer per moment kan enigszins afwijken van de limiet. Als deze optie is ingesteld op nul of wordt weggelaten, wordt de doorvoer niet afgekapt.|
+|--output-type string|Indeling van de uitvoer van de opdracht. De keuzes zijn onder andere: text, json. De standaardwaarde is 'text'.|
+|--trusted-microsoft-achtervoegsels tekenreeks   |Hiermee geeft u extra domeinachtervoegsels op waar Azure Active Directory aanmeldingstokens kunnen worden verzonden.  De standaardwaarde is '*.core.windows.net;*. core.chinacloudapi.cn; *.core.cloudapi.de;*. core.usgovcloudapi.net'. Alle die hier worden vermeld, worden toegevoegd aan de standaardinstelling. Voor beveiliging moet u hier alleen Microsoft Azure zetten. Scheid meerdere vermeldingen met punt-dubbele punts.|
 
 ## <a name="see-also"></a>Zie ook
 

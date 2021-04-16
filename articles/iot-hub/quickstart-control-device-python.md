@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: een apparaat beheren vanuit Azure IoT Hub Snelstartgids (python) | Microsoft Docs'
+title: 'Quickstart: Een apparaat vanuit een Azure IoT Hub (Python) | Microsoft Docs'
 description: In deze snelstartgids gaan we twee voorbeeldtoepassingen geschreven in Python uitvoeren. De ene toepassing is een back-endtoepassing waarmee u op afstand apparaten kunt beheren die zijn verbonden met uw hub. De andere toepassing simuleert een apparaat dat is verbonden met uw hub en dat op afstand kan worden beheerd.
 author: wesmc7777
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-python
 - devx-track-azurecli
 ms.date: 09/14/2020
-ms.openlocfilehash: d252aa15fef29f7c22e224fd7b6021a469530287
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 2ecc1ceb624f2f98bca47d4d1331f67c52fa54b4
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106067738"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107566908"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Quickstart: Een apparaat beheren dat is verbonden met een IoT-hub (Python)
 
@@ -33,7 +33,7 @@ In deze snelstart gebruikt u een directe methode om een gesimuleerd apparaat te 
 
 * [Python 3.7+](https://www.python.org/downloads/). Zie [Functies van Azure IoT-apparaten](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device#azure-iot-device-features) voor andere versies van Python die worden ondersteund.
 
-* [Een voorbeeld van een Python-project](https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip).
+* [Een python-voorbeeldproject](https://github.com/Azure-Samples/azure-iot-samples-python/) vanuit github. Download of kloon de voorbeelden met behulp van **de knop Code** in de github-opslagplaats.
 
 * Poort 8883 is geopend in de firewall. In het apparaatvoorbeeld in deze quickstart wordt het MQTT-protocol gebruikt, dat communiceert via poort 8883. Deze poort is in sommige netwerkomgevingen van bedrijven en onderwijsinstellingen mogelijk geblokkeerd. Zie [Verbinding maken met IoT Hub (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub) voor meer informatie en manieren om dit probleem te omzeilen.
 

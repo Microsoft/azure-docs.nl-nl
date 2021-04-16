@@ -4,17 +4,19 @@ titleSuffix: Azure Application Gateway
 description: In deze quickstart leest u hoe u Azure Portal gebruikt om een Azure Application Gateway te maken die webverkeer doorstuurt naar virtuele machines in een back-endpool.
 services: application-gateway
 author: vhorne
-ms.service: application-gateway
-ms.topic: quickstart
-ms.date: 01/19/2021
 ms.author: victorh
-ms.custom: mvc
-ms.openlocfilehash: c1b17d8c624d4bef74278acc24ece37a736a5ca8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 01/19/2021
+ms.topic: quickstart
+ms.service: application-gateway
+ms.custom:
+- mvc
+- mode-portal
+ms.openlocfilehash: 92e966f5a9c4a21a6a55862ad582f0238802720f
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98572966"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538580"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Quickstart: Webverkeer omleiden met Azure Application Gateway - Azure Portal
 
@@ -78,7 +80,7 @@ U maakt de toepassingsgateway met de tabbladen in de pagina **Een toepassingsgat
    > [!NOTE]
    > Voor de toepassingsgateway v2 SKU moet er een **Openbaar** front-end-IP-configuratie zijn. U kunt nog steeds zowel een openbare als een privé-front-end-IP-configuratie hebben, maar momenteel is de configuratie van alleen een privé-front-end (alleen ILB-modus) niet ingeschakeld voor de v2-SKU. 
 
-2. Selecteer **Nieuw toevoegen** voor het **open bare IP-adres** en voer *myAGPublicIPAddress* in voor de naam van het open bare IP-adres en selecteer vervolgens **OK**. 
+2. Selecteer **Nieuwe toevoegen** voor het openbare **IP-adres** en voer *myAGPublicIPAddress* in als de naam van het openbare IP-adres. Selecteer vervolgens **OK.** 
 
      ![Nieuwe toepassingsgateway maken: front-ends](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
 
@@ -86,9 +88,9 @@ U maakt de toepassingsgateway met de tabbladen in de pagina **Een toepassingsgat
 
 ### <a name="backends-tab"></a>Tabblad Back-ends
 
-De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endservers kunnen bestaan uit Nic's, virtuele-machine schaal sets, open bare IP-adressen, interne IP-adressen, FQDN-namen (Fully Qualified Domain names) en back-ends met meerdere tenants, zoals Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
+De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-ends kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP-adressen, interne IP-adressen, FQDN-namen (Fully Qualified Domain Names) en back-ends met meerdere tenants, zoals Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
 
-1. Selecteer op het tabblad **back** -end **een back-end-groep toevoegen**.
+1. Selecteer op **het tabblad Back-enden** de optie **Een back-endpool toevoegen.**
 
 2. Voer in het venster **Een back-endpool toevoegen** dat wordt geopend, de volgende waarden in om een lege back-endpool te maken:
 
@@ -105,7 +107,7 @@ De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers d
 
 In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die u hebt gemaakt met een regel voor doorsturen.
 
-1. Selecteer **een regel voor door sturen toevoegen** in de kolom **routerings regels** .
+1. Selecteer **Een routeringsregel toevoegen** in de kolom **Routeringsregels.**
 
 2. Voer in het venster **Een regel voor doorsturen toevoegen** dat wordt geopend, *myRoutingRule* in als de **Regelnaam**.
 
@@ -120,7 +122,7 @@ In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
 
 4. Selecteer in het tabblad **Back-enddoelen** de optie **myBackendPool** als het **Back-enddoel**.
 
-5. Selecteer voor de **http-instelling** **nieuwe toevoegen** om een nieuwe http-instelling toe te voegen. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling** en *80* voor de **Back-endpoort**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
+5. Voor de **HTTP-instelling** selecteert **u Nieuwe toevoegen** om een nieuwe HTTP-instelling toe te voegen. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling** en *80* voor de **Back-endpoort**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
 
      ![Nieuwe toepassingsgateway maken: HTTP-instelling](./media/application-gateway-create-gateway-portal/application-gateway-create-httpsetting.png)
 
@@ -147,7 +149,7 @@ Hiervoor moet u het volgende doen:
 ### <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
 1. Selecteer in het menu van Azure Portal of op de **startpagina** de optie **Een resource maken**. Het venster **Nieuw** wordt weergegeven.
-2. Selecteer in de lijst **Populair** de optie **Windows Server 2016-gegevenscentrum**. De pagina **Een virtuele machine maken** wordt weergegeven.<br>Toepassingsgateway kan verkeer routeren naar ieder type virtuele machine dat wordt gebruikt in de back-endpool. In dit voor beeld gebruikt u een virtuele machine met Windows Server 2016 Data Center.
+2. Selecteer in de lijst **Populair** de optie **Windows Server 2016-gegevenscentrum**. De pagina **Een virtuele machine maken** wordt weergegeven.<br>Toepassingsgateway kan verkeer routeren naar ieder type virtuele machine dat wordt gebruikt in de back-endpool. In dit voorbeeld gebruikt u een virtuele machine met Windows Server 2016 Datacenter.
 3. Voer deze waarden in op het tabblad **Basisinformatie** voor de volgende instellingen voor de virtuele machine:
 
     - **Resourcegroep**: Selecteer **myResourceGroupAG** als naam van de resourcegroep.
@@ -165,7 +167,7 @@ Hiervoor moet u het volgende doen:
 
 ### <a name="install-iis-for-testing"></a>IIS installeren voor testen
 
-In dit voor beeld installeert u IIS op de virtuele machines om te controleren of de toepassings gateway door Azure is gemaakt.
+In dit voorbeeld installeert u IIS op de virtuele machines om te controleren of azure de toepassingsgateway heeft gemaakt.
 
 1. Open Azure PowerShell.
 
@@ -231,7 +233,7 @@ De resourcegroep verwijderen:
 1. Selecteer in het menu Azure-portal de optie **Resourcegroepen** of zoek ernaar en selecteer *Resourcegroepen*.
 2. Zoek en selecteer **myResourceGroupAG** in de lijst op de pagina **Resourcegroepen**.
 3. Selecteer **Resourcegroep verwijderen** op de **pagina van de resourcegroep**.
-4. Voer *myResourceGroupAG* in onder **Typ de naam van de resource groep** en selecteer vervolgens **verwijderen** .
+4. Voer *myResourceGroupAG* in onder **TYP DE RESOURCEGROEPNAAM** en selecteer vervolgens **Verwijderen**
 
 ## <a name="next-steps"></a>Volgende stappen
 

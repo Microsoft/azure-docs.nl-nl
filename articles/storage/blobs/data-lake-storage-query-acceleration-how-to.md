@@ -1,6 +1,6 @@
 ---
-title: Gegevens filteren met behulp van Azure Data Lake Storage-query versnelling | Microsoft Docs
-description: Gebruik query versnelling om een subset van gegevens uit uw opslag account op te halen.
+title: Gegevens filteren met behulp van Azure Data Lake Storage queryversnelling | Microsoft Docs
+description: Gebruik queryversnelling om een subset met gegevens op te halen uit uw opslagaccount.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
@@ -8,27 +8,27 @@ ms.topic: how-to
 ms.date: 01/06/2021
 ms.author: normesta
 ms.reviewer: jamsbak
-ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: a925d3f55395d094c7f19f65de4b72fd20a11a41
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 58b8cdef604861342a6489ef4e57ff1d057cd3f4
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102213671"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107377731"
 ---
-# <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Gegevens filteren met behulp van Azure Data Lake Storage-query versnelling
+# <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Gegevens filteren met behulp van Azure Data Lake Storage queryversnelling
 
-Dit artikel laat u zien hoe u query versnelling kunt gebruiken om een subset van gegevens uit uw opslag account op te halen. 
+In dit artikel wordt beschreven hoe u queryversnelling gebruikt om een subset van gegevens op te halen uit uw opslagaccount. 
 
-Met de functie voor het versnellen van query's kunnen toepassingen en analyse raamwerken gegevens verwerking aanzienlijk optimaliseren door alleen de gegevens op te halen die nodig zijn voor het uitvoeren van een bepaalde bewerking. Zie [Azure data Lake Storage-query versnelling](data-lake-storage-query-acceleration.md)voor meer informatie.
+Met queryversnelling kunnen toepassingen en analyse-frameworks de gegevensverwerking aanzienlijk optimaliseren door alleen de gegevens op te halen die ze nodig hebben om een bepaalde bewerking uit te voeren. Zie Queryversnelling voor [Azure Data Lake Storage meer informatie.](data-lake-storage-query-acceleration.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
 - U hebt een Azure-abonnement nodig voor toegang tot Azure Storage. Als u nog geen abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 
-- Een **v2-** opslag account voor algemeen gebruik. Zie [een opslag account maken](../common/storage-account-create.md).
+- Een **v2-opslagaccount voor** algemeen gebruik. Zie [Een opslagaccount maken.](../common/storage-account-create.md)
 
-- Kies een tabblad om alle SDK-specifieke vereisten te bekijken.
+- Kies een tabblad om alle SDK-specifieke vereisten weer te zien.
 
   ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -36,7 +36,7 @@ Met de functie voor het versnellen van query's kunnen toepassingen en analyse ra
 
   ### <a name="net"></a>[.NET](#tab/dotnet)
 
-  De [.NET-SDK](https://dotnet.microsoft.com/download) 
+  De [.NET SDK](https://dotnet.microsoft.com/download) 
 
   ### <a name="java"></a>[Java](#tab/java)
 
@@ -45,11 +45,11 @@ Met de functie voor het versnellen van query's kunnen toepassingen en analyse ra
   - [Apache Maven](https://maven.apache.org/download.cgi) 
 
     > [!NOTE] 
-    > In dit artikel wordt ervan uitgegaan dat u een Java-project hebt gemaakt met behulp van Apache Maven. Zie [instellen](storage-quickstart-blobs-java.md#setting-up)voor een voor beeld van het maken van een project met Apache Maven.
+    > In dit artikel wordt ervan uitgenomen dat u een Java-project hebt gemaakt met behulp van Apache Maven. Zie Instellen voor een voorbeeld van het maken [](storage-quickstart-blobs-java.md#setting-up)van een project met behulp van Apache Maven.
   
   ### <a name="python"></a>[Python](#tab/python)
 
-  [Python](https://www.python.org/downloads/) 3,8 of hoger.
+  [Python](https://www.python.org/downloads/) 3.8 of hoger.
 
   ### <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
@@ -57,17 +57,17 @@ Met de functie voor het versnellen van query's kunnen toepassingen en analyse ra
 
 ---
 
-## <a name="enable-query-acceleration"></a>Query versnelling inschakelen
+## <a name="enable-query-acceleration"></a>Queryversnelling inschakelen
 
-Als u query versnelling wilt gebruiken, moet u de functie voor query versnelling registreren bij uw abonnement. Nadat u hebt gecontroleerd of de functie is geregistreerd, moet u de Azure Storage Resource provider registreren. 
+Als u queryversnelling wilt gebruiken, moet u de functie queryversnelling registreren bij uw abonnement. Nadat u hebt gecontroleerd of de functie is geregistreerd, moet u de resourceprovider Azure Storage registreren. 
 
-### <a name="step-1-register-the-query-acceleration-feature"></a>Stap 1: de functie voor query versnelling registreren
+### <a name="step-1-register-the-query-acceleration-feature"></a>Stap 1: de functie queryversnelling registreren
 
-Als u query versnelling wilt gebruiken, moet u eerst de functie voor query versnelling registreren bij uw abonnement. 
+Als u queryversnelling wilt gebruiken, moet u eerst de functie queryversnelling registreren bij uw abonnement. 
 
 #### <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-1. Open een Windows Power shell-opdracht venster.
+1. Open een Windows PowerShell opdrachtvenster.
 
 1. Meld u aan bij uw Azure-abonnement met de opdracht `Connect-AzAccount` en volg de instructies op het scherm.
 
@@ -84,7 +84,7 @@ Als u query versnelling wilt gebruiken, moet u eerst de functie voor query versn
 
    Vervang de `<subscription-id>` waarde van de tijdelijke aanduiding door de id van uw abonnement.
 
-3. De functie voor het versnellen van query's registreren met behulp van de opdracht [REGI ster-AzProviderFeature](/powershell/module/az.resources/register-azproviderfeature) .
+3. Registreer de functie queryversnelling met behulp [van de opdracht Register-AzProviderFeature.](/powershell/module/az.resources/register-azproviderfeature)
 
    ```powershell
    Register-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuery
@@ -92,9 +92,9 @@ Als u query versnelling wilt gebruiken, moet u eerst de functie voor query versn
 
 #### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-1. Open de [Azure Cloud shell](../../cloud-shell/overview.md)of open een opdracht console toepassing zoals Windows Power shell als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli) .
+1. Open de [Azure Cloud Shell](../../cloud-shell/overview.md)of als u [](/cli/azure/install-azure-cli) de Azure CLI lokaal hebt geïnstalleerd, opent u een opdrachtconsoletoepassing zoals Windows PowerShell.
 
-2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslag account.
+2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op abonnement van het opslagaccount.
 
    ```azurecli-interactive
    az account set --subscription <subscription-id>
@@ -102,7 +102,7 @@ Als u query versnelling wilt gebruiken, moet u eerst de functie voor query versn
 
    Vervang de `<subscription-id>` waarde van de tijdelijke aanduiding door de id van uw abonnement.
 
-3. De functie voor het versnellen van query's registreren met behulp van de opdracht [AZ feature REGI ster](/cli/azure/feature#az-feature-register) .
+3. Registreer de functie queryversnelling met behulp van [de opdracht az feature register.](/cli/azure/feature#az-feature-register)
 
    ```azurecli
    az feature register --namespace Microsoft.Storage --name BlobQuery
@@ -122,7 +122,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuer
 
 #### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u wilt controleren of de registratie is voltooid, gebruikt u de opdracht [AZ feature](/cli/azure/feature#az-feature-show) .
+Gebruik de opdracht az feature om te controleren of de [registratie is](/cli/azure/feature#az-feature-show) voltooid.
 
 ```azurecli
 az feature show --namespace Microsoft.Storage --name BlobQuery
@@ -130,13 +130,13 @@ az feature show --namespace Microsoft.Storage --name BlobQuery
 
 ---
 
-### <a name="step-3-register-the-azure-storage-resource-provider"></a>Stap 3: de Azure Storage Resource provider registreren
+### <a name="step-3-register-the-azure-storage-resource-provider"></a>Stap 3: de resourceprovider Azure Storage registreren
 
-Nadat de registratie is goedgekeurd, moet u de Azure Storage Resource provider opnieuw registreren. 
+Nadat uw registratie is goedgekeurd, moet u de resourceprovider opnieuw Azure Storage registreren. 
 
 #### <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Gebruik de opdracht [REGI ster-AzResourceProvider](/powershell/module/az.resources/register-azresourceprovider) om de resource provider te registreren.
+Gebruik de opdracht [Register-AzResourceProvider](/powershell/module/az.resources/register-azresourceprovider) om de resourceprovider te registreren.
 
 ```powershell
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
@@ -144,7 +144,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 
 #### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de resource provider wilt registreren, gebruikt u de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) .
+Gebruik de opdracht az [provider register](/cli/azure/provider#az-provider-register) om de resourceprovider te registreren.
 
 ```azurecli
 az provider register --namespace 'Microsoft.Storage'
@@ -158,13 +158,13 @@ az provider register --namespace 'Microsoft.Storage'
 
 #### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Installeer de AZ-module versie 4.6.0 of hoger.
+Installeer de Az-module versie 4.6.0 of hoger.
 
 ```powershell
 Install-Module -Name Az -Repository PSGallery -Force
 ```
 
-Als u een oudere versie van AZ wilt bijwerken, voert u de volgende opdracht uit:
+Voer de volgende opdracht uit om een oudere versie van Az bij te werken:
 
 ```powershell
 Update-Module -Name Az
@@ -172,19 +172,19 @@ Update-Module -Name Az
 
 #### <a name="net"></a>[.NET](#tab/dotnet)
 
-1. Open een opdracht prompt en wijzig de map ( `cd` ) in de projectmap, bijvoorbeeld:
+1. Open een opdrachtprompt en wijzig map ( `cd` ) in uw projectmap Bijvoorbeeld:
 
    ```console
    cd myProject
    ```
 
-2. Installeer de `12.5.0-preview.6` versie of later van de Azure Blob Storage-client bibliotheek voor .net-pakket met behulp van de `dotnet add package` opdracht. 
+2. Installeer de `12.5.0-preview.6` versie of hoger van de Azure Blob Storage-clientbibliotheek voor het .NET-pakket met behulp van de opdracht `dotnet add package` . 
 
    ```console
    dotnet add package Azure.Storage.Blobs -v 12.8.0
    ```
 
-3. De voor beelden die in dit artikel worden weer gegeven, parseren een CSV-bestand met behulp van de [CsvHelper](https://www.nuget.org/packages/CsvHelper/) -bibliotheek. Gebruik de volgende opdracht om die bibliotheek te gebruiken.
+3. In de voorbeelden die in dit artikel worden weergegeven, wordt een CSV-bestand geparseerd met behulp van de [CsvHelper-bibliotheek.](https://www.nuget.org/packages/CsvHelper/) Gebruik de volgende opdracht om deze bibliotheek te gebruiken.
 
    ```console
    dotnet add package CsvHelper
@@ -192,7 +192,7 @@ Update-Module -Name Az
 
 #### <a name="java"></a>[Java](#tab/java)
 
-1. Open het *pom.xml* -bestand van uw project in een tekst editor. Voeg de volgende afhankelijkheidselementen toe aan de groep met afhankelijkheden. 
+1. Open het *pom.xml* bestand van uw project in een teksteditor. Voeg de volgende afhankelijkheidselementen toe aan de groep met afhankelijkheden. 
 
    ```xml
    <!-- Request static dependencies from Maven -->
@@ -215,7 +215,7 @@ Update-Module -Name Az
 
 #### <a name="python"></a>[Python](#tab/python)
 
-Installeer de Azure Data Lake Storage-client bibliotheek voor python met behulp van [PIP](https://pypi.org/project/pip/).
+Installeer de Azure Data Lake Storage-clientbibliotheek voor Python met behulp van [pip](https://pypi.org/project/pip/).
 
 ```
 pip install azure-storage-blob==12.4.0
@@ -223,7 +223,7 @@ pip install azure-storage-blob==12.4.0
 
 #### <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-Installeer Data Lake-client bibliotheek voor Java script door een Terminal venster te openen en de volgende opdracht te typen.
+Installeer de Data Lake-clientbibliotheek voor JavaScript door een terminalvenster te openen en de volgende opdracht te typen.
 
 ```javascript
     npm install @azure/storage-blob
@@ -240,7 +240,7 @@ Niet van toepassing
 
 #### <a name="net"></a>[.NET](#tab/dotnet)
 
-Voeg deze `using` instructies toe aan de bovenkant van het code bestand.
+Voeg deze `using` instructies toe boven aan het codebestand.
 
 ```csharp
 using Azure.Storage.Blobs;
@@ -248,14 +248,14 @@ using Azure.Storage.Blobs.Models;
 using Azure.Storage.Blobs.Specialized;
 ```
 
-Met query versnelling worden gegevens uit CSV-en JSON-indeling opgehaald. Zorg er daarom voor dat u met instructies toevoegt voor de CSV-of JSON-bibliotheken die u wilt gebruiken. De voor beelden die in dit artikel worden weer gegeven, parseren een CSV-bestand met behulp van de [CsvHelper](https://www.nuget.org/packages/CsvHelper/) -bibliotheek die beschikbaar is op NuGet. Daarom voegen we deze `using` instructies toe aan het begin van het code bestand.
+Queryversnelling haalt gegevens in CSV- en JSON-indeling op. Zorg er daarom voor dat u using-instructies toevoegt voor alle CSV- of Json-parseringsbibliotheken die u wilt gebruiken. In de voorbeelden die in dit artikel worden weergegeven, wordt een CSV-bestand geparseerd met behulp van de [CsvHelper-bibliotheek](https://www.nuget.org/packages/CsvHelper/) die beschikbaar is op NuGet. Daarom voegen we deze instructies toe `using` aan de bovenkant van het codebestand.
 
 ```csharp
 using CsvHelper;
 using CsvHelper.Configuration;
 ```
 
-Voor het compileren van voor beelden die in dit artikel worden weer gegeven, moet u ook deze `using` instructies toevoegen.
+Als u voorbeelden wilt compileren die in dit artikel worden gepresenteerd, moet u deze instructies `using` ook toevoegen.
 
 ```csharp
 using System.Threading.Tasks;
@@ -265,7 +265,7 @@ using System.Globalization;
 
 #### <a name="java"></a>[Java](#tab/java)
 
-Voeg deze `import` instructies toe aan de bovenkant van het code bestand.
+Voeg deze `import` instructies toe boven aan het codebestand.
 
 ```java
 import com.azure.storage.blob.*;
@@ -279,7 +279,7 @@ import org.apache.commons.csv.*;
 
 #### <a name="python"></a>[Python](#tab/python)
 
-Voeg deze import instructies toe aan de bovenkant van het code bestand.
+Voeg deze importin instructies toe boven aan uw codebestand.
 
 ```python
 import sys, csv
@@ -288,13 +288,13 @@ from azure.storage.blob import BlobServiceClient, ContainerClient, BlobClient, D
 
 ### <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-Voeg de `storage-blob` module toe door deze instructie boven aan het code bestand te plaatsen. 
+Neem de `storage-blob` module op door deze instructie boven aan uw codebestand te plaatsen. 
 
 ```javascript
 const { BlobServiceClient } = require("@azure/storage-blob");
 ```
 
-Met query versnelling worden gegevens uit CSV-en JSON-indeling opgehaald. Zorg er daarom voor dat u instructies toevoegt voor de CSV-of JSON-modules die u wilt gebruiken. De voor beelden die in dit artikel worden weer gegeven, parseren een CSV-bestand met behulp van de module [snelle CSV](https://www.npmjs.com/package/fast-csv) . Daarom voegen we deze instructie toe aan de bovenkant van het code bestand.
+Queryversnelling haalt gegevens in CSV- en JSON-indeling op. Zorg er daarom voor dat u instructies toevoegt voor csv- of Json-parseringsmodules die u wilt gebruiken. In de voorbeelden die in dit artikel worden weergegeven, wordt een CSV-bestand geparseerd met behulp van de [fast-csv-module.](https://www.npmjs.com/package/fast-csv) Daarom voegen we deze instructie toe aan de bovenkant van het codebestand.
 
 ```javascript
 const csv = require('@fast-csv/parse');
@@ -304,11 +304,11 @@ const csv = require('@fast-csv/parse');
 
 ## <a name="retrieve-data-by-using-a-filter"></a>Gegevens ophalen met behulp van een filter
 
-U kunt SQL gebruiken om de rij filter predikaten en kolom projectie op te geven in een aanvraag voor query versnelling. Met de volgende code wordt een query uitgevoerd op een CSV-bestand in de opslag en worden alle rijen met gegevens geretourneerd, waarbij de derde kolom overeenkomt met de waarde `Hemingway, Ernest` . 
+U kunt SQL gebruiken om de rijfilterpredicaten en kolomprojecties op te geven in een queryversnellingsaanvraag. Met de volgende code wordt een query op een CSV-bestand in opslag opgevraagd en worden alle rijen met gegevens retourneert, waarbij de derde kolom overeenkomt met de waarde `Hemingway, Ernest` . 
 
-- In de SQL-query wordt het sleutel woord `BlobStorage` gebruikt voor het aanduiden van het bestand dat wordt opgevraagd.
+- In de SQL-query wordt het `BlobStorage` trefwoord gebruikt om het bestand aan te geven dat wordt opgevraagd.
 
-- Kolom verwijzingen worden opgegeven `_N` waar de eerste kolom zich bevindt `_1` . Als het bron bestand een veldnamenrij bevat, kunt u naar kolommen verwijzen met de naam die is opgegeven in de rij met koppen. 
+- Kolomverwijzingen worden opgegeven als `_N` de plaats waar de eerste kolom `_1` is. Als het bronbestand een headerrij bevat, kunt u verwijzen naar kolommen met de naam die is opgegeven in de headerrij. 
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -328,7 +328,7 @@ Get-QueryCsv $ctx $container $blob "SELECT * FROM BlobStorage WHERE _3 = 'Heming
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
-De asynchrone methode `BlobQuickQueryClient.QueryAsync` verzendt de query naar de API voor query versnelling, waarna de resultaten worden teruggestuurd naar de toepassing als een [Stream](/dotnet/api/system.io.stream) -object.
+De async-methode verzendt de query naar de `BlobQuickQueryClient.QueryAsync` queryversnellings-API en streamt de resultaten vervolgens als een [Stream-object](/dotnet/api/system.io.stream) naar de toepassing.
 
 ```cs
 static async Task QueryHemingway(BlockBlobClient blob)
@@ -375,7 +375,7 @@ private static async Task DumpQueryCsv(BlockBlobClient blob, string query, bool 
 
 ### <a name="java"></a>[Java](#tab/java)
 
-De `BlobQuickQueryClient.openInputStream()` -methode verzendt de query naar de API voor query versnelling, waarna de resultaten worden teruggestuurd naar de toepassing als een `InputStream` object dat kan worden gelezen zoals elk ander InputStream-object.
+De methode verzendt de query naar de API voor queryversnelling en streamt de resultaten vervolgens terug naar de toepassing als een object dat kan worden gelezen zoals elk ander `BlobQuickQueryClient.openInputStream()` `InputStream` InputStream-object.
 
 ```java
 static void QueryHemingway(BlobClient blobClient) {
@@ -437,7 +437,7 @@ def dump_query_csv(blob: BlobClient, query: str, headers: bool):
 
 ### <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-In dit voor beeld wordt de query verzonden naar de API voor query versnelling, waarna de resultaten weer worden gestreamd. Het `blob` object dat is door gegeven aan de `queryHemingway` Help-functie, is van het type [BlockBlobClient](/javascript/api/@azure/storage-blob/blockblobclient). Zie voor meer informatie over het ophalen van een [BlockBlobClient](/javascript/api/@azure/storage-blob/blockblobclient) -object [Quick Start: blobs beheren met Java script v12 SDK in Node.js](storage-quickstart-blobs-nodejs.md).
+In dit voorbeeld wordt de query naar de API voor queryversnelling verzendt en worden de resultaten vervolgens terug gestreamd. Het `blob` object dat wordt doorgegeven aan de `queryHemingway` helperfunctie is van het type [BlockBlobClient.](/javascript/api/@azure/storage-blob/blockblobclient) Zie Quickstart: Blobs beheren met [JavaScript v12 SDK in ](storage-quickstart-blobs-nodejs.md)Node.jsvoor meer informatie over het krijgen van een [BlockBlobClient-object.](/javascript/api/@azure/storage-blob/blockblobclient)
 
 ```javascript
 async function queryHemingway(blob)
@@ -478,9 +478,9 @@ async function dumpQueryCsv(blob, query, headers)
 
 ## <a name="retrieve-specific-columns"></a>Specifieke kolommen ophalen
 
-U kunt de resultaten in een subset van kolommen bereiken. Op die manier haalt u alleen de kolommen op die nodig zijn om een bepaalde berekening uit te voeren. Dit verbetert de prestaties van de toepassing en vermindert de kosten omdat er minder gegevens via het netwerk worden overgedragen. 
+U kunt het bereik van uw resultaten wijzigen in een subset kolommen. Op die manier haalt u alleen de kolommen op die nodig zijn om een bepaalde berekening uit te voeren. Dit verbetert de prestaties van toepassingen en vermindert de kosten omdat er minder gegevens via het netwerk worden overgedragen. 
 
-Met deze code wordt alleen de `BibNum` kolom voor alle boeken in de gegevensset opgehaald. De gegevens uit de rij met koppen in het bron bestand worden ook gebruikt om te verwijzen naar kolommen in de query.
+Met deze code wordt alleen de `BibNum` kolom opgehaald voor alle boeken in de gegevensset. Er wordt ook gebruikgemaakt van de informatie uit de headerrij in het bronbestand om te verwijzen naar kolommen in de query.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -538,7 +538,7 @@ async function queryBibNum(blob)
 
 ---
 
-De volgende code combineert rijen en kolom projecties in dezelfde query. 
+In de volgende code worden rijfilters en kolomprojecties gecombineerd tot dezelfde query. 
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -614,5 +614,5 @@ async function queryDvds(blob)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Data Lake Storage-query versnelling](data-lake-storage-query-acceleration.md)
-- [Naslag informatie over SQL-taal voor query versnelling](query-acceleration-sql-reference.md)
+- [Azure Data Lake Storage queryversnelling](data-lake-storage-query-acceleration.md)
+- [Naslag voor SQL-taal voor queryversnelling](query-acceleration-sql-reference.md)

@@ -1,78 +1,78 @@
 ---
-title: Toestemming beleid voor apps in azure AD beheren
-description: Meer informatie over het beheren van ingebouwde en aangepaste beleids regels voor het toestemming van apps om te bepalen wanneer toestemming kan worden verleend.
+title: App-toestemmingsbeleid beheren in Azure AD
+description: Meer informatie over het beheren van ingebouwd en aangepast app-toestemmingsbeleid om te bepalen wanneer toestemming kan worden verleend.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
 ms.date: 06/01/2020
-ms.author: kenwith
+ms.author: iangithinji
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 9c269e2ab37a08e48eedd3ee468080a382f9a8e3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 44299fadd17d1acfa292dd88bd57c8be4a44be36
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102558726"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107375692"
 ---
 # <a name="manage-app-consent-policies"></a>Beleid voor app-toestemming beheren
 
-Met Azure AD Power shell kunt u toestemming beleid voor apps weer geven en beheren.
+Met Azure AD PowerShell kunt u app-toestemmingsbeleid weergeven en beheren.
 
-Een beleid voor het door geven van apps bestaat uit een of meer ' voor waarden sets ' en nul of meer ' uitsluitingen '. Voor een gebeurtenis die in een app-toestemming beleid wordt overwogen, moet deze overeenkomen met *ten minste* één ' voor waardenset ' en mag deze niet overeenkomen met *de* ingestelde voor waarde ' uitsluiten '.
+Een app-toestemmingsbeleid bestaat uit een of meer 'includes'-voorwaardensets en nul of meer 'excludes'-voorwaardensets. Een gebeurtenis moet in een app-toestemmingsbeleid  in aanmerking komen voor ten minste één  'includes'-voorwaardeset en mag niet overeenkomen met een voorwaarde die is ingesteld voor 'uitsluiten'.
 
-Elke voor waarde die is ingesteld, bestaat uit verschillende voor waarden. Voor een gebeurtenis die overeenkomt met een ingestelde voor waarde, moet aan *alle* voor waarden in de voor waarde worden voldaan.
+Elke voorwaardenset bestaat uit verschillende voorwaarden. Een gebeurtenis moet overeenkomen met een voorwaardeset als *aan* alle voorwaarden in de voorwaardenset wordt voldaan.
 
-Beleid voor toestemming van de app waarbij de ID begint met ' micro soft-' zijn ingebouwde beleids regels. Sommige van deze ingebouwde beleids regels worden gebruikt in bestaande ingebouwde Directory rollen. Met het beleid voor toestemming van de app worden bijvoorbeeld de `microsoft-application-admin` voor waarden beschreven waaronder de rollen beheerder en Cloud toepassings beheerder de bevoegdheid hebben om toestemming te geven voor de beheerder voor de hele Tenant. Ingebouwde beleids regels kunnen worden gebruikt in aangepaste Directory-rollen en om instellingen voor gebruikers toestemming te configureren, maar kunnen niet worden bewerkt of verwijderd.
+App-toestemmingsbeleid waarbij de id begint met 'microsoft-' zijn ingebouwde beleidsregels. Sommige van deze ingebouwde beleidsregels worden gebruikt in bestaande ingebouwde adreslijstrollen. In het app-toestemmingsbeleid worden bijvoorbeeld de voorwaarden beschreven waaronder de rollen `microsoft-application-admin` Toepassingsbeheerder en Cloudtoepassingsbeheerder tenantbrede beheerdersmachtigingen mogen verlenen. Ingebouwd beleid kan worden gebruikt in aangepaste adreslijstrollen en om toestemmingsinstellingen voor gebruikers te configureren, maar kan niet worden bewerkt of verwijderd.
 
 ## <a name="pre-requisites"></a>Vereisten
 
-1. Zorg ervoor dat u de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module gebruikt. Deze stap is belang rijk als u de [AzureAD](/powershell/module/azuread/) -module en de [AzureADPreview](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) -module hebt geïnstalleerd.
+1. Zorg ervoor dat u de [AzureADPreview-module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) gebruikt. Deze stap is belangrijk als u zowel de [AzureAD-module](/powershell/module/azuread/) als de [AzureADPreview-module hebt](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0-preview) geïnstalleerd.
 
     ```powershell
     Remove-Module AzureAD -ErrorAction SilentlyContinue
     Import-Module AzureADPreview
     ```
 
-1. Verbinding maken met Azure AD Power shell.
+1. Maak verbinding met Azure AD PowerShell.
 
    ```powershell
    Connect-AzureAD
    ```
 
-## <a name="list-existing-app-consent-policies"></a>Een lijst met bestaande beleids regels voor toestemming
+## <a name="list-existing-app-consent-policies"></a>Bestaand app-toestemmingsbeleid op een lijst zetten
 
-Het is een goed idee om eerst vertrouwd te raken met het bestaande app-toestemming beleid in uw organisatie:
+Het is een goed idee om eerst vertrouwd te raken met het bestaande app-toestemmingsbeleid in uw organisatie:
 
-1. Alle beleids regels voor toestemming van apps weer geven:
+1. Alle app-toestemmingsbeleidsregels opsnissen:
 
    ```powershell
    Get-AzureADMSPermissionGrantPolicy | ft Id, DisplayName, Description
    ```
 
-1. Bekijk de voor waarden sets van een beleid onder ' includes ':
+1. Bekijk de voorwaardensets 'bevat' van een beleid:
 
     ```powershell
     Get-AzureADMSPermissionGrantConditionSet -PolicyId "microsoft-application-admin" `
                                              -ConditionSetType "includes"
     ```
 
-1. De voor waarden van de voor waarde ' excludes ' weer geven:
+1. Bekijk de voorwaardensets 'excludes':
 
     ```powershell
     Get-AzureADMSPermissionGrantConditionSet -PolicyId "microsoft-application-admin" `
                                              -ConditionSetType "excludes"
     ```
 
-## <a name="create-a-custom-app-consent-policy"></a>Een aangepast app-toestemming beleid maken
+## <a name="create-a-custom-app-consent-policy"></a>Een aangepast app-toestemmingsbeleid maken
 
-Volg deze stappen voor het maken van een aangepast app-toestemming beleid:
+Volg deze stappen om een aangepast app-toestemmingsbeleid te maken:
 
-1. Maak een nieuw beleid voor een lege app-toestemming.
+1. Maak een nieuw leeg app-toestemmingsbeleid.
 
    ```powershell
    New-AzureADMSPermissionGrantPolicy `
@@ -81,7 +81,7 @@ Volg deze stappen voor het maken van een aangepast app-toestemming beleid:
        -Description "This is a sample custom app consent policy."
    ```
 
-1. Voeg ' include '-waarden sets toe.
+1. Voeg 'includes'-voorwaardensets toe.
 
    ```powershell
    # Include delegated permissions classified "low", for apps from verified publishers
@@ -93,9 +93,9 @@ Volg deze stappen voor het maken van een aangepast app-toestemming beleid:
        -ClientApplicationsFromVerifiedPublisherOnly $true
    ```
 
-   Herhaal deze stap om extra ' include '-voor waarden toe te voegen.
+   Herhaal deze stap om aanvullende voorwaardesets voor opnemen toe te voegen.
 
-1. Voeg desgewenst voor waarden sets toe.
+1. Voeg eventueel voorwaardesets 'excludes' toe.
 
    ```powershell
    # Retrieve the service principal for the Azure Management API
@@ -109,47 +109,47 @@ Volg deze stappen voor het maken van een aangepast app-toestemming beleid:
        -ResourceApplication $azureApi.AppId
    ```
 
-   Herhaal deze stap om extra ' exclude '-voor waarden toe te voegen.
+   Herhaal deze stap om aanvullende voorwaardesets voor uitsluiten toe te voegen.
 
-Zodra het beleid voor de toestemming van de app is gemaakt, kunt u toestemming van de [gebruiker toestaan](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy) voor dit beleid.
+Zodra het app-toestemmingsbeleid is gemaakt, kunt u toestemming van de gebruiker [toestaan,](configure-user-consent.md?tabs=azure-powershell#allow-user-consent-subject-to-an-app-consent-policy) afhankelijk van dit beleid.
 
-## <a name="delete-a-custom-app-consent-policy"></a>Een aangepast app-toestemming beleid verwijderen
+## <a name="delete-a-custom-app-consent-policy"></a>Een aangepast app-toestemmingsbeleid verwijderen
 
-1. Hieronder ziet u hoe u een aangepast beleid voor app-toestemming kunt verwijderen. **Deze actie kan niet ongedaan worden gemaakt.**
+1. Hieronder ziet u hoe u een aangepast app-toestemmingsbeleid kunt verwijderen. **Deze actie kan niet ongedaan worden gemaakt.**
 
    ```powershell
    Remove-AzureADMSPermissionGrantPolicy -Id "my-custom-policy"
    ```
 
 > [!WARNING]
-> Het verwijderen van een app-toestemming beleid kan niet worden hersteld. Als u per ongeluk een aangepast beleid voor app-toestemming verwijdert, moet u het beleid opnieuw maken.
+> Het beleid voor verwijderde app-toestemming kan niet worden hersteld. Als u per ongeluk een aangepast app-toestemmingsbeleid verwijdert, moet u het beleid opnieuw maken.
 
 ---
 
-### <a name="supported-conditions"></a>Ondersteunde voor waarden
+### <a name="supported-conditions"></a>Ondersteunde voorwaarden
 
-De volgende tabel bevat de lijst met ondersteunde voor waarden voor het beleid voor de toestemming van apps.
+De volgende tabel bevat de lijst met ondersteunde voorwaarden voor app-toestemmingsbeleid.
 
 | Voorwaarde | Description|
 |:---------------|:----------|
-| PermissionClassification | De [machtigings classificatie](configure-permission-classifications.md) voor de machtiging die wordt verleend, of ' all ', zodat deze overeenkomt met een machtigings classificatie (inclusief machtigingen die niet zijn geclassificeerd). De standaard waarde is "all". |
-| PermissionType | Het machtigings type van de machtiging die wordt verleend. Gebruik ' Application ' voor toepassings machtigingen (bijvoorbeeld app-rollen) of ' gedelegeerde ' voor gedelegeerde machtigingen. <br><br>**Opmerking**: de waarde ' delegatedUserConsentable ' geeft gedelegeerde machtigingen aan die niet door de API-uitgever zijn geconfigureerd om toestemming te geven aan de beheerder: deze waarde kan worden gebruikt in het ingebouwde beleid voor machtigings toekenning, maar kan niet worden gebruikt in een aangepast beleid voor machtigings verlening. Vereist. |
-| ResourceApplication | De **AppId** van de bron toepassing (bijvoorbeeld de API) waarvoor een machtiging wordt verleend, of een wille keurige, die overeenkomt met een resource toepassing of API. De standaard waarde is any. |
-| Machtigingen | De lijst met machtigings-Id's voor de specifieke machtigingen die moeten overeenkomen met, of een lijst met de enkele waarde ' all ' zodat deze overeenkomt met elke machtiging. De standaard instelling is de enige waarde all. <ul><li>Gemachtigde machtiging-Id's vindt u in de eigenschap **OAuth2Permissions** van het ServicePrincipal-object van de API.</li><li>Id's van toepassings machtigingen vindt u in de eigenschap **AppRoles** van het ServicePrincipal-object van de API.</li></ol> |
-| ClientApplicationIds | Een lijst met **AppId** -waarden voor de client toepassingen die moeten worden vergeleken met, of een lijst met de enkele waarde ' all ' die overeenkomt met elke client toepassing. De standaard instelling is de enige waarde all. |
-| ClientApplicationTenantIds | Een lijst met Azure Active Directory Tenant-Id's waarin de client toepassing is geregistreerd, of een lijst met de enkele waarde ' all ' die overeenkomt met de client-apps die zijn geregistreerd in een Tenant. De standaard instelling is de enige waarde all. |
-| ClientApplicationPublisherIds | Een lijst met Microsoft Partner Network-Id's (MPN) voor [geverifieerde uitgevers](../develop/publisher-verification-overview.md) van de client toepassing of een lijst met de enkele waarde ' all ' die overeenkomt met client-apps van elke uitgever. De standaard instelling is de enige waarde all. |
-| ClientApplicationsFromVerifiedPublisherOnly | Stel dit in `$true` op alleen client toepassingen met een [geverifieerde uitgevers](../develop/publisher-verification-overview.md)te vergelijken. Stel deze in op `$false` een wille keurige client-app, zelfs als deze geen geverifieerde uitgever heeft. De standaardinstelling is `$false`. |
+| PermissionClassification | De [machtigingsclassificatie](configure-permission-classifications.md) voor de machtiging die wordt verleend, of 'alle' die moet overeenkomen met een machtigingsclassificatie (inclusief machtigingen die niet zijn geclassificeerd). De standaardwaarde is 'all'. |
+| PermissionType | Het machtigingstype van de machtiging die wordt verleend. Gebruik 'toepassing' voor toepassingsmachtigingen (bijvoorbeeld app-rollen) of 'gedelegeerd' voor gedelegeerde machtigingen. <br><br>**Opmerking:** de waarde 'delegatedUserConsentable' geeft gedelegeerde machtigingen aan die niet door de API-uitgever zijn geconfigureerd om beheerders toestemming te vereisen. Deze waarde kan worden gebruikt in ingebouwd beleid voor machtigingen verlenen, maar kan niet worden gebruikt in aangepast beleid voor machtigingen verlenen. Vereist. |
+| ResourceApplication | De **AppId** van de resourcetoepassing (bijvoorbeeld de API) waarvoor een machtiging wordt verleend of 'elke' die moet overeenkomen met een resourcetoepassing of API. De standaardwaarde is 'any'. |
+| Machtigingen | De lijst met machtigings-ID's voor de specifieke machtigingen die moeten overeenkomen met of een lijst met de enkele waarde 'all' die moet overeenkomen met een machtiging. De standaardwaarde is de enkele waarde 'all'. <ul><li>Gedelegeerde machtigings-ID's vindt u in de **eigenschap OAuth2Permissions** van het ServicePrincipal-object van de API.</li><li>Toepassingsmachtigings-ID's vindt u in de **eigenschap AppRoles** van het ServicePrincipal-object van de API.</li></ol> |
+| ClientApplicationIds | Een lijst met **AppId-waarden** waarmee de clienttoepassingen moeten overeenkomen, of een lijst met de enkele waarde 'all' om overeen te komen met elke clienttoepassing. De standaardwaarde is de enkele waarde 'all'. |
+| ClientApplicationTenantIds | Een lijst met Azure Active Directory tenant-ID's waarin de clienttoepassing is geregistreerd, of een lijst met de enkele waarde 'all' die moet overeenkomen met client-apps die zijn geregistreerd in een tenant. De standaardwaarde is de enkele waarde 'all'. |
+| ClientApplicationPublisherIds | Een lijst met Microsoft Partner Network-ID's (MPN) voor geverifieerde uitgevers van de [clienttoepassing,](../develop/publisher-verification-overview.md) of een lijst met de enige waarde 'alle' die moet overeenkomen met client-apps van elke uitgever. De standaardwaarde is de enkele waarde 'all'. |
+| ClientApplicationsFromVerifiedPublisherOnly | Stel in `$true` op om alleen overeen te komen op clienttoepassingen met een [geverifieerde uitgevers](../develop/publisher-verification-overview.md). Stel in `$false` op overeenkomst op elke client-app, zelfs als deze geen geverifieerde uitgever heeft. De standaardinstelling is `$false`. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie voor meer informatie:
 
 * [Instellingen voor gebruikers toestemming configureren](configure-user-consent.md)
-* [De beheerder toestemming werk stroom configureren](configure-admin-consent-workflow.md)
-* [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen](manage-consent-requests.md)
+* [De werkstroom voor beheerders toestemming configureren](configure-admin-consent-workflow.md)
+* [Meer informatie over het beheren van toestemming voor toepassingen en het evalueren van toestemmingsaanvragen](manage-consent-requests.md)
 * [Een toepassing beheerderstoestemming verlenen voor de hele tenant](grant-admin-consent.md)
-* [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
+* [Machtigingen en toestemming in het Microsoft Identity Platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
-* [Azure AD op micro soft Q&A](/answers/products/)
+* [Azure AD in Microsoft Q&A](/answers/products/)

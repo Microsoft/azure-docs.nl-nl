@@ -1,30 +1,31 @@
 ---
-title: Ken de voor waarden van de Azure BareMetal-infra structuur
-description: Ken de voor waarden van de Azure BareMetal-infra structuur.
+title: De voorwaarden van Azure BareMetal Infrastructure kennen
+description: De voorwaarden van Azure BareMetal Infrastructure kennen.
 ms.topic: conceptual
 ms.subservice: workloads
 ms.date: 04/06/2021
-ms.openlocfilehash: 53a601cc4556198479d8ca5d7495942d4dc2762c
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.openlocfilehash: aa7d9693b3417ff0bb6c6a61800aee72cd416c48
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106580132"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107536769"
 ---
-# <a name="know-the-terms-for-baremetal-infrastructure"></a>Ken de voor waarden voor de BareMetal-infra structuur
+# <a name="know-the-terms-for-baremetal-infrastructure"></a>De voorwaarden voor BareMetal Infrastructure kennen
 
-In dit artikel behandelen we enkele belang rijke termen met betrekking tot de BareMetal-infra structuur.
+In dit artikel worden enkele belangrijke termen met betrekking tot de BareMetal-infrastructuur beschreven.
 
-- **Revisie**: er is een oorspronkelijke stempel revisie bekend als Revision 3 (Rev 3) en twee extra stempel revisies voor BareMetal-instantie tempels. Elke stamp wijkt af van de architectuur en nabijheid van de virtuele machines van Azure:
-    - **Revisie 4** (Rev 4): een nieuwer ontwerp dat dichter bij de virtuele Azure-machine (VM) fungeert en de latentie tussen Azure-vm's en SAP Hana exemplaren verlaagt. 
-    - **Revisie 4,2** (Rev 4,2): de meest recente BareMetal-infra structuur met de bestaande Rev 4-architectuur. Rev 4 biedt dichter nabijheid van de Azure virtual machine-hosts (VM). Het heeft aanzienlijke verbeteringen in de netwerk latentie tussen virtuele Azure-machines en BareMetal-instanties die zijn geïmplementeerd in Rev 4-stem pels of-rijen. U kunt uw BareMetal-instanties openen en beheren via de Azure Portal.    
+- **Revisie:** Er is een oorspronkelijke zegelrevisie die Revisie 3 (Rev 3) wordt genoemd en twee extra zegelrevisies voor BareMetal-instantiestempels. Elke zegel verschilt in architectuur en de nabijheid van hosts voor virtuele Azure-machines:
+    - **Revisie 4** (Rev 4): Een nieuwer ontwerp dat de VM-hosts (virtuele Azure-machines) dichter bij elkaar brengt en de latentie tussen Azure-VM's en SAP HANA-exemplaren verlaagt. 
+    - **Revisie 4.2** (Rev 4.2): de meest recente BareMetal-infrastructuur met de bestaande Rev 4-architectuur. Rev 4 is dichter bij de hosts van de virtuele Azure-machines (VM's). De netwerklatentie tussen Azure-VM's en BareMetal-exemplaren die zijn geïmplementeerd in Rev 4-stempels of -rijen, is aanzienlijk verbeterd. U kunt uw BareMetal-exemplaren openen en beheren via de Azure Portal.    
 
-- **Stempel**: definieert de micro soft interne implementatie grootte van BareMetal-instanties. Voordat exemplaren kunnen worden geïmplementeerd, moet een BareMetal-instantie stempel met reken-, netwerk-en opslag racks worden geïmplementeerd op een datacenter locatie. Een dergelijke implementatie wordt een BareMetal-instantie stempel genoemd.
+- **Zegel:** hiermee definieert u de interne implementatiegrootte van BareMetal-exemplaren van Microsoft. Voordat exemplaren kunnen worden geïmplementeerd, moet een BareMetal-instantiestempel die bestaat uit reken-, netwerk- en opslagrekken worden geïmplementeerd op een datacenterlocatie. Een dergelijke implementatie wordt een BareMetal-instantiestempel genoemd.
 
-- **Tenant**: een klant die een BareMetal-instantie stempel implementeert, wordt geïsoleerd als een *Tenant.* Een Tenant wordt geïsoleerd in het netwerk, de opslag en de compute-laag van andere tenants. Opslag-en reken eenheden die aan de verschillende tenants zijn toegewezen, kunnen elkaar niet zien of communiceren met elkaar op het stempel niveau van de BareMetal-instantie. Een klant kan ervoor kiezen om implementaties in verschillende tenants te hebben. Ook is er geen communicatie tussen tenants op het stempel niveau van de BareMetal-instantie.
+- **Tenant:** een klant die een BareMetal-instantiestempel implementeert, wordt geïsoleerd als *tenant.* Een tenant is geïsoleerd in de netwerk-, opslag- en rekenlaag van andere tenants. Opslag- en rekeneenheden die zijn toegewezen aan de verschillende tenants kunnen elkaar niet zien of met elkaar communiceren op het zegelniveau van het BareMetal-exemplaar. Een klant kan ervoor kiezen om implementaties in verschillende tenants te hebben. Zelfs dan is er geen communicatie tussen tenants op het zegelniveau van het BareMetal-exemplaar.
 
 ## <a name="next-steps"></a>Volgende stappen
-Nu u een belang rijke terminologie van de BareMetal-infra structuur hebt geïntroduceerd, kunt u het volgende weten:
-- Meer informatie over de [BareMetal-infra structuur](concepts-baremetal-infrastructure-overview.md).
-- [Verbinding maken met BareMetal-infrastructuur instanties in azure](connect-baremetal-infrastructure.md).
+
+Nu u belangrijke terminologie van de BareMetal-infrastructuur hebt geïntroduceerd, kunt u het volgende leren:
+- Meer informatie over [de BareMetal-infrastructuur](concepts-baremetal-infrastructure-overview.md).
+- [BareMetal Infrastructure-exemplaren verbinden in Azure](connect-baremetal-infrastructure.md).
 

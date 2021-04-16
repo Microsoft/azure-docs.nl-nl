@@ -1,6 +1,6 @@
 ---
-title: 'Quick Start: telefoon nummers beheren met Azure Communication Services'
-description: Meer informatie over het beheren van telefoon nummers met Azure Communication Services
+title: 'Quickstart: Telefoonnummers beheren met behulp van Azure Communication Services'
+description: Meer informatie over het beheren van telefoonnummers met Azure Communication Services
 author: prakulka
 manager: nmurav
 services: azure-communication-services
@@ -10,16 +10,18 @@ ms.topic: quickstart
 ms.service: azure-communication-services
 ms.custom: references_regions
 zone_pivot_groups: acs-azp-java-net-python-csharp-js
-ms.openlocfilehash: 0f4a461ac5d459c6e3311400785e34bc22f40a00
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 19bb79f9a4deaebfacc75918c46a5516d2d398be
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728450"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107498187"
 ---
-# <a name="quickstart-manage-phone-numbers"></a>Snelstartgids: telefoon nummers beheren
+# <a name="quickstart-manage-phone-numbers"></a>Snelstart: Telefoonnummers beheren
 
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
+
+[!INCLUDE [Bulk Acquisition Instructions](../../includes/phone-number-special-order.md)]
 
 ::: zone pivot="platform-azp"
 [!INCLUDE [Azure portal](./includes/phone-numbers-portal.md)]
@@ -45,9 +47,9 @@ ms.locfileid: "105728450"
 
 Veelvoorkomende vragen en problemen:
 
-- Het kopen van telefoon wordt alleen ondersteund in de VS. Als u telefoon nummers wilt kopen, moet u het volgende doen:
-  - Het factuur adres van het gekoppelde Azure-abonnement bevindt zich in de Verenigde Staten. U kunt op dit moment geen resource verplaatsen naar een ander abonnement.
-  - Uw communicatie Services-bron is ingericht op de Verenigde Staten locatie van gegevens. U kunt op dit moment geen resource naar een andere gegevens locatie verplaatsen.
+- De aanschaf van een telefoon wordt alleen in de Verenigde Staten ondersteund. Als u telefoonnummers wilt kopen, moet u ervoor zorgen dat:
+  - Het bijbehorende factureringsadres van het Azure-abonnement bevindt zich in de Verenigde Staten. U kunt een resource op dit moment niet verplaatsen naar een ander abonnement.
+  - Uw Communication Services resource wordt ingericht op de Verenigde Staten locatie van de gegevens. U kunt een resource op dit moment niet verplaatsen naar een andere gegevenslocatie.
 
 - Wanneer een telefoonnummer wordt vrijgegeven, wordt het telefoonnummer pas vrijgegeven en kan het pas worden teruggekocht aan het einde van de factureringsperiode.
 

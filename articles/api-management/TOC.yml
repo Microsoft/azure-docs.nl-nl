@@ -112,7 +112,7 @@
           href: import-logic-app-as-api.md
         - name: Een API bewerken
           href: edit-api.md
-        - name: Service Fabric back-end configureren
+        - name: Back-Service Fabric configureren
           href: how-to-configure-service-fabric-backend.md
     - name: Inrichten en schaal aanpassen
       items:
@@ -128,6 +128,9 @@
           href: configure-custom-domain.md
         - name: Implementeren naar meerdere Azure-regio's
           href: api-management-howto-deploy-multi-region.md
+        - name: Zone-redundantie inschakelen
+          displayName: Availability zones
+          href: zone-redundancy.md
         - name: Een zelf-hostende gateway inrichten
           href: api-management-howto-provision-self-hosted-gateway.md
         - name: Een zelf-hostende gateway implementeren op Azure Kubernetes Service
@@ -245,7 +248,7 @@
           href: api-management-transformation-policies.md
         - name: Integratiebeleid voor Gedistribueerde toepassingruntime (Dapr)
           href: api-management-dapr-policies.md
-        - name: Validatie beleid
+        - name: Validatiebeleid
           href: validation-policies.md
     - name: Beheren tijdens productie
       items:
@@ -283,7 +286,7 @@
               href: ../service-fabric/service-fabric-api-management-overview.md
             - name: Zelfstudie
               href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
-        - name: Problemen in de productie vaststellen
+        - name: Problemen in productie vaststellen
           href: diagnose-solve-problems.md
 - name: Naslaginformatie
   items:

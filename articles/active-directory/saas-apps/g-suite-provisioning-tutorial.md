@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/18/2021
 ms.author: Zhchia
-ms.openlocfilehash: f6ef2f91d178db01e618c19df55705bc9c1209e4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b8513f62b6f181a1490d136062c5de81db847ba7
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104583748"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533393"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Zelfstudie: G Suite configureren voor automatische gebruikersinrichting
 
@@ -273,7 +273,7 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 * 17-10-2020: ondersteuning toegevoegd voor aanvullende gebruikers -en groepskenmerken van G Suite.
 * 17-10-2020: bijgewerkte namen van G Suite-doelkenmerken zodat deze overeenkomen met wat [hier](https://developers.google.com/admin-sdk/directory) is gedefinieerd.
 * 17-10-2020: bijgewerkte standaardkenmerktoewijzingen.
-* 03/18/2021: het e-mail adres van de Manager wordt nu gesynchroniseerd in plaats van ID voor alle nieuwe gebruikers. Voor alle bestaande gebruikers die zijn ingericht met een manager als ID, kunt u de computer opnieuw opstarten via [Microsoft Graph](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http) met het bereik ' vol ' om ervoor te zorgen dat het e-mail bericht wordt ingericht. Deze wijziging is alleen van invloed op de GSuite-inrichtings taak en niet op de oudere probisioning-taak, te beginnen met Goov2OutDelta. Opmerking: de manager-e-mail is ingericht wanneer de gebruiker voor het eerst wordt gemaakt of wanneer de Manager wijzigingen aanbrengt. De e-mail van de Manager is niet ingericht als de Manager zijn of haar e-mail adres wijzigt. 
+* 18-03-2021 - E-mail van manager is nu gesynchroniseerd in plaats van id voor alle nieuwe gebruikers. Voor alle bestaande gebruikers die zijn ingericht met een manager als een id, kunt u een herstart via [Microsoft Graph](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http&preserve-view=true) met bereik 'full' om ervoor te zorgen dat het e-mailbericht is ingericht. Deze wijziging is alleen van invloed op de GSuite-inrichtings job en niet op de oudere inrichtings job die begint met Goov2OutDelta. Opmerking: het e-mailadres van de manager wordt ingericht wanneer de gebruiker voor het eerst wordt gemaakt of wanneer de manager wordt gewijzigd. Het e-mailadres van de manager wordt niet ingericht als de manager het e-mailadres wijzigt. 
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

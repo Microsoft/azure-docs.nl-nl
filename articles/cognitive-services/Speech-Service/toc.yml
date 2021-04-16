@@ -57,7 +57,7 @@
               href: how-to-custom-speech-continuous-integration-continuous-deployment.md
             - name: door mensen gelabelde transcripties maken
               href: how-to-custom-speech-human-labeled-transcriptions.md
-            - name: Levens cyclus van modellen en eind punten
+            - name: Levenscyclus van model en eindpunt
               href: how-to-custom-speech-model-and-endpoint-lifecycle.md
     - name: Zelfstudies
       items:
@@ -114,13 +114,13 @@
           href: speech-synthesis-markup.md
         - name: Spraaksynthese met API voor lange audio
           href: long-audio-api.md
-        - name: Gebeurtenissen voor gezichts pose ophalen voor lip-sync
+        - name: Gezichtshoudingsgebeurtenissen voor de synchronisatie van gezichten
           href: how-to-speech-synthesis-viseme.md
         - name: Aanpassing
           items:
             - name: Custom Voice-portal
               items:
-                - name: Wat is aangepaste neurale Voice?
+                - name: Wat is Aangepaste neurale stem?
                   href: custom-neural-voice.md
                 - name: Aan de slag met Custom Voice
                   displayName: 'custom voice, neural voice'
@@ -137,11 +137,11 @@
                   href: how-to-audio-content-creation.md
     - name: Verantwoordelijk gebruik van AI
       items:
-        - name: Aangepaste Neural-stem
+        - name: Aangepaste neurale stem
           items:
             - name: Transparantienotitie
               items:
-                - name: Gebruiks voorbeelden voor aangepaste neurale Voice
+                - name: Gebruiksgevallen voor Aangepaste neurale stem
                   href: /legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
                 - name: Kenmerken en beperkingen
                   href: /legal/cognitive-services/speech-service/custom-neural-voice/characteristics-and-limitations-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
@@ -462,7 +462,7 @@
       href: how-to-track-speech-sdk-memory-usage.md
     - name: Privé-eindpunt inschakelen
       href: speech-services-private-link.md
-    - name: VNet-service-eind punt inschakelen
+    - name: VNet-service-eindpunt inschakelen
       href: speech-service-vnet-service-endpoint.md
     - name: OpenSSL voor Linux configureren
       displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
@@ -470,7 +470,7 @@
     - name: RHEL/CentOS 7 configureren
       href: how-to-configure-rhel-centos-7.md
       displayName: 'RHEL, CentOS 7, CentOS, Configure RHEL, Configure CentO'
-    - name: Containers
+    - name: Containers gebruiken
       items:
         - name: Spraakcontainers installeren en uitvoeren
           displayName: 'containers,install container,run container'
@@ -497,6 +497,12 @@
           href: how-to-migrate-from-bing-speech.md
         - name: Vanuit de Translator Speech-API
           href: how-to-migrate-from-translator-speech-api.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/speech-service/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: speech-encryption-of-data-at-rest.md
 - name: Apparaten
   items:
     - name: Documentatie over Speech Devices
@@ -582,6 +588,12 @@
           href: 'https://speech.microsoft.com'
         - name: Een app voor aangepaste opdrachten maken met Speech Studio
           href: ./quickstart-custom-commands-application.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/speech-service/context/context
     - name: Documentatie voor Swagger
@@ -591,10 +603,6 @@
       href: sovereign-clouds.md
     - name: Prijscalculator
       href: 'https://azure.microsoft.com/pricing/calculator/#cognitive-services'
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: speech-encryption-of-data-at-rest.md
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
     - name: Privacy en cookies

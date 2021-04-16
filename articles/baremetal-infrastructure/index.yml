@@ -7,15 +7,15 @@ metadata:
   services: baremetal-infrastructure
   ms.service: baremetal-infrastructure
   ms.topic: landing-page
-  author: shortpatti
-  ms.author: v-patsho
-  ms.date: 03/19/2021
-  ms.openlocfilehash: 89bd62f1462f4b3a20b1fdb9469ccb75de93ce78
-  ms.sourcegitcommit: ac035293291c3d2962cee270b33fca3628432fac
+  author: Ajayan1008
+  ms.author: v-hborys
+  ms.date: 04/14/2021
+  ms.openlocfilehash: 52e70d842f8e8237f1eee3446a8b70f867224be1
+  ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/24/2021
-  ms.locfileid: "104951603"
+  ms.lasthandoff: 04/16/2021
+  ms.locfileid: "107536837"
 landingContent:
 - title: Over BareMetal Infrastructure
   linkLists:
@@ -25,10 +25,26 @@ landingContent:
       url: concepts-baremetal-infrastructure-overview.md
     - text: Inzicht in de voorwaarden
       url: know-baremetal-terms.md
-    - text: BareMetal-workloadtypen
-      url: /azure/virtual-machines/workloads/sap/get-started?context=/azure/baremetal-infrastructure/workloads/sap/context/context
-    - text: BareMetal instantie-eenheden verbinden in azure
+    - text: BareMetal-exemplaren verbinden in Azure
       url: connect-baremetal-infrastructure.md
+- title: BareMetal-infrastructuur voor Oracle
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is BareMetal-infrastructuur voor Oracle?
+      url: workloads/oracle/oracle-baremetal-overview.md
+    - text: BareMetal-SKU's voor Oracle-workloads
+      url: workloads/oracle/oracle-baremetal-skus.md
+    - text: Opslag op BareMetal voor Oracle
+      url: workloads/oracle/oracle-baremetal-storage.md
+    - text: Patchoverwegingen
+      url: workloads/oracle/oracle-baremetal-patching.md
+    - text: Ethernet-configuratie
+      url: workloads/oracle/oracle-baremetal-ethernet.md
+    - text: Architectuur van BareMetal voor Oracle
+      url: workloads/oracle/oracle-baremetal-architecture.md
+    - text: BareMetal inrichten voor Oracle
+      url: workloads/oracle/oracle-baremetal-provision.md
 - title: SAP HANA op Azure (grote exemplaren)
   linkLists:
   - linkListType: overview

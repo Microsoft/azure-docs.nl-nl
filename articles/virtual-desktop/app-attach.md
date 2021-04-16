@@ -1,34 +1,31 @@
 ---
 title: PowerShell-scripts Windows Virtual Desktop MSIX-app koppelen - Azure
-description: PowerShell-scripts voor MSIX-app-attach maken voor Windows Virtual Desktop.
+description: PowerShell-scripts voor MSIX-app koppelen voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: how-to
 ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: 143f0a9d23cdc70425147faa95258ec753b92691
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: d1ca4a843c6731cde7ed70d65fc230a21ef6e7c4
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107365377"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389431"
 ---
-# <a name="create-powershell-scripts-for-msix-app-attach"></a>PowerShell-scripts voor MSIX-app-koppelen maken
+# <a name="create-powershell-scripts-for-msix-app-attach"></a>PowerShell-scripts voor MSIX-app koppelen
 
-In dit onderwerp wordt u door het instellen van PowerShell-scripts voor msix-app-attach doorgenomen.
-
->[!IMPORTANT]
->Voordat u aan de slag gaat, [](https://aka.ms/enablemsixappattach) moet u dit formulier invullen en indienen om de MSIX-app-bijlage in te kunnenschakelen in uw abonnement. Als u geen goedgekeurde aanvraag hebt, werkt het koppelen van de MSIX-app niet. Goedkeuring van aanvragen kan tot 24 uur duren tijdens werkdagen. U ontvangt een e-mail wanneer uw aanvraag is geaccepteerd en voltooid.
+In dit onderwerp wordt u door het instellen van PowerShell-scripts voor MSIX-app-attach doorgenomen.
 
 ## <a name="install-certificates"></a>Certificaten installeren
 
-U moet certificaten installeren op alle sessiehosts in de hostgroep die als host dienen voor de apps van uw MSIX-app-attachpakketten.
+U moet certificaten installeren op alle sessiehosts in de hostgroep die als host dienen voor de apps van uw MSIX-app-koppelpakketten.
 
-Als uw app gebruikmaakt van een certificaat dat niet openbaar wordt vertrouwd of zelf is ondertekend, kunt u dit als volgende installeren:
+Als uw app gebruikmaakt van een certificaat dat niet openbaar wordt vertrouwd of zelf is ondertekend, kunt u het als volgende installeren:
 
 1. Klik met de rechtermuisknop op het pakket en selecteer **Eigenschappen.**
-2. Selecteer in het venster dat wordt weergegeven het **tabblad Digitale** handtekeningen. Er mag slechts één item in de lijst op het tabblad staan, zoals wordt weergegeven in de volgende afbeelding. Selecteer dat item om het item te markeren en selecteer vervolgens **Details.**
-3. Wanneer het venster met details van de digitale handtekening wordt weergegeven, selecteert u **het** tabblad Algemeen en selecteert u vervolgens **Certificaat weergeven** en **selecteert u vervolgens Certificaat installeren.**
+2. Selecteer in het venster dat wordt weergegeven het **tabblad Digitale** handtekeningen. Er mag slechts één item in de lijst op het tabblad staan, zoals wordt weergegeven in de volgende afbeelding. Selecteer dat item om het item te markeren en selecteer vervolgens **Details**.
+3. Wanneer het venster met details van de digitale handtekening wordt weergegeven, selecteert u het tabblad **Algemeen** en selecteert u **vervolgens Certificaat weergeven** en **selecteert u vervolgens Certificaat installeren.**
 4. Wanneer het installatieprogramma wordt geopend, **selecteert u lokale computer** als uw opslaglocatie en selecteert u **vervolgens Volgende.**
 5. Als het installatieprogramma u vraagt of u wilt toestaan dat de app wijzigingen aan uw apparaat aan kan brengen, selecteert u **Ja.**
 6. Selecteer **Alle certificaten in het volgende winkel plaatsen en** selecteer vervolgens **Bladeren.**
@@ -48,12 +45,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 ## <a name="prepare-powershell-scripts-for-msix-app-attach"></a>PowerShell-scripts voorbereiden voor msix-app-attach
 
-MsIX-app-attach heeft vier afzonderlijke fasen die in de volgende volgorde moeten worden uitgevoerd:
+MsIX-app-attach bestaat uit vier verschillende fasen die in de volgende volgorde moeten worden uitgevoerd:
 
 1. Fase
 2. Registreren
 3. Registratie ongedaan maken
-4. Destage
+4. Faseer de fase
 
 In elke fase wordt een PowerShell-script gemaakt. Voorbeeldscripts voor elke fase zijn hier [beschikbaar.](https://github.com/Azure/RDS-Templates/tree/master/msix-app-attach)
 
@@ -68,15 +65,15 @@ Voordat u de PowerShell-scripts bij te werken, moet u ervoor zorgen dat u de vol
 3.  Nadat u de VHD hebt bevestigd, wordt **het venster Bestandenverkenner** geopend. De bovenliggende map vastleggen en de variabele **$parentFolder** bijwerken
 
     >[!NOTE]
-    >Als u geen bovenliggende map ziet, betekent dit dat de MSIX niet juist is uitgebreid. Doe het vorige gedeelte opnieuw en probeer het opnieuw.
+    >Als u geen bovenliggende map ziet, betekent dit dat de MSIX niet goed is uitvoed. Doe het vorige gedeelte opnieuw en probeer het opnieuw.
 
-4.  Open de bovenliggende map. Als het pakket correct is uit uitgebreid, ziet u een map met dezelfde naam als het pakket. Werk de **variabele $packageName** bij om overeen te komen met de naam van deze map.
+4.  Open de bovenliggende map. Als het pakket correct is uit vouwd, ziet u een map met dezelfde naam als het pakket. Werk de **variabele $packageName** bij om overeen te komen met de naam van deze map.
 
     Bijvoorbeeld `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
 
 5.  Open een opdrachtprompt en voer **mountvol in.** Met deze opdracht wordt een lijst met volumes en hun GUID's weergegeven. Kopieer de GUID van het volume waar de stationletter overeenkomt met het station waar u de VHD aan hebt bevestigd in stap 2.
 
-    In dit voorbeeld van de uitvoer voor de mountvol opdracht, als u uw VHD aan station C hebt bevestigd, moet u de bovenstaande waarde `C:\` kopiëren:
+    In dit voorbeeld van uitvoer voor de mountvol opdracht, als u uw VHD aan station C hebt bevestigd, moet u de bovenstaande waarde `C:\` kopiëren:
 
     ```cmd
     Possible values for VolumeName along with current mount points are:
@@ -205,11 +202,11 @@ Dismount-DiskImage -ImagePath $vhdSrc -Confirm:$false
 
 ## <a name="set-up-simulation-scripts-for-the-msix-app-attach-agent"></a>Simulatiescripts instellen voor de MSIX-app-attach-agent
 
-Nadat u de scripts hebt maken, kunnen gebruikers ze handmatig uitvoeren of instellen om ze automatisch uit te voeren als opstart-, aanmeldings-, aanmeldings-, en afsluitscripts. Zie Using [startup, shutdown, logon, and logoff scripts in groepsbeleid (Opstart-, afsluit-, aanmeldings-](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789196(v=ws.11)/)en aanmeldingsscripts gebruiken in groepsbeleid) voor meer informatie over deze typen scripts.
+Nadat u de scripts hebt maken, kunnen gebruikers ze handmatig uitvoeren of instellen dat ze automatisch worden uitgevoerd als opstart-, aanmeldings-, aanmeldings- en afsluitscripts. Zie Voor meer informatie over deze typen scripts opstart-, [afsluit-, aanmeldings-](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789196(v=ws.11)/)en aanmeldingsscripts gebruiken in groepsbeleid.
 
 Elk van deze automatische scripts voert één fase van de app-koppelingsscripts uit:
 
-- Met het opstartscript wordt het fasescript uitgevoerd.
+- Het opstartscript voert het fasescript uit.
 - Met het aanmeldingsscript wordt het registerscript uitgevoerd.
 - Met het afmeldingsscript wordt het script voor het ongedaan maken van de registratie uitgevoerd.
 - Met het afsluitscript wordt het script gedefaseeerd uitgevoerd.
@@ -218,11 +215,11 @@ Elk van deze automatische scripts voert één fase van de app-koppelingsscripts 
 
 Als u pakketten gebruikt van de [Microsoft Store voor Bedrijven of](https://businessstore.microsoft.com/) de [Microsoft Store voor Onderwijs](https://educationstore.microsoft.com/) in uw netwerk of op apparaten die niet zijn verbonden met internet, moet u de pakketlicenties van de Microsoft Store downloaden en installeren op uw apparaat om de app met succes uit te voeren. Als uw apparaat online is en verbinding kan maken met de Microsoft Store voor Bedrijven, moeten de vereiste licenties automatisch worden gedownload, maar als u offline bent, moet u de licenties handmatig instellen.
 
-Als u de licentiebestanden wilt installeren, moet u een PowerShell-script gebruiken dat de klasse MDM_EnterpriseModernAppManagement_StoreLicenses02_01 in de WMI Bridge-provider aanroept.
+Als u de licentiebestanden wilt installeren, moet u een PowerShell-script gebruiken dat de klasse MDM_EnterpriseModernAppManagement_StoreLicenses02_01 aanroept in de WMI Bridge-provider.
 
 U kunt als volgende licenties instellen voor offlinegebruik:
 
-1. Download het app-pakket, de licenties en de vereiste frameworks van de Microsoft Store voor Bedrijven. U hebt zowel de gecodeerde als de niet-gecodeerde licentiebestanden nodig. Gedetailleerde downloadinstructies vindt u [hier.](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)
+1. Download het app-pakket, de licenties en de vereiste frameworks van de Microsoft Store voor Bedrijven. U hebt zowel de gecodeerde als niet-gecodeerde licentiebestanden nodig. Gedetailleerde downloadinstructies vindt u [hier.](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)
 2. Werk de volgende variabelen in het script bij voor stap 3:
       1. `$contentID` is de ContentID-waarde uit het niet-gecodeerde licentiebestand (.xml). U kunt het licentiebestand openen in een teksteditor van uw keuze.
       2. `$licenseBlob` is de volledige tekenreeks voor de licentieblob in het gecodeerde licentiebestand (.bin). U kunt het gecodeerde licentiebestand openen in een teksteditor van uw keuze.
@@ -264,6 +261,6 @@ catch [Exception]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Deze functie wordt momenteel niet ondersteund, maar u kunt vragen stellen aan de community op [Windows Virtual Desktop TechCommunity.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
+Deze functie wordt momenteel niet ondersteund, maar u kunt vragen stellen aan de community op [de Windows Virtual Desktop TechCommunity.](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)
 
 U kunt ook feedback geven voor Windows Virtual Desktop in Windows Virtual Desktop [feedbackhub.](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)

@@ -16,7 +16,7 @@ ms.locfileid: "107497724"
 In het volgende artikel wordt beschreven hoe Azure Policy ingebouwde initiatiefdefinitie voor naleving van regelgeving wordt toe te schrijven aan **nalevingsdomeinen** en besturingselementen **in** CIS Microsoft Azure Foundations Benchmark 1.3.0.
 Zie [CIS Microsoft Azure Foundations Benchmark 1.3.0](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevingsstandaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
-De volgende toewijzingen zijn voor de **CIS Microsoft Azure Foundations Benchmark 1.3.0-besturingselementen.** Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
+De volgende toewijzingen zijn voor de **cis Microsoft Azure Foundations Benchmark 1.3.0-besturingselementen.** Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
 Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor naleving van regelgeving **voor CIS Microsoft Azure Foundations Benchmark v1.3.0.**
 
 > [!IMPORTANT]
@@ -42,7 +42,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[MFA moet zijn ingeschakeld voor accounts met leesmachtigingen voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe3576e28-8b17-4677-84c3-db2990658d64) |Schakel meervoudige verificatie (MFA) in voor alle abonnementsaccounts met leesmachtigingen om te voorkomen dat er inbreuk wordt gepleegd op accounts of resources. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableMFAForReadPermissions_Audit.json) |
 
-### <a name="ensure-guest-users-are-reviewed-on-a-monthly-basis"></a>Zorg ervoor dat gastgebruikers maandelijks worden beoordeeld
+### <a name="ensure-guest-users-are-reviewed-on-a-monthly-basis"></a>Ervoor zorgen dat gastgebruikers maandelijks worden beoordeeld
 
 **Id**: **Eigendom** van CIS Azure 1.3: Klant
 
@@ -78,7 +78,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Azure Defender voor App Service moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2913021d-f2fd-4f3d-b958-22354e2bdbcb) |Azure Defender voor App Service maakt gebruik van de schaal van de cloud en de zichtbaarheid die Azure als cloudprovider heeft om te controleren op veelvoorkomende aanvallen op web-apps. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnAppServices_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-azure-sql-database-servers"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor Azure SQL databaseservers
+### <a name="ensure-that-azure-defender-is-set-to-on-for-azure-sql-database-servers"></a>Zorg ervoor dat Azure Defender is ingesteld op Aan voor Azure SQL databaseservers
 
 **Id**: **Eigendom** van CIS Azure 2.3: Klant
 
@@ -86,7 +86,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Azure Defender voor Azure SQL-databaseservers moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7fe3b40f-802b-4cdd-8bd4-fd799c948cc2) |Azure Defender voor SQL biedt functionaliteit voor het opsporen en verhelpen van mogelijke databasebeveiligingsproblemen, het detecteren van afwijkende activiteiten die kunnen duiden op een bedreiging voor uw SQL-database en het detecteren en classificeren van gevoelige gegevens. |AuditIfNotExists, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedDataSecurityOnSqlServers_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-sql-servers-on-machines"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor SQL-servers op computers
+### <a name="ensure-that-azure-defender-is-set-to-on-for-sql-servers-on-machines"></a>Zorg ervoor dat Azure Defender is ingesteld op Aan voor SQL-servers op computers
 
 **Id**: **Eigendom** van CIS Azure 2.4: Klant
 
@@ -110,7 +110,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Azure Defender voor Kubernetes moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F523b5cd1-3e23-492f-a539-13118b6d1e3a) |Azure Defender voor Kubernetes biedt realtime-beveiliging tegen bedreigingen voor in containers geplaatste omgevingen. Ook worden waarschuwingen voor verdachte activiteiten gegenereerd. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableAdvancedThreatProtectionOnKubernetesService_Audit.json) |
 
-### <a name="ensure-that-azure-defender-is-set-to-on-for-container-registries"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor containerregisters
+### <a name="ensure-that-azure-defender-is-set-to-on-for-container-registries"></a>Zorg ervoor Azure Defender is ingesteld op Aan voor Containerregisters
 
 **Id**: **Eigendom** van CIS Azure 2.7: Klant
 
@@ -142,7 +142,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Abonnementen moeten een e-mailadres van contactpersonen voor beveiligingsproblemen bevatten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4f4f78b8-e367-4b10-a341-d9a4ad5cf1c7) |Om ervoor te zorgen dat de relevante personen in uw organisatie worden gewaarschuwd wanneer er sprake is van een mogelijke schending van de beveiliging in een van uw abonnementen, moet u een veiligheidscontact instellen die e-mailmeldingen van Security Center ontvangt. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_email.json) |
 
-### <a name="ensure-that-notify-about-alerts-with-the-following-severity-is-set-to-high"></a>Zorg ervoor dat 'Waarschuwen over waarschuwingen met de volgende ernst' is ingesteld op 'Hoog'
+### <a name="ensure-that-notify-about-alerts-with-the-following-severity-is-set-to-high"></a>Zorg ervoor dat 'Waarschuwen over waarschuwingen met de volgende ernst' is ingesteld op Hoog
 
 **Id**: **Eigendom** van CIS Azure 2.14: Klant
 
@@ -174,7 +174,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet- of on-premises clients toe te staan, kan toegang worden verleend tot verkeer van specifieke virtuele Azure-netwerken of tot ip-adresbereiken voor openbaar internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
+|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet- of on-premises clients toe te staan, kan toegang worden verleend aan verkeer van specifieke virtuele Azure-netwerken of aan IP-adresbereiken van openbaar internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
 |[Opslagaccounts moeten netwerktoegang beperken met behulp van regels voor virtuele netwerken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2a1a9cdf-e04d-429a-8416-3bfb72a1b26f) |Bescherm uw opslagaccounts tegen mogelijke dreigingen met regels voor virtuele netwerken als voorkeursmethode, in plaats van filteren op basis van IP-adressen. Als u filteren basis van IP-adressen niet toestaat, hebben openbare IP-adressen geen toegang tot uw opslagaccounts. |Controleren, Weigeren, Uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/StorageAccountOnlyVnetRulesEnabled_Audit.json) |
 
 ### <a name="ensure-trusted-microsoft-services-is-enabled-for-storage-account-access"></a>Controleren of vertrouwde Microsoft-services zijn ingeschakeld voor toegang tot het opslagaccount
@@ -185,7 +185,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Opslagaccounts moeten toegang uit vertrouwde Microsoft-services toestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc9d007d0-c057-4772-b18c-01e546713bcd) |Sommige Microsoft-services die communiceren met opslagaccounts, werken vanuit netwerken waaraan geen toegang kan worden verleend via netwerkregels. Om dit type service goed te laten werken, moet u de set vertrouwde Microsoft-services toestaan om de netwerkregels over te slaan. Deze services gebruiken vervolgens sterke verificatie om toegang te krijgen tot het opslagaccount. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/StorageAccess_TrustedMicrosoftServices_Audit.json) |
 
-### <a name="ensure-storage-for-critical-data-are-encrypted-with-customer-managed-key"></a>Zorg ervoor dat opslag voor kritieke gegevens is versleuteld met door de klant beheerde sleutel
+### <a name="ensure-storage-for-critical-data-are-encrypted-with-customer-managed-key"></a>Zorg ervoor dat opslag voor kritieke gegevens wordt versleuteld met door de klant beheerde sleutel
 
 **Id:** Eigendom van CIS Azure 3.9: Klant
 
@@ -217,7 +217,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[SQL-servers met controle naar opslagaccountbestemming moeten worden geconfigureerd met een bewaarperiode van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor onderzoek naar incidenten wordt u aangeraden de gegevensretentie voor de controle van uw SQL Server in te stellen op de opslagaccountbestemming op ten minste 90 dagen. Controleer of u aan de benodigde bewaarregels voor de regio's waar u werkt, na komt. Dit is soms vereist voor naleving van regelgevingsstandaarden. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
+|[SQL-servers met controle naar opslagaccountbestemming moeten worden geconfigureerd met een bewaarperiode van 90 dagen of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor onderzoek naar incidenten raden we u aan de gegevensretentie voor de controle van uw SQL Server in te stellen op de opslagaccountbestemming op ten minste 90 dagen. Controleer of u aan de benodigde bewaarregels voor de regio's waar u werkt, na komt. Dit is soms vereist voor naleving van regelgevingsstandaarden. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
 
 ### <a name="ensure-that-advanced-threat-protection-atp-on-a-sql-server-is-set-to-enabled"></a>Zorg ervoor dat Advanced Threat Protection (ATP) op een SQL-server is ingesteld op Ingeschakeld
 
@@ -228,7 +228,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |[Advanced Data Security moet zijn ingeschakeld voor SQL Managed Instance](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb7388-5bf4-4ad7-ba99-2cd2f41cebb9) |Controleer elke SQL Managed Instance zonder Advanced Data Security. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurity_Audit.json) |
 |[Advanced Data Security moet zijn ingeschakeld op uw SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb4388-5bf4-4ad7-ba82-2cd2f41ceae9) |SQL-servers zonder Advanced Data Security controleren |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurity_Audit.json) |
 
-### <a name="ensure-that-vulnerability-assessment-va-is-enabled-on-a-sql-server-by-setting-a-storage-account"></a>Zorg ervoor dat evaluatie van beveiligingsleed (VA) is ingeschakeld op een SQL-server door een opslagaccount in te stellen
+### <a name="ensure-that-vulnerability-assessment-va-is-enabled-on-a-sql-server-by-setting-a-storage-account"></a>Zorg ervoor dat Evaluatie van beveiligingsleed (VA) is ingeschakeld op een SQL-server door een opslagaccount in te stellen
 
 **Id:** Eigendom van CIS Azure 4.2.2: Klant 
 
@@ -237,7 +237,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |[Evaluatie van beveiligingsproblemen moet zijn ingeschakeld voor SQL Managed Instance](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1b7aa243-30e4-4c9e-bca8-d0d3022b634a) |Controleer elke SQL Managed Instance waarvoor geen terugkerende evaluatie van beveiligingsproblemen is ingeschakeld. Met een evaluatie van beveiligingsproblemen kunt u potentiële beveiligingsproblemen van de database detecteren, bijhouden en herstellen. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnManagedInstance_Audit.json) |
 |[De evaluatie van beveiligingsproblemen moet worden ingeschakeld op uw SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fef2a8f2a-b3d9-49cd-a8a8-9a3aaaf647d9) |Controleer Azure SQL-servers waarvoor geen terugkerende evaluatie van beveiligingsproblemen is ingeschakeld. Met een evaluatie van beveiligingsproblemen kunt u potentiële beveiligingsproblemen van de database detecteren, bijhouden en herstellen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnServer_Audit.json) |
 
-### <a name="ensure-that-va-setting-send-scan-reports-to-is-configured-for-a-sql-server"></a>Zorg ervoor dat de VA-instelling Scanrapporten verzenden naar is geconfigureerd voor een SQL-server
+### <a name="ensure-that-va-setting-send-scan-reports-to-is-configured-for-a-sql-server"></a>Controleren of de VA-instelling Scanrapporten verzenden naar is geconfigureerd voor een SQL-server
 
 **Id:** Eigendom van CIS Azure 4.2.4: Klant 
 
@@ -344,7 +344,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Er moet een waarschuwing voor activiteitenlogboeken bestaan voor specifieke beleidsbewerkingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |Met dit beleid worden specifieke beleidsbewerkingen gecontroleerd waarvoor geen waarschuwingen voor activiteitenlogboeken zijn geconfigureerd. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
 
-### <a name="ensure-that-activity-log-alert-exists-for-delete-policy-assignment"></a>Controleren of er een waarschuwing voor activiteitenlogboek bestaat voor het verwijderen van beleidstoewijzing
+### <a name="ensure-that-activity-log-alert-exists-for-delete-policy-assignment"></a>Controleren of er een waarschuwing voor activiteitenlogboek bestaat voor beleidstoewijzing verwijderen
 
 **Id**: **Eigendom** van CIS Azure 5.2.2: Klant
 
@@ -463,7 +463,7 @@ Zoek en selecteer vervolgens de definitie van het ingebouwde initiatief voor nal
 |---|---|---|---|
 |[Controleer virtuele machines die niet gebruikmaken van beheerde schijven](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F06a78e20-9358-41c9-923c-fb736d382a4d) |Dit beleid controleert virtuele machines die niet gebruikmaken van beheerde schijven |controleren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/VMRequireManagedDisk_Audit.json) |
 
-### <a name="ensure-that-os-and-data-disks-are-encrypted-with-cmk"></a>Controleren of de besturingssysteem- en gegevensschijven zijn versleuteld met CMK
+### <a name="ensure-that-os-and-data-disks-are-encrypted-with-cmk"></a>Controleren of de schijven van het besturingssysteem en de gegevens zijn versleuteld met CMK
 
 **Id**: **Eigendom** van CIS Azure 7.2: Klant
 

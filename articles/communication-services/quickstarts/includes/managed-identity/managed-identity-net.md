@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 424e70f4f3656be2196f4dbdfbddb852846b6897
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
-ms.translationtype: MT
+ms.openlocfilehash: a055cc1b715f93830647c9b13793a59d09db605c
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307435"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107512468"
 ---
 ## <a name="setting-up"></a>Instellen
 
@@ -33,7 +33,7 @@ dotnet add package Azure.Identity
 
 ### <a name="use-the-sdk-packages"></a>De SDK-pakketten gebruiken
 
-Voeg de volgende `using` instructies toe om `Program.cs` de Azure Identity-en Azure Storage sdk's te gebruiken.
+Voeg de volgende instructies `using` toe aan om de Azure Identity- en `Program.cs` Azure Storage-SDK's te gebruiken.
 
 ```csharp
 using Azure.Identity;
@@ -45,15 +45,15 @@ using Azure;
 
 ## <a name="create-a-defaultazurecredential"></a>Een DefaultAzureCredential maken
 
-We gebruiken de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) voor deze Quick Start. Deze referentie is geschikt voor productie-en ontwikkelings omgevingen. Wanneer dit nodig is voor elke bewerking, wordt deze in de `Program.cs` klasse gemaakt. Voeg het volgende toe boven aan het bestand.
+We gebruiken de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) voor deze quickstart. Deze referentie is geschikt voor productie- en ontwikkelomgevingen. Aangezien dit nodig is voor elke bewerking, maken we deze in de `Program.cs` klasse . Voeg het volgende toe boven aan het bestand.
 
 ```csharp
      private DefaultAzureCredential credential = new DefaultAzureCredential();
 ```
 
-## <a name="issue-a-token-with-managed-identities"></a>Een token met beheerde identiteiten uitgeven
+## <a name="issue-a-token-with-managed-identities"></a>Een token uitgeven met beheerde identiteiten
 
-Nu voegt u code toe die gebruikmaakt van de gemaakte referentie voor het uitgeven van een VoIP-toegangs token. We noemen deze code later op.
+Nu gaan we code toevoegen die gebruikmaakt van de gemaakte referentie om een VoIP-toegangs token uit te geven. We noemen deze code later.
 
 ```csharp
      public Response<AccessToken> CreateIdentityAndGetTokenAsync(Uri resourceEndpoint)
@@ -68,9 +68,9 @@ Nu voegt u code toe die gebruikmaakt van de gemaakte referentie voor het uitgeve
      }
 ```
 
-## <a name="send-an-sms-with-managed-identities"></a>Een SMS-bericht verzenden met beheerde identiteiten
+## <a name="send-an-sms-with-managed-identities"></a>Een sms verzenden met beheerde identiteiten
 
-Als een ander voor beeld van het gebruik van beheerde identiteiten, voegen we deze code toe die gebruikmaakt van dezelfde referentie voor het verzenden van een SMS:
+Als een ander voorbeeld van het gebruik van beheerde identiteiten, voegen we deze code toe die dezelfde referentie gebruikt om een sms te verzenden:
 
 ```csharp
      public SmsSendResult SendSms(Uri resourceEndpoint, string from, string to, string message)
@@ -87,9 +87,9 @@ Als een ander voor beeld van het gebruik van beheerde identiteiten, voegen we de
      }
 ```
 
-## <a name="write-the-main-method"></a>Schrijf de methode Main
+## <a name="write-the-main-method"></a>De Main-methode schrijven
 
-Je `Program.cs` zou al een hoofd methode moeten hebben. we gaan een code toevoegen waarmee we eerder gemaakte code kunnen aanroepen om het gebruik van beheerde identiteiten te demonstreren:
+Als `Program.cs` u al een Main-methode hebt, gaan we code toevoegen die onze eerder gemaakte code aanroept om het gebruik van beheerde identiteiten te demonstreren:
 
 ```csharp
      static void Main(string[] args)
@@ -114,7 +114,7 @@ Je `Program.cs` zou al een hoofd methode moeten hebben. we gaan een code toevoeg
      }
 ```
 
-Het uiteindelijke `Program.cs` bestand moet er als volgt uitzien:
+Het `Program.cs` uiteindelijke bestand moet er als volgende uitzien:
 
 ```csharp
 class Program
@@ -167,7 +167,7 @@ class Program
 
 ## <a name="run-the-program"></a>Het programma uitvoeren
 
-U moet uw toepassing nu kunnen uitvoeren met `dotnet run` vanuit de map van uw toepassing. De uitvoer moet er als volgt uitzien:
+U zou nu uw toepassing moeten kunnen uitvoeren met behulp `dotnet run` van vanuit de toepassingsmap. De uitvoer moet er als volgt uit zien:
 ```
 Retrieving new Access Token, using Managed Identities
 Retrieved Access Token: ey....

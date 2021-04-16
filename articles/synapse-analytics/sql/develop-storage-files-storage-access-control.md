@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: acfaa780f21f5264b546f97e9a3792aa43e9c30b
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: 266a6c27261107b883fdc0c1cdd274e6345de6db
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107029740"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483449"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -24,12 +24,12 @@ Bij een query van een serverloze SQL-pool worden bestanden rechtstreeks gelezen 
 
 In dit artikel worden de typen referenties beschreven die u kunt gebruiken en hoe het opzoeken van referenties voor SQL- en Azure AD-gebruikers in zijn werk gaat.
 
-## <a name="storage-permissions"></a>Opslag machtigingen
+## <a name="storage-permissions"></a>Opslagmachtigingen
 
-Een serverloze SQL-groep in de Synapse Analytics-werk ruimte kan de inhoud lezen van bestanden die zijn opgeslagen in Azure Data Lake opslag. U moet machtigingen voor opslag configureren om een gebruiker in te scha kelen die een SQL-query uitvoert om de bestanden te lezen. Er zijn drie methoden om de toegang tot de bestanden in te scha kelen>
-- Met **[op rollen gebaseerd toegangs beheer (RBAC)](../../role-based-access-control/overview.md)** kunt u een rol toewijzen aan een Azure AD-gebruiker in de Tenant waar uw opslag is geplaatst. RBAC-rollen kunnen worden toegewezen aan Azure AD-gebruikers. Een lezer moet de `Storage Blob Data Reader` rol, hebben `Storage Blob Data Contributor` of hebben `Storage Blob Data Owner` . Een gebruiker die gegevens in de Azure-opslag schrijft, moet een `Storage Blob Data Writer` rol hebben of `Storage Blob Data Owner` rollen hebben. Houd er rekening mee dat de `Storage Owner` rol niet impliceert dat een gebruiker ook `Storage Data Owner` .
-- Met **Access Control-lijsten (ACL)** kunt u een fijn gekorreld machtigings model definiëren voor de bestanden en mappen in azure Storage. ACL kan worden toegewezen aan Azure AD-gebruikers. Als lezers een bestand op een pad in Azure Storage willen lezen, moeten ze beschikken over een uitvoerings-ACL (X) op elke map in het bestandspad en lees-(R) ACL voor het bestand. [Meer informatie over het instellen van ACL-machtigingen in Storage Layer](../../storage/blobs/data-lake-storage-access-control.md#how-to-set-acls)
-- Met **Shared Access Signature (SAS)** is een lezer in staat om toegang te krijgen tot de bestanden op de Azure data Lake-opslag met het token waarvoor een time-out is beperkt. De lezer hoeft niet zelfs als Azure AD-gebruiker te worden geverifieerd. SAS-token bevat de machtigingen die aan de lezer zijn toegekend en de periode waarin het token geldig is. SAS-token is een goede keuze voor tijdgebonden toegang tot een gebruiker die niet zelfs in dezelfde Azure AD-Tenant hoeft te zijn. SAS-token kan worden gedefinieerd in het opslag account of op specifieke directory's. Meer informatie over [het verlenen van beperkte toegang tot Azure storage resources met behulp van hand tekeningen voor gedeelde toegang](../../storage/common/storage-sas-overview.md).
+Een serverloze SQL-pool in Synapse Analytics werkruimte kan de inhoud lezen van bestanden die zijn opgeslagen in Azure Data Lake Storage. U moet machtigingen voor opslag configureren zodat een gebruiker die een SQL-query uitvoert, de bestanden kan lezen. Er zijn drie methoden voor het inschakelen van de toegang tot de>
+- **[Met op rollen gebaseerd toegangsbeheer (RBAC)](../../role-based-access-control/overview.md)** kunt u een rol toewijzen aan een Azure AD-gebruiker in de tenant waarin uw opslag is geplaatst. RBAC-rollen kunnen worden toegewezen aan Azure AD-gebruikers. Een lezer moet `Storage Blob Data Reader` de rol , of `Storage Blob Data Contributor` `Storage Blob Data Owner` hebben. Een gebruiker die gegevens schrijft in de Azure-opslag moet de `Storage Blob Data Writer` rol of `Storage Blob Data Owner` hebben. Houd er rekening `Storage Owner` mee dat de rol niet impliceert dat een gebruiker ook `Storage Data Owner` is.
+- **Access Control Lijsten (ACL)** kunt u een fijnfinieerd machtigingsmodel definiëren voor de bestanden en mappen in Azure Storage. ACL kan worden toegewezen aan Azure AD-gebruikers. Als lezers een bestand op een pad in Azure Storage willen lezen, moeten ze een ACL voor uitvoeren (X) hebben op elke map in het bestandspad en de ACL read(R) voor het bestand hebben. [Meer informatie over het instellen van ACL-machtigingen in de opslaglaag](../../storage/blobs/data-lake-storage-access-control.md#how-to-set-acls)
+- **Met Shared Access Signature (SAS)** kan een lezer toegang krijgen tot de bestanden in de Azure Data Lake-opslag met behulp van het token met een beperkte tijd. De lezer hoeft niet eens te worden geverifieerd als Azure AD-gebruiker. Het SAS-token bevat de machtigingen die aan de lezer zijn verleend, evenals de periode waarin het token geldig is. EEN SAS-token is een goede keuze voor tijdsgeperkte toegang voor elke gebruiker die zich niet eens in dezelfde Azure AD-tenant hoeft te hebben. SAS-token kan worden gedefinieerd in het opslagaccount of in specifieke directories. Meer informatie over het [verlenen van beperkte toegang Azure Storage resources met behulp van handtekeningen voor gedeelde toegang.](../../storage/common/storage-sas-overview.md)
 
 ## <a name="supported-storage-authorization-types"></a>Ondersteunde autorisatietypen voor opslag
 
@@ -43,9 +43,9 @@ Een gebruiker die zich heeft aangemeld bij een serverloze SQL-pool, moet zijn ge
 **Gebruikersidentiteit**, ook wel 'Azure AD-pass-through' genoemd, is een type autorisatie waarbij de identiteit van de Azure AD-gebruiker die is aangemeld bij een serverloze SQL-pool, wordt gebruikt om toegang tot gegevens te autoriseren. Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigingen verlenen aan de Azure AD-gebruiker. Zoals aangegeven in de tabel hierna, wordt dit niet ondersteund voor het SQL-gebruikerstype.
 
 > [!IMPORTANT]
-> Het AAD-verificatie token kan in de cache worden opgeslagen door de client toepassingen. Voor beeld van een Power bi-cache wordt een AAD-token gebruikt voor een uur. De lange de query's kunnen mislukken als het token verloopt in het midden van de uitvoering van de query. Als u query fouten ondervindt die worden veroorzaakt door de AAD-toegangs token die in het midden van de query verloopt, kunt u overwegen om over te scha kelen naar een [beheerde identiteit](develop-storage-files-storage-access-control.md?tabs=managed-identity#supported-storage-authorization-types) of [gedeelde toegangs handtekening](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#supported-storage-authorization-types).
+> AAD-verificatie token kan worden opgeslagen in de cache door de clienttoepassingen. PowerBI cachet bijvoorbeeld een AAD-token en hergebruikt hetzelfde token voor een uur. De langdurige query's kunnen mislukken als het token verloopt tijdens de uitvoering van de query. Als u queryfouten ondervindt die worden veroorzaakt door het AAD-toegangs token dat in het midden van de query verloopt, kunt u overwegen over te schakelen naar Beheerde identiteit of Shared [Access Signature.](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#supported-storage-authorization-types) [](develop-storage-files-storage-access-control.md?tabs=managed-identity#supported-storage-authorization-types)
 
-U moet beschikken over de rol van eigenaar/inzender/lezer van Storage-blobgegevens om via uw identiteit toegang te krijgen tot de gegevens. Als alternatief kunt u verfijnde ACL-regels opgeven voor toegang tot bestanden en mappen. Zelfs als u eigenaar bent van een opslagaccount, moet u nog beschikken over een van deze rollen voor Storage-blobgegevens.
+U moet beschikken over de rol van eigenaar/inzender/lezer van Storage-blobgegevens om via uw identiteit toegang te krijgen tot de gegevens. Als alternatief kunt u fijnmappen ACL-regels opgeven voor toegang tot bestanden en mappen. Zelfs als u eigenaar bent van een opslagaccount, moet u nog beschikken over een van deze rollen voor Storage-blobgegevens.
 Raadpleeg het artikel [Toegangsbeheer in Azure Data Lake Storage Gen2](../../storage/blobs/data-lake-storage-access-control.md) voor meer informatie over toegangsbeheer in Azure Data Lake Store Gen2.
 
 
@@ -64,7 +64,7 @@ U moet de referenties binnen het database- of serverbereik maken om toegang met 
 
 
 > [!IMPORTANT]
-> U kan niet toegang tot accounts voor privé opslag met het SAS-token. Overweeg om over te scha kelen naar een [beheerde identiteit](develop-storage-files-storage-access-control.md?tabs=managed-identity#supported-storage-authorization-types) of [Azure AD Pass-Through-](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types) verificatie om toegang te krijgen tot beveiligde opslag.
+> U hebt geen toegang tot privéopslagaccounts met het SAS-token. Overweeg over te schakelen [naar Beheerde identiteit of](develop-storage-files-storage-access-control.md?tabs=managed-identity#supported-storage-authorization-types) Pass [Through-verificatie](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types) van Azure AD voor toegang tot beveiligde opslag.
 
 ### <a name="managed-identity"></a>[Beheerde identiteit](#tab/managed-identity)
 
@@ -86,7 +86,7 @@ In de onderstaande tabel vindt u de beschikbare autorisatietypen:
 | ------------------------------------- | ------------- | -----------    |
 | [Gebruikersidentiteit](?tabs=user-identity#supported-storage-authorization-types)       | Niet ondersteund | Ondersteund      |
 | [SAS](?tabs=shared-access-signature#supported-storage-authorization-types)       | Ondersteund     | Ondersteund      |
-| [Beheerde identiteit](?tabs=managed-identity#supported-storage-authorization-types) | Niet ondersteund | Ondersteund      |
+| [Beheerde identiteit](?tabs=managed-identity#supported-storage-authorization-types) | Ondersteund | Ondersteund      |
 
 ### <a name="supported-storages-and-authorization-types"></a>Ondersteunde opslag- en autorisatietypen
 
@@ -106,18 +106,18 @@ U kunt de volgende combinaties van autorisatie- en Azure Storage-typen gebruiken
 Wanneer u toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u **Gebruikersidentiteit** of **Beheerde identiteit** gebruiken.
 
 > [!NOTE]
-> De firewall functie op opslag is in open bare preview en is beschikbaar in alle open bare Cloud regio's. 
+> De firewallfunctie in Storage is in openbare preview en is beschikbaar in alle regio's van de openbare cloud. 
 
 #### <a name="user-identity"></a>Gebruikersidentiteit
 
-Als u toegang wilt krijgen tot opslag die wordt beveiligd met de firewall via de gebruikers-id, kunt u Azure Portal gebruikers interface of de Power shell-module AZ. Storage gebruiken.
+Als u toegang wilt krijgen tot opslag die met de firewall is beveiligd via gebruikersidentiteit, kunt u Azure Portal ui of PowerShell-module Az.Storage gebruiken.
 #### <a name="configuration-via-azure-portal"></a>Configuratie via Azure Portal
 
-1. Zoek uw opslag account in Azure Portal.
-1. Ga naar netwerken onder instellingen van de sectie.
-1. Voeg in sectie ' resource-instanties ' een uitzonde ring toe voor uw Synapse-werk ruimte.
-1. Selecteer micro soft. Synapse/werk ruimten als een resource type.
-1. Selecteer de naam van uw werk ruimte als een exemplaar naam.
+1. Zoek uw opslagaccount in Azure Portal.
+1. Ga naar Netwerken onder de sectie Instellingen.
+1. Voeg in de sectie Resource-exemplaren een uitzondering toe voor uw Synapse-werkruimte.
+1. Selecteer Microsoft.Synapse/workspaces als resourcetype.
+1. Selecteer de naam van uw werkruimte als exemplaarnaam.
 1. Klik op Opslaan.
 
 #### <a name="configuration-via-powershell"></a>Configuratie via PowerShell
@@ -125,13 +125,13 @@ Als u toegang wilt krijgen tot opslag die wordt beveiligd met de firewall via de
 Volg deze stappen om de firewall voor uw opslagaccount te configureren en een uitzondering toe te voegen voor Synapse-werkruimte.
 
 1. Open PowerShell of [installeer PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows)
-2. Installeer de module AZ. Storage 3.4.0 en AZ. Synapse 0.7.0: 
+2. Installeer de module Az.Storage 3.4.0 en Az.Synapse 0.7.0: 
     ```powershell
     Install-Module -Name Az.Storage -RequiredVersion 3.4.0
     Install-Module -Name Az.Synapse -RequiredVersion 0.7.0
     ```
     > [!IMPORTANT]
-    > Zorg ervoor dat u **versie 3.4.0** gebruikt. U kunt uw Az.Storage-versie controleren door deze opdracht uit te voeren:  
+    > Zorg ervoor dat u **versie 3.4.0 gebruikt.** U kunt uw Az.Storage-versie controleren door deze opdracht uit te voeren:  
     > ```powershell 
     > Get-Module -ListAvailable -Name  Az.Storage | select Version
     > ```
@@ -142,10 +142,10 @@ Volg deze stappen om de firewall voor uw opslagaccount te configureren en een ui
     Connect-AzAccount
     ```
 4. Variabelen definiëren in PowerShell: 
-    - Naam van de resource groep: u vindt deze in Azure Portal in het overzicht van het opslag account.
+    - Naam van resourcegroep: u vindt deze in Azure Portal overzicht van het opslagaccount.
     - Accountnaam: naam van het opslagaccount dat wordt beveiligd met firewallregels.
     - Tenant-id: u vindt deze in de Azure-portal in Azure Active Directory, bij tenantgegevens.
-    - Werkruimte naam: naam van de Synapse-werk ruimte.
+    - Werkruimtenaam: de naam van de Synapse-werkruimte.
 
     ```powershell
         $resourceGroupName = "<resource group name>"
@@ -214,7 +214,7 @@ GRANT REFERENCES ON CREDENTIAL::[storage_credential] TO [specific_user];
 
 ## <a name="server-scoped-credential"></a>Referentie binnen serverbereik
 
-Referenties binnen het bereik van de server worden gebruikt wanneer de SQL-aanmelding de functie `OPENROWSET` aanroept zonder `DATA_SOURCE` om bestanden te lezen in een opslagaccount. De naam van de server-scope referentie **moet** overeenkomen met de basis-URL van Azure Storage (eventueel gevolgd door een container naam). U kunt een referentie toevoegen door [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?view=azure-sqldw-latest&preserve-view=true) uit te voeren. U moet als argument een naam voor de referentie opgeven.
+Referenties binnen het bereik van de server worden gebruikt wanneer de SQL-aanmelding de functie `OPENROWSET` aanroept zonder `DATA_SOURCE` om bestanden te lezen in een opslagaccount. De naam van de referenties binnen het serverbereik **moet overeenkomen** met de basis-URL van Azure Storage (optioneel gevolgd door een containernaam). U kunt een referentie toevoegen door [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?view=azure-sqldw-latest&preserve-view=true) uit te voeren. U moet als argument een naam voor de referentie opgeven.
 
 > [!NOTE]
 > Het argument `FOR CRYPTOGRAPHIC PROVIDER` wordt niet ondersteund.
@@ -248,7 +248,7 @@ WITH IDENTITY='SHARED ACCESS SIGNATURE'
 GO
 ```
 
-U kunt desgewenst alleen de basis-URL van het opslag account gebruiken, zonder container naam.
+U kunt eventueel alleen de basis-URL van het opslagaccount gebruiken, zonder containernaam.
 
 ### <a name="managed-identity"></a>[Beheerde identiteit](#tab/managed-identity)
 
@@ -259,7 +259,7 @@ CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]
 WITH IDENTITY='Managed Identity'
 ```
 
-U kunt desgewenst alleen de basis-URL van het opslag account gebruiken, zonder container naam.
+U kunt eventueel alleen de basis-URL van het opslagaccount gebruiken, zonder containernaam.
 
 ### <a name="public-access"></a>[Openbare toegang](#tab/public-access)
 

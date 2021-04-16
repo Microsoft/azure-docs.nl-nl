@@ -1,259 +1,259 @@
 ---
-title: Vm's terugzetten met behulp van de Azure Portal
-description: Een virtuele Azure-machine herstellen vanaf een herstel punt met behulp van de Azure Portal, met inbegrip van de functie voor het terugzetten van meerdere regio's.
+title: VM's herstellen met behulp van de Azure Portal
+description: Herstel een virtuele Azure-machine vanaf een herstelpunt met behulp van de Azure Portal, inclusief de functie Herstellen tussen regio's.
 ms.reviewer: geg
 ms.topic: conceptual
-ms.date: 08/02/2020
-ms.openlocfilehash: 83681d2bb3622857fb9141a3cec79d92d278a814
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/14/2021
+ms.openlocfilehash: 452ca5e1b1c6554a2ae1651068eae06ad9a6b232
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105568746"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107515223"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
-In dit artikel wordt beschreven hoe u Azure VM-gegevens terugzet van de herstel punten die zijn opgeslagen in [Azure Backup](backup-overview.md) Recovery Services kluizen.
+In dit artikel wordt beschreven hoe u Azure VM-gegevens herstelt vanaf de herstelpunten die zijn Azure Backup [Recovery](backup-overview.md) Services-kluizen.
 
 ## <a name="restore-options"></a>Herstelopties
 
-Azure Backup biedt verschillende manieren om een virtuele machine te herstellen.
+Azure Backup biedt verschillende manieren om een VM te herstellen.
 
 **Optie voor herstellen** | **Details**
 --- | ---
-**Een nieuwe virtuele machine maken** | Hiermee maakt en krijgt u snel een standaard-VM die vanaf een herstelpunt actief is.<br/><br/> U kunt een naam opgeven voor de virtuele machine, de resource groep en het virtuele netwerk (VNet) selecteren waarin deze wordt geplaatst en een opslag account opgeven voor de herstelde VM. De nieuwe VM moet in dezelfde regio worden gemaakt als de bron-VM.<br><br>Als het herstellen van een virtuele machine mislukt omdat een Azure VM-SKU niet beschikbaar is in de opgegeven regio van Azure of als gevolg van andere problemen, worden de schijven in de opgegeven resource groep door Azure Backup nog steeds hersteld.
-**Schijf herstellen** | Hiermee wordt een VM-schijf hersteld, die vervolgens kan worden gebruikt om een nieuwe virtuele machine te maken.<br/><br/> Azure Backup biedt u een sjabloon waarmee u een nieuwe virtuele machine kunt aanpassen en maken. <br/><br> De herstel taak genereert een sjabloon die u kunt downloaden en gebruiken om aangepaste VM-instellingen op te geven en om een virtuele machine te maken.<br/><br/> De schijven worden gekopieerd naar de resourcegroep die u opgeeft.<br/><br/> U kunt de schijf ook koppelen aan een bestaande virtuele machine of een nieuwe virtuele machine maken met behulp van Power shell.<br/><br/> Deze optie is handig als u de virtuele machine wilt aanpassen, configuratie-instellingen wilt toevoegen die niet waren geconfigureerd op het moment van de back-up of instellingen wilt toevoegen die moeten worden geconfigureerd met de sjabloon of PowerShell.
-**Bestaande schijf vervangen** | U kunt een schijf herstellen en gebruiken om een schijf op de bestaande virtuele machine te vervangen.<br/><br/> De huidige VM moet bestaan. Als deze is verwijderd, kan deze optie niet worden gebruikt.<br/><br/> Azure Backup maakt een moment opname van de bestaande virtuele machine voordat de schijf wordt vervangen en slaat deze op in de faserings locatie die u opgeeft. Bestaande schijven die zijn verbonden met de virtuele machine worden vervangen door het geselecteerde herstelpunt.<br/><br/> De moment opname wordt gekopieerd naar de kluis en bewaard in overeenstemming met het Bewaar beleid. <br/><br/> Na de vervangen schijf bewerking wordt de oorspronkelijke schijf in de resource groep bewaard. U kunt ervoor kiezen om de oorspronkelijke schijven hand matig te verwijderen als ze niet nodig zijn. <br/><br/>Bestaande vervangen wordt ondersteund voor niet-versleutelde beheerde Vm's, waaronder Vm's [die zijn gemaakt met behulp van aangepaste installatie kopieën](https://azure.microsoft.com/resources/videos/create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell/). Het wordt niet ondersteund voor klassieke Vm's en niet-beheerde Vm's.<br/><br/> Als het herstel punt meer of minder schijven heeft dan de huidige virtuele machine, wordt in het aantal schijven in het herstel punt alleen de VM-configuratie weer gegeven.<br><br> Bestaande vervangen wordt ook ondersteund voor Vm's met gekoppelde resources, zoals door de [gebruiker toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) of [Key Vault](../key-vault/general/overview.md).
-**In meerdere regio's (secundaire regio)** | Het terugzetten van meerdere regio's kan worden gebruikt om virtuele Azure-machines in de secundaire regio te herstellen. Dit is een [Azure-gekoppelde regio](../best-practices-availability-paired-regions.md#what-are-paired-regions).<br><br> U kunt alle virtuele machines van Azure voor het geselecteerde herstel punt herstellen als de back-up wordt uitgevoerd in de secundaire regio.<br><br> Tijdens het maken van de back-up worden moment opnamen niet gerepliceerd naar de secundaire regio. Alleen de gegevens die zijn opgeslagen in de kluis worden gerepliceerd. Daarom worden de herstel [lagen](about-azure-vm-restore.md#concepts) van de secundaire regio alleen hersteld. De herstel tijd voor de secundaire regio is bijna hetzelfde als de herstel tijd van de kluis-laag voor de primaire regio.  <br><br> Deze functie is beschikbaar voor de volgende opties:<br> <li> [Een VM maken](#create-a-vm): <br> <li> [Schijven herstellen](#restore-disks) <br><br> De optie [bestaande schijven vervangen](#replace-existing-disks) wordt momenteel niet ondersteund.<br><br> Machtigingen<br> De herstel bewerking op de secundaire regio kan worden uitgevoerd met back-upbeheerders en app-beheerders.
+**Een nieuwe virtuele machine maken** | Hiermee maakt en krijgt u snel een standaard-VM die vanaf een herstelpunt actief is.<br/><br/> U kunt een naam opgeven voor de virtuele machine, de resourcegroep en het virtuele netwerk (VNet) selecteren waarin deze worden geplaatst en een opslagaccount opgeven voor de herstelde VM. De nieuwe VM moet in dezelfde regio worden gemaakt als de bron-VM.<br><br>Als het herstellen van een VM mislukt omdat er geen Azure VM-SKU beschikbaar was in de opgegeven regio van Azure of vanwege andere problemen, herstelt Azure Backup nog steeds de schijven in de opgegeven resourcegroep.
+**Schijf herstellen** | Hiermee wordt een VM-schijf hersteld, die vervolgens kan worden gebruikt om een nieuwe virtuele machine te maken.<br/><br/> Azure Backup biedt u een sjabloon waarmee u een nieuwe virtuele machine kunt aanpassen en maken. <br/><br> Met de herstel taak wordt een sjabloon gegenereerd die u kunt downloaden en gebruiken om aangepaste VM-instellingen op te geven en een VM te maken.<br/><br/> De schijven worden gekopieerd naar de resourcegroep die u opgeeft.<br/><br/> U kunt de schijf ook koppelen aan een bestaande VM of een nieuwe VM maken met behulp van PowerShell.<br/><br/> Deze optie is handig als u de virtuele machine wilt aanpassen, configuratie-instellingen wilt toevoegen die niet waren geconfigureerd op het moment van de back-up of instellingen wilt toevoegen die moeten worden geconfigureerd met de sjabloon of PowerShell.
+**Bestaande schijf vervangen** | U kunt een schijf herstellen en deze gebruiken om een schijf op de bestaande VM te vervangen.<br/><br/> De huidige VM moet bestaan. Als deze is verwijderd, kan deze optie niet worden gebruikt.<br/><br/> Azure Backup maakt een momentopname van de bestaande VM voordat u de schijf vervangt en slaat deze op de faseringslocatie op die u opgeeft. Bestaande schijven die zijn verbonden met de virtuele machine worden vervangen door het geselecteerde herstelpunt.<br/><br/> De momentopname wordt gekopieerd naar de kluis en bewaard in overeenstemming met het bewaarbeleid. <br/><br/> Na de schijfbewerking wordt de oorspronkelijke schijf bewaard in de resourcegroep. U kunt ervoor kiezen om de oorspronkelijke schijven handmatig te verwijderen als ze niet nodig zijn. <br/><br/>Bestaande vervangen wordt ondersteund voor niet-versleutelde beheerde VM's, inclusief VM's die [zijn gemaakt met aangepaste afbeeldingen.](https://azure.microsoft.com/resources/videos/create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell/) Het wordt niet ondersteund voor klassieke VM's en niet-mande VM's.<br/><br/> Als het herstelpunt meer of minder schijven heeft dan de huidige VM, geeft het aantal schijven in het herstelpunt alleen de VM-configuratie weer.<br><br> Bestaande vervangen wordt ook ondersteund voor VM's met gekoppelde resources, zoals door de gebruiker toegewezen [beheerde](../active-directory/managed-identities-azure-resources/overview.md) identiteit [of Key Vault](../key-vault/general/overview.md).
+**In meerdere regio's (secundaire regio)** | Herstel tussen regio's kan worden gebruikt om Azure-VM's te herstellen in de secundaire regio. Dit is een [gekoppelde Azure-regio.](../best-practices-availability-paired-regions.md#what-are-paired-regions)<br><br> U kunt alle Azure-VM's voor het geselecteerde herstelpunt herstellen als de back-up wordt uitgevoerd in de secundaire regio.<br><br> Tijdens de back-up worden momentopnamen niet gerepliceerd naar de secundaire regio. Alleen de gegevens die in de kluis zijn opgeslagen, worden gerepliceerd. Herstel in secundaire regio's zijn dus alleen [herstel naar de kluislaag.](about-azure-vm-restore.md#concepts) De hersteltijd voor de secundaire regio is bijna hetzelfde als de hersteltijd voor de kluislaag voor de primaire regio.  <br><br> Deze functie is beschikbaar voor de volgende opties:<br> <li> [Een VM maken](#create-a-vm): <br> <li> [Schijven herstellen](#restore-disks) <br><br> De optie Bestaande schijven vervangen wordt [momenteel niet](#replace-existing-disks) ondersteund.<br><br> Machtigingen<br> De herstelbewerking in de secundaire regio kan worden uitgevoerd door back-upbeheerders en app-beheerders.
 
 > [!NOTE]
-> U kunt ook specifieke bestanden en mappen op een virtuele Azure-machine herstellen. [Meer informatie](backup-azure-restore-files-from-vm.md).
+> U kunt ook specifieke bestanden en mappen op een Azure-VM herstellen. [Meer informatie](backup-azure-restore-files-from-vm.md).
 
 ## <a name="storage-accounts"></a>Opslagaccounts
 
-Enkele details over opslag accounts:
+Enkele details over opslagaccounts:
 
-- **VM maken**: wanneer u een nieuwe virtuele machine maakt, wordt de virtuele machine opgenomen in het opslag account dat u opgeeft.
-- **Schijf herstellen**: wanneer u een schijf herstelt, wordt de schijf gekopieerd naar het opslag account dat u opgeeft. De herstel taak genereert een sjabloon die u kunt downloaden en gebruiken om aangepaste VM-instellingen op te geven. Deze sjabloon wordt opgenomen in het opgegeven opslag account.
-- **Schijf vervangen**: wanneer u een schijf vervangt in een bestaande virtuele machine, maakt Azure Backup een moment opname van de bestaande virtuele machine voordat de schijf wordt vervangen. De moment opname wordt ook als achtergrond proces gekopieerd naar de Recovery Services kluis via gegevens overdracht. Zodra de momentopname fase is voltooid, wordt de bewerking schijven vervangen echter geactiveerd. Nadat de schijf is vervangen, blijven de schijven van de bron-VM van Azure in de opgegeven resource groep voor uw bewerking staan en worden de Vhd's opgeslagen in het opgegeven opslag account. U kunt ervoor kiezen deze Vhd's en schijven te verwijderen of te behouden.
-- **Locatie van opslag account**: het opslag account moet zich in dezelfde regio bevinden als de kluis. Alleen deze accounts worden weer gegeven. Als de locatie geen opslag accounts bevat, moet u er een maken.
-- **Opslag type**: Blob Storage wordt niet ondersteund.
-- **Opslag redundantie**: zone redundante opslag (ZRS) wordt niet ondersteund. De gegevens over replicatie en redundantie voor het account worden tussen haakjes weer gegeven na de account naam.
-- **Premium-opslag**:
-  - Wanneer u niet-Premium Vm's herstelt, worden Premium-opslag accounts niet ondersteund.
-  - Premium Storage-accounts die zijn geconfigureerd met netwerk regels worden niet ondersteund bij het herstellen van beheerde Vm's.
+- **VM maken:** wanneer u een nieuwe VM maakt, wordt de VM geplaatst in het opslagaccount dat u opgeeft.
+- **Schijf herstellen:** wanneer u een schijf herstelt, wordt de schijf gekopieerd naar het opslagaccount dat u opgeeft. De herstel job genereert een sjabloon die u kunt downloaden en gebruiken om aangepaste VM-instellingen op te geven. Deze sjabloon wordt in het opgegeven opslagaccount geplaatst.
+- **Schijf vervangen:** wanneer u een schijf in een bestaande VM vervangt, maakt Azure Backup momentopname van de bestaande VM voordat u de schijf vervangt. De momentopname wordt ook gekopieerd naar de Recovery Services-kluis via gegevensoverdracht, als achtergrondproces. Zodra de fase van de momentopname is voltooid, wordt de bewerking Schijven vervangen echter geactiveerd. Na de schijfbewerking vervangen, worden de schijven van de bron-Azure-VM voor uw bewerking in de opgegeven resourcegroep bewaard en worden de VHD's opgeslagen in het opgegeven opslagaccount. U kunt ervoor kiezen om deze VHD's en schijven te verwijderen of te behouden.
+- **Opslagaccountlocatie:** het opslagaccount moet zich in dezelfde regio bevinden als de kluis. Alleen deze accounts worden weergegeven. Als de locatie geen opslagaccounts heeft, moet u er een maken.
+- **Opslagtype:** Blob Storage wordt niet ondersteund.
+- **Opslag redundantie:** Zone-redundante opslag (ZRS) wordt niet ondersteund. De replicatie- en redundantiegegevens voor het account worden tussen haakjes na de accountnaam weergegeven.
+- **Premium-opslag:**
+  - Bij het herstellen van niet-Premium-VM's worden Premium Storage-accounts niet ondersteund.
+  - Bij het herstellen van beheerde VM's worden Premium Storage-accounts die zijn geconfigureerd met netwerkregels, niet ondersteund.
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-Als u een virtuele machine wilt herstellen (een nieuwe virtuele machine maken), moet u ervoor zorgen dat u over de juiste toegangs [machtigingen](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) voor Azure op basis van rollen (Azure RBAC) beschikt voor de bewerking VM herstellen.
+Als u een VM wilt herstellen (een nieuwe VM maken), moet u ervoor zorgen dat u de juiste machtigingen voor op rollen gebaseerd [toegangsbeheer](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) van Azure (Azure RBAC) hebt voor de bewerking VM herstellen.
 
-Als u geen machtigingen hebt, kunt u [een schijf herstellen](#restore-disks)en nadat de schijf is hersteld, kunt u [de sjabloon](#use-templates-to-customize-a-restored-vm) die is gegenereerd als onderdeel van de herstel bewerking, gebruiken om een nieuwe virtuele machine te maken.
+Als u geen machtigingen hebt, [](#restore-disks)kunt u een schijf herstellen. Nadat [](#use-templates-to-customize-a-restored-vm) de schijf is hersteld, kunt u de sjabloon gebruiken die is gegenereerd als onderdeel van de herstelbewerking om een nieuwe VM te maken.
 
 [!INCLUDE [backup-center.md](../../includes/backup-center.md)]
 
-## <a name="select-a-restore-point"></a>Selecteer een herstel punt
+## <a name="select-a-restore-point"></a>Een herstelpunt selecteren
 
-1. Selecteer **Back-upitems**  >  **Azure virtual machine** in de kluis die is gekoppeld aan de virtuele machine die u wilt herstellen.
-1. Selecteer een virtuele machine. Standaard worden in het VM-dash board herstel punten van de afgelopen 30 dagen weer gegeven. U kunt herstel punten ouder dan 30 dagen weer geven of filteren om herstel punten te vinden op basis van datums, peri Oden en verschillende soorten consistentie van moment opnamen.
-1. Als u de virtuele machine wilt herstellen, selecteert u **VM herstellen**.
+1. Selecteer Back-upitems Azure Virtual Machine in de kluis die is gekoppeld aan de virtuele machine die u  >  **wilt herstellen.**
+1. Selecteer een VM. Op het VM-dashboard worden standaard herstelpunten van de afgelopen 30 dagen weergegeven. U kunt herstelpunten weergeven die ouder zijn dan 30 dagen of filteren om herstelpunten te vinden op basis van datums, tijdsbereiken en verschillende typen consistentie van momentopnamen.
+1. Als u de VM wilt herstellen, selecteert **u VM herstellen.**
 
     ![Herstelpunt](./media/backup-azure-arm-restore-vms/restore-point.png)
 
-1. Selecteer een herstel punt dat voor het herstel moet worden gebruikt.
+1. Selecteer een herstelpunt dat u wilt gebruiken voor het herstel.
 
-## <a name="choose-a-vm-restore-configuration"></a>Een configuratie voor het herstellen van VM'S kiezen
+## <a name="choose-a-vm-restore-configuration"></a>Een VM-herstelconfiguratie kiezen
 
-1. Selecteer een terugzet optie in **virtuele machine herstellen**:
-    - **Nieuwe maken**: gebruik deze optie als u een nieuwe virtuele machine wilt maken. U kunt een virtuele machine maken met eenvoudige instellingen, of een schijf herstellen en een aangepaste virtuele machine maken.
-    - **Bestaande vervangen**: gebruik deze optie als u de schijven op een bestaande virtuele machine wilt vervangen.
+1. Selecteer **in Virtuele machine herstellen** een hersteloptie:
+    - **Nieuwe maken:** gebruik deze optie als u een nieuwe VM wilt maken. U kunt een VM maken met eenvoudige instellingen of een schijf herstellen en een aangepaste VM maken.
+    - **Bestaande vervangen:** gebruik deze optie als u schijven op een bestaande VM wilt vervangen.
 
-        ![Wizard virtuele-machine configuratie herstellen](./media/backup-azure-arm-restore-vms/restore-configuration.png)
+        ![Wizard Configuratie van virtuele machine herstellen](./media/backup-azure-arm-restore-vms/restore-configuration.png)
 
-1. Geef de instellingen voor de geselecteerde terugzet optie op.
+1. Geef instellingen op voor de geselecteerde hersteloptie.
 
 ## <a name="create-a-vm"></a>Een virtuele machine maken
 
-Als een van de [Opties voor terugzetten](#restore-options)kunt u snel een virtuele machine maken met de basis instellingen van een herstel punt.
+Als een van de [herstelopties](#restore-options)kunt u snel een VM maken met basisinstellingen van een herstelpunt.
 
-1. In **virtuele machine herstellen**  >  **nieuwe**  >  **herstel type** maken selecteert u **een virtuele machine maken**.
-1. Geef in naam van de **virtuele machine** een VM op die niet voor komt in het abonnement.
-1. Selecteer in **resource groep** een bestaande resource groep voor de nieuwe virtuele machine of maak een nieuwe met een wereld wijd unieke naam. Als u een naam toewijst die al bestaat, wijst Azure de groep dezelfde naam als de virtuele machine toe.
-1. Selecteer in **virtueel netwerk** het VNet waarin de virtuele machine wordt geplaatst. Alle VNets die aan het abonnement zijn gekoppeld, worden weer gegeven. Selecteer het subnet. Het eerste subnet is standaard geselecteerd.
-1. Geef in **faserings locatie** het opslag account voor de virtuele machine op. [Meer informatie](#storage-accounts).
+1. Selecteer **in Virtuele machine herstellen** Nieuw  >    >  **hersteltype maken** de **optie Een virtuele machine maken.**
+1. Geef **in Naam van virtuele** machine een virtuele machine op die niet in het abonnement bestaat.
+1. Selecteer **in Resourcegroep** een bestaande resourcegroep voor de nieuwe VM of maak een nieuwe met een wereldwijd unieke naam. Als u een naam toewijst die al bestaat, wijst Azure de groep dezelfde naam toe als de VM.
+1. Selecteer **in Virtueel** netwerk het VNet waarin de virtuele machine wordt geplaatst. Alle VNets die aan het abonnement zijn gekoppeld, worden weergegeven. Selecteer het subnet. Het eerste subnet is standaard geselecteerd.
+1. Geef **in Faseringslocatie** het opslagaccount voor de VM op. [Meer informatie](#storage-accounts).
 
-    ![Wizard configuratie herstellen: Kies opties voor terugzetten](./media/backup-azure-arm-restore-vms/recovery-configuration-wizard1.png)
+    ![Configuratiewizard herstellen - opties voor herstellen kiezen](./media/backup-azure-arm-restore-vms/recovery-configuration-wizard1.png)
 
-1. Selecteer **herstellen** om de herstel bewerking te activeren.
+1. Selecteer **Herstellen om** de herstelbewerking te activeren.
 
 ## <a name="restore-disks"></a>Schijven herstellen
 
-Als een van de [Opties voor terugzetten](#restore-options)kunt u een schijf maken op basis van een herstel punt. Vervolgens kunt u met de schijf een van de volgende acties uitvoeren:
+Als een van de [herstelopties](#restore-options)kunt u een schijf maken vanaf een herstelpunt. Vervolgens kunt u met de schijf een van de volgende acties uitvoeren:
 
-- Gebruik de sjabloon die tijdens de herstel bewerking wordt gegenereerd om de instellingen aan te passen en VM-implementatie te activeren. U bewerkt de standaard sjabloon instellingen en verzendt de sjabloon voor de implementatie van de virtuele machine.
-- De [herstelde schijven koppelen](../virtual-machines/windows/attach-managed-disk-portal.md) aan een bestaande virtuele machine.
-- [Maak een nieuwe virtuele machine](./backup-azure-vms-automation.md#create-a-vm-from-restored-disks) op basis van de herstelde schijven met behulp van Power shell.
+- Gebruik de sjabloon die tijdens de herstelbewerking wordt gegenereerd om instellingen aan te passen en VM-implementatie te activeren. U bewerkt de standaardsjablooninstellingen en dient de sjabloon in voor VM-implementatie.
+- [Herstelde schijven koppelen](../virtual-machines/windows/attach-managed-disk-portal.md) aan een bestaande VM.
+- [Maak een nieuwe VM op](./backup-azure-vms-automation.md#create-a-vm-from-restored-disks) basis van de herstelde schijven met behulp van PowerShell.
 
-1. Selecteer in **configuratie herstellen**  >  **nieuwe**  >  **herstel type** maken de optie **schijven herstellen**.
-1. Selecteer in **resource groep** een bestaande resource groep voor de herstelde schijven of maak een nieuw item met een wereld wijd unieke naam.
-1. Geef bij **faserings locatie** het opslag account op waarnaar de vhd's moeten worden gekopieerd. [Meer informatie](#storage-accounts).
+1. Selecteer **in Configuratie herstellen** Nieuw  >    >  **hersteltype maken** de **optie Schijven herstellen.**
+1. Selecteer **in Resourcegroep** een bestaande resourcegroep voor de herstelde schijven of maak een nieuwe met een wereldwijd unieke naam.
+1. Geef **in Faseringslocatie** het opslagaccount op waar de VHD's naar moeten worden kopieert. [Meer informatie](#storage-accounts).
 
-    ![Resource groep en Faserings locatie selecteren](./media/backup-azure-arm-restore-vms/trigger-restore-operation1.png)
+    ![Selecteer Resourcegroep en Faseringslocatie](./media/backup-azure-arm-restore-vms/trigger-restore-operation1.png)
 
-1. Selecteer **herstellen** om de herstel bewerking te activeren.
+1. Selecteer **Herstellen om** de herstelbewerking te activeren.
 
-Als uw virtuele machine gebruikmaakt van beheerde schijven en u de optie **virtuele machine maken** selecteert, gebruikt Azure Backup niet het opgegeven opslag account. In het geval van **herstel schijven** en **direct terugzetten** wordt het opslag account alleen gebruikt voor het opslaan van de sjabloon. Beheerde schijven worden gemaakt in de opgegeven resource groep.
-Als uw virtuele machine gebruikmaakt van niet-beheerde schijven, worden deze hersteld als blobs naar het opslag account.
+Wanneer uw virtuele machine gebruikmaakt van beheerde schijven en u de optie Virtuele **machine** maken selecteert, gebruikt Azure Backup het opgegeven opslagaccount niet. In het geval van **Schijven herstellen en** Direct **herstellen** wordt het opslagaccount alleen gebruikt voor het opslaan van de sjabloon. Beheerde schijven worden gemaakt in de opgegeven resourcegroep.
+Wanneer uw virtuele machine gebruikmaakt van onmanagede schijven, worden deze als blobs hersteld in het opslagaccount.
 
 ### <a name="use-templates-to-customize-a-restored-vm"></a>Sjablonen gebruiken om een herstelde VM aan te passen
 
-Nadat de schijf is hersteld, gebruikt u de sjabloon die is gegenereerd als onderdeel van de herstel bewerking om een nieuwe virtuele machine aan te passen en te maken:
+Nadat de schijf is hersteld, gebruikt u de sjabloon die is gegenereerd als onderdeel van de herstelbewerking om een nieuwe VM aan te passen en te maken:
 
-1. Selecteer in **back-uptaken** de relevante herstel taak.
+1. Selecteer **in Back-uptaken** de relevante hersteltaken.
 
-1. Selecteer in **herstellen** de optie **sjabloon implementeren** om de implementatie van een sjabloon te initiëren.
+1. In **Herstellen selecteert** u **Sjabloon implementeren om** de sjabloonimplementatie te starten.
 
     ![Inzoomen op taak herstellen](./media/backup-azure-arm-restore-vms/restore-job-drill-down1.png)
 
-1. Als u de VM-instelling die in de sjabloon is opgenomen wilt aanpassen, selecteert u **sjabloon bewerken**. Als u meer aanpassingen wilt toevoegen, selecteert u **para meters bewerken**.
-    - Meer [informatie](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template) over het implementeren van resources vanuit een aangepaste sjabloon.
-    - [Meer informatie](../azure-resource-manager/templates/template-syntax.md) over het ontwerpen van sjablonen.
+1. Selecteer Sjabloon bewerken om de VM-instelling in de sjabloon **aan te passen.** Als u meer aanpassingen wilt toevoegen, selecteert u **Parameters bewerken.**
+    - [Meer informatie over](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template) het implementeren van resources vanuit een aangepaste sjabloon.
+    - [Meer informatie over](../azure-resource-manager/templates/template-syntax.md) het maken van sjablonen.
 
-   ![Implementatie van sjabloon laden](./media/backup-azure-arm-restore-vms/edit-template1.png)
+   ![Sjabloonimplementatie laden](./media/backup-azure-arm-restore-vms/edit-template1.png)
 
-1. Voer de aangepaste waarden voor de virtuele machine in, accepteer de **voor waarden** en selecteer **aanschaffen**.
+1. Voer de aangepaste waarden voor de VM in, accepteer **de voorwaarden** en selecteer **Kopen.**
 
-   ![Sjabloon implementatie verzenden](./media/backup-azure-arm-restore-vms/submitting-template1.png)
+   ![Sjabloonimplementatie verzenden](./media/backup-azure-arm-restore-vms/submitting-template1.png)
 
 ## <a name="replace-existing-disks"></a>Bestaande schijven vervangen
 
-Als een van de [Opties voor terugzetten](#restore-options)kunt u een bestaande VM-schijf vervangen door het geselecteerde herstel punt. Alle terugzet opties [bekijken](#restore-options) .
+Als een van de [herstelopties kunt](#restore-options)u een bestaande VM-schijf vervangen door het geselecteerde herstelpunt. [Bekijk](#restore-options) alle herstelopties.
 
-1. Selecteer in **configuratie herstellen** de optie **bestaande vervangen**.
-1. Selecteer in **type herstel** de optie **schijf/s vervangen**. Dit is het herstel punt dat wordt gebruikt om bestaande VM-schijven te vervangen.
-1. Geef bij **faserings locatie** op waar moment opnamen van de huidige beheerde schijven moeten worden opgeslagen tijdens het herstel proces. [Meer informatie](#storage-accounts).
+1. Selecteer **in Configuratie herstellen** de optie Bestaande **vervangen.**
+1. Selecteer **in Type herstellen** de optie **Schijf/s vervangen.** Dit is het herstelpunt dat wordt gebruikt om bestaande VM-schijven te vervangen.
+1. Geef **in Faseringslocatie** op waar momentopnamen van de huidige beheerde schijven moeten worden opgeslagen tijdens het herstelproces. [Meer informatie](#storage-accounts).
 
-   ![Wizard configuratie herstellen bestaande vervangen](./media/backup-azure-arm-restore-vms/restore-configuration-replace-existing.png)
+   ![Configuratiewizard herstellen Bestaande vervangen](./media/backup-azure-arm-restore-vms/restore-configuration-replace-existing.png)
 
-## <a name="cross-region-restore"></a>Meerdere regio's herstellen
+## <a name="cross-region-restore"></a>Herstellen tussen regio's
 
-Als een van de [Opties voor terugzetten](#restore-options)met behulp van cross Region Restore (CRR) kunt u virtuele Azure-machines herstellen in een secundaire regio, een Azure-gekoppelde regio.
+Als een van de [herstelopties](#restore-options)kunt u met CRR (Cross Region Restore) virtuele Azure-VM's herstellen in een secundaire regio, een gekoppelde Azure-regio.
 
-Als u de functie wilt gebruiken, leest [u de sectie voordat u begint](./backup-create-rs-vault.md#set-cross-region-restore).
+Als u de functie wilt gaan gebruiken, leest u [de sectie Voordat u begint.](./backup-create-rs-vault.md#set-cross-region-restore)
 
-Volg de instructies in [Restore voor meerdere regio's configureren](backup-create-rs-vault.md#configure-cross-region-restore)om te controleren of CRR is ingeschakeld.
+Volg de instructies in Herstellen tussen regio's configureren om te zien of CRR is [ingeschakeld.](backup-create-rs-vault.md#configure-cross-region-restore)
 
-### <a name="view-backup-items-in-secondary-region"></a>Back-upitems in secundaire regio weer geven
+### <a name="view-backup-items-in-secondary-region"></a>Back-upitems weergeven in secundaire regio
 
-Als CRR is ingeschakeld, kunt u de back-upitems in de secundaire regio weer geven.
+Als CRR is ingeschakeld, kunt u de back-upitems in de secundaire regio weergeven.
 
-1. Ga vanuit de portal naar **Recovery Services kluis**  >  **Back-upitems**.
-1. Selecteer **secundaire regio** om de items in de secundaire regio weer te geven.
+1. Ga vanuit de portal naar **Recovery Services-kluis**  >  **Back-upitems**.
+1. Selecteer **Secundaire regio** om de items in de secundaire regio te bekijken.
 
 >[!NOTE]
->Alleen back-upbeheer typen die ondersteuning bieden voor de functie CRR, worden weer gegeven in de lijst. Op dit moment is alleen ondersteuning voor het herstellen van secundaire regio gegevens naar een secundaire regio toegestaan.
+>Alleen back-upbeheertypen die de CRR-functie ondersteunen, worden weergegeven in de lijst. Op dit moment is alleen ondersteuning voor het herstellen van secundaire regiogegevens naar een secundaire regio toegestaan.<br></br>CRR voor Azure-VM's wordt ondersteund voor door Azure beheerde VM's (inclusief versleutelde Azure-VM's).
 
-![Virtuele machines in de secundaire regio](./media/backup-azure-arm-restore-vms/secbackedupitem.png)
+![Virtuele machines in secundaire regio](./media/backup-azure-arm-restore-vms/secbackedupitem.png)
 
 ![Secundaire regio selecteren](./media/backup-azure-arm-restore-vms/backupitems-sec.png)
 
 ### <a name="restore-in-secondary-region"></a>Herstellen in secundaire regio
 
-De gebruikers ervaring voor het herstellen van de secundaire regio is vergelijkbaar met de gebruikers ervaring voor het herstellen van de primaire regio. Wanneer u details in het configuratie venster voor herstellen configureert om uw herstel te configureren, wordt u gevraagd om alleen para meters van secundaire regio's op te geven.
+De gebruikerservaring voor herstellen in de secundaire regio is vergelijkbaar met de gebruikerservaring voor herstellen in de primaire regio. Wanneer u details configureert in het deelvenster Configuratie herstellen om uw herstel te configureren, wordt u gevraagd om alleen secundaire regioparameters op te geven.
 
-De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de secundaire regio is momenteel tot 12 uur van de primaire regio, zelfs als [geo-redundante opslag met lees toegang (RA-GRS)](../storage/common/storage-redundancy.md#redundancy-in-a-secondary-region) 15 minuten is.
+Op dit moment is de [RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de secundaire regio maximaal 12 uur van de primaire regio, hoewel de replicatie van geografisch redundante opslag met leestoegang [(RA-GRS)](../storage/common/storage-redundancy.md#redundancy-in-a-secondary-region) 15 minuten is.
 
-![Selecteer de VM die u wilt herstellen](./media/backup-azure-arm-restore-vms/sec-restore.png)
+![VM kiezen om te herstellen](./media/backup-azure-arm-restore-vms/sec-restore.png)
 
-![Herstel punt selecteren](./media/backup-azure-arm-restore-vms/sec-rp.png)
+![Herstelpunt selecteren](./media/backup-azure-arm-restore-vms/sec-rp.png)
 
 ![Configuratie herstellen](./media/backup-azure-arm-restore-vms/rest-config.png)
 
-![Melding activeren wordt uitgevoerd](./media/backup-azure-arm-restore-vms/restorenotifications.png)
+![Melding herstel wordt uitgevoerd activeren](./media/backup-azure-arm-restore-vms/restorenotifications.png)
 
-- Als u een virtuele machine wilt herstellen en maken, raadpleegt u [een virtuele machine maken](#create-a-vm).
-- Raadpleeg [schijven herstellen](#restore-disks)als u de schijf wilt herstellen.
+- Raadpleeg Een VM maken om een VM te herstellen [en te maken.](#create-a-vm)
+- Als u wilt herstellen als een schijf, raadpleegt [u Schijven herstellen.](#restore-disks)
 
 >[!NOTE]
 >
->- Nadat de herstel bewerking is geactiveerd en in de fase voor gegevens overdracht, kan de herstel taak niet worden geannuleerd.
->- De functie voor het terugzetten van meerdere regio's herstelt CMK (door de klant beheerde sleutels) ingeschakelde Azure-Vm's waarvoor geen back-up wordt gemaakt in een CMK ingeschakeld Recovery Services kluis als niet-CMK ingeschakelde virtuele machines in de secundaire regio.
->- De Azure-rollen die nodig zijn voor het herstellen van de secundaire regio, zijn hetzelfde als die in de primaire regio.
+>- Nadat het herstel is geactiveerd en in de fase van de gegevensoverdracht, kan de herstel taak niet worden geannuleerd.
+>- De functie Herstellen tussen regio's herstelt door de klant beheerde Azure-VM's (door de klant beheerde sleutels) die geen back-up maken in een Recovery Services-kluis met CMK-functionaliteit, als niet-CMK-VM's in de secundaire regio.
+>- De Azure-rollen die nodig zijn om te herstellen in de secundaire regio zijn hetzelfde als die in de primaire regio.
 
-Met [Azure zone vastgemaakte vm's](../virtual-machines/windows/create-portal-availability-zone.md) kunnen worden hersteld in alle [beschikbaarheids zones](../availability-zones/az-overview.md) van dezelfde regio.
+[Aan Azure-zone vastgemaakte VM's](../virtual-machines/windows/create-portal-availability-zone.md) kunnen worden hersteld in [alle beschikbaarheidszones](../availability-zones/az-overview.md) van dezelfde regio.
 
-In het herstel proces ziet u de optie **beschikbaarheids zone.** U ziet eerst uw standaard zone. Als u een andere zone wilt kiezen, kiest u het gewenste nummer voor de zone. Als de zone vastgemaakt niet beschikbaar is, kunt u de gegevens niet herstellen naar een andere zone, omdat de gegevens waarvan een back-up is gemaakt, niet zonally worden gerepliceerd. Het terugzetten in beschikbaarheids zones kan alleen worden uitgevoerd vanuit herstel punten in de kluis-laag.
+In het herstelproces ziet u de optie **Beschikbaarheidszone.** U ziet eerst uw standaardzone. Als u een andere zone wilt kiezen, kiest u het nummer van de zone van uw keuze. Als de vastgemaakte zone niet beschikbaar is, kunt u de gegevens niet herstellen naar een andere zone omdat de back-upgegevens niet zonaal worden gerepliceerd. Herstellen in beschikbaarheidszones is alleen mogelijk vanaf herstelpunten in de kluislaag.
 
-![Beschikbaarheids zone kiezen](./media/backup-azure-arm-restore-vms/cross-zonal-restore.png)
+![Beschikbaarheidszone kiezen](./media/backup-azure-arm-restore-vms/cross-zonal-restore.png)
 
-### <a name="monitoring-secondary-region-restore-jobs"></a>Taken voor het herstellen van secundaire regio's bewaken
+### <a name="monitoring-secondary-region-restore-jobs"></a>Hersteltaken voor secundaire regio's bewaken
 
-1. Ga vanuit de portal naar **Recovery Services kluis**  >  **back-uptaken**
-1. Selecteer **secundaire regio** om de items in de secundaire regio weer te geven.
+1. Ga vanuit de portal naar **Recovery Services-kluis**  >  **Back-uptaken**
+1. Selecteer **Secundaire regio** om de items in de secundaire regio te bekijken.
 
     ![Gefilterde back-uptaken](./media/backup-azure-arm-restore-vms/secbackupjobs.png)
 
-## <a name="restoring-unmanaged-vms-and-disks-as-managed"></a>Onbeheerde Vm's en schijven herstellen als beheerd
+## <a name="restoring-unmanaged-vms-and-disks-as-managed"></a>Niet-beheerde VM's en schijven herstellen als beheerd
 
-U hebt de mogelijkheid om [onbeheerde schijven](../storage/common/storage-disaster-recovery-guidance.md#azure-unmanaged-disks) te herstellen als [beheerde schijven](../virtual-machines/managed-disks-overview.md) tijdens het herstellen. Standaard worden de niet-beheerde Vm's/schijven teruggezet als onbeheerde Vm's/schijven. Als u echter kiest voor het herstellen als beheerde Vm's/schijven, is dit nu mogelijk. Deze herstel bewerkingen worden niet geactiveerd vanuit de momentopname fase, maar alleen vanuit de kluis fase. Deze functie is niet beschikbaar voor niet-beheerde versleutelde Vm's.
+U hebt een optie om [niet-beheerde](../storage/common/storage-disaster-recovery-guidance.md#azure-unmanaged-disks) schijven te herstellen als [beheerde schijven](../virtual-machines/managed-disks-overview.md) tijdens het herstellen. Standaard worden de niet-mande VM's/schijven hersteld als niet-mande VM's/schijven. Als u er echter voor kiest om te herstellen als beheerde VM's/schijven, is het nu mogelijk om dit te doen. Deze herstelingen worden niet geactiveerd vanuit de momentopnamefase, maar alleen vanuit de kluisfase. Deze functie is niet beschikbaar voor niet-versleutelde VM's.
 
 ![Herstellen als beheerde schijven](./media/backup-azure-arm-restore-vms/restore-as-managed-disks.png)
 
-## <a name="restore-vms-with-special-configurations"></a>Vm's herstellen met speciale configuraties
+## <a name="restore-vms-with-special-configurations"></a>VM's met speciale configuraties herstellen
 
-Er zijn veel algemene scenario's waarin u mogelijk Vm's moet herstellen.
-
-**Scenario** | **Hulp**
---- | ---
-**Vm's herstellen met voor deel voor hybride gebruik** | Als een virtuele Windows-machine gebruikmaakt van [hybride licenties voor voor delen (hub)](../virtual-machines/windows/hybrid-use-benefit-licensing.md), herstelt u de schijven en maakt u een nieuwe virtuele machine met behulp van de meegeleverde sjabloon (waarbij **licentie type** is ingesteld op **Windows_Server**) of Power shell.  Deze instelling kan ook worden toegepast nadat de virtuele machine is gemaakt.
-**Vm's herstellen tijdens een nood geval in azure Data Center** | Als de kluis gebruikmaakt van GRS en het primaire Data Center voor de virtuele machine uitvalt, Azure Backup ondersteunt het herstellen van back-ups van virtuele machines naar het gekoppelde Data Center. Selecteer een opslag account in het gekoppelde Data Center en herstel als normaal. Azure Backup gebruikt de compute-service in de gekoppelde regio om de herstelde VM te maken. Meer [informatie](/azure/architecture/resiliency/recovery-loss-azure-region) over de flexibiliteit van data centers.<br><br> Als de kluis gebruikmaakt van GRS, kunt u de nieuwe functie, [meerdere regio's herstellen](#cross-region-restore)kiezen. Zo kunt u een tweede regio in volledige of gedeeltelijke storings scenario's herstellen, of zelfs als er helemaal geen onderbreking is.
-**Bare-metal terugzet bewerking** | Het belangrijkste verschil tussen Azure Vm's en on-premises Hyper visors is dat er geen VM-console beschikbaar is in Azure. Een-console is vereist voor bepaalde scenario's, zoals het herstellen met behulp van een Bare-Metal Recovery (BMR)-type back-up. Het terugzetten van de VM vanuit de kluis is echter een volledige vervanging van BMR.
-**Vm's herstellen met speciale netwerk configuraties** | Speciale netwerk configuraties zijn Vm's met behulp van interne of externe taak verdeling, met behulp van meerdere NIC'S of meerdere gereserveerde IP-adressen. U herstelt deze Vm's met behulp van de [optie schijf herstellen](#restore-disks). Met deze optie maakt u een kopie van de Vhd's naar het opgegeven opslag account en kunt u vervolgens een virtuele machine maken met een [intern](../load-balancer/quickstart-load-balancer-standard-internal-powershell.md) of [extern](../load-balancer/quickstart-load-balancer-standard-public-powershell.md) Load Balancer, [meerdere nic's](../virtual-machines/windows/multiple-nics.md)of [meerdere gereserveerde IP-adressen](../virtual-network/virtual-network-multiple-ip-addresses-powershell.md), in overeenstemming met uw configuratie.
-**Netwerk beveiligings groep (NSG) op NIC/subnet** | Azure VM Backup ondersteunt het maken van back-ups en het herstellen van NSG-informatie op vnet-, subnet-en NIC-niveau.
-**Met zone vastgemaakte Vm's** | Als u een back-up maakt van een virtuele machine van Azure die is vastgemaakt aan een zone (met Azure Backup), kunt u deze herstellen in dezelfde zone als waarin deze is vastgemaakt. [Meer informatie](../availability-zones/az-overview.md)
-**Herstel de virtuele machine in een beschikbaarheidsset** | Wanneer u een virtuele machine herstelt vanuit de portal, is er geen optie om een beschikbaarheidsset te kiezen. Een herstelde VM heeft geen beschikbaarheidsset. Als u de optie schijf herstellen gebruikt, kunt u [een beschikbaarheidsset opgeven](../virtual-machines/windows/tutorial-availability-sets.md) wanneer u een virtuele machine van de schijf maakt met behulp van de meegeleverde sjabloon of Power shell.
-**Speciale Vm's herstellen, zoals SQL-Vm's** | Als u een back-up van een SQL-VM maakt met behulp van Azure VM backup en vervolgens de optie VM herstellen gebruikt of een virtuele machine maakt na het herstellen van schijven, moet de zojuist gemaakte virtuele machine zijn geregistreerd bij de SQL-provider zoals [hier](../azure-sql/virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md?tabs=azure-cli%2cbash)wordt vermeld. Hiermee wordt de herstelde VM geconverteerd naar een SQL-VM.
-
-### <a name="restore-domain-controller-vms"></a>Vm's van de domein controller herstellen
+Er zijn veel algemene scenario's waarin u VM's mogelijk moet herstellen.
 
 **Scenario** | **Hulp**
 --- | ---
-**Een VM van één domein controller herstellen in één domein** | Herstel de VM, zoals elke andere virtuele machine. Opmerking:<br/><br/> Vanuit een Active Directory perspectief is de virtuele machine van Azure net als elke andere virtuele machine.<br/><br/> Directory Services Restore Mode (DSRM) is ook beschikbaar, dus alle Active Directory herstel scenario's zijn levensvatbaar. Meer [informatie](#post-restore-steps) over het maken van back-ups en het herstellen van overwegingen voor gevirtualiseerde domein controllers.
-**Meerdere Vm's van domein controllers in één domein herstellen** | Als andere domein controllers in hetzelfde domein kunnen worden bereikt via het netwerk, kan de domein controller worden hersteld, zoals elke VM. Als het de laatste domein controller in het domein is, of als er een herstel in een geïsoleerd netwerk is uitgevoerd, gebruikt u een [forest recovery](/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery).
-**Een VM van één domein controller herstellen in een configuratie met meerdere domeinen** |  Herstel de schijven en maak een virtuele machine met [behulp van Power shell](backup-azure-vms-automation.md#restore-the-disks)  
-**Meerdere domeinen in één forest herstellen** | We raden u aan een [forest-herstel](/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery)uit te voeren.
+**VM's herstellen met Hybrid Use Benefit** | Als een Windows-VM gebruikmaakt van [HUB-licentieverlening (Hybrid Use Benefit),](../virtual-machines/windows/hybrid-use-benefit-licensing.md)herstelt  u de schijven en maakt u een nieuwe VM met behulp van de opgegeven sjabloon (met Licentietype ingesteld op **Windows_Server ) of** PowerShell.  Deze instelling kan ook worden toegepast na het maken van de VM.
+**VM's herstellen tijdens een noodherstel van een Azure-datacenter** | Als de kluis gebruikmaakt van GRS en het primaire datacenter voor de VM uit bedrijf gaat, Azure Backup ondersteuning voor het herstellen van back-up-VM's naar het gekoppelde datacenter. U selecteert een opslagaccount in het gekoppelde datacenter en herstelt op de gebruikelijke manier. Azure Backup gebruikt de compute-service in de gekoppelde regio om de herstelde VM te maken. [Meer informatie over](/azure/architecture/resiliency/recovery-loss-azure-region) tolerantie van datacenters.<br><br> Als de kluis gebruikmaakt van GRS, kunt u de nieuwe functie [Herstellen tussen regio's kiezen.](#cross-region-restore) Hiermee kunt u herstellen naar een tweede regio in scenario's met volledige of gedeeltelijke uitval, of zelfs als er helemaal geen storing is.
+**Bare-metalherstel** | Het belangrijkste verschil tussen Azure-VM's en on-premises hypervisors is dat er geen VM-console beschikbaar is in Azure. Een console is vereist voor bepaalde scenario's, zoals het herstellen met behulp van een back-up van het type bare-metal recovery (BMR). VM-herstel vanuit de kluis is echter een volledige vervanging voor BMR.
+**VM's met speciale netwerkconfiguraties herstellen** | Speciale netwerkconfiguraties omvatten VM's die interne of externe taakverdeling gebruiken, meerdere NIC's of meerdere gereserveerde IP-adressen gebruiken. U herstelt deze VM's met behulp van [de optie voor het herstellen van de schijf.](#restore-disks) Met deze optie maakt u een kopie van de VHD's in het [](../load-balancer/quickstart-load-balancer-standard-internal-powershell.md) opgegeven opslagaccount. Vervolgens kunt u een virtueleM maken met een interne of externe [load balancer,](../load-balancer/quickstart-load-balancer-standard-public-powershell.md) meerdere [NIC's](../virtual-machines/windows/multiple-nics.md)of meerdere gereserveerde [IP-adressen,](../virtual-network/virtual-network-multiple-ip-addresses-powershell.md)in overeenstemming met uw configuratie.
+**Netwerkbeveiligingsgroep (NSG) op NIC/subnet** | Azure VM Backup ondersteunt back-up en herstel van NSG-gegevens op vnet-, subnet- en NIC-niveau.
+**Aan zone vastgemaakte VM's** | Als u een back-up maakt van een Azure-VM die is vastgemaakt aan een zone (met Azure Backup), kunt u deze herstellen in dezelfde zone waar deze is vastgemaakt. [Meer informatie](../availability-zones/az-overview.md)
+**Een VM herstellen in een beschikbaarheidsset** | Bij het herstellen van een VM vanuit de portal is er geen optie om een beschikbaarheidsset te kiezen. Een herstelde VM heeft geen beschikbaarheidsset. Als u de optie schijf herstellen [](../virtual-machines/windows/tutorial-availability-sets.md) gebruikt, kunt u een beschikbaarheidsset opgeven wanneer u een VM van de schijf maakt met behulp van de opgegeven sjabloon of PowerShell.
+**Speciale VM's herstellen, zoals SQL-VM's** | Als u een back-up maakt van een SQL-VM met behulp van azure-VM-back-up en vervolgens de optie VM herstellen gebruikt of een VM maakt na het herstellen van schijven, moet de zojuist gemaakte VM worden geregistreerd bij de SQL-provider, zoals hier wordt [vermeld.](../azure-sql/virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md?tabs=azure-cli%2cbash) Hiermee wordt de herstelde VM ge converteerd naar een SQL-VM.
 
-Zie [back up and Restore Active Directory Domain controllers](active-directory-backup-restore.md)voor meer informatie.
+### <a name="restore-domain-controller-vms"></a>Domeincontroller-VM's herstellen
 
-## <a name="track-the-restore-operation"></a>De herstel bewerking bijhouden
+**Scenario** | **Hulp**
+--- | ---
+**Eén domeincontroller-VM in één domein herstellen** | Herstel de VM zoals elke andere VM. Opmerking:<br/><br/> Vanuit het perspectief van Active Directory is de Azure-VM net als elke andere VM.<br/><br/> Directory Services Restore Mode (DSRM) is ook beschikbaar, zodat alle Active Directory-herstelscenario's haalbaar zijn. [Meer informatie over](#post-restore-steps) overwegingen voor back-up en herstel voor gevirtualiseerde domeincontrollers.
+**Meerdere domeincontroller-VM's in één domein herstellen** | Als andere domeincontrollers in hetzelfde domein bereikbaar zijn via het netwerk, kan de domeincontroller net als elke VM worden hersteld. Als dit de laatste resterende domeincontroller in het domein is, of als er een herstel in een geïsoleerd netwerk wordt uitgevoerd, gebruikt u [een forestherstel](/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery).
+**Een VM met één domeincontroller herstellen in een configuratie met meerdere domeinen** |  De schijven herstellen en een VM maken met [behulp van PowerShell](backup-azure-vms-automation.md#restore-the-disks)  
+**Meerdere domeinen in één forest herstellen** | We raden een [forestherstel aan.](/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery)
 
-Nadat u de herstel bewerking hebt geactiveerd, maakt de back-upservice een taak voor tracering. Azure Backup worden meldingen over de taak weer gegeven in de portal. Als ze niet zichtbaar zijn, selecteert u het **meldingen** symbool en selecteert u vervolgens **meer gebeurtenissen in het activiteiten logboek** om de status van het herstel proces weer te geven.
+Zie Back-up en herstel van Active Directory-domeincontrollers [voor meer informatie.](active-directory-backup-restore.md)
 
-![Herstellen geactiveerd](./media/backup-azure-arm-restore-vms/restore-notification1.png)
+## <a name="track-the-restore-operation"></a>De herstelbewerking bijhouden
 
- Volg de volgende stappen om de herstel bewerking te volgen:
+Nadat u de herstelbewerking hebt activeren, maakt de back-upservice een taak voor tracering. Azure Backup geeft meldingen weer over de taak in de portal. Als ze niet zichtbaar zijn, selecteert u het symbool Meldingen en selecteert u vervolgens Meer gebeurtenissen **in** het activiteitenlogboek om de Status van het herstelproces weer te geven. 
 
-1. Selecteer de Hyper Link meldingen om de bewerkingen voor de taak weer te geven. U kunt ook **back-uptaken** in de kluis selecteren en vervolgens de relevante VM selecteren.
+![Geactiveerd herstellen](./media/backup-azure-arm-restore-vms/restore-notification1.png)
 
-    ![Lijst met virtuele machines in een kluis](./media/backup-azure-arm-restore-vms/restore-job-in-progress1.png)
+ Herstel als volgt bijhouden:
 
-1. Als u de voortgang van de herstel bewerking wilt controleren, selecteert u een herstel taak met de status **in uitvoering**. Hiermee wordt de voortgangs balk weer gegeven, die informatie over de voortgang van de herstel bewerking weergeeft:
+1. Als u bewerkingen voor de taak wilt weergeven, selecteert u de hyperlink meldingen. U kunt ook in de kluis **Back-uptaken selecteren** en vervolgens de relevante VM selecteren.
 
-    - **Geschatte tijd van herstellen**: de tijd die nodig is om de herstel bewerking te volt ooien. Wanneer de bewerking wordt uitgevoerd, wordt de tijd die nodig is om de herstel bewerking te volt ooien, gereduceerd en bereikt.
-    - Het **percentage van de herstel bewerking**. Toont het percentage van de herstel bewerking dat is uitgevoerd.
-    - **Aantal overgebrachte bytes**: als u een nieuwe VM maakt, worden de bytes weer gegeven die zijn overgedragen voor het totale aantal bytes dat moet worden overgedragen.
+    ![Lijst met VM's in een kluis](./media/backup-azure-arm-restore-vms/restore-job-in-progress1.png)
+
+1. Als u de voortgang van het herstellen wilt controleren, selecteert u een herstel taak met de status **Wordt uitgevoerd.** Hiermee wordt de voortgangsbalk weergegeven, waarin informatie over de voortgang van het herstellen wordt weergegeven:
+
+    - **Geschatte hersteltijd:** geeft in eerste instantie de tijd die nodig is om de herstelbewerking te voltooien. Naarmate de bewerking vordert, wordt de tijd die nodig is, beperkt en bereikt u nul wanneer de herstelbewerking is uitgevoerd.
+    - **Percentage herstel**. Toont het percentage herstelbewerkingen dat is uitgevoerd.
+    - **Het aantal bytes dat** is overgedragen: als u herstelt door een nieuwe VM te maken, worden de bytes weer die zijn overgedragen op het totale aantal bytes dat moet worden overgedragen.
 
 ## <a name="post-restore-steps"></a>Stappen na herstel
 
-Er zijn enkele dingen die u moet weten na het herstellen van een virtuele machine:
+Er zijn enkele dingen die u moet noteren na het herstellen van een VM:
 
-- Uitbrei dingen die aanwezig zijn tijdens de back-upconfiguratie, worden geïnstalleerd, maar niet ingeschakeld. Als er een probleem wordt weer geven, installeert u de uitbrei dingen opnieuw.
-- Als de back-up van de virtuele machine een statisch IP-adres heeft, heeft de herstelde VM een dynamisch IP-adres om een conflict te voor komen. U kunt [een statisch IP-adres toevoegen aan de herstelde VM](/powershell/module/az.network/set-aznetworkinterfaceipconfig#description).
-- Een herstelde VM heeft geen beschikbaarheidsset. Als u de optie schijf herstellen gebruikt, kunt u [een beschikbaarheidsset opgeven](../virtual-machines/windows/tutorial-availability-sets.md) wanneer u een virtuele machine van de schijf maakt met behulp van de meegeleverde sjabloon of Power shell.
-- Als u een Linux-distributie op basis van Cloud-init gebruikt, zoals Ubuntu, om veiligheids redenen wordt het wacht woord na het herstellen geblokkeerd. Gebruik de VMAccess-extensie op de herstelde VM om [het wacht woord opnieuw](/troubleshoot/azure/virtual-machines/reset-password)in te stellen. U kunt het beste SSH-sleutels gebruiken voor deze distributies, dus u hoeft het wacht woord niet opnieuw in te stellen na het herstellen.
-- Als u na het herstellen geen toegang hebt tot een virtuele machine omdat de virtuele machine een verbroken relatie met de domein controller heeft, volgt u de onderstaande stappen om de virtuele machine te openen:
-  - Koppel de besturingssysteem schijf als een gegevens schijf aan een herstelde VM.
-  - Installeer de VM-agent hand matig als de Azure agent niet meer reageert door deze [koppeling](/troubleshoot/azure/virtual-machines/install-vm-agent-offline)te volgen.
-  - Toegang tot seriële console inschakelen op VM om opdracht regel toegang tot de virtuele machine toe te staan
+- Extensies die aanwezig zijn tijdens de back-upconfiguratie worden geïnstalleerd, maar niet ingeschakeld. Als er een probleem is, installeert u de extensies opnieuw.
+- Als de back-up van de VM een statisch IP-adres heeft, heeft de herstelde VM een dynamisch IP-adres om conflicten te voorkomen. U kunt [een statisch IP-adres toevoegen aan de herstelde VM.](/powershell/module/az.network/set-aznetworkinterfaceipconfig#description)
+- Een herstelde VM heeft geen beschikbaarheidsset. Als u de optie schijf herstellen [](../virtual-machines/windows/tutorial-availability-sets.md) gebruikt, kunt u een beschikbaarheidsset opgeven wanneer u een VM maakt op basis van de schijf met behulp van de opgegeven sjabloon of PowerShell.
+- Als u een Linux-distributie op basis van cloud-init, zoals Ubuntu, gebruikt, wordt het wachtwoord uit veiligheidsoverwegingen geblokkeerd na het herstellen. Gebruik de extensie VMAccess op de herstelde VM om het [wachtwoord opnieuw in te stellen.](/troubleshoot/azure/virtual-machines/reset-password) Het is raadzaam om SSH-sleutels te gebruiken voor deze distributies, zodat u het wachtwoord niet opnieuw hoeft in te stellen na het herstellen.
+- Als u geen toegang hebt tot een VM nadat deze is hersteld omdat de VM een verbroken relatie heeft met de domeincontroller, volgt u de onderstaande stappen om de VM weer te geven:
+  - Koppel de besturingssysteemschijf als gegevensschijf aan een herstelde VM.
+  - Installeer de VM-agent handmatig als blijkt dat de Azure-agent niet reageert door deze koppeling te [volgen.](/troubleshoot/azure/virtual-machines/install-vm-agent-offline)
+  - Seriële consoletoegang op VM inschakelen om opdrachtregeltoegang tot de VM toe te staan
 
   ```cmd
     bcdedit /store <drive letter>:\boot\bcd /enum
@@ -264,21 +264,21 @@ Er zijn enkele dingen die u moet weten na het herstellen van een virtuele machin
     bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
     ```
 
-  - Wanneer de virtuele machine opnieuw wordt opgebouwd Azure Portal om de lokale beheerders account en het wacht woord opnieuw in te stellen
-  - Seriële console Access en CMD gebruiken om de VM uit het domein te ontkoppelen
+  - Wanneer de VM opnieuw is opgebouwd, gebruikt u Azure Portal om het lokale beheerdersaccount en wachtwoord opnieuw in te stellen
+  - Gebruik Seriële console en CMD om de VM los te maken van het domein
 
     ```cmd
     cmd /c "netdom remove <<MachineName>> /domain:<<DomainName>> /userD:<<DomainAdminhere>> /passwordD:<<PasswordHere>> /reboot:10 /Force"
     ```
 
-- Zodra de VM is ontkoppeld en opnieuw is gestart, kunt u met behulp van de lokale beheerders referenties van RDP naar de VM gaan en de VM opnieuw toevoegen aan het domein.
+- Zodra de VM is ontjoind en opnieuw is opgestart, kunt u met lokale beheerdersreferenties RDP naar de VM maken en de VM weer aan het domein toevoegen.
 
-## <a name="backing-up-restored-vms"></a>Back-ups maken van herstelde Vm's
+## <a name="backing-up-restored-vms"></a>Back-up maken van herstelde VM's
 
-- Als u een virtuele machine hebt hersteld naar dezelfde resource groep met dezelfde naam als de oorspronkelijke back-up van de virtuele machine, wordt de back-up na het herstellen voortgezet op de virtuele machine.
-- Als u de VM hebt hersteld naar een andere resource groep of als u een andere naam hebt opgegeven voor de herstelde VM, moet u een back-up instellen voor de herstelde VM.
+- Als u een VM hebt hersteld naar dezelfde resourcegroep met dezelfde naam als de oorspronkelijke back-up van de VM, wordt de back-up na het herstellen voortgezet op de VM.
+- Als u de VM hebt hersteld naar een andere resourcegroep of als u een andere naam hebt opgegeven voor de herstelde VM, moet u een back-up instellen voor de herstelde VM.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als u problemen ondervindt tijdens het herstel proces, [raadpleegt](backup-azure-vms-troubleshoot.md#restore) u veelvoorkomende problemen en fouten.
-- Meer informatie over het [beheren van virtuele machines](backup-azure-manage-vms.md) nadat de virtuele machine is hersteld
+- Als u problemen ervaart tijdens het herstelproces, [bekijkt u](backup-azure-vms-troubleshoot.md#restore) veelvoorkomende problemen en fouten.
+- Nadat de virtuele machine is hersteld, kunt u meer informatie krijgen [over het beheren van virtuele machines](backup-azure-manage-vms.md)

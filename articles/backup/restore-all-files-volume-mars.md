@@ -1,133 +1,133 @@
 ---
-title: Alle bestanden in een volume met MARS terugzetten
+title: Alle bestanden in een volume herstellen met MARS
 description: Meer informatie over het herstellen van alle bestanden in een volume met behulp van de MARS-agent.
 ms.topic: conceptual
 ms.date: 01/17/2021
-ms.openlocfilehash: 44c12809fc94f78721ab1788cb352076dfebabe4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1d04e9f77b9f92594def9381f973c999e96b2cb2
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98613974"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516498"
 ---
-# <a name="restore-all-the-files-in-a-volume-using-the-mars-agent"></a>Alle bestanden in een volume terugzetten met behulp van de MARS-agent
+# <a name="restore-all-the-files-in-a-volume-using-the-mars-agent"></a>Alle bestanden in een volume herstellen met behulp van de MARS-agent
 
-In dit artikel wordt uitgelegd hoe u alle back-upbestanden herstelt in een volledig volume met behulp van de wizard gegevens herstellen in de MARS-agent (Microsoft Azure Recovery Services). U kunt:
+In dit artikel wordt uitgelegd hoe u alle back-upbestanden in een heel volume kunt herstellen met behulp van de wizard Gegevens herstellen in de MARS-agent (Microsoft Azure Recovery Services). U kunt:
 
-- Herstel alle back-ups van bestanden in een volume op dezelfde computer waarvan de back-ups zijn gemaakt.
-- Herstel alle back-upbestanden op een andere computer met een volume.
+- Herstel alle back-ups van bestanden in een volume op dezelfde computer van waaruit de back-ups zijn gemaakt.
+- Herstel alle back-upbestanden in een volume naar een alternatieve machine.
 
 >[!TIP]
->De **volume** optie herstelt alle back-ups van gegevens in een opgegeven volume. Deze optie biedt snellere overdrachts snelheden (Maxi maal 40 MBps) en wordt aanbevolen voor het herstellen van grote hoeveel heden gegevens of volledige volumes.
+>Met **de optie Volume** worden alle back-upgegevens in een opgegeven volume hersteld. Deze optie biedt snellere overdrachtssnelheden (maximaal 40 MBps) en wordt aanbevolen voor het herstellen van grote hoeveelheden gegevens of hele volumes.
 >
->Met de **optie afzonderlijke bestanden en mappen** kunt u snel toegang krijgen tot de herstel punt gegevens. Het is geschikt voor het herstellen van afzonderlijke bestanden en wordt aanbevolen voor een totale grootte van minder dan 80 GB. Het biedt overdrachts-of kopieer snelheden van Maxi maal 6 MBps tijdens het herstel.
+>Met **de optie Afzonderlijke bestanden en mappen hebt** u snel toegang tot de herstelpuntgegevens. Het is geschikt voor het herstellen van afzonderlijke bestanden en wordt aanbevolen voor een totale grootte van minder dan 80 GB. Het biedt overdrachts- of kopieersnelheden tot 6 MBps tijdens het herstel.
 
-## <a name="volume-level-restore-to-the-same-machine"></a>Herstel op volume niveau naar dezelfde computer
+## <a name="volume-level-restore-to-the-same-machine"></a>Volumeniveau herstellen naar dezelfde computer
 
 De volgende stappen helpen u bij het herstellen van alle back-upbestanden in een volume:
 
-1. Open de **Microsoft Azure Backup**-module. Als u niet weet waar de module is geïnstalleerd, zoekt u op de computer of server naar **Microsoft Azure backup**. De bureau blad-app moet worden weer gegeven in de zoek resultaten.
+1. Open de **Microsoft Azure Backup**-module. Als u niet weet waar de module is geïnstalleerd, zoekt u op de computer of server naar **Microsoft Azure Backup**. De bureaublad-app moet worden weergegeven in de zoekresultaten.
 
-1. Selecteer **gegevens herstellen** om de wizard te starten.
+1. Selecteer **Gegevens herstellen om** de wizard te starten.
 
-    ![Menu Data herstellen](./media/restore-all-files-volume-mars/recover.png)
+    ![Menu Gegevens herstellen](./media/restore-all-files-volume-mars/recover.png)
 
-1. Selecteer op de pagina **aan** de slag de optie **deze server (Server naam)**  >  **volgende** om de gegevens op dezelfde server of computer te herstellen.
+1. Selecteer op **Aan de slag** pagina Deze server **(servernaam)** Volgende om de gegevens te herstellen naar dezelfde server of  >  computer.
 
     ![Pagina Aan de slag](./media/restore-all-files-volume-mars/same-machine-instant-restore.png)
 
-1. Kies op de pagina **herstel modus selecteren** de optie **volume**  >  **volgende**.
+1. Kies op **de pagina Herstelmodus** selecteren de optie **Volume**  >  **Volgende.**
 
-    ![Herstel modus selecteren](./media/restore-all-files-volume-mars/select-recovery-mode.png)
+    ![Herstelmodus selecteren](./media/restore-all-files-volume-mars/select-recovery-mode.png)
 
-1. Selecteer op de pagina **volume en datum selecteren** het volume dat u wilt herstellen.
+1. Selecteer op **de pagina Volume en** datum selecteren het volume dat u wilt herstellen.
 
-    Selecteer een herstel punt in de agenda. **Vetgedrukte** datums geven de beschik baarheid van ten minste één herstel punt aan. Als er meerdere herstel punten beschikbaar zijn binnen één datum, kiest u het specifieke herstel punt in de vervolg keuzelijst **tijd** .
+    Selecteer een herstelpunt in de agenda. **Vetgedrukte datums** geven de beschikbaarheid van ten minste één herstelpunt aan. Als er meerdere herstelpunten beschikbaar zijn binnen één datum, kiest u het specifieke herstelpunt in **de** vervolgkeuzelijst Tijd.
 
      ![Volume en datum selecteren](./media/restore-all-files-volume-mars/select-volume-and-date.png)
 
-1. Configureer op de pagina **herstel opties opgeven** het gedrag voor het herstellen.
-    1. Kies het herstel doel:
-        - **Oorspronkelijke locatie**: de gegevens worden teruggezet naar het oorspronkelijke pad.
-        - **Andere locatie**: Geef een alternatieve locatie op waarnaar u de gegevens wilt herstellen.
-    1. Kies het gedrag voor **wanneer items in de back-up al aanwezig zijn in het herstel doel**:
-        - **Maak kopieën zodat u beide versies hebt**: als er al een bestand met dezelfde naam bestaat, worden de gegevens in het herstel punt teruggezet als een kopie. De kopie heeft een gelokaliseerd bestands naam voorvoegsel met de lokale herstel taak tijd in een van de volgende indelingen:
+1. Configureer **op de pagina Herstelopties** opgeven het herstelgedrag.
+    1. Kies de herstelbestemming:
+        - **Oorspronkelijke locatie:** herstel gegevens naar het oorspronkelijke pad.
+        - **Een andere locatie:** geef een alternatieve locatie op om de gegevens naar te herstellen.
+    1. Kies het gedrag voor **Wanneer items in de back-up zich al in de herstelbestemming hebben:**
+        - **Kopieën maken zodat u** beide versies hebt: als er al een bestand met dezelfde naam bestaat, worden de gegevens in het herstelpunt als een kopie hersteld. De kopie heeft een gelokaliseerd bestandsnaam voorvoegsel met behulp van de lokale herstel taaktijd in een van de volgende indelingen:
             - `YYYY-MM-DD HH-mm Copy of <original file name>`
             - `YYYY-MM-DD HH-mm Copy (n) of <original file name>`
-        - **Bestaande versies overschrijven met herstelde versies**: als er al een bestand met dezelfde naam bestaat, wordt de inhoud vervangen door gegevens in het herstel punt.
-        - **De items die al bestaan op de herstel bestemming niet herstellen**: als er al een bestand met dezelfde naam bestaat, wordt het overgeslagen.
-    1. **Schakel de machtigingen voor het terugzetten van de toegangs beheer lijst (ACL) in voor het bestand of de map die wordt hersteld** als het bestand moet worden hersteld met de oorspronkelijke machtigingen in het herstel punt.
-        ![Herstel opties opgeven](./media/restore-all-files-volume-mars/specify-recovery-options.png)
+        - **Bestaande versies overschrijven met** herstelde versies: als er al een bestand met dezelfde naam bestaat, wordt de inhoud vervangen door gegevens in het herstelpunt.
+        - **Herstel de items die al bestaan** op de herstelbestemming niet: als er al een bestand met dezelfde naam bestaat, wordt dit overgeslagen.
+    1. **Schakel toegangsbeheerlijst (ACL)** herstellen in voor het bestand of de map die wordt hersteld als het bestand moet worden hersteld met de oorspronkelijke machtigingen in het herstelpunt.
+        ![Herstelopties opgeven](./media/restore-all-files-volume-mars/specify-recovery-options.png)
 
-1. Controleer de details van het herstel in het **bevestigings** venster en selecteer **herstellen**.
+1. Controleer de details van het herstel in het **bevestigingsvenster** en selecteer **Herstellen.**
 
-    ![Bevestigings Details](./media/restore-all-files-volume-mars/confirmation-details.png)
+    ![Bevestigingsdetails](./media/restore-all-files-volume-mars/confirmation-details.png)
 
-1. Controleer op de pagina **herstel voortgang** de voortgang van de herstel taak. De wizard kan ook veilig worden gesloten en de herstel bewerking wordt op de achtergrond voortgezet. U kunt de voortgang weer geven door te dubbel klikken op de herstel taak in het dash board.
+1. Op de **pagina Voortgang van** herstel controleert u de voortgang van de herstel taak. De wizard kan ook veilig worden gesloten en de herstelbewerking wordt op de achtergrond voortgezet. U kunt de voortgang opnieuw bekijken door te dubbelklikken op de taak Herstel in het dashboard.
 
-## <a name="volume-level-restore-to-an-alternate-machine"></a>Herstel op volume niveau naar een alternatieve computer
+## <a name="volume-level-restore-to-an-alternate-machine"></a>Volumeniveau herstellen naar een alternatieve machine
 
-De volgende stappen helpen u bij het herstellen van alle back-upbestanden op een volume naar een andere computer. U kunt deze stappen gebruiken om gegevens van Azure Backup te herstellen als uw hele server verloren is gegaan.
+De volgende stappen helpen u bij het herstellen van alle back-upbestanden in een volume naar een alternatieve machine. U kunt deze stappen gebruiken om gegevens te herstellen van Azure Backup als uw hele server verloren is gegaan.
 
 Deze stappen omvatten de volgende terminologie:
 
-- *Bron machine* : de oorspronkelijke machine waarvan de back-up is gemaakt en die momenteel niet beschikbaar is.
-- *Doel computer* : de computer waarop de gegevens worden hersteld.
-- Voor beeld van de *kluis* : de Recovery Services kluis waarmee de bron computer en de doel computer zijn geregistreerd.
+- *Bronmachine:* de oorspronkelijke machine van waaruit de back-up is gemaakt en die momenteel niet beschikbaar is.
+- *Doelmachine:* de machine waarop de gegevens worden hersteld.
+- *Voorbeeldkluis:* de Recovery Services-kluis waarop de bronmachine en de doelmachine zijn geregistreerd.
 
 > [!NOTE]
-> Back-ups kunnen niet worden hersteld naar een doel computer waarop een eerdere versie van het besturings systeem wordt uitgevoerd. U kunt bijvoorbeeld een back-up die is gemaakt van een Windows 7-computer herstellen op een computer met Windows 7 (of hoger). Een back-up die is gemaakt vanaf een Windows 10-computer, kan niet worden hersteld naar een computer met Windows 7.
+> Back-ups kunnen niet worden hersteld naar een doelmachine met een eerdere versie van het besturingssysteem. Een back-up van een Windows 7-computer kan bijvoorbeeld worden hersteld op een computer met Windows 7 (of hoger). Een back-up van een Windows 10 kan niet worden hersteld naar een Windows 7-computer.
 
-1. Open de module **Microsoft Azure backup** op de doel computer.
+1. Open de **Microsoft Azure Backup** op de doelmachine.
 
-1. Zorg ervoor dat de doel computer en de bron machine zijn geregistreerd bij dezelfde Recovery Services kluis.
+1. Zorg ervoor dat de doelmachine en de bronmachine zijn geregistreerd bij dezelfde Recovery Services-kluis.
 
-1. Selecteer **gegevens herstellen** om de **wizard gegevens herstellen** te openen.
+1. Selecteer **Gegevens herstellen om** de wizard Gegevens herstellen te **openen.**
 
-    ![Scherm opname van Azure Backup, waarbij gegevens herstellen is gemarkeerd (herstellen naar alternatieve machine)](./media/backup-azure-restore-windows-server/recover.png)
+    ![Schermopname van Azure Backup, met Gegevens herstellen gemarkeerd (herstellen naar alternatieve machine)](./media/backup-azure-restore-windows-server/recover.png)
 
-1. Selecteer op de pagina **aan** de slag **een andere server**.
+1. Selecteer op **Aan de slag** pagina Een **andere server.**
 
-    ![Scherm afbeelding van de wizard aan de slag met pagina Herstel gegevens (herstellen naar alternatieve machine)](./media/backup-azure-restore-windows-server/alternatemachine_gettingstarted_instantrestore.png)
+    ![Schermopname van de wizard Gegevens herstellen Aan de slag pagina (herstellen naar alternatieve computer)](./media/backup-azure-restore-windows-server/alternatemachine_gettingstarted_instantrestore.png)
 
-1. Geef het kluis referentie bestand op dat overeenkomt met de voor beeld-kluis en selecteer **volgende**.
+1. Geef het kluisreferentiebestand op dat overeenkomt met de voorbeeldkluis en selecteer **Volgende.**
 
-    Als het kluis referentie bestand ongeldig is (of is verlopen), [downloadt u een nieuw kluis referentie bestand van de voor beeld-kluis](backup-azure-file-folder-backup-faq.md#where-can-i-download-the-vault-credentials-file) in de Azure Portal. Nadat u een geldige kluis referentie hebt verstrekt, wordt de naam van de bijbehorende back-upkluis weer gegeven.
+    Als het kluisreferentiebestand ongeldig (of verlopen) is, [downloadt](backup-azure-file-folder-backup-faq.yml#where-can-i-download-the-vault-credentials-file-) u een nieuw kluisreferentiebestand uit de voorbeeldkluis in de Azure Portal. Nadat u een geldige kluisreferentie hebt verstrekt, wordt de naam van de bijbehorende back-upkluis weergegeven.
 
-1. Selecteer op de pagina **back-upserver selecteren** de bron machine uit de lijst met weer gegeven computers en geef de wachtwoordzin op. Selecteer vervolgens **Volgende**.
+1. Selecteer op **de pagina Back-upserver** selecteren de bronmachine in de lijst met weergegeven machines en geef de wachtwoordzin op. Selecteer vervolgens **Volgende**.
 
-    ![Scherm opname van de wizard gegevens herstellen pagina back-upserver selecteren (herstellen naar alternatieve machine)](./media/backup-azure-restore-windows-server/alternatemachine_selectmachine_instantrestore.png)
+    ![Schermopname van de pagina Back-upserver selecteren van de wizard Gegevens herstellen (terugzetten naar alternatieve computer)](./media/backup-azure-restore-windows-server/alternatemachine_selectmachine_instantrestore.png)
 
-1. Kies op de pagina **herstel modus selecteren** de optie **volume**  >  **volgende**.
+1. Kies op **de pagina Herstelmodus** selecteren de optie **Volume**  >  **Volgende.**
 
-    ![Herstel modus selecteren](./media/restore-all-files-volume-mars/select-recovery-mode.png)
+    ![Herstelmodus selecteren](./media/restore-all-files-volume-mars/select-recovery-mode.png)
 
-1. Selecteer op de pagina **volume en datum selecteren** het volume dat u wilt herstellen.
+1. Selecteer op **de pagina Volume en** datum selecteren het volume dat u wilt herstellen.
 
-    Selecteer een herstel punt in de agenda. **Vetgedrukte** datums geven de beschik baarheid van ten minste één herstel punt aan. Als er meerdere herstel punten beschikbaar zijn binnen één datum, kiest u het specifieke herstel punt in de vervolg keuzelijst **tijd** .
+    Selecteer een herstelpunt in de agenda. **Vetgedrukte datums** geven de beschikbaarheid van ten minste één herstelpunt aan. Als er meerdere herstelpunten beschikbaar zijn binnen één datum, kiest u het specifieke herstelpunt **in** de vervolgkeuzelijst Tijd.
 
      ![Volume en datum selecteren](./media/restore-all-files-volume-mars/select-volume-and-date.png)
 
-1. Configureer op de pagina **herstel opties opgeven** het gedrag voor het herstellen.
-    1. Kies het herstel doel:
-        - **Oorspronkelijke locatie**: de gegevens worden teruggezet naar het oorspronkelijke pad.
-        - **Andere locatie**: Geef een alternatieve locatie op waarnaar u de gegevens wilt herstellen.
-    1. Kies het gedrag voor **wanneer items in de back-up al aanwezig zijn in het herstel doel**:
-        - **Maak kopieën zodat u beide versies hebt**: als er al een bestand met dezelfde naam bestaat, worden de gegevens in het herstel punt teruggezet als een kopie. De kopie heeft een gelokaliseerd bestands naam voorvoegsel met de lokale herstel taak tijd in een van de volgende indelingen:
+1. Configureer **het herstelgedrag** op de pagina Herstelopties opgeven.
+    1. Kies de herstelbestemming:
+        - **Oorspronkelijke locatie:** herstel gegevens naar het oorspronkelijke pad.
+        - **Een andere locatie:** geef een alternatieve locatie op om de gegevens naar te herstellen.
+    1. Kies het gedrag voor **Wanneer items in de back-up zich al in de herstelbestemming hebben:**
+        - **Kopieën maken zodat u** beide versies hebt: als er al een bestand met dezelfde naam bestaat, worden de gegevens in het herstelpunt als een kopie hersteld. De kopie heeft een gelokaliseerd bestandsnaam voorvoegsel met behulp van de lokale herstel taaktijd in een van de volgende indelingen:
             - `YYYY-MM-DD HH-mm Copy of <original file name>`
             - `YYYY-MM-DD HH-mm Copy (n) of <original file name>`
-        - **Bestaande versies overschrijven met herstelde versies**: als er al een bestand met dezelfde naam bestaat, wordt de inhoud vervangen door gegevens in het herstel punt.
-        - **De items die al bestaan op de herstel bestemming niet herstellen**: als er al een bestand met dezelfde naam bestaat, wordt het overgeslagen.
-    1. **Schakel de machtigingen voor het terugzetten van de toegangs beheer lijst (ACL) in voor het bestand of de map die wordt hersteld** als het bestand moet worden hersteld met de oorspronkelijke machtigingen in het herstel punt.
-        ![Herstel opties opgeven](./media/restore-all-files-volume-mars/specify-recovery-options.png)
+        - **Bestaande versies overschrijven met** herstelde versies: als er al een bestand met dezelfde naam bestaat, wordt de inhoud vervangen door gegevens in het herstelpunt.
+        - **Herstel de items die al bestaan** op de herstelbestemming niet: als er al een bestand met dezelfde naam bestaat, wordt dit overgeslagen.
+    1. **Schakel Machtigingen voor toegangsbeheerlijst (ACL)** herstellen in voor het bestand of de map die wordt hersteld als het bestand moet worden hersteld met de oorspronkelijke machtigingen in het herstelpunt.
+        ![Herstelopties opgeven](./media/restore-all-files-volume-mars/specify-recovery-options.png)
 
-1. Controleer de details van het herstel in het **bevestigings** venster en selecteer **herstellen**.
+1. Controleer de details van het herstel in het **bevestigingsvenster** en selecteer **Herstellen.**
 
-    ![Bevestigings Details](./media/restore-all-files-volume-mars/confirmation-details.png)
+    ![Bevestigingsdetails](./media/restore-all-files-volume-mars/confirmation-details.png)
 
-1. Controleer op de pagina **herstel voortgang** de voortgang van de herstel taak. De wizard kan ook veilig worden gesloten en de herstel bewerking wordt op de achtergrond voortgezet. U kunt de voortgang weer geven door te dubbel klikken op de herstel taak in het dash board.
+1. Op de **pagina Voortgang van** herstel controleert u de voortgang van de herstel taak. De wizard kan ook veilig worden gesloten en de herstelbewerking wordt op de achtergrond voortgezet. U kunt de voortgang opnieuw bekijken door te dubbelklikken op de taak Herstel in het dashboard.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Nu u uw bestanden en mappen hebt hersteld, kunt u [uw back-ups beheren](backup-azure-manage-windows-server.md).
-- Vind [Veelgestelde vragen over het maken van back-ups van bestanden en mappen](backup-azure-file-folder-backup-faq.md).
+- Nu u uw bestanden en mappen hebt hersteld, kunt u [uw back-ups beheren.](backup-azure-manage-windows-server.md)
+- Vind [veelvoorkomende vragen over het maken van back-up van bestanden en mappen.](backup-azure-file-folder-backup-faq.yml)

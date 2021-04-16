@@ -1,44 +1,44 @@
 ---
-title: Gegevens van Amazon S3 naar Azure Storage kopiëren met behulp van AzCopy | Microsoft Docs
-description: Gebruik AzCopy om gegevens van Amazon S3 naar Azure Storage te kopiëren. AzCopy is een opdrachtregelprogramma dat u kunt gebruiken om blobs of bestanden vanuit of naar een opslagaccount te kopiëren.
+title: Gegevens kopiëren van Amazon S3 naar Azure Storage met behulp van AzCopy | Microsoft Docs
+description: Gebruik AzCopy om gegevens te kopiëren van Amazon S3 naar Azure Storage. AzCopy is een opdrachtregelprogramma dat u kunt gebruiken om blobs of bestanden vanuit of naar een opslagaccount te kopiëren.
 services: storage
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/27/2020
+ms.date: 04/02/2021
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 01c3296569d03a7fcc13c004d42d64a86a48a0bc
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: ac73d0e57377a8922691ea06c8de3df5ef577680
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728790"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107502433"
 ---
-# <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Gegevens van Amazon S3 naar Azure Storage kopiëren met behulp van AzCopy
+# <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Gegevens kopiëren van Amazon S3 naar Azure Storage met behulp van AzCopy
 
-AzCopy is een opdrachtregelprogramma dat u kunt gebruiken om blobs of bestanden vanuit of naar een opslagaccount te kopiëren. Dit artikel helpt u bij het kopiëren van objecten, directory's en buckets van Amazon Web Services (AWS) S3 naar Azure Blob Storage met behulp van AzCopy.
+AzCopy is een opdrachtregelprogramma dat u kunt gebruiken om blobs of bestanden vanuit of naar een opslagaccount te kopiëren. Dit artikel helpt u bij het kopiëren van objecten, directories en buckets van Amazon Web Services (AWS) S3 naar Azure Blob Storage met behulp van AzCopy.
 
 ## <a name="choose-how-youll-provide-authorization-credentials"></a>Choose how you'll provide authorization credentials (Kiezen hoe u autorisatiereferenties opgeeft)
 
-* Als u de Azure Storage wilt autoriseren, gebruikt u Azure Active Directory (AD) of een Shared Access Signature-token (SAS).
+* Als u wilt autor Azure Storage, gebruikt u Azure Active Directory (AD) of een SHARED ACCESS SIGNATURE-token (SAS).
 
-* Als u wilt autoriseren met AWS S3, gebruikt u een AWS-toegangs sleutel en een geheime toegangs sleutel.
+* Als u wilt machtigen met AWS S3, gebruikt u een AWS-toegangssleutel en een geheime toegangssleutel.
 
-### <a name="authorize-with-azure-storage"></a>Autoriseren met Azure Storage
+### <a name="authorize-with-azure-storage"></a>Autor toestemming geven met Azure Storage
 
-Zie het artikel aan de [slag met AzCopy](storage-use-azcopy-v10.md) om AzCopy te downloaden en kies hoe u autorisatie referenties opgeeft voor de opslag service.
+Zie het [artikel Aan de slag met AzCopy](storage-use-azcopy-v10.md) om AzCopy te downloaden en kies hoe u autorisatiereferenties aan de opslagservice wilt verstrekken.
 
 > [!NOTE]
-> In de voor beelden in dit artikel wordt ervan uitgegaan dat u uw identiteit hebt geverifieerd met behulp van de `AzCopy login` opdracht. AzCopy gebruikt vervolgens uw Azure AD-account om toegang te verlenen tot gegevens in Blob Storage.
+> In de voorbeelden in dit artikel wordt ervan uitgenomen dat u uw identiteit hebt geverifieerd met behulp van de `AzCopy login` opdracht . AzCopy gebruikt vervolgens uw Azure AD-account om toegang te verlenen tot gegevens in Blob Storage.
 >
-> Als u liever een SAS-token gebruikt om toegang te verlenen tot BLOB-gegevens, kunt u dat token toevoegen aan de bron-URL in elke AzCopy-opdracht.
+> Als u liever een SAS-token gebruikt om toegang tot blobgegevens te autoriëren, kunt u dat token toevoegen aan de resource-URL in elke AzCopy-opdracht.
 >
 > Bijvoorbeeld: `https://mystorageaccount.blob.core.windows.net/mycontainer?<SAS-token>`.
 
-### <a name="authorize-with-aws-s3"></a>Autoriseren met AWS S3
+### <a name="authorize-with-aws-s3"></a>Autor toestemming geven met AWS S3
 
-Verzamel uw AWS-toegangs sleutel en geheime toegangs sleutel en stel deze omgevings variabelen in:
+Verzamel uw AWS-toegangssleutel en geheime toegangssleutel en stel vervolgens deze omgevingsvariabelen in:
 
 | Besturingssysteem | Opdracht  |
 |--------|-----------|
@@ -46,127 +46,159 @@ Verzamel uw AWS-toegangs sleutel en geheime toegangs sleutel en stel deze omgevi
 | **Linux** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
 | **MacOS** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>`|
 
-## <a name="copy-objects-directories-and-buckets"></a>Objecten, directory's en buckets kopiëren
+## <a name="copy-objects-directories-and-buckets"></a>Objecten, directories en buckets kopiëren
 
-AzCopy maakt gebruik [van de API put van URL](/rest/api/storageservices/put-block-from-url) , zodat gegevens rechtstreeks tussen AWS S3 en opslag servers worden gekopieerd. Deze Kopieer bewerkingen gebruiken de netwerk bandbreedte van uw computer niet.
+AzCopy maakt gebruik van [de PUT Block From URL-API,](/rest/api/storageservices/put-block-from-url) zodat gegevens rechtstreeks worden gekopieerd tussen AWS S3 en opslagservers. Deze kopieerbewerkingen maken geen gebruik van de netwerkbandbreedte van uw computer.
 
 > [!TIP]
-> De voor beelden in deze sectie zijn pad-argumenten met enkele aanhalings tekens (' '). Gebruik enkele aanhalings tekens in alle opdracht shells, met uitzonde ring van de Windows-opdracht shell (cmd.exe). Als u een Windows-opdracht shell (cmd.exe) gebruikt, plaatst u path-argumenten met dubbele aanhalings tekens ("") in plaats van enkele aanhalings tekens (' ').
+> In de voorbeelden in deze sectie worden padargumenten met enkele aanhalingstekens ('') ingesloten. Gebruik enkele aanhalingstekens in alle opdrachtshells, met uitzondering van de Windows-opdrachtshell (cmd.exe). Als u een Windows Command Shell (cmd.exe) gebruikt, sluit u padargumenten met dubbele aanhalingstekens ("") in plaats van enkele aanhalingstekens ('').
 
- Deze voor beelden werken ook met accounts die een hiërarchische naam ruimte hebben. Met [toegang via meerdere protocollen op Data Lake Storage](../blobs/data-lake-storage-multi-protocol-access.md) kunt u dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor deze accounts gebruiken. 
+ Deze voorbeelden werken ook met accounts die een hiërarchische naamruimte hebben. [Met toegang met meerdere protocollen Data Lake Storage](../blobs/data-lake-storage-multi-protocol-access.md) u dezelfde URL-syntaxis `blob.core.windows.net` () gebruiken voor deze accounts. 
 
 ### <a name="copy-an-object"></a>Een object kopiëren
 
-Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
+Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naamruimte hebben.
 
-| Syntaxis/voor beeld  |  Code |
-|--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<object-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<blob-name>'` |
-| **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket/myobject' 'https://mystorageaccount.blob.core.windows.net/mycontainer/myblob'` |
-| **Voor beeld** (hiërarchische naam ruimte) | `azcopy copy 'https://s3.amazonaws.com/mybucket/myobject' 'https://mystorageaccount.blob.core.windows.net/mycontainer/myblob'` |
+**Syntaxis**
+
+`azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<object-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<blob-name>'`
+
+**Voorbeeld**
+
+```azcopy
+azcopy copy 'https://s3.amazonaws.com/mybucket/myobject' 'https://mystorageaccount.blob.core.windows.net/mycontainer/myblob'
+```
 
 > [!NOTE]
-> Voor beelden in dit artikel gebruiken Path-Url's voor AWS S3-buckets (bijvoorbeeld: `http://s3.amazonaws.com/<bucket-name>` ). 
+> In voorbeelden in dit artikel worden url's in padstijl gebruikt voor AWS S3-buckets (bijvoorbeeld: `http://s3.amazonaws.com/<bucket-name>` ). 
 >
-> U kunt ook virtuele Url's voor gehoste stijlen gebruiken (bijvoorbeeld: `http://bucket.s3.amazonaws.com` ). 
+> U kunt ook URL's in virtuele gehoste stijl gebruiken (bijvoorbeeld: `http://bucket.s3.amazonaws.com` ). 
 >
-> Zie [virtuele hosting van buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html)voor meer informatie over virtuele hosting van buckets.
+> Zie Virtuele hosting van buckets voor meer informatie over virtuele hosting [van buckets.](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html)
 
 ### <a name="copy-a-directory"></a>Een map kopiëren
 
-Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
+Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naamruimte hebben.
 
-| Syntaxis/voor beeld  |  Code |
-|--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
-| **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
+**Syntaxis**
+
+`azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true`
+
+**Voorbeeld**
+
+```azcopy
+azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true
+```
 
 > [!NOTE]
-> In dit voor beeld wordt de `--recursive` vlag toegevoegd om bestanden in alle submappen te kopiëren.
+> In dit voorbeeld wordt de vlag `--recursive` toevoegen om bestanden in alle subdirecties te kopiëren.
 
 ### <a name="copy-the-contents-of-a-directory"></a>De inhoud van een map kopiëren
 
-U kunt de inhoud van een map kopiëren zonder de bovenliggende map zelf te kopiëren met behulp van het Joker teken (*).
+U kunt de inhoud van een map kopiëren zonder de map zelf te kopiëren met behulp van het jokerteken (*).
 
-| Syntaxis/voor beeld  |  Code |
-|--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>/*' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true` |
-| **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory/*' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory/*' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
+**Syntaxis**
 
-### <a name="copy-a-bucket"></a>Een Bucket kopiëren
+`azcopy copy 'https://s3.amazonaws.com/<bucket-name>/<directory-name>/*' 'https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive=true`
 
-Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
+**Voorbeeld**
 
-| Syntaxis/voor beeld  |  Code |
-|--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>' --recursive=true` |
-| **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true` |
+```azcopy
+azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory/*' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true
+```
+
+### <a name="copy-a-bucket"></a>Een bucket kopiëren
+
+Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naamruimte hebben.
+
+**Syntaxis**
+
+`azcopy copy 'https://s3.amazonaws.com/<bucket-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>' --recursive=true`
+
+**Voorbeeld**
+
+```azcopy
+azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true
+```
 
 ### <a name="copy-all-buckets-in-all-regions"></a>Alle buckets in alle regio's kopiëren
 
-Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
+Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naamruimte hebben.
 
-| Syntaxis/voor beeld  |  Code |
-|--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
-| **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
+**Syntaxis**
+
+`azcopy copy 'https://s3.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true`
+
+**Voorbeeld**
+
+```azcopy
+azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true
+```
 
 ### <a name="copy-all-buckets-in-a-specific-s3-region"></a>Alle buckets in een specifieke S3-regio kopiëren
 
-Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naam ruimte hebben.
+Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een hiërarchische naamruimte hebben.
 
-| Syntaxis/voor beeld  |  Code |
+**Syntaxis**
+
+`azcopy copy 'https://s3-<region-name>.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true`
+
+**Voorbeeld**
+
+```azcopy
+azcopy copy 'https://s3-rds.eu-north-1.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true
+```
+
+## <a name="handle-differences-in-object-naming-rules"></a>Verschillen in naamgevingsregels voor objecten afhandelen
+
+AWS S3 heeft een andere set naamconventnamen voor bucketnamen in vergelijking met Azure Blob-containers. U kunt er hier meer over [lezen.](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules) Als u ervoor kiest om een groep buckets naar een Azure-opslagaccount te kopiëren, kan de kopieerbewerking mislukken vanwege naamverschillen.
+
+AzCopy verwerkt twee van de meest voorkomende problemen die zich kunnen voordoen; buckets die punten en buckets bevatten die opeenvolgende afbreekstreelopen bevatten. Namen van AWS S3-buckets kunnen punten en opeenvolgende afbreekstreelopen bevatten, maar een container in Azure niet. AzCopy vervangt punten door afbreekstreeën en opeenvolgende afbreekstreeën door een getal dat het aantal opeenvolgende afbreekstreeën vertegenwoordigt (bijvoorbeeld: een bucket met de naam `my----bucket` wordt `my-4-bucket` . 
+
+Naarmate AzCopy bestanden kopieert, wordt er ook gecontroleerd op naamcondy's en wordt geprobeerd deze op te lossen. Als er bijvoorbeeld buckets zijn met de naam en , wordt in AzCopy eerst een bucket met de naam naar en `bucket-name` `bucket.name` vervolgens naar `bucket.name` `bucket-name` `bucket-name-2` opgelost.
+
+## <a name="handle-differences-in-object-metadata"></a>Verschillen in objectmetagegevens verwerken
+
+AWS S3 en Azure staan verschillende sets tekens toe in de namen van objectsleutels. U kunt hier lezen over de tekens die AWS S3 [gebruikt.](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) Aan de azure-zijde voldoen blob-objectsleutels aan de naamgevingsregels voor [C#-id's.](/dotnet/csharp/language-reference/)
+
+Als onderdeel van een AzCopy-opdracht kunt u een waarde opgeven voor de vlag die aangeeft hoe u bestanden wilt verwerken waarbij de metagegevens van het bestand incompatibele sleutelnamen `copy` `s2s-handle-invalid-metadata` bevatten. In de volgende tabel wordt elke vlagwaarde beschreven.
+
+| Vlagwaarde | Beschrijving  |
 |--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://s3-<region-name>.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
-| **Voorbeeld** | `azcopy copy 'https://s3-rds.eu-north-1.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
-
-## <a name="handle-differences-in-object-naming-rules"></a>Verschillen in regels voor object naamgeving afhandelen
-
-AWS S3 heeft een andere set naam conventies voor Bucket-namen in vergelijking met Azure Blob-containers. Meer informatie hierover vindt u [hier](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules). Als u een groep buckets kopieert naar een Azure Storage-account, kan de Kopieer bewerking mislukken vanwege naam verschillen.
-
-AzCopy verwerkt twee van de meest voorkomende problemen die zich kunnen voordoen. buckets die punten en buckets bevatten die opeenvolgende afbreek streepjes bevatten. AWS S3-Bucket namen kunnen punten en opeenvolgende afbreek streepjes bevatten, maar een container in azure kan niet. AzCopy vervangt Peri Oden door afbreek streepjes en opeenvolgende afbreek streepjes met een getal dat het aantal opeenvolgende afbreek streepjes vertegenwoordigt (bijvoorbeeld: een Bucket met de naam `my----bucket` wordt gewijzigd `my-4-bucket` . 
-
-Als AzCopy kopieën over bestanden overneemt, wordt ook gecontroleerd op naam conflicten en wordt geprobeerd deze op te lossen. Als er bijvoorbeeld buckets zijn met de naam `bucket-name` en `bucket.name` , wordt met AzCopy een Bucket omgezet met de naam `bucket.name` First naar `bucket-name` en vervolgens naar `bucket-name-2` .
-
-## <a name="handle-differences-in-object-metadata"></a>Verschillen in meta gegevens van object afhandelen
-
-AWS S3 en Azure staan verschillende sets tekens toe aan de namen van object sleutels. U vindt [hier](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys)meer informatie over de tekens die AWS S3 gebruikt. Aan de kant van de Azure-Blob-object sleutels voldoen aan de naamgevings regels voor [C#-id's](/dotnet/csharp/language-reference/).
-
-Als onderdeel van een AzCopy `copy` -opdracht kunt u een waarde opgeven voor de optionele `s2s-handle-invalid-metadata` vlag waarmee wordt aangegeven hoe u bestanden wilt afhandelen waarin de meta gegevens van het bestand incompatibele sleutel namen bevatten. De volgende tabel beschrijft de waarde van elke vlag.
-
-| Vlag waarde | Description  |
-|--------|-----------|
-| **ExcludeIfInvalid** | (Standaard optie) De meta gegevens zijn niet opgenomen in het overgezette object. AzCopy registreert een waarschuwing. |
-| **FailIfInvalid** | Objecten worden niet gekopieerd. AzCopy registreert een fout en bevat een fout in het aantal mislukte overzichten dat wordt weer gegeven in het overzicht van de overdracht.  |
-| **RenameIfInvalid**  | AzCopy lost de ongeldige meta gegevens sleutel op en kopieert het object naar Azure met behulp van het omgezette meta gegevens sleutel waarde-paar. Zie de sectie [How a object Keys van AzCopy](#rename-logic) reAzCopys voor meer informatie over de stappen die nodig zijn om de naam van object sleutels te wijzigen. Als AzCopy de naam van de sleutel niet kan wijzigen, wordt het object niet gekopieerd. |
+| **ExcludeIfInvalid** | (Standaardoptie) De metagegevens zijn niet opgenomen in het overgedragen object. AzCopy registreert een waarschuwing. |
+| **FailIfInvalid** | Objecten worden niet gekopieerd. AzCopy registreert een fout en neemt deze fout op in het aantal mislukte pogingen dat wordt weergegeven in het overdrachtsoverzicht.  |
+| **RenameIfInvalid**  | AzCopy lost de ongeldige metagegevenssleutel op en kopieert het object naar Azure met behulp van het waardepaar met de om opgeloste metagegevenssleutel. Zie de sectie Hoe azCopy de naam van objectsleutels wijzigt hieronder voor meer informatie over de stappen die [AzCopy](#rename-logic) moet nemen om de naam van objectsleutels te wijzigen. Als AzCopy de naam van de sleutel niet kan wijzigen, wordt het object niet gekopieerd. |
 
 <a id="rename-logic"></a>
 
-### <a name="how-azcopy-renames-object-keys"></a>Het wijzigen van de naam van object sleutels in AzCopy
+### <a name="how-azcopy-renames-object-keys"></a>De naam van objectsleutels wijzigen in AzCopy
 
 AzCopy voert de volgende stappen uit:
 
-1. Ongeldige tekens vervangen door _.
+1. Vervangt ongeldige tekens door '_'.
 
-2. De teken reeks wordt `rename_` aan het begin van een nieuwe geldige sleutel toegevoegd.
+2. Voegt de `rename_` tekenreeks toe aan het begin van een nieuwe geldige sleutel.
 
-   Deze sleutel wordt gebruikt om de oorspronkelijke meta gegevens **waarde** op te slaan.
+   Deze sleutel wordt gebruikt om de oorspronkelijke metagegevenswaarde op **te slaan.**
 
-3. De teken reeks wordt `rename_key_` aan het begin van een nieuwe geldige sleutel toegevoegd.
-   Deze sleutel wordt gebruikt om de oorspronkelijke ongeldige **sleutel** van de meta gegevens op te slaan.
-   U kunt deze sleutel gebruiken om de meta gegevens in azure Side te herstellen omdat de meta gegevens sleutel wordt behouden als een waarde in de Blob Storage-service.
+3. Voegt de `rename_key_` tekenreeks toe aan het begin van een nieuwe geldige sleutel.
+   Deze sleutel wordt gebruikt om de oorspronkelijke ongeldige sleutel voor metagegevens op **te slaan.**
+   U kunt deze sleutel gebruiken om de metagegevens in Azure te herstellen, omdat de metagegevenssleutel behouden blijft als een waarde in de Blob Storage-service.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer voor beelden vindt u in een van deze artikelen:
+Meer voorbeelden vindt u in deze artikelen:
 
-- [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
+- [Voorbeelden: Uploaden](storage-use-azcopy-blobs-upload.md)
+- [Voorbeelden: Downloaden](storage-use-azcopy-blobs-download.md)
+- [Voorbeelden: Kopiëren tussen accounts](storage-use-azcopy-blobs-copy.md)
+- [Voorbeelden: Synchroniseren](storage-use-azcopy-blobs-synchronize.md)
+- [Voorbeelden: Google Cloud Storage](storage-use-azcopy-google-cloud.md)
+- [Voorbeelden: Azure Files](storage-use-azcopy-files.md)
+- [Zelfstudie: on-premises gegevens migreren naar cloudopslag met behulp van AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 
-- [Gegevens overdragen](storage-use-azcopy-v10.md#transfer-data)
+Zie deze artikelen voor het configureren van instellingen, het optimaliseren van prestaties en het oplossen van problemen:
 
-- [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
+- [AzCopy-configuratie-instellingen](storage-ref-azcopy-configuration-settings.md)
+- [De prestaties van AzCopy optimaliseren](storage-use-azcopy-optimize.md)
+- [Problemen met AzCopy V10 in Azure Storage met behulp van logboekbestanden](storage-use-azcopy-configure.md)

@@ -4,19 +4,19 @@ description: Azure CLI-voorbeeldscript voor het instellen van actieve geo-replic
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: azurecli
 ms.topic: sample
 author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 8d0860cc5a4ee60cbf60d7b55789c518049dfb90
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 093542a5cc977d30e2c33b320d5d7833a47232f5
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92742649"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482429"
 ---
 # <a name="use-cli-to-configure-active-geo-replication-for-a-pooled-database-in-azure-sql-database"></a>CLI gebruiken voor het configureren van actieve geo-replicatie voor een pooldatabase in Azure SQL Database
 

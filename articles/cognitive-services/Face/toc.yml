@@ -3,13 +3,13 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Overzicht van Face-service
+    - name: Wat is de Face-service?
       href: Overview.md
     - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
     - name: Wat is er nieuw?
       href: releasenotes.md
-- name: Face-snelstart
+- name: Snelstart
   href: Quickstarts/client-libraries.md
 - name: Voorbeelden
   href: /samples/browse/?products=azure&term=face
@@ -45,6 +45,14 @@
           href: face-resource-container-config.md
         - name: Containerinstanties gebruiken
           href: /azure/cognitive-services/containers/azure-container-instance-recipe?context=/azure/cognitive-services/face/context/context
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/face/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
+        - name: Azure AD-verificatie gebruiken
+          href: ../authentication.md?context=/azure/cognitive-services/face/context/context
 - name: Concepten
   items:
     - name: Gezichtsdetectie
@@ -75,15 +83,15 @@
       href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face'
 - name: Resources
   items:
-    - name: Ondersteuning voor regio
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Learn-modules
       href: 'https://docs.microsoft.com/learn/modules/detect-analyze-faces/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/face/context/context
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md
     - name: Azure-updates
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'

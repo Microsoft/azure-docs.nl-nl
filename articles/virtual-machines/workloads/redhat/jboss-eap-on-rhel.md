@@ -3,18 +3,20 @@ title: 'Quickstart: JBoss Enterprise Application (EAP) op Red Hat Enterprise Lin
 description: Zakelijke Java-toepassingen implementeren met behulp van Red Hat JBoss EAP op virtuele Azure RHEL-machines en virtuele-machineschaalsets.
 author: theresa-nguyen
 ms.author: bicnguy
+ms.date: 10/30/2020
+ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
 ms.topic: quickstart
 ms.service: virtual-machines
 ms.subservice: redhat
+ms.custom:
+- mode-api
 ms.collection: linux
-ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
-ms.date: 10/30/2020
-ms.openlocfilehash: 4027e9c336d938c3877e56b0eb59edea6ac1d992
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 18cf093adad858f50b2b1fa1c97e38821bd1c949
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101671973"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538682"
 ---
 # <a name="deploy-enterprise-java-applications-to-azure-with-jboss-eap-on-red-hat-enterprise-linux"></a>Zakelijke Java-toepassingen implementeren in Azure met JBoss EAP op Red Hat Enterprise Linux
 

@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 04/07/2021
-ms.custom: devx-track-dotnet
-ms.openlocfilehash: 559ace3e9cb9f6daeb6dc3da581bb99d3ff9145e
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.custom: devx-track-dotnet, devx-track-azurecli
+ms.openlocfilehash: 495191dfcdfd7a4d318bef508878e951d88b3ae6
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107365158"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483874"
 ---
 # <a name="quickstart-build-a-console-app-using-the-net-v4-sdk-preview-to-manage-azure-cosmos-db-sql-api-account-resources"></a>Quickstart: Een console-app bouwen met behulp van de .NET V4 SDK (preview) voor het beheren van Azure Cosmos DB SQL API-accountresources.
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -36,7 +36,7 @@ Ga aan de slag met de Azure Cosmos DB SQL API-clientbibliotheek voor .NET. Volg 
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Azure Cosmos DB is de snelle NoSQL-database van Microsoft, met open API's voor elke schaal. U kunt Azure Cosmos DB gebruiken om snel databases voor belangrijke/waardevolle documenten en grafieken te maken en doorzoeken. Gebruik de Azure Cosmos DB SQL API-clientbibliotheek voor .NET om:
+Azure Cosmos DB is een snelle NoSQL™database van Microsoft met open API's voor elke schaal. U kunt Azure Cosmos DB gebruiken om snel databases voor belangrijke/waardevolle documenten en grafieken te maken en doorzoeken. Gebruik de Azure Cosmos DB SQL API-clientbibliotheek voor .NET om:
 
 * Een Azure Cosmos-database en een container te maken
 * Voorbeeldgegevens toe te voegen aan de container
@@ -96,7 +96,7 @@ Het maken van het Azure Cosmos-account neemt enige tijd in beslag. Zodra de bewe
 Maak een nieuwe .NET-toepassing in uw favoriete editor of IDE. Open de Windows-opdrachtprompt of een Terminalvenster op uw lokale computer. Alle opdrachten in de volgende secties worden uitgevoerd vanaf de opdrachtprompt of terminal.  Voer de volgende nieuwe DotNet-opdracht uit om een nieuwe app te maken met de naam `todo`. Met de parameter --langVersion stelt u de eigenschap LangVersion in het gemaakte projectbestand in.
 
    ```bash
-   dotnet new console –langVersion:8 -n todo
+   dotnet new console â€“langVersion:8 -n todo
    ```
 
 Wijzig uw map in de zojuist gemaakte app-map. U kunt de toepassing maken met:

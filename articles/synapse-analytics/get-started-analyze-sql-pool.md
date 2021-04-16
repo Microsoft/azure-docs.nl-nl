@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
 ms.date: 03/24/2021
-ms.openlocfilehash: 267dc7c7d89bbecfbed127f4a46adb7cd9044bc4
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 0def1f957842417c3936e3f1c7bb5bc023109818
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107309370"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107536334"
 ---
 # <a name="analyze-data-with-dedicated-sql-pools"></a>Gegevens analyseren met toegewezen SQL-pools
 
@@ -29,9 +29,9 @@ In deze zelfstudie gebruikt u de voorbeeldgegevens van NYC Taxi om de mogelijkhe
 1. Kies **DW100C** voor **Prestatieniveau**
 1. Selecteer **Beoordelen en maken** > **Maken**. Uw toegewezen SQL-pool is binnen een paar minuten klaar. 
 
-Uw toegewezen SQL-groep is gekoppeld aan een SQL database dat ook wel **SQLPOOL1** wordt genoemd.
-1. Navigeer naar **Data**  >  **Workspace**.
-1. U ziet een Data Base met de naam **SQLPOOL1**. Als u dit niet ziet, klikt u op **vernieuwen**.
+Uw toegewezen SQL-pool is gekoppeld aan een SQL database die ook **SQLPOOL1 wordt genoemd.**
+1. Navigeer **naar**  >  **Gegevenswerkruimte.**
+1. Als het goed is, ziet u een database **met de naam SQLPOOL1.** Als u deze niet ziet, klikt u op **Vernieuwen.**
 
 Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uitgevoerd. U kunt de pool later onderbreken om de kosten te verlagen.
 
@@ -39,8 +39,8 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
 > Bij het maken van een nieuwe toegewezen SQL-pool (voorheen SQL DW) in uw werkruimte, wordt de pagina voor het inrichten van de toegewezen SQL-pool geopend. Het inrichten vindt plaats op de logische SQL-server.
 ## <a name="load-the-nyc-taxi-data-into-sqlpool1"></a>Laad de NYC Taxi-gegevens in SQLPOOL1
 
-1. Ga in Synapse Studio naar de **ontwikkelende** hub, klik op de **+** knop om een nieuwe resource toe te voegen en maak vervolgens een nieuw SQL-script.
-1. Selecteer de pool ' SQLPOOL1 ' (groep die in [stap 1](./get-started-create-workspace.md) van deze zelf studie is gemaakt) in de vervolg keuzelijst verbinding maken met boven het script.
+1. Navigeer Synapse Studio naar **de** hub Ontwikkelen, klik op de knop om een nieuwe resource toe te voegen en maak vervolgens een nieuw **+** SQL-script.
+1. Selecteer de pool SQLPOOL1 (pool gemaakt in [STAP 1](./get-started-create-workspace.md) van deze zelfstudie) in de vervolgkeuzelijst 'Verbinding maken' boven het script.
 1. Voer de volgende code in:
     ```
     IF NOT EXISTS (SELECT * FROM sys.objects O JOIN sys.schemas S ON O.schema_id = S.schema_id WHERE O.NAME = 'NYCTaxiTripSmall' AND O.TYPE = 'U' AND S.NAME = 'dbo')
@@ -78,12 +78,13 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
         )
     GO
 
-    --Uncomment the 4 lines below to create a stored procedure for data pipeline orchestration
-    --CREATE PROC bulk_load_NYCTaxiTripSmall
-    --AS
-    --BEGIN
     COPY INTO dbo.NYCTaxiTripSmall
-    (DateID 1, MedallionID 2, HackneyLicenseID 3, PickupTimeID 4, DropoffTimeID 5, PickupGeographyID 6, DropoffGeographyID 7, PickupLatitude 8, PickupLongitude 9, PickupLatLong 10, DropoffLatitude 11, DropoffLongitude 12, DropoffLatLong 13, PassengerCount 14, TripDurationSeconds 15, TripDistanceMiles 16, PaymentType 17, FareAmount 18, SurchargeAmount 19, TaxAmount 20, TipAmount 21, TollsAmount 22, TotalAmount 23)
+    (DateID 1, MedallionID 2, HackneyLicenseID 3, PickupTimeID 4, DropoffTimeID 5,
+    PickupGeographyID 6, DropoffGeographyID 7, PickupLatitude 8, PickupLongitude 9, 
+    PickupLatLong 10, DropoffLatitude 11, DropoffLongitude 12, DropoffLatLong 13, 
+    PassengerCount 14, TripDurationSeconds 15, TripDistanceMiles 16, PaymentType 17, 
+    FareAmount 18, SurchargeAmount 19, TaxAmount 20, TipAmount 21, TollsAmount 22, 
+    TotalAmount 23)
     FROM 'https://contosolake.dfs.core.windows.net/users/NYCTripSmall.parquet'
     WITH
     (
@@ -92,14 +93,14 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
         ,IDENTITY_INSERT = 'OFF'
     )
     ```
-1. Klik op de knop uitvoeren om het script uit te voeren.
-1. Dit script wordt in minder dan 60 seconden voltooid. Het laadt 2.000.000 rijen van NYC taxi-gegevens in een tabel met de naam **dbo. Reis**.
+1. Klik op de knop Uitvoeren om het script uit te voeren.
+1. Dit script is binnen 60 seconden klaar. Er worden 2 miljoen rijen met NYC Taxi-gegevens in een tabel met de naam **dbo geladen. Reis**.
 
 ## <a name="explore-the-nyc-taxi-data-in-the-dedicated-sql-pool"></a>De NYC-taxigegevens in de toegewezen SQL-pool verkennen
 
 1. Ga in Synapse Studio naar de hub **Gegevens**.
 1. Ga naar **SQLPOOL1** > **Tabellen**. 
-3. Klik met de rechter muisknop op de **dbo. NYCTaxiTripSmall** -tabel en selecteer **Nieuw SQL-script**  >  **Select Top 100 rows**.
+3. Klik met de rechtermuisknop op **de dbo. NycTaxiTripSmall-tabel** en selecteer **Nieuw SQL-script**  >  **Selecteer TOP 100 rijen.**
 4. Wacht tot er een nieuw SQL-script wordt gemaakt en uitgevoerd.
 5. U ziet dat bovenaan het SQL-script **Verbinding maken met** automatisch is ingesteld op de SQL-pool met de naam **SQLPOOL1**.
 6. Vervang de tekst van het SQL-script door deze code en voer deze uit.
@@ -120,4 +121,4 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Gegevens in een Azure Storage-account analyseren](get-started-analyze-storage.md)
+> [Gegevens analyseren in een Azure Storage account](get-started-analyze-storage.md)

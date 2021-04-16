@@ -1,89 +1,89 @@
 ---
-title: 'SQL Server naar Azure SQL Managed instance: prestatie analyse'
-description: Meer informatie over het maken en vergelijken van een basis lijn voor prestaties bij het migreren van uw SQL Server-data bases naar Azure SQL Managed instance.
+title: 'SQL Server naar Azure SQL Managed Instance: Prestatiebasislijn'
+description: Leer hoe u een basislijn voor prestaties maakt en vergelijkt wanneer u uw SQL Server databases naar Azure SQL Managed Instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: mokabiru
 ms.date: 11/06/2020
-ms.openlocfilehash: a97dabe36efb252b04c1b5c8fa741d33a6c92703
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a47684bf29f1f34b8c9c59c04b7d33d234505cc2
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105023670"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389703"
 ---
-# <a name="migration-performance-sql-server-to--azure-sql-managed-instance-performance-analysis"></a>Migratie prestaties: SQL Server naar prestatie analyse van Azure SQL Managed instance
+# <a name="migration-performance-sql-server-to--azure-sql-managed-instance-performance-baseline"></a>Migratieprestaties: SQL Server basislijn Azure SQL Managed Instance prestaties
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
 
-Maak een basis lijn voor prestaties om de prestaties van uw workload te vergelijken met een SQL-beheerd exemplaar met de oorspronkelijke werk belasting die wordt uitgevoerd op SQL Server. 
+Maak een basislijn voor prestaties om de prestaties van uw workload op een SQL Managed Instance te vergelijken met de oorspronkelijke workload die wordt uitgevoerd op SQL Server. 
 
-## <a name="create-a-baseline"></a>Een basis lijn maken
+## <a name="create-a-baseline"></a>Een basislijn maken
 
-In het ideale geval is de prestaties gelijk of beter na de migratie. het is dus belang rijk om de basislijn prestatie waarden te meten en op te nemen in de bron en deze vervolgens te vergelijken met de doel omgeving. Een basis lijn voor prestaties is een set para meters die uw gemiddelde werk belasting op uw bron definiëren. 
+In het ideale ideale moment zijn de prestaties na de migratie vergelijkbaar of beter. Het is dus belangrijk om de prestatiewaarden van de basislijn op de bron te meten en vast te stellen en deze vervolgens te vergelijken met de doelomgeving. Een prestatiebasislijn is een set parameters die uw gemiddelde workload voor uw bron definiëren. 
 
-Selecteer een set query's die belang rijk zijn voor en representatief zijn voor de werk belasting van uw bedrijf. Meet en Documenteer de minimale/gemiddelde/maximale duur en het CPU-gebruik voor deze query's en de prestatie gegevens op de bron server, zoals gemiddeld/Maxi maal CPU-gebruik, gemiddelde/maximale schijf-i/o-latentie, door Voer, IOPS, gemiddelde/maximale pagina levens duur verwachting en gemiddelde maximale grootte van tempdb. 
+Selecteer een reeks query's die belangrijk zijn voor en die representatief zijn voor uw zakelijke workload. Meet en documenteert de minimale/gemiddelde/maximale duur en het CPU-gebruik voor deze query's, evenals metrische prestatiegegevens op de bronserver, zoals gemiddelde/maximale CPU-gebruik, gemiddelde/maximale schijf-I/O-latentie, doorvoer, IOPS, gemiddelde/maximale levensduur van pagina's en gemiddelde maximale grootte van tempdb. 
 
-De volgende bronnen kunnen helpen bij het definiëren van een basis lijn voor prestaties: 
+De volgende resources kunnen helpen bij het definiëren van een basislijn voor prestaties: 
 
    - [CPU-gebruik bewaken ](https://techcommunity.microsoft.com/t5/azure-sql-database/monitor-cpu-usage-on-sql-server-and-azure-sql/ba-p/680777#M131)
-   - [Geheugen gebruik](/sql/relational-databases/performance-monitor/monitor-memory-usage)   bewaken en bepalen de hoeveelheid geheugen die wordt gebruikt door verschillende onderdelen, zoals de buffer groep, de plannings cache, de column-Store-groep, de [in-Memory OLTP](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage), enzovoort. Bovendien moet u de gemiddelde en piek waarden voor het prestatie meter item pagina-levens verwachting geheugen vinden. 
-   - Controleer het gebruik van de schijf-i/o op het bron SQL Server exemplaar met behulp van de [sys.dm_io_virtual_file_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql)   weer gave of [prestatie meter items](/sql/relational-databases/performance-monitor/monitor-disk-usage). 
-   - Bewaak de werk belasting en query prestaties door dynamische beheer weergaven (of query Store te controleren als u migreert van SQL Server 2016 en hoger). Bepaal de gemiddelde duur en het CPU-gebruik van de belangrijkste query's in uw werk belasting. 
+   - [Geheugengebruik bewaken](/sql/relational-databases/performance-monitor/monitor-memory-usage)   en bepalen de hoeveelheid geheugen die wordt gebruikt door verschillende onderdelen, zoals buffergroep, plancache, kolomopslaggroep, [In-Memory OLTP,](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage)enzovoort. Daarnaast moet u de gemiddelde en piekwaarden van het prestatiemetermeter voor de levensverwachting van pagina's vinden. 
+   - Controleer het I/O-gebruik van de SQL Server bronbron met behulp [van](/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql)   sys.dm_io_virtual_file_stats-weergave of [prestatiemeters](/sql/relational-databases/performance-monitor/monitor-disk-usage). 
+   - Controleer de workload- en queryprestaties door dynamische beheerweergaven te bekijken (of Query Store als u migreert van SQL Server 2016 en hoger). Identificeer de gemiddelde duur en het CPU-gebruik van de belangrijkste query's in uw workload. 
 
-Prestatie problemen op de bron SQL Server moeten worden verholpen vóór de migratie. Het migreren van bekende problemen naar een nieuw systeem kan leiden tot onverwachte resultaten en een vergelijking van de prestaties ongeldig maken. 
+Prestatieproblemen op de SQL Server moeten vóór de migratie worden opgelost. Het migreren van bekende problemen naar een nieuw systeem kan onverwachte resultaten veroorzaken en een prestatievergelijking ongeldig maken. 
 
 
 ## <a name="compare-performance"></a>Prestaties vergelijken 
 
-Nadat u een basis lijn hebt gedefinieerd, vergelijkt u vergelijk bare werk belasting prestaties op het doel-SQL beheerde exemplaar. Voor nauw keurigheid is het belang rijk dat de SQL Managed instance-omgeving zoveel mogelijk vergelijkbaar is met de SQL Server omgeving. 
+Nadat u een basislijn hebt gedefinieerd, vergelijkt u vergelijkbare workloadprestaties op het doelniveau SQL Managed Instance. Voor nauwkeurigheid is het belangrijk dat de SQL Managed Instance omgeving zo veel mogelijk vergelijkbaar is met SQL Server omgeving. 
 
-Er zijn verschillen in de infra structuur van SQL Managed instance die de prestaties precies onwaarschijnlijk maken. Sommige query's worden mogelijk sneller uitgevoerd dan verwacht, terwijl anderen mogelijk langzamer zijn. Het doel van deze vergelijking is te controleren of de prestaties van de werk belasting in het beheerde exemplaar overeenkomen met de prestaties op SQL Server (gemiddeld) en om essentiële query's te identificeren die niet overeenkomen met de oorspronkelijke prestaties. 
+Er zijn SQL Managed Instance infrastructuurverschillen die overeenkomende prestaties precies onwaarschijnlijk maken. Sommige query's kunnen sneller worden uitgevoerd dan verwacht, terwijl andere mogelijk langzamer zijn. Het doel van deze vergelijking is om te controleren of de prestaties van de workload in het beheerde exemplaar overeenkomen met de prestaties op SQL Server (gemiddeld) en om kritieke query's te identificeren met prestaties die niet overeenkomen met uw oorspronkelijke prestaties. 
 
-Prestatie vergelijking resulteert waarschijnlijk in de volgende resultaten: 
+Prestatievergelijking resulteert waarschijnlijk in de volgende resultaten: 
 
-- De prestaties van de werk belasting op het beheerde exemplaar zijn uitgelijnd of beter dan de prestaties van de werk belasting op uw bron SQL Server. In dit geval hebt u bevestigd dat de migratie is voltooid. 
+- De prestaties van de workload op het beheerde exemplaar zijn uitgelijnd of beter dan de prestaties van de werkbelasting op uw SQL Server. In dit geval hebt u bevestigd dat de migratie is geslaagd. 
 
-- Het meren deel van de prestatie parameters en query's in de werk belasting wordt uitgevoerd zoals verwacht, met enkele uitzonde ringen die de prestaties verslechteren. In dit geval kunt u de verschillen en hun belang identificeren. Als er sprake is van een aantal belang rijke query's met verminderde prestaties, onderzoekt u of de onderliggende SQL-abonnementen zijn gewijzigd of dat query's gemeend zijn voor de resource limieten. U kunt dit verhelpen door bepaalde hints toe te passen op essentiële query's (bijvoorbeeld compatibiliteits niveau wijzigen, verouderde kardinaliteit Estimator) hetzij rechtstreeks hetzij met behulp van plan richtlijnen. Zorg ervoor dat de statistieken en indexen in beide omgevingen up-to-date en equivalent zijn. 
+- De meeste prestatieparameters en query's in de workload werken zoals verwacht, met enkele uitzonderingen die leiden tot slechtere prestaties. In dit geval moet u de verschillen en hun belang identificeren. Als er enkele belangrijke query's met slechtere prestaties zijn, moet u onderzoeken of de onderliggende SQL-plannen zijn gewijzigd of dat query's resourcelimieten overschrijden. U kunt dit verhelpen door een aantal hints toe te passen op kritieke query's (bijvoorbeeld wijzigingscompatibiliteitsniveau, verouderde kardinaliteitsschaker) rechtstreeks of met behulp van planhandleidingen. Zorg ervoor dat statistieken en indexen in beide omgevingen up-to-date en gelijkwaardig zijn. 
 
-- De meeste query's zijn langzamer op een beheerd exemplaar vergeleken met uw bron SQL Server exemplaar. In dit geval kunt u proberen om de hoofd oorzaken van het verschil te identificeren, zoals het [bereiken van een bepaalde resource limiet](../../managed-instance/resource-limits.md#service-tier-characteristics) , zoals i/o-, geheugen-en instantie logboek frequentie limieten. Als er geen resource limieten zijn die het verschil veroorzaken, kunt u proberen om het compatibiliteits niveau van de data base te wijzigen of data base-instellingen te wijzigen, zoals verouderde kardinaliteit en de test opnieuw uit te voeren. Bekijk de aanbevelingen van het beheerde exemplaar of de query Store-weer gaven om de query's met teruggedraaide-prestaties te identificeren. 
+- De meeste query's zijn langzamer op een beheerd exemplaar in vergelijking met uw bron-SQL Server exemplaar. Probeer in dit geval de hoofdoorzaken van het verschil te identificeren, zoals het bereiken van een [resourcelimiet,](../../managed-instance/resource-limits.md#service-tier-characteristics) zoals IO, geheugen of logboekfrequentielimieten voor exemplaren. Als er geen resourcelimieten zijn die het verschil veroorzaken, kunt u het compatibiliteitsniveau van de database wijzigen of database-instellingen wijzigen, zoals schatting van verouderde kardinaliteit, en de test opnieuw uitvoeren. Bekijk de aanbevelingen van het beheerde exemplaar of de Query Store-weergaven om de query's met teruggeslagen prestaties te identificeren. 
 
-SQL Managed instance heeft een ingebouwde functie voor het automatisch corrigeren van plannen die standaard is ingeschakeld. Deze functie zorgt ervoor dat query's die in het verleden goed werken, niet in de toekomst worden afgebroken. Als deze functie niet is ingeschakeld, voert u de workload uit met de oude instellingen zodat SQL Managed instance de prestaties van de basis lijn kan ontdekken. Schakel vervolgens de functie in en voer de workload opnieuw uit met de nieuwe instellingen. 
+SQL Managed Instance heeft een ingebouwde functie voor automatische correctie van plannen die standaard is ingeschakeld. Deze functie zorgt ervoor dat query's die in het verleden goed hebben gewerkt, in de toekomst niet verslechteren. Als deze functie niet is ingeschakeld, moet u de workload uitvoeren met de oude instellingen, zodat SQL Managed Instance de prestatiebasislijn kunt leren. Schakel vervolgens de functie in en voer de workload opnieuw uit met de nieuwe instellingen. 
 
-Breng wijzigingen aan in de para meters van uw test of voer een upgrade uit naar hogere service lagen om de optimale configuratie voor de prestaties van de werk belasting te bereiken die aan uw behoeften voldoet. 
+Wijzigingen aanbrengen in de parameters van uw test of upgraden naar hogere servicelagen om de optimale configuratie te bereiken voor de prestaties van de werkbelasting die bij uw behoeften passen. 
 
 ## <a name="monitor-performance"></a>Prestaties bewaken 
 
-SQL Managed instance biedt geavanceerde hulpprogram ma's voor bewaking en probleem oplossing, en u moet ze gebruiken om de prestaties van uw exemplaar te bewaken. Enkele belang rijke metrische gegevens die u kunt bewaken zijn: 
+SQL Managed Instance biedt geavanceerde hulpprogramma's voor bewaking en probleemoplossing, en u moet deze gebruiken om de prestaties van uw exemplaar te bewaken. Enkele van de belangrijkste metrische gegevens die moeten worden bewaakt, zijn: 
 
-- Het CPU-gebruik van de instantie om te bepalen of het aantal vCores dat u hebt ingericht, het juiste resultaat is voor uw werk belasting. 
-- Pagina-Life verwachting op uw beheerde instantie om te bepalen of u [meer geheugen](https://techcommunity.microsoft.com/t5/azure-sql-database/do-you-need-more-memory-on-azure-sql-managed-instance/ba-p/563444)nodig hebt.
--  Statistische gegevens als INSTANCE_LOG_GOVERNOR of PAGEIOLATCH die opslag-i/o-problemen identificeren, met name op de Algemeen-laag, waar u mogelijk bestanden vooraf moet toewijzen om betere IO-prestaties te krijgen. 
+- CPU-gebruik op het exemplaar om te bepalen of het aantal vCores dat u hebt ingericht, de juiste overeenkomst is voor uw workload. 
+- De levensverwachting van pagina's op uw beheerde exemplaar om te bepalen of u extra [geheugen nodig hebt.](https://techcommunity.microsoft.com/t5/azure-sql-database/do-you-need-more-memory-on-azure-sql-managed-instance/ba-p/563444)
+-  Statistieken zoals INSTANCE_LOG_GOVERNOR of PAGEIOLATCH die problemen met opslag-I/O identificeren, met name op de Algemeen-laag, waar u mogelijk vooraf bestanden moet toewijzen om betere I/O-prestaties te krijgen. 
 
 
 ## <a name="considerations"></a>Overwegingen  
 
-Houd rekening met het volgende wanneer u de prestaties vergelijkt: 
+Houd bij het vergelijken van de prestaties rekening met het volgende: 
 
-- De instellingen van de bron en het doel komen overeen. Controleer of de verschillende instanties, data bases en tempdb-instellingen overeenkomen tussen de twee omgevingen. Verschillen in de configuratie, compatibiliteits niveaus, versleutelings instellingen, traceer vlaggen enz., kunnen de prestaties van het hellen afnemen. 
+- Instellingen komen overeen tussen bron en doel. Controleer of verschillende exemplaar-, database- en tempdb-instellingen gelijkwaardig zijn tussen de twee omgevingen. Verschillen in configuratie, compatibiliteitsniveaus, versleutelingsinstellingen, traceringsvlaggen, enzovoort, kunnen allemaal scheeftrekken. 
 
-- Opslag is geconfigureerd volgens [Best practices](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525). Voor Algemeen moet u mogelijk de grootte van de bestanden bijvoorbeeld vooraf toewijzen om de prestaties te verbeteren. 
+- Opslag wordt geconfigureerd volgens [best practices.](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525) Voor een Algemeen moet u bijvoorbeeld vooraf de grootte van de bestanden toewijzen om de prestaties te verbeteren. 
 
-- Er zijn [belang rijke omgevings verschillen](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/) die de prestatie verschillen tussen een beheerd exemplaar en SQL Server kunnen veroorzaken. Identificeer de Risico's die relevant zijn voor uw omgeving en die kunnen bijdragen aan een prestatie probleem. 
+- Er zijn [belangrijke omgevingsverschillen](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/) die de prestatieverschillen tussen een beheerd exemplaar en een SQL Server. Identificeer risico's die relevant zijn voor uw omgeving die kunnen bijdragen aan een prestatieprobleem. 
 
-- Query Store en automatische afstemming moeten worden ingeschakeld op uw door SQL beheerde instantie wanneer u de prestaties van de werk belasting meet en mogelijke prestatie problemen automatisch kunt oplossen. 
+- Query Store en automatisch afstemmen moeten zijn ingeschakeld op uw SQL Managed Instance omdat deze u helpen de prestaties van de werkbelasting te meten en potentiële prestatieproblemen automatisch te verhelpen. 
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de volgende bronnen voor meer informatie over het optimaliseren van uw nieuwe Azure SQL Managed instance-omgeving: 
+Zie de volgende bronnen voor meer informatie over het optimaliseren Azure SQL Managed Instance nieuwe omgeving: 
 
-- [Hoe kan ik vaststellen waarom de prestaties van de werk belasting van een Azure SQL Managed instance afwijkt van SQL Server?](https://medium.com/azure-sqldb-managed-instance/what-to-do-when-azure-sql-managed-instance-is-slower-than-sql-server-dd39942aaadd)
-- [De belangrijkste oorzaken van prestatie verschillen tussen het beheerde exemplaar van SQL en SQL Server](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/)
-- [Aanbevolen procedures voor opslag prestaties en overwegingen voor Azure SQL Managed instance (Algemeen)](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525)
-- [Real-time prestatie bewaking voor Azure SQL Managed instance (dit wordt gearchiveerd, is dit het beoogde doel?)](/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance)
+- [Hoe kan ik bepalen waarom de prestaties van workloads op Azure SQL Managed Instance anders zijn dan SQL Server?](https://medium.com/azure-sqldb-managed-instance/what-to-do-when-azure-sql-managed-instance-is-slower-than-sql-server-dd39942aaadd)
+- [Belangrijke oorzaken van prestatieverschillen tussen SQL Managed Instance en SQL Server](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/)
+- [Best practices en overwegingen voor opslagprestaties voor Azure SQL Managed Instance (Algemeen)](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525)
+- [Realtime prestatiebewaking voor Azure SQL Managed Instance (dit is gearchiveerd, is dit het beoogde doel?)](/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance)

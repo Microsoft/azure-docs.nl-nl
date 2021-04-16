@@ -1,6 +1,6 @@
 ---
-title: Wat is Azure IoT Edge voor Linux op Windows | Microsoft Docs
-description: Overzicht van u kunt Linux IoT Edge-modules uitvoeren op Windows 10-apparaten
+title: Wat is Azure IoT Edge voor Linux in Windows | Microsoft Docs
+description: Overzicht van hoe u Linux-modules kunt IoT Edge op Windows 10 apparaten
 author: kgremban
 manager: philmea
 ms.reviewer: twarwick
@@ -10,62 +10,62 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: kgremban
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 330eaf5c12372347917e9f3a4aeafb6a2088c592
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3c7fd6c842d465dd5af5257628044666f10f2ece
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103492571"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538204"
 ---
 # <a name="what-is-azure-iot-edge-for-linux-on-windows-preview"></a>Wat is Azure IoT Edge voor Linux op Windows (preview)?
 
 [!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
 
-Met Azure IoT Edge voor Linux in Windows kunt u in containers geplaatste Linux-workloads uitvoeren naast Windows-toepassingen in Windows IoT-implementaties. Bedrijven die vertrouwen op Windows IoT om hun rand apparaten te laten werken, kunnen nu profiteren van de Cloud-systeem eigen analyse oplossingen die in Linux zijn ingebouwd.
+Azure IoT Edge voor Linux in Windows kunt u in containers geplaatste Linux-workloads uitvoeren naast Windows-toepassingen in Windows IoT-implementaties. Bedrijven die afhankelijk zijn van Windows IoT om hun edge-apparaten aan te kunnen, kunnen nu profiteren van de cloudeigen analyseoplossingen die in Linux worden gebouwd.
 
-IoT Edge voor Linux in Windows werkt door een virtuele Linux-machine uit te voeren op een Windows-apparaat. De virtuele Linux-machine wordt vooraf geïnstalleerd met de IoT Edge runtime. Alle IoT Edge modules die op het apparaat zijn geïmplementeerd, worden uitgevoerd in de virtuele machine. Ondertussen kunnen Windows-toepassingen die worden uitgevoerd op het Windows-host-apparaat communiceren met de modules die worden uitgevoerd op de virtuele Linux-machine.
+IoT Edge linux in Windows werkt door een virtuele Linux-machine op een Windows-apparaat uit te werken. De virtuele Linux-machine wordt vooraf geïnstalleerd met de IoT Edge runtime. Alle IoT Edge modules die op het apparaat zijn geïmplementeerd, worden uitgevoerd binnen de virtuele machine. Ondertussen kunnen Windows-toepassingen die worden uitgevoerd op het Windows-hostapparaat communiceren met de modules die worden uitgevoerd op de virtuele Linux-machine.
 
-[Ga](how-to-install-iot-edge-on-windows.md) vandaag nog aan de slag met de preview-versie.
+[Ga vandaag nog](how-to-install-iot-edge-on-windows.md) aan de slag met de preview.
 
 >[!NOTE]
->Overweeg onze [product enquête](https://aka.ms/AzEFLOW-Registration) te nemen om ons te helpen Azure IOT Edge voor Linux op Windows te verbeteren op basis van uw IOT Edge achtergrond en doel stellingen. U kunt deze enquête ook gebruiken om u te registreren voor toekomstige Azure IoT Edge voor Linux op Windows-aankondigingen.
+>Overweeg onze [productenquête om](https://aka.ms/AzEFLOW-Registration) ons te helpen de Azure IoT Edge voor Linux op Windows te verbeteren op basis van IoT Edge achtergrond en doelstellingen. U kunt deze enquête ook gebruiken om u te registreren voor toekomstige Azure IoT Edge linux op Windows-aankondigingen.
 
 ## <a name="components"></a>Onderdelen
 
-IoT Edge voor Linux in Windows maakt gebruik van de volgende onderdelen om Linux-en Windows-workloads naast elkaar uit te voeren en probleemloos te communiceren:
+IoT Edge voor Linux in Windows maakt gebruik van de volgende onderdelen, zodat Linux- en Windows-workloads naast elkaar kunnen worden uitgevoerd en naadloos kunnen communiceren:
 
-* **Een virtuele Linux-machine met Azure IOT Edge**: een virtuele Linux-machine, gebaseerd op het [Mariner](https://github.com/microsoft/CBL-Mariner) -besturings systeem van micro soft, is gebouwd met de IOT Edge runtime en gevalideerd als een omgeving die wordt ondersteund als laag 1 voor IOT Edge workloads.
+* **Een virtuele Linux-machine** met Azure IoT Edge: een virtuele Linux-machine, gebaseerd op het first party [Operatingr-besturingssysteem](https://github.com/microsoft/CBL-Mariner) van Microsoft, wordt gebouwd met de IoT Edge-runtime en gevalideerd als een laag 1-ondersteunde omgeving voor IoT Edge-workloads.
 
-* **Windows-beheer centrum**: een IOT Edge extensie voor Windows-beheer centrum vereenvoudigt de installatie, configuratie en diagnose van IOT Edge op de virtuele Linux-machine. Windows-beheer centrum kan IoT Edge voor Linux op het lokale apparaat implementeren of verbinding maken met doel apparaten en ze op afstand beheren.
+* **Windows Admin Center:** een IoT Edge-extensie voor Windows Admin Center vereen mogelijk installatie, configuratie en diagnostische gegevens van IoT Edge op de virtuele Linux-machine. Windows Admin Center kunt een IoT Edge voor Linux in Windows implementeren op het lokale apparaat of verbinding maken met doelapparaten en deze extern beheren.
 
-* **Microsoft Update**: integratie met Microsoft Update houdt de Windows runtime-onderdelen, de Mariner Linux-VM en IOT Edge up-to-date.
+* **Microsoft Update:** Integratie met Microsoft Update zorgt ervoor dat de Windows-runtimeonderdelen, de Linux-VM en IoT Edge up-to-date blijven.
 
-![Windows en de virtuele Linux-machine worden parallel uitgevoerd, terwijl het Windows-beheer centrum beide onderdelen beheert](./media/iot-edge-for-linux-on-windows/architecture-and-communication.png)
+![Windows en de Linux-VM worden parallel uitgevoerd, terwijl de Windows Admin Center beide onderdelen beheert](./media/iot-edge-for-linux-on-windows/architecture-and-communication.png)
 
-Bidirectionele communicatie tussen Windows-processen en de virtuele Linux-machine betekent dat Windows-processen gebruikers interfaces of hardware-proxy's kunnen bieden voor werk belastingen die worden uitgevoerd in de Linux-containers.
+Bi-directionele communicatie tussen het Windows-proces en de virtuele Linux-machine betekent dat Windows-processen gebruikersinterfaces of hardware-proxies kunnen bieden voor werkbelastingen die worden uitgevoerd in de Linux-containers.
 
 ## <a name="samples"></a>Voorbeelden
 
-IoT Edge voor Linux op Windows is een nadruk op de interoperabiliteit tussen de Linux-en Windows-onderdelen.
+IoT Edge linux onder Windows ligt de nadruk op de interoperabiliteit tussen de Linux- en Windows-onderdelen.
 
-Zie [Windows 10 IOT](https://github.com/microsoft/Windows-IoT-Samples)-voor beelden voor steek proeven die de communicatie tussen Windows-toepassingen en IOT Edge modules demonstreren.
+Zie EFLOW & Windows 10 [IoT](https://aka.ms/AzEFLOW-Samples)Samples voor voorbeelden die communicatie tussen Windows-toepassingen en IoT Edge modules demonstreren.
 
-## <a name="public-preview"></a>Open bare preview
+## <a name="public-preview"></a>Openbare preview
 
-IoT Edge voor Linux in Windows is momenteel beschikbaar als [open bare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). De installatie-en beheer processen kunnen afwijken van de algemene beschik bare functies.
+IoT Edge voor Linux in Windows is momenteel beschikbaar als [openbare preview.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) Installatie- en beheerprocessen kunnen anders zijn dan voor algemeen beschikbare functies.
 
 ## <a name="support"></a>Ondersteuning
 
-Gebruik de IoT Edge ondersteuning en feedback kanalen om hulp te krijgen bij IoT Edge voor Linux in Windows.
+Gebruik de IoT Edge-ondersteunings- en feedbackkanalen om hulp te krijgen met IoT Edge linux in Windows.
 
-**Fouten rapporteren** : fouten kunnen worden gerapporteerd op de [pagina kwesties](https://github.com/azure/iotedge/issues) van het open-source project IOT Edge. Fouten gerelateerd aan Azure IoT Edge voor Linux op Windows kunnen worden gerapporteerd op de [pagina met iotedge-eflow-problemen](https://github.com/azure/iotedge-eflow/issues).
+**Fouten melden:** er kunnen fouten worden gerapporteerd op [de pagina](https://github.com/azure/iotedge/issues) problemen van IoT Edge opensource-project. Fouten met betrekking tot Azure IoT Edge voor Linux in Windows kunnen worden gerapporteerd op de pagina [iotedge-eflow issues](https://aka.ms/AzEFLOW-Issues).
 
-**Klanten ondersteuning van micro soft** : gebruikers die een [ondersteunings plan](https://azure.microsoft.com/support/plans/) hebben, kunnen het micro soft Customer Support-team benaderen door rechtstreeks vanuit de [Azure Portal](https://ms.portal.azure.com/signin/index/?feature.settingsportalinstance=mpac)een ondersteunings ticket te maken.
+**Klantondersteuningsteam van Microsoft:** gebruikers met een ondersteuningsplan kunnen contact opnemen met het klantondersteuningsteam van Microsoft door rechtstreeks vanuit de [Azure Portal.](https://ms.portal.azure.com/signin/index/?feature.settingsportalinstance=mpac) [](https://azure.microsoft.com/support/plans/)
 
-**Functie aanvragen** – het Azure IOT Edge product traceert functie aanvragen via de [pagina gebruikers spraak](https://feedback.azure.com/forums/907045-azure-iot-edge)van het product.
+**Functieaanvragen:** het Azure IoT Edge product houdt functieaanvragen bij via de [user voice-pagina van het product.](https://feedback.azure.com/forums/907045-azure-iot-edge)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bekijk [IOT Edge voor Linux op Windows 10 IOT Enter prise](https://aka.ms/EFLOWPPC9) voor meer informatie en een voor beeld van actie.
+Bekijk [IoT Edge voor Linux op Windows 10 IoT Enterprise](https://aka.ms/EFLOWPPC9) voor meer informatie en een voorbeeld in actie.
 
-Volg de stappen in [installeren en inrichten Azure IOT Edge voor Linux op een Windows-apparaat](how-to-install-iot-edge-on-windows.md) om een apparaat in te stellen met IOT Edge voor Linux in Windows.
+Volg de stappen in [Install and provision Azure IoT Edge for Linux on a Windows device](how-to-install-iot-edge-on-windows.md) (Linux installeren en inrichten op een Windows-apparaat) om een apparaat in te stellen met IoT Edge voor Linux in Windows.

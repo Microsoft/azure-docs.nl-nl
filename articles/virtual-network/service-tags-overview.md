@@ -91,7 +91,7 @@ Servicetags weerspiegelen standaard de reeksen voor de hele cloud. Sommige servi
 | **CognitiveServicesManagement** | De adresbereiken voor verkeer voor Azure Cognitive Services. | Beide | Nee | Nee |
 | **Datafactory**  | Azure Data Factory | Beide | Nee | Nee |
 | **DataFactoryManagement** | Beheerverkeer voor Azure Data Factory. | Uitgaand | Nee | Nee |
-| **Dynamics365ForMarketingEmail** | De adresbereiken voor de e-mailservice voor marketing van Dynamics 365. | Uitgaand | Ja | Nee |
+| **Dynamics365ForMarketingEmail** | De adresbereiken voor de marketing-e-mailservice van Dynamics 365. | Uitgaand | Ja | Nee |
 | **EventHub** | Azure Event Hubs. | Uitgaand | Ja | Ja |
 | **GatewayManager** | Beheerverkeer voor implementaties die zijn toegewezen aan Azure VPN Gateway en Application Gateway. | Inkomend | Nee | Nee |
 | **GuestAndHybridManagement** | Azure Automation en gastconfiguratie. | Uitgaand | Nee | Ja |
@@ -110,10 +110,10 @@ Servicetags weerspiegelen standaard de reeksen voor de hele cloud. Sommige servi
 | **Storage** | Azure Storage. <br/><br/>*Opmerking:* Deze tag vertegenwoordigt de service, maar niet specifieke exemplaren van de service. De tag vertegenwoordigt bijvoorbeeld de service Azure Storage, maar geen specifiek Azure Storage-account. | Uitgaand | Ja | Ja |
 | **StorageSyncService** | Opslagsynchronisatieservice. | Beide | Nee | Nee |
 | **WindowsVirtualDesktop** | Windows Virtual Desktop. | Beide | Nee | Ja |
-| **VirtualNetwork** | De adresruimte van het virtuele netwerk (alle IP-adresbereiken die zijn gedefinieerd voor het virtuele netwerk), alle verbonden on-premises adresruimten, [gekoppelde](virtual-network-peering-overview.md) virtuele netwerken, virtuele netwerken die zijn verbonden met een virtuele [netwerkgateway,](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json)het virtuele [IP-adres](virtual-networks-udr-overview.md)van de [host](./network-security-groups-overview.md#azure-platform-considerations)en adres voorvoegsels die worden gebruikt op door de gebruiker gedefinieerde routes . Deze tag kan ook standaardroutes bevatten. | Beide | Nee | Nee |
+| **VirtualNetwork** | De adresruimte van het virtuele netwerk (alle IP-adresbereiken die zijn gedefinieerd voor het virtuele netwerk), alle verbonden on-premises adresruimten, [gekoppelde](virtual-network-peering-overview.md) virtuele netwerken, virtuele netwerken die zijn verbonden met een virtuele netwerkgateway, [](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json)het virtuele [IP-adres](virtual-networks-udr-overview.md)van de [host](./network-security-groups-overview.md#azure-platform-considerations)en adres voorvoegsels die worden gebruikt op door de gebruiker gedefinieerde routes . Deze tag kan ook standaardroutes bevatten. | Beide | Nee | Nee |
 
 >[!NOTE]
->In het klassieke implementatiemodel (vóór Azure Resource Manager) wordt een subset van de tags ondersteund die in de vorige tabel worden vermeld. Deze tags worden anders gespeld:
+>In het klassieke implementatiemodel (vóór Azure Resource Manager) wordt een subset van de tags die in de vorige tabel worden vermeld, ondersteund. Deze tags worden anders gespeld:
 >
 >| Klassieke spelling | Equivalente Resource Manager tag |
 >|---|---|
@@ -122,7 +122,7 @@ Servicetags weerspiegelen standaard de reeksen voor de hele cloud. Sommige servi
 >| VIRTUAL_NETWORK | VirtualNetwork |
 
 > [!NOTE]
-> Servicetags van Azure-services geven de adres voorvoegsels aan van de specifieke cloud die wordt gebruikt. De onderliggende IP-adresbereiken die overeenkomen met de waarde van de **SQL-tag** in de openbare Azure-cloud verschillen bijvoorbeeld van de onderliggende reeksen in de Azure China-cloud.
+> Servicetags van Azure-services geven de adres voorvoegsels aan van de specifieke cloud die wordt gebruikt. De onderliggende IP-adresbereiken die overeenkomen met de waarde van de **SQL-tag** in de openbare Azure-cloud verschillen bijvoorbeeld van de onderliggende reeksen in de Cloud voor Azure China.
 
 > [!NOTE]
 > Als u een [service-eindpunt](virtual-network-service-endpoints-overview.md) voor een virtueel netwerk implementeert voor een service, zoals Azure Storage of Azure SQL Database, voegt Azure een [route](virtual-networks-udr-overview.md#optional-default-routes) toe aan een subnet van een virtueel netwerk voor de service. De adres voorvoegsels in de route zijn dezelfde adres voorvoegsels of CIDR-adresbereiken als die van de bijbehorende servicetag.
@@ -130,7 +130,7 @@ Servicetags weerspiegelen standaard de reeksen voor de hele cloud. Sommige servi
 ## <a name="service-tags-on-premises"></a>Servicetags on-premises  
 U kunt de huidige informatie over de servicetag en het huidige bereik verkrijgen om op te nemen als onderdeel van uw on-premises firewallconfiguraties. Deze informatie is de huidige point-in-time-lijst van de IP-adresbereiken die overeenkomen met elke servicetag. U kunt de informatie programmatisch verkrijgen of via een JSON-bestand downloaden, zoals beschreven in de volgende secties.
 
-### <a name="use-the-service-tag-discovery-api-public-preview"></a>De Service Tag Discovery-API (openbare preview) gebruiken
+### <a name="use-the-service-tag-discovery-api-public-preview"></a>De Detectie-API voor servicetags gebruiken (openbare preview)
 U kunt de huidige lijst met servicetags programmatisch ophalen, samen met details van het IP-adresbereik:
 
 - [REST](/rest/api/virtualnetwork/servicetags/list)
@@ -141,7 +141,7 @@ U kunt de huidige lijst met servicetags programmatisch ophalen, samen met detail
 > Het duurt maximaal vier weken voordat nieuwe servicetaggegevens worden doorgegeven in de API-resultaten. Het wijzigingsnummer in de metagegevens van het antwoord wordt verhoogd wanneer dit gebeurt. Er kunnen tijdelijke verschillen in resultaten zijn wanneer verschillende locatiewaarden worden opgegeven. Wanneer u de resultaten gebruikt om NSG-regels te maken, moet u de locatieparamater zo instellen dat deze overeenkomen met de regio van de NSG. 
 
 > [!NOTE]
-> De API-gegevens vertegenwoordigen de tags die kunnen worden gebruikt met NSG-regels, een subset van de tags die momenteel in het downloadbare JSON-bestand staan. In de openbare preview kunnen we niet garanderen dat de gegevens van de ene update naar de volgende hetzelfde blijven. 
+> De API-gegevens vertegenwoordigen de tags die kunnen worden gebruikt met NSG-regels, een subset van de tags die momenteel in het downloadbare JSON-bestand staan. In de openbare preview garanderen we niet dat de gegevens van de ene update naar de volgende hetzelfde blijven. 
 
 ### <a name="discover-service-tags-by-using-downloadable-json-files"></a>Servicetags ontdekken met behulp van downloadbare JSON-bestanden 
 U kunt JSON-bestanden downloaden die de huidige lijst met servicetags bevatten, samen met details van het IP-adresbereik. Deze lijsten worden wekelijks bijgewerkt en gepubliceerd. Locaties voor elke cloud zijn:
@@ -151,13 +151,13 @@ U kunt JSON-bestanden downloaden die de huidige lijst met servicetags bevatten, 
 - [Azure China](https://www.microsoft.com/download/details.aspx?id=57062) 
 - [Azure Duitsland](https://www.microsoft.com/download/details.aspx?id=57064)   
 
-De IP-adresbereiken in deze bestanden hebben de CIDR-notatie. 
+De IP-adresbereiken in deze bestanden hebben een CIDR-notatie. 
 
 > [!NOTE]
 >Een subset van deze informatie is gepubliceerd in XML-bestanden voor [Azure Public,](https://www.microsoft.com/download/details.aspx?id=41653) [Azure China](https://www.microsoft.com/download/details.aspx?id=42064)en [Azure Duitsland.](https://www.microsoft.com/download/details.aspx?id=54770) Deze XML-downloads worden afgeschaft voor 30 juni 2020 en zijn na die datum niet meer beschikbaar. U moet migreren naar met behulp van de discovery-API of JSON-bestanddownloads, zoals beschreven in de vorige secties.
 
 ### <a name="tips"></a>Tips 
-- U kunt updates van de ene publicatie naar de volgende detecteren door verhoogde *changeNumber-waarden* in het JSON-bestand te noteren. Elke subsectie (bijvoorbeeld **Storage.WestUS**) heeft een eigen *changeNumber* dat wordt verhoogd wanneer er wijzigingen optreden. Het hoogste niveau van het *changeNumber* van het bestand wordt verhoogd wanneer een van de subsecties wordt gewijzigd.
+- U kunt updates van de ene publicatie naar de volgende detecteren door verhoogde *changeNumber-waarden* in het JSON-bestand te noteren. Elke subsectie (bijvoorbeeld **Storage.WestUS)** heeft een eigen *changeNumber* dat wordt verhoogd naarmate er wijzigingen optreden. Het hoogste niveau van het *changeNumber* van het bestand wordt verhoogd wanneer een van de subsecties wordt gewijzigd.
 - Zie de [PowerShell-documentatie](/powershell/module/az.network/Get-AzNetworkServiceTag) servicetagdetectie-API voor voorbeelden van het parseren van de servicetaggegevens (bijvoorbeeld alle adresbereiken voor Storage in WestUS op te halen).
 - Wanneer nieuwe IP-adressen worden toegevoegd aan servicetags, worden ze ten minste één week niet gebruikt in Azure. Dit geeft u de tijd om alle systemen bij te werken die mogelijk de IP-adressen moeten bijhouden die zijn gekoppeld aan servicetags.
 

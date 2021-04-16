@@ -7,13 +7,13 @@ ms.service: app-service
 ms.topic: include
 ms.date: 12/20/2019
 ms.author: cephalin
-ms.custom: include file
-ms.openlocfilehash: f3d558736751d3c50e3c007e3aebb369093ef856
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: include file, devx-track-azurecli
+ms.openlocfilehash: 8e925085472a2e9ead1af075c162241fcda07985
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102244928"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483508"
 ---
 Maak in Cloud Shell een App Service-plan in de resourcegroep met de opdracht [`az appservice plan create`](/cli/azure/appservice/plan#az-appservice-plan-create).
 

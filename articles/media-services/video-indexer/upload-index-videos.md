@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 03/04/2021
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3cc9051190bd314ac93e3de2689a6aa0ec2b6235
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 90fca4342b1fe04adef97a1a4c1c2166ca7ec51e
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106108078"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107532492"
 ---
 # <a name="upload-and-index-your-videos"></a>Uw video's uploaden en indexeren  
 
-Als uw video eenmaal is geüpload, wordt de video door Video Indexer (optioneel) codeert (eventueel beschreven in het artikel). Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij de gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met de betaalde versie maakt u een Video Indexer-account dat is [gekoppeld aan uw Azure-abonnement en een Azure Media Services-account](connect-to-azure.md). U betaalt voor geïndexeerde minuten. Zie [Prijzen van mediaservices](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie.
+Nadat uw video is geüpload, Video Indexer (optioneel) de video coderen (besproken in het artikel). Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij de gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met de betaalde versie maakt u een Video Indexer-account dat is [gekoppeld aan uw Azure-abonnement en een Azure Media Services-account](connect-to-azure.md). U betaalt voor geïndexeerde minuten. Zie [Prijzen van mediaservices](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie.
 
 Wanneer u video's uploadt met de Video Indexer-API, hebt u de volgende opties voor uploaden: 
 
@@ -28,7 +28,7 @@ Wanneer u video's uploadt met de Video Indexer-API, hebt u de volgende opties vo
 * het videobestand verzenden als een bytematrix in de aanvraagbody.
 * Bestaande Azure Media Services-assets gebruiken door de [asset-id](../latest/assets-concept.md) op te geven (alleen ondersteund in betaalde accounts).
 
-In dit artikel wordt beschreven hoe u Video's uploadt en indexeert met de volgende opties:
+In het artikel wordt beschreven hoe u uw video's uploadt en indexeert met de volgende opties:
 
 * [De Video Indexer-website](#upload-and-index-a-video-using-the-video-indexer-website) 
 * [De Video Indexer-API’s](#upload-and-index-with-api)
@@ -37,14 +37,14 @@ In dit artikel wordt beschreven hoe u Video's uploadt en indexeert met de volgen
 
 Zie het artikel [invoercontainer/bestandsindelingen](../latest/encode-media-encoder-standard-formats-reference.md) voor een lijst bestandsindelingen die u kunt gebruiken met Video Indexer.
 
-## <a name="video-files-storage"></a>Video bestanden opslag
+## <a name="video-files-storage"></a>Opslag van videobestanden
 
-- Met een betaald Video Indexer account maakt u een Video Indexer-account dat is verbonden met uw Azure-abonnement en een Azure Media Services-account. Zie [een video indexer-account maken dat is verbonden met Azure](connect-to-azure.md)voor meer informatie.
-- Video bestanden worden opgeslagen in azure Storage door Azure Media Services. Er is geen beperking van de tijd.
-- U kunt altijd uw video-en audio bestanden verwijderen, evenals alle meta gegevens en inzichten die door Video Indexer worden geëxtraheerd. Wanneer u een bestand verwijdert uit Video Indexer, worden het bestand en de bijbehorende meta gegevens en inzichten permanent verwijderd uit Video Indexer. Als u echter uw eigen back-upoplossing hebt geïmplementeerd in azure Storage, blijft het bestand in uw Azure-opslag.
-- De opereren van een video is identiek, ongeacht of het uploaden is voltooid, de Video Indexer website of het gebruik van de upload-API.
+- Met een betaald Video Indexer-account maakt u een Video Indexer-account dat is verbonden met uw Azure-abonnement en een Azure Media Services account. Zie Create a Video Indexer account connected to Azure (Een Video Indexer [met Azure verbonden) voor meer informatie.](connect-to-azure.md)
+- Videobestanden worden opgeslagen in Azure Storage door Azure Media Services. Er is geen tijdslimiet.
+- U kunt altijd uw video- en audiobestanden verwijderen, evenals alle metagegevens en inzichten die uit deze bestanden zijn geëxtraheerd door Video Indexer. Nadat u een bestand uit Video Indexer verwijderd, worden het bestand en de metagegevens en inzichten permanent verwijderd uit Video Indexer. Als u echter uw eigen back-upoplossing in Azure Storage hebt geïmplementeerd, blijft het bestand in uw Azure-opslag.
+- De persistentie van een video is identiek, ongeacht of het uploaden is uitgevoerd op de Video Indexer website of met behulp van de Upload-API.
    
-## <a name="upload-and-index-a-video-using-the-video-indexer-website"></a>Een video uploaden en indexeren met behulp van de Video Indexer-website
+## <a name="upload-and-index-a-video-using-the-video-indexer-website"></a>Een video uploaden en indexeren met behulp van de Video Indexer website
 
 > [!NOTE]
 > De naam van de video mag niet langer zijn dan 80 tekens.
@@ -62,11 +62,11 @@ Zie het artikel [invoercontainer/bestandsindelingen](../latest/encode-media-enco
 
 ## <a name="upload-and-index-with-api"></a>Uploaden en indexeren met API
 
-Gebruik de [video](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) -API uploaden om uw Video's te uploaden en indexeren op basis van een URL. In het volgende code voorbeeld wordt de code voor commentaar opgenomen, die laat zien hoe u de byte matrix uploadt. 
+Gebruik de [VIDEO-API uploaden](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Upload-Video) om uw video's te uploaden en te indexeren op basis van een URL. Het volgende codevoorbeeld bevat de commentaarcode die laat zien hoe u de byte-matrix uploadt. 
 
 ### <a name="configurations-and-params"></a>Configuraties en parameters
 
-Deze sectie beschrijft een aantal van de optionele parameters en wanneer u deze het best instelt. Zie de video-API [uploaden](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) voor meer informatie over de meest recente para meters.
+Deze sectie beschrijft een aantal van de optionele parameters en wanneer u deze het best instelt. Zie video-API uploaden voor de meest recente [params-informatie.](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Upload-Video)
 
 #### <a name="externalid"></a>externalID 
 
@@ -83,22 +83,22 @@ Met deze parameter kunt u een ID die is gekoppeld aan de video opgeven. De ID ka
 
 #### <a name="indexingpreset"></a>indexingPreset
 
-Gebruik deze para meter om de AI-bundel te definiëren die u wilt Toep assen op uw audio-of video bestand. Deze parameter wordt gebruikt voor het configureren van het indexeringsproces. U kunt de volgende waarden opgeven:
+Gebruik deze parameter om de AI-bundel te definiëren die u wilt toepassen op uw audio- of videobestand. Deze parameter wordt gebruikt voor het configureren van het indexeringsproces. U kunt de volgende waarden opgeven:
 
-- `AudioOnly` – Indexeer en extraheer inzichten alleen met behulp van audio (video wordt genegeerd).
-- `VideoOnly` -Alleen inzichten indexeren en uitpakken met alleen video (audio wordt genegeerd).
-- `Default` – Indexeer en extraheer inzichten met behulp van audio en video.
-- `DefaultWithNoiseReduction` – Indexeer en extraheer inzichten van audio en video, terwijl er ruis reductie algoritmen worden toegepast op een audio stroom.
+- `AudioOnly` – Indexeren en inzichten extraheren met alleen audio (video negeren).
+- `VideoOnly` - Indexeren en inzichten extraheren met alleen video (audio negeren).
+- `Default` – Indexeren en inzichten extraheren met behulp van zowel audio als video.
+- `DefaultWithNoiseReduction` – Indexeer en extraheer inzichten uit zowel audio als video, terwijl algoritmen voor ruisvermindering worden toegepast op audiostreams.
 
-    De `DefaultWithNoiseReduction` waarde is nu toegewezen aan de standaard voorinstelling (afgeschaft).
-- `BasicAudio` -U kunt inzichten alleen indexeren en uitpakken met alleen audio (video wordt genegeerd), met inbegrip van alleen basis audio functies (transcriptie, vertaling, opmaak van uitvoer bijschriften en ondertiteling).
- - `AdvancedAudio` -U kunt inzichten alleen indexeren en uitpakken met alleen audio (video wordt genegeerd), inclusief geavanceerde audio functies (detectie van audio gebeurtenissen) naast de standaard audio analyse.
+    De `DefaultWithNoiseReduction` waarde is nu ingesteld op de standaardvoorinstelling (afgeschaft).
+- `BasicAudio` - Indexeren en inzichten extraheren met alleen audio (video negeren), met inbegrip van alleen basis audiofuncties (transcriptie, vertaling, uitvoerbijschriften en ondertiteling opmaken).
+ - `AdvancedAudio` - Indexeren en inzichten extraheren met alleen audio (video negeren), inclusief geavanceerde audiofuncties (detectie van audiogebeurtenissen) naast de standaard audioanalyse.
 
 > [!NOTE]
-> Video Indexer omvat Maxi maal twee sporen van audio. Als het bestand meer audio sporen bevat, worden deze behandeld als één spoor.<br/>
-Als u de nummers afzonderlijk wilt indexeren, moet u het relevante audio bestand extra heren en indexeren als `AudioOnly` .
+> Video Indexer bevat maximaal twee audionummers. Als er meer audionummers in het bestand staan, worden ze behandeld als één nummer.<br/>
+Als u de sporen afzonderlijk wilt indexeren, moet u het relevante audiobestand extraheren en indexeren als `AudioOnly` .
 
-De prijs is afhankelijk van de geselecteerde optie voor indexering. Raadpleeg voor meer informatie [Media Services prijzen](https://azure.microsoft.com/pricing/details/media-services/).
+De prijs is afhankelijk van de geselecteerde optie voor indexering. Raadpleeg prijzen voor Media Services [meer informatie.](https://azure.microsoft.com/pricing/details/media-services/)
 
 #### <a name="priority"></a>priority
 
@@ -110,10 +110,10 @@ De parameter **priority** wordt alleen ondersteund voor betaalde accounts.
 
 Zodra uw video is geüpload, codeert Video Indexer eventueel de video. Vervolgens gaat Video Indexer door naar het indexeren en analyseren van de video. Wanneer Video Indexer klaar is met analyseren, ontvangt u een melding met de video-ID.  
 
-Wanneer u de API [Video uploaden](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) of [Video opnieuw indexeren](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?) gebruikt, is een van de optionele parameters `streamingPreset`. Als u `streamingPreset` instelt op `Default`, `SingleBitrate` of `AdaptiveBitrate`, wordt het coderingsproces geactiveerd. Wanneer de indexerings- en coderingstaken klaar zijn, wordt de video gepubliceerd zodat u uw video ook kunt streamen. Het streaming-eindpunt vanwaar u de video wilt streamen, moet de status **Wordt uitgevoerd** hebben.
+Wanneer u de API [Video uploaden](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Upload-Video) of [Video opnieuw indexeren](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Re-Index-Video) gebruikt, is een van de optionele parameters `streamingPreset`. Als u `streamingPreset` instelt op `Default`, `SingleBitrate` of `AdaptiveBitrate`, wordt het coderingsproces geactiveerd. Wanneer de indexerings- en coderingstaken klaar zijn, wordt de video gepubliceerd zodat u uw video ook kunt streamen. Het streaming-eindpunt vanwaar u de video wilt streamen, moet de status **Wordt uitgevoerd** hebben.
 
-Voor SingleBitrate zijn de kosten van Standard encoder van toepassing op de uitvoer. Als de video hoogte groter is dan of gelijk is aan 720, Video Indexer deze als 1280x720 codeert. Anders als 640x468.
-De standaard instelling is [code ring met inhoud](../latest/encode-content-aware-concept.md).
+Voor SingleBitrate gelden de standaardkosten voor encoder per uitvoer. Als de hoogte van de video groter of gelijk is aan 720, Video Indexer codeert u deze als 1280x720. Anders als 640x468.
+De standaardinstelling is [inhoudsbewuste codering.](../latest/encode-content-aware-concept.md)
 
 Om de indexerings- en coderingstaken uit te voeren, heeft het [Azure Media Services-account dat is gekoppeld aan uw Video Indexer-account](connect-to-azure.md) gereserveerde eenheden nodig. Zie [Mediaverwerking schalen](../previous/media-services-scale-media-processing-overview.md) voor meer informatie. Aangezien deze rekentaken intensief zijn, wordt eenheidstype S3 aanbevolen. Het aantal gereserveerde eenheden bepaalt het maximale aantal taken dat parallel kan worden uitgevoerd. De aanbevolen basislijn is 10 gereserveerde S3-eenheden. 
 
@@ -129,21 +129,21 @@ Als de `videoUrl` niet is opgegeven, verwacht de Video Indexer dat u het bestand
 
 Het volgende C#-codefragment toont het gebruik van alle Video Indexer-API's samen.
 
-**Instructies voor het uitvoeren van het volgende code voorbeeld**
+**Instructies voor het uitvoeren van het volgende codevoorbeeld**
 
-Nadat u deze code naar uw ontwikkel platform hebt gekopieerd, moet u twee para meters opgeven: API Management verificatie sleutel en video-URL.
+Nadat u deze code naar uw ontwikkelplatform hebt kopieert, moet u twee parameters opgeven: API Management verificatiesleutel en video-URL.
 
-* API-sleutel – API-sleutel is uw persoonlijke API Management-abonnements sleutel, waarmee u een toegangs token kunt ophalen om bewerkingen uit te voeren op uw Video Indexer-account. 
+* API-sleutel: API-sleutel is uw persoonlijke API Management-abonnementssleutel, waarmee u een toegangs token kunt krijgen om bewerkingen uit te voeren op uw Video Indexer account. 
 
-    Als u uw API-sleutel wilt ophalen, gaat u door deze stroom:
+    Als u uw API-sleutel wilt op halen, gaat u door deze stroom:
 
     * Ga naar https://api-portal.videoindexer.ai/
     * Aanmelden
-    * Naar het   ->  abonnement voor **verificatie**  ->  **autorisatie** van producten
-    * De **primaire sleutel** kopiëren
-* Video-URL: een URL van het video-of audio bestand dat moet worden geïndexeerd. De URL moet verwijzen naar een mediabestand (HTML-pagina's worden niet ondersteund). Het bestand kan worden beveiligd door een toegangstoken dat is geleverd als onderdeel van de URI en het eindpunt voor het bestand moet worden beveiligd met TLS 1.2 of hoger. De URL moet worden gecodeerd.
+    * Ga naar **Autorisatie-abonnement**  ->  **voor**  ->  **productenautorisatie**
+    * De primaire **sleutel kopiëren**
+* Video-URL: een URL van het video-/audiobestand dat moet worden geïndexeerd. De URL moet verwijzen naar een mediabestand (HTML-pagina's worden niet ondersteund). Het bestand kan worden beveiligd door een toegangstoken dat is geleverd als onderdeel van de URI en het eindpunt voor het bestand moet worden beveiligd met TLS 1.2 of hoger. De URL moet worden gecodeerd.
 
-Het resultaat van het uitvoeren van het code voorbeeld bevat een Insight-widget-URL en een URL van een speler-widget waarmee u de inzichten en video die respectievelijk worden geüpload, kunt onderzoeken. 
+Het resultaat van het uitvoeren van het codevoorbeeld bevat een URL van de widget inzicht en een widget-URL voor de speler waarmee u respectievelijk de inzichten en video kunt onderzoeken die zijn geüpload. 
 
 
 ```csharp
@@ -325,7 +325,7 @@ De statuscodes in de volgende tabel kunnen worden geretourneerd door de uploadbe
 |---|---|---|
 |409|VIDEO_INDEXING_IN_PROGRESS|Dezelfde video wordt al verwerkt in het opgegeven account.|
 |400|VIDEO_ALREADY_FAILED|Dezelfde video kon minder dan twee uur geleden niet worden verwerkt in het opgegeven account. API-clients moeten ten minste twee uur wachten voordat ze een video opnieuw uploaden.|
-|429||Proef accounts zijn vijf uploads per minuut toegestaan. Betaalde accounts zijn toegestaan 50 uploads per minuut.|
+|429||Proefaccounts zijn 5 uploads per minuut toegestaan. Betaalde accounts zijn 50 uploads per minuut toegestaan.|
 
 ## <a name="uploading-considerations-and-limitations"></a>Overwegingen en beperkingen uploaden
  
@@ -335,13 +335,13 @@ De statuscodes in de volgende tabel kunnen worden geretourneerd door de uploadbe
 - De lengte van de aanvraag-URL is beperkt tot 6144 tekens waarbij de lengte van de querytekenreeks-URL is beperkt tot 4096 tekens.
 - De uploadgrootte met de bytematrixoptie is beperkt tot 2 GB.
 - Na 30 minuten treedt een time-out op voor de bytematrixoptie.
-- De URL die is opgenomen in de `videoURL` para meter moet worden gecodeerd.
+- De URL in de `videoURL` -param moet worden gecodeerd.
 - Het indexeren van Media Services-assets heeft dezelfde beperking als het indexeren via een URL.
 - Video Indexer heeft een maximale duurlimiet van vier uur voor één bestand.
 - De URL moet toegankelijk zijn (bijvoorbeeld een openbare URL). 
 
     Als het een privé-URL is, moet het toegangstoken in de aanvraag worden opgegeven.
-- De URL moet verwijzen naar een geldig Media bestand en niet naar een webpagina, zoals een koppeling naar de `www.youtube.com` pagina.
+- De URL moet verwijzen naar een geldig mediabestand en niet naar een webpagina, zoals een koppeling naar de `www.youtube.com` pagina.
 - In een betaald account kunt u maximaal 50 films per minuut uploaden, en in een proefaccount maximaal 5 films per minuut.
 
 > [!Tip]
@@ -351,4 +351,4 @@ De statuscodes in de volgende tabel kunnen worden geretourneerd door de uploadbe
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[De Azure Video Indexer-uitvoer controleren die door de API is geproduceerd](video-indexer-output-json-v2.md)
+[De Uitvoer van Azure Video Indexer die wordt geproduceerd door de API](video-indexer-output-json-v2.md)

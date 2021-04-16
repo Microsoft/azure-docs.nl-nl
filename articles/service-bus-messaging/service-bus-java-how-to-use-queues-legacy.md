@@ -1,16 +1,21 @@
 ---
 title: Azure Service Bus-wachtrijen gebruiken met Java
 description: In deze zelfstudie leert u hoe u Java-toepassingen kunt maken om berichten te verzenden naar en te ontvangen van een Azure Service Bus-wachtrij.
-ms.devlang: Java
-ms.topic: quickstart
 ms.date: 06/23/2020
-ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 1f7c5f71e75a1b683433531a9d95905e9a7d81cc
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.topic: quickstart
+ms.devlang: Java
+ms.custom:
+- seo-java-july2019
+- seo-java-august2019
+- seo-java-september2019
+- devx-track-java
+- mode-api
+ms.openlocfilehash: 38657f333fea4ca18fb76eb5832649067bfd01b4
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101729722"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538252"
 ---
 # <a name="quickstart-use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Quickstart: Azure Service Bus-wachtrijen met Java gebruiken om berichten te verzenden en te ontvangen
 

@@ -1,42 +1,42 @@
 ---
-title: Apps weer geven met behulp van uw Azure Active Directory-Tenant voor identiteits beheer
-description: Meer informatie over het weer geven van alle toepassingen met behulp van uw Azure Active Directory-Tenant voor identiteits beheer.
+title: Apps weergeven met behulp van Azure Active Directory tenant voor identiteitsbeheer
+description: Meer informatie over het weergeven van alle toepassingen met uw Azure Active Directory tenant voor identiteitsbeheer.
 services: active-directory
-author: kenwith
-manager: daveba
+author: iantheninja
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: reference
 ms.date: 01/07/2021
-ms.author: kenwith
-ms.openlocfilehash: 443e8c83ec29f9f0478e3881b9e6d6a8eb0bf403
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.author: iangithinji
+ms.openlocfilehash: b11f2dab97b3c45502c6050e06f0f39312f8c3c0
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99259783"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378070"
 ---
-# <a name="viewing-apps-using-your-azure-ad-tenant-for-identity-management"></a>Apps weer geven met uw Azure AD-Tenant voor identiteits beheer
-In de Quick Start- [serie op toepassings beheer](view-applications-portal.md) worden de basis principes uitgelegd. Hierin leert u hoe u alle apps kunt weer geven met behulp van uw Azure AD-Tenant voor identiteits beheer. In dit artikel Dives een beetje dieper op de typen apps die u vindt.
+# <a name="viewing-apps-using-your-azure-ad-tenant-for-identity-management"></a>Apps weergeven met uw Azure AD-tenant voor identiteitsbeheer
+De [Quickstart-reeks over toepassingsbeheer](view-applications-portal.md) laat u de basisbeginselen zien. In deze zelf-app leert u hoe u alle apps kunt weergeven met behulp van uw Azure AD-tenant voor identiteitsbeheer. In dit artikel gaan we dieper in op de typen apps die u kunt vinden.
 
-## <a name="why-does-a-specific-application-appear-in-my-all-applications-list"></a>Waarom wordt een specifieke toepassing weer gegeven in mijn lijst met alle toepassingen?
-Bij het filteren op **alle toepassingen** wordt in de **lijst** **alle toepassingen** elke service-principal-object in uw Tenant weer gegeven. Service-Principal-objecten kunnen op verschillende manieren in deze lijst worden weer gegeven:
-- Wanneer u een toepassing toevoegt vanuit de toepassings galerie, waaronder:
-   - **Azure AD-zakelijke toepassingen** : apps die zijn toegevoegd aan uw Tenant met behulp van de optie **bedrijfs toepassingen** in de Azure AD-Portal. Meestal worden apps geïntegreerd met de SAML-standaard.
-   - **Azure AD-App-registraties** : apps die zijn toegevoegd aan uw Tenant met behulp van de **app-registraties** optie in de Azure AD-Portal. Doorgaans ontwikkelde apps met behulp van de Open-ID Connect-en OAuth-standaarden.
-   - **Toepassings proxy toepassingen** : een toepassing die in uw on-premises omgeving wordt uitgevoerd en die u wilt voorzien van een beveiligde eenmalige aanmelding op een externe locatie
-- Wanneer u zich aanmeldt voor of zich aanmeldt bij een toepassing van derden die is geïntegreerd met Azure Active Directory. Een voor beeld is [Smart Sheet](https://app.smartsheet.com/b/home) of [DocuSign](https://www.docusign.net/member/MemberLogin.aspx).
-- Micro soft-apps, zoals Microsoft 365.
-- Wanneer u een nieuwe toepassings registratie toevoegt door een aangepaste toepassing te maken met behulp van het [toepassings register](../develop/quickstart-register-app.md)
-- Wanneer u een nieuwe toepassings registratie toevoegt door een aangepaste toepassing te maken met behulp van de [Portal voor toepassings registratie van de v 2.0-toepassing](../develop/quickstart-register-app.md)
-- Wanneer u een toepassing toevoegt, ontwikkelt u met behulp van de [ASP.NET-verificatie methoden](https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) of [verbonden services](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/) van Visual Studio
-- Wanneer u een Service-Principal-object maakt met behulp van de [Azure AD Power shell-module](/powershell/azure/active-directory/install-adv2)
-- Wanneer u [een toepassing](../develop/howto-convert-app-to-be-multi-tenant.md) als beheerder hebt om gegevens in uw Tenant te gebruiken
-- Wanneer een [gebruiker een toepassing](../develop/howto-convert-app-to-be-multi-tenant.md) gebruikt om gegevens in uw Tenant te gebruiken
-- Wanneer u bepaalde services voor het opslaan van gegevens in uw Tenant inschakelt. Een voor beeld is het opnieuw instellen van een wacht woord, dat wordt gemodelleerd als Service-Principal om het beleid voor wachtwoord herstel veilig op te slaan.
+## <a name="why-does-a-specific-application-appear-in-my-all-applications-list"></a>Waarom wordt een specifieke toepassing weergegeven in de lijst met alle toepassingen?
+Wanneer u filtert **op Alle toepassingen,** wordt in **de lijst Alle** toepassingen elk Service Principal-object in uw tenant weergegeven.  Service-principalobjecten kunnen op verschillende manieren in deze lijst worden weergegeven:
+- Wanneer u een toepassing uit de toepassingsgalerie toevoegt, met inbegrip van:
+   - **Azure AD - Bedrijfstoepassingen:** apps die zijn toegevoegd aan uw tenant met behulp van de optie **Bedrijfstoepassingen** in de Azure AD-portal. Meestal apps die zijn geïntegreerd met behulp van de SAML-standaard.
+   - **Azure AD - App-registraties:** apps toegevoegd aan uw tenant met behulp van **de App-registraties-optie** in de Azure AD-portal. Meestal aangepaste ontwikkelde apps die gebruikmaken van de Open ID Connect- en OAuth-standaarden.
+   - **toepassingsproxy Toepassingen:** een toepassing die wordt uitgevoerd in uw on-premises omgeving en die u extern beveiligde een aanmelding wilt bieden
+- Wanneer u zich aanmeldt voor of zich aanmeldt bij een toepassing van derden die is geïntegreerd met Azure Active Directory. Een voorbeeld is [Smartsheet](https://app.smartsheet.com/b/home) of [DocuSign.](https://www.docusign.net/member/MemberLogin.aspx)
+- Microsoft-apps zoals Microsoft 365.
+- Wanneer u een nieuwe toepassingsregistratie toevoegt door een aangepaste toepassing te maken met behulp van [het toepassingsregister](../develop/quickstart-register-app.md)
+- Wanneer u een nieuwe toepassingsregistratie toevoegt door een aangepaste toepassing te maken met behulp van de [V2.0-portal voor toepassingsregistratie](../develop/quickstart-register-app.md)
+- Wanneer u een toepassing toevoegt, ontwikkelt u met behulp van de Visual Studio van [ASP.NET-verificatiemethoden](https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) of [verbonden services](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/)
+- Wanneer u een service-principalobject maakt met behulp van de [Azure AD PowerShell-module](/powershell/azure/active-directory/install-adv2)
+- Wanneer u [een toepassing toestemming geeft als](../develop/howto-convert-app-to-be-multi-tenant.md) beheerder om gegevens in uw tenant te gebruiken
+- Wanneer een [gebruiker toestemming geeft aan een toepassing om](../develop/howto-convert-app-to-be-multi-tenant.md) gegevens in uw tenant te gebruiken
+- Wanneer u bepaalde services inschakelen die gegevens opslaan in uw tenant. Een voorbeeld hiervan is Wachtwoord opnieuw instellen, dat is gemodelleerd als een service-principal om uw beleid voor wachtwoord opnieuw instellen veilig op te slaan.
 
-Zie [hoe toepassingen worden toegevoegd aan Azure AD](../develop/active-directory-how-applications-are-added.md)voor meer informatie over hoe en waarom apps worden toegevoegd aan uw Directory.
+Zie Hoe toepassingen worden toegevoegd aan Azure AD voor meer informatie over hoe en waarom apps worden toegevoegd [aan uw directory.](../develop/active-directory-how-applications-are-added.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 [Toepassingen beheren met Azure Active Directory](what-is-application-management.md)

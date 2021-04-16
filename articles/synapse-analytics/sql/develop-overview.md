@@ -1,6 +1,6 @@
 ---
-title: Resources voor het ontwikkelen van Synapse SQL-functies
-description: Ontwikkel concepten, ontwerp beslissingen, aanbevelingen en coderings technieken voor Synapse SQL.
+title: Resources voor het ontwikkelen Synapse SQL functies
+description: Ontwikkelconcepten, ontwerpbeslissingen, aanbevelingen en coderingstechnieken voor Synapse SQL.
 services: synapse-analytics
 author: filippopovic
 manager: craigg
@@ -10,22 +10,22 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: d47b4847a12b63532e44a8a1a47101dd065f811b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4d842414d3046692c982ca3203957a96f8a01b37
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96446591"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107377327"
 ---
-# <a name="design-decisions-and-coding-techniques-for-synapse-sql-features-in-azure-synapse-analytics"></a>Ontwerp beslissingen en coderings technieken voor Synapse SQL-functies in azure Synapse Analytics
-In dit artikel vindt u een lijst met resources voor exclusieve SQL-groep en serverloze SQL-groeps functies van Synapse SQL. De aanbevolen artikelen worden opgesplitst in twee secties: belang rijke beslissingen met betrekking tot belangrijkste ontwerpen en ontwikkelings-en coderings technieken.
+# <a name="design-decisions-and-coding-techniques-for-synapse-sql-features-in-azure-synapse-analytics"></a>Ontwerpbeslissingen en coderingstechnieken voor Synapse SQL functies in Azure Synapse Analytics
+In dit artikel vindt u een lijst met resources voor toegewezen SQL-pool en serverloze SQL-poolfuncties van Synapse SQL. De aanbevolen artikelen zijn opgesplitst in twee secties: Belangrijke ontwerpbeslissingen en ontwikkelings- en coderingstechnieken.
 
-Het doel van deze artikelen is om u te helpen bij het ontwikkelen van de optimale technische benadering voor de Synapse SQL-onderdelen in azure Synapse Analytics.
+Het doel van deze artikelen is u te helpen bij het ontwikkelen van de optimale technische benadering voor de Synapse SQL onderdelen binnen Azure Synapse Analytics.
 
-## <a name="key-design-decisions"></a>Voornaamste ontwerp beslissingen
-De onderstaande artikelen markeren concepten en ontwerp beslissingen voor Synapse SQL Development:
+## <a name="key-design-decisions"></a>Belangrijke ontwerpbeslissingen
+In de onderstaande artikelen worden concepten en ontwerpbeslissingen voor Synapse SQL beschreven:
 
-| Artikel | toegewezen SQL-groep | serverloze SQL-pool |
+| Artikel | toegewezen SQL-pool | serverloze SQL-pool |
 | ------- | -------- | ------------- |
 | [Verbindingen](connect-overview.md)                    | Ja | Ja |
 | [Resource-klassen en gelijktijdigheid](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Ja    | Nee |
@@ -42,11 +42,11 @@ De onderstaande artikelen markeren concepten en ontwerp beslissingen voor Synaps
 
 ## <a name="recommendations"></a>Aanbevelingen
 
-Hieronder vindt u essentiële artikelen die de nadruk leggen op specifieke coderings technieken, tips en aanbevelingen voor ontwikkeling:
+Hieronder vindt u essentiële artikelen waarin specifieke coderingstechnieken, tips en aanbevelingen voor ontwikkeling worden benadrukt:
 
-| Artikel | toegewezen SQL-groep | serverloze SQL-pool |
+| Artikel | toegewezen SQL-pool | serverloze SQL-pool |
 | ------- | -------- | ------------- |
-| [Opgeslagen procedures](develop-stored-procedures.md)  | Ja                | Nee                      |
+| [Opgeslagen procedures](develop-stored-procedures.md)  | Ja                | Ja                      |
 | [Labels](develop-label.md)                           | Ja                | Nee                      |
 | [Weergaven](develop-views.md)                             | Ja                | Ja                     |
 | [Tijdelijke tabellen](develop-tables-temporary.md)       | Ja                | Ja                     |
@@ -56,5 +56,5 @@ Hieronder vindt u essentiële artikelen die de nadruk leggen op specifieke coder
 | [Variabele toewijzing](develop-variable-assignment.md) | Ja                | Ja                     |
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [SQL-Groep T-SQL-instructies](../sql-data-warehouse/sql-data-warehouse-reference-tsql-statements.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)voor meer informatie.
+Zie [T-SQL-instructies voor SQL-pool voor meer naslaginformatie.](../sql-data-warehouse/sql-data-warehouse-reference-tsql-statements.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 

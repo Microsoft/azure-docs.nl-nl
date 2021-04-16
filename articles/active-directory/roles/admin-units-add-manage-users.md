@@ -1,5 +1,5 @@
 ---
-title: Gebruikers in een beheereenheid toevoegen, verwijderen en er een lijst van maken - Azure Active Directory | Microsoft Docs
+title: Gebruikers in een beheereenheid toevoegen, verwijderen en Azure Active Directory | Microsoft Docs
 description: Gebruikers en hun rolmachtigingen beheren in een beheereenheid in Azure Active Directory
 services: active-directory
 documentationcenter: ''
@@ -23,7 +23,7 @@ ms.locfileid: "107496823"
 ---
 # <a name="add-and-manage-users-in-an-administrative-unit-in-azure-active-directory"></a>Gebruikers toevoegen en beheren in een beheereenheid in Azure Active Directory
 
-In Azure Active Directory (Azure AD) kunt u gebruikers toevoegen aan een beheereenheid voor een meer gedetailleerd beheerbereik.
+In Azure Active Directory (Azure AD) kunt u gebruikers toevoegen aan een beheereenheid voor een gedetailleerder beheerbereik.
 
 Zie Aan de slag om het gebruik van PowerShell en Microsoft Graph voor beheer van [beheereenheden voor te bereiden.](admin-units-manage.md#get-started)
 
@@ -35,7 +35,7 @@ U kunt gebruikers afzonderlijk of als bulkbewerking toewijzen aan beheereenheden
 
 - Afzonderlijke gebruikers toewijzen vanuit een gebruikersprofiel:
 
-   1. Meld u aan bij het [Azure AD-beheercentrum](https://portal.azure.com) met beheerdersmachtigingen voor bevoorrechte rollen.
+   1. Meld u aan bij het [Azure AD-beheercentrum met](https://portal.azure.com) beheerdersmachtigingen voor bevoorrechte rollen.
 
    1. Selecteer **Gebruikers** en selecteer vervolgens de gebruiker die aan een beheereenheid moet worden toegewezen om het profiel van de gebruiker te openen.
    
@@ -43,25 +43,25 @@ U kunt gebruikers afzonderlijk of als bulkbewerking toewijzen aan beheereenheden
    
    1. Als u de gebruiker wilt toewijzen aan  een of meer beheereenheden, selecteert u Toewijzen aan beheereenheid en selecteert u vervolgens in het rechterdeelvenster de beheereenheden waaraan u de gebruiker wilt toewijzen.
 
-       ![Schermopname van het deelvenster Beheereenheden voor het toewijzen van een gebruiker aan een beheereenheid.](./media/admin-units-add-manage-users/assign-users-individually.png)
+       ![Schermopname van het deelvenster 'Beheereenheden' voor het toewijzen van een gebruiker aan een beheereenheid.](./media/admin-units-add-manage-users/assign-users-individually.png)
 
 - Afzonderlijke gebruikers toewijzen vanuit een beheereenheid:
 
-   1. Meld u aan bij het [Azure AD-beheercentrum](https://portal.azure.com) met beheerdersmachtigingen voor bevoorrechte rollen.
-   1. Selecteer **Beheereenheden** en selecteer vervolgens de beheereenheid waar de gebruiker moet worden toegewezen.
+   1. Meld u aan bij het [Azure AD-beheercentrum met](https://portal.azure.com) beheerdersmachtigingen voor bevoorrechte rollen.
+   1. Selecteer **Beheereenheden en** selecteer vervolgens de beheereenheid aan de gebruiker die moet worden toegewezen.
    1. Selecteer **Alle gebruikers,** selecteer **Lid** toevoegen  en selecteer vervolgens in het deelvenster Lid toevoegen een of meer gebruikers die u wilt toewijzen aan de beheereenheid.
 
         ![Schermopname van het deelvenster Gebruikers van de beheereenheid voor het toewijzen van een gebruiker aan een beheereenheid.](./media/admin-units-add-manage-users/assign-to-admin-unit.png)
 
 - Gebruikers toewijzen als een bulkbewerking:
 
-   1. Meld u aan bij het [Azure AD-beheercentrum](https://portal.azure.com) met beheerdersmachtigingen voor bevoorrechte rollen.
+   1. Meld u aan bij het [Azure AD-beheercentrum met](https://portal.azure.com) beheerdersmachtigingen voor bevoorrechte rollen.
 
    1. Selecteer **Beheereenheden.**
 
    1. Selecteer de beheereenheid waaraan u gebruikers wilt toevoegen.
 
-   1. Selecteer **Gebruikers**  >  **Bulkactiviteiten**  >  **Bulksgewijs leden toevoegen.** Vervolgens kunt u de csv-sjabloon (door komma's gescheiden waarden) downloaden en het bestand bewerken. De indeling is eenvoudig en er moet één user principal name elke regel worden toegevoegd. Nadat het bestand gereed is, kunt u het opslaan op een geschikte locatie en vervolgens uploaden als onderdeel van deze stap.
+   1. Selecteer **Gebruikers**  >  **Bulkactiviteiten**  >  **Leden bulksgewijs toevoegen.** Vervolgens kunt u de csv-sjabloon (door komma's gescheiden waarden) downloaden en het bestand bewerken. De indeling is eenvoudig en er moet één user principal name elke regel worden toegevoegd. Nadat het bestand gereed is, sla het op een geschikte locatie op en uploadt u het als onderdeel van deze stap.
 
       ![Schermopname van het deelvenster Gebruikers voor het bulksgewijs toewijzen van gebruikers aan een beheereenheid.](./media/admin-units-add-manage-users/bulk-assign-to-admin-unit.png)
 
@@ -143,7 +143,7 @@ U kunt een gebruiker op twee manieren uit een beheereenheid verwijderen:
 
 * Ga in Azure Portal naar **Azure AD** en selecteer vervolgens **Gebruikers**. 
   1. Selecteer de gebruiker om het profiel van de gebruiker te openen. 
-  1. Selecteer de beheereenheid waar u de gebruiker uit wilt verwijderen en selecteer **vervolgens Verwijderen uit beheereenheid**.
+  1. Selecteer de beheereenheid waar u de gebruiker uit wilt verwijderen en selecteer vervolgens **Verwijderen uit de beheereenheid**.
 
      ![Schermopname die laat zien hoe u een gebruiker uit een beheereenheid verwijdert uit het profieldeelvenster van de gebruiker.](./media/admin-units-add-manage-users/user-remove-admin-units.png)
 

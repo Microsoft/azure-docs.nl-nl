@@ -57,7 +57,7 @@ Objectnamen moeten uniek zijn in vergelijking met andere objecten van hetzelfde 
 |Intentie, entiteit|Alle namen van intenties en entiteiten moeten uniek zijn in een versie van een app.|
 |ML-entiteitsonderdelen|Alle machine learning-entiteitsonderdelen (onderliggende entiteiten) moeten uniek zijn binnen die entiteit voor onderdelen op hetzelfde niveau.|
 |Functies | Alle benoemde functies, zoals woordgroepenlijsten, moeten uniek zijn binnen een versie van een app.|
-|Entiteitsrollen|Alle rollen in een entiteit of entiteitsonderdeel moeten uniek zijn wanneer ze zich op hetzelfde entiteitsniveau (bovenliggend, onderliggend, onderliggend element, enzovoort) hebben.|
+|Entiteitsrollen|Alle rollen in een entiteit of entiteitsonderdeel moeten uniek zijn wanneer ze zich op hetzelfde entiteitsniveau (bovenliggend, onderliggend, kleinkind, enzovoort) hebben.|
 
 ## <a name="object-naming"></a>Objectnaamgeving
 
@@ -102,7 +102,7 @@ Gebruik het _type_, `LUIS` , bij het filteren van resources in de Azure Portal. 
 
 ### <a name="speech-integration"></a>Spraakintegratie
 
-[Spraakintegratie](../speech-service/how-to-recognize-intents-from-speech-csharp.md) biedt 1.000 eindpuntaanvragen per eenheidskosten.
+[Spraakintegratie biedt](../speech-service/how-to-recognize-intents-from-speech-csharp.md) 1.000 eindpuntaanvragen per eenheidskosten.
 
 [Meer informatie over prijzen.][pricing]
 

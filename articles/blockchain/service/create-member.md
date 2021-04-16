@@ -1,16 +1,18 @@
 ---
 title: Een Azure Blockchain Service-lid maken - Azure Portal
 description: Maak een Azure Blockchain Service-lid voor een blockchain-consortium behulp van Azure Portal.
+ms.reviewer: ravastra
 ms.date: 07/16/2020
 ms.topic: quickstart
-ms.reviewer: ravastra
-ms.custom: references_regions
-ms.openlocfilehash: 8a7f5aaea56f34e8107664ab786a14b59cd1cb7d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom:
+- references_regions
+- mode-portal
+ms.openlocfilehash: 9fe8b7856a99930c16b4173e432fa0b30642582c
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91292724"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107536203"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-the-azure-portal"></a>Quickstart: Een Azure Blockchain Service-blockchain-lid maken met behulp van Azure Portal
 

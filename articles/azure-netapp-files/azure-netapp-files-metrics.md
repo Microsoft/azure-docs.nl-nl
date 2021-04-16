@@ -1,6 +1,6 @@
 ---
 title: Metrische gegevens voor Azure NetApp Files | Microsoft Docs
-description: Azure NetApp Files voorziet in metrische gegevens over de toegewezen opslag, het werkelijke gebruik van de opslag, het volume-IOPS en de latentie. Gebruik deze metrische gegevens om inzicht te krijgen in het gebruik en de prestaties.
+description: Azure NetApp Files biedt metrische gegevens over toegewezen opslag, daadwerkelijk opslaggebruik, volume-IOPS en latentie. Gebruik deze metrische gegevens om inzicht te krijgen in het gebruik en de prestaties.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,58 +12,62 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/04/2020
+ms.date: 04/12/2021
 ms.author: b-juche
-ms.openlocfilehash: a17e6cc0479cf8ff2306736994a369d9e44dfdda
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b581470a886ff73739edfee7f45c64295eeeb1f0
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96745941"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107388602"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Metrische gegevens voor Azure NetApp Files
 
-Azure NetApp Files voorziet in metrische gegevens over de toegewezen opslag, het werkelijke gebruik van de opslag, het volume-IOPS en de latentie. Door deze metrische gegevens te analyseren, kunt u een beter inzicht krijgen in het gebruiks patroon en de volume prestaties van uw NetApp-accounts.  
+Azure NetApp Files biedt metrische gegevens over toegewezen opslag, daadwerkelijk opslaggebruik, volume-IOPS en latentie. Door deze metrische gegevens te analyseren, krijgt u een beter inzicht in het gebruikspatroon en de volumeprestaties van uw NetApp-accounts.  
 
-## <a name="usage-metrics-for-capacity-pools"></a><a name="capacity_pools"></a>Metrische gegevens over gebruik voor capaciteits Pools
+U kunt metrische gegevens voor een capaciteitspool of volume vinden door de **capaciteitspool of** het volume te **selecteren.**  Klik vervolgens op **Metrische gegevens** om de beschikbare metrische gegevens weer te geven: 
 
-- *Grootte toegewezen geheugen*   
-    De ingerichte grootte van de pool.
+[![Momentopname die laat zien hoe u naar de metrische pull-down navigeert. ](../media/azure-netapp-files/metrics-navigate-volume.png)](../media/azure-netapp-files/metrics-navigate-volume.png#lightbox)
 
-- *Groep toegewezen aan volume grootte*  
-    Het totale volume quotum (GiB) in een opgegeven capaciteits groep (dat wil zeggen, het totaal van de ingerichte grootte van het volume in de capaciteits groep).  
-    Deze grootte is het formaat dat u hebt geselecteerd tijdens het maken van het volume.  
+## <a name="usage-metrics-for-capacity-pools"></a><a name="capacity_pools"></a>Metrische gegevens over gebruik voor capaciteitspools
 
-- *Verbruikte grootte van pool*  
-    Het totale aantal logische ruimte (GiB) dat wordt gebruikt voor alle volumes in een capaciteits pool.  
+- *Toegewezen poolgrootte*   
+    De inrichtende grootte van de pool.
 
-- *Totale grootte van de moment opname voor de pool*    
-    De som van de grootte van de moment opname van alle volumes in de pool.
+- *Pool toegewezen aan volumegrootte*  
+    Het totale volumequotum (GiB) in een bepaalde capaciteitspool (dat wil zeggen, het totaal van de inrichten grootten van de volumes in de capaciteitspool).  
+    Deze grootte is de grootte die u hebt geselecteerd tijdens het maken van het volume.  
 
-## <a name="usage-metrics-for-volumes"></a><a name="volumes"></a>Metrische gegevens over het gebruik voor volumes
+- *Verbruikte poolgrootte*  
+    Het totale aantal logische ruimte (GiB) dat wordt gebruikt voor volumes in een capaciteitspool.  
 
-- *Percentage verbruikte grootte van volume*    
-    Het percentage van het verbruikte volume, inclusief moment opnamen.  
-- *Grootte van toegewezen volume*   
-    De ingerichte grootte van een volume
-- *Volume quotum grootte*    
-    De quotum grootte (GiB) waarmee het volume is ingericht.   
-- *Grootte van gebruikt volume*   
+- *Totale grootte van momentopname voor de pool*    
+    De som van de grootte van de momentopname van alle volumes in de pool.
+
+## <a name="usage-metrics-for-volumes"></a><a name="volumes"></a>Metrische gegevens over gebruik voor volumes
+
+- *Percentage volume verbruikte grootte*    
+    Het percentage van het verbruikte volume, inclusief momentopnamen.  
+- *Toegewezen volumegrootte*   
+    De inrichtende grootte van een volume
+- *Volumequotumgrootte*    
+    De quotumgrootte (GiB) waar het volume mee wordt ingericht.   
+- *Volume verbruikte grootte*   
     Logische grootte van het volume (gebruikte bytes).  
-    Deze grootte bevat logische ruimte die wordt gebruikt door actieve bestands systemen en moment opnamen.  
-- *Grootte van moment opname van volume*   
-   De grootte van alle moment opnamen in een volume.  
+    Deze grootte omvat logische ruimte die wordt gebruikt door actieve bestandssystemen en momentopnamen.  
+- *Grootte van momentopname van volume*   
+   De grootte van alle momentopnamen in een volume.  
 
-## <a name="performance-metrics-for-volumes"></a>Prestatie gegevens voor volumes
+## <a name="performance-metrics-for-volumes"></a>Metrische prestatiegegevens voor volumes
 
-- *Gemiddelde lees latentie*   
-    De gemiddelde tijd voor lees bewerkingen van het volume in milliseconden.
-- *Gemiddelde schrijf latentie*   
-    De gemiddelde tijd voor het schrijven van het volume in milliseconden.
+- *Gemiddelde leeslatentie*   
+    De gemiddelde tijd voor het lezen van het volume in milliseconden.
+- *Gemiddelde schrijflatentie*   
+    De gemiddelde tijd voor schrijftijd van het volume in milliseconden.
 - *IOPS lezen*   
-    Het aantal lees bewerkingen naar het volume per seconde.
+    Het aantal lees leest naar het volume per seconde.
 - *IOPS schrijven*   
-    Het aantal schrijf bewerkingen naar het volume per seconde.
+    Het aantal schrijf schrijft naar het volume per seconde.
 <!-- These two metrics are not yet available, until ~ 2020.09
 - *Read MiB/s*   
     Read throughput in bytes per second.
@@ -83,31 +87,31 @@ Azure NetApp Files voorziet in metrische gegevens over de toegewezen opslag, het
 -->
 
 
-## <a name="volume-replication-metrics"></a><a name="replication"></a>Metrische gegevens van de volume replicatie
+## <a name="volume-replication-metrics"></a><a name="replication"></a>Metrische gegevens voor volumereplicatie
 
 > [!NOTE] 
-> * De grootte van de netwerk overdracht (bijvoorbeeld de metrische gegevens van de *totale overdracht van de volume replicatie* ) kan verschillen van de bron-of doel volumes van een replicatie tussen regio's. Dit gedrag is het gevolg van een efficiënte replicatie-engine die wordt gebruikt om de kosten van de netwerk overdracht te minimaliseren.
-> * De metrische gegevens voor de volume replicatie worden momenteel ingevuld voor de replicatie doel volumes en niet de bron van de replicatie relatie.
+> * De grootte van de  netwerkoverdracht (bijvoorbeeld de totale overdrachtsgegevens voor volumereplicatie) kan verschillen van de bron- of doelvolumes van een replicatie tussen regio's. Dit gedrag is het resultaat van een efficiënte replicatie-engine die wordt gebruikt om de kosten voor netwerkoverdracht te minimaliseren.
+> * Metrische gegevens voor volumereplicatie worden momenteel ingevuld voor replicatiedoelvolumes en niet voor de bron van de replicatierelatie.
 
-- *Is de status van de volume replicatie in orde*   
-    De voor waarde van de replicatie relatie. De status in orde wordt aangegeven door `1` . Een slechte status wordt aangegeven door `0` .
+- *Is de status van volumereplicatie in orde?*   
+    De voorwaarde van de replicatierelatie. Een goede status wordt aangeduid met `1` . Een slechte status wordt aangeduid met `0` .
 
-- *Wordt de overdracht van de volume replicatie*    
-    Hiermee wordt aangegeven of de status van de volume replicatie ' Transfer ' is. 
+- *Wordt volumereplicatie overgeplaatst?*    
+    Of de status van de volumereplicatie 'overdracht' is. 
  
-- *Vertragings tijd voor volume replicatie*   
-    De hoeveelheid tijd in seconden waarmee de gegevens op de mirror lags achter de bron. 
+- *Vertragingstijd volumereplicatie*   
+    De hoeveelheid tijd in seconden waarmee de gegevens op de mirror achterblijven op de bron. 
 
-- *Duur van de laatste overdracht van volume replicatie*   
-    De hoeveelheid tijd in seconden die het duurt voordat de laatste overdracht is voltooid. 
+- *Duur van laatste overdracht voor volumereplicatie*   
+    De hoeveelheid tijd in seconden die nodig was om de laatste overdracht te voltooien. 
 
-- *Grootte van laatste overdracht volume replicatie*    
+- *Grootte van laatste overdracht voor volumereplicatie*    
     Het totale aantal bytes dat is overgedragen als onderdeel van de laatste overdracht. 
 
-- *Voortgang van volume replicatie*    
-    De totale hoeveelheid gegevens die wordt overgedragen voor de huidige overdrachts bewerking. 
+- *Voortgang van volumereplicatie*    
+    De totale hoeveelheid gegevens die wordt overgedragen voor de huidige overdrachtsbewerking. 
 
-- *Totale overdracht van volume replicatie*   
+- *Totale overdracht volumereplicatie*   
     De cumulatieve bytes die zijn overgedragen voor de relatie. 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -1,16 +1,21 @@
 ---
 title: Azure Service Bus-wachtrijen gebruiken met Java (azure-messaging-servicebus)
 description: In deze zelfstudie leert u hoe u Java gebruikt om berichten te verzenden naar en te ontvangen van een Azure Service Bus-wachtrij. U gebruikt het nieuwe pakket azure-messaging-servicebus.
-ms.devlang: Java
-ms.topic: quickstart
 ms.date: 02/13/2021
-ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 1fab8d3f603b3c2c7e3c307d3d2ce53590d7511c
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.topic: quickstart
+ms.devlang: Java
+ms.custom:
+- seo-java-july2019
+- seo-java-august2019
+- seo-java-september2019
+- devx-track-java
+- mode-api
+ms.openlocfilehash: e3998e812bb921ff8bea5e83199bc4e142ed2e83
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739760"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533429"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-java"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (Java)
 In deze quickstart maakt u een Java-app om berichten te verzenden naar en te ontvangen van een Azure Service Bus-wachtrij. 
@@ -32,9 +37,9 @@ In deze sectie maakt u een Java-consoleproject en voegt u code toe om berichten 
 Maak een Java-project met Eclipse of een hulpprogramma van uw keuze. 
 
 ### <a name="configure-your-application-to-use-service-bus"></a>Uw toepassing configureren voor het gebruik van Service Bus
-Verwijzingen toevoegen aan Azure core-en Azure Service Bus-bibliotheken. 
+Voeg verwijzingen toe naar Azure Core- en Azure Service Bus bibliotheken. 
 
-Als u een verduistering gebruikt en een Java-Console toepassing hebt gemaakt, converteert u uw Java-project naar een Maven: Klik met de rechter muisknop op het project in het venster **pakket Verkenner** en selecteer **Configure**  ->  **Convert to Maven project**. Voeg vervolgens afhankelijkheden toe aan deze twee bibliotheken, zoals wordt weer gegeven in het volgende voor beeld.
+Als u Eclipse gebruikt en een Java-consoletoepassing hebt gemaakt, converteert u uw Java-project naar een Maven: klik met de rechtermuisknop op het project in het **venster Package Explorer** en selecteer **Converteren** naar  ->  **Maven-project configureren.** Voeg vervolgens afhankelijkheden toe aan deze twee bibliotheken, zoals wordt weergegeven in het volgende voorbeeld.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -174,7 +179,7 @@ In deze sectie voegt u code toe om berichten uit de wachtrij op te halen.
 1. Voeg een methode toe met de naam `receiveMessages` om berichten van de wachtrij te ontvangen. Met deze methode maakt u een `ServiceBusProcessorClient` voor de wachtrij door een handler op te geven voor de verwerking van berichten en een andere voor het afhandelen van fouten. Vervolgens wordt de verwerker gestart, wordt er een paar seconden gewacht, worden de ontvangen berichten getoond en wordt de verwerker gestopt en gesloten.
 
     > [!IMPORTANT]
-    > Vervang `QueueTest` in `QueueTest::processMessage` de code door de naam van uw klasse. 
+    > Vervang `QueueTest` in in de code door de naam van uw `QueueTest::processMessage` klasse. 
 
     ```java
     // handles received messages
@@ -199,7 +204,7 @@ In deze sectie voegt u code toe om berichten uit de wachtrij op te halen.
         processorClient.close();        
     }   
     ```
-2. Voeg de `processMessage` methode toe om een bericht te verwerken dat is ontvangen van het service bus-abonnement. 
+2. Voeg de `processMessage` methode toe om een bericht te verwerken dat is ontvangen van Service Bus abonnement. 
 
     ```java
     private static void processMessage(ServiceBusReceivedMessageContext context) {
@@ -208,7 +213,7 @@ In deze sectie voegt u code toe om berichten uit de wachtrij op te halen.
             message.getSequenceNumber(), message.getBody());
     }    
     ```
-3. Voeg de `processError` methode toe om fout berichten af te handelen.
+3. Voeg de methode `processError` toe om foutberichten te verwerken.
 
     ```java
     private static void processError(ServiceBusErrorContext context, CountDownLatch countdownLatch) {

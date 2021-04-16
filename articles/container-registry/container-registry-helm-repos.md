@@ -1,64 +1,61 @@
 ---
 title: Helm-grafieken opslaan
-description: Meer informatie over het opslaan van helm-grafieken voor uw Kubernetes-toepassingen met behulp van opslag plaatsen in Azure Container Registry
+description: Meer informatie over het opslaan van Helm-grafieken voor uw Kubernetes-toepassingen met behulp van opslagplaatsen in Azure Container Registry
 ms.topic: article
-ms.date: 06/12/2020
-ms.openlocfilehash: 9897ed6e43813c16314076b0322cd263cd2ed150
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.date: 04/15/2021
+ms.openlocfilehash: 6698eb8f5e18511717e44bf5dc06a51d8f3903b8
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106223078"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537310"
 ---
-# <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Helm-grafieken pushen en pullen naar een Azure container Registry
+# <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Helm-grafieken pushen en naar een Azure-containerregister halen
 
-Als u snel toepassingen wilt beheren en implementeren voor Kubernetes, kunt u het [open-source helm-pakket beheer][helm]gebruiken. Met helm worden toepassings pakketten gedefinieerd als [grafieken](https://helm.sh/docs/topics/charts/), die worden verzameld en opgeslagen in een [helm-grafiek opslagplaats](https://helm.sh/docs/topics/chart_repository/).
+Als u snel toepassingen voor Kubernetes wilt beheren en implementeren, kunt u de [opensource Helm-pakketbeheer gebruiken.][helm] Met Helm worden toepassingspakketten gedefinieerd als [grafieken](https://helm.sh/docs/topics/charts/), die worden verzameld en opgeslagen in een [Helm-grafiekopslagplaats.](https://helm.sh/docs/topics/chart_repository/)
 
-Dit artikel laat u zien hoe u helm-grafieken kunt hosten in een Azure container Registry met behulp van helm 3-opdrachten. In veel scenario's bouwt en uploadt u uw eigen grafieken voor de toepassingen die u ontwikkelt. Zie de [hand leiding voor de gids voor grafiek sjablonen][develop-helm-charts]voor meer informatie over het bouwen van uw eigen helm-grafieken. U kunt ook een bestaand helm-diagram opslaan vanuit een andere helm-opslag plaats.
+In dit artikel wordt beschreven hoe u Helm-grafieken kunt hosten in een Azure-containerregister met behulp van Helm 3-opdrachten. In veel scenario's zou u uw eigen grafieken maken en uploaden voor de toepassingen die u ontwikkelt. Zie de ontwikkelaarshandleiding voor grafieksjablonen voor meer informatie over het bouwen van [uw eigen Helm-grafieken.][develop-helm-charts] U kunt ook een bestaande Helm-grafiek opslaan vanuit een andere Helm-repo.
 
-> [!IMPORTANT]
-> Ondersteuning voor helm-grafieken in Azure Container Registry is momenteel beschikbaar als preview-versie. Previews worden aan u beschikbaar gesteld op voor waarde dat u akkoord gaat met de aanvullende [gebruiks voorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
+## <a name="helm-3-or-helm-2"></a>Helm 3 of Helm 2?
 
-## <a name="helm-3-or-helm-2"></a>Helm 3 of helm 2?
+Als u Helm-grafieken wilt opslaan, beheren en installeren, gebruikt u een Helm-client en de Helm CLI. Belangrijke releases van de Helm-client zijn Helm 3 en Helm 2. Zie de veelgestelde vragen over de versie voor meer informatie over [de verschillen in versies.](https://helm.sh/docs/faq/) 
 
-Als u helm-grafieken wilt opslaan, beheren en installeren, gebruikt u een helm-client en de helm CLI. Grote releases van de helm-client zijn onder andere helm 3 en helm 2. Raadpleeg de [Veelgestelde vragen](https://helm.sh/docs/faq/)over de versie voor meer informatie over de versie verschillen. 
+Helm 3 moet worden gebruikt voor het hosten van Helm-grafieken in Azure Container Registry. Met Helm 3 kunt u het volgende doen:
 
-Helm 3 moet worden gebruikt voor het hosten van helm-grafieken in Azure Container Registry. Met helm 3 kunt u:
-
-* Kan een of meer helm-opslag plaatsen in een Azure container Registry maken
-* Sla helm 3-grafieken in een REGI ster op als [OCI-artefacten](container-registry-image-formats.md#oci-artifacts). Momenteel is helm 3-ondersteuning voor OCI *experimenteel*.
-* Verificatie met het REGI ster met behulp van de `helm registry login` opdracht.
-* `helm chart`Opdrachten in de helm CLI gebruiken om helm-grafieken in een REGI ster te pushen, te verzamelen en te beheren
-* Gebruiken `helm install` voor het installeren van grafieken naar een Kubernetes-cluster vanuit een lokale opslagplaats cache.
+* Kan een of meer Helm-opslagplaatsen maken in een Azure-containerregister
+* Sla Helm 3-grafieken op in een register [als OCI-artefacten.](container-registry-image-formats.md#oci-artifacts) Azure Container Registry biedt ga-ondersteuning voor [OCI-artefacten,](container-registry-oci-artifacts.md)waaronder Helm-grafieken.
+* Verifieert u met uw register met behulp van de `helm registry login` opdracht .
+* Gebruik opdrachten in de Helm CLI om Helm-grafieken in een register te `helm chart` pushen, op te halen en te beheren
+* Gebruik om grafieken vanuit een lokale opslagplaatscache te installeren op een `helm install` Kubernetes-cluster.
 > [!NOTE]
-> Vanaf helm 3 kunnen [AZ ACR helm][az-acr-helm] -opdrachten voor gebruik met de helm 2-client worden afgeschaft. Vóór het verwijderen van de opdracht wordt een kennisgeving van Mini maal 3 maanden gegeven. Als u eerder helm 2-grafieken hebt geïmplementeerd, raadpleegt u [helm v2 migreren naar v3](https://helm.sh/docs/topics/v2_v3_migration/).
+> Vanaf Helm 3 worden [az acr helm-opdrachten][az-acr-helm] voor gebruik met de Helm 2-client afgeschaft. Er wordt minimaal drie maanden vooraf gewerkt voordat de opdracht wordt verwijderd. Zie Helm v2 migreren naar v3 als u eerder Helm 2-grafieken [hebt geïmplementeerd.](https://helm.sh/docs/topics/v2_v3_migration/)
 
 ## <a name="prerequisites"></a>Vereisten
 
 De volgende resources zijn nodig voor het scenario in dit artikel:
 
-- **Een Azure container Registry** in uw Azure-abonnement. Maak, indien nodig, een REGI ster met de [Azure Portal](container-registry-get-started-portal.md) of de [Azure cli](container-registry-get-started-azure-cli.md).
-- **Helm-client versie 3.1.0 of hoger** -Voer uit `helm version` om uw huidige versie te vinden. Zie Installing [helm][helm-install](Engelstalig) voor meer informatie over het installeren en upgraden van helm.
-- **Een Kubernetes-cluster** waarop u een helm-grafiek wilt installeren. Maak indien nodig een [Azure Kubernetes service-cluster][aks-quickstart]. 
-- **Azure CLI-versie 2.0.71 of hoger** : Voer uit `az --version` om de versie te vinden. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+- **Een Azure-containerregister** in uw Azure-abonnement. Maak indien nodig een register met behulp van [de Azure Portal](container-registry-get-started-portal.md) of de [Azure CLI.](container-registry-get-started-azure-cli.md)
+- **Helm-clientversie 3.1.0 of hoger:** voer uit om `helm version` uw huidige versie te vinden. Zie Helm installeren voor meer informatie over het installeren en upgraden [van Helm.][helm-install]
+- **Een Kubernetes-cluster** waarin u een Helm-grafiek installeert. Maak indien nodig een [Azure Kubernetes Service cluster][aks-quickstart]. 
+- **Azure CLI versie 2.0.71 of hoger:** voer uit `az --version` om de versie te vinden. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="enable-oci-support"></a>OCI-ondersteuning inschakelen
 
-Gebruik de `helm version` opdracht om te controleren of u helm 3 hebt geïnstalleerd:
+Gebruik de `helm version` opdracht om te controleren of u Helm 3 hebt geïnstalleerd:
 
 ```console
 helm version
 ```
 
-Stel de volgende omgevings variabele in om OCI-ondersteuning in te scha kelen in de helm 3-client. Op dit moment is dit een experimenteel product. 
+Stel de volgende omgevingsvariabele in om OCI-ondersteuning in teschakelen in de Helm 3-client. Deze ondersteuning is momenteel experimenteel. 
 
 ```console
 export HELM_EXPERIMENTAL_OCI=1
 ```
 
-## <a name="create-a-sample-chart"></a>Een voorbeeld grafiek maken
+## <a name="create-a-sample-chart"></a>Een voorbeeldgrafiek maken
 
-Maak een test diagram met behulp van de volgende opdrachten:
+Maak een testgrafiek met behulp van de volgende opdrachten:
 
 ```console
 mkdir helmtest
@@ -67,14 +64,14 @@ cd helmtest
 helm create hello-world
 ```
 
-Als eenvoudig voor beeld wijzigt u de map in de `templates` map en verwijdert u eerst de inhoud.
+Als eenvoudig voorbeeld wijzigt u de map in de `templates` map en verwijdert u daar eerst de inhoud:
 
 ```console
 cd hello-world/templates
 rm -rf *
 ```
 
-Maak in de `templates` map een bestand met `configmap.yaml` de naam door de volgende opdracht uit te voeren:
+Maak in `templates` de map een bestand met de naam door de volgende opdracht uit te `configmap.yaml` voeren:
 
 ```console
 cat <<EOF > configmap.yaml
@@ -87,13 +84,13 @@ data:
 EOF
 ```
 
-Zie [aan](https://helm.sh/docs/chart_template_guide/getting_started/) de slag in de helm-documenten voor meer informatie over het maken en uitvoeren van dit voor beeld.
+Zie voor meer informatie over het maken en uitvoeren van [dit Aan de slag](https://helm.sh/docs/chart_template_guide/getting_started/) in de Helm Docs.
 
-## <a name="save-chart-to-local-registry-cache"></a>Grafiek opslaan naar lokale register cache
+## <a name="save-chart-to-local-registry-cache"></a>Grafiek opslaan in lokale registercache
 
-Wijzig de map naar de submap `hello-world` . Vervolgens voert `helm chart save` u uit om een kopie van de grafiek lokaal op te slaan en maakt u ook een alias met de volledig gekwalificeerde naam van het REGI ster (alle kleine letters) en de doel opslagplaats en-tag. 
+Wijzig de map in de `hello-world` submap. Voer vervolgens uit om een kopie van de grafiek lokaal op te slaan en maak ook een alias met de volledig gekwalificeerde naam van het register (in kleine letters) en de doelopslagplaats en `helm chart save` tag. 
 
-In het volgende voor beeld is de register naam *mycontainerregistry*, de doel-opslag plaats is *Hallo wereld* en de label van de doel grafiek is *v1*, maar vervangt waarden voor uw omgeving:
+In het volgende voorbeeld is de registernaam *mycontainerregistry,* is de doel-repo *hello-world* en is de doelgrafiektag *v1,* maar vervangt u waarden voor uw omgeving:
 
 ```console
 cd ..
@@ -101,7 +98,7 @@ helm chart save . hello-world:v1
 helm chart save . mycontainerregistry.azurecr.io/helm/hello-world:v1
 ```
 
-Voer uit `helm chart list` om te bevestigen dat u de grafieken in de lokale register cache hebt opgeslagen. De uitvoer ziet er ongeveer zo uit:
+Voer `helm chart list` uit om te bevestigen dat u de grafieken in de lokale registercache hebt opgeslagen. De uitvoer ziet er ongeveer zo uit:
 
 ```console
 REF                                                      NAME            VERSION DIGEST  SIZE            CREATED
@@ -109,11 +106,11 @@ hello-world:v1                                           hello-world       0.1.0
 mycontainerregistry.azurecr.io/helm/hello-world:v1       hello-world       0.1.0   5899db0 3.2 KiB        2 minutes
 ```
 
-## <a name="authenticate-with-the-registry"></a>Verifiëren met het REGI ster
+## <a name="authenticate-with-the-registry"></a>Verifiëren met het register
 
-Voer de `helm registry login` opdracht in de helm 3 CLI uit om [met het REGI ster te verifiëren](container-registry-authentication.md) met behulp van de referenties die relevant zijn voor uw scenario.
+Voer de opdracht uit in de Helm 3 CLI om te verifiëren bij het register met behulp van `helm registry login` referenties die geschikt zijn voor uw scenario. [](container-registry-authentication.md)
 
-Maak bijvoorbeeld een Azure Active Directory service- [principal met pull-en push-machtigingen](container-registry-auth-service-principal.md#create-a-service-principal) (AcrPush Role) naar het REGI ster. Geef vervolgens de referenties voor de Service-Principal op `helm registry login` . In het volgende voor beeld wordt het wacht woord door een omgevings variabele geleverd:
+Maak bijvoorbeeld een Azure Active Directory service-principal met pull- en [pushmachtigingen](container-registry-auth-service-principal.md#create-a-service-principal) (rol AcrPush) naar het register. Vervolgens moet u de referenties voor de service-principal `helm registry login` aanleveren. In het volgende voorbeeld wordt het wachtwoord gebruikt met behulp van een omgevingsvariabele:
 
 ```console
 echo $spPassword | helm registry login mycontainerregistry.azurecr.io \
@@ -121,15 +118,15 @@ echo $spPassword | helm registry login mycontainerregistry.azurecr.io \
   --password-stdin
 ```
 
-## <a name="push-chart-to-registry"></a>Push diagram naar REGI ster
+## <a name="push-chart-to-registry"></a>Pushgrafiek naar register
 
-Voer de `helm chart push` opdracht in de helm 3 CLI uit om de grafiek te pushen naar de volledig gekwalificeerde doel opslagplaats:
+Voer de opdracht uit in de Helm 3 CLI om de grafiek naar de volledig gekwalificeerde `helm chart push` doelopslagplaats te pushen:
 
 ```console
 helm chart push mycontainerregistry.azurecr.io/helm/hello-world:v1
 ```
 
-Na een succes volle Push is de uitvoer vergelijkbaar met:
+Na een geslaagde push is de uitvoer vergelijkbaar met:
 
 ```output
 The push refers to repository [mycontainerregistry.azurecr.io/helm/hello-world]
@@ -140,11 +137,11 @@ name:    hello-world
 version: 0.1.0
 ```
 
-## <a name="list-charts-in-the-repository"></a>Grafieken weer geven in de opslag plaats
+## <a name="list-charts-in-the-repository"></a>Grafieken in de opslagplaats bekijken
 
-Net als bij afbeeldingen die zijn opgeslagen in een Azure container Registry kunt u [AZ ACR repository][az-acr-repository] -opdrachten gebruiken om de opslag plaatsen weer te geven die als host fungeren voor uw grafieken, en grafiek Tags en-manifesten. 
+Net als bij afbeeldingen die zijn opgeslagen in een Azure-containerregister, kunt u [az acr repository-opdrachten][az-acr-repository] gebruiken om de opslagplaatsen weer te geven die als host voor uw grafieken worden gebruikt, evenals grafiektags en manifesten. 
 
-Voer bijvoorbeeld [AZ ACR repository show][az-acr-repository-show] uit om de eigenschappen te zien van de opslag plaats die u in de vorige stap hebt gemaakt:
+Voer bijvoorbeeld [az acr repository show uit om][az-acr-repository-show] de eigenschappen te zien van de opslagplaats die u in de vorige stap hebt gemaakt:
 
 ```azurecli
 az acr repository show \
@@ -171,7 +168,7 @@ De uitvoer ziet er ongeveer zo uit:
 }
 ```
 
-Voer de opdracht [AZ ACR repository show-manifests][az-acr-repository-show-manifests] uit om de details te bekijken van de grafiek die in de opslag plaats is opgeslagen. Bijvoorbeeld:
+Voer de [opdracht az acr repository show-manifests][az-acr-repository-show-manifests] uit om details te zien van de grafiek die is opgeslagen in de opslagplaats. Bijvoorbeeld:
 
 ```azurecli
 az acr repository show-manifests \
@@ -179,7 +176,7 @@ az acr repository show-manifests \
   --repository helm/hello-world --detail
 ```
 
-Output, afgekort in dit voor beeld toont een `configMediaType` van `application/vnd.cncf.helm.config.v1+json` :
+Uitvoer, afgekort in dit voorbeeld, toont een `configMediaType` van `application/vnd.cncf.helm.config.v1+json` :
 
 ```output
 [
@@ -196,15 +193,15 @@ Output, afgekort in dit voor beeld toont een `configMediaType` van `application/
     ]
 ```
 
-## <a name="pull-chart-to-local-cache"></a>Een pull-grafiek naar een lokale cache
+## <a name="pull-chart-to-local-cache"></a>Grafiek naar lokale cache pullen
 
-Als u een helm-grafiek wilt installeren op Kubernetes, moet de grafiek zich in de lokale cache bevinden. In dit voor beeld voert u eerst uit `helm chart remove` om de bestaande lokale grafiek te verwijderen met de naam `mycontainerregistry.azurecr.io/helm/hello-world:v1` :
+Als u een Helm-grafiek wilt installeren in Kubernetes, moet de grafiek zich in de lokale cache. Voer in dit voorbeeld eerst uit om `helm chart remove` de bestaande lokale grafiek met de naam te `mycontainerregistry.azurecr.io/helm/hello-world:v1` verwijderen:
 
 ```console
 helm chart remove mycontainerregistry.azurecr.io/helm/hello-world:v1
 ```
 
-Voer `helm chart pull` uit om de grafiek te downloaden van het Azure container Registry naar uw lokale cache:
+Voer `helm chart pull` uit om de grafiek te downloaden van het Azure-containerregister naar uw lokale cache:
 
 ```console
 helm chart pull mycontainerregistry.azurecr.io/helm/hello-world:v1
@@ -212,21 +209,21 @@ helm chart pull mycontainerregistry.azurecr.io/helm/hello-world:v1
 
 ## <a name="export-helm-chart"></a>Helm-grafiek exporteren
 
-Als u verder wilt werken met de grafiek, exporteert u deze naar een lokale map met behulp van `helm chart export` . Exporteer bijvoorbeeld het diagram dat u naar de map hebt opgehaald `install` :
+Als u verder wilt werken met de grafiek, exporteert u deze naar een lokale map met behulp van `helm chart export` . Exporteert bijvoorbeeld de grafiek die u naar de map hebt `install` gehaald:
 
 ```console
 helm chart export mycontainerregistry.azurecr.io/helm/hello-world:v1 \
   --destination ./install
 ```
 
-Als u informatie wilt weer geven voor de geëxporteerde grafiek in de opslag plaats, voert `helm show chart` u de opdracht uit in de map waarnaar u de grafiek hebt geëxporteerd.
+Als u informatie over de geëxporteerde grafiek in de repo wilt weergeven, moet u de opdracht uitvoeren in de map waarin u `helm show chart` de grafiek hebt geëxporteerd.
 
 ```console
 cd install
 helm show chart hello-world
 ```
 
-Helm retourneert gedetailleerde informatie over de nieuwste versie van uw grafiek, zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
+Helm retourneert gedetailleerde informatie over de meest recente versie van uw grafiek, zoals wordt weergegeven in de volgende voorbeelduitvoer:
 
 ```output
 apiVersion: v2
@@ -239,13 +236,13 @@ version: 0.1.0
 
 ## <a name="install-helm-chart"></a>Helm-grafiek installeren
 
-Voer uit `helm install` om de helm-grafiek te installeren die u hebt opgehaald naar de lokale cache en hebt geëxporteerd. Geef een release naam op zoals *myhelmtest* of voer de `--generate-name` para meter door. Bijvoorbeeld:
+Voer `helm install` uit om de Helm-grafiek te installeren die u naar de lokale cache hebt gehaald en geëxporteerd. Geef een releasenaam op, zoals *myhelmtest* of geef de `--generate-name` parameter door. Bijvoorbeeld:
 
 ```console
 helm install myhelmtest ./hello-world
 ```
 
-Uitvoer nadat de grafiek is geïnstalleerd, is vergelijkbaar met:
+De uitvoer na een geslaagde grafiekinstallatie is vergelijkbaar met:
 
 ```console
 NAME: myhelmtest
@@ -256,23 +253,23 @@ REVISION: 1
 TEST SUITE: None
 ```
 
-Voer de opdracht uit om de installatie te controleren `helm get manifest` . 
+Voer de opdracht uit om de installatie te `helm get manifest` controleren. 
 
 ```console
 helm get manifest myhelmtest
 ```
 
-De opdracht retourneert de YAML-gegevens in het `configmap.yaml` sjabloon bestand.
+De opdracht retourneert de YAML-gegevens in uw `configmap.yaml` sjabloonbestand.
 
-Uitvoeren `helm uninstall` om de grafiek release in het cluster te verwijderen:
+Voer `helm uninstall` uit om de grafiekversie op uw cluster te verwijderen:
 
 ```console
 helm uninstall myhelmtest
 ```
 
-## <a name="delete-chart-from-the-registry"></a>Grafiek uit het REGI ster verwijderen
+## <a name="delete-chart-from-the-registry"></a>Grafiek uit het register verwijderen
 
-Als u een grafiek uit het container register wilt verwijderen, gebruikt u de opdracht [AZ ACR repository delete][az-acr-repository-delete] . Voer de volgende opdracht uit en bevestig de bewerking wanneer u hierom wordt gevraagd:
+Als u een grafiek uit het containerregister wilt verwijderen, gebruikt u [de opdracht az acr repository delete.][az-acr-repository-delete] Voer de volgende opdracht uit en bevestig de bewerking wanneer u hier om wordt gevraagd:
 
 ```azurecli
 az acr repository delete --name mycontainerregistry --image helm/hello-world:v1
@@ -280,9 +277,9 @@ az acr repository delete --name mycontainerregistry --image helm/hello-world:v1
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [helm-grafieken ontwikkelen][develop-helm-charts]voor meer informatie over het maken en implementeren van helm-grafieken.
-* Meer informatie over het installeren van toepassingen met helm in [Azure Kubernetes service (AKS)](../aks/kubernetes-helm.md).
-* Helm-grafieken kunnen worden gebruikt als onderdeel van het bouw proces van de container. Zie [Azure container Registry-taken gebruiken][acr-tasks]voor meer informatie.
+* Zie Helm-grafieken ontwikkelen voor meer informatie over het maken en implementeren [van Helm-grafieken.][develop-helm-charts]
+* Meer informatie over het installeren van toepassingen met Helm in [Azure Kubernetes Service (AKS)](../aks/kubernetes-helm.md).
+* Helm-grafieken kunnen worden gebruikt als onderdeel van het buildproces van de container. Zie Use Azure Container Registry-taken voor [meer informatie.][acr-tasks]
 
 <!-- LINKS - external -->
 [helm]: https://helm.sh/

@@ -2,15 +2,17 @@
 title: De Azure-portal gebruiken om een Service Bus-wachtrij te maken
 description: In deze quickstart leert u hoe u een Service Bus-naamruimte en een wachtrij in de naamruimte maakt met behulp van Azure Portal.
 author: spelluru
-ms.topic: quickstart
-ms.date: 08/12/2020
 ms.author: spelluru
-ms.openlocfilehash: 79dd751c43443790aafc494d89ad45e3b6705a64
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 08/12/2020
+ms.topic: quickstart
+ms.custom:
+- mode-portal
+ms.openlocfilehash: e38d32c93453737060f654add58f09902b05ee45
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95799214"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537198"
 ---
 # <a name="use-azure-portal-to-create-a-service-bus-namespace-and-a-queue"></a>Azure Portal gebruiken om een Service Bus-naamruimte en -wachtrij te maken
 In deze quickstart wordt beschreven hoe u een Service Bus-naamruimte en -wachtrij maakt met behulp van [Azure Portal][Azure portal]. Er wordt ook beschreven hoe u autorisatiereferenties ophaalt die een client-toepassing kan gebruiken voor het verzenden/ontvangen van berichten naar/van de wachtrij. 

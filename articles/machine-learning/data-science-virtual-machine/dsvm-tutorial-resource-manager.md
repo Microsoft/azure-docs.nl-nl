@@ -5,16 +5,18 @@ description: In deze quickstart gebruikt u een Azure Resource Manager-sjabloon o
 services: machine-learning
 author: lobrien
 ms.author: laobri
-ms.custom: subject-armqs
 ms.date: 06/10/2020
-ms.service: data-science-vm
 ms.topic: quickstart
-ms.openlocfilehash: 7feacec9f0e78749f17359a9080411b6d9696136
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.service: data-science-vm
+ms.custom:
+- subject-armqs
+- mode-arm
+ms.openlocfilehash: 0683634223a63281ce2b42ebb02f87f9211a589e
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518212"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530652"
 ---
 # <a name="quickstart-create-an-ubuntu-data-science-virtual-machine-using-an-arm-template"></a>Quickstart: Een virtuele Ubuntu Data Science-machine maken met een ARM-sjabloon
 
@@ -34,14 +36,14 @@ Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van A
 
 ## <a name="review-the-template"></a>De sjabloon controleren
 
-De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure Quick Start-sjablonen](https://azure.microsoft.com/resources/templates/101-vm-ubuntu-DSVM-GPU-or-CPU/).
+De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/101-vm-ubuntu-DSVM-GPU-or-CPU/).
 
 :::code language="json" source="~/quickstart-templates/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json":::
 
 De volgende resources zijn gedefinieerd in de sjabloon:
 
-* [Micro soft. Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
-* [Micro soft. Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups)
+* [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+* [Microsoft.Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups)
 * [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
 * [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
 * [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts)

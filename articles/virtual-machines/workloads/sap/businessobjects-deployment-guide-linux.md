@@ -1,6 +1,6 @@
 ---
-title: Implementatie van SAP BusinessObjects BI-platform op Azure voor Linux | Microsoft Docs
-description: SAP BusinessObjects BI-platform implementeren en configureren op Azure voor Linux
+title: SAP BusinessObjects BI Platform Deployment on Azure for Linux | Microsoft Docs
+description: SAP BusinessObjects BI Platform implementeren en configureren in Azure voor Linux
 services: virtual-machines-windows,virtual-network,storage,azure-netapp-files,azure-files,mysql
 documentationcenter: saponazure
 author: dennispadia
@@ -14,110 +14,110 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: b94e1f82409da3329eb6d978fa2ae0222928cd97
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b16a2d9f779232e59eb883f6a254be22990f5c78
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102505933"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107520017"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
 
-In dit artikel wordt de strategie beschreven voor het implementeren van het SAP BOBI-platform op Azure voor Linux. In dit voor beeld worden twee virtuele machines met Premium-SSD Managed Disks als installatiemap zijn geconfigureerd. Azure Database for MySQL wordt gebruikt voor CMS-data base en Azure NetApp Files voor de bestands opslagplaats server wordt gedeeld op beide servers. De standaard Tomcat Java-webtoepassing en BI-platform toepassing worden samen op virtuele machines geïnstalleerd. Als u de gebruikers aanvraag wilt verdelen, wordt Application Gateway gebruikt dat systeem eigen TLS/SSL-offloading mogelijkheden heeft.
+In dit artikel wordt de strategie beschreven voor het implementeren van SAP BOBI Platform in Azure voor Linux. In dit voorbeeld worden twee virtuele machines Premium - SSD Managed Disks als installatiemap zijn geconfigureerd. Azure Database for MySQL wordt gebruikt voor de CMS-database en Azure NetApp Files server voor bestandsopslagplaats wordt gedeeld op beide servers. De standaard Tomcat Java-webtoepassing en BI Platform-toepassing worden samen geïnstalleerd op beide virtuele machines. Voor het laden van de gebruikersaanvraag wordt Application Gateway gebruikt met native TLS/SSL-offloadingmogelijkheden.
 
-Dit type architectuur is effectief voor een kleine implementatie of een niet-productie omgeving. Voor productie-of grootschalige implementaties kunt u afzonderlijke hosts voor de webtoepassing hebben en ook meerdere BOBI-toepassingen hosten waarmee de server meer informatie kan verwerken.
+Dit type architectuur is effectief voor een kleine implementatie- of niet-productieomgeving. Voor productie- of grootschalige implementaties kunt u afzonderlijke hosts voor webtoepassing hebben en ook meerdere BOBI-toepassingen hebben, zodat de server meer informatie kan verwerken.
 
-![SAP BOBI-implementatie in azure voor Linux](media/businessobjects-deployment-guide/businessobjects-deployment-linux.png)
+![SAP BOBI-implementatie in Azure voor Linux](media/businessobjects-deployment-guide/businessobjects-deployment-linux.png)
 
-In dit voor beeld wordt onder de product versie en de indeling van het bestands systeem gebruikt.
+In dit voorbeeld worden de onderstaande productversie en bestandssysteemindeling gebruikt
 
-- SAP BusinessObjects-platform 4,3
+- SAP BusinessObjects Platform 4.3
 - SUSE Linux Enterprise Server 12 SP5
 - Azure Database for MySQL (versie: 8.0.15)
-- MySQL C API-connector-libmysqlclient (versie: 6.1.11)
+- MySQL C API Connector - libmysqlclient (versie: 6.1.11)
 
 | Bestandssysteem        | Description                                                                                                               | Grootte (GB)             | Eigenaar  | Groep  | Storage                    |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------|--------|--------|----------------------------|
-| /usr/sap           | Het bestands systeem voor de installatie van het SAP BOBI-exemplaar, de standaard Tomcat-webtoepassing en database Stuur programma's (indien nodig) | SAP-formaat richtlijnen | bl1adm | sapsys | Beheerde Premium-schijf-SSD |
-| /usr/sap/frsinput  | De koppelings Directory is voor de gedeelde bestanden op alle BOBI-hosts die worden gebruikt als opslag plaats Directory voor invoer bestanden  | Bedrijfs behoeften         | bl1adm | sapsys | Azure NetApp Files         |
-| /usr/sap/frsoutput | De koppelings Directory is voor de gedeelde bestanden op alle BOBI-hosts die worden gebruikt als opslag plaats Directory voor uitvoer bestanden | Bedrijfs behoeften         | bl1adm | sapsys | Azure NetApp Files         |
+| /usr/sap           | Het bestandssysteem voor de installatie van het SAP BOBI-exemplaar, de standaard Tomcat-webtoepassing en databasest stuurprogramma's (indien nodig) | Richtlijnen voor SAP-formaat | bl1adm | sapsys | Beheerde Premium-schijf - SSD |
+| /usr/sap/frsinput  | De map voor de mount is voor de gedeelde bestanden op alle BOBI-hosts die worden gebruikt als opslagplaatsmap voor invoerbestanden  | Zakelijke behoefte         | bl1adm | sapsys | Azure NetApp Files         |
+| /usr/sap/frsoutput | De map mount is voor de gedeelde bestanden op alle BOBI-hosts die worden gebruikt als map opslagplaats voor uitvoerbestanden | Zakelijke behoefte         | bl1adm | sapsys | Azure NetApp Files         |
 
 ## <a name="deploy-linux-virtual-machine-via-azure-portal"></a>Virtuele Linux-machine implementeren via Azure Portal
 
-In deze sectie maakt u twee virtuele machines (Vm's) met installatie kopie van het besturings systeem Linux voor het SAP BOBI-platform. De stappen op hoog niveau voor het maken van Virtual Machines zijn als volgt:
+In deze sectie maken we twee virtuele machines (VM's) met een installatie installatie afbeelding van het Linux-besturingssysteem (OS) voor SAP BOBI Platform. De stappen op hoog niveau voor het maken Virtual Machines zijn als volgt:
 
-1. Een [resource groep](../../../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) maken
+1. Een [resourcegroep maken](../../../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups)
 
 2. Maak een [Virtual Network](../../../virtual-network/quick-create-portal.md#create-a-virtual-network).
 
-   - Gebruik niet één subnet voor alle Azure-Services in de implementatie van het SAP BI-platform. Op basis van de SAP BI-platform architectuur moet u meerdere subnetten maken. In deze implementatie maken we drie subnetten: toepassings subnet, bestand opslagplaats opslag subnet en Application Gateway subnet.
-   - In azure moeten Application Gateway en Azure NetApp Files altijd zich op een afzonderlijk subnet bevinden. Raadpleeg [Azure-toepassing gateway](../../../application-gateway/configuration-overview.md) en [richt lijnen voor Azure NetApp files-netwerk plannings](../../../azure-netapp-files/azure-netapp-files-network-topologies.md) artikel voor meer informatie.
+   - Gebruik niet één subnet voor alle Azure-services in sap bi-platformimplementatie. Op basis van de SAP BI Platform-architectuur moet u meerdere subnetten maken. In deze implementatie maken we drie subnetten: Toepassingssubnet, Subnet bestandsopslag voor bestandsopslag en Application Gateway subnet.
+   - In Azure moeten Application Gateway en Azure NetApp Files zich altijd op een afzonderlijk subnet. Raadpleeg [Azure Application Gateway](../../../application-gateway/configuration-overview.md) en [richtlijnen voor Azure NetApp Files netwerkplanning](../../../azure-netapp-files/azure-netapp-files-network-topologies.md) voor meer informatie.
 
-3. Maak een Beschikbaarheidsset.
+3. Maak een beschikbaarheidsset.
 
-   - Plaats virtuele machines voor elke laag in een beschikbaarheidsset om redundantie te verzorgen voor elke laag in een implementatie met meerdere exemplaren. Zorg ervoor dat u de beschikbaarheids sets voor elke laag scheidt op basis van uw architectuur.
+   - Plaats virtuele machines voor elke laag in een beschikbaarheidsset om redundantie te bereiken voor elke laag in de implementatie van meerdere exemplaren. Zorg ervoor dat u de beschikbaarheidssets voor elke laag scheidt op basis van uw architectuur.
 
-4. Maak een virtuele machine 1 **(azusbosl1).**
+4. Maak virtuele machine 1 **(azusbosl1).**
 
-   - U kunt een aangepaste installatie kopie gebruiken of een installatie kopie kiezen uit Azure Marketplace. Raadpleeg [de implementatie van een virtuele machine vanuit Azure Marketplace voor SAP](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/workloads/sap/deployment-guide.md#scenario-1-deploying-a-vm-from-the-azure-marketplace-for-sap) of [het implementeren van een VM met een aangepaste installatie kopie voor SAP](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/workloads/sap/deployment-guide.md#scenario-2-deploying-a-vm-with-a-custom-image-for-sap) op basis van uw behoeften.
+   - U kunt een aangepaste afbeelding gebruiken of een afbeelding kiezen uit Azure Marketplace. Raadpleeg [Deploying a VM from the Azure Marketplace for SAP](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/workloads/sap/deployment-guide.md#scenario-1-deploying-a-vm-from-the-azure-marketplace-for-sap) (Een VM implementeren vanuit de Azure Marketplace voor SAP) of [Deploying a VM with a custom image for SAP](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/workloads/sap/deployment-guide.md#scenario-2-deploying-a-vm-with-a-custom-image-for-sap) (Een VM implementeren met een aangepaste afbeelding voor SAP op basis van uw behoefte).
 
-5. Maak de virtuele machine 2 **(azusbosl2).**
-6. Voeg één Premium-SSD schijf toe. De map wordt gebruikt als een SAP BOBI-installatiemap.
+5. Maak virtuele machine 2 **(azusbosl2).**
+6. Voeg één Premium - SSD toe. Deze wordt gebruikt als SAP BOBI-installatiemap.
 
-## <a name="provision-azure-netapp-files"></a>Azure NetApp Files inrichten
+## <a name="provision-azure-netapp-files"></a>Inrichting Azure NetApp Files
 
-Raadpleeg de documentatie van Azure [NetApp files](../../../azure-netapp-files/azure-netapp-files-introduction.md)voordat u doorgaat met de installatie van Azure NetApp files.
+Voordat u verder gaat met de installatie van Azure NetApp Files, moet u zich vertrouwd maken met de Documentatie voor Azure [NetApp Files.](../../../azure-netapp-files/azure-netapp-files-introduction.md)
 
-Azure NetApp Files is beschikbaar in verschillende [Azure-regio's](https://azure.microsoft.com/global-infrastructure/services/?products=netapp). Controleer of de geselecteerde Azure-regio Azure NetApp Files bevat.
+Azure NetApp Files is beschikbaar in verschillende [Azure-regio's.](https://azure.microsoft.com/global-infrastructure/services/?products=netapp) Controleer of uw geselecteerde Azure-regio een Azure NetApp Files.
 
-Gebruik de pagina [Beschik baarheid van Azure NetApp files per Azure-regio](https://azure.microsoft.com/global-infrastructure/services/?products=netapp&regions=all) om de beschik baarheid van Azure NetApp files per regio te controleren.
+Gebruik [Azure NetApp Files beschikbaarheid per Azure-regio](https://azure.microsoft.com/global-infrastructure/services/?products=netapp&regions=all) om de beschikbaarheid van Azure NetApp Files per regio te controleren.
 
-Vraag om onboarding naar Azure NetApp Files door u te [registreren voor Azure NetApp files instructies](../../../azure-netapp-files/azure-netapp-files-register.md) voordat u Azure NetApp files implementeert.
+Vraag onboarding aan Azure NetApp Files door naar Registreren voor Azure NetApp Files [te gaan](../../../azure-netapp-files/azure-netapp-files-register.md) voordat u de Azure NetApp Files.
 
-### <a name="deploy-azure-netapp-files-resources"></a>Azure NetApp Files-resources implementeren
+### <a name="deploy-azure-netapp-files-resources"></a>Uw Azure NetApp Files implementeren
 
-Bij de volgende instructies wordt ervan uitgegaan dat u uw [virtuele Azure-netwerk](../../../virtual-network/virtual-networks-overview.md)al hebt geïmplementeerd. De Azure NetApp Files resources en virtuele machines, waarbij de Azure NetApp Files resources worden gekoppeld, moeten worden geïmplementeerd in hetzelfde virtuele Azure-netwerk of in peered virtuele netwerken van Azure.
+In de volgende instructies wordt ervan uit gegaan dat u uw virtuele [Azure-netwerk al hebt geïmplementeerd.](../../../virtual-network/virtual-networks-overview.md) De Azure NetApp Files-resources en VM's, waar de Azure NetApp Files-resources worden aangesloten, moeten worden geïmplementeerd in hetzelfde virtuele Azure-netwerk of in virtuele Azure-peernetwerken.
 
-1. Als u de resources nog niet hebt geïmplementeerd, vraagt u [om onboarding naar Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-register.md).
+1. Als u de resources nog niet hebt geïmplementeerd, vraagt u [onboarding aan bij Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-register.md).
 
-2. Maak een NetApp-account in uw geselecteerde Azure-regio door de instructies in [een NetApp-account maken](../../../azure-netapp-files/azure-netapp-files-create-netapp-account.md)te volgen.
+2. Maak een NetApp-account in de geselecteerde Azure-regio door de instructies in [Een NetApp-account maken te volgen.](../../../azure-netapp-files/azure-netapp-files-create-netapp-account.md)
 
-3. Stel een Azure NetApp Files capaciteits groep in door de instructies in [een Azure NetApp files-capaciteits groep instellen](../../../azure-netapp-files/azure-netapp-files-set-up-capacity-pool.md)te volgen.
+3. Stel een Azure NetApp Files-capaciteitspool in door de instructies te volgen in [Set up an Azure NetApp Files capacity pool (Een Azure NetApp Files-capaciteitspool instellen).](../../../azure-netapp-files/azure-netapp-files-set-up-capacity-pool.md)
 
-   - De SAP BI-platform architectuur die in dit artikel wordt gepresenteerd, maakt gebruik van één Azure NetApp Files capaciteits groep op het niveau van de *Premium* -service. Voor de SAP BI File Repository-Server op Azure kunt u het beste een Azure NetApp Files *Premium* -of *Ultra* - [service niveau](../../../azure-netapp-files/azure-netapp-files-service-levels.md)gebruiken.
+   - De SAP BI Platform-architectuur die in dit artikel wordt gepresenteerd, maakt gebruik van één Azure NetApp Files capaciteitspool op *het niveau van* de Premium-service. Voor de SAP BI-bestandsopslagplaatsserver in Azure wordt u aangeraden een Azure NetApp Files *Premium-* of [Ultra-serviceniveau te gebruiken.](../../../azure-netapp-files/azure-netapp-files-service-levels.md) 
 
-4. Delegeer een subnet aan Azure NetApp Files, zoals beschreven in de instructies in [een subnet overdragen aan Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md).
+4. Delegeer een subnet aan Azure NetApp Files, zoals beschreven in [Delegeren van een subnet aan Azure NetApp Files.](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md)
 
-5. Implementeer Azure NetApp Files volumes door de instructies in [een NFS-volume maken voor Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-create-volumes.md)te volgen.
+5. Implementeer Azure NetApp Files volumes door de instructies te volgen in [Een NFS-volume voor Azure NetApp Files.](../../../azure-netapp-files/azure-netapp-files-create-volumes.md)
 
-   ANF-volume kan worden geïmplementeerd als NFSv3 en NFSv 4.1, aangezien beide protocollen worden ondersteund voor het SAP BOBI-platform. Implementeer de volumes in het respectieve Azure NetApp Files subnet. De IP-adressen van de Azure NetApp-volumes worden automatisch toegewezen.
+   ANF-volume kan worden geïmplementeerd als NFSv3 en NFSv4.1, omdat beide protocollen worden ondersteund voor SAP BOBI Platform. Implementeer de volumes in Azure NetApp Files subnet. De IP-adressen van de Azure NetApp-volumes worden automatisch toegewezen.
 
-Houd er rekening mee dat de Azure NetApp Files resources en de virtuele Azure-machines zich in hetzelfde virtuele Azure-netwerk moeten bevinden of in een Peerd Azure Virtual Network. Bijvoorbeeld, azusbobi-frsinput, azusbobi-frsoutput zijn de volume namen en nfs://10.31.2.4/azusbobi-frsinput, nfs://10.31.2.4/azusbobi-frsoutput de bestands paden zijn voor de Azure NetApp Files volumes.
+Houd er rekening mee dat de Azure NetApp Files en de Azure-VM's zich in hetzelfde virtuele Azure-netwerk of in virtuele Azure-peernetwerken moeten zijn. azusbobi-frsinput, azusbobi-frsoutput zijn bijvoorbeeld de volumenamen en nfs://10.31.2.4/azusbobi-frsinput, nfs://10.31.2.4/azusbobi-frsoutput zijn de bestandspaden voor de Azure NetApp Files Volumes.
 
 - Volume azusbobi-frsinput (nfs://10.31.2.4/azusbobi-frsinput)
 - Volume azusbobi-frsoutput (nfs://10.31.2.4/azusbobi-frsoutput)
 
 ### <a name="important-considerations"></a>Belangrijke overwegingen
 
-Houd bij het maken van uw Azure NetApp Files voor de SAP BOBI platform File Repository Server rekening met de volgende overweging:
+Bij het maken van uw Azure NetApp Files voor SAP BOBI Platform-bestandsopslagplaatsserver, moet u rekening houden met het volgende:
 
-1. De minimale capaciteits pool is 4 tebibytes (TiB).
-2. De minimale volume grootte is 100 gibibytes (GiB).
-3. Azure NetApp Files en alle virtuele machines waar de Azure NetApp Files volumes worden gekoppeld, moeten zich in hetzelfde virtuele Azure-netwerk of in gekoppelde [virtuele netwerken](../../../virtual-network/virtual-network-peering-overview.md) in dezelfde regio bevinden. Azure NetApp Files toegang via VNET-peering in dezelfde regio wordt nu ondersteund. Toegang tot Azure NetApp via wereld wijde peering wordt nog niet ondersteund.
-4. Het geselecteerde virtuele netwerk moet een subnet hebben dat is overgedragen aan Azure NetApp Files.
-5. Met de Azure NetApp Files [export beleid](../../../azure-netapp-files/azure-netapp-files-configure-export-policy.md)kunt u de toegestane clients, het toegangs type (lezen-schrijven, alleen-lezen, enzovoort) beheren.
-6. De functie Azure NetApp Files is nog geen zone-bewust. Op dit moment wordt de functie niet geïmplementeerd in alle beschikbaarheids zones in een Azure-regio. Houd rekening met de mogelijke latentie implicaties in sommige Azure-regio's.
-7. Azure NetApp Files volumes kunnen worden geïmplementeerd als NFSv3-of NFSv 4.1-volumes. Beide protocollen worden ondersteund voor de SAP BI-platform toepassingen.
+1. De minimale capaciteitspool is 4 tebibyte (TiB).
+2. De minimale volumegrootte is 100 gibibyte (GiB).
+3. Azure NetApp Files en alle virtuele machines waarop de Azure NetApp Files-volumes worden aangesloten, moeten zich in hetzelfde virtuele Azure-netwerk of in [peered](../../../virtual-network/virtual-network-peering-overview.md) virtuele netwerken in dezelfde regio. Azure NetApp Files toegang via VNET-peering in dezelfde regio wordt nu ondersteund. Azure NetApp-toegang via wereldwijde peering wordt nog niet ondersteund.
+4. Het geselecteerde virtuele netwerk moet een subnet hebben dat wordt gedelegeerd aan Azure NetApp Files.
+5. Met het Azure NetApp Files [exportbeleid](../../../azure-netapp-files/azure-netapp-files-configure-export-policy.md)kunt u de toegestane clients, het toegangstype (lezen/schrijven, alleen-lezen, etc.) bepalen.
+6. De Azure NetApp Files is nog niet zonebewust. Op dit moment is de functie niet geïmplementeerd in alle beschikbaarheidszones in een Azure-regio. Let op de mogelijke gevolgen voor latentie in sommige Azure-regio's.
+7. Azure NetApp Files kunnen worden geïmplementeerd als NFSv3- of NFSv4.1-volumes. Beide protocollen worden ondersteund voor de SAP BI-platformtoepassingen.
 
-## <a name="configure-file-systems-on-linux-servers"></a>Bestands systemen op Linux-servers configureren
+## <a name="configure-file-systems-on-linux-servers"></a>Bestandssystemen configureren op Linux-servers
 
-Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
+In de stappen in deze sectie worden de volgende voorvoegsels gebruikt:
 
-**[A]**: de stap is van toepassing op alle hosts
+**[A]**: De stap is van toepassing op alle hosts
 
-### <a name="format-and-mount-sap-file-system"></a>SAP-bestands systeem Format teren en koppelen
+### <a name="format-and-mount-sap-file-system"></a>SAP-bestandssysteem opmaken en mounten
 
-1. **[A]** alle gekoppelde schijven weer geven
+1. **[A]** Alle gekoppelde schijven op een lijst zetten
 
     ```bash
     sudo lsblk
@@ -134,19 +134,19 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
     # Premium SSD of 128 GB is attached to Virtual Machine, whose device name is sdc
     ```
 
-2. **[A]** indelings blok apparaat voor/usr/sap
+2. **[A]** Blokapparaat opmaken voor /usr/sap
 
     ```bash
     sudo mkfs.xfs /dev/sdc
     ```
 
-3. **[A]** koppelings Directory maken
+3. **[A]** Map voor het maken van een mount
 
     ```bash
     sudo mkdir -p /usr/sap
     ```
 
-4. **[A]** uuid van het apparaat ophalen
+4. **[A]** UUID van blokapparaat op halen
 
     ```bash
     sudo blkid
@@ -156,13 +156,13 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
     /dev/sdc: UUID="0eb5f6f8-fa77-42a6-b22d-7a9472b4dd1b" TYPE="xfs"
     ```
 
-5. **[A]** vermelding bestands systeem koppeling in bestand/etc/fstab onderhouden
+5. **[A]** Bestandssysteem mount vermelding onderhouden in /etc/fstab
 
     ```bash
     sudo echo "UUID=0eb5f6f8-fa77-42a6-b22d-7a9472b4dd1b /usr/sap xfs defaults,nofail 0 2" >> /etc/fstab
     ```
 
-6. **[A]** koppel bestands systeem
+6. **[A] Bestandssysteem** toevoegen
 
     ```bash
     sudo mount -a
@@ -181,22 +181,22 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
     /dev/sdc                       128G   29G  100G  23% /usr/sap
     ```
 
-### <a name="mount-azure-netapp-files-volume"></a>Azure NetApp Files volume koppelen
+### <a name="mount-azure-netapp-files-volume"></a>Een Azure NetApp Files volume
 
-1. **[A]** koppel mappen maken
+1. **[A]** Een mount-directories maken
 
    ```bash
    sudo mkdir -p /usr/sap/frsinput
    sudo mkdir -p /usr/sap/frsoutput
    ```
 
-2. **[A]** client besturingssysteem configureren ter ondersteuning van de nfsv 4.1-koppeling **(alleen van toepassing als u nfsv 4.1 gebruikt)**
+2. **[A]** Configureer het client-besturingssysteem voor de ondersteuning van NFSv4.1-mount (alleen van toepassing **als NFSv4.1 wordt gebruikt)**
 
-   Als u Azure NetApp Files volumes gebruikt met NFSv 4.1-protocol, voert u de volgende configuratie uit op alle virtuele machines, waarbij Azure NetApp Files NFSv 4.1-volumes moeten worden gekoppeld.
+   Als u Azure NetApp Files volumes met het NFSv4.1-protocol gebruikt, voert u de volgende configuratie uit op alle VM's, waarbij Azure NetApp Files NFSv4.1-volumes moeten worden bevestigd.
 
-   **NFS-domein instellingen verifiëren**
+   **NFS-domeininstellingen controleren**
 
-   Zorg ervoor dat het domein is geconfigureerd als de standaard Azure NetApp Files domein  **defaultv4iddomain.com** en de toewijzing is ingesteld op **niemand**.
+   Zorg ervoor dat het domein is geconfigureerd als het standaarddomein Azure NetApp Files dat wil zeggen, defaultv4iddomain.com de toewijzing is ingesteld op **niemand.** 
 
    ```bash
    sudo cat /etc/idmapd.conf
@@ -210,9 +210,9 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
 
    > [!Important]
    >
-   > Zorg ervoor dat u het NFS-domein in/etc/idmapd.conf op de virtuele machine zo instelt dat deze overeenkomt met de standaard domein configuratie op Azure NetApp Files: **defaultv4iddomain.com**. Als er een verschil is tussen de domein configuratie op de NFS-client (de virtuele machine) en de NFS-server, dat wil zeggen de Azure NetApp-configuratie, worden de machtigingen voor bestanden op Azure NetApp-volumes die zijn gekoppeld op de Vm's weer gegeven als niemand.
+   > Zorg ervoor dat u het NFS-domein in /etc/idmapd.conf op de VM in stelt op de standaarddomeinconfiguratie op Azure NetApp Files: **defaultv4iddomain.com**. Als er een verschil is tussen de domeinconfiguratie op de NFS-client (dat wil zeggen de VM) en de NFS-server, dat wil zeggen de Azure NetApp-configuratie, worden de machtigingen voor bestanden op Azure NetApp-volumes die zijn bevestigd op de VM's weergegeven als niemand.
 
-   Verifiëren `nfs4_disable_idmapping` . Deze moet worden ingesteld op **Y**. Als u de mapstructuur wilt maken waar `nfs4_disable_idmapping` zich bevindt, voert u de koppeling-opdracht uit. U kunt de map niet hand matig maken onder/sys/modules, omdat de toegang is gereserveerd voor de kernel/Stuur Programma's.
+   Controleer `nfs4_disable_idmapping` of . Deze moet worden ingesteld op **Y**. Voer de opdracht voor het maken van de mapstructuur waar `nfs4_disable_idmapping` zich bevindt. U kunt de map niet handmatig maken onder /sys/modules, omdat toegang is gereserveerd voor de kernel/stuurprogramma's.
 
    ```bash
    # Check nfs4_disable_idmapping
@@ -229,23 +229,23 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
    echo "options nfs nfs4_disable_idmapping=Y" >> /etc/modprobe.d/nfs.conf
    ```
 
-3. **[A]** koppelings vermeldingen toevoegen
+3. **[A]** Voeg bevestigingsgegevens toe
 
-   Als NFSv3 wordt gebruikt
+   Als u NFSv3 gebruikt
 
    ```bash
    sudo echo "10.31.2.4:/azusbobi-frsinput /usr/sap/frsinput  nfs   rw,hard,rsize=65536,wsize=65536,vers=3" >> /etc/fstab
    sudo echo "10.31.2.4:/azusbobi-frsoutput /usr/sap/frsoutput  nfs   rw,hard,rsize=65536,wsize=65536,vers=3" >> /etc/fstab
    ```
 
-   Als u NFSv 4.1 gebruikt
+   Als u NFSv4.1 gebruikt
 
    ```bash
    sudo echo "10.31.2.4:/azusbobi-frsinput /usr/sap/frsinput  nfs   rw,hard,rsize=65536,wsize=65536,vers=4.1,sec=sys" >> /etc/fstab
    sudo echo "10.31.2.4:/azusbobi-frsoutput /usr/sap/frsoutput  nfs   rw,hard,rsize=65536,wsize=65536,vers=4.1,sec=sys" >> /etc/fstab
    ```
 
-4. **[A]** NFS-volumes koppelen
+4. **[A]** NFS-volumes monteren
 
    ```bash
    sudo mount -a
@@ -266,49 +266,49 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
    10.31.2.4:/azusbobi-frsoutput  100T  512K  100T   1% /usr/sap/frsoutput
    ```
 
-## <a name="configure-cms-database---azure-database-for-mysql"></a>CMS-data base configureren-Azure data base for MySQL
+## <a name="configure-cms-database---azure-database-for-mysql"></a>CMS-database configureren - Azure Database for MySQL
 
-Deze sectie bevat informatie over het inrichten van Azure Database for MySQL met behulp van Azure Portal. Ook vindt u hier instructies voor het maken van CMS-en audit databases voor het SAP BOBI-platform en een gebruikers account voor toegang tot de data base.
+In deze sectie vindt u meer informatie over het inrichten Azure Database for MySQL met Azure Portal. Het bevat ook instructies voor het maken van CMS- en auditdatabases voor SAP BOBI Platform en een gebruikersaccount voor toegang tot de database.
 
-De richt lijnen zijn alleen van toepassing als u Azure DB voor MySQL gebruikt. Raadpleeg voor meer informatie over andere data base (s) SAP of data base-specifieke documentatie voor instructies.
+De richtlijnen zijn alleen van toepassing als u Azure DB for MySQL. Raadpleeg voor andere database(s) SAP- of databasespecifieke documentatie voor instructies.
 
-### <a name="create-an-azure-database-for-mysql"></a>Een Azure-Data Base voor MySQL maken
+### <a name="create-an-azure-database-for-mysql"></a>Een Azure-database voor MySQL maken
 
-Meld u aan bij Azure Portal en volg de stappen in deze [Snelstartgids van Azure database for MySQL](../../../mysql/quickstart-create-mysql-server-database-using-azure-portal.md). Enkele punten om te noteren tijdens het inrichten van Azure Database for MySQL-
+Meld u aan bij Azure Portal en volg de stappen in deze [Snelstartgids van Azure Database for MySQL](../../../mysql/quickstart-create-mysql-server-database-using-azure-portal.md). Enkele punten om op te merken tijdens het inrichten Azure Database for MySQL -
 
-1. Selecteer dezelfde regio voor Azure Database for MySQL waar uw SAP BI-platform toepassings servers worden uitgevoerd.
+1. Selecteer dezelfde regio voor Azure Database for MySQL waar uw SAP BI Platform-toepassingsservers worden uitgevoerd.
 
-2. Kies een ondersteunde DB-versie op basis van de [product beschikbaarheids matrix (PAM) voor SAP BI](https://support.sap.com/pam) specifiek voor uw SAP BOBI-versie. Volg dezelfde compatibiliteits richtlijnen als geadresseerd voor MySQL AB in SAP PAM
+2. Kies een ondersteunde DB-versie op basis [van PAM (Product Availability Matrix)](https://support.sap.com/pam) voor SAP BI die specifiek is voor uw SAP BOBI-versie. Volg dezelfde compatibiliteitsrichtlijnen als voor MySQL AB in SAP PAM
 
-3. Selecteer in "Compute + Storage" **server configureren** en selecteer de juiste prijs categorie op basis van de grootte van de uitvoer.
+3. Selecteer in 'compute+storage' de optie **Server configureren** en selecteer de juiste prijscategorie op basis van de uitvoer van uw formaat.
 
-4. Automatische **groei van opslag** is standaard ingeschakeld. Houd er rekening mee dat [opslag](../../../mysql/concepts-pricing-tiers.md#storage) alleen omhoog kan worden geschaald.
+4. **Automatische groei van opslag** is standaard ingeschakeld. Houd er rekening mee [dat Opslag](../../../mysql/concepts-pricing-tiers.md#storage) alleen omhoog en niet omlaag kan worden geschaald.
 
-5. Standaard is **een back-up van de Bewaar periode** zeven dagen, maar u kunt deze [optioneel configureren](../../../mysql/howto-restore-server-portal.md#set-backup-configuration) tot 35 dagen.
+5. Standaard is de [](../../../mysql/howto-restore-server-portal.md#set-backup-configuration) **retentieperiode van een back-up** zeven dagen, maar u kunt deze eventueel maximaal 35 dagen configureren.
 
-6. Back-ups van Azure Database for MySQL zijn standaard lokaal redundant, dus als u Server back-ups in geografisch redundante opslag wilt maken, selecteert u **geografisch redundante** **Opties voor back-** redundantie.
+6. Back-ups van Azure Database for MySQL zijn standaard lokaal redundant. Als u serverback-ups in  geografisch redundante opslag wilt, selecteert u Geografisch redundant in Redundantieopties voor **back-up.**
 
 > [!NOTE]
-> Het wijzigen van de [Opties voor back-upredundantie](../../../mysql/concepts-backup.md#backup-redundancy-options) bij het maken van een server wordt niet ondersteund.
+> Het wijzigen van [de opties voor back-up redundantie](../../../mysql/concepts-backup.md#backup-redundancy-options) na het maken van de server wordt niet ondersteund.
 
 ### <a name="configure-connection-security"></a>Verbindingsbeveiliging configureren
 
-De server die is gemaakt, is standaard beveiligd met een firewall en is niet openbaar toegankelijk. Volg de onderstaande stappen om toegang te bieden tot het virtuele netwerk waarin de SAP BI-platform toepassings servers worden uitgevoerd:  
+De gemaakte server is standaard beveiligd met een firewall en is niet openbaar toegankelijk. Volg de onderstaande stappen om toegang te bieden tot het virtuele netwerk waarop SAP BI Platform-toepassingsservers worden uitgevoerd:  
 
-1. Ga naar Server bronnen in het Azure Portal en selecteer **verbindings beveiliging** in het menu links voor uw server resource.
-2. Selecteer **Ja** om **toegang tot Azure-Services toe te staan**.
-3. Onder VNET-regels selecteert u **bestaand virtueel netwerk toevoegen**. Selecteer het virtuele netwerk en subnet van de SAP BI-platform toepassings server. U moet ook toegang bieden tot Jump box of andere servers van waaruit u [MySQL Workbench](../../../mysql/connect-workbench.md) kunt verbinden met Azure database for MySQL. MySQL Workbench wordt gebruikt voor het maken van een CMS-en audit database
-4. Wanneer de virtuele netwerken zijn toegevoegd, selecteert u **Opslaan**.
+1. Ga naar serverresources in Azure Portal selecteer **Verbindingsbeveiliging** in het menu aan de linkerkant voor uw serverresource.
+2. Selecteer **Ja om** toegang tot **Azure-services toe te staan.**
+3. Selecteer onder VNET-regels de optie **Bestaand virtueel netwerk toevoegen.** Selecteer het virtuele netwerk en subnet van de SAP BI Platform-toepassingsserver. U moet ook toegang bieden tot Jump Box of andere servers van waar u [MySQL Workbench](../../../mysql/connect-workbench.md) kunt verbinden met Azure Database for MySQL. MySQL Workbench wordt gebruikt om een CMS- en auditdatabase te maken
+4. Zodra virtuele netwerken zijn toegevoegd, selecteert u **Opslaan.**
 
-### <a name="create-cms-and-audit-database"></a>Een CMS-en audit database maken
+### <a name="create-cms-and-audit-database"></a>CMS- en auditdatabase maken
 
-1. De MySQL-Workbench downloaden en installeren vanaf de [MySQL-website](https://dev.mysql.com/downloads/workbench/). Zorg ervoor dat u MySQL Workbench installeert op de server die toegang heeft tot Azure Database for MySQL.
+1. Download en installeer MySQL Workbench vanaf de [MySQL-website.](https://dev.mysql.com/downloads/workbench/) Zorg ervoor dat u MySQL Workbench installeert op de server die toegang heeft tot Azure Database for MySQL.
 
-2. Verbinding maken met de server met behulp van MySQL Workbench. Volg de instructies in dit [artikel](../../../mysql/connect-workbench.md#get-connection-information). Als de verbindings test is geslaagd, wordt het volgende bericht weer gegeven:
+2. Maak verbinding met de server met behulp van MySQL Workbench. Volg de instructies in dit [artikel](../../../mysql/connect-workbench.md#get-connection-information). Als de verbindingstest is geslaagd, krijgt u het volgende bericht:
 
-   ![SQL Workbench-verbinding](media/businessobjects-deployment-guide/businessobjects-sql-workbench.png)
+   ![VERBINDING MET SQL Workbench](media/businessobjects-deployment-guide/businessobjects-sql-workbench.png)
 
-3. Voer in het tabblad SQL query de volgende query uit om een schema te maken voor CMS-en audit data base.
+3. Voer op het tabblad SQL-query de onderstaande query uit om een schema te maken voor de CMS- en Audit-database.
 
    ```sql
    # Here cmsbl1 is the database name of CMS database. You can provide the name you want for CMS database.
@@ -318,7 +318,7 @@ De server die is gemaakt, is standaard beveiligd met een firewall en is niet ope
    CREATE SCHEMA `auditbl1` DEFAULT CHARACTER SET utf8;
    ```
    
-4. Maak een gebruikers account om verbinding te maken met het schema
+4. Gebruikersaccount maken om verbinding te maken met schema
 
    ```sql
    # Create a user that can connect from any host, use the '%' wildcard as a host part
@@ -333,7 +333,7 @@ De server die is gemaakt, is standaard beveiligd met een firewall en is niet ope
    FLUSH PRIVILEGES;
    ```
 
-5. De bevoegdheden en rollen van het MySQL-gebruikers account controleren
+5. De bevoegdheden en rollen van het MySQL-gebruikersaccount controleren
 
    ```sql
    USE sys;
@@ -355,17 +355,17 @@ De server die is gemaakt, is standaard beveiligd met een firewall en is niet ope
    +----------------------------------------------------------------------------+
    ```
 
-### <a name="install-mysql-c-api-connector-libmysqlclient-on-linux-server"></a>MySQL C API connector (libmysqlclient) installeren op Linux-server
+### <a name="install-mysql-c-api-connector-libmysqlclient-on-linux-server"></a>MySQL C API-connector (libmysqlclient) installeren op linux-server
 
-Voor SAP BOBI-toepassings server voor toegang tot de data base is data base client/drivers vereist. MySQL C API-connector voor Linux moet worden gebruikt voor toegang tot CMS-en audit databases. ODBC-verbinding met CMS-data base wordt niet ondersteund. In deze sectie vindt u instructies voor het instellen van MySQL C API connector op Linux.
+Voor toegang van de SAP BOBI-toepassingsserver tot de database zijn databaseclient/stuurprogramma's vereist. MySQL C API Connector voor Linux moet worden gebruikt voor toegang tot CMS- en auditdatabases. ODBC-verbinding met CMS-database wordt niet ondersteund. In deze sectie vindt u instructies voor het instellen van de MySQL C API-connector in Linux.
 
-1. Raadpleeg de [MySQL-Stuur Programma's en-beheer hulpprogramma's die compatibel zijn met Azure database for MySQL](../../../mysql/concepts-compatibility.md) artikel, waarin de Stuur Programma's worden beschreven die compatibel zijn met Azure database for MySQL. Controleer op het stuur programma **mysql connector/C (libmysqlclient)** in het artikel.
+1. Raadpleeg het [artikel MySQL drivers and management tools compatible with Azure Database for MySQL (MySQL-stuurprogramma's](../../../mysql/concepts-compatibility.md) en beheerhulpprogramma's die compatibel zijn met Azure Database for MySQL, waarin de stuurprogramma's worden beschreven die compatibel zijn met Azure Database for MySQL. Controleer in het artikel op het stuurprogramma **MySQL Connector/C (libmysqlclient).**
 
-2. Raadpleeg deze [koppeling](https://downloads.mysql.com/archives/c-c/) voor het downloaden van Stuur Programma's.
+2. Raadpleeg deze koppeling [om stuurprogramma's](https://downloads.mysql.com/archives/c-c/) te downloaden.
 
-3. Selecteer het besturings systeem en down load het pakket shared component rpm van MySQL Connector. In dit voor beeld wordt mysql-connector-c-Shared-6.1.11-connector versie gebruikt.
+3. Selecteer het besturingssysteem en download het rpm-pakket met gedeelde onderdelen van MySQL Connector. In dit voorbeeld wordt de connectorversie mysql-connector-c-shared-6.1.11 gebruikt.
 
-4. Installeer de connector in alle SAP BOBI-toepassings exemplaren.
+4. Installeer de connector in alle exemplaren van de SAP BOBI-toepassing.
 
    ```bash
    # Install rpm package
@@ -373,7 +373,7 @@ Voor SAP BOBI-toepassings server voor toegang tot de data base is data base clie
    RHEL: sudo yum install <package>.rpm
    ```
 
-5. Controleer het pad van de libmysqlclient.so
+5. Controleer het pad van libmysqlclient.so
 
    ```bash
    # Find the location of libmysqlclient.so file
@@ -383,7 +383,7 @@ Voor SAP BOBI-toepassings server voor toegang tot de data base is data base clie
    libmysqlclient: /usr/lib64/libmysqlclient.so
    ```
 
-6. Stel LD_LIBRARY_PATH in om naar `/usr/lib64` map te verwijzen voor gebruikers account dat wordt gebruikt voor installatie.
+6. Stel LD_LIBRARY_PATH in op de `/usr/lib64` map voor het gebruikersaccount dat wordt gebruikt voor installatie.
 
    ```bash
    # This configuration is for bash shell. If you are using any other shell for sidadm, kindly set environment variable accordingly.
@@ -392,19 +392,19 @@ Voor SAP BOBI-toepassings server voor toegang tot de data base is data base clie
    export LD_LIBRARY_PATH=/usr/lib64
    ```
 
-## <a name="server-preparation"></a>Server voorbereiding
+## <a name="server-preparation"></a>Servervoorbereiding
 
-Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
+In de stappen in deze sectie worden de volgende voorvoegsels gebruikt:
 
-**[A]**: de stap is van toepassing op alle hosts.
+**[A]**: De stap is van toepassing op alle hosts.
 
-1. **[A]** op basis van de kern van Linux (SLES of RHEL), moet u kernel-para meters instellen en de vereiste bibliotheken installeren. Raadpleeg de sectie **systeem vereisten** in de [installatie handleiding voor Business Intelligence platform voor UNIX](https://help.sap.com/viewer/65018c09dbe04052b082e6fc4ab60030/4.3/en-US).
+1. **[A]** Op basis van de smaak van Linux (SLES of RHEL) moet u kernelparameters instellen en vereiste bibliotheken installeren. Raadpleeg de **sectie Systeemvereisten** in [de Installatiehandleiding voor het Business Intelligence-platform voor Unix.](https://help.sap.com/viewer/65018c09dbe04052b082e6fc4ab60030/4.3/en-US)
 
-2. **[A]** Controleer of de tijd zone op de computer correct is ingesteld. Raadpleeg de [sectie Aanvullende vereisten voor UNIX en Linux](https://help.sap.com/viewer/65018c09dbe04052b082e6fc4ab60030/4.3/en-US/46b143336e041014910aba7db0e91070.html) in de installatie handleiding.
+2. **[A]** Zorg ervoor dat de tijdzone op uw computer correct is ingesteld. Raadpleeg de [sectie Aanvullende UNIX- en Linux-vereisten](https://help.sap.com/viewer/65018c09dbe04052b082e6fc4ab60030/4.3/en-US/46b143336e041014910aba7db0e91070.html) in De installatiehandleiding.
 
-3. **[A] Maak een** gebruikers account (**BL1** adm) en groep (sapsys) waarmee de achtergrond processen van de software kunnen worden uitgevoerd. Gebruik dit account om de installatie uit te voeren en de software uit te voeren. Voor het account zijn geen hoofd bevoegdheden vereist.
+3. **[A]** Maak een gebruikersaccount **(bl1** adm) en groep (sapsys) waarmee de achtergrondprocessen van de software kunnen worden uitgevoerd. Gebruik dit account om de installatie uit te voeren en de software uit te voeren. Voor het account zijn geen hoofdbevoegdheden vereist.
 
-4. **[A]** stel het gebruikers account (**BL1** adm) in om een ondersteunde UTF-8-land instelling te gebruiken en zorg ervoor dat uw console software UTF-8-teken sets ondersteunt. Om ervoor te zorgen dat uw besturings systeem gebruikmaakt van de juiste land instelling, stelt u de omgevings variabelen LC_ALL en LANG in op uw voorkeurs land instellingen in uw **BL1** adm-gebruikers omgeving.
+4. **[A]** Stel de omgeving gebruikersaccount **(bl1** adm) in op het gebruik van een ondersteunde UTF-8-locale en zorg ervoor dat uw consolesoftware UTF-8-tekensets ondersteunt. Om ervoor te zorgen dat uw besturingssysteem de juiste taal gebruikt, stelt u de omgevingsvariabelen LC_ALL en LANG in op de gewenste taal in uw **(bl1** adm)-gebruikersomgeving.
 
    ```bash
    # This configuration is for bash shell. If you are using any other shell for sidadm, kindly set environment variable accordingly.
@@ -414,7 +414,7 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
    export LC_ALL=en_US.utf8
    ```
 
-5. **[A]** gebruikers account (**BL1** adm) configureren.
+5. **[A]** Configureer het gebruikersaccount (**bl1** adm).
 
    ```bash
    # Set ulimit for bl1adm to unlimited
@@ -442,11 +442,11 @@ Voor de stappen in deze sectie worden de volgende voor voegsels gebruikt:
    file locks                      (-x) unlimited
    ```
 
-6. Down load en pak media uit voor SAP BusinessObjects BI-platform van SAP Service Marketplace.
+6. Download en extraheert media voor SAP BusinessObjects BI Platform van SAP Service Marketplace.
 
 ## <a name="installation"></a>Installatie
 
-De land instelling controleren van het gebruikers account **BL1** adm op de server
+Controleer de locale voor gebruikersaccount **bl1** adm op de server
 
 ```bash
 bl1adm@azusbosl1:~> locale
@@ -454,39 +454,39 @@ LANG=en_US.utf8
 LC_ALL=en_US.utf8
 ```
 
-Navigeer naar media van het SAP BusinessObjects BI-platform en voer de volgende opdracht uit met **BL1** adm-gebruiker-
+Navigeer naar de media van SAP BusinessObjects BI Platform en voer de onderstaande opdracht uit **met bl1** adm-gebruiker -
 
 ```bash
 ./setup.sh -InstallDir /usr/sap/BL1
 ```
 
-Volg de installatie handleiding voor het [SAP BOBI-platform](https://help.sap.com/viewer/product/SAP_BUSINESSOBJECTS_BUSINESS_INTELLIGENCE_PLATFORM) voor UNIX, specifiek voor uw versie. Enkele punten om te noteren tijdens het installeren van het SAP BOBI-platform.
+Volg [de SAP BOBI](https://help.sap.com/viewer/product/SAP_BUSINESSOBJECTS_BUSINESS_INTELLIGENCE_PLATFORM) Platform-installatiehandleiding voor Unix, specifiek voor uw versie. Enkele punten om op te merken tijdens het installeren van SAP BOBI Platform.
 
-- In het scherm **product registratie configureren** kunt u de tijdelijke licentie sleutel voor SAP BusinessObjects-oplossingen van sap Note [1288121](https://launchpad.support.sap.com/#/notes/1288121) gebruiken of kunt u een licentie code genereren in SAP Service Marketplace
+- Op **het scherm Productregistratie** configureren kunt u een tijdelijke licentiesleutel gebruiken voor SAP BusinessObjects Solutions van SAP Note [1288121](https://launchpad.support.sap.com/#/notes/1288121) of een licentiesleutel genereren in SAP Service Marketplace
 
-- Selecteer in het scherm **installatie type selecteren** de optie **volledige** installatie op de eerste server (azusbosl1), voor een andere server (Azusbosl2), selecteer **aangepast/uitvouwen** , waarmee de bestaande BOBI-installatie wordt uitgevouwen.
+- Selecteer **in het** scherm  Type installatie selecteren de optie Volledige installatie op de eerste server (azusbosl1) en selecteer voor een andere server (azusbosl2) **Aangepast/Uitbreiden** om de bestaande BOBI-installatie uit te vouwen.
 
-- Selecteer in het venster **standaard of bestaande data base** selecteren **de optie een bestaande data base configureren**, waarin u wordt gevraagd om CMS-en audit database te selecteren. Selecteer **MySQL** voor het CMS-database type en het type controle database.
+- Selecteer **in het scherm Standaard of bestaande database** selecteren de optie Een bestaande **database** configureren, waarin u wordt gevraagd cms- en controledatabase te selecteren. Selecteer **MySQL** als CMS-databasetype en Auditdatabasetype.
 
-  U kunt ook geen controle database selecteren als u geen controle wilt configureren tijdens de installatie.
+  U kunt ook Geen controledatabase selecteren als u de controle niet wilt configureren tijdens de installatie.
 
-- Selecteer de gewenste opties op het **scherm Java Web Application Server selecteren** op basis van uw SAP BOBI-architectuur. In dit voor beeld hebben we optie 1 geselecteerd, waarmee Tomcat server op hetzelfde SAP BOBI-platform wordt geïnstalleerd.
+- Selecteer de juiste opties op **het scherm Java Web Application Server selecteren** op basis van uw SAP BOBI-architectuur. In dit voorbeeld hebben we optie 1 geselecteerd, waarmee tomcat-server op hetzelfde SAP BOBI-platform wordt geïnstalleerd.
 
-- Voer CMS-database gegevens in in de **CMS-opslagplaats database configureren-MySQL**. Voor beeld van invoer voor CMS-database gegevens voor Linux-installatie. Azure Database for MySQL wordt gebruikt op standaard poort 3306
+- Voer CMS-databasegegevens in Database **voor CMS-opslagplaats configureren - MySQL in.** Voorbeeldinvoer voor CMS-databasegegevens voor Linux-installatie. Azure Database for MySQL wordt gebruikt op standaardpoort 3306
   
-  ![SAP BOBI-implementatie in Linux-CMS-data base](media/businessobjects-deployment-guide/businessobjects-deployment-linux-sql-cms.png)
+  ![SAP BOBI-implementatie in Linux - CMS-database](media/businessobjects-deployment-guide/businessobjects-deployment-linux-sql-cms.png)
 
-- Beschrijving Voer de gegevens van de audit-data base in de **audit opslagplaats configureren-MySQL** in. Voor beeld van invoer voor de controle van database gegevens voor Linux-installatie.
+- (Optioneel) Voer Databasegegevens controleren in **Database voor auditopslagplaats configureren - MySQL in.** Voorbeeldinvoer voor Databasegegevens controleren voor Linux-installatie.
 
-  ![SAP BOBI-implementatie in Linux-Audit data base](media/businessobjects-deployment-guide/businessobjects-deployment-linux-sql-audit.png)
+  ![SAP BOBI-implementatie in Linux - Database controleren](media/businessobjects-deployment-guide/businessobjects-deployment-linux-sql-audit.png)
 
-- Volg de instructies en voer de vereiste invoer in om de installatie te volt ooien.
+- Volg de instructies en voer de vereiste invoer in om de installatie te voltooien.
 
-Voor implementatie met meerdere exemplaren voert u de installatie-instellingen op de tweede host (azusbosl2) uit. Selecteer in het scherm **installatie type selecteren** de optie **aangepast/uitvouwen** , waarmee de bestaande BOBI-instellingen worden uitgebreid.
+Voor implementatie met meerdere exemplaren moet u de installatie-installatie uitvoeren op de tweede host (azusbosl2). Selecteer **in het scherm Type** installatie selecteren de optie **Aangepast/uitbreiden** om de bestaande BOBI-installatie uit te vouwen.
 
-In azure data base for MySQL wordt een gateway gebruikt om de verbindingen met Server exemplaren om te leiden. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt. In de Central Management-Console (CMC) vindt u een andere database versie die in principe de versie heeft die is ingesteld op de gateway. Controleer de [ondersteunde Azure database for mysql server versies](../../../mysql/concepts-supported-versions.md) voor meer informatie.
+In Azure Database for MySQL wordt een gateway gebruikt om de verbindingen om te leiden naar server-exemplaren. Nadat de verbinding tot stand is gebracht, wordt in de MySQL-client de versie van MySQL weergegeven die in de gateway is ingesteld, niet de feitelijke versie die wordt uitgevoerd op de MySQL-serverinstantie. Als u de versie van uw MySQL-serverinstantie wilt vaststellen, gebruikt u de `SELECT VERSION();`-opdracht bij de MySQL-prompt. In De Central Management Console (CMC) vindt u dus een andere databaseversie die in feite de versie is die is ingesteld op de gateway. Raadpleeg [Ondersteunde Azure Database for MySQL serverversies](../../../mysql/concepts-supported-versions.md) voor meer informatie.
 
-![SAP BOBI-implementatie op Linux-CMC-instellingen](media/businessobjects-deployment-guide/businessobjects-deployment-linux-sql-cmc.png)
+![SAP BOBI-implementatie in Linux - CMC-instellingen](media/businessobjects-deployment-guide/businessobjects-deployment-linux-sql-cmc.png)
 
 ```sql
 # Run direct query to the database using MySQL Workbench
@@ -502,197 +502,197 @@ select version();
 
 ## <a name="post-installation"></a>Na de installatie
 
-### <a name="tomcat-clustering---session-replication"></a>Tomcat clustering-sessie replicatie
+### <a name="tomcat-clustering---session-replication"></a>Tomcat-clustering - sessiereplicatie
 
-Tomcat ondersteunt het clusteren van twee of meer toepassings servers voor sessie replicatie en failover. SAP BOBI-platform sessies worden geserialiseerd, een gebruikers sessie kan naadloos worden uitgevoerd naar een ander exemplaar van Tomcat, zelfs wanneer een toepassings server uitvalt.
+Tomcat ondersteunt clustering van twee of meer toepassingsservers voor sessiereplicatie en failover. SAP BOBI-platformsessies worden geseraliseerd. Een gebruikerssessie kan naadloos worden overgeslagen naar een ander exemplaar van tomcat, zelfs wanneer een toepassingsserver uitvalt.
 
-Als een gebruiker bijvoorbeeld is verbonden met een webserver die mislukt terwijl de gebruiker in de SAP BI-toepassing naar een mappen hiërarchie navigeert. Met een correct geconfigureerd cluster kan de gebruiker door gaan met de navigatie van de mappen hiërarchie zonder dat deze wordt omgeleid naar de aanmeldings pagina.
+Bijvoorbeeld als een gebruiker is verbonden met een webserver die uitvalt terwijl de gebruiker door een maphiërarchie in de SAP BI-toepassing navigeert. Met een correct geconfigureerd cluster kan de gebruiker door de maphiërarchie navigeren zonder dat deze wordt omgeleid naar de aanmeldingspagina.
 
-In SAP Note [2808640](https://launchpad.support.sap.com/#/notes/2808640)worden de stappen voor het configureren van Tomcat-clustering aangeboden via multi cast. In azure wordt multi cast echter niet ondersteund. Om ervoor te zorgen dat Tomcat-cluster in azure werkt, moet u [StaticMembershipInterceptor](https://tomcat.apache.org/tomcat-8.0-doc/config/cluster-interceptor.html#Static_Membership) (SAP-notitie [2764907](https://launchpad.support.sap.com/#/notes/2764907)) gebruiken. Controleer [Tomcat clustering met statische lidmaatschap voor het SAP BUSINESSOBJECTS BI-platform](https://blogs.sap.com/2020/09/04/sap-on-azure-tomcat-clustering-using-static-membership-for-sap-businessobjects-bi-platform/) op SAP-Blog om Tomcat-cluster in te stellen in Azure.
+In SAP Note [2808640](https://launchpad.support.sap.com/#/notes/2808640)worden de stappen voor het configureren van tomcat-clustering geleverd met behulp van multicast. Maar in Azure wordt multicast niet ondersteund. Als u het Tomcat-cluster in Azure wilt laten werken, moet u [StaticMembershipInterceptor](https://tomcat.apache.org/tomcat-8.0-doc/config/cluster-interceptor.html#Static_Membership) (SAP Note [2764907) gebruiken.](https://launchpad.support.sap.com/#/notes/2764907) Controleer [tomcat-clustering met behulp van statisch lidmaatschap voor SAP BusinessObjects BI Platform](https://blogs.sap.com/2020/09/04/sap-on-azure-tomcat-clustering-using-static-membership-for-sap-businessobjects-bi-platform/) in de SAP-blog om een tomcat-cluster in Te stellen in Azure.
 
-### <a name="load-balancing-web-tier-of-sap-bi-platform"></a>Weblaag voor taak verdeling van het SAP BI-platform
+### <a name="load-balancing-web-tier-of-sap-bi-platform"></a>Taakverdelingsweblaag van SAP BI-platform
 
-In de SAP BOBI-implementatie met meerdere instanties worden Java Web Application servers (weblaag) uitgevoerd op twee of meer hosts. Als u de gebruikers taken gelijkmatig over webservers wilt verdelen, kunt u een load balancer tussen eind gebruikers en webservers gebruiken. In azure kunt u Azure Load Balancer of Azure-toepassing gateway gebruiken voor het beheren van verkeer naar uw Web Application servers. Meer informatie over elke aanbieding wordt beschreven in de volgende sectie.
+In SAP BOBI-implementatie met meerdere exemplaren worden Java-webtoepassingsservers (weblaag) uitgevoerd op twee of meer hosts. Als u de gebruikersbelasting gelijkmatig wilt verdelen over webservers, kunt u een load balancer tussen eindgebruikers en webservers. In Azure kunt u een Azure Load Balancer of Azure Application Gateway om verkeer naar uw webtoepassingsservers te beheren. Meer informatie over elke aanbieding wordt uitgelegd in de volgende sectie.
 
-#### <a name="azure-load-balancer-network-based-load-balancer"></a>Azure load balancer (load balancer op basis van het netwerk)
+#### <a name="azure-load-balancer-network-based-load-balancer"></a>Azure load balancer (netwerkgebaseerde load balancer)
 
-[Azure Load Balancer](../../../load-balancer/load-balancer-overview.md) is een hoge prestatie, lage latentie laag 4 (TCP, UDP) Load Balancer die verkeer distribueert over gezonde virtual machines. Een load balancer Health prob bewaakt een bepaalde poort op elke VM en distribueert alleen verkeer naar een of meer operationele virtuele machine (s). U kunt een open bare load balancer of een interne load balancer kiezen, afhankelijk van of u het SAP BI-platform toegankelijk wilt maken vanaf internet of niet. De zone is redundant, waardoor er hoge Beschik baarheid over Beschikbaarheidszones.
+[Azure Load Balancer](../../../load-balancer/load-balancer-overview.md) is een laag 4-laag met hoge prestaties (TCP, UDP) load balancer die verkeer verdeelt over gezonde Virtual Machines. Een load balancer controleert een bepaalde poort op elke virtuele machine en distribueert alleen verkeer naar een operationele virtuele machine(s). U kunt een openbaar load balancer of een intern load balancer, afhankelijk van of u SAP BI Platform toegankelijk wilt maken via internet of niet. Zone-redundant, waardoor hoge beschikbaarheid in Beschikbaarheidszones.
 
-Raadpleeg de sectie interne Load Balancer in onderstaande afbeelding waar Web Application Server wordt uitgevoerd op poort 8080, standaard Tomcat HTTP-poort, die wordt bewaakt door de status test. Alle inkomende aanvragen die afkomstig zijn van eind gebruikers worden omgeleid naar de Web Application servers (azusbosl1 of azusbosl2) in de back-endserver. De Load Balancer biedt geen ondersteuning voor het beëindigen van TLS/SSL (ook wel bekend als TLS/SSL-offloading). Als u Azure load balancer gebruikt voor het distribueren van verkeer via webservers, raden we u aan Standard Load Balancer te gebruiken.
-
-> [!NOTE]
-> Wanneer Vm's zonder open bare IP-adressen in de back-endadresgroep van intern (geen openbaar IP-adres load balancer) worden geplaatst, is er geen uitgaande Internet verbinding, tenzij er aanvullende configuratie wordt uitgevoerd om route ring naar open bare eind punten toe te staan. Zie [connectiviteit van open bare eind punten voor virtual machines met behulp van Azure Standard Load Balancer in scenario's met hoge Beschik baarheid voor SAP](high-availability-guide-standard-load-balancer-outbound-connections.md)voor meer informatie over het bezorgen van uitgaande verbindingen.
-
-![Azure Load Balancer het verkeer te verdelen over webservers](media/businessobjects-deployment-guide/businessobjects-deployment-load-balancer.png)
-
-#### <a name="azure-application-gateway-web-application-load-balancer"></a>Azure Application Gateway (webtoepassing load balancer)
-
-[Azure-toepassing gateway (AGW)](../../../application-gateway/overview.md) biedt ADC (Application Delivery controller) als een service, die wordt gebruikt om gebruikers verkeer naar een of meer Web Application servers te sturen. Het biedt diverse Layer 7-functies voor taak verdeling, zoals TLS/SSL-offload, Web Application firewall (WAF), sessie affiniteit op basis van cookies en anderen voor uw toepassingen.
-
-In SAP BI-platform stuurt Application Gateway het webverkeer van de toepassing naar de opgegeven bronnen in een back-end-pool-azusbosl1 of azusbos2. U wijst een listener aan poort toe, maakt regels en voegt resources toe aan een back-end-groep. In de onderstaande afbeelding fungeren toepassings gateway met het privé-frontend-IP-adres (10.31.3.20) als ingangs punt voor de gebruikers, verwerkt binnenkomende TLS/SSL-verbindingen (HTTPS-TCP/443), ontsleutelt de TLS/SSL en wordt de niet-versleutelde aanvraag (HTTP-TCP/8080) door gegeven aan de servers in de back-end-pool. Met de ingebouwde functie voor het beëindigen van TLS/SSL moeten we een TLS/SSL-certificaat op Application Gateway onderhouden, waardoor de bewerkingen worden vereenvoudigd.
-
-![Application Gateway het verkeer te verdelen over webservers](media/businessobjects-deployment-guide/businessobjects-deployment-application-gateway.png)
-
-Als u Application Gateway wilt configureren voor de SAP BOBI-webserver, kunt u verwijzen naar [Load Balancing SAP BOBI webservers met behulp van Azure-toepassing gateway](https://blogs.sap.com/2020/09/17/sap-on-azure-load-balancing-web-application-servers-for-sap-bobi-using-azure-application-gateway/) op SAP blog.
+Raadpleeg de sectie Interne Load Balancer in onderstaande afbeelding waar webtoepassingsserver wordt uitgevoerd op poort 8080, de standaard Tomcat HTTP-poort, die wordt bewaakt door de statustest. Dus elke binnenkomende aanvraag die afkomstig is van eindgebruikers, wordt omgeleid naar de webtoepassingsservers (azusbosl1 of azusbosl2) in de back-endpool. Load balancer biedt geen ondersteuning voor TLS/SSL-beëindiging (ook wel bekend als TLS/SSL-offloading). Als u Azure Load balancer gebruikt om verkeer over webservers te distribueren, raden we u aan om Standard Load Balancer.
 
 > [!NOTE]
-> U wordt aangeraden Azure-toepassing gateway te gebruiken om het verkeer naar de webserver te verdelen terwijl het functionaliteits niveau van de functie biedt als SSL-offload, het SSL-beheer centraliseren om de overhead van versleuteling en ontsleuteling op de server te verminderen, Round-Robin algoritme voor het distribueren van verkeer, WAF-mogelijkheden (Web Application firewall), hoge Beschik baarheid, enzovoort.
+> Wanneer VM's zonder openbare IP-adressen in de back-endpool van interne (geen openbaar IP-adres) Standard Azure load balancer worden geplaatst, is er geen uitgaande internetverbinding, tenzij er aanvullende configuratie wordt uitgevoerd om routering naar openbare eindpunten toe te staan. Zie Public [endpoint connectivity for Virtual Machines using Azure Standard Load Balancer in SAP high-availability scenarios](high-availability-guide-standard-load-balancer-outbound-connections.md)(Openbare eindpuntconnectiviteit voor Virtual Machines met behulp van Azure Standard Load Balancer in SAP-scenario's met hoge beschikbaarheid) voor meer informatie over het bereiken van uitgaande connectiviteit.
 
-### <a name="sap-businessobjects-bi-platform---back-up-and-restore"></a>SAP BusinessObjects BI-platform: back-up en herstel
+![Azure Load Balancer verkeer over webservers te balanceren](media/businessobjects-deployment-guide/businessobjects-deployment-load-balancer.png)
 
-Backup en Restore is het proces van het maken van periodieke kopieën van gegevens en toepassingen naar een afzonderlijke locatie. Het kan dus worden hersteld of hersteld naar een eerdere status als de oorspronkelijke gegevens of toepassingen verloren zijn gegaan of beschadigd raken. Het is ook een essentieel onderdeel van een bedrijfs strategie voor nood herstel.
+#### <a name="azure-application-gateway-web-application-load-balancer"></a>Azure Application Gateway (web application load balancer)
 
-Voor het ontwikkelen van een uitgebreide strategie voor back-up en herstel voor het SAP BOBI-platform, identificeert u de onderdelen die leiden tot uitval tijd of onderbreking van de toepassing. In het SAP BOBI-platform zijn back-ups van de volgende onderdelen cruciaal om de toepassing te beveiligen.
+[Azure Application Gateway (AGW)](../../../application-gateway/overview.md) leveren Application Delivery Controller (ADC) als een service, die wordt gebruikt om de toepassing te helpen gebruikersverkeer om te leiden naar een of meer webtoepassingsservers. Het biedt verschillende taakverdelingsmogelijkheden van laag 7, zoals TLS/SSL Offloading, Web Application Firewall (WAF), sessieaffiniteit op basis van cookies en andere functies voor uw toepassingen.
+
+In SAP BI Platform stuurt Application Gateway webverkeer van toepassingen door naar de opgegeven resources in een back-endpool: azusbosl1 of azusbos2. U wijst een listener toe aan de poort, maakt regels en voegt resources toe aan een back-endpool. In de onderstaande afbeelding fungeren toepassingsgateways met een privé-front-end-IP-adres (10.31.3.20) als toegangspunt voor de gebruikers, worden binnenkomende TLS/SSL-verbindingen (HTTPS - TCP/443) verwerkt, wordt de TLS/SSL ontsleuteld en wordt de niet-versleutelde aanvraag (HTTP - TCP/8080) door gegeven aan de servers in de back-endpool. Met de ingebouwde functie voor TLS/SSL-beëindiging hoeven we slechts één TLS/SSL-certificaat op de toepassingsgateway te onderhouden, waardoor bewerkingen worden vereenvoudigd.
+
+![Application Gateway verkeer over webservers te balanceren](media/businessobjects-deployment-guide/businessobjects-deployment-application-gateway.png)
+
+Als u Application Gateway voor SAP BOBI-webserver wilt configureren, raadpleegt u de blog Load Balancing SAP BOBI Web Servers using Azure Application Gateway on SAP (Taakverdeling van [SAP BOBI-webservers](https://blogs.sap.com/2020/09/17/sap-on-azure-load-balancing-web-application-servers-for-sap-bobi-using-azure-application-gateway/) met behulp van Azure Application Gateway op SAP).
+
+> [!NOTE]
+> We raden u aan om Azure Application Gateway te gebruiken om het verkeer te verdelen over de webserver, omdat het functies biedt zoals SSL-offloading, centraliseren van SSL-beheer om de overhead voor versleuteling en ontsleuteling op de server te verminderen, Round-Robin-algoritme voor het distribueren van verkeer, Web Application Firewall(WAF)-mogelijkheden, hoge beschikbaarheid, en meer.
+
+### <a name="sap-businessobjects-bi-platform---back-up-and-restore"></a>SAP BusinessObjects BI Platform - back-up en herstel
+
+Back-up en herstel is een proces waarbij periodieke kopieën van gegevens en toepassingen worden gemaakt om de locatie te scheiden. Deze kan dus worden hersteld of hersteld naar een eerdere status als de oorspronkelijke gegevens of toepassingen verloren gaan of beschadigd zijn. Het is ook een essentieel onderdeel van elke strategie voor herstel na noodherstel voor bedrijven.
+
+Als u een uitgebreide back-up- en herstelstrategie wilt ontwikkelen voor SAP BOBI Platform, identificeert u de onderdelen die leiden tot systeemuitvaltijd of onderbreking van de toepassing. In SAP BOBI Platform zijn back-ups van de volgende onderdelen essentieel om de toepassing te beveiligen.
 
 - SAP BOBI-installatiemap (beheerde Premium-schijven)
-- Bestands opslagplaats server (Azure NetApp Files of Azure Premium-bestanden)
-- CMS-data base (Azure Database for MySQL of Data Base op Azure VM)
+- Server voor bestandsopslagplaats (Azure NetApp Files of Azure Premium Files)
+- CMS-database (Azure Database for MySQL of Database op Azure VM)
 
-In de volgende sectie wordt beschreven hoe u een strategie voor back-up en herstel implementeert voor elk onderdeel op het SAP BOBI-platform.
+In de volgende sectie wordt beschreven hoe u een back-up- en herstelstrategie implementeert voor elk onderdeel op het SAP BOBI-platform.
 
-#### <a name="backup--restore-for-sap-bobi-installation-directory"></a>Back-up & herstellen voor de SAP BOBI-installatiemap
+#### <a name="backup--restore-for-sap-bobi-installation-directory"></a>Back-& herstellen voor SAP BOBI-installatiemap
 
-In Azure is de eenvoudigste manier om back-ups te maken van toepassings servers en alle gekoppelde schijven is door gebruik te maken van [Azure backup](../../../backup/backup-overview.md) -service. Het biedt onafhankelijke en geïsoleerde back-ups om onbedoelde vernietiging van de gegevens op uw Vm's te bewaken. Back-ups worden opgeslagen in een Recovery Services-kluis met ingebouwd beheer van herstelpunten. Configuratie en schalen zijn eenvoudig, back-ups worden geoptimaliseerd en kunnen eenvoudig worden hersteld wanneer dat nodig is.
+In Azure is het gebruik van Azure Backup Service de eenvoudigste manier om een back-up te maken van toepassingsservers [en alle gekoppelde](../../../backup/backup-overview.md) schijven. Het biedt onafhankelijke en geïsoleerde back-ups om onbedoelde vernietigende gegevens op uw VM's te beschermen. Back-ups worden opgeslagen in een Recovery Services-kluis met ingebouwd beheer van herstelpunten. Configuratie en schaalbaarheid zijn eenvoudig, back-ups zijn geoptimaliseerd en kunnen eenvoudig worden hersteld wanneer dat nodig is.
 
-Als onderdeel van het back-upproces wordt er een moment opname gemaakt en worden de gegevens overgedragen naar de Recovery service-kluis zonder dat dit van invloed is op de werk belasting van de productie. De moment opname biedt een verschillend consistentie niveau, zoals beschreven in [consistentie artikel over moment opnamen](../../../backup/backup-azure-vms-introduction.md#snapshot-consistency) . U kunt er ook voor kiezen om een back-up te maken van de subset van de gegevens schijven in de virtuele machine met behulp van de functie voor back-up en herstel Zie back-updocument van [Azure VM](../../../backup/backup-azure-vms-introduction.md) en [Veelgestelde vragen over back-ups van virtuele machines van Azure](../../../backup/backup-azure-vm-backup-faq.yml)voor meer informatie.
+Als onderdeel van het back-upproces wordt er een momentopname gemaakt en worden de gegevens overgebracht naar de Recovery Service-kluis zonder dat dit van invloed is op productieworkloads. De momentopname biedt een ander consistentieniveau, zoals beschreven in het artikel [Consistentie van momentopnamen.](../../../backup/backup-azure-vms-introduction.md#snapshot-consistency) U kunt er ook voor kiezen om een back-up te maken van een subset van de gegevensschijven in de VM met behulp van back-up- en herstelfunctionaliteit voor selectieve schijven. Zie het document [Azure VM Backup (Azure VM Backup)](../../../backup/backup-azure-vms-introduction.md) en veelgestelde vragen [- Back-ups maken van Azure-VM's voor meer informatie.](../../../backup/backup-azure-vm-backup-faq.yml)
 
-#### <a name="backup--restore-for-file-repository-server"></a>Back-up & herstellen voor de bestands opslagplaats server
+#### <a name="backup--restore-for-file-repository-server"></a>Back-& voor bestandsopslagplaatsserver
 
-U kunt voor **Azure NetApp files** een moment opnamen op aanvraag maken en automatische moment opnamen plannen met behulp van een momentopname beleid. Momentopname kopieën bieden een tijdgebonden kopie van uw ANF-volume. Zie [moment opnamen beheren met Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-manage-snapshots.md)voor meer informatie.
+Voor **Azure NetApp Files** kunt u een momentopname op aanvraag maken en automatische momentopname plannen met behulp van beleid voor momentopnamen. Kopieën van momentopnamen bieden een kopie op een bepaald tijdstip van uw ANF-volume. Zie Momentopnamen beheren met behulp van Azure NetApp Files voor [meer Azure NetApp Files.](../../../azure-netapp-files/azure-netapp-files-manage-snapshots.md)
 
-**Azure files** back-up is geïntegreerd met de systeem eigen [Azure backup](../../../backup/backup-overview.md) -service, waarmee de functie back-up en herstellen wordt gecentraliseerd, samen met vm's back-ups en vereenvoudigt het werk. Zie back-ups van [Azure-bestands share](../../../backup/azure-file-share-backup-overview.md) en [Veelgestelde vragen-back-ups maken Azure files](../../../backup/backup-azure-files-faq.md)voor meer informatie.
+**Azure Files** back-up is geïntegreerd met de [systeemeigen](../../../backup/backup-overview.md) Azure Backup-service, waarmee de back-up- en herstelfunctie samen met de back-up van VM's wordt gecentreerd en het werk wordt vereenvoudigd. Zie Back-up van [Azure-bestands share en](../../../backup/azure-file-share-backup-overview.md) Veelgestelde vragen [- Back-up](../../../backup/backup-azure-files-faq.yml)maken Azure Files .
 
-#### <a name="backup--restore-for-cms-database"></a>Back-up & herstellen voor CMS-data base
+#### <a name="backup--restore-for-cms-database"></a>Back-& herstellen voor CMS-database
 
-Azure data base van MySQL is een DBaaS-aanbieding in azure, die automatisch server back-ups maakt en opslaat in een door de gebruiker geconfigureerde lokaal redundante of geografisch redundante opslag. Azure data base van MySQL maakt back-ups van de gegevens bestanden en het transactie logboek. Afhankelijk van de ondersteunde maximale opslag grootte, neemt deze volledige en differentiële back-ups (Maxi maal 4 TB opslag servers) of back-up van moment opname (Maxi maal 16 TB aan opslag servers). Met deze back-ups kunt u op elk moment binnen de geconfigureerde back-upperiode een server herstellen. De standaard retentie periode voor back-ups is zeven dagen, die u [Optioneel kunt configureren](../../../mysql/howto-restore-server-portal.md#set-backup-configuration) tot drie dagen. Alle back-ups worden versleuteld met AES 256-bits versleuteling.
+Azure Database of MySQL is een DBaaS-aanbieding in Azure, waarmee automatisch serverback-ups worden gemaakt en opgeslagen in door de gebruiker geconfigureerde lokaal redundante of geografisch redundante opslag. Azure Database of MySQL maakt back-ups van de gegevensbestanden en het transactielogboek. Afhankelijk van de ondersteunde maximale opslaggrootte, worden volledige en differentiële back-ups (maximaal 4 TB aan opslagservers) of een momentopnameback-up gemaakt (maximaal 16 TB aan opslagservers). Met deze back-ups kunt u een server op elk moment binnen de geconfigureerde bewaarperiode voor back-ups herstellen. De standaardretentieperiode voor back-ups is zeven dagen. U kunt deze eventueel [tot](../../../mysql/howto-restore-server-portal.md#set-backup-configuration) drie dagen configureren. Alle back-ups worden versleuteld met AES 256-bits versleuteling.
 
-Deze back-upbestanden zijn niet zichtbaar voor gebruikers en kunnen niet worden geëxporteerd. Deze back-ups kunnen alleen worden gebruikt voor herstel bewerkingen in Azure Database for MySQL. U kunt [mysqldump](../../../mysql/concepts-migrate-dump-restore.md) gebruiken om een Data Base te kopiëren. Zie [back-up en herstellen in azure database for MySQL](../../../mysql/concepts-backup.md)voor meer informatie.
+Deze back-upbestanden zijn niet zichtbaar voor gebruikers en kunnen niet worden geëxporteerd. Deze back-ups kunnen alleen worden gebruikt voor herstelbewerkingen in Azure Database for MySQL. U kunt [mysqldump gebruiken om](../../../mysql/concepts-migrate-dump-restore.md) een database te kopiëren. Zie Back-up maken en herstellen [in Azure Database for MySQL.](../../../mysql/concepts-backup.md)
 
-Voor de data base die op Virtual Machines is geïnstalleerd, kunt u standaard back-uphulpprogramma's of [Azure backup](../../../backup/sap-hana-db-about.md) voor Hana-Data Base gebruiken. Als de Azure-Services en-hulpprogram ma's niet voldoen aan uw vereisten, kunt u ook andere back-upprogramma's of script gebruiken om back-ups van schijven te maken.
+Voor een database die is geïnstalleerd Virtual Machines, kunt u standaardhulpprogramma's voor [back-ups](../../../backup/sap-hana-db-about.md) of Azure Backup HANA Database gebruiken. Als de Azure-services en -hulpprogramma's niet voldoen aan uw behoeften, kunt u ook andere back-uphulpprogramma's of scripts gebruiken om back-ups van schijven te maken.
 
-## <a name="sap-businessobjects-bi-platform-reliability"></a>Betrouw baarheid van SAP BusinessObjects BI-platform
+## <a name="sap-businessobjects-bi-platform-reliability"></a>Betrouwbaarheid van SAP BusinessObjects BI-platform
 
-Het SAP BusinessObjects BI-platform bevat verschillende lagen die zijn geoptimaliseerd voor specifieke taken en bewerkingen. Wanneer een onderdeel van een wille keurige laag niet meer beschikbaar is, wordt SAP BOBI-toepassing niet meer toegankelijk of wordt bepaalde functionaliteit van de toepassing niet meer gebruikt. U moet er dus voor zorgen dat elke laag betrouwbaar is om toepassings operationeel te houden zonder dat er bedrijfs onderbrekingen zijn.
+SAP BusinessObjects BI Platform bevat verschillende lagen die zijn geoptimaliseerd voor specifieke taken en bewerkingen. Wanneer een onderdeel van een van de lagen niet meer beschikbaar is, wordt de SAP BOBI-toepassing ontoegankelijk of werkt bepaalde functionaliteit van de toepassing niet. Daarom moet u ervoor zorgen dat elke laag is ontworpen om betrouwbaar te zijn om de toepassing operationeel te houden zonder bedrijfsonderbrekingen.
 
-Deze sectie is gericht op de volgende opties voor het SAP BOBI-platform-
+Deze sectie richt zich op de volgende opties voor SAP BOBI Platform -
 
-- **Hoge Beschik baarheid:** Een platform met hoge Beschik baarheid heeft ten minste twee van alles binnen de Azure-regio, zodat de toepassing operationeel blijft als een van de servers niet meer beschikbaar is.
-- **Herstel na nood geval:** Het is een proces waarbij de functionaliteit van uw toepassing wordt hersteld als er sprake is van een onherstelbaar verlies, zoals de volledige Azure-regio niet meer beschikbaar is vanwege een natuur ramp.
+- **Hoge beschikbaarheid:** Een hoog beschikbaar platform heeft ten minste twee van alles in de Azure-regio om de toepassing operationeel te houden als een van de servers niet meer beschikbaar is.
+- **Herstel na noodherstel:** Het is een proces van het herstellen van de functionaliteit van uw toepassing als er sprake is van onherstelbaar verlies, omdat de hele Azure-regio niet meer beschikbaar is vanwege een natuurramp.
 
-De implementatie van deze oplossing varieert afhankelijk van de aard van de systeem installatie in Azure. Klanten moeten dus een oplossing voor hoge Beschik baarheid en herstel na nood gevallen aanpassen op basis van hun zakelijke vereisten.
+De implementatie van deze oplossing is afhankelijk van de aard van de systeeminstallatie in Azure. De klant moet dus een oplossing voor hoge beschikbaarheid en herstel na noodherstel aanpassen op basis van hun bedrijfsvereiste.
 
 ### <a name="high-availability"></a>Hoge beschikbaarheid
 
-Hoge Beschik baarheid verwijst naar een set technologieën die IT-onderbrekingen kan minimaliseren door de bedrijfs continuïteit van toepassingen/services te bieden via redundante, fout tolerante of met failover beveiligde onderdelen binnen hetzelfde Data Center. In ons geval zijn de data centers binnen één Azure-regio. De [architectuur en scenario's met hoge Beschik baarheid voor SAP](sap-high-availability-architecture-scenarios.md) bieden een eerste inzicht in de verschillende technieken voor hoge Beschik baarheid en aanbevelingen die worden aangeboden op Azure voor SAP-toepassingen. Dit geldt voor de instructies in deze sectie.
+Hoge beschikbaarheid verwijst naar een set technologieën die IT-onderbrekingen kunnen minimaliseren door bedrijfscontinuïteit te bieden voor toepassingen/services via redundante, fouttolerante of met failover beveiligde onderdelen binnen hetzelfde datacenter. In ons geval zijn de datacenters binnen één Azure-regio. Het artikel Architectuur voor hoge beschikbaarheid en scenario's voor SAP bieden een eerste inzicht in verschillende technieken voor hoge beschikbaarheid en aanbevelingen die worden aangeboden in Azure voor [SAP-toepassingen.](sap-high-availability-architecture-scenarios.md) Dit is een aanvulling op de instructies in deze sectie.
 
-Op basis van het schaal resultaat van het SAP BOBI-platform moet u het landschap ontwerpen en de distributie van BI-onderdelen in azure-Virtual Machines en-subnetten bepalen. Het niveau van redundantie in de gedistribueerde architectuur is afhankelijk van de bedrijfs vereiste herstel tijd van de onderneming (RTO) en het beoogde herstel punt (RPO). Het SAP BOBI-platform bevat verschillende lagen en onderdelen op elke laag, die zijn ontworpen om redundantie te garanderen. Als er een fout optreedt in een onderdeel, is er weinig te voor komen dat uw SAP BOBI-toepassing wordt onderbroken. Bijvoorbeeld:
+Op basis van het formaatresultaat van SAP BOBI Platform moet u het landschap ontwerpen en de distributie van BI-onderdelen bepalen over Azure-Virtual Machines en subnetten. Het redundantieniveau in de gedistribueerde architectuur is afhankelijk van het vereiste hersteltijddoel (RTO) en de RPO (Recovery Point Objective). SAP BOBI Platform bevat verschillende lagen en onderdelen op elke laag moeten worden ontworpen om redundantie te bereiken. Als er dus één onderdeel uitvalt, is er weinig tot geen onderbreking van uw SAP BOBI-toepassing. Bijvoorbeeld:
 
-- Redundante toepassings servers als BI-toepassings servers en webserver
-- Unieke onderdelen, zoals CMS-data base, bestands opslagplaats server, Load Balancer
+- Redundante toepassingsservers zoals BI-toepassingsservers en webservers
+- Unieke onderdelen, zoals CMS-database, server voor bestandsopslagplaats, Load Balancer
 
-In de volgende sectie wordt beschreven hoe u hoge Beschik baarheid kunt bezorgen voor elk onderdeel van het SAP BOBI-platform.
+In de volgende sectie wordt beschreven hoe u hoge beschikbaarheid kunt bereiken voor elk onderdeel van SAP BOBI Platform.
 
-#### <a name="high-availability-for-application-servers"></a>Hoge Beschik baarheid voor toepassings servers
+#### <a name="high-availability-for-application-servers"></a>Hoge beschikbaarheid voor toepassingsservers
 
-Voor BI-en Web Application-servers, ongeacht of deze afzonderlijk of samen worden geïnstalleerd, is geen specifieke oplossing voor hoge Beschik baarheid nodig. U kunt hoge Beschik baarheid bezorgen door redundantie, dat wil zeggen door meerdere exemplaren van BI-en webservers in verschillende Azure-Virtual Machines te configureren.
+Voor BI- en webtoepassingsservers is geen specifieke oplossing met hoge beschikbaarheid nodig, ongeacht of ze afzonderlijk of samen zijn geïnstalleerd. U kunt hoge beschikbaarheid bereiken door redundantie, dat wil zeggen door meerdere exemplaren van BI- en webservers in verschillende Azure-Virtual Machines.
 
-Om de impact van uitval tijd te verminderen vanwege een of meer gebeurtenissen, is het raadzaam om de volgende procedure te volgen met hoge Beschik baarheid voor de toepassings servers die worden uitgevoerd op meerdere virtuele machines.
+Om de gevolgen van downtime door een of meer gebeurtenissen te beperken, is het raadzaam om onderstaande hoge beschikbaarheidsprocedure te volgen voor de toepassingsservers die op meerdere virtuele machines worden uitgevoerd.
 
-- Gebruik Beschikbaarheidszones om datacenter fouten te beveiligen.
-- Configureer meerdere Virtual Machines in een Beschikbaarheidsset voor redundantie.
-- Gebruik Managed Disks voor Vm's in een Beschikbaarheidsset.
-- Configureer elke toepassingslaag in afzonderlijke beschikbaarheids sets.
+- Gebruik Beschikbaarheidszones om datacentrumfouten te beveiligen.
+- Configureer meerdere Virtual Machines in een beschikbaarheidsset voor redundantie.
+- Gebruik Managed Disks voor VM's in een beschikbaarheidsset.
+- Configureer elke toepassingslaag in afzonderlijke beschikbaarheidssets.
 
-Schakel [de beschik baarheid van virtuele Linux-machines beheren](../../availability.md) in voor meer informatie.
+Zie Manage [the availability of Linux virtual machines (De beschikbaarheid van virtuele Linux-machines beheren) voor meer informatie](../../availability.md)
 
-#### <a name="high-availability-for-cms-database"></a>Hoge Beschik baarheid voor CMS-data base
+#### <a name="high-availability-for-cms-database"></a>Hoge beschikbaarheid voor CMS-database
 
-Als u de service Azure data base as a Service (DBaaS) voor CMS-data base gebruikt, wordt standaard een Framework met hoge Beschik baarheid beschikbaar gesteld. U hoeft alleen maar de regio en de service in te stellen op basis van hoge Beschik baarheid, redundantie en tolerantie, zonder dat u extra onderdelen hoeft te configureren. Voor meer informatie over de SLA van ondersteunde DBaaS-aanbiedingen op Azure, controleert u [hoge Beschik baarheid in azure database for MySQL](../../../mysql/concepts-high-availability.md) en [hoge Beschik baarheid voor Azure SQL database](../../../azure-sql/database/high-availability-sla.md)
+Als u Azure Database as a Service (DBaaS) gebruikt voor CMS-database, wordt standaard een framework voor hoge beschikbaarheid geboden. U hoeft alleen de regio en service te selecteren die inherent zijn aan hoge beschikbaarheid, redundantie en tolerantiemogelijkheden zonder dat u extra onderdelen hoeft te configureren. Voor meer informatie over de SLA van ondersteunde DBaaS-aanbiedingen in Azure, raadpleegt u Hoge beschikbaarheid [in](../../../mysql/concepts-high-availability.md) Azure Database for MySQL [en Hoge beschikbaarheid voor Azure SQL Database](../../../azure-sql/database/high-availability-sla.md)
 
-Raadpleeg de [DBMS-implementatie handleidingen voor de SAP-werk belasting](dbms_guide_general.md)voor een andere DBMS-implementatie voor de CMS-data base. deze biedt inzicht in de verschillende DBMS-implementatie en de aanpak ervan om hoge Beschik baarheid te bereiken.
+Voor andere DBMS-implementaties voor CMS-databases raadpleegt u DBMS-implementatiehandleidingen voor [SAP-workload,](dbms_guide_general.md)die inzicht bieden in verschillende DBMS-implementaties en de benadering om hoge beschikbaarheid te bereiken.
 
-#### <a name="high-availability-for-file-repository-server"></a>Hoge Beschik baarheid voor de bestands opslagplaats server
+#### <a name="high-availability-for-file-repository-server"></a>Hoge beschikbaarheid voor bestandsopslagplaatsserver
 
-File Repository Server (FRS) verwijst naar de schijf mappen waarin inhoud zoals rapporten, universums en verbindingen worden opgeslagen. Het wordt gedeeld op alle toepassings servers van dat systeem. U moet er dus voor zorgen dat deze Maxi maal beschikbaar is.
+File Repository Server (FRS) verwijst naar de schijfdirecties waar inhoud, zoals rapporten, universums en verbindingen, worden opgeslagen. Het wordt gedeeld met alle toepassingsservers van dat systeem. U moet er dus voor zorgen dat deze zeer beschikbaar is.
 
-In azure kunt u kiezen voor [Azure Premium-bestanden](../../../storage/files/storage-files-introduction.md) of [Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-introduction.md) voor bestands shares die zijn ontworpen om Maxi maal beschikbaar te zijn en zeer duurzaam zijn. Zie de sectie [Redundantie](../../../storage/files/storage-files-planning.md#redundancy) voor Azure files voor meer informatie.
+In Azure kunt u Kiezen voor [Azure Premium Files](../../../storage/files/storage-files-introduction.md) of [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-introduction.md) voor bestands delen die zijn ontworpen om zeer beschikbaar en uiterst duurzaam van aard te zijn. Zie de sectie [Redundantie voor](../../../storage/files/storage-files-planning.md#redundancy) meer informatie Azure Files.
 
 > [!NOTE]
-> Het SMB-protocol voor Azure Files is algemeen beschikbaar, maar de NFS-protocol ondersteuning voor Azure Files is momenteel in de preview-versie. Zie voor meer informatie [NFS 4,1-ondersteuning voor Azure files is nu](https://azure.microsoft.com/en-us/blog/nfs-41-support-for-azure-files-is-now-in-preview/) beschikbaar als preview-versie
+> SMB Protocol voor Azure Files is algemeen beschikbaar, maar NFS Protocol-ondersteuning voor Azure Files is momenteel in preview. Zie [NFS 4.1 support for Azure Files is now in preview (NFS 4.1-ondersteuning](https://azure.microsoft.com/en-us/blog/nfs-41-support-for-azure-files-is-now-in-preview/) voor Azure Files is nu in preview) voor meer informatie
 
-Omdat deze bestands share service niet beschikbaar is in alle regio's, moet u ervoor zorgen dat u verwijst naar [producten die beschikbaar zijn per regio](https://azure.microsoft.com/en-us/global-infrastructure/services/) -site om actuele informatie te vinden. Als de service niet beschikbaar is in uw regio, kunt u een NFS-server maken van waaruit u het bestands systeem kunt delen met de SAP BOBI-toepassing. Maar u moet ook rekening houden met de hoge Beschik baarheid.
+Omdat deze service voor bestands delen niet in alle [](https://azure.microsoft.com/en-us/global-infrastructure/services/) regio's beschikbaar is, raadpleegt u De beschikbare producten per regio-site voor actuele informatie. Als de service niet beschikbaar is in uw regio, kunt u een NFS-server maken van waaruit u het bestandssysteem kunt delen met de SAP BOBI-toepassing. Maar u moet ook rekening houden met de hoge beschikbaarheid.
 
-#### <a name="high-availability-for-load-balancer"></a>Hoge Beschik baarheid voor load balancer
+#### <a name="high-availability-for-load-balancer"></a>Hoge beschikbaarheid voor load balancer
 
-Als u verkeer wilt distribueren via een webserver, kunt u Azure Load Balancer of Azure-toepassing gateway gebruiken. De redundantie voor een van de load balancer kan worden bereikt op basis van de SKU die u voor de implementatie kiest.
+Als u verkeer wilt distribueren over de webserver, kunt u Azure Load Balancer of Azure Application Gateway. De redundantie voor een van de load balancer kan worden bereikt op basis van de SKU die u voor de implementatie kiest.
 
-- Voor Azure Load Balancer kan redundantie worden bereikt door Standard Load Balancer frontend te configureren als zone-redundant. Zie [Standard Load Balancer en Beschikbaarheidszones](../../../load-balancer/load-balancer-standard-availability-zones.md) voor meer informatie.
-- Voor Application Gateway kan hoge Beschik baarheid worden bereikt op basis van het type laag dat tijdens de implementatie is geselecteerd.
-  - v1 SKU ondersteunt scenario's met hoge Beschik baarheid wanneer u twee of meer exemplaren hebt geïmplementeerd. Azure distribueert deze instanties over update-en fout domeinen om ervoor te zorgen dat de exemplaren niet allemaal op hetzelfde moment worden uitgevoerd. Met deze SKU kan redundantie worden bereikt binnen de zone
-  - v2 SKU zorgt er automatisch voor dat nieuwe instanties worden verspreid over fout domeinen en update domeinen. Als u zone redundantie kiest, worden de nieuwste instanties ook verspreid over de beschik bare zones om zonegebonden-fout tolerantie aan te bieden. Raadpleeg voor meer informatie automatisch [schalen en zone-redundante Application Gateway v2](../../../application-gateway/application-gateway-autoscaling-zone-redundant.md)
+- Voor Azure Load Balancer kan redundantie worden bereikt door een front-Standard Load Balancer te configureren als zone-redundant. Zie voor meer informatie [Standard Load Balancer en Beschikbaarheidszones](../../../load-balancer/load-balancer-standard-availability-zones.md)
+- Voor Application Gateway kunt u hoge beschikbaarheid bereiken op basis van het type laag dat tijdens de implementatie is geselecteerd.
+  - v1 SKU ondersteunt scenario's met hoge beschikbaarheid wanneer u twee of meer exemplaren hebt geïmplementeerd. Azure distribueert deze exemplaren over update- en foutdomeinen om ervoor te zorgen dat exemplaren niet allemaal tegelijk mislukken. Met deze SKU kan redundantie dus worden bereikt binnen de zone
+  - V2 SKU zorgt er automatisch voor dat nieuwe exemplaren worden verdeeld over foutdomeinen en updatedomeinen. Als u zone-redundantie kiest, worden de nieuwste exemplaren ook verdeeld over beschikbaarheidszones om zone-uitval tolerantie te bieden. Zie Automatisch schalen [en zone-redundante](../../../application-gateway/application-gateway-autoscaling-zone-redundant.md) Application Gateway v2 voor meer informatie
 
-#### <a name="reference-high-availability-architecture-for-sap-businessobjects-bi-platform"></a>Naslag informatie over de architectuur met hoge Beschik baarheid voor het SAP BusinessObjects BI-platform
+#### <a name="reference-high-availability-architecture-for-sap-businessobjects-bi-platform"></a>Referentiearchitectuur met hoge beschikbaarheid voor SAP BusinessObjects BI-platform
 
-Onder referentie architectuur wordt de installatie van het SAP BOBI-platform beschreven met behulp van de beschikbaarheidsset, die virtuele machines in de zone redundantie en beschik baarheid biedt. De architectuur bevat een demonstratie van het gebruik van verschillende Azure-Services, zoals Azure-toepassing gateway, Azure NetApp Files en Azure Database for MySQL voor het SAP BOBI-platform dat ingebouwde redundantie biedt, waardoor de complexiteit van het beheer van verschillende oplossingen met hoge Beschik baarheid wordt beperkt.
+In de onderstaande referentiearchitectuur wordt beschreven hoe SAP BOBI Platform is ingesteld met behulp van een beschikbaarheidsset, die redundantie en beschikbaarheid van VM's binnen de zone biedt. De architectuur demonstreert het gebruik van verschillende Azure-services, zoals Azure Application Gateway, Azure NetApp Files en Azure Database for MySQL voor SAP BOBI Platform, dat ingebouwde redundantie biedt, waardoor het beheer van verschillende oplossingen met hoge beschikbaarheid minder complex wordt.
 
-In de onderstaande afbeelding wordt het binnenkomende verkeer (HTTPS-TCP/443) gelijkmatig verdeeld met behulp van Azure-toepassing gateway v1 SKU, die Maxi maal beschikbaar is wanneer deze wordt geïmplementeerd op twee of meer exemplaren. Meerdere exemplaren van webserver, beheerser vers en verwerkings servers worden geïmplementeerd in afzonderlijke Virtual Machines om redundantie te verzorgen en elke laag wordt geïmplementeerd in afzonderlijke beschikbaarheids sets. Azure NetApp Files heeft ingebouwde redundantie binnen Data Center, zodat uw ANF-volumes voor de bestands opslagplaats server Maxi maal beschikbaar zijn. CMS-data base is ingericht op Azure Database for MySQL (DBaaS) met inherente hoge Beschik baarheid. Zie voor meer informatie [hoge Beschik baarheid in azure database for MySQL](../../../mysql/concepts-high-availability.md) Guide.
+In de onderstaande afbeelding wordt het binnenkomende verkeer (HTTPS - TCP/443) verdeeld met behulp van Azure Application Gateway v1 SKU, die zeer beschikbaar is wanneer het wordt geïmplementeerd op twee of meer exemplaren. Er worden meerdere exemplaren van webservers, beheerservers en verwerkingsservers geïmplementeerd in afzonderlijke Virtual Machines om redundantie te bereiken en elke laag wordt geïmplementeerd in afzonderlijke beschikbaarheidssets. Azure NetApp Files heeft ingebouwde redundantie in het datacenter, zodat uw ANF-volumes voor bestandsopslagplaatsserver zeer beschikbaar zijn. CMS Database wordt ingericht op Azure Database for MySQL (DBaaS) die inherent hoge beschikbaarheid heeft. Zie Hoge beschikbaarheid in Azure Database for MySQL handleiding [voor meer](../../../mysql/concepts-high-availability.md) informatie.
 
-![SAP BusinessObjects BI-platform redundantie met beschikbaarheids sets](media/businessobjects-deployment-guide/businessobjects-deployment-high-availability.png)
+![REDUNDANTie van SAP BusinessObjects BI-platform met behulp van beschikbaarheidssets](media/businessobjects-deployment-guide/businessobjects-deployment-high-availability.png)
 
-De bovenstaande architectuur biedt inzicht in de manier waarop SAP BOBI-implementatie in azure kan worden uitgevoerd. Maar dit geldt niet voor alle mogelijke configuratie opties voor het SAP BOBI-platform op Azure. De klant kan hun implementatie aanpassen op basis van hun bedrijfs behoeften door verschillende producten/services te kiezen voor verschillende onderdelen, zoals Load Balancer, bestands opslagplaats server en DBMS.
+De bovenstaande architectuur biedt inzicht in hoe SAP BOBI-implementatie in Azure kan worden uitgevoerd. Maar niet alle mogelijke configuratieopties voor SAP BOBI Platform in Azure komen aan de hand van deze optie. Klanten kunnen hun implementatie aanpassen op basis van hun zakelijke behoeften door verschillende producten/services te kiezen voor verschillende onderdelen, zoals Load Balancer, server voor bestandsopslagplaats en DBMS.
 
-In verschillende Azure-regio's worden Beschikbaarheidszones aangeboden, wat betekent dat het onafhankelijke aanbod van voedings bron, koeling en netwerk is. Hiermee kunnen klanten toepassingen implementeren in twee of drie beschik bare zones. Voor klanten die hoge Beschik baarheid willen hebben over AZs, kan het SAP BOBI-platform implementeren in verschillende beschikbaarheids zones, zodat elk onderdeel in de toepassing zone redundant is.
+In verschillende Azure-regio'Beschikbaarheidszones aangeboden, wat betekent dat de stroomvoorziening, koeling en het netwerk onafhankelijk zijn. Hiermee kan de klant toepassingen implementeren in twee of drie beschikbaarheidszones. Klanten die hoge beschikbaarheid willen bereiken in meerdere AZ's, kunnen SAP BOBI Platform implementeren in beschikbaarheidszones en ervoor zorgen dat elk onderdeel in de toepassing zone-redundant is.
 
 ### <a name="disaster-recovery"></a>Herstel na noodgeval
 
-De instructie in dit gedeelte beschrijft de strategie voor het bieden van herstel na nood gevallen voor het SAP BOBI-platform. Het is een aanvulling op het [nood herstel voor SAP](../../../site-recovery/site-recovery-sap.md) -document, dat de primaire bronnen voor de algemene SAP-nood herstel methode vertegenwoordigt.
+In de instructie in deze sectie wordt uitgelegd wat de strategie is om bescherming tegen noodherstel te bieden voor SAP BOBI Platform. Het vormt een aanvulling op het document [Disaster Recovery for SAP,](../../../site-recovery/site-recovery-sap.md) dat de primaire resources vertegenwoordigt voor de algehele SAP-noodherstelbenadering.
 
-#### <a name="reference-disaster-recovery-architecture-for-sap-businessobjects-bi-platform"></a>Naslag informatie over herstel na nood gevallen voor het SAP BusinessObjects BI-platform
+#### <a name="reference-disaster-recovery-architecture-for-sap-businessobjects-bi-platform"></a>Referentiearchitectuur voor herstel na noodherstel voor SAP BusinessObjects BI-platform
 
-Deze referentie architectuur voert een implementatie met meerdere exemplaren van het SAP BOBI-platform uit met redundante toepassings servers. Voor herstel na nood gevallen moet u een failover van alle lagen naar een secundaire regio uitvoeren. Voor elke laag wordt een andere strategie gebruikt voor herstel na nood gevallen.
+In deze referentiearchitectuur wordt de implementatie van SAP BOBI Platform met meerdere exemplaren uitgevoerd met redundante toepassingsservers. Voor herstel na noodherstel moet u een fail over alle lagen naar een secundaire regio maken. Elke laag gebruikt een andere strategie om bescherming tegen noodherstel te bieden.
 
-![Herstel na nood gevallen voor SAP BusinessObjects BI-platform](media/businessobjects-deployment-guide/businessobjects-deployment-disaster-recovery.png)
+![SAP BusinessObjects BI Platform Disaster Recovery](media/businessobjects-deployment-guide/businessobjects-deployment-disaster-recovery.png)
 
 #### <a name="load-balancer"></a>Load balancer
 
-Load Balancer wordt gebruikt voor het distribueren van verkeer via Web Application servers van het SAP BOBI-platform. Voor het realiseren van DR voor Azure-toepassing gateway, implementeert u parallelle installatie van Application Gateway op de secundaire regio.
+Load Balancer wordt gebruikt om verkeer te distribueren over webtoepassingsservers van SAP BOBI Platform. Implementeert parallelle installatie van Azure Application Gateway toepassingsgateway in de secundaire regio om dr-Azure Application Gateway te realiseren.
 
-#### <a name="virtual-machines-running-web-and-bi-application-servers"></a>Virtuele machines met web-en BI-toepassings servers
+#### <a name="virtual-machines-running-web-and-bi-application-servers"></a>Virtuele machines waarop web- en BI-toepassingsservers worden uitgevoerd
 
-Azure Site Recovery-service kan worden gebruikt om Virtual Machines met web-en BI-toepassings servers te repliceren op de secundaire regio. De servers in de secundaire regio worden gerepliceerd, zodat u, wanneer er storingen en storingen optreden, u eenvoudig een failover naar uw gerepliceerde omgeving kunt uitvoeren en met werken
+Azure Site Recovery-service kan worden gebruikt voor het repliceren van Virtual Machines web- en BI-toepassingsservers in de secundaire regio. De servers in de secundaire regio worden gerepliceerd, zodat u bij nood en uitval eenvoudig een fail over kunt zetten naar uw gerepliceerde omgeving en kunt blijven werken
 
-#### <a name="file-repository-servers"></a>Bestands opslagplaats servers
+#### <a name="file-repository-servers"></a>Servers voor bestandsopslagplaats
 
-- **Azure NetApp files** biedt NFS-en SMB-volumes, dus elk hulp programma voor het kopiëren van bestanden kan worden gebruikt om gegevens tussen Azure-regio's te repliceren. Zie [Veelgestelde vragen over Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-faqs.md#how-do-i-create-a-copy-of-an-azure-netapp-files-volume-in-another-azure-region) voor meer informatie over het kopiëren van een ANF-volume in een andere regio.
+- **Azure NetApp Files** biedt NFS- en SMB-volumes, zodat elk op bestanden gebaseerd hulpprogramma voor kopiëren kan worden gebruikt om gegevens tussen Azure-regio's te repliceren. Zie Veelgestelde vragen over het kopiëren van een ANF-volume in een andere [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-faqs.md#how-do-i-create-a-copy-of-an-azure-netapp-files-volume-in-another-azure-region)
 
-  U kunt Azure NetApp Files replicatie voor meerdere regio's gebruiken. Dit is momenteel als [Preview-versie](https://azure.microsoft.com/en-us/blog/azure-netapp-files-cross-region-replication-and-new-enhancements-in-preview/) die gebruikmaakt van de NetApp SnapMirror®-technologie. Daarom worden alleen gewijzigde blokken via het netwerk verzonden met een gecomprimeerde, efficiënte indeling. Deze bedrijfs technologie minimaliseert de hoeveelheid gegevens die nodig zijn voor replicatie over de regio's, waardoor de kosten voor gegevens overdracht worden bespaard. Ook wordt de replicatie tijd verkort, zodat u een kleinere herstel punt doelstelling (RPO) kunt krijgen. Raadpleeg de [vereisten en overwegingen voor het gebruik van replicatie tussen regio's](../../../azure-netapp-files/cross-region-replication-requirements-considerations.md) voor meer informatie.
+  U kunt Azure NetApp Files replicatie tussen regio's gebruiken. Deze is momenteel in [preview](https://azure.microsoft.com/en-us/blog/azure-netapp-files-cross-region-replication-and-new-enhancements-in-preview/) en maakt gebruik van netApp SnapMirror®technologie. Daarom worden alleen gewijzigde blokken via het netwerk verzonden in een gecomprimeerde, efficiënte indeling. Deze eigen technologie minimaliseert de hoeveelheid gegevens die nodig is om te repliceren tussen de regio's, waardoor kosten voor gegevensoverdracht worden bespaard. Het verkort ook de replicatietijd, zodat u een kleinere RPO (Restore Point Objective) kunt bereiken. Raadpleeg Vereisten [en overwegingen voor het gebruik van replicatie tussen regio's](../../../azure-netapp-files/cross-region-replication-requirements-considerations.md) voor meer informatie.
 
-- **Azure Premium-bestanden** ondersteunen alleen lokaal redundante (LRS) en zone redundante opslag (ZRS). Voor de DR-strategie van Azure Premium-bestanden kunt u [AzCopy](../../../storage/common/storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) gebruiken om uw bestanden te kopiëren naar een ander opslag account in een andere regio. Zie [nood herstel en failover van het opslag account](../../../storage/common/storage-disaster-recovery-guidance.md) voor meer informatie.
+- **Azure Premium-bestanden** ondersteunen alleen lokaal redundante (LRS) en zone-redundante opslag (ZRS). Voor een dr-strategie voor Azure Premium Files kunt u [AzCopy](../../../storage/common/storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) bestanden kopiëren naar een ander opslagaccount in een andere regio. Zie Herstel na noodherstel en failover van [opslagaccount](../../../storage/common/storage-disaster-recovery-guidance.md) voor meer informatie
 
-#### <a name="cms-database"></a>CMS-data base
+#### <a name="cms-database"></a>CMS-database
 
-Azure Database for MySQL biedt meerdere opties voor het herstellen van de Data Base als er sprake is van een nood geval. Kies de juiste optie voor uw bedrijf.
+Azure Database for MySQL biedt meerdere opties voor het herstellen van de database in geval van nood. Kies de juiste optie die geschikt is voor uw bedrijf.
 
-- Schakel replica's met meerdere regio's in om uw bedrijfs continuïteit en planning voor herstel na nood gevallen te verbeteren. U kunt repliceren van de bron server naar Maxi maal vijf replica's. Lees replica's worden asynchroon bijgewerkt met de binaire logboek replicatie technologie van MySQL. Replica's zijn nieuwe servers die u op dezelfde manier beheert als gewone Azure Database for MySQL servers. Meer informatie over het lezen van replica's, beschik bare regio's, beperkingen en het uitvoeren van failover vanuit het [artikel concepten van replica's lezen](../../../mysql/concepts-read-replicas.md).
+- Leesreplica's tussen regio's inschakelen om uw planning voor bedrijfscontinuïteit en herstel na noodherstel te verbeteren. U kunt vanaf de bronserver repliceren naar maximaal vijf replica's. Leesreplica's worden asynchroon bijgewerkt met behulp van de replicatietechnologie voor binaire logboeken van MySQL. Replica's zijn nieuwe servers die u beheert, vergelijkbaar met Azure Database for MySQL servers. Lees meer over leesreplica's, beschikbare regio's, beperkingen en hoe u een fail over kunt zetten in het artikel Over concepten van [leesreplica's.](../../../mysql/concepts-read-replicas.md)
 
-- Gebruik de functie geo-Restore van Azure Database for MySQL waarmee de server wordt hersteld met behulp van geo-redundante back-ups. Deze back-ups zijn toegankelijk, zelfs wanneer de regio waarop uw server wordt gehost, offline is. U kunt van deze back-ups naar een andere regio herstellen en uw server weer online brengen.
+- Gebruik Azure Database for MySQL functie voor geo-herstel waarmee de server wordt hersteld met behulp van geografisch redundante back-ups. Deze back-ups zijn zelfs toegankelijk wanneer de regio waarop uw server wordt gehost offline is. U kunt deze back-ups herstellen naar een andere regio en uw server weer online brengen.
 
   > [!NOTE]
-  > Geo-herstel is alleen mogelijk als u de server hebt ingericht met geografisch redundante back-upopslag. Het wijzigen van de **Opties voor back-upredundantie** bij het maken van een server wordt niet ondersteund. Zie [back-upredundantie](../../../mysql/concepts-backup.md#backup-redundancy-options) artikel voor meer informatie.
+  > Geo-herstel is alleen mogelijk als u de server hebt ingericht met geografisch redundante back-upopslag. Het wijzigen van **de opties voor back-up redundantie** na het maken van de server wordt niet ondersteund. Zie het artikel [Backup Redundancy (Redundantie van back-ups) voor](../../../mysql/concepts-backup.md#backup-redundancy-options) meer informatie.
 
-Hier volgt een aanbeveling voor herstel na nood gevallen van elke laag die in dit voor beeld wordt gebruikt.
+Hieronder volgt de aanbeveling voor herstel na noodherstel van elke laag die in dit voorbeeld wordt gebruikt.
 
-| SAP BOBI-platform lagen   | Aanbeveling                                                                                           |
+| SAP BOBI-platformlagen   | Aanbeveling                                                                                           |
 |---------------------------|----------------------------------------------------------------------------------------------------------|
-| Azure Application Gateway | Parallelle installatie van Application Gateway op de secundaire regio                                                |
-| Web Application servers   | Repliceren met behulp van Site Recovery                                                                         |
-| BI-toepassings servers    | Repliceren met behulp van Site Recovery                                                                         |
-| Azure NetApp Files        | Op bestanden gebaseerd hulp programma voor het repliceren van gegevens naar een secundaire regio **of** ANF Kruis regio replicatie (preview-versie) |
-| Azure Database for MySQL  | U hebt replica's gelezen **of** u herstelt back-ups van geo-redundante back-ups.                             |
+| Azure Application Gateway | Parallelle installatie van Application Gateway in secundaire regio                                                |
+| Webtoepassingsservers   | Repliceren met behulp van Site Recovery                                                                         |
+| BI-toepassingsservers    | Repliceren met behulp van Site Recovery                                                                         |
+| Azure NetApp Files        | Hulpprogramma voor kopiëren op basis van bestanden voor het repliceren van gegevens naar de secundaire **regio of** ANF-replicatie tussen regio's (preview) |
+| Azure Database for MySQL  | Leesreplica's in verschillende **regio's of** Back-up terugzetten vanuit geografisch redundante back-ups.                             |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Herstel na nood geval instellen voor een implementatie van SAP-apps met meerdere lagen](../../../site-recovery/site-recovery-sap.md)
-- [Azure Virtual Machines planning en implementatie voor SAP](planning-guide.md)
+- [Herstel na noodherstel instellen voor een SAP-app-implementatie met meerdere lagen](../../../site-recovery/site-recovery-sap.md)
+- [Azure Virtual Machines en implementatie voor SAP](planning-guide.md)
 - [Azure Virtual Machines-implementatie voor SAP](deployment-guide.md)
 - [Azure Virtual Machines DBMS-implementatie voor SAP](./dbms_guide_general.md)

@@ -1,7 +1,7 @@
 ---
-title: NSG-stroom logboeken beheren-Azure REST API
+title: NSG-stroomlogboeken beheren - Azure REST API
 titleSuffix: Azure Network Watcher
-description: Deze pagina bevat informatie over het beheren van stroom logboeken voor netwerk beveiligings groepen in azure Network Watcher met REST API
+description: Op deze pagina wordt uitgelegd hoe u stroomlogboeken van netwerkbeveiligingsgroep beheert in Azure Network Watcher met REST API
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: ea24716dba5e4e824a4fa986602007035be8e365
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b45d066d0996aaba2a25500f8134085f5e9b6ffb
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98018374"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107535197"
 ---
-# <a name="configuring-network-security-group-flow-logs-using-rest-api"></a>Stroom logboeken voor netwerk beveiligings groepen configureren met REST API
+# <a name="configuring-network-security-group-flow-logs-using-rest-api"></a>Stroomlogboeken van netwerkbeveiligingsgroep configureren met REST API
 
 > [!div class="op_single_selector"]
 > - [Azure-portal](network-watcher-nsg-flow-logging-portal.md)
@@ -27,26 +27,26 @@ ms.locfileid: "98018374"
 > - [Azure-CLI](network-watcher-nsg-flow-logging-cli.md)
 > - [REST API](network-watcher-nsg-flow-logging-rest.md)
 
-Stroom logboeken van netwerk beveiligings groepen zijn een functie van Network Watcher waarmee u informatie kunt bekijken over binnenkomend en IP-verkeer via een netwerk beveiligings groep. Deze stroom logboeken worden geschreven in JSON-indeling en uitgaande en inkomende stromen per regel weer gegeven, de NIC waarop de stroom van toepassing is, 5-tuple informatie over de stroom (bron/doel-IP, bron/doel poort, Protocol) en of het verkeer is toegestaan of geweigerd.
+Stroomlogboeken van netwerkbeveiligingsgroep zijn een functie van Network Watcher waarmee u informatie kunt weergeven over in- en uitstromend IP-verkeer via een netwerkbeveiligingsgroep. Deze stroomlogboeken worden geschreven in json-indeling en tonen uitgaande en binnenkomende stromen per regel, de NIC op wie de stroom van toepassing is, informatie met vijf tuples over de stroom (bron-/doel-IP, bron-/doelpoort, protocol) en of het verkeer is toegestaan of geweigerd.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-ARMclient wordt gebruikt om de REST API aan te roepen met behulp van Power shell. ARMClient is in Choco lade op [ARMClient op Choco lade](https://chocolatey.org/packages/ARMClient) gevonden
+ARMclient wordt gebruikt om de REST API aan te roepen met behulp van PowerShell. ARMClient vindt u op chocolatey bij [ARMClient op Chocolatey](https://chocolatey.org/packages/ARMClient). De gedetailleerde specificaties van NSG-stroomlogboeken REST API vindt u [hier](https://docs.microsoft.com/rest/api/network-watcher/flowlogs) 
 
-In dit scenario wordt ervan uitgegaan dat u de stappen in [Create a Network Watcher](network-watcher-create.md) voor het maken van een Network Watcher, al hebt gevolgd.
+In dit scenario wordt ervan uitgenomen dat u de stappen in Een Network Watcher hebt [gevolgd om](network-watcher-create.md) een Network Watcher.
 
 > [!Important]
-> Voor Network Watcher REST API de naam van de resource groep in de aanvraag-URI is de resource groep die de Network Watcher bevat, niet de resources waarvoor u de diagnostische acties uitvoert.
+> Voor Network Watcher REST API de naam van de resourcegroep in de aanvraag-URI is de resourcegroep die de Network Watcher bevat, niet de resources waar u de diagnostische acties op wilt uitvoeren.
 
 ## <a name="scenario"></a>Scenario
 
-In het scenario dat in dit artikel wordt behandeld, wordt beschreven hoe u stroom Logboeken kunt inschakelen, uitschakelen en opvragen met behulp van de REST API. Ga voor meer informatie over het vastleggen van stroom logboeken voor netwerk beveiligings groepen naar [netwerk beveiligings groep Flow logging-overzicht](network-watcher-nsg-flow-logging-overview.md).
+In het scenario dat in dit artikel wordt behandeld, ziet u hoe u stroomlogboeken kunt inschakelen, uitschakelen en er query's op kunt uitvoeren met behulp van de REST API. Ga naar Stroomlogregistratie voor netwerkbeveiligingsgroep - Overzicht voor meer informatie over stroomlogregistraties voor [netwerkbeveiligingsgroep.](network-watcher-nsg-flow-logging-overview.md)
 
-In dit scenario gaat u als volgt te werkt:
+In dit scenario gaat u het volgende doen:
 
-* Stroom logboeken inschakelen (versie 2)
-* Stroom Logboeken uitschakelen
-* Status van de query stroom logboeken
+* Stroomlogboeken inschakelen (versie 2)
+* Stroomlogboeken uitschakelen
+* Status van stroomlogboeken opvragen
 
 ## <a name="log-in-with-armclient"></a>Aanmelden met ARMClient
 
@@ -58,16 +58,16 @@ armclient login
 
 ## <a name="register-insights-provider"></a>Insights-provider registreren
 
-Voor een goede werking van de stroom registratie moet de **micro soft. Insights** -provider zijn geregistreerd. Als u niet zeker weet of de provider van **micro soft. Insights** is geregistreerd, voert u het volgende script uit.
+Als u wilt dat stroomlogregistratie werkt, moet de **Microsoft.Insights-provider** zijn geregistreerd. Als u niet zeker weet of de **Microsoft.Insights-provider** is geregistreerd, moet u het volgende script uitvoeren.
 
 ```powershell
 $subscriptionId = "00000000-0000-0000-0000-000000000000"
 armclient post "https://management.azure.com//subscriptions/${subscriptionId}/providers/Microsoft.Insights/register?api-version=2016-09-01"
 ```
 
-## <a name="enable-network-security-group-flow-logs"></a>Stroom logboeken van netwerk beveiligings groepen inschakelen
+## <a name="enable-network-security-group-flow-logs"></a>Stroomlogboeken voor netwerkbeveiligingsgroep inschakelen
 
-De opdracht voor het inschakelen van stroom logboeken versie 2 wordt weer gegeven in het volgende voor beeld. Vervang in versie 1 het veld ' versie ' door ' 1 ':
+De opdracht voor het inschakelen van stroomlogboeken versie 2 wordt weergegeven in het volgende voorbeeld. Vervang voor versie 1 het veld 'versie' door '1':
 
 ```powershell
 $subscriptionId = "00000000-0000-0000-0000-000000000000"
@@ -96,7 +96,7 @@ $requestBody = @"
 armclient post "https://management.azure.com/subscriptions/${subscriptionId}/ResourceGroups/${resourceGroupName}/providers/Microsoft.Network/networkWatchers/${networkWatcherName}/configureFlowLog?api-version=2016-12-01" $requestBody
 ```
 
-De reactie die wordt geretourneerd door het vorige voor beeld is als volgt:
+Het antwoord dat uit het vorige voorbeeld is geretourneerd, is als volgt:
 
 ```json
 {
@@ -116,9 +116,9 @@ De reactie die wordt geretourneerd door het vorige voor beeld is als volgt:
 }
 ```
 
-## <a name="disable-network-security-group-flow-logs"></a>Stroom logboeken van netwerk beveiligings groep uitschakelen
+## <a name="disable-network-security-group-flow-logs"></a>Stroomlogboeken voor netwerkbeveiligingsgroep uitschakelen
 
-Gebruik het volgende voor beeld om stroom Logboeken uit te scha kelen. De aanroep is hetzelfde als het inschakelen van stroom logboeken, behalve **False** is ingesteld voor de eigenschap Enabled.
+Gebruik het volgende voorbeeld om stroomlogboeken uit te schakelen. De aanroep is hetzelfde als het inschakelen van stroomlogboeken, behalve **false** is ingesteld voor de ingeschakelde eigenschap.
 
 ```powershell
 $subscriptionId = "00000000-0000-0000-0000-000000000000"
@@ -147,7 +147,7 @@ $requestBody = @"
 armclient post "https://management.azure.com/subscriptions/${subscriptionId}/ResourceGroups/${resourceGroupName}/providers/Microsoft.Network/networkWatchers/${networkWatcherName}/configureFlowLog?api-version=2016-12-01" $requestBody
 ```
 
-De reactie die wordt geretourneerd door het vorige voor beeld is als volgt:
+Het antwoord dat uit het vorige voorbeeld is geretourneerd, is als volgt:
 
 ```json
 {
@@ -167,9 +167,9 @@ De reactie die wordt geretourneerd door het vorige voor beeld is als volgt:
 }
 ```
 
-## <a name="query-flow-logs"></a>Query stroom logboeken
+## <a name="query-flow-logs"></a>Stroomlogboeken opvragen
 
-Met de volgende REST-aanroep wordt de status van stroom Logboeken in een netwerk beveiligings groep opgevraagd.
+Met de volgende REST-aanroep wordt de status van stroomlogboeken in een netwerkbeveiligingsgroep opgevraagd.
 
 ```powershell
 $subscriptionId = "00000000-0000-0000-0000-000000000000"
@@ -185,7 +185,7 @@ $requestBody = @"
 armclient post "https://management.azure.com/subscriptions/${subscriptionId}/ResourceGroups/${resourceGroupName}/providers/Microsoft.Network/networkWatchers/${networkWatcherName}/queryFlowLogStatus?api-version=2016-12-01" $requestBody
 ```
 
-Hier volgt een voor beeld van het geretourneerde antwoord:
+Hier volgt een voorbeeld van het antwoord dat wordt geretourneerd:
 
 ```json
 {
@@ -205,11 +205,11 @@ Hier volgt een voor beeld van het geretourneerde antwoord:
 }
 ```
 
-## <a name="download-a-flow-log"></a>Een stroom logboek downloaden
+## <a name="download-a-flow-log"></a>Een stroomlogboek downloaden
 
-De opslag locatie van een stroom logboek wordt gedefinieerd bij het maken. Een handig hulp middel om toegang te krijgen tot deze stroom logboeken die zijn opgeslagen in een opslag account, is Microsoft Azure Storage Explorer, dat hier kan worden gedownload:  https://storageexplorer.com/
+De opslaglocatie van een stroomlogboek wordt gedefinieerd bij het maken. Een handig hulpprogramma voor toegang tot deze stroomlogboeken die zijn opgeslagen in een opslagaccount is Microsoft Azure Storage Explorer, die u hier kunt downloaden:  https://storageexplorer.com/
 
-Als er een opslag account is opgegeven, worden pakket opname bestanden opgeslagen in een opslag account op de volgende locatie:
+Als een opslagaccount is opgegeven, worden pakketopnamebestanden opgeslagen in een opslagaccount op de volgende locatie:
 
 ```
 https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
@@ -217,6 +217,6 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [het visualiseren van uw NSG-stroom logboeken met PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md)
+Meer informatie over het [visualiseren van uw NSG-stroomlogboeken met PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md)
 
-Meer informatie over hoe u [uw NSG-stroom logboeken visualiseren met open-source-hulpprogram ma's](network-watcher-visualize-nsg-flow-logs-open-source-tools.md)
+Meer informatie over het [visualiseren van uw NSG-stroomlogboeken met open source hulpprogramma's](network-watcher-visualize-nsg-flow-logs-open-source-tools.md)

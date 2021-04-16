@@ -2,22 +2,25 @@
 title: 'Quickstart: Gastgebruikers toevoegen in de Azure-portal - Azure AD'
 description: Gebruik deze snelstart voor meer informatie over hoe Azure AD-beheerders B2B-gastgebruikers kunnen toevoegen in de Azure Portal en ga stapsgewijs door de werkstroom van de B2B-uitnodiging.
 services: active-directory
-ms.service: active-directory
-ms.subservice: B2B
-ms.topic: quickstart
-ms.date: 08/05/2020
-ms.author: mimart
 author: msmimart
+ms.author: mimart
 manager: celestedg
 ms.reviewer: mal
-ms.custom: it-pro, seo-update-azuread-jan
+ms.date: 08/05/2020
+ms.topic: quickstart
+ms.service: active-directory
+ms.subservice: B2B
+ms.custom:
+- it-pro
+- seo-update-azuread-jan
+- mode-portal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12f134a11b6d0a561a8b53156c927906afe2874a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7326a35d07715eae75f70f2f33763f82946c589c
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87910518"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107529857"
 ---
 # <a name="quickstart-add-guest-users-to-your-directory-in-the-azure-portal"></a>Snelstart: Gastgebruikers toevoegen in uw map van de Azure Portal
 

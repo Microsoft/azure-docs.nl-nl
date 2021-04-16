@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cosmos DB
 description: Toont beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cosmos DB. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.topic: sample
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 9a104f783bc2bc845d2b2067247ba9be2ce6441d
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 330ec202a5996a4359ec702c9ed40e33df2e3dbd
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106096429"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107504087"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-cosmos-db"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]

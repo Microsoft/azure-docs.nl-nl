@@ -1,7 +1,7 @@
 ---
-title: Reken clusters maken
+title: Rekenclusters maken
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het maken van reken clusters in uw Azure Machine Learning-werk ruimte. Gebruik het berekenings cluster als een reken doel voor training of deinterferentie.
+description: Meer informatie over het maken van rekenclusters in Azure Machine Learning werkruimte. Gebruik het rekencluster als een rekendoel voor training of de deferie.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,74 +11,82 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 1e3549a6f5f4f9d7f6a6da574378c90c20e42dcf
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 2d23e073a43d61a501e93e0288f222ef26407744
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106169569"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538231"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Een Azure Machine Learning-rekencluster maken
 
-Meer informatie over het maken en beheren van een [berekenings cluster](concept-compute-target.md#azure-machine-learning-compute-managed) in uw Azure machine learning-werk ruimte.
+Meer informatie over het maken en beheren van [een rekencluster](concept-compute-target.md#azure-machine-learning-compute-managed) in Azure Machine Learning werkruimte.
 
-U kunt Azure Machine Learning Compute-cluster gebruiken voor het distribueren van een training of batch-deprocessor proces over een cluster van CPU-of GPU-reken knooppunten in de Cloud. Zie [grootten geoptimaliseerd voor virtuele machines](../virtual-machines/sizes-gpu.md)voor meer informatie over de VM-grootten die GPU bevatten. 
+U kunt een Azure Machine Learning gebruiken om een training- of batchdeferentieproces te distribueren over een cluster van CPU- of GPU-rekenknooppunten in de cloud. Zie voor GPU geoptimaliseerde VM-grootten voor meer informatie over de VM-grootten met [GPU's.](../virtual-machines/sizes-gpu.md) 
 
 In dit artikel leert u het volgende:
 
 * Een rekencluster maken
-* De kosten voor reken clusters verlagen
-* Een [beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) voor het cluster instellen
+* De kosten van uw rekencluster verlagen
+* Een beheerde [identiteit instellen](../active-directory/managed-identities-azure-resources/overview.md) voor het cluster
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
+* Een Azure Machine Learning-werkruimte. Zie Create [an Azure Machine Learning workspace (Een werkruimte Azure Machine Learning maken) voor meer informatie.](how-to-manage-workspace.md)
 
-* De [Azure cli-extensie voor machine learning service](reference-azure-machine-learning-cli.md), [Azure machine learning python SDK](/python/api/overview/azure/ml/intro)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
+* De [Azure CLI-extensie voor Machine Learning service](reference-azure-machine-learning-cli.md), Azure Machine Learning Python [SDK](/python/api/overview/azure/ml/intro)of de [Azure Machine Learning Visual Studio Code-extensie](tutorial-setup-vscode-extension.md).
 
-## <a name="what-is-a-compute-cluster"></a>Wat is een berekenings cluster?
+* Als u de Python-SDK gebruikt, [stelt u uw ontwikkelomgeving in met een werkruimte](how-to-configure-environment.md).  Zodra uw omgeving is ingesteld, koppelt u deze aan de werkruimte in uw Python-script:
 
-Azure Machine Learning Compute-Cluster is een beheerde infra structuur voor beheer, waarmee u eenvoudig een berekening met één of meerdere knoop punten kunt maken. De berekening wordt binnen uw werkruimte regio gemaakt als een resource die kan worden gedeeld met andere gebruikers in uw werk ruimte. De berekening wordt automatisch omhoog geschaald wanneer een taak wordt verzonden en kan in een Azure-Virtual Network worden geplaatst. De berekening wordt uitgevoerd in een omgeving met containers en verpakt uw model afhankelijkheden in een [docker-container](https://www.docker.com/why-docker).
+    ```python
+    from azureml.core import Workspace
+    
+    ws = Workspace.from_config() 
+    ```
 
-Reken clusters kunnen taken veilig uitvoeren in een [virtuele netwerk omgeving](how-to-secure-training-vnet.md), zonder dat ondernemingen de SSH-poorten hoeven te openen. De taak wordt uitgevoerd in een omgeving met containers en verpakt uw model afhankelijkheden in een docker-container. 
+## <a name="what-is-a-compute-cluster"></a>Wat is een rekencluster?
+
+Azure Machine Learning rekencluster is een beheerde rekeninfrastructuur waarmee u eenvoudig een rekenkracht met één of meerdere knooppunt kunt maken. De berekening wordt binnen uw werkruimteregio gemaakt als een resource die kan worden gedeeld met andere gebruikers in uw werkruimte. De rekenkracht wordt automatisch opgeschaald wanneer een taak wordt verzonden en kan in een Azure-Virtual Network. De berekening wordt uitgevoerd in een containeromgeving en verpakt uw modelafhankelijkheden in een [Docker-container](https://www.docker.com/why-docker).
+
+Rekenclusters kunnen taken veilig uitvoeren in een omgeving met een virtueel [netwerk,](how-to-secure-training-vnet.md)zonder dat ondernemingen SSH-poorten moeten openen. De taak wordt uitgevoerd in een containeromgeving en verpakt uw modelafhankelijkheden in een Docker-container. 
 
 ## <a name="limitations"></a>Beperkingen
 
-* Enkele van de scenario's die in dit document worden vermeld, zijn gemarkeerd als __Preview__. De Preview-functionaliteit wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+* Sommige van de scenario's die in dit document worden vermeld, zijn gemarkeerd als __preview.__ Preview-functionaliteit wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-* Momenteel wordt er alleen ondersteuning geboden voor het maken van clusters via ARM-sjablonen [ https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/workspaces/computes?tabs=json ]. Voor het bijwerken van Compute raden wij u aan de SDK, CLI of UX nu te gebruiken.
+* Momenteel wordt alleen het maken (en niet bijwerken) van clusters ondersteund via ARM-sjablonen [ https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/workspaces/computes?tabs=json ]. Voor het bijwerken van de rekenkracht raden we u aan om de SDK, CLI of UX voor nu te gebruiken.
 
-* Azure Machine Learning Compute heeft standaard limieten, zoals het aantal kernen dat kan worden toegewezen. Zie voor meer informatie [beheer en aanvragen van quota's voor Azure-resources](how-to-manage-quotas.md).
+* Azure Machine Learning Compute heeft standaardlimieten, zoals het aantal kernen dat kan worden toegewezen. Zie Quota voor [Azure-resources beheren en aanvragen voor meer informatie.](how-to-manage-quotas.md)
 
-* Met Azure kunt u _vergren delingen_ op resources plaatsen, zodat ze niet kunnen worden verwijderd of alleen-lezen zijn. __Pas geen resource vergrendeling toe op de resource groep die uw werk ruimte bevat__. Het Toep assen van een vergren deling op de resource groep die uw werk ruimte bevat, voor komt dat er schaal bewerkingen voor Azure ML-reken clusters worden uitgevoerd. Zie [resources vergren delen om onverwachte wijzigingen](../azure-resource-manager/management/lock-resources.md)te voor komen voor meer informatie over het vergren delen van resources.
+* Met Azure kunt u _vergrendelingen voor_ resources plaatsen, zodat ze niet kunnen worden verwijderd of alleen-lezen zijn. __Pas geen resourcevergrendelingen toe op de resourcegroep die uw werkruimte bevat.__ Door een vergrendeling toe te passen op de resourcegroep die uw werkruimte bevat, voorkomt u schaalbewerkingen voor Azure ML-rekenclusters. Zie Resources vergrendelen om onverwachte wijzigingen te voorkomen voor meer informatie over het [vergrendelen van resources.](../azure-resource-manager/management/lock-resources.md)
 
 > [!TIP]
-> Clusters kunnen over het algemeen tot 100 knoop punten worden geschaald zolang u voldoende quota hebt voor het vereiste aantal kernen. Standaard worden clusters ingesteld met communicatie tussen knoop punten die is ingeschakeld tussen de cluster knooppunten voor de ondersteuning van MPI-taken. U kunt uw clusters echter naar duizenden knoop punten schalen door simpelweg [een ondersteunings ticket te verhogen](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)en u aan te vragen om een lijst met uw abonnement of werk ruimte of een specifiek cluster te maken voor het uitschakelen van communicatie tussen knoop punten. 
+> Clusters kunnen over het algemeen worden opgeschaald tot 100 knooppunten zolang u voldoende quotum hebt voor het aantal vereiste kernen. Standaard worden clusters ingesteld met communicatie tussen knooppunten ingeschakeld tussen de knooppunten van het cluster om bijvoorbeeld MPI-taken te ondersteunen. U kunt uw clusters echter schalen naar 1000 knooppunten door simpelweg een ondersteuningsticket in te stellen en aan te vragen om uw abonnement of werkruimte of een specifiek cluster toe te staan voor het uitschakelen van communicatie tussen knooppunten. [](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
 
 ## <a name="create"></a>Maken
 
-**Geschatte tijd**: ongeveer 5 minuten.
+**Geschatte tijd:** Ongeveer 5 minuten.
 
-Azure Machine Learning Compute kan worden hergebruikt in uitvoeringen. De compute kan worden gedeeld met andere gebruikers in de werk ruimte en wordt bewaard tussen uitvoeringen, waarbij knoop punten automatisch omhoog of omlaag worden geschaald op basis van het aantal verzonden uitvoeringen en de max_nodes die in uw cluster zijn ingesteld. Met de instelling min_nodes bepaalt u de mini maal beschik bare knoop punten.
+Azure Machine Learning Compute kan opnieuw worden gebruikt voor verschillende runs. De rekenkracht kan worden gedeeld met andere gebruikers in de werkruimte en wordt tussen runs bewaard, knooppunten automatisch omhoog of omlaag geschaald op basis van het aantal verzonden runs en de max_nodes ingesteld op uw cluster. De min_nodes bepaalt de minimale beschikbare knooppunten.
 
-Het quotum toegewezen kernen per regio per VM-serie en het totale regionale quotum, dat van toepassing is op het maken van een compute-cluster, is Unified en gedeeld met Azure Machine Learning quota voor reken instanties. 
+De toegewezen kernen per regio per VM-familiequotum en het totale regionale quotum, dat van toepassing is op het maken van rekenclusters, worden samengevoegd en gedeeld met Azure Machine Learning trainingquotum voor rekenproces. 
 
 [!INCLUDE [min-nodes-note](../../includes/machine-learning-min-nodes.md)]
 
-De berekening wordt automatisch geschaald naar nul knoop punten wanneer deze niet wordt gebruikt.   Er zijn specifieke Vm's gemaakt om uw taken naar behoefte uit te voeren.
+De rekenkracht wordt automatisch omlaag geschaald naar nul knooppunten wanneer deze niet wordt gebruikt.   Toegewezen VM's worden gemaakt om uw taken naar behoefte uit te voeren.
     
 # <a name="python"></a>[Python](#tab/python)
 
-Als u een permanente Azure Machine Learning Compute-resource in python wilt maken, geeft u de **vm_size** en **max_nodes** eigenschappen op. Azure Machine Learning gebruikt vervolgens slimme standaard instellingen voor de andere eigenschappen. 
-    
-* **vm_size**: de VM-familie van de knoop punten die door Azure machine learning Compute zijn gemaakt.
-* **max_nodes**: het maximum aantal knoop punten waarmee automatisch kan worden geschaald wanneer u een taak op Azure machine learning Compute uitvoert.
 
+Als u een permanente Azure Machine Learning Compute-resource in Python wilt maken, geeft u de eigenschappen **vm_size** **en max_nodes** op. Azure Machine Learning gebruikt vervolgens slimme standaardwaarden voor de andere eigenschappen.
+    
+* **vm_size:** de VM-familie van de knooppunten die zijn gemaakt door Azure Machine Learning Compute.
+* **max_nodes:** het maximum aantal knooppunten dat automatisch moet worden geschaald wanneer u een taak op Azure Machine Learning Compute.
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
 
-U kunt ook verschillende geavanceerde eigenschappen configureren wanneer u Azure Machine Learning Compute maakt. Met de eigenschappen kunt u een permanent cluster met een vaste grootte of binnen een bestaand Azure-Virtual Network in uw abonnement maken.  Zie de [klasse AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute) voor meer informatie.
+U kunt ook verschillende geavanceerde eigenschappen configureren wanneer u een Azure Machine Learning Compute. Met de eigenschappen kunt u een permanent cluster met een vaste grootte of binnen een bestaand Azure-Virtual Network in uw abonnement.  Zie de [klasse AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute) voor meer informatie.
 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
@@ -88,19 +96,19 @@ U kunt ook verschillende geavanceerde eigenschappen configureren wanneer u Azure
 az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
 ```
 
-Zie [AZ ml computetarget Create amlcompute](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)voor meer informatie.
+Zie az [ml computetarget create amlcompute voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
-Zie [Compute-doelen maken in azure machine learning Studio](how-to-create-attach-compute-studio.md#amlcompute)voor meer informatie over het maken van een berekenings cluster in de Studio.
+Zie Rekendoelen maken in Azure Machine Learning-studio voor meer informatie over het maken van een [rekencluster in Azure Machine Learning-studio.](how-to-create-attach-compute-studio.md#amlcompute)
 
 ---
 
- ## <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a> De kosten voor reken clusters verlagen
+ ## <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a> De kosten van uw rekencluster verlagen
 
-U kunt ook [virtuele machines met lage prioriteit](concept-plan-manage-cost.md#low-pri-vm) gebruiken om enkele of alle werk belastingen uit te voeren. Deze Vm's hebben geen gegarandeerde Beschik baarheid en kunnen worden afgebroken tijdens het gebruik. U moet een afgebroken taak opnieuw starten. 
+U kunt er ook voor kiezen om [VM's met lage prioriteit te](concept-plan-manage-cost.md#low-pri-vm) gebruiken om een deel van uw workloads of al uw workloads uit te voeren. Deze VM's hebben geen gegarandeerde beschikbaarheid en kunnen worden vereendd tijdens gebruik. U moet een bestaande taak opnieuw starten. 
 
-Gebruik een van de volgende manieren om een VM met lage prioriteit op te geven:
+Gebruik een van deze manieren om een VM met lage prioriteit op te geven:
     
 # <a name="python"></a>[Python](#tab/python)
     
@@ -112,7 +120,7 @@ compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
     
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Stel het `vm-priority` volgende in:
+Stel de `vm-priority` in:
     
 ```azurecli-interactive
 az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_NC6 --max-nodes 5 --vm-priority lowpriority
@@ -120,7 +128,7 @@ az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_N
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
-Kies in de Studio **lage prioriteit** bij het maken van een virtuele machine.
+Kies in de studio **Lage prioriteit wanneer** u een VM maakt.
 
 --- 
 
@@ -130,18 +138,20 @@ Kies in de Studio **lage prioriteit** bij het maken van een virtuele machine.
 
 # <a name="python"></a>[Python](#tab/python)
 
-* Beheerde identiteit configureren in uw inrichtings configuratie:  
+* Beheerde identiteit configureren in uw inrichtingsconfiguratie:  
 
-    * Door het systeem toegewezen beheerde identiteit:
+    * Door het systeem toegewezen beheerde identiteit die is gemaakt in een werkruimte met de naam `ws`
         ```python
         # configure cluster with a system-assigned managed identity
         compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
                                                                 max_nodes=5,
                                                                 identity_type="SystemAssigned",
                                                                 )
+        cpu_cluster_name = "cpu-cluster"
+        cpu_cluster = ComputeTarget.create(ws, cpu_cluster_name, compute_config)
         ```
     
-    * Door de gebruiker toegewezen beheerde identiteit:
+    * Door de gebruiker toegewezen beheerde identiteit die is gemaakt in een werkruimte met de naam `ws`
     
         ```python
         # configure cluster with a user-assigned managed identity
@@ -154,7 +164,7 @@ Kies in de Studio **lage prioriteit** bij het maken van een virtuele machine.
         cpu_cluster = ComputeTarget.create(ws, cpu_cluster_name, compute_config)
         ```
 
-* Beheerde identiteit toevoegen aan een bestaand reken cluster 
+* Beheerde identiteit toevoegen aan een bestaand rekencluster met de naam `cpu_cluster`
     
     * Door het systeem toegewezen beheerde identiteit:
     
@@ -173,7 +183,7 @@ Kies in de Studio **lage prioriteit** bij het maken van een virtuele machine.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-* Een nieuw beheerd reken cluster maken met beheerde identiteit
+* Een nieuw beheerd rekencluster met beheerde identiteit maken
 
   * Door de gebruiker toegewezen beheerde identiteit
 
@@ -186,7 +196,7 @@ Kies in de Studio **lage prioriteit** bij het maken van een virtuele machine.
     ```azurecli
     az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '[system]'
     ```
-* Een beheerde identiteit toevoegen aan een bestaand cluster:
+* Voeg een beheerde identiteit toe aan een bestaand cluster:
 
     * Door de gebruiker toegewezen beheerde identiteit
         ```azurecli
@@ -200,7 +210,7 @@ Kies in de Studio **lage prioriteit** bij het maken van een virtuele machine.
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
-Zie [beheerde identiteit instellen in Studio](how-to-create-attach-compute-studio.md#managed-identity).
+Zie [Beheerde identiteit instellen in studio](how-to-create-attach-compute-studio.md#managed-identity).
 
 ---
 
@@ -212,15 +222,15 @@ Zie [beheerde identiteit instellen in Studio](how-to-create-attach-compute-studi
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Er is een kans dat sommige gebruikers die hun Azure Machine Learning werk ruimte hebben gemaakt vanaf de Azure Portal voordat de GA-release mogelijk geen AmlCompute in die werk ruimte kan maken. U kunt een ondersteunings aanvraag voor de service verhogen of een nieuwe werk ruimte maken via de portal of de SDK om uzelf direct te deblokkeren.
+Er is een kans dat sommige gebruikers die hun Azure Machine Learning-werkruimte hebben gemaakt vanuit de Azure Portal vóór de ga-release mogelijk geen AmlCompute in die werkruimte kunnen maken. U kunt een ondersteuningsaanvraag indienen bij de service of een nieuwe werkruimte maken via de portal of de SDK om uzelf onmiddellijk te deblokkeren.
 
-Als uw Azure Machine Learning Compute-Cluster vastloopt bij het wijzigen van de grootte (0-> 0) voor de status van het knoop punt, kan dit worden veroorzaakt door Azure-resource vergrendelingen.
+Als uw Azure Machine Learning-rekencluster lijkt vast te zitten bij het formaat van het knooppunt (0-> 0) voor de knooppunttoestand, kan dit worden veroorzaakt door Azure-resourcevergrendelingen.
 
 [!INCLUDE [resource locks](../../includes/machine-learning-resource-lock.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Gebruik uw berekenings cluster voor het volgende:
+Gebruik uw rekencluster voor het volgende:
 
-* [Een trainings uitvoering verzenden](how-to-set-up-training-targets.md) 
-* [Batch](./tutorial-pipeline-batch-scoring-classification.md)afleiding uitvoeren.
+* [Een trainingsrun verzenden](how-to-set-up-training-targets.md) 
+* [Voer batchdeferentie uit.](./tutorial-pipeline-batch-scoring-classification.md)

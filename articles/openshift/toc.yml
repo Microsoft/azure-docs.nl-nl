@@ -62,7 +62,9 @@
               href: ../azure-monitor/containers/container-insights-optout-openshift-v4.md
     - name: Toepassingen ontwikkelen en uitvoeren
       items:
-        - name: Een toepassing implementeren in Azure Red Hat OpenShift met behulp van OpenShift Serverless
+        - name: Een toepassing implementeren vanuit broncode
+          href: howto-deploy-with-s2i.md
+        - name: Een toepassing implementeren met OpenShift Serverless
           href: howto-deploy-with-serverless.md
         - name: Een Open Liberty-/WebSphere Liberty-app implementeren
           href: howto-deploy-java-liberty-app.md

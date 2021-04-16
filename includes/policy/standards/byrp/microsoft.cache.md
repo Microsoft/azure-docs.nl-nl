@@ -35,12 +35,12 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 ## <a name="cmmc-level-3"></a>CMMC-niveau 3
 
-Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving [- CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
+Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving [- CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)als u wilt zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
 Zie Cybersecurity [Maturity Model Certification (CMMC) voor](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Toegangsbeheer |AC.1.002 |Beperk de toegang tot informatiesysteem tot de typen transacties en functies die gemachtigde gebruikers mogen uitvoeren. |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
+|Toegangsbeheer |AC.1.002 |Beperk de toegang tot het informatiesysteem tot de typen transacties en functies die gemachtigde gebruikers mogen uitvoeren. |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 |Systeem- en communicatiebeveiliging |SC.1.175 |Communicatie (bijvoorbeeld gegevens die worden verzonden of ontvangen door organisatiesystemen) bewaken, beheren en beveiligen aan de externe grenzen en de belangrijkste interne grenzen van organisatiesystemen. |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 |Systeem- en communicatiebeveiliging |SC.3.185 |Implementeer cryptografische mechanismen om niet-geautoriseerde openbaarmaking van CUI tijdens verzending te voorkomen, tenzij anderszins beschermd door alternatieve fysieke beveiliging. |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 
@@ -61,7 +61,7 @@ Zie [HIPAA HITRUST 9.2](https://www.hhs.gov/hipaa/for-professionals/security/law
 
 ## <a name="iso-270012013"></a>ISO 27001:2013
 
-Zie [Azure Policy Regulatory Compliance - ISO 27001:2013 (Naleving van regelgeving - ISO 27001:2013)](../../../../articles/governance/policy/samples/iso-27001.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
+Zie [Azure Policy Regulatory Compliance - ISO 27001:2013 (Naleving van regelgeving - ISO 27001:2013)](../../../../articles/governance/policy/samples/iso-27001.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
 Zie ISO [27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
@@ -69,7 +69,7 @@ Zie ISO [27001:2013](https://www.iso.org/isoiec-27001-information-security.html)
 |Cryptografie |10.1.1 |Beleid voor het gebruik van cryptografische besturingselementen |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 |Communicatiebeveiliging |13.2.1 |Beleid en procedures voor gegevensoverdracht |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 
-## <a name="new-zealand-ism-restricted"></a>Nieuw-Zeelandse ISM beperkt
+## <a name="new-zealand-ism-restricted"></a>Nieuw-Zeeland ISM beperkt
 
 Zie Azure Policy [Regulatory Compliance - New Zeeland ISM Restricted](../../../../articles/governance/policy/samples/new-zealand-ism.md)(Naleving van regelgeving - Nieuw-Zeeland is beperkt) om te zien hoe de beschikbare Azure Policy-ingebouwde functies voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
 Zie Nieuw-Zeeland ISM Restricted voor meer informatie [over deze nalevingsstandaard.](https://www.nzism.gcsb.govt.nz/)

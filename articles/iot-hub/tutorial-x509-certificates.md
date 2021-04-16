@@ -1,6 +1,6 @@
 ---
-title: Zelf studie-meer informatie over X. 509 open bare sleutel certificaten voor Azure IoT Hub | Microsoft Docs
-description: Zelf studie-meer informatie over X. 509 open bare sleutel certificaten voor Azure IoT Hub
+title: 'Zelfstudie: Meer inzicht in openbare X.509-sleutelcertificaten voor Azure IoT Hub| Microsoft Docs'
+description: 'Zelfstudie: Meer inzicht in openbare X.509-sleutelcertificaten voor Azure IoT Hub'
 author: v-gpettibone
 manager: philmea
 ms.service: iot-hub
@@ -12,114 +12,113 @@ ms.custom:
 - mvc
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
-- devx-track-azurecli
-ms.openlocfilehash: fada68ba395b959e557542eb8c230561aad84214
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 5503f9ad57180146c25a01c133a27b34e643496c
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106384320"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378343"
 ---
-# <a name="tutorial-understanding-x509-public-key-certificates"></a>Zelf studie: informatie over de open bare-sleutel certificaten van X. 509
+# <a name="tutorial-understanding-x509-public-key-certificates"></a>Zelfstudie: Informatie over openbare X.509-sleutelcertificaten
 
-X. 509-certificaten zijn digitale documenten die een gebruiker, computer, service of apparaat vertegenwoordigen. Ze worden uitgegeven door een certificerings instantie (CA), een onderliggende CERTIFICERINGs instantie of een registratie-instantie en bevatten de open bare sleutel van het certificaat onderwerp. Ze bevatten geen persoonlijke sleutel van het onderwerp die veilig moet worden opgeslagen. Certificaten met een open bare sleutel worden gedocumenteerd door [RFC 5280](https://tools.ietf.org/html/rfc5280). Ze zijn digitaal ondertekend en bevatten in het algemeen de volgende informatie:
+X.509-certificaten zijn digitale documenten die een gebruiker, computer, service of apparaat vertegenwoordigen. Ze worden uitgegeven door een certificeringsinstantie (CA), onderliggende CA of registratie-instantie en bevatten de openbare sleutel van het certificaatonderwerp. Ze bevatten geen persoonlijke sleutel van het onderwerp die veilig moet worden opgeslagen. Openbare-sleutelcertificaten worden gedocumenteerd door [RFC 5280.](https://tools.ietf.org/html/rfc5280) Ze zijn digitaal ondertekend en bevatten in het algemeen de volgende informatie:
 
-* Informatie over het certificaat onderwerp
-* De open bare sleutel die overeenkomt met de persoonlijke sleutel van het onderwerp
+* Informatie over het certificaatonderwerp
+* De openbare sleutel die overeenkomt met de persoonlijke sleutel van het onderwerp
 * Informatie over de verlenende CA
-* De ondersteunde versleuteling en/of digitale ondertekening algoritmen
-* Informatie voor het bepalen van de intrekking en geldigheids status van het certificaat
+* De ondersteunde versleutelings- en/of digitale ondertekeningsalgoritmen
+* Informatie om de intrekking en geldigheidsstatus van het certificaat te bepalen
 
-## <a name="certificate-fields"></a>Certificaat velden
+## <a name="certificate-fields"></a>Certificaatvelden
 
-Er zijn in de loop van de tijd drie certificaat versies. Elke versie voegt velden toe aan de eerste. Versie 3 is actueel en bevat naast de velden van versie 3 ook velden van versie 1 en versie 2. Versie 1 heeft de volgende velden gedefinieerd:
+In de afgelopen tijd zijn er drie certificaatversies. Elke versie voegt velden toe aan de eerdere versie. Versie 3 is actueel en bevat naast de velden versie 3 ook velden voor versie 1 en versie 2. Versie 1 definieerde de volgende velden:
 
-* **Versie**: een waarde (1, 2 of 3) die het versie nummer van het certificaat aangeeft
-* **Serie nummer**: een uniek nummer voor elk certificaat dat is uitgegeven door een certificerings instantie
-* **CA-handtekening algoritme**: naam van het algoritme dat door de CA wordt gebruikt voor het ondertekenen van de certificaat inhoud
-* **Naam** van de verlener: de DN-naam van de verlenende CA van het certificaat
-* **Geldigheids periode**: de periode waarvoor het certificaat als geldig wordt beschouwd
-* **Onderwerpnaam**: naam van de entiteit die wordt vertegenwoordigd door het certificaat
-* **Info over open bare sleutel van onderwerp**: open bare sleutel die eigendom is van het certificaat onderwerp
+* **Versie:** een waarde (1, 2 of 3) die het versienummer van het certificaat identificeert
+* **Serienummer:** een uniek nummer voor elk certificaat dat is uitgegeven door een CA
+* **CA-handtekeningalgoritme:** naam van het algoritme dat de CA gebruikt om de inhoud van het certificaat te ondertekenen
+* **Naam van vergever:** de DN (Distinguished Name) van de verlenende CA van het certificaat
+* **Geldigheidsperiode:** de periode waarvoor het certificaat als geldig wordt beschouwd
+* **Onderwerpnaam:** naam van de entiteit die wordt vertegenwoordigd door het certificaat
+* **Informatie over openbare sleutel onderwerp:** openbare sleutel die eigendom is van het certificaatonderwerp
 
-Versie 2 heeft de volgende velden toegevoegd met informatie over de uitgever van het certificaat. Deze velden worden echter zelden gebruikt.
+Versie 2 heeft de volgende velden toegevoegd met informatie over de certificaatverkender. Deze velden worden echter zelden gebruikt.
 
-* **Unieke id** van de verlener: een unieke id voor de verlenende CA, zoals gedefinieerd door de CA
-* **Unieke id van onderwerp**: een unieke id voor het certificaat onderwerp zoals gedefinieerd door de VERLENENde ca
+* **Unieke id van** verificator: een unieke id voor de verlenende CA zoals gedefinieerd door de CA
+* **Unieke onderwerp-id:** een unieke id voor het certificaatonderwerp zoals gedefinieerd door de verlenende CA
 
-Certificaten van versie 3 hebben de volgende extensies toegevoegd:
+Met versie 3-certificaten zijn de volgende extensies toegevoegd:
 
-* **Authority Key Identifier**: dit kan een van de volgende twee waarden zijn:
-  * Het onderwerp van de CA en het serie nummer van het CA-certificaat dat dit certificaat heeft uitgegeven
-  * Een hash van de open bare sleutel van de certificerings instantie die dit certificaat heeft uitgegeven
-* **Id van de onderwerps sleutel**: hash van de open bare sleutel van het huidige certificaat
-* **Sleutel gebruik** Hiermee definieert u de service waarvoor een certificaat kan worden gebruikt. Dit kan een of meer van de volgende waarden zijn:
+* **Authority Key Identifier:** dit kan een van twee waarden zijn:
+  * Het onderwerp van de CA en het serienummer van het CA-certificaat dat dit certificaat heeft uitgegeven
+  * Een hash van de openbare sleutel van de CA die dit certificaat heeft uitgegeven
+* **Onderwerpsleutel-id:** hash van de openbare sleutel van het huidige certificaat
+* **Sleutelgebruik** Hiermee definieert u de service waarvoor een certificaat kan worden gebruikt. Dit kunnen een of meer van de volgende waarden zijn:
   * **Digitale handtekening**
   * **Geen weerlegbaarheid**
   * **Sleutelcodering**
-  * **Gegevens codering**
-  * **Sleutel overeenkomst**
-  * **Sleutel certificaat ondertekenen**
+  * **Gegevenscodeering**
+  * **Sleutelovereenkomst**
+  * **Sleutel-certificaat ondertekenen**
   * **CRL-teken**
-  * **Alleen ontsleutelen**
+  * **Alleen codering**
   * **Alleen ontcijferen**
-* **Gebruiks periode van privé sleutel**: geldigheids periode voor het gedeelte met de persoonlijke sleutel van een sleutel paar
-* **Certificaat beleid**: beleid dat wordt gebruikt om het certificaat onderwerp te valideren
-* **Beleids koppelingen**: Hiermee wordt een beleid in de ene organisatie toegewezen aan een ander beleid
-* **Alternatieve naam voor onderwerp**: lijst met alternatieve namen voor het onderwerp
-* **Alternatieve naam voor verlener**: lijst met alternatieve namen voor de VERLENENde ca
-* **Onderwerp DIR kenmerk**: kenmerken van een X. 500-of LDAP-adres lijst
-* **Basis beperkingen**: Hiermee staat u toe dat het certificaat wordt toegewezen aan een certificerings instantie of aan een gebruiker, computer, apparaat of service. Deze extensie bevat ook een beperking voor padlengte die het aantal onderliggende Ca's beperkt dat kan bestaan.
-* **Naam beperkingen**: Hiermee wordt aangegeven welke naam ruimten zijn toegestaan in een certificaat dat is uitgegeven door een certificerings instantie
-* **Beleids beperkingen**: kan worden gebruikt om beleids koppelingen tussen ca's te verbieden
-* **Uitgebreide-sleutel gebruik**: Hiermee wordt aangegeven hoe de open bare sleutel van een certificaat kan worden gebruikt buiten de doel stellingen die worden vermeld in de uitbrei ding voor **sleutel gebruik** .
-* **CRL-distributie punten**: bevat een of meer url's waarin de basis lijst met ingetrokken certificaten (CRL) is gepubliceerd
-* **AnyPolicy uitschakelen**: het gebruik van de OID van **alle beleids regels voor uitgifte** (2.5.29.32.0) in onderliggende CA-certificaten wordt belemmerd
-* Meest **recente CRL**: bevat een of meer url's waarin de Delta-CRL van de uitgevende CA is gepubliceerd
-* **Toegang tot CA-gegevens**: bevat een of meer url's waarin het certificaat van de uitgevende CA is gepubliceerd
-* **Toegang tot Onderwerpgegevens**: bevat informatie over het ophalen van aanvullende Details voor een certificaat onderwerp
+* **Gebruiksperiode van persoonlijke sleutel:** geldigheidsperiode voor het gedeelte van de persoonlijke sleutel van een sleutelpaar
+* **Certificaatbeleid:** beleid dat wordt gebruikt om het certificaatonderwerp te valideren
+* **Beleidstoewijzingen:** een beleid in de ene organisatie wordt toegewezen aan beleid in een andere organisatie
+* **Alternatieve onderwerpnaam:** lijst met alternatieve namen voor het onderwerp
+* **Alternatieve naam van vergever:** lijst met alternatieve namen voor de verlenende CA
+* **Kenmerk onderwerp dir:** kenmerken van een X.500- of LDAP-directory
+* **Basisbeperkingen:** hiermee kan het certificaat aanwijzen of het is uitgegeven aan een CA of aan een gebruiker, computer, apparaat of service. Deze extensie bevat ook een padlengtebeperking die het aantal onderliggende CERTIFICERINGen beperkt dat kan bestaan.
+* **Naambeperkingen:** geeft aan welke naamruimten zijn toegestaan in een door de CA uitgegeven certificaat
+* **Beleidsbeperkingen:** kan worden gebruikt om beleidstoewijzingen tussen CAs te verbieden
+* **Uitgebreide-sleutelgebruik:** geeft aan hoe de openbare sleutel van een certificaat kan worden gebruikt buiten de doeleinden die zijn geïdentificeerd in de uitbreiding **voor sleutelgebruik**
+* **CRL-distributiepunten:** bevat een of meer URL's waar de crl (base certificate revocation list) is gepubliceerd
+* **AnyPolicy belemmeren:** voorkomt het gebruik van de **OID** voor alle uitgiftebeleidsregels (2.5.29.32.0) in onderliggende CA-certificaten
+* **Meest nieuwe CRL:** bevat een of meer URL's waar de delta-CRL van de verlenende CA wordt gepubliceerd
+* **Toegang tot ca-gegevens:** bevat een of meer URL's waar het verlenende CA-certificaat wordt gepubliceerd
+* **Toegang tot onderwerpinformatie:** bevat informatie over het ophalen van aanvullende gegevens voor een certificaatonderwerp
 
-## <a name="certificate-formats"></a>Certificaat indelingen
+## <a name="certificate-formats"></a>Certificaatindelingen
 
-Certificaten kunnen worden opgeslagen in verschillende indelingen. Azure IoT Hub-verificatie maakt gewoonlijk gebruik van de PEM-en PFX-indeling.
+Certificaten kunnen in verschillende indelingen worden opgeslagen. Azure IoT Hub verificatie maakt doorgaans gebruik van de PEM- en PFX-indelingen.
 
 ### <a name="binary-certificate"></a>Binair certificaat
 
-Dit bevat een binair certificaat voor onbewerkte tekst met DER ASN. 1-code ring.
+Dit bevat een binair certificaat met onbewerkte vorm met DER ASN.1-codering.
 
-### <a name="ascii-pem-format"></a>ASCII-PEM-indeling
+### <a name="ascii-pem-format"></a>ASCII PEM-indeling
 
-Een PEM-certificaat (. pem-extensie) bevat een met base64 gecodeerd certificaat dat begint met-----BEGIN van CERTIFICATE-----en eindigt met------eind certificaat-----. De PEM-indeling is zeer gebruikelijk en is vereist voor IoT Hub bij het uploaden van bepaalde certificaten.
+Een PEM-certificaat (.pem-extensie) bevat een base64-gecodeerd certificaat dat begint met -----BEGIN CERTIFICATE----- en eindigt met -----END CERTIFICATE-----. De PEM-indeling is zeer gebruikelijk en is vereist voor IoT Hub bij het uploaden van bepaalde certificaten.
 
 ### <a name="ascii-pem-key"></a>ASCII-sleutel (PEM)
 
-Bevat een met base64 gecodeerde DER-sleutel met mogelijk aanvullende meta gegevens over de algoritme die wordt gebruikt voor wachtwoord beveiliging.
+Bevat een met base64 gecodeerde DER-sleutel met mogelijk aanvullende metagegevens over het algoritme dat wordt gebruikt voor wachtwoordbeveiliging.
 
-### <a name="pkcs7-certificate"></a>PKCS # 7-certificaat
+### <a name="pkcs7-certificate"></a>PKCS #7 certificaat
 
-Een indeling die is ontworpen voor het transporteren van ondertekende of versleutelde gegevens. Het wordt gedefinieerd door [RFC 2315](https://tools.ietf.org/html/rfc2315). Het kan de volledige certificaat keten bevatten.
+Een indeling die is ontworpen voor het transport van ondertekende of versleutelde gegevens. Deze wordt gedefinieerd door [RFC 2315.](https://tools.ietf.org/html/rfc2315) Deze kan de volledige certificaatketen bevatten.
 
-### <a name="pkcs8-key"></a>PKCS # 8-sleutel
+### <a name="pkcs8-key"></a>PKCS#8-sleutel
 
-De indeling voor een persoonlijk sleutel archief dat is gedefinieerd door [RFC 5208](https://tools.ietf.org/html/rfc5208).
+De indeling voor een persoonlijke sleutelopslag die is gedefinieerd door [RFC 5208.](https://tools.ietf.org/html/rfc5208)
 
-### <a name="pkcs12-key-and-certificate"></a>PKCS # 12-sleutel en-certificaat
+### <a name="pkcs12-key-and-certificate"></a>PKCS #12 sleutel en certificaat
 
-Een complexe indeling die een sleutel en de volledige certificaat keten kan opslaan en beveiligen. Dit wordt vaak gebruikt met de extensie. pfx. PKCS # 12 is synoniem met de PFX-indeling.
+Een complexe indeling die een sleutel en de hele certificaatketen kan opslaan en beveiligen. Deze wordt vaak gebruikt met een PFX-extensie. PKCS #12 is synoniem met de PFX-indeling.
 
 ## <a name="for-more-information"></a>Voor meer informatie
 
 Zie de volgende onderwerpen voor meer informatie:
 
-* [De Layman-hand leiding voor X. 509 certificaat jargon](https://techcommunity.microsoft.com/t5/internet-of-things/the-layman-s-guide-to-x-509-certificate-jargon/ba-p/2203540)
-* [Conceptuele uitleg van X. 509 CA-certificaten in de IoT-industrie](https://docs.microsoft.com/azure/iot-hub/iot-hub-x509ca-concept)
+* [De handleiding van de layman voor X.509-certificaat-jargon](https://techcommunity.microsoft.com/t5/internet-of-things/the-layman-s-guide-to-x-509-certificate-jargon/ba-p/2203540)
+* [Conceptueel begrip van X.509 CA-certificaten in de IoT-branche](https://docs.microsoft.com/azure/iot-hub/iot-hub-x509ca-concept)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de volgende onderwerpen als u test certificaten wilt genereren die u kunt gebruiken om apparaten te verifiëren op uw IoT Hub:
+Als u testcertificaten wilt genereren die u kunt gebruiken om apparaten te verifiëren bij uw IoT Hub, bekijkt u de volgende onderwerpen:
 
-* [Microsoft-Supplied-scripts gebruiken om test certificaten te maken](tutorial-x509-scripts.md)
-* [OpenSSL gebruiken om test certificaten te maken](tutorial-x509-openssl.md)
-* [Self-Signed test certificaten maken met behulp van OpenSSL](tutorial-x509-self-sign.md)
+* [Testcertificaten Microsoft-Supplied scripts maken](tutorial-x509-scripts.md)
+* [OpenSSL gebruiken om testcertificaten te maken](tutorial-x509-openssl.md)
+* [OpenSSL gebruiken om certificaten Self-Signed maken](tutorial-x509-self-sign.md)
 
-Als u een certificaat van een certificerings instantie of een onderliggend CA-certificaat hebt en u het wilt uploaden naar uw IoT-hub en wilt bewijzen dat u de eigenaar bent, raadpleegt u het [bewijs van een CA-certificaat](tutorial-x509-prove-possession.md).
+Als u een ca-certificaat (certificeringsinstantie) of een onderliggend CA-certificaat hebt en u dit wilt uploaden naar uw IoT-hub en wilt bewijzen dat u de eigenaar bent, gaat u naar Het bezit van een [CA-certificaat](tutorial-x509-prove-possession.md)bewijzen.

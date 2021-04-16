@@ -3,20 +3,23 @@ title: 'Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken en bevragen 
 description: Een toegewezen SQL-pool (voorheen SQL DW) maken en bevragen met Azure Portal
 services: synapse-analytics
 author: pimorano
-manager: craigg
-ms.service: synapse-analytics
-ms.topic: quickstart
-ms.subservice: sql-dw
-ms.date: 05/28/2019
 ms.author: pimorano
+manager: craigg
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: dd9d66683d5f2349807915651c50bf9eedd285c1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 05/28/2019
+ms.topic: quickstart
+ms.service: synapse-analytics
+ms.subservice: sql-dw
+ms.custom:
+- seo-lt-2019
+- azure-synapse
+- mode-portal
+ms.openlocfilehash: 99530b1949f03867a5b755208191341556ba8083
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104602227"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107535841"
 ---
 # <a name="quickstart-create-and-query-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-the-azure-portal"></a>Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken en een query uitvoeren in Azure Synapse Analytics met behulp van Azure Portal
 
@@ -29,7 +32,7 @@ Snel een toegewezen SQL-pool (voorheen SQL DW) maken en een query uitvoeren in A
    > [!NOTE]
    > Het maken van een toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse kan resulteren in een nieuwe factureerbare service. Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/) voor meer informatie.
 
-2. Download en installeer de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SQL Server Management Studio). Opmerking: SSMS is alleen beschikbaar op Windows-platforms. Zie de [volledige lijst met ondersteunde platforms](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15&preserve-view=true#supported-operating-systems-ssms-185t).
+2. Download en installeer de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SQL Server Management Studio). Opmerking: SSMS is alleen beschikbaar op Windows-platforms. Zie de [volledige lijst met ondersteunde platforms.](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15&preserve-view=true#supported-operating-systems-ssms-185t)
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 

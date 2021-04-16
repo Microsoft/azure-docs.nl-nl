@@ -169,11 +169,11 @@
               href: storage-blob-change-feed.md
             - name: Onveranderbare blobs
               href: storage-blob-immutable-storage.md
-        - name: Redundantie en herstel na nood gevallen
+        - name: Redundantie en herstel na noodherstel
           items:
             - name: De gegevensredundantie
               href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Door de klant beheerde failover voor herstel na nood gevallen
+            - name: Door de klant beheerde failover voor herstel na noodherstel
               href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Objectreplicatie
           href: object-replication-overview.md
@@ -221,7 +221,7 @@
               href: blob-inventory.md
         - name: Gegevensmigratie
           items:
-            - name: Overzicht van opslag migratie
+            - name: Overzicht van opslagmigratie
               href: ../common/storage-migration-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Oplossingen voor gegevensoverdracht vergelijken
               href: ../common/storage-choose-data-transfer-solution.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -289,7 +289,7 @@
               href: storage-blob-container-properties-metadata.md
         - name: Blobs maken en beheren
           items:
-            - name: Blobs weer geven (SDK)
+            - name: Lijst met blobs (SDK)
               href: storage-blobs-list.md
             - name: Eigenschappen en metagegevens van blobs beheren (.NET)
               href: storage-blob-properties-metadata.md
@@ -299,7 +299,7 @@
               href: storage-blob-copy.md
             - name: Blobindextags gebruiken
               href: storage-blob-index-how-to.md
-            - name: Aantal blobs en totale grootte berekenen
+            - name: Het aantal blobs en de totale grootte berekenen
               href: calculate-blob-count-size.md
         - name: Toegang tot blobgegevens autoriseren
           items:
@@ -405,19 +405,19 @@
                   href: ../common/configure-network-routing-preference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Azure Defender configureren voor bedreigingen
               href: ../common/azure-defender-storage-configure.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: BLOB-gegevens beveiligen
+        - name: Blobgegevens beveiligen
           items:
-            - name: Een opslag account vergren delen
+            - name: Een opslagaccount vergrendelen
               href: ../common/lock-account-resource.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Voorlopig verwijderen inschakelen voor containers
               href: soft-delete-container-enable.md
             - name: Blobversiebeheer inschakelen
               href: versioning-enable.md
-            - name: Zacht verwijderen voor blobs inschakelen en beheren
+            - name: Soft Delete voor blobs inschakelen en beheren
               items:
-                - name: Voorlopig verwijderen van BLOB inschakelen
+                - name: Blob-functie voor het verwijderen van blobs inschakelen
                   href: soft-delete-blob-enable.md
-                - name: Tijdelijke verwijderde blobs beheren en herstellen
+                - name: Zacht verwijderde blobs beheren en herstellen
                   href: soft-delete-blob-manage.md
             - name: Herstel naar een bepaald tijdstip inschakelen
               href: point-in-time-restore-manage.md
@@ -469,20 +469,22 @@
                   href: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Autoriseren met Azure AD
                   href: ../common/storage-use-azcopy-authorize-azure-active-directory.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Prestaties optimaliseren
+                  href: ../common/storage-use-azcopy-optimize.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Logboeken gebruiken om fouten te vinden en taken te hervatten
+                  href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Uploaden'
                   href: ../common/storage-use-azcopy-blobs-upload.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Downloaden'
                   href: ../common/storage-use-azcopy-blobs-download.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Voorbeelden: Synchroniseren'
-                  href: ../common/storage-use-azcopy-blobs-synchronize.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Kopiëren tussen accounts'
                   href: ../common/storage-use-azcopy-blobs-copy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 'Voorbeelden: Synchroniseren'
+                  href: ../common/storage-use-azcopy-blobs-synchronize.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Amazon S3-bucket'
                   href: ../common/storage-use-azcopy-s3.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Voor beelden: Google Cloud Storage-buckets'
+                - name: 'Voorbeelden: Google Cloud Storage-buckets'
                   href: ../common/storage-use-azcopy-google-cloud.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Configureren, optimaliseren, problemen oplossen'
-                  href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Azure Data Factory
               href: ../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Opslag koppelen met NFS
@@ -519,6 +521,8 @@
           href: ../blobs/reference.md
         - name: AzCopy v10
           items:
+            - name: Configuratie-instellingen
+              href: ../common/storage-ref-azcopy-configuration-settings.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: azcopy
               href: ../common/storage-ref-azcopy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: azcopy bench
@@ -579,7 +583,7 @@
               href: 'https://github.com/microsoft/AzureStorageExplorer/releases'
             - name: Problemen met Opslagverkenner oplossen
               href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Opdracht regel opties Storage Explorer
+            - name: Storage Explorer opdrachtregelopties
               href: ../common/storage-explorer-command-line-options.md
             - name: Storage Explorer directe koppeling
               href: ../common/storage-explorer-direct-link.md
@@ -727,7 +731,7 @@
       items:
         - name: Create a storage account
           href: create-data-lake-storage-account.md
-        - name: Accounts en gegevens archieven migreren
+        - name: Accounts en gegevensopslag migreren
           items:
             - name: Migreren van Data Lake Storage Gen1
               href: data-lake-storage-migrate-gen1-to-gen2.md
@@ -741,18 +745,24 @@
               items:
                 - name: Aan de slag
                   href: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Autoriseren met Azure AD
+                  href: ../common/storage-use-azcopy-authorize-azure-active-directory.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Prestaties optimaliseren
+                  href: ../common/storage-use-azcopy-optimize.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Logboeken gebruiken om fouten te vinden en taken te hervatten
+                  href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Uploaden'
                   href: ../common/storage-use-azcopy-blobs-upload.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Downloaden'
                   href: ../common/storage-use-azcopy-blobs-download.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Voorbeelden: Synchroniseren'
-                  href: ../common/storage-use-azcopy-blobs-synchronize.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Kopiëren tussen accounts'
                   href: ../common/storage-use-azcopy-blobs-copy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 'Voorbeelden: Synchroniseren'
+                  href: ../common/storage-use-azcopy-blobs-synchronize.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 'Voorbeelden: Amazon S3-bucket'
                   href: ../common/storage-use-azcopy-s3.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Configureren, optimaliseren en probleemoplossing'
-                  href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 'Voorbeelden: Google Cloud Storage-buckets'
+                  href: ../common/storage-use-azcopy-google-cloud.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Azure Data Factory
               href: ../../data-factory/connector-azure-data-lake-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Gegevens overdragen met het hulpprogramma DistCp
@@ -795,11 +805,11 @@
               href: data-lake-storage-query-acceleration-how-to.md
             - name: Hadoop-bestandssysteem CLI
               href: data-lake-storage-use-hdfs-data-lake-storage.md
-        - name: Gebruiken met Azure-Services
+        - name: Gebruiken met Azure-services
           href: data-lake-storage-integrate-with-services-tutorials.md
         - name: Prestaties optimaliseren
           items:
-            - name: Overzicht van prestatie optimalisatie
+            - name: Overzicht van prestatieoptimalisatie
               href: data-lake-storage-performance-tuning-guidance.md
             - name: Spark in HDInsight optimaliseren
               href: data-lake-storage-performance-tuning-spark.md

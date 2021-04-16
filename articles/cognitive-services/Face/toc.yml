@@ -3,13 +3,13 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Overzicht van gezichts diensten
+    - name: Overzicht van Face-service
       href: Overview.md
     - name: Prijzen
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
     - name: Wat is er nieuw?
       href: releasenotes.md
-- name: Gezichts Snelstartgids
+- name: Face-snelstart
   href: Quickstarts/client-libraries.md
 - name: Voorbeelden
   href: /samples/browse/?products=azure&term=face
@@ -17,9 +17,9 @@
   items:
     - name: Gezichten detecteren en analyseren
       href: Face-API-How-to-Topics/HowtoDetectFacesinImage.md
-    - name: Een versie van het gezichts herkennings model opgeven
+    - name: Een modelversie voor gezichtsherkenning opgeven
       href: Face-API-How-to-Topics/specify-recognition-model.md
-    - name: Een versie van het gezichts detectie model opgeven
+    - name: Een modelversie voor gezichtsdetectie opgeven
       href: Face-API-How-to-Topics/specify-detection-model.md
     - name: Gezichten toevoegen aan een groep
       href: Face-API-How-to-Topics/how-to-add-faces.md
@@ -33,19 +33,18 @@
       href: Face-API-How-to-Topics/HowtoAnalyzeVideo_Face.md
     - name: Gezichtsgegevens migreren
       href: Face-API-How-to-Topics/how-to-migrate-face-data.md
-    - name: De face-container gebruiken
+    - name: De Face-container gebruiken
       items:
         - name: Documentatie voor Cognitive Services-containers
-          href: /azure/cognitive-services/containers/index?context=/azure/cognitive-services/computer-vision/context/context
+          href: /azure/cognitive-services/containers/index?context=/azure/cognitive-services/face/context/context
         - name: 'Containers: overzicht'
-          href: /azure/cognitive-services/cognitive-services-container-support?context=/azure/cognitive-services/computer-vision/context/context
+          href: /azure/cognitive-services/cognitive-services-container-support?context=/azure/cognitive-services/face/context/context
         - name: Containers installeren en uitvoeren
           href: face-how-to-install-containers.md
         - name: Containers configureren
           href: face-resource-container-config.md
         - name: Containerinstanties gebruiken
-          maintainContext: true
-          href: ../containers/azure-container-instance-recipe.md
+          href: /azure/cognitive-services/containers/azure-container-instance-recipe?context=/azure/cognitive-services/face/context/context
 - name: Concepten
   items:
     - name: Gezichtsdetectie
@@ -54,17 +53,15 @@
       href: concepts/face-recognition.md
 - name: Zelfstudies
   items:
-    - name: Een face detector-app maken
-      href: Tutorials/FaceAPIinCSharpTutorial.md
-    - name: Gebruikers toevoegen aan een gezichts service
+    - name: Gebruikers toevoegen aan een Face-service
       items:
-        - name: Aanbevolen procedures voor het toevoegen van gebruikers
+        - name: Best practices voor het toevoegen van gebruikers
           href: enrollment-overview.md
-        - name: Een reagerende app bouwen om gebruikers toe te voegen
+        - name: Een React-app bouwen om gebruikers toe te voegen
           href: build-enrollment-app.md
 - name: Referentie
   items:
-    - name: Gezichts REST API
+    - name: Gezichtsherkenning REST API
       href: APIReference.md
     - name: .NET
       href: /dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet
@@ -80,7 +77,7 @@
   items:
     - name: Ondersteuning voor regio
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: Modules leren
+    - name: Learn-modules
       href: 'https://docs.microsoft.com/learn/modules/detect-analyze-faces/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/face/context/context

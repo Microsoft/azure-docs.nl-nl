@@ -3,17 +3,20 @@ title: Een onderwerp voor een Azure Service Bus-naamruimte maken met behulp van 
 description: 'Quickstart: Een Service Bus-naamruimte met een onderwerp en een abonnement maken met behulp van een Azure Resource Manager-sjabloon'
 documentationcenter: .net
 author: spelluru
+ms.author: spelluru
+ms.date: 06/23/2020
 ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
-ms.date: 06/23/2020
-ms.author: spelluru
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 706432c039bc38e9799828ae752d6ad0c92ffde3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom:
+- devx-track-azurecli
+- devx-track-azurepowershell
+- mode-arm
+ms.openlocfilehash: 9c235f8e056bf185267aa0bb493b71b897f3c510
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97704602"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107534920"
 ---
 # <a name="quickstart-create-a-service-bus-namespace-with-topic-and-subscription-using-an-azure-resource-manager-template"></a>Quickstart: Een Service Bus-naamruimte met een onderwerp en een abonnement maken met behulp van een Azure Resource Manager-sjabloon
 

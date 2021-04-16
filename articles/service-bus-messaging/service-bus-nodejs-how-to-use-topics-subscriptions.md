@@ -2,17 +2,19 @@
 title: Preview-versie van JavaScript azure/service-bus met onderwerpen en abonnementen gebruiken
 description: Meer informatie over het schrijven van een JavaScript-programma dat gebruikmaakt van de nieuwste preview-versie van @azure/service-bus-pakket om berichten naar een Service Bus-onderwerp te verzenden en berichten van een abonnement op het onderwerp te ontvangen.
 author: spelluru
-ms.devlang: nodejs
-ms.topic: quickstart
-ms.date: 11/09/2020
 ms.author: spelluru
-ms.custom: devx-track-js
-ms.openlocfilehash: a1afe4207ce3833f3bcb55bc7bc2e8e27f393f63
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 11/09/2020
+ms.topic: quickstart
+ms.devlang: nodejs
+ms.custom:
+- devx-track-js
+- mode-api
+ms.openlocfilehash: 59f1bb29099f2b921e687ca9de46365bc34f1b91
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98179993"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537252"
 ---
 # <a name="quickstart-service-bus-topics-and-subscriptions-with-nodejs-and-the-preview-azureservice-bus-package"></a>Quickstart: Service Bus-onderwerpen en-abonnementen gebruiken met Node.js en het previewpakket azure/service-bus
 In deze zelfstudie leert u hoe u het [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus)-pakket in een JavaScript-programma kunt gebruiken om berichten te versturen naar een Service Bus-onderwerp en berichten te ontvangen van een Service Bus-abonnement naar dat onderwerp.

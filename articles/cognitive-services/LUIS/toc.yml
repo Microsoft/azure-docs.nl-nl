@@ -3,7 +3,7 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Overzicht van LUIS
+    - name: Wat is Language Understanding (LUIS)?
       href: what-is-luis.md
     - name: Taalondersteuning
       href: luis-language-support.md
@@ -14,7 +14,7 @@
     - name: Veelgestelde vragen over LUIS
       href: troubleshooting.md
       displayName: 'Troubleshooting, import'
-- name: LUIS-Quick starts
+- name: Luis-quickstarts
   items:
     - name: Een vooraf gedefinieerde domein-app maken
       href: luis-get-started-create-app.md
@@ -53,7 +53,7 @@
         - name: Functies toevoegen
           displayName: 'synonym, interchange, phrase list, descriptor, feature'
           href: luis-how-to-add-features.md
-        - name: Intentie gebruiken met behulp van de REST API
+        - name: Intenties krijgen met behulp van de REST API
           href: luis-get-started-get-intent-from-rest.md
         - name: Wijzig het model met behulp van de REST API
           href: get-started-get-model-rest-apis.md
@@ -111,7 +111,7 @@
           href: luis-how-to-azure-subscription.md
         - name: Instellingen voor app en versie
           href: how-to-application-settings-portal.md
-        - name: Auteurs en mede werkers
+        - name: Auteurs en inzenders
           displayName: 'access, transfer, AAD, tenant, Azure AD, consent, RBAC, admin, role-based access control, ownership, import'
           href: luis-how-to-collaborate.md
         - name: Met versies
@@ -119,22 +119,26 @@
           diplayName: 'import, export, container'
         - name: Met Traffic Manager
           href: luis-traffic-manager.md
-    - name: LUIS implementeren
+    - name: Containers gebruiken
       items:
-        - name: Containers gebruiken
-          items:
-            - name: Containers installeren en uitvoeren
-              displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, export to container'
-              href: luis-container-howto.md
-            - name: Containers configureren
-              href: luis-container-configuration.md
-            - name: Containerinstanties gebruiken
-              href: ../containers/azure-container-instance-recipe.md
-            - name: Containerbeperkingen
-              href: luis-container-limitations.md
-              displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
-            - name: Documentatie voor Cognitive Services-containers
-              href: ../containers/index.yml
+        - name: Containers installeren en uitvoeren
+          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, export to container'
+          href: luis-container-howto.md
+        - name: Containers configureren
+          href: luis-container-configuration.md
+        - name: Containerinstanties gebruiken
+          href: ../containers/azure-container-instance-recipe.md
+        - name: Containerbeperkingen
+          href: luis-container-limitations.md
+          displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
+        - name: Documentatie voor Cognitive Services-containers
+          href: ../containers/index.yml
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Virtuele netwerken instellen
+          href: ../cognitive-services-virtual-networks.md?context=/azure/cognitive-services/luis/context/context
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encrypt-data-at-rest.md
 - name: Concepten
   items:
     - name: Kunstmatige intelligentie
@@ -194,7 +198,7 @@
     - name: LUIS en QnA Maker gebruiken
       href: choose-natural-language-processing-service.md
       displayName: 'nlp, qna maker'
-    - name: Ontwerp strategieën voor ondernemingen
+    - name: Strategieën voor enterprise-ontwerp
       href: luis-concept-enterprise.md
       displayName: import
     - name: DevOps-procedures toepassen met LUIS
@@ -375,24 +379,21 @@
       href: luis-reference-prebuilt-sentiment.md
 - name: Resources
   items:
-    - name: LUIS-portal
-      href: 'https://www.luis.ai'
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+          displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, Dutch, French, German, Italian, Japanese, Korean, Portuguese, Spanish, Turkish, Keigo, informal Japanese, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/luis/context/context
-    - name: Regionale beschikbaarheid
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-      displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, Dutch, French, German, Italian, Japanese, Korean, Portuguese, Spanish, Turkish, Keigo, informal Japanese, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
+    - name: LUIS-portal
+      href: 'https://www.luis.ai'
     - name: Azure-roadmap
       href: 'https://go.microsoft.com/fwlink/?linkid=2092089'
     - name: Woordenlijst
       href: luis-glossary.md
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encrypt-data-at-rest.md
-    - name: Virtuele netwerken configureren
-      maintainContext: true
-      href: ../cognitive-services-virtual-networks.md
     - name: Search
       href: /search/index?search=LUIS
     - name: Blog

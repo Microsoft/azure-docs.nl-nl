@@ -67,6 +67,9 @@
         - name: Rapporten en controle
           tocHref: /azure/active-directory/reports-monitoring/
           topicHref: /azure/active-directory/reports-monitoring/
+        - name: Verifieerbare referenties
+          tocHref: /azure/active-directory/verifiable-credentials/
+          topicHref: /azure/active-directory/verifable-credentials/
     - name: Analysis Services
       tocHref: /azure/analysis-services/
       topicHref: /azure/analysis-services/
@@ -215,10 +218,10 @@
       tocHref: /azure/iot-fundamentals/
       topicHref: /azure/iot-fundamentals/
       items:
-        - name: Azure-percept
+        - name: Azure Percept
           tocHref: /azure/azure-percept/
           topicHref: /azure/azure-percept/
-        - name: Update van het apparaat voor IoT Hub
+        - name: Apparaatupdate voor IoT Hub
           tocHref: /azure/iot-hub-device-update/
           topicHref: /azure/iot-hub-device-update/
         - name: IoT Hub
@@ -248,7 +251,7 @@
         - name: Azure Maps
           tocHref: /azure/azure-maps/
           topicHref: /azure/azure-maps/
-        - name: Azure-gecertificeerd apparaat
+        - name: Azure Certified Device
           tocHref: /azure/certification/
           topicHref: /azure/certification/
     - name: Resource Manager
@@ -267,11 +270,11 @@
         - name: Aangepaste Azure-providers
           tocHref: /azure/azure-resource-manager/custom-providers/
           topicHref: /azure/azure-resource-manager/custom-providers/
-    - name: Partner oplossingen
+    - name: Partneroplossingen
       tocHref: /azure/partner-solutions/
       topicHref: /azure/partner-solutions/
       items:
-        - name: Apache Kafka voor confluente Cloud
+        - name: Apache Kafka voor Confluent Cloud
           tocHref: /azure/partner-solutions/apache-kafka-confluent-cloud/
           topicHref: /azure/partner-solutions/apache-kafka-confluent-cloud/
     - name: SignalR Service
@@ -679,7 +682,7 @@
         - name: Front Door Service
           tocHref: /azure/frontdoor/
           topicHref: /azure/frontdoor/
-        - name: 'Voor deur, standaard/Premium (preview-versie)'
+        - name: Front Door Standard/Premium (preview)
           tocHref: /azure/frontdoor/standard-premium
           topicHref: /azure/frontdoor/standard-premium
         - name: Internet Analyzer
@@ -700,7 +703,7 @@
         - name: Peering Service
           tocHref: /azure/peering-service/
           topicHref: /azure/peering-service/
-        - name: Route server (preview-versie)
+        - name: Routeserver (preview)
           tocHref: /azure/route-server/
           topicHref: /azure/route-server/
         - name: Traffic Manager
@@ -770,6 +773,9 @@
         - name: Ontwikkelen
           tocHref: /azure/security/develop/
           topicHref: /azure/security/develop/
+        - name: Reis
+          tocHref: /azure/security/journey
+          topicHref: /azure/security/journey
         - name: Benchmarks
           tocHref: /azure/security/benchmarks/
           topicHref: /azure/security/benchmarks/

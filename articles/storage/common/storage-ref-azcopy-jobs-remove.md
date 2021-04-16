@@ -1,6 +1,6 @@
 ---
-title: azcopy-taken verwijderen | Microsoft Docs
-description: In dit artikel vindt u Naslag informatie voor de opdracht azcopy-taken verwijderen.
+title: azcopy jobs remove | Microsoft Docs
+description: Dit artikel bevat naslaginformatie voor de opdracht azcopy jobs remove.
 author: normesta
 ms.service: storage
 ms.topic: reference
@@ -8,19 +8,19 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 2744c2a082b5321fb671de08301981fd17396640
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c6a4745c4059c81384448deba37495030c4bf3a3
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879085"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107503368"
 ---
 # <a name="azcopy-jobs-remove"></a>azcopy jobs remove
 
-Alle bestanden verwijderen die zijn gekoppeld aan de opgegeven taak-ID.
+Verwijder alle bestanden die zijn gekoppeld aan de opgegeven taak-id.
 
 > [!NOTE] 
-> U kunt de locatie aanpassen waarin logboek-en plan bestanden worden opgeslagen. Zie de [azcopy env](storage-ref-azcopy-env.md) -opdracht voor meer informatie.
+> U kunt de locatie aanpassen waar logboek- en planbestanden worden opgeslagen. Zie de [opdracht azcopy env](storage-ref-azcopy-env.md) voor meer informatie.
 
 ```
 azcopy jobs remove [jobID] [flags]
@@ -31,7 +31,6 @@ azcopy jobs remove [jobID] [flags]
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 - [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
-- [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -41,15 +40,15 @@ azcopy jobs remove [jobID] [flags]
 
 ## <a name="options"></a>Opties
 
-**--Help**                Help voor verwijderen.
+**--help**                Help voor verwijderen.
 
-## <a name="options-inherited-from-parent-commands"></a>Opties overgenomen van bovenliggende opdrachten
+## <a name="options-inherited-from-parent-commands"></a>Opties die zijn overgenomen van bovenliggende opdrachten
 
-**--Cap-Mbps-float**      De overdrachts frequentie in megabits per seconde. Even door Voer kan enigszins afwijken van het kapje. Als deze optie is ingesteld op nul of wordt wegge laten, wordt de door Voer niet afgetopt.
+**--cap-mbps float**      Beperk de overdrachtssnelheid, in megabits per seconde. De doorvoer per moment kan enigszins afwijken van de limiet. Als deze optie is ingesteld op nul of wordt weggelaten, wordt de doorvoer niet afgekapt.
 
-**--** de teken reeks indeling van het uitvoer type van de uitvoer van de opdracht. De opties zijn onder andere: Text, JSON. De standaardwaarde is `text`. (standaard `text` )
+**--output-type** string Format of the command's output. De keuzes zijn onder andere: text, json. De standaardwaarde is `text`. `text`(standaard)
 
-**--vertrouwd-micro soft-achtervoegsels** teken reeks geeft aanvullende domein achtervoegsels aan waar Azure Active Directory aanmeldings tokens kunnen worden verzonden.  De standaard waarde is *. core.Windows.net;*. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. Alle hier vermelde waarden worden toegevoegd aan de standaard instelling. Voor beveiliging moet u Microsoft Azure domeinen hier alleen plaatsen. Scheid meerdere vermeldingen met een punt komma.
+**--trusted-microsoft-suffixes** string Hiermee geeft u extra domeinachtervoegsels op waar Azure Active Directory aanmeldingstokens kunnen worden verzonden.  De standaardwaarde is *.core.windows.net;*. core.chinacloudapi.cn; *.core.cloudapi.de;*. core.usgovcloudapi.net'. Alle die hier worden vermeld, worden toegevoegd aan de standaardinstelling. Voor de beveiliging moet u alleen Microsoft Azure hier. Scheid meerdere vermeldingen met punt-dubbele punt.
 
 ## <a name="see-also"></a>Zie ook
 

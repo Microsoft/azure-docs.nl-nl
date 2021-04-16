@@ -1,6 +1,6 @@
 ---
-title: End-to-end-versleuteling inschakelen met behulp van versleuteling op host-Azure CLI-Managed disks
-description: Gebruik versleuteling op host om end-to-end versleuteling in te scha kelen op uw Azure Managed disks.
+title: End-to-end-versleuteling inschakelen met behulp van versleuteling op de host - Azure CLI - beheerde schijven
+description: Gebruik versleuteling op de host om end-to-end-versleuteling op uw beheerde Azure-schijven in teschakelen.
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
@@ -8,16 +8,16 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 3eecb584f468bc170f0325da8d734a1890691483
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 45cdb9217eebf6e3129718a96d9f7b72a3ab62b3
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104601768"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533609"
 ---
-# <a name="use-the-azure-cli-to-enable-end-to-end-encryption-using-encryption-at-host"></a>De Azure CLI gebruiken om end-to-end versleuteling in te scha kelen met behulp van versleuteling op de host
+# <a name="use-the-azure-cli-to-enable-end-to-end-encryption-using-encryption-at-host"></a>De Azure CLI gebruiken om end-to-end-versleuteling in teschakelen met behulp van versleuteling op de host
 
-Wanneer u versleuteling inschakelt op de host, worden gegevens die op de VM-host zijn opgeslagen, versleuteld op rest en stromen die zijn versleuteld naar de opslag service. Zie [versleuteling bij host-end-to-end-versleuteling voor uw VM-gegevens](../disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)voor conceptuele informatie over versleuteling op de host, evenals andere beheerde schijf versleutelings typen.
+Wanneer u versleuteling op de host inschakelen, worden gegevens die zijn opgeslagen op de VM-host versleuteld at rest en stromen versleuteld naar de Storage-service. Zie Encryption [at host - End-to-end encryption for your VM data](../disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)(Versleuteling op host - End-to-end-versleuteling voor uw VM-gegevens) voor conceptuele informatie over versleuteling op de host en andere typen versleuteling van beheerde schijven.
 
 ## <a name="restrictions"></a>Beperkingen
 
@@ -27,11 +27,12 @@ Wanneer u versleuteling inschakelt op de host, worden gegevens die op de VM-host
 
 [!INCLUDE [virtual-machines-disks-encryption-at-host-suported-sizes](../../../includes/virtual-machines-disks-encryption-at-host-suported-sizes.md)]
 
-Mogelijk vindt u ook de VM-grootten via een programma. Zie de sectie [ondersteunde VM-grootten zoeken](#finding-supported-vm-sizes) voor meer informatie over het ophalen van deze Program ma's.
+De volledige lijst met ondersteunde VM-grootten kan programmatisch worden binnengehaald. Raadpleeg de sectie Ondersteunde VM-grootten zoeken voor informatie over het programmatisch ophalen van [deze VM-grootten.](#finding-supported-vm-sizes)
+Het upgraden van de VM-grootte resulteert in validatie om te controleren of de nieuwe VM-grootte de functie EncryptionAtHost ondersteunt.
 
 ## <a name="prerequisites"></a>Vereisten
 
-U moet de functie voor uw abonnement inschakelen voordat u de eigenschap EncryptionAtHost voor uw virtuele machine/VMSS gebruikt. Volg de onderstaande stappen om de functie in te scha kelen voor uw abonnement:
+U moet de functie voor uw abonnement inschakelen voordat u de eigenschap EncryptionAtHost voor uw VM/VMSS gebruikt. Volg de onderstaande stappen om de functie voor uw abonnement in teschakelen:
 
 1.  Voer de volgende opdracht uit om de functie voor uw abonnement te registreren
 
@@ -39,7 +40,7 @@ U moet de functie voor uw abonnement inschakelen voordat u de eigenschap Encrypt
     az feature register --namespace Microsoft.Compute --name EncryptionAtHost
     ```
  
-2.  Controleer of de registratie status is geregistreerd (een paar minuten duurt) met behulp van de onderstaande opdracht voordat u de functie uitprobeert.
+2.  Controleer met behulp van de onderstaande opdracht of de registratietoestand Geregistreerd is (enkele minuten) voordat u de functie uitprompt.
 
     ```azurecli
     az feature show --namespace Microsoft.Compute --name EncryptionAtHost
@@ -54,9 +55,9 @@ Zodra de functie is ingeschakeld, moet u een Azure Key Vault en een DiskEncrypti
 
 ## <a name="examples"></a>Voorbeelden
 
-### <a name="create-a-vm-with-encryption-at-host-enabled-with-customer-managed-keys"></a>Maak een virtuele machine met versleuteling op host die is ingeschakeld met door de klant beheerde sleutels. 
+### <a name="create-a-vm-with-encryption-at-host-enabled-with-customer-managed-keys"></a>Maak een VM met versleuteling op de host ingeschakeld met door de klant beheerde sleutels. 
 
-Maak een virtuele machine met Managed disks met behulp van de resource-URI van de DiskEncryptionSet die eerder is gemaakt voor het versleutelen van de cache van besturings systemen en gegevens schijven met door de klant beheerde sleutels De tijdelijke schijven worden versleuteld met door het platform beheerde sleutels. 
+Maak een VM met beheerde schijven met behulp van de resource-URI van de DiskEncryptionSet die u eerder hebt gemaakt om de cache van besturingssysteem- en gegevensschijven te versleutelen met door de klant beheerde sleutels. De tijdelijke schijven worden versleuteld met door het platform beheerde sleutels. 
 
 ```azurecli
 rgName=yourRGName
@@ -80,9 +81,9 @@ az vm create -g $rgName \
 --data-disk-encryption-sets $diskEncryptionSetId $diskEncryptionSetId
 ```
 
-### <a name="create-a-vm-with-encryption-at-host-enabled-with-platform-managed-keys"></a>Maak een virtuele machine met versleuteling op host die is ingeschakeld met door het platform beheerde sleutels. 
+### <a name="create-a-vm-with-encryption-at-host-enabled-with-platform-managed-keys"></a>Maak een VM met versleuteling op de host ingeschakeld met door het platform beheerde sleutels. 
 
-Maak een virtuele machine met versleuteling op de host en schakel deze in voor het versleutelen van cache van besturings systeem/gegevens schijven en tijdelijke schijven met door het platform beheerde sleutels. 
+Maak een VM met versleuteling op de host ingeschakeld om de cache van OS-/gegevensschijven en tijdelijke schijven te versleutelen met door het platform beheerde sleutels. 
 
 ```azurecli
 rgName=yourRGName
@@ -101,7 +102,7 @@ az vm create -g $rgName \
 --data-disk-sizes-gb 128 128 \
 ```
 
-### <a name="update-a-vm-to-enable-encryption-at-host"></a>Werk een virtuele machine bij om versleuteling op de host in te scha kelen. 
+### <a name="update-a-vm-to-enable-encryption-at-host"></a>Werk een VM bij om versleuteling op de host in teschakelen. 
 
 ```azurecli
 rgName=yourRGName
@@ -112,7 +113,7 @@ az vm update -n $vmName \
 --set securityProfile.encryptionAtHost=true
 ```
 
-### <a name="check-the-status-of-encryption-at-host-for-a-vm"></a>Controleer de status van versleuteling op de host voor een VM
+### <a name="check-the-status-of-encryption-at-host-for-a-vm"></a>De status van versleuteling op de host voor een VM controleren
 
 ```azurecli
 rgName=yourRGName
@@ -123,9 +124,9 @@ az vm show -n $vmName \
 --query [securityProfile.encryptionAtHost] -o tsv
 ```
 
-### <a name="create-a-virtual-machine-scale-set-with-encryption-at-host-enabled-with-customer-managed-keys"></a>Een schaalset voor virtuele machines maken met versleuteling op host die is ingeschakeld met door de klant beheerde sleutels. 
+### <a name="create-a-virtual-machine-scale-set-with-encryption-at-host-enabled-with-customer-managed-keys"></a>Maak een virtuele-machineschaalset met versleuteling op de host ingeschakeld met door de klant beheerde sleutels. 
 
-Maak een schaalset voor virtuele machines met Managed disks met behulp van de resource-URI van de DiskEncryptionSet die eerder is gemaakt voor het versleutelen van de cache van besturings systemen en gegevens schijven met door de klant beheerde sleutels. De tijdelijke schijven worden versleuteld met door het platform beheerde sleutels. 
+Maak een virtuele-machineschaalset met beheerde schijven met behulp van de resource-URI van de DiskEncryptionSet die u eerder hebt gemaakt om de cache van besturingssysteem- en gegevensschijven te versleutelen met door de klant beheerde sleutels. De tijdelijke schijven worden versleuteld met door het platform beheerde sleutels. 
 
 ```azurecli
 rgName=yourRGName
@@ -149,9 +150,9 @@ az vmss create -g $rgName \
 --data-disk-encryption-sets $diskEncryptionSetId $diskEncryptionSetId
 ```
 
-### <a name="create-a-virtual-machine-scale-set-with-encryption-at-host-enabled-with-platform-managed-keys"></a>Een schaalset voor virtuele machines maken met versleuteling op host die is ingeschakeld met door het platform beheerde sleutels. 
+### <a name="create-a-virtual-machine-scale-set-with-encryption-at-host-enabled-with-platform-managed-keys"></a>Maak een virtuele-machineschaalset met versleuteling op de host ingeschakeld met door het platform beheerde sleutels. 
 
-Een schaalset voor virtuele machines maken met versleuteling op de host ingeschakeld voor het versleutelen van cache van OS/gegevens schijven en tijdelijke schijven met door het platform beheerde sleutels. 
+Maak een virtuele-machineschaalset met versleuteling op de host ingeschakeld voor het versleutelen van de cache van besturingssysteem-/gegevensschijven en tijdelijke schijven met door het platform beheerde sleutels. 
 
 ```azurecli
 rgName=yourRGName
@@ -170,7 +171,7 @@ az vmss create -g $rgName \
 --data-disk-sizes-gb 64 128 \
 ```
 
-### <a name="update-a-virtual-machine-scale-set-to-enable-encryption-at-host"></a>Een schaalset voor virtuele machines bijwerken om versleuteling op de host in te scha kelen. 
+### <a name="update-a-virtual-machine-scale-set-to-enable-encryption-at-host"></a>Werk een virtuele-machineschaalset bij om versleuteling op de host in te stellen. 
 
 ```azurecli
 rgName=yourRGName
@@ -181,7 +182,7 @@ az vmss update -n $vmssName \
 --set virtualMachineProfile.securityProfile.encryptionAtHost=true
 ```
 
-### <a name="check-the-status-of-encryption-at-host-for-a-virtual-machine-scale-set"></a>Controleer de status van versleuteling op de host voor een schaalset voor virtuele machines
+### <a name="check-the-status-of-encryption-at-host-for-a-virtual-machine-scale-set"></a>De status van versleuteling op de host voor een virtuele-machineschaalset controleren
 
 ```azurecli
 rgName=yourRGName
@@ -194,9 +195,9 @@ az vmss show -n $vmssName \
 
 ## <a name="finding-supported-vm-sizes"></a>Ondersteunde VM-grootten zoeken
 
-Verouderde VM-grootten worden niet ondersteund. U kunt de lijst met ondersteunde VM-grootten vinden door een van de volgende opties:
+Verouderde VM-grootten worden niet ondersteund. U vindt de lijst met ondersteunde VM-grootten op een van de volgende:
 
-De [resource-sku's-API](/rest/api/compute/resourceskus/list) wordt aangeroepen en er wordt gecontroleerd of de `EncryptionAtHostSupported` mogelijkheid is ingesteld op **waar**.
+Het [aanroepen van de Resource Skus-API](/rest/api/compute/resourceskus/list) en controleren of `EncryptionAtHostSupported` de mogelijkheid is ingesteld op **Waar.**
 
 ```json
     {
@@ -217,7 +218,7 @@ De [resource-sku's-API](/rest/api/compute/resourceskus/list) wordt aangeroepen e
     }
 ```
 
-U kunt ook de Power shell [-cmdlet Get-AzComputeResourceSku](/powershell/module/az.compute/get-azcomputeresourcesku) aanroepen.
+Of roep de PowerShell-cmdlet [Get-AzComputeResourceSku](/powershell/module/az.compute/get-azcomputeresourcesku) aan.
 
 ```powershell
 $vmSizes=Get-AzComputeResourceSku | where{$_.ResourceType -eq 'virtualMachines' -and $_.Locations.Contains('CentralUSEUAP')} 
@@ -238,6 +239,6 @@ foreach($vmSize in $vmSizes)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u deze resources hebt gemaakt en geconfigureerd, kunt u deze gebruiken om uw beheerde schijven te beveiligen. De volgende koppeling bevat voorbeeld scripts, elk met een eigen scenario, dat u kunt gebruiken om uw beheerde schijven te beveiligen.
+Nu u deze resources hebt gemaakt en geconfigureerd, kunt u ze gebruiken om uw beheerde schijven te beveiligen. De volgende koppeling bevat voorbeeldscripts, elk met een respectieve scenario, die u kunt gebruiken om uw beheerde schijven te beveiligen.
 
 [Azure Resource Manager-voorbeeldsjablonen](https://github.com/Azure-Samples/managed-disks-powershell-getting-started/tree/master/EncryptionAtHost)

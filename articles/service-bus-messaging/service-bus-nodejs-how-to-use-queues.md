@@ -1,18 +1,20 @@
 ---
 title: Azure Service Bus-wachtrijen gebruiken in JavaScript
-description: Meer informatie over het schrijven van een Java script-programma dat gebruikmaakt van de meest recente versie van het @azure/service-bus pakket om berichten te verzenden naar en berichten te ontvangen van een service bus wachtrij.
+description: Leer hoe u een JavaScript-programma schrijft dat gebruikmaakt van de nieuwste versie van het pakket om berichten te verzenden naar en te ontvangen van @azure/service-bus een Service Bus wachtrij.
 author: spelluru
-ms.devlang: nodejs
-ms.topic: quickstart
-ms.date: 11/09/2020
 ms.author: spelluru
-ms.custom: devx-track-js
-ms.openlocfilehash: 3c499dcb5233cbf5cd4048c641d1b38e289cc35f
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.date: 11/09/2020
+ms.topic: quickstart
+ms.devlang: nodejs
+ms.custom:
+- devx-track-js
+- mode-api
+ms.openlocfilehash: aee67becf7519f03839eafbd897838f938871307
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101739709"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537229"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-javascript"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (JavaScript)
 In deze zelfstudie leert u hoe u het pakket [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) in een JavaScript-programma kunt gebruiken om berichten van en naar een Service Bus-wachtrij te ontvangen en verzenden.
@@ -205,7 +207,7 @@ Selecteer de wachtrij op de pagina **Overzicht** om naar de pagina **Service Bus
 ## <a name="next-steps"></a>Volgende stappen
 Raadpleeg de volgende documentatie en voorbeelden: 
 
-- [Azure Service Bus-client bibliotheek voor Java script](https://www.npmjs.com/package/@azure/service-bus)
+- [Azure Service Bus-clientbibliotheek voor JavaScript](https://www.npmjs.com/package/@azure/service-bus)
 - [JavaScript-voorbeelden](/samples/azure/azure-sdk-for-js/service-bus-javascript/)
 - [TypeScript-voorbeelden](/samples/azure/azure-sdk-for-js/service-bus-typescript/)
 - [API-referentiedocumentatie](/javascript/api/overview/azure/service-bus)

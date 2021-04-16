@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Storage
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Storage. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.topic: reference
 author: tamram
 ms.author: tamram
 ms.service: storage
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 7872a5ca34c474c702e7f8cb0a72bb50bf71f563
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 462fd6b6651a4c40f8b1420b2295341db65ebc8e
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106095587"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107504303"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-storage"></a>Ingebouwde Azure Policy-definities voor Azure Storage
 
@@ -24,11 +24,11 @@ De naam van elke ingebouwde beleidsdefinitie linkt naar de beleidsdefinitie in d
 
 [!INCLUDE [azure-policy-reference-service-storage](../../../includes/policy/reference/byrp/microsoft.storage.md)]
 
-## <a name="microsoftstoragecache"></a>Micro soft. StorageCache
+## <a name="microsoftstoragecache"></a>Microsoft.StorageCache
 
 [!INCLUDE [azure-policy-reference-service-storagecache](../../../includes/policy/reference/byrp/microsoft.storagecache.md)]
 
-## <a name="microsoftstoragesync"></a>Micro soft. StorageSync
+## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 
 [!INCLUDE [azure-policy-reference-service-storagesync](../../../includes/policy/reference/byrp/microsoft.storagesync.md)]
 

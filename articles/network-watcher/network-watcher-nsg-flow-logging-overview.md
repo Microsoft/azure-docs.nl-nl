@@ -1,7 +1,7 @@
 ---
-title: Inleiding tot stroom logboek registratie voor Nsg's
+title: Inleiding tot stroomlogregistratie voor NSG's
 titleSuffix: Azure Network Watcher
-description: In dit artikel wordt uitgelegd hoe u de functie NSG flow logs van Azure Network Watcher gebruikt.
+description: In dit artikel wordt uitgelegd hoe u de functie NSG-stroomlogboeken van Azure Network Watcher.
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -12,107 +12,107 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: bc085163b4f738d022ab9771794ec85293de5ed8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 206bcfaeb5cb13d3ecf1e5f6335518c42df21eb8
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100521676"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107535286"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
 ## <a name="introduction"></a>Introductie
 
-Stroom logboeken voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt vastleggen over IP-verkeer dat wordt doorgelopen via een NSG. Stroom gegevens worden verzonden naar Azure Storage accounts van waaruit u toegang hebt, en deze kunt u exporteren naar een wille keurig visualisatie programma, SIEM of ID'S van uw keuze.
+[Stroomlogboeken](../virtual-network/network-security-groups-overview.md#security-rules) van netwerkbeveiligingsgroep (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt bijhouden over IP-verkeer dat via een NSG stroomt. Stroomgegevens worden verzonden naar Azure Storage accounts van waaruit u ze kunt openen en exporteren naar elk visualisatiehulpprogramma, SIEM of id's van uw keuze.
 
-![overzicht van stroom logboeken](./media/network-watcher-nsg-flow-logging-overview/homepage.jpg)
+![overzicht van stroomlogboeken](./media/network-watcher-nsg-flow-logging-overview/homepage.jpg)
 
-## <a name="why-use-flow-logs"></a>Waarom stroom Logboeken gebruiken?
+## <a name="why-use-flow-logs"></a>Waarom stroomlogboeken gebruiken?
 
-Het is essentieel om uw eigen netwerk te bewaken, beheren en kennen voor ongeoorloofde beveiliging, naleving en prestaties. Het is belang rijk om uw eigen omgeving te beschermen en te optimaliseren. Vaak moet u de huidige status van het netwerk weten, die verbinding maakt, waar ze verbinding mee maken, welke poorten open zijn op het Internet, het verwachte netwerk gedrag, onregelmatig netwerk gedrag en onverwachte toename van het verkeer.
+Het is essentieel om uw eigen netwerk te bewaken, te beheren en te kennen voor niet-gecompromitteerde beveiliging, naleving en prestaties. Kennis van uw eigen omgeving is van cruciaal belang om deze te beveiligen en te optimaliseren. Vaak moet u weten wat de huidige status van het netwerk is, wie er verbinding maakt, waar ze verbinding maken, welke poorten zijn geopend voor internet, verwacht netwerkgedrag, onregelmatig netwerkgedrag en plotselinge toename van verkeer.
 
-Stroom logboeken zijn de bron van waarheid voor alle netwerk activiteiten in uw cloud omgeving. Of u nu een geplande start wilt maken voor het optimaliseren van resources of een grote onderneming die probeert indringing te detecteren, stroom logboeken zijn de meest relevante treffers. U kunt deze gebruiken voor het optimaliseren van netwerk stromen, het bewaken van de door Voer, het controleren van de naleving, het detecteren van indringingen en meer.
+Stroomlogboeken zijn de bron van waarheid voor alle netwerkactiviteit in uw cloudomgeving. Of u nu een beginnende start-up bent die resources probeert te optimaliseren of grote ondernemingen die inbraak proberen te detecteren, Flow-logboeken zijn uw beste keuze. U kunt deze gebruiken voor het optimaliseren van netwerkstromen, het bewaken van doorvoer, het controleren van naleving, het detecteren van indringers en meer.
 
 ## <a name="common-use-cases"></a>Algemene scenario’s
 
-**Netwerk bewaking**: Identificeer Onbekend of ongewenst verkeer. Verkeers niveaus en bandbreedte gebruik bewaken. Filter stroom logboeken op IP en poort om inzicht te krijgen in het toepassings gedrag. U kunt stroom logboeken exporteren naar analyse-en visualisatie hulpprogramma's van uw keuze om controle dashboards in te stellen.
+**Netwerkbewaking:** identificeer onbekend of ongewenst verkeer. Beveer het verkeersniveaus en bandbreedteverbruik. Filter stroomlogboeken op IP en poort om het gedrag van toepassingen te begrijpen. Exporteert stroomlogboeken naar analyse- en visualisatiehulpprogramma's van uw keuze om bewakingsdashboards in te stellen.
 
-**Gebruiks bewaking en optimalisatie:** De belangrijkste talks in uw netwerk identificeren. Combi neer met GeoIP-gegevens om verkeer tussen regio's te identificeren. Inzicht in de groei van verkeer voor capaciteits prognoses. Gegevens gebruiken om overtly beperkende verkeers regels te verwijderen.
+**Bewaking en optimalisatie van gebruik:** Identificeer de belangrijkste gespreksmakers in uw netwerk. Combineren met GeoIP-gegevens om verkeer tussen regio's te identificeren. Meer inzicht in de groei van het verkeer voor capaciteitsprognoses. Gebruik gegevens om al te beperkende verkeersregels te verwijderen.
 
-**Naleving**: stroom gegevens gebruiken voor het controleren van de netwerk isolatie en naleving van bedrijfs toegangs regels
+**Naleving:** Stroomgegevens gebruiken om netwerkisolatie en naleving van toegangsregels voor ondernemingen te controleren
 
-**Netwerk-forensische & beveiligings analyse**: netwerk stromen analyseren van gemanipuleerde ip's en netwerk interfaces. Stroom logboeken exporteren naar een wille keurig SIEM of id-hulp programma van uw keuze.
+**Forensische netwerkanalyse & beveiligingsanalyse:** analyseer netwerkstromen van aangetaste IP's en netwerkinterfaces. Stroomlogboeken exporteren naar een SIEM- of IDS-hulpprogramma van uw keuze.
 
-## <a name="how-logging-works"></a>Hoe logboek registratie werkt
+## <a name="how-logging-works"></a>Hoe logboekregistratie werkt
 
-**Sleutel eigenschappen**
+**Sleuteleigenschappen**
 
-- Stroom logboeken worden uitgevoerd op [laag 4](https://en.wikipedia.org/wiki/OSI_model#Layer_4:_Transport_Layer) en alle IP-stromen die in en uit een NSG worden opgenomen, worden geregistreerd
-- Logboeken worden verzameld op **1-min-interval** via het Azure-platform en hebben geen invloed op de resources van klanten of netwerk prestaties.
-- Logboeken worden geschreven in de JSON-indeling en tonen uitgaand en binnenkomend verkeer per NSG regel.
-- Elke logboek record bevat de netwerk interface (NIC) de stroom is van toepassing op 5-tuple-informatie, de verkeers beslissing & (alleen versie 2) doorvoer gegevens. Zie de _logboek indeling_ hieronder voor meer informatie.
-- Stroom logboeken hebben een Bewaar functie waarmee de logboeken automatisch kunnen worden verwijderd tot een jaar nadat ze zijn gemaakt. 
+- Stroomlogboeken werken op [laag 4 en](https://en.wikipedia.org/wiki/OSI_model#Layer_4:_Transport_Layer) registreren alle IP-stromen die in en uit een NSG gaan
+- Logboeken worden verzameld met een interval van 1 minuut via het **Azure-platform** en hebben op geen enkele manier invloed op de resources of netwerkprestaties van klanten.
+- Logboeken worden geschreven in de JSON-indeling en tonen uitgaande en binnenkomende stromen per NSG-regel.
+- Elke logboekrecord bevat de netwerkinterface (NIC) waar de stroom op van toepassing is, informatie met 5 tuples, de verkeersbeslissing & (alleen versie 2) doorvoergegevens. Zie _Logboekindeling_ hieronder voor meer informatie.
+- Stroomlogboeken hebben een retentiefunctie waarmee de logboeken automatisch kunnen worden verwijderd tot een jaar na het maken ervan. 
 
 > [!NOTE]
-> Bewaren is alleen beschikbaar als u gebruikmaakt van [v2-opslag accounts (GPv2) voor algemeen](../storage/common/storage-account-overview.md#types-of-storage-accounts)gebruik. 
+> Retentie is alleen beschikbaar als u [Algemeen gebruik v2 Storage-accounts (GPv2) gebruikt.](../storage/common/storage-account-overview.md#types-of-storage-accounts) 
 
 **Basisconcepten**
 
-- Software gedefinieerde netwerken zijn ingedeeld rond virtuele netwerken (VNETs) en subnetten. De beveiliging van deze VNets en subnetten kan worden beheerd met behulp van een NSG.
-- Een netwerk beveiligings groep (NSG) bevat een lijst met _beveiligings regels_ voor het toestaan of weigeren van netwerk verkeer in bronnen waarmee deze is verbonden. Nsg's kan worden gekoppeld aan subnetten, afzonderlijke Vm's of afzonderlijke netwerk interfaces (NIC) die zijn gekoppeld aan Vm's (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)voor meer informatie.
-- Alle verkeers stromen in uw netwerk worden geëvalueerd aan de hand van de regels in de desbetreffende NSG.
-- Het resultaat van deze evaluaties is NSG-stroom Logboeken. Stroom logboeken worden verzameld via het Azure-platform en hoeven niet te worden gewijzigd in de resources van de klant.
-- Opmerking: regels bestaan uit twee typen: het beëindigen van & niet-beëindigd, elk met verschillende gedragingen voor logboek registratie.
-- - Regels voor het weigeren van NSG worden beëindigd. De NSG die het verkeer weigert, wordt geregistreerd in de stroom logboeken en de verwerking in dit geval wordt gestopt nadat een NSG verkeer heeft geweigerd. 
-- - NSG toestaan regels niet af te sluiten, wat betekent dat zelfs als een NSG dit toestaat, de verwerking wordt voortgezet naar de volgende NSG. De laatste NSG die verkeer toestaat, registreert het verkeer naar stroom Logboeken.
-- NSG-stroom logboeken worden geschreven naar opslag accounts waarvan ze toegang hebben.
-- U kunt stroom logboeken exporteren, verwerken, analyseren en visualiseren met behulp van hulpprogram ma's zoals TA, Splunk, Grafana, Stealthwatch, enzovoort.
+- Software-gedefinieerde netwerken zijn georganiseerd rond virtuele netwerken (VNET's) en subnetten. De beveiliging van deze VNets en subnetten kan worden beheerd met behulp van een NSG.
+- Een netwerkbeveiligingsgroep (NSG) bevat een lijst met beveiligingsregels die netwerkverkeer toestaan _of_ weigeren in resources waarmee deze is verbonden. NSG's kunnen worden gekoppeld aan subnetten, afzonderlijke VM's of afzonderlijke netwerkinterfaces (NIC's) die zijn gekoppeld aan VM's (Resource Manager). Zie Overzicht van netwerkbeveiligingsgroep [voor meer informatie.](../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)
+- Alle verkeersstromen in uw netwerk worden geëvalueerd met behulp van de regels in de toepasselijke NSG.
+- Het resultaat van deze evaluaties zijn NSG-stroomlogboeken. Stroomlogboeken worden verzameld via het Azure-platform en hoeven niet te worden gewijzigd in de resources van de klant.
+- Opmerking: regels zijn van twee typen: het beëindigen & niet-beëindigen, elk met verschillende gedragingen voor logboekregistratie.
+- - NSG-regels voor weigeren worden beëindigen. De NSG die het verkeer weigert, registreert het in stroomlogboeken en de verwerking wordt in dit geval gestopt nadat een NSG het verkeer weigert. 
+- - Regels voor het toestaan van NSG's zijn niet-beëindigend, wat betekent dat zelfs als één NSG dit toestaat, de verwerking wordt voortgezet naar de volgende NSG. De laatste NSG die verkeer toestaat, registreert het verkeer in Flow-logboeken.
+- NSG-stroomlogboeken worden geschreven naar opslagaccounts van waar ze toegankelijk zijn.
+- U kunt stroomlogboeken exporteren, verwerken, analyseren en visualiseren met behulp van hulpprogramma's zoals TA, Splunk, Grafana, Stealthwatch, enzovoort.
 
-## <a name="log-format"></a>Logboek indeling
+## <a name="log-format"></a>Logboekindeling
 
-Stroom logboeken bevatten de volgende eigenschappen:
+Stroomlogboeken bevatten de volgende eigenschappen:
 
-* de **tijd** waarop de gebeurtenis is geregistreerd
-* **systemId** -systeem-id van de netwerk beveiligings groep.
-* **categorie** : de categorie van de gebeurtenis. De categorie is altijd **NetworkSecurityGroupFlowEvent**
-* **ResourceID** -de resource-id van de NSG
-* **operationname** -altijd NetworkSecurityGroupFlowEvents
-* **Eigenschappen** : een verzameling eigenschappen van de stroom
-    * **Versie** -versie nummer van het gebeurtenis schema voor het stroom logboek
-    * **stromen** : een verzameling stromen. Deze eigenschap heeft meerdere vermeldingen voor verschillende regels
-        * **regel** -regel waarvoor de stromen worden weer gegeven
-            * **stromen** -een verzameling stromen
-                * **Mac** : het MAC-adres van de NIC voor de virtuele machine waarop de stroom is verzameld
-                * **flowTuples** : een teken reeks die meerdere eigenschappen voor de stroom-tuple in een door komma's gescheiden indeling bevat
-                    * **Tijds tempel** : deze waarde is het tijds tempel van wanneer de stroom is opgetreden in de UNIX-epoche-indeling
-                    * **Bron-IP** -het bron-IP-adres
-                    * **Doel-IP** -het doel-IP-adres
-                    * **Bron poort** : de bron poort
-                    * **Doel poort** -de doel poort
-                    * **Protocol** -het Protocol van de stroom. Geldige waarden zijn **T** voor TCP en **U** voor UDP
-                    * **Verkeers stroom** : de richting van de verkeers stroom. Geldige waarden zijn **I** voor inkomend en **O** voor uitgaand verkeer.
-                    * **Beslissing van verkeer** : of verkeer is toegestaan of geweigerd. Geldige **waarden zijn voor** toegestaan en **D** voor geweigerd.
-                    * **Stroom status-alleen versie 2** : Hiermee wordt de status van de stroom vastgelegd. Mogelijke statussen zijn **B**: Begin, wanneer een stroom wordt gemaakt. Er worden geen statistische gegevens geleverd. **C**: Continu, voor een actieve stroom. Statistische gegevens worden geleverd met intervallen van 5 minuten. **E**: Eind, wanneer een stroom is beëindigd. Er worden statistische gegevens geleverd.
-                    * **Pakketten-bron naar doel-versie 2 alleen** Het totale aantal TCP-of UDP-pakketten dat sinds de laatste update van de bron naar het doel is verzonden.
-                    * **Verzonden bytes-bron naar doel-versie 2** Het totale aantal TCP-of UDP-pakket bytes dat sinds de laatste update van de bron naar het doel is verzonden. Pakketbytes omvatten de pakket-header en -nettolading.
-                    * **Pakketten-doel naar bron-versie 2 alleen** Het totale aantal TCP-of UDP-pakketten dat sinds de laatste update van de bestemming naar de bron is verzonden.
-                    * **Verzonden bytes-bestemming naar bron-versie 2** Het totale aantal bytes van de TCP-en UDP-pakketten dat sinds de laatste update van de bestemming naar de bron is verzonden. Pakketbytes omvatten een pakket-header en -nettolading.
+* **time:** het tijdstip waarop de gebeurtenis is geregistreerd
+* **systemId:** systeem-id van netwerkbeveiligingsgroep.
+* **category:** de categorie van de gebeurtenis. De categorie is altijd **NetworkSecurityGroupFlowEvent**
+* **resourceid:** de resource-id van de NSG
+* **operationName** - Altijd NetworkSecurityGroupFlowEvents
+* **eigenschappen:** een verzameling eigenschappen van de stroom
+    * **Versie:** versienummer van het gebeurtenisschema van het stroomlogboek
+    * **flows:** een verzameling stromen. Deze eigenschap heeft meerdere vermeldingen voor verschillende regels
+        * **regel:** regel waarvoor de stromen worden vermeld
+            * **flows:** een verzameling stromen
+                * **mac:** het MAC-adres van de NIC voor de VM waarop de stroom is verzameld
+                * **flowTuples:** een tekenreeks met meerdere eigenschappen voor de stroom-tuple in door komma's gescheiden indeling
+                    * **Tijdstempel:** deze waarde is het tijdstempel van wanneer de stroom heeft plaatsgevonden in UNIX-epoche-indeling
+                    * **Bron-IP:** het bron-IP-adres
+                    * **Doel-IP:** het doel-IP-adres
+                    * **Bronpoort:** de bronpoort
+                    * **Doelpoort:** de doelpoort
+                    * **Protocol:** het protocol van de stroom. Geldige waarden zijn **T** voor TCP en **U** voor UDP
+                    * **Verkeersstroom:** de richting van de verkeersstroom. Geldige waarden zijn **I** voor inkomende en **O** voor uitgaand verkeer.
+                    * **Beslissing over verkeer:** of verkeer is toegestaan of geweigerd. Geldige waarden zijn **A** voor toegestaan en **D** voor geweigerd.
+                    * **Stroomtoestand : alleen versie 2:** legt de status van de stroom vast. Mogelijke statussen zijn **B**: Begin, wanneer een stroom wordt gemaakt. Er worden geen statistische gegevens geleverd. **C**: Continu, voor een actieve stroom. Statistische gegevens worden geleverd met intervallen van 5 minuten. **E**: Eind, wanneer een stroom is beëindigd. Er worden statistische gegevens geleverd.
+                    * **Pakketten - bron naar doel - alleen versie 2** Het totale aantal TCP- of UDP-pakketten dat sinds de laatste update van de bron naar de bestemming is verzonden.
+                    * **Verzonden bytes - bron naar doel - alleen versie 2** Het totale aantal TCP- of UDP-pakket bytes dat sinds de laatste update van de bron naar de bestemming is verzonden. Pakketbytes omvatten de pakket-header en -nettolading.
+                    * **Pakketten - Doel naar bron - alleen versie 2** Het totale aantal TCP- of UDP-pakketten dat sinds de laatste update van het doel naar de bron is verzonden.
+                    * **Verzonden bytes - Doel naar bron - alleen versie 2** Het totale aantal TCP- en UDP-pakket bytes dat sinds de laatste update van het doel naar de bron is verzonden. Pakketbytes omvatten een pakket-header en -nettolading.
 
 
-**NSG flow-logboeken versie 2 (VS versie 1)** 
+**NSG-stroomlogboeken versie 2 (versus versie 1)** 
 
-Versie 2 van de logboeken introduceert het concept van de stroom status. U kunt configureren welke versie van de stroom logboeken u ontvangt.
+Versie 2 van de logboeken introduceert het concept stroomtoestand. U kunt configureren welke versie van stroomlogboeken u ontvangt.
 
-Stroom status _B_ wordt vastgelegd wanneer een stroom wordt gestart. De stroom status _C_ en de stroom status _E_ zijn staten die de voortzetting van een stroom en stroom beëindiging markeren. Zowel de _C_ -als de _E_ -status bevat informatie over de band breedte van het verkeer.
+Stroomtoestand _B_ wordt vastgelegd wanneer een stroom wordt gestart. Stroomtoestand _C_ en stroomtoestand _E_ zijn statussen die respectievelijk het vervolg van een stroom en stroombeëindiging markeren. Beide _C-_ en _E-staten_ bevatten informatie over de bandbreedte van het verkeer.
 
-### <a name="sample-log-records"></a>Voorbeeld logboek records
+### <a name="sample-log-records"></a>Voorbeeldlogboekrecords
 
-De volgende tekst is een voor beeld van een stroom logboek. Zoals u ziet, zijn er meerdere records die voldoen aan de eigenschappen lijst die in de voor gaande sectie wordt beschreven.
+De volgende tekst is een voorbeeld van een stroomlogboek. Zoals u ziet, zijn er meerdere records die de eigenschappenlijst volgen die in de vorige sectie is beschreven.
 
 > [!NOTE]
-> De waarden in de eigenschap *flowTuples* zijn een door komma's gescheiden lijst.
+> Waarden in de *eigenschap flowTuples* zijn een door komma's gescheiden lijst.
  
-**Voor beeld van versie 1 NSG-stroom logboek indeling**
+**Voorbeeld van NSG-stroomlogboekindeling versie 1**
 ```json
 {
     "records": [
@@ -221,7 +221,7 @@ De volgende tekst is een voor beeld van een stroom logboek. Zoals u ziet, zijn e
         
         
 ```
-**Voor beeld van versie 2 NSG-stroom logboek indeling**
+**Voorbeeld van NSG-stroomlogboekindeling versie 2**
 ```json
  {
     "records": [
@@ -292,22 +292,22 @@ De volgende tekst is een voor beeld van een stroom logboek. Zoals u ziet, zijn e
         }
         
 ```
-**Uitleg van logboek-tuple**
+**Uitleg van Log Tuple**
 
-![stroom logboeken tuple](./media/network-watcher-nsg-flow-logging-overview/tuple.png)
+![tuple stroomlogboeken](./media/network-watcher-nsg-flow-logging-overview/tuple.png)
 
-**Berekening van de voor beeld-band breedte**
+**Berekening van steekproefbandbreedte**
 
-Verstroom Tuples van een TCP-conversatie tussen 185.170.185.105:35370 en 10.2.0.4:23:
+Stroom-tuples van een TCP-gesprek tussen 185.170.185.105:35370 en 10.2.0.4:23:
 
-"1493763938, 185.170.185.105, 10.2.0.4, 35370, 23, T, I, A, B,,,," "1493695838, 185.170.185.105, 10.2.0.4, 35370, 23, T, I, A, C, 1021, 588096, 8005, 4610880" "1493696138, 185.170.185.105, 10.2.0.4, 35370, 23, T, I, A, E, 52, 29952, 47, 27072"
+"1493763938,185.170.185.105,10.2.0.4,35370,23,T,I,A,B,,,," "1493695838,185.170.185.105,10.2.0.4,35370,23,T,I,A,C,1021,588096,8005,4610880" "1493696138,185.170.18 5.105,10.2.0.4,35370,23,T,I,A,E,52,29952,47,27072"
 
-Voor voortzetting _C_ en de laatste _E_ stroom status zijn de aantallen voor bytes en pakketten cumulatief van de tijd van de vorige record in de stroom tupel. Verwijzen naar het vorige voor beeld van de conversatie is het totale aantal overgedragen pakketten 1021 + 52 + 8005 + 47 = 9125. Het totale aantal overgebrachte bytes is 588096 + 29952 + 4610880 + 27072 = 5256000.
+Voor de _vervolg-C-_ en _eind-E-stroom_ zijn het aantal byten en pakketten geaggregeerde tellingen van het tijdstip van de vorige stroom-tuplerecord. Verwijzend naar het vorige voorbeeldgesprek is het totale aantal overgedragen pakketten 1021+52+8005+47 = 9125. Het totale aantal overgedragen bytes is 588096+29952+4610880+27072 = 5256000.
 
 
 ## <a name="enabling-nsg-flow-logs"></a>NSG-stroomlogboeken inschakelen
 
-Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen van stroom Logboeken.
+Gebruik de relevante koppeling van hieronder voor hulp bij het inschakelen van stroomlogboeken.
 
 - [Azure-portal](./network-watcher-nsg-flow-logging-portal.md)
 - [PowerShell](./network-watcher-nsg-flow-logging-powershell.md)
@@ -315,80 +315,92 @@ Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen v
 - [REST](./network-watcher-nsg-flow-logging-rest.md)
 - [Azure Resource Manager](./network-watcher-nsg-flow-logging-azure-resource-manager.md)
 
-## <a name="updating-parameters"></a>Para meters bijwerken
+## <a name="updating-parameters"></a>Parameters bijwerken
 
 **Azure-portal**
 
-Ga in het Azure Portal naar de sectie NSG-stroom Logboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deel venster instellingen voor het stroom logboek weer gegeven. Wijzig de gewenste para meters en druk op **Opslaan** om de wijzigingen te implementeren.
+Navigeer Azure Portal de sectie NSG-stroomlogboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deelvenster Instellingen voor het Stroomlogboek weergegeven. Wijzig de parameters die u wilt en druk **op Opslaan om** de wijzigingen te implementeren.
 
 **PS/CLI/REST/ARM**
 
-Als u para meters wilt bijwerken via opdracht regel Programma's, gebruikt u dezelfde opdracht die wordt gebruikt om stroom Logboeken in te scha kelen (vanaf hierboven), maar met de bijgewerkte para meters die u wilt wijzigen.
+Als u parameters wilt bijwerken via opdrachtregelprogramma's, gebruikt u dezelfde opdracht als voor het inschakelen van stroomlogboeken (van hierboven), maar met bijgewerkte parameters die u wilt wijzigen.
 
-## <a name="working-with-flow-logs"></a>Werken met stroom logboeken
+## <a name="working-with-flow-logs"></a>Werken met Stroomlogboeken
 
-*Stroom logboeken lezen en exporteren*
+*Stroomlogboeken lezen en exporteren*
 
-- [&amp;Weergave stroom logboeken downloaden vanuit de portal](./network-watcher-nsg-flow-logging-portal.md#download-flow-log)
-- [Stroom logboeken lezen met behulp van Power shell-functies](./network-watcher-read-nsg-flow-logs.md)
-- [NSG-stroom logboeken exporteren naar Splunk](https://www.splunk.com/en_us/blog/tips-and-tricks/splunking-microsoft-azure-network-watcher-data.html)
+- [&amp;Stroomlogboeken downloaden vanuit de portal](./network-watcher-nsg-flow-logging-portal.md#download-flow-log)
+- [Stroomlogboeken lezen met Behulp van PowerShell-functies](./network-watcher-read-nsg-flow-logs.md)
+- [NSG-stroomlogboeken exporteren naar Splunk](https://www.splunk.com/en_us/blog/tips-and-tricks/splunking-microsoft-azure-network-watcher-data.html)
 
-Terwijl flow logboeken doel-Nsg's, worden ze niet weer gegeven als de andere logboeken. Stroom logboeken worden alleen in een opslag account opgeslagen en volgen het pad naar Logboeken dat in het volgende voor beeld wordt weer gegeven:
+Stroomlogboeken zijn gericht op NSG's, maar ze worden niet hetzelfde weergegeven als de andere logboeken. Stroomlogboeken worden alleen opgeslagen in een opslagaccount en volgen het logboekregistratiepad dat in het volgende voorbeeld wordt weergegeven:
 
 ```
 https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 ```
 
-*Stroom logboeken visualiseren*
+*Stroomlogboeken visualiseren*
 
-- [Azure Traffic Analytics](./traffic-analytics.md) is een systeem eigen Azure-service voor het verwerken van stroom logboeken, het uitpakken van inzichten en het visualiseren van stroom Logboeken. 
-- [Vind NSG-stroom logboeken visualiseren met Power BI](./network-watcher-visualize-nsg-flow-logs-power-bi.md)
-- [Vind NSG-stroom logboeken visualiseren met elastische stack](./network-watcher-visualize-nsg-flow-logs-open-source-tools.md)
-- [Vind NSG-stroom logboeken beheren en analyseren met behulp van Grafana](./network-watcher-nsg-grafana.md)
-- [Vind NSG-stroom logboeken beheren en analyseren met behulp van Graylog](./network-watcher-analyze-nsg-flow-logs-graylog.md)
+- [Azure Traffic Analytics](./traffic-analytics.md) is een native Azure-service voor het verwerken van stroomlogboeken, het extraheren van inzichten en het visualiseren van stroomlogboeken. 
+- [[Zelfstudie] NSG-stroomlogboeken visualiseren met Power BI](./network-watcher-visualize-nsg-flow-logs-power-bi.md)
+- [[Zelfstudie] NSG-stroomlogboeken visualiseren met Elastic Stack](./network-watcher-visualize-nsg-flow-logs-open-source-tools.md)
+- [[Zelfstudie] NSG-stroomlogboeken beheren en analyseren met Grafana](./network-watcher-nsg-grafana.md)
+- [[Zelfstudie] NSG-stroomlogboeken beheren en analyseren met Graylog](./network-watcher-analyze-nsg-flow-logs-graylog.md)
 
+*Stroomlogboeken uitschakelen*
 
-## <a name="nsg-flow-logging-considerations"></a>Aandachtspunten voor NSG flow-logboek registratie
+Wanneer het stroomlogboek is uitgeschakeld, wordt de stroomlogboekregistratie voor de gekoppelde NSG gestopt. Maar het stroomlogboek als resource blijft bestaan met alle instellingen en verbanden. Het kan op elk gewenst moment worden ingeschakeld om stroomlogregistratie te starten op de geconfigureerde NSG. Stappen voor het uitschakelen/inschakelen van stroomlogboeken vindt u in [deze handleiding.](./network-watcher-nsg-flow-logging-powershell.md)  
 
-**Overwegingen voor het opslag account**: 
+*Stroomlogboeken verwijderen*
 
-- Locatie: het gebruikte opslag account moet zich in dezelfde regio bevinden als de NSG.
-- Prestatie niveau: momenteel worden alleen opslag accounts met een standaard laag ondersteund.
-- Zelfs wisseling van sleutels: als u de toegangs sleutels wijzigt/roteert naar uw opslag account, werken NSG-stroom logboeken niet meer. U kunt dit probleem oplossen door de NSG-stroom Logboeken uit te scha kelen en opnieuw in te scha kelen.
+Wanneer het stroomlogboek wordt verwijderd, wordt niet alleen de stroomlogboekregistratie voor de gekoppelde NSG gestopt, maar wordt ook de resource voor het stroomlogboek verwijderd met de instellingen en associaties. Als u de stroomlogboekregistratie opnieuw wilt starten, moet er een nieuwe stroomlogboekresource worden gemaakt voor die NSG. Een stroomlogboek kan worden verwijderd met [behulp van PowerShell,](https://docs.microsoft.com/powershell/module/az.network/remove-aznetworkwatcherflowlog) [CLI](https://docs.microsoft.com/cli/azure/network/watcher/flow-log#az_network_watcher_flow_log_delete) [of REST API.](https://docs.microsoft.com/rest/api/network-watcher/flowlogs/delete) De ondersteuning voor het verwijderen van stroomlogboeken van Azure Portal is in de pijplijn.    
 
-**Kosten** voor het vastleggen van de stroom: de logboek registratie voor NSG wordt gefactureerd op het volume van de logboeken die zijn gegenereerd. High Traffic volume kan leiden tot een groot stroom logboek volume en de bijbehorende kosten. De prijzen voor het NSG-stroom logboek bevatten geen onderliggende kosten voor opslag. Het gebruik van de functie voor het Bewaar beleid met de logboek registratie van de NSG-stroom houdt in dat afzonderlijke opslag kosten voor langere Peri Oden worden bespaard. Als u gegevens permanent wilt behouden en geen Bewaar beleid wilt Toep assen, stelt u retentie (dagen) in op 0. Zie voor meer informatie [Network Watcher prijzen](https://azure.microsoft.com/pricing/details/network-watcher/) en [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/) voor meer informatie.
+Wanneer een NSG wordt verwijderd, wordt standaard ook de bijbehorende stroomlogboekresource verwijderd.
 
-**Problemen met door de gebruiker gedefinieerde binnenkomende TCP-regels**: [netwerk beveiligings groepen (nsg's)](../virtual-network/network-security-groups-overview.md) worden geïmplementeerd als een [stateful firewall](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true). Vanwege de beperkingen van het huidige platform worden door de gebruiker gedefinieerde regels die van invloed zijn op binnenkomende TCP-stromen echter op een staatloze manier geïmplementeerd. Als gevolg hiervan worden stromen beïnvloed door door de gebruiker gedefinieerde binnenkomende regels niet beëindigd. Daarnaast worden geen byte-en pakket aantallen voor deze stromen vastgelegd. Het aantal bytes en pakketten dat in de NSG-stroom Logboeken (en Traffic Analytics) wordt gerapporteerd, kan daarom afwijken van de werkelijke getallen. Een opt-in-vlag waarmee deze problemen worden opgelost, is gepland om uiterlijk op maart 2021 te zijn. In de tussen tijd kunnen klanten die ernstige problemen ondervinden vanwege dit gedrag, via ondersteuning aanvragen voor intrekken, een ondersteunings aanvraag doen onder Network Watcher > NSG-stroom Logboeken.  
+> [!NOTE]
+> Als u een NSG wilt verplaatsen naar een andere resourcegroep of een ander abonnement, moeten de bijbehorende stroomlogboeken worden verwijderd. Het uitschakelen van de stroomlogboeken werkt alleen niet. Na de migratie van NSG moeten de stroomlogboeken opnieuw worden gemaakt om stroomlogboeken in te kunnen stellen.  
 
-**Binnenkomende stromen die zijn geregistreerd van Internet ip's naar vm's zonder open bare ip's**: vm's waaraan geen openbaar IP-adres is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als instantie niveau openbaar IP of die deel uitmaken van een basis Load Balancer back-end-groep, gebruiken [standaard SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat is toegewezen door Azure om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk stroom logboek vermeldingen voor stromen van IP-adressen van Internet, als de stroom bestemd is voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel Azure deze stromen naar de virtuele machine niet toestaat, wordt de poging geregistreerd en wordt deze weer gegeven in het NSG-stroom logboek van Network Watcher. U wordt aangeraden ongewenste binnenkomend Internet verkeer expliciet met NSG te blok keren.
+## <a name="nsg-flow-logging-considerations"></a>Overwegingen voor NSG-stroomlogregistratie
 
-**Probleem met Application Gateway v2-SUBNET NSG**: flow-logboek registratie op het toepassings gateway v2-subnet NSG wordt momenteel [niet ondersteund](../application-gateway/application-gateway-faq.yml#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) . Dit probleem heeft geen invloed op Application Gateway v1.
+**Overwegingen voor opslagaccounts:** 
 
-**Incompatibele Services**: vanwege de beperkingen van het huidige platform worden een kleine set Azure-Services niet ondersteund door NSG-stroom Logboeken. De huidige lijst met incompatibele Services is
+- Locatie: het gebruikte opslagaccount moet zich in dezelfde regio bevinden als de NSG.
+- Prestatielaag: momenteel worden alleen opslagaccounts van de Standard-laag ondersteund.
+- Sleutelrotatie zelf beheren: als u de toegangssleutels voor uw opslagaccount wijzigt/roteert, werken NSG-stroomlogboeken niet meer. U kunt dit probleem oplossen door NSG-stroomlogboeken uit te schakelen en opnieuw in te schakelen.
+
+**Kosten voor stroomlogboeken:** NSG-stroomlogboeken worden gefactureerd voor het aantal geproduceerde logboeken. Een groot verkeersvolume kan leiden tot een groot stroomlogboekvolume en de bijbehorende kosten. Prijzen van NSG Flow-logboeken omvatten niet de onderliggende opslagkosten. Het gebruik van de functie voor bewaarbeleid met NSG-stroomlogregistratie betekent dat er gedurende langere tijd afzonderlijke opslagkosten in rekening worden brengen. Als u gegevens voor altijd wilt bewaren en geen bewaarbeleid wilt toepassen, stelt u retentie (dagen) in op 0. Zie Prijzen en Network Watcher [prijzen](https://azure.microsoft.com/pricing/details/network-watcher/) voor [Azure Storage meer](https://azure.microsoft.com/pricing/details/storage/) informatie.
+
+**Problemen met door de gebruiker gedefinieerde binnenkomende TCP-regels:** [netwerkbeveiligingsgroepen (NSG's)](../virtual-network/network-security-groups-overview.md) worden geïmplementeerd als een [stateful firewall.](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true) Vanwege de huidige platformbeperkingen worden door de gebruiker gedefinieerde regels die van invloed zijn op binnenkomende TCP-stromen echter op een staatloze manier geïmplementeerd. Als gevolg dit worden stromen die worden beïnvloed door door de gebruiker gedefinieerde regels voor binnenkomende gegevens, niet-beëindigend. Daarnaast worden byte- en pakkettellingen niet vastgelegd voor deze stromen. Het aantal bytes en pakketten dat wordt gerapporteerd in NSG-stroomlogboeken (en Traffic Analytics) kan daarom verschillen van het werkelijke aantal. Een opt-in-vlag die deze problemen verhelpt, is gepland om beschikbaar te zijn vanaf maart 2021. In de tussentijd kunnen klanten die ernstige problemen hebben als gevolg van dit gedrag zich via ondersteuning aanvragen. U kunt een ondersteuningsaanvraag indienen onder Network Watcher > NSG-stroomlogboeken.  
+
+Binnenkomende stromen die zijn geregistreerd van internet-IP's naar VM's zonder openbare IP-adressen: VM's die geen openbaar IP-adres hebben dat is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als een openbaar IP-adres op exemplaarniveau of die deel uitmaken van een basis-load balancer-back-endpool, gebruiken [standaard-SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat is toegewezen door Azure om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk vermeldingen in het stroomlogboek voor stromen van IP-adressen via internet, als de stroom is bestemd voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel deze stromen niet naar de VM worden toegestaan, wordt de poging geregistreerd en wordt deze Network Watcher in het NSG-stroomlogboek van de VM weergegeven. We raden u aan om ongewenst inkomende internetverkeer expliciet te blokkeren met NSG.
+
+**Probleem met Application Gateway V2-subnet-NSG:** stroomregistratie op de toepassingsgateway V2-subnet-NSG [wordt momenteel niet](../application-gateway/application-gateway-faq.yml#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) ondersteund. Dit probleem heeft geen invloed op Application Gateway V1.
+
+**Niet-compatibele** services: Vanwege de huidige platformbeperkingen wordt een kleine set Azure-services niet ondersteund door NSG-stroomlogboeken. De huidige lijst met niet-compatibele services is
 - [Azure Kubernetes Services (AKS)](https://azure.microsoft.com/services/kubernetes-service/)
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
-**Inschakelen op kritieke VNETs/subnetten**: stroom logboeken moeten worden ingeschakeld op alle kritieke VNETs/subnetten in uw abonnement als controle bare en beveiligings best practice. 
+**Inschakelen op kritieke VNET's/subnetten:** stroomlogboeken moeten worden ingeschakeld op alle kritieke VNET's/subnetten in uw abonnement als een best practice. 
 
-**Schakel logboek registratie van de NSG-stroom in op alle nsg's die zijn gekoppeld aan een resource**: stroom logboek registratie in Azure is geconfigureerd op de NSG-resource. Een stroom wordt alleen gekoppeld aan één NSG-regel. In scenario's waarin meerdere Nsg's worden gebruikt, wordt aangeraden om NSG flow-Logboeken in te scha kelen op alle Nsg's die zijn toegepast op het subnet of de netwerk interface van de resource om ervoor te zorgen dat alle verkeer wordt geregistreerd. Zie [hoe verkeer wordt geëvalueerd](../virtual-network/network-security-group-how-it-works.md) in netwerk beveiligings groepen voor meer informatie. 
+**Schakel NSG-stroomlogregistratie** in op alle NSG's die zijn gekoppeld aan een resource: Stroomlogregistratie in Azure is geconfigureerd op de NSG-resource. Een stroom wordt slechts aan één NSG-regel gekoppeld. In scenario's waarin meerdere NSG's worden gebruikt, wordt u aangeraden NSG-stroomlogboeken in te schakelen op alle NSG's die in het subnet of de netwerkinterface van de resource zijn toegepast, om ervoor te zorgen dat al het verkeer wordt geregistreerd. Zie hoe verkeer wordt geëvalueerd in [netwerkbeveiligingsgroepen](../virtual-network/network-security-group-how-it-works.md) voor meer informatie. 
 
 Enkele veelvoorkomende scenario's:
-1. **Meerdere nic's op een VM**: als er meerdere nic's zijn gekoppeld aan een virtuele machine, moet de stroom logboek registratie worden ingeschakeld
-1. **Met NSG op NIC-en subnetniveau**: als NSG is geconfigureerd op de NIC en op het subnet-niveau, moet de stroom logboek registratie worden ingeschakeld op beide nsg's. 
+1. **Meerdere NIC's op een VM:** als er meerdere NIC's zijn gekoppeld aan een virtuele machine, moet stroomlogregistratie op al deze NIC's zijn ingeschakeld
+1. NSG op **zowel NIC-** als subnetniveau: als NSG is geconfigureerd op het niveau van de NIC en het subnet, moet stroomlogregistratie worden ingeschakeld op beide NSG's. 
 
-**Opslag inrichten**: opslag moet worden ingericht in afstemming met het verwachte flow-logboek volume.
+**Opslag inrichten:** opslag moet worden ingericht in afstemming op het verwachte stroomlogboekvolume.
 
-Naam: de naam van de NSG moet Maxi maal 80 tekens en de namen **van** de NSG-regels tot 65 tekens zijn. Als de namen groter zijn dan de teken limiet, kan deze worden afgekapt tijdens het vastleggen.
+**Naamgeving:** de naam van de NSG moet maximaal 80 chars zijn en de naam van de NSG-regel mag maximaal 65 chars zijn. Als de namen de tekenlimiet overschrijden, kan deze tijdens de logboekregistratie worden afgekapt.
 
 ## <a name="troubleshooting-common-issues"></a>Oplossen van algemene problemen
 
 **Ik kan de NSG-stroomlogboeken niet inschakelen**
 
-- De resource provider van **micro soft. Insights** is niet geregistreerd
+- **De resourceprovider Microsoft.Insights** is niet geregistreerd
 
-Als u een fout _AuthorizationFailed_ of _GatewayAuthenticationFailed_ hebt ontvangen, hebt u mogelijk de resourceprovider Microsoft Insights niet ingeschakeld in uw abonnement. [Volg de instructies](./network-watcher-nsg-flow-logging-portal.md#register-insights-provider) om de micro soft Insights-provider in te scha kelen.
+Als u een fout _AuthorizationFailed_ of _GatewayAuthenticationFailed_ hebt ontvangen, hebt u mogelijk de resourceprovider Microsoft Insights niet ingeschakeld in uw abonnement. [Volg de instructies voor](./network-watcher-nsg-flow-logging-portal.md#register-insights-provider) het inschakelen van de Microsoft Insights-provider.
 
 **Ik heb NSG-stroomlogboeken ingeschakeld maar ik zie de gegevens niet in mijn opslagaccount**
 
@@ -402,40 +414,40 @@ Soms worden er geen logboeken weergegeven omdat uw VM's niet actief zijn of dat 
 
 **Ik wil NSG-stroomlogboeken automatiseren**
 
-Ondersteuning voor automatisering via ARM-sjablonen is momenteel niet beschikbaar voor NSG-stroomlogboeken. Lees de [aankondiging](https://azure.microsoft.com/updates/arm-template-support-for-nsg-flow-logs/) van de functie voor meer informatie.
+Ondersteuning voor automatisering via ARM-sjablonen is momenteel niet beschikbaar voor NSG-stroomlogboeken. Lees de [functieaankondiging](https://azure.microsoft.com/updates/arm-template-support-for-nsg-flow-logs/) voor meer informatie.
 
 ## <a name="faq"></a>Veelgestelde vragen
 
-**Wat gebeurt er met NSG-stroom logboeken?**
+**Wat doen NSG-stroomlogboeken?**
 
-Azure-netwerk bronnen kunnen worden gecombineerd en beheerd via [netwerk beveiligings groepen (nsg's)](../virtual-network/network-security-groups-overview.md). Met NSG-stroom Logboeken kunt u 5-tuple-stroom gegevens registreren over al het verkeer via uw Nsg's. De onbewerkte stroom logboeken worden naar een Azure Storage-account geschreven, waar ze verder kunnen worden verwerkt, geanalyseerd, opgevraagd of geëxporteerd als dat nodig is.
+Azure-netwerkbronnen kunnen worden gecombineerd en beheerd via [netwerkbeveiligingsgroepen (NSG's).](../virtual-network/network-security-groups-overview.md) Met NSG-stroomlogboeken kunt u 5-tuple stroominformatie over al het verkeer via uw NSG's in een logboek opslaan. De logboeken van de onbewerkte stroom worden naar een Azure Storage-account geschreven van waaruit ze verder kunnen worden verwerkt, geanalyseerd, opgevraagd of waar nodig kunnen worden geëxporteerd.
 
-**Heeft stroom logboeken invloed op mijn netwerk latentie of prestaties?**
+**Is het gebruik van stroomlogboeken van invloed op mijn netwerklatentie of prestaties?**
 
-Gegevens van stroom logboeken worden verzameld buiten het pad van het netwerk verkeer en zijn daarom niet van invloed op de netwerk doorvoer of-latentie. U kunt stroom logboeken maken of verwijderen zonder risico van invloed op de netwerk prestaties.
+Stroomlogboekengegevens worden buiten het pad van uw netwerkverkeer verzameld en hebben daarom geen invloed op de netwerkdoorvoer of -latentie. U kunt stroomlogboeken maken of verwijderen zonder dat dit van invloed is op de netwerkprestaties.
 
-**Hoe kan ik NSG-stroom Logboeken gebruiken met een opslag account achter een firewall?**
+**Hoe kan ik NSG-stroomlogboeken gebruiken met een opslagaccount achter een firewall?**
 
-Als u een opslag account achter een firewall wilt gebruiken, moet u een uitzonde ring voor vertrouwde micro soft-Services voor toegang tot uw opslag account opgeven:
+Als u een opslagaccount achter een firewall wilt gebruiken, moet u een uitzondering voor vertrouwde Microsoft-services bieden voor toegang tot uw opslagaccount:
 
-- Navigeer naar het opslag account door de naam van het opslag account in de globale zoek opdracht op de portal of op de [pagina opslag accounts](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) te typen.
-- Selecteer in de sectie  **instellingen**  de optie  **firewalls en virtuele netwerken**
-- Selecteer in **toegang toestaan vanuit** de optie  **geselecteerde netwerken**. Tik vervolgens onder  **uitzonde ringen** op het vakje naast * * * * vertrouwde micro soft-Services toegang geven tot dit opslag account * * * *
+- Navigeer naar het opslagaccount door de naam van het opslagaccount te typen in de algemene zoekopdracht in de portal of op de [pagina Opslagaccounts](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts)
+- Selecteer in  **de**  sectie INSTELLINGEN de optie  **Firewalls en virtuele netwerken**
+- Selecteer **geselecteerde netwerken in** Toegang toestaan  **vanuit**. Vink  **vervolgens onder Uitzonderingen** het selectievakje aan naast ****Vertrouwde Microsoft-services toegang tot dit opslagaccount toestaan****
 - Als deze optie al is geselecteerd, is er geen wijziging nodig.
-- Zoek uw doel-NSG op de [overzichts pagina van de NSG-stroom logboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) en schakel NSG-stroom Logboeken in met het hierboven geselecteerde opslag account.
+- Zoek uw doel-NSG op de [overzichtspagina NSG-stroomlogboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) en schakel NSG-stroomlogboeken in met het bovenstaande opslagaccount geselecteerd.
 
 U kunt de Storage-logboeken na enkele minuten controleren. U ziet dan een bijgewerkte tijdstempel of een nieuw JSON-bestand.
 
-**Hoe kan ik NSG-stroom Logboeken gebruiken met een opslag account achter een service-eind punt?**
+**Hoe kan ik NSG-stroomlogboeken gebruiken met een opslagaccount achter een service-eindpunt?**
 
-NSG-stroom logboeken zijn compatibel met Service-eind punten zonder extra configuratie. Raadpleeg de [zelf studie over het inschakelen van service-eind punten](../virtual-network/tutorial-restrict-network-access-to-resources.md#enable-a-service-endpoint) in uw virtuele netwerk.
+NSG-stroomlogboeken zijn compatibel met service-eindpunten zonder extra configuratie. Zie de [zelfstudie over het inschakelen van service-eindpunten](../virtual-network/tutorial-restrict-network-access-to-resources.md#enable-a-service-endpoint) in uw virtuele netwerk.
 
-**Wat is het verschil tussen stroom logboeken versie 1 & 2?**
+**Wat is het verschil tussen stroomlogboeken versie 1 & 2?**
 
-Stroom logboeken versie 2 introduceert het concept van de _stroom status_ & slaat informatie op over verzonden bytes en pakketten. [Meer informatie](#log-format)
+Stroomlogboeken versie 2 introduceert het concept _stroomtoestand_ & slaat informatie op over verzonden bytes en pakketten. [Meer informatie](#log-format)
 
 ## <a name="pricing"></a>Prijzen
 
-NSG-stroom logboeken worden in rekening gebracht per GB aan logboeken die worden verzameld en worden geleverd met een gratis laag van 5 GB/maand per abonnement. Zie de [pagina met prijzen voor Network Watcher](https://azure.microsoft.com/pricing/details/network-watcher/)voor de huidige prijzen in uw regio.
+NSG-stroomlogboeken worden in rekening gebracht per GB aan logboeken die zijn verzameld en worden met een gratis laag van 5 GB/maand per abonnement in rekening gebracht. Zie de pagina met prijzen voor Network Watcher huidige [prijzen in uw regio.](https://azure.microsoft.com/pricing/details/network-watcher/)
 
-Voor het opslaan van Logboeken wordt afzonderlijk kosten in rekening gebracht. Zie de [pagina met prijzen voor Azure Storage blok-BLOB](https://azure.microsoft.com/pricing/details/storage/blobs/) voor relevante prijzen.
+Opslag van logboeken wordt afzonderlijk in rekening gebracht. Zie Azure Storage Pagina met prijzen voor [blok-blobs](https://azure.microsoft.com/pricing/details/storage/blobs/) voor relevante prijzen.

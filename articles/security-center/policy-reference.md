@@ -1,28 +1,28 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Security Center
 description: Overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure Security Center. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.topic: reference
 author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 82fd5a9a0bdf9a37535796af8f72c2c4238cdc9c
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 34a839eb6996f2b37c07bb2e54f81a1d21044fa9
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106089552"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107502663"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Ingebouwde Azure Policy-definities voor Azure Security Center
 
-Deze pagina bevat een index van [Azure Policy](../governance/policy/overview.md) ingebouwde beleids definities die betrekking hebben op Azure Security Center. De volgende groeperingen van beleids definities zijn beschikbaar:
+Deze pagina is een index van [Azure Policy](../governance/policy/overview.md) ingebouwde beleidsdefinities met betrekking tot Azure Security Center. De volgende groeperingen van beleidsdefinities zijn beschikbaar:
 
-- De groep [initiatieven](#azure-security-center-initiatives) bevat een lijst met de Azure Policy initiatief definities in de categorie ' Security Center '.
-- In de [standaard-initiatief](#azure-security-center-initiatives) groep wordt een lijst weer gegeven met alle Azure Policy definities die deel uitmaken van het standaard initiatief van de Security Center, [Azure Security Bench Mark](../security/benchmarks/introduction.md). Deze micro soft-auteurde, algemeen gerespecteerde Bench Mark bouwt voort op besturings elementen uit het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
-- De [categorie](#azure-security-center-category) groep bevat alle Azure Policy definities in de categorie ' Security Center '.
+- De [initiatiefgroep](#azure-security-center-initiatives) vermeldt de Azure Policy initiatiefdefinities in de categorie 'Security Center'.
+- De [standaardinitiatiefgroep](#azure-security-center-initiatives) bevat alle Azure Policy-definities die deel uitmaken van Security Center standaardinitiatief, [Azure Security Benchmark.](../security/benchmarks/introduction.md) Deze door Microsoft geschreven, zeer gerespecteerde benchmark bouwt voort op controles van het [Center for Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het National Institute of Standards and Technology [(NIST)](https://www.nist.gov/) met een focus op cloudgerichte beveiliging.
+- De [categoriegroep](#azure-security-center-category) bevat alle Azure Policy definities in de categorie 'Security Center'.
 
-Zie [werken met beveiligings beleid](./tutorial-security-policy.md)voor meer informatie over beveiligings beleidsregels. Zie [Ingebouwde Azure Policy-definities](../governance/policy/samples/built-in-policies.md) voor aanvullende ingebouwde modules voor Azure Policy voor andere services.
+Zie Werken met beveiligingsbeleid voor meer informatie [over beveiligingsbeleid.](./tutorial-security-policy.md) Zie [Ingebouwde Azure Policy-definities](../governance/policy/samples/built-in-policies.md) voor aanvullende ingebouwde modules voor Azure Policy voor andere services.
 
 De naam van elke ingebouwde beleidsdefinitie linkt naar de beleidsdefinitie in de Azure-portal. Gebruik de koppeling in de kolom **Versie** om de bron te bekijken in de [Azure Policy GitHub-opslagplaats](https://github.com/Azure/azure-policy).
 
@@ -32,9 +32,9 @@ Zie de volgende tabel voor meer informatie over de ingebouwde initiatieven die d
 
 [!INCLUDE [azure-policy-reference-policyset-security-center](../../includes/policy/reference/bycat/policysets-security-center.md)]
 
-## <a name="security-centers-default-initiative-azure-security-benchmark"></a>Het standaard initiatief van Security Center (Azure Security Bench Mark)
+## <a name="security-centers-default-initiative-azure-security-benchmark"></a>Security Center van het standaardinitiatief (Azure Security Benchmark)
 
-Zie de volgende tabel voor meer informatie over het ingebouwde beleid dat wordt bewaakt door Security Center:
+Zie de volgende tabel voor meer informatie over de ingebouwde beleidsregels die door Security Center worden bewaakt:
 
 [!INCLUDE [azure-policy-reference-init-asc](../../includes/policy/reference/custom/init-asc.md)]
 
@@ -44,4 +44,4 @@ Zie de volgende tabel voor meer informatie over het ingebouwde beleid dat wordt 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd over Azure Policy definities voor beveiligings beleid in Security Center. Zie [Wat zijn beveiligings beleid, initiatieven en aanbevelingen?](security-policy-concept.md)voor meer informatie over initiatieven, beleids regels en hoe deze zich verhouden tot de aanbevelingen van Security Center.
+In dit artikel hebt u meer geleerd over Azure Policy beveiligingsbeleidsdefinities in Security Center. Zie Wat zijn beveiligingsbeleid, initiatieven en aanbevelingen? voor meer informatie over initiatieven, beleidsregels en hoe deze betrekking hebben op de aanbevelingen van [Security Center.](security-policy-concept.md)

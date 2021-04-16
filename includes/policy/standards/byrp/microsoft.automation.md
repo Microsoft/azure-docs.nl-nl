@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 73719e5d0de562a38ca698d73a42b0fd413d7077
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 2befbced819c178bcca322b20da3d3a6ab8caead
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106092535"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505140"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -20,7 +20,7 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Gegevensbeveiliging |DP-5 |Gevoelige gegevens in rust versleutelen |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
+|Gegevensbeveiliging |DP-5 |Gevoelige data-at-rest versleutelen |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
 
 ## <a name="azure-security-benchmark-v1"></a>Azure Security Benchmark v1
 
@@ -32,22 +32,22 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 |---|---|---|---|---|
 |Gegevensbeveiliging |4.8 |Gevoelige gegevens 'at rest' versleutelen |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
 
-## <a name="cmmc-level-3"></a>CMMC niveau 3
+## <a name="cmmc-level-3"></a>CMMC-niveau 3
 
-Zie [Azure Policy regelgevings naleving-CMMC niveau 3](../../../../articles/governance/policy/samples/cmmc-l3.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
-Zie [Cyber beveiliging rijpheid-model certificering (CMMC)](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)voor meer informatie over deze nalevings standaard.
+Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving [- CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)als u wilt zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
+Zie Cybersecurity [Maturity Model Certification (CMMC) voor](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Systeem- en communicatiebeveiliging |SC. 3.177 |Gebruik FIPS-gevalideerde crypto grafie voor het beveiligen van de vertrouwelijkheid van CUI. |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
-|Systeem- en communicatiebeveiliging |SC. 3.191 |De vertrouwelijkheid van inactieve CUI beschermen. |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
+|Systeem- en communicatiebeveiliging |SC.3.177 |Gebruik met FIPS gevalideerde cryptografie wanneer deze wordt gebruikt om de vertrouwelijkheid van CUI te beveiligen. |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
+|Systeem- en communicatiebeveiliging |SC.3.191 |De vertrouwelijkheid van inactieve CUI beschermen. |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
 
 ## <a name="iso-270012013"></a>ISO 27001:2013
 
-Zie [Azure Policy naleving van regelgeving-ISO 27001:2013](../../../../articles/governance/policy/samples/iso-27001.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
-Zie [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevings standaard.
+Zie [Azure Policy Regulatory Compliance - ISO 27001:2013 (Naleving van regelgeving - ISO 27001:2013)](../../../../articles/governance/policy/samples/iso-27001.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
+Zie ISO [27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|
-|Cryptografie |10.1.1 |Beleid voor het gebruik van cryptografische besturings elementen |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
+|Cryptografie |10.1.1 |Beleid voor het gebruik van cryptografische besturingselementen |[Automation-accountvariabelen moeten worden versleuteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
 

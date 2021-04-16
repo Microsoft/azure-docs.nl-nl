@@ -1,5 +1,5 @@
 ---
-title: Overzicht van Face-API-inschrijving
+title: Best practices voor het toevoegen van gebruikers aan een Face-service
 titleSuffix: Azure Cognitive Services
 description: Meer informatie over de Face-inschrijvingsprocedure om gebruikers te registreren bij een service voor gezichtsherkenning.
 author: PatrickFarley
@@ -9,14 +9,14 @@ ms.subservice: face-api
 ms.topic: overview
 ms.date: 11/17/2020
 ms.author: pafarley
-ms.openlocfilehash: ac5106aa661cb2baea31ee15d57e9c6fac8c7192
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: e710771dd14b389e856e752b6587e2a76ad9d85b
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350327"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505068"
 ---
-# <a name="face-api-enrollment"></a>Face-API-inschrijving
+# <a name="best-practices-for-adding-users-to-a-face-service"></a>Best practices voor het toevoegen van gebruikers aan een Face-service
 
 Als u de Cognitive Services Face-API wilt gebruiken voor gezichtsherkenning of identificatie, moet u gezichten inschrijven bij een **LargePersonGroup**. Deze gedetailleerde handleiding laat zien wat de best practices zijn voor het verzamelen van betekenisvolle toestemming van gebruikers, en het verzamelen van voorbeeldlogica om inschrijvingen van hoge kwaliteit te maken, die de nauwkeurigheid van herkenning optimaliseren.  
 

@@ -1,15 +1,18 @@
 ---
 title: 'Quickstart: Register maken - PowerShell'
 description: Leer snel hoe u een privé-Docker-register in Azure Container Registry maakt met behulp van PowerShell
-ms.topic: quickstart
 ms.date: 01/22/2019
-ms.custom: seodec18, mvc, devx-track-azurepowershell
-ms.openlocfilehash: b6928f1c45cdac93b70797daf41205b4c5db27e0
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.topic: quickstart
+ms.custom:
+- mvc
+- devx-track-azurepowershell
+- mode-api
+ms.openlocfilehash: bd9b93e22081c43dfa3fd934f13da3713120aadb
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106283815"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537389"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Quickstart: Een privé-containerregister maken met Azure PowerShell
 
@@ -55,7 +58,7 @@ In deze quickstart maakt u een *Basic*-register. Dit is een voor kosten geoptima
 
 ## <a name="log-in-to-registry"></a>Aanmelden bij register
 
-Voordat u installatiekopieën van containers gaat pushen en ophalen, moet u zich aanmelden bij uw register. Als u deze Quick Start wilt blijven gebruiken, schakelt u de gebruiker met beheerders rechten in uw REGI ster in met de opdracht [Get-AzContainerRegistryCredential][Get-AzContainerRegistryCredential] . In productie scenario's moet u een alternatieve [verificatie methode](container-registry-authentication.md) gebruiken voor toegang tot het REGI ster, zoals een service-principal. 
+Voordat u installatiekopieën van containers gaat pushen en ophalen, moet u zich aanmelden bij uw register. Als u deze quickstart kort wilt houden, moet u de gebruiker met beheerdersrechten inschakelen in het register met de opdracht [Get-AzContainerRegistryCredential.][Get-AzContainerRegistryCredential] In productiescenario's moet u een alternatieve [verificatiemethode gebruiken voor](container-registry-authentication.md) registertoegang, zoals een service-principal. 
 
 ```powershell
 $creds = Get-AzContainerRegistryCredential -Registry $registry
@@ -70,7 +73,7 @@ $creds.Password | docker login $registry.LoginServer -u $creds.Username --passwo
 De opdracht retourneert `Login Succeeded` nadat deze is voltooid.
 
 > [!TIP]
-> De Azure CLI biedt de `az acr login` opdracht, een handige manier om u aan te melden bij een container register met uw [individuele identiteit](container-registry-authentication.md#individual-login-with-azure-ad), zonder docker-referenties door te geven.
+> De Azure CLI biedt de opdracht, een handige manier om u aan te melden bij een containerregister met behulp van uw afzonderlijke identiteit `az acr login` , zonder docker-referenties door te geven. [](container-registry-authentication.md#individual-login-with-azure-ad)
 
 
 [!INCLUDE [container-registry-quickstart-docker-push](../../includes/container-registry-quickstart-docker-push.md)]

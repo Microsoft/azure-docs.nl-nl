@@ -97,9 +97,9 @@
           href: logs/resource-manager-log-queries.md
         - name: Werkmappen
           href: visualize/resource-manager-workbooks.md
-        - name: Container inzichten
+        - name: Containerinzichten
           href: containers/resource-manager-container-insights.md
-        - name: VM Insights
+        - name: VM-inzichten
           href: vm/resource-manager-vminsights.md
     - name: Azure CLI
       href: cli-samples.md
@@ -426,7 +426,7 @@
             - name: Linux
               displayname: diagnostics extension
               items:
-                - name: 'Versie 4,0'
+                - name: Versie 4.0
                   href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
                 - name: Versie 3.0
                   href: ../virtual-machines/extensions/diagnostics-linux-v3.md?toc=/azure/azure-monitor/toc.json
@@ -720,9 +720,9 @@
                       href: app/java-standalone-config.md
                     - name: Geavanceerd configuratie
                       items:
-                        - name: Metrische gegevens van JMX
+                        - name: Metrische JMX-gegevens
                           href: app/java-jmx-metrics-configuration.md
-                        - name: Steek proeven van onderdrukkingen
+                        - name: Sampling-overschrijvingen
                           href: app/java-standalone-sampling-overrides.md
                         - name: Telemetrieverwerkers
                           items:
@@ -777,6 +777,8 @@
           displayname: 'e2e, end-to-end, component, dependency, cross-component transaction, operation ID, dependencies'
         - name: Beschikbaarheid
           items:
+            - name: Overzicht
+              href: app/availability-overview.md
             - name: URL-tests
               displayname: 'ping, ping tests, availability, GSM, up/down'
               href: app/monitor-web-app-availability.md
@@ -804,7 +806,7 @@
         - name: Live Metrics-stream
           displayname: 'live, quickpulse, quick pulse, live metrics'
           href: app/live-stream.md
-        - name: Integratie van werk items
+        - name: Integratie van werkitem
           href: app/work-item-integration.md
         - name: Metrische gegevens
           items:
@@ -980,7 +982,7 @@
               href: app/sharepoint.md
             - name: Windows-bureaublad
               href: app/windows-desktop.md
-    - name: Analyse wijzigen
+    - name: wijzigingsanalyse
       items:
         - name: Overzicht
           href: app/change-analysis.md
@@ -988,7 +990,7 @@
           href: app/change-analysis-visualizations.md
         - name: Problemen oplossen
           href: app/change-analysis-troubleshoot.md
-    - name: VM Insights
+    - name: VM-inzichten
       items:
         - name: Overzicht
           href: vm/vminsights-overview.md
@@ -1044,7 +1046,7 @@
           href: vm/vminsights-optout.md
         - name: Problemen oplossen
           href: vm/vminsights-troubleshoot.md
-    - name: Container inzichten
+    - name: Containerinzichten
       items:
         - name: Overzicht
           href: containers/container-insights-overview.md
@@ -1082,7 +1084,7 @@
           href: insights/container-insights-reports.md
         - name: Livegegevens weergeven
           items:
-            - name: Overzicht van Live-gegevens
+            - name: Overzicht van livegegevens
               href: containers/container-insights-livedata-overview.md
             - name: Instellen
               href: containers/container-insights-livedata-setup.md
@@ -1132,7 +1134,7 @@
           href: insights/network-insights-overview.md
         - name: Key Vault
           href: insights/key-vault-insights-overview.md
-        - name: SQL Insights (preview-versie)
+        - name: SQL-inzichten (preview)
           items:
             - name: Overzicht
               href: insights/sql-insights-overview.md

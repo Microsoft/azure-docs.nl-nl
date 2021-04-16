@@ -1,29 +1,29 @@
 ---
-title: 'Snelstartgids: deel nemen aan een team vergadering vanuit een iOS-app'
-description: In deze zelf studie leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services Calling SDK voor iOS
+title: 'Quickstart: deelnemen aan een Teams-vergadering vanuit een iOS-app'
+description: In deze zelfstudie leert u hoe u deel kunt nemen aan een Teams-vergadering met behulp van de Azure Communication Services Calling SDK voor iOS
 author: chpalm
 ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 8ff85dc5571f549027e208409db3f4e80c68b205
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 363799cee5d66b718bb8ba06f4afd442add15148
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105108172"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107564744"
 ---
-In deze Quick Start leert u hoe u kunt deel nemen aan een team vergadering met behulp van de Azure Communication Services-SDK voor iOS.
+In deze quickstart leert u hoe u deel kunt nemen aan een Teams-vergadering met behulp van de Azure Communication Services Calling SDK voor iOS.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een werkende [communicatie service die IOS-app aanroept](../getting-started-with-calling.md).
+- Een werkende Communication Services [aanroepen van iOS-app](../getting-started-with-calling.md).
 - Een [Teams implementatie](/deployoffice/teams-install).
 
 
-## <a name="add-the-teams-ui-controls-and-enable-the-teams-ui-controls"></a>De besturings elementen van de gebruikers interface voor teams toevoegen en de gebruikers interface voor teams inschakelen
+## <a name="add-the-teams-ui-controls-and-enable-the-teams-ui-controls"></a>De besturingselementen voor de Gebruikersinterface van Teams toevoegen en De besturingselementen voor de gebruikersinterface van Teams inschakelen
 
-Vervang code in ContentView. Swift door het volgende fragment. Het tekstvak wordt gebruikt voor het invoeren van de context van de Teams-vergadering en de knop wordt gebruikt om deel te nemen aan de opgegeven vergadering:
+Vervang code in ContentView.swift door het volgende codefragment. Het tekstvak wordt gebruikt voor het invoeren van de context van de Teams-vergadering en de knop wordt gebruikt om deel te nemen aan de opgegeven vergadering:
 
 ```swift
 
@@ -177,10 +177,10 @@ struct ContentView_Previews: PreviewProvider {
 
 ## <a name="get-the-teams-meeting-link"></a>Koppeling naar de Teams-vergadering ophalen
 
-De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta).
-The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, toegankelijk via de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta). U kunt ook de vereiste gegevens van de vergadering ophalen van de **vergaderings** -URL voor deelname aan de team vergadering zelf uitnodigen.
+De koppeling naar de Teams-vergadering kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta&preserve-view=true).
+The aanroepende SDK voor Communication Services accepteert een volledige koppeling naar een Teams-vergadering. Deze koppeling wordt geretourneerd als onderdeel van de `onlineMeeting` resource, die toegankelijk is onder de [ `joinWebUrl` eigenschap](/graph/api/resources/onlinemeeting?view=graph-rest-beta&preserve-view=true). U kunt ook de vereiste informatie over de vergadering verkrijgen via de URL van **de join-vergadering** in de teamsvergadering uitnodiging zelf.
 
-## <a name="launch-the-app-and-join-teams-meeting"></a>De app starten en deel nemen aan vergaderingen in teams
+## <a name="launch-the-app-and-join-teams-meeting"></a>De app starten en deelnemen aan de Teams-vergadering
 
 U kunt uw app maken en uitvoeren op een iOS-simulator door **Product** > **Uitvoeren** te selecteren of door de sneltoets (&#8984;-R) te gebruiken.
 

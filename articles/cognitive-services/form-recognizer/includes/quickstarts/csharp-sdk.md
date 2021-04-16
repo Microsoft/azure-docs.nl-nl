@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 03/19/2021
+ms.date: 04/14/2021
 ms.author: lajanuar
-ms.openlocfilehash: 6407f6af4b142333d2a52f60eb0b05024e64d88e
-ms.sourcegitcommit: e6de1702d3958a3bea275645eb46e4f2e0f011af
+ms.openlocfilehash: b7a35046a7f170365974c50a5be99f35cb4a868f
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104761094"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516437"
 ---
 <!-- markdownlint-disable MD024 -->
 > [!IMPORTANT]
@@ -45,7 +45,7 @@ Wijzig uw map in de zojuist gemaakte app-map. U kunt de toepassing maken met:
 dotnet build
 ```
 
-De build-uitvoer mag geen waarschuwingen of fouten bevatten. 
+De build-uitvoer mag geen waarschuwingen of fouten bevatten.
 
 ```console
 ...
@@ -62,11 +62,11 @@ Installeer in de toepassingsmap de Form Recognizer-clientbibliotheek voor .NET m
 #### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
 
 ```console
-dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
+dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.4
 ```
 
 > [!NOTE]
-> De 3.1.0 SDK van Form Recognizer weerspiegelt _API versie 2,1 Preview. 2_. Gebruik de [**rest API**](../../quickstarts/client-library.md) voor _API versie 2,1 Preview. 3_.
+> De Form Recognizer 3.1.0-beta.4 SDK weerspiegelt _API versie 2.1-preview.3.
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 
@@ -75,7 +75,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 ```
 
 > [!NOTE]
-> De 3.0.0 SDK van de formulier herkenning weerspiegelt API v 2.0
+> De Form Recognizer 3.0.0 SDK weerspiegelt API v2.0
 
 ---
 
@@ -89,7 +89,7 @@ Open vanuit de projectmap het bestand *Program.cs* in uw favoriete editor of IDE
 Maak in de klasse **Programma** van de toepassing variabelen voor de sleutel en het eindpunt van uw resource.
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de Form Recognizer-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
+> Ga naar Azure Portal. Als de Form Recognizer-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**.
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 
@@ -105,28 +105,26 @@ Voeg in de **Hoofd** methode van de toepassing een aanroep toe aan de asynchrone
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_main)]
 
-
 ---
 
+## <a name="object-model"></a>Objectmodel
 
-## <a name="object-model"></a>Objectmodel 
-
-Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `FormRecognizerClient`, wordt gebruikt om query's in de service uit te voeren op herkende formuliervelden en -inhoud. De tweede, `FormTrainingClient`, wordt gebruikt voor het maken en beheren van aangepaste modellen die u kunt gebruiken om de herkenning te verbeteren. 
+Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `FormRecognizerClient`, wordt gebruikt om query's in de service uit te voeren op herkende formuliervelden en -inhoud. De tweede, `FormTrainingClient`, wordt gebruikt voor het maken en beheren van aangepaste modellen die u kunt gebruiken om de herkenning te verbeteren.
 
 ### <a name="formrecognizerclient"></a>FormRecognizerClient
 
 `FormRecognizerClient` biedt bewerkingen voor:
 
-* Het herkennen van formulier velden en inhoud, het gebruik van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren.  Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten. Zie het voorbeeld [Aangepaste formulieren analyseren](#analyze-forms-with-a-custom-model).
+* Het herkennen van formuliervelden en -inhoud met behulp van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren.  Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten. Zie het voorbeeld [Aangepaste formulieren analyseren](#analyze-forms-with-a-custom-model).
 * Het herkennen van formulierinhoud, met inbegrip van tabellen, regels en woorden, zonder dat u een model hoeft te trainen.  Formulierinhoud wordt geretourneerd in een verzameling `FormPage`-objecten. Bekijk het voorbeeld [Indeling analyseren](#analyze-layout).
-* Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel in de Form Recognizer-service. Deze velden en metagegevens worden geretourneerd in een verzameling `RecognizedForm`-objecten. Bekijk het voorbeeld [Ontvangstbewijzen analyseren](#analyze-receipts).
+* Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen, visitekaartjes, facturen en identiteitsdocumenten met behulp van een vooraf getraind model voor de Form Recognizer service.
 
 ### <a name="formtrainingclient"></a>FormTrainingClient
 
 `FormTrainingClient` biedt bewerkingen voor:
 
-* Aangepaste modellen trainen om alle velden en waarden te analyseren die in uw aangepaste formulieren worden gevonden.  A `CustomFormModel` wordt geretourneerd met het type formulier dat door het model moet worden geanalyseerd en de velden die worden opgehaald voor elk formulier type.
-* Aangepaste modellen trainen om specifieke velden en waarden te analyseren die u opgeeft door uw aangepaste formulieren te labelen.  Er wordt een `CustomFormModel` geretourneerd, dat aangeeft welke velden het model zal extraheren, evenals de geschatte nauwkeurigheid van elk veld.
+* Aangepaste modellen trainen om alle velden en waarden in uw aangepaste formulieren te analyseren.  Er `CustomFormModel` wordt een geretourneerd die de formuliertypen aangeeft die door het model worden geanalyseerd en de velden die het voor elk formuliertype extraheert.
+* Aangepaste modellen trainen voor het analyseren van specifieke velden en waarden die u opgeeft door uw aangepaste formulieren te labelen.  Er wordt een `CustomFormModel` geretourneerd, dat aangeeft welke velden het model zal extraheren, evenals de geschatte nauwkeurigheid van elk veld.
 * Modellen beheren die zijn gemaakt in uw account.
 * Het kopiëren van een aangepast model van de ene Form Recognizer-resource naar de andere.
 
@@ -147,6 +145,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Visitekaartjes analyseren](#analyze-business-cards)
 * [Facturen analyseren](#analyze-invoices)
+* [Identiteitsdocumenten analyseren](#analyze-identity-documents)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
@@ -167,7 +166,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 Maak onder **Hoofd** een nieuwe methode met de naam `AuthenticateClient`. U zult deze in andere taken gebruiken om uw aanvragen bij de Form Recognizer-service te verifiëren. Deze methode maakt gebruik van een `AzureKeyCredential`-object, zodat u indien nodig de API-sleutel kunt bijwerken zonder nieuwe clientobjecten te maken.
 
 > [!IMPORTANT]
-> Haal uw sleutel en eindpunt op vanuit de Azure-portal. Als de Form Recognizer-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
+> Haal uw sleutel en eindpunt op vanuit de Azure-portal. Als de Form Recognizer-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**.
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Bijvoorbeeld [Azure Key Vault](../../../../key-vault/general/overview.md).
 
@@ -177,7 +176,7 @@ Herhaal de bovenstaande stappen voor een nieuwe methode om een trainingsclient t
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_auth_training)]
 
-## <a name="get-assets-for-testing"></a>Assets voor testen ophalen 
+## <a name="get-assets-for-testing"></a>Assets voor testen ophalen
 
 U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens. Voeg deze toe aan de hoofdmap van uw **Programma**-klasse.
 
@@ -199,9 +198,9 @@ U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegeve
 
 ## <a name="analyze-layout"></a>Indeling analyseren
 
-U kunt de formulier herkenner gebruiken voor het analyseren van tabellen, lijnen en woorden in documenten, zonder dat u een model hoeft te trainen. De geretourneerde waarde is een verzameling **FormPage**-objecten: één voor elke pagina in het ingediende document. Zie de [conceptuele hand leiding voor lay-out](../../concept-layout.md)voor meer informatie over indelings extractie.
+U kunt deze Form Recognizer voor het analyseren van tabellen, lijnen en woorden in documenten, zonder dat u een model hoeft te trainen. De geretourneerde waarde is een verzameling **FormPage**-objecten: één voor elke pagina in het ingediende document. Zie de conceptuele handleiding indeling voor meer informatie over [indelingsextractie.](../../concept-layout.md)
 
-Als u de inhoud van een bestand op een bepaalde URL wilt analyseren, gebruikt u de- `StartRecognizeContentFromUri` methode.
+Gebruik de methode om de inhoud van een bestand op een bepaalde URL te `StartRecognizeContentFromUri` analyseren.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_getcontent_call)]
 
@@ -247,22 +246,129 @@ Table 0 has 2 rows and 6 columns.
     Cell (1, 5) contains text: 'PT'.
 ```
 
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
+
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [bonanalyse.](../../concept-receipts.md)
+
+Als u ontvangstbewijzen van een URL wilt analyseren, gebruikt u de `StartRecognizeReceiptsFromUri` methode .
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_receipt_call)]
+
+> [!TIP]
+> U kunt ook afbeeldingen van lokale ontvangstbewijzen analyseren. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+
+De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke pagina in het ingediende document. Met de volgende code wordt het ontvangstbewijs op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_receipt_print)]
+
+### <a name="output"></a>Uitvoer
+
+```console
+Form Page 1 has 18 lines.
+    Line 0 has 1 word, and text: 'Contoso'.
+    Line 1 has 1 word, and text: 'Address:'.
+    Line 2 has 3 words, and text: 'Invoice For: Microsoft'.
+    Line 3 has 4 words, and text: '1 Redmond way Suite'.
+    Line 4 has 3 words, and text: '1020 Enterprise Way'.
+    Line 5 has 3 words, and text: '6000 Redmond, WA'.
+    Line 6 has 3 words, and text: 'Sunnayvale, CA 87659'.
+    Line 7 has 1 word, and text: '99243'.
+    Line 8 has 2 words, and text: 'Invoice Number'.
+    Line 9 has 2 words, and text: 'Invoice Date'.
+    Line 10 has 3 words, and text: 'Invoice Due Date'.
+    Line 11 has 1 word, and text: 'Charges'.
+    Line 12 has 2 words, and text: 'VAT ID'.
+    Line 13 has 1 word, and text: '34278587'.
+    Line 14 has 1 word, and text: '6/18/2017'.
+    Line 15 has 1 word, and text: '6/24/2017'.
+    Line 16 has 1 word, and text: '$56,651.49'.
+    Line 17 has 1 word, and text: 'PT'.
+Table 0 has 2 rows and 6 columns.
+    Cell (0, 0) contains text: 'Invoice Number'.
+    Cell (0, 1) contains text: 'Invoice Date'.
+    Cell (0, 2) contains text: 'Invoice Due Date'.
+    Cell (0, 3) contains text: 'Charges'.
+    Cell (0, 5) contains text: 'VAT ID'.
+    Cell (1, 0) contains text: '34278587'.
+    Cell (1, 1) contains text: '6/18/2017'.
+    Cell (1, 2) contains text: '6/24/2017'.
+    Cell (1, 3) contains text: '$56,651.49'.
+    Cell (1, 5) contains text: 'PT'.
+Merchant Name: 'Contoso Contoso', with confidence 0.516
+Transaction Date: '6/10/2019 12:00:00 AM', with confidence 0.985
+Item:
+    Name: '8GB RAM (Black)', with confidence 0.916
+    Total Price: '999', with confidence 0.559
+Item:
+    Name: 'SurfacePen', with confidence 0.858
+    Total Price: '99.99', with confidence 0.386
+Total: '1203.39', with confidence '0.774'
+```
+
+## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
+
+####  <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
+
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelse visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding visitekaartjes voor meer informatie over [visitekaartjesanalyse.](../../concept-business-cards.md)
+
+Als u visitekaartjes wilt analyseren vanuit een URL, gebruikt u de `StartRecognizeBusinessCardsFromUriAsync` methode .
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_call)]
+
+> [!TIP]
+> U kunt ook afbeeldingen van lokale ontvangstbewijzen analyseren. Zie de methoden [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), zoals **StartRecognizeBusinessCards**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+
+Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_print)]
+
+#### <a name="v20"></a>[v2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
 ## <a name="analyze-invoices"></a>Facturen analyseren
 
 #### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
 
-In deze sectie wordt beschreven hoe u algemene velden van verkoop facturen kunt analyseren en extra heren met behulp van een vooraf getraind model. Zie de [hand leiding voor factuur begrippen](../../concept-invoices.md)voor meer informatie over het analyseren van facturen.
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit verkoopfacturen met behulp van een vooraf getraind model. Zie de conceptuele handleiding voor facturen voor meer informatie over [factuuranalyse.](../../concept-invoices.md)
 
-Als u facturen van een URL wilt analyseren, gebruikt u de- `StartRecognizeInvoicesFromUriAsync` methode. 
+Als u facturen wilt analyseren vanuit een URL, gebruikt u de `StartRecognizeInvoicesFromUriAsync` methode .
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_invoice_call)]
 
 > [!TIP]
-> U kunt ook lokale factuur afbeeldingen analyseren. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeInvoices**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale factuurafbeeldingen analyseren. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeInvoices**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
-De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke factuur in het ingediende document. Met de volgende code wordt de factuur op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
+Met de volgende code wordt de factuur op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_invoice_print)]
+
+#### <a name="v20"></a>[v2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+---
+
+## <a name="analyze-identity-documents"></a>Identiteitsdocumenten analyseren
+
+#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
+
+In deze sectie wordt gedemonstreerd hoe u belangrijke informatie kunt analyseren en extraheren uit door de overheid uitgegeven identificatiedocumenten( wereldwijd paspoorten en Licenties voor Amerikaanse stuurprogramma's) met behulp van het vooraf gebouwde Form Recognizer-id-model. Zie onze conceptuele handleiding voor het vooraf gebouwde identificatiemodel voor meer informatie over de analyse van [identiteitsdocumentatie.](../../concept-identification-cards.md)
+
+Gebruik de methode om identiteitsdocumenten van een URI te `StartRecognizeIdDocumentsFromUriAsync` analyseren.
+
+:::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs" id="snippet_id_call":::
+
+> [!TIP]
+> U kunt ook afbeeldingen van lokale identiteitsdocumentatie analyseren. Zie de [FormRecognizerClient-methoden,](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient) zoals **StartRecognizeIdDocumentsAsync.** Zie ook de voorbeeldcode op [GitHub voor scenario's](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) met lokale afbeeldingen.
+
+Met de volgende code wordt het identiteitsdocument op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden naar de console afgedrukt.
+
+:::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs" id="snippet_id_print":::
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 
@@ -280,14 +386,11 @@ In deze sectie ziet u hoe u een model kunt trainen met uw eigen gegevens. Met ee
 
 ### <a name="train-a-model-without-labels"></a>Een model trainen zonder labels
 
-Train aangepaste modellen om alle velden en waarden te analyseren die in uw aangepaste formulieren worden gevonden zonder hand matig labels te krijgen voor de trainings documenten. Met de volgende methode wordt een model voor een bepaalde set documenten getraind en wordt de status van het model in de console weergegeven. 
-
+Train aangepaste modellen om alle velden en waarden in uw aangepaste formulieren te analyseren zonder de trainingsdocumenten handmatig te labelen. Met de volgende methode wordt een model voor een bepaalde set documenten getraind en wordt de status van het model in de console weergegeven.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_train)]
 
-
-Het geretourneerde `CustomFormModel` object bevat informatie over het formulier. het model kan worden geanalyseerd en de velden die het kan extra heren uit elk formulier type. In het volgende codeblok wordt deze informatie op de console weergegeven.
-
+Het geretourneerde object bevat informatie over de formuliertypen die het model kan analyseren en de velden die het uit `CustomFormModel` elk formuliertype kan extraheren. In het volgende codeblok wordt deze informatie op de console weergegeven.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_train_response)]
 
@@ -321,7 +424,7 @@ Table 0 has 2 rows and 6 columns.
     Cell (0, 1) contains text: 'Invoice Date'.
     Cell (0, 2) contains text: 'Invoice Due Date'.
     Cell (0, 3) contains text: 'Charges'.
-    ... 
+    ...
 Custom Model Info:
     Model Id: 95035721-f19d-40eb-8820-0c806b42798b
     Model Status: Ready
@@ -331,7 +434,7 @@ Submodel Form Type: form-95035721-f19d-40eb-8820-0c806b42798b
     FieldName: CompanyAddress
     FieldName: CompanyName
     FieldName: CompanyPhoneNumber
-    ... 
+    ...
 Custom Model Info:
     Model Id: e7a1181b-1fb7-40be-bfbe-1ee154183633
     Model Status: Ready
@@ -353,7 +456,7 @@ Submodel Form Type: form-0
 
 ### <a name="train-a-model-with-labels"></a>Een model trainen met labels
 
-U kunt aangepaste modellen ook trainen door de trainingsdocumenten handmatig te labelen. Training met labels leidt in sommige scenario's tot betere prestaties. Als u met labels wilt trainen, moet uw Blob Storage-container naast de trainingsdocumenten ook speciale bestanden met labelinformatie (`\<filename\>.pdf.labels.json`) bevatten. Het [hulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md) beschikt over een gebruikersinterface die u kan helpen bij het maken van deze labelbestanden. Zodra u deze hebt, kunt u de methode `StartTrainingAsync` aanroepen met de parameter `uselabels` ingesteld op `true`. 
+U kunt aangepaste modellen ook trainen door de trainingsdocumenten handmatig te labelen. Training met labels leidt in sommige scenario's tot betere prestaties. Als u met labels wilt trainen, moet uw Blob Storage-container naast de trainingsdocumenten ook speciale bestanden met labelinformatie (`\<filename\>.pdf.labels.json`) bevatten. Het [hulpprogramma voor labelen van Form Recognizer](../../quickstarts/label-tool.md) beschikt over een gebruikersinterface die u kan helpen bij het maken van deze labelbestanden. Zodra u deze hebt, kunt u de methode `StartTrainingAsync` aanroepen met de parameter `uselabels` ingesteld op `true`.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_trainlabels)]
 
@@ -378,7 +481,7 @@ Table 0 has 2 rows and 6 columns.
     Cell (0, 0) contains text: 'Invoice Number'.
     Cell (0, 1) contains text: 'Invoice Date'.
     Cell (0, 2) contains text: 'Invoice Due Date'.
-    ... 
+    ...
 Merchant Name: 'Contoso Contoso', with confidence 0.516
 Transaction Date: '6/10/2019 12:00:00 AM', with confidence 0.985
 Item:
@@ -400,7 +503,7 @@ Submodel Form Type: form-63c013e3-1cab-43eb-84b0-f4b20cb9214c
     FieldName: DatedAs
     FieldName: Email
     FieldName: Merchant
-    ... 
+    ...
 ```
 
 ## <a name="analyze-forms-with-a-custom-model"></a>Formulieren analyseren met een aangepast model
@@ -410,7 +513,7 @@ In deze sectie ziet u hoe u belangrijke/waardevolle informatie en andere inhoud 
 > [!IMPORTANT]
 > Als u dit scenario wilt implementeren, moet u al een model hebben getraind, zodat u de id ervan kunt doorgeven aan onderstaande methode.
 
-U gebruikt de methode `StartRecognizeCustomFormsFromUri`. 
+U gebruikt de methode `StartRecognizeCustomFormsFromUri`.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_analyze)]
 
@@ -468,7 +571,7 @@ Submodel Form Type: form-0
     FieldName: field-2, FieldLabel: Company Name:
     FieldName: field-3, FieldLabel: Company Phone:
     FieldName: field-4, FieldLabel: Dated As:
-    ... 
+    ...
 Form of type: custom:form
 Field 'Azure.AI.FormRecognizer.Models.FieldValue:
     Value: '$56,651.49
@@ -482,95 +585,11 @@ Field 'Azure.AI.FormRecognizer.Models.FieldValue:
    ...
 ```
 
-## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
-
-In deze sectie wordt beschreven hoe u algemene velden van Amerikaanse ontvangsten analyseert en extraheert met behulp van een vooraf getraind ontvangst model. Zie de [conceptuele hand leiding voor bevestigingen](../../concept-receipts.md)voor meer informatie over de ontvangst analyse.
-
-Als u de ontvangst van een URL wilt analyseren, gebruikt u de- `StartRecognizeReceiptsFromUri` methode. 
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_receipt_call)]
-
-> [!TIP]
-> U kunt ook lokale ontvangstbewijs afbeeldingen analyseren. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
-
-De geretourneerde waarde is een verzameling `RecognizedReceipt`-objecten: één voor elke pagina in het ingediende document. Met de volgende code wordt het ontvangstbewijs op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_receipt_print)]
-
-### <a name="output"></a>Uitvoer 
-
-```console
-Form Page 1 has 18 lines.
-    Line 0 has 1 word, and text: 'Contoso'.
-    Line 1 has 1 word, and text: 'Address:'.
-    Line 2 has 3 words, and text: 'Invoice For: Microsoft'.
-    Line 3 has 4 words, and text: '1 Redmond way Suite'.
-    Line 4 has 3 words, and text: '1020 Enterprise Way'.
-    Line 5 has 3 words, and text: '6000 Redmond, WA'.
-    Line 6 has 3 words, and text: 'Sunnayvale, CA 87659'.
-    Line 7 has 1 word, and text: '99243'.
-    Line 8 has 2 words, and text: 'Invoice Number'.
-    Line 9 has 2 words, and text: 'Invoice Date'.
-    Line 10 has 3 words, and text: 'Invoice Due Date'.
-    Line 11 has 1 word, and text: 'Charges'.
-    Line 12 has 2 words, and text: 'VAT ID'.
-    Line 13 has 1 word, and text: '34278587'.
-    Line 14 has 1 word, and text: '6/18/2017'.
-    Line 15 has 1 word, and text: '6/24/2017'.
-    Line 16 has 1 word, and text: '$56,651.49'.
-    Line 17 has 1 word, and text: 'PT'.
-Table 0 has 2 rows and 6 columns.
-    Cell (0, 0) contains text: 'Invoice Number'.
-    Cell (0, 1) contains text: 'Invoice Date'.
-    Cell (0, 2) contains text: 'Invoice Due Date'.
-    Cell (0, 3) contains text: 'Charges'.
-    Cell (0, 5) contains text: 'VAT ID'.
-    Cell (1, 0) contains text: '34278587'.
-    Cell (1, 1) contains text: '6/18/2017'.
-    Cell (1, 2) contains text: '6/24/2017'.
-    Cell (1, 3) contains text: '$56,651.49'.
-    Cell (1, 5) contains text: 'PT'.
-Merchant Name: 'Contoso Contoso', with confidence 0.516
-Transaction Date: '6/10/2019 12:00:00 AM', with confidence 0.985
-Item:
-    Name: '8GB RAM (Black)', with confidence 0.916
-    Total Price: '999', with confidence 0.559
-Item:
-    Name: 'SurfacePen', with confidence 0.858
-    Total Price: '99.99', with confidence 0.386
-Total: '1203.39', with confidence '0.774'
-```
-
-## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
-
-#### <a name="v20"></a>[v2.0](#tab/ga)
-
-> [!IMPORTANT]
-> Deze functie is niet beschikbaar in de geselecteerde API-versie.
-
-#### <a name="v21-preview"></a>[Preview van v2.1](#tab/preview)
-
-In deze sectie wordt beschreven hoe u algemene velden uit de Engelse visite kaartjes analyseert en extraheert met behulp van een vooraf getraind model. Zie de [conceptuele hand leiding voor visite](../../concept-business-cards.md)kaartjes voor meer informatie over het analyseren van bedrijfs kaarten.
-
-Als u visite kaartjes wilt analyseren vanuit een URL, gebruikt u de- `StartRecognizeBusinessCardsFromUriAsync` methode. 
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_call)]
-
-> [!TIP]
-> U kunt ook lokale ontvangstbewijs afbeeldingen analyseren. Zie de methoden [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), zoals **StartRecognizeBusinessCards**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
-
-De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke kaart in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_print)]
-
----
-
 ## <a name="manage-custom-models"></a>Aangepaste modellen beheren
 
 In deze sectie wordt beschreven hoe u de aangepaste modellen beheert die zijn opgeslagen in uw account. U voert meerdere bewerkingen uit in de volgende methode:
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_manage)]
-
 
 ### <a name="check-the-number-of-models-in-the-formrecognizer-resource-account"></a>Het aantal modellen in het FormRecognizer-resourceaccount controleren
 
@@ -578,7 +597,7 @@ In het volgende codeblok wordt het aantal modellen gecontroleerd dat u in uw For
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_manage_model_count)]
 
-### <a name="output"></a>Uitvoer 
+### <a name="output"></a>Uitvoer
 
 ```console
 Account has 20 models.
@@ -591,8 +610,7 @@ In het volgende codeblok worden de huidige modellen in uw account vermeld en wor
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_manage_model_list)]
 
-
-### <a name="output"></a>Uitvoer 
+### <a name="output"></a>Uitvoer
 
 Dit antwoord is ingekort zodat het beter leesbaar is.
 
@@ -620,7 +638,7 @@ Het volgende codeblok traint een nieuw model (net zoals in de sectie [Een model 
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_manage_model_get)]
 
-### <a name="output"></a>Uitvoer 
+### <a name="output"></a>Uitvoer
 
 Dit antwoord is ingekort zodat het beter leesbaar is.
 
@@ -655,7 +673,6 @@ U kunt een model ook uit uw account verwijderen door naar de id te verwijzen. In
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_manage_model_delete)]
 
-
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
 Voer de toepassing op vanuit uw toepassingsmap met de opdracht `dotnet run`.
@@ -663,7 +680,6 @@ Voer de toepassing op vanuit uw toepassingsmap met de opdracht `dotnet run`.
 ```dotnet
 dotnet run
 ```
-
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -691,25 +707,14 @@ catch (RequestFailedException e)
 
 U ziet dat aanvullende informatie, zoals de clientaanvraag-id van de bewerking, wordt geregistreerd.
 
-```
-Message:
-    Azure.RequestFailedException: Service request failed.
-    Status: 400 (Bad Request)
+``
 
-Content:
-    {"error":{"code":"FailedToDownloadImage","innerError":
-    {"requestId":"8ca04feb-86db-4552-857c-fde903251518"},
-    "message":"Failed to download image from input URL."}}
+Bericht: Azure.RequestFailedException: Serviceaanvraag is mislukt.
+Status: 400 (slechte aanvraag)
 
-Headers:
-    Transfer-Encoding: chunked
-    x-envoy-upstream-service-time: REDACTED
-    apim-request-id: REDACTED
-    Strict-Transport-Security: REDACTED
-    X-Content-Type-Options: REDACTED
-    Date: Mon, 20 Apr 2020 22:48:35 GMT
-    Content-Type: application/json; charset=utf-8
-```
+Inhoud: {"error":{"code":"FailedToDownloadImage","innerError": {"requestId":"8ca04feb-86db-4552-857c-fde903251518"}, "message":"Failed to download image from input URL."}}
+
+Headers: Transfer-Encoding: chunked x-envoy-upstream-service-time: REDACTED apim-request-id: REDACTED Strict-Transport-Security: REDACTED X-Content-Type-Options: REDACTED Date: Ma, 20 apr 2020 22:48:35 GMT Content-Type: application/json; charset=utf-8 ''
 
 ## <a name="next-steps"></a>Volgende stappen
 

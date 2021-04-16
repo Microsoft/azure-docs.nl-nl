@@ -1,31 +1,31 @@
 ---
-title: Persoonlijke koppeling instellen
-description: Stel een persoonlijk eind punt in op een container register en Schakel toegang in via een persoonlijke koppeling in een lokaal virtueel netwerk. Toegang voor persoonlijke koppelingen is een functie van de laag Premium-Service.
+title: Privé-eindpunt instellen met private link
+description: Stel een privé-eindpunt in een containerregister in en schakel toegang in via een privékoppeling in een lokaal virtueel netwerk. Toegang tot Private Link is een functie van de Premium-servicelaag.
 ms.topic: article
-ms.date: 10/01/2020
-ms.openlocfilehash: 3193c65a2021d29f03bd9ae6cbc00fd6c349d9bf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/31/2021
+ms.openlocfilehash: c47eb535163a1a584bc3892da61543bdf2b0f798
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93342297"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481409"
 ---
-# <a name="connect-privately-to-an-azure-container-registry-using-azure-private-link"></a>Persoonlijke verbinding maken met een Azure container Registry met behulp van een persoonlijke Azure-koppeling
+# <a name="connect-privately-to-an-azure-container-registry-using-azure-private-link"></a>Privé verbinding maken met een Azure-containerregister met behulp van Azure Private Link
 
 
-Beperk de toegang tot een REGI ster door particuliere IP-adressen voor het virtuele netwerk toe te wijzen aan de register eindpunten en met behulp van een [persoonlijke Azure-koppeling](../private-link/private-link-overview.md) Netwerk verkeer tussen de clients in het virtuele netwerk en de persoonlijke eind punten van het REGI ster passeren het virtuele netwerk en een privé-koppeling in het micro soft-backbone-netwerk, waardoor de bloot stelling van het open bare Internet wordt voor komen. Met persoonlijke koppeling kunt u ook persoonlijke toegang tot het REGI ster vanuit on-premises via [Azure ExpressRoute](../expressroute/expressroute-introduction.MD) private peering of een [VPN-gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+Beperk de toegang tot een register door privé-IP-adressen van virtuele netwerken toe te wijzen aan de register-eindpunten en gebruik [Azure Private Link](../private-link/private-link-overview.md). Netwerkverkeer tussen de clients op het virtuele netwerk en de privé-eindpunten van het register gaat via het virtuele netwerk en een privékoppeling op het Backbone-netwerk van Microsoft, waardoor de blootstelling van het openbare internet wordt voorkomen. Private Link maakt ook privéregistertoegang mogelijk vanaf on-premises via [Azure ExpressRoute](../expressroute/expressroute-introduction.MD) persoonlijke peering of een [VPN-gateway.](../vpn-gateway/vpn-gateway-about-vpngateways.md)
 
-U kunt [DNS-instellingen configureren](../private-link/private-endpoint-overview.md#dns-configuration) voor de privé-eind punten van het REGI ster, zodat de instellingen kunnen worden omgezet in het toegewezen privé IP-adres van het REGI ster. Met DNS-configuratie kunnen clients en services in het netwerk het REGI ster blijven gebruiken op het Fully Qualified Domain Name van het REGI ster, zoals *myregistry.azurecr.io*. 
+U kunt [DNS-instellingen configureren](../private-link/private-endpoint-overview.md#dns-configuration) voor de privé-eindpunten van het register, zodat de instellingen worden opgelost naar het toegewezen privé-IP-adres van het register. Met DNS-configuratie kunnen clients en services in het netwerk toegang blijven krijgen tot het register op de fully qualified domain name van het register, *zoals myregistry.azurecr.io.* 
 
-Deze functie is beschikbaar in de service tier van het **Premium** -container register. Momenteel kunnen Maxi maal tien privé-eind punten worden ingesteld voor een REGI ster. Zie [Azure container Registry-lagen](container-registry-skus.md)voor meer informatie over de service lagen en limieten voor het REGI ster.
+Deze functie is beschikbaar in de **servicelaag Premium** Container Registry. Op dit moment kunnen maximaal 10 privé-eindpunten worden ingesteld voor een register. Zie Azure Container Registry servicelagen voor meer [informatie over registerservicelagen en -limieten.](container-registry-skus.md)
 
 [!INCLUDE [container-registry-scanning-limitation](../../includes/container-registry-scanning-limitation.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Als u de stappen van Azure CLI in dit artikel wilt gebruiken, wordt Azure CLI-versie 2.6.0 of hoger aanbevolen. Zie [Azure CLI installeren][azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren. Of voer uit in [Azure Cloud shell](../cloud-shell/quickstart.md).
-* Als u nog geen container register hebt, maakt u er een (vereist een Premium-laag) en [importeert](container-registry-import-images.md) u een voor beeld van een open bare installatie kopie, zoals `mcr.microsoft.com/hello-world` van micro soft container Registry. Gebruik bijvoorbeeld de [Azure Portal][quickstart-portal] of de [Azure cli][quickstart-cli] om een REGI ster te maken.
-* Als u toegang tot het REGI ster wilt configureren met behulp van een persoonlijke koppeling in een ander Azure-abonnement, moet u de resource provider registreren voor Azure Container Registry in dat abonnement. Bijvoorbeeld:
+* Als u de Azure CLI-stappen in dit artikel wilt gebruiken, wordt Azure CLI versie 2.6.0 of hoger aanbevolen. Zie [Azure CLI installeren][azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren. Of voer uit in [Azure Cloud Shell](../cloud-shell/quickstart.md).
+* Als u nog geen containerregister hebt, maakt u er [](container-registry-import-images.md) een (Premium-laag vereist) en importeert u een voorbeeld van een openbare afbeelding, `mcr.microsoft.com/hello-world` zoals vanuit Microsoft Container Registry. Gebruik bijvoorbeeld de [Azure Portal][quickstart-portal] of [de Azure CLI om][quickstart-cli] een register te maken.
+* Als u registertoegang wilt configureren met behulp van een privékoppeling in een ander Azure-abonnement, moet u de resourceprovider registreren voor Azure Container Registry in dat abonnement. Bijvoorbeeld:
 
   ```azurecli
   az account set --subscription <Name or ID of subscription of private link>
@@ -33,7 +33,7 @@ Deze functie is beschikbaar in de service tier van het **Premium** -container re
   az provider register --namespace Microsoft.ContainerRegistry
   ``` 
 
-De Azure CLI-voor beelden in dit artikel gebruiken de volgende omgevings variabelen. Vervang de waarden die van toepassing zijn voor uw omgeving. Alle voor beelden zijn opgemaakt voor de bash-shell:
+In de Azure CLI-voorbeelden in dit artikel worden de volgende omgevingsvariabelen gebruikt. Vervang waarden die geschikt zijn voor uw omgeving. Alle voorbeelden zijn opgemaakt voor de Bash-shell:
 
 ```bash
 REGISTRY_NAME=<container-registry-name>
@@ -44,13 +44,13 @@ VM_NAME=<virtual-machine-name>
 
 [!INCLUDE [Set up Docker-enabled VM](../../includes/container-registry-docker-vm-setup.md)]
 
-## <a name="set-up-private-link---cli"></a>Privé-koppeling instellen-CLI
+## <a name="set-up-private-link---cli"></a>Private Link instellen - CLI
 
-### <a name="get-network-and-subnet-names"></a>Netwerk-en subnet namen ophalen
+### <a name="get-network-and-subnet-names"></a>Netwerk- en subnetnamen op halen
 
-Als u deze nog niet hebt, hebt u de namen van een virtueel netwerk en subnet nodig om een persoonlijke koppeling in te stellen. In dit voor beeld gebruikt u hetzelfde subnet voor de virtuele machine en het persoonlijke eind punt van het REGI ster. In veel gevallen zou u het eind punt echter instellen in een afzonderlijk subnet. 
+Als u deze nog niet hebt, hebt u de namen van een virtueel netwerk en subnet nodig om een privékoppeling in te stellen. In dit voorbeeld gebruikt u hetzelfde subnet voor de virtuele machine en het privé-eindpunt van het register. In veel scenario's stelt u het eindpunt echter in een afzonderlijk subnet in. 
 
-Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resource groep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld een *myDockerVM* naam voor de virtuele machine hebt, is de standaard naam van het virtuele netwerk *myDockerVMVNET*, met een subnet met de naam *myDockerVMSubnet*. Stel deze waarden in omgevings variabelen in door de opdracht [AZ Network vnet List][az-network-vnet-list] uit te voeren:
+Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resourcegroep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld de virtuele machine *myDockerVM* noemt, is de standaardnaam van het virtuele netwerk *myDockerVMVNET,* met een subnet met de *naam myDockerVMSubnet.* Stel deze waarden in omgevingsvariabelen in door de [opdracht az network vnet list uit te][az-network-vnet-list] voeren:
 
 ```azurecli
 NETWORK_NAME=$(az network vnet list \
@@ -65,9 +65,9 @@ echo NETWORK_NAME=$NETWORK_NAME
 echo SUBNET_NAME=$SUBNET_NAME
 ```
 
-### <a name="disable-network-policies-in-subnet"></a>Netwerk beleid in subnet uitschakelen
+### <a name="disable-network-policies-in-subnet"></a>Netwerkbeleid uitschakelen in subnet
 
-[Netwerk beleidsregels](../private-link/disable-private-endpoint-network-policy.md) , zoals netwerk beveiligings groepen, uitschakelen in het subnet voor het persoonlijke eind punt. De configuratie van uw subnet bijwerken met [AZ Network vnet subnet update][az-network-vnet-subnet-update]:
+[Schakel netwerkbeleidsregels](../private-link/disable-private-endpoint-network-policy.md) uit, zoals netwerkbeveiligingsgroepen in het subnet voor het privé-eindpunt. Werk uw subnetconfiguratie bij [met az network vnet subnet update][az-network-vnet-subnet-update]:
 
 ```azurecli
 az network vnet subnet update \
@@ -79,9 +79,9 @@ az network vnet subnet update \
 
 ### <a name="configure-the-private-dns-zone"></a>Privé-DNS-zone configureren
 
-Maak een [privé-DNS-zone](../dns/private-dns-privatednszone.md) voor het persoonlijke Azure-container register domein. In latere stappen maakt u DNS-records voor uw register domein in deze DNS-zone.
+Maak een [privé Azure DNS zone voor](../dns/private-dns-privatednszone.md) het privédomein van het Azure-containerregister. In latere stappen maakt u DNS-records voor uw registerdomein in deze DNS-zone. Zie DNS-configuratieopties [](#dns-configuration-options)verderop in dit artikel voor meer informatie.
 
-Als u een privé zone wilt gebruiken om de standaard DNS-omzetting voor uw Azure container Registry te overschrijven, moet de zone de naam **privatelink.azurecr.io**. Voer de volgende [AZ Network private-DNS zone Create][az-network-private-dns-zone-create] opdracht uit om de privé zone te maken:
+Als u een privézone wilt gebruiken om de standaard-DNS-resolutie voor uw Azure-containerregister te overschrijven, moet de zone de **naam privatelink.azurecr.io**. Voer de volgende [opdracht az network private-dns zone create][az-network-private-dns-zone-create] uit om de privézone te maken:
 
 ```azurecli
 az network private-dns zone create \
@@ -89,9 +89,9 @@ az network private-dns zone create \
   --name "privatelink.azurecr.io"
 ```
 
-### <a name="create-an-association-link"></a>Een koppelings koppeling maken
+### <a name="create-an-association-link"></a>Een koppelingskoppeling maken
 
-Voer [AZ Network private-DNS link vnet maken][az-network-private-dns-link-vnet-create] uit om uw persoonlijke zone te koppelen aan het virtuele netwerk. In dit voor beeld wordt een koppeling gemaakt met de naam *myDNSLink*.
+Voer [az network private-dns link vnet create uit om][az-network-private-dns-link-vnet-create] uw privézone te koppelen aan het virtuele netwerk. In dit voorbeeld wordt een koppeling met de *naam myDNSLink gemaakt.*
 
 ```azurecli
 az network private-dns link vnet create \
@@ -102,18 +102,18 @@ az network private-dns link vnet create \
   --registration-enabled false
 ```
 
-### <a name="create-a-private-registry-endpoint"></a>Een persoonlijk REGI ster-eind punt maken
+### <a name="create-a-private-registry-endpoint"></a>Een privéregister-eindpunt maken
 
-In deze sectie maakt u het persoonlijke eind punt van het REGI ster in het virtuele netwerk. Haal eerst de resource-ID van het REGI ster op:
+In deze sectie maakt u het privé-eindpunt van het register in het virtuele netwerk. Haal eerst de resource-id van het register op:
 
 ```azurecli
 REGISTRY_ID=$(az acr show --name $REGISTRY_NAME \
   --query 'id' --output tsv)
 ```
 
-Voer de opdracht [AZ Network private-endpoint Create][az-network-private-endpoint-create] uit om het persoonlijke eind punt van het REGI ster te maken.
+Voer de [opdracht az network private-endpoint create][az-network-private-endpoint-create] uit om het privé-eindpunt van het register te maken.
 
-In het volgende voor beeld wordt het eind punt *myPrivateEndpoint* en de *myConnection* voor de service verbinding gemaakt. Als u een container register bron voor het eind punt wilt opgeven, geeft u het `--group-ids registry` volgende door:
+In het volgende voorbeeld wordt het eindpunt *myPrivateEndpoint en* de serviceverbinding *myConnection gemaakt.* Als u een containerregisterresource voor het eindpunt wilt opgeven, geeft u `--group-ids registry` door:
 
 ```azurecli
 az network private-endpoint create \
@@ -126,9 +126,11 @@ az network private-endpoint create \
     --connection-name myConnection
 ```
 
-### <a name="get-private-ip-addresses"></a>Privé-IP-adressen ophalen
+### <a name="get-endpoint-ip-configuration"></a>IP-configuratie van eindpunten krijgen
 
-Voer [AZ Network private-endpoint show][az-network-private-endpoint-show] uit om een query uit te voeren op het eind punt voor de netwerk interface-id:
+Als u DNS-records wilt configureren, moet u de IP-configuratie van het privé-eindpunt op halen. Gekoppeld aan de netwerkinterface van het privé-eindpunt in dit voorbeeld zijn twee privé-IP-adressen voor het containerregister: één voor het register zelf en één voor het gegevens-eindpunt van het register. 
+
+Voer eerst [az network private-endpoint show uit om een][az-network-private-endpoint-show] query uit te voeren op het privé-eindpunt voor de netwerkinterface-id:
 
 ```azurecli
 NETWORK_INTERFACE_ID=$(az network private-endpoint show \
@@ -138,33 +140,43 @@ NETWORK_INTERFACE_ID=$(az network private-endpoint show \
   --output tsv)
 ```
 
-Gekoppeld aan de netwerk interface in dit voor beeld zijn twee privé-IP-adressen voor het container register: een voor het REGI ster zelf en een voor het gegevens eindpunt van het REGI ster. Met de volgende opdracht [AZ resource show][az-resource-show] worden de privé-IP-adressen voor het container register en het gegevens eindpunt van het REGI ster opgehaald:
+Met de [volgende az network nic show-opdrachten][az-network-nic-show] worden de privé-IP-adressen voor het containerregister en het gegevens-eindpunt van het register op halen:
 
 ```azurecli
-PRIVATE_IP=$(az resource show \
+REGISTRY_PRIVATE_IP=$(az network nic show \
   --ids $NETWORK_INTERFACE_ID \
-  --api-version 2019-04-01 \
-  --query 'properties.ipConfigurations[1].properties.privateIPAddress' \
+  --query "ipConfigurations[?privateLinkConnectionProperties.requiredMemberName=='registry'].privateIpAddress" \
   --output tsv)
 
-DATA_ENDPOINT_PRIVATE_IP=$(az resource show \
+DATA_ENDPOINT_PRIVATE_IP=$(az network nic show \
   --ids $NETWORK_INTERFACE_ID \
-  --api-version 2019-04-01 \
-  --query 'properties.ipConfigurations[0].properties.privateIPAddress' \
+  --query "ipConfigurations[?privateLinkConnectionProperties.requiredMemberName=='registry_data_$REGISTRY_LOCATION'].privateIpAddress" \
+  --output tsv)
+
+# An FQDN is associated with each IP address in the IP configurations
+
+REGISTRY_FQDN=$(az network nic show \
+  --ids $NETWORK_INTERFACE_ID \
+  --query "ipConfigurations[?privateLinkConnectionProperties.requiredMemberName=='registry'].privateLinkConnectionProperties.fqdns" \
+  --output tsv)
+
+DATA_ENDPOINT_FQDN=$(az network nic show \
+  --ids $NETWORK_INTERFACE_ID \
+  --query "ipConfigurations[?privateLinkConnectionProperties.requiredMemberName=='registry_data_$REGISTRY_LOCATION'].privateLinkConnectionProperties.fqdns" \
   --output tsv)
 ```
 
 > [!NOTE]
-> Als uw REGI ster [geo-gerepliceerd](container-registry-geo-replication.md)is, moet u een query uitvoeren voor het extra gegevens eindpunt voor elke register replica.
+> Als uw register [geo-gerepliceerd](container-registry-geo-replication.md)is, moet u een query uitvoeren voor het extra gegevens-eindpunt voor elke registerreplica.
 
-### <a name="create-dns-records-in-the-private-zone"></a>DNS-records in de privé zone maken
+### <a name="create-dns-records-in-the-private-zone"></a>DNS-records maken in de privézone
 
-Met de volgende opdrachten maakt u DNS-records in de privé zone voor het eind punt van het REGI ster en het bijbehorende gegevens eindpunt. Als u bijvoorbeeld een REGI ster met de naam *myregistry* in de *Europa West* -regio hebt, zijn de namen van het eind punt `myregistry.azurecr.io` en `myregistry.westeurope.data.azurecr.io` . 
+Met de volgende opdrachten maakt u DNS-records in de privézone voor het register-eindpunt en het gegevens-eindpunt. Als u bijvoorbeeld een register met de naam *myregistry* in de regio *westeurope* hebt, zijn de eindpuntnamen `myregistry.azurecr.io` en `myregistry.westeurope.data.azurecr.io` . 
 
 > [!NOTE]
-> Als uw REGI ster [geo-gerepliceerd](container-registry-geo-replication.md)is, maakt u extra DNS-records voor het IP-adres van het gegevens eindpunt van de replica.
+> Als uw register [geo-gerepliceerd](container-registry-geo-replication.md)is, maakt u aanvullende DNS-records voor het IP-adres van het gegevens-eindpunt van elke replica.
 
-Eerst uitvoeren [AZ Network private-DNS record: Stel een Create][az-network-private-dns-record-set-a-create] in voor het maken van lege a-record sets voor het REGI ster-eind punt en het gegevens eindpunt:
+Voer eerst [az network private-dns record-set a create][az-network-private-dns-record-set-a-create] uit om lege A-recordsets te maken voor het register-eindpunt en het gegevens-eindpunt:
 
 ```azurecli
 az network private-dns record-set a create \
@@ -179,14 +191,14 @@ az network private-dns record-set a create \
   --resource-group $RESOURCE_GROUP
 ```
 
-Voer de opdracht [AZ Network private-DNS record-set a add-record][az-network-private-dns-record-set-a-add-record] uit om de a-records voor het REGI ster-eind punt en gegevens eindpunt te maken:
+Voer de [opdracht az network private-dns record-set a add-record][az-network-private-dns-record-set-a-add-record] uit om de A-records voor het register-eindpunt en het gegevens-eindpunt te maken:
 
 ```azurecli
 az network private-dns record-set a add-record \
   --record-set-name $REGISTRY_NAME \
   --zone-name privatelink.azurecr.io \
   --resource-group $RESOURCE_GROUP \
-  --ipv4-address $PRIVATE_IP
+  --ipv4-address $REGISTRY_PRIVATE_IP
 
 # Specify registry region in data endpoint name
 az network private-dns record-set a add-record \
@@ -196,42 +208,42 @@ az network private-dns record-set a add-record \
   --ipv4-address $DATA_ENDPOINT_PRIVATE_IP
 ```
 
-De persoonlijke koppeling is nu geconfigureerd en gereed voor gebruik.
+De privékoppeling is nu geconfigureerd en klaar voor gebruik.
 
-## <a name="set-up-private-link---portal"></a>Een persoonlijke koppeling instellen-Portal
+## <a name="set-up-private-link---portal"></a>Private Link instellen - portal
 
-Stel een persoonlijke koppeling in wanneer u een REGI ster maakt of Voeg een persoonlijke koppeling toe aan een bestaand REGI ster. Bij de volgende stappen wordt ervan uitgegaan dat u al een virtueel netwerk en een subnet hebt ingesteld met een VM om te testen. U kunt ook [een nieuw virtueel netwerk en subnet maken](../virtual-network/quick-create-portal.md).
+Stel een privékoppeling in wanneer u een register maakt of voeg een privékoppeling toe aan een bestaand register. In de volgende stappen wordt ervan uit gegaan dat u al een virtueel netwerk en subnet hebt ingesteld met een VM om te testen. U kunt ook [een nieuw virtueel netwerk en subnet maken.](../virtual-network/quick-create-portal.md)
 
-### <a name="create-a-private-endpoint---new-registry"></a>Een persoonlijk eind punt maken-nieuw REGI ster
+### <a name="create-a-private-endpoint---new-registry"></a>Een privé-eindpunt maken - nieuw register
 
-1. Wanneer u een REGI ster maakt in de portal, selecteert u op het tabblad **basis beginselen** in **SKU** de optie **Premium**.
+1. Wanneer u een register maakt in de portal, selecteert u op het tabblad **Basisbeginselen** in **SKU** de optie **Premium**.
 1. Selecteer het tabblad **Netwerken**.
-1. Selecteer in **netwerk connectiviteit** **persoonlijke eind punt**  >  **+ toevoegen**.
-1. Voer de volgende informatie in of Selecteer deze:
+1. Selecteer **privé-eindpunt**+ Toevoegen **in**  >  **Netwerkverbinding.**
+1. Voer de volgende gegevens in of selecteer deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Voer de naam van een bestaande groep in of maak een nieuwe.|
     | Name | Voer een unieke naam in. |
-    | Subbron |**REGI ster** selecteren|
+    | Subresource |Register **selecteren**|
     | **Netwerken** | |
-    | Virtueel netwerk| Selecteer het virtuele netwerk waarin uw virtuele machine is geïmplementeerd, zoals *myDockerVMVNET*. |
-    | Subnet | Selecteer een subnet, zoals *myDockerVMSubnet* waarop uw virtuele machine is geïmplementeerd. |
-    |**Integratie van Privé-DNS**||
+    | Virtueel netwerk| Selecteer het virtuele netwerk waarin uw virtuele machine is geïmplementeerd, zoals *myDockerVMVNET.* |
+    | Subnet | Selecteer een subnet, zoals *myDockerVMSubnet* waar uw virtuele machine is geïmplementeerd. |
+    |**Privé-DNS-integratie**||
     |Integreren met privé-DNS-zone |Selecteer **Ja**. |
-    |Privé-DNS-zone |Selecteer *(nieuw) privatelink.azurecr.io* |
+    |Privé-DNS-zone |Selecteer *(Nieuw) privatelink.azurecr.io* |
     |||
-1. Configureer de resterende register instellingen en selecteer vervolgens **controleren + maken**.
+1. Configureer de resterende registerinstellingen en selecteer **controleren en maken.**
 
-  ![REGI ster maken met een persoonlijk eind punt](./media/container-registry-private-link/private-link-create-portal.png)
+  ![Register met privé-eindpunt maken](./media/container-registry-private-link/private-link-create-portal.png)
 
-### <a name="create-a-private-endpoint---existing-registry"></a>Een persoonlijk eind punt maken-bestaand REGI ster
+### <a name="create-a-private-endpoint---existing-registry"></a>Een privé-eindpunt maken - bestaand register
 
-1. Navigeer in de portal naar het container register.
-1. Selecteer onder **instellingen** de optie **netwerken**.
-1. Selecteer op het tabblad **privé-eind punten** **+ persoonlijk eind punt**.
-1. Voer op het tabblad **basis beginselen** de volgende informatie in of Selecteer deze:
+1. Navigeer in de portal naar uw containerregister.
+1. Selecteer **onder Instellingen** de optie **Netwerken.**
+1. Selecteer op **het tabblad Privé-eindpunten** **de optie + Privé-eindpunt.**
+1. Voer op **het** tabblad Basisinformatie de volgende gegevens in of selecteer deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
@@ -243,76 +255,76 @@ Stel een persoonlijke koppeling in wanneer u een REGI ster maakt of Voeg een per
     |Region|Selecteer een regio.|
     |||
 5. Selecteer **Volgende: Resource**.
-6. Voer de volgende informatie in of Selecteer deze:
+6. Voer de volgende gegevens in of selecteer deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
     |Verbindingsmethode  | Selecteer **Verbinding maken met een Azure-resource in mijn directory**.|
     | Abonnement| Selecteer uw abonnement. |
-    | Resourcetype | Selecteer **micro soft. ContainerRegistry/registers**. |
-    | Resource |De naam van het REGI ster selecteren|
-    |Subresource van doel |**REGI ster** selecteren|
+    | Resourcetype | Selecteer **Microsoft.ContainerRegistry/registries.** |
+    | Resource |Selecteer de naam van het register|
+    |Subresource van doel |Register **selecteren**|
     |||
 7. Selecteer **Volgende: Configuratie**.
-8. Voer de volgende gegevens in of Selecteer deze:
+8. Voer de gegevens in of selecteer deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
     |**Netwerken**| |
-    | Virtueel netwerk| Selecteer het virtuele netwerk waarin uw virtuele machine is geïmplementeerd, zoals *myDockerVMVNET*. |
-    | Subnet | Selecteer een subnet, zoals *myDockerVMSubnet* waarop uw virtuele machine is geïmplementeerd. |
-    |**Integratie van Privé-DNS**||
+    | Virtueel netwerk| Selecteer het virtuele netwerk waarin uw virtuele machine is geïmplementeerd, zoals *myDockerVMVNET.* |
+    | Subnet | Selecteer een subnet, zoals *myDockerVMSubnet* waar uw virtuele machine wordt geïmplementeerd. |
+    |**Privé-DNS-integratie**||
     |Integreren met privé-DNS-zone |Selecteer **Ja**. |
-    |Privé-DNS-zone |Selecteer *(nieuw) privatelink.azurecr.io* |
+    |Privé-DNS-zone |Selecteer *(Nieuw) privatelink.azurecr.io* |
     |||
 
 1. Selecteer **Controleren + maken**. De pagina **Beoordelen en maken** wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure. 
 2. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken**.
 
-Nadat het persoonlijke eind punt is gemaakt, worden de DNS-instellingen in de privé zone weer gegeven op de pagina **privé-eind punten** in de portal:
+Nadat het privé-eindpunt is gemaakt, worden de DNS-instellingen in de privézone weergegeven op de pagina **Privé-eindpunten** in de portal:
 
-1. Ga in de portal naar het container register en selecteer **instellingen > netwerk**.
-1. Selecteer op het tabblad **privé-eind punten** het persoonlijke eind punt dat u hebt gemaakt.
-1. Bekijk de koppelings instellingen en aangepaste DNS-instellingen op de pagina **overzicht** .
+1. Navigeer in de portal naar uw containerregister en selecteer **Instellingen > Netwerken.**
+1. Selecteer op **het tabblad Privé-eindpunten** het privé-eindpunt dat u hebt gemaakt.
+1. Controleer op **de pagina** Overzicht de koppelingsinstellingen en aangepaste DNS-instellingen.
 
-  ![DNS-instellingen voor het eind punt](./media/container-registry-private-link/private-endpoint-overview.png)
+  ![DNS-instellingen voor eindpunt](./media/container-registry-private-link/private-endpoint-overview.png)
 
-Uw persoonlijke koppeling is nu geconfigureerd en gereed voor gebruik.
+Uw privékoppeling is nu geconfigureerd en klaar voor gebruik.
 
-## <a name="disable-public-access"></a>Open bare toegang uitschakelen
+## <a name="disable-public-access"></a>Openbare toegang uitschakelen
 
-Voor veel scenario's schakelt u de toegang tot het REGI ster vanuit open bare netwerken uit. Deze configuratie voor komt dat clients buiten het virtuele netwerk de register eindpunten kunnen bereiken. 
+Voor veel scenario's schakelt u registertoegang vanuit openbare netwerken uit. Deze configuratie voorkomt dat clients buiten het virtuele netwerk de register-eindpunten bereiken. 
 
-### <a name="disable-public-access---cli"></a>Open bare toegang uitschakelen-CLI
+### <a name="disable-public-access---cli"></a>Openbare toegang uitschakelen - CLI
 
-Als u open bare toegang wilt uitschakelen met behulp van de Azure CLI, voert u [AZ ACR update][az-acr-update] uit en stelt `--public-network-enabled` u in op `false` . 
+Als u openbare toegang wilt uitschakelen met behulp van de Azure CLI, moet [u az acr update uitvoeren][az-acr-update] en instellen op `--public-network-enabled` `false` . 
 
 > [!NOTE]
-> Het `public-network-enabled` argument vereist Azure CLI 2.6.0 of hoger. 
+> Voor `public-network-enabled` het argument is Azure CLI 2.6.0 of hoger vereist. 
 
 ```azurecli
 az acr update --name $REGISTRY_NAME --public-network-enabled false
 ```
 
 
-### <a name="disable-public-access---portal"></a>Open bare toegang uitschakelen-Portal
+### <a name="disable-public-access---portal"></a>Openbare toegang uitschakelen - portal
 
-1. Ga in de portal naar het container register en selecteer **instellingen > netwerk**.
-1. Selecteer op het tabblad **open bare toegang** in **open bare netwerk toegang toestaan** de optie **uitgeschakeld**. Selecteer vervolgens **Opslaan**.
+1. Navigeer in de portal naar het containerregister en selecteer **Instellingen > Netwerken.**
+1. Selecteer op **het tabblad Openbare** toegang in Openbare **netwerktoegang toestaan** de optie **Uitgeschakeld.** Selecteer vervolgens **Opslaan**.
 
-## <a name="validate-private-link-connection"></a>Verbinding met persoonlijke koppeling valideren
+## <a name="validate-private-link-connection"></a>Private Link-verbinding valideren
 
-U moet controleren of de resources binnen het subnet van het particuliere eind punt verbinding maken met uw REGI ster via een particulier IP-adres en de juiste persoonlijke DNS-zone integratie hebben.
+Controleer of de resources in het subnet van het privé-eindpunt via een privé-IP-adres verbinding maken met uw register en de juiste integratie van de privé-DNS-zone hebben.
 
-Als u de verbinding met de persoonlijke koppeling wilt valideren, moet u SSH naar de virtuele machine die u in het virtuele netwerk hebt ingesteld.
+Als u de private link-verbinding wilt valideren, moet u SSH gebruiken voor de virtuele machine die u in het virtuele netwerk hebt ingesteld.
 
-Voer een hulp programma uit, zoals `nslookup` of `dig` om het IP-adres van het REGI ster via de persoonlijke koppeling op te zoeken. Bijvoorbeeld:
+Voer een hulpprogramma zoals of uit om het IP-adres van uw register op te `nslookup` zoeken via de private `dig` link. Bijvoorbeeld:
 
 ```bash
 dig $REGISTRY_NAME.azurecr.io
 ```
 
-Voorbeeld uitvoer toont het IP-adres van het REGI ster in de adres ruimte van het subnet:
+Voorbeelduitvoer toont het IP-adres van het register in de adresruimte van het subnet:
 
 ```console
 [...]
@@ -334,7 +346,7 @@ myregistry.privatelink.azurecr.io. 10 IN A      10.0.0.7
 [...]
 ```
 
-Vergelijk dit resultaat met het open bare IP-adres in `dig` uitvoer voor hetzelfde REGI ster via een openbaar eind punt:
+Vergelijk dit resultaat met het openbare IP-adres in `dig` de uitvoer voor hetzelfde register via een openbaar eindpunt:
 
 ```console
 [...]
@@ -348,66 +360,81 @@ xxxx.westeurope.cloudapp.azure.com. 10  IN A 20.45.122.144
 [...]
 ```
 
-### <a name="registry-operations-over-private-link"></a>Register bewerkingen via een persoonlijke koppeling
+### <a name="registry-operations-over-private-link"></a>Registerbewerkingen via private link
 
-Controleer ook of u register bewerkingen kunt uitvoeren vanaf de virtuele machine in het subnet. Maak een SSH-verbinding met uw virtuele machine en voer [AZ ACR login][az-acr-login] uit om u aan te melden bij het REGI ster. Afhankelijk van uw VM-configuratie moet u mogelijk de volgende opdrachten voor voegsel met behulp van `sudo` .
+Controleer ook of u registerbewerkingen kunt uitvoeren vanaf de virtuele machine in het subnet. Maak een SSH-verbinding met uw virtuele machine en voer [az acr login uit om][az-acr-login] u aan te melden bij het register. Afhankelijk van uw VM-configuratie moet u mogelijk de volgende opdrachten vooraf laten gaan door `sudo` .
 
 ```bash
 az acr login --name $REGISTRY_NAME
 ```
 
-Voer register bewerkingen uit, zoals `docker pull` het ophalen van een voorbeeld installatie kopie uit het REGI ster. Vervang door `hello-world:v1` een afbeelding en code die geschikt is voor uw REGI ster, voorafgegaan door de naam van de aanmeldings server van het REGI ster (alle kleine letters):
+Voer registerbewerkingen uit, zoals `docker pull` om een voorbeeldafbeelding uit het register op te halen. Vervang door een afbeelding en tag die geschikt zijn voor uw register, met het voorvoegsel de naam van de aanmeldingsserver voor het register `hello-world:v1` (in kleine letters):
 
 ```bash
 docker pull myregistry.azurecr.io/hello-world:v1
 ``` 
 
-Docker haalt de installatie kopie op naar de virtuele machine.
+Docker haalt de afbeelding op naar de VM.
 
-## <a name="manage-private-endpoint-connections"></a>Verbindingen met privé-eind punten beheren
+## <a name="manage-private-endpoint-connections"></a>Privé-eindpuntverbindingen beheren
 
-Beheer van de privé-eind punten van een REGI ster met de Azure Portal, of met behulp van opdrachten in de opdracht groep [AZ ACR private-endpoint-Connection][az-acr-private-endpoint-connection] . Bewerkingen omvatten goed keuren, verwijderen, weer geven, afwijzen of Details van de particuliere eindpunt verbindingen van een REGI ster weer gegeven.
+Beheer de privé-eindpuntverbindingen van een register met behulp van de Azure Portal of met behulp van opdrachten in de [opdrachtgroep az acr private-endpoint-connection.][az-acr-private-endpoint-connection] Bewerkingen omvatten het goedkeuren, verwijderen, opsnoemen, afwijzen of het tonen van details van de privé-eindpuntverbindingen van een register.
 
-Als u bijvoorbeeld de verbindingen van het privé-eind punt van een REGI ster wilt weer geven, voert u de opdracht [AZ ACR private-endpoint-Connection List][az-acr-private-endpoint-connection-list] uit. Bijvoorbeeld:
+Voer bijvoorbeeld de opdracht [az acr private-endpoint-connection list][az-acr-private-endpoint-connection-list] uit om de privé-eindpuntverbindingen van een register weer te geven. Bijvoorbeeld:
 
 ```azurecli
 az acr private-endpoint-connection list \
   --registry-name $REGISTRY_NAME 
 ```
 
-Wanneer u een verbinding met een privé-eind punt instelt met behulp van de stappen in dit artikel, accepteert het REGI ster automatisch verbindingen van clients en services met Azure RBAC-machtigingen voor het REGI ster. U kunt het eind punt zo instellen dat hand matige goed keuring van verbindingen is vereist. Zie [een particuliere-eindpunt verbinding beheren](../private-link/manage-private-endpoint.md)voor meer informatie over het goed keuren en afwijzen van privé-eindpunt verbindingen.
-
-## <a name="add-zone-records-for-replicas"></a>Zone records voor replica's toevoegen
-
-Als u in dit artikel een verbinding met een privé-eind punt aan een REGI ster toevoegt, maakt u DNS-records in de `privatelink.azurecr.io` zone voor het REGI ster en de bijbehorende gegevens eindpunten in de regio's waarnaar het REGI ster wordt [gerepliceerd](container-registry-geo-replication.md). 
-
-Als u later een nieuwe replica toevoegt, moet u hand matig een nieuwe zone record toevoegen voor het eind punt van de gegevens in die regio. Als u bijvoorbeeld een replica van *myregistry* op de locatie *northeurope* maakt, voegt u een zone record toe voor `myregistry.northeurope.data.azurecr.io` . Zie [DNS-records maken in de privé zone](#create-dns-records-in-the-private-zone) in dit artikel voor instructies.
-
-## <a name="dns-configuration-options"></a>Opties voor DNS-configuratie
-
-Het persoonlijke eind punt in dit voor beeld is geïntegreerd met een privé-DNS-zone die is gekoppeld aan een basis-virtueel netwerk. Deze instelling maakt gebruik van de door Azure verschafte DNS-service om de open bare FQDN van het REGI ster te herstellen naar het privé-IP-adres in het virtuele netwerk. 
-
-Persoonlijke koppeling ondersteunt extra DNS-configuratie scenario's die gebruikmaken van de privé zone, met inbegrip van aangepaste DNS-oplossingen. Stel dat u een aangepaste DNS-oplossing hebt geïmplementeerd in het virtuele netwerk, of on-premises in een netwerk waarmee u verbinding maakt met het virtuele netwerk met behulp van een VPN-gateway of Azure ExpressRoute. 
-
-Als u in deze scenario's de open bare FQDN van het REGI ster wilt omzetten naar het privé-IP-adres, moet u een doorstuur server voor de Azure DNS-service configureren (168.63.129.16). De exacte configuratie opties en stappen zijn afhankelijk van uw bestaande netwerken en DNS. Zie voor beelden [Azure private endpoint DNS-configuratie](../private-link/private-endpoint-dns.md).
+Wanneer u met behulp van de stappen in dit artikel een verbinding met een privé-eindpunt in stelt, accepteert het register automatisch verbindingen van clients en services met Azure RBAC-machtigingen voor het register. U kunt het eindpunt zo instellen dat verbindingen handmatig moeten worden goedgekeurd. Zie Manage a Private Endpoint Connection (Een privé-eindpuntverbinding beheren) voor meer informatie over het goedkeuren en afwijzen van [privé-eindpuntverbindingen.](../private-link/manage-private-endpoint.md)
 
 > [!IMPORTANT]
-> Als voor hoge Beschik baarheid die u hebt gemaakt in meerdere regio's, wordt u aangeraden een afzonderlijke resource groep te gebruiken in elke regio en het virtuele netwerk en de bijbehorende privé-DNS-zone te plaatsen. Deze configuratie voor komt ook dat onvoorspelbare DNS-omzetting wordt veroorzaakt door het delen van dezelfde privé-DNS-zone.
+> Als u momenteel een privé-eindpunt uit een register verwijdert, moet u mogelijk ook de koppeling van het virtuele netwerk naar de privézone verwijderen. Als de koppeling niet is verwijderd, ziet u mogelijk een fout die vergelijkbaar is met `unresolvable host` .
+
+## <a name="dns-configuration-options"></a>DNS-configuratieopties
+
+Het privé-eindpunt in dit voorbeeld kan worden geïntegreerd met een privé-DNS-zone die is gekoppeld aan een virtueel basisnetwerk. Bij deze installatie wordt de door Azure geleverde DNS-service rechtstreeks gebruikt om de openbare FQDN van het register om te zetten in de privé-IP-adressen in het virtuele netwerk. 
+
+Private Link ondersteunt aanvullende DNS-configuratiescenario's die gebruikmaken van de privézone, inclusief met aangepaste DNS-oplossingen. U kunt bijvoorbeeld een aangepaste DNS-oplossing hebben geïmplementeerd in het virtuele netwerk of on-premises in een netwerk dat u verbindt met het virtuele netwerk met behulp van een VPN-gateway of Azure ExpressRoute. 
+
+Als u in deze scenario's de openbare FQDN van het register wilt oplossen naar het privé-IP-adres, moet u een doorsturende server naar de Azure DNS-service (168.63.129.16) configureren. De exacte configuratieopties en stappen zijn afhankelijk van uw bestaande netwerken en DNS. Zie Azure [Private Endpoint DNS configuration (DNS-configuratie voor Azure-privé-eindpunten) voor voorbeelden.](../private-link/private-endpoint-dns.md)
+
+> [!IMPORTANT]
+> Als u voor hoge beschikbaarheid privé-eindpunten in verschillende regio's hebt gemaakt, raden we u aan een afzonderlijke resourcegroep in elke regio te gebruiken en het virtuele netwerk en de bijbehorende privé-DNS-zone in deze regio te plaatsen. Deze configuratie voorkomt ook onvoorspelbare DNS-resolutie die wordt veroorzaakt door het delen van dezelfde privé-DNS-zone.
+
+### <a name="manually-configure-dns-records"></a>DNS-records handmatig configureren
+
+In sommige scenario's moet u mogelijk handmatig DNS-records configureren in een privézone in plaats van de door Azure geleverde privézone te gebruiken. Zorg ervoor dat u records maakt voor elk van de volgende eindpunten: het register-eindpunt, het gegevens-eindpunt van het register en het gegevens-eindpunt voor eventuele extra regionale replica's. Als niet alle records zijn geconfigureerd, is het register mogelijk niet bereikbaar.
+
+> [!IMPORTANT]
+> Als u later een nieuwe replica toevoegt, moet u handmatig een nieuwe DNS-record toevoegen voor het gegevens-eindpunt in die regio. Als u bijvoorbeeld een replica van *myregistry* maakt op de locatie northeurope, voegt u een record toe voor `myregistry.northeurope.data.azurecr.io` .
+
+De FQDN's en privé-IP-adressen die u nodig hebt om DNS-records te maken, zijn gekoppeld aan de netwerkinterface van het privé-eindpunt. U kunt deze informatie verkrijgen met behulp van de Azure CLI of via de portal:
+
+* Voer met behulp van de Azure CLI de [opdracht az network nic show][az-network-nic-show] uit. Zie get [endpoint IP configuration (EINDPUNT-IP-configuratie) eerder](#get-endpoint-ip-configuration)in dit artikel voor opdrachten.
+
+* Navigeer in de portal naar uw privé-eindpunt en selecteer **DNS-configuratie.**
+
+Nadat u DNS-records hebt gemaakt, moet u ervoor zorgen dat de FQDN's van het register correct worden opgelost naar hun respectieve privé-IP-adressen.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u alle Azure-resources in dezelfde resource groep hebt gemaakt en deze niet meer nodig hebt, kunt u de resources eventueel verwijderen met behulp van één opdracht [AZ Group delete](/cli/azure/group) :
+Als u alle Azure-resources in dezelfde resourcegroep hebt gemaakt en deze niet meer nodig hebt, kunt u de resources eventueel verwijderen met behulp van één [az group delete-opdracht:](/cli/azure/group)
 
 ```azurecli
 az group delete --name $RESOURCE_GROUP
 ```
 
-Als u uw resources in de portal wilt opschonen, gaat u naar de resource groep. Zodra de resource groep is geladen, klikt u op **resource groep verwijderen** om de resource groep en de resources die daar zijn opgeslagen, te verwijderen.
+Als u uw resources in de portal wilt ops schonen, gaat u naar de resourcegroep. Zodra de resourcegroep is geladen, klikt u op **Resourcegroep verwijderen** om de resourcegroep en de resources die daar zijn opgeslagen te verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie de documentatie van [Azure private link](../private-link/private-link-overview.md) voor meer informatie over persoonlijke koppelingen.
-* Zie [regels configureren voor toegang tot een Azure container Registry achter een firewall](container-registry-firewall-access-rules.md)als u toegangs regels voor het REGI ster wilt instellen van achter een firewall van een client.
+* Zie de Private Link voor meer informatie [over](../private-link/private-link-overview.md) Azure Private Link.
+
+* Zie Regels configureren voor toegang tot een Azure-containerregister achter een firewall als u registertoegangsregels wilt [instellen achter een clientfirewall.](container-registry-firewall-access-rules.md)
+
+* [Verbindingsproblemen met het Azure-privé-eindpunt oplossen](../private-link/troubleshoot-private-endpoint-connectivity.md)
 
 <!-- LINKS - external -->
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms
@@ -440,7 +467,7 @@ Als u uw resources in de portal wilt opschonen, gaat u naar de resource groep. Z
 [az-network-private-dns-link-vnet-create]: /cli/azure/network/private-dns/link/vnet#az-network-private-dns-link-vnet-create
 [az-network-private-dns-record-set-a-create]: /cli/azure/network/private-dns/record-set/a#az-network-private-dns-record-set-a-create
 [az-network-private-dns-record-set-a-add-record]: /cli/azure/network/private-dns/record-set/a#az-network-private-dns-record-set-a-add-record
-[az-resource-show]: /cli/azure/resource#az-resource-show
+[az-network-nic-show]: /cli/azure/network/nic#az-network-nic-show
 [quickstart-portal]: container-registry-get-started-portal.md
 [quickstart-cli]: container-registry-get-started-azure-cli.md
 [azure-portal]: https://portal.azure.com

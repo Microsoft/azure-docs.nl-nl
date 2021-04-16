@@ -3,12 +3,12 @@ title: Beveiligde webhooklevering met Azure AD in Azure Event Grid
 description: Beschrijft hoe u gebeurtenissen levert aan HTTPS-eindpunten die worden beveiligd door Azure Active Directory met Azure Event Grid
 ms.topic: how-to
 ms.date: 04/13/2021
-ms.openlocfilehash: 4238087d977fa1102d1dd31d0cc9080d6308c175
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 6a0f9059e17d96d497b425abc9749e69c5ab4d41
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389686"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107575544"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Gebeurtenissen publiceren naar beveiligde Azure Active Directory-eindpunten
 In dit artikel wordt beschreven hoe u Azure Active Directory (Azure AD) gebruikt om de verbinding tussen uw gebeurtenisabonnement en uw **webhook-eindpunt te beveiligen.**  Zie Overzicht van Microsoft [Identity Platform (v2.0)](../active-directory/develop/v2-overview.md)voor een overzicht van Azure AD-toepassingen en service-principals.
@@ -49,9 +49,7 @@ $eventGridSP = Get-AzureADServicePrincipal -Filter ("appId eq '" + $eventGridApp
 if ($eventGridSP -match "Microsoft.EventGrid")
 {
     Write-Host "The Service principal is already defined.`n"
-}
-else
-{
+} else {
     # Create a service principal for the "Azure Event Grid" AAD Application and add it to the role
     Write-Host "Creating the Azure Event Grid service principal"
     $eventGridSP = New-AzureADServicePrincipal -AppId $eventGridAppId
@@ -59,7 +57,7 @@ else
 ```
 
 ### <a name="create-a-role-for-your-application"></a>Een rol maken voor uw toepassing   
-Voer het volgende script uit om een rol te maken voor uw Azure AD-toepassing. In dit voorbeeld is de naam van de rol: **AzureEventGridSecureWebhookSubscriber.** Wijzig de van het PowerShell-script `$myTenantId` om uw Azure AD-tenant-id en met de `$myAzureADApplicationObjectId` object-id van uw Azure AD-toepassing te gebruiken
+Voer het volgende script uit om een rol te maken voor uw Azure AD-toepassing. In dit voorbeeld is de naam van de rol: **AzureEventGridSecureWebhookSubscriber.** Wijzig de van het PowerShell-script `$myTenantId` om uw Azure AD-tenant-id en met `$myAzureADApplicationObjectId` de object-id van uw Azure AD-toepassing te gebruiken
 
 ```PowerShell
 # This is your Webhook's Azure AD Application's ObjectId. 
@@ -94,9 +92,7 @@ Write-Host $myAppRoles
 if ($myAppRoles -match $eventGridRoleName)
 {
     Write-Host "The Azure Event Grid role is already defined.`n"
-}
-else
-{      
+} else {      
     # Add our new role to the Azure AD Application
     Write-Host "Creating the Azure Event Grid role in Azure Ad Application: " $myWebhookAadApplicationObjectId
     $newRole = CreateAppRole -Name $eventGridRoleName -Description "Azure Event Grid Role"
@@ -114,7 +110,7 @@ Write-Host $myAppRoles
 De roltoewijzing moet worden gemaakt in de webhook-Azure AD-app voor de AAD-app of AAD-gebruiker die het gebeurtenisabonnement maakt. Gebruik een van de onderstaande scripts, afhankelijk van of een AAD-app of AAD-gebruiker het gebeurtenisabonnement maakt.
 
 > [!IMPORTANT]
-> Er is een extra toegangscontrole geïntroduceerd als onderdeel van het maken of bijwerken van een gebeurtenisabonnement op 30 maart 2021 om een beveiligingsprobleem aan te pakken. De service-principal van de abonneeclient moet een eigenaar zijn of een rol hebben toegewezen aan de service-principal van de doeltoepassing. Configureer uw AAD-toepassing opnieuw volgens de onderstaande nieuwe instructies.
+> Er is een extra toegangscontrole geïntroduceerd als onderdeel van het maken of bijwerken van een gebeurtenisabonnement op 30 maart 2021 om een beveiligingsprobleem aan te pakken. De service-principal van de abonneeclient moet een eigenaar zijn of een rol hebben toegewezen aan de service-principal van de doeltoepassing. Configureer uw AAD-toepassing opnieuw aan de hand van de onderstaande nieuwe instructies.
 
 #### <a name="create-role-assignment-for-an-event-subscription-aad-app"></a>Roltoewijzing maken voor een AAD-app voor een gebeurtenisabonnement 
 
@@ -154,7 +150,7 @@ Voer de New-AzureADServiceAppRoleAssignment uit om een Event Grid toe te wijzen 
 
 ```powershell
 $eventGridAppRole = $myApp.AppRoles | Where-Object -Property "DisplayName" -eq -Value $eventGridRoleName
-New-AzureADServiceAppRoleAssignment -Id $eventGridAppRole.Id -ResourceId $myServicePrincipal.ObjectId -ObjectId -PrincipalId $eventGridSP.ObjectId
+New-AzureADServiceAppRoleAssignment -Id $eventGridAppRole.Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventGridSP.ObjectId -PrincipalId $eventGridSP.ObjectId
 ```
 
 Voer de volgende opdrachten uit om informatie uit te voeren die u later gaat gebruiken.
@@ -176,7 +172,7 @@ Volg deze stappen bij het maken van een gebeurtenisabonnement:
 1. Selecteer het **tabblad Extra** functies bovenaan de pagina **Gebeurtenisabonnementen** maken.
 1. Ga als volgende **te werk op** het tabblad Extra functies:
     1. Selecteer **AAD-verificatie gebruiken** en configureer de tenant-id en toepassings-id:
-    1. Kopieer de Azure AD-tenant-id uit de uitvoer van het script en voer deze in het **veld Tenant-id van AAD** in.
+    1. Kopieer de Azure AD-tenant-id uit de uitvoer van het script en voer deze in het veld **Tenant-id van AAD** in.
     1. Kopieer de Azure AD-toepassings-id uit de uitvoer van het script en voer deze in het **veld AAD-toepassings-id** in. U kunt ook de URI van de AAD-toepassings-id gebruiken. Zie dit artikel voor meer informatie over de URI van de [toepassings-id.](../app-service/configure-authentication-provider-aad.md)
 
         ![Actie Webhook beveiligen](./media/secure-webhook-delivery/aad-configuration.png)
@@ -186,5 +182,5 @@ Volg deze stappen bij het maken van een gebeurtenisabonnement:
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie Monitor Event Grid message delivery (Levering van berichten controleren) Event Grid informatie over het bewaken [van leveringen van gebeurtenissen.](monitor-event-delivery.md)
-* Zie Voor meer informatie over de verificatiesleutel [Event Grid beveiliging en verificatie.](security-authentication.md)
+* Zie voor meer informatie over de verificatiesleutel [Event Grid beveiliging en verificatie.](security-authentication.md)
 * Zie abonnementschema voor meer Azure Event Grid over het [maken Event Grid abonnement.](subscription-creation-schema.md)

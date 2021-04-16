@@ -1,92 +1,92 @@
 ---
-title: Meer informatie over het verkopen van micro soft verkoop teams en partners
-description: Het micro soft Partner Center-programma voor het verkopen van partners kan u helpen bij het bereiken van een enorme klanten basis en het genereren van nieuwe verkopen.
+title: Overzicht van co-verkoop met Microsoft-verkoopteams en -partners
+description: Het Microsoft Partner Center voor partners kan u helpen een groot klantenbestand te bereiken en nieuwe verkopen te genereren.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.reviewer: stmummer
-ms.date: 3/17/2021
-ms.openlocfilehash: b626012ad825b263e4f837159a067ed1d817d93a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 4/15/2021
+ms.openlocfilehash: dcb77e45f5e1469363eb279626a866c7f719de40
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104609267"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107537542"
 ---
-# <a name="co-sell-with-microsoft-sales-teams-and-partners-overview"></a>Meer informatie over het verkopen van micro soft verkoop teams en partners
+# <a name="co-sell-with-microsoft-sales-teams-and-partners-overview"></a>Overzicht van co-verkoop met Microsoft-verkoopteams en -partners
 
-Samen verkopen met micro soft is gedefinieerd als een samen werkende betrokkenheid tussen micro soft en ons partner ecosysteem. Dit proces omvat het bouwen van de vraag, de verkoop planning, het delen van verkoop leads, het versnellen van partner-to-partner-verkoop mogelijkheden en het leveren van Commerce voor Marketplace-LED.
+Collectieve verkoop met Microsoft wordt gedefinieerd als een samenwerking tussen Microsoft en ons partnerecosysteem. Dit proces omvat het bouwen van vraag, verkoopplanning, het delen van verkoop leads, het versnellen van partner-naar-partner-verkoop en het leveren van door marketplace geleide commerce.
 
-Wanneer u ervoor kiest om een aanbieding te verkopen, kunt u rechtstreeks samen werken met micro soft verkoop teams en micro soft-partners over gezamenlijke verkoop kansen. Hiermee ontgrendelt u de voor delen bij het verkopen via de online winkels voor commerciële Marketplace: Azure Marketplace en Microsoft AppSource.
+Wanneer u ervoor kiest om een aanbieding samen te verkopen, kunt u rechtstreeks met microsoft-verkoopteams en Microsoft-partners samenwerken aan gezamenlijke verkoopkansen. Dit biedt voordelen bij het verkopen via de online winkels van de commerciële marketplace: Azure Marketplace en Microsoft AppSource.
 
-Mogelijkheden voor samen verkoop zijn het resultaat van het [handelen op een lead](./partner-center-portal/commercial-marketplace-get-customer-leads.md), samen werken met micro soft verkoop teams of micro soft-partners om een oplossing te bieden voor een klant behoeften.
+Co-verkoopkansen zijn het resultaat van het handelen in een lead en het samenwerken aan een [lead](./partner-center-portal/commercial-marketplace-get-customer-leads.md)met Microsoft-verkoopteams of Microsoft-partners om een oplossing te bieden voor de behoeften van een klant.
 
-[![Diagram waarin wordt getoond hoe co-selling gebeurt wanneer verkoop leads worden gedeeld, geaccepteerd en gewonnen voor door micro soft beheerde klanten..](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png)](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png#lightbox)
+[![Diagram waarin wordt getoond hoe co-verkoop gebeurt wanneer verkoop leads worden gedeeld, geaccepteerd en gewonnen met door Microsoft beheerde klanten.](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png)](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png#lightbox)
 
-Deze oplossingen (ook wel aanbiedingen genoemd) kunnen software bevatten die is gebouwd met uw intellectuele eigendom (IP) en services die ondersteuning bieden voor micro soft-technologieën.
+Deze oplossingen (ook wel aanbiedingen genoemd) kunnen software bevatten die is gebouwd met uw intellectueel eigendom (IP) en services die ondersteuning bieden voor Microsoft-technologieën.
 
-## <a name="co-sell-opportunities"></a>Verkoop kansen samen verkopen
+## <a name="co-sell-opportunities"></a>Kansen voor co-verkoop
 
-Een mede-verkoop kans is elk type samen werking met micro soft-verkoop teams, micro soft-partners of beide om producten en oplossingen te verkopen die voldoen aan de behoeften van de klant. Enkele van de belangrijkste categorieën van co-Sell zijn:
+Een co-verkoopkans is elk type samenwerking met Microsoft-verkoopteams, Microsoft-partners of beide om producten en oplossingen te verkopen die voldoen aan de behoeften van de klant. Enkele van de belangrijkste categorieën van co-verkoop zijn:
 
-- **Samen verkopen met micro soft-verkoop teams** : werk samen met een of meer verkoop teams van micro soft om actief te voldoen aan de behoeften van de klant. Dit kan het verkopen van uw aanbiedingen, micro soft-aanbiedingen of beide omvatten. U en micro soft verkoop teams kunnen opportuniteiten van klanten identificeren en delen, waarbij uw oplossingen goed kunnen worden aangepast.
-- **Partner-to-partner (P2P)** : werk samen met een andere micro soft-partner om actief een klant probleem op te lossen.
-- **Privé-deal** : deel wat u onafhankelijk samen met micro soft hebt, zodat deze wordt weer gegeven in het micro soft-rapportage systeem voor analyse en prognose.
-- **Oplossings evaluatie (SA)** : werk samen met partners die gecontroleerd zijn door het Business team van de oplossings evaluaties om de technologie behoeften te beoordelen van klanten die gebruikmaken van of planning voor het gebruik van micro soft-technologieën.
+- **Co-sell met Microsoft-verkoopteams:** werk samen met een of meer Microsoft-verkoopteams om actief te voldoen aan de behoeften van de klant. Dit kan bestaan uit het verkopen van uw aanbiedingen, de aanbiedingen van Microsoft of beide. U en Microsoft-verkoopteams kunnen klantmogelijkheden identificeren en delen waarin uw oplossingen geschikt zijn.
+- **Partner to Partner (P2P)** – Werk samen met een andere Microsoft-partner om een klantprobleem actief op te lossen.
+- **Privédeal:** deel waar u onafhankelijk aan werkt met Microsoft, zodat dit wordt weerspiegeld in het Microsoft-rapportagesysteem voor analyse en prognose.
+- **Solution Assessment (SA)** : werk samen met partners die worden gescreend door het bedrijfsteam voor oplossingsevaluaties om de technologische behoeften te beoordelen van klanten die Microsoft-technologieën gebruiken of van plan zijn te gebruiken.
 
-## <a name="co-sell-statuses"></a>Statussen samen verkopen
+## <a name="co-sell-statuses"></a>Statussen van co-verkoop
 
-Dit zijn de niveaus van de co-sell-status die kunnen worden toegepast op een aanbieding.
+Dit zijn de niveaus van de status van co-verkoop die kunnen worden toegepast op een aanbieding.
 
-Mede-verkoop statussen voor Azure:
+Statussen van co-verkoop voor Azure:
 
-- Klaar voor samen verkopen
-- Klaar voor samen verkopen
-- Azure IP-gemotiveerd verkopen
+- Niet gereed voor co-verkoop
+- Gereed voor co-verkoop
+- Azure IP co-sell gecentraliseerd
 
-Mede-verkoop statussen voor zakelijke toepassingen
-- Business Applications gemotiveerd-standaard voor co-verkoop
-- Business Applications luxe gemotiveerd Premium  
+Statussen van co-verkoop voor zakelijke toepassingen
+- Business Applications Standaard voor co-verkoop
+- Business Applications Premium voor co-verkoop  
 
-Zie [vereisten voor co-selling](co-sell-requirements.md)voor meer informatie over de vereisten voor het uitvoeren van deze co-sell-statussen.
+Zie Vereisten voor co-verkoop voor meer informatie over de vereisten voor het bereiken van deze [statussen voor co-verkoop.](co-sell-requirements.md)
 
-## <a name="benefits-of-co-sell-ready-status"></a>Voor delen van de status gereed voor samen verkoop
+## <a name="benefits-of-co-sell-ready-status"></a>Voordelen van de status Gereed voor co-verkoop
 
-Met de status van de kant-en-klare verkoop worden uw oplossingen weer gegeven voor micro soft Sales-teams. Door samen te verkopen met micro soft verkoop teams en micro soft-partners kunt u een enorme community van door micro soft beheerde klanten bereiken om samen te werken aan verkoop kansen die uw bedrijfs groei versnellen.
+De status Gereed voor co-verkoop laat uw oplossingen zien aan Microsoft-verkoopteams. Door samen te verkopen met Microsoft-verkoopteams en Microsoft-partners kunt u een grote community van door Microsoft beheerde klanten bereiken om samen te werken aan verkoopkansen die uw bedrijfsgroei versnellen.
 
-Zie voor bereidingen voor het samen verkopen van kant [-en-klare en gemotiveerd-vereisten](co-sell-requirements.md)voor meer informatie over het samen verkopen van kant-en-klare objecten.
+Zie Co-sell ready and [co-sellcentivized requirements](co-sell-requirements.md)(Vereisten voor co-sell en gecentraliseerde co-sell) voor meer informatie over hoe u de status van co-sell en de Azure IP-status voor co-verkoop bereikt.
 
-## <a name="benefits-of-co-sell-incentivized-status"></a>Voor delen van gemotiveerd status van co-sell
+## <a name="benefits-of-co-sell-incentivized-status"></a>Voordelen van een gecentraliseerde status voor co-verkoop
 
-Gemotiveerd-status van het _samen verkopen_ omvat _Azure IP-gemotiveerd_ en _Business Applications-verkoop gemotiveerd (Standard en Premium)_. Deze statussen incentivize micro soft Sales teams om uw aanbieding te verkopen. Als u deze status wilt behaalt, moet u ook de status van de coselling Ready hebben. Gemotiveerd-status van co-verkoop verdienen alle voor delen van de kant-en-klare status en kan extra prikkels voor micro soft-verkoop teams verdienen en komen in aanmerking voor meer commerciële Marketplace-voor delen.
+De gecentraliseerde status voor co-verkoop omvat _Azure IP Co-sell_ gecentraliseerd en Business Applications gecentraliseerde  _co-verkoop (Standard en Premium)._ Deze statussen stimuleren Microsoft-verkoopteams om uw aanbieding te verkopen. Als u deze status wilt bereiken, moet u ook de status Gereed voor co-verkoop bereiken. De gecentraliseerde status voor co-verkoop verdient alle voordelen van de status Gereed voor co-verkoop en kan extra incentives verdienen voor Microsoft-verkoopteams en in aanmerking komen voor meer voordelen op de commerciële marketplace.
 
-De gemotiveerd-status van Azure IP-co-sell kan worden toegepast op de volgende aanbiedings typen:
+De gecentraliseerde status voor co-verkoop in Azure IP kan worden toegepast op deze aanbiedingstypen:
 
 - Azure Application
-- Azure-container
+- Azure Container
 - Virtuele Azure-machine
-- Module IoT Edge
+- IoT Edge module
 - Software als een dienst (SaaS)
 
-Business Applications status van gemotiveerd (Standard en Premium) kan worden toegepast op de volgende aanbiedings typen:
+Business Applications de status Gecentraliseerde co-verkoop (Standard en Premium) kan worden toegepast op deze aanbiedingstypen:
 
-- Dynamics 365 voor klant betrokkenheid & PowerApps
+- Dynamics 365 for Customer Engagement & PowerApps
 - Dynamics 365 voor bewerkingen
 
-Aanbiedingen die de _gemotiveerd-status van Azure IP-co-verkoop_ verzorgen, profiteren van de volgende commerciële Marketplace:
+Aanbiedingen die een _gecentraliseerde Azure IP-verkoopstatus_ bereiken, profiteren van de volgende voordelen op de commerciële marketplace:
 
-- De kosten voor Marketplace-service zijn gereduceerd van 20% tot 10%. Deze korting is van toepassing op uw IaaS-oplossing (Infrastructure as a Service) of als SaaS (Software as a Service) die wordt verkocht via de commerciële Marketplace. Zie [Commercial Marketplace service-kosten](marketplace-commercial-transaction-capabilities-and-considerations.md#commercial-marketplace-service-fees)voor meer informatie.
-- Cloud Solution Provider (CSP)-partners ontvangen een stimulans van 10% om uw IaaS-oplossing of SaaS-aanbieding te verkopen. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md)voor meer informatie over het CSP-programma.
-- Verkoop van uw aanbieding via Azure Marketplace draagt bij aan de verplichtingen van Azure-verbruik van klanten. In aanmerking komende klanten zien dat de aanbieding is gemarkeerd als **Azure-voor deel dat in aanmerking komt** in azure Portal. Zie voor [delen van Azure-verbruik](azure-consumption-commitment-benefit.md)voor meer informatie.
-- Aanbiedingen waarmee _Azure IP gemotiveerd-_ status kan worden verzorgd of die zijn Inge schreven in het [micro soft Business Applications ISV Connect-programma](business-applications-isv-program.md) met de status gereed voor samen verkoop, ontvangt een badge met **Voorkeurs oplossingen van micro soft** op de aanbiedings pagina van de online winkels. De badge profileert de kwaliteit, prestaties en mogelijkheid van een aanbieding om klant behoeften in een bepaalde branche verticaal of oplossings gebied aan te pakken.
+- De marketplace-servicekosten worden verlaagd van 20% naar 10%. Deze korting is van toepassing op uw IaaS-oplossing (Infrastructure as a Service) of SaaS-oplossing (Software as a Service) die via de commerciële marketplace wordt verkocht. Zie Servicekosten voor [commerciële marketplace voor meer informatie.](marketplace-commercial-transaction-capabilities-and-considerations.md#commercial-marketplace-service-fees)
+- Cloud Solution Provider (CSP) krijgen een incentive van 10% om uw IaaS-oplossing of SaaS-aanbieding te verkopen. Zie voor meer informatie over het CSP-programma [Cloud Solution Provider programma](cloud-solution-providers.md).
+- De verkoop van uw aanbieding via Azure Marketplace dragen bij aan de Toezeggingen voor Azure-verbruik van klanten. In aanmerking komende klanten zien dat de aanbieding is gemarkeerd als **Azure-voordeel dat** in aanmerking komt voor Azure Portal. Zie Azure Consumption [Commitment Benefit voor meer informatie.](azure-consumption-commitment-benefit.md)
+- Aanbiedingen die de status Co-sell van Azure IP krijgen of die zijn ingeschreven bij het [Microsoft Business Applications ISV Connect-programma](business-applications-isv-program.md) met de status Gereed voor co-verkoop, ontvangen een microsoft Preferred _solutions-badge_ op de aanbiedingsvermeldingspagina in de online winkels: [Azure Marketplace](https://azuremarketplace.microsoft.com/) en [AppSource.](https://appsource.microsoft.com/)   Nadat een aanbieding de bijbehorende status heeft bereikt, kan het tot 30 dagen duren voordat de badge van de voorkeursoplossing wordt weergegeven in de online winkel. De badge bevordert de kwaliteit, prestaties en de mogelijkheid van een aanbieding om te voldoen aan de behoeften van de klant in een bepaald verticaal of oplossingsgebied in de branche.
 
-Zie voor [bereidingen](co-sell-requirements.md)voor het samen verkopen van de verkoop en de gemotiveerd-status van de verkoop van de kant-en-klare en verkoop-gemotiveerd voor meer informatie.
+Zie Co-sell ready and [co-sell incentivized requirements](co-sell-requirements.md)(Vereisten voor co-sell en gecentraliseerde co-verkoop) voor meer informatie over het bereiken van een gecentraliseerde status voor co-verkoop.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie voor meer informatie over vereisten voor [bereidingen voor het verkopen van gemotiveerd en vereisten voor gezamenlijk verkoop](co-sell-requirements.md)
-- Als u een aanbieding voor co-sell wilt configureren, raadpleegt u [co-sell configureren voor een commerciële Marketplace-aanbieding](commercial-marketplace-co-sell.md)
-- Zie [de status van co-sell controleren voor een aanbieding om de status van de](co-sell-status.md)co-sell te controleren.
-- Meer informatie over [co-Sells met micro soft](https://partner.microsoft.com/membership/sell-with-microsoft).
+- Zie Co-sell ready and [co-sell incentivized requirements (Gereed voor co-verkoop en gecentraliseerde vereisten voor co-verkoop) voor meer informatie over vereisten](co-sell-requirements.md)
+- Zie Configure [Co-sell for a commercial marketplace offer (Co-sell configureren](commercial-marketplace-co-sell.md) voor een aanbieding op de commerciële marketplace) als u een aanbieding voor co-sell wilt configureren
+- Zie De status van de co-verkoop controleren voor een aanbieding om de status van [de co-verkoop te controleren.](co-sell-status.md)
+- Meer informatie over [co-verkoop met Microsoft](https://partner.microsoft.com/membership/sell-with-microsoft).

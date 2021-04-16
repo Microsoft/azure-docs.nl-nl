@@ -146,7 +146,7 @@
               href: azure-stack-edge-pro-r-configure-vpn-bcdr.md
         - name: Wifi beheren
           href: azure-stack-edge-mini-r-manage-wifi.md
-        - name: Wi-Fi profielen gebruiken
+        - name: Profielen Wi-Fi gebruiken
           href: azure-stack-edge-mini-r-use-wifi-profiles.md
 - name: 'Gedeelde Pro GPU, Pro R, mini-R'
   items:
@@ -164,7 +164,7 @@
               href: azure-stack-edge-gpu-kubernetes-rbac.md
             - name: Kubernetes-werkbelastingen
               href: azure-stack-edge-gpu-kubernetes-workload-management.md
-        - name: Wat is het delen van GPU?
+        - name: Wat is GPU delen?
           href: azure-stack-edge-gpu-sharing.md
         - name: Key Vault-integratie bekijken
           href: azure-stack-edge-gpu-activation-key-vault.md
@@ -198,13 +198,13 @@
                   href: azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md
                 - name: Dynamisch ingerichte stateful-app
                   href: azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md
-                - name: Gedeeld GPU-werk belasting
+                - name: Gedeelde GPU-workload
                   href: azure-stack-edge-gpu-deploy-kubernetes-gpu-sharing.md
             - name: Via IoT Edge
               items:
                 - name: Staatloze app
                   href: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
-                - name: Gedeeld GPU-werk belasting
+                - name: Gedeelde GPU-workload
                   href: azure-stack-edge-gpu-deploy-iot-edge-gpu-sharing.md
                 - name: C#-module ontwikkelen
                   href: azure-stack-edge-gpu-create-iot-edge-module.md
@@ -214,7 +214,7 @@
                   href: azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md
                 - name: Stateless-app implementeren via GitOps
                   href: azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md
-                - name: Azure Arc data controller implementeren
+                - name: Een Azure Arc implementeren
                   href: azure-stack-edge-gpu-deploy-arc-data-controller.md
         - name: Azure Resource Manager (preview) configureren
           items:
@@ -242,25 +242,27 @@
               href: azure-stack-edge-gpu-deploy-virtual-machine-custom-script-extension.md
             - name: VM-installatiekopie maken
               href: azure-stack-edge-gpu-create-virtual-machine-image.md
-            - name: Windows-gegeneraliseerde installatie kopie gebruiken
+            - name: Ge generaliseerde Windows-afbeelding voorbereiden vanaf VHD
               href: azure-stack-edge-gpu-prepare-windows-vhd-generalized-image.md
-            - name: Windows specialistische installatie kopie gebruiken
+            - name: Ge generaliseerde afbeelding voorbereiden met ISO
+              href: azure-stack-edge-gpu-prepare-windows-generalized-image-iso.md
+            - name: Gespecialiseerde Windows-afbeelding gebruiken
               href: azure-stack-edge-gpu-deploy-vm-specialized-image-powershell.md
             - name: 'Ondersteunde VM-grootten, -types'
               href: azure-stack-edge-gpu-virtual-machine-sizes.md
-            - name: Verbinding maken met VM-console
+            - name: Verbinding maken met de VM-console
               href: azure-stack-edge-gpu-connect-virtual-machine-console.md
-            - name: Netwerk interfaces beheren
+            - name: Netwerkinterfaces beheren
               href: azure-stack-edge-gpu-manage-virtual-machine-network-interfaces-portal.md
             - name: Schijven beheren
               href: azure-stack-edge-gpu-manage-virtual-machine-disks-portal.md
             - name: VM-grootten beheren
               href: azure-stack-edge-gpu-manage-virtual-machine-resize-portal.md
-            - name: VM-labels beheren
+            - name: VM-tags beheren
               href: azure-stack-edge-gpu-manage-virtual-machine-tags-powershell.md
             - name: Virtuele switch maken
               href: azure-stack-edge-gpu-create-virtual-switch-powershell.md
-            - name: Back-ups maken van VM-schijven
+            - name: Back-up maken van VM-schijven
               href: azure-stack-edge-gpu-back-up-virtual-machine-disks.md
         - name: Certificaten beheren
           items:
@@ -298,7 +300,7 @@
               href: azure-stack-edge-gpu-connect-powershell-interface.md
             - name: Updates toepassen
               href: azure-stack-edge-gpu-install-update.md
-            - name: 'Opnieuw instellen, apparaat opnieuw activeren'
+            - name: 'Apparaat opnieuw instellen, opnieuw activeren'
               href: azure-stack-edge-reset-reactivate-device.md
             - name: Apparaat retourneren
               href: azure-stack-edge-return-device.md
@@ -312,7 +314,7 @@
           items:
             - name: Metrische grafieken gebruiken
               href: azure-stack-edge-monitor.md
-            - name: Waarschuwingen voor gebeurtenis apparaten beheren
+            - name: Waarschuwingen voor apparaatgebeurtenissen beheren
               href: azure-stack-edge-gpu-manage-device-event-alert-notifications.md
             - name: Kubernetes-dashboard gebruiken
               href: azure-stack-edge-gpu-monitor-kubernetes-dashboard.md
@@ -330,7 +332,7 @@
               href: azure-stack-edge-contact-microsoft-support.md
     - name: Gedeelde releaseopmerkingen
       items:
-        - name: 2103-actueel
+        - name: 2103 - Actueel
           href: azure-stack-edge-gpu-2103-release-notes.md
         - name: 2101
           href: azure-stack-edge-gpu-2101-release-notes.md
@@ -422,7 +424,7 @@
           href: azure-stack-edge-migrate-fpga-gpu.md
     - name: Opmerkingen bij de release
       items:
-        - name: 2101-actueel
+        - name: 2101 - Actueel
           href: azure-stack-edge-2101-release-notes.md
         - name: 2007
           href: ../databox-gateway/data-box-gateway-2007-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json

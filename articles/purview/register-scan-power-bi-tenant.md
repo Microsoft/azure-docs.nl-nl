@@ -1,118 +1,116 @@
 ---
-title: Een Power BI-Tenant registreren en scannen (preview)
-description: Meer informatie over hoe u de Azure controle sfeer liggen-Portal kunt gebruiken om een Power BI-Tenant te registreren en te scannen.
+title: Een tenant voor een Power BI registreren en scannen (preview)
+description: Meer informatie over het gebruik van de Azure Purview-portal voor het registreren en scannen van een Power BI tenant.
 author: chanuengg
 ms.author: csugunan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 2ecc5df9db51bb6c923b9e0f47163e492bd76cfa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6646f131488a5ae4aa9b20fe614d7ebb46133444
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101695738"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538859"
 ---
-# <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
+# <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een tenant voor een Power BI registreren en scannen (preview)
 
-In dit artikel wordt beschreven hoe u Azure controle sfeer liggen Portal kunt gebruiken om een Power BI-Tenant te registreren en te scannen.
+In dit artikel wordt beschreven hoe u de Azure Purview-portal gebruikt om een tenant Power BI scannen.
 
 > [!Note]
-> Als het controle sfeer liggen-exemplaar en de Power BI Tenant zich in dezelfde Azure-Tenant bevinden, kunt u alleen beheerde identiteits verificatie (MSI) gebruiken om een scan van een Power BI Tenant in te stellen. 
+> Als het Purview-exemplaar en de Power BI-tenant zich in dezelfde Azure-tenant, kunt u alleen MSI-verificatie (Beheerde identiteit) gebruiken om een scan van een Power BI tenant in te stellen. 
 
-## <a name="create-a-security-group-for-permissions"></a>Een beveiligings groep maken voor machtigingen
+## <a name="create-a-security-group-for-permissions"></a>Een beveiligingsgroep maken voor machtigingen
 
-Als u verificatie wilt instellen, maakt u een beveiligings groep en voegt u de beheerde identiteit controle sfeer liggen toe.
+Als u verificatie wilt instellen, maakt u een beveiligingsgroep en voegt u de beheerde identiteit Purview hieraan toe.
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**.
-1. Maak een nieuwe beveiligings groep in uw Azure Active Directory door te volgen [een basis groep te maken en leden toe te voegen met behulp van Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+1. Zoek in [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**.
+1. Maak een nieuwe beveiligingsgroep in uw Azure Active Directory door Een basisgroep maken te volgen en leden toe te voegen [met behulp van Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
     > [!Tip]
-    > U kunt deze stap overs Laan als u al een beveiligings groep hebt die u wilt gebruiken.
+    > U kunt deze stap overslaan als u al een beveiligingsgroep hebt die u wilt gebruiken.
 
-1. Selecteer **beveiliging** als het **groeps type**.
+1. Selecteer **Beveiliging** als **groepstype.**
 
-    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/security-group.png" alt-text="Type beveiligings groep":::
+    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/security-group.png" alt-text="Type beveiligingsgroep":::
 
-1. Voeg uw beheerde controle sfeer liggen-identiteit toe aan deze beveiligings groep. Selecteer **leden** en selecteer vervolgens **+ leden toevoegen**.
+1. Voeg uw door Purview beheerde identiteit toe aan deze beveiligingsgroep. Selecteer **Leden** en selecteer vervolgens **+ Leden toevoegen.**
 
-    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/add-group-member.png" alt-text="Voeg het beheerde exemplaar van de catalogus toe aan de groep.":::
+    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/add-group-member.png" alt-text="Voeg het beheerde exemplaar van de catalogus toe aan groep.":::
 
-1. Zoek uw beheerde identiteit voor controle sfeer liggen en selecteer deze.
+1. Zoek uw beheerde identiteit purview en selecteer deze.
 
-    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/add-catalog-to-group-by-search.png" alt-text="Catalogus toevoegen door ernaar te zoeken":::
+    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/add-catalog-to-group-by-search.png" alt-text="Catalogus toevoegen door er naar te zoeken":::
 
-    Er wordt een melding weer gegeven dat u ziet dat deze is toegevoegd.
+    Als het goed is, ziet u een melding dat deze is toegevoegd.
 
-    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/success-add-catalog-msi.png" alt-text="MSI-bestand voor catalogus toevoegen":::
+    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/success-add-catalog-msi.png" alt-text="Catalogus-MSI toevoegen geslaagd":::
 
-## <a name="associate-the-security-group-with-the-tenant"></a>De beveiligings groep koppelen aan de Tenant
+## <a name="associate-the-security-group-with-the-tenant"></a>De beveiligingsgroep koppelen aan de tenant
 
-1. Meld u aan bij de [Beheer Portal van Power bi](https://app.powerbi.com/admin-portal/tenantSettings).
-1. Selecteer de pagina **Tenant instellingen** .
+1. Meld u aan [bij Power BI beheerportal.](https://app.powerbi.com/admin-portal/tenantSettings)
+1. Selecteer de **pagina Tenantinstellingen.**
 
     > [!Important]
-    > U moet een Power BI beheerder zijn om de pagina met Tenant instellingen weer te geven.
+    > U moet een beheerder Power BI om de pagina tenantinstellingen te kunnen zien.
 
-1. **Beheer-API-instellingen** selecteren service-  >  **principals kunnen alleen-lezen Power bi beheer-api's (preview) worden gebruikt**.
-1. Selecteer **specifieke beveiligings groepen**.
+1. Selecteer **Beheer-API-instellingen**  >  **Service-principals toestaan om alleen-lezen Power BI beheerders-API's (preview) te gebruiken.**
+1. Selecteer **Specifieke beveiligingsgroepen.**
 
-    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Afbeelding die laat zien hoe service-principals machtigingen voor alleen-lezen Power BI-beheer-API kunnen krijgen":::
+    :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Afbeelding waarin wordt getoond hoe service-principals alleen-lezen kunnen krijgen Power BI api-machtigingen voor beheerders":::
 
     > [!Caution]
-    > Wanneer u de beveiligings groep die u hebt gemaakt (met uw controle sfeer liggen beheerde identiteit als lid) toestaat om alleen-lezen Power BI-beheer-Api's te gebruiken, kunt u de meta gegevens (bijvoorbeeld dash board-en rapport namen, eigen aren, beschrijvingen, enzovoort) voor al uw Power BI artefacten in deze Tenant. Nadat de meta gegevens zijn opgehaald naar de Azure-controle sfeer liggen, worden de machtigingen van controle sfeer liggen, niet Power BI machtigingen, bepalen wie de meta gegevens kunnen zien.
+    > Wanneer u toestaat dat de beveiligingsgroep die u hebt gemaakt (die uw door Purview beheerde identiteit als lid heeft) alleen-lezen Power BI-beheer-API's gebruikt, geeft u deze ook toegang tot de metagegevens (zoals dashboard- en rapportnamen, eigenaren, beschrijvingen enzovoort) voor al uw Power BI-artefacten in deze tenant. Nadat de metagegevens zijn binnengehaald in Azure Purview, bepalen de machtigingen van Purview, niet Power BI machtigingen, wie die metagegevens kan zien.
 
     > [!Note]
-    > U kunt de beveiligings groep verwijderen uit uw instellingen voor ontwikkel aars, maar de eerder uitgepakte meta gegevens worden niet verwijderd uit het controle sfeer liggen-account. U kunt deze afzonderlijk verwijderen, indien gewenst.
+    > U kunt de beveiligingsgroep verwijderen uit uw instellingen voor ontwikkelaars, maar de eerder geëxtraheerde metagegevens worden niet verwijderd uit het Purview-account. U kunt deze indien nodig afzonderlijk verwijderen.
 
 ## <a name="register-your-power-bi-and-set-up-a-scan"></a>Uw Power BI registreren en een scan instellen
 
-Nu u de controle sfeer liggen beheerde identiteits machtigingen hebt gekregen om verbinding te maken met de beheer-API van uw Power BI-Tenant, kunt u uw Scan instellen vanuit Azure controle sfeer liggen Studio.
+Nu u de machtigingen voor Beheerde identiteit voor Purview hebt opgegeven om verbinding te maken met de beheer-API van uw Power BI-tenant, kunt u de scan instellen vanuit Azure Purview Studio.
 
-Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL 
+1. Selecteer het **pictogram Beheercentrum.**
 
-1. Selecteer het pictogram van het **beheer centrum** .
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/management-center.png" alt-text="Pictogram beheercentrum.":::
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/management-center.png" alt-text="Pictogram beheer centrum.":::
+1. Selecteer vervolgens **+ Nieuw** in **Gegevensbronnen.**
 
-1. Selecteer vervolgens **+ Nieuw** op **gegevens bronnen**.
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/data-sources.png" alt-text="Afbeelding van de knop Nieuwe gegevensbron":::
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/data-sources.png" alt-text="Afbeelding van de knop nieuwe gegevens bron":::
+    Selecteer **Power BI** als uw gegevensbron.
 
-    Selecteer **Power bi** als uw gegevens bron.
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/select-power-bi-data-source.png" alt-text="Afbeelding met de lijst met gegevensbronnen die u kunt kiezen":::
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/select-power-bi-data-source.png" alt-text="Afbeelding van de lijst met beschik bare gegevens bronnen":::
+3. Geef uw Power BI een gebruiksvriendelijke naam.
 
-3. Geef uw Power BI-exemplaar een beschrijvende naam.
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-friendly-name.png" alt-text="Afbeelding van Power BI naam die gebruiksvriendelijk is voor de gegevensbron":::
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-friendly-name.png" alt-text="Afbeelding van Power BI gegevens bron-beschrijvende naam":::
+    De naam moet tussen de 3 en 63 tekens lang zijn en mag alleen letters, cijfers, onderstrepingstekens en afbreekstreepingstekens bevatten.  Spaties zijn niet toegestaan.
 
-    De naam moet tussen de 3-63 tekens lang zijn en mag alleen letters, cijfers, onderstrepings tekens en afbreek streepjes bevatten.  Spaties zijn niet toegestaan.
+    Standaard vindt het systeem de Power BI tenant die in hetzelfde Azure-abonnement bestaat.
 
-    Standaard vindt het systeem de Power BI Tenant die zich in hetzelfde Azure-abonnement bevindt.
-
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-datasource-registered.png" alt-text="Power BI gegevens bron geregistreerd":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-datasource-registered.png" alt-text="Power BI geregistreerde gegevensbron":::
 
     > [!Note]
-    > Voor Power BI is registratie van gegevens bronnen en scans alleen toegestaan voor één exemplaar.
+    > Voor Power BI is registratie en scan van gegevensbron toegestaan voor slechts één exemplaar.
 
 
-4. Geef een naam op voor de scan. Selecteer vervolgens de optie om de persoonlijke werk ruimten op te nemen of uit te sluiten. U ziet dat de enige verificatie methode die wordt ondersteund, **beheerde identiteit** is.
+4. Geef een naam op voor de scan. Selecteer vervolgens de optie om de persoonlijke werkruimten op te nemen of uit te sluiten. U ziet dat beheerde identiteit de enige **ondersteunde verificatiemethode is.**
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Afbeelding van installatie van Power BI scanner":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Afbeelding van Power BI scaninstallatie":::
 
     > [!Note]
-    > * Als u de configuratie van een scan wijzigt om een persoonlijke werk ruimte op te nemen of uit te sluiten, wordt een volledige scan van de Power bi-bron geactiveerd
-    > * De scan naam moet tussen de 3-63 tekens lang zijn en mag alleen letters, cijfers, onderstrepings tekens en afbreek streepjes bevatten. Spaties zijn niet toegestaan.
+    > * Als u de configuratie van een scan om een persoonlijke werkruimte op te nemen of uit te sluiten overschakelt, wordt een volledige scan van de PowerBI-bron uitgevoerd
+    > * De scannaam moet tussen de 3 en 63 tekens lang zijn en mag alleen letters, cijfers, onderstrepingstekens en afbreekstreepingstekens bevatten. Spaties zijn niet toegestaan.
 
-5. Stel een scan trigger in. Uw opties zijn **eenmaal**, **elke 7 dagen** en **om de 30 dagen**.
+5. Stel een scantrigger in. Uw opties zijn **Eenmaal,** **Om de 7 dagen** en Elke **30 dagen.**
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/scan-trigger.png" alt-text="Afbeelding van trigger voor scannen":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/scan-trigger.png" alt-text="Afbeelding van scantrigger":::
 
-6. Bij **nieuwe scan controleren** selecteert u **opslaan en uitvoeren** om de scan te starten.
+6. Selecteer **in Nieuwe scan controleren** de optie Opslaan en uitvoeren **om** de scan te starten.
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Power BI scherm afbeelding opslaan en uitvoeren":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Een schermafbeelding opslaan Power BI uitvoeren":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

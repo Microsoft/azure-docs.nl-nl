@@ -1,17 +1,19 @@
 ---
-title: 'Snelstartgids: een beheer groep maken met python'
-description: In deze Quick Start gebruikt u python om een beheer groep te maken om uw resources in een resource hiërarchie in te delen.
+title: 'Quickstart: Een beheergroep maken met Python'
+description: In deze quickstart gebruikt u Python om een beheergroep te maken om uw resources te organiseren in een resourcehiërarchie.
 ms.date: 01/29/2021
 ms.topic: quickstart
-ms.custom: devx-track-python
-ms.openlocfilehash: e3c55cc14a8ac980318fd0de9485a3e0ca31b582
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom:
+- devx-track-python
+- mode-api
+ms.openlocfilehash: 9aec47e067ca62f4902df2dafb6a5d6d50a26d0e
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100101757"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533162"
 ---
-# <a name="quickstart-create-a-management-group-with-python"></a>Snelstartgids: een beheer groep maken met python
+# <a name="quickstart-create-a-management-group-with-python"></a>Quickstart: Een beheergroep maken met Python
 
 Managementgroepen zijn containers die u helpen bij het beheren van toegang, beleid en naleving voor meerdere abonnementen. Maak deze containers om een doeltreffende en efficiënte hiërarchie te maken die kan worden gebruikt met [Azure Policy](../policy/overview.md) en [op rollen gebaseerd toegangsbeheer van Azure](../../role-based-access-control/overview.md). Zie [Uw resources indelen met Azure-beheergroepen](overview.md) voor meer informatie over beheergroepen.
 
@@ -27,7 +29,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 ## <a name="add-the-resource-graph-library"></a>De Resource Graph-bibliotheek toevoegen
 
-Als u python wilt inschakelen om beheer groepen te beheren, moet u de bibliotheek toevoegen. Deze bibliotheek werkt waar Python kan worden gebruikt, inclusief [bash in Windows 10](/windows/wsl/install-win10) of lokaal geïnstalleerd.
+De bibliotheek moet worden toegevoegd om Python in staat te stellen beheergroepen te beheren. Deze bibliotheek werkt waar Python kan worden gebruikt, inclusief [bash in Windows 10](/windows/wsl/install-win10) of lokaal geïnstalleerd.
 
 1. Controleer of de meest recente versie van Python is geïnstalleerd (minimaal **3.8**). Als deze nog niet is geïnstalleerd, downloadt u deze op [Python.org](https://www.python.org/downloads/).
 
@@ -42,7 +44,7 @@ Als u python wilt inschakelen om beheer groepen te beheren, moet u de bibliothee
    az login
    ```
 
-1. Installeer de vereiste bibliotheken voor beheer groepen in de gewenste python-omgeving:
+1. Installeer in de Python-omgeving naar keuze de vereiste bibliotheken voor beheergroepen:
 
    ```bash
    # Add the management groups library for Python
@@ -58,7 +60,7 @@ Als u python wilt inschakelen om beheer groepen te beheren, moet u de bibliothee
    > [!NOTE]
    > Als Python is geïnstalleerd voor alle gebruikers, moet deze opdracht worden uitgevoerd vanaf een console met verhoogde bevoegdheden.
 
-1. Controleer of de bibliotheken zijn geïnstalleerd. `azure-mgmt-managementgroups`**0.2.0** of hoger moet `azure-mgmt-resource` **9.0.0** of hoger zijn, en `azure-cli-core` moet **2.5.0** of hoger zijn.
+1. Controleer of de bibliotheken zijn geïnstalleerd. `azure-mgmt-managementgroups` moet **0.2.0** of hoger zijn, `azure-mgmt-resource` **moet 9.0.0** of hoger zijn en `azure-cli-core` moet **2.5.0** of hoger zijn.
 
    ```bash
    # Check each installed library
@@ -67,7 +69,7 @@ Als u python wilt inschakelen om beheer groepen te beheren, moet u de bibliothee
 
 ## <a name="create-the-management-group"></a>De beheergroep maken
 
-1. Maak het python-script en sla de volgende bron op als `mgCreate.py` :
+1. Maak het Python-script en sla de volgende bron op als `mgCreate.py` :
 
    ```python
    # Import management group classes
@@ -102,7 +104,7 @@ Als u python wilt inschakelen om beheer groepen te beheren, moet u de bibliothee
    createmanagementgroup("MyNewMG")
    ```
 
-1. Verifieer met Azure CLI met `az login` .
+1. Verifieren met Azure CLI met `az login` .
 
 1. Voer de volgende opdracht in de terminal in:
 
@@ -110,7 +112,7 @@ Als u python wilt inschakelen om beheer groepen te beheren, moet u de bibliothee
    py mgCreate.py
    ```
 
-Het resultaat van het maken van de beheer groep wordt uitgevoerd naar de-console als een- `LROPoller` object.
+Het resultaat van het maken van de beheergroep is uitvoer naar de console als `LROPoller` een -object.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

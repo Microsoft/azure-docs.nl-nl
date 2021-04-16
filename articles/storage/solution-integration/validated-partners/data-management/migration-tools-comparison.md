@@ -1,151 +1,151 @@
 ---
-title: Azure Storage-migratie hulpprogramma's vergelijking-ongestructureerde gegevens
-description: Basis functionaliteit en vergelijking tussen hulpprogram ma's die worden gebruikt voor de migratie van ongestructureerde gegevens
+title: Azure Storage vergelijking van hulpprogramma's voor migratie - Niet-gestructureerde gegevens
+description: Basisfunctionaliteit en vergelijking tussen hulpprogramma's die worden gebruikt voor de migratie van ongestructureerde gegevens
 author: dukicn
 ms.author: nikoduki
 ms.topic: conceptual
 ms.date: 03/31/2021
 ms.service: storage
 ms.subservice: partner
-ms.openlocfilehash: 15daeb0e6bf320a0727d8e6ea502063a30e67ad0
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: 862feace6aab4f49ad3482c4ccd6510669c876a1
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106231470"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107576530"
 ---
-# <a name="comparison-matrix"></a>Vergelijkings matrix
+# <a name="comparison-matrix"></a>Vergelijkingsmatrix
 
-De volgende vergelijkings matrix bevat de basis functionaliteit van verschillende hulpprogram ma's die kunnen worden gebruikt voor de migratie van ongestructureerde gegevens. 
+De volgende vergelijkingsmatrix toont de basisfunctionaliteit van verschillende hulpprogramma's die kunnen worden gebruikt voor de migratie van ongestructureerde gegevens. 
 
 ## <a name="supported-azure-services"></a>Ondersteunde Azure-services
 
 |    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Data Dynamics](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
 |--- |-----------------------------------------|--------------------------------------|---------------------------------------------------|---------------------------------------|
-|  **Oplossings naam**  | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview)              | [Mobiliteit en migratie van gegevens](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
-| **Ondersteuning voor Azure Files (alle lagen)** | Ja                          | Ja                      | Ja            | Ja                            |
-| **Ondersteuning voor Azure NetApp Files**      | Nee                           | Ja                      | Ja            | Ja                            |
-| **Hot/cool-ondersteuning van Azure Blob**   | Nee                           | Ja (via NFS preview)    | Ja            | Ja                            |
-| **Ondersteuning voor Azure Blob-archief tier** | Nee                           | Nee                       | Nee             | Ja (als migratie bestemming) |
-| **Ondersteuning voor Azure Data Lake Storage** | Nee                           | Nee                       | Nee             | Nee                             |
-| **Ondersteunde bronnen**      | Windows Server 2012 R2 en up | NAS-& Cloud bestands systemen | Elke NAS en S3 | NAS, blob, S3                  |
+|  **Naam van de oplossing**  | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview)              | [Gegevensmobiliteit en migratie](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
+| **Azure Files ondersteuning (alle lagen)** | Ja                          | Ja                      | Ja            | Ja                            |
+| **Azure NetApp Files ondersteuning**      | Nee                           | Ja                      | Ja            | Ja                            |
+| **Ondersteuning voor Azure Blob Hot/Cool**   | No                           | Ja (via NFS-preview)    | Ja            | Ja                            |
+| **Ondersteuning voor Azure Blob Archive-laag** | Nee                           | Nee                       | Nee             | Ja (als migratiebestemming) |
+| **Azure Data Lake Storage ondersteuning** | Nee                           | Nee                       | Nee             | Nee                             |
+| **Ondersteunde bronnen**      | Windows Server 2012 R2 en hoger | NAS & cloudbestandssystemen | NaS en S3 | NAS, Blob, S3                  |
 
 ## <a name="supported-protocols-source--destination"></a>Ondersteunde protocollen (bron/doel)
 
-|    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Data Dynamics](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
+|    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Gegevensdynamica](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
 |--- |-----------------------------------------|--------------------------------------|---------------------------------------------------|---------------------------------------|
-| **Oplossings naam**   | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Mobiliteit en migratie van gegevens](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
+| **Naam van de oplossing**   | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Gegevensmobiliteit en migratie](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
 | **SMB 2.1**       | Ja | Ja | Ja | Ja |
 | **SMB 3.0**       | Ja | Ja | Ja | Ja |
-| **SMB 3,1**       | Ja | Ja | Ja | Ja |
+| **SMB 3.1**       | Ja | Ja | Ja | Ja |
 | **NFS v3**        | Nee  | Ja | Ja | Ja |
-| **NFS v 4.1**      | Nee  | Ja | Nee  | Ja |
-| **BLOB-REST API** | Nee  | Nee  | Ja | Ja |
+| **NFS v4.1**      | Nee  | Ja | Nee  | Ja |
+| **Blob-REST API** | Nee  | Nee  | Ja | Ja |
 | **S3**            | Nee  | Ja | Ja | Ja |
 
 ## <a name="extended-features"></a>Uitgebreide functies
 
-|    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Data Dynamics](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
+|    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Gegevensdynamica](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
 |--- |-----------------------------------------|--------------------------------------|---------------------------------------------------|---------------------------------------|
-|  **Oplossings naam**  | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Mobiliteit en migratie van gegevens](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
-| **UID/SID opnieuw toewijzen**                   | Nee  | Ja                        | Ja | Nee                             |
-| **Protocol-ACL opnieuw toewijzen**                | Nee  | Nee                         | Nee  | Nee                             |
+|  **Naam van de oplossing**  | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Gegevensmobiliteit en migratie](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
+| **UID/SID opnieuw toe temappen**                   | Nee  | Ja                        | Ja | Nee                             |
+| **Protocol-ACL opnieuw toe temappen**                | Nee  | Nee                         | Nee  | Nee                             |
 | **DFS-ondersteuning**                           | Ja | Ja                        | Ja | Ja                            |
 | **Ondersteuning voor beperking**                    | Ja | Ja                        | Ja | Ja                            |
-| **Uitsluitingen van bestands patronen**               | Nee  | Ja                        | Ja | Ja (met kopieer functionaliteit) |
-| **Ondersteuning voor selectieve bestands kenmerken** | Ja | Ja                        | Ja | Ja (voor uitgebreide kenmerken)  |
-| **Doorgifte verwijderen**                   | Ja | Ja                        | Ja | Ja                            |
-| **NTFS-koppelingen volgen**                 | Nee  | Ja                        | Nee  | Ja                            |
-| **Eigenaar van SMB-eigenaar en-groep overschrijven**    | Ja | Ja                        | Ja | Nee                             |
-| **Keten van Bewaar rapportage**            | Nee  | Ja                        | Nee  | Ja                            |
-| **Ondersteuning voor alternatieve gegevens stromen**    | Nee  | Ja                        | Ja | Nee                             |
+| **Uitsluitingen van bestandspatronen**               | Nee  | Ja                        | Ja | Ja (met kopieerfunctionaliteit) |
+| **Ondersteuning voor selectieve bestandskenmerken** | Ja | Ja                        | Ja | Ja (voor uitgebreide kenmerken)  |
+| **Door propagaties verwijderen**                   | Ja | Ja                        | Ja | Ja                            |
+| **NTFS-verbinding volgen**                 | Nee  | Ja                        | Nee  | Ja                            |
+| **SMB-eigenaar en groepseigenaar overschrijven**    | Ja | Ja                        | Ja | Nee                             |
+| **Rapportage van de keten van bewaring**            | Nee  | Ja                        | Nee  | Ja                            |
+| **Ondersteuning voor alternatieve gegevensstromen**    | Nee  | Ja                        | Ja | Nee                             |
 | **Planning voor migratie**              | Nee  | Ja                        | Ja | Ja                            |
-| **ACL behouden**                        | Nee  | Ja                        | Ja | Ja                            |
-| **Ondersteuning voor DACL**                          | Ja | Ja                        | Ja | Ja                            |
+| **ACL met behoud**                        | Nee  | Ja                        | Ja | Ja                            |
+| **DACL-ondersteuning**                          | Ja | Ja                        | Ja | Ja                            |
 | **SACL-ondersteuning**                          | Ja | Ja                        | Ja | Nee                             |
-| **Toegangs tijd behouden**                | Ja | Ja                        | Ja | Ja                            |
+| **Toegangstijd behouden**                | Ja | Ja                        | Ja | Ja                            |
 | **Gewijzigde tijd behouden**              | Ja | Ja                        | Ja | Ja                            |
-| **Aanmaak tijd behouden**              | Nee  | Ja                        | Ja | Ja                            |
-| **Ondersteuning voor Azure Data Box**       | Ja | Ja                        | Nee  | Nee                             |
-| **Migratie van moment opnamen**                | Nee  | Handmatig                     | Ja | Nee                             |
-| **Ondersteuning voor symbolische koppelingen**                 | Nee  | Ja                        | Nee  | Ja                            |
-| **Ondersteuning voor vaste koppelingen**                     | Nee  | Gemigreerd als afzonderlijke bestanden | Ja | Ja                            |
-| **Ondersteuning voor open/vergrendelde bestanden**       | Ja | Ja                        | Ja | Ja                            |
+| **Aanmaaktijd behouden**              | Nee  | Ja                        | Ja | Ja                            |
+| **Azure Data Box ondersteuning**       | Ja | Ja                        | Nee  | Nee                             |
+| **Migratie van momentopnamen**                | No  | Handmatig                     | Ja | Nee                             |
+| **Ondersteuning voor symbolische koppeling**                 | Nee  | Ja                        | Nee  | Ja                            |
+| **Ondersteuning voor harde koppeling**                     | No  | Gemigreerd als afzonderlijke bestanden | Ja | Ja                            |
+| **Ondersteuning voor geopende/vergrendelde bestanden**       | Ja | Ja                        | Ja | Ja                            |
 | **Incrementele migratie**                 | Ja | Ja                        | Ja | Ja                            |
-| **Ondersteuning voor overschakelen**                    | Nee  | Ja                        | Ja | Nee (alleen hand matig)               |
+| **Ondersteuning voor overstappen**                    | Nee  | Ja                        | Ja | Nee (alleen handmatig)               |
 | **[Andere functies](#other-features)**         | [Koppeling](#azure-file-sync)| [Koppeling](#dobimigrate) | [Koppeling](#data-mobility-and-migration) | [Koppeling](#intelligent-data-management)                |
 
-## <a name="assessment-and-reporting"></a>Beoordeling en rapportage
+## <a name="assessment-and-reporting"></a>Evaluatie en rapportage
 
-|    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Data Dynamics](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
+|    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Gegevensdynamica](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
 |--- |-----------------------------------------|--------------------------------------|---------------------------------------------------|---------------------------------------|
-| **Oplossings naam**   | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Mobiliteit en migratie van gegevens](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
+| **Naam van de oplossing**   | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Gegevensmobiliteit en migratie](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
 | **Capaciteit**                        | Nee      | Ja | Ja | Ja            |
-| **aantal bestanden/mappen**            | Nee      | Ja | Ja | Ja            |
-| **Leeftijds verdeling in de loop van de tijd**      | Nee      | Ja | Ja | Ja            |
-| **Toegangs tijd**                     | Nee      | Ja | Ja | Ja            |
-| **Tijdstip gewijzigd**                   | Nee      | Ja | Ja | Ja            |
-| **Aanmaak tijd**                   | Nee      | Ja | Ja | Ja (alleen SMB) |
-| **Status van rapport per bestands/object** | Gedeeltelijk | Ja | Ja | Ja            |
+| **Aantal bestanden/mappen**            | Nee      | Ja | Ja | Ja            |
+| **Leeftijdsdistributie in de tijd**      | Nee      | Ja | Ja | Ja            |
+| **Toegangstijd**                     | Nee      | Ja | Ja | Ja            |
+| **Wijzigingstijd**                   | Nee      | Ja | Ja | Ja            |
+| **Aanmaaktijd**                   | Nee      | Ja | Ja | Ja            |
+| **Status per bestand/objectrapport** | Gedeeltelijk | Ja | Ja | Ja            |
 
 ## <a name="licensing"></a>Licentieverlening
 
 |    | [Microsoft](https://www.microsoft.com/) | [Datadobi](https://www.datadobi.com) | [Data Dynamics](https://www.datadynamicsinc.com/) | [Komprise](https://www.komprise.com/) |
 |--- |-----------------------------------------|--------------------------------------|---------------------------------------------------|---------------------------------------|
-| **Oplossings naam**   | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Mobiliteit en migratie van gegevens](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
-| **BYOL (Bring Your Own License)**             | n.v.t. | Ja | Ja | Ja |
-| **Azure-toezeg ging** | Ja   | Ja | Ja | Ja |
+| **Naam van de oplossing**   | [Azure File Sync](/azure/storage/files/storage-sync-files-deployment-guide) | [DobiMigrate](https://azuremarketplace.microsoft.com/marketplace/apps/datadobi1602192408529.datadobi-dobimigrate?tab=Overview )              | [Gegevensmobiliteit en migratie](https://azuremarketplace.microsoft.com/marketplace/apps/datadynamicsinc1581991927942.vm_4?tab=PlansAndPrice)      | [Intelligente Gegevensbeheer](https://azuremarketplace.microsoft.com/marketplace/apps/komprise_inc.intelligent_data_management?tab=Overview)    |
+| **BYOL (Bring Your Own License)**             | N/A | Ja | Ja | Ja |
+| **Azure Commitment** | Ja   | Ja | Ja | Ja |
 
 ## <a name="other-features"></a>Andere functies
 
 ### <a name="azure-file-sync"></a>Azure File Sync
 
-- Interne hash-validatie
+- Interne hashvalidatie
 
 ### <a name="dobimigrate"></a>DobiMigrate
 
-- Voorafgaande controles van de migratie
-- Migratie planning
-- Droge uitvoering voor knippen over testen
-- Detectie en waarschuwing voor gebruikers activiteiten aan de doel zijde voordat ze worden geknipt
+- Controles vooraf voor migratie
+- Migratieplanning
+- Proefrun voor cut-overtests
+- Gebruikersactiviteit aan de doelzijde detecteren en waarschuwen vóór de cut-over
 - Door beleid gestuurde migraties
-- Geplande kopieën van herhalingen
-- Configureer bare opties voor het verwerken van de beveiliging van de hoofdmap
+- Geplande kopieer iteraties
+- Configureerbare opties voor het afhandelen van beveiliging van hoofdmaps
 - Verificatie op aanvraag wordt uitgevoerd
-- Verificatie van de gegevens voor het lezen van de bron en het doel
-- Grafische, interactieve werk stroom voor fout afhandeling
-- De mogelijkheid om bepaalde bewerkingen uit te voeren, zoals verwijderingen en updates
-- De mogelijkheid om de toegangs tijd op de bron te bewaren (naast bestemming)
-- Mogelijkheid om terugdraai bewerkingen uit te voeren op de bron tijdens het overschakelen van de migratie
-- Mogelijkheid om geselecteerde SMB-bestands kenmerken te migreren
-- Mogelijkheid om NTFS-security descriptors op te schonen
-- Mogelijkheid om NFSv3-machtigingen te negeren en nieuwe modus bits te schrijven naar doel
-- Mogelijkheid om NFSv3 POSIX Draft-ACL'S te converteren naar NFSv4 ACL'S
+- Verificatie van teruglezen gegevens op bron en doel
+- Werkstroom voor grafische, interactieve foutafhandeling
+- Mogelijkheid om te voorkomen dat bepaalde bewerkingen worden doorgegeven, zoals verwijderen en updates
+- Mogelijkheid om de toegangstijd op de bron te behouden (naast het doel)
+- Mogelijkheid om terugdraaien naar de bron uit te voeren tijdens migratieoverstappen
+- Mogelijkheid om geselecteerde SMB-bestandskenmerken te migreren
+- Mogelijkheid om NTFS-beveiligingsdescriptors op te schonen
+- Mogelijkheid om NFSv3-machtigingen te overschrijven en nieuwe modusbits naar doel te schrijven
+- Mogelijkheid om NFSv3 POSIX-concept-ACLS te converteren naar NFSv4 ACLS
 - SMB 1 (CIFS)
 
-### <a name="data-mobility-and-migration"></a>Mobiliteit en migratie van gegevens
+### <a name="data-mobility-and-migration"></a>Gegevensmobiliteit en migratie
 
 - Hash-validatie
 
 ### <a name="intelligent-data-management"></a>Intelligente Gegevensbeheer
 
-- Migraties op basis van een project/map
+- Migraties op basis van project/map
 - Automatisch opnieuw proberen van fouten
-- Beoordeling/rapportage: bestands typen, bestands grootte, op project gebaseerd
-- Beoordeling/rapportage: aangepaste zoek opdrachten op basis van meta gegevens
-- Volledige beheer oplossing voor gegevens levenscyclus voor archivering, replicatie, analyses
-- Op tijd gebaseerde analyses op blob, S3-gegevens
+- Evaluatie/rapportage: bestandstypen, bestandsgrootte, op project gebaseerd
+- Evaluatie/rapportage: Aangepaste zoekopdrachten op basis van metagegevens
+- Beheeroplossing voor volledige levenscyclus van gegevens voor archivering, replicatie, analyse
+- Op tijd gebaseerde analyses openen voor blob-, S3-gegevens
 - Taggen
 - Ondersteuning voor 24 x 7 x 365
 - Hash-validatie
 
-*De lijst is voor het laatst gecontroleerd op maart 2021.*
+*Lijst is voor het laatst geverifieerd op 31 maart 2021.*
 
 ## <a name="see-also"></a>Zie ook
 
-- [Overzicht van opslag migratie](../../../common/storage-migration-overview.md)
+- [Overzicht van opslagmigratie](../../../common/storage-migration-overview.md)
 - [Een Azure-oplossing voor gegevensoverdracht kiezen](/azure/storage/common/storage-choose-data-transfer-solution?toc=/azure/storage/blobs/toc.json)
 - [Migreren naar Azure-bestandsshares](/azure/storage/files/storage-files-migration-overview)
-- [Migreren naar Data Lake Storage met WANdisco LiveData platform voor Azure](/azure/storage/blobs/migrate-gen2-wandisco-live-data-platform)
+- [Migreren naar Data Lake Storage met WANdisco LiveData Platform for Azure](/azure/storage/blobs/migrate-gen2-wandisco-live-data-platform)
 - [Gegevens kopiëren of verplaatsen naar Azure Storage met AzCopy](https://aka.ms/azcopy)
-- [Grote gegevens sets migreren naar Azure Blob Storage met AzReplicate (voorbeeld toepassing)](https://github.com/Azure/AzReplicate/tree/master/)
+- [Grote gegevenssets migreren naar Azure Blob Storage met AzReplicate (voorbeeldtoepassing)](https://github.com/Azure/AzReplicate/tree/master/)

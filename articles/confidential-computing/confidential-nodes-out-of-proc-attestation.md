@@ -1,74 +1,79 @@
 ---
-title: Ondersteuning voor out-of-process-Attestation met Intel SGX quote helper Daemonset op Azure (preview-versie)
-description: DaemonSet voor het genereren van de offerte buiten het SGX-toepassingsproces. In dit artikel wordt uitgelegd hoe de out-of-proc Attestation-faciliteit rovided is voor vertrouwelijke werk belastingen die binnen een container worden uitgevoerd.
+title: Attestation-ondersteuning met Intel SGX-offerte helper DaemonSet in Azure (preview)
+description: Een DaemonSet voor het genereren van de prijsopgave buiten het Intel SGX-toepassingsproces. In dit artikel wordt uitgelegd hoe de attestation-faciliteit buiten het proces wordt geboden voor vertrouwelijke workloads die in een container worden uitgevoerd.
 ms.service: container-service
 ms.subservice: confidential-computing
 author: agowdamsft
 ms.topic: overview
 ms.date: 2/12/2021
 ms.author: amgowda
-ms.openlocfilehash: 0ebeb96557b7e20d123577c0ab9c8fc392abbfba
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 849fd7afa3f9365f31ee8e03d9f9cc2174d64304
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105932622"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484401"
 ---
-# <a name="platform-software-management-with-sgx-quote-helper-daemon-set-preview"></a>Platform software beheer met SGX quote helper daemon set (preview-versie)
+# <a name="platform-software-management-with-intel-sgx-quote-helper-daemonset-preview"></a>Platformsoftwarebeheer met Intel SGX quote helper DaemonSet (preview)
 
-Voor [Enclavetoepassingen](confidential-computing-enclaves.md) die externe attestation uitvoeren, is een gegenereerde offerte vereist. Deze offerte voorziet in een cryptografisch bewijs van de identiteit en de status van de toepassing en de omgeving waarin de enclave wordt uitgevoerd. Voor het genereren van de offerte zijn vertrouwde softwareonderdelen van Platform Software Components (PSW) van Intel vereist.
+[Enclavetoepassingen die](confidential-computing-enclaves.md) externe attestation uitvoeren, vereisen een gegenereerde prijsopgave. Deze prijsopgave biedt cryptografisch bewijs van de identiteit en de status van de toepassing, evenals de omgeving waarin de enclave wordt uitgevoerd. Voor het genereren van de prijsopgave zijn vertrouwde softwareonderdelen vereist die deel uitmaken van de Intel Platform Software Components (PSW).
 
 ## <a name="overview"></a>Overzicht
  
 Intel ondersteunt twee attestation-modi voor het genereren van de offerte:
-- **in-proc**: de vertrouwde softwareonderdelen worden gehost binnen het proces van de enclavetoepassing
 
-- **out-of-proc**: de vertrouwde softwareonderdelen worden gehost buiten de enclavetoepassing.
+- *In-process host* de vertrouwde softwareonderdelen binnen het enclavetoepassingsproces.
+
+- *Out-of-process host* de vertrouwde softwareonderdelen buiten de enclavetoepassing.
  
-SGX-toepassingen die zijn gebouwd met behulp van de Open Enclave SDK, maken standaard gebruik van de attestation-modus in-proc. Op SGX gebaseerde toepassingen kunnen out-of-proc worden uitgevoerd. Hiervoor is extra hosting nodig en moeten de vereiste onderdelen, zoals Architectural Enclave Service Manager (AESM), buiten de toepassing beschikbaar worden gemaakt.
+Intel SGX-toepassingen (Software Guard Extension) die zijn gebouwd met behulp van de Open Enclave SDK, maken standaard gebruik van de attestation-modus in het proces. Intel SGX-toepassingen maken de attestation-modus buiten het proces mogelijk. Als u deze modus wilt gebruiken, hebt u extra hosting nodig en moet u de vereiste onderdelen, zoals Architectural Enclave Service Manager (AESM), extern aan de toepassing blootstellen.
 
-Het gebruik van deze functie wordt **sterk aanbevolen**, omdat deze de uptime van uw enclave-apps verbetert tijdens updates van het Intel-platform of het DCAP-stuurprogramma.
+Deze functie verbetert de uptime voor uw enclave-apps tijdens updates van het Intel-platform of DCAP-stuurprogramma-updates. Daarom raden we u aan deze te gebruiken.
 
-Als u deze functie wilt inschakelen op AKS-cluster, wijzigt u de opdracht add--Enable-sgxquotehelper in de CLI wanneer u de add-on van de vertrouwelijke computer inschakelt. Gedetailleerde CLI-instructies [zijn:](confidential-nodes-aks-get-started.md) 
+Als u deze functie wilt inschakelen in een AKS-cluster (Azure Kubernetes Services), voegt u de opdracht toe aan de Azure CLI wanneer u de `--enable-sgxquotehelper` invoegseling confidential computing inschakelen. 
 
 ```azurecli-interactive
 # Create a new AKS cluster with system node pool with Confidential Computing addon enabled and SGX Quote Helper
 az aks create -g myResourceGroup --name myAKSCluster --generate-ssh-keys --enable-addon confcom --enable-sgxquotehelper
 ```
 
-## <a name="why-and-what-are-the-benefits-of-out-of-proc"></a>Wat zijn de voordelen van out-of-proc, en waarom?
+Zie [Quickstart: Deploy an AKS cluster with confidential computing nodes by using the Azure CLI (Snelstart: Een AKS-cluster met confidential computing-knooppunten implementeren met behulp van de Azure CLI) voor meer informatie.](confidential-nodes-aks-get-started.md)
 
--   Er zijn geen updates vereist voor de onderdelen van PSW voor het genereren van de offerte voor elke containertoepassing: Bij out-of-proc hoeven containereigenaren geen updates binnen hun container te beheren. Containereigenaren maken in plaats daarvan gebruik van de door de provider verschafte interface waarmee de gecentraliseerde service buiten de container wordt aangeroepen. Deze wordt bijgewerkt en beheerd door de provider.
+## <a name="benefits-of-the-out-of-process-mode"></a>Voordelen van de out-of-process-modus
 
--   U hoeft zich geen zorgen te maken dat de attestation mislukt vanwege verouderde PSW-onderdelen: Het genereren van de offerte wordt uitgevoerd met de vertrouwde softwareonderdelen: Quoting Enclave (QE) en Provisioning Certificate Enclave (PCE), die deel uitmaken van de Trusted Computing Base (TCB). Deze softwareonderdelen moeten up-to-date zijn om aan de attestation-vereisten te blijven voldoen. Omdat de provider de updates voor deze onderdelen beheert, hoeven klanten zich niet bezig te houden met attestation-fouten als gevolg van verouderde onderdelen van de vertrouwde software in hun container.
+In de volgende lijst worden enkele van de belangrijkste voordelen van deze attestation-modus beschreven:
 
--   Beter gebruik van EPC-geheugen: in de attestation-modus in-proc, moet elke enclavetoepassing het exemplaar van QE en PCE voor externe attestation instantiëren. Met out-of-proc hoeven deze enclaves niet door de container te worden gehost, en wordt er ook geen enclavegeheugen uit het quotum van de container gebruikt.
+-   Er zijn geen updates vereist voor het genereren van prijsopgaveonderdelen van PSW voor elke containertoepassing. Containereigenaren hoeven geen updates binnen hun container te beheren. Containereigenaren vertrouwen in plaats daarvan op de providerinterface die de gecentraliseerde service buiten de container aanroept. De provider werkt de container bij en beheert deze.
 
--   Bescherming tegen kernel-afdwinging: wanneer het SGX-stuurprogramma wordt gestreamd naar de Linux-kernel, wordt er een hogere bevoegdheid voor een enclave afgedwongen. Met deze bevoegdheid kan de enclave PCE aanroepen, waardoor de enclavetoepassing die wordt uitgevoerd in de modus in-proc, wordt verbroken. Enclaves krijgen deze machtiging standaard niet. Voor het verlenen van deze bevoegdheid aan een enclavetoepassing moeten wijzigingen in het installatieproces van de toepassing worden aangebracht. Dit wordt gemakkelijk verwerkt bij het out-of-proc model omdat de provider van de service die out-of-proc aanvragen verwerkt, ervoor zorgt dat de service met deze bevoegdheid wordt geïnstalleerd.
+-   U hoeft zich geen zorgen te maken over attestation-fouten vanwege out-of-date PSW-onderdelen. De provider beheert de updates voor deze onderdelen.
 
--   Geen controle op compatibiliteit met eerdere versies van PSW en DCAP nodig. Updates van onderdelen van PSW voor het genereren van offerten worden door de provider gecontroleerd op compatibiliteit met eerdere versies vóór de updates worden toegepast. Dit helpt bij het afhandelen en verhelpen van compatibiliteitsproblemen voordat u updates voor vertrouwelijke workloads implementeert.
+-   De modus out-of-process biedt een beter gebruik van EPC-geheugen dan in de procesmodus. In de procesmodus moet elke enclavetoepassing een exemplaar maken van de kopie van QE en PCE voor externe attestation. In de out-of-process-modus is het niet nodig dat de container deze enclaves host en gebruikt daarom geen enclavegeheugen uit het containerquotum.
 
-## <a name="how-does-the-out-of-proc-attestation-mode-work-for-confidential-workloads-scenario"></a>Hoe werkt de attestation-modus out-of-proc voor het scenario met vertrouwelijke workloads?
+-   Wanneer u het Intel SGX-stuurprogramma upstreamt naar een Linux-kernel, is er afdwinging voor een enclave met hogere bevoegdheden. Met deze bevoegdheid kan de enclave PCE aanroepen, waardoor de enclavetoepassing die wordt uitgevoerd in de procesmodus wordt breekt. Enclaves krijgen deze machtiging standaard niet. Voor het verlenen van deze bevoegdheid aan een enclavetoepassing moeten wijzigingen in het installatieproces van de toepassing worden aangebracht. In de out-of-process-modus zorgt de provider van de service die out-of-process-aanvragen verwerkt er daarentegen voor dat de service met deze bevoegdheid wordt geïnstalleerd.
 
-Het ontwerp op hoog niveau volgt het model waarbij het aanvragen en genereren van de offerte afzonderlijk worden uitgevoerd, maar op dezelfde fysieke computer. Het genereren van offerten wordt centraal geregeld en verwerkt offerteaanvragen van alle entiteiten. De interface moet correct gedefinieerd en detecteerbaar zijn om entiteiten offerten te kunnen laten aanvragen.
+-   U hoeft niet te controleren op achterwaartse compatibiliteit met PSW en DCAP. Updates van onderdelen van PSW voor het genereren van offerten worden door de provider gecontroleerd op compatibiliteit met eerdere versies vóór de updates worden toegepast. Dit helpt u compatibiliteitsproblemen af te handelen voordat u updates implementeert voor vertrouwelijke workloads.
 
-![sgx quote helper aesm](./media/confidential-nodes-out-of-proc-attestation/aesmmanager.png)
+## <a name="confidential-workloads"></a>Vertrouwelijke workloads
 
-Het bovenstaande abstractiemodel is van toepassing op het scenario met vertrouwelijke workloads door gebruik te maken van de al beschikbare AESM-service. AESM is in een container geïmplementeerd als een DaemonSet in het Kubernetes-cluster. Kubernetes garandeert één exemplaar van een AESM-servicecontainer, verpakt in een pod, die op elk agentknooppunt moet worden geïmplementeerd. De nieuwe daemonset SGX Quote heeft een afhankelijkheid van de daemonset sgx-device-plugin, omdat de AESM-servicecontainer EPC-geheugen zou aanvragen van sgx-device-plugin voor het starten van QE- en PCE-enclaves.
+De offerteaanvraag en het genereren van offertes worden afzonderlijk uitgevoerd, maar op dezelfde fysieke computer. Het genereren van offertes wordt gecentraliseerd en aanvragen voor aanhalingstekens van alle entiteiten worden ontvangen. Elke entiteit kan alleen aanhalingstekens aanvragen als de interface correct is gedefinieerd en detecteerbaar is.
 
-Elke container moet worden ingeschreven voor het gebruik van out-of-proc offertegeneratie door de omgevingsvariabele **SGX_AESM_ADDR=1** in te stellen tijdens het maken. De container moet ook het pakket libsgx-quote-ex bevatten waarmee de aanvraag wordt omgeleid naar de standaard Unix-domeinsocket
+![Diagram met de relaties tussen de offerte-requestor, het genereren van offertes en de interface.](./media/confidential-nodes-out-of-proc-attestation/aesmmanager.png)
 
-Een toepassing kan nog steeds de in-proc attestation als voorheen gebruiken, maar in-proc en out-of-proc kunnen niet tegelijkertijd worden gebruikt in een toepassing. De out-of-proc infrastructuur is standaard beschikbaar en verbruikt resources.
+Dit abstracte model is van toepassing op het scenario met vertrouwelijke workloads, door gebruik te maken van de AESM-service die al beschikbaar is. AESM wordt in een container geplaatst en geïmplementeerd als een DaemonSet in het Kubernetes-cluster. Kubernetes garandeert dat één exemplaar van een AESM-servicecontainer, verpakt in een pod, op elk agent-knooppunt kan worden geïmplementeerd. De nieuwe Intel SGX quote DaemonSet is afhankelijk van de DaemonSet sgx-device-plugin, omdat de AESM-servicecontainer EPC-geheugen aanvraagt van de sgx-device-plugin voor het starten van QE- en PCE-enclaves.
 
-## <a name="sample-implementation"></a>Voorbeeld van een implementatie
+Elke container moet ervoor kiezen om out-of-process offertegeneratie te gebruiken door de omgevingsvariabele in te stellen `SGX_AESM_ADDR=1` tijdens het maken. De container moet ook het pakket libsgx-quote-ex bevatten dat verantwoordelijk is voor het door sturen van de aanvraag naar de standaard Unix-domeinsocket.
 
-Het onderstaande docker-bestand is een voorbeeld van een Open Enclave-toepassing. Stel de omgevingsvariabele SGX_AESM_ADDR = 1 in het docker-bestand of het implementatiebestand in. Volg het onderstaande voorbeeld voor het docker-bestand en het yaml-bestand met implementatiedetails. 
+Een toepassing kan nog steeds de in-process attestation gebruiken zoals voorheen, maar in-process en out-of-process kunnen niet tegelijkertijd worden gebruikt binnen een toepassing. De out-of-process-infrastructuur is standaard beschikbaar en verbruikt resources.
+
+## <a name="sample-implementation"></a>Voorbeeld van implementatie
+
+Het volgende Docker-bestand is een voorbeeld voor een toepassing op basis van Open Enclave. Stel de `SGX_AESM_ADDR=1` omgevingsvariabele in het Docker-bestand in of stel deze in op het implementatiebestand. Het volgende voorbeeld bevat details voor het Docker-bestand en de implementatie. 
 
   > [!Note] 
-  > De **libsgx-quote-ex-** van Intel moet worden verpakt in de toepassingscontainer voor een goede werking van out-of-proc attestation.
+  > Om de attestation buiten het proces goed te laten werken, moet de libsgx-quote-ex van Intel worden verpakt in de toepassingscontainer.
     
 ```yaml
-# Refer to Intel_SGX_Installation_Guide_Linux for detail
+# Refer to Intel_SGX_Installation_Guide_Linux for details
 FROM ubuntu:18.04 as sgx_base
 RUN apt-get update && apt-get install -y \
     wget \
@@ -95,12 +100,12 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /opt/openenclave/share/openenclave/samples/remote_attestation
 RUN . /opt/openenclave/share/openenclave/openenclaverc \
     && make build
-# this sets the flag for out of proc attestation mode. alternatively you can set this flag on the deployment files
+# This sets the flag for out-of-process attestation mode. Alternatively you can set this flag on the deployment files.
 ENV SGX_AESM_ADDR=1 
 
 CMD make run
 ```
-U kunt de attestion-modus out-of-proc ook instellen in het yaml-bestand van de implementatie, zoals hieronder wordt weergegeven
+U kunt ook de attestation-modus buiten het proces instellen in het YAML-bestand van de implementatie. U doet dit als volgt:
 
 ```yaml
 apiVersion: batch/v1
@@ -130,15 +135,9 @@ spec:
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-[Vertrouwelijke knooppunten (DCsv2-serie) inrichten in AKS](./confidential-nodes-aks-get-started.md)
+
+[Quickstart: Een AKS-cluster met Confidential Computing-knooppunten implementeren met behulp van de Azure CLI](./confidential-nodes-aks-get-started.md)
 
 [Quickstart-voorbeelden van vertrouwelijke containers](https://github.com/Azure-Samples/confidential-container-samples)
 
-[DCsv2 SKU-lijst](../virtual-machines/dcv2-series.md)
-
-<!-- LINKS - external -->
-[Azure Attestation]: ../attestation/index.yml
-
-
-<!-- LINKS - internal -->
-[DC Virtual Machine]: /confidential-computing/virtual-machine-solutions
+[DCsv2-SKU's](../virtual-machines/dcv2-series.md)

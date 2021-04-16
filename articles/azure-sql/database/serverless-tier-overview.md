@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: sstein
-ms.date: 4/15/2021
-ms.openlocfilehash: ea9d5a5c39bf73ede2391c586f09dd95ff79b63c
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.date: 4/16/2021
+ms.openlocfilehash: 7dcbcddc5062470cc3d44fa55ea2591dd989d22d
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/16/2021
-ms.locfileid: "107531974"
+ms.locfileid: "107576394"
 ---
 # <a name="azure-sql-database-serverless"></a>Azure SQL Database serverloos maken
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -66,7 +66,7 @@ De volgende tabel bevat een overzicht van de verschillen tussen de serverloze re
 
 | | **Serverloze compute** | **Inrichten van rekenkracht** |
 |:---|:---|:---|
-|**Databasegebruikspatroon**| Onregelmatige, onvoorspelbare gebruik met een lager gemiddeld rekengebruik gedurende een periode. | Meer normale gebruikspatronen met een hoger gemiddeld rekengebruik gedurende een bepaalde periode of meerdere databases die gebruikmaken van elastische pools.|
+|**Databasegebruikspatroon**| Onregelmatige, onvoorspelbare gebruik met een lager gemiddeld rekengebruik gedurende een periode. | Meer reguliere gebruikspatronen met een hoger gemiddeld rekengebruik gedurende een bepaalde periode of meerdere databases die gebruikmaken van elastische pools.|
 | **Prestatiebeheerinspanning** |Lager|Hoger|
 |**Schaalbaarheid van rekenkracht**|Automatisch|Handmatig|
 |**Reactiesnelheid van rekenkracht**|Lager na inactieve perioden|Onmiddellijke|
@@ -107,7 +107,7 @@ De SQL-cache groeit naarmate gegevens op dezelfde manier en met dezelfde snelhei
 
 ### <a name="auto-pausing"></a>Automatisch onderbreken
 
-Automatisch onderbreken wordt geactiveerd als aan alle volgende voorwaarden wordt voldaan voor de duur van de vertraging voor automatisch onderbreken:
+Automatisch onderbreken wordt geactiveerd als aan alle volgende voorwaarden wordt voldaan voor de duur van de vertraging bij automatisch onderbreken:
 
 - Aantal sessies = 0
 - CPU = 0 voor de gebruikersworkload die wordt uitgevoerd in de gebruikersgroep
@@ -141,13 +141,13 @@ Automatische hervatting wordt geactiveerd als aan een van de volgende voorwaarde
 |Aanbevelingen voor prestaties|Prestatieaanbevelingen weergeven of toepassen|
 |Automatisch afstemmen|Toepassing en verificatie van aanbevelingen voor automatisch afstemmen, zoals automatisch indexeren|
 |Database kopiëren|Maak de database als kopie.<br>Exporteren naar een BACPAC-bestand.|
-|SQL-gegevenssynchronisatie|Synchronisatie tussen hub- en liddatabases die volgens een configureerbare planning worden uitgevoerd of handmatig worden uitgevoerd|
+|SQL-gegevenssynchronisatie|Synchronisatie tussen hub- en liddatabases die worden uitgevoerd volgens een configureerbare planning of die handmatig worden uitgevoerd|
 |Bepaalde databasemetagegevens wijzigen|Nieuwe databasetags toevoegen.<br>Het maximum aantal vCores, min. vCores of vertraging bij automatisch gebruik wijzigen.|
-|SQL Server Management Studio (SSMS)|Het gebruik van SSMS-versies die lager zijn dan 18.1 en het openen van een nieuw queryvenster voor elke database op de server, hervat elke automatisch onderbroken database op dezelfde server. Dit gedrag treedt niet op als u SSMS versie 18.1 of hoger gebruikt.|
+|SQL Server Management Studio (SSMS)|Als u SSMS-versies eerder dan 18.1 gebruikt en een nieuw queryvenster opent voor een database op de server, wordt elke database die automatisch is onderbroken, hervat op dezelfde server. Dit gedrag treedt niet op als u SSMS versie 18.1 of hoger gebruikt.|
 
 Bewaking, beheer of andere oplossingen die een van de hierboven genoemde bewerkingen uitvoeren, activeren automatisch hervatting.
 
-Automatisch hervatting wordt ook geactiveerd tijdens de implementatie van een aantal service-updates waarvoor de database online moet zijn.
+Automatische hervatting wordt ook geactiveerd tijdens de implementatie van een aantal service-updates waarvoor de database online moet zijn.
 
 ### <a name="connectivity"></a>Connectiviteit
 
@@ -255,18 +255,18 @@ Het wijzigen van de maximale of minimale vCores en de vertraging bij automatisch
 
 ### <a name="use-the-azure-cli"></a>Azure CLI gebruiken
 
-Het wijzigen van de maximale of minimale vCores en de vertraging voor automatisch gebruik wordt uitgevoerd met behulp van de [opdracht az sql db update](/cli/azure/sql/db#az-sql-db-update) in Azure CLI met behulp van de argumenten , en `capacity` `min-capacity` `auto-pause-delay` .
+Het wijzigen van de maximale of minimale vCores en de vertraging bij automatisch gebruik wordt uitgevoerd met behulp van de [opdracht az sql db update](/cli/azure/sql/db#az-sql-db-update) in Azure CLI met behulp van de argumenten , en `capacity` `min-capacity` `auto-pause-delay` .
 
 
 ## <a name="monitoring"></a>Bewaking
 
 ### <a name="resources-used-and-billed"></a>Gebruikte en gefactureerde resources
 
-De resources van een serverloze database worden ingekapseld door app-pakket, SQL-exemplaar en gebruikersresourcegroepentiteiten.
+De resources van een serverloze database worden ingekapseld door app-pakketten, SQL-exemplaren en gebruikersresourcegroepentiteiten.
 
 #### <a name="app-package"></a>App-pakket
 
-Het app-pakket is de buitenste bronbeheergrens voor een database, ongeacht of de database zich in een serverloze of inrichtende rekenlaag heeft. Het app-pakket bevat het SQL-exemplaar en externe services die samen het bereik hebben van alle gebruikers- en systeembronnen die worden gebruikt door een database in SQL Database. Voorbeelden van externe services zijn R en zoeken in volledige tekst. Het SQL-exemplaar is in het algemeen de over het hele resourcegebruik in het app-pakket.
+Het app-pakket is de buitenste bronbeheergrens voor een database, ongeacht of de database zich in een serverloze of inrichtende rekenlaag heeft. Het app-pakket bevat het SQL-exemplaar en externe services, zoals zoeken in volledige tekst, die alle gebruikers- en systeembronnen die worden gebruikt door een database in SQL Database. Het SQL-exemplaar is in het algemeen de over het hele resourcegebruik in het app-pakket.
 
 #### <a name="user-resource-pool"></a>Gebruikersresourcegroep
 
@@ -283,7 +283,7 @@ Metrische gegevens voor het bewaken van het resourcegebruik van het app-pakket e
 |App-pakket|app_memory_percent|Percentage geheugen dat door de app wordt gebruikt ten opzichte van het maximale geheugen dat is toegestaan voor de app.|Percentage|
 |Gebruikersgroep|cpu_percent|Het percentage vCores dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal vCores dat is toegestaan voor de werkbelasting van de gebruiker.|Percentage|
 |Gebruikersgroep|data_IO_percent|Percentage gegevens-IOPS dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal toegestane gegevens-IOPS voor gebruikersworkloads.|Percentage|
-|Gebruikersgroep|log_IO_percent|Percentage logboek-MB/s dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal logboek-MB/s dat is toegestaan voor gebruikersworkload.|Percentage|
+|Gebruikersgroep|log_IO_percent|Percentage logboek-MB/s dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal logboek-MB/s dat is toegestaan voor de werkbelasting van de gebruiker.|Percentage|
 |Gebruikersgroep|workers_percent|Het percentage werkbelastingen dat wordt gebruikt door de werkbelasting van gebruikers ten opzichte van het maximum aantal werkbelastingen dat is toegestaan voor gebruikers.|Percentage|
 |Gebruikersgroep|sessions_percent|Het percentage sessies dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal sessies dat is toegestaan voor de werkbelasting van de gebruiker.|Percentage|
 
@@ -313,7 +313,7 @@ Zie Serverloze rekenlaag [voor resourcelimieten.](resource-limits-vcore-single-d
 
 ## <a name="billing"></a>Billing
 
-De hoeveelheid rekenkracht die wordt gefactureerd, is de maximale cpu die wordt gebruikt en het geheugen dat elke seconde wordt gebruikt. Als de gebruikte hoeveelheid CPU en het gebruikte geheugen minder is dan de minimale hoeveelheid die voor elk cpu-gebruik is ingericht, wordt het inrichtende bedrag gefactureerd. Als u CPU wilt vergelijken met geheugen voor factureringsdoeleinden, wordt het geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore te schalen.
+De hoeveelheid rekenkracht die wordt gefactureerd, is de maximale cpu die wordt gebruikt en het geheugen dat elke seconde wordt gebruikt. Als de gebruikte hoeveelheid CPU en het gebruikte geheugen kleiner is dan de minimale hoeveelheid die voor elk cpu-gebruik is ingericht, wordt het inrichtende bedrag gefactureerd. Als u CPU wilt vergelijken met geheugen voor factureringsdoeleinden, wordt het geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore te schalen.
 
 - **Gefactureerde resource:** CPU en geheugen
 - **Gefactureerd** bedrag: prijs per vCore * max (min. vCores, gebruikte vCores, min. geheugen GB * 1/3, geheugen GB gebruikt * 1/3) 

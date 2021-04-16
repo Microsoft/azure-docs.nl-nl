@@ -14,9 +14,9 @@
 - name: Zelfstudies
   expanded: true
   items:
-    - name: Toegang tot resources beheren-Azure Portal
+    - name: Toegang tot resources beheren - Azure Portal
       href: entitlement-management-access-package-first.md
-    - name: Toegang tot resources beheren-Microsoft Graph
+    - name: Toegang tot resources beheren - Microsoft Graph
       href: /graph/tutorial-access-package-api?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json
 - name: Concepten
   expanded: true
@@ -144,6 +144,6 @@
   expanded: true
   items:
     - name: Toegangsbeoordelingen - Graph API
-      href: /graph/api/resources/accessreviewsv2-root?view=graph-rest-beta
+      href: /graph/api/resources/accessreviewsv2-root?view=graph-rest-beta&preserve-view=true
     - name: Rechtenbeheer - Graph API
-      href: /graph/api/resources/entitlementmanagement-root?view=graph-rest-beta
+      href: /graph/api/resources/entitlementmanagement-root?view=graph-rest-beta&preserve-view=true

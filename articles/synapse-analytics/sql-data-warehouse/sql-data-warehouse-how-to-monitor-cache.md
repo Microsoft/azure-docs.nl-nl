@@ -1,62 +1,62 @@
 ---
-title: Optimaliseer uw Gen2-cache
-description: Meer informatie over het bewaken van uw Gen2-cache met behulp van de Azure Portal.
+title: Uw Gen2-cache optimaliseren
+description: Meer informatie over het bewaken van uw Gen2-cache met behulp van Azure Portal.
 services: synapse-analytics
-author: gaursa
+author: julieMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.subservice: sql-dw
 ms.topic: conceptual
 ms.date: 11/20/2020
-ms.author: gaursa
+ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: fed3ed2c87342d557872e97bfc2a6c4d142b5a3a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9de795c54f55295fa69ed7fcb5dd894e2963385b
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104585618"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107566627"
 ---
 # <a name="how-to-monitor-the-adaptive-cache"></a>De adaptieve cache bewaken
 
-In dit artikel wordt beschreven hoe u langzame query prestaties bewaakt en oplost door te bepalen of uw werk belasting optimaal gebruikmaakt van de adaptieve cache voor toegewezen SQL-groepen.
+In dit artikel wordt beschreven hoe u trage queryprestaties kunt bewaken en problemen kunt oplossen door te bepalen of uw workload optimaal gebruik maakt van de adaptieve cache voor toegewezen SQL-pools.
 
-Met de speciale opslag architectuur van de SQL-groep worden automatisch de regel matig opgevraagde column Store-segmenten gelaagd in een cache op een op NVMe gebaseerd Ssd's. U krijgt betere prestaties wanneer uw query's segmenten ophalen die zich in de cache bevinden.
+De opslagarchitectuur van de toegewezen SQL-pool maakt automatisch een opslaglaag voor de kolomopslagsegmenten die het vaakst worden opgevraagd in een cache die zich op NVMe-gebaseerde SSD's opgeslagen. U krijgt betere prestaties wanneer uw query's segmenten ophalen die zich in de cache hebben opgeslagen.
  
 ## <a name="troubleshoot-using-the-azure-portal"></a>Problemen oplossen met behulp van de Azure Portal
 
-U kunt Azure Monitor gebruiken om de metrische gegevens van de cache weer te geven om de prestaties van query's op te lossen. Ga eerst naar de Azure Portal en klik op **monitor**, **metrische gegevens** en **+ een bereik selecteren**:
+U kunt de Azure Monitor cachegegevens weergeven om problemen met queryprestaties op te lossen. Ga eerst naar de Azure Portal klik op **Bewaken,** **Metrische** gegevens en **+ Een bereik selecteren:**
 
-![Scherm afbeelding toont een bereik selecteren dat is geselecteerd in metrische gegevens in de Azure Portal.](./media/sql-data-warehouse-how-to-monitor-cache/cache-0.png)
+![Schermopname toont Select a scope selected from Metrics in the Azure Portal.](./media/sql-data-warehouse-how-to-monitor-cache/cache-0.png)
 
-Gebruik de balken zoeken en vervolg keuzelijst om uw toegewezen SQL-groep te zoeken. Selecteer vervolgens Toep assen.
+Gebruik de zoek- en vervolgkeuzebalken om uw toegewezen SQL-pool te vinden. Selecteer vervolgens Toepassen.
 
-![Scherm afbeelding toont het deel venster een bereik selecteren waar u uw data warehouse kunt selecteren.](./media/sql-data-warehouse-how-to-monitor-cache/cache-1.png)
+![Schermopname van het deelvenster Een bereik selecteren waarin u uw datawarehouse kunt selecteren.](./media/sql-data-warehouse-how-to-monitor-cache/cache-1.png)
 
-De belangrijkste metrische gegevens voor het oplossen van problemen met de cache zijn **cache treffer percentages** en **percentage cache gebruik**. Selecteer **percentage cache treffers** en gebruik vervolgens de knop **metriek toevoegen** om **percentage gebruikt geheugen** toe te voegen. 
+De belangrijkste metrische gegevens voor het oplossen van problemen met de cache zijn **Percentage cache-treffers** en **Percentage gebruikt in cache.** Selecteer **Percentage treffers in cache** en gebruik vervolgens de knop **Metrische** gegevens toevoegen om Percentage **gebruikte cache toe te voegen.** 
 
-![Metrische cache gegevens](./media/sql-data-warehouse-how-to-monitor-cache/cache-2.png)
+![Metrische gegevens van cache](./media/sql-data-warehouse-how-to-monitor-cache/cache-2.png)
 
-## <a name="cache-hit-and-used-percentage"></a>Aantal cache treffers en gebruikte percentages
+## <a name="cache-hit-and-used-percentage"></a>Treffer in cache en percentage gebruikt
 
-In de volgende matrix worden scenario's beschreven op basis van de waarden van de cache-metrische gegevens:
+In de onderstaande matrix worden scenario's beschreven op basis van de waarden van de metrische gegevens van de cache:
 
-|                                | **Percentage treffers in hoge cache** | **Percentage treffers voor lage cache** |
+|                                | **Hoog trefferpercentage cache** | **Percentage treffers bij lage cache** |
 | :----------------------------: | :---------------------------: | :--------------------------: |
-| **Percentage gebruikt hoog cache geheugen** |          Scenario 1           |          Scenario 2          |
-| **Percentage beperkt cache gebruik**  |          Scenario 3           |          Scenario 4          |
+| **Percentage gebruikt voor hoge cache** |          Scenario 1           |          Scenario 2          |
+| **Percentage gebruikt in lage cache**  |          Scenario 3           |          Scenario 4          |
 
-**Scenario 1:** U kunt uw cache optimaal gebruiken. [Los](sql-data-warehouse-manage-monitor.md) andere gebieden op die uw query's mogelijk vertragen.
+**Scenario 1:** U maakt optimaal gebruik van uw cache. [Problemen](sql-data-warehouse-manage-monitor.md) met andere gebieden oplossen die uw query's mogelijk vertragen.
 
-**Scenario 2:** De huidige werkset voor werk gegevens past niet in de cache, waardoor er een percentage van lage cache treffers wordt veroorzaakt door fysieke Lees bewerkingen. U kunt het prestatie niveau omhoog schalen en de werk belasting opnieuw uitvoeren om de cache te vullen.
+**Scenario 2:** Uw huidige werkgegevensset kan niet in de cache passen, wat leidt tot een laag trefferpercentage van de cache vanwege fysieke leesgegevens. Overweeg om uw prestatieniveau op te schalen en de workload opnieuw uit te laten gaan om de cache te vullen.
 
-**Scenario 3:** Waarschijnlijk wordt uw query traag als gevolg van redenen die niet aan de cache zijn gerelateerd. [Los](sql-data-warehouse-manage-monitor.md) andere gebieden op die uw query's mogelijk vertragen. U kunt ook overwegen [uw exemplaar omlaag te schalen](sql-data-warehouse-manage-monitor.md) om uw cache grootte te beperken om kosten te besparen. 
+**Scenario 3:** Het is waarschijnlijk dat uw query traag wordt uitgevoerd vanwege redenen die geen verband houden met de cache. [Problemen](sql-data-warehouse-manage-monitor.md) met andere gebieden oplossen die uw query's mogelijk vertragen. U kunt ook overwegen om [uw exemplaar omlaag te schalen om](sql-data-warehouse-manage-monitor.md) de cachegrootte te verkleinen om kosten te besparen. 
 
-**Scenario 4:** U had een koude cache. Dit kan de reden zijn waarom uw query traag is. Overweeg de query opnieuw uit te voeren, omdat uw werk gegevensset nu in de cache moet worden opgeslagen. 
+**Scenario 4:** U had een koude cache. Dit kan de reden zijn waarom uw query traag was. Overweeg uw query opnieuw uit te voeren, aangezien uw werkset nu in de cache moet zijn opgeslagen. 
 
 > [!IMPORTANT]
-> Als het percentage van de cache treffer of het cache gebruik niet wordt bijgewerkt na het opnieuw uitvoeren van de workload, kan de werkset al in het geheugen worden geplaatst. Alleen geclusterde column Store-tabellen worden opgeslagen in de cache.
+> Als het gebruikte percentage van de cache niet wordt bijgewerkt na het opnieuw uitvoeren van uw workload, kan uw werkset al in het geheugen worden opgeslagen. Alleen geclusterde columnstore-tabellen worden in de cache opgeslagen.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de [uitvoering van query's bewaken](sql-data-warehouse-manage-monitor.md#monitor-query-execution)voor meer informatie over het afstemmen van algemene query prestaties.
+Zie Query-uitvoering bewaken voor meer informatie over het afstemmen [van algemene queryprestaties.](sql-data-warehouse-manage-monitor.md#monitor-query-execution)

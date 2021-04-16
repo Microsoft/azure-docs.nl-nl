@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f49e15984b7a673de1e7d1607f4802c17ebef4e2
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: a4ffcad6f6be16ba7ac3674d710dd543f729f0c3
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/16/2021
-ms.locfileid: "107531842"
+ms.locfileid: "107575408"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Beheerdersrollen en niet-beheerdersrollen toewijzen aan gebruikers met Azure Active Directory
 
@@ -30,10 +30,8 @@ Zie Beheerdersrollen toewijzen in Azure Active Directory voor meer informatie [o
 
 Een veelgebruikte manier om Azure AD-rollen toe te wijzen aan een gebruiker is op de pagina **Toegewezen rollen** voor een gebruiker. U kunt ook configureren dat gebruikers in aanmerking komen om Just-In-Time te worden verhoogd naar een rol met behulp Privileged Identity Management (PIM). Zie voor meer informatie over het gebruik van PIM [Privileged Identity Management.](../privileged-identity-management/index.yml)
 
-Als een directoryrol is toegewezen aan een gastgebruiker, krijgt de gastgebruiker extra machtigingen die bij de rol worden gebruikt, waaronder basismachtigingen voor lezen. Zie [Ingebouwde Azure AD-rollen.](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference)
-
 > [!Note]
-> Als u een Azure AD Premium P2-licentie hebt en al gebruik maakt van PIM, worden alle rolbeheertaken uitgevoerd in [Privileged Identity Management ervaring](../roles/manage-roles-portal.md). Deze functie is momenteel beperkt tot het toewijzen van slechts één rol tegelijk. U kunt momenteel niet meerdere rollen selecteren en deze in één keer toewijzen aan een gebruiker.
+> Als u een P2 Azure AD Premium licentieplan hebt en al gebruik maakt van PIM, worden alle rolbeheertaken uitgevoerd in [de Privileged Identity Management ervaring.](../roles/manage-roles-portal.md) Deze functie is momenteel beperkt tot het toewijzen van slechts één rol tegelijk. U kunt momenteel niet meerdere rollen selecteren en deze in één keer toewijzen aan een gebruiker.
 >
 > ![Azure AD-rollen die worden beheerd in PIM voor gebruikers die al gebruikmaken van PIM en een Premium P2-licentie hebben](./media/active-directory-users-assign-role-azure-portal/pim-manages-roles-for-p2.png)
 
@@ -67,7 +65,7 @@ Als u de roltoewijzing van een gebruiker wilt verwijderen, kunt u dat ook doen o
 
 ### <a name="to-remove-a-role-assignment-from-a-user"></a>Een roltoewijzing van een gebruiker verwijderen
 
-1. Selecteer **Azure Active Directory**, selecteer **Gebruikers** en zoek en selecteer vervolgens de gebruiker die de roltoewijzing verwijdert. Bijvoorbeeld _Alain Charon._
+1. Selecteer **Azure Active Directory,** selecteer **Gebruikers** en zoek en selecteer vervolgens de gebruiker die de roltoewijzing heeft verwijderd. Bijvoorbeeld _Alain Charon._
 
 2. Selecteer **Toegewezen rollen,** selecteer **Toepassingsbeheerder** en selecteer vervolgens **Toewijzing verwijderen.**
 

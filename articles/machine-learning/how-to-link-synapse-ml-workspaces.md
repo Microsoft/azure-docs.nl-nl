@@ -1,7 +1,7 @@
 ---
-title: Een gekoppelde service maken met Synapse-en Azure Machine Learning-werk ruimten (preview-versie)
+title: Een gekoppelde service maken met Synapse en Azure Machine Learning werkruimten (preview)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het koppelen van Azure Synapse-en Azure Machine Learning-werk ruimten voor een Unified Data wrangling-ervaring.
+description: Leer hoe u Azure Synapse en Azure Machine Learning koppelen voor een uniforme data-wrangling-ervaring.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,50 +11,50 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/08/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: 511ee1aa5f5036f5ca5450def0e4481c0608db33
-ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.openlocfilehash: 23184eee67013e39400446db5f744dd0ddb7bc50
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107227344"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107575732"
 ---
-# <a name="link-azure-synapse-analytics-and-azure-machine-learning-workspaces-preview"></a>Azure Synapse Analytics en Azure Machine Learning-werk ruimten (preview) koppelen
+# <a name="link-azure-synapse-analytics-and-azure-machine-learning-workspaces-preview"></a>Werkruimten Azure Synapse Analytics en Azure Machine Learning koppelen (preview)
 
-In dit artikel leert u hoe u een gekoppelde service kunt maken die uw [Azure Synapse Analytics](/azure/synapse-analytics/overview-what-is) -werk ruimte en [Azure machine learning-werk ruimte](concept-workspace.md)koppelt.
+In dit artikel leert u hoe u een gekoppelde service maakt die uw [Azure Synapse Analytics-werkruimte](/azure/synapse-analytics/overview-what-is) en [Azure Machine Learning koppelt.](concept-workspace.md)
 
-Als uw Azure Machine Learning-werk ruimte is gekoppeld aan uw Azure Synapse-werk ruimte, kunt u een Apache Spark pool koppelen als een toegewezen Compute voor data wrangling op schaal en model training uitvoeren vanuit hetzelfde notitie blok.
+Als uw Azure Machine Learning-werkruimte is gekoppeld aan uw Azure Synapse-werkruimte, kunt u een Apache Spark-pool koppelen als een toegewezen rekenkracht voor data-wrangling op schaal of modeltrainingen uitvoeren vanuit hetzelfde Python-notebook.
 
-U kunt uw Synapse-werk ruimte en de werk ruimte van uw ML koppelen via de [python-SDK](#link-sdk) of de [Azure machine learning Studio](#link-studio).
+U kunt uw ML-werkruimte en Synapse-werkruimte koppelen via de [Python SDK](#link-sdk) of [de Azure Machine Learning-studio](#link-studio).
 
-U kunt ook werk ruimten koppelen en een Synapse Spark-groep koppelen aan een enkele [Azure Resource Manager (arm)-sjabloon](https://github.com/Azure/azure-quickstart-templates/blob/master/101-machine-learning-linkedservice-create/azuredeploy.json).
+U kunt ook werkruimten koppelen en een Synapse Spark-pool koppelen met een [ARM-sjabloon (single Azure Resource Manager).](https://github.com/Azure/azure-quickstart-templates/blob/master/101-machine-learning-linkedservice-create/azuredeploy.json)
 
 >[!IMPORTANT]
-> De Azure Machine Learning-en Azure Synapse-integratie bevindt zich in de open bare preview. De functionaliteit van het `azureml-synapse` pakket is [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functies en kan op elk gewenst moment worden gewijzigd.
+> De integratie Azure Machine Learning en Azure Synapse is in openbare preview. De functies van het pakket `azureml-synapse` zijn experimentele preview-functies [](/python/api/overview/azure/ml/#stable-vs-experimental) en kunnen op elk moment veranderen.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md?tabs=python)
 
-* [Maak een Synapse-werk ruimte in azure Portal](/azure/synapse-analytics/quickstart-create-workspace).
+* [Maak een Synapse-werkruimte in Azure Portal](/azure/synapse-analytics/quickstart-create-workspace).
 
-* [Apache Spark groep maken met behulp van Azure Portal, web tools of Synapse Studio](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio)
+* [Een Apache Spark maken met Azure Portal, webhulpprogramma's of Synapse Studio](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio)
 
-* De [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro) installeren
+* De [Python Azure Machine Learning-SDK installeren](/python/api/overview/azure/ml/intro)
 
-* Toegang tot de [Azure machine learning Studio](https://ml.azure.com/).
+* Toegang tot de [Azure Machine Learning-studio](https://ml.azure.com/).
 
 <a name="link-sdk"></a>
-## <a name="link-workspaces-with-the-python-sdk"></a>Werk ruimten koppelen met de python-SDK
+## <a name="link-workspaces-with-the-python-sdk"></a>Werkruimten koppelen met de Python-SDK
 
 > [!IMPORTANT]
-> Als u een koppeling wilt maken naar de Synapse-werk ruimte, moet u de rol **eigenaar** van de Synapse-werk ruimte krijgen. Controleer uw toegang in de [Azure Portal](https://ms.portal.azure.com/).
+> Als u een koppeling naar de Synapse-werkruimte wilt maken, moet u de rol Eigenaar **van** de Synapse-werkruimte krijgen. Controleer uw toegang in de [Azure Portal](https://ms.portal.azure.com/).
 >
-> Als u geen **eigenaar** bent en alleen een **bijdrager** aan de Synapse-werk ruimte bent, kunt u alleen bestaande gekoppelde services gebruiken. Zie [een bestaande gekoppelde service ophalen en gebruiken](how-to-data-prep-synapse-spark-pool.md#get-an-existing-linked-service).
+> Als u geen eigenaar bent **en** alleen bijdrager bent **aan** de Synapse-werkruimte, kunt u alleen bestaande gekoppelde services gebruiken. Bekijk hoe u een bestaande gekoppelde service opnieuw [kunt proberen en gebruiken.](how-to-data-prep-synapse-spark-pool.md#get-an-existing-linked-service)
 
-De volgende code maakt gebruik van [`LinkedService`](/python/api/azureml-core/azureml.core.linked_service.linkedservice) de [`SynapseWorkspaceLinkedServiceConfiguration`](/python/api/azureml-core/azureml.core.linked_service.synapseworkspacelinkedserviceconfiguration) klassen en en
+De volgende code maakt gebruik van de [`LinkedService`](/python/api/azureml-core/azureml.core.linked_service.linkedservice) [`SynapseWorkspaceLinkedServiceConfiguration`](/python/api/azureml-core/azureml.core.linked_service.synapseworkspacelinkedserviceconfiguration) klassen en voor,
 
-* Koppel uw machine learning-werk ruimte aan `ws` uw Azure Synapse-werk ruimte.
-* Registreer uw Synapse-werk ruimte met Azure Machine Learning als een gekoppelde service.
+* Koppel uw machine learning werkruimte aan `ws` uw Azure Synapse werkruimte.
+* Registreer uw Synapse-werkruimte bij Azure Machine Learning als een gekoppelde service.
 
 ``` python
 import datetime  
@@ -76,47 +76,47 @@ linked_service = LinkedService.register(workspace = ws,
 ```
 
 > [!IMPORTANT] 
-> Er wordt een beheerde identiteit `system_assigned_identity_principal_id` voor elke gekoppelde service gemaakt. Aan deze beheerde identiteit moet de **Synapse Apache Spark** beheerdersrol van de Synapse-werk ruimte worden verleend voordat u uw Synapse-sessie start. [Wijs de Synapse Apache Spark beheerdersrol toe aan de beheerde identiteit in de Synapse Studio](../synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments.md).
+> Er wordt een beheerde `system_assigned_identity_principal_id` identiteit, , gemaakt voor elke gekoppelde service. Aan deze beheerde identiteit moet de **rol Synapse Apache Spark-beheerder** van de Synapse-werkruimte worden verleend voordat u de Synapse-sessie start. [Wijs de rol synapse Apache Spark beheerder toe aan](../synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments.md)de beheerde identiteit in de Synapse Studio .
 >
-> Als u wilt zoeken naar `system_assigned_identity_principal_id` een specifieke gekoppelde service, gebruikt u `LinkedService.get('<your-mlworkspace-name>', '<linked-service-name>')` .
+> Gebruik om de `system_assigned_identity_principal_id` van een specifieke gekoppelde service te `LinkedService.get('<your-mlworkspace-name>', '<linked-service-name>')` vinden.
 
 ### <a name="manage-linked-services"></a>Gekoppelde services beheren
 
-Bekijk alle gekoppelde services die zijn gekoppeld aan uw machine learning-werk ruimte.
+Alles weergeven gekoppelde services die zijn gekoppeld aan uw machine learning werkruimte.
 
 ```python
 LinkedService.list(ws)
 ```
 
-Als u uw werk ruimten wilt ontkoppelen, gebruikt u de `unregister()` methode
+Als u uw werkruimten wilt ontkoppelen, gebruikt u de `unregister()` methode
 
 ``` python
 linked_service.unregister()
 ```
 
 <a name="link-studio"></a>
-## <a name="link-workspaces-via-studio"></a>Werk ruimten koppelen via Studio
+## <a name="link-workspaces-via-studio"></a>Werkruimten koppelen via Studio
 
-Koppel uw machine learning-werk ruimte en de Synapse-werk ruimte via de Azure Machine Learning Studio met de volgende stappen: 
+Koppel uw machine learning en Synapse-werkruimte via de Azure Machine Learning-studio stappen: 
 
-1. Meld u aan bij de [Azure machine learning Studio](https://ml.azure.com/).
-1. Selecteer **gekoppelde services** in het gedeelte **beheren** van het linkerdeel venster.
-1. Selecteer **integratie toevoegen**.
-1. Vul de velden in op het formulier **werk ruimte koppelen**
+1. Meld u aan bij [Azure Machine Learning-studio](https://ml.azure.com/).
+1. Selecteer **Gekoppelde services** in **de sectie** Beheren van het linkerdeelvenster.
+1. Selecteer **Integratie toevoegen.**
+1. Vul in **het formulier** Werkruimte koppelen de velden in
 
     |Veld| Beschrijving    
     |---|---
-    |Name| Geef een naam op voor de gekoppelde service. Deze naam wordt gebruikt om te verwijzen naar deze specifieke gekoppelde service.
-    |Abonnementsnaam | Selecteer de naam van uw abonnement dat is gekoppeld aan uw machine learning-werk ruimte. 
-    |Synapse-werk ruimte | Selecteer de Synapse-werk ruimte waarmee u een koppeling wilt maken.
+    |Name| Geef een naam op voor de gekoppelde service. Deze naam wordt gebruikt om naar deze specifieke gekoppelde service te verwijzen.
+    |Abonnementsnaam | Selecteer de naam van uw abonnement dat is gekoppeld aan uw machine learning werkruimte. 
+    |Synapse-werkruimte | Selecteer de Synapse-werkruimte die u wilt koppelen.
     
-1. Selecteer **volgende** om het formulier **Spark-Pools selecteren (optioneel)** te openen. Op dit formulier selecteert u welke Synapse Spark-pool u aan uw werk ruimte wilt koppelen
+1. Selecteer **Volgende om** het formulier **Spark-pools selecteren (optioneel) te** openen. Op dit formulier selecteert u welke Synapse Spark-pool u wilt koppelen aan uw werkruimte
 
-1. Selecteer **volgende** om het **controle** formulier te openen en uw selecties te controleren.
-1. Selecteer **maken** om het gekoppelde proces voor het maken van de service te volt ooien.
+1. Selecteer **Volgende** om het formulier **Controleren te** openen en uw selecties te controleren.
+1. Selecteer **Maken om** het proces voor het maken van de gekoppelde service te voltooien.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Koppel Synapse Spark-Pools voor gegevens voorbereiding met Azure Synapse (preview)](how-to-data-prep-synapse-spark-pool.md).
-* [Apache Spark in uw machine learning-pijp lijn gebruiken met Azure Synapse (preview)](how-to-use-synapsesparkstep.md)
-* [Train een model](how-to-set-up-training-targets.md).
+* [Koppel Synapse Spark-pools voor gegevensvoorbereiding met Azure Synapse (preview)](how-to-data-prep-synapse-spark-pool.md).
+* [Informatie over het gebruik Apache Spark in uw machine learning-pijplijn met Azure Synapse (preview)](how-to-use-synapsesparkstep.md)
+* [Een model trainen.](how-to-set-up-training-targets.md)

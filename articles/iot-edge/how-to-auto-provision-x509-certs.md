@@ -1,6 +1,6 @@
 ---
-title: Apparaten automatisch inrichten met DPS met behulp van X. 509-certificaten-Azure IoT Edge | Microsoft Docs
-description: X. 509-certificaten gebruiken voor het testen van automatische inrichting van apparaten voor Azure IoT Edge met Device Provisioning Service
+title: Apparaten automatisch inrichten met DPS met behulp van X.509-certificaten - Azure IoT Edge | Microsoft Docs
+description: X.509-certificaten gebruiken om automatische apparaatinrichting te testen voor Azure IoT Edge Device Provisioning Service
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -10,62 +10,62 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 44ea6546eb2099165071fd493ec8f890820c0688
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f3c783c57b49b45943882703aec6d735d12bf830
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103199840"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107481953"
 ---
-# <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Een IoT Edge apparaat maken en inrichten met X. 509-certificaten
+# <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Een apparaat met IoT Edge X.509 maken en inrichten
 
 [!INCLUDE [iot-edge-version-201806-or-202011](../../includes/iot-edge-version-201806-or-202011.md)]
 
-Met [Azure IOT hub Device Provisioning Service (DPS)](../iot-dps/index.yml)kunt u IOT edge apparaten automatisch inrichten met X. 509-certificaten. Als u niet bekend bent met het proces van automatische inrichting, bekijkt u het overzicht voor [inrichting](../iot-dps/about-iot-dps.md#provisioning-process) voordat u verdergaat.
+Met [de Azure IoT Hub Device Provisioning Service (DPS)](../iot-dps/index.yml)kunt u automatisch apparaten IoT Edge met behulp van X.509-certificaten. Als u niet bekend bent met het proces van automatische inrichting, bekijkt u het overzicht voor [inrichting](../iot-dps/about-iot-dps.md#provisioning-process) voordat u verdergaat.
 
-In dit artikel wordt beschreven hoe u een Device Provisioning Service-inschrijving maakt met behulp van X. 509-certificaten op een IoT Edge apparaat met de volgende stappen:
+In dit artikel wordt beschreven hoe u een Device Provisioning Service-inschrijving maakt met behulp van X.509-certificaten op een IoT Edge apparaat met de volgende stappen:
 
 * Certificaten en sleutels genereren.
-* Een afzonderlijke inschrijving voor een apparaat of een groeps registratie voor een set apparaten maken.
+* Maak een afzonderlijke inschrijving voor een apparaat of een groepsinschrijving voor een set apparaten.
 * Installeer de IoT Edge runtime en registreer het apparaat bij IoT Hub.
 
-Het gebruik van X. 509-certificaten als Attestation-mechanisme is een uitstekende manier om productie te schalen en het inrichten van apparaten te vereenvoudigen. X. 509-certificaten worden meestal gerangschikt in een vertrouwens keten van certificaten. Als u begint met een zelfondertekend of een vertrouwd basis certificaat, ondertekent elk certificaat in de keten het volgende lagere certificaat. Met dit patroon maakt u via elk tussenliggend certificaat een overgedragen vertrouwens keten van het basis certificaat tot het uiteindelijke ' leaf '-certificaat dat op een apparaat is geïnstalleerd.
+Het gebruik van X.509-certificaten als attestation-mechanisme is een uitstekende manier om productie te schalen en het inrichten van apparaten te vereenvoudigen. Normaal gesproken worden X.509-certificaten gerangschikt in een vertrouwensketen voor certificaten. Vanaf een zelf-ondertekend of vertrouwd basiscertificaat ondertekent elk certificaat in de keten het volgende lagere certificaat. Dit patroon maakt een gedelegeerde vertrouwensketen van het basiscertificaat tot en met elk tussencertificaat tot het laatste leaf-certificaat dat op een apparaat is geïnstalleerd.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een actieve IoT Hub.
-* Een fysiek of virtueel apparaat dat moet worden IoT Edge apparaat.
-* De meest recente versie van [Git](https://git-scm.com/download/) is geïnstalleerd.
-* Een exemplaar van de IoT Hub Device Provisioning Service in azure, gekoppeld aan uw IoT-hub.
-  * Als u geen Device Provisioning service-exemplaar hebt, volgt u de instructies in [de IOT hub DPS instellen](../iot-dps/quick-setup-auto-provision.md).
-  * Nadat u de Device Provisioning Service hebt uitgevoerd, kopieert u de waarde van **id-bereik** van de pagina overzicht. U gebruikt deze waarde bij het configureren van de IoT Edge runtime.
+* Een actief IoT Hub.
+* Een fysiek of virtueel apparaat dat het IoT Edge is.
+* De nieuwste versie van [Git is](https://git-scm.com/download/) geïnstalleerd.
+* Een exemplaar van de IoT Hub Device Provisioning Service in Azure, gekoppeld aan uw IoT-hub.
+  * Als u geen Device Provisioning Service-exemplaar hebt, volgt u de instructies in [IoT Hub DPS.](../iot-dps/quick-setup-auto-provision.md)
+  * Nadat u Device Provisioning Service hebt uitgevoerd, kopieert u de waarde van **Id-bereik** op de overzichtspagina. U gebruikt deze waarde wanneer u de IoT Edge configureert.
 
-## <a name="generate-device-identity-certificates"></a>Certificaten voor apparaat-identiteiten genereren
+## <a name="generate-device-identity-certificates"></a>Identiteitscertificaten voor apparaten genereren
 
-Het certificaat van de apparaat-id is een Leaf-certificaat dat is verbonden via een vertrouwens keten van een certificaat aan het hoogste X. 509 Certificate Authority (CA)-certificaat. Het certificaat van de apparaat-id moet de algemene naam (CN) hebben die is ingesteld op de apparaat-ID die u op het apparaat in uw IoT-hub wilt hebben.
+Het apparaat-id-certificaat is een gewoon certificaat dat via een vertrouwensketen verbinding maakt met het bovenste certificaat van de X.509-certificeringsinstantie (CA). Voor het apparaat-id-certificaat moet de algemene naam (CN) zijn ingesteld op de apparaat-id die u op het apparaat in uw IoT-hub wilt hebben.
 
-Certificaten voor apparaat-id's worden alleen gebruikt voor het inrichten van het IoT Edge apparaat en het verifiëren van het apparaat met Azure IoT Hub. Ze ondertekenen geen certificaten, in tegens telling tot de CA-certificaten die het IoT Edge apparaat aan modules of blad apparaten geeft voor verificatie. Zie [Azure IOT Edge details van certificaat gebruik](iot-edge-certs.md)voor meer informatie.
+Apparaat-id-certificaten worden alleen gebruikt voor het inrichten van IoT Edge apparaat en het verifiëren van het apparaat met Azure IoT Hub. Ze ondertekenen geen certificaten, in tegenstelling tot de CA-certificaten die het IoT Edge aan modules of leaf-apparaten voor verificatie. Zie de gebruiksgegevens van [Azure IoT Edge certificaat voor meer informatie.](iot-edge-certs.md)
 
-Nadat u het certificaat voor de apparaat-id hebt gemaakt, hebt u twee bestanden: een. CER-of. pem-bestand dat het open bare gedeelte van het certificaat bevat, en een. CER-of. pem-bestand met de persoonlijke sleutel van het certificaat. Als u groeps registratie in DPS wilt gebruiken, hebt u ook het open bare gedeelte van een tussenliggend of basis-CA-certificaat nodig in dezelfde certificaat keten van vertrouwen.
+Nadat u het apparaat-id-certificaat hebt gemaakt, moet u twee bestanden hebben: een CER- of PEM-bestand dat het openbare gedeelte van het certificaat bevat, en een CER- of PEM-bestand met de persoonlijke sleutel van het certificaat. Als u van plan bent om groepsinschrijving in DPS te gebruiken, hebt u ook het openbare gedeelte van een tussenliggend of basis-CA-certificaat in dezelfde certificaatketen van vertrouwensrelatie nodig.
 
-U hebt de volgende bestanden nodig om automatische inrichting in te stellen met X. 509:
+U hebt de volgende bestanden nodig om automatische inrichting met X.509 in te stellen:
 
-* Het certificaat van de apparaat-id en het certificaat van de persoonlijke sleutel. Het certificaat van de apparaat-id wordt geüpload naar DPS als u een afzonderlijke inschrijving maakt. De persoonlijke sleutel wordt door gegeven aan de IoT Edge runtime.
-* Een volledig keten certificaat dat ten minste de apparaat-id en de tussenliggende certificaten moet bevatten. Het volledige keten certificaat wordt door gegeven aan de IoT Edge runtime.
-* Een tussenliggend of basis-CA-certificaat van de certificaat vertrouwens keten. Dit certificaat wordt geüpload naar DPS als u een groeps registratie maakt.
+* Het apparaat-id-certificaat en het persoonlijke sleutelcertificaat. Het apparaat-id-certificaat wordt geüpload naar DPS als u een afzonderlijke inschrijving maakt. De persoonlijke sleutel wordt doorgegeven aan de IoT Edge runtime.
+* Een volledig ketencertificaat, dat ten minste de apparaat-id en de tussenliggende certificaten moet hebben. Het volledige ketencertificaat wordt doorgegeven aan de IoT Edge runtime.
+* Een tussenliggend of basis-CA-certificaat uit de certificaatketen van vertrouwensrelatie. Dit certificaat wordt geüpload naar DPS als u een groepsinschrijving maakt.
 
 <!-- 1.1 -->
 :::moniker range="iotedge-2018-06"
 > [!NOTE]
-> Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
+> Op dit moment voorkomt een beperking in libiothsm het gebruik van certificaten die op of na 1 januari 2038 verlopen.
 
 :::moniker-end
 
-### <a name="use-test-certificates-optional"></a>Test certificaten gebruiken (optioneel)
+### <a name="use-test-certificates-optional"></a>Testcertificaten gebruiken (optioneel)
 
-Als u geen certificerings instantie beschikbaar hebt om nieuwe identiteits certificaten te maken en dit scenario wilt proberen, bevat de Azure IoT Edge Git-opslag plaats scripts die u kunt gebruiken voor het genereren van test certificaten. Deze certificaten zijn alleen bedoeld voor ontwikkelings tests en mogen niet worden gebruikt in de productie omgeving.
+Als u geen certificeringsinstantie beschikbaar hebt om nieuwe identiteitscertificaten te maken en dit scenario wilt uitproberen, bevat de git-opslagplaats Azure IoT Edge scripts die u kunt gebruiken om testcertificaten te genereren. Deze certificaten zijn alleen ontworpen voor ontwikkelingstesten en mogen niet in productie worden gebruikt.
 
-Als u test certificaten wilt maken, volgt u de stappen in [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md). Voltooi de twee vereiste secties voor het instellen van de scripts voor het genereren van certificaten en het maken van een basis-CA-certificaat. Volg vervolgens de stappen om een certificaat voor een apparaat-id te maken. Wanneer u klaar bent, moet u de volgende certificaat keten en sleutel paar hebben:
+Als u testcertificaten wilt maken, volgt u de stappen in Democertificaten maken om [de apparaatfuncties IoT Edge testen.](how-to-create-test-certificates.md) Voltooi de twee vereiste secties om de scripts voor het genereren van certificaten in te stellen en een basis-CA-certificaat te maken. Volg vervolgens de stappen om een apparaat-id-certificaat te maken. Wanneer u klaar bent, hebt u de volgende certificaatketen en het volgende sleutelpaar nodig:
 
 Linux:
 
@@ -77,40 +77,40 @@ Windows:
 * `<WRKDIR>\certs\iot-edge-device-identity-<name>-full-chain.cert.pem`
 * `<WRKDIR>\private\iot-edge-device-identity-<name>.key.pem`
 
-U hebt beide certificaten nodig op het IoT Edge-apparaat. Als u afzonderlijke inschrijvingen wilt gebruiken in DPS, uploadt u het. cert. pem-bestand. Als u groeps registratie in DPS wilt gebruiken, hebt u ook een tussenliggend of basis-CA-certificaat nodig in de certificaat keten van de vertrouwens relatie die u wilt uploaden. Als u voorbeeld certificaten gebruikt, gebruikt u het `<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem` certificaat voor groeps registratie.
+U hebt beide certificaten op het IoT Edge nodig. Als u afzonderlijke inschrijving in DPS gaat gebruiken, uploadt u het bestand .cert.pem. Als u groepsinschrijving in DPS wilt gebruiken, hebt u ook een ca-tussen- of -basiscertificaat in dezelfde vertrouwensketen nodig om te uploaden. Als u democertificaten gebruikt, gebruikt u het `<WRKDIR>\certs\azure-iot-test-only.root.ca.cert.pem` certificaat voor groepsinschrijving.
 
-## <a name="create-a-dps-individual-enrollment"></a>Een individuele inschrijving voor DPS maken
+## <a name="create-a-dps-individual-enrollment"></a>Een afzonderlijke DPS-inschrijving maken
 
-Gebruik uw gegenereerde certificaten en sleutels voor het maken van een afzonderlijke inschrijving in DPS voor één IoT Edge apparaat. Individuele inschrijvingen maken het open bare deel van het identiteits certificaat van een apparaat en komen overeen met het certificaat op het apparaat.
+Gebruik de gegenereerde certificaten en sleutels om een afzonderlijke inschrijving in DPS te maken voor één IoT Edge apparaat. Afzonderlijke inschrijvingen nemen het openbare gedeelte van het identiteitscertificaat van een apparaat en komen overeen met het certificaat op het apparaat.
 
-Als u meerdere IoT Edge apparaten wilt inrichten, volgt u de stappen in de volgende sectie, [een registratie voor de DPS-groep maken](#create-a-dps-group-enrollment).
+Als u meerdere apparaten met IoT Edge wilt inrichten, volgt u de stappen in de volgende sectie Een [DPS-groepsinschrijving maken.](#create-a-dps-group-enrollment)
 
-Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand** van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
+Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om de status van de initiële **apparaat-dubbel te declaren.** In de apparaat dubbel kunt u tags instellen om apparaten te groepen op elke metrische gegevens die u nodig hebt in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt om automatische [implementaties te maken.](how-to-deploy-at-scale.md)
 
-Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)voor meer informatie over inschrijvingen in de Device Provisioning Service.
+Zie How [to manage device enrollments](../iot-dps/how-to-manage-enrollments.md)(Apparaatinschrijvingen beheren) voor meer informatie over inschrijvingen in Device Provisioning Service.
 
    > [!TIP]
-   > In de Azure CLI kunt u een [inschrijving](/cli/azure/ext/azure-iot/iot/dps/enrollment) of een [registratie groep](/cli/azure/ext/azure-iot/iot/dps/enrollment-group) maken en de vlag voor **rand ingeschakeld** gebruiken om op te geven dat een apparaat, of groep apparaten, een IOT edge apparaat is.
+   > In de Azure CLI kunt [](/cli/azure/iot/dps/enrollment) u een [](/cli/azure/iot/dps/enrollment-group) inschrijving of een registratiegroep maken en de vlag Edge gebruiken om op te geven dat een apparaat of groep apparaten een IoT Edge is. 
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar uw exemplaar van IOT hub Device Provisioning Service.
+1. [Navigeer in Azure Portal](https://portal.azure.com)naar uw exemplaar van IoT Hub Device Provisioning Service.
 
-1. Selecteer onder **instellingen** de optie **inschrijvingen beheren**.
+1. Selecteer **onder Instellingen** de optie **Inschrijvingen beheren.**
 
-1. Selecteer **Individuele inschrijving toevoegen** en voer de volgende stappen uit om de registratie te configureren:  
+1. Selecteer **Afzonderlijke inschrijving toevoegen en** voltooi de volgende stappen om de inschrijving te configureren:  
 
-   * **Mechanisme**: Selecteer **X. 509**.
+   * **Mechanisme:** selecteer **X.509.**
 
-   * **Primair certificaat. pem-of CER-bestand**: upload het open bare bestand van het identiteits certificaat van het apparaat. Als u de scripts voor het genereren van een test certificaat hebt gebruikt, kiest u het volgende bestand:
+   * **PEM- of CER-bestand** van primair certificaat: upload het openbare bestand van het apparaat-id-certificaat. Als u de scripts hebt gebruikt om een testcertificaat te genereren, kiest u het volgende bestand:
 
       `<WRKDIR>/certs/iot-edge-device-identity-<name>.cert.pem`
 
-   * **IOT hub apparaat-id**: Geef indien gewenst een id op voor het apparaat. U kunt apparaat-Id's gebruiken om een afzonderlijk apparaat te richten op het implementeren van een module. Als u geen apparaat-ID opgeeft, wordt de algemene naam (CN) in het X. 509-certificaat gebruikt.
+   * **IoT Hub apparaat-id:** geef een id op voor uw apparaat als u wilt. U kunt apparaat-ID's gebruiken om een afzonderlijk apparaat te targeten voor module-implementatie. Als u geen apparaat-id op geeft, wordt de algemene naam (CN) in het X.509-certificaat gebruikt.
 
-   * **IOT edge apparaat**: Selecteer **waar** om te declareren dat de inschrijving voor een IOT edge apparaat is.
+   * **IoT Edge apparaat:** selecteer **Waar om** aan te geven dat de inschrijving voor een IoT Edge is.
 
-   * **Selecteer de IOT-hubs waaraan dit apparaat kan worden toegewezen**: Kies de gekoppelde IOT-hub waarmee u uw apparaat wilt verbinden. U kunt meerdere hubs kiezen en het apparaat wordt toegewezen aan een van deze op basis van het geselecteerde toewijzings beleid.
+   * **Selecteer de IoT-hubs** aan wie dit apparaat kan worden toegewezen: kies de gekoppelde IoT-hub waar u uw apparaat mee wilt verbinden. U kunt meerdere hubs kiezen en het apparaat wordt toegewezen aan een van deze hubs volgens het geselecteerde toewijzingsbeleid.
 
-   * **Eerste dubbele toestand van apparaat**: Voeg een tag-waarde toe die moet worden toegevoegd aan het apparaat, net als u wilt. U kunt tags gebruiken om groepen apparaten te richten op automatische implementatie. Bijvoorbeeld:
+   * **Initiële status van** apparaat-dubbel: voeg een tagwaarde toe die u wilt toevoegen aan de apparaat dubbel. U kunt tags gebruiken voor doelgroepen van apparaten voor automatische implementatie. Bijvoorbeeld:
 
       ```json
       {
@@ -125,37 +125,37 @@ Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)
 
 1. Selecteer **Opslaan**.
 
-Nu een inschrijving voor dit apparaat bestaat, kan de IoT Edge runtime automatisch het apparaat inrichten tijdens de installatie. Ga verder naar de sectie [de IOT Edge runtime installeren](#install-the-iot-edge-runtime) om uw IOT edge-apparaat in te stellen.
+Nu er een inschrijving bestaat voor dit apparaat, kan de IoT Edge het apparaat automatisch inrichten tijdens de installatie. Ga door naar [de sectie IoT Edge runtime](#install-the-iot-edge-runtime) installeren om uw apparaat IoT Edge instellen.
 
-## <a name="create-a-dps-group-enrollment"></a>Inschrijving van een DPS-groep maken
+## <a name="create-a-dps-group-enrollment"></a>Een DPS-groepsinschrijving maken
 
-Gebruik uw gegenereerde certificaten en sleutels voor het maken van een groeps registratie in DPS voor meerdere IoT Edge-apparaten. Groeps registraties maken gebruik van een tussenliggend of basis-CA-certificaat van de certificaat vertrouwens keten die wordt gebruikt voor het genereren van de afzonderlijke identiteits certificaten van het apparaat.
+Gebruik de gegenereerde certificaten en sleutels om een groepsinschrijving te maken in DPS voor meerdere IoT Edge apparaten. Groepsinschrijvingen maken gebruik van een tussenliggend ca-certificaat of basiscertificaat uit de vertrouwensketen die wordt gebruikt voor het genereren van de afzonderlijke certificaten voor apparaat-id's.
 
-Als u in plaats daarvan een enkel IoT Edge apparaat wilt inrichten, volgt u de stappen in de vorige sectie en [maakt u een individuele inschrijving voor DPS](#create-a-dps-individual-enrollment).
+Als u in plaats daarvan één apparaat met IoT Edge wilt inrichten, volgt u de stappen in de vorige sectie Een afzonderlijke [DPS-inschrijving maken.](#create-a-dps-individual-enrollment)
 
-Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand** van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
+Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om de status van een initiële **apparaat-dubbel te declaren.** In de apparaat dubbel kunt u tags instellen om apparaten te groepen op elke metrische gegevens die u nodig hebt in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt om automatische [implementaties te maken.](how-to-deploy-at-scale.md)
 
-### <a name="verify-your-root-certificate"></a>Uw basis certificaat verifiëren
+### <a name="verify-your-root-certificate"></a>Uw basiscertificaat verifiëren
 
-Wanneer u een registratie groep maakt, hebt u de mogelijkheid om een geverifieerd certificaat te gebruiken. U kunt een certificaat met DPS verifiëren door te bewijzen dat u eigenaar bent van het basis certificaat. Zie voor meer informatie [bewijs materiaal voor X. 509 CA-certificaten](../iot-dps/how-to-verify-certificates.md).
+Wanneer u een registratiegroep maakt, hebt u de mogelijkheid om een geverifieerd certificaat te gebruiken. U kunt een certificaat bij DPS controleren door te bewijzen dat u eigenaar bent van het basiscertificaat. Zie Bewijs van eigendom voor [X.509 CA-certificaten](../iot-dps/how-to-verify-certificates.md)voor meer informatie.
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar uw exemplaar van IOT hub Device Provisioning Service.
+1. [Navigeer in Azure Portal](https://portal.azure.com)naar uw exemplaar van IoT Hub Device Provisioning Service.
 
-1. **Certificaten** selecteren in het menu aan de linkerkant.
+1. Selecteer **Certificaten** in het menu aan de linkerkant.
 
-1. Selecteer **toevoegen** om een nieuw certificaat toe te voegen.
+1. Selecteer **Toevoegen om** een nieuw certificaat toe te voegen.
 
-1. Voer een beschrijvende naam in voor het certificaat en blader vervolgens naar het CER-of PEM-bestand dat het open bare deel van het X. 509-certificaat vertegenwoordigt.
+1. Voer een gebruiksvriendelijke naam in voor uw certificaat en blader naar het CER- of PEM-bestand dat het openbare deel van uw X.509-certificaat vertegenwoordigt.
 
-   Als u de demo certificaten gebruikt, uploadt u het `<wrkdir>/certs/azure-iot-test-only.root.ca.cert.pem` certificaat.
+   Als u de democertificaten gebruikt, uploadt u het `<wrkdir>/certs/azure-iot-test-only.root.ca.cert.pem` certificaat.
 
 1. Selecteer **Opslaan**.
 
-1. Uw certificaat moet nu worden weer gegeven op de pagina **certificaten** . Selecteer deze optie om de details van het certificaat te openen.
+1. Uw certificaat wordt nu weergegeven op de **pagina** Certificaten. Selecteer deze om de certificaatdetails te openen.
 
-1. Selecteer **verificatie code genereren** en kopieer de gegenereerde code.
+1. Selecteer **Verificatiecode genereren en** kopieer vervolgens de gegenereerde code.
 
-1. Of u nu uw eigen CA-certificaat of de demo certificaten gebruikt, u kunt het bewerkings programma dat is opgenomen in de IoT Edge-opslag plaats gebruiken om het bewijs van bezit te controleren. Het verificatie programma gebruikt uw CA-certificaat voor het ondertekenen van een nieuw certificaat met de gegeven verificatie code als onderwerpnaam.
+1. Of u nu uw eigen CA-certificaat hebt meegebracht of de democertificaten gebruikt, u kunt het verificatieprogramma in de IoT Edge-opslagplaats gebruiken om het bewijs van eigendom te controleren. Het verificatieprogramma gebruikt uw CA-certificaat om een nieuw certificaat te ondertekenen dat de opgegeven verificatiecode als onderwerpnaam heeft.
 
    * Windows:
 
@@ -169,33 +169,33 @@ Wanneer u een registratie groep maakt, hebt u de mogelijkheid om een geverifieer
      ./certGen.sh create_verification_certificate <verification code>
      ```
 
-1. Upload het zojuist gegenereerde verificatie certificaat op dezelfde pagina met certificaat details in de Azure Portal.
+1. Upload op dezelfde pagina met certificaatdetails in Azure Portal het zojuist gegenereerde verificatiecertificaat.
 
 1. Selecteer **Verifiëren**.
 
-### <a name="create-enrollment-group"></a>Registratie groep maken
+### <a name="create-enrollment-group"></a>Registratiegroep maken
 
-Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)voor meer informatie over inschrijvingen in de Device Provisioning Service.
+Zie How [to manage device enrollments](../iot-dps/how-to-manage-enrollments.md)(Apparaatinschrijvingen beheren) voor meer informatie over inschrijvingen in Device Provisioning Service.
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar uw exemplaar van IOT hub Device Provisioning Service.
+1. [Navigeer in Azure Portal](https://portal.azure.com)naar uw exemplaar van IoT Hub Device Provisioning Service.
 
-1. Selecteer onder **instellingen** de optie **inschrijvingen beheren**.
+1. Selecteer **onder Instellingen** de optie **Inschrijvingen beheren.**
 
-1. Selecteer **registratie groep toevoegen** en voer de volgende stappen uit om de registratie te configureren:
+1. Selecteer **Registratiegroep toevoegen en** voltooi de volgende stappen om de inschrijving te configureren:
 
-   * **Groeps naam**: Geef een naam op voor het onthouden van deze groeps registratie.
+   * **Groepsnaam:** geef een onthoudende naam op voor deze groepsinschrijving.
 
-   * **Attestation-type**: Selecteer **certificaat**.
+   * **Attestation-type:** selecteer **Certificaat**.
 
-   * **IOT edge apparaat**: Selecteer **waar**. Voor de registratie van een groep moeten alle apparaten worden IoT Edge apparaten of geen van beide.
+   * **IoT Edge apparaat:** selecteer **Waar.** Voor een groepsinschrijving moeten alle apparaten zijn IoT Edge of geen van beide.
 
-   * **Certificaat type**: Selecteer **CA-certificaat** als u een gecontroleerd CA-certificaat hebt opgeslagen bij DPS of het **tussenliggende certificaat** als u een nieuw bestand alleen voor deze inschrijving wilt uploaden.
+   * **Certificaattype:** selecteer **CA-certificaat** als u een geverifieerd CA-certificaat  hebt opgeslagen met DPS of tussencertificaat als u een nieuw bestand wilt uploaden voor alleen deze inschrijving.
 
-   * **Primair certificaat**: als u in de laatste sectie het CA-certificaat hebt gekozen, kiest u uw certificaat in de vervolg keuzelijst. Als u een tussenliggend certificaat hebt gekozen, uploadt u het open bare bestand van een CA-certificaat in de certificaat keten van de vertrouwens relatie die is gebruikt voor het genereren van de certificaten van de identiteit van het apparaat.
+   * **Primair certificaat:** als u in de laatste sectie ca-certificaat hebt gekozen, kiest u uw certificaat in de vervolgkeuzelijst. Als u tussenliggend certificaat hebt gekozen, uploadt u het openbare bestand van een CA-certificaat in de vertrouwensketen die is gebruikt voor het genereren van de identiteitscertificaten van het apparaat.
 
-   * **Selecteer de IOT-hubs waaraan dit apparaat kan worden toegewezen**: Kies de gekoppelde IOT-hub waarmee u uw apparaat wilt verbinden. U kunt meerdere hubs kiezen en het apparaat wordt toegewezen aan een van deze op basis van het geselecteerde toewijzings beleid.
+   * **Selecteer de IoT-hubs** aan wie dit apparaat kan worden toegewezen: kies de gekoppelde IoT-hub waar u uw apparaat mee wilt verbinden. U kunt meerdere hubs kiezen en het apparaat wordt toegewezen aan een van deze hubs volgens het geselecteerde toewijzingsbeleid.
 
-   * **Eerste dubbele toestand van apparaat**: Voeg een tag-waarde toe die moet worden toegevoegd aan het apparaat, net als u wilt. U kunt tags gebruiken om groepen apparaten te richten op automatische implementatie. Bijvoorbeeld:
+   * **Initiële status van** apparaat-dubbel: voeg een tagwaarde toe die u wilt toevoegen aan de apparaat dubbel. U kunt tags gebruiken voor doelgroepen van apparaten voor automatische implementatie. Bijvoorbeeld:
 
       ```json
       {
@@ -210,41 +210,41 @@ Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)
 
 1. Selecteer **Opslaan**.
 
-Nu een inschrijving voor dit apparaat bestaat, kan de IoT Edge runtime automatisch het apparaat inrichten tijdens de installatie. Ga door naar de volgende sectie om uw IoT Edge-apparaat in te stellen.
+Nu er een inschrijving bestaat voor dit apparaat, kan de IoT Edge het apparaat automatisch inrichten tijdens de installatie. Ga door naar de volgende sectie om uw apparaat IoT Edge instellen.
 
 ## <a name="install-the-iot-edge-runtime"></a>De IoT Edge-runtime installeren
 
-De IoT Edge-runtime wordt op alle IoT Edge-apparaten geïmplementeerd. De onderdelen worden in containers uitgevoerd en bieden u de mogelijkheid om extra containers op het apparaat te implementeren, zodat u code aan de rand kunt uitvoeren.
+De IoT Edge-runtime wordt op alle IoT Edge-apparaten geïmplementeerd. De onderdelen worden uitgevoerd in containers en bieden u de mogelijkheid om extra containers op het apparaat te implementeren, zodat u code aan de rand kunt uitvoeren.
 
-Volg de stappen in [install the Azure IOT Edge runtime](how-to-install-iot-edge.md)en ga vervolgens terug naar dit artikel om het apparaat in te richten.
+Volg de stappen in [De Azure IoT Edge runtime installeren](how-to-install-iot-edge.md)en ga vervolgens terug naar dit artikel om het apparaat in terichten.
 
-X. 509-inrichting met DPS wordt alleen ondersteund in IoT Edge versie 1.0.9 of nieuwer.
+X.509-inrichting met DPS wordt alleen ondersteund in IoT Edge versie 1.0.9 of hoger.
 
-## <a name="configure-the-device-with-provisioning-information"></a>Het apparaat configureren met inrichtings gegevens
+## <a name="configure-the-device-with-provisioning-information"></a>Het apparaat configureren met inrichtingsgegevens
 
 Zodra de runtime op uw apparaat is geïnstalleerd, configureert u het apparaat met de informatie die wordt gebruikt om verbinding te maken met Device Provisioning Service en IoT Hub.
 
 De volgende informatie is gereed:
 
-* De waarde voor het bereik van de DPS **-id** . U kunt deze waarde ophalen van de overzichts pagina van uw DPS-instantie in de Azure Portal.
-* Het Chaining-bestand van het apparaat-ID certificaat op het apparaat.
-* Het sleutel bestand van de apparaat-id op het apparaat.
-* Een optionele registratie-ID. Als u niets opgeeft, wordt de ID opgehaald uit de algemene naam in het certificaat van de apparaat-id.
+* De waarde **dps-id-bereik.** U kunt deze waarde ophalen op de overzichtspagina van uw DPS-exemplaar in de Azure Portal.
+* Het certificaatketenbestand voor apparaat-id's op het apparaat.
+* Het bestand met de apparaat-id-sleutel op het apparaat.
+* Een optionele registratie-id. Als deze niet wordt opgegeven, wordt de id uit de algemene naam in het certificaat voor apparaat-id's gehaald.
 
 ### <a name="linux-device"></a>Linux-apparaat
 
 <!-- 1.1 -->
 :::moniker range="iotedge-2018-06"
 
-1. Open het configuratie bestand op het IoT Edge-apparaat.
+1. Open het configuratiebestand op het IoT Edge apparaat.
 
    ```bash
    sudo nano /etc/iotedge/config.yaml
    ```
 
-1. Zoek de sectie inrichtings configuraties van het bestand. Verwijder de opmerkingen bij de regels voor DPS X. 509 Certificate Provisioning en zorg ervoor dat andere inrichtings regels worden uitgeoefend.
+1. Zoek de sectie inrichtingsconfiguraties van het bestand. Maak de opmerkingen bij de regels voor het inrichten van DPS X.509-certificaten los en zorg ervoor dat eventuele andere inrichtingsregels als commentaar worden vermeld.
 
-   De `provisioning:` regel mag geen voor gaande witruimte hebben en geneste items moeten worden inge sprongen met twee spaties.
+   De `provisioning:` regel mag geen voorgaande witruimte hebben en geneste items moeten worden ingesprongen door twee spaties.
 
    ```yml
    # DPS X.509 provisioning configuration
@@ -261,20 +261,20 @@ De volgende informatie is gereed:
    #  dynamic_reprovisioning: false
    ```
 
-1. De waarden van `scope_id` , `identity_cert` en `identity_pk` met uw DPS en apparaatgegevens bijwerken.
+1. Werk de waarden `scope_id` van , en bij met uw `identity_cert` `identity_pk` DPS- en apparaatgegevens.
 
-   Wanneer u het X. 509-certificaat en de sleutel gegevens toevoegt aan het bestand config. yaml, moeten de paden worden verstrekt als bestands-Uri's. Bijvoorbeeld:
+   Wanneer u het X.509-certificaat en de sleutelgegevens aan het bestand config.yaml toevoegt, moeten de paden worden opgegeven als bestands-URI's. Bijvoorbeeld:
 
    `file:///<path>/identity_certificate_chain.pem`
    `file:///<path>/identity_key.pem`
 
-1. Geef eventueel een `registration_id` voor het apparaat op. Als dat niet het geval is, geeft u deze regel om het apparaat te registreren bij de CN-naam van het identiteits certificaat.
+1. Geef desgewenst een op `registration_id` voor het apparaat. Laat deze regel anders weg als opmerking om het apparaat te registreren met de CN-naam van het identiteitscertificaat.
 
-1. Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
+1. U kunt eventueel de regels of gebruiken om het inrichtingsgedrag van uw apparaat `always_reprovision_on_startup` `dynamic_reprovisioning` te configureren. Als een apparaat bij het opstarten opnieuw wordt ingericht, probeert het altijd eerst in terichten met DPS en vervolgens terug te vallen op de inrichtingsback-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw in te stellen, wordt IoT Edge opnieuw opgestart en opnieuw in te stellen als er een nieuwe inrichtingsgebeurtenis wordt gedetecteerd. Zie concepten voor het opnieuw [IoT Hub van apparaten voor meer informatie.](../iot-dps/concepts-device-reprovision.md)
 
-1. Sla het bestand config. yaml op en sluit het af.
+1. Sla het bestand config.yaml op en sluit het.
 
-1. Start de IoT Edge-runtime opnieuw zodat alle configuratie wijzigingen die u op het apparaat hebt aangebracht, worden opgehaald.
+1. Start de IoT Edge opnieuw op, zodat alle configuratiewijzigingen die u op het apparaat hebt aangebracht, worden opgehaald.
 
    ```bash
    sudo systemctl restart iotedge
@@ -286,19 +286,19 @@ De volgende informatie is gereed:
 <!-- 1.2 -->
 :::moniker range=">=iotedge-2020-11"
 
-1. Maak een configuratie bestand voor uw apparaat op basis van een sjabloon bestand dat wordt meegeleverd als onderdeel van de IoT Edge installatie.
+1. Maak een configuratiebestand voor uw apparaat op basis van een sjabloonbestand dat is opgegeven als onderdeel van de IoT Edge installatie.
 
    ```bash
    sudo cp /etc/aziot/config.toml.edge.template /etc/aziot/config.toml
    ```
 
-1. Open het configuratie bestand op het IoT Edge-apparaat.
+1. Open het configuratiebestand op het IoT Edge apparaat.
 
    ```bash
    sudo nano /etc/aziot/config.toml
    ```
 
-1. De **inrichtings** sectie van het bestand zoeken. Verwijder de opmerkingen bij de regels voor DPS inrichten met het 509-certificaat en zorg ervoor dat er andere inrichtings regels zijn.
+1. Zoek de **sectie Inrichten** van het bestand. Maak de opmerkingen bij de regels voor DPS-inrichting met het X.509-certificaat los en zorg ervoor dat andere inrichtingsregels als commentaar worden vermeld.
 
    ```toml
    # DPS provisioning with X.509 certificate
@@ -316,19 +316,19 @@ De volgende informatie is gereed:
    identity_pk = "<REQUIRED URI TO DEVICE IDENTITY PRIVATE KEY>"
    ```
 
-1. De waarden van `id_scope` , `identity_cert` en `identity_pk` met uw DPS en apparaatgegevens bijwerken.
+1. Werk de waarden van `id_scope` , en bij met uw `identity_cert` `identity_pk` DPS- en apparaatgegevens.
 
-   De waarde van het identiteits certificaat kan worden opgegeven als een bestands-URI of kan dynamisch worden uitgegeven via EST of een lokale certificerings instantie. Maak een opmerking van slechts één regel, op basis van de indeling die u wilt gebruiken.
+   De waarde van het identiteitscertificaat kan worden opgegeven als een bestands-URI of dynamisch worden uitgegeven met behulp van EST of een lokale certificeringsinstantie. Maak slechts één regel uitcommenter, op basis van de indeling die u wilt gebruiken.
 
-   De waarde van de persoonlijke identiteits sleutel kan worden verschaft als een bestands-URI of een PKCS # 11-URI. Maak een opmerking van slechts één regel, op basis van de indeling die u wilt gebruiken.
+   De persoonlijke sleutelwaarde voor identiteit kan worden opgegeven als een bestands-URI of een PKCS#11-URI. Maak slechts één regel uitcommenter, op basis van de indeling die u wilt gebruiken.
 
-   Als u een PKCS # 11-Uri's gebruikt, zoekt u de sectie **PKCS # 11** in het configuratie bestand en geeft u informatie op over de PKCS # 11-configuratie.
+   Als u PKCS#11 URI's gebruikt, gaat u naar de sectie **PKCS#11** in het configuratiebestand en geeft u informatie op over uw PKCS#11-configuratie.
 
-1. Geef eventueel een `registration_id` voor het apparaat op. Als dat niet het geval is, moet u deze regel laten weten dat u het apparaat met de algemene naam van het identiteits certificaat wilt registreren.
+1. Geef eventueel een op `registration_id` voor het apparaat. Laat anders die regel als commentaar weg om het apparaat te registreren met de algemene naam van het identiteitscertificaat.
 
 1. Sla het bestand op en sluit het.
 
-1. De configuratie wijzigingen Toep assen die u hebt aangebracht in IoT Edge.
+1. Pas de configuratiewijzigingen toe die u hebt aangebracht op IoT Edge.
 
    ```bash
    sudo iotedge config apply
@@ -339,15 +339,15 @@ De volgende informatie is gereed:
 
 ### <a name="windows-device"></a>Windows-apparaat
 
-1. Open een Power shell-venster in de beheerders modus. Zorg ervoor dat u een AMD64-sessie van Power shell gebruikt bij het installeren van IoT Edge, niet in Power shell (x86).
+1. Open een PowerShell-venster in de beheerdersmodus. Zorg ervoor dat u een AMD64-sessie van PowerShell gebruikt bij het installeren van IoT Edge, niet powershell (x86).
 
-1. Met de opdracht **Initialize-IoTEdge** configureert u de IoT Edge-runtime op uw machine. De opdracht wordt standaard ingesteld op hand matig inrichten met Windows-containers. Gebruik daarom de `-DpsX509` vlag om automatische inrichting met X. 509-certificaat verificatie te gebruiken.
+1. Met de opdracht **Initialize-IoTEdge** configureert u de IoT Edge-runtime op uw machine. De opdracht wordt standaard ingesteld op handmatige inrichting met Windows-containers, dus gebruik de vlag om automatische inrichting met `-DpsX509` X.509-certificaatverificatie te gebruiken.
 
-   Vervang de tijdelijke aanduidingen voor `{scope_id}` , `{identity cert chain path}` , en `{identity key path}` door de juiste waarden van uw DPS-exemplaar en de bestands paden op het apparaat.
+   Vervang de tijdelijke aanduidingen voor , en door de juiste waarden van uw `{scope_id}` `{identity cert chain path}` `{identity key path}` DPS-exemplaar en de bestandspaden op uw apparaat.
 
-   Voeg het toe `-RegistrationId {registration_id}` Als u de apparaat-id wilt instellen op een andere waarde dan de CN-naam van het identiteits certificaat.
+   Voeg de toe als u de apparaat-id wilt instellen als iets `-RegistrationId {registration_id}` anders dan de CN-naam van het identiteitscertificaat.
 
-   Voeg de `-ContainerOs Linux` para meter toe als u Linux-containers in Windows gebruikt.
+   Voeg de `-ContainerOs Linux` parameter toe als u Linux-containers in Windows gebruikt.
 
    ```powershell
    . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
@@ -355,15 +355,15 @@ De volgende informatie is gereed:
    ```
 
    >[!TIP]
-   >In het configuratie bestand worden uw certificaat en sleutel gegevens opgeslagen als bestands-Uri's. De Initialize-IoTEdge-opdracht verwerkt echter deze opmaak stap voor u, zodat u het absolute pad naar het certificaat en de sleutel bestanden op uw apparaat kunt opgeven.
+   >In het configuratiebestand worden uw certificaat- en sleutelgegevens opgeslagen als bestands-URI's. Met de Initialize-IoTEdge wordt deze opmaakstap echter voor u verwerkt, zodat u het absolute pad naar het certificaat en de sleutelbestanden op uw apparaat kunt geven.
 
-## <a name="verify-successful-installation"></a>Geslaagde installatie controleren
+## <a name="verify-successful-installation"></a>Controleren of de installatie is geslaagd
 
-Als de runtime is gestart, kunt u naar uw IoT Hub gaan en IoT Edge modules op het apparaat implementeren.
+Als de runtime is gestart, kunt u naar uw IoT Hub en beginnen met het implementeren IoT Edge modules op uw apparaat.
 
-U kunt controleren of de afzonderlijke registratie die u hebt gemaakt in Device Provisioning Service is gebruikt. Navigeer naar het Device Provisioning service-exemplaar in het Azure Portal. Open de inschrijvings gegevens voor de afzonderlijke inschrijving die u hebt gemaakt. U ziet dat de status van de registratie is **toegewezen** en dat de apparaat-id wordt vermeld.
+U kunt controleren of de afzonderlijke inschrijving die u in Device Provisioning Service hebt gemaakt, is gebruikt. Navigeer naar uw Device Provisioning Service-exemplaar in de Azure Portal. Open de inschrijvingsgegevens voor de afzonderlijke inschrijving die u hebt gemaakt. U ziet dat de status van de inschrijving is **toegewezen** en dat de apparaat-id wordt weergegeven.
 
-Gebruik de volgende opdrachten op het apparaat om te controleren of de runtime is geïnstalleerd en is gestart.
+Gebruik de volgende opdrachten op uw apparaat om te controleren of de runtime is geïnstalleerd en gestart.
 
 ### <a name="linux-device"></a>Linux-apparaat
 
@@ -376,13 +376,13 @@ Controleer de status van de IoT Edge-service.
 systemctl status iotedge
 ```
 
-Bekijk service Logboeken.
+Bekijk servicelogboeken.
 
 ```cmd/sh
 journalctl -u iotedge --no-pager --no-full
 ```
 
-Een lijst met actieve modules weer geven.
+Lijst met modules die worden uitgevoerd.
 
 ```cmd/sh
 iotedge list
@@ -398,13 +398,13 @@ Controleer de status van de IoT Edge-service.
 sudo iotedge system status
 ```
 
-Bekijk service Logboeken.
+Bekijk servicelogboeken.
 
 ```cmd/sh
 sudo iotedge system logs
 ```
 
-Een lijst met actieve modules weer geven.
+Lijst met modules die worden uitgevoerd.
 
 ```cmd/sh
 sudo iotedge list
@@ -419,13 +419,13 @@ Controleer de status van de IoT Edge-service.
 Get-Service iotedge
 ```
 
-Bekijk service Logboeken.
+Bekijk servicelogboeken.
 
 ```powershell
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
 ```
 
-Een lijst met actieve modules weer geven.
+Lijst met modules die worden uitgevoerd.
 
 ```powershell
 iotedge list
@@ -433,4 +433,4 @@ iotedge list
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Met het inschrijvings proces voor Device Provisioning Service kunt u de apparaat-ID en de dubbele Tags van het apparaat instellen op hetzelfde moment als u het nieuwe apparaat inricht. U kunt deze waarden gebruiken om afzonderlijke apparaten of groepen apparaten te richten met behulp van automatische Apparaatbeheer. Meer informatie over [het implementeren en bewaken van IOT Edge modules op schaal met behulp van de Azure Portal](how-to-deploy-at-scale.md) of [met behulp van Azure cli](how-to-deploy-cli-at-scale.md).
+Met het device provisioning service-inschrijvingsproces kunt u de apparaat-id en apparaattweetags instellen op hetzelfde moment dat u het nieuwe apparaat inrichten. U kunt deze waarden gebruiken voor afzonderlijke apparaten of groepen apparaten met behulp van automatisch apparaatbeheer. Meer informatie over [het implementeren en bewaken IoT Edge modules op schaal](how-to-deploy-at-scale.md) met behulp van de Azure Portal of met behulp van Azure [CLI.](how-to-deploy-cli-at-scale.md)

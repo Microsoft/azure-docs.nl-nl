@@ -2,18 +2,20 @@
 title: Quickstart voor de serverloze Azure SignalR Service - Python
 description: Een quickstart waarin u leert hoe u de service Azure SignalR en Azure Functions gebruikt om een chatruimte te maken met behulp van Python.
 author: anthonychu
+ms.author: antchu
+ms.date: 12/14/2019
+ms.topic: quickstart
 ms.service: signalr
 ms.devlang: python
-ms.topic: quickstart
-ms.date: 12/14/2019
-ms.author: antchu
-ms.custom: devx-track-python
-ms.openlocfilehash: 82a2e64d27fcbbb3801e6dab347343e086a0b70f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom:
+- devx-track-python
+- mode-api
+ms.openlocfilehash: a279c1ed16cac69932001146d4108cec19203e22
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105048218"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107536637"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-python"></a>Quickstart: Een chatruimte maken met Azure Functions en SignalR Service met behulp van Python
 
@@ -27,7 +29,7 @@ Zorg ervoor dat u een code-editor hebt geïnstalleerd, bijvoorbeeld [Visual Stud
 
 Installeer [Azure Functions Core Tools (versie 2.7.1505 of hoger)](https://github.com/Azure/azure-functions-core-tools#installing) om lokaal Azure Function-apps in Python uit te voeren.
 
-Azure Functions vereist [python 3.6 +](https://www.python.org/downloads/). (Zie [ondersteunde python-versies](/azure/azure-functions/functions-reference-python#python-version))
+Azure Functions python [3.6+ is vereist.](https://www.python.org/downloads/) (Zie [Ondersteunde Python-versies](/azure/azure-functions/functions-reference-python#python-version))
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -116,4 +118,3 @@ In deze quickstart hebt u een serverloze, realtime toepassing in VS Code gebouwd
 
 > [!div class="nextstepaction"]
 > [Azure Functions met VS Code implementeren](/azure/developer/javascript/tutorial-vscode-serverless-node-01)
-

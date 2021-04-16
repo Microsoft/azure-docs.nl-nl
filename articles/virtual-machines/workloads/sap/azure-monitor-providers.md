@@ -6,39 +6,39 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
-ms.openlocfilehash: 54ce9ca0ddffe074f5a343d192b4599b3449a855
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: fe8ac81a8b04aa88ce91a978c2bc9b979a065370
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/16/2021
-ms.locfileid: "107538738"
+ms.locfileid: "107576156"
 ---
-# <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Azure Monitor voor SAP-oplossingenproviders (preview)
+# <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Providers van Azure Monitor voor SAP-oplossingen (preview)
 
 ## <a name="overview"></a>Overzicht  
 
-In de context van Azure Monitor for SAP Solutions verwijst *een providertype* naar een specifieke *provider*. Bijvoorbeeld *SAP HANA*, die is geconfigureerd voor een specifiek onderdeel binnen het SAP-landschap, zoals SAP HANA database. Een provider bevat de verbindingsgegevens voor het bijbehorende onderdeel en helpt bij het verzamelen van telemetriegegevens van dat onderdeel. Een Azure Monitor for SAP Solutions resource (ook wel SAP-monitorresource genoemd) kan worden geconfigureerd met meerdere providers van hetzelfde providertype of meerdere providers van meerdere providertypen.
+In de context van Azure Monitor for SAP Solutions verwijst *een providertype* naar een specifieke *provider*. Bijvoorbeeld *SAP HANA*, die is geconfigureerd voor een specifiek onderdeel binnen het SAP-landschap, zoals SAP HANA database. Een provider bevat de verbindingsgegevens voor het bijbehorende onderdeel en helpt bij het verzamelen van telemetriegegevens van dat onderdeel. Een Azure Monitor for SAP Solutions resource (ook wel SAP Monitor-resource genoemd) kan worden geconfigureerd met meerdere providers van hetzelfde providertype of meerdere providers van meerdere providertypen.
    
 Klanten kunnen ervoor kiezen om verschillende providertypen te configureren om het verzamelen van gegevens uit het bijbehorende onderdeel in hun SAP-landschap mogelijk te maken. Klanten kunnen bijvoorbeeld één provider configureren voor SAP HANA providertype, een andere provider voor het type clusterprovider met hoge beschikbaarheid, en meer.  
 
-Klanten kunnen er ook voor kiezen om meerdere providers van een specifiek providertype te configureren voor hergebruik van dezelfde SAP Monitor-resource en de bijbehorende beheerde groep. Meer informatie over beheerde resourcegroep. Voor openbare preview worden de volgende providertypen ondersteund:   
+Klanten kunnen er ook voor kiezen om meerdere providers van een specifiek providertype te configureren om dezelfde SAP Monitor-resource en de bijbehorende beheerde groep opnieuw te gebruiken. Meer informatie over beheerde resourcegroep. Voor openbare preview worden de volgende providertypen ondersteund:   
 - SAP NetWeaver
 - SAP HANA
 - Microsoft SQL Server
 - Cluster met hoge beschikbaarheid
 - Besturingssysteem
 
-![Azure Monitor voor SAP-oplossingenproviders](./media/azure-monitor-sap/azure-monitor-providers.png)
+![Azure Monitor voor SAP-oplossingenproviders](https://user-images.githubusercontent.com/75772258/115047655-5a5b2c00-9ef6-11eb-9e0c-073e5e1fcd0e.png)
 
-Klanten wordt aangeraden ten minste één provider van de beschikbare providertypen te configureren op het moment dat ze de SAP Monitor-resource implementeren. Door een provider te configureren, starten klanten gegevensverzameling van het bijbehorende onderdeel waarvoor de provider is geconfigureerd.   
+Klanten wordt aangeraden ten minste één provider van de beschikbare providertypen te configureren op het moment dat de SAP Monitor-resource wordt geïmplementeerd. Door een provider te configureren, starten klanten gegevensverzameling vanuit het bijbehorende onderdeel waarvoor de provider is geconfigureerd.   
 
-Als klanten geen providers configureren op het moment van de implementatie van de SAP-monitorresource, worden er geen telemetriegegevens verzameld, hoewel de SAP Monitor-resource wordt geïmplementeerd. Klanten hebben de mogelijkheid om providers toe te voegen na de implementatie via SAP Monitor-resource binnen Azure Portal. Klanten kunnen op elk moment providers toevoegen aan of verwijderen uit de SAP Monitor-resource.
+Als klanten op het moment van de implementatie van de SAP Monitor-resource geen providers configureren, worden er geen telemetriegegevens verzameld, hoewel de SAP Monitor-resource wel wordt geïmplementeerd. Klanten hebben de mogelijkheid om providers toe te voegen na de implementatie via SAP Monitor-resource binnen Azure Portal. Klanten kunnen op elk moment providers toevoegen aan of verwijderen uit de SAP Monitor-resource.
 
 ## <a name="provider-type-sap-netweaver"></a>Providertype: SAP NetWeaver
 
 Klanten kunnen een of meer providers van het providertype SAP NetWeaver configureren om gegevensverzameling vanuit de SAP NetWeaver-laag mogelijk te maken. De AMS NetWeaver-provider maakt gebruik van de bestaande [SAPControl-webserviceinterface](https://www.sap.com/documents/2016/09/0a40e60d-8b7c-0010-82c7-eda71af511fa.html) om de juiste telemetriegegevens op te halen.
 
-Voor de huidige release vindt u hieronder de standaard standaard SOAP-webmethoden die worden aangeroepen door AMS.
+Voor de huidige release vindt u hieronder de standaard out-of-box SOAP-webmethoden die worden aangeroepen door AMS.
 
 ![image1](https://user-images.githubusercontent.com/75772258/114600036-820d8280-9cb1-11eb-9f25-d886ab1d5414.png)
 
@@ -52,24 +52,24 @@ In de openbare preview kunnen klanten verwachten dat ze de volgende gegevens zie
 
 ## <a name="provider-type-sap-hana"></a>Providertype: SAP HANA
 
-Klanten kunnen een of meer providers van providertype configureren *SAP HANA* gegevensverzameling vanuit een database SAP HANA inschakelen. De SAP HANA-provider maakt verbinding met de SAP HANA-database via SQL-poort, haalt telemetriegegevens op uit de database en pusht deze naar de Log Analytics-werkruimte in het klantabonnement. De SAP HANA-provider verzamelt elke 1 minuut gegevens uit de SAP HANA database.  
+Klanten kunnen een of meer providers van *providertype* configureren om SAP HANA gegevensverzameling uit de database SAP HANA inschakelen. De SAP HANA-provider maakt verbinding met de SAP HANA-database via SQL-poort, haalt telemetriegegevens op uit de database en pusht deze naar de Log Analytics-werkruimte in het klantabonnement. De SAP HANA-provider verzamelt elke 1 minuut gegevens uit de SAP HANA database.  
 
-In de openbare preview kunnen klanten de volgende gegevens verwachten met SAP HANA-provider: Onderliggend infrastructuurgebruik, SAP HANA Hoststatus, SAP HANA-systeemreplicatie en SAP HANA Backup-telemetriegegevens. Als u SAP HANA provider wilt configureren, zijn host-IP-adres, HANA SQL-poortnummer en SYSTEMDB-gebruikersnaam en -wachtwoord vereist. Klanten wordt aangeraden om een SAP HANA te configureren voor SYSTEMDB, maar er kunnen meer providers worden geconfigureerd voor andere databaseten tenants.
+In de openbare preview kunnen klanten de volgende gegevens verwachten met SAP HANA-provider: Onderliggend infrastructuurgebruik, SAP HANA Hoststatus, SAP HANA System Replication en SAP HANA Backup-telemetriegegevens. Als u de SAP HANA wilt configureren, zijn het IP-adres van de host, het HANA SQL-poortnummer en de gebruikersnaam en het wachtwoord van SYSTEMDB vereist. Klanten wordt aangeraden om een SAP HANA te configureren voor SYSTEMDB, maar er kunnen meer providers worden geconfigureerd voor andere databaseten tenants.
 
 ![Azure Monitor voor SAP-oplossingenproviders - SAP HANA](./media/azure-monitor-sap/azure-monitor-providers-hana.png)
 
 ## <a name="provider-type-microsoft-sql-server"></a>Providertype: Microsoft SQL Server
 
-Klanten kunnen een of meer providers van providertype configureren *Microsoft SQL Server* gegevensverzameling vanuit [SQL Server op Virtual Machines.](https://azure.microsoft.com/services/virtual-machines/sql-server/) SQL Server-provider maakt verbinding met Microsoft SQL Server via de SQL-poort, haalt telemetriegegevens op uit de database en pusht deze naar de Log Analytics-werkruimte in het klantabonnement. De SQL Server moet worden geconfigureerd voor SQL-verificatie en een SQL Server-aanmelding, met de SAP DB als de standaarddatabase voor de provider, moet worden gemaakt. SQL Server-provider verzamelt gegevens tussen 60 seconden tot elk uur van SQL Server.  
+Klanten kunnen een of meer providers van providertype configureren *Microsoft SQL Server* gegevensverzameling vanuit [SQL Server op Virtual Machines.](https://azure.microsoft.com/services/virtual-machines/sql-server/) SQL Server-provider maakt verbinding met Microsoft SQL Server via de SQL-poort, haalt telemetriegegevens op uit de database en pusht deze naar de Log Analytics-werkruimte in het klantabonnement. De SQL Server moet worden geconfigureerd voor SQL-verificatie en er moet een SQL Server-aanmelding worden gemaakt, met de SAP DB als de standaarddatabase voor de provider. SQL Server-provider verzamelt gegevens tussen elke 60 seconden tot elk uur van SQL Server.  
 
-In de openbare preview kunnen klanten verwachten dat ze de volgende gegevens zien met SQL Server-provider: onderliggende infrastructuurgebruik, bovenste SQL-instructies, grootste tabel, problemen die zijn vastgelegd in de SQL Server-foutenlogboeken, blokkerende processen en andere.  
+In de openbare preview kunnen klanten verwachten dat ze de volgende gegevens zien met SQL Server-provider: onderliggend infrastructuurgebruik, bovenste SQL-instructies, grootste tabel, problemen die zijn vastgelegd in de SQL Server-foutlogboeken, blokkeringsprocessen en andere.  
 
-Als u de Microsoft SQL Server-provider, de SAP-systeem-id, het IP-adres van de host, het SQL Server-poortnummer en de SQL Server-aanmeldingsnaam en het wachtwoord wilt configureren, zijn deze vereist.
+Als u Microsoft SQL Server-provider wilt configureren, zijn de SAP-systeem-id, het IP-adres van de host, het SQL Server-poortnummer en de SQL Server-aanmeldingsnaam en het wachtwoord vereist.
 
 ![Azure Monitor voor SAP-oplossingenproviders - SQL](./media/azure-monitor-sap/azure-monitor-providers-sql.png)
 
 ## <a name="provider-type-high-availability-cluster"></a>Providertype: Cluster met hoge beschikbaarheid
-Klanten kunnen een of meer providers van het providertype Cluster met hoge beschikbaarheid configureren om het verzamelen van gegevens uit het Pacemaker-cluster binnen het *SAP-landschap* mogelijk te maken. De clusterprovider hoge beschikbaarheid maakt verbinding [](https://github.com/ClusterLabs/ha_cluster_exporter) met Pacemaker, met behulp van ha_cluster_exporter-eindpunt, haalt telemetriegegevens op uit de database en pusht deze naar de Log Analytics-werkruimte in het klantabonnement. De clusterprovider met hoge beschikbaarheid verzamelt elke 60 seconden gegevens van Pacemaker.  
+Klanten kunnen een of meer providers van het providertype Cluster met hoge beschikbaarheid configureren om gegevensverzameling vanuit het Pacemaker-cluster binnen het *SAP-landschap* mogelijk te maken. De clusterprovider met hoge beschikbaarheid maakt [](https://github.com/ClusterLabs/ha_cluster_exporter) verbinding met Pacemaker, met behulp van ha_cluster_exporter-eindpunt, haalt telemetriegegevens op uit de database en pusht deze naar de Log Analytics-werkruimte in het klantabonnement. Clusterprovider met hoge beschikbaarheid verzamelt elke 60 seconden gegevens van Pacemaker.  
 
 In de openbare preview kunnen klanten de volgende gegevens verwachten met een clusterprovider met hoge beschikbaarheid:   
  - Clusterstatus weergegeven als roll-up van knooppunt en resourcestatus 
@@ -99,7 +99,7 @@ Er zijn twee primaire stappen nodig om een clusterprovider met hoge beschikbaarh
 ## <a name="provider-type-os-linux"></a>Providertype: BESTURINGSSYSTEEM (Linux)
 Klanten kunnen een of meer providers van providertype OS (Linux) configureren om gegevensverzameling vanuit BareMetal of VM-knooppunt mogelijk te maken. De provider van het besturingssysteem (Linux) maakt verbinding met BareMetal- of VM-knooppunten, haalt met behulp van [het Node_Exporter-eindpunt](https://github.com/prometheus/node_exporter)telemetriegegevens op uit de knooppunten en pusht deze naar de Log Analytics-werkruimte in het   klantabonnement. De provider van het besturingssysteem (Linux) verzamelt elke 60 seconden gegevens voor de meeste metrische gegevens van knooppunten. 
 
-In openbare preview kunnen klanten verwachten dat ze de volgende gegevens zien met de provider van het besturingssysteem (Linux: 
+In openbare preview kunnen klanten verwachten dat ze de volgende gegevens zien met de provider van het besturingssysteem (Linux) : 
    - CPU-gebruik, CPU-gebruik per proces 
    - Schijfgebruik, I/O-& schrijven 
    - Geheugendistributie, geheugengebruik, geheugengebruik wisselen 
@@ -109,7 +109,7 @@ Er zijn twee primaire stappen nodig om een provider van het besturingssysteem (L
 1. Installeer [Node_Exporter](https://github.com/prometheus/node_exporter)   op elke BareMetal- of VM-knooppunten.
    U hebt twee opties voor het installeren [van Node_exporter:](https://github.com/prometheus/node_exporter) 
       - Gebruik voor Automation-installatie met Ansible [Node_Exporter](https://github.com/prometheus/node_exporter) op elke BareMetal- of VM-knooppunten om de OS-provider (Linux) te installeren.  
-      - Handmatige [installatie uitvoeren.](https://prometheus.io/docs/guides/node-exporter/)
+      - Een [handmatige installatie uitvoeren.](https://prometheus.io/docs/guides/node-exporter/)
 
 2. Configureer een provider van het besturingssysteem (Linux) voor elk BareMetal- of VM-knooppunt in uw omgeving. 
    Als u de provider van het besturingssysteem (Linux) wilt configureren, is de volgende informatie vereist: 
@@ -117,10 +117,10 @@ Er zijn twee primaire stappen nodig om een provider van het besturingssysteem (L
       - Knooppunt-export-eindpunt. Meestal http:// <servername or ip address> :9100/metrics 
 
 > [!NOTE]
-> 9100 is een poort die wordt blootgesteld voor Node_Exporter eindpunt.
+> 9100 is een poort die wordt blootgesteld aan Node_Exporter eindpunt.
 
 > [!Warning]
-> Zorg ervoor dat Node Export actief blijft na het opnieuw opstarten van het knooppunt. 
+> Zorg ervoor dat knooppunt Export actief blijft na het opnieuw opstarten van het knooppunt. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

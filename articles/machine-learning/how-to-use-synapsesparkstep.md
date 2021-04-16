@@ -1,7 +1,7 @@
 ---
-title: Apache Spark gebruiken in een machine learning pijp lijn (preview-versie)
+title: Gebruik Apache Spark in een machine learning-pijplijn (preview)
 titleSuffix: Azure Machine Learning
-description: Koppel uw Azure Synapse Analytics-werk ruimte aan uw Azure machine learning-pijp lijn om Apache Spark te gebruiken voor het bewerken van gegevens.
+description: Koppel uw Azure Synapse Analytics aan uw Azure machine learning-pijplijn om uw Apache Spark te gebruiken voor gegevensmanipulatie.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,48 +10,48 @@ author: lobrien
 ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: how-to, synapse-azureml
-ms.openlocfilehash: b03915608c6143a9e205ba1a1e08e411b8aa9093
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 2c69ec853cdeeed6f9e28fb9f2884053580ce08e
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104868644"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107576377"
 ---
-# <a name="how-to-use-apache-spark-powered-by-azure-synapse-analytics-in-your-machine-learning-pipeline-preview"></a>Apache Spark (mogelijk gemaakt door Azure Synapse Analytics) in uw machine learning-pijp lijn (preview) gebruiken
+# <a name="how-to-use-apache-spark-powered-by-azure-synapse-analytics-in-your-machine-learning-pipeline-preview"></a>Een Apache Spark (powered by Azure Synapse Analytics) gebruiken in uw machine learning pijplijn (preview)
 
-In dit artikel leert u hoe u Apache Spark Pools kunt gebruiken die door Azure Synapse Analytics worden aangedreven als het reken doel voor een gegevens voorbereidings stap in een Azure Machine Learning-pijp lijn. U leert hoe u met één pijp lijn reken resources kunt gebruiken die geschikt zijn voor de specifieke stap, zoals gegevens voorbereiding of training. U ziet hoe gegevens worden voor bereid voor de Spark-stap en hoe deze worden door gegeven aan de volgende stap. 
+In dit artikel leert u hoe u Apache Spark pools powered by Azure Synapse Analytics gebruikt als rekendoel voor een gegevensvoorbereidingsstap in een Azure Machine Learning pijplijn. U leert hoe een enkele pijplijn rekenresources kan gebruiken die geschikt zijn voor de specifieke stap, zoals gegevensvoorbereiding of training. U ziet hoe gegevens worden voorbereid voor de Spark-stap en hoe deze worden doorgegeven aan de volgende stap. 
 
 [!INCLUDE [preview disclaimer](../../includes/machine-learning-preview-generic-disclaimer.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Maak een [Azure machine learning-werk ruimte](how-to-manage-workspace.md) om al uw pijplijn resources te bevatten.
+* Maak een [Azure Machine Learning werkruimte voor](how-to-manage-workspace.md) al uw pijplijnbronnen.
 
-* [Configureer uw ontwikkel omgeving](how-to-configure-environment.md) om de Azure machine learning SDK te installeren, of gebruik een [Azure machine learning Compute-exemplaar](concept-compute-instance.md) waarbij de SDK al is geïnstalleerd.
+* [Configureer uw ontwikkelomgeving](how-to-configure-environment.md) om de Azure Machine Learning SDK te installeren of gebruik een [Azure Machine Learning compute-exemplaar](concept-compute-instance.md) waarin de SDK al is geïnstalleerd.
 
-* Een Azure Synapse Analytics-werk ruimte en een Apache Spark pool maken (Zie [Quick Start: een serverloze Apache Spark groep maken met behulp van Synapse Studio](../synapse-analytics/quickstart-create-apache-spark-pool-studio.md)). 
+* Maak een Azure Synapse Analytics en Apache Spark pool (zie [Quickstart: Een serverloze](../synapse-analytics/quickstart-create-apache-spark-pool-studio.md)Apache Spark maken met behulp van Synapse Studio ). 
 
-## <a name="link-your-azure-machine-learning-workspace-and-azure-synapse-analytics-workspace"></a>Uw Azure Machine Learning-werk ruimte en Azure Synapse Analytics-werk ruimte koppelen 
+## <a name="link-your-azure-machine-learning-workspace-and-azure-synapse-analytics-workspace"></a>Uw werkruimte Azure Machine Learning koppelen aan Azure Synapse Analytics werkruimte 
 
-U kunt uw Apache Spark groepen maken en beheren in een Azure Synapse Analytics-werk ruimte. Als u een Apache Spark groep wilt integreren met een Azure Machine Learning-werk ruimte, moet u een [koppeling maken naar de Azure Synapse Analytics-werk ruimte](how-to-link-synapse-ml-workspaces.md). 
+U maakt en beheert uw Apache Spark pools in een Azure Synapse Analytics werkruimte. Als u een Apache Spark wilt integreren met Azure Machine Learning werkruimte, moet u een koppeling maken [naar Azure Synapse Analytics werkruimte](how-to-link-synapse-ml-workspaces.md). 
 
-U kunt een Apache Spark-groep koppelen via Azure Machine Learning Studio-gebruikers interface met behulp van de pagina **gekoppelde services** . U kunt dit ook doen via de **berekenings** pagina met de optie **Compute-koppeling** .
+U kunt een groep Apache Spark koppelen via Azure Machine Learning-studio gebruikersinterface met behulp van de **pagina Gekoppelde** services. U kunt dit ook doen via de **pagina Compute** met de optie **Compute koppelen.**
 
-U kunt ook een Apache Spark groep koppelen via SDK (zoals hieronder wordt beschreven) of via een ARM-sjabloon (zie dit [voor beeld arm-sjabloon](https://github.com/Azure/azure-quickstart-templates/blob/master/101-machine-learning-linkedservice-create/azuredeploy.json)). 
+U kunt ook een Apache Spark-pool koppelen via SDK (zoals hieronder wordt beschreven) of via een ARM-sjabloon (zie dit voorbeeld van [een ARM-sjabloon).](https://github.com/Azure/azure-quickstart-templates/blob/master/101-machine-learning-linkedservice-create/azuredeploy.json) 
 
-U kunt de opdracht regel gebruiken om de ARM-sjabloon te volgen, de gekoppelde service toe te voegen en de Apache Spark groep te koppelen aan de volgende code:
+U kunt de opdrachtregel gebruiken om de ARM-sjabloon te volgen, de gekoppelde service toe te voegen en de Apache Spark pool te koppelen met de volgende code:
 
 ```bash
 az deployment group create --name --resource-group <rg_name> --template-file "azuredeploy.json" --parameters @"azuredeploy.parameters.json"
 ```
 
 > [!Important]
-> Als u een koppeling wilt maken naar de Azure Synapse Analytics-werk ruimte, moet u de rol eigenaar hebben in de Azure Synapse Analytics-werkruimte resource. Controleer uw toegang in de Azure Portal.
-> Bij het maken van de gekoppelde service wordt een door het systeem toegewezen identiteit (SAI) opgehaald. U moet deze koppelings service SAI de rol ' Synapse Apache Spark Administrator ' van Synapse Studio, zodat de Spark-taak kan worden verzonden (Zie [How to manage Synapse RBAC Role Assignments in Synapse Studio](../synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments.md)) (Engelstalig). U moet ook de gebruiker van de Azure Machine Learning werk ruimte de rol ' Inzender ' toekennen vanuit Azure Portal van resource beheer.
+> Als u een koppeling naar Azure Synapse Analytics werkruimte wilt maken, moet u de rol Eigenaar hebben in Azure Synapse Analytics werkruimteresource. Controleer uw toegang in de Azure Portal.
+> De gekoppelde service krijgt een door het systeem toegewezen identiteit (SAI) wanneer u deze maakt. U moet deze koppelingsservice SAI de rol 'Synapse Apache Spark administrator' toewijzen vanuit Synapse Studio, zodat deze de Spark-taak kan verzenden (zie [Synapse](../synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments.md)RBAC-roltoewijzingen beheren in Synapse Studio ). U moet de gebruiker van de werkruimte Azure Machine Learning de rol 'Inzender' van Azure Portal van resourcebeheer.
 
-## <a name="create-or-retrieve-the-link-between-your-azure-synapse-analytics-workspace-and-your-azure-machine-learning-workspace"></a>De koppeling tussen uw Azure Synapse Analytics-werk ruimte en uw Azure Machine Learning-werk ruimte maken of ophalen
+## <a name="create-or-retrieve-the-link-between-your-azure-synapse-analytics-workspace-and-your-azure-machine-learning-workspace"></a>De koppeling maken of ophalen tussen uw Azure Synapse Analytics werkruimte en uw Azure Machine Learning werkruimte
 
-U kunt gekoppelde services in uw werk ruimte ophalen met de volgende code:
+U kunt gekoppelde services in uw werkruimte ophalen met code zoals:
 
 ```python
 from azureml.core import Workspace, LinkedService, SynapseWorkspaceLinkedServiceConfiguration
@@ -65,11 +65,11 @@ for service in LinkedService.list(ws) :
 linked_service = LinkedService.get(ws, 'synapselink1')
 ```
 
-Eerst `Workspace.from_config()` opent u uw Azure machine learning-werk ruimte met behulp van de configuratie in `config.json` (Zie [zelf studie: aan de slag met Azure machine learning in uw ontwikkel omgeving](tutorial-1st-experiment-sdk-setup-local.md)). Vervolgens worden alle gekoppelde services die beschikbaar zijn in de werk ruimte afgedrukt met de code. Ten slotte `LinkedService.get()` haalt een gekoppelde service op met de naam `'synapselink1'` . 
+Ga eerst naar uw Azure Machine Learning werkruimte met behulp van de configuratie in (zie Zelfstudie: Aan de slag `Workspace.from_config()` met Azure Machine Learning in uw `config.json` [ontwikkelomgeving).](tutorial-1st-experiment-sdk-setup-local.md) Vervolgens worden met de code alle gekoppelde services afgedrukt die beschikbaar zijn in de werkruimte. Tot slot `LinkedService.get()` wordt een gekoppelde service met de naam `'synapselink1'` opgehaald. 
 
-## <a name="attach-your-apache-spark-pool-as-a-compute-target-for-azure-machine-learning"></a>Koppel uw Apache Spark-pool als een reken doel voor Azure Machine Learning
+## <a name="attach-your-apache-spark-pool-as-a-compute-target-for-azure-machine-learning"></a>Uw Apache Spark-pool koppelen als een rekendoel voor Azure Machine Learning
 
-Als u uw Apache Spark-pool wilt gebruiken om een stap in uw machine learning pijp lijn uit te scha kelen, moet u deze koppelen als een `ComputeTarget` voor de pijplijn stap, zoals wordt weer gegeven in de volgende code.
+Als u uw Apache Spark-pool wilt gebruiken om een stap in uw machine learning-pijplijn aan te zetten, moet u deze koppelen als een voor de pijplijnstap, zoals wordt weergegeven `ComputeTarget` in de volgende code.
 
 ```python
 from azureml.core.compute import SynapseCompute, ComputeTarget
@@ -87,15 +87,15 @@ synapse_compute=ComputeTarget.attach(
 synapse_compute.wait_for_completion()
 ```
 
-De eerste stap is het configureren van de `SynapseCompute` . Het `linked_service` argument is het `LinkedService` object dat u in de vorige stap hebt gemaakt of opgehaald. Het `type` argument moet zijn `SynapseSpark` . Het `pool_name` argument in `SynapseCompute.attach_configuration()` moet overeenkomen met dat van een bestaande groep in uw Azure Synapse Analytics-werk ruimte. Voor meer informatie over het maken van een Apache Spark-groep in de Azure Synapse Analytics-werk ruimte raadpleegt [u Quick Start: een groep zonder server Apache Spark maken met behulp van Synapse Studio](../synapse-analytics/quickstart-create-apache-spark-pool-studio.md). Het type `attach_config` is `ComputeTargetAttachConfiguration` .
+De eerste stap is het configureren van `SynapseCompute` de . Het argument is het object dat u in de vorige stap hebt `linked_service` `LinkedService` gemaakt of opgehaald. Het `type` argument moet `SynapseSpark` zijn. Het `pool_name` argument in moet overeenkomen met dat van een bestaande pool in Azure Synapse Analytics `SynapseCompute.attach_configuration()` werkruimte. Zie [Quickstart: Een serverloze Apache Spark-pool](../synapse-analytics/quickstart-create-apache-spark-pool-studio.md)maken met behulp van Synapse Studio voor meer informatie over het maken van een Apache Spark-pool in de Azure Synapse Analytics-werkruimte. Het type `attach_config` is `ComputeTargetAttachConfiguration` .
 
-Zodra de configuratie is gemaakt, maakt u een machine learning `ComputeTarget` door door te geven in de `Workspace` , `ComputeTargetAttachConfiguration` en de naam waarmee u wilt verwijzen naar de reken kracht in de werk ruimte machine learning. De aanroep `ComputeTarget.attach()` is asynchroon, waardoor de voorbeeld blokken worden geblokkeerd totdat de aanroep is voltooid.
+Zodra de configuratie is gemaakt, maakt u een machine learning door de , en de naam door te geven waarmee u wilt verwijzen naar de berekening in de `ComputeTarget` `Workspace` machine learning `ComputeTargetAttachConfiguration` werkruimte. De aanroep `ComputeTarget.attach()` van is asynchroon, dus de voorbeeldblokken totdat de aanroep is voltooid.
 
-## <a name="create-a-synapsesparkstep-that-uses-the-linked-apache-spark-pool"></a>Maak een `SynapseSparkStep` die gebruikmaakt van de gekoppelde Apache Spark pool
+## <a name="create-a-synapsesparkstep-that-uses-the-linked-apache-spark-pool"></a>Een maken `SynapseSparkStep` die gebruikmaakt van de Apache Spark pool
 
-Met de voorbeeld [taak notebook Spark in Apache Spark pool](https://github.com/azure/machinelearningnotebooks/blob/master/how-to-use-azureml/azure-synapse/spark_job_on_synapse_spark_pool.ipynb) definieert u een eenvoudige machine learning-pijp lijn. Eerst definieert het notitie blok een stap voor gegevens voorbereiding die wordt ondersteund door de `synapse_compute` definitie in de vorige stap. Vervolgens definieert het notitie blok een trainings stap die wordt ondersteund door een reken doel dat beter geschikt is voor training. De voorbeeld notitieblok maakt gebruik van de Titanic-data base om gegevens invoer en-uitvoer te demonstreren. de gegevens worden niet daad werkelijk opgeschoond of maken een voorspellend model. Omdat er in dit voor beeld geen echte training is, gebruikt de trainings stap een goedkope, op CPU gebaseerde Compute-resource.
+De voorbeeldnotenotenote [Spark-taak in een Apache Spark-pool](https://github.com/azure/machinelearningnotebooks/blob/master/how-to-use-azureml/azure-synapse/spark_job_on_synapse_spark_pool.ipynb) definieert een eenvoudige machine learning pijplijn. Eerst definieert het notebook een gegevensvoorbereidingsstap powered by `synapse_compute` de die in de vorige stap is gedefinieerd. Vervolgens definieert het notebook een trainingsstap powered by een rekendoel dat beter geschikt is voor training. Het voorbeeldnote notebook maakt gebruik van de Titanic-survivaldatabase om gegevensinvoer en -uitvoer te demonstreren; De gegevens worden niet daadwerkelijk opschoont of een voorspellend model wordt gemaakt. Omdat dit voorbeeld geen echte training heeft, maakt de trainingsstap gebruik van een goedkope rekenresource op basis van CPU.
 
-Gegevens stromen naar een machine learning pijp lijn via `DatasetConsumptionConfig` objecten, die tabellaire gegevens of sets bestanden kunnen bevatten. De gegevens zijn vaak afkomstig uit bestanden in Blob Storage in de gegevens opslag van een werk ruimte. De volgende code toont een aantal typische code voor het maken van een invoer voor een machine learning-pijp lijn:
+Gegevens stromen naar een machine learning pijplijn via objecten, die tabellaire gegevens `DatasetConsumptionConfig` of sets bestanden kunnen bevatten. De gegevens zijn vaak afkomstig uit bestanden in blobopslag in de gegevensopslag van een werkruimte. De volgende code toont een aantal typische code voor het maken van invoer voor een machine learning pijplijn:
 
 ```python
 from azureml.core import Dataset
@@ -111,21 +111,21 @@ titanic_file_dataset = Dataset.File.from_files(path=[(datastore, file_name)])
 step1_input2 = titanic_file_dataset.as_named_input("file_input").as_hdfs()
 ```
 
-In de bovenstaande code wordt ervan uitgegaan dat het bestand `Titanic.csv` zich in de Blob-opslag bevindt. De code laat zien hoe u het bestand als een `TabularDataset` en als kunt lezen `FileDataset` . Deze code is alleen bedoeld voor demonstratie doeleinden, omdat het verwarrend is om invoer te dupliceren of om een enkele gegevens bron te interpreteren als een tabel met resources en net als een bestand.
+In de bovenstaande code wordt ervan uitgenomen dat het bestand `Titanic.csv` zich in de blobopslag. De code laat zien hoe u het bestand leest als een `TabularDataset` en als een `FileDataset` . Deze code is alleen bedoeld voor demonstratiedoeleinden, omdat het verwarrend zou zijn om invoer te dupliceren of om één gegevensbron te interpreteren als een tabel met resources en alleen als een bestand.
 
 > [!Important]
-> Als u een `FileDataset` as-invoer wilt gebruiken, `azureml-core` moet uw versie mini maal zijn `1.20.0` . Hier wordt beschreven hoe u dit kunt opgeven met behulp van de- `Environment` klasse.
+> Als u een als `FileDataset` invoer wilt gebruiken, moet `azureml-core` uw versie ten minste `1.20.0` zijn. Hieronder wordt beschreven hoe u dit `Environment` opgeeft met behulp van de klasse .
 
-Wanneer een stap is voltooid, kunt u ervoor kiezen om uitvoer gegevens op te slaan met behulp van code, vergelijkbaar met:
+Wanneer een stap is voltooid, kunt u ervoor kiezen om uitvoergegevens op te slaan met behulp van code die vergelijkbaar is met:
 
 ```python
 from azureml.data import HDFSOutputDatasetConfig
 step1_output = HDFSOutputDatasetConfig(destination=(datastore,"test")).register_on_complete(name="registered_dataset")
 ```
 
-In dit geval worden de gegevens opgeslagen in de `datastore` in een bestand met de naam `test` en zijn ze beschikbaar in de machine learning-werk ruimte als een `Dataset` met de namen `registered_dataset` .
+In dit geval worden de gegevens opgeslagen in de in een bestand met de naam en zijn ze beschikbaar in de machine learning werkruimte als een met `datastore` `test` de naam `Dataset` `registered_dataset` .
 
-Naast gegevens kan een pijplijn stap bestaan uit python-afhankelijkheden per stap. Afzonderlijke `SynapseSparkStep` objecten kunnen ook de exacte Apache Spark configuratie van Azure Synapse opgeven. Dit wordt weer gegeven in de volgende code, waarmee wordt aangegeven dat de `azureml-core` pakket versie mini maal moet zijn `1.20.0` . (Zoals eerder vermeld, is deze vereiste `azureml-core` vereist voor het gebruik van een `FileDataset` als invoer.)
+Naast gegevens kan een pijplijnstap afhankelijkheden per stap van Python hebben. Afzonderlijke `SynapseSparkStep` objecten kunnen ook hun precieze Azure Synapse Apache Spark opgeven. Dit wordt weergegeven in de volgende code, waarmee wordt aangegeven dat de pakketversie ten `azureml-core` minste moet `1.20.0` zijn. (Zoals eerder vermeld, is deze vereiste `azureml-core` voor nodig om een als invoer te `FileDataset` gebruiken.)
 
 ```python
 from azureml.core.environment import Environment
@@ -151,13 +151,13 @@ step_1 = SynapseSparkStep(name = 'synapse-spark',
                           environment = env)
 ```
 
-De bovenstaande code bevat één stap in de Azure machine learning-pijp lijn. In deze stap `environment` wordt een specifieke `azureml-core` versie opgegeven en kunnen indien nodig andere Conda-of PIP-afhankelijkheden worden toegevoegd.
+Met de bovenstaande code wordt één stap in de Azure machine learning opgegeven. Met deze stap geeft u een specifieke versie op en kunt u indien nodig andere `environment` `azureml-core` conda- of pip-afhankelijkheden toevoegen.
 
-De `SynapseSparkStep` wordt geladen en geüpload vanaf de lokale computer de submap `./code` . Deze map wordt opnieuw gemaakt op de Compute-Server en de stap voert het bestand `dataprep.py` uit in die map. De `inputs` en `outputs` van deze stap zijn de `step1_input1` , `step1_input2` , en `step1_output` objecten die eerder zijn besproken. De eenvoudigste manier om toegang te krijgen tot deze waarden in het `dataprep.py` script is om ze te koppelen aan de naam `arguments` .
+De `SynapseSparkStep` zipt en uploadt vanaf de lokale computer de subdirectory `./code` . Deze map wordt opnieuw gemaakt op de rekenserver en met de stap wordt het bestand vanuit die `dataprep.py` map uitgevoerd. De `inputs` en van die stap zijn de objecten , en die eerder zijn `outputs` `step1_input1` `step1_input2` `step1_output` besproken. De eenvoudigste manier om toegang te krijgen tot deze waarden in het `dataprep.py` script is door ze te koppelen aan met de naam `arguments` .
 
-De volgende set argumenten voor het `SynapseSparkStep` besturings element van de constructor Apache Spark. De `compute_target` is de `'link1-spark01'` die we eerder als reken doel hebben gekoppeld. Met de andere para meters geeft u het geheugen en de kernen op die u wilt gebruiken.
+De volgende set argumenten voor het `SynapseSparkStep` constructorbesturingselement Apache Spark. De `compute_target` is de die we eerder als `'link1-spark01'` rekendoel hebben gekoppeld. De andere parameters geven het geheugen en de kernen op die we willen gebruiken.
 
-Het voor beeld-notebook gebruikt de volgende code voor `dataprep.py` :
+In het voorbeeldnote notebook wordt de volgende code gebruikt voor `dataprep.py` :
 
 ```python
 import os
@@ -193,13 +193,13 @@ sdf.coalesce(1).write\
 .csv(args.output_dir)
 ```
 
-Dit script voor gegevens voorbereiding heeft geen echte gegevens transformatie, maar illustreert hoe u gegevens ophaalt, converteert naar een Spark-data frame en hoe u een eenvoudige Apache Spark bewerking kunt uitvoeren. U kunt de uitvoer in Azure Machine Learning Studio vinden door de onderliggende uitvoering te openen, het tabblad **uitvoer en logboeken** te kiezen en het `logs/azureml/driver/stdout` bestand te openen, zoals wordt weer gegeven in de volgende afbeelding.
+Met dit script voor gegevensvoorbereiding wordt geen echte gegevenstransformatie gedaan, maar wordt geïllustreerd hoe u gegevens op haalt, converteert naar een Spark-gegevensframe en hoe u eenvoudige bewerkingen Apache Spark uitvoeren. U vindt de uitvoer in Azure Machine Learning Studio door de onderliggende run te openen, het tabblad **Uitvoer en** logboeken te kiezen en het bestand te openen, zoals wordt weergegeven in de `logs/azureml/driver/stdout` volgende afbeelding.
 
-:::image type="content" source="media/how-to-use-synapsesparkstep/synapsesparkstep-stdout.png" alt-text="Scherm afbeelding van Studio met het tabblad stdout van onderliggende uitvoering":::
+:::image type="content" source="media/how-to-use-synapsesparkstep/synapsesparkstep-stdout.png" alt-text="Schermopname van Studio met het tabblad stdout van onderliggende run":::
 
-## <a name="use-the-synapsesparkstep-in-a-pipeline"></a>De `SynapseSparkStep` in een pijp lijn gebruiken
+## <a name="use-the-synapsesparkstep-in-a-pipeline"></a>De `SynapseSparkStep` gebruiken in een pijplijn
 
-Andere stappen in de pijp lijn hebben mogelijk hun eigen unieke omgevingen en worden uitgevoerd op verschillende reken resources die relevant zijn voor de taak. Het voor beeld-notebook voert de stap ' training ' uit op een klein CPU-cluster:
+In het volgende voorbeeld wordt de uitvoer gebruikt van `SynapseSparkStep` de die u in de vorige sectie hebt [gemaakt.](#create-a-synapsesparkstep-that-uses-the-linked-apache-spark-pool) Andere stappen in de pijplijn hebben mogelijk hun eigen unieke omgevingen en worden uitgevoerd op verschillende rekenbronnen die geschikt zijn voor de taak. In het voorbeeldnote notebook wordt de 'trainingsstap' uitgevoerd op een klein CPU-cluster:
 
 ```python
 from azureml.core.compute import AmlCompute
@@ -226,9 +226,9 @@ step_2 = PythonScriptStep(script_name="train.py",
                           allow_reuse=False)
 ```
 
-De bovenstaande code maakt zo nodig de nieuwe reken resource. Vervolgens wordt het `step1_output` resultaat geconverteerd naar invoer voor de stap training. De `as_download()` optie betekent dat de gegevens worden verplaatst naar de reken resource, wat leidt tot snellere toegang. Als de gegevens zo groot zijn dat deze niet op de lokale Compute hard drive passen, gebruikt u de `as_mount()` optie om de gegevens te streamen via het systeem voor zekering. De `compute_target` van deze tweede stap is `'cpucluster'` , niet de `'link1-spark01'` resource die u hebt gebruikt in de stap voor het voorbereiden van gegevens. In deze stap wordt een eenvoudig programma gebruikt in `train.py` plaats van het dat `dataprep.py` u in de vorige stap hebt gebruikt. U kunt de details van `train.py` in het voorbeeld notitieblok bekijken.
+Met de bovenstaande code wordt zo nodig de nieuwe rekenresource gemaakt. Vervolgens wordt het `step1_output` resultaat geconverteerd naar invoer voor de trainingsstap. De `as_download()` optie betekent dat de gegevens worden verplaatst naar de rekenresource, wat resulteert in snellere toegang. Als de gegevens zo groot zijn dat ze niet op de lokale rekenharde schijf passen, gebruikt u de optie om de gegevens te streamen via het `as_mount()` FUSE-bestandssysteem. De `compute_target` van deze tweede stap is , niet de resource die u hebt gebruikt in de `'cpucluster'` `'link1-spark01'` gegevensvoorbereidingsstap. In deze stap wordt een eenvoudig programma `train.py` gebruikt in plaats van het programma dat u in de vorige stap hebt `dataprep.py` gebruikt. U kunt de details van `train.py` bekijken in het voorbeeldnoteboek.
 
-Zodra u al uw stappen hebt gedefinieerd, kunt u uw pijp lijn maken en uitvoeren. 
+Zodra u al uw stappen hebt gedefinieerd, kunt u uw pijplijn maken en uitvoeren. 
 
 ```python
 from azureml.pipeline.core import Pipeline
@@ -237,12 +237,12 @@ pipeline = Pipeline(workspace=ws, steps=[step_1, step_2])
 pipeline_run = pipeline.submit('synapse-pipeline', regenerate_outputs=True)
 ```
 
-Met de bovenstaande code maakt u een pijp lijn die bestaat uit de stap voor het voorbereiden van gegevens op Apache Spark Pools van Azure Synapse Analytics ( `step_1` ) en de training Step ( `step_2` ). Azure berekent de uitvoerings grafiek door de gegevens afhankelijkheden tussen de stappen te controleren. In dit geval is er slechts een eenvoudige afhankelijkheid die `step2_input` per se vereist is `step1_output` .
+Met de bovenstaande code maakt u een pijplijn die bestaat uit de gegevensvoorbereidingsstap op Apache Spark pools powered by Azure Synapse Analytics ( `step_1` ) en de trainingsstap ( `step_2` ). Azure berekent de uitvoeringsgrafiek door de gegevensafhankelijkheden tussen de stappen te onderzoeken. In dit geval is er slechts een eenvoudige afhankelijkheid die noodzakelijkerwijs `step2_input` vereist `step1_output` is.
 
-De aanroep om `pipeline.submit` , indien nodig, een experiment te maken dat binnen het proces wordt aangeroepen `synapse-pipeline` en wordt asynchroon gestart. Afzonderlijke stappen in de pijp lijn worden uitgevoerd als onderliggend item van deze hoofd uitvoering en kunnen worden gecontroleerd en gecontroleerd op de pagina experimenten van Studio.
+Met de aanroep van wordt, indien nodig, een experiment met de naam gemaakt en asynchroon een `pipeline.submit` `synapse-pipeline` Run gestart. Afzonderlijke stappen in de pijplijn worden uitgevoerd als onderliggende runs van deze hoofduitleiding en kunnen worden bewaakt en gecontroleerd op de pagina Experimenten van Studio.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [machine learning pijp lijnen publiceren en bijhouden](how-to-deploy-pipelines.md) 
+* [Pijplijnen publiceren machine learning bijhouden](how-to-deploy-pipelines.md) 
 * [Azure Machine Learning bewaken](monitor-azure-machine-learning.md)
-* [Automatische ML gebruiken in een Azure Machine Learning pijp lijn in python](how-to-use-automlstep-in-pipelines.md)
+* [Geautomatiseerde ML gebruiken in een Azure Machine Learning pijplijn in Python](how-to-use-automlstep-in-pipelines.md)

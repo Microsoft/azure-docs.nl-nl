@@ -9,97 +9,71 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/19/2019
+ms.date: 03/24/2021
 ms.author: jeedes
-ms.openlocfilehash: 552e5c2411889ee7f07265eb1cc35d98aed4d7c1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 680380722746522a0eb3fe6518452472be952075
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99574091"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482811"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Zelfstudie: Azure Active Directory-integratie met M-Files
 
-In deze zelfstudie leert u hoe u M-Files kunt integreren met Azure Active Directory (Azure AD).
-De integratie van M-Files met Azure Active Directory biedt de volgende voordelen:
+In deze zelfstudie leert u hoe u M-Files integreert met Azure Active Directory (Azure AD). Wanneer u M-Files integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure Active Directory bepalen wie er toegang heeft tot M-Files.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure Active Directory-account worden aangemeld bij M-Files (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* In Azure AD beheren wie toegang heeft tot M-Files.
+* Ervoor zorgen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij M-Files.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om Azure Active Directory-integratie te configureren met M-Files hebt u het volgende nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Een abonnement op M-Files waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Een abonnement op M-Files met eenmalige aanmelding (SSO) ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* M-Files ondersteunt door **SP** geïnitieerde eenmalige aanmelding
+* M-Files ondersteunt door **SP geïnitieerde** eenmalige aanmelding.
 
-## <a name="adding-m-files-from-the-gallery"></a>M-Files uit de galerie toevoegen
+## <a name="add-m-files-from-the-gallery"></a>M-Files toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van M-Files in Azure Active Directory, moet u M-Files uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Als u M-Files wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in **de sectie Toevoegen uit** de galerie **M-Files** in het zoekvak.
+1. Selecteer **M-Files in** het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
+## <a name="configure-and-test-azure-ad-sso-for-m-files"></a>Eenmalige aanmelding van Azure AD voor M-Files configureren en testen
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+Configureer en test eenmalige aanmelding van Azure AD met M-Files met behulp van een testgebruiker met de **naam B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in M-Files.
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met M-Files te configureren en te testen:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[Eenmalige aanmelding bij M-Files configureren](#configure-m-files-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+    1. **[Testgebruiker voor M-Files](#create-m-files-test-user)** maken : als u een tegenhanger van B.Simon in M-Files wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-4. Typ in het zoekvak **M-Files**, selecteer **M-Files** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+1. Zoek in Azure Portal de integratiepagina van de toepassing  **M-Files** de sectie Beheren en selecteer **Een aanmelding.**
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-     ![M-Files in de lijst met resultaten](common/search-new-app.png)
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In deze sectie gaat u eenmalige aanmelding met Azure Active Directory bij M-Files configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in M-Files tot stand is gebracht.
-
-Als u eenmalige aanmelding met Azure Active Directory bij M-Files wilt configureren en testen, moet u de volgende bouwstenen voltooien:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor M-Files configureren](#configure-m-files-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor M-Files maken](#create-m-files-test-user)**: als u een tegenhanger van Britta Simon in M-Files wilt hebben die is gekoppeld aan de Azure Active Directory-weergave van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directory wilt configureren voor M-Files:
-
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **M-Files** en selecteer **Eenmalige aanmelding**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
-
-    ![Domein- en URL-gegevens voor eenmalige aanmelding bij M-Files](common/sp-identifier.png)
 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<tenantname>.cloudvault.m-files.com/authentication/MFiles.AuthenticationProviders.Core/sso`
 
@@ -116,13 +90,31 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
-    b. Azure AD-id
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-    c. Afmeldings-URL
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
-### <a name="configure-m-files-single-sign-on"></a>Eenmalige aanmelding bij M-Files configureren
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie geeft u B.Simon toestemming om een aanmelding van Azure te gebruiken door toegang te verlenen tot M-Files.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **M-Files** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-m-files-sso"></a>Eenmalige aanmelding voor M-Files configureren
 
 1. Als u eenmalige aanmelding wilt configureren voor uw toepassing, neem dan contact op met het [ondersteuningsteam van M-Files](mailto:support@m-files.com) voor de gedownloade metagegevens.
    
@@ -133,11 +125,11 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
 
 1. Open het venster **Bureaubladinstellingen van M-Files**. Klik vervolgens op **Toevoegen**.
    
-    ![Schermopname van Bureaubladinstellingen van M-Files waar u Toevoegen kunt selecteren.](./media/m-files-tutorial/tutorial_m_files_10.png)
+    ![Schermopname van Bureaubladinstellingen van M-Files waar u Toevoegen kunt selecteren.](./media/m-files-tutorial/settings.png)
 
 1. In het venster **Verbindingseigenschappen documentkluis** voert u de volgende stappen uit:
    
-    ![Schermopname van Verbindingseigenschappen documentkluis waar u de beschreven waarden kunt invoeren.](./media/m-files-tutorial/tutorial_m_files_11.png)  
+    ![Schermopname van Verbindingseigenschappen documentkluis waar u de beschreven waarden kunt invoeren.](./media/m-files-tutorial/general.png)  
 
     Typ in de sectie Server de volgende waarden:  
 
@@ -153,71 +145,20 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
  
     f. Klik op **OK**.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create**.
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot M-Files.
-
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **M-Files**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Selecteer **M-Files** in de lijst met toepassingen.
-
-    ![De M-Files-link in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-
 ### <a name="create-m-files-test-user"></a>M-Files-testgebruiker maken
 
 Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon in M-Files. Werk met het [ondersteuningsteam van M-Files](mailto:support@m-files.com) om gebruikers toe te voegen in M-Files.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel M-Files klikt, wordt u automatisch aangemeld bij de instantie van M-Files waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL voor M-Files, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+* Ga rechtstreeks naar de aanmeldings-URL van M-Files en initieer de aanmeldingsstroom daar.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel M-Files in de Mijn apps, wordt u omgeleid naar de aanmeldings-URL voor M-Files. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Zodra u M-Files hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

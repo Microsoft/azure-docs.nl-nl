@@ -1,22 +1,25 @@
 ---
-title: Kenmerken van een beheerde sleutel maken en ophalen in Azure Key Vault – Azure PowerShell
-description: Quick Start laat zien hoe u een beheerde sleutel kunt instellen en ophalen uit Azure Key Vault met behulp van Azure PowerShell
+title: Kenmerken van een beheerde sleutel maken en ophalen in Azure Key Vault - Azure PowerShell
+description: Quickstart waarin wordt getoond hoe u een beheerde sleutel kunt instellen en ophalen uit Azure Key Vault met Azure PowerShell
 services: key-vault
 author: msmbaldwin
-tags: azure-resource-manager
+ms.author: mbaldwin
+ms.date: 01/26/2021
+ms.topic: quickstart
 ms.service: key-vault
 ms.subservice: keys
-ms.topic: quickstart
-ms.date: 01/26/2021
-ms.author: mbaldwin
-ms.openlocfilehash: 943555e9f7a26530a075aee27dd310d96974e652
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+tags:
+- azure-resource-manager
+ms.custom:
+- mode-api
+ms.openlocfilehash: ba1cd8d6b1410be30eefe9dca9675daaf6c16256
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99072910"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107534662"
 ---
-# <a name="quickstart-set-and-retrieve-a-managed-key-from-azure-key-vault-using-powershell"></a>Snelstartgids: een beheerde sleutel instellen en ophalen uit Azure Key Vault met behulp van Power shell
+# <a name="quickstart-set-and-retrieve-a-managed-key-from-azure-key-vault-using-powershell"></a>Quickstart: Een beheerde sleutel instellen en ophalen uit Azure Key Vault powershell
 
 In deze quickstart maakt u een sleutelkluis in Azure Key Vault met behulp van Azure PowerShell. Azure Key Vault is een cloudservice die werkt als een beveiligd geheimenarchief. U kunt veilig sleutels, wachtwoorden, certificaten en andere geheime informatie opslaan. U kunt het [Overzicht](../general/overview.md) raadplegen voor meer informatie over Key Vault. Azure PowerShell wordt gebruikt voor het maken en beheren van Azure-resources met behulp van opdrachten of scripts. Nadat u dat hebt gedaan, slaat u een sleutel op.
 
@@ -32,7 +35,7 @@ Login-AzAccount
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Gebruik de Azure PowerShell [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) cmdlet om een resource groep met de naam *myResourceGroup* te maken op de locatie *westus* . 
+Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Gebruik de cmdlet [Azure PowerShell New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) om een resourcegroep met de naam *myResourceGroup* te maken op de *locatie westus.* 
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name "myResourceGroup" -Location "WestUS"
@@ -45,35 +48,35 @@ To create a managed HSM, you will need your Azure Active Directory principal ID.
 Get-AzADUser -UserPrincipalName "<your@email.address>"
 ```
 
-Uw Principal-ID wordt geretourneerd in de indeling ' XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX '.
+Uw principal-id wordt geretourneerd in de indeling xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
 
 ## <a name="create-a-managed-hsm"></a>Een beheerde HSM maken
 
-Gebruik de Azure PowerShell [New-AzKeyVaultManagedHsm](/powershell/module/az.keyvault/new-azkeyvaultmanagedhsm) cmdlet om een nieuwe Key Vault beheerde HSM te maken. U moet enkele gegevens verstrekken:
+Gebruik de Azure PowerShell [cmdlet New-AzKeyVaultManagedHsm](/powershell/module/az.keyvault/new-azkeyvaultmanagedhsm) om een nieuwe Key Vault HSM te maken. U moet enkele gegevens verstrekken:
 
-- Beheerde HSM-naam: een teken reeks van 3 tot 24 tekens die alleen getallen (0-9), letters (A-z, A-Z) en afbreek streepjes (-) kan bevatten
+- Beheerde HSM-naam: een tekenreeks van 3 tot 24 tekens die alleen cijfers (0-9), letters (a-z, A-Z) en afbreekstreeepten (-) mag bevatten
 
   > [!Important]
-  > Elke beheerde HSM moet een unieke naam hebben. Vervang <uw-unieke beheerde HSM-naam> door de naam van uw beheerde HSM in de volgende voor beelden.
+  > Elke beheerde HSM moet een unieke naam hebben. Vervang <naam your-unique-managed-hsm-> door de naam van uw beheerde HSM in de volgende voorbeelden.
 
 - Naam van resourcegroep: **myResourceGroup**.
 - De locatie: **EastUS**.
-- Uw Principal-ID: Geef de principal-ID van Azure Active Directory die u in de laatste sectie hebt verkregen aan de Administrator-para meter. 
+- Uw principal-id: geef Azure Active Directory principal-id die u in de laatste sectie hebt verkregen door aan de parameter 'Administrator'. 
 
 ```azurepowershell-interactive
 New-AzKeyVaultManagedHsm -Name "<your-unique-managed-hsm-name>" -ResourceGroupName "myResourceGroup" -Location "West US" -Administrator "<your-principal-ID>"
 ```
 
-De uitvoer van deze cmdlet toont eigenschappen van de zojuist gemaakte beheerde HSM. Let op de onderstaande twee eigenschappen:
+De uitvoer van deze cmdlet toont de eigenschappen van de zojuist gemaakte beheerde HSM. Let op de onderstaande twee eigenschappen:
 
-- **Beheerde HSM-naam**: de naam die u hebt door gegeven aan de para meter--name hierboven.
-- **Kluis-URI**: in het voor beeld is dit https:// &lt; your-unique-Managed-HSM-name &gt; . Vault.Azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
+- **Naam van beheerde HSM:** de naam die u hebt opgegeven voor de bovenstaande parameter --name.
+- **Kluis-URI:** in het voorbeeld is dit https:// &lt; uw-unieke beheerde-hsm-name &gt; .vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
 
 Vanaf dit punt is uw Azure-account nu als enige gemachtigd om bewerkingen op deze nieuwe kluis uit te voeren.
 
 ## <a name="activate-your-managed-hsm"></a>Uw beheerde HSM activeren
 
-Alle gegevenslaag opdrachten worden uitgeschakeld totdat de HSM wordt geactiveerd. U kunt geen sleutels maken of rollen toewijzen. Alleen de aangewezen beheerders, die zijn toegewezen tijdens het maken van de opdracht, kunnen de HSM activeren. Als u de HSM wilt activeren, moet u het [Beveiligingsdomein](security-domain.md) downloaden.
+Alle gegevensvlakopdrachten worden uitgeschakeld totdat de HSM is geactiveerd. U kunt geen sleutels maken of rollen toewijzen. Alleen de aangewezen beheerders, die zijn toegewezen tijdens het maken van de opdracht, kunnen de HSM activeren. Als u de HSM wilt activeren, moet u het [Beveiligingsdomein](security-domain.md) downloaden.
 
 Om uw HSM te activeren, hebt u het volgende nodig:
 - Minimaal 3 RSA-sleutelparen (maximaal 10)
@@ -81,7 +84,7 @@ Om uw HSM te activeren, hebt u het volgende nodig:
 
 Als u de HSM wilt activeren, stuurt u ten minste 3 (maximaal 10) openbare RSA-sleutels naar de HSM. De HSM versleutelt het beveiligingsdomein met deze sleutels en stuurt het terug. Als het downloaden van dit beveiligingsdomein voltooid is, is uw HSM klaar voor gebruik. U moet ook een quorum opgeven. Dit is het minimale aantal persoonlijke sleutels dat vereist is voor het ontsleutelen van het beveiligingsdomein.
 
-In het voor beeld hieronder ziet u hoe u `openssl` ( [hier](https://slproweb.com/products/Win32OpenSSL.html)beschikbaar voor Windows) kunt gebruiken voor het genereren van 3 zelf ondertekend certificaat.
+In het onderstaande voorbeeld ziet u hoe u kunt gebruiken (hier beschikbaar voor Windows ) om `openssl` 3 zelfonder tekende certificaten te genereren. [](https://slproweb.com/products/Win32OpenSSL.html)
 
 ```console
 openssl req -newkey rsa:2048 -nodes -keyout cert_0.key -x509 -days 365 -out cert_0.cer
@@ -92,7 +95,7 @@ openssl req -newkey rsa:2048 -nodes -keyout cert_2.key -x509 -days 365 -out cert
 > [!IMPORTANT]
 > Maak de RSA-sleutelparen en het beveiligingsdomeinbestand dat in deze stap is gegenereerd en sla ze op een veilige manier op.
 
-Gebruik de Azure PowerShell [-cmdlet Export-AzKeyVaultSecurityDomain](/powershell/module/az.keyvault/export-azkeyvaultsecuritydomain) om het beveiligings domein te downloaden en uw beheerde HSM te activeren. In het onderstaande voorbeeld wordt gebruikgemaakt van 3 RSA-sleutelparen (alleen openbare sleutels zijn vereist voor deze opdracht) en wordt het quorum ingesteld op 2.
+Gebruik de Azure PowerShell [cmdlet Export-AzKeyVaultSecurityDomain](/powershell/module/az.keyvault/export-azkeyvaultsecuritydomain) om het beveiligingsdomein te downloaden en uw beheerde HSM te activeren. In het onderstaande voorbeeld wordt gebruikgemaakt van 3 RSA-sleutelparen (alleen openbare sleutels zijn vereist voor deze opdracht) en wordt het quorum ingesteld op 2.
 
 ```azurepowershell-interactive
 Export-AzKeyVaultSecurityDomain -Name "<your-unique-managed-hsm-name>" -Certificates "cert_0.cer", "cert_1.cer", "cert_2.cer" -OutputPath "MHSMsd.ps.json" -Quorum 2

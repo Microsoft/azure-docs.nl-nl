@@ -12,3 +12,13 @@
   href: oracle-baremetal-architecture.md
 - name: Inrichten
   href: oracle-baremetal-provision.md
+- name: Hoge beschikbaarheid en herstel na noodgevallen
+  items:
+    - name: Overzicht
+      href: concepts-oracle-high-availability.md
+    - name: Functies voor hoge beschikbaarheid
+      href: high-availability-features.md
+    - name: Opties en overwegingen
+      href: options-considerations-high-availability.md
+    - name: Kiezen hoe u wilt herstellen
+      href: oracle-high-availability-recovery.md

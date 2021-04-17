@@ -1,6 +1,6 @@
 ---
-title: Zelf studie-OpenSSL gebruiken voor het maken van zelfondertekende certificaten voor Azure IoT Hub | Microsoft Docs
-description: 'Zelf studie: OpenSSL gebruiken voor het maken van zelfondertekende X. 509-certificaten voor Azure IoT Hub'
+title: 'Zelfstudie: OpenSSL gebruiken om zelf ondertekende certificaten te maken voor Azure IoT Hub | Microsoft Docs'
+description: 'Zelfstudie: OpenSSL gebruiken om zelf-ondertekende X.509-certificaten te maken voor Azure IoT Hub'
 author: v-gpettibone
 manager: philmea
 ms.service: iot-hub
@@ -12,17 +12,16 @@ ms.custom:
 - mvc
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
-- devx-track-azurecli
-ms.openlocfilehash: 82ef2e39d5d04914e1086e0b25ccbc8e5c7c762e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 982e402946cbd71d946bc1e316cef99621c536a3
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105630676"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378190"
 ---
-# <a name="tutorial-using-openssl-to-create-self-signed-certificates"></a>Zelf studie: OpenSSL gebruiken voor het maken van zelfondertekende certificaten
+# <a name="tutorial-using-openssl-to-create-self-signed-certificates"></a>Zelfstudie: OpenSSL gebruiken om zelf ondertekende certificaten te maken
 
-U kunt een apparaat verifiëren op uw IoT Hub met twee zelfondertekende apparaat certificaten. Dit wordt ook wel vingerafdruk verificatie genoemd, omdat de certificaten vinger afdrukken (hash-waarden) bevatten die u naar de IoT hub verzendt. De volgende stappen laten zien hoe u twee zelfondertekende certificaten kunt maken.
+U kunt een apparaat bij uw IoT Hub met behulp van twee zelf-ondertekende apparaatcertificaten. Dit wordt ook wel vingerafdrukverificatie genoemd omdat de certificaten vingerafdruk (hash-waarden) bevatten die u naar de IoT-hub verstuurt. In de volgende stappen ziet u hoe u twee zelf-ondertekende certificaten maakt.
 
 ## <a name="step-1---create-a-key-for-the-first-certificate"></a>Stap 1: een sleutel voor het eerste certificaat maken
 
@@ -30,9 +29,9 @@ U kunt een apparaat verifiëren op uw IoT Hub met twee zelfondertekende apparaat
 openssl genpkey -out device1.key -algorithm RSA -pkeyopt rsa_keygen_bits:2048
 ```
 
-## <a name="step-2---create-a-csr-for-the-first-certificate"></a>Stap 2: een CSR voor het eerste certificaat maken
+## <a name="step-2---create-a-csr-for-the-first-certificate"></a>Stap 2: een CSR maken voor het eerste certificaat
 
-Zorg ervoor dat u de apparaat-ID opgeeft wanneer u hierom wordt gevraagd.
+Zorg ervoor dat u de apparaat-id opgeeft wanneer u hier om wordt gevraagd.
 
 ```bash
 openssl req -new -key device1.key -out device1.csr
@@ -53,15 +52,15 @@ Email Address []:
 openssl req -text -in device1.csr -noout
 ```
 
-## <a name="step-4---self-sign-certificate-1"></a>Stap 4-zelf-ondertekend certificaat 1
+## <a name="step-4---self-sign-certificate-1"></a>Stap 4: zelf-ondertekenen certificaat 1
 
 ```bash
 openssl x509 -req -days 365 -in device1.csr -signkey device1.key -out device.crt
 ```
 
-## <a name="step-5---create-a-key-for-certificate-2"></a>Stap 5: een sleutel maken voor certificaat 2
+## <a name="step-5---create-a-key-for-certificate-2"></a>Stap 5: een sleutel voor certificaat 2 maken
 
-Geef, wanneer u hierom wordt gevraagd, de apparaat-ID op die u hebt gebruikt voor certificaat 1.
+Geef des te meer de apparaat-id op die u hebt gebruikt voor certificaat 1.
 
 ```bash
 openssl req -new -key device2.key -out device2.csr
@@ -76,19 +75,19 @@ Email Address []:
 
 ```
 
-## <a name="step-6---self-sign-certificate-2"></a>Stap 6-zelfondertekend certificaat 2
+## <a name="step-6---self-sign-certificate-2"></a>Stap 6: zelf-ondertekenen certificaat 2
 
 ```bash
 openssl x509 -req -days 365 -in device2.csr -signkey device2.key -out device2.crt
 ```
 
-## <a name="step-7---retrieve-the-thumbprint-for-certificate-1"></a>Stap 7: de vinger afdruk voor certificaat 1 ophalen
+## <a name="step-7---retrieve-the-thumbprint-for-certificate-1"></a>Stap 7: de vingerafdruk voor certificaat 1 ophalen
 
 ```bash
 openssl x509 -in device.crt -text -fingerprint
 ```
 
-## <a name="step-8---retrieve-the-thumbprint-for-certificate-2"></a>Stap 8: de vinger afdruk voor certificaat 2 ophalen
+## <a name="step-8---retrieve-the-thumbprint-for-certificate-2"></a>Stap 8: de vingerafdruk voor certificaat 2 ophalen
 
 ```bash
 openssl x509 -in device2.crt -text -fingerprint
@@ -96,12 +95,12 @@ openssl x509 -in device2.crt -text -fingerprint
 
 ## <a name="step-9---create-a-new-iot-device"></a>Stap 9: een nieuw IoT-apparaat maken
 
-Navigeer naar uw IoT Hub in de Azure Portal en maak een nieuwe IoT-apparaat-id met de volgende kenmerken:
+Navigeer naar IoT Hub in de Azure Portal en maak een nieuwe IoT-apparaat-id met de volgende kenmerken:
 
 * Geef de **apparaat-id** op die overeenkomt met de onderwerpnaam van uw twee certificaten.
-* Selecteer het **zelfondertekende X. 509-** verificatie type.
-* Plak de hex-teken reeks-vinger afdrukken die u hebt gekopieerd van het apparaat primaire en secundaire certificaten. Zorg ervoor dat de hexadecimale teken reeksen geen scheidings tekens voor dubbele punten bevatten.
+* Selecteer het **zelf-ondertekende verificatietype X.509.**
+* Plak de vingerafdruk van de hex-tekenreeks die u hebt gekopieerd uit de primaire en secundaire certificaten van uw apparaat. Zorg ervoor dat de hexe-tekenreeksen geen dubbele punt-scheidingstekens hebben.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga naar [verificatie van certificaat testen](tutorial-x509-test-certificate.md) om te bepalen of uw apparaat kan worden geverifieerd op uw IOT hub.
+Ga naar [Test Certificate Authentication om](tutorial-x509-test-certificate.md) te bepalen of uw certificaat uw apparaat kan verifiëren bij uw IoT Hub.

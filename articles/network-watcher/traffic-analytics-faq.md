@@ -1,6 +1,6 @@
 ---
 title: Veelgestelde vragen over Azure Traffic Analytics | Microsoft Docs
-description: Krijg antwoorden op enkele veelgestelde vragen over Traffic Analytics.
+description: Krijg antwoorden op een aantal van de meest gestelde vragen over Traffic Analytics.
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: f4d97b81bf8f11b8380f04dcbfdb72bd658805ab
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 98c0a6f88da717256e78a748902317a90a369a9c
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100579245"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533635"
 ---
-# <a name="traffic-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Traffic Analytics
+# <a name="traffic-analytics-frequently-asked-questions"></a>Traffic Analytics veelgestelde vragen
 
-In dit artikel wordt één plek veel van de meest gestelde vragen over Traffic Analytics in azure Network Watcher verzameld.
+In dit artikel worden veel veelgestelde vragen over verkeersanalyses in Azure Network Watcher.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -29,160 +29,104 @@ In dit artikel wordt één plek veel van de meest gestelde vragen over Traffic A
 
 Traffic Analytics vereist de volgende vereisten:
 
-- Een Network Watcher ingeschakeld abonnement.
-- De stroom logboeken voor netwerk beveiligings groepen (NSG) zijn ingeschakeld voor de Nsg's die u wilt bewaken.
-- Een Azure Storage-account om onbewerkte stroom logboeken op te slaan.
-- Een Azure Log Analytics-werk ruimte, met lees-en schrijf toegang.
+- Een Network Watcher ingeschakeld.
+- Stroomlogboeken van netwerkbeveiligingsgroep (NSG) ingeschakeld voor de NSG's die u wilt bewaken.
+- Een Azure Storage voor het opslaan van onbewerkte stroomlogboeken.
+- Een Azure Log Analytics-werkruimte met lees- en schrijftoegang.
 
-Uw account moet voldoen aan een van de volgende opties om Traffic Analytics in te scha kelen:
+Uw account moet voldoen aan een van de volgende opties om Traffic Analytics in te kunnenschakelen:
 
-- Uw account moet een van de volgende Azure-rollen hebben op het abonnements bereik: eigenaar, bijdrager, lezer of netwerk bijdrager.
-- Als uw account niet is toegewezen aan een van de eerder vermelde rollen, moet dit worden toegewezen aan een aangepaste rol waaraan de volgende acties zijn toegewezen op abonnements niveau.
+- Uw account moet een van de volgende Azure-rollen hebben voor het abonnementsbereik: eigenaar, inzender, lezer of netwerkbijdrager.
+- Als uw account niet is toegewezen aan een van de eerder vermelde rollen, moet het worden toegewezen aan een aangepaste rol aan wie de volgende acties zijn toegewezen, op abonnementsniveau.
             
-    - Micro soft. Network/applicationGateways/lezen
-    - Micro soft. netwerk/verbindingen/lezen
-    - Micro soft. Network/loadBalancers/lezen 
-    - Micro soft. Network/localNetworkGateways/lezen 
-    - Micro soft. Network/networkInterfaces/lezen 
-    - Micro soft. Network/networkSecurityGroups/lezen 
+    - Microsoft.Network/applicationGateways/read
+    - Microsoft.Network/connections/read
+    - Microsoft.Network/loadBalancers/read 
+    - Microsoft.Network/localNetworkGateways/read 
+    - Microsoft.Network/networkInterfaces/read 
+    - Microsoft.Network/networkSecurityGroups/read 
     - Microsoft.Network/publicIPAddresses/read
-    - Micro soft. Network/routeTables/lezen
-    - Micro soft. Network/virtualNetworkGateways/lezen 
-    - Micro soft. Network/virtualNetworks/lezen
+    - Microsoft.Network/routeTables/read
+    - Microsoft.Network/virtualNetworkGateways/read 
+    - Microsoft.Network/virtualNetworks/read
         
-Rollen controleren die aan een gebruiker zijn toegewezen voor een abonnement:
+Rollen controleren die zijn toegewezen aan een gebruiker voor een abonnement:
 
-1. Meld u aan bij Azure met behulp van **login-AzAccount**. 
+1. Meld u aan bij Azure met **behulp van Login-AzAccount**. 
 
-2. Selecteer het vereiste abonnement met **Select-AzSubscription**. 
+2. Selecteer het vereiste abonnement met **behulp van Select-AzSubscription.** 
 
-3. Gebruik  **Get-AzRoleAssignment-SignInName [e-mail adres van gebruiker]-IncludeClassicAdministrators** om alle rollen weer te geven die aan een opgegeven gebruiker zijn toegewezen. 
+3. Gebruik  **Get-AzRoleAssignment -SignInName [gebruikerse-mail] - IncludeClassicAdministrators** om alle rollen weer te bieden die zijn toegewezen aan een opgegeven gebruiker. 
 
-Als er geen uitvoer wordt weer gegeven, neemt u contact op met de beheerder van de desbetreffende abonnementen om de opdrachten uit te voeren. Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell](../role-based-access-control/role-assignments-powershell.md)voor meer informatie.
+Als u geen uitvoer ziet, neem dan contact op met de betreffende abonnementsbeheerder om toegang te krijgen om de opdrachten uit te voeren. Zie Azure-roltoewijzingen [toevoegen of verwijderen met behulp van](../role-based-access-control/role-assignments-powershell.md)Azure PowerShell.
 
+## <a name="can-the-nsgs-i-enable-flow-logs-for-be-in-different-regions-than-my-workspace"></a>Kunnen de NSG's waarin ik stroomlogboeken inschakelen zich in andere regio's dan mijn werkruimte?
 
-## <a name="in-which-azure-regions-is-traffic-analytics-available"></a>In welke Azure-regio's is Traffic Analytics beschikbaar?
+Ja, deze NSG's kunnen zich in andere regio's dan uw Log Analytics-werkruimte.
 
-U kunt Traffic Analytics voor Nsg's gebruiken in een van de volgende ondersteunde regio's:
-- Canada - midden
-- VS - west-centraal
-- VS - oost
-- VS - oost 2
-- VS - noord-centraal
-- VS - zuid-centraal
-- Central US
-- VS - west
-- VS - west 2
-- Frankrijk - centraal
-- Europa -west
-- Europa - noord
-- Brazilië - zuid
-- Verenigd Koninkrijk West
-- Verenigd Koninkrijk Zuid
-- Australië - oost
-- Australië - zuidoost 
-- Azië - oost
-- Azië - zuidoost
-- Korea - centraal
-- India - centraal
-- India - zuid
-- Japan - oost
-- Japan - west
-- VS (overheid) - Virginia
-- China - oost 2
-
-De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
-- Canada - midden
-- VS - west-centraal
-- VS - oost
-- VS - oost 2
-- VS - noord-centraal
-- VS - zuid-centraal
-- Central US
-- VS - west
-- VS - west 2
-- Frankrijk - centraal
-- Europa -west
-- Europa - noord
-- Verenigd Koninkrijk West
-- Verenigd Koninkrijk Zuid
-- Australië - oost
-- Australië - zuidoost
-- Azië - oost
-- Azië - zuidoost 
-- Korea - centraal
-- India - centraal
-- Japan - oost
-- VS (overheid) - Virginia
-- China - oost 2
-
-## <a name="can-the-nsgs-i-enable-flow-logs-for-be-in-different-regions-than-my-workspace"></a>Kan de Nsg's ik stroom logboeken inschakelen voor andere regio's dan mijn werk ruimte?
-
-Ja, deze Nsg's kunnen zich in verschillende regio's bevinden dan uw Log Analytics-werk ruimte.
-
-## <a name="can-multiple-nsgs-be-configured-within-a-single-workspace"></a>Kunnen meerdere Nsg's in één werk ruimte worden geconfigureerd?
+## <a name="can-multiple-nsgs-be-configured-within-a-single-workspace"></a>Kunnen er meerdere NSG's worden geconfigureerd binnen één werkruimte?
 
 Ja.
 
-## <a name="can-i-use-an-existing-workspace"></a>Kan ik een bestaande werk ruimte gebruiken?
+## <a name="can-i-use-an-existing-workspace"></a>Kan ik een bestaande werkruimte gebruiken?
 
-Ja. Als u een bestaande werk ruimte selecteert, moet u ervoor zorgen dat deze is gemigreerd naar de nieuwe query taal. Als u de werk ruimte niet wilt bijwerken, moet u een nieuwe maken. Zie [Azure monitor-logboeken upgraden naar nieuwe zoek opdracht in Logboeken](../azure-monitor/logs/log-query-overview.md)voor meer informatie over de nieuwe query taal.
+Ja. Als u een bestaande werkruimte selecteert, moet u ervoor zorgen dat deze is gemigreerd naar de nieuwe querytaal. Als u de werkruimte niet wilt upgraden, moet u een nieuwe maken. Zie voor meer informatie over de nieuwe querytaal [Azure Monitor logboeken upgraden naar nieuwe zoeken in logboeken.](../azure-monitor/logs/log-query-overview.md)
 
-## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Kan mijn Azure Storage-account zich in één abonnement bevinden en mijn Log Analytics werk ruimte bevindt zich in een ander abonnement?
+## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Kan mijn Azure Storage-account zich in één abonnement en mijn Log Analytics-werkruimte in een ander abonnement?
 
-Ja, uw Azure Storage-account kan zich in één abonnement bevinden en uw Log Analytics-werk ruimte kan zich in een ander abonnement bevinden.
+Ja, uw Azure Storage-account kan zich in één abonnement en uw Log Analytics-werkruimte kan zich in een ander abonnement.
 
 ## <a name="can-i-store-raw-logs-in-a-different-subscription"></a>Kan ik onbewerkte logboeken opslaan in een ander abonnement?
 
-Ja. U kunt NSG-stroom logboeken configureren om te worden verzonden naar een opslag account in een ander abonnement, mits u de juiste bevoegdheden hebt, en dat het opslag account zich in dezelfde regio bevindt als de NSG. De NSG en het doel-opslag account moeten ook dezelfde Azure Active Directory Tenant delen.
+Ja. U kunt configureren dat NSG-stroomlogboeken worden verzonden naar een opslagaccount dat zich in een ander abonnement bevindt, mits u over de juiste bevoegdheden beschikt en het opslagaccount zich in dezelfde regio bevindt als de NSG. De NSG en het doelopslagaccount moeten ook dezelfde Azure Active Directory tenant.
 
-## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>Wat moet ik doen als ik een NSG voor Traffic Analytics niet kan configureren vanwege een fout "niet gevonden"?
+## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>Wat gebeurt er als ik een NSG niet kan configureren voor traffic analytics vanwege een fout 'Niet gevonden'?
 
-Selecteer een ondersteunde regio. Als u een niet-ondersteunde regio selecteert, wordt het fout bericht ' niet gevonden ' weer gegeven. De ondersteunde regio's worden eerder in dit artikel vermeld.
+Selecteer een ondersteunde regio. Als u een niet-ondersteunde regio selecteert, wordt de fout Niet gevonden weergegeven. De ondersteunde regio's worden eerder in dit artikel vermeld.
 
-## <a name="what-if-i-am-getting-the-status-failed-to-load-under-the-nsg-flow-logs-page"></a>Wat moet ik doen als ik de status ontvang: ' kan niet worden geladen ' op de pagina NSG-stroom logboeken?
+## <a name="what-if-i-am-getting-the-status-failed-to-load-under-the-nsg-flow-logs-page"></a>Wat gebeurt er als ik de status 'Kan niet laden' krijg op de pagina met NSG-stroomlogboeken?
 
-De micro soft. Insights-provider moet zijn geregistreerd voor een goede werking van de flow-logboek registratie. Als u niet zeker weet of de provider van micro soft. Insights is geregistreerd voor uw abonnement, vervangt u *xxxxx-xxxxx-xxxxxx-xxxx* door de volgende opdracht en voert u de volgende opdrachten uit in Power shell:
+De Microsoft.Insights-provider moet zijn geregistreerd om stroomlogregistratie goed te laten werken. Als u niet zeker weet of de Microsoft.Insights-provider is geregistreerd voor uw abonnement, vervangt u *xxxxx-xxxxx-xxxxxx-xxxx* in de volgende opdracht en voert u de volgende opdrachten uit vanuit PowerShell:
 
 ```powershell-interactive
 **Select-AzSubscription** -SubscriptionId xxxxx-xxxxx-xxxxxx-xxxx
 **Register-AzResourceProvider** -ProviderNamespace Microsoft.Insights
 ```
 
-## <a name="i-have-configured-the-solution-why-am-i-not-seeing-anything-on-the-dashboard"></a>Ik heb de oplossing geconfigureerd. Waarom zie ik niets in het dash board?
+## <a name="i-have-configured-the-solution-why-am-i-not-seeing-anything-on-the-dashboard"></a>Ik heb de oplossing geconfigureerd. Waarom zie ik niets op het dashboard?
 
-Het kan tot 30 minuten duren voordat het dash board de eerste keer wordt weer gegeven. De oplossing moet eerst voldoende gegevens verzamelen om zinvolle inzichten te kunnen afleiden. Vervolgens worden er rapporten gegenereerd. 
+Het kan tot 30 minuten duren voordat het dashboard voor het eerst wordt weergegeven. De oplossing moet eerst voldoende gegevens aggregeren om zinvolle inzichten af te leiden. Vervolgens worden er rapporten gegenereerd. 
 
-## <a name="what-if-i-get-this-message-we-could-not-find-any-data-in-this-workspace-for-selected-time-interval-try-changing-the-time-interval-or-select-a-different-workspace"></a>Wat gebeurt er als ik dit bericht krijg: ' er zijn geen gegevens in deze werk ruimte gevonden voor het geselecteerde tijds interval. Wijzig het tijds interval of selecteer een andere werk ruimte. "?
+## <a name="what-if-i-get-this-message-we-could-not-find-any-data-in-this-workspace-for-selected-time-interval-try-changing-the-time-interval-or-select-a-different-workspace"></a>Wat gebeurt er als ik dit bericht krijg: "We kunnen geen gegevens vinden in deze werkruimte voor het geselecteerde tijdsinterval. Probeer het tijdsinterval te wijzigen of selecteer een andere werkruimte.'
 
 Probeer de volgende opties:
-- Wijzig het tijds interval in de bovenste balk.
-- Selecteer een andere Log Analytics werk ruimte in de bovenste balk.
-- Probeer na 30 minuten toegang te krijgen tot Traffic Analytics, als deze onlangs is ingeschakeld.
+- Wijzig het tijdsinterval in de bovenste balk.
+- Selecteer een andere Log Analytics-werkruimte in de bovenste balk.
+- Probeer na 30 minuten toegang te krijgen tot Traffic Analytics, als deze functie onlangs is ingeschakeld.
     
-Als er problemen blijven optreden, moet u zorgen voor het forum van de [gebruiker](https://feedback.azure.com/forums/217313-networking?category_id=195844).
+Als er problemen blijven bestaan, kunt u zorgen maken in het [User Voice-forum](https://feedback.azure.com/forums/217313-networking?category_id=195844).
 
-## <a name="what-if-i-get-this-message-analyzing-your-nsg-flow-logs-for-the-first-time-this-process-may-take-20-30-minutes-to-complete-check-back-after-some-time-2-if-the-above-step-doesnt-work-and-your-workspace-is-under-the-free-sku-then-check-your-workspace-usage-here-to-validate-over-quota-else-refer-to-faqs-for-further-information"></a>Wat gebeurt er als ik dit bericht krijg: ' de NSG-stroom logboeken voor de eerste keer analyseren. Dit proces kan 20-30 minuten duren. Probeer het na enige tijd opnieuw. 2) als de bovenstaande stap niet werkt en uw werk ruimte zich onder de gratis SKU bevindt, controleert u het gebruik van uw werk ruimte hier om het quotum te valideren. Raadpleeg anders de veelgestelde vragen voor meer informatie. "?
+## <a name="what-if-i-get-this-message-analyzing-your-nsg-flow-logs-for-the-first-time-this-process-may-take-20-30-minutes-to-complete-check-back-after-some-time-2-if-the-above-step-doesnt-work-and-your-workspace-is-under-the-free-sku-then-check-your-workspace-usage-here-to-validate-over-quota-else-refer-to-faqs-for-further-information"></a>Wat gebeurt er als ik het volgende bericht krijg: Uw NSG-stroomlogboeken voor de eerste keer analyseren. Dit proces kan 20-30 minuten duren. Ga na enige tijd terug. 2) Als de bovenstaande stap niet werkt en uw werkruimte onder de gratis SKU valt, controleert u hier het gebruik van uw werkruimte om het quotum te valideren. Raadpleeg dan Veelgestelde vragen voor meer informatie.?
 
-Dit bericht kan worden weer gegeven omdat:
-- Traffic Analytics onlangs is ingeschakeld en er zijn mogelijk nog voldoende gegevens verzameld om zinvolle inzichten te verkrijgen.
-- U gebruikt de gratis versie van de Log Analytics-werk ruimte en de quotum limieten zijn overschreden. Mogelijk moet u een werk ruimte met een grotere capaciteit gebruiken.
+Mogelijk ziet u dit bericht omdat:
+- Traffic Analytics is onlangs ingeschakeld en heeft mogelijk nog niet voldoende gegevens geaggregeerd om zinvolle inzichten af te leiden.
+- U gebruikt de gratis versie van de Log Analytics-werkruimte en de quotumlimieten zijn overschreden. Mogelijk moet u een werkruimte met een grotere capaciteit gebruiken.
     
-Als er problemen blijven optreden, moet u zorgen voor het forum van de [gebruiker](https://feedback.azure.com/forums/217313-networking?category_id=195844).
+Als de problemen zich blijven voordoen, kunt u zorgen maken in het [User Voice-forum](https://feedback.azure.com/forums/217313-networking?category_id=195844).
     
-## <a name="what-if-i-get-this-message-looks-like-we-have-resources-data-topology-and-no-flows-information-meanwhile-click-here-to-see-resources-data-and-refer-to-faqs-for-further-information"></a>Wat gebeurt er als ik dit bericht krijg: "er zijn resource gegevens (topologie) en er zijn geen gegevens over stromen. Ondertussen klikt u hier om resource gegevens weer te geven en raadpleegt u veelgestelde vragen voor meer informatie. "?
+## <a name="what-if-i-get-this-message-looks-like-we-have-resources-data-topology-and-no-flows-information-meanwhile-click-here-to-see-resources-data-and-refer-to-faqs-for-further-information"></a>Wat gebeurt er als ik dit bericht krijg: 'Het lijkt erop dat we resourcesgegevens (topologie) hebben en geen stromen. Klik in de tussentijd hier om de gegevens van resources te bekijken en raadpleeg veelgestelde vragen voor meer informatie.'
 
-U ziet de informatie over de resources op het dash board. Er zijn echter geen gegevens met betrekking tot de stroom aanwezig. Gegevens zijn mogelijk niet aanwezig vanwege geen communicatie stromen tussen de resources. Wacht 60 minuten en controleer de status opnieuw. Als het probleem zich blijft voordoen en u zeker weet dat er communicatie stromen tussen bronnen bestaan, kunt u problemen opdoen in het forum van de [gebruiker](https://feedback.azure.com/forums/217313-networking?category_id=195844).
+U ziet de informatie over resources op het dashboard; Er zijn echter geen stroomgerelateerde statistieken aanwezig. Gegevens zijn mogelijk niet aanwezig vanwege geen communicatiestromen tussen de resources. Wacht 60 minuten en controleer de status opnieuw. Als het probleem zich blijft voordoen en u zeker weet dat er communicatiestromen tussen resources bestaan, kunt u zorgen maken in het [User Voice-forum.](https://feedback.azure.com/forums/217313-networking?category_id=195844)
 
-## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Kan ik Traffic Analytics configureren met Power shell of een Azure Resource Manager sjabloon of client?
+## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Kan ik verkeersanalyse configureren met behulp van PowerShell of een Azure Resource Manager-sjabloon of -client?
 
-U kunt Traffic Analytics configureren met behulp van Windows Power shell vanaf versie 6.2.1. Zie [set-AzNetworkWatcherConfigFlowLog](/powershell/module/az.network/set-aznetworkwatcherconfigflowlog)voor informatie over het configureren van flow logboek registratie en Traffic Analytics voor een specifieke NSG met behulp van de set-cmdlet. Zie [Get-AzNetworkWatcherFlowLogStatus](/powershell/module/az.network/get-aznetworkwatcherflowlogstatus)om de logboek registratie van de stroom en de status van het Traffic Analytics voor een specifieke NSG op te halen.
+U kunt Traffic Analytics configureren met behulp Windows PowerShell versie 6.2.1 en meer. Zie [Set-AzNetworkWatcherConfigFlowLog](/powershell/module/az.network/set-aznetworkwatcherconfigflowlog)als u logboekregistratie van stromen en verkeersanalyses voor een specifieke NSG wilt configureren met behulp van de cmdlet Set. Zie [Get-AzNetworkWatcherFlowLogStatus](/powershell/module/az.network/get-aznetworkwatcherflowlogstatus)voor informatie over de status van stroomlogregistratie en verkeersanalyse voor een specifieke NSG.
 
-Op dit moment kunt u geen Azure Resource Manager-sjabloon gebruiken om Traffic Analytics te configureren.
+Op dit moment kunt u geen sjabloon voor Azure Resource Manager gebruiken om verkeersanalyses te configureren.
 
-Als u Traffic Analytics wilt configureren met behulp van een Azure Resource Manager-client, raadpleegt u de volgende voor beelden.
+Zie de volgende voorbeelden voor het configureren van traffic analytics Azure Resource Manager een client voor een netwerkanalyse.
 
-**Voor beeld van de cmdlet instellen:**
+**Voorbeeld van cmdlet instellen:**
 ```
 #Requestbody parameters
 $TAtargetUri ="/subscriptions/<NSG subscription id>/resourceGroups/<NSG resource group name>/providers/Microsoft.Network/networkSecurityGroups/<name of NSG>"
@@ -223,7 +167,7 @@ $apiversion = "2016-09-01"
 armclient login
 armclient post "https://management.azure.com/subscriptions/<NSG subscription id>/resourceGroups/<network watcher resource group name>/providers/Microsoft.Network/networkWatchers/<network watcher name>/configureFlowlog?api-version=${apiversion}" $requestBody
 ```
-**Voor beeld van cmdlet ophalen:**
+**Voorbeeld van cmdlet:**
 ```
 #Requestbody parameters
 $TAtargetUri ="/subscriptions/<NSG subscription id>/resourceGroups/<NSG resource group name>/providers/Microsoft.Network/networkSecurityGroups/<NSG name>"
@@ -242,29 +186,29 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 ```
 
 
-## <a name="how-is-traffic-analytics-priced"></a>Hoe wordt Traffic Analytics geprijsd?
+## <a name="how-is-traffic-analytics-priced"></a>Wat is Traffic Analytics prijs?
 
-Traffic Analytics wordt gemeten. De meting is gebaseerd op de verwerking van gegevens van stroom logboeken door de service en de resulterende uitgebreide logboeken worden opgeslagen in een Log Analytics-werk ruimte. 
+Traffic Analytics wordt gemeten. De meting is gebaseerd op de verwerking van stroomlogboekgegevens door de service en het opslaan van de resulterende verbeterde logboeken in een Log Analytics-werkruimte. 
 
-Als de gegevens in een opslag account dat is verwerkt door Traffic Analytics 10 GB en uitgebreide logboeken die zijn opgenomen in Log Analytics werk ruimte 1 GB [zijn, worden](https://azure.microsoft.com/pricing/details/network-watcher/)de volgende kosten in rekening gebracht: 10 x $2,3 + 1 x $2,76 = $25,76
+Bijvoorbeeld, volgens het [](https://azure.microsoft.com/pricing/details/network-watcher/)prijsplan , gezien de regio VS - west-centraal, zijn de toepasselijke kosten: 10 x 2,3$ + 1 x 2,76$ = 25,76$ als gegevens van stroomlogboeken die zijn opgeslagen in een opslagaccount dat is verwerkt door Traffic Analytics 10 GB is en uitgebreide logboeken die zijn opgenomen in de Log Analytics-werkruimte, 1 GB zijn: 10 x 2,3$ + 1 x 2,76$ = 25,76$
 
-## <a name="how-frequently-does-traffic-analytics-process-data"></a>Hoe vaak worden gegevens Traffic Analytics verwerkt?
+## <a name="how-frequently-does-traffic-analytics-process-data"></a>Hoe vaak worden Traffic Analytics verwerkt?
 
-Raadpleeg het [gedeelte gegevens aggregatie](./traffic-analytics-schema.md#data-aggregation) in Traffic Analytics schema en gegevens aggregatie document
+Raadpleeg de sectie [gegevensaggregatie](./traffic-analytics-schema.md#data-aggregation) in Traffic Analytics Document schema en gegevensaggregatie
 
-## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Hoe beslist Traffic Analytics dat een IP schadelijk is? 
+## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Hoe bepaalt Traffic Analytics dat een IP-adres schadelijk is? 
 
-Traffic Analytics is afhankelijk van micro soft interne Threat Intelligence-systemen om als schadelijk te worden beschouwd als een IP-adres. Deze systemen maken gebruik van diverse telemetrie-bronnen, zoals micro soft-producten en-services, de micro soft Digital misdrijven Unit (DCU), het micro soft Security Response Center (MSRC) en externe feeds, en een grote verscheidenheid aan informatie. Enkele van deze gegevens is micro soft Internal. Als een bekend IP-adres wordt gevlagd als schadelijk, moet u een ondersteunings ticket geven om de details te weten.
+Traffic Analytics is afhankelijk van interne bedreigingsinformatiesystemen van Microsoft om een IP-adres als schadelijk te achten. Deze systemen maken gebruik van diverse telemetriebronnen, zoals Microsoft-producten en -services, de Microsoft Digital Crimes Unit (DCU), de Microsoft Security Response Center (MSRC) en externe feeds en bouwen er een groot aantal intelligentie op. Sommige van deze gegevens zijn Intern van Microsoft. Als een bekend IP-adres wordt gemarkeerd als kwaadwillend, kunt u een ondersteuningsticket maken om de details te weten.
 
 ## <a name="how-can-i-set-alerts-on-traffic-analytics-data"></a>Hoe kan ik waarschuwingen instellen voor Traffic Analytics gegevens?
 
-Traffic Analytics biedt geen ingebouwde ondersteuning voor waarschuwingen. Omdat Traffic Analytics gegevens echter worden opgeslagen in Log Analytics kunt u aangepaste query's schrijven en waarschuwingen instellen. Stappen
-- U kunt de snelkoppeling voor Log Analytics gebruiken in Traffic Analytics. 
+Traffic Analytics geen ingebouwde ondersteuning voor waarschuwingen. Omdat er echter Traffic Analytics gegevens worden opgeslagen in Log Analytics, kunt u aangepaste query's schrijven en er waarschuwingen voor instellen. Stappen:
+- U kunt de shortlink voor Log Analytics in Traffic Analytics. 
 - Gebruik het [schema dat hier wordt beschreven](traffic-analytics-schema.md) om uw query's te schrijven 
-- Klik op nieuwe waarschuwings regel om de waarschuwing te maken
-- Raadpleeg de [documentatie over logboek waarschuwingen](../azure-monitor/alerts/alerts-log.md) voor het maken van de waarschuwing
+- Klik op Nieuwe waarschuwingsregel om de waarschuwing te maken
+- Raadpleeg de documentatie [voor logboekwaarschuwingen](../azure-monitor/alerts/alerts-log.md) om de waarschuwing te maken
 
-## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Hoe kan ik controleren welke Vm's het meest lokale verkeer ontvangen?
+## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Hoe kan ik controleren welke VM's het meeste on-premises verkeer ontvangen?
 
 ```
 AzureNetworkAnalytics_CL
@@ -277,7 +221,7 @@ AzureNetworkAnalytics_CL
 | render timechart
 ```
 
-  Voor IP-adressen:
+  Voor IP's:
 
 ```
 AzureNetworkAnalytics_CL
@@ -290,9 +234,9 @@ AzureNetworkAnalytics_CL
 | render timechart
 ```
 
-Gebruik voor tijd notatie: jjjj-mm-dd 00:00:00
+Gebruik voor tijd de notatie : yyyy-mm-dd 00:00:00
 
-## <a name="how-do-i-check-standard-deviation-in-traffic-received-by-my-vms-from-on-premises-machines"></a>Hoe kan ik standaard afwijking in verkeer dat door mijn Vm's wordt ontvangen, van on-premises machines controleren?
+## <a name="how-do-i-check-standard-deviation-in-traffic-received-by-my-vms-from-on-premises-machines"></a>Hoe kan ik standaardafwijking in het verkeer controleren dat door mijn VM's van on-premises machines wordt ontvangen?
 
 ```
 AzureNetworkAnalytics_CL
@@ -304,7 +248,7 @@ AzureNetworkAnalytics_CL
 | summarize deviation = stdev(traffic)  by vm
 ```
 
-Voor IP-adressen:
+Voor IP's:
 
 ```
 AzureNetworkAnalytics_CL
@@ -316,7 +260,7 @@ AzureNetworkAnalytics_CL
 | summarize deviation = stdev(traffic)  by IP
 ```
 
-## <a name="how-do-i-check-which-ports-are-reachable-or-blocked-between-ip-pairs-with-nsg-rules"></a>Hoe kan ik controleren welke poorten bereikbaar zijn (of geblokkeerd) tussen IP-paren met NSG-regels?
+## <a name="how-do-i-check-which-ports-are-reachable-or-blocked-between-ip-pairs-with-nsg-rules"></a>Hoe kan ik controleren welke poorten bereikbaar (of geblokkeerd) zijn tussen IP-paren met NSG-regels?
 
 ```
 AzureNetworkAnalytics_CL
@@ -329,78 +273,78 @@ destIPs = iif(isempty(DestIP_s), split(DestPublicIPs_s," ") , pack_array(DestIP_
 | summarize DestPorts= makeset(DestPort_d) by SourceIp, DestIp, NSGList_s, NSGRule_s, L4Protocol_s, FlowStatus_s
 ```
 
-## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Hoe kan ik navigeren met behulp van het toetsen bord in de geo-kaart weergave?
+## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Hoe kan ik navigeren met behulp van het toetsenbord in de geokaartweergave?
 
-De pagina GeoMap bevat twee hoofd secties:
+De geokaartpagina bevat twee hoofdsecties:
     
-- **Banner**: de banner aan de bovenkant van de geokaart bevat knoppen voor het selecteren van verkeers distributie filters (bijvoorbeeld implementatie, verkeer van landen/regio's en kwaad aardig). Wanneer u een knop selecteert, wordt het respectieve filter toegepast op de kaart. Als u bijvoorbeeld de knop actief selecteert, markeert de kaart de actieve Data Centers in uw implementatie.
-- **Kaart**: onder de banner ziet u de distributie van verkeer onder Azure-data centers en landen/regio's.
+- **Banner:** de banner boven aan de geokaart bevat knoppen om filters voor verkeersdistributie te selecteren (bijvoorbeeld Implementatie, Verkeer van landen/regio's en Schadelijk). Wanneer u een knop selecteert, wordt het desbetreffende filter toegepast op de kaart. Als u bijvoorbeeld de knop Actief selecteert, worden op de kaart de actieve datacenters in uw implementatie aangegeven.
+- **Kaart:** Onder de banner ziet u in de kaartsectie verkeersdistributie tussen Azure-datacenters en landen/regio's.
     
-### <a name="keyboard-navigation-on-the-banner"></a>Toetsenbord navigatie op de banner
+### <a name="keyboard-navigation-on-the-banner"></a>Toetsenbordnavigatie in de banner
     
-- Standaard is de selectie op de pagina GeoMap voor de banner het filter ' Azure DCs '.
-- Als u wilt overstappen op een ander filter, gebruikt u de `Tab` of de- `Right arrow` sleutel. Als u naar achteren wilt gaan, gebruikt u de `Shift+Tab` of de- `Left arrow` sleutel. Forward navigatie is van links naar rechts, gevolgd door boven naar beneden.
-- Druk op `Enter` de `Down` pijl toets om het geselecteerde filter toe te passen. Op basis van filter selectie en-implementatie worden een of meer knoop punten onder de kaart sectie gemarkeerd.
-- Als u wilt scha kelen tussen banners en kaarten, drukt u op `Ctrl+F6` .
+- Standaard is de selectie op de geokaartpagina voor de banner het filter 'Azure DC's'.
+- Als u naar een ander filter wilt gaan, gebruikt u `Tab` de - of `Right arrow` -sleutel. Als u terug wilt gaan, gebruikt u `Shift+Tab` de - of `Left arrow` -sleutel. Navigatie doorsturen is van links naar rechts, gevolgd door van boven naar beneden.
+- Druk `Enter` op of de `Down` pijltoets om het geselecteerde filter toe te passen. Op basis van filterselectie en -implementatie zijn een of meer knooppunten onder de kaartsectie gemarkeerd.
+- Als u wilt schakelen tussen banner en kaart, drukt u op `Ctrl+F6` .
         
-### <a name="keyboard-navigation-on-the-map"></a>Toetsenbord navigatie op de kaart
+### <a name="keyboard-navigation-on-the-map"></a>Toetsenbordnavigatie op de kaart
     
-- Nadat u een filter op de banner hebt geselecteerd en erop hebt geklikt `Ctrl+F6` , wordt de focus verplaatst naar een van de gemarkeerde knoop punten (**Azure Data Center** of **land/regio**) in de kaart weergave.
-- Als u wilt overstappen op andere gemarkeerde knoop punten in de kaart, gebruikt u `Tab` of de `Right arrow` sleutel voor voorwaartse verplaatsing. Gebruik `Shift+Tab` of de `Left arrow` sleutel voor achterwaartse verplaatsing.
-- Als u een gemarkeerd knoop punt in de kaart wilt selecteren, gebruikt u de `Enter` of- `Down arrow` sleutel.
-- Wanneer u een van deze knoop punten selecteert, wordt de focus verplaatst naar het **vak informatie** van het knoop punt. De focus wordt standaard verplaatst naar de knop gesloten in het **dialoog venster informatie**. Als u verder wilt gaan in de weer gave van het **vak** , gebruikt u `Right arrow` en de `Left arrow` toetsen om respectievelijk vooruit en achteruit te gaan. Wanneer `Enter` u op hetzelfde effect klikt, wordt de knop prioriteit geselecteerd in het **dialoog venster informatie**.
-- Wanneer u op de `Tab` **knop info** klikt terwijl de focus is, wordt de focus verplaatst naar de eind punten in hetzelfde continent als het geselecteerde knoop punt. Gebruik de- `Right arrow` en- `Left arrow` sleutels om deze eind punten te door lopen.
-- Als u wilt overstappen op andere flow-eind punten of continenten clusters, gebruikt u `Tab` voor voorwaartse verplaatsing en `Shift+Tab` voor achterwaartse verplaatsing.
-- Wanneer de focus zich op **continent-clusters** bevindt, gebruikt u de `Enter` of de `Down` pijl toetsen om de eind punten in het continent-cluster te markeren. Als u de eind punten wilt door lopen en de knop Sluiten in het vak informatie van het continent-cluster, gebruikt u `Right arrow` respectievelijk de of `Left arrow` -sleutel voor voorwaartse en achterwaartse verplaatsing. Op elk eind punt kunt u gebruiken `Shift+L` om over te scha kelen naar de verbindings lijn van het geselecteerde knoop punt naar het eind punt. U kunt `Shift+L` opnieuw op het geselecteerde eind punt drukken om door te gaan.
+- Nadat u een filter in de banner hebt geselecteerd en op hebt gedrukt, wordt de focus verplaatst naar een van de gemarkeerde knooppunten `Ctrl+F6` **(Azure-datacenter** of **Land/regio)** in de kaartweergave.
+- Als u wilt verplaatsen naar andere gemarkeerde knooppunten op de kaart, gebruikt u `Tab` of de sleutel voor `Right arrow` voorwaartse verplaatsing. Gebruik `Shift+Tab` of de sleutel voor `Left arrow` achterwaartse verplaatsing.
+- Als u een gemarkeerd knooppunt op de kaart wilt selecteren, gebruikt u de `Enter` sleutel of `Down arrow` .
+- Bij selectie van dergelijke knooppunten gaat de focus naar de **Informatiehulpprogrammavak** voor het knooppunt. Standaard wordt de focus verplaatst naar de gesloten knop in de **Information Tool Box**. Als u verder  wilt gaan in de Box-weergave, gebruikt u de sleutels en om respectievelijk vooruit `Right arrow` en achteruit te `Left arrow` gaan. Drukken `Enter` heeft hetzelfde effect als het selecteren van de gerichte knop in de **informatiehulpprogrammavak.**
+- Wanneer u op drukt terwijl de focus op de Information Tool Box is, wordt de focus verplaatst naar de eindpunten op hetzelfde `Tab` continent als het geselecteerde knooppunt.  Gebruik de `Right arrow` sleutels en om door deze `Left arrow` eindpunten te gaan.
+- Als u wilt overstromen naar andere stroom-eindpunten of continentclusters, gebruikt u voor `Tab` voorwaartse verplaatsing en `Shift+Tab` voor achterwaartse verplaatsing.
+- Wanneer de focus op **continentclusters ligt,** gebruikt u de pijltoetsen of om de eindpunten in het `Enter` `Down` continentcluster te markeren. Als u door eindpunten en de knop Sluiten op het informatievak van het continentcluster wilt gaan, gebruikt u respectievelijk de sleutel of voor voorwaartse en `Right arrow` `Left arrow` achterwaartse verplaatsing. Op elk eindpunt kunt u gebruiken om van het geselecteerde knooppunt naar het eindpunt over te schakelen `Shift+L` naar de verbindingsregel. U kunt opnieuw `Shift+L` op drukken om naar het geselecteerde eindpunt te gaan.
         
-### <a name="keyboard-navigation-at-any-stage"></a>Toetsenbord navigatie in elk stadium
+### <a name="keyboard-navigation-at-any-stage"></a>Toetsenbordnavigatie in elke fase
     
-- `Esc` Hiermee wordt de uitgevouwen selectie samengevouwen.
-- De `Up-arrow` sleutel voert dezelfde actie uit als `Esc` . De `Down arrow` sleutel voert dezelfde actie uit als `Enter` .
-- Gebruiken `Shift+Plus` om in te zoomen en `Shift+Minus` uit te zoomen.
+- `Esc` vouwt de uitgevouwen selectie samen.
+- Met `Up-arrow` de -sleutel wordt dezelfde actie uitgevoerd als `Esc` . Met `Down arrow` de sleutel wordt dezelfde actie uitgevoerd als `Enter` .
+- Gebruik `Shift+Plus` om in te zoomen en uit te `Shift+Minus` zoomen.
 
-## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-virtual-network-topology-view"></a>Hoe kan ik navigeren met behulp van het toetsen bord in de topologie weergave van het virtuele netwerk?
+## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-virtual-network-topology-view"></a>Hoe kan ik navigeren met behulp van het toetsenbord in de topologieweergave van het virtuele netwerk?
 
-De pagina topologie virtuele netwerken bevat twee hoofd secties:
+De topologiepagina van virtuele netwerken bevat twee hoofdsecties:
     
-- **Banner**: de banner aan de bovenkant van de topologie met virtuele netwerken biedt knoppen om filters voor het distribueren van verkeer te selecteren (bijvoorbeeld verbonden virtuele netwerken, niet-verbonden virtuele netwerken en open bare ip's). Wanneer u een knop selecteert, wordt het respectieve filter toegepast op de topologie. Als u bijvoorbeeld de knop actief selecteert, markeert de topologie de actieve virtuele netwerken in uw implementatie.
-- **Topologie**: onder de banner ziet u in het gedeelte topologie verkeer distributie tussen virtuele netwerken.
+- **Banner:** de banner boven aan de topologie van virtuele netwerken bevat knoppen voor het selecteren van filters voor verkeersdistributie (bijvoorbeeld Verbonden virtuele netwerken, Niet-verbonden virtuele netwerken en Openbare IP's). Wanneer u een knop selecteert, wordt het desbetreffende filter toegepast op de topologie. Als u bijvoorbeeld de knop Actief selecteert, markeert de topologie de actieve virtuele netwerken in uw implementatie.
+- **Topologie:** onder de banner wordt in de sectie topologie de verkeersdistributie tussen virtuele netwerken weergegeven.
     
-### <a name="keyboard-navigation-on-the-banner"></a>Toetsenbord navigatie op de banner
+### <a name="keyboard-navigation-on-the-banner"></a>Toetsenbordnavigatie in de banner
     
-- De selectie op de topologie pagina met virtuele netwerken voor de banner is standaard het filter ' verbonden VNets '.
-- Als u wilt overstappen op een ander filter, gebruikt u de `Tab` sleutel om door te gaan. Gebruik de sleutel om terug te gaan `Shift+Tab` . Forward navigatie is van links naar rechts, gevolgd door boven naar beneden.
-- Druk op `Enter` om het geselecteerde filter toe te passen. Op basis van de filter selectie en-implementatie worden een of meer knoop punten (virtueel netwerk) onder de sectie topologie gemarkeerd.
-- Als u wilt scha kelen tussen de banner en de topologie, drukt u op `Ctrl+F6` .
+- De selectie op de topologiepagina van virtuele netwerken voor de banner is standaard het filter Verbonden VNets.
+- Als u naar een ander filter wilt gaan, gebruikt `Tab` u de -sleutel om verder te gaan. Gebruik de sleutel om terug te `Shift+Tab` gaan. Navigatie doorsturen is van links naar rechts, gevolgd door van boven naar beneden.
+- Druk `Enter` op om het geselecteerde filter toe te passen. Op basis van de filterselectie en -implementatie zijn een of meer knooppunten (virtueel netwerk) onder de sectie topologie gemarkeerd.
+- Als u wilt schakelen tussen de banner en de topologie, drukt u op `Ctrl+F6` .
         
-### <a name="keyboard-navigation-on-the-topology"></a>Toetsenbord navigatie op de topologie
+### <a name="keyboard-navigation-on-the-topology"></a>Toetsenbordnavigatie op de topologie
     
-- Nadat u een filter op de banner hebt geselecteerd en erop hebt geklikt `Ctrl+F6` , wordt de focus verplaatst naar een van de gemarkeerde knoop punten (**VNet**) in de weer gave topologie.
-- Als u wilt overstappen op andere gemarkeerde knoop punten in de topologie weergave, gebruikt u de `Shift+Right arrow` sleutel voor voorwaarts verplaatsen. 
-- Focus wordt op gemarkeerde knoop punten verplaatst naar het **vak informatie** van het knoop punt. Focus gaat standaard naar de knop **meer details** in het **dialoog venster informatie**. Als u verder wilt verplaatsen in de weer gave van het **vak** , gebruikt `Right arrow` u de `Left arrow` -en-sleutels om respectievelijk vooruit en achteruit te gaan. Wanneer `Enter` u op hetzelfde effect klikt, wordt de knop prioriteit geselecteerd in het **dialoog venster informatie**.
-- Wanneer u een van deze knoop punten selecteert, kunt u alle verbindingen met één voor één bekijken door op de `Shift+Left arrow` toets te drukken. Focus wordt verplaatst naar het **vak informatie** van deze verbinding. De focus kan op elk gewenst moment worden teruggedraaid naar het knoop punt door opnieuw op te drukken `Shift+Right arrow` .
+- Nadat u een filter in de banner hebt geselecteerd en op hebt gedrukt, wordt de focus verplaatst naar een van de gemarkeerde knooppunten `Ctrl+F6` **(VNet)** in de topologieweergave.
+- Als u naar andere gemarkeerde knooppunten in de topologieweergave wilt gaan, gebruikt u de `Shift+Right arrow` -sleutel voor voorwaartse verplaatsing. 
+- Op gemarkeerde knooppunten wordt de focus verplaatst naar de **Informatiehulpprogrammavak** voor het knooppunt. Standaard gaat de focus naar de **knop Meer details** in de Information Tool **Box.** Als u verder wilt gaan in **de Box-weergave,** gebruikt u respectievelijk de toetsen en om vooruit en achteruit te `Right arrow` `Left arrow` gaan. Drukken `Enter` heeft hetzelfde effect als het selecteren van de gerichte knop in de **informatiehulpprogrammavak.**
+- Bij selectie van dergelijke knooppunten kunt u alle verbindingen ervan een voor een bezoeken door op de toets te `Shift+Left arrow` drukken. De focus wordt verplaatst naar **de Information Tool Box** van die verbinding. Op elk moment kan de focus naar het knooppunt worden verschoven door opnieuw op te `Shift+Right arrow` drukken.
     
 
-## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-subnet-topology-view"></a>Hoe kan ik navigeren met behulp van het toetsen bord in de weer gave van de subnet-topologie?
+## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-subnet-topology-view"></a>Hoe kan ik navigeren met behulp van het toetsenbord in de subnettopologieweergave?
 
-De pagina topologie virtuele subnetwerken bevat twee hoofd secties:
+De pagina met de virtuele subnetworks-topologie bevat twee hoofdsecties:
     
-- **Banner**: de banner aan de bovenkant van de topologie met virtuele subnetwerken biedt knoppen om filters voor het distribueren van verkeer te selecteren (bijvoorbeeld Active, medium en gateway subnetten). Wanneer u een knop selecteert, wordt het respectieve filter toegepast op de topologie. Als u bijvoorbeeld de knop actief selecteert, markeert de topologie het actieve virtuele subnetwerk in uw implementatie.
-- **Topologie**: onder de banner ziet u in het gedeelte topologie verkeer distributie over virtuele subnetwerken.
+- **Banner:** de banner boven aan de topologie van virtuele subnetten bevat knoppen voor het selecteren van distributiefilters voor verkeer (bijvoorbeeld actieve, middelgrote en gatewaysubnetten). Wanneer u een knop selecteert, wordt het desbetreffende filter toegepast op de topologie. Als u bijvoorbeeld de knop Actief selecteert, markeert de topologie het actieve virtuele subnetwork in uw implementatie.
+- **Topologie:** onder de banner toont de sectie topologie verkeersdistributie tussen virtuele subnetten.
     
-### <a name="keyboard-navigation-on-the-banner"></a>Toetsenbord navigatie op de banner
+### <a name="keyboard-navigation-on-the-banner"></a>Toetsenbordnavigatie in de banner
     
-- De selectie op de topologie pagina virtuele subnetwerken voor de banner is standaard het filter subnetten.
-- Als u wilt overstappen op een ander filter, gebruikt u de `Tab` sleutel om door te gaan. Gebruik de sleutel om terug te gaan `Shift+Tab` . Forward navigatie is van links naar rechts, gevolgd door boven naar beneden.
-- Druk op `Enter` om het geselecteerde filter toe te passen. Op basis van filter selectie en-implementatie worden een of meer knoop punten (subnet) onder de sectie topologie gemarkeerd.
-- Als u wilt scha kelen tussen de banner en de topologie, drukt u op `Ctrl+F6` .
+- Standaard is de selectie op de pagina van de virtuele subnetworks-topologie voor de banner het filter Subnetten.
+- Als u naar een ander filter wilt gaan, gebruikt `Tab` u de -sleutel om verder te gaan. Gebruik de sleutel om terug te `Shift+Tab` gaan. Navigatie doorsturen is van links naar rechts, gevolgd door van boven naar beneden.
+- Druk `Enter` op om het geselecteerde filter toe te passen. Op basis van filterselectie en -implementatie zijn een of meer knooppunten (Subnet) onder de sectie topologie gemarkeerd.
+- Als u wilt schakelen tussen de banner en de topologie, drukt u op `Ctrl+F6` .
         
-### <a name="keyboard-navigation-on-the-topology"></a>Toetsenbord navigatie op de topologie
+### <a name="keyboard-navigation-on-the-topology"></a>Toetsenbordnavigatie op de topologie
     
-- Nadat u een filter op de banner hebt geselecteerd en erop hebt geklikt `Ctrl+F6` , wordt de focus verplaatst naar een van de gemarkeerde knoop punten (**subnet**) in de weer gave topologie.
-- Als u wilt overstappen op andere gemarkeerde knoop punten in de topologie weergave, gebruikt u de `Shift+Right arrow` sleutel voor voorwaarts verplaatsen. 
-- Focus wordt op gemarkeerde knoop punten verplaatst naar het **vak informatie** van het knoop punt. Focus gaat standaard naar de knop **meer details** in het **dialoog venster informatie**. Als u verder wilt gaan in de weer gave van het **vak** , gebruikt u `Right arrow` en de `Left arrow` toetsen om respectievelijk vooruit en achteruit te gaan. Wanneer `Enter` u op hetzelfde effect klikt, wordt de knop prioriteit geselecteerd in het **dialoog venster informatie**.
-- Wanneer u een van deze knoop punten selecteert, kunt u alle verbindingen met één voor één bekijken door op de toets te drukken `Shift+Left arrow` . Focus wordt verplaatst naar het **vak informatie** van deze verbinding. De focus kan op elk gewenst moment worden teruggedraaid naar het knoop punt door opnieuw op te drukken `Shift+Right arrow` .
+- Nadat u een filter in de banner hebt geselecteerd en op hebt gedrukt, wordt de focus verplaatst naar een van de gemarkeerde knooppunten `Ctrl+F6` (**Subnet**) in de topologieweergave.
+- Als u naar andere gemarkeerde knooppunten in de topologieweergave wilt gaan, gebruikt u de `Shift+Right arrow` -sleutel voor voorwaartse verplaatsing. 
+- Op gemarkeerde knooppunten wordt de focus verplaatst naar de **Informatiehulpprogrammavak** voor het knooppunt. Standaard wordt de focus verplaatst naar de **knop Meer details** in de Information Tool **Box.** Als u verder  wilt gaan in de Box-weergave, gebruikt u de sleutels en om respectievelijk vooruit en achteruit `Right arrow` te `Left arrow` gaan. Drukken `Enter` heeft hetzelfde effect als het selecteren van de gerichte knop in de Information Tool **Box**.
+- Bij selectie van dergelijke knooppunten kunt u alle verbindingen ervan een voor een bezoeken door op de toets te `Shift+Left arrow` drukken. De focus wordt verplaatst naar **de Information Tool Box** van die verbinding. De focus kan op elk moment weer naar het knooppunt worden verplaatst door opnieuw te `Shift+Right arrow` drukken.
 
-## <a name="are-classic-nsgs-supported"></a>Worden klassieke Nsg's ondersteund?
-Nee, Traffic Analytics biedt geen ondersteuning voor klassieke NSG. Het is raadzaam om IaaS-resources van klassiek naar Azure Resource Manager te migreren omdat klassieke resources worden [afgeschaft](../virtual-machines/classic-vm-deprecation.md). Raadpleeg dit artikel voor meer informatie [over het migreren](../virtual-machines/migration-classic-resource-manager-overview.md)van.
+## <a name="are-classic-nsgs-supported"></a>Worden klassieke NSG's ondersteund?
+Nee, Traffic Analytics geen ondersteuning voor klassieke NSG. Het wordt aanbevolen om IaaS-resources te migreren van klassieke naar Azure Resource Manager klassieke resources [worden afgeschaft.](../virtual-machines/classic-vm-deprecation.md) Raadpleeg dit artikel om te begrijpen [hoe u migreert.](../virtual-machines/migration-classic-resource-manager-overview.md)

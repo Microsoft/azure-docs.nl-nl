@@ -1,24 +1,24 @@
 ---
 title: 'Quickstart: een Python-app maken met behulp van een SQL API-account van Azure Cosmos DB'
 description: Is een Python-codevoorbeeld dat u kunt gebruiken om verbinding te maken met en gegevens op te vragen uit de SQL API van Azure Cosmos DB
-author: anfeldma-ms
+author: Rodrigossz
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 09/22/2020
-ms.author: anfeldma
+ms.date: 04/06/2021
+ms.author: rosouz
 ms.custom:
 - seodec18
 - seo-javascript-september2019
 - seo-python-october2019
 - devx-track-python
-ms.openlocfilehash: fee0591622c1ee07b6e954b3cadc208a300ab6a5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: de05fdc110e653dd63cf098a8b31ffb81b13b1c5
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104798779"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107365672"
 ---
 # <a name="quickstart-build-a-python-application-using-an-azure-cosmos-db-sql-api-account"></a>Quickstart: Een Python-app maken met behulp van een SQL API-account van Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,6 +28,7 @@ ms.locfileid: "104798779"
 > * [.NET V4](create-sql-api-dotnet-V4.md)
 > * [Java SDK v4](create-sql-api-java.md)
 > * [Spring Data v3](create-sql-api-spring-data.md)
+> * [Spark v3-connector](create-sql-api-spark.md)
 > * [Node.js](create-sql-api-nodejs.md)
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
@@ -44,7 +45,7 @@ In deze snelstart maakt en beheert u een SQL API-account van Azure Cosmos DB via
     * Zonder een actief Azure-abonnement:
         * [Probeer Azure Cosmos DB gratis](https://azure.microsoft.com/try/cosmosdb/), een testomgeving gedurende 30 dagen.
         * [Azure Cosmos DB Emulator](https://aka.ms/cosmosdb-emulator) 
-- [Python 2,7 of 3.6 +](https://www.python.org/downloads/), met het `python` uitvoer bare bestand in uw `PATH` .
+- [Python 2.7 of 3.6+](https://www.python.org/downloads/), met het `python` uitvoerbare bestand in uw `PATH` .
 - [Visual Studio Code](https://code.visualstudio.com/).
 - De [Python-extensie voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python#overview).
 - [Git](https://www.git-scm.com/downloads). 

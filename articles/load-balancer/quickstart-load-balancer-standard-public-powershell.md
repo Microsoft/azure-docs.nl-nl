@@ -5,22 +5,23 @@ description: In deze quickstart wordt beschreven hoe u een load balancer maakt m
 services: load-balancer
 documentationcenter: na
 author: asudbring
-manager: KumudD
-ms.assetid: ''
-ms.service: load-balancer
-ms.devlang: na
-ms.topic: quickstart
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 11/22/2020
 ms.author: allensu
-ms:custom: seodec18
-ms.openlocfilehash: ed585b3309cc03ed1eca4ed8023b3004c4f9dc79
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+manager: KumudD
+ms.date: 11/22/2020
+ms.assetid: ''
+ms.topic: quickstart
+ms.service: load-balancer
+ms.workload: infrastructure-services
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.custom:
+- mode-api
+ms.openlocfilehash: 0ddaf0eede59053cd8022fef24d37a37c6d7db5a
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106056178"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107529587"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-powershell"></a>Quickstart: Een openbare load balancer maken voor het uitvoeren van de taakverdeling voor VM's met behulp van Azure PowerShell
 
@@ -326,6 +327,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 4      Long Running O… AzureLongRunni… Completed     True            localhost            New-AzVM
 ```
 
+[!INCLUDE [ephemeral-ip-note.md](../../includes/ephemeral-ip-note.md)]
+
 ## <a name="create-outbound-rule-configuration"></a>Configuratie voor uitgaande regel maken
 Met regels voor uitgaand verkeer voor de load balancer wordt SNAT voor VM's in de back-endpool geconfigureerd. 
 
@@ -367,7 +370,7 @@ New-AzPublicIpAddress @publicipout
 
 * Maak een nieuwe front-end-IP-configuratie met [Add-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/add-azloadbalancerfrontendipconfig).
 
-* Maak een nieuwe uitgaande back-end-adres groep met [add-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/add-azloadbalancerbackendaddresspoolconfig). 
+* Maak een nieuwe uitgaande back-endadresgroep [met Add-AzLoadBalancerBackendAddressPoolConfig.](/powershell/module/az.network/add-azloadbalancerbackendaddresspoolconfig) 
 
 * Pas de pool en het front-end-IP-adres toe op de load balancer met [Set-AzLoadBalancer](/powershell/module/az.network/set-azloadbalancer).
 *  Maak een nieuwe regel voor uitgaand verkeer voor de uitgaande back-endool met [Add-AzLoadBalancerOutboundRuleConfig](/powershell/module/az.network/new-azloadbalanceroutboundruleconfig). 
@@ -720,6 +723,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 3      Long Running O… AzureLongRunni… Completed     True            localhost            New-AzVM
 4      Long Running O… AzureLongRunni… Completed     True            localhost            New-AzVM
 ```
+
+[!INCLUDE [ephemeral-ip-note.md](../../includes/ephemeral-ip-note.md)]
 
 ---
 

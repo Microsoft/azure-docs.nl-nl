@@ -1,15 +1,21 @@
 ---
 title: 'Quickstart: Een Spring Boot-app maken in Azure Service Fabric'
 description: In deze snelstart implementeert u een Spring Boot-toepassing voor Azure Service Fabric met behulp van een Spring Boot-voorbeeldtoepassing.
-ms.topic: quickstart
 ms.date: 01/29/2019
-ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 84ce5920af95113801f468e3149421f3b9bd8901
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.topic: quickstart
+ms.custom:
+- mvc
+- devcenter
+- seo-java-august2019
+- seo-java-september2019
+- devx-track-java
+- mode-api
+ms.openlocfilehash: ad01697349eab20aa55fc6f6b59bc0d317c5a7e2
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91529997"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107530857"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-app-on-azure-service-fabric"></a>Quickstart: Een Java Spring Boot-app implementeren in Azure Service Fabric
 

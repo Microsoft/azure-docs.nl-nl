@@ -12,12 +12,12 @@ ms.date: 09/10/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eeea88d8c21ba754fbeadbb24891126b639616c7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 31d82906625bc55cbdba21f2e356ee3f29f9d436
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96437231"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567380"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Quickstart: Een nieuwe tenant maken in Azure Active Directory
 U kunt al uw administratieve taken uitvoeren met behulp van de portal van Azure Active Directory (Azure AD), met inbegrip van het maken van een nieuwe tenant voor uw organisatie. 
@@ -59,10 +59,16 @@ Nadat u zich bij Azure Portal aanmeldt, kunt u een nieuwe tenant maken voor uw o
 
 De nieuwe tenant wordt gemaakt met het domein contoso.onmicrosoft.com.
 
+## <a name="your-user-account-in-the-new-tenant"></a>Uw gebruikersaccount in de nieuwe tenant
+
+Wanneer u een nieuwe AAD-tenant maakt, wordt u de eerste gebruiker van die tenant. Als eerste gebruiker krijgt u automatisch de rol Globale [beheerder](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#global-administrator) toegewezen. Bekijk uw gebruikersaccount door naar de pagina [**Gebruikers te**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers) gaan.
+
+Standaard wordt u ook vermeld als de technische [contactpersoon](https://docs.microsoft.com/microsoft-365/admin/manage/change-address-contact-and-more?view=o365-worldwide#what-do-these-fields-mean) voor de tenant. Technische contactgegevens kunt u wijzigen in [**Eigenschappen**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties).
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 Als u deze app niet meer gebruikt, kunt u de tenant met de volgende stappen verwijderen:
 
-- Zorg ervoor dat u bent aangemeld bij de map die u wilt verwijderen via het filter **Map en abonnement** in Azure Portal en schakel zo nodig over naar de doelmap.
+- Zorg ervoor dat u bent aangemeld bij de map die u wilt verwijderen via het filter **Map en** abonnement in de Azure Portal. Schakel indien nodig over naar de doelmap.
 - Selecteer **Azure Active Directory**, en klik vervolgens op de pagina **Contoso - Overzicht** en selecteer **Map verwijderen**.
 
     De tenant en de bijbehorende informatie wordt verwijderd.

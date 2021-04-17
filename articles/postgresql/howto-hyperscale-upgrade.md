@@ -1,40 +1,40 @@
 ---
-title: Upgrade Server groep-grootschalige (Citus)-Azure Database for PostgreSQL
-description: In dit artikel wordt beschreven hoe u PostgreSQL en Citus kunt bijwerken in Azure Database for PostgreSQL-grootschalige (Citus).
+title: Servergroep upgraden - Hyperscale (Citus) - Azure Database for PostgreSQL
+description: In dit artikel wordt beschreven hoe u PostgreSQL en Citus kunt upgraden in Azure Database for PostgreSQL - Hyperscale (Citus).
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 4/5/2021
-ms.openlocfilehash: 3758e2d458e1a6bd052ac746ac361de033d508e9
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 161204bf02ac36c1f5a3969cf57c61e98560c9b5
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107023980"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107518895"
 ---
-# <a name="upgrade-hyperscale-citus-server-group"></a>Server groep upgrade grootschalige (Citus)
+# <a name="upgrade-hyperscale-citus-server-group"></a>Een Hyperscale (Citus) servergroep bijwerken
 
-In deze instructies wordt beschreven hoe u een upgrade uitvoert naar een nieuwe primaire versie van PostgreSQL op alle knoop punten van Server groepen.
+In deze instructies wordt beschreven hoe u op alle knooppunten van de servergroep een upgrade naar een nieuwe belangrijke versie van PostgreSQL kunt uitvoeren.
 
-## <a name="test-the-upgrade-first"></a>Test eerst de upgrade
+## <a name="test-the-upgrade-first"></a>De upgrade eerst testen
 
-Bij het upgraden van PostgreSQL worden er meer wijzigingen aangebracht dan u kunt voordoen, omdat grootschalige (Citus) ook de [database extensies](concepts-hyperscale-extensions.md)bijwerkt, met inbegrip van de Citus-extensie.
-We raden u ten zeerste aan om uw toepassing te testen met de nieuwe PostgreSQL-en Citus-versie voordat u uw productie omgeving bijwerkt.
+Het upgraden van PostgreSQL veroorzaakt meer wijzigingen dan Hyperscale (Citus), [](concepts-hyperscale-extensions.md)omdat de database-extensies ook worden geupgraded, inclusief de Citus-extensie.
+We raden u ten zeerste aan om uw toepassing te testen met de nieuwe PostgreSQL- en Citus-versie voordat u uw productieomgeving upgradet.
 
-Een handige manier om te testen is door een kopie van uw server groep te maken met behulp van herstel naar een bepaald [tijdstip](concepts-hyperscale-backup.md#point-in-time-restore-pitr). Voer een upgrade uit voor de kopie en test uw toepassing hierop. Als u alles goed hebt gecontroleerd, werkt u de oorspronkelijke server groep bij.
+Een handige manier om te testen is om een kopie van uw servergroep te maken met behulp van herstel [naar een bepaald tijdstip.](concepts-hyperscale-backup.md#restore) Werk de kopie bij en test uw toepassing op de kopie. Nadat u hebt gecontroleerd of alles goed werkt, moet u de oorspronkelijke servergroep upgraden.
 
-## <a name="upgrade-a-server-group-in-the-azure-portal"></a>Een server groep in het Azure Portal bijwerken
+## <a name="upgrade-a-server-group-in-the-azure-portal"></a>Een servergroep upgraden in de Azure Portal
 
-1. Selecteer de knop **bijwerken** in het gedeelte **overzicht** van een Citus-Server groep (grootschalige).
-1. Er wordt een dialoog venster weer gegeven met de huidige versie van PostgreSQL en Citus.
-   Kies een nieuwe PostgreSQL-versie in de lijst **upgrade naar** .
-1. Controleer de waarde in **Citus-versie nadat de upgrade** is wat u verwacht.
+1. Selecteer in **de sectie** Overzicht van Hyperscale (Citus) servergroep de **knop Upgraden.**
+1. Er wordt een dialoogvenster weergegeven met de huidige versie van PostgreSQL en Citus.
+   Kies een nieuwe PostgreSQL-versie in de **lijst Upgraden naar.**
+1. Controleer of de waarde in **de Citus-versie na de upgrade** is wat u verwacht.
    Deze waarde wordt gewijzigd op basis van de PostgreSQL-versie die u hebt geselecteerd.
-1. Selecteer de knop **bijwerken** om door te gaan.
+1. Selecteer de **knop Upgraden** om door te gaan.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [ondersteunde postgresql-versies](concepts-hyperscale-versions.md).
-* Bekijk [welke uitbrei dingen](concepts-hyperscale-extensions.md) zijn verpakt met elke postgresql-versie in een grootschalige-Server groep (Citus).
+* Meer informatie [over ondersteunde PostgreSQL-versies.](concepts-hyperscale-versions.md)
+* Zie [welke extensies](concepts-hyperscale-extensions.md) zijn verpakt met elke PostgreSQL-versie in een Hyperscale (Citus) servergroep.

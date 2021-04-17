@@ -1,7 +1,7 @@
 ---
-title: Ruimtelijke analyse bewerkingen
+title: Bewerkingen voor ruimtelijke analyse
 titleSuffix: Azure Cognitive Services
-description: De ruimtelijke analyse bewerkingen.
+description: De bewerkingen voor ruimtelijke analyse.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,71 +10,71 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 4b4ee9d1e583241f8ec9b467ae9ddfdb1360fb52
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 37ac7573a1794c97c81fe5364204f85ff14d9fa6
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106284699"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538089"
 ---
-# <a name="spatial-analysis-operations"></a>Ruimtelijke analyse bewerkingen
+# <a name="spatial-analysis-operations"></a>Bewerkingen voor ruimtelijke analyse
 
-Ruimtelijke analyse maakt het mogelijk om realtime streaming video van camera apparaten te analyseren. Voor elk camera apparaat dat u configureert, wordt met de bewerkingen voor ruimtelijke analyse een uitvoer stroom gegenereerd van JSON-berichten die zijn verzonden naar uw exemplaar van Azure IoT Hub. 
+Ruimtelijke analyse maakt het mogelijk om realtime streamingvideo van cameraapparaten te analyseren. Voor elk cameraapparaat dat u configureert, genereren de bewerkingen voor ruimtelijke analyse een uitvoerstroom van JSON-berichten die worden verzonden naar uw exemplaar van Azure IoT Hub. 
 
-De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
+De container Ruimtelijke analyse implementeert de volgende bewerkingen:
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
-| cognitiveservices. Vision. spatialanalysis-personcount | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. De zone moet volledig worden gedekt door één camera zodat PersonCount een nauw keurig totaal kan registreren. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
-| cognitiveservices. Vision. spatialanalysis-personcrossingline | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
-| cognitiveservices. Vision. spatialanalysis-personcrossingpolygon | Hiermee wordt een _personZoneEnterExitEvent_ -gebeurtenis verzonden wanneer een persoon de zone invoert of verlaat en de genummerde zijde van de gekruiste zone bevat. Levert een _personZoneDwellTimeEvent_ wanneer de persoon de zone verlaat en geeft informatie over de richting, evenals het aantal milliseconden dat de persoon in de zone heeft gespendeerd. |
-| cognitiveservices. Vision. spatialanalysis-persondistance | Hiermee wordt getraceerd wanneer mensen een afstands regel schenden. <br> Verzendt een _personDistanceEvent_ regel matig met de locatie van elke afstands schending. |
-| cognitiveservices. Vision. spatialanalysis | Algemene bewerking die kan worden gebruikt om alle hierboven genoemde scenario's uit te voeren. Deze optie is nuttiger wanneer u meerdere scenario's wilt uitvoeren op dezelfde camera of als u systeem bronnen (bijvoorbeeld GPU) efficiënter wilt gebruiken. |
+| cognitiveservices.vision.spatialanalysis-personcount | Telt personen in een aangewezen zone in het gezichtsveld van de camera. De zone moet volledig worden gedekt door één camera, zodat PersonCount een nauwkeurig totaal kan opnemen. <br> Stuurt een eerste _personCountEvent-gebeurtenis_ en vervolgens _personCountEvent-gebeurtenissen_ wanneer het aantal verandert.  |
+| cognitiveservices.vision.spatialanalysis-personcrossingline | Houdt bij wanneer een persoon een aangewezen lijn in het gezichtsveld van de camera passeert. <br>Stuurt een _personLineEvent-gebeurtenis_ wanneer de persoon de lijn passeert en directionele informatie verstrekt. 
+| cognitiveservices.vision.spatialanalysis-personcrossingpolygon | Stuurt een _personZoneEnterExitEvent-gebeurtenis_ wanneer een persoon de zone binnenkomt of verlaat en geeft directionele informatie met de genummerde kant van de zone die is kruist. Er wordt een _personZoneDwellTimeEvent_ uitgegeven wanneer de persoon de zone verlaat en directionele informatie biedt, evenals het aantal milliseconden dat de persoon in de zone heeft besteed. |
+| cognitiveservices.vision.spatialanalysis-persondistance | Houdt bij wanneer mensen een afstandsregel schenden. <br> Er wordt periodiek _een personDistanceEvent_ met de locatie van elke schending van de afstand. |
+| cognitiveservices.vision.spatialanalysis | Algemene bewerking die kan worden gebruikt om alle hierboven genoemde scenario's uit te voeren. Deze optie is handiger wanneer u meerdere scenario's op dezelfde camera wilt uitvoeren of systeemresources (bijvoorbeeld GPU) efficiënter wilt gebruiken. |
 
-Alle bovenstaande bewerkingen zijn ook beschikbaar in de `.debug` versie, die de mogelijkheid hebben om de video frames te visualiseren wanneer ze worden verwerkt. U moet `xhost +` op de hostcomputer worden uitgevoerd om de visualisatie van video frames en-gebeurtenissen in te scha kelen.
+Alle bovenstaande bewerkingen zijn ook beschikbaar in de versie, die de mogelijkheid hebben om de videoframes te visualiseren `.debug` terwijl ze worden verwerkt. U moet uitvoeren op de hostcomputer om de visualisatie `xhost +` van videoframes en gebeurtenissen mogelijk te maken.
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
-| cognitiveservices. Vision. spatialanalysis-personcount. debug | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
-| cognitiveservices. Vision. spatialanalysis-personcrossingline. debug | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
-| cognitiveservices. Vision. spatialanalysis-personcrossingpolygon. debug | Hiermee wordt een _personZoneEnterExitEvent_ -gebeurtenis verzonden wanneer een persoon de zone invoert of verlaat en de genummerde zijde van de gekruiste zone bevat. Levert een _personZoneDwellTimeEvent_ wanneer de persoon de zone verlaat en geeft informatie over de richting, evenals het aantal milliseconden dat de persoon in de zone heeft gespendeerd. |
-| cognitiveservices. Vision. spatialanalysis-persondistance. debug | Hiermee wordt getraceerd wanneer mensen een afstands regel schenden. <br> Verzendt een _personDistanceEvent_ regel matig met de locatie van elke afstands schending. |
-| cognitiveservices. Vision. spatialanalysis. debug | Algemene bewerking die kan worden gebruikt om alle hierboven genoemde scenario's uit te voeren. Deze optie is nuttiger wanneer u meerdere scenario's wilt uitvoeren op dezelfde camera of als u systeem bronnen (bijvoorbeeld GPU) efficiënter wilt gebruiken. |
+| cognitiveservices.vision.spatialanalysis-personcount.debug | Telt personen in een aangewezen zone in het gezichtsveld van de camera. <br> Stuurt een eerste _personCountEvent-gebeurtenis_ en vervolgens _personCountEvent-gebeurtenissen_ wanneer het aantal verandert.  |
+| cognitiveservices.vision.spatialanalysis-personcrossingline.debug | Houdt bij wanneer een persoon een aangewezen lijn in het gezichtsveld van de camera passeert. <br>Stuurt een _personLineEvent-gebeurtenis_ wanneer de persoon de lijn passeert en directionele informatie verstrekt. 
+| cognitiveservices.vision.spatialanalysis-personcrossingpolygon.debug | Stuurt een _personZoneEnterExitEvent_ gebeurtenis wanneer een persoon binnenkomt of verlaat de zone en directionele informatie met de genummerde kant van de zone die is kruist. Stuurt een _personZoneDwellTimeEvent_ wanneer de persoon de zone verlaat en geeft informatie over de richting en het aantal milliseconden dat de persoon in de zone heeft besteed. |
+| cognitiveservices.vision.spatialanalysis-persondistance.debug | Houdt bij wanneer mensen een afstandsregel schenden. <br> Er wordt periodiek _een personDistanceEvent_ met de locatie van elke schending van de afstand. |
+| cognitiveservices.vision.spatialanalysis.debug | Algemene bewerking die kan worden gebruikt om alle hierboven genoemde scenario's uit te voeren. Deze optie is handiger wanneer u meerdere scenario's op dezelfde camera wilt uitvoeren of systeembronnen (bijvoorbeeld GPU) efficiënter wilt gebruiken. |
 
-Ruimtelijke analyse kan ook worden uitgevoerd met [Live video Analytics](../../media-services/live-video-analytics-edge/spatial-analysis-tutorial.md) als video Ai-module. 
+Ruimtelijke analyse kan ook worden uitgevoerd met [Live Video Analytics](../../media-services/live-video-analytics-edge/spatial-analysis-tutorial.md) hun Video AI-module. 
 
 <!--more details on the setup can be found in the [LVA Setup page](LVA-Setup.md). Below is the list of the operations supported with Live Video Analytics. -->
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
-| cognitiveservices. Vision. spatialanalysis-personcount. livevideoanalytics | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
-| cognitiveservices. Vision. spatialanalysis-personcrossingline. livevideoanalytics | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
-| cognitiveservices. Vision. spatialanalysis-personcrossingpolygon. livevideoanalytics | Hiermee wordt een _personZoneEnterExitEvent_ -gebeurtenis verzonden wanneer een persoon de zone invoert of verlaat en de genummerde zijde van de gekruiste zone bevat. Levert een _personZoneDwellTimeEvent_ wanneer de persoon de zone verlaat en geeft informatie over de richting, evenals het aantal milliseconden dat de persoon in de zone heeft gespendeerd.  |
-| cognitiveservices. Vision. spatialanalysis-persondistance. livevideoanalytics | Hiermee wordt getraceerd wanneer mensen een afstands regel schenden. <br> Verzendt een _personDistanceEvent_ regel matig met de locatie van elke afstands schending. |
-| cognitiveservices. Vision. spatialanalysis. livevideoanalytics | Algemene bewerking die kan worden gebruikt om alle hierboven genoemde scenario's uit te voeren. Deze optie is nuttiger wanneer u meerdere scenario's wilt uitvoeren op dezelfde camera of als u systeem bronnen (bijvoorbeeld GPU) efficiënter wilt gebruiken. |
+| cognitiveservices.vision.spatialanalysis-personcount.livevideoanalytics | Telt personen in een aangewezen zone in het gezichtsveld van de camera. <br> Stuurt een eerste _personCountEvent-gebeurtenis_ en vervolgens _personCountEvent-gebeurtenissen_ wanneer het aantal verandert.  |
+| cognitiveservices.vision.spatialanalysis-personcrossingline.livevideoanalytics | Houdt bij wanneer een persoon een aangewezen lijn in het gezichtsveld van de camera passeert. <br>Stuurt een _personLineEvent-gebeurtenis_ wanneer de persoon de lijn passeert en directionele informatie verstrekt. 
+| cognitiveservices.vision.spatialanalysis-personcrossingpolygon.livevideoanalytics | Stuurt een _personZoneEnterExitEvent-gebeurtenis_ wanneer een persoon de zone binnenkomt of verlaat en geeft directionele informatie met de genummerde kant van de zone die is kruist. Er wordt een _personZoneDwellTimeEvent_ uitgegeven wanneer de persoon de zone verlaat en directionele informatie biedt, evenals het aantal milliseconden dat de persoon in de zone heeft besteed.  |
+| cognitiveservices.vision.spatialanalysis-persondistance.livevideoanalytics | Houdt bij wanneer mensen een afstandsregel schenden. <br> Er wordt periodiek _een personDistanceEvent_ met de locatie van elke schending van de afstand. |
+| cognitiveservices.vision.spatialanalysis.livevideoanalytics | Algemene bewerking die kan worden gebruikt voor het uitvoeren van alle hierboven genoemde scenario's. Deze optie is handiger wanneer u meerdere scenario's op dezelfde camera wilt uitvoeren of systeembronnen (bijvoorbeeld GPU) efficiënter wilt gebruiken. |
 
-Live video Analytics-bewerkingen zijn ook beschikbaar in de `.debug` versie (bijvoorbeeld cognitiveservices. Vision. spatialanalysis-personcount. livevideoanalytics. debug), die de mogelijkheid heeft om de video frames te visualiseren als verwerkt. U moet `xhost +` op de hostcomputer worden uitgevoerd om de visualisatie van de video frames en gebeurtenissen in te scha kelen
+Live Video Analytics-bewerkingen zijn ook beschikbaar in de versie `.debug` (bijvoorbeeld cognitiveservices.vision.spatialanalysis-personcount.livevideoanalytics.debug) die de mogelijkheid biedt om de videoframes te visualiseren als ze worden verwerkt. U moet uitvoeren op de hostcomputer om de visualisatie van de videoframes en `xhost +` gebeurtenissen in te kunnen stellen
 
 > [!IMPORTANT]
-> De computer vision-AI-modellen detecteren en zoeken naar menselijke aanwezigheid in video beelden en uitvoer met behulp van een omsluitend kader rond een menselijk lichaam. De AI-modellen proberen niet de identiteiten of demografische gegevens van individuen te detecteren.
+> De COMPUTER Vision AI-modellen detecteren en vinden menselijke aanwezigheid in videobeelden en -uitvoer met behulp van een begrensingsvak rond een menselijk lichaam. De AI-modellen proberen niet de identiteiten of demografische gegevens van personen te ontdekken.
 
-Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse bewerkingen.
+Dit zijn de parameters die vereist zijn voor elk van deze ruimtelijke analysebewerkingen.
 
-| Bewerkingsparameters| Beschrijving|
+| Bewerkingsparameters| Description|
 |---------|---------|
-| Bewerkings-ID | De bewerkings-id uit de bovenstaande tabel.|
-| enabled | Booleaans: waar of onwaar|
-| VIDEO_URL| De RTSP-URL voor het camera apparaat (bijvoorbeeld: `rtsp://username:password@url` ). Ruimtelijke analyse ondersteunt H. 264-gecodeerde stream via RTSP, http of MP4. Video_URL kan worden voorzien van een verborgen base64-teken reeks waarde met AES-versleuteling en als de video-URL is verborgen `KEY_ENV` en `IV_ENV` moet worden ingesteld als omgevings variabelen. Een voor beeld van een hulp programma voor het genereren van sleutels en versleuteling vindt u [hier](/dotnet/api/system.security.cryptography.aesmanaged). |
-| VIDEO_SOURCE_ID | Een beschrijvende naam voor het camera apparaat of de video stroom. Dit wordt geretourneerd met de JSON-uitvoer van de gebeurtenis.|
-| VIDEO_IS_LIVE| True voor camera apparaten; ONWAAR voor opgenomen Video's.|
-| VIDEO_DECODE_GPU_INDEX| De GPU voor het decoderen van het video frame. De standaard waarde is 0. Moet hetzelfde zijn als de `gpu_index` in andere configuratie van het knoop punt `VICA_NODE_CONFIG` , zoals, `DETECTOR_NODE_CONFIG` .|
-| INPUT_VIDEO_WIDTH | Geef de frame breedte van de video/stream op (bijvoorbeeld 1920). Dit is een optioneel veld en als dit wordt gegeven, wordt het kader geschaald naar deze dimensie terwijl de hoogte-breedte verhouding behouden blijft.|
-| DETECTOR_NODE_CONFIG | JSON die aangeeft in welke GPU het detector knooppunt moet worden uitgevoerd. Deze moet de volgende indeling hebben: `"{ \"gpu_index\": 0 }",`|
-| SPACEANALYTICS_CONFIG | De JSON-configuratie voor de zone en de regel, zoals hieronder wordt beschreven.|
-| ENABLE_FACE_MASK_CLASSIFIER | `True` om het detecteren van personen met gezichts maskers in de video stroom in te scha kelen, `False` om dit uit te scha kelen. Deze instelling is standaard uitgeschakeld. Voor de detectie van gezichts maskers is een breedte parameter voor de invoer van 1920 vereist `"INPUT_VIDEO_WIDTH": 1920` . Het kenmerk Face masker wordt niet geretourneerd als gedetecteerde mensen niet op de camera zijn gericht of te ver weg zijn. Raadpleeg de hand leiding voor [camera plaatsing](spatial-analysis-camera-placement.md) voor meer informatie |
+| Bewerkings-id | De bewerkings-id uit de bovenstaande tabel.|
+| enabled | Booleaanse naam: waar of onwaar|
+| VIDEO_URL| De RTSP-URL voor het cameraapparaat (voorbeeld: `rtsp://username:password@url` ). Ruimtelijke analyse ondersteunt met H.264 gecodeerde stream via RTSP, http of mp4. Video_URL kunnen worden opgegeven als een versleutelde base64-tekenreekswaarde met behulp van AES-versleuteling. Als de video-URL is versleuteld, moet deze worden opgegeven als `KEY_ENV` `IV_ENV` omgevingsvariabelen. Voorbeeldprogramma voor het genereren van sleutels en versleuteling vindt u [hier](/dotnet/api/system.security.cryptography.aesmanaged). |
+| VIDEO_SOURCE_ID | Een gebruiksvriendelijke naam voor het cameraapparaat of de videostream. Dit wordt geretourneerd met de JSON-uitvoer van de gebeurtenis.|
+| VIDEO_IS_LIVE| Waar voor camera-apparaten; false voor opgenomen video's.|
+| VIDEO_DECODE_GPU_INDEX| Welke GPU het videoframe moet decoderen. Standaard is dit 0. Moet hetzelfde zijn als `gpu_index` de in de andere knooppunt-configuratie, zoals , `VICA_NODE_CONFIG` `DETECTOR_NODE_CONFIG` .|
+| INPUT_VIDEO_WIDTH | Voer de framebreedte van de video/stream in (bijvoorbeeld 1920). Dit is een optioneel veld en indien opgegeven, wordt het frame naar deze dimensie geschaald met behoud van de aspectverhouding.|
+| DETECTOR_NODE_CONFIG | JSON die aangeeft op welke GPU het detector-knooppunt moet worden uitgevoerd. Deze moet de volgende indeling hebben: `"{ \"gpu_index\": 0 }",`|
+| SPACEANALYTICS_CONFIG | JSON-configuratie voor zone en regel, zoals hieronder wordt beschreven.|
+| ENABLE_FACE_MASK_CLASSIFIER | `True` om het detecteren van personen die gezichtsmaskers in de videostream dragen, in te schakelen, `False` om deze uit te schakelen. Dit is standaard uitgeschakeld. Voor gezichtsmaskerdetectie moet de parameter voor de invoervideobreedte 1920 `"INPUT_VIDEO_WIDTH": 1920` zijn. Het kenmerk gezichtsmasker wordt niet geretourneerd als gedetecteerde personen de camera niet of te ver van de camera hebben. Raadpleeg de handleiding [voor cameraplaatsing](spatial-analysis-camera-placement.md) voor meer informatie |
 
-### <a name="detector-node-parameter-settings"></a>Instellingen voor de detectie knooppunt parameter
-Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimtelijke analyse bewerkingen.
+### <a name="detector-node-parameter-settings"></a>Parameterinstellingen detector-knooppunt
+Dit is een voorbeeld van de DETECTOR_NODE_CONFIG parameters voor alle bewerkingen voor ruimtelijke analyse.
 
 ```json
 {
@@ -91,18 +91,18 @@ Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimteli
 | Naam | Type| Description|
 |---------|---------|---------|
 | `gpu_index` | tekenreeks| De GPU-index waarop deze bewerking wordt uitgevoerd.|
-| `do_calibration` | tekenreeks | Hiermee wordt aangegeven dat de kalibratie is ingeschakeld. `do_calibration` moet waar zijn om **cognitiveservices. Vision. spatialanalysis-persondistance** goed te laten functioneren. do_calibration is standaard ingesteld op waar. |
-| `enable_recalibration` | booleaans | Hiermee wordt aangegeven of automatisch opnieuw kalibreren is ingeschakeld. De standaardinstelling is `true`.|
-| `calibration_quality_check_frequency_seconds` | int | Minimum aantal seconden tussen elke kwaliteits controle om te bepalen of opnieuw kalibreren nood zakelijk is. De standaard waarde is `86400` (24 uur). Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_sample_collect_frequency_seconds` | int | Minimum aantal seconden tussen het verzamelen van nieuwe gegevens voorbeelden voor het opnieuw kalibreren en het controleren van de kwaliteit. De standaard waarde is `300` (5 minuten). Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_one_round_sample_collect_num` | int | Minimum aantal nieuwe gegevens voorbeelden voor het verzamelen per afronding van de voorbeeld verzameling. De standaardinstelling is `10`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_queue_max_size` | int | Het maximum aantal gegevens voorbeelden dat moet worden opgeslagen wanneer het camera model wordt gekalibreerd. De standaardinstelling is `1000`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `enable_breakpad`| booleaans | Hiermee wordt aangegeven of u Breakpad wilt inschakelen, die wordt gebruikt voor het genereren van een crash dump voor het gebruik van fout opsporing. Het is `false` standaard. Als u deze instelt op `true` , moet u ook toevoegen `"CapAdd": ["SYS_PTRACE"]` in het `HostConfig` deel van de container `createOptions` . De crash dump wordt standaard geüpload naar de [RealTimePersonTracking](https://appcenter.ms/orgs/Microsoft-Organization/apps/RealTimePersonTracking/crashes/errors?version=&appBuild=&period=last90Days&status=&errorType=all&sortCol=lastError&sortDir=desc) AppCenter-app, als u wilt dat de crash dumps worden geüpload naar uw eigen AppCenter-app, kunt u de omgevings variabele overschrijven `RTPT_APPCENTER_APP_SECRET` met het app-geheim van uw app.
+| `do_calibration` | tekenreeks | Geeft aan dat kalibratie is ingeschakeld. `do_calibration` moet waar zijn als **cognitiveservices.vision.spatialanalysis-persondistance** goed werkt. do_calibration is standaard ingesteld op Waar. |
+| `enable_recalibration` | booleaans | Geeft aan of automatische hercalibratie is ingeschakeld. De standaardinstelling is `true`.|
+| `calibration_quality_check_frequency_seconds` | int | Minimaal aantal seconden tussen elke kwaliteitscontrole om te bepalen of er opnieuw moet worden gecalibreerd. De standaardwaarde is `86400` (24 uur). Alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_sample_collect_frequency_seconds` | int | Minimaal aantal seconden tussen het verzamelen van nieuwe gegevensvoorbeelden voor hercalibratie en kwaliteitscontrole. De standaardwaarde is `300` (5 minuten). Alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_one_round_sample_collect_num` | int | Minimum aantal nieuwe gegevensvoorbeelden dat per ronde van de voorbeeldverzameling moet worden verzameld. De standaardinstelling is `10`. Alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_queue_max_size` | int | Maximum aantal gegevensvoorbeelden dat moet worden opgeslagen wanneer het cameramodel wordt ge kalibreerd. De standaardinstelling is `1000`. Alleen gebruikt wanneer `enable_recalibration=True` .|
+| `enable_breakpad`| booleaans | Geeft aan of u breakpad wilt inschakelen, dat wordt gebruikt voor het genereren van crashdumps voor foutopsporing. Dit is `false` standaard. Als u deze in stelt `true` op , moet u ook toevoegen aan het deel van de container `"CapAdd": ["SYS_PTRACE"]` `HostConfig` `createOptions` . De crashdump wordt standaard geüpload naar de AppCenter-app [RealTimePersonTracking.](https://appcenter.ms/orgs/Microsoft-Organization/apps/RealTimePersonTracking/crashes/errors?version=&appBuild=&period=last90Days&status=&errorType=all&sortCol=lastError&sortDir=desc) Als u wilt dat de crashdumps worden geüpload naar uw eigen AppCenter-app, kunt u de omgevingsvariabele overschrijven met het app-geheim van uw `RTPT_APPCENTER_APP_SECRET` app.
 
-## <a name="spatial-analysis-operations-configuration-and-output"></a>Configuratie en uitvoer van ruimtelijke analyse bewerkingen
-### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-personcount"></a>Zone configuratie voor cognitiveservices. Vision. spatialanalysis-personcount
+## <a name="spatial-analysis-operations-configuration-and-output"></a>Configuratie en uitvoer van ruimtelijke analysebewerkingen
+### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-personcount"></a>Zoneconfiguratie voor cognitiveservices.vision.spatialanalysis-personcount
 
- Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONFIG waarmee een zone wordt geconfigureerd. U kunt meerdere zones configureren voor deze bewerking.
+ Dit is een voorbeeld van een JSON-invoer voor de SPACEANALYTICS_CONFIG parameter die een zone configureert. U kunt meerdere zones configureren voor deze bewerking.
 
 ```json
 {
@@ -120,20 +120,20 @@ Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimteli
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
-| `name` | tekenreeks| Beschrijvende naam voor deze zone.|
-| `polygon` | list| Elk waardepaar vertegenwoordigt de x, y voor hoek punten van een veelhoek. De veelhoek vertegenwoordigt de gebieden waarin gebruikers worden bijgehouden of geteld en veelhoek punten zijn gebaseerd op genormaliseerde coördinaten (0-1), waarbij de linkerbovenhoek (0,0, 0,0) en de rechter benedenhoek (1,0, 1,0) is.   
-| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. |
-| `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-personcount** dit moet zijn `count` .|
-| `trigger` | tekenreeks| Het type trigger voor het verzenden van een gebeurtenis. Ondersteunde waarden zijn `event` voor het verzenden van gebeurtenissen wanneer het aantal wordt gewijzigd of als `interval` er periodiek gebeurtenissen worden verzonden, ongeacht of het aantal is gewijzigd of niet.
-| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden egressed. Als `output_frequency` = X, elke X gebeurtenis is egressed, ex. `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De `output_frequency` is van toepassing op zowel als `event` `interval` . |
-| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|
+| `name` | tekenreeks| Gebruiksvriendelijke naam voor deze zone.|
+| `polygon` | list| Elk waardepaar vertegenwoordigt de x,y voor de vertices van een veelhoek. De veelhoek vertegenwoordigt de gebieden waarin mensen worden bijgespoord of geteld en veelhoekpunten zijn gebaseerd op genormaliseerde coördinaten (0-1), waarbij de linkerbovenhoek (0,0, 0,0) is en de rechteronderhoek (1,0, 1,0).   
+| `threshold` | float| Gebeurtenissen worden verlaten wanneer de persoon groter is dan dit aantal pixels binnen de zone. |
+| `type` | tekenreeks| Voor **cognitiveservices.vision.spatialanalysis-personcount** moet dit `count` zijn.|
+| `trigger` | tekenreeks| Het type trigger voor het verzenden van een gebeurtenis. Ondersteunde waarden zijn voor het verzenden van gebeurtenissen wanneer het aantal wordt gewijzigd of voor het periodiek verzenden van gebeurtenissen, ongeacht of het aantal `event` `interval` is gewijzigd of niet.
+| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden uitgegaan. Wanneer `output_frequency` = X, wordt elke X-gebeurtenis weggegaan, bijvoorbeeld. `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De `output_frequency` is van toepassing op zowel als `event` `interval` . |
+| `focus` | tekenreeks| De puntlocatie binnen het begrensingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan zijn (de footprint van de persoon), (het onderste midden van het begrenzesvak van de persoon) (het midden van het `footprint` `bottom_center` `center` begrensvak van de persoon).|
 
-### <a name="line-configuration-for-cognitiveservicesvisionspatialanalysis-personcrossingline"></a>Lijn configuratie voor cognitiveservices. Vision. spatialanalysis-personcrossingline
+### <a name="line-configuration-for-cognitiveservicesvisionspatialanalysis-personcrossingline"></a>Lijnconfiguratie voor cognitiveservices.vision.spatialanalysis-personcrossingline
 
-Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONFIG die een regel configureert. U kunt meerdere snij lijnen configureren voor deze bewerking.
+Dit is een voorbeeld van een JSON-invoer voor de SPACEANALYTICS_CONFIG parameter die een regel configureert. U kunt meerdere kruisingslijnen configureren voor deze bewerking.
 
 ```json
 {
@@ -165,21 +165,21 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `lines` | list| Lijst met regels.|
-| `name` | tekenreeks| Beschrijvende naam voor deze regel.|
-| `line` | list| De definitie van de regel. Dit is een omleidings lijn waarmee u de vermelding ' entry ' versus ' exit ' kunt begrijpen.|
-| `start` | waardepaar| x, y-coördinaten voor het begin punt van de lijn. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. |
-| `end` | waardepaar| x, y-coördinaten voor het eind punt van de lijn. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. |
-| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. De standaardwaarde is 16. Dit is de aanbevolen waarde voor maximale nauw keurigheid. |
-| `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-personcrossingline** dit moet zijn `linecrossing` .|
-|`trigger`|tekenreeks|Het type trigger voor het verzenden van een gebeurtenis.<br>Ondersteunde waarden: ' event ': wordt gestart wanneer iemand de regel kruist.|
-| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` . De standaard waarde is footprint.|
+| `name` | tekenreeks| Gebruiksvriendelijke naam voor deze regel.|
+| `line` | list| De definitie van de regel. Dit is een richtingslijn waarmee u inzicht hebt in 'vermelding' versus 'afsluiten'.|
+| `start` | waardepaar| x, y-coördinaten voor het beginpunt van de regel. De float-waarden vertegenwoordigen de positie van het hoekpunt ten opzichte van de linkerbovenhoek. Als u de absolute x-, y-waarden wilt berekenen, vermenigvuldigt u deze waarden met de framegrootte. |
+| `end` | waardepaar| x, y-coördinaten voor het eindpunt van de regel. De float-waarden vertegenwoordigen de positie van het hoekpunt ten opzichte van de linkerbovenhoek. Als u de absolute x-, y-waarden wilt berekenen, vermenigvuldigt u deze waarden met de framegrootte. |
+| `threshold` | float| Gebeurtenissen worden uitgegaan wanneer de persoon groter is dan dit aantal pixels in de zone. De standaardwaarde is 16. Dit is de aanbevolen waarde voor maximale nauwkeurigheid. |
+| `type` | tekenreeks| Voor **cognitiveservices.vision.spatialanalysis-personcrossingline** moet dit `linecrossing` zijn.|
+|`trigger`|tekenreeks|Het type trigger voor het verzenden van een gebeurtenis.<br>Ondersteunde waarden: 'gebeurtenis': wordt brand wanneer iemand de regel passeert.|
+| `focus` | tekenreeks| De puntlocatie binnen het begrensingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan zijn (de footprint van de persoon), (het onderste midden van het begrenzesvak van de persoon) (het midden van het `footprint` `bottom_center` `center` begrensingsvak van de persoon). De standaardwaarde is footprint.|
 
-### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-personcrossingpolygon"></a>Zone configuratie voor cognitiveservices. Vision. spatialanalysis-personcrossingpolygon
+### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-personcrossingpolygon"></a>Zoneconfiguratie voor cognitiveservices.vision.spatialanalysis-personcrossingpolygon
 
-Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONFIG waarmee een zone wordt geconfigureerd. U kunt meerdere zones configureren voor deze bewerking.
+Dit is een voorbeeld van een JSON-invoer voor de SPACEANALYTICS_CONFIG parameter die een zone configureert. U kunt meerdere zones configureren voor deze bewerking.
 
  ```json
 {
@@ -211,19 +211,19 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
-| `name` | tekenreeks| Beschrijvende naam voor deze zone.|
-| `polygon` | list| Elk waardepaar vertegenwoordigt de x, y voor hoek punten van de polygoon. De veelhoek vertegenwoordigt de gebieden waarin mensen worden getraceerd of geteld. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. 
-| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. De standaard waarde is 48 als het type zonecrossing en 16 wanneer de tijd DwellTime is. Dit zijn de aanbevolen waarden voor maximale nauw keurigheid.  |
-| `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-personcrossingpolygon** dit moet zijn `zonecrossing` of `zonedwelltime` .|
-| `trigger`|tekenreeks|Het type trigger voor het verzenden van een gebeurtenis<br>Ondersteunde waarden: ' event ': wordt geactiveerd wanneer iemand de zone invoert of verlaat.|
-| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` . De standaard waarde is footprint.|
+| `name` | tekenreeks| Gebruiksvriendelijke naam voor deze zone.|
+| `polygon` | list| Elk waardepaar vertegenwoordigt de x,y voor de punten van veelhoek. De veelhoek vertegenwoordigt de gebieden waarin mensen worden bijgespoord of geteld. De float-waarden vertegenwoordigen de positie van het hoekpunt ten opzichte van de linkerbovenhoek. Als u de absolute x-, y-waarden wilt berekenen, vermenigvuldigt u deze waarden met de framegrootte. 
+| `threshold` | float| Gebeurtenissen worden verlaten wanneer de persoon groter is dan dit aantal pixels binnen de zone. De standaardwaarde is 48 wanneer type zonecrossing is en 16 wanneer de tijd DwellTime is. Dit zijn de aanbevolen waarden voor maximale nauwkeurigheid.  |
+| `type` | tekenreeks| Voor **cognitiveservices.vision.spatialanalysis-personcrossingpolygon** moet dit `zonecrossing` of `zonedwelltime` zijn.|
+| `trigger`|tekenreeks|Het type trigger voor het verzenden van een gebeurtenis<br>Ondersteunde waarden: "event": fire wanneer iemand de zone binnenkomt of verlaat.|
+| `focus` | tekenreeks| De puntlocatie binnen het begrensingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan zijn (de footprint van de persoon), (het onderste midden van het begrenzesvak van de persoon) (het midden van het `footprint` `bottom_center` `center` begrensvak van de persoon). De standaardwaarde is footprint.|
 
-### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-persondistance"></a>Zone configuratie voor cognitiveservices. Vision. spatialanalysis-persondistance
+### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-persondistance"></a>Zoneconfiguratie voor cognitiveservices.vision.spatialanalysis-persondistance
 
-Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONFIG waarmee een zone wordt geconfigureerd voor **cognitiveservices. Vision. spatialanalysis-persondistance**. U kunt meerdere zones configureren voor deze bewerking.
+Dit is een voorbeeld van een JSON-invoer voor de parameter SPACEANALYTICS_CONFIG die een zone configureert voor **cognitiveservices.vision.spatialanalysis-persondistance.** U kunt meerdere zones configureren voor deze bewerking.
 
 ```json
 {
@@ -246,22 +246,22 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
-| `name` | tekenreeks| Beschrijvende naam voor deze zone.|
-| `polygon` | list| Elk waardepaar vertegenwoordigt de x, y voor hoek punten van de polygoon. De veelhoek vertegenwoordigt de gebieden waarin mensen worden geteld en de afstand tussen mensen wordt gemeten. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. 
-| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. |
-| `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-persondistance** dit moet zijn `people_distance` .|
-| `trigger` | tekenreeks| Het type trigger voor het verzenden van een gebeurtenis. Ondersteunde waarden zijn `event` voor het verzenden van gebeurtenissen wanneer het aantal wordt gewijzigd of als `interval` er periodiek gebeurtenissen worden verzonden, ongeacht of het aantal is gewijzigd of niet.
-| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden egressed. Als `output_frequency` = X, elke X gebeurtenis is egressed, ex. `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De `output_frequency` is van toepassing op zowel als `event` `interval` .|
-| `minimum_distance_threshold` | float| Een afstand in meter waarmee een "TooClose"-gebeurtenis wordt geactiveerd wanneer mensen kleiner zijn dan de afstand tussen elkaar.|
-| `maximum_distance_threshold` | float| Een afstand in meter waarmee de gebeurtenis ' TooFar ' wordt geactiveerd wanneer mensen groter zijn dan de afstand tussen elkaar.|
-| `aggregation_method` | tekenreeks| De methode voor het aggregatie resultaat van persondistance. De aggregation_method is van toepassing op zowel als `mode` `average` .|
-| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|
+| `name` | tekenreeks| Gebruiksvriendelijke naam voor deze zone.|
+| `polygon` | list| Elk waardepaar vertegenwoordigt de x,y voor de punten van een veelhoek. De veelhoek vertegenwoordigt de gebieden waarin mensen worden geteld en de afstand tussen mensen wordt gemeten. De float-waarden vertegenwoordigen de positie van het hoekpunt ten opzichte van de linkerbovenhoek. Als u de absolute x-, y-waarden wilt berekenen, vermenigvuldigt u deze waarden met de framegrootte. 
+| `threshold` | float| Gebeurtenissen worden uitgegaan wanneer de persoon groter is dan dit aantal pixels in de zone. |
+| `type` | tekenreeks| Voor **cognitiveservices.vision.spatialanalysis-persondistance** moet dit `people_distance` zijn.|
+| `trigger` | tekenreeks| Het type trigger voor het verzenden van een gebeurtenis. Ondersteunde waarden zijn voor het verzenden van gebeurtenissen wanneer het aantal verandert of voor het periodiek verzenden van gebeurtenissen, ongeacht of het aantal `event` `interval` is gewijzigd of niet.
+| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden uitgegaan. Wanneer `output_frequency` = X, wordt elke X-gebeurtenis uitgegaan, bijvoorbeeld `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De `output_frequency` is van toepassing op zowel als `event` `interval` .|
+| `minimum_distance_threshold` | float| Een afstand in voet die een 'TooClose'-gebeurtenis activeert wanneer mensen kleiner zijn dan die afstand uit elkaar.|
+| `maximum_distance_threshold` | float| Een afstand in voet die een 'TooFar'-gebeurtenis activeert wanneer mensen groter zijn dan die afstand uit elkaar.|
+| `aggregation_method` | tekenreeks| De methode voor cumulatief persondistanceresultaat. De aggregation_method is van toepassing op `mode` zowel als `average` .|
+| `focus` | tekenreeks| De puntlocatie binnen het begrensingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan zijn (de footprint van de persoon), (het onderste midden van het begrenzesvak van de persoon) (het midden van het `footprint` `bottom_center` `center` begrensingsvak van de persoon).|
 
-### <a name="configuration-for-cognitiveservicesvisionspatialanalysis"></a>Configuratie voor cognitiveservices. Vision. spatialanalysis
-Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONFIG waarmee een lijn en zone voor **cognitiveservices. Vision. spatialanalysis** worden geconfigureerd. U kunt meerdere regels/zones voor deze bewerking configureren en elke regel/zone kan verschillende gebeurtenissen hebben.
+### <a name="configuration-for-cognitiveservicesvisionspatialanalysis"></a>Configuratie voor cognitiveservices.vision.spatialanalysis
+Dit is een voorbeeld van een JSON-invoer voor de parameter SPACEANALYTICS_CONFIG die een lijn en zone configureert voor **cognitiveservices.vision.spatialanalysis.** U kunt meerdere regels/zones configureren voor deze bewerking en elke regel/zone kan verschillende gebeurtenissen hebben.
 
  ```
 {
@@ -334,17 +334,17 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
   ]
 }
 ```
-## <a name="camera-configuration"></a>Camera configuratie
+## <a name="camera-configuration"></a>Cameraconfiguratie
 
-Raadpleeg de richt lijnen voor [camera plaatsing](spatial-analysis-camera-placement.md) voor meer informatie over het configureren van zones en regels.
+Zie de [richtlijnen voor cameraplaatsing](spatial-analysis-camera-placement.md) voor meer informatie over het configureren van zones en lijnen.
 
-## <a name="spatial-analysis-operation-output"></a>Uitvoer van ruimtelijke analyse bewerkingen
+## <a name="spatial-analysis-operation-output"></a>Uitvoer van ruimtelijke analysebewerking
 
-De gebeurtenissen van elke bewerking zijn egressed naar Azure IoT Hub in JSON-indeling.
+De gebeurtenissen van elke bewerking worden naar een JSON-Azure IoT Hub uitgevoerd.
 
-### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcount-ai-insights"></a>JSON-indeling voor cognitiveservices. Vision. spatialanalysis-personcount AI Insights
+### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcount-ai-insights"></a>JSON-indeling voor cognitiveservices.vision.spatialanalysis-personcount AI-inzichten
 
-Voor beeld-JSON voor een gebeurtenis uitvoer door deze bewerking.
+Voorbeeld-JSON voor een gebeurtenisuitvoer door deze bewerking.
 
 ```json
 {
@@ -437,44 +437,44 @@ Voor beeld-JSON voor een gebeurtenis uitvoer door deze bewerking.
 }
 ```
 
-| Naam van gebeurtenis veld | Type| Description|
+| Naam gebeurtenisveld | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Gebeurtenis-id|
 | `type` | tekenreeks| Gebeurtenistype|
-| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoon die deze gebeurtenis heeft geactiveerd|
+| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoonsdetectie die deze gebeurtenis heeft geactiveerd|
 | `properties` | verzameling| Verzameling waarden|
-| `trackinId` | tekenreeks| De unieke id van de gedetecteerde persoon|
-| `zone` | tekenreeks | Het veld naam van de veelhoek dat de gekruiste zone vertegenwoordigt|
-| `trigger` | tekenreeks| Het trigger type is ' event ' of ' interval ', afhankelijk van de waarde `trigger` in SPACEANALYTICS_CONFIG|
+| `trackinId` | tekenreeks| Unieke id van de gedetecteerde persoon|
+| `zone` | tekenreeks | Het veld 'naam' van de veelhoek die de zone vertegenwoordigt die is kruist|
+| `trigger` | tekenreeks| Het triggertype is 'gebeurtenis' of 'interval' afhankelijk van de waarde `trigger` van in SPACEANALYTICS_CONFIG|
 
-| Naam van detectie veld | Type| Description|
+| Veldnaam detectie | Type| Description|
 |---------|---------|---------|
-| `id` | tekenreeks| Detectie-ID|
-| `type` | tekenreeks| Detectie type|
+| `id` | tekenreeks| Detectie-id|
+| `type` | tekenreeks| Detectietype|
 | `region` | verzameling| Verzameling waarden|
 | `type` | tekenreeks| Type regio|
-| `points` | verzameling| Linksboven en rechtsonder, wanneer het gebieds type rechthoek is |
-| `confidence` | float| Algoritme vertrouwen|
-| `face_mask` | float | De waarde voor het betrouw bare kenmerk met het bereik (0-1) geeft aan dat de gedetecteerde persoon een Face-masker draagt |
-| `face_nomask` | float | De waarde voor het betrouw bare kenmerk met het bereik (0-1) geeft aan dat de gedetecteerde persoon **geen** Face-masker draagt |
+| `points` | verzameling| De punten linksboven en rechtsonder wanneer het regiotype RECHTHOEK is |
+| `confidence` | float| Betrouwbaarheid van algoritmen|
+| `face_mask` | float | De betrouwbaarheidswaarde van het kenmerk met bereik (0-1) geeft aan dat de gedetecteerde persoon een gezichtsmasker draagt |
+| `face_nomask` | float | De betrouwbaarheidswaarde van het kenmerk met bereik (0-1) geeft aan dat de gedetecteerde persoon geen gezichtsmasker draagt  |
 
-| SourceInfo veld naam | Type| Description|
+| Naam broninfoveld | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Camera-id|
-| `timestamp` | date| UTC-datum waarop de JSON-nettolading is verzonden|
-| `width` | int | Breedte van video frame|
-| `height` | int | Hoogte van video frame|
+| `timestamp` | date| UTC-datum waarop de JSON-nettolading is weggelaten|
+| `width` | int | Breedte van videoframe|
+| `height` | int | Hoogte van videoframe|
 | `frameId` | int | Frame-id|
 | `cameraCallibrationInfo` | verzameling | Verzameling waarden|
-| `status` | tekenreeks | De status van de kalibratie in de indeling van `state[;progress description]` . De status kan zijn `Calibrating` , `Recalibrating` (als opnieuw kalibreren is ingeschakeld) of `Calibrated` . Het deel van de beschrijving is alleen geldig wanneer het zich in en bevindt `Calibrating` `Recalibrating` , dat wordt gebruikt om de voortgang van het huidige kalibratie proces weer te geven.|
-| `cameraHeight` | float | De hoogte van de camera boven het wegdek in Foot. Dit wordt afgeleid van automatische kalibratie. |
-| `focalLength` | float | De brand lengte van de camera in pixels. Dit wordt afgeleid van automatische kalibratie. |
-| `tiltUpAngle` | float | De hoek van de camera kantelt van verticaal. Dit wordt afgeleid van automatische kalibratie.|
+| `status` | tekenreeks | De status van de kalibratie in de indeling `state[;progress description]` . De status kan `Calibrating` zijn, `Recalibrating` (als hercalibratie is ingeschakeld) of `Calibrated` . Het gedeelte beschrijving van voortgang is alleen geldig wanneer het zich in de status en , die wordt gebruikt om de voortgang van het `Calibrating` `Recalibrating` huidige kalibratieproces weer te geven.|
+| `cameraHeight` | float | De hoogte van de camera boven de grond in voetjes. Dit wordt afgeleid van automatische kalibratie. |
+| `focalLength` | float | De brandpuntlengte van de camera in pixels. Dit wordt afgeleid van automatische kalibratie. |
+| `tiltUpAngle` | float | De kantelhoek van de camera van verticaal. Dit wordt afgeleid van automatische kalibratie.|
 
 
-### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcrossingline-ai-insights"></a>JSON-indeling voor cognitiveservices. Vision. spatialanalysis-personcrossingline AI Insights
+### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcrossingline-ai-insights"></a>JSON-indeling voor cognitiveservices.vision.spatialanalysis-personcrossingline AI-inzichten
 
-Voorbeeld JSON voor detecties die door deze bewerking worden uitgevoerd.
+Voorbeeld-JSON voor detectie-uitvoer door deze bewerking.
 
 ```json
 {
@@ -528,42 +528,42 @@ Voorbeeld JSON voor detecties die door deze bewerking worden uitgevoerd.
     "schemaVersion": "1.0"
 }
 ```
-| Naam van gebeurtenis veld | Type| Description|
+| Naam gebeurtenisveld | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Gebeurtenis-id|
 | `type` | tekenreeks| Gebeurtenistype|
-| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoon die deze gebeurtenis heeft geactiveerd|
+| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoonsdetectie die deze gebeurtenis heeft geactiveerd|
 | `properties` | verzameling| Verzameling waarden|
-| `trackinId` | tekenreeks| De unieke id van de gedetecteerde persoon|
-| `status` | tekenreeks| Richting van de lijn kruisingen, ' CrossLeft ' of ' CrossRight '. De richting is gebaseerd op het verstrijken van de positie van het einde van de regel. CrossRight wordt van links naar rechts kruisen. CrossLeft wordt van rechts naar links kruisen.|
-| `zone` | tekenreeks | Het veld naam van de regel die is gekruist|
+| `trackinId` | tekenreeks| Unieke id van de gedetecteerde persoon|
+| `status` | tekenreeks| Richting van lijnkruisingen, 'CrossLeft' of 'CrossRight'. Richting is gebaseerd op de voorstelling die aan het begin staat en naar het einde van de regel gaat. CrossRight kruist van links naar rechts. CrossLeft gaat van rechts naar links.|
+| `zone` | tekenreeks | Het veld 'naam' van de regel die is doorkruist|
 
-| Naam van detectie veld | Type| Description|
+| Veldnaam detectie | Type| Description|
 |---------|---------|---------|
-| `id` | tekenreeks| Detectie-ID|
-| `type` | tekenreeks| Detectie type|
+| `id` | tekenreeks| Detectie-id|
+| `type` | tekenreeks| Detectietype|
 | `region` | verzameling| Verzameling waarden|
 | `type` | tekenreeks| Type regio|
-| `points` | verzameling| Linksboven en rechtsonder, wanneer het gebieds type rechthoek is |
-| `confidence` | float| Algoritme vertrouwen|
-| `face_mask` | float | De waarde voor het betrouw bare kenmerk met het bereik (0-1) geeft aan dat de gedetecteerde persoon een Face-masker draagt |
-| `face_nomask` | float | De waarde voor het betrouw bare kenmerk met het bereik (0-1) geeft aan dat de gedetecteerde persoon **geen** Face-masker draagt |
+| `points` | verzameling| De punten linksboven en rechtsonder wanneer het regiotype RECHTHOEK is |
+| `confidence` | float| Betrouwbaarheid van algoritmen|
+| `face_mask` | float | De betrouwbaarheidswaarde van het kenmerk met bereik (0-1) geeft aan dat de gedetecteerde persoon een gezichtsmasker draagt |
+| `face_nomask` | float | De betrouwbaarheidswaarde van het kenmerk met bereik (0-1) geeft aan dat de gedetecteerde persoon geen gezichtsmasker draagt  |
 
-| SourceInfo veld naam | Type| Description|
+| Veldnaam SourceInfo | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Camera-id|
-| `timestamp` | date| UTC-datum waarop de JSON-nettolading is verzonden|
-| `width` | int | Breedte van video frame|
-| `height` | int | Hoogte van video frame|
+| `timestamp` | date| UTC-datum waarop de JSON-nettolading is ingediend|
+| `width` | int | Breedte van videoframe|
+| `height` | int | Hoogte van videoframe|
 | `frameId` | int | Frame-id|
 
 
 > [!IMPORTANT]
-> Het AI-model detecteert een persoon ongeacht of de persoon naar of buiten de camera is gericht. Het AI-model voert geen gezichts herkenning uit en verstrekt geen biometrische informatie. 
+> Het AI-model detecteert een persoon, ongeacht of de persoon naar of weg van de camera kijkt. In het AI-model wordt gezichtsherkenning niet uitgevoerd en er wordt geen biometrische informatie verstrekt. 
 
-### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcrossingpolygon-ai-insights"></a>JSON-indeling voor cognitiveservices. Vision. spatialanalysis-personcrossingpolygon AI Insights
+### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcrossingpolygon-ai-insights"></a>JSON-indeling voor cognitiveservices.vision.spatialanalysis-personcrossingpolygon AI-inzichten
 
-Voor beeld van JSON voor detecties tijdens deze bewerking met `zonecrossing` type SPACEANALYTICS_CONFIG.
+Voorbeeld-JSON voor detectie-uitvoer door deze bewerking met `zonecrossing` type SPACEANALYTICS_CONFIG.
 
 ```json
 {
@@ -620,7 +620,7 @@ Voor beeld van JSON voor detecties tijdens deze bewerking met `zonecrossing` typ
 }
 ```
 
-Voor beeld van JSON voor detecties tijdens deze bewerking met `zonedwelltime` type SPACEANALYTICS_CONFIG.
+Voorbeeld-JSON voor detectie-uitvoer door deze bewerking met `zonedwelltime` type SPACEANALYTICS_CONFIG.
 
 ```json
 {
@@ -673,32 +673,32 @@ Voor beeld van JSON voor detecties tijdens deze bewerking met `zonedwelltime` ty
 }
 ```
 
-| Naam van gebeurtenis veld | Type| Description|
+| Naam gebeurtenisveld | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Gebeurtenis-id|
-| `type` | tekenreeks| Gebeurtenis type. De waarde kan _personZoneDwellTimeEvent_ of _personZoneEnterExitEvent_ zijn|
-| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoon die deze gebeurtenis heeft geactiveerd|
+| `type` | tekenreeks| Gebeurtenistype. De waarde kan _personZoneDwellTimeEvent_ of _personZoneEnterExitEvent zijn_|
+| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoonsdetectie die deze gebeurtenis heeft geactiveerd|
 | `properties` | verzameling| Verzameling waarden|
-| `trackinId` | tekenreeks| De unieke id van de gedetecteerde persoon|
-| `status` | tekenreeks| Richting van veelhoek kruisingen, ' Enter ' of ' exit '|
-| `side` | int| Het nummer van de zijde van de veelhoek die de persoon heeft gekruist. Elke zijde is een genummerde rand tussen de twee hoek punten van de veelhoek die de zone vertegenwoordigt. De rand tussen de eerste twee hoek punten van de polygoon vertegenwoordigen de eerste zijde. ' Side ' is leeg wanneer de gebeurtenis niet is gekoppeld aan een specifieke zijde vanwege bedekking. Er is bijvoorbeeld een afsluit probleem opgetreden wanneer een persoon verdwijnt, maar er is geen deel van de zone meer gezien of als er een fout is opgetreden bij het openen van een persoon in de zone, maar niet aan de linkerkant werd gezien.|
-| `durationMs` | float | Het aantal milliseconden dat de tijd vertegenwoordigt die de persoon aan de zone heeft besteed. Dit veld wordt vermeld wanneer het gebeurtenis type _personZoneDwellTimeEvent_ is|
-| `zone` | tekenreeks | Het veld naam van de veelhoek dat de gekruiste zone vertegenwoordigt|
+| `trackinId` | tekenreeks| Unieke id van de gedetecteerde persoon|
+| `status` | tekenreeks| Richting van veelhoekovergangen, 'Enter' of 'Exit'|
+| `side` | int| Het nummer van de zijde van de veelhoek die de persoon heeft doorkruist. Elke zijde is een genummerde rand tussen de twee hoekhoeken van de veelhoek die uw zone vertegenwoordigt. De rand tussen de eerste twee hoekhoeken van de veelhoek vertegenwoordigt de eerste zijde. 'Side' is leeg wanneer de gebeurtenis niet is gekoppeld aan een specifieke zijde vanwege occlusie. Er is bijvoorbeeld een exit opgetreden wanneer een persoon verdwijnt, maar niet is gezien terwijl deze een kant van de zone kruist of er een enter is opgetreden toen er een persoon in de zone stond, maar niet werd gezien die een kant kruist.|
+| `durationMs` | float | Het aantal milliseconden dat de tijd vertegenwoordigt die de persoon in de zone heeft doorgebracht. Dit veld wordt opgegeven wanneer het gebeurtenistype _personZoneDwellTimeEvent is_|
+| `zone` | tekenreeks | Het veld 'naam' van de veelhoek die de zone vertegenwoordigt die is kruist|
 
-| Naam van detectie veld | Type| Description|
+| Veldnaam detectie | Type| Description|
 |---------|---------|---------|
-| `id` | tekenreeks| Detectie-ID|
-| `type` | tekenreeks| Detectie type|
+| `id` | tekenreeks| Detectie-id|
+| `type` | tekenreeks| Detectietype|
 | `region` | verzameling| Verzameling waarden|
 | `type` | tekenreeks| Type regio|
-| `points` | verzameling| Linksboven en rechtsonder, wanneer het gebieds type rechthoek is |
-| `confidence` | float| Algoritme vertrouwen|
-| `face_mask` | float | De waarde voor het betrouw bare kenmerk met het bereik (0-1) geeft aan dat de gedetecteerde persoon een Face-masker draagt |
-| `face_nomask` | float | De waarde voor het betrouw bare kenmerk met het bereik (0-1) geeft aan dat de gedetecteerde persoon **geen** Face-masker draagt |
+| `points` | verzameling| De punten linksboven en rechtsonder wanneer het regiotype RECHTHOEK is |
+| `confidence` | float| Betrouwbaarheid van algoritmen|
+| `face_mask` | float | De betrouwbaarheidswaarde van het kenmerk met bereik (0-1) geeft aan dat de gedetecteerde persoon een gezichtsmasker draagt |
+| `face_nomask` | float | De betrouwbaarheidswaarde van het kenmerk met bereik (0-1) geeft aan dat de gedetecteerde persoon geen gezichtsmasker draagt  |
 
-### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-persondistance-ai-insights"></a>JSON-indeling voor cognitiveservices. Vision. spatialanalysis-persondistance AI Insights
+### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-persondistance-ai-insights"></a>JSON-indeling voor cognitiveservices.vision.spatialanalysis-persondistance AI-inzichten
 
-Voorbeeld JSON voor detecties die door deze bewerking worden uitgevoerd.
+Voorbeeld-JSON voor detectie-uitvoer door deze bewerking.
 
 ```json
 {
@@ -788,66 +788,66 @@ Voorbeeld JSON voor detecties die door deze bewerking worden uitgevoerd.
 }
 ```
 
-| Naam van gebeurtenis veld | Type| Description|
+| Naam gebeurtenisveld | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Gebeurtenis-id|
 | `type` | tekenreeks| Gebeurtenistype|
-| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoon die deze gebeurtenis heeft geactiveerd|
+| `detectionsId` | matrix| Matrix van grootte 1 van de unieke id van de persoonsdetectie die deze gebeurtenis heeft geactiveerd|
 | `properties` | verzameling| Verzameling waarden|
-| `personCount` | int| Aantal personen dat is gedetecteerd bij het verzenden van de gebeurtenis|
-| `averageDistance` | float| De gemiddelde afstand tussen alle gedetecteerde mensen in Foot|
-| `minimumDistanceThreshold` | float| De afstand in meter waarmee een "TooClose"-gebeurtenis wordt geactiveerd wanneer mensen kleiner zijn dan de afstand tussen elkaar.|
-| `maximumDistanceThreshold` | float| De afstand in meter waarmee een "TooFar"-gebeurtenis wordt geactiveerd wanneer mensen groter zijn dan de afstand tussen elkaar.|
-| `eventName` | tekenreeks| De gebeurtenis naam wordt `TooClose` `minimumDistanceThreshold` geschonden, wanneer deze wordt `TooFar` geschonden, `maximumDistanceThreshold` of wanneer de `unknown` automatische kalibratie niet is voltooid|
-| `distanceViolationPersonCount` | int| Aantal gedetecteerde personen in schending van `minimumDistanceThreshold` of `maximumDistanceThreshold`|
-| `zone` | tekenreeks | Het veld naam van de polygoon die de zone vertegenwoordigt die is gecontroleerd op distancing tussen personen|
-| `trigger` | tekenreeks| Het trigger type is ' event ' of ' interval ', afhankelijk van de waarde `trigger` in SPACEANALYTICS_CONFIG|
+| `personCount` | int| Aantal personen dat is gedetecteerd toen de gebeurtenis werd uitgezonden|
+| `averageDistance` | float| De gemiddelde afstand tussen alle gedetecteerde personen in voet|
+| `minimumDistanceThreshold` | float| De afstand in voet die een 'TooClose'-gebeurtenis activeert wanneer mensen kleiner zijn dan die afstand uit elkaar.|
+| `maximumDistanceThreshold` | float| De afstand in voet die een 'TooFar'-gebeurtenis activeert wanneer mensen groter zijn dan afstand uit elkaar.|
+| `eventName` | tekenreeks| Gebeurtenisnaam is `TooClose` met de `minimumDistanceThreshold` wordt geschonden, wanneer wordt geschonden of wanneer `TooFar` automatische `maximumDistanceThreshold` `unknown` kalibratie niet is voltooid|
+| `distanceViolationPersonCount` | int| Aantal personen dat is gedetecteerd in strijd `minimumDistanceThreshold` met of `maximumDistanceThreshold`|
+| `zone` | tekenreeks | Het veld 'naam' van de veelhoek die de zone vertegenwoordigt die is bewaakt voor het distancing tussen personen|
+| `trigger` | tekenreeks| Het triggertype is 'gebeurtenis' of 'interval' afhankelijk van de waarde `trigger` van in SPACEANALYTICS_CONFIG|
 
-| Naam van detectie veld | Type| Description|
+| Veldnaam detectie | Type| Description|
 |---------|---------|---------|
-| `id` | tekenreeks| Detectie-ID|
-| `type` | tekenreeks| Detectie type|
+| `id` | tekenreeks| Detectie-id|
+| `type` | tekenreeks| Detectietype|
 | `region` | verzameling| Verzameling waarden|
 | `type` | tekenreeks| Type regio|
-| `points` | verzameling| Linksboven en rechtsonder, wanneer het gebieds type rechthoek is |
-| `confidence` | float| Algoritme vertrouwen|
-| `centerGroundPoint` | 2 float-waarden| `x`, `y` waarden met de coördinaten van de uitgestelde locatie van de persoon op het grond vlak. `x` en `y` zijn coördinaten op het vloer vlak, ervan uitgaande dat de vloer niveau is. De locatie van de camera is de oorsprong. |
+| `points` | verzameling| De linkerboven- en rechteronderpunten wanneer het regiotype RECHTHOEK is |
+| `confidence` | float| Betrouwbaarheid van algoritmen|
+| `centerGroundPoint` | 2 float-waarden| `x`, `y` waarden met de coördinaten van de uitgestelde locatie van de persoon op de grond in voet. `x` en `y` zijn coördinaten op het vlak van de vloer, ervan uitgaande dat de vloer gelijk is. De locatie van de camera is de oorsprong. |
 
-Bij het berekenen moet `centerGroundPoint` `x` de afstand tussen de camera en de persoon langs een lijn lood recht op het camera-afbeeldings vlak staan. `y` is de afstand tussen de camera en de persoon langs een lijn evenwijdig aan het camera-afbeeldings vlak. 
+Bij het berekenen van is de afstand van de camera naar de persoon langs een lijn die haaks staat `centerGroundPoint` op het `x` camera-afbeeldingsvlak. `y` is de afstand van de camera naar de persoon langs een lijn die parallel loopt aan het camera-afbeeldingsvlak. 
 
-![Voor beeld van middel punt](./media/spatial-analysis/x-y-chart.png) 
+![Voorbeeld van een middelpunt](./media/spatial-analysis/x-y-chart.png) 
 
-In dit voor beeld `centerGroundPoint` is `{x: 4, y: 5}` . Dit betekent dat er 4 meter van de camera en 5 meter aan de rechter kant wordt weer van de ruimte naar boven.
+In dit voorbeeld `centerGroundPoint` is `{x: 4, y: 5}` . Dit betekent dat er een persoon is die 1,5 meter van de camera is verwijderd en 1,5 meter rechts, en de kamer van boven naar beneden kijkt.
 
 
-| SourceInfo veld naam | Type| Description|
+| Veldnaam SourceInfo | Type| Description|
 |---------|---------|---------|
 | `id` | tekenreeks| Camera-id|
-| `timestamp` | date| UTC-datum waarop de JSON-nettolading is verzonden|
-| `width` | int | Breedte van video frame|
-| `height` | int | Hoogte van video frame|
+| `timestamp` | date| UTC-datum waarop de JSON-nettolading is ingediend|
+| `width` | int | Breedte van videoframe|
+| `height` | int | Hoogte van videoframe|
 | `frameId` | int | Frame-id|
 | `cameraCallibrationInfo` | verzameling | Verzameling waarden|
-| `status` | tekenreeks | De status van de kalibratie in de indeling van `state[;progress description]` . De status kan zijn `Calibrating` , `Recalibrating` (als opnieuw kalibreren is ingeschakeld) of `Calibrated` . Het deel van de beschrijving is alleen geldig wanneer het zich in en bevindt `Calibrating` `Recalibrating` , dat wordt gebruikt om de voortgang van het huidige kalibratie proces weer te geven.|
-| `cameraHeight` | float | De hoogte van de camera boven het wegdek in Foot. Dit wordt afgeleid van automatische kalibratie. |
-| `focalLength` | float | De brand lengte van de camera in pixels. Dit wordt afgeleid van automatische kalibratie. |
-| `tiltUpAngle` | float | De hoek van de camera kantelt van verticaal. Dit wordt afgeleid van automatische kalibratie.|
+| `status` | tekenreeks | De status van de kalibratie in de indeling `state[;progress description]` . De status kan `Calibrating` zijn , `Recalibrating` (als opnieuwliblibreren is ingeschakeld) of `Calibrated` . Het voortgangsbeschrijvingsgedeelte is alleen geldig wanneer het zich in de status en heeft, die wordt gebruikt om de voortgang van het `Calibrating` `Recalibrating` huidige kalibratieproces weer te geven.|
+| `cameraHeight` | float | De hoogte van de camera boven de grond in voetjes. Dit wordt afgeleid van automatische kalibratie. |
+| `focalLength` | float | De centrale lengte van de camera in pixels. Dit wordt afgeleid van automatische kalibratie. |
+| `tiltUpAngle` | float | De kantelhoek van de camera van verticaal. Dit wordt afgeleid van automatische kalibratie.|
 
-### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-ai-insights"></a>JSON-indeling voor cognitiveservices. Vision. spatialanalysis AI Insights
+### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-ai-insights"></a>JSON-indeling voor cognitiveservices.vision.spatialanalysis AI-inzichten
 
-De uitvoer van deze bewerking is afhankelijk van de configuratie `events` , bijvoorbeeld als er een `zonecrossing` gebeurtenis is geconfigureerd voor deze bewerking, is uitvoer hetzelfde als `cognitiveservices.vision.spatialanalysis-personcrossingpolygon` .
+De uitvoer van deze bewerking is afhankelijk van geconfigureerd. Als er bijvoorbeeld een gebeurtenis is geconfigureerd voor deze bewerking, is de uitvoer `events` `zonecrossing` hetzelfde als `cognitiveservices.vision.spatialanalysis-personcrossingpolygon` .
 
-## <a name="use-the-output-generated-by-the-container"></a>De uitvoer gebruiken die door de container is gegenereerd
+## <a name="use-the-output-generated-by-the-container"></a>De uitvoer gebruiken die is gegenereerd door de container
 
-Mogelijk wilt u de detectie van ruimtelijke analyses of gebeurtenissen in uw toepassing integreren. Hier volgen enkele benaderingen waarmee u rekening moet houden: 
+Mogelijk wilt u detectie van ruimtelijke analyse of gebeurtenissen integreren in uw toepassing. Hier zijn enkele manieren om rekening mee te houden: 
 
-* Gebruik de Azure Event hub SDK voor de gekozen programmeer taal om verbinding te maken met het Azure IoT Hub-eind punt en de gebeurtenissen te ontvangen. Zie [apparaat-naar-Cloud-berichten lezen van het ingebouwde eind punt](../../iot-hub/iot-hub-devguide-messages-read-builtin.md) voor meer informatie. 
-* Stel **bericht routering** in op uw Azure-IOT hub om de gebeurtenissen te verzenden naar andere eind punten of sla de gebeurtenissen op in uw gegevens opslag. Zie [IOT hub Message Routing](../../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie. 
-* Stel een Azure Stream Analytics-taak in om de gebeurtenissen in realtime te verwerken wanneer ze binnenkomen en visualisaties maken. 
+* Gebruik de Azure Event Hub SDK voor de door u gekozen programmeertaal om verbinding te maken met Azure IoT Hub eindpunt en de gebeurtenissen te ontvangen. Zie [Apparaat-naar-cloud-berichten lezen vanaf](../../iot-hub/iot-hub-devguide-messages-read-builtin.md) het ingebouwde eindpunt voor meer informatie. 
+* Stel **berichtroutering in** op uw Azure IoT Hub om de gebeurtenissen naar andere eindpunten te verzenden of de gebeurtenissen op te slaan in uw gegevensopslag. Zie [IoT Hub Berichtroutering](../../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie. 
+* Stel een Azure Stream Analytics taak in om de gebeurtenissen in realtime te verwerken wanneer ze binnenkomen en visualisaties te maken. 
 
-## <a name="deploying-spatial-analysis-operations-at-scale-multiple-cameras"></a>Ruimtelijke analyse bewerkingen op schaal implementeren (meerdere camera's)
+## <a name="deploying-spatial-analysis-operations-at-scale-multiple-cameras"></a>Ruimtelijke analysebewerkingen op schaal implementeren (meerdere camera's)
 
-U kunt de prestaties en het gebruik van de Gpu's optimaal benutten door gebruik te maken van grafiek exemplaren voor het implementeren van ruimtelijke analyse bewerkingen op meerdere camera's. Hieronder ziet u een voor beeld van het uitvoeren `cognitiveservices.vision.spatialanalysis-personcrossingline` van de bewerking op vijf tien camera's.
+Om de beste prestaties en het gebruik van de GPU's te krijgen, kunt u ruimtelijke analysebewerkingen op meerdere camera's implementeren met behulp van grafieken. Hieronder vindt u een voorbeeld voor het uitvoeren van `cognitiveservices.vision.spatialanalysis-personcrossingline` de bewerking op vijftien camera's.
 
 ```json
   "properties.desired": {
@@ -1034,13 +1034,13 @@ U kunt de prestaties en het gebruik van de Gpu's optimaal benutten door gebruik 
       }
   }
   ```
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
-| `batch_size` | int | Als alle camera's dezelfde resolutie hebben, stelt `batch_size` u in op het aantal camera's dat in die bewerking wordt gebruikt, anders ingesteld `batch_size` op 1 of de standaard waarde (1). Dit betekent dat er geen batch wordt ondersteund. |
+| `batch_size` | int | Als alle camera's dezelfde resolutie hebben, stelt u in op het aantal camera's dat in die bewerking wordt gebruikt. Anders stelt u in op 1 of laat u deze ingesteld op `batch_size` standaard (1), wat aangeeft dat `batch_size` er geen batch wordt ondersteund. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een web-app voor het tellen van personen implementeren](spatial-analysis-web-app.md)
+* [Een webtoepassing voor het tellen van personen implementeren](spatial-analysis-web-app.md)
 * [Logboekregistratie en problemen oplossen](spatial-analysis-logging.md)
-* [Gids voor camera plaatsing](spatial-analysis-camera-placement.md)
-* [Hand leiding voor zone-en lijn plaatsing](spatial-analysis-zone-line-placement.md)
+* [Handleiding voor cameraplaatsing](spatial-analysis-camera-placement.md)
+* [Handleiding voor zone- en regelplaatsing](spatial-analysis-zone-line-placement.md)

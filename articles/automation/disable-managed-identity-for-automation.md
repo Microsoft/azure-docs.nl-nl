@@ -1,18 +1,18 @@
 ---
-title: De door Azure Automation account beheerde identiteit uitschakelen
+title: De door Azure Automation account beheerde identiteit uitschakelen (preview)
 description: In dit artikel wordt uitgelegd hoe u een beheerde identiteit voor een Azure Automation-account kunt uitschakelen Azure Automation verwijderen.
 services: automation
 ms.subservice: process-automation
-ms.date: 04/04/2021
+ms.date: 04/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: 74d029db48f64b38eb323150068e173746d379b7
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: e17e1afda50d9a0263067a77bf26435f53b4f237
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107495055"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107519269"
 ---
-# <a name="disable-your-azure-automation-account-managed-identity"></a>De door Azure Automation account beheerde identiteit uitschakelen
+# <a name="disable-your-azure-automation-account-managed-identity-preview"></a>De door Azure Automation account beheerde identiteit uitschakelen (preview)
 
 Er zijn twee manieren om een door het systeem toegewezen identiteit uit te schakelen in Azure Automation. U kunt deze taak uitvoeren vanuit de Azure Portal of met behulp van een ARM Azure Resource Manager sjabloon ( Azure Resource Manager).
 
@@ -42,6 +42,6 @@ Als u een door het systeem toegewezen identiteit verwijdert met behulp van deze 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie Voor meer informatie over het inschakelen van beheerde identiteiten in Azure Automation Beheerde identiteit inschakelen [en gebruiken voor Automation.](enable-managed-identity-for-automation.md)
+- Zie Enable [and use managed identity for Automation (preview)](enable-managed-identity-for-automation.md)(Beheerde identiteit inschakelen en gebruiken voor Automation (preview) voor meer informatie over het inschakelen van beheerde identiteiten in Azure Automation.
 
 - Zie Overzicht van Automation-accountverificatie voor een overzicht van de beveiliging van [Automation-account.](automation-security-overview.md)

@@ -80,15 +80,15 @@
           href: synapse-link-frequently-asked-questions.md
     - name: Back-ups en herstellen
       items:
-        - name: Inleiding tot back-ups maken en herstellen
+        - name: Inleiding tot back-up en herstel
           href: online-backup-and-restore.md
-        - name: Doorlopende back-up
+        - name: Continue back-up
           items:
-            - name: Doorlopende back-up-Inleiding
+            - name: Continue back-up - Inleiding
               href: continuous-backup-restore-introduction.md
-            - name: Doorlopende back-up-Veelgestelde vragen
+            - name: Continue back-up - veelgestelde vragen
               href: continuous-backup-restore-frequently-asked-questions.md
-            - name: Doorlopende back-up-resource model
+            - name: Continue back-up - Resourcemodel
               href: continuous-backup-restore-resource-model.md
     - name: Uw kosten voor Azure Cosmos DB optimaliseren
       items:
@@ -152,6 +152,8 @@
               href: create-sql-api-java.md
             - name: Spring Data-app
               href: create-sql-api-spring-data.md
+            - name: Spark v3-app
+              href: create-sql-api-spark.md
             - name: Node.js-app
               href: create-sql-api-nodejs.md
             - name: Python-app
@@ -755,9 +757,9 @@
                   href: troubleshoot-not-found.md
                 - name: Probleem 'Niet geautoriseerd' oplossen
                   href: troubleshoot-unauthorized.md
-                - name: Problemen oplossen verboden
+                - name: Problemen met verboden oplossen
                   href: troubleshoot-forbidden.md
-                - name: Problemen met ongeldige aanvraag oplossen
+                - name: Problemen met een slechte aanvraag oplossen
                   href: troubleshoot-bad-request.md
                 - name: Beschikbaarheidsproblemen oplossen in omgevingen in meerdere regio's
                   href: troubleshoot-sdk-availability.md
@@ -809,7 +811,7 @@
               href: enable-notebooks.md
             - name: Notebooks importeren uit GitHub
               href: import-github-notebooks.md
-            - name: Notitie blokken publiceren naar galerie
+            - name: Notebooks publiceren naar galerie
               href: publish-notebook-gallery.md
             - name: Ingebouwde Python-notebookopdrachten gebruiken
               href: use-python-notebook-features-and-commands.md
@@ -835,7 +837,7 @@
               href: visualize-qlik-sense.md
         - name: Ingebouwde analyse met Apache Spark
           items:
-            - name: Spark-connector voor Azure Databricks
+            - name: Azure Databricks Spark 2 OLTP-connector
               href: spark-connector.md
             - name: Streamen met Apache Kafka en Cosmos DB
               href: ../hdinsight/apache-kafka-spark-structured-streaming-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
@@ -853,7 +855,7 @@
           items:
             - name: Cross Origin Resource Sharing (CORS) configureren
               href: how-to-configure-cross-origin-resource-sharing.md
-            - name: Op rollen gebaseerd toegangs beheer configureren
+            - name: Op rollen gebaseerd toegangsbeheer configureren
               href: how-to-setup-rbac.md
               displayName: 'aad, active directory, rbac'
             - name: Beheerde identiteiten gebruiken om gegevens te openen
@@ -915,7 +917,9 @@
               href: sql-api-sdk-java-spring-v2.md
             - name: Spring Data Connector v3
               href: sql-api-sdk-java-spring-v3.md
-            - name: Spark-connector
+            - name: Spark 3 OLTP-connector (preview)
+              href: sql-api-sdk-java-spark-v3.md
+            - name: Spark 2 OLTP-connector
               href: sql-api-sdk-java-spark.md
             - name: Bibliotheek v2 voor Java-bulkuitvoering
               href: sql-api-sdk-bulk-executor-java.md
@@ -1101,11 +1105,11 @@
           href: tutorial-global-distribution-mongodb.md
     - name: Concepten
       items:
-        - name: 'API-versie 4,0'
+        - name: API-versie 4.0
           href: mongodb-feature-support-40.md
-        - name: 'API-versie 3,6'
+        - name: API-versie 3.6
           href: mongodb-feature-support-36.md
-        - name: 'API-versie 3,2'
+        - name: API-versie 3.2
           href: mongodb-feature-support.md
         - name: Veelgestelde vragen
           href: mongodb-api-faq.md
@@ -1117,7 +1121,7 @@
           items:
             - name: Pre-migratiehandleiding
               href: mongodb-pre-migration.md
-            - name: MongoDB systeem eigen hulpprogram ma's (offline)
+            - name: Native MongoDB-hulpprogramma's (offline)
               href: tutorial-mongotools-cosmos-db.md
             - name: Database Migration Service (online)
               href: ../dms/tutorial-mongodb-cosmos-db-online.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
@@ -1125,7 +1129,7 @@
               href: ../dms/tutorial-mongodb-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
             - name: Post-migratiehandleiding
               href: mongodb-post-migration.md
-        - name: 'Upgrade uitvoeren naar API-versie 4,0 of 3,6'
+        - name: Upgraden naar API-versie 4.0 of 3.6
           href: mongodb-version-upgrade.md
         - name: De verbindingsreeks ophalen
           href: connect-mongodb-account.md
@@ -1146,7 +1150,7 @@
           href: mongodb-change-streams.md
         - name: Gegevensindexering beheren
           href: mongodb-indexing.md
-        - name: Multi-document transacties gebruiken
+        - name: Transacties met meerdere documenten gebruiken
           href: use-multi-document-transactions.md
         - name: Een container maken - MongoDB-API
           href: how-to-create-container-mongodb.md
@@ -1376,7 +1380,7 @@
           href: configure-synapse-link.md
         - name: Verbinding maken met Azure Synapse Link
           href: ../synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
-        - name: Analytische opslag en privé-eind punten
+        - name: Analytische opslag en privé-eindpunten
           href: analytical-store-private-endpoints.md
         - name: Query's uitvoeren met Azure Synapse Spark
           href: ../synapse-analytics/synapse-link/how-to-query-analytical-store-spark.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
@@ -1386,19 +1390,19 @@
           href: synapse-link-power-bi.md
     - name: Back-ups en herstellen
       items:
-        - name: Doorlopende back-up beheren
+        - name: Continue back-up beheren
           items:
-            - name: 'Continue back-up: machtigingen en rollen'
+            - name: Continue back-up - machtigingen en rollen
               href: continuous-backup-restore-permissions.md
-            - name: Doorlopende back-up-Portal
+            - name: Continue back-up - Portal
               href: continuous-backup-restore-portal.md
-            - name: Doorlopende back-up-power shell
+            - name: Continue back-up - PowerShell
               href: continuous-backup-restore-powershell.md
-            - name: Doorlopende back-up-CLI
+            - name: Continue back-up - CLI
               href: continuous-backup-restore-command-line.md
-            - name: Doorlopende back-up-Resource Manager
+            - name: Continue back-up - Resource Manager
               href: continuous-backup-restore-template.md
-        - name: Periodieke back-ups beheren
+        - name: Periodieke back-up beheren
           href: configure-periodic-backup-restore.md
     - name: Beveiliging
       items:

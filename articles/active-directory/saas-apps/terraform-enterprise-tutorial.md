@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/10/2020
+ms.date: 04/05/2021
 ms.author: jeedes
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 8b6678644008c7c5ba82f643aeafc61c67604713
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 69ce53126a45e74f43514779f391c2df66d8f225
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92518157"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107518419"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-terraform-enterprise"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Terraform Enterprise
 
@@ -26,8 +26,6 @@ In deze zelfstudie leert u hoe u Terraform Enterprise integreert met Azure Activ
 * In Azure AD bepalen wie toegang heeft tot Terraform Enterprise.
 * Ervoor zorgen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Terraform Enterprise.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,22 +38,21 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Terraform Enterprise ondersteunt door **SP** geïnitieerde eenmalige aanmelding
-* Terraform Enterprise biedt ondersteuning voor het **Just-In-Time** inrichten van gebruikers
+* Terraform Enterprise ondersteunt door **SP geïnitieerde** eenmalige aanmelding.
+* Terraform Enterprise biedt ondersteuning voor **Just-In-Time-inrichting** van gebruikers.
 
-## <a name="adding-terraform-enterprise-from-the-gallery"></a>Terraform Enterprise toevoegen vanuit de galerie
+## <a name="add-terraform-enterprise-from-the-gallery"></a>Terraform Enterprise toevoegen vanuit de galerie
 
 Als u de integratie van Terraform Enterprise in Azure AD wilt configureren, moet u Terraform Enterprise vanuit de galerie toevoegen aan de lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. In de sectie **Toevoegen uit de galerie** typt u **Terraform Enterprise** in het zoekvak.
 1. Selecteer **Terraform Enterprise** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-
-## <a name="configure-and-test-azure-ad-single-sign-on-for-terraform-enterprise"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Terraform Enterprise
+## <a name="configure-and-test-azure-ad-sso-for-terraform-enterprise"></a>Eenmalige aanmelding van Azure AD voor Terraform Enterprise configureren en testen
 
 Configureer en test eenmalige aanmelding van Azure AD met Terraform Enterprise met behulp van de testgebruiker **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Terraform Enterprise.
 
@@ -72,9 +69,9 @@ Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met Terrafor
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **Terraform Enterprise**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in Azure Portal de integratiepagina van de toepassing  **Terraform Enterprise** de sectie Beheren en selecteer **Een aanmelding.**
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -114,15 +111,9 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Terraform Upwork** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-terraform-enterprise-sso"></a>Eenmalige aanmelding voor Terraform Enterprise configureren
@@ -135,16 +126,14 @@ In deze sectie wordt een gebruiker met de naam B. Simon gemaakt in Terraform Ent
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel Terraform Enterprise klikt, wordt u automatisch aangemeld bij de instantie van Terraform Enterprise waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Terraform Enterprise, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de aanmeldings-URL van Terraform Enterprise en initieer de aanmeldingsstroom daar.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Terraform Enterprise in de Mijn apps, wordt u omgeleid naar de aanmeldings-URL van Terraform Enterprise. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [Terraform Enterprise uitproberen met Azure AD](https://aad.portal.azure.com/)
+Zodra u Terraform Enterprise hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

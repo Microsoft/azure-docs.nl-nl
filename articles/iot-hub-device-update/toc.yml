@@ -1,86 +1,86 @@
-- name: Documentatie over het bijwerken van apparaten voor IoT Hub
+- name: Apparaatupdate voor IoT Hub documentatie
   href: index.yml
 - name: Overzicht
   items:
-    - name: Wat is apparaat bijwerken voor IoT Hub?
+    - name: Wat is Apparaatupdate voor IoT Hub?
       href: understand-device-update.md
 - name: Zelfstudies
   items:
-    - name: Update van de installatie kopie op Raspberry pi
+    - name: Update van afbeeldingen op Raspberry Pi
       href: device-update-raspberry-pi.md
-    - name: Update van het apparaat op een simulator gebruiken
+    - name: Apparaatupdate gebruiken in een simulator
       href: device-update-simulator.md
-    - name: 'Pakket update op Ubuntu Server 18,04 x64'
+    - name: Pakketupdate op Ubuntu Server 18.04 x64
       href: device-update-ubuntu-agent.md
-    - name: Update van het apparaat voor real-time-besturings systeem van Azure
+    - name: Apparaatupdate voor Azure-besturingssysteem in realtime
       href: device-update-azure-real-time-operating-system.md
 - name: Concepten
   items:
-    - name: Account en exemplaar van het apparaat bijwerken
+    - name: Apparaatupdateaccount en -exemplaar
       href: device-update-resources.md
-    - name: Gebruikers rollen en-toegang voor het apparaat bijwerken
+    - name: Gebruikersrollen en -toegang voor apparaatupdates
       href: device-update-control-access.md
-    - name: Apt-manifest voor het bijwerken van het apparaat
+    - name: APT-manifest apparaat bijwerken
       href: device-update-apt-manifest.md
-    - name: Naleving van apparaat bijwerken
+    - name: Naleving van apparaatupdates
       href: device-update-compliance.md
-    - name: Update groepen voor apparaten
+    - name: Apparaatupdategroepen
       href: device-update-groups.md
-    - name: Het gebruik van Plug en Play voor het bijwerken van apparaten
+    - name: Hoe apparaatupdate gebruikmaakt van Plug en Play
       href: device-update-plug-and-play.md
-    - name: Netwerk vereisten voor apparaat bijwerken
+    - name: Netwerkvereisten voor apparaatupdates
       href: device-update-networking.md
-    - name: Update-Agent van apparaat
+    - name: Agent voor apparaatupdates
       href: device-update-agent-overview.md
-    - name: Configuratie bestand voor het bijwerken van het apparaat
+    - name: Configuratiebestand voor apparaatupdates
       href: device-update-configuration-file.md
     - name: Manifest bijwerken
       href: update-manifest.md
-    - name: Hoe de update van het apparaat is beveiligd
+    - name: Hoe apparaatupdates worden beveiligd
       href: device-update-security.md
     - name: Ondersteuning voor niet-verbonden apparaten
       href: connected-cache-disconnected-device-update.md
-    - name: Micro soft Connected cache configureren voor updates van het apparaat voor IoT Hub
+    - name: Microsoft-Verbonden cache voor apparaatupdates configureren voor IoT Hub
       href: connected-cache-configure.md
-    - name: Apparaat bijwerken importeren
+    - name: Apparaatupdate importeren
       href: import-concepts.md
-    - name: Aan import gerelateerde schema
+    - name: Aan import gerelateerd schema
       href: import-schema.md
 - name: Instructiegidsen
   items:
-    - name: Een update account voor een apparaat maken
+    - name: Een apparaatupdateaccount maken
       href: create-device-update-account.md
-    - name: Update-Agent van apparaat inrichten
+    - name: Agent voor apparaatupdates inrichten
       href: device-update-agent-provisioning.md
     - name: Een update importeren
       href: import-update.md
-    - name: Een update groep voor een apparaat maken
+    - name: Een apparaatupdategroep maken
       href: create-update-group.md
-    - name: Een update voor een apparaat implementeren
+    - name: Een apparaatupdate implementeren
       href: deploy-update.md
-    - name: Micro soft Connected cache op één niveau
+    - name: Microsoft-Verbonden cache
       href: connected-cache-single-level.md
-    - name: Door micro soft verbonden cache op genest niveau
+    - name: Genest niveau Microsoft Verbonden cache
       href: connected-cache-nested-level.md
-    - name: Met micro soft verbonden cache voor industriële IoT (IIOT)
+    - name: Microsoft Verbonden cache for Industrial IoT (IIOT)
       href: connected-cache-industrial-iot-nested.md
     - name: Problemen oplossen
       items:
-        - name: Problemen met updates van apparaten oplossen
+        - name: Problemen met apparaatupdates oplossen
           href: troubleshoot-device-update.md
-        - name: Fout codes voor het bijwerken van het apparaat
-      href: device-update-error-codes.md
+        - name: Foutcodes voor apparaatupdateclient
+          href: device-update-error-codes.md
 - name: Naslaginformatie
   items:
     - name: REST-API
       href: 'https://docs.microsoft.com/rest/api/deviceupdate/'
-    - name: Control vlak-SDK
+    - name: SDK voor besturingsvlak
       items:
         - name: .NET
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/iot/management?view=azure-dotnet'
         - name: Python
           href: 'https://docs.microsoft.com/python/api/azure-mgmt-deviceupdate/?view=azure-python'
-    - name: Data vlak SDK
+    - name: Gegevensvlak-SDK
       items:
         - name: Javascript
           href: 'https://docs.microsoft.com/javascript/api/@azure/iot-device-update/?view=azure-node-preview'

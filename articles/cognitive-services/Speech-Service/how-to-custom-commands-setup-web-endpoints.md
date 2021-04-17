@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 6f2dfdbb5833b34441b4abba7359ad70c4717d1d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 95f27827950c5ed38caa1f83ede266afb57a1697
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98602161"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107515631"
 ---
 # <a name="set-up-web-endpoints"></a>Webeindpunten instellen
 
@@ -27,13 +27,118 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
 - Het antwoord van de webeindpunten integreren in een aangepaste JSON-payload, verzenden, en visualiseren vanuit een UWP-clienttoepassing van de Spraak-SDK in C#
 
 ## <a name="prerequisites"></a>Vereisten
+
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 > * Een Azure-abonnementssleutel voor de Spraak-service: [haal gratis een sleutel op](overview.md#try-the-speech-service-for-free) of maak er een met de [Azure-portal](https://portal.azure.com)
 > * Een eerder [gemaakte aangepaste opdrachten-app](quickstart-custom-commands-application.md)
 > * Een client-app die de Spraak-SDK ondersteunt: [Instructies: activiteit naar clienttoepassing beëindigen](./how-to-custom-commands-setup-speech-sdk.md)
 
-## <a name="setup-web-endpoints"></a>Webeindpunten instellen
+## <a name="deploy-an-external-web-endpoint-using-azure-function-app"></a>Een extern web-eindpunt implementeren met behulp van de Azure Function-app
+
+* In deze zelfstudie hebt u een HTTP-eindpunt nodig dat de staten bijhoudt voor alle apparaten die u hebt ingesteld in de **TurnOnOff-opdracht** van uw aangepaste opdrachtentoepassing.
+
+* Als u al een web-eindpunt hebt dat u wilt aanroepen, gaat u verder met [de volgende sectie](#setup-web-endpoints-in-custom-commands). In de volgende sectie hebben we u ook een standaard gehost web-eindpunt geboden dat u kunt gebruiken als u deze sectie wilt overslaan.
+
+### <a name="input-format-of-azure-function"></a>Invoerindeling van Azure Function
+* Vervolgens implementeert u een eindpunt met behulp [van Azure Functions](../../azure-functions/index.yml).
+Hier volgt de algemene indeling van een aangepaste opdrachten gebeurtenis die wordt doorgegeven aan uw Azure-functie. Gebruik deze informatie wanneer u uw functie-app schrijft.
+
+    ```json
+    {
+      "conversationId": "string",
+      "currentCommand": {
+        "name": "string",
+        "parameters": {
+          "SomeParameterName": "string",
+          "SomeOtherParameterName": "string"
+        }
+      },
+      "currentGlobalParameters": {
+          "SomeGlobalParameterName": "string",
+          "SomeOtherGlobalParameterName": "string"
+      }
+    }
+    ```
+
+    
+* Laten we eens kijken naar de belangrijkste kenmerken van deze invoer:
+        
+    | Kenmerk | Uitleg |
+    | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
+    | **conversationId** | De unieke id van het gesprek. Houd er rekening mee dat deze id kan worden gegenereerd op basis van de client-app. |
+    | **currentCommand** | De opdracht die momenteel actief is in het gesprek. |
+    | **name** | De naam van de opdracht. Het `parameters` kenmerk is een kaart met de huidige waarden van de parameters. |
+    | **currentGlobalParameters** | Een kaart zoals `parameters` , maar gebruikt voor globale parameters. |
+
+
+* Voor de **Azure-functie DeviceState** ziet een aangepaste opdrachten er als volgt uit. Dit zal fungeren als invoer **voor** de functie-app.
+    
+    ```json
+    {
+      "conversationId": "someConversationId",
+      "currentCommand": {
+        "name": "TurnOnOff",
+        "parameters": {
+          "item": "tv",
+          "value": "on"
+        }
+      }
+    }
+    ```
+
+### <a name="output-format-of-azure-function"></a>Uitvoerindeling van Azure Function
+
+#### <a name="output-consumed-by-a-custom-commands--application"></a>Uitvoer die wordt gebruikt door een aangepaste opdrachten toepassing
+In dit geval kunt u instellen dat de uitvoerindeling moet voldoen aan de volgende indeling. Volg [Een opdracht bijwerken vanaf een web-eindpunt](./how-to-custom-commands-update-command-from-web-endpoint.md) voor meer informatie.
+
+```json
+{
+  "updatedCommand": {
+    "name": "SomeCommandName",
+    "updatedParameters": {
+      "SomeParameterName": "SomeParameterValue"
+    },
+    "cancel": false
+  },
+  "updatedGlobalParameters": {
+    "SomeGlobalParameterName": "SomeGlobalParameterValue"
+  }
+}
+```
+
+#### <a name="output-consumed-by-a-client-application"></a>Uitvoer die wordt gebruikt door een clienttoepassing
+In dit geval kunt u de uitvoerindeling instellen op de behoeften van uw client.
+* Voor ons **DeviceState-eindpunt** wordt de uitvoer van de Azure-functie gebruikt door een clienttoepassing in plaats van de aangepaste opdrachten toepassing. **Voorbeelduitvoer** van de Azure-functie moet er als volgt uit zien:
+    
+    ```json
+    {
+      "TV": "on",
+      "Fan": "off"
+    }
+    ``` 
+
+*  Deze uitvoer moet ook naar een externe opslag worden geschreven, zodat u de status van apparaten dienovereenkomstig kunt onderhouden. De status van de externe opslag wordt gebruikt in de [sectie Integreren met clienttoepassing.](#integrate-with-client-application)
+
+
+### <a name="host-azure-function"></a>Azure-functie hosten
+
+1. Maak een Table Storage-account om de apparaattoestand op te slaan.
+    1. Ga naar Azure Portal en maak een nieuwe resource van het type **Opslagaccount** op naam **devicestate**.
+        1. Kopieer de **waarde verbindingsreeks** **van devicestate -> Access keys**.
+        1. U moet deze tekenreeks toevoegen aan de gedownloade voorbeeldcode van de functie-app.
+    1. Download de [voorbeeldcode van de functie-app](https://aka.ms/speech/cc-function-app-sample).
+    1. Open de gedownloade oplossing in VS 2019. Vervang in **Connections.jsbestandsbestand** STORAGE_ACCOUNT_SECRET_CONNECTION_STRING **waarde** in het gekopieerde geheim uit stap *a*.
+1.  Download de **code DeviceStateAzureFunction.**
+1. [De](../../azure-functions/index.yml) Functions-app implementeren in Azure.
+    
+    1.  Wacht tot de implementatie is geslaagd en ga naar de geïmplementeerde resource op Azure Portal. 
+    1. Selecteer **Functies** in het linkerdeelvenster en selecteer vervolgens **DeviceState.**
+    1.  Selecteer in het nieuwe venster **Code + Test** en selecteer vervolgens **Functie-URL op halen.**
+ 
+## <a name="setup-web-endpoints-in-custom-commands"></a>Web-eindpunten instellen in aangepaste opdrachten
+Laten we de Azure-functie aansluiten op de bestaande aangepaste opdrachten toepassing.
+In deze sectie gebruikt u een bestaand standaard **DeviceState-eindpunt.** Als u uw eigen web-eindpunt hebt gemaakt met azure-functie of anderszins, gebruikt u dat in plaats van de standaard https://webendpointexample.azurewebsites.net/api/DeviceState .
 
 1. Open de aangepaste opdrachten-toepassing die u eerder hebt gemaakt.
 1. Ga naar Webeindpunten en klik op Nieuw webeindpunt.
@@ -49,7 +154,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
    | Kopteksten | Sleutel: app, waarde: gebruik de eerste acht cijfers van uw toepassings-id | De headerparameters die moeten worden meegenomen in de aanvraagheader.|
 
     > [!NOTE]
-    > - Het voorbeeld-webeindpunt dat is gemaakt met behulp van [Azure Functions](../../azure-functions/index.yml), dat wordt gekoppeld aan de database waarin de apparaatstatus van de tv en ventilator worden opgeslagen
+    > - Het voorbeeld van een web-eindpunt dat is gemaakt met behulp van [de Azure-functie](../../azure-functions/index.yml), die wordt vastgemaakt met de database waarmee de apparaattoestand van de tv en ventilator wordt opgeslagen
     > - De voorgestelde header is alleen nodig voor het voorbeeldeindpunt
     > - Om ervoor te zorgen dat de waarde van de header uniek is in het voorbeeldeindpunt, gebruikt u de eerste acht cijfers van uw toepassings-id
     > - In het echt kan het webeindpunt het eindpunt zijn van de [IOT-hub](../../iot-hub/about-iot-hub.md) waarmee uw apparaten worden beheerd
@@ -79,7 +184,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
     Voer `{SubjectDevice} is {OnOff}` in **Simple editor** (Eenvoudige editor) in.
 
    > [!div class="mx-imgBorder"]
-   > ![Scherm opname van het scherm voor het uitvoeren van de actie bij geslaagd.](media/custom-commands/setup-web-endpoint-edit-action-on-success-send-response.png)
+   > ![Schermopname van het scherm Bij geslaagd - Actie om uit te voeren.](media/custom-commands/setup-web-endpoint-edit-action-on-success-send-response.png)
 
    | Instelling | Voorgestelde waarde | Beschrijving |
    | ------- | --------------- | ----------- |
@@ -107,7 +212,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
 - Antwoord bij geslaagde poging\
 Opslaan, trainen en testen
    > [!div class="mx-imgBorder"]
-   > ![Scherm opname van het antwoord op geslaagde pogingen.](media/custom-commands/setup-web-endpoint-on-success-response.png)
+   > ![Schermopname met het antwoord Bij succes.](media/custom-commands/setup-web-endpoint-on-success-response.png)
 - Antwoord bij mislukte poging\
 Een van de queryparameters verwijderen, opslaan, opnieuw trainen en testen
    > [!div class="mx-imgBorder"]
@@ -115,7 +220,7 @@ Een van de queryparameters verwijderen, opslaan, opnieuw trainen en testen
 
 ## <a name="integrate-with-client-application"></a>Integreren met clienttoepassing
 
-In [Instructies: Activiteit verzenden naar clienttoepassing (preview)](./how-to-custom-commands-send-activity-to-client.md) hebt u de actie **Activiteit verzenden naar client** toegevoegd. De activiteit wordt verzonden naar de clienttoepassing, ongeacht of de actie **Webeindpunt aanroepen** is geslaagd of niet.
+In [How-to: Send activity to client application](./how-to-custom-commands-send-activity-to-client.md)(Activiteit verzenden naar clienttoepassing) hebt u de actie Activiteit verzenden naar **client** toegevoegd. De activiteit wordt verzonden naar de clienttoepassing, ongeacht of de actie **Webeindpunt aanroepen** is geslaagd of niet.
 In de meeste gevallen wilt u echter alleen een activiteit naar de clienttoepassing verzenden wanneer de aanroep van het webeindpunt geslaagd is. In dit voorbeeld is dat wanneer de status van het apparaat is bijgewerkt.
 
 1. Verwijder de actie **Activiteit verzenden naar client** die u eerder hebt toegevoegd.
@@ -205,5 +310,5 @@ Als u de app met `turn on tv` hebt getest in de vorige sectie, ziet u dat de tv 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Toepassing voor het exporteren van aangepaste opdrachten als externe vaardigheid](./how-to-custom-commands-integrate-remote-skills.md)
+> [Een aangepaste opdrachten exporteren als een externe vaardigheid](./how-to-custom-commands-integrate-remote-skills.md)
 

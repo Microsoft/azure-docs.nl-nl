@@ -1,28 +1,28 @@
 ---
-title: Test cases voor test Toolkit
-description: Hierin worden de tests beschreven die worden uitgevoerd door de ARM-sjabloon test Toolkit.
+title: Test cases voor test toolkit
+description: Beschrijft de tests die worden uitgevoerd door de ARM-sjabloontesttoolkit.
 ms.topic: conceptual
-ms.date: 12/03/2020
+ms.date: 04/12/2021
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 31e30b4853da03e28a4a2d15292050805f5bc292
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 7805d6dbdb8b93968a2792ed6dfaf2ac8fea9ae5
+ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106064139"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107363390"
 ---
-# <a name="default-test-cases-for-arm-template-test-toolkit"></a>Standaard test cases voor ARM-sjabloon test Toolkit
+# <a name="default-test-cases-for-arm-template-test-toolkit"></a>Standaardtestgevallen voor arm-sjabloontesttoolkit
 
-In dit artikel worden de standaard tests beschreven die worden uitgevoerd met de [sjabloon test Toolkit](test-toolkit.md) voor Azure Resource Manager sjablonen (arm-sjablonen). Het biedt voor beelden die de test door geven of mislukken. Het bevat de naam van elke test. Zie [test parameters](test-toolkit.md#test-parameters)om een specifieke test uit te voeren.
+In dit artikel worden de standaardtests beschreven die worden uitgevoerd met de [sjabloontesttoolkit](test-toolkit.md) voor Azure Resource Manager -sjablonen (ARM-sjablonen). Het bevat voorbeelden die slagen of mislukken voor de test. Deze bevat de naam van elke test. Zie Testparameters voor het uitvoeren [van een specifieke test.](test-toolkit.md#test-parameters)
 
 ## <a name="use-correct-schema"></a>Het juiste schema gebruiken
 
-Test naam: **DeploymentTemplate-schema is juist**
+Testnaam: **DeploymentTemplate-schema is juist**
 
-In uw sjabloon moet u een geldige schema waarde opgeven.
+In uw sjabloon moet u een geldige schemawaarde opgeven.
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 {
@@ -41,13 +41,13 @@ De schema-eigenschap in de sjabloon moet worden ingesteld op een van de volgende
 * `https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#`
 * `https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json`
 
-## <a name="parameters-must-exist"></a>Para meters moeten bestaan
+## <a name="parameters-must-exist"></a>Parameters moeten bestaan
 
-Test naam: de **eigenschap para meters moet bestaan**
+Testnaam: **De eigenschap Parameters moet bestaan**
 
-Uw sjabloon moet een para meters-element hebben. Para meters zijn essentieel om uw sjablonen in verschillende omgevingen te kunnen hergebruiken. Voeg para meters aan uw sjabloon toe voor waarden die worden gewijzigd wanneer ze in verschillende omgevingen worden geïmplementeerd.
+Uw sjabloon moet een element parameters hebben. Parameters zijn essentieel om uw sjablonen herbruikbaar te maken in verschillende omgevingen. Voeg parameters toe aan uw sjabloon voor waarden die veranderen wanneer u implementeert in verschillende omgevingen.
 
-In het volgende voor beeld wordt deze test **door gegeven** :
+In het volgende voorbeeld **wordt deze** test doorstaan:
 
 ```json
 {
@@ -65,23 +65,23 @@ In het volgende voor beeld wordt deze test **door gegeven** :
   ...
 ```
 
-## <a name="declared-parameters-must-be-used"></a>Gedeclareerde para meters moeten worden gebruikt
+## <a name="declared-parameters-must-be-used"></a>Gedeclareerde parameters moeten worden gebruikt
 
-Test naam: er **moet naar para meters worden verwezen**
+Testnaam: **Er moet naar parameters worden verwezen**
 
-Als u Verwar ring in uw sjabloon wilt beperken, verwijdert u de para meters die zijn gedefinieerd, maar niet worden gebruikt. Met deze test worden alle para meters gevonden die nergens in de sjabloon worden gebruikt. Door ongebruikte para meters te verwijderen, is het eenvoudiger om uw sjabloon te implementeren omdat u geen onnodige waarden hoeft op te geven.
+Verwijder alle gedefinieerde maar niet-gebruikte parameters om verwarring in uw sjabloon te verminderen. Met deze test worden parameters gevonden die nergens in de sjabloon worden gebruikt. Door ongebruikte parameters te elimineren, is het ook eenvoudiger om uw sjabloon te implementeren, omdat u geen onnodige waarden hoeft op te geven.
 
-## <a name="secure-parameters-cant-have-hardcoded-default"></a>Veilige para meters kunnen geen hardcoded-standaard waarde hebben
+## <a name="secure-parameters-cant-have-hardcoded-default"></a>Voor beveiligde parameters kan geen standaardcode zijn ingesteld
 
-Test naam: de **beveiligde teken reeks parameters mogen geen standaard waarde hebben**
+Testnaam: **Parameters voor beveiligde tekenreeksen kunnen geen standaardwaarde hebben**
 
-Geef geen in code vastgelegde standaard waarde op voor een beveiligde para meter in uw sjabloon. Een lege teken reeks is nauw keurig voor de standaard waarde.
+Geef geen in code gecodeerde standaardwaarde op voor een beveiligde parameter in uw sjabloon. Een lege tekenreeks is prima voor de standaardwaarde.
 
-U gebruikt de typen **SecureString** of **SecureObject** in para meters die gevoelige waarden bevatten, zoals wacht woorden. Wanneer een para meter een beveiligd type gebruikt, wordt de waarde van de para meter niet geregistreerd of opgeslagen in de implementatie geschiedenis. Met deze actie wordt voor komen dat een kwaadwillende gebruiker de gevoelige waarde detecteert.
+U gebruikt de typen **SecureString of** **SecureObject** voor parameters die gevoelige waarden bevatten, zoals wachtwoorden. Wanneer een parameter een beveiligd type gebruikt, wordt de waarde van de parameter niet geregistreerd of opgeslagen in de implementatiegeschiedenis. Met deze actie wordt voorkomen dat een kwaadwillende gebruiker de gevoelige waarde kan detecteren.
 
-Wanneer u echter een standaard waarde opgeeft, wordt die waarde gedetecteerd door iedereen die toegang heeft tot de sjabloon of de implementatie geschiedenis.
+Wanneer u echter een standaardwaarde op geeft, kan die waarde worden ontdekt door iedereen die toegang heeft tot de sjabloon of de implementatiegeschiedenis.
 
-In het volgende voor beeld **mislukt** deze test:
+In het volgende voorbeeld **mislukt deze** test:
 
 ```json
 "parameters": {
@@ -92,7 +92,7 @@ In het volgende voor beeld **mislukt** deze test:
 }
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** :
+In het volgende voorbeeld **wordt deze** test doorstaan:
 
 ```json
 "parameters": {
@@ -102,13 +102,13 @@ In het volgende voor beeld wordt deze test **door gegeven** :
 }
 ```
 
-## <a name="environment-urls-cant-be-hardcoded"></a>Omgevings-Url's kunnen niet hardcoded zijn
+## <a name="environment-urls-cant-be-hardcoded"></a>Omgevings-URL's kunnen niet worden gecodeerd
 
-Test naam: **DeploymentTemplate mag geen hardcoded URI bevatten**
+Testnaam: **DeploymentTemplate mag geen in code gecodeerde URI bevatten**
 
-Voorlopig hardcoderen we geen omgevings-Url's in uw sjabloon. Gebruik in plaats daarvan de [functie omgeving](template-functions-deployment.md#environment) om deze url's dynamisch op te halen tijdens de implementatie. Voor een lijst met de geblokkeerde URL-hosts raadpleegt u de [test case](https://github.com/Azure/arm-ttk/blob/master/arm-ttk/testcases/deploymentTemplate/DeploymentTemplate-Must-Not-Contain-Hardcoded-Uri.test.ps1).
+Codeer geen omgevings-URL's in uw sjabloon. Gebruik in plaats daarvan [de omgevingsfunctie om](template-functions-deployment.md#environment) deze URL's dynamisch op te halen tijdens de implementatie. Zie de testcase voor een lijst met de URL-hosts die [zijn geblokkeerd.](https://github.com/Azure/arm-ttk/blob/master/arm-ttk/testcases/deploymentTemplate/DeploymentTemplate-Must-Not-Contain-Hardcoded-Uri.test.ps1)
 
-In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de URL hardcoded is.
+In het volgende **voorbeeld mislukt** deze test omdat de URL is gecodeerd.
 
 ```json
 "variables":{
@@ -116,7 +116,7 @@ In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de URL hard
 }
 ```
 
-De test **mislukt** ook als deze wordt gebruikt met [concat](template-functions-string.md#concat) of [URI](template-functions-string.md#uri).
+De test mislukt **ook wanneer** deze wordt gebruikt [met concat](template-functions-string.md#concat) of [uri](template-functions-string.md#uri).
 
 ```json
 "variables":{
@@ -125,7 +125,7 @@ De test **mislukt** ook als deze wordt gebruikt met [concat](template-functions-
 }
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 "variables": {
@@ -133,17 +133,17 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 },
 ```
 
-## <a name="location-uses-parameter"></a>Locatie gebruikt para meter
+## <a name="location-uses-parameter"></a>Locatie gebruikt parameter
 
-Test naam: **locatie mag niet hardcoded zijn**
+Testnaam: **Locatie mag niet worden gecodeerd**
 
-Uw sjablonen moeten een para meter met de naam Location hebben. Gebruik deze para meter om de locatie van resources in uw sjabloon in te stellen. In de hoofd sjabloon (met de naam _azuredeploy.jsop_ of _mainTemplate.jsop_), kan deze para meter standaard worden ingesteld op de locatie van de resource groep. In gekoppelde of geneste sjablonen mag de locatie parameter geen standaard locatie hebben.
+Uw sjablonen moeten een parameter met de naam location hebben. Gebruik deze parameter voor het instellen van de locatie van resources in uw sjabloon. In de hoofdsjabloon _(azuredeploy.jsof_ _mainTemplate.jsingeschakeld),_ kan deze parameter standaard worden ingesteld op de locatie van de resourcegroep. In gekoppelde of geneste sjablonen mag de locatieparameter geen standaardlocatie hebben.
 
-Voor gebruikers van uw sjabloon zijn mogelijk beperkte regio's beschikbaar. Wanneer u de resource locatie permanent codeert, kunnen gebruikers worden geblokkeerd voor het maken van een resource in die regio. Gebruikers kunnen worden geblokkeerd, zelfs als u de resource locatie instelt op `"[resourceGroup().location]"` . De resource groep is mogelijk gemaakt in een regio waartoe andere gebruikers geen toegang hebben. Deze gebruikers worden geblokkeerd voor het gebruik van de sjabloon.
+Gebruikers van uw sjabloon hebben mogelijk beperkte regio's voor hen beschikbaar. Wanneer u de resourcelocatie in code vast codet, kunnen gebruikers mogelijk geen resource maken in die regio. Gebruikers kunnen worden geblokkeerd, zelfs als u de resourcelocatie in stelt op `"[resourceGroup().location]"` . De resourcegroep is mogelijk gemaakt in een regio waar andere gebruikers geen toegang toe hebben. Deze gebruikers kunnen de sjabloon niet gebruiken.
 
-Door een locatie parameter op te geven die standaard wordt ingesteld op de locatie van de resource groep, kunnen gebruikers de standaard waarde gebruiken als ze handig zijn, maar ook een andere locatie opgeven.
+Door een locatieparameter op te geven die standaard is ingesteld op de locatie van de resourcegroep, kunnen gebruikers de standaardwaarde gebruiken wanneer dit handig is, maar ook een andere locatie opgeven.
 
-In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de locatie van de resource is ingesteld op `resourceGroup().location` .
+In het volgende voorbeeld **mislukt** deze test omdat de locatie van de resource is ingesteld op `resourceGroup().location` .
 
 ```json
 {
@@ -167,7 +167,7 @@ In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de locatie 
 }
 ```
 
-In het volgende voor beeld wordt een locatie parameter gebruikt, maar deze test **mislukt** omdat de locatie parameter standaard wordt ingesteld op een hardcoded locatie.
+In het volgende voorbeeld wordt een locatieparameter **gebruikt,** maar deze test mislukt omdat de locatieparameter standaard een hardcoded locatie heeft.
 
 ```json
 {
@@ -197,7 +197,7 @@ In het volgende voor beeld wordt een locatie parameter gebruikt, maar deze test 
 }
 ```
 
-Maak in plaats daarvan een para meter die standaard wordt ingesteld op de locatie van de resource groep, maar biedt gebruikers de mogelijkheid om een andere waarde op te geven. In het volgende voor beeld wordt deze test **door gegeven** wanneer de sjabloon als hoofd sjabloon wordt gebruikt.
+Maak in plaats daarvan een parameter die standaard is ingesteld op de locatie van de resourcegroep, maar waarmee gebruikers een andere waarde kunnen opgeven. In het volgende voorbeeld **wordt** deze test uitgevoerd wanneer de sjabloon wordt gebruikt als de hoofdsjabloon.
 
 ```json
 {
@@ -230,15 +230,15 @@ Maak in plaats daarvan een para meter die standaard wordt ingesteld op de locati
 }
 ```
 
-Als het vorige voor beeld echter als een gekoppelde sjabloon wordt gebruikt, **mislukt** de test. Bij gebruik als gekoppelde sjabloon verwijdert u de standaard waarde.
+Als het voorgaande voorbeeld echter wordt gebruikt als gekoppelde sjabloon, mislukt **de** test. Wanneer u deze als gekoppelde sjabloon gebruikt, verwijdert u de standaardwaarde.
 
-## <a name="resources-should-have-location"></a>Resources moeten locatie hebben
+## <a name="resources-should-have-location"></a>Resources moeten een locatie hebben
 
-Test naam: **resources moeten de locatie hebben**
+Testnaam: **Resources moeten een locatie hebben**
 
-De locatie van een resource moet worden ingesteld op een [sjabloon expressie](template-expressions.md) of `global` . De sjabloon expressie gebruikt normaal gesp roken de locatie parameter zoals beschreven in de vorige test.
+De locatie voor een resource moet worden ingesteld op een [sjabloonexpressie](template-expressions.md) of `global` . De sjabloonexpressie gebruikt doorgaans de locatieparameter die in de vorige test is beschreven.
 
-In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de locatie geen expressie of is `global` .
+In het volgende **voorbeeld mislukt** deze test omdat de locatie geen expressie of `global` is.
 
 ```json
 {
@@ -264,7 +264,7 @@ In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de locatie 
 }
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 {
@@ -289,7 +289,7 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 }
 ```
 
-In het volgende voor beeld wordt deze test ook **door gegeven** .
+In het volgende voorbeeld **wordt deze** test ook doorstaan.
 
 ```json
 {
@@ -322,13 +322,13 @@ In het volgende voor beeld wordt deze test ook **door gegeven** .
 }
 ```
 
-## <a name="vm-size-uses-parameter"></a>VM-grootte maakt gebruik van para meter
+## <a name="vm-size-uses-parameter"></a>Voor de VM-grootte wordt een parameter gebruikt
 
-Test naam: **VM-grootte moet een para meter zijn**
+Testnaam: **VM-grootte moet een parameter zijn**
 
-Voorlopig hardcoderen we de grootte van de virtuele machine niet. Geef een para meter op zodat gebruikers van uw sjabloon de grootte van de geïmplementeerde virtuele machine kunnen wijzigen.
+Codeer de grootte van de virtuele machine niet. Geef een parameter op zodat gebruikers van uw sjabloon de grootte van de geïmplementeerde virtuele machine kunnen wijzigen.
 
-In het volgende voor beeld **mislukt** deze test.
+In het volgende voorbeeld **mislukt** deze test.
 
 ```json
 "hardwareProfile": {
@@ -336,7 +336,7 @@ In het volgende voor beeld **mislukt** deze test.
 }
 ```
 
-Geef in plaats daarvan een para meter op.
+Geef in plaats daarvan een parameter op.
 
 ```json
 "vmSize": {
@@ -348,7 +348,7 @@ Geef in plaats daarvan een para meter op.
 },
 ```
 
-Stel vervolgens de VM-grootte in op die para meter.
+Stel vervolgens de VM-grootte in op die parameter.
 
 ```json
 "hardwareProfile": {
@@ -356,13 +356,13 @@ Stel vervolgens de VM-grootte in op die para meter.
 },
 ```
 
-## <a name="min-and-max-values-are-numbers"></a>De minimum-en maximum waarde zijn getallen
+## <a name="min-and-max-values-are-numbers"></a>Minimum- en maximumwaarden zijn getallen
 
-Test naam: **min en maximum waarde zijn getallen**
+Testnaam: **Minimum- en maximumwaarde zijn getallen**
 
-Als u de minimum-en maximum waarde voor een para meter definieert, geeft u ze op als getallen.
+Als u de minimum- en maximumwaarden voor een parameter definieert, geeft u deze op als getallen.
 
-In het volgende voor beeld **mislukt** deze test:
+In het volgende voorbeeld **mislukt deze** test:
 
 ```json
 "exampleParameter": {
@@ -372,7 +372,7 @@ In het volgende voor beeld **mislukt** deze test:
 },
 ```
 
-Geef in plaats daarvan de waarden op als getallen. In het volgende voor beeld wordt deze test **door gegeven** :
+Geef in plaats daarvan de waarden op als getallen. In het volgende voorbeeld **wordt deze** test doorstaan:
 
 ```json
 "exampleParameter": {
@@ -382,36 +382,36 @@ Geef in plaats daarvan de waarden op als getallen. In het volgende voor beeld wo
 },
 ```
 
-U krijgt deze waarschuwing ook als u een minimum-of maximum waarde opgeeft, maar niet de andere.
+U krijgt deze waarschuwing ook als u een minimum- of maximumwaarde op geeft, maar niet de andere.
 
-## <a name="artifacts-parameter-defined-correctly"></a>De para meter artefacten correct is gedefinieerd
+## <a name="artifacts-parameter-defined-correctly"></a>De parameter Artifacts is correct gedefinieerd
 
-Test naam: **artefacten para meter**
+Testnaam: **artefactparameter**
 
-Wanneer u para meters voor en opneemt `_artifactsLocation` `_artifactsLocationSasToken` , gebruikt u de juiste standaard waarden en typen. Aan de volgende voor waarden moet worden voldaan om deze test door te geven:
+Wanneer u parameters voor `_artifactsLocation` en op `_artifactsLocationSasToken` bevat, gebruikt u de juiste standaardinstellingen en typen. Aan de volgende voorwaarden moet worden voldaan om deze test te kunnen doorstaan:
 
-* Als u één para meter opgeeft, moet u de andere opgeven
-* `_artifactsLocation`moet een **teken reeks** zijn
-* `_artifactsLocation` moet een standaard waarde hebben in de hoofd sjabloon
-* `_artifactsLocation` kan geen standaard waarde hebben in een geneste sjabloon
-* `_artifactsLocation``"[deployment().properties.templateLink.uri]"`de standaard waarde moet van de opslag plaats-URL (of onbewerkte) zijn
-* `_artifactsLocationSasToken`moet een **secureString** zijn
-* `_artifactsLocationSasToken` kan alleen een lege teken reeks voor de standaard waarde hebben
-* `_artifactsLocationSasToken` kan geen standaard waarde hebben in een geneste sjabloon
+* Als u één parameter opgeeft, moet u de andere opgeven
+* `_artifactsLocation` moet een tekenreeks **zijn**
+* `_artifactsLocation` moet een standaardwaarde hebben in de hoofdsjabloon
+* `_artifactsLocation` kan geen standaardwaarde hebben in een geneste sjabloon
+* `_artifactsLocation` moet een of `"[deployment().properties.templateLink.uri]"` de onbewerkte url voor de standaardwaarde hebben
+* `_artifactsLocationSasToken` moet een **secureString zijn**
+* `_artifactsLocationSasToken` kan alleen een lege tekenreeks hebben voor de standaardwaarde
+* `_artifactsLocationSasToken` kan geen standaardwaarde hebben in een geneste sjabloon
 
 ## <a name="declared-variables-must-be-used"></a>Gedeclareerde variabelen moeten worden gebruikt
 
-Test naam: er **moet naar variabelen worden verwezen**
+Testnaam: **Naar variabelen moet worden verwezen**
 
-Als u Verwar ring in uw sjabloon wilt beperken, verwijdert u alle variabelen die zijn gedefinieerd, maar niet worden gebruikt. Met deze test vindt u alle variabelen die nergens in de sjabloon worden gebruikt.
+Verwijder variabelen die zijn gedefinieerd maar niet worden gebruikt om verwarring in uw sjabloon te verminderen. Met deze test worden variabelen gevonden die nergens in de sjabloon worden gebruikt.
 
-## <a name="dynamic-variable-should-not-use-concat"></a>Dynamische variabele mag geen concat gebruiken
+## <a name="dynamic-variable-should-not-use-concat"></a>Dynamische variabele mag geen gebruik maken van concat
 
-Test naam: **verwijzingen naar dynamische variabelen mogen geen concat gebruiken**
+Testnaam: **Verwijzingen naar dynamische variabelen mogen geen gebruik maken van Concat**
 
-Soms moet u een variabele dynamisch maken op basis van de waarde van een andere variabele of para meter. Gebruik de functie [concat](template-functions-string.md#concat) niet wanneer u de waarde instelt. Gebruik in plaats daarvan een object dat de beschik bare opties bevat en een van de eigenschappen van het object dynamisch ophalen tijdens de implementatie.
+Soms moet u een variabele dynamisch maken op basis van de waarde van een andere variabele of parameter. Gebruik de functie [concat niet bij](template-functions-string.md#concat) het instellen van de waarde. Gebruik in plaats daarvan een -object dat de beschikbare opties bevat en dynamisch een van de eigenschappen van het -object krijgt tijdens de implementatie.
 
-In het volgende voor beeld wordt deze test **door gegeven** . De variabele **currentImage** wordt dynamisch ingesteld tijdens de implementatie.
+In het volgende voorbeeld **wordt deze** test doorstaan. De **variabele currentImage** wordt dynamisch ingesteld tijdens de implementatie.
 
 ```json
 {
@@ -449,17 +449,17 @@ In het volgende voor beeld wordt deze test **door gegeven** . De variabele **cur
 
 ## <a name="use-recent-api-version"></a>Recente API-versie gebruiken
 
-Test naam: **ApiVersions moet recent zijn**
+Testnaam: **apiVersions Should Be Recent**
 
-De API-versie voor elke resource moet een recente versie gebruiken. De test evalueert de versie die u gebruikt voor de beschik bare versies voor het bron type.
+De API-versie voor elke resource moet een recente versie gebruiken. De test evalueert de versie die u gebruikt ten opzichte van de versies die beschikbaar zijn voor dat resourcetype.
 
 ## <a name="use-hardcoded-api-version"></a>Hardcoded API-versie gebruiken
 
-Test naam: **providers ApiVersions is niet toegestaan**
+Testnaam: **Providers apiVersions is niet toegestaan**
 
-De API-versie voor een resource type bepaalt welke eigenschappen beschikbaar zijn. Geef een in code vastgelegde API-versie op in uw sjabloon. Haal geen API-versie op die wordt bepaald tijdens de implementatie. U weet niet welke eigenschappen er beschikbaar zijn.
+De API-versie voor een resourcetype bepaalt welke eigenschappen beschikbaar zijn. Geef een in code gecodeerde API-versie op in uw sjabloon. Haal geen API-versie op die tijdens de implementatie wordt bepaald. U weet niet welke eigenschappen beschikbaar zijn.
 
-In het volgende voor beeld **mislukt** deze test.
+Het volgende voorbeeld **mislukt** deze test.
 
 ```json
 "resources": [
@@ -471,7 +471,7 @@ In het volgende voor beeld **mislukt** deze test.
 ]
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 "resources": [
@@ -483,24 +483,24 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 ]
 ```
 
-## <a name="properties-cant-be-empty"></a>Eigenschappen mogen niet leeg zijn
+## <a name="properties-cant-be-empty"></a>Eigenschappen kunnen niet leeg zijn
 
-Test naam: **sjabloon mag geen spaties bevatten**
+Testnaam: **Sjabloon mag geen lege gegevens bevatten**
 
-Geen voorlopig hardcoderen we-eigenschappen naar een lege waarde. Lege waarden zijn Null-en lege teken reeksen, objecten of matrices. Als u een eigenschap hebt ingesteld op een lege waarde, verwijdert u die eigenschap uit uw sjabloon. Het is echter verstandig om een eigenschap in te stellen op een lege waarde tijdens de implementatie, bijvoorbeeld via een para meter.
+Codeer eigenschappen niet in een lege waarde. Lege waarden zijn null en lege tekenreeksen, objecten of matrices. Als u een eigenschap hebt ingesteld op een lege waarde, verwijdert u die eigenschap uit uw sjabloon. Het is echter geen probleem om een eigenschap tijdens de implementatie in te stellen op een lege waarde, zoals via een parameter.
 
-## <a name="use-resource-id-functions"></a>Resource-ID-functies gebruiken
+## <a name="use-resource-id-functions"></a>Resource-id-functies gebruiken
 
-Test naam: **Id's moeten worden afgeleid van ResourceIDs**
+Testnaam: **de ID's moeten worden afgeleid van resource-ID's**
 
-Gebruik een van de resource-ID-functies wanneer u een resource-ID opgeeft. De toegestane functies zijn:
+Wanneer u een resource-id opgeeft, gebruikt u een van de resource-id-functies. De toegestane functies zijn:
 
 * [resourceId](template-functions-resource.md#resourceid)
 * [subscriptionResourceId](template-functions-resource.md#subscriptionresourceid)
 * [tenantResourceId](template-functions-resource.md#tenantresourceid)
 * [extensionResourceId](template-functions-resource.md#extensionresourceid)
 
-Gebruik de functie concat niet om een resource-ID te maken. In het volgende voor beeld **mislukt** deze test.
+Gebruik de functie concat niet om een resource-id te maken. In het volgende voorbeeld **mislukt** deze test.
 
 ```json
 "networkSecurityGroup": {
@@ -508,7 +508,7 @@ Gebruik de functie concat niet om een resource-ID te maken. In het volgende voor
 }
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 "networkSecurityGroup": {
@@ -516,13 +516,13 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 }
 ```
 
-## <a name="resourceid-function-has-correct-parameters"></a>De functie ResourceId heeft de juiste para meters
+## <a name="resourceid-function-has-correct-parameters"></a>De functie ResourceId heeft de juiste parameters
 
-Test naam: **ResourceIds mag niet bevatten**
+Testnaam: **ResourceIds mag niet bevatten**
 
-Gebruik bij het genereren van resource-Id's geen overbodige functies voor optionele para meters. De functie [resourceId](template-functions-resource.md#resourceid) maakt standaard gebruik van het huidige abonnement en de resource groep. U hoeft deze waarden niet op te geven.
+Gebruik bij het genereren van resource-ID's geen onnodige functies voor optionele parameters. De functie [resourceId maakt standaard gebruik](template-functions-resource.md#resourceid) van het huidige abonnement en de resourcegroep. U hoeft deze waarden niet op te geven.
 
-In het volgende voor beeld is deze test **mislukt** , omdat u de huidige abonnements-id en de naam van de resource groep niet hoeft op te geven.
+In het volgende **voorbeeld mislukt** deze test, omdat u de huidige abonnements-id en naam van de resourcegroep niet hoeft op te geven.
 
 ```json
 "networkSecurityGroup": {
@@ -530,7 +530,7 @@ In het volgende voor beeld is deze test **mislukt** , omdat u de huidige abonnem
 }
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 "networkSecurityGroup": {
@@ -544,18 +544,18 @@ Deze test is van toepassing op:
 * [subscriptionResourceId](template-functions-resource.md#subscriptionresourceid)
 * [tenantResourceId](template-functions-resource.md#tenantresourceid)
 * [extensionResourceId](template-functions-resource.md#extensionresourceid)
-* [referentielaag](template-functions-resource.md#reference)
-* [orderverzamellijst](template-functions-resource.md#list)
+* [Verwijzing](template-functions-resource.md#reference)
+* [list*](template-functions-resource.md#list)
 
-Voor `reference` en `list*` , **mislukt** de test wanneer u gebruikt `concat` om de resource-id te maken.
+Voor `reference` en mislukt de test `list*` **wanneer** u gebruikt om `concat` de resource-id te maken.
 
-## <a name="dependson-best-practices"></a>Best practices voor dependsOn
+## <a name="dependson-best-practices"></a>dependsOn best practices
 
-Test naam: **Best practices voor DependsOn**
+Testnaam: **Best practices voor DependsOn**
 
-Gebruik bij het instellen van de implementatie afhankelijkheden niet de functie [als](template-functions-logical.md#if) om een voor waarde te testen. Als een resource afhankelijk is van een resource die [voorwaardelijk wordt geïmplementeerd](conditional-resource-deployment.md), stelt u de afhankelijkheid in, net zoals bij elke resource. Wanneer een voorwaardelijke resource niet is geïmplementeerd, wordt deze automatisch door Azure Resource Manager verwijderd uit de vereiste afhankelijkheden.
+Gebruik bij het instellen van de implementatieafhankelijkheden niet de [if-functie](template-functions-logical.md#if) om een voorwaarde te testen. Als één resource afhankelijk is van een resource die voorwaardelijk is [geïmplementeerd,](conditional-resource-deployment.md)stelt u de afhankelijkheid in zoals bij elke resource. Wanneer een voorwaardelijke resource niet wordt geïmplementeerd, Azure Resource Manager automatisch verwijderd uit de vereiste afhankelijkheden.
 
-In het volgende voor beeld **mislukt** deze test.
+Het volgende voorbeeld **mislukt** deze test.
 
 ```json
 "dependsOn": [
@@ -563,7 +563,7 @@ In het volgende voor beeld **mislukt** deze test.
 ]
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 "dependsOn": [
@@ -571,19 +571,19 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 ]
 ```
 
-## <a name="nested-or-linked-deployments-cant-use-debug"></a>Geneste of gekoppelde implementaties kunnen geen fout opsporing gebruiken
+## <a name="nested-or-linked-deployments-cant-use-debug"></a>Geneste of gekoppelde implementaties kunnen geen foutopsporing gebruiken
 
-Test naam: **implementatie bronnen mogen geen fout opsporing zijn**
+Testnaam: **Implementatiebronnen mogen geen foutopsporing zijn**
 
-Wanneer u een [geneste of gekoppelde sjabloon](linked-templates.md) definieert met het resource type **micro soft. resources/implementaties** , kunt u fout opsporing voor die sjabloon inschakelen. Fout opsporing is prima wanneer u die sjabloon moet testen, maar moet worden ingeschakeld wanneer u de sjabloon in productie wilt gebruiken.
+Wanneer u een [geneste](linked-templates.md) of gekoppelde sjabloon definieert met het resourcetype **Microsoft.Resources/deployments,** kunt u debugging voor die sjabloon inschakelen. Debugging is prima wanneer u die sjabloon wilt testen, maar moet worden ingeschakeld wanneer u klaar bent om de sjabloon in productie te gebruiken.
 
-## <a name="admin-user-names-cant-be-literal-value"></a>Gebruikers namen van beheerders kunnen niet letterlijke waarden zijn
+## <a name="admin-user-names-cant-be-literal-value"></a>Gebruikersnamen van beheerders kunnen geen letterlijke waarde zijn
 
-Test naam: **AdminUsername mag geen letterlijke waarde zijn**
+Testnaam: **adminUsername should not be a literal**
 
-Gebruik bij het instellen van de gebruikers naam van een beheerder geen letterlijke waarde.
+Gebruik geen letterlijke waarde bij het instellen van een gebruikersnaam van de beheerder.
 
-In het volgende voor beeld **mislukt** deze test:
+In het volgende voorbeeld **mislukt deze** test:
 
 ```json
 "osProfile":  {
@@ -591,7 +591,7 @@ In het volgende voor beeld **mislukt** deze test:
 },
 ```
 
-Gebruik in plaats daarvan een para meter. In het volgende voor beeld wordt deze test **door gegeven** :
+Gebruik in plaats daarvan een parameter. In het volgende voorbeeld **wordt deze** test doorstaan:
 
 ```json
 "osProfile": {
@@ -599,19 +599,19 @@ Gebruik in plaats daarvan een para meter. In het volgende voor beeld wordt deze 
 }
 ```
 
-## <a name="use-latest-vm-image"></a>Nieuwste VM-installatie kopie gebruiken
+## <a name="use-latest-vm-image"></a>Meest recente VM-afbeelding gebruiken
 
-Test naam: **VM-installatie kopieën moeten de meest recente versie gebruiken**
+Testnaam: **VM-afbeeldingen moeten de nieuwste versie gebruiken**
 
-Als uw sjabloon een virtuele machine met een installatie kopie bevat, moet u ervoor zorgen dat deze de meest recente versie van de installatie kopie gebruikt.
+Als uw sjabloon een virtuele machine met een afbeelding bevat, moet u ervoor zorgen dat deze de nieuwste versie van de afbeelding gebruikt.
 
-## <a name="use-stable-vm-images"></a>Stabiele VM-installatie kopieën gebruiken
+## <a name="use-stable-vm-images"></a>Stabiele VM-afbeeldingen gebruiken
 
-Test naam: **virtual machines moet niet worden weer** gegeven
+Testnaam: **Virtual Machines mag geen preview zijn**
 
-Virtuele machines mogen geen preview-installatie kopieën gebruiken.
+Virtuele machines mogen geen preview-afbeeldingen gebruiken.
 
-In het volgende voor beeld **mislukt** deze test.
+In het volgende voorbeeld **mislukt** deze test.
 
 ```json
 "imageReference": {
@@ -622,7 +622,7 @@ In het volgende voor beeld **mislukt** deze test.
 }
 ```
 
-In het volgende voor beeld wordt deze test **door gegeven** .
+In het volgende voorbeeld **wordt deze** test doorstaan.
 
 ```json
 "imageReference": {
@@ -633,19 +633,19 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 },
 ```
 
-## <a name="dont-use-managedidentity-extension"></a>Geen ManagedIdentity-extensie gebruiken
+## <a name="dont-use-managedidentity-extension"></a>ManagedIdentity-extensie niet gebruiken
 
-Test naam: **ManagedIdentityExtension mag niet worden gebruikt**
+Testnaam: **ManagedIdentityExtension mag niet worden gebruikt**
 
-Pas de ManagedIdentity-extensie niet toe op een virtuele machine. Zie voor meer informatie [hoe u de extensie voor beheerde identiteiten van de virtuele machine stopt met het gebruik van Azure instance metadata service](../../active-directory/managed-identities-azure-resources/howto-migrate-vm-extension.md).
+Pas de ManagedIdentity-extensie niet toe op een virtuele machine. De extensie is in 2019 afgeschaft en mag niet meer worden gebruikt.
 
 ## <a name="outputs-cant-include-secrets"></a>Uitvoer kan geen geheimen bevatten
 
-Test naam: **uitvoer mag geen geheimen bevatten**
+Testnaam: **Uitvoer mag geen geheimen bevatten**
 
-Neem geen waarden op in de sectie outputs die mogelijk geheimen openbaren. De uitvoer van een sjabloon wordt opgeslagen in de implementatie geschiedenis, waardoor een kwaadwillende gebruiker die informatie kan vinden.
+Neem geen waarden op in de sectie outputs die geheimen mogelijk blootstellen. De uitvoer van een sjabloon wordt opgeslagen in de implementatiegeschiedenis, zodat een kwaadwillende gebruiker die informatie kan vinden.
 
-In het volgende voor beeld **mislukt** de test omdat het een beveiligde para meter in een uitvoer waarde bevat.
+Het volgende voorbeeld **mislukt de** test omdat deze een beveiligde parameter in een uitvoerwaarde bevat.
 
 ```json
 {
@@ -668,7 +668,7 @@ In het volgende voor beeld **mislukt** de test omdat het een beveiligde para met
 }
 ```
 
-Het volgende voor beeld **mislukt** omdat er een [lijst *](template-functions-resource.md#list) -functie wordt gebruikt in de uitvoer.
+Het volgende voorbeeld **mislukt omdat** er een [list*-functie](template-functions-resource.md#list) in de uitvoer wordt gebruikt.
 
 ```json
 {
@@ -693,14 +693,14 @@ Het volgende voor beeld **mislukt** omdat er een [lijst *](template-functions-re
 
 ## <a name="use-protectedsettings-for-commandtoexecute-secrets"></a>ProtectedSettings gebruiken voor commandToExecute-geheimen
 
-Test naam: **CommandToExecute moet ProtectedSettings gebruiken voor geheimen**
+Testnaam: **CommandToExecute moet ProtectedSettings voor geheimen gebruiken**
 
-In een aangepaste script extensie gebruikt u de versleutelde eigenschap `protectedSettings` bij het `commandToExecute` opnemen van geheime gegevens zoals een wacht woord. Voor beelden van geheime gegevens typen zijn `secureString` , `secureObject` , `list()` functions of scripts.
+Gebruik in een aangepaste scriptextensie de versleutelde eigenschap `protectedSettings` wanneer geheime gegevens zoals een wachtwoord `commandToExecute` bevat. Voorbeelden van geheime gegevenstypen zijn `secureString` , , functies of `secureObject` `list()` scripts.
 
-Zie voor meer informatie over aangepaste script extensie voor virtuele machines [Windows](
-/azure/virtual-machines/extensions/custom-script-windows), [Linux](/azure/virtual-machines/extensions/custom-script-linux)en het schema [micro soft. Compute informatie/Extensions](/azure/templates/microsoft.compute/virtualmachines/extensions).
+Zie Windows [,](
+/azure/virtual-machines/extensions/custom-script-windows) [Linux](/azure/virtual-machines/extensions/custom-script-linux)en het schema [Microsoft.Compute virtualMachines/extensions](/azure/templates/microsoft.compute/virtualmachines/extensions)voor meer informatie over aangepaste scriptextensie voor virtuele machines.
 
-In dit voor beeld geeft een sjabloon met een para meter met `adminPassword` de naam en `secureString`  het type de test door, omdat de versleutelde eigenschap `protectedSettings` bevat `commandToExecute` .
+In dit voorbeeld wordt de test door een sjabloon met een parameter met de naam en het type doorgegeven, omdat `adminPassword` de `secureString`  versleutelde eigenschap `protectedSettings` `commandToExecute` bevat.
 
 ```json
 "properties": [
@@ -712,7 +712,7 @@ In dit voor beeld geeft een sjabloon met een para meter met `adminPassword` de n
 ]
 ```
 
-De test **mislukt** als de niet-versleutelde eigenschap `settings` bevat `commandToExecute` .
+De test **mislukt** als de niet-versleutelde eigenschap `settings` `commandToExecute` bevat.
 
 ```json
 "properties": [
@@ -726,5 +726,5 @@ De test **mislukt** als de niet-versleutelde eigenschap `settings` bevat `comman
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [test Toolkit voor arm-sjablonen gebruiken](test-toolkit.md)voor meer informatie over het uitvoeren van de test Toolkit.
-* Zie [Preview wijzigingen en Azure-resources valideren met behulp van wat als' en de arm-sjabloon test Toolkit](/learn/modules/arm-template-test/)voor een Microsoft Learn module die de test Toolkit gebruikt.
+* Zie Use ARM template test [toolkit (Arm-sjabloontesttoolkit](test-toolkit.md)gebruiken) voor meer informatie over het uitvoeren van de testtoolkit.
+* Zie Preview-Microsoft Learn en valideren van Azure-resources met behulp van what-if en de [ARM-sjabloontesttoolkit](/learn/modules/arm-template-test/)voor een nieuwe module over het gebruik van de testtoolkit.

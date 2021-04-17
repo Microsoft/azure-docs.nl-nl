@@ -75,6 +75,8 @@ items:
             href: manage-integration-runtimes.md
           - name: Verbindingsproblemen oplossen
             href: troubleshoot-connections.md
+          - name: Regels voor resourcesetpatronen
+            href: how-to-resource-set-pattern-rules.md
           - name: Bronnen
             items:
               - name: Gegevensbronnen beheren

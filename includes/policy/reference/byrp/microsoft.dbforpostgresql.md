@@ -2,19 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: adec5e36575b72ebe257e76e8d8be8a3a9024524
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 4b8825b41a41bc73a42ad42756a6eb18fc7e5db3
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106090461"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107496556"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[BYOK-gegevensversleuteling moet zijn ingeschakeld voor PostgreSQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F18adea5e-f416-4d0f-8aa8-d24321e3e274) |Gebruik door de klant beheerde sleutels om de versleuteling van uw inactieve PostgreSQL-servers te beheren. Standaard worden de gegevens in rust versleuteld met door service beheerde sleutels, maar door de klant beheerde sleutels zijn doorgaans vereist om te voldoen aan de normen voor naleving van regelgeving. Door de klant beheerde sleutels zorgen ervoor dat de gegevens kunnen worden versleuteld met een Azure Key Vault sleutel die u hebt gemaakt en waarvan u eigenaar bent. U hebt de volledige controle en verantwoordelijkheid voor de levenscyclus van de sleutel, met inbegrip van rotatie en beheer. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/PostgreSQL_EnableByok_Audit.json) |
+|[BYOK-gegevensversleuteling moet zijn ingeschakeld voor PostgreSQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F18adea5e-f416-4d0f-8aa8-d24321e3e274) |Gebruik door de klant beheerde sleutels om de versleuteling van uw inactieve PostgreSQL-servers te beheren. Standaard worden de gegevens at-rest versleuteld met door de service beheerde sleutels, maar door de klant beheerde sleutels zijn doorgaans vereist om te voldoen aan regelgevingsstandaarden. Door de klant beheerde sleutels maken het mogelijk om de gegevens te versleutelen met een Azure Key Vault sleutel die door u is gemaakt en eigendom is. U hebt de volledige controle en verantwoordelijkheid voor de levenscyclus van de sleutel, met inbegrip van rotatie en beheer. |AuditIfNotExists, uitgeschakeld |[1.0.3](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/PostgreSQL_EnableByok_Audit.json) |
 |[Verbinding beperken moet worden ingeschakeld voor PostgreSQL-databaseservers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5345bb39-67dc-4960-a1bf-427e16b9a0bd) |Dit beleid helpt bij het controleren van alle PostgreSQL-databases in uw omgeving zonder dat er verbindingsbeperking hoeft te worden ingeschakeld. Met deze instelling schakelt u tijdelijke beperking van de verbinding per IP in voor te veel ongeldige wachtwoordaanmeldingen. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/PostgreSQL_ConnectionThrottling_Enabled_Audit.json) |
 |[Verbroken verbindingen moeten in een logboek worden vastgelegd voor PostgreSQL-databaseservers.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Feb6f77b9-bd53-4e35-a23d-7f65d5f0e446) |Dit beleid helpt bij het controleren van alle PostgreSQL-databases in uw omgeving zonder dat er log_disconnections hoeven te worden ingeschakeld. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/PostgreSQL_EnableLogDisconnections_Audit.json) |
 |[SSL-verbinding afdwingen moet worden ingeschakeld voor PostgreSQL-databaseservers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fd158790f-bfb0-486c-8631-2dc6b4e8e6af) |Azure Database for PostgreSQL biedt ondersteuning voor het gebruik van Secure Sockets Layer (SSL) om uw Azure Database for PostgreSQL-server te verbinden met clienttoepassingen. Het afdwingen van SSL-verbindingen tussen uw databaseserver en clienttoepassingen zorgt dat u bent beschermt tegen 'man in the middle'-aanvallen omdat de gegevensstroom tussen de server en uw toepassing wordt versleuteld. Deze configuratie dwingt af dat SSL altijd is ingeschakeld voor toegang tot uw databaseserver. |Controle, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/PostgreSQL_EnableSSL_Audit.json) |

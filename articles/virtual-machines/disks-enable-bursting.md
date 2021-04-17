@@ -1,30 +1,30 @@
 ---
 title: Schijf bursting op aanvraag inschakelen
-description: Schakel op aanvraag schijf bursting op uw beheerde schijf in.
+description: Schakel bursting van schijf op aanvraag in op uw beheerde schijf.
 author: albecker1
 ms.author: albecker
 ms.date: 03/02/2021
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
-ms.custom: references_regions
-ms.openlocfilehash: 733d441705c7c77f0667f88151e96f76975ee0b2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 5110e580bada7bb1090b17d6df22a9354622e8e4
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104596396"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107483143"
 ---
 # <a name="enable-on-demand-bursting"></a>Bursting op aanvraag inschakelen
 
-Premium Solid-state drives (SSD) hebben twee beschik bare burst-modellen. op Credit gebaseerde bursting en op aanvraag bursting. In dit artikel wordt beschreven hoe u kunt overschakelen naar bursting op aanvraag. Schijven die gebruikmaken van het on-demand-model, kunnen de oorspronkelijke ingerichte doelen niet overschrijden. Op aanvraag bursting gebeurt zo vaak als nodig is voor de werk belasting, tot aan het maximum aantal burst-doelen. Bij bursting op aanvraag worden extra kosten in rekening gebracht.
+Premium SSD-schijven (Solid-State Drives) hebben twee beschikbare bursting-modellen; bursting op basis van krediet en bursting op aanvraag. In dit artikel wordt beschreven hoe u overschakelt naar bursting op aanvraag. Schijven die gebruikmaken van het on-demand model kunnen bursten boven hun oorspronkelijke inrichtende doelen. Bursting op aanvraag vindt zo vaak plaats als nodig is voor de workload, tot het maximale burstdoel. Voor bursting op aanvraag worden extra kosten in rekening gebracht.
 
-Zie [Managed Disk bursting](disk-bursting.md)(Engelstalig) voor meer informatie over schijf bursting.
+Zie Bursting van beheerde schijven voor meer informatie over [het bursten van schijven.](disk-bursting.md)
 
 > [!IMPORTANT]
-> U hoeft de stappen in dit artikel niet uit te voeren om burstisatie op basis van credit te gebruiken. Op Credit gebaseerde bursting is standaard ingeschakeld op alle in aanmerking komende schijven.
+> U hoeft de stappen in dit artikel niet te volgen om bursting op basis van tegoeden te gebruiken. Standaard is bursting op basis van tegoeden ingeschakeld op alle in aanmerking komende schijven.
 
-Voordat u bursting op aanvraag inschakelt, moet u het volgende weten:
+Voordat u bursting op aanvraag inschakelen, moet u het volgende begrijpen:
 
 [!INCLUDE [managed-disk-bursting-regions-limitations](../../includes/managed-disk-bursting-regions-limitations.md)]
 
@@ -34,14 +34,14 @@ Voordat u bursting op aanvraag inschakelt, moet u het volgende weten:
 
 ## <a name="get-started"></a>Aan de slag
 
-Bursting op aanvraag kan worden ingeschakeld met de module Azure PowerShell, de Azure CLI of Azure Resource Manager sjablonen. De volgende voor beelden laten zien hoe u een nieuwe schijf maakt met on-demand burstisatie ingeschakeld en op aanvraag bursting op bestaande schijven inschakelt.
+Bursting op aanvraag kan worden ingeschakeld met de Azure PowerShell-module, de Azure CLI of Azure Resource Manager sjablonen. De volgende voorbeelden hebben betrekking op het maken van een nieuwe schijf met bursting op aanvraag ingeschakeld en het inschakelen van bursting op aanvraag op bestaande schijven.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Op aanvraag burstive-cmdlets zijn beschikbaar in versie 5.5.0 en hoger van de AZ-module. U kunt ook de [Azure Cloud shell](https://shell.azure.com/)gebruiken.
-### <a name="create-an-empty-data-disk-with-on-demand-bursting"></a>Een lege gegevens schijf maken met burstisatie op aanvraag
+Cmdlets voor bursting op aanvraag zijn beschikbaar in versie 5.5.0 en hoger van de Az-module. U kunt ook de [Azure Cloud Shell.](https://shell.azure.com/)
+### <a name="create-an-empty-data-disk-with-on-demand-bursting"></a>Een lege gegevensschijf maken met bursting op aanvraag
 
-Een beheerde schijf moet groter zijn dan 512 GiB om burstisatie op aanvraag in te scha kelen. Vervang de `<myResourceGroupDisk>` `<myDataDisk>` para meters en en voer vervolgens het volgende script uit om een Premium SSD te maken met burstisatie op aanvraag:
+Een beheerde schijf moet groter zijn dan 512 GiB om bursting op aanvraag mogelijk te maken. Vervang de parameters en en voer vervolgens het volgende script uit om een premium SSD te `<myResourceGroupDisk>` maken met `<myDataDisk>` bursting op aanvraag:
 
 ```azurepowershell
 Set-AzContext -SubscriptionName <yourSubscriptionName>
@@ -51,9 +51,9 @@ $diskConfig = New-AzDiskConfig -Location 'WestCentralUS' -CreateOption Empty -Di
 $dataDisk = New-AzDisk -ResourceGroupName <myResourceGroupDisk> -DiskName <myDataDisk> -Disk $diskConfig
 ```
 
-### <a name="enable-on-demand-bursting-on-an-existing-disk"></a>Op aanvraag burstisatie op een bestaande schijf inschakelen
+### <a name="enable-on-demand-bursting-on-an-existing-disk"></a>Bursting op aanvraag inschakelen op een bestaande schijf
 
-Een beheerde schijf moet groter zijn dan 512 GiB om burstisatie op aanvraag in te scha kelen. Vervang de `<myResourceGroupDisk>` `<myDataDisk>` para meters en voer deze opdracht uit om burstisatie op aanvraag in te scha kelen op een bestaande schijf:
+Een beheerde schijf moet groter zijn dan 512 GiB om bursting op aanvraag mogelijk te maken. Vervang de parameters en voer deze opdracht uit om bursting op aanvraag in te stellen `<myResourceGroupDisk>` `<myDataDisk>` op een bestaande schijf:
 
 ```azurepowershell
 New-AzDiskUpdateConfig -BurstingEnabled $true | Update-AzDisk -ResourceGroupName <myResourceGroupDisk> -DiskName <myDataDisk> //Set the flag to $false to disable on-demand bursting
@@ -61,11 +61,11 @@ New-AzDiskUpdateConfig -BurstingEnabled $true | Update-AzDisk -ResourceGroupName
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Op aanvraag burstive-cmdlets zijn beschikbaar in versie 2.19.0 en hoger van de [Azure cli-module](/cli/azure/install-azure-cli). U kunt ook de [Azure Cloud shell](https://shell.azure.com/)gebruiken.
+On-demand bursting-cmdlets zijn beschikbaar in versie 2.19.0 en nieuwer van de [Azure CLI-module](/cli/azure/install-azure-cli). U kunt ook de [Azure Cloud Shell.](https://shell.azure.com/)
 
-### <a name="create-and-attach-a-on-demand-bursting-data-disk"></a>Een op-aanvraag bursting-gegevens schijf maken en koppelen
+### <a name="create-and-attach-a-on-demand-bursting-data-disk"></a>Een bursting-gegevensschijf op aanvraag maken en koppelen
 
-Een beheerde schijf moet groter zijn dan 512 GiB om burstisatie op aanvraag in te scha kelen. Vervang de `<yourDiskName>` `<yourResourceGroup>` `<yourVMName>` para meters, en en voer vervolgens de volgende opdrachten uit om een Premium SSD te maken met burstisatie op aanvraag:
+Een beheerde schijf moet groter zijn dan 512 GiB om bursting op aanvraag mogelijk te maken. Vervang de parameters , en en voer vervolgens de volgende opdrachten uit om een Premium SSD te maken `<yourDiskName>` `<yourResourceGroup>` met `<yourVMName>` bursting op aanvraag:
 
 ```azurecli
 az disk create -g <yourResourceGroup> -n <yourDiskName> --size-gb 1024 --sku Premium_LRS -l westcentralus --enable-bursting true
@@ -73,9 +73,9 @@ az disk create -g <yourResourceGroup> -n <yourDiskName> --size-gb 1024 --sku Pre
 az vm disk attach --vm-name <yourVMName> --name <yourDiskName> --resource-group <yourResourceGroup>
 ```
 
-### <a name="enable-on-demand-bursting-on-an-existing-disk---cli"></a>Bursting op aanvraag inschakelen op een bestaande schijf-CLI
+### <a name="enable-on-demand-bursting-on-an-existing-disk---cli"></a>Bursting op aanvraag inschakelen op een bestaande schijf - CLI
 
-Een beheerde schijf moet groter zijn dan 512 GiB om burstisatie op aanvraag in te scha kelen. Vervang de `<myResourceGroupDisk>` `<yourDiskName>` para meters en en voer deze opdracht uit om burstisatie op aanvraag in te scha kelen op een bestaande schijf:
+Een beheerde schijf moet groter zijn dan 512 GiB om bursting op aanvraag mogelijk te maken. Vervang de `<myResourceGroupDisk>` parameters en en voer deze opdracht uit om bursting op aanvraag in te stellen op een bestaande `<yourDiskName>` schijf:
 
 ```azurecli
 az disk update --name <yourDiskName> --resource-group <yourResourceGroup> --enable-bursting true //Set the flag to false to disable on-demand bursting
@@ -83,7 +83,7 @@ az disk update --name <yourDiskName> --resource-group <yourResourceGroup> --enab
 
 # <a name="azure-resource-manager"></a>[Azure Resource Manager](#tab/azure-resource-manager)
 
-Met de `2020-09-30` schijf-API kunt u op aanvraag bursting inschakelen op nieuw gemaakte of bestaande Premium-ssd's die groter zijn dan 512 GiB. De `2020-09-30` API heeft een nieuwe eigenschap geïntroduceerd `burstingEnabled` . Deze eigenschap is standaard ingesteld op ONWAAR. Met de volgende voorbeeld sjabloon wordt een 1TiB Premium-SSD gemaakt in West-Centraal VS, waarbij schijf bursting is ingeschakeld:
+Met de schijf-API kunt u bursting op aanvraag inschakelen voor nieuw gemaakte of bestaande Premium-SD's die groter zijn `2020-09-30` dan 512 GiB. De `2020-09-30` API heeft een nieuwe eigenschap geïntroduceerd, `burstingEnabled` . Deze eigenschap is standaard ingesteld op onwaar. Met de volgende voorbeeldsjabloon maakt u een 1TiB Premium SSD in VS - west-centraal, met schijf bursting ingeschakeld:
 
 ```
 {
@@ -130,4 +130,4 @@ Met de `2020-09-30` schijf-API kunt u op aanvraag bursting inschakelen op nieuw 
  
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [metrische gegevens over schijf bursting](disks-metrics.md)voor meer informatie over het verkrijgen van inzicht in uw burst-resources.
+Zie Metrische gegevens over schijf bursting voor meer informatie over het verkrijgen van inzicht in uw [bursting-resources.](disks-metrics.md)

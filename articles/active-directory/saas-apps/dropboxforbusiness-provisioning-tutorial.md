@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 04d17e17ef11696efd52f04ea83639f2a9b81fea
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4e718ef30d029995c49efe36f19a6efcf7de0616
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96938746"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107589598"
 ---
 # <a name="tutorial-configure-dropbox-for-business-for-automatic-user-provisioning"></a>Zelfstudie: Dropbox for Business configureren voor automatische inrichting van gebruikers
 
 Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in Dropbox for Business en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor Dropbox for Business.
 
 > [!IMPORTANT]
-> Microsoft en Dropbox schaffen de oude Dropbox-integratie af met ingang van 04/01/2021. Om onderbrekingen van de service te voorkomen, raden we u aan de nieuwe Dropbox-integratie, die groepen ondersteunt, te migreren. Als u wilt migreren naar de nieuwe Dropbox-integratie, kunt u een nieuw exemplaar van Dropbox voor het inrichten in uw Azure AD-tenant toevoegen en configureren met behulp van de onderstaande stappen. Wanneer u de nieuwe Dropbox-integratie hebt geconfigureerd, schakelt u inrichten voor de oude Dropbox-integratie uit om inrichtingsconflicten te voorkomen. Zie [Bijwerken naar de nieuwste Dropbox for Business-toepassing met behulp van Azure AD](https://help.dropbox.com/installs-integrations/third-party/update-dropbox-azure-ad-connector) voor meer gedetailleerde stappen voor het migreren naar de nieuwe Dropbox-integratie.
+> In de toekomst wordt de oude Dropbox-integratie afgeschaft door Microsoft en Dropbox. Dit was oorspronkelijk gepland voor 1-4-2021, maar is voor onbepaalde tijd uitgesteld. Om onderbreking van de service te voorkomen, raden we u echter aan om te migreren naar de nieuwe SCIM 2.0 Dropbox-integratie die ondersteuning biedt voor groepen. Als u wilt migreren naar de nieuwe Dropbox-integratie, kunt u een nieuw exemplaar van Dropbox voor het inrichten in uw Azure AD-tenant toevoegen en configureren met behulp van de onderstaande stappen. Wanneer u de nieuwe Dropbox-integratie hebt geconfigureerd, schakelt u inrichten voor de oude Dropbox-integratie uit om inrichtingsconflicten te voorkomen. Zie [Bijwerken naar de nieuwste Dropbox for Business-toepassing met behulp van Azure AD](https://help.dropbox.com/installs-integrations/third-party/update-dropbox-azure-ad-connector) voor meer gedetailleerde stappen voor het migreren naar de nieuwe Dropbox-integratie.
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).

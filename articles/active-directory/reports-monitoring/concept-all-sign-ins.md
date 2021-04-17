@@ -1,6 +1,6 @@
 ---
-title: Rapporten voor aanmeldings activiteiten Azure Active Directory-preview | Microsoft Docs
-description: Inleiding tot de rapporten voor aanmeldings activiteiten in de Azure Active Directory Portal
+title: Azure Active Directory voor aanmeldingsactiviteiten - preview-| Microsoft Docs
+description: Inleiding tot de aanmeldactiviteitenrapporten in de Azure Active Directory portal
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,43 +13,41 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 03/16/2021
+ms.date: 04/16/2021
 ms.author: markvi
 ms.reviewer: besiler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b17e7f34da1428eec219a393417b0a2a7b461078
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 781cafd9b382868d0aa4f6b77ff7338c4ee15ed2
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106552730"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107589642"
 ---
-# <a name="azure-active-directory-sign-in-activity-reports---preview"></a>Rapporten over Azure Active Directory-aanmeld activiteiten-preview
+# <a name="azure-active-directory-sign-in-activity-reports---preview"></a>Azure Active Directory voor aanmeldingsactiviteiten - preview
 
-De rapportage architectuur in Azure Active Directory (Azure AD) bestaat uit de volgende onderdelen:
+De Azure Active Directory portal biedt u toegang tot drie activiteitenlogboeken:
 
-- **Activiteit** 
-    - **Aanmeldingen** : informatie over wanneer gebruikers, toepassingen en beheerde bronnen zich aanmelden bij Azure AD en toegang krijgen tot resources.
-    - **Audit logboeken**  -  [Audit logboeken](concept-audit-logs.md) bevatten informatie over de systeem activiteit van gebruikers en groeps beheer, beheerde toepassingen en Directory-activiteiten.
-- **Beveiliging** 
-    - **Risk ante aanmeldingen** : een [Risk ante aanmelding](../identity-protection/overview-identity-protection.md) is een indicator voor een aanmeldings poging door iemand die niet de rechtmatige eigenaar van een gebruikers account is.
-    - **Gebruikers die zijn gemarkeerd voor risico** : een [Risk ante gebruiker](../identity-protection/overview-identity-protection.md) is een indicator voor een gebruikers account dat mogelijk is aangetast.
+- **Aanmeldingen: informatie** over aanmeldingen en hoe uw resources worden gebruikt door uw gebruikers.
+- **[Controle:](concept-audit-logs.md)** informatie over wijzigingen die worden toegepast op uw tenant, zoals gebruikers en groepsbeheer of updates die worden toegepast op de resources van uw tenant.
+- **[Inrichting:](concept-provisioning-logs.md)** activiteiten die worden uitgevoerd door de inrichtingsservice, zoals het maken van een groep in ServiceNow of het importeren van een gebruiker uit Workday.
 
-Het klassieke aanmeld rapport in Azure Active Directory biedt een overzicht van interactieve gebruikers aanmeldingen. Daarnaast hebt u nu toegang tot drie extra aanmeldings rapporten die nu als preview-versie beschikbaar zijn:
 
-- Niet-interactieve gebruikers aanmeldingen
+Het klassieke aanmeldingsrapport in Azure Active Directory biedt een overzicht van interactieve gebruikers aanmeldingen. Bovendien hebt u nu toegang tot drie aanvullende aanmeldingsrapporten die nu in preview zijn:
 
-- Service-Principal-aanmeldingen
+- Niet-interactieve aanmeldingen van gebruikers
 
-- Beheerde identiteiten voor Azure-resource aanmeldingen
+- Service-principal-aanmeldingen
 
-In dit artikel vindt u een overzicht van het rapport voor de aanmeldings activiteit met de preview-versie van niet-interactieve, toepassings-en beheerde identiteiten voor aanmeldingen bij Azure-resources. Zie voor meer informatie over het aanmeldings rapport zonder de preview-functies  [aanmeldings activiteiten rapporten in de Azure Active Directory Portal](concept-sign-ins.md).
+- Beheerde identiteiten voor azure-resource-aanmeldingen
+
+In dit artikel vindt u een overzicht van het rapport met aanmeldingsactiviteiten met een preview van niet-interactieve, toepassings- en beheerde identiteiten voor aanmeldingen bij Azure-resources. Zie Aanmeldactiviteitenrapporten in de Azure Active Directory portal voor meer informatie over het [aanmeldingsrapport zonder de preview-functies.](concept-sign-ins.md)
 
 
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u deze functie kunt gebruiken, moet u de antwoorden op het volgende weten:
+Voordat u deze functie kunt gaan gebruiken, moet u de volgende antwoorden weten:
 
 - Wie hebben er toegang tot de gegevens?
 
@@ -57,7 +55,7 @@ Voordat u deze functie kunt gebruiken, moet u de antwoorden op het volgende wete
 
 ### <a name="who-can-access-the-data"></a>Wie hebben er toegang tot de gegevens?
 
-- Gebruikers in de beveiligings beheerder, beveiligings lezer en rapport lezers rollen
+- Gebruikers met de rollen Beveiligingsbeheerder, Beveiligingslezer en Rapportlezer
 
 - Globale beheerders
 
@@ -65,33 +63,31 @@ Voordat u deze functie kunt gebruiken, moet u de antwoorden op het volgende wete
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Welke Azure AD-licentie heb ik nodig voor toegang tot aanmeldingsactiviteiten?
 
-Aan uw Tenant moet een Azure AD Premium-licentie zijn gekoppeld om aanmeldings activiteiten te kunnen zien. Zie [Aan de slag met Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) om uw versie van Azure Active Directory te upgraden. Het duurt enkele dagen voordat de gegevens in de rapporten worden weer gegeven nadat u een upgrade hebt uitgevoerd naar een Premium-licentie zonder gegevens activiteiten vóór de upgrade.
+Aan uw tenant moet een Azure AD Premium zijn gekoppeld om aanmeldingsactiviteiten te kunnen zien. Zie [Aan de slag met Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) om uw versie van Azure Active Directory te upgraden. Het duurt enkele dagen voordat de gegevens in de rapporten worden weer geven nadat u een upgrade naar een Premium-licentie hebt uitgevoerd zonder gegevensactiviteiten vóór de upgrade.
 
 
 
 ## <a name="sign-ins-report"></a>Aanmeldingenrapport
 
-Het rapport met aanmeldingen bevat antwoorden op de volgende vragen:
+Het aanmeldingsrapport bevat antwoorden op de volgende vragen:
 
-- Wat is het aanmeldings patroon van een gebruiker, toepassing of service?
+- Wat is het aanmeldingspatroon van een gebruiker, toepassing of service?
 - Hoeveel gebruikers, apps of services hebben zich gedurende een week aangemeld?
 - Wat is de status van deze aanmeldingen?
 
 
-Op de Blade rapport voor aanmeldingen kunt u scha kelen tussen:
+Op de rapportblade aanmeldingen kunt u schakelen tussen:
 
-- **Interactieve aanmeldingen van gebruikers** -aanmeldingen waarbij een gebruiker een verificatie factor heeft, zoals een wacht woord, een reactie via een MFA-app, een biometrische factor of een QR-code.
+- **Interactieve aanmeldingen van** gebruikers: aanmeldingen waarbij een gebruiker een verificatiefactor biedt, zoals een wachtwoord, een antwoord via een MFA-app, een biometrische factor of een QR-code.
 
-- **Niet-interactieve aanmeldingen van gebruikers** -aanmeldingen die door een client namens een gebruiker worden uitgevoerd. Voor deze aanmeldingen is geen interactie of verificatie factor van de gebruiker vereist. Bijvoorbeeld: authenticatie en autorisatie met behulp van vernieuwen en toegangs tokens waarvoor geen gebruiker referenties hoeft in te voeren.
+- **Niet-interactieve aanmeldingen van gebruikers:** aanmeldingen die worden uitgevoerd door een client namens een gebruiker. Voor deze aanmeldingen is geen interactie- of verificatiefactor van de gebruiker vereist. Bijvoorbeeld verificatie en autorisatie met behulp van vernieuwings- en toegangstokens waarvoor een gebruiker geen referenties hoeft in te voeren.
 
-- **Service-Principal-aanmeldingen** : aanmeldingen per apps en service-principals die geen gebruik maken van een gebruiker. In deze aanmeldingen biedt de app of service een referentie voor het verifiëren of openen van bronnen.
+- **Aanmeldingen voor service-principals:** aanmeldingen door apps en service-principals waarbij geen enkele gebruiker betrokken is. Bij deze aanmeldingen verstrekt de app of service namens zichzelf een referentie om resources te verifiëren of te openen.
 
-- **Beheerde identiteiten voor Azure-bronnen aanmeldingen** : aanmeldingen door Azure-resources met geheimen die worden beheerd door Azure. Zie [Wat zijn beheerde identiteiten voor Azure-resources?](../managed-identities-azure-resources/overview.md) voor meer informatie. 
-
-
-![Typen aanmeld rapporten](./media/concept-all-sign-ins/sign-ins-report-types.png)
+- **Aanmeldingen voor beheerde identiteiten voor Azure-resources:** aanmeldingen door Azure-resources met geheimen die worden beheerd door Azure. Zie Wat zijn beheerde [identiteiten voor Azure-resources? voor meer informatie.](../managed-identities-azure-resources/overview.md) 
 
 
+![Rapporttypen voor aanmeldingen](./media/concept-all-sign-ins/sign-ins-report-types.png)
 
 
 
@@ -102,17 +98,19 @@ Op de Blade rapport voor aanmeldingen kunt u scha kelen tussen:
 
 
 
-## <a name="user-sign-ins&quot;></a>Gebruikers aanmeldingen
 
-Op elk tabblad van de Blade aanmeldingen worden de onderstaande standaard kolommen weer gegeven. Sommige tabbladen hebben extra kolommen:
+
+## <a name="user-sign-ins&quot;></a>Aanmeldingen van gebruikers
+
+Elk tabblad op de blade Aanmeldingen bevat de onderstaande standaardkolommen. Sommige tabbladen hebben extra kolommen:
 
 - Aanmeldingsdatum
 
 - Aanvraag-id
 
-- Gebruikers naam of gebruikers-ID
+- Gebruikersnaam of gebruikers-id
 
-- Toepassings naam of toepassings-ID
+- Toepassingsnaam of toepassings-id
 
 - Status van de aanmelding
 
@@ -120,34 +118,35 @@ Op elk tabblad van de Blade aanmeldingen worden de onderstaande standaard kolomm
 
 
 
-### <a name=&quot;interactive-user-sign-ins&quot;></a>Interactieve gebruikers aanmeldingen
+### <a name=&quot;interactive-user-sign-ins&quot;></a>Interactieve gebruikers sign-ins
 
 
-Interactieve gebruikers aanmeldingen zijn aanmeldingen wanneer een gebruiker een verificatie factor aan Azure AD biedt of rechtstreeks met Azure AD of een helper-app werkt, zoals de app Microsoft Authenticator. De factoren die gebruikers bevatten, zijn wacht woorden, reacties op MFA-uitdagingen, biometrische factoren of QR-codes die een gebruiker aan Azure AD of een helper-app biedt.
+Interactieve aanmeldingen van gebruikers zijn aanmeldingen waarbij een gebruiker een verificatiefactor biedt aan Azure AD of rechtstreeks communiceert met Azure AD of een helper-app, zoals de Microsoft Authenticator app. De factoren die gebruikers bieden, zijn onder andere wachtwoorden, antwoorden op MFA-uitdagingen, biometrische factoren of QR-codes die een gebruiker aan Azure AD of een helper-app verstrekt.
 
 > [!NOTE]
-> Dit rapport bevat ook federatieve aanmeldingen van id-providers die federatieve zijn voor Azure AD.  
+> Dit rapport bevat ook federatiede aanmeldingen van id-providers die federatief zijn voor Azure AD.  
 
 
 
-Opmerking: het rapport interactieve gebruikers aanmelding wordt gebruikt om niet-interactieve aanmeldingen van micro soft Exchange-clients te bevatten. Hoewel deze aanmeldingen niet interactief waren, zijn ze opgenomen in het rapport interactieve gebruikers aanmeldingen voor meer zicht baarheid. Zodra het rapport voor niet-interactieve gebruikers aanmeldingen in november 2020 een open bare preview heeft ingevoerd, zijn die niet-interactieve gebeurtenis logboeken naar het niet-interactieve gebruikers aanmeld rapport verplaatst voor een grotere nauw keurigheid. 
+> [!NOTE] 
+> Het rapport interactieve aanmeldingen van gebruikers bevat een aantal niet-interactieve aanmeldingen van Microsoft Exchange-clients. Hoewel deze aanmeldingen niet-interactief waren, zijn ze opgenomen in het rapport interactieve gebruikers-aanmeldingen voor meer zichtbaarheid. Zodra het rapport voor niet-interactieve aanmeldingen van gebruikers in november 2020 openbaar werd weergegeven, werden deze niet-interactieve aanmeldingsgebeurtenislogboeken voor een grotere nauwkeurigheid verplaatst naar het niet-interactieve aanmeldingsrapport voor gebruikers. 
 
 
-**Rapport grootte:** klein <br> 
-**Vindt**
+**Rapportgrootte:** klein <br> 
+**Voorbeelden:**
 
-- Een gebruiker geeft gebruikers naam en wacht woord op in het aanmeldings scherm van Azure AD.
+- Een gebruiker geeft de gebruikersnaam en het wachtwoord op in het aanmeldingsscherm van Azure AD.
 
-- Een gebruiker geeft een SMS MFA-uitdaging door.
+- Een gebruiker doorstaat een SMS MFA-uitdaging.
 
-- Een gebruiker beschikt over biometrische bewegingen om hun Windows-PC te ontgrendelen met Windows hello voor bedrijven.
+- Een gebruiker biedt een biometrische beweging om zijn Windows-pc te ontgrendelen met Windows Hello voor Bedrijven.
 
-- Een gebruiker is federatieve naar Azure AD met een AD FS SAML-verklaring.
+- Een gebruiker wordt ge federeerd naar Azure AD met een AD FS SAML-asserty.
 
 
-Naast de standaard velden wordt in het rapport interactieve aanmeldingen ook het volgende weer gegeven: 
+Naast de standaardvelden bevat het rapport interactieve aanmeldingen ook het volgende: 
 
-- De aanmeldings locatie
+- De aanmeldingslocatie
 
 - Of voorwaardelijke toegang is toegepast
 
@@ -155,43 +154,43 @@ Naast de standaard velden wordt in het rapport interactieve aanmeldingen ook het
 
 U kunt de lijstweergave aanpassen door te klikken op **Kolommen** op de werkbalk.
 
-![Interactieve aanmeldings kolommen van gebruikers](./media/concept-all-sign-ins/columns-interactive.png &quot;Interactieve aanmeldings kolommen van gebruikers")
+![Interactieve aanmeldingskolommen voor gebruikers](./media/concept-all-sign-ins/columns-interactive.png &quot;Interactieve aanmeldingskolommen van gebruikers")
 
 
 
 
 
-Door de weer gave aan te passen kunt u extra velden weer geven of velden verwijderen die al worden weer gegeven.
+Door de weergave aan te passen, kunt u aanvullende velden weergeven of velden verwijderen die al worden weergegeven.
 
 ![Alle interactieve kolommen](./media/concept-all-sign-ins/all-interactive-columns.png)
 
 
-Selecteer een item in de lijst weergave voor meer gedetailleerde informatie over de gerelateerde aanmelding.
+Selecteer een item in de lijstweergave voor meer gedetailleerde informatie over de gerelateerde aanmelding.
 
-![Aanmeldings activiteit](./media/concept-all-sign-ins/interactive-user-sign-in-details.png "Interactieve gebruikers aanmeldingen")
-
-
-
-### <a name="non-interactive-user-sign-ins"></a>Niet-interactieve gebruikers aanmeldingen
-
-Niet-interactieve gebruikers aanmeldingen zijn aanmeldingen die zijn uitgevoerd door een client-app of besturingssysteem onderdelen namens een gebruiker. Net als bij interactieve aanmeldingen voor gebruikers worden deze aanmeldingen uitgevoerd namens een gebruiker. In tegens telling tot interactieve gebruikers aanmeldingen, is de gebruiker niet verplicht om een verificatie factor op te geven. In plaats daarvan gebruikt het apparaat of de client-app een token of code voor het verifiëren of openen van een resource namens een gebruiker. Over het algemeen worden deze aanmeldingen op de achtergrond van de activiteit van de gebruiker door de gebruiker waargenomen.
+![Aanmeldingsactiviteit](./media/concept-all-sign-ins/interactive-user-sign-in-details.png "Interactieve aanmeldingen van gebruikers")
 
 
-**Rapport grootte:** Lange <br>
+
+### <a name="non-interactive-user-sign-ins"></a>Niet-interactieve aanmeldingen van gebruikers
+
+Niet-interactieve aanmeldingen van gebruikers zijn aanmeldingen die namens een gebruiker zijn uitgevoerd door een client-app of onderdelen van het besturingssysteem. Net als interactieve aanmeldingen van gebruikers worden deze aanmeldingen namens een gebruiker uitgevoerd. In tegenstelling tot interactieve aanmeldingen van gebruikers hoeft de gebruiker voor deze aanmeldingen geen verificatiefactor op te geven. In plaats daarvan gebruikt het apparaat of de client-app een token of code om namens een gebruiker een resource te verifiëren of te openen. Over het algemeen zal de gebruiker deze aanmeldingen zien als plaatsvinden op de achtergrond van de activiteit van de gebruiker.
+
+
+**Rapportgrootte:** Grote <br>
 **Voorbeelden:** 
 
-- Een client-app gebruikt een OAuth 2,0-vernieuwings token om een toegangs token op te halen.
+- Een client-app gebruikt een OAuth 2.0-vernieuwings token om een toegangsteken op te halen.
 
-- Een client gebruikt een OAuth 2,0-autorisatie code voor het ophalen van een toegangs token en een vernieuwings token.
+- Een client gebruikt een OAuth 2.0-autorisatiecode om een toegangsteken op te halen en het token te vernieuwen.
 
-- Een gebruiker voert eenmalige aanmelding (SSO) uit voor een web-of Windows-app op een aan Azure AD gekoppelde PC.
+- Een gebruiker voert eenmalige aanmelding (SSO) uit bij een web- of Windows-app op een pc die is verbonden met Azure AD.
 
-- Een gebruiker meldt zich aan bij een tweede Microsoft Office-app terwijl ze een sessie op een mobiel apparaat hebben met FOCI (familie of client-Id's).
-
-
+- Een gebruiker meldt zich aan bij een tweede Microsoft Office app terwijl deze een sessie op een mobiel apparaat heeft met behulp van FOCI (Family of Client-IDs).
 
 
-Naast de standaard velden wordt in het rapport niet-interactieve aanmeldingen ook het volgende weer gegeven: 
+
+
+Naast de standaardvelden bevat het rapport niet-interactieve aanmeldingen ook het volgende: 
 
 - Resource-id
 
@@ -200,12 +199,12 @@ Naast de standaard velden wordt in het rapport niet-interactieve aanmeldingen oo
 
 
 
-U kunt de velden die in dit rapport worden weer gegeven, niet aanpassen.
+U kunt de velden die in dit rapport worden weergegeven niet aanpassen.
 
 
 ![Uitgeschakelde kolommen](./media/concept-all-sign-ins/disabled-columns.png "Uitgeschakelde kolommen")
 
-Om de samen vatting van de gegevens gemakkelijker te maken, worden niet-interactieve aanmeldings gebeurtenissen gegroepeerd. Clients maken vaak veel niet-interactieve aanmeldingen namens dezelfde gebruiker binnen een korte periode, die dezelfde kenmerken delen, behalve het tijdstip waarop de aanmelding werd geprobeerd. Een client kan bijvoorbeeld één keer per uur een toegangs token ontvangen namens een gebruiker. Als de gebruiker of client de status niet wijzigt, zijn het IP-adres, de bron en alle andere gegevens hetzelfde voor elke toegangs token aanvraag. Wanneer Azure AD meerdere aanmeldingen registreert die identiek zijn, zijn de aanmeldingen van dezelfde entiteit en worden ze samengevoegd tot één rij. Een rij met meerdere identieke aanmeldingen (met uitzonde ring van datum en tijd) heeft een waarde die groter is dan 1 in de kolom # aanmeldingen. U kunt de rij uitbreiden om alle verschillende aanmeldingen en hun verschillende tijds tempels weer te geven. Aanmeldingen worden in de niet-interactieve gebruikers geaggregeerd wanneer de volgende gegevens overeenkomen:
+Om het gemakkelijker te maken om de gegevens te verwerken, worden niet-interactieve aanmeldingsgebeurtenissen gegroepeerd. Clients maken vaak veel niet-interactieve aanmeldingen namens dezelfde gebruiker in een korte periode, die dezelfde kenmerken delen, met uitzondering van de tijd dat de aanmelding is geprobeerd. Een client kan bijvoorbeeld één keer per uur een toegangs token namens een gebruiker krijgen. Als de status van de gebruiker of client niet wordt gewijzigd, zijn het IP-adres, de resource en alle andere informatie hetzelfde voor elke aanvraag voor toegangs token. Wanneer Azure AD meerdere aanmeldingen registreert die identiek zijn dan tijd en datum, worden deze aanmeldingen vanuit dezelfde entiteit samengevoegd in één rij. Een rij met meerdere identieke aanmeldingen (met uitzondering van de datum en tijd die is uitgegeven) heeft een waarde die groter is dan 1 in de kolom # aanmeldingen. U kunt de rij uitv vouwen om alle verschillende aanmeldingen en de verschillende tijdstempels te zien. Aanmeldingen worden geaggregeerd in de niet-interactieve gebruikers wanneer de volgende gegevens overeenkomt:
 
 
 - Toepassing
@@ -221,36 +220,36 @@ Om de samen vatting van de gegevens gemakkelijker te maken, worden niet-interact
 
 U kunt:
 
-- Vouw een knoop punt uit om de afzonderlijke items van een groep weer te geven.  
+- Vouw een knooppunt uit om de afzonderlijke items van een groep te bekijken.  
 
-- Klik op een afzonderlijk item om alle details te bekijken 
-
-
-![Details van niet-interactieve gebruikers aanmelding](./media/concept-all-sign-ins/non-interactive-sign-ins-details.png)
+- Klik op een afzonderlijk item om alle details weer te geven 
 
 
+![Niet-interactieve aanmeldingsgegevens van gebruikers](./media/concept-all-sign-ins/non-interactive-sign-ins-details.png)
 
 
-## <a name="service-principal-sign-ins"></a>Service-Principal-aanmeldingen
-
-In tegens telling tot interactieve en niet-interactieve gebruikers aanmeldingen, is voor Service-Principal-aanmeldingen geen gebruiker vereist. In plaats daarvan zijn ze aanmeldingen via een niet-gebruikers account, zoals apps of service-principals (met uitzonde ring van beheerde identiteits aanmelding, die alleen zijn opgenomen in het rapport beheerde identiteits registraties). In deze aanmeldingen biedt de app of service een eigen referentie, zoals een certificaat of app-geheim voor het verifiëren of openen van bronnen.
 
 
-**Rapport grootte:** Lange <br>
+## <a name="service-principal-sign-ins"></a>Aanmeldingen voor service-principals
+
+In tegenstelling tot interactieve en niet-interactieve aanmeldingen van gebruikers hebben aanmeldingen van service-principals geen betrekking op een gebruiker. In plaats daarvan zijn ze aanmeldingen door een niet-gebruikersaccount, zoals apps of service-principals (behalve aanmelding bij beheerde identiteiten, die alleen zijn opgenomen in het rapport aanmeldingen voor beheerde identiteiten). Bij deze aanmeldingen biedt de app of service zijn eigen referenties, zoals een certificaat of app-geheim voor verificatie of toegang tot resources.
+
+
+**Rapportgrootte:** Grote <br>
 **Voorbeelden:**
 
-- Een Service-Principal gebruikt een certificaat om de Microsoft Graph te verifiëren en te openen. 
+- Een service-principal gebruikt een certificaat voor verificatie en toegang tot Microsoft Graph. 
 
-- Een toepassing maakt gebruik van een client geheim om te verifiëren in de gegevens stroom van de OAuth-client. 
+- Een toepassing gebruikt een clientgeheim om te verifiëren in de OAuth-clientreferentiestroom. 
 
 
-Dit rapport bevat een standaard lijst weergave waarin het volgende wordt weer gegeven:
+Dit rapport heeft een standaardlijstweergave met het volgende:
 
 - Aanmeldingsdatum
 
 - Aanvraag-id
 
-- Principal-naam of-ID van service
+- Naam of id van service-principal
 
 - Status
 
@@ -262,48 +261,48 @@ Dit rapport bevat een standaard lijst weergave waarin het volgende wordt weer ge
 
 - Aantal aanmeldingen
 
-U kunt de velden die in dit rapport worden weer gegeven, niet aanpassen.
+U kunt de velden die in dit rapport worden weergegeven niet aanpassen.
 
 ![Uitgeschakelde kolommen](./media/concept-all-sign-ins/disabled-columns.png "Uitgeschakelde kolommen")
 
-Voor het gemakkelijker maken van de samen vatting van de gegevens in de logboeken van de Service-Principal, worden aanmeldings gebeurtenissen voor de Service-Principal gegroepeerd. Aanmeldingen van dezelfde entiteit onder dezelfde voor waarden worden samengevoegd tot één rij. U kunt de rij uitbreiden om alle verschillende aanmeldingen en hun verschillende tijds tempels weer te geven. Aanmeldingen worden in het Service-Principal-rapport geaggregeerd wanneer de volgende gegevens overeenkomen:
+Om het eenvoudiger te maken om de gegevens in de aanmeldingslogboeken van de service-principal te verwerken, worden aanmeldingsgebeurtenissen van de service-principal gegroepeerd. Aanmeldingen van dezelfde entiteit onder dezelfde voorwaarden worden geaggregeerd in één rij. U kunt de rij uitv vouwen om alle verschillende aanmeldingen en de verschillende tijdstempels te zien. Aanmeldingen worden geaggregeerd in het service-principalrapport wanneer de volgende gegevens overeenkomt:
 
-- Principal-naam of-ID van service
+- Naam of id van service-principal
 
 - Status
 
 - IP-adres
 
-- Resource naam of-ID
+- Resourcenaam of -id
 
 U kunt:
 
-- Vouw een knoop punt uit om de afzonderlijke items van een groep weer te geven.  
+- Vouw een knooppunt uit om de afzonderlijke items van een groep te bekijken.  
 
 - Klik op een afzonderlijk item om alle details te bekijken 
 
 
-![Kolom Details](./media/concept-all-sign-ins/service-principals-sign-ins-view.png "Kolom Details")
+![Kolomdetails](./media/concept-all-sign-ins/service-principals-sign-ins-view.png "Kolomdetails")
 
 
 
 
-## <a name="managed-identity-for-azure-resources-sign-ins"></a>Beheerde identiteit voor Azure-bronnen aanmeldingen 
+## <a name="managed-identity-for-azure-resources-sign-ins"></a>Aanmeldingen voor beheerde identiteit voor Azure-resources 
 
-Beheerde identiteit voor Azure-bronnen aanmeldingen zijn aanmeldingen die zijn uitgevoerd door resources die hun geheimen hebben beheerd door Azure om het beheer van referenties te vereenvoudigen.
+Aanmeldingen voor beheerde identiteit voor Azure-resources zijn aanmeldingen die zijn uitgevoerd door resources met hun geheimen die worden beheerd door Azure om het referentiebeheer te vereenvoudigen.
 
-**Rapport grootte:** Geringe <br> 
-**Vindt**
+**Rapportgrootte:** Kleine <br> 
+**Voorbeelden:**
 
-Een virtuele machine met beheerde referenties maakt gebruik van Azure AD om een toegangs token op te halen.   
-
-
-Dit rapport bevat een standaard lijst weergave waarin het volgende wordt weer gegeven:
+Een VM met beheerde referenties gebruikt Azure AD om een toegangs token op te halen.   
 
 
-- ID beheerde identiteit
+Dit rapport heeft een standaardlijstweergave die het volgende laat zien:
 
-- Naam beheerde identiteit
+
+- Id van beheerde identiteit
+
+- Naam van beheerde identiteit
 
 - Resource
 
@@ -311,121 +310,133 @@ Dit rapport bevat een standaard lijst weergave waarin het volgende wordt weer ge
 
 - Aantal gegroepeerde aanmeldingen
 
-U kunt de velden die in dit rapport worden weer gegeven, niet aanpassen.
+U kunt de velden die in dit rapport worden weergegeven niet aanpassen.
 
-Voor het gemakkelijker maken van de samen vatting van de gegevens, beheerde identiteiten voor Azure-bronnen aanmeld logboeken, worden niet-interactieve aanmeld gebeurtenissen gegroepeerd. Aanmeldingen van dezelfde entiteit worden samengevoegd tot één rij. U kunt de rij uitbreiden om alle verschillende aanmeldingen en hun verschillende tijds tempels weer te geven. Aanmeldingen worden in het rapport beheerde identiteiten geaggregeerd wanneer alle volgende gegevens overeenkomen:
+Om het eenvoudiger te maken om de gegevens te verwerken, worden de aanmeldingslogboeken van beheerde identiteiten voor Azure-resources gegroepeerd, en worden niet-interactieve aanmeldingsgebeurtenissen gegroepeerd. Aanmeldingen van dezelfde entiteit worden geaggregeerd in één rij. U kunt de rij uitv vouwen om alle verschillende aanmeldingen en de verschillende tijdstempels te zien. Aanmeldingen worden geaggregeerd in het rapport met beheerde identiteiten wanneer alle volgende gegevens overeenkomt:
 
-- Naam of ID van beheerde identiteit
+- Naam of id van beheerde identiteit
 
 - Status
 
 - IP-adres
 
-- Resource naam of-ID
+- Resourcenaam of -id
 
-Selecteer een item in de lijst weergave om alle aanmeldingen weer te geven die zijn gegroepeerd onder een knoop punt.
+Selecteer een item in de lijstweergave om alle aanmeldingen weer te geven die onder een knooppunt zijn gegroepeerd.
 
 Selecteer een gegroepeerd item om alle details van de aanmelding weer te geven. 
 
 
+## <a name="sign-in-error-code"></a>Foutcode voor aanmelden
+
+Als een aanmelding is mislukt, kunt u meer informatie krijgen over de reden in de sectie **Basisgegevens** van het gerelateerde logboekitem. 
+
+![Schermopname van een gedetailleerde informatieweergave.](./media/concept-all-sign-ins/error-code.png)
+ 
+Hoewel het logboekitem u een foutreden geeft, zijn er gevallen waarin u mogelijk meer informatie krijgt met behulp van het hulpprogramma voor het opschonen van [aanmeldingsfouten.](https://login.microsoftonline.com/error) Indien beschikbaar biedt dit hulpprogramma u bijvoorbeeld herstelstappen.  
+
+![Hulpprogramma voor het opschonen van foutcode](./media/concept-all-sign-ins/error-code-lookup-tool.png)
+
+
+
 ## <a name="filter-sign-in-activities"></a>Aanmeldactiviteiten filteren
 
-Door een filter in te stellen, kunt u het bereik van de geretourneerde aanmeldings gegevens beperken. Azure AD biedt u een breed scala aan extra filters die u kunt instellen. Wanneer u het filter instelt, moet u altijd speciale aandacht schenken aan uw geconfigureerde **datum** bereik filter. Een correct datum bereik filter zorgt ervoor dat Azure AD alleen de gegevens retourneert die u echt bevalt.     
+Door een filter in te stellen, kunt u het bereik van de geretourneerde aanmeldingsgegevens beperken. Azure AD biedt u een breed scala aan extra filters die u kunt instellen. Bij het instellen van uw filter moet u  altijd speciale aandacht besteden aan het geconfigureerde datumbereikfilter. Een juist datumbereikfilter zorgt ervoor dat Azure AD alleen de gegevens retourneert die u echt belangrijk vindt.     
 
-Met het filter **datum** bereik kunt u een tijds bestek voor de geretourneerde gegevens definiëren.
+Met **het filter** Datumbereik kunt u een tijdsbestek definiëren voor de geretourneerde gegevens.
 Mogelijke waarden zijn:
 
 - Eén maand
 
 - Zeven dagen
 
-- Eenentwintig uur
+- 24 uur
 
 - Aangepast
 
-![Filter datum bereik](./media/concept-all-sign-ins/date-range-filter.png)
+![Datumbereikfilter](./media/concept-all-sign-ins/date-range-filter.png)
 
 
 
 
 
-### <a name="filter-user-sign-ins"></a>Gebruikers aanmeldingen filteren
+### <a name="filter-user-sign-ins"></a>Aanmeldingen van gebruikers filteren
 
-Het filter voor interactieve en niet-interactieve aanmeldingen is hetzelfde. Als gevolg hiervan wordt het filter dat u voor interactieve aanmeldingen hebt geconfigureerd, persistent gemaakt voor niet-interactieve aanmeldingen en omgekeerd. 
-
-
+Het filter voor interactieve en niet-interactieve aanmeldingen is hetzelfde. Daarom wordt het filter dat u hebt geconfigureerd voor interactieve aanmeldingen, persistent voor niet-interactieve aanmeldingen en vice versa. 
 
 
 
 
-## <a name="access-the-new-sign-in-activity-reports"></a>De rapporten van de nieuwe aanmeldings activiteiten openen 
-
-Het activiteiten rapport voor aanmeldingen in de Azure Portal biedt u een eenvoudige methode om het preview-rapport in of uit te scha kelen. Als u de preview-rapporten hebt ingeschakeld, krijgt u een nieuw menu dat u toegang geeft tot alle typen registratie-activiteiten rapporten.     
 
 
-Om toegang te krijgen tot de nieuwe aanmeldings rapporten met niet-interactieve en toepassings aanmeldingen: 
+## <a name="access-the-new-sign-in-activity-reports"></a>Toegang tot de nieuwe rapporten voor aanmeldingsactiviteiten 
+
+Het activiteitenrapport voor aanmeldingen in de Azure Portal biedt u een eenvoudige methode om het voorbeeldrapport in of uit te schakelen. Als u de preview-rapporten hebt ingeschakeld, krijgt u een nieuw menu dat u toegang geeft tot alle typen aanmeldactiviteitenrapporten.     
+
+
+Voor toegang tot de nieuwe aanmeldrapporten met niet-interactieve aanmeldingen en toepassings-aanmeldingen: 
 
 1. Selecteer **Azure Active Directory** in de [Azure-portal](https://portal.azure.com).
 
     ![Selecteer Azure AD](./media/concept-all-sign-ins/azure-services.png)
 
-2. Klik in de sectie **bewaking** op **aanmeldingen**.
+2. Klik in **de** sectie Bewaking **op Aanmeldingen.**
 
     ![Aanmeldingen selecteren](./media/concept-all-sign-ins/sign-ins.png)
 
-3. Klik op de **Preview** -balk.
+3. Klik op de **balk Preview.**
 
-    ![Nieuwe weer gave inschakelen](./media/concept-all-sign-ins/enable-new-preview.png)
+    ![Nieuwe weergave inschakelen](./media/concept-all-sign-ins/enable-new-preview.png)
 
-4. Als u wilt terugkeren naar de standaard weergave, klikt u nogmaals op de **Preview** -balk. 
+4. Als u wilt overschakelen naar de standaardweergave, klikt u nogmaals op **de balk Preview.** 
 
-    ![Klassieke weer gave herstellen](./media/concept-all-sign-ins/switch-back.png)
-
-
+    ![Klassieke weergave herstellen](./media/concept-all-sign-ins/switch-back.png)
 
 
 
 
 
-## <a name="download-sign-in-activity-reports"></a>Rapporten over aanmeld activiteiten downloaden
 
-Wanneer u een rapport met aanmeld activiteiten downloadt, is het volgende waar:
 
-- U kunt het aanmeldings rapport downloaden als CSV-of JSON-bestand.
+## <a name="download-sign-in-activity-reports"></a>Aanmeldactiviteitenrapporten downloaden
 
-- U kunt Maxi maal 100-K-records downloaden. Als u meer gegevens wilt downloaden, gebruikt u de rapportage-API.
+Wanneer u een rapport voor aanmeldingsactiviteiten downloadt, is het volgende waar:
 
-- Uw down load is gebaseerd op de filters electie die u hebt gemaakt.
+- U kunt het aanmeldingsrapport downloaden als CSV- of JSON-bestand.
 
-- Het aantal records dat u kunt downloaden, is beperkt door het [Bewaar beleid](reference-reports-data-retention.md)voor de Azure Active Directory-rapport. 
+- U kunt maximaal 100.000 records downloaden. Als u meer gegevens wilt downloaden, gebruikt u de rapportage-API.
+
+- Uw download is gebaseerd op de filterselectie die u hebt gemaakt.
+
+- Het aantal records dat u kunt downloaden, wordt beperkt door het [Azure Active Directory van het rapport.](reference-reports-data-retention.md) 
 
 
 ![Rapporten downloaden](./media/concept-all-sign-ins/download-reports.png "Rapporten downloaden")
 
 
-Elke CSV-down load bestaat uit zes verschillende bestanden:
+Elke CSV-download bestaat uit zes verschillende bestanden:
 
 - Interactieve aanmeldingen
 
-- Verificatie gegevens van de interactieve aanmeldingen
+- Auth details of the interactive sign-ins (Details van de interactieve aanmeldingen controleren)
 
 - Niet-interactieve aanmeldingen
 
-- Verificatie gegevens van de niet-interactieve aanmeldingen
+- Auth details of the non-interactive sign-ins (Details van de niet-interactieve aanmeldingen controleren)
 
-- Service-Principal-aanmeldingen
+- Service-principal-aanmeldingen
 
-- Beheerde identiteit voor Azure-bronnen aanmeldingen
+- Aanmeldingen voor beheerde identiteit voor Azure-resources
 
-Elke JSON-down load bestaat uit vier verschillende bestanden:
+Elke JSON-download bestaat uit vier verschillende bestanden:
 
-- Interactieve aanmeldingen (inclusief verificatie gegevens)
+- Interactieve aanmeldingen (inclusief auth-details)
 
-- Niet-interactieve aanmeldingen (inclusief verificatie gegevens)
+- Niet-interactieve aanmeldingen (inclusief auth-details)
 
-- Service-Principal-aanmeldingen
+- Service-principal-aanmeldingen
 
-- Beheerde identiteit voor Azure-bronnen aanmeldingen
+- Aanmeldingen voor beheerde identiteit voor Azure-resources
 
 ![Bestanden downloaden](./media/concept-all-sign-ins/download-files.png "Bestanden downloaden")
 
@@ -434,6 +445,6 @@ Elke JSON-down load bestaat uit vier verschillende bestanden:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Fout codes voor aanmeldings activiteiten rapport](reference-sign-ins-error-codes.md)
-* [Beleid voor het bewaren van Azure AD-gegevens](reference-reports-data-retention.md)
-* [Vertragingen van Azure AD-rapporten](reference-reports-latencies.md)
+* [Foutcodes voor aanmeldactiviteitenrapport](reference-sign-ins-error-codes.md)
+* [Azure AD-beleid voor gegevensretentie](reference-reports-data-retention.md)
+* [Latentie van Azure AD-rapport](reference-reports-latencies.md)

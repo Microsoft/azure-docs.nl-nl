@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 9443c6fbaca16cf075745972a1655a2b4b2ea43c
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: b240806b934cae54810cf9dfe1a6c1f369cede7e
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106077530"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107587507"
 ---
 # <a name="tutorial-create-and-import-glossary-terms-in-azure-purview-preview"></a>Zelfstudie: Woordenlijsttermen maken en importeren in Azure Purview (preview)
 
@@ -96,6 +96,9 @@ In deze procedure importeert u de termen uit de woordenlijst via een CSV-bestand
 1. Houd er rekening mee dat u het bestand met de naam *StarterKitTerms.csv* hebt opgeslagen. Dit bestand maakt deel uit van de starterskit die u hebt gedownload in [deel 1 van deze reeks zelfstudies](tutorial-scan-data.md).
 
    Dit bestand bevat een lijst met vooraf ingevulde termen die relevant zijn voor uw gegevensdomein.
+
+ > [!Important]
+   > Het e-mailadres voor Des en Experts in de . Het CSV-bestand moet het primaire adres zijn van de gebruiker uit de AAD-groep. Alternatieve e-user principal name en niet-AAD-e-mailberichten worden nog niet ondersteund. U moet de e-mailadressen vervangen door het primaire AAD-adres van uw organisatie.
 
 1. Als u wilt gaan importeren, selecteert u **Woordenlijst** en vervolgens **Termen importeren**.
 

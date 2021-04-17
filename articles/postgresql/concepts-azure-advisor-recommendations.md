@@ -6,12 +6,12 @@ ms.author: alau
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 04/08/2021
-ms.openlocfilehash: 9d736fe77e41b80abaf76d13e918b7d51bde09c0
-ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.openlocfilehash: a44f808daf32a1175035005067dfbb5edd664ef6
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107250990"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107310050"
 ---
 # <a name="azure-advisor-for-postgresql"></a>Azure Advisor voor PostgreSQL
 Meer informatie over hoe Azure Advisor op Azure Database for PostgreSQL wordt toegepast en antwoorden krijgt op veelgestelde vragen.

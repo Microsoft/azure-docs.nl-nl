@@ -16,6 +16,8 @@ items:
         href: create-purview-dotnet.md
       - name: Een Purview-account maken - Python
         href: create-purview-python.md
+      - name: Kafka-meldingen beheren - .NET
+        href: manage-kafka-dotnet.md
   - name: Zelfstudies
     items:
       - name: Starterskit

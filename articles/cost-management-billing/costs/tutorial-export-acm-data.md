@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.custom: seodec18, devx-track-azurepowershell
-ms.openlocfilehash: a386b214c4372c9d8de729a8b6bed4aac9edd9f3
-ms.sourcegitcommit: ed7376d919a66edcba3566efdee4bc3351c57eda
+ms.custom: seodec18, devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: af050ae95b4ab161028229299a8de5ed3426430b
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105043458"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107482830"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Zelfstudie: Geëxporteerde gegevens maken en beheren
 
@@ -35,9 +35,9 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 Exporteren van gegevens is beschikbaar voor verschillende typen Azure-accounts, waaronder klanten met een [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) en een [Microsoft-klantovereenkomst](get-started-partners.md). Zie voor de volledige lijst met ondersteunde accounttypen [Gegevens van Azure Cost Management begrijpen](understand-cost-mgt-data.md). In abonnementen worden de volgende Azure-machtigingen, of bereiken, ondersteund voor het exporteren van gegevens door gebruikers en groepen. Zie [Bereiken begrijpen en gebruiken](understand-work-scopes.md) voor meer informatie over bereiken
 
-- Eigenaar: eigenaren kunnen geplande exports voor een abonnement instellen, wijzigen en verwijderen.
-- Inzender: inzenders kunnen hun eigen geplande exports instellen, wijzigen en verwijderen. Zij kunnen bovendien de naam wijzigen van geplande exports die door anderen zijn ingesteld.
-- Lezer: lezers kunnen exports plannen waarvoor ze zijn gemachtigd.
+- Eigenaar â€" Kan geplande exports voor een abonnement maken, wijzigen of verwijderen.
+- Inzender â€" Kan hun eigen geplande exports maken, wijzigen of verwijderen. Zij kunnen bovendien de naam wijzigen van geplande exports die door anderen zijn ingesteld.
+- Lezer â€" Kan exports plannen waar ze machtigingen voor hebben.
 
 Voor Azure-opslagaccounts:
 - Voor het wijzigen van een geconfigureerd opslagaccount zijn schrijfmachtigingen vereist, ongeacht de machtiging voor het exporteren.
@@ -63,10 +63,10 @@ Als u een gegevensexport wilt maken of weergeven, of een export wilt plannen, op
     - **Werkelijke kosten (gebruik en aankopen)** : selecteer dit om standaardgebruik en -aankopen te exporteren
     - **Afgeschreven kosten (gebruik en aankopen)** : selecteer dit om de afgeschreven kosten te exporteren voor aankopen zoals Azure-reserveringen
 1. Maak een selectie voor **Exporttype**:
-    - **Dagelijkse export van kosten voor maand tot heden**: biedt dagelijks een nieuw exportbestand voor uw kosten van maand tot heden. De meest recente gegevens worden uit de vorige dagelijkse exports samengevoegd.
-    - **Wekelijkse export van de kosten voor de afgelopen zeven dagen**: maakt een wekelijkse export van uw kosten in de afgelopen zeven dagen, vanaf de geselecteerde startdatum van de export.
-    - **Maandelijkse export van de kosten van de afgelopen maand**: biedt een export van uw kosten van de afgelopen maand, vergeleken met de maand waarin u de export maakt. Vanaf dit moment voert de planning een export uit op de vijfde dag van elke nieuwe maand, met hierin uw kosten voor de vorige maand.
-    - **Eenmalige export**: stelt u in staat een datumbereik te kiezen voor historische gegevens om te exporteren naar Azure-blobopslag. U kunt de historische kosten voor maximaal 90 dagen exporteren, vanaf de door u gekozen dag. Deze export wordt onmiddellijk uitgevoerd en is binnen twee uur beschikbaar in uw opslagaccount.
+    - **Dagelijkse export van kosten voor** maand tot heden â€" Biedt dagelijks een nieuw exportbestand voor uw kosten van maand tot heden. De meest recente gegevens worden uit de vorige dagelijkse exports samengevoegd.
+    - **Wekelijkse export van kosten voor de afgelopen zeven** dagen' Maakt een wekelijkse export van uw kosten voor de afgelopen zeven dagen vanaf de geselecteerde begindatum van uw export.
+    - **Maandelijkse export van de** kosten van de afgelopen maand â€" Biedt u een export van de kosten van de afgelopen maand vergeleken met de huidige maand die u de export maakt. Vanaf dit moment voert de planning een export uit op de vijfde dag van elke nieuwe maand, met hierin uw kosten voor de vorige maand.
+    - **One-time export** â€" Hiermee kunt u een datumbereik kiezen voor historische gegevens die u wilt exporteren naar Azure Blob Storage. U kunt de historische kosten voor maximaal 90 dagen exporteren, vanaf de door u gekozen dag. Deze export wordt onmiddellijk uitgevoerd en is binnen twee uur beschikbaar in uw opslagaccount.
         Afhankelijk van uw exporttype kiest u een begindatum of een datum **Van** - **Tot en met**.
 1. Geef het abonnement voor uw Azure opslagaccount op, en selecteer vervolgens een resourcegroep of maak een nieuwe.
 1. Selecteer de naam van het opslagaccount of maak een nieuwe.
@@ -81,7 +81,7 @@ Het kan 12 tot 24 uur duren voordat de export voor het eerst wordt uitgevoerd. H
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Wanneer u een export programmatisch maakt, moet u de resource provider hand matig registreren `Microsoft.CostManagementExports` bij het abonnement waar het opslag account zich bevindt. Registratie gebeurt automatisch wanneer u de export maakt met behulp van de Azure Portal. Zie [resource provider registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor meer informatie over het registreren van resource providers.
+Wanneer u een exportprogramma maakt, moet u de resourceprovider handmatig registreren bij het abonnement `Microsoft.CostManagementExports` waarin het opslagaccount zich bevindt. Registratie vindt automatisch plaats wanneer u de export maakt met behulp van de Azure Portal. Zie Resourceprovider registreren voor meer informatie over het registreren [van resourceproviders.](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)
 
 Begin door de omgeving voor te bereiden op de Azure CLI:
 
@@ -151,7 +151,7 @@ az costmanagement export delete --name DemoExport --scope "subscriptions/0000000
 
 ### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-Wanneer u een export programmatisch maakt, moet u de resource provider hand matig registreren `Microsoft.CostManagementExports` bij het abonnement waar het opslag account zich bevindt. Registratie gebeurt automatisch wanneer u de export maakt met behulp van de Azure Portal. Zie [resource provider registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor meer informatie over het registreren van resource providers.
+Wanneer u een exportprogramma maakt, moet u de resourceprovider handmatig registreren bij het abonnement `Microsoft.CostManagementExports` waarin het opslagaccount zich bevindt. Registratie vindt automatisch plaats wanneer u de export maakt met behulp van de Azure Portal. Zie Resourceprovider registreren voor meer informatie over het registreren [van resourceproviders.](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)
 
 Begin door de omgeving voor te bereiden op Azure PowerShell:
 

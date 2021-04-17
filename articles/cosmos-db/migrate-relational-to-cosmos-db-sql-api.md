@@ -1,34 +1,34 @@
 ---
-title: Een-op-weinig relationele gegevens migreren naar Azure Cosmos DB SQL-API
-description: Meer informatie over het verwerken van complexe gegevens migratie voor een-op-een-relatie in de SQL-API
+title: Een-op-weinig relationele gegevens migreren naar Azure Cosmos DB SQL API
+description: Meer informatie over het verwerken van complexe gegevensmigratie voor een-op-weinig-relaties in SQL API
 author: TheovanKraay
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 12/12/2019
 ms.author: thvankra
-ms.openlocfilehash: 53a3317f38cc22ffa3745f5f0e58cc01a54b825c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7dbb162749e0a2f84140b8e9394934198d096eac
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93096747"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107589615"
 ---
-# <a name="migrate-one-to-few-relational-data-into-azure-cosmos-db-sql-api-account"></a>Een-op-weinig relationele gegevens migreren naar Azure Cosmos DB SQL-API-account
+# <a name="migrate-one-to-few-relational-data-into-azure-cosmos-db-sql-api-account"></a>Een-op-weinig relationele gegevens migreren naar Azure Cosmos DB SQL API-account
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Als u wilt migreren van een relationele data base naar Azure Cosmos DB SQL-API, kan het nodig zijn om wijzigingen aan te brengen in het gegevens model voor Optima Lise ring.
+Als u wilt migreren van een relationele database naar Azure Cosmos DB SQL API, kan het nodig zijn om wijzigingen aan te brengen in het gegevensmodel voor optimalisatie.
 
-Een veelvoorkomende trans formatie is het denormaliseren van gegevens door het insluiten van gerelateerde subitems binnen één JSON-document. Hier zien we een aantal opties voor het gebruik van Azure Data Factory of Azure Databricks. Raadpleeg voor algemene richt lijnen voor gegevens modellering voor Cosmos DB [gegevens modellering in azure Cosmos DB](modeling-data.md).  
+Een veelvoorkomende transformatie is het denormaliseren van gegevens door gerelateerde subitems in één JSON-document in te voegen. Hier bekijken we enkele opties hiervoor met behulp van Azure Data Factory of Azure Databricks. Raadpleeg Gegevensmodelleren in Cosmos DB voor algemene richtlijnen [voor Azure Cosmos DB.](modeling-data.md)  
 
 ## <a name="example-scenario"></a>Voorbeeldscenario
 
-We gaan ervan uit dat we de volgende twee tabellen hebben in onze SQL database, orders en OrderDetails.
+Stel dat we de volgende twee tabellen in onze SQL database, Orders en OrderDetails.
 
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/orders.png" alt-text="Scherm opname waarin de tabellen Orders en OrderDetails in de SQL database worden weer gegeven." border="false" :::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/orders.png" alt-text="Schermopname van de tabellen Orders en OrderDetails in de SQL database." border="false" :::
 
-We willen deze een-op-een-relatie combi neren in één JSON-document tijdens de migratie. Hiervoor kunnen we een T-SQL-query maken met behulp van ' voor JSON ', zoals hieronder wordt beschreven:
+We willen deze een-op-weinig-relatie tijdens de migratie combineren in één JSON-document. Hiervoor kunnen we een T-SQL-query maken met 'FOR JSON' zoals hieronder wordt weergegeven:
 
 ```sql
 SELECT
@@ -47,30 +47,30 @@ SELECT
 FROM Orders o;
 ```
 
-De resultaten van deze query zien er als volgt uit: 
+De resultaten van deze query zien er als hieronder uit: 
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png" alt-text="Bestellingsgegevens" lightbox="./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png" alt-text="Orderdetails" lightbox="./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png":::
 
-IDEA liter wilt u een Kopieer activiteit met één Azure Data Factory (ADF) gebruiken om SQL-gegevens als bron op te vragen en de uitvoer rechtstreeks naar Azure Cosmos DB sink te schrijven als juiste JSON-objecten. Het is momenteel niet mogelijk om de benodigde JSON-trans formatie uit te voeren in één Kopieer activiteit. Als we proberen de resultaten van de bovenstaande query te kopiëren naar een Azure Cosmos DB SQL API-container, zien we het veld OrderDetails als een teken reeks eigenschap van het document, in plaats van de verwachte JSON-matrix.
+Idealiter wilt u één ADF-kopieeractiviteit (Azure Data Factory) gebruiken om SQL-gegevens op te vragen als bron en de uitvoer rechtstreeks naar de Azure Cosmos DB sink te schrijven als juiste JSON-objecten. Op dit moment is het niet mogelijk om de benodigde JSON-transformatie in één kopieeractiviteit uit te voeren. Als we de resultaten van de bovenstaande query proberen te kopiëren naar een Azure Cosmos DB SQL API-container, zien we het veld OrderDetails als een tekenreeks-eigenschap van ons document in plaats van de verwachte JSON-matrix.
 
-De huidige beperking kan op een van de volgende manieren worden omzeild:
+We kunnen deze huidige beperking op een van de volgende manieren omzeilen:
 
-* **Gebruik Azure Data Factory met twee Kopieer activiteiten**: 
-  1. Gegevens in JSON-indeling ophalen van SQL naar een tekst bestand in een tussenliggende Blob-opslag locatie en 
-  2. Laad gegevens uit het JSON-tekst bestand naar een container in Azure Cosmos DB.
+* **Gebruik Azure Data Factory twee kopieeractiviteiten:** 
+  1. Gegevens in JSON-indeling van SQL naar een tekstbestand op een tussenliggende blobopslaglocatie halen, en 
+  2. Laad gegevens uit het JSON-tekstbestand naar een container in Azure Cosmos DB.
 
-* **Gebruik Azure Databricks om te lezen van SQL en te schrijven naar Azure Cosmos DB** -er worden hier twee opties weer gegeven.
+* **Gebruik Azure Databricks sql te lezen en** te schrijven naar Azure Cosmos DB. Hier worden twee opties besproken.
 
 
-We gaan deze benaderingen nader bekijken:
+Laten we deze benaderingen eens nader bekijken:
 
 ## <a name="azure-data-factory"></a>Azure Data Factory
 
-Hoewel OrderDetails niet kan worden inge sloten als een JSON-matrix in het doel Cosmos DB document, kunnen we het probleem omzeilen door twee afzonderlijke Kopieer activiteiten te gebruiken.
+Hoewel we OrderDetails niet kunnen insluiten als een JSON-matrix in het Cosmos DB-doeldocument, kunnen we het probleem oplossen door twee afzonderlijke kopieeractiviteiten te gebruiken.
 
-### <a name="copy-activity-1-sqljsontoblobtext"></a>#1 van de Kopieer activiteit: SqlJsonToBlobText
+### <a name="copy-activity-1-sqljsontoblobtext"></a>Kopieeractiviteit #1: SqlJsonToBlobText
 
-Voor de bron gegevens gebruiken we een SQL-query voor het ophalen van de resultatenset als één kolom met één JSON-object (dat de volg orde vertegenwoordigt) per rij met behulp van de SQL Server openjson en voor de mogelijkheden van JSON-pad:
+Voor de brongegevens gebruiken we een SQL-query om het resultaat op te halen als één kolom met één JSON-object (dat de Volgorde vertegenwoordigt) per rij met behulp van de mogelijkheden SQL Server OPENJSON en FOR JSON PATH:
 
 ```sql
 SELECT [value] FROM OPENJSON(
@@ -94,49 +94,49 @@ SELECT [value] FROM OPENJSON(
 :::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf1.png" alt-text="ADF-kopie":::
 
 
-Voor de Sink van de Kopieer activiteit SqlJsonToBlobText kiest u "tekst met scheidings tekens" en wijst u deze naar een specifieke map in Azure Blob Storage met een dynamisch gegenereerde unieke bestands naam (bijvoorbeeld ' @concat (pipeline (). RunId, '. json ').
-Omdat het tekst bestand niet echt "gescheiden" is en we niet wilt dat het wordt geparseerd in afzonderlijke kolommen met komma's en u de dubbele aanhalings tekens (") wilt behouden, stellen we ' kolom scheidings teken ' in op een tab (' \t '), of een ander teken dat niet in het gegevens-en aanhalings tekens wordt gebruikt voor geen aanhalings teken.
+Voor de sink van de kopieeractiviteit SqlJsonToBlobText kiezen we 'Tekst met scheidingstekens' en wijzen we deze naar een specifieke map in Azure Blob Storage met een dynamisch gegenereerde unieke bestandsnaam (bijvoorbeeld ' @concat (pipeline(). RunId, '.json').
+Omdat ons tekstbestand niet echt 'gescheiden' is en we niet willen dat het wordt geparseerd in afzonderlijke kolommen met behulp van komma's en de dubbele aanhalingstekens (' ) wilt behouden, stellen we 'Kolom scheidingsteken' in op een tabblad ('\t') - of een ander teken dat niet voorkomt in de gegevens - en 'Aanhalingsteken' op 'Geen aanhalingsteken'.
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf2.png" alt-text="Scherm opname van de instellingen van het kolom scheidings teken en de aanhalings tekens.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf2.png" alt-text="Schermopname met de instellingen kolom scheidingsteken en prijsopgave.":::
 
-### <a name="copy-activity-2-blobjsontocosmos"></a>#2 van de Kopieer activiteit: BlobJsonToCosmos
+### <a name="copy-activity-2-blobjsontocosmos"></a>Kopieeractiviteit #2: BlobJsonToCosmos
 
-Vervolgens wijzigen we onze ADF-pijp lijn door de tweede Kopieer activiteit toe te voegen die in Azure Blob Storage zoekt naar het tekst bestand dat door de eerste activiteit is gemaakt. Het wordt als ' JSON '-bron verwerkt om Cosmos DB Sink als één document per JSON-rij gevonden in het tekst bestand.
+Vervolgens wijzigen we de ADF-pijplijn door de tweede kopieeractiviteit toe te voegen die in Azure Blob Storage zoekt naar het tekstbestand dat is gemaakt door de eerste activiteit. Deze wordt verwerkt als 'JSON'-bron om in te voegen Cosmos DB sink als één document per JSON-rij in het tekstbestand.
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf3.png" alt-text="Scherm afbeelding die het JSON-bron bestand en de velden voor het bestandspad markeert.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf3.png" alt-text="Schermopname met de velden JSON-bronbestand en Bestandspad.":::
 
-U kunt eventueel ook een ' delete '-activiteit toevoegen aan de pijp lijn, zodat alle vorige bestanden in de map/orders/vóór elke uitvoering worden verwijderd. Onze ADF-pijp lijn ziet er nu ongeveer als volgt uit:
+Optioneel voegen we ook een activiteit Verwijderen toe aan de pijplijn, zodat alle vorige bestanden die nog in de map /Orders/ staan vóór elke run worden verwijderd. Onze ADF-pijplijn ziet er nu zo uit:
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf4.png" alt-text="Scherm afbeelding die de Delete-activiteit markeert.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf4.png" alt-text="Schermopname met de activiteit Verwijderen.":::
 
-Nadat we de pijp lijn hierboven hebben geactiveerd, zien we een bestand dat is gemaakt op onze intermediaire Azure-Blob Storage locatie met één JSON-object per rij:
+Nadat we de bovenstaande pijplijn hebben activeert, zien we een bestand dat is gemaakt in onze tussenliggende Azure Blob Storage locatie met één JSON-object per rij:
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf5.png" alt-text="Scherm opname van het bestand dat wordt gemaakt met de JSON-objecten.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf5.png" alt-text="Schermopname van het gemaakte bestand met de JSON-objecten.":::
 
-We zien ook bestellingen van documenten met correct Inge sloten OrderDetails die zijn ingevoegd in onze Cosmos DB verzameling:
+We zien ook Orders-documenten met goed ingesloten OrderDetails die zijn ingevoegd in onze Cosmos DB verzameling:
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf6.png" alt-text="Scherm afbeelding van de details van de bestelling als onderdeel van het Cosmos DB document":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/adf6.png" alt-text="Schermopname van de orderdetails als onderdeel van het Cosmos DB document":::
 
 
 ## <a name="azure-databricks"></a>Azure Databricks
 
-We kunnen ook Spark in [Azure Databricks](https://azure.microsoft.com/services/databricks/) gebruiken om de gegevens van onze SQL database bron te kopiëren naar de Azure Cosmos DB bestemming zonder de tussenliggende tekst/json-bestanden in Azure Blob Storage te maken. 
+We kunnen Spark in [Azure Databricks](https://azure.microsoft.com/services/databricks/) ook gebruiken om de gegevens van onze SQL Database-bron naar de Azure Cosmos DB-bestemming te kopiëren zonder de intermediaire tekst-/JSON-bestanden in Azure Blob Storage. 
 
 > [!NOTE]
-> Voor de duidelijkheid en eenvoud zijn de onderstaande code fragmenten een dummy database wachtwoord, maar u moet altijd Azure Databricks geheimen gebruiken.
+> Voor de duidelijkheid en eenvoud bevatten de onderstaande codefragmenten expliciet inline dummydatabasewachtwoorden, maar u moet altijd Azure Databricks gebruiken.
 >
 
-Eerst maken en koppelen we de vereiste [SQL-connector](https://docs.databricks.com/data/data-sources/sql-databases-azure.html) en [Azure Cosmos DB connector](https://docs.databricks.com/data/data-sources/azure/cosmosdb-connector.html) bibliotheken aan ons Azure Databricks-cluster. Start het cluster opnieuw op om ervoor te zorgen dat de tape wisselaars worden geladen.
+Eerst maken en koppelen we de vereiste [SQL-connector](/connectors/sql/) en [Azure Cosmos DB connectorbibliotheken](https://docs.databricks.com/data/data-sources/azure/cosmosdb-connector.html) aan ons Azure Databricks cluster. Start het cluster opnieuw op om ervoor te zorgen dat bibliotheken worden geladen.
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks1.png" alt-text="Scherm afbeelding die laat zien waar u de vereiste SQL-connector en Azure Cosmos DB connector bibliotheken kunt maken en koppelen aan ons Azure Databricks cluster.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks1.png" alt-text="Schermopname die laat zien waar u de vereiste SQL-connector en Azure Cosmos DB connectorbibliotheken kunt maken en koppelen aan Azure Databricks cluster.":::
 
-We presen teren nu twee voor beelden, voor scala en python. 
+Vervolgens presenteren we twee voorbeelden, voor Scala en Python. 
 
 ### <a name="scala"></a>Scala
-Hier krijgen we de resultaten van de SQL-query met de uitvoer voor JSON naar een data frame:
+Hier krijgen we de resultaten van de SQL-query met 'FOR JSON'-uitvoer in een DataFrame:
 
 ```scala
-// Connect to Azure SQL https://docs.databricks.com/data/data-sources/sql-databases-azure.html
+// Connect to Azure SQL /connectors/sql/
 import com.microsoft.azure.sqldb.spark.config.Config
 import com.microsoft.azure.sqldb.spark.connect._
 val configSql = Config(Map(
@@ -151,9 +151,9 @@ val orders = sqlContext.read.sqlDB(configSql)
 display(orders)
 ```
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks2.png" alt-text="Scherm opname van de SQL-query uitvoer in een data frame.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks2.png" alt-text="Schermopname van de uitvoer van de SQL-query in een DataFrame.":::
 
-We gaan nu verbinding maken met onze Cosmos DB-Data Base en-verzameling:
+Vervolgens maken we verbinding met onze Cosmos DB database en verzameling:
 
 ```scala
 // Connect to Cosmos DB https://docs.databricks.com/data/data-sources/azure/cosmosdb-connector.html
@@ -178,7 +178,7 @@ val configMap = Map(
 val configCosmos = Config(configMap)
 ```
 
-Ten slotte definiëren we ons schema en gebruiken we from_json om de data frame toe te passen voordat ze worden opgeslagen in de CosmosDB-verzameling.
+Ten slotte definiëren we ons schema en gebruiken we from_json dataframe toe te passen voordat het wordt opgeslagen in de CosmosDB-verzameling.
 
 ```scala
 // Convert DataFrame to proper nested schema
@@ -208,12 +208,12 @@ display(ordersWithSchema)
 CosmosDBSpark.save(ordersWithSchema, configCosmos)
 ```
 
-:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks3.png" alt-text="Scherm afbeelding die de juiste matrix markeert voor het opslaan in een Cosmos DB verzameling.":::
+:::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks3.png" alt-text="Schermopname die de juiste matrix markeert voor het opslaan naar een Cosmos DB verzameling.":::
 
 
 ### <a name="python"></a>Python
 
-Als alternatief kunt u ook JSON-trans formaties uitvoeren in Spark (als de bron database geen ondersteuning biedt voor JSON of een vergelijk bare bewerking), of als u parallelle bewerkingen wilt gebruiken voor een zeer grote gegevensset. Hier bieden we een PySpark-voor beeld. Begin met het configureren van de bron-en doel database verbindingen in de eerste cel:
+Als alternatieve methode moet u mogelijk JSON-transformaties uitvoeren in Spark (als de brondatabase geen ONDERSTEUNING biedt voor 'FOR JSON' of een vergelijkbare bewerking), of als u parallelle bewerkingen wilt gebruiken voor een zeer grote gegevensset. Hier presenteren we een PySpark-voorbeeld. Begin met het configureren van de bron- en doeldatabaseverbindingen in de eerste cel:
 
 ```python
 import uuid
@@ -245,7 +245,7 @@ writeConfig = {
 }
 ```
 
-Vervolgens wordt de bron database (in dit geval SQL Server) in de volg orde van de order-en order detail records opgevraagd, waarna de resultaten in Spark dataframes worden geplaatst. Er wordt ook een lijst gemaakt met alle order-Id's en een thread groep voor parallelle bewerkingen:
+Vervolgens voeren we een query uit op de brondatabase (in dit geval SQL Server) voor zowel de order- als de ordergegevensrecords, en plaatsen we de resultaten in Spark Dataframes. We maken ook een lijst met alle order-ID's en een threadgroep voor parallelle bewerkingen:
 
 ```python
 import json
@@ -278,7 +278,7 @@ orderids = orders.select('OrderId').collect()
 pool = ThreadPool(10)
 ```
 
-Maak vervolgens een functie voor het schrijven van orders naar de doel-SQL-API-verzameling. Met deze functie worden alle Order Details voor de opgegeven order-ID gefilterd, geconverteerd naar een JSON-matrix en wordt de matrix in een JSON-document ingevoegd dat wordt geschreven in de doel-SQL-API-verzameling voor die order:
+Maak vervolgens een functie voor het schrijven van Orders naar de doel-SQL API-verzameling. Met deze functie worden alle orderdetails voor de opgegeven order-id gefilterd, geconverkeerd naar een JSON-matrix en wordt de matrix in een JSON-document toegevoegd dat we voor die volgorde naar de doel-SQL API-verzameling schrijven:
 
 ```python
 def writeOrder(orderid):
@@ -330,16 +330,16 @@ def writeOrder(orderid):
   df.write.format("com.microsoft.azure.cosmosdb.spark").mode("append").options(**writeConfig).save()
 ```
 
-Ten slotte noemen we het bovenstaande met behulp van een functie map in de thread groep om parallel uit te voeren, waarbij u de volg orde van de eerder gemaakte order-Id's doorgeeft.
+Ten slotte roepen we het bovenstaande aan met behulp van een kaartfunctie in de threadpool, om deze parallel uit te voeren en door te geven in de lijst met order-ID's die we eerder hebben gemaakt:
 
 ```python
 #map order details to orders in parallel using the above function
 pool.map(writeOrder, orderids)
 ```
-In beide gevallen moeten we aan het eind het op de juiste manier opgeslagen Inge sloten OrderDetails binnen elk Bestel document in Cosmos DB verzameling ophalen:
+Bij beide benaderingen moeten we aan het einde ingesloten OrderDetails in elk Order-document in de verzameling Cosmos DB opgeslagen:
 
 :::image type="content" source="./media/migrate-relational-to-cosmos-sql-api/databricks4.png" alt-text="Databricks":::
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [gegevens modellering in azure Cosmos DB](./modeling-data.md)
-* Meer informatie over [het model leren en partitioneren van gegevens op Azure Cosmos DB](./how-to-model-partition-example.md)
+* Meer informatie [over gegevensmodelleren in Azure Cosmos DB](./modeling-data.md)
+* Meer [informatie over het modelleren en partitioneren van gegevens op Azure Cosmos DB](./how-to-model-partition-example.md)

@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 92cfa5b2e399811754b57bda64569753ccfa6be8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b1e37b2de2a3d4be0250d3e900fe48a36e45240e
+ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101668755"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107309557"
 ---
 # <a name="sap-hana-large-instances-network-architecture"></a>Netwerk architectuur van SAP HANA (grote exemplaren)
 
@@ -186,7 +186,7 @@ Gegevens die worden overgebracht tussen HANA grote instanties en Vm's, worden ni
 
 ## <a name="use-hana-large-instance-units-in-multiple-regions"></a>Gebruik HANA grote instantie-eenheden in meerdere regio's
 
-Als u nood herstel wilt realiseren, moet u SHANA grote instantie-eenheden hebben in meerdere Azure-regio's. Zelfs bij het gebruik van Azure [Global Vnet-peering], is transitieve route ring standaard niet in staat om te werken met tenants van de HANA-grote instanties in twee verschillende regio's. Global Reach opent echter het communicatie traject tussen de HANA-eenheden voor grote instanties die u in twee verschillende regio's hebt ingericht. Dit gebruiks scenario van ExpressRoute Global Reach maakt het volgende mogelijk:
+Als u nood herstel wilt realiseren, moet u in meerdere Azure-regio's HANA grote instantie-eenheden hebben. Zelfs bij het gebruik van Azure [Global Vnet-peering], is transitieve route ring standaard niet in staat om te werken met tenants van de HANA-grote instanties in twee verschillende regio's. Global Reach opent echter het communicatie traject tussen de HANA-eenheden voor grote instanties die u in twee verschillende regio's hebt ingericht. Dit gebruiks scenario van ExpressRoute Global Reach maakt het volgende mogelijk:
 
  - HANA-systeem replicatie zonder extra proxy's of firewalls
  - Back-ups kopiëren tussen HANA grote instantie-eenheden in twee verschillende regio's om systeem kopieën of systeem vernieuwingen uit te voeren

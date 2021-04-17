@@ -5,12 +5,14 @@ ms.topic: conceptual
 ms.date: 09/24/2020
 ms.reviewer: mbullwin
 ms.custom: devx-track-python
-ms.openlocfilehash: 92d954a865a2d4a8c55177b132139dcd7d0444ef
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+author: lzchen
+ms.author: lechen
+ms.openlocfilehash: 548cfd9d593e9adaeaaf984f756e58d242ca9f45
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107515920"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107576547"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Een Azure Monitor voor uw Python-toepassing instellen
 
@@ -114,7 +116,7 @@ Hier ziet u de exporten die OpenCensus biedt, die zijn toe te rekenen aan de typ
 
 1. U kunt ook aangepaste eigenschappen toevoegen aan uw logboekberichten in het *extra* trefwoordargument met behulp van custom_dimensions veld. Deze eigenschappen worden weergegeven als sleutel-waardeparen `customDimensions` in in Azure Monitor.
     > [!NOTE]
-    > Deze functie werkt alleen als u een woordenlijst aan het custom_dimensions doorgeven. Als u argumenten van een ander type doorkeert, worden deze genegeerd door de logger.
+    > Deze functie werkt alleen als u een woordenlijst aan het veld custom_dimensions doorgeven. Als u argumenten van een ander type doorkeert, worden deze genegeerd door de logger.
 
     ```python
     import logging
@@ -135,7 +137,7 @@ Hier ziet u de exporten die OpenCensus biedt, die zijn toe te rekenen aan de typ
 
 #### <a name="configure-logging-for-django-applications"></a>Logboekregistratie configureren voor Django-toepassingen
 
-U kunt logboekregistratie expliciet configureren in de toepassingscode zoals hierboven voor uw Django-toepassingen, of u kunt dit opgeven in de configuratie van de logboekregistratie van Django. Deze code kan worden gebruikt voor elk bestand dat u gebruikt voor de configuratie van Django-instellingen. Zie Django-instellingen voor het configureren van [Django-instellingen.](https://docs.djangoproject.com/en/3.0/topics/settings/) Zie Django-logboekregistratie voor meer informatie over het [configureren van logboekregistratie.](https://docs.djangoproject.com/en/3.0/topics/logging/)
+U kunt logboekregistratie expliciet configureren in de toepassingscode zoals hierboven voor uw Django-toepassingen, of u kunt deze opgeven in de configuratie van de logboekregistratie van Django. Deze code kan worden gebruikt voor elk bestand dat u gebruikt voor de configuratie van Django-instellingen. Zie Django-instellingen voor het configureren van [Django-instellingen.](https://docs.djangoproject.com/en/3.0/topics/settings/) Zie Django-logboekregistratie voor meer informatie over het [configureren van logboekregistratie.](https://docs.djangoproject.com/en/3.0/topics/logging/)
 
 ```json
 LOGGING = {
@@ -189,7 +191,7 @@ try:
 except Exception:
     logger.exception('Captured an exception.', extra=properties)
 ```
-Omdat u uitzonderingen expliciet moet logboeken, is het aan de gebruiker hoe deze niet-afhandelde uitzonderingen wil aanmelden. OpenCensus stelt geen beperkingen op de manier waarop een gebruiker dit wil doen, zolang ze expliciet een uitzonderings-telemetrielogboek maken.
+Omdat u uitzonderingen expliciet moet logboeken, is het aan de gebruiker hoe deze onverhandelde uitzonderingen wil aanmelden. OpenCensus stelt geen beperkingen op de manier waarop een gebruiker dit wil doen, zolang ze expliciet een uitzonderings-telemetrie in een logboek plaatsen.
 
 #### <a name="send-events"></a>Gebeurtenissen verzenden
 
@@ -333,9 +335,9 @@ OpenCensus.stats ondersteunt 4 aggregatiemethoden, maar biedt gedeeltelijke onde
 
 ### <a name="setting-custom-dimensions-in-metrics"></a>Aangepaste dimensies instellen in metrische gegevens
 
-Met de Opencensus Python SDK kunt u aangepaste dimensies toevoegen aan uw telemetriegegevens met metrische gegevens via , wat in feite een woordenlijst van `tags` sleutel-waardeparen is. 
+Met Opencensus Python SDK kunt u aangepaste dimensies toevoegen aan uw telemetriegegevens met metrische gegevens via , wat in feite een woordenlijst van `tags` sleutel-waardeparen is. 
 
-1. Voeg de tags die u wilt gebruiken in de tagkaart in. De tagkaart fungeert als een soort 'pool' van alle beschikbare tags die u kunt gebruiken.
+1. Voeg de tags die u wilt gebruiken in de tagkaart in. De tagkaart fungeert als een soort pool van alle beschikbare tags die u kunt gebruiken.
 
 ```python
 ...
@@ -473,7 +475,7 @@ Zie OpenCensus Python [telemetry processors](./api-filtering-sampling.md#opencen
         main()
     ```
 
-1. Wanneer u nu het Python-script gaat uitvoeren, moet u nog steeds worden gevraagd om waarden in te voeren, maar alleen de waarde wordt afgedrukt in de shell. Het gemaakte `SpanData` wordt verzonden naar Azure Monitor. U vindt de afgegeven spangegevens onder `dependencies` . Zie OpenCensus Python-afhankelijkheden voor meer informatie [over uitgaande aanvragen.](./opencensus-python-dependency.md)
+1. Wanneer u nu het Python-script gaat uitvoeren, moet u nog steeds worden gevraagd om waarden in te voeren, maar alleen de waarde wordt afgedrukt in de shell. De gemaakte `SpanData` wordt verzonden naar Azure Monitor. U vindt de afgegeven spangegevens onder `dependencies` . Zie OpenCensus Python-afhankelijkheden voor meer informatie [over uitgaande aanvragen.](./opencensus-python-dependency.md)
 Zie OpenCensus Python-aanvragen voor meer informatie over [binnenkomende aanvragen.](./opencensus-python-request.md)
 
 #### <a name="sampling"></a>Steekproeven
@@ -512,7 +514,7 @@ U kunt de telemetriegegevens die vanuit uw toepassing zijn verzonden, weergeven 
 In de lijst onder **Actief**:
 
 - Voor telemetrie die wordt verzonden met Azure Monitor traceerlanding, worden binnenkomende aanvragen weergegeven onder `requests` . Uitgaande of in-process aanvragen worden weergegeven onder `dependencies` .
-- Voor telemetrie die wordt verzonden met de Azure Monitor export, worden verzonden metrische gegevens weergegeven onder `customMetrics` .
+- Verzonden metrische gegevens worden weergegeven onder Azure Monitor verzonden metrische gegevens die worden verzonden met de `customMetrics` export.
 - Voor telemetrie die wordt verzonden met de Azure Monitor export, worden logboeken weergegeven onder `traces` . Uitzonderingen worden weergegeven onder `exceptions` .
 
 Zie Logboeken in Azure Monitor voor meer informatie over het gebruik [van query'Azure Monitor.](../logs/data-platform-logs.md)

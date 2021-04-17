@@ -7,13 +7,15 @@ ms.date: 12/10/2019
 ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
-ms.custom: devx-track-python
-ms.openlocfilehash: 1881af372c1f4e1c5cbb4ea7be0ede4c96bbf4ee
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.custom:
+- devx-track-python
+- mode-api
+ms.openlocfilehash: 68f68c32b160757e82d59b1dd5ee4847a06ec698
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106276141"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107534366"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-python"></a>Quickstart: Azure Queue Storage-clientbibliotheek v12 voor Python
 
@@ -40,7 +42,7 @@ Aanvullende bronnen:
 
 - Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
 - Azure Storage-account: [maak een opslagaccount](../common/storage-account-create.md)
-- [Python](https://www.python.org/downloads/) voor uw besturings systeem-2,7 of 3.6 +
+- [Python](https://www.python.org/downloads/) voor uw besturingssysteem - 2.7 of 3.6+
 
 ## <a name="setting-up"></a>Instellen
 

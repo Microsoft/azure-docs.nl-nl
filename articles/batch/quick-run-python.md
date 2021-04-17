@@ -1,18 +1,19 @@
 ---
 title: 'Quickstart: de Python-API gebruiken om een Azure Batch-taak uit te voeren'
 description: In deze quickstart voert u een Azure Batch-voorbeeldtaak en -taken uit met behulp van de Batch Python-clientbibliotheek. Meer informatie over de belangrijkste concepten van de Batch-service.
-ms.topic: quickstart
 ms.date: 08/17/2020
+ms.topic: quickstart
 ms.custom:
 - seo-python-october2019
 - mvc
 - devx-track-python
-ms.openlocfilehash: e213ec7aee7172bb5ebb49097ad9fd09f9106255
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+- mode-api
+ms.openlocfilehash: 75f83e0ea4823796ace348084bab0915babc8979
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105046807"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107535574"
 ---
 # <a name="quickstart-use-python-api-to-run-an-azure-batch-job"></a>Quickstart: De Python-API gebruiken om een Azure Batch-job uit te voeren
 
@@ -28,7 +29,7 @@ Nadat u deze quickstart hebt voltooid, begrijpt u de belangrijkste principes van
 
 - Een Batch-account en een gekoppeld Azure Storage-account. Raadpleeg de Batch-quickstarts met behulp van [Azure Portal](quick-create-portal.md) of [Azure CLI](quick-create-cli.md) voor instructies voor het maken van deze accounts.
 
-- [Python](https://python.org/downloads) -versie 2,7 of 3,6, inclusief [PIP](https://pip.pypa.io/en/stable/installing/) -pakket beheer
+- [Python-versie](https://python.org/downloads) 2.7 of 3.6, inclusief [pip-pakketbeheer](https://pip.pypa.io/en/stable/installing/)
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

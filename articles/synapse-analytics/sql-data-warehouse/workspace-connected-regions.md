@@ -1,6 +1,6 @@
 ---
-title: Beschik baarheid van functie regio Synapse-werk ruimte inschakelen
-description: Dit document bevat informatie over de regio's waar de Synapse-werkruimte functie niet beschikbaar is.
+title: Beschikbaarheid van synapse-werkruimtefunctieregio's inschakelen
+description: Dit document bevat informatie over de regio's waar de functie Synapse-werkruimte niet beschikbaar is.
 services: synapse-analytics
 author: antvgski
 manager: igorstan
@@ -11,35 +11,35 @@ ms.date: 11/11/2020
 ms.author: anvang
 ms.reviewer: jrasnick
 ms.custom: references_regions
-ms.openlocfilehash: 4ecf8a578343a10e7c1ddb0ac5e9345a652bc9af
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f788675d84f7714d4da5f30cf50875e5d006c6c7
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97511702"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107534754"
 ---
-# <a name="enabling-synapse-workspace-features-on-a-dedicated-sql-pool-formerly-sql-dw-in-your-region"></a>De functies van de Synapse-werk ruimte inschakelen op een toegewezen SQL-groep (voorheen SQL DW) in uw regio.
+# <a name="enabling-synapse-workspace-features-on-a-dedicated-sql-pool-formerly-sql-dw-in-your-region"></a>Synapse-werkruimtefuncties inschakelen in een toegewezen SQL-pool (voorheen SQL DW) in uw regio.
 
-## <a name="regions-not-supported"></a>Regio's niet ondersteund 
-De volgende tabel bevat een overzicht van de mogelijkheid om de functies van de Synapse-werk ruimte in te scha kelen op een bestaande toegewezen SQL-groep (voorheen SQL DW). Ga terug om te zien wanneer uw regio beschikbaar wordt.
+## <a name="regions-not-supported"></a>Regio's worden niet ondersteund 
+De volgende tabel geeft een overzicht per regio waar de mogelijkheid om de functies van de Synapse-werkruimte in te stellen op een bestaande toegewezen SQL-pool (voorheen SQL DW) niet wordt ondersteund. Controleer of uw regio weer beschikbaar is.
 
-\* Hiermee wordt aangegeven dat een specifieke planning voor de regio momenteel niet beschikbaar is.
+\* geeft aan dat een specifiek schema voor de regio momenteel niet beschikbaar is.
 
-| Region | Beschik baarheid van Synapse-werk ruimte |
+| Region | Beschikbaarheid van Synapse-werkruimte |
 |:--- |:--- |:--- |
-| Australië-centraal 1 |\* |
+| Australië - centraal 1 |\* |
 | Australië - centraal 2 |\* |
-| China - oost 2 |31 maart 2021 |
-| China - noord 2 |31 maart 2021 |
-| India - zuid |31 maart 2021 |
-| India - west |31 maart 2021 |
-| Korea - zuid |31 maart 2021 |
-| Zwitserland - west |31 maart 2021 |
-| VAE - noord |31 maart 2021 |
+| China - oost 2 |\* |
+| China - noord 2 |\* |
+| India - zuid |\*|
+| India - west |\*|
+| Korea - zuid |\* |
+| Zwitserland - west |\* |
+| VAE - noord |\*|
  
  
 > [!NOTE]
-> De bovenstaande regio lijst heeft alleen betrekking op regio's waar het inschakelen van Synapse werkruimte functies op dit moment niet beschikbaar is. 
+> De bovenstaande regiolijst heeft alleen betrekking op regio's waar het inschakelen van synapse-werkruimtefuncties momenteel niet beschikbaar is. 
 
 ## <a name="next-steps"></a>Volgende stappen
-Aan de slag met [Synapse-werk ruimte en Studio](../get-started.md).
+Aan de slag [met Synapse Workspace en Studio](../get-started.md).

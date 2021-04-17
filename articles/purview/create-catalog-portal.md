@@ -3,16 +3,18 @@ title: 'Quickstart: Een Azure Purview-account maken in Azure Portal (preview)'
 description: In deze quickstart wordt beschreven hoe u een Azure Purview-account maakt en machtigingen configureert om het te kunnen gaan gebruiken.
 author: nayenama
 ms.author: nayenama
+ms.date: 10/23/2020
+ms.topic: quickstart
 ms.service: purview
 ms.subservice: purview-data-catalog
-ms.topic: quickstart
-ms.date: 10/23/2020
-ms.openlocfilehash: 0346b467bc299b4eb6125df04a4449e94c035e47
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom:
+- mode-portal
+ms.openlocfilehash: 72f4ac8df39b9511fd98a1dd5a3eca76e11e34bf
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101666457"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107535153"
 ---
 # <a name="quickstart-create-an-azure-purview-account-in-the-azure-portal"></a>Quickstart: Een Azure Purview-account maken in Azure Portal
 
@@ -117,7 +119,7 @@ Voer zo nodig de volgende stappen uit om uw abonnement te configureren zodat Azu
    :::image type="content" source="./media/create-catalog-portal/add-purview-instance.png" alt-text="Schermopname die laat zien hoe u een instantie van een Azure Purview-account maakt in Azure Portal.":::
 
     > [!Note] 
-    > Het verplaatsen van het account tussen regio's door Azure controle sfeer liggen wordt niet ondersteund. Meer informatie hierover vindt u in de [pagina ondersteunde services van Azure](../azure-resource-manager/management/region-move-support.md).
+    > Azure Purview biedt geen ondersteuning voor het verplaatsen van het account tussen regio's. Meer informatie over dit vindt u op de pagina [Ondersteunde services van Azure.](../azure-resource-manager/management/region-move-support.md)
 
 1. Op het tabblad **Basics** voert u de volgende handelingen uit:
     1. Selecteer een **resourcegroep**.

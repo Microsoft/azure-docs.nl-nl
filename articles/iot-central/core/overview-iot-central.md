@@ -8,22 +8,22 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc, contperf-fy21q2
-ms.openlocfilehash: 6f7b24c711d99b1127ee77a920b305acb114d20e
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: abf5f601bb98ab7e03b25f6ab9bd06cb051a1112
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106505124"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107589058"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
 IoT Central is een platform voor IoT-toepassingen dat de inzet en kosten verlaagt die gepaard gaan met het ontwikkelen, beheren en onderhouden van geavanceerde IoT-oplossingen. Als u ervoor kiest om toepassingen met IoT Central te bouwen, hebt u de mogelijkheid om tijd, geld en energie te besteden aan de transformatie van uw bedrijf met IoT-gegevens, in plaats van alleen maar een complexe en voortdurend veranderende IoT-infrastructuur te onderhouden en bij te werken.
 
-Via de webinterface kunt u de status van apparaten bewaken, regels maken en miljoenen apparaten en hun gegevens beheren gedurende de volledige levenscyclus. Daarnaast kunt u met de service reageren op inzichten over apparaten door IoT-intelligentie uit te breiden naar LOB-toepassingen.
+Met de webinterface kunt u snel apparaten verbinden, apparaatvoorwaarden bewaken, regels maken en miljoenen apparaten en hun gegevens gedurende hun levenscyclus beheren. Daarnaast kunt u met de service reageren op inzichten over apparaten door IoT-intelligentie uit te breiden naar LOB-toepassingen.
 
 In dit artikel worden de volgende onderwerpen besproken voor IoT Central:
 
-- De typische gebruikers rollen die aan een project zijn gekoppeld.
+- De typische gebruikersrollen die aan een project zijn gekoppeld.
 - Het maken van uw toepassing.
 - Het maken van verbinding tussen uw apparaten en uw toepassing
 - Het beheren van uw toepassing.
@@ -32,7 +32,7 @@ In dit artikel worden de volgende onderwerpen besproken voor IoT Central:
 
 ## <a name="user-roles"></a>Gebruikersrollen
 
-De IoT Central documentatie verwijst naar vier gebruikers rollen die communiceren met een IoT Central-toepassing:
+De IoT Central verwijst naar vier gebruikersrollen die communiceren met een IoT Central toepassing:
 
 - Een _bouwer van oplossingen_ is verantwoordelijk voor [het maken van een toepassing](quick-deploy-iot-central.md), [het configureren van regels en acties](quick-configure-rules.md), [het definiëren van integraties met andere services](howto-export-data.md), en het verder aanpassen van de toepassing voor operators en apparaatontwikkelaars.
 - Een _operator_ [beheert de apparaten](howto-manage-devices.md) die met de toepassing zijn verbonden.
@@ -41,14 +41,13 @@ De IoT Central documentatie verwijst naar vier gebruikers rollen die communicere
 
 ## <a name="create-your-iot-central-application"></a>Een IoT Central-toepassing maken
 
-Als bouwer van oplossingen gebruikt u IoT Central om een aangepaste, in de cloud gehoste IoT-oplossing voor uw organisatie te maken. Een aangepaste IoT-oplossing bestaat meestal uit:
+U kunt snel een nieuwe IoT Central implementeren en deze vervolgens aanpassen aan uw specifieke vereisten. Begin met een algemene _toepassingssjabloon_ of met een van de branchegerichte toepassingssjablonen voor [Retail,](../retail/overview-iot-central-retail.md) [Energy,](../energy/overview-iot-central-energy.md) [Government](../government/overview-iot-central-government.md)of [Healthcare.](../healthcare/overview-iot-central-healthcare.md)
 
-- Een cloudtoepassing die telemetriegegevens van uw apparaten ontvangt en die u in staat stelt om deze apparaten te beheren.
-- Meerdere apparaten waarop aangepaste code wordt uitgevoerd en die met uw cloudtoepassing zijn verbonden.
+Zie de [quickstart Een nieuwe toepassing](quick-deploy-iot-central.md) maken voor een overzicht van het maken van uw eerste toepassing.
 
-U kunt een nieuwe IoT Central-toepassing snel implementeren en deze vervolgens in uw browser aanpassen aan uw specifieke vereisten. U kunt beginnen met een algemene _toepassingssjabloon_ of met een van de toepassingssjablonen voor de specifieke branches [Detailhandel](../retail/overview-iot-central-retail.md), [Energie](../energy/overview-iot-central-energy.md), [Overheid](../government/overview-iot-central-government.md)of [Gezondheidszorg](../healthcare/overview-iot-central-healthcare.md).
+## <a name="connect-devices"></a>Apparaten verbinden
 
-Als bouwer van oplossingen gebruikt u de webgebaseerde hulpprogramma's om een _apparaatsjabloon_ te maken voor de apparaten die verbinding maken met uw toepassing. Een apparaatsjabloon is de blauwdruk die de eigenschappen en het gedrag van een bepaald type apparaat definieert, zoals:
+Nadat u de toepassing hebt aanmaken, bestaat de eerste stap uit het maken van verbindingsapparaten. Elk apparaat dat is verbonden IoT Central maakt gebruik van _een apparaatsjabloon_. Een apparaatsjabloon is de blauwdruk die de eigenschappen en het gedrag van een bepaald type apparaat definieert, zoals:
 
 - De telemetriegegevens die worden verstuurd. Voorbeelden zijn temperatuur en vochtigheid. Telemetrie bestaat uit het streamen van gegevens.
 - Bedrijfseigenschappen die kunnen worden gewijzigd door een operator. Voorbeelden zijn een klantadres en een datum van laatste service.
@@ -56,9 +55,9 @@ Als bouwer van oplossingen gebruikt u de webgebaseerde hulpprogramma's om een _a
 - Eigenschappen, die door een operator worden ingesteld, waarmee het gedrag van het apparaat wordt bepaald. Bijvoorbeeld een doeltemperatuur voor het apparaat.
 - Opdrachten die een operator kan aanroepen en die op een apparaat worden uitgevoerd. Bijvoorbeeld een opdracht om een apparaat op afstand opnieuw op te starten.
 
-Deze [apparaatsjabloon](howto-set-up-template.md) omvat:
+Elke [apparaatsjabloon](howto-set-up-template.md) omvat:
 
-- Een _apparaatmodel_ dat de mogelijkheden beschrijft waarmee een apparaat moet worden geïmplementeerd. De apparaatmogelijkheden zijn:
+- Een _apparaatmodel dat_ de mogelijkheden beschrijft die een apparaat moet implementeren. De apparaatmogelijkheden zijn:
 
   - De telemetrie die naar IoT Central wordt gestreamd.
   - De alleen-lezeneigenschappen die worden gebruikt om de status aan IoT Central te rapporteren.
@@ -68,25 +67,21 @@ Deze [apparaatsjabloon](howto-set-up-template.md) omvat:
 - Cloudeigenschappen die niet op het apparaat zijn opgeslagen.
 - Aanpassingen, dashboards en formulieren die deel uitmaken van uw IoT Central-toepassing.
 
-### <a name="create-device-templates"></a>Apparaatsjablonen maken
-
-Als bouwer van oplossingen hebt u verschillende opties voor het maken van apparaatsjablonen:
+U hebt verschillende opties voor het maken van apparaatsjablonen:
 
 - Ontwerp de apparaatsjabloon in IoT Central en implementeer vervolgens het apparaatmodel in de code van uw apparaat.
 - Maak een apparaatmodel met behulp van Visual Studio-code en publiceer het model naar een opslagplaats. Implementeer uw apparaatcode vanuit het model en verbind uw apparaat met uw IoT Central-toepassing. IoT Central vindt het apparaatmodel in de opslagplaats en maakt een eenvoudige apparaatsjabloon voor u.
 - Een apparaatmodel maken met Visual Studio Code. Implementeer uw apparaatcode vanuit het model. Importeer het apparaatmodel handmatig in uw IoT Central-toepassing en voeg vervolgens alle cloudeigenschappen, aanpassingen en dashboards toe die uw IoT Central-toepassing nodig heeft.
 
-Als bouwer van oplossingen kunt u IoT Central gebruiken om code te genereren voor testapparaten om uw apparaatsjablonen te valideren.
-
-Als u een ontwikkelaar van apparaten bent, raadpleegt u [Overzicht van het ontwikkelen van IoT Central-apparaten](./overview-iot-central-developer.md) voor een inleiding tot de implementatie van apparaten die gebruikmaken van deze apparaatsjablonen.
+Zie de [quickstart Een gesimuleerd apparaat toevoegen](quick-create-simulated-device.md) voor een overzicht van het maken en verbinden van uw eerste apparaat.
 
 ### <a name="customize-the-ui"></a>De gebruikersinterface aanpassen
 
-Als bouwer van oplossingen kunt u de gebruikersinterface van de IoT Central-toepassing ook aanpassen voor de operators die verantwoordelijk zijn voor het dagelijks gebruik van de toepassing. Dit zijn enkele voorbeelden van aanpassingen die een bouwer van oplossingen kan doen:
+U kunt de gebruikersinterface van IoT Central ook aanpassen voor de operators die verantwoordelijk zijn voor het dagelijkse gebruik van de toepassing. Aanpassingen die u kunt maken, zijn onder andere:
 
-- Het definiëren van de indeling van eigenschappen en instellingen in een apparaatsjabloon.
 - Het configureren van aangepaste dashboards, zodat operators nieuwe inzichten kunnen krijgen en problemen sneller kunnen oplossen.
 - Het configureren van aangepaste analyses om tijdseriegegevens van uw verbonden apparaten te verkennen.
+- Het definiëren van de indeling van eigenschappen en instellingen in een apparaatsjabloon.
 
 ## <a name="manage-your-devices"></a>Uw apparaten beheren
 
@@ -96,9 +91,9 @@ Als operator gebruikt u de IoT Central-toepassing om [de apparaten te beheren](h
 - Het oplossen en verhelpen van problemen met apparaten.
 - Het inrichten van nieuwe apparaten.
 
-Als bouwer van oplossingen kunt u [aangepaste regels en acties definiëren](howto-configure-rules.md) die worden toegepast voor het streamen van gegevens vanaf verbonden apparaten. Een operator kan deze regels op apparaatniveau in- of uitschakelen om taken binnen de toepassing te beheren en automatiseren.
+U kunt [aangepaste regels en acties definiëren die](howto-configure-rules.md) worden gebruikt voor het streamen van gegevens vanaf verbonden apparaten. Een operator kan deze regels op apparaatniveau in- of uitschakelen om taken binnen de toepassing te beheren en automatiseren.
 
-Voor elke IoT-oplossing die is ontworpen voor gebruik op schaal, is een gestructureerde aanpak van apparaatbeheer belangrijk. Het is niet voldoende om uw apparaten alleen maar te verbinden met de cloud. U moet ervoor zorgen dat uw apparaten verbonden blijven en goed blijven werken. Een operator kan de volgende mogelijkheden van IoT Central gebruiken om uw apparaten te beheren gedurende de levenscyclus van de toepassing:
+Voor elke IoT-oplossing die is ontworpen voor gebruik op schaal, is een gestructureerde aanpak van apparaatbeheer belangrijk. Het is niet voldoende om uw apparaten alleen maar te verbinden met de cloud. U moet ervoor zorgen dat uw apparaten verbonden blijven en goed blijven werken. Gebruik de volgende IoT Central voor het beheren van uw apparaten gedurende de hele levenscyclus van de toepassing:
 
 ### <a name="dashboards"></a>Dashboards
 

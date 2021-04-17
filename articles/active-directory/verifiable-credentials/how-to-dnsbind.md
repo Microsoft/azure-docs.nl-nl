@@ -1,6 +1,6 @@
 ---
-title: Uw domein koppelen aan uw gedecentraliseerde id (preview)-Azure Active Directory verifieer bare referenties
-description: Meer informatie over DNS-binding?
+title: Uw domein koppelen aan uw Gedecentraliseerde id (DID) (preview) - Azure Active Directory verifieerbare referenties
+description: Meer informatie over DNS-bindingen
 documentationCenter: ''
 author: barclayn
 manager: daveba
@@ -9,43 +9,43 @@ ms.topic: how-to
 ms.subservice: verifiable-credentials
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: 90ea52b0ed5ee2d8e36caab18491eecd6e1295fd
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: ad5bb6e45479b4cccfa0b002427066439135e468
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106222812"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588442"
 ---
-# <a name="link-your-domain-to-your-decentralized-identifier-did"></a>Uw domein koppelen aan uw gedecentraliseerde id (gelukt)
+# <a name="link-your-domain-to-your-decentralized-identifier-did"></a>Uw domein koppelen aan uw Gedecentraliseerde id (DID)
 
 > [!IMPORTANT]
-> Azure Active Directory Controleer bare referenties bevindt zich momenteel in de publieke preview.
+> Azure Active Directory Verifiable Credentials is momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 In dit artikel:
 > [!div class="checklist"]
-> * Waarom moet ik onze domein koppeling koppelen
-> * Hoe kunnen we DIDs en domeinen koppelen?
-> * Hoe werkt het domein koppelings proces?
-> * Hoe werkt de logica voor verifiëren/niet-geverifieerde domeinen?
+> * Waarom moeten we onze DID koppelen aan ons domein?
+> * Hoe koppelen we dids en domeinen?
+> * Hoe werkt het domeinkoppelingsproces?
+> * Hoe werkt de domeinlogica verifiëren/niet-geverifieerd?
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u het aan uw domein wilt koppelen, moet u het volgende hebben voltooid.
+Als u uw DID wilt koppelen aan uw domein, moet u het volgende hebben voltooid.
 
-- Voltooi de set [aan](get-started-verifiable-credentials.md) de slag en volgende [zelf studie](enable-your-tenant-verifiable-credentials.md).
+- Voltooi de [Aan de slag](get-started-verifiable-credentials.md) en de volgende [zelfstudieset.](enable-your-tenant-verifiable-credentials.md)
 
-## <a name="why-do-we-need-to-link-our-did-to-our-domain"></a>Waarom moet ik onze domein koppeling koppelen
+## <a name="why-do-we-need-to-link-our-did-to-our-domain"></a>Waarom moeten we onze DID koppelen aan ons domein?
 
-A werd gestart als een id die niet is verankerd met bestaande systemen. Een was handig omdat een gebruiker of organisatie de eigenaar kan worden en deze kan beheren. Als een entiteit die met de organisatie communiceert niet weet ' wie ' hoort, is de niet zo nuttig.
+Een DID begint als een id die niet is verankerd in bestaande systemen. Een DID is handig omdat een gebruiker of organisatie er eigenaar van kan zijn en deze kan controleren. Als een entiteit die interactie heeft met de organisatie niet weet 'wie' de DID behoort, is de DID niet zo nuttig.
 
-Als u een hebt gekoppeld aan een domein, wordt het eerste vertrouwens probleem opgelost door een wille keurige entiteit te toestaan de relatie te controleren tussen een en een domein.
+Als u een DID koppelt aan een domein, wordt het eerste vertrouwensprobleem opgelost door elke entiteit toe te staan de relatie tussen een DID en een domein cryptografisch te verifiëren.
 
-## <a name="how-do-we-link-dids-and-domains"></a>Hoe kunnen we DIDs en domeinen koppelen?
+## <a name="how-do-we-link-dids-and-domains"></a>Hoe koppelen we dids en domeinen?
 
-We maken een koppeling tussen een domein en een geslaagd door een open standaard te implementeren die is geschreven door de gedecentraliseerde identiteits basis genaamd [goed bekende geslaagde configuratie](https://identity.foundation/.well-known/resources/did-configuration/). De verifieer bare referentie service in Azure Active Directory (Azure AD) helpt uw organisatie bij het maken van de koppeling tussen de gewiste en het domein door de domein gegevens op te nemen die u in uw hebt opgegeven en het genereren van het bekende configuratie bestand:
+We maken een koppeling tussen een domein en een DID door een open standaard te implementeren die is geschreven door de Decentralized Identity Foundation met de naam [Well-Known DID configuration](https://identity.foundation/.well-known/resources/did-configuration/). De verifieerbare referentieservice in Azure Active Directory (Azure AD) helpt uw organisatie bij het maken van de koppeling tussen de DID en het domein door de domeingegevens op te nemen die u hebt opgegeven in uw DID en het genereren van het bekende configuratiebestand:
 
-1. Azure AD gebruikt de domein gegevens die u tijdens het instellen van de organisatie hebt opgegeven voor het schrijven van een service-eind punt binnen het DID-document. Alle partijen die met uw communiceren, kunnen het domein zien waaraan uw proclaims zijn gekoppeld.  
+1. Azure AD maakt gebruik van de domeingegevens die u tijdens de installatie van de organisatie op geeft om een service-eindpunt te schrijven in het document DID. Alle partijen die met uw DID communiceren, kunnen het domein zien waar uw DID aan moet worden gekoppeld.  
 
     ```json
         "service": [
@@ -60,7 +60,7 @@ We maken een koppeling tussen een domein en een geslaagd door een open standaard
           }
     ```
 
-2. De verifieer bare referentie service in azure AD genereert een compatibele bekende configuratie bron die u in uw domein kunt hosten. Het configuratie bestand bevat een zelf-verleende, geverifieerde referentie van de credentialType ' DomainLinkageCredential ' die is ondertekend met de oorsprong van uw domein. Hier volgt een voor beeld van het configuratie-doc dat is opgeslagen op de URL van het hoofd domein.
+2. De verifieerbare referentieservice in Azure AD genereert een compatibele bekende configuratieresource die u in uw domein kunt hosten. Het configuratiebestand bevat een zelf uitgegeven verifieerbare referentie van credentialType 'DomainLinkageCredential' die is ondertekend met uw DID die een oorsprong van uw domein heeft. Hier is een voorbeeld van het configuratie-document dat is opgeslagen op de URL van het hoofddomein.
 
 
     ```json
@@ -72,65 +72,65 @@ We maken een koppeling tussen een domein en een geslaagd door een open standaard
     }
     ```
 
-Nadat u het bekende configuratie bestand hebt, moet u het bestand beschikbaar maken met de domein naam die u hebt opgegeven bij het inschakelen van uw AAD voor Controleer bare referenties.
+Nadat u het bekende configuratiebestand hebt, moet u het bestand beschikbaar maken met behulp van de domeinnaam die u hebt opgegeven bij het inschakelen van uw AAD voor verifieerbare referenties.
 
-* Host het bekende configuratie bestand in de hoofdmap van het domein.
+* Host het bekende DID-configuratiebestand in de hoofdmap van het domein.
 * Gebruik geen omleidingen.
-* Gebruik HTTPS om het configuratie bestand te distribueren.
+* Gebruik https om het configuratiebestand te distribueren.
 
 >[!IMPORTANT]
->Microsoft Authenticator niet voldoet aan omleidingen, moet de opgegeven URL de uiteindelijke doel-URL zijn.
+>Microsoft Authenticator geen omleidingen respecteert, moet de opgegeven URL de uiteindelijke doel-URL zijn.
 
 ## <a name="user-experience"></a>Gebruikerservaring 
 
-Wanneer een gebruiker een uitgifte stroom doorloopt of een verifieer bare referentie presenteert, moeten ze iets weten over de organisatie en zijn/haar hebben. Als het domein onze verifieer bare referentie Wallet Microsoft Authenticator, wordt er een relatie met het domein in het DID-bestand gevalideerd en worden gebruikers twee verschillende ervaringen gepresenteerd, afhankelijk van het resultaat.
+Wanneer een gebruiker een uitgiftestroom doormaakt of een verifieerbare referentie presenteert, moet deze iets weten over de organisatie en de did. Als het domein onze verifieerbare referentie wallet, Microsoft Authenticator, valideert de relatie van een DID met het domein in het document DID en geeft gebruikers twee verschillende ervaringen, afhankelijk van het resultaat.
 
 ## <a name="verified-domain"></a>Geverifieerd domein
 
-Voordat Microsoft Authenticator een **gecontroleerd** pictogram weergeeft, moeten enkele dingen waar zijn:
+Voordat Microsoft Authenticator een geverifieerd **pictogram we weergeven,** moet u een aantal dingen waar zijn:
 
-* Het ondertekenen van de zelf-verleende Open-ID-aanvraag (SIOP) moet een service-eind punt hebben voor het gekoppelde domein.
-* Het hoofd domein gebruikt geen omleiding en maakt gebruik van HTTPS.
-* Het domein dat in het DID-document wordt vermeld, heeft een omzet bare, bekende resource.
-* De verifieer bare referentie van de bekende bron is ondertekend met dezelfde, waarmee de SIOP werd ondertekend die Microsoft Authenticator gebruikt om de stroom te starten.
+* De DID-ondertekening van de zelf-uitgegeven open ID (SIOP)-aanvraag moet een service-eindpunt voor gekoppeld domein hebben.
+* Het hoofddomein gebruikt geen omleiding en maakt gebruik van https.
+* Het domein dat wordt vermeld in het DID-document heeft een op te lossen bekende resource.
+* De verifieerbare referentie van de bekende resource is ondertekend met dezelfde DID die is gebruikt voor het ondertekenen van de SIOP die Microsoft Authenticator gebruikt om de stroom te starten.
 
-Als alle eerder genoemde voor waarden waar zijn, wordt in Microsoft Authenticator een gecontroleerde pagina weer gegeven en wordt het domein dat is gevalideerd, opgenomen.
+Als alle eerder genoemde waar zijn, geeft Microsoft Authenticator een geverifieerde pagina weer en bevat het domein dat is gevalideerd.
 
-![nieuwe machtigings aanvraag](media/how-to-dnsbind/new-permission-request.png) 
+![nieuwe machtigingsaanvraag](media/how-to-dnsbind/new-permission-request.png) 
 
 ## <a name="unverified-domain"></a>Niet-geverifieerd domein
 
-Als een van de bovenstaande waarden niet waar is, wordt in de Microsoft Authenticator een volledige pagina waarschuwing weer gegeven aan de gebruiker dat het domein niet is geverifieerd. de gebruiker bevindt zich in het midden van een Risk ante trans actie en moet voorzichtig door gaan. We hebben ervoor gekozen om deze route te volgen omdat:
+Als een van de bovenstaande niet waar is, geeft de Microsoft Authenticator een volledige paginawaarschuwing weer voor de gebruiker dat het domein niet geverifieerd is, de gebruiker bezig is met een riskante transactie en voorzichtig moet zijn. We hebben ervoor gekozen om deze route te nemen, omdat:
 
-* De is niet verankerd met een domein.
+* De DID is ofwel niet ankerd in een domein.
 * De configuratie is niet juist ingesteld.
-* De gebruiker is in staat om kwaad aardig te zijn en kan niet bewijzen dat ze eigenaar zijn van een domein (omdat ze er eigenlijk niet zijn). Als gevolg van dit laatste punt is het van cruciaal belang dat u uw hebt gekoppeld aan het domein waarmee de gebruiker bekend is, om te voor komen dat het waarschuwings bericht wordt door gegeven.
+* De HEEFT de gebruiker interactie met is schadelijk en kan niet bewijzen dat ze eigenaar zijn van een domein (omdat ze daadwerkelijk niet). Vanwege dit laatste punt is het belangrijk dat u uw DID koppelt aan het domein dat de gebruiker kent, om te voorkomen dat het waarschuwingsbericht wordt doorgegeven.
 
-![niet-geverifieerde domein waarschuwing in het scherm referentie toevoegen](media/how-to-dnsbind/add-credential-not-verified-authenticated.png)
+![waarschuwing voor niet-geverifieerd domein in het scherm Referenties toevoegen](media/how-to-dnsbind/add-credential-not-verified-authenticated.png)
 
 ## <a name="distribute-well-known-config"></a>Bekende configuratie distribueren
 
-1. Navigeer naar de pagina instellingen in Controleer bare referenties en kies **dit domein verifiëren**
+1. Navigeer naar de pagina Instellingen in Verifieerbare referenties en kies **Dit domein verifiëren**
 
-   ![Dit domein controleren in instellingen](media/how-to-dnsbind/settings-verify.png) 
+   ![Controleer dit domein in instellingen](media/how-to-dnsbind/settings-verify.png) 
 
-2. Down load de did-configuration.jsin het bestand dat wordt weer gegeven in de onderstaande afbeelding.
+2. Download de did-configuration.jsin het bestand dat wordt weergegeven in de onderstaande afbeelding.
 
    ![Bekende configuratie downloaden](media/how-to-dnsbind/verify-download.png) 
 
-3. Kopieer de JWT, open [JWT.MS](https://www.jwt.ms) en controleer of het domein juist is.
+3. Kopieer de JWT, open [jwt.ms](https://www.jwt.ms) controleer of het domein juist is.
 
-4. Kopieer uw was en open de [Ion-netwerk Verkenner](https://identity.foundation/ion/explorer) om te controleren of hetzelfde domein is opgenomen in het document. 
+4. Kopieer uw DID en open de [ION-Netwerkverkenner](https://identity.foundation/ion/explorer) om te controleren of hetzelfde domein is opgenomen in het DID-document. 
 
-5. Host de bekende configuratie bron op de opgegeven locatie. Voorbeeld: https://www.example.com/.well-known/did-configuration.json
+5. Host de bekende configuratieresource op de opgegeven locatie. Voorbeeld: `https://www.example.com/.well-known/did-configuration.json`
 
-6. Test het uitgeven of presen teren met Microsoft Authenticator om te valideren. Zorg ervoor dat de instelling waarschuwing over onveilige apps wordt in-of uitgeschakeld.
+6. Test het uitgeven of presenteren van een Microsoft Authenticator te valideren. Zorg ervoor dat de instelling in Authenticator Waarschuwen over onveilige apps is in-/uitschakelen.
 
 >[!NOTE]
->Standaard is ' waarschuwen over onveilige apps ' ingeschakeld.
+>'Waarschuwen over onveilige apps' is standaard ingeschakeld.
 
-Gefeliciteerd, u hebt nu het Internet van de vertrouwens relatie met uw geslaagd.
+Gefeliciteerd, u hebt nu het vertrouwensweb met uw did!
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u tijdens het voorbereiden de verkeerde domein gegevens invoert, moet u [ervoor](how-to-opt-out.md)kiezen om deze te wijzigen. Op dit moment bieden we geen ondersteuning voor het bijwerken van het opgestelde document. Als u inactief maakt en inschakelt, wordt er een gloed nieuwe gemaakt.
+Als u tijdens het onboarden de verkeerde domeingegevens van u in de onboarding op geeft en u besluit deze te wijzigen, moet u [zich uit- en uit- .](how-to-opt-out.md) Op dit moment bieden we geen ondersteuning voor het bijwerken van uw DID-document. Als u zich uit- en weer in kiest, wordt er een geheel nieuwe DID-versie aan de naam gedaan.

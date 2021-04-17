@@ -1,57 +1,57 @@
 ---
 title: De Azure Digital Twins-API's en -SDK's gebruiken
 titleSuffix: Azure Digital Twins
-description: Zie hoe u werkt met de Azure Digital Twins API's, inclusief via SDK.
+description: Zie hoe u werkt met de Azure Digital Twins API's, inclusief via de SDK.
 author: baanders
 ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: efa5061a49978ed5e7766c0e7bf9b56a1e73cf5d
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 21247f6b396cb1f7016c74cbec528149c0583724
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389754"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107587201"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>De Azure Digital Twins-API's en -SDK's gebruiken
 
-Azure Digital Twins is uitgerust met api's voor besturingsvlakken en **API's** voor gegevensvlak voor het beheren van uw exemplaar en de elementen ervan.  
+Azure Digital Twins is uitgerust met API's **voor** besturingsvlak en **gegevensvlak-API's** voor het beheren van uw exemplaar en de elementen ervan. 
 * De API's van het [besturingsvlak zijn Azure Resource Manager (ARM) API's](../azure-resource-manager/management/overview.md) en omvatten bewerkingen voor resourcebeheer, zoals het maken en verwijderen van uw exemplaar. 
 * De gegevensvlak-API's zijn Azure Digital Twins API's en worden gebruikt voor gegevensbeheerbewerkingen zoals het beheren van modellen, tweelingen en de grafiek.
 
-In dit artikel vindt u een overzicht van de beschikbare API's en de methoden voor interactie met de API's. U kunt de REST API's rechtstreeks gebruiken met hun bijbehorende S associatedgers (via een hulpprogramma zoals [Postman)](how-to-use-postman.md)of via een SDK.
+In dit artikel vindt u een overzicht van de beschikbare API's en de methoden voor interactie met de API's. U kunt de REST API's rechtstreeks gebruiken met hun bijbehorende S tools (via een hulpprogramma zoals [Postman)](how-to-use-postman.md)of via een SDK.
 
 ## <a name="overview-control-plane-apis"></a>Overzicht: API's voor besturingsvlak
 
-De besturingsvlak-API's zijn ARM-API's die worden gebruikt voor het beheren van uw Azure Digital Twins-exemplaar als geheel, zodat ze bewerkingen behandelen zoals het maken of verwijderen van uw hele exemplaar. [](../azure-resource-manager/management/overview.md) U gebruikt deze ook om eindpunten te maken en te verwijderen.
+De API's van het besturingsvlak zijn [ARM-API's](../azure-resource-manager/management/overview.md) die worden gebruikt om uw Azure Digital Twins-exemplaar als geheel te beheren, zodat ze bewerkingen omvatten zoals het maken of verwijderen van uw hele exemplaar. U gebruikt deze ook om eindpunten te maken en te verwijderen.
 
-De meest recente versie van de besturingsvlak-API is _**2020-12-01.**_
+De meest recente api-versie van het besturingsvlak is _**2020-12-01.**_
 
-De besturingsvlak-API's gebruiken:
-* U kunt de API's rechtstreeks aanroepen door te verwijzen naar de meest recente Swagger-map in de [Swagger-repo](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/stable)van het besturingsvlak. Deze map bevat ook een map met voorbeelden waarin het gebruik wordt weergeven.
+De API's van het besturingsvlak gebruiken:
+* U kunt de API's rechtstreeks aanroepen door te verwijzen naar de meest recente Swagger-map in de [Swagger-repo van het besturingsvlak.](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/stable) Deze map bevat ook een map met voorbeelden waarin het gebruik wordt weergeven.
 * U hebt momenteel toegang tot SDK's voor het beheer van API's in...
   - [**.NET (C#)**](https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/) ([verwijzing [automatisch gegenereerd]](/dotnet/api/overview/azure/digitaltwins/management)) ([bron](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins))
-  - [**Java**](https://search.maven.org/search?q=a:azure-mgmt-digitaltwins) ([verwijzing [automatisch gegenereerd]](/java/api/overview/azure/digitaltwins)) ([bron](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins))
+  - [**Java**](https://search.maven.org/search?q=a:azure-mgmt-digitaltwins) ([naslag [automatisch gegenereerd]](/java/api/overview/azure/digitaltwins)) ([bron](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins))
   - [**JavaScript**](https://www.npmjs.com/package/@azure/arm-digitaltwins) ([bron](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins))
   - [**Python**](https://pypi.org/project/azure-mgmt-digitaltwins/) ([bron](https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins))
   - [**Go**](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt) ([bron](https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt))
 
-U kunt ook de API's van het besturingsvlak oefenen door te communiceren met Azure Digital Twins via [de Azure Portal](https://portal.azure.com) en [CLI.](how-to-use-cli.md)
+U kunt ook api's voor besturingsvlak oefenen door te communiceren met Azure Digital Twins via [de Azure Portal](https://portal.azure.com) en [CLI.](how-to-use-cli.md)
 
 ## <a name="overview-data-plane-apis"></a>Overzicht: API's voor gegevensvlak
 
 De gegevensvlak-API's zijn de Azure Digital Twins API's die worden gebruikt om de elementen in uw Azure Digital Twins beheren. Ze omvatten bewerkingen zoals het maken van routes, het uploaden van modellen, het maken van relaties en het beheren van tweelingen. Ze kunnen breed worden onderverdeeld in de volgende categorieën:
-* **DigitalTwinModels:** de categorie DigitalTwinModels bevat API's voor het beheren van de modellen [in](concepts-models.md) een Azure Digital Twins exemplaar. Beheeractiviteiten omvatten het uploaden, valideren, ophalen en verwijderen van modellen die zijn geschreven in DTDL.
-* **DigitalTwins:** de categorie DigitalTwins bevat de API's die [](concepts-twins-graph.md) ontwikkelaars digitale tweelingen en hun relaties in een Azure Digital Twins maken, wijzigen en verwijderen.
-* **Query:** met de categorie Query kunnen ontwikkelaars [sets van digitale tweelingen vinden in de tweelinggrafiek tussen](how-to-query-graph.md) relaties.
-* **Gebeurtenisroutes:** de categorie Gebeurtenisroutes bevat API's om [gegevens](concepts-route-events.md)door te geven, via het systeem en naar downstreamservices.
+* **DigitalTwinModels:** de categorie DigitalTwinModels bevat API's om de modellen [in](concepts-models.md) een Azure Digital Twins beheren. Beheeractiviteiten omvatten het uploaden, valideren, ophalen en verwijderen van modellen die zijn geschreven in DTDL.
+* **DigitalTwins:** de categorie DigitalTwins bevat de API's die [](concepts-twins-graph.md) ontwikkelaars in staat stellen digitale tweelingen en hun relaties in een Azure Digital Twins maken, wijzigen en verwijderen.
+* **Query:** met de categorie Query kunnen ontwikkelaars [sets digitale tweelingen vinden in de tweelinggrafiek tussen](how-to-query-graph.md) relaties.
+* **Gebeurtenisroutes:** de categorie Gebeurtenisroutes bevat API's om [gegevens door te](concepts-route-events.md)geven, via het systeem en naar downstreamservices.
 
-De meest recente API-versie van het gegevensvlak is _**2020-10-31.**_
+De meest recente api-versie van het gegevensvlak is _**2020-10-31.**_
 
 De gegevensvlak-API's gebruiken:
-* U kunt de API's rechtstreeks aanroepen, door...
-   - verwijst naar de meest recente Swagger-map in de [Swagger-gegevensvlak-repo.](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins) Deze map bevat ook een map met voorbeelden waarin het gebruik wordt weergeven. 
+* U kunt de API's rechtstreeks aanroepen door...
+   - verwijst naar de meest recente Swagger-map in de [Swagger-repo van het gegevensvlak.](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins) Deze map bevat ook een map met voorbeelden waarin het gebruik wordt weergeven. 
    - bekijk de [API-referentiedocumentatie](/rest/api/azure-digitaltwins/).
 * U kunt de **.NET SDK (C#) gebruiken.** De .NET SDK gebruiken...
    - U kunt het pakket weergeven en toevoegen vanuit NuGet: [Azure.DigitalTwins.Core.](https://www.nuget.org/packages/Azure.DigitalTwins.Core) 
@@ -59,11 +59,11 @@ De gegevensvlak-API's gebruiken:
    - U vindt de SDK-bron, inclusief een map met voorbeelden, in GitHub: [Azure IoT Digital Twins clientbibliotheek voor .NET.](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core) 
    - U kunt gedetailleerde informatie en gebruiksvoorbeelden bekijken door verder te gaan naar de [*sectie .NET (C#) SDK (gegevensvlak)*](#net-c-sdk-data-plane) van dit artikel.
 * U kunt de **Java SDK gebruiken.** De Java SDK gebruiken...
-   - U kunt het pakket bekijken en installeren vanuit Maven: [`com.azure:azure-digitaltwins-core`](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar)
+   - U kunt het pakket weergeven en installeren vanuit Maven: [`com.azure:azure-digitaltwins-core`](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar)
    - U kunt de [SDK-referentiedocumentatie bekijken](/java/api/overview/azure/digitaltwins/client)
    - U vindt de SDK-bron in GitHub: [Azure IoT Digital Twins clientbibliotheek voor Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core)
 * U kunt de **JavaScript SDK gebruiken.** De JavaScript SDK gebruiken...
-   - U kunt het pakket bekijken en installeren vanuit npm: [Azure Azure Digital Twins Core-clientbibliotheek voor JavaScript.](https://www.npmjs.com/package/@azure/digital-twins-core)
+   - U kunt het pakket weergeven en installeren vanuit npm: [Azure Azure Digital Twins Core-clientbibliotheek voor JavaScript.](https://www.npmjs.com/package/@azure/digital-twins-core)
    - U kunt de [SDK-referentiedocumentatie bekijken.](/javascript/api/@azure/digital-twins-core/)
    - U vindt de SDK-bron in GitHub: [Azure Azure Digital Twins Core-clientbibliotheek voor JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core)
 * U kunt de **Python SDK gebruiken.** De Python-SDK gebruiken...
@@ -72,11 +72,11 @@ De gegevensvlak-API's gebruiken:
    - U vindt de SDK-bron in GitHub: [Azure Azure Digital Twins Core-clientbibliotheek voor Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core)
 * U kunt een SDK genereren voor een andere taal met behulp van AutoRest. Volg de instructies in [*Instructies: Aangepaste SDK's maken voor Azure Digital Twins met AutoRest.*](how-to-create-custom-sdks.md)
 
-U kunt ook oefenen met API's voor datumvlakken door te communiceren met Azure Digital Twins via de [CLI](how-to-use-cli.md).
+U kunt ook api's voor datumvlakken oefenen door te communiceren met Azure Digital Twins via de [CLI](how-to-use-cli.md).
 
 ## <a name="net-c-sdk-data-plane"></a>.NET (C#) SDK (gegevensvlak)
 
-De Azure Digital Twins .NET (C#) SDK maakt deel uit van de Azure SDK voor .NET. Het is open source en is gebaseerd op de api'Azure Digital Twins gegevensvlak.
+De Azure Digital Twins .NET -SDK (C#) maakt deel uit van de Azure SDK voor .NET. Het is open source en is gebaseerd op de api's Azure Digital Twins gegevensvlak.
 
 > [!NOTE]
 > Zie de algemene ontwerpprincipes voor Azure SDK's en de specifieke [.NET-ontwerprichtlijnen](https://azure.github.io/azure-sdk/dotnet_introduction.html)voor meer informatie over [SDK-ontwerp.](https://azure.github.io/azure-sdk/general_introduction.html)
@@ -140,7 +140,7 @@ De `BasicDigitalTwin` helperklasse biedt u ook toegang tot eigenschappen die zij
 
 ##### <a name="create-a-digital-twin"></a>Een digitale tweeling maken
 
-Met behulp `BasicDigitalTwin` van de klasse kunt u gegevens voorbereiden voor het maken van een tweeling-exemplaar:
+Met behulp `BasicDigitalTwin` van de klasse kunt u gegevens voorbereiden voor het maken van een dubbel exemplaar:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="CreateTwin_withHelper":::
 
@@ -154,7 +154,7 @@ U kunt relatiegegevens altijd deserialiseren naar een type van uw keuze. Gebruik
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="GetRelationshipsCall":::
 
-De `BasicRelationship` helperklasse biedt u ook toegang tot eigenschappen die zijn gedefinieerd in de relatie, via een `IDictionary<string, object>` . Als u eigenschappen wilt weergeven, kunt u het volgende gebruiken:
+De `BasicRelationship` helperklasse biedt u ook toegang tot eigenschappen die zijn gedefinieerd voor de relatie, via een `IDictionary<string, object>` . Als u eigenschappen wilt weergeven, kunt u het volgende gebruiken:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_other.cs" id="ListRelationshipProperties":::
 
@@ -166,35 +166,35 @@ Met behulp `BasicRelationship` van de klasse kunt u ook gegevens voorbereiden vo
 
 ##### <a name="create-a-patch-for-twin-update"></a>Een patch maken voor een tweelingupdate
 
-Update-aanroepen voor tweelingen en relaties maken gebruik [van JSON](http://jsonpatch.com/) Patch-structuur. Als u lijsten met JSON Patch-bewerkingen wilt maken, kunt u de `JsonPatchDocument` gebruiken zoals hieronder wordt weergegeven.
+Update-aanroepen voor tweelingen en relaties maken gebruik [van JSON Patch-structuur.](http://jsonpatch.com/) Als u lijsten met JSON Patch-bewerkingen wilt maken, kunt u de `JsonPatchDocument` gebruiken zoals hieronder wordt weergegeven.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="UpdateTwin":::
 
 ## <a name="general-apisdk-usage-notes"></a>Algemene gebruiksnotities voor API/SDK
 
 > [!NOTE]
-> Houd er rekening mee Azure Digital Twins ondersteuning biedt voor **Cross-Origin Resource Sharing (CORS)**. Zie de sectie [*Cross-Origin Resource Sharing (CORS)*](concepts-security.md#cross-origin-resource-sharing-cors) van Concepten: Beveiliging voor Azure Digital Twins oplossingen voor meer informatie over de *impact- en oplossingsstrategieën.*
+> Houd er rekening Azure Digital Twins ondersteuning biedt voor **Cross-Origin Resource Sharing (CORS)**. Zie de sectie [*Cross-Origin Resource Sharing (CORS)*](concepts-security.md#cross-origin-resource-sharing-cors) van Concepten: Beveiliging voor Azure Digital Twins oplossingen voor meer informatie over de impact *en oplossingsstrategieën.*
 
 De volgende lijst bevat aanvullende details en algemene richtlijnen voor het gebruik van de API's en SDK's.
 
-* U kunt een HTTP REST-testprogramma zoals Postman gebruiken om directe aanroepen uit te voeren naar Azure Digital Twins API's. Zie Procedure: Aanvragen maken met Postman voor meer informatie [*over dit proces.*](how-to-use-postman.md)
-* Als u de SDK wilt gebruiken, maakt u een instantie van de `DigitalTwinsClient` klasse . De constructor vereist referenties die kunnen worden verkregen met verschillende verificatiemethoden in het `Azure.Identity` pakket. Zie de documentatie `Azure.Identity` van de [naamruimte voor meer informatie](/dotnet/api/azure.identity)over . 
+* U kunt een HTTP REST-testprogramma zoals Postman gebruiken om directe aanroepen uit te voeren naar Azure Digital Twins API's. Zie Procedure: aanvragen maken met Postman voor meer [*informatie over dit proces.*](how-to-use-postman.md)
+* Als u de SDK wilt gebruiken, maakt u een instantie van de `DigitalTwinsClient` klasse . De constructor vereist referenties die kunnen worden verkregen met verschillende verificatiemethoden in het `Azure.Identity` pakket. Zie de documentatie van `Azure.Identity` de [naamruimte voor meer informatie over](/dotnet/api/azure.identity). 
 * Het kan handig zijn om aan de slag te gaan, maar er zijn verschillende andere opties, waaronder referenties voor beheerde identiteit, die u waarschijnlijk gebruikt voor het verifiëren van Azure-functies die zijn ingesteld met `InteractiveBrowserCredential` [MSI](../app-service/overview-managed-identity.md?tabs=dotnet) op Azure Digital Twins. [](/dotnet/api/azure.identity.interactivebrowsercredential) Zie de `InteractiveBrowserCredential` klassedocumentatie [voor meer informatie over](/dotnet/api/azure.identity.interactivebrowsercredential).
-* Voor aanvragen naar Azure Digital Twins API's is een gebruiker of service-principal vereist die deel uitmaakt van dezelfde [Azure Active Directory-tenant](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD) waarin de Azure Digital Twins zich bevindt. Aanvragen met toegangstokens van buiten de oorspronkelijke tenant krijgen het foutbericht '404 Sub-Domain not found' (404 Sub-Domain niet gevonden) als u wilt voorkomen dat kwaadde actoren URL's scannen om te ontdekken waar Azure Digital Twins-exemplaren zich kunnen vinden. Deze fout wordt  geretourneerd, zelfs als de gebruiker of service-principal de rol Azure Digital Twins gegevenseigenaar of Azure Digital Twins gegevenslezer heeft gekregen via [Azure AD B2B-samenwerking.](../active-directory/external-identities/what-is-b2b.md)
+* Voor aanvragen voor Azure Digital Twins API's is een gebruiker of service-principal vereist die deel uitmaakt van dezelfde [Azure Active Directory-tenant](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD) waarin de Azure Digital Twins zich bevindt. Om schadelijke scans van Azure Digital Twins eindpunten te voorkomen, krijgen aanvragen met toegangstokens van buiten de oorspronkelijke tenant het foutbericht '404 Sub-Domain niet gevonden'. Deze fout wordt  zelfs geretourneerd als de gebruiker of service-principal de rol Azure Digital Twins Gegevenseigenaar of Azure Digital Twins-gegevenslezer heeft gekregen via [Azure AD B2B-samenwerking.](../active-directory/external-identities/what-is-b2b.md) Zie [*How-to: Write app authentication code (App-verificatiecode*](how-to-authenticate-client.md#authenticate-across-tenants)schrijven) voor meer informatie over het verkrijgen van toegang tot meerdere tenants.
 * Alle service-API-aanroepen worden beschikbaar gemaakt als lidfuncties in de `DigitalTwinsClient` klasse .
 * Alle servicefuncties bestaan in synchrone en asynchrone versies.
 * Alle servicefuncties geven een uitzondering voor een retourstatus van 400 of hoger. Zorg ervoor dat u aanroepen in een `try` sectie verpakt en ten minste vangt. `RequestFailedExceptions` Zie hier voor meer informatie over dit type [uitzondering.](/dotnet/api/azure.requestfailedexception)
-* De meeste servicemethoden retourneren of ( voor `Response<T>` `Task<Response<T>>` de asynchrone aanroepen), waarbij de klasse van `T` het retourobject is voor de service-aanroep. De [`Response`](/dotnet/api/azure.response-1) klasse kapselt het retour van de service in en presenteert retourwaarden in het `Value` veld.  
-* Servicemethoden met resultaten met pagina's `Pageable<T>` retourneren of `AsyncPageable<T>` als resultaten. Zie hier voor meer informatie over de klasse . Zie hier voor meer `Pageable<T>` informatie [](/dotnet/api/azure.pageable-1) `AsyncPageable<T>` [over](/dotnet/api/azure.asyncpageable-1).
+* De meeste servicemethoden retourneren of ( voor `Response<T>` `Task<Response<T>>` de asynchrone aanroepen), waarbij de klasse van `T` het retourobject is voor de service-aanroep. De [`Response`](/dotnet/api/azure.response-1) klasse kapselt het service-retour in en presenteert retourwaarden in het `Value` veld.  
+* Servicemethoden met resultaten met pagina's `Pageable<T>` retourneren of `AsyncPageable<T>` als resultaten. Zie hier voor meer informatie over de klasse . Zie `Pageable<T>` hier voor meer informatie [](/dotnet/api/azure.pageable-1) `AsyncPageable<T>` [over](/dotnet/api/azure.asyncpageable-1).
 * U kunt paginade resultaten herhalen met behulp van een `await foreach` lus. Zie hier voor meer informatie over [dit proces.](/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8)
-* De onderliggende SDK is `Azure.Core` . Zie de [documentatie voor Azure-naamruimte](/dotnet/api/azure) voor naslag over de infrastructuur en typen van de SDK.
+* De onderliggende SDK is `Azure.Core` . Zie de [documentatie voor Azure-naamruimte](/dotnet/api/azure) voor naslag over de SDK-infrastructuur en -typen.
 
 
-Servicemethoden retourneren waar mogelijk sterk getypeerd objecten. Omdat Azure Digital Twins echter is gebaseerd op modellen die tijdens runtime door de gebruiker zijn geconfigureerd (via DTDL-modellen die naar de service zijn geüpload), nemen en retourneren veel service-API's dubbele gegevens in JSON-indeling.
+Servicemethoden retourneren waar mogelijk sterk getypeerd objecten. Omdat Azure Digital Twins echter is gebaseerd op modellen die tijdens runtime door de gebruiker zijn geconfigureerd (via DTDL-modellen die zijn geüpload naar de service), nemen en retourneren veel service-API's dubbele gegevens in JSON-indeling.
 
 ## <a name="monitor-api-metrics"></a>Metrische API-gegevens bewaken
 
-Metrische API-gegevens, zoals aanvragen, latentie en foutpercentage, kunnen worden bekeken in [de Azure Portal.](https://portal.azure.com/) 
+Metrische API-gegevens zoals aanvragen, latentie en foutpercentage kunnen worden bekeken in [de Azure Portal.](https://portal.azure.com/) 
 
 Zoek op de startpagina van de portal naar uw Azure Digital Twins om de details ervan op te halen. Selecteer de **optie Metrische** gegevens in Azure Digital Twins menu van het exemplaar om de pagina Metrische gegevens *weer te* geven.
 
@@ -205,7 +205,7 @@ Hier kunt u de metrische gegevens voor uw exemplaar bekijken en aangepaste weerg
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie hoe u directe aanvragen naar de API's kunt maken met behulp van Postman:
-* [*Hoe kan ik aanvragen doen met Postman?*](how-to-use-postman.md)
+* [*Hoe:Aanvragen maken met Postman*](how-to-use-postman.md)
 
 U kunt ook oefenen met het gebruik van de .NET SDK door een client-app te maken met deze zelfstudie:
 * [*Zelfstudie: Een client-app coderen*](tutorial-code.md)

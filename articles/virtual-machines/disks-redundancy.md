@@ -1,6 +1,6 @@
 ---
-title: Redundantie opties voor Azure Managed disks
-description: Meer informatie over zone-redundante opslag en lokaal redundante opslag voor Azure Managed disks.
+title: Redundantieopties voor beheerde Azure-schijven
+description: Meer informatie over zone-redundante opslag en lokaal redundante opslag voor beheerde Azure-schijven.
 author: roygara
 ms.author: rogarana
 ms.date: 03/02/2021
@@ -8,57 +8,57 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: f0f3baf1bf56f958408f789961812c0555f289f1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0882efeccfc8dc83686d75ab39b8364219c3b5f1
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102043640"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588085"
 ---
-# <a name="redundancy-options-for-managed-disks"></a>Redundantie opties voor beheerde schijven
+# <a name="redundancy-options-for-managed-disks"></a>Redundantieopties voor beheerde schijven
 
-Azure Managed disks biedt twee opties voor opslag redundantie, zone-redundante opslag (ZRS) als voor beeld en lokaal redundante opslag. ZRS biedt hogere Beschik baarheid voor beheerde schijven dan lokaal redundante opslag (LRS). De schrijf latentie voor LRS-schijven is echter beter dan ZRS schijven, omdat LRS schijven synchroon gegevens naar drie kopieën in één Data Center schrijven.
+Beheerde Azure-schijven bieden twee opties voor opslag redundantie: zone-redundante opslag (ZRS) als preview-versie en lokaal redundante opslag. ZRS biedt hogere beschikbaarheid voor beheerde schijven dan lokaal redundante opslag (LRS). De schrijflatentie voor LRS-schijven is echter beter dan ZRS-schijven, omdat LRS-schijven synchroon gegevens schrijven naar drie kopieën in één datacenter.
 
 ## <a name="locally-redundant-storage-for-managed-disks"></a>Lokaal redundante opslag voor beheerde schijven
 
-Lokaal redundante opslag (LRS) repliceert uw gegevens drie keer binnen één Data Center in de geselecteerde regio. LRS beschermt uw gegevens tegen server rack-en schijf storingen. 
+Met lokaal redundante opslag (LRS) worden uw gegevens drie keer gerepliceerd binnen één datacenter in de geselecteerde regio. LRS beschermt uw gegevens tegen serverrek- en schijffouten. 
 
-Er zijn een paar manieren waarop u uw toepassing kunt beveiligen met behulp van LRS-schijven van een volledige zone storing die kan optreden vanwege natuur rampen of hardwareproblemen:
-- Gebruik een toepassing zoals SQL Server AlwaysOn, waarmee gegevens synchroon naar twee zones kunnen worden geschreven en automatisch een failover naar een andere zone kan worden onderhandeld tijdens een nood geval.
-- Maak regel matig back-ups van LRS-schijven met ZRS-moment opnamen.
-- Herstel na nood geval op meerdere zones inschakelen voor LRS-schijven via [Azure site Recovery](../site-recovery/azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md). Het herstel na nood geval op meerdere zones biedt echter geen waarde voor het herstel punt objectief (RPO).
+Er zijn een aantal manieren waarop u uw toepassing kunt beveiligen met behulp van LRS-schijven tegen een volledige zonefout die kan optreden als gevolg van natuurrampen of hardwareproblemen:
+- Gebruik een toepassing zoals SQL Server AlwaysOn, die synchroon gegevens naar twee zones kan schrijven en automatisch een failover naar een andere zone kan maken tijdens een noodlottige ramp.
+- Maak regelmatig back-ups van LRS-schijven met ZRS-momentopnamen.
+- Schakel herstel na noodherstel in meerdere zones in voor LRS-schijven via [Azure Site Recovery](../site-recovery/azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md). Herstel na noodherstel in een andere zone biedt echter geen RPO (Recovery Point Objective).
 
-Als uw werk stroom geen synchrone schrijf bewerkingen op toepassings niveau ondersteunt voor zones of als uw toepassing voldoet aan nul RPO, zouden ZRS-schijven ideaal zijn.
+Als uw werkstroom geen ondersteuning biedt voor synchrone schrijf schrijftaken op toepassingsniveau in zones, of als uw toepassing moet voldoen aan nul RPO, zijn ZRS-schijven ideaal.
 
-## <a name="zone-redundant-storage-for-managed-disks-preview"></a>Zone-redundante opslag voor beheerde schijven (preview-versie)
+## <a name="zone-redundant-storage-for-managed-disks-preview"></a>Zone-redundante opslag voor beheerde schijven (preview)
 
-Zone-redundante opslag (ZRS) repliceert uw Azure Managed Disk synchroon over drie Azure-beschikbaarheids zones in de geselecteerde regio. Elke beschikbaarheidszone is een afzonderlijke fysieke locatie met onafhankelijke voeding, koeling en netwerken. 
+Met zone-redundante opslag (ZRS) wordt uw door Azure beheerde schijf synchroon gerepliceerd naar drie Azure-beschikbaarheidszones in de geselecteerde regio. Elke beschikbaarheidszone is een afzonderlijke fysieke locatie met onafhankelijke voeding, koeling en netwerken. 
 
-Met ZRS-schijven kunt u fouten in beschikbaarheids zones herstellen. Als een hele zone is uitgeschakeld, kan een ZRS-schijf worden gekoppeld aan een virtuele machine in een andere zone. U kunt ZRS-schijven ook gebruiken als een gedeelde schijf om de beschik baarheid te verbeteren voor geclusterde of gedistribueerde toepassingen zoals SQL FCI, SAP ASCS/SCS of GFS2. U kunt een gedeelde ZRS-schijf koppelen aan primaire en secundaire Vm's in verschillende zones om gebruik te maken van zowel ZRS als [Beschikbaarheidszones](../availability-zones/az-overview.md). Als uw primaire zone mislukt, kunt u snel een failover uitvoeren naar de secundaire virtuele machine met behulp van [permanente SCSI-reserve ring](disks-shared-enable.md#supported-scsi-pr-commands).
+Met ZRS-schijven kunt u herstellen van fouten in beschikbaarheidszones. Als een hele zone uit zou gaan, kan een ZRS-schijf worden gekoppeld aan een VM in een andere zone. U kunt ook ZRS-schijven als gedeelde schijf gebruiken om verbeterde beschikbaarheid te bieden voor geclusterde of gedistribueerde toepassingen zoals SQL FCI, SAP ASCS/SCS of GFS2. U kunt een gedeelde ZRS-schijf koppelen aan primaire en secundaire VM's in verschillende zones om te profiteren van zowel ZRS [als Beschikbaarheidszones.](../availability-zones/az-overview.md) Als uw primaire zone uitvalt, kunt u snel een fail over naar de secundaire VM met behulp van [permanente SCSI-reservering](disks-shared-enable.md#supported-scsi-pr-commands).
 
 ### <a name="limitations"></a>Beperkingen
 
-Tijdens de preview-versie van ZRS voor Managed disks gelden de volgende beperkingen:
+Tijdens de preview gelden voor ZRS voor beheerde schijven de volgende beperkingen:
 
-- Alleen ondersteund met Premium-schijven (Solid-state drives) en standaard Ssd's.
+- Alleen ondersteund met Premium SSD-ssd's (Solid-State Drives) en Standard SSD's.
 - Momenteel alleen beschikbaar in de regio EastUS2EUAP.
-- ZRS-schijven kunnen alleen worden gemaakt met Azure Resource Manager sjablonen met behulp van de `2020-12-01` API.
+- ZRS-schijven kunnen alleen worden gemaakt met Azure Resource Manager-sjablonen met behulp van de `2020-12-01` API.
 
-Meld u [hier](https://aka.ms/ZRSDisksPreviewSignUp)aan voor de preview.
+Registreer u hier voor de [preview.](https://aka.ms/ZRSDisksPreviewSignUp)
 
-### <a name="billing-implications"></a>Facturerings implicaties
+### <a name="billing-implications"></a>Gevolgen voor facturering
 
-Zie de pagina met [prijzen voor Azure](https://azure.microsoft.com/pricing/details/managed-disks/)voor meer informatie.
+Zie de pagina [met Azure-prijzen voor meer informatie.](https://azure.microsoft.com/pricing/details/managed-disks/)
 
-### <a name="comparison-with-other-disk-types"></a>Vergelijking met andere schijf typen
+### <a name="comparison-with-other-disk-types"></a>Vergelijking met andere schijftypen
 
-Behalve voor meer schrijf latentie, zijn schijven met ZRS identiek aan schijven met behulp van LRS. Ze hebben dezelfde prestatie doelen.
+Met uitzondering van meer schrijflatentie zijn schijven die gebruikmaken van ZRS identiek aan schijven die gebruikmaken van LRS. Ze hebben dezelfde prestatiedoelen. We raden u aan om een [schijfbenchmarkering](disks-benchmarks.md) uit te voeren om de workload van uw toepassing te simuleren voor het vergelijken van de latentie tussen de LRS- en ZRS-schijven. 
 
-### <a name="create-zrs-managed-disks"></a>ZRS Managed disks maken
+### <a name="create-zrs-managed-disks"></a>Beheerde ZRS-schijven maken
 
-Gebruik de `2020-12-01` API met uw Azure Resource Manager-sjabloon om een ZRS-schijf te maken.
+Gebruik de `2020-12-01` API met uw Azure Resource Manager om een ZRS-schijf te maken.
 
-#### <a name="create-a-vm-with-zrs-disks"></a>Een virtuele machine maken met ZRS-schijven
+#### <a name="create-a-vm-with-zrs-disks"></a>Een VM met ZRS-schijven maken
 
 ```
 $vmName = "yourVMName" 
@@ -80,7 +80,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
 -dataDiskType $dataDiskType
 ```
 
-#### <a name="create-vms-with-a-shared-zrs-disk-attached-to-the-vms-in-different-zones"></a>Vm's maken met een gedeelde ZRS-schijf die is gekoppeld aan de virtuele machines in verschillende zones
+#### <a name="create-vms-with-a-shared-zrs-disk-attached-to-the-vms-in-different-zones"></a>VM's maken met een gedeelde ZRS-schijf die is gekoppeld aan de VM's in verschillende zones
 
 ```
 $vmNamePrefix = "yourVMNamePrefix"
@@ -101,7 +101,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
 -dataDiskType $sharedDataDiskType
 ```
 
-#### <a name="create-a-virtual-machine-scale-set-with-zrs-disks"></a>Een schaalset voor virtuele machines maken met ZRS-schijven
+#### <a name="create-a-virtual-machine-scale-set-with-zrs-disks"></a>Een virtuele-machineschaalset maken met ZRS-schijven
 
 ```
 $vmssName="yourVMSSName"
@@ -123,4 +123,4 @@ New-AzResourceGroupDeployment -ResourceGroupName zrstesting `
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Gebruik deze voorbeeld [Azure Resource Manager sjablonen voor het maken van een virtuele machine met ZRS-schijven](https://github.com/Azure-Samples/managed-disks-powershell-getting-started/tree/master/ZRSDisks).
+- Gebruik deze [voorbeeldsjablonen Azure Resource Manager om een VM met ZRS-schijven te maken.](https://github.com/Azure-Samples/managed-disks-powershell-getting-started/tree/master/ZRSDisks)

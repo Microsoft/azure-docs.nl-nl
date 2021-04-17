@@ -10,17 +10,17 @@ ms.subservice: keys
 ms.topic: tutorial
 ms.date: 02/24/2021
 ms.author: ambapat
-ms.openlocfilehash: f7761cf011a3a678bb7609e1063ac6ebec90d395
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e8230404d71b0fe46e8a7cc536d2b5f3a4c5004f
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102499183"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588391"
 ---
 # <a name="import-hsm-protected-keys-for-key-vault-ncipher"></a>Met HSM beveiligde sleutels importeren voor Key Vault (nCipher)
 
 > [!WARNING]
-> De in dit document beschreven methode voor het importeren van de HSM-sleutel wordt **afgeschaft** en wordt in de toekomst niet meer ondersteund. Het werkt alleen met nCipher nShield-familie van Hsm's met firmware 12.40.2 of 12,50 met een hotfix. Het gebruik van de [nieuwe methode voor het importeren van HSM-sleutels](hsm-protected-keys-byok.md) wordt ten zeerste aanbevolen.
+> De methode voor het importeren van HSM-sleutels die in dit document wordt beschreven, **is** afgeschaft en wordt na 30 juni 2021 niet meer ondersteund. Het werkt alleen met de nCipher nShield-familie van HMS's met firmware 12.40.2 of 12.50 met een hotfix. Het [wordt sterk aanbevolen om een nieuwe methode te gebruiken om HSM-sleutels](hsm-protected-keys-byok.md) te importeren.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

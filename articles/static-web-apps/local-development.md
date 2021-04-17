@@ -1,6 +1,6 @@
 ---
-title: Lokale ontwikkeling voor Azure static-Web Apps instellen
-description: Meer informatie over het instellen van uw lokale ontwikkel omgeving voor Azure static Web Apps
+title: Lokale ontwikkeling instellen voor Azure Static Web Apps
+description: Meer informatie over het instellen van uw lokale ontwikkelomgeving voor Azure Static Web Apps
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
@@ -8,144 +8,144 @@ ms.topic: how-to
 ms.date: 04/02/2021
 ms.author: cshoe
 ms.custom: devx-track-js
-ms.openlocfilehash: 8a45d490d060febc18d77c8487c9f562fd2a914a
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: e19d39a32d48ec55473bb957595d47ec5148e74b
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106275498"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588782"
 ---
-# <a name="set-up-local-development-for-azure-static-web-apps-preview"></a>Lokale ontwikkeling voor Azure static Web Apps-Preview instellen
+# <a name="set-up-local-development-for-azure-static-web-apps-preview"></a>Lokale ontwikkeling instellen voor Azure Static Web Apps Preview
 
-Wanneer een Azure static Web Apps-site naar de Cloud wordt gepubliceerd, heeft er een groot aantal services die samen werken alsof ze dezelfde toepassing zijn. Deze services omvatten:
+Wanneer een site in de cloud wordt gepubliceerd, Azure Static Web Apps veel services die samenwerken alsof ze dezelfde toepassing zijn. Deze services omvatten:
 
 - De statische web-app
-- Azure Functions-API
-- Verificatie-en autorisatie Services
-- Routerings-en configuratie Services
+- Azure Functions API
+- Verificatie- en autorisatieservices
+- Routerings- en configuratieservices
 
-Deze services moeten met elkaar communiceren en Azure static Web Apps verwerkt deze integratie in de Cloud.
+Deze services moeten met elkaar communiceren en Azure Static Web Apps deze integratie voor u in de cloud verwerkt.
 
-Als u lokaal uitvoert, worden deze services echter niet automatisch aan elkaar gekoppeld.
+Deze services worden echter niet automatisch aan elkaar gekoppeld als ze lokaal worden uitgevoerd.
 
-Om een vergelijk bare ervaring te bieden als voor wat u in azure krijgt, biedt de [statische web apps CLI van Azure](https://github.com/Azure/static-web-apps-cli) de volgende services:
+Om een vergelijkbare ervaring te bieden als wat u in Azure krijgt, biedt [Azure Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli) de volgende services:
 
-- Een lokale statische site server
-- Een proxy voor de front-end Framework-ontwikkelings server
-- Een proxy voor uw API-eind punten-beschikbaar via Azure Functions Core Tools
-- Een model verificatie-en autorisatie server
-- Lokale routes en configuratie-instellingen afdwingen
+- Een lokale statische siteserver
+- Een proxy naar de front-end framework-ontwikkelingsserver
+- Een proxy naar uw API-eindpunten - beschikbaar via Azure Functions Core Tools
+- Een mock-verificatie- en autorisatieserver
+- Afdwinging van lokale routes en configuratie-instellingen
 
 ## <a name="how-it-works"></a>Uitleg
 
-In het volgende diagram ziet u hoe aanvragen lokaal worden verwerkt.
+In de volgende grafiek ziet u hoe aanvragen lokaal worden verwerkt.
 
-:::image type="content" source="media/local-development/cli-conceptual.png" alt-text="IP-adres van de statische web-app voor Azure en de respons stroom":::
+:::image type="content" source="media/local-development/cli-conceptual.png" alt-text="Azure Static Web App CLI-aanvraag- en -antwoordstroom":::
 
 > [!IMPORTANT]
-> Ga naar [http://localhost:4280](http://localhost:4280) om toegang te krijgen tot de toepassing die wordt geleverd door de cli.
+> `http://localhost:4280`Navigeer naar om toegang te krijgen tot de toepassing die wordt bediend door de CLI.
 
-- **Aanvragen** naar de poort `4280` worden doorgestuurd naar de juiste server, afhankelijk van het type aanvraag.
+- **Aanvragen** die naar de poort `4280` worden gedaan, worden doorgestuurd naar de juiste server, afhankelijk van het type aanvraag.
 
-- Aanvragen voor **statische inhoud** , zoals HTML of CSS, worden verwerkt door de interne cli-server voor statische inhoud of door de front-end Framework-server voor fout opsporing.
+- **Aanvragen voor** statische inhoud, zoals HTML of CSS, worden verwerkt door de interne CLI-inhoudsserver of door de front-end frameworkserver voor het debuggen.
 
-- **Verificatie-en autorisatie** aanvragen worden verwerkt door een emulator, waarmee een echt identiteits profiel aan uw app wordt verstrekt.
+- **Verificatie- en** autorisatieaanvragen worden verwerkt door een emulator, die een profiel voor een valse identiteit aan uw app biedt.
 
-- **Functions core tools runtime** verwerkt aanvragen voor de API van de site.
+- **Functions Core Tools-runtime** verwerkt aanvragen naar de API van de site.
 
-- **Antwoorden** van alle services worden teruggestuurd naar de browser alsof het allemaal één toepassing was.
+- **Antwoorden van** alle services worden naar de browser geretourneerd alsof ze allemaal één toepassing zijn.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- **Bestaande Azure Static web apps-site**: als u er geen hebt, kunt u beginnen met de [vanille-API starter-](https://github.com/staticwebdev/vanilla-api/generate?return_to=/staticwebdev/vanilla-api/generate) app.
-- **[Node.js](https://nodejs.org) met NPM**: Voer de [Node.js LTS](https://nodejs.org) -versie uit, waaronder toegang tot [NPM](https://www.npmjs.com/).
-- **[Visual Studio code](https://code.visualstudio.com/)**: wordt gebruikt voor het opsporen van fouten in de API-toepassing, maar niet vereist voor de cli.
+- **Bestaande Azure Static Web Apps site:** als u er nog geen hebt, begint u met de [starter-app vanilla-api.](https://github.com/staticwebdev/vanilla-api/generate?return_to=/staticwebdev/vanilla-api/generate)
+- **[Node.js](https://nodejs.org) met npm:** voer de [Node.js LTS-versie](https://nodejs.org) uit, die toegang tot [npm bevat.](https://www.npmjs.com/)
+- **[Visual Studio Code: wordt](https://code.visualstudio.com/)** gebruikt voor het debuggen van de API-toepassing, maar niet vereist voor de CLI.
 
 ## <a name="get-started"></a>Aan de slag
 
-Open een terminal naar de hoofdmap van uw bestaande Azure static Web Apps-site.
+Open een terminal naar de hoofdmap van uw bestaande Azure Static Web Apps site.
 
 1. Installeer de CLI.
 
     `npm install -g @azure/static-web-apps-cli`
 
-1. Bouw uw app als dat nodig is voor uw toepassing.
+1. Bouw uw app indien nodig door uw toepassing.
 
-    Voer uit `npm run build` of de overeenkomende opdracht voor uw project.
+    Voer `npm run build` uit of de equivalente opdracht voor uw project.
 
-1. Ga naar de uitvoermap voor uw app. Uitvoer mappen hebben vaak de naam _Build_ of iets dergelijks.
+1. Wijzig in de uitvoermap voor uw app. Uitvoermappen worden vaak _build of_ iets soortgelijks genoemd.
 
 1. Start de CLI.
 
     `swa start`
 
-1. Navigeer naar [http://localhost:4280](http://localhost:4280) om de app in de browser weer te geven.
+1. http://localhost:4280Navigeer naar om de app in de browser te bekijken.
 
 ### <a name="other-ways-to-start-the-cli"></a>Andere manieren om de CLI te starten
 
-| Beschrijving | Opdracht |
+| Description | Opdracht |
 |--- | --- |
 | Een specifieke map gebruiken | `swa start ./output-folder` |
-| Een actieve Framework-ontwikkelings server gebruiken | `swa start http://localhost:3000` |
-| Een functions-app in een map starten | `swa start ./output-folder --api ./api` |
-| Een actieve functions-app gebruiken | `swa start ./output-folder --api http://localhost:7071` |
+| Een lopende framework-ontwikkelingsserver gebruiken | `swa start http://localhost:3000` |
+| Een Functions-app starten in een map | `swa start ./output-folder --api ./api` |
+| Een actief Functions-app gebruiken | `swa start ./output-folder --api http://localhost:7071` |
 
-## <a name="authorization-and-authentication-emulation"></a>Verificatie-en verificatie-emulatie
+## <a name="authorization-and-authentication-emulation"></a>Autorisatie en verificatie-emulatie
 
-De statische Web Apps CLI emuleert de [beveiligings stroom](./authentication-authorization.md) die in Azure is geïmplementeerd. Wanneer een gebruiker zich aanmeldt, kunt u een valse identiteits profiel definiëren dat naar de app wordt geretourneerd.
+Met Static Web Apps CLI wordt de [beveiligingsstroom geëmuleerd die](./authentication-authorization.md) in Azure is geïmplementeerd. Wanneer een gebruiker zich aanmeldt, kunt u een profiel voor een valse identiteit definiëren dat wordt geretourneerd naar de app.
 
-Wanneer u bijvoorbeeld probeert te navigeren naar `/.auth/login/github` , wordt er een pagina geretourneerd waarmee u een identiteits profiel kunt definiëren.
+Wanneer u bijvoorbeeld naar navigeert, wordt er een pagina geretourneerd waarmee `/.auth/login/github` u een identiteitsprofiel kunt definiëren.
 
 > [!NOTE]
-> De emulator werkt met elke beveiligings provider, niet alleen GitHub.
+> De emulator werkt met elke beveiligingsprovider, niet alleen met GitHub.
 
 :::image type="content" source="media/local-development/auth-emulator.png" alt-text="Lokale verificatie en autorisatie-emulator":::
 
-De emulator biedt een pagina waarmee u de volgende principal-waarden van de [client](./user-information.md#client-principal-data) kunt opgeven:
+De emulator biedt een pagina waarmee u de volgende [clientprincipaalwaarden kunt](./user-information.md#client-principal-data) verstrekken:
 
 | Waarde | Beschrijving |
 | --- | --- |
-| **Gebruikersnaam** | De account naam die aan de beveiligings provider is gekoppeld. Deze waarde wordt weer gegeven als de `userDetails` eigenschap in de client-Principal en wordt automatisch gegenereerd als u geen waarde opgeeft. |
-| **Gebruikers-id** | De waarde die automatisch wordt gegenereerd door de CLI.  |
-| **Rollen** | Een lijst met namen van rollen, waarbij elke naam op een nieuwe regel staat.  |
+| **Gebruikersnaam** | De accountnaam die is gekoppeld aan de beveiligingsprovider. Deze waarde wordt weergegeven als de `userDetails` eigenschap in de clientprincipal en wordt automatisch gegenereerd als u geen waarde op geeft. |
+| **Gebruikers-id** | Waarde automatisch gegenereerd door de CLI.  |
+| **Rollen** | Een lijst met rolnamen, waarbij elke naam zich op een nieuwe regel.  |
 
-Zodra u bent aangemeld:
+Nadat u bent aangemeld:
 
-- U kunt het `/.auth/me` eind punt of een functie-eind punt gebruiken om de [client-Principal](./user-information.md)van de gebruiker op te halen.
+- U kunt het eindpunt of een functie-eindpunt gebruiken om `/.auth/me` de [client-principal](./user-information.md)van de gebruiker op te halen.
 
-- Als u navigeert `./auth/logout` , wordt de client-Principal gewist en wordt de gebruiker afgemeld.
+- Als u navigeert `./auth/logout` naar , wordt de client-principal geweken en wordt de mock-gebruiker afmeldt.
 
 ## <a name="debugging"></a>Foutopsporing
 
-Er zijn twee fout opsporingsgegevens in een statische web-app. De eerste is voor de site van de statische inhoud en de tweede is voor API-functies. Lokale fout opsporing is mogelijk door de statische Web Apps CLI toe te staan ontwikkel servers te gebruiken voor een of beide van deze contexten.
+Er zijn twee contexten voor het debuggen van gegevens in een statische web-app. De eerste is voor de site met statische inhoud en de tweede voor API-functies. Lokalebuggen is mogelijk doordat de cli Static Web Apps ontwikkelservers kan gebruiken voor een van deze contexten of beide contexten.
 
-In de volgende stappen ziet u een algemeen scenario waarin ontwikkel servers worden gebruikt voor zowel fout opsporing als contexten.
+In de volgende stappen ziet u een algemeen scenario waarin gebruik wordt gemaakt van ontwikkelservers voor beide contexten voor het debuggen van gegevens.
 
-1. Start de server voor de ontwikkeling van statische sites. Deze opdracht is specifiek voor het front-end-Framework dat u gebruikt, maar wordt vaak gebruikt in de vorm van opdrachten als `npm run build` , `npm start` of `npm run dev` .
+1. Start de statische siteontwikkelingsserver. Deze opdracht is specifiek voor het front-end-framework dat u gebruikt, maar wordt vaak geleverd in de vorm van opdrachten `npm run build` zoals `npm start` , of `npm run dev` .
 
-1. Open de map API-toepassing in Visual Studio code en start een foutopsporingssessie.
+1. Open de map API-toepassing in Visual Studio Code en start een debuggingssessie.
 
-1. Geef de adressen voor de statische server en API-server door aan de `swa start` opdracht door ze in de aangegeven volg orde weer te geven.
+1. Geef de adressen voor de statische server en API-server door aan de `swa start` opdracht door ze in volgorde weer te geven.
 
     `swa start http://localhost:<DEV-SERVER-PORT-NUMBER> --api=http://localhost:7071`
 
-De volgende scherm afbeeldingen tonen de terminals voor een typisch fout opsporingsprogramma:
+De volgende schermafbeeldingen tonen de terminals voor een typisch scenario voor het debuggen:
 
-De statische inhouds site wordt uitgevoerd via `npm run dev` .
+De site met statische inhoud wordt uitgevoerd via `npm run dev` .
 
-:::image type="content" source="media/local-development/run-dev-static-server.png" alt-text="Ontwikkel server voor statische site":::
+:::image type="content" source="media/local-development/run-dev-static-server.png" alt-text="Statische siteontwikkelingsserver":::
 
-De Azure Functions API-toepassing voert een foutopsporingssessie uit in Visual Studio code.
+Met Azure Functions API-toepassing wordt een foutopsporingssessie uitgevoerd in Visual Studio Code.
 
-:::image type="content" source="media/local-development/visual-studio-code-debugging.png" alt-text="Visual Studio code API-fout opsporing":::
+:::image type="content" source="media/local-development/visual-studio-code-debugging.png" alt-text="Visual Studio code-API-debuggen":::
 
-De statische Web Apps CLI wordt gestart met behulp van beide ontwikkel servers.
+De Static Web Apps CLI wordt gestart met behulp van beide ontwikkelservers.
 
-:::image type="content" source="media/local-development/static-web-apps-cli-terminal.png" alt-text="Azure static Web Apps CLI-Terminal":::
+:::image type="content" source="media/local-development/static-web-apps-cli-terminal.png" alt-text="Azure Static Web Apps CLI-terminal":::
 
-Aanvragen die via poort gaan `4280` worden doorgestuurd naar de statische content development server of de API-fout opsporings sessie.
+Aanvragen die via de poort gaan, worden nu doorgeleid naar de ontwikkelingsserver voor statische inhoud of de `4280` API-debuggingssessie.
 
-Zie de [Azure Static web apps cli-opslag plaats](https://github.com/Azure/static-web-apps-cli)voor meer informatie over verschillende scenario's voor fout opsporing, met richt lijnen voor het aanpassen van poorten en server adressen.
+Zie de CLI-opslagplaats voor meer informatie over verschillende scenario's voor Azure Static Web Apps voor het aanpassen van poorten [en serveradressen.](https://github.com/Azure/static-web-apps-cli)
 
 ## <a name="next-steps"></a>Volgende stappen
 

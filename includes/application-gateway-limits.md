@@ -4,12 +4,12 @@ ms.service: application-gateway
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: victorh
-ms.openlocfilehash: c98d88d66e89df3efe186212d8c004ec2a65158d
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 1166585c7291c4fe0d78cbc9540e3f08f985db6c
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106450211"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107589944"
 ---
 | Resource | Limiet | Opmerking |
 | --- | --- | --- |
@@ -35,9 +35,9 @@ ms.locfileid: "106450211"
 | Aantal herschrijfregelsets |400| |
 | Aantal header- of URL-configuraties per herschrijfregelset|40| |
 | Aantal voorwaarden per herschrijfregelset|40| |
-| Gelijktijdige WebSocket-verbindingen |Gemiddelde gateways 20.000<sup>2</sup><br> Grote gateways 50.000<sup>2</sup>| |
+| Gelijktijdige WebSocket-verbindingen |Middelgrote gateways<sup>20.000 2</sup><br> Grote gateways<sup>50.000 2</sup>| |
 | Maximale URL-lengte|32 KB| |
-| Maximale header-grootte voor HTTP/2 |4 KB| |
+| Maximale header-grootte voor HTTP/2 |16 kB| |
 | Maximumgrootte voor bestandsupload, Standard |2 GB | |
 | Maximumgrootte voor bestandsupload, WAF |V1 Medium WAF-gateways, 100 MB<br>V1 Large WAF-gateways, 500 MB<br>V2 WAF, 750 MB| |
 | Maximale grootte van WAF, zonder bestanden|128 kB||
@@ -46,4 +46,4 @@ ms.locfileid: "106450211"
 
 <sup>1</sup> In het geval van SKU's met WAF ingeschakeld moet u het aantal resources beperken tot 40.
 
-<sup>2</sup> de limiet is per Application Gateway exemplaar, niet per Application Gateway resource.
+<sup>2</sup> Limiet is per Application Gateway niet per Application Gateway resource.

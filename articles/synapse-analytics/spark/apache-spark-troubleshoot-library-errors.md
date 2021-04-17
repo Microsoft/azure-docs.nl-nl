@@ -1,6 +1,6 @@
 ---
-title: Problemen met de bibliotheek installatie oplossen
-description: Deze zelf studie biedt een overzicht van het oplossen van problemen met de bibliotheek installatie.
+title: Bibliotheekinstallatiefouten oplossen
+description: Deze zelfstudie biedt een overzicht van het oplossen van bibliotheekinstallatiefouten.
 services: synapse-analytics
 author: midesa
 ms.author: midesa
@@ -8,44 +8,44 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: conceptual
 ms.date: 01/04/2021
-ms.openlocfilehash: 57e9d0c584600a8fac90499d72cfac1620052603
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 006abf62c605c2ca34fd1adeadee8e29ae0fb8fb
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101694917"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588306"
 ---
-# <a name="troubleshoot-library-installation-errors"></a>Problemen met de bibliotheek installatie oplossen 
-Als u een derde of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van de serverloze Apache Spark groepen. De pakketten die in het requirements.txt-bestand worden weer gegeven, worden vanaf PyPi gedownload op het moment dat de pool wordt gestart. Dit vereisten bestand wordt gebruikt wanneer een Spark-exemplaar wordt gemaakt vanuit die Spark-groep. Zodra een bibliotheek is geïnstalleerd voor een Spark-groep, is deze beschikbaar voor alle sessies die gebruikmaken van dezelfde groep. 
+# <a name="troubleshoot-library-installation-errors"></a>Bibliotheekinstallatiefouten oplossen 
+Als u code van derden of lokaal gebouwde code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van uw serverloze Apache Spark groepen. De pakketten die worden vermeld in het requirements.txt-bestand, worden gedownload van PyPi op het moment dat de pool wordt gestart. Dit vereistenbestand wordt telkens gebruikt wanneer een Spark-exemplaar wordt gemaakt van die Spark-pool. Zodra een bibliotheek is geïnstalleerd voor een Spark-pool, is deze beschikbaar voor alle sessies die dezelfde pool gebruiken. 
 
-In sommige gevallen is het mogelijk dat er geen bibliotheek wordt weer gegeven in uw Apache Spark groep. Dit probleem treedt vaak op wanneer er een fout is opgetreden in de opgegeven requirements.txt of opgegeven bibliotheken. Als er een fout optreedt in het installatie proces van de bibliotheek, wordt de Apache Spark-groep teruggezet naar de bibliotheken die zijn opgegeven in de Synapse-basis runtime.
+In sommige gevallen is het mogelijk dat er geen bibliotheek wordt weergegeven in uw Apache Spark groep. Deze case treedt vaak op wanneer er een fout optreedt in de opgegeven requirements.txt of opgegeven bibliotheken. Wanneer er een fout optreedt in het installatieproces van de bibliotheek, keert de Apache Spark terug naar bibliotheken die zijn opgegeven in de Synapse-basisruntime.
 
-Het doel van dit document is om veelvoorkomende problemen op te lossen en te helpen bij het opsporen van fouten in de bibliotheek installatie.
+Het doel van dit document is om veelvoorkomende problemen op te lossen en fouten in de installatie van de bibliotheek op te lossen.
 
-## <a name="force-update-your-apache-spark-pool"></a>Bijwerken van uw Apache Spark groep afdwingen
-Wanneer u de bibliotheken in uw Apache Spark pool bijwerkt, worden deze wijzigingen opgehaald zodra de groep opnieuw is opgestart. Als u actieve taken hebt, blijven deze taken worden uitgevoerd op de oorspronkelijke versie van de Spark-groep.
+## <a name="force-update-your-apache-spark-pool"></a>Uw Apache Spark geforceer
+Wanneer u de bibliotheken in uw Apache Spark bij te werken, worden deze wijzigingen doorgevoerd zodra de pool opnieuw is opgestart. Als u actieve taken hebt, blijven deze taken worden uitgevoerd op de oorspronkelijke versie van de Spark-pool.
 
-Als u de wijzigingen wilt Toep assen, selecteert u de optie om **nieuwe instellingen** af te dwingen. Met deze instelling worden alle huidige sessies voor de geselecteerde Spark-groep beëindigd. Zodra de sessies zijn beëindigd, moet u wachten tot de groep opnieuw is opgestart. 
+U kunt de wijzigingen dwingen toe te passen door de optie nieuwe **instellingen forceer te selecteren.** Met deze instelling worden alle huidige sessies voor de geselecteerde Spark-pool beëindigen. Zodra de sessies zijn beëindigd, moet u wachten tot de pool opnieuw is gestart. 
 
 ![Python-bibliotheken toevoegen](./media/apache-spark-azure-portal-add-libraries/update-libraries.png "Python-bibliotheken toevoegen")
 
-## <a name="track-installation-progress"></a>Voortgang van de installatie volgen
-Telkens wanneer een groep wordt bijgewerkt met een nieuwe set Bibliotheken, wordt een door het systeem gereserveerde Spark-taak gestart. Deze Spark-taak helpt bij het controleren van de status van de bibliotheek installatie. Als de installatie mislukt vanwege bibliotheek conflicten of andere problemen, wordt de status van de Spark-groep teruggezet naar de vorige of de standaard instelling. 
+## <a name="track-installation-progress"></a>Voortgang van de installatie bijhouden
+Telkens wanneer een pool wordt bijgewerkt met een nieuwe set bibliotheken, wordt er een door het systeem gereserveerde Spark-taak gestart. Met deze Spark-taak kunt u de status van de bibliotheekinstallatie controleren. Als de installatie mislukt vanwege bibliotheekconflicten of andere problemen, keert de Spark-pool terug naar de vorige of standaardtoestand. 
 
-Daarnaast kunnen gebruikers de installatie logboeken ook inspecteren om afhankelijkheids conflicten te identificeren of om te zien welke bibliotheken zijn geïnstalleerd tijdens het bijwerken van de groep.
+Daarnaast kunnen gebruikers ook de installatielogboeken inspecteren om afhankelijkheidsconflicten te identificeren of te zien welke bibliotheken tijdens de update van de pool zijn geïnstalleerd.
 
-Als u deze logboeken wilt weer geven:
-1. Ga naar de lijst met Spark-toepassingen op het tabblad **monitor** . 
-2. Selecteer de systeem-Spark-toepassings taak die overeenkomt met uw pool-update. Deze systeem taken worden uitgevoerd onder de titel *SystemReservedJob-LibraryManagement* .
-   ![Scherm afbeelding die de systeem bibliotheek taak voor reserve ring markeert.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job.png "Systeem bibliotheek taak weer geven")
-3. Schakel over om het **stuur programma** -en **stdout** -logboeken weer te geven. 
-4. Binnen de resultaten ziet u de logboeken met betrekking tot de installatie van uw pakketten.
-    ![Scherm afbeelding die de taak resultaten van de door het systeem gereserveerde bibliotheek markeert.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job-results.png "Taak voortgang van systeem bibliotheek weer geven")
+Deze logboeken weergeven:
+1. Navigeer naar de lijst met Spark-toepassingen op **het tabblad** Controleren. 
+2. Selecteer de spark-toepassings taak van het systeem die overeenkomt met de update van uw pool. Deze systeemtaken worden uitgevoerd onder *de titel SystemReservedJob-LibraryManagement.*
+   ![Schermopname met de taak voor een gereserveerde bibliotheek voor het systeem.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job.png "Taak voor systeembibliotheek weergeven")
+3. Schakel over om de logboeken **voor** **stuurprogramma's en stdout weer te** laten zien. 
+4. In de resultaten ziet u de logboeken met betrekking tot de installatie van uw pakketten.
+    ![Schermopname met de resultaten van de taak van de gereserveerde bibliotheek voor het systeem.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job-results.png "De voortgang van de taak van de systeembibliotheek weergeven")
 
 ## <a name="validate-your-permissions"></a>Uw machtigingen valideren
-Als u bibliotheken wilt installeren en bijwerken, moet u de machtigingen voor de **gegevens eigenaar** van de **Storage BLOB-data bijdrager** of de opslag-BLOB hebben voor het primaire Azure data Lake Storage Gen2-opslag account dat is gekoppeld aan de Azure Synapse Analytics-werk ruimte.
+Als u bibliotheken wilt installeren  en bijwerken,  moet u de machtiging Inzender voor opslagblobgegevens of Eigenaar van opslagblobgegevens hebben voor het primaire Azure Data Lake Storage Gen2 Storage-account dat is gekoppeld aan de Azure Synapse Analytics-werkruimte.
 
-U kunt controleren of u over deze machtigingen beschikt door de volgende code uit te voeren:
+Als u wilt controleren of u deze machtigingen hebt, kunt u de volgende code uitvoeren:
 
 ```python
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType
@@ -67,42 +67,42 @@ df = spark.createDataFrame(data=data2,schema=schema)
 df.write.csv("abfss://<<ENTER NAME OF FILE SYSTEM>>@<<ENTER NAME OF PRIMARY STORAGE ACCOUNT>>.dfs.core.windows.net/validate_permissions.csv")
 
 ```
-Als er een fout bericht wordt weer gegeven, mist u waarschijnlijk de vereiste machtigingen. Ga voor meer informatie over het verkrijgen van de vereiste machtigingen naar dit document: [toegang tot Inzender voor opslag-blobs of gegevens eigenaar](../../storage/common/storage-auth-aad-rbac-portal.md#assign-an-azure-built-in-role)van de opslag-BLOB toewijzen.
+Als er een foutmelding wordt weergegeven, ontbreekt waarschijnlijk de vereiste machtigingen. Als u wilt weten hoe u de vereiste machtigingen verkrijgt, gaat u naar dit document: Machtigingen voor Bijdrager voor opslagblobgegevens of Eigenaar van [opslagblobgegevens toewijzen.](../../storage/common/storage-auth-aad-rbac-portal.md#assign-an-azure-built-in-role)
 
-Bovendien, als u een pijp lijn uitvoert, moet de werk ruimte-MSI-gegevens eigenaar van de opslag-BLOB of de gegevensfactory van de opslag-BLOB ook zijn. Ga voor meer informatie over het verlenen van de identiteit van uw werk ruimte aan deze machtiging naar: [machtigingen verlenen aan beheerde identiteit van werk ruimte](../security/how-to-grant-workspace-managed-identity-permissions.md).
+Als u bovendien een pijplijn gebruikt, moet de werkruimte-MSI ook de machtiging Eigenaar van opslagblobgegevens of Bijdrager voor opslagblobgegevens hebben. Ga naar: Machtigingen verlenen aan door werkruimte beheerde identiteit voor meer informatie over het verlenen van deze machtiging aan [uw werkruimte-identiteit.](../security/how-to-grant-workspace-managed-identity-permissions.md)
 
-## <a name="check-the-environment-configuration-file"></a>Controleer het configuratie bestand van de omgeving
-Een configuratie bestand voor de omgeving kan worden gebruikt om de Conda-omgeving bij te werken. Deze acceptabele bestands indelingen voor python-groeps beheer worden [hier](./apache-spark-manage-python-packages.md)weer gegeven.
+## <a name="check-the-environment-configuration-file"></a>Het configuratiebestand van de omgeving controleren
+Een omgevingsconfiguratiebestand kan worden gebruikt om de Conda-omgeving bij te werken. Deze acceptabele bestandsindelingen voor Python-poolbeheer worden hier [vermeld.](./apache-spark-manage-python-packages.md)
 
-Het is belang rijk dat u rekening moet houden met de volgende beperkingen:
-   -  De inhoud van het vereiste bestand mag geen extra lege regels of tekens bevatten. 
-   -  De [Synapse-runtime](apache-spark-version-support.md) bevat een set bibliotheken die vooraf zijn geïnstalleerd op elke serverloze Apache Spark groep. Pakketten die vooraf zijn geïnstalleerd in de basis runtime, kunnen niet worden verwijderd of ongedaan worden gemaakt.
-   -  Het wijzigen van de PySpark-, Python-, scala/Java-, .NET-of Spark-versie wordt niet ondersteund.
-   -  Met python-sessie bereik bibliotheken worden alleen bestanden met een YML-extensie geaccepteerd.
+Het is belangrijk dat u rekening houd met de volgende beperkingen:
+   -  De inhoud van het bestand met vereisten mag geen extra lege regels of tekens bevatten. 
+   -  [Synapse Runtime](apache-spark-version-support.md) bevat een set bibliotheken die vooraf zijn geïnstalleerd op elke serverloze Apache Spark pool. Pakketten die vooraf zijn geïnstalleerd op de basisruntime, kunnen niet worden verwijderd of verwijderd.
+   -  Het wijzigen van de PySpark-, Python-, Scala/Java-, .NET- of Spark-versie wordt niet ondersteund.
+   -  Bibliotheken met een Python-sessiebereik accepteren alleen bestanden met een YML-extensie.
 
-## <a name="validate-wheel-files"></a>Wiel bestanden valideren
-De Synapse serverloze Apache Spark Pools zijn gebaseerd op de Linux-distributie. Wanneer u schijf bestanden rechtstreeks vanuit PyPI downloadt en installeert, moet u ervoor zorgen dat u de versie selecteert die is gebouwd op Linux en wordt uitgevoerd op dezelfde python-versie als de Spark-pool.
+## <a name="validate-wheel-files"></a>Wheel-bestanden valideren
+De serverloze Synapse Apache Spark groepen zijn gebaseerd op de Linux-distributie. Wanneer u Wheel-bestanden rechtstreeks vanuit PyPI downloadt en installeert, moet u ervoor zorgen dat u de versie selecteert die is gebouwd op Linux en wordt uitgevoerd op dezelfde Python-versie als de Spark-pool.
 
 >[!IMPORTANT]
->Aangepaste pakketten kunnen worden toegevoegd of gewijzigd tussen sessies. U moet echter wachten tot de groep en de sessie opnieuw worden opgestart om het bijgewerkte pakket weer te geven.
+>Aangepaste pakketten kunnen worden toegevoegd of gewijzigd tussen sessies. U moet echter wachten tot de pool en de sessie opnieuw zijn gestart om het bijgewerkte pakket te zien.
 
-## <a name="check-for-dependency-conflicts"></a>Controleren op afhankelijkheids conflicten
- Over het algemeen kan de oplossing voor python-afhankelijkheid lastig te beheren zijn. Om conflicten met afhankelijkheden lokaal op te lossen, kunt u uw eigen virtuele omgeving maken op basis van de Synapse-runtime en uw wijzigingen valideren.
+## <a name="check-for-dependency-conflicts"></a>Controleren op afhankelijkheidsconflicten
+ Over het algemeen kan het lastig zijn om python-afhankelijkheidsoplossing te beheren. Als u afhankelijkheidsconflicten lokaal wilt oplossen, kunt u uw eigen virtuele omgeving maken op basis van de Synapse Runtime en uw wijzigingen valideren.
 
 De omgeving opnieuw maken en uw updates valideren:
- 1. [Down load](https://github.com/Azure-Samples/Synapse/blob/main/Spark/Python/base_environment.yml) de sjabloon om de Synapse-runtime lokaal opnieuw te maken. Er kunnen kleine verschillen zijn tussen de sjabloon en de werkelijke Synapse-omgeving.
+ 1. [Download](https://github.com/Azure-Samples/Synapse/blob/main/Spark/Python/base_environment.yml) de sjabloon om de Synapse-runtime lokaal opnieuw te maken. Er kunnen kleine verschillen zijn tussen de sjabloon en de daadwerkelijke Synapse-omgeving.
    
- 2. Maak een virtuele omgeving met behulp van de [volgende instructies](https://docs.conda.io/projects/conda/latest/user-guide/tasks/manage-environments.html). Met deze omgeving kunt u een geïsoleerde python-installatie maken met de opgegeven lijst met bibliotheken. 
+ 2. Maak een virtuele omgeving met behulp van [de volgende instructies.](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment) In deze omgeving kunt u een geïsoleerde Python-installatie maken met de opgegeven lijst met bibliotheken. 
     
     ```
     conda myenv create -f environment.yml
     conda activate myenv
     ```
    
- 3. Gebruiken ``pip install -r <provide your req.txt file>`` om de virtuele omgeving bij te werken met de opgegeven pakketten. Als de installatie een fout veroorzaakt, is er mogelijk een conflict tussen wat vooraf is geïnstalleerd in de Synapse-basis runtime en wat is opgegeven in het bestand met de opgegeven vereisten. Deze afhankelijkheids conflicten moeten worden opgelost om de bijgewerkte bibliotheken op uw serverloze Apache Spark groep te kunnen ophalen.
+ 3. Gebruik ``pip install -r <provide your req.txt file>`` om de virtuele omgeving bij te werken met de opgegeven pakketten. Als de installatie resulteert in een fout, is er mogelijk een conflict tussen wat vooraf is geïnstalleerd in de Synapse-basisruntime en wat is opgegeven in het opgegeven vereistenbestand. Deze afhankelijkheidsconflicten moeten worden opgelost om de bijgewerkte bibliotheken op uw serverloze Apache Spark op te halen.
 
 >[!IMPORTANT]
->Problemen kunnen arrise wanneer pip en Conda met elkaar worden gebruikt. Bij het combi neren van PIP en Conda is het het beste om deze [Aanbevolen procedures](https://docs.conda.io/projects/conda/latest/user-guide/tasks/manage-environments.html#using-pip-in-an-environment)te volgen.
+>Problemen kunnen zich snel voor doen wanneer pip en conda samen worden gebruikt. Wanneer u pip en conda combineert, kunt u het beste deze [aanbevolen procedures volgen.](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment)
 
 ## <a name="next-steps"></a>Volgende stappen
-- De standaard bibliotheken weer geven: [ondersteuning van Apache Spark-versie](apache-spark-version-support.md)
+- De standaardbibliotheken weergeven: [Apache Spark versieondersteuning](apache-spark-version-support.md)

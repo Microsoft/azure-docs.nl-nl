@@ -7,24 +7,25 @@ ms.author: jodowns
 ms.service: frontdoor
 ms.topic: sample
 ms.date: 04/16/2021
-ms.openlocfilehash: 3559270710f56d43fe486e2e3d3e41c63e2a619b
-ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
+ms.openlocfilehash: e939aec8f1cf5fa615904bb81bad82ea3cf22c61
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107565828"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107587473"
 ---
 # <a name="azure-resource-manager-templates-for-azure-front-door"></a>Azure Resource Manager sjablonen voor Azure Front Door
 
 > [!Note]
 > Deze documentatie is voor Azure Front Door Standard/Premium (preview). Zoekt u informatie over Azure Front Door? Bekijk [hier](../front-door-overview.md).
 
-De volgende tabel bevat koppelingen naar Azure Resource Manager sjablonen voor Azure Front Door, met referentiearchitectarchitecten, waaronder andere Azure-services.
+De volgende tabel bevat koppelingen naar Azure Resource Manager sjablonen voor Azure Front Door, met referentiearchitecten, waaronder andere Azure-services.
 
 | Voorbeeld | Beschrijving |
 |-|-|
 | [Front Door (snel maken)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium/) | Hiermee maakt u Front Door basisprofiel met inbegrip van een eindpunt, oorspronggroep, oorsprong en route.  |
-| [Regelset](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set/) | Hiermee maakt Front Door profiel en regelset.  |
+| [Regelset](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set/) | Hiermee maakt u Front Door en regelset.  |
+| [WAF-beleid met beheerde regelset](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-waf-managed/) | Hiermee maakt u Front Door en WAF met beheerde regelset.  |
 | [WAF-beleid met aangepaste regel](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-waf-custom/) | Hiermee maakt u Front Door en WAF met een aangepaste regel.  |
 |**App Service oorsprongen**| **Beschrijving** |
 | [App Service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-app-service-public) | Hiermee maakt App Service app met een openbaar eindpunt en een Front Door profiel.  |

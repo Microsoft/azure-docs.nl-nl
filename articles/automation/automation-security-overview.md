@@ -4,14 +4,14 @@ description: In dit artikel vindt u een overzicht van Azure Automation accountve
 keywords: automation-beveiliging, veilige automation; automation-verificatie
 services: automation
 ms.subservice: process-automation
-ms.date: 04/08/2021
+ms.date: 04/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: b52fa3083dc5c42fa71e720e9a3991cb7aa5afec
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 09aab71513b1152924de4eae91a718bad23d1012
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107501566"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107517998"
 ---
 # <a name="azure-automation-account-authentication-overview"></a>Azure Automation accountverificatieoverzicht
 
@@ -37,7 +37,7 @@ Met een beheerde identiteit van Azure Active Directory (Azure AD) heeft uw runbo
 
 Hier zijn enkele voordelen van het gebruik van beheerde identiteiten:
 
-- U kunt beheerde identiteiten gebruiken voor verificatie bij elke Azure-service die ondersteuning biedt voor Azure AD-verificatie.
+- U kunt beheerde identiteiten gebruiken voor verificatie bij elke Azure-service die ondersteuning biedt voor Azure AD-verificatie. Ze kunnen worden gebruikt voor cloudtaken en hybride taken. Hybride taken kunnen beheerde identiteiten gebruiken wanneer ze worden uitgevoerd op een Hybrid Runbook Worker die wordt uitgevoerd op een Azure-VM of een niet-Azure-VM.
 
 - Beheerde identiteiten kunnen worden gebruikt zonder extra kosten.
 
@@ -54,7 +54,7 @@ Aan een Automation-account kunnen twee typen identiteiten worden verleend:
 >[!NOTE]
 > Door de gebruiker toegewezen identiteiten worden nog niet ondersteund.
 
-Zie Beheerde identiteit inschakelen voor Azure Automation (preview) voor meer informatie over het gebruik [van beheerde identiteiten.](enable-managed-identity-for-automation.md)
+Zie Beheerde identiteit inschakelen voor Azure Automation (preview) voor meer informatie over het gebruik van [beheerde identiteiten.](enable-managed-identity-for-automation.md)
 
 ## <a name="run-as-accounts"></a>Uitvoeren als-accounts
 
@@ -111,7 +111,7 @@ In een situatie waarin u scheiding van taken hebt, ziet u in de volgende tabel e
 |Taak|Cmdlet  |Minimale machtigingen  |Waar u de machtigingen in stelt|
 |---|---------|---------|---|
 |Een Azure AD-toepassing maken|[New-AzADApplication](/powershell/module/az.resources/new-azadapplication)     | Rol van toepassingsontwikkelaar<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>Start > azure AD-> app-registraties |
-|Voeg een referentie toe aan de toepassing.|[New-AzADAppCredential](/powershell/module/az.resources/new-azadappcredential)     | Toepassingsbeheerder of globale beheerder<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>Start > azure AD-> app-registraties|
+|Voeg een referentie toe aan de toepassing.|[New-AzADAppCredential](/powershell/module/az.resources/new-azadappcredential)     | Toepassingsbeheerder of globale beheerder<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>Start > Azure AD-> app-registraties|
 |Een Azure AD-service-principal maken en krijgen|[New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal)</br>[Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal)     | Toepassingsbeheerder of globale beheerder<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>Start > Azure AD-> app-registraties|
 |De Azure-rol voor de opgegeven principal toewijzen of krijgen|[New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)</br>[Get-AzRoleAssignment](/powershell/module/Az.Resources/Get-AzRoleAssignment)      | Beheerder of eigenaar van gebruikerstoegang, of u hebt de volgende machtigingen:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br> | [Abonnement](../role-based-access-control/role-assignments-portal.md)</br>> Abonnementen > \<subscription name\> - Access Control (IAM)|
 |Een Automation-certificaat maken of verwijderen|[New-AzAutomationCertificate](/powershell/module/Az.Automation/New-AzAutomationCertificate)</br>[Remove-AzAutomationCertificate](/powershell/module/az.automation/remove-azautomationcertificate)     | Inzender voor resourcegroep         |Resourcegroep voor Automation-account|

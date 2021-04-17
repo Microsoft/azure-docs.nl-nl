@@ -1,6 +1,6 @@
 ---
-title: Azure-Instance Metadata Service voor Linux
-description: Meer informatie over de Azure Instance Metadata Service en hoe deze informatie biedt over actieve exemplaren van virtuele machines in Linux.
+title: Azure Instance Metadata Service voor Linux
+description: Meer informatie over de Azure Instance Metadata Service en hoe het informatie biedt over instanties van virtuele machines die momenteel worden uitgevoerd in Linux.
 services: virtual-machines
 author: KumariSupriya
 manager: paulmey
@@ -8,16 +8,16 @@ ms.service: virtual-machines
 ms.subservice: monitoring
 ms.topic: how-to
 ms.workload: infrastructure-services
-ms.date: 02/21/2021
+ms.date: 04/16/2021
 ms.author: sukumari
 ms.reviewer: azmetadatadev
-ms.openlocfilehash: a5aada5914f400732529294ede43c811002b7ea4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3fb0abf3fe9108461427960a2f157c4fcd3bf1d5
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102183502"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588124"
 ---
-# <a name="azure-instance-metadata-service-linux"></a>Azure-Instance Metadata Service (Linux)
+# <a name="azure-instance-metadata-service-linux"></a>Azure Instance Metadata Service (Linux)
 
 [!INCLUDE [virtual-machines-imds](../../../includes/virtual-machines-imds.md)]

@@ -1,7 +1,7 @@
 ---
-title: Speech-synthese Markup Language (SSML)-Speech Service
+title: Speech Synthesis Markup Language (SSML) - Speech-service
 titleSuffix: Azure Cognitive Services
-description: De opmaak taal voor spraak synthese gebruiken om uitspraak en prosody in tekst naar spraak te beheren.
+description: De Speech Synthesis Markup Language gebruiken om uitspraak en prosody in tekst-naar-spraak te bepalen.
 services: cognitive-services
 author: trevorbye
 manager: nitinme
@@ -11,45 +11,45 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 2c66a7e3bf9e417b47d08e50e21c08625e9d0549
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.openlocfilehash: 1d21691af4d52892f507695a56331816b14bf517
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107210207"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588374"
 ---
-# <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
+# <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Synthese verbeteren met Speech Synthesis Markup Language (SSML)
 
-SSML (Speech synthese Markup Language) is een op XML gebaseerde Markup-taal waarmee ontwikkel aars kunnen opgeven hoe invoer tekst wordt omgezet in gesynthesizerde spraak met behulp van de tekst-naar-spraak-service. Vergeleken met onbewerkte tekst kunnen ontwikkel aars met SSML de hoogte, de uitspraak, de spreek snelheid, het volume en meer van de tekst-naar-spraak-uitvoer nauw keuriger instellen. Normale Lees tekens, zoals het onderbreken na een periode, of het gebruik van de juiste intonation wanneer een zin eindigt met een vraag teken, worden automatisch afgehandeld.
+Speech Synthesis Markup Language (SSML) is een op XML gebaseerde markup-taal waarmee ontwikkelaars kunnen opgeven hoe invoertekst wordt geconverteerd naar gesynthetiseerde spraak met behulp van de text-to-speech-service. Vergeleken met tekst zonder tekst kunnen ontwikkelaars met SSML de toonhoogte, uitspraak, spreeksnelheid, volume en meer van de tekst-naar-spraak-uitvoer afstemmen. Normale leestekens, zoals onderbreken na een punt of het gebruik van de juiste intonatie wanneer een zin eindigt met een vraagteken, worden automatisch afgehandeld.
 
-De implementatie van de speech-service van SSML is gebaseerd op de [opmaak taal versie 1,0](https://www.w3.org/TR/speech-synthesis)van de spraak-synthese van World Wide Web Consortium.
+De speech-service-implementatie van SSML is gebaseerd op World Wide Web Consortium [Speech Synthesis Markup Language versie 1.0 van de World Wide Web Consortium.](https://www.w3.org/TR/speech-synthesis)
 
 > [!IMPORTANT]
-> Chinese, Japanse en Koreaanse tekens tellen als twee tekens voor facturering. Zie [prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)voor meer informatie.
+> Chinese, Japanse en Koreaans tekens tellen als twee tekens voor facturering. Zie Prijzen voor [meer informatie.](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)
 
-## <a name="neural-and-custom-voices"></a>Neural en aangepaste stemmen
+## <a name="neural-and-custom-voices"></a>Neurale en aangepaste stemmen
 
-Gebruik een humane-achtige Neural-stem of maak uw eigen aangepaste spraak die uniek is voor uw product of merk. Zie [taal ondersteuning](language-support.md)voor een volledige lijst met ondersteunde talen, land instellingen en stemmen. Zie [tekst-naar-spraak-overzicht](text-to-speech.md)voor meer informatie over Neural en aangepaste stemmen.
+Gebruik een menselijke neurale stem of maak uw eigen aangepaste stem die uniek is voor uw product of merk. Zie Taalondersteuning voor een volledige lijst met ondersteunde talen, talen en [stemmen.](language-support.md) Zie Overzicht van tekst-naar-spraak voor meer informatie over neurale en [aangepaste stemmen.](text-to-speech.md)
 
 
 > [!NOTE]
-> U kunt stemmen in verschillende stijlen horen en lees voorbeeld tekst met behulp van [de pagina Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#features).
+> U kunt stemmen in verschillende stijlen en toonhoogten horen en voorbeeldtekst lezen met behulp [Text to Speech pagina](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#features).
 
 
 ## <a name="special-characters"></a>Speciale tekens
 
-Houd er bij het gebruik van SSML rekening mee dat speciale tekens, zoals aanhalings tekens, apostrofs en haakjes, moeten worden voorafgegaan. Zie [Extensible Markup Language (XML) 1,0: bijlage D](https://www.w3.org/TR/xml/#sec-entexpand)voor meer informatie.
+Houd er bij het gebruik van SSML rekening mee dat speciale tekens, zoals aanhalingstekens, apostroofs en haakjes, van een escape-teken moeten worden uitgesloten. Zie voor meer informatie [Extensible Markup Language (XML) 1.0: Bijlage D.](https://www.w3.org/TR/xml/#sec-entexpand)
 
 ## <a name="supported-ssml-elements"></a>Ondersteunde SSML-elementen
 
-Elk SSML-document wordt gemaakt met SSML-elementen (of-Tags). Deze elementen worden gebruikt voor het aanpassen van de pitch, prosody, volume en meer. In de volgende secties wordt uitgelegd hoe elk-element wordt gebruikt en wanneer een element vereist of optioneel is.
+Elk SSML-document wordt gemaakt met SSML-elementen (of tags). Deze elementen worden gebruikt om toonhoogte, prosody, volume en meer aan te passen. In de volgende secties wordt beschreven hoe elk element wordt gebruikt en wanneer een element vereist of optioneel is.
 
 > [!IMPORTANT]
-> Vergeet geen dubbele aanhalings tekens rond kenmerk waarden te gebruiken. Standaarden voor juist opgemaakte, geldige XML vereist dat kenmerk waarden tussen dubbele aanhalings tekens worden geplaatst. `<prosody volume="90">`Het is bijvoorbeeld een goed gevormd, geldig element, maar dit is `<prosody volume=90>` niet het geval. SSML kunnen kenmerk waarden die geen aanhalings tekens zijn niet herkennen.
+> Vergeet niet om dubbele aanhalingstekens te gebruiken rond kenmerkwaarden. Voor standaarden voor goed gevormde, geldige XML moeten kenmerkwaarden tussen dubbele aanhalingstekens worden ingesloten. Is bijvoorbeeld `<prosody volume="90">` een goed gevormd, geldig element, maar `<prosody volume=90>` niet. SSML herkent mogelijk geen kenmerkwaarden die niet tussen aanhalingstekens staan.
 
 ## <a name="create-an-ssml-document"></a>Een SSML-document maken
 
-`speak` is het hoofd element en is **vereist** voor alle SSML-documenten. Het `speak` -element bevat belang rijke informatie, zoals versie, taal en de definitie van de aantekeningen woordenlijst.
+`speak` is het hoofdelement en is **vereist voor** alle SSML-documenten. Het element bevat belangrijke informatie, zoals versie, taal en de definitie van de `speak` woordenlijst voor markeringen.
 
 **Syntaxis**
 
@@ -59,15 +59,15 @@ Elk SSML-document wordt gemaakt met SSML-elementen (of-Tags). Deze elementen wor
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `version` | Hiermee wordt de versie van de SSML-specificatie aangegeven die wordt gebruikt om de document markering te interpreteren. De huidige versie is 1,0. | Vereist |
-| `xml:lang` | Hiermee geeft u de taal van het hoofd document. De waarde kan een kleine letter, een taal code van twee letters (bijvoorbeeld `en` ) of de taal code en het hoofd land/de regio (bijvoorbeeld) bevatten `en-US` . | Vereist |
-| `xmlns` | Hiermee geeft u de URI op voor het document dat de aantekeningen woordenlijst (de element typen en kenmerk namen) van het SSML-document definieert. De huidige URI is http://www.w3.org/2001/10/synthesis . | Vereist |
+| `version` | Geeft de versie aan van de SSML-specificatie die wordt gebruikt voor het interpreteren van de document-markeringen. De huidige versie is 1.0. | Vereist |
+| `xml:lang` | Hiermee geeft u de taal van het hoofddocument. De waarde kan een kleine letter, tweeletterig taalcode (bijvoorbeeld ) of de taalcode en `en` hoofdletters land/regio (bijvoorbeeld ) `en-US` bevatten. | Vereist |
+| `xmlns` | Hiermee geeft u de URI op voor het document dat de markup-woordenlijst (de elementtypen en kenmerknamen) van het SSML-document definieert. De huidige URI is http://www.w3.org/2001/10/synthesis . | Vereist |
 
-## <a name="choose-a-voice-for-text-to-speech"></a>Kies een stem voor tekst naar spraak
+## <a name="choose-a-voice-for-text-to-speech"></a>Een stem kiezen voor tekst-naar-spraak
 
-Het `voice` element is vereist. Dit wordt gebruikt om de stem op te geven die wordt gebruikt voor tekst naar spraak.
+Het `voice` element is vereist. Deze wordt gebruikt om de stem op te geven die wordt gebruikt voor tekst-naar-spraak.
 
 **Syntaxis**
 
@@ -79,14 +79,14 @@ Het `voice` element is vereist. Dit wordt gebruikt om de stem op te geven die wo
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `name` | Hiermee wordt de stem geïdentificeerd die wordt gebruikt voor de tekst-naar-spraak-uitvoer. Zie [taal ondersteuning](language-support.md#text-to-speech)voor een volledige lijst met ondersteunde stemmen. | Vereist |
+| `name` | Identificeert de stem die wordt gebruikt voor tekst-naar-spraak-uitvoer. Zie Taalondersteuning voor een volledige lijst met [ondersteunde stemmen.](language-support.md#text-to-speech) | Vereist |
 
 **Voorbeeld**
 
 > [!NOTE]
-> In dit voor beeld wordt de `en-US-JennyNeural` stem gebruikt. Zie [taal ondersteuning](language-support.md#text-to-speech)voor een volledige lijst met ondersteunde stemmen.
+> In dit voorbeeld wordt de stem `en-US-JennyNeural` gebruikt. Zie Taalondersteuning voor een volledige lijst met [ondersteunde stemmen.](language-support.md#text-to-speech)
 
 ```XML
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
@@ -98,24 +98,24 @@ Het `voice` element is vereist. Dit wordt gebruikt om de stem op te geven die wo
 
 ## <a name="use-multiple-voices"></a>Meerdere stemmen gebruiken
 
-Binnen het `speak` -element kunt u meerdere stemmen opgeven voor tekst-naar-spraak-uitvoer. Deze stemmen kunnen zich in verschillende talen bevindt. Voor elke stem moet de tekst worden ingepakt in een- `voice` element.
+In het `speak` -element kunt u meerdere stemmen opgeven voor tekst-naar-spraak-uitvoer. Deze stemmen kunnen in verschillende talen zijn. Voor elke stem moet de tekst in een element zijn `voice` verpakt.
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `name` | Hiermee wordt de stem geïdentificeerd die wordt gebruikt voor de tekst-naar-spraak-uitvoer. Zie [taal ondersteuning](language-support.md#text-to-speech)voor een volledige lijst met ondersteunde stemmen. | Vereist |
+| `name` | Identificeert de stem die wordt gebruikt voor tekst-naar-spraak-uitvoer. Zie Taalondersteuning voor een volledige lijst met [ondersteunde stemmen.](language-support.md#text-to-speech) | Vereist |
 
 > [!IMPORTANT]
-> Meerdere stemmen zijn incompatibel met de functie voor woord grens. De functie woord grens moet worden uitgeschakeld om meerdere stemmen te kunnen gebruiken.
+> Meerdere stemmen zijn niet compatibel met het woord grensfunctie. De functie voor woordgrens moet worden uitgeschakeld om meerdere stemmen te kunnen gebruiken.
 
-### <a name="disable-word-boundary"></a>Woord grens uitschakelen
+### <a name="disable-word-boundary"></a>Woordgrens uitschakelen
 
-Afhankelijk van de taal van de Speech SDK, stelt u de `"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"` eigenschap in `false` op een exemplaar van het `SpeechConfig` object.
+Afhankelijk van de speech-SDK-taal stelt u de eigenschap in `"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"` op op een exemplaar van het `false` `SpeechConfig` object.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Zie <a href="/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty" target="_blank"> `SetProperty` </a>voor meer informatie.
+Zie voor meer <a href="/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.setproperty" target="_blank"> `SetProperty` </a>informatie.
 
 ```csharp
 speechConfig.SetProperty(
@@ -124,7 +124,7 @@ speechConfig.SetProperty(
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Zie <a href="/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` </a>voor meer informatie.
+Zie voor meer <a href="/cpp/cognitive-services/speech/speechconfig#setproperty" target="_blank"> `SetProperty` </a>informatie.
 
 ```cpp
 speechConfig->SetProperty(
@@ -133,7 +133,7 @@ speechConfig->SetProperty(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Zie <a href="/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` </a>voor meer informatie.
+Zie voor meer <a href="/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setproperty#com_microsoft_cognitiveservices_speech_SpeechConfig_setProperty_String_String_" target="_blank"> `setProperty` </a>informatie.
 
 ```java
 speechConfig.setProperty(
@@ -142,7 +142,7 @@ speechConfig.setProperty(
 
 # <a name="python"></a>[Python](#tab/python)
 
-Zie <a href="/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` </a>voor meer informatie.
+Zie voor meer <a href="/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` </a>informatie.
 
 ```python
 speech_config.set_property_by_name(
@@ -151,7 +151,7 @@ speech_config.set_property_by_name(
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Zie <a href="/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig#setproperty-string--string-" target="_blank"> `setProperty` </a>voor meer informatie.
+Zie voor meer <a href="/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig#setproperty-string--string-" target="_blank"> `setProperty` </a>informatie.
 
 ```javascript
 speechConfig.setProperty(
@@ -160,7 +160,7 @@ speechConfig.setProperty(
 
 # <a name="objective-c"></a>[Objective-C](#tab/objectivec)
 
-Zie <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>voor meer informatie.
+Zie voor meer <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>informatie.
 
 ```objectivec
 [speechConfig setPropertyTo:@"false" byName:@"SpeechServiceResponse_Synthesis_WordBoundaryEnabled"];
@@ -168,7 +168,7 @@ Zie <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpro
 
 # <a name="swift"></a>[Swift](#tab/swift)
 
-Zie <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>voor meer informatie.
+Zie voor meer <a href="/objectivec/cognitive-services/speech/spxspeechconfiguration#setpropertytobyname" target="_blank"> `setPropertyTo` </a>informatie.
 
 ```swift
 speechConfig!.setPropertyTo(
@@ -190,11 +190,11 @@ speechConfig!.setPropertyTo(
 </speak>
 ```
 
-## <a name="adjust-speaking-styles"></a>Spreek stijlen aanpassen
+## <a name="adjust-speaking-styles"></a>Spreekstijlen aanpassen
 
-Standaard wordt tekst door de tekst naar spraak-service gesynthesizerd met behulp van een neutrale spreek stijl voor Neural stemmen. U kunt de spreek stijl aanpassen aan emoties, zoals cheerfulness, empathie en rustig, of de stem optimaliseren voor verschillende scenario's zoals klanten service, newscasting en Voice Assistant, met behulp van het- `mstts:express-as` element. Dit is een optioneel element dat uniek is voor de spraak service.
+De tekst-naar-spraak-service synthetiseert standaard tekst met een neutrale spreekstijl voor neurale stemmen. U kunt de spreekstijl aanpassen om verschillende emoties uit te drukken, zoals gevoel, empathie en rustig, of de stem optimaliseren voor verschillende scenario's, zoals klantenservice, newscasting en spraakassistent, met behulp van het `mstts:express-as` -element. Dit is een optioneel element dat uniek is voor de Speech-service.
 
-Op dit moment worden de stijl aanpassingen voor de volgende Neural-stemmen ondersteund:
+Op dit moment worden aanpassingen in de spreekstijl ondersteund voor de volgende neurale stemmen:
 * `en-US-AriaNeural`
 * `en-US-JennyNeural`
 * `en-US-GuyNeural`
@@ -202,19 +202,19 @@ Op dit moment worden de stijl aanpassingen voor de volgende Neural-stemmen onder
 * `zh-CN-XiaoxiaoNeural`
 * `zh-CN-YunyangNeural`
 * `zh-CN-YunyeNeural`
-* `zh-CN-YunxiNeural` Evaluatie
-* `zh-CN-XiaohanNeural` Evaluatie
-* `zh-CN-XiaomoNeural` Evaluatie
-* `zh-CN-XiaoxuanNeural` Evaluatie
-* `zh-CN-XiaoruiNeural` Evaluatie
+* `zh-CN-YunxiNeural` (Preview)
+* `zh-CN-XiaohanNeural` (Preview)
+* `zh-CN-XiaomoNeural` (Preview)
+* `zh-CN-XiaoxuanNeural` (Preview)
+* `zh-CN-XiaoruiNeural` (Preview)
 
-De intensiteit van de stijl van de spraak kan verder worden gewijzigd om beter te voldoen aan uw use-case. U kunt een sterker of zachtere stijl opgeven `styledegree` om de spraak herkenning duidelijker of gematigd te maken. Op dit moment worden de stijl aanpassingen voor Chinees (Mandarijn, vereenvoudigd) Neural stemmen ondersteund.
+De intensiteit van de spreekstijl kan verder worden gewijzigd om beter bij uw gebruikscase te passen. U kunt een sterkere of zachte stijl opgeven met om de spraak expressiever of `styledegree` gedreigder te maken. Op dit moment worden aanpassingen in spreekstijl ondersteund voor chinese neurale stemmen (Mandarijn, Vereenvoudigd).
 
-Naast het aanpassen van de spraak stijlen en de stijl graad kunt u ook de `role` para meter aanpassen zodat de stem een andere leeftijd en geslacht krijgt. Een mannelijk stem kan bijvoorbeeld de Toon hoogte verhogen en de intonation wijzigen om een vrouwelijke stem te imiteren, maar de naam van de spraak wordt niet gewijzigd. Momenteel worden aanpassingen van rollen ondersteund voor deze Chinese (Mandarijn, vereenvoudigd) Neural stemmen:
+Naast het aanpassen van de spreekstijlen en de stijlgraad kunt u ook de parameter aanpassen, zodat de stem een andere leeftijd en een ander `role` geslacht aan het werk gaat. Een mannenstem kan bijvoorbeeld de toonhoogte verhogen en de intonatie wijzigen om een vrouwenstem te laten afbootsen, maar de naam van de stem wordt niet gewijzigd. Op dit moment worden rolaanpassingen ondersteund voor deze Chinese neurale stemmen (Mandarijn, Vereenvoudigd) :
 * `zh-CN-XiaomoNeural`
 * `zh-CN-XiaoxuanNeural`
 
-De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijlen en rollen worden afgespeeld per stem. Als een stijl of rol-afspelen niet wordt ondersteund, retourneert de service spraak op de standaard neutrale manier. U kunt zien welke stijlen en rollen per stem worden ondersteund via de [spraak lijst-API](rest-text-to-speech.md#get-a-list-of-voices) of via het platform voor het [maken](https://aka.ms/audiocontentcreation) van de audio-inhoud zonder code.
+Bovenstaande wijzigingen worden toegepast op zinsniveau en stijlen en rollen spelen per stem af. Als een stijl of rollenspel niet wordt ondersteund, retournt de service spraak op de standaardneutrale manier. U kunt zien welke stijlen en rollen worden ondersteund voor elke stem via de [spraaklijst-API](rest-text-to-speech.md#get-a-list-of-voices) of via het codevrije [audio-inhoud maken](https://aka.ms/audiocontentcreation) platform.
 
 **Syntaxis**
 
@@ -228,107 +228,107 @@ De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijle
 <mstts:express-as role="string" style="string"></mstts:express-as>
 ```
 > [!NOTE]
-> Op het moment `styledegree` ondersteunt alleen Chinees (Mandarijn, vereenvoudigd) Neural stemmen. `role` ondersteunt alleen zh-CN-XiaomoNeural en zh-CN-XiaoxuanNeural.
+> Op dit moment ondersteunt `styledegree` alleen Chinese neurale stemmen (Mandarijn, Vereenvoudigd). `role` biedt alleen ondersteuning voor zh-CN-VoormoNeural en zh-CN-ZalxxiaNeural.
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `style` | Geeft de spreek stijl aan. Op dit moment zijn gesp roken stijlen specifiek voor spraak. | Vereist bij het aanpassen van de spreek stijl voor een Neural-stem. Als u gebruikt `mstts:express-as` , moet de stijl worden gegeven. Als er een ongeldige waarde wordt gegeven, wordt dit element genegeerd. |
-| `styledegree` | Geeft de intensiteit van de stijl van de spraak aan. **Geaccepteerde waarden**: 0,01 tot en met 2. De standaard waarde is 1, wat de vooraf gedefinieerde stijl intensiteit aangeeft. De minimale eenheid is 0,01, wat leidt tot een enigszins tendens van de doel stijl. Een waarde van 2 resulteert in een verdubbeling van de standaard stijl intensiteit.  | Optioneel (op het moment `styledegree` ondersteunt alleen Chinees (Mandarijn, vereenvoudigd) Neural stemmen.)|
-| `role` | Hiermee geeft u de functie voor spreken-afspelen op. De stem zal fungeren als een andere leeftijd en geslacht, maar de naam van de spraak wordt niet gewijzigd.  | Optioneel (op het moment `role` ondersteunt alleen zh-cn-XiaomoNeural en zh-cn-XiaoxuanNeural.)|
+| `style` | Hiermee geeft u de spreekstijl. Op dit moment zijn spreekstijlen spraaksyte specifiek. | Vereist bij het aanpassen van de spreekstijl voor een neurale stem. Als u `mstts:express-as` gebruikt, moet de stijl worden opgegeven. Als er een ongeldige waarde is opgegeven, wordt dit element genegeerd. |
+| `styledegree` | Hiermee geeft u de intensiteit van de spreekstijl. **Geaccepteerde waarden:** 0,01 tot en met 2. De standaardwaarde is 1. Dit betekent de vooraf gedefinieerde stijl intensiteit. De minimale eenheid is 0,01, wat resulteert in een iets grotere trend voor de doelstijl. Een waarde van 2 resulteert in een verdubbelde van de standaardstijl intensiteit.  | Optioneel (op dit moment ondersteunt `styledegree` alleen Chinese neurale stemmen (Mandarijn, Vereenvoudigd))|
+| `role` | Hiermee geeft u het spreekrolspel op. De stem zal fungeren als een andere leeftijd en een ander geslacht, maar de naam van de stem wordt niet gewijzigd.  | Optioneel (op dit moment `role` biedt alleen ondersteuning voor zh-CN-HiermoNeural en zh-CN-HebtxzhNeural.)|
 
-Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
+Gebruik deze tabel om te bepalen welke spreekstijlen worden ondersteund voor elke neurale stem.
 
 | Spraak                   | Stijl                     | Description                                                 |
 |-------------------------|---------------------------|-------------------------------------------------------------|
-| `en-US-AriaNeural`      | `style="newscast-formal"` | Een formele, vertrouwende en bindende Toon voor nieuws levering |
-|                         | `style="newscast-casual"` | Een veelzijdige en informe Toon voor algemene nieuws levering        |
-|                         | `style="narration-professional"` | Een Professional, objectief Toon voor het lezen van inhoud        |
-|                         | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  |
-|                         | `style="chat"`            | Een informe en een ongeforceerde Toon                         |
-|                         | `style="cheerful"`        | Een positieve en fijne Toon                         |
-|                         | `style="empathetic"`      | Een idee van caring en inzicht               |
-| `en-US-JennyNeural`     | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  |
-|                         | `style="chat"`            | Een informe en een ongeforceerde Toon                         |
-|                         | `style="assistant"`       | Een warme en beperkte Toon voor digitale assistenten    |
-|                         | `style="newscast"`        | Een veelzijdige en informe Toon voor algemene nieuws levering   |
-| `en-US-GuyNeural`       | `style="newscast"`        | Een formele en professionele Toon voor gesp roken nieuws |
-| `pt-BR-FranciscaNeural` | `style="calm"`            | Een fraaie, verzamelde en opgebouwde stand voor het praten. Tint, Pitch, prosody is veel meer uniform vergeleken met andere soorten spraak.                                |
-| `zh-CN-XiaoxiaoNeural`  | `style="newscast"`        | Een formele en professionele Toon voor gesp roken nieuws |
-|                         | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  |
-|                         | `style="assistant"`       | Een warme en beperkte Toon voor digitale assistenten    |
-|                         | `style="chat"`            | Een ongepaarde Toon voor Chit-Chat           |
-|                         | `style="calm"`            | Een fraaie, verzamelde en opgebouwde stand voor het praten. Tint, Pitch, prosody is veel meer uniform vergeleken met andere soorten spraak.                                |
-|                         | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
-|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
-|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
-|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.          |
-|                         | `style="affectionate"`    | Een warme en affectionate Toon, met hogere Toon-en gesprek energie. De spreker heeft de status van het aantrekken van de aandacht van de listener. De ' persoonlijkheid ' van de spreker is vaak endearing.          |
-|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |
-|                         | `style="lyrical"`         | Drukt op emoties op een melodic-en Sentimental manier         |
-| `zh-CN-YunyangNeural`   | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  |
-| `zh-CN-YunyeNeural`     | `style="calm"`            | Een fraaie, verzamelde en opgebouwde stand voor het praten. Tint, Pitch, prosody is veel meer uniform vergeleken met andere soorten spraak.    |
-|                         | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
-|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
-|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
-|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.          |
-| `zh-CN-YunxiNeural`     | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
-|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
-|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
-|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
-|                         | `style="depressed"`       | Een melancholic-en respondent-Toon met een lagere Toon hoogte en energie    |
-|                         | `style="embarrassed"`     | Een onzekere en cloudhoster Toon wanneer de spreker niet vertrouwd is   |
-| `zh-CN-XiaohanNeural`   | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
-|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
-|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
-|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
-|                         | `style="embarrassed"`     | Een onzekere en cloudhoster Toon wanneer de spreker niet vertrouwd is   |
-|                         | `style="affectionate"`    | Een warme en affectionate Toon, met hogere Toon-en gesprek energie. De spreker heeft de status van het aantrekken van de aandacht van de listener. De ' persoonlijkheid ' van de spreker is vaak endearing.          |
-|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |
-| `zh-CN-XiaomoNeural`    | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
-|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
-|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
-|                         | `style="depressed"`       | Een melancholic-en respondent-Toon met een lagere Toon hoogte en energie    |
-|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |
-| `zh-CN-XiaoxuanNeural`  | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
-|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
-|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.    |
-|                         | `style="depressed"`       | Een melancholic-en respondent-Toon met een lagere Toon hoogte en energie    |
-|                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |
-| `zh-CN-XiaoruiNeural`    | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
-|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
-|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+| `en-US-AriaNeural`      | `style="newscast-formal"` | Geeft een formele, vertrouwens- en gezaghebbende toon weer voor nieuwslevering |
+|                         | `style="newscast-casual"` | Geeft een veelzijdige en informele toon weer voor algemene nieuwslevering        |
+|                         | `style="narration-professional"` | Een professionele, objectieve toon voor het lezen van inhoud uitdrukken        |
+|                         | `style="customerservice"` | Geeft een vriendelijke en nuttige toon aan voor klantondersteuning  |
+|                         | `style="chat"`            | Geeft een informele en ongedwongen toon weer                         |
+|                         | `style="cheerful"`        | Geeft een positieve en blije toon aan                         |
+|                         | `style="empathetic"`      | Geeft een gevoel van aandacht en begrip               |
+| `en-US-JennyNeural`     | `style="customerservice"` | Geeft een vriendelijke en nuttige toon aan voor klantondersteuning  |
+|                         | `style="chat"`            | Geeft een informele en ongedwongen toon weer                         |
+|                         | `style="assistant"`       | Geeft een warme en ongedwongen toon weer voor digitale assistenten    |
+|                         | `style="newscast"`        | Geeft een veelzijdige en informele toon weer voor algemene nieuwslevering   |
+| `en-US-GuyNeural`       | `style="newscast"`        | Geeft een formele en professionele toon weer voor het vertellen van nieuws |
+| `pt-BR-FranciscaNeural` | `style="calm"`            | Geeft een cool, verzameld en samengestelde spreektijd aan. Toon, toon en prosody zijn veel uniformer in vergelijking met andere typen spraak.                                |
+| `zh-CN-XiaoxiaoNeural`  | `style="newscast"`        | Geeft een formele en professionele toon weer voor het vertellen van nieuws |
+|                         | `style="customerservice"` | Geeft een vriendelijke en nuttige toon weer voor klantondersteuning  |
+|                         | `style="assistant"`       | Geeft een warme en ongedwongen toon weer voor digitale assistenten    |
+|                         | `style="chat"`            | Geeft een informele en ongedwongen toon weer voor chit-chat           |
+|                         | `style="calm"`            | Geeft een cool, verzameld en samengestelde spreektijd weer. Toon, toon en prosody zijn veel uniformer in vergelijking met andere typen spraak.                                |
+|                         | `style="cheerful"`        | Geeft een opgeslagen en intensige toon weer, met een hogere toon en meer energie                         |
+|                         | `style="sad"`             | Geeft een weersmatige toon, met een hogere toon, minder intensiteit en lagere energie voor de energie van de muziek. Veelvoorkomende indicatoren van deze emotie zijn whimpers of janken tijdens spraak.            |
+|                         | `style="angry"`           | Geeft een moeto en een onderbuiktoon uit, met een lagere toonhoogte, een hogere intensiteit en een hogere energie. De spreker is in een toestand van irate, displeased en disleded.       |
+|                         | `style="fearful"`         | Geeft een afdaal ensnelheidsintensaal weer, met een hogere toonhoogte, een hogere energie van de stemmen en een hogere snelheid. De spreker is in een toestand van spanning en onbespresheid.                          |
+|                         | `style="disgruntled"`     | Geeft een onainlijke en klachtende toon weer. De spraak van deze emotie geeft ontstemdheid en afkeuring weer.              |
+|                         | `style="serious"`         | Geeft een strikte en opdrachtintenserende toon weer. Spreker klinkt vaak korter en veel minder relaxed met vaste snelheid.          |
+|                         | `style="affectionate"`    | Geeft een warme en aanstekelijke toon weer, met een hogere toonhoogte en meer energie. De spreker trekt de aandacht van de listener. De 'persoonlijkheid' van de spreker is vaak van aard.          |
+|                         | `style="gentle"`          | Geeft een vriendelijke, vriendelijke en vriendelijke toon weer, met lagere toonhoogte en energie         |
+|                         | `style="lyrical"`         | Emoties op een melodische en sentimentele manier uitdrukken         |
+| `zh-CN-YunyangNeural`   | `style="customerservice"` | Geeft een vriendelijke en nuttige toon weer voor klantondersteuning  |
+| `zh-CN-YunyeNeural`     | `style="calm"`            | Geeft een cool, verzameld en samengestelde spreektijd weer. Toon, toonhoogte, prosody is veel uniformer in vergelijking met andere typen spraak.    |
+|                         | `style="cheerful"`        | Geeft een opgeslagen en enthousiast toon weer, met een hogere toonhoogte en meer energie                         |
+|                         | `style="sad"`             | Geeft een weersmatige toon weer, met een hogere toon, minder intensiteit en lagere energie. Veelvoorkomende indicatoren van deze emotie zijn janken of janken tijdens spraak.            |
+|                         | `style="angry"`           | Geeft een af en toesingsgeluid weer, met een lagere toonhoogte, een hogere intensiteit en een hogere energie van de stemmen. De spreker is in staat om te worden irate, displeased en displeed.       |
+|                         | `style="fearful"`         | Geeft een onder andere een nerfse toon aan, met een hogere toonhoogte, een hogere energie en een hogere snelheid. De spreker is in een toestand van spanning en onbespretbaarheid.                          |
+|                         | `style="disgruntled"`     | Geeft een onainlijke en klachtende toon weer. De spraak van deze emotie geeft niet-blijdheid en afkeuring weer.              |
+|                         | `style="serious"`         | Geeft een strikte en opdrachtintenserende toon aan. Spreker klinkt vaak korter en veel minder relaxed met vaste snelheid.          |
+| `zh-CN-YunxiNeural`     | `style="cheerful"`        | Geeft een opgeslagen en intensige toon weer, met een hogere toon en meer energie                         |
+|                         | `style="sad"`             | Geeft een weersmatige toon, met een hogere toon, minder intensiteit en lagere energie voor de energie van de muziek. Veelvoorkomende indicatoren van deze emotie zijn whimpers of janken tijdens spraak.            |
+|                         | `style="angry"`           | Geeft een moetf en een matige toon aan, met een lagere toon, een hogere intensiteit en een hogere energie voor de energie van de stem. De spreker is in staat om te worden irate, displeased en displeed.       |
+|                         | `style="fearful"`         | Geeft een onder andere een nerfse toon aan, met een hogere toonhoogte, een hogere energie en een hogere snelheid. De spreker is in een toestand van spanning en onbespretbaarheid.                          |
+|                         | `style="disgruntled"`     | Geeft een onainlijke en klachtende toon weer. De spraak van deze emotie geeft niet-blijdheid en afkeuring weer.              |
+|                         | `style="serious"`         | Geeft een strikte en opdrachtintenserende toon aan. Spreker klinkt vaak korter en veel minder relaxed met vaste snelheid.    |
+|                         | `style="depressed"`       | Geeft een gedesponde toon weer met een lagere toon en energie    |
+|                         | `style="embarrassed"`     | Geeft een onzekere en hesitante toon weer wanneer de spreker zich onprettig voelen   |
+| `zh-CN-XiaohanNeural`   | `style="cheerful"`        | Geeft een opgeslagen en enthousiast toon weer, met een hogere toonhoogte en meer energie                         |
+|                         | `style="sad"`             | Geeft een weersmatige toon weer, met een hogere toon, minder intensiteit en lagere energie. Veelvoorkomende indicatoren van deze emotie zijn janken of janken tijdens spraak.            |
+|                         | `style="angry"`           | Geeft een moeto en een onderbuiktoon uit, met een lagere toonhoogte, een hogere intensiteit en een hogere energie. De spreker is in een toestand van irate, displeased en aanstootgevend.       |
+|                         | `style="fearful"`         | Geeft een afdaal ensnelheidsintensaal weer, met een hogere toonhoogte, een hoger energiepercentage en een hogere snelheid. De spreker is in een toestand van spanning en onbespresheid.                          |
+|                         | `style="disgruntled"`     | Geeft een onainlijke en klachtende toon weer. De spraak van deze emotie geeft ontstemdheid en afkeuring weer.              |
+|                         | `style="serious"`         | Geeft een strikte en opdrachtintenserende toon weer. Spreker klinkt vaak korter en veel minder relaxed met vaste snelheid.    |
+|                         | `style="embarrassed"`     | Geeft een onzekere en hesitante toon weer wanneer de spreker zich onprettig voelen   |
+|                         | `style="affectionate"`    | Geeft een warme en aanstekelijke toon weer, met een hogere toonhoogte en meer energie. De spreker trekt de aandacht van de listener. De 'persoonlijkheid' van de spreker is vaak van aard.          |
+|                         | `style="gentle"`          | Geeft een vriendelijke, vriendelijke en vriendelijke toon weer, met lagere toonhoogte en energie         |
+| `zh-CN-XiaomoNeural`    | `style="cheerful"`        | Geeft een opgeslagen en intensige toon weer, met een hogere toonhoogte en meer energie                         |
+|                         | `style="angry"`           | Geeft een moeto en een onderbuiktoon uit, met een lagere toonhoogte, een hogere intensiteit en een hogere energie. De spreker is in een toestand van irate, displeased en disleded.       |
+|                         | `style="fearful"`         | Geeft een afdaal ensnelheidsintensaal weer, met een hogere toonhoogte, een hoger energiepercentage en een hogere snelheid. De spreker is in een toestand van spanning en onbespretbaarheid.                          |
+|                         | `style="disgruntled"`     | Geeft een onainlijke en klachtende toon weer. De spraak van deze emotie geeft ons afkeurend en afkeurend weer.              |
+|                         | `style="serious"`         | Geeft een strikte en opdrachtintenserende toon aan. De spreker klinkt vaak korter en veel minder relaxed met vaste snelheid.    |
+|                         | `style="depressed"`       | Geeft een gedesponde toon weer met een lagere toon en energie    |
+|                         | `style="gentle"`          | Geeft een mooie, vriendelijke en matige toon weer, met een lagere toon en een lagere energie         |
+| `zh-CN-XiaoxuanNeural`  | `style="cheerful"`        | Geeft een opgeslagen en intensige toon weer, met een hogere toon en meer energie                         |
+|                         | `style="angry"`           | Geeft een moetf en een matige toon aan, met een lagere toon, een hogere intensiteit en een hogere energie voor de energie van de stem. De spreker is in staat om te worden irate, displeased en displeed.       |
+|                         | `style="fearful"`         | Geeft een onder andere een nerfse toon aan, met een hogere toonhoogte, een hogere energie en een hogere snelheid. De spreker is in een toestand van spanning en onbespretbaarheid.                          |
+|                         | `style="disgruntled"`     | Geeft een onainlijke en klachtende toon weer. De spraak van deze emotie geeft niet-blijdheid en afkeuring weer.              |
+|                         | `style="serious"`         | Geeft een strikte en opdrachtintenserende toon aan. Spreker klinkt vaak korter en veel minder relaxed met vaste snelheid.    |
+|                         | `style="depressed"`       | Geeft een gedesponde toon weer met een lagere toon en energie    |
+|                         | `style="gentle"`          | Geeft een mooie, vriendelijke en matige toon weer, met een lagere toon en een lagere energie         |
+| `zh-CN-XiaoruiNeural`    | `style="sad"`             | Geeft een weersmatige toon, met een hogere toon, minder intensiteit en lagere energie voor de energie van de muziek. Veelvoorkomende indicatoren van deze emotie zijn whimpers of janken tijdens spraak.            |
+|                         | `style="angry"`           | Geeft een af en toesingsgeluid weer, met een lagere toonhoogte, een hogere intensiteit en een hogere energie van de stemmen. De spreker is in een toestand van irate, displeased en disleded.       |
+|                         | `style="fearful"`         | Geeft een afdaal ensnelheidsintensaal weer, met een hogere toonhoogte, een hogere energie van de stemmen en een hogere snelheid. De spreker is in een toestand van spanning en onbespresheid.                          |
 
 Gebruik deze tabel om de ondersteunde rollen en hun definities te controleren.
 
 |Rol                     | Beschrijving                |
 |-------------------------|----------------------------|
-|`role="Girl"`            | De stem heeft een meisje. |
-|`role="Boy"`             | De stem die wordt nagebootst naar een jongen. |
-|`role="YoungAdultFemale"`| De stem heeft een jonge volwassene vrouw.|
-|`role="YoungAdultMale"`  | De stem kan worden geïmiteerd voor een jonge volwassen mannelijk.|
-|`role="OlderAdultFemale"`| De stem heeft een oudere volwassene vrouw.|
-|`role="OlderAdultMale"`  | De stem heeft een ouder volwassen mannelijk.|
-|`role="SeniorFemale"`    | De stem heeft een senior vrouwelijk.|
-|`role="SeniorMale"`      | De stem heeft een senior mannelijk.|
+|`role="Girl"`            | De stem wordt geïmiteerd door een vrouw. |
+|`role="Boy"`             | De stem wordt geïmiteerd door een zoon. |
+|`role="YoungAdultFemale"`| De stem wordt geïmiteerd door een jonge volwassen vrouw.|
+|`role="YoungAdultMale"`  | De stem wordt geïmiteerd door een jonge volwassen man.|
+|`role="OlderAdultFemale"`| De stem wordt geïmiteerd door een oudere volwassen vrouw.|
+|`role="OlderAdultMale"`  | De stem wordt geïmiteerd door een oudere volwassen man.|
+|`role="SeniorFemale"`    | De stem wordt geïmiteerd door een senior vrouw.|
+|`role="SeniorMale"`      | De stem wordt geïmiteerd aan een senior man.|
 
 
 **Voorbeeld**
 
-Dit SSML-fragment laat zien hoe het `<mstts:express-as>` element wordt gebruikt voor het wijzigen van de spreek stijl in `cheerful` .
+Dit SSML-fragment laat zien hoe het element wordt gebruikt `<mstts:express-as>` om de spreekstijl te wijzigen in `cheerful` .
 
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
@@ -341,7 +341,7 @@ Dit SSML-fragment laat zien hoe het `<mstts:express-as>` element wordt gebruikt 
 </speak>
 ```
 
-Dit SSML-fragment laat zien hoe het `styledegree` kenmerk wordt gebruikt om de intensiteit van de spreek stijl voor XiaoxiaoNeural te wijzigen.
+Dit SSML-fragment laat zien hoe het kenmerk wordt gebruikt om de intensiteit van de spreekstijl voor `styledegree` ToxiaoNeural te wijzigen.
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
        xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="zh-CN">
@@ -353,7 +353,7 @@ Dit SSML-fragment laat zien hoe het `styledegree` kenmerk wordt gebruikt om de i
 </speak>
 ```
 
-Dit SSML-fragment laat zien hoe het `role` kenmerk wordt gebruikt voor het wijzigen van de rol-Play voor XiaomoNeural.
+In dit SSML-fragment ziet u hoe het kenmerk wordt gebruikt om het rollenspel `role` voorPetmoNeural te wijzigen.
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
        xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="zh-CN">
@@ -372,10 +372,10 @@ Dit SSML-fragment laat zien hoe het `role` kenmerk wordt gebruikt voor het wijzi
 
 ## <a name="add-or-remove-a-breakpause"></a>Een onderbreking/pauze toevoegen of verwijderen
 
-Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te voegen of onderbrekingen die automatisch worden toegevoegd door de tekst-naar-spraak-service te voor komen.
+Gebruik het -element om pauzes (of onderbrekingen) tussen woorden in te voegen of te voorkomen dat pauzes automatisch worden toegevoegd door de `break` service text-to-speech.
 
 > [!NOTE]
-> Gebruik dit element om het standaard gedrag van text-to-speech (TTS) voor een woord of woord groep te overschrijven als de gesynthesizerde spraak voor het woord of de woord groep onnatuurlijk klinkt. Ingesteld `strength` op `none` om te voor komen dat een Prosodic-verbreekt, die automatisch wordt ingevoegd door de service tekst naar spraak.
+> Gebruik dit element om het standaardgedrag van tekst-naar-spraak (TTS) voor een woord of woordgroep te overschrijven als de gesynthetiseerde spraak voor dat woord of de woordgroep onnadig klinkt. Stel `strength` in op om een `none` prosodische onderbreking te voorkomen, die automatisch wordt ingevoegd door de text-to-speech-service.
 
 **Syntaxis**
 
@@ -386,19 +386,19 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `strength` | Hiermee geeft u de relatieve duur van een onderbreking op met een van de volgende waarden:<ul><li>geen</li><li>x-zwak</li><li>Schakel</li><li>gemiddeld (standaard)</li><li>strakk</li><li>x-Strong</li></ul> | Optioneel |
-| `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
+| `strength` | Hiermee geeft u de relatieve duur van een pauze met behulp van een van de volgende waarden:<ul><li>geen</li><li>x-weak</li><li>Zwakke</li><li>medium (standaard)</li><li>Sterke</li><li>x-strong</li></ul> | Optioneel |
+| `time` | Hiermee geeft u de absolute duur van een pauze in seconden of milliseconden. Deze waarde moet worden ingesteld op minder dan 5000 ms. Voorbeelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
 
-| Hoger                      | Description |
+| Kracht                      | Description |
 |-------------------------------|-------------|
-| Geen, of als er geen waarde wordt gegeven | 0 MS        |
-| x-zwak                        | 250 MS      |
-| Schakel                          | 500 ms      |
+| Geen, of als er geen waarde is opgegeven | 0 ms        |
+| x-weak                        | 250 ms      |
+| Zwakke                          | 500 ms      |
 | gemiddeld                        | 750 ms      |
-| strakk                        | 1000 MS     |
-| x-Strong                      | 1250 MS     |
+| Sterke                        | 1000 ms     |
+| x-strong                      | 1250 ms     |
 
 **Voorbeeld**
 
@@ -411,10 +411,10 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 ```
 ## <a name="add-silence"></a>Stilte toevoegen
 
-Gebruik het `mstts:silence` element om pauzes in te voegen voor of na tekst of tussen de twee aangrenzende zinnen.
+Gebruik het `mstts:silence` -element om pauzes voor of na tekst in te voegen, of tussen de twee aangrenzende zinnen.
 
 > [!NOTE]
->Het verschil tussen `mstts:silence` en `break` is dat `break` kan worden toegevoegd aan elke plaats in de tekst, maar stilte werkt alleen aan het begin of einde van invoer tekst, of op de grens van 2 aangrenzende zinnen.
+>Het verschil tussen en is dat kan worden toegevoegd aan elke plaats in de tekst, maar stilte werkt alleen aan het begin of einde van invoertekst of aan de grens van twee aangrenzende `mstts:silence` `break` `break` zinnen.
 
 
 **Syntaxis**
@@ -425,12 +425,12 @@ Gebruik het `mstts:silence` element om pauzes in te voegen voor of na tekst of t
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `type` | Hiermee geeft u de locatie van stilte toevoegen: <ul><li>`Leading` : aan het begin van de tekst </li><li>`Tailing` – in het einde van de tekst </li><li>`Sentenceboundary` : tussen aangrenzende zinnen </li></ul> | Vereist |
-| `Value` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Vereist |
+| `type` | Hiermee geeft u de locatie van stilte moet worden toegevoegd: <ul><li>`Leading` – aan het begin van de tekst </li><li>`Tailing` – aan het einde van de tekst </li><li>`Sentenceboundary` – tussen aangrenzende zinnen </li></ul> | Vereist |
+| `Value` | Hiermee geeft u de absolute duur van een pauze in seconden of milliseconden, moet deze waarde worden ingesteld op minder dan 5000 ms. Voorbeelden van geldige waarden zijn `2s` en `500ms` | Vereist |
 
-**Voor beeld** In dit voor beeld `mtts:silence` wordt gebruikt om 200 MS-stilte tussen twee zinnen toe te voegen.
+**Voorbeeld** In dit voorbeeld wordt gebruikt om 200 ms stilte toe te voegen `mtts:silence` tussen twee zinnen.
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
 <voice name="en-US-AriaNeural">
@@ -443,11 +443,11 @@ A good place to start is by trying out the slew of educational apps that are hel
 
 ## <a name="specify-paragraphs-and-sentences"></a>Alinea's en zinnen opgeven
 
-`p` en `s` elementen worden gebruikt om respectievelijk alinea's en zinnen aan te duiden. Als deze elementen ontbreken, bepaalt de tekst naar spraak-service automatisch de structuur van het SSML-document.
+`p` - `s` en -elementen worden gebruikt om respectievelijk alinea's en zinnen aan te duiden. Als deze elementen ontbreken, bepaalt de text-to-speech-service automatisch de structuur van het SSML-document.
 
-Het `p` element kan tekst en de volgende elementen bevatten: `audio` , `break` , `phoneme` , `prosody` , `say-as` , `sub` , en `mstts:express-as` `s` .
+Het `p` element kan tekst en de volgende elementen bevatten: , , `audio` , , , , en `break` `phoneme` `prosody` `say-as` `sub` `mstts:express-as` `s` .
 
-Het `s` element kan tekst en de volgende elementen bevatten: `audio` , `break` , `phoneme` , `prosody` , `say-as` `mstts:express-as` `sub` , en.
+Het `s` element kan tekst en de volgende elementen bevatten: , `audio` , , , , en `break` `phoneme` `prosody` `say-as` `mstts:express-as` `sub` .
 
 **Syntaxis**
 
@@ -473,14 +473,14 @@ Het `s` element kan tekst en de volgende elementen bevatten: `audio` , `break` ,
 </speak>
 ```
 
-## <a name="use-phonemes-to-improve-pronunciation"></a>Fonemen gebruiken om de uitspraak te verbeteren
+## <a name="use-phonemes-to-improve-pronunciation"></a>Gebruik phonemes om uitspraak te verbeteren
 
-Het `ph` element wordt gebruikt voor fonetische uitspraak in SSML-documenten. Het `ph` element kan alleen tekst bevatten, geen andere elementen. Bied altijd lees bare spraak als terugval.
+Het `ph` -element wordt gebruikt voor een phonetische uitspraak in SSML-documenten. Het `ph` element kan alleen tekst bevatten, geen andere elementen. Geef altijd door mensen leesbare spraak op als terugval.
 
-Fonetische alfabetten bestaan uit telefoons, die bestaan uit letters, cijfers of tekens, soms in combi natie. Elke telefoon beschrijft een uniek geluid van spraak. Dit is in tegens telling tot het Latijnse alfabet, waarbij een wille keurige letter meerdere gesp roken geluiden kan vertegenwoordigen. Houd rekening met de verschillende uitspraak van de letter "c" in de woorden "snoep" en "Stop" of de verschillende uitspraak van de letter combinaties "th" in de woorden "ding" en "die".
+Telefoon alfabetische alfabeten bestaan uit telefoons, die bestaan uit letters, cijfers of tekens, soms in combinatie. Elke telefoon beschrijft een uniek spraakgeluid. Dit is in tegenstelling tot het Latijnse alfabet, waar elke letter meerdere gesproken geluiden kan vertegenwoordigen. Houd rekening met de verschillende uitspraak van de letter 'c' in de woorden 'candy' en 'niet meer', of de verschillende uitspraak van de lettercombinatie 'th' in de woorden 'ding' en 'die'.
 
 > [!NOTE]
-> Het fonemen-label wordt op het moment niet ondersteund voor deze vijf stemmen (et-EE-AnuNeural, NH-IE-OrlaNeural, lt-LT-OnaNeural, LV-LV-EveritaNeural en MT-MT-GarceNeural).
+> De tag Phonemes wordt momenteel niet ondersteund voor deze vijf stemmen (et-EE-AnuNeural, ga-IE-OrlaNeural, lt-LT-OnaNeural, lv-LV-EveritaNeural en mt-MT-GarceNeural).
 
 **Syntaxis**
 
@@ -490,10 +490,10 @@ Fonetische alfabetten bestaan uit telefoons, die bestaan uit letters, cijfers of
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `alphabet` | Hiermee geeft u het fonetische alfabet op dat moet worden gebruikt wanneer de uitspraak van de teken reeks in het kenmerk wordt gesynthesizerd `ph` . De teken reeks die het alfabet opgeeft, moet worden opgegeven in kleine letters. Hier volgen de mogelijke alfabetten die u kunt opgeven.<ul><li>`ipa`&ndash; <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">Internationaal Fonetisch alfabet</a></li><li>`sapi`Het &ndash; [fonetische alfabet](speech-ssml-phonetic-sets.md) van de speech-service</li><li>`ups`&ndash; <a href="https://documentation.help/Microsoft-Speech-Platform-SDK-11/17509a49-cae7-41f5-b61d-07beaae872ea.htm" target="_blank">Universele telefoonset</a></li></ul><br>Het alfabet is alleen van toepassing op de `phoneme` in het element.. | Optioneel |
-| `ph` | Een teken reeks met telefoons waarmee de uitspraak van het woord in het element wordt opgegeven `phoneme` . Als de opgegeven teken reeks niet-herkende telefoons bevat, weigert de TTS-Service (tekst naar spraak) het hele SSML-document en wordt er geen van de spraak uitvoer opgegeven in het document. | Vereist als u fonemen gebruikt. |
+| `alphabet` | Hiermee geeft u het letter alfabet moet worden gebruikt bij het synthetiseren van de uitspraak van de tekenreeks in het `ph` kenmerk. De tekenreeks die het alfabet opgeeft, moet in kleine letters worden opgegeven. Hier volgen de mogelijke alfabeten die u kunt opgeven.<ul><li>`ipa`&ndash; <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">International Phonetic Alphabet</a></li><li>`sapi`&ndash; [Telefoon alfabetische spraakservice](speech-ssml-phonetic-sets.md)</li><li>`ups`&ndash; <a href="https://documentation.help/Microsoft-Speech-Platform-SDK-11/17509a49-cae7-41f5-b61d-07beaae872ea.htm" target="_blank">Universele telefoonset</a></li></ul><br>Het alfabet is alleen van toepassing op `phoneme` de in het element .. | Optioneel |
+| `ph` | Een tekenreeks met telefoons die de uitspraak van het woord in het `phoneme` element specificeren. Als de opgegeven tekenreeks niet-herkende telefoons bevat, weigert de TTS-service (text-to-speech) het hele SSML-document en produceert geen van de spraakuitvoer die is opgegeven in het document. | Vereist als u phonemes gebruikt. |
 
 **Voorbeelden**
 
@@ -521,15 +521,15 @@ Fonetische alfabetten bestaan uit telefoons, die bestaan uit letters, cijfers of
 </speak>
 ```
 
-## <a name="use-custom-lexicon-to-improve-pronunciation"></a>Aangepaste Lexicon gebruiken om de uitspraak te verbeteren
+## <a name="use-custom-lexicon-to-improve-pronunciation"></a>Aangepast woordencon gebruiken om uitspraak te verbeteren
 
-Soms kan de tekst naar spraak-service een woord niet nauw keurig uitspreken. Bijvoorbeeld de naam van een bedrijf of een medische term. Ontwikkel aars kunnen bepalen hoe afzonderlijke entiteiten in SSML worden gelezen met behulp van de `phoneme` `sub` Tags en. Als u echter wilt definiëren hoe meerdere entiteiten worden gelezen, kunt u een aangepast Lexicon maken met behulp van de `lexicon` tag.
-
-> [!NOTE]
-> Aangepaste Lexicon ondersteunt momenteel UTF-8-code ring.
+Soms kan de text-to-speech-service een woord niet nauwkeurig uitveren. Bijvoorbeeld de naam van een bedrijf of een medische term. Ontwikkelaars kunnen definiëren hoe afzonderlijke entiteiten worden gelezen in SSML met behulp van de `phoneme` `sub` tags en . Als u echter wilt definiëren hoe meerdere entiteiten worden gelezen, kunt u een aangepast woordencon maken met behulp van de `lexicon` tag .
 
 > [!NOTE]
-> Er wordt op dit moment geen aangepaste Lexicon ondersteund voor deze vijf stemmen (et-EE-AnuNeural, NH-IE-OrlaNeural, lt-LT-OnaNeural, LV-LV-EveritaNeural en MT-MT-GarceNeural).
+> Aangepast woordencon ondersteunt momenteel UTF-8-codering.
+
+> [!NOTE]
+> Aangepaste woordencon wordt momenteel niet ondersteund voor deze vijf stemmen (et-EE-AnuNeural, ga-IE-OrlaNeural, lt-LT-OnaNeural, lv-LV-EveritaNeural en mt-MT-GarceNeural).
 
 
 **Syntaxis**
@@ -540,13 +540,13 @@ Soms kan de tekst naar spraak-service een woord niet nauw keurig uitspreken. Bij
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving                               | Vereist/optioneel |
+| Kenmerk | Beschrijving                               | Vereist /optioneel |
 |-----------|-------------------------------------------|---------------------|
-| `uri`     | Het adres van het externe gebruik-document. | Vereist.           |
+| `uri`     | Het adres van het externe PLS-document. | Vereist.           |
 
 **Gebruik**
 
-Als u wilt definiëren hoe meerdere entiteiten worden gelezen, kunt u een aangepast Lexicon maken, dat is opgeslagen als een. XML-of. gebruik-bestand. Hier volgt een voor beeld van een XML-bestand.
+Als u wilt definiëren hoe meerdere entiteiten worden gelezen, kunt u een aangepast woordenreeksbestand maken dat wordt opgeslagen als een XML- of PLS-bestand. Hier volgt een voorbeeld van een XML-bestand.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -567,9 +567,9 @@ Als u wilt definiëren hoe meerdere entiteiten worden gelezen, kunt u een aangep
 </lexicon>
 ```
 
-Het `lexicon` element bevat ten minste één `lexeme` element. Elk `lexeme` element bevat ten minste één `grapheme` element en een of meer `grapheme` `alias` elementen, en `phoneme` . Het `grapheme` element bevat tekst met een beschrijving van de <a href="https://www.w3.org/TR/pronunciation-lexicon/#term-Orthography" target="_blank">orthography </a>. De `alias` elementen worden gebruikt om de uitspraak van een acroniem of een kortere term aan te geven. Het `phoneme` element biedt tekst die beschrijft hoe de `lexeme` wordt uitgesp roken.
+Het `lexicon` element bevat ten minste één `lexeme` element. Elk `lexeme` element bevat ten minste één element en een of meer elementen , en `grapheme` `grapheme` `alias` `phoneme` . Het `grapheme` element bevat tekst die de <a href="https://www.w3.org/TR/pronunciation-lexicon/#term-Orthography" target="_blank">orthografie beschrijft. </a> De elementen worden gebruikt om de uitspraak van `alias` een acroniem of een verkorte term aan te geven. Het `phoneme` element biedt tekst waarin wordt beschreven hoe de wordt `lexeme` uitgesproken.
 
-Het is belang rijk te weten dat u de uitspraak van een woord groep niet rechtstreeks kunt instellen met behulp van het aangepaste lexicon. Als u de uitspraak voor een acroniem of een afkorting wilt instellen, geeft u eerst een `alias` op en koppelt u deze aan `phoneme` die `alias` . Bijvoorbeeld:
+Het is belangrijk te weten dat u de uitspraak van een woordgroep niet rechtstreeks kunt instellen met behulp van het aangepaste woordencon. Als u de uitspraak voor een acroniem of een verkorte term moet instellen, geeft u eerst een op en koppelt u de `alias` `phoneme` aan die `alias` . Bijvoorbeeld:
 
 ```xml
   <lexeme>
@@ -582,7 +582,7 @@ Het is belang rijk te weten dat u de uitspraak van een woord groep niet rechtstr
   </lexeme>
 ```
 
-U kunt ook uw verwachte `alias` acroniem of afgekort term direct opgeven. Bijvoorbeeld:
+U kunt ook rechtstreeks uw verwachte `alias` voor het acroniem of de verkorte term verstrekken. Bijvoorbeeld:
 ```xml
   <lexeme>
     <grapheme>Scotland MV</grapheme>
@@ -591,16 +591,16 @@ U kunt ook uw verwachte `alias` acroniem of afgekort term direct opgeven. Bijvoo
 ```
 
 > [!IMPORTANT]
-> Het `phoneme` element mag geen spaties bevatten wanneer IPA wordt gebruikt.
+> Het `phoneme` element mag geen spaties bevatten bij het gebruik van IPA.
 
-Zie [gebruik-versie 1,0 (conuitspraak Lexicon Specification) (Engelstalig)](https://www.w3.org/TR/pronunciation-lexicon/)voor meer informatie over het aangepaste Lexicon bestand.
+Zie [PlS-versie 1.0 (Pronunciation Lexicon Specification) voor](https://www.w3.org/TR/pronunciation-lexicon/)meer informatie over aangepast woordenlijstbestand.
 
-Publiceer vervolgens uw aangepaste Lexicon bestand. Er zijn geen beperkingen voor het opslaan van dit bestand, maar we raden u aan [Azure Blob Storage](../../storage/blobs/storage-quickstart-blobs-portal.md)te gebruiken.
+Publiceer vervolgens uw aangepaste woordenconbestand. Hoewel we geen beperkingen hebben voor de plaats waar dit bestand kan worden opgeslagen, raden we u aan om de [Azure Blob Storage.](../../storage/blobs/storage-quickstart-blobs-portal.md)
 
-Nadat u uw aangepaste Lexicon hebt gepubliceerd, kunt u ernaar verwijzen vanuit uw SSML.
+Nadat u het aangepaste woordencon hebt gepubliceerd, kunt u hier vanuit uw SSML naar verwijzen.
 
 > [!NOTE]
-> Het `lexicon` element moet zich in het-element bevindt `voice` .
+> Het `lexicon` element moet zich in het element `voice` .
 
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
@@ -614,19 +614,19 @@ Nadat u uw aangepaste Lexicon hebt gepubliceerd, kunt u ernaar verwijzen vanuit 
 </speak>
 ```
 
-Als u dit aangepaste Lexicon gebruikt, wordt "BTW" als "op de manier" gelezen. ' Benigni ' wordt gelezen met de meegeleverde IPA ' bɛ ˈ ni ː nji '.
+Wanneer u dit aangepaste woordencon gebruikt, wordt 'BTW' gelezen als 'By the way'. Benigni wordt gelezen met de opgegeven IPA -bɛˈniːnji.
 
 **Beperkingen**
-- Bestands grootte: de maximale limiet voor de grootte van het aangepaste Lexicon bestand is 100KB. als dit niet het geval is, mislukt de synthese aanvraag.
-- Vernieuwen van Lexicon cache: het aangepaste Lexicon wordt in de cache opgeslagen als Key op de TTS-service wanneer het voor het eerst wordt geladen. Een Lexicon met dezelfde URI kan niet binnen 15 minuten opnieuw worden geladen, dus de aangepaste Lexicon wijziging moet worden gewacht om te worden doorgevoerd.
+- Bestandsgrootte: de maximale grootte van het aangepaste woordenconbestand is 100 KB. Als deze grootte is bereikt, mislukt de syntheseaanvraag.
+- Cachevernieuwing voor woordencons: het aangepaste woordencon wordt in de cache opgeslagen met URI als sleutel in de TTS-service wanneer deze voor het eerst wordt geladen. Woordencon met dezelfde URI wordt niet binnen 15 minuten opnieuw geladen, dus aangepaste woordenconwijziging moet tot wel 15 minuten wachten om van kracht te worden.
 
-**Fonetische sets van spraak service**
+**Telefoonsets voor Spraakservice**
 
-In het bovenstaande voor beeld gebruiken we het internationale fonetische alfabet, ook wel bekend als de IPA-telefoonset. Ontwikkel aars suggereren dat ze de IPA gebruiken, omdat dit de internationale standaard is. Voor sommige IPA-tekens hebben ze de versie ' premated ' en ' ontgebouwd ' wanneer ze worden weer gegeven met Unicode. Aangepaste Lexicon biedt alleen ondersteuning voor de ontgebouwde Unicode-tekens.
+In het bovenstaande voorbeeld gebruiken we het International Phonetic Alphabet, ook wel bekend als de IPA-telefoonset. We raden ontwikkelaars aan de IPA te gebruiken, omdat dit de internationale standaard is. Voor sommige IPA-tekens hebben ze de vooraf gecomprimeerde en ontlede versie wanneer ze worden weergegeven met Unicode. Aangepast woordencon biedt alleen ondersteuning voor de gedecomprimeerde unicodes.
 
-Als u overweegt dat de IPA niet eenvoudig te onthouden is, definieert de speech-service een fonetische set voor zeven talen (,,,,, `en-US` `fr-FR` `de-DE` `es-ES` `ja-JP` `zh-CN` en `zh-TW` ).
+Gezien het feit dat de IPA niet gemakkelijk te onthouden is, definieert de Speech-service een f phonetische set voor zeven talen ( `en-US` , , , , , en `fr-FR` `de-DE` `es-ES` `ja-JP` `zh-CN` `zh-TW` ).
 
-U kunt de `sapi` als de waarde voor het `alphabet` kenmerk met aangepaste lexicons gebruiken, zoals hieronder wordt geïllustreerd:
+U kunt de gebruiken `sapi` als de waarde voor het kenmerk met aangepaste `alphabet` woordencons zoals hieronder wordt gedemonstreerd:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -647,13 +647,13 @@ U kunt de `sapi` als de waarde voor het `alphabet` kenmerk met aangepaste lexico
 </lexicon>
 ```
 
-Zie voor meer informatie over het fonetische alfabet van de gedetailleerde spraak service de [fonetische set van de spraakherkennings service](speech-ssml-phonetic-sets.md).
+Zie de telefoonsets van de Speech-service voor meer informatie over het gedetailleerde telefoon alfabet [van de Speech-service.](speech-ssml-phonetic-sets.md)
 
 ## <a name="adjust-prosody"></a>Prosody aanpassen
 
-Het `prosody` element wordt gebruikt om wijzigingen op te geven in de hoogte, de contour, het bereik, de frequentie, de duur en het volume voor de tekst-naar-spraak-uitvoer. Het `prosody` element kan tekst en de volgende elementen bevatten: `audio` , `break` , `p` , `phoneme` , `prosody` , `say-as` , en `sub` `s` .
+Het element wordt gebruikt om wijzigingen in de toonhoogte, omtrek, bereik, snelheid, duur en volume voor de `prosody` tekst-naar-spraak-uitvoer op te geven. Het `prosody` element kan tekst en de volgende elementen bevatten: , , `audio` , , , , en `break` `p` `phoneme` `prosody` `say-as` `sub` `s` .
 
-Omdat Prosodic kenmerk waarden kunnen variëren per breed bereik, interpreteert de spraak herkenner de toegewezen waarden als een suggestie van wat de werkelijke Prosodic-waarden van de geselecteerde stem moeten zijn. De service tekst naar spraak beperkt of vervangt waarden die niet worden ondersteund. Voor beelden van niet-ondersteunde waarden zijn een Toon hoogte van 1 MHz of een volume van 120.
+Omdat de prosodische kenmerkwaarden in een breed bereik kunnen variëren, interpreteert de spraakherkenning de toegewezen waarden als een suggestie van wat de werkelijke prosodische waarden van de geselecteerde stem moeten zijn. De tekst-naar-spraak-service beperkt of vervangt waarden die niet worden ondersteund. Voorbeelden van niet-ondersteunde waarden zijn een pitch van 1 MHz of een volume van 120.
 
 **Syntaxis**
 
@@ -663,18 +663,18 @@ Omdat Prosodic kenmerk waarden kunnen variëren per breed bereik, interpreteert 
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `pitch` | Geeft de hoogte van de basis lijn voor de tekst aan. U kunt de Toon hoogte uitdrukken als:<ul><li>Een absolute waarde, uitgedrukt als een getal gevolgd door ' Hz ' (Hertz). Bijvoorbeeld `<prosody pitch="600Hz">some text</prosody>`.</li><li>Een relatieve waarde, uitgedrukt als een getal voorafgegaan door ' + ' of '-', gevolgd door ' Hz ' of ' St ', waarmee een hoeveelheid wordt opgegeven om de Toon hoogte te wijzigen. Bijvoorbeeld: `<prosody pitch="+80Hz">some text</prosody>` of `<prosody pitch="-2st">some text</prosody>` . De ' St ' geeft aan dat de wijzigings eenheid semitone is. Dit is de helft van een Toon (een halve stap) op de standaard diatonic schaal.</li><li>Een constante waarde:<ul><li>x-laag</li><li>gebrek</li><li>gemiddeld</li><li>hoog</li><li>x-hoog</li><li>standaardinstelling</li></ul></li></ul> | Optioneel |
-| `contour` |De werklast beschrijving ondersteunt nu zowel Neural als standaard stemmen. Contour vertegenwoordigt wijzigingen in de Toon hoogte. Deze wijzigingen worden weer gegeven als een matrix met doelen op de opgegeven tijd posities in de spraak uitvoer. Elk doel wordt gedefinieerd door sets van parameter paren. Bijvoorbeeld: <br/><br/>`<prosody contour="(0%,+20Hz) (10%,-2st) (40%,+10Hz)">`<br/><br/>De eerste waarde in elke set para meters geeft de locatie van de pitch wijziging aan als een percentage van de duur van de tekst. Met de tweede waarde geeft u de hoeveelheid op waarmee de Toon hoogte moet worden verhoogd of verlaagd, met behulp van een relatieve waarde of een opsommings waarde voor Pitch (Zie `pitch` ). | Optioneel |
-| `range` | Een waarde die het bereik van de hoogte van de tekst aangeeft. U kunt snel `range` gebruikmaken van dezelfde absolute waarden, relatieve waarden of opsommings waarden die worden gebruikt om te beschrijven `pitch` . | Optioneel |
-| `rate` | Geeft het spreek tempo van de tekst aan. U kunt uitdrukken `rate` als:<ul><li>Een relatieve waarde, uitgedrukt als een getal dat fungeert als een vermenigvuldiger van de standaard instelling. Een waarde van *1* resulteert bijvoorbeeld in geen wijziging in het aantal. Een waarde van *0,5* resulteert in een helft van het aantal. Een waarde van *3* resulteert in een toename van het aantal.</li><li>Een constante waarde:<ul><li>x-langzaam</li><li>trage</li><li>gemiddeld</li><li>snel</li><li>x-snel</li><li>standaardinstelling</li></ul></li></ul> | Optioneel |
-| `duration` | De tijds duur die moet verstrijken terwijl de TTS-Service (spraak-synthese) de tekst leest, in seconden of in milliseconden. Bijvoorbeeld, *2s* of *1800ms*. Duur ondersteunt alleen standaard stemmen.| Optioneel |
-| `volume` | Hiermee wordt het volume niveau van de spreek spraak aangegeven. U kunt het volume uitdrukken als:<ul><li>Een absolute waarde, uitgedrukt als een getal in het bereik 0,0 tot en met 100,0, van *zacht* naar *hard*. Bijvoorbeeld 75. De standaard waarde is 100,0.</li><li>Een relatieve waarde, uitgedrukt als een getal voorafgegaan door ' + ' of '-', waarmee een hoeveelheid wordt opgegeven om het volume te wijzigen. Bijvoorbeeld + 10 of-5,5.</li><li>Een constante waarde:<ul><li>achtergrond</li><li>x-zacht</li><li>Proof</li><li>gemiddeld</li><li>hard</li><li>x-hardop</li><li>standaardinstelling</li></ul></li></ul> | Optioneel |
+| `pitch` | Geeft de basislijnpraat voor de tekst aan. U kunt de pitch uitdrukken als:<ul><li>Een absolute waarde, uitgedrukt als een getal gevolgd door 'Hz' (Hertz). Bijvoorbeeld `<prosody pitch="600Hz">some text</prosody>`.</li><li>Een relatieve waarde, uitgedrukt als een getal voorafgegaan door '+' of '-' en gevolgd door 'Hz' of 'st', dat een hoeveelheid aangeeft om de pitch te wijzigen. Bijvoorbeeld: `<prosody pitch="+80Hz">some text</prosody>` of `<prosody pitch="-2st">some text</prosody>` . De 'st' geeft aan dat de wijzigingseenheid semitone is, wat de helft is van een toon (een halve stap) op de standaarddiatone schaal.</li><li>Een constante waarde:<ul><li>x-low</li><li>Lage</li><li>gemiddeld</li><li>hoog</li><li>x-high</li><li>standaardinstelling</li></ul></li></ul> | Optioneel |
+| `contour` |Contour ondersteunt nu zowel neurale als standaardstemmen. Contour vertegenwoordigt wijzigingen in de pitch. Deze wijzigingen worden weergegeven als een matrix met doelen op opgegeven tijdposities in de spraakuitvoer. Elk doel wordt gedefinieerd door sets parameterparen. Bijvoorbeeld: <br/><br/>`<prosody contour="(0%,+20Hz) (10%,-2st) (40%,+10Hz)">`<br/><br/>De eerste waarde in elke set parameters geeft de locatie van de pitchwijziging op als een percentage van de duur van de tekst. Met de tweede waarde geeft u de hoeveelheid op die de pitch moet verhogen of verlagen, met behulp van een relatieve waarde of een enumeratiewaarde voor de pitch (zie `pitch` ). | Optioneel |
+| `range` | Een waarde die het bereik van de pitch voor de tekst vertegenwoordigt. U kunt `range` uitdrukken met behulp van dezelfde absolute waarden, relatieve waarden of enumeratiewaarden die worden gebruikt om te `pitch` beschrijven. | Optioneel |
+| `rate` | Geeft de spreeksnelheid van de tekst aan. U kunt het volgende `rate` uitdrukken:<ul><li>Een relatieve waarde, uitgedrukt als een getal dat fungeert als vermenigvuldiger van de standaardwaarde. Een waarde van *1* resulteert bijvoorbeeld in geen wijziging in de snelheid. Een waarde *van 0,5* resulteert in een afdringing van de snelheid. Een waarde *van 3* resulteert in een tripling van de snelheid.</li><li>Een constante waarde:<ul><li>x-traag</li><li>Langzaam</li><li>gemiddeld</li><li>snel</li><li>x-fast</li><li>standaardinstelling</li></ul></li></ul> | Optioneel |
+| `duration` | De periode die verstreken moet zijn terwijl de spraaksyntheseservice de tekst leest, in seconden of milliseconden. Bijvoorbeeld *2-en* of *1800 ms.* Duration ondersteunt alleen standaardstemmen.| Optioneel |
+| `volume` | Geeft het volumeniveau van de spreekstem aan. U kunt het volume als het volgende uitdrukken:<ul><li>Een absolute waarde, uitgedrukt als een getal in het bereik van 0,0 tot 100,0, van *stilste* naar *hardste*. Bijvoorbeeld 75. De standaardwaarde is 100.0.</li><li>Een relatieve waarde, uitgedrukt als een getal voorafgegaan door '+' of '-', dat een hoeveelheid specificeert om het volume te wijzigen. Bijvoorbeeld + 10 of -5,5.</li><li>Een constante waarde:<ul><li>Stille</li><li>x-soft</li><li>Zachte</li><li>gemiddeld</li><li>Luid</li><li>x-hard</li><li>standaardinstelling</li></ul></li></ul> | Optioneel |
 
-### <a name="change-speaking-rate"></a>Spreek snelheid wijzigen
+### <a name="change-speaking-rate"></a>Spreeksnelheid wijzigen
 
-Het spreek tempo kan worden toegepast op Neural stemmen en standaard stemmen op het niveau van het woord of de zin.
+De spreeksnelheid kan worden toegepast op neurale stemmen en standaardstemmen op woord- of zinsniveau.
 
 **Voorbeeld**
 
@@ -690,7 +690,7 @@ Het spreek tempo kan worden toegepast op Neural stemmen en standaard stemmen op 
 
 ### <a name="change-volume"></a>Volume wijzigen
 
-Volume wijzigingen kunnen worden toegepast op standaard stemmen op het niveau van het woord of de zin. Terwijl volume wijzigingen alleen kunnen worden toegepast op Neural stemmen op het niveau van de zin.
+Volumewijzigingen kunnen worden toegepast op standaardstemmen op woord- of zinsniveau. Terwijl volumewijzigingen alleen kunnen worden toegepast op neurale stemmen op zinsniveau.
 
 **Voorbeeld**
 
@@ -704,9 +704,9 @@ Volume wijzigingen kunnen worden toegepast op standaard stemmen op het niveau va
 </speak>
 ```
 
-### <a name="change-pitch"></a>Toon hoogte wijzigen
+### <a name="change-pitch"></a>Pitch wijzigen
 
-Wijzigingen in de hoogte kunnen worden toegepast op standaard stemmen op het niveau van het woord of de zin. Dat wijzigingen in de hoogte alleen kunnen worden toegepast op Neural stemmen op het niveau van de zin.
+Pitchwijzigingen kunnen worden toegepast op standaardstemmen op woord- of zinsniveau. Terwijl pitchwijzigingen alleen kunnen worden toegepast op neurale stemmen op zinsniveau.
 
 **Voorbeeld**
 
@@ -718,10 +718,10 @@ Wijzigingen in de hoogte kunnen worden toegepast op standaard stemmen op het niv
 </speak>
 ```
 
-### <a name="change-pitch-contour"></a>Contour hoogte wijzigen
+### <a name="change-pitch-contour"></a>De contour van de pitch wijzigen
 
 > [!IMPORTANT]
-> De hoogte van de contour wijzigingen wordt nu ondersteund met Neural stemmen.
+> Wijzigingen in de pitchcontour worden nu ondersteund met neurale stemmen.
 
 **Voorbeeld**
 
@@ -734,9 +734,9 @@ Wijzigingen in de hoogte kunnen worden toegepast op standaard stemmen op het niv
     </voice>
 </speak>
 ```
-## <a name="say-as-element"></a>het element dict-as
+## <a name="say-as-element"></a>say-as-element
 
-`say-as` is een optioneel element dat het inhouds type (zoals getal of datum) van de tekst van het element aangeeft. Dit biedt richt lijnen voor de engine voor spraak synthese over hoe u de tekst uitspreekt.
+`say-as` is een optioneel element dat het inhoudstype (zoals getal of datum) van de tekst van het element aangeeft. Dit biedt richtlijnen voor de engine voor spraaksynthese over hoe de tekst moet worden geseed.
 
 **Syntaxis**
 
@@ -746,27 +746,27 @@ Wijzigingen in de hoogte kunnen worden toegepast op standaard stemmen op het niv
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `interpret-as` | Hiermee wordt het inhouds type van de tekst van het element aangegeven. Zie de onderstaande tabel voor een lijst met typen. | Vereist |
-| `format` | Biedt aanvullende informatie over de exacte opmaak van de tekst van het element voor inhouds typen die mogelijk niet-eenduidige indelingen hebben. SSML definieert indelingen voor inhouds typen die deze gebruiken (Zie de tabel hieronder). | Optioneel |
-| `detail` | Hiermee wordt het detail niveau aangegeven dat moet worden gesp roken. Dit kenmerk kan bijvoorbeeld vragen of de spraakherkennings engine Lees tekens uitspreekt. Er zijn geen standaard waarden gedefinieerd voor `detail` . | Optioneel |
+| `interpret-as` | Hiermee wordt het inhoudstype van de tekst van het element aangegeven. Zie de onderstaande tabel voor een lijst met typen. | Vereist |
+| `format` | Biedt aanvullende informatie over de precieze opmaak van de tekst van het element voor inhoudstypen die dubbelzinnige indelingen kunnen hebben. SSML definieert indelingen voor inhoudstypen die deze gebruiken (zie de onderstaande tabel). | Optioneel |
+| `detail` | Geeft het detailniveau aan dat moet worden uitgesproken. Met dit kenmerk kan bijvoorbeeld worden gevraagd of de spraaksynthese-engine leestekens moet gebruiken. Er zijn geen standaardwaarden gedefinieerd voor `detail` . | Optioneel |
 
 <!-- I don't understand the last sentence. Don't we know which one Cortana uses? -->
 
-Hieronder vindt u de ondersteunde inhouds typen voor de `interpret-as` `format` kenmerken en. Neem het `format` kenmerk alleen op als de waarde `interpret-as` is ingesteld op datum en tijd.
+Hier volgen de ondersteunde inhoudstypen voor de `interpret-as` kenmerken `format` en . Neem het `format` kenmerk alleen op als is ingesteld op datum en `interpret-as` tijd.
 
-| interpreteren als | indeling | Interpretatie |
+| interpret-as | indeling | Interpretatie |
 |--------------|--------|----------------|
-| `address` | | De tekst wordt gesp roken als een adres. De engine voor spraak synthese uitspreekt:<br /><br />`I'm at <say-as interpret-as="address">150th CT NE, Redmond, WA</say-as>`<br /><br />Als "Ik ben bij 150the rechtbank voor het noordoosten van Redmond Washington" |
-| `cardinal`, `number` | | De tekst wordt gesp roken als een hoofd getal. De engine voor spraak synthese uitspreekt:<br /><br />`There are <say-as interpret-as="cardinal">3</say-as> alternatives`<br /><br />Als "er zijn drie alternatieven." |
-| `characters`, `spell-out` | | De tekst wordt gesp roken als afzonderlijke letters (gespeld). De engine voor spraak synthese uitspreekt:<br /><br />`<say-as interpret-as="characters">test</say-as>`<br /><br />Als T E S T. |
-| `date` | DMY, MDJ, YMD, JDM, YM, my, MD, DM, d, m, y | De tekst wordt als een datum gesp roken. Het `format` kenmerk geeft de notatie van de datum aan (*d = dag, m = maand en y = jaar*). De engine voor spraak synthese uitspreekt:<br /><br />`Today is <say-as interpret-as="date" format="mdy">10-19-2016</say-as>`<br /><br />"Vandaag is oktober nineteenth 2016." |
-| `digits`, `number_digit` | | De tekst wordt gesp roken als een reeks afzonderlijke cijfers. De engine voor spraak synthese uitspreekt:<br /><br />`<say-as interpret-as="number_digit">123456789</say-as>`<br /><br />Als ' 1 2 3 4 5 6 7 8 9 '. |
-| `fraction` | | De tekst wordt gesp roken als een breuk getal. De engine voor spraak synthese uitspreekt:<br /><br /> `<say-as interpret-as="fraction">3/8</say-as> of an inch`<br /><br />Als "drie achtstes van een inch" |
-| `ordinal` | | De tekst wordt gesp roken als een rang nummer. De engine voor spraak synthese uitspreekt:<br /><br />`Select the <say-as interpret-as="ordinal">3rd</say-as> option`<br /><br />Als ' Selecteer de derde optie '. |
-| `telephone` | | De tekst wordt gesp roken als een telefoon nummer. Het `format` kenmerk mag cijfers bevatten die een land code vertegenwoordigen. Bijvoorbeeld ' 1 ' voor de Verenigde Staten of ' 39 ' voor Italië. De engine voor spraak synthese kan deze informatie gebruiken om de uitspraak van een telefoon nummer te hand leiding. Het telefoon nummer kan ook de land code bevatten, en als dat zo is, heeft dat prioriteit boven de land code in de `format` . De engine voor spraak synthese uitspreekt:<br /><br />`The number is <say-as interpret-as="telephone" format="1">(888) 555-1212</say-as>`<br /><br />Als ' mijn nummer is gebieds code 8 8 8 5 5 5 1 2 1 2 '. |
-| `time` | hms12, hms24 | De tekst wordt als een tijd gesp roken. Het `format` kenmerk geeft aan of de tijd wordt opgegeven met een 12-uurs klok (hms12) of een 24-uurs klok (hms24). Gebruik een dubbele punt als scheidings waarde voor uren, minuten en seconden. Hier volgen enkele voor beelden van geldige tijd: 12:35, 1:14:32, 08:15 en 02:50:45. De engine voor spraak synthese uitspreekt:<br /><br />`The train departs at <say-as interpret-as="time" format="hms12">4:00am</say-as>`<br /><br />Als "de trein maakt op vier A M." |
+| `address` | | De tekst wordt gesproken als een adres. De spraaksynthese-engine heeft het volgende:<br /><br />`I'm at <say-as interpret-as="address">150th CT NE, Redmond, WA</say-as>`<br /><br />Als 'Ik ben bij de 150e rechter noord-oost redmond washington'. |
+| `cardinal`, `number` | | De tekst wordt gesproken als een kardinaliteitsnummer. De spraaksynthese-engine heeft het volgende:<br /><br />`There are <say-as interpret-as="cardinal">3</say-as> alternatives`<br /><br />Er zijn drie alternatieven. |
+| `characters`, `spell-out` | | De tekst wordt gesproken als afzonderlijke letters (gespeld). De spraaksynthese-engine doet het volgende:<br /><br />`<say-as interpret-as="characters">test</say-as>`<br /><br />Als 'T E S T'. |
+| `date` | dmy, mdy, ymd, ydm, ym, my, md, dm, d, m, y | De tekst wordt gesproken als een datum. Het `format` kenmerk geeft de notatie van de datum aan (*d=day, m=month en y=year*). De spraaksynthese-engine eert:<br /><br />`Today is <say-as interpret-as="date" format="mdy">10-19-2016</say-as>`<br /><br />Zoals 'Vandaag is oktober 2019 2000.' |
+| `digits`, `number_digit` | | De tekst wordt gesproken als een reeks afzonderlijke cijfers. De spraaksynthese-engine eert:<br /><br />`<say-as interpret-as="number_digit">123456789</say-as>`<br /><br />Als '1 2 3 4 5 6 7 8 9'. |
+| `fraction` | | De tekst wordt gesproken als een fractioneel getal. De engine voor spraaksynthese houdt het volgende in:<br /><br /> `<say-as interpret-as="fraction">3/8</say-as> of an inch`<br /><br />Als 'drie achten van een inch'. |
+| `ordinal` | | De tekst wordt gesproken als een rangnummer. De engine voor spraaksynthese houdt het volgende in:<br /><br />`Select the <say-as interpret-as="ordinal">3rd</say-as> option`<br /><br />Selecteer de derde optie. |
+| `telephone` | | De tekst wordt gesproken als een telefoonnummer. Het `format` kenmerk kan cijfers bevatten die een landcode vertegenwoordigen. Bijvoorbeeld '1' voor de Verenigde Staten of '39' voor Italië. De spraaksynthese-engine kan deze informatie gebruiken om de uitspraak van een telefoonnummer te begeleiden. Het telefoonnummer kan ook de landcode bevatten, en als dat het het beste is, heeft dit voorrang op de landcode in de `format` . De spraaksynthese-engine eert:<br /><br />`The number is <say-as interpret-as="telephone" format="1">(888) 555-1212</say-as>`<br /><br />'Mijn nummer is netnummer acht acht acht vijf vijf een twee twee'. |
+| `time` | hms12, hms24 | De tekst wordt als een tijd gesproken. Het kenmerk geeft aan of de tijd wordt opgegeven met behulp van een `format` 12-uurs klok (hms12) of een 24-uurs klok (hms24). Gebruik een dubbele punt om getallen te scheiden die uren, minuten en seconden vertegenwoordigen. Hier volgen geldige tijdvoorbeelden: 12:35, 1:14:32, 08:15 en 02:50:45. De spraaksynthese-engine heeft het volgende:<br /><br />`The train departs at <say-as interpret-as="time" format="hms12">4:00am</say-as>`<br /><br />'De training is om vier uur' |
 
 **Gebruik**
 
@@ -774,7 +774,7 @@ Het `say-as` element mag alleen tekst bevatten.
 
 **Voorbeeld**
 
-De engine voor spraak synthese spreekt het volgende voor beeld uit als ' uw eerste aanvraag is voor één kamer op nineteenth oktober 20 10 met vroege aankomst om 12 35 uur. '
+De spraaksynthese-engine spreekt het volgende voorbeeld uit als 'Uw eerste aanvraag was voor één kamer op oktober en twintig met een vroege aankomst om 123.00 uur'.
 
 ```XML
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
@@ -789,15 +789,15 @@ De engine voor spraak synthese spreekt het volgende voor beeld uit als ' uw eers
 
 ## <a name="add-recorded-audio"></a>Opgenomen audio toevoegen
 
-`audio` is een optioneel element waarmee u MP3-audio kunt invoegen in een SSML-document. De hoofd tekst van het audio-element kan onbewerkte tekst of SSML markeringen bevatten die worden gesp roken als het audio bestand niet beschikbaar is of niet kan worden afgespeeld. Daarnaast kan het `audio` element tekst en de volgende elementen bevatten: `audio` ,, `break` `p` ,,,, en `s` `phoneme` `prosody` `say-as` `sub` .
+`audio` is een optioneel element waarmee u MP3-audio in een SSML-document kunt invoegen. De body van het audio-element kan tekst zonder tekst of SSML-markup bevatten die wordt uitgesproken als het audiobestand niet beschikbaar of niet kan worden afspelen. Daarnaast kan het element tekst en de volgende `audio` elementen bevatten: `audio` , , , , , , , en `break` `p` `s` `phoneme` `prosody` `say-as` `sub` .
 
-Audio die is opgenomen in het SSML-document moet voldoen aan deze vereisten:
+Audio die in het SSML-document is opgenomen, moet aan de volgende vereisten voldoen:
 
-* De MP3 moet worden gehost op een HTTPS-eind punt dat toegankelijk is via internet. HTTPS is vereist en het domein dat als host fungeert voor het MP3-bestand moet een geldig, vertrouwd TLS/SSL-certificaat bevatten.
-* MP3 moet een geldig MP3-bestand (MPEG v2) zijn.
+* De MP3 moet worden gehost op een HTTPS-eindpunt dat toegankelijk is via internet. HTTPS is vereist en het domein dat als host voor het MP3-bestand wordt gebruikt, moet een geldig, vertrouwd TLS/SSL-certificaat presenteren.
+* De MP3 moet een geldig MP3-bestand (MPEG v2) zijn.
 * De bitsnelheid moet 48 kbps zijn.
-* Het sample frequentie moet 16.000 Hz zijn.
-* De gecombineerde totale tijd voor alle tekst-en audio bestanden in één antwoord mag niet groter zijn dan 90 (90) seconden.
+* De samplefrequentie moet 16.000 Hz zijn.
+* De gecombineerde totale tijd voor alle tekst- en audiobestanden in één antwoord mag niet langer zijn dan negentig (90) seconden.
 * De MP3 mag geen klantspecifieke of andere gevoelige informatie bevatten.
 
 **Syntaxis**
@@ -808,9 +808,9 @@ Audio die is opgenomen in het SSML-document moet voldoen aan deze vereisten:
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving                                   | Vereist/optioneel                                        |
+| Kenmerk | Beschrijving                                   | Vereist /optioneel                                        |
 |-----------|-----------------------------------------------|------------------------------------------------------------|
-| `src`     | Hiermee geeft u de locatie/URL van het audio bestand op. | Vereist als u het audio-element in uw SSML-document gebruikt. |
+| `src`     | Hiermee geeft u de locatie/URL van het audiobestand op. | Vereist als u het audio-element in uw SSML-document gebruikt. |
 
 **Voorbeeld**
 
@@ -828,13 +828,13 @@ Audio die is opgenomen in het SSML-document moet voldoen aan deze vereisten:
 </speak>
 ```
 
-## <a name="add-background-audio"></a>Achtergrond geluid toevoegen
+## <a name="add-background-audio"></a>Achtergrondgeluid toevoegen
 
-Met het `mstts:backgroundaudio` element kunt u achtergrond geluid toevoegen aan uw SSML-documenten (of een audio bestand combi neren met tekst-naar-spraak). Met `mstts:backgroundaudio` kunt u een audio bestand op de achtergrond laten vervagen aan het begin van tekst-naar-spraak en uitfaden aan het einde van tekst-naar-spraak.
+Met `mstts:backgroundaudio` het -element kunt u achtergrondgeluid toevoegen aan uw SSML-documenten (of een audiobestand combineren met tekst-naar-spraak). Met kunt u een audiobestand op de achtergrond herhalen, vervagen aan het begin van tekst-naar-spraak en vervaagd aan het einde van `mstts:backgroundaudio` tekst-naar-spraak.
 
-Als de achtergrond audio kleiner is dan de tekst-naar-spraak of de uitfaden, wordt er een lus weer gegeven. Als de tekst-naar-spraak langer is, wordt deze gestopt wanneer het uitfadepen is voltooid.
+Als de opgegeven achtergrondgeluid korter is dan de tekst-naar-spraak of vervaagt, wordt deze herhaald. Als de tekst langer is dan de tekst-naar-spraak, stopt deze wanneer het vervaagt is voltooid.
 
-Er is slechts één achtergrond geluids bestand toegestaan per SSML-document. U kunt echter `audio` Tags in het- `voice` element bijvoegen om extra audio aan uw SSML-document toevoegen.
+Er is slechts één audiobestand op de achtergrond toegestaan per SSML-document. U kunt echter tags tussen het element invoegen om extra audio toe te `audio` `voice` voegen aan uw SSML-document.
 
 **Syntaxis**
 
@@ -844,12 +844,12 @@ Er is slechts één achtergrond geluids bestand toegestaan per SSML-document. U 
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving | Vereist/optioneel |
+| Kenmerk | Beschrijving | Vereist /optioneel |
 |-----------|-------------|---------------------|
-| `src` | Hiermee geeft u de locatie/URL van het audio bestand op de achtergrond. | Vereist als u achtergrond geluid in uw SSML-document gebruikt. |
-| `volume` | Hiermee geeft u het volume van het audio bestand op de achtergrond. **Geaccepteerde waarden**: `0` tot `100` inclusief. De standaardwaarde is `1`. | Optioneel |
-| `fadein` | Hiermee geeft u de duur van de achtergrond audio "infaden" als milliseconden. De standaard waarde is `0` , die gelijk is aan niet vervagen in. **Geaccepteerde waarden**: `0` tot `10000` inclusief.  | Optioneel |
-| `fadeout` | Hiermee geeft u de duur van de achtergrond audio vervagen in milliseconden. De standaard waarde is `0` , die gelijk is aan geen uitfaden. **Geaccepteerde waarden**: `0` tot `10000` inclusief.  | Optioneel |
+| `src` | Hiermee geeft u de locatie/URL van het audiobestand op de achtergrond op. | Vereist als u achtergrondgeluid in uw SSML-document gebruikt. |
+| `volume` | Hiermee geeft u het volume van het audiobestand op de achtergrond. **Geaccepteerde waarden:** `0` `100` inclusief. De standaardwaarde is `1`. | Optioneel |
+| `fadein` | Hiermee geeft u de duur van de achtergrondgeluid 'vervaagt' in milliseconden. De standaardwaarde is `0` . Dit is het equivalent van geen vervaaging. **Geaccepteerde waarden:** `0` `10000` inclusief.  | Optioneel |
+| `fadeout` | Hiermee geeft u de duur van de audio op de achtergrond vervaagt in milliseconden. De standaardwaarde is `0` . Dit is het equivalent van 'fade out'. **Geaccepteerde waarden:** `0` `10000` inclusief.  | Optioneel |
 
 **Voorbeeld**
 
@@ -862,14 +862,14 @@ Er is slechts één achtergrond geluids bestand toegestaan per SSML-document. U 
 </speak>
 ```
 
-## <a name="bookmark-element"></a>Bladwijzer element
+## <a name="bookmark-element"></a>Het element Bladwijzer
 
-Met het bladwijzer element kunt u aangepaste markeringen invoegen in SSML om de verschuiving van elke markering in de audio stroom op te halen.
-De bladwijzer elementen worden niet gelezen.
-Het element Bookmark kan worden gebruikt om te verwijzen naar een specifieke locatie in de tekst-of code reeks.
+Met het element Bladwijzer kunt u aangepaste markeringen invoegen in SSML om de offset van elke markering in de audiostroom op te halen.
+We lezen de bladwijzerelementen niet uit.
+Het bladwijzerelement kan worden gebruikt om te verwijzen naar een specifieke locatie in de tekst- of tagreeks.
 
 > [!NOTE]
-> `bookmark` het element werkt nu alleen voor `en-US-AriaNeural` spraak.
+> `bookmark` element werkt voor `en-US-AriaNeural` nu alleen voor spraak.
 
 **Syntaxis**
 
@@ -879,13 +879,13 @@ Het element Bookmark kan worden gebruikt om te verwijzen naar een specifieke loc
 
 **Kenmerken**
 
-| Kenmerk | Beschrijving                                   | Vereist/optioneel                                        |
+| Kenmerk | Beschrijving                                   | Vereist /optioneel                                        |
 |-----------|-----------------------------------------------|------------------------------------------------------------|
-|  `mark`   | Hiermee geeft u de verwijzings tekst van het `bookmark` element op. | Vereist. |
+|  `mark`   | Hiermee geeft u de referentietekst van het `bookmark` element op. | Vereist. |
 
 **Voorbeeld**
 
-U kunt bijvoorbeeld de tijd verschuiving van elk bloem woord als volgt weten:
+Als voorbeeld wilt u mogelijk de tijdsver offset van elk bloemwoord als volgt weten
 
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
@@ -895,21 +895,21 @@ U kunt bijvoorbeeld de tijd verschuiving van elk bloem woord als volgt weten:
 </speak>
 ```
 
-### <a name="get-bookmark-using-speech-sdk"></a>Blad wijzer ophalen met Speech SDK
+### <a name="get-bookmark-using-speech-sdk"></a>Bladwijzers op halen met behulp van speech-SDK
 
-U kunt zich abonneren op de `BookmarkReached` gebeurtenis in Speech SDK om de bladwijzer verschuivingen te verkrijgen.
+U kunt zich abonneren op de `BookmarkReached` gebeurtenis in speech-SDK om de bladwijzer-offsets op te halen.
 
 > [!NOTE]
-> `BookmarkReached` de gebeurtenis is alleen beschikbaar sinds Speech SDK versie 1.16.0.
+> `BookmarkReached` gebeurtenis is alleen beschikbaar sinds Speech SDK versie 1.16.0.
 
-`BookmarkReached` Er worden gebeurtenissen gegenereerd wanneer de uitvoer audio gegevens beschikbaar worden, wat sneller is dan afspelen naar een uitvoer apparaat.
+`BookmarkReached` gebeurtenissen worden verhoogd wanneer de audiogegevens van de uitvoer beschikbaar komen, wat sneller is dan het afspelen naar een uitvoerapparaat.
 
-* `AudioOffset` Hiermee wordt de verstreken tijd van de uitvoer audio gerapporteerd tussen het begin van de synthese en het bladwijzer element. Dit wordt gemeten in honderden nano seconden units (HNS) met 10.000 HNS gelijk aan 1 milliseconde.
-* `Text` is de referentie tekst van het bladwijzer element. Dit is de teken reeks die u in het kenmerk hebt ingesteld `mark` .
+* `AudioOffset` rapporteert de verstreken tijd van de uitvoeraudio tussen het begin van de synthese en het bladwijzerelement. Dit wordt gemeten in eenheden van honderd nanoseconden (HNS) met 10.000 HNS gelijk aan 1 milliseconde.
+* `Text` is de referentietekst van het bladwijzerelement. Dit is de tekenreeks die u in het kenmerk `mark` in stelt.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Zie <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesizer.bookmarkreached" target="_blank"> `BookmarkReached` </a>voor meer informatie.
+Zie voor meer <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesizer.bookmarkreached" target="_blank"> `BookmarkReached` </a>informatie.
 
 ```csharp
 synthesizer.BookmarkReached += (s, e) =>
@@ -920,7 +920,7 @@ synthesizer.BookmarkReached += (s, e) =>
 };
 ```
 
-Voor het bovenstaande voor beeld wordt de `BookmarkReached` gebeurtenis twee keer geactiveerd en wordt de console-uitvoer
+In het bovenstaande voorbeeld van SSML wordt de gebeurtenis twee keer geactiveerd `BookmarkReached` en wordt de console-uitvoer
 ```text
 Bookmark reached. Audio offset: 825ms, bookmark text: flower_1.
 Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
@@ -928,7 +928,7 @@ Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Zie <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechsynthesizer#bookmarkreached" target="_blank"> `BookmarkReached` </a>voor meer informatie.
+Zie voor meer <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechsynthesizer#bookmarkreached" target="_blank"> `BookmarkReached` </a>informatie.
 
 ```cpp
 synthesizer->BookmarkReached += [](const SpeechSynthesisBookmarkEventArgs& e)
@@ -940,7 +940,7 @@ synthesizer->BookmarkReached += [](const SpeechSynthesisBookmarkEventArgs& e)
 };
 ```
 
-Voor het bovenstaande voor beeld wordt de `BookmarkReached` gebeurtenis twee keer geactiveerd en wordt de console-uitvoer
+In het bovenstaande voorbeeld van SSML wordt de gebeurtenis twee keer `BookmarkReached` geactiveerd en wordt de console-uitvoer
 ```text
 Bookmark reached. Audio offset: 825ms, bookmark text: flower_1.
 Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
@@ -948,7 +948,7 @@ Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Zie <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechsynthesizer.bookmarkReached#com_microsoft_cognitiveservices_speech_SpeechSynthesizer_BookmarkReached" target="_blank"> `BookmarkReached` </a>voor meer informatie.
+Zie voor meer <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechsynthesizer.bookmarkReached#com_microsoft_cognitiveservices_speech_SpeechSynthesizer_BookmarkReached" target="_blank"> `BookmarkReached` </a>informatie.
 
 ```java
 synthesizer.BookmarkReached.addEventListener((o, e) -> {
@@ -958,7 +958,7 @@ synthesizer.BookmarkReached.addEventListener((o, e) -> {
 });
 ```
 
-Voor het bovenstaande voor beeld wordt de `BookmarkReached` gebeurtenis twee keer geactiveerd en wordt de console-uitvoer
+In het bovenstaande voorbeeld van SSML wordt de gebeurtenis twee keer geactiveerd `BookmarkReached` en wordt de console-uitvoer
 ```text
 Bookmark reached. Audio offset: 825ms, bookmark text: flower_1.
 Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
@@ -966,7 +966,7 @@ Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Zie <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesizer#bookmark-reached" target="_blank"> `bookmark_reached` </a>voor meer informatie.
+Zie voor meer <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesizer#bookmark-reached" target="_blank"> `bookmark_reached` </a>informatie.
 
 ```python
 # The unit of evt.audio_offset is tick (1 tick = 100 nanoseconds), divide it by 10,000 to convert to milliseconds.
@@ -974,7 +974,7 @@ speech_synthesizer.bookmark_reached.connect(lambda evt: print(
     "Bookmark reached: {}, audio offset: {}ms, bookmark text: {}.".format(evt, evt.audio_offset / 10000, evt.text)))
 ```
 
-Voor het bovenstaande voor beeld wordt de `bookmark_reached` gebeurtenis twee keer geactiveerd en wordt de console-uitvoer
+In het bovenstaande voorbeeld van SSML wordt de gebeurtenis twee keer geactiveerd `bookmark_reached` en wordt de console-uitvoer
 ```text
 Bookmark reached, audio offset: 825ms, bookmark text: flower_1.
 Bookmark reached, audio offset: 1462.5ms, bookmark text: flower_2.
@@ -982,7 +982,7 @@ Bookmark reached, audio offset: 1462.5ms, bookmark text: flower_2.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Zie <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer#bookmarkReached" target="_blank"> `bookmarkReached` </a>voor meer informatie.
+Zie voor meer <a href="https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer#bookmarkReached" target="_blank"> `bookmarkReached` </a>informatie.
 
 ```javascript
 synthesizer.bookmarkReached = function (s, e) {
@@ -990,7 +990,7 @@ synthesizer.bookmarkReached = function (s, e) {
 }
 ```
 
-Voor het bovenstaande voor beeld wordt de `bookmarkReached` gebeurtenis twee keer geactiveerd en wordt de console-uitvoer
+In het bovenstaande voorbeeld van SSML wordt de gebeurtenis twee keer geactiveerd `bookmarkReached` en wordt de console-uitvoer
 ```text
 (Bookmark reached), Audio offset: 825ms, bookmark text: flower_1.
 (Bookmark reached), Audio offset: 1462.5ms, bookmark text: flower_2.
@@ -998,7 +998,7 @@ Voor het bovenstaande voor beeld wordt de `bookmarkReached` gebeurtenis twee kee
 
 # <a name="objective-c"></a>[Objective-C](#tab/objectivec)
 
-Zie <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechsynthesizer#addbookmarkreachedeventhandler" target="_blank"> `addBookmarkReachedEventHandler` </a>voor meer informatie.
+Zie voor meer <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechsynthesizer#addbookmarkreachedeventhandler" target="_blank"> `addBookmarkReachedEventHandler` </a>informatie.
 
 ```objectivec
 [synthesizer addBookmarkReachedEventHandler: ^ (SPXSpeechSynthesizer *synthesizer, SPXSpeechSynthesisBookmarkEventArgs *eventArgs) {
@@ -1007,7 +1007,7 @@ Zie <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spx
 }];
 ```
 
-Voor het bovenstaande voor beeld wordt de `BookmarkReached` gebeurtenis twee keer geactiveerd en wordt de console-uitvoer
+In het bovenstaande voorbeeld van SSML wordt de gebeurtenis twee keer geactiveerd `BookmarkReached` en wordt de console-uitvoer
 ```text
 Bookmark reached. Audio offset: 825ms, bookmark text: flower_1.
 Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
@@ -1015,10 +1015,10 @@ Bookmark reached. Audio offset: 1462.5ms, bookmark text: flower_2.
 
 # <a name="swift"></a>[Swift](#tab/swift)
 
-Zie <a href="https://docs.microsoft.com/swift/cognitive-services/speech/spxspeechsynthesizer#addbookmarkreachedeventhandler" target="_blank"> `addBookmarkReachedEventHandler` </a>voor meer informatie.
+Zie voor meer <a href="/objectivec/cognitive-services/speech/spxspeechsynthesizer" target="_blank"> `addBookmarkReachedEventHandler` </a>informatie.
 
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Taal ondersteuning: stemmen, land instellingen, talen](language-support.md)
+* [Taalondersteuning: stemmen, talen, talen](language-support.md)

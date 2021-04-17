@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 05/14/2019
+ms.date: 04/16/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28cc8a858d1779e17c893d64eda5f907bb4c808e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1aafcd8ace846d7da65d95d4148872d5a6eddeee
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104577985"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107587847"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Zelfstudie: Hybride Azure Active Directory-gekoppelde apparaten handmatig configureren
 
@@ -76,7 +76,7 @@ Voor Windows 10-apparaten met versie 1703 of eerder: als uw organisatie toegang 
 Vanaf Windows 10 1803 probeert een apparaat het koppelen van de hybride Azure AD te voltooien via de gesynchroniseerde computer of het gesynchroniseerde apparaat, zelfs als het via AD FS koppelen van de hybride Azure AD wordt uitgevoerd vanaf een apparaat in een federatief domein mislukt en Azure AD Connect is geconfigureerd om de computer-/apparaatobjecten te synchroniseren met Azure AD.
 
 > [!NOTE]
-> Als u de synchronisatie koppeling voor apparaatregistratie wilt ophalen, moet u als onderdeel van de configuratie van de apparaatregistratie de standaard kenmerken van het apparaat niet uitsluiten van de configuratie van de Azure AD Connect synchronisatie. Zie [kenmerken gesynchroniseerd door Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized#windows-10)voor meer informatie over standaard kenmerken van apparaten die zijn gesynchroniseerd met Azure AD.
+> Als u wilt dat de apparaatregistratiesynchronisatie is gelukt, sluit u als onderdeel van de configuratie van de apparaatregistratie de standaardapparaatkenmerken niet uit van de configuratie van Azure AD Connect apparaatsynchronisatie. Zie Kenmerken die zijn gesynchroniseerd door Azure AD Connect voor meer informatie over standaardapparaatkenmerken die zijn [gesynchroniseerd met Azure AD.](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized#windows-10)
 
 Om te controleren of het apparaat toegang heeft tot de bovenstaande Microsoft-resources onder het systeemaccount, kunt u het script [Test Device Registration Connectivity](/samples/azure-samples/testdeviceregconnectivity/testdeviceregconnectivity/) gebruiken.
 
@@ -145,7 +145,7 @@ Het volgende script toont een voorbeeld van hoe de cmdlet kan worden gebruikt. I
 
 De cmdlet `Initialize-ADSyncDomainJoinedComputerSync`:
 
-* Maakt gebruik van de Active Directory PowerShell-module en Azure AD DS-hulpprogramma's (Azure Active Directory Domain Services). Deze hulpprogramma's maken op hun beurt gebruik van Active Directory Web Services dat wordt uitgevoerd op een domeincontroller. Active Directory Web Services wordt ondersteund op domeincontrollers waarop Windows Server 2008 R2 of hoger wordt uitgevoerd.
+* Maakt gebruik van de Active Directory PowerShell-module en Active Directory Domain Services (AD DS)-hulpprogramma's. Deze hulpprogramma's maken op hun beurt gebruik van Active Directory Web Services dat wordt uitgevoerd op een domeincontroller. Active Directory Web Services wordt ondersteund op domeincontrollers waarop Windows Server 2008 R2 of hoger wordt uitgevoerd.
 * Wordt alleen ondersteund door MSOnline PowerShell-module versie 1.1.166.0. Gebruik deze [koppeling](https://www.powershellgallery.com/packages/MSOnline/1.1.166.0) om deze module te downloaden.
 * Als de AD DS-hulpprogramma's niet zijn geïnstalleerd, mislukt `Initialize-ADSyncDomainJoinedComputerSync`. U kunt de AD DS-hulpprogramma’s installeren via Serverbeheer onder **Functies** > **Remote Server Administration Tools** > **Hulpprogramma's voor functiebeheer**.
 

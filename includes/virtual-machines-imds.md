@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: 3da4f8f946b11985d93be35fa2748e7f25015a71
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 98866a4f06df0380d52d1aee3eede8aa2f70aaed
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107564632"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588123"
 ---
 De Azure Instance Metadata Service (IMDS) biedt informatie over instanties van virtuele machines die momenteel worden uitgevoerd. U kunt deze gebruiken om uw virtuele machines te beheren en te configureren.
 Deze informatie omvat de SKU, opslag, netwerkconfiguraties en aanstaande onderhoudsgebeurtenissen. Zie Samenvatting van eindpuntcategorieën voor een volledige lijst met [beschikbare gegevens.](#endpoint-categories)
@@ -27,7 +27,7 @@ Vraag uw HTTP-clients om web-proxies binnen de VM te omzeilen bij het uitvoeren 
 
 ### <a name="access-azure-instance-metadata-service"></a>Toegang tot Azure Instance Metadata Service
 
-Als u toegang wilt krijgen tot [](/rest/api/resources/) IMDS, maakt u een virtuele Azure Resource Manager of de [Azure Portal](https://portal.azure.com)en gebruikt u de volgende voorbeelden.
+Als u toegang wilt krijgen tot IMDS, maakt u een virtuele [Azure Resource Manager](/rest/api/resources/) of de [Azure Portal](https://portal.azure.com)en gebruikt u de volgende voorbeelden.
 Zie Azure [Instance Metadata Samples (Voorbeelden van azure-exemplaarmetagegevens) voor meer voorbeelden.](https://github.com/microsoft/azureimds)
 
 Hier is voorbeeldcode voor het ophalen van alle metagegevens voor een exemplaar. Zie Eindpuntcategorieën voor een [](#endpoint-categories) overzicht van alle beschikbare functies voor toegang tot een specifieke gegevensbron.
@@ -76,7 +76,7 @@ Elke aanvraag die niet aan beide **vereisten voldoet,** wordt geweigerd door de 
 IMDS is **niet bedoeld** om te worden gebruikt achter een proxy en wordt daarom niet ondersteund. De meeste HTTP-clients bieden u de mogelijkheid om proxies voor uw aanvragen uit te schakelen. Deze functionaliteit moet worden gebruikt tijdens de communicatie met IMDS. Raadpleeg de documentatie van uw client voor meer informatie.
 
 > [!IMPORTANT]
-> Zelfs als u geen proxyconfiguratie in uw omgeving kent, moet u nog steeds alle standaardinstellingen voor **clientproxy overschrijven.** Proxyconfiguraties kunnen automatisch worden ontdekt en als u dergelijke configuraties niet kunt omzeilen, loopt u het risico op uitval als de configuratie van de machine in de toekomst wordt gewijzigd.
+> Zelfs als u geen proxyconfiguratie in uw omgeving kent, moet u nog steeds de standaardinstellingen van **de clientproxy overschrijven.** Proxyconfiguraties kunnen automatisch worden ontdekt en als u dergelijke configuraties niet kunt omzeilen, loopt u het risico op uitval als de configuratie van de machine in de toekomst wordt gewijzigd.
 
 ## <a name="rate-limiting"></a>Snelheidsbeperking
 
@@ -113,7 +113,7 @@ Aanvragen met dubbele queryparameternamen worden geweigerd.
 
 ### <a name="route-parameters"></a>Routeparameters
 
-Voor sommige eindpunten die grotere json-blobs retourneren, ondersteunen we het toepassen van routeparameters aan het aanvraag-eindpunt om te filteren op een subset van het antwoord: 
+Voor sommige eindpunten die grotere JSON-blobs retourneren, ondersteunen we het toepassen van routeparameters aan het aanvraag-eindpunt om te filteren op een subset van het antwoord: 
 
 ```
 http://169.254.169.254/metadata/<endpoint>/[<filter parameter>/...]?<query parameters>
@@ -209,7 +209,7 @@ In json-antwoorden zijn alle primitieven van het type en ontbrekende of inapplic
 
 ### <a name="versioning"></a>Versiebeheer
 
-Er wordt een versie van IMDS gebruikt en het opgeven van de API-versie in de HTTP-aanvraag is verplicht. De enige uitzondering op deze vereiste is [het](#versions) eindpunt van de versies, dat kan worden gebruikt om de beschikbare API-versies dynamisch op te halen.
+IMDS heeft een versie en het opgeven van de API-versie in de HTTP-aanvraag is verplicht. De enige uitzondering op deze vereiste is [het](#versions) eindpunt van de versies, dat kan worden gebruikt om de beschikbare API-versies dynamisch op te halen.
 
 Als er nieuwere versies worden toegevoegd, zijn oudere versies nog steeds toegankelijk voor compatibiliteit als uw scripts afhankelijk zijn van specifieke gegevensindelingen.
 
@@ -267,7 +267,7 @@ De IMDS-API bevat meerdere eindpuntcategorieën die verschillende gegevensbronne
 
 | Hoofdmap categorie | Description | Versie geïntroduceerd |
 |---------------|-------------|--------------------|
-| `/metadata/attested` | Attested [Data (Attested Data) bekijken](#attested-data) | 2018-10-01
+| `/metadata/attested` | Attested [Data (Geattesteerde gegevens) bekijken](#attested-data) | 2018-10-01
 | `/metadata/identity` | Zie [Beheerde identiteit via IMDS](#managed-identity) | 2018-02-01
 | `/metadata/instance` | Zie [Metagegevens van exemplaar](#instance-metadata) | 2017-04-02
 | `/metadata/loadbalancer` | Zie [Ophalen Load Balancer metagegevens via IMDS](#load-balancer-metadata) | 2020-10-01
@@ -333,7 +333,7 @@ Schema-uitsplitsing:
 | Gegevens | Description | Versie geïntroduceerd |
 |------|-------------|--------------------|
 | `azEnvironment` | Azure-omgeving waarin de VM wordt uitgevoerd | 2018-10-01
-| `customData` | Deze functie is afgeschaft en uitgeschakeld. Deze is vervangen door `userData` | 2019-02-01
+| `customData` | Deze functie is afgeschaft en uitgeschakeld [in IMDS.](#frequently-asked-questions) Deze is vervangen door `userData` | 2019-02-01
 | `evictionPolicy` | Hiermee stelt u in hoe een [spot-VM](../articles/virtual-machines/spot-vms.md) wordt eruit wordt gezet. | 2020-12-01
 | `isHostCompatibilityLayerVm` | Identificeert of de VM wordt uitgevoerd op de hostcompatibiliteitslaag | 2020-06-01
 | `licenseType` | Type licentie voor [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit). Dit is alleen aanwezig voor VM's met AHB-functie | 2020-09-01
@@ -345,18 +345,18 @@ Schema-uitsplitsing:
 | `osProfile.disablePasswordAuthentication` | Hiermee geeft u op of wachtwoordverificatie is uitgeschakeld. Dit is alleen aanwezig voor Linux-VM's | 2020-10-01
 | `osType` | Linux of Windows | 2017-04-02
 | `placementGroupId` | [Plaatsingsgroep](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) van uw virtuele-machineschaalset | 2017-08-01
-| `plan` | [Plan](/rest/api/compute/virtualmachines/createorupdate#plan) met naam, product en uitgever voor een VM als het een Azure Marketplace is | 2018-04-02
+| `plan` | [Plan](/rest/api/compute/virtualmachines/createorupdate#plan) met de naam, het product en de uitgever voor een VM als het een Azure Marketplace is | 2018-04-02
 | `platformUpdateDomain` |  [Updatedomein](../articles/virtual-machines/availability.md) waarin de VM wordt uitgevoerd | 2017-04-02
 | `platformFaultDomain` | [Foutdomein](../articles/virtual-machines/availability.md) waarin de VM wordt uitgevoerd | 2017-04-02
 | `priority` | Prioriteit van de VM. Raadpleeg [Spot-VM's](../articles/virtual-machines/spot-vms.md) voor meer informatie | 2020-12-01
 | `provider` | Provider van de VM | 2018-10-01
-| `publicKeys` | [Verzameling openbare sleutels die](/rest/api/compute/virtualmachines/createorupdate#sshpublickey) zijn toegewezen aan de VM en paden | 2018-04-02
+| `publicKeys` | [Verzameling van openbare sleutels die](/rest/api/compute/virtualmachines/createorupdate#sshpublickey) zijn toegewezen aan de VM en paden | 2018-04-02
 | `publisher` | Uitgever van de VM-afbeelding | 2017-04-02
 | `resourceGroupName` | [Resourcegroep](../articles/azure-resource-manager/management/overview.md) voor uw virtuele machine | 2017-08-01
 | `resourceId` | De [volledig gekwalificeerde id](/rest/api/resources/resources/getbyid) van de resource | 2019-03-11
 | `sku` | Specifieke SKU voor de VM-afbeelding | 2017-04-02
 | `securityProfile.secureBootEnabled` | Identificeert of beveiligd opstarten met UEFI is ingeschakeld op de VM | 2020-06-01
-| `securityProfile.virtualTpmEnabled` | Identificeert of de virtuele Trusted Platform Module (TPM) is ingeschakeld op de virtuele machine | 2020-06-01
+| `securityProfile.virtualTpmEnabled` | Identificeert of de virtuele Trusted Platform Module (TPM) is ingeschakeld op de VM | 2020-06-01
 | `storageProfile` | Zie Opslagprofiel hieronder | 2019-06-01
 | `subscriptionId` | Azure-abonnement voor de virtuele machine | 2017-08-01
 | `tags` | [Tags](../articles/azure-resource-manager/management/tag-resources.md) voor uw virtuele machine  | 2017-08-01
@@ -372,7 +372,7 @@ Schema-uitsplitsing:
 
 Het opslagprofiel van een VM is onderverdeeld in drie categorieën: naslaginformatie over de afbeelding, besturingssysteemschijf en gegevensschijven.
 
-Het referentieobject voor de afbeelding bevat de volgende informatie over de besturingssysteemafbeelding:
+Het referentieobject voor de afbeelding bevat de volgende informatie over de afbeelding van het besturingssysteem:
 
 | Gegevens | Description |
 |------|-------------|
@@ -426,7 +426,7 @@ Gegevens | Description |
 
 ### <a name="get-user-data"></a>Gebruikersgegevens op halen
 
-Wanneer u een nieuwe VM maakt, kunt u een set gegevens opgeven die moet worden gebruikt tijdens of na het inrichten van de VM en deze ophalen via IMDS. Als u gebruikersgegevens wilt instellen, [](https://aka.ms/ImdsUserDataArmTemplate)gebruikt u hier de quickstart-sjabloon . In het onderstaande voorbeeld ziet u hoe u deze gegevens kunt ophalen via IMDS.
+Wanneer u een nieuwe VM maakt, kunt u een set gegevens opgeven die moet worden gebruikt tijdens of na de VM-inrichting en deze ophalen via IMDS. Als u gebruikersgegevens wilt instellen, [](https://aka.ms/ImdsUserDataArmTemplate)gebruikt u hier de quickstart-sjabloon . In het onderstaande voorbeeld ziet u hoe u deze gegevens kunt ophalen via IMDS.
 
 > [!NOTE]
 > Deze functie wordt uitgebracht met versie en is afhankelijk van een update voor het Azure-platform, dat momenteel wordt uitgerold en mogelijk nog `2021-01-01` niet in elke regio beschikbaar is.
@@ -452,7 +452,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 
 #### <a name="sample-1-tracking-vm-running-on-azure"></a>Voorbeeld 1: VM bijhouden die wordt uitgevoerd in Azure
 
-Als serviceprovider moet u mogelijk het aantal VM's bijhouden met uw software of agents hebben die de uniekheid van de VM moeten bijhouden. Als u een unieke id voor een VM wilt krijgen, gebruikt u het `vmId` veld uit Instance Metadata Service.
+Als serviceprovider moet u mogelijk het aantal VM's met uw software bijhouden of agents hebben die de uniekheid van de VM moeten bijhouden. Als u een unieke id voor een VM wilt krijgen, gebruikt u het `vmId` veld uit Instance Metadata Service.
 
 **Aanvraag**
 
@@ -478,7 +478,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 
 #### <a name="sample-2-placement-of-different-data-replicas"></a>Voorbeeld 2: Plaatsing van verschillende gegevensreplica's
 
-Voor bepaalde scenario's is de plaatsing van verschillende gegevensreplica's van groot belang. Voor plaatsing van [HDFS-replica's](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html#Replica_Placement:_The_First_Baby_Steps) of plaatsing van containers via een [orchestrator](https://kubernetes.io/docs/user-guide/node-selection/) moet u bijvoorbeeld weten wat de is en of de `platformFaultDomain` `platformUpdateDomain` VM wordt uitgevoerd.
+Voor bepaalde scenario's is de plaatsing van verschillende gegevensreplica's van groot belang. Voor plaatsing [van HDFS-replica's](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html#Replica_Placement:_The_First_Baby_Steps) of plaatsing van containers via een [orchestrator](https://kubernetes.io/docs/user-guide/node-selection/) moet u bijvoorbeeld weten wat de is en of de `platformFaultDomain` `platformUpdateDomain` VM wordt uitgevoerd.
 U kunt ook [Beschikbaarheidszones](../articles/availability-zones/az-overview.md) instanties gebruiken om deze beslissingen te nemen.
 U kunt rechtstreeks via IMDS query's uitvoeren op deze gegevens.
 
@@ -597,7 +597,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 
 #### <a name="sample-4-get-more-information-about-the-vm-during-support-case"></a>Voorbeeld 4: Meer informatie over de VM krijgen tijdens ondersteuningscase
 
-Als serviceprovider kunt u een ondersteuningsgesprek krijgen waarbij u meer informatie over de VM wilt weten. Als de klant wordt gevraagd om de metagegevens van de rekengegevens te delen, kan de ondersteuningsprofessional basisinformatie bieden over het soort VM in Azure.
+Als serviceprovider kunt u een ondersteuningsgesprek ontvangen waarbij u meer informatie over de VM wilt. Als de klant wordt gevraagd om de metagegevens van de rekengegevens te delen, kan de ondersteuningsprofessional basisinformatie bieden over het soort VM in Azure.
 
 **Aanvraag**
 
@@ -824,7 +824,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 
 ---
 
-#### <a name="sample-5-get-the-azure-environment-where-the-vm-is-running"></a>Voorbeeld 5: de Azure-omgeving op te halen waarin de VM wordt uitgevoerd
+#### <a name="sample-5-get-the-azure-environment-where-the-vm-is-running"></a>Voorbeeld 5: De Azure-omgeving op halen waarin de VM wordt uitgevoerd
 
 Azure heeft verschillende onafhankelijke clouds, [zoals Azure Government.](https://azure.microsoft.com/overview/clouds/government/) Soms hebt u de Azure-omgeving nodig om een aantal runtime-beslissingen te nemen. In het volgende voorbeeld ziet u hoe u dit gedrag kunt bereiken.
 
@@ -954,7 +954,7 @@ GET /metadata/attested/document
 
 De handtekeningblob is een [pkcs7-ondertekende](https://aka.ms/pkcs7)versie van het document. Het bevat het certificaat dat wordt gebruikt voor ondertekening, samen met bepaalde VM-specifieke details.
 
-Voor VM's die zijn gemaakt met behulp van Azure Resource Manager bevat het document , , , voor het maken en verlopen van het document, en de `vmId` `sku` `nonce` `subscriptionId` `timeStamp` planinformatie over de afbeelding. De plangegevens worden alleen ingevuld voor Azure Marketplace afbeeldingen.
+Voor VM's die zijn gemaakt met behulp van Azure Resource Manager, bevat het document , , , voor het maken en verlopen van het document, en de `vmId` `sku` `nonce` `subscriptionId` `timeStamp` planinformatie over de afbeelding. De plangegevens worden alleen ingevuld voor Azure Marketplace afbeeldingen.
 
 Voor VM's die zijn gemaakt met behulp van het klassieke implementatiemodel, wordt alleen `vmId` gegarandeerd ingevuld. U kunt het certificaat uit het antwoord extraheren en dit gebruiken om te bevestigen dat het antwoord geldig is en afkomstig is uit Azure.
 
@@ -993,7 +993,7 @@ Voorbeelddocument:
 }
 ```
 
-#### <a name="sample-1-validate-that-the-vm-is-running-in-azure"></a>Voorbeeld 1: valideren dat de VM wordt uitgevoerd in Azure
+#### <a name="sample-1-validate-that-the-vm-is-running-in-azure"></a>Voorbeeld 1: Valideren dat de VM wordt uitgevoerd in Azure
 
 Leveranciers in Azure Marketplace ervoor zorgen dat hun software een licentie heeft om alleen in Azure te worden uitgevoerd. Als iemand de VHD naar een on-premises omgeving kopieert, moet de leverancier dat kunnen detecteren. Via IMDS kunnen deze leveranciers ondertekende gegevens krijgen die alleen reactie van Azure garanderen.
 
@@ -1076,7 +1076,7 @@ Verification successful
 }
 ```
 
-Controleer of de handtekening afkomstig is Microsoft Azure en controleer de certificaatketen op fouten.
+Controleer of de handtekening van Microsoft Azure is en controleer de certificaatketen op fouten.
 
 ```bash
 # Verify the subject name for the main certificate
@@ -1111,7 +1111,7 @@ De `nonce` in het ondertekende document kan worden vergeleken als u een `nonce` 
 > [!NOTE]
 > De certificaten komen mogelijk niet exact overeen met `metadata.azure.com` voor de openbare cloud. Daarom moet de certificeringsvalidatie een algemene naam van elk `.metadata.azure.com` subdomein toestaan.
 
-In gevallen waarin het tussencertificaat niet kan worden gedownload vanwege netwerkbeperkingen tijdens de validatie, kunt u het tussencertificaat vastmaken. Azure rolt de certificaten over. Dit is de standaard PKI-praktijk. U moet de vastgemaakte certificaten bijwerken wanneer er een rollover wordt geïnstalleerd. Wanneer een wijziging in het bijwerken van het tussencertificaat is gepland, wordt de Azure-blog bijgewerkt en worden Azure-klanten hiervan op de hoogte gesteld. 
+In gevallen waarin het tussencertificaat niet kan worden gedownload vanwege netwerkbeperkingen tijdens de validatie, kunt u het tussencertificaat vastmaken. Azure rolt de certificaten over. Dit is de standaard PKI-praktijk. U moet de vastgemaakte certificaten bijwerken wanneer er een rollover wordt geïnstalleerd. Wanneer er een wijziging wordt gepland om het tussencertificaat bij te werken, wordt de Azure-blog bijgewerkt en worden Azure-klanten hiervan op de hoogte gesteld. 
 
 U vindt de tussenliggende certificaten in de [PKI-opslagplaats](https://www.microsoft.com/pki/mscorp/cps/default.htm). De tussenliggende certificaten voor elk van de regio's kunnen verschillen.
 
@@ -1158,11 +1158,11 @@ Als er een gegevenselement niet is gevonden of een onjuist vormgeformeerde aanvr
 | HTTP-statuscode | Reden |
 |------------------|--------|
 | `200 OK` | De aanvraag is geslaagd.
-| `400 Bad Request` | Ontbrekende `Metadata: true` header of ontbrekende parameter `format=json` bij het uitvoeren van query's op een leaf-knooppunt
+| `400 Bad Request` | Ontbrekende `Metadata: true` header of ontbrekende parameter `format=json` bij het uitvoeren van een query op een leaf-knooppunt
 | `404 Not Found` | Het aangevraagde element bestaat niet
 | `405 Method Not Allowed` | De HTTP-methode (werkwoord) wordt niet ondersteund op het eindpunt.
-| `410 Gone` | Opnieuw proberen na enige tijd, maximaal 70 seconden
-| `429 Too Many Requests` | Limieten [voor](#rate-limiting) API-snelheid zijn overschreden
+| `410 Gone` | Het na enige tijd opnieuw proberen, maximaal 70 seconden
+| `429 Too Many Requests` | Limieten [voor API-snelheid](#rate-limiting) zijn overschreden
 | `500 Service Error` | Opnieuw proberen na enige tijd
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
@@ -1188,7 +1188,7 @@ Als er een gegevenselement niet is gevonden of een onjuist vormgeformeerde aanvr
 - Zou dit werken voor exemplaren van virtuele-machineschaalsets?
   - Ja, IMDS is beschikbaar voor exemplaren van virtuele-machineschaalsets.
 
-- Ik heb mijn tags bijgewerkt in virtuele-machineschaalsets, maar deze worden niet weergegeven in de exemplaren (in tegenstelling tot VM's met één exemplaar). Doe ik iets verkeerd?
+- Ik heb mijn tags bijgewerkt in virtuele-machineschaalsets, maar deze worden niet weergegeven in de exemplaren (in tegenstelling tot virtuele machines met één exemplaar). Doe ik iets verkeerd?
   - Op dit moment worden tags voor virtuele-machineschaalsets alleen aan de virtuele machine toegevoegd bij het opnieuw opstarten, opnieuw importeren of wijzigen van de schijf in het exemplaar.
 
 - Waarom zie ik de SKU-informatie voor mijn VM niet in `instance/compute` detail?
@@ -1286,7 +1286,7 @@ Als er een gegevenselement niet is gevonden of een onjuist vormgeformeerde aanvr
         }
         # Output: ipexample606 True 00-0D-3A-E4-C7-2E
         ```
-    1. Als ze niet overeenkomen, werk dan de routeringstabel bij zodat de primaire NIC/IP is gericht.
+    1. Als ze niet overeenkomen, moet u de routeringstabel bijwerken zodat de primaire NIC/IP wordt gebruikt.
 
     ---
 
@@ -1339,11 +1339,11 @@ Als u na meerdere pogingen geen antwoord op metagegevens kunt krijgen, kunt u ee
 
 ## <a name="product-feedback"></a>Productfeedback
 
-U kunt hier productfeedback en -ideeën aan ons kanaal voor gebruikersfeedback Virtual Machines > Instance Metadata Service [geven](https://feedback.azure.com/forums/216843-virtual-machines?category_id=394627)
+U kunt hier productfeedback en ideeën aan ons feedbackkanaal voor gebruikers Virtual Machines > Instance Metadata Service [geven](https://feedback.azure.com/forums/216843-virtual-machines?category_id=394627)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een toegangs token voor de VM verkrijgen](../articles/active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
+- [Een toegangs token verkrijgen voor de VM](../articles/active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
 
 - [Geplande gebeurtenissen voor Linux](../articles/virtual-machines/linux/scheduled-events.md)
 

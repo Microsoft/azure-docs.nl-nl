@@ -1,6 +1,6 @@
 ---
-title: Python-bibliotheken voor Apache Spark beheren
-description: Meer informatie over het toevoegen en beheren van python-bibliotheken die worden gebruikt door Apache Spark in azure Synapse Analytics.
+title: Python-bibliotheken voor Apache Spark
+description: Meer informatie over het toevoegen en beheren van Python-bibliotheken die worden gebruikt Apache Spark in Azure Synapse Analytics.
 services: synapse-analytics
 author: midesa
 ms.service: synapse-analytics
@@ -9,61 +9,61 @@ ms.date: 02/26/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 2d6ac02402414f096a46fec0340c3074d8e1784a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 1d64233fc477ec25f91bb73c744b10210571df41
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104586638"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588340"
 ---
-# <a name="manage-python-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Python-bibliotheken voor Apache Spark beheren in azure Synapse Analytics
+# <a name="manage-python-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Python-bibliotheken voor Apache Spark in Azure Synapse Analytics
 
-Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. 
+Bibliotheken bieden herbruikbare code die u mogelijk wilt opnemen in uw programma's of projecten. 
 
-Mogelijk moet u uw serverloze Apache Spark pool omgeving om verschillende redenen bijwerken. U kunt bijvoorbeeld het volgende doen:
-- een van de kern afhankelijkheden heeft zojuist een nieuwe versie uitgegeven.
-- u hebt een extra pakket nodig om uw machine learning model te trainen of uw gegevens voor te bereiden.
+Mogelijk moet u uw serverloze Apache Spark poolomgeving om verschillende redenen bijwerken. U kunt bijvoorbeeld het volgende vinden:
+- een van uw kernafhankelijkheden heeft zojuist een nieuwe versie uitgebracht.
+- U hebt een extra pakket nodig om uw machine learning te trainen of uw gegevens voor te bereiden.
 - u hebt een beter pakket gevonden en hebt het oudere pakket niet meer nodig.
 
-Als u een derde of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van de serverloze Apache Spark Pools of de notitieblok sessie. In dit artikel wordt beschreven hoe u python-bibliotheken kunt beheren op uw serverloze Apache Spark groep.
+Als u code van derden of lokaal gebouwde code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van uw serverloze Apache Spark-pools of notebooksessie. In dit artikel wordt beschreven hoe u Python-bibliotheken kunt beheren in uw serverloze Apache Spark pool.
 
-## <a name="default-installation"></a>Standaard installatie
-Apache Spark in azure Synapse Analytics beschikt over een volledige set bibliotheken voor algemene taken voor data engineering, gegevens voorbereiding, machine learning en gegevens visualisatie. De lijst met volledige bibliotheken vindt u op [Apache Spark-versie ondersteuning](apache-spark-version-support.md). 
+## <a name="default-installation"></a>Standaardinstallatie
+Apache Spark in Azure Synapse Analytics beschikt over een volledige set bibliotheken voor algemene data engineering, gegevensvoorbereiding, machine learning en taken voor gegevensvisualisatie. De volledige lijst met bibliotheken vindt u op [Apache Spark ondersteuning voor de versie](apache-spark-version-support.md). 
 
-Wanneer een Spark-exemplaar wordt gestart, worden deze bibliotheken automatisch opgenomen. Extra python en aangepaste pakketten kunnen worden toegevoegd aan de Spark-groep en op het sessie niveau.
+Wanneer een Spark-exemplaar wordt gestart, worden deze bibliotheken automatisch opgenomen. Extra Python- en aangepaste pakketten kunnen worden toegevoegd op het niveau van de Spark-pool en -sessie.
 
-## <a name="pool-libraries"></a>Groeps bibliotheken
-Wanneer u de python-bibliotheken hebt geïdentificeerd die u wilt gebruiken voor uw Spark-toepassing, kunt u deze in een Spark-groep installeren. Bibliotheken op groeps niveau zijn beschikbaar voor alle notebooks en taken die worden uitgevoerd in de groep.
+## <a name="pool-libraries"></a>Poolbibliotheken
+Zodra u de Python-bibliotheken hebt geïdentificeerd die u wilt gebruiken voor uw Spark-toepassing, kunt u ze installeren in een Spark-pool. Bibliotheken op poolniveau zijn beschikbaar voor alle notebooks en taken die in de pool worden uitgevoerd.
 
-Er zijn twee manieren om een bibliotheek te installeren op een cluster:
--  Een werkruimte bibliotheek installeren die is geüpload als een werkruimte pakket.
--  Geef een *requirements.txt* of *Conda environment. yml* Environment Specification om pakketten te installeren van opslag plaatsen zoals PyPI, Conda-vervalsing en meer.
+Er zijn twee primaire manieren om een bibliotheek op een cluster te installeren:
+-  Installeer een werkruimtebibliotheek die is geüpload als een werkruimtepakket.
+-  Geef een *requirements.txt* of *Conda environment.yml-omgevingsspecificatie* op om pakketten te installeren vanuit opslagplaatsen zoals PyPI, Conda-Forge en meer.
 
 > [!IMPORTANT]
-> - Als het pakket dat u installeert groot is of veel tijd nodig heeft om te worden geïnstalleerd, is dit van invloed op de start tijd van de Spark-instantie.
-> - Het wijzigen van de PySpark-, Python-, scala/Java-, .NET-of Spark-versie wordt niet ondersteund.
-> - Het installeren van pakketten van externe opslag plaatsen, zoals PyPI, Conda-vervalsing of de standaard Conda-kanalen, wordt niet ondersteund in werk ruimten waarvoor DEP is ingeschakeld.
+> - Als het pakket dat u installeert groot is of lang duurt om te installeren, is dit van invloed op de opstarttijd van het Spark-exemplaar.
+> - Het wijzigen van de PySpark-, Python-, Scala/Java-, .NET- of Spark-versie wordt niet ondersteund.
+> - Het installeren van pakketten vanuit externe opslagplaatsen, zoals PyPI, Conda-Forge of de standaard Conda-kanalen, wordt niet ondersteund in werkruimten met DEP-ondersteuning.
 
 ### <a name="install-python-packages"></a>Python-pakketten installeren
-Python-pakketten kunnen worden geïnstalleerd vanuit opslag plaatsen zoals PyPI en Conda-Forge door een omgevings specificatie bestand op te geven. 
+Python-pakketten kunnen worden geïnstalleerd vanuit opslagplaatsen zoals PyPI en Conda-Forge door een omgevingsspecificatiebestand op te geven. 
 
-#### <a name="environment-specification-formats"></a>Indeling van omgevings specificaties
+#### <a name="environment-specification-formats"></a>Indelingen van omgevingsspecificaties
 
 ##### <a name="pip-requirementstxt"></a>PIP-requirements.txt
-Een *requirements.txt* -bestand (uitvoer van de `pip freeze` opdracht) kan worden gebruikt om een upgrade van de omgeving uit te voeren. Wanneer een pool wordt bijgewerkt, worden de pakketten die in dit bestand worden weer gegeven gedownload van PyPI. De volledige afhankelijkheden worden vervolgens in de cache opgeslagen en bewaard voor later gebruik van de groep. 
+Een *requirements.txt* -bestand (uitvoer van de `pip freeze` opdracht) kan worden gebruikt om de omgeving bij te werken. Wanneer een pool wordt bijgewerkt, worden de pakketten die in dit bestand worden vermeld, gedownload van PyPI. De volledige afhankelijkheden worden vervolgens in de cache opgeslagen voor later hergebruik van de pool. 
 
-Het volgende code fragment toont de indeling voor het vereisten bestand. De naam van het PyPI-pakket wordt samen met een exacte versie weer gegeven. Dit bestand heeft de indeling die wordt beschreven in de hand leiding voor het [blok keren](https://pip.pypa.io/en/stable/reference/pip_freeze/) van de PIP. 
+In het volgende codefragment ziet u de indeling voor het bestand met vereisten. De naam van het PyPI-pakket wordt samen met een exacte versie weergegeven. Dit bestand volgt de indeling die wordt beschreven in de [referentiedocumentatie over pip-freeze.](https://pip.pypa.io/en/stable/reference/pip_freeze/) 
 
-In dit voor beeld wordt een specifieke versie gespeld. 
+In dit voorbeeld wordt een specifieke versie vastgemaakt. 
 ```
 absl-py==0.7.0
 adal==1.2.1
 alabaster==0.7.10
 ```
-##### <a name="yml-format-preview"></a>YML-indeling (preview-versie)
-Daarnaast kunt u ook een *environment. yml* -bestand opgeven om de groeps omgeving bij te werken. De pakketten die in dit bestand worden vermeld, worden gedownload uit de standaard Conda-kanalen, Conda-vervalsing en PyPI. U kunt andere kanalen opgeven of de standaard kanalen verwijderen door de configuratie opties te gebruiken.
+##### <a name="yml-format-preview"></a>YML-indeling (preview)
+Daarnaast kunt u ook een bestand *environment.yml leveren* om de poolomgeving bij te werken. De pakketten die in dit bestand worden vermeld, worden gedownload van de conda-standaardkanalen, Conda-Forge en PyPI. U kunt andere kanalen opgeven of de standaardkanalen verwijderen met behulp van de configuratieopties.
 
-In dit voor beeld worden de afhankelijkheden Channel en Conda/PyPI opgegeven. 
+In dit voorbeeld worden de kanalen en Conda/PyPI-afhankelijkheden opgegeven. 
 
 ```
 name: stats2
@@ -76,116 +76,117 @@ dependencies:
   - matplotlib
   - koalas==1.7.0
 ```
-Zie [een omgeving maken vanuit een environment. yml-bestand](https://docs.conda.io/projects/conda/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually)voor meer informatie over het maken van een omgeving vanuit deze omgeving. yml-bestand.
+Zie Creating an environment from an environment.yml file (Een omgeving maken op basis van een environment.yml-bestand) voor meer informatie over het maken van een omgeving op basis van dit bestand [environment.yml.](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment
+)
 
 #### <a name="update-python-packages"></a>Python-pakketten bijwerken
-Zodra u het omgevings specificatie bestand of de set met bibliotheken die u wilt installeren in de Spark-groep hebt geïdentificeerd, kunt u de Spark-groeps bibliotheken bijwerken door te navigeren naar Azure Synapse Studio of Azure Portal. Hier kunt u de omgevings specificatie opgeven en de werkruimte bibliotheken selecteren die u wilt installeren. 
+Zodra u het bestand met de omgevingsspecificatie of een set bibliotheken hebt geïdentificeerd die u wilt installeren in de Spark-pool, kunt u de Spark-poolbibliotheken bijwerken door naar de Azure Synapse Studio of de Azure Portal. Hier kunt u de omgevingsspecificatie verstrekken en de werkruimtebibliotheken selecteren die u wilt installeren. 
 
-Zodra de wijzigingen zijn opgeslagen, voert een Spark-taak de installatie uit en wordt de resulterende omgeving in de cache opgeslagen, zodat deze later opnieuw kan worden gebruikt. Zodra de taak is voltooid, zullen nieuwe Spark-taken of notitieblok sessies gebruikmaken van de bijgewerkte groeps bibliotheken. 
+Zodra de wijzigingen zijn opgeslagen, wordt met een Spark-taak de installatie uitgevoerd en wordt de resulterende omgeving in de cache opgeslagen voor later hergebruik. Zodra de taak is voltooid, maken nieuwe Spark-taken of notebooksessies gebruik van de bijgewerkte poolbibliotheken. 
 
 ##### <a name="manage-packages-from-azure-synapse-studio-or-azure-portal"></a>Pakketten beheren vanuit Azure Synapse Studio of Azure Portal
-Spark-groeps bibliotheken kunnen worden beheerd vanuit Azure Synapse Studio of Azure Portal. 
+Spark-poolbibliotheken kunnen worden beheerd vanuit Azure Synapse Studio of Azure Portal. 
 
-Om bibliotheken bij te werken of toe te voegen aan een Spark-groep:
-1. Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
+Bibliotheken bijwerken of toevoegen aan een Spark-pool:
+1. Navigeer naar Azure Synapse Analytics werkruimte van de Azure Portal.
 
-    Als u bijwerkt vanuit de **Azure Portal**:
+    Als u vanaf de **Azure Portal:**
 
-    - Selecteer in de sectie **Synapse resources** het tabblad **Apache Spark groepen** en selecteer een Spark-groep in de lijst.
+    - Selecteer in **de sectie Synapse-resources** het **tabblad Apache Spark en** selecteer een Spark-pool in de lijst.
      
-    - Selecteer de **pakketten** in het gedeelte **instellingen** van de Spark-groep.
+    - Selecteer de **pakketten in de** sectie **Instellingen** van de Spark-pool.
   
-    ![Scherm opname van de knop configuratie bestand voor het uploaden van de omgeving.](./media/apache-spark-azure-portal-add-libraries/apache-spark-add-library-azure.png "Python-bibliotheken toevoegen")
+    ![Schermopname waarin de knop voor het configuratiebestand voor de uploadomgeving is gelicht.](./media/apache-spark-azure-portal-add-libraries/apache-spark-add-library-azure.png "Python-bibliotheken toevoegen")
    
-    Als u bijwerkt vanuit de **Synapse Studio**:
-    - Selecteer **beheren** in het hoofd paneel navigatie en selecteer vervolgens **Apache Spark groepen**.
+    Als u vanaf de **Synapse Studio:**
+    - Selecteer **Beheren** in het hoofdnavigatievenster en selecteer vervolgens **Apache Spark pools.**
 
-    - Selecteer de sectie **pakketten** voor een specifieke Spark-groep.
-    ![Scherm afbeelding die de configuratie optie voor de upload omgeving van Studio markeert.](./media/apache-spark-azure-portal-add-libraries/studio-update-libraries.png "Python-bibliotheken toevoegen vanuit Studio")
+    - Selecteer de **sectie Pakketten** voor een specifieke Spark-pool.
+    ![Schermopname waarin de configuratieoptie voor de uploadomgeving uit Studio is gelicht.](./media/apache-spark-azure-portal-add-libraries/studio-update-libraries.png "Python-bibliotheken toevoegen vanuit Studio")
    
-2. Upload het omgevings configuratie bestand met behulp van de bestands kiezer in het gedeelte  **pakketten** van de pagina.
-3. U kunt ook extra **werkruimte pakketten** selecteren om aan uw groep toe te voegen. 
-4. Zodra u de wijzigingen hebt opgeslagen, wordt er een systeem taak geactiveerd om de opgegeven bibliotheken te installeren en in de cache op te slaan. Dit proces helpt de algemene opstart tijd van de sessie te verminderen. 
-5. Zodra de taak is voltooid, worden alle nieuwe sessies opgehaald uit de bijgewerkte groeps bibliotheken.
+2. Upload het omgevingsconfiguratiebestand met behulp van de  **bestands** selector in de sectie Pakketten van de pagina.
+3. U kunt ook extra **werkruimtepakketten selecteren om** toe te voegen aan uw groep. 
+4. Zodra u de wijzigingen hebt opgeslagen, wordt een systeem taak geactiveerd om de opgegeven bibliotheken te installeren en in de cache op te slaan. Dit proces vermindert de totale opstarttijd van de sessie. 
+5. Zodra de taak is voltooid, zullen alle nieuwe sessies de bijgewerkte poolbibliotheken ophalen.
 
 > [!IMPORTANT]
-> Als u de optie selecteert om **nieuwe instellingen** af te dwingen, beëindigt u de alle huidige sessies voor de geselecteerde Spark-pool. Zodra de sessies zijn beëindigd, moet u wachten tot de groep opnieuw is opgestart. 
+> Als u de optie nieuwe **instellingen forceert,** kunt u alle huidige sessies voor de geselecteerde Spark-pool beëindigen. Zodra de sessies zijn beëindigd, moet u wachten tot de pool opnieuw is gestart. 
 >
-> Als deze instelling niet is ingeschakeld, moet u wachten tot de huidige Spark-sessie is beëindigd of het hand matig stoppen. Zodra de sessie is beëindigd, moet u de pool opnieuw opstarten.
+> Als deze instelling is uitgeschakeld, moet u wachten tot de huidige Spark-sessie is gestopt of handmatig. Zodra de sessie is beëindigd, moet u de pool opnieuw opstarten.
 
 
-##### <a name="track-installation-progress-preview"></a>Voortgang van de installatie volgen (preview-versie)
-Telkens wanneer een groep wordt bijgewerkt met een nieuwe set Bibliotheken, wordt een door het systeem gereserveerde Spark-taak gestart. Deze Spark-taak helpt bij het controleren van de status van de bibliotheek installatie. Als de installatie mislukt als gevolg van bibliotheek conflicten of andere problemen, wordt de status van de Spark-groep teruggezet naar de vorige of de standaard instelling. 
+##### <a name="track-installation-progress-preview"></a>Voortgang van de installatie bijhouden (preview)
+Telkens wanneer een pool wordt bijgewerkt met een nieuwe set bibliotheken, wordt er een door het systeem gereserveerde Spark-taak gestart. Met deze Spark-taak kunt u de status van de bibliotheekinstallatie controleren. Als de installatie mislukt vanwege bibliotheekconflicten of andere problemen, keert de Spark-pool terug naar de vorige of standaardtoestand. 
 
-Daarnaast kunnen gebruikers de installatie logboeken ook inspecteren om afhankelijkheids conflicten te identificeren of om te zien welke bibliotheken zijn geïnstalleerd tijdens het bijwerken van de groep.
+Daarnaast kunnen gebruikers ook de installatielogboeken inspecteren om afhankelijkheidsconflicten te identificeren of te zien welke bibliotheken tijdens de update van de pool zijn geïnstalleerd.
 
-Als u deze logboeken wilt weer geven:
-1. Ga naar de lijst met Spark-toepassingen op het tabblad **monitor** . 
-2. Selecteer de systeem-Spark-toepassings taak die overeenkomt met uw pool-update. Deze systeem taken worden uitgevoerd onder de titel *SystemReservedJob-LibraryManagement* .
-   ![Scherm afbeelding die de systeem bibliotheek taak voor reserve ring markeert.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job.png "Systeem bibliotheek taak weer geven")
-3. Schakel over om het **stuur programma** -en **stdout** -logboeken weer te geven. 
-4. Binnen de resultaten ziet u de logboeken met betrekking tot de installatie van uw afhankelijkheden.
-    ![Scherm afbeelding die de taak resultaten van de door het systeem gereserveerde bibliotheek markeert.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job-results.png "Taak voortgang van systeem bibliotheek weer geven")
+Deze logboeken weergeven:
+1. Navigeer naar de lijst met Spark-toepassingen op **het tabblad** Monitor. 
+2. Selecteer de Spark-toepassings taak van het systeem die overeenkomt met de update van uw pool. Deze systeemtaken worden uitgevoerd onder *de titel SystemReservedJob-LibraryManagement.*
+   ![Schermopname met de taak voor een gereserveerde bibliotheek voor het systeem.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job.png "Taak voor systeembibliotheek weergeven")
+3. Schakel over om de logboeken **voor stuurprogramma's** **en stdout weer te** zien. 
+4. In de resultaten ziet u de logboeken met betrekking tot de installatie van uw afhankelijkheden.
+    ![Schermopname met de resultaten van de taak van de gereserveerde bibliotheek voor het systeem.](./media/apache-spark-azure-portal-add-libraries/system-reserved-library-job-results.png "De voortgang van de taak van de systeembibliotheek weergeven")
 
-## <a name="install-wheel-files"></a>Wiel bestanden installeren
-Python-wiel bestanden zijn een veelgebruikte manier voor het inpakken van python-bibliotheken. In azure Synapse Analytics kunnen gebruikers hun wiel bestanden uploaden naar een bekende locatie, het Azure Data Lake Storage-account of uploaden met behulp van de Azure Synapse-interface voor het maken van de werk ruimte.
+## <a name="install-wheel-files"></a>Wheel-bestanden installeren
+Python-wheel-bestanden zijn een veelgebruikte manier om Python-bibliotheken te verpakken. Binnen Azure Synapse Analytics kunnen gebruikers hun wheel-bestanden uploaden naar een bekende locatie van het Azure Data Lake Storage-account of uploaden met behulp van de interface Azure Synapse Workspace-pakketten.
 
-### <a name="workspace-packages-preview"></a>Werkruimte pakketten (preview-versie)
-Werkruimte pakketten kunnen aangepaste of privé-wiel bestanden zijn. U kunt deze pakketten uploaden naar uw werk ruimte en deze later toewijzen aan een specifieke Spark-groep.
+### <a name="workspace-packages-preview"></a>Werkruimtepakketten (preview)
+Werkruimtepakketten kunnen aangepaste of persoonlijke wheel-bestanden zijn. U kunt deze pakketten uploaden naar uw werkruimte en deze later toewijzen aan een specifieke Spark-pool.
 
-Werkruimte pakketten toevoegen:
-1. Ga naar het   >  tabblad **werk ruimte-pakketten** beheren.
-2. Upload uw wiel bestanden met behulp van de bestands kiezer.
-3. Zodra de bestanden zijn geüpload naar de Azure Synapse-werk ruimte, kunt u deze pakketten toevoegen aan een bepaalde Apache Spark groep.
+Werkruimtepakketten toevoegen:
+1. Navigeer naar **het**  >  **tabblad Werkruimtepakketten** beheren.
+2. Upload uw wheel-bestanden met behulp van de bestands selector.
+3. Zodra de bestanden zijn geüpload naar Azure Synapse werkruimte, kunt u deze pakketten toevoegen aan een bepaalde Apache Spark groep.
 
-![Scherm afbeelding die de werkruimte pakketten markeert.](./media/apache-spark-azure-portal-add-libraries/studio-add-workspace-package.png "Werkruimte pakketten weer geven")
+![Schermopname met werkruimtepakketten.](./media/apache-spark-azure-portal-add-libraries/studio-add-workspace-package.png "Werkruimtepakketten weergeven")
 
 >[!WARNING]
->- Binnen Azure Synapse kan een Apache Spark groep gebruikmaken van aangepaste bibliotheken die zijn geüpload als werkruimte pakketten of worden geüpload binnen een bekend Azure Data Lake Storage pad. Beide opties kunnen echter niet gelijktijdig worden gebruikt binnen dezelfde Apache Spark groep. Als er met beide methoden pakketten worden opgegeven, worden alleen de wiel bestanden geïnstalleerd die zijn opgegeven in de lijst met werkruimte pakketten. 
+>- Binnen Azure Synapse kan een Apache Spark-pool gebruikmaken van aangepaste bibliotheken die worden geüpload als werkruimtepakketten of die zijn geüpload binnen een bekend Azure Data Lake Storage pad. Beide opties kunnen echter niet tegelijkertijd worden gebruikt binnen dezelfde Apache Spark groep. Als pakketten worden geleverd met behulp van beide methoden, worden alleen de wheel-bestanden die zijn opgegeven in de lijst Werkruimtepakketten geïnstalleerd. 
 >
->- Zodra werkruimte pakketten (preview) worden gebruikt om pakketten te installeren op een bepaalde Apache Spark pool, is er een beperking dat u geen pakketten meer kunt opgeven met het pad naar het opslag account in dezelfde groep.  
+>- Zodra werkruimtepakketten (preview) worden gebruikt voor het installeren van pakketten op een bepaalde Apache Spark-groep, is er een beperking dat u geen pakketten meer kunt opgeven met behulp van het pad naar het opslagaccount in dezelfde groep.  
 
 ### <a name="storage-account"></a>Storage-account
-Aangepaste, ingebouwde wiel pakketten kunnen worden geïnstalleerd op de Apache Spark groep door alle wiel bestanden te uploaden naar het Azure Data Lake Storage-account (Gen2) dat is gekoppeld aan de werk ruimte Synapse. 
+Aangepaste wheel-pakketten kunnen worden geïnstalleerd in de Apache Spark-pool door alle wheel-bestanden te uploaden naar het Azure Data Lake Storage (Gen2)-account dat is gekoppeld aan de Synapse-werkruimte. 
 
-De bestanden moeten worden geüpload naar het volgende pad in de standaard container van het opslag account: 
+De bestanden moeten worden geüpload naar het volgende pad in de standaardcontainer van het opslagaccount: 
 
 ```
 abfss://<file_system>@<account_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/sparkpools/<pool_name>/libraries/python/
 ```
 
 >[!WARNING]
-> In sommige gevallen moet u het bestandspad wellicht maken op basis van de bovenstaande structuur als deze nog niet bestaat. Mogelijk moet u de ```python``` map in de ```libraries``` map toevoegen als deze nog niet bestaat.
+> In sommige gevallen moet u mogelijk het bestandspad maken op basis van de bovenstaande structuur als het nog niet bestaat. U moet bijvoorbeeld de map in de map toevoegen als deze ```python``` ```libraries``` nog niet bestaat.
 
 > [!IMPORTANT]
-> Als u aangepaste bibliotheken wilt installeren met behulp van de Azure DataLake-opslag methode, moet u de machtigingen voor de **opslag-BLOB gegevens Inzender** of de **blobgegevens eigenaar** hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Azure Synapse Analytics-werk ruimte.
+> Als u aangepaste bibliotheken wilt installeren met behulp van  de Azure  DataLake Storage-methode, moet u de machtiging Inzender voor opslagblobgegevens of Eigenaar van opslagblobgegevens hebben voor het primaire Gen2-opslagaccount dat is gekoppeld aan de Azure Synapse Analytics-werkruimte.
 
 
-## <a name="session-scoped-packages-preview"></a>Pakketten met sessie bereik (preview-versie)
-Naast pool level pakketten kunt u ook bibliotheken met sessie bereik aan het begin van een notitieblok sessie opgeven.  Met bibliotheken met sessie bereik kunt u aangepaste python-omgevingen opgeven en gebruiken in een notitieblok sessie. 
+## <a name="session-scoped-packages-preview"></a>Pakketten binnen sessiebereik (preview)
+Naast pakketten op groepsniveau kunt u aan het begin van een notebooksessie ook bibliotheken met sessiebereik opgeven.  Met sessiebereikbibliotheken kunt u aangepaste Python-omgevingen opgeven en gebruiken in een notebooksessie. 
 
-Wanneer u bibliotheken met sessie bereik gebruikt, is het belang rijk dat u rekening houdt met de volgende punten:
-   - Wanneer u bibliotheken met sessie bereik installeert, heeft alleen het huidige notitie blok toegang tot de opgegeven bibliotheken. 
-   - Deze bibliotheken zijn niet van invloed op andere sessies of taken die gebruikmaken van dezelfde Spark-groep. 
-   - Deze bibliotheken worden boven op de basis-runtime-en pool niveau-bibliotheken geïnstalleerd. 
-   - Notebook bibliotheken hebben de hoogste prioriteit.
+Wanneer u sessiebibliotheken gebruikt, is het belangrijk dat u rekening houdt met de volgende punten:
+   - Wanneer u bibliotheken binnen sessiebereik installeert, heeft alleen het huidige notebook toegang tot de opgegeven bibliotheken. 
+   - Deze bibliotheken hebben geen invloed op andere sessies of taken die gebruikmaken van dezelfde Spark-pool. 
+   - Deze bibliotheken worden geïnstalleerd op de basisruntime- en poolniveaubibliotheken. 
+   - Notebookbibliotheken hebben de hoogste prioriteit.
 
-Pakketten met sessie bereik opgeven:
-1.  Ga naar de geselecteerde Spark-groep en zorg ervoor dat u beschikt over de ingeschakelde bibliotheken op sessie niveau.  U kunt deze instelling inschakelen door te navigeren naar het   >  tabblad **Apache Spark groeps**  >  **pakketten** beheren. ![Schakel sessie pakketten in.](./media/apache-spark-azure-portal-add-libraries/enable-session-packages.png "Sessie pakketten inschakelen")
-2.  Zodra de instelling is toegepast, kunt u een notitie blok openen en **sessie** >  **pakketten** configureren selecteren.
-  ![Sessie pakketten opgeven.](./media/apache-spark-azure-portal-add-libraries/update-session-notebook.png "Sessie configuratie bijwerken")
-3.  Hier kunt u een Conda *environment. yml* -bestand uploaden om pakketten binnen een sessie te installeren of bij te werken. Zodra u de sessie hebt gestart, worden de opgegeven bibliotheken geïnstalleerd. Zodra de sessie is beëindigd, zijn deze bibliotheken niet langer beschikbaar omdat ze specifiek zijn voor uw sessie.
+Pakketten met sessiebereik opgeven:
+1.  Navigeer naar de geselecteerde Spark-pool en zorg ervoor dat u bibliotheken op sessieniveau hebt ingeschakeld.  U kunt deze instelling inschakelen door te navigeren naar **het** tabblad Apache Spark groep  >    >   beheren. ![Sessiepakketten inschakelen.](./media/apache-spark-azure-portal-add-libraries/enable-session-packages.png "Sessiepakketten inschakelen")
+2.  Zodra de instelling is toegepast, kunt u een notebook openen en **Sessiepakketten** >  **configureren selecteren.**
+  ![Sessiepakketten opgeven.](./media/apache-spark-azure-portal-add-libraries/update-session-notebook.png "Sessieconfiguratie bijwerken")
+3.  Hier kunt u een bestand Conda *environment.yml uploaden* om pakketten in een sessie te installeren of bij te werken. Zodra u de sessie start, worden de opgegeven bibliotheken geïnstalleerd. Zodra de sessie is beëindigd, zijn deze bibliotheken niet meer beschikbaar, omdat ze specifiek zijn voor uw sessie.
 
-## <a name="verify-installed-libraries"></a>Geïnstalleerde bibliotheken verifiëren
-Voer de volgende code uit om te controleren of de juiste versies van de juiste bibliotheken zijn geïnstalleerd vanaf PyPI:
+## <a name="verify-installed-libraries"></a>Geïnstalleerde bibliotheken controleren
+Voer de volgende code uit om te controleren of de juiste versies van de juiste bibliotheken zijn geïnstalleerd vanuit PyPI:
 ```python
 import pkg_resources
 for d in pkg_resources.working_set:
      print(d)
 ```
-In sommige gevallen moet u de pakket versie mogelijk afzonderlijk controleren om de pakket versies van Conda te kunnen bekijken.
+In sommige gevallen moet u de pakketversie afzonderlijk inspecteren om de pakketversies van Conda te bekijken.
 
 ## <a name="next-steps"></a>Volgende stappen
-- De standaard bibliotheken weer geven: [ondersteuning van Apache Spark-versie](apache-spark-version-support.md)
-- Problemen met bibliotheek installatie fouten oplossen: [problemen met bibliotheek fouten oplossen](apache-spark-troubleshoot-library-errors.md)
-- Een persoonlijk Conda-kanaal maken met uw Azure Data Lake Storage account: [Conda private channels](./spark/../apache-spark-custom-conda-channel.md)
+- De standaardbibliotheken weergeven: [Apache Spark versieondersteuning](apache-spark-version-support.md)
+- Bibliotheekinstallatiefouten oplossen: [Bibliotheekfouten oplossen](apache-spark-troubleshoot-library-errors.md)
+- Een privé-Conda-kanaal maken met uw Azure Data Lake Storage-account: [Privékanalen van Conda](./spark/../apache-spark-custom-conda-channel.md)

@@ -1,90 +1,90 @@
 ---
-title: Azure-beveiligings basislijn voor Azure IoT Hub
-description: De beveiligings basislijn van Azure IoT Hub biedt procedure richtlijnen en resources voor het implementeren van de beveiligings aanbevelingen die zijn opgegeven in de Azure Security-Bench Mark.
+title: Azure-beveiligingsbasislijn voor Azure IoT Hub
+description: De Azure IoT Hub beveiligingsbasislijn biedt procedurele richtlijnen en resources voor het implementeren van de beveiligingsaanbevelingen die zijn opgegeven in de Azure Security Benchmark.
 author: msmbaldwin
 ms.service: iot-hub
 ms.topic: conceptual
 ms.date: 03/16/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a21e0ae235d5b5c514f3d82b76b4d17394035872
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 99243dbfac7fddb8a4fe9d64ed64ab706245ec3c
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104576885"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107587626"
 ---
-# <a name="azure-security-baseline-for-azure-iot-hub"></a>Azure-beveiligings basislijn voor Azure IoT Hub
+# <a name="azure-security-baseline-for-azure-iot-hub"></a>Azure-beveiligingsbasislijn voor Azure IoT Hub
 
-In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview-v1.md) Microsoft Azure IOT hub. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen.
-De inhoud wordt gegroepeerd op basis van de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure IOT hub. **Besturings elementen** die niet van toepassing zijn op Azure IOT hub, zijn uitgesloten.
+Deze beveiligingsbasislijn past richtlijnen van [Azure Security Benchmark versie 1.0](../security/benchmarks/overview-v1.md) toe op Microsoft Azure IoT Hub. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen.
+De inhoud wordt gegroepeerd op basis van de **beveiligingscontroles** die zijn gedefinieerd door de Azure Security Benchmark en de gerelateerde richtlijnen die van toepassing zijn op Azure IoT Hub. **Besturingselementen** die niet van Azure IoT Hub zijn uitgesloten.
 
  
-Zie het [volledige azure IOT hub Security Baseline-toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)voor meer informatie over de manier waarop Azure IOT hub volledig is toegewezen aan de beveiligings benchmark van Azure.
+Als u wilt zien Azure IoT Hub volledig is toegewezen aan de Azure Security-benchmark, bekijkt u het volledige Azure IoT Hub het [toewijzingsbestand voor beveiligingsbasislijnen.](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
 *Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-control-network-security.md) voor meer informatie.*
 
-### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: Azure-resources in virtuele netwerken beveiligen
+### <a name="11-protect-azure-resources-within-virtual-networks"></a>1.1: Azure-resources binnen virtuele netwerken beveiligen
 
-**Richt lijnen**: IOT hub is een platform-as-a-Service (PaaS) met meerdere tenants en verschillende klanten delen dezelfde pool van compute-, netwerk-en opslag hardwarebronnen. De hostnamen van IoT Hub worden toegewezen aan een openbaar eind punt met een openbaar routeerbaar IP-adres via internet. Verschillende klanten delen dit IoT Hub open bare eind punt en IoT-apparaten in meer dan Wide Area Networks en on-premises netwerken hebben toegang tot het netwerk. Micro soft heeft de service ontworpen voor een volledige isolatie van de gegevens van elke Tenant en werkt voortdurend om dit resultaat te garanderen.
+**Richtlijnen:** IoT Hub een Platform-as-a-Service (PaaS) met meerdere tenants is, delen verschillende klanten dezelfde groep reken-, netwerk- en opslaghardwareresources. IoT Hub hostnamen van de IoT Hub worden via internet aan een openbaar eindpunt met een openbaar routeerbaar IP-adres toe te staan. Verschillende klanten delen dit IoT Hub openbaar eindpunt en IoT-apparaten in via wide-area netwerken en on-premises netwerken hebben allemaal toegang tot dit eindpunt. Microsoft heeft de service ontworpen voor volledige isolatie tussen de gegevens van elke tenant en werkt continu om dit resultaat te garanderen.
 
-IoT Hub functies, waaronder bericht routering, het uploaden van bestanden en bulksgewijs importeren/exporteren van apparaten, moet u ook een verbinding van IoT Hub hebben met een Azure-resource die eigendom is van een klant over het open bare eind punt. Deze connectiviteits paden vormen samen het uitgaande verkeer van IoT Hub naar klant resources.
+IoT Hub functies zoals berichtroutering, bestandsupload en bulksgewijs importeren/exporteren van apparaten vereisen ook connectiviteit van IoT Hub naar een Azure-resource die eigendom is van de klant via het openbare eindpunt. Deze verbindingspaden maken gezamenlijk het verkeer van de IoT Hub naar de resources van de klant.
 
-Het is raadzaam om de verbinding met uw Azure-resources (inclusief Azure IoT Hub) te beperken via een virtueel netwerk waarvan u de verbindings Risico's in een geïsoleerd netwerk wilt verminderen en on-premises netwerk connectiviteit rechtstreeks wilt inschakelen voor het Azure-backbone-netwerk. Gebruik een persoonlijke Azure-koppeling en een persoonlijk Azure-eind punt, waar mogelijk, om persoonlijke toegang tot uw services in te scha kelen vanuit andere virtuele netwerken. 
+U wordt aangeraden de connectiviteit met uw Azure-resources (inclusief Azure IoT Hub) te beperken via een virtueel netwerk waarvan u eigenaar bent en dat u gebruikt om de blootstelling aan connectiviteit in een geïsoleerd netwerk te beperken en on-premises netwerkconnectiviteit rechtstreeks met het Backbone-netwerk van Azure in te stellen. Gebruik Azure Private Link azure-privé-eindpunt, indien mogelijk, om privétoegang tot uw services vanuit andere virtuele netwerken mogelijk te maken. 
 
-Als er een persoonlijke toegang tot stand is gebracht, schakelt u open bare netwerk toegang voor de IoT Hub uit voor extra beveiliging. Deze controle op netwerk niveau wordt afgedwongen voor een specifieke IoT hub-resource, waardoor isolatie wordt gegarandeerd. Om ervoor te zorgen dat de service actief is voor andere klant bronnen met behulp van het open bare pad, blijft het open bare eind punt oplosbaar, worden IP-adressen detecteerbaar en blijven de poorten geopend. Dit is geen oorzaak van bezorgdheid omdat micro soft meerdere beveiligings lagen integreert om ervoor te zorgen dat tenants volledig worden geïsoleerd.
+Zodra de privétoegang tot stand is gebracht, schakelt u openbare netwerktoegang voor de IoT Hub uit voor extra beveiliging. Dit besturingselement op netwerkniveau wordt afgedwongen op een specifieke IoT-hub-resource, waardoor isolatie wordt gewaarborgd. Om de service actief te houden voor andere klantresources met behulp van het openbare pad, blijft het openbare eindpunt op te lossen, blijven IP-adressen detecteerbaar en blijven poorten geopend. Dit is geen reden tot zorg omdat Microsoft meerdere beveiligingslagen integreert om volledige isolatie tussen tenants te garanderen.
 
-Open de poorten op uw apparaten zo min tot Maxi maal om ongewenste toegang te voor komen. Daarnaast bouwt u mechanismen op om het apparaat te voor komen of fysiek te knoeien.
+Houd open hardwarepoorten op uw apparaten tot een minimum beperkt om ongewenste toegang te voorkomen. Daarnaast kunt u mechanismen bouwen om fysieke manipulatie van het apparaat te voorkomen of te detecteren.
 
-- [Ondersteuning voor IoT Virtual Networks](virtual-network-support.md)
+- [Ondersteuning voor virtuele IoT-netwerken](virtual-network-support.md)
 
-- [Open bare netwerk toegang voor IoT hub beheren](iot-hub-public-network-access.md)
+- [Openbare netwerktoegang beheren voor IoT Hub](iot-hub-public-network-access.md)
 
-- [Tenant isolatie in azure](https://docs.microsoft.com/azure/security/fundamentals/isolation-choices#tenant-level-isolation)
+- [Isolatie van tenants in Azure](https://docs.microsoft.com/azure/security/fundamentals/isolation-choices#tenant-level-isolation)
 
-- [best practice voor partij netwerken](https://docs.microsoft.com/azure/iot-fundamentals/security-recommendations#networking)
+- [LoT-netwerk best practice](https://docs.microsoft.com/azure/iot-fundamentals/security-recommendations#networking)
 
-- [Overzicht van persoonlijke Azure-koppelingen](../private-link/private-link-overview.md)
+- [Azure Private Link overzicht](../private-link/private-link-overview.md)
 
-- [Azure-netwerk beveiligings groep](../virtual-network/network-security-groups-overview.md)
-
-**Verantwoordelijkheid**: Klant
-
-**Azure Security Center bewaking**: geen
-
-### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2: de configuratie en het verkeer van virtuele netwerken, subnetten en Nic's bewaken en vastleggen
-
-**Hulp**: gebruik Azure Security Center en volg de aanbevelingen voor netwerk beveiliging om uw Azure-netwerk bronnen te beveiligen. Schakel logboeken stroom van de netwerk beveiligings groep in en verzend de logboeken naar een Azure Storage account voor controle. U kunt de stroom logboeken ook naar een Log Analytics-werk ruimte verzenden en vervolgens Traffic Analytics gebruiken om inzicht te krijgen in verkeers patronen in uw Azure-Cloud. Enkele voor delen van Traffic Analytics zijn de mogelijkheid om netwerk activiteiten te visualiseren, HOTS pots en beveiligings Risico's te identificeren, verkeers patronen te begrijpen en netwerk configuraties te lokaliseren.
- 
-- [Stroom logboeken van netwerk beveiligings groepen inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
-
-- [Traffic Analytics inschakelen en gebruiken](../network-watcher/traffic-analytics.md)
- 
-- [Informatie over de netwerk beveiliging die wordt verschaft door Azure Security Center](../security-center/security-center-network-recommendations.md)
+- [Azure-netwerkbeveiligingsgroep](../virtual-network/network-security-groups-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="13-protect-critical-web-applications"></a>1,3: essentiële webtoepassingen beveiligen
+### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1.2: De configuratie en het verkeer van virtuele netwerken, subnetten en NIC's bewaken en in een logboek plaatsen
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of reken bronnen.
+**Richtlijnen:** gebruik Azure Security Center en volg de aanbevelingen voor netwerkbeveiliging om uw Azure-netwerkbronnen te beveiligen. Schakel stroomlogboeken voor netwerkbeveiligingsgroep in en verzend de logboeken naar een Azure Storage voor controle. U kunt de stroomlogboeken ook verzenden naar een Log Analytics-werkruimte en vervolgens Traffic Analytics om inzicht te krijgen in verkeerspatronen in uw Azure-cloud. Enkele voordelen van Traffic Analytics zijn de mogelijkheid om netwerkactiviteit te visualiseren, hotspots en beveiligingsrisico's te identificeren, verkeersstroompatronen te begrijpen en onjuiste netwerkconfiguraties aan te wijzen.
+ 
+- [Stroomlogboeken voor netwerkbeveiligingsgroep inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-**Verantwoordelijkheid**: niet van toepassing
+- [Informatie over het inschakelen en gebruiken van Traffic Analytics](../network-watcher/traffic-analytics.md)
+ 
+- [Informatie over netwerkbeveiliging die wordt geboden door Azure Security Center](../security-center/security-center-network-recommendations.md)
 
-**Azure Security Center bewaking**: geen
+**Verantwoordelijkheid**: Klant
 
-### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: communicatie met bekende schadelijke IP-adressen weigeren
+**Azure Security Center bewaking:** geen
 
-**Hulp**: blok keer bekende schadelijke IP-adressen met IOT hub IP-filter regels. Er worden ook kwaad aardige pogingen vastgelegd en gewaarschuwd via Azure Security Center voor IoT.
+### <a name="13-protect-critical-web-applications"></a>1.3: Kritieke webtoepassingen beveiligen
 
-Azure DDoS Protection Basic is al ingeschakeld en beschikbaar voor geen extra kosten als onderdeel van IoT Hub. Controle over altijd verkeer en real-time beperking van veelvoorkomende aanvallen op netwerk niveau, bieden dezelfde verdedigings die worden gebruikt door de onlineservices van micro soft. De volledige schaal van het wereld wijde netwerk van Azure kan worden gebruikt voor het distribueren en beperken van het aanvals verkeer tussen regio's.
+**Richtlijnen:** Niet van toepassing; Deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of rekenbronnen.
 
-- [IP-filter IoT Hub](iot-hub-ip-filtering.md)
+**Verantwoordelijkheid:** Niet van toepassing
 
-- [Azure Security Center voor IoT verdachte IP-adres communicatie](/azure/asc-for-iot/concept-security-alerts)
+**Azure Security Center bewaking:** geen
+
+### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4: Communicatie met bekende schadelijke IP-adressen weigeren
+
+**Richtlijnen:** Bekende schadelijke IP-adressen blokkeren met IoT Hub IP-filterregels. Schadelijke pogingen worden ook vastgelegd en gewaarschuwd via Azure Security Center voor IoT.
+
+Azure DDoS Protection Basic is al ingeschakeld en beschikbaar zonder extra kosten als onderdeel van IoT Hub. Bewaking van altijd aan-verkeer en realtime beperking van veelvoorkomende aanvallen op netwerkniveau bieden dezelfde verdedigingslinie die wordt gebruikt door de microsoft-onlineservices. De volledige schaal van het wereldwijde netwerk van Azure kan worden gebruikt om aanvalsverkeer tussen regio's te distribueren en te beperken.
+
+- [IoT Hub IP-filter](iot-hub-ip-filtering.md)
+
+- [Azure Security Center voor communicatie met verdachte IP-adressen van IoT](/azure/asc-for-iot/concept-security-alerts)
 
 - [Azure DDoS Protection Basic beheren](../ddos-protection/ddos-protection-overview.md)
 
@@ -92,266 +92,266 @@ Azure DDoS Protection Basic is al ingeschakeld en beschikbaar voor geen extra ko
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="15-record-network-packets"></a>1,5: netwerk pakketten opnemen
+### <a name="15-record-network-packets"></a>1.5: Netwerkpakketten registreren
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor aanbiedingen die netwerk pakketten produceren die door klanten kunnen worden vastgelegd en weer gegeven. IoT Hub produceert geen netwerk pakketten die zijn gericht op de klant en is niet ontworpen om rechtstreeks in azure Virtual Networks te implementeren.
+**Richtlijnen:** Niet van toepassing; Deze aanbeveling is bedoeld voor aanbiedingen die netwerkpakketten produceren die kunnen worden vastgelegd en bekeken door klanten. IoT Hub produceert geen netwerkpakketten die klantgericht zijn en is niet ontworpen om rechtstreeks in virtuele Azure-netwerken te implementeren.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: op netwerk gebaseerde inbreuk detectie/indringings systemen (ID'S/IP-adressen) implementeren
+### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6: Op het netwerk gebaseerde inbraakdetectie-/inbraakpreventiesystemen (IDS/IPS) implementeren
 
-**Richt lijnen**: Selecteer een aanbieding van Azure Marketplace die ondersteuning biedt voor ID'S/IP-adressen met Payload-inspectie mogelijkheden.  Als Payload-inspectie geen vereiste is, kan Azure Firewall Threat Intelligence worden gebruikt. Azure Firewall op bedreigingen gebaseerd filteren wordt gebruikt om het verkeer van en naar bekende schadelijke IP-adressen en domeinen te Signa lering en/of te blok keren. De IP-adressen en domeinen zijn afkomstig van de Microsoft Bedreigingsinformatie-feed.
+**Richtlijnen:** selecteer een aanbieding in Azure Marketplace ondersteuning biedt voor id's/IPS-functionaliteit met mogelijkheden voor nettoladinginspectie.  Wanneer payloadinspectie geen vereiste is, kunnen Azure Firewall bedreigingsinformatie worden gebruikt. Azure Firewall filteren op basis van bedreigingsinformatie wordt gebruikt om verkeer van en naar bekende schadelijke IP-adressen en domeinen te waarschuwen of te blokkeren. De IP-adressen en domeinen zijn afkomstig van de Microsoft Bedreigingsinformatie-feed.
 
-Implementeer de door u gewenste firewall oplossing op elk van de netwerk grenzen van uw organisatie om schadelijk verkeer te detecteren en/of te blok keren. 
+Implementeer de firewalloplossing van uw keuze op elk van de netwerkgrenzen van uw organisatie om schadelijk verkeer te detecteren en/of te blokkeren. 
 
 - [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/?term=Firewall)
 
-- [Azure Firewall implementeren](../firewall/tutorial-firewall-deploy-portal.md)
+- [Een Azure Firewall](../firewall/tutorial-firewall-deploy-portal.md)
 
 - [Waarschuwingen configureren met Azure Firewall](../firewall/threat-intel.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="17-manage-traffic-to-web-applications"></a>1,7: verkeer naar webtoepassingen beheren
+### <a name="17-manage-traffic-to-web-applications"></a>1.7: Verkeer naar webtoepassingen beheren
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of reken bronnen.
+**Richtlijnen:** Niet van toepassing; Deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: de complexiteit en administratieve overhead van netwerk beveiligings regels minimaliseren
+### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8: Complexiteit en administratieve overhead van netwerkbeveiligingsregels minimaliseren
 
-**Richt lijnen**: voor resources die toegang nodig hebben tot uw Azure-IOT hub, gebruikt u Virtual Network Service Tags om netwerk toegangs beheer te definiëren voor netwerk beveiligings groepen of Azure firewall. U kunt servicetags gebruiken in plaats van specifieke IP-adressen wanneer u beveiligingsregels maakt. Door de naam van de service label (bijvoorbeeld AzureIoTHub) op te geven in het juiste bron-of doel veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het servicetag van de service en werkt de servicetag automatisch bij met gewijzigde adressen.
+**Richtlijnen:** voor resources die toegang tot uw Azure IoT Hub nodig hebben, gebruikt u Virtual Network-servicetags om besturingselementen voor netwerktoegang te definiëren voor netwerkbeveiligingsgroepen of Azure Firewall. U kunt servicetags gebruiken in plaats van specifieke IP-adressen wanneer u beveiligingsregels maakt. Door de naam van de servicetag (bijvoorbeeld AzureIoTHub) op te geven in het juiste bron- of doelveld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren. Microsoft beheert de adres-voorvoegsels die door de servicetag worden omvat en werkt de servicetag automatisch bij wanneer adressen worden gewijzigd.
 
-- [Service tags gebruiken voor Azure IoT](iot-hub-understand-ip-address.md)
-- [Voor meer informatie over het gebruik van service Tags](../virtual-network/service-tags-overview.md)
+- [Servicetags gebruiken voor Azure IoT](iot-hub-understand-ip-address.md)
+- [Voor meer informatie over het gebruik van servicetags](../virtual-network/service-tags-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
+### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9: Standaardbeveiligingsconfiguraties voor netwerkapparaten onderhouden
 
-**Hulp**: Definieer en implementeer standaard beveiligings configuraties voor netwerk resources die zijn gekoppeld aan uw Azure IOT hub-naam ruimten met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. devices ' en ' micro soft. Network ' om aangepaste beleids regels te maken om de netwerk configuratie van uw Machine Learning-naam ruimten te controleren of af te dwingen. 
+**Richtlijnen:** standaardbeveiligingsconfiguraties definiëren en implementeren voor netwerkbronnen die zijn gekoppeld aan uw Azure IoT Hub-naamruimten met Azure Policy. Gebruik Azure Policy aliassen in de naamruimten Microsoft.Devices en Microsoft.Network om aangepaste beleidsregels te maken om de netwerkconfiguratie van uw Machine Learning te controleren of af te dwingen. 
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="110-document-traffic-configuration-rules"></a>1,10: configuratie regels voor het document verkeer
+### <a name="110-document-traffic-configuration-rules"></a>1.10: Configuratieregels voor verkeer documenteren
 
-**Richt lijnen**: Gebruik labels voor netwerk bronnen die zijn gekoppeld aan uw Azure IOT hub-implementatie om ze logisch in een taxonomie te organiseren.
+**Richtlijnen:** gebruik tags voor netwerkbronnen die zijn gekoppeld aan Azure IoT Hub implementatie om deze logisch te ordenen in een taxonomie.
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1,11: gebruik automatische hulpprogram ma's om netwerk bron configuraties te bewaken en wijzigingen te detecteren
+### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11: Geautomatiseerde hulpprogramma's gebruiken om netwerkresourceconfiguraties te bewaken en wijzigingen te detecteren
 
-**Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op Azure IOT hub. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
+**Richtlijnen:** Azure-activiteitenlogboek gebruiken om netwerkresourceconfiguraties te bewaken en wijzigingen te detecteren voor netwerkresources met betrekking tot Azure IoT Hub. Maak waarschuwingen binnen Azure Monitor die worden getriggerd wanneer er wijzigingen in kritieke netwerkbronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](https://docs.microsoft.com/azure/azure-monitor/essentials/activity-log#view-the-activity-log)
+- [Azure-activiteitenlogboekgebeurtenissen weergeven en ophalen](https://docs.microsoft.com/azure/azure-monitor/essentials/activity-log#view-the-activity-log)
 
 - [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
-*Zie [Azure Security Bench Mark: Logging and monitoring](../security/benchmarks/security-control-logging-monitoring.md)(Engelstalig) voor meer informatie.*
+*Zie de Azure [Security Benchmark: Logging and Monitoring (Azure Security Benchmark: logboekregistratie en bewaking) voor meer informatie.](../security/benchmarks/security-control-logging-monitoring.md)*
 
-### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
+### <a name="22-configure-central-security-log-management"></a>2.2: Centraal beheer van beveiligingslogboek configureren
 
-**Hulp**: opname logboeken via Azure monitor voor het verzamelen van beveiligings gegevens die zijn gegenereerd door Azure IOT hub. Gebruik in Azure Monitor Log Analytics-werk ruimten om analyses uit te voeren en te uitvoeren en gebruik opslag accounts voor lange termijn/archiverings opslag. U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een beveiligings incident en gebeurtenis beheer van derden (SIEM).
+**Richtlijnen:** Logboeken opnemen via Azure Monitor voor het samenvoegen van beveiligingsgegevens die zijn gegenereerd door Azure IoT Hub. Gebruik Azure Monitor Log Analytics-werkruimten om query's uit te voeren en analyses uit te voeren, en gebruik opslagaccounts voor langetermijn-/archiveringsopslag. U kunt ook gegevens inschakelen en inschakelen voor Azure Sentinel of een SIEM (Security Incident and Event Management) van derden.
 
 - [Azure IoT-logboeken instellen](https://docs.microsoft.com/azure/iot-hub/monitor-iot-hub-reference#resource-logs)
 
-- [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
+- [Onboarding van Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
+### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3: Auditlogregistratie voor Azure-resources inschakelen
 
-**Hulp**: Schakel de diagnostische instellingen van Azure IOT op Azure-resources in voor toegang tot de logboeken voor controle, beveiliging en bron. Activiteiten logboeken, die automatisch beschikbaar zijn, omvatten gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen.
+**Richtlijnen:** Diagnostische azure IoT-instellingen inschakelen voor Azure-resources voor toegang tot audit-, beveiligings- en resourcelogboeken. Activiteitenlogboeken, die automatisch beschikbaar zijn, bevatten gebeurtenisbron, datum, gebruiker, tijdstempel, bronadressen, doeladressen en andere nuttige elementen.
 
-- [Azure IoT Hub-logboeken instellen](https://docs.microsoft.com/azure/iot-hub/monitor-iot-hub-reference#resource-logs)
+- [Logboeken Azure IoT Hub instellen](https://docs.microsoft.com/azure/iot-hub/monitor-iot-hub-reference#resource-logs)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
+- [Platformlogboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
+- [Logboekregistratie en verschillende logboektypen in Azure begrijpen](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: de [Security Bench Mark van Azure](/home/mbaldwin/docs/asb/azure-docs-pr/articles/governance/policy/samples/azure-security-benchmark.md) is het standaard beleids initiatief voor Security Center en is de basis voor de [aanbevelingen van Security Center](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/security-center-recommendations.md). De Azure Policy definities die aan dit besturings element zijn gerelateerd, worden automatisch door Security Center ingeschakeld. Voor waarschuwingen met betrekking tot dit besturings element is mogelijk een [Azure Defender](/home/mbaldwin/docs/asb/azure-docs-pr/articles/security-center/azure-defender.md) -plan vereist voor de gerelateerde services.
+**Azure Security Center bewaking:** De [Azure Security-benchmark](/azure/governance/policy/samples/azure-security-benchmark) is het standaardbeleidsinitiatief voor Security Center en is de basis voor [Security Center aanbevelingen van Security Center.](/azure/security-center/security-center-recommendations) De Azure Policy met betrekking tot dit besturingselement worden automatisch ingeschakeld door Security Center. Waarschuwingen met betrekking tot dit besturingselement vereisen mogelijk een [Azure Defender](/azure/security-center/azure-defender) voor de gerelateerde services.
 
-**Ingebouwde definities Azure Policy-micro soft.-apparaten**:
+**Azure Policy ingebouwde definities - Microsoft.Devices:**
 
 [!INCLUDE [Resource Policy for Microsoft.Devices 2.3](../../includes/policy/standards/asb/rp-controls/microsoft.devices-2-3.md)]
 
-### <a name="24-collect-security-logs-from-operating-systems"></a>2,4: beveiligings logboeken verzamelen van besturings systemen
+### <a name="24-collect-security-logs-from-operating-systems"></a>2.4: Beveiligingslogboeken verzamelen van besturingssystemen
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
+### <a name="25-configure-security-log-storage-retention"></a>2.5: Opslagretentie van beveiligingslogboek configureren
 
-**Richt lijnen**: stel in azure monitor de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure IOT hub-instanties volgens de nalevings voorschriften van uw organisatie.
+**Richtlijnen:** stel Azure Monitor logboekretentieperiode in voor Log Analytics-werkruimten die zijn gekoppeld aan uw Azure IoT Hub-instanties overeenkomstig de nalevingsvoorschriften van uw organisatie.
 
-- [Para meters voor het bewaren van Logboeken instellen](https://docs.microsoft.com/azure/azure-monitor/logs/manage-cost-storage#change-the-data-retention-period)
+- [Retentieparameters voor logboeken instellen](https://docs.microsoft.com/azure/azure-monitor/logs/manage-cost-storage#change-the-data-retention-period)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
+### <a name="26-monitor-and-review-logs"></a>2.6: Logboeken bewaken en controleren
 
-**Hulp**: Analyseer en Controleer Logboeken op afwijkend gedrag en controleer regel matig de resultaten van uw Azure-IOT hub. Gebruik Azure Monitor en een Log Analytics werk ruimte om logboeken te controleren en query's uit te voeren op logboek gegevens.
+**Richtlijnen:** analyseer en controleer logboeken op afwijkende gedrag en controleer regelmatig de resultaten van uw Azure IoT Hub. Gebruik Azure Monitor en een Log Analytics-werkruimte om logboeken te controleren en query's uit te voeren op logboekgegevens.
 
-U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
+U kunt ook gegevens inschakelen en inschakelen voor Azure Sentinel siem van derden. 
 
-- [Azure IoT-status controleren](monitor-iot-hub.md)
+- [Azure IoT-status bewaken](monitor-iot-hub.md)
 
-- [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
+- [Onboarding van Azure Sentinel](../sentinel/quickstart-onboard.md)
   
-- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md)
+- [Aan de slag met Log Analytics-query's](../azure-monitor/logs/log-analytics-tutorial.md)
    
 - [ Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteiten
+### <a name="27-enable-alerts-for-anomalous-activities"></a>2.7: Waarschuwingen inschakelen voor afwijkende activiteiten
 
-**Hulp**: gebruik Azure Security Center voor IOT met een log Analytics-werk ruimte voor bewaking en waarschuwingen over afwijkende activiteiten die in beveiligings logboeken en gebeurtenissen zijn gevonden. U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten. U kunt ook operationele waarschuwingen definiëren met Azure Monitor die mogelijk gevolgen hebben voor de beveiliging, bijvoorbeeld wanneer het verkeer onverwacht daalt.
+**Richtlijnen:** gebruik Azure Security Center voor IoT met een Log Analytics-werkruimte voor het bewaken en waarschuwen van afwijkende activiteiten in beveiligingslogboeken en -gebeurtenissen. U kunt ook gegevens inschakelen en inschakelen om gegevens te Azure Sentinel. U kunt ook operationele waarschuwingen definiëren met Azure Monitor die mogelijk gevolgen hebben voor de beveiliging, bijvoorbeeld wanneer het verkeer onverwacht afvalt.
 
-- [Status van Azure IoT Hub controleren](monitor-iot-hub.md)
+- [Status van Azure IoT Hub bewaken](monitor-iot-hub.md)
 
-- [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
+- [Onboarding van Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 - [Azure Security Center voor IoT-waarschuwingen](/azure/asc-for-iot/concept-security-alerts)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
+- [Waarschuwingen voor logboekgegevens van Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="28-centralize-anti-malware-logging"></a>2,8: registratie van anti-malware centraliseren
+### <a name="28-centralize-anti-malware-logging"></a>2.8: Antimalwarelogregistratie centraliseren
 
-**Richt lijnen**: niet van toepassing; Azure IoT Hub verwerkt of produceert geen anti-malware-gerelateerde Logboeken.
+**Richtlijnen:** Niet van toepassing; Azure IoT Hub verwerkt of produceert geen antimalwarelogboeken.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="29-enable-dns-query-logging"></a>2,9: DNS-query logboek registratie inschakelen
+### <a name="29-enable-dns-query-logging"></a>2.9: Logboekregistratie van DNS-query's inschakelen
 
-**Richt lijnen**: niet van toepassing; Azure IoT Hub verwerkt of produceert geen aan DNS gerelateerde Logboeken.
+**Richtlijnen:** Niet van toepassing; Azure IoT Hub verwerkt of produceert geen DNS-gerelateerde logboeken.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="210-enable-command-line-audit-logging"></a>2,10: controle logboek registratie op opdracht regel inschakelen
+### <a name="210-enable-command-line-audit-logging"></a>2.10: Controlelogregistratie via opdrachtregel inschakelen
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
-*Zie [Azure Security Bench Mark: Identity and Access Control](../security/benchmarks/security-control-identity-access-control.md)voor meer informatie.*
+*Zie de Azure [Security Benchmark: Identity and Access Control (Azure Security-benchmark: identiteit en Access Control).](../security/benchmarks/security-control-identity-access-control.md)*
 
-### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3,1: een inventaris van beheerders accounts onderhouden
+### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1: Een inventaris van beheerdersaccounts onderhouden
 
-**Richt lijnen**: met Azure op rollen gebaseerd toegangs beheer (Azure RBAC) kunt u de toegang tot Azure IOT hub beheren via roltoewijzingen. U kunt deze rollen toewijzen aan gebruikers, groeperingen van service-principals en beheerde identiteiten. Er zijn vooraf gedefinieerde ingebouwde rollen voor bepaalde resources, en deze rollen kunnen worden geïnventariseerd of opgevraagd via hulpprogram ma's als Azure CLI, of Azure PowerShell, of de Azure Portal.
+**Richtlijnen:** Met op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) kunt u de toegang tot Azure IoT Hub beheren via roltoewijzingen. U kunt deze rollen toewijzen aan gebruikers, service-principals voor groepen en beheerde identiteiten. Er zijn vooraf gedefinieerde ingebouwde rollen voor bepaalde resources en deze rollen kunnen worden geïnventariseerd of opgevraagd via hulpprogramma's zoals Azure CLI of Azure PowerShell of de Azure Portal.
 
-- [Een directory-rol verkrijgen in Azure Active Directory (Azure AD) met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
+- [Een directoryrol krijgen in Azure Active Directory (Azure AD) met PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
-
-**Verantwoordelijkheid**: Klant
-
-**Azure Security Center bewaking**: geen
-
-### <a name="32-change-default-passwords-where-applicable"></a>3,2: standaard wachtwoorden wijzigen indien van toepassing
-
-**Richt lijnen**: toegangs beheer naar Azure IOT hub resources worden beheerd via Azure Active Directory (Azure AD). Azure AD heeft niet het concept van standaard wachtwoorden.
+- [Leden van een directoryrol in Azure AD krijgen met PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="33-use-dedicated-administrative-accounts"></a>3,3: speciale beheerders accounts gebruiken
+### <a name="32-change-default-passwords-where-applicable"></a>3.2: Standaardwachtwoorden wijzigen, indien van toepassing
 
-**Richt lijnen**: Maak standaard procedures voor het gebruik van specifieke beheerders accounts.
+**Richtlijnen:** Toegangsbeheer Azure IoT Hub resources wordt beheerd via Azure Active Directory (Azure AD). Azure AD heeft niet het concept van standaardwachtwoorden.
 
-U kunt ook Just-in-time-toegang tot beheerders accounts inschakelen met behulp van Azure Active Directory (Azure AD) Privileged Identity Management en Azure Resource Manager.
+**Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking:** geen
+
+### <a name="33-use-dedicated-administrative-accounts"></a>3.3: Toegewezen beheerdersaccounts gebruiken
+
+**Richtlijnen:** standaardprocedures voor het gebruik van toegewezen beheerdersaccounts maken.
+
+U kunt ook Just-In-Time-toegang tot beheerdersaccounts inschakelen met behulp van Azure Active Directory (Azure AD) Privileged Identity Management en Azure Resource Manager.
 
 - [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management/)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3,4: eenmalige aanmelding (SSO) met Azure Active Directory gebruiken
+### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4: Eenmalige aanmelding (SSO) gebruiken met Azure Active Directory
 
-**Hulp**: gebruik Azure Active Directory (Azure AD) SSO voor gebruikers die toegang hebben tot IOT hub. Gebruik Azure Security Center-aanbevelingen voor identiteit en toegang.
+**Richtlijnen:** voor gebruikers die toegang hebben IoT Hub, gebruikt Azure Active Directory (Azure AD) SSO. Gebruik Azure Security Center identiteits- en toegangsaanbevelingen.
 
-- [Informatie over eenmalige aanmelding met Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
-
-**Verantwoordelijkheid**: Klant
-
-**Azure Security Center bewaking**: geen
-
-### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
-
-**Hulp**: Schakel Azure Active Directory (Azure AD) multi-factor Authentication in voor het beveiligen van uw algehele Azure-Tenant, zodat u alle services kunt gebruiken. IoT Hub service biedt geen ondersteuning voor meervoudige verificatie.
-
-- [Multi-factor Authentication inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
-
-- [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
+- [Eenmalige aanmelding met Azure AD begrijpen](../active-directory/manage-apps/what-is-single-sign-on.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5: Meervoudige verificatie gebruiken voor alle Azure Active Directory op basis van toegang
 
-**Richt lijnen**: gebruik een beveiligd werk station met verhoogde bevoegdheden (Paw) voor beheer taken waarvoor verhoogde bevoegdheden zijn vereist.
+**Richtlijnen:** meervoudige Azure Active Directory (Azure AD) inschakelen om uw algehele Azure-tenant te beveiligen, zodat alle services profiteren. IoT Hub-service biedt geen ondersteuning voor meervoudige verificatie.
 
-- [Meer informatie over beveiligde werk stations met privileged Access](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
+- [Meervoudige verificatie inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-- [Azure Active Directory (Azure AD) multi-factor Authentication inschakelen](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Identiteit en toegang bewaken binnen Azure Security Center](../security-center/security-center-identity-access.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: Logboeken en waarschuwingen voor verdachte activiteiten van beheerders accounts
+### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6: Toegewezen machines (Privileged Access Workstations) gebruiken voor alle beheertaken
 
-**Hulp**: gebruik Azure Active Directory (Azure AD) beveiligings rapporten en-bewaking om te detecteren wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
+**Richtlijnen:** Gebruik een PAW (Secure Privileged Access Workstation) voor beheertaken waarvoor verhoogde bevoegdheden zijn vereist.
+
+- [Inzicht in beveiligde werkstations met bevoegde toegang](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
+
+- [Meervoudige verificatie Azure Active Directory (Azure AD) inschakelen](../active-directory/authentication/howto-mfa-getstarted.md)
+
+**Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking:** geen
+
+### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3.7: Logboeken en waarschuwingen voor verdachte activiteiten van beheerdersaccounts
+
+**Richtlijnen:** gebruik Azure Active Directory (Azure AD)-beveiligingsrapporten en -bewaking om te detecteren wanneer er verdachte of onveilige activiteiten plaatsvinden in de omgeving. Gebruik Azure Security Center om identiteits- en toegangsactiviteiten te bewaken.
 
 - [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)
 
@@ -359,153 +359,153 @@ U kunt ook Just-in-time-toegang tot beheerders accounts inschakelen met behulp v
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="38-manage-azure-resources-only-from-approved-locations"></a>3,8: beheer Azure-resources alleen op goedgekeurde locaties
+### <a name="38-manage-azure-resources-only-from-approved-locations"></a>3.8: Azure-resources alleen beheren vanaf goedgekeurde locaties
 
-**Hulp**: voor gebruikers die toegang hebben tot IOT hub, wordt voorwaardelijke toegang niet ondersteund. Als u dit wilt verhelpen, gebruikt u Azure Active Directory (Azure AD) met de naam locaties om alleen toegang toe te staan vanaf specifieke logische groepen met IP-adresbereiken of landen/regio's voor uw hele Azure-Tenant, profiteert alle services, waaronder IoT Hub.
+**Richtlijnen:** voor gebruikers die toegang IoT Hub, wordt voorwaardelijke toegang niet ondersteund. Als u dit wilt beperken, gebruikt u Azure Active Directory (Azure AD) benoemde locaties om alleen toegang toe te staan vanuit specifieke logische groeperingen van IP-adresbereiken of landen/regio's voor uw algehele Azure-tenant, met alle services, inclusief IoT Hub.
 
-- [De benoemde locaties van Azure AD configureren](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
+- [Benoemde locaties in Azure AD configureren](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
+### <a name="39-use-azure-active-directory"></a>3.9: Gebruik Azure Active Directory
 
-**Hulp**: gebruik Azure Active Directory (Azure AD) als centraal verificatie-en autorisatie systeem voor gebruikers toegang tot IOT hub. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
+**Richtlijnen:** Voor gebruikerstoegang tot IoT Hub gebruikt u Azure Active Directory (Azure AD) als het centrale verificatie- en autorisatiesysteem. Azure AD beschermt gegevens met behulp van sterke versleuteling voor data-at-rest en in transit. Azure AD biedt ook salts, hashes en slaat veilig gebruikersreferenties op.
 
-Voor toegang via het apparaat en de service gebruikt IoT Hub beveiligings tokens en Shared Access Signature SAS-tokens om apparaten en services te verifiëren om te voor komen dat sleutels in het netwerk worden verzonden. 
+Voor toegang tot apparaten en services gebruikt IoT Hub beveiligingstokens en SHARED ACCESS SIGNATURE-tokens (SAS) om apparaten en services te verifiëren om te voorkomen dat sleutels in het netwerk worden verzonden. 
 
 - [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
-- [IoT Hub beveiligings tokens](https://docs.microsoft.com/azure/iot-fundamentals/iot-security-deployment#iot-hub-security-tokens)
+- [IoT Hub beveiligingstokens](https://docs.microsoft.com/azure/iot-fundamentals/iot-security-deployment#iot-hub-security-tokens)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: regel matig gebruikers toegang controleren en afstemmen
+### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10: Regelmatig gebruikerstoegang controleren en afstemmen
 
-**Hulp**: Azure Active Directory (Azure AD) biedt logboeken waarmee u verlopen accounts kunt detecteren. Daarnaast kunt u Azure AD Identity and Access revisies gebruiken om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
+**Richtlijnen:** Azure Active Directory (Azure AD) biedt logboeken om verouderde accounts te helpen ontdekken. Gebruik daarnaast Azure AD-identiteits- en toegangsbeoordelingen om groepslidmaatschap, toegang tot bedrijfstoepassingen en roltoewijzingen efficiënt te beheren. Gebruikerstoegang kan regelmatig worden gecontroleerd om ervoor te zorgen dat alleen de juiste gebruikers toegang hebben.
 
-Gebruik Azure AD Privileged Identity Management (PIM) voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd.
+Gebruik Azure AD Privileged Identity Management (PIM) voor het genereren van logboeken en waarschuwingen wanneer er verdachte of onveilige activiteiten plaatsvinden in de omgeving.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Inzicht in Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
 
 - [Identiteits- en toegangsbeoordelingen van Azure AD](../active-directory/governance/access-reviews-overview.md)
 
-- [Azure AD Privileged Identity Management implementeren (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+- [Een Azure AD Privileged Identity Management (PIM) implementeren](/azure/active-directory/privileged-identity-management/pim-deployment-plan)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde referenties
+### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3.11: Pogingen tot toegang tot gedeactiveerde referenties controleren
 
-**Richt lijnen**: u hebt toegang tot Azure Active Directory (Azure AD) aanmeldings activiteiten, controle en risico logboek bronnen, waarmee u kunt integreren met elk Siem/bewakings programma.
+**Richtlijnen:** u hebt toegang tot Azure Active Directory(Azure AD)-aanmeldingsactiviteit, -controle- en risicogebeurtenislogboekbronnen, waarmee u kunt integreren met elk SIEM-/bewakingshulpprogramma.
 
-U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste waarschuwingen configureren in Log Analytics werk ruimte.
+U kunt dit proces stroomlijnen door diagnostische instellingen te maken voor Azure AD-gebruikersaccounts en de auditlogboeken en aanmeldingslogboeken te verzenden naar een Log Analytics-werkruimte. U kunt gewenste waarschuwingen configureren in de Log Analytics-werkruimte.
 
-Gebruikers Azure Monitor bron logboeken voor het bewaken van niet-geautoriseerde Verbindings pogingen in de categorie verbindingen.
+Gebruikers Azure Monitor resourcelogboeken voor het bewaken van niet-geautoriseerde verbindingspogingen in de categorie Verbindingen.
 
-- [Azure-activiteiten logboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteitenlogboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
-- [Resource logboeken configureren voor IoT hub](https://docs.microsoft.com/azure/iot-hub/monitor-iot-hub#collection-and-routing)
-
-**Verantwoordelijkheid**: Klant
-
-**Azure Security Center bewaking**: geen
-
-### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
-
-**Hulp**: gebruik Azure Active Directory-functies (Azure AD) voor identiteits beveiliging om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
-
-- [ Risk ante aanmeldingen voor Azure AD weer geven](../active-directory/identity-protection/overview-identity-protection.md)
-
-- [ Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
-
-- [ Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
+- [Resourcelogboeken configureren voor IoT Hub](https://docs.microsoft.com/azure/iot-hub/monitor-iot-hub#collection-and-routing)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: micro soft biedt toegang tot relevante klant gegevens tijdens ondersteunings scenario's
+### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12: Waarschuwing bij afwijking van aanmeldingsgedrag van account
 
-**Richt lijnen**: in ondersteunings Scenario's waarin micro soft toegang heeft tot klant gegevens, wordt deze rechtstreeks aangevraagd bij de klant.
+**Richtlijnen:** gebruik Azure Active Directory (Azure AD) Identity Protection-functies om geautomatiseerde reacties te configureren op gedetecteerde verdachte acties met betrekking tot gebruikersidentiteiten. U kunt ook gegevens opnemen in Azure Sentinel voor verder onderzoek.
+
+- [ Riskante aanmeldingen van Azure AD weergeven](../active-directory/identity-protection/overview-identity-protection.md)
+
+- [ Risicobeleid voor Identiteitsbeveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
+
+- [ Onboarding van Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
+
+### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13: Microsoft toegang geven tot relevante klantgegevens tijdens ondersteuningsscenario's
+
+**Richtlijnen:** In ondersteuningsscenario's waarin Microsoft toegang moet hebben tot klantgegevens, wordt dit rechtstreeks aangevraagd bij de klant.
+
+**Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking:** geen
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
 *Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-control-data-protection.md) voor meer informatie.*
 
-### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: een inventaris van gevoelige informatie onderhouden
+### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1: Een inventaris van gevoelige informatie onderhouden
 
-**Hulp**: Tags gebruiken om Azure-resources te helpen bij het bijhouden of verwerken van gevoelige informatie.
+**Richtlijnen:** Tags gebruiken om Azure-resources bij te houden die gevoelige informatie opslaan of verwerken.
  
 - [ Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
+### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2: Systemen isoleren die gevoelige informatie opslaan of verwerken
 
-**Richt lijnen**: isolatie implementeren met afzonderlijke abonnementen en beheer groepen voor afzonderlijke beveiligings domeinen, zoals omgevings type en gegevens gevoeligheids niveau. U kunt het toegangs niveau voor uw Azure-resources beperken die worden vereist door uw toepassingen en bedrijfs omgevingen. U kunt de toegang tot Azure-resources beheren via Azure RBAC.
+**Richtlijnen:** Isolatie implementeren met behulp van afzonderlijke abonnementen en beheergroepen voor afzonderlijke beveiligingsdomeinen, zoals omgevingstype en gevoeligheidsniveau voor gegevens. U kunt het toegangsniveau beperken tot uw Azure-resources die uw toepassingen en bedrijfsomgevingen nodig hebben. U kunt de toegang tot Azure-resources beheren via Azure RBAC.
   
-- [ Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
+- [ Extra Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [ Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
+- [ Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
 - [ Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: niet-geautoriseerde overdracht van gevoelige gegevens controleren en blok keren
+### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3: Onbevoegde overdracht van gevoelige informatie controleren en blokkeren
 
-**Richt lijnen**: gebruik een oplossing van een derde partij van Azure Marketplace in netwerk verbindingen om te controleren op niet-geautoriseerde overdracht van gevoelige informatie en om dergelijke overdrachten te blok keren terwijl u waarschuwt voor informatie beveiliging.
+**Richtlijnen:** Gebruik een oplossing van derden Azure Marketplace in netwerkperimeters om te controleren op onbevoegde overdracht van gevoelige informatie en om dergelijke overdrachten te blokkeren tijdens het waarschuwen van informatiebeveiligingsprofessionals.
 
-Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle klant inhoud als gevoelig en bescherming tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
+Voor het onderliggende platform dat wordt beheerd door Microsoft, behandelt Microsoft alle klantinhoud als gevoelig en beschermt tegen verlies en blootstelling van klantgegevens. Om ervoor te zorgen dat klantgegevens in Azure veilig blijven, heeft Microsoft een reeks krachtige besturingselementen en mogelijkheden voor gegevensbeveiliging geïmplementeerd en onderhouden.
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
+### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4: Alle gevoelige gegevens tijdens de overdracht versleutelen
 
-**Hulp**: IoT Hub gebruikt Transport Layer Security (TLS) om verbindingen van IOT-apparaten en-services te beveiligen. Er worden op dit moment drie versies van het TLS-protocol ondersteund, namelijk versie 1,0, 1,1 en 1,2. Het wordt ten zeerste aangeraden TLS 1,2 te gebruiken als de voor Keurs-TLS-versie wanneer u verbinding maakt met IoT Hub.
+**Richtlijnen:** IoT Hub gebruikt Transport Layer Security (TLS) om verbindingen van IoT-apparaten en -services te beveiligen. Er worden momenteel drie versies van het TLS-protocol ondersteund, namelijk versies 1.0, 1.1 en 1.2. Het wordt ten zeerste aangeraden TLS 1.2 als TLS-versie van de voorkeur te gebruiken wanneer u verbinding maakt met IoT Hub.
 
-Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de versleuteling in de door Voer, indien van toepassing.
+Volg Azure Security Center aanbevelingen voor versleuteling in rust en versleuteling tijdens overdracht, indien van toepassing.
 
 - [TLS-ondersteuning in IoT Hub](iot-hub-tls-support.md)
-- [Meer informatie over versleuteling in transit met Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+- [Inzicht in versleuteling tijdens overdracht met Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4,5: een actief detectie hulpprogramma gebruiken om gevoelige gegevens te identificeren
+### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: Een actief detectieprogramma gebruiken om gevoelige gegevens te identificeren
 
-**Hulp**: de functies voor gegevens identificatie, classificatie en verlies preventie zijn nog niet beschikbaar voor Azure IOT hub. Implementeer een oplossing van derden als dat nodig is voor nalevings doeleinden.
+**Richtlijnen:** functies voor gegevensidentificatie, classificatie en preventie van verlies zijn nog niet beschikbaar voor Azure IoT Hub. Implementeert indien nodig een oplossing van derden voor nalevingsdoeleinden.
 
-Voor het onderliggende Azure-platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig en gaat het om tot een uitstekende lengte van het verlies en de bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
+Voor het onderliggende Azure-platform dat wordt beheerd door Microsoft, behandelt Microsoft alle klantinhoud als gevoelig en gaat het veel te ver om bescherming te bieden tegen verlies en blootstelling van klantgegevens. Om ervoor te zorgen dat klantgegevens in Azure veilig blijven, heeft Microsoft een reeks krachtige besturingselementen en mogelijkheden voor gegevensbeveiliging geïmplementeerd en onderhouden.
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
+### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4.6: Azure RBAC gebruiken om toegang tot resources te beheren
 
-**Richt lijnen**: voor de controle van de gebruikers toegang tot IOT hub, gebruikt u Azure RBAC om de toegang te beheren. Gebruik het gedeelde toegangs beleid voor IoT Hub om toegang tot het gegevens vlak te IoT Hub.
+**Richtlijnen:** gebruik Azure RBAC om toegang te IoT Hub gebruikerstoegang tot de besturingsvlak. Gebruik voor toegang tot gegevensvlak IoT Hub beleid voor gedeelde toegang voor IoT Hub.
 
 - [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md)
 
@@ -513,99 +513,99 @@ Voor het onderliggende Azure-platform dat door micro soft wordt beheerd, behande
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
+### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9: Logboeken en waarschuwingen voor wijzigingen in kritieke Azure-resources
 
-**Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken wanneer wijzigingen worden aangebracht in productie-exemplaren van Azure IOT hub en andere essentiële of gerelateerde resources.
+**Richtlijnen:** gebruik Azure Monitor met het Azure-activiteitenlogboek om waarschuwingen te maken voor wanneer wijzigingen plaatsvinden in productie-exemplaren van Azure IoT Hub en andere kritieke of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteitenlogboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 
-*Zie voor meer informatie de [Azure Security Bench Mark: beveiligingslek beheer](../security/benchmarks/security-control-vulnerability-management.md).*
+*Zie de Azure [Security Benchmark: Vulnerability Management](../security/benchmarks/security-control-vulnerability-management.md)voor meer informatie.*
 
-### <a name="53-deploy-an-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: een geautomatiseerde oplossing voor patch beheer implementeren voor titels van software van derden
+### <a name="53-deploy-an-automated-patch-management-solution-for-third-party-software-titles"></a>5.3: Een geautomatiseerde oplossing voor patchbeheer implementeren voor softwaretitels van derden
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="54-compare-back-to-back-vulnerability-scans"></a>5,4: vergelijken van back-to-back-problemen
+### <a name="54-compare-back-to-back-vulnerability-scans"></a>5.4: Scans van back-to-back-beveiligingsprobleem vergelijken
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5,5: een risico classificatie proces gebruiken om prioriteit te geven aan het herstel van ontdekte beveiligings problemen
+### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5: Een proces voor risicoclassificatie gebruiken om prioriteit te geven aan het herstellen van gevonden beveiligingsproblemen
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
-*Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)voor meer informatie.*
+*Zie de Azure [Security Benchmark: Inventory and Asset Management (Azure Security-benchmark: inventaris en assetbeheer) voor meer informatie.](../security/benchmarks/security-control-inventory-asset-management.md)*
 
-### <a name="61-use-automated-asset-discovery-solution"></a>6,1: automatische Asset-detectie oplossing gebruiken
+### <a name="61-use-automated-asset-discovery-solution"></a>6.1: Een geautomatiseerde oplossing voor assetdetectie gebruiken
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="62-maintain-asset-metadata"></a>6,2: meta gegevens van activa onderhouden
+### <a name="62-maintain-asset-metadata"></a>6.2: Metagegevens van activa onderhouden
 
-**Richt lijnen**: Tags Toep assen op Azure-resources (niet alle resources ondersteunen Tags, maar de meeste taken) om ze logisch in een taxonomie te organiseren.
+**Richtlijnen:** Tags toepassen op Azure-resources (niet alle resources ondersteunen tags, maar de meeste wel) om ze logisch te ordenen in een taxonomie.
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="63-delete-unauthorized-azure-resources"></a>6,3: niet-geautoriseerde Azure-resources verwijderen
+### <a name="63-delete-unauthorized-azure-resources"></a>6.3: Niet-geautoriseerde Azure-resources verwijderen
 
-**Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, indien van toepassing, om assets te organiseren en bij te houden. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
+**Richtlijnen:** Gebruik waar nodig tags, beheergroepen en afzonderlijke abonnementen om assets te organiseren en bij te houden. Inventaris regelmatig afstemmen en ervoor zorgen dat niet-geautoriseerde resources tijdig uit het abonnement worden verwijderd.
   
 - [ Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6,4: een inventaris van goedgekeurde Azure-resources definiëren en onderhouden
+### <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6.4: Een inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
-**Richt lijnen**: Maak een inventaris van goedgekeurde Azure-resources en goedgekeurde software voor reken resources conform uw organisatie behoeften.
+**Richtlijnen:** Maak een inventaris van goedgekeurde Azure-resources en goedgekeurde software voor rekenbronnen op de behoeften van uw organisatie.
 
-Elk IoT Hub heeft een identiteits register dat kan worden gebruikt voor het maken van resources per apparaat in de service. Afzonderlijke of groepen apparaat-id's kunnen worden toegevoegd aan een allowlist of een blokkerings lijst, waardoor de toegang tot het apparaat volledig kan worden beheerd.
+Elke IoT Hub heeft een identiteitsregister dat kan worden gebruikt voor het maken van resources per apparaat in de service. Afzonderlijke of groepen apparaat-id's kunnen worden toegevoegd aan een allowlist of een blokkeringslijst, waardoor volledige controle over de toegang tot apparaten mogelijk is.
 
-- [IoT Hub id-REGI ster](iot-hub-devguide-identity-registry.md)
+- [IoT Hub identiteitsregister](iot-hub-devguide-identity-registry.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
+### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5: Controleren op niet-goedgekeurde Azure-resources
 
-**Hulp**: gebruik Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in uw abonnementen. 
+**Richtlijnen:** Azure Policy beperkingen in te stellen voor het type resources dat in uw abonnementen kan worden gemaakt. 
 
-Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen en te detecteren.  Zorg ervoor dat alle Azure-resources die aanwezig zijn in de omgeving, zijn goedgekeurd. 
+Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen en te detecteren.  Zorg ervoor dat alle Azure-resources in de omgeving zijn goedgekeurd. 
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md) 
 
@@ -613,358 +613,358 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: monitor voor niet-goedgekeurde software toepassingen binnen reken resources
+### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: Controleren op niet-goedgekeurde softwaretoepassingen binnen rekenbronnen
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: niet-goedgekeurde Azure-resources en software toepassingen verwijderen
+### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7: Niet-goedgekeurde Azure-resources en -softwaretoepassingen verwijderen
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="68-use-only-approved-applications"></a>6,8: alleen goedgekeurde toepassingen gebruiken
+### <a name="68-use-only-approved-applications"></a>6.8: Alleen goedgekeurde toepassingen gebruiken
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
+### <a name="69-use-only-approved-azure-services"></a>6.9: Alleen goedgekeurde Azure-services gebruiken
 
-**Hulp: gebruik** Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in klant abonnementen met behulp van de volgende ingebouwde beleids definities:
+**Richtlijnen:** gebruik Azure Policy beperkingen in te stellen voor het type resources dat kan worden gemaakt in klantabonnementen met behulp van de volgende ingebouwde beleidsdefinities:
 
 * Niet toegestane resourcetypen
 * Toegestane brontypen
 
-Daarnaast kunt u met de Azure-resource grafiek bronnen in de abonnementen opvragen/ontdekken.
+Gebruik daarnaast de Azure Resource Graph om resources in de abonnementen op te vragen/te ontdekken.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: een inventaris van goedgekeurde software titels onderhouden
+### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6.10: Een inventaris van goedgekeurde softwaretitels onderhouden
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** Niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
+### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6.11: De mogelijkheid van gebruikers om te communiceren met Azure Resource Manager
 
-**Hulp**: gebruik Azure Active Directory (Azure AD) voorwaardelijke toegang om de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager te beperken door ' toegang blok keren ' te configureren voor de App ' Microsoft Azure beheer '.
+**Richtlijnen:** gebruik Azure Active Directory (Azure AD) om de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager te beperken door Toegang blokkeren te configureren voor de app Microsoft Azure Management.
 
-- [ Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
+- [ Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="612-limit-users-ability-to-execute-scripts-in-compute-resources"></a>6,12: de mogelijkheid van gebruikers om scripts in reken bronnen uit te voeren, beperken
+### <a name="612-limit-users-ability-to-execute-scripts-in-compute-resources"></a>6.12: De mogelijkheid van gebruikers om scripts uit te voeren in rekenbronnen beperken
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze aanbeveling is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: toepassingen met een hoog risico fysiek of logisch scheiden
+### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13: Toepassingen met een hoog risico fysiek of logisch scheiden
 
-**Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of reken bronnen.
+**Richtlijnen:** Niet van toepassing; Deze aanbeveling is bedoeld voor webtoepassingen die worden uitgevoerd op Azure App Service of rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** Niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="secure-configuration"></a>Veilige configuratie
 
-*Zie [Azure Security Bench Mark: Secure Configuration](../security/benchmarks/security-control-secure-configuration.md)(Engelstalig) voor meer informatie.*
+*Zie de Azure [Security Benchmark: Secure Configuration voor meer informatie.](../security/benchmarks/security-control-secure-configuration.md)*
 
-### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: veilige configuraties instellen voor alle Azure-resources
+### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1: Veilige configuraties voor alle Azure-resources tot stand brengen
 
-**Richt lijnen**: standaard beveiligings configuraties voor uw Azure IOT hub-service definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. devices ' om aangepaste beleids regels te maken om de configuratie van uw Azure IoT Hub-services te controleren of af te dwingen.
+**Richtlijnen:** standaardbeveiligingsconfiguraties definiëren en implementeren voor uw Azure Iot Hub-service met Azure Policy. Gebruik Azure Policy aliassen in de naamruimte Microsoft.Devices om aangepaste beleidsregels te maken om de configuratie van uw Azure IoT Hub afdwingen.
 
-Azure Resource Manager kunt de sjabloon in JavaScript Object Notation (JSON) exporteren, die moet worden gecontroleerd om ervoor te zorgen dat de configuraties voldoen aan de beveiligings vereisten voor uw organisatie.
+Azure Resource Manager heeft de mogelijkheid om de sjabloon te exporteren in JavaScript Object Notation (JSON), die moet worden gecontroleerd om ervoor te zorgen dat de configuraties voldoen aan de beveiligingsvereisten voor uw organisatie.
 
-U kunt ook de aanbevelingen van Azure Security Center gebruiken als een veilige configuratie basislijn voor uw Azure-resources.
+U kunt ook de aanbevelingen van Azure Security Center als een veilige configuratiebasislijn voor uw Azure-resources.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
+- [Beschikbare aliassen Azure Policy weergeven](/powershell/module/az.resources/get-azpolicyalias)
 
 - [Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Eén en meerdere resources exporteren naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md)
+- [Exporteren van één resource en meerdere resources naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md)
 
 - [Aanbevelingen voor beveiliging: een naslaggids](../security-center/recommendations-reference.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="72-establish-secure-operating-system-configurations"></a>7,2: veilige configuraties van besturings systemen instellen
+### <a name="72-establish-secure-operating-system-configurations"></a>7.2: Veilige besturingssysteemconfiguraties maken
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: Beveilig Azure-resource configuraties onderhouden
+### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3: Veilige Azure-resourceconfiguraties onderhouden
 
-**Hulp**: gebruik Azure Policy [deny] en [implementeren indien niet aanwezig] voor het afdwingen van beveiligde instellingen voor uw Azure-resources. Daarnaast kunt u Azure Resource Manager sjablonen gebruiken om de beveiligings configuratie van uw Azure-resources te onderhouden die uw organisatie nodig heeft.  
+**Richtlijnen:** gebruik Azure Policy [deny] en [deploy if not exist] om veilige instellingen af te dwingen voor uw Azure-resources. Daarnaast kunt u de sjablonen Azure Resource Manager om de beveiligingsconfiguratie te onderhouden van uw Azure-resources die uw organisatie nodig heeft.  
  
-- [Azure Policy effecten begrijpen](../governance/policy/concepts/effects.md)
+- [Inzicht in Azure Policy effecten](../governance/policy/concepts/effects.md)
 - [Beleidsregels voor het afdwingen van naleving maken en beheren](../governance/policy/tutorials/create-and-manage.md)
-- [Overzicht van Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md)
+- [Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="74-maintain-secure-operating-system-configurations"></a>7,4: veilige configuraties van besturings systemen onderhouden
+### <a name="74-maintain-secure-operating-system-configurations"></a>7.4: Veilige besturingssysteemconfiguraties onderhouden
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
+### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5: Configuratie van Azure-resources veilig opslaan
 
-**Richt lijnen**: als u aangepaste Azure Policy definities gebruikt voor uw Azure IOT hub of gerelateerde resources, gebruikt u Azure opslag plaatsen om uw code veilig op te slaan en te beheren.
+**Richtlijnen:** als u aangepaste Azure Policy gebruikt voor uw Azure IoT Hub of gerelateerde resources, gebruikt u Azure Repos om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
+- [Code opslaan in Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos)
+- [Documentatie voor Azure-repos](/azure/devops/repos)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="76-securely-store-custom-operating-system-images"></a>7,6: aangepaste installatie kopieën van een besturings systeem veilig opslaan
+### <a name="76-securely-store-custom-operating-system-images"></a>7.6: Veilige opslag van aangepaste besturingssysteeminstallatie
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
+### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7.7: Hulpprogramma's voor configuratiebeheer implementeren voor Azure-resources
 
-**Richt lijnen**: gebruik Azure Policy aliassen in de naam ruimte ' micro soft. devices ' om aangepaste beleids regels te maken om systeem configuraties te Signa lering, te controleren en af te dwingen. Ontwikkel bovendien een proces en pijp lijn voor het beheren van beleids uitzonderingen.
+**Richtlijnen:** gebruik Azure Policy-aliassen in de naamruimte Microsoft.Devices om aangepaste beleidsregels te maken voor het waarschuwen, controleren en afdwingen van systeemconfiguraties. Daarnaast ontwikkelt u een proces en pijplijn voor het beheren van beleids uitzonderingen.
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 - [Aliassen gebruiken](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: hulpprogram ma's voor configuratie beheer voor besturings systemen implementeren
+### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7.8: Hulpprogramma's voor configuratiebeheer implementeren voor besturingssystemen
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** Niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9: geautomatiseerde configuratie bewaking voor Azure-resources implementeren
+### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7.9: Geautomatiseerde configuratiebewaking implementeren voor Azure-resources
 
-**Hulp**: gebruik Azure Security Center om basislijn scans voor uw Azure-resources uit te voeren. Gebruik Azure Policy bovendien om een waarschuwing te krijgen en Azure-resource configuraties te controleren. 
+**Richtlijnen:** gebruik Azure Security Center om basislijnscans uit te voeren voor uw Azure-resources. Gebruik daarnaast Azure Policy om Azure-resourceconfiguraties te waarschuwen en te controleren. 
  
 - [ Aanbevelingen herstellen in Azure Security Center](../security-center/security-center-remediate-recommendations.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7,10: geautomatiseerde configuratie bewaking voor besturings systemen implementeren
+### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10: Geautomatiseerde configuratiebewaking implementeren voor besturingssystemen
 
-**Richt lijnen**: niet van toepassing; deze richt lijn is bedoeld voor reken resources.
+**Richtlijnen:** Niet van toepassing; deze richtlijn is bedoeld voor rekenbronnen.
 
-**Verantwoordelijkheid**: niet van toepassing
+**Verantwoordelijkheid:** niet van toepassing
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="711-manage-azure-secrets-securely"></a>7,11: Azure-geheimen veilig beheren
+### <a name="711-manage-azure-secrets-securely"></a>7.11: Azure-geheimen veilig beheren
 
-**Hulp**: IOT hub gebruikt beveiligings tokens en Shared Access Signature SAS-tokens om apparaten en services te verifiëren om te voor komen dat sleutels in het netwerk worden verzonden. 
+**Richtlijnen:** IoT Hub beveiligingstokens en sas Shared Access Signature tokens (SAS) gebruiken om apparaten en services te verifiëren om te voorkomen dat sleutels in het netwerk worden verzonden. 
 
-Gebruik beheerde identiteiten in combi natie met Azure Key Vault om het geheime beheer van uw Cloud toepassingen te vereenvoudigen.
+Gebruik beheerde identiteiten in combinatie met Azure Key Vault om het beheer van geheimen voor uw cloudtoepassingen te vereenvoudigen.
 
-- [IoT Hub beveiligings tokens](https://docs.microsoft.com/azure/iot-fundamentals/iot-security-deployment#iot-hub-security-tokens)
+- [IoT Hub beveiligingstokens](https://docs.microsoft.com/azure/iot-fundamentals/iot-security-deployment#iot-hub-security-tokens)
 
-- [Beheerde identiteiten voor IoT Hub gebruiken](https://docs.microsoft.com/azure/iot-hub/virtual-network-support#turn-on-managed-identity-for-iot-hub)
+- [Beheerde identiteiten gebruiken voor IoT Hub](https://docs.microsoft.com/azure/iot-hub/virtual-network-support#turn-on-managed-identity-for-iot-hub)
 
-- [Een sleutel kluis maken](../key-vault/general/quick-create-portal.md)
+- [Een sleutelkluis maken](../key-vault/general/quick-create-portal.md)
 
-- [Key Vault verificatie bieden met een beheerde identiteit](../key-vault/general/assign-access-policy-portal.md)
-
-**Verantwoordelijkheid**: Klant
-
-**Azure Security Center bewaking**: geen
-
-### <a name="712-manage-identities-securely-and-automatically"></a>7,12: identiteiten veilig en automatisch beheren
-
-**Hulp**: IOT hub gebruikt beveiligings tokens en Shared Access Signature SAS-tokens om apparaten en services te verifiëren om te voor komen dat sleutels in het netwerk worden verzonden.
-
-Gebruik beheerde identiteiten om Azure-Services te voorzien van een automatisch beheerde identiteit in Azure Active Directory (Azure AD). Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Key Vault, zonder dat u referenties in uw code hoeft op te geven.
-
-- [IoT Hub beveiligings tokens](https://docs.microsoft.com/azure/iot-fundamentals/iot-security-deployment#iot-hub-security-tokens)
-
-- [Beheerde identiteiten voor IoT Hub configureren](https://docs.microsoft.com/azure/iot-hub/virtual-network-support#turn-on-managed-identity-for-iot-hub)
+- [Verificatie met Key Vault met een beheerde identiteit](../key-vault/general/assign-access-policy-portal.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
+### <a name="712-manage-identities-securely-and-automatically"></a>7.12: Identiteiten veilig en automatisch beheren
 
-**Richt lijnen**: referentie scanner implementeren om referenties in code te identificeren. Door het gebruik van Credential Scanner worden gebruikers ook aangemoedigd om gedetecteerde referenties naar veiligere locaties, zoals Azure Key Vault, te verplaatsen. 
+**Richtlijnen:** IoT Hub beveiligingstokens en sas Shared Access Signature tokens gebruiken om apparaten en services te verifiëren om te voorkomen dat sleutels in het netwerk worden verzonden.
+
+Gebruik beheerde identiteiten om Azure-services te voorzien van een automatisch beheerde identiteit in Azure Active Directory (Azure AD). Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, Key Vault, zonder referenties in uw code.
+
+- [IoT Hub beveiligingstokens](https://docs.microsoft.com/azure/iot-fundamentals/iot-security-deployment#iot-hub-security-tokens)
+
+- [Beheerde identiteiten configureren voor IoT Hub](https://docs.microsoft.com/azure/iot-hub/virtual-network-support#turn-on-managed-identity-for-iot-hub)
+
+**Verantwoordelijkheid**: Klant
+
+**Azure Security Center bewaking:** geen
+
+### <a name="713-eliminate-unintended-credential-exposure"></a>7.13: Onbedoelde referentieblootstelling voorkomen
+
+**Richtlijnen:** Referentiescanner implementeren om referenties in code te identificeren. Door het gebruik van Credential Scanner worden gebruikers ook aangemoedigd om gedetecteerde referenties naar veiligere locaties, zoals Azure Key Vault, te verplaatsen. 
  
-- [  Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
+- [  Referentiescanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="malware-defense"></a>Beveiliging tegen malware
 
-*Zie voor meer informatie de [Azure Security Bench Mark: beveiliging tegen schadelijke software](../security/benchmarks/security-control-malware-defense.md).*
+*Zie de Azure [Security Benchmark: Malware Defense voor meer informatie.](../security/benchmarks/security-control-malware-defense.md)*
 
-### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8,2: scan bestanden die moeten worden geüpload naar niet-reken resources van Azure
+### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8.2: Bestanden vooraf scannen die moeten worden geüpload naar niet-compute-Azure-resources
 
-**Hulp**: micro soft anti-malware is ingeschakeld op de onderliggende host die ondersteuning biedt voor Azure-Services (bijvoorbeeld Azure IOT hub), maar wordt niet uitgevoerd op de inhoud van de klant.
+**Richtlijnen:** Microsoft Anti-malware is ingeschakeld op de onderliggende host die Ondersteuning biedt voor Azure-services (bijvoorbeeld Azure IoT Hub), maar wordt niet uitgevoerd op klantinhoud.
 
-Het is uw verantwoordelijkheid om vooraf te scannen op inhoud die wordt geüpload naar niet-reken resources van Azure. Micro soft heeft geen toegang tot klant gegevens en kan daarom geen anti-malware scans uitvoeren van klant inhoud namens u.
+Het is uw verantwoordelijkheid om alle inhoud die wordt geüpload naar niet-compute Azure-resources vooraf te scannen. Microsoft heeft geen toegang tot klantgegevens en kan daarom namens u geen antimalwarescans van klantinhoud uitvoeren.
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="data-recovery"></a>Gegevensherstel
 
-*Zie [Azure Security Bench Mark: Data Recovery](../security/benchmarks/security-control-data-recovery.md)(Engelstalig) voor meer informatie.*
+*Zie de Azure [Security Benchmark: Data Recovery voor meer informatie.](../security/benchmarks/security-control-data-recovery.md)*
 
-### <a name="91-ensure-regular-automated-back-ups"></a>9,1: controleren op regel matige automatische back-ups
+### <a name="91-ensure-regular-automated-back-ups"></a>9.1: Regelmatige automatische back-ups garanderen
 
-**Hulp**: Azure IOT hub service biedt methoden en Framework om uw IOT hub-Services Maxi maal beschikbaar te maken en te herstellen op basis van nood gevallen, gebaseerd op specifieke zakelijke doel stellingen. 
+**Richtlijnen:** Azure IoT Hub-service biedt methoden en frameworks om uw IoT Hub-services zeer beschikbaar en herstelbaar te maken na noodscenario's op basis van specifieke bedrijfsdoelstellingen. 
 
 - [Hoge beschikbaarheid en herstel na noodgevallen van IoT Hub](iot-hub-ha-dr.md)
 
-- [IoT Hub klonen](iot-hub-how-to-clone.md)
+- [Een kloon van IoT Hub](iot-hub-how-to-clone.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
+### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2: Volledige systeemback-ups uitvoeren en back-ups maken van door de klant beheerde sleutels
 
-**Hulp**: Azure IOT hub raadt aan dat de secundaire IOT-hub alle apparaat-id's moet bevatten die verbinding kunnen maken met de oplossing. In de oplossing moeten geo-gerepliceerde back-ups van apparaat-id's worden bewaard en geüpload naar de secundaire IoT-hub voordat het actieve eind punt voor de apparaten wordt overgeschakeld. De functie voor het exporteren van de apparaat-id van IoT Hub is nuttig in deze context.
+**Richtlijnen:** Azure IoT Hub dat de secundaire IoT-hub alle apparaat-id's moet bevatten die verbinding kunnen maken met de oplossing. De oplossing moet geo-gerepliceerde back-ups van apparaat-id's behouden en deze uploaden naar de secundaire IoT-hub voordat u het actieve eindpunt voor de apparaten overschakelt. De exportfunctionaliteit voor apparaat-IoT Hub is nuttig in deze context.
 
 - [Hoge beschikbaarheid en herstel na noodgevallen van IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-ha-dr#achieve-cross-region-ha)
 
-- [Exporteren van IoT Hub apparaat-id](iot-hub-bulk-identity-mgmt.md)
+- [IoT Hub apparaat-id exporteren](iot-hub-bulk-identity-mgmt.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: alle back-ups valideren, inclusief door de klant beheerde sleutels
+### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3: Alle back-ups valideren, inclusief door de klant beheerde sleutels
 
-**Hulp**: Azure IOT hub raadt aan dat de secundaire IOT-hub alle apparaat-id's moet bevatten die verbinding kunnen maken met de oplossing. In de oplossing moeten geo-gerepliceerde back-ups van apparaat-id's worden bewaard en geüpload naar de secundaire IoT-hub voordat het actieve eind punt voor de apparaten wordt overgeschakeld. De functie voor het exporteren van de apparaat-id van IoT Hub is nuttig in deze context.
+**Richtlijnen:** Azure IoT Hub dat de secundaire IoT-hub alle apparaat-id's moet bevatten die verbinding kunnen maken met de oplossing. De oplossing moet geo-gerepliceerde back-ups van apparaat-id's behouden en deze uploaden naar de secundaire IoT-hub voordat u het actieve eindpunt voor de apparaten overschakelt. De exportfunctionaliteit voor apparaat-IoT Hub is nuttig in deze context.
 
-Periodiek gegevens herstel van inhoud in back-up uitvoeren. Zorg ervoor dat u een back-up van door de klant beheerde sleutels kunt herstellen.
+Periodiek gegevensherstel van inhoud in back-up uitvoeren. Zorg ervoor dat u back-up van door de klant beheerde sleutels kunt herstellen.
 
 - [Hoge beschikbaarheid en herstel na noodgevallen van IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-ha-dr#achieve-cross-region-ha)
 
-- [Exporteren van IoT Hub apparaat-id](iot-hub-bulk-identity-mgmt.md)
+- [IoT Hub apparaat-id exporteren](iot-hub-bulk-identity-mgmt.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: zorg voor de bescherming van back-ups en door de klant beheerde sleutels
+### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4: Beveiliging van back-ups en door de klant beheerde sleutels garanderen
 
-**Hulp**: Schakel de beveiliging van zacht verwijderen en leegmaken in Key Vault in om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering. Als Azure Storage wordt gebruikt voor het opslaan van back-ups, schakelt u de optie voor het tijdelijk verwijderen in om uw gegevens op te slaan en te herstellen wanneer blobs of BLOB-moment opnamen worden verwijderd.
+**Richtlijnen:** Schakel de beveiliging voor het verwijderen van gegevens in Key Vault om sleutels te beveiligen tegen onbedoelde of kwaadwillende verwijdering. Als Azure Storage wordt gebruikt voor het opslaan van back-ups, kunt u de functie voor het opslaan en herstellen van uw gegevens inschakelen wanneer blobs of blob-momentopnamen worden verwijderd.
 
  
-- [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
+- [Inzicht in Azure RBAC](../role-based-access-control/overview.md)
 
 - [Zacht verwijderen voor Azure Blob Storage](../storage/blobs/soft-delete-blob-overview.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="incident-response"></a>Reageren op incidenten
 
 *Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-control-incident-response.md) voor meer informatie.*
 
-### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
+### <a name="101-create-an-incident-response-guide"></a>10.1: Een handleiding voor het reageren op incidenten maken
 
-**Hulp**: een antwoord gids voor incidenten ontwikkelen voor uw organisatie. Zorg ervoor dat er schriftelijke incidenten abonnementen zijn die alle personeels rollen definiëren, evenals de fasen van het verwerken van incidenten en het beheer van de detectie tot een beoordeling van het incident. 
+**Richtlijnen:** Ontwikkel een handleiding voor het reageren op incidenten voor uw organisatie. Zorg ervoor dat er plannen voor het reageren op incidenten zijn die alle rollen van personeel definiëren, evenals de fasen van incidentafhandeling en -beheer, van detectie tot incidentbeoordeling. 
   
-- [ Richt lijnen voor het bouwen van uw eigen beveiligings incident antwoord proces](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
+- [ Richtlijnen voor het bouwen van uw eigen reactieproces voor beveiligingsincident](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
   
-- [ Micro soft Security Response Center anatomie van een incident](https://msrc-blog.microsoft.com/2019/06/27/inside-the-msrc-anatomy-of-a-ssirp-incident/)
+- [ Microsoft Security Response Center van een incident](https://msrc-blog.microsoft.com/2019/06/27/inside-the-msrc-anatomy-of-a-ssirp-incident/)
  
-- [  De verwerkings gids voor het computer beveiligings incident van het NIST gebruiken om u te helpen bij het maken van uw eigen reactie plan voor incidenten](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
+- [  Gebruik de computerbeveiligingsincidentafhandelingshandleiding van NIST om u te helpen bij het maken van uw eigen plan voor het reageren op incidenten](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
+### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2: Een procedure voor het scoren en prioriteren van incidenten maken
 
-**Hulp**: Azure Security Center wijst aan elke waarschuwing een Ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center zich in de zoek actie bevindt of de analyse die wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau dat er schadelijke intentie is achter de activiteit die tot de waarschuwing heeft geleid.
+**Richtlijnen:** Azure Security Center aan elke waarschuwing een ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op hoe zeker Security Center is bij het zoeken of de analytische gegevens die worden gebruikt om de waarschuwing uit te geven, evenals het betrouwbaarheidsniveau dat er een schadelijke intentie achter de activiteit zit die tot de waarschuwing heeft geleid.
 
   
- Markeer bovendien abonnementen met tags en maak een naamgevings systeem voor het identificeren en categoriseren van Azure-resources, met name voor de verwerking van gevoelige gegevens. Het is uw verantwoordelijkheid om prioriteit te geven aan het herstel van waarschuwingen op basis van de ernst van de Azure-resources en-omgeving waar het incident heeft plaatsgevonden.
+ Daarnaast kunt u abonnementen markeren met behulp van tags en een naamgevingssysteem maken om Azure-resources te identificeren en categoriseren, met name de resources die gevoelige gegevens verwerken. Het is uw verantwoordelijkheid om prioriteit te geven aan het herstel van waarschuwingen op basis van de kritiekheid van de Azure-resources en -omgeving waar het incident zich heeft voorgedaan.
   
-- [ Beveiligings waarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
+- [ Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
   
 - [ Tags gebruiken om uw Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
+### <a name="103-test-security-response-procedures"></a>10.3: Procedures voor het testen van beveiligingsreacties
 
-**Richt lijnen**: oefent oefeningen uit om de respons mogelijkheden van uw systeem te testen op een reguliere uitgebracht om uw Azure-resources te beschermen. Identificeer zwakke punten en tussen ruimten en wijzig vervolgens uw reactie schema naar wens.
+**Richtlijnen:** oefeningen uitvoeren om de mogelijkheden voor het reageren op incidenten van uw systemen regelmatig te testen om uw Azure-resources te beschermen. Identificeer zwakke punten en hiaten en pas vervolgens uw reactieplan naar behoefte aan.
   
-- [ Publicatie van het NIST-hand leiding voor het testen, trainen en uitoefenen van Program Ma's voor IT-plannen en-mogelijkheden](https://csrc.nist.gov/publications/detail/sp/800-84/final)
+- [ Publicatie van NIST- Handleiding voor test-, trainings- en oefeningsprogramma's voor IT-plannen en -mogelijkheden](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: contact gegevens van het beveiligings incident opgeven en waarschuwings meldingen configureren voor beveiligings incidenten
+### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4: Contactgegevens voor beveiligingsincidenten verstrekken en waarschuwingsmeldingen voor beveiligingsincidenten configureren
 
-**Hulp**: contact gegevens van beveiligings incidenten worden door micro soft gebruikt om contact met u op te nemen als het micro soft Security Response Center (MSRC) detecteert dat uw gegevens zijn geopend door een onrecht matige of niet-gemachtigde partij. Bekijk incidenten na het feit om te controleren of de problemen zijn opgelost.
+**Richtlijnen:** Contactgegevens voor beveiligingsincidenten worden door Microsoft gebruikt om contact met u op te nemen als de Microsoft Security Response Center (MSRC) detecteert dat uw gegevens zijn gebruikt door een onrechtmatige of niet-geautoriseerde partij. Bekijk incidenten na het feit om ervoor te zorgen dat problemen worden opgelost.
   
-- [ De Azure Security Center Security-contact persoon instellen](../security-center/security-center-provide-security-contact-details.md)
+- [ De beveiligingscontactcontacte Azure Security Center instellen](../security-center/security-center-provide-security-contact-details.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
+### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5: Beveiligingswaarschuwingen opnemen in uw systeem voor het reageren op incidenten
 
-**Hulp**: exporteer uw Azure Security Center waarschuwingen en aanbevelingen met behulp van de functie continue export om Risico's voor Azure-resources te identificeren. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. U kunt de Azure Security Center Data Connector gebruiken om de waarschuwingen naar Azure Sentinel te streamen.
+**Richtlijnen:** exporteert uw Azure Security Center en aanbevelingen met behulp van de functie voor continue export om risico's voor Azure-resources te identificeren. Met continue export kunt u waarschuwingen en aanbevelingen handmatig of doorlopend exporteren. U kunt de connector Azure Security Center gebruiken om de waarschuwingen te streamen naar Azure Sentinel.
   
 - [ Continue export configureren](../security-center/continuous-export.md)
  
@@ -972,25 +972,25 @@ Periodiek gegevens herstel van inhoud in back-up uitvoeren. Zorg ervoor dat u ee
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
-### <a name="106-automate-the-response-to-security-alerts"></a>10,6: de reactie op beveiligings waarschuwingen automatiseren
+### <a name="106-automate-the-response-to-security-alerts"></a>10.6: De reactie op beveiligingswaarschuwingen automatiseren
 
-**Hulp**: werk stroom automatisering gebruiken Azure Security Center om automatisch reacties te activeren op beveiligings waarschuwingen en aanbevelingen voor het beveiligen van uw Azure-resources.
+**Richtlijnen:** Gebruik de functie voor Azure Security Center automatisch reacties op beveiligingswaarschuwingen en aanbevelingen te activeren om uw Azure-resources te beveiligen.
   
-- [ Werk stroom automatisering configureren in Security Center](../security-center/workflow-automation.md)
+- [ Werkstroomautomatisering configureren in Security Center](../security-center/workflow-automation.md)
 
 **Verantwoordelijkheid**: Klant
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Penetratietests en Red Team-oefeningen
 
-*Zie [Azure Security Bench Mark: Indringings tests en rode team oefeningen](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md)voor meer informatie.*
+*Zie de Azure [Security Benchmark: Penetration Tests en Red Team Exercises (Penetratietests en Red Team-oefeningen) voor meer informatie.](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md)*
 
-### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1: voert regel matig indringings tests van uw Azure-resources uit en zorgt voor herbemiddeling van alle essentiële beveiligings resultaten
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11.1: Regelmatige penetratietests uitvoeren van uw Azure-resources en zorgen voor herstel van alle kritieke beveiligings bevindingen
 
-**Richt lijnen**: Volg de stappen voor het testen van de Microsoft Cloud indringings regels om ervoor te zorgen dat uw indringings tests niet worden geschonden door het micro soft-beleid. Gebruik de strategie van Microsoft en de uitvoering van Red Teaming-activiteiten, en voer een penetratietest van de live site uit op basis van een infrastructuur, services en toepassingen die door Microsoft worden beheerd.
+**Richtlijnen:** volg de Microsoft Cloud Penetration Testing Rules of Engagement om ervoor te zorgen dat uw penetratietests niet in strijd zijn met het Microsoft-beleid. Gebruik de strategie van Microsoft en de uitvoering van Red Teaming-activiteiten, en voer een penetratietest van de live site uit op basis van een infrastructuur, services en toepassingen die door Microsoft worden beheerd.
 
 - [Regels voor het inzetten van penetratietests](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
@@ -998,7 +998,7 @@ Periodiek gegevens herstel van inhoud in back-up uitvoeren. Zorg ervoor dat u ee
 
 **Verantwoordelijkheid**: Gedeeld
 
-**Azure Security Center bewaking**: geen
+**Azure Security Center bewaking:** geen
 
 ## <a name="next-steps"></a>Volgende stappen
 

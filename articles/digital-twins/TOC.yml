@@ -8,14 +8,14 @@
   expanded: true
   items:
     - name: Een voorbeeldscenario verkennen
-      href: quickstart-adt-explorer.md
+      href: quickstart-azure-digital-twins-explorer.md
 - name: Zelfstudies
   items:
     - name: Een client-app coderen
       href: tutorial-code.md
     - name: Graaf maken
       items:
-        - name: Een voor beeld-client-app gebruiken
+        - name: Een voorbeeldclient-app gebruiken
           href: tutorial-command-line-app.md
         - name: De Azure CLI-opdrachten gebruiken
           href: tutorial-command-line-cli.md
@@ -23,17 +23,17 @@
       href: tutorial-end-to-end.md
 - name: Concepten
   items:
-    - name: DTDL modellen
+    - name: DTDL-modellen
       href: concepts-models.md
     - name: Ontologies
       items:
-        - name: Wat is een Ontology?
+        - name: Wat is een ontologie?
           href: concepts-ontologies.md
-        - name: Ontologies voor de industrie standaard vaststellen
+        - name: Industriestandaard-ontologieën gebruiken
           href: concepts-ontologies-adopt.md
-        - name: Ontologies converteren
+        - name: Ontologieën converteren
           href: concepts-ontologies-convert.md
-        - name: Ontologies uitbreiden
+        - name: Uitbreiding van ontologieën
           href: concepts-ontologies-extend.md
     - name: Digital twins en het tweelinggrafiek
       href: concepts-twins-graph.md
@@ -101,7 +101,7 @@
       items:
         - name: De API's en SDK's gebruiken
           href: how-to-use-apis-sdks.md
-        - name: Maak Sdk's met aangepaste taal met auto rest
+        - name: Aangepaste SDK's maken met AutoRest
           href: how-to-create-custom-sdks.md
         - name: Verzoeken indienen met Postman
           href: how-to-use-postman.md
@@ -123,7 +123,7 @@
               href: how-to-manage-routes-portal.md
             - name: API- en CLI-versie
               href: how-to-manage-routes-apis-cli.md
-        - name: Een beheerde identiteit voor routerings gebeurtenissen inschakelen
+        - name: Een beheerde identiteit inschakelen voor routeringsgebeurtenissen
           items:
             - name: Portalversie
               href: how-to-enable-managed-identities-portal.md
@@ -149,6 +149,10 @@
           items:
             - name: 403 (verboden)
               href: troubleshoot-error-403.md
+            - name: 404 Sub-Domain niet gevonden
+              href: troubleshoot-error-404.md
+            - name: Azure Digital Twins Explorer verificatie
+              href: troubleshoot-error-azure-digital-twins-explorer-authentication.md
 - name: Naslaginformatie
   items:
     - name: Naslaginformatie over REST-API
@@ -189,7 +193,7 @@
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
     - name: Aanvragen van klantgegevens
       href: resources-customer-data-requests.md
-    - name: Verschillen van de oorspronkelijke release
+    - name: Verschillen met de oorspronkelijke release
       href: resources-compare-original-release.md
     - name: API's en SDK's
       items:
@@ -255,19 +259,19 @@
           href: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_endpoint_servicebus'
     - name: Hulpprogramma's en voorbeeldprojecten
       items:
-        - name: Azure Digital Apparaatdubbels postman-verzameling
+        - name: Azure Digital Twins Postman Collection
           href: 'https://github.com/microsoft/azure-digital-twins-postman-samples'
         - name: End-to-end-voorbeelden voor Azure Digital Twins
           href: /samples/azure-samples/digital-twins-samples/digital-twins-samples/
         - name: Azure Digital Twins-verkenner (voorbeeld)
           href: /samples/azure-samples/digital-twins-explorer/digital-twins-explorer/
-        - name: Validatie van DTDL (voor beeld)
+        - name: DTDL Validator (voorbeeld)
           href: /samples/azure-samples/dtdl-validator/dtdl-validator/
-        - name: Model Uploader (voor beeld)
+        - name: Modeluploader (voorbeeld)
           href: 'https://github.com/Azure/opendigitaltwins-building-tools/tree/master/ModelUploader'
-        - name: Model Visualer (voor beeld)
+        - name: Model Visualizer (voorbeeld)
           href: 'https://github.com/Azure/opendigitaltwins-building-tools/tree/master/AdtModelVisualizer'
-        - name: OWL2DTDL-conversie programma
+        - name: 2DTDL Converter
           href: 'https://github.com/Azure/opendigitaltwins-building-tools/tree/master/OWL2DTDL'
         - name: Voorbeeld van DPS en IoT Hub-integratie
           href: /samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/
@@ -287,7 +291,7 @@
           href: /samples/azure-samples/dtdl-validator/dtdl-validator/
         - name: DTMI-specificaties
           href: 'https://github.com/Azure/digital-twin-model-identifier'
-    - name: 'Meer informatie: Ontwikkelen met Azure Digital Apparaatdubbels'
+    - name: 'Learn: Ontwikkelen met Azure Digital Twins'
       href: /learn/paths/develop-azure-digital-twins/
     - name: Channel 9-video's
       href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
@@ -303,5 +307,5 @@
           href: 'https://portal.azure.com'
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/digital-twins/toc.json&bc=/azure/digital-twins/breadcrumb/toc.json
-    - name: IoT-woorden lijst
+    - name: Woordenlijst voor IoT
       href: ../iot-fundamentals/iot-glossary.md?toc=/azure/digital-twins/toc.json&bc=/azure/digital-twins/breadcrumb/toc.json

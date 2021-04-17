@@ -10,12 +10,12 @@ metadata:
   author: Ajayan1008
   ms.author: v-hborys
   ms.date: 04/14/2021
-  ms.openlocfilehash: 52e70d842f8e8237f1eee3446a8b70f867224be1
-  ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+  ms.openlocfilehash: b54050ed75e16ff68594b3fe14b5ac2e52172d24
+  ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 04/16/2021
-  ms.locfileid: "107536837"
+  ms.lasthandoff: 04/17/2021
+  ms.locfileid: "107587728"
 landingContent:
 - title: Over BareMetal Infrastructure
   linkLists:
@@ -31,7 +31,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Wat is BareMetal-infrastructuur voor Oracle?
+    - text: Wat is BareMetal Infrastructure for Oracle?
       url: workloads/oracle/oracle-baremetal-overview.md
     - text: BareMetal-SKU's voor Oracle-workloads
       url: workloads/oracle/oracle-baremetal-skus.md
@@ -45,6 +45,16 @@ landingContent:
       url: workloads/oracle/oracle-baremetal-architecture.md
     - text: BareMetal inrichten voor Oracle
       url: workloads/oracle/oracle-baremetal-provision.md
+  - linkListType: reference
+    links:
+    - text: Hoge beschikbaarheid en herstel na noodgevallen
+      url: workloads/oracle/concepts-oracle-high-availability.md
+    - text: Functies voor hoge beschikbaarheid
+      url: workloads/oracle/high-availability-features.md
+    - text: Opties en overwegingen
+      url: workloads/oracle/options-considerations-high-availability.md
+    - text: Kiezen hoe u wilt herstellen
+      url: workloads/oracle/oracle-high-availability-recovery.md
 - title: SAP HANA op Azure (grote exemplaren)
   linkLists:
   - linkListType: overview

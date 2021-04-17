@@ -1,29 +1,29 @@
 ---
 title: BareMetal-SKU's voor Oracle-workloads
-description: Meer informatie over de SKU's voor de workloads van de Oracle BareMetal-infrastructuur.
+description: Meer informatie over de SKU's voor de Oracle BareMetal Infrastructure-workloads.
 ms.topic: reference
 ms.subservice: workloads
-ms.date: 04/14/2021
-ms.openlocfilehash: 2482f8ed682a982ee3c8c4907e21b4e6c6ebbb4f
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.date: 04/15/2021
+ms.openlocfilehash: 42ff26b9ea9bcc022f1ddbf3dddcb041b2cea3a2
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107559015"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588850"
 ---
 # <a name="baremetal-skus-for-oracle-workloads"></a>BareMetal-SKU's voor Oracle-workloads
 
-In dit artikel bekijken we gespecialiseerde BareMetal Infrastructure-SKU's voor Oracle-workloads.
+In dit artikel bekijken we gespecialiseerde SKU's voor BareMetal-infrastructuur voor Oracle-workloads.
 
 BareMetal-infrastructuur voor Oracle-SKU's variëren van twee sockets tot maximaal vier sockets. U kunt ook kiezen uit verschillende CPU-kernen en geheugengrootten om te voldoen aan de vereisten van uw workload. Hier is een tabel met een overzicht van de functies van beschikbare SKU's.
  
-| **Oracle**  **Certified-hardware** | **Model** | **Totaal geheugen** | **Storage** | **Beschikbaarheid** |
+| **Door Oracle gecertificeerde**  **hardware** | **Model** | **Totaal geheugen** | **Storage** | **Beschikbaarheid** |
 | --- | --- | --- | --- | --- |
-| JA | SAP HANA op Azure S32m- 2 x Intel® Xeon® Processor I623416 CPU-kernen en 32 CPU-threads | 1,5 TB | --- | Beschikbaar |
-| JA | SAP HANA op Azure S64m- 4 x Intel® Xeon® Processor I623432 CPU-kernen en 64 CPU-threads | 3,0 TB | --- | Beschikbaar |
-| JA | SAP HANA op Azure S96: 2 x Intel® Xeon® Processor E7-8890 v448 CPU-kernen en 96 CPU-threads | 768 GB | 3,0 TB | Beschikbaar |
-| JA | SAP HANA op Azure S224 – 4 x Intel® Xeon® De 8276-processor 112 CPU-kernen en 224 CPU-threads | 3,0 TB | 6,3 TB | Beschikbaar |
-| JA | SAP HANA op Azure S224m– 4 x Intel® Xeon® De 8276 processor 112 CPU-kernen en 224 CPU-threads | 6,0 TB | 10,5 TB | Beschikbaar |
+| JA | SAP HANA op Azure S32m- 2 x Intel® Xeon® I6234 Processor 16 CPU-kernen en 32 CPU-threads | 1,5 TB | --- | Beschikbaar |
+| JA | SAP HANA op Azure S64m- 4 x Intel® Xeon® I6234 Processor 32 CPU-kernen en 64 CPU-threads | 3,0 TB | --- | Beschikbaar |
+| JA | SAP HANA Azure S96: 2 x Intel® Xeon® E7-8890 v4 Processor 48 CPU-kernen en 96 CPU-threads | 768 GB | 3,0 TB | Beschikbaar |
+| JA | SAP HANA Azure S224 – 4 x Intel® Xeon® De 8276-processor 112 CPU-kernen en 224 CPU-threads | 3,0 TB | 6,3 TB | Beschikbaar |
+| JA | SAP HANA azure S224m: 4 x Intel® Xeon® Processor 8276 processor 112 CPU-kernen en 224 CPU-threads | 6,0 TB | 10,5 TB | Beschikbaar |
 
 - CPU-kernen = som van niet-hyperthreaded CPU-kernen (het totale aantal fysieke processors) van de servereenheid. 
 - CPU-threads = som van rekenthreads geleverd door hyperthreaded CPU-kernen (het totale aantal logische processors) van de servereenheid. De meeste eenheden zijn standaard geconfigureerd voor het gebruik van Hyper-Threading Technologie.

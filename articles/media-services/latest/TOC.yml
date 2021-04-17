@@ -14,7 +14,7 @@
   items:
     - name: Uw omgeving instellen
       items:
-        - name: Uw Tenant-ID zoeken
+        - name: Uw tenant-id zoeken
           href: setup-azure-tenant-how-to.md
         - name: Uw Azure-abonnement vinden
           href: setup-azure-subscription-how-to.md
@@ -26,7 +26,7 @@
           href: ../../cloud-shell/overview.md
         - name: Verbinding met Media Services maken
           items:
-            - name: Verbinding maken met REST en postman
+            - name: Verbinding maken met REST en Postman
               href: setup-postman-rest-how-to.md
             - name: Verbinding maken met Java
               href: configure-connect-java-howto.md
@@ -147,12 +147,12 @@
           href: encode-content-aware-concept.md
         - name: Door media gereserveerde eenheden
           href: concept-media-reserved-units.md
-    - name: Analyseren en redactie
+    - name: Analyseren en redaction
       items:
         - name: Overzicht
           href: analyze-video-audio-files-concept.md
           displayName: 'analyze, analyzing, presets, jobs'
-        - name: Gezichten detecteren en redigeren (vervagen)
+        - name: Gezichten detecteren en redacteren (wazig maken)
           href: analyze-face-redaction-concept.md
           displayName: 'analyze, redact, face, detect, presets, jobs, blur, faces, redaction'
     - name: Transformaties en taken
@@ -222,9 +222,9 @@
       items:
         - name: Controleren met Azure Monitor
           items:
-            - name: Media Services bewaken
+            - name: De Media Services
               href: monitoring/monitor-media-services.md
-            - name: Media Services gegevens referentie bewaken
+            - name: Naslaginformatie Media Services bewakingsgegevens
               href: monitoring/monitor-media-services-data-reference.md
         - name: Bewaken met Event Grid
           items:
@@ -243,8 +243,6 @@
           displayName: 'accessing, long-running, sdk, invalid character, name, naming, file name'
         - name: 'Entiteiten pagineren, filteren, ordenen'
           href: filter-order-page-entitites-how-to.md
-        - name: Azure RBAC
-          href: security-rbac-concept.md
         - name: Foutcodes
           items:
             - name: Foutcodes voor streaming-eindpunten
@@ -263,7 +261,7 @@
       href: architecture-concept.md
     - name: Problemen oplossen
       items:
-        - name: Vraag verzameling
+        - name: Verzameling vragen
           href: questions-collection.md
         - name: Foutcodes
           items:
@@ -278,10 +276,10 @@
     - name: Migratiehandleiding
       displayName: migration
       items:
-        - name: Inleiding tot migratie handleiding
+        - name: Inleiding tot de migratiehandleiding
           href: migrate-v-2-v-3-migration-introduction.md
           displayName: migration
-        - name: 'Stap 1: voor delen'
+        - name: 'Stap 1: voordelen'
           href: migrate-v-2-v-3-migration-benefits.md
           displayName: 'migration, benefits'
         - name: 'Stap 2: verschillen'
@@ -289,16 +287,16 @@
             - name: API-toegang
               href: migrate-v-2-v-3-differences-api-access.md
               displayName: 'migration, api'
-            - name: Functie hiaten
+            - name: Functiehiaten
               href: migrate-v-2-v-3-differences-feature-gaps.md
               displayName: 'migration, features'
-            - name: Terminologie en entiteits wijzigingen
+            - name: Terminologie en entiteitswijzigingen
               href: migrate-v-2-v-3-differences-terminology.md
               displayName: 'migration, entity, api'
-        - name: Stap 3-SDK-installatie
+        - name: 'Stap 3: SDK instellen'
           href: migrate-v-2-v-3-migration-setup.md
           displayName: 'migration, SDK`'
-        - name: Stap 4-richt lijnen voor migratie op basis van Scenario's
+        - name: 'Stap 4: Richtlijnen voor migratie op basis van scenario''s'
           items:
             - name: Encoding
               href: migrate-v-2-v-3-migration-scenario-based-encoding.md
@@ -315,16 +313,16 @@
             - name: Gereserveerde media-eenheden (MRU)
               href: migrate-v-2-v-3-migration-scenario-based-media-reserved-units.md
               displayName: 'migration, media reserved units'
-        - name: Voor beelden vergelijken
+        - name: Vergelijking van voorbeelden
           href: migrate-v-2-v-3-migration-samples.md
           displayName: 'migration, samples'
 - name: Instructiegidsen
   items:
-    - name: Uw Tenant en abonnement zoeken
+    - name: Uw tenant en abonnement zoeken
       items:
-        - name: Uw Tenant-ID zoeken
+        - name: Uw tenant-id zoeken
           href: setup-azure-tenant-how-to.md
-        - name: Uw abonnements-ID zoeken
+        - name: Uw abonnements-id zoeken
           href: setup-azure-subscription-how-to.md
     - name: Assets maken en media uploaden
       items:
@@ -332,7 +330,7 @@
           href: asset-create-asset-how-to.md
         - name: Media uploaden
           href: asset-upload-media-how-to.md
-        - name: Meerdere opslag accounts beheren
+        - name: Meerdere opslagaccounts beheren
           href: storage-managing-multiple-storage-accounts-how-to.md
     - name: Transformaties maken
       items:
@@ -340,30 +338,30 @@
           href: transform-create-transform-how-to.md
         - name: Een eenvoudige audiotransformatie maken met REST
           href: transform-create-basic-audio-how-to.md
-        - name: Miniatuur sprites maken
+        - name: Miniatuurse sprites maken
           href: transform-create-thumbnail-sprites-how-to.md
-        - name: Twee of meer video bestanden samen voegen met .NET
+        - name: Twee of meer videobestanden samenseen met .NET
           href: transform-stitch-how-to.md
-        - name: Een video .NET-fragment afspelen
+        - name: Een subclip van een video maken in .NET
           href: transform-subclip-video-dotnet-how-to.md
           displayName: 'subclipping, clip, edit, trim, clipping'
-        - name: Een video-REST bijsnijden
+        - name: Een subclip maken van een video-REST
           href: transform-subclip-video-rest-how-to.md
           displayName: 'subclipping, clip, edit, trim, clipping'
-        - name: Voor instellingen voor encoder aanpassen .NET
+        - name: Vooraf ingestelde encoder aanpassen voor .NET
           href: transform-custom-presets-how-to.md
-        - name: Een overlay-trans formatie maken .NET
+        - name: Een overlaytransformator maken in .NET
           href: transform-create-overlay-how-to.md
-        - name: Miniaturen .NET genereren
+        - name: Miniaturen genereren .NET
           href: transform-generate-thumbnails-dotnet-how-to.md
         - name: Video's bijsnijden met .NET
           href: crop-howto.md
-        - name: Voor instellingen voor encoder aanpassen CLI
+        - name: Cli voor vooraf ingestelde encoder aanpassen
           href: transform-custom-preset-cli-how-to.md
-        - name: De voor instellingen voor encoder aanpassen REST
+        - name: Voorinstellingen voor encoder aanpassen REST
           displayName: 'encode, encoding, custom, transform'
           href: transform-custom-preset-rest-how-to.md
-        - name: Miniaturen REST genereren
+        - name: Thumbnails REST genereren
           href: transform-generate-thumbnails-rest-how-to.md
         - name: Een copyAllBitrateNonInterleaved-transformatie maken met REST
           href: transform-create-copyallbitratenoninterleaved-how-to.md
@@ -380,7 +378,7 @@
           href: job-multiple-transform-outputs-how-to.md
         - name: HTTPS als taakinvoer
           href: job-input-from-http-how-to.md
-    - name: Gereserveerde media-eenheden voor schalen CLI
+    - name: CLI voor het schalen van gereserveerde media-eenheden
       href: media-reserved-units-cli-how-to.md
     - name: Live streamen
       items:
@@ -416,7 +414,7 @@
       items:
         - name: Met .NET
           items:
-            - name: Azure Functions .NET gebruiken
+            - name: .NET Azure Functions gebruiken
               href: integrate-azure-functions-dotnet-how-to.md
     - name: Filters maken
       items:
@@ -443,8 +441,18 @@
           href: asset-publish-cli-how-to.md
     - name: Beveiliging
       items:
-        - name: Toegangs sleutels voor opslag rollen
+        - name: Azure RBAC
+          href: security-rbac-concept.md
+        - name: Toegangssleutels voor opslagrollen
           href: security-storage-roll-access-keys-how-to.md
+        - name: Vertrouwde opslag inschakelen
+          href: security-trusted-storage-rest-tutorial.md
+        - name: Azure Media PlayerPass-verificatietokens
+          href: security-pass-authentication-tokens-how-to.md
+        - name: Vertrouwde opslag inschakelen
+          href: security-trusted-storage-rest-tutorial.md
+        - name: Door de klant beheerde sleutels met REST API
+          href: security-customer-managed-keys-rest-postman-tutorial.md
     - name: Mediaspelers gebruiken
       items:
         - name: Volledige installatie van Azure Media Player
@@ -453,7 +461,7 @@
           href: player-how-to-video-js-player.md
         - name: De Shaka-videospeler gebruiken
           href: player-shaka-player-how-to.md
-        - name: Verificatie tokens door geven
+        - name: Verificatietokens doorgeven
           href: security-pass-authentication-tokens-how-to.md
 - name: Naslaginformatie
   items:

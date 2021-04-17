@@ -43,7 +43,7 @@
       href: automation-runbook-types.md
     - name: PowerShell DSC
       href: /powershell/scripting/dsc/overview/overview
-    - name: Details van de automatiserings netwerk configuratie
+    - name: Details van Automation-netwerkconfiguratie
       href: automation-network-configuration.md
     - name: Beveiliging
       items:
@@ -66,6 +66,12 @@
           href: automation-create-standalone-account.md
         - name: Een Automation-account maken met een Resource Manager-sjabloon
           href: quickstart-create-automation-account-template.md
+        - name: Beheerde identiteit
+          items:
+            - name: Beheerde identiteit inschakelen
+              href: enable-managed-identity-for-automation.md
+            - name: Beheerde identiteit uitschakelen
+              href: disable-managed-identity-for-automation.md
         - name: Run As-account
           items:
             - name: Uitvoeren als-account maken
@@ -254,7 +260,7 @@
           href: automation-solution-vm-management-config.md
         - name: Query's uitvoeren op logboeken vanuit VM's buiten bedrijfsuren starten/stoppen
           href: automation-solution-vm-management-logs.md
-        - name: VM's buiten bedrijfsuren starten/stoppen verwijderen
+        - name: Verwijder VM's buiten bedrijfsuren starten/stoppen
           href: automation-solution-vm-management-remove.md
         - name: Problemen oplossen met VM's buiten bedrijfsuren starten/stoppen
           href: troubleshoot/start-stop-vm.md

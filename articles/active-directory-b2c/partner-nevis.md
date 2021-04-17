@@ -1,7 +1,7 @@
 ---
-title: Zelf studie voor het configureren van Azure Active Directory B2C met Nevis
+title: Zelfstudie voor het configureren Azure Active Directory B2C met Nevis
 titleSuffix: Azure AD B2C
-description: Meer informatie over het integreren van Azure AD B2C verificatie met Nevis voor verificatie zonder wacht woord
+description: Meer informatie over het integreren Azure AD B2C verificatie met Nevis voor verificatie zonder wachtwoord
 services: active-directory-b2c
 author: gargi-sinha
 manager: martinco
@@ -11,197 +11,197 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: b8e72cab6d6220b71e93550eec7649752201180a
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 42e244249ecb0539637918ae2439bdb4f5da4b38
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107256579"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107588476"
 ---
-# <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Zelf studie voor het configureren van Nevis met Azure Active Directory B2C voor verificatie zonder wacht woord
+# <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Zelfstudie voor het configureren van Nevis Azure Active Directory B2C voor verificatie zonder wachtwoord
 
-In deze voorbeeld zelfstudie vindt u informatie over het uitbreiden van Azure AD B2C met  [Nevis](https://www.nevis.net/solution/authentication-cloud) om verificatie zonder wacht woord in te scha kelen. Nevis biedt een mobiele, volledig brandende eindgebruikers ervaring met Nevis Access-app voor sterke klanten verificatie en voldoet aan de vereisten voor de betalings Services-instructie 2 (PSD2).
+In deze voorbeeldzelfstudie leert u hoe u uw Azure AD B2C  [met Nevis](https://www.nevis.net/en/solution/authentication-cloud) kunt uitbreiden om verificatie zonder wachtwoord in te schakelen. Nevis biedt een mobiele, volledig merkbare eindgebruikerservaring met de Nevis Access-app om sterke klantverificatie te bieden en te voldoen aan payment services Directive 2 (PSD2) transactievereisten.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Om aan de slag te gaan, hebt u het volgende nodig:
 
-- Een [proef account](https://www.nevis-security.com/aadb2c/) van Nevis
+- Een [Nevis-proefaccount](https://www.nevis-security.com/aadb2c/)
 
-- Een Azure AD-abonnement Als u er nog geen hebt, kunt u een [gratis account](https://azure.microsoft.com/free/)aanvragen.
+- Een Azure AD-abonnement Als u nog geen account hebt, krijgt u een [gratis account.](https://azure.microsoft.com/free/)
 
-- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
-- Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./tutorial-create-user-flows.md?pivots=b2c-custom-policy), als u Nevis wilt integreren in uw aanmeldings beleids stroom.
+- Geconfigureerd Azure AD B2C omgeving voor het gebruik van aangepast beleid [als](./tutorial-create-user-flows.md?pivots=b2c-custom-policy)u Nevis wilt integreren in uw aanmeldingsbeleidsstroom.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
-In dit scenario voegt u volledig bemerkte Access-app toe aan uw back-end-toepassing voor verificatie met een wacht woord. De volgende onderdelen vormen de oplossing:
+In dit scenario voegt u een volledig merktoegangs-app toe aan uw back-endtoepassing voor verificatie zonder wachtwoord. De volgende onderdelen maken de oplossing uit:
 
-- Een Azure AD B2C-Tenant, met een gecombineerd aanmeldings-en registratie beleid voor uw back-end
-- Nevis-exemplaar en de REST API om Azure AD B2C te verbeteren
-- Uw eigen app met merken toegang
+- Een Azure AD B2C tenant, met een gecombineerd aanmeldings- en aanmeldingsbeleid voor uw back-end
+- Nevis-exemplaar en de REST API om de prestaties Azure AD B2C
+- Uw eigen toegangs-app met huismerk
 
-In het diagram wordt de implementatie weer gegeven.
+In het diagram ziet u de implementatie.
 
-![Aanmeldings stroom op hoog niveau met Azure AD B2C en Nevis](./media/partner-nevis/nevis-architecture-diagram.png)
+![Aanmeldingsstroom voor wachtwoorden op hoog niveau met Azure AD B2C en Nevis](./media/partner-nevis/nevis-architecture-diagram.png)
 
 |Stap | Beschrijving |
 |:-----| :-----------|
-| 1. | Een gebruiker probeert zich aan te melden of zich aan te melden bij een toepassing via Azure AD B2C aanmeldings-en registratie beleid.
-| 2. | Tijdens het aanmelden wordt de Nevis Access-app geregistreerd bij het gebruikers apparaat met behulp van een QR-code. Er wordt een persoonlijke sleutel gegenereerd op het apparaat van de gebruiker en wordt gebruikt voor het ondertekenen van de gebruikers aanvragen.
-| 3. |  Azure AD B2C gebruikt een onderliggend technisch profiel om de aanmelding met de Nevis-oplossing te starten.
-| 4. | De aanmeldings aanvraag wordt verzonden naar de app voor toegang, hetzij als een push bericht, QR-code of een diep gaande koppeling.
-| 5. | De gebruiker keurt de aanmeldings poging met hun biometrie goed. Er wordt vervolgens een bericht geretourneerd naar Nevis, waarmee de aanmelding wordt gecontroleerd met de opgeslagen open bare sleutel.
-| 6. | Azure AD B2C stuurt een laatste aanvraag naar Nevis om te bevestigen dat de aanmelding is voltooid.
-| 7. |Op basis van het geslaagde/mislukte bericht van Azure AD B2C gebruiker wordt toegang tot de toepassing verleend/geweigerd.
+| 1. | Een gebruiker probeert zich aan te melden of zich aan te melden bij een toepassing via Azure AD B2C beleid voor aanmelden en registreren.
+| 2. | Tijdens de registratie wordt de Nevis Access-app met behulp van een QR-code geregistreerd bij het gebruikersapparaat. Er wordt een persoonlijke sleutel gegenereerd op het gebruikersapparaat en deze wordt gebruikt om de aanvragen van de gebruiker te ondertekenen.
+| 3. |  Azure AD B2C maakt gebruik van een technisch RESTful-profiel om de aanmelding te starten met de Nevis-oplossing.
+| 4. | De aanmeldingsaanvraag wordt verzonden naar de toegangs-app als een pushbericht, QR-code of als een dieptekoppeling.
+| 5. | De gebruiker keurt de aanmeldingspoging goed met zijn biometrie. Er wordt vervolgens een bericht geretourneerd naar Nevis, waarmee de aanmelding met de opgeslagen openbare sleutel wordt geverifieerd.
+| 6. | Azure AD B2C een laatste aanvraag naar Nevis om te bevestigen dat de aanmelding is voltooid.
+| 7. |Op basis van het bericht dat de toepassing is geslaagd/mislukt Azure AD B2C gebruiker toegang tot de toepassing verleend/geweigerd.
 
-## <a name="integrate-your-azure-ad-b2c-tenant"></a>Uw Azure AD B2C-Tenant integreren
+## <a name="integrate-your-azure-ad-b2c-tenant"></a>Uw tenant Azure AD B2C integreren
 
 ### <a name="onboard-to-nevis"></a>Onboarden naar Nevis 
 
-[Meld u aan voor een Nevis-account](https://www.nevis-security.com/aadb2c/).
-U ontvangt twee e-mail berichten:
+[Meld u aan voor een Nevis-account.](https://www.nevis-security.com/aadb2c/)
+U ontvangt twee e-mailberichten:
 
-1. Melding van een beheer account
+1. Een melding voor een beheeraccount
 
 2. Een uitnodiging voor een mobiele app.
 
-### <a name="add-your-azure-ad-b2c-tenant-to-your-nevis-account"></a>Uw Azure AD B2C-Tenant toevoegen aan uw Nevis-account
+### <a name="add-your-azure-ad-b2c-tenant-to-your-nevis-account"></a>Uw Azure AD B2C toevoegen aan uw Nevis-account
 
-1. Kopieer uw beheer sleutel naar het klem bord via de e-mail met de proef versie van het Nevis-beheer account.
+1. Kopieer uw beheersleutel naar het klembord in het proefabonnement voor het Nevis-beheeraccount.
 
 2. Open https://console.nevis.cloud/ in een browser.
 
-3. Meld u aan bij de beheer console met uw sleutel.
+3. Meld u aan bij de beheerconsole met uw sleutel.
 
-4. **Instantie toevoegen** selecteren
+4. Selecteer **Exemplaar toevoegen**
 
-5. Selecteer de zojuist gemaakte instantie om deze te openen.
+5. Selecteer het zojuist gemaakte exemplaar om het te openen.
 
-6. Selecteer in de navigatie balk aan de zijkant **aangepaste integraties**
+6. Selecteer aangepaste integraties in de **navigatiebalk aan de zijkant**
 
-7. Selecteer **aangepaste integratie toevoegen**.
+7. Selecteer **Aangepaste integratie toevoegen.**
 
-8. Voer bij integratie naam uw Azure AD B2C Tenant naam in.
+8. Voer bij Integratienaam de naam van Azure AD B2C tenant in.
 
-9. Voer voor URL/domein `https://yourtenant.onmicrosoft.com`
+9. Voer bij URL/domein in `https://yourtenant.onmicrosoft.com`
 
 10. Selecteer **Volgende**
 
 >[!NOTE]
->U hebt later het toegangs token van Nevis nodig.
+>U hebt het Nevis-toegangs token later nodig.
 
 11. Selecteer **Gereed**.
 
 ### <a name="install-the-nevis-access-app-on-your-phone"></a>De Nevis Access-app installeren op uw telefoon
 
-1. Open in het Nevis-e-mail bericht voor mobiele app-proef versie de uitnodiging om de **app te testen** .
+1. Open vanuit het e-mailadres van de proefversie van de mobiele Nevis-app de **uitnodiging voor de Test Flight-app.**
 
 2. Installeer de app.
 
-3. Volg de instructies die worden gegeven om de Nevis Access-app te installeren.
+3. Volg de instructies voor het installeren van de Nevis Access-app.
 
 ### <a name="integrate-azure-ad-b2c-with-nevis"></a>Azure AD B2C integreren met Nevis
 
 1. Open de [Azure Portal](https://portal.azure.com/).
 
-2. Schakel over naar uw Azure AD B2C-Tenant. Zorg ervoor dat u de juiste Tenant hebt geselecteerd, omdat de Azure AD B2C Tenant doorgaans zich in een afzonderlijke Tenant bevindt.
+2. Schakel over naar uw Azure AD B2C tenant. Zorg ervoor dat u de juiste tenant hebt geselecteerd, omdat de Azure AD B2C tenant zich meestal in een afzonderlijke tenant.
 
-3. Selecteer in het menu **Identity experience Framework (IEF)**
+3. Selecteer in het menu Identity Experience Framework **(IEF)**
 
-4. **Beleids sleutels** selecteren
+4. **Beleidssleutels selecteren**
 
-5. Selecteer **toevoegen** en maak een nieuwe sleutel met de volgende instellingen:
+5. Selecteer **Toevoegen** en maak een nieuwe sleutel met de volgende instellingen:
 
-      a. Selecteer **hand matig** in opties
+      a. Selecteer **Handmatig** in Opties
 
-      b. Naam instellen op **AuthCloudAccessToken**
+      b. Stel Naam in **op AuthCloudAccessToken**
 
-      c. Plak het eerder opgeslagen **toegangs token voor Nevis** in het veld geheim
+      c. Plak het eerder opgeslagen **Nevis Access Token** in het veld Geheim
 
-      d. Selecteer **versleuteling** voor het sleutel gebruik
+      d. Selecteer versleuteling voor **sleutelgebruik**
 
       e. Selecteer **Maken**
 
-### <a name="configure-and-upload-the-nevishtml-to-azure-blob-storage"></a>De nevis.html configureren en uploaden naar Azure Blob Storage
+### <a name="configure-and-upload-the-nevishtml-to-azure-blob-storage"></a>Configureer en upload de nevis.html naar Azure Blob Storage
 
-1. Ga in uw identiteits omgeving (IDE) naar de map [**beleid**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy) .
+1. Ga in uw Identiteitsomgeving (IDE) naar de [**map beleid.**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy)
 
-2. Open het bestand  [**nevis.html**](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/nevis.html) .
+2. Open het [**nevis.html-bestand.**](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/nevis.html)
 
-3. Vervang de  **authentication_cloud_url** door de URL van uw Nevis-beheer console `https://<instance_id>.mauth.nevis.cloud` .
+3. Vervang de  **authentication_cloud_url** door de URL van uw Nevis-beheerconsole - `https://<instance_id>.mauth.nevis.cloud` .
 
 4. **Sla** de wijzigingen in het bestand op.
 
-5. Volg de [instructies](./customize-ui-with-html.md#2-create-an-azure-blob-storage-account) en upload het **nevis.html** -bestand naar uw Azure Blob-opslag.
+5. Volg de [instructies en](./customize-ui-with-html.md#2-create-an-azure-blob-storage-account) upload het **nevis.html-bestand** naar uw Azure Blob-opslag.
 
-6. Volg de [instructies](./customize-ui-with-html.md#3-configure-cors) om cross-Origin resource SHARING (CORS) voor dit bestand in te scha kelen.
+6. Volg de [instructies](./customize-ui-with-html.md#3-configure-cors) en schakel Cross-Origin Resource Sharing (CORS) in voor dit bestand.
 
-7. Zodra het uploaden is voltooid en CORS is ingeschakeld, selecteert u het **nevis.html** -bestand in de lijst.
+7. Zodra het uploaden is voltooid en CORS is ingeschakeld, selecteert u **hetnevis.html-bestand** in de lijst.
 
-8. Op het tabblad **overzicht** , naast de **URL**, selecteert u het pictogram **koppeling kopiëren** .
+8. Selecteer op **het** tabblad Overzicht naast de **URL** het pictogram **voor de kopieerkoppeling.**
 
-9. Open de koppeling in een nieuw browser tabblad om te controleren of er een grijs vak wordt weer gegeven.
+9. Open de koppeling in een nieuw browsertabblad om er zeker van te zijn dat er een grijs vak wordt weergegeven.
 
 >[!NOTE]
->U hebt de BLOB-koppeling later nodig.
+>U hebt de blobkoppeling later nodig.
 
-### <a name="customize-your-trustframeworkbasexml"></a>Uw TrustFrameworkBase.xml aanpassen
+### <a name="customize-your-trustframeworkbasexml"></a>Uw TrustFrameworkBase.xml
 
-1. Ga in uw IDE naar de map [**beleid**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy) .
+1. Ga in uw IDE naar de [**map beleid.**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy)
 
-2. Open het [**TrustFrameworkBase.xml**](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/TrustFrameworkBase.xml) -bestand.
+2. Open [](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/TrustFrameworkBase.xml) hetTrustFrameworkBase.xmlbestand.
 
-3. Vervang **yourtenant** door de naam van uw Azure-Tenant account in de **TenantId**.
+3. Vervang **yourtenant door** de naam van uw Azure-tenantaccount in de **TenantId**.
 
-4. Vervang **yourtenant** door de naam van uw Azure-Tenant account in **PublicPolicyURI**.
+4. Vervang **yourtenant door** de naam van uw Azure-tenantaccount in **PublicPolicyURI.**
 
-5. Alle **authentication_cloud_url** instanties vervangen door de URL van uw Nevis-beheer console
+5. Vervang alle **authentication_cloud_url** door de URL van uw Nevis-beheerconsole
 
 6. **Sla** de wijzigingen in het bestand op.
 
-### <a name="customize-your-trustframeworkextensionsxml"></a>Uw TrustFrameworkExtensions.xml aanpassen
+### <a name="customize-your-trustframeworkextensionsxml"></a>Uw TrustFrameworkExtensions.xml
 
-1. Ga in uw IDE naar de map [**beleid**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy) .
+1. Ga in uw IDE naar de [**map beleid.**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy)
 
-2. Open het [**TrustFrameworkExtensions.xml**](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/TrustFrameworkExtensions.xml) -bestand.
+2. Open [](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/TrustFrameworkExtensions.xml) hetTrustFrameworkExtensions.xmlbestand.
 
-3. Vervang **yourtenant** door de naam van uw Azure-Tenant account in de **TenantId**.
+3. Vervang **yourtenant door** de naam van uw Azure-tenantaccount in de **TenantId**.
 
-4. Vervang **yourtenant** door de naam van uw Azure-Tenant account in **PublicPolicyURI**.
+4. Vervang **yourtenant door** de naam van uw Azure-tenantaccount in **PublicPolicyURI.**
 
-5. Onder **BasePolicy**, in de **TenantId**, vervangt u _yourtenant_ door de naam van uw Azure-Tenant account.
+5. Vervang **onder BasePolicy** in **de TenantId** ook _yourtenant_ door de naam van uw Azure-tenantaccount.
 
-6. Vervang **LoadUri** onder **BuildingBlocks** door de URL van de BLOB-koppeling van uw _nevis.html_ in uw Blob Storage-account.
+6. Vervang **loaduri onder BuildingBlocks** door **de** blobkoppelings-URL van uwnevis.htm _l_ in uw blobopslagaccount.
 
 7. **Sla** het bestand op.
 
-### <a name="customize-your-signuporsigninxml"></a>Uw SignUpOrSignin.xml aanpassen
+### <a name="customize-your-signuporsigninxml"></a>Uw SignUpOrSignin.xml
 
-1. Ga in uw IDE naar de map [**beleid**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy) .
+1. Ga in uw IDE naar de [**map beleid.**](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Nevis/policy)
 
-2. Open het [**SignUpOrSignin.xml**](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/SignUpOrSignin.xml) -bestand.
+2. Open het [**SignUpOrSignin.xml**](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/Nevis/policy/SignUpOrSignin.xml) bestand.
 
-3. Vervang **yourtenant** door de naam van uw Azure-Tenant account in de **TenantId**.
+3. Vervang **yourtenant door** de naam van uw Azure-tenantaccount in **de TenantId.**
 
-4. Vervang **yourtenant** door de naam van uw Azure-Tenant account in **PublicPolicyUri**.
+4. Vervang **yourtenant door** de naam van uw Azure-tenantaccount in **PublicPolicyUri.**
 
-5. Onder **BasePolicy**, in **TenantId**, vervangt u **yourtenant** door de naam van uw Azure-Tenant account.
+5. Vervang **onder BasePolicy** in **TenantId** ook **yourtenant** door de naam van uw Azure-tenantaccount.
 
 6. **Sla** het bestand op.
 
 ### <a name="upload-your-custom-policies-to-azure-ad-b2c"></a>Uw aangepaste beleid uploaden naar Azure AD B2C
 
-1. Open de start pagina van de [Azure AD B2C Tenant](https://portal.azure.com/#blade/Microsoft_AAD_B2CAdmin/TenantManagementMenuBlade/overview) .
+1. Open uw [Azure AD B2C tenant.](https://portal.azure.com/#blade/Microsoft_AAD_B2CAdmin/TenantManagementMenuBlade/overview)
 
-2. Selecteer een **Framework voor identiteits ervaring**.
+2. Selecteer **Identity Experience Framework**.
 
-3. Selecteer **aangepast beleid uploaden**.
+3. Selecteer **Aangepast beleid uploaden.**
 
 4. Selecteer het **TrustFrameworkBase.xml** bestand dat u hebt gewijzigd.
 
-5. Selecteer het selectie vakje **aangepast beleid overschrijven als dit al bestaat** .
+5. Schakel het **selectievakje Het aangepaste beleid overschrijven als het al bestaat** in.
 6. Selecteer **Uploaden**.
 
 7. Herhaal stap 5 en 6 voor **TrustFrameworkExtensions.xml**.
@@ -210,64 +210,64 @@ U ontvangt twee e-mail berichten:
 
 ## <a name="test-the-user-flow"></a>De gebruikersstroom testen
 
-### <a name="test-account-creation-and-nevis-access-app-setup"></a>Het maken van accounts en de Nevis Access-app instellen
+### <a name="test-account-creation-and-nevis-access-app-setup"></a>Het maken van een account testen en de Nevis Access-app instellen
 
-1. Open de start pagina van de [Azure AD B2C Tenant](https://portal.azure.com/#blade/Microsoft_AAD_B2CAdmin/TenantManagementMenuBlade/overview) .
+1. Open uw [Azure AD B2C tenant.](https://portal.azure.com/#blade/Microsoft_AAD_B2CAdmin/TenantManagementMenuBlade/overview)
 
-2. Selecteer een **Framework voor identiteits ervaring**.
+2. Selecteer **Identity Experience Framework**.
 
-3. Schuif omlaag naar aangepast beleid en selecteer **B2C_1A_signup_signin**.
+3. Schuif omlaag naar Aangepast beleid en selecteer **B2C_1A_signup_signin.**
 
-4. Selecteer **nu uitvoeren**.
+4. Selecteer **Nu uitvoeren.**
 
-5. Selecteer **nu registreren** in het pop-upvenster.
+5. Selecteer nu registreren in het **pop-upvenster.**
 
-6. Voeg uw e-mail adres toe.
+6. Voeg uw e-mailadres toe.
 
-7. Selecteer **verificatie code verzenden**.
+7. Selecteer **Verificatiecode verzenden.**
 
-8. Kopieer de verificatie code uit het e-mail bericht.
+8. Kopieer de verificatiecode uit het e-mailbericht.
 
 9. Selecteer **Verifiëren**.
 
-10. Vul het formulier in met het nieuwe wacht woord en de weergave naam.
+10. Vul in het formulier uw nieuwe wachtwoord en Weergavenaam in.
 
 11. Selecteer **Maken**.
 
-12. U gaat naar de scan pagina voor QR-code.
+12. U wordt naar de scanpagina van de QR-code doorgenomen.
 
-13. Open de **Nevis Access-app** op uw telefoon.
+13. Open de **Nevis Access-app op uw telefoon.**
 
-14. Selecteer **face id**.
+14. Selecteer **Face ID.**
 
-15. Wanneer het scherm met de melding registratie van de **verificator is geslaagd**, selecteert u **door gaan**.
+15. Wanneer in het scherm wordt weergegeven dat **de Authenticator-registratie is geslaagd,** selecteert u **Doorgaan.**
 
-16. Verifieer opnieuw op uw telefoon met uw gezicht.
+16. Verifieert u op uw telefoon opnieuw met uw gezicht.
 
-17. U gaat naar de landings pagina voor [JWT.MS](https://jwt.ms) waarop de gedecodeerde token Details worden weer gegeven.
+17. U wordt naar de landingspagina [jwt.ms](https://jwt.ms) met de details van uw gedecodeerde token.
 
-### <a name="test-the-pure-passwordless-sign-in"></a>De pure aanmelding zonder wacht woord testen
+### <a name="test-the-pure-passwordless-sign-in"></a>De pure aanmelding zonder wachtwoord testen
 
-1. Selecteer onder **identiteits ervaring-Framework** de **B2C_1A_signup_signin**.
+1. Selecteer **Identity Experience Framework** onder **B2C_1A_signup_signin**.
 
-2. Selecteer **nu uitvoeren**.
+2. Selecteer **Nu uitvoeren.**
 
-3. Selecteer **wacht woordloze verificatie** in het pop-upvenster.
+3. Selecteer in het pop-upvenster **De optie Verificatie zonder wachtwoord.**
 
 4. Voer uw e-mailadres in.
 
 5. Selecteer **Doorgaan**.
 
-6. Selecteer op uw telefoon, in meldingen, de **melding Nevis Access-app**.
+6. Selecteer op uw telefoon in meldingen de optie **Nevis Access-app-melding**.
 
-7. Verifieer met uw gezicht.
+7. Verifiëren met uw gezicht.
 
-8. U wordt automatisch naar de landings pagina van de [JWT.MS](https://jwt.ms) geleid waarop uw tokens worden weer gegeven.
+8. U wordt automatisch naar de landingspagina van [jwt.ms](https://jwt.ms) om uw tokens weer te geven.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de volgende artikelen voor meer informatie
+Lees de volgende artikelen voor meer informatie
 
 - [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)
+- [Aan de slag met aangepaste beleidsregels in Azure AD B2C](tutorial-create-user-flows.md?pivots=b2c-custom-policy)

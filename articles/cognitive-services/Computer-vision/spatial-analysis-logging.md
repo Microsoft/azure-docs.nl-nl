@@ -1,7 +1,7 @@
 ---
-title: Telemetrie en logboek registratie voor containers voor ruimtelijke analyse
+title: Telemetrie en logboekregistratie voor ruimtelijke analysecontainers
 titleSuffix: Azure Cognitive Services
-description: Ruimtelijke analyse biedt elke container een veelvoorkomende configuratie raamwerk, logboek registratie en beveiligings instellingen.
+description: Ruimtelijke analyse biedt elke container een algemeen configuratiekader voor inzichten, logboekregistratie en beveiligingsinstellingen.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,24 +10,24 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 1f03f99e6394c3939855c73548e8fb917f8696bc
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 901e857a346b0955726c5755e23595efefbc2ca1
+ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106286025"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107589496"
 ---
-# <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
+# <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleemoplossing
 
-Ruimtelijke analyse bevat een aantal functies voor het controleren van de status van het systeem en hulp bij het oplossen van problemen.
+Ruimtelijke analyse bevat een set functies voor het bewaken van de status van het systeem en hulp bij het diagnosticeren van problemen.
 
 ## <a name="enable-visualizations"></a>Visualisaties inschakelen
 
-Als u een visualisatie van AI Insights-gebeurtenissen in een video frame wilt maken, moet u de `.debug` versie van een [ruimtelijke analyse bewerking](spatial-analysis-operations.md) op een desktop computer gebruiken. De visualisatie is niet mogelijk op Azure Stack edge-apparaten. Er zijn vier debug-bewerkingen beschikbaar.
+Als u een visualisatie van AI-inzichten gebeurtenissen in een videoframe wilt inschakelen, moet u de versie van een ruimtelijke `.debug` [analysebewerking op](spatial-analysis-operations.md) een desktopcomputer gebruiken. De visualisatie is niet mogelijk op Azure Stack Edge apparaten. Er zijn vier foutopsporingsbewerkingen beschikbaar.
 
-Als uw apparaat geen Azure Stack edge-apparaat is, bewerkt u het manifest bestand van de implementatie voor [desktop computers](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) om de juiste waarde voor de `DISPLAY` omgevings variabele te gebruiken. De waarde moet overeenkomen met de `$DISPLAY` variabele op de hostcomputer. Nadat u het implementatie manifest hebt bijgewerkt, implementeert u de container opnieuw.
+Als uw apparaat geen apparaat is Azure Stack Edge, bewerkt u het distributiemanifestbestand voor [desktopcomputers](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) om de juiste waarde voor de `DISPLAY` omgevingsvariabele te gebruiken. Deze moet overeenkomen met de `$DISPLAY` variabele op de hostcomputer. Nadat u het implementatiemanifest hebt bijgewerkt, moet u de container opnieuw implementeren.
 
-Nadat de implementatie is voltooid, moet u het `.Xauthority` bestand mogelijk van de hostcomputer naar de container kopiëren en opnieuw starten. In het onderstaande voor beeld `peopleanalytics` is de naam van de container op de hostcomputer.
+Nadat de implementatie is voltooid, moet u het bestand mogelijk van de hostcomputer naar de container kopiëren `.Xauthority` en opnieuw opstarten. In het onderstaande voorbeeld `peopleanalytics` is de naam van de container op de hostcomputer.
 
 ```bash
 sudo docker cp $XAUTHORITY peopleanalytics:/root/.Xauthority
@@ -37,26 +37,26 @@ xhost +
 ```
 
 
-## <a name="collect-system-health-telemetry"></a>Telemetrie van systeem status verzamelen
+## <a name="collect-system-health-telemetry"></a>Telemetrie over systeemtoestand verzamelen
 
-Telegrafie is een open-source installatie kopie die werkt met ruimtelijke analyse en is beschikbaar in de micro soft-Container Registry. Het heeft de volgende invoer en verzendt deze naar Azure Monitor. De telegrafie module kan worden gebouwd met de gewenste aangepaste invoer en uitvoer. De configuratie van de telegrafie module in ruimtelijke analyse maakt deel uit van het implementatie manifest (gekoppeld aan de bovenstaande). Deze module is optioneel en kan worden verwijderd uit het manifest als u deze niet nodig hebt. 
+Telegraf is een open source-afbeelding die werkt met ruimtelijke analyse en beschikbaar is in de Microsoft Container Registry. De volgende invoer wordt gebruikt en naar de Azure Monitor. De telegraf-module kan worden gebouwd met gewenste aangepaste invoer en uitvoer. De configuratie van de telegrafmodule in ruimtelijke analyse maakt deel uit van het implementatiemanifest (hierboven gekoppeld). Deze module is optioneel en kan worden verwijderd uit het manifest als u deze niet nodig hebt. 
 
 Invoer: 
-1. Metrische gegevens over ruimtelijke analyse
+1. Metrische gegevens voor ruimtelijke analyse
 2. Metrische schijfgegevens
-3. CPU-metrische gegevens
-4. Basis gegevens docker
-5. Metrische gegevens GPU
+3. Metrische CPU-gegevens
+4. Metrische gegevens van Docker
+5. Metrische GPU-gegevens
 
 Uitvoer:
 1. Azure Monitor
 
-De opgegeven ruimtelijke analyse-telegrafie module publiceert alle telemetriegegevens die zijn verzonden door de container voor ruimtelijke analyse naar Azure Monitor. Raadpleeg de [Azure monitor](../../azure-monitor/overview.md) voor meer informatie over het toevoegen van Azure monitor aan uw abonnement.
+Met de meegeleverde ruimtelijke analyse-telegraf-module worden alle telemetriegegevens die door de container ruimtelijke analyse zijn ingediend, gepubliceerd Azure Monitor. Zie de [Azure Monitor](../../azure-monitor/overview.md) voor meer informatie over het toevoegen Azure Monitor aan uw abonnement.
 
-Nadat u Azure Monitor hebt ingesteld, moet u referenties maken waarmee de module telemetrie kan verzenden. U kunt de Azure Portal gebruiken om een nieuwe service-principal te maken of de Azure CLI-opdracht hieronder gebruiken om er een te maken.
+Nadat u de Azure Monitor, moet u referenties maken waarmee de module telemetrie kan verzenden. U kunt de opdracht Azure Portal een nieuwe service-principal te maken of de onderstaande Azure CLI-opdracht gebruiken om er een te maken.
 
 > [!NOTE] 
-> Voor deze opdracht moet u eigenaars bevoegdheden voor het abonnement hebben. 
+> Voor deze opdracht moet u eigenaarsbevoegdheden voor het abonnement hebben. 
 
 ```bash
 # Find your Azure IoT Hub resource ID by running this command. The resource ID  should start with something like 
@@ -68,7 +68,7 @@ az iot hub list
 az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principal name>" --scopes="<resource ID of IoT Hub>"
 ```
 
-Zoek in het implementatie manifest voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189)naar de *telegrafie* module en vervang de volgende waarden door de Service-Principal-informatie uit de vorige stap en implementeer opnieuw.
+Zoek in het implementatiemanifest voor uw Azure Stack Edge-apparaat, [desktopcomputer](https://go.microsoft.com/fwlink/?linkid=2152270) [of](https://go.microsoft.com/fwlink/?linkid=2142179) [Azure VM](https://go.microsoft.com/fwlink/?linkid=2152189)met GPU naar de *telegraf-module* en vervang de volgende waarden door de service-principalgegevens uit de vorige stap en de implementatie opnieuw.
 
 ```json
 
@@ -97,41 +97,41 @@ Zoek in het implementatie manifest voor uw [Azure stack edge-apparaat](https://g
 ...
 ```
 
-Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische gegevens toegankelijk via de Azure Monitor-service of door **bewaking** te selecteren in de IOT hub op de Azure Portal.
+Zodra de telegraf-module is geïmplementeerd, zijn de gerapporteerde metrische gegevens toegankelijk via de Azure Monitor-service of door **Bewaking** te selecteren in de IoT Hub op de Azure Portal.
 
-:::image type="content" source="./media/spatial-analysis/iot-hub-telemetry.png" alt-text="Azure Monitor telemetrie-rapport":::
+:::image type="content" source="./media/spatial-analysis/iot-hub-telemetry.png" alt-text="Azure Monitor telemetrierapport":::
 
-### <a name="system-health-events"></a>Systeem status gebeurtenissen
+### <a name="system-health-events"></a>Systeem statusgebeurtenissen
 
-| Gebeurtenisnaam                  | Beschrijving    |
+| Gebeurtenisnaam                  | Description    |
 |-----------------------------|-------------------------------------------------------------------------------------------|
-| archon_exit                 | Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
-| archon_error                | Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.      |
-| InputRate                   | De snelheid waarmee de video-invoer door de grafiek wordt verwerkt. Elke 5 minuten gerapporteerd.              |
+| archon_exit                 | Verzonden wanneer een gebruiker de status van de module Ruimtelijke analyse wijzigt van *Actief in* *Gestopt.*  |
+| archon_error                | Verzonden wanneer een van de processen in de container vast loopt. Dit is een kritieke fout.      |
+| InputRate                   | De snelheid waarmee de grafiek video-invoer verwerkt. Elke vijf minuten gerapporteerd.              |
 | OutputRate                  | De snelheid waarmee de grafiek AI-inzichten uitvoert. Elke 5 minuten gerapporteerd.                |
-| archon_allGraphsStarted     | Wordt verzonden wanneer het opstarten van alle grafieken is voltooid.                                           |
-| archon_configchange         | Verzonden wanneer de configuratie van een grafiek is gewijzigd.                                              |
-| archon_graphCreationFailed  | Verzonden wanneer de grafiek met de gemelde `graphId` fout niet kan worden gestart.                           |
-| archon_graphCreationSuccess | Verzonden wanneer de grafiek met de gemelde `graphId` Start.                      |
-| archon_graphCleanup         | Verzonden wanneer de grafiek met de gerapporteerde `graphId` opschoont en afsluit.                      |
-| archon_graphHeartbeat       | Heartbeat elke minuut verzonden voor elke grafiek van een vaardigheid.                                   |
-| archon_apiKeyAuthFail       | Dit bericht wordt verzonden wanneer de container niet langer dan 24 uur door de Computer Vision bron sleutel kan worden geverifieerd vanwege de volgende redenen: buiten het quotum, ongeldig, offline. |
-| VideoIngesterHeartbeat      | Wordt elk uur verzonden om aan te geven dat de video wordt gestreamd vanuit de video bron, met het aantal fouten in dat uur. Gerapporteerd voor elke grafiek. |
-| VideoIngesterState          | Rapporten *gestopt* of *gestart* voor video-streaming. Gerapporteerd voor elke grafiek.              |
+| archon_allGraphsStarted     | Verzonden wanneer alle grafieken zijn begonnen.                                           |
+| archon_configchange         | Verzonden wanneer een grafiekconfiguratie is gewijzigd.                                              |
+| archon_graphCreationFailed  | Verzonden wanneer de grafiek met de `graphId` gerapporteerde niet kan worden starten.                           |
+| archon_graphCreationSuccess | Verzonden wanneer de grafiek met de `graphId` gerapporteerde wordt gestart.                      |
+| archon_graphCleanup         | Verzonden wanneer de grafiek met de `graphId` gerapporteerde opschoont en wordt afgesloten.                      |
+| archon_graphHeartbeat       | Heartbeat die elke minuut wordt verzonden voor elke grafiek van een vaardigheid.                                   |
+| archon_apiKeyAuthFail       | Verzonden wanneer Computer Vision resourcesleutel de container langer dan 24 uur niet kan verifiëren. Dit heeft de volgende redenen: Quotum is bereikt, ongeldig, offline. |
+| VideoIngesterBeat      | Elk uur verzonden om aan te geven dat de video wordt gestreamd vanuit de videobron, met het aantal fouten in dat uur. Gerapporteerd voor elke grafiek. |
+| VideoIngesterState          | Rapporten *gestopt* of *gestart voor* videostreaming. Gerapporteerd voor elke grafiek.              |
 
-##  <a name="troubleshooting-an-iot-edge-device"></a>Problemen met een IoT Edge apparaat oplossen
+##  <a name="troubleshooting-an-iot-edge-device"></a>Problemen met een IoT Edge oplossen
 
-U kunt `iotedge` het opdracht regel programma gebruiken om de status en logboeken van de actieve modules te controleren. Bijvoorbeeld:
-* `iotedge list`: Hiermee wordt een lijst met actieve modules gerapporteerd. 
-  U kunt verder controleren op fouten met `iotedge logs edgeAgent` . Als `iotedge` het vastloopt, kunt u het opnieuw proberen met `iotedge restart edgeAgent`
+U kunt het `iotedge` opdrachtregelprogramma gebruiken om de status en logboeken van de modules die worden uitgevoerd te controleren. Bijvoorbeeld:
+* `iotedge list`: Rapporteert een lijst met modules die worden uitgevoerd. 
+  U kunt verder controleren op fouten met `iotedge logs edgeAgent` . Als `iotedge` het vastloopt, kunt u proberen het opnieuw te starten met `iotedge restart edgeAgent`
 * `iotedge logs <module-name>`
-* `iotedge restart <module-name>` een specifieke module opnieuw opstarten 
+* `iotedge restart <module-name>` om een specifieke module opnieuw op te starten 
 
-## <a name="collect-log-files-with-the-diagnostics-container"></a>Logboek bestanden met de diagnostische container verzamelen
+## <a name="collect-log-files-with-the-diagnostics-container"></a>Logboekbestanden verzamelen met de diagnostische container
 
-Met ruimtelijke analyse worden logboeken voor fout opsporing in docker gegenereerd die u kunt gebruiken om runtime problemen vast te stellen of in ondersteunings tickets op te vragen. De module voor de diagnostische gegevens over ruimtelijke analyse is beschikbaar in de micro soft-Container Registry die u kunt downloaden. In het manifest bestand voor het implementeren van uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) zoekt u de *Diagnostische* module.
+Ruimtelijke analyse genereert docker-foutenlogboeken die u kunt gebruiken om runtimeproblemen vast te stellen of op te nemen in ondersteuningstickets. De diagnostische module ruimtelijke analyse is beschikbaar in de Microsoft Container Registry u kunt downloaden. Zoek in het manifestimplementatiebestand [Azure Stack Edge apparaat,](https://go.microsoft.com/fwlink/?linkid=2142179) [desktopcomputer](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM](https://go.microsoft.com/fwlink/?linkid=2152189) met GPU naar de *diagnostische* module.
 
-Voeg in de sectie ' env ' de volgende configuratie toe:
+Voeg in de sectie env de volgende configuratie toe:
 
 ```json
 "diagnostics": {  
@@ -141,7 +141,7 @@ Voeg in de sectie ' env ' de volgende configuratie toe:
   }
 ```    
 
-Voor het optimaliseren van logboeken die zijn geüpload naar een extern eind punt, zoals Azure Blob Storage, raden we u aan een kleine bestands grootte te behouden. Zie het onderstaande voor beeld voor de aanbevolen configuratie van docker-Logboeken.
+Als u logboeken wilt optimaliseren die zijn geüpload naar een extern eindpunt, zoals Azure Blob Storage, raden we u aan een kleine bestandsgrootte te onderhouden. Zie het onderstaande voorbeeld voor de aanbevolen configuratie van Docker-logboeken.
 
 ```json
 {
@@ -156,12 +156,12 @@ Voor het optimaliseren van logboeken die zijn geüpload naar een extern eind pun
 }
 ```
 
-### <a name="configure-the-log-level"></a>Het logboek niveau configureren
+### <a name="configure-the-log-level"></a>Het logboekniveau configureren
 
-Met de configuratie van het logboek niveau kunt u de uitgebreide versie van de gegenereerde logboeken beheren. De ondersteunde logboek niveaus zijn: `none` ,, `verbose` , en `info` `warning` `error` . Het standaard niveau voor logboek registratie van zowel knoop punten als platform is `info` . 
+Met configuratie op logboekniveau kunt u de complexiteit van de gegenereerde logboeken bepalen. Ondersteunde logboekniveaus zijn: `none` , , , en `verbose` `info` `warning` `error` . Het standaard uitgebreide logboekniveau voor zowel knooppunten als platform is `info` . 
 
-De logboek niveaus kunnen globaal worden gewijzigd door de `ARCHON_LOG_LEVEL` omgevings variabele in te stellen op een van de toegestane waarden.
-Het kan ook worden ingesteld via het dubbele document van de IoT Edge module, voor alle geïmplementeerde vaardig heden, of voor elke specifieke vaardigheid door de waarden in te stellen voor `platformLogLevel` en `nodeLogLevel` zoals hieronder wordt weer gegeven.
+Logboekniveaus kunnen globaal worden gewijzigd door de `ARCHON_LOG_LEVEL` omgevingsvariabele in te stellen op een van de toegestane waarden.
+Het kan ook worden ingesteld via het document IoT Edge Module Twin, voor alle geïmplementeerde vaardigheden of voor elke specifieke vaardigheid, door de waarden voor en in te stellen, zoals hieronder `platformLogLevel` `nodesLogLevel` wordt weergegeven.
 
 ```json
 {
@@ -173,7 +173,7 @@ Het kan ook worden ingesteld via het dubbele document van de IoT Edge module, vo
             },
             "graphs": {
                 "samplegraph": {
-                    "nodeLogLevel": "verbose",
+                    "nodesLogLevel": "verbose",
                     "platformLogLevel": "verbose"
                 }
             }
@@ -185,22 +185,22 @@ Het kan ook worden ingesteld via het dubbele document van de IoT Edge module, vo
 ### <a name="collecting-logs"></a>Logboeken verzamelen
 
 > [!NOTE]
-> De `diagnostics` module heeft geen invloed op de inhoud van het logboek. het is alleen handig bij het verzamelen, filteren en uploaden van bestaande logboeken.
-> U moet docker API versie 1,40 of hoger hebben om deze module te kunnen gebruiken.
+> De module heeft geen invloed op de logboekinhoud, maar helpt alleen bij het verzamelen, filteren en `diagnostics` uploaden van bestaande logboeken.
+> U moet Docker API versie 1.40 of hoger hebben om deze module te kunnen gebruiken.
 
-Het manifest bestand van de voorbeeld implementatie voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) bevat een module met de naam `diagnostics` die logboeken verzamelt en uploadt. Deze module is standaard uitgeschakeld en moet worden ingeschakeld via de configuratie van de IoT Edge-module als u logboeken wilt openen. 
+Het voorbeeld van een distributiemanifestbestand voor uw [Azure Stack Edge,](https://go.microsoft.com/fwlink/?linkid=2142179) [desktopcomputer](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM](https://go.microsoft.com/fwlink/?linkid=2152189) met GPU bevat een module met de naam die logboeken verzamelt `diagnostics` en uploadt. Deze module is standaard uitgeschakeld en moet worden ingeschakeld via de configuratie van IoT Edge module wanneer u toegang nodig hebt tot logboeken. 
 
-De `diagnostics` verzameling is op aanvraag en wordt beheerd via een IOT Edge directe methode en kan Logboeken verzenden naar een Azure-Blob Storage.
+De verzameling wordt op aanvraag beheerd via een IoT Edge directe methode en kan logboeken `diagnostics` naar een Azure Blob Storage.
 
-### <a name="configure-diagnostics-upload-targets"></a>Upload doelen voor diagnostische gegevens configureren
+### <a name="configure-diagnostics-upload-targets"></a>Uploaddoelen voor diagnostische gegevens configureren
 
-Selecteer uw apparaat in de IoT Edge Portal en vervolgens de module **diagnostiek** . In het manifest bestand voor beeld implementatie voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop computers](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) zoekt u naar de sectie **omgevings variabelen** voor diagnostische gegevens, met de naam `env` en voegt u de volgende informatie toe:
+Selecteer in IoT Edge portal uw apparaat en vervolgens de **diagnostische** module. Zoek in het voorbeeldbestand [](https://go.microsoft.com/fwlink/?linkid=2142179)Implementatiemanifest voor uw Azure Stack Edge-apparaat, [desktopcomputers](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM](https://go.microsoft.com/fwlink/?linkid=2152189) met GPU naar de sectie **Omgevingsvariabelen** voor diagnostische gegevens, met de naam , en voeg de `env` volgende informatie toe:
 
-**Upload naar Azure Blob Storage configureren**
+**Uploaden naar Azure Blob Storage**
 
-1. Maak uw eigen Azure Blob Storage-account, als u dat nog niet hebt gedaan.
-2. Haal de **verbindings reeks** voor uw opslag account op uit het Azure Portal. Deze vindt u in **toegangs sleutels**.
-3. Ruimtelijke analyse logboeken worden automatisch geüpload naar een Blob Storage-container met de naam *rtcvlogs* met de volgende indeling voor bestands namen: `{CONTAINER_NAME}/{START_TIME}-{END_TIME}-{QUERY_TIME}.log` .
+1. Maak uw eigen Azure Blob Storage account, als u dat nog niet hebt gedaan.
+2. Haal de **verbindingsreeks** voor uw opslagaccount op uit Azure Portal. Deze bevindt zich in **toegangssleutels.**
+3. Logboeken voor ruimtelijke analyse worden automatisch geüpload naar een Blob Storage container met de naam *rtcvlogs* met de volgende bestandsnaamindeling: `{CONTAINER_NAME}/{START_TIME}-{END_TIME}-{QUERY_TIME}.log` .
 
 ```json
 "env":{
@@ -210,55 +210,55 @@ Selecteer uw apparaat in de IoT Edge Portal en vervolgens de module **diagnostie
 }
 ```
 
-### <a name="uploading-spatial-analysis-logs"></a>Logboeken met ruimtelijke analyse uploaden
+### <a name="uploading-spatial-analysis-logs"></a>Logboeken voor ruimtelijke analyse uploaden
 
-Logboeken worden op aanvraag geüpload met de `getRTCVLogs` methode IOT Edge in de `diagnostics` module. 
+Logboeken worden op aanvraag geüpload met `getRTCVLogs` de IoT Edge methode in de `diagnostics` module. 
 
 
-1. Ga naar de pagina IoT Hub Portal, selecteer **edge-apparaten** en selecteer vervolgens uw apparaat en de module diagnostiek. 
-2. Ga naar de pagina Details van de module en klik op het tabblad ***directe methode*** .
-3. Typ `getRTCVLogs` de naam van de methode en een JSON-indelings teken reeks in payload. U kunt `{}` een lege Payload opgeven. 
-4. Stel de time-out voor de verbinding en de methode in en klik op **methode aanroepen**.
-5. Selecteer uw doel container en bouw een JSON-teken reeks voor de nettolading op met de para meters die worden beschreven in de sectie **syntaxis van logboek registratie** . Klik op **methode aanroepen** om de aanvraag uit te voeren.
+1. Ga naar de IoT Hub portalpagina, selecteer **Edge-apparaten** en selecteer vervolgens uw apparaat en uw diagnostische module. 
+2. Ga naar de detailpagina van de module en klik op het ***tabblad Directe*** methode.
+3. Typ `getRTCVLogs` bij Methodenaam en een tekenreeks in json-indeling in nettolading. U kunt `{}` invoeren. Dit is een lege nettolading. 
+4. Stel de time-outs voor de verbinding en methode in en klik op **Methode aanroepen.**
+5. Selecteer uw doelcontainer en bouw een json-tekenreeks voor de nettolading met behulp van de parameters die worden beschreven in de **sectie Syntaxis voor logboekregistratie.** Klik **op Methode aanroepen** om de aanvraag uit te voeren.
 
 >[!NOTE]
-> `getRTCVLogs`Als de methode wordt aangeroepen met een lege Payload, wordt een lijst geretourneerd met alle containers die op het apparaat zijn geïmplementeerd. De naam van de methode is hoofdletter gevoelig. U krijgt een 501-fout als er een onjuiste methode naam wordt opgegeven.
+> Als u de methode `getRTCVLogs` aanroept met een lege nettolading, wordt een lijst met alle containers die op het apparaat zijn geïmplementeerd, weergegeven. De naam van de methode is casegevoelig. U krijgt een 501-fout als er een onjuiste methodenaam wordt opgegeven.
 
-:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Aanroepen van de methode getRTCVLogs ":::
-![pagina directe methode getRTCVLogs](./media/spatial-analysis/direct-log-collection.png)
+:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="De methode getRTCVLogs aanroepen ":::
+![pagina met directe methode getRTCVLogs](./media/spatial-analysis/direct-log-collection.png)
 
  
-### <a name="logging-syntax"></a>Syntaxis van logboek registratie
+### <a name="logging-syntax"></a>Syntaxis voor logboekregistratie
 
-De onderstaande tabel geeft een lijst van de para meters die u kunt gebruiken bij het uitvoeren van query's op Logboeken.
+De onderstaande tabel bevat de parameters die u kunt gebruiken bij het uitvoeren van query's op logboeken.
 
-| Zoek | Beschrijving | Standaardwaarde |
+| Trefwoord | Beschrijving | Standaardwaarde |
 |--|--|--|
-| StartTime | Gewenste begin tijd van Logboeken, in milliseconden UTC. | `-1`, het begin van de runtime van de container. Wanneer `[-1.-1]` wordt gebruikt als een tijds bereik, retourneert de API logboeken van de laatste één uur.|
-| EndTime | Eind tijd van de gewenste Logboeken in milliseconden UTC. | `-1`, de huidige tijd. Wanneer `[-1.-1]` het tijds bereik wordt gebruikt, retourneert de API logboeken van de laatste één uur. |
-| ContainerId | Doel container voor het ophalen van Logboeken.| `null`Als er geen container-ID is. De API retourneert alle beschik bare containers informatie met Id's.|
-| DoPost | Voer de upload bewerking uit. Wanneer dit is ingesteld op `false` , wordt de aangevraagde bewerking uitgevoerd en wordt de upload grootte geretourneerd zonder dat de upload wordt uitgevoerd. Als deze instelling is ingesteld op `true` , wordt de asynchrone upload van de geselecteerde logboeken gestart | `false`, niet uploaden.|
-| Vertragen | Aangeven hoeveel regels logboeken per batch moeten worden geüpload | `1000`, Gebruikt u deze para meter om de post snelheid aan te passen. |
-| Filters | Filtert de logboeken die moeten worden geüpload | `null`filters kunnen worden opgegeven als sleutel-waardeparen op basis van de structuur van de ruimtelijke analyse logboeken: `[UTC, LocalTime, LOGLEVEL,PID, CLASS, DATA]` . Bijvoorbeeld: `{"TimeFilter":[-1,1573255761112]}, {"TimeFilter":[-1,1573255761112]}, {"CLASS":["myNode"]`|
+| StartTime | Gewenste begintijd van logboeken, in milliseconden UTC. | `-1`, het begin van de runtime van de container. Wanneer `[-1.-1]` wordt gebruikt als een tijdsbereik, retourneert de API logboeken van het afgelopen uur.|
+| EndTime | Gewenste eindtijd van logboeken, in milliseconden UTC. | `-1`, de huidige tijd. Wanneer `[-1.-1]` het tijdsbereik wordt gebruikt, retourneert de API logboeken van het afgelopen uur. |
+| ContainerId | Doelcontainer voor het ophalen van logboeken.| `null`, wanneer er geen container-id is. De API retourneert alle beschikbare gegevens van containers met -ID's.|
+| DoPost | Voer de uploadbewerking uit. Als deze is ingesteld op , wordt de aangevraagde bewerking uitgevoerd en wordt de uploadgrootte zonder `false` de upload uitgevoerd. Als deze optie is `true` ingesteld op , wordt de asynchrone upload van de geselecteerde logboeken gestart | `false`, niet uploaden.|
+| Vertragen | Geef aan hoeveel regels logboeken per batch moeten worden geüpload | `1000`, gebruik deze parameter om de postsnelheid aan te passen. |
+| Filters | Filtert logboeken die moeten worden geüpload | `null`, kunnen filters worden opgegeven als sleutel-waardeparen op basis van de structuur van de logboeken voor ruimtelijke analyse: `[UTC, LocalTime, LOGLEVEL,PID, CLASS, DATA]` . Bijvoorbeeld: `{"TimeFilter":[-1,1573255761112]}, {"TimeFilter":[-1,1573255761112]}, {"CLASS":["myNode"]`|
 
-De volgende tabel bevat de kenmerken in de query-antwoord.
+De volgende tabel bevat de kenmerken in het query-antwoord.
 
-| Zoek | Beschrijving|
+| Trefwoord | Description|
 |--|--|
-|DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is en het uploaden van Logboeken _ *_asynchroon_* * wordt gestart.|
-|TimeFilter| Tijd filter toegepast op de logboeken.|
-|ValueFilters| Tref woorden filters die worden toegepast op de logboeken. |
-|Neem| Start tijd van methode-uitvoering. |
-|ContainerId| Doel container-ID. |
-|FetchCounter| Totaal aantal logboek regels. |
-|FetchSizeInByte| Totale hoeveelheid logboek gegevens in bytes. |
-|MatchCounter| Geldig aantal logboek regels. |
-|MatchSizeInByte| Geldig aantal logboek gegevens in bytes. |
-|FilterCount| Het totale aantal logboek regels na het Toep assen van het filter. |
-|FilterSizeInByte| De totale hoeveelheid logboek gegevens in bytes na het Toep assen van het filter. |
-|FetchLogsDurationInMiliSec| Haal de duur van de bewerking op. |
-|PaseLogsDurationInMiliSec| De duur van de filter bewerking. |
-|PostLogsDurationInMiliSec| Duur van de post bewerking. |
+|DoPost| Waar  of *onwaar.* Geeft aan of logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200 als de aanvraag geldig is en begint met het uploaden van logboeken _*_asynchroon_**.|
+|TimeFilter| Tijdfilter toegepast op de logboeken.|
+|ValueFilters| Trefwoordenfilters die zijn toegepast op de logboeken. |
+|Tijdstempel| Begintijd van uitvoering van methode. |
+|ContainerId| Doelcontainer-id. |
+|FetchCounter| Totaal aantal logboekregels. |
+|FetchSizeInByte| Totale hoeveelheid logboekgegevens in bytes. |
+|MatchCounter| Geldig aantal logboekregels. |
+|MatchSizeInByte| Geldige hoeveelheid logboekgegevens in bytes. |
+|FilterCount| Totaal aantal logboekregels na het toepassen van het filter. |
+|FilterSizeInByte| Totale hoeveelheid logboekgegevens in bytes na het toepassen van het filter. |
+|FetchLogsDurationInMiliSec| Duur van op te halen bewerking. |
+|PaseLogsDurationInMiliSec| Duur filterbewerking. |
+|PostLogsDurationInMiliSec| Duur na bewerking. |
 
 #### <a name="example-request"></a>Voorbeeldaanvraag 
 
@@ -298,40 +298,40 @@ De volgende tabel bevat de kenmerken in de query-antwoord.
 }
 ```
 
-Controleer de regels voor het ophaal logboek, de tijden en de grootte als deze instellingen goed worden vervangen ***DoPost*** naar `true` en dat de logboeken met dezelfde filters naar bestemmingen pusht. 
+Controleer de regels, tijden en grootten van het logboek ophalen. Als deze instellingen er goed uitzien, vervangt u ***DoPost*** naar en die de logboeken met dezelfde filters naar `true` bestemmingen pusht. 
 
-U kunt Logboeken exporteren vanuit de Azure-Blob Storage bij het oplossen van problemen. 
+U kunt logboeken vanuit de Azure Blob Storage bij het oplossen van problemen. 
 
 ## <a name="common-issues"></a>Algemene problemen
 
-Als het volgende bericht wordt weer gegeven in de module Logboeken, kan het zijn dat uw Azure-abonnement moet worden goedgekeurd: 
+Als u het volgende bericht in de modulelogboeken ziet, kan dit betekenen dat uw Azure-abonnement moet worden goedgekeurd: 
 
-Container heeft geen geldige status. De validatie van het abonnement is mislukt met de status komt niet overeen. De API-sleutel is niet bedoeld voor het opgegeven container type. "
+'Container heeft geen geldige status. De validatie van het abonnement is mislukt met de status 'Komt niet overeen'. Api-sleutel is niet bedoeld voor het opgegeven containertype.
 
-Zie [goed keuring aanvragen voor het uitvoeren van de container](spatial-analysis-container.md#request-approval-to-run-the-container)voor meer informatie.
+Zie Goedkeuring aanvragen om de [container uit te voeren voor meer informatie.](spatial-analysis-container.md#request-approval-to-run-the-container)
 
-## <a name="troubleshooting-the-azure-stack-edge-device"></a>Problemen met het Azure Stack edge-apparaat oplossen
+## <a name="troubleshooting-the-azure-stack-edge-device"></a>Problemen met Azure Stack Edge apparaat oplossen
 
-In de volgende sectie vindt u informatie over fout opsporing en verificatie van de status van uw Azure Stack edge-apparaat.
+De volgende sectie is bedoeld voor hulp bij het debuggen en verifiëren van de status van Azure Stack Edge apparaat.
 
-### <a name="access-the-kubernetes-api-endpoint"></a>Toegang tot het Kubernetes API-eind punt. 
+### <a name="access-the-kubernetes-api-endpoint"></a>Toegang tot het Kubernetes API-eindpunt. 
 
-1. Ga in de lokale gebruikers interface van het apparaat naar de pagina **apparaten** . 
-2. Kopieer het eind punt van de Kubernetes API-service onder de **eind punten** van het apparaat. Dit eindpunt is een tekenreeks met de volgende indeling: `https://compute..[device-IP-address]`.
-3. Sla de tekenreeks met het eindpunt op. U gebruikt dit later bij het configureren `kubectl` voor toegang tot het Kubernetes-cluster.
+1. Ga in de lokale gebruikersinterface van uw apparaat naar de **pagina** Apparaten. 
+2. Kopieer **onder Apparaat-eindpunten** het service-eindpunt van de Kubernetes-API. Dit eindpunt is een tekenreeks met de volgende indeling: `https://compute..[device-IP-address]`.
+3. Sla de tekenreeks met het eindpunt op. U gebruikt deze later bij het configureren voor `kubectl` toegang tot het Kubernetes-cluster.
 
-### <a name="connect-to-powershell-interface"></a>Verbinding maken met de Power shell-interface
+### <a name="connect-to-powershell-interface"></a>Verbinding maken met de PowerShell-interface
 
-Op afstand verbinding maken vanaf een Windows-client. Nadat het Kubernetes-cluster is gemaakt, kunt u de toepassingen beheren via dit cluster. U moet verbinding maken met de Power shell-interface van het apparaat. Afhankelijk van het besturings systeem van de client, kunnen de procedures voor het extern maken van een verbinding met het apparaat afwijken. De volgende stappen gelden voor een Windows-client met Power shell.
+Maak op afstand verbinding vanaf een Windows-client. Nadat het Kubernetes-cluster is gemaakt, kunt u de toepassingen beheren via dit cluster. U moet verbinding maken met de PowerShell-interface van het apparaat. Afhankelijk van het besturingssysteem van de client kunnen de procedures voor het extern verbinden met het apparaat verschillen. De volgende stappen zijn voor een Windows-client met PowerShell.
 
 > [!TIP]
-> * Voordat u begint, moet u ervoor zorgen dat Windows Power shell 5,0 of hoger wordt uitgevoerd op de Windows-client.
-> * Power shell is ook [beschikbaar in Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
+> * Voordat u begint, moet u ervoor zorgen dat uw Windows-client wordt uitgevoerd Windows PowerShell 5.0 of hoger.
+> * PowerShell is ook [beschikbaar op Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
-1. Een Windows Power shell-sessie uitvoeren als beheerder. 
-    1. Zorg ervoor dat de Windows Remote Management-service wordt uitgevoerd op de client. Typ bij de opdracht prompt `winrm quickconfig` .
+1. Voer een Windows PowerShell uit als beheerder. 
+    1. Zorg ervoor dat de Windows Remote Management-service wordt uitgevoerd op uw client. Typ bij de `winrm quickconfig` opdrachtprompt.
 
-2. Wijs een variabele toe aan het IP-adres van het apparaat. Bijvoorbeeld `$ip = "<device-ip-address>"`.
+2. Wijs een variabele toe voor het IP-adres van het apparaat. Bijvoorbeeld `$ip = "<device-ip-address>"`.
 
 3. Gebruik de volgende opdracht om het IP-adres van uw apparaat toe te voegen aan de lijst met vertrouwde hosts van de client. 
 
@@ -339,33 +339,33 @@ Op afstand verbinding maken vanaf een Windows-client. Nadat het Kubernetes-clust
     Set-Item WSMan:\localhost\Client\TrustedHosts $ip -Concatenate -Force
     ```
  
-4. Start een Windows Power shell-sessie op het apparaat. 
+4. Start een Windows PowerShell op het apparaat. 
 
     ```powershell
     Enter-PSSession -ComputerName $ip -Credential $ip\EdgeUser -ConfigurationName Minishell
     ```
 
-5. Geef het wacht woord op wanneer u hierom wordt gevraagd. Gebruik hetzelfde wacht woord dat wordt gebruikt om u aan te melden bij de lokale webinterface. Het standaard wacht woord voor de lokale webinterface is `Password1` . 
+5. Geef het wachtwoord op wanneer u hier om wordt gevraagd. Gebruik hetzelfde wachtwoord dat wordt gebruikt om u aan te melden bij de lokale webinterface. Het standaardwachtwoord voor de lokale webinterface is `Password1` . 
 
 ### <a name="access-the-kubernetes-cluster"></a>Toegang tot het Kubernetes-cluster
 
-Nadat het Kubernetes-cluster is gemaakt, kunt u het `kubectl` opdracht regel programma gebruiken om toegang te krijgen tot het cluster.
+Nadat het Kubernetes-cluster is gemaakt, kunt u het `kubectl` opdrachtregelprogramma gebruiken om toegang te krijgen tot het cluster.
 
-1. Maak een nieuwe naam ruimte. 
+1. Maak een nieuwe naamruimte. 
 
     ```powershell
     New-HcsKubernetesNamespace -Namespace
     ```
 
-2. Maak een gebruiker en haal een configuratie bestand op. Met deze opdracht worden de configuratie gegevens voor het Kubernetes-cluster uitgevoerd. Kopieer deze gegevens en sla deze op in een bestand met de naam *config*. Sla het bestand niet op als bestands extensie.
+2. Maak een gebruiker en haal een configuratiebestand op. Met deze opdracht worden configuratiegegevens voor het Kubernetes-cluster uitgevoerd. Kopieer deze informatie en sla deze op in een bestand met de *naam config*. Sla het bestand niet op als bestandsextensie.
     
     ```powershell
     New-HcsKubernetesUser -UserName
     ```
 
-3. Voeg het *configuratie* bestand toe aan de map *. uitvoeren* in uw gebruikers profiel op de lokale computer.    
+3. Voeg het *configuratiebestand toe* aan de *map .kube* in uw gebruikersprofiel op de lokale computer.    
 
-4. Koppel de naam ruimte aan de gebruiker die u hebt gemaakt.
+4. Koppel de naamruimte aan de gebruiker die u hebt gemaakt.
 
     ```powershell
     Grant-HcsKubernetesNamespaceAccess -Namespace -UserName
@@ -378,60 +378,60 @@ Nadat het Kubernetes-cluster is gemaakt, kunt u het `kubectl` opdracht regel pro
     ```
 
 6. Voeg een DNS-vermelding toe aan het hosts-bestand op uw systeem. 
-    1. Voer Klad blok als Administrator uit en open het *hosts* -bestand dat zich bevindt in `C:\windows\system32\drivers\etc\hosts` . 
-    2. Maak een vermelding in het hosts-bestand met het IP-adres van het apparaat en het DNS-domein dat u hebt gekregen op de pagina **apparaat** in de lokale gebruikers interface. Het eind punt dat u moet gebruiken, ziet er ongeveer als volgt uit: `https://compute.asedevice.microsoftdatabox.com/10.100.10.10` .
+    1. Voer Kladblok uit als beheerder en open het *hosts-bestand* dat zich bevindt op `C:\windows\system32\drivers\etc\hosts` . 
+    2. Maak een vermelding in het hosts-bestand met het IP-adres van het apparaat en het DNS-domein dat u hebt ontvangen van de **pagina Apparaat** in de lokale gebruikersinterface. Het eindpunt dat u moet gebruiken, ziet er ongeveer als de volgende uit: `https://compute.asedevice.microsoftdatabox.com/10.100.10.10` .
 
-7. Controleer of u verbinding kunt maken met het Kubernetes.
+7. Controleer of u verbinding kunt maken met de Kubernetes-pods.
 
     ```powershell
     kubectl get pods -n "iotedge"
     ```
 
-Als u container logboeken wilt ophalen, voert u de volgende opdracht uit:
+Voer de volgende opdracht uit om containerlogboeken op te halen:
 
 ```powershell
 kubectl logs <pod-name> -n <namespace> --all-containers
 ```
 
-### <a name="useful-commands"></a>Handige opdrachten
+### <a name="useful-commands"></a>Nuttige opdrachten
 
 |Opdracht  |Beschrijving  |
 |---------|---------|
-|`Get-HcsKubernetesUserConfig -AseUser`     | Hiermee wordt een Kubernetes-configuratie bestand gegenereerd. Wanneer u de opdracht gebruikt, kopieert u de gegevens naar een bestand met de naam *config*. Sla het bestand niet op met een bestands extensie.        |
+|`Get-HcsKubernetesUserConfig -AseUser`     | Genereert een Kubernetes-configuratiebestand. Wanneer u de opdracht gebruikt, kopieert u de informatie naar een bestand met de *naam config*. Sla het bestand niet op met een bestandsextensie.        |
 | `Get-HcsApplianceInfo` | Retourneert informatie over uw apparaat. |
-| `Enable-HcsSupportAccess` | Hiermee worden toegangs referenties gegenereerd om een ondersteunings sessie te starten. |
+| `Enable-HcsSupportAccess` | Genereert toegangsreferenties om een ondersteuningssessie te starten. |
 
 
-## <a name="how-to-file-a-support-ticket-for-spatial-analysis"></a>Een ondersteunings ticket indienen voor ruimtelijke analyse 
+## <a name="how-to-file-a-support-ticket-for-spatial-analysis"></a>Een ondersteuningsticket indienen voor ruimtelijke analyse 
 
-Als u meer ondersteuning nodig hebt bij het vinden van een oplossing voor een probleem dat u hebt met de container voor ruimtelijke analyse, voert u de volgende stappen uit om een ondersteunings ticket in te vullen en in te dienen. Ons team krijgt een extra richt lijn. 
+Als u meer ondersteuning nodig hebt bij het vinden van een oplossing voor een probleem met de ruimtelijke analysecontainer, volgt u deze stappen om een ondersteuningsticket in te vullen en in te dienen. Ons team neemt contact met u op met aanvullende richtlijnen. 
 
-### <a name="fill-out-the-basics"></a>Vul de basis beginselen in 
-Maak een nieuw ondersteunings ticket op de pagina [nieuwe ondersteunings aanvraag](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) . Volg de aanwijzingen om de volgende para meters in te vullen:
+### <a name="fill-out-the-basics"></a>De basisbeginselen invullen 
+Maak een nieuw ondersteuningsticket op de [pagina Nieuwe ondersteuningsaanvraag.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) Volg de aanwijzingen om de volgende parameters in te vullen:
 
-![Ondersteunings basis](./media/support-ticket-page-1-final.png)
+![Basisbeginselen van ondersteuning](./media/support-ticket-page-1-final.png)
 
-1. Stel het **probleem type** in op `Technical` .
-2. Selecteer het abonnement dat u gebruikt voor het implementeren van de container voor ruimtelijke analyse.
-3. Selecteer `My services` en selecteer `Cognitive Services` als de service.
-4. Selecteer de resource die u wilt gebruiken voor het implementeren van de container voor ruimtelijke analyse.
-5. Schrijf een korte beschrijving van het probleem dat u hebt. 
-6. Selecteer `Spatial Analysis` als het type probleem.
-7. Selecteer de gewenste subtype in de vervolg keuzelijst.
-8. Selecteer **volgende: oplossingen** om naar de volgende pagina te gaan.
+1. Stel **Probleemtype in** op `Technical` .
+2. Selecteer het abonnement dat u gebruikt om de ruimtelijke analysecontainer te implementeren.
+3. Selecteer `My services` en selecteer als de `Cognitive Services` service.
+4. Selecteer de resource die u gebruikt om de container ruimtelijke analyse te implementeren.
+5. Schrijf een korte beschrijving van het probleem waarmee u te maken hebt. 
+6. Selecteer `Spatial Analysis` als uw probleemtype.
+7. Selecteer het juiste subtype in de vervolgkeuzekeuze.
+8. Selecteer **Volgende: Oplossingen om** door te gaan naar de volgende pagina.
 
 ### <a name="recommended-solutions"></a>Aanbevolen oplossingen
-In de volgende fase worden aanbevolen oplossingen aangeboden voor het probleem type dat u hebt geselecteerd. Met deze oplossingen worden de meest voorkomende problemen opgelost, maar als het niet nuttig is voor uw oplossing, selecteert u **volgende: Details** om naar de volgende stap te gaan.
+De volgende fase biedt aanbevolen oplossingen voor het probleemtype dat u hebt geselecteerd. Met deze oplossingen worden de meest voorkomende problemen opgelost, maar als dit niet nuttig is voor uw oplossing, selecteert u **Volgende: Details** om naar de volgende stap te gaan.
 
 ### <a name="details"></a>Details
-Op deze pagina kunt u extra informatie over het probleem dat u hebt gericht toevoegen. Zorg ervoor dat u zo veel mogelijk details opneemt, omdat de technici het probleem beter kunnen verfijnen. Neem de contact wijze van uw voor keur en de ernst van het probleem op zodat we u op de juiste wijze kunnen bereiken, en selecteer **volgende: controleren + maken** om naar de volgende stap te gaan. 
+Voeg op deze pagina aanvullende informatie toe over het probleem waarmee u te maken hebt. Zorg ervoor dat u zo veel mogelijk details op neemt, omdat dit onze technici helpt het probleem beter te beperken. Neem de gewenste contactmethode en de ernst van het probleem op, zodat we op de juiste wijze contact met u kunnen opnemen en selecteer **Volgende:** Beoordelen en maken om door te gaan naar de volgende stap. 
 
 ### <a name="review-and-create"></a>Controleren en maken 
-Bekijk de details van uw ondersteunings aanvraag om ervoor te zorgen dat alles nauw keurig is en het probleem effectief weergeeft. Zodra u klaar bent, selecteert u **maken** om het ticket naar ons team te verzenden. U ontvangt een e-mail bevestiging zodra uw ticket is ontvangen en ons team zal zo snel mogelijk aan de slag gaan. U kunt de status van uw ticket bekijken in het Azure Portal.
+Bekijk de details van uw ondersteuningsaanvraag om er zeker van te zijn dat alles klopt en het probleem effectief vertegenwoordigt. Wanneer u klaar bent, selecteert **u Maken om** het ticket naar ons team te verzenden. U ontvangt een e-mailbevestiging zodra uw ticket is ontvangen. Ons team zal er dan aan werken om zo snel mogelijk contact met u op te nemen. U kunt de status van uw ticket in de Azure Portal.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een web-app voor het tellen van personen implementeren](spatial-analysis-web-app.md)
-* [Ruimtelijke-analyse bewerkingen configureren](./spatial-analysis-operations.md)
-* [Gids voor camera plaatsing](spatial-analysis-camera-placement.md)
-* [Hand leiding voor zone-en lijn plaatsing](spatial-analysis-zone-line-placement.md)
+* [Een webtoepassing voor het tellen van personen implementeren](spatial-analysis-web-app.md)
+* [Bewerkingen voor ruimtelijke analyse configureren](./spatial-analysis-operations.md)
+* [Handleiding voor het plaatsen van camera's](spatial-analysis-camera-placement.md)
+* [Handleiding voor zone- en regelplaatsing](spatial-analysis-zone-line-placement.md)

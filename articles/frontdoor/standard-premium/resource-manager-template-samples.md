@@ -1,43 +1,45 @@
 ---
-title: Voor beelden van Resource Manager-sjablonen-Azure front-deur
-description: Informatie over voorbeeld Azure Resource Manager sjablonen die zijn meegeleverd voor Azure front-deur.
+title: Resource Manager sjabloonvoorbeelden - Azure Front Door
+description: Informatie over voorbeeldsjablonen Azure Resource Manager die zijn opgegeven voor Azure Front Door.
 services: frontdoor
 author: johndowns
 ms.author: jodowns
 ms.service: frontdoor
 ms.topic: sample
-ms.date: 03/24/2021
-ms.openlocfilehash: 929adb0be948339af033d85b0dabd7e1cedf353e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/16/2021
+ms.openlocfilehash: 3559270710f56d43fe486e2e3d3e41c63e2a619b
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105561743"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107565828"
 ---
-# <a name="azure-resource-manager-templates-for-azure-front-door"></a>Azure Resource Manager sjablonen voor de voor deur van Azure
+# <a name="azure-resource-manager-templates-for-azure-front-door"></a>Azure Resource Manager sjablonen voor Azure Front Door
 
 > [!Note]
-> Deze documentatie is voor Azure front deur Standard/Premium (preview). Zoekt u informatie over de voor deur van Azure? [Hier](../front-door-overview.md)weer geven.
+> Deze documentatie is voor Azure Front Door Standard/Premium (preview). Zoekt u informatie over Azure Front Door? Bekijk [hier](../front-door-overview.md).
 
-De volgende tabel bevat koppelingen naar Azure Resource Manager sjablonen voor Azure front-deur, met referentie architecturen, waaronder andere Azure-Services.
+De volgende tabel bevat koppelingen naar Azure Resource Manager sjablonen voor Azure Front Door, met referentiearchitectarchitecten, waaronder andere Azure-services.
 
 | Voorbeeld | Beschrijving |
 |-|-|
-| [Regelset](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set/) | Hiermee maakt u een voor deur profiel en een regel reeks.  |
+| [Front Door (snel maken)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium/) | Hiermee maakt u Front Door basisprofiel met inbegrip van een eindpunt, oorspronggroep, oorsprong en route.  |
+| [Regelset](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-rule-set/) | Hiermee maakt Front Door profiel en regelset.  |
+| [WAF-beleid met aangepaste regel](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-waf-custom/) | Hiermee maakt u Front Door en WAF met een aangepaste regel.  |
 |**App Service oorsprongen**| **Beschrijving** |
-| [App Service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-app-service-public) | Hiermee maakt u een App Service-app met een openbaar eind punt en een front deur profiel.  |
-| [App Service met persoonlijke koppeling](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-app-service-private-link) | Hiermee maakt u een App Service-app met een persoonlijk eind punt en een front deur profiel.  |
-| [Een App Service omgeving met een persoonlijke koppeling](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-app-service-environment-internal-private-link) | Hiermee maakt u een App Service omgeving, een app met een persoonlijk eind punt en een front deur profiel.  |
+| [App Service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-app-service-public) | Hiermee maakt App Service app met een openbaar eindpunt en een Front Door profiel.  |
+| [App Service met Private Link](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-app-service-private-link) | Hiermee maakt App Service app met een privé-eindpunt en een Front Door profiel.  |
+| [App Service omgeving met Private Link](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-app-service-environment-internal-private-link) | Hiermee maakt App Service omgeving, een app met een privé-eindpunt en een Front Door profiel.  |
 |**Azure Functions oorsprongen**| **Beschrijving** |
-| [Azure Functions](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-function-public/) | Hiermee maakt u een Azure Functions-app met een openbaar eind punt en een front deur profiel.  |
-| [Azure Functions met persoonlijke koppeling](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-function-private-link) | Hiermee maakt u een Azure Functions-app met een persoonlijk eind punt en een front deur profiel.  |
+| [Azure Functions](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-function-public/) | Hiermee maakt Azure Functions app met een openbaar eindpunt en een Front Door profiel.  |
+| [Azure Functions met Private Link](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-function-private-link) | Hiermee maakt Azure Functions app met een privé-eindpunt en een Front Door profiel.  |
 |**API Management oorsprongen**| **Beschrijving** |
-| [API Management (extern)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-api-management-external) | Hiermee maakt u een API Management-exemplaar met externe VNet-integratie en een front deur-profiel.  |
-|**Opslag oorsprong**| **Beschrijving** |
-| [Statische opslag website](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-storage-static-website) | Hiermee maakt u een Azure Storage account en een statische website met een openbaar eind punt en een front deur profiel.  |
-| [Opslag-blobs met een persoonlijke koppeling](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-storage-blobs-private-link) | Hiermee maakt u een Azure Storage account en BLOB-container met een persoonlijk eind punt en een front deur profiel.  |
+| [API Management (extern)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-api-management-external) | Hiermee maakt API Management-exemplaar met externe VNet-integratie en een Front Door profiel.  |
+|**Oorsprong van opslag**| **Beschrijving** |
+| [Statische opslagwebsite](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-storage-static-website) | Hiermee maakt Azure Storage account en statische website met een openbaar eindpunt en een Front Door profiel.  |
+| [Opslagblobs met Private Link](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-storage-blobs-private-link) | Hiermee maakt Azure Storage account en blobcontainer met een privé-eindpunt en een Front Door profiel.  |
 |**Application Gateway oorsprongen**| **Beschrijving** |
-| [Application Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-application-gateway-public) | Hiermee maakt u een Application Gateway en een front deur profiel. |
-|**Oorsprong van virtuele machines**| **Beschrijving** |
-| [Virtuele machine met private link service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-vm-private-link) | Hiermee maakt u een virtuele machine en een persoonlijke koppelings service, en een front deur profiel. |
+| [Application Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-application-gateway-public) | Hiermee maakt Application Gateway en een Front Door profiel. |
+|**Oorsprongen van virtuele machines**| **Beschrijving** |
+| [Virtuele machine met Private Link service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-vm-private-link) | Hiermee maakt u een virtuele machine, Private Link service en een Front Door profiel. |
 | | |

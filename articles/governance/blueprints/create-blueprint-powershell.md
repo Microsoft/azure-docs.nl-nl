@@ -3,12 +3,14 @@ title: 'Quickstart: Een blauwdruk maken met PowerShell'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de PowerShell.
 ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: 002ba6fcf20b10bcc44fb486a85bc24bfdd12ae3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom:
+- mode-api
+ms.openlocfilehash: 29c43da0c1467c74ddc85a447a0cf9addb574c7e
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105559023"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107538895"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met PowerShell
 
@@ -18,7 +20,7 @@ Als u leert hoe u blauwdrukken maakt en toewijst, kunnen er algemene patronen wo
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
 - Als deze nog niet is geïnstalleerd, volgt u de instructies in [De module Az.Blueprint toevoegen](./how-to/manage-assignments-ps.md#add-the-azblueprint-module) om de module **Az.Blueprint** van de PowerShell Gallery te installeren en te valideren.
-- Als u nog geen Azure-blauw drukken hebt gebruikt, registreert u de resource provider via Azure PowerShell met `Register-AzResourceProvider -ProviderNamespace Microsoft.Blueprint` .
+- Als u deze nog niet eerder Azure Blueprints gebruikt, registreert u de resourceprovider via Azure PowerShell bij `Register-AzResourceProvider -ProviderNamespace Microsoft.Blueprint` .
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

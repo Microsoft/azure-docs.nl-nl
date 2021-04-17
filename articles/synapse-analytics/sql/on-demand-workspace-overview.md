@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e1a0f4f22411e506cab3b54e955a4cdc16986fe2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f0abef835e406b442239cecd81fed5751f1c9a92
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101667494"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107378156"
 ---
 # <a name="serverless-sql-pool-in-azure-synapse-analytics"></a>Serverloze SQL-pool in Azure Synapse Analytics 
 
@@ -54,7 +54,7 @@ Er wordt in elke Azure Synapse-werkruimte een eindpunt voor een serverloze SQL-p
 
 ## <a name="client-tools"></a>Clienthulpprogramma's
 
-Met een serverloze SQL-pool kunnen bestaande hulpprogramma's voor ad-hoc SQL-query's en business intelligence gebruikmaken van gegevens in de data lake. Omdat SQL on-demand de vertrouwde T-SQL-syntaxis ondersteunt, kan elk hulpprogramma dat via een TDS-verbinding SQL kan aanbieden, on-demand [verbinding maken met en query's uitvoeren op Synapse SQL](connect-overview.md). U kunt verbinding maken met Azure Data Studio en ad-hoc query's uitvoeren of verbinding maken met Power BI om binnen enkele minuten inzichten te verzamelen.
+Met een serverloze SQL-pool kunnen bestaande hulpprogramma's voor ad-hoc SQL-query's en business intelligence gebruikmaken van gegevens in de data lake. Omdat het een vertrouwde T-SQL-syntaxis biedt, kan elk hulpprogramma dat TDS-verbinding kan maken met SQL-aanbiedingen verbinding maken met en [query's uitvoeren Synapse SQL.](connect-overview.md) U kunt verbinding maken met Azure Data Studio en ad-hoc query's uitvoeren of verbinding maken met Power BI om binnen enkele minuten inzichten te verzamelen.
 
 ## <a name="t-sql-support"></a>Ondersteuning voor T-SQL
 

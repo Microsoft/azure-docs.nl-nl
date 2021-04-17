@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/31/2021
+ms.date: 04/14/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 80170ae07edb731132a0a92c3bfd5849b9e8969b
-ms.sourcegitcommit: 99fc6ced979d780f773d73ec01bf651d18e89b93
+ms.openlocfilehash: 718f239e8e323e3e46545433840ac18a0a723557
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106088950"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107498710"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -20,4 +20,4 @@ ms.locfileid: "106088950"
 |[Controle of de resourcelocatie overeenkomt met de locatie van de groep](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a914e76-4921-4c19-b460-a2d36003525a) |Controle of de resourcelocatie overeenkomt met de locatie van de bijbehorende resourcegroep |controleren |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/ResourcesInResourceGroupLocation_Audit.json) |
 |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |Ingebouwde rollen controleren, zoals Eigenaar, Bijdrager, Lezer, in plaats van aangepaste RBAC-rollen, die gevoelig zijn voor fouten. Het gebruik van aangepaste rollen wordt behandeld als een uitzondering en vereist een rigoureuze beoordeling en bedreigingsmodellering |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
 |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |Dit beleid zorgt ervoor dat er geen aangepaste rollen voor abonnementseigenaren bestaan. |Controle, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
-|[Not allowed resource types](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6c112d4e-5bc7-47ae-a041-ea2d9dccd749) (Niet-toegestane resourcetypen) |Beperk welke resource typen kunnen worden geïmplementeerd in uw omgeving. Het beperken van resource typen kan de complexiteit en kwets baarheid van uw omgeving verminderen en helpt ook bij het beheren van de kosten. Nalevings resultaten worden alleen weer gegeven voor niet-compatibele resources. |Controleren, Weigeren, Uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/InvalidResourceTypes_Deny.json) |
+|[Not allowed resource types](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6c112d4e-5bc7-47ae-a041-ea2d9dccd749) (Niet-toegestane resourcetypen) |Beperk welke resourcetypen in uw omgeving kunnen worden geïmplementeerd. Het beperken van resourcetypen kan de complexiteit en het aanvalsoppervlak van uw omgeving verminderen en tegelijkertijd kosten besparen. Nalevingsresultaten worden alleen weergegeven voor niet-compatibele resources. |Controleren, Weigeren, Uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/InvalidResourceTypes_Deny.json) |

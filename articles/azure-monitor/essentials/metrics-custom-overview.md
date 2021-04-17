@@ -1,126 +1,126 @@
 ---
-title: Aangepaste metrische gegevens in Azure Monitor (preview-versie)
+title: Aangepaste metrische gegevens in Azure Monitor (preview)
 description: Meer informatie over aangepaste metrische gegevens in Azure Monitor en hoe deze worden gemodelleerd.
 author: anirudhcavale
 ms.author: ancav
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 01/25/2021
-ms.openlocfilehash: c6e946d5aedb06899a44851b79581dbc518f41b0
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 04/13/2021
+ms.openlocfilehash: f4ba3763dd781053349417fe3fed3a2848a06fc7
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102052310"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107515835"
 ---
-# <a name="custom-metrics-in-azure-monitor-preview"></a>Aangepaste metrische gegevens in Azure Monitor (preview-versie)
+# <a name="custom-metrics-in-azure-monitor-preview"></a>Aangepaste metrische gegevens in Azure Monitor (preview)
 
-Wanneer u resources en toepassingen in azure implementeert, kunt u beginnen met het verzamelen van telemetrie om inzicht te krijgen in de prestaties en de status. In azure zijn enkele metrische gegevens voor u beschikbaar. Deze metrische gegevens worden [Standard of platform](./metrics-supported.md)genoemd. Ze zijn echter beperkt. 
+Wanneer u resources en toepassingen in Azure implementeert, wilt u beginnen met het verzamelen van telemetrie om inzicht te krijgen in hun prestaties en status. Azure maakt een aantal metrische gegevens direct beschikbaar. Deze metrische gegevens worden [standaard of platform genoemd.](./metrics-supported.md) Ze zijn echter beperkt van aard. 
 
-Mogelijk wilt u een aantal aangepaste prestatie-indica toren of bedrijfsspecifieke metrische gegevens verzamelen om meer inzicht te krijgen. Deze **aangepaste** metrische gegevens kunnen worden verzameld via de telemetrie van uw toepassing, een agent die wordt uitgevoerd op uw Azure-resources of zelfs een systeem voor het bewaken van een externe locatie en rechtstreeks aan Azure monitor is verzonden. Nadat u deze hebt gepubliceerd op Azure Monitor, kunt u bladeren, query's en waarschuwingen uitvoeren op aangepaste metrische gegevens voor uw Azure-resources en-toepassingen naast de standaard gegevens die door Azure worden verzonden.
+Mogelijk wilt u enkele aangepaste prestatie-indicatoren of bedrijfsspecifieke metrische gegevens verzamelen om meer inzicht te krijgen. Deze **aangepaste metrische** gegevens kunnen worden verzameld via de telemetrie van uw toepassing, een agent die wordt uitgevoerd op uw Azure-resources of zelfs via een bewakingssysteem dat buiten het systeem wordt Azure Monitor. Nadat ze zijn gepubliceerd naar Azure Monitor, kunt u aangepaste metrische gegevens voor uw Azure-resources en -toepassingen naast de standaardmetrieken die door Azure worden uitgegeven, metrische gegevens bladeren, opvragen en waarschuwen.
 
-Azure Monitor aangepaste metrische gegevens zijn actueel in open bare preview. 
+Azure Monitor aangepaste metrische gegevens zijn actueel in openbare preview. 
 
 ## <a name="methods-to-send-custom-metrics"></a>Methoden voor het verzenden van aangepaste metrische gegevens
 
-Aangepaste metrische gegevens kunnen via verschillende methoden naar Azure Monitor worden verzonden:
-- Instrumenteer uw toepassing met behulp van de Azure-toepassing Insights-SDK en verzend aangepaste telemetrie naar Azure Monitor. 
-- Installeer de Azure Monitor agent (preview) op uw [Windows-of Linux Azure-VM](../agents/azure-monitor-agent-overview.md) en gebruik een [regel voor gegevens verzameling](../agents/data-collection-rule-azure-monitor-agent.md) om prestatie meter items te verzenden naar Azure monitor metrieken.
-- Installeer de Windows Azure Diagnostics (WAD)-extensie op [uw Azure-VM](../essentials/collect-custom-metrics-guestos-resource-manager-vm.md), [schaalset voor virtuele machines](../essentials/collect-custom-metrics-guestos-resource-manager-vmss.md), [klassieke virtuele](../essentials/collect-custom-metrics-guestos-vm-classic.md)machine of [klassieke Cloud Services](../essentials/collect-custom-metrics-guestos-vm-cloud-service-classic.md) en verzend prestatie meter items naar Azure monitor. 
-- Installeer de [InfluxData-telegrafa-agent](../essentials/collect-custom-metrics-linux-telegraf.md) op uw virtuele Azure Linux-machine en verzend metrische gegevens met behulp van de invoeg toepassing Azure monitor-uitvoer.
-- Aangepaste metrische gegevens [rechtstreeks naar de Azure Monitor rest API](./metrics-store-custom-rest-api.md)verzenden `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics` .
+Aangepaste metrische gegevens kunnen op verschillende Azure Monitor worden verzonden:
+- Instrumenteren van uw toepassing met behulp van Azure-toepassing Insights SDK en aangepaste telemetrie verzenden naar Azure Monitor. 
+- Installeer de Azure Monitor Agent (Preview) op uw Virtuele Windows- [](../agents/data-collection-rule-azure-monitor-agent.md) of [Linux Azure-VM](../agents/azure-monitor-agent-overview.md) en gebruik een regel voor gegevensverzameling om prestatiemeters te verzenden naar Azure Monitor metrische gegevens.
+- Installeer de Windows Azure Diagnostics-extensie (WAD) op uw [Azure-VM,](../essentials/collect-custom-metrics-guestos-resource-manager-vm.md) [virtuele-machineschaalset,](../essentials/collect-custom-metrics-guestos-resource-manager-vmss.md)klassieke [VM](../essentials/collect-custom-metrics-guestos-vm-classic.md)of klassieke [Cloud Services](../essentials/collect-custom-metrics-guestos-vm-cloud-service-classic.md) en verzend prestatiemeters naar Azure Monitor. 
+- Installeer de [MetricsData Telegraf-agent](../essentials/collect-custom-metrics-linux-telegraf.md) op uw Azure Linux-VM en verzend metrische gegevens met behulp van Azure Monitor uitvoerin plug-in.
+- Verzend aangepaste [metrische gegevens rechtstreeks naar de Azure Monitor REST API](./metrics-store-custom-rest-api.md), `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics` .
 
-## <a name="pricing-model-and-retention"></a>Prijs model en retentie
+## <a name="pricing-model-and-retention"></a>Prijsmodel en retentie
 
-Controleer de [Azure monitor prijs pagina](https://azure.microsoft.com/pricing/details/monitor/) voor meer informatie over wanneer facturering wordt ingeschakeld voor aangepaste metrische gegevens en metrische query's. Specifieke prijs informatie voor alle metrische gegevens, zoals aangepaste metrische gegevens en metrische query's, zijn beschikbaar op deze pagina. In samen vatting zijn er geen kosten verbonden aan het opnemen van standaard metrische gegevens (platform metrieken) in Azure Monitor metrische opslag, maar aangepaste metrische gegevens worden kosten in rekening gebracht wanneer ze algemene Beschik baarheid invoeren. Met metrische API-query's kunnen kosten in rekening worden gebracht.
+Ga naar [Azure Monitor pagina met](https://azure.microsoft.com/pricing/details/monitor/) prijzen voor meer informatie over wanneer facturering wordt ingeschakeld voor query's voor aangepaste metrische gegevens en metrische gegevens. Specifieke prijsdetails voor alle metrische gegevens, inclusief aangepaste metrische gegevens en metrische query's, zijn beschikbaar op deze pagina. Samengevat zijn er geen kosten verbonden aan het opnemen van standaard metrische gegevens (platformmetrieken) in Azure Monitor Metrics Store, maar voor aangepaste metrische gegevens worden kosten in rekening brengen wanneer ze algemeen beschikbaar worden. Voor metrische API-query's worden kosten in rekening brengen.
 
-Aangepaste metrische gegevens worden bewaard voor [dezelfde hoeveelheid tijd als de metrische gegevens](../essentials/data-platform-metrics.md#retention-of-metrics)van het platform. 
+Aangepaste metrische gegevens worden bewaard voor [dezelfde tijd als metrische platformgegevens.](../essentials/data-platform-metrics.md#retention-of-metrics) 
 
 > [!NOTE]  
-> Gegevens die worden verzonden naar Azure Monitor via de Application Insights SDK worden gefactureerd als opgenomen logboek gegevens. Alleen extra metrische kosten worden alleen in rekening gebracht als de functie voor het Application Insights onderdeel [waarschuwing inschakelen op aangepaste metrische dimensies](../app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation) is geselecteerd. Met dit selectie vakje worden gegevens naar de data base van de Azure Monitor metriek verzonden met behulp van de aangepaste Metrics-API om de complexere waarschuwingen toe te staan.  Meer informatie over het [Application Insights prijs model](../app/pricing.md#pricing-model) en de [prijzen in uw regio](https://azure.microsoft.com/pricing/details/monitor/).
+> Metrische gegevens die Azure Monitor via de SDK Application Insights, worden gefactureerd als opgenomen logboekgegevens. Er worden alleen extra kosten voor metrische gegevens in rekening gebracht als Application Insights functie Waarschuwingen inschakelen voor aangepaste [dimensies](../app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation) voor metrische gegevens is geselecteerd. Met dit selectievakje worden gegevens naar de Azure Monitor database met metrische gegevens met behulp van de api voor aangepaste metrische gegevens verstuurd om complexere waarschuwingen toe te staan.  Meer informatie over het [Application Insights en](../app/pricing.md#pricing-model) prijzen in [uw regio.](https://azure.microsoft.com/pricing/details/monitor/)
 
 
 ## <a name="how-to-send-custom-metrics"></a>Aangepaste metrische gegevens verzenden
 
-Wanneer u aangepaste metrische gegevens naar Azure Monitor stuurt, moet u het volgende informatie punt of elke waarde vermelden.
+Wanneer u aangepaste metrische gegevens naar Azure Monitor, moet elk gegevenspunt of elke gerapporteerde waarde de volgende informatie bevatten.
 
 ### <a name="authentication"></a>Verificatie
-Als u aangepaste metrische gegevens naar Azure Monitor wilt verzenden, moet de entiteit die de metrische gegevens indient, een geldig Azure Active Directory (Azure AD)-token in de **Bearer** -header van de aanvraag hebben. Er zijn een aantal ondersteunde manieren om een geldig Bearer-token te verkrijgen:
-1. [Beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md). Geeft een identiteit aan een Azure-resource zelf, zoals een virtuele machine. Managed Service Identity (MSI) is ontworpen om resources machtigingen te geven om bepaalde bewerkingen uit te voeren. Een voor beeld is het toestaan van een resource over het verzenden van metrische gegevens. Aan een resource of het MSI-bestand kunnen **bewakings gegevens** voor de uitgever van machtigingen worden verleend voor een andere resource. Met deze machtiging kan het MSI-bestand ook metrische gegevens verzenden voor andere resources.
-2. [Azure AD-Service-Principal](../../active-directory/develop/app-objects-and-service-principals.md). In dit scenario kan een Azure AD-toepassing of-service worden toegewezen aan machtigingen voor het verzenden van metrische gegevens over een Azure-resource.
-Azure Monitor valideert het toepassings token met behulp van open bare Azure AD-sleutels om de aanvraag te verifiëren. De rol van uitgever van de bestaande **bewakings metrieken** heeft deze machtiging al. Deze is beschikbaar in de Azure Portal. De Service-Principal, afhankelijk van de resources waarvoor de aangepaste metrische gegevens worden verstrekt, kan de rol van de **Uitgever van metrische gegevens voor bewaking** aan het vereiste bereik krijgen. Voor beelden zijn een abonnement, resource groep of specifieke resource.
+Als u aangepaste metrische gegevens wilt verzenden naar Azure Monitor, heeft de entiteit die de metrische gegevens indient, een geldig Azure Active Directory-token (Azure AD) nodig in de **Bearer-header** van de aanvraag. Er zijn een aantal ondersteunde manieren om een geldig Bearer-token te verkrijgen:
+1. [Beheerde identiteiten voor Azure-resources.](../../active-directory/managed-identities-azure-resources/overview.md) Geeft een identiteit aan een Azure-resource zelf, zoals een VM. Managed Service Identity (MSI) is ontworpen om resources machtigingen te geven voor het uitvoeren van bepaalde bewerkingen. Een voorbeeld hiervan is het toestaan van een resource om metrische gegevens over zichzelf te zenden. Aan een resource, of de MSI ervan, kunnen machtigingen van **Monitoring Metrics Publisher** worden verleend voor een andere resource. Met deze machtiging kan de MSI ook metrische gegevens voor andere resources zenden.
+2. [Azure AD-service-principal](../../active-directory/develop/app-objects-and-service-principals.md). In dit scenario kan aan een Azure AD-toepassing of -service machtigingen worden toegewezen voor het implementeren van metrische gegevens over een Azure-resource.
+Als u de aanvraag wilt verifiëren, Azure Monitor het token van de toepassing valideren met behulp van openbare Azure AD-sleutels. De bestaande **rol Uitgever van bewakingsgegevens** heeft deze machtiging al. Deze is beschikbaar in de Azure Portal. De service-principal kan, afhankelijk van de resources waarvoor aangepaste metrische gegevens worden gebruikt, de rol **Uitgever** van metrische bewakingsgegevens krijgen voor het vereiste bereik. Voorbeelden zijn een abonnement, resourcegroep of specifieke resource.
 
 > [!TIP]  
-> Wanneer u een Azure AD-token aanvraagt om aangepaste metrische gegevens te verzenden, moet u ervoor zorgen dat de doel groep of de bron waarvoor het token wordt aangevraagd, is `https://monitoring.azure.com/` . Zorg ervoor dat u de opvolging '/' opgeeft.
+> Wanneer u een Azure AD-token aanvraagt om aangepaste metrische gegevens te implementeren, moet u ervoor zorgen dat de doelgroep of resource waar het token voor wordt aangevraagd, `https://monitoring.azure.com/` is. Zorg ervoor dat u het volgende '/' op te nemen.
 
 ### <a name="subject"></a>Onderwerp
-Met deze eigenschap wordt vastgelegd voor welke Azure-Resource-ID de aangepaste metrische gegevens worden gerapporteerd. Deze informatie wordt gecodeerd in de URL van de API-aanroep die wordt gemaakt. Elke API kan alleen metrische waarden voor één Azure-resource indienen.
+Deze eigenschap legt vast voor welke Azure-resource-id de aangepaste metrische gegevens worden gerapporteerd. Deze informatie wordt gecodeerd in de URL van de API-aanroep die wordt gemaakt. Elke API kan alleen metrische waarden verzenden voor één Azure-resource.
 
 > [!NOTE]  
-> U kunt geen aangepaste metrische gegevens verzenden op basis van de resource-ID van een resource groep of abonnement.
+> U kunt geen aangepaste metrische gegevens naar de resource-id van een resourcegroep of abonnement zenden.
 
 
 ### <a name="region"></a>Region
-Met deze eigenschap wordt vastgelegd in welke Azure-regio de resource waarvoor u de metrische gegevens uitbrengt, wordt geïmplementeerd. Metrische gegevens moeten worden verzonden naar hetzelfde Azure Monitor regionale eind punt als de regio waarin de resource is geïmplementeerd. Aangepaste metrische gegevens voor een virtuele machine die is geïmplementeerd in West-Verenigde Staten, moeten bijvoorbeeld worden verzonden naar het regionale Azure Monitor eind punt Westus. De regio gegevens worden ook gecodeerd in de URL van de API-aanroep.
+Deze eigenschap legt vast in welke Azure-regio de resource waarvoor u metrische gegevens wilt gebruiken, wordt geïmplementeerd. Metrische gegevens moeten worden weggelaten naar Azure Monitor regionale eindpunt als de regio waarin de resource is geïmplementeerd. Aangepaste metrische gegevens voor een VM die is geïmplementeerd in VS - west moeten bijvoorbeeld worden verzonden naar het regionale Azure Monitor VS - west. De regiogegevens worden ook gecodeerd in de URL van de API-aanroep.
 
 > [!NOTE]  
-> Tijdens de open bare preview zijn aangepaste metrische gegevens alleen beschikbaar in een subset van Azure-regio's. Een lijst met ondersteunde regio's wordt beschreven in een latere sectie van dit artikel.
+> Tijdens de openbare preview zijn aangepaste metrische gegevens alleen beschikbaar in een subset van Azure-regio's. Een lijst met ondersteunde regio's wordt beschreven in een latere sectie van dit artikel.
 >
 >
 
 ### <a name="timestamp"></a>Tijdstempel
-Elk gegevens punt dat naar Azure Monitor wordt verzonden, moet worden gemarkeerd met een tijds tempel. Deze tijds tempel legt de datum/tijd vast waarop de metrische waarde wordt gemeten of verzameld. Azure Monitor worden metrische gegevens met tijds tempels geaccepteerd tot 20 minuten in het verleden en vijf minuten in de toekomst. De tijds tempel moet de ISO 8601-indeling hebben.
+Elk gegevenspunt dat wordt verzonden Azure Monitor moet worden gemarkeerd met een tijdstempel. Deze tijdstempel legt de Datum/tijd vast waarop de metrische waarde wordt gemeten of verzameld. Azure Monitor accepteert metrische gegevens met tijdstempels tot wel 20 minuten in het verleden en vijf minuten in de toekomst. De tijdstempel moet de ISO 8601-indeling hebben.
 
 ### <a name="namespace"></a>Naamruimte
-Naam ruimten zijn een manier om Vergelijk bare metrische gegevens te categoriseren of groeperen. Met behulp van naam ruimten kunt u isolatie verkrijgen tussen groepen metrische gegevens die verschillende inzichten of prestatie-indica toren kunnen verzamelen. U kunt bijvoorbeeld een naam ruimte hebben met de naam **contosomemorymetrics** die geheugen gebruik houdt van metrische gegevens die uw app profiel. Een andere naam ruimte met de naam **contosoapptransaction** kan alle metrische gegevens over gebruikers transacties in uw toepassing bijhouden.
+Naamruimten zijn een manier om vergelijkbare metrische gegevens te categoriseren of te groeperen. Door naamruimten te gebruiken, kunt u isolatie bereiken tussen groepen metrische gegevens die verschillende inzichten of prestatie-indicatoren kunnen verzamelen. U kunt bijvoorbeeld een naamruimte hebben met de naam **contosomemorymetrics** waarmee metrische gegevens voor geheugengebruik worden bijgeslagen die uw app profileren. Een andere naamruimte **met de naam contosoapptransaction** kan alle metrische gegevens over gebruikerstransacties in uw toepassing bijhouden.
 
 ### <a name="name"></a>Name
-**Naam** is de naam van de metrische gegevens die worden gerapporteerd. Normaal gesp roken is de naam beschrijvend genoeg om te helpen bij het identificeren van wat wordt gemeten. Een voor beeld hiervan is een metrische waarde die het aantal door het geheugen gebruikte bytes op een bepaalde VM meet. Dit kan een metrische naam zijn, zoals het **geheugen bytes dat in gebruik** is.
+**Naam** is de naam van de metrische gegevens die worden gerapporteerd. Normaal gesproken is de naam beschrijvend genoeg om te helpen bepalen wat er wordt gemeten. Een voorbeeld is een metrische gegevens waarmee het aantal geheugen bytes wordt meet dat op een bepaalde VM wordt gebruikt. Deze kan een metrische naam hebben, zoals **Geheugen bytes in gebruik.**
 
-### <a name="dimension-keys"></a>Dimensie sleutels
-Een dimensie is een sleutel-of waardepaar dat helpt bij het beschrijven van aanvullende kenmerken over de metrische gegevens die worden verzameld. Door de aanvullende kenmerken te gebruiken, kunt u meer informatie verzamelen over de metriek, waardoor u meer inzicht kunt krijgen. Zo kan de metrische **geheugen bytes in gebruik** bijvoorbeeld een dimensie sleutel hebben met de naam **process** waarmee wordt vastgelegd hoeveel bytes van geheugen elk proces op een virtuele machine gebruikt. Met deze sleutel kunt u de metrische gegevens filteren om te zien hoeveel geheugen-specifieke processen gebruikmaken van of om de vijf meest voorkomende processen te identificeren op basis van geheugen gebruik.
-Dimensies zijn optioneel, niet alle metrische gegevens kunnen dimensies hebben. Een aangepaste metriek kan Maxi maal 10 dimensies hebben.
+### <a name="dimension-keys"></a>Dimensiesleutels
+Een dimensie is een sleutel- of waardepaar waarmee u aanvullende kenmerken kunt beschrijven over de metrische gegevens die worden verzameld. Met behulp van de aanvullende kenmerken kunt u meer informatie verzamelen over de metrische gegevens, waardoor u meer inzicht kunt krijgen. De metrische gegevens **Geheugen bytes in** gebruik kunnen bijvoorbeeld een dimensiesleutel hebben met de naam **Proces** die vast leggen hoeveel bytes geheugen elk proces op een virtueleM verbruikt. Met behulp van deze sleutel kunt u de metrische gegevens filteren om te zien hoeveel geheugenspecifieke processen gebruiken of om de vijf meestgebruikte processen te identificeren op basis van geheugengebruik.
+Dimensies zijn optioneel. Mogelijk hebben niet alle metrische gegevens dimensies. Een aangepast metrisch gegeven kan maximaal 10 dimensies hebben.
 
-### <a name="dimension-values"></a>Dimensie waarden
-Bij het rapporteren van een metriek gegevens punt voor elke dimensie sleutel op de metrische waarde die wordt gerapporteerd, is er een overeenkomende dimensie waarde. Het is bijvoorbeeld mogelijk dat u het geheugen wilt rapporteren dat wordt gebruikt door de ContosoApp op uw virtuele machine:
+### <a name="dimension-values"></a>Dimensiewaarden
+Wanneer u een metrische gegevenspunt rapporteert, is er voor elke dimensiesleutel voor de metrische gegevens die worden gerapporteerd, een bijbehorende dimensiewaarde. U kunt bijvoorbeeld het geheugen rapporteren dat wordt gebruikt door de ContosoApp op uw VM:
 
-* De naam van de metriek zou **geheugen bytes in gebruik** zijn.
-* De dimensie sleutel wordt **verwerkt**.
-* De dimensie waarde wordt **ContosoApp.exe**.
+* De metrische naam is **Geheugen bytes in Gebruik.**
+* De dimensiesleutel zou **Proces zijn.**
+* De dimensiewaarde wordt **ContosoApp.exe**.
 
-Wanneer u een metrische waarde publiceert, kunt u slechts één dimensie waarde per dimensie sleutel opgeven. Als u hetzelfde geheugen gebruik voor meerdere processen op de virtuele machine verzamelt, kunt u meerdere metrische waarden voor die tijds tempel rapporteren. Elke metrische waarde zou een andere dimensie waarde voor de **proces** dimensie sleutel opgeven.
-Dimensies zijn optioneel, niet alle metrische gegevens kunnen dimensies hebben. Als voor een metrische post dimensie sleutels worden gedefinieerd, zijn overeenkomstige dimensie waarden verplicht.
+Wanneer u een metrische waarde publiceert, kunt u slechts één dimensiewaarde per dimensiesleutel opgeven. Als u hetzelfde geheugengebruik voor meerdere processen op de VM verzamelt, kunt u meerdere metrische waarden voor die tijdstempel rapporteren. Elke metrische waarde geeft een andere dimensiewaarde op voor de **dimensiesleutel** Proces.
+Dimensies zijn optioneel, niet alle metrische gegevens kunnen dimensies hebben. Als een metrische post dimensiesleutels definieert, zijn bijbehorende dimensiewaarden verplicht.
 
 ### <a name="metric-values"></a>Metrische waarden
-Azure Monitor worden alle metrische gegevens opgeslagen met granulatie intervallen van één minuut. We begrijpen dat er tijdens een bepaalde minuut een metriek mogelijk meerdere malen moet worden gesampled. Een voorbeeld is CPU-gebruik. Het is ook mogelijk dat er moet worden gemeten voor veel discrete gebeurtenissen. Een voor beeld is latentie van aanmeldings transacties. Als u het aantal onbewerkte waarden wilt beperken dat u wilt verzenden en betalen voor in Azure Monitor, kunt u de waarden lokaal vooraf combi neren en verzenden:
+Azure Monitor slaat alle metrische gegevens op met een granulariteitsinterval van één minuut. We begrijpen dat gedurende een bepaalde minuut een metrische gegevens mogelijk meerdere keren moeten worden bemonsterd. Een voorbeeld is CPU-gebruik. Of het moet mogelijk worden gemeten voor veel discrete gebeurtenissen. Een voorbeeld hiervan zijn latentie van aanmeldingstransacties. Als u het aantal onbewerkte waarden wilt beperken dat u in een Azure Monitor wilt Azure Monitor, kunt u de waarden lokaal vooraf aggregeren en de volgende waarden naar de volgende gegevens zenden:
 
-* **Min**: de minimale waargenomen waarde van alle voor beelden en metingen gedurende de minuut.
-* **Max**: de Maxi maal waargenomen waarde van alle voor beelden en metingen gedurende de minuut.
-* **Sum**: de som van alle waargenomen waarden van alle voor beelden en metingen gedurende de minuut.
-* **Aantal**: het aantal voor beelden en metingen dat is gemaakt tijdens de minuut.
+* **Min:** de minimaal waargenomen waarde van alle steekproeven en metingen gedurende de minuut.
+* **Maximum:** de maximale waargenomen waarde van alle steekproeven en metingen gedurende de minuut.
+* **Som:** de som van alle waargenomen waarden uit alle steekproeven en metingen gedurende de minuut.
+* **Aantal:** het aantal steekproeven en metingen dat gedurende de minuut is genomen.
 
-Als er bijvoorbeeld gedurende een minuut vier aanmeldings transacties voor uw app zijn, kunnen de resulterende gemeten latenties voor elk als volgt zijn:
+Als er bijvoorbeeld gedurende een bepaalde minuut vier aanmeldingstransacties voor uw app zijn geweest, kunnen de resulterende gemeten latentie voor elke transactie er als volgt uit zien:
 
-|Trans actie 1|Trans actie 2|Trans actie 3|Trans actie 4|
+|Transactie 1|Transactie 2|Transactie 3|Transactie 4|
 |---|---|---|---|
-|7 MS|4 MS|13 MS|16 MS|
+|7 ms|4 ms|13 ms|16 ms|
 
-De resulterende metrische publicatie voor Azure Monitor zou er als volgt uitzien:
+Vervolgens zou de resulterende publicatie van metrische Azure Monitor als volgt zijn:
 * Min: 4
-* Max.: 16
-* Sum: 40
+* Maximaal: 16
+* Som: 40
 * Aantal: 4
 
-Als uw toepassing niet lokaal kan worden geaggregeerd en elke afzonderlijke steek proef of gebeurtenis direct bij de verzameling moet worden opgehaald, kunt u de waarden voor onbewerkte metingen verzenden. Elke keer dat er een aanmeldings transactie plaatsvindt in uw app, kunt u bijvoorbeeld een metriek publiceren om te Azure Monitor met slechts één meting. Voor een aanmeldings transactie die 12 MS duurde, zou de metrische publicatie er als volgt uitzien:
+Als uw toepassing niet vooraf kan worden geaggregeerd en elke afzonderlijke steekproef of gebeurtenis onmiddellijk na het verzamelen moet worden verzonden, kunt u de onbewerkte metingswaarden naar de toepassing zenden. Telkens wanneer er bijvoorbeeld een aanmeldingstransactie plaatsvindt in uw app, publiceert u een metrisch Azure Monitor met slechts één meting. Voor een aanmeldingstransactie die 12 ms duurde, zou de publicatie van het metrische gegevens dus als volgt zijn:
 * Min: 12
-* Maximum: 12
+* Maximaal: 12
 * Som: 12
 * Aantal: 1
 
-Met dit proces kunt u tijdens een bepaalde minuut meerdere waarden voor dezelfde metrische plus dimensie combinatie verzenden. Azure Monitor worden vervolgens alle onbewerkte waarden voor een bepaalde minuut verzonden en samengevoegd.
+Met dit proces kunt u meerdere waarden voor dezelfde combinatie van metrische gegevens en dimensies gedurende een bepaalde minuut maken. Azure Monitor neemt vervolgens alle onbewerkte waarden die voor een bepaalde minuut worden uitgezonden, samen en aggregeert ze samen.
 
-### <a name="sample-custom-metric-publication"></a>Voor beeld van een aangepaste metrische publicatie
-In het volgende voor beeld maakt u een aangepaste metriek met de naam **geheugen bytes** die worden gebruikt onder het **geheugen profiel** metrische naam ruimte voor een virtuele machine. De metriek heeft één dimensie met de naam **process**. Voor de opgegeven tijds tempel verzenden we metrische waarden voor twee verschillende processen:
+### <a name="sample-custom-metric-publication"></a>Voorbeeld van publicatie van aangepaste metrische gegevens
+In het volgende voorbeeld maakt u een aangepast metrisch gegeven met de naam **Geheugen bytes in Gebruik** onder de metrische naamruimte **Geheugenprofiel** voor een virtuele machine. De metrische gegevens hebben één dimensie met de naam **Proces**. Voor de opgegeven tijdstempel worden metrische waarden voor twee verschillende processen gebruikt:
 
 ```json
 {
@@ -159,60 +159,84 @@ In het volgende voor beeld maakt u een aangepaste metriek met de naam **geheugen
   }
 ```
 > [!NOTE]  
-> Application Insights, de uitbrei ding van de diagnostische gegevens en de InfluxData-telegrafa-agent zijn al geconfigureerd voor het leveren van metrische waarden voor het juiste regionale eind punt en worden alle voor gaande eigenschappen in elke emissie overgedragen.
+> Application Insights zijn de extensie voor diagnostische gegevens en de Telegraf-agent InfluxData al geconfigureerd om metrische waarden te zenden op basis van het juiste regionale eindpunt en alle voorgaande eigenschappen in elk van deze eigenschappen te dragen.
 >
 >
 
 ## <a name="custom-metric-definitions"></a>Aangepaste metrische definities
-U hoeft geen aangepaste metriek vooraf te definiëren in Azure Monitor voordat deze wordt verzonden. Elk gegevens punt dat wordt gepubliceerd, bevat naam ruimte, naam en dimensie-informatie. De eerste keer dat een aangepaste metriek wordt verzonden naar Azure Monitor, wordt automatisch een metrische definitie gemaakt. Deze metrische definitie kan vervolgens worden gedetecteerd voor elke resource waarbij de metrische gegevens worden verzonden via de metrische definities.
+U hoeft geen aangepaste metrische gegevens vooraf te Azure Monitor voordat deze worden weggelaten. Elk gepubliceerd metrische gegevenspunt bevat informatie over naamruimte, naam en dimensie. De eerste keer dat er een aangepaste metrische gegevens worden Azure Monitor, wordt er dus automatisch een metrische definitie gemaakt. Deze definitie van metrische gegevens kan vervolgens worden vastgesteld voor elke resource waar de metrische gegevens voor worden ingediend via de metrische definities.
 
 > [!NOTE]  
-> Azure Monitor biedt nog geen ondersteuning voor het definiëren van **eenheden** voor een aangepaste metriek.
+> Azure Monitor biedt nog geen ondersteuning voor het definiëren **van eenheden** voor aangepaste metrische gegevens.
 
 ## <a name="using-custom-metrics"></a>Aangepaste metrische gegevens gebruiken
-Nadat aangepaste metrische gegevens zijn verzonden naar Azure Monitor, kunt u ze via de Azure Portal door bladeren en query's uitvoeren via de Azure Monitor REST-Api's. U kunt ook waarschuwingen maken om u te waarschuwen wanneer aan bepaalde voor waarden wordt voldaan.
+Nadat aangepaste metrische gegevens zijn verzonden naar Azure Monitor, kunt u deze bladeren via de Azure Portal en query's uitvoeren via Azure Monitor REST API's. U kunt er ook waarschuwingen voor maken om u te waarschuwen wanneer aan bepaalde voorwaarden wordt voldaan.
 
 > [!NOTE]
-> U moet een rol lezer of Inzender zijn om aangepaste metrische gegevens weer te geven. Zie [bewakings lezer](../../role-based-access-control/built-in-roles.md#monitoring-reader). 
+> U moet de rol lezer of inzender hebben om aangepaste metrische gegevens weer te geven. Zie [Lezer voor bewaking.](../../role-based-access-control/built-in-roles.md#monitoring-reader) 
 
-### <a name="browse-your-custom-metrics-via-the-azure-portal"></a>Door uw aangepaste metrische gegevens bladeren via de Azure Portal
+### <a name="browse-your-custom-metrics-via-the-azure-portal"></a>Blader door uw aangepaste metrische gegevens via Azure Portal
 1.    Ga naar de [Azure Portal](https://portal.azure.com).
-2.    Selecteer het deel venster **monitor** .
+2.    Selecteer het **deelvenster** Monitor.
 3.    Selecteer **Metrische gegevens**.
-4.    Selecteer een resource waarvoor u aangepaste metrische gegevens hebt verzonden.
-5.    Selecteer de metrische naam ruimte voor uw aangepaste metrische gegevens.
-6.    Selecteer de aangepaste metriek.
+4.    Selecteer een resource voor wie u aangepaste metrische gegevens hebt ingediend.
+5.    Selecteer de naamruimte voor metrische gegevens voor uw aangepaste metrische gegevens.
+6.    Selecteer de aangepaste metrische gegevens.
 
 > [!NOTE]
-> Zie [aan de slag met Azure Metrics Explorer](./metrics-getting-started.md) voor meer informatie over het weer geven van metrische gegevens in de Azure Portal.
+> Zie [Aan de slag met Azure Metrics Explorer](./metrics-getting-started.md) voor meer informatie over het weergeven van metrische gegevens in Azure Portal.
 
 ## <a name="supported-regions"></a>Ondersteunde regio’s
-Tijdens de open bare preview-periode is de mogelijkheid om aangepaste metrische gegevens te publiceren alleen beschikbaar in een subset van Azure-regio's. Deze beperking betekent dat metrische gegevens alleen voor resources in een van de ondersteunde regio's kunnen worden gepubliceerd. Zie [Azure-geografi](https://azure.microsoft.com/global-infrastructure/geographies/) voor meer informatie over Azure-regio's. De code van de Azure-regio die wordt gebruikt in de onderstaande eind punten is gewoon de naam van de regio met witruimte verwijderd de volgende tabel bevat de set ondersteunde Azure-regio's voor aangepaste metrische gegevens. Ook worden de bijbehorende eind punten vermeld waarvoor metrische gegevens voor resources in deze regio's moeten worden gepubliceerd:
+Tijdens de openbare preview is de mogelijkheid om aangepaste metrische gegevens te publiceren alleen beschikbaar in een subset van Azure-regio's. Deze beperking betekent dat metrische gegevens alleen kunnen worden gepubliceerd voor resources in een van de ondersteunde regio's. Zie [Azure-geografieën](https://azure.microsoft.com/global-infrastructure/geographies/) voor meer informatie over Azure-regio's. De Azure-regiocode die in de onderstaande eindpunten wordt gebruikt, is alleen de naam van de regio waarin de witruimte is verwijderd De volgende tabel bevat de set ondersteunde Azure-regio's voor aangepaste metrische gegevens. Ook worden de bijbehorende eindpunten vermeld waar metrische gegevens voor resources in deze regio's naar moeten worden gepubliceerd:
 
-|Azure-regio |Voor voegsel regionale eind punt|
+|Azure-regio |Regionaal eindpunt voorvoegsel|
 |---|---|
-| Alle open bare Cloud regio's | https://<azure_region_code>. monitoring.azure.com |
+| Alle openbare cloudregio's | https://<azure_region_code>.monitoring.azure.com |
 | **Azure Government** | |
-| VS (overheid) - Arizona | https: \/ /usgovarizona.monitoring.Azure.us |
+| VS (overheid) - Arizona | https: \/ /usgovarizona.monitoring.azure.us |
 | **China** | |
-| China - oost 2 | https: \/ /chinaeast2.monitoring.Azure.cn |
+| China - oost 2 | https: \/ /chinaeast2.monitoring.azure.cn |
 
-## <a name="latency-and-storage-retention"></a>Latentie en opslag bewaren
+## <a name="latency-and-storage-retention"></a>Latentie en opslagretentie
 
-Het toevoegen van een gloed nieuwe waarde of een nieuwe dimensie die wordt toegevoegd aan een metriek kan tot 2 tot drie minuten duren. In het systeem moeten gegevens in minder dan 30 seconden 99% van de tijd worden weer gegeven. 
+Het toevoegen van een geheel nieuwe metrische waarde of een nieuwe dimensie die wordt toegevoegd aan een metrische waarde kan 2 tot 3 minuten duren. Eenmaal in het systeem moeten gegevens in minder dan 30 seconden 99% van de tijd worden weergegeven. 
 
-Als u een metriek verwijdert of een dimensie verwijdert, kan de wijziging een week duren om een maand uit het systeem te verwijderen.
+Als u een metrische gegevens verwijdert of een dimensie verwijdert, kan het een week tot een maand duren om de wijziging uit het systeem te verwijderen.
 
 ## <a name="quotas-and-limits"></a>Quota en limieten
-Azure Monitor de volgende gebruiks limieten opleggen voor aangepaste metrische gegevens:
+Azure Monitor worden de volgende gebruikslimieten opgelegd voor aangepaste metrische gegevens:
 
 |Categorie|Limiet|
 |---|---|
-|Actieve tijd reeks/abonnementen/regio|50,000|
-|Dimensie sleutels per metriek|10|
-|Teken reeks lengte voor metrische naam ruimten, metrische namen, dimensie sleutels en dimensie waarden|256 tekens|
+|Actieve tijdreeksen/abonnementen/regio|50,000|
+|Dimensiesleutels per metrische gegevens|10|
+|Tekenreekslengte voor metrische naamruimten, metrische namen, dimensiesleutels en dimensiewaarden|256 tekens|
 
-Een actieve tijd reeks wordt gedefinieerd als een unieke combi natie van metrische gegevens, dimensie sleutels of dimensie waarden waarvan de metrische waarden in de afgelopen 12 uur zijn gepubliceerd.
+Een actieve tijdreeks wordt gedefinieerd als een unieke combinatie van metrische gegevens, dimensiesleutels of dimensiewaarden die in de afgelopen 12 uur metrische waarden hebben gepubliceerd.
+
+Als u meer wilt weten over de limiet van 50.000 tijdreeksen, moet u rekening houden met de volgende metrische gegevens:
+
+*Reactietijd van server* met dimensies: *Regio,* *Afdeling,* *CustomerID*
+
+Als u met deze metrische gegevens 10 regio's, 20 afdelingen en 100 klanten hebt die u 10 x 20 x 100 = 2000 tijdreeksen bieden. 
+
+Als u 100 regio's, 200 afdelingen en 2000 klanten hebt, 100 x 200 x 2000 = 40.000.000 tijdreeksen, die alleen al voor deze metrische gegevens ver boven de limiet ligt. 
+
+Nogmaals, deze limiet geldt niet voor afzonderlijke metrische gegevens. Dit is voor de som van al deze metrische gegevens in een abonnement en regio.  
+
+## <a name="design-limitations"></a>Ontwerpbeperkingen
+
+**Gebruik deze Application Insights voor** controledoeleinden: de pijplijn Application Insights maakt achter de schermen gebruik van de API voor aangepaste metrische gegevens. De pijplijn is geoptimaliseerd voor een groot aantal telemetrie met minimale gevolgen voor uw toepassing. Als zodanig beperkt de gegevensstroom of voorbeelden (neemt slechts een percentage van uw telemetriegegevens en negeert de rest) als uw binnenkomende gegevensstroom te groot wordt. Vanwege dit gedrag kunt u het niet gebruiken voor controledoeleinden, omdat sommige records waarschijnlijk worden uitgevallen. 
+
+**Metrische gegevens met een variabele in** de naam: gebruik geen variabele als onderdeel van de metrische naam, bijvoorbeeld een GUID of een tijdstempel. Hierdoor raakt u snel de limiet van 50.000 tijdreeksen. 
+ 
+**Dimensies voor metrische gegevens** met hoge kardinaliteit: metrische gegevens met te veel geldige waarden in een dimensie (een 'hoge kardinaliteit') hebben een veel grotere kans om de limiet van 50.000 te overschrijden. Over het algemeen moet u nooit een voortdurend veranderende waarde gebruiken in een dimensie- of metrische naam. Tijdstempel moet bijvoorbeeld NOOIT een dimensie zijn. Server, klant of productid kan worden gebruikt, maar alleen als u een kleiner aantal van deze typen hebt. Stel uzelf als test de vraag of u dergelijke gegevens in een grafiek in elke grafiek zou kunnen zien.  Als u 10 of misschien zelfs 100 servers hebt, kan het handig zijn om ze allemaal in een grafiek te zien ter vergelijking. Maar als u 1000 hebt, is de resulterende grafiek waarschijnlijk moeilijk of niet onmogelijk te lezen. De best practice is om deze op minder dan 100 geldige waarden te houden. Maximaal 300 is een grijs gebied.  Als u dit aantal wilt doorgenomen, gebruikt u in plaats daarvan Azure Monitor logboeken.   
+
+Als u een variabele in de naam of een dimensie met hoge kardinaliteit hebt, kan het volgende optreden. 
+- Metrische gegevens worden onbetrouwbaar vanwege bandbreedtebeperking
+- Metrics Explorer werkt niet
+- Waarschuwingen en meldingen worden onvoorspelbaar
+- De kosten kunnen onverwacht toenemen: Microsoft laadt geen kosten terwijl de aangepaste metrische gegevens met dimensies in openbare preview zijn. Zodra de kosten echter in de toekomst beginnen, worden er onverwachte kosten in rekening gebracht. Het plan is om kosten in rekening te brengen voor het verbruik van metrische gegevens op basis van het aantal bewaakte tijdreeksen en het aantal API-aanroepen.  
 
 ## <a name="next-steps"></a>Volgende stappen
 Aangepaste metrische gegevens van verschillende services gebruiken: 

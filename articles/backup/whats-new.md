@@ -3,156 +3,156 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: c5e6734c6a962fa43d79fc90fdfaa85923b6339f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 68e0e5cc0876840c30ab9e428a2b96bd7d667756
+ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105612480"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107516328"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
-Azure Backup is voortdurend verbeterd en brengt nieuwe functies uit die de beveiliging van uw gegevens in azure verbeteren. Met deze nieuwe functies wordt uw gegevens bescherming uitgebreid naar nieuwe werkbelasting typen, wordt de beveiliging verbeterd en wordt de beschik baarheid van uw back-upgegevens verbeterd. Ze voegen ook nieuwe mogelijkheden voor beheer, bewaking en automatisering toe.
+Azure Backup worden voortdurend verbeterd en nieuwe functies vrijgeven die de beveiliging van uw gegevens in Azure verbeteren. Met deze nieuwe functies breidt u uw gegevensbeveiliging uit naar nieuwe workloadtypen, verbetert u de beveiliging en verbetert u de beschikbaarheid van uw back-upgegevens. Ze voegen ook nieuwe beheer-, bewakings- en automatiseringsmogelijkheden toe.
 
-Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina of door u [te abonneren op updates](https://azure.microsoft.com/updates/?query=backup).
+U vindt meer informatie over de nieuwe releases door een bladwijzer te maken voor deze pagina of door u hier te abonneren [op updates.](https://azure.microsoft.com/updates/?query=backup)
 
-## <a name="updates-summary"></a>Samen vatting van updates
+## <a name="updates-summary"></a>Samenvatting van updates
 
-- 2021 maart
-  - [Back-ups van Azure-schijven zijn nu algemeen beschikbaar](#azure-disk-backup-is-now-generally-available)
-  - [Back-upcentrum is nu algemeen verkrijgbaar](#backup-center-is-now-generally-available)
-  - [Ondersteuning voor de archief tier voor Azure Backup (in preview-versie)](#archive-tier-support-for-azure-backup-in-preview)
+- Maart 2021
+  - [Azure Disk Backup is nu algemeen beschikbaar](#azure-disk-backup-is-now-generally-available)
+  - [Back-upcentrum is nu algemeen beschikbaar](#backup-center-is-now-generally-available)
+  - [Ondersteuning voor archieflagen voor Azure Backup (in preview)](#archive-tier-support-for-azure-backup-in-preview)
 - Februari 2021
-  - [Back-ups voor Azure-blobs (in preview-versie)](#backup-for-azure-blobs-in-preview)
+  - [Back-up voor Azure Blobs (in preview)](#backup-for-azure-blobs-in-preview)
 - Januari 2021
-  - [Back-ups van Azure-schijf (in preview-versie)](#azure-disk-backup-in-preview)
-  - [Versleuteling in rust met door de klant beheerde sleutels (algemene Beschik baarheid)](#encryption-at-rest-using-customer-managed-keys)
+  - [Azure Disk Backup (in preview)](#azure-disk-backup-in-preview)
+  - [Versleuteling in rust met door de klant beheerde sleutels (algemene beschikbaarheid)](#encryption-at-rest-using-customer-managed-keys)
 - November 2020
-  - [Azure Resource Manager sjabloon voor het maken van een back-up van Azure file share (AFS)](#azure-resource-manager-template-for-afs-backup)
-  - [Incrementele back-ups voor SAP HANA-data bases op virtuele machines van Azure (in preview-versie)](#incremental-backups-for-sap-hana-databases-in-preview)
+  - [Azure Resource Manager voor back-ups van Azure-bestands share (AFS)](#azure-resource-manager-template-for-afs-backup)
+  - [Incrementele back-ups voor SAP HANA databases op azure-VM's (in preview)](#incremental-backups-for-sap-hana-databases-in-preview)
 - September 2020
-  - [Back-upcentrum (in preview-versie)](#backup-center-in-preview)
-  - [Back-Azure Database for PostgreSQL (in preview-versie)](#backup-azure-database-for-postgresql-in-preview)
-  - [Back-up en herstel van selectieve schijven](#selective-disk-backup-and-restore)
-  - [Meerdere regio's herstellen voor SQL Server-en SAP HANA-data bases op virtuele Azure-machines (in preview-versie)](#cross-region-restore-for-sql-server-and-sap-hana-in-preview)
-  - [Ondersteuning voor back-ups van Vm's met Maxi maal 32 schijven (algemene Beschik baarheid)](#support-for-backup-of-vms-with-up-to-32-disks)
-  - [Vereenvoudigde back-upconfiguratie-ervaring voor SQL in azure Vm's](#simpler-backup-configuration-for-sql-in-azure-vms)
-  - [Back-SAP HANA in RHEL Azure Virtual Machines (in preview-versie)](#backup-sap-hana-in-rhel-azure-virtual-machines-in-preview)
-  - [Zone redundant Storage (ZRS) voor back-upgegevens (in preview-versie)](#zone-redundant-storage-zrs-for-backup-data-in-preview)
-  - [Zacht verwijderen voor SQL Server en SAP HANA workloads in azure-Vm's](#soft-delete-for-sql-server-and-sap-hana-workloads)
+  - [Back-upcentrum (in preview)](#backup-center-in-preview)
+  - [Back-Azure Database for PostgreSQL (in preview)](#backup-azure-database-for-postgresql-in-preview)
+  - [Back-up en herstel van selectieve schijf](#selective-disk-backup-and-restore)
+  - [Herstellen tussen regio's voor SQL Server en SAP HANA-databases op virtuele Azure-VM's (in preview)](#cross-region-restore-for-sql-server-and-sap-hana-in-preview)
+  - [Ondersteuning voor back-ups van VM's met maximaal 32 schijven (algemene beschikbaarheid)](#support-for-backup-of-vms-with-up-to-32-disks)
+  - [Vereenvoudigde back-upconfiguratie voor SQL in Azure-VM's](#simpler-backup-configuration-for-sql-in-azure-vms)
+  - [Back-SAP HANA in RHEL Azure Virtual Machines (in preview)](#backup-sap-hana-in-rhel-azure-virtual-machines-in-preview)
+  - [Zone-redundante opslag (ZRS) voor back-upgegevens (in preview)](#zone-redundant-storage-zrs-for-backup-data-in-preview)
+  - [Soft delete voor SQL Server en SAP HANA in Azure-VM's](#soft-delete-for-sql-server-and-sap-hana-workloads)
 
-## <a name="azure-disk-backup-is-now-generally-available"></a>Back-ups van Azure-schijven zijn nu algemeen beschikbaar
+## <a name="azure-disk-backup-is-now-generally-available"></a>Azure Disk Backup is nu algemeen beschikbaar
 
-Azure Backup biedt levenscyclus beheer voor de moment opname naar Azure Managed Disks door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor geconfigureerde tijds duren met behulp van het back-upbeleid.
+Azure Backup biedt beheer van de levenscyclus van momentopnamen voor Azure Managed Disks door het periodiek maken van momentopnamen te automatiseren en deze te bewaren voor geconfigureerde duur met behulp van back-upbeleid.
 
-Zie [overzicht van Azure Disk Backup](disk-backup-overview.md)voor meer informatie.
+Zie Overzicht van [Azure Disk Backup voor meer informatie.](disk-backup-overview.md)
 
-## <a name="backup-center-is-now-generally-available"></a>Back-upcentrum is nu algemeen verkrijgbaar
+## <a name="backup-center-is-now-generally-available"></a>Back-upcentrum is nu algemeen beschikbaar
 
-Backup Center vereenvoudigt het beheer van gegevens beveiliging op schaal door u in staat te stellen om back-upbeheer te detecteren, te beheren, te controleren, te bewaken en te optimaliseren vanuit één centrale console.
+Het Back-upcentrum vereenvoudigt het beheer van gegevensbeveiliging op schaal doordat u back-upbeheer vanaf één centrale console kunt ontdekken, beheren, bewaken, gebruiken en optimaliseren.
 
-Zie [overzicht van Back-upcentrum](backup-center-overview.md)voor meer informatie.
+Zie Overzicht van Backup [Center voor meer informatie.](backup-center-overview.md)
 
-## <a name="archive-tier-support-for-azure-backup-in-preview"></a>Ondersteuning voor de archief tier voor Azure Backup (in preview-versie)
+## <a name="archive-tier-support-for-azure-backup-in-preview"></a>Ondersteuning voor archieflagen voor Azure Backup (in preview)
 
-Azure Backup kunt u nu de kosten van back-ups voor lange termijn retentie verminderen met de beschik baarheid van de archief laag voor virtuele machines van Azure en SQL Server in azure virtual machines.
+Azure Backup kunt u nu de kosten van back-ups voor langetermijnretentie verlagen met de beschikbaarheid van Archieflaag voor virtuele Azure-machines en SQL Server in virtuele Azure-machines.
 
-Zie ondersteuning voor de [Archief laag (preview)](archive-tier-support.md)voor meer informatie.
+Zie Ondersteuning voor archieflagen [(preview) voor meer informatie.](archive-tier-support.md)
 
-## <a name="backup-for-azure-blobs-in-preview"></a>Back-ups voor Azure-blobs (in preview-versie)
+## <a name="backup-for-azure-blobs-in-preview"></a>Back-up voor Azure Blobs (in preview)
 
-Operationele back-ups voor blobs is een beheerde, lokale oplossing voor gegevens bescherming waarmee u uw blok-blobs kunt beveiligen tegen verschillende scenario's voor gegevens verlies zoals beschadigingen, Blob-verwijderingen en verwijdering van onbedoelde opslag accounts. De gegevens worden lokaal opgeslagen in het opslag account van de bron zelf en kunnen op elk gewenst moment worden hersteld naar een geselecteerd punt. Het biedt dus een eenvoudige, veilige en rendabele manier om uw blobs te beveiligen.
+Operationele back-up voor blobs is een beheerde, lokale oplossing voor gegevensbeveiliging waarmee u uw blok-blobs kunt beveiligen tegen verschillende scenario's voor gegevensverlies, zoals beschadigingen, blob-verwijderingen en onbedoeld verwijderen van opslagaccounts. De gegevens worden lokaal opgeslagen in het bronopslagaccount zelf en kunnen indien nodig worden hersteld naar een geselecteerd tijdstip. Het biedt dus een eenvoudige, veilige en rendabele manier om uw blobs te beveiligen.
 
-Operationele back-ups voor blobs worden met behulp van het Back-upcentrum, onder andere mogelijkheden voor back-upbeheer, voorzien van een enkel glas venster waarmee u back-ups op schaal kunt beheren, bewaken, gebruiken en analyseren.
+Operationele back-up voor blobs kan worden geïntegreerd met Backup Center, naast andere mogelijkheden voor back-upbeheer, om één venster te bieden dat u kan helpen bij het beheren, bewaken, gebruiken en analyseren van back-ups op schaal.
 
-Zie [overzicht van operationele back-ups voor Azure-blobs (in de preview-versie)](blob-backup-overview.md)voor meer informatie.
+Zie Overzicht van operationele [back-ups voor Azure Blobs (in preview) voor meer informatie.](blob-backup-overview.md)
 
-## <a name="azure-disk-backup-in-preview"></a>Back-ups van Azure-schijf (in preview-versie)
+## <a name="azure-disk-backup-in-preview"></a>Azure Disk Backup (in preview)
 
-Azure Disk Backup biedt een kant-en-klare oplossing voor het beheer van de moment opname van [azure Managed disks](../virtual-machines/managed-disks-overview.md) door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor een geconfigureerde duur met behulp van het back-upbeleid. U kunt de moment opnamen van de schijf met nul kosten van de infra structuur beheren, zonder dat u hiervoor aangepaste scripts of beheer overhead nodig hebt. Dit is een crash consistente back-upoplossing die tijdgebonden back-ups maakt van een beheerde schijf met behulp van [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md) met ondersteuning voor meerdere back-ups per dag. Het is ook een oplossing zonder agent en heeft geen invloed op de prestaties van productie toepassingen. Het ondersteunt back-ups en herstel van zowel besturings systeem-als gegevens schijven (inclusief gedeelde schijven), ongeacht of ze momenteel zijn gekoppeld aan een actieve virtuele machine van Azure.
+Azure Disk Backup biedt een gebruiksklare oplossing voor het beheer van de levenscyclus van momentopnamen voor [Azure Managed Disks](../virtual-machines/managed-disks-overview.md) door het periodiek maken van momentopnamen te automatiseren en deze gedurende een geconfigureerde periode te bewaren met behulp van back-upbeleid. U kunt de momentopnamen van de schijf beheren zonder infrastructuurkosten en zonder aangepaste scripts of beheeroverhead. Dit is een crash-consistente back-upoplossing die een point-in-time back-up van een beheerde schijf maakt met behulp van [incrementele](../virtual-machines/disks-incremental-snapshots.md) momentopnamen met ondersteuning voor meerdere back-ups per dag. Het is ook een agent-less oplossing en heeft geen invloed op de prestaties van productietoepassing. Het biedt ondersteuning voor back-up en herstel van zowel besturingssysteem- als gegevensschijven (inclusief gedeelde schijven), ongeacht of ze momenteel zijn gekoppeld aan een virtuele Azure-machine die wordt uitgevoerd.
 
-Zie [Azure Disk Backup (in Preview)](disk-backup-overview.md)voor meer informatie.
+Zie Azure [Disk Backup (in preview) voor meer informatie.](disk-backup-overview.md)
 
 ## <a name="encryption-at-rest-using-customer-managed-keys"></a>Versleuteling in rust met door de klant beheerde sleutels
 
-Ondersteuning voor versleuteling in rust met door de klant beheerde sleutels is nu algemeen beschikbaar. Dit biedt u de mogelijkheid om de back-upgegevens in uw Recovery Services kluizen te versleutelen met uw eigen sleutels die zijn opgeslagen in azure-sleutel kluizen. De versleutelings sleutel die wordt gebruikt voor het versleutelen van back-ups in de Recovery Services kluis kan afwijken van de sleutels die worden gebruikt voor het versleutelen van de bron. De gegevens worden beveiligd met behulp van een AES 256-gegevens versleutelings sleutel (DEK), die op zijn beurt wordt beveiligd met uw sleutels die zijn opgeslagen in de Key Vault. Vergeleken met versleuteling met door het platform beheerde sleutels (die standaard beschikbaar is), biedt dit u meer controle over uw sleutels en kunt u beter voldoen aan uw nalevings behoeften.
+Ondersteuning voor versleuteling-at-rest met behulp van door de klant beheerde sleutels is nu algemeen beschikbaar. Dit biedt u de mogelijkheid om de back-upgegevens in uw Recovery Services-kluizen te versleutelen met behulp van uw eigen sleutels die zijn opgeslagen in Azure Key Vaults. De versleutelingssleutel die wordt gebruikt voor het versleutelen van back-ups in de Recovery Services-kluis kan verschillen van de versleutelingssleutel die wordt gebruikt voor het versleutelen van de bron. De gegevens worden beveiligd met een op AES 256 gebaseerde gegevensversleutelingssleutel (DEK), die op zijn beurt wordt beveiligd met uw sleutels die zijn opgeslagen in de Key Vault. Vergeleken met versleuteling met behulp van door het platform beheerde sleutels (die standaard beschikbaar zijn), biedt dit u meer controle over uw sleutels en kunt u beter voldoen aan uw nalevingsbehoeften.
 
-Zie voor meer informatie [encryptie van back-upgegevens met door de klant beheerde sleutels](encryption-at-rest-with-cmk.md).
+Zie Versleuteling van [back-upgegevens met door de klant beheerde sleutels voor meer informatie.](encryption-at-rest-with-cmk.md)
 
-## <a name="azure-resource-manager-template-for-afs-backup"></a>Azure Resource Manager sjabloon voor AFS-back-up
+## <a name="azure-resource-manager-template-for-afs-backup"></a>Azure Resource Manager voor AFS-back-up
 
-Azure Backup ondersteunt nu het configureren van back-ups voor bestaande Azure-bestands shares met behulp van een Azure Resource Manager ARM-sjabloon. Met de sjabloon wordt de beveiliging voor een bestaande Azure-bestands share geconfigureerd door de juiste details op te geven voor de Recovery Services kluis en het back-upbeleid. Er wordt optioneel een nieuwe Recovery Services-kluis en een nieuw back-upbeleid gemaakt, en het opslagaccount met de bestandsshare wordt geregistreerd bij de Recovery Services-kluis.
+Azure Backup ondersteunt nu het configureren van back-ups voor bestaande Azure Azure Resource Manager sjabloon (ARM). Met de sjabloon configureert u de beveiliging voor een bestaande Azure-bestands share door de juiste details op te geven voor de Recovery Services-kluis en het back-upbeleid. Er wordt optioneel een nieuwe Recovery Services-kluis en een nieuw back-upbeleid gemaakt, en het opslagaccount met de bestandsshare wordt geregistreerd bij de Recovery Services-kluis.
 
-Zie [Azure Resource Manager sjablonen voor Azure backup](backup-rm-template-samples.md)voor meer informatie.
+Zie voor meer informatie Azure Resource Manager [sjablonen voor Azure Backup.](backup-rm-template-samples.md)
 
-## <a name="incremental-backups-for-sap-hana-databases-in-preview"></a>Incrementele back-ups voor SAP HANA-data bases (in preview-versie)
+## <a name="incremental-backups-for-sap-hana-databases-in-preview"></a>Incrementele back-ups voor SAP HANA databases (in preview)
 
-Azure Backup biedt nu ondersteuning voor incrementele back-ups voor SAP HANA-data bases die worden gehost op virtuele machines van Azure. Hierdoor kunt u sneller en rendabelere back-ups van uw SAP HANA gegevens maken.
+Azure Backup ondersteunt nu incrementele back-ups voor SAP HANA databases die worden gehost op Azure-VM's. Dit maakt snellere en rendabelere back-ups van uw SAP HANA mogelijk.
 
-Zie voor meer informatie [diverse opties die beschikbaar zijn tijdens het maken van een back-upbeleid](sap-hana-faq-backup-azure-vm.md#policy) en [het maken van een back-upbeleid voor SAP Hana data bases](tutorial-backup-sap-hana-db.md#creating-a-backup-policy).
+Zie verschillende opties die beschikbaar zijn [tijdens het](/sap-hana-faq-backup-azure-vm.yml#policy) maken van een back-upbeleid en hoe u een back-upbeleid maakt voor [SAP HANA databases.](tutorial-backup-sap-hana-db.md#creating-a-backup-policy)
 
-## <a name="backup-center-in-preview"></a>Back-upcentrum (in preview-versie)
+## <a name="backup-center-in-preview"></a>Back-upcentrum (in preview)
 
-Azure Backup heeft een nieuwe systeem eigen beheer mogelijkheid voor het beheren van uw volledige back-ups vanuit een centrale console. Back-upcentrum biedt u de mogelijkheid om gegevens beveiliging op schaal te bewaken, bedienen, beheren en optimaliseren op een uniforme manier die overeenkomt met de systeem eigen beheer ervaringen van Azure.
+Azure Backup heeft een nieuwe systeemeigen beheermogelijkheid ingeschakeld voor het beheren van uw hele back-up van een centrale console. Backup Center biedt u de mogelijkheid om gegevensbeveiliging op schaal te bewaken, te beheren en te optimaliseren op een uniforme manier, consistent met de systeemeigen beheerervaring van Azure.
 
-Met backup Center krijgt u een geaggregeerde weer gave van uw inventaris in abonnementen, locaties, resource groepen, kluizen en zelfs tenants met behulp van Azure Lighthouse. Het Back-upcentrum is ook een onderhouds centrum waarmee u uw back-upgerelateerde activiteiten kunt activeren, zoals het configureren van back-ups, herstel, het maken van beleids regels of kluizen, op één plek. Daarnaast kunt u met een naadloze integratie met Azure Policy uw omgeving beheren en de naleving van een back-upperspectief bijhouden. In de ingebouwde Azure-beleids regels die specifiek zijn voor Azure Backup, kunt u ook back-ups op schaal configureren.
+Met Backup Center krijgt u een geaggregeerde weergave van uw inventaris voor abonnementen, locaties, resourcegroepen, kluizen en zelfs tenants met behulp van Azure Lighthouse. Backup Center is ook een actiecentrum van waar u uw back-upactiviteiten kunt activeren, zoals het configureren van back-up, herstellen, maken van beleidsregels of kluizen, allemaal vanaf één plek. Bovendien kunt u met naadloze integratie Azure Policy uw omgeving en naleving bijhouden vanuit het perspectief van een back-up. Ingebouwde Azure-beleidsregels die specifiek zijn Azure Backup bieden u ook de mogelijkheid om back-ups op schaal te configureren.
 
-Zie [overzicht van Back-upcentrum](backup-center-overview.md)voor meer informatie.
+Zie Overzicht van Backup [Center voor meer informatie.](backup-center-overview.md)
 
-## <a name="backup-azure-database-for-postgresql-in-preview"></a>Back-Azure Database for PostgreSQL (in preview-versie)
+## <a name="backup-azure-database-for-postgresql-in-preview"></a>Back-Azure Database for PostgreSQL (in preview)
 
-Azure Backup-en Azure Data Base-Services hebben samen een bedrijfs klasse-back-upoplossing voor Azure PostgreSQL (nu beschikbaar als preview-versie). U kunt nu voldoen aan de vereisten voor gegevens beveiliging en naleving met een back-upbeleid dat door de klant wordt beheerd, waarmee back-ups tot wel tien jaar kunnen worden bewaard. Hiermee hebt u gedetailleerde controle over het beheer van de back-up-en herstel bewerkingen op het afzonderlijke database niveau. Op dezelfde manier kunt u met gemak herstellen over PostgreSQL-versies of naar Blob Storage.
+Azure Backup en Azure Database Services zijn samen gekomen om een back-upoplossing van bedrijfsklasse te bouwen voor Azure PostgreSQL (nu in preview). U kunt nu voldoen aan uw gegevensbeschermings- en nalevingsbehoeften met een door de klant beheerd back-upbeleid waarmee back-ups maximaal tien jaar kunnen worden bewaren. Hiermee hebt u gedetailleerde controle over het beheren van de back-up- en herstelbewerkingen op het niveau van de afzonderlijke database. Op dezelfde manier kunt u eenvoudig herstellen tussen PostgreSQL-versies of blobopslag.
 
-Zie [Azure database for PostgreSQL backup](backup-azure-database-postgresql.md)voor meer informatie.
+Zie back-up Azure Database for PostgreSQL [meer informatie.](backup-azure-database-postgresql.md)
 
-## <a name="selective-disk-backup-and-restore"></a>Back-up en herstel van selectieve schijven
+## <a name="selective-disk-backup-and-restore"></a>Back-up en herstel van selectieve schijf
 
-Azure Backup biedt ondersteuning voor het maken van een back-up van alle schijven (besturings systeem en gegevens) in een virtuele machine met behulp van de back-upoplossing voor VM'S. Nu kunt u, met behulp van de functies voor het maken en herstellen van selectieve schijven, een back-up maken van een subset van de gegevens schijven in een VM. Dit biedt een efficiënte en rendabele oplossing voor uw back-up-en herstel behoeften. Elk herstel punt bevat alleen de schijven die zijn opgenomen in de back-upbewerking.
+Azure Backup ondersteunt het maken van back-ups van alle schijven (besturingssysteem en gegevens) in een VM met behulp van de back-upoplossing voor virtuele machines. Nu kunt u met behulp van de functionaliteit voor back-up en herstel van selectieve schijven een back-up maken van een subset van de gegevensschijven in een virtuele machine. Dit biedt een efficiënte en rendabele oplossing voor uw back-up- en herstelbehoeften. Elk herstelpunt bevat alleen de schijven die zijn opgenomen in de back-upbewerking.
 
-Zie [selectief schijf back-ups maken en herstellen voor Azure virtual machines](selective-disk-backup-restore.md)voor meer informatie.
+Zie Selective [disk backup and restore for Azure virtual machines (Selectief maken van schijfback-up en herstel voor virtuele Azure-machines) voor meer informatie.](selective-disk-backup-restore.md)
 
-## <a name="cross-region-restore-for-sql-server-and-sap-hana-in-preview"></a>Meerdere regio's herstellen voor SQL Server en SAP HANA (in preview-versie)
+## <a name="cross-region-restore-for-sql-server-and-sap-hana-in-preview"></a>Herstellen tussen regio's voor SQL Server en SAP HANA (in preview)
 
-Met de introductie van meerdere regio's herstellen kunt u nu herstel bewerkingen in een secundaire regio initiëren om problemen met de uitval tijd in een primaire regio voor uw omgeving te verhelpen. Dit maakt de secundaire regio volledig beheerd. Azure Backup maakt gebruik van de back-upgegevens die worden gerepliceerd naar de secundaire regio voor dergelijke herstel bewerkingen.
+Met de introductie van herstel in verschillende regio's kunt u herstel naar eigen goed gevolg in een secundaire regio initiëren om echte downtimeproblemen in een primaire regio voor uw omgeving te beperken. Hierdoor wordt de secundaire regio volledig door de klant beheerd. Azure Backup maakt gebruik van de back-upgegevens die zijn gerepliceerd naar de secundaire regio voor dergelijke herstels.
 
-Naast ondersteuning voor het herstel van meerdere regio's voor virtuele Azure-machines is de functie uitgebreid voor het herstellen van SQL-en SAP HANA data bases in azure virtual machines.
+Naast ondersteuning voor herstel in meerdere regio's voor virtuele Azure-machines, is de functie nu ook uitgebreid voor het herstellen van SQL- en SAP HANA-databases in virtuele Azure-machines.
 
-Zie voor meer informatie [meerdere regio's herstellen voor SQL-data bases](restore-sql-database-azure-vm.md#cross-region-restore) en het [herstellen van meerdere regio's voor SAP Hana-data bases](sap-hana-db-restore.md#cross-region-restore).
+Zie Herstel tussen regio's voor [SQL-databases](restore-sql-database-azure-vm.md#cross-region-restore) en Herstellen tussen regio's voor SAP HANA [databases voor meer informatie.](sap-hana-db-restore.md#cross-region-restore)
 
-## <a name="support-for-backup-of-vms-with-up-to-32-disks"></a>Ondersteuning voor back-ups van Vm's met Maxi maal 32 schijven
+## <a name="support-for-backup-of-vms-with-up-to-32-disks"></a>Ondersteuning voor back-ups van VM's met maximaal 32 schijven
 
-Tot nu toe heeft Azure Backup 16 beheerde schijven per VM ondersteund. Azure Backup ondersteunt nu back-ups van Maxi maal 32 Managed disks per VM.
+Tot nu toe Azure Backup ondersteunde 16 beheerde schijven per VM. Nu ondersteunt Azure Backup back-up van maximaal 32 beheerde schijven per VM.
 
-Zie de [ondersteunings matrix voor VM-opslag](backup-support-matrix-iaas.md#vm-storage-support)voor meer informatie.
+Zie de ondersteuningsmatrix voor [VM-opslag voor meer informatie.](backup-support-matrix-iaas.md#vm-storage-support)
 
-## <a name="simpler-backup-configuration-for-sql-in-azure-vms"></a>Eenvoudigere back-upconfiguratie voor SQL in azure-Vm's
+## <a name="simpler-backup-configuration-for-sql-in-azure-vms"></a>Eenvoudigere back-upconfiguratie voor SQL in Azure-VM's
 
-Het configureren van back-ups voor uw SQL Server in azure-Vm's is nu nog eenvoudiger dankzij de configuratie van inline-back-ups die is geïntegreerd in het deel venster VM van de Azure Portal. In slechts een paar stappen kunt u back-up van uw SQL Server inschakelen om alle bestaande data bases te beveiligen, evenals de bestanden die in de toekomst worden toegevoegd.
+Het configureren van back-ups voor uw SQL Server in Azure-VM's is nu nog eenvoudiger met inline back-upconfiguratie geïntegreerd in het VM-deelvenster van de Azure Portal. In slechts enkele stappen kunt u back-ups van uw SQL Server om alle bestaande databases te beveiligen, evenals de databases die in de toekomst worden toegevoegd.
 
-Zie [een back-up maken van een SQL Server in het deel venster VM](backup-sql-server-vm-from-vm-pane.md)voor meer informatie.
+Zie Back-up maken van een SQL Server [vanuit het VM-deelvenster voor meer informatie.](backup-sql-server-vm-from-vm-pane.md)
 
-## <a name="backup-sap-hana-in-rhel-azure-virtual-machines-in-preview"></a>Back-SAP HANA in azure virtual machines van RHEL (in preview-versie)
+## <a name="backup-sap-hana-in-rhel-azure-virtual-machines-in-preview"></a>Back-SAP HANA in virtuele RHEL Azure-machines (in preview)
 
-Azure Backup is de systeem eigen back-upoplossing voor Azure en is BackInt gecertificeerd door SAP. Azure Backup hebt nu ondersteuning toegevoegd voor Red Hat Enterprise Linux (RHEL), een van de meest gebruikte Linux-besturings systemen met SAP HANA.
+Azure Backup is de systeemeigen back-upoplossing voor Azure en is BackInt gecertificeerd door SAP. Azure Backup heeft nu ondersteuning toegevoegd voor Red Hat Enterprise Linux (RHEL), een van de meest gebruikte Linux-besturingssystemen met SAP HANA.
 
-Zie de [ondersteunings matrix voor SAP Hana database back-upscenario](sap-hana-backup-support-matrix.md#scenario-support)voor meer informatie.
+Zie de ondersteuningsmatrix voor SAP HANA [databaseback-upscenario voor meer informatie.](sap-hana-backup-support-matrix.md#scenario-support)
 
-## <a name="zone-redundant-storage-zrs-for-backup-data-in-preview"></a>Zone redundant Storage (ZRS) voor back-upgegevens (in preview-versie)
+## <a name="zone-redundant-storage-zrs-for-backup-data-in-preview"></a>Zone-redundante opslag (ZRS) voor back-upgegevens (in preview)
 
-Azure Storage biedt een uitstekende verhouding tussen hoge prestaties, hoge Beschik baarheid en hoge gegevens tolerantie met de verschillende opties voor redundantie. Met Azure Backup kunt u deze voor delen ook uitbreiden naar back-upgegevens, met opties voor het opslaan van uw back-ups in lokaal redundante opslag (LRS) en geografisch redundante opslag (GRS). Nu zijn er extra duurzaamheids opties met de toegevoegde ondersteuning voor zone redundant Storage (ZRS).
+Azure Storage biedt een goede balans tussen hoge prestaties, hoge beschikbaarheid en hoge gegevens resiliency met de verschillende redundantieopties. Azure Backup kunt u deze voordelen ook uitbreiden naar back-upgegevens, met opties voor het opslaan van uw back-ups in lokaal redundante opslag (LRS) en geografisch redundante opslag (GRS). Er zijn nu aanvullende duurzaamheidsopties met de toegevoegde ondersteuning voor zone-redundante opslag (ZRS).
 
-Zie [opslag redundantie instellen voor de Recovery Services kluis](backup-create-rs-vault.md#set-storage-redundancy)voor meer informatie.
+Zie Opslag redundantie instellen [voor de Recovery Services-kluis voor meer informatie.](backup-create-rs-vault.md#set-storage-redundancy)
 
-## <a name="soft-delete-for-sql-server-and-sap-hana-workloads"></a>Zacht verwijderen voor SQL Server en SAP HANA werk belastingen
+## <a name="soft-delete-for-sql-server-and-sap-hana-workloads"></a>Soft delete voor SQL Server en SAP HANA workloads
 
-Problemen met betrekking tot beveiligings problemen, zoals malware, Ransomware en indringing, worden verhoogd. Deze beveiligings problemen kunnen kostbaar zijn, zowel voor geld als voor gegevens. Azure Backup biedt beveiligings functies die u helpen bij het beveiligen van back-upgegevens, zelfs na verwijdering.
+De zorgen over beveiligingsproblemen, zoals malware, ransomware en inbraak, nemen toe. Deze beveiligingsproblemen kunnen kostbaar zijn, zowel wat geld als gegevens betreft. Ter bescherming tegen dergelijke aanvallen biedt Azure Backup beveiligingsfuncties voor het beveiligen van back-upgegevens, zelfs na verwijdering.
 
-Een dergelijke functie is zacht verwijderen. Met zacht verwijderen, zelfs als een schadelijke actor een back-up verwijdert (of als er per ongeluk back-upgegevens worden verwijderd), worden de back-upgegevens 14 extra dagen bewaard, zodat het back-upitem zonder gegevens verlies kan worden hersteld. De extra 14 dagen voor het bewaren van back-upgegevens in de status ' voorlopig verwijderen ' maken geen kosten voor u.
+Een van deze functies is soft delete. Met een zachte verwijderperiode worden de back-upgegevens nog 14 dagen bewaard, zelfs als een kwaadwillende actor een back-up verwijdert (of als er per ongeluk back-upgegevens worden verwijderd), zodat dat back-upitem zonder gegevensverlies kan worden hersteld. De extra 14 dagen retentieperiode voor back-upgegevens met de status 'soft delete' heeft geen kosten voor u.
 
-Nu wordt de ondersteuning voor het uitvoeren van tijdelijke verwijderingen voor Azure-Vm's, SQL Server en SAP HANA werk belastingen in azure Vm's ook beveiligd met een tijdelijke verwijdering.
+Nu worden, naast ondersteuning voor het verwijderen van virtuele Azure-SQL Server, SQL Server- en SAP HANA-workloads in Azure-VM's ook beveiligd met 'soft delete'.
 
-Zie [voorlopig verwijderen voor SQL Server in azure VM en SAP Hana in azure VM-workloads](soft-delete-sql-saphana-in-azure-vm.md)voor meer informatie.
+Zie Voor meer informatie Soft [delete for SQL server in Azure VM (Soft Delete voor SQL Server in Azure VM) en SAP HANA in Azure VM-workloads.](soft-delete-sql-saphana-in-azure-vm.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Backup richtlijnen en best practices](guidance-best-practices.md)
+- [Azure Backup en best practices](guidance-best-practices.md)

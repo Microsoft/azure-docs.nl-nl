@@ -1,85 +1,85 @@
 ---
-title: Verbinding met virtuele machine starten-Azure
-description: De functie voor het starten van de virtuele machine in Connect configureren.
+title: Verbinding maken met virtuele machine starten - Azure
+description: Het configureren van de virtuele machine starten op de verbindingsfunctie.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 04/10/2021
+ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: d3ef8e3656051c4a99ab52a7b52a0d623fdf9ce2
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: af95cf5d3e4112c717d653062f186797d48fb515
+ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107303952"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107389805"
 ---
 # <a name="start-virtual-machine-on-connect-preview"></a>Virtuele machine starten bij verbinding maken (preview)
 
 > [!IMPORTANT]
-> De functie voor het starten van de VM in Connect is momenteel beschikbaar als open bare preview.
+> De functie VM starten in Verbinding maken is momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Met de functie voor het starten van de virtuele machine (VM) in Connect (preview) kunt u kosten besparen door de toewijzing van uw Vm's ongedaan te maken wanneer u deze niet gebruikt. Wanneer u de virtuele machine opnieuw moet gebruiken, hoeft u alleen maar uw Vm's weer in te scha kelen.
+Met de functie Virtuele machine (VM) starten op Verbinding maken (preview) kunt u kosten besparen door de toewijzing van uw VM's op te geven wanneer u deze niet gebruikt. Wanneer u de VM opnieuw moet gebruiken, hoeft u alleen uw VM's weer in te zetten.
 
 >[!NOTE]
->Windows virtueel bureau blad (klassiek) biedt geen ondersteuning voor deze functie.
+>Windows Virtual Desktop (klassiek) biedt geen ondersteuning voor deze functie.
 
 ## <a name="requirements-and-limitations"></a>Vereisten en beperkingen
 
-U kunt de functie VM starten bij verbinding maken alleen inschakelen voor persoonlijke hostgroepen. Zie [Windows Virtual Desktop Environment](environment-setup.md#host-pools)voor meer informatie over persoonlijke hostgroepen.
+U kunt de functie VM starten op Verbinding maken alleen inschakelen voor persoonlijke hostgroepen. Zie voor meer informatie over persoonlijke hostgroepen [Windows Virtual Desktop omgeving.](environment-setup.md#host-pools)
 
-De volgende extern bureau blad-clients ondersteunen de functie voor het starten van VM'S op Connect:
+De volgende extern bureaublad-clients ondersteunen de functie VM starten op verbinding:
 
 - [De webclient](connect-web.md)
-- [De Windows-client (versie 1,2748 of hoger)](connect-windows-7-10.md)
+- [De Windows-client (versie 1.2748 of hoger)](connect-windows-7-10.md)
 
-U kunt op het [tech Community-Forum](https://aka.ms/wvdtc)controleren op aankondigingen over updates en client ondersteuning.
+U kunt controleren op aankondigingen over updates en clientondersteuning op het [Tech Community-forum.](https://aka.ms/wvdtc)
 
-De Azure Government Cloud biedt momenteel geen ondersteuning voor het starten van VM op Connect.
+De Azure Government cloud biedt momenteel geen ondersteuning voor VM starten op verbinding.
 
-## <a name="create-a-custom-role-for-start-vm-on-connect"></a>Een aangepaste rol maken voor het starten van een virtuele machine bij het verbinden
+## <a name="create-a-custom-role-for-start-vm-on-connect"></a>Een aangepaste rol maken voor het starten van een VM in Connect
 
-Voordat u de functie voor het starten van de VM in Connect kunt configureren, moet u uw virtuele machine toewijzen aan een aangepaste RBAC (op rollen gebaseerd toegangs beheer). Met deze rol kan het virtuele bureau blad van Windows de Vm's in uw abonnement beheren. U kunt deze rol ook gebruiken om Vm's in te scha kelen, hun status te controleren en diagnostische gegevens te rapporteren. Als u meer wilt weten over de werking van elke rol, kunt u een kijkje nemen in [Azure aangepaste rollen](../role-based-access-control/custom-roles.md).
+Voordat u de functie VM starten in Verbinding maken kunt configureren, moet u aan uw VM een aangepaste RBAC-rol (op rollen gebaseerd toegangsbeheer) toewijzen. Met deze rol kunt Windows Virtual Desktop VM's in uw abonnement beheren. U kunt deze rol ook gebruiken om VM's in te stellen, de status ervan te controleren en diagnostische gegevens te rapporteren. Als u meer wilt weten over wat elke rol doet, bekijkt u [Aangepaste Azure-rollen.](../role-based-access-control/custom-roles.md)
 
 ### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-Als u de Azure Portal wilt gebruiken om een aangepaste rol toe te wijzen voor de start-VM bij Connect:
+Als u de Azure Portal om een aangepaste rol toe te wijzen voor VM starten op Verbinding maken:
 
-1. Open de Azure Portal en ga naar **abonnementen**.
+1. Open de Azure Portal en ga naar **Abonnementen.**
 
-2. Ga naar **toegangs beheer (IAM)** en selecteer **een aangepaste rol toevoegen**.
+2. Ga naar **Toegangsbeheer (IAM)** en selecteer **Een aangepaste rol toevoegen.**
 
     > [!div class="mx-imgBorder"]
-    > ![Een scherm opname van een vervolg keuzemenu van de knop toevoegen in toegangs beheer (IAM). "Een aangepaste rol toevoegen" is rood gemarkeerd.](media/add-custom-role.png)
+    > ![Een schermopname van een vervolgkeuzelijst van de knop Toevoegen in Toegangsbeheer (IAM). 'Een aangepaste rol toevoegen' is rood gemarkeerd.](media/add-custom-role.png)
 
-3. Geef vervolgens de aangepaste rol een naam en voeg een beschrijving toe. U kunt het beste de naam ' VM starten bij het maken '.
+3. Geef vervolgens de aangepaste rol een naam en voeg een beschrijving toe. U wordt aangeraden deze de naam 'VM starten bij verbinding' te geven.
 
-4. Voeg op het tabblad **machtigingen** de volgende machtigingen toe aan het abonnement waaraan u de rol wilt toewijzen: 
+4. Voeg op **het tabblad** Machtigingen de volgende machtigingen toe aan het abonnement aan wie u de rol toewijst: 
  
-   - Micro soft. Compute/informatie/start/Action
-   - Micro soft. Compute/informatie/lezen
+   - Microsoft.Compute/virtualMachines/start/action
+   - Microsoft.Compute/virtualMachines/read
 
-5. Wanneer u klaar bent, selecteert u **OK**.
+5. Wanneer u klaar bent, selecteert u **OK.**
 
-Daarna moet u de rol toewijzen om toegang te verlenen aan het virtuele bureau blad van Windows.
+Daarna moet u de rol toewijzen om toegang te verlenen tot Windows Virtual Desktop.
 
 De aangepaste rol toewijzen:
 
-1. Selecteer op het **tabblad toegangs beheer (IAM)** de optie **roltoewijzingen toevoegen**.
+1. Selecteer op **het tabblad Toegangsbeheer (IAM)** **de optie Roltoewijzingen toevoegen.**
 
 2. Selecteer de rol die u zojuist hebt gemaakt.
 
-3. Voer in de zoek balk **Windows virtueel bureau blad** in en selecteer deze.
+3. Voer in de zoekbalk in en selecteer **Windows Virtual Desktop**.
 
       >[!NOTE]
-      >U ziet mogelijk twee apps als u virtueel bureau blad van Windows (klassiek) hebt geïmplementeerd. Wijs de rol toe aan beide apps die u ziet.
+      >Mogelijk ziet u twee apps als u deze hebt Windows Virtual Desktop (klassiek). Wijs de rol toe aan beide apps die u ziet.
       >
       > [!div class="mx-imgBorder"]
-      > ![Een scherm afbeelding van het tabblad toegangs beheer (IAM). In de zoek balk worden zowel Windows virtueel bureau blad als virtueel bureau blad van Windows (klassiek) rood gemarkeerd.](media/add-role-assignment.png)
+      > ![Een schermopname van het tabblad Toegangsbeheer (IAM). In de zoekbalk zijn zowel Windows Virtual Desktop als Windows Virtual Desktop (klassiek) rood gemarkeerd.](media/add-role-assignment.png)
 
-### <a name="create-a-custom-role-with-a-json-file-template"></a>Een aangepaste rol maken met een JSON-bestand sjabloon
+### <a name="create-a-custom-role-with-a-json-file-template"></a>Een aangepaste rol maken met een JSON-bestandssjabloon
 
-Als u een JSON-bestand gebruikt om de aangepaste rol te maken, ziet u in het volgende voor beeld een basis sjabloon die u kunt gebruiken. Zorg ervoor dat u de abonnements-ID-waarde vervangt door de abonnements-ID waaraan u de rol wilt toewijzen.
+Als u een JSON-bestand gebruikt om de aangepaste rol te maken, ziet u in het volgende voorbeeld een basissjabloon die u kunt gebruiken. Zorg ervoor dat u de waarde van de abonnements-id vervangt door de abonnements-id waar u de rol aan wilt toewijzen.
 
 ```json
 {
@@ -104,50 +104,50 @@ Als u een JSON-bestand gebruikt om de aangepaste rol te maken, ziet u in het vol
 }
 ```
 
-## <a name="configure-the-start-vm-on-connect-feature"></a>De functie voor het starten van virtuele machines in Connect configureren
+## <a name="configure-the-start-vm-on-connect-feature"></a>De functie VM starten bij verbinding maken configureren
 
-Nu u uw abonnement de rol hebt toegewezen, is het tijd om de functie voor het starten van de VM in Connect te configureren.
+Nu u de rol aan uw abonnement hebt toegewezen, is het tijd om de functie VM starten op verbinding te maken te configureren.
 
 ### <a name="deployment-considerations"></a>Overwegingen bij de implementatie 
 
-VM starten bij verbinden is een instelling voor een hostgroep. Als u wilt dat een bepaalde groep gebruikers deze functie gebruikt, zorg er dan voor dat u alleen de vereiste rol toewijst aan de gebruikers die u wilt toevoegen.
+VM starten op Verbinding maken is een instelling voor de hostgroep. Als u wilt dat alleen een bepaalde groep gebruikers deze functie gebruikt, moet u ervoor zorgen dat u alleen de vereiste rol toewijst aan de gebruikers die u wilt toevoegen.
 
 >[!IMPORTANT]
 > U kunt deze functie alleen configureren in bestaande hostgroepen. Deze functie is niet beschikbaar wanneer u een nieuwe hostgroep maakt.
 
 ### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-Als u de Azure Portal wilt gebruiken om de start-VM te configureren bij verbinding maken:
+Ga als volgende te werk om Azure Portal VM starten bij verbinding maken te configureren:
 
-1. Open uw browser en ga naar [de Azure Portal](https://portal.azure.com/?feature.startVMonConnect=true#home). U wordt aangeraden om de Azure Portal in een InPrivate-venster te openen.
+1. Open uw browser en ga naar [de Azure Portal.](https://portal.azure.com)
 
-2. Ga in het Azure Portal naar **virtueel bureau blad van Windows**.
+2. Ga in Azure Portal naar **Windows Virtual Desktop**.
 
-3. Selecteer **hostgroepen** en zoek vervolgens de hostgroep die de persoonlijke bureau bladen bevat waaraan u de rol hebt toegewezen.
+3. Selecteer **Hostgroepen** en zoek vervolgens de hostgroep met de persoonlijke bureaubladen aan wie u de rol hebt toegewezen.
 
    >[!NOTE]
-   > De hostgroep waarvoor u deze functie configureert, moet beschikken over persoonlijke bureau bladen met directe roltoewijzingen. Als de Bureau bladen in de hostgroep niet correct zijn geconfigureerd, werkt het configuratie proces niet.
+   > De hostgroep waarin u deze functie configureert, moet persoonlijke bureaubladen met directe roltoewijzingen hebben. Als de bureaubladen in de hostgroep niet correct zijn geconfigureerd, werkt het configuratieproces niet.
 
-4. Selecteer **Eigenschappen** in de hostgroep. Selecteer onder **virtuele machine starten bij verbinding maken** de optie **Ja** en selecteer vervolgens **Opslaan** om de instelling onmiddellijk toe te passen.
+4. Selecteer Eigenschappen in de **hostgroep.** Selecteer **ja onder VM starten** bij verbinding maken en selecteer vervolgens Opslaan **om** de instelling direct toe te passen. 
 
     > [!div class="mx-imgBorder"]
-    > ![Een scherm opname van de venster Eigenschappen. De optie VM starten bij verbinding maken is rood gemarkeerd.](media/properties-start-vm-on-connect.png)
+    > ![Een schermopname van de venster Eigenschappen. De optie VM starten bij verbinding maken is rood gemarkeerd.](media/properties-start-vm-on-connect.png)
 
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
-Als u deze instelling wilt configureren met Power shell, moet u ervoor zorgen dat u de namen van de resource groep en hostgroepen hebt die u wilt configureren. U moet ook [de Azure PowerShell-module installeren (versie 2.1.0 of hoger)](https://www.powershellgallery.com/packages/Az.DesktopVirtualization/2.1.0).
+Als u deze instelling wilt configureren met PowerShell, moet u ervoor zorgen dat u de namen hebt van de resourcegroep en hostgroepen die u wilt configureren. U moet ook de module Azure PowerShell [installeren (versie 2.1.0 of hoger).](https://www.powershellgallery.com/packages/Az.DesktopVirtualization/2.1.0)
 
-Start-VM configureren bij verbinden met behulp van Power shell:
+VM starten op verbinding maken met PowerShell configureren:
 
-1. Open een Power shell-opdracht venster.
+1. Open een PowerShell-opdrachtvenster.
 
-2. Voer de volgende cmdlet uit om start VM in te scha kelen bij verbinden:
+2. Voer de volgende cmdlet uit om VM starten bij Verbinding maken in te stellen:
 
     ```powershell
     Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -StartVMOnConnect:$true
     ```
 
-3. Voer de volgende cmdlet uit om het starten van de virtuele machine op Connect uit te scha kelen:
+3. Voer de volgende cmdlet uit om VM starten bij verbinding maken uit te schakelen:
 
     ```powershell
     Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -StartVMOnConnect:$false
@@ -155,14 +155,14 @@ Start-VM configureren bij verbinden met behulp van Power shell:
 
 ## <a name="user-experience"></a>Gebruikerservaring
 
-In typische sessies is de tijd die een gebruiker nodig heeft om verbinding te maken met een ontoegewezen VM, omdat de VM opnieuw moet worden ingeschakeld, net als bij het inschakelen van een fysieke computer. De Extern bureaublad-client heeft een indicator waarmee de gebruiker weet dat de PC wordt ingeschakeld terwijl er verbinding wordt gemaakt.
+In gewone sessies neemt de tijd die een gebruiker nodig heeft om verbinding te maken met een VM die niet is toegewezen toe, toe omdat de VM tijd nodig heeft om opnieuw in te zetten, net zoals bij het in-/uitschakelen van een fysieke computer. De Extern bureaublad-client heeft een indicator die de gebruiker laat weten dat de pc wordt ingeschakeld terwijl ze verbinding maken.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Als de functie wordt uitgevoerd op problemen, raden we u aan de Windows- [functie diagnostische gegevens](diagnostics-log-analytics.md) voor virtuele Bureau bladen te gebruiken om te controleren of er problemen zijn. Als er een fout bericht wordt weer gegeven, moet u ervoor zorgen dat u de inhoud van het bericht nauw keurig benadert en de fout naam ergens ter referentie kopieert.
+Als er problemen zijn met de functie, raden we u aan de functie Windows Virtual Desktop [gebruiken om](diagnostics-log-analytics.md) te controleren op problemen. Als u een foutbericht ontvangt, let dan goed op de inhoud van het bericht en kopieer de foutnaam ergens ter referentie.
 
-U kunt ook [Azure monitor voor Windows Virtual Desktop](azure-monitor.md) gebruiken om suggesties te krijgen voor het oplossen van problemen.
+U kunt ook Azure Monitor [voor Windows Virtual Desktop](azure-monitor.md) om suggesties te krijgen voor het oplossen van problemen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u problemen ondervindt die de documentatie voor probleem oplossing of de functie diagnostische gegevens niet kunnen oplossen, raadpleegt u de [Veelgestelde vragen over het starten van een virtuele machine op Connect](start-virtual-machine-connect-faq.md).
+Als u problemen hebt die niet kunnen worden opgelost met de documentatie voor probleemoplossing of de diagnostische functie, raadpleegt u de Veelgestelde vragen over VM starten [op verbinding maken.](start-virtual-machine-connect-faq.md)

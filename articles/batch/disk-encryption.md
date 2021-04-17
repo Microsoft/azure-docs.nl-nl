@@ -1,57 +1,52 @@
 ---
 title: Een pool maken met schijfversleuteling ingeschakeld
-description: Meer informatie over het gebruik van schijf versleutelings configuratie voor het versleutelen van knoop punten met een door een platform beheerde sleutel.
+description: Meer informatie over het gebruik van schijfversleutelingsconfiguratie voor het versleutelen van knooppunten met een door het platform beheerde sleutel.
 author: pkshultz
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 04/16/2021
 ms.author: peshultz
-ms.custom: references_regions
-ms.openlocfilehash: 41fc827459b454e2bcb120a925cdab8fcd46e310
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 40281211e5eb70089f4168dcb02720c912120a35
+ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99055311"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107576105"
 ---
 # <a name="create-a-pool-with-disk-encryption-enabled"></a>Een pool maken met schijfversleuteling ingeschakeld
 
-Wanneer u een Azure Batch groep maakt met behulp van de configuratie van de [virtuele machine](nodes-and-pools.md#virtual-machine-configuration), kunt u reken knooppunten in de groep versleutelen met een door het platform beheerde sleutel door de configuratie van de schijf versleuteling op te geven.
+Wanneer u een Azure Batch-pool maakt met behulp van Virtual [Machine Configuration](nodes-and-pools.md#virtual-machine-configuration), kunt u rekenknooppunten in de pool versleutelen met een door het platform beheerde sleutel door de schijfversleutelingsconfiguratie op te geven.
 
-In dit artikel wordt uitgelegd hoe u een batch-pool maakt waarvoor schijf versleuteling is ingeschakeld.
+In dit artikel wordt uitgelegd hoe u een Batch-pool maakt met schijfversleuteling ingeschakeld.
 
-> [!IMPORTANT]
-> Ondersteuning voor versleuteling op de host met behulp van een door een platform beheerde sleutel in Azure Batch is momenteel beschikbaar als open bare Preview voor de VS-Oost, VS-West 2, Zuid-Centraal VS, US Gov-Virginia en US Gov-Arizona regio's.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+## <a name="why-use-a-pool-with-disk-encryption-configuration"></a>Waarom een pool met schijfversleutelingsconfiguratie gebruiken?
 
-## <a name="why-use-a-pool-with-disk-encryption-configuration"></a>Waarom een pool met schijf versleutelings configuratie gebruiken?
+Met een Batch-pool kunt u gegevens op het besturingssysteem en tijdelijke schijven van het reken knooppunt openen en opslaan. Door de schijf aan de serverzijde te versleutelen met een door het platform beheerde sleutel worden deze gegevens beveiligd met lage overhead en gemak.
 
-Met een batch-pool kunt u gegevens op het besturings systeem en de tijdelijke schijven van het reken knooppunt openen en opslaan. Het versleutelen van de schijf aan de server zijde met een door een platform beheerde sleutel beveiligt deze gegevens met lage overhead en gebruiks gemak.
+Batch zal een van deze schijfversleutelingstechnologieën toepassen op rekenknooppunten, op basis van poolconfiguratie en regionale ondersteuning.
 
-Met batch wordt een van deze schijf versleutelings technologieën toegepast op reken knooppunten, op basis van pool configuratie en regionale ondersteunings mogelijkheden.
-
-- [Beheerde schijf versleuteling op rest met door het platform beheerde sleutels](../virtual-machines/disk-encryption.md#platform-managed-keys)
-- [Versleuteling op de host met een door een platform beheerde sleutel](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
+- [Versleuteling van beheerde schijven in rust met door het platform beheerde sleutels](../virtual-machines/disk-encryption.md#platform-managed-keys)
+- [Versleuteling op de host met behulp van een door het platform beheerde sleutel](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 - [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md)
 
-U kunt niet opgeven welke versleutelings methode wordt toegepast op de knoop punten in uw pool. In plaats daarvan geeft u de doel schijven op die u wilt versleutelen op hun knoop punten en kan batch de juiste versleutelings methode kiezen, zodat de opgegeven schijven worden versleuteld op het reken knooppunt.
+U kunt niet opgeven welke versleutelingsmethode wordt toegepast op de knooppunten in uw pool. In plaats daarvan geeft u de doelschijven op die u wilt versleutelen op hun knooppunten en kan Batch de juiste versleutelingsmethode kiezen, zodat de opgegeven schijven op het rekenknooppunt worden versleuteld.
 
 > [!IMPORTANT]
-> Als u een groep maakt met een [aangepaste installatie kopie](batch-sig-images.md), kunt u schijf versleuteling alleen inschakelen als u Windows-vm's gebruikt.
+> Als u uw pool met een aangepaste afbeelding [maakt,](batch-sig-images.md)kunt u schijfversleuteling alleen inschakelen als u windows-VM's gebruikt.
 
 ## <a name="azure-portal"></a>Azure Portal
 
-Wanneer u een batch-pool maakt in de Azure Portal, selecteert u **TemporaryDisk** of **OsAndTemporaryDisk** onder **configuratie van schijf versleuteling**.
+Wanneer u een Batch-pool in de Azure Portal, selecteert u **TemporaryDisk** of **OsAndTemporaryDisk** onder **Schijfversleutelingsconfiguratie.**
 
-:::image type="content" source="media/disk-encryption/portal-view.png" alt-text="Scherm afbeelding van de configuratie optie voor schijf versleuteling in de Azure Portal.":::
+:::image type="content" source="media/disk-encryption/portal-view.png" alt-text="Schermopname van de optie Schijfversleutelingsconfiguratie in Azure Portal.":::
 
-Nadat de groep is gemaakt, ziet u de configuratie doelen van de schijf versleuteling in de sectie **Eigenschappen** van de groep.
+Nadat de pool is gemaakt, ziet u de schijfversleutelingsconfiguratiedoelen in de sectie **Eigenschappen van de** groep.
 
-:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Scherm opname van de configuratie doelen van de schijf versleuteling in de Azure Portal.":::
+:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Schermopname van de schijfversleutelingsconfiguratiedoelen in de Azure Portal.":::
 
 ## <a name="examples"></a>Voorbeelden
 
-In de volgende voor beelden ziet u hoe u het besturings systeem en de tijdelijke schijven in een batch-pool kunt versleutelen met behulp van de batch .NET SDK, de batch REST API en de Azure CLI.
+De volgende voorbeelden laten zien hoe u het besturingssysteem en tijdelijke schijven in een Batch-pool versleutelt met behulp van de Batch .NET SDK, de Batch-REST API en de Azure CLI.
 
 ### <a name="batch-net-sdk"></a>Batch .NET SDK
 
@@ -63,7 +58,7 @@ pool.VirtualMachineConfiguration.DiskEncryptionConfiguration = new DiskEncryptio
 
 ### <a name="batch-rest-api"></a>Batch-REST API
 
-REST API URL:
+REST API-URL:
 
 ```
 POST {batchURL}/pools?api-version=2020-03-01.11.0
@@ -113,5 +108,5 @@ az batch pool create \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [versleuteling aan de server zijde van Azure Disk Storage](../virtual-machines/disk-encryption.md).
-- Zie [batch service workflow en resources](batch-service-workflow-features.md)voor een uitgebreid overzicht van batch.
+- Meer informatie over [versleuteling aan de serverzijde van Azure Disk Storage](../virtual-machines/disk-encryption.md).
+- Zie Batch-servicewerkstroom en [-resources](batch-service-workflow-features.md)voor een uitgebreid overzicht van Batch.

@@ -1,4 +1,4 @@
-- name: Metrics Advisor
+- name: Metrics Advisor documentatie
   href: index.yml
 - name: Overzicht
   expanded: true
@@ -7,13 +7,13 @@
       href: overview.md
     - name: Prijzen
       href: 'http://go.microsoft.com/fwlink/?LinkID=761229'
-    - name: Wat is er nieuw?
+    - name: Wat is nieuw?
       href: whats-new.md
-- name: Quick starts voor de metrische gegevens adviseur
+- name: Snelstartgidsen
   items:
     - name: Webportal
       href: quickstarts/web-portal.md
-    - name: REST API-en client bibliotheken
+    - name: REST API en clientbibliotheken
       href: quickstarts/rest-api-and-client-library.md
 - name: Voorbeelden
   href: 'https://docs.microsoft.com/en-us/samples/browse/?products=azure&terms=metrics-advisor'
@@ -35,13 +35,17 @@
       href: how-tos/anomaly-feedback.md
     - name: Grafiek voor metrische gegevens bouwen
       href: how-tos/metrics-graph.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Door de klant beheerde sleutels gebruiken
+          href: encryption.md
 - name: Concepten
   items:
-    - name: Voor waarden voor de Advisor-sleutel voor metrische gegevens
+    - name: Metrics Advisor belangrijkste voorwaarden
       href: glossary.md
 - name: Referentie
   items:
-    - name: Biometrische Advisor REST API
+    - name: Metrics Advisor REST API
       href: 'https://go.microsoft.com/fwlink/?linkid=2141634'
     - name: Naslaginformatie over Azure CLI
       href: /cli/azure/cognitiveservices#az_cognitiveservices_list
@@ -49,11 +53,11 @@
       href: /powershell/module/azurerm.cognitiveservices/
 - name: Resources
   items:
-    - name: Ondersteuning voor regio
-      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Ondersteuning voor regio
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Naleving en certificering
+          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Opties voor ondersteuning en hulp
       href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/metrics-advisor/context/context
-    - name: Naleving
-      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Versleuteling
-      href: encryption.md

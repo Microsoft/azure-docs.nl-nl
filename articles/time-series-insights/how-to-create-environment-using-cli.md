@@ -1,5 +1,5 @@
 ---
-title: Een Azure Time Series Insights Gen2-omgeving maken met behulp van Azure CLI-Azure Time Series Insights Gen2 | Microsoft Docs
+title: Een Azure Time Series Insights Gen2-omgeving maken met behulp van de Azure CLI - Azure Time Series Insights Gen2-| Microsoft Docs
 description: Meer informatie over het instellen van een omgeving in Azure Time Series Insights Gen2 met behulp van de Azure CLI.
 author: deepakpalled
 ms.author: dpalled
@@ -9,17 +9,17 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: how-to
 ms.date: 03/15/2021
-ms.custom: seodec18
-ms.openlocfilehash: 150bf38ebb248f15bf1ed82186c16b6b3f7ac40b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: seodec18, devx-track-azurecli
+ms.openlocfilehash: 17c1ea19f3879f5490922ab4b54f21773191eebd
+ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105728722"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107484223"
 ---
 # <a name="create-an-azure-time-series-insights-gen2-environment-using-the-azure-cli"></a>Een Azure Time Series Insights Gen2-omgeving maken met behulp van de Azure CLI
 
-In dit document vindt u instructies voor het maken van een nieuwe Time Series Insights Gen2-omgeving.
+Dit document begeleidt u bij het maken van een nieuwe Time Series Insights Gen2-omgeving.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -30,7 +30,7 @@ In dit document vindt u instructies voor het maken van een nieuwe Time Series In
 > [!NOTE]
 > Vervang in uw code `mytsicoldstore` door een unieke naam voor het koude-opslagaccount.
 
-Maak eerst het opslag account:
+Maak eerst het opslagaccount:
 
 ```azurecli-interactive
 storage=mytsicoldstore
@@ -41,40 +41,40 @@ key=$(az storage account keys list -g $rg -n $storage --query [0].value --output
 
 ## <a name="creating-the-environment"></a>De omgeving maken
 
-Nu het opslag account is gemaakt en de naam en beheer sleutel zijn toegewezen aan de variabelen, voert u de onderstaande opdracht uit om de Azure Time Series Insights omgeving te maken:
+Nu het opslagaccount is gemaakt en de naam en beheersleutel zijn toegewezen aan de variabelen, kunt u de onderstaande opdracht uitvoeren om de Azure Time Series Insights maken:
 
 > [!NOTE]
 > Vervang in uw code het volgende door unieke namen voor uw scenario:
 >
-> * `my-tsi-env` met de naam van uw omgeving.
-> * `my-ts-id-prop` met de naam van de time series id-eigenschap.
+> * `my-tsi-env` door de naam van uw omgeving.
+> * `my-ts-id-prop` door de naam van uw tijdreeks-id-eigenschap.
 
 > [!IMPORTANT]
-> De tijd reeks-ID van uw omgeving is als een database partitie sleutel. De time series-ID fungeert ook als primaire sleutel voor uw time series-model.
+> De time series-id van uw omgeving is net als een databasepartitiesleutel. De Time Series-id fungeert ook als de primaire sleutel voor uw Time Series-model.
 >
-> Zie [Aanbevolen procedures voor het kiezen van een time series-id](./how-to-select-tsid.md) voor meer informatie.
+> Zie Best practices for [choosing a Time Series ID (Best practices voor het kiezen van een tijdreeks-id) voor meer informatie.](./how-to-select-tsid.md)
 
 ```azurecli-interactive
 az tsi environment gen2 create --name "my-tsi-env" --location eastus2 --resource-group $rg --sku name="L1" capacity=1 --time-series-id-properties name=my-ts-id-prop type=String --warm-store-configuration data-retention=P7D --storage-configuration account-name=$storage management-key=$key
 ```
 
-## <a name="remove-an-azure-time-series-insights-environment"></a>Een Azure Time Series Insights omgeving verwijderen
+## <a name="remove-an-azure-time-series-insights-environment"></a>Een Azure Time Series Insights verwijderen
 
-U kunt de Azure CLI gebruiken om een afzonderlijke resource te verwijderen, zoals een Time Series Insights omgeving, of om een resource groep en alle bijbehorende resources te verwijderen, inclusief eventuele Time Series Insights omgevingen.
+U kunt de Azure CLI gebruiken om een afzonderlijke resource, zoals een Time Series Insights Environment, te verwijderen of een resourcegroep en alle resources ervan te verwijderen, inclusief alle Time Series Insights Environments.
 
-Als u [een time series Insights omgevingen wilt verwijderen](/cli/azure/ext/timeseriesinsights/tsi/environment#ext_timeseriesinsights_az_tsi_environment_delete), voert u de volgende opdracht uit:
+Als [u een omgeving Time Series Insights verwijderen,](/cli/azure/ext/timeseriesinsights/tsi/environment#ext_timeseriesinsights_az_tsi_environment_delete)moet u de volgende opdracht uitvoeren:
 
 ```azurecli-interactive
 az tsi environment delete --name "my-tsi-env" --resource-group $rg
 ```
 
-Als u [het opslag account wilt verwijderen](/cli/azure/storage/account#az_storage_account_delete), voert u de volgende opdracht uit:
+Voer [de volgende opdracht uit om het](/cli/azure/storage/account#az_storage_account_delete)opslagaccount te verwijderen:
 
 ```azurecli-interactive
 az storage account delete --name $storage --resource-group $rg
 ```
 
-Als u [een resource groep](/cli/azure/group#az-group-delete) en alle bijbehorende resources wilt verwijderen, voert u de volgende opdracht uit:
+Voer de volgende opdracht uit om een [resourcegroep](/cli/azure/group#az-group-delete) en alle resources ervan te verwijderen:
 
 ```azurecli-interactive
 az group delete --name $rg
@@ -82,5 +82,5 @@ az group delete --name $rg
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [streaming-opname gebeurtenis bronnen](./concepts-streaming-ingestion-event-sources.md) voor uw Azure time series Insights Gen2-omgeving.
-* Meer informatie over verbinding maken met een [IOT hub](./how-to-ingest-data-iot-hub.md)
+* Meer informatie [over gebeurtenisbronnen voor streaming-opname](./concepts-streaming-ingestion-event-sources.md) voor uw Azure Time Series Insights Gen2-omgeving.
+* Meer informatie over verbinding maken met [een IoT Hub](./how-to-ingest-data-iot-hub.md)

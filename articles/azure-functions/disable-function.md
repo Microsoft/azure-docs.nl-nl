@@ -1,41 +1,41 @@
 ---
-title: Functies in Azure Functions uitschakelen
+title: Functies uitschakelen in Azure Functions
 description: Meer informatie over het uitschakelen en inschakelen van functies in Azure Functions.
 ms.topic: conceptual
 ms.date: 03/15/2021
-ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 1ad484804f66a2e2d4d0f1da4a37cf0d6c485f38
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-csharp
+ms.openlocfilehash: ef3886c4b9b73f87238bf386d1320ecbac8ad181
+ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104584734"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107374893"
 ---
-# <a name="how-to-disable-functions-in-azure-functions"></a>Functies in Azure Functions uitschakelen
+# <a name="how-to-disable-functions-in-azure-functions"></a>Functies uitschakelen in Azure Functions
 
-In dit artikel wordt uitgelegd hoe u een functie in Azure Functions kunt uitschakelen. Als u een functie wilt *uitschakelen* , moet u ervoor zorgen dat de runtime de automatische trigger die voor de functie is gedefinieerd, negeert. Zo kunt u voor komen dat een specifieke functie wordt uitgevoerd zonder de volledige functie-app te stoppen.
+In dit artikel wordt uitgelegd hoe u een functie in Azure Functions. Als *u een* functie wilt uitschakelen, betekent dit dat de runtime de automatische trigger negeert die voor de functie is gedefinieerd. Hiermee kunt u voorkomen dat een specifieke functie wordt uitgevoerd zonder de hele functie-app te stoppen.
 
-De aanbevolen manier om een functie uit te scha kelen is een app-instelling in de indeling `AzureWebJobs.<FUNCTION_NAME>.Disabled` die is ingesteld op `true` . U kunt deze toepassings instelling op verschillende manieren maken en wijzigen, zoals met behulp van de [Azure cli](/cli/azure/) en op het tabblad **overzicht** van de functie in de [Azure Portal](https://portal.azure.com). 
+De aanbevolen manier om een functie uit te schakelen is met een app-instelling in de indeling `AzureWebJobs.<FUNCTION_NAME>.Disabled` ingesteld op `true` . U kunt deze toepassingsinstelling op een aantal manieren maken en wijzigen, bijvoorbeeld  met behulp van [de Azure CLI](/cli/azure/) en via het tabblad Overzicht van uw functie in [Azure Portal](https://portal.azure.com). 
 
 > [!NOTE]  
-> Wanneer u een door HTTP geactiveerde functie uitschakelt met behulp van de methoden die in dit artikel worden beschreven, kan het eind punt nog steeds toegankelijk zijn wanneer het wordt uitgevoerd op de lokale computer.  
+> Wanneer u een door HTTP geactiveerde functie uit schakelen met behulp van de methoden die in dit artikel worden beschreven, kan het eindpunt nog steeds toegankelijk zijn wanneer het wordt uitgevoerd op uw lokale computer.  
 
 ## <a name="disable-a-function"></a>Een functie uitschakelen
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
-Gebruik de knoppen **inschakelen** en **uitschakelen** op de **overzichts** pagina van de functie. Deze knoppen werken door de waarde van de app-instelling te wijzigen `AzureWebJobs.<FUNCTION_NAME>.Disabled` . Deze functie-specifieke instelling wordt gemaakt wanneer deze voor de eerste keer wordt uitgeschakeld. 
+Gebruik de **knoppen Inschakelen** **en** Uitschakelen op de pagina Overzicht **van de** functie. Deze knoppen werken door de waarde van de `AzureWebJobs.<FUNCTION_NAME>.Disabled` app-instelling te wijzigen. Deze functiespecifieke instelling wordt gemaakt bij de eerste keer dat deze wordt uitgeschakeld. 
 
-![Functie status schakelaar](media/disable-function/function-state-switch.png)
+![Functietoestandsschakelaar](media/disable-function/function-state-switch.png)
 
-Zelfs wanneer u vanuit een lokaal project naar uw functie-app publiceert, kunt u de portal nog steeds gebruiken om functies in de functie-app uit te scha kelen. 
+Zelfs wanneer u vanuit een lokaal project naar uw functie-app publiceert, kunt u de portal nog steeds gebruiken om functies in de functie-app uit te schakelen. 
 
 > [!NOTE]  
-> De door de portal geïntegreerde test functionaliteit negeert de `Disabled` instelling. Dit betekent dat een uitgeschakelde functie nog steeds wordt uitgevoerd wanneer deze wordt gestart vanuit het **test** venster in de portal. 
+> De in de portal geïntegreerde testfunctionaliteit negeert de `Disabled` instelling. Dit betekent dat een uitgeschakelde functie nog steeds wordt uitgevoerd wanneer deze wordt gestart vanuit het **testvenster** in de portal. 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 
-In azure CLI gebruikt u de [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) opdracht om de app-instelling te maken en te wijzigen. Met de volgende opdracht wordt een functie uitgeschakeld `QueueTrigger` die wordt genoemd door een app-instelling te maken met de naam `AzureWebJobs.QueueTrigger.Disabled` en in te stellen op `true` . 
+In de Azure CLI gebruikt u de opdracht [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) om de app-instelling te maken en te wijzigen. Met de volgende opdracht wordt een functie met de naam uitgeschakeld `QueueTrigger` door een app-instelling met de naam te maken en deze in te stellen op `AzureWebJobs.QueueTrigger.Disabled` `true` . 
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
@@ -43,7 +43,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 --settings AzureWebJobs.QueueTrigger.Disabled=true
 ```
 
-Als u de functie opnieuw wilt inschakelen, voert u dezelfde opdracht opnieuw uit met de waarde `false` .
+Als u de functie opnieuw wilt inschakelen, moet u dezelfde opdracht opnieuw uitvoeren met de waarde `false` .
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <myFunctionApp> \
@@ -53,13 +53,13 @@ az functionapp config appsettings set --name <myFunctionApp> \
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Met de [`Update-AzFunctionAppSetting`](/powershell/module/az.functions/update-azfunctionappsetting) opdracht wordt een toepassings instelling toegevoegd of bijgewerkt. Met de volgende opdracht wordt een functie uitgeschakeld `QueueTrigger` die wordt genoemd door een app-instelling te maken met de naam `AzureWebJobs.QueueTrigger.Disabled` en in te stellen op `true` . 
+Met [`Update-AzFunctionAppSetting`](/powershell/module/az.functions/update-azfunctionappsetting) de opdracht wordt een toepassingsinstelling toegevoegd of bijgewerkt. Met de volgende opdracht wordt een functie met de naam uitgeschakeld `QueueTrigger` door een app-instelling met de naam te maken en deze in te stellen op `AzureWebJobs.QueueTrigger.Disabled` `true` . 
 
 ```azurepowershell-interactive
 Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME> -AppSetting @{"AzureWebJobs.QueueTrigger.Disabled" = "true"}
 ```
 
-Als u de functie opnieuw wilt inschakelen, voert u dezelfde opdracht opnieuw uit met de waarde `false` .
+Als u de functie opnieuw wilt inschakelen, moet u dezelfde opdracht opnieuw uitvoeren met de waarde `false` .
 
 ```azurepowershell-interactive
 Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME> -AppSetting @{"AzureWebJobs.QueueTrigger.Disabled" = "false"}
@@ -68,15 +68,15 @@ Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOUR
 
 ## <a name="functions-in-a-slot"></a>Functies in een sleuf
 
-App-instellingen zijn standaard ook van toepassing op apps die worden uitgevoerd in implementatie sites. U kunt de app-instelling die wordt gebruikt door de sleuf echter overschrijven door een specifieke app-instelling in te stellen. U wilt bijvoorbeeld dat een functie actief is in de productie omgeving, maar niet tijdens implementatie tests, zoals een door een timer geactiveerde functie. 
+App-instellingen zijn standaard ook van toepassing op apps die worden uitgevoerd in implementatiesleuven. U kunt echter de app-instelling die door de sleuf wordt gebruikt, overschrijven door een app-specifieke app-instelling in te stellen. U wilt bijvoorbeeld dat een functie actief is in productie, maar niet tijdens het testen van de implementatie, zoals een door een timer geactiveerde functie. 
 
-Als u een functie alleen wilt uitschakelen in de faserings sleuf:
+Een functie alleen uitschakelen in de staging-sleuf:
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
-Navigeer naar het sleuf exemplaar van uw functie-app door **implementatie sleuven** te selecteren onder **implementatie**, uw sleuf te kiezen en **functies** te selecteren in de sleuf-instantie.  Kies uw functie en gebruik vervolgens de knoppen **inschakelen** en **uitschakelen** op de **overzichts** pagina van de functie. Deze knoppen werken door de waarde van de app-instelling te wijzigen `AzureWebJobs.<FUNCTION_NAME>.Disabled` . Deze functie-specifieke instelling wordt gemaakt wanneer deze voor de eerste keer wordt uitgeschakeld. 
+Navigeer naar het site-exemplaar  van uw functie-app door Implementatiesleuven te selecteren onder **Implementatie**, uw site te kiezen en Functies te **selecteren** in het site-exemplaar.  Kies uw functie en gebruik vervolgens de knoppen **Inschakelen** **en Uitschakelen** op de pagina Overzicht **van de** functie. Deze knoppen werken door de waarde van de `AzureWebJobs.<FUNCTION_NAME>.Disabled` app-instelling te wijzigen. Deze functiespecifieke instelling wordt gemaakt bij de eerste keer dat deze wordt uitgeschakeld. 
 
-U kunt ook de app-instelling met de naam `AzureWebJobs.<FUNCTION_NAME>.Disabled` met de waarde `true` in de **configuratie** voor het sleuf exemplaar direct toevoegen. Wanneer u een sleuf-specifieke app-instelling toevoegt, schakelt u het selectie vakje **implementatie sleuf** in. Hiermee wordt de instellings waarde met de sleuf tijdens swaps bewaard.
+U kunt de app-instelling met de naam met de waarde ook rechtstreeks `AzureWebJobs.<FUNCTION_NAME>.Disabled` toevoegen in de configuratie `true` **voor** het sleuf-exemplaar. Wanneer u een specifieke app-instelling voor een sleuf toevoegt, moet u het selectievakje **Implementatiesleufinstelling in- of** uit te checken. Hiermee behoudt u de instellingswaarde met de sleuf tijdens wisselingen.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 
@@ -85,7 +85,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 --resource-group <RESOURCE_GROUP_NAME> --slot <SLOT_NAME> \
 --slot-settings AzureWebJobs.QueueTrigger.Disabled=true
 ```
-Als u de functie opnieuw wilt inschakelen, voert u dezelfde opdracht opnieuw uit met de waarde `false` .
+Als u de functie opnieuw wilt inschakelen, moet u dezelfde opdracht opnieuw uitvoeren met de waarde `false` .
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <myFunctionApp> \
@@ -99,11 +99,11 @@ Azure PowerShell biedt momenteel geen ondersteuning voor deze functionaliteit.
 
 ---
 
-Zie [Azure functions implementatie sleuven](functions-deployment-slots.md)voor meer informatie.
+Zie Implementatiesleuven voor [Azure Functions meer informatie.](functions-deployment-slots.md)
 
 ## <a name="localsettingsjson"></a>local.settings.json
 
-Functies kunnen op dezelfde manier worden uitgeschakeld wanneer lokaal wordt uitgevoerd. Als u een functie met de naam wilt uitschakelen `HttpExample` , voegt u een vermelding toe aan de verzameling waarden in het local.settings.jsbestand. dit doet u als volgt:
+Functies kunnen op dezelfde manier worden uitgeschakeld wanneer ze lokaal worden uitgevoerd. Als u een functie met de naam wilt uitschakelen, voegt u als volgt een vermelding toe aan de verzameling Waarden `HttpExample` in local.settings.jsbestand:
 
 ```json
 {
@@ -118,11 +118,11 @@ Functies kunnen op dezelfde manier worden uitgeschakeld wanneer lokaal wordt uit
 
 ## <a name="other-methods"></a>Andere methoden
 
-Hoewel de instellings methode van de toepassing wordt aanbevolen voor alle talen en runtime versies, zijn er verschillende andere manieren om functies uit te scha kelen. Deze methoden, die variëren per taal en runtime versie, blijven behouden voor compatibiliteit met eerdere versies. 
+Hoewel de methode voor toepassingsinstelling wordt aanbevolen voor alle talen en alle runtimeversies, zijn er verschillende andere manieren om functies uit te schakelen. Deze methoden, die variëren per taal en runtimeversie, worden onderhouden voor compatibiliteit met eerdere versies. 
 
-### <a name="c-class-libraries"></a>C#-klassen bibliotheken
+### <a name="c-class-libraries"></a>C#-klassebibliotheken
 
-In een Class Library-functie kunt u ook het `Disable` kenmerk gebruiken om te voor komen dat de functie wordt geactiveerd. Met dit kenmerk kunt u de naam aanpassen van de instelling die wordt gebruikt om de functie uit te scha kelen. Gebruik de versie van het kenmerk waarmee u een constructor-para meter kunt definiëren die verwijst naar een Booleaanse app-instelling, zoals wordt weer gegeven in het volgende voor beeld:
+In een klassebibliotheekfunctie kunt u ook het kenmerk gebruiken om `Disable` te voorkomen dat de functie wordt geactiveerd. Met dit kenmerk kunt u de naam aanpassen van de instelling die wordt gebruikt om de functie uit te schakelen. Gebruik de versie van het kenmerk waarmee u een constructorparameter kunt definiëren die verwijst naar een Booleaanse app-instelling, zoals wordt weergegeven in het volgende voorbeeld:
 
 ```csharp
 public static class QueueFunctions
@@ -138,13 +138,13 @@ public static class QueueFunctions
 }
 ```
 
-Met deze methode kunt u de functie in-en uitschakelen door de app-instelling te wijzigen zonder opnieuw te compileren of opnieuw te implementeren. Als u een app-instelling wijzigt, wordt de functie-app opnieuw gestart, zodat de status wijziging in de modus onmiddellijk wordt herkend.
+Met deze methode kunt u de functie in- en uitschakelen door de app-instelling te wijzigen, zonder opnieuw te moeten worden gecompileerd of opnieuw moet worden gecompileerd. Als u een app-instelling wijzigt, wordt de functie-app opnieuw opgestart, waardoor de statuswijziging uitgeschakeld onmiddellijk wordt herkend.
 
-Er is ook een constructor voor de para meter die geen teken reeks accepteert voor de naam van de instelling. Deze versie van het kenmerk wordt niet aanbevolen. Als u deze versie gebruikt, moet u het project opnieuw compileren en implementeren om de uitgeschakelde status van de functie te wijzigen.
+Er is ook een constructor voor de parameter die geen tekenreeks accepteert voor de naam van de instelling. Deze versie van het kenmerk wordt niet aanbevolen. Als u deze versie gebruikt, moet u het project opnieuwcompileren en opnieuwployeren om de uitgeschakelde status van de functie te wijzigen.
 
-### <a name="functions-1x---scripting-languages"></a>Functions 1. x-script talen
+### <a name="functions-1x---scripting-languages"></a>Functions 1.x : scripttalen
 
-In versie 1. x kunt u ook de `disabled` eigenschap van de *function.jsin* het bestand gebruiken om te laten zien dat de runtime geen functie moet activeren. Deze methode werkt alleen voor script talen als C#-script en Java script. De `disabled` eigenschap kan worden ingesteld op `true` de naam van een app-instelling:
+In versie 1.x kunt u ook de eigenschap van defunction.jsin het bestand gebruiken om aan te geven dat de runtime geen `disabled` functie moet activeren.  Deze methode werkt alleen voor scripttalen zoals C#-script en JavaScript. De `disabled` eigenschap kan worden ingesteld op of op de naam van een `true` app-instelling:
 
 ```json
 {
@@ -169,12 +169,12 @@ of
     "disabled": "IS_DISABLED"
 ```
 
-In het tweede voor beeld is de functie uitgeschakeld wanneer er een app-instelling met de naam IS_DISABLED is en is ingesteld op `true` of 1.
+In het tweede voorbeeld wordt de functie uitgeschakeld wanneer er een app-instelling met de naam IS_DISABLED is ingesteld op `true` of 1.
 
 >[!IMPORTANT]  
->De portal gebruikt toepassings instellingen om v1. x-functies uit te scha kelen. Wanneer een toepassings instelling een conflict veroorzaakt met de function.jsvoor een bestand, treedt er een fout op. U moet de `disabled` eigenschap verwijderen uit het function.jsbestand om fouten te voor komen. 
+>De portal gebruikt toepassingsinstellingen om v1.x-functies uit te schakelen. Wanneer een toepassingsinstelling een conflict veroorzaakt met function.jsbestand, kan er een fout optreden. Verwijder de eigenschap uit `disabled` het bestand function.jsom fouten te voorkomen. 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit artikel is informatie over het uitschakelen van automatische triggers. Zie [Triggers en bindingen](functions-triggers-bindings.md)voor meer informatie over triggers.
+Dit artikel gaat over het uitschakelen van automatische triggers. Zie Triggers en bindingen voor meer informatie over [triggers.](functions-triggers-bindings.md)

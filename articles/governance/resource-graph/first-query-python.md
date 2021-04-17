@@ -3,13 +3,15 @@ title: 'Quickstart: uw eerste Python-query'
 description: In deze quickstart voert u de stappen uit om de Resource Graph-bibliotheek voor Python in te schakelen en uw eerste query uit te voeren.
 ms.date: 01/27/2021
 ms.topic: quickstart
-ms.custom: devx-track-python
-ms.openlocfilehash: 6fc7b8f6a6fa7cde8d10dec6a4b2b834d41325e6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom:
+- devx-track-python
+- mode-api
+ms.openlocfilehash: 0bae0639e3f9913bc47b18fbc0b1d3d9ef1ad324
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98920119"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107533020"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-python"></a>Quickstart: uw eerste Resource Graph-query uitvoeren met Python
 

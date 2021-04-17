@@ -1,7 +1,7 @@
 ---
-title: Gezichten detecteren in een afbeeldings gezicht
+title: Gezichten in een afbeelding detecteren - Face
 titleSuffix: Azure Cognitive Services
-description: In deze hand leiding wordt gedemonstreerd hoe u gezichts detectie kunt gebruiken om kenmerken te extra heren, zoals geslacht, leeftijd of pose van een bepaalde afbeelding.
+description: In deze handleiding wordt gedemonstreerd hoe u gezichtsdetectie gebruikt om kenmerken zoals geslacht, leeftijd of houding uit een bepaalde afbeelding te extraheren.
 services: cognitive-services
 author: SteveMSFT
 manager: nitinme
@@ -11,78 +11,78 @@ ms.topic: conceptual
 ms.date: 02/23/2021
 ms.author: sbowles
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3a15cce45c527a92c99e0488661e0b67bb8e2371
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 71e98b735b4aa4631d73f8730a48c56a8c7585ab
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "101713062"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107497639"
 ---
-# <a name="get-face-detection-data"></a>Detectie gegevens van het gezicht ophalen
+# <a name="get-face-detection-data"></a>Gezichtsdetectiegegevens op halen
 
-In deze hand leiding wordt gedemonstreerd hoe u gezichts detectie kunt gebruiken om kenmerken te extra heren, zoals geslacht, leeftijd of pose van een bepaalde afbeelding. De code fragmenten in deze hand leiding zijn geschreven in C# met behulp van de Azure Cognitive Services Face client-bibliotheek. Dezelfde functionaliteit is beschikbaar via de [rest API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+In deze handleiding wordt gedemonstreerd hoe u gezichtsdetectie gebruikt om kenmerken zoals geslacht, leeftijd of houding uit een bepaalde afbeelding te extraheren. De codefragmenten in deze handleiding zijn geschreven in C# met behulp van de Azure Cognitive Services Face-clientbibliotheek. Dezelfde functionaliteit is beschikbaar via de [REST API.](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
 
-In deze hand leiding wordt uitgelegd hoe u:
+In deze handleiding ziet u hoe u het volgende kunt doen:
 
-- Haal de locaties en dimensies van gezichten op in een afbeelding.
-- Haal de locaties van verschillende gezichts bezienswaardigheden, zoals leerlingen, neus en mond, op in een afbeelding.
-- Het geslacht, de leeftijd, de Emotion en andere kenmerken van een gedetecteerd gezicht schatten.
+- Haal de locaties en dimensies van gezichten in een afbeelding op.
+- Haal de locaties van verschillende gezichtsherkenningspunten, zoals pupillen, neus en mond, op in een afbeelding.
+- Denk aan het geslacht, de leeftijd, de emotie en andere kenmerken van een gedetecteerd gezicht.
 
 ## <a name="setup"></a>Instellen
 
-In deze hand leiding wordt ervan uitgegaan dat u al een [FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient) -object met de naam hebt gemaakt `faceClient` met een face-abonnements sleutel en eind punt-URL. Hier kunt u de functie voor gezichts herkenning gebruiken door het aanroepen van [DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync), dat wordt gebruikt in deze hand leiding of [DetectWithStreamAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync). Volg een van de Quick starts voor instructies over het instellen van deze functie.
+In deze handleiding wordt ervan uitgenomen dat u al een [FaceClient-object](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient) met de naam `faceClient` hebt gemaakt met een Face-abonnementssleutel en eindpunt-URL. Hier kunt u de functie gezichtsdetectie gebruiken door [DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync)aan te roepen, dat in deze handleiding wordt gebruikt, of [DetectWithStreamAsync.](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync) Volg een van de quickstarts voor instructies over het instellen van deze functie.
 
-Deze hand leiding is gericht op de details van de detectie aanroep, zoals de argumenten die u kunt door geven en wat u met de geretourneerde gegevens kunt doen. U wordt aangeraden alleen een query uit te voeren voor de functies die u nodig hebt. Elke bewerking heeft meer tijd nodig om te volt ooien.
+Deze handleiding is gericht op de details van de detectie-aanroep, zoals welke argumenten u kunt doorgeven en wat u kunt doen met de geretourneerde gegevens. U wordt aangeraden alleen een query uit te voeren voor de functies die u nodig hebt. Het voltooien van elke bewerking kost extra tijd.
 
-## <a name="get-basic-face-data"></a>Basis gegevens over het gezicht ophalen
+## <a name="get-basic-face-data"></a>Basisgegevens van gezichtsherkenning op halen
 
-Roep de [DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync) -of [DetectWithStreamAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync) -methode aan waarbij de para meter _returnFaceId_ is ingesteld op **True** om gezichten te vinden en hun locaties op te halen in een installatie kopie. Dit is de standaardinstelling.
+Als u gezichten wilt zoeken en hun locaties in een afbeelding wilt op halen, roept u de methode [DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync) of [DetectWithStreamAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync) aan met de parameter _returnFaceId_ ingesteld op **true**. Dit is de standaardinstelling.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="basic1":::
 
-U kunt de geretourneerde [DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface) -objecten opvragen voor hun unieke id's en een rechthoek die de pixel coördinaten van het gezicht geeft.
+U kunt de geretourneerde [DetectedFace-objecten](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface) opvragen voor hun unieke ID's en een rechthoek die de pixelcoördinaten van het gezicht geeft.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="basic2":::
 
-Zie [FaceRectangle](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.facerectangle)voor informatie over het parseren van de locatie en afmetingen van het gezicht. Normaal gesp roken bevat deze rechthoek de ogen, Eyebrows, neus en mond. De bovenkant van Head, oren en Chin is niet noodzakelijkerwijs opgenomen. Als u de gezichts rechthoek wilt gebruiken om een volledige kop te bijsnijden of een mid-shot portret te krijgen, mogelijk voor een foto-ID-type afbeelding, kunt u de rechthoek in elke richting uitvouwen.
+Zie [FaceRectangle](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.facerectangle)voor meer informatie over het parseren van de locatie en dimensies van het gezicht. Normaal gesproken bevat deze rechthoek de ogen, neus, neus en mond. De bovenkant van het hoofd, de oren en de kin zijn niet noodzakelijkerwijs opgenomen. Als u de gezichtrechthoek wilt gebruiken om een volledige kop bij te snijden of een staande foto te krijgen, bijvoorbeeld voor een afbeelding van het type foto-id, kunt u de rechthoek in elke richting uitbreiden.
 
-## <a name="get-face-landmarks"></a>Gezichts bezienswaardigheden ophalen
+## <a name="get-face-landmarks"></a>Gezichtsherkenningspunten krijgen
 
-[Gezichts bezienswaardigheden](../concepts/face-detection.md#face-landmarks) zijn een verzameling gemakkelijk te vinden punten op een gezicht, zoals de pupilsen of de tip van de neus. Als u gegevens over het gezichts punt wilt ophalen, stelt u de para meter _detectionModel_ in op **detectionModel. Detection01** en de para meter _returnFaceLandmarks_ op **True**.
+[Gezichtsherkenningspunten](../concepts/face-detection.md#face-landmarks) zijn een set eenvoudig te vinden punten op een gezicht, zoals de pupillen of de punt van de neus. Als u oriëntatiepuntgegevens voor gezichten wilt op halen, stelt u de parameter _detectionModel_ in op **DetectionModel.Detection01** en de parameter _returnFaceLandmarks_ op **true**.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="landmarks1":::
 
-De volgende code laat zien hoe u de locaties van de neus en de pupillen kunt ophalen:
+De volgende code laat zien hoe u de locaties van de neus en pupillen kunt ophalen:
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="landmarks2":::
 
-U kunt ook gegevens over gezichts bezienswaardigheden gebruiken om de richting van het gezicht nauw keurig te berekenen. U kunt bijvoorbeeld de draai hoek van het gezicht definiëren als een vector van het midden van de mond naar het midden van de ogen. Met de volgende code wordt deze vector berekend:
+U kunt ook gegevens over gezichtsherkenningspunten gebruiken om de richting van het gezicht nauwkeurig te berekenen. U kunt bijvoorbeeld de rotatie van het gezicht definiëren als een vector van het midden van de mond naar het midden van de ogen. Met de volgende code wordt deze vector berekend:
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="direction":::
 
-Wanneer u de richting van het gezicht kent, kunt u het rechthoekige gezichts kader draaien om het op de juiste manier af te stemmen. Als u gezichten wilt bijsnijden in een afbeelding, kunt u de afbeelding op een programmatische manier draaien, zodat de gezichten altijd rechtop worden weer gegeven.
+Wanneer u de richting van het gezicht weet, kunt u het rechthoekige gezichtsframe draaien om het beter uit te lijnen. Als u gezichten in een afbeelding wilt bijsnijden, kunt u de afbeelding programmatisch roteren, zodat de gezichten altijd worden weergegeven.
 
 ## <a name="get-face-attributes"></a>Gezichtskenmerken ophalen
 
-Naast gezichts rechthoeken en bezienswaardigheden, kunnen met de gezichts detectie-API verschillende conceptuele kenmerken van een gezicht worden geanalyseerd. Zie de sectie met de conceptuele [kenmerken](../concepts/face-detection.md#attributes) voor een volledige lijst.
+Naast gezichtrechthoeken en oriëntatiepunten kan de API voor gezichtsdetectie verschillende conceptuele kenmerken van een gezicht analyseren. Zie de conceptuele sectie [Face-kenmerken](../concepts/face-detection.md#attributes) voor een volledige lijst.
 
-Als u face-kenmerken wilt analyseren, stelt u de para meter _detectionModel_ in op **detectionModel. Detection01** en de para meter _ReturnFaceAttributes_ in een lijst met [FaceAttributeType Enum](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype) -waarden.
+Als u gezichtskenmerken wilt analyseren, stelt u de parameter _detectionModel_ in op **DetectionModel.Detection01** en de parameter _returnFaceAttributes_ op een lijst met [FaceAttributeType Enum-waarden.](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype)
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="attributes1":::
 
-Vervolgens krijgt u verwijzingen naar de geretourneerde gegevens en voert u meer bewerkingen uit op basis van uw behoeften.
+Haal vervolgens verwijzingen naar de geretourneerde gegevens op en doe meer bewerkingen op basis van uw behoeften.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/Face/sdk/detect.cs" id="attributes2":::
 
-Zie de conceptuele hand leiding voor [gezichts detectie en kenmerken](../concepts/face-detection.md) voor meer informatie over elk van de kenmerken.
+Zie de conceptuele handleiding Gezichtsdetectie en -kenmerken voor meer informatie over [elk](../concepts/face-detection.md) van de kenmerken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding hebt u geleerd hoe u de verschillende functies van gezicht detectie kunt gebruiken. Vervolgens integreert u deze functies in uw app door een diep gaande zelf studie te volgen.
+In deze handleiding hebt u geleerd hoe u de verschillende functies van gezichtsdetectie gebruikt. Integreer vervolgens deze functies in een app om gezichtsgegevens van gebruikers toe te voegen.
 
-- [Zelfstudie: een WPF-app maken om gegevens van gezichten in een afbeelding weer te geven](../Tutorials/FaceAPIinCSharpTutorial.md)
+- [Zelfstudie: Gebruikers toevoegen aan een Face-service](../enrollment-overview.md)
 
 ## <a name="related-topics"></a>Verwante onderwerpen
 
-- [Referentie documentatie (REST)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
-- [Referentie documentatie (.NET SDK)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)
+- [Referentiedocumentatie (REST)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+- [Referentiedocumentatie (.NET SDK)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)

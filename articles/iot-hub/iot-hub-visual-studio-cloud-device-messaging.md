@@ -1,103 +1,91 @@
 ---
-title: VS Cloud Explorer gebruiken voor het beheren van berichten van Azure IoT Hub-apparaten
-description: Meer informatie over het gebruik van Cloud Explorer voor Visual Studio voor het bewaken van apparaten in Cloud berichten en het verzenden van Cloud naar apparaat-berichten in azure IoT Hub.
+title: VS Cloud Explorer gebruiken voor het beheren van Azure IoT Hub van apparaten
+description: Meer informatie over het gebruik van Cloud Explorer voor Visual Studio het bewaken van apparaat-naar-cloud-berichten en het verzenden van cloud-naar-apparaatberichten in Azure IoT Hub.
 author: shizn
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
-ms.openlocfilehash: c56bb7030b2ebc12e3afc24e2d8cb29ce2dda0bf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8461a77d06a63c2ac319323a91b5577ca4dce1cf
+ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "74079479"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107567027"
 ---
-# <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Gebruik Cloud Explorer voor Visual Studio om berichten tussen uw apparaat en IoT Hub te verzenden en te ontvangen.
+# <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Cloud Explorer gebruiken om Visual Studio berichten te verzenden en te ontvangen tussen uw apparaat en IoT Hub
 
 ![End-to-end-diagram](./media/iot-hub-visual-studio-cloud-device-messaging/e-to-e-diagram.png)
 
-[Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) is een handige Visual Studio-uitbrei ding waarmee u uw Azure-resources kunt weer geven, de eigenschappen van hun eigen en belang rijke ontwikkel acties vanuit Visual Studio. In dit artikel wordt uitgelegd hoe u met Cloud Explorer berichten tussen uw apparaat en uw hub kunt verzenden en ontvangen.
+In dit artikel leert u hoe u Cloud Explorer voor Visual Studio kunt gebruiken om apparaat-naar-cloud-berichten te bewaken en cloud-naar-apparaat-berichten te verzenden. Apparaat-naar-cloud-berichten kunnen sensorgegevens zijn die uw apparaat verzamelt en vervolgens naar uw IoT Hub. Cloud-naar-apparaat-berichten kunnen opdrachten zijn die uw IoT Hub naar uw apparaat verzendt. U kunt bijvoorbeeld een LED laten knipperen die is verbonden met uw apparaat.
+
+[Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) is een handige Visual Studio-extensie waarmee u uw Azure-resources kunt weergeven, hun eigenschappen kunt inspecteren en belangrijke acties voor ontwikkelaars kunt uitvoeren vanuit Visual Studio. Dit artikel is gericht op het gebruik van Cloud Explorer om berichten te verzenden en te ontvangen tussen uw apparaat en uw hub.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
-## <a name="what-you-learn"></a>Wat u leert
-
-In dit artikel leert u hoe u Cloud Explorer voor Visual Studio kunt gebruiken om apparaat-naar-Cloud-berichten te bewaken en Cloud-naar-apparaat-berichten te verzenden. Apparaat-naar-Cloud-berichten kunnen sensor gegevens zijn die door het apparaat worden verzameld en vervolgens naar uw IoT Hub worden verzonden. Cloud-naar-apparaat-berichten kunnen opdrachten zijn die uw IoT Hub naar uw apparaat verzendt. Knip bijvoorbeeld een LED die is verbonden met uw apparaat.
-
-## <a name="what-you-do"></a>Wat u doet
-
-In dit artikel voert u de volgende taken uit:
-
-- Gebruik Cloud Explorer voor Visual Studio om apparaat-naar-Cloud-berichten te bewaken.
-
-- Gebruik Cloud Explorer voor Visual Studio om Cloud-naar-apparaat-berichten te verzenden.
-
-## <a name="what-you-need"></a>Wat u nodig hebt
-
-De volgende vereisten zijn nodig:
+## <a name="prerequisites"></a>Vereisten
 
 - Een actief Azure-abonnement.
 
-- Een Azure-IoT Hub onder uw abonnement.
+- Een Azure IoT Hub onder uw abonnement.
 
-- Micro soft Visual Studio 2017 Update 9 of hoger. In dit artikel wordt gebruikgemaakt van [Visual Studio 2019](https://www.visualstudio.com/vs/).
+- Microsoft Visual Studio 2017 Update 9 of hoger. In dit artikel wordt [Visual Studio 2019 gebruikt.](https://www.visualstudio.com/vs/)
 
-- Het onderdeel Cloud Explorer van Visual Studio Installer, dat standaard is geselecteerd met de Azure-workload.
+- Het onderdeel Cloud Explorer van Visual Studio Installer, dat standaard is geselecteerd met Azure Workload.
 
 ## <a name="update-cloud-explorer-to-latest-version"></a>Cloud Explorer bijwerken naar de nieuwste versie
 
-Het onderdeel Cloud Explorer van Visual Studio Installer voor Visual Studio 2017 biedt alleen ondersteuning voor het bewaken van apparaat-naar-Cloud-en Cloud-naar-apparaat-berichten. Als u Visual Studio 2017 wilt gebruiken, downloadt en installeert u de nieuwste [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS).
+Het onderdeel Cloud Explorer van Visual Studio Installer voor Visual Studio 2017 ondersteunt alleen het bewaken van apparaat-naar-cloud- en cloud-naar-apparaat-berichten. Als u Visual Studio 2017 wilt gebruiken, downloadt en installeert u de meest recente [Cloud Explorer.](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS)
 
-## <a name="sign-in-to-access-your-hub"></a>Meld u aan om toegang te krijgen tot uw hub
+## <a name="sign-in-to-access-your-hub"></a>Aanmelden voor toegang tot uw hub
 
-Voer de volgende stappen uit om toegang te krijgen tot uw hub:
+Volg deze stappen om toegang te krijgen tot uw hub:
 
-1. Selecteer in Visual Studio   >  **Cloud Explorer** weer geven om Cloud Explorer te openen.
+1. Selecteer Visual Studio Cloud Explorer **weergeven**  >  **om** Cloud Explorer te openen.
 
-1. Selecteer het pictogram account beheer om uw abonnementen weer te geven.
+1. Selecteer het pictogram Accountbeheer om uw abonnementen weer te geven.
 
-    ![Pictogram account beheer](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
+    ![Pictogram Accountbeheer](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
 
-1. Als u bent aangemeld bij Azure, worden uw accounts weer gegeven. Als u zich voor de eerste keer wilt aanmelden bij Azure, kiest u **een account toevoegen**.
+1. Als u bent aangemeld bij Azure, worden uw accounts weergegeven. Als u zich voor het eerst wilt aanmelden bij Azure, kiest **u Een account toevoegen.**
 
-1. Selecteer de Azure-abonnementen die u wilt gebruiken en klik **op Toep assen**.
+1. Selecteer de Azure-abonnementen die u wilt gebruiken en kies **Toepassen.**
 
-1. Breid uw abonnement uit en vouw **IOT-hubs** uit.  Onder elke hub kunt u uw apparaten weer geven voor die hub.
+1. Vouw uw abonnement uit en vouw **vervolgens IoT Hubs uit.**  Onder elke hub ziet u uw apparaten voor die hub.
 
-    ![Apparaten lijst](media/iot-hub-visual-studio-cloud-device-messaging/hub-device-list.png)
+    ![Apparatenlijst](media/iot-hub-visual-studio-cloud-device-messaging/hub-device-list.png)
 
-## <a name="monitor-device-to-cloud-messages"></a>Apparaat-naar-Cloud-berichten bewaken
+## <a name="monitor-device-to-cloud-messages"></a>Apparaat-naar-cloud-berichten bewaken
 
-Ga als volgt te werk om berichten te bewaken die worden verzonden vanaf uw apparaat naar uw IoT Hub:
+Volg deze stappen om berichten te bewaken die vanaf uw apparaat naar IoT Hub apparaat worden verzonden:
 
-1. Klik met de rechter muisknop op uw IoT Hub of apparaat en selecteer **D2C-bericht bewaking starten**.
+1. Klik met de rechtermuisknop op IoT Hub apparaat en **selecteer Controle D2C-bericht starten.**
 
-    ![Het D2C-bericht van de bewaking starten](media/iot-hub-visual-studio-cloud-device-messaging/start-monitoring-d2c-message-vs2019.png)
+    ![Controle D2C-bericht starten](media/iot-hub-visual-studio-cloud-device-messaging/start-monitoring-d2c-message-vs2019.png)
 
-1. De bewaakte berichten worden weer gegeven onder **uitvoer**.
+1. De bewaakte berichten worden weergegeven onder **Uitvoer**.
 
-    ![Resultaten van D2C-bericht bewaken](media/iot-hub-visual-studio-cloud-device-messaging/monitor-d2c-message-result-vs2019.png)
+    ![Resultaat van controle van D2C-bericht](media/iot-hub-visual-studio-cloud-device-messaging/monitor-d2c-message-result-vs2019.png)
 
-1. Als u de bewaking wilt stoppen, klikt u met de rechter muisknop op een IoT Hub of apparaat en selecteert u **bewaking D2C-bericht stoppen**.
+1. Als u de bewaking wilt stoppen, klikt u met de rechtermuisknop op IoT Hub apparaat en selecteert **u Controle D2C-bericht stoppen.**
 
 ## <a name="send-cloud-to-device-messages"></a>Cloud-naar-apparaat-berichten verzenden
 
-Voer de volgende stappen uit om een bericht te verzenden van uw IoT Hub naar uw apparaat:
+Volg deze stappen om een bericht IoT Hub uw apparaat te verzenden:
 
-1. Klik met de rechter muisknop op het apparaat en selecteer **C2D-bericht verzenden**.
+1. Klik met de rechtermuisknop op uw apparaat en **selecteer C2D-bericht verzenden.**
 
 1. Voer het bericht in het invoervak in.
 
     ![C2D-bericht verzenden](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-test.png)
 
-    Resultaten worden weer gegeven onder **uitvoer**.
+    Resultaten worden weergegeven onder **Uitvoer**.
 
     ![Resultaat van C2D-bericht verzenden](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-result-vs2019.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt geleerd hoe u apparaat-naar-Cloud-berichten kunt bewaken en Cloud-naar-apparaat-berichten kunt verzenden tussen uw IoT-apparaat en Azure IoT Hub.
+U hebt geleerd hoe u apparaat-naar-cloud-berichten bewaakt en cloud-naar-apparaat-berichten verzendt tussen uw IoT-apparaat en Azure IoT Hub.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

@@ -1,15 +1,17 @@
 ---
 title: Azure Service Bus-onderwerpen en -abonnementen met Java gebruiken (azure-messaging-servicebus)
 description: In deze quickstart schrijft u Java-code die het pakket azure-messaging-servicebus gebruikt voor het verzenden van berichten naar een Azure Service Bus-onderwerp en ontvangt u vervolgens berichten van abonnementen op dit onderwerp.
-ms.devlang: Java
-ms.topic: quickstart
 ms.date: 02/13/2021
-ms.openlocfilehash: c5b930fb2c87a09a1f4801365936c62a7cf79f1d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.topic: quickstart
+ms.devlang: Java
+ms.custom:
+- mode-api
+ms.openlocfilehash: 6fe0a3a91ebbd5b6daced95494b8eaa5b7db0c46
+ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100516172"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107536377"
 ---
 # <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-java"></a>Berichten verzenden naar een Azure Service Bus-onderwerp en berichten ontvangen van abonnementen op het onderwerp (Java)
 In deze quickstart schrijft u Java-code die het pakket azure-messaging-servicebus gebruikt voor het verzenden van berichten naar een Azure Service Bus-onderwerp en ontvangt u vervolgens berichten van abonnementen op dit onderwerp.
@@ -31,9 +33,9 @@ In deze sectie maakt u een Java-consoleproject en voegt u code toe om berichten 
 Maak een Java-project met Eclipse of een hulpprogramma van uw keuze. 
 
 ### <a name="configure-your-application-to-use-service-bus"></a>Uw toepassing configureren voor het gebruik van Service Bus
-Verwijzingen toevoegen aan Azure core-en Azure Service Bus-bibliotheken. 
+Voeg verwijzingen toe naar Azure Core- en Azure Service Bus bibliotheken. 
 
-Als u een verduistering gebruikt en een Java-Console toepassing hebt gemaakt, converteert u uw Java-project naar een Maven: Klik met de rechter muisknop op het project in het venster **pakket Verkenner** en selecteer **Configure**  ->  **Convert to Maven project**. Voeg vervolgens afhankelijkheden toe aan deze twee bibliotheken, zoals wordt weer gegeven in het volgende voor beeld.
+Als u Eclipse gebruikt en een Java-consoletoepassing hebt gemaakt, converteert u uw Java-project naar een Maven: klik met de rechtermuisknop op het project in het **venster Package Explorer** en selecteer **Converteren** naar  ->  **Maven-project configureren.** Voeg vervolgens afhankelijkheden toe aan deze twee bibliotheken, zoals wordt weergegeven in het volgende voorbeeld.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -174,7 +176,7 @@ In deze sectie voegt u code toe om berichten uit een abonnement op het onderwerp
 1. Voeg een methode toe met de naam `receiveMessages` om berichten van het abonnement te ontvangen. Met deze methode maakt u een `ServiceBusProcessorClient` voor het abonnement door een handler op te geven voor de verwerking van berichten en een andere voor het afhandelen van fouten. Vervolgens wordt de verwerker gestart, wordt er een paar seconden gewacht, worden de ontvangen berichten getoond en wordt de verwerker gestopt en gesloten.
 
     > [!IMPORTANT]
-    > Vervang `ServiceBusTopicTest` in `ServiceBusTopicTest::processMessage` de code door de naam van uw klasse. 
+    > Vervang `ServiceBusTopicTest` in in de code door de naam van uw `ServiceBusTopicTest::processMessage` klasse. 
 
     ```java
     // handles received messages
@@ -200,7 +202,7 @@ In deze sectie voegt u code toe om berichten uit een abonnement op het onderwerp
         processorClient.close();        
     }  
     ```
-2. Voeg de `processMessage` methode toe om een bericht te verwerken dat is ontvangen van het service bus-abonnement. 
+2. Voeg de `processMessage` methode toe om een bericht te verwerken dat is ontvangen van Service Bus abonnement. 
 
     ```java
     private static void processMessage(ServiceBusReceivedMessageContext context) {
@@ -209,7 +211,7 @@ In deze sectie voegt u code toe om berichten uit een abonnement op het onderwerp
             message.getSequenceNumber(), message.getBody());
     }    
     ```
-3. Voeg de `processError` methode toe om fout berichten af te handelen.
+3. Voeg de methode `processError` toe om foutberichten te verwerken.
 
     ```java
     private static void processError(ServiceBusErrorContext context, CountDownLatch countdownLatch) {

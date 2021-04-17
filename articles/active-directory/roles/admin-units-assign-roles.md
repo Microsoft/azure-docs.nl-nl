@@ -1,6 +1,6 @@
 ---
-title: Rollen toewijzen en weer geven met het bereik van de beheer eenheid-Azure Active Directory | Microsoft Docs
-description: Beheer eenheden gebruiken om het bereik van roltoewijzingen in Azure Active Directory te beperken.
+title: Rollen toewijzen en een lijst met beheereenheidbereik - Azure Active Directory | Microsoft Docs
+description: Gebruik beheereenheden om het bereik van roltoewijzingen in de Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -9,80 +9,80 @@ ms.service: active-directory
 ms.topic: how-to
 ms.subservice: roles
 ms.workload: identity
-ms.date: 11/04/2020
+ms.date: 04/14/2021
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fc0c4bf9f71a8fe7e8cf49b83d32ac594dbe062
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e24bf5df84015ada6b62c35fdd29571c66e06ebd
+ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103011380"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107505255"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Specifieke rollen toewijzen aan een beheereenheid
 
-In Azure Active Directory (Azure AD) kunt u, voor uitgebreidere administratieve controle, gebruikers toewijzen aan een Azure AD-rol met een bereik dat beperkt is tot een of meer beheer eenheden.
+In Azure Active Directory (Azure AD) kunt u voor gedetailleerder beheer gebruikers toewijzen aan een Azure AD-rol met een bereik dat is beperkt tot een of meer beheereenheden.
 
-Zie aan de [slag](admin-units-manage.md#get-started)voor het voorbereiden van het gebruik van Power shell en Microsoft Graph voor beheer van beheer eenheden.
+Zie Aan de slag om het gebruik van PowerShell en Microsoft Graph voor beheer van [beheereenheden voor te bereiden.](admin-units-manage.md#get-started)
 
-## <a name="available-roles"></a>Beschik bare rollen
+## <a name="available-roles"></a>Beschikbare rollen
 
 Rol  |  Beschrijving
 ----- |  -----------
-Verificatiebeheerder  |  Heeft toegang voor het weer geven, instellen en opnieuw instellen van verificatie methode-informatie voor een niet-beheerders gebruiker in de toegewezen beheer eenheid.
-Groepsbeheerder  |  Kan alle aspecten van groepen en groeps instellingen, zoals naamgeving en verloop beleid, in de toegewezen administratieve eenheid beheren.
-Helpdeskbeheerder  |  Kan wacht woorden voor niet-beheerders en helpdesk beheerders opnieuw instellen in de toegewezen beheer eenheid.
-Licentiebeheerder  |  Kan alleen licentie toewijzingen binnen de beheer eenheid toewijzen, verwijderen en bijwerken.
-Wachtwoordbeheerder  |  Kan wacht woorden voor niet-beheerders en wachtwoord beheerders binnen de toegewezen beheer eenheid opnieuw instellen.
-Gebruikersbeheerder  |  Kan alle aspecten van gebruikers en groepen beheren, met inbegrip van het opnieuw instellen van wacht woorden voor beperkte beheerders binnen de toegewezen beheer eenheid.
+Verificatiebeheerder  |  Heeft alleen toegang tot het weergeven, instellen en opnieuw instellen van verificatiemethodegegevens voor gebruikers die geen beheerder zijn in de toegewezen beheereenheid.
+Groepsbeheerder  |  Kan alle aspecten van groepen en groepen, zoals naamgeving en verloopbeleid, alleen beheren in de toegewezen beheereenheid.
+Helpdeskbeheerder  |  Kan wachtwoorden voor niet-beheerders en helpdeskbeheerders alleen opnieuw instellen in de toegewezen beheereenheid.
+Licentiebeheerder  |  Licentietoewijzingen kunnen alleen binnen de beheereenheid worden toegewezen, verwijderd en bijgewerkt.
+Wachtwoordbeheerder  |  Kan wachtwoorden voor niet-beheerders en wachtwoordbeheerders alleen binnen de toegewezen beheereenheid opnieuw instellen.
+Gebruikersbeheerder  |  Kan alle aspecten van gebruikers en groepen beheren, waaronder het opnieuw instellen van wachtwoorden voor beperkte beheerders binnen de toegewezen beheereenheid.
 
-## <a name="security-principals-that-can-be-assigned-to-a-scoped-role"></a>Beveiligings-principals die kunnen worden toegewezen aan een scoped rol
+## <a name="security-principals-that-can-be-assigned-to-a-scoped-role"></a>Beveiligingsprincipa die kunnen worden toegewezen aan een scoped rol
 
-De volgende beveiligings-principals kunnen worden toegewezen aan een rol met een beheer eenheid bereik:
+De volgende beveiligingsprincipa kunnen worden toegewezen aan een rol met een beheereenheidbereik:
 
 * Gebruikers
-* Door de functie toewijs bare Cloud groepen (preview-versie)
+* Rol toewijsbare cloudgroepen (preview)
 * Service Principal Name (SPN)
 
 ## <a name="assign-a-scoped-role"></a>Een scoped rol toewijzen
 
-U kunt een scoped-rol toewijzen met behulp van de Azure Portal, Power shell of Microsoft Graph.
+U kunt een scoped rol toewijzen met behulp van Azure Portal, PowerShell of Microsoft Graph.
 
 ### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-1. Ga in de Azure Portal naar **Azure AD**.
+1. Ga in Azure Portal naar **Azure AD.**
 
-1. Selecteer **beheer eenheden** en selecteer vervolgens de beheer eenheid waaraan u een gebruikersrol bereik wilt toewijzen. 
+1. Selecteer **Beheereenheden en** selecteer vervolgens de beheereenheid aan wie u een gebruikersrolbereik wilt toewijzen. 
 
-1. Selecteer in het linkerdeel venster de optie **rollen en beheerders** om alle beschik bare rollen weer te geven.
+1. Selecteer in het linkerdeelvenster **Rollen en beheerders om** alle beschikbare rollen weer te geven.
 
-   ![Scherm opname van het deel venster ' rol en beheerder ' voor het selecteren van een administratieve eenheid waarvan u het rolinstantie wilt toewijzen.](./media/admin-units-assign-roles/select-role-to-scope.png)
+   ![Schermopname van het deelvenster Rol en beheerders voor het selecteren van een beheereenheid waarvan u het rolbereik wilt toewijzen.](./media/admin-units-assign-roles/select-role-to-scope.png)
 
-1. Selecteer de rol die u wilt toewijzen en selecteer vervolgens **toewijzingen toevoegen**. 
+1. Selecteer de rol die moet worden toegewezen en selecteer vervolgens **Toewijzingen toevoegen.** 
 
-1. Selecteer in het deel venster **toewijzingen toevoegen** een of meer gebruikers die moeten worden toegewezen aan de rol.
+1. Selecteer in **het deelvenster Toewijzingen** toevoegen een of meer gebruikers die aan de rol moeten worden toegewezen.
 
-   ![Selecteer de rol die u wilt bereik en selecteer vervolgens toewijzingen toevoegen](./media/admin-units-assign-roles/select-add-assignment.png)
+   ![Selecteer de rol die u wilt bereik en selecteer vervolgens Toewijzingen toevoegen](./media/admin-units-assign-roles/select-add-assignment.png)
 
 > [!Note]
-> Zie [Azure AD-rollen toewijzen in PIM](../privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope)als u een rol wilt toewijzen aan een beheer eenheid met behulp van Azure AD PRIVILEGED Identity Management (PIM).
+> Zie Azure AD-rollen toewijzen in PIM als u een rol wilt toewijzen aan een beheereenheid met behulp van Azure AD Privileged Identity Management [(PIM).](../privileged-identity-management/pim-how-to-add-role-to-user.md?tabs=new#assign-a-role-with-restricted-scope)
 
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
 ```powershell
 $adminUser = Get-AzureADUser -ObjectId "Use the user's UPN, who would be an admin on this unit"
-$role = Get-AzureADDirectoryRole | Where-Object -Property DisplayName -EQ -Value "User Account Administrator"
+$role = Get-AzureADDirectoryRole | Where-Object -Property DisplayName -EQ -Value "User Administrator"
 $adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
-$roleMember = New-Object -TypeName Microsoft.Open.AzureAD.Model.RoleMemberInfo
-$roleMember.ObjectId = $adminUser.ObjectId
-Add-AzureADMSScopedRoleMembership -ObjectId $adminUnitObj.ObjectId -RoleObjectId $role.ObjectId -RoleMemberInfo $roleMember
+$roleMember = New-Object -TypeName Microsoft.Open.MSGraph.Model.MsRoleMemberInfo
+$roleMember.Id = $adminUser.ObjectId
+Add-AzureADMSScopedRoleMembership -Id $adminUnitObj.Id -RoleId $role.ObjectId -RoleMemberInfo $roleMember
 ```
 
-U kunt de gemarkeerde sectie wijzigen als vereist voor de specifieke omgeving.
+U kunt de gemarkeerde sectie wijzigen zoals vereist voor de specifieke omgeving.
 
-### <a name="use-microsoft-graph"></a>Microsoft Graph gebruiken
+### <a name="use-microsoft-graph"></a>Gebruik Microsoft Graph
 
 Aanvraag
 
@@ -101,30 +101,30 @@ Hoofdtekst
 }
 ```
 
-## <a name="view-a-list-of-the-scoped-admins-in-an-administrative-unit"></a>Een lijst met beheerders binnen een beheer eenheid weer geven
+## <a name="view-a-list-of-the-scoped-admins-in-an-administrative-unit"></a>Een lijst weergeven van de beheerders met een bereik in een beheereenheid
 
-U kunt een lijst met scoped beheerders weer geven met behulp van de Azure Portal, Power shell of Microsoft Graph.
+U kunt een lijst met beheerders met een bereik weergeven met behulp van Azure Portal, PowerShell of Microsoft Graph.
 
 ### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-U kunt alle roltoewijzingen weer geven die zijn gemaakt met een bereik administratieve eenheid in het [gedeelte Administrative units van Azure AD](https://ms.portal.azure.com/?microsoft_aad_iam_adminunitprivatepreview=true&microsoft_aad_iam_rbacv2=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/AdminUnit). 
+U kunt alle roltoewijzingen weergeven die zijn gemaakt met een beheereenheidbereik in de sectie [Beheereenheden van Azure AD.](https://ms.portal.azure.com/?microsoft_aad_iam_adminunitprivatepreview=true&microsoft_aad_iam_rbacv2=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/AdminUnit) 
 
-1. Ga in de Azure Portal naar **Azure AD**.
+1. Ga in Azure Portal naar **Azure AD.**
 
-1. Selecteer **beheer eenheden** in het linkerdeel venster en selecteer vervolgens de beheer eenheid voor de lijst met roltoewijzingen die u wilt weer geven. 
+1. Selecteer in het linkerdeelvenster **Beheereenheden** en selecteer vervolgens de beheereenheid voor de lijst met roltoewijzingen die u wilt weergeven. 
 
-1. Selecteer **rollen en beheerders** en open vervolgens een rol om de toewijzingen in de beheer eenheid weer te geven.
+1. Selecteer **Rollen en beheerders** en open vervolgens een rol om de toewijzingen in de beheereenheid weer te geven.
 
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
 ```powershell
 $adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
-Get-AzureADMSScopedRoleMembership -ObjectId $adminUnitObj.ObjectId | fl *
+Get-AzureADMSScopedRoleMembership -Id $adminUnitObj.Id | fl *
 ```
 
-U kunt de gemarkeerde sectie wijzigen als vereist voor uw specifieke omgeving.
+U kunt de gemarkeerde sectie wijzigen zoals vereist voor uw specifieke omgeving.
 
-### <a name="use-microsoft-graph"></a>Microsoft Graph gebruiken
+### <a name="use-microsoft-graph"></a>Gebruik Microsoft Graph
 
 Aanvraag
 
@@ -141,4 +141,4 @@ Hoofdtekst
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Cloudgroepen gebruiken om roltoewijzingen te beheren](groups-concept.md)
-- [Problemen met rollen die zijn toegewezen aan Cloud groepen oplossen](groups-faq-troubleshooting.md)
+- [Problemen oplossen met rollen die zijn toegewezen aan cloudgroepen](groups-faq-troubleshooting.md)

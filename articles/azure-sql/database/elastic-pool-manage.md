@@ -10,12 +10,12 @@ ms.author: moslake
 ms.reviewer: sstein
 ms.date: 03/12/2019
 ms.custom: seoapril2019 sqldbrb=1, devx-track-azurecli
-ms.openlocfilehash: dc2bb24880b77eae24e9bb2ef0baf70ac0b92ac7
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: 2ccc34d1fc48c54bce90a2cde5b14bdc7059d480
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107588629"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107598904"
 ---
 # <a name="manage-elastic-pools-in-azure-sql-database"></a>Elastische pools beheren in Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -31,7 +31,7 @@ Hier kunt u een combinatie van de volgende wijzigingen aanbrengen en ze allemaal
 1. De servicelaag van de pool wijzigen
 2. De prestaties (DTU of vCores) en opslag omhoog of omlaag schalen
 3. Databases toevoegen aan of verwijderen uit de pool
-4. Stel een minimum ( gegarandeerd) en maximale prestatielimiet in voor de databases in de pools
+4. Een minimum (gegarandeerd) en maximale prestatielimiet instellen voor de databases in de pools
 5. Bekijk het kostenoverzicht om eventuele wijzigingen in uw factuur weer te geven als gevolg van uw nieuwe selecties
 
 ![Configuratieblade elastische pool](./media/elastic-pool-manage/configure-pool.png)
@@ -45,7 +45,7 @@ Hier kunt u een combinatie van de volgende wijzigingen aanbrengen en ze allemaal
 Gebruik de volgende PowerShell-cmdlets SQL Database elastische pools en pooldatabases met Azure PowerShell maken en beheren. Zie Install Azure PowerShell module (PowerShell installeren of upgraden) [als u PowerShell wilt installeren Azure PowerShell upgraden.](/powershell/azure/install-az-ps) Zie Servers maken en beheren voor het maken en beheren van de servers voor een [elastische pool.](logical-servers.md) Zie Firewallregels maken en beheren met PowerShell voor het maken en [beheren van firewallregels.](firewall-configure.md#use-powershell-to-manage-server-level-ip-firewall-rules)
 
 > [!TIP]
-> Zie Voor PowerShell-voorbeeldscripts Elastische pools maken en databases verplaatsen tussen pools en uit een pool met behulp van [PowerShell](scripts/move-database-between-elastic-pools-powershell.md) en PowerShell gebruiken om een elastische [SQL-pool te](scripts/monitor-and-scale-pool-powershell.md)bewaken en te schalen in Azure SQL Database.
+> Zie Voor PowerShell-voorbeeldscripts Elastische pools maken en databases verplaatsen tussen pools en buiten een pool met behulp van [PowerShell](scripts/move-database-between-elastic-pools-powershell.md) en PowerShell gebruiken om een elastische [SQL-pool te](scripts/monitor-and-scale-pool-powershell.md)bewaken en te schalen in Azure SQL Database.
 >
 
 | Cmdlet | Beschrijving |
@@ -90,24 +90,23 @@ Gebruik de volgende T-SQL-opdrachten om databases te maken en te verplaatsen bin
 
 | Opdracht | Beschrijving |
 | --- | --- |
-|[CREATE DATABASE (Azure SQL Database)](/sql/t-sql/statements/create-database-azure-sql-database)|Hiermee maakt u een nieuwe database in een bestaande pool of als een individuele database. U moet zijn verbonden met de hoofddatabase om een nieuwe database te maken.|
+|[CREATE DATABASE (Azure SQL Database)](/sql/t-sql/statements/create-database-azure-sql-database)|Hiermee maakt u een nieuwe database in een bestaande pool of als een individuele database. U moet zijn verbonden met de hoofddatabase om een nieuwe database te kunnen maken.|
 | [ALTER DATABASE (Azure SQL Database)](/sql/t-sql/statements/alter-database-azure-sql-database) |Verplaats een database naar, uit of tussen elastische pools.|
 |[DROP DATABASE (Transact-SQL)](/sql/t-sql/statements/drop-database-transact-sql)|Hiermee verwijdert u een database.|
 |[sys.elastic_pool_resource_stats (Azure SQL Database)](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database)|Retourneert statistieken over resourcegebruik voor alle elastische pools op een server. Voor elke elastische pool is er één rij voor elk rapportagevenster van 15 seconden (vier rijen per minuut). Dit omvat CPU-, IO-, logboek-, opslagverbruik en gelijktijdig aanvraag-/sessiegebruik door alle databases in de pool.|
-|[sys.database_service_objectives (Azure SQL Database)](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Retourneert de editie (servicelaag), servicedoelstelling (prijscategorie) en de naam van de elastische pool, indien van gebruik, voor een database in SQL Database of Azure Synapse Analytics. Als u bent aangemeld bij de hoofddatabase op een server, retourneert informatie over alle databases. Voor Azure Synapse Analytics moet u zijn verbonden met de hoofddatabase.|
+|[sys.database_service_objectives (Azure SQL Database)](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Retourneert de editie (servicelaag), servicedoelstelling (prijscategorie) en de naam van een elastische pool, indien van u, voor een database in SQL Database of Azure Synapse Analytics. Als u bent aangemeld bij de hoofddatabase op een server, retourneert informatie over alle databases. Voor Azure Synapse Analytics moet u zijn verbonden met de hoofddatabase.|
 
 ## <a name="rest-api"></a>REST-API
 
-Gebruik deze SQL Database om elastische pools en pooldatabases te maken REST API beheren.
+Als u elastische pools SQL Database pooldatabases wilt maken en beheren, gebruikt u deze REST API aanvragen.
 
 | Opdracht | Beschrijving |
 | --- | --- |
 |[Elastische pools : maken of bijwerken](/rest/api/sql/elasticpools/createorupdate)|Hiermee maakt u een nieuwe elastische pool of werkt u een bestaande elastische pool bij.|
 |[Elastische pools - Verwijderen](/rest/api/sql/elasticpools/delete)|Hiermee verwijdert u de elastische pool.|
 |[Elastische pools - Get](/rest/api/sql/elasticpools/get)|Haalt een elastische pool op.|
-|[Elastische pools - Lijst per server](/rest/api/sql/elasticpools/listbyserver)|Retourneert een lijst met elastische pools in een server.|
-|[Elastische pools - Bijwerken] (/rest/api/sql/2020-11-01-preview/elasticpools/update
-)|Werkt een bestaande elastische pool bij.|
+|[Elastische pools - Lijst per server](/rest/api/sql/elasticpools/listbyserver)|Retourneert een lijst met elastische pools op een server.|
+|[Elastische pools - Bijwerken](/rest/api/sql/2020-11-01-preview/elasticpools/update)|Werkt een bestaande elastische pool bij.|
 |[Activiteiten voor elastische pool](/rest/api/sql/elasticpoolactivities)|Retourneert elastische poolactiviteiten.|
 |[Databaseactiviteiten voor elastische pool](/rest/api/sql/elasticpooldatabaseactivities)|Retourneert activiteit op databases in een elastische pool.|
 |[Databases : maken of bijwerken](/rest/api/sql/databases/createorupdate)|Hiermee maakt u een nieuwe database of werkt u een bestaande database bij.|

@@ -1,6 +1,6 @@
 ---
-title: Azure Media Services inhoud publiceren met REST
-description: Meer informatie over het maken van een Locator die wordt gebruikt voor het bouwen van een streaming-URL. De code maakt gebruik van REST API.
+title: Inhoud Azure Media Services publiceren met REST
+description: Meer informatie over het maken van een locator die wordt gebruikt om een streaming-URL te bouwen. De code maakt gebruik van REST API.
 author: IngridAtMicrosoft
 manager: femila
 editor: ''
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
-ms.openlocfilehash: b8733d499b2396160a73906f16a69291cf0b9d71
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 650c0847942635e2a6a901db40ed0e51e9412057
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103015417"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600043"
 ---
-# <a name="publish-azure-media-services-content-using-rest"></a>Azure Media Services inhoud publiceren met REST
+# <a name="publish-azure-media-services-content-using-rest"></a>Inhoud Azure Media Services publiceren met REST
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
@@ -32,40 +32,40 @@ ms.locfileid: "103015417"
 > 
 > 
 
-U kunt een adaptieve bitsnelheid-MP4 streamen die is ingesteld door een OnDemand streaming-Locator te maken en een streaming-URL te bouwen. De [code ring van een activum](media-services-rest-encode-asset.md) artikel laat zien hoe u kunt coderen in een adaptieve bitsnelheid MP4-set. Als uw inhoud is versleuteld, moet u het beleid voor de levering van assets configureren (zoals beschreven in [Dit](media-services-rest-configure-asset-delivery-policy.md) artikel) voordat u een Locator maakt. 
+U kunt een Adaptive Bitrate MP4-set streamen door een OnDemand-streaming-locator te maken en een streaming-URL te bouwen. In [het artikel Een asset coderen ziet](media-services-rest-encode-asset.md) u hoe u codeert in een Adaptive Bitrate MP4-set. Als uw inhoud is versleuteld, configureert u het leveringsbeleid voor activa (zoals beschreven in [dit](media-services-rest-configure-asset-delivery-policy.md) artikel) voordat u een locator maakt. 
 
-U kunt ook een OnDemand streaming-Locator gebruiken om Url's te bouwen die verwijzen naar MP4-bestanden die progressief kunnen worden gedownload.  
+U kunt ook een OnDemand-streaminglocator gebruiken om URL's te bouwen die naar MP4-bestanden wijzen die progressief kunnen worden gedownload.  
 
-In dit artikel wordt beschreven hoe u een OnDemand streaming-Locator maakt om uw asset te publiceren en een vloeiende, MPEG-DASH en HLS streaming-Url's te bouwen. Ook wordt uitgelegd hoe u progressieve down load-Url's bouwt.
+In dit artikel wordt beschreven hoe u een OnDemand-streaming-locator maakt om uw asset te publiceren en een Smooth-, MPEG DASH- en HLS-streaming-URL te bouwen. U ziet ook hoe u URL's voor progressief downloaden bouwt.
 
-In de [volgende](#types) sectie worden de Enum-typen weer gegeven waarvan de waarden worden gebruikt in de rest-aanroepen.   
+In [de volgende](#types) sectie ziet u de typen enum waarvan de waarden worden gebruikt in de REST-aanroepen.   
 
 > [!NOTE]
-> Wanneer u entiteiten in Media Services opent, moet u specifieke header-velden en-waarden in uw HTTP-aanvragen instellen. Zie [Setup for Media Services rest API Development](media-services-rest-how-to-use.md)(Engelstalig) voor meer informatie.
+> Bij het openen van entiteiten in Media Services, moet u specifieke headervelden en -waarden instellen in uw HTTP-aanvragen. Zie Setup for [Media Services REST API Development voor meer informatie.](media-services-rest-how-to-use.md)
 > 
 
 ## <a name="connect-to-media-services"></a>Verbinding met Media Services maken
 
-Zie [toegang tot de Azure Media Services-API met Azure AD-verificatie](media-services-use-aad-auth-to-access-ams-api.md)voor meer informatie over het maken van een verbinding met de AMS-API. 
+Zie Access the Azure Media Services API with Azure AD authentication (Toegang tot de API van de Azure Media Services met [Azure AD-verificatie) voor](media-services-use-aad-auth-to-access-ams-api.md)meer informatie over het maken van verbinding met de AMS-API. 
 
 >[!NOTE]
->Nadat u verbinding hebt gemaakt met https://media.windows.net , ontvangt u een 301-omleiding die een andere Media Services URI aangeeft. U moet volgende aanroepen naar de nieuwe URI maken.
+>Nadat u verbinding hebt gemaakt met `https://media.windows.net` , ontvangt u een 301-omleiding die een andere URI Media Services opgeven. U moet volgende aanroepen naar de nieuwe URI maken.
 
-## <a name="create-an-ondemand-streaming-locator"></a>Een OnDemand streaming-Locator maken
-Als u de OnDemand streaming-Locator wilt maken en Url's wilt ophalen, moet u het volgende doen:
+## <a name="create-an-ondemand-streaming-locator"></a>Een OnDemand-streaminglocator maken
+Als u de OnDemand-streaminglocator wilt maken en URL's wilt op halen, moet u het volgende doen:
 
-1. Als de inhoud is versleuteld, definieert u een toegangs beleid.
-2. Maak een OnDemand streaming-Locator.
-3. Als u van plan bent om te streamen, haalt u het streaming-manifest bestand (. ISM) op in de Asset. 
+1. Als de inhoud is versleuteld, definieert u een toegangsbeleid.
+2. Maak een OnDemand-streaminglocator.
+3. Als u van plan bent te streamen, moet u het streamingmanifestbestand (.ism) in de asset op halen. 
    
-   Als u van plan bent om geleidelijk te downloaden, kunt u de namen van MP4-bestanden in de Asset ophalen. 
-4. Bouw Url's naar het manifest bestand of de MP4-bestanden. 
-5. U kunt geen streaming-Locator maken met behulp van een AccessPolicy die schrijf-of verwijder machtigingen bevat.
+   Als u van plan bent progressief te downloaden, haal dan de namen van MP4-bestanden op in de asset. 
+4. BOUW URL's naar het manifestbestand of MP4-bestanden. 
+5. U kunt geen streaming-locator maken met behulp van een AccessPolicy die schrijf- of verwijdermachtigingen bevat.
 
-### <a name="create-an-access-policy"></a>Een toegangs beleid maken
+### <a name="create-an-access-policy"></a>Een toegangsbeleid maken
 
 >[!NOTE]
->Er geldt een limiet van 1.000.000 beleidsregels voor verschillende AMS-beleidsitems (bijvoorbeeld voor Locator-beleid of ContentKeyAuthorizationPolicy). Gebruik dezelfde beleids-ID als u altijd dezelfde dagen/toegangs machtigingen gebruikt, bijvoorbeeld beleids regels voor Locators die zijn bedoeld om gedurende een lange periode te blijven (niet-upload beleid). Zie [Dit](media-services-dotnet-manage-entities.md#limit-access-policies) artikel voor meer informatie.
+>Er geldt een limiet van 1.000.000 beleidsregels voor verschillende AMS-beleidsitems (bijvoorbeeld voor Locator-beleid of ContentKeyAuthorizationPolicy). Gebruik dezelfde beleids-id als u altijd dezelfde dagen/toegangsmachtigingen gebruikt, bijvoorbeeld beleidsregels voor locators die zijn bedoeld om lang te blijven bestaan (niet-uploadbeleid). Zie dit artikel voor [meer](media-services-dotnet-manage-entities.md#limit-access-policies) informatie.
 
 Aanvraag:
 
@@ -106,8 +106,8 @@ Date: Wed, 18 Feb 2015 06:52:09 GMT
 {"odata.metadata":"https://media.windows.net/api/$metadata#AccessPolicies/@Element","Id":"nb:pid:UUID:69c80d98-7830-407f-a9af-e25f4b0d3e5f","Created":"2015-02-18T06:52:09.8862191Z","LastModified":"2015-02-18T06:52:09.8862191Z","Name":"access policy","DurationInMinutes":43200.0,"Permissions":1}
 ```
 
-### <a name="create-an-ondemand-streaming-locator"></a>Een OnDemand streaming-Locator maken
-Maak de Locator voor het opgegeven activum en activa beleid.
+### <a name="create-an-ondemand-streaming-locator"></a>Een OnDemand-streaminglocator maken
+Maak de locator voor het opgegeven asset- en assetbeleid.
 
 Aanvraag:
 
@@ -147,39 +147,39 @@ Date: Wed, 18 Feb 2015 06:58:37 GMT
 {"odata.metadata":"https://media.windows.net/api/$metadata#Locators/@Element","Id":"nb:lid:UUID:be245661-2bbd-4fc6-b14f-9cf9a1492e5e","ExpirationDateTime":"2015-03-20T06:34:47.267872+00:00","Type":2,"Path":"https://amstest1.streaming.mediaservices.windows.net/be245661-2bbd-4fc6-b14f-9cf9a1492e5e/","BaseUri":"https://amstest1.streaming.mediaservices.windows.net","ContentAccessComponent":"be245661-2bbd-4fc6-b14f-9cf9a1492e5e","AccessPolicyId":"nb:pid:UUID:1480030d-c481-430a-9687-535c6a5cb272","AssetId":"nb:cid:UUID:cc1e445d-1500-80bd-538e-f1e4b71b465e","StartTime":"2015-02-18T06:34:47.267872+00:00","Name":null}
 ```
 
-### <a name="build-streaming-urls"></a>Streaming-Url's bouwen
-Gebruik de waarde van het **pad** die wordt geretourneerd na het maken van de Locator om de soepele, HLS en MPEG Dash-url's te maken. 
+### <a name="build-streaming-urls"></a>Streaming-URL's bouwen
+Gebruik de **padwaarde** die wordt geretourneerd na het maken van de locator om de SMOOTH-, HLS- en MPEG DASH-URL's te bouwen. 
 
-Smooth Streaming: **pad** en bestands naam van manifest + "/manifest"
+Smooth Streaming: **Pad** + manifestbestandsnaam + "/manifest"
 
 voorbeeld:
 
 `https://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest`
 
-HLS: **pad** + manifest bestands naam + "/manifest (Format = M3U8-AAPL)"
+HLS: **Pad** + manifestbestandsnaam + "/manifest(format=m3u8-hebtl)"
 
 voorbeeld:
 
 `https://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest(format=m3u8-aapl)`
 
 
-STREEPJE: **pad** + bestands naam van manifest + "/manifest (Format = mpd-time-KVP)"
+DASH: **Pad** + manifestbestandsnaam + "/manifest(format=mpd-time-csf)"
 
 voorbeeld:
 
 `https://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest(format=mpd-time-csf)`
 
 
-### <a name="build-progressive-download-urls"></a>Url's voor progressieve down loads maken
-Gebruik de **waarde die** is geretourneerd na het maken van de Locator om de URL voor progressieve down load te maken.   
+### <a name="build-progressive-download-urls"></a>URL's voor progressief downloaden bouwen
+Gebruik de **padwaarde** die wordt geretourneerd na het maken van de locator om de URL voor progressief downloaden te bouwen.   
 
-URL: **pad** + Asset bestand MP4 naam
+URL: **Path** + asset file mp4 name
 
 voorbeeld:
 
 `https://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4`
 
-## <a name="enum-types"></a><a id="types"></a>Enum-typen
+## <a name="enum-types"></a><a id="types"></a>Enumtypen
 
 ```console
 [Flags]
@@ -207,7 +207,7 @@ public enum LocatorType
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>Zie ook
-[Overzicht van Media Services bewerkingen REST API](media-services-rest-how-to-use.md)
+[Media Services operations REST API overzicht](media-services-rest-how-to-use.md)
 
-[Leverings beleid voor assets configureren](media-services-rest-configure-asset-delivery-policy.md)
+[Leveringsbeleid voor activa configureren](media-services-rest-configure-asset-delivery-policy.md)
 

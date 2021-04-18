@@ -13,7 +13,7 @@
           href: add-publishers.md
         - name: Uw account beheren
           href: manage-account.md
-        - name: Scha kelen tussen accounts
+        - name: Van account wisselen
           href: switch-accounts.md
         - name: Tenants beheren
           href: manage-tenants.md
@@ -21,13 +21,13 @@
           href: company-work-accounts.md
         - name: Accountmigratie van CPP naar Partnercentrum
           href: account-migration-from-cpp-to-pc.md
-        - name: Micro soft op de hoogte stellen
+        - name: Microsoft op de hoogte stellen
           href: submit-legal-notice.md
     - name: Gebruikers beheren
       items:
         - name: Gebruikers toevoegen en beheren
           href: add-manage-users.md
-        - name: Gebruikers rollen toewijzen
+        - name: Gebruikersrollen toewijzen
           href: user-roles.md
         - name: Groepen beheren
           href: manage-groups.md
@@ -61,7 +61,7 @@
           href: test-drive-hosted-detailed-config.md
         - name: Een Azure-abonnement instellen voor gehoste test drives
           href: test-drive-azure-subscription-setup.md
-    - name: Toewijzing van Azure-klant gebruik
+    - name: Gebruiksvermelding van Azure-klanten
       href: azure-partner-customer-usage-attribution.md
     - name: Go-To-Market-opties
       items:
@@ -70,13 +70,13 @@
           items: null
         - name: Collectieve verkoop met Microsoft
           items:
-            - name: Overzicht van samen verkopen
+            - name: Overzicht van co-verkoop
               href: co-sell-overview.md
-            - name: Vereisten voor co-sell
+            - name: Vereisten voor co-verkoop
               href: co-sell-requirements.md
-            - name: Co-sell configureren
+            - name: Co-verkoop configureren
               href: co-sell-configure.md
-            - name: Co-sell-status verifiëren
+            - name: De status van de co-verkoop controleren
               href: co-sell-status.md
             - name: Co-celoplossingen migreren van OCP GTM
               href: co-sell-solution-migration.md
@@ -228,7 +228,7 @@
           href: partner-center-portal/azure-iot-edge-module-creation.md
         - name: Technische assets voor IoT Edge-module voorbereiden
           href: partner-center-portal/create-iot-edge-module-asset.md
-        - name: Controle lijst voor pre-certificering
+        - name: Controlelijst vóór certificering
           href: iot-edge-checklist.md
     - name: Aanbieding voor beheerde service
       items:
@@ -276,7 +276,7 @@
               href: create-new-saas-offer-technical.md
             - name: Plannen maken
               href: create-new-saas-offer-plans.md
-            - name: Een test aanbieding maken
+            - name: Een testaanbieding maken
               href: create-saas-dev-test-offer.md
             - name: Een SaaS-aanbieding testen en publiceren
               href: test-publish-saas-offer.md
@@ -328,49 +328,49 @@
       href: partner-center-portal/downloads-dashboard.md
     - name: Dashboard voor classificaties en beoordelingen
       href: partner-center-portal/ratings-reviews.md
-    - name: Programmatische toegang tot Analytics
+    - name: Programmatische toegang tot analyses
       items:
         - name: Aan de slag
           href: analytics-get-started.md
-        - name: Vereisten voor toegang op programmeer niveau
+        - name: Vereisten voor programmatische toegang
           href: analytics-prerequisites.md
-        - name: Paradigma voor toegang tot software
+        - name: Programmatisch toegangsparadigma
           href: analytics-programmatic-access.md
-        - name: Uw eerste API-oproep maken
+        - name: Uw eerste API-aanroep maken
           href: analytics-make-your-first-api-call.md
-        - name: Lijst met systeem query's
+        - name: Lijst met systeemquery's
           href: analytics-system-queries.md
         - name: Voorbeeldquery's
           href: analytics-sample-queries.md
         - name: Voorbeeldtoepassing
           href: analytics-sample-application.md
-        - name: Aangepaste query specificatie
+        - name: Aangepaste queryspecificatie
           href: analytics-custom-query-specification.md
-        - name: Veelgestelde vragen over programmatische analyses
+        - name: Veelgestelde vragen over Programmatic Analytics
           href: analytics-programmatic-faq.md
-        - name: Naslag informatie voor Analytics API
+        - name: Naslaginformatie over de Analyse-API
           items:
-            - name: Lijst met Api's
+            - name: Lijst met API's
               href: analytics-available-apis.md
-            - name: Alle gegevens sets ophalen
+            - name: Alle gegevenssets op halen
               href: analytics-api-get-all-datasets.md
-            - name: API voor rapport query's ophalen
+            - name: API voor rapportquery's opvragen
               href: analytics-api-get-report-queries.md
-            - name: API voor rapport query's verwijderen
+            - name: API voor rapportquery's verwijderen
               href: analytics-api-delete-report-queries.md
-            - name: Query-API voor rapporten uitproberen
+            - name: Rapportquery's-API uitproberen
               href: analytics-api-try-report-queries.md
-            - name: Rapport-API ophalen
+            - name: Rapport-API op halen
               href: analytics-api-get-report.md
             - name: Rapport-API bijwerken
               href: analytics-api-update-report.md
             - name: Rapport-API verwijderen
               href: analytics-api-delete-report.md
-            - name: De API voor rapport uitvoeringen onderbreken
+            - name: API voor rapportuitvoeringen onderbreken
               href: analytics-api-pause-report-executions.md
-            - name: API voor rapport uitvoeringen hervatten
+            - name: API voor rapportuitvoeringen hervatten
               href: analytics-api-resume-report-executions.md
-    - name: Afwijkingen in de gefactureerde facturering beheren
+    - name: Factureringsafwijkingen naar data-data beheren
       href: anomaly-detection.md
     - name: Algemene vragen over analyses
       href: analytics-faq.md
@@ -384,6 +384,10 @@
       href: /legal/marketplace/rating-review-policies?context=/azure/marketplace/context/context
     - name: Voorwaarden voor Azure Marketplace
       href: /legal/marketplace/terms?context=/azure/marketplace/context/context
+    - name: Microsoft Publisher-overeenkomst
+      href: /legal/marketplace/msft-publisher-agreement
+    - name: Wijzigingsgeschiedenis voor Microsoft Publisher Agreement
+      href: /legal/marketplace/mpa-change-history
 - name: Naslaginformatie
   items:
     - name: Naslaginformatie over de CPP-API
@@ -466,7 +470,7 @@
       href: commercial-marketplace-co-sell-countries.md
     - name: Staatcodes voor collectieve verkoop
       href: commercial-marketplace-co-sell-states.md
-    - name: Diagram van referentie architectuur
+    - name: Diagram van referentiearchitectuur
       href: reference-architecture-diagram.md
     - name: Categorieën en subcategorieën
       href: categories.md

@@ -1,141 +1,123 @@
 ---
-title: Sens oren en abonnementen beheren in de Defender voor IoT-Portal
-description: Meer informatie over het voorbereiden, weer geven en beheren van Sens oren in de Defender voor IoT-Portal.
-ms.date: 2/18/2021
+title: Sensoren beheren in de Defender for IoT-portal
+description: Meer informatie over het onboarden, weergeven en beheren van sensoren in de Defender for IoT-portal.
+ms.date: 4/18/2021
 ms.topic: how-to
-ms.openlocfilehash: 5b4c8b3d10fe88816e07eb775b2bf3827d578b17
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 2c948aa2387552f9815ab075abb43c98307ae087
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106383045"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600179"
 ---
-# <a name="manage-sensors-and-subscriptions-in-the-defender-for-iot-portal"></a>Sens oren en abonnementen beheren in de Defender voor IoT-Portal
+# <a name="manage-sensors-ain-the-defender-for-iot-portal"></a>Sensoren beheren in de Defender for IoT-portal
 
-In dit artikel wordt beschreven hoe u Sens oren in de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt uitschakelen, weer geven en beheren.
+In dit artikel wordt beschreven hoe u sensoren kunt onboarden, bekijken en beheren in de [Defender for IoT-portal.](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)
 
 ## <a name="onboard-sensors"></a>Sensors onboarden
 
-U kunt een sensor voorbereiden door deze te registreren bij Azure Defender voor IoT en een sensor activerings bestand te downloaden.
+U kunt een sensor onboarden door deze te registreren bij Azure Defender for IoT en een activeringsbestand voor de sensor te downloaden.
 
 ### <a name="register-the-sensor"></a>De sensor registreren
 
 Aanmelden:
 
-1. Ga naar de **welkomst** pagina van de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started).
-1. Selecteer **sensor voor onboarding**.
-1. Maak een sensor naam. Het is raadzaam om het IP-adres van de sensor die u hebt geïnstalleerd als onderdeel van de naam op te nemen, of een gemakkelijk herken bare naam te gebruiken. Dit zorgt ervoor dat eenvoudiger en consistentie tussen de registratie naam in de Azure [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) en het IP-adres van de geïmplementeerde sensor wordt weer gegeven in de sensor console.
+1. Ga naar de **welkomstpagina** in de [Defender for IoT-portal.](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)
+1. Selecteer **Sensor onboarden.**
+1. Maak een sensornaam. U wordt aangeraden het IP-adres op te nemen van de sensor die u hebt geïnstalleerd als onderdeel van de naam of een gemakkelijk te identificeren naam te gebruiken. Dit zorgt voor een eenvoudigere tracering en consistente naamgeving tussen de registratienaam in de Azure [Defender for IoT-portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) en het IP-adres van de geïmplementeerde sensor die wordt weergegeven in de sensorconsole.
 1. Koppel de sensor aan een Azure-abonnement.
-1. Kies een sensor beheer modus met behulp van de in de **Cloud aangesloten** wissel knop. Als de wissel knop is ingeschakeld, is de sensor verbonden met de Cloud. Als de wissel knop is uitgeschakeld, wordt de sensor lokaal beheerd.
+1. Kies een sensorbeheermodus met behulp van de **in de cloud verbonden** schakelknop. Als de schakelknop is aan, is de sensor verbonden met de cloud. Als de schakelknop is uitgeschakeld, wordt de sensor lokaal beheerd.
 
-   - **Met Cloud verbonden Sens oren**: informatie die de sensor detecteert, wordt weer gegeven in de sensor console. Waarschuwings informatie wordt geleverd via een IoT-hub en kan worden gedeeld met andere Azure-Services, zoals Azure Sentinel.
+   - **Met de cloud verbonden sensoren:** informatie die door de sensor wordt gedetecteerd, wordt weergegeven in de sensorconsole. Waarschuwingsinformatie wordt geleverd via een IoT-hub en kan worden gedeeld met andere Azure-services, zoals Azure Sentinel.
 
-   - **Lokaal beheerde Sens oren**: informatie die Sens oren detecteert wordt weer gegeven in de sensor console. Als u werkt met een Air-gapped-netwerk en u een uniforme weer gave wilt van alle informatie die wordt gedetecteerd door meerdere lokaal beheerde Sens oren, werkt u met de on-premises beheer console.
+   - **Lokaal beheerde sensoren:** informatie die door sensoren wordt gedetecteerd, wordt weergegeven in de sensorconsole. Als u werkt in een netwerk met ruimte in de lucht en een uniforme weergave wilt van alle informatie die door meerdere lokaal beheerde sensoren wordt gedetecteerd, werkt u met de on-premises beheerconsole.
 
-   Voor met Clouds verbonden Sens oren is de naam die tijdens het onboarden is gedefinieerd, de naam die wordt weer gegeven in de sensor console. U kunt deze naam niet rechtstreeks wijzigen via de-console. Voor lokaal beheerde Sens oren wordt de naam die tijdens de onboarding wordt toegepast in azure opgeslagen en kan deze worden bijgewerkt in de sensor console.
+   Voor sensoren die zijn verbonden met de cloud, is de naam die tijdens het onboarden is gedefinieerd de naam die wordt weergegeven in de sensorconsole. U kunt deze naam niet rechtstreeks vanuit de console wijzigen. Voor lokaal beheerde sensoren wordt de naam die wordt toegepast tijdens het onboarden opgeslagen in Azure en kan deze worden bijgewerkt in de sensorconsole.
 
-1. Kies een IoT-hub die fungeert als een gateway tussen deze sensor en Azure Defender voor IoT.
-1. Als de sensor is verbonden met de Cloud, koppelt u deze aan een IoT-hub en definieert u vervolgens een site naam en-zone. U kunt ook beschrijvende Tags toevoegen. De site naam, zone en tags zijn beschrijvende vermeldingen op de [pagina sites en Sens oren](#view-onboarded-sensors).
+1. Kies een IoT-hub die als gateway tussen deze sensor en Azure Defender for IoT.
+1. Als de sensor is verbonden met de cloud, koppelt u deze aan een IoT-hub en definieert u vervolgens een sitenaam en -zone. U kunt ook beschrijvende tags toevoegen. De sitenaam, zone en tags zijn beschrijvende vermeldingen op de [pagina Sites en sensoren.](#view-onboarded-sensors)
 
-### <a name="download-the-sensor-activation-file"></a>Down load het sensor activerings bestand
+### <a name="download-the-sensor-activation-file"></a>Het activeringsbestand voor de sensor downloaden
 
-Het activerings bestand van de sensor bevat instructies over de beheer modus van de sensor. U downloadt een uniek activerings bestand voor elke sensor die u implementeert. Een gebruiker die zich voor de eerste keer aanmeldt bij de sensor console, uploadt het activerings bestand naar de sensor.
+Het activeringsbestand van de sensor bevat instructies over de beheermodus van de sensor. U downloadt een uniek activeringsbestand voor elke sensor die u implementeert. Een gebruiker die zich voor het eerst bij de sensorconsole meldt, uploadt het activeringsbestand naar de sensor.
 
-Een activerings bestand downloaden:
+Een activeringsbestand downloaden:
 
-1. Selecteer op de pagina voor de **onboarding-sensor** de optie **activerings bestand downloaden**.
-1. Maak het bestand toegankelijk voor de gebruiker die zich voor de eerste keer aanmeldt bij de sensor console.
+1. Selecteer op **de pagina Sensor onboarden** de **optie activeringsbestand downloaden.**
+1. Maak het bestand toegankelijk voor de gebruiker die zich voor de eerste keer aanmeldt bij de sensorconsole.
 
-## <a name="view-onboarded-sensors"></a>Onboarded Sens oren weer geven
+## <a name="view-onboarded-sensors"></a>Sensoren met onboarding weergeven
 
-In de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt u basis informatie over voorbereide Sens oren bekijken.
+In de [Defender for IoT-portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt u basisinformatie over sensoren met onboarding bekijken.
 
-1. Selecteer **sites en Sens oren**.
-1. Gebruik de hulpprogram ma's voor filteren en zoeken om informatie over sensors en bedreigingen te vinden die u nodig hebt.
+1. Selecteer **Sites en sensoren.**
+1. Gebruik filter- en zoekhulpprogramma's om informatie over sensor- en bedreigingsinformatie te vinden die u nodig hebt.
 
-- Hoeveel Sens oren zijn onboarded
-- Het aantal Sens oren dat is verbonden met de Cloud en lokaal beheerd
-- De hub die is gekoppeld aan een onboarded sensor
-- Details die zijn toegevoegd over een sensor, zoals de naam die is toegewezen aan de sensor tijdens het voorbereidings proces, de zone die is gekoppeld aan de sensor of andere beschrijvende informatie die is toegevoegd met Tags
+- Hoeveel sensoren zijn onboarding gebruikt
+- Het aantal sensoren dat is verbonden met de cloud en lokaal wordt beheerd
+- De hub die is gekoppeld aan een sensor met onboarding
+- Er zijn details toegevoegd over een sensor, zoals de naam die aan de sensor is toegewezen tijdens het onboarden, de zone die aan de sensor is gekoppeld of andere beschrijvende informatie die aan tags is toegevoegd
 
-## <a name="manage-onboarded-sensors"></a>Onboarded Sens oren beheren
+## <a name="manage-onboarded-sensors"></a>Sensoren met onboarding beheren
 
-Gebruik de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) voor beheer taken die betrekking hebben op Sens oren.
+Gebruik de [Defender for IoT-portal voor](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) beheertaken met betrekking tot sensoren.
 
-Onboarded Sens oren kunnen worden weer gegeven op de pagina **sites en Sens oren** . U kunt ook sensor gegevens van deze pagina bewerken.
+Sensoren met onboarding kunnen worden weergegeven op de **pagina Sites en sensoren.** U kunt sensorgegevens ook bewerken vanaf deze pagina.
 
-### <a name="export-sensor-details"></a>Details van de sensor exporteren
+### <a name="export-sensor-details"></a>Sensordetails exporteren
 
-Als u onboarded sensor gegevens wilt exporteren, selecteert u het pictogram voor **exporteren** boven aan de pagina **sites en Sens oren** .
+Als u informatie over de onboardingsensor wilt exporteren, selecteert u het **pictogram Exporteren** boven aan de pagina Sites **en sensoren.**
 
-### <a name="edit-sensor-zone-details"></a>Details van sensor zone bewerken
+### <a name="edit-sensor-zone-details"></a>Details van de sensorzone bewerken
 
-Gebruik de bewerkings opties voor **sites en Sens oren** om de naam en zone van de sensor te bewerken.
+Gebruik de **bewerkingsopties Sites en Sensoren** om de sensornaam en -zone te bewerken.
 
 Bewerken:
 
-1. Selecteer het **beletsel teken** (**...**) voor de sensor die u wilt bewerken.
+1. Selecteer het **beletselteken** (**...**) voor de sensor die u wilt bewerken.
 1. Selecteer **Bewerken**.
-1. Werk de sensor zone bij of maak een nieuwe zone.
+1. Werk de sensorzone bij of maak een nieuwe zone.
 
 ### <a name="delete-a-sensor"></a>Een sensor verwijderen
 
-Als u een sensor die is verbonden met de Cloud verwijdert, worden er geen gegevens verzonden naar de IoT-hub. Verwijder lokaal verbonden Sens oren wanneer u niet meer aan de slag gaat.
+Als u een met de cloud verbonden sensor verwijdert, worden er geen gegevens verzonden naar de IoT-hub. Verwijder lokaal verbonden sensoren wanneer u er niet meer mee werkt.
 
 Een sensor verwijderen:
 
-1. Selecteer het beletsel teken (**...**) voor de sensor die u wilt verwijderen.
+1. Selecteer het beletselteken (**...**) voor de sensor die u wilt verwijderen.
 1. Bevestig de verwijdering.
 
 ### <a name="reactivate-a-sensor"></a>Een sensor opnieuw activeren 
 
 Mogelijk moet u de sensor opnieuw activeren omdat u het volgende wilt doen:
 
-- **Werken in de modus met de Cloud verbinding in plaats van de lokaal beheerde modus**: na het opnieuw activeren worden sensor detecties weer gegeven in de sensor en nieuwe gedetecteerde waarschuwings informatie wordt geleverd via de IOT-hub. Deze informatie kan worden gedeeld met andere Azure-Services, zoals Azure Sentinel.
+- **Werken in de cloud-verbonden** modus in plaats van lokaal beheerde modus: na heractivering worden sensordetecties weergegeven in de sensor en wordt nieuw gedetecteerde waarschuwingsinformatie geleverd via de IoT-hub. Deze informatie kan worden gedeeld met andere Azure-services, zoals Azure Sentinel.
 
-- **Werken in de lokaal beheerde modus in plaats van de modus voor de Cloud verbinding**: na het opnieuw activeren wordt de sensor detectie gegevens alleen weer gegeven in de sensor.
+- **Werk in de lokaal beheerde modus in plaats** van in de cloud verbonden modus: na het opnieuw activeren wordt sensordetectiegegevens alleen weergegeven in de sensor.
 
-- **De sensor koppelen aan een nieuwe IOT hub**: u doet dit door de sensor opnieuw te registreren bij een nieuwe hub en vervolgens een nieuw activerings bestand te downloaden.
+- **De sensor koppelen aan een nieuwe IoT-hub:** om dit te doen, registreert u de sensor opnieuw bij een nieuwe hub en downloadt u vervolgens een nieuw activeringsbestand.
 
 Een sensor opnieuw activeren:
 
-1. Ga naar de pagina **sites en Sens oren** op de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started).
+1. Ga naar **de pagina Sites en sensoren** in de Defender for [IoT-portal.](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)
 
-2. Selecteer de sensor waarvoor u een nieuw activerings bestand wilt uploaden.
+2. Selecteer de sensor waarvoor u een nieuw activeringsbestand wilt uploaden.
 
-3. De sensor verwijderen.
+3. Verwijder de sensor.
 
-4. Haal de sensor opnieuw in de nieuwe modus of met een nieuwe IoT-hub door **een sensor onboarding** te selecteren op de pagina aan de slag.
+4. Onboard de sensor opnieuw in de nieuwe modus of met een nieuwe IoT-hub door **Onboarding van** een sensor te selecteren op Aan de slag pagina.
 
-5. Down load het activerings bestand.
+5. Download het activeringsbestand.
 
-1. Meld u aan bij de Defender voor IoT-sensor console.
+1. Meld u aan bij de Defender for IoT-sensorconsole.
 
-7. Selecteer in de sensor console de optie **systeem instellingen** en selecteer vervolgens opnieuw **activeren**.
+7. Selecteer systeeminstellingen in **de** sensorconsole en selecteer vervolgens **Opnieuw activeren.**
 
-   :::image type="content" source="media/how-to-manage-sensors-on-the-cloud/reactivate.png" alt-text="Upload uw activerings bestand om de sensor opnieuw te activeren.":::
+   :::image type="content" source="media/how-to-manage-sensors-on-the-cloud/reactivate.png" alt-text="Upload het activeringsbestand om de sensor opnieuw te activeren.":::
 
-8. Selecteer **uploaden** en selecteer het bestand dat u hebt opgeslagen op de pagina voor de onboarding-sensor.
+8. Selecteer **Uploaden en** selecteer het bestand dat u hebt opgeslagen op de pagina Sensor onboarden.
 
 9. Selecteer **Activate**.
-
-## <a name="offboard-a-subscription"></a>Een abonnement niet meer vrijgeven
-
-Abonnementen worden maandelijks beheerd. Wanneer u een abonnement niet meer vrijgeven, wordt u gefactureerd voor dat abonnement tot het einde van de maand. 
-
-Verwijder alle Sens oren die zijn gekoppeld aan het abonnement vóór offboarding van het abonnement. Zie [een sensor verwijderen](#delete-a-sensor)voor meer informatie over het verwijderen van een sensor. 
-
-Een abonnement niet meer vrijgeven:
-
-1. Navigeer naar de pagina met **prijzen** .
-1. Selecteer het abonnement en selecteer vervolgens het pictogram **verwijderen** :::image type="icon" source="media/how-to-manage-sensors-on-the-cloud/delete-icon.png" border="false"::: .
-1. Schakel in de pop-upvenster het selectie vakje in om te bevestigen dat u alle Sens oren hebt verwijderd die aan het abonnement zijn gekoppeld.
-
-    :::image type="content" source="media/how-to-manage-sensors-on-the-cloud/offboard-popup.png" alt-text="Schakel het selectie vakje in en selecteer niet meer vrijgeven om uw sensor te niet meer vrijgeven.":::
-
-1. Selecteer de knop **niet meer vrijgeven** . 
-
-De on-premises omgeving wordt niet beïnvloed, maar u moet de sensor verwijderen uit de on-premises omgeving of de sensor opnieuw toewijzen aan een ander abonnement, zodat u kunt voor komen dat gerelateerde gegevens stromen naar de on-premises beheer console. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,6 +1,6 @@
 ---
-title: Mainframe-workloads die worden ondersteund in azure | Microsoft Docs
-description: Gebruik een mainframe emulator en andere services van micro soft-partners om uw mainframe-workloads, zoals IBM Z-systemen, opnieuw te hosten met behulp van Microsoft Azure.
+title: Mainframe-workloads die worden ondersteund op Azure | Microsoft Docs
+description: Gebruik een mainframe-emulator en andere services van Microsoft-partners om uw mainframeworkloads, zoals IBM Z-systemen, opnieuw te hosten met behulp van Microsoft Azure.
 services: virtual-machines
 ms.service: virtual-machines
 ms.subservice: mainframe-rehosting
@@ -11,55 +11,55 @@ editor: edprice
 ms.author: larryme
 ms.date: 05/09/2020
 ms.topic: article
-ms.openlocfilehash: 467cae97f9b4efe4782ac802cccd84271d475ea7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0b3dd754e226436cb26cbb808bf37e4262efa344
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104955428"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107599550"
 ---
-# <a name="mainframe-workloads-supported-on-azure"></a>Mainframe-workloads die worden ondersteund in azure
+# <a name="mainframe-workloads-supported-on-azure"></a>Mainframe-workloads die worden ondersteund in Azure
 
-De oplossingen die hier worden vermeld, kunnen u helpen bij het migreren van uw mainframe werk belasting naar Microsoft Azure. Sommige werk belastingen kunnen met relatief gemak worden gemigreerd. Andere werk belastingen die afhankelijk zijn van verouderde systeem software, kunnen opnieuw worden gehost. 
+De hier vermelde oplossingen kunnen u helpen bij het migreren van uw mainframeworkload naar Microsoft Azure. Sommige workloads kunnen relatief eenvoudig worden gemigreerd. Andere workloads die afhankelijk zijn van verouderde systeemsoftware kunnen opnieuw worden hosten. 
 
-Raadpleeg het [Azure mainframe-migratie centrum](https://azure.microsoft.com/migration/mainframe/)voor meer informatie over mainframe-emulatie en-services.
+Raadpleeg het Azure Mainframe Migration Center voor meer hulp bij [mainframe-emulatie en -services.](https://azure.microsoft.com/migration/mainframe/)
 
-## <a name="migrate-mainframe-closer-to-azure"></a>Mainframe dichter naar Azure migreren
+## <a name="migrate-mainframe-closer-to-azure"></a>Mainframe dichter bij Azure migreren
 
-- [ASNA Visual RPG voor .net](https://asna.com/us/products/visual-rpg) -compiler voor de .NET Framework via Visual Studio-invoeg toepassing.
-- [ASYSCO Amt COBOL](https://www.asysco.com/cobol/) Development Environment (Unisys, IBM-mainframes en andere COBOL-dialecten, zoals micro focus COBOL).
-- [ASYSCO Amt go](https://www.asysco.com/amt-go/) cloud-gebaseerde implementatie architectuur voor high-end workloads.
-- [ASYSCO Amt Transform](https://www.asysco.com/amt-transform/) voor het converteren van gegevens, code, Scripting, beveiliging, interfaces en andere mainframe artefacten.
-- [Fujitsu NetCOBOL](https://www.fujitsu.com/global/products/software/developer-tool/netcobol/) -hulpprogram ma's voor ontwikkeling en integratie.
-- [Micro focus](https://www.microfocus.com/products/visual-cobol/) -hulpprogram Ma's voor Visual COBOL ontwikkelen en integreren.
-- [Micro focus pl/i](https://www.microfocus.com/campaign/download/pli-modernization/) verouderde compiler voor het .NET-platform, met ondersteuning voor de syntaxis van mainframe pl/i, gegevens typen en gedrag.
-- [Micro focus Enter prise server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) mainframe Integration platform.
-- [Moderne systemen met CTU (COBOL-to-Universal)](https://modernsystems.com/automatic-cobol-to-java-conversion/) ontwikkelings-en integratie hulpprogramma's.
-- [NTT data Enter PRISE COBOL](https://us.nttdata.com/en/digital/application-development-and-modernization) Development and integration tools.
-- [NTT open pl/i](https://us.nttdata.com/en/digital/application-development-and-modernization) legacy compiler voor het .NET-platform, met ondersteuning voor de syntaxis van mainframe pl/i, gegevens typen en gedrag.
-- Ontwikkel-en integratie hulpprogramma's voor [RAINCODE COBOL compileren](https://www.raincode.com/products/cobol/) .
-- [RAINCODE pl/i-compiler](https://www.raincode.com/products/pli/) voor het .NET-platform ondersteunt mainframe pl/i-syntaxis, gegevens typen en gedrag.
-- [RAINCODE ASM370-compiler](https://www.raincode.com/technical-landscape/asm370/) voor de assembler 370-en HLASM-syntaxis van mainframe.
+- [ASNA VisualPLUG voor .NET-compiler](https://asna.com/us/products/visual-rpg) voor de .NET Framework via Visual Studio-in plug-in.
+- [Asysco AMT COBOL-ontwikkelomgeving](https://www.asysco.com/cobol/) (Unisys, IBM-mainframes en andere COBOL-dialecten, zoals Micro Focus COBOL).
+- [Asysco AMT](https://www.asysco.com/amt-go/) GO-cloudimplementatiearchitectuur voor high-end workloads.
+- [Asysco AMT-transformatie](https://www.asysco.com/amt-transform/) voor het converteren van gegevens, code, scripting, beveiliging, interfaces en andere mainframe-artefacten.
+- [Hulpprogramma's voor ontwikkeling](https://www.fujitsu.com/global/products/software/developer-tool/netcobol/) en integratie van Het NetCOBOL-systeem.
+- [Micro Focus Visual COBOL-ontwikkel-](https://www.microfocus.com/products/visual-cobol/) en integratiehulpprogramma's.
+- [Micro Focus PL/I](https://www.microfocus.com/campaign/download/pli-modernization/) legacy compiler voor het .NET-platform, dat ondersteuning biedt voor mainframe PL/I-syntaxis, gegevenstypen en gedrag.
+- [Micro Focus Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) mainframe integration platform.
+- [Ontwikkel- en integratiehulpprogramma's voor Modern Systems CTU (COBOL-To-Universal).](https://modernsystems.com/automatic-cobol-to-java-conversion/)
+- [Ontwikkel- en integratiehulpprogramma's voor NTT Data Enterprise COBOL.](https://us.nttdata.com/en/digital/application-development-and-modernization)
+- [NTT Open PL/I](https://us.nttdata.com/en/digital/application-development-and-modernization) legacy compiler voor het .NET-platform, dat ondersteuning biedt voor mainframe PL/I-syntaxis, gegevenstypen en gedrag.
+- [Ontwikkel- en integratiehulpprogramma's](https://www.raincode.com/products/cobol/) voor Regencode COBOL-compiler.
+- [Raincode PL/I-compiler](https://www.raincode.com/products/pli/) voor het .NET-platform ondersteunt mainframe PL/I-syntaxis, gegevenstypen en gedrag.
+- [Regencode ASM370-compiler](https://www.raincode.com/technical-landscape/asm370/) voor de syntaxis van mainframe Assembler 370 en HLASM.
 
-## <a name="deploy-an-emulation-environment-for-online-and-batch-processing"></a>Een emulatie omgeving implementeren voor online-en batch verwerking
+## <a name="deploy-an-emulation-environment-for-online-and-batch-processing"></a>Een emulatieomgeving implementeren voor online- en batchverwerking
 
-- [ASYSCO Amt go](https://www.asysco.com/amt-go/) -implementatie architectuur die CICS, IMS, tip, HVTIP en andere veelgebruikte mainframe omgevingen ondersteunt.
-- [Micro focus Enter prise server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) mainframe Integration platform.
-- [NTT data mainframe rehoste ontwikkel omgeving](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) systeem eigen transactie verwerkings omgeving.
-- [NTT data batch processing Environment](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) (BPE), inclusief JCL-transactie mogelijkheden.
-- [RAINCODE CICS](https://www.raincode.com/technical-landscape/cics/) -emulator voor .net-en Azure-platforms.
-- [RAINCODE JCL](https://www.raincode.com/products/jcl/) plug-compatibel JCL-interpreter.
+- [Asysco AMT](https://www.asysco.com/amt-go/) GO-implementatiearchitectuur die ondersteuning bieden voor CICS, IMS, TIP, HVTIP en andere algemene mainframe-omgevingen.
+- [Micro Focus Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) mainframe integration platform.
+- [NTT DATA Mainframe rehosting Development Environment native](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) transaction processing environment.
+- [NTT DATA Batch Processing Environment](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) (BPE) met inbegrip van JCL-transactiemogelijkheden.
+- [Raincode CICS-emulator](https://www.raincode.com/technical-landscape/cics/) voor .NET- en Azure-platforms.
+- [Raincode JCL plug-compatible](https://www.raincode.com/products/jcl/) JCL interpreter.
 
-## <a name="code-conversion"></a>Code conversie
+## <a name="code-conversion"></a>Codeconversie
 
-- [Asysco](https://www.asysco.com/azure-cloud/) -systeem conversie technologie die betrekking heeft op bron code, gegevens, batch, planning, TP monitors, interfaces, beveiliging, beheer en meer.
-- [ASYSCO Amt Services](https://www.asysco.com/migration-services/) end-to-end-services voor migratie projecten, met inbegrip van inventaris en analyse, ontwerp training, kleding tryes, go-live en ondersteuning na de migratie.
-- [Blu-Age](https://www.bluage.com/) -hulpprogram ma's voor het digitizer van verouderde zakelijke toepassingen en data bases.
-- [Heirloom computing](https://www.heirloomcomputing.com/tag/convert-cobol-to-java/) Services om mainframe Cobol, CICS en VSAM naar Java te converteren.
-- Door [LzLabs software gedefinieerde mainframe](https://www.lzlabs.com/) beheerde software container voor het migreren van mainframe-toepassingen naar Linux-computers of privé-, open bare en hybride Cloud omgevingen.
+- [Asysco-systeemconversietechnologie](https://asysco.com/) voor broncode, gegevens, batch, planning, TP-monitors, interfaces, beveiliging, beheer en meer.
+- [Asysco AMT Services](https://www.asysco.com/migration-services/) end-to-end-services voor migratieprojecten, waaronder inventaris en analyse, ontwerptraining, vormgeving, go-live en ondersteuning na de migratie.
+- [Verouderde hulpprogramma's](https://www.bluage.com/) voor het digitaliseren van verouderde zakelijke toepassingen en databases.
+- [16:00 Computing-services](https://www.heirloomcomputing.com/tag/convert-cobol-to-java/) om mainframe COBOL, CICS en VSAM te converteren naar Java.
+- [LzLabs Software Defined Mainframe](https://www.lzlabs.com/) managed software container for migrating mainframe applications to Linux computers or private, public, and hybrid cloud environments.
 
-## <a name="modernization-services"></a>Moderniserings Services
+## <a name="modernization-services"></a>Moderniseringsservices
 
-Micro soft-partners met wereld wijde systeem integrators (GSIs) die grote organisaties kunnen helpen bij het ontwerpen, bouwen en beheren van oplossingen. 
+Microsoft werkt samen met GSI's (Global System Integrators) die grote organisaties kunnen helpen bij het ontwerpen, bouwen en beheren van oplossingen. 
 
-- [Azure mainframe-migratie centrum](https://azure.microsoft.com/migration/mainframe/)
+- [Azure Mainframe Migration Center](https://azure.microsoft.com/migration/mainframe/)

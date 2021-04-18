@@ -11,16 +11,16 @@ ms.date: 04/13/2021
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 3245f560d9a5afb1f9cf8824eeaa3bc681706794
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: ab94a83a64ca9770f0c216ddf42145b262629c6d
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389669"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107598989"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Prestaties afstemmen met geordende en geclusterde columnstore-index  
 
-Wanneer gebruikers een query uitvoeren op een columnstore-tabel in een toegewezen SQL-pool, controleert de optimizer de minimum- en maximumwaarden die zijn opgeslagen in elk segment.  Segmenten die buiten de grenzen van het querypredicaat liggen, worden niet van schijf naar geheugen gelezen.  Een query kan snellere prestaties krijgen als het aantal segmenten dat moet worden gelezen en de totale grootte klein is.   
+Wanneer gebruikers een query uitvoeren op een columnstore-tabel in een toegewezen SQL-pool, controleert de optimizer de minimum- en maximumwaarden die in elk segment zijn opgeslagen.  Segmenten die buiten de grenzen van het querypredicaat liggen, worden niet van schijf naar geheugen gelezen.  Een query kan snellere prestaties krijgen als het aantal segmenten dat moet worden gelezen en de totale grootte klein is.   
 
 ## <a name="ordered-vs-non-ordered-clustered-columnstore-index"></a>Geordende versus niet-geordende geclusterde columnstore-index
 
@@ -44,7 +44,7 @@ FROM sys.pdw_nodes_partitions AS pnp
    JOIN sys.pdw_nodes_column_store_segments AS cls ON pnp.partition_id = cls.partition_id AND pnp.distribution_id  = cls.distribution_id
 JOIN sys.columns as cols ON o.object_id = cols.object_id AND cls.column_id = cols.column_id
 WHERE o.name = '<Table Name>' and cols.name = '<Column Name>'  and TMap.physical_name  not like '%HdTable%'
-ORDER BY o.name, pnp.distribution_id, cls.min_data_id 
+ORDER BY o.name, pnp.distribution_id, cls.min_data_id;
 
 
 ```
@@ -66,7 +66,7 @@ In dit voorbeeld heeft tabel T1 een geclusterde columnstore-index, geordend in d
 ```sql
 
 CREATE CLUSTERED COLUMNSTORE INDEX MyOrderedCCI ON  T1
-ORDER (Col_C, Col_B, Col_A)
+ORDER (Col_C, Col_B, Col_A);
 
 ```
 
@@ -119,7 +119,7 @@ OPTION (MAXDOP 1);
 
 - Sorteer de gegevens vooraf op de sorteersleutel(s) voordat u ze in tabellen laadt.
 
-Hier volgt een voorbeeld van een geordende CCI-tabeldistributie met nul segmenten die overlappen volgens de bovenstaande aanbevelingen. De geordende CCI-tabel wordt gemaakt in een DWU1000c-database via CTAS vanuit een heaptabel van 20 GB met behulp van MAXDOP 1 en xlargerc.  De CCI wordt zonder dubbele waarden geordend op een BIGINT-kolom.  
+Hier volgt een voorbeeld van een geordende CCI-tabeldistributie met nul segmenten die overlappen volgens de bovenstaande aanbevelingen. De geordende CCI-tabel wordt gemaakt in een DWU1000c-database via CTAS vanuit een heaptabel van 20 GB met MAXDOP 1 en xlargerc.  De CCI wordt zonder dubbele waarden geordend op een BIGINT-kolom.  
 
 ![Segment_No_Overlapping](./media/performance-tuning-ordered-cci/perfect-sorting-example.png)
 
@@ -138,6 +138,8 @@ Het maken van een geordende CCI is een offlinebewerking.  Voor tabellen zonder p
 > Voor een toegewezen SQL-pooltabel met een geordende CCI sorteert ALTER INDEX REBUILD de gegevens opnieuw met tempdb. Tempdb bewaken tijdens herbouwbewerkingen. Als u meer tempdb-ruimte nodig hebt, schaalt u de pool omhoog. Schaal weer omlaag zodra de index opnieuw is opgebouwd.
 >
 > Voor een toegewezen SQL-pooltabel met een geordende CCI sorteert ALTER INDEX REORGANIZE de gegevens niet opnieuw. Als u gebruik wilt maken van gegevens, gebruikt u ALTER INDEX REBUILD.
+>
+> Zie Geclusterde [columnstore-indexen](sql-data-warehouse-tables-index.md#optimizing-clustered-columnstore-indexes)optimaliseren voor meer informatie over geordend CCI-onderhoud.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -147,15 +149,15 @@ Het maken van een geordende CCI is een offlinebewerking.  Voor tabellen zonder p
 SELECT object_name(c.object_id) table_name, c.name column_name, i.column_store_order_ordinal 
 FROM sys.index_columns i 
 JOIN sys.columns c ON i.object_id = c.object_id AND c.column_id = i.column_id
-WHERE column_store_order_ordinal <>0
+WHERE column_store_order_ordinal <>0;
 ```
 
 **B. Als u de kolom ordinale wilt wijzigen, voegt u kolommen toe aan of verwijdert u deze uit de orderlijst of wijzigt u van CCI in geordende CCI:**
 
 ```sql
-CREATE CLUSTERED COLUMNSTORE INDEX InternetSales ON  InternetSales
+CREATE CLUSTERED COLUMNSTORE INDEX InternetSales ON dbo.InternetSales
 ORDER (ProductKey, SalesAmount)
-WITH (DROP_EXISTING = ON)
+WITH (DROP_EXISTING = ON);
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

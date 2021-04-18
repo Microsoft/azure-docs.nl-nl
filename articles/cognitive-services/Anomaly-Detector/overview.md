@@ -12,12 +12,12 @@ ms.date: 02/16/2021
 ms.author: mbullwin
 keywords: afwijkingsdetectie, machine learning, algoritmes
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 3bfa30cc5d3d57cfcd2677bb4b2719061541d5a9
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: d63399d0f492f85a4a2d57a595a6d8ef5b606d92
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106278861"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107599516"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Wat is de Anomaly Detector-API?
 
@@ -30,10 +30,10 @@ Met de Anomaly Detector API kunt u afwijkingen in uw tijdreeksgegevens bewaken e
 Voor het gebruik van Anomaly Detector is geen ervaring met machine learning vereist. Met de RESTful-API kunt u de service eenvoudig integreren in uw toepassingen en processen.
 
 Deze documentatie bevat de volgende typen artikelen:
-* In de [Quick](./Quickstarts/client-libraries.md) starts vindt u stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
-* De [hand leidingen](./how-to/identify-anomalies.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
-* De [conceptuele artikelen](./concepts/anomaly-detection-best-practices.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
-* De [zelf studies](./tutorials/batch-anomaly-detection-powerbi.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
+* De [quickstarts](./Quickstarts/client-libraries.md) zijn stapsgewijs instructies voor het aanroepen van de service en het in korte tijd krijgen van resultaten. 
+* De [instructiegidsen bevatten](./how-to/identify-anomalies.md) instructies voor het gebruik van de service op specifiekere of aangepaste manieren.
+* De [conceptuele artikelen](./concepts/anomaly-detection-best-practices.md) bevatten uitgebreide uitleg over de functionaliteit en functies van de service.
+* De [zelfstudies](./tutorials/batch-anomaly-detection-powerbi.md) zijn langere handleidingen die laten zien hoe u deze service kunt gebruiken als onderdeel van bredere bedrijfsoplossingen.
 
 ## <a name="features"></a>Functies
 
@@ -44,7 +44,7 @@ Met Anomaly Detector kunt u automatisch anomalieën in uw tijdreeksgegevens dete
 |Afwijkingsdetectie in realtime. | Anomalieën in uw streaminggegevens detecteren door de nieuwste punten te vergelijken met eerder gedetecteerde gegevenspunten. Met deze bewerking wordt een model gegenereerd met de gegevenspunten die u verzendt, en wordt bepaald of het doelpunt een anomalie is. Door de API aan te roepen bij elk nieuw gegevenspunt dat u genereert, kunt u uw gegevens bewaken terwijl ze worden gemaakt. |
 |Detecteert anomalieën in uw gegevensset als een batch. | Uw tijdreeks gebruiken om eventuele anomalieën in uw gegevens op te sporen. Met deze bewerking wordt een model gegenereerd op basis van uw volledige tijdreeksgegevens, waarbij elk punt wordt geanalyseerd met hetzelfde model.         |
 |Detecteert wijzigingspunten in uw gegevensset als een batch. | Uw tijdreeks om eventuele wijzigingspunten in uw gegevens te detecteren. Met deze bewerking wordt een model gegenereerd op basis van uw volledige tijdreeksgegevens, waarbij elk punt wordt geanalyseerd met hetzelfde model.    |
-| Aanvullende informatie over het probleem ophalen. | Krijg nuttige informatie over uw gegevens en eventuele afwijkingen, waaronder verwachte waarden, afwijkings grenzen en posities. |
+| Aanvullende informatie over het probleem ophalen. | Nuttige informatie over uw gegevens en eventuele waargenomen afwijkingen, waaronder verwachte waarden, anomaliegrenzen en posities. |
 | Grenzen voor anomaliedetectie aanpassen. | Met de Anomaly Detector-API worden automatisch grenzen voor anomaliedetectie gemaakt. U kunt deze grenzen aanpassen om de gevoeligheid van de API voor anomalieën in gegevens te verhogen of verlagen, en te optimaliseren voor uw gegevens. |
 
 ## <a name="demo"></a>Demo
@@ -59,13 +59,13 @@ Als u wilt weten hoe u de Anomaly Detector-API aanroept, probeert u dit [noteboo
 Voer de volgende stappen uit om het notebook uit te voeren:
 
 1. Haal een geldige abonnementssleutel en een geldig eindpunt voor de Anomaly Detector-API op. In de volgende sectie vindt u instructies voor het registreren.
-1. Meld u aan en selecteer klonen in de rechter bovenhoek.
-1. Schakel de optie openbaar uit in het dialoog venster voordat u de kloon bewerking voltooit, anders is uw notitie blok, inclusief abonnements sleutels, openbaar.
-1. Selecteer **uitvoeren op gratis Compute**
+1. Meld u aan en selecteer Klonen in de rechterbovenhoek.
+1. Vóór het voltooien van de kloonbewerking de optie 'openbaar' uit het dialoogvenster, anders is uw notebook, inclusief abonnementssleutels, openbaar.
+1. Selecteer **Uitvoeren op gratis compute**
 1. Selecteer een van de notebooks.
 1. Voeg uw geldige abonnementssleutel voor de Anomaly Detector-API toe aan de variabele `subscription_key`.
 1. Wijzig de variabele `endpoint` in uw eindpunt. Bijvoorbeeld: `https://westus2.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/last/detect`
-1. Selecteer in de bovenste menu balk **cel** en **Voer alles uit**.
+1. Selecteer cel in de bovenste **menubalk** en vervolgens **Alles uitvoeren.**
 
 ## <a name="workflow"></a>Werkstroom
 
@@ -103,7 +103,7 @@ Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zonetolera
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-[Gebruik Anomaly Detector-containers](anomaly-detector-container-howto.md) om API-functies on-premises te implementeren. Met docker-containers kunt u de service dichter bij uw gegevens plaatsen voor naleving, beveiliging of andere operationele redenen.
+[Gebruik Anomaly Detector-containers](anomaly-detector-container-howto.md) om API-functies on-premises te implementeren. Met Docker-containers kunt u de service om redenen van naleving, beveiliging of andere operationele redenen dichter bij uw gegevens brengen.
 
 ## <a name="join-the-anomaly-detector-community"></a>Lid worden van de Anomaly Detector-community
 
@@ -113,5 +113,5 @@ Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zonetolera
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Snelstart: Anomalieën detecteren in uw tijdreeksgegevens met behulp van de Anomaly Detector](quickstarts/client-libraries.md)
-* [Online demo](https://notebooks.azure.com/AzureAnomalyDetection/projects/anomalydetector) voor de Anomaly Detector-API
+* [Online demo](https://github.com/Azure-Samples/AnomalyDetector/tree/master/ipython-notebook) voor de Anomaly Detector-API
 * [Naslaginformatie over de REST API](https://aka.ms/anomaly-detector-rest-api-ref) van Anomaly Detector

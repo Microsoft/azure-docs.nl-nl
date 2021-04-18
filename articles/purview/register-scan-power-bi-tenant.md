@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 6646f131488a5ae4aa9b20fe614d7ebb46133444
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 8fb4c797df7961726ca785a56a6ab25807999842
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107538859"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600859"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een tenant voor een Power BI registreren en scannen (preview)
 
@@ -49,40 +49,36 @@ Als u verificatie wilt instellen, maakt u een beveiligingsgroep en voegt u de be
 
 ## <a name="associate-the-security-group-with-the-tenant"></a>De beveiligingsgroep koppelen aan de tenant
 
-1. Meld u aan [bij Power BI beheerportal.](https://app.powerbi.com/admin-portal/tenantSettings)
+1. Meld u aan [bij Power BI-beheerportal.](https://app.powerbi.com/admin-portal/tenantSettings)
 1. Selecteer de **pagina Tenantinstellingen.**
 
     > [!Important]
-    > U moet een beheerder Power BI om de pagina tenantinstellingen te kunnen zien.
+    > U moet een beheerder zijn Power BI de pagina tenantinstellingen te zien.
 
-1. Selecteer **Beheer-API-instellingen**  >  **Service-principals toestaan om alleen-lezen Power BI beheerders-API's (preview) te gebruiken.**
+1. Selecteer **Beheer-API-instellingen**  >  **Service-principals toestaan alleen-lezen te gebruiken Power BI beheerders-API's (preview)**.
 1. Selecteer **Specifieke beveiligingsgroepen.**
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Afbeelding waarin wordt getoond hoe service-principals alleen-lezen kunnen krijgen Power BI api-machtigingen voor beheerders":::
 
     > [!Caution]
-    > Wanneer u toestaat dat de beveiligingsgroep die u hebt gemaakt (die uw door Purview beheerde identiteit als lid heeft) alleen-lezen Power BI-beheer-API's gebruikt, geeft u deze ook toegang tot de metagegevens (zoals dashboard- en rapportnamen, eigenaren, beschrijvingen enzovoort) voor al uw Power BI-artefacten in deze tenant. Nadat de metagegevens zijn binnengehaald in Azure Purview, bepalen de machtigingen van Purview, niet Power BI machtigingen, wie die metagegevens kan zien.
+    > Wanneer u toestaat dat de beveiligingsgroep die u hebt gemaakt (die uw door Purview beheerde identiteit als lid heeft) alleen-lezen Power BI-beheer-API's gebruikt, geeft u deze ook toegang tot de metagegevens (zoals dashboard- en rapportnamen, eigenaren, beschrijvingen enzovoort) voor al uw Power BI-artefacten in deze tenant. Zodra de metagegevens zijn binnengehaald in Azure Purview, bepalen de machtigingen van Purview, niet Power BI machtigingen, wie die metagegevens kan zien.
 
     > [!Note]
-    > U kunt de beveiligingsgroep verwijderen uit uw instellingen voor ontwikkelaars, maar de eerder geëxtraheerde metagegevens worden niet verwijderd uit het Purview-account. U kunt deze indien nodig afzonderlijk verwijderen.
+    > U kunt de beveiligingsgroep verwijderen uit uw instellingen voor ontwikkelaars, maar de eerder geëxtraheerde metagegevens worden niet verwijderd uit het Purview-account. U kunt deze afzonderlijk verwijderen, als u wilt.
 
 ## <a name="register-your-power-bi-and-set-up-a-scan"></a>Uw Power BI registreren en een scan instellen
 
-Nu u de machtigingen voor Beheerde identiteit voor Purview hebt opgegeven om verbinding te maken met de beheer-API van uw Power BI-tenant, kunt u de scan instellen vanuit Azure Purview Studio.
+Nu u de machtigingen van Purview Managed Identity hebt gegeven om verbinding te maken met de beheer-API van uw Power BI-tenant, kunt u de scan instellen vanuit Azure Purview Studio.
 
-1. Selecteer het **pictogram Beheercentrum.**
+1. Selecteer bronnen **in** het linkernavigatievenster.
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/management-center.png" alt-text="Pictogram beheercentrum.":::
-
-1. Selecteer vervolgens **+ Nieuw** in **Gegevensbronnen.**
-
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/data-sources.png" alt-text="Afbeelding van de knop Nieuwe gegevensbron":::
+1. Selecteer vervolgens **Registreren**.
 
     Selecteer **Power BI** als uw gegevensbron.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/select-power-bi-data-source.png" alt-text="Afbeelding met de lijst met gegevensbronnen die u kunt kiezen":::
 
-3. Geef uw Power BI een gebruiksvriendelijke naam.
+3. Geef uw Power BI-exemplaar een gebruiksvriendelijke naam.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-friendly-name.png" alt-text="Afbeelding van Power BI naam die gebruiksvriendelijk is voor de gegevensbron":::
 
@@ -90,27 +86,27 @@ Nu u de machtigingen voor Beheerde identiteit voor Purview hebt opgegeven om ver
 
     Standaard vindt het systeem de Power BI tenant die in hetzelfde Azure-abonnement bestaat.
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-datasource-registered.png" alt-text="Power BI geregistreerde gegevensbron":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-datasource-registered.png" alt-text="Power BI gegevensbron geregistreerd":::
 
     > [!Note]
     > Voor Power BI is registratie en scan van gegevensbron toegestaan voor slechts één exemplaar.
 
 
-4. Geef een naam op voor de scan. Selecteer vervolgens de optie om de persoonlijke werkruimten op te nemen of uit te sluiten. U ziet dat beheerde identiteit de enige **ondersteunde verificatiemethode is.**
+4. Geef uw scan een naam. Selecteer vervolgens de optie om de persoonlijke werkruimten op te nemen of uit te sluiten. U ziet dat beheerde identiteit de enige verificatiemethode is **die wordt ondersteund.**
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Afbeelding van Power BI scaninstallatie":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Afbeelding van de Power BI scaninstallatie":::
 
     > [!Note]
-    > * Als u de configuratie van een scan om een persoonlijke werkruimte op te nemen of uit te sluiten overschakelt, wordt een volledige scan van de PowerBI-bron uitgevoerd
+    > * Als u de configuratie van een scan inschakelt om een persoonlijke werkruimte op te nemen of uit te sluiten, wordt een volledige scan van de PowerBI-bron uitgevoerd
     > * De scannaam moet tussen de 3 en 63 tekens lang zijn en mag alleen letters, cijfers, onderstrepingstekens en afbreekstreepingstekens bevatten. Spaties zijn niet toegestaan.
 
 5. Stel een scantrigger in. Uw opties zijn **Eenmaal,** **Om de 7 dagen** en Elke **30 dagen.**
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/scan-trigger.png" alt-text="Afbeelding van scantrigger":::
 
-6. Selecteer **in Nieuwe scan controleren** de optie Opslaan en uitvoeren **om** de scan te starten.
+6. Selecteer **opslaan en uitvoeren bij Nieuwe scan controleren** **om** de scan te starten.
 
-    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Een schermafbeelding opslaan Power BI uitvoeren":::
+    :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Afbeelding van Power BI scherm opslaan en uitvoeren":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

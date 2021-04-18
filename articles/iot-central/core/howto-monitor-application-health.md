@@ -1,5 +1,5 @@
 ---
-title: De status van een Azure IoT Central toepassing controleren | Microsoft Docs
+title: De status van een Azure IoT Central toepassing | Microsoft Docs
 description: Als operator of beheerder controleert u de algehele status van de apparaten die zijn verbonden met uw IoT Central toepassing.
 author: dominicbetts
 ms.author: dobett
@@ -7,12 +7,12 @@ ms.date: 01/27/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: a9abd00035ccd779fcbe5dcf29b90f47758ff403
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: df89d53e6b5043c1ef3caa1c92f2abaae542d6ec
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107588646"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107599006"
 ---
 # <a name="monitor-the-overall-health-of-an-iot-central-application"></a>De algehele status van een IoT Central bewaken
 
@@ -31,7 +31,7 @@ Toepassingen die gebruikmaken van het gratis proefabonnement hebben geen gekoppe
 
 ## <a name="view-metrics-in-the-azure-portal"></a>Metrische gegevens weergeven in de Azure Portal
 
-In de volgende stappen wordt ervan uitgenomen dat [u een IoT Central hebt](./quick-deploy-iot-central.md) met sommige verbonden [apparaten](./tutorial-connect-device.md) of een [gegevensexport die wordt uitgevoerd.](howto-export-data.md)
+In de volgende stappen wordt ervan uitgenomen dat [u een IoT Central hebt](./quick-deploy-iot-central.md) met een aantal verbonden [apparaten](./tutorial-connect-device.md) of een [gegevensexport die wordt uitgevoerd.](howto-export-data.md)
 
 Metrische gegevens IoT Central weergeven in de portal:
 
@@ -42,22 +42,22 @@ Metrische gegevens IoT Central weergeven in de portal:
 
 ### <a name="azure-portal-permissions"></a>Azure Portal machtigingen
 
-Toegang tot metrische gegevens in Azure Portal wordt beheerd door [op rollen gebaseerd toegangsbeheer van Azure.](../../role-based-access-control/overview.md) Gebruik de Azure Portal om gebruikers toe te voegen aan de IoT Central toepassing/resourcegroep/-abonnement om hen toegang te verlenen. U moet een gebruiker in de portal toevoegen, zelfs als deze al is toegevoegd aan IoT Central toepassing. Gebruik [ingebouwde Azure-rollen](../../role-based-access-control/built-in-roles.md) voor fijner toegangsbeheer.
+Toegang tot metrische gegevens in Azure Portal wordt beheerd door [op rollen gebaseerd toegangsbeheer van Azure.](../../role-based-access-control/overview.md) Gebruik de Azure Portal om gebruikers toe te voegen aan IoT Central toepassing,resourcegroep/abonnement om hen toegang te verlenen. U moet een gebruiker in de portal toevoegen, zelfs als deze al is toegevoegd aan de IoT Central toepassing. Gebruik [ingebouwde Azure-rollen](../../role-based-access-control/built-in-roles.md) voor fijner toegangsbeheer.
 
 ## <a name="iot-central-metrics"></a>IoT Central metrische gegevens
 
-Zie Ondersteunde metrische gegevens met IoT Central voor een lijst met de metrische gegevens die [momenteel beschikbaar Azure Monitor.](../../azure-monitor/essentials/metrics-supported.md#microsoftiotcentraliotapps)
+Zie Ondersteunde metrische gegevens met Azure Monitor voor een lijst met metrische gegevens die momenteel beschikbaar zijn voor [IoT Central.](../../azure-monitor/essentials/metrics-supported.md#microsoftiotcentraliotapps)
 
 ### <a name="metrics-and-invoices"></a>Metrische gegevens en facturen
 
 Metrische gegevens kunnen verschillen van de getallen die worden weergegeven op uw Azure IoT Central factuur. Deze situatie doet zich voor om een aantal redenen, zoals:
 
-- IoT Central [standard-prijsplannen](https://azure.microsoft.com/pricing/details/iot-central/) bevatten twee apparaten en verschillende berichtquota gratis. Hoewel de gratis items worden uitgesloten van facturering, worden ze nog steeds meegetelde in de metrische gegevens.
+- IoT Central [standard-prijsplannen](https://azure.microsoft.com/pricing/details/iot-central/) bevatten twee apparaten en gratis verschillende berichtquota. Hoewel de gratis items worden uitgesloten van facturering, worden ze nog steeds meegetelde in de metrische gegevens.
 
-- IoT Central één testapparaat-id automatisch gegenereerd voor elke apparaatsjabloon in de toepassing. Deze apparaat-id is zichtbaar op de **pagina Testapparaat beheren** voor een apparaatsjabloon. Oplossingsbouwers kunnen ervoor kiezen om [hun apparaatsjablonen te](./overview-iot-central.md#connect-devices) valideren voordat ze deze publiceren door code te genereren die gebruikmaakt van deze testapparaat-ID's. Hoewel deze apparaten worden uitgesloten van facturering, worden ze nog steeds meegetelde in de metrische gegevens.
+- IoT Central wordt automatisch één testapparaat-id gegenereerd voor elke apparaatsjabloon in de toepassing. Deze apparaat-id is zichtbaar op de **pagina Testapparaat beheren** voor een apparaatsjabloon. Oplossingsbouwers kunnen ervoor kiezen om hun apparaatsjablonen te valideren voordat ze worden gepubliceerd door code te genereren die gebruikmaakt van deze testapparaat-ID's. Hoewel deze apparaten worden uitgesloten van facturering, worden ze nog steeds meegetelde in de metrische gegevens.
 
-- Hoewel metrische gegevens een subset van apparaat-naar-cloud-communicatie kunnen tonen, telt alle communicatie tussen het apparaat en de cloud als een bericht [voor facturering.](https://azure.microsoft.com/pricing/details/iot-central/)
+- Hoewel metrische gegevens een subset van apparaat-naar-cloud-communicatie kunnen tonen, telt alle communicatie tussen het apparaat en de cloud als een bericht [voor facturering](https://azure.microsoft.com/pricing/details/iot-central/).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u hebt geleerd hoe u toepassingssjablonen gebruikt, is de voorgestelde volgende stap om te leren hoe u IoT Central [beheert vanuit Azure Portal](howto-manage-iot-central-from-portal.md).
+Nu u hebt geleerd hoe u toepassingssjablonen gebruikt, is de voorgestelde volgende stap om te leren hoe u IoT Central beheren vanuit [de Azure Portal](howto-manage-iot-central-from-portal.md).

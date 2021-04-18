@@ -1,6 +1,6 @@
 ---
 title: Coarse-relokalisatie
-description: Meer informatie over hoe en wanneer u ruwe Herlokalisatie gebruikt. Ruwe Herlokalisatie helpt u bij het vinden van ankers die in de buurt zijn.
+description: Meer informatie over hoe en wanneer u coarse-relokalisatie gebruikt. Coarse-relokalisatie helpt u bij het vinden van ankers die bij u in de buurt zijn.
 author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
@@ -9,37 +9,37 @@ ms.date: 01/28/2021
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3f0b04183c4df469d4f723486103790c4f97671b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d2737f58fa95d1aa45d9952e8b501c1b9be4d1b0
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104656172"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600349"
 ---
 # <a name="coarse-relocalization"></a>Coarse-relokalisatie
 
-Grof Herlokalisatie is een functie die grootschalige lokalisatie mogelijk maakt door een benadering, maar snel antwoord op deze vragen te bieden: 
-- *Waar bevindt mijn apparaat zich nu?* 
-- *Welke inhoud moet ik naachten?* 
+Coarse-relokalisatie is een functie die grootschalige lokalisatie mogelijk maakt door een geschatte maar snelle antwoord te bieden op deze vragen: 
+- *Waar is mijn apparaat nu?* 
+- *Welke inhoud moet ik observeren?* 
  
-Het antwoord is niet nauw keurig. Dit is in dit formulier: *u bent bijna klaar met deze ankers. Probeer er een te vinden*.
+Het antwoord is niet nauwkeurig. Deze heeft deze vorm: *U staat dicht bij deze ankers. Probeer een van deze te vinden.*
 
-Ruwe Herlokalisatie werkt door ankers te labelen met verschillende Lees bewaarden van de sensor die later worden gebruikt voor snelle query's. Voor scenario's voor buiten komen de sensor gegevens doorgaans de GPS (Global Positioning System) positie van het apparaat. Wanneer GPS niet beschikbaar of onbetrouwbaar is, zoals wanneer u buiten het leven bent, bestaan de sensor gegevens uit de Wi-Fi toegangs punten en Bluetooth beacons in het bereik. De verzamelde sensor gegevens dragen bij aan het onderhouden van een ruimtelijke index die wordt gebruikt door Azure spatiale ankers om snel te bepalen welke ankers dicht bij uw apparaat staan.
+Coarse-relokalisatie werkt door ankers te taggen met verschillende sensormetingen op het apparaat die later worden gebruikt voor snelle query's. Voor buitenscenario's zijn de sensorgegevens doorgaans de GPS-positie (Global Positioning System) van het apparaat. Wanneer GPS niet beschikbaar of onbetrouwbaar is, zoals wanneer u binnen bent, bestaan de sensorgegevens uit de Wi-Fi toegangspunten en Bluetooth-bakens binnen bereik. De verzamelde sensorgegevens dragen bij aan het onderhouden van een ruimtelijke index die wordt gebruikt door Azure Spatial Anchors om snel te bepalen welke ankers zich dicht bij uw apparaat.
 
-## <a name="when-to-use-coarse-relocalization"></a>Wanneer moet u ruwe Herlokalisatie gebruiken?
+## <a name="when-to-use-coarse-relocalization"></a>Wanneer gebruikt u coarse-relokalisatie?
 
-Als u van plan bent om meer dan 35 ruimtelijke ankers te verwerken in een ruimte die groter is dan een tennis rechtbank, profiteert u waarschijnlijk van ruwe Herlokalisatie ruimtelijke indexering.
+Als u van plan bent om meer dan 35 ruimtelijke ankers te verwerken in een ruimte die groter is dan een parkeerplaats, profiteert u waarschijnlijk van coarse-relokalisatie ruimtelijke indexering.
 
-Het snel opzoeken van ankers die zijn ingeschakeld door grove Herlokalisatie is ontworpen om de ontwikkeling van toepassingen die worden ondersteund door grootschalige verzamelingen van, zeggen, miljoenen geografisch gedistribueerde ankers, te vereenvoudigen. De complexiteit van ruimtelijke indexering is alle verborgen, zodat u zich kunt concentreren op uw toepassings logica. Alle moeilijke werkzaamheden worden uitgevoerd achter de schermen door Azure spatiale ankers.
+De snelle opzoekactie van ankers die mogelijk worden gemaakt door coarse-relokalisatie is ontworpen om de ontwikkeling te vereenvoudigen van toepassingen die worden gebruikt door grootschalige verzamelingen van bijvoorbeeld miljoenen geografisch gedistribueerde ankers. De complexiteit van ruimtelijke indexering is verborgen, zodat u zich kunt richten op uw toepassingslogica. Alle moeilijke werkzaamheden worden achter de schermen uitgevoerd door Azure Spatial Anchors.
 
-## <a name="using-coarse-relocalization"></a>Grove relokalisatie gebruiken
+## <a name="using-coarse-relocalization"></a>Coarse-relokalisatie gebruiken
 
-Hier volgt de gebruikelijke werk stroom voor het maken en doorzoeken van ruimtelijke ankers in azure met ruwe Herlokalisatie:
-1.  Een sensor vingerafdruk provider maken en configureren om de gewenste sensor gegevens te verzamelen.
-2.  Start een Azure spatiale-ankers sessie en maak de ankers. Omdat de sensor vingerafdruking is ingeschakeld, worden de ankers ruimtelijk door ruwe Herlokalisatie.
-3.  Zoek reactieve ankers met behulp van ruwe Herlokalisatie via de speciale zoek criteria in de ruimtelijk-ankers sessie.
+Hier is de gebruikelijke werkstroom voor het maken en opvragen van Azure-Spatial Anchors met coarse-relokalisatie:
+1.  Maak en configureer een sensor vingerafdrukprovider voor het verzamelen van de sensorgegevens die u wilt.
+2.  Start een Azure Spatial Anchors-sessie en maak de ankers. Omdat sensorvingervingerving is ingeschakeld, worden de ankers ruimtelijk geïndexeerd door coarse-relokalisatie.
+3.  Query's uitvoeren rond ankers met behulp van coarse-relokalisatie via de toegewezen zoekcriteria in de Spatial Anchors sessie.
 
-U kunt naar een van deze zelf studies verwijzen om ruwe herconfiguratie in uw toepassing in te stellen:
+Raadpleeg een van deze zelfstudies voor het instellen van coarse-relokalisatie in uw toepassing:
 * [Coarse-relokalisatie in Unity](../how-tos/set-up-coarse-reloc-unity.md)
 * [Coarse-relokalisatie in Objective-C](../how-tos/set-up-coarse-reloc-objc.md)
 * [Coarse-relokalisatie in Swift](../how-tos/set-up-coarse-reloc-swift.md)
@@ -47,113 +47,113 @@ U kunt naar een van deze zelf studies verwijzen om ruwe herconfiguratie in uw to
 * [Coarse-relokalisatie in C++/NDK](../how-tos/set-up-coarse-reloc-cpp-ndk.md)
 * [Coarse-relokalisatie in C++/WinRT](../how-tos/set-up-coarse-reloc-cpp-winrt.md)
 
-## <a name="sensors-and-platforms"></a>Sens oren en platformen
+## <a name="sensors-and-platforms"></a>Sensoren en platforms
 
-### <a name="platform-availability"></a>Platform beschikbaarheid
+### <a name="platform-availability"></a>Platformbeschikbaarheid
 
-U kunt deze typen sensor gegevens verzenden naar de anker service:
+U kunt deze typen sensorgegevens naar de ankerservice verzenden:
 
-* GPS-positie: breedte graad, lengte graad, hoogte
-* Signaal sterkte van Wi-Fi toegangs punten in bereik
-* Signaal sterkte van Bluetooth-beacons in bereik
+* GPS-positie: breedtegraad, lengtegraad, hoogte
+* Signaalsterkte van Wi-Fi toegangspunten binnen bereik
+* Signaalsterkte van Bluetooth-bakens binnen bereik
 
-Deze tabel bevat een overzicht van de beschik baarheid van de sensor gegevens op ondersteunde platforms en biedt informatie waarvan u rekening moet houden:
+Deze tabel bevat een overzicht van de beschikbaarheid van de sensorgegevens op ondersteunde platforms en bevat informatie die u moet kennen:
 
 |                 | HoloLens | Android | iOS |
 |-----------------|----------|---------|-----|
-| **GPS**         | Geen<sup>1</sup>  | Ja<sup>2</sup> | Ja<sup>3</sup> |
+| **Gps**         | Nr.<sup>1</sup>  | Ja<sup>2</sup> | Ja<sup>3</sup> |
 | **Wi-Fi**        | Ja<sup>4</sup> | Ja<sup>5</sup> | No  |
-| **Conbakeners** | Ja<sup>6</sup> | Ja<sup>6</sup> | Ja<sup>6</sup>|
+| **BLE-bakens** | Ja<sup>6</sup> | Ja<sup>6</sup> | Ja<sup>6</sup>|
 
 
-<sup>1</sup> een extern GPS-apparaat kan worden gekoppeld aan HoloLens. Neem contact op met de [ondersteuning](../spatial-anchor-support.md) als u gebruik wilt maken van HoloLens met een GPS-tracering.<br/>
-<sup>2</sup> ondersteund via [LOCATIONMANAGER][3] API'S (GPS en netwerk).<br/>
-<sup>3</sup> wordt ondersteund via [CLLocationManager][4] -api's.<br/>
-<sup>4</sup> wordt ondersteund met een snelheid van ongeveer één scan om de 3 seconden. <br/>
-<sup>5</sup> als u begint met API Level 28, worden Wi-Fi scans elke 2 minuten beperkt tot vier aanroepen. Vanaf Android 10 kunt u deze beperking uitschakelen vanuit het menu instellingen voor **ontwikkel aars** . Raadpleeg de [Android-documentatie][5]voor meer informatie.<br/>
-<sup>6</sup> beperkt tot [Eddystone][1] en [iBeacon][2].
+<sup>1</sup> Er kan een extern GPS-apparaat worden gekoppeld aan HoloLens. Neem [contact op met](../spatial-anchor-support.md) onze ondersteuning als u HoloLens wilt gebruiken met een GPS-tracker.<br/>
+<sup>2</sup> Ondersteund via [LocationManager-API's][3] (zowel GPS als NETWORK).<br/>
+<sup>3 Ondersteund</sup> via [CLLocationManager-API's.][4]<br/>
+<sup>4</sup> Ondersteund met een snelheid van ongeveer één scan per 3 seconden. <br/>
+<sup>5</sup> Vanaf API-niveau 28 worden Wi-Fi scans beperkt tot vier aanroepen om de 2 minuten. Vanaf Android 10 kunt u deze beperking uitschakelen via het menu **Instellingen voor** ontwikkelaars. Zie de [Android-documentatie voor meer informatie.][5]<br/>
+<sup>6</sup> Beperkt tot [Moetstone][1] en [iBeacon][2].
 
-### <a name="which-sensor-to-enable"></a>De sensor die moet worden ingeschakeld
+### <a name="which-sensor-to-enable"></a>Welke sensor moet worden ingeschakeld
 
 De keuze van de sensor is afhankelijk van de toepassing die u ontwikkelt en het platform.
-Dit diagram bevat een start punt voor het bepalen van de combi natie van Sens oren die u kunt inschakelen, afhankelijk van het lokalisatie scenario:
+Dit diagram biedt een beginpunt om te bepalen welke combinatie van sensoren u kunt inschakelen, afhankelijk van het lokalisatiescenario:
 
-![Diagram waarin ingeschakelde Sens oren voor verschillende scenario's worden weer gegeven.](media/coarse-relocalization-enabling-sensors.png)
+![Diagram met ingeschakelde sensoren voor verschillende scenario's.](media/coarse-relocalization-enabling-sensors.png)
 
-De volgende secties bieden meer inzicht in de voor delen en beperkingen van elk type sensor.
+De volgende secties bieden meer inzicht in de voordelen en beperkingen van elk sensortype.
 
-### <a name="gps"></a>GPS
+### <a name="gps"></a>Gps
 
-GPS is de go-to-optie voor scenario's van buiten.
-Wanneer u GPS gebruikt in uw toepassing, moet u er ook voor zorgen dat de beschik bare leesingen door de hardware doorgaans:
+GPS is de optie voor buitenscenario's.
+Wanneer u GPS in uw toepassing gebruikt, moet u er rekening mee houden dat de metingen die door de hardware worden geleverd doorgaans zijn:
 
 * Asynchrone en lage frequentie (minder dan 1 Hz).
-* Onbetrouwbaar/ruis (gemiddeld 7-m standaard afwijking).
+* Onbetrouwbaar/ruis (gemiddeld 7 m standaarddeviatie).
 
-In het algemeen worden zowel het besturings systeem als het ruimtelijke ankers een aantal filters en extrapolatie van het onbewerkte GPS-signaal in een poging gedaan om deze problemen te verhelpen. Deze extra verwerking vereist tijd voor convergentie, dus voor de beste resultaten moet u het volgende proberen:
+In het algemeen zullen zowel het besturingssysteem van het apparaat als Spatial Anchors het onbewerkte GPS-signaal filteren en extrapoleren in een poging om deze problemen te verhelpen. Deze extra verwerking vereist tijd voor convergentie, dus voor de beste resultaten moet u het volgende proberen:
 
-* Maak zo snel mogelijk één sensor vingerafdruk provider in uw toepassing.
-* Zorg ervoor dat de sensor vingerafdruk provider actief blijft tussen meerdere sessies.
-* De sensor vingerafdruk provider delen tussen meerdere sessies.
+* Maak zo vroeg mogelijk één sensor-vingerafdrukprovider in uw toepassing.
+* Houd de vingerafdrukprovider van de sensor tussen meerdere sessies in leven.
+* Deel de vingerafdrukprovider van de sensor tussen meerdere sessies.
 
-GPS-apparaten van consumenten kwaliteit zijn meestal niet nauw keurig. Een studie van [Zandenbergen en Barbeau (2011)][6] rapporteert dat de gemiddelde nauw keurigheid van mobiele telefoons met ondersteuning voor GPS (A-GPS) ongeveer 7 meters is. Dat is een zeer grote waarde om te negeren. Als u deze meet fouten wilt verwerken, behandelt de service ankers als waarschijnlijkheids distributies in GPS-ruimte. Een anker is dus de ruimte die het meest waarschijnlijk is (met meer dan 95% betrouw baarheid) met de waarde waar, onbekende GPS-positie.
+GPS-apparaten op consumentenkwaliteit zijn doorgaans onnauwkeurig. Uit een onderzoek door [Kunnenteen en Barbava (2011)][6] blijkt dat de mediaannauwkeurigheid van mobiele telefoons met ondersteuning voor GPS (A-GPS) ongeveer 7 meter is. Dat is nogal wat om te negeren. Om rekening te houden met deze meetfouten, behandelt de service ankers als waarschijnlijkheidsdistributies in GPS-ruimte. Een anker is dus de regio van de ruimte die waarschijnlijk (met meer dan 95% betrouwbaarheid) de werkelijke, onbekende GPS-positie bevat.
 
-Dezelfde reden hiervoor geldt wanneer u een query uitvoert met behulp van GPS. Het apparaat wordt weer gegeven als een andere ruimtelijk betrouw bare regio rondom de True, onbekende GPS-positie. Het detecteren van naburige ankers vertaalt de ankers met betrouw bare regio's *dicht genoeg* voor de vertrouwens regio van het apparaat, zoals hier wordt weer gegeven:
+Dezelfde redenering is van toepassing wanneer u een query uitvoert met BEHULP van GPS. Het apparaat wordt weergegeven als een andere regio voor ruimtelijk vertrouwen rond de werkelijke, onbekende GPS-positie. Het detecteren van nabijgelegen ankers vertaalt zich  in het vinden van de ankers met betrouwbaarheidsregio's die dicht genoeg bij de betrouwbaarheidsregio van het apparaat liggen, zoals hier wordt geïllustreerd:
 
-![Diagram dat illustreert het vinden van anker kandidaten door gebruik te maken van GPS.](media/coarse-reloc-gps-separation-distance.png)
+![Diagram dat het vinden van ankerkandidaten met behulp van GPS illustreert.](media/coarse-reloc-gps-separation-distance.png)
 
 ### <a name="wi-fi"></a>Wi-Fi
 
-Op HoloLens en Android kan Wi-Fi signaal sterkte een goede manier zijn om grove Herlokalisatie mogelijk te maken.
-Het voor deel is de potentiële onmiddellijke Beschik baarheid van Wi-Fi toegangs punten (bijvoorbeeld gemeen schappelijk in kantoor ruimten en winkel malls) zonder dat er extra instellingen nodig zijn.
+Op HoloLens en Android kan Wi-Fi signaalsterkte een goede manier zijn om binnen coarse-relokalisatie mogelijk te maken.
+Het voordeel is de potentiële onmiddellijke beschikbaarheid van Wi-Fi-toegangspunten (bijvoorbeeld in kantoorruimten en winkelruimten) zonder dat er extra instellingen nodig zijn.
 
 > [!NOTE]
-> iOS biedt geen API voor het lezen van Wi-Fi signaal sterkte en kan daarom niet worden gebruikt voor grove Herlokalisatie die via Wi-Fi is ingeschakeld.
+> iOS biedt geen API voor het lezen van Wi-Fi signaalsterkte, zodat deze niet kan worden gebruikt voor coarse-relokalisatie ingeschakeld via Wi-Fi.
 
-Wanneer u Wi-Fi gebruikt in uw toepassing, moet u er ook voor zorgen dat de beschik bare waarden van de hardware doorgaans:
+Wanneer u een Wi-Fi in uw toepassing gebruikt, moet u er rekening mee houden dat de metingen die door de hardware worden geleverd doorgaans zijn:
 
-* Asynchrone en lage frequentie (minder dan 0,1 Hz).
-* Mogelijk beperkt op het niveau van het besturings systeem.
-* Onbetrouwbaar/ruis (gemiddeld 3-dBm standaard deviatie).
+* Asynchroon en lage frequentie (minder dan 0,1 Hz).
+* Mogelijk beperkt op het niveau van het besturingssysteem.
+* Onbetrouwbaar/ruis (gemiddeld 3 dBm standaardafwijking).
 
-Ruimtelijke ankers proberen tijdens een sessie een gefilterde kaart met Wi-Fi signaal sterkte te maken in een poging om deze problemen te verhelpen. Voor de beste resultaten kunt u het volgende proberen:
+Spatial Anchors probeert tijdens een sessie een gefilterde kaart van Wi-Fi signaalsterkte te bouwen om deze problemen te verhelpen. Probeer het volgende voor de beste resultaten:
 
-* Maak de sessie goed voordat u het eerste anker plaatst.
-* Zorg ervoor dat de sessie zo lang mogelijk actief blijft. (Dat wil zeggen, alle ankers en query's in één sessie maken.)
+* Maak de sessie goed voordat u het eerste anker gaat plaatsen.
+* Houd de sessie zo lang mogelijk in leven. (Dat wil zeggen dat alle ankers en query's in één sessie worden uitgevoerd.)
 
-### <a name="bluetooth-beacons"></a>Bluetooth-beacons
+### <a name="bluetooth-beacons"></a>Bluetooth-bakens
 <a name="beaconsDetails"></a>
 
-Een zorgvuldige implementatie van Bluetooth-beacons is een goede oplossing voor grootschalige grove en onnauwkeurige grootschalige Herlokalisatie scenario's. Het is ook de enige methode binnenste die wordt ondersteund op alle drie de platforms.
+Een zorgvuldige implementatie van Bluetooth-bakens is een goede oplossing voor grootschalige scenario's met grootschalige coarse-relokalisatie, waarbij GPS niet of onnauwkeurig is. Het is ook de enige indoormethode die op alle drie de platforms wordt ondersteund.
 
-Beacons zijn doorgaans veelzijdige apparaten waarop alles kan worden geconfigureerd, met inbegrip van UUID-en MAC-adressen. In azure ruimtelijke ankers verwacht beacons dat ze uniek worden geïdentificeerd door hun UUID. Als u deze uniekheid niet weet, krijgt u waarschijnlijk onjuiste resultaten. Voor de beste resultaten:
+Bakens zijn doorgaans veelzijdige apparaten waarop alles kan worden geconfigureerd, waaronder UUID's en MAC-adressen. Azure Spatial Anchors verwacht dat bakens uniek worden geïdentificeerd door hun UUID's. Als u deze uniekheid niet zeker weet, krijgt u waarschijnlijk onjuiste resultaten. Voor de beste resultaten:
 
-* Wijs unieke UUID toe aan uw beacons.
-* Implementeer beacons op een manier die zich op een gelijkmatige afstand van uw ruimte bevindt, zodat er ten minste drie beacons bereikbaar zijn vanaf elk punt in de ruimte.
-* Geef de lijst met unieke Beacon-UUID door aan de sensor vingerafdruk provider.
+* Wijs unieke UUID's toe aan uw bakens.
+* Implementeer bakens op een manier die uw ruimte gelijkmatig bedekt en zodat ten minste drie bakens bereikbaar zijn vanaf elk punt in de ruimte.
+* Geef de lijst met unieke baken-UUID's door aan de vingerafdrukprovider van de sensor.
 
-Radio signalen, zoals die van Bluetooth, worden beïnvloed door obstakels en kunnen interfereren met andere radio signalen. Het kan lastig zijn om te raden of uw ruimte op uniforme wijze wordt gedekt. Om een betere klant ervaring te garanderen, raden wij u aan de dekking van uw beacons hand matig te testen. U kunt een test uitvoeren door uw Space door te lopen met de apparaten van de kandidaat en een toepassing die Bluetooth in bereik weergeeft. Terwijl u de dekking test, moet u ervoor zorgen dat u ten minste drie beacons kunt bereiken vanaf een strategische positie in uw ruimte. Als er te veel beacons zijn, kan dit leiden tot meer interferentie en kan het niet nood zakelijk zijn om de nauw keurigheid van ruwe Herlokalisatie te verbeteren.
+Radiosignalen zoals die van Bluetooth worden beïnvloed door obstakels en kunnen andere radiosignalen verstoren. Het kan dus lastig zijn om te raden of uw ruimte gelijkmatig wordt gedekt. Om een betere klantervaring te garanderen, raden we u aan de dekking van uw bakens handmatig te testen. U kunt een test uitvoeren door rond uw ruimte te lopen met kandidaatapparaten en een toepassing met Bluetooth binnen bereik. Zorg er tijdens het testen van de dekking voor dat u ten minste drie bakens kunt bereiken vanaf elke strategische positie in uw ruimte. Te veel bakens kunnen leiden tot meer interferentie tussen de bakens en verbeteren niet noodzakelijkerwijs de nauwkeurigheid van coarse-relokalisatie.
 
-Bluetooth-beacons best rijken doorgaans 80 meters als er geen obstakels aanwezig zijn in de ruimte.
-Voor een ruimte zonder grote obstakels kunt u dus beacons implementeren in een raster patroon elke 40 meter.
+Bluetooth-bakens omvatten doorgaans 80 meter als er geen obstakels in de ruimte aanwezig zijn.
+Voor een ruimte zonder grote obstakels kunt u dus elke 40 meter bakens in een rasterpatroon implementeren.
 
-Een Beacon-out-batterij heeft invloed op de resultaten. Zorg er dus voor dat u uw implementatie regel matig bewaakt voor weinig of niet-gefactureerde accu's.
+Een baken dat bijna leeg is, is van invloed op de resultaten. Zorg er daarom voor dat u uw implementatie regelmatig controleert op lage of niet-geladen accu's.
 
-In azure spatiale ankers worden alleen Bluetooth beacons gevolgd die zich in de lijst met bekende beacons-UUID bevinden. Maar kwaadwillende beacons die zijn geprogrammeerd met allowlisted-UUID, kunnen een negatieve invloed hebben op de kwaliteit van de service. Daarom krijgt u de beste resultaten in de weer te geven ruimtes waarbij u de Beacon-implementatie kunt beheren.
+Azure Spatial Anchors houdt alleen Bluetooth-bakens bij die zich in de lijst met bekende nabijheids-UUID's bevinden. Maar schadelijke bakens die zijn geprogrammeerd om toegestane UUID's te hebben, kunnen een negatieve invloed hebben op de kwaliteit van de service. U krijgt dus de beste resultaten in gecureerde ruimten waar u de implementatie van bakens kunt bepalen.
 
-### <a name="sensor-accuracy"></a>Nauw keurigheid van sensor
+### <a name="sensor-accuracy"></a>Nauwkeurigheid van de sensor
 
-De nauw keurigheid van het GPS-signaal, zowel tijdens het maken van het anker als tijdens query's, heeft een grote invloed op de set geretourneerde ankers. Query's op basis van Wi-Fi/beacons worden daarentegen beschouwd als alle ankers die ten minste één toegangs punt of Beacon bevatten die gemeen schappelijk zijn voor de query. In dat opzicht wordt het resultaat van een query die is gebaseerd op Wi-Fi/beacons, voornamelijk bepaald door het fysieke bereik van de toegangs punten/beacons en omgevings obstakels.
-In deze tabel wordt de verwachte Zoek ruimte voor elk type sensor geschat:
+De nauwkeurigheid van het GPS-signaal, zowel tijdens het maken van ankers als tijdens query's, heeft een aanzienlijke invloed op de set geretourneerde ankers. Bij query's op basis van Wi-Fi/bakens wordt daarentegen rekening houden met alle ankers met ten minste één toegangspunt/baken die gemeenschappelijk zijn voor de query. In die zin wordt het resultaat van een query op basis van Wi-Fi/bakens voornamelijk bepaald door het fysieke bereik van de toegangspunten/bakens en omgevingsfactoren.
+In deze tabel wordt de verwachte zoekruimte voor elk sensortype schatten:
 
-| Sensoren      | RADIUS van zoek ruimte (bij benadering) | Details |
+| Sensor      | Radius voor zoekruimte (bij benadering) | Details |
 |-------------|:-------:|---------|
-| **GPS**         | 20 m tot 30 m | Bepaald door de GPS-onzekerheid, onder andere factoren. De gerapporteerde getallen worden geschat voor de mediaan GPS nauw keurigheid van mobiele telefoons met een-GPS: 7 meters. |
-| **Wi-Fi**        | 50 m tot 100 m | Bepaald door het bereik van de draadloze toegangs punten. Is afhankelijk van de frequentie, de verzender sterkte, de fysieke obstakels, de interferentie, enzovoort. |
-| **Conbakeners** |  70 m | Bepaald door het bereik van het Beacon. Is afhankelijk van de frequentie, overdrachts sterkte, fysieke obstakels, interferentie, enzovoort. |
+| **Gps**         | 20 m tot 30 m | Bepaald door de GPS-onzekerheid, onder andere factoren. De gerapporteerde nummers worden geschat voor de mediaan GPS nauwkeurigheid van mobiele telefoons met A-GPS: 7 meters. |
+| **Wi-Fi**        | 50 m tot 100 m | Bepaald door het bereik van de draadloze toegangspunten. Is afhankelijk van de frequentie, de sterkte van de sterkte van de sterkte, de fysieke verstoring, interferentie, en meer. |
+| **BLE-bakens** |  70 m | Bepaald door het bereik van het baken. Is afhankelijk van de frequentie, de overdrachtssterkte, fysieke verstoringen, interferentie, en meer. |
 
 <!-- Reference links in article -->
-[1]: https://developers.google.com/beacons/eddystone
+[1]: https://developer.estimote.com/eddystone/
 [2]: https://developer.apple.com/ibeacon/
 [3]: https://developer.android.com/reference/android/location/LocationManager
 [4]: https://developer.apple.com/documentation/corelocation/cllocationmanager?language=objc

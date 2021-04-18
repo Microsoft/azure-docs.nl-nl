@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: c9e1de7b5dee8e351cd8744287c07b0bbb174512
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8cbccc3fb4cc513d7c86253ae07fbced4626a15e
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92516457"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107599652"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tidemark"></a>Zelfstudie: Azure Active Directory-integratie met Tidemark
 
@@ -113,7 +113,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
     - `https://<subdomain>.tidemark.net/saml`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem voor deze waarden contact op met het [klantenondersteuningsteam van Tidemark](http://www.tidemark.com/contact-us). U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem voor deze waarden contact op met het klantenondersteuningsteam van Tidemark. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -131,7 +131,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 ### <a name="configure-tidemark-single-sign-on"></a>Eenmalige aanmelding voor Tidemark configureren
 
-Als u eenmalige aanmelding wilt configureren aan de kant van **Tidemark**, moet u het gedownloade **certificaat (Base64)** en de juiste uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Tidemark](http://www.tidemark.com/contact-us). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u een aanmelding aan de zijde van **Tidemark** wilt configureren, moet u het gedownloade Certificaat **(Base64)** en de juiste uit het Azure Portal gekopieerde URL's verzenden naar het ondersteuningsteam van Tidemark. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
@@ -185,7 +185,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 ### <a name="create-tidemark-test-user"></a>Tidemark-testgebruiker maken
 
-In deze sectie maakt u in Tidemark een gebruiker met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van Tidemark](http://www.tidemark.com/contact-us) om de gebruikers toe te voegen in het Tidemark-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie maakt u in Tidemark een gebruiker met de naam Britta Simon. Neem contact op met het ondersteuningsteam van Tidemark om de gebruikers toe te voegen in het Tidemark-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

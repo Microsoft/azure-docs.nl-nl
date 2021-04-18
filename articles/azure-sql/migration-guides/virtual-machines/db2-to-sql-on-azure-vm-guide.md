@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 4c40617f4e374a696bbc00b7250500c1f1402421
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: 43eff2bea6f6d95291e9ba9650ff42187e39fc70
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107588612"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600162"
 ---
 # <a name="migration-guide-ibm-db2-to-sql-server-on-azure-vm"></a>Migratiehandleiding: IBM Db2 to SQL Server on Azure VM
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -39,7 +39,7 @@ Nadat u aan de vereisten hebt voldaan, bent u klaar om de topologie van uw omgev
 
 ### <a name="assess"></a>Evalueren 
 
-Gebruik SSMA voor DB2 om databaseobjecten en -gegevens te controleren en databases te beoordelen voor migratie. 
+Gebruik SSMA voor DB2 om databaseobjecten en -gegevens te controleren en databases te evalueren voor migratie. 
 
 Volg deze stappen om een evaluatie te maken:
 
@@ -85,11 +85,11 @@ Volg deze stappen om het schema te converteren:
 1. (Optioneel) Dynamische of ad-hocquery's toevoegen aan -instructies. Klik met de rechtermuisknop op het knooppunt en kies vervolgens **Instructies toevoegen.** 
 1. Selecteer **Verbinding maken met SQL Server**. 
     1. Voer verbindingsgegevens in om verbinding te maken met uw exemplaar van SQL Server op uw Azure-VM. 
-    1. Kies ervoor om verbinding te maken met een bestaande database op de doelserver of geef een nieuwe naam op om een nieuwe database te maken op de doelserver. 
+    1. Kies ervoor om verbinding te maken met een bestaande database op de doelserver of geef een nieuwe naam op om een nieuwe database op de doelserver te maken. 
     1. Geef verificatiegegevens op. 
     1. Selecteer **Verbinding maken**.
 
-    :::image type="content" source="../../../../includes/media/virtual-machines-sql-server-connection-steps/rm-ssms-connect.png" alt-text="Schermopname van de details die nodig zijn om verbinding te maken met uw SQL Server azure-VM.":::
+    :::image type="content" source="../../../../includes/media/virtual-machines-sql-server-connection-steps/rm-ssms-connect.png" alt-text="Schermopname met de details die nodig zijn om verbinding te maken met SQL Server azure-VM.":::
 
 1. Klik met de rechtermuisknop op het schema en kies **schema converteren.** U kunt ook Schema **converteren** kiezen in de bovenste navigatiebalk nadat u het schema hebt geselecteerd.
 
@@ -99,8 +99,8 @@ Volg deze stappen om het schema te converteren:
 
    :::image type="content" source="media/db2-to-sql-on-azure-vm-guide/compare-review-schema-structure.png" alt-text="Schermopname van het vergelijken en controleren van de structuur van het schema om mogelijke problemen te identificeren.":::
 
-1. Selecteer in **het** deelvenster Uitvoer de optie **Resultaten controleren.** Bekijk fouten **in het** deelvenster Foutenlijst. 
-1. Sla het project lokaal op voor een offline schema-hersteloefening. Selecteer **In** het menu Bestand de optie **Project opslaan.** Dit biedt u de mogelijkheid om de bron- en doelschema's offline te evalueren en herstel uit te voeren voordat u het schema kunt publiceren naar SQL Server azure-VM.
+1. Selecteer in **het** deelvenster Uitvoer de optie **Resultaten bekijken.** Bekijk fouten **in het** deelvenster Foutenlijst. 
+1. Sla het project lokaal op voor een offline schema-hersteloefening. Selecteer In **het** menu Bestand de optie **Project opslaan.** Dit biedt u de mogelijkheid om de bron- en doelschema's offline te evalueren en herstel uit te voeren voordat u het schema kunt publiceren naar SQL Server azure-VM.
 
 ## <a name="migrate"></a>Migrate
 
@@ -137,7 +137,7 @@ Nadat de gegevens naar de doelomgeving zijn gemigreerd, moeten alle toepassingen
 
 Testen bestaat uit de volgende activiteiten:
 
-1. **Validatietests ontwikkelen:** als u databasemigratie wilt testen, moet u SQL-query's gebruiken. U moet de validatiequery's maken om uit te voeren op zowel de bron- als de doeldatabase. Uw validatiequery's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
+1. **Validatietests ontwikkelen:** als u databasemigratie wilt testen, moet u SQL-query's gebruiken. U moet de validatiequery's maken die moeten worden uitgevoerd op zowel de bron- als de doeldatabase. Uw validatiequery's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
 1. **De testomgeving instellen:** de testomgeving moet een kopie van de brondatabase en de doeldatabase bevatten. Zorg ervoor dat u de testomgeving isoleert.
 1. **Validatietests uitvoeren:** voer de validatietests uit op de bron en het doel en analyseer vervolgens de resultaten.
 1. **Prestatietests uitvoeren:** voer prestatietests uit op de bron en het doel en analyseer en vergelijk de resultaten.
@@ -149,9 +149,9 @@ Zie de volgende resources, die zijn ontwikkeld ter ondersteuning van een echte m
 |Asset  |Description  |
 |---------|---------|
 |[Model en hulpprogramma voor evaluatie van gegevensworkloads](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulpprogramma biedt voorgestelde 'best fit' doelplatforms, cloud-gereedheid en herstelniveau voor toepassingen/databases voor een bepaalde workload. Het biedt eenvoudige berekening met één klik en het genereren van een rapport waarmee u grote evaluaties van onroerend goed kunt versnellen door een geautomatiseerd en uniform platformbesluitproces te bieden.|
-|[Db2 zOS-gegevensactiva detectie- en evaluatiepakket](https://github.com/microsoft/DataMigrationTeam/tree/master/DB2%20zOS%20Data%20Assets%20Discovery%20and%20Assessment%20Package)|Nadat u het SQL-script op een database hebt uitgevoerd, kunt u de resultaten exporteren naar een bestand in het bestandssysteem. Er worden verschillende bestandsindelingen ondersteund, waaronder *.csv, zodat u de resultaten kunt vastleggen in externe hulpprogramma's zoals spreadsheets. Deze methode kan handig zijn als u eenvoudig resultaten wilt delen met teams waarop workbench niet is geïnstalleerd.|
-
-|[IBM Db2 LUW-inventarisscripts en -artefacten |](https://github.com/microsoft/DataMigrationTeam/tree/master/IBM%20DB2%20LUW%20Inventory%20Scripts%20and%20Artifacts) Deze asset bevat een SQL-query die IBM Db2 LUW-systeemtabellen van versie 11.1 raakt en een telling biedt van objecten per schema en objecttype, een ruwe schatting van 'onbewerkte gegevens' in elk schema en de formaat van tabellen in elk schema, met resultaten die zijn opgeslagen in een CSV-indeling.| | [Db2 LUW pure scale on Azure - setup guide](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/DB2%20PureScale%20on%20Azure.pdf)| Deze handleiding fungeert als uitgangspunt voor een Db2-implementatieplan. Hoewel de bedrijfsvereisten verschillen, is hetzelfde basispatroon van toepassing. Dit architectuurpatroon kan ook worden gebruikt voor OLAP-toepassingen op Azure.|
+|[Db2 zOS-gegevensactiva detectie- en evaluatiepakket](https://github.com/microsoft/DataMigrationTeam/tree/master/DB2%20zOS%20Data%20Assets%20Discovery%20and%20Assessment%20Package)|Nadat u het SQL-script in een database hebt uitgevoerd, kunt u de resultaten exporteren naar een bestand in het bestandssysteem. Er worden verschillende bestandsindelingen ondersteund, waaronder *.csv, zodat u de resultaten kunt vastleggen in externe hulpprogramma's zoals spreadsheets. Deze methode kan handig zijn als u eenvoudig resultaten wilt delen met teams waarop workbench niet is geïnstalleerd.|
+|[IBM Db2 LUW-inventarisscripts en -artefacten](https://github.com/microsoft/DataMigrationTeam/tree/master/IBM%20DB2%20LUW%20Inventory%20Scripts%20and%20Artifacts)|Deze asset bevat een SQL-query die ibm Db2 LUW-systeemtabellen van versie 11.1 raakt en een telling biedt van objecten per schema en objecttype, een ruwe schatting van 'onbewerkte gegevens' in elk schema en de formaat van tabellen in elk schema, met resultaten die zijn opgeslagen in een CSV-indeling.|
+|[Db2 LUW pure scale on Azure - installatiehandleiding](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/DB2%20PureScale%20on%20Azure.pdf)|Deze handleiding fungeert als uitgangspunt voor een Db2-implementatieplan. Hoewel de bedrijfsvereisten verschillen, is hetzelfde basispatroon van toepassing. Dit architectuurpatroon kan ook worden gebruikt voor OLAP-toepassingen in Azure.|
 
 Het Data SQL Engineering-team heeft deze resources ontwikkeld. De kern van dit team is het deblokkeren en versnellen van complexe modernisering voor gegevensplatformmigratieprojecten naar het Azure-gegevensplatform van Microsoft.
 

@@ -1,33 +1,39 @@
 ---
-title: Beleid en voor waarden voor commerciële Marketplace, Azure Marketplace
-description: Het beleid en de voor waarden van micro soft Commercial Marketplace zijn van toepassing op alle uitgevers en aanbiedingen in azure Marketplace.
+title: Beleidsregels en voorwaarden voor de commerciële marketplace, Azure Marketplace
+description: Beleidsregels en voorwaarden voor de commerciële marketplace van Microsoft zijn van toepassing op alle uitgevers en aanbiedingen in Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
-ms.date: 09/09/2020
-ms.openlocfilehash: 698e65c4b982c5d639ffc666b394765fd04bd202
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/16/2021
+ms.openlocfilehash: 7938403e67d7059e8744e7023e8a7614df37e20f
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98222459"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107599618"
 ---
 # <a name="commercial-marketplace-policies-and-terms"></a>Beleidsregels en voorwaarden voor de commerciële marketplace
 
->[!Note]
->"Micro soft Commercial Marketplace" houdt in het bezit of geëxploiteerde platform van micro soft, met de naam, waarmee aanbiedingen kunnen worden aangeboden aan of aangeschaft door klanten. Tenzij anders vermeld, omvat de commerciële Marketplace Microsoft AppSource en Azure Marketplace.
+De _commerciële marketplace van Microsoft_ is een door Microsoft beheerd of beheerd platform, waarmee aanbiedingen kunnen worden aangeboden aan of verkregen door klanten. Tenzij anders aangegeven, bevat de commerciële marketplace Microsoft AppSource en Azure Marketplace.
 
-Hartelijk dank voor uw interesse in het publiceren van aanbiedingen op de commerciële Marketplace. We streven ernaar samen te werken met u om een uitgebreide bron van cloud oplossingen en een verzameling bedrijfs aanbiedingen te maken die klanten wereld wijd verlichten en u helpen bij het bouwen van uw bedrijf.
+Bedankt voor uw interesse in het publiceren van aanbiedingen op de commerciële marketplace. We stellen alles in het werk om samen met u een uitgebreide bron van cloudoplossingen en een verzameling zakelijke aanbiedingen te bouwen waarmee klanten over de hele wereld klanten kunnen helpen om uw bedrijf te bouwen.
 
-Aanbiedingen op de commerciële Marketplace moeten voldoen aan het beleid en de voor waarden. Deze worden van tijd tot tijd bijgewerkt om een goede klant ervaring te garanderen en onze partners te helpen slagen. Zie [Microsoft AppSource en Azure Marketplace-forum](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)als u feedback wilt geven over ons beleid of de voor waarden.
+Aanbiedingen op de commerciële marketplace moeten voldoen aan onze beleidsregels en voorwaarden. We werken ze van tijd tot tijd bij om een goede klantervaring te garanderen en onze partners te helpen slagen. U kunt feedback geven over onze beleidsregels of voorwaarden op het [Microsoft AppSource en Azure Marketplace forum](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222).
+
+## <a name="publisher-agreement"></a>Uitgeversovereenkomst
+
+- [Microsoft Publisher-overeenkomst](https://go.microsoft.com/fwlink/?LinkID=699560)
+- [Wijzigingsgeschiedenis voor Microsoft Publisher Agreement](https://go.microsoft.com/fwlink/?linkid=2159975&clcid=0x409)
+
+De Microsoft Publisher-overeenkomst beschrijft de relatie voor het publiceren van aanbiedingen op de commerciële marketplace. Het bepaalt uw toegang tot en het gebruik van functies op Partner Center betrekking tot het publiceren en aanbieden van aanbiedingen in de onlinewinkels van de commerciële marketplace.
 
 ## <a name="policies-and-terms"></a>Beleidsregels en voorwaarden
 
 - [Commercial marketplace certification policies](/legal/marketplace/certification-policies?context=/azure/marketplace/context/context) (Beleid voor certificering van Commerciële Marketplace)
+- [Wijzigingsgeschiedenis van certificeringsbeleid](/legal/marketplace/offer-policies-change-history)
 - [Beoordelingsbeleid voor Microsoft AppSource en Azure Marketplace](/legal/marketplace/rating-review-policies?context=/azure/marketplace/context/context)
-- [Voorwaarden voor Azure Marketplace](/legal/marketplace/terms?context=/azure/marketplace/context/context)
 
 ## <a name="next-steps"></a>Volgende stappen
 

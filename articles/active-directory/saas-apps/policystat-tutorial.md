@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 4d6274f3e1356a8ff8a997e830f0ebee43f50cff
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5c2520c8e209ab8319cbc5a369b70d247a52232c
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92893013"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600995"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Zelfstudie: Azure Active Directory-integratie met PolicyStat
 
@@ -110,7 +110,7 @@ Voor het configureren van eenmalige aanmelding met Azure Active Directory bij Po
     b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<companyname>.policystat.com/saml2/metadata/`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [ondersteuningsteam van PolicyStat](http://www.policystat.com/support/) om de waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [ondersteuningsteam van PolicyStat](https://rldatix.com/services-support/support) om de waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 4. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -154,13 +154,13 @@ Voor het configureren van eenmalige aanmelding met Azure Active Directory bij Po
 
     c. Afmeldings-URL
 
-### <a name="configure-policystat-single-sign-on"></a>Eenmalige aanmelding bij PolicyStat configureren
+### <a name="configure-policystat-single-sign-on&quot;></a>Eenmalige aanmelding bij PolicyStat configureren
 
 1. Meld u in een ander browservenster aan als beheerder bij uw PolicyStat-bedrijfswebsite.
 
 2. Klik op het tabblad **Beheerder** en klik vervolgens op **Eenmalige aanmelding configureren** in het linker navigatiedeelvenster.
    
-    ![Menu Beheerder](./media/policystat-tutorial/ic808633.png "Menu Beheerder"):
+    ![Menu Beheerder](./media/policystat-tutorial/ic808633.png &quot;Menu Beheerder"):
 
 3. Klik op **Uw IDP-metagegevens** en voer vervolgens de volgende stappen uit in de sectie **Uw IDP-metagegevens**:
    

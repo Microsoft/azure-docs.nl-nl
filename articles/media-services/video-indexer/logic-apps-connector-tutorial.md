@@ -8,16 +8,16 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: tutorial
 ms.date: 09/21/2020
-ms.openlocfilehash: f3504ca4a706e92081209f4eaaa86af9f71c52b3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: caff6a2496e907da1bdc140860c47476d1842df4
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98880908"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600672"
 ---
 # <a name="tutorial-use-video-indexer-with-logic-app-and-power-automate"></a>Zelfstudie: Video Indexer met Logic App en Power Automate gebruiken
 
-De [REST-API van Video Indexer v2](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Delete-Video?) van Azure Media Services biedt ondersteuning voor zowel communicatie tussen servers onderling als tussen clients en servers, en stelt Video Indexer-gebruikers in staat om eenvoudig video- en audio-inzichten te integreren in hun toepassingslogica, wat nieuwe ervaringen en mogelijkheden om geld te verdienen oplevert.
+De [REST-API van Video Indexer v2](https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Delete-Video) van Azure Media Services biedt ondersteuning voor zowel communicatie tussen servers onderling als tussen clients en servers, en stelt Video Indexer-gebruikers in staat om eenvoudig video- en audio-inzichten te integreren in hun toepassingslogica, wat nieuwe ervaringen en mogelijkheden om geld te verdienen oplevert.
 
 Om de integratie nog gemakkelijker te maken, bieden we ondersteuning voor [Logic Apps](https://azure.microsoft.com/services/logic-apps/) en [Power Automate](https://preview.flow.microsoft.com/connectors/shared_videoindexer-v2/video-indexer-v2/) -connectoren die compatibel zijn met onze API. U kunt de connectoren gebruiken om aangepaste werkstromen in te stellen waarmee u inzichten doeltreffend kunt indexeren en extraheren uit een grote hoeveelheid video- en audio-bestanden zonder één regel code te schrijven. Daarnaast geeft het gebruik van connectoren voor uw integratie u meer inzicht in de status van uw werkstroom, en een gemakkelijke manier om fouten op te sporen.  
 

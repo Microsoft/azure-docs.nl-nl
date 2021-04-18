@@ -1,25 +1,25 @@
 ---
-title: Azure Security Center gratis VS Azure Defender ingeschakeld
-description: Meer informatie over de voor delen van het inschakelen van Azure Defender voor Cloud beveiliging in Azure Security Center
+title: Azure Security Center gratis versus Azure Defender ingeschakeld
+description: Meer informatie over de voordelen van het inschakelen Azure Defender beveiliging van cloudworkloads in Azure Security Center
 author: memildin
 ms.author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: overview
 ms.date: 03/23/2021
-ms.openlocfilehash: 1825f5be8a4f8a8ddfba931dfbc7e77186b4331f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: aa65989953f761ff915383fcb59da7f36ea98dab
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104889447"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600479"
 ---
-# <a name="azure-security-center-free-vs-azure-defender-enabled"></a>Azure Security Center gratis VS Azure Defender ingeschakeld
+# <a name="azure-security-center-free-vs-azure-defender-enabled"></a>Azure Security Center gratis versus Azure Defender ingeschakeld
 Azure Defender is gratis gedurende de eerste 30 dagen. Als u aan het einde van 30 dagen wilt door gaan met het gebruik van de service, worden er automatisch kosten voor gebruik in rekening gebracht.
 
-U kunt een upgrade uitvoeren op de pagina met **prijzen &-instellingen** , zoals beschreven in [Quick Start: Azure Defender inschakelen](enable-azure-defender.md). Zie [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)voor prijs informatie in de valuta van uw keuze en volgens uw regio.
+U kunt een upgrade uitvoeren vanaf **de & prijzen,** zoals beschreven in [Quickstart: Azure Defender.](enable-azure-defender.md) Zie prijzen voor meer informatie over de prijzen in uw keuzevaluta en Security Center [regio.](https://azure.microsoft.com/pricing/details/security-center/)
 
-## <a name="what-are-the-benefits-of-enabling-azure-defender"></a>Wat zijn de voor delen van het inschakelen van Azure Defender?
+## <a name="what-are-the-benefits-of-enabling-azure-defender"></a>Wat zijn de voordelen van het inschakelen van Azure Defender?
 
 Security Center wordt op twee manieren aangeboden:
 
@@ -48,7 +48,7 @@ Security Center wordt op twee manieren aangeboden:
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
 - [Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
-- [Welke gegevens typen worden er voor de dagelijkse limiet van 500 MB gebruikt?](#what-data-types-are-included-in-the-500-mb-data-daily-allowance)
+- [Welke gegevenstypen zijn opgenomen in de dagelijkse toegestane gegevens van 500 MB?](#what-data-types-are-included-in-the-500-mb-data-daily-allowance)
 
 
 ### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?
@@ -90,18 +90,18 @@ Als u al een licentie hebt voor Microsoft Defender for Endpoint, hoeft u niet te
 Neem contact op met het ondersteuningsteam van Security Center en geef de relevante werkruimte-ID, regio en licentiegegevens van elke relevante licentie op om uw korting te bevestigen.
 
 ### <a name="my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers"></a>Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers? 
-Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden er geen kosten in rekening gebracht voor machines die de vrijgekomen energie status hebben wanneer deze zich in die staat bevinden. Computers worden gefactureerd op basis van hun energie status, zoals wordt weer gegeven in de volgende tabel:
+Nee. Wanneer u Azure Defender voor [servers](defender-for-servers-introduction.md) in een abonnement inschakelen, worden er geen kosten in rekening gebracht voor computers met de status Van de toewijzing van energie als ze die status hebben. Machines worden gefactureerd op basis van hun energietoestand, zoals wordt weergegeven in de volgende tabel:
 
 | Staat        | Beschrijving                                                                                                                                      | Gebruik van exemplaar gefactureerd |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| Starten     | De VM wordt opgestart.                                                                                                                               | Niet gefactureerd            |
-| Wordt uitgevoerd      | Normale werk status voor een virtuele machine                                                                                                                    | Gefactureerd                |
-| Stoppen     | Dit is een overgangs status. Als deze functie is voltooid, wordt deze weer gegeven als gestopt.                                                                           | Gefactureerd                |
-| Gestopt      | De virtuele machine is afgesloten vanuit het gast besturingssysteem of met behulp van de uitgeschakeld-Api's. Er wordt nog steeds hardware toegewezen aan de virtuele machine en deze blijft op de host. | Gefactureerd                |
-| Vrijgeven | Overgangs status. Als de VM is voltooid, wordt deze weer gegeven als opgeheven.                                                                             | Niet gefactureerd            |
-| Toewijzing ongedaan gemaakt  | De virtuele machine is gestopt en verwijderd van de host.                                                                                  | Niet gefactureerd            |
+| Starten     | De VM wordt opstarten.                                                                                                                               | Niet gefactureerd            |
+| Wordt uitgevoerd      | Normale werktoestand voor een VM                                                                                                                    | Gefactureerd                |
+| Stoppen     | Dit is een overgangstoestand. Wanneer dit is voltooid, wordt deze als Gestopt weergezet.                                                                           | Gefactureerd                |
+| Gestopt      | De VM is afgesloten vanuit het gast-besturingssysteem of met behulp van de PowerOff-API's. Hardware wordt nog steeds toegewezen aan de VM en blijft op de host. | Gefactureerd                |
+| Vrijgeven | Overgangstoestand. Wanneer dit is voltooid, wordt de VM als Toewijzing is beëindigd.                                                                             | Niet gefactureerd            |
+| Toewijzing ongedaan gemaakt  | De VM is gestopt en van de host verwijderd.                                                                                  | Niet gefactureerd            |
 
-:::image type="content" source="media/security-center-pricing/deallocated-virtual-machines.png" alt-text="Azure Virtual Machines het weer geven van een ontoegewezen machine":::
+:::image type="content" source="media/security-center-pricing/deallocated-virtual-machines.png" alt-text="Azure Virtual Machines met een machine die niet is toegewezen":::
 
 ### <a name="will-i-be-charged-for-machines-without-the-log-analytics-agent-installed"></a>Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?
 Ja. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden de machines in dat abonnement op diverse manieren beveiligd, zelfs als u de Log Analytics-agent niet hebt geïnstalleerd.
@@ -117,13 +117,13 @@ U krijgt 500 MB gratis gegevensopname per dag, voor elke machine die is verbonde
 
 Deze hoeveelheid gegevens is een dagelijks gemiddelde voor alle knooppunten. Er worden dus geen extra kosten in rekening gebracht als sommige machines 100 MB en andere 800 MB verzenden, mits het totaal de gratis limiet van **[aantal machines] x 500 MB** niet overschrijdt.
 
-### <a name="what-data-types-are-included-in-the-500-mb-data-daily-allowance"></a>Welke gegevens typen worden er voor de dagelijkse limiet van 500 MB gebruikt?
+### <a name="what-data-types-are-included-in-the-500-mb-data-daily-allowance"></a>Welke gegevenstypen zijn opgenomen in de dagelijkse hoeveelheid gegevens van 500 MB?
 
-De facturering van Security Center is nauw verbonden met de facturering voor Log Analytics. Security Center biedt een toewijzing van 500 MB/knoop punt/dag voor de volgende subset van [beveiligings gegevens typen](/azure/azure-monitor/reference/tables/tables-category.md#security):
+Security Center van de Security Center is nauw gekoppeld aan de facturering voor Log Analytics. Security Center biedt een toewijzing van 500 MB/knooppunt/dag aan de volgende subset van [beveiligingsgegevenstypen:](/azure/azure-monitor/reference/tables/tables-category#security)
 - WindowsEvent
 - SecurityAlert
-- Security Baseline Baseline
-- Summary
+- SecurityBaseline
+- SecurityBaselineSummary
 - SecurityDetection
 - SecurityEvent
 - WindowsFirewall
@@ -131,9 +131,9 @@ De facturering van Security Center is nauw verbonden met de facturering voor Log
 - LinuxAuditLog
 - SysmonEvent
 - ProtectionStatus
-- Gegevens typen bijwerken en update Summary wanneer de Updatebeheer-oplossing niet wordt uitgevoerd op de werk ruimte of de doel groep van de oplossing is ingeschakeld
+- Gegevenstypen Bijwerken en BijwerkenSummary wanneer de Updatebeheer-oplossing niet wordt uitgevoerd in de werkruimte of de doeloplossing is ingeschakeld
 
-Als de werk ruimte in de prijs categorie verouderd per knoop punt staat, worden de Security Center-en Log Analytics toewijzingen gecombineerd en gezamenlijk toegepast op alle factureer bare opgenomen gegevens.
+Als de werkruimte zich in de verouderde prijscategorie Per knooppunt heeft, worden de toewijzingen Security Center en Log Analytics gecombineerd en gezamenlijk toegepast op alle factureerbare opgenomen gegevens.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel worden de prijsopties voor Security Center beschreven. Zie voor gerelateerd materiaal:

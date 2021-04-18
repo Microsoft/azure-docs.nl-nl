@@ -1,85 +1,85 @@
 ---
-title: HPC-toepassingen schalen-Azure Virtual Machines | Microsoft Docs
-description: Meer informatie over het schalen van HPC-toepassingen op Azure-Vm's.
+title: HPC-toepassingen schalen - Azure Virtual Machines | Microsoft Docs
+description: Meer informatie over het schalen van HPC-toepassingen op azure-VM's.
 author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 03/25/2021
+ms.date: 04/16/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: 4ab2c599bea4b2e3e682755a80a2ee348e4de7ef
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f81d40abdf402b1e19090c5375dfa8c335418248
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105606773"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600961"
 ---
 # <a name="scaling-hpc-applications"></a>HPC-toepassingen schalen
 
-Optimale schaal-en schaal prestaties van HPC-toepassingen op Azure vereist het afstemmen van prestaties en optimalisatie experimenten voor de specifieke werk belasting. Deze sectie en de VM-reeks-specifieke pagina's bieden algemene richt lijnen voor het schalen van uw toepassingen.
+Voor optimale prestaties bij omhoog schalen en uitschalen van HPC-toepassingen in Azure zijn experimenten voor het afstemmen van prestaties en optimalisatie voor de specifieke workload vereist. Deze sectie en de pagina's met specifieke VM-reeksen bieden algemene richtlijnen voor het schalen van uw toepassingen.
 
 ## <a name="application-setup"></a>Installatie van toepassing
-De [azurehpc-opslag plaats](https://github.com/Azure/azurehpc) bevat een groot aantal voor beelden van:
-- [Toepassingen](https://github.com/Azure/azurehpc/tree/master/apps) optimaal in te stellen en uit te voeren.
-- Configuratie van [bestands systemen en clusters](https://github.com/Azure/azurehpc/tree/master/examples).
-- [Zelf studies](https://github.com/Azure/azurehpc/tree/master/tutorials) over hoe u snel aan de slag kunt met enkele algemene toepassings werk stromen.
+De [azurehpc-repo](https://github.com/Azure/azurehpc) bevat veel voorbeelden van:
+- Toepassingen optimaal instellen [en](https://github.com/Azure/azurehpc/tree/master/apps) uitvoeren.
+- Configuratie van [bestandssystemen en clusters](https://github.com/Azure/azurehpc/tree/master/examples).
+- [Zelfstudies over](https://github.com/Azure/azurehpc/tree/master/tutorials) hoe u eenvoudig aan de slag kunt gaan met een aantal algemene toepassingswerkstromen.
 
-## <a name="optimally-scaling-mpi"></a>Optimaal schalen van MPI 
+## <a name="optimally-scaling-mpi"></a>MPI optimaal schalen 
 
-De volgende suggesties zijn van toepassing op optimale efficiëntie, prestaties en consistentie van toepassingen:
+De volgende suggesties zijn van toepassing voor een optimale efficiëntie, prestaties en consistentie bij het schalen van toepassingen:
 
-- Voor taken met een kleinere schaal (< 256 KB-verbindingen) gebruikt u de optie:
+- Gebruik voor kleinere taken (dat wil zeggen < 256.000 verbindingen) de optie:
    ```bash
    UCX_TLS=rc,sm
    ```
 
-- Voor grotere taken (> 256 KB-verbindingen) gebruikt u de optie:
+- Voor grotere taken (dat wil zeggen > 256.000 verbindingen) gebruikt u de volgende optie:
    ```bash
    UCX_TLS=dc,sm
    ```
 
-- In de bovenstaande voor het berekenen van het aantal verbindingen voor uw MPI-taak gebruikt u:
+- In het bovenstaande gebruikt u het volgende om het aantal verbindingen voor uw MPI-taak te berekenen:
    ```bash
    Max Connections = (processes per node) x (number of nodes per job) x (number of nodes per job) 
    ```
 
-## <a name="adaptive-routing"></a>Adaptieve route ring
-Met adaptieve route ring (AR) kunnen Azure Virtual Machines (Vm's) met EDR en HDR InfiniBand automatisch de belasting van het netwerk detecteren en voor komen door dynamischere netwerk paden te selecteren. Als gevolg hiervan biedt AR verbeterde latentie en band breedte op het InfiniBand-netwerk. Dit zorgt voor betere prestaties en schaal baarheid. Raadpleeg het [artikel TechCommunity](https://techcommunity.microsoft.com/t5/azure-compute/adaptive-routing-on-azure-hpc/ba-p/1205217)voor meer informatie.
+## <a name="adaptive-routing"></a>Adaptieve routering
+Met adaptieve routering (AR) kunnen met Azure Virtual Machines (VM's) met EDR en MALWARE InfiniBand netwerkcongestie automatisch worden gedetecteerd en voorkomen door dynamisch optimale netwerkpaden te selecteren. Als gevolg hiervan biedt AR verbeterde latentie en bandbreedte op het InfiniBand-netwerk, waardoor de prestaties en schaalefficiëntie worden verbeterd. Raadpleeg het [TechCommunity-artikel voor meer informatie.](https://techcommunity.microsoft.com/t5/azure-compute/adaptive-routing-on-azure-hpc/ba-p/1205217)
 
 ## <a name="process-pinning"></a>Proces vastmaken
 
-- U kunt processen aan kernen vastmaken met behulp van een sequentiële koppelings benadering (in plaats van een methode voor automatisch sluiten). 
-- Binding via Numa/core/HwThread is beter dan de standaard binding.
-- Gebruik voor hybride parallelle toepassingen (OpenMP + MPI) 4 threads en 1 MPI Rank per CCX op HB-en HBv2 VM-grootten.
-- Voor zuivere MPI-toepassingen kunt u experimenteren met 1-4 MPI Ranks per CCX voor optimale prestaties van HB-en HBv2 VM-grootten.
-- Sommige toepassingen met extreme gevoeligheid voor geheugen bandbreedte kunnen profiteren van een beperkt aantal kernen per CCX. Voor deze toepassingen kan het gebruik van 3 of 2 kernen per CCX ertoe leiden dat geheugen bandbreedte conflicten worden verminderd en hogere prestaties of een consistente schaal baarheid worden gerealiseerd. Met name MPI Allreduce kan profiteren van deze benadering.
-- Voor grote grotere schaal runs wordt aanbevolen UD-of Hybrid RC + UD-trans porten te gebruiken. Veel MPI-bibliotheken/runtime-bibliotheken doen dit intern (zoals UCX of MVAPICH2). Controleer uw transport configuraties voor grootschalige uitvoeringen.
+- Maak processen vast aan kernen met behulp van een sequentiële pinning-benadering (in plaats van een benadering voor automatisch in balans brengen). 
+- Binding per Numa/Core/HwThread is beter dan standaardbinding.
+- Gebruik voor hybride parallelle toepassingen (OpenMP+ MPI) 4 threads en 1 MPI-positie per CCX op HB- en HBv2-VM-grootten.
+- Voor pure MPI-toepassingen experimenteert u met 1-4 MPI-rangschikken per CCX voor optimale prestaties op VM-grootten voor HB en HBv2.
+- Sommige toepassingen met een extreme gevoeligheid voor geheugenbandbreedte kunnen profiteren van het gebruik van een kleiner aantal kernen per CCX. Voor deze toepassingen kan het gebruik van 3 of 2 kernen per CCX leiden tot minder geheugenbandbreedte- en hogere werkelijke prestaties of consistentere schaalbaarheid. Met name MPI Allreduce kan profiteren van deze aanpak.
+- Voor aanzienlijk grotere runs wordt u aangeraden UD- of hybride RC+UD-transporten te gebruiken. Veel MPI-bibliotheken/runtimebibliotheken doen dit intern (zoals UCX of MVAPICH2). Controleer uw transportconfiguraties op grootschalige uitvoeringen.
 
 ## <a name="compiling-applications"></a>Toepassingen compileren
 <br>
 <details>
 <summary>Klik om uit te vouwen</summary>
 
-Hoewel het niet nodig is om toepassingen met de juiste optimalisatie vlaggen te compileren, hebt u de beste prestaties op virtuele machines met HB en HC-serie.
+Hoewel dit niet nodig is, biedt het compileren van toepassingen met de juiste optimalisatievlaggen de beste opschaalprestaties op VM's uit de HB- en HC-serie.
 
-### <a name="amd-optimizing-cc-compiler"></a>AMD-compiler voor het optimaliseren van C/C++
+### <a name="amd-optimizing-cc-compiler"></a>AMD Optimizing C/C++ Compiler
 
-Het AOCC-Compileer systeem (AMD Optimization C/C++ compiler) biedt een hoog niveau aan geavanceerde optimalisaties, multithreading en processor ondersteuning, waaronder globale optimalisatie, vectorization, Inter-procedureve analyses, lussen van trans formaties en het genereren van code. AOCC compiler binaire bestanden zijn geschikt voor Linux-systemen met de glibc-versie 2,17 (GNU C Library) en hoger. De compiler suite bestaat uit een C/C++-compiler (clang), een Fortran-compiler (FLANG) en een Fortran front-end-naar-clang (draak-eieren).
+Het AOCC-compilersysteem (AMD Optimizing C/C++ Compiler) biedt een hoog niveau van geavanceerde optimalisaties, multithreading en processorondersteuning, waaronder wereldwijde optimalisatie, vectorisatie, inter-procedurele analyses, lustransformaties en het genereren van code. Binaire AOCC-compiler-bestanden zijn geschikt voor Linux-systemen met GNU C Library (binaire bestanden) versie 2.17 en hoger. De compilersuite bestaat uit een C/C++-compiler (clang), een Fortran-compiler (FLANG) en een Fortran-front-end naar Clang (Dragon Dragon).
 
 ### <a name="clang"></a>Clang
 
-Clang is een C-, C++-en objectief-C-compiler verwerking, parsering, optimalisatie, code generatie, assembly en koppeling. Clang biedt ondersteuning  `-march=znver1` voor de vlag voor het genereren en afstemmen van de beste code voor de x86-architectuur op basis van Zen van AMD.
+Clang is een C-, C++- en Objective-C-compiler die voorverwerking, parsering, optimalisatie, codegeneratie, assembly en koppeling afhandelt. Clang ondersteunt de vlag voor het genereren en afstemmen van de beste code voor de  `-march=znver1` op AMD gebaseerde x86-architectuur.
 
 ### <a name="flang"></a>FLANG
 
-De FLANG-compiler is een recente toevoeging aan de AOCC-suite (toegevoegde versie van april 2018) en is momenteel beschikbaar voor ontwikkel aars om te downloaden en te testen. Op basis van Fortran 2008 biedt AMD een uitbrei ding van de GitHub-versie van FLANG ( https://github.com/flang-compiler/flang) . De FLANG-compiler ondersteunt alle clang-compiler opties en een extra aantal FLANG-specifieke compiler opties.
+De FLANG-compiler is een recente toevoeging aan de AOCC-suite (april 2018 toegevoegd) en is momenteel beschikbaar als voorlopige versie voor ontwikkelaars om te downloaden en te testen. Op basis van Fortran 2008 breidt AMD de GitHub-versie van FLANG uit ( https://github.com/flang-compiler/flang) . De FLANG-compiler ondersteunt alle Clang-compileropties en een extra aantal FLANG-specifieke compileropties.
 
 ### <a name="dragonegg"></a>DragonEgg
 
-DragonEgg is een gcc-invoeg toepassing waarmee de optimalisaties en code generators van GCC worden vervangen door die van het LLVM-project. DragonEgg die wordt geleverd met AOCC werkt met gcc-4.8. x, is getest op x86-32/x86-64 doelen en is op diverse Linux-platforms gebruikt.
+DragonEgg is een gcc-invoegcode die de optimalisaties en codegeneratoren van GCC vervangt door de generatoren van het LLVM-project. DragonEgg die wordt geleverd met AOCC werkt met gcc-4.8.x, is getest op x86-32/x86-64-doelen en is met succes gebruikt op verschillende Linux-platforms.
 
-GFortran is de daad werkelijke frontend voor Fortran-Program ma's die verantwoordelijk zijn voor de voor verwerking, het parseren en de semantische analyse van de GCC GIMPLE Intermediate-weer gave (IR). DragonEgg is een GNU-invoeg toepassing die is aangesloten op GFortran-compilatie stroom. Hiermee wordt de API voor de GNU-invoeg toepassing geïmplementeerd. Met de architectuur van de invoeg toepassing wordt DragonEgg het compiler stuur programma, waardoor de verschillende fases van de compilatie worden gebevorderen.  Na het volgen van de Download-en installatie-instructies kan draak ei worden aangeroepen met behulp van: 
+G Aggregateran is de werkelijke front-end voor Fortran-programma's die verantwoordelijk zijn voor het voorverwerken, parseren en semantische analyse die de tussenliggende GCC-EDEMOPLE-weergave (IR) genereert. DragonEgg is een GNU-invoegprogramma dat kan worden aangesloten op de GRan-compilatiestroom. De GNU-invoeglijkings-API wordt geïmplementeerd. Met de invoegarchitectuur wordt DragonEgg het compiler-stuurprogramma, dat de verschillende fasen van de compilatie aandurft.  Nadat u de download- en installatie-instructies hebt gevolgd, kan Dragon Dragon worden aangeroepen met behulp van: 
 
 ```bash
 $ gfortran [gFortran flags] 
@@ -88,22 +88,22 @@ $ gfortran [gFortran flags]
    -c xyz.f90 $ clang -O3 -lgfortran -o xyz xyz.o $./xyz
 ```
    
-### <a name="pgi-compiler"></a>BGA-compiler
-BGA naar Community Edition ver. 17 is bevestigd om met AMD EPYC te werken. Een door BGA gecompileerde versie van STREAM levert volledige geheugen bandbreedte van het platform. De nieuwere Community Edition 18,10 (nov 2018) moet ook goed werken. Hieronder ziet u de voor beeld-CLI om optimaal te compileren met de Intel-compiler:
+### <a name="pgi-compiler"></a>PGI Compiler
+PGI Community Edition ver. 17 is bevestigd dat het werkt met AMD EPYC. Een met PGI gecompileerde versie van STREAM biedt volledige geheugenbandbreedte van het platform. De nieuwere Community Edition 18.10 (november 2018) zou ook goed moeten werken. Hieronder vindt u voorbeeld-CLI om optimaal te compileren met de Intel Compiler:
 
 ```bash
 pgcc $(OPTIMIZATIONS_PGI) $(STACK) -DSTREAM_ARRAY_SIZE=800000000 stream.c -o stream.pgi
 ```
 
-### <a name="intel-compiler"></a>Intel-compiler
-Intel-compiler-ver. 18 is bevestigd om met AMD EPYC te werken. Hieronder ziet u de voor beeld-CLI om optimaal te compileren met de Intel-compiler.
+### <a name="intel-compiler"></a>Intel Compiler
+Intel Compiler ver. 18 is bevestigd dat het werkt met AMD EPYC. Hieronder vindt u voorbeeld-CLI om optimaal te compileren met de Intel Compiler.
 
 ```bash
 icc -o stream.intel stream.c -DSTATIC -DSTREAM_ARRAY_SIZE=800000000 -mcmodel=large -shared-intel -Ofast –qopenmp
 ```
 
-### <a name="gcc-compiler"></a>GCC-compiler 
-Voor HPC adviseert AMD GCC compiler 7,3 of nieuwer. Oudere versies, zoals 4.8.5 die deel uitmaken van RHEL/CentOS 7,4, worden niet aanbevolen. GCC 7,3 en nieuwere versies leveren aanzienlijk hogere prestaties op HPL-, HPCG-en DGEMM-tests.
+### <a name="gcc-compiler"></a>GCC Compiler 
+Voor HPC raadt AMD GCC-compiler 7.3 of nieuwer aan. Oudere versies, zoals 4.8.5 in RHEL/CentOS 7.4, worden niet aanbevolen. GCC 7.3 en hoger levert aanzienlijk betere prestaties op HPL-, HPCG- en DGEMM-tests.
 
 ```bash
 gcc $(OPTIMIZATIONS) $(OMP) $(STACK) $(STREAM_PARAMETERS) stream.c -o stream.gcc
@@ -112,4 +112,7 @@ gcc $(OPTIMIZATIONS) $(OMP) $(STACK) $(STREAM_PARAMETERS) stream.c -o stream.gcc
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [HPC](/azure/architecture/topics/high-performance-computing/) op Azure.
+- Test uw kennis met een [leermodule over het optimaliseren van HPC-toepassingen in Azure.](https://docs.microsoft.com/learn/modules/optimize-tightly-coupled-hpc-apps/)
+- Bekijk het [overzicht van de HBv3-serie](hbv3-series-overview.md) en [het overzicht van de HC-serie.](hc-series-overview.md)
+- Lees meer over de meest recente aankondigingen, HPC-workloadvoorbeelden en prestatieresultaten op de [Azure Compute Tech Community Blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Meer informatie over [HPC](/azure/architecture/topics/high-performance-computing/) in Azure.

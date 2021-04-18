@@ -1,24 +1,24 @@
 ---
 title: Kennismaking met de gebruikersinterface van Azure IoT Central | Microsoft Docs
-description: Raak vertrouwd met de belangrijkste gebieden van de gebruikersinterface van Azure IoT Central, waarmee u een IoT-oplossing kunt maken, beheren en gebruiken.
-author: TheJasonAndrew
-ms.author: v-anjaso
+description: Vertrouwd raken met de belangrijkste gebieden van de Azure IoT Central gebruikersinterface die u gebruikt om uw IoT-oplossing te maken, beheren en gebruiken.
+author: ankitscribbles
+ms.author: ankitgup
 ms.date: 02/09/2021
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: ff795281b3471d5c6f57397edf5a52e0df9bbd32
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: 564e7d3d2353661d0a69cbd15ad8b281defacf87
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107589113"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107600561"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Kennismaking met de gebruikersinterface van Azure IoT Central
 
-In dit artikel maakt u kennis met de gebruikersinterface van Microsoft Azure IoT Central. U kunt de gebruikersinterface gebruiken om een Azure IoT Central-oplossing te maken en de daarmee verbonden apparaten te beheren en gebruiken.
+In dit artikel maakt u kennis met Azure IoT Central gebruikersinterface. U kunt de gebruikersinterface gebruiken voor het maken, beheren en gebruiken van een IoT Central en de verbonden apparaten.
 
 ## <a name="iot-central-homepage"></a>Startpagina IoT Central
 
@@ -28,7 +28,7 @@ Op [IoT Central](https://aka.ms/iotcentral-get-started) startpagina vindt u meer
 
 ### <a name="create-an-application"></a>Een app maken
 
-In de sectie Bouwen kunt u bladeren door de lijst met branche-relevante IoT Central sjablonen of een volledig nieuwe sjabloon gebruiken met behulp van een aangepaste app-sjabloon.  
+In de sectie Bouwen kunt u bladeren door de lijst met relevante IoT Central-sjablonen of een volledig nieuwe app maken met behulp van een aangepaste app-sjabloon.  
 
 :::image type="content" source="media/overview-iot-central-tour/iot-central-build.png" alt-text="Ontwikkelpagina IoT Central":::
 
@@ -42,7 +42,7 @@ U start uw IoT Central door te navigeren naar de URL die u hebt gekozen tijdens 
 
 ## <a name="navigate-your-application"></a>Door uw toepassing bladeren
 
-Als u zich in uw IoT-toepassing bevindt, gebruikt u het linkerdeelvenster voor toegang tot de verschillende gebieden. U kunt het linkerdeelvenster uitvouwen of samenvouwen door het pictogram met drie lijnen boven aan het deelvenster te selecteren:
+Wanneer u zich in uw IoT-toepassing hebt, gebruikt u het linkerdeelvenster om toegang te krijgen tot verschillende functies. U kunt het linkerdeelvenster uitvouwen of samenvouwen door het pictogram met drie lijnen boven aan het deelvenster te selecteren:
 
 > [!NOTE]
 > De items die u in het linkerdeelvenster ziet, zijn afhankelijk van uw gebruikersrol. Meer informatie over het [beheren van gebruikers en rollen](howto-manage-users-roles.md). 
@@ -55,21 +55,23 @@ Als u zich in uw IoT-toepassing bevindt, gebruikt u het linkerdeelvenster voor t
   :::column span="2":::
      **Dashboards** geven alle toepassings- en persoonlijke dashboards weer. 
      
-     Met **Apparaten** kunt u uw - echte en gesimuleerde - verbonden apparaten beheren.
+     **Met** apparaten kunt u al uw apparaten beheren.
 
      **Met apparaatgroepen** kunt u verzamelingen apparaten weergeven en maken die zijn opgegeven door een query. Apparaatgroepen worden via de toepassing gebruikt om bulkbewerkingen uit te voeren.
 
-     Met **Regels** kunt u regels maken en bewerken om uw apparaten te bewaken. Regels worden geëvalueerd op basis van de telemetrie van het apparaat en het activeren van aanpasbare acties.
+     Met **Regels** kunt u regels maken en bewerken om uw apparaten te bewaken. Regels worden geëvalueerd op basis van apparaatgegevens en activeren aanpasbare acties.
 
-     **Met** Analyse kunt u de telemetrie van uw apparaten grafisch weergeven.
+     **Analyse** biedt uitgebreide mogelijkheden voor het analyseren van historische trends en het correleren van verschillende telemetriegegevens van uw apparaten.
 
      Met **Taken** kunt u uw apparaten op schaal beheren door bulkbewerkingen uit te voeren.
 
-     In **Apparaatsjablonen** kunt u de kenmerken van de apparaten die verbinding maken met uw toepassing beheren.
+     **Met apparaatsjablonen** kunt u de kenmerken maken en beheren van apparaten die verbinding maken met uw toepassing.
 
-     Met **Gegevensexport** kunt u een continue export naar externe services configureren, zoals opslag en wachtrijen.
+     **Met gegevensexport** kunt u een continue export naar externe services configureren, zoals opslag en wachtrijen.
 
-     In **Beheer** kunt u de instellingen, aanpassing, facturering, gebruikers en rollen van uw toepassing beheren.
+     **Met** beheer kunt u de instellingen, aanpassingen, facturering, gebruikers en rollen van uw toepassing beheren.
+
+     **Mijn apps** kunt u teruggaan naar IoT Central app-manager.
      
    :::column-end:::
 :::row-end:::
@@ -90,13 +92,13 @@ Voor de gebruikersinterface kunt u kiezen tussen een licht thema of een donker t
 > [!NOTE]
 > De optie om te kiezen tussen lichte en donkere thema's is niet beschikbaar als uw beheerder een aangepast thema voor de toepassing heeft geconfigureerd.
 
-:::image type="content" source="media/overview-iot-central-tour/themes.png" alt-text="Schermopname van IoT Central Een thema kiezen.":::
+:::image type="content" source="media/overview-iot-central-tour/themes.png" alt-text="Schermopname van IoT Central Kies een thema.":::
 
 ### <a name="dashboard"></a>Dashboard
 
 :::image type="content" source="Media/overview-iot-central-tour/dashboard.png" alt-text="Schermopname van IoT Central Dashboard.":::
 
-* Het dashboard is de eerste pagina die u ziet als u zich aanmeldt bij uw Azure IoT Central-toepassing. U kunt meerdere toepassingsdashboards maken en aanpassen. Meer informatie over [tegels toevoegen aan uw dashboard](howto-add-tiles-to-your-dashboard.md)
+* Dashboard is de eerste pagina die u ziet wanneer u zich bij uw IoT Central toepassing. U kunt meerdere toepassingsdashboards maken en aanpassen. Meer informatie over [tegels toevoegen aan uw dashboard](howto-add-tiles-to-your-dashboard.md)
 
 * Persoonlijke dashboards kunnen ook worden gemaakt om te controleren wat u belangrijk vindt. Zie het artikel met instructies [Create Azure IoT Central personal dashboards](howto-create-personal-dashboards.md) (Azure IoT Central persoonlijke dashboards maken) voor meer informatie.
 
@@ -104,7 +106,7 @@ Voor de gebruikersinterface kunt u kiezen tussen een licht thema of een donker t
 
 :::image type="content" source="Media/overview-iot-central-tour/devices.png" alt-text="Schermopname van de pagina Apparaten.":::
 
-Op de Device Explorer-pagina worden de _apparaten_ in uw Azure IoT Central-toepassing gegroepeerd weergegeven op _apparaatsjabloon_. 
+Op deze pagina worden de apparaten in uw toepassing IoT Central gegroepeerd op _apparaatsjabloon_. 
 
 * Met een apparaatsjabloon wordt een type apparaat gedefinieerd dat met uw toepassing verbinding kan maken.
 * Een apparaat vertegenwoordigt een echt of een gesimuleerd apparaat in uw toepassing.
@@ -115,37 +117,30 @@ Zie de quickstart [Uw apparaten bewaken](./quick-monitor-devices.md) voor meer i
 
 :::image type="content" source="Media/overview-iot-central-tour/device-groups.png" alt-text="Pagina Apparaatgroep":::
 
-Apparaatgroepen zijn verzamelingen verwante apparaten. U gebruikt apparaatgroepen om bulkbewerkingen uit te voeren in uw toepassing. Raadpleeg het artikel [Apparaatgroepen gebruiken in uw Azure IoT Central-toepassing](tutorial-use-device-groups.md) voor meer informatie.
+Op deze pagina kunt u apparaatgroepen maken en weergeven in uw IoT Central toepassing. U kunt apparaatgroepen gebruiken om bulkbewerkingen in uw toepassing uit te voeren of om gegevens te analyseren. Raadpleeg het artikel [Apparaatgroepen gebruiken in uw Azure IoT Central-toepassing](tutorial-use-device-groups.md) voor meer informatie.
 
 ### <a name="rules"></a>Regels
 :::image type="content" source="Media/overview-iot-central-tour/rules.png" alt-text="Schermopname van de pagina Regels.":::
 
-Op de pagina Regels kunt u regels definiëren op basis van de telemetrie, status of gebeurtenissen van apparaten. Wanneer een regel wordt geactiveerd, kunnen hierdoor een of meer acties worden geactiveerd, zoals het verzenden van een e-mail bericht, het melden van een extern systeem via webhook-waarschuwingen, enzovoort. Zie de zelfstudie [Regels configureren](tutorial-create-telemetry-rules.md) voor meer informatie. 
+Op deze pagina kunt u regels weergeven en maken op basis van apparaatgegevens. Wanneer een regel wordt activeert, kan deze een of meer acties activeren, zoals het verzenden van een e-mail of het aanroepen van een webhook. Zie de zelfstudie Regels [configureren voor meer](tutorial-create-telemetry-rules.md) informatie. 
 
 ### <a name="analytics"></a>Analyse
 
 :::image type="content" source="Media/overview-iot-central-tour/analytics.png" alt-text="Schermopname van de pagina Analyse.":::
 
-Op de analysepagina kunt u de telemetrie van uw apparaten grafisch weergeven in een tijdreeks. Raadpleeg het artikel [Analyses maken voor uw Azure IoT Central-toepassing](howto-create-analytics.md) voor meer informatie.
+Analyse biedt uitgebreide mogelijkheden voor het analyseren van historische trends en het correleren van verschillende telemetriegegevens van uw apparaten. Raadpleeg het artikel [Analyses maken voor uw Azure IoT Central-toepassing](howto-create-analytics.md) voor meer informatie.
 
 ### <a name="jobs"></a>Taken
 
 :::image type="content" source="Media/overview-iot-central-tour/jobs.png" alt-text="Pagina Taken":::
 
-Op de pagina Taken kunt u bulkbewerkingen uitvoeren op uw apparaten. U kunt eigenschappen en instellingen van apparaten bijwerken en opdrachten uitvoeren ten aanzien van apparaatgroepen. Zie voor meer informatie, het artikel [Een taak uitvoeren](howto-run-a-job.md).
+Op deze pagina kunt u taken weergeven en maken die kunnen worden gebruikt voor bulkbewerkingen voor apparaatbeheer op uw apparaten. U kunt eigenschappen en instellingen van apparaten bijwerken en opdrachten uitvoeren ten aanzien van apparaatgroepen. Zie voor meer informatie, het artikel [Een taak uitvoeren](howto-run-a-job.md).
 
 ### <a name="device-templates"></a>Apparaatsjablonen
 
 :::image type="content" source="Media/overview-iot-central-tour/templates.png" alt-text="Schermopname van apparaatsjablonen.":::
 
-Op de pagina apparaatsjablonen kunt u de apparaatsjablonen in de toepassing maken en beheren. Met een apparaatsjabloon worden de kenmerken van apparaten opgegeven, zoals:
-
-* Telemetrie-, status- en gebeurtenismetingen
-* Eigenschappen
-* Opdrachten
-* Weergaven
-
-Raadpleeg voor meer informatie de zelfstudie [Define a new device type in your Azure IoT Central application](howto-set-up-template.md) (Een nieuw apparaattype definiëren in uw Azure IoT Central-toepassing). 
+Op de pagina apparaatsjablonen kunt u apparaatsjablonen weergeven en maken in de toepassing. Raadpleeg voor meer informatie de zelfstudie [Define a new device type in your Azure IoT Central application](howto-set-up-template.md) (Een nieuw apparaattype definiëren in uw Azure IoT Central-toepassing). 
 
 ### <a name="data-export"></a>Gegevensexport
 

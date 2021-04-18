@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/08/2021
 ms.author: jeedes
-ms.openlocfilehash: 5d16fd87b01db69d3f55e22aad573b7847b9048c
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: b787102065f93588cd796027123d61072e9d5aea
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107518024"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107601012"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---public"></a>Zelfstudie: Azure Active Directory-integratie met TOPdesk - Public
 
 In deze zelfstudie leert u hoe u TOPdesk - Public integreert met Azure Active Directory (Azure AD). Wanneer u TOPdesk - Public integreert met Azure AD, kunt u het volgende doen:
 
 * In Azure AD beheren wie toegang heeft tot TOPdesk - Public.
-* Ervoor zorgen dat uw gebruikers automatisch met hun Azure AD-account worden aangemeld bij TOPdesk - Public.
+* Ervoor zorgen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij TOPdesk - Public.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -47,7 +47,7 @@ Om de integratie van TOPdesk - Public te configureren in Azure AD, moet u TOPdes
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in **de sectie Toevoegen uit** de galerie **TOPdesk - Public** in het zoekvak.
+1. Typ in **de sectie Toevoegen uit** de galerie in het zoekvak: **TOPdesk -** Public.
 1. Selecteer **TOPdesk - Public in** het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-sso-for-topdesk---public"></a>Eenmalige aanmelding van Azure AD voor TOPdesk - Public configureren en testen
@@ -67,7 +67,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met TOPdesk - 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in Azure Portal de integratiepagina van de **toepassing TOPdesk - Public** de sectie Beheren en selecteer Een  **aanmelding.**
+1. Zoek in Azure Portal de sectie Beheren op de integratiepagina van  de toepassing **TOPdesk - Public** en selecteer **Een aanmelding.**
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -95,7 +95,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     f. In het tekstvak **Antwoord-URL** typt u een URL met behulp van het volgende patroon: `https://<companyname>.topdesk.net/tas/public/login/verify`
     
     > [!NOTE] 
-    > Als de waarden voor **Identifier** (id) en **Reply URL** (antwoord-URL) niet automatisch worden ingevuld, moet u deze handmatig invoeren. Voor de id gebruikt u het patroon zoals hierboven wordt vermeld en haalt u de waarde voor de antwoord-URL op uit de sectie **Eenmalige aanmelding voor TOPdesk - Public configureren**, die verderop in de zelfstudie wordt beschreven. De waarde van de **aanmeldings-URL** is niet echt en moet door u worden gewijzigd in de werkelijke aanmeldings-URL. Neem contact op met het [ondersteuningsteam van TOPdesk - Public](https://help.topdesk.com/saas/enterprise/user/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Als de waarden voor **Identifier** (id) en **Reply URL** (antwoord-URL) niet automatisch worden ingevuld, moet u deze handmatig invoeren. Voor de id gebruikt u het patroon zoals hierboven wordt vermeld en haalt u de waarde voor de antwoord-URL op uit de sectie **Eenmalige aanmelding voor TOPdesk - Public configureren**, die verderop in de zelfstudie wordt beschreven. De waarde van de **aanmeldings-URL** is niet echt en moet door u worden gewijzigd in de werkelijke aanmeldings-URL. Neem contact op met het [ondersteuningsteam van TOPdesk - Public](https://my.topdesk.com/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -224,7 +224,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van TOPdesk - Public en initieer de aanmeldingsstroom daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel TOPdesk - Public in de Mijn apps klikt, wordt u omgeleid naar de aanmeldings-URL van TOPdesk - Public. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel TOPdesk - Public in de Mijn apps, wordt u omgeleid naar de aanmeldings-URL van TOPdesk - Public. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -169,7 +169,7 @@
               href: storage-blob-change-feed.md
             - name: Onveranderbare blobs
               href: storage-blob-immutable-storage.md
-        - name: Redundantie en herstel na noodherstel
+        - name: Redundantie en herstel na nood gevallen
           items:
             - name: De gegevensredundantie
               href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -266,11 +266,9 @@
       items:
         - name: Opslagaccounts maken en beheren
           items:
-            - name: Een opslagaccount voor algemeen gebruik maken
+            - name: Create a storage account
               displayName: 'Resource Manager, Resource Manager template, template, ARM'
               href: ../common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Een blok-blob-opslagaccount maken
-              href: storage-blob-create-account-block-blob.md
             - name: Een opslagaccount upgraden
               href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Een verwijderd opslagaccount herstellen
@@ -413,9 +411,9 @@
               href: soft-delete-container-enable.md
             - name: Blobversiebeheer inschakelen
               href: versioning-enable.md
-            - name: Soft Delete voor blobs inschakelen en beheren
+            - name: Zacht verwijderen voor blobs inschakelen en beheren
               items:
-                - name: Blob-functie voor het verwijderen van blobs inschakelen
+                - name: Blob soft delete inschakelen
                   href: soft-delete-blob-enable.md
                 - name: Zacht verwijderde blobs beheren en herstellen
                   href: soft-delete-blob-manage.md

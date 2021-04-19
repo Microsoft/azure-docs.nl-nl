@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 476a0c2d75dcbee5c1ed4d758e0cbc9d4726ff95
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b65013bbf21faa8bffdcf799a991952b69f5fead
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97587193"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714466"
 ---
 # <a name="tutorial-create-a-water-consumption-monitoring-application-with-azure-iot-central"></a>Zelfstudie: Een app voor bewaking van waterverbruik maken met Azure IoT Central
 
@@ -200,22 +200,23 @@ De toepassing voor het controleren van waterverbruik die u hebt gemaakt heeft dr
 
    ![Het deelvenster Regels](./media/tutorial-waterconsumptionmonitoring/waterconsumptionmonitoring-rules.png)
 
-1. Selecteer **Hoge pH-waarschuwing**, een van de vooraf geconfigureerde regels in de toepassing.
+1. Selecteer **Waarschuwing voor hoge waterstroom.** Dit is een van de vooraf geconfigureerde regels in de toepassing.
 
      ![Hoge pH-waarschuwing](./media/tutorial-waterconsumptionmonitoring/waterconsumptionmonitoring-highflowalert.png)
 
-    De `High flow alert`-regel is geconfigureerd om te controleren op de voorwaarde `Acidity (pH)` is `greater than` de `Max flow threshold`. De maximale stroomdrempel is een cloudeigenschap die is gedefinieerd in de apparaatsjabloon **Intelligente klep**. De waarde van `Max flow threshold` wordt ingesteld per apparaatinstantie.
+    De `High water flow alert`-regel is geconfigureerd om te controleren op de voorwaarde `Flow` is `greater than` de `Max flow threshold`. De maximale stroomdrempel is een cloudeigenschap die is gedefinieerd in de apparaatsjabloon **Intelligente klep**. De waarde van `Max flow threshold` wordt ingesteld per apparaatinstantie.
 
 Nu gaan we een e-mailactie maken.
 
 Een actie toevoegen aan de regel:
 
 1. Selecteer **+ E-mail**.
-1. Voer **Waarschuwing bij hoge pH-waarde** in als beschrijvende **Weergavenaam** voor de actie.
+1. Voer **Waarschuwing voor hoge stroom** in als de **gebruiksvriendelijke weergavenaam** voor de actie.
 1. Voer het e-mailadres in dat is gekoppeld aan uw IoT Central-account bij **Naar**.
 1. Voer eventueel een opmerking in die u wilt toevoegen in de tekst van het e-mailbericht.
 1. Selecteer **Gereed** om de actie te voltooien.
-1. Selecteer **Opslaan** om de nieuwe regel op te slaan en te activeren.
+1. Selecteer **Opslaan om** de nieuwe regel op te slaan.
+1. Schakel de regel in.
 
 Binnen een paar minuten ontvangt u een e-mailbericht nadat aan de geconfigureerde voorwaarde is voldaan.
 

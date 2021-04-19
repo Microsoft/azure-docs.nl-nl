@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: 15bf8f4fde2128181664fa7b94f2479bac7ad5b9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 60b58f7cf67a22e019ff186e4e1811ff5b001d84
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98881514"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714448"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>VMware-VM’s migreren naar Azure (op basis van een agent)
 
@@ -156,7 +156,11 @@ Download de sjabloon als volgt:
 6. Selecteer **Bevestig dat de doelregio voor migratie regionaam is**.
 7. Klik op **Resources maken**. Hiermee maakt u een Azure Site Recovery-kluis op de achtergrond. U kunt de doelregio voor dit project niet wijzigen nadat u op deze knop hebt geklikt, en alle volgende migraties gaan naar deze regio.
 
-    ![Een Recovery Services-kluis maken](./media/tutorial-migrate-vmware-agent/create-resources.png)
+    ![Een Recovery Services-kluis maken](./media/tutorial-migrate-vmware-agent/create-resources.png)  
+
+    > [!NOTE]
+    > Als u een privé-eindpunt hebt geselecteerd als verbindingsmethode voor het Azure Migrate-project toen het werd gemaakt, wordt de Recovery Services-kluis ook geconfigureerd voor connectiviteit met privé-eindpunten. Zorg ervoor dat de privé-eindpunten bereikbaar zijn vanaf het replicatieapparaat: [ **Meer informatie**](how-to-use-azure-migrate-with-private-endpoints.md#troubleshoot-network-connectivity)
+
 
 8. Selecteer in **Wilt u een nieuw replicatieapparaat installeren?** **Een replicatieapparaat installeren**.
 9. Klik op **Downloaden**. Hiermee wordt een OVF-sjabloon gedownload.
@@ -245,12 +249,17 @@ Selecteer VM's voor migratie.
     - Er is geen optie voor infrastructuurredundantie vereist als u geen van deze beschikbaarheidsconfiguraties nodig hebt voor de gemigreerde computers.
 9. Controleer elke virtuele machine die u wilt migreren. Klik vervolgens op **Volgende: Doelinstellingen**.
 10. Selecteer in **Doelinstellingen** het abonnement en de doelregio waarnaar u migreert en geef de resourcegroep op waarin de Azure-VM's na de migratie moeten worden geplaatst.
-11. Selecteer in **Virtual Network** het Azure VNet/subnet waaraan de Azure-VM's na migratie worden toegevoegd.
-12. Selecteer in **Beschikbaarheidsopties**:
+11. Selecteer in **Virtual Network** het Azure VNet/subnet waaraan de Azure-VM's na migratie worden toegevoegd.  
+12. Laat  **in Cacheopslagaccount** de standaardoptie staan om het cacheopslagaccount te gebruiken dat automatisch voor het project wordt gemaakt. Gebruik de vervolgkeuzeruimte als u een ander opslagaccount wilt opgeven dat moet worden gebruikt als het cacheopslagaccount voor replicatie. <br/> 
+    > [!NOTE]
+    >
+    > - Als u privé-eindpunt hebt geselecteerd als verbindingsmethode voor het Azure Migrate project, verleent u de Recovery Services-kluis toegang tot het cacheopslagaccount. [**Meer informatie**](how-to-use-azure-migrate-with-private-endpoints.md#grant-access-permissions-to-the-recovery-services-vault)
+    > - Als u ExpressRoute wilt repliceren met privé-peering, maakt u een privé-eindpunt voor het cacheopslagaccount. [**Meer informatie**](how-to-use-azure-migrate-with-private-endpoints.md#create-a-private-endpoint-for-the-storage-account-optional) 
+13. Selecteer in **Beschikbaarheidsopties**:
     -  Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Als u deze optie selecteert, moet u op het tabblad Compute de beschikbaarheidszone opgeven die moet worden gebruikt voor elk van de geselecteerde computers. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones
     -  Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken.
     - Er is geen optie voor infrastructuurredundantie vereist als u geen van deze beschikbaarheidsconfiguraties nodig hebt voor de gemigreerde computers.
-13. Selecteer in **Type schijfversleuteling**:
+14. Selecteer in **Type schijfversleuteling**:
     - Versleuteling at-rest van gegevens met door platform beheerde sleutel
     - Versleuteling at-rest van gegevens met door klant beheerde sleutel
     - Dubbele versleuteling met door platform en door klant beheerde sleutels
@@ -258,25 +267,25 @@ Selecteer VM's voor migratie.
    > [!NOTE]
    > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
   
-14. In **Azure Hybrid Benefit**:
+15. In **Azure Hybrid Benefit**:
 
     - Selecteer **Nee** als u Azure Hybrid Benefit niet wilt toepassen. Klik op **Volgende**.
     - Selecteer **Ja** als u Windows Server-computers hebt die worden gedekt met actieve softwareverzekering of Windows Server-abonnementen en u het voordeel wilt toepassen op de machines die u migreert. Klik op **Volgende**.
 
     ![Doelinstellingen](./media/tutorial-migrate-vmware/target-settings.png)
 
-15. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-vmware-migration.md#azure-vm-requirements).
+16. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-vmware-migration.md#azure-vm-requirements).
 
    - **VM-grootte**: Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte**. 
     - **Besturingssysteemschijf**: Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat. 
     - **Beschikbaarheidszone**: Geef de beschikbaarheidszone op die moet worden gebruikt.
     - **Beschikbaarheidsset**: Geef de beschikbaarheidsset op die moet worden gebruikt.
 
-16. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
+17. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
     - U kunt schijven uitsluiten van replicatie.
     - Als u schijven uitsluit, zijn deze na migratie niet beschikbaar in de Azure-VM. 
 
-17. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
+18. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
 
 > [!NOTE]
 > U kunt de replicatie-instellingen op elk gewenst moment bijwerken voordat de replicatie begint, **Beheren** > **Machines repliceren**. De instellingen kunnen niet meer worden gewijzigd nadat de replicatie is begonnen.

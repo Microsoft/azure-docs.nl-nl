@@ -4,12 +4,12 @@ description: Biedt een overzicht van ondersteuningsinstellingen en beperkingen b
 ms.topic: conceptual
 ms.date: 04/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: bcbac4f6a91ad77d21eb6274aa03d251b8fbfe7c
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: 354f64eb86cd545860c47562fba7ff43babe72ca
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107515053"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714142"
 ---
 # <a name="support-matrix-for-sql-server-backup-in-azure-vms"></a>Ondersteuningsmatrix voor SQL Server Back-up in Azure-VM's
 
@@ -50,10 +50,10 @@ _*De limiet voor de databasegrootte is afhankelijk van de gegevensoverdrachtsnel
 
 U wordt aangeraden de back-up slechts op één knooppunt van een beschikbaarheidsgroep (AG) te configureren. Configureer altijd back-ups in dezelfde regio als het primaire knooppunt. Met andere woorden, het primaire knooppunt moet altijd aanwezig zijn in de regio waar u de back-up configureert. Als alle knooppunten van de agg zich in dezelfde regio als waar de back-up is geconfigureerd, is er geen probleem.
 
-#### <a name="for-cross-region-ag"></a>Voor ag in regio-overschrijdende regio's
+#### <a name="for-cross-region-ag"></a>Voor regio-overschrijdende ag
 
 * Ongeacht de back-upvoorkeur worden back-ups alleen uitgevoerd vanaf de knooppunten die zich in dezelfde regio waarin de back-up is geconfigureerd. Dit komt doordat back-ups tussen regio's niet worden ondersteund. Als u slechts twee knooppunten hebt en het secundaire knooppunt zich in de andere regio, blijven de back-ups worden uitgevoerd vanaf het primaire knooppunt (tenzij uw back-upvoorkeur 'alleen secundair' is).
-* Als voor een knooppunt een failback wordt gemaakt naar een andere regio dan de regio waarin de back-up is geconfigureerd, mislukken back-ups op de knooppunten in de fail over-over-regio.
+* Als een knooppunt een failback naar een andere regio dan de regio waar de back-up is geconfigureerd, mislukken back-ups op de knooppunten in de fail over-over-regio.
 
 Afhankelijk van de back-upvoorkeur en back-upstypen (volledig/differentieel/logboek/alleen-kopiëren) worden back-ups gemaakt van een bepaald knooppunt (primair/secundair).
 
@@ -97,7 +97,7 @@ Copy-Only Volledig |  Secundair
 
 Azure Backup biedt ondersteuning voor een consistente overdrachtssnelheid van 200 Mbps voor volledige en differentiële back-ups van grote SQL-databases (van 500 GB). Als u de optimale prestaties wilt gebruiken, moet u ervoor zorgen dat:
 
-- De onderliggende VM (met het SQL Server-exemplaar dat als host voor de database wordt gebruikt) is geconfigureerd met de vereiste netwerkdoorvoer. Als de maximale doorvoer van de VM kleiner is dan 200 Mbps, kunnen Azure Backup gegevens niet met de optimale snelheid overdragen.<br></br>Op de schijf met de databasebestanden moet ook voldoende doorvoer zijn ingericht. [Meer informatie over](../virtual-machines/disks-performance.md) schijfdoorvoer en prestaties in Azure-VM's. 
+- De onderliggende VM (met het SQL Server-exemplaar dat als host voor de database wordt gebruikt) is geconfigureerd met de vereiste netwerkdoorvoer. Als de maximale doorvoer van de VM kleiner is dan 200 Mbps, kunnen Azure Backup gegevens niet met de optimale snelheid overdragen.<br>Op de schijf met de databasebestanden moet ook voldoende doorvoer zijn ingericht. [Meer informatie over](../virtual-machines/disks-performance.md) schijfdoorvoer en prestaties in Azure-VM's. 
 - Processen die in de VM worden uitgevoerd, verbruiken niet de VM-bandbreedte. 
 - De back-upschema's zijn verdeeld over een subset van databases. Meerdere back-ups die gelijktijdig op een VM worden uitgevoerd, delen het netwerkverbruik tussen de back-ups. [Meer informatie over](faq-backup-sql-server.yml#can-i-control-how-many-concurrent-backups-run-on-the-sql-server-) het bepalen van het aantal gelijktijdige back-ups.
 
@@ -106,4 +106,4 @@ Azure Backup biedt ondersteuning voor een consistente overdrachtssnelheid van 20
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Leer hoe u [een back-up SQL Server database](backup-azure-sql-database.md) die wordt uitgevoerd op een Virtuele Azure-VM.
+Meer informatie over het [maken van een back-SQL Server database](backup-azure-sql-database.md) die wordt uitgevoerd op een Azure-VM.

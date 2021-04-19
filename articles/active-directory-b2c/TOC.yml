@@ -26,7 +26,7 @@
       href: tutorial-register-applications.md
     - name: 3 - Gebruikersstromen maken
       href: tutorial-create-user-flows.md
-    - name: 4-gebruikers verifiëren
+    - name: 4 - Gebruikers verifiëren
       items:
         - name: ASP.NET
           href: tutorial-web-app-dotnet.md
@@ -37,7 +37,7 @@
         - name: Python
           href: tutorial-web-app-python.md
           displayName: flask
-    - name: 5-API-toegang verlenen
+    - name: 5 - API-toegang verlenen
       items:
         - name: ASP.NET
           href: tutorial-web-api-dotnet.md
@@ -82,7 +82,7 @@
     - name: Gebruikerservaring
       expanded: true
       items:
-        - name: Gebruikers stromen en aangepaste beleids regels
+        - name: Gebruikersstromen en aangepaste beleidsregels
           href: user-flow-overview.md
         - name: Overzicht van aangepast beleid
           href: custom-policy-overview.md
@@ -96,6 +96,8 @@
       href: policy-keys-overview.md
 - name: Instructiegidsen
   items:
+    - name: Uw tenant beheren
+      href: tenant-management.md
     - name: App-integratie
       items:
         - name: Een web-app registreren
@@ -107,7 +109,7 @@
             - name: Een SAML-toepassing configureren
               href: saml-service-provider.md
               displayName: 'SP, service provider'
-            - name: SAML-toepassings opties configureren
+            - name: SamL-toepassingsopties configureren
               href: saml-service-provider-options.md
               displayName: 'SP, service provider'
         - name: Een Microsoft Graph-toepassing registreren
@@ -134,9 +136,9 @@
           items:
             - name: Self-service voor wachtwoord opnieuw instellen
               href: add-password-reset-policy.md
-            - name: Self-service voor wachtwoord wijziging
+            - name: Selfservice voor wachtwoordwijziging
               href: add-password-change-policy.md
-            - name: Wacht woord opnieuw instellen afdwingen
+            - name: Wachtwoord opnieuw instellen forceer
               href: force-password-reset.md
         - name: Beleid voor profielbewerking
           href: add-profile-editing-policy.md
@@ -159,7 +161,7 @@
           displayName: 'AD-FS, ADFS'
         - name: Amazon
           href: identity-provider-amazon.md
-        - name: Apple (preview-versie)
+        - name: Apple (preview)
           href: identity-provider-apple-id.md
         - name: Azure AD (één tenant)
           href: identity-provider-azure-ad-single-tenant.md
@@ -169,13 +171,13 @@
           href: identity-provider-azure-ad-b2c.md
         - name: Facebook
           href: identity-provider-facebook.md
-        - name: Generic OpenID Connect Connect
+        - name: Algemene OpenId Connect
           href: identity-provider-generic-openid-connect.md
-        - name: Algemene SAML-ID-provider
+        - name: Algemene SAML-id-provider
           items:
-            - name: Een SAML-ID-provider configureren
+            - name: Een SAML-id-provider configureren
               href: identity-provider-generic-saml.md
-            - name: Opties voor SAML-ID-provider configureren
+            - name: Opties voor SAML-id-provider configureren
               href: identity-provider-generic-saml-options.md
         - name: GitHub
           href: identity-provider-github.md
@@ -215,7 +217,7 @@
           href: customize-ui-with-html.md
         - name: JavaScript en pagina-indelingen
           href: javascript-and-page-layout.md
-        - name: Inge sloten aanmelding met IFRAME
+        - name: Ingesloten aanmelding met iframe
           displayName: iframe
           href: embedded-login.md
         - name: Taal aanpassen
@@ -242,7 +244,7 @@
               items:
                 - name: HYPR
                   href: partner-hypr.md
-                - name: Minder dan
+                - name: Keyless
                   href: partner-keyless.md
                 - name: Nevis
                   href: partner-nevis.md
@@ -265,9 +267,9 @@
           href: configure-tokens.md
     - name: Aangepaste kenmerken definiëren
       href: user-flow-custom-attributes.md
-    - name: Verificatie op basis van een risico
+    - name: Verificatie op basis van risico's
       items:
-        - name: Risico's analyseren met identiteits beveiliging
+        - name: Risico's onderzoeken met Identity Protection
           href: identity-protection-investigate-risk.md
         - name: Voorwaardelijke toegang configureren
           href: conditional-access-user-flow.md
@@ -298,7 +300,7 @@
             - name: Logboeken verzamelen met Application Insights
               href: troubleshoot-with-application-insights.md
               displayName: 'troubleshooting, app insights'
-            - name: Aangepaste beleids regels voor problemen oplossen
+            - name: Problemen met aangepast beleid oplossen
               href: troubleshoot-custom-policies.md
     - name: Eindpunt voor gebruikersinfo
       href: userinfo-endpoint.md
@@ -306,9 +308,9 @@
       items:
         - name: Azure AD B2C-partnergalerie
           href: partner-gallery.md
-    - name: Identiteits verificatie en controle
+    - name: Identiteitsverificatie en -controle
       items:
-        - name: Identiteits verificatie en controle partners
+        - name: Identiteitsverificatie en proofing-partners
           href: identity-verification-proofing.md
           displayName: 'id verify, id verification, azure ad b2c proofing, id proofing'
         - name: Experian
@@ -321,9 +323,9 @@
           href: partner-lexisnexis.md
         - name: Onfido
           href: partner-onfido.md
-    - name: Bescherming tegen fraude
+    - name: Fraudebescherming
       items:
-        - name: Micro soft Dynamics 365 fraude beveiliging
+        - name: Fraudebeveiliging in Microsoft Dynamics 365
           href: partner-dynamics-365-fraud-protection.md
           displayName: 'm365 dynamics, dynamics fraud protection, fraud, 365 protection'
         - name: Arkose Labs
@@ -373,7 +375,7 @@
               href: partner-n8identity.md
             - name: Saviynt
               href: partner-saviynt.md
-    - name: Logboeken en controle
+    - name: Logboeken en bewaking
       items:
         - name: Auditlogboeken
           href: view-audit-logs.md
@@ -384,7 +386,7 @@
         - name: Gebruiksanalyse
           href: analytics-with-application-insights.md
           displayName: 'application insights, app insights, reports, reporting'
-        - name: Op de telefoon gebaseerde MFA beveiligen
+        - name: MFA op basis van een telefoon beveiligen
           href: phone-based-mfa.md
           displayName: 'multi-factor authentication, Azure Monitor, Log Analytics, reports, reporting, dashboard'
     - name: Naleving
@@ -397,7 +399,7 @@
           displayName: GDPR
 - name: Referentie
   items:
-    - name: Aangepast beleids schema
+    - name: Aangepast beleidsschema
       items:
         - name: TrustFrameworkPolicy
           href: trustframeworkpolicy.md
@@ -492,7 +494,7 @@
           href: relyingparty.md
         - name: Claim resolvers
           href: claim-resolver-overview.md
-    - name: Opmerkingen bij de release van het aangepaste beleid
+    - name: Opmerkingen bij de release van aangepast beleid
       href: custom-policy-developer-notes.md
     - name: Servicelimieten en -beperkingen
       href: service-limits.md

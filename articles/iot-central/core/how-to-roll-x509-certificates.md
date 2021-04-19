@@ -1,94 +1,94 @@
 ---
-title: Roll X. 509-certificaten in azure IoT Central
-description: Hoe kan ik X. 509-certificaten samen met uw IoT Central-toepassing
+title: X.509-certificaten in een Azure IoT Central
+description: X.509-certificaten met uw toepassing IoT Central rollen
 author: dominicbetts
 ms.author: dobett
 ms.date: 07/31/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: a9e35c7d4d64279c65971dd512bcd2107dad6594
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c25af944b4c748307f4f974ca8616ecc9f7b28c3
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92000060"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714520"
 ---
-# <a name="how-to-roll-x509-device-certificates-in-iot-central-application"></a>Hoe kan ik X. 509-certificaat voor apparaten in IoT Central toepassing
+# <a name="how-to-roll-x509-device-certificates-in-iot-central-application"></a>X.509-apparaatcertificaten in een toepassing IoT Central rollen
 
-Tijdens de levens cyclus van uw IoT-oplossing moet u certificaten totaliseren. Twee van de belangrijkste redenen voor Rolling certificaten zijn een schending van de beveiliging en het verlopen van certificaten.
+Tijdens de levenscyclus van uw IoT-oplossing moet u certificaten rollen. Twee van de belangrijkste redenen voor het rolling van certificaten zijn een beveiligingsschending en verlopen certificaten.
 
-Als u een beveiligings schending hebt, is Rolling certificaten een beveiligings best practice om uw systeem te beveiligen. Als onderdeel van een [overtredings methodologie](https://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)heeft micro soft de nood zaak voor het opnieuw activeren van beveiligings processen samen met preventieve maat regelen te nemen. Als onderdeel van deze beveiligings processen moet u de certificaten van het apparaat meenemen. De frequentie waarmee u uw certificaten inrollen, is afhankelijk van de beveiligings behoeften van uw oplossing. Klanten met oplossingen waarbij zeer gevoelige gegevens worden betrokken, kunnen dagelijks certificaten samen vouwen, terwijl anderen hun certificaten elk paar jaar draaien.
+Als u een beveiligingsschending hebt, zijn rolling certificaten een beveiligingsrisico best practice uw systeem te helpen beveiligen. Als onderdeel van [de Methodologie Voor inbreuk aannemen](https://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)is het voor Microsoft belangrijk dat er reactieve beveiligingsprocessen en preventieve maatregelen worden genomen. Het rolling van uw apparaatcertificaten moet worden opgenomen als onderdeel van deze beveiligingsprocessen. De frequentie waarmee u uw certificaten rolleert, is afhankelijk van de beveiligingsbehoeften van uw oplossing. Klanten met oplossingen waarbij zeer gevoelige gegevens betrokken zijn, kunnen dagelijks certificaten rollen, terwijl andere hun certificaten om de paar jaar rollen.
 
 
-## <a name="obtain-new-x509-certificates"></a>Nieuwe X. 509-certificaten verkrijgen
+## <a name="obtain-new-x509-certificates"></a>Nieuwe X.509-certificaten verkrijgen
 
-U kunt uw eigen X. 509-certificaten maken met een hulp programma zoals OpenSSL. Deze aanpak is ideaal voor het testen van X. 509-certificaten, maar biedt een aantal garanties rond de beveiliging. Gebruik deze methode alleen voor test doeleinden, tenzij u bent voor bereid om te fungeren als uw eigen CA-provider.
+U kunt uw eigen X.509-certificaten maken met behulp van een hulpprogramma zoals OpenSSL. Deze aanpak is zeer goed voor het testen van X.509-certificaten, maar biedt enkele garanties met het gebied van beveiliging. Gebruik deze methode alleen voor testen, tenzij u bent voorbereid om te fungeren als uw eigen CA-provider.
 
-## <a name="enrollment-groups-and-security-breaches"></a>Inschrijvings groepen en schending van beveiliging
+## <a name="enrollment-groups-and-security-breaches"></a>Registratiegroepen en beveiligingsschending
 
-Als u een groeps registratie wilt bijwerken in reactie op een schending van de beveiliging, moet u de volgende aanpak gebruiken waarmee het huidige certificaat direct wordt bijgewerkt:
+Als u een groepsinschrijving wilt bijwerken als reactie op een beveiligingsschending, moet u de volgende methode gebruiken om het huidige certificaat onmiddellijk bij te werken:
 
-1. Navigeer naar **beheer**  in het linkerdeel venster en selecteer **apparaat-verbinding**.
+1. **Navigeer naar Beheer** in het linkerdeelvenster en selecteer **Apparaatverbinding.**
 
-2. Selecteer **registratie groepen** en selecteer de groeps naam in de lijst.
+2. Selecteer **Inschrijvingsgroepen** en selecteer de groepsnaam in de lijst.
 
-3. Selecteer voor certificaat update de optie **primair beheren** of **secundair beheren**.
+3. Selecteer voor certificaatupdate primaire **of secundaire** **beheren.**
 
-4. Het certificaat root X. 509 toevoegen en verifiëren in de registratie groep.
+4. Voeg het X.509-basiscertificaat toe aan en verifieer het in de registratiegroep.
 
-   Voer deze stappen uit voor de primaire en secundaire certificaten als beide zijn aangetast.
+   Voltooi deze stappen voor de primaire en secundaire certificaten, als beide zijn aangetast.
 
-## <a name="enrollment-groups-and-certificate-expiration"></a>Inschrijvings groepen en certificaat verlopen
+## <a name="enrollment-groups-and-certificate-expiration"></a>Verlopen van inschrijvingsgroepen en certificaten
 
-Als u certificaten doorloopt voor het afhandelen van certificaat verloop, gebruikt u de volgende aanpak om het huidige certificaat direct bij te werken:
+Als u certificaten doorrolt om verlopen certificaten af te handelen, gebruikt u de volgende methode om het huidige certificaat onmiddellijk bij te werken:
 
-1. Navigeer naar **beheer**  in het linkerdeel venster en selecteer **apparaat-verbinding**.
+1. **Navigeer naar Beheer** in het linkerdeelvenster en selecteer **Apparaatverbinding.**
 
-2. Selecteer **registratie groepen** en selecteer de groeps naam in de lijst.
+2. Selecteer **Inschrijvingsgroepen** en selecteer de groepsnaam in de lijst.
 
-3. Selecteer voor certificaat update de optie **primair beheren**.
+3. Selecteer primaire beheren voor de **certificaatupdate.**
 
-4. Het certificaat root X. 509 toevoegen en verifiëren in de registratie groep.
+4. Voeg het X.509-basiscertificaat toe aan en verifieer het in de registratiegroep.
 
-5. Later wanneer het secundaire certificaat is verlopen, keert u terug en werkt u het secundaire certificaat bij.
+5. Later, wanneer het secundaire certificaat is verlopen, komt u terug en werkt u dat secundaire certificaat bij.
 
-## <a name="individual-enrollments-and-security-breaches"></a>Individuele inschrijvingen en inbreuken op de beveiliging
+## <a name="individual-enrollments-and-security-breaches"></a>Afzonderlijke inschrijvingen en beveiligingsschending
 
-Als u certificaten doorgeeft als reactie op een schending van de beveiliging, gebruikt u de volgende aanpak om het huidige certificaat direct bij te werken:
+Als u certificaten uitrolt als reactie op een beveiligingsschending, gebruikt u de volgende methode om het huidige certificaat onmiddellijk bij te werken:
 
-1. Selecteer **apparaten** en selecteer het apparaat.
+1. Selecteer **Apparaten** en selecteer het apparaat.
 
-2. Selecteer **verbinding maken** en selecteer methode verbinden als **afzonderlijke registratie**
+2. Selecteer **Verbinding** maken en selecteer Verbindingsmethode als **Afzonderlijke inschrijving**
 
-3. Selecteer **certificaten (X. 509)** als mechanisme.
-
-    ![Afzonderlijke inschrijvingen beheren](./media/how-to-roll-x509-certificates/certificate-update.png)
-
-4. Selecteer voor certificaat update het mappictogram om het nieuwe certificaat te selecteren dat u voor de inschrijvings vermelding wilt uploaden. Selecteer **Opslaan**.
-
-    Voer deze stappen uit voor de primaire en secundaire certificaten als beide zijn aangetast
-
-## <a name="individual-enrollments-and-certificate-expiration"></a>Individuele inschrijvingen en verlopen van certificaten
-
-Als u certificaten laat verlopen voor het afhandelen van certificaat verloopt, moet u de configuratie van het secundaire certificaat als volgt gebruiken om de uitval tijd te verminderen voor apparaten die proberen in te richten.
-
-Wanneer het secundaire certificaat bijna is verlopen en moet worden gedistribueerd, kunt u met de primaire configuratie draaien. Als u de primaire en secundaire certificaten op deze manier draait, vermindert u de downtime voor apparaten die worden ingericht.
-
-1. Selecteer **apparaten** en selecteer het apparaat.
-
-2. Selecteer **verbinding maken** en selecteer methode verbinden als **afzonderlijke registratie**
-
-3. Selecteer **certificaten (X. 509)** als mechanisme.
+3. Selecteer **Certificaten (X.509)** als mechanisme.
 
     ![Afzonderlijke inschrijvingen beheren](./media/how-to-roll-x509-certificates/certificate-update.png)
 
-4. Selecteer voor secundaire certificaat update het mappictogram om het nieuwe certificaat te selecteren dat u voor de inschrijvings vermelding wilt uploaden. Selecteer **Opslaan**.
+4. Selecteer voor certificaatupdate het mappictogram om het nieuwe certificaat te selecteren dat moet worden geüpload voor de inschrijvingsinvoer. Selecteer **Opslaan**.
 
-5. Later wanneer het primaire certificaat is verlopen, keert u terug en werkt u dat primaire certificaat bij.
+    Voltooi deze stappen voor de primaire en secundaire certificaten, als beide zijn aangetast
+
+## <a name="individual-enrollments-and-certificate-expiration"></a>Afzonderlijke inschrijvingen en verlopen certificaten
+
+Als u certificaten doorrolt voor het afhandelen van verlopen certificaten, moet u de configuratie van het secundaire certificaat als volgt gebruiken om downtime te verminderen voor apparaten die proberen in terichten.
+
+Wanneer het secundaire certificaat bijna is verlopen en moet worden geroteerd, kunt u roteren naar met behulp van de primaire configuratie. Als u op deze manier tussen de primaire en secundaire certificaten wisselt, vermindert u de downtime voor apparaten die proberen in terichten.
+
+1. Selecteer **Apparaten** en selecteer het apparaat.
+
+2. Selecteer **Verbinding** maken en selecteer Verbindingsmethode als **Afzonderlijke inschrijving**
+
+3. Selecteer **Certificaten (X.509)** als mechanisme.
+
+    ![Afzonderlijke inschrijvingen beheren](./media/how-to-roll-x509-certificates/certificate-update.png)
+
+4. Selecteer voor de update van het secundaire certificaat het mappictogram om het nieuwe certificaat te selecteren dat moet worden geüpload voor de inschrijvingsinvoer. Selecteer **Opslaan**.
+
+5. Later, wanneer het primaire certificaat is verlopen, komt u terug en werkt u dat primaire certificaat bij.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u hebt geleerd hoe u X. 509-certificaten in uw Azure IoT Central-toepassing kunt weer geven, hebt u [verbinding met Azure IOT Central](concepts-get-connected.md).
+Nu u hebt geleerd hoe u X.509-certificaten in uw Azure IoT Central-toepassing kunt gebruiken, kunt u verbinding maken met [Azure IoT Central](concepts-get-connected.md).
 
 

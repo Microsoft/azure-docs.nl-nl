@@ -1,6 +1,6 @@
 ---
-title: Een model voor een geavanceerd gesimuleerd apparaat maken-Azure | Microsoft Docs
-description: In deze hand leiding vindt u informatie over het maken van een geavanceerd apparaatprofiel dat u kunt gebruiken met de apparaat simulatie oplossings versneller.
+title: Een geavanceerd gesimuleerd apparaatmodel maken - Azure| Microsoft Docs
+description: In deze handleiding leert u hoe u een geavanceerd apparaatmodel maakt voor gebruik met de oplossingsversneller apparaatsimulatie.
 author: troyhopwood
 manager: timlt
 ms.service: iot-accelerators
@@ -13,68 +13,68 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 9b8c1bb5669f058aba00f44ce62e48c7fab233f9
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: dc2eac4e784d4224581078348f12b231befe1f35
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106057742"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714106"
 ---
 # <a name="create-an-advanced-device-model"></a>Een geavanceerd apparaatmodel maken
 
-In deze hand leiding vindt u een beschrijving van de JSON-en Java script-bestanden die een aangepast model definiëren. Het artikel bevat een aantal voor beelden van een definitie bestand voor een apparaat model en laat zien hoe u deze uploadt naar uw apparaat simulatie exemplaar. U kunt geavanceerde modellen maken voor het simuleren van meer realistisch gedrag van apparaten voor uw test doeleinden.
+In deze handleiding worden de JSON- en JavaScript-bestanden beschreven die een aangepast apparaatmodel definiëren. Het artikel bevat enkele voorbeeldbestanden voor apparaatmodeldefinitie en laat zien hoe u deze uploadt naar uw Device Simulation-exemplaar. U kunt geavanceerde apparaatmodellen maken om realistischer gedrag van apparaten te simuleren voor uw tests.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u de stappen in deze hand leiding wilt volgen, hebt u een geïmplementeerd exemplaar van Device simulatie in uw Azure-abonnement nodig.
+Als u de stappen in deze handleiding wilt volgen, hebt u een geïmplementeerd exemplaar van Apparaatsimulatie in uw Azure-abonnement nodig.
 
-Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
+Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/azure-iot-pcs-device-simulation/blob/master/README.md) in GitHub.
 
 ### <a name="open-device-simulation"></a>Apparaatsimulatie openen
 
-Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
+Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/azure-iot-pcs-device-simulation/blob/master/README.md) in GitHub.
 
 ## <a name="device-models"></a>Apparaatmodellen
 
-Elk gesimuleerd apparaat behoort tot een specifiek apparaatprofiel dat het simulatie gedrag definieert. Dit gedrag omvat het regel matig verzenden van telemetrie, het soort berichten dat moet worden verzonden en de ondersteunde methoden.
+Elk gesimuleerd apparaat behoort tot een specifiek apparaatmodel dat het simulatiegedrag definieert. Dit gedrag omvat hoe vaak telemetrie moet worden verzonden, wat voor soort berichten moeten worden verzonden en welke methoden worden ondersteund.
 
-U definieert een model met behulp van een JSON-apparaat definitie bestand en een set java script-bestanden. Deze Java script-bestanden definiëren het simulatie gedrag, zoals de wille keurige telemetrie en de methode logica.
+U definieert een apparaatmodel met behulp van een JSON-apparaatdefinitiebestand en een set JavaScript-bestanden. Deze JavaScript-bestanden definiëren het simulatiegedrag, zoals de willekeurige telemetrie en de methodelogica.
 
-Een typisch model voor apparaten is:
+Een typisch apparaatmodel heeft:
 
-* Eén JSON-bestand voor elk model apparaat (bijvoorbeeld elevator.jsop).
-* Eén java script-gedrag script bestand voor elk model apparaat (bijvoorbeeld elevator-state.js)
-* Eén java script-methode script bestand voor elke methode (bijvoorbeeld elevator-go-down.js)
+* Eén JSON-bestand voor elk apparaatmodel (bijvoorbeeld elevator.jsaan).
+* Eén JavaScript-gedragsscriptbestand voor elk apparaatmodel (bijvoorbeeld elevator-state.js)
+* Eén scriptbestand voor de JavaScript-methode voor elke apparaatmethode (bijvoorbeeld elevator-go-down.js)
 
 > [!NOTE]
-> Niet alle apparaten modellen definiëren methoden. Daarom kan een model van het apparaat geen methode scripts bevatten. Alle apparaatprofielen moeten echter een gedrags script hebben.
+> Niet alle apparaatmodellen definiëren methoden. Daarom kan een apparaatmodel al dan niet methodescripts hebben. Alle apparaatmodellen moeten echter een gedragsscript hebben.
 
-## <a name="device-definition-file"></a>Definitie bestand van apparaat
+## <a name="device-definition-file"></a>Apparaatdefinitiebestand
 
-Elk definitie bestand voor het apparaat bevat details van een model met gesimuleerde apparaten, met inbegrip van de volgende informatie:
+Elk apparaatdefinitiebestand bevat details van een gesimuleerd apparaatmodel, met inbegrip van de volgende informatie:
 
-* Naam van het apparaat model: teken reeks.
-* Protocol: AMQP | MQTT | HTTP.
-* De initiële Apparaatstatus.
-* Hoe vaak de apparaatstatus moet worden vernieuwd.
-* Welk Java script-bestand moet worden gebruikt om de status van het apparaat te vernieuwen.
-* Een lijst met telemetriegegevens die moeten worden verzonden, elk met een specifieke frequentie.
-* Het schema van de telemetrie-berichten, gebruikt door de back-endtoepassing voor het parseren van de ontvangen telemetrie.
-* Een lijst met ondersteunde methoden en het Java script-bestand dat moet worden gebruikt voor het simuleren van elke methode.
+* Naam van apparaatmodel: tekenreeks.
+* Protocol: AMQP-| MQTT-| HTTP.
+* De initiële apparaattoestand.
+* Hoe vaak de apparaattoestand moet worden vernieuwd.
+* Welk JavaScript-bestand moet worden gebruikt om de apparaattoestand te vernieuwen.
+* Een lijst met telemetrieberichten die moeten worden verzonden, elk met een specifieke frequentie.
+* Het schema van de telemetrieberichten, gebruikt door de back-endtoepassing om de ontvangen telemetrie te parseren.
+* Een lijst met ondersteunde methoden en het JavaScript-bestand dat moet worden gebruikt om elke methode te simuleren.
 
 ### <a name="file-schema"></a>Bestandsschema
 
-De schema versie is altijd "1.0.0" en is specifiek voor de indeling van dit bestand:
+De schemaversie is altijd '1.0.0' en is specifiek voor de indeling van dit bestand:
 
 ```json
 "SchemaVersion": "1.0.0"
 ```
 
-### <a name="device-model-description"></a>Beschrijving van het model van het apparaat
+### <a name="device-model-description"></a>Beschrijving van apparaatmodel
 
-De volgende eigenschappen beschrijven het model van het apparaat. Elk type heeft een unieke id, een semantische versie, een naam en een beschrijving:
+De volgende eigenschappen beschrijven het apparaatmodel. Elk type heeft een unieke id, een semantische versie, een naam en een beschrijving:
 
 ```json
 "Id": "chiller-01",
@@ -83,17 +83,17 @@ De volgende eigenschappen beschrijven het model van het apparaat. Elk type heeft
 "Description": "Chiller with external temperature and humidity sensors."
 ```
 
-### <a name="iot-protocol"></a>IoT-Protocol
+### <a name="iot-protocol"></a>IoT-protocol
 
-IoT-apparaten kunnen verbinding maken met behulp van verschillende protocollen. Met de simulatie kunt u **AMQP**, **MQTT** of **http** gebruiken:
+IoT-apparaten kunnen verbinding maken met behulp van verschillende protocollen. Met de simulatie kunt u **AMQP,** **MQTT** of **HTTP gebruiken:**
 
 ```json
 "Protocol": "AMQP"
 ```
 
-### <a name="simulated-device-state"></a>Status gesimuleerd apparaat
+### <a name="simulated-device-state"></a>Status van gesimuleerd apparaat
 
-Elk gesimuleerd apparaat heeft een interne status, die moet worden gedefinieerd. De status definieert ook de eigenschappen die kunnen worden gerapporteerd in telemetrie. Een chiller kan bijvoorbeeld een initiële status hebben, zoals:
+Elk gesimuleerd apparaat heeft een interne status die moet worden gedefinieerd. De status definieert ook de eigenschappen die in telemetrie kunnen worden gerapporteerd. Een chiller kan bijvoorbeeld een initiële status hebben, zoals:
 
 ```json
 "InitialState": {
@@ -102,7 +102,7 @@ Elk gesimuleerd apparaat heeft een interne status, die moet worden gedefinieerd.
 },
 ```
 
-Een bewegend apparaat met meerdere Sens oren kan meer eigenschappen hebben, bijvoorbeeld:
+Een bewegend apparaat met verschillende sensoren heeft mogelijk meer eigenschappen, bijvoorbeeld:
 
 ```json
 "InitialState": {
@@ -115,20 +115,20 @@ Een bewegend apparaat met meerdere Sens oren kan meer eigenschappen hebben, bijv
 }
 ```
 
-De apparaatstatus wordt in het geheugen bewaard door de simulatie service en wordt opgegeven als invoer voor de Java script-functie. De Java script-functie kan besluiten:
+De apparaattoestand wordt in het geheugen opgeslagen door de simulatieservice en als invoer voor de JavaScript-functie geleverd. De JavaScript-functie kan het volgende bepalen:
 
-* Om de status te negeren en enige wille keurige gegevens te genereren.
-* Om de status van het apparaat op een realistische manier bij te werken voor een bepaald scenario.
+* Om de status te negeren en willekeurige gegevens te genereren.
+* Om de apparaattoestand op een realistische manier bij te werken voor een bepaald scenario.
 
-De functie die de status genereert, ontvangt ook de invoer:
+De functie die de status genereert, ontvangt ook als invoer:
 
-* De apparaat-ID.
+* De apparaat-id.
 * Het apparaatmodel.
-* De huidige tijd. Met deze waarde kunnen per apparaat en tijd verschillende gegevens worden gegenereerd.
+* De huidige tijd. Met deze waarde kunt u verschillende gegevens per apparaat en per tijd genereren.
 
-### <a name="generating-telemetry-messages"></a>Telemetrie-berichten genereren
+### <a name="generating-telemetry-messages"></a>Telemetrieberichten genereren
 
-De simulatie service kan verschillende typen telemetrie voor elk apparaat verzenden. Meestal bevat telemetrie gegevens uit de Apparaatstatus. Een gesimuleerde ruimte kan bijvoorbeeld elke 10 seconden informatie over de Tempe ratuur en vochtigheid verzenden. Let op de tijdelijke aanduidingen in het volgende code fragment, die automatisch worden vervangen door waarden van de apparaatstatus:
+De simulatieservice kan verschillende telemetrietypen voor elk apparaat verzenden. Normaal gesproken bevat telemetrie gegevens van de apparaattoestand. Een gesimuleerde ruimte kan bijvoorbeeld elke 10 seconden informatie verzenden over de temperatuur en vochtigheid. Let op de tijdelijke aanduidingen in het volgende codefragment, die automatisch worden vervangen door waarden uit de apparaattoestand:
 
 ```json
 "Telemetry": [
@@ -149,18 +149,18 @@ De simulatie service kan verschillende typen telemetrie voor elk apparaat verzen
 ],
 ```
 
-De tijdelijke aanduidingen gebruiken een speciale syntaxis **$ {name}** waarbij **name** een sleutel is uit het object status van het apparaat dat door de Java script- **hoofd** functie wordt geretourneerd. Teken reeksen moeten worden genoteerd, terwijl de getallen niet mogen zijn.
+De tijdelijke aanduidingen gebruiken een speciale syntaxis **${NAME}** waarbij **NAME** een sleutel is van het apparaattoestandobject dat wordt geretourneerd door de **JavaScript-hoofdfunctie.** Tekenreeksen moeten worden aangehaald, terwijl getallen dat niet mogen.
 
-#### <a name="message-schema"></a>Bericht schema
+#### <a name="message-schema"></a>Berichtschema
 
-Elk bericht type moet een goed gedefinieerd schema hebben. Het bericht schema wordt ook gepubliceerd op IoT Hub, zodat back-end-toepassingen de gegevens opnieuw kunnen gebruiken om de binnenkomende telemetrie te interpreteren.
+Elk berichttype moet een goed gedefinieerd schema hebben. Het berichtschema wordt ook gepubliceerd naar IoT Hub, zodat back-endtoepassingen de informatie opnieuw kunnen gebruiken om de binnenkomende telemetrie te interpreteren.
 
-Het schema ondersteunt de JSON-indeling, waarmee eenvoudig parseren, trans formatie en analyses kunnen worden geparseerd in verschillende systemen en services.
+Het schema ondersteunt de JSON-indeling, waarmee u eenvoudig kunt parseren, transformeren en analyseren in verschillende systemen en services.
 
-De velden die in het schema worden weer gegeven, kunnen van de volgende typen zijn:
+De velden die in het schema worden vermeld, kunnen van de volgende typen zijn:
 
-* Object-geserialiseerd met JSON
-* Binair geserialiseerd met base64
+* Object : geseraliseerd met behulp van JSON
+* Binair : geseraliseerd met base64
 * Tekst
 * Booleaans
 * Geheel getal
@@ -169,7 +169,7 @@ De velden die in het schema worden weer gegeven, kunnen van de volgende typen zi
 
 ### <a name="supported-methods"></a>Ondersteunde methoden
 
-Gesimuleerde apparaten kunnen ook reageren op methode aanroepen, in welk geval ze een bepaalde logica uitvoeren en een antwoord geven. Net als bij de simulatie wordt de methode logica opgeslagen in een Java script-bestand en kan de status van het apparaat worden gebruikt. Bijvoorbeeld:
+Gesimuleerde apparaten kunnen ook reageren op methode-aanroepen. In dat geval voeren ze logica uit en geven ze een antwoord. Net als bij de simulatie wordt de methodelogica opgeslagen in een JavaScript-bestand en kan deze communiceren met de apparaattoestand. Bijvoorbeeld:
 
 ```json
 "CloudToDeviceMethods": {
@@ -180,13 +180,13 @@ Gesimuleerde apparaten kunnen ook reageren op methode aanroepen, in welk geval z
 }
 ```
 
-## <a name="create-a-device-definition-file"></a>Een definitie bestand voor een apparaat maken
+## <a name="create-a-device-definition-file"></a>Een apparaatdefinitiebestand maken
 
-In deze hand leiding ziet u hoe u een model maakt voor een drone. De drone keert wille keurig rond een initiële set coördinaten om locatie en hoogte te wijzigen.
+In deze handleiding ziet u hoe u een apparaatmodel voor een drone maakt. De drone zal willekeurig rond een eerste set coördinaten gaan die de locatie en hoogte wijzigen.
 
-Kopieer de volgende JSON naar een tekst editor en sla deze **op alsdrone.jsop**.
+Kopieer de volgende JSON in een teksteditor en sla deze op als **drone.jsop**.
 
-### <a name="device-definition-json-example"></a>JSON-voor beeld van Device definition
+### <a name="device-definition-json-example"></a>JSON-voorbeeld van apparaatdefinitie
 
 ```json
 {
@@ -247,19 +247,19 @@ Kopieer de volgende JSON naar een tekst editor en sla deze **op alsdrone.jsop**.
 }
 ```
 
-## <a name="behavior-script-files"></a>Script bestanden voor gedrag
+## <a name="behavior-script-files"></a>Scriptbestanden voor gedrag
 
-De code in het script bestand voor gedrag verplaatst de drone. Het script wijzigt de uitbrei ding en locatie van de drone door de status van het apparaat in het geheugen te bewerken.
+De code in het gedragsscriptbestand verplaatst de drone. Het script wijzigt de verhoging en locatie van de drone door de geheugentoestand van het apparaat te bewerken.
 
-De Java script-bestanden moeten een **hoofd** functie hebben die twee para meters accepteert:
+De JavaScript-bestanden moeten een **hoofdfunctie** hebben die twee parameters accepteert:
 
-* Een **context** object dat drie eigenschappen bevat:
-    * **currentTime** als een teken reeks met de notatie **jjjj-mm-dd'T'HH: mm: sszzz**.
-    * **deviceId**. Bijvoorbeeld **gesimuleerd. lift. 123**.
+* Een **contextobject** dat drie eigenschappen bevat:
+    * **currentTime** als een tekenreeks met de notatie **yyyy-MM-dd'T'HH:mm:sszzz.**
+    * **deviceId**. Bijvoorbeeld **Simulated.Elevator.123.**
     * **deviceModel**. Bijvoorbeeld **Lift**.
-* Een **status** object dat de waarde die door de functie in de vorige aanroep wordt geretourneerd. Deze Apparaatstatus wordt onderhouden door de simulatie service en wordt gebruikt voor het genereren van telemetrie-berichten.
+* Een **statusobject** dat de waarde is die wordt geretourneerd door de functie in de vorige aanroep. Deze apparaattoestand wordt onderhouden door de simulatieservice en wordt gebruikt om telemetrieberichten te genereren.
 
-De functie **Main** retourneert de nieuwe Apparaatstatus. Bijvoorbeeld:
+De **hoofdfunctie** retourneert de status van het nieuwe apparaat. Bijvoorbeeld:
 
 ```JavaScript
 function main(context, state) {
@@ -272,11 +272,11 @@ function main(context, state) {
 }
 ```
 
-## <a name="create-a-behavior-script-file"></a>Een script bestand voor gedrag maken
+## <a name="create-a-behavior-script-file"></a>Een scriptbestand voor gedrag maken
 
-Kopieer de volgende Java script in een tekst editor en sla het op als **drone-state.js**.
+Kopieer het volgende JavaScript in een teksteditor en sla het op **alsdrone-state.js**.
 
-### <a name="device-model-javascript-simulation-example"></a>Voor beeld van Java script-simulatie van Device model
+### <a name="device-model-javascript-simulation-example"></a>Voorbeeld van JavaScript-simulatie van apparaatmodel
 
 ```JavaScript
 "use strict";
@@ -397,15 +397,15 @@ function varylocation(latitude, longitude, distance) {
 }
 ```
 
-## <a name="create-a-method-script-file"></a>Een methode script bestand maken
+## <a name="create-a-method-script-file"></a>Een methodescriptbestand maken
 
-Methode scripts zijn vergelijkbaar met gedrags scripts. Hiermee wordt het gedrag van het apparaat gedefinieerd wanneer een specifieke Cloud naar een methode wordt aangeroepen.
+Methodescripts zijn vergelijkbaar met gedragsscripts. Ze definiëren het gedrag van het apparaat wanneer een specifieke cloud-naar-apparaat-methode wordt aangeroepen.
 
-Het drone-aanroepen script stelt de coördinaten van de Drone in op een vast punt om de drone terugkerende start te simuleren.
+Het terugroepscript voor drones stelt de coördinaten van de drone in op een vast punt om te simuleren dat de drone terugkomt.
 
-Kopieer de volgende Java script in een tekst editor en sla het op als **droneRecall-method.js**.
+Kopieer het volgende JavaScript in een teksteditor en sla het op **alsdroneRecall-method.js**.
 
-### <a name="device-model-javascript-simulation-example"></a>Voor beeld van Java script-simulatie van Device model
+### <a name="device-model-javascript-simulation-example"></a>Voorbeeld van JavaScript-simulatie van apparaatmodel
 
 ```JavaScript
 "use strict";
@@ -467,11 +467,11 @@ function main(context, previousState, previousProperties) {
 }
 ```
 
-## <a name="debugging-script-files"></a>Script bestanden voor fout opsporing
+## <a name="debugging-script-files"></a>Scriptbestanden voor het opsporen van bestanden
 
-Hoewel u een fout opsporingsprogramma niet kunt koppelen aan een actief gedrags bestand, is het mogelijk om gegevens naar het service logboek te schrijven met behulp van de **logboek** functie. Voor syntaxis fouten mislukt de interpreter en schrijft informatie over de uitzonde ring naar het logboek.
+Hoewel u geen debugger kunt koppelen aan een actief gedragsbestand, is het mogelijk om informatie naar het servicelogboek te schrijven met behulp van de **logboekfunctie.** Voor syntaxisfouten mislukt de interpreter en schrijft informatie over de uitzondering naar het logboek.
 
-Voor beeld van logboek registratie:
+Voorbeeld van logboekregistratie:
 
 ```JavaScript
 function main(context, state) {
@@ -490,11 +490,11 @@ function main(context, state) {
 }
 ```
 
-## <a name="deploy-an-advanced-device-model"></a>Een geavanceerd model voor apparaten implementeren
+## <a name="deploy-an-advanced-device-model"></a>Een geavanceerd apparaatmodel implementeren
 
-Als u uw geavanceerde model voor apparaten wilt implementeren, uploadt u de bestanden uw simulatie-exemplaar van apparaat:
+Als u uw geavanceerde apparaatmodel wilt implementeren, uploadt u de bestanden van uw apparaatsimulatie-exemplaar:
 
-Selecteer **Apparaatmodellen** in de menubalk. De pagina **modellen van apparaten** bevat een lijst met de modellen die beschikbaar zijn in deze instantie van Device simulatie:
+Selecteer **Apparaatmodellen** in de menubalk. Op **de pagina Apparaatmodellen** worden de apparaatmodellen weergegeven die beschikbaar zijn in dit exemplaar van Apparaatsimulatie:
 
 ![Apparaatmodellen](media/iot-accelerators-device-simulation-advanced-device/devicemodelnav.png)
 
@@ -502,18 +502,18 @@ Klik op **+ Apparaatmodellen toevoegen** in de rechterbovenhoek van de pagina:
 
 ![Apparaatmodel toevoegen](media/iot-accelerators-device-simulation-advanced-device/devicemodels.png)
 
-Klik op **Geavanceerd** om het tabblad Geavanceerd model voor apparaten te openen:
+Klik **op Geavanceerd** om het tabblad Geavanceerd apparaatmodel te openen:
 
 ![Tabblad Geavanceerd](media/iot-accelerators-device-simulation-advanced-device/advancedtab.png)
 
-Klik op **Bladeren** en selecteer de JSON-en Java script-bestanden die u hebt gemaakt. Zorg ervoor dat u alle drie de bestanden selecteert. Als er één bestand ontbreekt, mislukt de validatie:
+Klik **op Bladeren** en selecteer de JSON- en JavaScript-bestanden die u hebt gemaakt. Zorg ervoor dat u alle drie de bestanden selecteert. Als er één bestand ontbreekt, mislukt de validatie:
 
 ![Door bestanden bladeren](media/iot-accelerators-device-simulation-advanced-device/browse.png)
 
-Als uw bestanden worden gevalideerd, klikt u op **Opslaan** en is het model van uw apparaat klaar voor gebruik in een simulatie. Corrigeer anders eventuele fouten en upload de bestanden opnieuw:
+Als uw bestanden zijn gevalideerd, klikt u **op Opslaan** en is uw apparaatmodel gereed voor gebruik in een simulatie. Los anders eventuele fouten op en plaats de bestanden opnieuw:
 
 ![Opslaan](media/iot-accelerators-device-simulation-advanced-device/validated.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding vindt u informatie over de model bestanden van het apparaat die worden gebruikt in simulatie van apparaten en het maken van een geavanceerd model voor apparaten. Vervolgens wilt u mogelijk verkennen hoe u Time Series Insights kunt [gebruiken om de telemetrie te visualiseren die wordt verzonden vanuit de Device simulatie Solution Accelerator](./iot-accelerators-device-simulation-time-series-insights.md).
+In deze handleiding hebt u geleerd over de apparaatmodelbestanden die worden gebruikt in Apparaatsimulatie en hoe u een geavanceerd apparaatmodel maakt. Vervolgens kunt u verkennen hoe u met Time Series Insights telemetrie kunt visualiseren die is verzonden vanuit de oplossingsversneller [voor apparaatsimulatie.](./iot-accelerators-device-simulation-time-series-insights.md)

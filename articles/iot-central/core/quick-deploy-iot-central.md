@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: a1492593c24c2bc350205536006b648608cc5e46
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4122201789aea90aa94ab7d809e93a30c739254e
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101712637"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107715024"
 ---
 # <a name="quickstart---create-an-azure-iot-central-application"></a>Snelstart - Een Azure IoT Central-app maken
 
@@ -21,7 +21,7 @@ In deze quickstart ziet u hoe u een Azure IoT Central-toepassing maakt.
 
 ## <a name="prerequisite"></a>Vereiste 
 
-U hebt een Azure-abonnement met *Inzender* toegang nodig.
+U hebt een Azure-abonnement met *inzenderstoegang* nodig.
 
 ## <a name="create-an-application"></a>Een app maken
 
@@ -52,13 +52,13 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
 
     - Toepassingen die u maakt met het *gratis* abonnement zijn gratis gedurende zeven dagen en ondersteunen maximaal vijf apparaten. U kunt ze op enig moment voor het aflopen van het abonnement overzetten naar een betaald abonnement.
         > [!NOTE]
-        > Voor toepassingen die zijn gemaakt met het *gratis* abonnement zijn geen Azure-abonnementen vereist en daarom vindt u deze niet in uw Azure-abonnement op de Azure Portal. U kunt alleen gratis apps uit de IoT Central Portal bekijken en beheren.          
+        > Voor toepassingen die *zijn* gemaakt met behulp van het gratis abonnement zijn geen Azure-abonnementen vereist. Daarom vindt u deze niet in uw Azure-abonnement op de Azure Portal. U kunt gratis apps alleen bekijken en beheren vanuit de IoT Central portal.          
     - Toepassingen die u maakt met een *standaard*-abonnement worden gefactureerd per apparaat. U kunt kiezen tussen **Standard 0**, **Standard 1** en **Standard 2**, waarbij de eerste twee apparaten gratis zijn. Meer informatie over de gratis en standaardabonnementen vindt u op de [pagina met prijzen voor Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). Als u een toepassing maakt met behulp van een standaardabonnement, moet u uw *Directory*, *Azure-abonnement* en *locatie* opgeven:
         - De *directory* is de Azure Active Directory waarin uw toepassing wordt gemaakt. Een Azure Active Directory bevat gebruikers-id's, referenties en andere organisatiegegevens. Als u geen Azure Active Directory hebt, wordt er een voor u gemaakt op het moment dat u een Azure-abonnement maakt.
         - Als u een *Azure-abonnement* hebt, kunt u instanties van Azure-services maken. IoT Central zorgt ervoor dat resources in uw abonnement worden ingericht. Als u geen Azure-abonnement hebt, kunt u er gratis een maken via de [Azure-aanmeldingspagina](https://aka.ms/createazuresubscription). Nadat u het Azure-abonnement hebt gemaakt, gaat u terug naar de pagina **Nieuwe toepassing**. Uw nieuwe abonnement wordt nu weergegeven in de vervolgkeuzelijst.**Azure-abonnement**.
         - De *locatie* is de [geografie](https://azure.microsoft.com/global-infrastructure/geographies/) waar u de toepassing wilt maken. Gewoonlijk kiest u de locatie die zich het dichtst in de buurt van uw apparaten bevindt om de beste prestaties te verkrijgen. Als u eenmaal een locatie hebt gekozen, kunt u de toepassing later niet meer naar een andere locatie verplaatsen.
 
-1. Controleer de voorwaarden en selecteer **Maken** onder aan de pagina. Na een paar minuten is uw IoT Central-toepassing klaar voor gebruik:
+1. Controleer de voorwaarden en selecteer **Maken** onder aan de pagina. Na een paar minuten is IoT Central toepassing klaar voor gebruik:
 
     :::image type="content" source="media/quick-deploy-iot-central/iotcentral-application.png" alt-text="Azure IoT Central-toepassing":::
 

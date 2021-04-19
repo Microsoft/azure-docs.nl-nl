@@ -1,6 +1,6 @@
 ---
-title: Azure Blob-opslag koppelen met behulp van het NFS 3,0-protocol (preview) | Microsoft Docs
-description: Meer informatie over het koppelen van een container in Blob Storage vanaf een virtuele Azure-machine (VM) of een client die on-premises wordt uitgevoerd met behulp van het NFS 3,0-protocol.
+title: Azure Blob Storage met behulp van het NFS 3.0-protocol (preview) | Microsoft Docs
+description: Leer hoe u met behulp van het NFS 3.0-protocol een container in Blob Storage kunt monteren vanaf een virtuele Azure-machine (VM) of een client die on-premises wordt uitgevoerd.
 author: normesta
 ms.subservice: blobs
 ms.service: storage
@@ -9,20 +9,20 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 2a37d206955e3372b9ecf97be8d27142bd417192
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: bf6b06ba7cc7f547f752ffa7877fca186ba4465e
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106490451"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107713782"
 ---
-# <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Blob Storage koppelen met behulp van het NFS-protocol (Network File System) 3,0 (preview)
+# <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Blob-opslag met behulp van het NFS-protocol (Network File System) 3.0 (preview)
 
-U kunt een container koppelen in Blob Storage vanaf een virtuele Linux-machine (VM) of een Linux-systeem dat on-premises wordt uitgevoerd met behulp van het NFS 3,0-protocol. In dit artikel vindt u stapsgewijze richt lijnen. Zie [Network File System (NFS) 3,0-protocol ondersteuning in Azure Blob-opslag (preview)](network-file-system-protocol-support.md)voor meer informatie over NFS 3,0-protocol ondersteuning in Blob Storage.
+U kunt een container in Blob Storage vanuit een virtuele Linux-machine (VM) van Azure of een Linux-systeem dat on-premises wordt uitgevoerd, met behulp van het NFS 3.0-protocol. Dit artikel bevat stapsgewijs richtlijnen. Zie Ondersteuning voor [NFS 3.0-protocollen (Network File System) in Azure Blob Storage (preview)](network-file-system-protocol-support.md)voor meer informatie over de ondersteuning van het NFS 3.0-protocol in Blob Storage.
 
-## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>Stap 1: de functie NFS 3,0-protocol registreren bij uw abonnement
+## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>Stap 1: de NFS 3.0-protocolfunctie registreren bij uw abonnement
 
-1. Open een Power shell-opdracht venster. 
+1. Open een PowerShell-opdrachtvenster. 
 
 2. Meld u aan bij uw Azure-abonnement met de opdracht `Connect-AzAccount` en volg de instructies op het scherm.
 
@@ -45,7 +45,7 @@ U kunt een container koppelen in Blob Storage vanaf een virtuele Linux-machine (
    Register-AzProviderFeature -FeatureName AllowNFSV3 -ProviderNamespace Microsoft.Storage 
    ```
 
-5. Registreer de resource provider met behulp van de volgende opdracht.
+5. Registreer de resourceprovider met behulp van de volgende opdracht.
     
    ```powershell
    Register-AzResourceProvider -ProviderNamespace Microsoft.Storage   
@@ -53,49 +53,49 @@ U kunt een container koppelen in Blob Storage vanaf een virtuele Linux-machine (
 
 ## <a name="step-2-verify-that-the-feature-is-registered"></a>Stap 2: controleren of de functie is geregistreerd 
 
-De registratie goedkeuring kan tot een uur duren. Gebruik de volgende opdrachten om te controleren of de registratie is voltooid.
+Registratiegoedkeuring kan tot een uur duren. Gebruik de volgende opdrachten om te controleren of de registratie is voltooid.
 
 ```powershell
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNFSV3
 ```
 
-## <a name="step-3-create-an-azure-virtual-network-vnet"></a>Stap 3: een Azure-Virtual Network maken (VNet)
+## <a name="step-3-create-an-azure-virtual-network-vnet"></a>Stap 3: Een Azure Virtual Network (VNet) maken
 
-Uw opslag account moet zich in een VNet bevinden. Met een VNet kunnen clients veilig verbinding maken met uw opslag account. Zie de [Virtual Network-documentatie](../../virtual-network/index.yml)voor meer informatie over VNet en het maken van een account.
+Uw opslagaccount moet zijn opgenomen in een VNet. Met een VNet kunnen clients veilig verbinding maken met uw opslagaccount. Zie voor meer informatie over VNet en het maken van een VNet de [Virtual Network documentatie.](../../virtual-network/index.yml)
 
 > [!NOTE]
-> Clients in hetzelfde VNet kunnen containers in uw account koppelen. U kunt ook een container koppelen van een client die wordt uitgevoerd in een on-premises netwerk, maar u moet eerst uw on-premises netwerk verbinden met uw VNet. Zie [ondersteunde netwerk verbindingen](network-file-system-protocol-support.md#supported-network-connections).
+> Clients in hetzelfde VNet kunnen containers aan uw account toevoegen. U kunt ook een container koppelen vanaf een client die wordt uitgevoerd in een on-premises netwerk, maar u moet eerst uw on-premises netwerk verbinden met uw VNet. Zie [Ondersteunde netwerkverbindingen.](network-file-system-protocol-support.md#supported-network-connections)
 
-## <a name="step-4-configure-network-security"></a>Stap 4: netwerk beveiliging configureren
+## <a name="step-4-configure-network-security"></a>Stap 4: netwerkbeveiliging configureren
 
-De enige manier om de gegevens in uw account te beveiligen, is door gebruik te maken van een VNet en andere netwerk beveiligings instellingen. Elk ander hulp programma dat wordt gebruikt om gegevens te beveiligen, waaronder account sleutel autorisatie, Azure Active Directory (AD)-beveiliging en toegangs beheer lijsten (Acl's), worden nog niet ondersteund in accounts waarvoor ondersteuning voor NFS 3,0-protocol is ingeschakeld. 
+De enige manier om de gegevens in uw account te beveiligen, is door een VNet en andere netwerkbeveiligingsinstellingen te gebruiken. Andere hulpprogramma's die worden gebruikt voor het beveiligen van gegevens, waaronder autorisatie van accountsleutels, Azure Active Directory-beveiliging (AD) en toegangsbeheerlijsten (ACL's), worden nog niet ondersteund in accounts waarbij de NFS 3.0-protocolondersteuning is ingeschakeld.
 
-Als u de gegevens in uw account wilt beveiligen, raadpleegt u de volgende aanbevelingen: [aanbevelingen voor netwerk beveiliging voor Blob-opslag](security-recommendations.md#networking).
+Als u de gegevens in uw account wilt beveiligen, bekijkt u de volgende aanbevelingen: Aanbevelingen voor [netwerkbeveiliging voor Blob Storage.](security-recommendations.md#networking)
 
-## <a name="step-5-create-and-configure-a-storage-account"></a>Stap 5: een opslag account maken en configureren
+## <a name="step-5-create-and-configure-a-storage-account"></a>Stap 5: een opslagaccount maken en configureren
 
-Als u een container wilt koppelen met behulp van NFS 3,0, moet u een opslag account maken **nadat** u de functie hebt geregistreerd bij uw abonnement. U kunt geen accounts inschakelen die bestonden voordat u de functie registreerde. 
+Als u een container wilt toevoegen met behulp van NFS  3.0, moet u een opslagaccount maken nadat u de functie bij uw abonnement hebt geregistreerd. U kunt geen accounts inschakelen die bestonden voordat u de functie registreerde.
 
-In de preview-versie van deze functie wordt het NFS 3,0-protocol ondersteund in [BlockBlobStorage](../blobs/storage-blob-create-account-block-blob.md) -en [algemene v2](../common/storage-account-overview.md#general-purpose-v2-accounts) -accounts.
+In de preview-versie van deze functie wordt het NFS 3.0-protocol ondersteund voor standaard v2-opslagaccounts voor algemeen gebruik en voor premium blok-blob-opslagaccounts. Zie Overzicht van opslagaccounts voor meer informatie over [deze typen opslagaccounts.](../common/storage-account-overview.md)
 
-Kies bij het configureren van het account deze waarden:
+Kies bij het configureren van het account de volgende waarden:
 
-|Instelling | Premium-prestaties | Standaard prestaties  
+|Instelling | Premium-prestaties | Standaardprestaties  
 |----|---|---|
-|Locatie|Alle beschik bare regio's |Een van de volgende regio's: Australië-oost, Korea-centraal, VS-Oost en Zuid-Centraal VS   
+|Locatie|Alle beschikbare regio's |Een van de volgende regio's: Australië - oost, Korea - centraal, VS - oost en VS - zuid-centraal   
 |Prestaties|Premium| Standard
 |Soort account|BlockBlobStorage| Algemeen v2
 |Replicatie|Lokaal redundante opslag (LRS)| Lokaal redundante opslag (LRS)
-|Verbindingsmethode|Openbaar eind punt (geselecteerde netwerken) of persoonlijk eind punt |Openbaar eind punt (geselecteerde netwerken) of persoonlijk eind punt
+|Verbindingsmethode|Openbaar eindpunt (geselecteerde netwerken) of privé-eindpunt |Openbaar eindpunt (geselecteerde netwerken) of privé-eindpunt
 |Veilige overdracht vereist|Uitgeschakeld|Uitgeschakeld
 |Hiërarchische naamruimte|Ingeschakeld|Ingeschakeld
 |NFS V3|Ingeschakeld |Ingeschakeld 
 
-U kunt de standaard waarden voor alle andere instellingen accepteren. 
+U kunt de standaardwaarden voor alle andere instellingen accepteren. 
 
 ## <a name="step-6-create-a-container"></a>Stap 6: een container maken
 
-Maak een container in uw opslag account met behulp van een van deze hulpprogram ma's of Sdk's:
+Maak een container in uw opslagaccount met behulp van een van deze hulpprogramma's of SDK's:
 
 |Hulpprogramma's|SDK's|
 |---|---|
@@ -105,25 +105,25 @@ Maak een container in uw opslag account met behulp van een van deze hulpprogram 
 |[Azure-CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
 ||[REST](/rest/api/storageservices/create-container)|
 
-## <a name="step-7-mount-the-container"></a>Stap 7: de container koppelen
+## <a name="step-7-mount-the-container"></a>Stap 7: de container monteren
 
-Maak een map in uw Linux-systeem en koppel vervolgens een container in het opslag account.
+Maak een map op uw Linux-systeem en bevestig vervolgens een container in het opslagaccount.
 
-1. Maak een directory op een Linux-systeem.
+1. Maak een map op een Linux-systeem.
 
    ```
    mkdir -p /mnt/test
    ```
 
-2. Koppel een container met behulp van de volgende opdracht.
+2. Gebruik de volgende opdracht om een container te maken.
 
    ```
    mount -o sec=sys,vers=3,nolock,proto=tcp <storage-account-name>.blob.core.windows.net:/<storage-account-name>/<container-name>  /mnt/test
    ```
 
-   - Vervang de `<storage-account-name>` tijdelijke aanduiding die wordt weer gegeven in deze opdracht door de naam van uw opslag account.  
+   - Vervang de `<storage-account-name>` tijdelijke aanduiding die in deze opdracht wordt weergegeven door de naam van uw opslagaccount.  
 
-   - Vervang de `<container-name>` tijdelijke aanduiding door de naam van de container.
+   - Vervang de `<container-name>` tijdelijke aanduiding door de naam van uw container.
 
 ---
 
@@ -131,9 +131,9 @@ Maak een map in uw Linux-systeem en koppel vervolgens een container in het opsla
 
 |Probleem/fout | Oplossing|
 |---|---|
-|`Access denied by server while mounting`|Zorg ervoor dat de client wordt uitgevoerd in een ondersteund subnet. Bekijk de [ondersteunde netwerk locaties](network-file-system-protocol-support.md#supported-network-connections).|
-|`No such file or directory`| Zorg ervoor dat de container die u koppelt, is gemaakt nadat u hebt gecontroleerd of de functie is geregistreerd. Zie [stap 2: controleren of de functie is geregistreerd](#step-2-verify-that-the-feature-is-registered). Zorg er ook voor dat u de koppel opdracht en de para meters rechtstreeks in de Terminal typt. Als u een deel van deze opdracht vanuit een andere toepassing in de terminal kopieert, kunnen verborgen tekens in de gekopieerde gegevens deze fout veroorzaken.|
+|`Access denied by server while mounting`|Zorg ervoor dat de client wordt uitgevoerd in een ondersteund subnet. Zie [Ondersteunde netwerklocaties.](network-file-system-protocol-support.md#supported-network-connections)|
+|`No such file or directory`| Zorg ervoor dat de container die u koppelt, is gemaakt nadat u hebt gecontroleerd of de functie is geregistreerd. Zie [Stap 2: controleren of de functie is geregistreerd.](#step-2-verify-that-the-feature-is-registered) Zorg er ook voor dat u de opdracht voor het bevestigingstype en de parameters rechtstreeks in de terminal typt. Als u een deel van deze opdracht vanuit een andere toepassing in de terminal kopieert, kunnen verborgen tekens in de gekopieerde gegevens deze fout veroorzaken.|
 
 ## <a name="see-also"></a>Zie ook
 
-[Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)](network-file-system-protocol-support.md)
+[Ondersteuning voor NFS 3.0-protocollen (Network File System) in Azure Blob Storage (preview)](network-file-system-protocol-support.md)

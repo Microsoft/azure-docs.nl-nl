@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: timlt
-ms.openlocfilehash: c972211a48816409ff626396fb5ddc7c939c021b
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: c966051ed5699d408fe83f1e9c862ca78b3282c4
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106057878"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714538"
 ---
 # <a name="what-are-azure-iot-solution-accelerators"></a>Wat zijn Azure IoT-oplossingsversnellers?
 
@@ -68,7 +68,7 @@ De oorspronkelijke oplossingsversnellers werden geschreven met behulp van .NET e
 | Oplossingsverbetering   | Architectuur  | Talen     |
 | ---------------------- | ------------- | ------------- |
 | Verbonden factory      | MVC           | [.NET](https://github.com/Azure/azure-iot-connected-factory)          |
-| Apparaatsimulatie      | Microservices | [.NET](https://github.com/Azure/device-simulation-dotnet)          |
+| Apparaatsimulatie      | Microservices | [.NET](https://github.com/Azure/azure-iot-pcs-device-simulation)          |
 
 Zie [Inleiding tot de Azure IoT-referentiearchitectuur](/azure/architecture/reference-architectures/iot/) voor meer informatie over de microservicearchitectuur.
 

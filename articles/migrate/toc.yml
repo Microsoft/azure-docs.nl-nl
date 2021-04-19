@@ -70,11 +70,11 @@
           href: tutorial-migrate-aws-virtual-machines.md
         - name: GCP-exemplaren migreren
           href: tutorial-migrate-gcp-virtual-machines.md
-    - name: Container plaatsen
+    - name: Containeriseren
       items:
-        - name: Container plaatsen ASP.NET-Apps en Migreer naar AKS
+        - name: Containeriseren ASP.NET apps en migreren naar AKS
           href: tutorial-app-containerization-aspnet-kubernetes.md
-        - name: Container plaatsen Java-Web-apps en Migreer naar AKS
+        - name: Java-web-apps in een container zetten en migreren naar AKS
           href: tutorial-containerize-java-kubernetes.md
 - name: Concepten
   items:
@@ -104,7 +104,7 @@
       items:
         - name: Evaluatieoverzicht (migreren naar Azure-VM's)
           href: concepts-assessment-calculation.md
-        - name: Overzicht van beoordelingen (migreren naar Azure SQL)
+        - name: Overzicht van evaluaties (migreren naar Azure SQL)
           href: concepts-azure-sql-assessment-calculation.md
         - name: Overzicht van evaluaties (migreren naar AVS)
           href: concepts-azure-vmware-solution-assessment-calculation.md
@@ -130,6 +130,8 @@
   items:
     - name: Azure Migrate-projecten maken en beheren
       href: create-manage-projects.md
+    - name: Gebruik Azure Migrate private link
+      href: how-to-use-azure-migrate-with-private-endpoints.md
     - name: Voorbereiden om te werken met ISV-hulpprogramma's/Movere
       href: prepare-isv-movere.md
     - name: Ontdekken
@@ -148,11 +150,11 @@
               href: deploy-appliance-script-government.md
         - name: Detectiebereik beperken voor VMware-VM's
           href: set-discovery-scope.md
-        - name: Server referenties toevoegen
+        - name: Serverreferenties toevoegen
           href: add-server-credentials.md
         - name: Toepassingen/rollen/functies detecteren
           href: how-to-discover-applications.md
-        - name: SQL-exemplaren in een bestaand project detecteren
+        - name: SQL-exemplaren in een bestaand project ontdekken
           href: how-to-discover-sql-existing-project.md
         - name: Machine-afhankelijkheden analyseren (op basis van agents)
           href: how-to-create-group-machine-dependencies.md
@@ -166,7 +168,7 @@
           href: how-to-create-a-group.md
         - name: Een Azure VM-evaluatie maken
           href: how-to-create-assessment.md
-        - name: Een Azure SQL-evaluatie maken
+        - name: Een evaluatie Azure SQL maken
           href: how-to-create-azure-sql-assessment.md
         - name: Een AVS-evaluatie maken
           href: how-to-create-azure-vmware-solution-assessment.md
@@ -186,7 +188,7 @@
       items:
         - name: Migratiehulpprogramma's toevoegen
           href: how-to-migrate.md
-        - name: Repliceren met behulp van ExpressRoute
+        - name: Repliceren met Behulp van ExpressRoute
           href: replicate-using-expressroute.md
         - name: Machines op migratie voorbereiden
           href: prepare-for-migration.md
@@ -198,7 +200,7 @@
               href: how-to-migrate-vmware-vms-with-cmk-disks.md
         - name: Migratie schalen
           items:
-            - name: Virtuele VMware-machines op schaal migreren met behulp van de replicatie methode zonder agent
+            - name: VMware-VM's op schaal migreren met behulp van de replicatiemethode zonder agent
               href: how-to-scale-out-for-migration.md
             - name: Migratie van een groot aantal VM's automatiseren
               href: how-to-migrate-at-scale.md
@@ -210,7 +212,7 @@
           href: how-to-delete-project.md
         - name: Werken met een eerdere versie van Azure Migrate
           href: migrate-v1.md
-        - name: Migratie projecten beheren met Azure Lighthouse
+        - name: Migratieprojecten beheren met Azure Lighthouse
           href: ../lighthouse/how-to/migration-at-scale.md?toc=/azure/migrate/toc.json&bc=/azure/migrate/breadcrumb/toc.json
 - name: Problemen oplossen
   items:

@@ -13,9 +13,9 @@
   items:
     - name: Een data factory maken - gebruikersinterface (UI)
       href: quickstart-create-data-factory-portal.md
-    - name: Hulp programma voor data factory kopiëren maken
+    - name: Een data factory maken - Hulpprogramma voor het kopiëren van gegevens
       href: quickstart-create-data-factory-copy-data-tool.md
-    - name: Data factory maken-Azure CLI
+    - name: Een data factory maken - Azure CLI
       href: quickstart-create-data-factory-azure-cli.md
     - name: Een data factory maken - Azure PowerShell
       href: quickstart-create-data-factory-powershell.md
@@ -32,13 +32,13 @@
       href: data-flow-create.md
 - name: Zelfstudies
   items:
-    - name: Lijst met zelf studies
+    - name: Lijst met zelfstudies
       href: data-factory-tutorials.md
     - name: Gegevens kopiëren en opnemen
       items:
         - name: Van Azure Blob Storage naar Azure SQL Database
           items:
-            - name: Hulp programma voor kopiëren van gegevens
+            - name: Hulpprogramma voor het kopiëren van gegevens
               href: tutorial-copy-data-tool.md
             - name: Gebruikersinterface (UI)
               href: tutorial-copy-data-portal.md
@@ -46,7 +46,7 @@
               href: tutorial-copy-data-dot-net.md
         - name: Van een SQL Server-database naar Azure Blob Storage
           items:
-            - name: Hulp programma voor kopiëren van gegevens
+            - name: Hulpprogramma voor het kopiëren van gegevens
               href: tutorial-hybrid-copy-data-tool.md
             - name: Gebruikersinterface (UI)
               href: tutorial-hybrid-copy-portal.md
@@ -107,9 +107,9 @@
       items:
         - name: Gegevens transformeren met toewijzingsgegevensstromen
           items:
-            - name: Aanbevolen procedures voor het aanwijzen van gegevens in het Lake with ADLS Gen2
+            - name: Best practices voor het landen van gegevens in het lake met ADLS Gen2
               href: tutorial-data-flow-write-to-lake.md
-            - name: Gegevens transformeren in het Lake with Delta Lake
+            - name: Gegevens in het lake transformeren met Delta Lake
               href: tutorial-data-flow-delta-lake.md
             - name: Gegevens transformeren met toewijzingsgegevensstromen
               href: tutorial-data-flow.md
@@ -199,9 +199,9 @@
               href: concepts-data-flow-expression-builder.md
             - name: Expressietaal
               href: data-flow-expression-functions.md
-        - name: Gegevens voorbereiden met Power Query data wrangling
+        - name: Gegevens voorbereiden met Power Query data-wrangling
           items:
-            - name: Overzicht van gegevens wrangling
+            - name: Overzicht van data-wrangling
               href: wrangling-overview.md
             - name: Ondersteunde functies
               href: wrangling-functions.md
@@ -225,7 +225,7 @@
           href: source-control.md
         - name: Continue integratie en levering
           href: continuous-integration-deployment.md
-        - name: Automatische publicatie
+        - name: Automatisch publiceren
           href: continuous-integration-deployment-improvements.md
     - name: Connectors
       items:
@@ -433,13 +433,13 @@
           href: connector-zoho.md
     - name: Gegevens verplaatsen
       items:
-        - name: Gegevens kopiëren met Kopieer activiteit
+        - name: Gegevens kopiëren met kopieeractiviteit
           href: copy-activity-overview.md
         - name: Kopieeractiviteit bewaken
           href: copy-activity-monitoring.md
-        - name: Bestanden verwijderen met de activiteit verwijderen
+        - name: Bestanden verwijderen met de activiteit Verwijderen
           href: delete-activity.md
-        - name: Hulp programma voor kopiëren van gegevens
+        - name: Hulpprogramma voor het kopiëren van gegevens
           href: copy-data-tool.md
         - name: Ondersteuning voor indeling en compressie
           href: supported-file-formats-and-compression-codecs.md
@@ -466,21 +466,21 @@
     - name: Gegevens transformeren
       href: transform-data.md
       items:
-        - name: Activiteit gegevens stroom uitvoeren
+        - name: Een Gegevensstroom uitvoeren
           href: control-flow-execute-data-flow-activity.md
-        - name: Power Query activiteit uitvoeren
+        - name: Een Power Query uitvoeren
           href: control-flow-power-query-activity.md
-        - name: Azure function-activiteit
+        - name: Azure Function-activiteit
           href: control-flow-azure-function-activity.md
         - name: Aangepaste activiteit
           href: transform-data-using-dotnet-custom-activity.md
-        - name: Databricks jar-activiteit
+        - name: Databricks Jar-activiteit
           href: transform-data-databricks-jar.md
-        - name: Databricks-notebook activiteit
+        - name: Databricks Notebook-activiteit
           href: transform-data-databricks-notebook.md
-        - name: Databricks python-activiteit
+        - name: Databricks Python-activiteit
           href: transform-data-databricks-python.md
-        - name: Opdracht activiteit Data Explorer
+        - name: Data Explorer opdrachtactiviteit
           href: /azure/data-explorer/data-factory-command-activity?toc=/azure/data-factory/toc.json
         - name: Data Lake U-SQL-activiteit
           href: transform-data-using-data-lake-analytics.md
@@ -492,47 +492,47 @@
           href: transform-data-using-hadoop-pig.md
         - name: HDInsight Spark-activiteit
           href: transform-data-using-spark.md
-        - name: HDInsight streaming-activiteit
+        - name: HDInsight-streamingactiviteit
           href: transform-data-using-hadoop-streaming.md
-        - name: De activiteit pijp lijn Machine Learning uitvoeren
+        - name: Machine Learning Execute Pipeline-activiteit
           href: transform-data-machine-learning-service.md
-        - name: Activiteit voor het uitvoeren van Machine Learning Studio (klassiek)
+        - name: Machine Learning Studio (klassiek) Batch Execution-activiteit
           href: transform-data-using-machine-learning.md
-        - name: Resource-activiteit voor het bijwerken van Machine Learning Studio (klassiek)
+        - name: Machine Learning Studio-activiteit Resource bijwerken (klassiek)
           href: update-machine-learning-models.md
-        - name: Opgeslagen procedure activiteit
+        - name: Opgeslagen procedureactiviteit
           href: transform-data-using-stored-procedure.md
         - name: Gekoppelde services berekenen
           href: compute-linked-services.md
     - name: Controlestroom
       items:
-        - name: Variabele activiteit toevoegen
+        - name: Activiteit Variabele aan append
           href: control-flow-append-variable-activity.md
-        - name: Pijplijn activiteit uitvoeren
+        - name: Execute Pipeline-activiteit
           href: control-flow-execute-pipeline-activity.md
-        - name: Filter activiteit
+        - name: Filteractiviteit
           href: control-flow-filter-activity.md
         - name: Voor elke activiteit
           href: control-flow-for-each-activity.md
-        - name: Activiteit meta gegevens ophalen
+        - name: Activiteit Metagegevens op halen
           href: control-flow-get-metadata-activity.md
-        - name: Als condition-activiteit
+        - name: If Condition-activiteit
           href: control-flow-if-condition-activity.md
-        - name: Opzoek activiteit
+        - name: Opzoekactiviteit
           href: control-flow-lookup-activity.md
-        - name: Variabele activiteit instellen
+        - name: Activiteit variabele instellen
           href: control-flow-set-variable-activity.md
         - name: Activiteit wisselen
           href: control-flow-switch-activity.md
         - name: Until-activiteit
           href: control-flow-until-activity.md
-        - name: Validatie activiteit
+        - name: Validatieactiviteit
           href: control-flow-validation-activity.md
-        - name: Wachtende activiteit
+        - name: Activiteit Wachten
           href: control-flow-wait-activity.md
         - name: Webactiviteit
           href: control-flow-web-activity.md
-        - name: Webhook-activiteit
+        - name: Webhookactiviteit
           href: control-flow-webhook-activity.md
     - name: Gegevensstroomtransformaties
       items:
@@ -592,7 +592,7 @@
           href: control-flow-system-variables.md
         - name: Toewijzingsgegevensstromen parameteriseren
           href: parameters-data-flow.md
-        - name: Para meters
+        - name: Parameters opgeven
           href: how-to-expression-language-functions.md
     - name: Beveiliging
       items:
@@ -600,7 +600,7 @@
           href: data-movement-security-considerations.md
         - name: Strategieën voor gegevenstoegang
           href: data-access-strategies.md
-        - name: IP-adressen van Azure Integration runtime
+        - name: IP-adressen van Azure Integration Runtime
           href: azure-integration-runtime-ip-addresses.md
         - name: Referenties opslaan in Azure Key Vault
           href: store-credentials-in-key-vault.md
@@ -610,11 +610,11 @@
           href: encrypt-credentials-self-hosted-integration-runtime.md
         - name: Beheerde identiteit voor Data Factory
           href: data-factory-service-identity.md
-        - name: data factory versleutelen met door de klant beheerde sleutel
+        - name: Gegevens versleutelen data factory door de klant beheerde sleutel
           href: enable-customer-managed-key.md
         - name: Beheerd virtueel netwerk
           href: managed-virtual-network-private-endpoint.md
-        - name: Persoonlijke Azure-koppeling voor Data Factory
+        - name: Azure Private Link voor Data Factory
           href: data-factory-private-link.md
         - name: Basislijn voor Azure-beveiliging
           href: security-baseline.md
@@ -706,17 +706,17 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: Een afhankelijkheid voor een tumblingvenstertrigger maken
           href: tumbling-window-trigger-dependency.md
-        - name: Een opslag gebeurtenis trigger maken
+        - name: Een trigger voor opslaggebeurtenissen maken
           href: how-to-create-event-trigger.md
-        - name: Een aangepaste gebeurtenis trigger maken
+        - name: Een aangepaste gebeurtenistrigger maken
           href: how-to-create-custom-event-trigger.md
-        - name: Meta gegevens van verwijzings trigger in pijp lijn
+        - name: Referentietriggermetagegevens in pijplijn
           href: how-to-use-trigger-parameterization.md
     - name: Data Catalog en governance
       items:
         - name: Een Data Factory verbinden met Azure Purview
           href: connect-data-factory-to-azure-purview.md
-        - name: Gegevens in ADF detecteren en verkennen met controle sfeer liggen
+        - name: Gegevens in ADF ontdekken en verkennen met behulp van Purview
           href: how-to-discover-explore-purview-data.md
     - name: Scenario's
       items:
@@ -744,7 +744,7 @@
               href: how-to-sqldb-to-cosmosdb.md
             - name: Dedupliceren en null-checks met snippets
               href: how-to-data-flow-dedupe-nulls-snippets.md
-            - name: Gegevens verwerken vanuit AML-modellen met behulp van de gegevens stroom
+            - name: Gegevens uit AML-modellen verwerken met behulp van een gegevensstroom
               href: scenario-dataflow-process-data-aml-models.md
         - name: SSIS-migratie van on-premises
           items:
@@ -774,9 +774,9 @@
           href: solution-template-databricks-notebook.md
     - name: Inzicht krijgen in prijzen
       items:
-        - name: Overzicht van gereserveerde capaciteit van gegevens stroom
+        - name: Overzicht van gereserveerde capaciteit voor gegevensstroom
           href: data-flow-reserved-capacity-overview.md
-        - name: Gegevens stroom begrijpen reserverings kosten
+        - name: Inzicht in reserveringskosten voor gegevensstroom
           href: data-flow-understand-reservation-charges.md
         - name: Kosten voorspellen en beheren
           href: plan-manage-costs.md
@@ -793,7 +793,11 @@
         - name: Pijplijntriggers
           href: pipeline-trigger-troubleshoot-guide.md
         - name: Gegevensstromen
-          href: data-flow-troubleshoot-guide.md
+          items:
+            - name: Overzicht van gegevensstromen
+              href: data-flow-troubleshoot-guide.md
+            - name: Connector en indeling
+              href: data-flow-troubleshoot-connector-format.md
         - name: Continue integratie en implementatie
           href: ci-cd-github-troubleshoot-guide.md
         - name: Beveiligings- en toegangsbeheer

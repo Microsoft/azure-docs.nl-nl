@@ -22,7 +22,7 @@
 - name: Snelstartgidsen
   items:
     - name: De oplossingsverbetering voor apparaatsimulatie implementeren
-      href: 'https://github.com/Azure/device-simulation-dotnet/blob/master/README.md'
+      href: 'https://github.com/Azure/azure-iot-pcs-device-simulation/blob/master/README.md'
     - name: Een oplossing voor een verbonden fabriek uitproberen
       href: quickstart-connected-factory-deploy.md
   expanded: true
@@ -92,7 +92,7 @@
   items:
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-accelerators/toc.json&bc=/azure/iot-accelerators/breadcrumb/toc.json
-    - name: IoT-woorden lijst
+    - name: IoT-woordenlijst
       href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-accelerators/toc.json&bc=/azure/iot-accelerators/breadcrumb/toc.json
     - name: Azure IoT-services
       items:
@@ -127,7 +127,7 @@
         - name: Snelzoekgids voor ontwikkelaars
           href: 'https://github.com/Azure/device-simulation-dotnet/wiki/Simulation-Service-Developer-Reference-Guide'
         - name: GitHub-opslagplaats
-          href: 'https://github.com/Azure/device-simulation-dotnet'
+          href: 'https://github.com/Azure/azure-iot-pcs-device-simulation'
     - name: Referentiearchitectuur
       href: /azure/architecture/reference-architectures/iot
       items:
@@ -135,7 +135,7 @@
           href: /azure/architecture/reference-architectures/iot
     - name: Veelgestelde vragen
       items:
-        - name: Veelgestelde vragen over oplossings versnellers
+        - name: Veelgestelde vragen over oplossingsversnellers
           href: iot-accelerators-faq.md
         - name: Veelgestelde vragen over Verbonden Factory
           href: iot-accelerators-faq-cf.md

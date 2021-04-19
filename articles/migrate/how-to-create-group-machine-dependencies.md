@@ -1,82 +1,84 @@
 ---
-title: Afhankelijkheids analyse op basis van een agent instellen in Azure Migrate
-description: In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate.
+title: Afhankelijkheidsanalyse op basis van een agent instellen in Azure Migrate
+description: In dit artikel wordt beschreven hoe u afhankelijkheidsanalyse op basis van een agent kunt instellen in Azure Migrate.
 author: rashi-ms
 ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 84a672f76de4b11558f2b39bf417a3eda2e31a36
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 6ded5d4ed8c2a55939bba908a05adbd2dea2ccbf
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104786529"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714772"
 ---
-# <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
+# <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheden instellen
 
-In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate: detectie en evaluatie. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen servers die u wilt beoordelen en migreren naar Azure.
+In dit artikel wordt beschreven hoe u afhankelijkheidsanalyse op basis van een agent in Azure Migrate: Detectie en evaluatie. [Afhankelijkheidsanalyse helpt](concepts-dependency-visualization.md) u bij het identificeren en begrijpen van afhankelijkheden tussen servers die u wilt evalueren en migreren naar Azure.
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Bekijk de ondersteunings-en implementatie vereisten voor analyse van afhankelijkheden op basis van een agent voor:
+- Bekijk de ondersteunings- en implementatievereisten voor afhankelijkheidsanalyse op basis van een agent voor:
     - [Servers in VMware-omgeving](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agent-based)
     - [Fysieke servers](migrate-support-matrix-physical.md#agent-based-dependency-analysis-requirements)
-    - [Servers in de Hyper-V-omgeving](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements)
-- Zorg ervoor dat:
-    - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](./create-manage-projects.md) u er nu een.
-    - Controleer of u de Azure Migrate: hulp programma voor detectie en evaluatie hebt [toegevoegd](how-to-assess.md) aan het project.
-    - Stel een [Azure migrate apparaat](migrate-appliance.md) in om on-premises servers te detecteren. Het apparaat detecteert on-premises servers en stuurt meta gegevens en prestatie gegevens naar Azure Migrate: detectie en evaluatie. Stel een apparaat in voor:
+    - [Servers in Hyper-V-omgeving](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements)
+- Zorg ervoor dat u:
+    - Een project Azure Migrate maken. Als u dit niet hebt, [maakt u er](./create-manage-projects.md) nu een.
+    - Controleer of u de volgende [Azure Migrate:](how-to-assess.md) Detectie en evaluatieprogramma aan het project hebt toegevoegd.
+    - Een apparaat Azure Migrate [om](migrate-appliance.md) on-premises servers te ontdekken. Het apparaat detecteert on-premises servers en verzendt metagegevens en prestatiegegevens naar Azure Migrate: Detectie en evaluatie. Stel een apparaat in voor:
         - [Servers in VMware-omgeving](how-to-set-up-appliance-vmware.md)
-        - [Servers in de Hyper-V-omgeving](how-to-set-up-appliance-hyper-v.md)
+        - [Servers in Hyper-V-omgeving](how-to-set-up-appliance-hyper-v.md)
         - [Fysieke servers](how-to-set-up-appliance-physical.md)
-- Als u afhankelijkheids visualisatie wilt gebruiken, koppelt u een [log Analytics-werk ruimte](../azure-monitor/logs/manage-access.md) aan een Azure migrate project:
-    - U kunt een werk ruimte pas toevoegen nadat u het Azure Migrate apparaat hebt ingesteld en de servers in het Azure Migrate-project detecteert.
-    - Zorg ervoor dat u een werk ruimte hebt in het abonnement met het Azure Migrate-project.
-    - De werk ruimte moet zich bevinden in de regio's VS-Oost, Zuidoost-Azië of Europa-west. Werk ruimten in andere regio's kunnen niet worden gekoppeld aan een project.
-    - De werk ruimte moet zich in een regio bevinden waarin [servicetoewijzing wordt ondersteund](../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions).
-    - U kunt een nieuwe of bestaande Log Analytics-werk ruimte koppelen aan een Azure Migrate-project.
-    - U koppelt de werk ruimte de eerste keer dat u een afhankelijkheids visualisatie voor een server instelt. De werk ruimte voor een Azure Migrate project kan niet worden gewijzigd nadat deze is toegevoegd.
-    - In Log Analytics wordt de werk ruimte die is gekoppeld aan Azure Migrate gelabeld met de sleutel van het migratie project en de project naam.
+- Als u visualisatie van afhankelijkheden wilt gebruiken, koppelt u [een Log Analytics-werkruimte](../azure-monitor/logs/manage-access.md) aan een Azure Migrate project:
+    - U kunt een werkruimte pas koppelen nadat u het Azure Migrate hebt gemaakt en servers in het Azure Migrate detecteren.
+    - Zorg ervoor dat u een werkruimte in het abonnement hebt die het Azure Migrate bevat.
+    - De werkruimte moet zich in de regio's VS - oost, Azië - zuidoost of Europa - west bevinden. Werkruimten in andere regio's kunnen niet worden gekoppeld aan een project.
+    - De werkruimte moet zich in een regio waarin [Servicetoewijzing wordt ondersteund.](../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions)
+    - U kunt een nieuwe of bestaande Log Analytics-werkruimte koppelen aan een Azure Migrate project.
+    - U koppelt de werkruimte de eerste keer dat u afhankelijkheidsvisualisatie voor een server in stelt. De werkruimte voor een Azure Migrate project kan niet worden gewijzigd nadat het is toegevoegd.
+    - In Log Analytics wordt de werkruimte die aan Azure Migrate gekoppeld, getagd met de sleutel van het migratieproject en de projectnaam.
 
-## <a name="associate-a-workspace"></a>Een werk ruimte koppelen
+## <a name="associate-a-workspace"></a>Een werkruimte koppelen
 
-1. Nadat u servers voor beoordeling hebt gedetecteerd, klikt u in **servers**  >  **Azure migrate: detectie en evaluatie** op **overzicht**.  
-2. Klik in **Azure migrate: detectie en evaluatie** op **essentiële** elementen.
-3. Klik in de **OMS-werk ruimte** op **configuratie vereist**.
+1. Nadat u servers voor evaluatie hebt ontdekt, klikt u in **Servers**  >  **Azure Migrate: Detectie en evaluatie** op **Overzicht.**  
+2. Klik **Azure Migrate: Detectie en evaluatie** op **Essentials.**
+3. Klik **in de OMS-werkruimte** op **Configuratie vereist.**
 
      ![Log Analytics-werkruimte configureren](./media/how-to-create-group-machine-dependencies/oms-workspace-select.png)   
 
-4. In de **werk ruimte OMS configureren** geeft u op of u een nieuwe werk ruimte wilt maken of een bestaande wilt gebruiken.
-    - U kunt een bestaande werk ruimte selecteren uit alle werk ruimten in het project abonnement.
-    - U hebt toegang tot de lezer nodig om de werk ruimte te koppelen.
-5. Als u een nieuwe werk ruimte maakt, selecteert u een locatie.
+4. Geef **in OMS-werkruimte** configureren op of u een nieuwe werkruimte wilt maken of een bestaande werkruimte wilt gebruiken.
+    - U kunt een bestaande werkruimte selecteren in alle werkruimten in het projectabonnement.
+    - U hebt lezertoegang tot de werkruimte nodig om deze te koppelen.
+5. Als u een nieuwe werkruimte maakt, selecteert u er een locatie voor.
 
-    ![Een nieuwe werk ruimte toevoegen](./media/how-to-create-group-machine-dependencies/workspace.png)
+    ![Een nieuwe werkruimte toevoegen](./media/how-to-create-group-machine-dependencies/workspace.png)
 
+> [!Note]
+> [Meer informatie over](https://docs.microsoft.com/azure/azure-monitor/logs/private-link-security) het configureren van de OMS-werkruimte voor connectiviteit met privé-eindpunten.  
 
 ## <a name="download-and-install-the-vm-agents"></a>De VM-agents downloaden en installeren
 
 Installeer de agents op elke server die u wilt analyseren.
 
 > [!NOTE]
-> Voor servers die worden bewaakt door System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing integreert met Operations Manager. [Volg](../azure-monitor/vm/service-map-scom.md#prerequisites) de richt lijnen voor integratie.
+> Voor servers die worden bewaakt System Center Operations Manager 2012 R2 of hoger, hoeft u de MMA-agent niet te installeren. Servicetoewijzing kan worden geïntegreerd met Operations Manager. [Volg de](../azure-monitor/vm/service-map-scom.md#prerequisites) richtlijnen voor integratie.
 
-1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
-2. Voor elke server die u wilt analyseren met afhankelijkheids visualisatie, klikt u in de kolom **afhankelijkheden** op **Agent installatie vereist**.
-3. Down load de MMA-en Dependency-agent voor Windows of Linux op de pagina **afhankelijkheden** .
-4. Onder **MMA-agent configureren kopieert u** de werk ruimte-ID en-sleutel. U hebt deze nodig wanneer u de MMA-Agent installeert.
+1. Klik **Azure Migrate: Detectie en evaluatie** op **Detectieservers.**
+2. Klik voor elke server die u wilt analyseren met afhankelijkheidsvisualisatie in de kolom **Afhankelijkheden** op **Installatie van agent vereist.**
+3. Download op **de pagina Afhankelijkheden** de MMA en afhankelijkheidsagent voor Windows of Linux.
+4. Kopieer **onder MMA-agent configureren** de werkruimte-id en -sleutel. U hebt deze nodig wanneer u de MMA-agent installeert.
 
     ![De agents installeren](./media/how-to-create-group-machine-dependencies/dependencies-install.png)
 
 
 ## <a name="install-the-mma"></a>De MMA installeren
 
-Installeer de MMA op elke Windows-of Linux-server die u wilt analyseren.
+Installeer de MMA op elke Windows- of Linux-server die u wilt analyseren.
 
-### <a name="install-mma-on-a-windows-server"></a>MMA installeren op een Windows-Server
+### <a name="install-mma-on-a-windows-server"></a>MMA installeren op een Windows-server
 
-De agent installeren op een Windows-Server:
+De agent installeren op een Windows-server:
 
 1. Dubbelklik op de gedownloade agent.
 2. Klik op de pagina **Welkom** op **Volgende**. Klik op de pagina **Licentievoorwaarden** op **Akkoord** om de licentie te accepteren.
@@ -84,14 +86,14 @@ De agent installeren op een Windows-Server:
 4. Selecteer in **Installatieopties voor agent** de optie **Azure Log Analytics** > **Volgende**.
 5. Klik op **Toevoegen** om een nieuwe Log Analytics-werkruimte toe te voegen. Plak de werkruimte-id en -sleutel die u in de portal hebt gekopieerd. Klik op **Volgende**.
 
-U kunt de agent installeren vanaf de opdracht regel of met behulp van een geautomatiseerde methode als Configuration Manager of [Intigua](https://www.intigua.com/intigua-for-azure-migration).
+U kunt de agent installeren vanaf de opdrachtregel of met behulp van een geautomatiseerde methode zoals Configuration Manager of [Intigua](https://www.intigua.com/intigua-for-azure-migration).
 - [Meer informatie](../azure-monitor/agents/log-analytics-agent.md#installation-options) over het gebruiken van deze methoden om de MMA-agent te installeren.
 - De MMA-agent kan ook worden geïnstalleerd met behulp van dit [script](https://github.com/brianbar-MSFT/Install-MMA).
-- Meer [informatie](../azure-monitor/agents/agents-overview.md#supported-operating-systems) over de Windows-besturings systemen die worden ondersteund door MMA.
+- [Meer informatie over](../azure-monitor/agents/agents-overview.md#supported-operating-systems) de Windows-besturingssystemen die worden ondersteund door MMA.
 
 ### <a name="install-mma-on-a-linux-server"></a>MMA installeren op een Linux-server
 
-De MMA op een Linux-server installeren:
+De MMA installeren op een Linux-server:
 
 1. Breng de juiste bundel (x86 of x64) met behulp van scp/ftp over naar uw Linux-computer.
 2. Installeer de bundel met behulp van het argument --install.
@@ -102,79 +104,79 @@ De MMA op een Linux-server installeren:
 
 ## <a name="install-the-dependency-agent"></a>De afhankelijkheidsagent installeren
 
-1. Als u de afhankelijkheids agent op een Windows-Server wilt installeren, dubbelklikt u op het installatie bestand en volgt u de wizard.
-2. Als u de afhankelijkheids agent op een Linux-server wilt installeren, installeert u als root met de volgende opdracht:
+1. Als u de afhankelijkheidsagent op een Windows-server wilt installeren, dubbelklikt u op het installatiebestand en volgt u de wizard.
+2. Als u de afhankelijkheidsagent op een Linux-server wilt installeren, installeert u als root met behulp van de volgende opdracht:
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
 - [Meer informatie](../azure-monitor/vm/vminsights-enable-hybrid.md#dependency-agent) over hoe u scripts kunt gebruiken om de afhankelijkheidsagent te installeren.
-- Meer [informatie](../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) over de besturings systemen die worden ondersteund door de afhankelijkheids agent.
+- [Meer informatie over](../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) de besturingssystemen die worden ondersteund door de afhankelijkheidsagent.
 
 
-## <a name="create-a-group-using-dependency-visualization"></a>Een groep maken met behulp van afhankelijkheids visualisatie
+## <a name="create-a-group-using-dependency-visualization"></a>Een groep maken met behulp van afhankelijkheidsvisualisatie
 
 Maak nu een groep voor evaluatie. 
 
 
 > [!NOTE]
-> Groepen waarvoor u afhankelijkheden wilt visualiseren, mogen niet meer dan 10 servers bevatten. Als u meer dan 10 servers hebt, splitst u deze in kleinere groepen.
+> Groepen waarvoor u afhankelijkheden wilt visualiseren, mogen niet meer dan 10 servers bevatten. Als u meer dan 10 servers hebt, splitst u ze op in kleinere groepen.
 
-1. Klik in **Azure migrate: detectie en evaluatie** op **gedetecteerde servers**.
-2. Klik in de kolom **afhankelijkheden** op **afhankelijkheden weer geven** voor elke server die u wilt controleren.
-3. Op de afhankelijkheids kaart ziet u het volgende:
-    - Inkomende (clients) en uitgaande (servers) TCP-verbindingen van en naar de-server.
-    - Afhankelijke servers waarop geen afhankelijkheids agenten zijn geïnstalleerd, worden gegroepeerd op poort nummers.
-    - Afhankelijke servers waarop dependency agents zijn geïnstalleerd, worden weer gegeven als afzonderlijke vakken.
-    - Processen die worden uitgevoerd in de server. Vouw elk vak van de server uit om de processen weer te geven.
-    - Server eigenschappen (inclusief FQDN, besturings systeem, MAC-adres). Klik op elke server vak om de details weer te geven.
+1. Klik **Azure Migrate: Detectie en evaluatie** op **Detectieservers.**
+2. Klik in **de kolom Afhankelijkheden** **op Afhankelijkheden weergeven** voor elke server die u wilt controleren.
+3. Op de afhankelijkheidskaart ziet u het volgende:
+    - Binnenkomende (clients) en uitgaande (servers) TCP-verbindingen van en naar de server.
+    - Afhankelijke servers waarop de afhankelijkheidsagents niet zijn geïnstalleerd, worden gegroepeerd op poortnummers.
+    - Afhankelijke servers waarop afhankelijkheidsagents zijn geïnstalleerd, worden als afzonderlijke vakken weergegeven.
+    - Processen die worden uitgevoerd op de server. Vouw elk servervak uit om de processen te bekijken.
+    - Servereigenschappen (inclusief FQDN, besturingssysteem, MAC-adres). Klik op elk servervak om de details weer te geven.
 
-4. U kunt afhankelijkheden voor verschillende tijds duren bekijken door te klikken op de tijds duur in het label tijds bereik.
+4. U kunt afhankelijkheden voor verschillende tijdsduuren bekijken door te klikken op de tijdsduur in het tijdsbereiklabel.
     - Het bereik is standaard een uur. 
     - U kunt het tijdsbereik wijzigen of begin- en einddatums en duur opgeven.
-    - Het tijds bereik kan Maxi maal een uur duren. Als u een langere periode nodig hebt, gebruikt u Azure Monitor voor het opvragen van afhankelijke gegevens gedurende langere tijd.
+    - Het tijdsbereik kan maximaal een uur zijn. Als u een langer bereik nodig hebt, gebruikt u Azure Monitor om een langere periode een query uit te voeren op afhankelijke gegevens.
 
-5. Nadat u de afhankelijke servers die u wilt groeperen, hebt geïdentificeerd, gebruikt u CTRL + klikken om meerdere servers op de kaart te selecteren en klikt u op **machines groeperen**.
+5. Nadat u de afhankelijke servers hebt geïdentificeerd die u wilt groepen, gebruikt u Ctrl +Klik om meerdere servers op de kaart te selecteren en klikt u op **Computers groepken.**
 6. Geef een groepsnaam op.
-7. Controleer of de afhankelijke servers worden gedetecteerd door Azure Migrate.
+7. Controleer of de afhankelijke servers zijn ontdekt door Azure Migrate.
 
-    - Als een afhankelijke server niet wordt gedetecteerd door Azure Migrate: detectie en evaluatie, kunt u deze niet toevoegen aan de groep.
-    - Als u een server wilt toevoegen, voert u de detectie opnieuw uit en controleert u of de server is gedetecteerd.
+    - Als een afhankelijke server niet wordt ontdekt door Azure Migrate: Detectie en evaluatie, kunt u deze niet toevoegen aan de groep.
+    - Als u een server wilt toevoegen, moet u detectie opnieuw uitvoeren en controleren of de server is ontdekt.
 
 8. Als u een evaluatie voor deze groep wilt maken, schakelt u het selectievakje in om een nieuwe evaluatie voor de groep te maken.
 8. Klik op **OK** om de groep op te slaan.
 
-Nadat u de groep hebt gemaakt, wordt u aangeraden agents op alle servers in de groep te installeren en vervolgens afhankelijkheden voor de hele groep te visualiseren.
+Nadat u de groep hebt gemaakt, raden we u aan agents te installeren op alle servers in de groep en vervolgens afhankelijkheden voor de hele groep te visualiseren.
 
-## <a name="query-dependency-data-in-azure-monitor"></a>Query's uitvoeren op afhankelijkheids gegevens in Azure Monitor
+## <a name="query-dependency-data-in-azure-monitor"></a>Afhankelijkheidsgegevens opvragen in Azure Monitor
 
-U kunt een query uitvoeren op afhankelijkheids gegevens die zijn vastgelegd door Servicetoewijzing in de werk ruimte Log Analytics die aan het Azure Migrate project is gekoppeld. Log Analytics wordt gebruikt om Azure Monitor-logboek query's te schrijven en uit te voeren.
+U kunt afhankelijkheidsgegevens opvragen die zijn vastgelegd door Servicetoewijzing in de Log Analytics-werkruimte die is gekoppeld aan het Azure Migrate project. Log Analytics wordt gebruikt voor het schrijven en uitvoeren van Azure Monitor logboekquery's.
 
-- [Meer informatie over het](../azure-monitor/vm/service-map.md#log-analytics-records) zoeken naar servicetoewijzing gegevens in log Analytics.
-- [Bekijk een overzicht van het](../azure-monitor/logs/get-started-queries.md)  schrijven van logboek query's in [log Analytics](../azure-monitor/logs/log-analytics-tutorial.md).
+- [Meer informatie over het](../azure-monitor/vm/service-map.md#log-analytics-records) zoeken Servicetoewijzing gegevens in Log Analytics.
+- [Krijg een overzicht van](../azure-monitor/logs/get-started-queries.md) het schrijven van logboekquery's in [Log Analytics.](../azure-monitor/logs/log-analytics-tutorial.md)
 
-Voer een query uit voor afhankelijkheids gegevens als volgt:
+Voer als volgt een query uit voor afhankelijkheidsgegevens:
 
 1. Nadat u de agents hebt geïnstalleerd, gaat u naar de portal en klikt u op **Overzicht**.
-2. Klik in **Azure migrate: detectie en evaluatie** op **overzicht**. Klik op de pijl-omlaag om de **kernen** uit te vouwen.
-3. Klik in de **OMS-werk ruimte** op de naam van de werk ruimte.
-3. Klik op de pagina Log Analytics werk ruimte > **Algemeen** op **Logboeken**.
-4. Schrijf uw query en klik op **uitvoeren**.
+2. Klik **Azure Migrate: Detectie en evaluatie** op **Overzicht.** Klik op de pijl-omlaag om **Essentials uit te vouwen.**
+3. Klik **in OMS-werkruimte** op de naam van de werkruimte.
+3. Klik op de pagina Log Analytics-werkruimte > **Algemeen** op **Logboeken.**
+4. Schrijf uw query en klik op **Uitvoeren.**
 
 ### <a name="sample-queries"></a>Voorbeeldquery's
 
-Hier volgen enkele voor beelden van query's die u kunt gebruiken om afhankelijkheids gegevens te extra heren.
+Hier zijn enkele voorbeeldquery's die u kunt gebruiken om afhankelijkheidsgegevens te extraheren.
 
 - U kunt de query's aanpassen om de gewenste gegevenspunten te extraheren.
-- [Bekijk](../azure-monitor/vm/service-map.md#log-analytics-records) een volledige lijst met afhankelijkheids gegevens records.
-- [Bekijk](../azure-monitor/vm/service-map.md#sample-log-searches) aanvullende voorbeeld query's.
+- [Bekijk](../azure-monitor/vm/service-map.md#log-analytics-records) een volledige lijst met afhankelijkheidsgegevensrecords.
+- [Bekijk](../azure-monitor/vm/service-map.md#sample-log-searches) aanvullende voorbeeldquery's.
 
-#### <a name="sample-review-inbound-connections"></a>Voor beeld: binnenkomende verbindingen controleren
+#### <a name="sample-review-inbound-connections"></a>Voorbeeld: Binnenkomende verbindingen controleren
 
-Binnenkomende verbindingen voor een set met servers controleren.
+Controleer binnenkomende verbindingen voor een set servers.
 
-- De records in de tabel voor de metrische gegevens van de verbinding (VMConnection) vertegenwoordigen geen afzonderlijke fysieke netwerk verbindingen.
+- De records in de tabel voor metrische verbindingsgegevens (VMConnection) vertegenwoordigen geen afzonderlijke fysieke netwerkverbindingen.
 - Er worden meerdere fysieke netwerkverbindingen gegroepeerd in een logische verbinding.
-- Meer [informatie](../azure-monitor/vm/service-map.md#connections) over hoe fysieke netwerk verbindings gegevens worden geaggregeerd in VMConnection.
+- [Meer informatie over](../azure-monitor/vm/service-map.md#connections) hoe gegevens van fysieke netwerkverbindingen worden geaggregeerd in VMConnection.
 
 ```
 // the servers of interest
@@ -190,9 +192,9 @@ VMConnection
 | summarize sum(LinksEstablished) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-#### <a name="sample-summarize-sent-and-received-data"></a>Voor beeld: verzonden en ontvangen gegevens samenvatten
+#### <a name="sample-summarize-sent-and-received-data"></a>Voorbeeld: Verzonden en ontvangen gegevens samenvatten
 
-In dit voor beeld wordt een overzicht gegeven van het volume van de gegevens die worden verzonden en ontvangen op binnenkomende verbindingen tussen een set met servers.
+Dit voorbeeld geeft een overzicht van de hoeveelheid gegevens die worden verzonden en ontvangen op binnenkomende verbindingen tussen een set servers.
 
 ```
 // the servers of interest
@@ -210,4 +212,4 @@ VMConnection
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Een evaluatie](how-to-create-assessment.md) voor een groep maken.
+[Maak een evaluatie](how-to-create-assessment.md) voor een groep.

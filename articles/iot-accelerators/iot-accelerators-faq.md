@@ -1,6 +1,6 @@
 ---
-title: Veelgestelde vragen over IoT Solution Accelerators-Azure | Microsoft Docs
-description: In dit artikel worden de veelgestelde vragen voor IoT-oplossings Accelerators beantwoord. Het bevat koppelingen naar de GitHub-opslag plaatsen.
+title: Veelgestelde vragen over IoT-oplossingsversnellers - Azure | Microsoft Docs
+description: In dit artikel vindt u antwoorden op de veelgestelde vragen over IoT-oplossingsversnellers. Het bevat koppelingen naar de GitHub-opslagplaatsen.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,101 +8,101 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 1fd2b8461bd66c826dc4890c331b740c4703f896
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 61993df77b0831926f16339a741a2553e80c2a0d
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96903986"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107713836"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Veelgestelde vragen over IoT-oplossingsversnellers
 
-Zie ook de [verbonden specifieke, vooraf gedefinieerde standaard Veelgestelde vragen](iot-accelerators-faq-cf.md).
+Zie ook de [veelgestelde vragen over verbonden factory's.](iot-accelerators-faq-cf.md)
 
-### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Waar vind ik de bron code voor de oplossings Accelerators?
+### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Waar vind ik de broncode voor de oplossingsversnellers?
 
-De bron code wordt opgeslagen in de volgende GitHub-opslag plaatsen:
+De broncode wordt opgeslagen in de volgende GitHub-opslagplaatsen:
 
-* [Oplossings versneller Connected Factory](https://github.com/Azure/azure-iot-connected-factory)
-* [Versneller oplossing apparaat simulatie](https://github.com/Azure/device-simulation-dotnet)
+* [Oplossingsversneller voor verbonden factory's](https://github.com/Azure/azure-iot-connected-factory)
+* [Oplossingsversneller voor apparaatsimulatie](https://github.com/Azure/azure-iot-pcs-device-simulation)
 
-### <a name="where-can-i-find-the-remote-monitoring-and-predictive-maintenance-solution-accelerators"></a>Waar vind ik de oplossings versnellers voor controle op afstand en voorspellende onderhoud?
+### <a name="where-can-i-find-the-remote-monitoring-and-predictive-maintenance-solution-accelerators"></a>Waar vind ik de oplossingsversnellers voor externe bewaking en voorspeld onderhoud?
 
-Vanaf 10 december 2020 zijn de Accelerators voor controle op afstand en voor speld onderhoud verwijderd van de site met [accelerators van Azure IOT-oplossingen](https://www.azureiotsolutions.com/Accelerators) en zijn ze niet langer beschikbaar voor nieuwe implementaties. De GitHub-opslag plaatsen voor beide Accelerators zijn gearchiveerd. De code is nog steeds beschikbaar voor iedereen om toegang te krijgen, maar de opslag plaatsen nemen geen nieuwe bijdragen in rekening.
+Vanaf 10 december 2020 zijn de versnellers voor externe bewaking en voorspeld onderhoud verwijderd van de [Azure IoT-oplossingsversnellers-site](https://www.azureiotsolutions.com/Accelerators) en zijn ze niet meer beschikbaar voor nieuwe implementaties. De GitHub-opslagplaatsen voor beide accelerators zijn gearchiveerd. De code is nog steeds beschikbaar voor iedereen, maar de opslagplaatsen leveren geen nieuwe bijdragen.
 
-### <a name="what-happens-to-my-existing-remote-monitoring-and-predictive-maintenance-deployments"></a>Wat gebeurt er met mijn bestaande externe bewakings-en voorspellende onderhouds implementaties?
+### <a name="what-happens-to-my-existing-remote-monitoring-and-predictive-maintenance-deployments"></a>Wat gebeurt er met mijn bestaande implementaties voor externe bewaking en voorspeld onderhoud?
 
-Bestaande implementaties worden niet beïnvloed door het verwijderen van de oplossings Accelerators voor externe controle en voorspellende onderhoud en blijven werken. Gevorkte opslag plaatsen worden ook niet beïnvloed. De hoofd opslagplaatsen op GitHub zijn gearchiveerd.
+Bestaande implementaties worden niet beïnvloed door het verwijderen van de oplossingsversnellers voor externe bewaking en voorspeld onderhoud en blijven werken. Ook gevorkte opslagplaatsen worden niet beïnvloed. De hoofdarchieven op GitHub zijn gearchiveerd.
 
-### <a name="how-do-i-deploy-device-simulation-solution-accelerator"></a>De oplossings versneller voor het simuleren van apparaten Hoe kan ik?
+### <a name="how-do-i-deploy-device-simulation-solution-accelerator"></a>Hoe kan ik oplossingsversneller voor apparaatsimulatie implementeren?
 
-Zie de [device simulatie](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) github-opslag plaats voor het implementeren van de apparaat simulatie oplossings versneller.
+Zie de GitHub-opslagplaats voor [](https://github.com/Azure/azure-iot-pcs-device-simulation/blob/master/README.md) apparaatsimulatie om de oplossingsversneller voor apparaatsimulatie te implementeren.
 
-### <a name="where-can-i-find-information-about-the-removed-solution-accelerators"></a>Waar vind ik informatie over de verwijderde oplossings Accelerators?
+### <a name="where-can-i-find-information-about-the-removed-solution-accelerators"></a>Waar vind ik informatie over de verwijderde oplossingsversnellers?
 
-Zie de volgende pagina's op de site van de vorige versie:
+Zie de volgende pagina's op de site met eerdere versies:
 
 * [Externe bewaking](/previous-versions/azure/iot-accelerators/about-iot-accelerators)
 * [Voorspellend onderhoud](/previous-versions/azure/iot-accelerators/about-iot-accelerators)
 
-### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Welke Sdk's kan ik gebruiken om apparaatclients te ontwikkelen voor de oplossings Accelerators?
+### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Welke SDK's kan ik gebruiken om apparaat-clients te ontwikkelen voor de oplossingsversnellers?
 
-U vindt koppelingen naar de verschillende talen (C, .NET, Java, Node.js, python) IoT-apparaat-Sdk's in de [Microsoft Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks) github-opslag plaatsen.
+U vindt koppelingen naar de verschillende IoT-apparaat-SDK's (C, .NET, Java, Node.js, Python) in de GitHub-opslagplaatsen van Microsoft Azure [IoT-SDK's.](https://github.com/Azure/azure-iot-sdks)
 
-Als u het DevKit-apparaat gebruikt, kunt u bronnen en voor beelden vinden in de DevKit-opslag plaats van [IOT](https://github.com/Microsoft/devkit-sdk) github.
+Als u het DevKit-apparaat gebruikt, kunt u resources en voorbeelden vinden in de GitHub-opslagplaats van de [IoT DevKit SDK.](https://github.com/Microsoft/devkit-sdk)
 
-### <a name="im-a-service-administrator-and-id-like-to-change-the-directory-mapping-between-my-subscription-and-a-specific-azure-ad-tenant-how-do-i-complete-this-task"></a>Ik ben een service beheerder en ik wil de adreslijst toewijzing wijzigen tussen mijn abonnement en een specifieke Azure AD-Tenant. Wilt u deze taak Hoe kan ik volt ooien?
+### <a name="im-a-service-administrator-and-id-like-to-change-the-directory-mapping-between-my-subscription-and-a-specific-azure-ad-tenant-how-do-i-complete-this-task"></a>Ik ben een servicebeheerder en ik wil de maptoewijzing tussen mijn abonnement en een specifieke Azure AD-tenant wijzigen. Hoe kan ik deze taak voltooien?
 
-Zie [een bestaand abonnement toevoegen aan uw Azure AD-adres lijst](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md#to-associate-an-existing-subscription-to-your-azure-ad-directory)
+Zie [Een bestaand abonnement toevoegen aan uw Azure AD-directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md#to-associate-an-existing-subscription-to-your-azure-ad-directory)
 
-### <a name="i-want-to-change-a-service-administrator-or-co-administrator-when-logged-in-with-an-organizational-account"></a>Ik wil een service beheerder of Co-Administrator wijzigen wanneer u bent aangemeld met een organisatie account
+### <a name="i-want-to-change-a-service-administrator-or-co-administrator-when-logged-in-with-an-organizational-account"></a>Ik wil een servicebeheerder wijzigen of Co-Administrator aangemeld met een organisatieaccount
 
-Zie de ondersteunings artikelen [service beheerder en Co-Administrator wijzigen wanneer u bent aangemeld met een organisatie account](https://azure.microsoft.com/support/changing-service-admin-and-co-admin).
+Zie het ondersteuningsartikel [Servicebeheerder wijzigen en Co-Administrator wanneer u bent aangemeld met een organisatieaccount.](https://azure.microsoft.com/support/changing-service-admin-and-co-admin)
 
-### <a name="why-am-i-seeing-this-error-your-account-does-not-have-the-proper-permissions-to-create-a-solution-please-check-with-your-account-administrator-or-try-with-a-different-account"></a>Waarom wordt deze fout weer gegeven? "Uw account beschikt niet over de juiste machtigingen om een oplossing te maken. Neem contact op met uw account beheerder of probeer met een ander account.
+### <a name="why-am-i-seeing-this-error-your-account-does-not-have-the-proper-permissions-to-create-a-solution-please-check-with-your-account-administrator-or-try-with-a-different-account"></a>Waarom zie ik deze fout? 'Uw account heeft niet de juiste machtigingen om een oplossing te maken. Neem contact op met uw accountbeheerder of probeer het met een ander account.
 
 Bekijk het volgende diagram voor hulp:
 
-![Toestemmings stroomdiagram](media/iot-accelerators-faq/flowchart.png)
+![Stroomdiagram voor machtigingen](media/iot-accelerators-faq/flowchart.png)
 
 > [!NOTE]
-> Als u de fout blijft zien nadat u een globale beheerder bent van de Azure AD-Tenant en een mede beheerder van het abonnement, moet uw account beheerder de gebruiker verwijderen en de benodigde machtigingen opnieuw toewijzen in deze volg orde. Voeg eerst de gebruiker toe als globale beheerder en voeg vervolgens een gebruiker toe als co-beheerder van het Azure-abonnement. Neem contact op met de [ondersteuning van hulp &](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)als er problemen blijven optreden.
+> Als u de fout blijft zien nadat u hebt valideren dat u een globale beheerder van de Azure AD-tenant en een medebeheerder van het abonnement bent, moet u de accountbeheerder de gebruiker laten verwijderen en de benodigde machtigingen in deze volgorde opnieuw toewijzen. Voeg eerst de gebruiker toe als globale beheerder en voeg vervolgens de gebruiker toe als medebeheerder van het Azure-abonnement. Als problemen zich blijven voordoen, kunt u contact [opnemen & Ondersteuning.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
 
-### <a name="why-am-i-seeing-this-error-when-i-have-an-azure-subscription-an-azure-subscription-is-required-to-create-pre-configured-solutions-you-can-create-a-free-trial-account-in-just-a-couple-of-minutes"></a>Waarom wordt deze fout weer gegeven wanneer ik een Azure-abonnement heb? "Een Azure-abonnement is vereist voor het maken van vooraf geconfigureerde oplossingen. U kunt in slechts een paar minuten een gratis proef account maken. "
+### <a name="why-am-i-seeing-this-error-when-i-have-an-azure-subscription-an-azure-subscription-is-required-to-create-pre-configured-solutions-you-can-create-a-free-trial-account-in-just-a-couple-of-minutes"></a>Waarom krijg ik deze foutmelding wanneer ik een Azure-abonnement heb? 'Er is een Azure-abonnement vereist om vooraf geconfigureerde oplossingen te maken. U kunt binnen een paar minuten een gratis proefaccount maken.
 
-Als u zeker weet dat u een Azure-abonnement hebt, valideert u de Tenant toewijzing voor uw abonnement en controleert u of de juiste Tenant is geselecteerd in de vervolg keuzelijst. Als u de Tenant juist hebt gevalideerd, volgt u het voor gaande diagram en valideert u de toewijzing van uw abonnement en deze Azure AD-Tenant.
+Als u zeker weet dat u een Azure-abonnement hebt, valideert u de tenanttoewijzing voor uw abonnement en controleert u of de juiste tenant is geselecteerd in de vervolgkeuzekeuze. Als u hebt gevalideerd dat de tenant juist is, volgt u het voorgaande diagram en valideert u de toewijzing van uw abonnement en deze Azure AD-tenant.
 
-### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>Wat is het verschil tussen het verwijderen van een resource groep in de Azure Portal en het klikken op verwijderen in een oplossings versneller in azureiotsolutions.com?
+### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>Wat is het verschil tussen het verwijderen van een resourcegroep in de Azure Portal en klikken op Verwijderen op een oplossingsversneller in azureiotsolutions.com?
 
-* Als u de oplossings versneller in [azureiotsolutions.com](https://www.azureiotsolutions.com/)verwijdert, verwijdert u alle resources die zijn geïmplementeerd tijdens het maken van de oplossings versneller. Als u extra resources aan de resource groep hebt toegevoegd, worden deze resources ook verwijderd.
-* Als u de resource groep in de [Azure Portal](https://portal.azure.com)verwijdert, verwijdert u alleen de resources in die resource groep. U moet ook de Azure Active Directory toepassing verwijderen die aan de oplossings versneller is gekoppeld.
+* Als u de oplossingsversneller in [azureiotsolutions.com](https://www.azureiotsolutions.com/)verwijdert, verwijdert u alle resources die zijn geïmplementeerd toen u de oplossingsversneller maakte. Als u extra resources aan de resourcegroep hebt toegevoegd, worden deze resources ook verwijderd.
+* Als u de resourcegroep in de Azure Portal [verwijdert,](https://portal.azure.com)verwijdert u alleen de resources in die resourcegroep. U moet ook de toepassing Azure Active Directory de oplossingsversneller verwijderen.
 
-### <a name="can-i-continue-to-leverage-my-existing-investments-in-azure-iot-solution-accelerators"></a>Kan ik mijn bestaande investeringen in azure IoT-oplossings Accelerators blijven gebruiken?
+### <a name="can-i-continue-to-leverage-my-existing-investments-in-azure-iot-solution-accelerators"></a>Kan ik mijn bestaande investeringen in mijn Azure IoT-oplossingsversnellers?
 
-Ja. Alle oplossingen die nu bestaan, blijven werken in uw Azure-abonnement en de bron code blijft beschikbaar in GitHub.
+Ja. Elke oplossing die tegenwoordig bestaat, blijft werken in uw Azure-abonnement en de broncode blijft beschikbaar in GitHub.
 
-### <a name="how-many-iot-hub-instances-can-i-provision-in-a-subscription"></a>Hoeveel IoT Hub exemplaren kan ik inrichten in een abonnement?
+### <a name="how-many-iot-hub-instances-can-i-provision-in-a-subscription"></a>Hoeveel IoT Hub kan ik inrichten in een abonnement?
 
-U kunt standaard [10 IOT-hubs inrichten per abonnement](../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-limits). U kunt een [ondersteunings ticket voor Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) maken om deze limiet te verhogen. Omdat elke oplossings versneller een nieuw IoT Hub heeft, kunt u Maxi maal 10 oplossings Accelerators inrichten in een bepaald abonnement.
+Standaard kunt u [10 IoT-hubs per abonnement inrichten.](../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-limits) U kunt een ondersteuning voor Azure [maken om](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) deze limiet te verhogen. Als gevolg hiervan kunt u, omdat elke oplossingsversneller een nieuw IoT Hub, maximaal 10 oplossingsversnellers inrichten in een bepaald abonnement.
 
-### <a name="how-many-azure-cosmos-db-instances-can-i-provision-in-a-subscription"></a>Hoeveel Azure Cosmos DB exemplaren kan ik inrichten in een abonnement?
+### <a name="how-many-azure-cosmos-db-instances-can-i-provision-in-a-subscription"></a>Hoeveel Azure Cosmos DB kan ik inrichten in een abonnement?
 
-50. U kunt een [ondersteunings ticket voor Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) maken om deze limiet te verhogen, maar standaard kunt u maxi maal 50 exemplaren van Cosmos DB per abonnement inrichten.
+Vijftig. U kunt een [ondersteuning voor Azure maken om](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) deze limiet te verhogen, maar standaard kunt u slechts 50 Cosmos DB per abonnement inrichten.
 
-### <a name="can-i-create-a-solution-accelerator-if-i-have-microsoft-azure-for-dreamspark"></a>Kan ik een oplossings versneller maken als ik Microsoft Azure heb voor DreamSpark?
+### <a name="can-i-create-a-solution-accelerator-if-i-have-microsoft-azure-for-dreamspark"></a>Kan ik een oplossingsversneller maken als ik Microsoft Azure voor DreamSpark?
 
 > [!NOTE]
-> Microsoft Azure voor DreamSpark is nu bekend als Microsoft Imagine voor studenten.
+> Microsoft Azure voor DreamSpark staat nu bekend als Microsoft Imagine voor studenten.
 
-Op dit moment kunt u geen oplossings versneller maken met een [Microsoft Azure voor DreamSpark](https://azure.microsoft.com/pricing/member-offers/imagine/) -account. U kunt echter in slechts een paar minuten een [gratis proef account voor Azure](https://azure.microsoft.com/free/) maken, waardoor u een oplossings versneller maakt.
+Op dit moment kunt u geen oplossingsversneller maken met [een Microsoft Azure voor het Account van DreamSpark.](https://azure.microsoft.com/pricing/member-offers/imagine/) U kunt echter in een paar minuten een gratis proefaccount voor [Azure](https://azure.microsoft.com/free/) maken waarmee u een oplossingsversneller kunt maken.
 
-### <a name="how-do-i-delete-an-azure-ad-tenant"></a>Hoe kan ik een Azure AD-Tenant verwijderen?
+### <a name="how-do-i-delete-an-azure-ad-tenant"></a>Hoe kan ik Azure AD-tenant verwijderen?
 
-Zie het blog bericht over het [verwijderen van een Azure AD-Tenant met](/archive/blogs/ericgolpe/walkthrough-of-deleting-an-azure-ad-tenant)de bespreking van het weblog boek van Eric golpe.
+Zie de blogpost van Eric Golpe [Walkthrough of Deleting an Azure AD Tenant](/archive/blogs/ericgolpe/walkthrough-of-deleting-an-azure-ad-tenant)(Overzicht van het verwijderen van een Azure AD-tenant).
 
 ### <a name="next-steps"></a>Volgende stappen
 
 U kunt ook enkele van de andere functies en mogelijkheden van de IoT-oplossingsversnellers bekijken:
 
-* [Connected Factory Solution Accelerator implementeren](quickstart-connected-factory-deploy.md)
+* [Oplossingsversneller voor verbonden factory's implementeren](quickstart-connected-factory-deploy.md)
 * [Fundamentele IoT-beveiliging](../iot-fundamentals/iot-security-ground-up.md)

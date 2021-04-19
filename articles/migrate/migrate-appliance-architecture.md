@@ -1,72 +1,72 @@
 ---
 title: Azure Migrate-apparaatarchitectuur
-description: Biedt een overzicht van het Azure Migrate apparaat dat wordt gebruikt in Server detectie, evaluatie en migratie.
+description: Biedt een overzicht van het Azure Migrate dat wordt gebruikt voor serverdetectie, -evaluatie en -migratie.
 author: vineetvikram
 ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: f3a94576ef58eabf9d747c6e6c3a6372569d4cf1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 4fc71f3242cc5607acebc68b62c5c0565b8f8e56
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104785237"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107715006"
 ---
 # <a name="azure-migrate-appliance-architecture"></a>Azure Migrate-apparaatarchitectuur
 
-In dit artikel worden de architectuur en processen van de Azure Migrate-apparaten beschreven. Het Azure Migrate apparaat is een licht gewicht apparaat dat on-premises is geïmplementeerd, om servers te detecteren voor migratie naar Azure.
+In dit artikel worden de Azure Migrate en processen van apparaten beschreven. Het Azure Migrate is een lichtgewicht apparaat dat on-premises wordt geïmplementeerd om servers te ontdekken voor migratie naar Azure.
 
 ## <a name="deployment-scenarios"></a>Implementatiescenario's
 
-Het Azure Migrate apparaat wordt gebruikt in de volgende scenario's.
+Het Azure Migrate wordt gebruikt in de volgende scenario's.
 
-**Scenario** | **Hulpprogramma** | **Gebruikt om**
+**Scenario** | **Hulpprogramma** | **Wordt gebruikt om**
 --- | --- | ---
-**Detectie en evaluatie van servers die worden uitgevoerd in de VMware-omgeving** | Azure Migrate: detectie en evaluatie | Servers detecteren die in uw VMware-omgeving worden uitgevoerd<br/><br/> Voer de detectie van de geïnstalleerde software-inventarisatie, afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
-**Migratie van servers die in VMware-omgeving worden uitgevoerd zonder agent** | Azure Migrate: Server migratie | Ontdek servers die worden uitgevoerd in uw VMware-omgeving.<br/><br/> Servers repliceren zonder agents te installeren.
-**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: detectie en evaluatie | Detecteer servers die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
-**Detectie en evaluatie van fysieke of gevirtualiseerde on-premises servers** |  Azure Migrate: detectie en evaluatie |  Fysieke of gevirtualiseerde on-premises servers detecteren.<br/><br/> Verzamelen van meta gegevens voor de server configuratie en prestaties voor evaluaties.
+**Detectie en evaluatie van servers die worden uitgevoerd in een VMware-omgeving** | Azure Migrate: Detectie en evaluatie | Servers ontdekken die worden uitgevoerd in uw VMware-omgeving<br/><br/> Detectie van geïnstalleerde software-inventaris, afhankelijkheidsanalyse zonder agent en SQL Server exemplaren en databases.<br/><br/> Serverconfiguratie- en prestatiemetagegevens verzamelen voor evaluaties.
+**Migratie zonder agent van servers die worden uitgevoerd in een VMware-omgeving** | Azure Migrate:Servermigratie | Servers ontdekken die worden uitgevoerd in uw VMware-omgeving.<br/><br/> Repliceer servers zonder agents op deze servers te installeren.
+**Detectie en evaluatie van servers die worden uitgevoerd in de Hyper-V-omgeving** | Azure Migrate: Detectie en evaluatie | Servers ontdekken die worden uitgevoerd in uw Hyper-V-omgeving.<br/><br/> Serverconfiguratie- en prestatiemetagegevens verzamelen voor evaluaties.
+**Detectie en evaluatie van fysieke of gevirtualiseerde servers on-premises** |  Azure Migrate: Detectie en evaluatie |  Fysieke of gevirtualiseerde servers on-premises ontdekken.<br/><br/> Serverconfiguratie- en prestatiemetagegevens verzamelen voor evaluaties.
 
-## <a name="deployment-methods"></a>Implementatie methoden
+## <a name="deployment-methods"></a>Implementatiemethoden
 
-Het apparaat kan worden geïmplementeerd met een aantal methoden:
+Het apparaat kan op een aantal manieren worden geïmplementeerd:
 
-- Het apparaat kan worden geïmplementeerd met een sjabloon voor servers die worden uitgevoerd in de VMware-of Hyper-V-omgeving ([eicellen-sjabloon voor VMware](how-to-set-up-appliance-vmware.md) of [VHD voor hyper-v](how-to-set-up-appliance-hyper-v.md)).
-- Als u geen sjabloon wilt gebruiken, kunt u het apparaat voor de VMware-of Hyper-V-omgeving implementeren met behulp van een [Power shell-installatie script](deploy-appliance-script.md).
-- In Azure Government moet u het apparaat implementeren met behulp van een Power shell-installatie script. Raadpleeg [hier](deploy-appliance-script-government.md)de stappen voor de implementatie.
-- Voor fysieke of gevirtualiseerde servers, on-premises of een andere Cloud, implementeert u het apparaat altijd met behulp van een Power shell-installatie script. Raadpleeg [hier](how-to-set-up-appliance-physical.md)de stappen voor de implementatie.
-- Download koppelingen zijn beschikbaar in de onderstaande tabellen.
+- Het apparaat kan worden geïmplementeerd met behulp van een sjabloon voor servers die worden uitgevoerd in VMware- of Hyper-V-omgeving[(OVA-sjabloon voor VMware](how-to-set-up-appliance-vmware.md) of [VHD voor Hyper-V).](how-to-set-up-appliance-hyper-v.md)
+- Als u geen sjabloon wilt gebruiken, kunt u het apparaat implementeren voor de VMware- of Hyper-V-omgeving met behulp van een [PowerShell-installatiescript.](deploy-appliance-script.md)
+- In Azure Government moet u het apparaat implementeren met behulp van een PowerShell-installatiescript. Raadpleeg hier de [implementatiestappen.](deploy-appliance-script-government.md)
+- Voor fysieke of gevirtualiseerde servers on-premises of een andere cloud implementeert u het apparaat altijd met behulp van een PowerShell-installatiescript. Raadpleeg hier de [implementatiestappen.](how-to-set-up-appliance-physical.md)
+- Downloadkoppelingen zijn beschikbaar in de onderstaande tabellen.
 
-## <a name="appliance-services"></a>Toestel Services
+## <a name="appliance-services"></a>Apparaatservices
 
 Het apparaat heeft de volgende services:
 
-- Apparaatconfiguratie voor **Apparaatbeheer**: dit is een webtoepassing die kan worden geconfigureerd met bron Details om de detectie en evaluatie van servers te starten. 
-- **Detectie agent**: de agent verzamelt meta gegevens van de server configuratie die kunnen worden gebruikt voor het maken van on-premises evaluaties.
-- **Beoordelings agent**: de agent verzamelt meta gegevens van de server prestaties die kunnen worden gebruikt voor het maken van evaluaties op basis van prestaties.
-- **Service voor automatische updates**: de service houdt alle agents die op het apparaat worden uitgevoerd up-to-date. Het wordt automatisch elke 24 uur uitgevoerd.
-- **DRA-agent**: organiseert Server replicatie en coördineert de communicatie tussen gerepliceerde servers en Azure. Wordt alleen gebruikt wanneer servers naar Azure worden gerepliceerd met behulp van migratie zonder agent.
-- **Gateway**: verstuurt gerepliceerde gegevens naar Azure. Wordt alleen gebruikt wanneer servers naar Azure worden gerepliceerd met behulp van migratie zonder agent.
-- **SQL-detectie en-evaluatie agent**: Hiermee worden de configuratie-en prestatie gegevens van SQL Server instanties en data bases naar Azure verzonden.
+- **Apparaatconfiguratiebeheer:** dit is een webtoepassing die kan worden geconfigureerd met brongegevens om de detectie en evaluatie van servers te starten. 
+- **Detectieagent:** de agent verzamelt metagegevens van de serverconfiguratie die kunnen worden gebruikt om te maken als on-premises evaluaties.
+- **Evaluatieagent:** de agent verzamelt metagegevens van serverprestaties die kunnen worden gebruikt om evaluaties op basis van prestaties te maken.
+- **Service voor automatisch bijwerken:** de service zorgt ervoor dat alle agents op het apparaat up-to-date blijven. Deze wordt automatisch elke 24 uur uitgevoerd.
+- **DRA-agent:** orchestrateert serverreplicatie en coördineert de communicatie tussen gerepliceerde servers en Azure. Wordt alleen gebruikt bij het repliceren van servers naar Azure met behulp van migratie zonder agent.
+- **Gateway:** hiermee worden gerepliceerde gegevens naar Azure verzendt. Wordt alleen gebruikt bij het repliceren van servers naar Azure met behulp van migratie zonder agent.
+- **SQL-agent voor detectie en evaluatie:** verzendt de configuratie- en prestatiemetagegevens van SQL Server exemplaren en databases naar Azure.
 
 > [!Note]
-> De laatste drie services zijn alleen beschikbaar in het apparaat dat wordt gebruikt voor detectie en evaluatie van servers die in uw VMware-omgeving worden uitgevoerd.<br/> Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
+> De laatste drie services zijn alleen beschikbaar in het apparaat dat wordt gebruikt voor detectie en evaluatie van servers die worden uitgevoerd in uw VMware-omgeving.<br/> Detectie en evaluatie van SQL Server en databases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. Als u deze functie wilt proberen, gebruikt u [**deze koppeling**](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Als u al een project in Australië-oost hebt en u deze functie wilt proberen, zorgt u ervoor dat u aan deze [**vereisten**](how-to-discover-sql-existing-project.md) voldoet in de portal.
 
-## <a name="discovery-and-collection-process"></a>Detectie-en verzamelings proces
+## <a name="discovery-and-collection-process"></a>Detectie- en verzamelingsproces
 
 :::image type="content" source="./media/migrate-appliance-architecture/architecture1.png" alt-text="Architectuur van apparaat":::
 
-Het apparaat communiceert met de detectie bronnen met behulp van het volgende proces.
+Het apparaat communiceert met de detectiebronnen met behulp van het volgende proces.
 
 **Proces** | **VMware-apparaat** | **Hyper-V-apparaat** | **Fysiek apparaat**
 ---|---|---|---
-**Detectie starten** | Het apparaat communiceert standaard met de vCenter-Server op TCP-poort 443. Als de vCenter-Server op een andere poort luistert, kunt u deze configureren in het configuratie beheer van het apparaat. | Het apparaat communiceert met de Hyper-V-hosts op WinRM-poort 5985 (HTTP). | Het apparaat communiceert met Windows-servers via WinRM-poort 5985 (HTTP) met Linux-servers via poort 22 (TCP).
-**Meta gegevens voor configuratie en prestaties verzamelen** | Het apparaat verzamelt de meta gegevens van servers die worden uitgevoerd op vCenter Server met behulp van vSphere-Api's door verbinding te maken met poort 443 (standaard poort) of een andere poort vCenter Server luistert aan. | Het apparaat verzamelt de meta gegevens van servers die worden uitgevoerd op Hyper-V-hosts met behulp van een Common Information Model (CIM)-sessie met hosts op poort 5985.| Het apparaat verzamelt meta gegevens van Windows-servers met behulp van Common Information Model (CIM)-sessie met servers op poort 5985 en vanaf Linux-servers met behulp van SSH-connectiviteit op poort 22.
-**Detectie gegevens verzenden** | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: detectie en evaluatie en Azure Migrate: Server migratie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist). | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: detectie en evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).| Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: detectie en evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via ExpressRoute (micro soft-peering is vereist).
-**Frequentie van gegevens verzameling** | Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke 20 seconden verzameld en worden geaggregeerd om elke 10 minuten een gegevens punt naar Azure te verzenden. <br/><br/> Software-inventarisatie gegevens worden één keer per 12 uur verzonden naar Azure. <br/><br/> Afhankelijkheids gegevens zonder agent worden elke vijf minuten verzameld, geaggregeerd op het apparaat en elke 6 uur naar Azure verzonden. <br/><br/> De SQL Server configuratie gegevens worden elke 24 uur bijgewerkt en de prestatie gegevens worden elke 30 seconden vastgelegd.| Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke 30 seconden verzameld en worden geaggregeerd om om de 10 minuten een gegevens punt naar Azure te verzenden.|  Meta gegevens van de configuratie worden verzameld en verzonden om de 30 minuten. <br/><br/> Meta gegevens voor prestaties worden elke vijf minuten verzameld en worden geaggregeerd om elke 10 minuten een gegevens punt naar Azure te verzenden.
-**Evalueren en migreren** | U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: hulp programma voor detectie en evaluatie.<br/><br/>Daarnaast kunt u ook beginnen met het migreren van servers die worden uitgevoerd in uw VMware-omgeving met behulp van Azure Migrate: hulp programma voor server migratie om Server replicatie zonder agent te organiseren.| U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: hulp programma voor detectie en evaluatie. | U kunt evaluaties maken op basis van de meta gegevens die door het apparaat worden verzameld met behulp van Azure Migrate: hulp programma voor detectie en evaluatie.
+**Detectie starten** | Het apparaat communiceert standaard met de vCenter-server op TCP-poort 443. Als de vCenter-server op een andere poort luistert, kunt u deze configureren in configuration manager van het apparaat. | Het apparaat communiceert met de Hyper-V-hosts op WinRM-poort 5985 (HTTP). | Het apparaat communiceert met Windows-servers via WinRM-poort 5985 (HTTP) met Linux-servers via poort 22 (TCP).
+**Configuratie- en prestatiemetagegevens verzamelen** | Het apparaat verzamelt de metagegevens van servers die worden uitgevoerd op vCenter Server met behulp van vSphere-API's door verbinding te maken via poort 443 (standaardpoort) of een andere poort vCenter Server luistert. | Het apparaat verzamelt de metagegevens van servers die worden uitgevoerd op Hyper-V-hosts met behulp van een Common Information Model-sessie (CIM) met hosts op poort 5985.| Het apparaat verzamelt metagegevens van Windows-servers met behulp van Common Information Model -sessie (CIM) met servers op poort 5985 en van Linux-servers die gebruikmaken van SSH-connectiviteit op poort 22.
+**Detectiegegevens verzenden** | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Detectie en evaluatie en Azure Migrate: Servermigratie via SSL-poort 443.<br/><br/>  Het apparaat kan verbinding maken met Azure via internet of via persoonlijke ExpressRoute-peering of Microsoft-peeringcircuits. | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Detectie en evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via persoonlijke ExpressRoute-peering of Microsoft-peeringcircuits. | Het apparaat verzendt de verzamelde gegevens naar Azure Migrate: Detectie en evaluatie via SSL-poort 443.<br/><br/> Het apparaat kan verbinding maken met Azure via internet of via persoonlijke ExpressRoute-peering of Microsoft-peeringcircuits. 
+**Frequentie van gegevensverzameling** | Configuratiemetagegevens worden elke 30 minuten verzameld en verzonden. <br/><br/> Prestatiemetagegevens worden elke 20 seconden verzameld en worden geaggregeerd om elke 10 minuten een gegevenspunt naar Azure te verzenden. <br/><br/> Software-inventarisgegevens worden eenmaal per 12 uur naar Azure verzonden. <br/><br/> Afhankelijkheidsgegevens zonder agent worden elke vijf minuten verzameld, geaggregeerd op het apparaat en elke 6 uur naar Azure verzonden. <br/><br/> De SQL Server worden elke 24 uur bijgewerkt en de prestatiegegevens worden elke 30 seconden vastgelegd.| Configuratiemetagegevens worden elke 30 minuten verzameld en verzonden. <br/><br/> Prestatiemetagegevens worden elke 30 seconden verzameld en worden geaggregeerd om elke 10 minuten een gegevenspunt naar Azure te verzenden.|  Configuratiemetagegevens worden elke 30 minuten verzameld en verzonden. <br/><br/> Prestatiemetagegevens worden elke 5 minuten verzameld en worden geaggregeerd om elke 10 minuten een gegevenspunt naar Azure te verzenden.
+**Evalueren en migreren** | U kunt evaluaties maken op basis van de metagegevens die door het apparaat zijn verzameld met behulp Azure Migrate: Hulpprogramma voor detectie en evaluatie.<br/><br/>Daarnaast kunt u ook beginnen met het migreren van servers die worden uitgevoerd in uw VMware-omgeving met behulp van Azure Migrate: Hulpprogramma voor servermigratie om replicatie van servers zonder agent te beheren.| U kunt evaluaties maken op basis van de metagegevens die door het apparaat zijn verzameld met behulp Azure Migrate: Hulpprogramma voor detectie en evaluatie. | U kunt evaluaties maken op basis van de metagegevens die door het apparaat zijn verzameld met behulp Azure Migrate: Detectie- en evaluatieprogramma.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Raadpleeg](migrate-appliance.md) de ondersteunings matrix voor het onderhanden toestel.
+[Controleer de](migrate-appliance.md) ondersteuningsmatrix voor het apparaat.

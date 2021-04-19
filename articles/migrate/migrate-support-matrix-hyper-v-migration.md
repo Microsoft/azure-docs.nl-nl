@@ -6,32 +6,32 @@ ms.author: bsiva
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 04/15/2020
-ms.openlocfilehash: 90da16789344754c02d46022160db71ee261a056
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 33e34e777a78e1c609d2eacdcb501c0bce1f5c9d
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96754059"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714916"
 ---
-# <a name="support-matrix-for-hyper-v-migration"></a>Ondersteunings matrix voor Hyper-V-migratie
+# <a name="support-matrix-for-hyper-v-migration"></a>Ondersteuningsmatrix voor Hyper-V-migratie
 
-In dit artikel vindt u een overzicht van de ondersteunings instellingen en beperkingen voor het migreren van virtuele Hyper-V-machines met [Azure migrate: Server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) . Als u op zoek bent naar informatie over het evalueren van Hyper-V-Vm's voor migratie naar Azure, raadpleegt u de [ondersteunings matrix voor evaluatie](migrate-support-matrix-hyper-v.md).
+In dit artikel worden de ondersteuningsinstellingen en beperkingen voor het migreren van Hyper-V-VM's met [Azure Migrate: Server Migration samengevat.](migrate-services-overview.md#azure-migrate-server-migration-tool) Als u op zoek bent naar informatie over het evalueren van Hyper-V-VM's voor migratie naar Azure, bekijkt u de [matrix voor ondersteuning van evaluaties.](migrate-support-matrix-hyper-v.md)
 
 ## <a name="migration-limitations"></a>Migratiebeperkingen
 
-U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie. Als u meer computers wilt migreren, repliceert u in groepen van 10.
+U kunt maximaal 10 VM's tegelijk selecteren voor replicatie. Als u meer machines wilt migreren, repliceert u in groepen van 10.
 
 
-## <a name="hyper-v-host-requirements"></a>Vereisten voor de Hyper-V-host
+## <a name="hyper-v-host-requirements"></a>Vereisten voor Hyper-V-host
 
 | **Ondersteuning**                | **Details**               
 | :-------------------       | :------------------- |
-| **Implementatie**       | De Hyper-V-host kan zelfstandig of in een cluster worden geïmplementeerd. <br/>Azure Migrate replicatie software (Hyper-V-replicatie provider) is geïnstalleerd op de Hyper-V-hosts.|
-| **Machtigingen**           | U hebt beheerders machtigingen nodig op de Hyper-V-host. |
-| **Host het besturingssysteem** | Windows Server 2019, Windows Server 2016 of Windows Server 2012 R2 met de nieuwste updates. Houd er rekening mee dat Server Core-installatie van deze besturings systemen ook wordt ondersteund. |
-| **Andere software vereisten** | .NET Framework 4,7 of hoger |
-| **Poort toegang** |  Uitgaande verbindingen op HTTPS-poort 443 voor het verzenden van VM-replicatie gegevens.
-| **Vrije schijf ruimte (cache)** |  600 GB |
+| **Implementatie**       | De Hyper-V-host kan zelfstandig zijn of worden geïmplementeerd in een cluster. <br/>Azure Migrate replicatiesoftware (Hyper-V-replicatieprovider) is geïnstalleerd op de Hyper-V-hosts.|
+| **Machtigingen**           | U hebt beheerdersmachtigingen nodig op de Hyper-V-host. |
+| **Host het besturingssysteem** | Windows Server 2019, Windows Server 2016 of Windows Server 2012 R2 met de meest recente updates. Houd er rekening mee dat serverkerninstallatie van deze besturingssystemen ook wordt ondersteund. |
+| **Overige softwarevereisten** | .NET Framework 4.7 of hoger |
+| **Poorttoegang** |  Uitgaande verbindingen op HTTPS-poort 443 voor het verzenden van VM-replicatiegegevens.
+| **Vrije schijfruimte (cache)** |  600 GB |
 | **Vrije schijfruimte (bewaarschijf)** |  600 GB |
 
 
@@ -39,70 +39,76 @@ U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie. Als u meer compute
 
 | **Ondersteuning**                  | **Details**               
 | :----------------------------- | :------------------- |
-| **Besturingssysteem** | Alle [Windows](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) -en [Linux](../virtual-machines/linux/endorsed-distros.md) -besturings systemen die worden ondersteund door Azure. |
-**Windows Server 2003** | Voor virtuele machines met Windows Server 2003 moet u [Hyper-V-integratie Services installeren](prepare-windows-server-2003-migration.md) voordat u de migratie uitvoert. | 
-**Virtuele Linux-machines in azure** | Voor sommige Vm's zijn mogelijk wijzigingen vereist zodat ze kunnen worden uitgevoerd in Azure.<br/><br/> Voor Linux worden de wijzigingen automatisch door Azure Migrate voor deze besturings systemen aangebracht:<br/> -Red Hat Enterprise Linux 7,8, 7,7, 7,6, 7,5, 7,4, 7,0, 6. x<br/> -Cent OS 7,7, 7,6, 7,5, 7,4, 6. x</br> -SUSE Linux Enterprise Server 12 SP1 +<br/> -SUSE Linux Enterprise Server 15 SP1 <br/>-Ubuntu 19,04, 19,10, 14.04 LTS, 16.04 LTS, 18.04 LTS<br/> -Debian 7, 8 <br/> Oracle Linux 7.7, 7.7CI<br/> Voor andere besturings systemen voert u de [vereiste wijzigingen](prepare-for-migration.md#verify-required-changes-before-migrating) hand matig uit.
-| **Vereiste wijzigingen voor Azure** | Voor sommige Vm's zijn mogelijk wijzigingen vereist zodat ze kunnen worden uitgevoerd in Azure. Pas aanpassingen hand matig aan voordat u de migratie uitvoert. De relevante artikelen bevatten instructies over hoe u dit doet. |
-| **Linux-opstart**                 | Als/boot zich op een toegewezen partitie bevindt, moet deze zich op de besturingssysteem schijf bevinden en niet over meerdere schijven worden verspreid.<br/> Als/boot deel uitmaakt van de hoofd partitie (/), moet de partitie '/' zich op de besturingssysteem schijf bevindt en niet over andere schijven beschikken. |
-| **UEFI-opstart**                  | Ondersteund. Vm's op basis van UEFI worden gemigreerd naar virtuele machines van Azure Generation 2.  |
-| **UEFI-beveiligd opstarten**         | Niet ondersteund voor migratie.|
-| **Schijf grootte**                  | 2 TB voor de besturingssysteem schijf (BIOS-opstart), 4 TB voor de besturingssysteem schijf (UEFI-opstart), 4 TB voor de gegevens schijven.|
-| **Schijf nummer** | Maxi maal 16 schijven per VM.|
+| **Besturingssysteem** | Alle [Windows-](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) [en Linux-besturingssystemen](../virtual-machines/linux/endorsed-distros.md) die worden ondersteund door Azure. |
+**Windows Server 2003** | Voor VM's met Windows Server 2003 moet u [Hyper-V Integration Services installeren](prepare-windows-server-2003-migration.md) vóór de migratie. | 
+**Linux-VM's in Azure** | Voor sommige VM's zijn mogelijk wijzigingen vereist, zodat ze kunnen worden uitgevoerd in Azure.<br/><br/> Voor Linux worden Azure Migrate wijzigingen automatisch aangebracht voor deze besturingssystemen:<br/> - Red Hat Enterprise Linux 7.8, 7.7, 7.6, 7.5, 7.4, 7.0, 6.x<br/> - Cent OS 7.7, 7.6, 7.5, 7.4, 6.x</br> - SUSE Linux Enterprise Server 12 SP1+<br/> - SUSE Linux Enterprise Server 15 SP1 <br/>- Ubuntu 19.04, 19.10, 14.04LTS, 16.04LTS, 18.04LTS<br/> - Debian 7, 8 <br/> Oracle Linux 7.7, 7.7CI<br/> Voor andere besturingssystemen moet u de [vereiste wijzigingen](prepare-for-migration.md#verify-required-changes-before-migrating) handmatig aanbrengen.
+| **Vereiste wijzigingen voor Azure** | Voor sommige VM's zijn mogelijk wijzigingen vereist, zodat ze kunnen worden uitgevoerd in Azure. Maak handmatig wijzigingen aan vóór de migratie. De relevante artikelen bevatten instructies over hoe u dit doet. |
+| **Linux opstarten**                 | Als /boot zich op een toegewezen partitie bevindt, moet deze zich op de besturingssysteemschijf bevinden en niet worden verdeeld over meerdere schijven.<br/> Als /boot deel uitmaakt van de hoofdpartitie (/), moet de partitie '/' zich op de besturingssysteemschijf en geen andere schijven omspannen. |
+| **UEFI opstarten**                  | Ondersteund. UEFI-VM's worden gemigreerd naar azure-VM's van de tweede generatie.  |
+| **UEFI - Beveiligd opstarten**         | Niet ondersteund voor migratie.|
+| **Schijfgrootte**                  | 2 TB voor de besturingssysteemschijf (BIOS-opstart), 4 TB voor de besturingssysteemschijf (UEFI opstarten), 4 TB voor de gegevensschijven.|
+| **Schijfnummer** | Maximaal 16 schijven per VM.|
 | **Versleutelde schijven/volumes**    | Niet ondersteund voor migratie.|
-| **RDM/passthrough-schijven**      | Niet ondersteund voor migratie.|
-| **Gedeelde schijf** | Vm's die gebruikmaken van gedeelde schijven, worden niet ondersteund voor migratie.|
-| **NFS**                        | NFS-volumes die zijn gekoppeld als volumes op de Vm's, worden niet gerepliceerd.|
-| **SCSI**                      | Vm's met iSCSI-doelen worden niet ondersteund voor migratie.
-| **Doel schijf**                | U kunt alleen migreren naar Azure-Vm's met Managed disks. |
+| **RDM-/passthrough-schijven**      | Niet ondersteund voor migratie.|
+| **Gedeelde schijf** | VM's die gedeelde schijven gebruiken, worden niet ondersteund voor migratie.|
+| **NFS**                        | NFS-volumes die als volumes op de VM's zijn bevestigd, worden niet gerepliceerd.|
+| **Iscsi**                      | VM's met iSCSI-doelen worden niet ondersteund voor migratie.
+| **Doelschijf**                | U kunt alleen met beheerde schijven migreren naar Azure-VM's. |
 | **IPv6** | Wordt niet ondersteund.|
-| **NIC-koppeling** | Wordt niet ondersteund.|
-| **Azure Site Recovery** | U kunt niet repliceren met Azure Migrate server migratie als de virtuele machine is ingeschakeld voor replicatie met Azure Site Recovery.|
-| **Poorten** | Uitgaande verbindingen op HTTPS-poort 443 voor het verzenden van VM-replicatie gegevens.|
+| **NIC-teams** | Wordt niet ondersteund.|
+| **Azure Site Recovery** | U kunt niet repliceren met Azure Migrate Server Migration als de VM is ingeschakeld voor replicatie met Azure Site Recovery.|
+| **Poorten** | Uitgaande verbindingen op HTTPS-poort 443 voor het verzenden van VM-replicatiegegevens.|
 
-### <a name="url-access-public-cloud"></a>URL-toegang (open bare Cloud)
+### <a name="url-access-public-cloud"></a>URL-toegang (openbare cloud)
 
-De replicatie provider software op de Hyper-V-hosts heeft toegang tot deze Url's nodig.
+De software van de replicatieprovider op de Hyper-V-hosts heeft toegang tot deze URL's nodig.
 
 **URL** | **Details**
 --- | ---
-login.microsoftonline.com | Toegangs beheer en identiteits beheer met behulp van Active Directory.
-backup.windowsazure.com | Replicatie gegevens overdragen en coördinatie.
-*.hypervrecoverymanager.windowsazure.com | Gebruikt voor replicatie beheer.
-*.blob.core.windows.net | Gegevens uploaden naar opslag accounts. 
-dc.services.visualstudio.com | App-logboeken uploaden die worden gebruikt voor interne bewaking.
-time.windows.com | Hiermee wordt de tijd synchronisatie tussen systeem en Global time gecontroleerd.
+login.microsoftonline.com | Toegangsbeheer en identiteitsbeheer met Active Directory.
+backup.windowsazure.com | Overdracht en coördinatie van replicatiegegevens.
+*.hypervrecoverymanager.windowsazure.com | Wordt gebruikt voor replicatiebeheer.
+*.blob.core.windows.net | Gegevens uploaden naar opslagaccounts. 
+dc.services.visualstudio.com | Upload app-logboeken die worden gebruikt voor interne bewaking.
+time.windows.com | Controleert de tijdsynchronisatie tussen systeemtijd en globale tijd.
 
 ### <a name="url-access-azure-government"></a>URL-toegang (Azure Government)
 
-De replicatie provider software op de Hyper-V-hosts heeft toegang tot deze Url's nodig.
+De software van de replicatieprovider op de Hyper-V-hosts heeft toegang tot deze URL's nodig.
 
 **URL** | **Details**
 --- | ---
-login.microsoftonline.us | Toegangs beheer en identiteits beheer met behulp van Active Directory.
-backup.windowsazure.us | Replicatie gegevens overdragen en coördinatie.
-*. hypervrecoverymanager.windowsazure.us | Gebruikt voor replicatie beheer.
-*. blob.core.usgovcloudapi.net | Gegevens uploaden naar opslag accounts.
-dc.services.visualstudio.com | App-logboeken uploaden die worden gebruikt voor interne bewaking.
-time.nist.gov | Hiermee wordt de tijd synchronisatie tussen systeem en Global time gecontroleerd.
+login.microsoftonline.us | Toegangsbeheer en identiteitsbeheer met Active Directory.
+backup.windowsazure.us | Overdracht en coördinatie van replicatiegegevens.
+*.hypervrecoverymanager.windowsazure.us | Wordt gebruikt voor replicatiebeheer.
+*.blob.core.usgovcloudapi.net | Gegevens uploaden naar opslagaccounts.
+dc.services.visualstudio.com | Upload app-logboeken die worden gebruikt voor interne bewaking.
+time.nist.gov | Controleert de tijdsynchronisatie tussen systeemtijd en globale tijd.   
+
+>[!Note]
+>
+> Als u een project migreert met een privé-eindpuntverbinding, heeft de replicatieprovidersoftware op de Hyper-V-hosts toegang nodig tot deze URL's voor ondersteuning van private link. 
+> - *.blob.core.windows.com: voor toegang tot het opslagaccount waar gerepliceerde gegevens worden opgeslagen. Dit is optioneel en is niet vereist als aan het opslagaccount een privé-eindpunt is gekoppeld. 
+> - login.windows.net voor toegangsbeheer en identiteitsbeheer met Active Directory.
 
 ## <a name="azure-vm-requirements"></a>Vereisten voor Azure-VM's
 
-Alle on-premises Vm's die naar Azure worden gerepliceerd, moeten voldoen aan de vereisten voor de Azure-VM die in deze tabel worden samenvatten.
+Alle on-premises VM's die naar Azure worden gerepliceerd, moeten voldoen aan de Azure VM-vereisten die in deze tabel worden samengevat.
 
 **Onderdeel** | **Vereisten** | **Details**
 --- | --- | ---
-Grootte van de besturingssysteemschijf | Maxi maal 2.048 GB. | De controle is mislukt als dit niet wordt ondersteund.
-Aantal besturingssysteemschijven | 1 | De controle is mislukt als dit niet wordt ondersteund.
-Aantal gegevensschijven | 16 of minder. | De controle is mislukt als dit niet wordt ondersteund.
-Grootte van de gegevens schijf | Maxi maal 4.095 GB | De controle is mislukt als dit niet wordt ondersteund.
-Netwerkadapters | Meerdere adapters worden ondersteund. |
-Gedeelde VHD | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
-FC-schijf | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
-BitLocker | Wordt niet ondersteund. | BitLocker moet worden uitgeschakeld voordat u replicatie voor een machine inschakelt.
-VM-naam | Van 1 tot 63 tekens.<br/> Alleen letters, cijfers en afbreekstreepjes.<br/><br/> De naam van de computer moet beginnen en eindigen met een letter of cijfer. |  Werk de waarde in de computer eigenschappen in Site Recovery bij.
-Verbinding maken na migratie-Windows | Verbinding maken met virtuele Azure-machines na de migratie:<br/><br/> -Schakel voor de migratie RDP in op de on-premises VM. Zorg dat TCP- en UDP-regels zijn toegevoegd voor het profiel **Openbaar** en dat RDP is toegestaan in **Windows Firewall** > **Toegestane apps** voor alle profielen.<br/><br/> -Voor site-naar-site-VPN-toegang schakelt u RDP in en staat u RDP toe in **Windows Firewall**  ->  **toegestane apps en functies** voor **domein-en particuliere** netwerken. Controleer bovendien of het SAN-beleid van het besturings systeem is ingesteld op **OnlineAll**. [Meer informatie](prepare-for-migration.md). |
-Verbinding maken na migratie-Linux | Verbinding maken met virtuele Azure-machines na de migratie met SSH:<br/><br/> -Voordat de migratie op de on-premises computer, controleert u of de Secure shell-service is ingesteld op Start en of de firewall regels een SSH-verbinding toestaan.<br/><br/> -Na de migratie kunt u op de virtuele machine van Azure binnenkomende verbindingen met de SSH-poort toestaan voor de regels voor de netwerk beveiligings groep op de virtuele machine waarvoor een failover is uitgevoerd en voor het Azure-subnet waarmee deze is verbonden. Voeg bovendien een openbaar IP-adres voor de virtuele machine toe. |  
+Grootte van de besturingssysteemschijf | Maximaal 2048 GB. | Controleren mislukt als dit niet wordt ondersteund.
+Aantal besturingssysteemschijven | 1 | Controleren mislukt als dit niet wordt ondersteund.
+Aantal gegevensschijven | 16 of minder. | Controleren mislukt als dit niet wordt ondersteund.
+Grootte van gegevensschijf | Maximaal 4095 GB | Controleren mislukt als dit niet wordt ondersteund.
+Netwerkadapters | Er worden meerdere adapters ondersteund. |
+Gedeelde VHD | Wordt niet ondersteund. | Controleer mislukt als dit niet wordt ondersteund.
+FC-schijf | Wordt niet ondersteund. | Controleer mislukt als dit niet wordt ondersteund.
+BitLocker | Wordt niet ondersteund. | BitLocker moet worden uitgeschakeld voordat u replicatie voor een machine inschakelen.
+VM-naam | Van 1 tot 63 tekens.<br/> Alleen letters, cijfers en afbreekstreepjes.<br/><br/> De computernaam moet beginnen en eindigen met een letter of cijfer. |  Werk de waarde in de computereigenschappen in Site Recovery.
+Verbinding maken na migratie-Windows | Verbinding maken met Azure-VM's met Windows na de migratie:<br/><br/> - Schakel Vóór de migratie RDP in op de on-premises VM. Zorg dat TCP- en UDP-regels zijn toegevoegd voor het profiel **Openbaar** en dat RDP is toegestaan in **Windows Firewall** > **Toegestane apps** voor alle profielen.<br/><br/> - Voor site-naar-site-VPN-toegang moet u RDP inschakelen en RDP toestaan in **toegestane Windows Firewall-apps** en -functies  ->   voor **domein- en privénetwerken.** Controleer bovendien of het SAN-beleid van het besturingssysteem is ingesteld **op OnlineAll.** [Meer informatie](prepare-for-migration.md). |
+Verbinding maken na migratie -Linux | Verbinding maken met azure-VM's na de migratie met behulp van SSH:<br/><br/> - Controleer vóór de migratie op de on-premises computer of de Secure Shell-service is ingesteld op Start en of firewallregels een SSH-verbinding toestaan.<br/><br/> - Sta na de migratie op de Azure-VM binnenkomende verbindingen toe naar de SSH-poort voor de netwerkbeveiligingsgroepsregels op de virtuele machine waarvoor een failed over is uitgevoerd en voor het Azure-subnet waarmee deze is verbonden. Voeg daarnaast een openbaar IP-adres toe voor de VM. |  
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Virtuele Hyper-V-machines migreren](tutorial-migrate-hyper-v.md) voor migratie.
+[Hyper-V-VM's migreren](tutorial-migrate-hyper-v.md) voor migratie.

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 142d78cf8b787e04704d26bca0c650944052fd7f
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: 0396c028c8c0e1a18baf037fed4efc21aad944f1
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107588969"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107715096"
 ---
 # <a name="quickstart-add-a-simulated-device-to-your-iot-central-application"></a>Quickstart: Een gesimuleerd apparaat toevoegen aan uw IoT Central-toepassing
 
@@ -81,7 +81,7 @@ Een apparaatsjabloon kan cloudeigenschappen bevatten. Cloudeigenschappen bestaan
 
 ## <a name="views"></a>Weergaven
 
-U kunt de toepassing aanpassen om relevante informatie over het apparaat weer te geven. Met aanpassingen kunt u andere apparaten beheren die zijn verbonden met de toepassing. U kunt twee typen weergaven maken om te communiceren met apparaten:
+U kunt de toepassing aanpassen om relevante informatie over het apparaat weer te geven. Aanpassingen maken andere mogelijkheden mogelijk om de apparaten te beheren die zijn verbonden met de toepassing. U kunt twee typen weergaven maken om te communiceren met apparaten:
 
 * Formulieren voor het weergeven en bewerken van apparaat- en cloudeigenschappen.
 * Dashboards om apparaten en de telemetrie die ze verzenden te visualiseren.
@@ -94,7 +94,7 @@ Standaardweergaven zijn een snelle manier om aan de slag te gaan met het visuali
 * In de weergave **Overzicht** worden grafieken en metrische gegevens gebruikt om apparaattelemetrie weer te geven.
 * In de weergave **Info** worden apparaateigenschappen weergegeven.
 
-Selecteer het knooppunt **Weergaven** in de apparaatsjabloon. U ziet dat IoT Central een **Overzicht**- en **Info**-weergave heeft gemaakt toen u de sjabloon hebt toegevoegd.
+Selecteer het knooppunt **Weergaven** in de apparaatsjabloon. U kunt zien dat IoT Central een overzicht **hebt** gegenereerd, een **weergave Over** en een weergave Onbewerkte gegevens voor u hebt gegenereerd toen u de sjabloon hebt toegevoegd. 
 
 Een nieuw formulier toevoegen om het apparaat te beheren:
 
@@ -120,7 +120,7 @@ Een apparaatsjabloon publiceren:
 
 1. Selecteer Publiceren in het dialoogvenster dat wordt **weergegeven.**
 
-Nadat u een apparaatsjabloon hebt gepubliceerd, wordt deze weergegeven op de pagina **Apparaten**. U kunt in een gepubliceerde apparaatsjabloon geen apparaatmodel bewerken zonder een nieuwe versie te maken. U kunt wel de cloudeigenschappen, aanpassingen en weergaven in een gepubliceerde apparaatsjabloon wijzigen zonder een nieuwe versie te maken. Nadat u wijzigingen heeft aangebracht, selecteert **u Publiceren**  om deze wijzigingen te pushen voor echte en gesimuleerde apparaten die moeten worden gebruikt.
+Nadat u een apparaatsjabloon hebt gepubliceerd, wordt deze weergegeven op de pagina **Apparaten**. U kunt in een gepubliceerde apparaatsjabloon geen apparaatmodel bewerken zonder een nieuwe versie te maken. U kunt wel de cloudeigenschappen, aanpassingen en weergaven in een gepubliceerde apparaatsjabloon wijzigen zonder een nieuwe versie te maken. Nadat u wijzigingen heeft aangebracht, selecteert **u Publiceren om**  deze wijzigingen te pushen voor echte en gesimuleerde apparaten die moeten worden gebruikt.
 
 ## <a name="add-a-simulated-device"></a>Een gesimuleerd apparaat toevoegen
 
@@ -132,7 +132,7 @@ Als u een gesimuleerd apparaat wilt toevoegen aan uw toepassing, gebruikt u de *
 
     :::image type="content" source="media/quick-create-simulated-device/simulated-device.png" alt-text="Schermopname met het gesimuleerde Sensorcontroller-apparaat":::
 
-U kunt nu communiceren met de weergaven die eerder zijn gemaakt met behulp van gesimuleerde gegevens:
+U kunt nu communiceren met de weergaven die u eerder hebt gemaakt met behulp van gesimuleerde gegevens:
 
 1. Selecteer uw gesimuleerde apparaat op de pagina **Apparaten**
 

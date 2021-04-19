@@ -1,29 +1,29 @@
 ---
-title: Aangepaste e-mail verificatie met Mailjet
+title: Aangepaste e-mailverificatie met Mail daily
 titleSuffix: Azure AD B2C
-description: Leer hoe u kunt integreren met Mailjet om de verificatie-e-mail die naar uw klanten wordt verzonden, aan te passen wanneer deze zich aanmeldt om uw Azure AD B2C-toepassingen te gebruiken.
+description: Leer hoe u kunt integreren met Mailcart om de verificatie-e-mail aan te passen die naar uw klanten wordt verzonden wanneer ze zich registreren om uw Azure AD B2C toepassingen te gebruiken.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/09/2021
+ms.date: 04/16/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a40f3286b4e832f5c73e650859fa9a1d4fe4b6cb
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: f48135523238711eb9058b35348895c851a95403
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107256953"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107713818"
 ---
-# <a name="custom-email-verification-with-mailjet"></a>Aangepaste e-mail verificatie met Mailjet
+# <a name="custom-email-verification-with-mailjet"></a>Aangepaste e-mailverificatie met Mail daily
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
-Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangepaste e-mail te verzenden naar gebruikers die zich registreren voor het gebruik van uw toepassingen. Met behulp van de e-mail provider Mailjet van derden kunt u uw eigen e-mail sjabloon gebruiken, *van:* adres en onderwerp, evenals ondersteuning voor lokalisatie en aangepaste otp-instellingen (one-time password).
+Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangepaste e-mail te verzenden naar gebruikers die zich registreren om uw toepassingen te gebruiken. Met behulp van de e-mailprovider Van derden kunt u uw eigen e-mailsjabloon en *Van:* adres en onderwerp gebruiken, evenals ondersteuning voor lokalisatie en aangepaste OTP-instellingen (one-time password).
 
 ::: zone pivot="b2c-user-flow"
 
@@ -33,47 +33,51 @@ Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangep
 
 ::: zone pivot="b2c-custom-policy"
 
-Voor aangepaste e-mail verificatie is het gebruik van een e-mail provider van derden, zoals [Mailjet](https://Mailjet.com), [SendGrid](./custom-email-sendgrid.md)of [SparkPost](https://sparkpost.com), een aangepaste rest API, of een op http gebaseerde e-mail provider (inclusief uw eigen) vereist. In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van Mailjet.
+Voor aangepaste e-mailverificatie is het gebruik van een externe e-mailprovider vereist, zoals [Mailpart,](https://Mailjet.com) [SendGrid](./custom-email-sendgrid.md)of [SparkPost,](https://sparkpost.com)een aangepaste REST API of een http-gebaseerde e-mailprovider (inclusief uw eigen e-mailprovider). In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van Mailorder.
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
-## <a name="create-a-mailjet-account"></a>Een Mailjet-account maken
+## <a name="create-a-mailjet-account"></a>Een Mailorder-account maken
 
-Als u er nog geen hebt, moet u eerst een Mailjet-account instellen (Azure-klanten kunnen 6.000 e-mails ontgrendelen met een limiet van 200 e-mails per dag). 
+Als u er nog geen hebt, begint u met het instellen van een Mailplatform-account (Azure-klanten kunnen 6000 e-mailberichten ontgrendelen met een limiet van 200 e-mails per dag). 
 
-1. Volg de instructies in de installatie van [een Mailjet-account maken](https://www.mailjet.com/guides/azure-mailjet-developer-resource-user-guide/enabling-mailjet/).
-1. Om e-mail berichten te kunnen verzenden, moet u het e-mail adres of domein van de afzender [registreren en valideren](https://www.mailjet.com/guides/azure-mailjet-developer-resource-user-guide/enabling-mailjet/#how-to-configure-mailjet-for-use) .
-2. Navigeer naar de [pagina API-sleutel beheer](https://app.mailjet.com/account/api_keys). Noteer de **API-sleutel** en de **geheime sleutel** voor gebruik in een latere stap. Beide sleutels worden automatisch gegenereerd wanneer uw account wordt gemaakt.  
+1. Volg de installatie-instructies in [Een Mail extra account maken.](https://www.mailjet.com/guides/azure-mailjet-developer-resource-user-guide/enabling-mailjet/)
+1. Als u e-mail wilt verzenden, [registreert en valideert](https://www.mailjet.com/guides/azure-mailjet-developer-resource-user-guide/enabling-mailjet/#how-to-configure-mailjet-for-use) u het e-mailadres of domein van de afzender.
+2. Navigeer naar de [pagina API-sleutelbeheer.](https://app.mailjet.com/account/api_keys) Neem de **API-sleutel en** **geheime sleutel op** voor gebruik in een latere stap. Beide sleutels worden automatisch gegenereerd wanneer uw account wordt gemaakt.  
 
-## <a name="create-azure-ad-b2c-policy-key"></a>Azure AD B2C-beleids sleutel maken
+> [!IMPORTANT]
+> Mailorder biedt klanten de mogelijkheid om e-mailberichten te verzenden vanaf gedeelde IP-adressen [en toegewezen IP-adressen.](https://documentation.mailjet.com/hc/articles/360043101973-What-is-a-dedicated-IP) Wanneer u toegewezen IP-adressen gebruikt, moet u uw eigen reputatie goed opbouwen met een opwarmer voor een IP-adres. Zie mijn [IP-adres Hoe kan ik voor meer informatie.](https://documentation.mailjet.com/hc/articles/1260803352789-How-do-I-warm-up-my-IP-)
 
-Sla vervolgens de Mailjet API-sleutel op in een Azure AD B2C-beleids sleutel voor uw beleids regels waarnaar moet worden verwezen.
+
+## <a name="create-azure-ad-b2c-policy-key"></a>Een Azure AD B2C maken
+
+Vervolgens moet u de sleutel van de Mail api opslaan in een Azure AD B2C-beleidssleutel waarnaar uw beleid moet verwijzen.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
+1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C tenant. Selecteer het **filter Map en abonnement** in het bovenste menu en kies uw Azure AD B2C map.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
-1. Selecteer op de pagina **overzicht** **identiteits ervaring-Framework**.
-1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
-1. Kies voor **Opties** de optie **hand matig**.
-1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `MailjetApiKey`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer in het **geheim** uw Mailjet- **API-sleutel** in die u eerder hebt vastgelegd.
-1. Selecteer voor **sleutel gebruik** **hand tekening**.
+1. Selecteer op **de** pagina Overzicht **de optie Identity Experience Framework**.
+1. Selecteer **Beleidssleutels** en selecteer vervolgens **Toevoegen.**
+1. Kies **handmatig** bij **Opties.**
+1. Voer een **naam in** voor de beleidssleutel. Bijvoorbeeld `MailjetApiKey`. Het `B2C_1A_` voorvoegsel wordt automatisch toegevoegd aan de naam van uw sleutel.
+1. Voer **bij Geheim** uw Mail api-sleutel in **die** u eerder hebt genoteerd.
+1. Bij **Sleutelgebruik selecteert** u **Handtekening**.
 1. Selecteer **Maken**.
-1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
-1. Kies voor **Opties** de optie **hand matig**.
-1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `MailjetSecretKey`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer in het **geheim** uw geheime Mailjet- **sleutel** in die u eerder hebt vastgelegd.
-1. Selecteer voor **sleutel gebruik** **hand tekening**.
+1. Selecteer **Beleidssleutels** en selecteer vervolgens **Toevoegen.**
+1. Kies **handmatig** bij **Opties.**
+1. Voer een **naam in** voor de beleidssleutel. Bijvoorbeeld `MailjetSecretKey`. Het `B2C_1A_` voorvoegsel wordt automatisch toegevoegd aan de naam van uw sleutel.
+1. Voer **bij Geheim** uw Geheime e-mailsleutel in **die** u eerder hebt genoteerd.
+1. Bij **Sleutelgebruik selecteert** u **Handtekening**.
 1. Selecteer **Maken**.
 
-## <a name="create-a-mailjet-template"></a>Een Mailjet-sjabloon maken
+## <a name="create-a-mailjet-template"></a>Een E-mailsjabloon maken
 
-Als er een Mailjet-account is gemaakt en de Mailjet-API-sleutel die is opgeslagen in een Azure AD B2C-beleids sleutel, maakt u een Mailjet- [sjabloon voor dynamische transactionele acties](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/).
+Maak een dynamische transactionele e-mailsjabloon met een e-mailaccount gemaakt en de Mail api-sleutel die is opgeslagen in een [Azure AD B2C-beleidssleutel.](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/)
 
-1. Open de pagina [transactionele sjablonen](https://app.mailjet.com/templates/transactional) op de site Mailjet en selecteer **een nieuwe sjabloon maken**.
-1. Selecteer **deze optie door deze te coderen in HTML** en vervolgens **code** te selecteren.
-1. Voer een unieke sjabloon naam in `Verification email` , zoals, en selecteer vervolgens **maken**.
-1. Plak in de HTML-editor de volgende HTML-sjabloon of gebruik uw eigen. De `{{var:otp:""}}` `{{var:email:""}}` para meters en worden dynamisch vervangen door de waarde voor eenmalig wacht woord en het e-mail adres van de gebruiker.
+1. Open de pagina transactionele [](https://app.mailjet.com/templates/transactional) sjablonen op de site Mailprinter en selecteer **Een nieuwe sjabloon maken.**
+1. Selecteer **Door het coderen in HTML** en selecteer vervolgens Code vanaf **nul.**
+1. Voer een unieke sjabloonnaam in, `Verification email` zoals , en selecteer vervolgens **Maken.**
+1. Plak in de HTML-editor de volgende HTML-sjabloon of gebruik uw eigen HTML-sjabloon. De parameters en worden dynamisch vervangen door de waarde van een een `{{var:otp:""}}` keer wachtwoord en het `{{var:email:""}}` e-mailadres van de gebruiker.
 
     ```HTML
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -169,20 +173,20 @@ Als er een Mailjet-account is gemaakt en de Mailjet-API-sleutel die is opgeslage
     </html>
     ```
 
-1. **Bewerkings onderwerp** aan de linkerkant uitbreiden
-    1. Voer bij **onderwerp** een standaard waarde in voor het onderwerp. Mailjet gebruikt deze waarde wanneer de API geen onderwerp-para meter bevat.
-    1. Typ de naam van uw bedrijf voor de **naam**.
-    1. Selecteer voor het **adres** uw e-mail adres
+1. Vouw **Onderwerp bewerken** aan de linkerkant uit
+    1. Voer **bij Onderwerp** een standaardwaarde in voor het onderwerp. Mail daily gebruikt deze waarde wanneer de API geen onderwerpparameter bevat.
+    1. Bij Naam **typt** u de naam van uw bedrijf.
+    1. Selecteer uw **e-mailadres** bij Adres
     1. Selecteer **Opslaan**.
-1. Selecteer in de rechter bovenhoek **opslaan & publiceren** en klik vervolgens op **Ja, wijzigingen publiceren**
-1. Noteer de **sjabloon-id** van de sjabloon die u hebt gemaakt voor gebruik in een latere stap. U geeft deze ID op wanneer u [de claim transformatie toevoegt](#add-the-claims-transformation).
+1. Selecteer rechtsboven Opslaan om & **publiceren** en vervolgens **Ja, wijzigingen publiceren**
+1. Neem de **sjabloon-id op** van de sjabloon die u hebt gemaakt voor gebruik in een latere stap. U geeft deze id op wanneer u [de claimtransformatie toevoegt.](#add-the-claims-transformation)
 
 
-## <a name="add-azure-ad-b2c-claim-types"></a>Azure AD B2C claim typen toevoegen
+## <a name="add-azure-ad-b2c-claim-types"></a>Claimtypen Azure AD B2C toevoegen
 
-Voeg in uw beleid de volgende claim typen toe aan het- `<ClaimsSchema>` element binnen `<BuildingBlocks>` .
+Voeg in uw beleid de volgende claimtypen toe aan het `<ClaimsSchema>` element binnen `<BuildingBlocks>` .
 
-Deze claim typen zijn nodig voor het genereren en verifiëren van het e-mail adres met een OTP-code (eenmalig wacht woord).
+Deze claimtypen zijn nodig om het e-mailadres te genereren en te verifiëren met behulp van een OTP-code (one-time password).
 
 ```XML
 <!--
@@ -207,17 +211,17 @@ Deze claim typen zijn nodig voor het genereren en verifiëren van het e-mail adr
 </BuildingBlocks> -->
 ```
 
-## <a name="add-the-claims-transformation"></a>De claim transformatie toevoegen
+## <a name="add-the-claims-transformation"></a>De claimtransformatie toevoegen
 
-Vervolgens hebt u een claim transformatie nodig voor het uitvoeren van een JSON-teken reeks claim die de hoofd tekst van de aanvraag is die wordt verzonden naar Mailjet.
+Vervolgens hebt u een claimtransformatie nodig om een JSON-tekenreeksclaim uit te kunnen geven die de body is van de aanvraag die naar Mail daily wordt verzonden.
 
-De structuur van het JSON-object wordt gedefinieerd door de Id's in punt notatie van de invoer parameters en de TransformationClaimTypes van de InputClaims. Getallen in de punt notatie impliceren matrices. De waarden zijn afkomstig van de waarden van de InputClaims en de waarde van de eigenschap input parameters. Zie voor meer informatie over JSON-claim transformaties [JSON-claim transformaties](json-transformations.md).
+De structuur van het JSON-object wordt gedefinieerd door de -ID's in punt-notatie van de InputParameters en de TransformationClaimTypes van de InputClaims. Getallen in de punt notatie impliceren matrices. De waarden zijn afkomstig van de waarden van InputClaims en de eigenschappen 'Value' van InputParameters. Zie JSON claims transformations (JSON-claimtransformaties) voor meer informatie over [JSON-claimtransformaties.](json-transformations.md)
 
-Voeg de volgende claim transformatie toe aan het- `<ClaimsTransformations>` element binnen `<BuildingBlocks>` . Voer de volgende updates uit voor de XML van de claim transformatie:
+Voeg de volgende claimtransformatie toe aan het `<ClaimsTransformations>` element in `<BuildingBlocks>` . Maak de volgende updates voor het XML-bestand voor claimtransformatie:
 
-* Werk de `Messages.0.TemplateID` waarde input parameter bij met de id van de transactionele sjabloon voor Mailjet die u eerder hebt gemaakt in [een Mailjet-sjabloon maken](#create-a-mailjet-template).
-* Werk de `Messages.0.From.Email` adres waarde bij. Gebruik een geldig e-mail adres om te voor komen dat de verificatie-e-mail als spam wordt gemarkeerd.
-* Werk de waarde van de `Messages.0.Subject` invoer parameter voor de regel onderwerp bij met een onderwerpregel die geschikt is voor uw organisatie.
+* Werk de inputParameter-waarde bij met de id van de transactionele e-mailsjabloon die u eerder hebt gemaakt `Messages.0.TemplateID` in Een Mail template [maken.](#create-a-mailjet-template)
+* Werk de `Messages.0.From.Email` adreswaarde bij. Gebruik een geldig e-mailadres om te voorkomen dat de verificatie-e-mail wordt gemarkeerd als spam.
+* Werk de waarde van de `Messages.0.Subject` invoerparameter voor de onderwerpregel bij met een onderwerpregel die geschikt is voor uw organisatie.
 
 ```XML
 <!-- 
@@ -249,9 +253,9 @@ Voeg de volgende claim transformatie toe aan het- `<ClaimsTransformations>` elem
 </BuildingBlocks> -->
 ```
 
-## <a name="add-datauri-content-definition"></a>Definitie van DataUri-inhoud toevoegen
+## <a name="add-datauri-content-definition"></a>DataUri-inhoudsdefinitie toevoegen
 
-Voeg onder de claim transformaties binnen de `<BuildingBlocks>` volgende [ContentDefinition](contentdefinitions.md) toe om te verwijzen naar de gegevens-URI van versie 2.1.2:
+Voeg onder de claimtransformaties in de volgende `<BuildingBlocks>` [ContentDefinition toe](contentdefinitions.md) om te verwijzen naar de gegevens-URI van versie 2.1.2:
 
 ```XML
 <!--
@@ -270,18 +274,18 @@ Voeg onder de claim transformaties binnen de `<BuildingBlocks>` volgende [Conten
 
 ## <a name="create-a-displaycontrol"></a>Een DisplayControl maken
 
-Een besturings element voor controle wordt gebruikt om het e-mail adres te verifiëren met een verificatie code die wordt verzonden naar de gebruiker.
+Er wordt een besturingselement voor verificatieweergave gebruikt om het e-mailadres te verifiëren met een verificatiecode die naar de gebruiker wordt verzonden.
 
-Dit voor beeld wordt weer gegeven met de volgende instellingen:
+Dit voorbeeld van een weergavebesturingselement is geconfigureerd voor:
 
-1. Verzamel het `email` adres claim type van de gebruiker.
-1. Wacht totdat de gebruiker het `verificationCode` claim type heeft verstrekt met de code die naar de gebruiker wordt verzonden.
-1. Ga terug `email` naar het zelf-bebevestigde technische profiel met een verwijzing naar dit weergave besturings element.
-1. `SendCode`Genereer een otp-code met behulp van de actie en verzend een e-mail met de otp-code naar de gebruiker.
+1. Verzamel het `email` type adresclaim van de gebruiker.
+1. Wacht tot de gebruiker het `verificationCode` claimtype heeft verstrekt met de code die naar de gebruiker is verzonden.
+1. Ga terug `email` naar het zelfver bevestigde technische profiel dat een verwijzing naar dit weergavebesturingselement heeft.
+1. Genereer met `SendCode` behulp van de actie een OTP-code en verzend een e-mailbericht met de OTP-code naar de gebruiker.
 
-   ![E-mail actie voor verificatie code verzenden](media/custom-email-mailjet/display-control-verification-email-action-01.png)
+   ![E-mailactie verificatiecode verzenden](media/custom-email-mailjet/display-control-verification-email-action-01.png)
 
-Voeg onder inhouds definities nog steeds `<BuildingBlocks>` de volgende [DisplayControl](display-controls.md) van het type [VerificationControl](display-control-verification.md) toe aan uw beleid.
+Voeg onder inhoudsdefinities, nog steeds binnen `<BuildingBlocks>` , de volgende [DisplayControl](display-controls.md) van het type [VerificationControl toe](display-control-verification.md) aan uw beleid.
 
 ```XML
 <!--
@@ -316,9 +320,9 @@ Voeg onder inhouds definities nog steeds `<BuildingBlocks>` de volgende [Display
 
 ## <a name="add-otp-technical-profiles"></a>Technische OTP-profielen toevoegen
 
-Het `GenerateOtp` technische profiel genereert een code voor het e-mail adres. Het `VerifyOtp` technische profiel controleert de code die is gekoppeld aan het e-mail adres. U kunt de configuratie van de indeling en de verval datum van het eenmalige wacht woord wijzigen. Zie [een eenmalig wacht woord technische profiel definiëren](one-time-password-technical-profile.md)voor meer informatie over technische otp-profielen.
+Het `GenerateOtp` technische profiel genereert een code voor het e-mailadres. Het `VerifyOtp` technische profiel verifieert de code die is gekoppeld aan het e-mailadres. U kunt de configuratie van de indeling en de vervaldatum van het een time-wachtwoord wijzigen. Zie Define [a one-time password technical profile](one-time-password-technical-profile.md)(Een technisch profiel voor een een time-wachtwoord definiëren) voor meer informatie over technische OTP-profielen.
 
-Voeg de volgende technische profielen toe aan het- `<ClaimsProviders>` element.
+Voeg de volgende technische profielen toe aan het `<ClaimsProviders>` element .
 
 ```XML
 <!--
@@ -362,11 +366,11 @@ Voeg de volgende technische profielen toe aan het- `<ClaimsProviders>` element.
 </ClaimsProviders> -->
 ```
 
-## <a name="add-a-rest-api-technical-profile"></a>Een REST API technisch profiel toevoegen
+## <a name="add-a-rest-api-technical-profile"></a>Een technisch REST API toevoegen
 
-In dit REST API technische profiel wordt de e-mail inhoud gegenereerd (met de Mailjet-indeling). Zie een onderliggend [technisch profiel definiëren](restful-technical-profile.md)voor meer informatie over onderhouds technische profielen.
+Met REST API profiel genereert u de e-mailinhoud (met behulp van de mailindeling). Zie Define a RESTful technical profile (Een technisch [RESTful-profiel definiëren) voor meer informatie over technische RESTful-profielen.](restful-technical-profile.md)
 
-Net als bij de technische profielen voor OTP, voegt u de volgende technische profielen toe aan het- `<ClaimsProviders>` element.
+Voeg net als bij de technische OTP-profielen de volgende technische profielen toe aan het `<ClaimsProviders>` -element.
 
 ```XML
 <ClaimsProvider>
@@ -396,11 +400,11 @@ Net als bij de technische profielen voor OTP, voegt u de volgende technische pro
 </ClaimsProvider>
 ```
 
-## <a name="make-a-reference-to-the-displaycontrol"></a>Een verwijzing naar de DisplayControl maken
+## <a name="make-a-reference-to-the-displaycontrol"></a>Een verwijzing naar DisplayControl maken
 
-In de laatste stap voegt u een verwijzing toe naar het DisplayControl dat u hebt gemaakt. Vervang uw bestaande `LocalAccountSignUpWithLogonEmail` en `LocalAccountDiscoveryUsingEmailAddress` zelfondertekende technische profielen door de volgende. Als u een eerdere versie van Azure AD B2C-beleid hebt gebruikt. Deze technische profielen `DisplayClaims` worden gebruikt met een verwijzing naar de DisplayControl..
+Voeg in de laatste stap een verwijzing toe naar de DisplayControl die u hebt gemaakt. Vervang uw bestaande `LocalAccountSignUpWithLogonEmail` en `LocalAccountDiscoveryUsingEmailAddress` zelf-bevestigde technische profielen door het volgende. Als u een eerdere versie van het Azure AD B2C gebruikt. Deze technische profielen gebruiken `DisplayClaims` met een verwijzing naar DisplayControl..
 
-Zie voor meer informatie [het zelf beweringen technisch profiel](restful-technical-profile.md) en weer [gave](display-controls.md).
+Zie Zelf-bevestigd technisch [profiel en](restful-technical-profile.md) [DisplayControl](display-controls.md)voor meer informatie.
 
 ```XML
 <ClaimsProvider>
@@ -439,14 +443,14 @@ Zie voor meer informatie [het zelf beweringen technisch profiel](restful-technic
 </ClaimsProvider>
 ```
 
-## <a name="optional-localize-your-email"></a>Beschrijving Uw e-mail adres lokaliseren
+## <a name="optional-localize-your-email"></a>[Optioneel] Uw e-mail lokaliseren
 
-Als u het e-mail bericht wilt lokaliseren, moet u gelokaliseerde teken reeksen verzenden naar Mailjet of uw e-mail provider. U kunt bijvoorbeeld het onderwerp van de e-mail, de hoofd tekst, het code bericht of de hand tekening van de e-mail lokaliseren. Hiervoor kunt u de [GetLocalizedStringsTransformation](string-transformations.md) -claim transformatie gebruiken om gelokaliseerde teken reeksen te kopiëren naar claim typen. De `GenerateEmailRequestBody` claim transformatie, waarmee de JSON-nettolading wordt gegenereerd, gebruikt invoer claims die de gelokaliseerde teken reeksen bevatten.
+Als u de e-mail wilt lokaliseren, moet u gelokaliseerde tekenreeksen verzenden naar Mailorder of uw e-mailprovider. U kunt bijvoorbeeld het onderwerp, de hoofdcode, het codebericht of de handtekening van het e-mailbericht lokaliseren. Als u dit wilt doen, kunt u de transformatie van [GetLocalizedStringsTransformation-claims](string-transformations.md) gebruiken om gelokaliseerde tekenreeksen naar claimtypen te kopiëren. De `GenerateEmailRequestBody` claimtransformatie, waarmee de JSON-nettolading wordt gegenereerd, maakt gebruik van invoerclaims die de gelokaliseerde tekenreeksen bevatten.
 
-1. In uw beleid definieert u de volgende teken reeks claims: onderwerp, bericht, codeIntro en hand tekening.
-1. Definieer een [GetLocalizedStringsTransformation](string-transformations.md) -claim transformatie om gelokaliseerde teken reeks waarden in de claims uit stap 1 te vervangen.
-1. Wijzig de `GenerateEmailRequestBody` claim transformatie voor het gebruik van invoer claims met het volgende XML-code fragment.
-1. Werk uw Mailjet-sjabloon bij om dynamische para meters te gebruiken in plaats van alle teken reeksen die worden gelokaliseerd door Azure AD B2C.
+1. Definieer in uw beleid de volgende tekenreeksclaims: onderwerp, bericht, codeIntro en handtekening.
+1. Definieer [een transformatie voor GetLocalizedStringsTransformation-claims](string-transformations.md) om gelokaliseerde tekenreekswaarden in de claims uit stap 1 te vervangen.
+1. Wijzig de `GenerateEmailRequestBody` claimtransformatie om invoerclaims te gebruiken met het volgende XML-fragment.
+1. Werk uw Mail template bij om dynamische parameters te gebruiken in plaats van alle tekenreeksen die worden gelokaliseerd door Azure AD B2C.
 
     ```XML
     <ClaimsTransformation Id="GetLocalizedStringsForEmail" TransformationMethod="GetLocalizedStringsTransformation">
@@ -481,7 +485,7 @@ Als u het e-mail bericht wilt lokaliseren, moet u gelokaliseerde teken reeksen v
     </ClaimsTransformation>
     ```
 
-1. Voeg het volgende [lokalisatie](localization.md) element toe.
+1. Voeg het volgende [lokalisatie-element](localization.md) toe.
 
     ```xml
     <!--
@@ -513,7 +517,7 @@ Als u het e-mail bericht wilt lokaliseren, moet u gelokaliseerde teken reeksen v
     </BuildingBlocks> -->
     ```
 
-1. Voeg referenties toe aan de LocalizedResources-elementen door het element [ContentDefinitions](contentdefinitions.md) bij te werken.
+1. Voeg verwijzingen toe naar de LocalizedResources-elementen door het element [ContentDefinitions bij te](contentdefinitions.md) werken.
 
     ```xml
     <!--
@@ -538,7 +542,7 @@ Als u het e-mail bericht wilt lokaliseren, moet u gelokaliseerde teken reeksen v
     </BuildingBlocks> -->
     ```
 
-1. Voeg ten slotte de volgende invoer claims-trans formatie toe aan de `LocalAccountSignUpWithLogonEmail` `LocalAccountDiscoveryUsingEmailAddress` technische profielen en.
+1. Voeg ten slotte de volgende transformatie van invoerclaims toe aan de `LocalAccountSignUpWithLogonEmail` technische `LocalAccountDiscoveryUsingEmailAddress` profielen en .
 
     ```xml
     <InputClaimsTransformations>
@@ -546,9 +550,9 @@ Als u het e-mail bericht wilt lokaliseren, moet u gelokaliseerde teken reeksen v
     </InputClaimsTransformations>
     ```
     
-## <a name="optional-localize-the-ui"></a>Beschrijving De gebruikers interface lokaliseren
+## <a name="optional-localize-the-ui"></a>[Optioneel] De gebruikersinterface lokaliseren
 
-Het lokalisatie-element biedt ondersteuning voor meerdere land instellingen of talen in het beleid voor de gebruikers ritten. Met de lokalisatie ondersteuning in beleids regels kunt u taalspecifieke teken reeksen opgeven voor de [gebruikers interface-elementen van controle weergave](localization-string-ids.md#verification-display-control-user-interface-elements)en [eenmalige wachtwoord fout berichten](localization-string-ids.md#one-time-password-error-messages). Voeg de volgende LocalizedString toe aan uw LocalizedResources. 
+Met het element Lokalisatie kunt u meerdere talen of talen in het beleid ondersteunen voor de gebruikerstrajecten. Met de lokalisatieondersteuning in beleidsregels kunt u taalspecifieke tekenreeksen opgeven voor zowel elementen van de gebruikersinterface [voor](localization-string-ids.md#verification-display-control-user-interface-elements)controleweergave van verificatie als foutberichten met een [wachtwoord voor één keer.](localization-string-ids.md#one-time-password-error-messages) Voeg de volgende LocalizedString toe aan uw LocalizedResources. 
 
 ```XML
 <LocalizedResources Id="api.custom-email.en">
@@ -579,13 +583,13 @@ Het lokalisatie-element biedt ondersteuning voor meerdere land instellingen of t
 </LocalizedResources>
 ```
 
-Nadat u de gelokaliseerde teken reeksen hebt toegevoegd, verwijdert u de meta gegevens van het OTP-validatie fout bericht uit de technische profielen LocalAccountSignUpWithLogonEmail en LocalAccountDiscoveryUsingEmailAddress.
+Nadat u de gelokaliseerde tekenreeksen hebt toevoegen, verwijdert u de metagegevens van de OTP-validatiefoutberichten uit de technische profielen LocalAccountSignUpWithLogonEmail en LocalAccountDiscoveryUsingEmailAddress.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt een voor beeld van een aangepast e-mail verificatie beleid vinden op GitHub:
+U vindt een voorbeeld van een aangepast beleid voor e-mailverificatie op GitHub:
 
-- [Aangepaste e-mail verificatie-DisplayControls](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-email-verifcation-displaycontrol)
-- Voor informatie over het gebruik van een aangepaste REST API of een SMTP-e-mail provider op basis van HTTP, raadpleegt u een onderliggend [technisch profiel definiëren in een Azure AD B2C aangepast beleid](restful-technical-profile.md).
+- [Aangepaste e-mailverificatie - DisplayControls](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-email-verifcation-displaycontrol)
+- Zie Define [a RESTful technical profile in](restful-technical-profile.md)an Azure AD B2C custom policy (Een technisch RESTful-profiel definiëren in een Azure AD B2C beleid) voor meer informatie over het gebruik van een aangepaste REST API of een HTTP-gebaseerde SMTP-e-mailprovider.
 
 ::: zone-end

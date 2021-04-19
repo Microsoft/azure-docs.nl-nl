@@ -1,81 +1,127 @@
 ---
 title: Een Azure Migrate-project verwijderen
-description: In dit artikel leest u hoe u een Azure Migrate project kunt verwijderen met behulp van de Azure Portal.
+description: In dit artikel leert u hoe u een project Azure Migrate verwijderen met behulp van de Azure Portal.
 author: ms-psharma
 ms.author: panshar
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 10/22/2019
-ms.openlocfilehash: bfb4db5d3ebf69f9c7f552c175d33a8b817d1562
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8c94bb23f5d514fef5cdacb855657efdf5219631
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100595143"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714736"
 ---
 # <a name="delete-an-azure-migrate-project"></a>Een Azure Migrate-project verwijderen
 
-In dit artikel wordt beschreven hoe u een [Azure migrate](./migrate-services-overview.md) project verwijdert.
+In dit artikel wordt beschreven hoe u een [Azure Migrate](./migrate-services-overview.md) verwijderen.
 
 
 ## <a name="before-you-start"></a>Voordat u begint
 
 Voordat u een project verwijdert:
 
-- Wanneer u een project verwijdert, worden de meta gegevens van het project en de gedetecteerde computer verwijderd.
-- Als u een Log Analytics-werk ruimte hebt gekoppeld aan het hulp programma voor Server evaluatie voor afhankelijkheids analyse, moet u beslissen of u de werk ruimte wilt verwijderen. 
-    - De werk ruimte wordt niet automatisch verwijderd. Verwijder deze hand matig.
-    - Controleer wat er voor een werk ruimte wordt gebruikt voordat u deze verwijdert. Dezelfde Log Analytics-werk ruimte kan voor meerdere scenario's worden gebruikt.
-    - Voordat u het project verwijdert, kunt u een koppeling naar de werk ruimte vinden in de evaluatie van **Azure migrate-servers**  >  **Azure migrate-server**, onder **OMS-werk ruimte**.
-    - Als u een werk ruimte wilt verwijderen nadat u een project hebt verwijderd, gaat u naar de werk ruimte in de relevante resource groep en volgt u [deze instructies](../azure-monitor/logs/delete-workspace.md).
+- Wanneer u een project verwijdert, worden de metagegevens van het project en de gedetecteerde machine verwijderd.
+- Als u een Log Analytics-werkruimte hebt gekoppeld aan het hulpprogramma Serverevaluatie voor afhankelijkheidsanalyse, moet u beslissen of u de werkruimte wilt verwijderen. 
+    - De werkruimte wordt niet automatisch verwijderd. Verwijder deze handmatig.
+    - Controleer waarvoor een werkruimte wordt gebruikt voordat u deze verwijdert. Dezelfde Log Analytics-werkruimte kan worden gebruikt voor meerdere scenario's.
+    - Voordat u het project verwijdert, vindt u een koppeling naar de werkruimte in **Azure Migrate - Servers** Azure Migrate -  >  **Serverevaluatie**, onder **OMS-werkruimte**.
+    - Als u een werkruimte wilt verwijderen na het verwijderen van een project, gaat u naar de werkruimte in de relevante resourcegroep en volgt u [deze instructies.](../azure-monitor/logs/delete-workspace.md)
 
 
 ## <a name="delete-a-project"></a>Een project verwijderen
 
 
-1. Open in de Azure Portal de resource groep waarin het project is gemaakt.
-2. Selecteer op de pagina resource groep de optie **verborgen typen weer geven**.
-3. Selecteer het project en de gekoppelde resources die u wilt verwijderen.
-    - Het resource type voor Azure Migrate Projects is **micro soft. migrate/migrateprojects**.
-    - Bekijk in de volgende sectie de resources die zijn gemaakt voor detectie, beoordeling en migratie in een Azure Migrate project.
-    - Als de resource groep alleen het Azure Migrate project bevat, kunt u de hele resource groep verwijderen.
-    - Als u een project uit de vorige versie van Azure Migrate wilt verwijderen, zijn de stappen hetzelfde. Het resource type voor deze projecten is het **migratie project**.
+1. Open in Azure Portal de resourcegroep waarin het project is gemaakt.
+2. Selecteer verborgen typen tonen op de **pagina van de resourcegroep.**
+3. Selecteer het project en de bijbehorende resources die u wilt verwijderen.
+    - Het resourcetype voor Azure Migrate projecten is **Microsoft.Migrate/migrateprojects.**
+    - Bekijk in de volgende sectie de resources die zijn gemaakt voor detectie, evaluatie en migratie in een Azure Migrate project.
+    - Als de resourcegroep alleen het Azure Migrate bevat, kunt u de hele resourcegroep verwijderen.
+    - Als u een project uit de vorige versie van Azure Migrate wilt verwijderen, zijn de stappen hetzelfde. Het resourcetype voor deze projecten is **Migratieproject.**
 
 
 ## <a name="created-resources"></a>Gemaakte resources
 
-In deze tabellen vindt u een overzicht van de resources die zijn gemaakt voor detectie, beoordeling en migratie in een Azure Migrate project.
+Deze tabellen geven een overzicht van de resources die zijn gemaakt voor detectie, evaluatie en migratie in Azure Migrate project.
 
 > [!NOTE]
-> Verwijder de sleutel kluis met een waarschuwing omdat deze beveiligings sleutels kan bevatten.
+> Verwijder de sleutelkluis voorzichtig, omdat deze mogelijk beveiligingssleutels bevat.
 
-### <a name="vmwarephysical-server"></a>VMware/fysieke server
+### <a name="projects-with-public-endpoint-connectivity"></a>Projecten met openbare eindpuntconnectiviteit
+
+#### <a name="vmwarephysical-server"></a>VMware/fysieke server
 
 **Resource** | **Type**
 --- | ---
-"Apparaatnaam" KV | Key Vault
-De site ' Apparaatnaam ' | Micro soft. OffAzure/VMwareSites
-ProjectName | Micro soft. migrate/migrateprojects
-Project ProjectName | Micro soft. migrate/assessmentProjects
-' ProjectName ' rsvault | Recovery Services-kluis
+"Appliancename"kv | Key Vault
+'Appliancename'-site | Microsoft.OffAzure/VMwareSites
+'ProjectName' | Microsoft.Migrate/migrateprojects
+ProjectName | Microsoft.Migrate/assessmentProjects
+"ProjectName"rsvault | Recovery Services-kluis
 "ProjectName"-MigrateVault-* | Recovery Services-kluis
 migrateappligwsa* | Storage-account
 migrateapplilsa* | Storage-account
 migrateapplicsa* | Storage-account
 migrateapplikv* | Key Vault
-migrateapplisbns16041 | Service Bus-naamruimte
+migrateapplisbns* | Service Bus-naamruimte
 
-### <a name="hyper-v-vm"></a>Hyper-V VM 
+#### <a name="hyper-v-vm"></a>Hyper-V VM
 
 **Resource** | **Type**
 --- | ---
-ProjectName | Micro soft. migrate/migrateprojects
-Project ProjectName | Micro soft. migrate/assessmentProjects
-Hyper-v * KV | Key Vault
-Hyper-v *-site | Micro soft. OffAzure/HyperVSites
+'ProjectName' | Microsoft.Migrate/migrateprojects
+ProjectName | Microsoft.Migrate/assessmentProjects
+HyperV*kv | Key Vault
+HyperV*Site | Microsoft.OffAzure/HyperVSites
 "ProjectName"-MigrateVault-* | Recovery Services-kluis
+
+<br/>
+De volgende tabellen geven een overzicht van de resources die door Azure Migrate voor het ontdekken, beoordelen en migreren van servers via een particulier netwerk met behulp van [Azure Private Link.](./how-to-use-azure-migrate-with-private-endpoints.md)
+
+### <a name="projects-with-private-endpoint-connectivity"></a>Projecten met connectiviteit van privé-eindpunten
+
+#### <a name="vmware-vms---agentless-migrations"></a>VMware-VM's - migraties zonder agent
+
+**Type** | **Resource** | **Privé-eindpunt <br/>** |
+--- | --- | ---
+Microsoft.Migrate/migrateprojects | 'ProjectName' | "ProjectName" \* pe 
+Detectiesite (hoofdsite) | "ProjectName"*mastersite | "ProjectName" \* mastersite \* pe 
+Microsoft.Migrate/assessmentProjects | "ApplianceName"*project | Project 'ApplianceName' \* \* pe 
+Key Vault | "ProjectName"*kv | "ProjectName" \* kv \* pe
+Microsoft.OffAzure/VMwareSites | "ApplianceName"*site | NA
+Recovery Services-kluis | "ApplianceName"*vault | NA
+Storage-account | "ApplianceName"*usa | "ApplianceName" \* usa \* pe
+Recovery Services-kluis | "ProjectName"-MigrateVault-* | NA
+Storage-account | migrateappligwsa* | NA
+Storage-account | migrateapplilsa* | NA
+Key Vault | migrateapplikv* | NA
+Service Bus-naamruimte | migrateapplisbns* | NA
+
+#### <a name="hyper-v-vms"></a>Virtuele Hyper-V-machines 
+
+**Type** | **Resource** | **Privé-eindpunt <br/>** |
+--- | --- | ---
+Microsoft.Migrate/migrateprojects | 'ProjectName' | "ProjectName" \* pe 
+Detectiesite (hoofdsite) | "ProjectName"*mastersite | "ProjectName" \* mastersite \* pe 
+Microsoft.Migrate/assessmentProjects | "ApplianceName"*project | Project 'ApplianceName' \* \* pe 
+Key Vault | "ProjectName"*kv | "ProjectName" \* kv \* pe
+Microsoft.OffAzure/HyperVSites | "ApplianceName"*site | NA
+Recovery Services-kluis | "ProjectName"-MigrateVault-* | "ProjectName"-MigrateVault-*pe
+
+#### <a name="physical-servers--aws-vms--gcp-vms"></a>Fysieke servers/AWS-VM's/GCP-VM's 
+
+**Type** | **Resource** | **Privé-eindpunt <br/>** |
+--- | --- | ---
+Microsoft.Migrate/migrateprojects | 'ProjectName' | "ProjectName" \* pe 
+Detectiesite (hoofdsite) | "ProjectName"*mastersite | "ProjectName" \* mastersite \* pe 
+Microsoft.Migrate/assessmentProjects | "ApplianceName"*project | Project 'ApplianceName' \* \* pe 
+Key Vault | "ProjectName"*kv | "ProjectName" \* kv \* pe
+Microsoft.OffAzure/serversites | "ApplianceName"*site | NA
+Recovery Services-kluis | "ProjectName"-MigrateVault-* | "ProjectName"-MigrateVault-*pe
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het toevoegen van extra hulpprogram ma's voor [evaluatie](how-to-assess.md) en [migratie](how-to-migrate.md) . 
+Meer informatie over het toevoegen van extra [hulpprogramma's](how-to-assess.md) voor evaluatie [en](how-to-migrate.md) migratie. 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 91556087cd3e7ccd85550c721f70b8608fdc4ffd
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 9ebc6e266c93e55bc250e8450356f8b695dd9080
+ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168447"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107714988"
 ---
 # <a name="tutorial-implement-iot-spatial-analytics-by-using-azure-maps"></a>Zelfstudie: Ruimtelijke IoT-analyse implementeren met behulp van Azure Maps
 
@@ -95,7 +95,7 @@ In de volgende afbeelding is het geofence-gebied blauw gemarkeerd. De route van 
 
 ## <a name="create-an-azure-storage-account"></a>Een Azure-opslagaccount maken
 
-Om de traceringsgegevens over schendingen van de auto op te slaan, maakt u een [algemeen v2-opslagaccount](../storage/common/storage-account-overview.md#general-purpose-v2-accounts) in de resourcegroep. Als u nog geen resourcegroep hebt gemaakt, volgt u de instructies in [Een resourcegroep maken](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups). In deze zelfstudie geeft u de resourcegroep de naam *ContosoRental*.
+Om de traceringsgegevens over schendingen van de auto op te slaan, maakt u een [algemeen v2-opslagaccount](../storage/common/storage-account-overview.md) in de resourcegroep. Als u nog geen resourcegroep hebt gemaakt, volgt u de instructies in [Een resourcegroep maken](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups). In deze zelfstudie geeft u de resourcegroep de naam *ContosoRental*.
 
 Volg de instructies in [Een opslagaccount maken](../storage/common/storage-account-create.md?tabs=azure-portal) om een opslagaccount te maken. In deze zelfstudie geeft u het opslagaccount de naam *contosorentalstorage*, maar over het algemeen kunt u elke gewenste naam kiezen.
 

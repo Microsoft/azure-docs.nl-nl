@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 04/14/2021
 ms.author: lajanuar
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 7098cfbc2fbe2236687eb7d621a0e587497fcebc
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: feff8b003428fd61fba826d05f8212fa8d9788f9
+ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107516410"
+ms.lasthandoff: 04/18/2021
+ms.locfileid: "107601920"
 ---
 <!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
@@ -86,7 +86,7 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `For
 
 `FormRecognizerClient` biedt bewerkingen voor:
 
-* Het herkennen van formuliervelden en -inhoud met behulp van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren. Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten.
+* Het herkennen van formuliervelden en inhoud met behulp van aangepaste modellen die zijn getraind om uw aangepaste formulieren te analyseren. Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten.
 * Het herkennen van formulierinhoud, met inbegrip van tabellen, regels en woorden, zonder dat u een model hoeft te trainen. Formulierinhoud wordt geretourneerd in een verzameling `FormPage`-objecten.
 * Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen, visitekaartjes, facturen en identiteitsdocumenten met behulp van een vooraf getraind model voor de Form Recognizer service.
 
@@ -94,7 +94,7 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `For
 
 `FormTrainingClient` biedt bewerkingen voor:
 
-* Aangepaste modellen trainen om alle velden en waarden in uw aangepaste formulieren te analyseren. Er wordt een geretourneerd om de formuliertypen aan te geven die door het model worden geanalyseerd en de `CustomFormModel` velden die worden geëxtraheerd voor elk formuliertype. _Zie_ de [documentatie van de service over het trainen van niet-gelabelde modellen](#train-a-model-without-labels) voor meer informatie.
+* Aangepaste modellen trainen om alle velden en waarden in uw aangepaste formulieren te analyseren. Er `CustomFormModel` wordt een geretourneerd die de formuliertypen aangeeft die door het model worden geanalyseerd en de velden die worden geëxtraheerd voor elk formuliertype. _Zie_ de [documentatie van de service over het trainen van niet-gelabelde modellen](#train-a-model-without-labels) voor meer informatie.
 * Aangepaste modellen trainen voor het analyseren van specifieke velden en waarden die u opgeeft door uw aangepaste formulieren te labelen. Er wordt een `CustomFormModel` geretourneerd, dat aangeeft welke velden het model zal extraheren, evenals de geschatte nauwkeurigheid van elk veld. Raadpleeg de [servicedocumentatie over het trainen van niet-gelabelde modellen](#train-a-model-with-labels) voor een meer gedetailleerde beschrijving van het toepassen van labels op een set met trainingsgegevens.
 * Modellen beheren die zijn gemaakt in uw account.
 * Het kopiëren van een aangepast model van de ene Form Recognizer-resource naar de andere.
@@ -129,11 +129,11 @@ U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegeve
 * [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
 
    :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
-* Gebruik het voorbeeldformulier en de ontvangstbewijsafbeeldingen die zijn opgenomen in de onderstaande voorbeelden. Ze zijn ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/test-assets). U kunt tevens de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen.
+* Gebruik het voorbeeldformulier en de ontvangstbewijsafbeeldingen die zijn opgenomen in de onderstaande voorbeelden. Ze zijn ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/assets). U kunt tevens de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen.
 
 ## <a name="analyze-layout"></a>Indeling analyseren
 
-U kunt Form Recognizer gebruiken om tabellen, lijnen en woorden in documenten te analyseren, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding voor lay-out voor meer informatie [over indelingsextractie.](../../concept-layout.md) Gebruik de methode om de inhoud van een bestand op een bepaalde URI te `beginRecognizeContentFromUrl` analyseren.
+U kunt deze Form Recognizer voor het analyseren van tabellen, lijnen en woorden in documenten, zonder dat u een model hoeft te trainen. Zie de conceptuele handleiding indeling voor meer informatie over [indelingsextractie.](../../concept-layout.md) Gebruik de methode om de inhoud van een bestand op een bepaalde URI te `beginRecognizeContentFromUrl` analyseren.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_getcontent)]
 
@@ -158,7 +158,7 @@ cell [1,5] has text PT
 
 ## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
-In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [de ontvangstbewijsanalyse.](../../concept-receipts.md)
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel. Zie de conceptuele handleiding voor ontvangstbewijzen voor meer informatie over [de bonanalyse.](../../concept-receipts.md)
 
 Als u ontvangstbewijzen van een URI wilt analyseren, gebruikt u de `beginRecognizeReceiptsFromUrl` methode . Met de volgende code wordt een ontvangstbewijs op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
 
@@ -184,7 +184,7 @@ First receipt:
 
 ## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
 
-In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelstalige visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding voor visitekaartjes voor meer informatie [over visitekaartjesanalyse.](../../concept-business-cards.md)
+In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit Engelstalige visitekaartjes met behulp van een vooraf getraind model. Zie de conceptuele handleiding visitekaartjes voor meer informatie over [visitekaartjesanalyse.](../../concept-business-cards.md)
 
 Als u visitekaartjes wilt analyseren vanuit een URL, gebruikt u de `beginRecognizeBusinessCardsFromURL` methode .
 
@@ -197,7 +197,7 @@ Als u visitekaartjes wilt analyseren vanuit een URL, gebruikt u de `beginRecogni
 
 In deze sectie wordt gedemonstreerd hoe u algemene velden kunt analyseren en extraheren uit verkoopfacturen met behulp van een vooraf getraind model. Zie de conceptuele handleiding voor facturen voor meer informatie over [factuuranalyse.](../../concept-invoices.md)
 
-Als u facturen van een URL wilt analyseren, gebruikt u de `beginRecognizeInvoicesFromUrl` methode .
+Als u facturen wilt analyseren vanuit een URL, gebruikt u de `beginRecognizeInvoicesFromUrl` methode .
 
 :::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js" id="snippet_invoice":::
 
@@ -206,9 +206,9 @@ Als u facturen van een URL wilt analyseren, gebruikt u de `beginRecognizeInvoice
 
 ## <a name="analyze-identity-documents"></a>Identiteitsdocumenten analyseren
 
-In deze sectie wordt gedemonstreerd hoe u belangrijke informatie analyseert en extraheert uit door de overheid uitgegeven identificatiedocumenten ( wereldwijd paspoorten en Licenties van Amerikaanse stuurprogramma's) met behulp van het vooraf gebouwde Form Recognizer-id-model. Zie onze conceptuele handleiding voor het vooraf gebouwde identificatiemodel voor meer informatie over [factuuranalyse.](../../concept-identification-cards.md)
+In deze sectie wordt gedemonstreerd hoe u belangrijke informatie kunt analyseren en extraheren uit door de overheid uitgegeven identificatiedocumenten( wereldwijd paspoorten en Licenties voor Amerikaanse stuurprogramma's) met behulp van het vooraf gebouwde Form Recognizer-id-model. Zie onze conceptuele handleiding voor vooraf gemaakt identificatiemodel voor meer informatie over [factuuranalyse.](../../concept-identification-cards.md)
 
-Als u identiteitsdocumenten wilt analyseren vanuit een URL, gebruikt u de `beginRecognizeIdDocumentsFromUrl` methode .
+Gebruik de methode om identiteitsdocumenten van een URL te `beginRecognizeIdDocumentsFromUrl` analyseren.
 
 :::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js" id="snippet_id":::
 
@@ -229,7 +229,7 @@ Met de volgende functie wordt een model voor een bepaalde set documenten getrain
 
 ### <a name="output"></a>Uitvoer
 
-Dit is de uitvoer voor een model dat is getraind met de trainingsgegevens die beschikbaar zijn via de [JavaScript SDK.](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer) Deze voorbeelduitvoer is afgekapt voor leesbaarheid.
+Dit is de uitvoer voor een model dat is getraind met de trainingsgegevens die beschikbaar zijn via de [JavaScript SDK](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer). Deze voorbeelduitvoer is afgekapt voor de leesbaarheid.
 
 ```console
 training status: creating
@@ -271,7 +271,7 @@ U kunt aangepaste modellen ook trainen door de trainingsdocumenten handmatig te 
 
 ### <a name="output"></a>Uitvoer
 
-Dit is de uitvoer voor een model dat is getraind met de trainingsgegevens die beschikbaar zijn via de [JavaScript SDK.](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) Deze voorbeelduitvoer is afgekapt voor leesbaarheid.
+Dit is de uitvoer voor een model dat is getraind met de trainingsgegevens die beschikbaar zijn via de [JavaScript SDK](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples). Deze voorbeelduitvoer is afgekapt voor de leesbaarheid.
 
 ```console
 training status: creating

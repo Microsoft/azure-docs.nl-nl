@@ -31,25 +31,27 @@
       href: tutorial-load-balancer-standard-public-zone-redundant-portal.md
     - name: Taken over VM's binnen een specifieke beschikbaarheidszone verdelen
       href: tutorial-load-balancer-standard-public-zonal-portal.md
+    - name: Load balancer VM's met meerdere beschikbaarheidssets
+      href: tutorial-multi-availability-sets-portal.md
     - name: Doorsturen via poort configureren in Load Balancer
       href: tutorial-load-balancer-port-forwarding-portal.md
     - name: Load balancer voor alle regio's
       items:
         - name: Een load balancer voor meerdere regio's maken - Portal
           href: tutorial-cross-region-portal.md
-        - name: Load balancer voor meerdere regio's maken-Power shell
+        - name: Regio-overschrijdende load balancer maken - PowerShell
           href: tutorial-cross-region-powershell.md
-        - name: Load balancer voor meerdere regio's maken-Azure CLI
+        - name: Regio-overschrijdende load balancer maken - Azure CLI
           href: tutorial-cross-region-cli.md
     - name: NAT-gateway
       items:
-        - name: Open bare load balancer van de NAT-gateway integreren
+        - name: Openbare nat-gateway integreren load balancer
           href: ../virtual-network/tutorial-nat-gateway-load-balancer-public-portal.md?toc=%2fazure%2fload-balancer%2ftoc.json
-        - name: Interne load balancer van NAT-gateway integreren
+        - name: Interne netwerkservers van NAT-gateway load balancer
           href: ../virtual-network/tutorial-nat-gateway-load-balancer-internal-portal.md?toc=%2fazure%2fload-balancer%2ftoc.json
-    - name: Op IP gebaseerde back-end
+    - name: Back-end op basis van IP
       items:
-        - name: Een open bare load balancer maken met een back-end op basis van IP-Portal
+        - name: Een openbare load balancer met een op IP gebaseerde back-load balancer - Portal
           href: tutorial-load-balancer-ip-backend-portal.md
 - name: Voorbeelden
   items:
@@ -107,7 +109,7 @@
       href: backend-pool-management.md
     - name: Standard Load Balancer en Virtual Machine Scale Sets
       href: load-balancer-standard-virtual-machine-scale-sets.md
-    - name: Gegevens ophalen met behulp van de Azure-Instance Metadata Service
+    - name: Informatie ophalen met behulp van de Azure Instance Metadata Service
       href: instance-metadata-service-load-balancer.md
 - name: Uitleg
   items:
@@ -162,7 +164,7 @@
           href: move-across-regions-internal-load-balancer-powershell.md
     - name: Load balancer-configuratie voor alleen uitgaand verkeer
       href: egress-only.md
-    - name: Meta gegevens ophalen met de Azure-IMDS
+    - name: Metagegevens ophalen met behulp van Azure IMDS
       href: howto-load-balancer-imds.md
     - name: Problemen oplossen
       items:
@@ -199,7 +201,7 @@
     - name: Resource Manager-sjabloon
       href: /azure/templates/microsoft.network/loadbalancers
       displayName: ARM
-    - name: Algemene fout codes voor Azure Instance Metadata Service (IMDS)
+    - name: Veelvoorkomende foutcodes voor Azure Instance Metadata Service (IMDS)
       href: troubleshoot-load-balancer-imds.md
     - name: Veelvoorkomende implementatiefouten
       href: load-balancer-common-deployment-errors.md

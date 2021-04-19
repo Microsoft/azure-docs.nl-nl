@@ -11,27 +11,27 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 04/17/2021
 ms.author: sstein
-ms.openlocfilehash: 81c306ac2a8a5c00c5d06877974db7e04964c76b
-ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
+ms.openlocfilehash: d0522fe2c8b6d6b623903a720e6c8e760bd6aa92
+ms.sourcegitcommit: 089c2bd1ac4861f43c4b89396d3d056a6eef4913
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2021
-ms.locfileid: "107600910"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107602085"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Wat is er nieuw in Azure SQL Database & SQL Managed Instance?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-Dit artikel bevat Azure SQL Database en Azure SQL Managed Instance functies die zich momenteel in de openbare preview-versie. Zie SQL Database service SQL Managed Instance updates voor meer informatie [SQL Database & SQL Managed Instance en verbeteringen.](https://azure.microsoft.com/updates/?product=sql-database) Zie Service-updates voor updates en verbeteringen in [andere Azure-services.](https://azure.microsoft.com/updates)
+Dit artikel bevat Azure SQL Database en Azure SQL Managed Instance functies die zich momenteel in de openbare preview-versie. Zie SQL Database en SQL Managed Instance service-updates voor meer informatie [SQL Database & SQL Managed Instance en verbeteringen.](https://azure.microsoft.com/updates/?product=sql-database) Zie Service-updates voor updates en verbeteringen in [andere Azure-services.](https://azure.microsoft.com/updates)
 
 ## <a name="whats-new"></a>Wat is er nieuw?
 
 Documentatie voor Azure SQL Database en Azure SQL Managed Instance is opgesplitst in afzonderlijke secties. We hebben ook bijgewerkt hoe we naar een beheerd exemplaar verwijzen van Azure SQL Database *beheerde exemplaar* naar *Azure SQL Managed Instance*.
 
-We hebben dit gedaan omdat sommige functies en functionaliteiten sterk variëren tussen één database en een beheerd exemplaar. Het wordt steeds lastiger om complexe nuances tussen Azure SQL Database en Azure SQL Managed Instance in afzonderlijke gedeelde artikelen uit te leggen.
+We hebben dit gedaan omdat sommige functies en functionaliteiten sterk variëren tussen één database en een beheerd exemplaar. Het wordt steeds moeilijker om complexe nuances tussen Azure SQL Database en Azure SQL Managed Instance in afzonderlijke gedeelde artikelen uit te leggen.
 
-Deze verduidelijking tussen de verschillende Azure SQL-producten moet het proces van het werken met de SQL Server-database-engine in Azure vereenvoudigen en stroomlijnen, of het nu gaat om één beheerde database in Azure SQL Database, een volledig volwassen beheerd exemplaar dat meerdere databases in Azure SQL Managed Instance host of het vertrouwde on-premises SQL Server-product dat wordt gehost op een virtuele machine in Azure.
+Deze verduidelijking tussen de verschillende Azure SQL-producten moet het werken met de SQL Server-database-engine in Azure vereenvoudigen en stroomlijnen, of het nu gaat om één beheerde database in Azure SQL Database, een volledig volwassen beheerd exemplaar dat meerdere databases in Azure SQL Managed Instance host of het vertrouwde on-premises SQL Server-product dat wordt gehost op een virtuele machine in Azure.
 
-Houd er rekening mee dat dit een werk is dat wordt uitgevoerd en dat nog niet elk artikel is bijgewerkt. Documentatie voor Transact-SQL-instructies (T-SQL), opgeslagen procedures en veel functies die worden gedeeld tussen Azure SQL Database en Azure SQL Managed Instance zijn bijvoorbeeld nog niet voltooid. Daarom zijn we blij met uw geduld als we doorgaan met het verduidelijken van de inhoud. 
+Houd er rekening mee dat dit een werk is dat wordt uitgevoerd en dat nog niet elk artikel is bijgewerkt. Documentatie voor Transact-SQL-instructies (T-SQL), opgeslagen procedures en veel functies die worden gedeeld tussen Azure SQL Database en Azure SQL Managed Instance zijn bijvoorbeeld nog niet voltooid. Daarom zijn we u hartelijk dank voor uw geduld als we doorgaan met het verduidelijken van de inhoud. 
 
 Deze tabel bevat een snelle vergelijking van de wijziging in terminologie: 
 
@@ -81,7 +81,7 @@ Deze tabel bevat een snelle vergelijking van de wijziging in terminologie:
 
 ### <a name="sql-managed-instance-h1-2019-updates"></a>SQL Managed Instance H1 2019-updates
 
-De volgende functies zijn ingeschakeld in het SQL Managed Instance-implementatiemodel in H1 2019:
+De volgende functies zijn ingeschakeld in het SQL Managed Instance implementatiemodel in H1 2019:
   - Ondersteuning voor abonnementen met maandelijks <a href="/azure/azure-sql/managed-instance/resource-limits">Azure-tegoed</a> voor Visual Studio en verhoogde [regionale limieten.](../managed-instance/resource-limits.md#regional-resource-limitations)
   - Ondersteuning voor <a href="/sharepoint/administration/deploy-azure-sql-managed-instance-with-sharepoint-servers-2016-2019"> SharePoint 2016 en SharePoint 2019 </a> en <a href="/business-applications-release-notes/october18/dynamics365-business-central/support-for-azure-sql-database-managed-instance"> Dynamics 365 Business Central. </a>
   - Maak een beheerd exemplaar met <a href="/azure/azure-sql/managed-instance/scripts/create-powershell-azure-resource-manager-template">een collatie op exemplaarniveau</a> en een <a href="https://azure.microsoft.com/updates/managed-instance-time-zone-ga/">tijdzone</a> naar keuze.
@@ -132,7 +132,7 @@ De volgende functies zijn ingeschakeld in het SQL Managed Instance-implementatie
 
 Als een exemplaar deelneemt aan een groep voor automatische [](https://docs.microsoft.com/azure/azure-sql/managed-instance/connection-types-overview) failover, wordt het wijzigen van het verbindingstype van het exemplaar niet van kracht voor de verbindingen die tot stand zijn gebracht via het [listener-eindpunt](https://docs.microsoft.com/azure/azure-sql/database/auto-failover-group-overview)van de failovergroep.
 
-**Tijdelijke oplossing:** u kunt de groep voor automatische failovers neerzetten en opnieuw maken door het verbindingstype te wijzigen.
+**Tijdelijke oplossing: u** kunt de groep voor automatische failovers neerzetten en opnieuw maken door het verbindingstype te wijzigen.
 
 ### <a name="procedure-sp_send_dbmail-may-transiently-fail-when-query-parameter-is-used"></a>Procedure sp_send_dbmail tijdelijk mislukken wanneer @query de parameter wordt gebruikt
 
@@ -163,11 +163,11 @@ END
 
 ### <a name="distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation"></a>Gedistribueerde transacties kunnen niet worden uitgevoerd na een bewerking voor het schalen van een beheerd exemplaar
 
-Bij schaalbewerkingen van beheerde exemplaren, waaronder het wijzigen van de servicelaag of het aantal vCores, worden de instellingen van de serververtrouwensgroep op de back-end opnieuw ingesteld en worden de lopende gedistribueerde [transacties uitgeschakeld.](./elastic-transactions-overview.md) Als tijdelijke oplossing verwijdert en maakt u een nieuwe [serververtrouwensgroep](../managed-instance/server-trust-group-overview.md) op Azure Portal.
+Bij schaalbewerkingen van beheerde exemplaren, waaronder het wijzigen van de servicelaag of het aantal vCores, worden de instellingen van de serververtrouwensgroep op de back-end opnieuw ingesteld en worden het uitvoeren van gedistribueerde [transacties uitgeschakeld.](./elastic-transactions-overview.md) Als tijdelijke oplossing verwijdert en maakt u een nieuwe [serververtrouwensgroep](../managed-instance/server-trust-group-overview.md) op Azure Portal.
 
 ### <a name="bulk-insert-and-backuprestore-statements-cannot-use-managed-identity-to-access-azure-storage"></a>BULK INSERT- en BACKUP/RESTORE-instructies kunnen beheerde identiteit niet gebruiken voor toegang tot Azure Storage
 
-Bulkinvoegings-, BACKUP- en RESTORE-instructies en de OPENROWSET-functie kunnen niet worden gebruikt met beheerde identiteit om te `DATABASE SCOPED CREDENTIAL` verifiëren bij Azure Storage. Schakel als tijdelijke oplossing over naar SHARED ACCESS SIGNATURE-verificatie. Het volgende voorbeeld werkt niet op Azure SQL (database en beheerd exemplaar):
+Bulkinvoegings-, BACKUP- en RESTORE-instructies en de OPENROWSET-functie kunnen niet worden gebruikt met beheerde identiteit om te `DATABASE SCOPED CREDENTIAL` verifiëren bij Azure Storage. Schakel als tijdelijke oplossing over naar SHARED ACCESS SIGNATURE-verificatie. Het volgende voorbeeld werkt niet op Azure SQL (zowel database als beheerd exemplaar):
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Identity';
@@ -210,7 +210,7 @@ Als een failovergroep meerdere exemplaren in verschillende Azure-abonnementen of
 
 ### <a name="sql-agent-roles-need-explicit-execute-permissions-for-non-sysadmin-logins"></a>SQL Agent-rollen hebben expliciete EXECUTE-machtigingen nodig voor niet-sysadmin-aanmeldingen
 
-Als er niet-sysadmin-aanmeldingen worden toegevoegd aan vaste [SQL Agent-databaserollen,](/sql/ssms/agent/sql-server-agent-fixed-database-roles)bestaat er een probleem waarbij expliciete EXECUTE-machtigingen moeten worden verleend aan de master opgeslagen procedures om deze aanmeldingen te laten werken. Als dit probleem is opgetreden, wordt het foutbericht 'The EXECUTE permission was denied on the object <object_name> (Microsoft SQL Server, Error: 229)' weergegeven.
+Als aanmeldingen zonder sysadmin worden toegevoegd aan vaste [SQL Agent-databaserollen,](/sql/ssms/agent/sql-server-agent-fixed-database-roles)bestaat er een probleem waarbij expliciete EXECUTE-machtigingen moeten worden verleend aan de master opgeslagen procedures om deze aanmeldingen te laten werken. Als dit probleem zich voordeed, wordt het foutbericht 'The EXECUTE permission was denied on the object <object_name> (Microsoft SQL Server, Error: 229)' weergegeven.
 
 **Tijdelijke oplossing:** wanneer u aanmeldingen toevoegt aan een vaste databaserol van SQL Agent (SQLAgentUserRole, SQLAgentReaderRole of SQLAgentOperatorRole), voert u voor elk van de aanmeldingen die aan deze rollen zijn toegevoegd, het onderstaande T-SQL-script uit om expliciet EXECUTE-machtigingen te verlenen aan de vermelde opgeslagen procedures.
 
@@ -230,7 +230,7 @@ GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name]
 
 ### <a name="in-memory-oltp-memory-limits-are-not-applied"></a>OlTP-geheugenlimieten in het geheugen worden niet toegepast
 
-In Bedrijfskritiek servicelaag worden in sommige gevallen niet de maximale geheugenlimieten toegepast voor objecten die zijn geoptimaliseerd [voor](../managed-instance/resource-limits.md#in-memory-oltp-available-space) geheugen. SQL Managed Instance werkbelasting mogelijk meer geheugen gebruiken voor in-memory OLTP bewerkingen, wat van invloed kan zijn op de beschikbaarheid en stabiliteit van het exemplaar. In-memory OLTP-query's die de limieten bereiken, mislukken mogelijk niet onmiddellijk. Dit probleem wordt binnenkort opgelost. De query's die meer geheugen in-memory OLTP, mislukken eerder als ze de [limieten bereiken.](../managed-instance/resource-limits.md#in-memory-oltp-available-space)
+In Bedrijfskritiek servicelaag worden in sommige gevallen niet de maximale geheugenlimieten toegepast voor objecten die zijn geoptimaliseerd [voor](../managed-instance/resource-limits.md#in-memory-oltp-available-space) geheugen. SQL Managed Instance werkbelasting mogelijk meer geheugen gebruiken voor in-memory OLTP bewerkingen, wat van invloed kan zijn op de beschikbaarheid en stabiliteit van het exemplaar. In-memory OLTP-query's die de limieten bereiken, mislukken mogelijk niet onmiddellijk. Dit probleem wordt binnenkort opgelost. De query's die meer geheugen in-memory OLTP mislukken als ze de [limieten bereiken.](../managed-instance/resource-limits.md#in-memory-oltp-available-space)
 
 **Tijdelijke oplossing: controleer** [in-memory OLTP opslaggebruik met](../in-memory-oltp-monitor-space.md) behulp van [SQL Server Management Studio](/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage#bkmk_Monitoring) om ervoor te zorgen dat de werkbelasting niet meer dan het beschikbare geheugen gebruikt. Verhoog de geheugenlimieten die afhankelijk zijn van het aantal vCores of optimaliseer uw werkbelasting om minder geheugen te gebruiken.
  
@@ -303,7 +303,7 @@ Zo kan een Algemeen van SQL Managed Instance een groot bestand van 1,2 TB op een
 - De totale toegewezen schijfopslaggrootte is 1 x 4 TB + 248 x 128 GB = 35 TB.
 - De totale gereserveerde ruimte voor databases op de instantie is 1 x 1,2 TB + 248 x 1 GB = 1,4 TB.
 
-In dit voorbeeld ziet u dat een exemplaar van SQL Managed Instance onder bepaalde omstandigheden, vanwege een specifieke distributie van bestanden, mogelijk de limiet van 35 TB bereikt die is gereserveerd voor een gekoppelde Azure Premium-schijf wanneer u dit niet verwacht.
+In dit voorbeeld ziet u dat een exemplaar van SQL Managed Instance onder bepaalde omstandigheden mogelijk de limiet van 35 TB bereikt die is gereserveerd voor een gekoppelde Azure Premium-schijf wanneer u dit niet verwacht.
 
 In dit voorbeeld blijven bestaande databases werken en kunnen ze probleemloos groeien zolang er geen nieuwe bestanden worden toegevoegd. Nieuwe databases kunnen niet worden gemaakt of hersteld omdat er onvoldoende ruimte is voor nieuwe schijfstations, zelfs niet als de totale grootte van alle databases de instantiegroottelimiet niet bereikt. De fout die in dat geval wordt geretourneerd, is niet duidelijk.
 

@@ -1,20 +1,21 @@
 ---
 title: Wat zijn Azure Arc-gegevensservices
 description: Introduceert Azure Arc-gegevensservices
+ms.custom: references_regions
 author: twright-msft
 ms.author: twright
 ms.reviewer: mikeray
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-ms.date: 09/22/2020
+ms.date: 03/31/2021
 ms.topic: overview
-ms.openlocfilehash: ef16a4c0b6ea40fb4934307916f1fe79ccea72f9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2d866dcb5b2a0be9e6468b3d40258e37ac93834e
+ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97609136"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107716093"
 ---
 # <a name="what-are-azure-arc-enabled-data-services-preview"></a>Wat zijn Azure Arc-gegevensservices (preview)?
 
@@ -46,6 +47,16 @@ Met vertrouwde hulpprogramma's zoals het Azure Portal, Azure Data Studio en de [
 ## <a name="disconnected-scenario-support"></a>Niet-verbonden scenario's
 
 Veel van de services, zoals het inrichten van selfservice, automatische back-ups/herstel en bewaking, kunnen lokaal worden uitgevoerd in uw infrastructuur met of zonder directe verbinding met Azure. Als u rechtstreeks verbinding maakt met Azure, worden er aanvullende opties geopend voor de integratie met andere Azure-Services, zoals Azure Monitor, en de mogelijkheid om de Azure Portal en Azure Resource Manager Api's van overal ter wereld te gebruiken voor het beheren van uw Azure Arc-gegevensservices.
+
+## <a name="supported-regions"></a>Ondersteunde regio’s
+
+In de volgende tabel worden de scenario's beschreven die momenteel worden ondersteund voor arc-gegevensservices.
+
+|Azure-regio's  |Direct verbonden modus  |Indirect verbonden modus  |
+|---------|---------|---------|
+|VS - oost|Beschikbaar|Beschikbaar
+|Europa -west |Beschikbaar |Beschikbaar
+|Europa - noord|Beschikbaar|Beschikbaar
 
 ## <a name="next-steps"></a>Volgende stappen
 

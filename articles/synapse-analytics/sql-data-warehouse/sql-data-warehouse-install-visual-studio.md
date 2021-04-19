@@ -23,7 +23,7 @@ ms.locfileid: "107568247"
 
 Visual Studio **2019** SQL Server Data Tools (SSDT) is een hulpprogramma waarmee u het volgende kunt doen:
 
-- Toepassingen verbinden, er query's op uitvoeren en toepassingen ontwikkelen
+- Toepassingen verbinden, er query's op uitvoeren en ontwikkelen
 - Maak gebruik van een objectverkenner om alle objecten in uw gegevensmodel visueel te verkennen, inclusief tabellen, weergaven, opgeslagen procedures, enzovoort.
 - DDL-scripts (T-SQL Data Definition Language) genereren voor uw objecten
 - Uw datawarehouse ontwikkelen met behulp van een state-based benadering met SSDT Database Projects
@@ -32,7 +32,7 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) is een hulpprogramma waarmee
 
 ## <a name="install-visual-studio-2019"></a>Installeer Visual Studio 2019
 
-Zie [Download Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) om Visual Studio **16.3 en hoger te downloaden en installeren.** Selecteer tijdens de installatie de workload voor gegevensopslag en -verwerking. Zelfstandige SSDT-installatie is niet langer vereist in Visual Studio 2019.
+Zie [Download Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) om Visual Studio **16.3 en** hoger te downloaden en installeren. Selecteer tijdens de installatie de workload voor gegevensopslag en -verwerking. Zelfstandige SSDT-installatie is niet langer vereist in Visual Studio 2019.
 
 ## <a name="unsupported-features-in-ssdt"></a>Niet-ondersteunde functies in SSDT
 

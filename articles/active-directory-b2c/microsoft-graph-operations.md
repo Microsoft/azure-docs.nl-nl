@@ -1,23 +1,23 @@
 ---
 title: Resources beheren met Microsoft Graph
 titleSuffix: Azure AD B2C
-description: Resources in een Azure AD B2C tenant beheren door de Microsoft Graph-API aan te roepen en een toepassings-id te gebruiken om het proces te automatiseren.
+description: Resources beheren in een Azure AD B2C tenant door de Microsoft Graph-API aan te roepen en een toepassingsidentiteit te gebruiken om het proces te automatiseren.
 services: B2C
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/28/2021
+ms.date: 04/19/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 884cb0c30bc754366fda79a4b54b977517fbadd3
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: cf62330fd677dc978c8f25a81c6a1e5bfbb612ac
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107530527"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717599"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Beheer Azure AD B2C met Microsoft Graph
 
@@ -25,7 +25,7 @@ Microsoft Graph kunt u resources in uw Azure AD B2C beheren. De volgende Microso
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u MS Graph API wilt gebruiken en wilt communiceren met resources in uw Azure AD B2C-tenant, hebt u een toepassingsregistratie nodig die de machtigingen verleent om dit te doen. Volg de stappen in het artikel [Azure AD B2C Microsoft Graph](microsoft-graph-get-started.md) beheren om een toepassingsregistratie te maken die uw beheertoepassing kan gebruiken. 
+Als u MS Graph API wilt gebruiken en wilt communiceren met resources in uw Azure AD B2C-tenant, hebt u een toepassingsregistratie nodig die de machtigingen verleent om dit te doen. Volg de stappen in het artikel [Azure AD B2C met Microsoft Graph](microsoft-graph-get-started.md) om een toepassingsregistratie te maken die door uw beheertoepassing kan worden gebruikt. 
 
 ## <a name="user-management"></a>Gebruikersbeheer
 
@@ -37,7 +37,7 @@ Als u MS Graph API wilt gebruiken en wilt communiceren met resources in uw Azure
 
 ## <a name="user-phone-number-management-beta"></a>Beheer van telefoonnummers van gebruikers (bèta)
 
-Een telefoonnummer dat door een gebruiker kan worden gebruikt om zich aan te melden met behulp van [sms-](identity-provider-local.md#phone-sign-in-preview)of spraakoproepen, of [meervoudige verificatie.](multi-factor-authentication.md) Zie Api voor [Azure AD-verificatiemethoden voor meer informatie.](/graph/api/resources/phoneauthenticationmethod)
+Een telefoonnummer dat door een gebruiker kan worden gebruikt om zich aan te melden via [sms](identity-provider-local.md#phone-sign-in-preview)of spraakoproepen, of [meervoudige verificatie.](multi-factor-authentication.md) Zie Api voor [Azure AD-verificatiemethoden voor meer informatie.](/graph/api/resources/phoneauthenticationmethod)
 
 - [Add](/graph/api/authentication-post-phonemethods)
 - [List](/graph/api/authentication-list-phonemethods)
@@ -45,11 +45,14 @@ Een telefoonnummer dat door een gebruiker kan worden gebruikt om zich aan te mel
 - [Bijwerken](/graph/api/phoneauthenticationmethod-update)
 - [Verwijderen](/graph/api/phoneauthenticationmethod-delete)
 
-Opmerking: de [lijstbewerking](/graph/api/authentication-list-phonemethods) retourneert alleen ingeschakelde telefoonnummers. Het volgende telefoonnummer moet zijn ingeschakeld voor gebruik met de lijstbewerkingen. 
+Houd er rekening mee [dat de](/graph/api/authentication-list-phonemethods) lijstbewerking alleen telefoonnummers retourneert die zijn ingeschakeld. Het volgende telefoonnummer moet zijn ingeschakeld voor gebruik met de lijstbewerkingen. 
 
 ![Aanmelden via telefoon inschakelen](./media/microsoft-graph-operations/enable-phone-sign-in.png)
 
-## <a name="self-service-password-reset-email-address-beta"></a>E-mailadres voor selfservice voor wachtwoord opnieuw instellen (bèta)
+> [!NOTE]
+> In de huidige bètaversie werkt deze API alleen als het telefoonnummer is opgeslagen met een spatie tussen de landcode en het telefoonnummer. De Azure AD B2C service voegt deze ruimte momenteel niet standaard toe.
+
+## <a name="self-service-password-reset-email-address-beta"></a>E-mailadres voor self-service voor wachtwoord opnieuw instellen (bèta)
 
 Een e-mailadres dat kan worden gebruikt door een [aanmeldingsaccount voor](identity-provider-local.md#username-sign-in) gebruikersnamen om het wachtwoord opnieuw in te stellen. Zie Api voor [Azure AD-verificatiemethoden voor meer informatie.](/graph/api/resources/emailauthenticationmethod)
 
@@ -61,7 +64,7 @@ Een e-mailadres dat kan worden gebruikt door een [aanmeldingsaccount voor](ident
 
 ## <a name="identity-providers"></a>Id-providers
 
-Beheer de [id-providers die](add-identity-provider.md) beschikbaar zijn voor uw gebruikersstromen in uw Azure AD B2C tenant.
+Beheer de [identiteitsproviders die](add-identity-provider.md) beschikbaar zijn voor uw gebruikersstromen in Azure AD B2C tenant.
 
 - [Id-providers die zijn geregistreerd in de Azure AD B2C-tenant](/graph/api/identityprovider-list)
 - [Een id-provider maken](/graph/api/identityprovider-post-identityproviders)
@@ -71,42 +74,42 @@ Beheer de [id-providers die](add-identity-provider.md) beschikbaar zijn voor uw 
 
 ## <a name="user-flow"></a>Gebruikersstroom
 
-Configureer vooraf samengesteld beleid voor registreren, aanmelden, gecombineerd registreren en aanmelden, wachtwoord opnieuw instellen en profielupdates.
+Configureer vooraf samengesteld beleid voor registreren, aanmelden, gecombineerde aanmelding, wachtwoord opnieuw instellen en profielupdates.
 
-- [Gebruikersstromen op een lijst zetten](/graph/api/identitycontainer-list-b2cuserflows)
+- [Lijst met gebruikersstromen](/graph/api/identitycontainer-list-b2cuserflows)
 - [Een gebruikersstroom maken](/graph/api/identitycontainer-post-b2cuserflows)
 - [Een gebruikersstroom krijgen](/graph/api/b2cidentityuserflow-get)
 - [Een gebruikersstroom verwijderen](/graph/api/b2cidentityuserflow-delete)
 
 ## <a name="user-flow-authentication-methods-beta"></a>Verificatiemethoden voor gebruikersstromen (bèta)
 
-Kies een mechanisme waarmee gebruikers zich kunnen registreren via lokale accounts. Lokale accounts zijn de accounts waar Azure AD de identiteitsver bevestigt. Zie voor meer informatie [b2cAuthenticationMethodsPolicy resourcetype.](/graph/api/resources/b2cauthenticationmethodspolicy)
+Kies een mechanisme om gebruikers te laten registreren via lokale accounts. Lokale accounts zijn de accounts waar Azure AD de identiteitsver bevestigt. Zie voor meer informatie [b2cAuthenticationMethodsPolicy resourcetype.](/graph/api/resources/b2cauthenticationmethodspolicy)
 
 - [Ophalen](/graph/api/b2cauthenticationmethodspolicy-get)
 - [Bijwerken](/graph/api/b2cauthenticationmethodspolicy-update)
 
 ## <a name="custom-policies"></a>Aangepast beleid
 
-Met de volgende bewerkingen kunt u uw Azure AD B2C Trust Framework-beleid beheren, ook wel [aangepaste beleidsregels genoemd.](custom-policy-overview.md)
+Met de volgende bewerkingen kunt u uw Azure AD B2C Trust Framework-beleid beheren, ook wel aangepaste [beleidsregels genoemd.](custom-policy-overview.md)
 
-- [Alle beleidsregels voor vertrouwenskaders die zijn geconfigureerd in een tenant opsnissen](/graph/api/trustframework-list-trustframeworkpolicies)
-- [Vertrouwensraamwerkbeleid maken](/graph/api/trustframework-post-trustframeworkpolicy)
-- [Eigenschappen van een bestaand vertrouwensraamwerkbeleid lezen](/graph/api/trustframeworkpolicy-get)
+- [Alle beleidsregels voor vertrouwenskaders die in een tenant zijn geconfigureerd, opsnissen](/graph/api/trustframework-list-trustframeworkpolicies)
+- [Beleid voor vertrouwens framework maken](/graph/api/trustframework-post-trustframeworkpolicy)
+- [Eigenschappen van een bestaand vertrouwenskaderbeleid lezen](/graph/api/trustframeworkpolicy-get)
 - [Beleid voor vertrouwenskaders bijwerken of maken.](/graph/api/trustframework-put-trustframeworkpolicy)
 - [Een bestaand vertrouwensraamwerkbeleid verwijderen](/graph/api/trustframeworkpolicy-delete)
 
 ## <a name="policy-keys"></a>Beleidssleutels
 
-In Identity Experience Framework worden de geheimen opgeslagen waarnaar wordt verwezen in een aangepast beleid om een vertrouwensrelatie tussen onderdelen tot stand te laten komen. Deze geheimen kunnen symmetrische of asymmetrische sleutels/waarden zijn. In de Azure Portal worden deze entiteiten weergegeven als **beleidssleutels.**
+In Identity Experience Framework worden de geheimen waarnaar wordt verwezen, opgeslagen in een aangepast beleid om een vertrouwensrelatie tussen onderdelen tot stand te laten komen. Deze geheimen kunnen symmetrische of asymmetrische sleutels/waarden zijn. In de Azure Portal worden deze entiteiten weergegeven als **Beleidssleutels.**
 
-De resource op het hoogste niveau voor beleidssleutels in Microsoft Graph API is [Trusted Framework Keyset.](/graph/api/resources/trustframeworkkeyset) Elke **Keyset** bevat ten minste één **sleutel**. Als u een sleutel wilt maken, maakt u eerst een lege keyset en genereert u vervolgens een sleutel in de keyset. U kunt een handmatig geheim maken, een certificaat uploaden of een PKCS12-sleutel. De sleutel kan een gegenereerd geheim, een tekenreeks (zoals het Facebook-toepassingsgeheim) of een certificaat zijn dat u uploadt. Als een keyset meerdere sleutels heeft, is slechts één van de sleutels actief.
+De resource op het hoogste niveau voor beleidssleutels in Microsoft Graph API is [Trusted Framework Keyset.](/graph/api/resources/trustframeworkkeyset) Elke **Keyset** bevat ten minste één **sleutel**. Als u een sleutel wilt maken, maakt u eerst een lege sleutelset en genereert u vervolgens een sleutel in de sleutelset. U kunt een handmatig geheim maken, een certificaat uploaden of een PKCS12-sleutel. De sleutel kan een gegenereerd geheim, een tekenreeks (zoals het Facebook-toepassingsgeheim) of een certificaat zijn dat u uploadt. Als een sleutelset meerdere sleutels heeft, is slechts één van de sleutels actief.
 
 ### <a name="trust-framework-policy-keyset"></a>Trust Framework-beleidssleutelset
 
-- [De sleutelsets van het vertrouwens framework opsnets](/graph/api/trustframework-list-keysets)
-- [Sleutelsets voor vertrouwens framework maken](/graph/api/trustframework-post-keysets)
+- [De sleutelsets van het vertrouwensraamwerk opsnets](/graph/api/trustframework-list-keysets)
+- [Een vertrouwensraamwerksleutelset maken](/graph/api/trustframework-post-keysets)
 - [Een keyset op halen](/graph/api/trustframeworkkeyset-get)
-- [Sleutelsets voor een vertrouwens framework bijwerken](/graph/api/trustframeworkkeyset-update)
+- [Sleutelsets voor een vertrouwensraamwerk](/graph/api/trustframeworkkeyset-update)
 - [Sleutelsets voor een vertrouwensraamwerk verwijderen](/graph/api/trustframeworkkeyset-delete)
 
 ### <a name="trust-framework-policy-key"></a>Vertrouwens framework-beleidssleutel
@@ -136,7 +139,7 @@ Azure AD B2C biedt een directory die 100 aangepaste kenmerken per gebruiker kan 
 
 - [Auditlogboeken opslijsten](/graph/api/directoryaudit-list)
 
-Zie Accessing Azure AD B2C audit logs (Toegang Azure AD B2C auditlogboeken) voor meer informatie over het openen [Azure AD B2C auditlogboeken.](view-audit-logs.md)
+Zie Accessing Azure AD B2C audit logs (Toegang tot Azure AD B2C auditlogboeken) voor meer informatie over het openen [Azure AD B2C auditlogboeken.](view-audit-logs.md)
 
 ## <a name="conditional-access"></a>Voorwaardelijke toegang
 
@@ -148,8 +151,8 @@ Zie Accessing Azure AD B2C audit logs (Toegang Azure AD B2C auditlogboeken) voor
 
 ## <a name="code-sample-how-to-programmatically-manage-user-accounts"></a>Codevoorbeeld: Gebruikersaccounts programmatisch beheren
 
-Dit codevoorbeeld is een .NET Core-consoletoepassing die gebruikmaakt van [de Microsoft Graph SDK](/graph/sdks/sdks-overview) voor interactie met Microsoft Graph API. De code laat zien hoe u de API aanroept om gebruikers in een tenant programmatisch Azure AD B2C beheren.
-U kunt [het voorbeeldarchief](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management/archive/master.zip) (*.zip) downloaden, door de [opslagplaats op](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management) GitHub bladeren of de opslagplaats klonen:
+Dit codevoorbeeld is een .NET Core-consoletoepassing die gebruikmaakt van [de Microsoft Graph SDK voor](/graph/sdks/sdks-overview) interactie met Microsoft Graph API. De code laat zien hoe u de API aanroept om gebruikers in een tenant programmatisch Azure AD B2C beheren.
+U kunt [het voorbeeldarchief](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management/archive/master.zip) (*.zip) downloaden, door de opslagplaats [op](https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management) GitHub bladeren of de opslagplaats klonen:
 
 ```cmd
 git clone https://github.com/Azure-Samples/ms-identity-dotnetcore-b2c-account-management.git
@@ -159,8 +162,8 @@ Nadat u het codevoorbeeld hebt verkregen, configureert u het voor uw omgeving en
 
 1. Open het project in [Visual Studio](https://visualstudio.microsoft.com) of [Visual Studio Code](https://code.visualstudio.com).
 1. Open `src/appsettings.json`.
-1. Vervang in de sectie door de naam van uw tenant en en door de waarden voor de registratie van uw `appSettings` `your-b2c-tenant` `Application (client) ID` `Client secret` beheertoepassing. Zie Register [a Microsoft Graph Application voor meer informatie.](microsoft-graph-get-started.md)
-1. Open een consolevenster in de lokale kloon van de repo, ga naar de `src` map en bouw het project:
+1. Vervang in de sectie door de naam van uw tenant en en door de waarden voor de registratie `appSettings` van uw `your-b2c-tenant` `Application (client) ID` `Client secret` beheertoepassing. Zie Register [a Microsoft Graph Application voor meer informatie.](microsoft-graph-get-started.md)
+1. Open een consolevenster in uw lokale kloon van de repo, ga naar de `src` map en bouw het project:
 
     ```console
     cd src
@@ -183,9 +186,9 @@ Voor elke aanvraag voor Microsoft Graph API is een toegangs token vereist voor v
 
 De `RunAsync` methode in het bestand _Program.cs:_
 
-1. Leest toepassingsinstellingen uit hetappsettings.js _on-file_
+1. Leest toepassingsinstellingen van de _appsettings.jsin het bestand_
 1. Initialiseert de auth-provider met behulp van de stroom voor het verlenen van [OAuth 2.0-clientreferenties.](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md) Met de stroom voor het verlenen van clientreferenties kan de app een toegangs token krijgen om de api Microsoft Graph aan te roepen.
-1. Hiermee stelt u de Microsoft Graph-serviceclient in met de auth-provider:
+1. Hiermee stelt u de Microsoft Graph serviceclient in met de auth-provider:
 
     ```csharp
     // Read application settings from appsettings.json (tenant ID, app ID, client secret, etc.)
@@ -203,7 +206,7 @@ De `RunAsync` methode in het bestand _Program.cs:_
     GraphServiceClient graphClient = new GraphServiceClient(authProvider);
     ```
 
-De initialiseerde *GraphServiceClient wordt* vervolgens gebruikt in _UserService.cs om_ de gebruikersbeheerbewerkingen uit te voeren. U kunt bijvoorbeeld een lijst met gebruikersaccounts in de tenant opmaken:
+De initialiseerde *GraphServiceClient* wordt vervolgens gebruikt in _UserService.cs om_ de gebruikersbeheerbewerkingen uit te voeren. U kunt bijvoorbeeld een lijst met de gebruikersaccounts in de tenant opmaken:
 
 ```csharp
 public static async Task ListUsers(GraphServiceClient graphClient)
@@ -228,7 +231,7 @@ public static async Task ListUsers(GraphServiceClient graphClient)
 }
 ```
 
-Het maken van API-aanroepen met behulp van [de Microsoft Graph-SDK's](/graph/sdks/create-requests) bevat informatie over het lezen en schrijven van gegevens uit Microsoft Graph, het gebruik van om de geretourneerde eigenschappen te bepalen, aangepaste queryparameters op te geven en de queryparameters en te `$select` `$filter` `$orderBy` gebruiken.
+Het maken van API-aanroepen met behulp van [de Microsoft Graph-SDK's](/graph/sdks/create-requests) bevat informatie over het lezen en schrijven van gegevens uit Microsoft Graph, het bepalen van de geretourneerde eigenschappen, het opgeven van aangepaste queryparameters en het gebruik van de `$select` `$filter` queryparameters en `$orderBy` .
 
 <!-- LINK -->
 

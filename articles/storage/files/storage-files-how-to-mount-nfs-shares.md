@@ -1,23 +1,23 @@
 ---
-title: Een Azure NFS-bestands share koppelen-Azure Files
-description: Meer informatie over het koppelen van een netwerk bestandssysteem share.
+title: Een Azure NFS-bestands delen - Azure Files
+description: Meer informatie over het toevoegen van een network file system-share.
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2020
+ms.date: 04/15/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 8a993d9c1de35132198de5e3becc4f16d6a2a437
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4369619cd83dffe36cf156f523a951e1360438db
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96621294"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717067"
 ---
-# <a name="how-to-mount-an-nfs-file-share"></a>Een NFS-bestands share koppelen
+# <a name="how-to-mount-an-nfs-file-share"></a>Een NFS-bestands share toevoegen
 
-[Azure Files ](storage-files-introduction.md) is het eenvoudig te gebruiken cloudbestandssysteem van Microsoft. Azure-bestands shares kunnen worden gekoppeld in Linux-distributies met behulp van het Server Message Block protocol (SMB) of het NFS-protocol (Network File System). Dit artikel is gericht op het koppelen met NFS, Zie [Azure files gebruiken met Linux](storage-how-to-use-files-linux.md)voor meer informatie over het koppelen met SMB. Zie [Azure file share-protocollen](storage-files-compare-protocols.md)voor meer informatie over elk van de beschik bare protocollen.
+[Azure Files ](storage-files-introduction.md) is het eenvoudig te gebruiken cloudbestandssysteem van Microsoft. Azure-bestands shares kunnen worden aangesloten in Linux-distributies met behulp van het Server Message Block-protocol (SMB) of het NFS-protocol (Network File System). Dit artikel is gericht op het maken van een NFS-toepassing. Zie Use Azure Files with Linux (Een SMB gebruiken met [SMB) voor](storage-how-to-use-files-linux.md)meer informatie over het maken van een Azure Files met Linux. Zie Protocollen voor Azure-bestands delen voor meer informatie over [elk van de beschikbare protocollen.](storage-files-compare-protocols.md)
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -29,41 +29,41 @@ ms.locfileid: "96621294"
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Maak een NFS-share](storage-files-how-to-create-nfs-shares.md).
+- [Maak een NFS-share.](storage-files-how-to-create-nfs-shares.md)
 
     > [!IMPORTANT]
-    > NFS-shares kunnen alleen worden geopend vanuit vertrouwde netwerken. Verbindingen met uw NFS-share moeten afkomstig zijn van een van de volgende bronnen:
+    > NFS-shares zijn alleen toegankelijk vanuit vertrouwde netwerken. Verbindingen met uw NFS-share moeten afkomstig zijn van een van de volgende bronnen:
 
-- Gebruik een van de volgende netwerk oplossingen:
-    - [Maak een persoonlijk eind punt](storage-files-networking-endpoints.md#create-a-private-endpoint) (aanbevolen) of [Beperk de toegang tot uw open bare eind punt](storage-files-networking-endpoints.md#restrict-public-endpoint-access).
-    - [Een punt-naar-site-VPN (P2S) op Linux configureren voor gebruik met Azure files](storage-files-configure-p2s-vpn-linux.md).
-    - [Configureer een site-naar-site-VPN voor gebruik met Azure files](storage-files-configure-s2s-vpn.md).
-    - [ExpressRoute](../../expressroute/expressroute-introduction.md)configureren.
+- Gebruik een van de volgende netwerkoplossingen:
+    - Maak [een privé-eindpunt (aanbevolen)](storage-files-networking-endpoints.md#create-a-private-endpoint) of [beperk de toegang tot uw openbare eindpunt.](storage-files-networking-endpoints.md#restrict-public-endpoint-access)
+    - [Configureer een punt-naar-site-VPN (P2S) in Linux voor gebruik met Azure Files](storage-files-configure-p2s-vpn-linux.md).
+    - [Configureer een site-naar-site-VPN voor gebruik met Azure Files](storage-files-configure-s2s-vpn.md).
+    - Configureer [ExpressRoute.](../../expressroute/expressroute-introduction.md)
 
-## <a name="disable-secure-transfer"></a>Beveiligde overdracht uitschakelen
+## <a name="disable-secure-transfer"></a>Veilige overdracht uitschakelen
 
-1. Meld u aan bij de Azure Portal en open het opslag account met de NFS-share die u hebt gemaakt.
+1. Meld u aan bij Azure Portal toegang tot het opslagaccount met de NFS-share die u hebt gemaakt.
 1. Selecteer **Configuratie**.
-1. Selecteer **uitgeschakeld** voor **beveiligde overdracht vereist**.
+1. Selecteer **Uitgeschakeld bij** Veilige overdracht **vereist.**
 1. Selecteer **Opslaan**.
 
-    :::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Scherm afbeelding van de configuratie van het opslag account met beveiligde overdracht is uitgeschakeld.":::
+    :::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Schermopname van het configuratiescherm van het opslagaccount met beveiligde overdracht uitgeschakeld.":::
 
-## <a name="mount-an-nfs-share"></a>Een NFS-share koppelen
+## <a name="mount-an-nfs-share"></a>Een NFS-share monteren
 
-1. Zodra de bestands share is gemaakt, selecteert u de share en selecteert u **verbinding maken vanuit Linux**.
-1. Voer het koppelingspad in dat u wilt gebruiken en kopieer vervolgens het script.
-1. Maak verbinding met uw client en gebruik het meegeleverde koppelings script.
+1. Zodra de bestands share is gemaakt, selecteert u de share en selecteert **u Verbinding maken vanuit Linux.**
+1. Voer het pad in dat u wilt gebruiken en kopieer het script.
+1. Maak verbinding met uw client en gebruik het opgegeven koppelscript.
 
-    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Scherm afbeelding van de Blade verbinding met bestands share":::
+    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Schermopname van de blade Verbinding maken met bestands share.":::
 
-U hebt nu de NFS-share gekoppeld.
+U hebt nu uw NFS-share bevestigd.
 
 ### <a name="validate-connectivity"></a>Connectiviteit valideren
 
-Als uw koppeling is mislukt, is het mogelijk dat uw persoonlijke eind punt niet juist is ingesteld of niet toegankelijk is. Zie de sectie [connectiviteit controleren](storage-files-networking-endpoints.md#verify-connectivity) van het artikel netwerken-eind punten voor meer informatie over het controleren van de verbinding.
+Als de bevestiging is mislukt, is het mogelijk dat uw privé-eindpunt niet juist is ingesteld of niet toegankelijk is. Zie de sectie Connectiviteit controleren van het artikel Netwerk eindpunten voor [meer](storage-files-networking-endpoints.md#verify-connectivity) informatie over het bevestigen van connectiviteit.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over Azure Files in ons artikel, [het plannen van een Azure files-implementatie](storage-files-planning.md).
-- Zie [problemen met Azure NFS-bestands shares oplossen](storage-troubleshooting-files-nfs.md)als u problemen ondervindt.
+- Lees meer over Azure Files in ons artikel Planning for an Azure Files deployment (Planning voor een [Azure Files implementatie).](storage-files-planning.md)
+- Zie Problemen met [Azure NFS-bestands](storage-troubleshooting-files-nfs.md)shares oplossen als u problemen ervaart.

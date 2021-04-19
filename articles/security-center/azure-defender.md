@@ -7,12 +7,12 @@ ms.date: 9/30/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: aafd4c6695101042cb30a44e1d2bd30611256779
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0bd0d9c2230b8400aa3197044f944daceb93c715
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102096153"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718517"
 ---
 # <a name="introduction-to-azure-defender"></a>Inleiding tot Azure Defender
 
@@ -20,7 +20,7 @@ De twee grote pijlers van cloudbeveiliging zijn verwerkt in de functies van Azur
 
 - **Beheer van cloudbeveiligingspostuur (CSPM)** : Security Center is **gratis** beschikbaar voor alle Azure-gebruikers. De gratis ervaring omvat CSPM-functies, zoals beveiligingsscore, de detectie van onjuiste beveiligingsconfiguraties op uw Azure-machines, assetinventarisatie en meer. Gebruik deze CSPM-functies om uw hybride cloudpostuur te versterken en om de naleving van het ingebouwde beleid bij te houden.
 
-- **Beveiliging van cloudworkloads (CWP)** : het Cloud Workload Protection Platform (CWPP), **Azure Defender**, dat geïntegreerd is in Security Center, zorgt voor geavanceerde, intelligente beveiliging van uw Azure- en hybride resources en workloads. Door Azure Defender in te schakelen, beschikt u over diverse aanvullende beveiligingsfuncties, zoals beschreven op deze pagina. Naast het ingebouwde beleid kunt u, wanneer u een Azure Defender-abonnement hebt ingeschakeld, aangepaste beleidsregels en initiatieven toevoegen. U kunt wettelijke standaarden, zoals NIST en Azure CIS, evenals de Azure Security-benchmark toevoegen voor een echte aangepaste weergave van uw nalevingsinspanningen.
+- **Beveiliging van cloudworkloads (CWP)** : het Cloud Workload Protection Platform (CWPP), **Azure Defender**, dat geïntegreerd is in Security Center, zorgt voor geavanceerde, intelligente beveiliging van uw Azure- en hybride resources en workloads. Door Azure Defender in te schakelen, beschikt u over diverse aanvullende beveiligingsfuncties, zoals beschreven op deze pagina. Naast het ingebouwde beleid kunt u, wanneer u een Azure Defender-abonnement hebt ingeschakeld, aangepaste beleidsregels en initiatieven toevoegen. U kunt regelgevingsstandaarden toevoegen, zoals NIST en Azure CIS, evenals de [Azure Security-benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction) voor een echt aangepaste weergave van uw naleving.
 
 Het Azure Defender-dashboard in Security Center biedt inzicht in en controle over de CWP-functies voor uw omgeving:
 

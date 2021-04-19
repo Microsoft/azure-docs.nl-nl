@@ -1,22 +1,22 @@
 ---
-title: Archief van wat is er nieuw in Azure Security Center
-description: Een beschrijving van wat er nieuw is en is gewijzigd in Azure Security Center van zes maanden geleden en eerder.
+title: Archief van wat er nieuw is in Azure Security Center
+description: Een beschrijving van wat er nieuw en gewijzigd is in Azure Security Center van zes maanden geleden en eerder.
 author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: reference
 ms.date: 04/04/2021
 ms.author: memildin
-ms.openlocfilehash: ecdaf6a8509583cf93857e24fabc059e38d23b67
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 9d376a374d1934f55b6a6fb15f1642c81b30b2fc
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106383453"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718661"
 ---
-# <a name="archive-for-whats-new-in-azure-security-center"></a>Wilt u archiveren wat er nieuw is in Azure Security Center?
+# <a name="archive-for-whats-new-in-azure-security-center"></a>Archiveren voor wat er nieuw is in Azure Security Center?
 
-De belangrijkste [nieuwe functies in azure Security Center?](release-notes.md) de pagina release opmerkingen bevat updates voor de afgelopen zes maanden, terwijl deze pagina oudere items bevat.
+De primaire [pagina Wat is er nieuw in Azure Security Center?](release-notes.md) bevat updates voor de afgelopen zes maanden, terwijl deze pagina oudere items bevat.
 
 Op deze pagina vindt u informatie over:
 
@@ -76,9 +76,9 @@ Raadpleeg [Aanbevelingen voor beveiliging: een naslaggids](recommendations-refer
 
 Het Dashboard Naleving van regelgeving van Security Center biedt inzicht in uw nalevingsstatus op basis van in hoeverre u aan specifieke nalevingsmechanismen en -vereisten voldoet.
 
-Het dashboard bevat een vaste set reglementaire standaarden. Als een van de opgegeven standaarden niet relevant is voor uw organisatie, is het nu een eenvoudig proces om ze te verwijderen uit de gebruikers interface voor een abonnement. Standaarden kunnen alleen worden verwijderd op het niveau van het *abonnement*, niet in het bereik van de beheergroep.
+Het dashboard bevat een vaste set reglementaire standaarden. Als een van de opgegeven standaarden niet relevant is voor uw organisatie, is het nu een eenvoudig proces om ze te verwijderen uit de gebruikersinterface voor een abonnement. Standaarden kunnen alleen worden verwijderd op het niveau van het *abonnement*, niet in het bereik van de beheergroep.
 
-Meer informatie vindt [u in een standaard verwijderen van uw dash board](update-regulatory-compliance-packages.md#remove-a-standard-from-your-dashboard).
+Meer informatie in [Een standaard verwijderen uit uw dashboard.](update-regulatory-compliance-packages.md#remove-a-standard-from-your-dashboard)
 
 
 ### <a name="microsoftsecuritysecuritystatuses-table-removed-from-azure-resource-graph-arg"></a>Tabel Microsoft.Security/securityStatuses is verwijderd uit Azure Resource Graph (ARG)
@@ -90,7 +90,7 @@ Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Langua
 - De assetvoorraad maakt gebruik van ARG
 - Er is een voorbeeld van een ARG-query gedocumenteerd voor het [identificeren van accounts zonder dat MFA (meervoudige verificatie) is ingeschakeld](security-center-identity-access.md#identify-accounts-without-multi-factor-authentication-mfa-enabled)
 
-Binnen ARG zijn er tabellen met gegevens die u in uw query's kunt gebruiken.
+In ARG zijn er tabellen met gegevens die u kunt gebruiken in uw query's.
 
 :::image type="content" source="./media/release-notes/azure-resource-graph-tables.png" alt-text="Azure Resource Graph Explorer en de beschikbare tabellen":::
 
@@ -200,7 +200,7 @@ De updates in september zijn onder meer:
 
 ### <a name="security-center-gets-a-new-look"></a>Security Center krijgt een nieuwe look.
 
-We hebben een vernieuwde gebruikersinterface voor de portalpagina's van Security Center uitgebracht. De nieuwe pagina's bevatten een nieuwe overzichts pagina en dash boards voor een veilige Score, inventarisatie van de activa en Azure Defender.
+We hebben een vernieuwde gebruikersinterface voor de portalpagina's van Security Center uitgebracht. De nieuwe pagina's bevatten een nieuwe overzichtspagina en dashboards voor de beveiligde score, assetinventaris en Azure Defender.
 
 De opnieuw ontworpen overzichtspagina heeft nu een tegel voor toegang tot de dashboards voor de beveiligingsscore, assetinventarisatie en Azure Defender. Het bevat ook een tegel met een koppeling naar het dashboard voor naleving van regelgeving.
 
@@ -246,7 +246,7 @@ Meer informatie vindt u in [Azure Defender voor Key Vault](defender-for-key-vaul
 
 Ondersteuning voor [Azure Files](../storage/files/storage-files-introduction.md) en [Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md) is nu algemeen beschikbaar.
 
-Van 1 oktober 2020 beginnen we met de beveiliging van resources op deze services.
+Vanaf 1 oktober 2020 gaan we kosten in rekening brengen voor het beveiligen van resources voor deze services.
 
 Meer informatie vindt u in [Azure Defender voor Storage](defender-for-storage-introduction.md).
 
@@ -356,7 +356,7 @@ De volgende beveiligingsaanbevelingen met betrekking tot netwerkbeveiligingsgroe
 
 De preview-aanbeveling 'Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services' wordt afgeschaft zoals beschreven in de documentatie van [Azure Kubernetes Service](../aks/use-pod-security-policies.md).
 
-De functie beveiligings beleid voor pod (preview) is ingesteld voor afschaffing en is na 15 oktober 2020 niet langer beschikbaar voor Azure Policy voor AKS.
+De functie beveiligingsbeleid voor pods (preview) is ingesteld voor afschaffing en is na 15 oktober 2020 niet meer beschikbaar in plaats van Azure Policy voor AKS.
 
 Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
 
@@ -419,7 +419,7 @@ Meer informatie over [assetinventarisatie](asset-inventory.md).
 
 ### <a name="added-support-for-azure-active-directory-security-defaults-for-multi-factor-authentication"></a>Ondersteuning toegevoegd voor standaardinstellingen voor beveiliging van Azure Active Directory (voor meervoudige verificatie)
 
-Security Center heeft volledige ondersteuning toegevoegd voor de [standaard instellingen](../active-directory/fundamentals/concept-fundamentals-security-defaults.md)van de beveiliging, de gratis identiteits beveiliging van micro soft.
+Security Center heeft volledige ondersteuning toegevoegd voor [standaardinstellingen](../active-directory/fundamentals/concept-fundamentals-security-defaults.md)voor beveiliging, de gratis beveiliging voor identiteiten van Microsoft.
 
 Standaardwaarden voor beveiliging bieden vooraf geconfigureerde instellingen voor identiteitsbeveiliging om uw organisatie te beschermen tegen algemene identiteitsgerelateerde aanvallen. Standaardinstellingen voor beveiliging beschermen al meer dan 5 miljoen tenants in totaal; 50.000-tenants worden ook beveiligd door Security Center.
 
@@ -449,8 +449,8 @@ Om ervoor te zorgen dat alle gebruikers een consistente ervaring hebben, ongeach
 
 |Uniforme aanbeveling|Beschrijving wijziging|
 |----|:----|
-|**A vulnerability assessment solution should be enabled on your virtual machines** (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld)|Vervangt de volgende twee aanbevelingen:<br> De ingebouwde oplossing voor de evaluatie van beveiligings problemen inschakelen op virtuele machines (mogelijk gemaakt door Qualys (nu afgeschaft) (inbegrepen bij de laag standaard)<br> De oplossing voor de evaluatie van beveiligings problemen moet worden geïnstalleerd op uw virtuele machines (nu afgeschaft) (standaard en gratis lagen)|
-|**Beveiligingsproblemen op uw virtuele machines moeten worden hersteld**|Vervangt de volgende twee aanbevelingen:<br>Beveiligings problemen op uw virtuele machines herstellen (mogelijk gemaakt door Qualys) (nu afgeschaft)<br>Beveiligings problemen moeten worden opgelost door een oplossing voor beveiligings evaluatie (nu afgeschaft)|
+|**A vulnerability assessment solution should be enabled on your virtual machines** (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld)|Vervangt de volgende twee aanbevelingen:<br> De ingebouwde oplossing voor evaluatie van beveiligingsleed inschakelen op virtuele machines (powered by Qualys (nu afgeschaft) (opgenomen in de Standard-laag)<br> De oplossing voor de evaluatie van beveiligingsleeds moet worden geïnstalleerd op uw virtuele machines (nu afgeschaft) (Standard en gratis lagen)|
+|**Beveiligingsproblemen op uw virtuele machines moeten worden hersteld**|Vervangt de volgende twee aanbevelingen:<br>Beveiligingsproblemen op uw virtuele machines herstellen (powered by Qualys) (nu afgeschaft)<br>Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen (nu afgeschaft)|
 |||
 
 U gebruikt nu dezelfde aanbeveling om de uitbreiding voor de evaluatie van beveiligingsproblemen van Security Center of een oplossing met een eigen licentie ("BYOL") van een partner, zoals Qualys of Rapid7, te implementeren.
@@ -501,8 +501,8 @@ De vroege fase van dit project bevat een beperkte preview en het toevoegen van n
 
 U kunt dit beleid veilig negeren en dit heeft geen invloed op uw omgeving. Als u het wilt inschakelen, meldt u zich voor de preview-versie aan op https://aka.ms/SecurityPrP en selecteert u een van de volgende opties:
 
-1. **Enkele preview-** : alleen deelnemen aan deze beperkte preview. Vermeld expliciet ' ASC doorlopende scan ' als het voor beeld dat u wilt toevoegen.
-1. **Doorlopend programma**: om deel te nemen aan deze en toekomstige beperkte previews. U moet een profiel en een privacyverklaring volt ooien.
+1. **Enkele preview-** : alleen deelnemen aan deze beperkte preview. Vermeld expliciet 'ASC Continuous Scan' als de preview-versie die u wilt deelnemen.
+1. **Doorlopend programma**: om deel te nemen aan deze en toekomstige beperkte previews. U moet een profiel en privacyovereenkomst voltooien.
 
 
 ## <a name="july-2020"></a>Juli 2020
@@ -626,7 +626,7 @@ Meer informatie over [ingebouwd beleid](./policy-reference.md).
 De updates in juni zijn onder meer:
 
 - [Beveiligingsscore-API (preview)](#secure-score-api-preview)
-- [Geavanceerde gegevens beveiliging voor SQL-machines (Azure, andere Clouds en on-premises) (preview-versie)](#advanced-data-security-for-sql-machines-azure-other-clouds-and-on-premises-preview)
+- [Geavanceerde gegevensbeveiliging voor SQL-machines (Azure, andere clouds en on-premises) (preview)](#advanced-data-security-for-sql-machines-azure-other-clouds-and-on-premises-preview)
 - [Twee nieuwe aanbevelingen voor het implementeren van de Log Analytics-agent op Azure Arc-machines (preview)](#two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview)
 - [Nieuw beleid voor het maken van configuraties voor continue export en werkstroomautomatisering op schaal](#new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale)
 - [Nieuwe aanbeveling voor het gebruik van netwerkbeveiligingsgroepen om niet op internet gerichte virtuele machines te beveiligen](#new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines)
@@ -644,7 +644,7 @@ Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging 
 
 
 
-### <a name="advanced-data-security-for-sql-machines-azure-other-clouds-and-on-premises-preview"></a>Geavanceerde gegevens beveiliging voor SQL-machines (Azure, andere Clouds en on-premises) (preview-versie)
+### <a name="advanced-data-security-for-sql-machines-azure-other-clouds-and-on-premises-preview"></a>Geavanceerde gegevensbeveiliging voor SQL-machines (Azure, andere clouds en on-premises) (preview)
 
 De geavanceerde gegevensbeveiliging van Azure Security Center voor SQL-machines biedt nu beveiliging voor SQL-servers die worden gehost op Azure, in andere cloudomgevingen en zelfs op on-premises machines. Hiermee wordt de beveiliging voor uw systeemeigen SQL-servers van Azure uitgebreid om hybride omgevingen volledig te ondersteunen.
 
@@ -891,7 +891,7 @@ U kunt nu standaarden toevoegen zoals:
 - **Canada Federal PBMM**
 - **Azure CIS 1.1.0 (nieuw)** (een meer volledige weergave van Azure CIS 1.1.0)
 
-Daarnaast hebben we onlangs de **Azure Security-benchmark** toegevoegd, de door Microsoft ontworpen, voor Azure specifieke richtlijnen voor aanbevolen procedures voor beveiliging en naleving op basis van algemene nalevingskaders. Er worden extra standaarden ondersteund in het dashboard zodra deze beschikbaar komen.  
+Daarnaast hebben we onlangs de [Azure Security-benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction) toegevoegd, de door Microsoft ontworpen, voor Azure specifieke richtlijnen voor aanbevolen procedures voor beveiliging en naleving op basis van algemene nalevingskaders. Er worden extra standaarden ondersteund in het dashboard zodra deze beschikbaar komen.  
  
 Meer informatie over het [aanpassen van de set standaarden in uw dashboard voor naleving van regelgeving](update-regulatory-compliance-packages.md).
 
@@ -910,316 +910,316 @@ Als u abonnementen hebt in de gratis laag, worden de beveiligingsscores ervan be
 
 Meer informatie over [aanbevelingen voor identiteit en toegang](recommendations-reference.md#recs-identityandaccess).
 
-Meer informatie over [het beheren van multi-factor Authentication (MFA) afdwingen voor uw abonnementen](security-center-identity-access.md).
+Meer informatie over [het beheren van meervoudige verificatie (MFA) afdwingen voor uw abonnementen.](security-center-identity-access.md)
 
 
 
 ## <a name="march-2020"></a>Maart 2020
 
-De updates in maart zijn onder andere:
+Updates in maart zijn onder andere:
 
-- [Werk stroom automatisering is nu algemeen beschikbaar](#workflow-automation-is-now-generally-available)
-- [Integratie van Azure Security Center met Windows-beheer centrum](#integration-of-azure-security-center-with-windows-admin-center)
-- [Beveiliging voor de Azure Kubernetes-service](#protection-for-azure-kubernetes-service)
-- [Verbeterde just-in-time-ervaring](#improved-just-in-time-experience)
-- [Twee beveiligings aanbevelingen voor afgeschafte webtoepassingen](#two-security-recommendations-for-web-applications-deprecated)
-
-
-### <a name="workflow-automation-is-now-generally-available"></a>Werk stroom automatisering is nu algemeen beschikbaar
-
-De functie werk stroom automatisering van Azure Security Center is nu algemeen beschikbaar. Gebruik deze functie om automatisch Logic Apps te activeren voor beveiligings waarschuwingen en aanbevelingen. Daarnaast zijn er hand matige triggers beschikbaar voor waarschuwingen en worden alle aanbevelingen met de optie snel herstellen beschikbaar.
-
-Elk beveiligings programma bevat meerdere werk stromen voor reactie op incidenten. Deze processen kunnen het melden van relevante belanghebbenden, het starten van een wijzigings beheer proces en het Toep assen van specifieke herbemiddelings stappen zijn. Beveiligings experts raden u aan zo veel mogelijk stappen van deze procedures te automatiseren. Automation vermindert de overhead en kan de beveiliging verbeteren door ervoor te zorgen dat de proces stappen snel, consistent en volgens uw vooraf gedefinieerde vereisten worden uitgevoerd.
-
-Zie [werk stroom automatisering](workflow-automation.md)voor meer informatie over de mogelijkheden voor automatische en hand matige Security Center voor het uitvoeren van uw werk stromen.
-
-Meer informatie over [het maken van Logic apps](../logic-apps/logic-apps-overview.md).
+- [Werkstroomautomatisering is nu algemeen beschikbaar](#workflow-automation-is-now-generally-available)
+- [Integratie van Azure Security Center met Windows Admin Center](#integration-of-azure-security-center-with-windows-admin-center)
+- [Beveiliging voor Azure Kubernetes Service](#protection-for-azure-kubernetes-service)
+- [Verbeterde Just-In-Time-ervaring](#improved-just-in-time-experience)
+- [Twee beveiligingsaanbevelingen voor webtoepassingen afgeschaft](#two-security-recommendations-for-web-applications-deprecated)
 
 
-### <a name="integration-of-azure-security-center-with-windows-admin-center"></a>Integratie van Azure Security Center met Windows-beheer centrum
+### <a name="workflow-automation-is-now-generally-available"></a>Werkstroomautomatisering is nu algemeen beschikbaar
 
-Het is nu mogelijk om uw on-premises Windows-servers rechtstreeks naar de Azure Security Center te verplaatsen vanuit het Windows-beheer centrum. Security Center wordt vervolgens uw enige glas venster om beveiligings gegevens weer te geven voor alle resources van uw Windows-beheer centrum, waaronder on-premises servers, virtuele machines en extra PaaS-workloads.
+De functie werkstroomautomatisering van Azure Security Center is nu algemeen beschikbaar. Gebruik dit om automatisch beveiligingswaarschuwingen en Logic Apps te activeren. Bovendien zijn handmatige triggers beschikbaar voor waarschuwingen en alle aanbevelingen die de optie snelle oplossing beschikbaar hebben.
 
-Nadat u een server hebt verplaatst van het Windows-beheer centrum naar Azure Security Center, kunt u het volgende doen:
+Elk beveiligingsprogramma bevat meerdere werkstromen voor incidentrespons. Deze processen kunnen bestaan uit het melden van relevante belanghebbenden, het starten van een wijzigingsbeheerproces en het toepassen van specifieke herstelstappen. Beveiligingsexperts raden u aan om zoveel mogelijk stappen van deze procedures te automatiseren. Automatisering vermindert de overhead en kan uw beveiliging verbeteren door ervoor te zorgen dat de processtappen snel, consistent en volgens uw vooraf gedefinieerde vereisten worden uitgevoerd.
 
-- Beveiligings waarschuwingen en aanbevelingen weer geven in de uitbrei ding Security Center van het Windows-beheer centrum.
-- Bekijk de beveiligings postuur en haal meer gedetailleerde informatie op over uw door Windows-beheer centrum beheerde servers in de Security Center in het Azure Portal (of via een API).
+Zie werkstroomautomatisering voor meer Security Center en handmatige mogelijkheden voor het uitvoeren [van uw werkstromen.](workflow-automation.md)
 
-Meer informatie over [het integreren van Azure Security Center met het Windows-beheer centrum](windows-admin-center-integration.md).
-
-
-### <a name="protection-for-azure-kubernetes-service"></a>Beveiliging voor de Azure Kubernetes-service
-
-Azure Security Center breidt de beveiligings functies van de container uit om Azure Kubernetes service (AKS) te beveiligen.
-
-De populaire open-source platform Kubernetes is zodanig aangenomen dat het nu een industrie standaard is voor container indeling. Ondanks deze wijde implementatie is er nog steeds geen informatie over het beveiligen van een Kubernetes-omgeving. Voor het beschermen van de kwets baarheid van een container toepassing is expertise vereist om te garanderen dat de infra structuur veilig is geconfigureerd en voortdurend wordt bewaakt voor mogelijke dreigingen.
-
-De Security Center verdediging omvat:
-
-- **Detectie en zicht baarheid** : doorlopende detectie van beheerde AKS-instanties binnen de abonnementen die zijn geregistreerd voor Security Center.
-- **Aanbevelingen voor beveiliging** -beschik bare aanbevelingen om u te helpen te voldoen aan de aanbevolen procedures voor beveiliging voor AKS. Deze aanbevelingen zijn opgenomen in uw beveiligde Score om ervoor te zorgen dat ze worden weer gegeven als onderdeel van de beveiligings postuur van uw organisatie. Een voor beeld van een AKS-aanbeveling die u kunt zien, is ' op rollen gebaseerd toegangs beheer moet worden gebruikt om de toegang tot een Kubernetes-service cluster te beperken '.
-- **Bedreigings beveiliging** : Security Center u wordt gewaarschuwd voor bedreigingen en schadelijke activiteiten die zijn gedetecteerd op het niveau van de host en het AKS-cluster.
-
-Meer informatie over de [integratie van Azure Kubernetes Services met Security Center](defender-for-kubernetes-introduction.md).
-
-Meer informatie over [de beveiligings functies van de container in Security Center](container-security.md).
+Meer informatie over het [maken van Logic Apps](../logic-apps/logic-apps-overview.md).
 
 
-### <a name="improved-just-in-time-experience"></a>Verbeterde just-in-time-ervaring
+### <a name="integration-of-azure-security-center-with-windows-admin-center"></a>Integratie van Azure Security Center met Windows Admin Center
 
-De functies, bewerking en gebruikers interface voor het Azure Security Center van just-in-time hulpprogram ma's die uw beheer poorten beveiligen, zijn als volgt verbeterd: 
+Het is nu mogelijk om uw on-premises Windows-servers rechtstreeks van de Windows Admin Center naar de Azure Security Center. Security Center uw enige venster om beveiligingsinformatie weer te geven voor al uw Windows Admin Center-resources, waaronder on-premises servers, virtuele machines en extra PaaS-workloads.
 
-- **Veld motivering** : als u via de just-in-time pagina van de Azure portal toegang tot een virtuele machine (VM) wilt aanvragen, is er een nieuw optioneel veld beschikbaar om een reden voor de aanvraag in te voeren. Gegevens die in dit veld worden ingevoerd, kunnen in het activiteiten logboek worden bijgehouden. 
-- **Automatisch opschonen van redundante just-in-time (JIT)-regels** : wanneer u een JIT-beleid bijwerkt, wordt automatisch een opschoon programma uitgevoerd om de geldigheid van de volledige ruleset te controleren. Het hulp programma zoekt naar verschillen tussen regels in uw beleid en regels in het NSG. Als het hulp programma voor opschonen een niet-overeenkomend item detecteert, wordt de oorzaak bepaald en, wanneer het veilig is om dit te doen, verwijdert u ingebouwde regels die niet meer nodig zijn. De verruiming verwijdert nooit regels die u hebt gemaakt. 
+Nadat u een server van Windows Admin Center naar Azure Security Center verplaatst, kunt u het volgende doen:
+
+- Bekijk beveiligingswaarschuwingen en aanbevelingen in de Security Center van de Windows Admin Center.
+- Bekijk de beveiligingsstatus en haal aanvullende gedetailleerde informatie op van uw Windows Admin Center beheerde servers in de Security Center binnen de Azure Portal (of via een API).
+
+Meer informatie over [het integreren van Azure Security Center met Windows Admin Center](windows-admin-center-integration.md).
+
+
+### <a name="protection-for-azure-kubernetes-service"></a>Beveiliging voor Azure Kubernetes Service
+
+Azure Security Center breidt de beveiligingsfuncties voor containers uit om AKS (Azure Kubernetes Service) te beveiligen.
+
+Het populaire opensource-platform Kubernetes is zo algemeen gebruikt dat het nu een industriestandaard is voor container orchestration. Ondanks deze wijdverbreide implementatie is er nog steeds geen begrip over het beveiligen van een Kubernetes-omgeving. Het beschermen van de aanvalsoppervlakken van een containertoepassing vereist expertise om ervoor te zorgen dat de infrastructuur veilig wordt geconfigureerd en voortdurend wordt bewaakt op mogelijke bedreigingen.
+
+De Security Center-verdediging omvat:
+
+- **Detectie en zichtbaarheid:** continue detectie van beheerde AKS-exemplaren binnen de abonnementen die zijn geregistreerd voor Security Center.
+- **Aanbevelingen voor beveiliging:** aanbevelingen die kunnen worden gedaan om u te helpen voldoen aan de aanbevolen beveiligingsprocedures voor AKS. Deze aanbevelingen zijn opgenomen in uw beveiligingsscore om ervoor te zorgen dat ze worden gezien als onderdeel van de beveiligingsstatus van uw organisatie. Een voorbeeld van een aanbeveling met betrekking tot AKS die u mogelijk ziet, is 'Op rollen gebaseerd toegangsbeheer moet worden gebruikt om de toegang tot een Kubernetes-servicecluster te beperken'.
+- **Bedreigingsbeveiliging:** door continue analyse van uw AKS-implementatie waarschuwt Security Center u op bedreigingen en schadelijke activiteiten die zijn gedetecteerd op host- en AKS-clusterniveau.
+
+Meer informatie over de integratie [van Azure Kubernetes Services met Security Center](defender-for-kubernetes-introduction.md).
+
+Meer informatie over [de beveiligingsfuncties voor containers in Security Center](container-security.md).
+
+
+### <a name="improved-just-in-time-experience"></a>Verbeterde Just-In-Time-ervaring
+
+De functies, werking en gebruikersinterface voor Azure Security Center Just-In-Time-hulpprogramma's voor het beveiligen van uw beheerpoorten zijn als volgt verbeterd: 
+
+- **Redenveld:** wanneer u toegang tot een virtuele machine (VM) aanvraagt via de Just-In-Time-pagina van de Azure Portal, is er een nieuw optioneel veld beschikbaar om een reden voor de aanvraag in te voeren. Gegevens die in dit veld zijn ingevoerd, kunnen worden bij gehouden in het activiteitenlogboek. 
+- **Automatisch opschonen van redundante JIT-regels (Just-In-Time)** : wanneer u een JIT-beleid bij werkt, wordt er automatisch een hulpprogramma voor opschonen uitgevoerd om de geldigheid van uw hele regelset te controleren. Het hulpprogramma zoekt naar niet-overeenkomende regels in uw beleid en regels in de NSG. Als het opschoningshulpprogramma een niet-overeenkomende waarde vindt, wordt de oorzaak bepaald en worden ingebouwde regels verwijderd die niet meer nodig zijn wanneer het veilig is om dit te doen. De schoonmaker verwijdert nooit regels die u hebt gemaakt. 
 
 Meer informatie over [de JIT-toegangsfunctie](security-center-just-in-time.md).
 
 
-### <a name="two-security-recommendations-for-web-applications-deprecated"></a>Twee beveiligings aanbevelingen voor afgeschafte webtoepassingen
+### <a name="two-security-recommendations-for-web-applications-deprecated"></a>Twee beveiligingsaanbevelingen voor webtoepassingen afgeschaft
 
-Twee beveiligings aanbevelingen met betrekking tot webtoepassingen worden afgeschaft: 
+Twee beveiligingsaanbevelingen met betrekking tot webtoepassingen worden afgeschaft: 
 
-- De regels voor webtoepassingen op IaaS Nsg's moeten worden gehard.
+- De regels voor webtoepassingen op IaaS-NSG's moeten worden gehard.
     (Gerelateerd beleid: De regels voor NSG's ten aanzien van webtoepassingen op IaaS moeten strenger worden)
 
 - Toegang tot App Services moet worden beperkt.
-    (Gerelateerd beleid: toegang tot App Services moet worden beperkt [Preview])
+    (Gerelateerd beleid: Toegang tot App Services moet worden beperkt [preview])
 
-Deze aanbevelingen worden niet meer weer gegeven in de Security Center lijst met aanbevelingen. Het gerelateerde beleid wordt niet meer opgenomen in het initiatief ' Security Center default '.
+Deze aanbevelingen worden niet meer weergegeven in de Security Center lijst met aanbevelingen. Het gerelateerde beleid wordt niet meer opgenomen in het initiatief met de naam Security Center Standaard.
 
-Meer informatie over [beveiligings aanbevelingen](recommendations-reference.md).
+Meer informatie over [beveiligingsaanbevelingen.](recommendations-reference.md)
 
 
 
 
 ## <a name="february-2020"></a>Februari 2020
 
-### <a name="fileless-attack-detection-for-linux-preview"></a>Aanvals detectie met een bestand voor Linux (preview-versie)
+### <a name="fileless-attack-detection-for-linux-preview"></a>Detectie van bestandsloze aanvallen voor Linux (preview)
 
-Als aanvallers stealthier Azure Security Center-methoden gebruiken om detectie te voor komen, wordt in aanvulling op Windows de detectie van de aanval van bestanden voor Linux uitgebreid. Aanvallen waarbij misbruik wordt gemaakt van software, schadelijke nettoladingen in goed aardige systeem processen injecteren en in het geheugen verbergen. Deze technieken:
+Naarmate aanvallers die toenemen verborgen methoden gebruiken om detectie te voorkomen, Azure Security Center uitbreiding van detectie van bestandsloze aanvallen voor Linux, naast Windows. Bestandsloze aanvallen maken gebruik van beveiligingsproblemen met software, injecteren schadelijke nettoladingen in goedaardige systeemprocessen en verbergen zich in het geheugen. Deze technieken:
 
 - traceringen van malware op schijf minimaliseren of elimineren
-- de kans op detectie door op schijf gebaseerde scan oplossingen op basis van malware aanzienlijk beperken
+- de kans op detectie aanzienlijk verminderen door op schijven gebaseerde oplossingen voor het scannen van malware
 
-Als u deze bedreiging wilt bemeteren, Azure Security Center u de aanvals detectie van bestanden voor Windows in oktober 2018 vrijgegeven en nu ook uitgebreide aanvals detectie op Linux. 
+Om deze bedreiging tegen te gaan, Azure Security Center in oktober 2018 bestandsloze aanvalsdetectie voor Windows uitgebracht en is nu ook de detectie van bestandsloze aanvallen op Linux uitgebreid. 
 
 
 
 ## <a name="january-2020"></a>Januari 2020
 
-### <a name="enhanced-secure-score-preview"></a>Verbeterde beveiligde Score (preview-versie)
+### <a name="enhanced-secure-score-preview"></a>Verbeterde beveiligde score (preview)
 
-Een verbeterde versie van de functie beveiligde Score van Azure Security Center is nu beschikbaar als preview. In deze versie zijn meerdere aanbevelingen onderverdeeld in beveiligings controles die beter aansluiten op uw kwets bare aanvallen (bijvoorbeeld de toegang tot beheer poorten beperken).
+Een verbeterde versie van de functie voor beveiligde score van Azure Security Center is nu beschikbaar in de preview-versie. In deze versie worden meerdere aanbevelingen gegroepeerd in Besturingselementen voor beveiliging die uw kwetsbare aanvalsoppervlakken beter weerspiegelen (bijvoorbeeld de toegang tot beheerpoorten beperken).
 
-Lees meer over de wijzigingen in de beveiligde score tijdens de preview-fase en bepaal andere herstel bewerkingen waarmee u uw omgeving verder kunt beveiligen.
+Vertrouwd raken met de wijzigingen in de beveiligde score tijdens de preview-fase en andere herstels bepalen die u helpen uw omgeving verder te beveiligen.
 
-Meer informatie over [verbeterde beveiligde Score (preview-versie)](secure-score-security-controls.md).
+Meer informatie over [verbeterde beveiligde score (preview)](secure-score-security-controls.md).
 
 
 
 ## <a name="november-2019"></a>November 2019
 
 Updates in november omvatten:
- - [Bedreigings beveiliging voor Azure Key Vault in Noord-Amerika regio's (preview-versie)](#threat-protection-for-azure-key-vault-in-north-america-regions-preview)
- - [Bedreigings beveiliging voor Azure Storage omvat het controleren van malware-reputatie](#threat-protection-for-azure-storage-includes-malware-reputation-screening)
- - [Werk stroom automatisering met Logic Apps (preview-versie)](#workflow-automation-with-logic-apps-preview)
- - [Snelle oplossing voor bulk bronnen algemeen beschikbaar](#quick-fix-for-bulk-resources-generally-available)
- - [Container installatie kopieën scannen op beveiligings problemen (preview-versie)](#scan-container-images-for-vulnerabilities-preview)
- - [Aanvullende normen voor naleving van regelgeving (preview-versie)](#additional-regulatory-compliance-standards-preview)
- - [Bedreigings beveiliging voor Azure Kubernetes service (preview)](#threat-protection-for-azure-kubernetes-service-preview)
- - [Evaluatie van beveiligings problemen met virtuele machines (preview-versie)](#virtual-machine-vulnerability-assessment-preview)
- - [Geavanceerde gegevens beveiliging voor SQL-servers in azure Virtual Machines (preview-versie)](#advanced-data-security-for-sql-servers-on-azure-virtual-machines-preview)
- - [Ondersteuning voor aangepast beleid (preview-versie)](#support-for-custom-policies-preview)
- - [Azure Security Center dekking uitbreiden met platform voor community en partners](#extending-azure-security-center-coverage-with-platform-for-community-and-partners)
- - [Geavanceerde integraties met export van aanbevelingen en waarschuwingen (preview-versie)](#advanced-integrations-with-export-of-recommendations-and-alerts-preview)
- - [On-premises servers onboarden naar Security Center vanuit het Windows-beheer centrum (preview-versie)](#onboard-on-prem-servers-to-security-center-from-windows-admin-center-preview)
+ - [Bedreigingsbeveiliging voor Azure Key Vault in Noord-Amerika regio's (preview)](#threat-protection-for-azure-key-vault-in-north-america-regions-preview)
+ - [Bedreigingsbeveiliging voor Azure Storage omvat malwarereputatiescreening](#threat-protection-for-azure-storage-includes-malware-reputation-screening)
+ - [Werkstroomautomatisering met Logic Apps (preview)](#workflow-automation-with-logic-apps-preview)
+ - [snelle oplossing voor bulkresources die algemeen beschikbaar zijn](#quick-fix-for-bulk-resources-generally-available)
+ - [Containerafbeeldingen scannen op beveiligingsproblemen (preview)](#scan-container-images-for-vulnerabilities-preview)
+ - [Aanvullende nalevingsstandaarden voor regelgeving (preview)](#additional-regulatory-compliance-standards-preview)
+ - [Threat Protection voor Azure Kubernetes Service (preview)](#threat-protection-for-azure-kubernetes-service-preview)
+ - [Evaluatie van beveiligingsleed van virtuele machines (preview)](#virtual-machine-vulnerability-assessment-preview)
+ - [Geavanceerde gegevensbeveiliging voor SQL-servers op Azure Virtual Machines (preview)](#advanced-data-security-for-sql-servers-on-azure-virtual-machines-preview)
+ - [Ondersteuning voor aangepast beleid (preview)](#support-for-custom-policies-preview)
+ - [Uitbreiding Azure Security Center dekking met platform voor community's en partners](#extending-azure-security-center-coverage-with-platform-for-community-and-partners)
+ - [Geavanceerde integraties met het exporteren van aanbevelingen en waarschuwingen (preview)](#advanced-integrations-with-export-of-recommendations-and-alerts-preview)
+ - [Onboarding van on-Security Center servers vanuit Windows Admin Center (preview)](#onboard-on-prem-servers-to-security-center-from-windows-admin-center-preview)
 
-### <a name="threat-protection-for-azure-key-vault-in-north-america-regions-preview"></a>Bedreigings beveiliging voor Azure Key Vault in Noord-Amerika regio's (preview-versie)
+### <a name="threat-protection-for-azure-key-vault-in-north-america-regions-preview"></a>Bedreigingsbeveiliging voor Azure Key Vault in Noord-Amerika-regio's (preview)
 
-Azure Key Vault is een essentiële service voor het beveiligen van gegevens en het verbeteren van de prestaties van Cloud toepassingen door de mogelijkheid te bieden om sleutels, geheimen, cryptografische sleutels en beleids regels centraal te beheren in de Cloud. Omdat Azure Key Vault gevoelige en bedrijfskritische gegevens opslaat, is er maximale beveiliging vereist voor de sleutel kluizen en de gegevens die erin zijn opgeslagen.
+Azure Key Vault is een essentiële service voor het beveiligen van gegevens en het verbeteren van de prestaties van cloudtoepassingen door de mogelijkheid te bieden sleutels, geheimen, cryptografische sleutels en beleidsregels centraal te beheren in de cloud. Aangezien Azure Key Vault gevoelige en bedrijfskritieke gegevens opgeslagen, is maximale beveiliging vereist voor de sleutelkluizen en de gegevens die in deze kluizen zijn opgeslagen.
 
-Azure Security Center ondersteuning voor beveiliging tegen bedreigingen voor Azure Key Vault biedt een extra beveiligingslaag die ongebruikelijke en mogelijk schadelijke pogingen van toegang tot of misbruik van sleutel kluizen detecteert. Met deze nieuwe beveiligingslaag kunnen klanten bedreigingen tegen hun sleutel kluizen aanpakken zonder een beveiligings expert of systemen voor beveiligings bewaking te beheren. De functie bevindt zich in de open bare preview van Noord-Amerika regio's.
-
-
-### <a name="threat-protection-for-azure-storage-includes-malware-reputation-screening"></a>Bedreigings beveiliging voor Azure Storage omvat het controleren van malware-reputatie
-
-Bedreigings beveiliging voor Azure Storage biedt nieuwe detecties met micro soft Threat Intelligence voor het detecteren van malware-uploads naar Azure Storage met behulp van hash-reputatie analyse en verdachte toegang vanaf een actieve Tor-afsluit knooppunt (een anoniem-proxy). U kunt nu gedetecteerde malware voor opslag accounts weer geven met behulp van Azure Security Center.
+Azure Security Center ondersteuning voor bedreigingsbeveiliging voor Azure Key Vault biedt een extra laag beveiligingsinformatie die ongebruikelijke en mogelijk schadelijke pogingen detecteert om toegang te krijgen tot of misbruik te maken van sleutelkluizen. Met deze nieuwe beveiligingslaag kunnen klanten bedreigingen voor hun sleutelkluizen aanpakken zonder een beveiligingsexpert te zijn of beveiligingsbewakingssystemen te beheren. De functie is in openbare preview in Noord-Amerika regio's.
 
 
-### <a name="workflow-automation-with-logic-apps-preview"></a>Werk stroom automatisering met Logic Apps (preview-versie)
+### <a name="threat-protection-for-azure-storage-includes-malware-reputation-screening"></a>Bedreigingsbeveiliging voor Azure Storage omvat malwarereputatiescreening
 
-Organisaties met centraal beheerde beveiliging en IT/bewerkingen implementeren interne werk stroom processen om de vereiste actie binnen de organisatie te testen wanneer er discrepanties worden gedetecteerd in hun omgevingen. In veel gevallen kunnen deze werk stromen Herhaal bare processen en automatisering de processen binnen de organisatie aanzienlijk stroom lijnen.
-
-Vandaag introduceren we een nieuwe mogelijkheid in Security Center waarmee klanten automatiserings configuraties kunnen maken met behulp van Azure Logic Apps en om beleids regels te maken waarmee ze automatisch worden geactiveerd op basis van specifieke ASC-bevindingen zoals aanbevelingen of waarschuwingen. De Azure Logic-app kan worden geconfigureerd voor het uitvoeren van aangepaste acties die worden ondersteund door de enorme community van Logic app-connectors, of een van de sjablonen gebruiken die worden geboden door Security Center, zoals het verzenden van een e-mail bericht of het openen van een ServiceNow- &trade; ticket.
-
-Zie [werk stroom automatisering](workflow-automation.md)voor meer informatie over de mogelijkheden voor automatische en hand matige Security Center voor het uitvoeren van uw werk stromen.
-
-Zie [Azure Logic apps](../logic-apps/logic-apps-overview.md)voor meer informatie over het maken van Logic apps.
+Bedreigingsbeveiliging voor Azure Storage biedt nieuwe detecties powered by Microsoft Threat Intelligence voor het detecteren van uploads van malware naar Azure Storage met behulp van hashreputatieanalyse en verdachte toegang vanaf een actief Tor-exit-knooppunt (een anonieme proxy). U kunt nu gedetecteerde malware in opslagaccounts weergeven met behulp Azure Security Center.
 
 
-### <a name="quick-fix-for-bulk-resources-generally-available"></a>Snelle oplossing voor bulk bronnen algemeen beschikbaar
+### <a name="workflow-automation-with-logic-apps-preview"></a>Werkstroomautomatisering met Logic Apps (preview)
 
-Met de vele taken die een gebruiker krijgt als onderdeel van een beveiligde Score, kan het lastig zijn om problemen in een grote vloot te herstellen.
+Organisaties met centraal beheerde beveiliging en IT/operationele activiteiten implementeren interne werkstroomprocessen om de vereiste actie binnen de organisatie uit te voeren wanneer discrepanties worden ontdekt in hun omgevingen. In veel gevallen zijn deze werkstromen herhaalbare processen en kan automatisering processen binnen de organisatie sterk stroomlijnen.
 
-Voor het vereenvoudigen van het herstel van onjuiste beveiligings configuraties en voor het snel oplossen van aanbevelingen voor een groot aantal resources en het verbeteren van uw beveiligde Score, gebruikt u snel herstel herstellen.
+Vandaag introduceren we een nieuwe mogelijkheid in Security Center waarmee klanten automatiseringsconfiguraties kunnen maken met Azure Logic Apps en beleidsregels kunnen maken waarmee ze automatisch worden triggers op basis van specifieke ASC-bevindingen, zoals aanbevelingen of waarschuwingen. Azure Logic App kan worden geconfigureerd voor het uitvoeren van aangepaste acties die worden ondersteund door de grote community van Logic App-connectors, of een van de sjablonen van Security Center gebruiken, zoals het verzenden van een e-mail of het openen van een &trade; ServiceNow-ticket.
 
-Met deze bewerking kunt u de resources selecteren waarop u het herstel wilt Toep assen en een herstel actie starten waarmee de instelling namens u wordt geconfigureerd.
+Zie Werkstroomautomatisering voor meer informatie over de automatische en handmatige Security Center voor het uitvoeren [van uw werkstromen.](workflow-automation.md)
 
-Snelle correctie is in het algemeen beschikbaar als onderdeel van de pagina met Security Center aanbevelingen.
-
-Zie in de [Naslag Gids voor beveiligings aanbevelingen voor](recommendations-reference.md)meer informatie over de aanbevelingen waarvoor snelle oplossing is ingeschakeld.
+Zie voor meer informatie Logic Apps maken [van Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
 
-### <a name="scan-container-images-for-vulnerabilities-preview"></a>Container installatie kopieën scannen op beveiligings problemen (preview-versie)
+### <a name="quick-fix-for-bulk-resources-generally-available"></a>snelle oplossing voor bulkresources die algemeen beschikbaar zijn
 
-Azure Security Center kunt nu container installatie kopieën in Azure Container Registry scannen op beveiligings problemen.
+Met de vele taken die een gebruiker als onderdeel van de secure score krijgt, kan de mogelijkheid om problemen in een grote vloot effectief op te lossen lastig worden.
 
-De scan van de installatie kopie werkt door het parseren van het container installatie kopie bestand en vervolgens te controleren of er bekende beveiligings problemen zijn (mogelijk gemaakt door Qualys).
+Als u het herstel van onjuiste beveiligingsconfiguraties wilt vereenvoudigen en snel aanbevelingen voor een groot aantal resources kunt herstellen en uw beveiligingsscore wilt verbeteren, gebruikt u snelle oplossing herstel.
 
-De scan zelf wordt automatisch geactiveerd wanneer nieuwe container installatie kopieën naar Azure Container Registry worden gepusht. Gevonden beveiligings problemen worden weer gegeven als Security Center aanbevelingen en opgenomen in de beveiligde Score van Azure, samen met informatie over hoe u deze kunt patchen om de kwets baarheid voor aanvallen te verminderen.
+Met deze bewerking kunt u de resources selecteren waarin u het herstel wilt toepassen en een herstelactie starten waarmee de instelling namens u wordt geconfigureerd.
 
+Snelle oplossing is tegenwoordig algemeen beschikbaar voor klanten als onderdeel van Security Center pagina met aanbevelingen.
 
-### <a name="additional-regulatory-compliance-standards-preview"></a>Aanvullende normen voor naleving van regelgeving (preview-versie)
-
-Het nalevings Dashboard van de regelgeving biedt inzicht in uw nalevings postuur op basis van Security Center Beoordelingen. Het dash board laat zien hoe uw omgeving voldoet aan de besturings elementen en vereisten die zijn aangewezen door specifieke regelgevings normen en industrie benchmarks en biedt voorschrijvende aanbevelingen voor het oplossen van deze vereisten.
-
-Het nalevings Dashboard van de regelgeving heeft tot nu toe vier ingebouwde standaarden ondersteund: Azure CIS 1.1.0, PCI-DSS, ISO 27001 en SOC-TSP. We kondigen nu de open bare preview-versie van aanvullende ondersteunde standaarden: NIST SP 800-53 R4, SWIFT CSP CSCF v2020, Canada Federal PBMM en UK ambtenaar samen met UK NHS. We hebben ook een bijgewerkte versie van Azure CIS 1.1.0 uitgebracht, waardoor er meer besturings elementen van de standaard en uitbreid baarheid worden uitgebreid.
-
-[Meer informatie over het aanpassen van de set normen in uw nalevings dashboard](update-regulatory-compliance-packages.md).
+Zie voor welke aanbevelingen snelle oplossing is ingeschakeld in de [referentiehandleiding voor beveiligingsaanbevelingen.](recommendations-reference.md)
 
 
-### <a name="threat-protection-for-azure-kubernetes-service-preview"></a>Bedreigings beveiliging voor Azure Kubernetes service (preview)
+### <a name="scan-container-images-for-vulnerabilities-preview"></a>Containerafbeeldingen scannen op beveiligingsproblemen (preview)
 
-Kubernetes is snel de nieuwe standaard voor het implementeren en beheren van software in de Cloud. Enkele mensen hebben uitgebreide ervaring met Kubernetes en veel hebben alleen aandacht besteed aan de algemene engineering en het beheer van de beveiliging. De Kubernetes-omgeving moet zorgvuldig worden geconfigureerd om te worden beveiligd, waardoor er geen toegang is tot de containers die zijn gericht op de aanvals oppervlakte, voor aanvallers open wordt gesteld. Security Center wordt de ondersteuning in de container ruimte uitgebreid naar een van de snelste groeiende Services in azure-Azure Kubernetes service (AKS).
+Azure Security Center kunt nu containerafbeeldingen scannen in Azure Container Registry op beveiligingsproblemen.
 
-De nieuwe mogelijkheden in deze open bare preview-versie zijn onder andere:
+Het scannen van afbeeldingen werkt door het containerafbeeldingsbestand te parseren en vervolgens te controleren of er bekende beveiligingsproblemen zijn (powered by Qualys).
 
-- **Detectie & zicht baarheid** : doorlopende detectie van beheerde AKS-instanties binnen de geregistreerde abonnementen van Security Center.
-- **Veilige Score aanbevelingen** : items die kunnen worden uitgevoerd om klanten te helpen bij het naleven van de aanbevolen beveiligings procedures voor AKS, en het verhogen van hun beveiligde Score. Aanbevelingen zijn items zoals ' op rollen gebaseerd toegangs beheer moeten worden gebruikt om de toegang tot een Kubernetes-service cluster te beperken '.
-- **Detectie van bedreigingen** -host-en cluster-analyses, zoals ' een geprivilegieerde container gedetecteerd '.
+De scan zelf wordt automatisch geactiveerd bij het pushen van nieuwe containerafbeeldingen naar Azure Container Registry. Gevonden beveiligingsproblemen worden aan het Security Center en opgenomen in de Azure-beveiligingsscore, samen met informatie over hoe u deze kunt patchen om de kwetsbaarheid voor aanvallen te verminderen die ze hebben toegestaan.
 
 
-### <a name="virtual-machine-vulnerability-assessment-preview"></a>Evaluatie van beveiligings problemen met virtuele machines (preview-versie)
+### <a name="additional-regulatory-compliance-standards-preview"></a>Aanvullende nalevingsstandaarden voor regelgeving (preview)
 
-Toepassingen die in virtuele machines worden geïnstalleerd, hebben vaak beveiligings problemen die kunnen leiden tot een schending van de virtuele machine. We kondigen dat de Security Center Standard-laag geïntegreerde evaluatie van beveiligings problemen bevat voor virtuele machines zonder extra kosten. Met de evaluatie van beveiligings problemen, mogelijk gemaakt door Qualys in de open bare preview, kunt u voortdurend alle geïnstalleerde toepassingen op een virtuele machine scannen om te zoeken naar kwets bare toepassingen en de bevindingen presen teren in de ervaring van de Security Center Portal. Security Center zorgt voor alle implementatie bewerkingen, zodat er geen extra werk van de gebruiker is vereist. We zijn van plan om opties voor evaluatie van beveiligings problemen op te geven voor het ondersteunen van de unieke bedrijfs behoeften van onze klanten.
+Het dashboard Naleving van regelgeving biedt inzicht in uw nalevingsstatus op basis Security Center evaluaties. Het dashboard laat zien hoe uw omgeving voldoet aan de controles en vereisten die zijn bepaald door specifieke regelgevingsstandaarden en branchebenchmarks en bevat prescriptieve aanbevelingen voor het aanpakken van deze vereisten.
 
-Meer [informatie over de evaluatie van beveiligings problemen voor uw Azure-virtual machines](deploy-vulnerability-assessment-vm.md).
+Het dashboard voor naleving van regelgeving ondersteunt tot nu toe vier ingebouwde standaarden: Azure CIS 1.1.0, PCI-DSS, ISO 27001 en SOC-TSP. We kondigen nu de openbare preview-versie aan van aanvullende ondersteunde standaarden: NIST SP 800-53 R4, SWIFT CSP CSCF v2020, Canada Federal PBMM en UK Official samen met UK NHS. We brengen ook een bijgewerkte versie van Azure CIS 1.1.0 uit, die meer besturingselementen van de standaard beslaat en de uitbreidingsmogelijkheden verbetert.
 
-
-### <a name="advanced-data-security-for-sql-servers-on-azure-virtual-machines-preview"></a>Geavanceerde gegevens beveiliging voor SQL-servers in azure Virtual Machines (preview-versie)
-
-De ondersteuning van Azure Security Center voor beveiliging tegen bedreigingen en evaluatie van beveiligings problemen voor SQL-Db's op IaaS Vm's is nu beschikbaar als preview-versie.
-
-[Evaluatie van beveiligingsproblemen](../azure-sql/database/sql-vulnerability-assessment.md) is een eenvoudig te configureren service waarmee u potentiële zwakke plekken in de beveiliging van de database kunt detecteren, volgen en verhelpen. Het biedt inzicht in uw beveiligings postuur als onderdeel van een beveiligde Azure-Score en bevat de stappen voor het oplossen van beveiligings problemen en het verbeteren van uw data base-Fortifications.
-
-[Geavanceerde bedreigingen beveiliging](../azure-sql/database/threat-detection-overview.md) detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot uw SQL-Server of deze misbruiken. Het controleert uw data base voortdurend op verdachte activiteiten en biedt actie gerichte beveiligings waarschuwingen voor afwijkende database toegangs patronen. Deze waarschuwingen bieden informatie over verdachte activiteiten en aanbevolen acties voor het onderzoeken en oplossen van de dreiging.
+[Meer informatie over het aanpassen van de set standaarden in uw dashboard voor naleving van regelgeving.](update-regulatory-compliance-packages.md)
 
 
-### <a name="support-for-custom-policies-preview"></a>Ondersteuning voor aangepast beleid (preview-versie)
+### <a name="threat-protection-for-azure-kubernetes-service-preview"></a>Bedreigingsbeveiliging voor Azure Kubernetes Service (preview)
 
-Azure Security Center ondersteunt nu aangepaste beleids regels (in preview-versie).
+Kubernetes wordt snel de nieuwe standaard voor het implementeren en beheren van software in de cloud. Weinig mensen hebben uitgebreide ervaring met Kubernetes en veel mensen richten zich alleen op algemene engineering en beheer en kijken naar het beveiligingsaspect. De Kubernetes-omgeving moet zorgvuldig worden geconfigureerd om veilig te zijn. Zo zorgt u ervoor dat er geen containergerichte aanvalsoppervlakdeuren openstaan voor aanvallers. Security Center breidt de ondersteuning in de containerruimte uit naar een van de snelst groeiende services in Azure: Azure Kubernetes Service (AKS).
 
-Onze klanten willen hun huidige dekking van beveiligings beoordelingen in Security Center uitbreiden met hun eigen beveiligings beoordelingen op basis van beleids regels die ze in Azure Policy maken. Met ondersteuning voor aangepast beleid is dit nu mogelijk.
+De nieuwe mogelijkheden in deze openbare preview-versie zijn onder andere:
 
-Deze nieuwe beleids regels zullen deel uitmaken van de Security Center aanbevelingen, een beveiligde Score en het dash board nalevings normen. Met de ondersteuning voor aangepast beleid kunt u nu een aangepast initiatief maken in Azure Policy, het vervolgens als beleid toevoegen in Security Center en dit als een aanbeveling visualiseren.
-
-
-### <a name="extending-azure-security-center-coverage-with-platform-for-community-and-partners"></a>Azure Security Center dekking uitbreiden met platform voor community en partners
-
-Gebruik Security Center om aanbevelingen te ontvangen die niet alleen van micro soft zijn, maar ook van bestaande oplossingen van partners, zoals Check Point, Tenable en CyberArk met veel meer integraties.  Met de eenvoudige stroom voor onboarding van Security Center kan uw bestaande oplossingen worden verbonden met Security Center, zodat u uw aanbevelingen voor beveiligings postuur op één plek kunt bekijken, Unified rapporten moet uitvoeren en alle mogelijkheden van Security Center kunt benutten voor zowel ingebouwde als partner aanbevelingen. U kunt ook Security Center aanbevelingen exporteren naar partner producten.
-
-Meer [informatie over intelligente beveiligings koppelingen van micro soft](https://www.microsoft.com/security/partnerships/intelligent-security-association).
+- **Zichtbaarheid & detectie:** continue detectie van beheerde AKS-exemplaren binnen Security Center geregistreerde abonnementen van uw bedrijf.
+- **Aanbevelingen voor beveiligingsscore: actie-items** om klanten te helpen voldoen aan de aanbevolen beveiligingsprocedures voor AKS en hun beveiligingsscore te verhogen. Aanbevelingen omvatten items zoals 'Op rollen gebaseerd toegangsbeheer moet worden gebruikt om de toegang tot een Kubernetes Service-cluster te beperken'.
+- **Detectie van** bedreigingen: analyse op basis van host en cluster, zoals 'Een geprivilegieerde container gedetecteerd'.
 
 
+### <a name="virtual-machine-vulnerability-assessment-preview"></a>Evaluatie van beveiligingsleed van virtuele machines (preview)
 
-### <a name="advanced-integrations-with-export-of-recommendations-and-alerts-preview"></a>Geavanceerde integraties met export van aanbevelingen en waarschuwingen (preview-versie)
+Toepassingen die in virtuele machines zijn geïnstalleerd, kunnen vaak beveiligingsproblemen hebben die kunnen leiden tot een inbreuk op de virtuele machine. We kondigen aan dat de Security Center standard-laag een ingebouwde evaluatie van beveiligingsleedsleed bevat voor virtuele machines, zonder extra kosten. Met de evaluatie van beveiligingsleeds, powered by Qualys in de openbare preview, kunt u continu alle geïnstalleerde toepassingen op een virtuele machine scannen om kwetsbare toepassingen te vinden en de bevindingen in de ervaring van de Security Center-portal presenteren. Security Center zorgt voor alle implementatiebewerkingen, zodat de gebruiker geen extra werk hoeft te doen. We zijn van plan om in de toekomst opties voor evaluatie van beveiligingsleed te bieden ter ondersteuning van de unieke bedrijfsbehoeften van onze klanten.
 
-Om scenario's op ondernemings niveau boven op Security Center in te scha kelen, is het nu mogelijk om Security Center waarschuwingen en aanbevelingen op extra plaatsen te gebruiken, met uitzonde ring van de Azure Portal of API. Deze kunnen rechtstreeks worden geëxporteerd naar een event hub en naar Log Analytics-werk ruimten. Hier volgen enkele werk stromen die u kunt maken rond deze nieuwe mogelijkheden:
-
-- Met exporteren naar Log Analytics werk ruimte kunt u aangepaste Dash boards maken met Power BI.
-- Met exporteren naar Event hub kunt u Security Center waarschuwingen en aanbevelingen exporteren naar uw Siem's van derden, naar een oplossing van derden in real-time of Azure Data Explorer.
+[Meer informatie over evaluaties van beveiligingsleeds voor uw Azure Virtual Machines](deploy-vulnerability-assessment-vm.md).
 
 
-### <a name="onboard-on-prem-servers-to-security-center-from-windows-admin-center-preview"></a>On-premises servers onboarden naar Security Center vanuit het Windows-beheer centrum (preview-versie)
+### <a name="advanced-data-security-for-sql-servers-on-azure-virtual-machines-preview"></a>Geavanceerde gegevensbeveiliging voor SQL-servers op Azure Virtual Machines (preview)
 
-Windows-beheer centrum is een beheer portal voor Windows-servers die niet zijn geïmplementeerd in Azure en die geen verschillende Azure-beheer mogelijkheden, zoals back-up-en systeem updates, aanbieden. We hebben onlangs een mogelijkheid toegevoegd om deze niet-Azure-servers te laten beveiligen door deze rechtstreeks vanuit de Windows-beheer centrum-ervaring op te ruimen.
+Azure Security Center ondersteuning voor bedreigingsbeveiliging en evaluatie van beveiligingslekken voor SQL-DATABASE's die worden uitgevoerd op IaaS-VM's is nu beschikbaar als preview-versie.
 
-Met deze nieuwe ervaring hebben gebruikers een WAC-server voor Azure Security Center en kunnen ze de beveiligings waarschuwingen en aanbevelingen rechtstreeks in de Windows-beheer centrum-ervaring weer geven.
+[Evaluatie van beveiligingsproblemen](../azure-sql/database/sql-vulnerability-assessment.md) is een eenvoudig te configureren service waarmee u potentiële zwakke plekken in de beveiliging van de database kunt detecteren, volgen en verhelpen. Het biedt inzicht in uw beveiligingsstatus als onderdeel van de Azure-beveiligingsscore en bevat de stappen voor het oplossen van beveiligingsproblemen en het verbeteren van uw databasebeveiliging.
+
+[Advanced Threat Protection](../azure-sql/database/threat-detection-overview.md) detecteert afwijkende activiteiten die duiden op ongebruikelijke en mogelijk schadelijke pogingen om toegang te krijgen tot of misbruik te maken van uw SQL-server. Uw database wordt continu bewaakt op verdachte activiteiten en er worden actiegerichte beveiligingswaarschuwingen weergegeven voor afwijkende patronen voor databasetoegang. Deze waarschuwingen bieden de details van verdachte activiteiten en aanbevolen acties om de bedreiging te onderzoeken en te beperken.
+
+
+### <a name="support-for-custom-policies-preview"></a>Ondersteuning voor aangepast beleid (preview)
+
+Azure Security Center ondersteunt nu aangepast beleid (in preview).
+
+Onze klanten willen hun huidige dekking voor beveiligingsevaluaties in Security Center uitbreiden met hun eigen beveiligingsevaluaties op basis van beleidsregels die ze in Azure Policy. Met ondersteuning voor aangepast beleid is dit nu mogelijk.
+
+Deze nieuwe beleidsregels maken deel uit van de Security Center aanbevelingen, de secure score en het dashboard voor naleving van regelgeving. Met de ondersteuning voor aangepaste beleidsregels kunt u nu een aangepast initiatief maken in Azure Policy, dit vervolgens als een beleid toevoegen in Security Center en visualiseren als een aanbeveling.
+
+
+### <a name="extending-azure-security-center-coverage-with-platform-for-community-and-partners"></a>Uitbreiding Azure Security Center dekking met platform voor community's en partners
+
+Gebruik Security Center om niet alleen aanbevelingen van Microsoft te ontvangen, maar ook van bestaande oplossingen van partners zoals Check Point, Tenable en CyberArk. Er komen nog veel meer integraties aan.  Met de eenvoudige onboardingstroom van Security Center kunt u uw bestaande oplossingen verbinden met Security Center, zodat u uw aanbevelingen voor beveiligingsstatus op één plek kunt bekijken, uniforme rapporten kunt uitvoeren en alle mogelijkheden van Security Center kunt gebruiken ten opzichte van zowel ingebouwde als partneraanbevelingen. U kunt ook Security Center exporteren naar partnerproducten.
+
+[Meer informatie over Microsoft Intelligent Security Association.](https://www.microsoft.com/security/partnerships/intelligent-security-association)
+
+
+
+### <a name="advanced-integrations-with-export-of-recommendations-and-alerts-preview"></a>Geavanceerde integraties met het exporteren van aanbevelingen en waarschuwingen (preview)
+
+Als u scenario's op ondernemingsniveau wilt inschakelen boven op Security Center, is het nu mogelijk om Security Center-waarschuwingen en -aanbevelingen op andere plaatsen te gebruiken, met uitzondering van de Azure Portal of API. Deze kunnen rechtstreeks worden geëxporteerd naar een Event Hub en naar Log Analytics-werkruimten. Hier zijn enkele werkstromen die u kunt maken rond deze nieuwe mogelijkheden:
+
+- Met exporteren naar Log Analytics-werkruimte kunt u aangepaste dashboards maken met Power BI.
+- Met exporteren naar Event Hub kunt u Security Center-waarschuwingen en -aanbevelingen in realtime exporteren naar uw SIEM's van derden, naar een oplossing van derden of Azure Data Explorer.
+
+
+### <a name="onboard-on-prem-servers-to-security-center-from-windows-admin-center-preview"></a>Onboarding van on-Security Center servers vanuit Windows Admin Center (preview)
+
+Windows Admin Center is een beheerportal voor Windows-servers die niet zijn geïmplementeerd in Azure. Deze portal biedt verschillende Azure-beheermogelijkheden, zoals back-up- en systeemupdates. We hebben onlangs de mogelijkheid toegevoegd om deze niet-Azure-servers rechtstreeks vanuit de Windows Admin Center onboarding-ervaring te onboarden.
+
+Met deze nieuwe ervaring kunnen gebruikers een WAC-server onboarden voor Azure Security Center en de beveiligingswaarschuwingen en aanbevelingen rechtstreeks in de Windows Admin Center weergeven.
 
 
 ## <a name="september-2019"></a>September 2019
 
 De updates in september zijn onder meer:
 
- - [Regels beheren met verbeteringen voor besturings elementen voor adaptieve toepassingen](#managing-rules-with-adaptive-application-controls-improvements)
- - [Aanbevelingen voor controle container beveiliging met behulp van Azure Policy](#control-container-security-recommendation-using-azure-policy)
+ - [Regels beheren met verbeteringen in adaptieve toepassingsbesturingselementen](#managing-rules-with-adaptive-application-controls-improvements)
+ - [Aanbevelingen voor containerbeveiliging controleren met behulp van Azure Policy](#control-container-security-recommendation-using-azure-policy)
 
-### <a name="managing-rules-with-adaptive-application-controls-improvements"></a>Regels beheren met verbeteringen voor besturings elementen voor adaptieve toepassingen
+### <a name="managing-rules-with-adaptive-application-controls-improvements"></a>Regels beheren met verbeteringen in adaptieve toepassingsbesturingselementen
 
-De ervaring van het beheren van regels voor virtuele machines met behulp van adaptieve toepassings besturings elementen is verbeterd. Met de adaptieve toepassings besturings elementen van Azure Security Center kunt u bepalen welke toepassingen kunnen worden uitgevoerd op uw virtuele machines. Naast een algemene verbetering van regel beheer, kunt u met een nieuw voor deel bepalen welke bestands typen worden beveiligd wanneer u een nieuwe regel toevoegt.
+De ervaring met het beheren van regels voor virtuele machines met adaptieve toepassingsregelaars is verbeterd. Azure Security Center adaptieve toepassingsregelaars van Azure Security Center kunt u bepalen welke toepassingen op uw virtuele machines kunnen worden uitgevoerd. Naast een algemene verbetering van regelbeheer kunt u met een nieuw voordeel bepalen welke bestandstypen worden beveiligd wanneer u een nieuwe regel toevoegt.
 
 [Meer informatie over adaptieve toepassingsregelaars](security-center-adaptive-application.md).
 
 
-### <a name="control-container-security-recommendation-using-azure-policy"></a>Aanbevelingen voor controle container beveiliging met behulp van Azure Policy
+### <a name="control-container-security-recommendation-using-azure-policy"></a>Aanbevelingen voor containerbeveiliging controleren met behulp van Azure Policy
 
-De aanbeveling van Azure Security Center voor het oplossen van beveiligings problemen in container beveiliging kan nu worden ingeschakeld of uitgeschakeld via Azure Policy.
+Azure Security Center aanbeveling om beveiligingsproblemen in containerbeveiliging op te verhelpen, kan nu worden ingeschakeld of uitgeschakeld via Azure Policy.
 
-Als u uw ingeschakelde beveiligings beleid wilt bekijken, opent u de pagina beveiligings beleid vanuit Security Center.
+Als u uw ingeschakelde beveiligingsbeleid wilt weergeven, Security Center u de pagina Beveiligingsbeleid openen.
 
 
 ## <a name="august-2019"></a>Augustus 2019
 
 De updates in augustus zijn onder meer:
 
- - [Just-in-time-VM-toegang voor Azure Firewall](#just-in-time-jit-vm-access-for-azure-firewall)
- - [Eén Klik op herbemiddeling om uw beveiligings postuur te verbeteren (preview-versie)](#single-click-remediation-to-boost-your-security-posture-preview)
+ - [Jit-VM-toegang (Just-In-Time) voor Azure Firewall](#just-in-time-jit-vm-access-for-azure-firewall)
+ - [Herstel met één klik om uw beveiligingsstatus te verbeteren (preview)](#single-click-remediation-to-boost-your-security-posture-preview)
  - [Beheer in meerdere tenants](#cross-tenant-management)
 
-### <a name="just-in-time-jit-vm-access-for-azure-firewall"></a>Just-in-time-VM-toegang voor Azure Firewall 
+### <a name="just-in-time-jit-vm-access-for-azure-firewall"></a>Jit-VM-toegang (Just-In-Time) voor Azure Firewall 
 
-Just-in-time-VM-toegang voor Azure Firewall is nu algemeen beschikbaar. Gebruik het om uw Azure Firewall beveiligde omgevingen te beveiligen naast uw beveiligde NSG-omgevingen.
+Jit-VM-toegang (Just-In-Time) voor Azure Firewall is nu algemeen beschikbaar. Gebruik deze om uw Azure Firewall beveiligde omgevingen te beveiligen naast uw met NSG beveiligde omgevingen.
 
-JIT-VM-toegang vermindert de bloot stelling aan netwerk volumetrische aanvallen door alleen beheerde toegang tot Vm's te bieden wanneer dit nodig is, met behulp van uw NSG-en Azure Firewall regels.
+Jit VM-toegang vermindert de blootstelling aan netwerk volumetrische aanvallen door beheerde toegang tot VM's alleen wanneer dat nodig is, met behulp van uw NSG en Azure Firewall regels.
 
-Wanneer u JIT voor uw virtuele machines inschakelt, kunt u een beleid maken dat bepaalt welke poorten moeten worden beveiligd, hoe lang de poorten open blijven en goedgekeurde IP-adressen van waaruit deze poorten toegankelijk zijn. Dit beleid helpt u de controle te houden over wat gebruikers kunnen doen wanneer ze toegang aanvragen.
+Wanneer u JIT voor uw VM's inschakelen, maakt u een beleid dat bepaalt welke poorten moeten worden beveiligd, hoe lang de poorten open moeten blijven en goedgekeurde IP-adressen van waaraf deze poorten toegankelijk zijn. Met dit beleid kunt u de controle houden over wat gebruikers kunnen doen wanneer ze toegang aanvragen.
 
-Aanvragen worden vastgelegd in het Azure-activiteiten logboek, zodat u de toegang eenvoudig kunt bewaken en controleren. De just-in-time pagina helpt u ook snel bestaande Vm's te identificeren waarvoor JIT is ingeschakeld en Vm's waarvoor JIT wordt aanbevolen.
+Aanvragen worden vastgelegd in het Azure-activiteitenlogboek, zodat u de toegang eenvoudig kunt controleren en controleren. De Pagina Just-In-Time helpt u ook om snel bestaande VM's te identificeren waarop JIT is ingeschakeld en VM's waarop JIT wordt aanbevolen.
 
 Meer informatie over [Azure Firewall](../firewall/overview.md).
 
 
-### <a name="single-click-remediation-to-boost-your-security-posture-preview"></a>Eén Klik op herbemiddeling om uw beveiligings postuur te verbeteren (preview-versie)
+### <a name="single-click-remediation-to-boost-your-security-posture-preview"></a>Herstel met één klik om uw beveiligingsstatus te verbeteren (preview)
 
-Secure Score is een hulp programma waarmee u de beveiligings postuur van uw werk belasting kunt beoordelen. Hiermee worden uw beveiligings aanbevelingen beoordeeld en worden prioriteiten voor u gegeven, zodat u weet welke aanbevelingen het eerst moeten worden uitgevoerd. Zo kunt u de meest ernstige beveiligings problemen vinden om het onderzoek te priori teren.
+Beveiligingsscore is een hulpprogramma waarmee u de beveiligingsstatus van uw workload kunt beoordelen. Het beoordeelt uw beveiligingsaanbevelingen en geeft deze prioriteit, zodat u weet welke aanbevelingen u het eerst moet uitvoeren. Dit helpt u bij het vinden van de meest ernstige beveiligingsproblemen om onderzoek te prioriteren.
 
-We hebben een nieuwe mogelijkheid toegevoegd waarmee u een aanbeveling kunt oplossen voor een groot aantal resources met één klik om het herstel van de configuratie van de beveiliging te vereenvoudigen en u te helpen uw beveiligde score snel te verbeteren.
+Om het herstel van onjuiste beveiligingsconfiguraties te vereenvoudigen en u te helpen uw beveiligingsscore snel te verbeteren, hebben we een nieuwe mogelijkheid toegevoegd waarmee u een aanbeveling voor een groot aantal resources in één klik kunt herstellen.
 
-Met deze bewerking kunt u de resources selecteren waarop u het herstel wilt Toep assen en een herstel actie starten waarmee de instelling namens u wordt geconfigureerd.
+Met deze bewerking kunt u de resources selecteren waarin u het herstel wilt toepassen en een herstelactie starten waarmee de instelling namens u wordt geconfigureerd.
 
-Zie in de [Naslag Gids voor beveiligings aanbevelingen voor](recommendations-reference.md)meer informatie over de aanbevelingen waarvoor snelle oplossing is ingeschakeld.
+Zie voor welke aanbevelingen een snelle oplossing is ingeschakeld in de [referentiehandleiding voor beveiligingsaanbevelingen.](recommendations-reference.md)
 
 
 ### <a name="cross-tenant-management"></a>Beheer in meerdere tenants
 
-Security Center ondersteunt nu cross-Tenant beheer scenario's als onderdeel van Azure Lighthouse. Op die manier krijgt u inzicht in de beveiligings postuur van meerdere tenants in Security Center. 
+Security Center ondersteunt nu beheerscenario's voor meerdere tenants als onderdeel van Azure Lighthouse. Hierdoor kunt u meer inzicht krijgen en de beveiligingsstatus van meerdere tenants in Security Center. 
 
-Meer [informatie over de ervaring voor cross-Tenant beheer](security-center-cross-tenant-management.md).
+[Meer informatie over beheerervaringen voor meerdere tenants.](security-center-cross-tenant-management.md)
 
 
 ## <a name="july-2019"></a>Juli 2019
 
-### <a name="updates-to-network-recommendations"></a>Updates voor netwerk aanbevelingen
+### <a name="updates-to-network-recommendations"></a>Updates voor netwerkaanbevelingen
 
-Azure Security Center (ASC) heeft nieuwe aanbevelingen van het netwerk gelanceerd en een aantal bestaande verbeteringen verbeterd. Nu met behulp van Security Center hebt u nog meer netwerk beveiliging voor uw resources. 
+Azure Security Center (ASC) heeft nieuwe netwerkaanbevelingen geïntroduceerd en een aantal bestaande aanbevelingen verbeterd. Het gebruik van Security Center zorgt nu voor nog betere netwerkbeveiliging voor uw resources. 
 
-Meer [informatie over aanbevelingen voor het netwerk](recommendations-reference.md#recs-networking).
+[Meer informatie over netwerkaanbevelingen.](recommendations-reference.md#recs-networking)
 
 
 ## <a name="june-2019"></a>Juni 2019
 
-### <a name="adaptive-network-hardening---generally-available"></a>Adaptieve netwerk beveiliging: algemeen beschikbaar
+### <a name="adaptive-network-hardening---generally-available"></a>Adaptieve netwerkharding - algemeen beschikbaar
 
-Een van de grootste kwets bare Opper vlakken voor werk belastingen die worden uitgevoerd in de publieke Cloud, is verbindingen van en naar het open bare Internet. Onze klanten vinden het moeilijk om te weten welke NSG-regels (netwerk beveiligings groep) moeten worden uitgevoerd om ervoor te zorgen dat Azure-workloads alleen beschikbaar zijn voor de vereiste bronbereiken. Met deze functie leert Security Center het netwerk verkeer en de verbindings patronen van Azure-workloads en NSG regel aanbevelingen voor Internet gerichte virtuele machines. Zo kan onze klant beter hun netwerk toegangs beleid configureren en de bloot stelling aan aanvallen beperken. 
+Een van de grootste aanvalsoppervlakken voor workloads die in de openbare cloud worden uitgevoerd, zijn verbindingen van en naar het openbare internet. Onze klanten vinden het moeilijk om te weten welke NSG-regels (Netwerkbeveiligingsgroep) moeten worden gebruikt om ervoor te zorgen dat Azure-workloads alleen beschikbaar zijn voor de vereiste bronbereiken. Met deze functie leert Security Center het netwerkverkeer en de connectiviteitspatronen van Azure-workloads en worden aanbevelingen voor NSG-regels gegeven voor virtuele machines die zijn gericht op internet. Dit helpt onze klant om zijn netwerktoegangsbeleid beter te configureren en de blootstelling aan aanvallen te beperken. 
 
-Meer [informatie over adaptieve netwerk beveiliging](security-center-adaptive-network-hardening.md).
+[Meer informatie over adaptieve netwerkverharding.](security-center-adaptive-network-hardening.md)

@@ -1,51 +1,51 @@
 ---
-title: Een persoonlijk Azure Kubernetes service-cluster maken
-description: Meer informatie over het maken van een AKS-cluster (private Azure Kubernetes service)
+title: Een privé-Azure Kubernetes Service maken
+description: Meer informatie over het maken van een AKS Azure Kubernetes Service cluster (Private Azure Kubernetes Service)
 services: container-service
 ms.topic: article
 ms.date: 3/31/2021
-ms.openlocfilehash: 474c9a5d58627cec59904ccbcc5b3597de314612
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: 339bb41aed5ead3d7ee7d1217bfbc771cf068832
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106120364"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107719111"
 ---
-# <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
+# <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een privé-Azure Kubernetes Service maken
 
-In een particulier cluster heeft het besturings vlak of de API-server interne IP-adressen die zijn gedefinieerd in het [RFC1918 voor particulier Internet](https://tools.ietf.org/html/rfc1918) document. Door gebruik te maken van een persoonlijk cluster, kunt u ervoor zorgen dat het netwerk verkeer tussen uw API-server en de knooppunt groepen alleen in het particuliere netwerk blijven.
+In een privécluster heeft het besturingsvlak of de API-server interne IP-adressen die zijn gedefinieerd in het document [RFC1918 - Adrestoewijzing voor privé-internet.](https://tools.ietf.org/html/rfc1918) Door een privécluster te gebruiken, kunt u ervoor zorgen dat netwerkverkeer tussen uw API-server en uw knooppuntgroepen alleen in het particuliere netwerk blijft.
 
-Het besturings vlak of de API-server bevindt zich in een door Azure Kubernetes service (AKS) beheerd Azure-abonnement. Het cluster of de knooppunt groep van een klant bevindt zich in het abonnement van de klant. De server en het cluster of de knooppunt groep kunnen met elkaar communiceren via de [Azure Private Link-service][private-link-service] in het virtuele netwerk van de API-server en een persoonlijk eind punt dat wordt weer gegeven in het subnet van het AKS-cluster van de klant.
+Het besturingsvlak of de API-server maakt Azure Kubernetes Service beheerd Azure-abonnement (AKS). Het cluster of de knooppuntgroep van een klant is in het abonnement van de klant. De server en de cluster- of knooppuntgroep kunnen met elkaar communiceren via de [Azure Private Link-service][private-link-service] in het virtuele netwerk van de API-server en een privé-eindpunt dat beschikbaar is in het subnet van het AKS-cluster van de klant.
 
 ## <a name="region-availability"></a>Beschikbaarheid in regio’s
 
-Een persoonlijk cluster is beschikbaar in open bare regio's, Azure Government en Azure China 21Vianet-regio's waar [AKS wordt ondersteund](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
+Een privécluster is beschikbaar in openbare regio's, Azure Government en Azure China 21Vianet regio's waar [AKS wordt ondersteund.](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service)
 
 > [!NOTE]
-> Azure Government-sites worden ondersteund, maar US Gov-Texas wordt momenteel niet ondersteund vanwege ontbrekende persoonlijke koppelings ondersteuning.
+> Azure Government-sites worden ondersteund, maar US Gov - Texas wordt momenteel niet ondersteund vanwege ontbrekende Private Link ondersteuning.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* De Azure CLI-versie 2.2.0 of hoger
-* De service private link wordt alleen ondersteund op standaard Azure Load Balancer. Basis Azure Load Balancer wordt niet ondersteund.  
-* Als u een aangepaste DNS-server wilt gebruiken, voegt u de Azure DNS IP-168.63.129.16 toe als de upstream-DNS-server in de aangepaste DNS-server.
+* Azure CLI versie 2.2.0 of hoger
+* De Private Link-service wordt alleen ondersteund Azure Load Balancer Standard-service. Basic Azure Load Balancer wordt niet ondersteund.  
+* Als u een aangepaste DNS-server wilt gebruiken, voegt u Azure DNS IP 168.63.129.16 toe als upstream-DNS-server in de aangepaste DNS-server.
 
-## <a name="create-a-private-aks-cluster"></a>Een persoonlijk AKS-cluster maken
+## <a name="create-a-private-aks-cluster"></a>Een privé-AKS-cluster maken
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een resource groep of gebruik een bestaande resource groep voor uw AKS-cluster.
+Maak een resourcegroep of gebruik een bestaande resourcegroep voor uw AKS-cluster.
 
 ```azurecli-interactive
 az group create -l westus -n MyResourceGroup
 ```
 
-### <a name="default-basic-networking"></a>Standaard netwerken 
+### <a name="default-basic-networking"></a>Standaard basisnetwerken 
 
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster  
 ```
-Waar `--enable-private-cluster` is een verplichte vlag voor een persoonlijk cluster. 
+Waarbij `--enable-private-cluster` een verplichte vlag is voor een privécluster. 
 
 ### <a name="advanced-networking"></a>Geavanceerde netwerken  
 
@@ -61,75 +61,75 @@ az aks create \
     --dns-service-ip 10.2.0.10 \
     --service-cidr 10.2.0.0/24 
 ```
-Waar `--enable-private-cluster` is een verplichte vlag voor een persoonlijk cluster. 
+Waarbij `--enable-private-cluster` een verplichte vlag is voor een privécluster. 
 
 > [!NOTE]
-> Als de docker Bridge-adres CIDR (172.17.0.1/16) in conflict is met de CIDR van het subnet, wijzigt u het docker Bridge-adres op de juiste manier.
+> Als het adres van de Docker-brug CIDR (172.17.0.1/16) conflicteert met de CIDR van het subnet, wijzigt u het adres van de Docker-brug op de juiste wijze.
 
-## <a name="configure-private-dns-zone"></a>Privé-DNS zone configureren 
+## <a name="configure-private-dns-zone"></a>Een Privé-DNS configureren 
 
-De volgende para meters kunnen worden gebruikt om Privé-DNS zone te configureren.
+De volgende parameters kunnen worden gebruikt voor het configureren Privé-DNS Zone.
 
-- ' Systeem ' is de standaard waarde. Als het argument--privé-DNS-zone wordt wegge laten, wordt in AKS een Privé-DNS zone gemaakt in de knooppunt resource groep.
-- Als geen wordt aangegeven, maakt AKS geen Privé-DNS zone.  Hiervoor moet u uw eigen DNS-server meenemen en de DNS-omzetting configureren voor de persoonlijke FQDN.  Als u geen DNS-omzetting configureert, kan DNS alleen worden omgezet in de agent knooppunten en kunnen er cluster problemen optreden na de implementatie. 
-- Voor ' CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID ' moet u een Privé-DNS zone maken in deze indeling voor Azure Global Cloud: `privatelink.<region>.azmk8s.io` . U hebt de resource-id van de Privé-DNS zone nodig.  Daarnaast hebt u een door de gebruiker toegewezen identiteit of Service-Principal met ten minste `private dns zone contributor`  de `vnet contributor` rollen en nodig.
-- ' FQDN-subdomein ' kan worden gebruikt met ' CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID ' alleen om subdomein mogelijkheden te bieden `privatelink.<region>.azmk8s.io`
+- 'Systeem' is de standaardwaarde. Als het argument --private-dns-zone wordt weggelaten, maakt AKS een Privé-DNS zone in de knooppuntresourcegroep.
+- 'Geen' betekent dat AKS geen nieuwe Privé-DNS maken.  Hiervoor moet u Bring Your Own DNS Server gebruiken en de DNS-resolutie voor de privé-FQDN configureren.  Als u geen DNS-resolutie configureert, kan DNS alleen worden opgelost binnen de agentknooppunten en worden clusterproblemen veroorzaakt na de implementatie. 
+- 'CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID' vereist dat u een Privé-DNS Zone in deze indeling maakt voor azure global cloud: `privatelink.<region>.azmk8s.io` . U hebt de resource-id van die Privé-DNS zone nodig.  Daarnaast hebt u een door de gebruiker toegewezen identiteit of service-principal met ten minste de `private dns zone contributor`  rollen `vnet contributor` en nodig.
+- 'fqdn-subdomain' kan alleen worden gebruikt met 'CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID' om subdomeinmogelijkheden te bieden aan `privatelink.<region>.azmk8s.io`
 
 ### <a name="prerequisites"></a>Vereisten
 
-* De AKS preview-versie 0.5.7 of hoger
+* De AKS Preview-versie 0.5.7 of hoger
 * De API-versie 2020-11-01 of hoger
 
-### <a name="create-a-private-aks-cluster-with-private-dns-zone-preview"></a>Een persoonlijk AKS-cluster maken met Privé-DNS zone (preview-versie)
+### <a name="create-a-private-aks-cluster-with-private-dns-zone"></a>Een privé-AKS-cluster maken met Privé-DNS Zone
 
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone [system|none]
 ```
 
-### <a name="create-a-private-aks-cluster-with-a-custom-private-dns-zone-preview"></a>Een persoonlijk AKS-cluster maken met een aangepaste Privé-DNS zone (preview-versie)
+### <a name="create-a-private-aks-cluster-with-a-custom-private-dns-zone"></a>Een privé-AKS-cluster maken met een aangepaste Privé-DNS zone
 
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone <custom private dns zone ResourceId> --fqdn-subdomain <subdomain-name>
 ```
 
-## <a name="options-for-connecting-to-the-private-cluster"></a>Opties voor het maken van verbinding met het privé cluster
+## <a name="options-for-connecting-to-the-private-cluster"></a>Opties voor het maken van verbinding met het privécluster
 
-Het API-server eindpunt heeft geen openbaar IP-adres. Als u de API-server wilt beheren, moet u een virtuele machine gebruiken die toegang heeft tot de Azure-Virtual Network (VNet) van het AKS-cluster. Er zijn verschillende opties voor het tot stand brengen van een netwerk verbinding met het persoonlijke cluster.
+Het eindpunt van de API-server heeft geen openbaar IP-adres. Als u de API-server wilt beheren, moet u een VM gebruiken die toegang heeft tot de Azure Virtual Network (VNet) van het AKS-cluster. Er zijn verschillende opties voor het tot stand komen van netwerkconnectiviteit met het privécluster.
 
-* Maak een virtuele machine in hetzelfde Azure-Virtual Network (VNet) als het AKS-cluster.
-* Gebruik een virtuele machine in een afzonderlijk netwerk en stel de [peering van een virtueel netwerk][virtual-network-peering]in.  Zie de sectie hieronder voor meer informatie over deze optie.
-* Gebruik een [snelle route of VPN-][express-route-or-VPN] verbinding.
-* Gebruik de [opdracht functie AKS uitvoeren](#aks-run-command-preview).
+* Maak een VM in hetzelfde Azure Virtual Network (VNet) als het AKS-cluster.
+* Gebruik een virtuele machine in een afzonderlijk netwerk en stel [peering voor virtuele netwerken in.][virtual-network-peering]  Zie de sectie hieronder voor meer informatie over deze optie.
+* Gebruik een [ExpressRoute- of VPN-verbinding.][express-route-or-VPN]
+* Gebruik de [AKS Uitvoeropdracht functie](#aks-run-command-preview).
 
-Het maken van een virtuele machine in hetzelfde VNET als het AKS-cluster is de eenvoudigste optie.  Express route en Vpn's voegen kosten toe en vereisen extra netwerk complexiteit.  Voor peering van virtuele netwerken moet u uw netwerkcidr-bereiken plannen om ervoor te zorgen dat er geen overlappende bereiken zijn.
+Het maken van een VM in hetzelfde VNET als het AKS-cluster is de eenvoudigste optie.  Express Route en VPN's voegen kosten toe en vereisen extra netwerkcomplexiteit.  Voor peering voor virtuele netwerken moet u de CIDR-adresbereiken van uw netwerk plannen om ervoor te zorgen dat er geen overlappende adresbereiken zijn.
 
-### <a name="aks-run-command-preview"></a>Opdracht AKS uitvoeren (preview-versie)
+### <a name="aks-run-command-preview"></a>AKS Uitvoeropdracht (preview)
 
-Wanneer u toegang wilt krijgen tot een persoonlijk cluster, moet u dit doen in het virtuele cluster netwerk of een peered netwerk of client computer. Hiervoor moet de computer doorgaans worden verbonden via een VPN-of Express-route naar het virtuele cluster netwerk of een JumpBox die moet worden gemaakt in het virtuele cluster netwerk. Met de opdracht AKS uitvoeren kunt u op afstand opdrachten aanroepen in een AKS-cluster via de AKS-API. Deze functie biedt een API waarmee u bijvoorbeeld just-in-time-opdrachten kunt uitvoeren vanaf een externe laptop voor een persoonlijk cluster. Dit kan een zeer snelle, just-in-time-toegang tot een persoonlijk cluster, wanneer de client computer zich niet in het privé netwerk van het cluster bevindt, terwijl dezelfde RBAC-besturings elementen en een persoonlijke API-server behouden blijven en afdwingen.
+Wanneer u toegang nodig hebt tot een privécluster, moet u dit doen binnen het virtuele clusternetwerk of een peered netwerk of clientmachine. Hiervoor moet uw computer meestal via VPN of Express Route zijn verbonden met het virtuele clusternetwerk of een jumpbox die in het virtuele netwerk van het cluster moet worden gemaakt. Met de AKS-opdracht uitvoeren kunt u opdrachten in een AKS-cluster op afstand aanroepen via de AKS-API. Deze functie biedt een API waarmee u bijvoorbeeld Just-In-Time-opdrachten kunt uitvoeren vanaf een externe laptop voor een privécluster. Dit kan enorm helpen bij snelle Just-In-Time-toegang tot een privécluster wanneer de clientmachine zich niet in het privénetwerk van het cluster behoudt en dezelfde RBAC-besturingselementen en persoonlijke API-server afdwingt.
 
-### <a name="register-the-runcommandpreview-preview-feature"></a>De `RunCommandPreview` Preview-functie registreren
+### <a name="register-the-runcommandpreview-preview-feature"></a>De `RunCommandPreview` preview-functie registreren
 
-Als u de nieuwe opdracht-API voor uitvoeren wilt gebruiken, moet u de `RunCommandPreview` functie vlag inschakelen voor uw abonnement.
+Als u de nieuwe UITVOEROPDRACHT-API wilt gebruiken, moet u de `RunCommandPreview` functievlag inschakelen voor uw abonnement.
 
-De `RunCommandPreview` functie vlag registreren met behulp van de opdracht [AZ feature REGI ster] [AZ-feature-REGI ster], zoals wordt weer gegeven in het volgende voor beeld:
+Registreer de `RunCommandPreview` functievlag met behulp van de opdracht [az feature register][az-feature-register], zoals wordt weergegeven in het volgende voorbeeld:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.ContainerService" --name "RunCommandPreview"
 ```
 
-Het duurt enkele minuten voordat de status is *geregistreerd*. Controleer de registratie status met behulp van de opdracht [AZ Feature List][az-feature-list] :
+Het duurt enkele minuten voordat de status Geregistreerd *we weergeven.* Controleer de registratiestatus met behulp van [de opdracht az feature list:][az-feature-list]
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/RunCommandPreview')].{Name:name,State:properties.state}"
 ```
 
-Als u klaar bent, vernieuwt u de registratie van de resource provider *micro soft. container service* met de opdracht [AZ provider REGI ster][az-provider-register] :
+Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider *Microsoft.ContainerService* met behulp van de [opdracht az provider register:][az-provider-register]
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
 ```
 
-### <a name="use-aks-run-command"></a>De opdracht AKS uitvoeren gebruiken
+### <a name="use-aks-run-command"></a>AKS-Uitvoeropdracht
 
 Eenvoudige opdracht
 
@@ -137,7 +137,7 @@ Eenvoudige opdracht
 az aks command invoke -g <resourceGroup> -n <clusterName> -c "kubectl get pods -n kube-system"
 ```
 
-Een manifest implementeren door het specifieke bestand te koppelen
+Een manifest implementeren door het specifieke bestand bij te koppelen
 
 ```azurecli-interactive
 az aks command invoke -g <resourceGroup> -n <clusterName> -c "kubectl apply -f deployment.yaml -n default" -f deployment.yaml
@@ -149,7 +149,7 @@ Een manifest implementeren door een hele map te koppelen
 az aks command invoke -g <resourceGroup> -n <clusterName> -c "kubectl apply -f deployment.yaml -n default" -f .
 ```
 
-Een helm-installatie uitvoeren en het specifieke waarden manifest door geven
+Een Helm-installatie uitvoeren en het manifest met specifieke waarden doorgeven
 
 ```azurecli-interactive
 az aks command invoke -g <resourceGroup> -n <clusterName> -c "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update && helm install my-release -f values.yaml bitnami/nginx" -f values.yaml
@@ -157,42 +157,42 @@ az aks command invoke -g <resourceGroup> -n <clusterName> -c "helm repo add bitn
 
 ## <a name="virtual-network-peering"></a>Peering op virtueel netwerk
 
-Zoals gezegd, is peering in virtuele netwerken een manier om toegang te krijgen tot uw persoonlijke cluster. Als u virtuele netwerk peering wilt gebruiken, moet u een koppeling instellen tussen het virtuele netwerk en de privé-DNS-zone.
+Zoals vermeld, is peering voor virtuele netwerken een manier om toegang te krijgen tot uw privécluster. Als u peering voor virtuele netwerken wilt gebruiken, moet u een koppeling instellen tussen het virtuele netwerk en de privé-DNS-zone.
     
-1. Ga naar de resource groep knoop punt in de Azure Portal.  
+1. Ga naar de knooppuntresourcegroep in de Azure Portal.  
 2. Selecteer de privé-DNS-zone.   
-3. Selecteer de koppeling **virtueel netwerk** in het linkerdeel venster.  
-4. Maak een nieuwe koppeling om het virtuele netwerk van de VM toe te voegen aan de privé-DNS-zone. Het duurt enkele minuten voordat de koppeling van de DNS-zone beschikbaar wordt.  
-5. Navigeer in het Azure Portal naar de resource groep die het virtuele netwerk van het cluster bevat.  
-6. Selecteer het virtuele netwerk in het rechterdeel venster. De naam van het virtuele netwerk bevindt zich in de vorm *AKS-vnet- \**.  
-7. Selecteer **peerings** in het linkerdeel venster.  
-8. Selecteer **toevoegen**, voeg het virtuele netwerk van de VM toe en maak de peering.  
-9. Ga naar het virtuele netwerk waar u de virtuele machine hebt, selecteer **peerings**, selecteer het virtuele netwerk AKS en maak de peering. Als de adresbereiken in het virtuele netwerk van AKS en het virtuele netwerk van de VM conflicteren, mislukt de peering. Zie  [peering van virtuele netwerken][virtual-network-peering]voor meer informatie.
+3. Selecteer in het linkerdeelvenster de **koppeling Virtueel** netwerk.  
+4. Maak een nieuwe koppeling om het virtuele netwerk van de virtuele machine toe te voegen aan de privé-DNS-zone. Het duurt enkele minuten voordat de DNS-zonekoppeling beschikbaar is.  
+5. Navigeer Azure Portal de resourcegroep die het virtuele netwerk van uw cluster bevat.  
+6. Selecteer het virtuele netwerk in het rechterdeelvenster. De naam van het virtuele netwerk heeft de vorm *aks-vnet- \**.  
+7. Selecteer **peerings in het linkerdeelvenster.**  
+8. Selecteer **Toevoegen,** voeg het virtuele netwerk van de virtuele machine toe en maak vervolgens de peering.  
+9. Ga naar het virtuele netwerk waar u de virtuele machine hebt, selecteer **Peerings,** selecteer het virtuele AKS-netwerk en maak vervolgens de peering. Als het adresbereik in het virtuele AKS-netwerk en het virtuele netwerk van de virtuele machine conflicteren, mislukt peering. Zie Peering voor virtuele [netwerken voor meer informatie.][virtual-network-peering]
 
 ## <a name="hub-and-spoke-with-custom-dns"></a>Hub en spoke met aangepaste DNS
 
-[Hub-en spoke-architecturen](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) worden vaak gebruikt voor het implementeren van netwerken in Azure. In veel van deze implementaties worden DNS-instellingen in de spoke VNets geconfigureerd om te verwijzen naar een centrale DNS-doorstuur server om te zorgen voor on-premises en op Azure gebaseerde DNS-omzetting. Wanneer u een AKS-cluster in een dergelijke netwerk omgeving implementeert, moet u rekening houden met een aantal speciale overwegingen.
+[Hub- en spoke-architecturen](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) worden vaak gebruikt voor het implementeren van netwerken in Azure. In veel van deze implementaties zijn DNS-instellingen in de spoke-VNets geconfigureerd om te verwijzen naar een centrale DNS-doorsturende server om on-premises en op Azure gebaseerde DNS-resolutie toe te staan. Wanneer u een AKS-cluster implementeert in een dergelijke netwerkomgeving, moet u rekening houden met enkele speciale overwegingen.
 
-![Private cluster hub en spoke](media/private-clusters/aks-private-hub-spoke.png)
+![Hub en spoke van privécluster](media/private-clusters/aks-private-hub-spoke.png)
 
-1. Wanneer een persoonlijk cluster is ingericht, wordt standaard een persoonlijk eind punt (1) en een privé-DNS-zone (2) gemaakt in de door het cluster beheerde resource groep. Het cluster maakt gebruik van een A-record in de privé zone om het IP-adres van het privé-eind punt voor communicatie met de API-server op te lossen.
+1. Wanneer een privécluster wordt ingericht, worden standaard een privé-eindpunt (1) en een privé-DNS-zone (2) gemaakt in de door het cluster beheerde resourcegroep. Het cluster gebruikt een A-record in de privézone om het IP-adres van het privé-eindpunt om te zetten voor communicatie met de API-server.
 
-2. De privé-DNS-zone wordt alleen gekoppeld aan het VNet waaraan de cluster knooppunten zijn gekoppeld (3). Dit betekent dat het privé-eind punt alleen kan worden omgezet door hosts in het gekoppelde VNet. In scenario's waarin geen aangepaste DNS is geconfigureerd op het VNet (standaard), werkt dit zonder te verlenen als hosts-punt op 168.63.129.16 voor DNS die records kan omzetten in de privé-DNS-zone vanwege de koppeling.
+2. De privé-DNS-zone is alleen gekoppeld aan het VNet waar de clusterknooppunten aan zijn gekoppeld (3). Dit betekent dat het privé-eindpunt alleen kan worden opgelost door hosts in dat gekoppelde VNet. In scenario's waarin er geen aangepaste DNS is geconfigureerd op het VNet (standaard), werkt dit zonder problemen als hosts punt op 168.63.129.16 voor DNS die records in de privé-DNS-zone kunnen oplossen vanwege de koppeling.
 
-3. In scenario's waarin het VNet dat uw cluster bevat aangepaste DNS-instellingen (4) heeft, mislukt de implementatie van het cluster, tenzij de privé-DNS-zone is gekoppeld aan het VNet dat de aangepaste DNS-resolvers (5) bevat. Deze koppeling kan hand matig worden gemaakt nadat de privé zone is gemaakt tijdens het inrichten van een cluster of via Automation wanneer de zone wordt gedetecteerd met behulp van implementatie mechanismen op basis van gebeurtenissen (bijvoorbeeld Azure Event Grid en Azure Functions).
+3. In scenario's waarin het VNet met uw cluster aangepaste DNS-instellingen heeft (4), mislukt de clusterimplementatie, tenzij de privé-DNS-zone is gekoppeld aan het VNet dat de aangepaste DNS-resolvers bevat (5). Deze koppeling kan handmatig worden gemaakt nadat de privézone is gemaakt tijdens het inrichten van het cluster of via automatisering bij het detecteren van het maken van de zone met behulp van implementatiemechanismen op basis van gebeurtenissen (bijvoorbeeld Azure Event Grid en Azure Functions).
 
 > [!NOTE]
-> Als u [uw eigen route tabel gebruikt met kubenet](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) en uw eigen DNS-server naar een privé cluster brengt, mislukt het maken van het cluster. U moet de [RouteTable](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) in de knooppunt resource groep koppelen aan het subnet nadat het maken van het cluster is mislukt, zodat het maken is geslaagd.
+> Als u Bring Your Own Route Table met [kubenet](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) en Bring Your Own DNS met privécluster gebruikt, mislukt het maken van het cluster. U moet de [RouteTable](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) in de knooppuntresourcegroep koppelen aan het subnet nadat het maken van het cluster is mislukt, om het maken te laten slagen.
 
 ## <a name="limitations"></a>Beperkingen 
-* Toegestane IP-bereiken kunnen niet worden toegepast op het eind punt van de persoonlijke API-server, maar zijn alleen van toepassing op de open bare API-server
-* De beperkingen van de [Azure Private Link-service][private-link-service] zijn van toepassing op persoonlijke clusters.
-* Geen ondersteuning voor door micro soft gehoste DevOps-agents van Azure met persoonlijke clusters. Overweeg [zelf-hostende agents](/azure/devops/pipelines/agents/agents?tabs=browser)te gebruiken. 
-* Voor klanten die Azure Container Registry kunnen gebruiken met persoonlijke AKS, moet het virtuele netwerk Container Registry worden gekoppeld aan het virtuele netwerk van het agent cluster.
-* Geen ondersteuning voor het converteren van bestaande AKS-clusters naar particuliere clusters
-* Als u het persoonlijke eind punt in het subnet van de klant verwijdert of wijzigt, werkt het cluster niet meer. 
-* Nadat klanten de A-record op hun eigen DNS-servers hebben bijgewerkt, zullen die peulen nog steeds apiserver FQDN omzetten naar het oudere IP-adres na de migratie tot ze opnieuw zijn opgestart. Klanten moeten hostNetwork peul en standaard-DNSPolicy peul opnieuw opstarten na de migratie van het controle vlak.
-* In het geval van onderhoud op het besturings vlak kan uw [AKS-IP](./limit-egress-traffic.md) worden gewijzigd. In dit geval moet u de A-record die verwijst naar het privé-IP-adres van de API-server op uw aangepaste DNS-server bijwerken en aangepaste peulen of implementaties opnieuw starten met behulp van hostNetwork.
+* Toegestane IP-adresbereiken kunnen niet worden toegepast op het privé-API-server-eindpunt. Ze zijn alleen van toepassing op de openbare API-server
+* [Azure Private Link servicebeperkingen zijn][private-link-service] van toepassing op privéclusters.
+* Er is geen ondersteuning voor door Microsoft gehoste Azure DevOps-agents met privéclusters. Overweeg om [zelf-hostende agents te gebruiken.](/azure/devops/pipelines/agents/agents?tabs=browser) 
+* Voor klanten die de Azure Container Registry met privé-AKS moeten kunnen werken, moet het virtuele netwerk Container Registry peering hebben met het virtuele netwerk van het agentcluster.
+* Geen ondersteuning voor het converteren van bestaande AKS-clusters naar privéclusters
+* Als u het privé-eindpunt in het klantsubnet wilt verwijderen of wijzigen, werkt het cluster niet meer. 
+* Nadat klanten de A-record op hun eigen DNS-servers hebben bijgewerkt, zouden die pods na de migratie nog steeds de FQDN apiserver oplossen naar het oudere IP-adres totdat ze opnieuw worden opgestart. Klanten moeten hostNetwork Pods en standaard-DNSPolicy Pods opnieuw starten na de migratie van het besturingsvlak.
+* In het geval van onderhoud op het besturingsvlak kan het [IP-adres van uw AKS](./limit-egress-traffic.md) worden gewijzigd. In dit geval moet u de A-record bijwerken die verwijst naar het privé-IP-adres van de API-server op uw aangepaste DNS-server en aangepaste pods of implementaties opnieuw starten met hostNetwork.
 
 <!-- LINKS - internal -->
 [az-provider-register]: /cli/azure/provider#az-provider-register

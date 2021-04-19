@@ -1,36 +1,39 @@
 ---
-title: Hoge Beschik baarheid van grote instanties in azure voor SAP op RHEL
-description: Meer informatie over het automatiseren van een SAP HANA data base-failover met behulp van een pacemaker-cluster in Red Hat Enterprise Linux.
+title: Hoge beschikbaarheid van Azure Large Instances voor SAP op RHEL
+description: Meer informatie over het automatiseren van SAP HANA database-failover met behulp van een Pacemaker-cluster in Red Hat Enterprise Linux.
 author: jaawasth
 ms.author: jaawasth
 ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.topic: how-to
 ms.date: 02/08/2021
-ms.openlocfilehash: 99e9994d01e4579bf6ef2e369e0fe85c48af52ef
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: dc27fd67a3801815464ecd37fea567c02dee6e49
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102182431"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107719039"
 ---
-# <a name="azure-large-instances-high-availability-for-sap-on-rhel"></a>Hoge Beschik baarheid van grote instanties in azure voor SAP op RHEL
+# <a name="azure-large-instances-high-availability-for-sap-on-rhel"></a>Hoge beschikbaarheid van Azure Large Instances voor SAP op RHEL
 
-In dit artikel vindt u informatie over het configureren van het pacemaker-cluster in RHEL 7,6 voor het automatiseren van een SAP HANA data base-failover. U moet een goed idee hebben van Linux, SAP HANA en pacemaker om de stappen in deze hand leiding te kunnen volt ooien.
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *blacklist,* een term die Microsoft niet meer gebruikt. Wanneer deze term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
-De volgende tabel bevat de hostnamen die in dit artikel worden gebruikt. De code blokken in het artikel tonen de opdrachten die moeten worden uitgevoerd, evenals de uitvoer van deze opdrachten. Let op welk knoop punt er in elke opdracht naar wordt verwezen.
+In dit artikel leert u hoe u het Pacemaker-cluster in RHEL 7.6 configureert om een failover van SAP HANA database te automatiseren. U moet een goed begrip hebben van Linux, SAP HANA en Pacemaker om de stappen in deze handleiding uit te voeren.
+
+De volgende tabel bevat de hostnamen die in dit artikel worden gebruikt. De codeblokken in het artikel tonen de opdrachten die moeten worden uitgevoerd, evenals de uitvoer van deze opdrachten. Let goed op naar het knooppunt waarnaar wordt verwezen in elke opdracht.
 
 | Type | Hostnaam | Knooppunt|
 |-------|-------------|------|
-|Primaire host|`sollabdsm35`|knoop punt 1|
-|Secundaire host|`sollabdsm36`|knoop punt 2|
+|Primaire host|`sollabdsm35`|knooppunt 1|
+|Secundaire host|`sollabdsm36`|knooppunt 2|
 
-## <a name="configure-your-pacemaker-cluster"></a>Uw pacemaker-cluster configureren
+## <a name="configure-your-pacemaker-cluster"></a>Uw Pacemaker-cluster configureren
 
 
-Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel uitwisseling instellen om een vertrouwens relatie tussen knoop punten tot stand te brengen.
+Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instellen om een vertrouwensrelatie tussen knooppunten tot stand te brengen.
 
-1. Gebruik de volgende opdrachten om identiek te maken `/etc/hosts` op beide knoop punten.
+1. Gebruik de volgende opdrachten om identieke te `/etc/hosts` maken op beide knooppunten.
 
     ```
     root@sollabdsm35 ~]# cat /etc/hosts
@@ -62,7 +65,7 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
        [root@sollabdsm35 ~]# ssh-keygen -t rsa -b 1024
        [root@sollabdsm36 ~]# ssh-keygen -t rsa -b 1024
        ```
-    2. Kopieer sleutels naar de andere hosts voor wacht woord-SSH.
+    2. Kopieer sleutels naar de andere hosts voor SSH zonder wachtwoord.
     
        ```
        [root@sollabdsm35 ~]# ssh-copy-id -i /root/.ssh/id_rsa.pub sollabdsm35
@@ -71,7 +74,7 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
        [root@sollabdsm36 ~]# ssh-copy-id -i /root/.ssh/id_rsa.pub sollabdsm36
        ```
 
-3.  Schakel selinux uit op beide knoop punten.
+3.  Schakel op beide knooppunten uit.
     ```
     [root@sollabdsm35 ~]# vi /etc/selinux/config
 
@@ -89,7 +92,7 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
 
     ```  
 
-4. Start de servers opnieuw op en gebruik vervolgens de volgende opdracht om de status van SELinux te controleren.
+4. Start de servers opnieuw op en gebruik vervolgens de volgende opdracht om de status van de computer te controleren.
     ```
     [root@sollabdsm35 ~]# sestatus
 
@@ -102,8 +105,8 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
     SELinux status: disabled
     ```
 
-5. Configureer NTP (Network Time Protocol). De tijd-en tijd zones voor beide cluster knooppunten moeten overeenkomen. Gebruik de volgende opdracht om `chrony.conf` de inhoud van het bestand te openen en te controleren.
-    1. De volgende inhoud moet worden toegevoegd aan het configuratie bestand. Wijzig de werkelijke waarden volgens uw omgeving.
+5. Configureer NTP (Network Time Protocol). De tijd- en tijdzones voor beide clusterknooppunten moeten overeenkomen. Gebruik de volgende opdracht om de inhoud van het bestand `chrony.conf` te openen en te controleren.
+    1. De volgende inhoud moet worden toegevoegd aan het configuratiebestand. Wijzig de werkelijke waarden volgens uw omgeving.
         ```
         vi /etc/chrony.conf
     
@@ -149,8 +152,8 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
         ```
 
 6. Het systeem bijwerken
-    1. Installeer eerst de meest recente updates op het systeem voordat u begint met het installeren van het SBD-apparaat.
-    1. Als u geen volledige update van het systeem wilt, zelfs als dit wordt aanbevolen, werkt u de volgende pakketten ten minste bij.
+    1. Installeer eerst de nieuwste updates op het systeem voordat u begint met het installeren van het SBD-apparaat.
+    1. Als u geen volledige update van het systeem wilt, zelfs als wordt aanbevolen, moet u minimaal de volgende pakketten bijwerken.
         1. `resource-agents-sap-hana`
         1. `selinux-policy`
         1. `iscsi-initiator-utils`
@@ -161,7 +164,7 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
         ```
  
 
-7. Installeer de SAP HANA-en RHEL-HA-opslag plaatsen.
+7. Installeer de SAP HANA- en RHEL-HA-opslagplaatsen.
 
     ```
     subscription-manager repos –list
@@ -173,7 +176,7 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
     ```
       
 
-8. Installeer de pacemaker-, SBD-, OpenIPMI-, ipmitools-en fencing_sbd-hulpprogram ma's op alle knoop punten.
+8. Installeer de hulpprogramma's Pacemaker, SBD, OpenIPMI, ipmitools en fencing_sbd op alle knooppunten.
 
     ``` 
     yum install pcs sbd fence-agent-sbd.x86_64 OpenIPMI
@@ -182,9 +185,9 @@ Voordat u kunt beginnen met het configureren van het cluster, moet u SSH-sleutel
 
   ## <a name="configure-watchdog"></a>Watchdog configureren
 
-In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt gebruikgemaakt van dezelfde twee hosts `sollabdsm35` en `sollabdsm36` waarnaar wordt verwezen aan het begin van dit artikel.
+In deze sectie leert u hoe u Watchdog configureert. In deze sectie worden dezelfde twee hosts en gebruikt waarnaar aan het begin van `sollabdsm35` `sollabdsm36` dit artikel wordt verwezen.
 
-1. Zorg ervoor dat de watchdog-daemon niet op alle systemen wordt uitgevoerd.
+1. Zorg ervoor dat de watchdog-daemon niet wordt uitgevoerd op systemen.
     ```
     [root@sollabdsm35 ~]# systemctl disable watchdog
     [root@sollabdsm36 ~]# systemctl disable watchdog
@@ -205,8 +208,8 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
 
     ```
 
-2. De standaard Linux-watchdog, die tijdens de installatie wordt geïnstalleerd, is de iTCO-watchdog die niet wordt ondersteund door UCS-en HPE SDFlex-systemen. Deze watchdog moet daarom worden uitgeschakeld.
-    1. Er is een verkeerde watchdog geïnstalleerd en geladen op het systeem:
+2. De standaard-Linux-watchdog, die tijdens de installatie wordt geïnstalleerd, is de iTCO-watchdog die niet wordt ondersteund door UCS- en HPE SDFlex-systemen. Daarom moet deze watchdog worden uitgeschakeld.
+    1. De verkeerde watchdog is geïnstalleerd en geladen op het systeem:
        ```
    
        sollabdsm35:~ # lsmod |grep iTCO
@@ -216,14 +219,14 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
        iTCO_vendor_support 13718 1 iTCO_wdt
        ```
 
-    2. Het verkeerde stuur programma uit de omgeving verwijderen:
+    2. Los het verkeerde stuurprogramma uit de omgeving:
        ```  
        sollabdsm35:~ # modprobe -r iTCO_wdt iTCO_vendor_support
    
        sollabdsm36:~ # modprobe -r iTCO_wdt iTCO_vendor_support
        ```  
         
-    3. Om ervoor te zorgen dat het stuur programma tijdens het opstarten van het systeem niet wordt geladen, moet het stuur programma blocklisted zijn. Als u de iTCO-modules wilt blokkerings lijst, voegt u het volgende toe aan het einde van het `50-blacklist.conf` bestand:
+    3. Om ervoor te zorgen dat het stuurprogramma niet wordt geladen tijdens de volgende keer opstarten van het systeem, moet het stuurprogramma worden geblokkeerd. Als u de iTCO-modules wilt blokkeren, voegt u het volgende toe aan het einde van het `50-blacklist.conf` bestand:
        ```
    
        sollabdsm35:~ # vi /etc/modprobe.d/50-blacklist.conf
@@ -234,13 +237,13 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
    
        blacklist iTCO_vendor_support
        ```
-    4. Kopieer het bestand naar een secundaire host.
+    4. Kopieer het bestand naar de secundaire host.
        ```
        sollabdsm35:~ # scp /etc/modprobe.d/50-blacklist.conf sollabdsm35:
        /etc/modprobe.d/50-blacklist.conf
        ```  
 
-    5. Test of de IPMI-service is gestart. Het is belang rijk dat de IPMI-timer niet wordt uitgevoerd. Het timer beheer wordt uitgevoerd vanuit de SBD pacemaker-service.
+    5. Test of de ipmi-service is gestart. Het is belangrijk dat de IPMI-timer niet actief is. Het timerbeheer wordt uitgevoerd vanuit de SBD Pacemaker-service.
        ```
        sollabdsm35:~ # ipmitool mc watchdog get
    
@@ -260,7 +263,7 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
    
        ``` 
 
-3. Standaard wordt het vereiste apparaat/dev/watchdog niet gemaakt.
+3. Het vereiste apparaat is standaard /dev/watchdog wordt niet gemaakt.
 
     ```
     No watchdog device was created
@@ -286,12 +289,12 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
     IPMI_POWERCYCLE=no
     IPMI_IMB=no
     ```
-5. Kopieer het watchdog configuratie bestand naar een secundair.
+5. Kopieer het watchdog-configuratiebestand naar de secundaire.
     ```
     sollabdsm35:~ # scp /etc/sysconfig/ipmi
     sollabdsm36:/etc/sysconfig/ipmi
     ```
-6.  De IPMI-service inschakelen en starten.
+6.  Schakel de ipmi-service in en start deze.
     ```
     [root@sollabdsm35 ~]# systemctl enable ipmi
 
@@ -309,8 +312,8 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
 
     [root@sollabdsm36 ~]# systemctl start ipmi
     ```
-     Nu wordt de IPMI-service gestart en wordt het apparaat/dev/watchdog gemaakt, maar wordt de timer nog steeds gestopt. Later beheert de SBD het opnieuw instellen van de watchdog en wordt de IPMI-timer ingeschakeld.
-7.  Controleer of de/dev/watchdog bestaat, maar niet wordt gebruikt.
+     Nu is de IPMI-service gestart en wordt het apparaat /dev/watchdog gemaakt– Maar de timer is nog steeds gestopt. Later beheert de SBD het opnieuw instellen van de watchdog en schakelt de IPMI-timer in.
+7.  Controleer of /dev/watchdog bestaat, maar niet in gebruik is.
     ```
     [root@sollabdsm35 ~]# ipmitool mc watchdog get
     Watchdog Timer Use: SMS/OS (0x04)
@@ -327,10 +330,10 @@ In deze sectie leert u hoe u watchdog kunt configureren. In deze sectie wordt ge
     ```
 
 ## <a name="sbd-configuration"></a>SBD-configuratie
-In deze sectie leert u hoe u SBD kunt configureren. In deze sectie wordt gebruikgemaakt van dezelfde twee hosts `sollabdsm35` en `sollabdsm36` waarnaar wordt verwezen aan het begin van dit artikel.
+In deze sectie leert u hoe u SBD configureert. In deze sectie worden dezelfde twee hosts gebruikt, en , waarnaar aan het begin van `sollabdsm35` `sollabdsm36` dit artikel wordt verwezen.
 
-1.  Zorg ervoor dat de iSCSI-of FC-schijf zichtbaar is op beide knoop punten. In dit voor beeld wordt een op FC gebaseerd SBD-apparaat gebruikt. Zie de [referentie documentatie](http://www.linux-ha.org/wiki/SBD_Fencing)voor meer informatie over de SBD-omheining.
-2.  De LUN-ID moet identiek zijn op alle knoop punten.
+1.  Zorg ervoor dat de iSCSI- of FC-schijf zichtbaar is op beide knooppunten. In dit voorbeeld wordt een op FC gebaseerd SBD-apparaat gebruikt. Zie de referentiedocumentatie voor meer informatie [](http://www.linux-ha.org/wiki/SBD_Fencing)over SBD-fencing.
+2.  De LUN-ID moet identiek zijn op alle knooppunten.
   
 3.  Controleer de status van meerdere paden voor het SBD-apparaat.
     ```
@@ -346,7 +349,7 @@ In deze sectie leert u hoe u SBD kunt configureren. In deze sectie wordt gebruik
     `- 10:0:3:2 sdl 8:176 active ready running
     ```
 
-4.  De SBD-schijven maken en de cluster primitieve omheining instellen. Deze stap moet worden uitgevoerd op het eerste knoop punt.
+4.  Het maken van de SBD-schijven en het instellen van de primitieve fencing van het cluster. Deze stap moet worden uitgevoerd op het eerste knooppunt.
     ```
     sbd -d /dev/mapper/3600a098038304179392b4d6c6e2f4b62 -4 20 -1 10 create 
 
@@ -359,7 +362,7 @@ In deze sectie leert u hoe u SBD kunt configureren. In deze sectie wordt gebruik
     Device /dev/mapper/3600a098038304179392b4d6c6e2f4b62 is initialized.
     ```
 
-5.  Kopieer de SBD-configuratie naar Knooppunt2.
+5.  Kopieer de SBD-configuratie naar knooppunt2.
     ```
     vi /etc/sysconfig/sbd
 
@@ -376,7 +379,7 @@ In deze sectie leert u hoe u SBD kunt configureren. In deze sectie wordt gebruik
     scp /etc/sysconfig/sbd node2:/etc/sysconfig/sbd
     ```
 
-6.  Controleer of de SBD-schijf zichtbaar is van beide knoop punten.
+6.  Controleer of de SBD-schijf zichtbaar is op beide knooppunten.
     ```
     sbd -d /dev/mapper/3600a098038304179392b4d6c6e2f4b62 dump
 
@@ -396,7 +399,7 @@ In deze sectie leert u hoe u SBD kunt configureren. In deze sectie wordt gebruik
     ==Header on disk /dev/mapper/3600a098038304179392b4d6c6e2f4b62 is dumped
     ```
 
-7.  Voeg het SBD-apparaat in het SBD-configuratie bestand toe.
+7.  Voeg het SBD-apparaat toe aan het SBD-configuratiebestand.
 
     ```
     \# SBD_DEVICE specifies the devices to use for exchanging sbd messages
@@ -414,20 +417,20 @@ In deze sectie leert u hoe u SBD kunt configureren. In deze sectie wordt gebruik
     SBD_PACEMAKER=yes
     ```
 
-## <a name="cluster-initialization"></a>Cluster initialisatie
-In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt van dezelfde twee hosts `sollabdsm35` en `sollabdsm36` waarnaar wordt verwezen aan het begin van dit artikel.
+## <a name="cluster-initialization"></a>Initialisatie van cluster
+In deze sectie initialiseert u het cluster. In deze sectie worden dezelfde twee hosts en gebruikt waarnaar aan het begin van `sollabdsm35` `sollabdsm36` dit artikel wordt verwezen.
 
-1.  Stel het wacht woord voor de cluster gebruiker (alle knoop punten) in.
+1.  Stel het wachtwoord van de clustergebruiker in (alle knooppunten).
     ```
     passwd hacluster
     ```
-2.  PC'S starten op alle systemen.
+2.  Start PCS op alle systemen.
     ```
     systemctl enable pcsd
     ```
   
 
-3.  Stop de firewall en schakel deze uit op (alle knoop punten).
+3.  Stop de firewall en schakel deze uit (alle knooppunten).
     ```
     systemctl disable firewalld 
 
@@ -443,7 +446,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
   
   
 
-5.  Voer de cluster verificatie alleen uit vanuit Knooppunt1.
+5.  Voer de clusterverificatie alleen uit vanaf knooppunt1.
 
     ```
     pcs cluster auth sollabdsm35 sollabdsm36
@@ -466,7 +469,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     ```
   
 
-7.  Controleer de status van het cluster.
+7.  Controleer de clusterstatus.
 
     ```
     pcs cluster status
@@ -504,7 +507,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     pcsd: active/disabled
     ```
 
-8. Als een knoop punt niet wordt toegevoegd aan het cluster, controleert u of de firewall nog actief is.
+8. Als één knooppunt niet lid wordt van het cluster, controleert u of de firewall nog steeds wordt uitgevoerd.
 
   
 
@@ -514,14 +517,14 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     ```
   
 
-10. Stop het cluster om de Cluster Services opnieuw te starten (op alle knoop punten).
+10. Stop het cluster om de clusterservices opnieuw op te starten (op alle knooppunten).
 
     ```
     pcs cluster stop --all
     ```
 
 
-11. Start de Cluster Services opnieuw op (op alle knoop punten).
+11. Start de clusterservices opnieuw (op alle knooppunten).
 
     ```
     systemctl stop pcsd
@@ -546,7 +549,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     Active: active (running) since Wed 2021-01-20 01:43:41 EST; 9min ago
     ```
 
-13. Start het cluster opnieuw op (als niet automatisch wordt gestart vanaf pcsd).
+13. Start het cluster opnieuw op (indien niet automatisch gestart vanaf pcsd).
 
     ```
     pcs cluster start –-all
@@ -561,7 +564,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     ```
   
 
-14. Schakel de instellingen voor stonith in.
+14. Schakel Stonith-instellingen in.
     ```
     pcs stonith enable SBD --device=/dev/mapper/3600a098038304179392b4d6c6e2f4d65
     pcs property set stonith-watchdog-timeout=20
@@ -569,7 +572,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     ```
   
 
-15. Controleer de nieuwe cluster status met nu één resource.
+15. Controleer de status van het nieuwe cluster met nu één resource.
     ```
     pcs status
 
@@ -609,7 +612,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     ```
   
 
-16. Nu moet de IPMI-timer worden uitgevoerd en moet het/dev/Watchdog-apparaat worden geopend door SBD.
+16. Nu moet de IPMI-timer worden uitgevoerd en moet het apparaat /dev/watchdog worden geopend door sbd.
 
     ```
     ipmitool mc watchdog get
@@ -646,7 +649,7 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
     ```
   
 
-18. Test de SBD-omheining door de kernel te laten aflopen.
+18. Test de SBD-fencing door de kernel te crashen.
 
     * Activeer de kernel-crash.
 
@@ -657,34 +660,34 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
       set as panic_wdt_timeout in the /etc/sysconfig/ipmi config file.
       ```
   
-    * De tweede test die moet worden uitgevoerd, is het omheiningen van een knoop punt met de opdrachten PC'S.
+    * De tweede test die moet worden uitgevoerd, is om een knooppunt af te schermen met pcs-opdrachten.
 
       ```
       pcs stonith fence sollabdsm36
       ```
   
 
-19. Voor de rest van de SAP HANA clustering kunt u STONITH uitschakelen door het volgende in te stellen:
+19. Voor de rest van de SAP HANA kunt u STONITH uitschakelen door het volgende in te stellen:
 
-   * set pc's-eigenschappen `stonith-enabled=false`
-   * Deze para meter moet worden ingesteld op True voor productief gebruik. Als deze para meter niet is ingesteld op True, wordt het cluster niet ondersteund.
-   * set pc's-eigenschappen `stonith-enabled=true`
+   * pcs-eigenschappenset `stonith-enabled=false`
+   * Deze parameter moet worden ingesteld op true voor productief gebruik. Als deze parameter niet is ingesteld op true, wordt het cluster niet ondersteund.
+   * pcs-eigenschappenset `stonith-enabled=true`
 
 ## <a name="hana-integration-into-the-cluster"></a>HANA-integratie in het cluster
 
-In deze sectie integreert u HANA in het cluster. In deze sectie wordt gebruikgemaakt van dezelfde twee hosts `sollabdsm35` en `sollabdsm36` waarnaar wordt verwezen aan het begin van dit artikel.
+In deze sectie integreert u HANA in het cluster. In deze sectie worden dezelfde twee hosts, `sollabdsm35` en , gebruikt waarnaar aan het begin van dit artikel wordt `sollabdsm36` verwezen.
 
-Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossing voor kosten optimalisatie waarbij u het secundaire systeem kunt gebruiken om het QAS-systeem uit te voeren. Deze methode wordt niet aanbevolen omdat er geen systeem is om updates te testen op de cluster software, het besturings systeem of HANA, en configuratie-updates kunnen leiden tot ongeplande downtime van het PRD-systeem. Als het PRD-systeem moet worden geactiveerd op het secundaire systeem, moet de QAS ook worden uitgeschakeld op het secundaire knoop punt. De tweede optie is om het QAS-systeem op één cluster te installeren en een tweede cluster voor de PRD te gebruiken. Met deze optie kunt u ook alle onderdelen testen voordat ze in productie worden genomen. In dit artikel wordt beschreven hoe u de tweede optie configureert.
+Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossing die is geoptimaliseerd voor kosten, waarbij u het secundaire systeem kunt gebruiken om het QAS-systeem uit te voeren. We raden deze methode niet aan omdat er geen systeem meer is om updates te testen op de clustersoftware, het besturingssysteem of HANA, en configuratie-updates kunnen leiden tot ongeplande downtime van het PRD-systeem. Als het PRD-systeem moet worden geactiveerd op het secundaire systeem, moet de QAS bovendien worden afgesloten op het secundaire knooppunt. De tweede optie is om het QAS-systeem op één cluster te installeren en een tweede cluster voor de PRD te gebruiken. Met deze optie kunt u ook alle onderdelen testen voordat ze in productie worden genomen. In dit artikel wordt beschreven hoe u de tweede optie configureert.
 
 
-* Dit proces is gebaseerd op de beschrijving van de RHEL op de pagina:
+* Dit proces is een build van de RHEL-beschrijving op de pagina:
 
   * https://access.redhat.com/articles/3004101
 
- ### <a name="steps-to-follow-to-configure-hsr"></a>Stappen om HSR te configureren
+ ### <a name="steps-to-follow-to-configure-hsr"></a>Stappen die u moet volgen om HSR te configureren
 
-1.  Dit zijn de acties die moeten worden uitgevoerd op Knooppunt1 (Primary).
-    1. Zorg ervoor dat de data base-logboek modus is ingesteld op normaal.
+1.  Dit zijn de acties die moeten worden uitgevoerd op knooppunt1 (primair).
+    1. Zorg ervoor dat de databaselogboekmodus is ingesteld op normaal.
 
        ```  
    
@@ -699,7 +702,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
    
        "normal"
        ```
-    2. SAP HANA systeem replicatie werkt alleen nadat de eerste back-up is uitgevoerd. Met de volgende opdracht maakt u een eerste back-up in de `/tmp/` Directory. Selecteer een correct back-upsysteem voor de data base. 
+    2. SAP HANA systeemreplicatie werkt alleen nadat de eerste back-up is uitgevoerd. Met de volgende opdracht maakt u een eerste back-up in de `/tmp/` map . Selecteer een correct back-upbestandssysteem voor de database. 
        ```
        * hdbsql -i 00 -u system -p SAPhana10 "BACKUP DATA USING FILE
        ('/tmp/backup')"
@@ -721,7 +724,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
        ```
     
 
-    3. Back-up maken van alle database containers van deze data base.
+    3. Back-up maken van alle databasecontainers van deze database.
        ```
    
        * hdbsql -i 00 -u system -p SAPhana10 -d SYSTEMDB "BACKUP DATA USING
@@ -734,7 +737,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
    
        ```
 
-    4. Schakel het HSR-proces in op het bron systeem.
+    4. Schakel het HSR-proces in op het bronsysteem.
        ```
        hdbnsutil -sr_enable --name=DC1
 
@@ -793,8 +796,8 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
        done.
        ```
 
- 2. Dit zijn de acties die moeten worden uitgevoerd op Knooppunt2 (secundair).
-     1. Stop de data base.
+ 2. Dit zijn de acties die moeten worden uitgevoerd op knooppunt2 (secundair).
+     1. Stop de database.
        ```
        su – hr2adm
     
@@ -802,7 +805,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
        ```
     
 
-     2. Voor alleen SAP HANA 2.0 kopieert u het SAP HANA systeem `PKI SSFS_HR2.KEY` en de `SSFS_HR2.DAT` bestanden van het primaire knoop punt naar een secundair knoop punt.
+     2. Alleen voor SAP HANA2.0 kopieert u het SAP HANA en bestanden van het `PKI SSFS_HR2.KEY` `SSFS_HR2.DAT` primaire knooppunt naar het secundaire knooppunt.
        ```
        scp
        root@node1:/usr/sap/HR2/SYS/global/security/rsecssfs/key/SSFS_HR2.KEY
@@ -815,7 +818,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
        /usr/sap/HR2/SYS/global/security/rsecssfs/data/SSFS_HR2.DAT
        ```
 
-     3. Schakel secundaire als replicatie site in.
+     3. Schakel secundair in als de replicatiesite.
        ``` 
        su - hr2adm
    
@@ -838,12 +841,12 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
    
        ```
 
-     4. Start de data base.
+     4. Start de database.
        ```
        sapcontrol -nr 00 -function StartSystem 
        ```
     
-     5. Controleer de database status.
+     5. Controleer de status van de database.
        ```
        hdbnsutil -sr_state
    
@@ -916,7 +919,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
        ~~~~~~~~~~~~~~
        ```
 
-3. Het is ook mogelijk om meer informatie te krijgen over de replicatie status:
+3. Het is ook mogelijk om meer informatie over de replicatiestatus op te halen:
     ```
     ~~~~~
     hr2adm@node1:/usr/sap/HR2/HDB00> python
@@ -954,66 +957,66 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
     ```
   
 
-#### <a name="log-replication-mode-description"></a>Beschrijving van de logboek replicatie modus
+#### <a name="log-replication-mode-description"></a>Beschrijving van de logboekreplicatiemodus
 
-Zie de [officiële SAP-documentatie](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/c039a1a5b8824ecfa754b55e0caffc01.html)voor meer informatie over de logboek replicatie modus.
+Zie de officiële SAP-documentatie voor meer informatie over de modus voor [logboekreplicatie.](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/c039a1a5b8824ecfa754b55e0caffc01.html)
   
 
-#### <a name="network-setup-for-hana-system-replication"></a>Netwerk installatie voor HANA-systeem replicatie
+#### <a name="network-setup-for-hana-system-replication"></a>Netwerkinstallatie voor HANA-systeemreplicatie
 
 
-Om ervoor te zorgen dat het replicatie verkeer het juiste VLAN gebruikt voor de replicatie, moet het correct worden geconfigureerd in de `global.ini` . Als u deze stap overs laat, gebruikt HANA het VLAN voor toegang voor de replicatie. Dit kan niet gewenst zijn.
+Om ervoor te zorgen dat het replicatieverkeer het juiste VLAN gebruikt voor de replicatie, moet het correct worden geconfigureerd in `global.ini` de . Als u deze stap overslaat, gebruikt HANA het toegangs-VLAN voor de replicatie, wat mogelijk ongewenst is.
 
 
-In de volgende voor beelden ziet u de configuratie van de naam omzetting voor de host van de systeem replicatie naar een secundaire site. Er kunnen drie afzonderlijke netwerken worden geïdentificeerd:
+In de volgende voorbeelden wordt de configuratie van de hostnaam resolutie voor systeemreplicatie naar een secundaire site. Er kunnen drie afzonderlijke netwerken worden geïdentificeerd:
 
-* Openbaar netwerk met adressen in het bereik 10.0.1. *
+* Openbaar netwerk met adressen in het bereik van 10.0.1.*
 
-* Netwerk voor interne SAP HANA communicatie tussen hosts op elke site: 192.168.1. *
+* Netwerk voor interne SAP HANA communicatie tussen hosts op elke site: 192.168.1.*
 
-* Toegewijd netwerk voor systeem replicatie: 10.5.1. *
+* Toegewezen netwerk voor systeemreplicatie: 10.5.1.*
 
-In het eerste voor beeld `[system_replication_communication]listeninterface` is de para meter ingesteld op `.global` en alleen de hosts van de naburige gerepliceerde site worden opgegeven.
+In het eerste voorbeeld is de parameter ingesteld op en worden alleen de hosts van de aangrenzende `[system_replication_communication]listeninterface` `.global` replicerende site opgegeven.
 
-In het volgende voor beeld `[system_replication_communication]listeninterface` is de para meter ingesteld op `.internal` en alle hosts van beide sites zijn opgegeven.
-
-  
-
-### <a name="source-sap-ag-sap-hana-hrs-networking"></a>Bron-SAP AG SAP HANA uur netwerken
+In het volgende voorbeeld is `[system_replication_communication]listeninterface` de parameter ingesteld op en worden alle hosts van beide sites `.internal` opgegeven.
 
   
 
-Voor systeem replicatie is het niet nodig om het bestand te bewerken `/etc/hosts` . interne hostnamen (' virtueel ') moeten worden toegewezen aan IP-adressen in het `global.ini` bestand om een speciaal netwerk te maken voor systeem replicatie. De syntaxis hiervoor is als volgt:
+### <a name="source-sap-ag-sap-hana-hrs-networking"></a>Bron-SAP AG SAP HANA HRS-netwerken
+
+  
+
+Voor systeemreplicatie is het niet nodig om het bestand te bewerken. Interne hostnamen ('virtueel') moeten worden toegewezen aan IP-adressen in het bestand om een toegewezen netwerk te maken voor `/etc/hosts` systeemreplicatie. `global.ini` De syntaxis hiervoor is als volgt:
 
 global.ini
 
 [system_replication_hostname_resolution]
 
-<IP-address_site>=<intern-host-name_site>
+<ip-address_site>=<internal-host-name_site>
 
 
-## <a name="configure-sap-hana-in-a-pacemaker-cluster"></a>SAP HANA configureren in een pacemaker-cluster
-In deze sectie leert u hoe u SAP HANA kunt configureren in een pacemaker-cluster. In deze sectie wordt gebruikgemaakt van dezelfde twee hosts `sollabdsm35` en `sollabdsm36` waarnaar wordt verwezen aan het begin van dit artikel.
+## <a name="configure-sap-hana-in-a-pacemaker-cluster"></a>Een SAP HANA configureren in een Pacemaker-cluster
+In deze sectie leert u hoe u een SAP HANA configureert in een Pacemaker-cluster. In deze sectie worden dezelfde twee hosts en gebruikt waarnaar aan het begin van `sollabdsm35` `sollabdsm36` dit artikel wordt verwezen.
 
 Zorg ervoor dat u aan de volgende vereisten hebt voldaan:  
 
-* Het pacemaker-cluster is geconfigureerd volgens documentatie en heeft de juiste en werkende omheining
+* Pacemaker-cluster is geconfigureerd volgens de documentatie en heeft de juiste en werkende fencing
 
-* SAP HANA opstarten bij opstarten is uitgeschakeld op alle cluster knooppunten omdat het starten en stoppen worden beheerd door het cluster
+* SAP HANA opstarten bij opstarten is uitgeschakeld op alle clusterknooppunten omdat het starten en stoppen wordt beheerd door het cluster
 
-* SAP HANA systeem replicatie en-overname met hulpprogram ma's van SAP goed werken tussen cluster knooppunten
+* SAP HANA replicatie en overname van het systeem met behulp van hulpprogramma's van SAP werken goed tussen clusterknooppunten
 
-* SAP HANA bevat een bewakings account dat door het cluster kan worden gebruikt vanuit cluster knooppunten
+* SAP HANA bevat een bewakingsaccount dat door het cluster kan worden gebruikt vanuit beide clusterknooppunten
 
-* Beide knoop punten zijn geabonneerd op de kanalen ' hoge Beschik baarheid ' en ' RHEL for SAP HANA ' (RHEL 6, RHEL 7)
+* Beide knooppunten zijn geabonneerd op de kanalen 'Hoge beschikbaarheid' en 'RHEL for SAP HANA' (RHEL 6,RHEL 7)
 
   
 
-* Over het algemeen voert u alle pc's opdrachten alleen uit op het knoop punt omdat de CIB automatisch wordt bijgewerkt vanaf de PC-shell.
+* Over het algemeen moet u alle pcs-opdrachten alleen uitvoeren vanaf een knooppunt, omdat de CIB automatisch wordt bijgewerkt vanuit de pcs-shell.
 
-* [Meer informatie over het quorum beleid](https://access.redhat.com/solutions/645843)
+* [Meer informatie over quorumbeleid](https://access.redhat.com/solutions/645843)
 
-### <a name="steps-to-configure"></a>Te configureren stappen 
+### <a name="steps-to-configure"></a>Stappen om te configureren 
 1. Pc's configureren.
     ```
     [root@node1 ~]# pcs property unset no-quorum-policy (optional – only if it was set before)
@@ -1123,7 +1126,7 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
 
     ```
 
-3.  Primaire/secundaire SAPHana-resource maken.
+3.  Maak een primaire/secundaire SAPHana-resource.
 
     ```
     SAPHana resource is responsible for starting, stopping and relocating the SAP HANA database. This resource must be run as a Primary/    Secondary cluster resource. The resource has the following attributes.
@@ -1248,7 +1251,7 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
     + primary-SAPHana_HR2_00 : 100
     ```
 
-6.  Maak een virtuele IP-adres resource.
+6.  Maak een resource voor een virtueel IP-adres.
 
     ```
     Cluster will contain Virtual IP address in order to reach the Primary instance of SAP HANA. Below is example command to create IPaddr2  resource with IP 10.7.0.84/24
@@ -1277,16 +1280,16 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
     pcs constraint colocation add vip_HR2_00 with primary SAPHana_HR2_00-primary 2000
     ```
 
-###  <a name="testing-the-manual-move-of-saphana-resource-to-another-node"></a>Hand matig verplaatsen van de SAPHana-resource naar een ander knoop punt testen
+###  <a name="testing-the-manual-move-of-saphana-resource-to-another-node"></a>Het handmatig verplaatsen van een SAPHana-resource naar een ander knooppunt testen
 
-#### <a name="sap-hana-takeover-by-cluster"></a>(SAP Hana-overname per cluster)
+#### <a name="sap-hana-takeover-by-cluster"></a>(SAP Hana overnemen per cluster)
 
 
-Als u de verplaatsing van de SAPHana-resource van het ene naar het andere knoop punt wilt testen, gebruikt u de onderstaande opdracht. Houd er rekening mee dat de optie `--primary` niet moet worden gebruikt bij het uitvoeren van de volgende opdracht vanwege de interne werking van de SAPHana-resource.
+Als u de overstap van de SAPHana-resource van het ene knooppunt naar het andere wilt testen, gebruikt u de onderstaande opdracht. Houd er rekening mee dat de optie niet moet worden gebruikt bij het uitvoeren van de volgende opdracht, omdat de `--primary` SAPHana-resource intern werkt.
 ```pcs resource move SAPHana_HR2_00-primary```
 
-Nadat elke PC de opdracht aanroep heeft verplaatst, maakt het cluster locatie beperkingen om de resource te verplaatsen. Deze beperkingen moeten worden verwijderd om in de toekomst automatische failover mogelijk te maken.
-Als u deze wilt verwijderen, kunt u de opdracht volgende opdracht gebruiken.
+Nadat elke pcs-resource verplaatsen opdracht aanroepen, maakt het cluster locatiebeperkingen voor het verplaatsen van de resource te bereiken. Deze beperkingen moeten worden verwijderd om automatische failover in de toekomst toe te staan.
+Als u ze wilt verwijderen, kunt u de volgende opdracht gebruiken.
 ```
 pcs resource clear SAPHana_HR2_00-primary
 crm_mon -A1
@@ -1354,9 +1357,9 @@ Node Attributes:
     ```
   
 
-Met optie de kunt `AUTOMATED_REGISTER=false` u niet terugschakelen.
+Met de optie `AUTOMATED_REGISTER=false` kunt u niet heen en weer schakelen.
 
-Als deze optie is ingesteld op ONWAAR, moet u het knoop punt opnieuw registreren:
+Als deze optie is ingesteld op false, moet u het knooppunt opnieuw registreren:
 
   
 ```
@@ -1364,9 +1367,9 @@ hdbnsutil -sr_register --remoteHost=node2 --remoteInstance=00 --replicationMode=
 ```
   
 
-Nu Knooppunt2, de primaire, fungeert als de secundaire host.
+Knooppunt2, dat de primaire host was, fungeert nu als de secundaire host.
 
-Overweeg deze optie in te stellen op True om de registratie van de gedegradeerde host te automatiseren.
+Overweeg deze optie in te stellen op true om de registratie van de gedegradeerde host te automatiseren.
 
   
 ```

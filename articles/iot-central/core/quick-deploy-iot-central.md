@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: 4122201789aea90aa94ab7d809e93a30c739254e
-ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
+ms.openlocfilehash: 7b33beaad580e64a4760b0557f04f266ecfc1b4d
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/19/2021
-ms.locfileid: "107715024"
+ms.locfileid: "107718805"
 ---
 # <a name="quickstart---create-an-azure-iot-central-application"></a>Snelstart - Een Azure IoT Central-app maken
 
@@ -21,13 +21,14 @@ In deze quickstart ziet u hoe u een Azure IoT Central-toepassing maakt.
 
 ## <a name="prerequisite"></a>Vereiste 
 
-U hebt een Azure-abonnement met *inzenderstoegang* nodig.
+ - Een Azure-account met een actief abonnement. Maak gratis [een](https://aka.ms/createazuresubscription)account.
+ - Uw Azure-abonnement moet inzender-toegang hebben
 
 ## <a name="create-an-application"></a>Een app maken
 
 Ga naar de website voor het [bouwen van Azure IoT Central-oplossingen](https://aka.ms/iotcentral). Meld u aan met een persoonlijk account of werk- of schoolaccount van Microsoft.
 
-U kunt een nieuwe toepassing maken op basis van een sjabloon uit de lijst met branchespecifieke IoT Central-sjablonen om snel aan de slag te gaan, of een volledig nieuwe toepassing maken op basis van de sjabloon **Aangepaste apps**. In deze quickstart gebruikt u de sjabloon **Aangepaste toepassing**.
+U kunt een nieuwe toepassing maken op basis van de lijst met relevante IoT Central-sjablonen om snel aan de slag te gaan, of u kunt beginnen met een aangepaste **app-sjabloon.** In deze quickstart gebruikt u de sjabloon **Aangepaste toepassing**.
 
 Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op basis van de sjabloon **Aangepaste toepassing**:
 
@@ -35,11 +36,13 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
 
     :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-new-application.png" alt-text="Pagina voor het bouwen van uw IoT-toepassing":::
 
-1. Kies **Aangepaste apps** en zorg ervoor dat de sjabloon **Aangepaste toepassing** is geselecteerd.
+1. Aangepaste **app kiezen**
 
-1. In Azure IoT Central wordt automatisch een **toepassingsnaam** voorgesteld op basis van de toepassingssjabloon die u hebt geselecteerd. U kunt deze naam gebruiken of uw eigen beschrijvende toepassingsnaam invoeren.
+1. Zorg er **op de pagina** Nieuwe toepassing voor dat Aangepaste **toepassing** is geselecteerd onder de **toepassingssjabloon**.
 
-1. Azure IoT Central genereert ook een uniek voorvoegsel voor de **toepassings-URL** voor u op basis van de naam van de toepassing. U gebruikt deze URL voor de toegang tot uw toepassing. Wijzig dit URL-voorvoegsel in iets dat gemakkelijker te onthouden is als u dat wilt.
+1. Azure IoT Central stelt automatisch een toepassingsnaam **voor op** basis van de toepassingssjabloon die u hebt geselecteerd. U kunt deze naam gebruiken of uw eigen beschrijvende toepassingsnaam invoeren.
+
+1. Azure IoT Central genereert ook een  uniek URL-voorvoegsel voor u, op basis van de toepassingsnaam. U gebruikt deze URL voor de toegang tot uw toepassing. Wijzig dit URL-voorvoegsel in iets dat gemakkelijker te onthouden is als u dat wilt.
 
     :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-custom.png" alt-text="Pagina Een toepassing maken van Azure IoT Central":::
 
@@ -58,7 +61,7 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
         - Als u een *Azure-abonnement* hebt, kunt u instanties van Azure-services maken. IoT Central zorgt ervoor dat resources in uw abonnement worden ingericht. Als u geen Azure-abonnement hebt, kunt u er gratis een maken via de [Azure-aanmeldingspagina](https://aka.ms/createazuresubscription). Nadat u het Azure-abonnement hebt gemaakt, gaat u terug naar de pagina **Nieuwe toepassing**. Uw nieuwe abonnement wordt nu weergegeven in de vervolgkeuzelijst.**Azure-abonnement**.
         - De *locatie* is de [geografie](https://azure.microsoft.com/global-infrastructure/geographies/) waar u de toepassing wilt maken. Gewoonlijk kiest u de locatie die zich het dichtst in de buurt van uw apparaten bevindt om de beste prestaties te verkrijgen. Als u eenmaal een locatie hebt gekozen, kunt u de toepassing later niet meer naar een andere locatie verplaatsen.
 
-1. Controleer de voorwaarden en selecteer **Maken** onder aan de pagina. Na een paar minuten is IoT Central toepassing klaar voor gebruik:
+1. Controleer de voorwaarden en selecteer **Maken** onder aan de pagina. Na enkele minuten is uw IoT Central klaar voor gebruik:
 
     :::image type="content" source="media/quick-deploy-iot-central/iotcentral-application.png" alt-text="Azure IoT Central-toepassing":::
 

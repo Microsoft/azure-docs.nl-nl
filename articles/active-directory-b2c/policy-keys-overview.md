@@ -1,91 +1,104 @@
 ---
-title: Overzicht van beleids sleutels-Azure Active Directory B2C
-description: Meer informatie over de typen versleutelings beleids sleutels die kunnen worden gebruikt in Azure Active Directory B2C voor het ondertekenen en valideren van tokens, client geheimen, certificaten en wacht woorden.
+title: Overzicht van beleidssleutels - Azure Active Directory B2C
+description: Meer informatie over de typen versleutelingsbeleidssleutels die kunnen worden gebruikt in Azure Active Directory B2C voor het ondertekenen en valideren van tokens, clientgeheimen, certificaten en wachtwoorden.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/08/2020
+ms.date: 04/19/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 37ff3300935e90304754b5f2b375df0adecdaefa
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: a41717e9be0918dead9f77a5f5472494d734b38a
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107256239"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717527"
 ---
-# <a name="overview-of-policy-keys-in-azure-active-directory-b2c"></a>Overzicht van beleids sleutels in Azure Active Directory B2C
+# <a name="overview-of-policy-keys-in-azure-active-directory-b2c"></a>Overzicht van beleidssleutels in Azure Active Directory B2C
 
-Azure Active Directory B2C (Azure AD B2C) slaat geheimen en certificaten op in de vorm van beleids sleutels om een vertrouwens relatie tot stand te brengen met de services waarmee deze worden geïntegreerd. Deze vertrouwens relaties bestaan uit:
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
+
+::: zone pivot="b2c-user-flow"
+
+[!INCLUDE [active-directory-b2c-limited-to-custom-policy](../../includes/active-directory-b2c-limited-to-custom-policy.md)]
+
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
+
+Azure Active Directory B2C (Azure AD B2C) slaat geheimen en certificaten op in de vorm van beleidssleutels om vertrouwen te krijgen in de services waarin het is geïntegreerd. Deze vertrouwensrelatie bestaat uit:
 
 - Externe id-providers
-- Verbinding maken met [rest API services](restful-technical-profile.md)
-- Ondertekening en versleuteling van tokens
+- Verbinding maken met [REST API services](restful-technical-profile.md)
+- Token-ondertekening en -versleuteling
 
- In dit artikel wordt beschreven wat u moet weten over de beleids sleutels die worden gebruikt door Azure AD B2C.
+ In dit artikel wordt beschreven wat u moet weten over de beleidssleutels die worden gebruikt door Azure AD B2C.
 
 > [!NOTE]
-> De configuratie van beleids sleutels is momenteel beperkt tot [aangepast beleid](./user-flow-overview.md) .
+> Momenteel is de configuratie van beleidssleutels beperkt tot [alleen aangepaste](./user-flow-overview.md) beleidsregels.
 
-U kunt geheimen en certificaten configureren voor het tot stand brengen van een vertrouwens relatie tussen services in de Azure Portal onder het menu **beleids sleutels** . Sleutels kunnen symmetrisch of asymmetrisch zijn. *Symmetrische* crypto grafie of persoonlijke sleutel cryptografie is de plaats waar een gedeeld geheim wordt gebruikt om de gegevens te versleutelen en ontsleutelen. *Asymmetrische* crypto grafie of open bare-sleutel cryptografie is een cryptografisch systeem dat paren sleutels gebruikt, bestaande uit open bare sleutels die worden gedeeld met de Relying Party toepassing en persoonlijke sleutels die alleen bekend zijn bij Azure AD B2C.
+U kunt geheimen en certificaten configureren om een vertrouwensrelatie tussen services tot stand te Azure Portal onder het menu **Beleidssleutels.** Sleutels kunnen symmetrisch of asymmetrisch zijn. *Symmetrische* cryptografie, of cryptografie met persoonlijke sleutels, is waar een gedeeld geheim wordt gebruikt om de gegevens te versleutelen en ontsleutelen. *Asymmetrische* cryptografie, of openbare-sleutelcryptografie, is een cryptografisch systeem dat gebruikmaakt van sleutelsparen, bestaande uit openbare sleutels die worden gedeeld met de relying party-toepassing en persoonlijke sleutels die alleen bekend zijn bij Azure AD B2C.
 
-## <a name="policy-keyset-and-keys"></a>Sleutel sets en sleutels voor beleid
+## <a name="policy-keyset-and-keys"></a>Beleidssleutelset en -sleutels
 
-De resource op het hoogste niveau voor beleids sleutels in Azure AD B2C is de container voor **sleutel sets** . Elke sleutelset bevat ten minste één **sleutel**. Een sleutel heeft de volgende kenmerken:
+De resource op het hoogste niveau voor beleidssleutels in Azure AD B2C is de **Keyset-container.** Elke keyset bevat ten minste één **sleutel**. Een sleutel heeft de volgende kenmerken:
 
 | Kenmerk |  Vereist | Opmerkingen |
 | --- | --- |--- |
-| `use` | Yes | Gebruik: geeft het beoogde gebruik van de open bare sleutel aan. Gegevens versleutelen `enc` of de hand tekening op gegevens verifiëren `sig` .|
-| `nbf`| No | Datum en tijd van de activering. |
-| `exp`| No | Verval datum en-tijd. |
+| `use` | Yes | Gebruik: Identificeert het beoogde gebruik van de openbare sleutel. Het `enc` versleutelen van gegevens of het verifiëren van de handtekening op gegevens `sig` .|
+| `nbf`| No | Activeringsdatum en -tijd. |
+| `exp`| No | Vervaldatum en -tijd. |
 
-We raden u aan om de sleutel activering en verloop waarden in te stellen op basis van uw PKI-standaarden. Mogelijk moet u deze certificaten regel matig draaien om beveiligings-of beleids redenen. Zo kunt u bijvoorbeeld een beleid hebben om elk jaar al uw certificaten te draaien.
+We raden u aan de waarden voor sleutelactivering en vervaldatum in te stellen op basis van uw PKI-standaarden. Mogelijk moet u deze certificaten periodiek roteren om beveiligings- of beleidsredenen. U kunt bijvoorbeeld een beleid hebben om al uw certificaten elk jaar te roteren.
 
 Als u een sleutel wilt maken, kunt u een van de volgende methoden kiezen:
 
-- **Hand matig** : Maak een geheim met een teken reeks die u definieert. Het geheim is een symmetrische sleutel. U kunt de activerings-en verval datums instellen.
-- **Gegenereerd** -automatisch een sleutel genereren. U kunt activerings-en verval datums instellen. Er zijn twee opties:
-  - **Geheim** : Hiermee wordt een symmetrische sleutel gegenereerd.
-  - **RSA** : Hiermee wordt een sleutel paar (asymmetrische sleutels) gegenereerd.
-- **Upload** : Upload een certificaat of een pkcs12/pfx-profiel-sleutel. Het certificaat moet de persoonlijke en open bare sleutels (asymmetrische sleutels) bevatten.
+- **Handmatig:** maak een geheim met een tekenreeks die u definieert. Het geheim is een symmetrische sleutel. U kunt de activerings- en vervaldatums instellen.
+- **Gegenereerd:** automatisch een sleutel genereren. U kunt activerings- en vervaldatums instellen. Er zijn twee opties:
+  - **Geheim:** genereert een symmetrische sleutel.
+  - **RSA:** genereert een sleutelpaar (asymmetrische sleutels).
+- **Uploaden:** een certificaat of een PKCS12-sleutel uploaden. Het certificaat moet de persoonlijke en openbare sleutels (asymmetrische sleutels) bevatten.
 
-## <a name="key-rollover"></a>Rollover van sleutel
+## <a name="key-rollover"></a>Sleuteloverdraaien
 
-Uit veiligheids overwegingen kan Azure AD B2C regel matig of onmiddellijk in het geval van een nood sleutel worden overgeschakeld. Elke toepassing, ID-provider of REST API die met Azure AD B2C wordt geïntegreerd, moet worden voor bereid om een sleutel rollover gebeurtenis te verwerken, ongeacht hoe vaak deze kan optreden. Als uw toepassing of Azure AD B2C probeert om een verlopen sleutel te gebruiken om een cryptografische bewerking uit te voeren, mislukt de aanmeldings aanvraag.
+Uit veiligheidsdoeleinden kunnen Azure AD B2C sleutels periodiek of onmiddellijk in geval van nood overrollen. Elke toepassing, id-provider of REST API die met Azure AD B2C kan worden geïntegreerd, moet worden voorbereid voor het verwerken van een gebeurtenis voor het rolloveren van sleutels, ongeacht hoe vaak dit gebeurt. Als uw toepassing of Azure AD B2C een verlopen sleutel probeert te gebruiken om een cryptografische bewerking uit te voeren, mislukt de aanmeldingsaanvraag.
 
-Als een Azure AD B2C sleutelset meerdere sleutels heeft, is slechts één van de sleutels tegelijk actief, op basis van de volgende criteria:
+Als een Azure AD B2C meerdere sleutels heeft, is slechts één van de sleutels tegelijk actief, op basis van de volgende criteria:
 
-- De sleutel activering is gebaseerd op de **activerings datum**.
-  - De sleutels worden gesorteerd op de activerings datum in oplopende volg orde. Sleutels met een meer activerings datum in de toekomst worden lager in de lijst weer gegeven. Sleutels zonder een activerings datum bevinden zich onder aan de lijst.
-  - Wanneer de huidige datum en tijd groter is dan de activerings datum van een sleutel, wordt de sleutel door Azure AD B2C geactiveerd en wordt de vorige actieve sleutel niet meer gebruikt.
-- Wanneer de verval tijd van de huidige sleutel is verstreken en de sleutel container een nieuwe sleutel bevat met de tijden geldig en *niet vóór* en *verloop* tijd, wordt de nieuwe sleutel automatisch actief.
-- Als de verval tijd van de huidige sleutel is verstreken en de sleutel container bevat *geen* nieuwe sleutel met de tijden geldig en *niet vóór* en *verloop* tijd, kan Azure AD B2C de verlopen sleutel niet gebruiken. Azure AD B2C wordt een fout bericht weer gegeven binnen een afhankelijk onderdeel van uw aangepaste beleid. Om dit probleem te voor komen, kunt u een standaard sleutel maken zonder de activerings-en verloop datums als een veiligheids-net.
-- Het eind punt van de sleutel (JWKS-URI) van het OpenID Connect Connect-bekende configuratie-eind punt toont de sleutels die in de sleutel container zijn geconfigureerd, wanneer in het [technische profiel van JwtIssuer](./jwt-issuer-technical-profile.md)naar de sleutel wordt verwezen. Een toepassing die gebruikmaakt van een OIDC-bibliotheek, haalt deze meta gegevens automatisch op om ervoor te zorgen dat de juiste sleutels worden gebruikt voor het valideren van tokens. Meer informatie over het gebruik van [micro soft-verificatie bibliotheek](../active-directory/develop/msal-b2c-overview.md), waarmee altijd automatisch de meest recente token handtekening sleutels worden opgehaald.
+- De activering van de sleutel is gebaseerd op de **activeringsdatum.**
+  - De sleutels worden gesorteerd op activeringsdatum in oplopende volgorde. Sleutels met activeringsdatums verderop in de toekomst worden lager in de lijst weergegeven. Sleutels zonder een activeringsdatum bevinden zich onderaan de lijst.
+  - Wanneer de huidige datum en tijd groter is dan de activeringsdatum van een sleutel, Azure AD B2C de sleutel geactiveerd en wordt de vorige actieve sleutel niet meer gebruikt.
+- Wanneer de verlooptijd van de huidige sleutel is verstreken en de  sleutelcontainer  een nieuwe sleutel bevat met een geldige sleutel die niet vóór en vervaltijden geldig is, wordt de nieuwe sleutel automatisch actief.
+- Wanneer de verlooptijd van de huidige sleutel is  verstreken en de sleutelcontainer geen  nieuwe sleutel bevat met een geldige sleutel die niet vóór en vervaltijden geldig is, kunnen Azure AD B2C de verlopen sleutel niet gebruiken.  Azure AD B2C wordt een foutbericht binnen een afhankelijk onderdeel van uw aangepaste beleid weergegeven. U kunt dit probleem voorkomen door een standaardsleutel te maken zonder activerings- en vervaldatums als veiligheidsnet.
+- Het eindpunt van de sleutel (JWKS URI) van het bekende configuratie-eindpunt van OpenId Connect weerspiegelt de sleutels die zijn geconfigureerd in de sleutelcontainer, wanneer naar de sleutel wordt verwezen in het technische profiel [JwtIssuer](./jwt-issuer-technical-profile.md). Een toepassing die een OIDC-bibliotheek gebruikt, haalt deze metagegevens automatisch op om ervoor te zorgen dat deze de juiste sleutels gebruikt om tokens te valideren. Meer informatie over het gebruik van [Microsoft Authentication Library](../active-directory/develop/msal-b2c-overview.md), waarmee altijd automatisch de nieuwste token-ondertekeningssleutels worden opgehaald.
 
-## <a name="policy-key-management"></a>Beheer van beleids sleutels
+## <a name="policy-key-management"></a>Beheer van beleidssleutels
 
-Als u de huidige actieve sleutel binnen een sleutel container wilt ophalen, gebruikt u het [getActiveKey](/graph/api/trustframeworkkeyset-getactivekey) -eind punt van de Microsoft Graph-API.
+Als u de huidige actieve sleutel in een sleutelcontainer wilt op halen, gebruikt u Microsoft Graph API [getActiveKey-eindpunt.](/graph/api/trustframeworkkeyset-getactivekey)
 
-Voor het toevoegen of verwijderen van ondertekenings-en versleutelings sleutels:
+Ondertekenings- en versleutelingssleutels toevoegen of verwijderen:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer op de pagina overzicht onder **beleids regels** het **Framework identiteits ervaring**.
-1. **Beleids sleutels** selecteren 
-    1. Selecteer **toevoegen** om een nieuwe sleutel toe te voegen.
-    1. Als u een nieuwe sleutel wilt verwijderen, selecteert u de sleutel en selecteert u vervolgens **verwijderen**. Als u de sleutel wilt verwijderen, typt u de naam van de sleutel container die u wilt verwijderen. De sleutel wordt door Azure AD B2C verwijderd en er wordt een kopie van de sleutel gemaakt met het achtervoegsel. bak.
+1. Selecteer op de overzichtspagina **onder Beleid** de **optie Identity Experience Framework.**
+1. **Beleidssleutels selecteren** 
+    1. Selecteer Toevoegen om een nieuwe sleutel **toe te voegen.**
+    1. Als u een nieuwe sleutel wilt verwijderen, selecteert u de sleutel en selecteert u **vervolgens Verwijderen.** Als u de sleutel wilt verwijderen, typt u de naam van de sleutelcontainer die u wilt verwijderen. Azure AD B2C verwijdert u de sleutel en maakt u een kopie van de sleutel met het achtervoegsel .bak.
 
 ### <a name="replace-a-key"></a>Een sleutel vervangen
 
 De sleutels in een sleutelset zijn niet vervangbaar of verwisselbaar. Als u een bestaande sleutel wilt wijzigen:
 
-- U kunt het beste een nieuwe sleutel toevoegen waarbij de **activerings datum** is ingesteld op de huidige datum en tijd. Azure AD B2C wordt de nieuwe sleutel geactiveerd en stopt met het gebruik van de vorige actieve sleutel.
-- U kunt ook een nieuwe sleutelset maken met de juiste sleutels. Werk uw beleid bij voor het gebruik van de nieuwe sleutelset en verwijder vervolgens de oude sleutelset. 
+- We raden u aan een nieuwe sleutel toe te voegen met de **activeringsdatum** ingesteld op de huidige datum en tijd. Azure AD B2C activeert de nieuwe sleutel en stopt met het gebruik van de vorige actieve sleutel.
+- U kunt ook een nieuwe sleutelset met de juiste sleutels maken. Werk uw beleid bij om de nieuwe keyset te gebruiken en verwijder vervolgens de oude keyset. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van Microsoft Graph voor het automatiseren van de implementatie van [sleutel sets](microsoft-graph-operations.md#trust-framework-policy-keyset) en [beleids sleutels](microsoft-graph-operations.md#trust-framework-policy-key) .
+- Meer informatie over het gebruik Microsoft Graph voor het automatiseren van de implementatie van [een keyset](microsoft-graph-operations.md#trust-framework-policy-keyset) [en beleidssleutels.](microsoft-graph-operations.md#trust-framework-policy-key)
+
+::: zone-end

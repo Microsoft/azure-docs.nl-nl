@@ -1,59 +1,59 @@
 ---
-title: Azure Functions configureren met een virtueel netwerk
-description: Artikel waarin wordt uitgelegd hoe u bepaalde taken voor virtuele netwerken voor Azure Functions uitvoert.
+title: Een virtuele Azure Functions configureren
+description: In dit artikel wordt beschreven hoe u bepaalde taken voor virtuele netwerken uitvoert voor Azure Functions.
 ms.topic: conceptual
 ms.date: 3/13/2021
 ms.custom: template-how-to
-ms.openlocfilehash: a28a59a0de40bba7914d1920b42034fbbc223ddc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c123b20e163731f9a872a969f2f1564479b6e308
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104609223"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718427"
 ---
-# <a name="how-to-configure-azure-functions-with-a-virtual-network"></a>Azure Functions configureren met een virtueel netwerk
+# <a name="how-to-configure-azure-functions-with-a-virtual-network"></a>Een virtuele Azure Functions configureren
 
-Dit artikel laat u zien hoe u taken kunt uitvoeren die betrekking hebben op het configureren van uw functie-app om verbinding te maken met en uit te voeren op een virtueel netwerk. Zie [Azure functions Network options](functions-networking-options.md)(Engelstalig) voor meer informatie over Azure functions en netwerken.
+In dit artikel wordt beschreven hoe u taken uitvoert die betrekking hebben op het configureren van uw functie-app om verbinding te maken met en uit te voeren in een virtueel netwerk. Zie netwerkopties voor Azure Functions meer informatie [over Azure Functions netwerken.](functions-networking-options.md)
 
-## <a name="restrict-your-storage-account-to-a-virtual-network"></a>Uw opslag account beperken tot een virtueel netwerk 
+## <a name="restrict-your-storage-account-to-a-virtual-network"></a>Uw opslagaccount beperken tot een virtueel netwerk 
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt. 
+Wanneer u een functie-app maakt, moet u een account voor algemeen gebruik Azure Storage maken of koppelen dat ondersteuning biedt voor Blob-, Queue- en Table-opslag. U kunt dit opslagaccount vervangen door een opslagaccount dat is beveiligd met service-eindpunten of een privé-eindpunt. 
 
 > [!NOTE]  
-> Deze functie werkt momenteel voor alle virtuele Windows-Sku's die worden ondersteund in het speciale abonnement (App Service) en voor Premium-abonnementen. Het verbruiks abonnement wordt niet ondersteund. 
+> Deze functie werkt momenteel voor alle door virtuele Windows-netwerken ondersteunde SKU's in het Dedicated-abonnement (App Service) en voor Premium-abonnementen. Verbruiksplan wordt niet ondersteund. 
 
-Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
+Een functie instellen met een opslagaccount dat is beperkt tot een particulier netwerk:
 
-1. Maak een functie met een opslag account waarvoor geen service-eind punten zijn ingeschakeld.
+1. Maak een functie met een opslagaccount waar geen service-eindpunten zijn ingeschakeld.
 
 1. Configureer de functie om verbinding te maken met uw virtuele netwerk.
 
-1. Een ander opslag account maken of configureren.  Dit is het opslag account dat wordt beveiligd met Service-eind punten en om onze functie te verbinden.
+1. Maak of configureer een ander opslagaccount.  Dit is het opslagaccount dat we beveiligen met service-eindpunten en onze functie verbinden.
 
-1. [Maak een bestands share](../storage/files/storage-how-to-create-file-share.md#create-file-share) in het account voor beveiligde opslag.
+1. [Maak een bestands share](../storage/files/storage-how-to-create-file-share.md#create-a-file-share) in het beveiligde opslagaccount.
 
-1. Schakel de service-eind punten of het persoonlijke eind punt in voor het opslag account.  
-    * Als u verbindingen met een privé-eind punt gebruikt, hebt u voor het opslag account een persoonlijk eind punt nodig voor de `file` `blob` subbrons.  Als u bepaalde functies als Durable Functions gebruikt, hebt u ook `queue` `table` toegang nodig via een verbinding met een privé-eind punt.
-    * Als u service-eind punten gebruikt, schakelt u het subnet in dat is toegewezen aan uw functie-apps voor opslag accounts.
+1. Schakel service-eindpunten of privé-eindpunten in voor het opslagaccount.  
+    * Als u privé-eindpuntverbindingen gebruikt, heeft het opslagaccount een privé-eindpunt nodig voor de `file` subbronnen en `blob` .  Als u bepaalde mogelijkheden, zoals Durable Functions, hebt u ook en toegankelijk `queue` `table` nodig via een privé-eindpuntverbinding.
+    * Als u service-eindpunten gebruikt, moet u het subnet inschakelen dat is toegewezen aan uw functie-apps voor opslagaccounts.
 
-1. Kopieer het bestand en de blob-inhoud van het functie-app-opslag account naar het beveiligde opslag account en de bestands share.
+1. Kopieer het bestand en de blob-inhoud van het opslagaccount van de functie-app naar het beveiligde opslagaccount en de bestands share.
 
-1. Kopieer de connection string voor dit opslag account.
+1. Kopieer de connection string voor dit opslagaccount.
 
-1. Werk de **Toepassings instellingen** onder **configuratie** voor de functie-app als volgt bij:
+1. Werk de **toepassingsinstellingen** onder **Configuratie voor** de functie-app als volgt bij:
 
     | Naam van de instelling | Waarde | Opmerking |
     |----|----|----|
-    | `AzureWebJobsStorage`| Opslag connection string | Dit is de connection string voor een beveiligd opslag account. |
-    | `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` |  Opslag connection string | Dit is de connection string voor een beveiligd opslag account. |
-    | `WEBSITE_CONTENTSHARE` | Bestandsshare | De naam van de bestands share die is gemaakt in het beveiligde opslag account waarin de project implementatie bestanden zich bevinden. |
+    | `AzureWebJobsStorage`| Opslag connection string | Dit is de connection string voor een beveiligd opslagaccount. |
+    | `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` |  Opslag connection string | Dit is de connection string voor een beveiligd opslagaccount. |
+    | `WEBSITE_CONTENTSHARE` | Bestandsshare | De naam van de bestands share die is gemaakt in het beveiligde opslagaccount waarin de projectimplementatiebestanden zich bevinden. |
     | `WEBSITE_CONTENTOVERVNET` | 1 | Nieuwe instelling |
-    | `WEBSITE_VNET_ROUTE_ALL` | 1 | Hiermee wordt al het uitgaande verkeer via het virtuele netwerk geforceerd. Vereist wanneer het opslag account gebruikmaakt van verbindingen met een privé-eind punt. |
-    | `WEBSITE_DNS_SERVER` | `168.63.129.16` | De DNS-server die door de app wordt gebruikt. Vereist wanneer het opslag account gebruikmaakt van verbindingen met een privé-eind punt. |
+    | `WEBSITE_VNET_ROUTE_ALL` | 1 | Dwingt al het uitgaande verkeer via het virtuele netwerk. Vereist wanneer het opslagaccount privé-eindpuntverbindingen gebruikt. |
+    | `WEBSITE_DNS_SERVER` | `168.63.129.16` | De DNS-server die wordt gebruikt door de app. Vereist wanneer het opslagaccount privé-eindpuntverbindingen gebruikt. |
 
-1. Selecteer **Opslaan** om de toepassings instellingen op te slaan. Als u de app-instellingen wijzigt, wordt de app opnieuw opgestart.  
+1. Selecteer **Opslaan om** de toepassingsinstellingen op te slaan. Het wijzigen van app-instellingen zorgt ervoor dat de app opnieuw wordt gestart.  
 
-Nadat de functie-app opnieuw is opgestart, is deze nu verbonden met een beveiligd opslag account.
+Nadat de functie-app opnieuw is opgestart, is deze verbonden met een beveiligd opslagaccount.
 
 ## <a name="next-steps"></a>Volgende stappen
 

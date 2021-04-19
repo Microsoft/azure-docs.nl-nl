@@ -1,6 +1,6 @@
 ---
-title: Een Cloud service implementeren (uitgebreide ondersteuning)-Power shell
-description: Een Cloud service (uitgebreide ondersteuning) implementeren met behulp van Power shell
+title: Een cloudservice implementeren (uitgebreide ondersteuning) - PowerShell
+description: Een cloudservice (uitgebreide ondersteuning) implementeren met Behulp van PowerShell
 ms.topic: tutorial
 ms.service: cloud-services-extended-support
 author: gachandw
@@ -8,42 +8,42 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: bcf6b2f6b964a056b9d90f08c0586fcbdec5b260
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: a7e4e76aa0619d78a91d766a9a43c0b1a02a48d3
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106167273"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717383"
 ---
-# <a name="deploy-a-cloud-service-extended-support-using-azure-powershell"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met behulp van Azure PowerShell
+# <a name="deploy-a-cloud-service-extended-support-using-azure-powershell"></a>Een cloudservice implementeren (uitgebreide ondersteuning) met behulp van Azure PowerShell
 
-In dit artikel wordt beschreven hoe u de `Az.CloudService` Power shell-module gebruikt om Cloud Services (uitgebreide ondersteuning) te implementeren in azure met meerdere rollen (webrole en WorkerRole) en de extensie extern bureau blad. 
+In dit artikel wordt beschreven hoe u de PowerShell-module gebruikt voor het implementeren van Cloud Services (uitgebreide ondersteuning) in Azure met meerdere rollen (WebRole en WorkerRole) en de extensie extern `Az.CloudService` bureaublad. 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak de bijbehorende resources. 
+Controleer de [implementatievoorwaarden voor Cloud Services](deploy-prerequisite.md) (uitgebreide ondersteuning) en maak de bijbehorende resources. 
 
 ## <a name="deploy-a-cloud-services-extended-support"></a>Een Cloud Services implementeren (uitgebreide ondersteuning)
-1. Installeren AZ. Microsoftcompute Power shell-module  
+1. Az.CloudService PowerShell-module installeren  
 
     ```powershell
     Install-Module -Name Az.CloudService 
     ```
 
-2. Een nieuwe resourcegroep maken. Deze stap is optioneel als u een bestaande resource groep gebruikt.   
+2. Een nieuwe resourcegroep maken. Deze stap is optioneel als u een bestaande resourcegroep gebruikt.   
 
     ```powershell
     New-AzResourceGroup -ResourceGroupName “ContosOrg” -Location “East US” 
     ```
 
-3. Maak een opslag account en een container die wordt gebruikt voor het opslaan van het Cloud service package (. cspkg) en de service configuratie (. cscfg)-bestanden. U moet een unieke naam voor de naam van het opslag account gebruiken. 
+3. Maak een opslagaccount en container die worden gebruikt voor het opslaan van de cloudservicepakketbestanden (.cspkg) en serviceconfiguratiebestanden (.cscfg). U moet een unieke naam gebruiken voor de naam van het opslagaccount. 
 
     ```powershell
     $storageAccount = New-AzStorageAccount -ResourceGroupName “ContosOrg” -Name “contosostorageaccount” -Location “East US” -SkuName “Standard_RAGRS” -Kind “StorageV2” 
     $container = New-AzStorageContainer -Name “contosocontainer” -Context $storageAccount.Context -Permission Blob 
     ```
 
-4. Upload uw Cloud service pakket (cspkg) naar het opslag account.
+4. Upload uw Cloud Service-pakket (cspkg) naar het opslagaccount.
 
     ```powershell
     $tokenStartTime = Get-Date 
@@ -54,7 +54,7 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     ```
  
 
-5.  Upload uw Cloud service configuratie (cscfg) naar het opslag account. 
+5.  Upload uw cloudserviceconfiguratie (cscfg) naar het opslagaccount. 
 
     ```powershell
     $cscfgBlob = Set-AzStorageBlobContent -File “./ContosoApp/ContosoApp.cscfg” -Container contosocontainer -Blob “ContosoApp.cscfg” -Context $storageAccount.Context 
@@ -62,21 +62,21 @@ Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud 
     $cscfgUrl = $cscfgBlob.ICloudBlob.Uri.AbsoluteUri + $cscfgToken 
     ```
 
-6. Maak een virtueel netwerk en subnet. Deze stap is optioneel als u een bestaand netwerk en subnet gebruikt. In dit voor beeld wordt één virtueel netwerk en subnet gebruikt voor Cloud service rollen (webrole en WorkerRole). 
+6. Maak een virtueel netwerk en subnet. Deze stap is optioneel als u een bestaand netwerk en subnet gebruikt. In dit voorbeeld worden één virtueel netwerk en subnet gebruikt voor beide cloudservicerollen (WebRole en WorkerRole). 
 
     ```powershell
     $subnet = New-AzVirtualNetworkSubnetConfig -Name "ContosoWebTier1" -AddressPrefix "10.0.0.0/24" -WarningAction SilentlyContinue 
     $virtualNetwork = New-AzVirtualNetwork -Name “ContosoVNet” -Location “East US” -ResourceGroupName “ContosOrg” -AddressPrefix "10.0.0.0/24" -Subnet $subnet 
     ```
  
-7. Maak een openbaar IP-adres en stel de DNS-label eigenschap van het open bare IP-adres in. Cloud Services (uitgebreide ondersteuning) ondersteunt alleen [Basic] ( https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#basic) open bare IP-adressen van SKU. Open bare Ip's van standaard-SKU werken niet met Cloud Services.
-Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereserveerd IP in het bestand met de service configuratie (. cscfg) 
+7. Maak een openbaar IP-adres en stel de eigenschap DNS-label van het openbare IP-adres in. Cloud Services (uitgebreide ondersteuning) ondersteunt [](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses#basic) alleen openbare IP-adressen van basic-SKU's. Openbare IP's van de Standard-SKU werken niet met Cloud Services.
+Als u een statisch IP-adres gebruikt, moet u hier naar verwijzen als een Gereserveerd IP in het serviceconfiguratiebestand (.cscfg) 
 
     ```powershell
     $publicIp = New-AzPublicIpAddress -Name “ContosIp” -ResourceGroupName “ContosOrg” -Location “East US” -AllocationMethod Dynamic -IpAddressVersion IPv4 -DomainNameLabel “contosoappdns” -Sku Basic 
     ```
 
-8. Maak een object voor een netwerk profiel en koppel het open bare IP-adres aan de front-end van de load balancer. Het Azure-platform maakt automatisch een ' klassieke ' SKU load balancer resource in hetzelfde abonnement als de Cloud service resource. De load balancer resource is een alleen-lezen resource in ARM. Updates voor de resource worden alleen ondersteund via de implementatie bestanden voor Cloud Services (. cscfg &. csdef)
+8. Maak een netwerkprofielobject en koppel het openbare IP-adres aan de front-load balancer. Het Azure-platform maakt automatisch een 'klassieke' SKU load balancer resource in hetzelfde abonnement als de cloudserviceresource. De load balancer is een alleen-lezen resource in ARM. Updates voor de resource worden alleen ondersteund via de implementatiebestanden van de cloudservice (.cscfg & .csdef)
 
     ```powershell
     $publicIP = Get-AzPublicIpAddress -ResourceGroupName ContosOrg -Name ContosIp  
@@ -85,34 +85,34 @@ Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereservee
     $networkProfile = @{loadBalancerConfiguration = $loadBalancerConfig} 
     ```
  
-9. Een sleutelkluis maken. Deze Key Vault wordt gebruikt om certificaten op te slaan die zijn gekoppeld aan de rollen van de Cloud service (uitgebreide ondersteuning). De Key Vault moet zich in dezelfde regio en hetzelfde abonnement bevinden als de Cloud service en een unieke naam hebben. Zie [certificaten met Azure Cloud Services gebruiken (uitgebreide ondersteuning)](certificates-and-key-vault.md)voor meer informatie.
+9. Een sleutelkluis maken. Deze Key Vault worden gebruikt voor het opslaan van certificaten die zijn gekoppeld aan de cloudservicerollen (uitgebreide ondersteuning). De Key Vault moeten zich in dezelfde regio en hetzelfde abonnement bevinden als de cloudservice en een unieke naam hebben. Zie Certificaten gebruiken [met Azure Cloud Services (uitgebreide ondersteuning) voor meer informatie.](certificates-and-key-vault.md)
 
     ```powershell
     New-AzKeyVault -Name "ContosKeyVault” -ResourceGroupName “ContosOrg” -Location “East US” 
     ```
 
-10. Het Key Vault toegangs beleid bijwerken en certificaat machtigingen verlenen aan uw gebruikers account. 
+10. Werk het Key Vault toegangsbeleid bij en verleen certificaatmachtigingen aan uw gebruikersaccount. 
 
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosOrg' -EnabledForDeployment
     Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosOrg' -UserPrincipalName 'user@domain.com' -PermissionsToCertificates create,get,list,delete 
     ```
 
-    U kunt ook toegangs beleid instellen via ObjectId (dat kan worden verkregen door uit te voeren `Get-AzADUser` ) 
+    U kunt ook toegangsbeleid instellen via ObjectId (dat kan worden verkregen door uit te `Get-AzADUser` voeren) 
     
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName 'ContosKeyVault' -ResourceGroupName 'ContosOrg' -ObjectId 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' -PermissionsToCertificates create,get,list,delete 
     ```
  
 
-11. Voor het doel van dit voor beeld voegen we een zelfondertekend certificaat toe aan een Key Vault. De vinger afdruk van het certificaat moet worden toegevoegd in het bestand Cloud service Configuration (. cscfg) voor de implementatie van Cloud service-rollen. 
+11. In dit voorbeeld voegen we een zelf ondertekend certificaat toe aan een Key Vault. De vingerafdruk van het certificaat moet worden toegevoegd in het cloudserviceconfiguratiebestand (.cscfg) voor implementatie in cloudservicerollen. 
 
     ```powershell
     $Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal 
     Add-AzKeyVaultCertificate -VaultName "ContosKeyVault" -Name "ContosCert" -CertificatePolicy $Policy 
     ```
  
-12. Een besturingssysteem profiel in het geheugen-object maken. BESTURINGSSYSTEEM profiel Hiermee geeft u de certificaten op die zijn gekoppeld aan Cloud service rollen. Dit is hetzelfde certificaat dat u in de vorige stap hebt gemaakt. 
+12. Maak een besturingssysteemprofiel in het geheugenobject. Besturingssysteemprofiel geeft de certificaten aan die zijn gekoppeld aan cloudservicerollen. Dit is hetzelfde certificaat dat u in de vorige stap hebt gemaakt. 
 
     ```powershell
     $keyVault = Get-AzKeyVault -ResourceGroupName ContosOrg -VaultName ContosKeyVault 
@@ -121,7 +121,7 @@ Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereservee
     $osProfile = @{secret = @($secretGroup)} 
     ```
 
-13. Maak een rollen profiel in het geheugen object. Een roltype definieert een specifieke SKU-eigenschappen, zoals naam, capaciteit en laag. Voor dit voor beeld hebben we twee rollen gedefinieerd: frontendRole en backendRole. De informatie van het rolinstantie moet overeenkomen met de functie configuratie die is gedefinieerd in het configuratie bestand (cscfg) en het bestand met de service definitie (csdef). 
+13. Maak een rolprofiel in het geheugenobject. Rolprofiel definieert specifieke eigenschappen van een SKU voor rollen, zoals naam, capaciteit en laag. Voor dit voorbeeld hebben we twee rollen gedefinieerd: frontendRole en backendRole. Informatie over rolprofiel moet overeenkomen met de rolconfiguratie die is gedefinieerd in het configuratiebestand (cscfg) en het csdef-bestand (servicedefinitie). 
 
     ```powershell
     $frontendRole = New-AzCloudServiceRoleProfilePropertiesObject -Name 'ContosoFrontend' -SkuName 'Standard_D1_v2' -SkuTier 'Standard' -SkuCapacity 2 
@@ -129,7 +129,7 @@ Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereservee
     $roleProfile = @{role = @($frontendRole, $backendRole)} 
     ```
 
-14. Beschrijving Maak een extensie profiel in het geheugen object dat u wilt toevoegen aan uw Cloud service. Voor dit voor beeld gaan we RDP-uitbrei ding toevoegen. 
+14. (Optioneel) Maak een extensieprofiel in het geheugenobject dat u aan uw cloudservice wilt toevoegen. Voor dit voorbeeld voegen we de RDP-extensie toe. 
 
     ```powershell
     $credential = Get-Credential 
@@ -141,20 +141,20 @@ Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereservee
     $wadExtension = New-AzCloudServiceDiagnosticsExtension -Name "WADExtension" -ResourceGroupName "ContosOrg" -CloudServiceName "ContosCS" -StorageAccountName "contosostorageaccount" -StorageAccountKey $storageAccountKey[0].Value -DiagnosticsConfigurationPath $configFile -TypeHandlerVersion "1.5" -AutoUpgradeMinorVersion $true 
     $extensionProfile = @{extension = @($rdpExtension, $wadExtension)} 
     ```
-    Houd er rekening mee dat configFile alleen PublicConfig-Tags moet hebben en een naam ruimte moet bevatten:
+    Houd er rekening mee dat configFile alleen PublicConfig-tags mag bevatten en als volgt een naamruimte moet bevatten:
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
         ...............
     </PublicConfig>
     ```
-15. Beschrijving Tags definiëren als een Power shell-Hash-tabel die u wilt toevoegen aan uw Cloud service. 
+15. (Optioneel) Definieer Tags als PowerShell-hashtabel die u aan uw cloudservice wilt toevoegen. 
 
     ```powershell
     $tag=@{"Owner" = "Contoso"} 
     ```
 
-17. Maak Cloud service-implementatie met behulp van profiel objecten & SAS-Url's.
+17. Maak cloudservice-implementatie met behulp van profielobjecten & SAS-URL's.
 
     ```powershell
     $cloudService = New-AzCloudService ` 
@@ -172,6 +172,6 @@ Als u een statisch IP-adres gebruikt, moet u ernaar verwijzen als een Gereservee
     ```
 
 ## <a name="next-steps"></a>Volgende stappen 
-- Bekijk [Veelgestelde vragen](faq.md) over Cloud Services (uitgebreide ondersteuning).
-- Implementeer een Cloud service (uitgebreide ondersteuning) met behulp van de [Azure Portal](deploy-portal.md), [Power shell](deploy-powershell.md), [sjabloon](deploy-template.md) of [Visual Studio](deploy-visual-studio.md).
-- Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)
+- Bekijk [veelgestelde vragen over](faq.md) Cloud Services (uitgebreide ondersteuning).
+- Implementeer een cloudservice (uitgebreide ondersteuning) met behulp [van Azure Portal,](deploy-portal.md) [PowerShell,](deploy-powershell.md) [Sjabloon](deploy-template.md) [of Visual Studio.](deploy-visual-studio.md)
+- Ga naar [de opslagplaats Cloud Services voorbeelden voor ondersteuning (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

@@ -4,15 +4,15 @@ description: Een Azure Files-share maken en gebruiken in Azure Portal. Verbind d
 author: roygara
 ms.service: storage
 ms.topic: quickstart
-ms.date: 02/01/2019
+ms.date: 04/15/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 4c5629f80c37c9f79dc9a39c4d8304acbee9679d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5a3c664f6c6c0532ef915357cfbcbc8228202502
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92489571"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718177"
 ---
 # <a name="quickstart-create-and-manage-azure-files-share-with-windows-virtual-machines"></a>Quickstart: Een Azure-bestandsshare maken en beheren met virtuele Windows-machines
 
@@ -42,19 +42,19 @@ Voordat u kunt gaan werken met een Azure-bestandsshare moet u een Azure-opslagac
 Vervolgens gaat u een bestandsshare maken.
 
 1. Als de implementatie van het Azure-opslagaccount is voltooid, selecteert u **Naar de resource gaan**.
-1. Selecteer **Bestanden** in het deelvenster met het opslagaccount.
+1. Selecteer **Bestands shares** in het deelvenster van het opslagaccount.
 
-    ![Bestanden selecteren](./media/storage-files-quick-create-use-windows/click-files.png)
+    ![Selecteer Bestandsshares.](./media/storage-files-quick-create-use-windows/click-files.png)
 
-1. Selecteer **Bestandsshare**.
+1. Selecteer **+ Bestandsshare**.
 
-    ![De knop Bestandsshare toevoegen selecteren](./media/storage-files-quick-create-use-windows/create-file-share.png)
+    ![Selecteer + Bestands share om een nieuwe bestands share te maken.](./media/storage-files-quick-create-use-windows/create-file-share.png)
 
-1. Geef de nieuwe bestandsshare de naam *qsfileshare* > voer 1 voor **Quotum** > selecteer **Maken**. Het quotum kan maximaal 5 TiB zijn, maar voor deze quickstart is 1 GB voldoende.
+1. Geef de nieuwe *bestandsshare de naam qsfileshare,* voer '1' in voor het **Quotum,** laat **Geoptimaliseerde** transactie geselecteerd en selecteer **Maken.** Het quotum kan maximaal 5 TiB zijn (100 TiB, met grote bestands shares ingeschakeld), maar u hebt slechts 1 GiB nodig voor deze quickstart.
 1. Maak een nieuw TXT-bestand met de naam *qsTestFile* op uw lokale computer.
 1. Selecteer de nieuwe bestandsshare en klik vervolgens op de locatie van de bestandsshare op **Uploaden**.
 
-    ![Bestand uploaden](./media/storage-files-quick-create-use-windows/create-file-share-portal5.png)
+    ![Upload een bestand.](./media/storage-files-quick-create-use-windows/create-file-share-portal5.png)
 
 1. Blader naar de locatie waar u uw TXT-bestand hebt gemaakt > selecteer *qsTestFile.txt* > selecteer **uploaden**.
 
@@ -63,14 +63,14 @@ U hebt nu een Azure-opslagaccount gemaakt en een bestandsshare met één bestand
 ### <a name="deploy-a-vm"></a>Een virtuele machine implementeren
 
 1. Vouw vervolgens het menu aan de linkerkant van de portal uit en kies **Een resource maken** in linkerbovenhoek van de Azure-portal.
-1. Zoek via het zoekvak boven de lijst met **Azure Marketplace**-resources naar **Windows Server 2016 Datacenter**, selecteer dit en kies **Maken**.
+1. Zoek en selecteer **windows Server 2016 Datacenter** **Azure Marketplace** het zoekvak boven de lijst met resources.
 1. Selecteer op het tabblad **Basis**, onder **Projectdetails**, de resourcegroep die u voor deze quickstart hebt gemaakt.
 
-   ![Voer basisinformatie over uw virtuele machine in op de portalblade](./media/storage-files-quick-create-use-windows/vm-resource-group-and-subscription.png)
+   ![Voer basisinformatie over uw VM in op de portalblade.](./media/storage-files-quick-create-use-windows/vm-resource-group-and-subscription.png)
 
 1. Geef onder **exemplaar details** de naam *qsVM* op voor de VM.
 1. Behoud de standaardinstellingen voor **Regio**, **Beschikbaarheidsopties**, **Installatiekopie** en **Grootte**.
-1. Voeg onder **Administrator-account***VMadmin* toe als de **gebruikersnaam** en voer een **wachtwoord** in voor de VM.
+1. Voeg **onder Beheerdersaccount** een gebruikersnaam **toe en** voer een wachtwoord **in** voor de VM.
 1. Onder **Regels voor binnenkomende poort** kiest u **​​Geselecteerde poorten toestaan** en selecteert u **RDP (3389)** en **HTTP** in de vervolgkeuzelijst.
 1. Selecteer **Controleren en maken**.
 1. Selecteer **Maken**. Het duurt enkele minuten voordat de nieuwe VM is voltooid.
@@ -96,60 +96,50 @@ U hebt nu een nieuwe virtuele machine gemaakt en een gegevensschijf gekoppeld. U
 ## <a name="map-the-azure-file-share-to-a-windows-drive"></a>De Azure-bestandsshare koppelen aan een Windows-station
 
 1. Ga in de Azure-portal naar de bestandsshare *qsfileshare* en selecteer **Verbinding maken**.
-1. Kopieer de inhoud van het tweede vak en plak deze in **Kladblok**.
+1. Selecteer een stationletter en kopieer de inhoud van het tweede vak en plak deze in **Kladblok.**
 
-   ![Schermopname van de inhoud van het tweede vak dat u moet kopiëren en plakken in Kladblok.](./media/storage-files-quick-create-use-windows/portal_netuse_connect2.png)
+   :::image type="content" source="media/storage-how-to-use-files-windows/files-portal-mounting-cmdlet-resize.png" alt-text="Schermopname van de inhoud van het vak dat u in Kladblok moet kopiëren en plakken." lightbox="media/storage-how-to-use-files-windows/files-portal-mounting-cmdlet-resize.png":::
 
-1. Open op de VM **Verkenner** en selecteer **Deze pc** in het venster. Hiermee wijzigt u de menu's die beschikbaar zijn op het lint. Selecteer **Netwerkstation toewijzen** in het menu **Computer**.
-1. Selecteer de stationsletter en voer het UNC-pad in. Als u de suggesties voor naamgeving in deze quickstart hebt gevolgd, kopieert u *\\qsstorageacct.file.core.windows.net\qsfileshare* uit **Kladblok**.
-
-   Zorg ervoor dat beide selectievakjes zijn ingeschakeld.
-
-   ![Een schermafbeelding van het dialoogvenster 'Netwerkverbinding maken'](./media/storage-files-quick-create-use-windows/mountonwindows10.png)
-
-1. Selecteer **Finish**.
-1. Ga als volgt te werk in het dialoogvenster **Windows-beveiliging**:
-
-   - Kopieer vanuit Kladblok de naam van het opslagaccount voorafgegaan door AZURE\ en plak deze in het dialoogvenster **Windows-beveiliging** als de gebruikersnaam. Als u de suggesties voor naamgeving in deze quickstart hebt gevolgd, kopieert u *AZURE\qsstorageacct*.
-   - Kopieer vanuit Kladblok de sleutel van het opslagaccount en plak deze in het dialoogvenster **Windows-beveiliging** als het wachtwoord.
-
-      ![Het UNC-pad in het deelvenster Verbinding maken van Azure Files](./media/storage-files-quick-create-use-windows/portal_netuse_connect3.png)
+1. Open **PowerShell** op de VM en plak de inhoud van **Kladblok** in en druk vervolgens op Enter om de opdracht uit te voeren. Het station moet worden in kaart gebracht.
 
 ## <a name="create-a-share-snapshot"></a>Momentopname van het maken van een share
 
 Nu het station is toegewezen, kunt u een momentopname maken.
 
-1. Ga in de portal naar de bestandsshare en selecteer **Momentopname maken**.
+1. Navigeer in de portal naar uw bestands share, selecteer **Momentopnamen** en selecteer **vervolgens + Momentopname toevoegen.**
 
-   ![Een momentopname maken](./media/storage-files-quick-create-use-windows/create-snapshot.png)
+   ![Selecteer momentopnamen in de sectie Bewerkingen en selecteer vervolgens Momentopname toevoegen.](./media/storage-files-quick-create-use-windows/create-snapshot.png)
 
 1. Open op de VM het bestand *qstestfile.txt* en typ 'dit bestand is gewijzigd'. Sla het bestand op en sluit het daarna.
 1. Maak een nieuwe momentopname.
 
 ## <a name="browse-a-share-snapshot"></a>Momentopnamen van een share bekijken
 
-1. Selecteer **Momentopnamen weergeven** in de bestandsshare.
-1. Selecteer in het deelvenster **Momentopnamen van bestandsshares** de eerste momentopname in de lijst.
+1. Selecteer momentopnamen op uw **bestands share.**
+1. Selecteer op de blade **Momentopnamen** de eerste momentopname in de lijst.
 
    ![Geselecteerde momentopname in de lijst met tijdstempels](./media/storage-files-quick-create-use-windows/snapshot-list.png)
 
-1. Selecteer *qsTestFile.txt* in het deelvenster voor die momentopname.
+1. Open die momentopname en selecteer *qsTestFile.txt*.
 
 ## <a name="restore-from-a-snapshot"></a>Terugzetten vanuit een momentopname
 
 1. Op de blade ‘Momentopnamen van bestandsshares’ klikt u met de rechtermuisknop op *qsTestFile* en selecteert u de knop **Terugzetten**.
+
+    :::image type="content" source="media/storage-files-quick-create-use-windows/restore-share-snapshot.png" alt-text="Schermopname van de blade momentopname, qstestfile is geselecteerd en herstellen is gemarkeerd.":::
+
 1. Selecteer **Oorspronkelijke bestand overschrijven**.
 
-   ![De knoppen Downloaden en Terugzetten](./media/storage-files-quick-create-use-windows/snapshot-download-restore-portal.png)
+   ![Schermopname van het pop-uppop-upbestand herstellen, oorspronkelijke bestand overschrijven is geselecteerd.](./media/storage-files-quick-create-use-windows/snapshot-download-restore-portal.png)
 
 1. Open het bestand op de VM. De ongewijzigde versie is hersteld.
 
 ## <a name="delete-a-share-snapshot"></a>Een share-momentopname verwijderen
 
-1. Selecteer **Momentopnamen weergeven** in de bestandsshare.
-1. Selecteer in het deelvenster **Momentopnamen van bestandsshares** de laatste momentopname in de lijst en klik op **Verwijderen**.
+1. Selecteer momentopnamen op uw **bestands share.**
+1. Selecteer op de blade **Momentopnamen** de laatste momentopname in de lijst en selecteer **Verwijderen.**
 
-   ![De knop Verwijderen](./media/storage-files-quick-create-use-windows/portal-snapshots-delete.png)
+   ![Schermopname van de blade momentopnamen, laatste geselecteerde momentopname, knop Verwijderen gemarkeerd.](./media/storage-files-quick-create-use-windows/portal-snapshots-delete.png)
 
 ## <a name="use-a-share-snapshot-in-windows"></a>Een momentopname van een share gebruiken in Windows
 
@@ -173,7 +163,10 @@ Net als met on-premises VSS-momentopnamen kunt u de momentopnamen van de gekoppe
 
 1. Selecteer **Terugzetten**. De inhoud van de gehele map wordt recursief naar de oorspronkelijke locatie gekopieerd, op de aanmaaktijd van de momentopname van de share.
 
-   ![De knop Terugzetten in waarschuwingsbericht](./media/storage-files-quick-create-use-windows/snapshot-windows-restore.png) Opmerking: als uw bestand niet is gewijzigd, ziet u geen vorige versie voor dat bestand, omdat dat bestand dezelfde versie is als de schaduwkopie. Dit is consistent met hoe dit werkt op een Windows-bestandsserver.
+   ![De knop Terugzetten in een waarschuwingsbericht](./media/storage-files-quick-create-use-windows/snapshot-windows-restore.png)
+    
+    > [!NOTE]
+    > Als uw bestand niet is gewijzigd, ziet u geen eerdere versie voor dat bestand omdat dat bestand dezelfde versie is als de momentopname. Dit is consistent met hoe dit werkt op een Windows-bestandsserver.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

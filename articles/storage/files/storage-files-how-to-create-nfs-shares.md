@@ -1,22 +1,22 @@
 ---
-title: Een NFS-share maken-Azure Files (preview-versie)
-description: Meer informatie over het maken van een Azure-bestands share die kan worden gekoppeld met het Network File System-protocol.
+title: Een NFS-share maken - Azure Files (preview)
+description: Meer informatie over het maken van een Azure-bestands share die kan worden aangesloten met behulp van het network file system-protocol.
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/22/2021
+ms.date: 04/05/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: b085b9991175d8cd43e2dac0db80c5af4e703c34
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b549c625f0a6ff0480eafc38f84d292e66350950
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102521234"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717121"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Een NFS-share maken
-Azure-bestands shares zijn volledig beheerde bestands shares die zich in de cloud bevinden. In dit artikel wordt beschreven hoe u een bestands share maakt die gebruikmaakt van het NFS-protocol. Zie [Azure file share-protocollen](storage-files-compare-protocols.md)voor meer informatie over beide protocollen.
+Azure-bestands shares zijn volledig beheerde bestands shares die zich in de cloud verplaatsen. In dit artikel wordt beschreven hoe u een bestands share maakt die gebruikmaakt van het NFS-protocol. Zie Protocollen voor Azure-bestands delen voor meer informatie [over beide protocollen.](storage-files-compare-protocols.md)
 
 ## <a name="limitations"></a>Beperkingen
 [!INCLUDE [files-nfs-limitations](../../../includes/files-nfs-limitations.md)]
@@ -25,19 +25,19 @@ Azure-bestands shares zijn volledig beheerde bestands shares die zich in de clou
 [!INCLUDE [files-nfs-regional-availability](../../../includes/files-nfs-regional-availability.md)]
 
 ## <a name="prerequisites"></a>Vereisten
-- NFS-shares kunnen alleen worden geopend vanuit vertrouwde netwerken. Verbindingen met uw NFS-share moeten afkomstig zijn van een van de volgende bronnen:
-    - [Maak een persoonlijk eind punt](storage-files-networking-endpoints.md#create-a-private-endpoint) (aanbevolen) of [Beperk de toegang tot uw open bare eind punt](storage-files-networking-endpoints.md#restrict-public-endpoint-access).
-    - [Een punt-naar-site-VPN (P2S) op Linux configureren voor gebruik met Azure files](storage-files-configure-p2s-vpn-linux.md).
-    - [Configureer een site-naar-site-VPN voor gebruik met Azure files](storage-files-configure-s2s-vpn.md).
-    - [ExpressRoute](../../expressroute/expressroute-introduction.md)configureren.
+- NFS-shares zijn alleen toegankelijk vanuit vertrouwde netwerken. Verbindingen met uw NFS-share moeten afkomstig zijn van een van de volgende bronnen:
+    - Maak [een privé-eindpunt (aanbevolen)](storage-files-networking-endpoints.md#create-a-private-endpoint) of [beperk de toegang tot uw openbare eindpunt.](storage-files-networking-endpoints.md#restrict-public-endpoint-access)
+    - [Configureer een punt-naar-site-VPN (P2S) in Linux voor gebruik met Azure Files](storage-files-configure-p2s-vpn-linux.md).
+    - [Configureer een site-naar-site-VPN voor gebruik met Azure Files](storage-files-configure-s2s-vpn.md).
+    - Configureer [ExpressRoute.](../../expressroute/expressroute-introduction.md)
 
 - Als u van plan bent om de Artikel CLI te gebruiken, [installeert u de nieuwste versie](/cli/azure/install-azure-cli).
 
-## <a name="register-the-nfs-41-protocol"></a>Het NFS 4,1-protocol registreren
-Als u de Azure PowerShell-module of de Azure CLI gebruikt, registreert u uw functie met de volgende opdrachten:
+## <a name="register-the-nfs-41-protocol"></a>Het NFS 4.1-protocol registreren
+Als u de module Azure PowerShell of de Azure CLI gebruikt, registreert u uw functie met behulp van de volgende opdrachten:
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-Gebruik Azure PowerShell of Azure CLI om de NFS 4,1-functie voor Azure Files te registreren.
+Gebruik Azure PowerShell of Azure CLI om de NFS 4.1-functie te registreren voor Azure Files.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 ```azurepowershell
@@ -77,10 +77,10 @@ az provider register \
 
 ---
 
-De registratie goedkeuring kan tot een uur duren. Gebruik de volgende opdrachten om te controleren of de registratie is voltooid:
+Registratiegoedkeuring kan tot een uur duren. Gebruik de volgende opdrachten om te controleren of de registratie is voltooid:
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-Gebruik Azure PowerShell of Azure CLI om de registratie van de NFS 4,1-functie voor Azure Files te controleren. 
+Gebruik Azure PowerShell of Azure CLI om de registratie van de NFS 4.1-functie voor de Azure Files. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 ```azurepowershell
@@ -99,38 +99,37 @@ az feature show \
 
 ---
 
-## <a name="create-a-filestorage-storage-account"></a>Een FileStorage-opslag account maken
-NFS 4,1-shares zijn momenteel alleen beschikbaar als Premium-bestands shares. Als u een Premium-bestands share met NFS 4,1-protocol ondersteuning wilt implementeren, moet u eerst een FileStorage-opslag account maken. Een opslag account is een object op het hoogste niveau in azure dat een gedeelde opslag groep vertegenwoordigt die kan worden gebruikt voor het implementeren van meerdere Azure-bestands shares.
+## <a name="create-a-filestorage-storage-account"></a>Een FileStorage-opslagaccount maken
+Op dit moment zijn NFS 4.1-shares alleen beschikbaar als Premium-bestands shares. Als u een Premium-bestands share wilt implementeren met ondersteuning voor het NFS 4.1-protocol, moet u eerst een FileStorage-opslagaccount maken. Een opslagaccount is een object op het hoogste niveau in Azure dat een gedeelde opslaggroep vertegenwoordigt die kan worden gebruikt om meerdere Azure-bestands shares te implementeren.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-Als u een FileStorage-opslag account wilt maken, gaat u naar de Azure Portal.
+Als u een FileStorage-opslagaccount wilt maken, gaat u naar de Azure Portal.
 
-1. Selecteer in het Azure Portal **opslag accounts** in het menu links.
+1. Selecteer in Azure Portal menu aan **de linkerkant** Opslagaccounts.
 
-    ![Azure Portal hoofd pagina Selecteer een opslag account](media/storage-how-to-create-premium-fileshare/azure-portal-storage-accounts.png)
+    ![Azure Portal opslagaccount op de hoofdpagina.](media/storage-how-to-create-premium-fileshare/azure-portal-storage-accounts.png)
 
-2. Kies in het venster **Opslagaccounts** dat wordt weergegeven de optie **Toevoegen**.
-3. Selecteer het abonnement waarin u het opslagaccount wilt maken.
-4. De resource groep selecteren waarin het opslag account moet worden gemaakt
+1. Kies in het venster **Opslagaccounts** dat wordt weergegeven de optie **Toevoegen**.
+1. Selecteer het abonnement waarin u het opslagaccount wilt maken.
+1. Selecteer de resourcegroep waarin u het opslagaccount wilt maken
+1. Voer vervolgens een naam in voor het opslagaccount. De naam die u kiest, moet uniek zijn binnen Azure. Verder moet de naam 3 tot 24 tekens lang zijn en mag alleen cijfers en kleine letters bevatten.
+1. Selecteer een locatie voor uw opslagaccount of gebruik de standaardlocatie.
+1. Selecteer **bij Prestaties** de optie **Premium**.
 
-5. Voer vervolgens een naam in voor het opslagaccount. De naam die u kiest, moet uniek zijn binnen Azure. Verder moet de naam 3 tot 24 tekens lang zijn en mag alleen cijfers en kleine letters bevatten.
-6. Selecteer een locatie voor uw opslagaccount of gebruik de standaardlocatie.
-7. Selecteer **Premium** voor **prestaties** .
+    U moet **Premium selecteren** voor **Bestandsshares** om een beschikbare optie te zijn in de **vervolgkeuzeoptie Soort** account.
 
-    U moet **Premium** voor **FileStorage** selecteren als beschik bare optie in de vervolg keuzelijst **account soort** .
+1. Voor **Premium-accounttype** kiest **u Bestandsshares.**
 
-8. Selecteer **account type** en kies **FileStorage**.
-9. Zorg ervoor dat **replicatie** is ingesteld op de standaard waarde van **lokaal redundante opslag (LRS)**.
+    :::image type="content" source="media/storage-how-to-create-file-share/files-create-smb-share-performance-premium.png" alt-text="Schermopname van de geselecteerde Premium-prestaties.":::
 
-    ![Een opslag account maken voor een Premium-bestands share](media/storage-how-to-create-premium-fileshare/create-filestorage-account.png)
+1. Laat **Replicatie** ingesteld op de standaardwaarde lokaal **redundante opslag (LRS).**
+1. Selecteer **Beoordelen en maken** om uw opslagaccountinstellingen te bekijken en het account te maken.
+1. Selecteer **Maken**.
 
-10. Selecteer **Beoordelen en maken** om uw opslagaccountinstellingen te bekijken en het account te maken.
-11. Selecteer **Maken**.
-
-Als uw opslag account is gemaakt, gaat u naar de resource.
+Nadat de resource van uw opslagaccount is gemaakt, gaat u er naartoe.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-Als u een FileStorage-opslag account wilt maken, opent u een Power shell-prompt en voert u de volgende opdrachten uit, moet u lid worden van vervangen `<resource-group>` en `<storage-account>` met de juiste waarden voor uw omgeving.
+Als u een FileStorage-opslagaccount wilt maken, opent u een PowerShell-prompt en voert u de volgende opdrachten uit. Vergeet niet om en te vervangen door de juiste waarden `<resource-group>` `<storage-account>` voor uw omgeving.
 
 ```powershell
 $resourceGroupName = "<resource-group>"
@@ -146,7 +145,7 @@ $storageAccount = New-AzStorageAccount `
 ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-Als u een FileStorage-opslag account wilt maken, opent u de Terminal en voert u de volgende opdrachten uit, moet u lid worden van vervangen `<resource-group>` en `<storage-account>` met de juiste waarden voor uw omgeving.
+Als u een FileStorage-opslagaccount wilt maken, opent u uw terminal en voert u de volgende opdrachten uit. Vergeet niet om en te vervangen door de juiste `<resource-group>` `<storage-account>` waarden voor uw omgeving.
 
 ```azurecli-interactive
 resourceGroup="<resource-group>"
@@ -166,33 +165,33 @@ az storage account create \
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, kunt u een NFS-bestands share maken. Het proces is vergelijkbaar met het maken van een SMB-share. in plaats van **SMB** selecteert u **NFS** bij het maken van de share.
+Nu u een FileStorage-account hebt gemaakt en de netwerken hebt geconfigureerd, kunt u een NFS-bestands share maken. Het proces is vergelijkbaar met het maken van een SMB-share. U **selecteert NFS** in plaats **van SMB** bij het maken van de share.
 
-1. Navigeer naar uw opslag account en selecteer **Bestands shares**.
+1. Navigeer naar uw opslagaccount en selecteer **Bestands shares.**
 1. Selecteer **+ Bestands share** om een nieuwe bestands share te maken.
-1. Geef de bestands share een naam en selecteer een ingerichte capaciteit.
-1. Voor **protocol** Select **NFS (preview-versie)**.
-1. Voor **root Squash** maakt u een selectie.
+1. Noem de bestands share en selecteer een inrichtende capaciteit.
+1. Bij **Protocol** **selecteert u NFS (preview)**.
+1. Maak **een selectie voor Hoofdstoorzaak.**
 
-    - Hoofdmap-Squash (standaard): toegang voor de externe super gebruiker (root) wordt toegewezen aan de UID (65534) en GID (65534).
-    - Geen hoofd-Squash: externe super gebruiker (root) ontvangt toegang als basis.
-    - Alle Squash: alle gebruikers toegang is toegewezen aan UID (65534) en GID (65534).
+    - Hoofdsuplet (standaardinstelling) - Toegang voor de externe superuser (hoofdmap) is ingesteld op UID (65534) en GID (65534).
+    - Geen hoofdslellen: externe superuser (root) ontvangt toegang als root.
+    - All squash: alle gebruikerstoegang is toe te staan aan UID (65534) en GID (65534).
     
 1. Selecteer **Maken**.
 
-    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/create-nfs-file-share.png" alt-text="Scherm opname van de Blade voor het maken van een bestands share":::
+    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/files-nfs-create-share.png" alt-text="Schermopname van de blade voor het maken van een bestands share.":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-1. Zorg ervoor dat .NET Framework is geïnstalleerd. Zie [.NET Framework downloaden](https://dotnet.microsoft.com/download/dotnet-framework).
+1. Zorg ervoor dat het .NET Framework is geïnstalleerd. Zie [Download .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
  
-1. Controleer of de versie van Power shell die is geïnstalleerd, `5.1` of hoger is met behulp van de volgende opdracht.    
+1. Controleer met de volgende opdracht of de geïnstalleerde versie van PowerShell of hoger `5.1` is.    
 
    ```powershell
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Zie [bestaande Windows Power shell upgraden](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) voor informatie over het bijwerken van uw versie van Power shell
+   Zie Bestaande versies upgraden om uw versie van PowerShell [bij te Windows PowerShell](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell)
     
 1. Installeer de nieuwste versie van de PowershellGet-module.
 
@@ -200,20 +199,20 @@ Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, ku
    install-Module PowerShellGet –Repository PSGallery –Force  
    ```
 
-1. Sluit de Power shell-console en open deze opnieuw.
+1. Sluit de PowerShell-console en open deze opnieuw.
 
-1. Installeer de module **AZ. Storage** preview versie **2.5.2-Preview**.
+1. Installeer de **Preview-module van Az.Storage** **versie 2.5.2-preview.**
 
    ```powershell
    Install-Module Az.Storage -Repository PsGallery -RequiredVersion 2.5.2-preview -AllowClobber -AllowPrerelease -Force  
    ```
 
-   Zie [de module Azure PowerShell installeren](/powershell/azure/install-az-ps) voor meer informatie over het installeren van Power shell-modules.
+   Zie De module Azure PowerShell installeren voor meer informatie over het installeren [van PowerShell Azure PowerShell module](/powershell/azure/install-az-ps)
    
-1. Als u een Premium-bestands share met de module Azure PowerShell wilt maken, gebruikt u de cmdlet [New-AzRmStorageShare](/powershell/module/az.storage/new-azrmstorageshare) .
+1. Gebruik de cmdlet [New-AzRmStorageShare](/powershell/module/az.storage/new-azrmstorageshare) om een Premium-bestandsshare Azure PowerShell maken.
 
     > [!NOTE]
-    > Premium-bestands shares worden gefactureerd met behulp van een ingericht model. De ingerichte grootte van de share wordt `QuotaGiB` hieronder aangegeven. Zie [Wat is het ingerichte model](understanding-billing.md#provisioned-model) en de [pagina met Azure files prijzen](https://azure.microsoft.com/pricing/details/storage/files/)voor meer informatie.
+    > Premium-bestands shares worden gefactureerd met behulp van een ingericht model. De inrichten grootte van de share wordt hieronder `QuotaGiB` opgegeven. Zie Inzicht in het inrichtende [model en de](understanding-billing.md#provisioned-model) pagina Azure Files prijzen voor meer [informatie.](https://azure.microsoft.com/pricing/details/storage/files/)
 
     ```powershell
     New-AzRmStorageShare `
@@ -225,10 +224,10 @@ Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, ku
     ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-Als u een Premium-bestands share wilt maken met de Azure CLI, gebruikt u de opdracht [AZ Storage share Create](/cli/azure/storage/share-rm) .
+Gebruik de opdracht [az storage share create](/cli/azure/storage/share-rm) om een Premium-bestands share te maken met de Azure CLI.
 
 > [!NOTE]
-> Premium-bestands shares worden gefactureerd met behulp van een ingericht model. De ingerichte grootte van de share wordt `quota` hieronder aangegeven. Zie [Wat is het ingerichte model](understanding-billing.md#provisioned-model) en de [pagina met Azure files prijzen](https://azure.microsoft.com/pricing/details/storage/files/)voor meer informatie.
+> Premium-bestands shares worden gefactureerd met behulp van een ingericht model. De inrichten grootte van de share wordt hieronder `quota` opgegeven. Zie Inzicht in het inrichtende [model en de](understanding-billing.md#provisioned-model) pagina Azure Files prijzen voor meer [informatie.](https://azure.microsoft.com/pricing/details/storage/files/)
 
 ```azurecli-interactive
 az storage share-rm create \
@@ -242,6 +241,6 @@ az storage share-rm create \
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
-Nu u een NFS-share hebt gemaakt om deze te gebruiken, moet u deze koppelen aan uw Linux-client. Zie [een NFS-share koppelen](storage-files-how-to-mount-nfs-shares.md)voor meer informatie.
+Nu u een NFS-share hebt gemaakt, moet u deze aan uw Linux-client monteren om deze te kunnen gebruiken. Zie How [to mount an NFS share (Een NFS-share maken) voor meer informatie.](storage-files-how-to-mount-nfs-shares.md)
 
-Zie [problemen met Azure NFS-bestands shares oplossen](storage-troubleshooting-files-nfs.md)als u problemen ondervindt.
+Zie Problemen met [Azure NFS-bestands](storage-troubleshooting-files-nfs.md)shares oplossen als u problemen ervaart.

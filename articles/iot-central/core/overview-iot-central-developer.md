@@ -10,18 +10,18 @@ services: iot-central
 ms.custom:
 - mvc
 - device-developer
-ms.openlocfilehash: 4423eea6c35ad44d55ad17f5703a95c6273422b8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ebd2759d4dfb8ee79130f9b4876eba8d45226d04
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104585856"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718787"
 ---
-# <a name="iot-central-device-development-guide"></a>Hand leiding voor het ontwikkelen van IoT Central apparaten
+# <a name="iot-central-device-development-guide"></a>IoT Central voor het ontwikkelen van apparaten
 
 *Dit artikel is bedoeld voor ontwikkelaars van apparaten.*
 
-Met een IoT Central-toepassing kunt u miljoenen apparaten tijdens hun levenscyclus bewaken en beheren. Deze hand leiding is bedoeld voor ontwikkel aars van apparaten die code implementeren om uit te voeren op apparaten die verbinding maken met IoT Central.
+Met een IoT Central-toepassing kunt u miljoenen apparaten tijdens hun levenscyclus bewaken en beheren. Deze handleiding is bedoeld voor apparaatontwikkelaars die code implementeren om te worden uitgevoerd op apparaten die verbinding maken met IoT Central.
 
 Apparaten communiceren met een IoT Central-toepassing met behulp van de volgende primitieven:
 
@@ -68,7 +68,7 @@ Met DPS kunt u het volgende doen:
 - U kunt uw eigen apparaat-id's gebruiken om apparaten te registreren in IoT Central. Het gebruik van uw eigen apparaat-id's vereenvoudigt de integratie met bestaande back-officesystemen.
 - Een enkele, consistente manier om apparaten te verbinden met IoT Central.
 
-Zie [Get connected to Azure IOT Central](./concepts-get-connected.md) en [Best practices](concepts-best-practices.md)(Engelstalig) voor meer informatie.
+Zie Voor meer informatie [Verbinding maken met Azure IoT Central](./concepts-get-connected.md) en Best [practices.](concepts-best-practices.md)
 
 ### <a name="security"></a>Beveiliging
 
@@ -105,7 +105,7 @@ Een DTDL-model kan een model met _geen-onderdeel_ of _multi-onderdeel_ zijn:
 - Geen-onderdeelmodel: Een eenvoudig model maakt geen gebruik van ingesloten of trapsgewijze onderdelen. Alle telemetrie, eigenschappen en opdrachten zijn gedefinieerd als één _standaard onderdeel_. Zie het [Thermostaat](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json)-model voor een voorbeeld.
 - Multi-onderdeelmodel. Een complexer model met twee of meer onderdelen. Deze onderdelen bevatten één standaard onderdeel en een of meer extra geneste onderdelen. Zie het [Temperatuur-controller](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json)-model voor een voorbeeld.
 
-Zie voor meer informatie de [model gids IoT Plug en Play](../../iot-pnp/concepts-modeling-guide.md)
+Zie [IoT Plug en Play modeling guide (IoT Plug en Play modelleerhandleiding) voor meer informatie](../../iot-pnp/concepts-modeling-guide.md)
 
 ### <a name="conventions"></a>Conventies
 
@@ -125,7 +125,7 @@ Zie voor meer informatie over de IoT Plug and Play-conventies [IoT Plug and Play
 
 ### <a name="device-sdks"></a>Apparaat-SDK's
 
-Gebruik een van de [SDK's voor Azure IoT-apparaten](#languages-and-sdks) om het gedrag van uw apparaat te implementeren. De code moet:
+Gebruik een van de [SDK's voor Azure IoT-apparaten](../../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks) om het gedrag van uw apparaat te implementeren. De code moet:
 
 - Het apparaat registreren met DPS en de informatie van DPS gebruiken om verbinding te maken met de interne IoT-hub in uw IoT Central-toepassing.
 - De DTMI aankondigen van het model dat het apparaat implementeert.

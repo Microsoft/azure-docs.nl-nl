@@ -1,106 +1,106 @@
 ---
-title: Hoge Beschik baarheid voor Azure cache voor redis
-description: Meer informatie over Azure cache voor redis-functies en-opties voor hoge Beschik baarheid
+title: Hoge beschikbaarheid voor Azure Cache voor Redis
+description: Meer informatie Azure Cache voor Redis functies en opties voor hoge beschikbaarheid
 author: yegu-ms
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: 69dec2ce00b263f3536e30ba0a5376e6d922b79c
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 6c44c87221442797f063877385ac5eb7f8585850
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107308350"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107719093"
 ---
-# <a name="high-availability-for-azure-cache-for-redis"></a>Hoge Beschik baarheid voor Azure cache voor redis
+# <a name="high-availability-for-azure-cache-for-redis"></a>Hoge beschikbaarheid voor Azure Cache voor Redis
 
-Azure cache voor redis heeft ingebouwde hoge Beschik baarheid. Het doel van de architectuur met hoge Beschik baarheid is ervoor te zorgen dat uw beheerde redis-exemplaar werkt, zelfs wanneer de onderliggende virtuele machines (Vm's) worden beïnvloed door geplande of ongeplande uitval. Het biedt veel meer percentages dan wat kan worden bereikt door redis op één virtuele machine te hosten.
+Azure Cache voor Redis heeft ingebouwde hoge beschikbaarheid. Het doel van de architectuur voor hoge beschikbaarheid is ervoor te zorgen dat uw beheerde Redis-exemplaar werkt, zelfs wanneer de onderliggende virtuele machines (VM's) worden beïnvloed door geplande of ongeplande uitval. Het biedt veel hogere percentages dan wat u kunt bereiken door Redis op één VM te hosten.
 
-Azure cache voor redis implementeert hoge Beschik baarheid door gebruik te maken van meerdere Vm's, *knoop punten* genoemd, voor een cache. Deze knoop punten worden zo geconfigureerd dat gegevens replicatie en failover op gecoördineerde wijze plaatsvinden. Daarnaast worden er onderhouds bewerkingen, zoals redis-software patches, beheerd. Er zijn verschillende opties voor hoge Beschik baarheid beschikbaar in de lagen Standard, Premium en Enter prise:
+Azure Cache voor Redis implementeert hoge beschikbaarheid met behulp van meerdere VM's, *knooppunten* genoemd, voor een cache. Deze knooppunten worden zodanig geconfigureerd dat gegevensreplicatie en failover op gecoördineerde manieren plaatsvinden. Het orkestreert ook onderhoudsbewerkingen zoals Redis-softwarepatching. Er zijn verschillende opties voor hoge beschikbaarheid beschikbaar in de lagen Standard, Premium en Enterprise:
 
 | Optie | Beschrijving | Beschikbaarheid | Standard | Premium | Enterprise |
 | ------------------- | ------- | ------- | :------: | :---: | :---: |
-| [Standaard replicatie](#standard-replication)| Configuratie met twee knoop punten gerepliceerd in één Data Center met automatische failover | 99,9% (Zie [Details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |✔|✔|-|
-| [Zoneredundantie](#zone-redundancy) | Gerepliceerde configuratie met meerdere knoop punten op AZs, met automatische failover | Maxi maal 99,99% (Zie [Details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |-|Preview|Preview|
-| [Geo-replicatie](#geo-replication) | Gekoppelde cache-instanties in twee regio's met door de gebruiker beheerde failover | Maxi maal 99,999% (Zie [Details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |-|✔|Preview|
+| [Standaardreplicatie](#standard-replication)| Configuratie met twee knooppunt gerepliceerd in één datacenter met automatische failover | 99,9% (zie [details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |✔|✔|-|
+| [Zoneredundantie](#zone-redundancy) | Configuratie met meerdere knooppuntrepliceerde knooppunt in meerdere AZ's, met automatische failover | Maximaal 99,99% (zie [details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |-|Preview|✔|
+| [Geo-replicatie](#geo-replication) | Gekoppelde cache-exemplaren in twee regio's, met door de gebruiker beheerde failover | Maximaal 99,999% (zie [details](https://azure.microsoft.com/support/legal/sla/cache/v1_0/)) |-|✔|Preview|
 
-## <a name="standard-replication"></a>Standaard replicatie
+## <a name="standard-replication"></a>Standaardreplicatie
 
-Een Azure-cache voor redis in de laag Standard of Premium wordt standaard uitgevoerd op een paar redis-servers. De twee servers worden gehost op toegewezen Vm's. Open-source redis staat slechts één server toe om gegevens schrijf aanvragen af te handelen. Deze server is het *primaire* knoop punt, terwijl de andere *replica*. Nadat de server knooppunten zijn ingericht, worden de primaire en replica-rollen door Azure cache voor redis toegewezen. Het primaire knoop punt is doorgaans verantwoordelijk voor het onderhoud van schrijf bewerkingen en het lezen van aanvragen van redis-clients. Bij een schrijf bewerking voert het een nieuwe sleutel en een sleutel update door naar het interne geheugen en de antwoorden direct naar de client. De bewerking wordt asynchroon doorgestuurd naar de replica.
+Een Azure Cache voor Redis in de Standard- of Premium-laag wordt standaard uitgevoerd op een paar Redis-servers. De twee servers worden gehost op toegewezen VM's. Met Opensource Redis kan slechts één server gegevens schrijven aanvragen verwerken. Deze server is het *primaire knooppunt,* terwijl de andere *replica is.* Nadat de serverknooppunten zijn Azure Cache voor Redis er primaire en replicarollen aan toegewezen. Het primaire knooppunt is meestal verantwoordelijk voor het onderhouden van schrijf- en leesaanvragen van Redis-clients. Bij een schrijfbewerking worden een nieuwe sleutel en een sleutelupdate aan het interne geheugen toegevoegd en wordt er onmiddellijk op de client gereageerd. De bewerking wordt asynchroon naar de replica doorgestuurd.
 
-:::image type="content" source="media/cache-high-availability/replication.png" alt-text="Gegevens replicatie instellen":::
+:::image type="content" source="media/cache-high-availability/replication.png" alt-text="Gegevensreplicatie instellen":::
    
 >[!NOTE]
->Normaal gesp roken communiceert een redis-client met het primaire knoop punt in een redis-cache voor alle Lees-en schrijf aanvragen. Bepaalde redis-clients kunnen worden geconfigureerd om te lezen van het replica knooppunt.
+>Normaal gesproken communiceert een Redis-client met het primaire knooppunt in een Redis-cache voor alle lees- en schrijfaanvragen. Bepaalde Redis-clients kunnen worden geconfigureerd voor het lezen van het replica-knooppunt.
 >
 >
 
-Als het primaire knoop punt in een redis-cache niet beschikbaar is, wordt de replica automatisch bevorderd om de nieuwe primaire te worden. Dit proces wordt een *failover* genoemd. Wanneer het primaire knoop punt snel wordt hersteld, wacht de replica voldoende lang. Als er een failover wordt uitgevoerd, wordt in azure cache voor redis een nieuwe VM ingericht en aan de cache toegevoegd als het replica knooppunt. De replica voert een volledige gegevens synchronisatie met het primaire uit, zodat het een andere kopie van de cache gegevens heeft.
+Als het primaire knooppunt in een Redis-cache niet beschikbaar is, wordt de replica automatisch het nieuwe primaire knooppunt. Dit proces wordt een *failover genoemd.* De replica wacht voldoende lang voordat het overgenomen wordt, voor het geval het primaire knooppunt snel wordt hersteld. Wanneer er een failover wordt Azure Cache voor Redis een nieuwe VM in en wordt deze als het replica-knooppunt aan de cache geplaatst. De replica voert een volledige gegevenssynchronisatie uit met de primaire replica, zodat deze een andere kopie van de cachegegevens heeft.
 
-Een primair knoop punt kan buiten gebruik worden genomen als onderdeel van een geplande onderhouds activiteit, zoals de redis-software of de update van het besturings systeem. Het kan ook niet meer werken vanwege niet-geplande gebeurtenissen, zoals storingen in onderliggende hardware, software of netwerk. [Failover en Patching voor Azure cache voor redis](cache-failover.md) biedt een gedetailleerde uitleg over de typen redis-failovers. Een Azure-cache voor redis gaat tijdens de levens duur over veel failovers. De architectuur met hoge Beschik baarheid is zo ontworpen dat deze wijzigingen in een cache zo doorzichtig mogelijk worden gemaakt voor de clients.
+Een primair knooppunt kan buiten gebruik worden genomen als onderdeel van een geplande onderhoudsactiviteit, zoals Redis-software of een update van het besturingssysteem. Het werkt mogelijk ook niet meer vanwege niet-geplande gebeurtenissen, zoals fouten in onderliggende hardware, software of netwerk. [Failover en patching voor Azure Cache voor Redis](cache-failover.md) biedt een gedetailleerde uitleg over de typen Redis-failovers. Een Azure Cache voor Redis een groot aantal failovers tijdens de levensduur. De architectuur voor hoge beschikbaarheid is ontworpen om deze wijzigingen in een cache zo transparant mogelijk te maken voor de clients.
 
 >[!NOTE]
->Het volgende is beschikbaar als een preview-versie.
+>Het volgende is beschikbaar als preview-versie.
 >
 >
 
-Bovendien kunnen met Azure cache voor redis extra replica knooppunten worden toegevoegd aan de Premium-laag. Een [cache met meerdere replica's](cache-how-to-multi-replicas.md) kan worden geconfigureerd met Maxi maal drie replica knooppunten. Als u meer replica's hebt, wordt de tolerantie in het algemeen verbeterd vanwege de extra knoop punten die een back-up maken van de primaire. Zelfs met meer replica's kan een Azure-cache voor redis-exemplaar nog steeds zwaar worden beïnvloed door een Data Center-of AZ-level-onderbreking. U kunt de beschik baarheid van de cache verhogen met behulp van meerdere replica's in combi natie met [zone redundantie](#zone-redundancy).
+Bovendien kunt Azure Cache voor Redis extra replicaknooppunten in de Premium-laag. Een [cache met meerdere replica's](cache-how-to-multi-replicas.md) kan worden geconfigureerd met maximaal drie replicaknooppunten. Het gebruik van meer replica's verbetert over het algemeen de tolerantie vanwege de extra knooppunten die een back-up maken van de primaire knooppunten. Zelfs met meer replica's kan een Azure Cache voor Redis exemplaar nog steeds ernstig worden beïnvloed door een storing op datacenter- of AZ-niveau. U kunt de beschikbaarheid van de cache vergroten met behulp van meerdere replica's in combinatie met [zone-redundantie.](#zone-redundancy)
 
 ## <a name="zone-redundancy"></a>Zoneredundantie
 
-Azure cache voor redis ondersteunt zone redundante configuraties in de Premium-en Enter prise-lagen. Een [zone-redundante cache](cache-how-to-zone-redundancy.md) kan zijn knoop punten in verschillende [Azure-beschikbaarheidszones](../availability-zones/az-overview.md) in dezelfde regio plaatsen. Het elimineert Data Center of AZ-uitval als Single Point of Failure en verhoogt de algehele Beschik baarheid van uw cache.
+Azure Cache voor Redis ondersteunt zone-redundante configuraties in de Premium- en Enterprise-lagen. Een [zone-redundante cache](cache-how-to-zone-redundancy.md) kan de knooppunten op verschillende [Azure-beschikbaarheidszones](../availability-zones/az-overview.md) in dezelfde regio plaatsen. Het elimineert datacenter- of AZ-uitval als single point of failure en verhoogt de algehele beschikbaarheid van uw cache.
 
 ### <a name="premium-tier"></a>Premium-laag
 
 >[!NOTE]
->Dit is beschikbaar als een preview-versie.
+>Dit is beschikbaar als preview-versie.
 >
 >
 
-In het volgende diagram ziet u de zone redundante configuratie voor de Premium-laag:
+In het volgende diagram ziet u de zone-redundante configuratie voor de Premium-laag:
 
-:::image type="content" source="media/cache-high-availability/zone-redundancy.png" alt-text="Zone redundantie instellen":::
+:::image type="content" source="media/cache-high-availability/zone-redundancy.png" alt-text="Zone-redundantie instellen":::
    
-Met Azure cache voor redis worden knoop punten in een zone-redundante cache gedistribueerd op basis van de AZs die u hebt geselecteerd. Het bepaalt ook welk knoop punt in eerste instantie als primair moet fungeren.
+Azure Cache voor Redis verdeelt knooppunten in een zone-redundante cache op een round robin-manier over de AZ's die u hebt geselecteerd. Ook wordt bepaald welk knooppunt in eerste instantie als primair moet fungeren.
 
-Een zone-redundante cache biedt automatische failover. Wanneer het huidige primaire knoop punt niet beschikbaar is, gaat een van de replica's over. Uw toepassing kan de reactie tijd van de cache verhogen als het nieuwe primaire knoop punt zich in een andere AZ bevindt. AZs zijn geografisch gescheiden. Als u overschakelt van de ene AZ naar een andere, verandert de fysieke afstand tussen de locatie waar uw toepassing en cache wordt gehost. Deze wijziging is van invloed op netwerk latenties van uw toepassing naar de cache. De extra latentie wordt verwacht binnen een acceptabel bereik voor de meeste toepassingen. We raden u aan uw toepassing te testen om er zeker van te zijn dat deze goed kan worden uitgevoerd met een zone-redundante cache.
+Een zone-redundante cache biedt automatische failover. Wanneer het huidige primaire knooppunt niet beschikbaar is, neemt een van de replica's het over. Uw toepassing heeft mogelijk een hogere reactietijd voor de cache als het nieuwe primaire knooppunt zich in een andere AZ bevindt. AZ's zijn geografisch gescheiden. Als u overschakelt van de ene AZ naar de andere, verandert de fysieke afstand tussen de locatie waar uw toepassing en de cache worden gehost. Deze wijziging is van invloed op retournetwerklatentie van uw toepassing naar de cache. De extra latentie valt naar verwachting binnen een acceptabel bereik voor de meeste toepassingen. U wordt aangeraden uw toepassing te testen om er zeker van te zijn dat deze goed kan presteren met een zone-redundante cache.
 
 ### <a name="enterprise-tiers"></a>Enterprise-lagen
 
-Een cache in de Enter prise-laag wordt uitgevoerd op een redis-bedrijfs cluster. Hiervoor is een oneven aantal server knooppunten altijd vereist om een quorum te vormen. Deze bestaat standaard uit drie knoop punten, die allemaal worden gehost op een specifieke virtuele machine. Een ondernemings cache heeft twee *gegevens knooppunten* met dezelfde grootte en één kleiner *quorum knooppunt*. Een Enter prise Flash-cache heeft drie gegevens knooppunten met dezelfde grootte. Het bedrijfs cluster deelt redis gegevens intern op in partities. Elke partitie heeft een *primair* en ten minste één *replica*. Elk gegevens knooppunt bevat een of meer partities. Het ondernemings cluster zorgt ervoor dat de primaire en replica (s) van een wille keurige partitie nooit op hetzelfde gegevens knooppunt staan. Partities repliceren gegevens asynchroon van Primaries naar de bijbehorende replica's.
+Een cache in beide Enterprise-lagen wordt uitgevoerd op een Redis Enterprise-cluster. Er is altijd een oneven aantal serverknooppunten nodig om een quorum te vormen. Deze bestaat standaard uit drie knooppunten, die elk worden gehost op een toegewezen VM. Een Enterprise-cache heeft twee gegevensknooppunten van *dezelfde grootte* en één kleiner *quorumknooppunt.* Een Enterprise Flash cache heeft drie gegevensknooppunten van dezelfde grootte. Het Enterprise-cluster verdeelt Redis-gegevens intern in partities. Elke partitie heeft *een primaire* en ten minste één *replica.* Elk gegevens knooppunt bevat een of meer partities. Het Enterprise-cluster zorgt ervoor dat de primaire en replica(s) van een partitie nooit op hetzelfde gegevensknooppunt worden geplaatst. Partities repliceren gegevens asynchroon van de primaireries naar de bijbehorende replica's.
 
-Wanneer een gegevens knooppunt niet beschikbaar is of als er een netwerk splitsing plaatsvindt, wordt een failover uitgevoerd die lijkt op die in de [standaard replicatie](#standard-replication) wordt beschreven. Het ondernemings cluster maakt gebruik van een op quorum gebaseerd model om te bepalen welke knoop punten in een nieuw quorum zullen deel nemen. Ook worden de replica partities binnen deze knoop punten zo nodig naar Primaries gepromoot.
+Wanneer een gegevens knooppunt niet meer beschikbaar is of er een netwerksplitsing plaatsvindt, vindt er een failover plaats die vergelijkbaar is met de failover die wordt beschreven in [Standaardreplicatie.](#standard-replication) Het Enterprise-cluster maakt gebruik van een quorummodel om te bepalen welke overlevende knooppunten deelnemen aan een nieuw quorum. Ook worden replicapartities binnen deze knooppunten naar behoefte gepromoot tot voorveren.
 
 ## <a name="geo-replication"></a>Geo-replicatie
 
-[Geo-replicatie](cache-how-to-geo-replication.md) is een mechanisme voor het koppelen van twee of meer Azure-cache voor redis-instanties, met doorgaans twee Azure-regio's. 
+[Geo-replicatie](cache-how-to-geo-replication.md) is een mechanisme voor het koppelen van twee of meer Azure Cache voor Redis exemplaren, meestal verspreid over twee Azure-regio's. 
 
 ### <a name="premium-tier"></a>Premium-laag
 
 >[!NOTE]
->Geo-replicatie in de Premium-laag is hoofd zakelijk ontworpen voor herstel na nood gevallen.
+>Geo-replicatie in de Premium-laag is hoofdzakelijk ontworpen voor herstel na noodherstel.
 >
 >
 
-Er kunnen twee exemplaren van de Premium-laag cache worden verbonden via [geo-replicatie](cache-how-to-geo-replication.md) , zodat u een back-up van uw cache gegevens kunt maken in een andere regio. Zodra het samen is gekoppeld, wordt één exemplaar aangeduid als de primaire gekoppelde cache en de andere als de secundaire gekoppelde cache. Alleen de primaire cache accepteert Lees-en schrijf aanvragen. Gegevens die naar de primaire cache zijn geschreven, worden gerepliceerd naar de secundaire cache. Een toepassing heeft toegang tot de cache via afzonderlijke eind punten voor de primaire en secundaire caches. De toepassing moet alle schrijf aanvragen verzenden naar de primaire cache wanneer deze in meerdere Azure-regio's wordt geïmplementeerd. Het kan worden gelezen van de primaire of secundaire cache. Over het algemeen wilt u de reken instanties van uw toepassing lezen van de meest overeenkomende caches om de latentie te verminderen. De gegevens overdracht tussen de twee cache-instanties wordt beveiligd door TLS.
+Twee cache-exemplaren van de Premium-laag kunnen worden verbonden via [geo-replicatie,](cache-how-to-geo-replication.md) zodat u een back-up kunt maken van uw cachegegevens naar een andere regio. Zodra het ene exemplaar aan elkaar is gekoppeld, wordt het ene exemplaar aangewezen als de primaire gekoppelde cache en de andere als de secundaire gekoppelde cache. Alleen de primaire cache accepteert lees- en schrijfaanvragen. Gegevens die naar de primaire cache worden geschreven, worden gerepliceerd naar de secundaire cache. Een toepassing heeft toegang tot de cache via afzonderlijke eindpunten voor de primaire en secundaire caches. De toepassing moet alle schrijfaanvragen verzenden naar de primaire cache wanneer deze is geïmplementeerd in meerdere Azure-regio's. Het kan lezen uit de primaire of secundaire cache. Over het algemeen wilt u de reken-exemplaren van uw toepassing lezen uit de dichtstbijzijnde caches om de latentie te verminderen. Gegevensoverdracht tussen de twee cache-exemplaren wordt beveiligd door TLS.
 
-Geo-replicatie biedt geen automatische failover als gevolg van problemen met het toevoegen van de netwerk retour tijd tussen regio's als de rest van uw toepassing in de primaire regio blijft. U moet de failover beheren en initiëren door de secundaire cache te ontkoppelen. Hiermee wordt het niveau verhoogd als het nieuwe primaire exemplaar.
+Geo-replicatie biedt geen automatische failover vanwege problemen met de retourtijd van het toegevoegde netwerk tussen regio's als de rest van uw toepassing in de primaire regio blijft. U moet de failover beheren en initiëren door de secundaire cache los te koppelen. Hierdoor wordt het nieuwe primaire exemplaar.
 
 ### <a name="enterprise-tiers"></a>Enterprise-lagen
 
 >[!NOTE]
->Dit is beschikbaar als een preview-versie.
+>Deze is beschikbaar als preview-versie.
 >
 >
 
-De ondernemings lagen bieden ondersteuning voor een geavanceerdere vorm van geo-replicatie, die [actieve geo-replicatie](cache-how-to-active-geo-replication.md)wordt genoemd. Het gebruik van niet-gratis gerepliceerde gegevens typen, de redis Enter prise-software ondersteunt schrijf bewerkingen naar meerdere cache-instanties en zorgt voor het samen voegen van wijzigingen en het oplossen van conflicten, indien nodig. Twee of meer exemplaren van de cache voor de Enter prise-laag in verschillende Azure-regio's kunnen worden gekoppeld om een actieve geo-gerepliceerde cache te vormen. Een toepassing die een dergelijke cache gebruikt, kan lees-en schrijf bewerkingen naar de geo-gedistribueerde cache-instanties via de bijbehorende eind punten. Het moet worden gebruikt wat het meest overeenkomt met elke reken instantie, waardoor de laagste latentie wordt geboden. De toepassing moet ook de cache-instanties bewaken en overschakelen naar een andere regio als een van de exemplaren niet meer beschikbaar is. Zie voor meer informatie over hoe actieve geo-replicatie werkt, [actief-actief Geo-Distriubtion (CRDTs)](https://redislabs.com/redis-enterprise/technology/active-active-geo-distribution/).
+De Enterprise-lagen ondersteunen een geavanceerdere vorm van geo-replicatie, actieve [geo-replicatie genoemd.](cache-how-to-active-geo-replication.md) De Redis Enterprise-software maakt gebruik van conflictvrije gerepliceerde gegevenstypen en ondersteunt schrijf-naar-meerdere cache-exemplaren en zorgt voor het samenvoegen van wijzigingen en het oplossen van conflicten, indien nodig. Twee of meer cache-exemplaren van de Enterprise-laag in verschillende Azure-regio's kunnen worden samengevoegd om een actieve geo-gerepliceerde cache te vormen. Een toepassing die een dergelijke cache gebruikt, kan lezen en schrijven naar de geografisch gedistribueerde cache-exemplaren via bijbehorende eindpunten. Er moet worden gebruikt wat het dichtst bij elk reken-exemplaar ligt, waardoor de laagste latentie wordt bereikt. De toepassing moet ook de cache-exemplaren bewaken en overschakelen naar een andere regio als een van de exemplaren niet meer beschikbaar is. Zie [Active-Active Geo-Distriubtion (CRDTs-Based) voor](https://redislabs.com/redis-enterprise/technology/active-active-geo-distribution/)meer informatie over hoe actieve geo-replicatie werkt.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het configureren van Azure cache voor redis opties voor hoge Beschik baarheid.
+Meer informatie over het configureren van Azure Cache voor Redis opties voor hoge beschikbaarheid.
 
-* [Azure-cache voor redis Premium-Service lagen](cache-overview.md#service-tiers)
-* [Replica's toevoegen aan Azure-cache geheugen voor redis](cache-how-to-multi-replicas.md)
-* [Zone redundantie voor Azure cache voor redis inschakelen](cache-how-to-zone-redundancy.md)
-* [Geo-replicatie voor Azure cache instellen voor redis](cache-how-to-geo-replication.md)
+* [Azure Cache voor Redis Premium-servicelagen](cache-overview.md#service-tiers)
+* [Replica's toevoegen aan Azure Cache voor Redis](cache-how-to-multi-replicas.md)
+* [Zone-redundantie inschakelen voor Azure Cache voor Redis](cache-how-to-zone-redundancy.md)
+* [Geo-replicatie instellen voor Azure Cache voor Redis](cache-how-to-geo-replication.md)

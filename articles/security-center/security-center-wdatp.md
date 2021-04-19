@@ -1,34 +1,34 @@
 ---
-title: De licentie voor micro soft Defender voor eind punten gebruiken die is opgenomen in Azure Security Center
-description: Meer informatie over micro soft Defender voor eind punt en de implementatie van Azure Security Center.
+title: De Microsoft Defender for Endpoint-licentie gebruiken die is opgenomen in Azure Security Center
+description: Meer informatie over Microsoft Defender for Endpoint en het implementeren vanuit Azure Security Center.
 author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 04/19/2021
 ms.author: memildin
-ms.openlocfilehash: 88d0a3dcd89ea678d77bc558fc680630bc0f2309
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: e12578fa6da679587d41fb25b17b00eb1645299a
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168175"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718409"
 ---
-# <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
+# <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Uw eindpunten beveiligen met Security Center geïntegreerde EDR-oplossing: Microsoft Defender for Endpoint
 
-Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-beveiligings oplossing. De belangrijkste functies zijn:
+Microsoft Defender for Endpoint is een holistische, cloudoplossing voor eindpuntbeveiliging. De belangrijkste functies zijn:
 
-- Beheer en evaluatie van beveiligings problemen op basis van Risico's 
+- Op risico'vulnerability management en evaluatie 
 - Kwetsbaarheid voor aanvallen verminderen
-- Op basis van gedrag en beveiliging in de Cloud
-- Eindpunt detectie en-antwoord (EDR)
+- Beveiliging op basis van gedrag en beveiliging in de cloud
+- Eindpuntdetectie en -respons (EDR)
 - Automatisch onderzoek en herstel
-- Beheerde jacht-Services
+- Beheerde hunting-services
 
 > [!TIP]
-> Dit eindpunt detectie-en respons product (EDR) is oorspronkelijk gestart als **Windows Defender ATP**, de naam van dit eind punt voor het detecteren en beantwoorden 2019 van een **micro soft Defender**.
+> Oorspronkelijk gestart als **Windows Defender ATP,** is de naam van dit EDR-product (Endpoint Detection and Response) in 2019 gewijzigd in **Microsoft Defender ATP.**
 >
-> Bij Ignite 2020 is de [micro soft Defender XDR-Suite](https://www.microsoft.com/security/business/threat-protection) gestart en is de naam van dit EDR-onderdeel gewijzigd **in micro soft Defender voor het eind punt**.
+> Bij Ignite 2020 hebben we de [Microsoft Defender XDR-suite](https://www.microsoft.com/security/business/threat-protection) gestart en is de naam van dit EDR-onderdeel gewijzigd in **Microsoft Defender for Endpoint**.
 
 
 ## <a name="availability"></a>Beschikbaarheid
@@ -37,109 +37,111 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 |---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](defender-for-servers-introduction.md) is vereist                                                                                                                                                                                                                                             |
-| Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure-Arc-machines met Windows|
-| Ondersteunde versies van Windows:  |  • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.yml) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)|
-| Niet-ondersteunde besturings systemen:  |  • Windows 10 (met uitzonde ring van EVD of WVD)<br> • Linux|
-| Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement|
+| Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure Arc machines met Windows|
+| Ondersteunde versies van Windows voor detectie:  |  • Windows Server 2019, 2016, 2012 R2 en 2008 R2 SP1<br> • [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)<br> • [Windows 10 Enterprise meerdere sessies](../virtual-desktop/windows-10-multisession-faq.yml) (voorheen Enterprise for Virtual Desktops (EVD)|
+| Niet-ondersteunde besturingssystemen:  |  • Windows 10 (anders dan EVD of WVD)<br> • Linux|
+| Vereiste rollen en machtigingen: | De integratie in- of uitschakelen: **Beveiligingsbeheerder** of **Eigenaar**<br>MDATP-waarschuwingen weergeven in Security Center: **Beveiligingslezer,** **Lezer,** **Inzender voor resourcegroep,** **Resourcegroepeigenaar,** Beveiligingsbeheerder, Abonnementseigenaar of **Inzender voor abonnementen** |
 | Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
 
-## <a name="microsoft-defender-for-endpoint-features-in-security-center"></a>Functies van micro soft Defender voor endpoint in Security Center
+## <a name="microsoft-defender-for-endpoint-features-in-security-center"></a>Functies van Microsoft Defender voor eindpunten in Security Center
 
-Micro soft Defender voor eind punt biedt:
+Microsoft Defender for Endpoint biedt:
 
-- **Geavanceerde detectie Sens oren na schending**. De Sens oren van het eind punt voor Windows-computers verzamelen een grote reeks gedrags signalen.
+- **Geavanceerde detectiesensoren na inbreuk.** De sensoren van Defender for Endpoint voor Windows-machines verzamelen een groot aantal gedragssignalen.
 
-- **Detectie op basis van analyses, na schending van de Cloud**. Defender voor eind punt wordt snel aangepast aan veranderende bedreigingen. Het maakt gebruik van geavanceerde analyses en big data. Het wordt versterkt door de kracht van de Intelligent Security Graph met signalen over Windows, Azure en Office om onbekende bedreigingen te detecteren. Het biedt actie bare waarschuwingen en stelt u in staat snel te reageren.
+- **Op analyses gebaseerde detectie na een inbreuk in** de cloud. Defender for Endpoint past zich snel aan veranderende bedreigingen aan. Er wordt gebruikgemaakt van geavanceerde analyses en big data. Het wordt versterkt door de kracht van de Intelligent Security Graph met signalen in Windows, Azure en Office om onbekende bedreigingen te detecteren. Het biedt waarschuwingen waarmee actie kan worden ondernomen en u kunt snel reageren.
 
-- **Informatie over bedreigingen**. Met Defender voor endpoint worden er waarschuwingen gegenereerd wanneer de aanvaller hulpprogram ma's, technieken en procedures identificeert. Het maakt gebruik van gegevens die zijn gegenereerd door micro soft Threat jagers en beveiligings teams, uitgebreid door Intelligence van partners.
+- **Informatie over bedreigingen**. Defender for Endpoint genereert waarschuwingen wanneer er hulpprogramma's, technieken en procedures voor aanvallers worden geïdentificeerd. Het maakt gebruik van gegevens die worden gegenereerd door microsoft-bedreigings- en beveiligingsteams, uitgebreid met informatie die wordt geleverd door partners.
 
-Door Defender voor het eind punt met Security Center te integreren, profiteert u van de volgende aanvullende mogelijkheden:
+Door Defender for Endpoint te integreren met Security Center, profiteert u van de volgende extra mogelijkheden:
 
-- **Automatische onboarding**. Security Center schakelt automatisch de micro soft Defender for Endpoint-sensor in voor alle Windows-servers die worden bewaakt door Security Center.
+- **Geautomatiseerde onboarding.** Security Center schakelt automatisch de Microsoft Defender for Endpoint-sensor in voor alle Windows-servers die worden bewaakt door Security Center.
 
-- **Eén venster glas**. In de Security Center-console worden micro soft Defender voor eindpunt waarschuwingen weer gegeven. Als u verder wilt onderzoeken, gebruikt u de eigen Portal pagina's van micro soft Defender voor het eind punt waar u aanvullende informatie ziet, zoals de structuur van het waarschuwings proces en de incidenten grafiek. U kunt ook een gedetailleerde computer tijdlijn bekijken waarin elk gedrag wordt weer gegeven voor een historische periode van Maxi maal zes maanden.
+- **Eén deelvenster van het venster**. In Security Center console wordt Microsoft Defender voor eindpuntwaarschuwingen weergegeven. Als u verder wilt onderzoeken, gebruikt u de eigen portalpagina's van Microsoft Defender voor eindpunten, waar u aanvullende informatie ziet, zoals de waarschuwingsprocesstructuur en de incidentgrafiek. U kunt ook een gedetailleerde tijdlijn voor de machine bekijken waarin elk gedrag voor een historische periode van maximaal zes maanden wordt weergegeven.
 
-    :::image type="content" source="./media/security-center-wdatp/microsoft-defender-security-center.png" alt-text="De eigen Security Center van micro soft Defender voor het eind punt" lightbox="./media/security-center-wdatp/microsoft-defender-security-center.png":::
+    :::image type="content" source="./media/security-center-wdatp/microsoft-defender-security-center.png" alt-text="Microsoft Defender for Endpoint's eigen Security Center" lightbox="./media/security-center-wdatp/microsoft-defender-security-center.png":::
 
-## <a name="microsoft-defender-for-endpoint-tenant-location"></a>Locatie van micro soft Defender voor endpoint-Tenant
+## <a name="microsoft-defender-for-endpoint-tenant-location"></a>Locatie van de Microsoft Defender voor eindpunt-tenant
 
-Wanneer u Azure Security Center gebruikt om uw servers te bewaken, wordt automatisch een micro soft Defender for Endpoint-Tenant gemaakt. Gegevens die worden verzameld door Defender voor het eind punt, worden opgeslagen in de geo-locatie van de Tenant, zoals wordt geïdentificeerd tijdens het inrichten. Klant gegevens: in pseudoniem vorm-kan ook worden opgeslagen in de centrale opslag-en verwerkings systemen in de Verenigde Staten. 
+Wanneer u een Azure Security Center voor het bewaken van uw servers, wordt er automatisch een Microsoft Defender for Endpoint-tenant gemaakt. Gegevens die door Defender for Endpoint worden verzameld, worden opgeslagen op de geografische locatie van de tenant, zoals aangegeven tijdens het inrichten. Klantgegevens , in gepseudonimiseerde vorm, kunnen ook worden opgeslagen in de centrale opslag- en verwerkingssystemen in de Verenigde Staten. 
 
-Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw eigen licentie voor micro soft Defender voor het eind punt hebt en u uw gegevens naar een andere locatie wilt verplaatsen, neemt u contact op met Microsoft Ondersteuning om de Tenant opnieuw in te stellen.
+Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw eigen licentie voor Microsoft Defender voor eindpunt hebt en uw gegevens naar een andere locatie wilt verplaatsen, neem dan contact op met Microsoft-ondersteuning tenant opnieuw in te stellen.
 
 
-## <a name="enabling-the-microsoft-defender-for-endpoint-integration"></a>De integratie van micro soft Defender voor endpoint inschakelen
+## <a name="enable-the-microsoft-defender-for-endpoint-integration"></a>De integratie van Microsoft Defender voor eindpunten inschakelen
 
-1. Controleren of uw computer voldoet aan de vereiste vereisten voor Defender voor eind punt:
+### <a name="prerequisites"></a>Vereisten
 
-    - Voor **alle versies van Windows**:
-        - Configureer de netwerk instellingen die worden beschreven in [instellingen voor apparaat proxy en Internet connectiviteit configureren](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
-        - Als u Defender naar een eind punt implementeert op een on-premises computer, verbindt u deze met Azure Arc zoals uitgelegd in [hybride computers verbinden met servers met Azure-Arc](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
-    - Voor **Windows Server 2019-computers** moet u bovendien controleren of ze een geldige agent uitvoeren en de MicrosoftMonitoringAgent-extensie hebben
+Controleer of uw computer voldoet aan de vereiste vereisten voor Defender for Endpoint:
 
-1. Schakel **Azure Defender voor servers** in. Zie [Quick Start: Azure Defender inschakelen](enable-azure-defender.md).
+1. De netwerkinstellingen configureren die worden beschreven in [Instellingen voor apparaatproxy en internetverbinding configureren](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
+1. Als u Defender op een eindpunt implementeert op een on-premises machine, verbindt u deze met Azure Arc zoals wordt uitgelegd in Hybride machines verbinden met [Azure Arc-servers](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
+1. Alleen voor Windows Server 2019-computers controleert u of op uw computers een geldige agent wordt uitgevoerd en dat u de extensie MicrosoftMonitoringAgent hebt
+1. Schakel **Azure Defender voor servers in.** Zie [Quickstart: Azure Defender](enable-azure-defender.md).
+1. Als u Microsoft Defender for Endpoints al hebt gelicentieerd en geïmplementeerd op uw servers, verwijdert u deze met behulp van de procedure die wordt beschreven in [Offboard Windows-servers.](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers)
+1. Als u uw abonnement hebt verplaatst tussen Azure-tenants, zijn ook enkele handmatige voorbereidende stappen vereist. Neem contact op met [Microsoft Ondersteuning voor volledige informatie.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
-1. Als u al een gelicentieerde en geïmplementeerde versie van micro soft Defender voor eind punten op uw servers hebt, verwijdert u deze met behulp van de procedure die wordt beschreven in [niet meer vrijgeven Windows-servers](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers).
-1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
-1. Selecteer het abonnement dat u wilt wijzigen.
+
+### <a name="enable-the-integration"></a>De integratie inschakelen
+1. Selecteer Security Center in het menu  van & en selecteer het abonnement dat u wilt wijzigen.
 1. Selecteer **Detectie van dreigingen**.
-1. Selecteer **micro soft Defender voor eind punt toestaan om toegang te krijgen tot mijn gegevens** en selecteer **Opslaan**.
+1. Selecteer **Microsoft Defender voor eindpunt toegang geven tot mijn gegevens** en selecteer **Opslaan.**
 
-    :::image type="content" source="./media/security-center-wdatp/enable-integration-with-edr.png" alt-text="De integratie tussen Azure Security Center en de EDR-oplossing van micro soft inschakelen, micro soft Defender voor eind punt":::
+    :::image type="content" source="./media/security-center-wdatp/enable-integration-with-edr.png" alt-text="De integratie inschakelen tussen Azure Security Center en de EDR-oplossing van Microsoft, Microsoft Defender for Endpoint":::
 
-    Azure Security Center worden uw servers automatisch op micro soft Defender voor eind punten geboardd. Het kan tot 24 uur duren voordat de onboarding is uitgevoerd.
+    Azure Security Center uw servers automatisch onboarden naar Microsoft Defender for Endpoint. Onboarding kan tot 24 uur duren.
 
 
-## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Toegang tot de micro soft Defender voor endpoint-Portal
+## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Toegang tot de Microsoft Defender for Endpoint-portal
 
-1. Zorg ervoor dat het gebruikers account over de benodigde machtigingen beschikt. Meer informatie over [het toewijzen van gebruikers toegang tot micro soft Defender Security Center](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
+1. Zorg ervoor dat het gebruikersaccount de benodigde machtigingen heeft. Meer informatie in [Gebruikerstoegang toewijzen aan Microsoft Defender-beveiligingscentrum.](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access)
 
-1. Controleer of u een proxy of firewall hebt die anonieme verkeer blokkeert. De Defender for Endpoint-sensor maakt verbinding vanaf de systeem context, zodat anonieme verkeer moet worden toegestaan. Volg de instructies in [Enable Access to service URLs in the proxy server](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server)om een onbelemmerde toegang tot de Defender voor endpoint portal te garanderen.
+1. Controleer of u een proxy of firewall hebt die anoniem verkeer blokkeert. De Defender for Endpoint-sensor maakt verbinding vanuit de systeemcontext, dus anoniem verkeer moet zijn toegestaan. Volg de instructies in Toegang tot service-URL's [inschakelen op](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server)de proxyserver om ongebeheerde toegang tot de Defender for Endpoint-portal te garanderen.
 
-1. Open de [micro soft Defender Security Center-Portal](https://securitycenter.windows.com/). Meer informatie over de functies en pictogrammen van de portal vindt u in het [overzicht van micro soft Defender Security Center Portal](/windows/security/threat-protection/microsoft-defender-atp/portal-overview). 
+1. Open de [Microsoft Defender-beveiligingscentrum portal](https://securitycenter.windows.com/). Meer informatie over de functies en pictogrammen van de portal kunt u vinden in [Microsoft Defender-beveiligingscentrum overzicht van de portal.](/windows/security/threat-protection/microsoft-defender-atp/portal-overview) 
 
-## <a name="send-a-test-alert"></a>Een test waarschuwing verzenden
+## <a name="send-a-test-alert"></a>Een testwaarschuwing verzenden
 
-Een goed aardige micro soft Defender for Endpoint-test waarschuwing genereren:
+Een goedaardige testwaarschuwing voor Microsoft Defender for Endpoint genereren:
 
-1. Maak een map ' C:\test-MDATP-test '.
-1. Gebruik Extern bureaublad om toegang te krijgen tot uw computer.
+1. Maak een map C:\test-MDATP-test.
+1. Gebruik Extern bureaublad toegang tot uw computer.
 1. Open een opdrachtregelvenster.
-1. Kopieer de volgende opdracht bij de prompt en voer deze uit. Het opdracht prompt venster wordt automatisch gesloten.
+1. Kopieer de volgende opdracht bij de prompt en voer deze uit. Het opdrachtpromptvenster wordt automatisch gesloten.
 
     ```powershell
     powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-MDATP-test\\invoice.exe'); Start-Process 'C:\\test-MDATP-test\\invoice.exe'
     ```
-    :::image type="content" source="./media/security-center-wdatp/generate-edr-alert.png" alt-text="Een opdracht prompt venster met de opdracht om een test waarschuwing te genereren.":::
+    :::image type="content" source="./media/security-center-wdatp/generate-edr-alert.png" alt-text="Een opdrachtpromptvenster met de opdracht om een testwaarschuwing te genereren.":::
 
-1. Als de opdracht is geslaagd, ziet u een nieuwe waarschuwing in het dash board Azure Security Center en in de portal van micro soft Defender voor eind punt. Het kan enkele minuten duren voordat deze waarschuwing wordt weer gegeven.
-1. Als u de waarschuwing in Security Center wilt bekijken, gaat u naar **beveiligings waarschuwingen**  >  **verdachte Power shell**-opdracht regel.
-1. Selecteer in het venster onderzoek de koppeling om naar de micro soft Defender for Endpoint-portal te gaan.
+1. Als de opdracht is geslaagd, ziet u een nieuwe waarschuwing op het Azure Security Center dashboard en de Microsoft Defender for Endpoint-portal. Het kan enkele minuten duren voordat deze waarschuwing wordt weergegeven.
+1. Als u de waarschuwing in Security Center, gaat u naar **Beveiligingswaarschuwingen**  >  **Suspicious PowerShell CommandLine**.
+1. Selecteer in het onderzoekvenster de koppeling om naar de Microsoft Defender for Endpoint-portal te gaan.
 
     > [!TIP]
-    > De waarschuwing wordt geactiveerd met de ernst van de **informatie** .
+    > De waarschuwing wordt geactiveerd met **de ernst** Informatie.
 
-## <a name="faq-for-security-centers-integrated-microsoft-defender-for-endpoint"></a>Veelgestelde vragen over het geïntegreerde micro soft Defender voor eind punt van Security Center
+## <a name="faq-for-security-centers-integrated-microsoft-defender-for-endpoint"></a>Veelgestelde vragen Security Center geïntegreerde Microsoft Defender for Endpoint van uw netwerk
 
-- [Wat zijn de licentie vereisten voor micro soft Defender voor eind punt?](#what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint)
+- [Wat zijn de licentievereisten voor Microsoft Defender for Endpoint?](#what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint)
 - [Als ik al een licentie heb voor Microsoft Defender for Endpoint, kan ik dan korting krijgen voor Azure Defender?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
-- [Hoe kan ik overschakelen van een EDR-hulp programma van derden?](#how-do-i-switch-from-a-third-party-edr-tool)
+- [Hoe kan ik overstappen van een EDR-hulpprogramma van derden?](#how-do-i-switch-from-a-third-party-edr-tool)
 
-### <a name="what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint"></a>Wat zijn de licentie vereisten voor micro soft Defender voor eind punt?
-Defender voor het eind punt is zonder extra kosten inbegrepen bij **Azure Defender voor servers**. U kunt dit ook afzonderlijk aanschaffen voor 50-computers of meer.
+### <a name="what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint"></a>Wat zijn de licentievereisten voor Microsoft Defender for Endpoint?
+Defender for Endpoint is zonder extra kosten opgenomen met **Azure Defender voor servers**. U kunt deze ook afzonderlijk aanschaffen voor 50 machines of meer.
 
 ### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Als ik al een licentie heb voor Microsoft Defender for Endpoint, kan ik dan korting krijgen voor Azure Defender?
 Als u al een licentie hebt voor Microsoft Defender for Endpoint, hoeft u niet te betalen voor dat deel van uw Azure Defender-licentie.
 
 Neem contact op met het ondersteuningsteam van Security Center en geef de relevante werkruimte-ID, regio en licentiegegevens van elke relevante licentie op om uw korting te bevestigen.
 
-### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Hoe kan ik overschakelen van een EDR-hulp programma van derden?
-Volledige instructies voor het overschakelen van een niet-micro soft-eindpunt oplossing vindt u in de documentatie van micro soft Defender voor endpoint: [migratie overzicht](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration).
+### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Hoe kan ik overstappen van een EDR-hulpprogramma van derden?
+Volledige instructies voor het overschakelen van een niet-Microsoft-eindpuntoplossing zijn beschikbaar in de documentatie van Microsoft Defender voor eindpunten: [Migratieoverzicht.](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration)
   
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Platforms en functies die worden ondersteund door Azure Security Center](security-center-os-coverage.md)
-- [Aanbevelingen voor beveiliging in azure Security Center](security-center-recommendations.md): Ontdek hoe aanbevelingen u helpen uw Azure-resources te beveiligen.
+- [Beveiligingsaanbevelingen beheren in Azure Security Center:](security-center-recommendations.md)meer informatie over hoe aanbevelingen u helpen uw Azure-resources te beveiligen.

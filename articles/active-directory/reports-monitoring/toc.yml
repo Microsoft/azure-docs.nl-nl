@@ -107,8 +107,6 @@
       href: reference-reports-data-retention.md
     - name: Wachttijden voor rapportage
       href: reference-reports-latencies.md
-    - name: Foutcodes voor aanmelding
-      href: reference-sign-ins-error-codes.md
     - name: Veelgestelde vragen
       href: reports-faq.md
     - name: Schema van auditlogboek

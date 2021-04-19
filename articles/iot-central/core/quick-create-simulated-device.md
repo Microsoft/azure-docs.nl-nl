@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 0396c028c8c0e1a18baf037fed4efc21aad944f1
-ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
+ms.openlocfilehash: 2eb0e3ce2ac20c89d9c0176ca3e7b33dc839c923
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/19/2021
-ms.locfileid: "107715096"
+ms.locfileid: "107718823"
 ---
 # <a name="quickstart-add-a-simulated-device-to-your-iot-central-application"></a>Quickstart: Een gesimuleerd apparaat toevoegen aan uw IoT Central-toepassing
 
@@ -94,7 +94,7 @@ Standaardweergaven zijn een snelle manier om aan de slag te gaan met het visuali
 * In de weergave **Overzicht** worden grafieken en metrische gegevens gebruikt om apparaattelemetrie weer te geven.
 * In de weergave **Info** worden apparaateigenschappen weergegeven.
 
-Selecteer het knooppunt **Weergaven** in de apparaatsjabloon. U kunt zien dat IoT Central een overzicht **hebt** gegenereerd, een **weergave Over** en een weergave Onbewerkte gegevens voor u hebt gegenereerd toen u de sjabloon hebt toegevoegd. 
+Selecteer het knooppunt **Weergaven** in de apparaatsjabloon. U kunt zien dat IoT Central de weergaven  **Overzicht,** **Over** en Onbewerkte gegevens hebt gegenereerd toen u de sjabloon hebt toegevoegd.
 
 Een nieuw formulier toevoegen om het apparaat te beheren:
 
@@ -150,7 +150,7 @@ U kunt nu communiceren met de weergaven die u eerder hebt gemaakt met behulp van
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u geleerd hoe u een **Sensorcontroller**-apparaatsjabloon voor een ESP32-apparaat kunt maken en een gesimuleerd apparaat kunt toevoegen aan uw toepassing.
+In deze quickstart hebt u geleerd hoe u een apparaatsjabloon voor een **sensorcontroller** maakt voor een ESP32-apparaat en hoe u een gesimuleerd apparaat toevoegt aan uw toepassing.
 
 Ga voor meer informatie over het bewaken van met uw toepassing verbonden apparaten verder met de quickstart:
 

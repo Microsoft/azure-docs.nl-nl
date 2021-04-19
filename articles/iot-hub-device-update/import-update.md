@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: d33c7f87d77f371d4eb4bf903e4d534f334e39c4
-ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
+ms.openlocfilehash: 196a449f25d97fb1c1b7b8d79ee8889e0d31a5ae
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2021
-ms.locfileid: "107599499"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717743"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update in Apparaatupdate voor IoT Hub. Als u dit nog niet hebt gedaan, zorg er dan voor dat u vertrouwd bent met de [basisconcepten voor importeren.](import-concepts.md)
@@ -112,8 +112,8 @@ Voorbeeld:
 
 ## <a name="import-update"></a>Update importeren
 
-[!NOTE]
-In de onderstaande instructies wordt beschreven hoe u een update importeert via de Azure Portal ui. U kunt ook de Apparaatupdate [voor IoT Hub API's gebruiken om](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) een update te importeren. 
+> [!NOTE]
+> In de onderstaande instructies wordt beschreven hoe u een update importeert via de Azure Portal ui. U kunt ook de Apparaatupdate [voor IoT Hub API's gebruiken om](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) een update te importeren. 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar IoT Hub apparaatupdate.
 

@@ -82,7 +82,7 @@
     - name: Gebruikerservaring
       expanded: true
       items:
-        - name: Gebruikersstromen en aangepaste beleidsregels
+        - name: Gebruikersstromen en aangepast beleid
           href: user-flow-overview.md
         - name: Overzicht van aangepast beleid
           href: custom-policy-overview.md
@@ -109,7 +109,7 @@
             - name: Een SAML-toepassing configureren
               href: saml-service-provider.md
               displayName: 'SP, service provider'
-            - name: SamL-toepassingsopties configureren
+            - name: Opties voor SAML-toepassingen configureren
               href: saml-service-provider-options.md
               displayName: 'SP, service provider'
         - name: Een Microsoft Graph-toepassing registreren
@@ -460,6 +460,8 @@
                   href: aad-sspr-technical-profile.md
                 - name: Claimstransformatie
                   href: claims-transformation-technical-profile.md
+                - name: Voorwaardelijke toegang
+                  href: conditional-access-technical-profile.md
                 - name: ID-tokenhint
                   href: id-token-hint.md
                 - name: Uitgever van het JWT-token

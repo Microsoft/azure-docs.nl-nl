@@ -1,106 +1,106 @@
 ---
-title: Gebruiks modellen van de HPC-cache van Azure
-description: Hierin worden de verschillende modellen voor de cache gebruikt en wordt uitgelegd hoe u er een kunt kiezen voor het instellen van alleen-lezen of lezen/schrijven in cache en het beheren van andere cache-instellingen
+title: Azure HPC Cache-gebruiksmodellen
+description: Beschrijft de verschillende cachegebruiksmodellen en hoe u ervoor kunt kiezen om alleen-lezen of lezen/schrijven-caching in te stellen en andere cache-instellingen te beheren
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 04/08/2021
 ms.author: v-erkel
-ms.openlocfilehash: a22f4b257476e96c51ae491b8570e3798f7b3ab7
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 7e1b11fd15cca9b11fc627222318f08d31743336
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259724"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107719183"
 ---
-# <a name="understand-cache-usage-models"></a>Informatie over de gebruiks modellen van de cache
+# <a name="understand-cache-usage-models"></a>Inzicht in cachegebruiksmodellen
 
-Met cache gebruiks modellen kunt u aanpassen hoe uw Azure HPC-cache bestanden opslaat om uw werk stroom sneller te maken.
+Met cachegebruiksmodellen kunt u aanpassen hoe uw Azure HPC Cache opgeslagen om uw werkstroom te versnellen.
 
-## <a name="basic-file-caching-concepts"></a>Basis concepten voor het opslaan van bestanden
+## <a name="basic-file-caching-concepts"></a>Basisconcepten voor bestands caching
 
-Het opslaan van bestanden in cache is het versnellen van client aanvragen door Azure HPC cache. Deze basis procedures worden gebruikt:
+Bestands-caching is hoe Azure HPC Cache clientaanvragen versnelt. Deze basisprocedures worden gebruikt:
 
-* **Lees cache** -Azure HPC cache houdt een kopie bij van bestanden die door clients worden aangevraagd vanuit het opslag systeem. De volgende keer dat een client hetzelfde bestand aanvraagt, kan HPC-cache de versie in de cache opgeven, in plaats van deze opnieuw op te halen uit het back-end-opslag systeem.
+* **Lees-caching:** Azure HPC Cache een kopie van bestanden die clients aanvragen bij het opslagsysteem. De volgende keer dat een client hetzelfde bestand aanvraagt, HPC Cache de versie in de cache leveren in plaats van dat deze opnieuw moet worden opgehaald uit het back-endopslagsysteem.
 
-* **Schrijf cache** -optioneel: Azure HPC cache kan een kopie opslaan van alle gewijzigde bestanden die worden verzonden vanaf de client computers. Als meerdere clients wijzigingen aanbrengen in hetzelfde bestand gedurende een korte periode, kan de cache alle wijzigingen in de cache verzamelen in plaats van elke wijziging afzonderlijk naar het back-end-opslag systeem te schrijven.
+* **Schrijven in de caching:** u Azure HPC Cache een kopie opslaan van alle gewijzigde bestanden die vanaf de clientmachines worden verzonden. Als meerdere clients gedurende een korte periode wijzigingen aanbrengen in hetzelfde bestand, kan de cache alle wijzigingen in de cache verzamelen in plaats van elke wijziging afzonderlijk naar het back-endopslagsysteem te schrijven.
 
-  Na een opgegeven tijds duur zonder wijzigingen, verplaatst de cache het bestand naar het systeem voor lange termijn opslag.
+  Na een opgegeven hoeveelheid tijd zonder wijzigingen, verplaatst de cache het bestand naar het langetermijnopslagsysteem.
 
-  Als de schrijf cache is uitgeschakeld, wordt het gewijzigde bestand niet opgeslagen in de cache en wordt het onmiddellijk naar het back-end-opslag systeem geschreven.
+  Als schrijfcache is uitgeschakeld, wordt het gewijzigde bestand niet opgeslagen in de cache en wordt het onmiddellijk naar het back-endopslagsysteem geschreven.
 
-* **Write-back vertraging** : voor een cache waarvoor schrijf cache is ingeschakeld, is write-back vertraging de hoeveelheid tijd die de cache wacht op extra bestands wijzigingen voordat het bestand naar het back-end-opslag systeem wordt gekopieerd.
+* **Vertraging bij** terugschrijven: voor een cache met schrijfcache ingeschakeld, is write-back vertraging de hoeveelheid tijd die de cache wacht op aanvullende bestandswijzigingen voordat het bestand naar het back-endopslagsysteem wordt kopieert.
 
-* **Back-end-verificatie** : de instelling voor de back-end-verificatie bepaalt hoe vaak de cache de lokale kopie van een bestand vergelijkt met de externe versie op het back-end-opslag systeem. Als de back-end nieuwer is dan de kopie in de cache, haalt de cache de externe kopie op en slaat deze op voor toekomstige aanvragen.
+* **Back-endverificatie:** de instelling voor back-endverificatie bepaalt hoe vaak de cache de lokale kopie van een bestand vergelijkt met de externe versie op het back-endopslagsysteem. Als de back-endkopie nieuwer is dan de kopie in de cache, haalt de cache de externe kopie op en slaat deze op voor toekomstige aanvragen.
 
-  De instelling voor de back-end-verificatie geeft aan wanneer de cache bestanden *automatisch* vergelijkt met de bron bestanden in de externe opslag. U kunt de Azure HPC-cache echter dwingen om bestanden te vergelijken door een directory bewerking uit te voeren die een READDIRPLUS-aanvraag bevat. READDIRPLUS is een standaard-NFS-API (ook wel uitgebreide Lees bewerking genoemd) die directory-meta gegevens retourneert, waardoor de cache bestanden vergelijkt en bijwerkt.
+  De instelling voor back-endverificatie geeft aan wanneer de cache *de* bestanden automatisch vergelijkt met bronbestanden in externe opslag. U kunt echter wel Azure HPC Cache bestanden te vergelijken door een mapbewerking uit te voeren die een readdirplus-aanvraag bevat. Readdirplus is een standaard NFS-API (ook wel uitgebreid lezen genoemd) die mapmetagegevens retourneert, waardoor de cache bestanden kan vergelijken en bijwerken.
 
-De gebruiks modellen die in de Azure HPC-cache zijn ingebouwd, hebben verschillende waarden voor deze instellingen, zodat u de beste combi natie voor uw situatie kunt kiezen.
+De gebruiksmodellen die zijn ingebouwd Azure HPC Cache hebben verschillende waarden voor deze instellingen, zodat u de beste combinatie voor uw situatie kunt kiezen.
 
-## <a name="choose-the-right-usage-model-for-your-workflow"></a>Het juiste gebruiks model voor uw werk stroom kiezen
+## <a name="choose-the-right-usage-model-for-your-workflow"></a>Het juiste gebruiksmodel kiezen voor uw werkstroom
 
-U moet een gebruiks model kiezen voor elk NFS-protocol opslag doel dat u gebruikt. Azure Blob-opslag doelen hebben een ingebouwd gebruiks model dat niet kan worden aangepast.
+U moet een gebruiksmodel kiezen voor elk NFS-protocolopslagdoel dat u gebruikt. Azure Blob Storage-doelen hebben een ingebouwd gebruiksmodel dat niet kan worden aangepast.
 
-Met de gebruiks modellen van HPC-cache kunt u kiezen hoe u snel antwoord kunt verdelen met het risico dat verouderde gegevens worden opgehaald. Als u de snelheid voor het lezen van bestanden wilt optimaliseren, kunt u er mogelijk niet voor zorgen dat de bestanden in de cache worden gecontroleerd op basis van de back-end-bestanden. Als u daarentegen wilt controleren of uw bestanden altijd up-to-date zijn met de externe opslag, kiest u een model dat regel matig wordt gecontroleerd.
+HPC Cache gebruiksmodellen kunt u kiezen hoe u een snelle reactie wilt in balans brengen met het risico op het verkrijgen van verouderde gegevens. Als u de snelheid voor het lezen van bestanden wilt optimaliseren, is het wellicht niet belangrijk of de bestanden in de cache worden gecontroleerd op de back-endbestanden. Als u daarentegen wilt controleren of uw bestanden altijd up-to-date zijn met de externe opslag, kiest u een model dat regelmatig wordt gecontroleerd.
 
-Dit zijn de opties voor het gebruiks model:
+Dit zijn de opties voor het gebruiksmodel:
 
-* **Lees zware, incidentele schrijf bewerkingen** : gebruik deze optie als u lees toegang tot bestanden wilt versnellen die statisch zijn of zelden worden gewijzigd.
+* **Leeszware, weinig** lees- of schrijf schrijfsnelheden: gebruik deze optie als u leestoegang wilt versnellen tot bestanden die statisch zijn of zelden worden gewijzigd.
 
-  Met deze optie worden client lees bewerkingen in de cache opgeslagen, maar niet opgeslagen in de cache. Er wordt direct een schrijf bewerking door gegeven naar de back-end-opslag.
+  Met deze optie worden clientlezen in de cache opgeslagen, maar worden schrijf schrijfingen niet in de cache opgeslagen. Schrijf-naar-de-back-endopslag wordt onmiddellijk door naar de back-endopslag.
   
-  Bestanden die in de cache zijn opgeslagen, worden niet automatisch vergeleken met de bestanden op het NFS-opslag volume. (Lees de beschrijving van de back-end-verificatie hierboven voor meer informatie over hoe u deze hand matig kunt vergelijken.)
+  Bestanden die zijn opgeslagen in de cache worden niet automatisch vergeleken met de bestanden op het NFS-opslagvolume. (Lees de beschrijving van back-endverificatie hierboven voor meer informatie over het handmatig vergelijken ervan.)
 
-  Gebruik deze optie niet als er een risico bestaat dat een bestand rechtstreeks op het opslag systeem kan worden gewijzigd zonder het eerst naar de cache te schrijven. Als dat gebeurt, is de versie van het bestand in de cache niet synchroon met het back-end-bestand.
+  Gebruik deze optie niet als er een risico bestaat dat een bestand rechtstreeks op het opslagsysteem wordt gewijzigd zonder het eerst naar de cache te schrijven. Als dat gebeurt, is de in cache opgeslagen versie van het bestand niet meer gesynchroniseerd met het back-endbestand.
 
-* **Meer dan 15% schrijf bewerkingen** : deze optie versnelt de lees-en schrijf prestaties. Wanneer u deze optie gebruikt, moeten alle clients toegang hebben tot bestanden via de Azure HPC-cache in plaats van de back-end-opslag rechtstreeks te koppelen. De bestanden in de cache hebben recente wijzigingen die nog niet zijn gekopieerd naar de back-end.
+* **Meer dan 15% schrijfprestaties:** deze optie versnelt zowel de lees- als schrijfprestaties. Wanneer u deze optie gebruikt, moeten alle clients toegang hebben tot bestanden via de Azure HPC Cache in plaats van de back-endopslag rechtstreeks te kunnen mounten. De bestanden in de cache bevatten recente wijzigingen die nog niet naar de back-end zijn gekopieerd.
 
-  In dit gebruiks model worden bestanden in de cache alleen gecontroleerd op basis van de bestanden in de back-end-opslag om de acht uur. Er wordt ervan uitgegaan dat de cache versie van het bestand meer actueel is. Een gewijzigd bestand in de cache wordt naar het back-end-opslag systeem geschreven nadat het 20 minuten in de cache is opgeslagen<!-- an hour --> zonder extra wijzigingen.
+  In dit gebruiksmodel worden bestanden in de cache slechts om de acht uur gecontroleerd op basis van de bestanden in de back-endopslag. Er wordt van uitgegaan dat de versie van het bestand in de cache actueler is. Een gewijzigd bestand in de cache wordt naar het back-endopslagsysteem geschreven nadat het 20 minuten in de cache is geweest<!-- an hour --> zonder aanvullende wijzigingen.
 
-* **Clients schrijven naar het NFS-doel, waarbij de cache wordt omzeild** : Kies deze optie als clients in uw werk stroom gegevens rechtstreeks naar het opslag systeem schrijven zonder eerst naar de cache te schrijven of als u de consistentie van de gegevens wilt optimaliseren. Bestanden die door clients worden aangevraagd, worden opgeslagen in de cache (Lees bewerkingen), maar wijzigingen aan deze bestanden van de client (schrijven) worden niet in de cache opgeslagen. Ze worden rechtstreeks door gegeven aan het back-end-opslag systeem.
+* Clients schrijven naar het **NFS-doel en** omzeilen de cache: kies deze optie als clients in uw werkstroom gegevens rechtstreeks naar het opslagsysteem schrijven zonder eerst naar de cache te schrijven of als u de consistentie van gegevens wilt optimaliseren. Bestanden die clients aanvragen, worden in de cache opgeslagen (lees leest), maar eventuele wijzigingen in deze bestanden van de client (schrijfbestanden) worden niet in de cache opgeslagen. Ze worden rechtstreeks doorgegeven aan het back-endopslagsysteem.
 
-  Bij dit gebruiks model worden de bestanden in de cache veelvuldig gecontroleerd op basis van de back-end-versies voor updates-elke 30 seconden. Met deze verificatie kunnen bestanden buiten de cache worden gewijzigd terwijl de consistentie van gegevens wordt behouden.
+  Met dit gebruiksmodel worden de bestanden in de cache regelmatig om de 30 seconden gecontroleerd op updates in de back-endversies. Met deze verificatie kunnen bestanden buiten de cache worden gewijzigd met behoud van gegevensconsistentie.
 
   > [!TIP]
-  > Deze eerste drie basis gebruiks modellen kunnen worden gebruikt voor het afhandelen van de meeste Azure HPC-cache-werk stromen. De volgende opties zijn voor minder veelvoorkomende scenario's.
+  > Deze eerste drie basisgebruiksmodellen kunnen worden gebruikt om het merendeel van de Azure HPC Cache te verwerken. De volgende opties zijn voor minder voorkomende scenario's.
 
-* **Meer dan 15% schrijf bewerkingen, de back-upserver controleren op wijzigingen om de 30 seconden** en **meer dan 15% schrijf bewerkingen, waardoor de back-upserver elke 60 seconden wordt gecontroleerd.** deze opties zijn ontworpen voor werk stromen waarbij u zowel lees-als schrijf bewerkingen wilt versnellen, maar er is een kans dat een andere gebruiker rechtstreeks naar het back-end-opslag systeem schrijft. Als er bijvoorbeeld meerdere sets clients aan dezelfde bestanden op verschillende locaties werken, kan het zinvol zijn om snel toegang tot bestanden te krijgen met lage tolerantie voor verouderde inhoud van de bron.
+* Meer dan 15% schrijfwerk, de **back-upserver elke 30** seconden controleren op wijzigingen en meer dan **15% schrijftaken,** de back-upserver elke 60 seconden controleren op wijzigingen: deze opties zijn ontworpen voor werkstromen waar u zowel lees- als schrijftaken wilt versnellen, maar er is een kans dat een andere gebruiker rechtstreeks naar het back-endopslagsysteem schrijft. Als bijvoorbeeld meerdere sets clients op dezelfde bestanden van verschillende locaties werken, kunnen deze gebruiksmodellen zinvol zijn om de behoefte aan snelle toegang tot bestanden te balanceren met lage tolerantie voor verouderde inhoud van de bron.
 
-* **Meer dan 15% schrijf bewerkingen, schrijf elke 30 seconden terug naar de server** . deze optie is ontworpen voor het scenario waarbij meerdere clients de bestanden actief wijzigen of als sommige clients rechtstreeks toegang hebben tot de back-end-opslag in plaats van de cache te koppelen.
+* Meer dan **15%** schrijf schrijft elke 30 seconden terug naar de server: deze optie is ontworpen voor het scenario waarin meerdere clients dezelfde bestanden actief wijzigen, of als sommige clients rechtstreeks toegang hebben tot de back-endopslag in plaats van de cache te installeren.
 
-  De frequente back-end-schrijf bewerkingen beïnvloeden de cache prestaties, dus u kunt het gebruik van het **groter-dan 15%** -gebruiks model voor schrijven gebruiken als er sprake is van een klein risico op bestands conflicten, bijvoorbeeld als u weet dat verschillende clients werken in verschillende gebieden van dezelfde bestandenset.
+  De frequente back-end-schrijf schrijfprestaties zijn van invloed op de prestaties van de cache, dus u kunt overwegen het gebruiksmodel Groter dan **15%** schrijfgegevens te gebruiken als er een laag risico op bestandsconflicten is, bijvoorbeeld als u weet dat verschillende clients in verschillende gebieden van dezelfde bestandsset werken.
 
-* **Lees de zware, Controleer de back-upserver om de 3 uur** . met deze optie wordt de prioriteit van snelle lees bewerkingen op de client geregeld, maar worden de bestanden in de cache van het back-end-opslag systeem regel matig vernieuwd, in tegens telling tot het **Lees** model.
+* **Intensief lezen,** de back-endserver elke drie uur controleren: met deze optie wordt prioriteit gegeven aan snelle lees- en schrijfgegevens aan de clientzijde, maar worden bestanden in de cache van het back-endopslagsysteem regelmatig vernieuwd, in tegenstelling tot het gebruiksmodel Intensief lezen **en** niet-vaak-schrijven.
 
-Deze tabel bevat een overzicht van de verschillen in het gebruiks model:
+Deze tabel bevat een overzicht van de verschillen in het gebruiksmodel:
 
 [!INCLUDE [usage-models-table.md](includes/usage-models-table.md)]
 
-Als u vragen hebt over het beste gebruiks model voor de werk stroom van uw Azure HPC-cache, neemt u contact op met uw Azure-vertegenwoordiger of opent u een ondersteunings aanvraag voor hulp.
+Als u vragen hebt over het beste gebruiksmodel voor uw Azure HPC Cache werkstroom, kunt u met uw Azure-vertegenwoordiger praten of een ondersteuningsaanvraag voor hulp openen.
 
-## <a name="know-when-to-remount-clients-for-nlm"></a>Weten wanneer u clients opnieuw moet koppelen voor NLM
+## <a name="know-when-to-remount-clients-for-nlm"></a>Weten wanneer clients opnieuw moeten worden ontkoppeld voor NLM
 
-In sommige gevallen moet u clients mogelijk opnieuw koppelen als u het gebruiks model van een opslag doel wijzigt. Dit is nodig vanwege de manier waarop verschillende gebruiks modellen NLM-aanvragen (Network Lock Manager) verwerken.
+In sommige gevallen moet u mogelijk clients opnieuw ontkoppelen als u het gebruiksmodel van een opslagdoel wijzigt. Dit is nodig vanwege de manier waarop verschillende gebruiksmodellen NLM-aanvragen (Network Lock Manager) verwerken.
 
-De HPC-cache bevindt zich tussen clients en het back-end-opslag systeem. Normaal gesp roken stuurt de cache NLM aanvragen door naar het back-end-opslag systeem, maar in sommige gevallen erkent de cache zelf de NLM-aanvraag en retourneert deze een waarde naar de client. In azure HPC-cache gebeurt dit alleen wanneer u het gebruiks model gebruikt voor het **lezen van zware, incidentele schrijf bewerkingen** (of in een standaard-Blob-opslag doel, die geen Configureer bare gebruiks modellen heeft).
+De HPC Cache bevindt zich tussen clients en het back-endopslagsysteem. Normaal gesproken geeft de cache NLM-aanvragen door aan het back-endopslagsysteem, maar in sommige gevallen bevestigt de cache zelf de NLM-aanvraag en retourneert deze een waarde naar de client. In Azure HPC Cache gebeurt dit alleen wanneer u gebruik  maakt van het gebruiksmodel Leeszware, niet-vaak schrijfbare schrijfgegevens (of met een standaarddoel voor blobopslag, dat geen configureerbare gebruiksmodellen heeft).
 
-Er is een klein risico op bestands conflicten als u wijzigingen aanbrengt in het gebruiks model en een ander gebruiks model in het geval van een **zware Lees bewerking** . Er is geen manier om de huidige NLM-status van de cache over te zetten naar het opslag systeem of andersom. De vergrendelings status van de client is niet nauw keurig.
+Er is een klein risico op bestandsconflicten als u wisselt tussen het **gebruiksmodel** Voor lezen intensief, weinig schrijfgebruik en een ander gebruiksmodel. Er is geen manier om de huidige NLM-status van de cache over te dragen naar het opslagsysteem of vice versa. De vergrendelingsstatus van de client is dus onjuist.
 
-Koppel de clients opnieuw om er zeker van te zijn dat ze een nauw keurige NLM-status hebben met de nieuwe vergrendelings Manager.
+Ontkoppel de clients opnieuw om ervoor te zorgen dat ze een nauwkeurige NLM-status hebben met het nieuwe vergrendelingsbeheer.
 
-Als uw clients een NLM-aanvraag verzenden wanneer het gebruiks model of de back-end-opslag deze niet ondersteunt, wordt er een fout melding weer gegeven.
+Als uw clients een NLM-aanvraag verzenden wanneer het gebruiksmodel of de back-endopslag dit niet ondersteunt, krijgen ze een foutmelding.
 
-### <a name="disable-nlm-at-client-mount-time"></a>NLM uitschakelen op de client koppelings tijd
+### <a name="disable-nlm-at-client-mount-time"></a>NLM uitschakelen tijdens clientkoppeling
 
-Het is niet altijd gemakkelijk om te weten of uw client systemen NLM-aanvragen kunnen verzenden.
+Het is niet altijd eenvoudig om te weten of uw clientsystemen NLM-aanvragen verzenden of niet.
 
-U kunt NLM uitschakelen wanneer clients het cluster koppelen met behulp van de optie ``-o nolock`` in de ``mount`` opdracht.
+U kunt NLM uitschakelen wanneer clients het cluster met behulp van de optie ``-o nolock`` in de ``mount`` opdracht.
 
-Het exacte gedrag van de ``nolock`` optie is afhankelijk van het besturings systeem van de client. Controleer daarom de koppelings documentatie (man 5 NFS) voor uw client besturingssysteem. In de meeste gevallen wordt de vergren deling lokaal naar de client verplaatst. Wees voorzichtig als uw toepassing bestanden vergrendelt op meerdere clients.
+Het exacte gedrag van de optie is afhankelijk van het besturingssysteem van de client. Raadpleeg daarom de documentatie voor het monteren ``nolock`` (man 5 nfs) voor uw clientbesturingssysteem. In de meeste gevallen wordt de vergrendeling lokaal naar de client verplaatst. Wees voorzichtig als uw toepassing bestanden vergrendelt op meerdere clients.
 
 > [!NOTE]
-> ADLS-NFS biedt geen ondersteuning voor NLM. U moet NLM uitschakelen met de optie koppelen hierboven wanneer u een ADLS-NFS-opslag doel gebruikt.
+> ADLS-NFS biedt geen ondersteuning voor NLM. Schakel NLM uit met de bovenstaande optie voor het plaatsen van een ADLS-NFS-opslagdoel.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Opslag doelen toevoegen](hpc-cache-add-storage.md) aan uw Azure HPC-cache
+* [Opslagdoelen toevoegen](hpc-cache-add-storage.md) aan uw Azure HPC Cache

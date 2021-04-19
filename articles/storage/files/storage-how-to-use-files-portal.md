@@ -4,15 +4,15 @@ description: Ontdek hoe u Azure-bestandsshares maakt en beheert in Azure Portal.
 author: roygara
 ms.service: storage
 ms.topic: quickstart
-ms.date: 10/18/2018
+ms.date: 04/15/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 6a88124397812f7599ce54b46b23d22e626cf520
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d7867a4bd60bb179c18fff49691072d683660f7e
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94629815"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717848"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Snelstart: Azure-bestandsshares maken en beheren met de Azure-portal 
 [Azure Files ](storage-files-introduction.md) is het eenvoudig te gebruiken cloudbestandssysteem van Microsoft. Azure-bestandsshares kunnen worden gekoppeld in Windows, Linux en macOS. In deze handleiding worden de basisbeginselen besproken van het werken met Azure-bestandsshares met behulp van [Azure Portal](https://portal.azure.com/).
@@ -26,12 +26,13 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 Een Azure-bestandsshare maken:
 
 1. Selecteer het opslagaccount in uw dashboard.
-2. Ga op de pagina van het opslagaccount naar het gedeelte **Services** en selecteer **Bestanden**.
-    ![Een schermopname van het gedeelte Services van het opslagaccount, met de service Bestanden geselecteerd](media/storage-how-to-use-files-portal/create-file-share-1.png)
+1. Ga op de pagina van het opslagaccount naar het gedeelte **Services** en selecteer **Bestanden**.
+    
+    ![Een schermopname van de sectie gegevensopslag van het opslagaccount; bestands shares selecteren.](media/storage-how-to-use-files-portal/create-file-share-1.png)
 
-3. Klik in het menu bovenaan de pagina **Bestandsservice** op **Bestandsshare**. De pagina **Nieuwe bestandsshare** wordt weergegeven.
-4. Typ *myshare* in het vak **Naam**.
-5. Klik op **OK** om de Azure-bestandsshare te maken.
+1. Klik in het menu bovenaan de pagina **Bestandsservice** op **Bestandsshare**. De pagina **Nieuwe bestandsshare** wordt weergegeven.
+1. Typ **in** Naam *myshare,* voer eenate in en laat **Transaction optimized** geselecteerd voor **Tiers**.
+1. Selecteer **Maken om** de Azure-bestands share te maken.
 
 De namen van shares moeten bestaan uit kleine letters, cijfers en afbreekstreepjes, maar mogen niet beginnen met een afbreekstreepje. Zie [Shares, mappen, bestanden en metagegevens een naam geven en hiernaar verwijzen](/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata) voor meer informatie over de naamgeving van bestandsshares en bestanden.
 
@@ -60,20 +61,21 @@ U beschikt nu over een Azure-bestandsshare. De volgende stap is het koppelen van
 Ga als volgt te werk om in de hoofdmap van uw Azure-bestandsshare een nieuwe map te maken met de naam *myDirectory*:
 
 1. Selecteer op de pagina **Bestandsservice** de bestandsshare **myshare**. De pagina voor de bestandsshare wordt geopend.
-2. Selecteer **+ Map toevoegen** in het menu bovenaan de pagina. De pagina **Nieuwe map** wordt weergegeven.
-3. Typ *myDirectory* en klik op **OK**.
+1. Selecteer **+ Map toevoegen** in het menu bovenaan de pagina. De pagina **Nieuwe map** wordt weergegeven.
+1. Typ *myDirectory* en klik op **OK**.
 
 #### <a name="upload-a-file"></a>Bestand uploaden 
 Als u wilt uitproberen hoe het uploaden van een bestand in zijn werk gaat, moet u eerst een bestand maken of selecteren om te uploaden. De manier waarop u dit doet, kunt u helemaal zelf bepalen. Ga als volgt te werk wanneer u het bestand hebt geselecteerd dat u wilt uploaden:
 
 1. Klik op de map **myDirectory**. Het deelvenster **myDirectory** wordt geopend.
-2. Klik in het menu bovenaan op **Uploaden**. Het deelvenster **Bestanden uploaden** wordt geopend.  
+1. Selecteer in het menu bovenaan **Uploaden**. Het deelvenster **Bestanden uploaden** wordt geopend.  
+    
     ![Een schermopname van het deelvenster Bestanden uploaden](media/storage-how-to-use-files-portal/upload-file-1.png)
 
-3. Klik op het mappictogram om een venster te openen waarin u door uw lokale bestanden kunt bladeren. 
-4. Selecteer een bestand en klik op **Openen**. 
-5. Controleer de bestandsnaam op de pagina **Bestanden uploaden** en klik vervolgens op **Uploaden**.
-6. Als het uploaden is voltooid, ziet u het bestand in de lijst op de pagina **myDirectory**.
+1. Klik op het mappictogram om een venster te openen waarin u door uw lokale bestanden kunt bladeren. 
+1. Selecteer een bestand en klik op **Openen**. 
+1. Controleer de bestandsnaam op de pagina **Bestanden uploaden** en klik vervolgens op **Uploaden**.
+1. Als het uploaden is voltooid, ziet u het bestand in de lijst op de pagina **myDirectory**.
 
 #### <a name="download-a-file"></a>Bestand downloaden
 U kunt een kopie downloaden van het bestand dat u hebt geüpload, door met de rechtermuisknop op het bestand te klikken. Als u vervolgens Downloaden hebt geselecteerd, verschilt de rest van de procedure afhankelijk van het besturingssysteem en browser die u gebruikt.

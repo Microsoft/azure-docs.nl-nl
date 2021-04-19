@@ -4,7 +4,7 @@ description: Ontdek de aanmeldactiviteitenrapporten in de Azure Active Directory
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
-manager: daveba
+manager: mtillman
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
 ms.service: active-directory
@@ -13,20 +13,22 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 04/16/2021
+ms.date: 04/19/2021
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99f1f27cb087dc83295dddade4c0fca551a0d9c9
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: 2a4cd69224daa05a3e5931fbde1c85bb8dc9e46a
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107589683"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107719003"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Aanmeldactiviteitenrapporten in Azure Active Directory Portal
 
-De Azure Active Directory portal biedt u toegang tot drie activiteitenlogboeken:
+Als IT-beheerder wilt u weten hoe het met uw IT-omgeving gaat. Aan de hand van de informatie over de status van uw systeem kunt u beoordelen of en hoe u op potentiële problemen moet reageren. 
+
+Ter ondersteuning van dit doel biedt de Azure Active Directory portal u toegang tot drie activiteitenlogboeken:
 
 - **Aanmeldingen: informatie** over aanmeldingen en hoe uw resources worden gebruikt door uw gebruikers.
 - **[Controle:](concept-audit-logs.md)** informatie over wijzigingen die worden toegepast op uw tenant, zoals gebruikers en groepsbeheer of updates die worden toegepast op de resources van uw tenant.
@@ -44,7 +46,7 @@ In dit artikel vindt u een overzicht van het aanmeldingsrapport.
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Welke Azure AD-licentie heb ik nodig voor toegang tot aanmeldingsactiviteiten?
 
-Het rapport aanmeldingsactiviteiten is beschikbaar in alle [edities](reference-reports-data-retention.md#how-long-does-azure-ad-store-the-data) van Azure AD en is ook toegankelijk via de Microsoft Graph API.
+Het rapport met aanmeldingsactiviteiten is beschikbaar in alle [edities](reference-reports-data-retention.md#how-long-does-azure-ad-store-the-data) van Azure AD en is ook toegankelijk via Microsoft Graph API.
 
 ## <a name="sign-ins-report"></a>Aanmeldingenrapport
 
@@ -82,7 +84,7 @@ U kunt de lijstweergave aanpassen door te klikken op **Kolommen** op de werkbalk
 
 ![Schermopname van de optie Kolommen op de pagina Aanmeldingen.](./media/concept-sign-ins/19.png "Aanmeldingsactiviteit")
 
-Het **dialoogvenster** Kolommen geeft u toegang tot de selecteerbare kenmerken. In een aanmeldingsrapport kunt u geen velden hebben met meer dan één waarde voor een bepaalde aanmeldingsaanvraag als kolom. Dit geldt bijvoorbeeld voor verificatiegegevens, voorwaardelijke toegangsgegevens en netwerklocatie.   
+In **het** dialoogvenster Kolommen krijgt u toegang tot de te selecteren kenmerken. In een aanmeldingsrapport kunt u geen velden hebben met meer dan één waarde voor een bepaalde aanmeldingsaanvraag als kolom. Dit geldt bijvoorbeeld voor verificatiegegevens, voorwaardelijke toegangsgegevens en netwerklocatie.   
 
 ![Schermopname van het dialoogvenster Kolommen waarin u kenmerken kunt selecteren.](./media/concept-sign-ins/columns.png "Aanmeldingsactiviteit")
 
@@ -115,7 +117,7 @@ Eerst moet u de gerapporteerde gegevens beperken tot een niveau dat voor u werkt
 
 **Aanvraag-id:** de id van de aanvraag die u belangrijk vindt.
 
-**Gebruiker:** de naam of het user principal name (UPN) van de gebruiker die u belangrijk vindt.
+**Gebruiker:** de naam of de user principal name (UPN) van de gebruiker die u belangrijk vindt.
 
 **Toepassing:** de naam van de doeltoepassing.
  
@@ -174,7 +176,7 @@ De **locatie:** de locatie van waar de verbinding is gestart:
 **Besturingssysteem:** het besturingssysteem dat op het apparaat wordt uitgevoerd, heeft aanmelding bij uw tenant gebruikt. 
 
 
-**Apparaatbrowser:** als de verbinding vanuit een browser is gestart, kunt u in dit veld filteren op browsernaam.
+**Apparaatbrowser:** als de verbinding vanuit een browser is gestart, kunt u met dit veld filteren op browsernaam.
 
 
 **Correlatie-id:** de correlatie-id van de activiteit.
@@ -219,7 +221,7 @@ Azure AD en de Azure Portal beide bieden u extra toegangspunten voor aanmeldings
 
 ### <a name="users-sign-ins-data-in-identity-security-protection"></a>Aanmeldingsgegevens van gebruikers in Identity Security Protection
 
-In de aanmeldingsgrafiek van de gebruiker **op de overzichtspagina identiteitsbeveiliging** worden wekelijkse aggregaties van aanmeldingen weergegeven. De standaardwaarde voor de periode is 30 dagen.
+In de aanmeldingsgrafiek van de gebruiker op de **overzichtspagina identiteitsbeveiliging** worden wekelijkse aggregaties van aanmeldingen weergegeven. De standaardwaarde voor de periode is 30 dagen.
 
 ![Schermopname van een grafiek van aanmeldingen gedurende een maand.](./media/concept-sign-ins/06.png "Aanmeldingsactiviteit")
 
@@ -247,7 +249,7 @@ Door op een item te klikken, krijgt u meer informatie over de aanmelding:
 - Aanmeldingsstatus
 
 > [!NOTE]
-> IP-adressen worden zodanig uitgegeven dat er geen definitieve verbinding is tussen een IP-adres en waar de computer met dat adres zich fysiek bevindt. Het toewijzen van IP-adressen is gecompliceerd door het feit dat mobiele providers en VPN's IP-adressen uitgeven van centrale pools die vaak heel ver van waar het clientapparaat daadwerkelijk wordt gebruikt. Momenteel is het in Azure AD-rapporten een best effort om het IP-adres te converteren naar een fysieke locatie op basis van traceringen, registergegevens, reverse look ups en andere informatie.
+> IP-adressen worden zodanig uitgegeven dat er geen definitieve verbinding is tussen een IP-adres en waar de computer met dat adres zich fysiek bevindt. Het toewijzen van IP-adressen is gecompliceerd door het feit dat mobiele providers en VPN's IP-adressen uitgeven van centrale pools die vaak heel ver van het clientapparaat af liggen. Momenteel is het in Azure AD-rapporten een best effort om het IP-adres te converteren naar een fysieke locatie op basis van traceringen, registergegevens, reverse look ups en andere informatie.
 
 Op de pagina **Gebruikers** krijgt u een volledig overzicht van alle aanmeldingen van gebruikers door in de sectie **Activiteit** op **Aanmelden** te klikken.
 

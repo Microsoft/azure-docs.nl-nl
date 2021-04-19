@@ -1,6 +1,6 @@
 ---
-title: Aangepaste beveiligings beleidsregels maken in Azure Security Center | Microsoft Docs
-description: Aangepaste beleids definities van Azure worden bewaakt door Azure Security Center.
+title: Aangepast beveiligingsbeleid maken in Azure Security Center | Microsoft Docs
+description: Aangepaste Azure-beleidsdefinities die worden bewaakt door Azure Security Center.
 author: memildin
 manager: rkarlin
 ms.service: security-center
@@ -8,69 +8,69 @@ ms.topic: how-to
 ms.date: 02/25/2021
 ms.author: memildin
 zone_pivot_groups: manage-asc-initiatives
-ms.openlocfilehash: a901e71da640f8413e5714ad59073324f582c1b9
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a41696ba92757550f9cbaa08ccf78d9a5da528d2
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102441054"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107718895"
 ---
-# <a name="create-custom-security-initiatives-and-policies"></a>Aangepaste beveiligings initiatieven en-beleid maken
+# <a name="create-custom-security-initiatives-and-policies"></a>Aangepaste beveiligingsinitiatieven en -beleid maken
 
-Azure Security Center beveiligings aanbevelingen worden gegenereerd om uw systemen en omgeving te beveiligen. Deze aanbevelingen zijn gebaseerd op de best practices van de branche, die zijn opgenomen in het algemene standaard beveiligings beleid dat aan alle klanten wordt verstrekt. Ze kunnen ook afkomstig zijn van de kennis van de branche-en regelgevings normen van Security Center.
+Om uw systemen en omgeving te beveiligen, Azure Security Center beveiligingsaanbevelingen gegenereerd. Deze aanbevelingen zijn gebaseerd op best practices in de branche, die zijn opgenomen in het algemene, standaardbeveiligingsbeleid dat aan alle klanten wordt geleverd. Ze kunnen ook afkomstig zijn Security Center kennis van industrie- en regelgevingsstandaarden.
 
-Met deze functie kunt u uw eigen *aangepaste* initiatieven toevoegen. U ontvangt dan aanbevelingen als uw omgeving niet voldoet aan het beleid dat u maakt. Alle aangepaste initiatieven die u maakt, worden naast de ingebouwde initiatieven weer gegeven in het dash board voor nalevings vereisten, zoals beschreven in de zelf studie [uw naleving van regelgeving verbeteren](security-center-compliance-dashboard.md).
+Met deze functie kunt u uw eigen *aangepaste* initiatieven toevoegen. Vervolgens ontvangt u aanbevelingen als uw omgeving niet het beleid volgt dat u maakt. Alle aangepaste initiatieven die u maakt, worden weergegeven naast de ingebouwde initiatieven in het dashboard voor naleving van regelgeving, zoals beschreven in de zelfstudie Uw naleving van [regelgeving verbeteren.](security-center-compliance-dashboard.md)
 
-Zoals beschreven in [de Azure Policy-documentatie](../governance/policy/concepts/definition-structure.md#definition-location), moet u, wanneer u een locatie opgeeft voor uw aangepaste initiatief, een beheer groep of een abonnement zijn. 
+Zoals besproken in [de Azure Policy documentatie](../governance/policy/concepts/definition-structure.md#definition-location), moet het een beheergroep of een abonnement zijn wanneer u een locatie voor uw aangepaste initiatief opgeeft. 
 
 > [!TIP]
-> Zie [Wat zijn beveiligings beleid, initiatieven en aanbevelingen?](security-policy-concept.md)voor een overzicht van de belangrijkste concepten op deze pagina.
+> Zie Wat zijn beveiligingsbeleid, initiatieven en aanbevelingen? voor een overzicht van de belangrijkste concepten [op deze pagina.](security-policy-concept.md)
 
 ::: zone pivot="azure-portal"
 
 ## <a name="to-add-a-custom-initiative-to-your-subscription"></a>Een aangepast initiatief toevoegen aan uw abonnement 
 
-1. Open de pagina **beveiligings beleid** vanuit de zijbalk van Security Center.
+1. Open Security Center de zijbalk van de pagina **Beveiligingsbeleid.**
 
-1. Selecteer een abonnement of beheer groep waaraan u een aangepast initiatief wilt toevoegen.
+1. Selecteer een abonnement of beheergroep waaraan u een aangepast initiatief wilt toevoegen.
 
-    [![Een abonnement selecteren waarvoor u uw aangepaste beleid wilt maken](media/custom-security-policies/custom-policy-selecting-a-subscription.png)](media/custom-security-policies/custom-policy-selecting-a-subscription.png#lightbox)
+    [![Een abonnement selecteren waarvoor u uw aangepaste beleid gaat maken](media/custom-security-policies/custom-policy-selecting-a-subscription.png)](media/custom-security-policies/custom-policy-selecting-a-subscription.png#lightbox)
 
     > [!NOTE]
-    > U moet aangepaste standaarden toevoegen op het abonnements niveau (of hoger) om ze te evalueren en weer te geven in Security Center. 
+    > U moet aangepaste standaarden toevoegen op abonnementsniveau (of hoger) om ze te evalueren en weer te geven in Security Center. 
     >
-    > Wanneer u een aangepaste standaard toevoegt, wijst deze een *initiatief* toe aan dat bereik. Daarom raden we u aan om het breedste bereik te selecteren dat vereist is voor de toewijzing.
+    > Wanneer u een aangepaste standaard toevoegt, wordt er een *initiatief aan dat* bereik toegewezen. Daarom raden we u aan het breedste bereik te selecteren dat is vereist voor die toewijzing.
 
-1. Klik op de pagina beveiligings beleid onder uw aangepaste initiatieven op **een aangepast initiatief toevoegen**.
+1. Klik op de pagina Beveiligingsbeleid onder Uw aangepaste initiatieven op **Een aangepast initiatief toevoegen.**
 
-    [![Klik op een aangepast initiatief toevoegen](media/custom-security-policies/custom-policy-add-initiative.png)](media/custom-security-policies/custom-policy-add-initiative.png#lightbox)
+    [![Klik op Een aangepast initiatief toevoegen](media/custom-security-policies/custom-policy-add-initiative.png)](media/custom-security-policies/custom-policy-add-initiative.png#lightbox)
 
     De volgende pagina wordt geopend:
 
     ![Een beleid maken of toevoegen](media/custom-security-policies/create-or-add-custom-policy.png)
 
-1. Bekijk op de pagina aangepaste initiatieven toevoegen de lijst met aangepaste beleids regels die al zijn gemaakt in uw organisatie. Als u een account wilt toewijzen aan uw abonnement, klikt u op **toevoegen**. Als er geen initiatief in de lijst is die aan uw behoeften voldoet, kunt u deze stap overs Laan.
+1. Bekijk op de pagina Aangepaste initiatieven toevoegen de lijst met aangepaste beleidsregels die al in uw organisatie zijn gemaakt. Als u een abonnement ziet dat u wilt toewijzen aan uw abonnement, klikt u op **Toevoegen.** Als er geen initiatief in de lijst staat dat aan uw behoeften voldoet, kunt u deze stap overslaan.
 
 1. Een nieuw aangepast initiatief maken:
 
-    1. Klik op **nieuwe maken**.
+    1. Klik **op Nieuwe maken.**
     1. Voer de locatie en naam van de definitie in.
-    1. Selecteer het beleid dat u wilt insluiten en klik op **toevoegen**.
-    1. Voer de gewenste para meters in.
+    1. Selecteer de beleidsregels die u wilt opnemen en klik op **Toevoegen.**
+    1. Voer de gewenste parameters in.
     1. Klik op **Opslaan**.
-    1. Klik op de pagina aangepaste initiatieven toevoegen op vernieuwen. Uw nieuwe initiatief wordt weer gegeven als beschikbaar.
-    1. Klik op **toevoegen** en wijs deze toe aan uw abonnement.
+    1. Klik op de pagina Aangepaste initiatieven toevoegen op Vernieuwen. Uw nieuwe initiatief wordt weergegeven als beschikbaar.
+    1. Klik **op Toevoegen** en wijs het toe aan uw abonnement.
 
     > [!NOTE]
-    > Voor het maken van nieuwe initiatieven zijn referenties van abonnements eigenaren vereist. Zie [machtigingen in azure Security Center](security-center-permissions.md)voor meer informatie over Azure-rollen.
+    > Voor het maken van nieuwe initiatieven zijn referenties van abonnementseigenaars vereist. Zie Machtigingen in Azure Security Center voor [meer informatie over Azure-Azure Security Center.](security-center-permissions.md)
 
-    Het nieuwe initiatief gaat in op de volgende twee manieren:
+    Uw nieuwe initiatief wordt van kracht en u kunt de impact op de volgende twee manieren zien:
 
-    * Selecteer op de Security Center zijbalk onder beleids & naleving de optie naleving van **regelgeving**. Het compatibiliteits dashboard wordt geopend om uw nieuwe aangepaste initiatief naast de ingebouwde initiatieven weer te geven.
+    * Selecteer in Security Center zijbalk onder & naleving de optie **Naleving van regelgeving.** Het nalevingsdashboard wordt geopend om uw nieuwe aangepaste initiatief weer te geven naast de ingebouwde initiatieven.
     
-    * U ontvangt aanbevelingen als uw omgeving niet voldoet aan het beleid dat u hebt gedefinieerd.
+    * U krijgt nu aanbevelingen als uw omgeving niet het beleid volgt dat u hebt gedefinieerd.
 
-1. Als u de resulterende aanbevelingen voor uw beleid wilt zien, klikt u op de zijbalk op **aanbevelingen** om de pagina aanbevelingen te openen. De aanbevelingen worden weer gegeven met een aangepast label en zijn binnen ongeveer een uur beschikbaar.
+1. Als u de resulterende aanbevelingen voor uw beleid wilt zien, klikt u op **Aanbevelingen** in de zijbalk om de pagina met aanbevelingen te openen. De aanbevelingen worden weergegeven met het label Aangepast en zijn binnen ongeveer een uur beschikbaar.
 
     [![Aangepaste aanbevelingen](media/custom-security-policies/custom-policy-recommendations.png)](media/custom-security-policies/custom-policy-recommendations-in-context.png#lightbox)
 
@@ -78,31 +78,31 @@ Zoals beschreven in [de Azure Policy-documentatie](../governance/policy/concepts
 
 ::: zone pivot="rest-api"
 
-## <a name="configure-a-security-policy-in-azure-policy-using-the-rest-api"></a>Een beveiligings beleid configureren in Azure Policy met behulp van de REST API
+## <a name="configure-a-security-policy-in-azure-policy-using-the-rest-api"></a>Een beveiligingsbeleid configureren in Azure Policy met behulp van de REST API
 
-Als onderdeel van de systeem eigen integratie met Azure Policy, Azure Security Center kunt u de REST API van Azure Policy benutten om beleids toewijzingen te maken. De volgende instructies begeleiden u bij het maken van beleids toewijzingen, evenals het aanpassen van bestaande toewijzingen. 
+Als onderdeel van de systeemeigen integratie met Azure Policy, Azure Security Center u profiteren van de Azure Policy van REST API om beleidstoewijzingen te maken. De volgende instructies helpen u bij het maken van beleidstoewijzingen en het aanpassen van bestaande toewijzingen. 
 
-Belang rijke concepten in Azure Policy: 
+Belangrijke concepten in Azure Policy: 
 
-- Een **beleids definitie** is een regel 
+- Een **beleidsdefinitie** is een regel 
 
-- Een **initiatief** is een verzameling beleids definities (regels) 
+- Een **initiatief** is een verzameling beleidsdefinities (regels) 
 
-- Een **toewijzing** is een toepassing van een initiatief of een beleid voor een specifiek bereik (beheer groep, abonnement, enz.) 
+- Een **toewijzing** is een toepassing van een initiatief of een beleid voor een specifiek bereik (beheergroep, abonnement, enzovoort) 
 
-Security Center heeft een ingebouwd initiatief, Azure Security Bench Mark, dat alle beveiligings beleidsregels omvat. Als u het beleid van Security Center op uw Azure-resources wilt beoordelen, moet u een toewijzing maken voor de beheer groep of het abonnement dat u wilt beoordelen.
+Security Center heeft een ingebouwd initiatief, [Azure Security Benchmark,](https://docs.microsoft.com/security/benchmark/azure/introduction)dat al het beveiligingsbeleid bevat. Als u Security Center van uw Azure-resources wilt beoordelen, moet u een toewijzing maken voor de beheergroep of het abonnement dat u wilt beoordelen.
 
-Het ingebouwde initiatief heeft standaard alle beleids regels van Security Center ingeschakeld. U kunt ervoor kiezen om bepaalde beleids regels uit het ingebouwde initiatief uit te scha kelen. Als u bijvoorbeeld alle beleids regels van Security Center wilt Toep assen, met uitzonde ring van **Web Application firewall**, wijzigt u de waarde van de effect parameter van het beleid in **uitgeschakeld**.
+Voor het ingebouwde initiatief zijn Security Center standaard ingeschakeld. U kunt ervoor kiezen om bepaalde beleidsregels uit te schakelen vanuit het ingebouwde initiatief. Als u bijvoorbeeld alle beleidsregels van Security Center web **application firewall** wilt toepassen, wijzigt u de waarde van de effectparameter van het beleid in **Uitgeschakeld.**
 
 ## <a name="api-examples"></a>API-voorbeelden
 
-Vervang deze variabelen in de volgende voor beelden:
+Vervang in de volgende voorbeelden deze variabelen:
 
-- **{Scope}** Voer de naam in van de beheer groep of het abonnement waarop u het beleid toepast
-- **{policyAssignmentName}** Voer de naam van de relevante beleids toewijzing in
-- **{name}** Voer uw naam in of de naam van de beheerder die de beleids wijziging heeft goedgekeurd
+- **{scope}** voer de naam in van de beheergroep of het abonnement waarop u het beleid wilt toepassen
+- **{policyAssignmentName}** voer de naam van de relevante beleidstoewijzing in
+- **{name} voer** uw naam in of de naam van de beheerder die de beleidswijziging heeft goedgekeurd
 
-Dit voor beeld laat zien hoe u het ingebouwde Security Center initiatief toewijst aan een abonnement of beheer groep
+In dit voorbeeld ziet u hoe u het ingebouwde initiatief Security Center toewijzen aan een abonnement of beheergroep
  
  ```
     PUT  
@@ -131,13 +131,13 @@ Dit voor beeld laat zien hoe u het ingebouwde Security Center initiatief toewijs
     } 
  ```
 
-Dit voor beeld laat zien hoe u het ingebouwde Security Center initiatief toewijst aan een abonnement, waarbij het volgende beleid is uitgeschakeld: 
+In dit voorbeeld ziet u hoe u het ingebouwde Security Center toewijst aan een abonnement, met het volgende beleid uitgeschakeld: 
 
-- Systeem updates ("systemUpdatesMonitoringEffect") 
+- Systeemupdates ('systemUpdatesMonitoringEffect') 
 
-- Beveiligings configuraties ("systemConfigurationsMonitoringEffect") 
+- Beveiligingsconfiguraties ('systemConfigurationsMonitoringEffect') 
 
-- Endpoint Protection ("endpointProtectionMonitoringEffect") 
+- Endpoint Protection ('endpointProtectionMonitoringEffect') 
 
  ```
     PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}?api-version=2018-05-01 
@@ -172,7 +172,7 @@ Dit voor beeld laat zien hoe u het ingebouwde Security Center initiatief toewijs
     
     } 
  ```
-In dit voor beeld ziet u hoe u een toewijzing verwijdert:
+In dit voorbeeld ziet u hoe u een toewijzing verwijdert:
  ```
     DELETE   
     https://management.azure.com/{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}?api-version=2018-05-01 
@@ -181,16 +181,16 @@ In dit voor beeld ziet u hoe u een toewijzing verwijdert:
 ::: zone-end
 
 
-## <a name="enhance-your-custom-recommendations-with-detailed-information"></a>Verbeter uw aangepaste aanbevelingen met gedetailleerde informatie
+## <a name="enhance-your-custom-recommendations-with-detailed-information"></a>Uw aangepaste aanbevelingen verbeteren met gedetailleerde informatie
 
-De ingebouwde aanbevelingen die bij Azure Security Center worden geleverd, bevatten details zoals Ernst niveaus en herstel instructies. Als u dit type informatie wilt toevoegen aan uw aangepaste aanbevelingen zodat deze wordt weer gegeven in de Azure Portal of waar u toegang tot uw aanbevelingen hebt, moet u de REST API gebruiken. 
+De ingebouwde aanbevelingen die worden geleverd met Azure Security Center bevatten details zoals ernstniveaus en herstelinstructies. Als u dit type informatie wilt toevoegen aan uw aangepaste aanbevelingen, zodat deze wordt weergegeven in de Azure Portal of waar u uw aanbevelingen ook kunt openen, moet u de REST API. 
 
-U kunt de volgende twee soorten informatie toevoegen:
+De twee typen informatie die u kunt toevoegen zijn:
 
-- **RemediationDescription** : teken reeks
-- **Ernst** – Enum [laag, gemiddeld, hoog]
+- **RemediationDescription** – String
+- **Ernst :** enum [laag, gemiddeld, hoog]
 
-De meta gegevens moeten worden toegevoegd aan de beleids definitie voor een beleid dat deel uitmaakt van het aangepaste initiatief. Deze moet in de eigenschap ' Security Center ' staan, zoals wordt weer gegeven:
+De metagegevens moeten worden toegevoegd aan de beleidsdefinitie voor een beleid dat deel uitmaakt van het aangepaste initiatief. Dit moet de eigenschap securityCenter zijn, zoals wordt weergegeven:
 
 ```json
  "metadata": {
@@ -200,7 +200,7 @@ De meta gegevens moeten worden toegevoegd aan de beleids definitie voor een bele
     },
 ```
 
-Hieronder ziet u een voor beeld van een aangepast beleid met de eigenschap meta gegevens/Security Center:
+Hieronder vindt u een voorbeeld van een aangepast beleid met inbegrip van de eigenschap metadata/securityCenter:
 
   ```json
   {
@@ -248,14 +248,14 @@ Hieronder ziet u een voor beeld van een aangepast beleid met de eigenschap meta 
 }
   ```
 
-Voor een ander voor beeld van het gebruik van de eigenschap Security Center raadpleegt u [deze sectie van de rest API-documentatie](/rest/api/securitycenter/assessmentsmetadata/createinsubscription#examples).
+Zie voor een ander voorbeeld van het gebruik van de eigenschap securityCenter deze sectie [van de REST API documentatie](/rest/api/securitycenter/assessmentsmetadata/createinsubscription#examples).
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u een aangepast beveiligings beleid maakt. 
+In dit artikel hebt u geleerd hoe u aangepaste beveiligingsbeleidsregels maakt. 
 
-Raadpleeg de volgende artikelen voor meer gerelateerde materialen: 
+Zie de volgende artikelen voor ander gerelateerd materiaal: 
 
-- [Het overzicht van beveiligings beleid](tutorial-security-policy.md)
-- [Een lijst met ingebouwde beveiligings beleidsregels](./policy-reference.md)
+- [Het overzicht van beveiligingsbeleid](tutorial-security-policy.md)
+- [Een lijst met de ingebouwde beveiligingsbeleidsregels](./policy-reference.md)

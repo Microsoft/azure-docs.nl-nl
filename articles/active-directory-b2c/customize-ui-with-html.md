@@ -1,45 +1,45 @@
 ---
-title: De gebruikers interface aanpassen met HTML-sjablonen
+title: De gebruikersinterface aanpassen met HTML-sjablonen
 titleSuffix: Azure AD B2C
-description: Meer informatie over het aanpassen van de gebruikers interface met HTML-sjablonen voor uw toepassingen die gebruikmaken van Azure Active Directory B2C.
+description: Meer informatie over het aanpassen van de gebruikersinterface met HTML-sjablonen voor uw toepassingen die gebruikmaken van Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/16/2021
+ms.date: 04/19/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e694a5f6144cee65be074d05ce0015d31bfdf65e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8f9f6dc1abd08c5e53f3d44a8f6ec1b3e20786ed
+ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104675822"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107717437"
 ---
-# <a name="customize-the-user-interface-with-html-templates-in-azure-active-directory-b2c"></a>De gebruikers interface aanpassen met HTML-sjablonen in Azure Active Directory B2C
+# <a name="customize-the-user-interface-with-html-templates-in-azure-active-directory-b2c"></a>De gebruikersinterface aanpassen met HTML-sjablonen in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
-De gebruikers interface die Azure Active Directory B2C (Azure AD B2C) aan uw klanten wordt weer gegeven, kunt u voorzien van een naadloze gebruikers ervaring in uw toepassing. Deze ervaring omvat het aanmelden, aanmelden, het bewerken van profielen en het opnieuw instellen van wacht woorden. Dit artikel bevat een inleiding tot de methoden voor het aanpassen van de gebruikers interface (UI). 
+De huisstijl en het aanpassen van de gebruikersinterface Azure Active Directory B2C (Azure AD B2C) wordt weergegeven aan uw klanten, zorgt voor een naadloze gebruikerservaring in uw toepassing. Deze ervaringen omvatten registreren, aanmelden, profiel bewerken en wachtwoord opnieuw instellen. In dit artikel worden de methoden voor het aanpassen van de gebruikersinterface (UI) beschreven. 
 
 > [!TIP]
-> Als u alleen het banner logo, de achtergrond afbeelding en de achtergrond kleur van de pagina's van uw gebruikers stroom wilt wijzigen, kunt u de [bedrijfs huisstijl](customize-ui.md) functie proberen.
+> Als u alleen het bannerlogo, de achtergrondafbeelding en de achtergrondkleur van uw gebruikersstroompagina's wilt wijzigen, kunt u de functie [Huisstijl](customize-ui.md) van uw bedrijf proberen.
 
 ## <a name="custom-html-and-css-overview"></a>Overzicht van aangepaste HTML en CSS
 
-Azure AD B2C code wordt uitgevoerd in de browser van uw klant door gebruik te maken van [Cross-Origin Resource Sharing (CORS)](https://www.w3.org/TR/cors/). Tijdens runtime wordt inhoud geladen vanuit een URL die u opgeeft in uw gebruikers stroom of aangepast beleid. Elke pagina in de gebruikers ervaring laadt de inhoud van de URL die u voor die pagina opgeeft. Nadat de inhoud is geladen vanuit uw URL, wordt deze samengevoegd met een HTML-fragment dat is ingevoegd door Azure AD B2C, waarna de pagina wordt weer gegeven aan uw klant.
+Azure AD B2C code wordt uitgevoerd in de browser van uw klant met behulp [van Cross-Origin Resource Sharing (CORS).](https://www.w3.org/TR/cors/) Tijdens runtime wordt inhoud geladen vanaf een URL die u in uw gebruikersstroom of aangepast beleid opgeeft. Elke pagina in de gebruikerservaring laadt de inhoud van de URL die u voor die pagina opgeeft. Nadat inhoud is geladen vanuit uw URL, wordt deze samengevoegd met een HTML-fragment dat is ingevoegd door Azure AD B2C, waarna de pagina wordt weergegeven aan uw klant.
 
-![Inhouds marge voor aangepaste pagina](./media/customize-ui-with-html/html-content-merging.png)
+![Marge voor aangepaste pagina-inhoud](./media/customize-ui-with-html/html-content-merging.png)
 
 ### <a name="custom-html-page-content"></a>Aangepaste HTML-pagina-inhoud
 
-Maak een HTML-pagina met uw eigen huis stijl om uw aangepaste pagina-inhoud te leveren. Deze pagina kan een statische `*.html` pagina zijn of een dynamische pagina zoals .net, Node.js of php.
+Maak een HTML-pagina met uw eigen huisstijl om uw aangepaste pagina-inhoud te leveren. Deze pagina kan een statische pagina zijn of een dynamische pagina zoals `*.html` .NET, Node.js of PHP.
 
-De inhoud van uw aangepaste pagina kan HTML-elementen bevatten, waaronder CSS en Java script, maar kan geen onbeveiligde elementen zoals iframes bevatten. Het enige vereiste element is een div-element waarvan is `id` ingesteld op `api` , zoals dit is `<div id="api"></div>` in de HTML-pagina.
+Uw aangepaste pagina-inhoud kan html-elementen bevatten, waaronder CSS en JavaScript, maar kan geen onveilige elementen bevatten, zoals iframes. Het enige vereiste element is een div-element met `id` ingesteld op , zoals dit element op uw `api` `<div id="api"></div>` HTML-pagina.
 
 ```html
 <!DOCTYPE html>
@@ -53,48 +53,48 @@ De inhoud van uw aangepaste pagina kan HTML-elementen bevatten, waaronder CSS en
 </html>
 ```
 
-#### <a name="customize-the-default-azure-ad-b2c-pages"></a>De standaard Azure AD B2C pagina's aanpassen
+#### <a name="customize-the-default-azure-ad-b2c-pages"></a>De standaardpagina'Azure AD B2C aanpassen
 
-In plaats van uw aangepaste pagina-inhoud helemaal zelf te maken, kunt u de standaard pagina-inhoud van Azure AD B2C's aanpassen.
+In plaats van de inhoud van uw aangepaste pagina volledig opnieuw te maken, kunt u de standaardpagina-inhoud Azure AD B2C van uw pagina aanpassen.
 
-De volgende tabel bevat de standaard pagina-inhoud die wordt verschaft door Azure AD B2C. Down load de bestanden en gebruik deze als uitgangs punt voor het maken van uw eigen aangepaste pagina's.
+De volgende tabel bevat de standaardpagina-inhoud van Azure AD B2C. Download de bestanden en gebruik deze als uitgangspunt voor het maken van uw eigen aangepaste pagina's.
 
-| Standaard pagina | Description | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
+| Standaardpagina | Description | Id van inhoudsdefinitie<br/>(alleen aangepast beleid) |
 |:-----------------------|:--------|-------------|
-| [exception.html](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Fout pagina**. Deze pagina wordt weer gegeven wanneer er een uitzonde ring of een fout wordt aangetroffen. | *API. error* |
-| [selfasserted.html](https://login.microsoftonline.com/static/tenant/default/selfAsserted.cshtml) |  **Zelfbevestigende pagina**. Gebruik dit bestand als aangepaste pagina-inhoud voor een aanmeldings pagina voor een sociaal account, een aanmeldings pagina voor een lokaal account, een aanmeldings pagina voor het lokale account, het opnieuw instellen van wacht woorden en meer. Het formulier kan verschillende invoer besturings elementen bevatten, zoals een tekstinvoervak, een vak voor het invoeren van een wacht woord, een keuze rondje, vervolg keuze vakjes en meervoudige selectie vakjes. | *API. localaccountsignin*, *API. localaccountsignup*, *API. localaccountpasswordreset*, *API. selfasserted* |
-| [multifactor-1.0.0.html](https://login.microsoftonline.com/static/tenant/default/multifactor-1.0.0.cshtml) | **Multi-factor Authentication-pagina**. Op deze pagina kunnen gebruikers hun telefoon nummers (met behulp van tekst of spraak) verifiëren tijdens het registreren of aanmelden. | *API. Phone factor* |
-| [updateprofile.html](https://login.microsoftonline.com/static/tenant/default/updateProfile.cshtml) | **Pagina Profiel bijwerken**. Deze pagina bevat een formulier dat gebruikers kunnen gebruiken om hun profiel bij te werken. Deze pagina is vergelijkbaar met de aanmeldings pagina voor het sociaal account, met uitzonde ring van de velden voor het invoeren van wacht woorden. | *API. selfasserted. profileupdate* |
-| [unified.html](https://login.microsoftonline.com/static/tenant/default/unified.cshtml) | **Uniforme registratie-of aanmeldings pagina**. Op deze pagina worden de gebruikers registratie en het aanmeldings proces afgehandeld. Gebruikers kunnen ondernemings-id-providers, sociale id-providers, zoals Facebook of Google + of lokale accounts gebruiken. | *API. signuporsignin* |
+| [exception.html](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Foutpagina**. Deze pagina wordt weergegeven wanneer er een uitzondering of fout wordt aangetroffen. | *api.error* |
+| [selfasserted.html](https://login.microsoftonline.com/static/tenant/default/selfAsserted.cshtml) |  **Zelf-bevestigd pagina**. Gebruik dit bestand als aangepaste pagina-inhoud voor een aanmeldingspagina voor sociale account, een aanmeldingspagina voor een lokaal account, een aanmeldingspagina voor een lokaal account, wachtwoord opnieuw instellen en meer. Het formulier kan verschillende invoerbesturingselementen bevatten, zoals een tekstinvoervak, een wachtwoordinvoervak, een keuzerondje, vervolgkeuzevakken met één selectie en selectievakjes voor meervoudige selectie. | *api.localaccountsignin*, *api.localaccountsignup*, *api.localaccountpasswordreset*, *api.selfasserted* |
+| [multifactor-1.0.0.html](https://login.microsoftonline.com/static/tenant/default/multifactor-1.0.0.cshtml) | **Pagina Meervoudige verificatie.** Op deze pagina kunnen gebruikers hun telefoonnummers controleren (met behulp van tekst of spraak) tijdens het registreren of aanmelden. | *api.phonefactor* |
+| [updateprofile.html](https://login.microsoftonline.com/static/tenant/default/updateProfile.cshtml) | **Pagina profielupdate**. Deze pagina bevat een formulier dat gebruikers kunnen openen om hun profiel bij te werken. Deze pagina is vergelijkbaar met de aanmeldingspagina van het sociale account, met uitzondering van de velden voor wachtwoordinvoer. | *api.selfasserted.profileupdate* |
+| [unified.html](https://login.microsoftonline.com/static/tenant/default/unified.cshtml) | **Uniforme aanmeldings- of aanmeldingspagina**. Op deze pagina wordt het aanmeldingsproces voor gebruikers verwerkt. Gebruikers kunnen zakelijke id-providers, id-providers voor sociale netwerken, zoals Facebook of Google+, of lokale accounts gebruiken. | *api.signuporsignin* |
 
 ## <a name="hosting-the-page-content"></a>De pagina-inhoud hosten
 
-Wanneer u uw eigen HTML-en CSS-bestanden gebruikt om de gebruikers interface aan te passen, moet u de inhoud van de gebruikers interface hosten op een openbaar beschikbaar HTTPS-eind punt dat CORS ondersteunt. Bijvoorbeeld [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md), [Azure-app Services](../app-service/index.yml), webservers, cdn's, AWS S3 of bestands share systemen.
+Wanneer u uw eigen HTML- en CSS-bestanden gebruikt om de gebruikersinterface aan te passen, host u uw UI-inhoud op elk openbaar beschikbaar HTTPS-eindpunt dat CORS ondersteunt. Bijvoorbeeld [Azure Blob Storage,](../storage/blobs/storage-blobs-introduction.md) [Azure-app Services,](../app-service/index.yml)webservers, CDN's, AWS S3 of systemen voor bestandsdeling.
 
-## <a name="guidelines-for-using-custom-page-content"></a>Richt lijnen voor het gebruik van aangepaste pagina-inhoud
+## <a name="guidelines-for-using-custom-page-content"></a>Richtlijnen voor het gebruik van aangepaste pagina-inhoud
 
-- Gebruik een absolute URL wanneer u externe resources zoals media, CSS en Java script-bestanden opneemt in uw HTML-bestand.
-- Met de [pagina-indeling versie](page-layout.md) 1.2.0 en hoger kunt u het `data-preload="true"` kenmerk toevoegen aan uw HTML-tags om de laad volgorde voor CSS en Java script te bepalen. Met wordt `data-preload="true"` de pagina samengesteld voordat deze wordt weer gegeven aan de gebruiker. Met dit kenmerk wordt voor komen dat de pagina wordt ' Flik keren ' door het CSS-bestand vooraf te laden, zonder dat de HTML ongedaan wordt weer gegeven voor de gebruiker. Het volgende HTML-code fragment toont het gebruik van de `data-preload` tag.
+- Gebruik een absolute URL wanneer u externe resources, zoals media, CSS en JavaScript-bestanden, in uw HTML-bestand op te nemen.
+- Met [pagina-indelingsversie](page-layout.md) 1.2.0 en hoger kunt u het kenmerk toevoegen aan uw HTML-tags om de laadorder voor CSS en `data-preload="true"` JavaScript te bepalen. Met `data-preload="true"` wordt de pagina samengesteld voordat deze wordt weergegeven aan de gebruiker. Dit kenmerk helpt voorkomen dat de pagina wordt 'gesereerd' door het CSS-bestand vooraf te laden, zonder dat de niet-gestijlde HTML aan de gebruiker wordt weergegeven. Het volgende HTML-codefragment toont het gebruik van de `data-preload` tag.
   ```HTML
   <link href="https://path-to-your-file/sample.css" rel="stylesheet" type="text/css" data-preload="true"/>
   ```
-- U wordt aangeraden te beginnen met de standaard pagina-inhoud en deze boven op het scherm te bouwen.
-- U kunt [Java script toevoegen](javascript-and-page-layout.md) aan uw aangepaste inhoud.
-- Ondersteunde browser versies zijn:
-  - Internet Explorer 11, 10 en micro soft Edge
+- We raden u aan om te beginnen met de standaardpagina-inhoud en deze verder te bouwen.
+- U kunt [JavaScript opnemen](javascript-and-page-layout.md) in uw aangepaste inhoud.
+- Ondersteunde browserversies zijn:
+  - Internet Explorer 11, 10 en Microsoft Edge
   - Beperkte ondersteuning voor Internet Explorer 9 en 8
-  - Google Chrome 42,0 en hoger
-  - Mozilla Firefox 38,0 en hoger
+  - Google Chrome 42.0 en hoger
+  - Mozilla Firefox 38.0 en hoger
   - Safari voor iOS en macOS, versie 12 en hoger
-- Vanwege beveiligings beperkingen wordt Azure AD B2C geen ondersteuning geboden voor `frame` , `iframe` of `form` HTML-elementen.
+- Vanwege beveiligingsbeperkingen biedt Azure AD B2C geen ondersteuning voor `frame` `iframe` HTML-elementen , `form` of .
 
 ## <a name="localize-content"></a>Inhoud lokaliseren
 
-U kunt uw HTML-inhoud lokaliseren door [taal aanpassing](language-customization.md) in te scha kelen in uw Azure AD B2C-Tenant. Als u deze functie inschakelt, kunnen Azure AD B2C de OpenID Connect Connect-para meter `ui_locales` naar uw eind punt door sturen. De inhouds server kan deze para meter gebruiken om taalspecifieke HTML-pagina's op te geven.
+U lokaliseert uw HTML-inhoud door [taalaanpassing in te](language-customization.md) Azure AD B2C tenant. Door deze functie in te Azure AD B2C u de parameter OpenID Connect `ui_locales` doorsturen naar uw eindpunt. Uw inhoudsserver kan deze parameter gebruiken om taalspecifieke HTML-pagina's op te geven.
 
-Inhoud kan vanaf verschillende locaties worden opgehaald op basis van de land instelling die wordt gebruikt. In het eind punt waarvoor CORS is ingeschakeld, stelt u een mapstructuur in om inhoud voor specifieke talen te hosten. U belt het juiste nummer als u de Joker teken waarde gebruikt `{Culture:RFC5646}` .
+Inhoud kan van verschillende locaties worden gehaald op basis van de gebruikte landen. In het eindpunt met CORS-functie stelt u een mapstructuur in voor het hosten van inhoud voor specifieke talen. U roept het juiste aan als u de jokertekenwaarde `{Culture:RFC5646}` gebruikt.
 
-Uw aangepaste pagina-URI kan er bijvoorbeeld als volgt uitzien:
+Uw aangepaste pagina-URI kan er bijvoorbeeld als volgende uitzien:
 
 ```http
 https://contoso.blob.core.windows.net/{Culture:RFC5646}/myHTML/unified.html
@@ -108,23 +108,23 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 
 ## <a name="custom-page-content-walkthrough"></a>Overzicht van aangepaste pagina-inhoud
 
-Hier volgt een overzicht van het proces:
+Hier is een overzicht van het proces:
 
-1. Een locatie voorbereiden voor het hosten van uw aangepaste pagina-inhoud (een met open bare toegang tot een HTTPS-eind punt waarvoor CORS is ingeschakeld).
-1. Een standaard pagina-inhouds bestand downloaden en aanpassen, bijvoorbeeld `unified.html` .
-1. Publiceer uw aangepaste pagina-inhoud uw openbaar beschik bare HTTPS-eind punt.
-1. CORS (cross-Origin Resource Sharing) instellen voor uw web-app.
+1. Bereid een locatie voor om uw aangepaste pagina-inhoud te hosten (een openbaar toegankelijk HTTPS-eindpunt met CORS-functie).
+1. Download en pas een standaardbestand voor pagina-inhoud aan, bijvoorbeeld `unified.html` .
+1. Publiceer de inhoud van uw aangepaste pagina uw openbaar beschikbare HTTPS-eindpunt.
+1. Stel Cross-Origin Resource Sharing (CORS) in voor uw web-app.
 1. Wijs uw beleid naar de inhouds-URI van uw aangepaste beleid.
 
 ## <a name="prerequisites"></a>Vereisten
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
-### <a name="1-create-your-html-content"></a>1. uw HTML-inhoud maken
+### <a name="1-create-your-html-content"></a>1. Uw HTML-inhoud maken
 
-Maak een aangepaste pagina-inhoud met de merk naam van uw product in de titel.
+Maak een aangepaste pagina-inhoud met de merknaam van uw product in de titel.
 
-1. Kopieer het volgende HTML-code fragment. Het is een goed gevormde HTML5 met een leeg element dat *\<div id="api"\>\</div\>* zich binnen de Tags bevindt *\<body\>* . Dit element geeft aan waar Azure AD B2C inhoud moet worden ingevoegd.
+1. Kopieer het volgende HTML-codefragment. Het is goed gevormde HTML5 met een leeg element met de naam *\<div id="api"\>\</div\>* dat zich in de tags *\<body\>* bevindt. Dit element geeft aan waar Azure AD B2C inhoud moet worden ingevoegd.
 
    ```html
    <!DOCTYPE html>
@@ -138,8 +138,8 @@ Maak een aangepaste pagina-inhoud met de merk naam van uw product in de titel.
    </html>
    ```
 
-1. Plak het gekopieerde fragment in een tekst editor
-1. Gebruik CSS om de UI-elementen die Azure AD B2C invoegen in uw pagina, te opmaken. In het volgende voor beeld ziet u een eenvoudig CSS-bestand dat ook instellingen bevat voor de door aanmeldingen geïnjecteerde HTML-elementen:
+1. Plak het gekopieerde fragment in een teksteditor
+1. Gebruik CSS om de gebruikersinterface-elementen te Azure AD B2C op uw pagina worden geplaatst. In het volgende voorbeeld ziet u een eenvoudig CSS-bestand dat ook instellingen bevat voor de in de aanmelding geïnjecteerde HTML-elementen:
 
     ```css
     h1 {
@@ -164,78 +164,78 @@ Maak een aangepaste pagina-inhoud met de merk naam van uw product in de titel.
     }
     ```
 
-1.  Sla het bestand op als *customize-ui.html*.
+1.  Sla het bestand op *alscustomize-ui.html*.
 
 > [!NOTE]
-> HTML-formulier elementen worden verwijderd vanwege beveiligings beperkingen als u login.microsoftonline.com gebruikt. Als u HTML-formulier elementen wilt gebruiken in uw aangepaste HTML-inhoud, [gebruikt u b2clogin.com](b2clogin.md).
+> HTML-formulierelementen worden verwijderd vanwege beveiligingsbeperkingen als u een login.microsoftonline.com. Als u HTML-formulierelementen wilt gebruiken in uw aangepaste HTML-inhoud, gebruikt [u b2clogin.com](b2clogin.md).
 
-### <a name="2-create-an-azure-blob-storage-account"></a>2. Maak een Azure Blob-opslag account
+### <a name="2-create-an-azure-blob-storage-account"></a>2. Een Azure Blob Storage-account maken
 
-In dit artikel gebruiken we Azure Blob-opslag om onze inhoud te hosten. U kunt ervoor kiezen om uw inhoud op een webserver te hosten, maar u moet [CORS inschakelen op de webserver](https://enable-cors.org/server.html).
+In dit artikel gebruiken we Azure Blob Storage om onze inhoud te hosten. U kunt ervoor kiezen om uw inhoud op een webserver te hosten, maar u moet [CORS inschakelen op uw webserver.](https://enable-cors.org/server.html)
 
-Als u uw HTML-inhoud in Blob Storage wilt hosten, voert u de volgende stappen uit:
+Voer de volgende stappen uit om uw HTML-inhoud te hosten in Blob Storage:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Selecteer in het **hub** -menu de optie **Nieuw**  >  **opslag**  >  **opslag account**.
-1. Selecteer een **abonnement** voor uw opslag account.
-1. Maak een **resource groep** of selecteer een bestaande.
-1. Voer een unieke **naam** in voor uw opslag account.
-1. Selecteer de **geografische locatie** voor uw opslag account.
-1. **Implementatie model** kan **Resource Manager** blijven.
-1. **Prestaties** kunnen **standaard** blijven.
-1. Wijzig het **type account** in **Blob Storage**.
-1. **Replicatie** kan **Ra-GRS** blijven.
-1. De **toegangs laag** kan **Hot** blijven.
-1. Selecteer **controleren + maken** om het opslag account te maken.
-    Nadat de implementatie is voltooid, wordt de pagina **opslag account** automatisch geopend.
+1. Selecteer in **het** menu Hub de optie **Nieuw**  >    >  **opslagaccount.**
+1. Selecteer een **abonnement** voor uw opslagaccount.
+1. Maak een **resourcegroep** of selecteer een bestaande.
+1. Voer een unieke **naam in** voor uw opslagaccount.
+1. Selecteer de **geografische locatie** voor uw opslagaccount.
+1. **Het implementatiemodel** kan **Resource Manager.**
+1. **Prestaties** kunnen Standard **blijven.**
+1. Wijzig **Soort account** in Blob **Storage**.
+1. **Replicatie** kan **RA-GRS blijven.**
+1. **De toegangslaag** kan **Hot blijven.**
+1. Selecteer **Beoordelen en maken om** het opslagaccount te maken.
+    Nadat de implementatie is voltooid, wordt **de pagina Opslagaccount** automatisch geopend.
 
-#### <a name="21-create-a-container"></a>2,1 een container maken
+#### <a name="21-create-a-container"></a>2.1 Een container maken
 
-Als u een open bare container in Blob Storage wilt maken, voert u de volgende stappen uit:
+Voer de volgende stappen uit om een openbare container te maken in Blob Storage:
 
-1. Onder **BLOB service** in het linkermenu selecteert u **blobs**.
-1. Selecteer **+ container**.
-1. Voer *basis* in bij **naam**. De naam kan een naam zijn van uw keuze, bijvoorbeeld *Contoso*, maar in dit voor beeld wordt het *hoofd* gebruikt voor eenvoud.
-1. Selecteer **BLOB** voor **openbaar toegangs niveau** en klik vervolgens op **OK**.
-1. Selecteer **hoofd** om de nieuwe container te openen.
+1. Selecteer **Blob service** blobs in het menu aan **de linkerkant.**
+1. Selecteer **+Container.**
+1. Voer **bij Naam** de *hoofdmap in.* De naam kan een naam van uw keuze zijn, bijvoorbeeld *contoso*, maar we gebruiken *de* hoofdmap in dit voorbeeld voor het gemak.
+1. Bij **Openbaar toegangsniveau** selecteert u **Blob** en vervolgens **OK.**
+1. Selecteer **root om** de nieuwe container te openen.
 
-#### <a name="22-upload-your-custom-page-content-files"></a>2,2 uw aangepaste pagina met inhouds bestanden uploaden
+#### <a name="22-upload-your-custom-page-content-files"></a>2.2 Uw aangepaste pagina-inhoudsbestanden uploaden
 
 1. Selecteer **Uploaden**.
-1. Selecteer het mappictogram naast **een bestand selecteren**.
-1. Navigeer naar en selecteer **customize-ui.html**, die u eerder hebt gemaakt in de sectie UI-aanpassing van de pagina.
-1. Als u wilt uploaden naar een submap, vouwt u **Geavanceerd** uit en voert u de naam van een map in **uploaden naar map** in.
+1. Selecteer het mappictogram naast **Een bestand selecteren.**
+1. Navigeer naar en **selecteercustomize-ui.html**, die u eerder hebt gemaakt in de sectie Pagina-UI-aanpassing.
+1. Als u wilt uploaden naar een submap, vouwt u **Geavanceerd** uit en voert u een mapnaam in **Uploaden naar map in.**
 1. Selecteer **Uploaden**.
-1. Selecteer de **customize-ui.html** -blob die u hebt geüpload.
-1. Selecteer rechts van het tekstvak **URL** het pictogram **kopiëren naar klem bord** om de URL naar het klem bord te kopiëren.
-1. Navigeer in webbrowser naar de URL die u hebt gekopieerd om te controleren of de blob die u hebt geüpload, toegankelijk is. Als het niet toegankelijk is, bijvoorbeeld als er een fout optreedt `ResourceNotFound` , controleert u of het toegangs type voor de container is ingesteld op **BLOB**.
+1. Selecteer de **customize-ui.html** blob die u hebt geüpload.
+1. Selecteer rechts van het **tekstvak URL** het pictogram Naar **klembord** kopiëren om de URL naar het klembord te kopiëren.
+1. Navigeer in de webbrowser naar de URL die u hebt gekopieerd om te controleren of de blob die u hebt geüpload toegankelijk is. Als deze niet toegankelijk is, bijvoorbeeld als er een fout wordt weergegeven, moet u ervoor zorgen dat het toegangstype voor de `ResourceNotFound` container is ingesteld op **blob**.
 
 ### <a name="3-configure-cors"></a>3. CORS configureren
 
-Configureer de Blob-opslag voor cross-Origin-resource delen door de volgende stappen uit te voeren:
+Configureer Blob Storage voor Cross-Origin Resource Sharing door de volgende stappen uit te voeren:
 
 1. Selecteer in het menu de optie **CORS**.
-1. Geef `https://your-tenant-name.b2clogin.com` op bij **Toegestane oorsprongen**. Vervang `your-tenant-name` door de naam van uw Azure AD B2C-tenant. Bijvoorbeeld `https://fabrikam.b2clogin.com`. Gebruik alleen kleine letters bij het invoeren van de naam van uw Tenant.
-1. Voor **toegestane methoden** selecteert u beide `GET` en `OPTIONS` .
+1. Geef `https://your-tenant-name.b2clogin.com` op bij **Toegestane oorsprongen**. Vervang `your-tenant-name` door de naam van uw Azure AD B2C-tenant. Bijvoorbeeld `https://fabrikam.b2clogin.com`. Gebruik alle kleine letters bij het invoeren van de naam van uw tenant.
+1. Bij **Toegestane methoden** selecteert u `GET` zowel als `OPTIONS` .
 1. Voer bij **Toegestane headers** een asterisk (*) in.
 1. Voer bij **Zichtbare headers** een asterisk (*) in.
 1. Voer bij **Maximumleeftijd** 200 in.
 1. Selecteer **Opslaan**.
 
-#### <a name="31-test-cors"></a>CORS voor 3,1 testen
+#### <a name="31-test-cors"></a>3.1 CORS testen
 
 Controleer of u klaar bent door de volgende stappen uit te voeren:
 
-1. Herhaal de stap CORS configureren. Voer voor **toegestane oorsprongen**`https://www.test-cors.org`
-1. Ga naar [www.test-cors.org](https://www.test-cors.org/) 
-1. Plak in het vak **externe URL** de URL van uw HTML-bestand. Bijvoorbeeld: `https://your-account.blob.core.windows.net/root/azure-ad-b2c/unified.html`
-1. Selecteer **aanvraag verzenden**.
-    Het resultaat moet zijn `XHR status: 200` . 
-    Als u een fout bericht ontvangt, moet u ervoor zorgen dat de CORS-instellingen juist zijn. Mogelijk moet u ook de cache van de browser wissen of een persoonlijke browser sessie openen door op CTRL + SHIFT + P te drukken.
+1. Herhaal de stap CORS configureren. Bij **Toegestane oorsprongen** voert u in `https://www.test-cors.org`
+1. Navigeer [naar www.test-cors.org](https://www.test-cors.org/) 
+1. Plak in **het vak Externe URL** de URL van het HTML-bestand. Bijvoorbeeld: `https://your-account.blob.core.windows.net/root/azure-ad-b2c/unified.html`
+1. Selecteer **Aanvraag verzenden.**
+    Het resultaat moet `XHR status: 200` zijn. 
+    Als er een foutmelding wordt weergegeven, moet u ervoor zorgen dat uw CORS-instellingen juist zijn. Mogelijk moet u ook uw browsercache wissen of een privébrowsersessie openen door op Ctrl+Shift+P te drukken.
 
 ::: zone pivot="b2c-user-flow"
 
-### <a name="4-update-the-user-flow"></a>4. werk de stroom van de gebruiker bij
+### <a name="4-update-the-user-flow"></a>4. De gebruikersstroom bijwerken
 
 1. Kies linksboven in Azure Portal **Alle services**, zoek **Azure AD B2C** en selecteer dit.
 1. Selecteer **Gebruikersstromen** en vervolgens de gebruikersstroom *B2C_1_signupsignin1*.
@@ -243,7 +243,7 @@ Controleer of u klaar bent door de volgende stappen uit te voeren:
 1. Geef in **URI voor aangepaste pagina** de URI op voor het eerder gemaakte bestand *custom-ui.html*.
 1. Klik bovenaan de pagina op **Opslaan**.
 
-### <a name="5-test-the-user-flow"></a>5. de gebruikers stroom testen
+### <a name="5-test-the-user-flow"></a>5. De gebruikersstroom testen
 
 1. Selecteer in uw Azure AD B2C-tenant de optie **Gebruikersstromen** en vervolgens de gebruikersstroom *B2C_1_signupsignin1*.
 1. Klik bovenaan de pagina op **Gebruikersstroom uitvoeren**.
@@ -257,18 +257,18 @@ Als het goed is, ziet u een pagina die lijkt op het volgende voorbeeld, met de e
 
 ::: zone pivot="b2c-custom-policy"
 
-### <a name="4-modify-the-extensions-file"></a>4. het extensie bestand wijzigen
+### <a name="4-modify-the-extensions-file"></a>4. Het extensiebestand wijzigen
 
-Als u de UI-aanpassing wilt configureren, kopieert u de **ContentDefinition** en de onderliggende elementen van het basis bestand naar het extensie bestand.
+Als u ui-aanpassing wilt configureren, kopieert **u ContentDefinition** en de onderliggende elementen van het basisbestand naar het extensiebestand.
 
-1. Open het basis bestand van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkBase.xml`**</em> . Dit basis bestand is een van de beleids bestanden in het aangepaste beleids Starter Pack, die u in de vereiste moet hebben verkregen, aan de [slag met aangepast beleid](./custom-policy-get-started.md).
-1. Zoek en kopieer de volledige inhoud van het **ContentDefinitions** -element.
-1. Open het extensie bestand. Bijvoorbeeld *TrustFrameworkExtensions.xml*. Zoek het element **BuildingBlocks** . Als het element niet bestaat, voegt u het toe.
-1. Plak de volledige inhoud van het **ContentDefinitions** -element dat u hebt gekopieerd als onderliggend element van het **Building Blocks** -object.
-1. Zoek naar het **ContentDefinition** -element dat zich `Id="api.signuporsignin"` in de XML bevinden die u hebt gekopieerd.
-1. Wijzig de waarde van **LoadUri** in de URL van het HTML-bestand dat u hebt geüpload naar opslag. Bijvoorbeeld `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
+1. Open het basisbestand van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkBase.xml`**</em> . Dit basisbestand is een van de beleidsbestanden die zijn opgenomen in het pakket voor aangepaste beleidsstarters, dat u moet hebben verkregen in de vereiste Aan de slag [met aangepaste beleidsregels.](./tutorial-create-user-flows.md?pivots=b2c-custom-policy)
+1. Zoek en kopieer de volledige inhoud van het **element ContentDefinitions.**
+1. Open het extensiebestand. U kunt *bijvoorbeeldTrustFrameworkExtensions.xml*. Zoek het **element BuildingBlocks.** Als het element niet bestaat, voegt u het toe.
+1. Plak de volledige inhoud van het **element ContentDefinitions** dat u hebt gekopieerd als onderliggend element van **het element BuildingBlocks.**
+1. Zoek het **element ContentDefinition** dat in de XML bevat `Id="api.signuporsignin"` die u hebt gekopieerd.
+1. Wijzig de waarde van **LoadUri** in de URL van het HTML-bestand dat u naar de opslag hebt geüpload. Bijvoorbeeld `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
 
-    Het aangepaste beleid moet eruitzien zoals in het volgende code fragment:
+    Uw aangepaste beleid moet er uitzien als het volgende codefragment:
 
     ```xml
     <BuildingBlocks>
@@ -285,30 +285,30 @@ Als u de UI-aanpassing wilt configureren, kopieert u de **ContentDefinition** en
     </BuildingBlocks>
     ```
 
-1. Sla het bestand met extensies op.
+1. Sla het extensiebestand op.
 
-### <a name="5-upload-and-test-your-updated-custom-policy"></a>5. uw bijgewerkte aangepaste beleid uploaden en testen
+### <a name="5-upload-and-test-your-updated-custom-policy"></a>5. Uw bijgewerkte aangepaste beleid uploaden en testen
 
-#### <a name="51-upload-the-custom-policy"></a>5,1 het aangepaste beleid uploaden
+#### <a name="51-upload-the-custom-policy"></a>5.1 Het aangepaste beleid uploaden
 
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-tenant bevat door in het bovenste menu te klikken op het filter **Map en abonnement** en de map te kiezen waarin de tenant zich bevindt.
 1. Zoek en selecteer **Azure AD B2C**.
-1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
-1. Selecteer **aangepast beleid uploaden**.
-1. Upload het extensie bestand dat u eerder hebt gewijzigd.
+1. Selecteer **onder** Beleid de **optie Identity Experience Framework.**
+1. Selecteer **Aangepast beleid uploaden.**
+1. Upload het extensiebestand dat u eerder hebt gewijzigd.
 
-#### <a name="52-test-the-custom-policy-by-using-run-now"></a>5,2 het aangepaste beleid testen met behulp van **nu uitvoeren**
+#### <a name="52-test-the-custom-policy-by-using-run-now"></a>5.2 Het aangepaste beleid testen met Nu **uitvoeren**
 
-1. Selecteer het beleid dat u hebt geüpload en selecteer **nu uitvoeren**.
-1. U moet zich kunnen aanmelden met behulp van een e-mail adres.
+1. Selecteer het beleid dat u hebt geüpload en selecteer vervolgens **Nu uitvoeren.**
+1. U moet zich kunnen registreren met behulp van een e-mailadres.
 
-## <a name="configure-dynamic-custom-page-content-uri"></a>URI voor dynamische aangepaste pagina-inhoud configureren
+## <a name="configure-dynamic-custom-page-content-uri"></a>Dynamische URI voor aangepaste pagina-inhoud configureren
 
-Door Azure AD B2C aangepast beleid te gebruiken, kunt u een para meter verzenden in het URL-pad of een query reeks. Door de parameter door te geven aan uw HTML-eindpunt, kunt u de pagina-inhoud dynamisch wijzigen. U kunt bijvoorbeeld de achtergrondafbeelding op de registratie- of aanmeldingspagina van Azure AD B2C wijzigen, op basis van een parameter die u doorgeeft vanuit uw web- of mobiele toepassing. De para meter kan elke [claim resolver](claim-resolver-overview.md)zijn, zoals de toepassings-id, taal-id of para meter voor de aangepaste query reeks, zoals `campaignId` .
+Door aangepaste Azure AD B2C te gebruiken, kunt u een parameter in het URL-pad of een queryreeks verzenden. Door de parameter door te geven aan uw HTML-eindpunt, kunt u de pagina-inhoud dynamisch wijzigen. U kunt bijvoorbeeld de achtergrondafbeelding op de registratie- of aanmeldingspagina van Azure AD B2C wijzigen, op basis van een parameter die u doorgeeft vanuit uw web- of mobiele toepassing. De parameter kan elke [claim resolver](claim-resolver-overview.md)zijn, zoals de toepassings-id, taal-id of aangepaste queryreeksparameter, zoals `campaignId` .
 
-### <a name="sending-query-string-parameters"></a>Query teken reeks parameters verzenden
+### <a name="sending-query-string-parameters"></a>Queryreeksparameters verzenden
 
-Als u para meters voor query reeksen wilt verzenden, voegt u in het [Relying Party-beleid](relyingparty.md)een element toe, `ContentDefinitionParameters` zoals hieronder wordt weer gegeven.
+Als u queryreeksparameters wilt verzenden, voegt u in [het relying party-beleid](relyingparty.md)een `ContentDefinitionParameters` -element toe, zoals hieronder wordt weergegeven.
 
 ```xml
 <RelyingParty>
@@ -324,7 +324,7 @@ Als u para meters voor query reeksen wilt verzenden, voegt u in het [Relying Par
 </RelyingParty>
 ```
 
-Wijzig in uw inhouds definitie de waarde van `LoadUri` in `https://<app_name>.azurewebsites.net/home/unified` . Het aangepaste beleid `ContentDefinition` moet eruitzien zoals in het volgende code fragment:
+Wijzig in uw inhoudsdefinitie de waarde van `LoadUri` in `https://<app_name>.azurewebsites.net/home/unified` . Uw aangepaste beleid `ContentDefinition` moet er als volgt uitzien:
 
 ```xml
 <ContentDefinition Id="api.signuporsignin">
@@ -333,15 +333,15 @@ Wijzig in uw inhouds definitie de waarde van `LoadUri` in `https://<app_name>.az
 </ContentDefinition>
 ```
 
-Wanneer Azure AD B2C de pagina laadt, wordt een aanroep van het eind punt van de webserver uitgevoerd:
+Wanneer Azure AD B2C pagina laadt, wordt het eindpunt van de webserver aanroepen:
 
 ```http
 https://<app_name>.azurewebsites.net/home/unified?campaignId=123&lang=fr&appId=f893d6d3-3b6d-480d-a330-1707bf80ebea
 ```
 
-### <a name="dynamic-page-content-uri"></a>URI van dynamische pagina-inhoud
+### <a name="dynamic-page-content-uri"></a>URI voor dynamische pagina-inhoud
 
-Inhoud kan vanaf verschillende locaties worden opgehaald op basis van de gebruikte para meters. Stel in het eind punt waarvoor CORS is ingeschakeld een mapstructuur in om inhoud te hosten. U kunt bijvoorbeeld de inhoud in de volgende structuur indelen. Hoofdmap */map per taal/uw HTML-bestanden*. Uw aangepaste pagina-URI kan er bijvoorbeeld als volgt uitzien:
+Inhoud kan van verschillende locaties worden gehaald op basis van de gebruikte parameters. Stel in het eindpunt met CORS-functie een mapstructuur in om inhoud te hosten. U kunt de inhoud bijvoorbeeld in de volgende structuur ordenen. *Hoofdmap/map per taal/uw HTML-bestanden.* Uw aangepaste pagina-URI kan er bijvoorbeeld als volgende uitzien:
 
 ```xml
 <ContentDefinition Id="api.signuporsignin">
@@ -350,7 +350,7 @@ Inhoud kan vanaf verschillende locaties worden opgehaald op basis van de gebruik
 </ContentDefinition>
 ```
 
-Azure AD B2C verzendt de ISO-code van twee letters voor de taal, `fr` voor Frans:
+Azure AD B2C verzendt de tweeletterig ISO-code voor de taal, `fr` voor Frans:
 
 ```http
 https://contoso.blob.core.windows.net/fr/myHTML/unified.html
@@ -360,23 +360,23 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 
 ## <a name="sample-templates"></a>Voorbeeldsjablonen
 
-U kunt hier voorbeeld sjablonen voor UI-aanpassing vinden:
+U vindt hier voorbeeldsjablonen voor het aanpassen van de gebruikersinterface:
 
 ```bash
 git clone https://github.com/azure-ad-b2c/html-templates
 ```
 
 Dit project bevat de volgende sjablonen:
-- [Oceaan blauw](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/AzureBlue)
-- [Pastel grijs](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/MSA)
+- [Oceaanblauw](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/AzureBlue)
+- [Slate Gray](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/MSA)
 - [Klassieke](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/classic)
 - [Sjabloonresources](https://github.com/azure-ad-b2c/html-templates/tree/main/templates/src)
 
-Het voor beeld gebruiken:
+Het voorbeeld gebruiken:
 
-1. Kloon de opslag plaats op uw lokale machine. Kies een sjabloon map `/AzureBlue` , `/MSA` of `/classic` .
-1. Upload alle bestanden in de map Temp late en de `/src` map naar Blob Storage, zoals beschreven in de vorige secties.
-1. Open vervolgens elk `\*.html` bestand in de map Temp late. Vervang alle instanties van `https://login.microsoftonline.com` url's door de URL die u in stap 2 hebt geüpload. Bijvoorbeeld:
+1. Kloon de repo op uw lokale computer. Kies een sjabloonmap `/AzureBlue` , `/MSA` of `/classic` .
+1. Upload alle bestanden onder de sjabloonmap en de map `/src` naar Blob Storage, zoals beschreven in de vorige secties.
+1. Open vervolgens elk bestand `\*.html` in de sjabloonmap. Vervang vervolgens alle exemplaren van `https://login.microsoftonline.com` URL's door de URL die u in stap 2 hebt geüpload. Bijvoorbeeld:
     
     Van:
     ```html
@@ -388,13 +388,13 @@ Het voor beeld gebruiken:
     https://your-storage-account.blob.core.windows.net/your-container/templates/src/fonts/segoeui.WOFF
     ```
     
-1. Sla de `\*.html` bestanden op en upload deze naar de Blob-opslag.
-1. Pas het beleid aan, zoals eerder is vermeld, naar uw HTML-bestand.
-1. Als u ontbrekende letter typen, afbeeldingen of CSS ziet, controleert u uw referenties in het uitbrei ding beleid en de \* . html-bestanden.
+1. Sla de `\*.html` bestanden op en upload ze naar de Blob-opslag.
+1. Wijzig nu het beleid en verwijs naar uw HTML-bestand, zoals eerder vermeld.
+1. Als u ontbrekende lettertypen, afbeeldingen of CSS ziet, controleert u uw verwijzingen in het extensiebeleid en de `\*.html` bestanden.
 
-## <a name="use-company-branding-assets-in-custom-html"></a>Bedrijfs huisstijl assets gebruiken in aangepaste HTML
+## <a name="use-company-branding-assets-in-custom-html"></a>Assets voor de huisstijl van uw bedrijf gebruiken in aangepaste HTML
 
-Als u [bedrijfs huisstijl](customize-ui.md#configure-company-branding) elementen wilt gebruiken in een aangepaste HTML, voegt u de volgende tags toe buiten de `<div id="api">` tag. De afbeeldings bron wordt vervangen door de achtergrond afbeelding en het logo banner.
+Als u assets [voor de huisstijl](customize-ui.md#configure-company-branding) van uw bedrijf wilt gebruiken in een aangepaste HTML, voegt u de volgende tags buiten de `<div id="api">` tag toe. De bron van de afbeelding wordt vervangen door die van de achtergrondafbeelding en het bannerlogo.
 
 ```HTML
 <img data-tenant-branding-background="true" />
@@ -403,4 +403,4 @@ Als u [bedrijfs huisstijl](customize-ui.md#configure-company-branding) elementen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het inschakelen van [Java script-code aan de client zijde](javascript-and-page-layout.md).
+Meer informatie over het [inschakelen van JavaScript-code aan de clientzijde.](javascript-and-page-layout.md)

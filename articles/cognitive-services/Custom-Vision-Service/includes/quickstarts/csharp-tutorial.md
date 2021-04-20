@@ -4,12 +4,12 @@ ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 09/15/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b247613ba02f897d2c0b02fc12ecd4a974cffdf4
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.openlocfilehash: 3fcc3598348dcfd3e0d0b81bded40161743126d3
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106113034"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107725307"
 ---
 Aan de slag met de clientbibliotheek van Custom Vision voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor het bouwen van een model voor de classificatie van afbeeldingen uit te proberen. U maakt een project, voegt tags toe, traint het project en gebruikt de voorspellingseindpunt-URL van het project om het programmatisch te testen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -96,11 +96,11 @@ Maak in de **Hoofdmethode** van de toepassing variabelen voor de sleutel en het 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/CustomVision/ImageClassification/Program.cs?name=snippet_creds)]
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U kunt de sleutels en het eind punt vinden in de **sleutel-en eindpunt** pagina's van de resources. U moet de sleutels voor uw trainings-en Voorspellings bronnen ophalen, samen met het API-eind punt voor uw trainings materiaal.
+> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U vindt uw sleutels en eindpunt op de sleutel- en eindpuntpagina's **van de** resources. U moet de sleutels voor zowel uw trainings- als voorspellingsresources ophalen, samen met het API-eindpunt voor uw trainingsresource.
 >
-> U kunt de waarde voor de resource-ID voor de voor spelling vinden op het tabblad **Eigenschappen** van de resource, vermeld als **abonnements-id**.
+> U vindt de waarde van de voorspellingsresource-id op het tabblad **Eigenschappen** van de resource, vermeld als **Abonnements-id.**
 > 
-> Vergeet niet de sleutels uit uw code te verwijderen wanneer u klaar bent, en maak deze sleutels nooit openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
+> Vergeet niet de sleutels uit uw code te verwijderen wanneer u klaar bent, en maak deze sleutels nooit openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel over [Cognitive Services-beveiliging voor meer](../../../cognitive-services-security.md) informatie.
 
 Voeg in de **Hoofdmethode** van de toepassing aanroepen toe voor de methoden die in deze quickstart worden gebruikt. U gaat deze later implementeren.
 
@@ -151,7 +151,7 @@ Met deze methode worden de tags gedefinieerd waarmee u het model gaat trainen.
 Download eerst de voorbeeldafbeeldingen voor dit project. Sla de inhoud van de [map Voorbeeldafbeeldingen](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/CustomVision/ImageClassification/Images) op uw lokale apparaat op.
 
 > [!NOTE]
-> Hebt u een grotere set installatie kopieën nodig om uw training te volt ooien? Met Trove, een Microsoft Garage-project, kunt u sets afbeeldingen verzamelen en aanschaffen voor trainingsdoeleinden. Wanneer u uw afbeeldingen hebt verzameld kunt u ze downloaden en importeren naar uw Custom Vision-project. Ga naar de pagina [Trove](https://www.microsoft.com/ai/trove?activetab=pivot1:primaryr3) voor meer informatie.
+> Hebt u een bredere set afbeeldingen nodig om uw training te voltooien? Met Trove, een Microsoft Garage-project, kunt u sets afbeeldingen verzamelen en aanschaffen voor trainingsdoeleinden. Wanneer u uw afbeeldingen hebt verzameld kunt u ze downloaden en importeren naar uw Custom Vision-project. Ga naar de pagina [Trove](https://www.microsoft.com/ai/trove?activetab=pivot1:primaryr3) voor meer informatie.
 
 Definieer vervolgens een helpermethode voor het uploaden van de afbeeldingen in deze map. Mogelijk moet u het argument **GetFiles** bewerken om te verwijzen naar de locatie waar de afbeeldingen worden opgeslagen.
 

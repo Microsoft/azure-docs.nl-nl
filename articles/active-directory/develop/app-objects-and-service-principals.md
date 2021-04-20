@@ -1,7 +1,7 @@
 ---
-title: Apps & service-principals in azure AD | Azure
+title: Apps & service-principals in Azure AD | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over de relatie tussen toepassings-en Service-Principal-objecten in Azure Active Directory.
+description: Meer informatie over de relatie tussen toepassings- en service-principalobjecten in Azure Active Directory.
 author: rwike77
 manager: CelesteDG
 services: active-directory
@@ -9,88 +9,94 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 02/15/2021
+ms.date: 04/16/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: 358e066631304e727d18d092bd4b9a5b2a0bb89a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fc1b5356ab607ecb60a457a7295831958e6815e1
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103199616"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727056"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Toepassings- en service-principal-objecten in Azure Active Directory
 
-In dit artikel worden de registratie van toepassingen, toepassings objecten en service-principals in Azure Active Directory beschreven: wat het zijn, hoe ze worden gebruikt en hoe ze met elkaar zijn verbonden. Er wordt ook een scenario met meerdere tenants weer gegeven ter illustratie van de relatie tussen het toepassings object van een toepassing en de bijbehorende service-principal-objecten.
+In dit artikel worden toepassingsregistratie, toepassingsobjecten en service-principals in Azure Active Directory beschreven: wat ze zijn, hoe ze worden gebruikt en hoe ze aan elkaar zijn gerelateerd. Er wordt ook een voorbeeldscenario met meerdere tenants gepresenteerd om de relatie te illustreren tussen het toepassingsobject van een toepassing en de bijbehorende service-principal-objecten.
 
 ## <a name="application-registration"></a>Een toepassing registreren
-Als u identiteits-en toegangs beheer functies wilt overdragen aan Azure AD, moet een toepassing zijn geregistreerd bij een Azure AD- [Tenant](developer-glossary.md#tenant). Wanneer u uw toepassing registreert bij Azure AD, maakt u een identiteits configuratie voor uw toepassing waarmee deze kan worden geïntegreerd met Azure AD. Wanneer u een app registreert in de [Azure Portal][AZURE-Portal], kiest u of deze één Tenant is (alleen toegankelijk in uw Tenant) of multi tenant (toegankelijk in andere tenants) en kunt u eventueel een omleidings-URI instellen (waarbij het toegangs token wordt verzonden naar).
+Als u identiteits- en toegangsbeheerfuncties wilt delegeren aan Azure AD, moet een toepassing worden geregistreerd bij een Azure [AD-tenant.](developer-glossary.md#tenant) Wanneer u uw toepassing registreert bij Azure AD, maakt u een identiteitsconfiguratie voor uw toepassing waarmee deze kan worden geïntegreerd met Azure AD. Wanneer u een app registreert in de [Azure Portal,][AZURE-Portal]kiest u of het een enkele tenant is (alleen toegankelijk in uw tenant) of meerdere tenants (toegankelijk in andere tenants) en kunt u desgewenst een omleidings-URI instellen (waar het toegangs token naar wordt verzonden).
 
-Zie de [Snelstartgids voor app-registratie](quickstart-register-app.md)voor stapsgewijze instructies voor het registreren van een app.
+Zie de quickstart voor app-registratie voor stapsgewijse instructies voor het registreren [van een app.](quickstart-register-app.md)
 
-Wanneer u de app-registratie hebt voltooid, hebt u een wereld wijd unieke instantie van de app (het [toepassings object](#application-object)) die zich in uw thuis Tenant of-map bevindt.  U hebt ook een wereld wijd unieke ID voor uw app (de app of client-ID).  In de portal kunt u geheimen of certificaten en scopes toevoegen om uw app te laten werken, de huis stijl van uw app aan te passen in het dialoog venster voor aanmelden en nog veel meer.
+Wanneer u de registratie van de app hebt voltooid, hebt u een wereldwijd uniek exemplaar van de app (het toepassingsobject [)](#application-object)dat zich in uw basis-tenant of -map in de app of map behuist.  U hebt ook een wereldwijd unieke id voor uw app (de app of client-id).  In de portal kunt u vervolgens geheimen of certificaten en scopes toevoegen om uw app te laten werken, de huisstijl van uw app aan te passen in het aanmeldingsdialoogvenster en meer.
 
-Als u een toepassing registreert in de portal, worden er automatisch een toepassings object en een Service-Principal-object gemaakt in uw thuis Tenant.  Als u een toepassing registreert/maakt met behulp van de Microsoft Graph Api's, is het maken van het Service-Principal-object een afzonderlijke stap.
+Als u een toepassing registreert in de portal, worden er automatisch een toepassingsobject en een service-principal-object gemaakt in uw basis-tenant.  Als u een toepassing registreert/maakt met behulp van Microsoft Graph API's, is het maken van het service-principal-object een afzonderlijke stap.
 
-## <a name="application-object"></a>Toepassings object
-Een Azure AD-toepassing wordt gedefinieerd door de ene en enige toepassings object, die zich bevindt in de Azure AD-Tenant waar de toepassing is geregistreerd (bekend als de ' Home '-Tenant van de toepassing).  Een toepassings object wordt gebruikt als sjabloon of blauw druk om een of meer Service-Principal-objecten te maken.  Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt. Net als bij een klasse in objectgeoriënteerd Program meren heeft het toepassings object enkele statische eigenschappen die worden toegepast op alle gemaakte service-principals (of exemplaren van de toepassing).
+## <a name="application-object"></a>Toepassingsobject
+Een Azure AD-toepassing wordt gedefinieerd door het enige toepassingsobject dat zich in de Azure AD-tenant bevindt waarin de toepassing is geregistreerd (ook wel de 'thuisten tenant' van de toepassing genoemd).  Een toepassingsobject wordt gebruikt als een sjabloon of blauwdruk om een of meer service-principal-objecten te maken.  Er wordt een service-principal gemaakt in elke tenant waarin de toepassing wordt gebruikt. Net als bij een klasse in objectgeoriënteerd programmeren, heeft het toepassingsobject enkele statische eigenschappen die worden toegepast op alle gemaakte service-principals (of toepassings-exemplaren).
 
-In het toepassings object worden drie aspecten van een toepassing beschreven: hoe de service tokens kan uitgeven om toegang te krijgen tot de toepassing, de resources waartoe de toepassing toegang moet hebben en de acties die de toepassing kan uitvoeren.
+Het toepassingsobject beschrijft drie aspecten van een toepassing: hoe de service tokens kan uitgeven om toegang te krijgen tot de toepassing, resources die de toepassing mogelijk moet openen en de acties die de toepassing kan uitvoeren.
 
-De **app-registraties** Blade in de [Azure Portal][AZURE-Portal] wordt gebruikt om de toepassings objecten in uw thuis Tenant weer te geven en te beheren.
+De **App-registraties** blade in [de Azure Portal][AZURE-Portal] wordt gebruikt om de toepassingsobjecten in uw thuis-tenant weer te geven en te beheren.
 
-![App-registraties Blade](./media/app-objects-and-service-principals/app-registrations-blade.png)
+![App-registraties blade](./media/app-objects-and-service-principals/app-registrations-blade.png)
 
-De entiteit van de Microsoft Graph- [toepassing][MS-Graph-App-Entity] definieert het schema voor de eigenschappen van een toepassings object.
+De Microsoft Graph [Application definieert][MS-Graph-App-Entity] het schema voor de eigenschappen van een toepassingsobject.
 
-## <a name="service-principal-object"></a>Service-Principal-object
-Om toegang te krijgen tot bronnen die worden beveiligd door een Azure AD-Tenant, moet de entiteit die toegang vereist, worden vertegenwoordigd door een beveiligingsprincipal. Deze vereiste geldt voor zowel gebruikers (gebruikers-principal) als toepassingen (Service-Principal). De beveiligingsprincipal definieert het toegangs beleid en de machtigingen voor de gebruiker/toepassing in de Azure AD-Tenant. Hierdoor kunnen kern functies, zoals verificatie van de gebruiker/toepassing tijdens het aanmelden, en autorisatie tijdens de toegang tot bronnen worden ingeschakeld.
+## <a name="service-principal-object"></a>Service-principal-object
+Voor toegang tot resources die worden beveiligd door een Azure AD-tenant, moet de entiteit die toegang vereist worden vertegenwoordigd door een beveiligingsprincipaal. Deze vereiste geldt voor zowel gebruikers (user principal) als toepassingen (service-principal). De beveiligingsprincipaal definieert het toegangsbeleid en de machtigingen voor de gebruiker/toepassing in de Azure AD-tenant. Hierdoor zijn kernfuncties mogelijk, zoals verificatie van de gebruiker/toepassing tijdens het aanmelden en autorisatie tijdens toegang tot resources.
 
-Een Service-Principal is de lokale weer gave of het toepassings exemplaar van een globaal toepassings object in één Tenant of directory. Een Service-Principal is een concreet exemplaar dat is gemaakt op basis van het toepassings object en die bepaalde eigenschappen overneemt van dat toepassings object. Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt en verwijst naar het wereld wijde unieke app-object.  Het Service-Principal-object definieert wat de app daad werkelijk in de specifieke Tenant kan doen, wie toegang heeft tot de app en welke resources de app kan gebruiken.
+Er zijn drie soorten service-principals: toepassing, beheerde identiteit en verouderd.
 
-Wanneer een toepassing toestemming krijgt om toegang te krijgen tot bronnen in een Tenant (na registratie of [toestemming](developer-glossary.md#consent)), wordt er een Service-Principal-object gemaakt. U kunt ook Service Principal-objecten in een Tenant maken met behulp van [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?tabs=http), de [Azure Portal][AZURE-Portal]en andere hulpprogram ma's. Wanneer u de portal gebruikt, wordt automatisch een service-principal gemaakt wanneer u een toepassing registreert.
+Het eerste type service-principal is de lokale representatie, of toepassings-instantie, van een globaal toepassingsobject in één tenant of map. In dit geval is een service-principal een concrete instantie die is gemaakt op basis van het toepassingsobject en bepaalde eigenschappen overgenomen van dat toepassingsobject. Er wordt een service-principal gemaakt in elke tenant waar de toepassing wordt gebruikt en verwijst naar het wereldwijd unieke app-object.  Het service-principal-object definieert wat de app daadwerkelijk kan doen in de specifieke tenant, wie toegang heeft tot de app en tot welke resources de app toegang heeft.
 
-De Blade **bedrijfs toepassingen** in de portal wordt gebruikt om de service-principals in een Tenant weer te geven en te beheren. U kunt de machtigingen van de Service-Principal zien, machtigingen voor de gebruiker die hiervoor zijn gemachtigd, de gebruikers die toestemming hebben gegeven, aanmeldings gegevens en meer.
+Wanneer een toepassing toegang krijgt tot resources in een tenant (na registratie of [toestemming),](developer-glossary.md#consent)wordt er een service-principal-object gemaakt. U kunt ook service-principalobjecten maken in een tenant [met behulp van Azure PowerShell,](howto-authenticate-service-principal-powershell.md) [Azure CLI,](/cli/azure/create-an-azure-service-principal-azure-cli) [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?tabs=http), [de Azure Portal][AZURE-Portal]en andere hulpprogramma's. Wanneer u de portal gebruikt, wordt er automatisch een service-principal gemaakt wanneer u een toepassing registreert.
 
-![Blade Enter prise-apps](./media/app-objects-and-service-principals/enterprise-apps-blade.png)
+Het tweede type service-principal wordt gebruikt om een [beheerde identiteit weer te geven.](/azure/active-directory/managed-identities-azure-resources/overview) Beheerde identiteiten elimineren de noodzaak voor ontwikkelaars om referenties te beheren. Beheerde identiteiten bieden een identiteit die toepassingen kunnen gebruiken bij het maken van verbinding met resources die ondersteuning bieden voor Azure AD-verificatie. Wanneer een beheerde identiteit is ingeschakeld, wordt er een service-principal gemaakt die die beheerde identiteit vertegenwoordigt in uw tenant. Service-principals die beheerde identiteiten vertegenwoordigen, kunnen toegang en machtigingen krijgen, maar kunnen niet rechtstreeks worden bijgewerkt of gewijzigd.
 
-De [entiteit Microsoft Graph ServicePrincipal][MS-Graph-Sp-Entity] definieert het schema voor de eigenschappen van een Service Principal-object.
+Het derde type service-principal vertegenwoordigt een verouderde app (een app die is gemaakt voordat app-registraties werden geïntroduceerd of gemaakt via verouderde ervaringen). Een verouderde service-principal kan referenties, service-principalnamen, antwoord-URL's en andere eigenschappen hebben die kunnen worden bewerkt door een geautoriseerde gebruiker, maar waaraan geen app-registratie is gekoppeld. De service-principal kan alleen worden gebruikt in de tenant waar deze is gemaakt.
 
-## <a name="relationship-between-application-objects-and-service-principals"></a>Relatie tussen toepassings objecten en service-principals
+De Microsoft Graph [ServicePrincipal-entiteit][MS-Graph-Sp-Entity] definieert het schema voor de eigenschappen van een service-principal-object.
 
-Het toepassings object is de *wereld wijde* weer gave van uw toepassing voor gebruik in alle tenants en de Service-Principal is de *lokale* weer gave voor gebruik in een specifieke Tenant.
+De **blade Bedrijfstoepassingen** in de portal wordt gebruikt om de service-principals in een tenant weer te bieden en te beheren. U ziet de machtigingen van de service-principal, de machtigingen die door de gebruiker zijn verleend, welke gebruikers die toestemming hebben gegeven, aanmeldingsgegevens hebben gedaan en meer.
 
-Het toepassingsobject fungeert als de sjabloon waaruit gemeenschappelijke en standaardeigenschappen worden *afgeleid* voor gebruik bij het maken van de bijbehorende service-principal-objecten. Een toepassings object heeft daarom een 1:1-relatie met de software toepassing en een 1: veel-relatie met de bijbehorende service-principal-object (en).
+![Blade Bedrijfsapps](./media/app-objects-and-service-principals/enterprise-apps-blade.png)
 
-Een Service-Principal moet worden gemaakt in elke Tenant waar de toepassing wordt gebruikt, waardoor er een identiteit kan worden ingesteld voor aanmelding en/of toegang tot bronnen die worden beveiligd door de Tenant. Een toepassing in één tenant heeft slechts één service-principal (in de starttenant) die is gemaakt en waarvoor toestemming is gegeven voor gebruik tijdens de toepassingsregistratie. Een multi tenant-toepassing heeft ook een service-principal die is gemaakt in elke Tenant, waar een gebruiker van die Tenant toestemming heeft gegeven om het te gebruiken.
+## <a name="relationship-between-application-objects-and-service-principals"></a>Relatie tussen toepassingsobjecten en service-principals
+
+Het toepassingsobject is de *globale* weergave van uw toepassing voor gebruik  in alle tenants en de service-principal is de lokale weergave voor gebruik in een specifieke tenant.
+
+Het toepassingsobject fungeert als de sjabloon waaruit gemeenschappelijke en standaardeigenschappen worden *afgeleid* voor gebruik bij het maken van de bijbehorende service-principal-objecten. Een toepassingsobject heeft daarom een 1:1-relatie met de softwaretoepassing en een 1:many-relatie met de bijbehorende service-principal-object(s).
+
+Er moet een service-principal worden gemaakt in elke tenant waarin de toepassing wordt gebruikt, zodat er een identiteit kan worden gemaakt voor aanmelding en/of toegang tot resources die worden beveiligd door de tenant. Een toepassing in één tenant heeft slechts één service-principal (in de starttenant) die is gemaakt en waarvoor toestemming is gegeven voor gebruik tijdens de toepassingsregistratie. Een toepassing met meerdere tenants heeft ook een service-principal die is gemaakt in elke tenant waar een gebruiker van die tenant toestemming heeft gegeven voor het gebruik ervan.
 
 ### <a name="consequences-of-modifying-and-deleting-applications"></a>Gevolgen van het wijzigen en verwijderen van toepassingen
-Wijzigingen die u aanbrengt in uw toepassings object, worden ook weer gegeven in het bijbehorende service-principal-object in de thuis Tenant van de toepassing (de Tenant waar deze is geregistreerd). Dit betekent dat bij het verwijderen van een toepassings object ook het Principal-object van de thuis Tenant service wordt verwijderd.  Als u dat toepassings object herstelt, wordt de bijbehorende service-principal echter niet hersteld. Voor multi tenant-toepassingen worden wijzigingen aan het toepassings object niet weer gegeven in de Service-Principal-objecten van een consumenten Tenant, totdat de toegang wordt verwijderd via het [toegangs venster](https://myapps.microsoft.com) van de toepassing en opnieuw wordt toegewezen.
+Wijzigingen die u aan uw toepassingsobject aan brengen, worden ook weerspiegeld in het service-principal-object in de basis-tenant van de toepassing (de tenant waar deze is geregistreerd). Dit betekent dat als u een toepassingsobject verwijdert, ook het service-principal-object van de basisten tenant wordt verwijderd.  Als u dat toepassingsobject herstelt, wordt de bijbehorende service-principal echter niet hersteld. Voor toepassingen met meerdere tenants worden wijzigingen in het toepassingsobject niet doorgevoerd in de service-principalobjecten van consumentententensen, totdat de toegang wordt verwijderd via de [Application Toegangsvenster](https://myapps.microsoft.com) en opnieuw wordt verleend.
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende diagram ziet u de relatie tussen het toepassings object van een toepassing en de bijbehorende service-principal-objecten, in de context van een voor beeld van een multi tenant-toepassing met de naam **HR-app**. Er zijn drie Azure AD-tenants in dit voorbeeld scenario:
+Het volgende diagram illustreert de relatie tussen het toepassingsobject van een toepassing en de bijbehorende service-principal-objecten, in de context van een voorbeeldtoepassing met meerdere tenants met de naam **HR-app**. Er zijn drie Azure AD-tenants in dit voorbeeldscenario:
 
-- **Adatum** : de Tenant die wordt gebruikt door het bedrijf dat de **HR-app** heeft ontwikkeld
-- **Contoso** : de Tenant die wordt gebruikt door de contoso-organisatie, die een consument is van de **HR-app**
-- **Fabrikam** : de Tenant die wordt gebruikt door de fabrikam-organisatie, die ook de **HR-app** verbruikt
+- **Adatum:** de tenant die wordt gebruikt door het bedrijf dat de **HR-app heeft ontwikkeld**
+- **Contoso:** de tenant die wordt gebruikt door de Contoso-organisatie, een consument van de **HR-app**
+- **Fabrikam:** de tenant die wordt gebruikt door de Fabrikam-organisatie, die ook de **HR-app gebruikt**
 
-![Relatie tussen object App-object en Service-Principal](./media/app-objects-and-service-principals/application-objects-relationship.svg)
+![Relatie tussen app-object en service-principal-object](./media/app-objects-and-service-principals/application-objects-relationship.svg)
 
-In dit voorbeeld scenario:
+In dit voorbeeldscenario:
 
 | Stap | Beschrijving |
 |------|-------------|
-| 1    | Is het proces van het maken van de toepassing en Service-Principal-objecten in de thuis Tenant van de toepassing. |
-| 2    | Wanneer Contoso en fabrikam beheerders toestemming geven, wordt een Service-Principal-object gemaakt in de Azure AD-Tenant van het bedrijf en worden de machtigingen toegewezen die de beheerder heeft verleend. Houd er ook rekening mee dat de HR-app kan worden geconfigureerd/ontworpen om toestemming door gebruikers voor individueel gebruik toe te staan. |
-| 3    | De tenants van de consument van de HR-toepassing (Contoso en fabrikam) hebben elk een eigen Service-Principal-object. Elk voor beeld hiervan is het gebruik van een exemplaar van de toepassing tijdens runtime, met de machtigingen die de respectieve beheerder heeft ingestemd. |
+| 1    | Is het proces van het maken van de toepassings- en service-principalobjecten in de basis-tenant van de toepassing. |
+| 2    | Wanneer Contoso- en Fabrikam-beheerders toestemming geven, wordt er een service-principalobject gemaakt in de Azure AD-tenant van hun bedrijf en worden de machtigingen toegewezen die de beheerder heeft verleend. Houd er ook rekening mee dat de HR-app kan worden geconfigureerd/ontworpen om gebruikers toestemming te geven voor individueel gebruik. |
+| 3    | De tenants van consumenten van de HR-toepassing (Contoso en Fabrikam) hebben elk hun eigen service-principal-object. Elk vertegenwoordigt het gebruik van een exemplaar van de toepassing tijdens runtime, dat wordt beheerd door de machtigingen die zijn verleend door de respectieve beheerder. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- U kunt de [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) gebruiken om de toepassing en Service-Principal-objecten op te vragen.
-- U kunt toegang krijgen tot het toepassings object van een toepassing met behulp van de Microsoft Graph-API, de manifest-editor [van de Azure Portal][AZURE-Portal] of [Azure AD Power shell-cmdlets](/powershell/azure/), zoals wordt vertegenwoordigd door de entiteit van de OData- [toepassing][MS-Graph-App-Entity].
-- U kunt toegang krijgen tot het Service-Principal-object van een toepassing via de Microsoft Graph-API of [Azure AD Power shell-cmdlets](/powershell/azure/), zoals wordt aangegeven door de OData [ServicePrincipal-entiteit][MS-Graph-Sp-Entity].
+- U kunt de Microsoft Graph [Explorer gebruiken om zowel](https://developer.microsoft.com/graph/graph-explorer) de toepassings- als de service-principal-objecten op te vragen.
+- U hebt toegang tot het toepassingsobject van een toepassing met behulp van de Microsoft Graph-API, de toepassingsmanifesteditor van de [Azure Portal of][AZURE-Portal] Azure [AD PowerShell-cmdlets,](/powershell/azure/)zoals vertegenwoordigd door de OData [Application-entiteit][MS-Graph-App-Entity].
+- U hebt toegang tot het service-principal-object van een toepassing via de Microsoft Graph-API of [Azure AD PowerShell-cmdlets,](/powershell/azure/)zoals vertegenwoordigd door de OData [ServicePrincipal-entiteit.][MS-Graph-Sp-Entity]
 
 <!--Image references-->
 

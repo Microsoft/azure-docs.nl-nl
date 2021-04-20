@@ -35,6 +35,8 @@
       href: ddos-response-strategy.md
     - name: Referentiearchitecturen
       href: ddos-protection-reference-architectures.md
+    - name: Bedrijfscontinuïteit
+      href: ddos-disaster-recovery-guidance.md
     - name: Beveiligingsbasislijn
       href: ../security/fundamentals/ddos-protection-security-baseline.md?toc=%2fazure%2fddos-protection%2ftoc.json
 - name: Instructiegidsen

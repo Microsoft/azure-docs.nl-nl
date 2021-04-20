@@ -27,7 +27,7 @@
   items:
     - name: Afwijkingen in uw gegevens identificeren
       href: how-to/identify-anomalies.md
-    - name: Implementatie Anomaly Detector
+    - name: Een Anomaly Detector
       items:
         - name: Implementeren naar IoT Edge
           href: how-to/deploy-anomaly-detection-on-iot-edge.md
@@ -55,13 +55,13 @@
       href: concepts/best-practices-multivariate.md
     - name: Anomaly Detector API-best practices (univariate)
       href: concepts/anomaly-detection-best-practices.md
-    - name: Architectuur voor voorspellend onderhoud (multivariabel)
+    - name: Architectuur voor predictief onderhoud (multivariate)
       href: concepts/multivariate-architecture.md
     - name: Problemen met meerdere varianten oplossen
       href: concepts/troubleshoot.md
-    - name: Neurale residuen (SR) en anomaliedetectie van convolutionele neurale netwerken (CNN)
+    - name: Spectrum residuen (SR) en convolutionele neurale net (CNN) anomaliedetectie
       href: 'https://arxiv.org/abs/1906.03821'
-    - name: Anomaliedetectie met meerdere tijdreeksen via het netwerk voor grafieken aandacht
+    - name: Anomaliedetectie voor meerdere tijdreeksen via het netwerk voor grafieken
       href: 'https://arxiv.org/abs/2009.02040'
 - name: Zelfstudies
   items:
@@ -71,14 +71,16 @@
   items:
     - name: Anomaly Detector REST API
       href: 'https://aka.ms/anomaly-detector-rest-api-ref'
+    - name: Anomaly Detector REST API preview (multivariate)
+      href: 'https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector-v1-1-preview/operations/DetectAnomaly'
     - name: .NET
-      href: 'https://aka.ms/anomaly-detector-dotnet-ref'
-    - name: Aan de slag
-      href: 'https://go.microsoft.com/fwlink/?linkid=2089915'
+      href: 'https://www.nuget.org/packages/Azure.AI.AnomalyDetector/3.0.0-preview.3'
+    - name: Java
+      href: 'https://repo1.maven.org/maven2/com/azure/azure-ai-anomalydetector/3.0.0-beta.2/'
     - name: Python
-      href: 'https://go.microsoft.com/fwlink/?linkid=2090370'
+      href: 'https://pypi.org/project/azure-ai-anomalydetector/3.0.0b3/'
     - name: Node.js
-      href: 'https://go.microsoft.com/fwlink/?linkid=2090788'
+      href: 'https://www.npmjs.com/package/@azure/ai-anomaly-detector/v/3.0.0-beta.3'
 - name: Resources
   items:
     - name: Gereedheid voor bedrijven

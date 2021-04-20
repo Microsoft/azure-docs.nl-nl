@@ -1,14 +1,14 @@
 ---
-title: 'Snelstartgids: client bibliotheek of REST API lezen'
+title: 'Quickstart: Clientbibliotheek of REST API'
 titleSuffix: Azure Cognitive Services
-description: Meer informatie over het gebruik van OCR (optische teken herkenning) in uw toepassing via een systeem eigen client bibliotheek in de taal van uw keuze.
+description: Meer informatie over het gebruik van OCR (Optical Character Recognition) in uw toepassing via een systeemeigen clientbibliotheek in de taal van uw keuze.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/21/2020
+ms.date: 03/29/2021
 ms.author: pafarley
 ms.custom:
 - devx-track-python
@@ -17,16 +17,16 @@ ms.custom:
 - cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-computer-vision
 keywords: computer vision, computer vision-service
-ms.openlocfilehash: 865002fbc9e492b43b9c572468f722c85c6cc4b8
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: bd6fcec1544e20c119018df2595cc27c8c368824
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106284759"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728249"
 ---
-# <a name="quickstart-use-the-read-client-library-or-rest-api"></a>Quick Start: de bibliotheek of REST API voor het lezen van de client gebruiken
+# <a name="quickstart-use-the-read-client-library-or-rest-api"></a>Quickstart: De Read-clientbibliotheek of REST API
 
-Ga aan de slag met de REST API voor lezen of client bibliotheken. De Lees service biedt AI-algoritmen voor het uitpakken van zicht bare tekst uit afbeeldingen en het retour neren ervan als gestructureerde teken reeksen. Volg deze stappen om een pakket in uw toepassing te installeren en de voorbeeldcode voor basistaken te proberen.
+Ga aan de slag met de REST API of clientbibliotheken. De Read-service biedt u AI-algoritmen voor het extraheren van zichtbare tekst uit afbeeldingen en het retourneren ervan als gestructureerde tekenreeksen. Volg deze stappen om een pakket in uw toepassing te installeren en de voorbeeldcode voor basistaken te proberen.
 
 
 

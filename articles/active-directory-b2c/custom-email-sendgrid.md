@@ -1,23 +1,23 @@
 ---
 title: Aangepaste e-mailverificatie met SendGrid
 titleSuffix: Azure AD B2C
-description: Leer hoe u kunt integreren met SendGrid om de verificatie-e-mail aan te passen die naar uw klanten wordt verzonden wanneer ze zich registreren om uw Azure AD B2C toepassingen te gebruiken.
+description: Leer hoe u kunt integreren met SendGrid om de verificatie-e-mail aan te passen die naar uw klanten wordt verzonden wanneer ze zich registreren, zodat ze uw Azure AD B2C toepassingen kunnen gebruiken.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/16/2021
+ms.date: 04/19/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 2c4dcaaa1deaa50d620e7c24dacbe56fa91c217f
-ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
+ms.openlocfilehash: d63e7916423038e53c375b2be4114582cf4d6152
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/19/2021
-ms.locfileid: "107713440"
+ms.locfileid: "107725760"
 ---
 # <a name="custom-email-verification-with-sendgrid"></a>Aangepaste e-mailverificatie met SendGrid
 
@@ -33,43 +33,41 @@ Gebruik aangepaste e-mail in Azure Active Directory B2C (Azure AD B2C) om aangep
 
 ::: zone pivot="b2c-custom-policy"
 
-Voor aangepaste e-mailverificatie is het gebruik van een externe e-mailprovider vereist, zoals [SendGrid,](https://sendgrid.com) [Mailpart](https://Mailjet.com)of [SparkPost,](https://sparkpost.com)een aangepaste REST API of een http-e-mailprovider (inclusief uw eigen provider). In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van SendGrid.
-
-[!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
+Voor aangepaste e-mailverificatie is het gebruik van een externe e-mailprovider vereist, zoals [SendGrid,](https://sendgrid.com) [Mailprovider](https://Mailjet.com)of [SparkPost,](https://sparkpost.com)een aangepaste REST API of een HTTP-e-mailprovider (inclusief uw eigen provider). In dit artikel wordt beschreven hoe u een oplossing instelt die gebruikmaakt van SendGrid.
 
 ## <a name="create-a-sendgrid-account"></a>Een SendGrid-account maken
 
-Als u er nog geen hebt, begint u met het instellen van een SendGrid-account (Azure-klanten kunnen elke maand 25.000 gratis e-mailberichten ontgrendelen). Zie de sectie Create [a SendGrid Account (Een SendGrid-account](../sendgrid-dotnet-how-to-send-email.md#create-a-sendgrid-account) maken) van How to send email using SendGrid with Azure (Een SendGrid-account maken) van How to send email using SendGrid with Azure (E-mail verzenden met [SendGrid met Azure).](../sendgrid-dotnet-how-to-send-email.md)
+Als u nog geen account hebt, begint u met het instellen van een SendGrid-account (Azure-klanten kunnen elke maand 25.000 gratis e-mails ontgrendelen). Zie de sectie Een [SendGrid-account](../sendgrid-dotnet-how-to-send-email.md#create-a-sendgrid-account) maken van E-mail verzenden met [SendGrid met Azure voor installatie-instructies.](../sendgrid-dotnet-how-to-send-email.md)
 
 Zorg ervoor dat u de sectie voltooit waarin u [een SendGrid API-sleutel maakt.](../sendgrid-dotnet-how-to-send-email.md#to-find-your-sendgrid-api-key) Neem de API-sleutel op voor gebruik in een latere stap.
 
 > [!IMPORTANT]
-> SendGrid biedt klanten de mogelijkheid om e-mailberichten te verzenden vanaf gedeelde IP-adressen [en toegewezen IP-adressen.](https://sendgrid.com/docs/ui/account-and-settings/dedicated-ip-addresses/) Wanneer u toegewezen IP-adressen gebruikt, moet u uw eigen reputatie goed opbouwen met een opwarmer voor een IP-adres. Zie Voor meer informatie [Een IP-adres opswarmen.](https://sendgrid.com/docs/ui/sending-email/warming-up-an-ip-address/)
+> SendGrid biedt klanten de mogelijkheid om e-mailberichten te verzenden vanaf gedeelde IP-adressen en [toegewezen IP-adressen.](https://sendgrid.com/docs/ui/account-and-settings/dedicated-ip-addresses/) Wanneer u toegewezen IP-adressen gebruikt, moet u uw eigen reputatie goed opbouwen met het opwarmen van een IP-adres. Zie Een [IP-adres up up voor meer informatie.](https://sendgrid.com/docs/ui/sending-email/warming-up-an-ip-address/)
 
 ## <a name="create-azure-ad-b2c-policy-key"></a>Een Azure AD B2C maken
 
 Sla vervolgens de SendGrid-API-sleutel op in een Azure AD B2C-beleidssleutel waarnaar uw beleid moet verwijzen.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C tenant. Selecteer het **filter Map en abonnement** in het bovenste menu en kies uw Azure AD B2C directory.
+1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C tenant. Selecteer het **filter Map en abonnement** in het bovenste menu en kies uw Azure AD B2C map.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
-1. Selecteer op de pagina Overzicht de **Identity Experience Framework.**
+1. Selecteer op de pagina Overzicht **de optie Identity Experience Framework**.
 1. Selecteer **Beleidssleutels** en selecteer vervolgens **Toevoegen.**
 1. Kies **handmatig** bij **Opties.**
 1. Voer een **naam in** voor de beleidssleutel. Bijvoorbeeld `SendGridSecret`. Het `B2C_1A_` voorvoegsel wordt automatisch toegevoegd aan de naam van uw sleutel.
-1. Voer **bij Geheim** de SendGrid-API-sleutel in die u eerder hebt genoteerd.
-1. Bij **Sleutelgebruik selecteert** u **Handtekening**.
+1. Voer **in Geheim** de SendGrid-API-sleutel in die u eerder hebt genoteerd.
+1. Bij **Sleutelgebruik selecteert** u **Handtekening.**
 1. Selecteer **Maken**.
 
 ## <a name="create-sendgrid-template"></a>SendGrid-sjabloon maken
 
-Nu een SendGrid-account is gemaakt en de SendGrid-API-sleutel is opgeslagen in een Azure AD B2C-beleidssleutel, maakt u een dynamische [transactionele SendGrid-sjabloon.](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/)
+Nu een SendGrid-account is gemaakt en de SendGrid API-sleutel is opgeslagen in een Azure AD B2C-beleidssleutel, maakt u een dynamische [transactionele sendGrid-sjabloon](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/).
 
 1. Open op de SendGrid-site de [pagina transactionele sjablonen](https://sendgrid.com/dynamic_templates) en selecteer **Sjabloon maken.**
-1. Voer een unieke sjabloonnaam in, `Verification email` zoals en selecteer **opslaan.**
+1. Voer een unieke sjabloonnaam in, `Verification email` zoals en selecteer vervolgens **Opslaan.**
 1. Als u de nieuwe sjabloon wilt bewerken, selecteert **u Versie toevoegen.**
 1. Selecteer **Code-editor** en vervolgens **Doorgaan.**
-1. Plak in de HTML-editor de volgende HTML-sjabloon of gebruik uw eigen HTML-sjabloon. De `{{otp}}` `{{email}}` parameters en worden dynamisch vervangen door de een-time wachtwoordwaarde en het e-mailadres van de gebruiker.
+1. Plak de volgende HTML-sjabloon in de HTML-editor of gebruik uw eigen HTML-sjabloon. De parameters en worden dynamisch vervangen door de waarde van een een `{{otp}}` keer wachtwoord en het `{{email}}` e-mailadres van de gebruiker.
 
     ```HTML
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -166,7 +164,7 @@ Nu een SendGrid-account is gemaakt en de SendGrid-API-sleutel is opgeslagen in e
 
 1. Vouw **Instellingen aan** de linkerkant uit en voer bij **E-mailonderwerp** `{{subject}}` in.
 1. Selecteer **Sjabloon opslaan.**
-1. Ga terug naar **de pagina Transactionele** sjablonen door de pijl-terug te selecteren.
+1. Ga terug naar **de pagina Transactionele sjablonen** door de pijl-terug te selecteren.
 1. Neem de **id op** van de sjabloon die u hebt gemaakt voor gebruik in een latere stap. Bijvoorbeeld `d-989077fbba9746e89f3f6411f596fb96`. U geeft deze id op wanneer u [de claimtransformatie toevoegt.](#add-the-claims-transformation)
 
 ## <a name="add-azure-ad-b2c-claim-types"></a>Claimtypen Azure AD B2C toevoegen
@@ -263,7 +261,7 @@ Dit voorbeeld van een weergavebesturingselement is geconfigureerd voor:
 
 1. Verzamel het `email` type adresclaim van de gebruiker.
 1. Wacht tot de gebruiker het `verificationCode` claimtype heeft verstrekt met de code die naar de gebruiker is verzonden.
-1. Ga terug `email` naar het zelfver bevestigde technische profiel met een verwijzing naar dit weergavebesturingselement.
+1. Ga terug `email` naar het zelfver bevestigde technische profiel dat een verwijzing naar dit weergavebesturingselement heeft.
 1. Genereer met `SendCode` behulp van de actie een OTP-code en verzend een e-mailbericht met de OTP-code naar de gebruiker.
 
 ![E-mailactie verificatiecode verzenden](media/custom-email-sendgrid/display-control-verification-email-action-01.png)
@@ -303,7 +301,10 @@ Voeg onder inhoudsdefinities, nog steeds binnen `<BuildingBlocks>` , de volgende
 
 ## <a name="add-otp-technical-profiles"></a>Technische OTP-profielen toevoegen
 
-Het `GenerateOtp` technische profiel genereert een code voor het e-mailadres. Het `VerifyOtp` technische profiel verifieert de code die is gekoppeld aan het e-mailadres. U kunt de configuratie van de indeling en de vervaldatum van het een time-wachtwoord wijzigen. Zie Define [a one-time password technical profile](one-time-password-technical-profile.md)(Een technisch profiel voor een een time-wachtwoord definiëren) voor meer informatie over technische OTP-profielen.
+Het `GenerateOtp` technische profiel genereert een code voor het e-mailadres. Het `VerifyOtp` technische profiel verifieert de code die is gekoppeld aan het e-mailadres. U kunt de configuratie van de indeling en de vervaldatum van het een time-wachtwoord wijzigen. Zie Define a one-time password technical profile (Een technisch profiel voor een [eendtijdswachtwoord](one-time-password-technical-profile.md)definiëren) voor meer informatie over technische OTP-profielen.
+
+> [!NOTE]
+> OTP-codes die worden gegenereerd door het protocol Web.TPEngine.Providers.OneTimePasswordProtocolProvider, zijn gekoppeld aan de browsersessie. Dit betekent dat een gebruiker unieke OTP-codes kan genereren in verschillende browsersessies die elk geldig zijn voor de bijbehorende sessies. Een OTP-code die wordt gegenereerd door de ingebouwde gebruikersstroom is daarentegen onafhankelijk van de browsersessie, dus als een gebruiker een nieuwe OTP-code genereert in een nieuwe browsersessie, wordt de vorige OTP-code vervangen.
 
 Voeg de volgende technische profielen toe aan het `<ClaimsProviders>` -element.
 
@@ -384,7 +385,7 @@ Voeg net als bij de technische OTP-profielen de volgende technische profielen to
 
 ## <a name="make-a-reference-to-the-displaycontrol"></a>Een verwijzing naar DisplayControl maken
 
-Voeg in de laatste stap een verwijzing toe naar de DisplayControl die u hebt gemaakt. Vervang uw bestaande `LocalAccountSignUpWithLogonEmail` en `LocalAccountDiscoveryUsingEmailAddress` zelfbewaarde technische profielen door het volgende. Als u een eerdere versie van het Azure AD B2C gebruikt. Deze technische profielen gebruiken `DisplayClaims` met een verwijzing naar DisplayControl.
+Voeg in de laatste stap een verwijzing toe naar de DisplayControl die u hebt gemaakt. Vervang uw bestaande `LocalAccountSignUpWithLogonEmail` en `LocalAccountDiscoveryUsingEmailAddress` zelf-bevestigde technische profielen door het volgende. Als u een eerdere versie van het Azure AD B2C gebruikt. Deze technische profielen gebruiken `DisplayClaims` met een verwijzing naar DisplayControl.
 
 Zie Zelf-bevestigd technisch [profiel en](restful-technical-profile.md) [DisplayControl](display-controls.md)voor meer informatie.
 
@@ -569,6 +570,6 @@ Nadat u de gelokaliseerde tekenreeksen hebt toevoegen, verwijdert u de metagegev
 U vindt een voorbeeld van een aangepast beleid voor e-mailverificatie op GitHub:
 
 - [Aangepaste e-mailverificatie - DisplayControls](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-email-verifcation-displaycontrol)
-- Zie Define [a RESTful technical profile in](restful-technical-profile.md)an Azure AD B2C custom policy (Een technisch RESTful-profiel definiëren in een Azure AD B2C beleid) voor meer informatie over het gebruik van een aangepaste REST API of een HTTP-gebaseerde SMTP-e-mailprovider.
+- Zie Define a RESTful technical profile in an Azure AD B2C [custom policy (Een technisch RESTful-profiel](restful-technical-profile.md)definiëren in een Azure AD B2C beleid) voor meer informatie over het gebruik van een aangepaste REST API of een HTTP-gebaseerde SMTP-e-mailprovider.
 
 ::: zone-end

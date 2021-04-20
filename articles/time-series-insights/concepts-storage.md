@@ -1,6 +1,6 @@
 ---
-title: Overzicht van opslag-Azure Time Series Insights Gen2 | Microsoft Docs
-description: Meer informatie over gegevens opslag in Azure Time Series Insights Gen2.
+title: Overzicht van Storage - Azure Time Series Insights Gen2 | Microsoft Docs
+description: Meer informatie over gegevensopslag in Azure Time Series Insights Gen2.
 author: deepakpalled
 ms.author: dpalled
 manager: diviso
@@ -10,119 +10,122 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 67ab4c8cf079adaf3b38cdcc30abeec43cd4612f
-ms.sourcegitcommit: c2a41648315a95aa6340e67e600a52801af69ec7
+ms.openlocfilehash: cd26df1de86ee4bdb33050d0bc4769663707733e
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106505192"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107725022"
 ---
 # <a name="data-storage"></a>Gegevensopslag
 
-In dit artikel wordt de gegevens opslag in Azure Time Series Insights Gen2 beschreven. Dit geldt voor warme en koude, Beschik baarheid van gegevens en aanbevolen procedures.
+In dit artikel wordt gegevensopslag in Azure Time Series Insights Gen2 beschreven. Het bevat informatie over warm en koud, beschikbaarheid van gegevens en best practices.
 
 ## <a name="provisioning"></a>Inrichten
 
 Wanneer u een Azure Time Series Insights Gen2-omgeving maakt, hebt u de volgende opties:
 
-* Koude gegevens opslag:
-  * Maak een nieuwe Azure Storage-Resource in het abonnement en de regio die u hebt gekozen voor uw omgeving.
-  * Een bestaand Azure Storage-account koppelen. Deze optie is alleen beschikbaar als u vanuit een Azure Resource Manager- [sjabloon](/azure/templates/microsoft.timeseriesinsights/allversions)implementeert en niet zichtbaar is in de Azure Portal.
-* Warme gegevens opslag:
-  * Een warme Store is optioneel en kan worden ingeschakeld of uitgeschakeld tijdens of na het inrichten. Als u besluit om warme Store op een later tijdstip in te scha kelen en er al gegevens in uw koel winkel staan, raadpleegt u [deze](concepts-storage.md#warm-store-behavior) sectie hieronder om het verwachte gedrag te begrijpen. De Bewaar periode voor de warme Store-gegevens kan 7 tot 31 dagen worden geconfigureerd. Dit kan ook worden aangepast als dat nodig is.
+* Koude gegevensopslag:
+  * Maak een nieuwe Azure Storage resource in het abonnement en de regio die u hebt gekozen voor uw omgeving.
+  * Voeg een bestaand Azure Storage toe. Deze optie is alleen beschikbaar door te implementeren vanuit een Azure Resource Manager [sjabloon](/azure/templates/microsoft.timeseriesinsights/allversions)en is niet zichtbaar in de Azure Portal.
+* Warme gegevensopslag:
+  * Een warme opslag is optioneel en kan tijdens of na het inrichten worden ingeschakeld of uitgeschakeld. Als u besluit om warme opslag op een later tijdstip in [](concepts-storage.md#warm-store-behavior) teschakelen en er al gegevens in uw koude opslag staan, bekijkt u deze sectie hieronder om inzicht te krijgen in het verwachte gedrag. De gegevensretentietijd van de warme opslag kan worden geconfigureerd voor 7 tot 31 dagen en dit kan ook naar behoefte worden aangepast.
 
-Wanneer een gebeurtenis wordt opgenomen, wordt deze in zowel de warme Store (indien ingeschakeld) als in het koel archief geïndexeerd.
+Wanneer een gebeurtenis wordt opgenomen, wordt deze geïndexeerd in zowel warme opslag (indien ingeschakeld) als koude opslag.
 
-[![Overzicht van opslag](media/concepts-storage/pipeline-to-storage.png)](media/concepts-storage/pipeline-to-storage.png#lightbox)
+[![Overzicht van Opslag](media/concepts-storage/pipeline-to-storage.png)](media/concepts-storage/pipeline-to-storage.png#lightbox)
 
 > [!WARNING]
-> Als eigenaar van het Azure Blob Storage-account waar koud opgeslagen gegevens zich bevinden, hebt u volledige toegang tot alle gegevens in het account. Deze toegang omvat machtigingen voor schrijven en verwijderen. Bewerk of verwijder de gegevens die Azure Time Series Insights Gen2-schrijf bewerkingen, omdat dat gegevens verlies kan veroorzaken.
+> Als eigenaar van het Azure Blob Storage-account waarin koude opslaggegevens zich bevinden, hebt u volledige toegang tot alle gegevens in het account. Deze toegang omvat schrijf- en verwijdermachtigingen. Bewerk of verwijder de gegevens die niet worden Azure Time Series Insights Gen2-schrijfbewerkingen, omdat dit gegevensverlies kan veroorzaken.
 
 ## <a name="data-availability"></a>Beschikbaarheid van gegevens
 
-Azure Time Series Insights Gen2 partities en index gegevens voor optimale query prestaties. Gegevens worden beschikbaar gesteld voor het uitvoeren van een query vanuit zowel warme (indien ingeschakeld) als koud opgeslagen na de index. De hoeveelheid gegevens die wordt opgenomen en de doorvoer snelheid per partitie kan van invloed zijn op de beschik baarheid. Bekijk de [doorvoer beperkingen](./concepts-streaming-ingress-throughput-limits.md) van de gebeurtenis bron en [Aanbevolen procedures](./concepts-streaming-ingestion-event-sources.md#streaming-ingestion-best-practices) voor de beste prestaties. U kunt ook een vertragings [waarschuwing](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) configureren om te worden gewaarschuwd als uw omgeving problemen ondervindt bij het verwerken van gegevens.
+Azure Time Series Insights Gen2 partities en indexeert gegevens voor optimale queryprestaties. Gegevens worden beschikbaar voor het uitvoeren van query's vanuit zowel warm (indien ingeschakeld) als koude opslag nadat deze zijn geïndexeerd. De hoeveelheid gegevens die wordt opgenomen en de doorvoersnelheid per partitie kan van invloed zijn op de beschikbaarheid. Bekijk de beperkingen en best [practices](./concepts-streaming-ingestion-event-sources.md#streaming-ingestion-best-practices) [voor doorvoer van gebeurtenisbron](./concepts-streaming-ingress-throughput-limits.md) voor de beste prestaties. U kunt ook een vertragingswaarschuwing [configureren om](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) een melding te ontvangen als uw omgeving problemen ondervindt met het verwerken van gegevens.
 
 > [!IMPORTANT]
-> Het kan een periode van Maxi maal 60 seconden duren voordat de gegevens beschikbaar zijn. Als u na 60 seconden een langere latentie ondervindt, kunt u een ondersteunings ticket indienen via de Azure Portal.
+> U kunt een periode van maximaal 60 seconden ervaren voordat gegevens beschikbaar komen. Als u een aanzienlijke latentie van meer dan 60 seconden ervaart, dient u een ondersteuningsticket in via de Azure Portal.
 
-## <a name="warm-store"></a>Warme Store
+## <a name="warm-store"></a>Warme winkel
 
-Gegevens in uw warme archief zijn alleen beschikbaar via de [Time Series query-api's](./concepts-query-overview.md), de [Azure time series Insights TSI-verkenner](./concepts-ux-panels.md)of de Power bi- [connector](./how-to-connect-power-bi.md). Query's voor warme Stores zijn gratis en er is geen quotum, maar er is een [limiet van 30](/rest/api/time-series-insights/reference-api-limits#query-apis---limits) gelijktijdige aanvragen.
+Gegevens in uw warme opslag zijn alleen beschikbaar via de [Time Series Query-API's,](./concepts-query-overview.md)de [Azure Time Series Insights TSI Explorer](./concepts-ux-panels.md)of de Power BI [Connector](./how-to-connect-power-bi.md). Warme-winkelquery's zijn gratis en er is geen quotum, maar er is een limiet [van 30](/rest/api/time-series-insights/reference-api-limits#query-apis---limits) gelijktijdige aanvragen.
 
-### <a name="warm-store-behavior"></a>Gedrag voor warme opslag
+### <a name="warm-store-behavior"></a>Warm winkelgedrag
 
-* Wanneer deze functie is ingeschakeld, worden alle gegevens die in uw omgeving zijn gestreamd, doorgestuurd naar uw warme Store, ongeacht de tijds tempel van de gebeurtenis. Houd er rekening mee dat de pijp lijn voor streaming-opname is gebouwd voor bijna realtime streaming en het opnemen van historische gebeurtenissen wordt [niet ondersteund](./concepts-streaming-ingestion-event-sources.md#historical-data-ingestion).
-* De retentie tijd wordt berekend op basis van het moment waarop de gebeurtenis is geïndexeerd in warme opslag, niet de tijds tempel van de gebeurtenis. Dit betekent dat gegevens niet meer beschikbaar zijn in de warme opslag nadat de Bewaar periode is verstreken, zelfs als het tijds tempel van de gebeurtenis voor de toekomst ligt.
-  * Voor beeld: een gebeurtenis met weers verwachtingen van 10 dagen wordt opgenomen en geïndexeerd in een warme opslag container die is geconfigureerd met een Bewaar periode van 7 dagen. Na 7 dagen is de voor spelling niet langer toegankelijk in de warme Store, maar kan er wel een query worden uitgevoerd vanuit koude.
-* Als u warme Store inschakelt in een bestaande omgeving die al recente gegevens bevat die zijn geïndexeerd in koude opslag, moet u er rekening mee houden dat uw warme archief niet met deze gegevens kan worden gevuld.
-* Als u een warme archief zojuist hebt ingeschakeld en problemen ondervindt met het weer geven van uw recente gegevens in de Explorer, kunt u de query's voor warme Store tijdelijk uitschakelen:
+* Wanneer deze functie is ingeschakeld, worden alle gegevens die naar uw omgeving worden gestreamd, gerouteerd naar uw warme opslag, ongeacht de tijdstempel van de gebeurtenis. Houd er rekening mee dat de pijplijn voor streaming-opname is gebouwd voor bijna realtime streaming en het opnemen van historische gebeurtenissen [niet wordt ondersteund.](./concepts-streaming-ingestion-event-sources.md#historical-data-ingestion)
+* De bewaarperiode wordt berekend op basis van het moment waarop de gebeurtenis is geïndexeerd in een warme opslag, niet de tijdstempel van de gebeurtenis. Dit betekent dat gegevens niet meer beschikbaar zijn in warme opslag nadat de bewaarperiode is verstreken, zelfs niet als de tijdstempel van de gebeurtenis voor de toekomst is.
+  * Voorbeeld: een gebeurtenis met 10-daagse weersvoorspellingen wordt opgenomen en geïndexeerd in een warme-opslagcontainer die is geconfigureerd met een bewaarperiode van 7 dagen. Na zeven dagen is de voorspelling niet meer toegankelijk in een warme opslag, maar kan er een query worden gedaan bij koude gegevens.
+* Als u warme opslag in een bestaande omgeving inschakelen waarin al recente gegevens zijn geïndexeerd in koude opslag, moet u er rekening mee houden dat uw warme opslag niet wordt gevuld met deze gegevens.
+* Als u warme opslag zojuist hebt ingeschakeld en problemen ondervindt met het weergeven van uw recente gegevens in de Verkenner, kunt u warm store-query's tijdelijk uitschakelen:
 
    [![Warme query's uitschakelen](media/concepts-storage/toggle-warm.png)](media/concepts-storage/toggle-warm.png#lightbox)
 
-## <a name="cold-store"></a>Koude Store
+## <a name="cold-store"></a>Koude opslag
 
-In deze sectie worden Azure Storage gegevens beschreven die relevant zijn voor Azure Time Series Insights Gen2.
+In deze sectie worden Azure Storage informatie beschreven die relevant is Azure Time Series Insights Gen2.
 
-Lees de [Inleiding tot opslag-blobs](../storage/blobs/storage-blobs-introduction.md)voor een uitgebreide beschrijving van Azure Blob-opslag.
+Lees de inleiding tot [Storage-blobs](../storage/blobs/storage-blobs-introduction.md)voor een gedetailleerde beschrijving van Azure Blob Storage.
 
-### <a name="your-cold-storage-account"></a>Uw account voor koude opslag
+### <a name="your-cold-storage-account"></a>Uw koude opslagaccount
 
-Azure Time Series Insights Gen2 bewaren Maxi maal twee exemplaren van elke gebeurtenis in uw Azure Storage-account. Een kopie slaat gebeurtenissen op die zijn besteld door opname tijd, waarbij altijd toegang tot gebeurtenissen in een geordende reeks wordt toegestaan. Azure Time Series Insights Gen2 maakt in de loop van de tijd ook een opnieuw gepartitioneerde kopie van de gegevens voor het optimaliseren van query's die kunnen worden uitgevoerd.
+Azure Time Series Insights Gen2 behoudt maximaal twee kopieën van elke gebeurtenis in uw Azure Storage account. In één kopie worden gebeurtenissen op volgorde van opnametijd op volgorde opgevolgd, waarbij altijd toegang tot gebeurtenissen wordt gegeven in een op tijd geordende volgorde. Na een periode maakt Azure Time Series Insights Gen2 ook een gepartitioneerde kopie van de gegevens om te optimaliseren voor het uitvoeren van query's.
 
-Al uw gegevens worden voor onbepaalde tijd opgeslagen in uw Azure Storage-account.
+Al uw gegevens worden voor onbepaalde tijd opgeslagen in uw Azure Storage account.
+
+> [!WARNING]
+> Beperk de openbare internettoegang niet tot een hub of gebeurtenisbron die wordt gebruikt door Time Series Insights anders wordt de benodigde verbinding verbroken.
 
 #### <a name="writing-and-editing-blobs"></a>Blobs schrijven en bewerken
 
-Om de query prestaties en de beschik baarheid van gegevens te garanderen, moet u geen blobs bewerken of verwijderen die Azure Time Series Insights Gen2 maakt.
+Om ervoor te zorgen dat queryprestaties en beschikbaarheid van gegevens beschikbaar zijn, moet u geen blobs bewerken of verwijderen die Azure Time Series Insights Gen2 maakt.
 
-#### <a name="accessing-cold-store-data"></a>Toegang tot koude Store-gegevens
+#### <a name="accessing-cold-store-data"></a>Toegang tot gegevens in koude opslag
 
-U hebt niet alleen toegang tot uw gegevens via de Api's van de [Azure time series Insights Explorer](./concepts-ux-panels.md) -en [Time Series-query](./concepts-query-overview.md), maar u kunt ook uw gegevens rechtstreeks openen vanuit de Parquet-bestanden die zijn opgeslagen in het koel huis. U kunt bijvoorbeeld gegevens in een Jupyter-notebook lezen, transformeren en opschonen en deze vervolgens gebruiken om uw Azure Machine Learning model te trainen in dezelfde Spark-werk stroom.
+Naast toegang tot uw gegevens vanuit [de Azure Time Series Insights Explorer-](./concepts-ux-panels.md) en Time Series Query-API's, kunt u ook rechtstreeks toegang krijgen tot uw gegevens vanuit de Parquet-bestanden die zijn opgeslagen in de koude opslag. [](./concepts-query-overview.md) U kunt bijvoorbeeld gegevens lezen, transformeren en ops schonen in een Jupyter-notebook en deze vervolgens gebruiken om uw Azure Machine Learning-model in dezelfde Spark-werkstroom te trainen.
 
-Als u gegevens rechtstreeks vanuit uw Azure Storage-account wilt openen, moet u lees toegang hebben tot het account dat wordt gebruikt om uw Azure Time Series Insights Gen2-gegevens op te slaan. U kunt vervolgens geselecteerde gegevens lezen op basis van de aanmaak tijd van het Parquet-bestand dat zich bevindt in de `PT=Time` map die hieronder wordt beschreven in de sectie [Parquet-bestands indeling](#parquet-file-format-and-folder-structure) .  Zie [toegang tot de resources van uw opslag account beheren](../storage/blobs/anonymous-read-access-configure.md)voor meer informatie over het inschakelen van lees toegang tot uw opslag account.
+Als u rechtstreeks vanuit uw Azure Storage-account toegang wilt krijgen tot gegevens, hebt u leestoegang nodig tot het account dat wordt gebruikt om uw Azure Time Series Insights Gen2-gegevens op te slaan. Vervolgens kunt u geselecteerde gegevens lezen op basis van de aanmaaktijd van het Parquet-bestand in de map die hieronder wordt beschreven in de `PT=Time` [sectie Parquet-bestandsindeling.](#parquet-file-format-and-folder-structure)  Zie Toegang tot uw opslagaccountresources beheren voor meer informatie over het inschakelen van leestoegang tot [uw opslagaccount.](../storage/blobs/anonymous-read-access-configure.md)
 
 #### <a name="data-deletion"></a>Gegevens verwijderen
 
-Verwijder niet uw Azure Time Series Insights Gen2-bestanden. Alleen gerelateerde gegevens vanuit Azure Time Series Insights Gen2 beheren.
+Verwijder uw Azure Time Series Insights Gen2-bestanden niet. Gerelateerde gegevens alleen beheren vanuit Azure Time Series Insights Gen2.
 
-### <a name="parquet-file-format-and-folder-structure"></a>Parquet bestands indeling en mapstructuur
+### <a name="parquet-file-format-and-folder-structure"></a>Parquet-bestandsindeling en mapstructuur
 
-Parquet is een open-source kolom indeling die is ontworpen voor efficiënte opslag en prestaties. Azure Time Series Insights Gen2 maakt gebruik van Parquet om query prestaties op basis van tijd reeksen op schaal in te scha kelen.
+Parquet is een opensource-bestandsindeling voor kolommen die is ontworpen voor efficiënte opslag en prestaties. Azure Time Series Insights Gen2 maakt gebruik van Parquet om queryprestaties op basis van time series-id's op schaal mogelijk te maken.
 
-Lees de [Parquet-documentatie](https://parquet.apache.org/documentation/latest/)voor meer informatie over het bestands type Parquet.
+Lees de Parquet-documentatie voor meer informatie over het [Parquet-bestandstype.](https://parquet.apache.org/documentation/latest/)
 
-Azure Time Series Insights Gen2 worden kopieën van uw gegevens als volgt opgeslagen:
+Azure Time Series Insights Gen2 slaat kopieën van uw gegevens als volgt op:
 
-* De eerste, eerste kopie wordt gepartitioneerd op basis van de opname tijd en slaat ruwweg gegevens op in volg orde van aankomst. Deze gegevens bevinden zich in de `PT=Time` map:
+* De eerste, eerste kopie wordt gepartitief op basis van de opnametijd en slaat gegevens ongeveer op volgorde van aankomst op. Deze gegevens bevinden zich in de `PT=Time` map :
 
   `V=1/PT=Time/Y=<YYYY>/M=<MM>/<YYYYMMDDHHMMSSfff>_<TSI_INTERNAL_SUFFIX>.parquet`
 
-* De tweede, opnieuw gepartitioneerde kopie wordt gegroepeerd op Time Series-Id's en bevindt zich in de `PT=TsId` map:
+* De tweede, opnieuw gepartitioneerde kopie wordt gegroepeerd op tijdreeks-ID's en bevindt zich in de `PT=TsId` map:
 
   `V=1/PT=TsId/<TSI_INTERNAL_NAME>.parquet`
 
-De tijds tempel in de namen van de blobs in de `PT=Time` map komt overeen met de aankomst tijd van de gegevens in azure time series Insights Gen2 en niet de tijds tempel van de gebeurtenissen.
+De tijdstempel in de blobnamen in de map komt overeen met de aankomsttijd van de gegevens met Azure Time Series Insights Gen2 en niet met de `PT=Time` tijdstempel van de gebeurtenissen.
 
-Gegevens in de `PT=TsId` map worden gedurende een bepaalde periode geoptimaliseerd en zijn niet statisch. Tijdens het opnieuw partitioneren zijn er mogelijk enkele gebeurtenissen aanwezig in meerdere blobs. De naamgeving van de blobs in deze map is niet gegarandeerd dat deze hetzelfde blijft.
+Gegevens in de `PT=TsId` map worden geoptimaliseerd voor query's gedurende een periode en zijn niet statisch. Tijdens het opnieuw indelen zijn sommige gebeurtenissen mogelijk aanwezig in meerdere blobs. De naamgeving van de blobs in deze map blijft niet gegarandeerd hetzelfde.
 
-In het algemeen kunt u de map gebruiken als u rechtstreeks toegang moet hebben tot gegevens via Parquet-bestanden `PT=Time` .  De toekomstige functionaliteit zorgt ervoor dat de map efficiënt wordt geopend `PT=TsId` .
+Als u rechtstreeks toegang nodig hebt tot gegevens via Parquet-bestanden, gebruikt u over het algemeen de `PT=Time` map .  Toekomstige functionaliteit maakt efficiënte toegang tot de map `PT=TsId` mogelijk.
 
 > [!NOTE]
 >
-> * `<YYYY>` wordt toegewezen aan een jaar representatie van vier cijfers.
-> * `<MM>` wordt toegewezen aan een maand weergave met twee cijfers.
-> * `<YYYYMMDDHHMMSSfff>` is gekoppeld aan een tijds tempel weergave met vier cijfers per jaar ( `YYYY` ), een maand van twee cijfers (), een dag van twee cijfers (), een uur van twee cijfers (), een minuut van twee `MM` `DD` `HH` cijfers ( `MM` ), een tweede cijfer seconde ( `SS` ) en een milliseconde van drie cijfers `fff` .
+> * `<YYYY>` wordt aan een viercijferige jaarweergave toebetalen.
+> * `<MM>` wordt aan een maandweergave van twee cijfers toebetalen.
+> * `<YYYYMMDDHHMMSSfff>` wordt een tijdstempel weergegeven met viercijferige jaar ( ), maand (), dag met twee cijfers ( ), uur met twee cijfers ( ), minuut met twee cijfers ( ), seconde van twee cijfers ( ) en milliseconden van drie `YYYY` `MM` cijfers ( `DD` `HH` `MM` `SS` `fff` ).
 
-Azure Time Series Insights Gen2-gebeurtenissen worden als volgt toegewezen aan de inhoud van Parquet-bestand:
+Azure Time Series Insights Gen2-gebeurtenissen worden als volgt aan de inhoud van het Parquet-bestand toegevoegd:
 
-* Elke gebeurtenis wordt toegewezen aan één rij.
-* Elke rij bevat de **Time Stamp** -kolom met een tijds tempel van de gebeurtenis. De eigenschap time stamp is nooit null. De standaard instelling is dat de gebeurtenis in de **wachtrij** wordt geplaatst als de eigenschap time stamp niet is opgegeven in de bron van de gebeurtenis. De opgeslagen tijds tempel is altijd in UTC.
-* Elke rij bevat de tijdreeks-ID (TSID) kolom (men) zoals gedefinieerd wanneer de Azure Time Series Insights Gen2-omgeving wordt gemaakt. De TSID-eigenschaps naam bevat het `_string` achtervoegsel.
-* Alle andere eigenschappen die als telemetriegegevens worden verzonden, worden toegewezen aan kolom namen die eindigen `_bool` op (Booleaans), `_datetime` (tijds tempel), `_long` (Long), `_double` (dubbele), `_string` (teken reeks) of `dynamic` (dynamisch), afhankelijk van het eigenschaps type.  Meer informatie over [ondersteunde gegevens typen](./concepts-supported-data-types.md)vindt u in.
-* Dit toewijzings schema is van toepassing op de eerste versie van de bestands indeling, waarnaar wordt verwezen als **V = 1** en wordt opgeslagen in de map base met dezelfde naam. Als deze functie zich ontwikkelt, kan dit toewijzings schema worden gewijzigd en wordt de referentie naam verhoogd.
+* Elke gebeurtenis wordt aan één rij toe te kennen.
+* Elke rij bevat de **tijdstempelkolom** met een tijdstempel van de gebeurtenis. De eigenschap tijdstempel is nooit null. De standaardwaarde is de **gebeurtenis in de enqueu-tijd** als de eigenschap tijdstempel niet is opgegeven in de gebeurtenisbron. De opgeslagen tijdstempel is altijd in UTC.
+* Elke rij bevat de kolom(s) tijdreeks-id(s) zoals gedefinieerd wanneer de Azure Time Series Insights Gen2-omgeving wordt gemaakt. De TSID-eigenschapsnaam bevat het `_string` achtervoegsel.
+* Alle andere eigenschappen die als telemetriegegevens worden verzonden, worden, afhankelijk van het eigenschapstype, aan kolomnamen die eindigen op `_bool` (Booleaanse), `_datetime` (tijdstempel), `_long` (lang), (dubbel), (tekenreeks) of `_double` `_string` `dynamic` (dynamisch) toebeland.  Lees meer over Ondersteunde [gegevenstypen voor meer informatie.](./concepts-supported-data-types.md)
+* Dit toewijzingsschema is van toepassing op de eerste versie van de bestandsindeling waarnaar wordt verwezen **als V=1** en wordt opgeslagen in de basismap met dezelfde naam. Naarmate deze functie zich verder ontwikkelt, kan dit toewijzingsschema worden gewijzigd en wordt de referentienaam verhoogd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [gegevens modellering](./concepts-model-overview.md).
+* Meer informatie [over gegevensmodelleren.](./concepts-model-overview.md)
 
-* Plan uw [Azure time series Insights Gen2-omgeving](./how-to-plan-your-environment.md).
+* Plan uw [Azure Time Series Insights Gen2-omgeving.](./how-to-plan-your-environment.md)

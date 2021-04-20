@@ -1,70 +1,70 @@
 ---
-title: Aanvraag limieten-Translator
+title: Limieten aanvragen - Translator
 titleSuffix: Azure Cognitive Services
-description: In dit artikel vindt u de aanvraag limieten voor het conversie programma. De kosten worden berekend op basis van het aantal tekens, niet de aanvraag frequentie met een limiet van 5.000 tekens per aanvraag. De teken limieten zijn gebaseerd op abonnementen, met F0 tot 2.000.000 tekens per uur.
+description: In dit artikel vindt u een lijst met aanvraaglimieten voor Translator. Kosten worden gemaakt op basis van het aantal tekens, niet de aanvraagfrequentie met een limiet van 5000 tekens per aanvraag. Tekenlimieten zijn gebaseerd op een abonnement, met F0 beperkt tot 2 miljoen tekens per uur.
 services: cognitive-services
 author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 04/19/2021
 ms.author: lajanuar
-ms.openlocfilehash: 2bc2c1361c7d2f73ff8a67e906a6db725f669d52
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b5beb222ec20b1e7941f9438c0aacf98879a567a
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98895404"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727938"
 ---
-# <a name="request-limits-for-translator"></a>Aanvraag limieten voor Translator
+# <a name="request-limits-for-translator"></a>Aanvraaglimieten voor Translator
 
-Dit artikel bevat beperkings limieten voor het conversie programma. Services omvatten omzetting, vele, detectie van de lengte van de zinnen, taal detectie en alternatieve vertalingen.
+Dit artikel bevat beperkingslimieten voor translator-vertaling, transliteratie, zinlengtedetectie, taaldetectie en alternatieve vertalingen.
 
-## <a name="character-and-array-limits-per-request"></a>Limieten voor tekens en matrices per aanvraag
+## <a name="character-and-array-limits-per-request"></a>Teken- en matrixlimieten per aanvraag
 
-Elke Vertaal aanvraag is beperkt tot 10.000 tekens, in alle doel talen waarnaar u vertaalt. Als u bijvoorbeeld een Vertaal aanvraag van 3.000 tekens verzendt om te vertalen naar drie verschillende talen, resulteert dit in een aanvraag grootte van 3000x3 = 9.000 tekens, die voldoet aan de aanvraag limiet. U betaalt per teken, niet op het aantal aanvragen. Het wordt aanbevolen om kortere aanvragen te verzenden.
+Elke vertaalaanvraag is beperkt tot 10.000 tekens in alle doeltalen waar u naar vertaalt. Het verzenden van een vertaalaanvraag van 3000 tekens om te vertalen naar drie verschillende talen resulteert bijvoorbeeld in een aanvraaggrootte van 3000x3 = 9000 tekens, wat voldoet aan de aanvraaglimiet. Er worden kosten in rekening gebracht per teken, niet per aantal aanvragen. Het is raadzaam om kortere aanvragen te verzenden.
 
-De volgende tabel bevat een overzicht van matrix elementen en teken limieten voor elke bewerking van de vertaler.
+De volgende tabel bevat matrixelement- en tekenlimieten voor elke bewerking van Translator.
 
-| Bewerking | Maximale grootte van matrix element |    Maximum aantal matrix elementen |    Maximale aanvraag grootte (tekens) |
+| Bewerking | Maximale grootte van matrixelement |    Maximum aantal matrixelementen |    Maximale aanvraaggrootte (tekens) |
 |:----|:----|:----|:----|
-| Translator | 10.000    | 100   | 10.000 |
-| Transcriberen | 5\.000 | 10    | 5\.000 |
-| Detecteren | 50,000 | 100 |   50,000 |
-| BreakSentence | 50,000    | 100 | 50,000 |
-| Opzoeken in woordenlijst| 100 |  10  | 1000 |
-| Voorbeelden in woordenlijst | 100 voor tekst en 100 voor vertaling (200 in totaal)| 10|   2.000 |
+| Translator | 10.000| 100| 10.000 |
+| Transcriberen | 5\.000| 10| 5\.000 |
+| Detecteren | 50,000 |100 |50,000 |
+| BreakSentence | 50,000| 100 |50,000 |
+| Opzoeken in woordenlijst| 100 |10| 1000 |
+| Voorbeelden in woordenlijst | 100 voor tekst en 100 voor vertaling (totaal 200)| 10|2.000 |
 
-## <a name="character-limits-per-hour"></a>Maximum aantal tekens per uur
+## <a name="character-limits-per-hour"></a>Tekenlimieten per uur
 
-De teken limiet per uur is gebaseerd op uw Vertaal handelslaag. 
+Uw tekenlimiet per uur is gebaseerd op uw Translator-abonnementslaag.
 
-Het quotum per uur moet gelijkmatig over het hele uur worden verbruikt. Bijvoorbeeld: bij de limiet van F0 van 2.000.000 tekens per uur moeten tekens worden verbruikt die niet sneller zijn dan ongeveer 33.300 tekens per minuut sliding window (2.000.000 tekens gedeeld door 60 minuten).
+Het quotum per uur moet gelijkmatig gedurende het hele uur worden verbruikt. Bij de limiet van de F0-laag van 2 miljoen tekens per uur mogen tekens bijvoorbeeld niet sneller worden gebruikt dan ongeveer 33.300 tekens per minuut sliding window (2 miljoen tekens gedeeld door 60 minuten).
 
-Als u deze limieten bereikt of overschrijdt, of als u een deel van het quotum te groot verzendt, wordt er waarschijnlijk een out-of-quota reactie weer gegeven. Er zijn geen limieten voor gelijktijdige aanvragen.
+Als u deze limieten bereikt of overschrijdt, of als u in korte tijd een te groot deel van het quotum verzendt, ontvangt u waarschijnlijk een antwoord dat het quotum te hoog is. Er zijn geen limieten voor gelijktijdige aanvragen.
 
-| Laag | Teken limiet |
+| Laag | Tekenlimiet |
 |------|-----------------|
-| F0 | 2.000.000 tekens per uur |
-| S1 | 40.000.000 tekens per uur |
-| S2/C2 | 40.000.000 tekens per uur |
-| S3/C3 | 120.000.000 tekens per uur |
-| S4/C4 | 200.000.000 tekens per uur |
+| F0 | 2 miljoen tekens per uur |
+| S1 | 40 miljoen tekens per uur |
+| S2 /C2 | 40 miljoen tekens per uur |
+| S3 / C3 | 120 miljoen tekens per uur |
+| S4 /C4 | 200 miljoen tekens per uur |
 
-De limieten voor [meerdere service abonnementen](./reference/v3-0-reference.md#authentication) zijn gelijk aan die van de S1-laag.
+Limieten [voor abonnementen met meerdere service](./reference/v3-0-reference.md#authentication) zijn hetzelfde als de S1-laag.
 
-Deze limieten zijn beperkt tot de standaard Vertaal modellen van micro soft. Aangepaste Vertaal modellen die gebruikmaken van aangepaste vertalers, zijn beperkt tot 1.800 tekens per seconde.
+Deze limieten zijn beperkt tot de standaard vertaalmodellen van Microsoft. Aangepaste vertaalmodellen die gebruikmaken Custom Translator zijn beperkt tot 1800 tekens per seconde per model.
 
 ## <a name="latency"></a>Latentie
 
-Het conversie programma heeft een maximale latentie van 15 seconden met standaard modellen en 120 seconden wanneer aangepaste modellen worden gebruikt. Normaal gesp roken worden antwoorden op *tekst binnen 100 tekens* geretourneerd in 150 milliseconden tot 300 milliseconden. De aangepaste Translator-modellen hebben vergelijk bare latentie kenmerken voor een continue aanvraag frequentie en kunnen een hogere latentie hebben wanneer uw aanvraag frequentie loopt. Reactie tijden variëren op basis van de grootte van de aanvraag en het taal paar. Als u binnen deze tijds Panne geen vertaling of een [fout](./reference/v3-0-reference.md#errors) bericht ontvangt, controleert u uw code, uw netwerk verbinding en probeer het opnieuw. 
+Translator heeft een maximale latentie van 15 seconden met standaardmodellen en 120 seconden bij het gebruik van aangepaste modellen. Normaal gesproken worden antwoorden voor tekst binnen *100 tekens* geretourneerd in 150 milliseconden tot 300 milliseconden. De custom translator-modellen hebben vergelijkbare latentiekenmerken op basis van een langdurige aanvraagsnelheid en hebben mogelijk een hogere latentie wanneer uw aanvraagfrequentie af en toe is. De reactietijden variëren op basis van de grootte van de aanvraag en het taalpaar. Als u binnen dat tijdsbestek [](./reference/v3-0-reference.md#errors) geen vertaling of foutbericht ontvangt, controleert u uw code, uw netwerkverbinding en doet u het opnieuw.
 
-## <a name="sentence-length-limits"></a>Maximale lengte van zin
+## <a name="sentence-length-limits"></a>Limieten voor zinlengte
 
-Wanneer u de functie [BreakSentence](./reference/v3-0-break-sentence.md) gebruikt, is de lengte van de zin beperkt tot 275 tekens. Er zijn uitzonde ringen voor deze talen:
+Wanneer u de [functie BreakSentence](./reference/v3-0-break-sentence.md) gebruikt, is de zinlengte beperkt tot 275 tekens. Er zijn uitzonderingen voor deze talen:
 
-| Taal | Code | Teken limiet |
+| Taal | Code | Tekenlimiet |
 |----------|------|-----------------|
 | Chinees | zh | 166 |
 | Duits | de | 800 |
@@ -75,7 +75,7 @@ Wanneer u de functie [BreakSentence](./reference/v3-0-break-sentence.md) gebruik
 | Thai | th | 180 |
 
 > [!NOTE]
-> Deze limiet is niet van toepassing op vertalingen.
+> Deze limiet geldt niet voor vertalingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.subservice: enterprise
 ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 643aac7927cc7b14693387fbb5765bdcd0214dc2
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 5d945c421dc0a4abed17b3a355339c131dd922df
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598243"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728046"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Meer informatie over uw Azure Enterprise Agreement-factuur
 
@@ -396,51 +396,6 @@ See [Power BI self-service sign up](https://powerbi.microsoft.com/documentation/
 
     U kunt de API-sleutel ophalen in de Azure Enterprise-portal onder het tabblad **Gebruik downloaden**. Selecteer de **API-toegangssleutel**, en plak de sleutel vervolgens in het vak **Accountsleutel**.
 1. Het duurt ongeveer 5 à 30 minuten voordat de gegevens zijn geladen in Power BI, afhankelijk van de grootte van de gegevensset.
-
-## <a name="reports-faq"></a>Veelgestelde vragen over rapporten
-
-In deze sectie worden veelgestelde vragen over rapporten beantwoord.
-
-### <a name="why-is-my-cost-showing-as-0"></a>Waarom worden mijn kosten weer gegeven als $ 0?
-
-Voor klanten van een **directe inschrijving** kunnen ondernemingsbeheerders toegangsmachtigingen verlenen aan accounteigenaren en afdelingsbeheerders voor informatie over kosten/prijzen. Volg deze stappen:
-
-1. Selecteer in de Azure Enterprise-portal de optie **Beheren** in het linkernavigatievenster.
-1. Selecteer het blauwe potlood naast DA-kostenweergave (afdelingsbeheerder).
-1. Selecteer **Ingeschakeld** en sla het bestand op.
-1. Selecteer het blauwe potlood naast AO-kostenweergave (accounteigenaar).
-1. Selecteer **Ingeschakeld** en sla het bestand op.
-
-> [!NOTE]
-> Als u een accounteigenaar of afdelingsbeheerder bent, neemt u contact op met de ondernemingsbeheerder om de prijsfunctie in te schakelen.
-
-Voor klanten met een **indirecte inschrijving**: neem contact op met de partner om te controleren of deze de prijsfunctie voor u heeft ingeschakeld. Dit kan alleen worden gedaan door de partner. Nadat dit is ingeschakeld, kunt u de kosten en prijzen voor uw inschrijving bekijken als ondernemingsbeheerder.
-
-Voor partners: als u de functie voor het weergeven van kosten wilt inschakelen voor een accounteigenaar of ondernemingsbeheerder, volgt u de stappen onder **directe inschrijving**.
-
-### <a name="why-is-there-no-sku-information-on-my-usage-detail-report"></a>Waarom bevat het gebruiksgegevensrapport geen SKU-gegevens?
-
-Het gebruiksgegevensrapport bevat geen SKU-gegevens. Het rapport bevat echter gebruiksgegevens zodat u het rapport met het prijzenoverzicht kunt downloaden om de SKU-gegevens te verkrijgen.
-
-### <a name="why-doesnt-the-total-amount-on-azure-marketplace-match-the-reports-for-usage-summary-and-detail"></a>Waarom komt de totale hoeveelheid in Azure Marketplace niet overeen met de rapporten voor het gebruiksoverzicht en de details?
-
-In het kostenrapport voor Azure Marketplace worden alleen de kosten op basis van gebruik weergegeven. Eenmalige kosten worden niet weergegeven. Ga naar de pagina voor het gebruiksoverzicht voor de meest recente, op gebruik gebaseerde kosten en eenmalige kosten.
-
-### <a name="why-is-there-no-information-on-my-api-report"></a>Waarom is er geen informatie aanwezig in mijn API-rapport?
-
-API-sleutels verlopen elke zes maanden. Als u een probleem ondervindt, moet een ondernemingsbeheerder een nieuwe API-sleutel genereren. Volg de stappen in de veelgestelde vragen over het API-rapport.
-
-### <a name="why-isnt-my-power-bi-report-working"></a>Waarom werkt mijn Power BI-rapport niet?
-
-Voor problemen met Power BI dient u een ticket in bij het [Power BI-ondersteuningsteam](https://support.powerbi.com).
-
-### <a name="why-dont-my-resource-tags-show-on-my-reports"></a>Waarom worden mijn resourcetags niet weergegeven in mijn rapporten?
-
-Resourcetags worden beheerd in de Azure-portal. U kunt contact opnemen met het team voor Azure-abonnementen in de [Azure-portal](https://portal.azure.com). Volg de stappen in het artikel [Een Azure-ondersteuningsaanvraag maken ](../../azure-portal/supportability/how-to-create-azure-support-request.md).
-
-### <a name="why-does-my-resource-rate-change-every-day"></a>Waarom wordt mijn resourcetarief elke dag gewijzigd?
-
-Het resourcetarief dat wordt weergegeven in het gedetailleerde gebruiksrapport is een berekende waarde. Deze waarde vertegenwoordigt het gemiddelde maandelijkse tarief dat in rekening is gebracht voor de service. Dit resourcetarief wordt berekend op basis van uw gemiddelde maandelijkse toezegging en uw maandelijkse overschrijdingskosten voor een service-eenheid. Het deel van het gebruik dat wordt berekend op basis van uw toezeggings- en overschrijdingstarieven, wordt gewijzigd op de laatste dag van de maand. Dit betekent dat het aantal vermelde resources ook tijdens de maand wordt gewijzigd. Het resourcetarief worden vergrendeld op de vijfde dag na het einde van de maand.
 
 ### <a name="glossary-of-processes-for-calculating-the-resource-rate"></a>Woordenlijst met processen voor het berekenen van het resourcetarief
 

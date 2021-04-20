@@ -1,27 +1,26 @@
 ---
-title: Een nieuwe update importeren | Microsoft Docs
-description: How-To voor het importeren van een nieuwe update in IoT Hub Device Update voor IoT Hub.
+title: Een nieuwe update toevoegen | Microsoft Docs
+description: How-To voor het toevoegen van een nieuwe update aan Apparaatupdate voor IoT Hub.
 author: andrewbrownmsft
 ms.author: andbrown
-ms.date: 2/11/2021
+ms.date: 4/19/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 196a449f25d97fb1c1b7b8d79ee8889e0d31a5ae
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.openlocfilehash: e90253100b86397c5ca4873d5c38a3511ba21555
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/19/2021
-ms.locfileid: "107717743"
+ms.locfileid: "107728567"
 ---
-# <a name="import-new-update"></a>Nieuwe update importeren
-Meer informatie over het importeren van een nieuwe update in Apparaatupdate voor IoT Hub. Als u dit nog niet hebt gedaan, zorg er dan voor dat u vertrouwd bent met de [basisconcepten voor importeren.](import-concepts.md)
+# <a name="add-an-update-to-device-update-for-iot-hub"></a>Een update toevoegen aan Apparaatupdate voor IoT Hub
+Meer informatie over het toevoegen van een nieuwe update aan Apparaatupdate voor IoT Hub.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een bestaand updatebestand dat u wilt implementeren op apparaten. Dit kan een afbeeldingsbestand zijn voor het bijwerken op basis van afbeeldingen of een [APT-manifestbestand](device-update-apt-manifest.md) voor het bijwerken op basis van pakketten. ([Hoe kan ik kiezen?](understand-device-update.md#support-for-a-wide-range-of-update-artifacts))
 * [Toegang tot een IoT Hub met Apparaatupdate voor IoT Hub ingeschakeld.](create-device-update-account.md) 
 * Een IoT-apparaat (of simulator) dat is ingericht voor apparaatupdates binnen IoT Hub.
-* [PowerShell 5](/powershell/scripting/install/installing-powershell) of hoger (inclusief linux-, macOS- en Windows-installaties)
+* [PowerShell 5](/powershell/scripting/install/installing-powershell) of hoger (bevat linux-, macOS- en Windows-installaties)
 * Ondersteunde browsers:
   * [Microsoft Edge](https://www.microsoft.com/edge)
   * Google Chrome
@@ -29,9 +28,19 @@ Meer informatie over het importeren van een nieuwe update in Apparaatupdate voor
 > [!NOTE]
 > Sommige gegevens die naar deze service worden verzonden, kunnen worden verwerkt in een regio buiten de regio waarin dit exemplaar is gemaakt.
 
-## <a name="create-device-update-import-manifest"></a>Importmanifest voor apparaatupdates maken
+## <a name="obtain-an-update-for-your-devices"></a>Een update voor uw apparaten verkrijgen
 
-1. Als u dit nog niet hebt gedaan, haalt u een afbeeldingsbestand of APT-manifestbestand op dat u wilt implementeren op apparaten. Dit kan afkomstig zijn van de fabrikant van uw apparaten of een systeemintegrator met wie u werkt, of zelfs een groep binnen uw organisatie. Zorg ervoor dat het update-afbeeldingsbestand of het APT-manifestbestand zich in een map bevindt die toegankelijk is vanuit PowerShell.
+Nu Apparaatupdate is [ingesteld,](create-device-update-account.md)kunt u uw apparaten bijwerken. Maar eerst hebt u het daadwerkelijke updatebestand(en) nodig voor de apparaten die u gaat implementeren.
+
+Als u apparaten van een OEM of oplossingsintegrator hebt aangeschaft, zal die organisatie waarschijnlijk updatebestanden voor u leveren, zonder dat u de updates hoeft te maken. Neem contact op met de OEM of oplossingsintegrator om na te gaan hoe deze updates beschikbaar maken.
+
+Als uw organisatie al software maakt voor de apparaten die u gebruikt, wordt diezelfde groep gebruikt om de updates voor die software te maken. Wanneer u een update maakt die moet worden geïmplementeerd met apparaatupdates voor IoT Hub, begint u met de op afbeeldingen of pakketten gebaseerde benadering, afhankelijk van uw scenario. [](understand-device-update.md#support-for-a-wide-range-of-update-artifacts) Opmerking: als u uw eigen updates wilt maken, maar net begint, is GitHub een uitstekende optie om uw ontwikkeling te beheren. U kunt uw broncode opslaan en beheren, en continue integratie (CI) en continue implementatie (CD) uitvoeren met [behulp van GitHub Actions](https://docs.github.com/en/actions/guides/about-continuous-integration).
+
+## <a name="create-a-device-update-import-manifest"></a>Een importmanifest voor apparaatupdates maken
+
+Als u dit nog niet hebt gedaan, zorg er dan voor dat u vertrouwd bent met de basisconcepten [voor importeren.](import-concepts.md)
+
+1. Zorg ervoor dat uw updatebestand(en) zich in een map bevinden die toegankelijk is vanuit PowerShell.
 
 2. Maak een tekstbestand met de **naam AduUpdate.psm1** in de map waarin het bestand met de update-afbeelding of het APT-manifestbestand zich bevindt. Open vervolgens de PowerShell-cmdlet [AduUpdate.psm1,](https://github.com/Azure/iot-hub-device-update/tree/main/tools/AduCmdlets) kopieer de inhoud naar het tekstbestand en sla het tekstbestand op.
 
@@ -53,12 +62,12 @@ Meer informatie over het importeren van een nieuwe update in Apparaatupdate voor
     $importManifest | Out-File '.\importManifest.json' -Encoding UTF8
     ```
 
-    Hier volgen enkele voorbeeldwaarden voor de bovenstaande parameters. U kunt ook het volledige [importmanifestschema weergeven](import-schema.md) voor meer informatie.
+    Hier volgen enkele voorbeeldwaarden voor de bovenstaande parameters. U kunt ook het volledige [importmanifestschema bekijken](import-schema.md) voor meer informatie.
 
     | Parameter | Beschrijving |
     | --------- | ----------- |
-    | deviceManufacturer | De fabrikant van het apparaat met de update is compatibel met bijvoorbeeld Contoso. Moet overeenkomen met _de apparaat-eigenschap_ [van de fabrikant.](./device-update-plug-and-play.md#device-properties)
-    | deviceModel | Het model van het apparaat waar de update compatibel mee is, bijvoorbeeld Broodrooster. Moet overeenkomen met de [apparaat-eigenschap van het](./device-update-plug-and-play.md#device-properties) _model._
+    | deviceManufacturer | De fabrikant van het apparaat waar de update mee compatibel is, bijvoorbeeld Contoso. Moet overeenkomen met _de apparaat-eigenschap_ [van de fabrikant.](./device-update-plug-and-play.md#device-properties)
+    | deviceModel | Het model van het apparaat dat met de update compatibel is, bijvoorbeeld Broodrooster. Moet overeenkomen met de [apparaat-eigenschap van het](./device-update-plug-and-play.md#device-properties) _model._
     | updateProvider | Entiteit die maakt of rechtstreeks verantwoordelijk is voor de update. Het is vaak een bedrijfsnaam.
     | updateName | Id voor een klasse updates. De klasse kan alles zijn wat u kiest. Dit is vaak een apparaat- of modelnaam.
     | updateVersion | Versienummer dat deze update onderscheidt van andere die dezelfde provider en naam hebben. Komt niet overeen met een versie van een afzonderlijk softwareonderdeel op het apparaat (maar wel als u dat kiest).
@@ -67,7 +76,7 @@ Meer informatie over het importeren van een nieuwe update in Apparaatupdate voor
     | updateFilePath(s) | Pad naar de updatebestand(en) op uw computer
 
 
-## <a name="review-generated-import-manifest"></a>Gegenereerd importmanifest controleren
+## <a name="review-the-generated-import-manifest"></a>Het gegenereerde importmanifest controleren
 
 Voorbeeld:
 ```json
@@ -110,12 +119,12 @@ Voorbeeld:
 }
 ```
 
-## <a name="import-update"></a>Update importeren
+## <a name="import-an-update"></a>Een update importeren
 
 > [!NOTE]
-> In de onderstaande instructies wordt beschreven hoe u een update importeert via de Azure Portal ui. U kunt ook de Apparaatupdate [voor IoT Hub API's gebruiken om](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) een update te importeren. 
+> De onderstaande instructies laten zien hoe u een update importeert via de Azure Portal ui. U kunt ook de [apparaatupdate gebruiken voor IoT Hub API's om](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) een update te importeren. 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar IoT Hub apparaatupdate.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar uw IoT Hub met Apparaatupdate.
 
 2. Selecteer aan de linkerkant van de pagina Apparaatupdates onder Automatisch apparaatbeheer.
 
@@ -129,7 +138,7 @@ Voorbeeld:
 
    :::image type="content" source="media/import-update/import-new-update-2.png" alt-text="Nieuwe update importeren" lightbox="media/import-update/import-new-update-2.png":::
 
-5. Selecteer het mappictogram of het tekstvak onder 'Selecteer een manifestbestand importeren'. U ziet een dialoogvenster voor het kiezen van bestanden. Selecteer het importmanifest dat u eerder hebt gemaakt met behulp van de PowerShell-cmdlet. Selecteer vervolgens het mappictogram of het tekstvak onder Een of meer updatebestanden selecteren. U ziet een dialoogvenster voor het kiezen van bestanden. Selecteer uw updatebestand(en).
+5. Selecteer het mappictogram of het tekstvak onder 'Selecteer een manifestbestand importeren'. U ziet een dialoogvenster voor het kiezen van bestanden. Selecteer het importmanifest dat u eerder hebt gemaakt met behulp van de PowerShell-cmdlet . Selecteer vervolgens het mappictogram of het tekstvak onder Een of meer updatebestanden selecteren. U ziet een dialoogvenster voor het kiezen van bestanden. Selecteer uw updatebestand(en).
 
    :::image type="content" source="media/import-update/select-update-files.png" alt-text="Bestanden bijwerken selecteren" lightbox="media/import-update/select-update-files.png":::
 
@@ -137,7 +146,7 @@ Voorbeeld:
 
    :::image type="content" source="media/import-update/storage-account.png" alt-text="Opslagaccount" lightbox="media/import-update/storage-account.png":::
 
-7. Als u al een container hebt gemaakt, kunt u deze opnieuw gebruiken. (Selecteer anders +Container om een nieuwe opslagcontainer voor updates te maken.)  Selecteer de container die u wilt gebruiken en klik op Selecteren.
+7. Als u al een container hebt gemaakt, kunt u deze opnieuw gebruiken. (Anders selecteert u +Container om een nieuwe opslagcontainer voor updates te maken.)  Selecteer de container die u wilt gebruiken en klik op Selecteren.
 
    :::image type="content" source="media/import-update/container.png" alt-text="Selecteer Container" lightbox="media/import-update/container.png":::
 
@@ -145,7 +154,7 @@ Voorbeeld:
 
    :::image type="content" source="media/import-update/publish-update.png" alt-text="Update publiceren" lightbox="media/import-update/publish-update.png":::
 
-9. Het importproces begint en het scherm schakelt over naar de sectie Importgeschiedenis. Selecteer Vernieuwen om de voortgang te bekijken totdat het importproces is voltooid (afhankelijk van de grootte van de update kan dit binnen enkele minuten worden voltooid, maar kan het langer duren).
+9. Het importproces wordt gestart en het scherm wordt overschakelt naar de sectie Importgeschiedenis. Selecteer Vernieuwen om de voortgang te bekijken totdat het importproces is voltooid (afhankelijk van de grootte van de update kan dit binnen enkele minuten worden voltooid, maar kan het langer duren).
 
    :::image type="content" source="media/import-update/update-publishing-sequence-2.png" alt-text="Sequencing voor importeren bijwerken" lightbox="media/import-update/update-publishing-sequence-2.png":::
 

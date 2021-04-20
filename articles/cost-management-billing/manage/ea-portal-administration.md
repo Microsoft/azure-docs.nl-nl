@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 8f643336d50f5ade145454d408599215ed6fd31e
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 787f902311437e6ca8a679299ef7a28b34cee4ab
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107259435"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728406"
 ---
 # <a name="azure-ea-portal-administration"></a>Beheer van Azure EA Portal
 
@@ -38,7 +38,7 @@ Alleen bestaande Azure-ondernemingsbeheerders kunnen andere ondernemingsbeheerde
 
 Gebruik een van de volgende opties, op basis van uw situatie.
 
-#### <a name="if-youre-already-an-enterprise-administrator"></a>Als u al een bedrijfs beheerder bent
+#### <a name="if-youre-already-an-enterprise-administrator"></a>Als u al een ondernemingsbeheerder bent
 
 1. Meld u aan bij de [Azure Enterprise-portal](https://ea.azure.com).
 1. Ga naar **Beheren** > **Details van inschrijving**.
@@ -46,11 +46,11 @@ Gebruik een van de volgende opties, op basis van uw situatie.
 
 Zorg ervoor dat u het e-mailadres en de gewenste verificatiemethode van de gebruiker weet, zoals het werk-, school- of Microsoft-account.
 
-#### <a name="if-youre-not-an-enterprise-administrator"></a>Als u geen ondernemings Administrator bent
+#### <a name="if-youre-not-an-enterprise-administrator"></a>Als u geen ondernemingsbeheerder bent
 
-Als u geen Enter prise-beheerder bent, neemt u contact op met een bedrijfs beheerder om u te vragen om u toe te voegen aan een registratie. De Enter prise-beheerder gebruikt de voor gaande stappen om u als ondernemings beheerder toe te voegen. Zodra u bent toegevoegd aan een inschrijving, ontvangt u een activerings-e-mail.
+Als u geen ondernemingsbeheerder bent, neem dan contact op met een ondernemingsbeheerder om u aan een inschrijving toe te voegen. De ondernemingsbeheerder gebruikt de voorgaande stappen om u toe te voegen als ondernemingsbeheerder. Zodra u bent toegevoegd aan een inschrijving, ontvangt u een activerings-e-mail.
 
-#### <a name="if-your-enterprise-administrator-cant-help-you"></a>Als uw ondernemings beheerder u niet kan helpen
+#### <a name="if-your-enterprise-administrator-cant-help-you"></a>Als uw ondernemingsbeheerder u niet kan helpen
 
 Als de ondernemingsbeheerder u niet kan helpen, maakt u een [ondersteuningsaanvraag voor de Azure Enterprise-portal](https://support.microsoft.com/supportrequestform/cf791efa-485b-95a3-6fad-3daf9cd4027c). Geef de volgende informatie op:
 
@@ -424,51 +424,6 @@ U gaat als volgt aan de slag:
 1. Als het goed is, bevat het Microsoft-account nu geen actieve abonnementen meer en kan het account dus worden verwijderd.
 1. Verwijderde accounts blijven voor historische factureringsredenen in de portal zichtbaar met de status Inactief.  U kunt deze accounts met behulp van een filter verbergen door een selectievakje in te schakelen zodat alleen actieve accounts worden weergegeven.
 
-## <a name="account-subscription-ownership-faq"></a>Veelgestelde vragen over het eigendom van accountabonnementen
-
-In dit document worden veelgestelde vragen beantwoord met betrekking tot het eigendom van accountabonnementen.
-
-### <a name="can-i-associate-my-existing-azure-account-to-azure-ea-enrollment"></a>Kan ik mijn bestaande Azure-account aan een Azure EA-inschrijving koppelen?
-
-Ja. Alle Azure-abonnementen waarvan u de accounteigenaar bent, worden naar uw Enterprise Agreement omgezet. Hieronder vallen alle abonnementen die maandelijks tegoed gebruiken, zoals Visual Studio, AzurePass, MPN, BizSpark en meer. Het maandelijkse tegoed gaat verloren als u deze abonnementen overzet.
-
-### <a name="how-many-azure-account-owners-can-you-have-per-subscription"></a>Hoeveel Azure-accounteigenaren mogen er per abonnement worden gebruikt?
-
-Er is per abonnement maar één accounteigenaar toegestaan.  U kunt aanvullende rollen toevoegen met de opties Op rollen gebaseerde toegang of (Toegangsbeheer (IAM)) op het tabblad Abonnement in de linkerbovenhoek van de pagina op de [Azure-portal](https://portal.azure.com).
-
-### <a name="is-it-possible-to-transfer-subscription-ownership-to-another-account"></a>Is het mogelijk om het eigendom van een abonnement over te dragen aan een ander account?
-
-Ja, u kunt het eigendom van een abonnement overdragen aan een ander account. Als aan account A bijvoorbeeld drie abonnementen zijn gekoppeld, kan de ondernemingsbeheerder één abonnement naar account B, één naar account C en één naar account D overdragen, of alle abonnementen naar account E overdragen.
-
-Ga als volgt te werk om abonnementen over te dragen:
-
-1. Selecteer in de Azure Enterprise-portal **Beheren** > **Account**.
-1. Plaats de muisaanwijzer helemaal rechts op **Account** om de opties voor **eigendomsoverdracht** (pictogram van persoon) en **abonnementsoverdracht** (pictogram van lijst) weer te geven. Deze opties zijn alleen zichtbaar voor actieve accounts.
-
-### <a name="can-an-azure-account-owner-be-listed-under-more-than-one-department"></a>Kan een Azure-accounteigenaar worden vermeld onder meer dan één afdeling?
-
-Nee, een accounteigenaar kan maar aan één afdeling worden gekoppeld. We hanteren dit beleid om ervoor te zorgen dat de kosten en uitgaven die aan de afdeling waarmee ze onder de EA-inschrijving in de Azure EA-portal zijn afgestemd, nauwkeurig worden bijgehouden en verdeeld.
-
-### <a name="can-an-azure-account-owner-be-listed-as-a-security-group"></a>Kan een Azure-accounteigenaar als een beveiligingsgroep worden vermeld?
-
-Nee, de eigenaar van een abonnement moet een uniek Microsoft-account (MSA) of een unieke Azure Active Directory-verificatie (AAD) zijn. Als u opvolging binnen uw organisatie wilt inzetten, kunt u generieke accounts maken en Azure AD gebruiken om toegang tot abonnementen te beheren.
-
-### <a name="can-an-individual-user-own-multiple-subscriptions"></a>Kan een individuele gebruiker de eigenaar van meerdere abonnementen zijn?
-
-Een Azure-accounteigenaar kan een onbeperkt aantal abonnementen maken en beheren.
-
-### <a name="how-can-i-accessview-all-my-organizations-subscriptions"></a>Hoe krijg ik toegang tot alle abonnementen van mijn organisatie en hoe kan ik ze weergeven?
-
-Tegenwoordig wordt dit vanuit een beleid geregeld. Dit houdt in dat u voor elk abonnement dat wordt gemaakt, moet vereisen dat uw account aan een abonnementsrol wordt toegevoegd met behulp van op rollen gebaseerde toegang.
-
-### <a name="where-do-i-go-to-create-a-subscription"></a>Waar kan ik een abonnement maken?
-
-Voordat u een abonnement voor een Enterprise Azure-aanbieding (EA) kunt maken, moet uw account door de beheerder van uw EA-inschrijving in de Azure EA-portal aan de rol van accounteigenaar worden toegevoegd. Vervolgens moet u zich bij Azure de EA-portal aanmelden om recht te krijgen op het maken van abonnementen van het EA-aanbiedingstype. U wordt aangeraden om uw eerste EA-abonnement te maken via de koppeling '+ Abonnement toevoegen', op het tabblad Abonnement in de EA-portal.  Zodra uw account echter over de juiste machtigingen beschikt, is het wellicht eenvoudiger om abonnementen te maken op het tabblad Abonnement in de linkerbovenhoek van de pagina op portal.azure.com. Hier kunt u in één stap zowel uw abonnement maken als de naam daarvan wijzigen.
-
-### <a name="who-can-create-a-subscription"></a>Wie kan een abonnement maken?
-
-Als u een abonnement van het Enterprise Azure-aanbiedingstype wilt maken, moet u zijn gemachtigd in de rol van accounteigenaar op [EA Portal](https://ea.azure.com).
-
 ## <a name="azure-ea-term-glossary"></a>Woordenlijst met Azure EA-terminologie
 
 - **Account**: Een organisatie-eenheid in de Azure Enterprise-portal. Accounts worden gebruikt om abonnementen te beheren en rapporten te maken.
@@ -510,3 +465,4 @@ Als u een abonnement van het Enterprise Azure-aanbiedingstype wilt maken, moet u
 
 - Lees hoe u geld kunt besparen met [VM-reserveringen](ea-portal-vm-reservations.md).
 - Zie [Problemen met toegang tot Azure EA Portal](ea-portal-troubleshoot.md) als u hulp nodig hebt met het oplossen van problemen Azure EA Portal.
+- Lees de [veelgestelde Cost Management + Billing voor](../cost-management-billing-faq.yml) vragen over het eigendom van een EA-abonnement.

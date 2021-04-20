@@ -6,7 +6,7 @@ documentationcenter: na
 author: duongau
 ms.author: duau
 manager: KumudD
-ms.date: 09/16/2020
+ms.date: 04/19/2021
 ms.topic: quickstart
 ms.service: frontdoor
 ms.workload: infrastructure-services
@@ -14,18 +14,20 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.custom:
 - mode-portal
-ms.openlocfilehash: 2cf52d30c5658e73c55944bdfb7d424425fa4507
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 74b7c16904c86751076d40056027999fe44cb868
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107538941"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727863"
 ---
 # <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application"></a>Snelstart: een Front Door maken voor een webtoepassing met hoge beschikbaarheid
 
 Ga met Azure Front Door aan de slag door via Azure Portal hoge beschikbaarheid voor een webtoepassing in te stellen.
 
 In deze quickstart worden met Azure Front Door twee instanties van een webtoepassing die in verschillende Azure-regio's worden uitgevoerd, in een pool geplaatst. U maakt een Front Door-configuratie op basis van back-ends met gelijk gewicht en dezelfde prioriteit. Met deze configuratie wordt verkeer doorgestuurd naar de dichtstbijzijnde site waarop de toepassing wordt uitgevoerd. Azure Front Door bewaakt de webtoepassing continu. De service biedt automatische failover naar de volgende beschikbare site wanneer de dichtstbijzijnde site niet beschikbaar is.
+
+:::image type="content" source="media/quickstart-create-front-door/environment-diagram.png" alt-text="Diagram van Front Door implementatieomgeving met behulp van de Azure Portal." border="false":::
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -67,8 +69,8 @@ Nadat uw implementatie is voltooid, maakt u een tweede web-app. Gebruik dezelfde
 | ---              | ---  |
 | **Resourcegroep**   | Selecteer **Nieuwe maken** en voer *FrontDoorQS_rg2* in |
 | **Naam**             | Voer een unieke name voor uw web-app in. In dit voorbeeld is dit *WebAppContoso-2*  |
-| **Regio**           | Een andere regio. In dit voorbeeld is dit *VS - zuid-centraal* |
-| **App Service-plan** > **Windows-plan**         | Selecteer **Nieuw**, voer *myAppServicePlanSouthCentralUS* in en selecteer vervolgens **OK** |
+| **Regio**           | Een andere regio, in dit voorbeeld VS *- oost* |
+| **App Service-plan** > **Windows-plan**         | Selecteer **Nieuw,** voer *myAppServicePlanEastUS in* en selecteer vervolgens **OK** |
 
 ## <a name="create-a-front-door-for-your-application"></a>Een Front Door maken voor uw toepassing
 

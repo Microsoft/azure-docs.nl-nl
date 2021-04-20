@@ -1,24 +1,24 @@
 ---
-title: 'Snelstartgids: afbeeldings analyse REST API'
+title: 'Quickstart: Afbeeldingsanalyse REST API'
 titleSuffix: Azure Cognitive Services
-description: In deze Snelstartgids gaat u aan de slag met de REST API voor het analyseren van installatie kopieën.
+description: In deze quickstart gaat u aan de slag met de afbeeldingsanalyse REST API.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
-ms.topic: quickstart
-ms.date: 12/02/2020
+ms.topic: include
+ms.date: 04/19/2021
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 77958746487ffbcf19ad14be71818c59e9520374
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 7a2e8613aab61beec3720cadaa20eb008386b43b
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106287199"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728163"
 ---
-Gebruik de REST API voor het analyseren van installatie kopieën tot:
+Gebruik de afbeeldingsanalyse om REST API:
 
 * Een afbeelding analyseren op tags, tekstbeschrijvingen, gezichten, inhoud voor volwassenen, en meer.
 * Een miniatuur genereren met slim bijsnijden
@@ -114,7 +114,7 @@ Een geslaagd antwoord wordt geretourneerd in JSON-indeling. De voorbeeldtoepassi
 
 ## <a name="generate-a-thumbnail"></a>Een miniatuur genereren
 
-U kunt afbeeldings analyse gebruiken om een miniatuur met Slim bijsnijden te genereren. U geeft de gewenste hoogte en breedte op. Deze waarden mogen afwijken van de hoogte-breedteverhouding van de invoerafbeelding. Bij het analyseren van afbeeldingen wordt gebruikgemaakt van Slim bijsnijden om het gewenste gedeelte op intelligente wijze te identificeren en bijsnijd coördinaten rond die regio te genereren.
+U kunt Afbeeldingsanalyse gebruiken om een miniatuur te genereren met slim bijsnijden. U geeft de gewenste hoogte en breedte op. Deze waarden mogen afwijken van de hoogte-breedteverhouding van de invoerafbeelding. Afbeeldingsanalyse maakt gebruik van slim bijsnijden om op intelligente wijze het interessegebied te identificeren en coördinaten voor bijsnijden te genereren rond dat gebied.
  
 U kunt het voorbeeld maken en uitvoeren aan de hand van de volgende stappen:
 
@@ -140,7 +140,9 @@ Een geslaagd antwoord schrijft de miniatuurafbeelding naar het bestand dat is op
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Verken de API voor beeld analyse in meer dieper. Als u snel met de API wilt experimenteren, probeert u de [console voor open API-tests](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b/console).
+In deze quickstart hebt u geleerd hoe u eenvoudige aanroepen voor afbeeldingsanalyse kunt installeren met behulp van de REST API. Hierna krijgt u meer informatie over de functies van de Analyse-API.
 
 > [!div class="nextstepaction"]
-> [De afbeeldings analyse-API verkennen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b)
+>[De Analyse-API aanroepen](../Vision-API-How-to-Topics/HowToCallVisionAPI.md)
+
+* [Overzicht van afbeeldingsanalyse](../overview-image-analysis.md)

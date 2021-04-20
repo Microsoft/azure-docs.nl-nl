@@ -5,28 +5,27 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: include
-ms.date: 11/22/2019
+ms.date: 04/06/2021
 ms.author: mlearned
 ms.custom: include file
-ms.openlocfilehash: 1c2dec106ae72ddead7bda54792fa74e38eb6660
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: 15e91e6f275c3a6ebe44690441404a38e8f61394
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106081067"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107732518"
 ---
 | Resource                                                                                                           | Limiet                                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Maximumaantal clusters per abonnement                                                                                  | 1000                                                                                                                                                                                                        |
 | Maximumaantal knooppunten per cluster met virtuele-machinebeschikbaarheidssets en basic load balancer-SKU                       | 100                                                                                                                                                                                                         |
-| Maximumaantal knooppunten per cluster met virtuele-machineschaalsets en [standaard load balancer-SKU][standard-load-balancer] | 1000 (100 knooppunten per [knooppuntpool][node-pool])                                                                                                                                                                 |
-| Maximumaantal pods per knooppunt: [Basisnetwerken][basic-networking] met Kubenet                                           | 110                                                                                                                                                                                                         |
-| Maximumaantal pods per knooppunt: [Geavanceerde netwerk][advanced-networking] met Azure Container Network Interface        | Implementatie van Azure CLI: 30<sup>1</sup><br />Azure Resource Manager-sjabloon: 30<sup>1</sup><br />Portal-implementatie: 30                                                                                        |
-| Preview-versie van OSM (Service Mesh) openen AKS                                                                          | Kubernetes-cluster versie: 1.19 +<sup>2</sup><br />OSM-controllers per cluster: 1<sup>2</sup><br />Peul per OSM-controller: 500<sup>2</sup><br />Kubernetes-service accounts die worden beheerd door OSM: 50<sup>2</sup> |
+| Maximumaantal knooppunten per cluster met virtuele-machineschaalsets en [standaard load balancer-SKU][standard-load-balancer] | 1000 (voor alle [knooppuntgroepen)][node-pool]                                            |
+| Maximum aantal knooppuntgroepen per cluster                                                                                     | 100                                                                                  |
+| Maximumaantal pods per knooppunt: [Basisnetwerken][basic-networking] met Kubenet                                           | Maximum: 250 <br /> Azure CLI-standaardinstelling: 110 <br /> Azure Resource Manager sjabloon standaard: 110 <br /> Azure Portal implementatie standaard: 30          |
+| Maximumaantal pods per knooppunt: [Geavanceerde netwerk][advanced-networking] met Azure Container Network Interface        | Maximum: 250 <br /> Standaardinstelling: 30                                                      |
+| AKS-invoegversie van Service Mesh (OSM) openen                                                                          | Kubernetes-clusterversie: 1.19+<sup>1</sup><br />OSM-controllers per cluster: 1<sup>1</sup><br />Pods per OSM-controller: 500<sup>1</sup><br />Kubernetes-serviceaccounts die worden beheerd door OSM: 50<sup>1</sup> |
 
-<sup>1</sup>Als u een Azure Kubernetes Service-cluster (AKDS) implementeert met behulp van de Azure CLI of een Resource Manager-sjabloon, kan deze waarde worden geconfigureerd tot maximaal 250 pods per knooppunt. U kunt geen maximumaantal pods per node configureren als u het AKS-cluster al hebt geïmplementeerd, of als u een cluster met behulp van de Azure-portal hebt geïmplementeerd.<br />
-
-<sup>2</sup> De OSM-invoeg toepassing voor AKS bevindt zich in een preview-status en zal extra verbeteringen ondergaan vóór algemene Beschik baarheid (GA). Tijdens de preview-fase wordt aanbevolen de weer gegeven limieten niet te overschrijden.<br />
+<sup>1</sup> De OSM-invoegversie voor AKS heeft een preview-status en ondergaat extra verbeteringen voordat algemene beschikbaarheid (GA) wordt bereikt. Tijdens de preview-fase is het raadzaam om de weergegeven limieten niet te overschrijden.<br />
 
 <!-- LINKS - Internal -->
 

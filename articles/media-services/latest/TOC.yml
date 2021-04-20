@@ -85,6 +85,8 @@
       items:
         - name: Een extern bestand Node.js coderen en streamen
           href: stream-files-nodejs-quickstart.md
+        - name: Live streamen met Node.js
+          href: stream-live-tutorial-with-nodejs.md
     - name: Python
       items:
         - name: Python Basic Encoding
@@ -261,7 +263,7 @@
       href: architecture-concept.md
     - name: Problemen oplossen
       items:
-        - name: Verzameling vragen
+        - name: Verzameling van vragen
           href: questions-collection.md
         - name: Foutcodes
           items:
@@ -338,30 +340,30 @@
           href: transform-create-transform-how-to.md
         - name: Een eenvoudige audiotransformatie maken met REST
           href: transform-create-basic-audio-how-to.md
-        - name: Miniatuurse sprites maken
+        - name: Miniatuurs sprites maken
           href: transform-create-thumbnail-sprites-how-to.md
-        - name: Twee of meer videobestanden samenseen met .NET
+        - name: Twee of meer videobestanden samens werk met .NET
           href: transform-stitch-how-to.md
         - name: Een subclip van een video maken in .NET
           href: transform-subclip-video-dotnet-how-to.md
           displayName: 'subclipping, clip, edit, trim, clipping'
-        - name: Een subclip maken van een video-REST
+        - name: Een subclip van een video-REST maken
           href: transform-subclip-video-rest-how-to.md
           displayName: 'subclipping, clip, edit, trim, clipping'
-        - name: Vooraf ingestelde encoder aanpassen voor .NET
+        - name: Encoder-voorinstellingen aanpassen voor .NET
           href: transform-custom-presets-how-to.md
         - name: Een overlaytransformator maken in .NET
           href: transform-create-overlay-how-to.md
-        - name: Miniaturen genereren .NET
+        - name: Miniaturen genereren in .NET
           href: transform-generate-thumbnails-dotnet-how-to.md
         - name: Video's bijsnijden met .NET
           href: crop-howto.md
-        - name: Cli voor vooraf ingestelde encoder aanpassen
+        - name: Cli voor het aanpassen van voorinstellingen voor encoder
           href: transform-custom-preset-cli-how-to.md
-        - name: Voorinstellingen voor encoder aanpassen REST
+        - name: Encoder-voorinstellingen voor REST aanpassen
           displayName: 'encode, encoding, custom, transform'
           href: transform-custom-preset-rest-how-to.md
-        - name: Thumbnails REST genereren
+        - name: Miniaturen genereren REST
           href: transform-generate-thumbnails-rest-how-to.md
         - name: Een copyAllBitrateNonInterleaved-transformatie maken met REST
           href: transform-create-copyallbitratenoninterleaved-how-to.md
@@ -378,7 +380,7 @@
           href: job-multiple-transform-outputs-how-to.md
         - name: HTTPS als taakinvoer
           href: job-input-from-http-how-to.md
-    - name: CLI voor het schalen van gereserveerde media-eenheden
+    - name: Cli voor het schalen van gereserveerde media-eenheden
       href: media-reserved-units-cli-how-to.md
     - name: Live streamen
       items:
@@ -414,7 +416,7 @@
       items:
         - name: Met .NET
           items:
-            - name: .NET Azure Functions gebruiken
+            - name: Gebruik Azure Functions .NET
               href: integrate-azure-functions-dotnet-how-to.md
     - name: Filters maken
       items:

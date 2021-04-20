@@ -9,18 +9,18 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 10a073914a79d29ae4b1c1d90ae5be624e7d7673
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: cdc5dd2df0dc6ac682d37aea3328545fcb7e5ad2
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107303880"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728604"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Quickstart: Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat
 
 [!INCLUDE [iot-edge-version-201806-or-202011](../../includes/iot-edge-version-201806-or-202011.md)]
 
-Probeer Azure IoT Edge uit in deze quickstart door containercode te implementeren op een virtueel Linux IoT Edge-apparaat. Met IoT Edge kunt u code op uw apparaten op afstand beheren zodat u meer van uw workloads naar de rand kunt verzenden. Voor deze Quick Start raden wij u aan een virtuele machine van Azure te gebruiken voor uw IoT Edge-apparaat, zodat u snel een test machine kunt maken en verwijderen wanneer u klaar bent.
+Probeer Azure IoT Edge uit in deze quickstart door containercode te implementeren op een virtueel Linux IoT Edge-apparaat. Met IoT Edge kunt u code op uw apparaten op afstand beheren zodat u meer van uw workloads naar de rand kunt verzenden. Voor deze quickstart raden we u aan een virtuele Machine van Azure te gebruiken voor uw IoT Edge-apparaat, waarmee u snel een testmachine kunt maken en deze vervolgens kunt verwijderen wanneer u klaar bent.
 
 In deze snelstart leert u de volgende zaken:
 
@@ -142,14 +142,14 @@ Gebruik de volgende CLI-opdracht om uw IoT Edge-apparaat te maken op basis van d
 <!-- 1.2 -->
 :::moniker range=">=iotedge-2020-11"
 
-Gebruik de volgende CLI-opdracht om uw IoT Edge-apparaat te maken op basis van de vooraf gemaakte sjabloon [iotedge-vm-deploy](https://github.com/Azure/iotedge-vm-deploy/tree/1.2.0-rc4).
+Gebruik de volgende CLI-opdracht om uw IoT Edge-apparaat te maken op basis van de vooraf gemaakte sjabloon [iotedge-vm-deploy](https://github.com/Azure/iotedge-vm-deploy/tree/1.2.0).
 
 * Bash- of Cloud Shell-gebruikers kunnen de volgende opdracht naar een teksteditor kopiëren, de tekst van de tijdelijke aanduiding vervangen door hun eigen informatie en de tijdelijke aanduiding kopiëren naar het Bash- of Cloud Shell-venster:
 
    ```azurecli-interactive
    az deployment group create \
    --resource-group IoTEdgeResources \
-   --template-uri "https://raw.githubusercontent.com/Azure/iotedge-vm-deploy/1.2.0-rc4/edgeDeploy.json" \
+   --template-uri "https://raw.githubusercontent.com/Azure/iotedge-vm-deploy/1.2.0/edgeDeploy.json" \
    --parameters dnsLabelPrefix='<REPLACE_WITH_VM_NAME>' \
    --parameters adminUsername='azureUser' \
    --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) \
@@ -162,7 +162,7 @@ Gebruik de volgende CLI-opdracht om uw IoT Edge-apparaat te maken op basis van d
    ```azurecli
    az deployment group create `
    --resource-group IoTEdgeResources `
-   --template-uri "https://raw.githubusercontent.com/Azure/iotedge-vm-deploy/1.2.0-rc4/edgeDeploy.json" `
+   --template-uri "https://raw.githubusercontent.com/Azure/iotedge-vm-deploy/1.2.0/edgeDeploy.json" `
    --parameters dnsLabelPrefix='<REPLACE_WITH_VM_NAME>' `
    --parameters adminUsername='azureUser' `
    --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) `
@@ -231,7 +231,7 @@ Zodra er verbinding met uw virtuele machine is gemaakt, controleert u of de runt
 <!-- 1.2 -->
 :::moniker range=">=iotedge-2020-11"
 
-1. Controleer of IoT Edge wordt uitgevoerd. De volgende opdracht moet de status **OK** retour neren als IOT Edge actief is of service fouten levert.
+1. Controleer of de IoT Edge wordt uitgevoerd. De volgende opdracht moet de status OK retourneren **als** IoT Edge wordt uitgevoerd of servicefouten op te geven.
 
    ```bash
    sudo iotedge system status
@@ -267,72 +267,72 @@ Beheer uw Azure IoT Edge-apparaat vanuit de cloud om een module te implementeren
 
 Include content included below to support versioned steps in Linux quickstart. Can update include file once Windows quickstart supports v1.2 -->
 
-Een van de belangrijkste mogelijkheden van Azure IoT Edge is het implementeren van code naar uw IoT Edge apparaten vanuit de Cloud. *IoT Edge-modules* zijn uitvoerbare pakketten die zijn geïmplementeerd als containers. In deze sectie implementeert u een vooraf ontwikkelde module vanuit het [gedeelte IOT Edge modules van Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules) rechtstreeks vanuit Azure IOT hub.
+Een van de belangrijkste mogelijkheden van Azure IoT Edge is het implementeren van code op uw IoT Edge apparaten vanuit de cloud. *IoT Edge-modules* zijn uitvoerbare pakketten die zijn geïmplementeerd als containers. In deze sectie implementeert u een vooraf gebouwde module uit de sectie [IoT Edge Modules van Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules) rechtstreeks vanuit Azure IoT Hub.
 
 De module die u in deze sectie implementeert, simuleert een sensor en verzendt gegenereerde gegevens. Deze module is een handig stukje code wanneer u aan de slag gaat met IoT Edge, omdat u de gesimuleerde gegevens kunt gebruiken voor ontwikkel- en testdoeleinden. Als u precies wilt zien wat deze module doet, kunt u de [broncode van de gesimuleerde temperatuursensor bekijken](https://github.com/Azure/iotedge/blob/027a509549a248647ed41ca7fe1dc508771c8123/edge-modules/SimulatedTemperatureSensor/src/Program.cs).
 
-Volg deze stappen om de wizard **module instellen** te starten om uw eerste module te implementeren vanuit Azure Marketplace.
+Volg deze stappen om de wizard **Modules instellen te** starten om uw eerste module te implementeren vanuit Azure Marketplace.
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en ga naar uw IOT-hub.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en ga naar uw IoT-hub.
 
-1. Selecteer in het menu aan de linkerkant onder **automatische Apparaatbeheer** de optie **IOT Edge**.
+1. Selecteer in het menu aan de linkerkant onder **Automatisch apparaatbeheer** de **optie IoT Edge.**
 
-1. Selecteer de apparaat-ID van het doel apparaat in de lijst met apparaten.
+1. Selecteer de apparaat-id van het doelapparaat in de lijst met apparaten.
 
 1. Selecteer op de bovenste balk **Modules instellen**.
 
-   ![Scherm opname van het selecteren van modules instellen.](./media/quickstart/select-set-modules.png)
+   ![Schermopname van het selecteren van Modules instellen.](./media/quickstart/select-set-modules.png)
 
 ### <a name="modules"></a>Modules
 
-In de eerste stap van de wizard kunt u kiezen welke modules u op uw apparaat wilt uitvoeren.
+De eerste stap van de wizard bestaat uit het kiezen van de modules die u op uw apparaat wilt uitvoeren.
 
-Open onder **IOT Edge modules** de vervolg keuzelijst **toevoegen** en selecteer vervolgens **Marketplace-module**.
+Open **IoT Edge modules** de  vervolgkeuzelijst Toevoegen en selecteer **marketplace-module.**
 
-   ![Scherm opname van de vervolg keuzelijst toevoegen.](./media/quickstart/add-marketplace-module.png)
+   ![Schermopname van de vervolgkeuzelijst Toevoegen.](./media/quickstart/add-marketplace-module.png)
 
-Zoek en selecteer de module in de **Marketplace van IOT Edge-module** `Simulated Temperature Sensor` . De module wordt toegevoegd aan de sectie IoT Edge modules met de gewenste **uitvoerings** status.
+Zoek **IoT Edge Module Marketplace** naar de module en selecteer `Simulated Temperature Sensor` deze. De module wordt toegevoegd aan de IoT Edge Modules met de gewenste **status.**
 
 <!-- 1.2 -->
 :::moniker range=">=iotedge-2020-11"
 
-Selecteer **runtime-instellingen** om de instellingen voor de edgeHub-en edgeAgent-modules te openen. In deze sectie instellingen kunt u de runtime modules beheren door omgevings variabelen toe te voegen of de opties voor maken te wijzigen.
+Selecteer **Runtime-instellingen** om de instellingen voor de edgeHub- en edgeAgent-modules te openen. In deze sectie met instellingen kunt u de runtimemodules beheren door omgevingsvariabelen toe te voegen of de opties voor maken te wijzigen.
 
-Werk het **afbeeldings** veld voor de edgeHub-en edgeAgent-modules bij om de versie code 1,2 te gebruiken. Bijvoorbeeld:
+Werk het **veld Image** bij voor zowel de edgeHub- als edgeAgent-modules om versietag 1.2 te gebruiken. Bijvoorbeeld:
 
 * `mcr.microsoft.com/azureiotedge-hub:1.2`
 * `mcr.microsoft.com/azureiotedge-agent:1.2`
 
-Selecteer **Opslaan** om uw wijzigingen toe te passen op de runtime-modules.
+Selecteer **Opslaan om** uw wijzigingen toe te passen op de runtimemodules.
 
 :::moniker-end
 <!--end 1.2-->
 
 Selecteer **Volgende: Routes** om door te gaan naar de volgende stap in de wizard.
 
-   ![Scherm opname die laat zien hoe de volgende stap gaat nadat de module is toegevoegd.](./media/quickstart/view-temperature-sensor-next-routes.png)
+   ![Schermopname van het doorgaan naar de volgende stap nadat de module is toegevoegd.](./media/quickstart/view-temperature-sensor-next-routes.png)
 
 ### <a name="routes"></a>Routes
 
-Op het tabblad **routes** verwijdert u de standaard route, **route** en selecteert u **volgende: controleren + maken** om door te gaan naar de volgende stap van de wizard.
+Verwijder op het tabblad **Routes** de standaardroute, **route** en selecteer vervolgens **Volgende: Beoordelen en maken** om door te gaan naar de volgende stap van de wizard.
 
    >[!Note]
-   >Routes worden gemaakt met behulp van naam-en waardeparen. Op deze pagina ziet u twee routes. De standaard route, **route**, verzendt alle berichten naar IOT hub (dat wordt aangeroepen `$upstream` ). Er is automatisch een tweede route, **SimulatedTemperatureSensorToIoTHub**, gemaakt toen u de module van Azure Marketplace hebt toegevoegd. Deze route verzendt alle berichten van de gesimuleerde temperatuur module naar IoT Hub. U kunt de standaardroute verwijderen, omdat deze in dit geval overbodig is.
+   >Routes worden samengesteld met behulp van naam- en waardeparen. Op deze pagina ziet u twee routes. De standaardroute, **route**, verzendt alle berichten naar IoT Hub (dit wordt `$upstream` genoemd). Er is automatisch een tweede route, **SimulatedTemperatureSensorToIoTHub,** gemaakt toen u de module vanuit Azure Marketplace. Deze route verzendt alle berichten van de gesimuleerde temperatuurmodule naar IoT Hub. U kunt de standaardroute verwijderen, omdat deze in dit geval overbodig is.
 
-   ![Scherm opname van het verwijderen van de standaard route en de volgende stap wordt verplaatst.](./media/quickstart/delete-route-next-review-create.png)
+   ![Schermopname van het verwijderen van de standaardroute en vervolgens het verplaatsen naar de volgende stap.](./media/quickstart/delete-route-next-review-create.png)
 
 ### <a name="review-and-create"></a>Controleren en maken
 
-Controleer het JSON-bestand en selecteer vervolgens **maken**. Het JSON-bestand definieert alle modules die u implementeert op uw IoT Edge-apparaat. U ziet de **SimulatedTemperatureSensor** -module en de twee runtime modules, **edgeAgent** en **edgeHub**.
+Controleer het JSON-bestand en selecteer vervolgens **Maken.** Het JSON-bestand definieert alle modules die u op uw IoT Edge implementeert. U ziet de **module SimulatedTemperatureSensor** en de twee runtimemodules **edgeAgent** en **edgeHub.**
 
    >[!Note]
    >Wanneer u een nieuwe implementatie bij een IoT Edge-apparaat indient, wordt er niets naar uw apparaat gepusht. In plaats daarvan voert het apparaat regelmatig query’s uit naar eventuele nieuwe instructies. Als het apparaat een manifest van een bijgewerkte implementatie vindt, wordt de informatie over de nieuwe implementatie gebruikt om installatiekopieën van de module op te halen uit de cloud en wordt een lokale uitvoering van de modules gestart. Dit proces kan enkele minuten duren.
 
-Nadat u de informatie over de implementatie van de module hebt gemaakt, gaat de wizard terug naar de pagina met apparaatdetails. Bekijk de implementatie status op het tabblad **modules** .
+Nadat u de informatie over de implementatie van de module hebt gemaakt, gaat de wizard terug naar de pagina met apparaatdetails. Bekijk de implementatiestatus op het **tabblad Modules.**
 
-U ziet drie modules: **$edgeAgent**, **$edgeHub** en **SimulatedTemperatureSensor**. Als een of meer van de modules **Ja** zijn onder **opgegeven in de implementatie** , maar niet onder **gerapporteerd door het apparaat**, wordt het IOT edge apparaat nog steeds gestart. Wacht enkele minuten en vernieuw vervolgens de pagina.
+U ziet drie modules: **$edgeAgent**, **$edgeHub** en **SimulatedTemperatureSensor.** Als voor een of  meer van de modules JA is opgegeven onder OPGEGEVEN **IN** IMPLEMENTATIE, maar niet onder GERAPPORTEERD DOOR **APPARAAT,** wordt IoT Edge apparaat nog steeds met de modules. Wacht enkele minuten en vernieuw de pagina.
 
-   ![Scherm opname van de gesimuleerde temperatuur sensor in de lijst met geïmplementeerde modules.](./media/quickstart/view-deployed-modules.png)
+   ![Schermopname van Gesimuleerde temperatuursensor in de lijst met geïmplementeerde modules.](./media/quickstart/view-deployed-modules.png)
 
 ## <a name="view-generated-data"></a>Gegenereerde gegevens weergeven
 

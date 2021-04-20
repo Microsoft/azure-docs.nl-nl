@@ -7,16 +7,16 @@ author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
-ms.topic: quickstart
-ms.date: 12/02/2020
+ms.topic: include
+ms.date: 04/19/2021
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 01149eed5cc4195ca501507e7fe1d66fffecb84d
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 2f01b1d222470c49505638be64180948b6f7e046
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107327751"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728248"
 ---
 Gebruik de optische tekenherkenning REST API gedrukte en handgeschreven tekst te lezen.
 
@@ -37,6 +37,8 @@ Gebruik de optische tekenherkenning REST API gedrukte en handgeschreven tekst te
 
 De OCR-service kan zichtbare tekst in een afbeelding lezen en converteren naar een tekenstroom. Zie het overzicht van optische tekenherkenning [(OCR)](../overview-ocr.md)voor meer informatie over tekstherkenning.
 
+### <a name="call-the-read-api"></a>De Read-API aanroepen
+
 U kunt het voorbeeld maken en uitvoeren aan de hand van de volgende stappen:
 
 1. Kopieer de volgende opdracht naar een teksteditor.
@@ -53,6 +55,8 @@ curl -v -X POST "https://westcentralus.api.cognitive.microsoft.com/vision/v3.2/r
 ```
 
 Het antwoord bevat een `Operation-Location`-header, waarvan de waarde een unieke URL is. U gebruikt deze URL om de resultaten van de leesbewerking op te vragen. Een URL verloopt binnen 48 uur.
+
+### <a name="get-read-results"></a>Leesresultaten ophalen
 
 1. Kopieer de volgende opdracht naar een teksteditor.
 1. Vervang de URL door de waarde voor `Operation-Location` die u in de vorige stap hebt gekopieerd.
@@ -131,7 +135,9 @@ Een geslaagd antwoord wordt geretourneerd in JSON-indeling. De voorbeeldtoepassi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-De OCR-API uitgebreider verkennen. Als u snel wilt experimenteren met de API, probeert u de [Open API-testconsole.](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005/console)
+In deze quickstart hebt u geleerd hoe u de read-REST API. Hierna krijgt u meer informatie over de functies van de Read API.
 
 > [!div class="nextstepaction"]
-> [De OCR-API verkennen](https://centraluseuap.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/5d986960601faab4bf452005)
+>[De Read-API aanroepen](../Vision-API-How-to-Topics/call-read-api.md)
+
+* [Overzicht van OCR](../overview-ocr.md)

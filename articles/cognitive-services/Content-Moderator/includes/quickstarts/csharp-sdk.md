@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 09/15/2020
 ms.author: pafarley
 ms.custom: devx-track-dotnet, cog-serv-seo-aug-2020
-ms.openlocfilehash: bdf49f16b003c25da9fe8972a3fb7e3837d62819
-ms.sourcegitcommit: bb330af42e70e8419996d3cba4acff49d398b399
+ms.openlocfilehash: 573778316802b6e445b4c9d78576a8813af514a6
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105104573"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726128"
 ---
 Ga aan de slag met de Azure Content Moderator-clientbibliotheek voor .NET. Voer deze stappen uit om het NuGet-pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. 
 
@@ -96,7 +96,7 @@ Maak in de klasse **Programma** variabelen voor de sleutel en het eindpunt van u
 > [!IMPORTANT]
 > Ga naar Azure Portal. Als de Content Moderator-resource die u in de sectie **Vereisten** hebt gemaakt, is geïmplementeerd, klikt u op de knop **Naar de resource gaan** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 >
-> Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
+> Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel over [Cognitive Services-beveiliging voor meer](../../../cognitive-services-security.md) informatie.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_creds)]
 
@@ -144,7 +144,7 @@ In de volgende code wordt een Content Moderator-client gebruikt om een stuk teks
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_text_vars)]
 
-Voeg vervolgens een *TextFile.txt*-bestand toe aan de hoofdmap van uw project. Voeg uw eigen tekst toe aan dit bestand, of gebruik de volgende voorbeeldtekst:
+Voeg vervolgens in de hoofdmap van uw project een *TextFile.txt* toe. Voeg uw eigen tekst toe aan dit bestand, of gebruik de volgende voorbeeldtekst:
 
 ```
 Is this a grabage email abcdef@abcd.com, phone: 4255550111, IP: 255.255.255.255, 1234 Main Boulevard, Panapolis WA 96555.

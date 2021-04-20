@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: 414ce626d76c9b7a7d073d6cbfa5a5f4446c3073
-ms.sourcegitcommit: a8ff4f9f69332eef9c75093fd56a9aae2fe65122
+ms.openlocfilehash: e7afef7e0a10bb4be3c30112fc207467167e4a17
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105025523"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726516"
 ---
 # <a name="create-and-manage-azure-cost-allocation-rules-preview"></a>Azure-regels voor kostentoewijzing maken en beheren (preview-versie)
 
@@ -96,7 +96,7 @@ Navigeer in Azure Portal naar **Kostenbeheer en facturering** > **Kostenbeheer**
 
 :::image type="content" source="./media/allocate-costs/tagged-costs.png" alt-text="Voorbeeld van kosten voor items met tags" lightbox="./media/allocate-costs/tagged-costs.png" :::
 
-Hier volgt een video waarin wordt getoond hoe u een kosten toewijzings regel maakt.
+Hier is een video waarin wordt gedemonstreerd hoe u een kostentoewijzingsregel maakt.
 
 >[!VIDEO https://www.youtube.com/embed/nYzIIs2mx9Q]
 
@@ -105,12 +105,7 @@ Hier volgt een video waarin wordt getoond hoe u een kosten toewijzings regel maa
 
 U kunt een kostentoewijzingsregel bewerken om de bron of het doel te wijzigen of als u het vooraf ingevulde percentage wilt bijwerken voor reken-, opslag- of netwerkopties. Bewerk de regels op dezelfde manier als u ze maakt. Het kan tot twee uur duren voordat de bestaande regels zijn gewijzigd.
 
-## <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen
-
-De volgende secties bevatten algemene vragen over kostentoewijzing.
-
-### <a name="what-are-the-current-limitations-with-cost-allocation-in-public-preview"></a>Wat zijn de huidige beperkingen met betrekking tot kostentoewijzing in openbare preview?
-<a name="limitations"></a>
+## <a name="current-limitations"></a>Huidige beperkingen
 
 Op dit moment wordt kostentoewijzing ondersteund in Cost Management voor kostenanalyse, budgetten en prognoseweergaven. Toegewezen kosten worden ook weergegeven in de abonnementenlijst en op de overzichtspagina Abonnementen.
 
@@ -122,32 +117,9 @@ De volgende items worden momenteel niet ondersteund door de openbare preview van
 - [Cost Management Power BI-app](https://appsource.microsoft.com/product/power-bi/costmanagement.azurecostmanagementapp)
 - [Power BI Desktop-connector](/power-bi/connect-data/desktop-connect-azure-cost-management)
 
-### <a name="are-costs-factored-into-budgets-and-forecast-views"></a>Worden kosten in rekening gebracht voor budgetten en prognoseweergaven?
-<a name="budgets-forecast"></a>
-
-Ja. De toegewezen kosten worden in rekening gebracht en worden ondersteund door budgetten en prognoses. Budget- en prognoseweergaven tonen de kosten die hieraan zijn toegewezen, zoals geconfigureerd door kostentoewijzingsregels.
-
-### <a name="if-a-cost-allocation-rule-is-deleted-what-happens"></a>Wat gebeurt er als een kostentoewijzingsregel wordt verwijderd?
-<a name="delete-rule"></a>
-
-Wanneer een kostentoewijzingsregel wordt verwijderd, worden alle openstaande en huidige aan de doelen toegewezen maandelijkse factureringskosten verwijderd. Als de kostentoewijzingsregel al meerdere maanden bestaat, blijven de historische voorgaande maanden van toewijzingsgegevens zoals oorspronkelijk ingesteld door de toewijzingsregel.
-
-### <a name="why-is-an-enrollment-admin-or-a-billing-account-admin-needed-to-create-cost-allocation-rules"></a>Waarom is een inschrijvingsbeheerder of een factureringsaccountbeheerder nodig om regels voor kostentoewijzing te maken?
-<a name="why-admin"></a>
-
-Regels voor kostentoewijzing worden gemaakt op basis van het inschrijvingsbereik (Enterprise Agreement) of het factureringsaccount (Microsoft-klantovereenkomst). Voor machtigingen om wijzigingen aan te brengen binnen deze bereiken, zijn beheerdersrechten voor facturering vereist.
-
-### <a name="why-are-sources-and-targets-limited-to-25-per-rule"></a>Waarom zijn bronnen en doelen beperkt tot 25 per regel?
-<a name="source-target-rule-limit"></a>
-
-De limiet is een beperking van de preview-versie om te zorgen voor optimale prestaties en schaalbaarheid van de kosten. De limieten zullen waarschijnlijk toenemen of worden verwijderd als kostentoewijzing wordt overgezet naar algemene beschikbaarheid (GA).
-
-### <a name="what-can-happen-if-cost-allocation-rules-sourcestargets-overlap"></a>Wat kan er gebeuren als de kostentoewijzingsregels (bronnen/doelen) elkaar overlappen?
-<a name="rule-overlap"></a>
-
-Regels die overlappende bronnen of overlappende doelen hebben, worden niet aanbevolen. Regels voor kostentoewijzing worden toegepast op hun aanmaakdatum, dus als kostentoewijzingsregels elkaar overlappen, krijgt de toewijzingsregel met de eerste aanmaakdatum voorrang.
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Lees de [veelgestelde Cost Management + Billing voor](../cost-management-billing-faq.yml) vragen en antwoorden over kostentoewijzing.
 - Toewijzingsregels maken of bijwerken met behulp van de [Rest API voor kostentoewijzing](/rest/api/cost-management/costallocationrules)
 - Meer informatie over [hoe u uw cloudinvesteringen kunt optimaliseren met Azure Cost Management](cost-mgt-best-practices.md)

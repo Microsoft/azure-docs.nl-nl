@@ -8,12 +8,12 @@ ms.subservice: enterprise
 ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: banders
-ms.openlocfilehash: 0f2d3c830f27eec9f521e6f79ac8dce3bce818e9
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
-ms.translationtype: HT
+ms.openlocfilehash: ce9dff017a796e420586ad191a59c149bed07190
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442561"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726822"
 ---
 # <a name="azure-marketplace"></a>Azure Marketplace
 
@@ -74,45 +74,7 @@ De volgende services worden per uur gefactureerd onder Enterprise Agreement, in 
 
 Als u een Enterprise Agreement hebt, betaalt u voor Azure RemoteApp op basis van het Enterprise Agreement-prijsniveau. Er zijn geen extra kosten. De standaardprijs is inclusief de eerste 40 uur. De onbeperkte prijs omvat de eerste 80 uur. Het gebruik van een RemoteApp stopt na 80 uur.
 
-## <a name="azure-marketplace-faq"></a>Veelgestelde vragen over Azure Marketplace
-
-In deze sectie wordt uitgelegd hoe uw Azure-vooruitbetaling mogelijk van toepassing is op sommige services van externe resellers in Azure Marketplace.
-
-### <a name="what-changed-with-azure-marketplace-services-and-azure-ea-prepayment"></a>Wat is er veranderd in Azure Marketplace Services en de Azure-vooruitbetaling voor EA?
-
-Vanaf 1 maart 2018 gebruiken sommige services van externe resellers de Azure-vooruitbetaling voor EA. Met uitzondering van Azure-VM-RI’s (gereserveerde instanties) werden deze services voorheen buiten de Azure-vooruitbetaling in rekening gebracht en afzonderlijk gefactureerd.
-
-We hebben het gebruik van Azure-vooruitbetaling uitgebreid naar de gepubliceerde Azure Marketplace-services van derden die het vaakst worden aangeschaft. Azure-vooruitbetaling voor EA voor deze services in Azure Marketplace vereenvoudigt uw aankoopproces en betalingsafhandeling.
-
-### <a name="why-did-we-make-this-change"></a>Waarom is deze wijziging aangebracht?
-
-Klanten zoeken voortdurend naar extra manieren om de vooraf betaalde Azure-vooruitbetaling te kunnen gebruiken. Deze wijziging werd vaak aangevraagd door klanten en is van invloed op een groot deel van de Azure Marketplace-klanten.
-
-### <a name="how-do-you-benefit"></a>Wat zijn de voordelen voor u?
-
-Facturering is eenvoudiger, en u kunt uw Azure-vooruitbetaling voor EA beter besteden. Omdat deze services zijn opgenomen in uw vooraf betaalde Azure-vooruitbetaling, wordt uw Azure-vooruitbetaling voor EA waardevoller.
-
-### <a name="what-azure-marketplace-services-use-azure-ea-prepayment-and-how-do-i-know"></a>Welke Azure Marketplace-Services maken gebruik van Azure-vooruitbetaling voor EA en hoe weet ik dat?
-
-Wanneer u een service koopt die Azure-vooruitbetaling gebruikt, geeft Azure Marketplace een disclaimer weer. Bepaalde services die zijn gepubliceerd via Red Hat, SUSE, Autodesk en Oracle worden ondersteund. Momenteel worden services met vergelijkbare namen die zijn gepubliceerd door andere partijen, niet afgetrokken van uw Azure-vooruitbetaling. Aan het einde van deze pagina met veelgestelde vragen vindt u een volledige lijst.
-
-### <a name="what-if-my-azure-ea-prepayment-runs-out"></a>Wat gebeurt er als mijn Azure-vooruitbetaling voor EA bijna op is?
-
-Als u uw hele Azure-vooruitbetaling hebt verbruikt en u nu in overschrijding bevindt, worden de kosten voor deze services in de volgende overschrijdingsfactuur weergegeven, samen met andere verbruiksservices. Vóór de wijziging van 1 maart 2018 werden deze kosten gefactureerd met andere Azure Marketplace-services.
-
-### <a name="why-dont-all-azure-marketplaces-consume-azure-ea-prepayment"></a>Waarom maken niet alle Azure Marketplaces gebruik van Azure-vooruitbetaling voor EA?
-
-We proberen altijd de beste klantervaring te leveren met betrekking tot de Azure-vooruitbetaling voor EA. Deze wijziging is van belang voor een groot aantal klanten en een aanzienlijk deel van de totale uitgaven in Azure Marketplace. In de toekomst worden mogelijk andere services toegevoegd.
-
-### <a name="how-does-this-impact-indirect-enrollment-and-partners"></a>Hoe heeft dit invloed op indirecte inschrijvingen en partners?
-
-Het heeft geen invloed op onze klanten voor indirecte inschrijving of partners. Deze services zijn onderhevig aan dezelfde partnermogelijkheden als andere verbruiksservices. De enige wijziging is dat de kosten worden weergegeven op een andere factuur, en dat de betaling van de kosten buiten de Azure-vooruitbetaling voor EA van de klant valt.
-
-### <a name="is-there-a-list-of-azure-marketplace-services-that-consume-azure-ea-prepayment"></a>Is er een lijst met Azure Marketplace-services die gebruikmaken van Azure-vooruitbetaling voor EA?
-
-Voor specifieke Azure Marketplace-aanbiedingen kan Azure-vooruitbetaling worden gebruikt. Raadpleeg [Services van derden die gebruikmaken van Azure-vooruitbetaling](https://azure.microsoft.com/updates/azure-marketplace-third-party-reseller-services-now-use-azure-monetary-commitment) voor een volledige lijst met producten die zijn opgenomen in dit programma.
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [Prijzen](ea-pricing-overview.md).
+- Lees de [Cost Management + Billing veelgestelde](../cost-management-billing-faq.yml) vragen voor een lijst met vragen en antwoorden over Azure Marketplace services en Azure EA-vooruitbetaling.

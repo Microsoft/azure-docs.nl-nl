@@ -1,5 +1,5 @@
 ---
-title: Quick start voor anomalie detectie python multidimensionale-client bibliotheek
+title: Anomaly Detector quickstart voor python-clientbibliotheek voor meerdere varianten
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: mrbullwinkle
@@ -8,20 +8,22 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 11/25/2020
 ms.author: mbullwin
-ms.openlocfilehash: 9b848f6c86f2ff2e95fa5cc191b088b7175f2311
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 684c61dfb34d55681904943160ca389c19a4c8db
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107316011"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107732528"
 ---
-Ga aan de slag met de multidimensionale-client bibliotheek voor anomalie detectie voor python. Voer de volgende stappen uit om het pakket te installeren en de algoritmen te gaan gebruiken die door de service worden geleverd. Met de nieuwe multidimensionale anomalie detectie-Api's kunnen ontwikkel aars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen van groepen met metrische gegevens, zonder dat er machine learning kennis of labels zijn vereist. Afhankelijkheden en tussen correlaties tussen verschillende signalen worden automatisch geteld als sleutel factoren. Zo kunt u uw complexe systemen proactief beveiligen tegen storingen.
+Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor Python. Voer de volgende stappen uit om het pakket te installeren en de algoritmen te gaan gebruiken die door de service worden geleverd. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
-Gebruik de multidimensionale-client bibliotheek voor anomalie detectie voor python voor het volgende:
+Gebruik de Anomaly Detector multivariate clientbibliotheek voor Python voor het volgende:
 
-* Afwijkingen op systeem niveau van een groep tijd reeksen detecteren.
-* Wanneer een wille keurige tijd reeks niet meer vertelt en u alle signalen moet bekijken om een probleem te detecteren.
-* Het predicaat onderhoud van dure fysieke activa met tien tot honderden verschillende typen Sens oren die verschillende aspecten van de systeem status meten.
+* Anomalieën op systeemniveau detecteren uit een groep tijdreeksen.
+* Wanneer een afzonderlijke tijdreeks u niet veel vertelt en u alle signalen moet bekijken om een probleem te detecteren.
+* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende soorten sensoren die verschillende aspecten van de systeemtoestand meten.
+
+[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/anomalydetector/azure-ai-anomalydetector)  |  [Pakket (PyPi)](https://pypi.org/project/azure-ai-anomalydetector/3.0.0b3/)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -77,9 +79,9 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Ano
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Als u een nieuwe anomalie detectie client wilt instantiëren, moet u de sleutel voor het afwijkings abonnement en het bijbehorende eind punt door geven. Er wordt ook een gegevens bron ingesteld.  
+Als u een nieuwe client wilt Anomaly Detector, moet u de Anomaly Detector-abonnementssleutel en het bijbehorende eindpunt doorgeven. We maken ook een gegevensbron.  
 
-Voor het gebruik van de anomalie detectie multidimensionale-Api's moeten we ons eigen model trainen voordat ze detectie kunnen gebruiken. Gegevens die worden gebruikt voor de training, zijn een batch van een tijd reeks, elke time series moet in CSV-indeling zijn met twee kolommen, tijds tempel en waarde. Alle tijd reeksen moeten worden ingepakt in één ZIP-bestand en naar [Azure Blob-opslag](../../../../storage/blobs/storage-blobs-introduction.md#blobs)worden geüpload. Standaard wordt de bestands naam gebruikt om de variabele voor de tijd reeks weer te geven. U kunt ook een extra meta.jsvoor het bestand opnemen in het zip-bestand als u wilt dat de naam van de variabele afwijkt van de naam van het zip-bestand. Zodra de URL voor de [BLOB SAS (Shared Access signatures)](../../../../storage/common/storage-sas-overview.md)is gegenereerd, kunnen we de URL voor de training gebruiken in het zip-bestand.
+Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, tijdstempel en waarde. Alle tijdreeksen moeten worden ingepakt in één zip-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md#blobs) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ```python
 def __init__(self, subscription_key, anomaly_detector_endpoint, data_source=None):
@@ -101,7 +103,7 @@ def __init__(self, subscription_key, anomaly_detector_endpoint, data_source=None
 
 ## <a name="train-the-model"></a>Het model trainen
 
-We zullen het model eerst trainen, de status van het model controleren tijdens de training om te bepalen wanneer de training is voltooid en vervolgens de meest recente model-ID ophalen die we nodig hebben wanneer we naar de detectie fase gaan.
+Eerst trainen we het model, controleren we de status van het model tijdens het trainen om te bepalen wanneer de training is voltooid en halen we vervolgens de meest recente model-id op die we nodig hebben wanneer we naar de detectiefase gaan.
 
 ```python
 def train(self, start_time, end_time, max_tryout=500):
@@ -141,7 +143,7 @@ def train(self, start_time, end_time, max_tryout=500):
 
 ## <a name="detect-anomalies"></a>Afwijkingen detecteren
 
-Gebruik de `detect_anomaly` en `get_dectection_result` om te bepalen of er afwijkingen in uw gegevens bron zijn. U moet de model-ID door geven voor het model dat u zojuist hebt opgeleid.
+Gebruik de `detect_anomaly` en om te bepalen of er afwijkingen in uw `get_dectection_result` gegevensbron zijn. U moet de model-id doorgeven voor het model dat u zojuist hebt getraind.
 
 ```python
 def detect(self, model_id, start_time, end_time, max_tryout=500):
@@ -175,7 +177,7 @@ def detect(self, model_id, start_time, end_time, max_tryout=500):
 
 ## <a name="export-model"></a>Model exporteren
 
-Als u een model wilt exporteren, moet u `export_model` de model-id van het model dat u wilt exporteren door geven:
+Als u een modelgebruik wilt exporteren en `export_model` de model-id wilt doorgeven van het model dat u wilt exporteren:
 
 ```python
 def export_model(self, model_id, model_path="model.zip"):
@@ -194,7 +196,7 @@ def export_model(self, model_id, model_path="model.zip"):
 
 ## <a name="delete-model"></a>Model verwijderen
 
-Als u een model wilt verwijderen `delete_multivariate_model` , geeft u de model-id van het model dat u wilt verwijderen door:
+Als u een modelgebruik wilt `delete_multivariate_model` verwijderen en de model-id wilt doorgeven van het model dat u wilt verwijderen:
 
 ```python
 def delete_model(self, model_id):
@@ -207,7 +209,7 @@ def delete_model(self, model_id):
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
-Voordat u de toepassing uitvoert, moet u een code toevoegen om de zojuist gemaakte functies aan te roepen.
+Voordat u de toepassing gaat uitvoeren, moeten we code toevoegen om onze zojuist gemaakte functies aan te roepen.
 
 ```python
 if __name__ == '__main__':

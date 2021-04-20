@@ -1,5 +1,5 @@
 ---
-title: Quick start voor anomalie detectie multidimensionale Java-client bibliotheek
+title: Anomaly Detector quickstart over meerdere Java-clientbibliotheeks
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: mrbullwinkle
@@ -8,20 +8,22 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/06/2021
 ms.author: mbullwin
-ms.openlocfilehash: eae4d00cd7b1a0ff90648086320135505a0d900a
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: f2e227b2a589955191a2e602495cf0ffbb3f6d8b
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107316023"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107732624"
 ---
-Ga aan de slag met de multidimensionale-client bibliotheek voor anomalie detectie voor Java. Voer de volgende stappen uit om het pakket te installeren en de algoritmen te gaan gebruiken die door de service worden geleverd. Met de nieuwe multidimensionale anomalie detectie-Api's kunnen ontwikkel aars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen van groepen met metrische gegevens, zonder dat er machine learning kennis of labels zijn vereist. Afhankelijkheden en tussen correlaties tussen verschillende signalen worden automatisch geteld als sleutel factoren. Zo kunt u uw complexe systemen proactief beveiligen tegen storingen.
+Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor Java. Voer de volgende stappen uit om het pakket te installeren en de algoritmen te gaan gebruiken die door de service worden geleverd. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
-Gebruik de multidimensionale-client bibliotheek voor anomalie detectie voor Java om het volgende te doen:
+Gebruik de Anomaly Detector multivariate clientbibliotheek voor Java voor het volgende:
 
-* Afwijkingen op systeem niveau van een groep tijd reeksen detecteren.
-* Wanneer een wille keurige tijd reeks niet meer vertelt en u alle signalen moet bekijken om een probleem te detecteren.
-* Het predicaat onderhoud van dure fysieke activa met tien tot honderden verschillende typen Sens oren die verschillende aspecten van de systeem status meten.
+* Anomalieën op systeemniveau detecteren uit een groep tijdreeksen.
+* Wanneer een afzonderlijke tijdreeks u niet veel vertelt en u alle signalen moet bekijken om een probleem te detecteren.
+* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende typen sensoren die verschillende aspecten van de systeemtoestand meten.
+
+[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/anomalydetector/azure-ai-anomalydetector)  |  [Pakket (Maven)](https://repo1.maven.org/maven2/com/azure/azure-ai-anomalydetector/3.0.0-beta.2/)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -101,14 +103,14 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 ```
 
-Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource. Maak een andere variabele voor het voorbeeld gegevensbestand.
+Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource. Maak nog een variabele voor het voorbeeldgegevensbestand.
 
 ```java
 String key = "YOUR_API_KEY";
 String endpoint = "YOUR_ENDPOINT";
 ```
 
- Voor het gebruik van de anomalie detectie multidimensionale-Api's moeten we ons eigen model trainen voordat ze detectie kunnen gebruiken. Gegevens die worden gebruikt voor de training, zijn een batch van een tijd reeks, elke time series moet in CSV-indeling zijn met twee kolommen, tijds tempel en waarde. Alle tijd reeksen moeten worden ingepakt in één ZIP-bestand en naar [Azure Blob-opslag](../../../../storage/blobs/storage-blobs-introduction.md)worden geüpload. Standaard wordt de bestands naam gebruikt om de variabele voor de tijd reeks weer te geven. U kunt ook een extra meta.jsvoor het bestand opnemen in het zip-bestand als u wilt dat de naam van de variabele afwijkt van de naam van het zip-bestand. Zodra de URL voor de [BLOB SAS (Shared Access signatures)](../../../../storage/common/storage-sas-overview.md)is gegenereerd, kunnen we de URL voor de training gebruiken in het zip-bestand.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, een tijdstempel en een waarde. Alle tijdreeksen moeten worden ingepakt in één ZIP-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -122,7 +124,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Ano
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Een object instantiëren `anomalyDetectorClient` met uw eind punt en referenties.
+Instantieer een `anomalyDetectorClient` -object met uw eindpunt en referenties.
 
 ```java
 HttpHeaders headers = new HttpHeaders()
@@ -147,11 +149,11 @@ AnomalyDetectorClient anomalyDetectorClient = new AnomalyDetectorClientBuilder()
 
 ## <a name="train-a-model"></a>Een model trainen
 
-### <a name="construct-a-model-result-and-train-model"></a>Een model resultaat en Train model maken
+### <a name="construct-a-model-result-and-train-model"></a>Een modelresultaat maken en het model trainen
 
-Eerst moeten we een model aanvraag bouwen. Zorg ervoor dat de begin-en eind tijd worden uitgelijnd met uw gegevens bron.
+Eerst moeten we een modelaanvraag maken. Zorg ervoor dat de begin- en eindtijd zijn afgestemd op uw gegevensbron.
 
- Voor het gebruik van de anomalie detectie multidimensionale-Api's moeten we ons eigen model trainen voordat ze detectie kunnen gebruiken. Gegevens die worden gebruikt voor de training, zijn een batch van een tijd reeks, elke time series moet in CSV-indeling zijn met twee kolommen, tijds tempel en waarde. Alle tijd reeksen moeten worden ingepakt in één ZIP-bestand en naar [Azure Blob-opslag](../../../../storage/blobs/storage-blobs-introduction.md#blobs)worden geüpload. Standaard wordt de bestands naam gebruikt om de variabele voor de tijd reeks weer te geven. U kunt ook een extra meta.jsvoor het bestand opnemen in het zip-bestand als u wilt dat de naam van de variabele afwijkt van de naam van het zip-bestand. Zodra de URL voor de [BLOB SAS (Shared Access signatures)](../../../../storage/common/storage-sas-overview.md)is gegenereerd, kunnen we de URL voor de training gebruiken in het zip-bestand.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, tijdstempel en waarde. Alle tijdreeksen moeten worden ingepakt in één zip-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md#blobs) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ```java
 Path path = Paths.get("test-data.csv");
@@ -228,7 +230,7 @@ while (true) {
 
 ## <a name="export-model"></a>Model exporteren
 
-Gebruik de om uw getrainde model te exporteren `exportModelWithResponse` .
+Gebruik de om uw getrainde model te `exportModelWithResponse` exporteren.
 
 ```java
 StreamResponse response_export = anomalyDetectorClient.exportModelWithResponse(model_id, Context.NONE);
@@ -239,7 +241,7 @@ value.subscribe(s -> write(bw, s), (e) -> close(bw), () -> close(bw));
 
 ## <a name="delete-model"></a>Model verwijderen
 
-Gebruik de functie om een bestaand model dat beschikbaar is voor de huidige resource, te verwijderen `deleteMultivariateModelWithResponse` .
+Als u een bestaand model wilt verwijderen dat beschikbaar is voor de huidige resource, gebruikt u de `deleteMultivariateModelWithResponse` functie .
 
 ```java
 Response<Void> deleteMultivariateModelWithResponse = anomalyDetectorClient.deleteMultivariateModelWithResponse(model_id, Context.NONE);
@@ -262,4 +264,4 @@ gradle run
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Best practices voor anomalie detectie multidimensionale](../../concepts/best-practices-multivariate.md)
+* [Anomaly Detector best practices voor meerdere varianten](../../concepts/best-practices-multivariate.md)

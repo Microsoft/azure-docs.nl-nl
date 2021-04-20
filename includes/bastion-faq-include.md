@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/05/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b58040917ed3d3345a35b7acbe31b6b500f05562
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: c0ca74b6cf63e3c81d830eca76eea6815548faa1
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107073650"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107732499"
 ---
 ### <a name="do-i-need-a-public-ip-on-my-virtual-machine-to-connect-via-azure-bastion"></a><a name="publicip"></a>Heb ik een openbare IP nodig in mijn virtuele machine om verbinding te maken met Azure Bastion?
 
@@ -23,9 +23,9 @@ Nee. Wanneer u verbinding maakt met een VM met behulp van Azure Bastion, hebt u 
 
 Op dit moment wordt IPv6 niet ondersteund. Azure Bastion ondersteunt alleen IPv4.
 
-### <a name="can-i-use-azure-bastion-with-azure-private-dns-zones"></a>Kan ik Azure Bastion met Azure-Privé-DNS zones gebruiken?
+### <a name="can-i-use-azure-bastion-with-azure-private-dns-zones"></a>Kan ik Azure Bastion gebruiken met Azure Privé-DNS Zones?
 
-Het gebruik van Azure Bastion met Azure Privé-DNS zones wordt momenteel niet ondersteund. Voordat u uw Azure Bastion-resource implementeert, moet u ervoor zorgen dat het virtuele netwerk van de host niet is gekoppeld aan een privé-DNS-zone.
+Het gebruik van Azure Bastion met Azure Privé-DNS Zones wordt op dit moment niet ondersteund. Voordat u uw Azure Bastion implementeert, moet u ervoor zorgen dat het virtuele hostnetwerk niet is gekoppeld aan een privé-DNS-zone.
 
 ### <a name="do-i-need-an-rdp-or-ssh-client"></a><a name="rdpssh"></a>Heb ik een RDP- of SSH-client nodig?
 
@@ -51,7 +51,7 @@ Deze functie werkt niet met AADJ machines die aan de virtuele machine zijn gekop
 
 ### <a name="which-browsers-are-supported"></a><a name="browsers"></a>Welke browsers worden ondersteund?
 
-Gebruik Microsoft Edge of Google Chrome in Windows. Voor Apple Mac gebruikt u Google Chrome. Microsoft Edge Chromium wordt ook ondersteund voor zowel Windows als Mac.
+De browser moet HTML 5 ondersteunen. Gebruik Microsoft Edge of Google Chrome in Windows. Voor Apple Mac gebruikt u Google Chrome. Microsoft Edge Chromium wordt ook ondersteund voor zowel Windows als Mac.
 
 ### <a name="where-does-azure-bastion-store-customer-data"></a><a name="data"></a>Waar worden klantgegevens opgeslagen door Azure Bastion?
 

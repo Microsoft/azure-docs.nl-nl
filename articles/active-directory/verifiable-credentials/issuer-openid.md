@@ -1,6 +1,6 @@
 ---
-title: Communicatie voorbeelden van de uitgevers service (preview)-Azure Active Directory verifieer bare referenties
-description: Details van de communicatie tussen de ID-provider en de uitgevers service
+title: Voorbeelden van communicatie van verlenerservice (preview) - Azure Active Directory Verifiable Credentials
+description: Details van de communicatie tussen id-provider en verlenerservice
 author: barclayn
 manager: davba
 ms.service: identity
@@ -9,40 +9,40 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: 8771c61f96b244e0cc0bca1c61ceb8042b4a5b4c
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: 942b77f8338636f9dda5dcf6cd4262dad57b4b0a
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106220195"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726264"
 ---
-# <a name="issuer-service-communication-examples-preview"></a>Communicatie voorbeelden van de uitgevers service (preview)
+# <a name="issuer-service-communication-examples-preview"></a>Voorbeelden van servicecommunicatie van verlener (preview)
 
-De verifieer bare referentie verleners-service kan verifieer bare referenties geven door claims op te halen uit een ID-token dat is gegenereerd door de OpenID Connect-ID-provider van uw organisatie. In dit artikel wordt beschreven hoe u uw ID-provider instelt zodat de verificator ermee kan communiceren en de juiste ID-token kan ophalen om door te geven aan de verlenende service. 
+De azure AD Verifiable Credential-service kan verifieerbare referenties uitgeven door claims op te haalt uit een id-token dat is gegenereerd door de OpenID-compatibele id-provider van uw organisatie. In dit artikel wordt beschreven hoe u uw id-provider in kunt stellen, zodat Authenticator hiermee kan communiceren en het juiste id-token kan ophalen om door te geven aan de verlenende service. 
 
 > [!IMPORTANT]
-> Azure Active Directory Controleer bare referenties bevindt zich momenteel in de publieke preview.
+> Azure Active Directory Verifiable Credentials is momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 
-Als u een verifieer bare referentie wilt uitgeven, wordt de verificatie door de verificator gedownload om de invoer van de gebruiker te verzamelen en die informatie naar de uitgevende service te verzenden. Als u een ID-token moet gebruiken, moet u uw ID-provider instellen zodat verificator zich kan aanmelden bij een gebruiker met behulp van het OpenID Connect Connect-protocol. De claims in de resulterende ID-token worden gebruikt om de inhoud van uw verifieer bare referentie te vullen. Verificator verifieert de gebruiker met behulp van de OpenID Connect Connect-autorisatie code stroom. Uw OpenID Connect-provider moet ondersteuning bieden voor de volgende OpenID Connect Connect-functies: 
+Als u een verifieerbare referentie wilt uitgeven, krijgt Authenticator via het downloaden van het contract de opdracht om invoer van de gebruiker te verzamelen en die informatie naar de verlenende service te verzenden. Als u een id-token moet gebruiken, moet u uw id-provider instellen zodat Authenticator een gebruiker kan aanmelden met behulp van het OpenID Connect-protocol. De claims in het resulterende id-token worden gebruikt om de inhoud van uw verifieerbare referentie in te vullen. Authenticator verifieert de gebruiker met behulp van de OpenID Connect autorisatiecodestroom. Uw OpenID-provider moet de volgende OpenID Connect ondersteunen: 
 
 | Functie | Beschrijving |
 | ------- | ----------- |
-| Toekennings type | Het toekennings type voor autorisatie code moet worden ondersteund. |
-| Token indeling | Er moet een niet-versleutelde compacte JWTs worden geproduceerd. |
-| Handtekening algoritme | Moet JWTs ondertekend maken met RSA 256. |
-| Configuratie document | Moet ondersteuning bieden voor OpenID Connect Connect-configuratie document en `jwks_uri` . | 
-| Client registratie | De registratie van open bare clients moet worden ondersteund met een `redirect_uri` waarde van `vclient://openid/` . | 
-| PKCE | Aanbevolen om veiligheids redenen, maar niet vereist. |
+| Toekenningstype | Moet het toekenningstype voor autorisatiecode ondersteunen. |
+| Tokenindeling | Moet niet-versleutelde compacte JWT's produceren. |
+| Handtekeningalgoritme | Moet JWT's produceren die zijn ondertekend met RSA 256. |
+| Configuratiedocument | Moet ondersteuning OpenID Connect configuratiedocument en `jwks_uri` . | 
+| Clientregistratie | Moet openbare clientregistratie ondersteunen met behulp van `redirect_uri` de waarde `vclient://openid/` . | 
+| PKCE | Aanbevolen uit veiligheidsoverwegingen, maar niet vereist. |
 
-Hieronder vindt u enkele voor beelden van HTTP-aanvragen die worden verzonden naar uw ID-provider. Uw ID-provider moet deze aanvragen accepteren en hierop reageren in overeenstemming met de OpenID Connect Connect-verificatie standaard.
+Hieronder vindt u voorbeelden van de HTTP-aanvragen die naar uw id-provider worden verzonden. Uw id-provider moet deze aanvragen accepteren en hierop reageren in overeenstemming met OpenID Connect verificatiestandaard.
 
-## <a name="client-registration"></a>Client registratie
+## <a name="client-registration"></a>Clientregistratie
 
-Als u een verifieer bare referentie wilt ontvangen, moeten uw gebruikers zich aanmelden bij uw IDP via de app Microsoft Authenticator. 
+Als u een verifieerbare referentie wilt ontvangen, moeten uw gebruikers zich aanmelden bij uw IDP vanuit de Microsoft Authenticator app. 
 
-Als u deze uitwisseling wilt inschakelen, moet u een toepassing registreren bij uw ID-provider. Als u Azure AD gebruikt, kunt u de instructies [hier](../develop/quickstart-register-app.md)vinden. Gebruik de volgende waarden bij het registreren.
+Als u deze uitwisseling wilt inschakelen, registreert u een toepassing bij uw id-provider. Als u Azure AD gebruikt, kunt u de instructies [hier vinden.](../develop/quickstart-register-app.md) Gebruik de volgende waarden bij het registreren.
 
 | Instelling | Waarde |
 | ------- | ----- |
@@ -50,13 +50,13 @@ Als u deze uitwisseling wilt inschakelen, moet u een toepassing registreren bij 
 | Omleidings-URI | `vcclient://openid/ ` |
 
 
-Nadat u een toepassing hebt geregistreerd bij uw ID-provider, noteert u de client-ID. U gebruikt deze in de volgende sectie. U moet ook de URL naar het bekende eind punt schrijven voor de OIDC Compatible ID-provider. De verlenende service gebruikt dit eind punt voor het downloaden van de open bare sleutels die nodig zijn om het ID-token te valideren zodra het door de verificator wordt verzonden.
+Nadat u een toepassing bij uw id-provider hebt geregistreerd, registreert u de client-id. U gebruikt deze in de volgende sectie. U moet ook de URL naar het bekende eindpunt voor de met OIDC compatibele id-provider schrijven. De verlenende service gebruikt dit eindpunt om de openbare sleutels te downloaden die nodig zijn om het id-token te valideren zodra het is verzonden door Authenticator.
 
-De geconfigureerde omleidings-URI wordt gebruikt door de verificator, zodat deze weet wanneer de aanmelding is voltooid en het ID-token kan ophalen. 
+De geconfigureerde omleidings-URI wordt gebruikt door Authenticator, zodat deze weet wanneer de aanmelding is voltooid en het id-token kan worden opgehaald. 
 
-## <a name="authorization-request"></a>Autorisatie aanvraag
+## <a name="authorization-request"></a>Autorisatieaanvraag
 
-De autorisatie aanvraag die naar uw ID-provider wordt verzonden, maakt gebruik van de volgende indeling.
+De autorisatieaanvraag die naar uw id-provider wordt verzonden, heeft de volgende indeling.
 
 ```HTTP
 GET /authorize?client_id=<client-id>&redirect_uri=portableidentity%3A%2F%2Fverify&response_mode=query&response_type=code&scope=openid&state=12345&nonce=12345 HTTP/1.1
@@ -66,17 +66,17 @@ Connection: Keep-Alive
 
 | Parameter | Waarde |
 | ------- | ----------- |
-| `client_id` | De client-ID die is verkregen tijdens het registratie proces voor de toepassing. |
-| `redirect_uri` | Moet worden gebruikt `vcclient://openid/` . |
-| `response_mode` | Moet ondersteunen `query` . |
-| `response_type` | Moet ondersteunen `code` . |
-| `scope` | Moet ondersteunen `openid` . |
-| `state` | Moet worden geretourneerd naar de client volgens de OpenID Connect Connect-standaard. |
-| `nonce` | Moet worden geretourneerd als een claim in het ID-token volgens de OpenID Connect Connect-standaard. |
+| `client_id` | De client-id die is verkregen tijdens het registratieproces van de toepassing. |
+| `redirect_uri` | Moet `vcclient://openid/` gebruiken. |
+| `response_mode` | Moet ondersteuning bieden `query` voor . |
+| `response_type` | Moet ondersteuning bieden `code` voor . |
+| `scope` | Moet ondersteuning bieden `openid` voor . |
+| `state` | Moet worden geretourneerd naar de client volgens de OpenID Connect standaard. |
+| `nonce` | Moet worden geretourneerd als een claim in het id-token volgens OpenID Connect standaard. |
 
-Wanneer het een autorisatie aanvraag ontvangt, moet uw ID-provider de gebruiker verifiëren en alle benodigde stappen ondernemen om de aanmelding te volt ooien, zoals multi-factor Authentication.
+Wanneer een autorisatieaanvraag wordt ontvangen, moet uw id-provider de gebruiker verifiëren en de benodigde stappen nemen om de aanmelding te voltooien, zoals meervoudige verificatie.
 
-U kunt het aanmeldings proces aanpassen aan uw behoeften. U kunt gebruikers vragen om aanvullende informatie te verstrekken, Service voorwaarden te accepteren, te betalen voor de referentie en nog veel meer. Zodra alle stappen zijn voltooid, beantwoordt u de autorisatie aanvraag door naar de omleidings-URI te omleiden, zoals hieronder wordt weer gegeven. 
+U kunt het aanmeldingsproces aanpassen aan uw behoeften. U kunt gebruikers vragen aanvullende informatie te verstrekken, servicevoorwaarden te accepteren, te betalen voor hun referentie en meer. Zodra alle stappen zijn voltooid, reageert u op de autorisatieaanvraag door om te leiden naar de omleidings-URI, zoals hieronder wordt weergegeven. 
 
 ```HTTP
 vcclient://openid/?code=nbafhjbh1ub1yhbj1h4jr1&state=12345
@@ -84,12 +84,12 @@ vcclient://openid/?code=nbafhjbh1ub1yhbj1h4jr1&state=12345
 
 | Parameter | Waarde |
 | ------- | ----------- |
-| `code` |  De autorisatie code die door uw ID-provider is geretourneerd. |
-| `state` | Moet worden geretourneerd naar de client volgens de OpenID Connect Connect-standaard. |
+| `code` |  De autorisatiecode die wordt geretourneerd door uw id-provider. |
+| `state` | Moet worden geretourneerd naar de client volgens de OpenID Connect standaard. |
 
-## <a name="token-request"></a>Token aanvraag
+## <a name="token-request"></a>Tokenaanvraag
 
-De token aanvraag die naar uw ID-provider wordt verzonden, heeft de volgende vorm.
+De tokenaanvraag die naar uw id-provider wordt verzonden, heeft het volgende formulier.
 
 ```HTTP
 POST /token HTTP/1.1
@@ -102,13 +102,13 @@ client_id=<client-id>&redirect_uri=vcclient%3A%2F%2Fopenid%2F&grant_type=authori
 
 | Parameter | Waarde |
 | ------- | ----------- |
-| `client_id` | De client-ID die is verkregen tijdens het registratie proces voor de toepassing. |
-| `redirect_uri` | Moet worden gebruikt `vcclient://openid/` . |
-| `scope` | Moet ondersteunen `openid` . |
-| `grant_type` | Moet ondersteunen `authorization_code` . |
-| `code` | De autorisatie code die door uw ID-provider is geretourneerd. |
+| `client_id` | De client-id die is verkregen tijdens het registratieproces van de toepassing. |
+| `redirect_uri` | Moet `vcclient://openid/` gebruiken. |
+| `scope` | Moet ondersteuning bieden `openid` voor . |
+| `grant_type` | Moet ondersteuning bieden `authorization_code` voor . |
+| `code` | De autorisatiecode die wordt geretourneerd door uw id-provider. |
 
-Wanneer de token aanvraag wordt ontvangen, moet uw ID-provider reageren met een ID-token.
+Na ontvangst van de tokenaanvraag moet uw id-provider reageren met een id-token.
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -130,18 +130,18 @@ Pragma: no-cache
 }
 ```
 
-Het ID-token moet de JWT compact serialisatie-indeling gebruiken en mag niet worden versleuteld. Het ID-token moet de volgende claims bevatten.
+Het id-token moet de compacte JWT-serialisatie-indeling gebruiken en mag niet worden versleuteld. Het id-token moet de volgende claims bevatten.
 
 | Claim | Waarde |
 | ------- | ----------- |
-| `kid` | De sleutel-id van de sleutel die wordt gebruikt voor het ondertekenen van het ID-token, dat overeenkomt met een vermelding in de OpenID Connect-provider `jwks_uri` . |
-| `aud` | De client-ID die is verkregen tijdens het registratie proces voor de toepassing. |
-| `iss` | Moet de `issuer` waarde zijn in het OpenID Connect Connect-configuratie document. |
-| `exp` | Moet de verloop tijd van het ID-token bevatten. |
-| `iat` | Moet het tijdstip bevatten waarop het ID-token is uitgegeven. |
-| `nonce` | De waarde die is opgenomen in de autorisatie aanvraag. |
-| Aanvullende claims | Het ID-token moet aanvullende claims bevatten waarvan de waarden worden opgenomen in de verifieer bare referentie die wordt uitgegeven. In deze sectie moet u kenmerken over de gebruiker, zoals hun naam, toevoegen. |
+| `kid` | De sleutel-id van de sleutel die wordt gebruikt om het id-token te ondertekenen, dat overeenkomt met een vermelding in de OpenID-provider. `jwks_uri` |
+| `aud` | De client-id die is verkregen tijdens het registratieproces van de toepassing. |
+| `iss` | Moet de waarde `issuer` in uw OpenID Connect zijn. |
+| `exp` | Moet de verlooptijd van het id-token bevatten. |
+| `iat` | Moet het tijdstip bevatten waarop het id-token is uitgegeven. |
+| `nonce` | De waarde die is opgenomen in de autorisatieaanvraag. |
+| Aanvullende claims | Het id-token moet aanvullende claims bevatten waarvan de waarden worden opgenomen in de verifieerbare referentie die wordt uitgegeven. In deze sectie moet u eventuele kenmerken van de gebruiker opnemen, zoals de naam. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Uw Azure Active Directory verifieer bare referenties aanpassen](credential-design.md)
+- [Uw verifieerbare Azure Active Directory aanpassen](credential-design.md)

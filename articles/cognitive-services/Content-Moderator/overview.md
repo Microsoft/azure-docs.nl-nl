@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: overview
-ms.date: 12/15/2020
+ms.date: 04/16/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: content moderator, azure content moderator, online moderator, content filtering software, content moderation service, content moderation
-ms.openlocfilehash: a53611fdad84f06661f3b8928296b6a45851cea4
-ms.sourcegitcommit: 42e4f986ccd4090581a059969b74c461b70bcac0
+ms.openlocfilehash: b0ff5a241a76cd49d104e4145df37515b43c4e27
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104867267"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726192"
 ---
 # <a name="what-is-azure-content-moderator"></a>Wat is Azure Content Moderator?
 
@@ -27,12 +27,12 @@ Azure Content Moderator is een AI-service waarmee u inhoud kunt afhandelen die m
 
 U kunt software toevoegen voor het filteren van inhoud aan uw app om te voldoen aan de regelgeving of om de beoogde omgeving voor gebruikers te behouden.
 
-Deze documentatie bevat de volgende artikel typen:  
+Deze documentatie bevat de volgende artikeltypen:  
 
-* [**Quick**](client-libraries.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.  
-* [**Hand leidingen**](try-text-api.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
-* [**Concepten**](text-moderation-api.md) geven uitgebreide uitleg over de service functionaliteit en-functies.  
-* [**Zelf studies**](ecommerce-retail-catalog-moderation.md) zijn meer gidsen die laten zien hoe u de service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.  
+* [**Quickstarts zijn**](client-libraries.md) aan de slag-instructies om u te begeleiden bij het indienen van aanvragen bij de service.  
+* [**Instructiegidsen**](try-text-api.md) bevatten instructies voor het gebruik van de service op specifiekere of aangepaste manieren.  
+* [**Concepten**](text-moderation-api.md) bieden uitgebreide uitleg over de servicefunctionaliteit en -functies.  
+* [**Zelfstudies**](ecommerce-retail-catalog-moderation.md) zijn langere handleidingen die laten zien hoe u de service kunt gebruiken als onderdeel van bredere bedrijfsoplossingen.  
 
 ## <a name="where-its-used"></a>Waar het wordt gebruikt
 

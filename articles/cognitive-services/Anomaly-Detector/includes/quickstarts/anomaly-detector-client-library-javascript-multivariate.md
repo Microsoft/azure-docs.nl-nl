@@ -1,5 +1,5 @@
 ---
-title: Quick start voor anomalie detectie multidimensionale java script-client bibliotheek
+title: Anomaly Detector quickstart over meerdere JavaScript-clientbibliotheek
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: mrbullwinkle
@@ -8,20 +8,22 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/06/2021
 ms.author: mbullwin
-ms.openlocfilehash: 4e0f2d1bae07f0814b4f096d8be315bd92cd42fe
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 03fbd5e641c72a03a4a3cb19219678bc3d3fff51
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107316026"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107732289"
 ---
-Ga aan de slag met de multidimensionale-client bibliotheek voor anomalie detectie voor Java script. Volg deze stappen om het pakket te installeren en te beginnen met het gebruik van de algoritmen die door de service worden gebruikt. Met de nieuwe multidimensionale anomalie detectie-Api's kunnen ontwikkel aars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen van groepen met metrische gegevens, zonder dat er machine learning kennis of labels zijn vereist. Afhankelijkheden en tussen correlaties tussen verschillende signalen worden automatisch geteld als sleutel factoren. Zo kunt u uw complexe systemen proactief beveiligen tegen storingen.
+Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor JavaScript. Volg deze stappen om het pakket te installeren en te beginnen met het gebruik van de algoritmen die door de service worden geleverd. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
-Gebruik de multidimensionale-client bibliotheek voor anomalie detectie voor Java script voor het volgende:
+Gebruik de Anomaly Detector multivariate clientbibliotheek voor JavaScript voor het volgende:
 
-* Afwijkingen op systeem niveau van een groep tijd reeksen detecteren.
-* Wanneer een wille keurige tijd reeks niet meer vertelt en u alle signalen moet bekijken om een probleem te detecteren.
-* Het predicaat onderhoud van dure fysieke activa met tien tot honderden verschillende typen Sens oren die verschillende aspecten van de systeem status meten.
+* Anomalieën op systeemniveau detecteren uit een groep tijdreeksen.
+* Wanneer een afzonderlijke tijdreeks u niet veel vertelt en u alle signalen moet bekijken om een probleem te detecteren.
+* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende soorten sensoren die verschillende aspecten van de systeemtoestand meten.
+
+[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/anomalydetector/ai-anomaly-detector)  |  [Pakket (npm)](https://www.npmjs.com/package/@azure/ai-anomaly-detector)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -47,7 +49,7 @@ Voer de opdracht `npm init` uit om een knooppunttoepassing te maken met een `pac
 npm init
 ```
 
-Maak een bestand `index.js` met de naam en importeer de volgende bibliotheken: '
+Maak een bestand met de `index.js` naam en importeer de volgende bibliotheken: '
 ```javascript
 'use strict'
 
@@ -57,7 +59,7 @@ const { AnomalyDetectorClient } = require('@azure/ai-anomaly-detector');
 const { AzureKeyCredential } = require('@azure/core-auth');
 ```
 
-Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource. Maak een andere variabele voor het voorbeeld gegevensbestand.
+Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource. Maak nog een variabele voor het voorbeeldgegevensbestand.
 
 ```javascript
 const apiKey = "YOUR_API_KEY";
@@ -65,7 +67,7 @@ const endpoint = "YOUR_ENDPOINT";
 const data_source = "YOUR_SAMPLE_ZIP_FILE_LOCATED_IN_AZURE_BLOB_STORAGE_WITH_SAS";
 ```
 
- Voor het gebruik van de anomalie detectie multidimensionale-Api's moeten we ons eigen model trainen voordat ze detectie kunnen gebruiken. Gegevens die worden gebruikt voor de training, zijn een batch van een tijd reeks, elke time series moet in CSV-indeling zijn met twee kolommen, tijds tempel en waarde. Alle tijd reeksen moeten worden ingepakt in één ZIP-bestand en naar [Azure Blob-opslag](../../../../storage/blobs/storage-blobs-introduction.md)worden geüpload. Standaard wordt de bestands naam gebruikt om de variabele voor de tijd reeks weer te geven. U kunt ook een extra meta.jsvoor het bestand opnemen in het zip-bestand als u wilt dat de naam van de variabele afwijkt van de naam van het zip-bestand. Zodra de URL voor de [BLOB SAS (Shared Access signatures)](../../../../storage/common/storage-sas-overview.md)is gegenereerd, kunnen we de URL voor de training gebruiken in het zip-bestand.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, tijdstempel en waarde. Alle tijdreeksen moeten worden ingepakt in één zip-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren
 
@@ -89,7 +91,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Ano
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Een object instantiëren `AnomalyDetectorClient` met uw eind punt en referenties.
+Instantieer een `AnomalyDetectorClient` -object met uw eindpunt en referenties.
 
 ```javascript
 const client = new AnomalyDetectorClient(endpoint, new AzureKeyCredential(apiKey)).client;
@@ -97,9 +99,9 @@ const client = new AnomalyDetectorClient(endpoint, new AzureKeyCredential(apiKey
 
 ## <a name="train-a-model"></a>Een model trainen
 
-### <a name="construct-a-model-result"></a>Een model resultaat maken
+### <a name="construct-a-model-result"></a>Een modelresultaat maken
 
-Eerst moeten we een model aanvraag bouwen. Zorg ervoor dat de begin-en eind tijd worden uitgelijnd met uw gegevens bron.
+Eerst moeten we een modelaanvraag maken. Zorg ervoor dat de begin- en eindtijd zijn afgestemd op uw gegevensbron.
 
 ```javascript
 const Modelrequest = {
@@ -112,7 +114,7 @@ const Modelrequest = {
 
 ### <a name="train-a-new-model"></a>Een nieuw model trainen
 
-U moet uw model aanvraag door geven aan de methode van de afwijkings detector-client `trainMultivariateModel` .
+U moet uw modelaanvraag doorgeven aan de Anomaly Detector `trainMultivariateModel` clientmethode.
 
 ```javascript
 console.log("Training a new model...")
@@ -138,7 +140,7 @@ console.log("TRAINING FINISHED.")
 
 ## <a name="detect-anomalies"></a>Afwijkingen detecteren
 
-Gebruik de `detectAnomaly` `getDectectionResult` functies en om te bepalen of er afwijkingen in uw gegevens bron zijn.
+Gebruik de `detectAnomaly` functies en om te bepalen of er afwijkingen in uw `getDectectionResult` gegevensbron zijn.
 
 ```javascript
 console.log("Start detecting...")
@@ -161,7 +163,7 @@ while (result_status != 'READY'){
 
 ## <a name="export-model"></a>Model exporteren
 
-Gebruik de functie om uw getrainde model te exporteren `exportModel` .
+Gebruik de functie om uw getrainde model te `exportModel` exporteren.
 
 ```javascript
 const export_result = await client.exportModel(model_id)
@@ -173,7 +175,7 @@ console.log("New model has been exported to "+model_path+".")
 
 ## <a name="delete-model"></a>Model verwijderen
 
-Gebruik de functie om een bestaand model dat beschikbaar is voor de huidige resource, te verwijderen `deleteMultivariateModel` .
+Als u een bestaand model wilt verwijderen dat beschikbaar is voor de huidige resource, gebruikt u de `deleteMultivariateModel` functie .
 
 ```javascript
 client.deleteMultivariateModel(model_id)
@@ -190,4 +192,4 @@ node index.js
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Best practices voor anomalie detectie multidimensionale](../../concepts/best-practices-multivariate.md)
+* [Anomaly Detector multivariate best practices (best practices voor meerdere varianten)](../../concepts/best-practices-multivariate.md)

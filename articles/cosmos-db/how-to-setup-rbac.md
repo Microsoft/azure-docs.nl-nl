@@ -4,14 +4,14 @@ description: Informatie over het configureren van op rollen gebaseerd toegangsbe
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 04/16/2021
+ms.date: 04/19/2021
 ms.author: thweiss
-ms.openlocfilehash: 145c60784ec9cef60d0863e1eb03aa564dea2b55
-ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
+ms.openlocfilehash: 209d18dfbadea89f14fd90da9a1bc57b3ccf0dfe
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2021
-ms.locfileid: "107600825"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728069"
 ---
 # <a name="configure-role-based-access-control-with-azure-active-directory-for-your-azure-cosmos-db-account-preview"></a>Op rollen gebaseerd toegangsbeheer configureren met Azure Active Directory voor uw Azure Cosmos DB account (preview)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -20,7 +20,7 @@ ms.locfileid: "107600825"
 > Azure Cosmos DB op rollen gebaseerd toegangsbeheer is momenteel in preview. Deze preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Zie Aanvullende gebruiksvoorwaarden voor Microsoft Azure [previews voor meer informatie.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 > [!NOTE]
-> Dit artikel gaat over op rollen gebaseerd toegangsbeheer voor gegevensvlakbewerkingen in Azure Cosmos DB. Zie het artikel Op rollen [](role-based-access-control.md) gebaseerd toegangsbeheer dat is toegepast op uw beheervlakbewerkingen als u bewerkingen op de beheervlak gebruikt.
+> Dit artikel gaat over op rollen gebaseerd toegangsbeheer voor gegevensvlakbewerkingen in Azure Cosmos DB. Zie het artikel Op rollen [](role-based-access-control.md) gebaseerd toegangsbeheer toegepast op uw beheervlakbewerkingen als u bewerkingen op de beheervlak gebruikt.
 
 Azure Cosmos DB een ingebouwd op rollen gebaseerd toegangsbeheersysteem (RBAC) waarmee u het volgende kunt doen:
 
@@ -50,7 +50,10 @@ De Azure Cosmos DB RBAC voor gegevensvlak is gebaseerd op concepten die vaak wor
 > - [ARM-sjablonen](manage-with-templates.md)
 > - [Azure PowerShell scripts ,](manage-with-powershell.md)
 > - [Azure CLI-scripts](manage-with-cli.md),
-> - [Azure-beheerbibliotheken.](https://azure.github.io/azure-sdk/releases/latest/index.html)
+> - Azure-beheerbibliotheken die beschikbaar zijn in
+>   - [.NET](https://www.nuget.org/packages/Azure.ResourceManager.CosmosDB)
+>   - [Java](https://search.maven.org/artifact/com.azure.resourcemanager/azure-resourcemanager-cosmos)
+>   - [Python](https://pypi.org/project/azure-mgmt-cosmosdb/)
 
 De onderstaande tabel bevat alle acties die worden weergegeven door het machtigingsmodel.
 
@@ -216,7 +219,7 @@ Maak een rol met de *naam MyReadWriteRole* die alle acties bevat:
 az cosmosdb sql role definition create --account-name $accountName --resource-group $resourceGroupName --body @role-definition-rw.json
 ```
 
-Vermeld de roldefinities die u hebt gemaakt om hun ID's op te halen:
+Vermeld de roldefinities die u hebt gemaakt om de eigen ID's op te halen:
 
 ```azurecli
 az cosmosdb sql role definition list --account-name $accountName --resource-group $resourceGroupName

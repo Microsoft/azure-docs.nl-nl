@@ -5,7 +5,7 @@ services: traffic-manager
 author: duongau
 ms.author: duau
 manager: twooley
-ms.date: 10/15/2020
+ms.date: 04/19/2021
 ms.topic: quickstart
 ms.service: traffic-manager
 ms.workload: infrastructure-services
@@ -13,18 +13,20 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.custom:
 - mode-portal
-ms.openlocfilehash: 60facae195abd2808195f776ac6eef54ab63752f
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 13b5925310c615461424f78d90ba9849c9bf58c5
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107534933"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727974"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-using-the-azure-portal"></a>Quickstart: Een Traffic Manager-profiel maken met behulp van de Azure-portal
 
 In deze quickstart wordt beschreven hoe u een Traffic Manager-profiel maakt die hoge beschikbaarheid van uw webtoepassing biedt.
 
 In deze quickstart leest u meer over twee exemplaren van een webtoepassing. Ze worden elk in een andere Azure-regio uitgevoerd. U maakt een Traffic Manager-profiel op basis van [eindpuntprioriteit](traffic-manager-routing-methods.md#priority-traffic-routing-method). het profiel stuurt gebruikersverkeer door naar de primaire site waar de webtoepassing wordt uitgevoerd. Traffic Manager bewaakt de webtoepassing continu. Als de primaire site niet beschikbaar is, biedt Traffic Manager automatische failover voor de back-upsite.
+
+:::image type="content" source="./media/quickstart-create-traffic-manager-profile/environment-diagram.png" alt-text="Diagram van Traffic Manager implementatieomgeving." border="false":::
 
 Als u nog geen abonnement op Azure hebt, maak dan nu een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -83,7 +85,7 @@ Voeg de website in *VS - oost* toe als primair eindpunt om alle gebruikersverkee
 1. Selecteer het profiel in de lijst met zoekresultaten.
 1. Selecteer in **Traffic Manager-profiel**, in de sectie **Instellingen**, de optie **Eindpunten** en selecteer **Toevoegen**.
 
-    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/traffic-manager-endpoint-menu.png" alt-text="Eindpuntinstellingen in Traffic Manager-profiel":::
+    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/traffic-manager-endpoint-menu.png" alt-text="Schermopname van eindpuntinstellingen in Traffic Manager profiel.":::
 
 1. Voer de volgende instellingen in (of selecteer ze):
 
@@ -95,7 +97,7 @@ Voeg de website in *VS - oost* toe als primair eindpunt om alle gebruikersverkee
     | Doelbron | Selecteer **Choose an app service** > **VS - oost**. |
     | Prioriteit | Selecteer **1**. Alle verkeer gaat naar dit eindpunt indien het in orde is. |
 
-    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/add-traffic-manager-endpoint.png" alt-text="Schermopname van de plaats waar u een eindpunt aan uw Traffic Manager-profiel toevoegt":::
+    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/add-traffic-manager-endpoint.png" alt-text="Schermopname van waar u een eindpunt aan uw Traffic Manager toevoegt.":::
     
 1. Selecteer **OK**.
 1. Herhaal stap 3 en 4 met de volgende instellingen als u een failover-eindpunt voor uw tweede Azure-regio wilt maken:
@@ -122,7 +124,7 @@ In deze sectie controleert u de domeinnaam van uw Traffic Manager-profiel. Teven
 1. Selecteer het Traffic Manager-profiel. **Overzicht** wordt weergegeven.
 1. Het **Traffic Manager-profiel** geeft de DNS-naam weer van het Traffic Manager-profiel dat u zojuist hebt gemaakt.
   
-    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/traffic-manager-dns-name.png" alt-text="Schermopname van de locatie van de DNS-naam van uw Traffic Manager":::
+    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/traffic-manager-dns-name.png" alt-text="Schermopname van de locatie van uw Traffic Manager DNS-naam.":::
 
 ### <a name="view-traffic-manager-in-action"></a>Traffic Manager in werking zien
 
@@ -131,7 +133,7 @@ In deze sectie controleert u de domeinnaam van uw Traffic Manager-profiel. Teven
     > [!NOTE]
     > In dit quickstartscenario worden alle aanvragen gerouteerd naar het primaire eindpunt. Het is ingesteld op **Priority 1**.
 
-    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/traffic-manager-test.png" alt-text="Schermopname van de webpagina ter bevestiging van de beschikbaarheid van het Traffic Manager-profiel":::
+    :::image type="content" source="./media/quickstart-create-traffic-manager-profile/traffic-manager-test.png" alt-text="Schermopname van de webpagina om de beschikbaarheid van het Traffic Manager bevestigen.":::
 
 1. Als u de failover van Traffic Manager in werking wilt zien, schakelt u de primaire site uit:
     1. Selecteer op de pagina met het Traffic Manager-profiel, in de sectie **Overzicht**, **myPrimaryEndpoint**.

@@ -1,7 +1,7 @@
 ---
-title: Activiteit aangepaste opdrachten verzenden naar client toepassing
+title: Een aangepaste opdrachten verzenden naar de clienttoepassing
 titleSuffix: Azure Cognitive Services
-description: In dit artikel leert u hoe u een activiteit kunt verzenden vanuit een aangepaste opdrachten toepassing naar een client toepassing die de Speech SDK uitvoert.
+description: In dit artikel leert u hoe u activiteit vanuit een aangepaste opdrachten verzendt naar een clienttoepassing met de Speech SDK.
 services: cognitive-services
 author: xiaojul
 manager: yetian
@@ -10,34 +10,34 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 52a4dbc4ff01515af8cd7d2503877184a09f7e64
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 52e0b750f02044afafe233a76e4f43755d9ed303
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "94566092"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107725094"
 ---
-# <a name="send-custom-commands-activity-to-client-application"></a>Activiteit aangepaste opdrachten verzenden naar client toepassing
+# <a name="send-custom-commands-activity-to-client-application"></a>Een aangepaste opdrachten verzenden naar de clienttoepassing
 
-In dit artikel leert u hoe u een activiteit kunt verzenden vanuit een aangepaste opdrachten toepassing naar een client toepassing die de Speech SDK uitvoert.
+In dit artikel leert u hoe u activiteit vanuit een aangepaste opdrachten verzendt naar een clienttoepassing met de Speech SDK.
 
-U voert de volgende taken uit:
+U voltooit de volgende taken:
 
-- Een aangepaste JSON-nettolading definiëren en verzenden vanuit uw toepassing voor aangepaste opdrachten
-- De aangepaste inhoud van de JSON-nettolading ontvangen en visualiseren vanuit een C# UWP Speech SDK-client toepassing
+- Een aangepaste JSON-nettolading definiëren en verzenden vanuit uw aangepaste opdrachten toepassing
+- De aangepaste inhoud van de JSON-nettolading ontvangen en visualiseren vanuit een C# UWP Speech SDK-clienttoepassing
 
 ## <a name="prerequisites"></a>Vereisten
 > [!div class = "checklist"]
-> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) of hoger. In deze hand leiding wordt gebruikgemaakt van Visual Studio 2019
+> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) of hoger. In deze handleiding wordt Visual Studio 2019 gebruikt
 > * Een Azure-abonnementssleutel voor de Spraak-service: [haal gratis een sleutel op](overview.md#try-the-speech-service-for-free) of maak er een met de [Azure-portal](https://portal.azure.com)
 > * Een eerder [gemaakte aangepaste opdrachten-app](quickstart-custom-commands-application.md)
-> * Een Speech SDK met ingeschakelde client [-app: procedures: integreren met een client toepassing met behulp van Speech SDK](./how-to-custom-commands-setup-speech-sdk.md)
+> * Een client-app met speech-SDK: hoe: integreren met een clienttoepassing met [behulp van speech-SDK](./how-to-custom-commands-setup-speech-sdk.md)
 
-## <a name="setup-send-activity-to-client"></a>Activiteit verzenden naar client installeren 
-1. Open de toepassing voor aangepaste opdrachten die u eerder hebt gemaakt
-1. Selecteer **TurnOnOff** opdracht, selecteer **ConfirmationResponse** onder voltooiings regel en selecteer vervolgens **een actie toevoegen** .
-1. Onder **nieuw actie-type**, selecteer **activiteit verzenden naar client**
-1. Kopieer de JSON hieronder naar **activiteit inhoud**
+## <a name="setup-send-activity-to-client"></a>Activiteit verzenden naar client instellen 
+1. Open de aangepaste opdrachten die u eerder hebt gemaakt
+1. Selecteer **de opdracht TurnOnOff,** selecteer **ConfirmationResponse** onder de voltooiingsregel en selecteer **vervolgens Een actie toevoegen**
+1. Selecteer **onder Nieuw actietype** de optie **Activiteit verzenden naar client**
+1. Kopieer de onderstaande JSON naar **Activiteitsinhoud**
    ```json
    {
       "type": "event",
@@ -48,16 +48,16 @@ U voert de volgende taken uit:
       }
     }
    ```
-1. Klik op **Opslaan** om een nieuwe regel met de actie activiteit verzenden te maken, de wijziging te **trainen** en te **publiceren**
+1. Klik **op Opslaan** om een nieuwe regel te maken met de actie Activiteit verzenden, de wijziging **trainen** **en** publiceren
 
    > [!div class="mx-imgBorder"]
-   > ![Voltooiings regel voor activiteit verzenden](media/custom-commands/send-activity-to-client-completion-rules.png)
+   > ![Regel voor voltooiing van activiteit verzenden](media/custom-commands/send-activity-to-client-completion-rules.png)
 
 ## <a name="integrate-with-client-application"></a>Integreren met clienttoepassing
 
-In [procedures: client toepassing met Speech SDK (preview)](./how-to-custom-commands-setup-speech-sdk.md)hebt u een UWP-client toepassing gemaakt met een Speech SDK die opdrachten zoals `turn on the tv` , heeft verwerkt `turn off the fan` . Als er visuele elementen zijn toegevoegd, kunt u het resultaat van deze opdrachten bekijken.
+In [How-to: Setup client application with Speech SDK (Preview)](./how-to-custom-commands-setup-speech-sdk.md),you created a UWP client application with Speech SDK that handled commands as `turn on the tv` , `turn off the fan` . Nu er enkele visuals zijn toegevoegd, ziet u het resultaat van deze opdrachten.
 
-Voeg het volgende XML-blok van StackPanel toe aan om vakken met een label toe te voegen aan een tekst die **is aan-of** **uitgeschakeld** `MainPage.xaml` .
+Voeg het volgende XML-blok  van StackPanel toe aan om gelabelde vakken toe te voegen met tekst die aangeeft of `MainPage.xaml` niet.
 
 ```xml
 <StackPanel Orientation="Vertical" H......>
@@ -80,20 +80,20 @@ Voeg het volgende XML-blok van StackPanel toe aan om vakken met een label toe te
 <MediaElement ....../>
 ```
 
-### <a name="add-reference-libraries"></a>Referentie bibliotheken toevoegen
+### <a name="add-reference-libraries"></a>Referentiebibliotheken toevoegen
 
-Omdat u een JSON-nettolading hebt gemaakt, moet u een verwijzing naar de [JSON.net](https://www.newtonsoft.com/json) -bibliotheek toevoegen om de deserialisatie te verwerken.
+Omdat u een JSON-nettolading hebt gemaakt, moet u een verwijzing naar de JSON.NET [bibliotheek](https://www.newtonsoft.com/json) toevoegen om deserialisatie af te handelen.
 
-1. Rechts-client uw oplossing.
-1. Kies **NuGet-pakketten beheren voor oplossing**, selecteer **Bladeren** 
-1. Als u **Newtonsoft.js** al hebt geïnstalleerd, zorg er dan voor dat de versie ten minste 12.0.3 is. Als dat niet het geval is, gaat u naar **NuGet-pakketten beheren voor oplossing-updates**, zoekt u naar **Newtonsoft.jsop** om het bij te werken. In deze hand leiding wordt gebruikgemaakt van versie 12.0.3.
+1. De juiste client voor uw oplossing.
+1. Kies **NuGet-pakketten beheren voor oplossing,** selecteer **Bladeren** 
+1. Als u al een **Newtonsoft.jsgeïnstalleerd op**, moet u ervoor zorgen dat de versie ten minste 12.0.3 is. Als dat niet het probleem is, gaat u naar **NuGet-pakketten voor** oplossing beheren - Updates, zoekt **u naarNewtonsoft.jsu dit** wilt bijwerken. In deze handleiding wordt versie 12.0.3 gebruikt.
 
     > [!div class="mx-imgBorder"]
-    > ![Nettolading activiteit verzenden](media/custom-commands/send-activity-to-client-json-nuget.png)
+    > ![Nettolading van activiteit verzenden](media/custom-commands/send-activity-to-client-json-nuget.png)
 
-1. Zorg er ook voor dat NuGet-pakket **micro soft. NetCore. UniversalWindowsPlatform** ten minste 6.2.10 is. In deze hand leiding wordt gebruikgemaakt van versie 6.2.10.
+1. Zorg er ook voor dat NuGet-pakket **Microsoft.NETCore.UniversalWindowsPlatform** ten minste 6.2.10 is. In deze handleiding wordt versie 6.2.10 gebruikt.
 
-Voeg in ' MainPage. xaml. cs '
+Voeg in MainPage.xaml.cs
 
 ```C#
 using Newtonsoft.Json; 
@@ -103,7 +103,7 @@ using Windows.UI.Core;
 
 ### <a name="handle-the-received-payload"></a>De ontvangen nettolading verwerken
 
-`InitializeDialogServiceConnector`Vervang in de gebeurtenis-handler door de `ActivityReceived` volgende code. De `ActivityReceived` gebeurtenis-handler die is gewijzigd, haalt de payload op uit de activiteit en wijzigt de visuele status van de TV of ventilator respectievelijk.
+Vervang `InitializeDialogServiceConnector` in de `ActivityReceived` gebeurtenis-handler door de volgende code. De gewijzigde `ActivityReceived` gebeurtenis-handler extraht de nettolading uit de activiteit en wijzigt respectievelijk de visuele status van de tv of ventilator.
 
 ```C#
 connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
@@ -154,11 +154,11 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
 1. Selecteer Microfoon inschakelen
 1. Selecteer de knop Spreken
 1. Zeg `turn on the tv`
-1. De visuele status van de TV moet worden gewijzigd in aan
+1. De visuele status van de tv moet worden gewijzigd in 'aan'
    > [!div class="mx-imgBorder"]
-   > ![Scherm afbeelding die laat zien dat de visuele status van de T V nu is ingeschakeld.](media/custom-commands/send-activity-to-client-turn-on-tv.png)
+   > ![Schermopname die laat zien dat de visuele status van de T-V nu is aan.](media/custom-commands/send-activity-to-client-turn-on-tv.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Procedure: Web-eind punten instellen (preview-versie)](./how-to-custom-commands-setup-web-endpoints.md)
+> [How to: set up web endpoints (Web-eindpunten instellen)](./how-to-custom-commands-setup-web-endpoints.md)

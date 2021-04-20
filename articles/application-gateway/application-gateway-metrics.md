@@ -5,18 +5,18 @@ services: application-gateway
 author: azhar2005
 ms.service: application-gateway
 ms.topic: article
-ms.date: 06/06/2020
+ms.date: 04/19/2021
 ms.author: azhussai
-ms.openlocfilehash: 3baaf49cb3d1c8c5502d96974f9729d05996c75b
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: 615db7e8d53e397755ae318d171dab1eab9ec6c6
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107519879"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727798"
 ---
 # <a name="metrics-for-application-gateway"></a>Metrische gegevens voor Application Gateway
 
-Application Gateway publiceert gegevenspunten, ook wel metrische gegevens genoemd, om [Azure Monitor](../azure-monitor/overview.md) prestaties van uw Application Gateway en back-Application Gateway te verbeteren. Deze metrische gegevens zijn numerieke waarden in een geordende set tijdreeksgegevens die een bepaald aspect van uw toepassingsgateway op een bepaald moment beschrijven. Als er aanvragen door de Application Gateway, meet en verzendt het de metrische gegevens in intervallen van 60 seconden. Als er geen aanvragen door de gegevensstroom Application Gateway of geen gegevens voor een metrische gegevens, wordt de metrische gegevens niet gerapporteerd. Zie metrische gegevens voor [Azure Monitor meer informatie.](../azure-monitor/essentials/data-platform-metrics.md)
+Application Gateway publiceert gegevenspunten, ook wel metrische gegevens genoemd, [om Azure Monitor](../azure-monitor/overview.md) prestaties van uw Application Gateway en back-Application Gateway te verbeteren. Deze metrische gegevens zijn numerieke waarden in een geordende set tijdreeksgegevens die een bepaald aspect van uw toepassingsgateway op een bepaald moment beschrijven. Als er aanvragen door de Application Gateway, meet en verzendt het de metrische gegevens in intervallen van 60 seconden. Als er geen aanvragen door de gegevensstroom Application Gateway of geen gegevens voor een metrische gegevens, wordt de metrische gegevens niet gerapporteerd. Zie metrische gegevens voor [Azure Monitor meer informatie.](../azure-monitor/essentials/data-platform-metrics.md)
 
 ## <a name="metrics-supported-by-application-gateway-v2-sku"></a>Metrische gegevens die worden ondersteund Application Gateway V2 SKU
 
@@ -24,11 +24,11 @@ Application Gateway publiceert gegevenspunten, ook wel metrische gegevens genoem
 
 Application Gateway biedt verschillende ingebouwde metrische timinggegevens met betrekking tot de aanvraag en het antwoord, die allemaal worden gemeten in milliseconden. 
 
-![Diagram van metrische timinggegevens voor de Application Gateway.](./media/application-gateway-metrics/application-gateway-metrics.jpg)
+:::image type="content" source="./media/application-gateway-metrics/application-gateway-metrics.png" alt-text="[Diagram van metrische timinggegevens voor de Application Gateway" border="false":::
 
 > [!NOTE]
 >
-> Als er meer dan één listener in de Application Gateway,  filtert u altijd op listenerdimensie terwijl u verschillende metrische latentiegegevens vergelijkt om zinvolle deferentie te krijgen.
+> Als er meer dan één listener in de Application Gateway,  filtert u altijd op listenerdimensie terwijl u verschillende latentiemetrieken vergelijkt om zinvolle deferentie te krijgen.
 
 - **Verbindingstijd van back-en-back-en**
 
@@ -40,7 +40,7 @@ Application Gateway biedt verschillende ingebouwde metrische timinggegevens met 
 
   Tijdsinterval tussen het begin van het tot stand brengen van een verbinding met de back-mailserver en het ontvangen van de eerste byte van de antwoordheader. 
 
-  Hiermee wordt de som van de verbindingstijd van de back-end, de tijd die nodig is voor de aanvraag om de back-Application Gateway te bereiken, de tijd die de back-endtoepassing nodig heeft om te reageren (de tijd die de server nodig heeft om inhoud te genereren, mogelijk databasequery's op te halen) en de tijd die nodig is door de eerste byte van het antwoord om de Application Gateway te bereiken vanuit de back-end.
+  Dit is een schatting van de som van de verbindingstijd van de back-end, de tijd die nodig is voor de aanvraag om de back-Application Gateway te bereiken, de tijd die de back-endtoepassing nodig heeft om te reageren (de tijd die de server nodig had om inhoud te genereren, mogelijk databasequery's op te halen) en de tijd die nodig is door de eerste byte van het antwoord om de Application Gateway van de back-end te bereiken.
 
 - **Reactietijd van laatste back-eind byte**
 
@@ -74,7 +74,7 @@ Voor Application Gateway zijn de volgende metrische gegevens beschikbaar:
 
 - **Ontvangen bytes**
 
-   Aantal bytes dat door de Application Gateway ontvangen van de clients
+   Aantal bytes dat is ontvangen door de Application Gateway van de clients
 
 - **Verzonden bytes**
 
@@ -222,7 +222,7 @@ In het volgende voorbeeld ziet u hoe u een waarschuwingsregel maakt die een e-ma
 
    ![Regelpagina toevoegen][7]
 
-Als de drempelwaarde wordt overschreden, ontvangt u een e-mailbericht dat vergelijkbaar is met het e-mailbericht in de volgende afbeelding:
+Als de drempelwaarde wordt overschreden, ontvangt u een e-mailbericht dat vergelijkbaar is met de e-mail in de volgende afbeelding:
 
 ![E-mail voor overschreden drempelwaarde][8]
 

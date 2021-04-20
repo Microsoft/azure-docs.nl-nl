@@ -1,68 +1,68 @@
 ---
-title: Een Service Fabric mesh-toepassing verplaatsen naar een andere regio
-description: U kunt Service Fabric netresources verplaatsen door een kopie van uw huidige sjabloon te implementeren in een nieuwe Azure-regio.
+title: Een toepassing Service Fabric Mesh verplaatsen naar een andere regio
+description: U kunt uw Service Fabric Mesh verplaatsen door een kopie van uw huidige sjabloon te implementeren in een nieuwe Azure-regio.
 author: erikadoyle
 ms.author: edoyle
 ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: subject-moving-resources
-ms.openlocfilehash: 1b59d482b8b88e37da2d61636ff3f254a46ba5c2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9f3fcdc56b4e8d7873872212cb62f57a7669b459
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99626084"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726624"
 ---
-# <a name="move-a-service-fabric-mesh-application-to-another-azure-region"></a>Een Service Fabric mesh-toepassing verplaatsen naar een andere Azure-regio
+# <a name="move-a-service-fabric-mesh-application-to-another-azure-region"></a>Een toepassing Service Fabric Mesh verplaatsen naar een andere Azure-regio
 
 > [!IMPORTANT]
-> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> De preview van Azure Service Fabric Mesh is niet meer beschikbaar. Nieuwe implementaties zijn niet langer toegestaan via de Service Fabric Mesh API. Ondersteuning voor bestaande implementaties wordt voortgezet tot en met 28 april 2021.
 > 
-> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
+> Zie preview-Azure Service Fabric Mesh [voor meer informatie.](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)
 
-In dit artikel wordt beschreven hoe u uw Service Fabric mesh-toepassing en de bijbehorende resources kunt verplaatsen naar een andere Azure-regio. U kunt uw resources om een aantal redenen verplaatsen naar een andere regio. Als reactie op storingen is het bijvoorbeeld mogelijk om in alleen bepaalde regio's beschik bare functies of services te verkrijgen om te voldoen aan de interne beleids-en beheer vereisten, of als reactie op vereisten voor capaciteits planning.
+In dit artikel wordt beschreven hoe u uw Service Fabric Mesh en de resources ervan naar een andere Azure-regio verplaatst. U kunt uw resources om een aantal redenen verplaatsen naar een andere regio. Bijvoorbeeld als reactie op uitval, om functies of services te verkrijgen die alleen beschikbaar zijn in specifieke regio's, om te voldoen aan interne beleids- en governancevereisten, of als reactie op capaciteitsplanningsvereisten.
 
- [Service Fabric mesh biedt geen ondersteuning](../azure-resource-manager/management/region-move-support.md#microsoftservicefabricmesh) voor het rechtstreeks verplaatsen van resources tussen Azure-regio's. U kunt resources echter indirect verplaatsen door een kopie van uw huidige Azure Resource Manager-sjabloon te implementeren in de nieuwe doel regio en vervolgens binnenkomend verkeer en afhankelijkheden te omleiden naar de zojuist gemaakte Service Fabric mesh-toepassing.
+ [Service Fabric Mesh biedt geen ondersteuning voor de](../azure-resource-manager/management/move-support-resources.md#microsoftservicefabricmesh) mogelijkheid om resources rechtstreeks tussen Azure-regio's te verplaatsen. U kunt resources echter indirect verplaatsen door een kopie van uw huidige Azure Resource Manager-sjabloon te implementeren naar de nieuwe doelregio en vervolgens binnenkomend verkeer en afhankelijkheden om te leiden naar de zojuist gemaakte Service Fabric Mesh-toepassing.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Ingangs controller (zoals [Application Gateway](../application-gateway/index.yml)) die fungeert als intermediair voor het routeren van verkeer tussen clients en uw service Fabric mesh-toepassing
-* Beschik baarheid van Service Fabric net (preview) in de Azure-doel regio ( `westus` , `eastus` of `westeurope` )
+* Controller voor ingress [(zoals Application Gateway](../application-gateway/index.yml)) als intermediair voor het routeren van verkeer tussen clients en uw Service Fabric Mesh toepassing
+* Service Fabric Mesh (preview)-beschikbaarheid in de Azure-doelregio ( `westus` `eastus` , of `westeurope` )
 
 ## <a name="prepare"></a>Voorbereiden
 
-1. Maak een moment opname van de huidige status van uw Service Fabric mesh door de Azure Resource Manager sjabloon en de para meters van de meest recente implementatie te exporteren. Volg hiervoor de stappen in [sjabloon exporteren na de implementatie](../azure-resource-manager/templates/export-template-portal.md#export-template-after-deployment) met behulp van de Azure Portal. U kunt ook [Azure cli](../azure-resource-manager/management/manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](../azure-resource-manager/management/manage-resource-groups-powershell.md#export-resource-groups-to-templates)of [rest API](/rest/api/resources/resourcegroups/exporttemplate)gebruiken.
+1. Maak een 'momentopname' van de huidige status van uw Service Fabric Mesh-toepassing door de sjabloon Azure Resource Manager parameters van de meest recente implementatie te exporteren. Volg hiervoor de stappen [in](../azure-resource-manager/templates/export-template-portal.md#export-template-after-deployment) Sjabloon exporteren na implementatie met behulp van de Azure Portal. U kunt ook [Azure CLI,](../azure-resource-manager/management/manage-resource-groups-cli.md#export-resource-groups-to-templates) [Azure PowerShell](../azure-resource-manager/management/manage-resource-groups-powershell.md#export-resource-groups-to-templates)of [REST API.](/rest/api/resources/resourcegroups/exporttemplate)
 
-2. Exporteer, indien van toepassing, [andere resources in dezelfde resource groep](../azure-resource-manager/templates/export-template-portal.md#export-template-from-a-resource-group) voor een herimplementatie in de doel regio.
+2. Exporteert, indien [van toepassing, andere resources in dezelfde resourcegroep](../azure-resource-manager/templates/export-template-portal.md#export-template-from-a-resource-group) voor herdeployment in de doelregio.
 
-3. Bekijk (en bewerk indien nodig de geëxporteerde sjabloon) om ervoor te zorgen dat de bestaande eigenschaps waarden worden gebruikt die u in de doel regio wilt gebruiken. De nieuwe `location` (Azure-regio) is een para meter die u tijdens de herimplementatie kunt opgeven.
+3. Bekijk (en bewerk, indien nodig) de geëxporteerde sjabloon om ervoor te zorgen dat de bestaande eigenschapswaarden de waarden zijn die u wilt gebruiken in de doelregio. De nieuwe `location` (Azure-regio) is een parameter die u tijdens het opnieuw implementeren opgeeft.
 
 ## <a name="move"></a>Verplaatsen
 
-1. Een nieuwe resource groep maken (of een bestaande gebruiken) in de doel regio.
+1. Maak een nieuwe resourcegroep (of gebruik een bestaande) in de doelregio.
 
-2. Volg de stappen in [resources implementeren vanuit aangepaste sjabloon](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template) met behulp van de Azure Portal met de geëxporteerde sjabloon. U kunt ook [Azure cli](../azure-resource-manager/templates/deploy-cli.md), [Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md)of [rest API](../azure-resource-manager/templates/deploy-rest.md)gebruiken.
+2. Met uw geëxporteerde sjabloon volgt u de stappen in [Resources implementeren vanuit een aangepaste sjabloon](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template) met behulp van de Azure Portal. U kunt ook [Azure CLI,](../azure-resource-manager/templates/deploy-cli.md) [Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md)of [REST API.](../azure-resource-manager/templates/deploy-rest.md)
 
-3. Raadpleeg de richt lijnen voor afzonderlijke services die worden vermeld in het onderwerp [Azure-resources verplaatsen tussen regio's](../azure-resource-manager/management/move-region.md)voor hulp bij het verplaatsen van gerelateerde resources, zoals [Azure Storage accounts](../storage/common/storage-account-move.md).
+3. Raadpleeg de richtlijnen voor afzonderlijke services in het onderwerp Moving Azure resources [across regions (Azure-resources](../azure-resource-manager/management/move-resources-overview.md#move-resources-across-regions)verplaatsen tussen [regio's)](../storage/common/storage-account-move.md)voor hulp bij het verplaatsen van gerelateerde resources, zoals Azure Storage-accounts.
 
 ## <a name="verify"></a>Verifiëren
 
-1. Wanneer de implementatie is voltooid, test u de eind punten van de toepassing om de functionaliteit van uw toepassing te controleren.
+1. Wanneer de implementatie is voltooid, test u de eindpunten van de toepassing om de functionaliteit van uw toepassing te controleren.
 
-2. U kunt ook de status van uw toepassing controleren door de status van de toepassing te controleren en de toepassings logboeken en ([AZ netcode-package-log](/cli/azure/ext/mesh/mesh/code-package-log)[)-](/cli/azure/ext/mesh/mesh/app#ext-mesh-az-mesh-app-show)opdrachten te bekijken met behulp van de [Azure service Fabric mesh cli](./service-fabric-mesh-quickstart-deploy-container.md#set-up-service-fabric-mesh-cli).
+2. U kunt de status van uw toepassing ook controleren door de toepassingsstatus te controleren[(az mesh app show](/cli/azure/ext/mesh/mesh/app#ext-mesh-az-mesh-app-show)) en de toepassingslogboeken en ([az mesh code-package-log](/cli/azure/ext/mesh/mesh/code-package-log)) opdrachten te controleren met behulp van [de Azure Service Fabric Mesh CLI](./service-fabric-mesh-quickstart-deploy-container.md#set-up-service-fabric-mesh-cli).
 
 ## <a name="commit"></a>Doorvoeren
 
-Zodra u de equivalente functionaliteit van uw Service Fabric mesh-toepassing in de doel regio hebt bevestigd, configureert u de ingangs controller (bijvoorbeeld [Application Gateway](../application-gateway/redirect-overview.md)) om het verkeer om te leiden naar de nieuwe toepassing.
+Zodra u de equivalente functionaliteit van uw Service Fabric Mesh-toepassing in de doelregio hebt bevestigd, configureert u de controller voor binnenkomend verkeer (bijvoorbeeld [Application Gateway](../application-gateway/redirect-overview.md)) om verkeer om te leiden naar de nieuwe toepassing.
 
-## <a name="clean-up-source-resources"></a>Bron resources opschonen
+## <a name="clean-up-source-resources"></a>Bronbronnen ops schonen
 
-Als u het verplaatsen van de Service Fabric mesh-toepassing wilt volt ooien, [verwijdert u de bron toepassing en/of de bovenliggende resource groep](../azure-resource-manager/management/delete-resource-group.md).
+Verwijder de brontoepassing [en/of](../azure-resource-manager/management/delete-resource-group.md)de bovenliggende resourcegroep om de Service Fabric Mesh te voltooien.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Azure-resources verplaatsen tussen regio's](../azure-resource-manager/management/move-region.md)
-* [Ondersteuning voor het verplaatsen van Azure-resources in verschillende regio's](../azure-resource-manager/management/region-move-support.md)
+* [Azure-resources verplaatsen tussen regio's](../azure-resource-manager/management/move-resources-overview.md#move-resources-across-regions)
+* [Ondersteuning voor het verplaatsen van Azure-resources tussen regio's](../azure-resource-manager/management/move-support-resources.md)
 * [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](../azure-resource-manager/management/move-resource-group-and-subscription.md)
 * [Ondersteuning voor het verplaatsen van resources](../azure-resource-manager/management/move-support-resources.md
 )

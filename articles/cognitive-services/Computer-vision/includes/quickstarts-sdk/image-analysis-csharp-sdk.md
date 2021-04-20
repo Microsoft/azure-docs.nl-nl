@@ -9,12 +9,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 03/29/2021
 ms.author: pafarley
-ms.openlocfilehash: 407ef167ca05f08d349a017c60164e2fe67977a6
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 0af6c97d6179a645b078f2335ff38f48890c42a3
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107327251"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728164"
 ---
 <a name="HOLTop"></a>
 
@@ -79,7 +79,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --ver
 > [!TIP]
 > Wilt u het codebestand voor de quickstart in één keer weergeven? Die is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/ComputerVisionQuickstart.cs), waar de codevoorbeelden uit deze quickstart zich bevinden.
 
-Open vanuit de projectmap het bestand *ComputerVisionQuickstart.cs* in uw favoriete editor of IDE. Voeg de volgende `using`-instructies toe:
+Open vanuit de projectmap het bestand *Program.cs* in uw favoriete editor of IDE. Voeg de volgende `using`-instructies toe:
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_using)]
 
@@ -150,19 +150,19 @@ Definieer uw nieuwe methode voor het analyseren van afbeeldingen. Voeg de onders
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_visualfeatures)]
 
-Voeg een van de volgende codeblokken in uw **AnalyzeImageUrl**-methode in om de functies ervan te implementeren. Vergeet niet om aan het einde een afsluitend haakje toe te voegen.
-
-```csharp
-}
-```
-
-### <a name="analyze"></a>Analyseren
+### <a name="call-the-analyze-api"></a>De Analyse-API aanroepen
 
 Met de **AnalyzeImageAsync**-methode wordt een **ImageAnalysis**-object geretourneerd dat alle geëxtraheerde informatie bevat.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_analyze_call)]
 
 In de volgende secties ziet u hoe u deze gegevens uitgebreid kunt parseren.
+
+Voeg een van de volgende codeblokken in uw **AnalyzeImageUrl-methode** in om gegevens te parseren uit de visuele kenmerken die u hierboven hebt aangevraagd. Vergeet niet om aan het einde een afsluitend haakje toe te voegen.
+
+```csharp
+}
+```
 
 ### <a name="get-image-description"></a>Beschrijving van afbeelding ophalen
 
@@ -214,7 +214,7 @@ Met de volgende code worden de gedetecteerde kleurkenmerken in de afbeelding afg
 
 ### <a name="get-domain-specific-content"></a>Domeinspecifieke inhoud ophalen
 
-Afbeeldingsanalyse kan gespecialiseerde modellen gebruiken om verdere analyse van afbeeldingen uit te voeren. Zie [Domeinspecifieke inhoud](../../concept-detecting-domain-content.md) voor meer informatie. 
+Analyse van afbeeldingen kan gespecialiseerde modellen gebruiken om verdere analyse van afbeeldingen uit te voeren. Zie [Domeinspecifieke inhoud](../../concept-detecting-domain-content.md) voor meer informatie. 
 
 Met de volgende code worden gegevens over gedetecteerde beroemdheden in de afbeelding geparseerd.
 
@@ -260,7 +260,7 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u geleerd hoe u de image analysis-clientbibliotheek installeert en eenvoudige aanroepen voor afbeeldingsanalyse maakt. Hierna krijgt u meer informatie over de functies van De API analyseren.
+In deze quickstart hebt u geleerd hoe u de image analysis-clientbibliotheek installeert en eenvoudige aanroepen voor afbeeldingsanalyse maakt. Hierna krijgt u meer informatie over de functies van de Api analyseren.
 
 
 > [!div class="nextstepaction"]

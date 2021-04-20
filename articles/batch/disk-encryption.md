@@ -1,21 +1,21 @@
 ---
 title: Een pool maken met schijfversleuteling ingeschakeld
-description: Meer informatie over het gebruik van schijfversleutelingsconfiguratie voor het versleutelen van knooppunten met een door het platform beheerde sleutel.
+description: Meer informatie over het gebruik van schijfversleutelingsconfiguratie om knooppunten te versleutelen met een door het platform beheerde sleutel.
 author: pkshultz
 ms.topic: how-to
 ms.date: 04/16/2021
 ms.author: peshultz
-ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 40281211e5eb70089f4168dcb02720c912120a35
-ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 01d2ea03768a09c1ad4e019b9e8ed43a26443637
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107576105"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728514"
 ---
 # <a name="create-a-pool-with-disk-encryption-enabled"></a>Een pool maken met schijfversleuteling ingeschakeld
 
-Wanneer u een Azure Batch-pool maakt met behulp van Virtual [Machine Configuration](nodes-and-pools.md#virtual-machine-configuration), kunt u rekenknooppunten in de pool versleutelen met een door het platform beheerde sleutel door de schijfversleutelingsconfiguratie op te geven.
+Wanneer u een Azure Batch maakt met behulp van Virtual [Machine Configuration,](nodes-and-pools.md#virtual-machine-configuration)kunt u rekenknooppunten in de pool versleutelen met een door het platform beheerde sleutel door de schijfversleutelingsconfiguratie op te geven.
 
 In dit artikel wordt uitgelegd hoe u een Batch-pool maakt met schijfversleuteling ingeschakeld.
 
@@ -36,7 +36,7 @@ U kunt niet opgeven welke versleutelingsmethode wordt toegepast op de knooppunte
 
 ## <a name="azure-portal"></a>Azure Portal
 
-Wanneer u een Batch-pool in de Azure Portal, selecteert u **TemporaryDisk** of **OsAndTemporaryDisk** onder **Schijfversleutelingsconfiguratie.**
+Wanneer u een Batch-pool maakt in Azure Portal, selecteert u **TemporaryDisk** of **OsAndTemporaryDisk** onder **Schijfversleutelingsconfiguratie.**
 
 :::image type="content" source="media/disk-encryption/portal-view.png" alt-text="Schermopname van de optie Schijfversleutelingsconfiguratie in Azure Portal.":::
 

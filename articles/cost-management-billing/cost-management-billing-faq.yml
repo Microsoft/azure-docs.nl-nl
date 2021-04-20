@@ -1,0 +1,468 @@
+### YamlMime:FAQ
+metadata:
+  title: Cost Management + Billing veelgestelde vragen (FAQ)
+  titleSuffix: Azure Cost Management + Billing
+  description: Veelgestelde vragen en antwoorden.
+  author: bandersmsft
+  ms.reviewer: adwise
+  ms.service: cost-management-billing
+  ms.topic: conceptual
+  ms.date: 04/15/2021
+  ms.author: banders
+  ms.openlocfilehash: e96ba3c42ddce1ed12ad560b2d73b99a35c61f8b
+  ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 04/19/2021
+  ms.locfileid: "107728621"
+title: Azure Cost Management + Billing veelgestelde vragen (FAQ)
+summary: ''
+sections:
+- name: Algemene vragen over facturering
+  questions:
+  - question: Hoe kan ik contact opnemen met ondersteuning voor Azure-facturering?
+    answer: >
+      Maak een ondersteuningsaanvraag in [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+  - question: Hoe kan ik mijn factuur betalen?
+    answer: >
+      Zie [Verschuldigd bedrag betalen voor uw Azure-abonnement.](manage/resolve-past-due-balance.md)
+  - question: Hoe kan ik mijn factuur vinden?
+    answer: >
+      Zie [Uw factuur weergeven Microsoft Azure downloaden.](understand/download-azure-invoice.md)
+  - question: Waarom worden er kosten in rekening gebracht? Ik heb een gratis Azure-account.
+    answer: >
+      Gratis services hebben limieten. Waarschijnlijk hebt u de gratis limieten overschreden. Zie [Kosten voorkomen met uw gratis Azure-account.](manage/avoid-charges-free-account.md)
+  - question: Hoe kan ik mijn factuur begrijpen?
+    answer: >
+      Als u uw Azure-abonnement hebt gekocht via de Azure-website, zie [Uw afzonderlijke Azure-abonnementsfactur controleren.](understand/review-individual-bill.md)
+  - question: Hoe kan ik mijn kosten snel zien?
+    answer: >
+      Zie [Kosten verkennen en analyseren met kostenanalyse.](costs/quick-acm-cost-analysis.md)
+  - question: Er worden onverwachte kosten in rekening gebracht. Hoe kan ik ze begrijpen?
+    answer: >
+      Zie [Onverwachte kosten analyseren.](understand/analyze-unexpected-charges.md)
+  - question: Hoe kan ik mijn Azure-abonnement annuleren?
+    answer: >
+      Zie [Uw Azure-abonnement annuleren.](manage/cancel-azure-subscription.md)
+- name: Cost Management vragen
+  questions:
+  - question: Hoe kan ik toegang inschakelen om kosten weer te geven?
+    answer: >
+      Zie [Toegang tot uw Cost Management toewijzen.](costs/assign-access-acm-data.md)
+  - question: Welke partneraanbiedingen worden ondersteund door Cost Management?
+    answer: >
+      Cost Management is beschikbaar voor partners waarvan klanten een Azure-plan hebben. Door een beleidsinstelling in te stellen, kunnen partners hun klanten toestaan kostengegevens weer te geven. Zie [Aan de slag met Azure Cost Management voor partners](costs/get-started-partners.md) voor meer informatie. Klassieke CSP wordt niet ondersteund door Cost Management.
+  - question: Hoe kan ik geraamde kosten zien?
+    answer: >
+      Navigeer in Azure Portal naar **Kostenbeheer en facturering** > **Kostenbeheer** > **Kostenanalyse**. In de standaardweergave bevat de bovenste grafiek de sectie Werkelijke/afgeschreven kosten en de sectie Geraamde kosten. De effen kleur van de grafiek duidt de Werkelijke/afgeschreven kosten aan. De gearceerde kleur duidt de Geraamde kosten aan.
+  - question: Hoe kan ik kosten uitsplitsing per Azure-service weergeven?
+    answer: >
+      Navigeer in Azure Portal naar **Cost Management + Billing**  >  **Cost Management**  >  **Kostenanalyse.** Selecteer **Kosten per service** en groepeer vervolgens op **Servicelaag**. Wijzig de weergave in **Tabel**.
+  - question: Hoe kan ik factuurkosten bekijken?
+    answer: >
+      Navigeer Azure Portal naar Kostenanalyse voor het bereik dat is gekoppeld aan de factuur die u analyseert. Selecteer de weergave **Factuurgegevens**. Factuurgegevens tonen de kosten zoals weergegeven op uw factuur.
+  - question: Hoe kan ik kosten voor een tag weergeven?
+    answer: >
+      Navigeer in Azure Portal naar **Kostenbeheer en facturering** > **Kostenbeheer** > **Kostenanalyse**. Selecteer **Groeperen op** voor de tag. Tags zijn niet beschikbaar voor: aankopen, tenantresources die niet zijn gekoppeld aan abonnementen, abonnementsresources die niet zijn geïmplementeerd naar een resourcegroep, of klassieke resources. Sommige services bevatten geen tags in gebruiksgegevens. Zie Tagondersteuning voor [Azure-resources voor meer informatie.](../azure-resource-manager/management/tag-support.md)
+  - question: Hoe kan ik kosten voor mijn EA-inschrijving bekijken?
+    answer: >
+      Navigeer in Azure Portal naar **Cost Management + Billing** > Overzicht. Selecteer de **koppeling Uitsplitsing.**
+  - question: Hoe kan ik mijn AWS-kosten weergeven in Cost Management?
+    answer: >
+      Zie [Integratie van AWS-kosten- en gebruiksrapport instellen en configureren.](costs/aws-integration-set-up-configure.md)
+  - question: Hoe kan ik een budget maken?
+    answer: >
+      Zie de [zelfstudie Azure-budgetten maken en](costs/tutorial-acm-create-budgets.md) beheren.
+  - question: Hoe kan ik budget maken voor een specifiek filter of label?
+    answer: >
+      Kies in het venster Budget maken het bereik voor het budget dat u wilt maken. Kies **Filter toevoegen** om filters of een tag te kiezen die u wilt toevoegen voor dit budget. Zie de zelfstudie Azure-budgetten maken en beheren [voor meer](costs/tutorial-acm-create-budgets.md#create-a-budget-in-the-azure-portal) informatie.
+  - question: Hoe kan ik kostenbeheergegevens exporteren?
+    answer: >
+      Zie de [zelfstudie Geëxporteerde gegevens maken en](costs/tutorial-export-acm-data.md) beheren.
+  - question: Hoe kan ik cost management-gegevens exporteren als partner als ik geen Azure-abonnement in mijn tenant heb?
+    answer: >
+      Zie het [artikel Kostengegevens exporteren met een SAS-sleutel voor een Azure-opslagaccount.](costs/export-cost-data-storage-account-sas-key.md)
+  - question: Wordt als CSP-partner Cost Management ondersteund in klassieke CSP-aanbieding in Azure Plan?
+    answer: "Gezien de plannen om klanten op klassieke CSP over te brengen naar Azure Plan op de nieuwe commerce-ervaring, [](https://www.microsoft.com/licensing/news/new-azure-experience-in-csp)is Azure Cost Management alleen beschikbaar voor de directe partners en indirecte providers van klanten met een Azure-plan. \n"
+  - question: Hoe kan ik als CSP-partner (globale beheerder) het beleid voor zichtbaarheid van kosten inschakelen voor het abonnementsbereik voor mijn eindklanten en resellers in het Azure-plan?
+    answer: >
+      Zie [Enable Cost Management for Customer Tenant Subscriptions](costs/get-started-partners.md#enable-cost-management-for-customer-tenant-subscriptions) (Tenantabonnementen van klanten inschakelen) om het beleid voor zichtbaarheid van kosten in te stellen voor door Azure verbruikte services tegen retailtarieven voor Azure RBAC-gebruikers van het abonnement. Als globale beheerder van een directe partner of een indirecte provider kunt u de kosten in de tenant van de klant bekijken, ongeacht het beleid.
+  - question: Hoe kan ik kosten terug in rekening brengen?
+    answer: >
+      U kunt kosten in Cost Management om de kosten te zien die u distribueert naar abonnementen, resourcegroepen of tags in kostenanalyse. Zie het artikel Regels voor azure-kostentoewijzing maken en beheren [voor meer](costs/allocate-costs.md) informatie.
+  - question: Kan ik Power BI kosten weergeven?
+    answer: >
+      Ja, u gebruikt Power BI Desktop verbinding te maken [met uw Cost Management](/power-bi/connect-data/desktop-connect-azure-cost-management) of u kunt de Cost Management Power BI app voor EAs [gebruiken.](costs/analyze-cost-data-azure-cost-management-power-bi-template-app.md)
+  - question: Wat zijn de ondersteunde aanbiedingstypen in Cost Management?
+    answer: >
+      Zie [Ondersteunde Microsoft Azure aanbiedingen.](/costs/understand-cost-mgt-data.md#supported-microsoft-azure-offers)
+  - question: Hoe snel kan ik mijn kosten- en gebruiksgegevens in Azure Cost Management?
+    answer: >
+      Zie [Updates en retentie van kosten- en gebruiksgegevens.](/costs/understand-cost-mgt-data.md#cost-and-usage-data-updates-and-retention)
+  - question: Kan ik al mijn kostengerelateerde informatie vinden in Azure Cost Management?
+    answer: >
+      Zie [Kosten die zijn opgenomen in Cost Management](costs/understand-cost-mgt-data.md#costs-included-in-cost-management).
+  - question: Worden toegewezen kosten meegenomen in budgetten en prognoseweergaven?
+    answer: >
+      <a name="budgets-forecast"></a>Ja. De toegewezen kosten worden in rekening gebracht en worden ondersteund door budgetten en prognoses. Budget- en prognoseweergaven tonen de kosten die hieraan zijn toegewezen, zoals geconfigureerd door kostentoewijzingsregels.
+  - question: Wat gebeurt er als een kostentoewijzingsregel wordt verwijderd?
+    answer: >
+      <a name="delete-rule"></a>Wanneer een kostentoewijzingsregel wordt verwijderd, worden alle openstaande en huidige aan de doelen toegewezen maandelijkse factureringskosten verwijderd. Als de kostentoewijzingsregel al meerdere maanden bestaat, blijven de historische voorgaande maanden van toewijzingsgegevens zoals oorspronkelijk ingesteld door de toewijzingsregel.
+  - question: Waarom is een inschrijvingsbeheerder of een factureringsaccountbeheerder nodig om regels voor kostentoewijzing te maken?
+    answer: >
+      <a name="why-admin"></a>Regels voor kostentoewijzing worden gemaakt op basis van het inschrijvingsbereik (Enterprise Agreement) of het factureringsaccount (Microsoft-klantovereenkomst). Voor machtigingen om wijzigingen aan te brengen binnen deze bereiken, zijn beheerdersrechten voor facturering vereist.
+  - question: Waarom zijn kostentoewijzingsbronnen en -doelen beperkt tot 25 per regel?
+    answer: >
+      <a name="source-target-rule-limit"></a>De limiet is een beperking van de preview-versie om te zorgen voor optimale prestaties en schaalbaarheid van de kosten. De limieten zullen waarschijnlijk toenemen of worden verwijderd als kostentoewijzing wordt overgezet naar algemene beschikbaarheid (GA).
+  - question: Wat kan er gebeuren als de kostentoewijzingsregels (bronnen/doelen) elkaar overlappen?
+    answer: >
+      <a name="rule-overlap"></a>Regels die overlappende bronnen of overlappende doelen hebben, worden niet aanbevolen. Regels voor kostentoewijzing worden toegepast op hun aanmaakdatum, dus als kostentoewijzingsregels elkaar overlappen, krijgt de toewijzingsregel met de eerste aanmaakdatum voorrang.
+- name: Cost Management + Billing API-vragen
+  questions:
+  - question: Wanneer worden de EA Reporting-API's afgeschaft?
+    answer: >
+      Het Cost Management + Billing heeft geen tijdlijn aangekondigd voor afschaffing van de API's. De API's zijn niet meer actief in ontwikkeling. U wordt aangeraden alle benodigde werkzaamheden te plannen om ze te migreren.
+  - question: Hoe kan ik migreren van de EA Reporting-API's en welke nieuwe API's moet ik aanroepen?
+    answer: >
+      Zie [Migreren van EA-rapportage naar Azure Resource Manager API's.](costs/migrate-from-enterprise-reporting-to-azure-resource-manager-apis.md)
+  - question: Waarom krijg ik api-time-outs voor gebruiksgegevens?
+    answer: >
+      De gegevensset Gebruiksgegevens kan vaak zeer groot zijn (meerdere TB's of meer). Hoe groter de grootte van de gegevensset die u aanvraagt, hoe langer het duurt voordat de service de gegevens compileert voordat deze naar u worden verzonden. Vanwege de vertraging kunnen synchrone API-oplossingen, zoals de API voor [ge](/rest/api/consumption/usagedetails/list) pagineerde JSON-gebruiksgegevens, een time-out krijgen voordat uw gegevens worden verstrekt. Zie Grote [gebruiksgegevenssets](costs/ingest-azure-usage-at-scale.md)regelmatig ophalen met Exports als u time-outs ondervindt of processen hebt die vaak een grote hoeveelheid gebruiksgegevens moeten ophalen.
+  - question: Hoe kan ik migreren van de EA Reporting API's naar de Microsoft-klantovereenkomst API's?
+    answer: >
+      Zie [Migreren van Enterprise Agreement naar Microsoft-klantovereenkomst API's.](costs/migrate-cost-management-api.md)
+- name: Vragen over Azure-reserveringen
+  questions:
+  - question: Hoe kan ik reserveringskosten weergeven?
+    answer: "Navigeer in Azure Portal naar **Kostenbeheer en facturering** > **Kostenbeheer** > **Kostenanalyse**. Een filter toevoegen voor **prijsmodel: Reservering**. Selecteer onder Bereik en naast de weergegeven kosten het pijl-omlaag-symbool en selecteer vervolgens de metrische gegevens Werkelijke kosten of **Afgeschreven** kosten. \n"
+  - question: Hoe kan ik reserveringsbesparingen bekijken?
+    answer: >
+      Er zijn een aantal manieren om uw besparingen te bekijken.
+
+      -  Als u een EA-klant bent, kunt u de Azure Cost Management Power BI App for EA gebruiken om het [rapport RI Savings weer te geven.](/costs/analyze-cost-data-azure-cost-management-power-bi-template-app#reports-available-with-the-app.md)
+
+      -  Gebruik het gegevensbestand Gebruik en kosten om handmatig [reserveringsbesparingen te bepalen.](reservations/understand-reserved-instance-usage-ea.md#determine-reservation-savings)
+  - question: Hoe kan ik onderbeleg van reserveringen weergeven?
+    answer: >
+      Meld u aan bij Azure Portal. Selecteer vervolgens Alle services > **Reserveringen en** noteer het **gebruik (%)** voor een reservering. Selecteer een reservering. Controleer de trend van het gebruik van deze reservering over een bepaalde tijd. Zie Gebruik van reserveringen weergeven [in de](reservations/manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/reservations/toc.json#view-reservation-use-in-the-azure-portal)Azure Portal. U kunt [ongebruikte reserveringskosten ook weergeven in kostenanalyse.](costs/cost-analysis-common-uses.md#view-unused-ri-costs-in-cost-analysis)
+  - question: Hoe kan ik reserveringskosten vinden om terug te betalen?
+    answer: >
+      Zie [Kosten van Azure-reserveringen terugkosten in rekening](reservations/charge-back-usage.md?toc=/azure/cost-management-billing/reservations/toc.json) brengen voor gedetailleerde informatie.
+  - question: Hoe kan ik de kosten bekijken die zijn gemaakt voor spot-VM's?
+    answer: >
+      Zie [Kosten voor spot-VM's weergeven.](/costs/cost-analysis-common-uses.md#view-your-spot-vm-charges)
+  - question: Hoe kan ik een rapport met reserveringsdetails?
+    answer: >
+      Lees de API-documentatie voor het [genereren van een rapport met reserveringsdetails.](/rest/api/cost-management/generatereservationdetailsreport)
+- name: Vragen over Azure Enterprise Agreement (EA) en EA Portal
+  questions:
+  - question: Hoe kan ik SPN-machtigingen toewijzen aan mijn inschrijving?
+    answer: >
+      Zie [Rollen toewijzen aan EA SPN's.](manage/assign-roles-azure-service-principals.md)
+  - question: Waarom heb ik geen activerings-e-mail ontvangen?
+    answer: >
+      Er wordt een activeringse-mail van Azure EA Portal verzonden vanaf *waep@microsoft.com* . Als u geen activeringse-mail hebt ontvangen, controleert u de map met ongewenste e-mail of de prullenbak. Deze wordt verzonden met de omschrijving: _Invitation to View/Manage the Microsoft Azure service_subject_. De e-mail wordt verzonden naar alle nieuw toegevoegde EA-beheerders.
+
+
+      Als u zeker weet dat u bent ingesteld als EA-beheerder, hoeft u niet te wachten op het ontvangen van de activeringse-mail om u aan te melden bij Azure EA Portal. U kunt ook naar https://ea.azure.com gaan en u aanmelden met uw e-mailadres (werk-, school- of Microsoft-account) en uw wachtwoord.
+  - question: Hoe kan ik een nieuwe EA-beheerder toevoegen aan mijn inschrijving?
+    answer: >
+      Een nieuwe Enterprise-beheerder kan worden toegevoegd door bestaande Enterprise-beheerders. Als u de EA-beheerder bent, meldt u zich aan bij de EA-Portal en klikt u in de rechter bovenhoek op **Beheren** en vervolgens op **+ beheerders toevoegen** om een nieuwe EA-beheerder toe te voegen. Zorg ervoor dat u een e-mailadres en een voorkeursmethode voor aanmelden hebt, zoals verificatie via werk of school of een Microsoft Live ID om de gebruikers toe te voegen.
+
+
+      Als u geen EA-beheerder bent, neem dan contact op met de EA-beheerders in uw bedrijf om te vragen of ze u kunnen toevoegen aan de inschrijving. Zodra ze u aan de inschrijving hebben toegevoegd, ontvangt u een activeringsmail.
+
+
+      Als EA-beheerders u hierbij echter niet kunnen helpen, kunnen we u namens hen laten toevoegen als u ons het volgende kunt aangeven:
+
+      - het inschrijvingsnummer.
+
+      - e-mailadres dat moet worden toegevoegd en het verificatietype (werk/school/MS).
+
+      - een e-mailgoedkeuring van de EA-beheerder.
+
+
+      Zodra u alle vereiste gegevens hebt, moet u een aanvraag indienen bij [https://aka.ms/AzureEntSupport](https://aka.ms/AzureEntSupport).
+  - question: Hoe kan ik eerste EA-beheerder voor de inschrijving bijwerken?
+    answer: >
+      De eerste EA-beheerder kan worden bijgewerkt in het servicecentrum voor volumelicenties door de contactpersoon en de online beheerder in de portal bij te werken. Het duurt ongeveer 24 uur voordat de EA Portal de update heeft doorgevoerd. Zodra deze is bijgewerkt, ontvangt de nieuwe EA-beheerder een activeringsmail.
+
+
+      Als u geen toegang hebt tot de portal van het servicecentrum voor volumelicenties of als uw eerste EA-beheerder de inschrijving niet meer kan beheren en geen toegang heeft tot de EA-Portal, moet u een aanvraag indienen bij [https://aka.ms/AzureEntSupport](https://aka.ms/AzureEntSupport) om een update aan te vragen en de volgende informatie op te geven:
+
+      - Inschrijvingsnummer
+
+      - E-mailadres dat moet worden toegevoegd en het verificatietype (werk/school/MS)
+
+      - Reden voor het wijzigen van de eerste EA-beheerder
+
+      - E-mailgoedkeuring van de eerste EA-beheerder
+  - question: Mijn huidige EA-beheerder is niet langer bij het bedrijf. Wat moet ik doen?
+    answer: >
+      Een EA-inschrijving kan meerdere EA-beheerders hebben, u kunt een andere EA-beheerder bereiken om een nieuwe EA-beheerder/accounteigenaar/afdelingsbeheerder toe te voegen. Als u echter niet weet wie de EA-beheerder is in uw bedrijf of als er geen andere beschikbare EA-beheerder is voor de inschrijving, kunt u contact met ons opnemen met de volgende informatie:
+
+      - Inschrijvingsnummer
+
+      - E-mailadres dat moet worden toegevoegd en het verificatietype (werk/school/MS)
+
+      - Informatie over het feit dat de huidige EA-beheerder niet langer bij het bedrijf werkt
+
+
+      Als er sprake is van andere EA-beheerders bij de inschrijving, zullen we contact met de EA-beheerders opnemen om goedkeuring te vragen bij administratieve wijzigingen voor de inschrijving.
+  - question: De status van mijn inschrijving geeft weer dat deze in behandeling is. Hoe kan ik mijn inschrijving activeren?
+    answer: >
+      Inschrijvingen hebben de status ‘in behandeling’ als de eerste EA-beheerder niet eerder is aangemeld bij de registratie. Als u de EA-beheerder bent, moet u zich aanmelden bij de Azure EA Portal. Op de landingspagina met al uw inschrijvingsnummers ziet u mogelijk niet de inschrijving die in behandeling is. Schakel het selectievakje ‘actief' in de rechterbovenhoek van EA Portal uit. Met deze actie wordt de inschrijving weergegeven die in behandeling is. Klik op de inschrijving om de informatie te zien. Zodra u de pagina Beheren van de inschrijving hebt bereikt, wordt de status bijgewerkt van in behandeling naar actief.
+  - question: Waarom blijft mijn account vaststaan op de status in behandeling?
+    answer: >
+      Wanneer nieuwe accounteigenaren de eerste keer worden toegevoegd aan de inschrijving, krijgen ze altijd de status In behandeling. De accounteigenaar kan zich aanmelden om het account te activeren zodra hij de welkomstmail voor de activering ontvangt. Met deze aanmelding wordt de accountstatus bijgewerkt van In behandeling naar Actief.
+  - question: Waarom krijg ik een foutmelding wanneer ik me aanmeldt bij Azure EA Portal?
+    answer: "Er zijn een aantal mogelijke redenen voor een foutmelding in de Azure EA Portal tijdens het aanmelden. Volg deze stappen om het probleem op te lossen:\n\n 1. Controleer of u de juiste URL voor de EA Portal op [https://ea.azure.com](https://ea.azure.com) gebruikt.\n 1. Bepaal of u met een werk- of schoolaccount of met een Microsoft Live ID toegang hebt tot Azure EA Portal. Als u uw werkaccount gebruikt, voert u uw zakelijke e-mailadres en het bijbehorende wachtwoord in. Als u Microsoft Live ID gebruikt, voert u uw e-mailadres is van Live ID en wachtwoord voor Microsoft Live ID in. Als u uw wachtwoord voor Microsoft Live ID bent vergeten, moet u het opnieuw instellen op [https://account.live.com/password/reset](https://account.live.com/password/reset).\n 1. We raden u aan om een privé-browser te gebruiken om u aan te melden, zodat er geen cookies of cache van eerdere/bestaande sessies worden bewaard. Wis cache en gebruik de modus voor privé browsen/incognitomodus om [https://ea.azure.com](https://ea.azure.com) te openen.\n 1. Als u een foutmelding voor ongeldige gebruiker krijgt wanneer u een Microsoft-account gebruikt, kan het zijn dat u meerdere Microsoft-accounts hebt en het account waarmee u zich probeert aan te melden, niet de primaire alias is. Om de primaire alias te controleren, gaat u naar account.live.com:\n     - Ga naar Uw gegevens > Uw e-mailadres of telefoonnummer voor aanmelden beheren.\n     - Volg de aanwijzingen op het scherm voor het verifiëren van een alternatief e-mailadres en het verkrijgen van een code voor toegang tot gevoelige informatie.\n     - Voer de beveiligingscode in.\n     - Als u later tweestapsverificatie wilt instellen, selecteert u Later instellen.\n     - U belandt op de pagina 'Uw accountaliassen beheren', waar u de accountaliassen ziet die u hebt. Controleer of u de primaire alias gebruikt om u aan te melden bij de Azure EA Portal. Als dat niet het geval is, kunt u dit instellen als uw primaire alias of kunt u in plaats daarvan de primaire alias voor de EA Portal gebruiken.\n \n Als de bovenstaande stappen niet helpen om de probleem op te lossen, moet u een aanvraag indienen bij [https://aka.ms/AzureEntSupport](https://aka.ms/AzureEntSupport) met informatie zoals:\n   - De gebruikte browsers en versie.\n   - Schermopname van de foutmelding.\n   - URL van de pagina met de fout.  \n   - De datum, tijd en tijdzone van het tijdstip waarop de fout optreedt.\n\n- Daarnaast kunt u hiermee een logboekbestand ophalen. Hier volgen de stappen voor het vastleggen van een netwerktracering met behulp van de volgende gegevens:\n\n1. Open Internet Explorer.\n1. Druk op F12 om een vak onder in Internet Explorer te openen.\n1. Selecteer het tabblad **Netwerk**.\n1. Klik op **Beginnen met vastleggen**.\n1. Voer de actie uit die de fout veroorzaakt.\n1. Wanneer de fout verschijnt, klikt u op **Stoppen met vastleggen**.\n1. Sla het bestand op en voeg de informatie bij de ondersteuningsaanvraag.\n1. Zorg ervoor dat u uw inschrijvingsnummer en e-mailadres bij de ondersteuningsaanvraag opgeeft.\n"
+  - question: Wat is het verschil tussen een werk-/schoolaccount en een Microsoft-account?
+    answer: >
+      **Microsoft-account:** Accounts die zijn gekoppeld aan Live ID op [https://signup.live.com](https://signup.live.com).
+
+
+      **Werk-/schoolaccount:** Alleen beschikbaar voor bedrijven die Active Directory met federatie hebben ingesteld voor de cloud en waarbij alle accounts zich in één tenant bevinden. Gebruikers kunnen worden toegevoegd met het verificatietype voor op het werk of op school, als de interne Active Directory van het bedrijf federatief is in de cloud.
+
+
+      Vanaf september 2016 kan Microsoft e-mails voor werk of school niet meer registreren als Microsoft-account. Raadpleeg voor meer informatie de volgende bronnen: [https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/15/cleaning-up-the-azure-ad-and-microsoft-account-overlap/).
+
+
+      Als uw organisatie niet federatief is voor de cloud, kunt u uw e-mailadres voor werk of school niet gebruiken. U kunt in plaats daarvan een nieuw e-mailadres registreren of maken en dit als een Microsoft-account registreren.
+  - question: Ik ben mijn wachtwoord voor Azure EA Portal vergeten. Wat moet ik doen?
+    answer: >
+      Als u uw wachtwoord voor Microsoft Live ID bent vergeten, moet u het opnieuw instellen op [https://account.live.com/password/reset](https://account.live.com/password/reset).
+
+
+      Neem contact op met de IT-beheerder van uw bedrijf als u uw wachtwoord bent vergeten.
+  - question: Ik heb een geldig werk- of schoolaccount. Waarom kan ik deze niet toevoegen aan de EA-portal?
+    answer: >
+      Als u een werk- of schoolaccount hebt onder een andere tenant, wijzigt u het autorisatieniveau op de pagina Inschrijvingsdetails in een werk- of schoolaccount voor verschillende tenants, zodat u het account ook kunt toevoegen.
+  - question: Ik heb mijn bestaande Azure-account per ongeluk aan een Azure EA-inschrijving gekoppeld. Hierdoor ben ik mijn maandelijkse tegoed kwijtgeraakt. Kan ik het maandelijkse tegoed terugkrijgen?
+    answer: >
+      Als u zich hebt aangemeld als Azure EA-accounteigenaar met de aanmeldingsgegevens die u ook gebruikt voor uw Visual Studio-abonnement, kunt u het Azure-voordeel van uw afzonderlijke Visual Studio-abonnement herstellen door een van de volgende acties uit te voeren:
+
+
+      - Verwijder de accounteigenaar uit de Azure Enterprise-portal nadat u bijbehorende Azure-abonnementen hebt verwijderd of verplaatst. Meld u vervolgens opnieuw aan voor Azure-voordelen voor het individuele Visual Studio-abonnement.
+
+      - Verwijder de Visual Studio-abonnee uit de beheersite in VLSC en wijs het abonnement opnieuw toe, maar nu aan een account met andere aanmeldingsgegevens. Meld u vervolgens opnieuw aan voor Azure-voordelen voor het individuele Visual Studio-abonnement.
+  - question: Welk type abonnement moet ik maken?
+    answer: >
+      De Azure Enterprise-portal biedt twee typen abonnementen voor ondernemingsklanten:
+
+
+      - Microsoft Azure Enterprise, ideaal voor:
+
+      - Gebruik in elke productieomgeving
+
+      - Beste prijzen op basis van uitgaven aan infrastructuur
+
+
+      [Neem contact op met de verkoopafdeling van Azure](https://azure.microsoft.com/pricing/enterprise-agreement/) voor meer informatie.
+
+
+      - Enterprise Dev/Test, ideaal voor:
+
+      - Alle werkbelastingen voor ontwikkelen en testen van het team
+
+      - Gemiddelde tot intensieve individuele werkbelastingen voor ontwikkelen en testen
+
+      - Toegang tot speciale MSDN-installatiekopieën en voorkeurstarieven voor services
+
+
+      Bekijk de [Enterprise Dev/Test-aanbieding](https://azure.microsoft.com/offers/ms-azr-0148p/) voor meer informatie.
+  - question: Mijn abonnement heeft dezelfde naam als de aanbieding. Moet ik de abonnementsnaam wijzigen in iets dat voor mijn organisatie handig is?
+    answer: >
+      Als u een abonnement maakt, krijgt het standaard de naam van het gekozen aanbiedingstype. Het wordt aanbevolen de abonnementsnaam te wijzigen in een naam waardoor u het abonnement gemakkelijk kunt traceren.
+
+
+      Ga als volgt te werk om de naam te wijzigen:
+
+
+      1. Meld u aan bij [https://account.windowsazure.com](https://account.windowsazure.com).
+
+      1. Selecteer de lijst met abonnementen.
+
+      1. Selecteer het abonnement dat u wilt bewerken.
+
+      1. Selecteer het pictogram **Abonnement beheren**.
+
+      1. Bewerk de abonnementsgegevens.
+  - question: Hoe kan ik de kosten bijhouden die door een kostenplaats zijn gemaakt?
+    answer: >
+      Als u de kosten van een kostenplaats wilt bijhouden, moet u de kostenplaats definiëren op een van de volgende niveaus:
+
+
+      - Afdeling
+
+      - Account
+
+      - Abonnement
+
+
+      Op basis van uw behoeften kunt u dezelfde kostenplaats gebruiken om het gebruik en de kosten van een specifieke kostenplaats bij te houden.
+
+
+      Als u bijvoorbeeld kosten wilt bijhouden voor een speciaal project waaraan meerdere afdelingen hebben gewerkt, kunt u de kostenplaats op abonnementsniveau definiëren om het gebruik en de kosten bij te houden.
+
+
+      Het is niet mogelijk om een kostenplaats op serviceniveau te definiëren. Als u gebruik op serviceniveau wilt bijhouden, kunt u de functie _Taggen_ gebruiken.
+  - question: Hoe kan ik het gebruik en de uitgaven van de verschillende afdelingen in mijn organisatie bijhouden?
+    answer: >
+      U kunt binnen uw Azure EA-inschrijving net zoveel afdelingen maken als u nodig hebt. Als u het gebruik zorgvuldig wilt bijhouden, is het belangrijk dat abonnementen niet met meerdere afdelingen worden gedeeld.
+
+
+      Nadat u afdelingen en abonnementen hebt gemaakt, kunt u gegevens bekijken in het gebruiksrapport. Deze informatie kan u helpen bij het bijhouden van gebruik en het beheren van kosten en uitgaven op afdelingsniveau.
+
+
+      U kunt gebruiksgegevens ook bekijken via de rapportage-API. Raadpleeg [Azure Enterprise REST API’s](manage/ea-portal-rest-apis.md) voor gedetailleerde informatie en voorbeeldcode.
+  - question: Kan ik een bestedingsquotum instellen en meldingen krijgen als ik in de buurt kom van mijn limiet?
+    answer: >
+      U kunt een bestedingsquotum op afdelingsniveau instellen. U krijgt dan van het systeem automatisch een melding wanneer u 50%, 75%, 90% en 100% van het door u gedefinieerde quotum hebt bereikt.
+
+
+      Selecteer een afdeling en vervolgens het pictogram Bewerken om een bestedingsquotum in te stellen. Nadat u de gegevens voor de bestedingslimiet hebt bewerkt, selecteert u **Opslaan**.
+  - question: Ik heb resourcegroepen gebruikt om Azure RBAC te implementeren en gebruik bij te houden. Hoe kan ik de bijbehorende gebruiksgegevens bekijken?
+    answer: >
+      Als u _resourcegroepen_ en _tags_ gebruikt, wordt deze informatie bijgehouden op serviceniveau en kunt u de gegevens raadplegen in het downloadbare CSV-bestand met gedetailleerde gebruiksinformatie. Zie het gedeelte [Gebruiksrapport downloaden](https://ea.azure.com/report/downloadusage) in de Azure Enterprise-portal.
+
+
+      U kunt de gegevens ook raadplegen via een API. Raadpleeg [Azure Enterprise REST API’s](manage/ea-portal-rest-apis.md) voor gedetailleerde informatie en voorbeeldcode.
+
+
+      > [!NOTE]
+
+      > U kunt alleen tags toepassen op resources die ondersteuning bieden voor Azure Resource Manager-bewerkingen. Als u een virtuele machine, virtueel netwerk of opslag hebt gemaakt via het klassieke implementatiemodel (zoals via de klassieke portal), kunt u geen tag op die resource toepassen. U moet deze resources opnieuw implementeren via de Resource Manager om tags te ondersteunen. Tags worden wel door alle andere resources ondersteund.
+  - question: Kan ik een analyse uitvoeren met behulp van Power BI?
+    answer: >
+      Ja, u kunt de [Azure Cost Management-connector](/power-bi/connect-data/desktop-connect-azure-cost-management) voor Power BI Desktop gebruiken om krachtige, aangepaste visualisaties en rapporten te maken die u helpen uw Azure-uitgaven beter te begrijpen. Als u met een Enterprise Agreement (EA) bent, kunt u ook de [sjabloon-app Azure Cost Management gebruiken.](costs/analyze-cost-data-azure-cost-management-power-bi-template-app.md) De Azure Cost Management-sjabloon-app wordt geleverd met vooraf gemaakt rapporten om u te helpen bij het bewaken van kosten, trends in servicegebruik en het identificeren van opties voor kostenoptimalisatie om uw uitgaven te verminderen.               Power BI-rapportage is beschikbaar voor rechtstreekse Azure EA-klanten, partners en indirecte klanten die factureringsgegevens kunnen zien.
+  - question: Kan ik mijn bestaande Azure-account aan een Azure EA-inschrijving koppelen?
+    answer: >
+      Ja. Alle Azure-abonnementen waarvan u de accounteigenaar bent, worden naar uw Enterprise Agreement omgezet. Hieronder vallen alle abonnementen die maandelijks tegoed gebruiken, zoals Visual Studio, AzurePass, MPN, BizSpark en meer. Het maandelijkse tegoed gaat verloren als u deze abonnementen overzet.
+  - question: Hoeveel Azure-accounteigenaren mogen er per abonnement worden gebruikt?
+    answer: >
+      Er is per abonnement maar één accounteigenaar toegestaan.  U kunt aanvullende rollen toevoegen met de opties Op rollen gebaseerde toegang of (Toegangsbeheer (IAM)) op het tabblad Abonnement in de linkerbovenhoek van de pagina op de [Azure-portal](https://portal.azure.com).
+  - question: Is het mogelijk om het eigendom van een abonnement over te dragen aan een ander account?
+    answer: >
+      Ja, u kunt het eigendom van een abonnement overdragen aan een ander account. Als aan account A bijvoorbeeld drie abonnementen zijn gekoppeld, kan de ondernemingsbeheerder één abonnement naar account B, één naar account C en één naar account D overdragen, of alle abonnementen naar account E overdragen.
+
+
+      Ga als volgt te werk om abonnementen over te dragen:
+
+
+      1. Selecteer in de Azure Enterprise-portal **Beheren** > **Account**.
+
+      1. Plaats de muisaanwijzer helemaal rechts op **Account** om de opties voor **eigendomsoverdracht** (pictogram van persoon) en **abonnementsoverdracht** (pictogram van lijst) weer te geven. Deze opties zijn alleen zichtbaar voor actieve accounts.
+  - question: Kan een Azure-accounteigenaar worden vermeld onder meer dan één afdeling?
+    answer: >
+      Nee, een accounteigenaar kan maar aan één afdeling worden gekoppeld. We hanteren dit beleid om ervoor te zorgen dat de kosten en uitgaven die aan de afdeling waarmee ze onder de EA-inschrijving in de Azure EA-portal zijn afgestemd, nauwkeurig worden bijgehouden en verdeeld.
+  - question: Kan een Azure-accounteigenaar als een beveiligingsgroep worden vermeld?
+    answer: >
+      Nee, de eigenaar van een abonnement moet een uniek Microsoft-account (MSA) of een unieke Azure Active Directory-verificatie (AAD) zijn. Als u opvolging binnen uw organisatie wilt inzetten, kunt u generieke accounts maken en Azure AD gebruiken om toegang tot abonnementen te beheren.
+  - question: Kan een individuele gebruiker de eigenaar van meerdere abonnementen zijn?
+    answer: >
+      Een Azure-accounteigenaar kan een onbeperkt aantal abonnementen maken en beheren.
+  - question: Hoe krijg ik toegang tot alle abonnementen van mijn organisatie en hoe kan ik ze weergeven?
+    answer: >
+      Tegenwoordig wordt dit vanuit een beleid geregeld. Dit houdt in dat u voor elk abonnement dat wordt gemaakt, moet vereisen dat uw account aan een abonnementsrol wordt toegevoegd met behulp van op rollen gebaseerde toegang.
+  - question: Waar kan ik een abonnement maken?
+    answer: >
+      Voordat u een abonnement voor een Enterprise Azure-aanbieding (EA) kunt maken, moet uw account door de beheerder van uw EA-inschrijving in de Azure EA-portal aan de rol van accounteigenaar worden toegevoegd. Vervolgens moet u zich bij Azure de EA-portal aanmelden om recht te krijgen op het maken van abonnementen van het EA-aanbiedingstype. U wordt aangeraden om uw eerste EA-abonnement te maken via de koppeling '+ Abonnement toevoegen', op het tabblad Abonnement in de EA-portal.  Zodra uw account echter over de juiste machtigingen beschikt, is het wellicht eenvoudiger om abonnementen te maken op het tabblad Abonnement in de linkerbovenhoek van de pagina op portal.azure.com. Hier kunt u in één stap zowel uw abonnement maken als de naam daarvan wijzigen.
+  - question: Wie kan een abonnement maken?
+    answer: >
+      Als u een abonnement van het Enterprise Azure-aanbiedingstype wilt maken, moet u zijn gemachtigd in de rol van accounteigenaar op [EA Portal](https://ea.azure.com).
+  - question: Waarom worden mijn kosten als $ 0 weer geven?
+    answer: >
+      Voor klanten van een **directe inschrijving** kunnen ondernemingsbeheerders toegangsmachtigingen verlenen aan accounteigenaren en afdelingsbeheerders voor informatie over kosten/prijzen. Volg deze stappen:
+
+
+      1. Selecteer in de Azure Enterprise-portal de optie **Beheren** in het linkernavigatievenster.
+
+      1. Selecteer het blauwe potlood naast DA-kostenweergave (afdelingsbeheerder).
+
+      1. Selecteer **Ingeschakeld** en sla het bestand op.
+
+      1. Selecteer het blauwe potlood naast AO-kostenweergave (accounteigenaar).
+
+      1. Selecteer **Ingeschakeld** en sla het bestand op.
+
+
+      > [!NOTE]
+
+      > Als u een accounteigenaar of afdelingsbeheerder bent, neemt u contact op met de ondernemingsbeheerder om de prijsfunctie in te schakelen.
+
+
+      Voor klanten met een **indirecte inschrijving**: neem contact op met de partner om te controleren of deze de prijsfunctie voor u heeft ingeschakeld. Dit kan alleen worden gedaan door de partner. Nadat dit is ingeschakeld, kunt u de kosten en prijzen voor uw inschrijving bekijken als ondernemingsbeheerder.
+
+
+      Voor partners: als u de functie voor het weergeven van kosten wilt inschakelen voor een accounteigenaar of ondernemingsbeheerder, volgt u de stappen onder **directe inschrijving**.
+  - question: Waarom bevat het gebruiksgegevensrapport geen SKU-gegevens?
+    answer: >
+      Het gebruiksgegevensrapport bevat geen SKU-gegevens. Het rapport bevat echter gebruiksgegevens zodat u het rapport met het prijzenoverzicht kunt downloaden om de SKU-gegevens te verkrijgen.
+  - question: Waarom komt de totale hoeveelheid in Azure Marketplace niet overeen met de rapporten voor het gebruiksoverzicht en de details?
+    answer: >
+      In het kostenrapport voor Azure Marketplace worden alleen de kosten op basis van gebruik weergegeven. Eenmalige kosten worden niet weergegeven. Ga naar de pagina voor het gebruiksoverzicht voor de meest recente, op gebruik gebaseerde kosten en eenmalige kosten.
+  - question: Waarom is er geen informatie aanwezig in mijn API-rapport?
+    answer: >
+      API-sleutels verlopen elke zes maanden. Als u een probleem ondervindt, moet een ondernemingsbeheerder een nieuwe API-sleutel genereren. Volg de stappen in de veelgestelde vragen over het API-rapport.
+  - question: Waarom werkt mijn Power BI-rapport niet?
+    answer: >
+      Voor problemen met Power BI dient u een ticket in bij het [Power BI-ondersteuningsteam](https://support.powerbi.com).
+  - question: Waarom worden mijn resourcetags niet in mijn rapporten?
+    answer: >
+      Resourcetags worden beheerd in de Azure-portal. U kunt contact opnemen met het team voor Azure-abonnementen in de [Azure-portal](https://portal.azure.com). Volg de stappen in het artikel [Een Azure-ondersteuningsaanvraag maken ](../azure-portal/supportability/how-to-create-azure-support-request.md).
+  - question: Waarom wordt mijn resourcetarief elke dag gewijzigd?
+    answer: >
+      Het resourcetarief dat wordt weergegeven in het gedetailleerde gebruiksrapport is een berekende waarde. Deze waarde vertegenwoordigt het gemiddelde maandelijkse tarief dat in rekening is gebracht voor de service. Dit resourcetarief wordt berekend op basis van uw gemiddelde maandelijkse toezegging en uw maandelijkse overschrijdingskosten voor een service-eenheid. Het deel van het gebruik dat wordt berekend op basis van uw toezeggings- en overschrijdingstarieven, wordt gewijzigd op de laatste dag van de maand. Dit betekent dat het aantal vermelde resources ook tijdens de maand wordt gewijzigd. Het resourcetarief worden vergrendeld op de vijfde dag na het einde van de maand.
+  - question: Wat is er veranderd in Azure Marketplace Services en de Azure-vooruitbetaling voor EA?
+    answer: >
+      Vanaf 1 maart 2018 gebruiken sommige services van externe resellers azure-vooruitbetaling voor EA. Met uitzondering van Azure-VM-RI’s (gereserveerde instanties) werden deze services voorheen buiten de Azure-vooruitbetaling in rekening gebracht en afzonderlijk gefactureerd.
+
+
+      We hebben het gebruik van Azure-vooruitbetaling uitgebreid naar de gepubliceerde Azure Marketplace-services van derden die het vaakst worden aangeschaft. Azure-vooruitbetaling voor EA voor deze services in Azure Marketplace vereenvoudigt uw aankoopproces en betalingsafhandeling.
+
+
+      De wijziging is aangebracht omdat klanten andere manieren wilden gebruiken om de Azure-vooruitbetaling vooraf te gebruiken. Deze wijziging werd vaak aangevraagd door klanten en is van invloed op een groot deel van de Azure Marketplace-klanten.
+  - question: Hoe kan ik profiteren van azure-vooruitbetaling voor Azure Marketplace aankopen met mijn EA-overeenkomst?
+    answer: >
+      Facturering is eenvoudiger, en u kunt uw Azure-vooruitbetaling voor EA beter besteden. Omdat de services zijn opgenomen in uw Azure-vooruitbetaling, wordt uw Azure EA-vooruitbetaling waardevoller.
+  - question: Welke Azure Marketplace-Services maken gebruik van Azure-vooruitbetaling voor EA en hoe weet ik dat?
+    answer: >
+      Wanneer u een service koopt die Azure-vooruitbetaling gebruikt, geeft Azure Marketplace een disclaimer weer. Sommige ondersteunde services worden gepubliceerd door Red Hat, SUSE, Autodesk en Oracle. Momenteel worden services met vergelijkbare namen die zijn gepubliceerd door andere partijen, niet afgetrokken van uw Azure-vooruitbetaling. Zie [Services van derden die gebruikmaken van Azure-vooruitbetaling](https://azure.microsoft.com/updates/azure-marketplace-third-party-reseller-services-now-use-azure-monetary-commitment) voor een volledige lijst met producten die zijn opgenomen in het programma.
+  - question: Wat gebeurt er als mijn Azure EA-vooruitbetaling voor Azure Marketplace is?
+    answer: >
+      Als u uw hele Azure-vooruitbetaling hebt verbruikt en u nu in overschrijding bevindt, worden de kosten voor deze services in de volgende overschrijdingsfactuur weergegeven, samen met andere verbruiksservices. Vóór de wijziging van 1 maart 2018 werden deze kosten gefactureerd met andere Azure Marketplace-services.
+  - question: Waarom maken niet alle Azure Marketplaces gebruik van Azure-vooruitbetaling voor EA?
+    answer: >
+      We proberen altijd de beste klantervaring te leveren met betrekking tot de Azure-vooruitbetaling voor EA. De meest recente wijzigingen in de Azure EA-vooruitbetaling hebben een groot aantal klanten en een aanzienlijk deel van de totale uitgaven in de Azure Marketplace. In de toekomst worden mogelijk andere services toegevoegd.
+  - question: Hoe zijn Azure Marketplace services en wijzigingen in de Azure EA-vooruitbetaling van invloed op indirecte inschrijving en partners?
+    answer: >
+      Het heeft geen invloed op onze klanten voor indirecte inschrijving of partners. Deze services zijn onderhevig aan dezelfde partnermogelijkheden als andere verbruiksservices. De enige wijziging is dat de kosten worden weergegeven op een andere factuur, en dat de betaling van de kosten buiten de Azure-vooruitbetaling voor EA van de klant valt.
+  - question: Waar kan ik de Azure Marketplace zien die Azure EA-vooruitbetaling gebruiken?
+    answer: >
+      Voor specifieke Azure Marketplace-aanbiedingen kan Azure-vooruitbetaling worden gebruikt. Zie [Services van derden die gebruikmaken van Azure-vooruitbetaling](https://azure.microsoft.com/updates/azure-marketplace-third-party-reseller-services-now-use-azure-monetary-commitment) voor een volledige lijst met producten die zijn opgenomen in het programma.
+- name: Partnervragen
+  questions:
+  - question: Wie moet de partner-id koppelen?
+    answer: >
+      Elke gebruiker van de partnerorganisatie die aan de Power Apps van een klant werkt, kan de partner-id aan het account koppelen. Idealiter moet de associatie in PAL aan het begin van het project worden uitgevoerd. Deze kan echter worden uitgevoerd wanneer u toegang hebt tot de directory van de klant.
+  - question: Kan een partner-id worden gewijzigd nadat deze is gekoppeld?
+    answer: >
+      Ja. Een gekoppelde partner-id kan worden gewijzigd, toegevoegd of verwijderd. Een voorbeeld voor deze situatie is wanneer een werknemer van uw bedrijf uw organisatie verlaat. Een ander voorbeeld kan zijn wanneer een project of contract met de klant eindigt.
+  - question: Wat gebeurt er als een gebruiker een account in meer dan één klanttenant heeft?
+    answer: >
+      De koppeling tussen de partner-id en het account wordt uitgevoerd voor elke klanttenant. Koppel de partner-id in elke klanttenant.
+  - question: Kunnen andere partners of klanten de koppeling met de partner-id bewerken of verwijderen?
+    answer: >
+      De koppeling is op gebruikersaccountniveau gekoppeld. Alleen u kunt de koppeling met de partner-id bewerken of verwijderen. De klant en andere partners kunnen de koppeling met de partner-id niet wijzigen.
+  - question: Welke MPN ID moet ik gebruikers als mijn bedrijf meerdere id's heeft?
+    answer: >
+      Zorg ervoor dat u de **bijbehorende MPN-id** gebruikt die in uw partnerprofiel wordt weergegeven. Dit is meestal de lokale account-id-associatie met uw organisatie.
+  - question: Hoe kan ik PAL aan mijn klant uitleggen?
+    answer: >
+      PAL stelt Microsoft in staat om partners te identificeren en te herkennen die klanten helpen zakelijke doelen te bereiken en waarde te realiseren in de cloud. Klanten moeten eerst een partner toegang geven tot hun Power Apps resource. Zodra toegang is verleend, wordt de Microsoft Partner Network-id (MPN-id) van de partner gekoppeld. Deze associatie helpt Microsoft serviceproviders te begrijpen en de hulpprogramma's en programma's te verfijnen die nodig zijn om klanten zo goed mogelijk te ondersteunen.
+  - question: Welke gegevens worden door PAL verzameld?
+    answer: >
+      De PAL-koppeling met bestaande referenties bieden Microsoft geen nieuwe klantgegevens. Microsoft krijgt de informatie waar een partner actief betrokken is bij de omgevingen van Power Apps klant. Microsoft kan het gebruik en de invloed van de klantomgeving toeschrijven aan de partnerorganisatie op basis van de machtigingen (Power Apps-rol) en het bereik (tenant, resourcegroep, resource) die de klant aan de partner heeft verstrekt.
+  - question: Is pal-associatie van invloed op de beveiliging van de Power Apps omgeving van een klant?
+    answer: Pal-associatie voegt alleen de MPN-id van de partner toe aan de referentie die al is ingericht. Er worden geen machtigingen (Power Apps) gewijzigd en er worden geen extra Power Apps servicegegevens aan de partner of Microsoft verstrekt.

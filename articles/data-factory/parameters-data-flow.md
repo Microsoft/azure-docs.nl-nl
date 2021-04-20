@@ -1,113 +1,113 @@
 ---
 title: Toewijzingsgegevensstromen parameteriseren
-description: Meer informatie over het para meters van een toewijzings gegevens stroom van data factory-pijp lijnen
+description: Meer informatie over het parameteriseren van een toewijzingsgegevensstroom data factory pijplijnen
 author: kromerm
 ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 05/01/2020
-ms.openlocfilehash: 564c7cf6e9627db08d543b964ce476e71bfb473d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/19/2021
+ms.openlocfilehash: 22c4fc0680d8666d8c2dfafb8829436e27cf1ebd
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93040754"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107725706"
 ---
 # <a name="parameterizing-mapping-data-flows"></a>Toewijzingsgegevensstromen parameteriseren
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)] 
 
-Het toewijzen van gegevens stromen in Azure Data Factory ondersteunen het gebruik van para meters. Definieer para meters in de definitie van de gegevens stroom en gebruik deze in uw expressies. De parameter waarden worden ingesteld door de aanroepende pijp lijn via de activiteit gegevens stroom uitvoeren. U hebt drie opties voor het instellen van de waarden in de gegevens stroom activiteit expressies:
+Toewijzingsgegevensstromen in Azure Data Factory en Azure Synapse Analytics ondersteuning voor het gebruik van parameters. Definieer parameters in uw gegevensstroomdefinitie en gebruik deze in uw expressies. De parameterwaarden worden ingesteld door de aanroepende pijplijn via de Gegevensstroom uitvoeren. U hebt drie opties voor het instellen van de waarden in de expressies voor gegevensstroomactiviteit:
 
-* De expressie taal voor de controle stroom van de pijp lijn gebruiken om een dynamische waarde in te stellen
-* De data flow-expressie taal gebruiken om een dynamische waarde in te stellen
-* Een van de expressie taal gebruiken om een statische letterlijke waarde in te stellen
+* De taal van de stroomexpressie van het pijplijnbeheer gebruiken om een dynamische waarde in te stellen
+* De expressietaal van de gegevensstroom gebruiken om een dynamische waarde in te stellen
+* Een van beide expressietalen gebruiken om een statische letterlijke waarde in te stellen
 
-Gebruik deze mogelijkheid om uw gegevens te stroom, flexibel en herbruikbaar te maken. U kunt para meters en expressies voor gegevens stromen met deze para meters.
+Gebruik deze mogelijkheid om uw gegevensstromen algemeen, flexibel en herbruikbaar te maken. U kunt de instellingen en expressies van de gegevensstroom parameteriseren met deze parameters.
 
-## <a name="create-parameters-in-a-mapping-data-flow"></a>Para meters maken in een toewijzings gegevens stroom
+## <a name="create-parameters-in-a-mapping-data-flow"></a>Parameters maken in een toewijzingsgegevensstroom
 
-Als u para meters wilt toevoegen aan uw gegevens stroom, klikt u op het lege deel van het canvas voor gegevens stromen om de algemene eigenschappen weer te geven. In het deel venster instellingen ziet u een tabblad met de naam **para meter**. Selecteer **Nieuw** om een nieuwe para meter te genereren. Voor elke para meter moet u een naam toewijzen, een type selecteren en optioneel een standaard waarde instellen.
+Als u parameters wilt toevoegen aan uw gegevensstroom, klikt u op het lege gedeelte van het gegevensstroom-canvas om de algemene eigenschappen te bekijken. In het deelvenster Instellingen ziet u een tabblad met de naam **Parameter**. Selecteer **Nieuw** om een nieuwe parameter te genereren. Voor elke parameter moet u een naam toewijzen, een type selecteren en eventueel een standaardwaarde instellen.
 
-![Data flow-para meters maken](media/data-flow/create-params.png "Data flow-para meters maken")
+![Parameters Gegevensstroom maken](media/data-flow/create-params.png "Parameters Gegevensstroom maken")
 
-## <a name="use-parameters-in-a-mapping-data-flow"></a>Para meters in een toewijzings gegevens stroom gebruiken 
+## <a name="use-parameters-in-a-mapping-data-flow"></a>Parameters gebruiken in een toewijzingsgegevensstroom 
 
-In elke gegevens stroom expressie kan naar para meters worden verwezen. Para meters beginnen met $ en zijn onveranderbaar. De lijst met beschik bare para meters kunt u vinden in de opbouw functie voor expressies op het tabblad **para meters** .
+Er kan naar parameters worden verwezen in elke gegevensstroomexpressie. Parameters beginnen met $ en zijn onveranderbaar. U vindt de lijst met beschikbare parameters in de Expression Builder op het **tabblad Parameters.**
 
-![Scherm afbeelding toont de beschik bare para meters op het tabblad para meters.](media/data-flow/parameter-expression.png "Expressie voor de gegevens stroom parameter")
+![Schermopname van de beschikbare parameters op het tabblad Parameters.](media/data-flow/parameter-expression.png "Parameterexpressie voor gegevensstroom")
 
-U kunt snel extra para meters toevoegen door **nieuwe para meter** te selecteren en de naam en het type op te geven.
+U kunt snel extra parameters toevoegen door Nieuwe **parameter te selecteren** en de naam en het type op te geven.
 
-![Scherm afbeelding toont de para meters op het tabblad para meters met nieuwe para meters toegevoegd.](media/data-flow/new-parameter-expression.png "Expressie voor de gegevens stroom parameter")
+![Schermopname van de parameters op het tabblad Parameters met nieuwe parameters toegevoegd.](media/data-flow/new-parameter-expression.png "Parameterexpressie voor gegevensstroom")
 
-## <a name="assign-parameter-values-from-a-pipeline"></a>Parameter waarden toewijzen vanuit een pijp lijn
+## <a name="assign-parameter-values-from-a-pipeline"></a>Parameterwaarden toewijzen vanuit een pijplijn
 
-Zodra u een gegevens stroom met para meters hebt gemaakt, kunt u deze uitvoeren vanuit een pijp lijn met de activiteit gegevens stroom uitvoeren. Nadat u de activiteit aan uw pijplijn doek hebt toegevoegd, worden de beschik bare gegevensstroom parameters weer gegeven op het tabblad **para meters** van de activiteit.
+Zodra u een gegevensstroom met parameters hebt gemaakt, kunt u deze uitvoeren vanuit een pijplijn met de Gegevensstroom uitvoeren. Nadat u de activiteit aan uw pijplijn-canvas hebt toevoegen, ziet u de beschikbare gegevensstroomparameters op het **tabblad Parameters van de** activiteit.
 
-Bij het toewijzen van parameter waarden kunt u de taal van de [pijplijn expressie](control-flow-expression-language-functions.md) of de [Data flow-expressie taal](data-flow-expression-functions.md) gebruiken op basis van Spark-typen. Elke toewijzings gegevens stroom kan een combi natie van de para meters van de pijplijn-en data flow-expressie hebben.
+Wanneer u parameterwaarden toewijst, [](control-flow-expression-language-functions.md) kunt u de taal van de pijplijnexpressie of de expressietaal van de [gegevensstroom gebruiken](data-flow-expression-functions.md) op basis van spark-typen. Elke toewijzingsgegevensstroom kan elke combinatie van pijplijn- en gegevensstroomexpressieparameters hebben.
 
-![Scherm afbeelding toont het tabblad para meters met de data flow-expressie die is geselecteerd voor de waarde van myParam.](media/data-flow/parameter-assign.png "Een para meter voor een gegevens stroom instellen")
+![Schermopname van het tabblad Parameters met Gegevensstroom expressie geselecteerd voor de waarde van myparam.](media/data-flow/parameter-assign.png "Een parameter Gegevensstroom instellen")
 
-### <a name="pipeline-expression-parameters"></a>Para meters voor pijplijn expressie
+### <a name="pipeline-expression-parameters"></a>Parameters voor pijplijnexpressie
 
-Met para meters voor de pijplijn expressie kunt u verwijzen naar systeem variabelen, functies, pijplijn parameters en variabelen die vergelijkbaar zijn met andere pijplijn activiteiten. Wanneer u op **pijplijn expressie** klikt, wordt een kantlijn navigatie geopend, zodat u een expressie kunt invoeren met de opbouw functie voor expressies.
+Met parameters voor pijplijnexpressie kunt u verwijzen naar systeemvariabelen, functies, pijplijnparameters en variabelen die vergelijkbaar zijn met andere pijplijnactiviteiten. Wanneer u op **Pijplijnexpressie klikt,** wordt er een zijnavigatievenster geopend waarin u een expressie kunt invoeren met behulp van de opbouwer voor expressies.
 
-![Scherm afbeelding toont het deel venster opbouw functie voor expressies.](media/data-flow/parameter-pipeline.png "Een para meter voor een gegevens stroom instellen")
+![Schermopname van het deelvenster opbouw van expressies.](media/data-flow/parameter-pipeline.png "Een parameter Gegevensstroom instellen")
 
-Wanneer ernaar wordt verwezen, worden de pijplijn parameters geëvalueerd en wordt de waarde ervan gebruikt in de taal van de gegevens stroom expressie. Het type pijplijn expressie hoeft niet overeen te komen met het parameter type van de gegevens stroom. 
+Wanneer hier naar wordt verwezen, worden pijplijnparameters geëvalueerd en wordt de waarde ervan gebruikt in de taal van de gegevensstroomexpressie. Het type pijplijnexpressie hoeft niet overeen te komen met het parametertype van de gegevensstroom. 
 
-#### <a name="string-literals-vs-expressions"></a>Letterlijke teken reeksen versus expressies
+#### <a name="string-literals-vs-expressions"></a>Letterlijke tekenreeksen versus expressies
 
-Wanneer u een para meter voor een pijplijn expressie van het type teken reeks toewijst, worden standaard aanhalings tekens toegevoegd en wordt de waarde geëvalueerd als een literal. Als u de parameter waarde als een gegevensstroom expressie wilt lezen, schakelt u het selectie vakje expressie naast de para meter in.
+Wanneer u een parameter voor de pijplijnexpressie van het type tekenreeks toewijst, worden standaard aanhalingstekens toegevoegd en wordt de waarde geëvalueerd als een letterlijke waarde. Als u de parameterwaarde wilt lezen als een gegevensstroomexpressie, controleert u het expressievak naast de parameter .
 
-![Scherm afbeelding toont de weer gave-expressie voor het deel venster gegevens stroom die is geselecteerd voor een para meter.](media/data-flow/string-parameter.png "Een para meter voor een gegevens stroom instellen")
+![Schermopname van het deelvenster Gegevensstroomparameters Expressie geselecteerd voor een parameter.](media/data-flow/string-parameter.png "Een parameter Gegevensstroom instellen")
 
-Als de para meter data flow `stringParam` verwijst naar een pijplijn parameter met een waarde `upper(column1)` . 
+Als de gegevensstroomparameter `stringParam` verwijst naar een pijplijnparameter met de waarde `upper(column1)` . 
 
-- Als expressie is ingeschakeld, `$stringParam` evalueert de waarde van Kolom1 alle hoofd letters.
-- Als expressie niet is ingeschakeld (standaard gedrag),  `$stringParam` evalueert naar `'upper(column1)'`
+- Als de expressie is ingeschakeld, `$stringParam` wordt geëvalueerd naar de waarde van column1 in hoofdletters.
+- Als de expressie niet is ingeschakeld (standaardgedrag),  `$stringParam` wordt geëvalueerd als `'upper(column1)'`
 
-#### <a name="passing-in-timestamps"></a>Door geven van tijds tempels
+#### <a name="passing-in-timestamps"></a>Tijdstempels doorgeven
 
-In de taal van de pipeline-expressie, systeem variabelen zoals `pipeline().TriggerTime` en functions, zoals `utcNow()` retour tempels als teken reeksen in de notatie jjjj-mm-dd \' T \' uu: mm: SS. SSSSSSZ'. Als u deze wilt converteren naar de gegevensstroom parameters van het type Time Stamp, gebruikt u interpolatie van teken reeksen om de gewenste tijds tempel in een functie op te genomen `toTimestamp()` . U kunt bijvoorbeeld gebruiken om de trigger tijd van de pijp lijn om te zetten in een para meter voor de gegevens stroom `toTimestamp(left('@{pipeline().TriggerTime}', 23), 'yyyy-MM-dd\'T\'HH:mm:ss.SSS')` . 
+In de taal van de pijplijnexpressie worden systeemvariabelen zoals en functies zoals retourtijdstempels als tekenreeksen in notatie `pipeline().TriggerTime` `utcNow()` 'yyyy-MM-dd \' T \' HH:mm:ss. SSSSSZ'. Als u deze wilt converteren naar gegevensstroomparameters van het type timestamp, gebruikt u tekenreeksinterpolatie om de gewenste tijdstempel op te nemen in een `toTimestamp()` functie. Als u bijvoorbeeld de pijplijntriggertijd wilt converteren naar een gegevensstroomparameter, kunt u `toTimestamp(left('@{pipeline().TriggerTime}', 23), 'yyyy-MM-dd\'T\'HH:mm:ss.SSS')` gebruiken. 
 
-![Scherm afbeelding toont het tabblad para meters waar u een trigger tijd kunt invoeren.](media/data-flow/parameter-timestamp.png "Een para meter voor een gegevens stroom instellen")
-
-> [!NOTE]
-> Gegevens stromen kunnen Maxi maal drie milliseconde cijfers ondersteunen. De `left()` functie wordt gebruikt om extra cijfers uit te snijden.
-
-#### <a name="pipeline-parameter-example"></a>Voor beeld van pijplijn parameter
-
-Stel dat u een integer-para meter hebt `intParam` die verwijst naar een pijplijn parameter van het type teken reeks, `@pipeline.parameters.pipelineParam` . 
-
-![Scherm afbeelding toont het tabblad para meters met de para meters met de naam stringParam en intParam.](media/data-flow/parameter-pipeline-2.png "Een para meter voor een gegevens stroom instellen")
-
-`@pipeline.parameters.pipelineParam` wordt tijdens runtime een waarde van toegewezen `abs(1)` .
-
-![Scherm afbeelding toont het tabblad para meters met de waarde a b s (1) geselecteerd.](media/data-flow/parameter-pipeline-4.png "Een para meter voor een gegevens stroom instellen")
-
-Wanneer `$intParam` wordt verwezen in een expressie, zoals een afgeleide kolom, wordt `abs(1)` return geëvalueerd `1` . 
-
-![Scherm afbeelding toont de waarde columns.](media/data-flow/parameter-pipeline-3.png "Een para meter voor een gegevens stroom instellen")
-
-### <a name="data-flow-expression-parameters"></a>Para meters voor de gegevens stroom expressie
-
-Met de **expressie gegevens stroom** selecteren wordt de opbouw functie voor de data flow-expressie geopend. U kunt in uw gegevens stroom verwijzen naar functies, andere para meters en elke gedefinieerde schema kolom. Deze expressie wordt geëvalueerd alsof deze wordt genoemd.
+![Schermopname van het tabblad Parameters waar u een triggertijd kunt invoeren.](media/data-flow/parameter-timestamp.png "Een parameter Gegevensstroom instellen")
 
 > [!NOTE]
-> Als u een ongeldige expressie doorgeeft of verwijst naar een schema kolom die niet in die trans formatie voor komt, wordt de para meter geëvalueerd naar null.
+> Gegevensstromen kunnen slechts maximaal 3 milliseconden ondersteunen. De `left()` functie wordt gebruikt om extra cijfers af te korten.
+
+#### <a name="pipeline-parameter-example"></a>Voorbeeld van pijplijnparameter
+
+Stel dat u een geheel getal-parameter hebt die verwijst naar een `intParam` pijplijnparameter van het type Tekenreeks, `@pipeline.parameters.pipelineParam` . 
+
+![Schermopname van het tabblad Parameters met parameters stringParam en intParam.](media/data-flow/parameter-pipeline-2.png "Een parameter Gegevensstroom instellen")
+
+`@pipeline.parameters.pipelineParam` wordt een waarde van toegewezen `abs(1)` tijdens runtime.
+
+![Schermopname van het tabblad Parameters met de waarde van een b s (1) geselecteerd.](media/data-flow/parameter-pipeline-4.png "Een parameter Gegevensstroom instellen")
+
+Wanneer `$intParam` wordt verwezen in een expressie zoals een afgeleide kolom, wordt het retourneren `abs(1)` `1` geëvalueerd. 
+
+![Schermopname van de waarde voor kolommen.](media/data-flow/parameter-pipeline-3.png "Een parameter Gegevensstroom instellen")
+
+### <a name="data-flow-expression-parameters"></a>Parameters voor gegevensstroomexpressie
+
+Als u **Gegevensstroomexpressie selecteert,** wordt de opbouwer van de gegevensstroomexpressie geopend. U kunt in uw gegevensstroom verwijzen naar functies, andere parameters en een gedefinieerde schemakolom. Deze expressie wordt geëvalueerd zoals wanneer hier naar wordt verwezen.
+
+> [!NOTE]
+> Als u een ongeldige expressie doorgeeft of verwijst naar een schemakolom die niet bestaat in die transformatie, wordt de parameter geëvalueerd als null.
 
 
-### <a name="passing-in-a-column-name-as-a-parameter"></a>Het door geven van een kolom naam als para meter
+### <a name="passing-in-a-column-name-as-a-parameter"></a>Een kolomnaam doorgeven als parameter
 
-Een gemeen schappelijk patroon is het door geven van een kolom naam als een parameter waarde. Als de kolom is gedefinieerd in het schema van de gegevens stroom, kunt u deze rechtstreeks als een teken reeks expressie verwijzen. Als de kolom niet in het schema is gedefinieerd, gebruikt u de `byName()` functie. Vergeet niet om de kolom naar het juiste type te casten met een cast-functie zoals `toString()` .
+Een veelvoorkomende patroon is het doorgeven van een kolomnaam als parameterwaarde. Als de kolom is gedefinieerd in het gegevensstroomschema, kunt u er rechtstreeks naar verwijzen als een tekenreeksexpressie. Als de kolom niet is gedefinieerd in het schema, gebruikt u de `byName()` functie . Vergeet niet om de kolom naar het juiste type te casten met een cast-functie zoals `toString()` .
 
-Als u bijvoorbeeld een teken reeks kolom wilt toewijzen op basis van een para meter `columnName` , kunt u een afgeleide kolom transformatie toevoegen gelijk aan `toString(byName($columnName))` .
+Als u bijvoorbeeld een tekenreekskolom wilt toevoegen op basis van een parameter , kunt u een afgeleide `columnName` kolomtransformatie toevoegen die gelijk is aan `toString(byName($columnName))` .
 
-![Het door geven van een kolom naam als para meter](media/data-flow/parameterize-column-name.png "Het door geven van een kolom naam als para meter")
+![Een kolomnaam doorgeven als parameter](media/data-flow/parameterize-column-name.png "Een kolomnaam doorgeven als parameter")
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Activiteit gegevens stroom uitvoeren](control-flow-execute-data-flow-activity.md)
-* [Controle stroom expressies](control-flow-expression-language-functions.md)
+* [Gegevensstroomactiviteit uitvoeren](control-flow-execute-data-flow-activity.md)
+* [Expressies voor controlestromen](control-flow-expression-language-functions.md)

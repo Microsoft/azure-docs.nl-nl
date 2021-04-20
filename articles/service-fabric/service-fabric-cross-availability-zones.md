@@ -1,57 +1,57 @@
 ---
 title: Een cluster implementeren in Beschikbaarheidszones
-description: Meer informatie over het maken van een Azure Service Fabric cluster in Beschikbaarheidszones.
+description: Meer informatie over het maken van een Azure Service Fabric-cluster in Beschikbaarheidszones.
 author: peterpogorski
 ms.topic: conceptual
-ms.date: 04/25/2019
+ms.date: 04/16/2021
 ms.author: pepogors
-ms.openlocfilehash: bcf96a222dd40909401b70d8f1812b7d29b6088b
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: 9cc2a9d189e7a781dc6ba64a65af022150392485
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107012459"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727758"
 ---
-# <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
-Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
+# <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren in Beschikbaarheidszones
+Beschikbaarheidszones in Azure is een aanbieding voor hoge beschikbaarheid die uw toepassingen en gegevens beschermt tegen storingen in datacenters. Een beschikbaarheidszone is een unieke fysieke locatie die is uitgerust met onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
 
-Service Fabric ondersteunt clusters die over meerdere Beschikbaarheidszones beschikken door knooppunt typen te implementeren die zijn vastgemaakt aan specifieke zones. Dit zorgt voor een hoge Beschik baarheid van uw toepassingen. Azure-beschikbaarheidszones zijn alleen beschikbaar in bepaalde regio's. Zie [Azure-beschikbaarheidszones Overview](../availability-zones/az-overview.md)voor meer informatie.
+Service Fabric ondersteunt clusters die meerdere Beschikbaarheidszones door knooppunttypen te implementeren die zijn vastgemaakt aan specifieke zones. Dit zorgt voor hoge beschikbaarheid van uw toepassingen. Azure-beschikbaarheidszones zijn alleen beschikbaar in bepaalde regio's. Zie overzicht Azure-beschikbaarheidszones [voor meer informatie.](../availability-zones/az-overview.md)
 
-Er zijn voorbeeld sjablonen beschikbaar: [service Fabric sjabloon voor meerdere beschikbaarheids zones](https://github.com/Azure-Samples/service-fabric-cluster-templates)
+Er zijn voorbeeldsjablonen beschikbaar: [Service Fabric beschikbaarheidszonesjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates)
 
-## <a name="recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones"></a>Aanbevolen topologie voor het primaire knooppunt type van Azure-Service Fabric clusters voor meerdere Beschikbaarheidszones
-Een Service Fabric cluster gedistribueerd over Beschikbaarheidszones zorgt voor een hoge Beschik baarheid van de cluster status. Als u een Service Fabric cluster over zones wilt verdelen, moet u een primair knooppunt type maken in elke beschikbaarheids zone die wordt ondersteund door de regio. Hiermee worden Seed-knoop punten gelijkmatig verdeeld over alle typen van het primaire knoop punt.
+## <a name="recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones"></a>Aanbevolen topologie voor het primaire knooppunttype van Azure Service Fabric-clusters die over meerdere Beschikbaarheidszones
+Een Service Fabric cluster gedistribueerd over Beschikbaarheidszones zorgt voor hoge beschikbaarheid van de clustertoestand. Als u een Service Fabric meerdere zones wilt overspannen, moet u een primair knooppunttype maken in elke beschikbaarheidszone die wordt ondersteund door de regio. Hierdoor worden seed-knooppunten gelijkmatig verdeeld over elk van de primaire knooppunttypen.
 
-De aanbevolen topologie voor het primaire knooppunt type vereist de onderstaande bronnen:
+Voor de aanbevolen topologie voor het primaire knooppunttype zijn de onderstaande resources vereist:
 
-* Het betrouwbaarheids niveau van het cluster is ingesteld op Platinum.
-* Drie knooppunt typen die als primair zijn gemarkeerd.
-    * Elk knooppunt type moet worden toegewezen aan de eigen virtuele-machine schaalset die zich in verschillende zones bevindt.
-    * Elke schaalset voor virtuele machines moet ten minste vijf knoop punten bevatten (Silver duurzaamheid).
-* Eén open bare IP-resource met behulp van standaard-SKU.
-* Een enkele Load Balancer resource met standaard-SKU.
-* Een NSG waarnaar wordt verwezen door het subnet waarin u de schaal sets voor virtuele machines implementeert.
+* Het betrouwbaarheidsniveau van het cluster is ingesteld op Moet.
+* Drie knooppunttypen die zijn gemarkeerd als primair.
+    * Elk knooppunttype moet worden ingesteld op een eigen virtuele-machineschaalset die zich in verschillende zones bevindt.
+    * Elke virtuele-machineschaalset moet ten minste vijf knooppunten hebben (Duurzaamheid van silver).
+* Eén openbare IP-resource met standard-SKU.
+* Eén resource Load Balancer standard-SKU.
+* Een NSG waarnaar wordt verwezen door het subnet waarin u uw virtuele-machineschaalsets implementeert.
 
 >[!NOTE]
-> De groeps eigenschap voor de virtuele-machine schaal sets moet worden ingesteld op waar.
+> De eigenschap voor een enkele plaatsingsgroep van de virtuele-machineschaalset moet worden ingesteld op true.
 
-Diagram met het diagram voor de architectuur van Azure Service Fabric-beschikbaarheids zone ![ waarin de architectuur van de azure service Fabric-beschikbaarheids zone wordt weer gegeven.][sf-architecture]
+Diagram met het architectuurdiagram van Service Fabric Azure-beschikbaarheidszone met de architectuur van ![ Service Fabric Azure-beschikbaarheidszone.][sf-architecture]
 
-Voor beeld van een lijst met knoop punten die de indelingen FD/UD in een schaalset voor een virtuele machine instellen
+Voorbeeld van een knooppuntlijst met FD-/UD-indelingen in een virtuele-machineschaalset die zones omspant
 
- ![Voor beeld van een knooppunt lijst met indelingen van FD/UD in een grootschalige zones met schaal sets voor virtuele machines.][sf-multi-az-nodes]
+ ![Voorbeeld van een knooppuntlijst met FD-/UD-indelingen in een virtuele-machineschaalset die zones omspant.][sf-multi-az-nodes]
 
-**Distributie van service replica's in meerdere zones**: wanneer een service wordt geïmplementeerd op de nodeTypes die spanningde zones zijn, worden de replica's geplaatst om ervoor te zorgen dat ze in afzonderlijke zones terechtkomen. Dit wordt gewaarborgd omdat het fout domein van de knoop punten in elk van deze nodeTypes is geconfigureerd met de zone gegevens (dat wil zeggen FD = FD:/zone 1/1 etc...). Bijvoorbeeld: voor vijf replica's of exemplaren van een service wordt de distributie 2-2-1 en runtime probeert te zorgen voor gelijke distributie over AZs.
+**Distributie van servicereplica's** over zones: wanneer een service wordt geïmplementeerd op de knooppunttypen die zones overspannen, worden de replica's geplaatst om ervoor te zorgen dat ze in afzonderlijke zones belandt. Dit wordt gegarandeerd omdat het foutdomein op de knooppunten in elk van deze knooppuntenTypes wordt geconfigureerd met de zone-informatie (dat wil zeggen FD = fd:/zone1/1 enzovoort). Bijvoorbeeld: voor 5 replica's of exemplaren van een service is de distributie 2-2-1 en probeert runtime een gelijke verdeling over AZ's te garanderen.
 
-**Configuratie van de gebruikers Service replica**: stateful-gebruikers services die zijn geïmplementeerd op de nodeTypes van de Kruis baarheid, moeten worden geconfigureerd met deze configuratie: aantal replica's met target = 9, min = 5. Deze configuratie helpt de service te laten werken, zelfs wanneer de ene zone uitvalt omdat 6 replica's nog steeds in de andere twee zones worden weer geven. Een upgrade van een toepassing in een dergelijk scenario gaat ook verder.
+**User Service Replica Configuration:** Stateful user services deployed on the cross availability zone nodeTypes should be configured with this configuration: replica count with target = 9, min = 5. Deze configuratie helpt de service te werken, zelfs wanneer één zone uitgaat omdat er nog zes replica's actief zijn in de andere twee zones. Een toepassingsupgrade in een dergelijk scenario wordt ook uitgevoerd.
 
-**Cluster ReliabilityLevel**: Hiermee definieert u het aantal Seed-knoop punten in het cluster en ook de replica grootte van de systeem services. Omdat het instellen van een zone met meerdere Beschik baarheid een hoger aantal knoop punten heeft, die over zones zijn verdeeld om zone tolerantie mogelijk te maken, zorgt een hogere betrouwbaarheids waarde ervoor dat knoop punt meer Seed-knoop punten en systeem service replica's aanwezig zijn en gelijkmatig worden verdeeld over zones, zodat in het geval van een zone storing in het cluster en de systeem services niet worden beïnvloed. "ReliabilityLevel = Platinum" zorgt ervoor dat er negen Seed-knoop punten over zone in het cluster worden verdeeld met 3 zaden in elke zone, zodat dit de aanbevolen instelling is voor de installatie van de zone voor meerdere Beschik baarheid.
+**Betrouwbaarheid van clusterNiveau:** hiermee definieert u het aantal seed-knooppunten in het cluster en tevens de replicagrootte van de systeemservices. Omdat de installatie van een zone voor meerdere beschikbaarheidszones een groter aantal knooppunten heeft, die zijn verdeeld over zones om zone-tolerantie mogelijk te maken, zorgt een hogere betrouwbaarheid ervoor dat het knooppunt meer seed-knooppunten en systeemservicereplica's aanwezig zijn en gelijkmatig worden verdeeld over zones, zodat in het geval van een zonefout het cluster en de systeemservices ongeimpacteerd blijven. 'ReliabilityLevel = Each' zorgt ervoor dat er 9 seed-knooppunten zijn verspreid over zones in het cluster met 3 vruchten in elke zone. Dit is daarom de aanbeveling voor het instellen van de beschikbaarheidszone voor meerdere zones.
 
-**Scenario voor zones**: wanneer een zone uitvalt, worden alle knoop punten in die zone weer gegeven als omlaag. Service replica's op deze knoop punten worden ook niet beschikbaar. Omdat er replica's aanwezig zijn in de andere zones, blijft de service reageren met primaire replica's waarvoor een failover wordt uitgevoerd naar de zones die functioneren. De services worden weer gegeven in een waarschuwings status omdat het aantal doel replica's nog niet is bereikt en omdat het aantal virtuele machines nog steeds groter is dan de minimale grootte van de doel replica. Vervolgens worden in Service Fabric load balancer replica's in de werk zones weer geven die overeenkomen met het geconfigureerde aantal doel replica's. De services worden op dit moment in orde weer gegeven. Wanneer de zone die uitvalt, een back-up maakt van de taak verdeling, worden alle service replica's gelijkmatig verdeeld over alle zones.
+**Scenario voor zone-down:** wanneer een zone uitgaat, worden alle knooppunten in die zone weergegeven als niet-omlaag. Servicereplica's op deze knooppunten zijn ook niet meer mogelijk. Omdat er replica's in de andere zones zijn, blijft de service responsief met primaire replica's waarvoor een failing over is naar de zones die functioneren. De services worden weergegeven met een waarschuwingstoestand omdat het aantal doelreplica's nog niet is bereikt en omdat het aantal VM's nog steeds meer dan de minimumgrootte van de doelreplica is. Vervolgens worden Service Fabric load balancer replica's in de werkzones die overeenkomen met het aantal geconfigureerde doelreplica's. Op dit moment worden de services in orde weergegeven. Wanneer de zone die niet was, weer een back-up maakt van de load balance, worden alle servicereplica's opnieuw gelijkmatig verdeeld over alle zones.
 
 ## <a name="networking-requirements"></a>Netwerkvereisten
-### <a name="public-ip-and-load-balancer-resource"></a>Openbaar IP-adres en Load Balancer bron
-Als u de eigenschap zones wilt inschakelen voor een resource met een schaalset voor virtuele machines, moet de load balancer en IP-resource waarnaar wordt verwezen door deze schaalset voor virtuele machines, beide gebruikmaken van een *standaard* -SKU. Als u een load balancer of IP-bron maakt zonder de SKU-eigenschap, wordt een basis-SKU gemaakt die geen ondersteuning biedt voor Beschikbaarheidszones. Een standaard-SKU load balancer blokkeert standaard al het verkeer van de buiten kant. Als u buiten verkeer wilt toestaan, moet er een NSG in het subnet worden geïmplementeerd.
+### <a name="public-ip-and-load-balancer-resource"></a>Openbare IP en Load Balancer resource
+Als u de zones-eigenschap van een virtuele-machineschaalsetresource wilt inschakelen, moeten de load balancer- en IP-resource waarnaar wordt verwezen door die virtuele-machineschaalset beide gebruikmaken van een Standard-SKU.  Als u een load balancer ip-resource maakt zonder de SKU-eigenschap, wordt er een Basis-SKU gemaakt die geen ondersteuning biedt voor Beschikbaarheidszones. Een standaard-SKU load balancer blokkeert standaard al het verkeer van buitenaf; om verkeer buiten toe te staan, moet er een NSG worden geïmplementeerd in het subnet.
 
 ```json
 {
@@ -99,10 +99,10 @@ Als u de eigenschap zones wilt inschakelen voor een resource met een schaalset v
 ```
 
 >[!NOTE]
-> Het is niet mogelijk om een in-place wijziging van de SKU in het open bare IP-adres en load balancer resources uit te voeren. Zie de sectie migratie in dit artikel als u migreert van bestaande resources die een basis-SKU hebben.
+> Het is niet mogelijk om een in-place wijziging van de SKU uit te brengen op het openbare IP-adres en load balancer resources. Als u migreert van bestaande resources die een Basis-SKU hebben, bekijkt u de migratiesectie van dit artikel.
 
-### <a name="virtual-machine-scale-set-nat-rules"></a>NAT-regels voor schaal sets voor virtuele machines
-De load balancer binnenkomende NAT-regels moeten overeenkomen met de NAT-groepen van de virtuele-machine schaalset. Elke schaalset voor virtuele machines moet een unieke binnenkomende NAT-groep hebben.
+### <a name="virtual-machine-scale-set-nat-rules"></a>NAT-regels voor virtuele-machineschaalsets
+De load balancer nat-regels moeten overeenkomen met de NAT-pools uit de virtuele-machineschaalset. Elke virtuele-machineschaalset moet een unieke binnenkomende NAT-pool hebben.
 
 ```json
 {
@@ -147,22 +147,22 @@ De load balancer binnenkomende NAT-regels moeten overeenkomen met de NAT-groepen
 }
 ```
 
-### <a name="standard-sku-load-balancer-outbound-rules"></a>Standaard SKU Load Balancer uitgaande regels
-Standard Load Balancer en standaard open bare IP introduceren nieuwe mogelijkheden en verschillende gedragingen voor uitgaande connectiviteit in vergelijking met de basis-Sku's. Als u een uitgaande verbinding wilt gebruiken bij het werken met standaard-Sku's, moet u deze expliciet definiëren met een openbaar IP-adres of standaard open bare Load Balancer. Zie voor meer informatie [uitgaande verbindingen](../load-balancer/load-balancer-outbound-connections.md) en [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md).
+### <a name="standard-sku-load-balancer-outbound-rules"></a>Standaard-SKU Load Balancer uitgaande regels
+Standard Load Balancer en standaard openbare IP introduceren nieuwe mogelijkheden en verschillende gedragingen voor uitgaande connectiviteit in vergelijking met het gebruik van Basis-SKU's. Als u uitgaande connectiviteit wilt wanneer u met Standard-SKU's werkt, moet u deze expliciet definiëren met openbare STANDAARD-IP-adressen of openbare Standaard-Load Balancer. Zie Uitgaande verbindingen en [Azure](../load-balancer/load-balancer-outbound-connections.md) Standard Load Balancer [voor meer Standard Load Balancer.](../load-balancer/load-balancer-overview.md)
 
 >[!NOTE]
-> De standaard sjabloon verwijst naar een NSG waarmee al het uitgaande verkeer standaard wordt toegestaan. Binnenkomend verkeer is beperkt tot de poorten die vereist zijn voor Service Fabric-beheer bewerkingen. De NSG-regels kunnen worden aangepast om te voldoen aan uw vereisten.
+> De standaardsjabloon verwijst naar een NSG die standaard al het uitgaande verkeer toestaat. Inkomende verkeer is beperkt tot de poorten die vereist zijn voor Service Fabric beheerbewerkingen. De NSG-regels kunnen worden gewijzigd om te voldoen aan uw vereisten.
 
 >[!NOTE]
-> Een Service Fabric cluster dat gebruikmaakt van een standaard SKU SLB moet ervoor zorgen dat elk knooppunt type een regel voor uitgaand verkeer op poort 443 toestaat. Dit is nodig voor het volt ooien van de installatie van het cluster en een implementatie zonder een dergelijke regel zal mislukken.
+> Elk Service Fabric cluster dat gebruik maakt van een Standard SKU SLB moet ervoor zorgen dat elk knooppunttype een regel heeft die uitgaand verkeer op poort 443 toestaat. Dit is nodig om de clusterinstallatie te voltooien en elke implementatie zonder een dergelijke regel mislukt.
 
 
-### <a name="enabling-zones-on-a-virtual-machine-scale-set"></a>Zones inschakelen op een schaalset voor virtuele machines
-Als u een zone wilt inschakelen, moet u op een schaalset voor virtuele machines de volgende drie waarden in de resource van de virtuele-machine schaalset opgeven.
+### <a name="enabling-zones-on-a-virtual-machine-scale-set"></a>Zones inschakelen op een virtuele-machineschaalset
+Als u een zone wilt inschakelen, moet u op een virtuele-machineschaalset de volgende drie waarden opnemen in de resource van de virtuele-machineschaalset.
 
-* De eerste waarde is de eigenschap **zones** , waarmee wordt opgegeven in welke beschikbaarheids zone de schaalset voor virtuele machines wordt geïmplementeerd.
-* De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True.
-* De derde waarde is de eigenschap ' faultDomainOverride ' in de Service Fabric extensie voor de virtuele-machine schaalset. De waarde voor deze eigenschap moet alleen de zone bevatten waarin deze schaalset voor de virtuele machine wordt geplaatst. Voor beeld: ' faultDomainOverride ': ' Az1 ' alle resources voor de schaalset van virtuele machines moeten in dezelfde regio worden geplaatst, omdat Azure Service Fabric-clusters geen ondersteuning bieden voor meerdere regio's.
+* De eerste waarde is de **eigenschap zones,** die aangeeft op welke beschikbaarheidszone de virtuele-machineschaalset wordt geïmplementeerd.
+* De tweede waarde is de eigenschap singlePlacementGroup, die moet worden ingesteld op true.
+* De derde waarde is de eigenschap faultDomainOverride in de Service Fabric virtuele-machineschaalsetextensie. De waarde voor deze eigenschap moet alleen de zone bevatten waarin deze virtuele-machineschaalset wordt geplaatst. Voorbeeld: "faultDomainOverride": "az1" Alle resources van de virtuele-machineschaalset moeten in dezelfde regio worden geplaatst omdat Azure Service Fabric-clusters geen ondersteuning voor andere regio's hebben.
 
 ```json
 {
@@ -202,8 +202,8 @@ Als u een zone wilt inschakelen, moet u op een schaalset voor virtuele machines 
 }
 ```
 
-### <a name="enabling-multiple-primary-node-types-in-the-service-fabric-cluster-resource"></a>Meerdere primaire knooppunt typen inschakelen in de Service Fabric cluster resource
-Als u een of meer knooppunt typen als primair wilt instellen in een cluster bron, stelt u de eigenschap ' isPrimary ' in op ' True '. Bij het implementeren van een Service Fabric cluster via Beschikbaarheidszones, moet u drie knooppunt typen hebben in verschillende zones.
+### <a name="enabling-multiple-primary-node-types-in-the-service-fabric-cluster-resource"></a>Meerdere primaire knooppunttypen inschakelen in de Service Fabric Cluster-resource
+Als u een of meer knooppunttypen als primair wilt instellen in een clusterresource, stelt u de eigenschap isPrimary in op 'true'. Wanneer u een Service Fabric cluster in Beschikbaarheidszones implementeert, moet u drie knooppunttypen hebben in afzonderlijke zones.
 
 ```json
 {
@@ -261,20 +261,20 @@ Als u een of meer knooppunt typen als primair wilt instellen in een cluster bron
 }
 ```
 
-## <a name="migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip"></a>Migreren naar met behulp van Beschikbaarheidszones van een cluster met behulp van een basis-SKU Load Balancer en een basis-SKU-IP
-Als u een cluster wilt migreren dat gebruikmaakt van een Load Balancer en IP met een basis-SKU, moet u eerst een volledig nieuwe Load Balancer en IP-bron maken met behulp van de standaard-SKU. Het is niet mogelijk om deze resources in-place bij te werken.
+## <a name="migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip"></a>Migreren naar met behulp Beschikbaarheidszones van een cluster met behulp van een Basic SKU-Load Balancer en een IP-adres van een basic SKU
+Als u een cluster wilt migreren dat gebruik maakte van een Load Balancer en IP met een basis-SKU, moet u eerst een volledig nieuwe Load Balancer- en IP-resource maken met behulp van de standaard-SKU. Het is niet mogelijk om deze resources in-place bij te werken.
 
-Er moet naar de nieuwe LB en IP worden verwezen in de nieuwe knooppunt typen voor de zone voor meerdere Beschik baarheid die u wilt gebruiken. In het bovenstaande voor beeld zijn drie nieuwe resources voor virtuele-machine schaal sets toegevoegd in zones 1, 2 en 3. Deze schaal sets voor virtuele machines verwijzen naar de nieuw gemaakte LB en IP en worden gemarkeerd als primaire knooppunt typen in de Service Fabric cluster bron.
+Er moet naar de nieuwe LB- en IP-adressen worden verwezen in de nieuwe knooppunttypen voor de beschikbaarheidszone die u wilt gebruiken. In het bovenstaande voorbeeld zijn drie nieuwe resources voor virtuele-machineschaalsets toegevoegd in zones 1,2 en 3. Deze virtuele-machineschaalsets verwijzen naar de zojuist gemaakte LB en IP en zijn gemarkeerd als primaire knooppunttypen in de Service Fabric clusterresource.
 
-U moet de nieuwe resources toevoegen aan uw bestaande resource manager-sjabloon om te beginnen. Deze resources omvatten:
-* Een open bare IP-resource met een standaard-SKU.
-* Een Load Balancer resource met standaard-SKU.
-* Een NSG waarnaar wordt verwezen door het subnet waarin u de schaal sets voor virtuele machines implementeert.
-* Drie knooppunt typen die als primair zijn gemarkeerd.
-    * Elk knooppunt type moet worden toegewezen aan de eigen virtuele-machine schaalset die zich in verschillende zones bevindt.
-    * Elke schaalset voor virtuele machines moet ten minste vijf knoop punten bevatten (Silver duurzaamheid).
+Om te beginnen moet u de nieuwe resources toevoegen aan uw bestaande Resource Manager sjabloon. Deze resources omvatten:
+* Een openbare IP-resource met standard-SKU.
+* Een Load Balancer resource met standard-SKU.
+* Een NSG waarnaar wordt verwezen door het subnet waarin u uw virtuele-machineschaalsets implementeert.
+* Drie knooppunttypen die zijn gemarkeerd als primair.
+    * Elk knooppunttype moet worden ingesteld op een eigen virtuele-machineschaalset die zich in verschillende zones bevindt.
+    * Elke virtuele-machineschaalset moet ten minste vijf knooppunten hebben (Duurzaamheid van silver).
 
-Een voor beeld van deze resources vindt u in de [voorbeeld sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/10-VM-Ubuntu-2-NodeType-Secure).
+Een voorbeeld van deze resources vindt u in de [voorbeeldsjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/10-VM-Ubuntu-2-NodeType-Secure).
 
 ```powershell
 New-AzureRmResourceGroupDeployment `
@@ -283,7 +283,7 @@ New-AzureRmResourceGroupDeployment `
     -TemplateParameterFile $Parameters
 ```
 
-Zodra de implementatie van de resources is voltooid, kunt u beginnen met het uitschakelen van de knoop punten in het primaire knooppunt type van het oorspronkelijke cluster. Wanneer de knoop punten zijn uitgeschakeld, worden de systeem services gemigreerd naar het nieuwe primaire knooppunt type dat in de bovenstaande stap is geïmplementeerd.
+Zodra de implementatie van de resources is voltooid, kunt u beginnen met het uitschakelen van de knooppunten in het primaire knooppunttype van het oorspronkelijke cluster. Als de knooppunten zijn uitgeschakeld, migreren de systeemservices naar het nieuwe primaire knooppunttype dat in de bovenstaande stap is geïmplementeerd.
 
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint $ClusterName `
@@ -305,7 +305,7 @@ foreach($name in $nodeNames) {
 }
 ```
 
-Zodra alle knoop punten zijn uitgeschakeld, worden de systeem services uitgevoerd op het primaire knooppunt type, dat over meerdere zones wordt verspreid. U kunt de uitgeschakelde knoop punten vervolgens verwijderen uit het cluster. Nadat de knoop punten zijn verwijderd, kunt u de oorspronkelijke IP-, Load Balancer-en virtuele-machine schaal sets verwijderen.
+Zodra de knooppunten allemaal zijn uitgeschakeld, worden de systeemservices uitgevoerd op het primaire knooppunttype, dat is verdeeld over zones. Vervolgens kunt u de uitgeschakelde knooppunten uit het cluster verwijderen. Zodra de knooppunten zijn verwijderd, kunt u het oorspronkelijke IP-adres, de Load Balancer en de resources van de virtuele-machineschaalset verwijderen.
 
 ```powershell
 foreach($name in $nodeNames){
@@ -325,9 +325,9 @@ Remove-AzureRmLoadBalancer -Name $lbname -ResourceGroupName $groupname -Force
 Remove-AzureRmPublicIpAddress -Name $oldPublicIpName -ResourceGroupName $groupname -Force
 ```
 
-Vervolgens verwijdert u de verwijzingen naar deze resources uit de Resource Manager-sjabloon die u hebt geïmplementeerd.
+Verwijder vervolgens de verwijzingen naar deze resources uit de Resource Manager die u hebt geïmplementeerd.
 
-Bij de laatste stap moet de DNS-naam en het open bare IP-adres worden bijgewerkt.
+De laatste stap betreft het bijwerken van de DNS-naam en het openbare IP-adres.
 
 ```powershell
 $oldprimaryPublicIP = Get-AzureRmPublicIpAddress -Name $oldPublicIpName  -ResourceGroupName $groupname
@@ -344,23 +344,23 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 
 ```
 
-## <a name="preview-enable-multiple-availability-zones-in-single-virtual-machine-scale-set"></a>Evaluatie Meerdere beschikbaarheids zones inschakelen in één schaalset voor virtuele machines
+## <a name="preview-enable-multiple-availability-zones-in-single-virtual-machine-scale-set"></a>(Preview) Meerdere beschikbaarheidszones in één virtuele-machineschaalset inschakelen
 
-De eerder genoemde oplossing maakt gebruik van één nodeType per AZ. Met de volgende oplossing kunnen gebruikers 3 AZ in hetzelfde nodeType implementeren.
+De eerder genoemde oplossing maakt gebruik van één knooppunttype per AZ. Met de volgende oplossing kunnen gebruikers 3 AZ's implementeren in hetzelfde knooppunttype.
 
-**Omdat deze functie momenteel als preview-versie beschikbaar is, wordt deze momenteel niet ondersteund voor productie scenario's.**
+**Omdat deze functie momenteel in preview is, wordt deze momenteel niet ondersteund voor productiescenario's.**
 
-De volledige voorbeeld sjabloon is [hier](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-Windows-Multiple-AZ-Secure)aanwezig.
+De volledige voorbeeldsjabloon is [hier aanwezig.](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-Windows-Multiple-AZ-Secure)
 
-![Architectuur van Azure Service Fabric-beschikbaarheids zone][sf-multi-az-arch]
+![Architectuur van Service Fabric Azure-beschikbaarheidszone][sf-multi-az-arch]
 
-### <a name="configuring-zones-on-a-virtual-machine-scale-set"></a>Zones configureren op een schaalset voor virtuele machines
-Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de volgende drie waarden in de resource van de virtuele-machine schaalset opgeven.
+### <a name="configuring-zones-on-a-virtual-machine-scale-set"></a>Zones configureren op een virtuele-machineschaalset
+Als u zones op een virtuele-machineschaalset wilt inschakelen, moet u de volgende drie waarden opnemen in de resource van de virtuele-machineschaalset.
 
-* De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
-* De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True. **De schaalset voor 3 AZ kan worden geschaald tot Maxi maal 300 Vm's, zelfs met ' singlePlacementGroup = True '.**
-* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd. Dit moet ' waar ' zijn. Op deze manier zorgt u ervoor dat de VM-distributies voor verschillende zones niet worden gesaldeerd, en dat als een van de zones uitvalt, de andere twee zones voldoende Vm's hebben om ervoor te zorgen dat het cluster niet wordt onderbroken. Een cluster met een niet-gebalanceerde VM-distributie houdt mogelijk geen sprake van een zone omlaag, omdat die zone mogelijk het meren deel van de virtuele machines kan hebben. Een niet-gebalanceerde VM-distributie over zones leidt ook tot de service plaats gerelateerde problemen & infrastructuur updates blijven hangen. Meer informatie over [zoneBalancing](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
-* De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
+* De eerste waarde is de **eigenschap zones,** waarmee de Beschikbaarheidszones aanwezig is in de virtuele-machineschaalset.
+* De tweede waarde is de eigenschap singlePlacementGroup, die moet worden ingesteld op true. **De schaalset die is verdeeld over drie AZ's kan omhoog worden geschaald tot 300 VM's, zelfs met 'singlePlacementGroup = true'.**
+* De derde waarde is zoneBalance, wat zorgt voor strikte zoneverdeling. Dit moet 'waar' zijn. Dit zorgt ervoor dat de VM-distributies over zones niet uit balans zijn, zodat wanneer een van de zones uitgaat, de andere twee zones voldoende VM's hebben om ervoor te zorgen dat het cluster ononderbroken blijft werken. Een cluster met een niet-verdeelde VM-distributie overleeft mogelijk geen zone-down scenario, omdat die zone mogelijk het merendeel van de VM's heeft. Een niet-gebalanceerde VM-distributie over zones leidt er ook toe dat problemen met serviceplaatsing & dat infrastructuurupdates vast komen te zitten.. Meer informatie [over zoneBalancing.](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing)
+* De overschrijvingen FaultDomain en UpgradeDomain zijn niet vereist om te worden geconfigureerd.
 
 ```json
 {
@@ -377,25 +377,25 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
 ```
 
 >[!NOTE]
-> * **Service Fabric clusters moeten ten minste één primair nodeType bevatten. DurabilityLevel van primaire nodeTypes moet zilver of hoger zijn.**
-> * De AZ-schaalset voor virtuele machines moet worden geconfigureerd met ten minste 3 Beschikbaarheids zones, onafhankelijk van de durabilityLevel.
-> * AZ spanning van de schaalset voor virtuele machines met Silver duurzaamheid (of hoger) moet ten minste 15 Vm's hebben.
-> * AZ spanning van virtuele-machine schaal sets met Bronze duurzaamheid moet minstens 6 Vm's hebben.
+> * **Service Fabric clusters moeten tenast één primair knooppunttype hebben. DuurzaamheidLevel van primaire knooppunttypen moet Silver of hoger zijn.**
+> * De AZ-overspannen virtuele-machineschaalset moet worden geconfigureerd met tenast 3 beschikbaarheidszones, ongeacht het duurzaamheidsniveau.
+> * AZ overspant een virtuele-machineschaalset met silver-duurzaamheid (of hoger), moet tenast 15 VM's hebben.
+> * AZ overspant een virtuele-machineschaalset met bronzen duurzaamheid en moet tenast 6 VM's hebben.
 
-### <a name="enabling-the-support-for-multiple-zones-in-the-service-fabric-nodetype"></a>Ondersteuning voor meerdere zones inschakelen in het Service Fabric nodeType
-Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van meerdere beschikbaarheids zones.
+### <a name="enabling-the-support-for-multiple-zones-in-the-service-fabric-nodetype"></a>De ondersteuning voor meerdere zones inschakelen in Service Fabric nodeType
+Het Service Fabric nodeType moet zijn ingeschakeld om meerdere beschikbaarheidszones te ondersteunen.
 
-* De eerste waarde is **multipleAvailabilityZones** die moet worden ingesteld op True voor het NodeType.
-* De tweede waarde is **sfZonalUpgradeMode** en is optioneel. Deze eigenschap kan niet worden gewijzigd als er al een NodeType met meerdere AZ is aanwezig in het cluster.
-  De eigenschap bepaalt de logische groepering van Vm's in upgrade domeinen.
-  **Als waarde is ingesteld op parallel:** Vm's onder het NodeType worden gegroepeerd in de zone-informatie in 5 UDs negeren. Dit leidt ertoe dat alle zones tegelijk worden bijgewerkt om UD0 te krijgen. Deze implementatie modus is sneller voor upgrades, maar wordt niet aanbevolen omdat deze voldoet aan de richt lijnen voor SDP, die aangeven dat de updates slechts één zone tegelijk moeten worden toegepast.
-  **Als waarde wordt wegge laten of is ingesteld op hiërarchisch:** Vm's worden gegroepeerd op basis van de zonegebonden-distributie in Maxi maal 15 UDs. Elk van de drie zones heeft 5 UDs. Dit zorgt ervoor dat de updates zone op de volgende zone pas overstappen nadat 5 UDs in de eerste zone is voltooid, langzaam over 15 UDs (3 zones, 5 UDs). Dit is veiliger vanuit het perspectief van het cluster en de gebruikers toepassing.
-  Deze eigenschap definieert alleen het upgrade gedrag voor ServiceFabric toepassings-en code-upgrades. De onderliggende upgrades voor virtuele-machine schaal sets worden nog steeds parallel in alle AZ-computers.
-  Deze eigenschap heeft geen invloed op de UD-distributie voor knooppunt typen waarvoor geen meerdere zones zijn ingeschakeld.
-* De derde waarde is **vmssZonalUpgradeMode = parallel**. Dit is een *verplichte* eigenschap die in het cluster moet worden geconfigureerd als een NodeType met meerdere AZs wordt toegevoegd. Met deze eigenschap wordt de upgrade modus gedefinieerd voor de updates voor de schaalset van virtuele machines die parallel worden uitgevoerd in alle AZ tegelijk.
-  Deze eigenschap kan nu alleen worden ingesteld op parallel.
-* De Service Fabric cluster resource apiVersion moet 2020-12-01-preview of hoger zijn.
-* De versie van de cluster code moet ' 7.2.445 ' of hoger zijn.
+* De eerste waarde is **multipleAvailabilityZones,** die moet worden ingesteld op true voor het nodeType.
+* De tweede waarde is **sfZonalUpgradeMode** en is optioneel. Deze eigenschap kan niet worden gewijzigd als er al een knooppunttype met meerdere AZ's aanwezig is in het cluster.
+  De eigenschap bepaalt de logische groepering van VM's in upgradedomeinen.
+  **Als de waarde is ingesteld op Parallel:** VM's onder het knooppunttype worden gegroepeerd in UD's, waarbij de zonegegevens in vijf UD's worden genegeerd. Dit leidt ertoe dat UD0 in alle zones tegelijkertijd wordt bijgewerkt. Deze implementatiemodus is sneller voor upgrades, maar wordt niet aanbevolen omdat deze in strijd is met de SDP-richtlijnen, die stellen dat de updates slechts één zone tegelijk moeten worden toegepast.
+  **Als de waarde wordt weggelaten of ingesteld op 'Hiërarchisch':** VM's worden gegroepeerd om de zonale verdeling in maximaal 15 UD's weer te geven. Elk van de 3 zones heeft 5 UD's. Dit zorgt ervoor dat de updates zonegewijs worden bijgewerkt en pas naar de volgende zone worden verplaatst na het voltooien van 5 UD's binnen de eerste zone, langzaam over 15 UD's (3 zones, 5 UD's), wat veiliger is vanuit het oogpunt van het cluster en de gebruikerstoepassing.
+  Deze eigenschap definieert alleen het upgradegedrag voor ServiceFabric-toepassings- en code-upgrades. De onderliggende upgrades voor virtuele-machineschaalsets zijn nog steeds parallel in alle AZ's.
+  Deze eigenschap heeft geen invloed op de UD-distributie voor knooppunttypen waarvoor niet meerdere zones zijn ingeschakeld.
+* De derde waarde is **vmssZonalUpgradeMode = Parallel**. Dit is een *verplichte* eigenschap die moet worden geconfigureerd in het cluster als een knooppunttype met meerdere AZ's wordt toegevoegd. Met deze eigenschap definieert u de upgrademodus voor de updates van de virtuele-machineschaalset die parallel worden uitgevoerd in alle AZ's tegelijk.
+  Op dit moment kan deze eigenschap alleen worden ingesteld op parallel.
+* De Service Fabric clusterresource-apiVersion moet '2020-12-01-preview' of hoger zijn.
+* De versie van de clustercode moet 7.2.445 of hoger zijn.
 
 ```json
 {
@@ -420,22 +420,22 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 ```
 
 >[!NOTE]
-> * Open bare IP-en Load Balancer-resources moeten gebruikmaken van de standaard-SKU zoals eerder in het artikel is beschreven.
-> * de eigenschap multipleAvailabilityZones van het nodeType kan alleen worden gedefinieerd op het moment dat het nodeType wordt gemaakt en kan later niet worden gewijzigd. Bestaande nodeTypes kan daarom niet worden geconfigureerd met deze eigenschap.
-> * Als "sfZonalUpgradeMode" wordt wegge laten of is ingesteld op hiërarchisch, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen. Het upgrade beleid voor zowel de app als het cluster moet worden bijgewerkt om ervoor te zorgen dat de implementatie de time-outs van de implementatie van de Azure-resource Serbice van 12hours niet overschrijdt. Dit betekent dat de implementatie niet meer mag duren dan 12hours voor 15UDs, dat wil zeggen mag niet meer dan 40 min-UD duren.
-> * Stel het cluster **reliabilityLevel = Platinum** in om ervoor te zorgen dat het cluster het scenario van één zone in het vervolg houdt.
+> * Openbare IP en Load Balancer resources moeten gebruikmaken van de Standard-SKU, zoals eerder in het artikel is beschreven.
+> * De eigenschap multipleAvailabilityZones op het knooppuntType kan alleen worden gedefinieerd op het moment dat nodeType wordt gemaakt en kan later niet meer worden gewijzigd. Bestaande nodeTypes kunnen daarom niet worden geconfigureerd met deze eigenschap.
+> * Wanneer 'sfZonalUpgradeMode' wordt weggelaten of ingesteld op 'Hiërarchisch', zullen de cluster- en toepassingsimplementaties langzamer zijn omdat er meer upgradedomeinen in het cluster zijn. Het is belangrijk om de time-outs van het upgradebeleid correct aan te passen voor de duur van de upgrade voor 15 upgradedomeinen. Het upgradebeleid voor zowel de app als het cluster moet worden bijgewerkt om ervoor te zorgen dat de implementatie de time-outs voor de implementatie van Azure Resource Serbice van 12 uur niet overschrijdt. Dit betekent dat de implementatie niet langer dan 12 uur mag duren voor 15UD's, dat wil zeggen mag niet meer dan 40 minuten/UD duren.
+> * Stel de **clusterbetrouwbaarheidLevel =Eigenschappen** in om ervoor te zorgen dat het cluster het één zone-omlaag scenario overleeft.
 
 >[!NOTE]
-> Voor best practice wordt aangeraden sfZonalUpgradeMode ingesteld op hiërarchisch of worden wegge laten. De implementatie volgt de zonegebonden-distributie van Vm's die van invloed zijn op een kleinere hoeveelheid replica's en/of exemplaren waardoor ze veiliger zijn.
-> Gebruik sfZonalUpgradeMode ingesteld op parallel als de implementatie snelheid een prioriteit heeft of alleen stateless werk belasting wordt uitgevoerd op het knooppunt type met meerdere AZ. Dit leidt ertoe dat de UDe Walk parallel in alle AZ-activiteiten plaatsvindt.
+> Voor best practice wordt aangeraden sfZonalUpgradeMode in te stellen op Hiërarchisch of weg te laten. De implementatie volgt de zonale distributie van VM's die invloed hebben op een kleinere hoeveelheid replica's en/of instanties, waardoor ze veiliger worden.
+> Gebruik sfZonalUpgradeMode ingesteld op Parallel als de implementatiesnelheid een prioriteit is of als alleen staatloze workloads worden uitgevoerd op het knooppunttype met meerdere AZ's. Dit leidt ertoe dat de UD-walk parallel wordt uitgevoerd in alle AZ's.
 
-### <a name="migration-to-the-node-type-with-multiple-availability-zones"></a>Migratie naar het knooppunt type met meerdere Beschikbaarheidszones
-Voor alle migratie scenario's moet een nieuw nodeType worden toegevoegd waarvoor meerdere beschikbaarheids zones worden ondersteund. Een bestaande nodeType kan niet worden gemigreerd om meerdere zones te ondersteunen.
-In dit artikel [vindt](./service-fabric-scale-up-primary-node-type.md) u gedetailleerde stappen voor het toevoegen van een nieuw NodeType en het toevoegen van de andere resources die vereist zijn voor het nieuwe NodeType, zoals de IP-en lb-resources. In dit artikel wordt ook nu beschreven hoe u het bestaande nodeType buiten gebruik stelt nadat het nodeType met meerdere beschikbaarheids zones aan het cluster is toegevoegd.
+### <a name="migration-to-the-node-type-with-multiple-availability-zones"></a>Migratie naar het knooppunttype met meerdere Beschikbaarheidszones
+Voor alle migratiescenario's moet een nieuw knooppuntType worden toegevoegd, waarvoor meerdere beschikbaarheidszones worden ondersteund. Een bestaand knooppunttype kan niet worden gemigreerd om meerdere zones te ondersteunen.
+In dit [artikel worden](./service-fabric-scale-up-primary-node-type.md) de gedetailleerde stappen beschreven voor het toevoegen van een nieuw knooppunttype en het toevoegen van de andere resources die vereist zijn voor het nieuwe knooppunttype, zoals de IP- en LB-resources. In hetzelfde artikel wordt nu ook beschreven hoe u het bestaande knooppunttype uit gebruik kunt stellen nadat het knooppuntType met meerdere beschikbaarheidszones is toegevoegd aan het cluster.
 
-* Migratie van een nodeType dat gebruikmaakt van basis LB en IP-bronnen: dit wordt [hier](#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) al beschreven voor de oplossing met één knooppunt type per AZ. 
-    Voor het nieuwe knooppunt type is het enige verschil dat er slechts één virtuele-machine schaalset is en 1 NodeType voor alle AZ in plaats van 1 elk per AZ.
-* Migratie van een nodeType dat gebruikmaakt van de standaard-SKU LB en IP-resources met NSG: Volg dezelfde procedure als hierboven, met de uitzonde ring dat het niet nodig is om nieuwe LB-, IP-en NSG-resources toe te voegen en dezelfde bronnen kunnen opnieuw worden gebruikt in het nieuwe nodeType.
+* Migratie van een knooppunttype dat gebruik maakt van lb- en IP-basisbronnen: dit wordt hier al beschreven voor de oplossing met één knooppunttype per AZ. [](#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) 
+    Voor het nieuwe knooppunttype is het enige verschil dat er slechts 1 virtuele-machineschaalset en 1 knooppunttype is voor alle AZ's in plaats van 1 elk per AZ.
+* Migratie van een knooppunttype dat gebruik maakt van de Standard SKU LB- en IP-resources met NSG: volg dezelfde procedure als hierboven beschreven, met uitzondering van dat er geen nieuwe LB-, IP- en NSG-resources hoeven toe te voegen en dat dezelfde resources opnieuw kunnen worden gebruikt in het nieuwe nodeType.
 
 
 [sf-architecture]: ./media/service-fabric-cross-availability-zones/sf-cross-az-topology.png

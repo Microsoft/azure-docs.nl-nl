@@ -1,52 +1,56 @@
 ---
-title: Waarschuwingen maken met SQL Insights (preview-versie)
-description: Waarschuwingen maken met SQL Insights in Azure Monitor
+title: Waarschuwingen maken met SQL-inzichten (preview)
+description: Waarschuwingen maken met SQL-inzichten in Azure Monitor
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2021
-ms.openlocfilehash: 5fe853ee0f7a113bfb8b0511744d9087f67927c4
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: bb42f74f6ac8487a93479bdf980c66ef87e8e742
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104609421"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107726858"
 ---
-# <a name="create-alerts-with-sql-insights-preview"></a>Waarschuwingen maken met SQL Insights (preview-versie)
-SQL Insights bevat een reeks sjablonen voor waarschuwings regels die u kunt gebruiken om [waarschuwings regels te maken in azure monitor](../alert/../alerts/alerts-overview.md) voor algemene SQL-problemen. De waarschuwings regels in SQL Insights zijn logboek waarschuwings regels op basis van prestatie gegevens die zijn opgeslagen in de *InsightsMetrics* -tabel in azure monitor logs.  
+# <a name="create-alerts-with-sql-insights-preview"></a>Waarschuwingen maken met SQL-inzichten (preview)
+SQL-inzichten bevat een set waarschuwingsregelsjablonen die u kunt gebruiken om waarschuwingsregels te maken [in](../alert/../alerts/alerts-overview.md) Azure Monitor voor veelvoorkomende SQL-problemen. De waarschuwingsregels in SQL Insights zijn waarschuwingsregels voor logboeken op basis van prestatiegegevens die zijn opgeslagen in de *tabel InsightsMetrics* in Azure Monitor Logboeken.  
 
 > [!NOTE]
-> Als u aanvragen voor meer SQL Insights-waarschuwings regel sjablonen hebt, verzendt u feedback via de koppeling onder aan deze pagina of gebruikt u de koppeling voor de SQL Insights-feedback in de Azure Portal.
+> Als u een waarschuwing wilt maken voor SQL-inzichten met behulp van een Resource Manager-sjabloon, Resource Manager [voorbeelden van SQL-sjablonen voor SQL-inzichten.](resource-manager-sql-insights.md#create-an-alert-rule-for-sql-insights)
 
-## <a name="enable-alert-rules"></a>Waarschuwings regels inschakelen 
-Gebruik de volgende stappen om de waarschuwingen in Azure Monitor van de Azure Portal in te scha kelen.De waarschuwings regels die worden gemaakt, zijn van toepassing op alle SQL-resources die onder het geselecteerde bewakings profiel worden bewaakt.  Wanneer een waarschuwings regel wordt geactiveerd, wordt deze geactiveerd op het specifieke SQL-exemplaar of in de opgegeven Data Base.
 
 > [!NOTE]
-> U kunt ook aangepaste [waarschuwings regels voor logboeken](../alerts/alerts-log.md) maken door query's uit te voeren op de gegevens sets in de *InsightsMetrics* -tabel en deze query's vervolgens als waarschuwings regel op te slaan. 
+> Als u aanvragen hebt voor meer sjablonen voor SQL Insights-waarschuwingsregel, kunt u feedback verzenden via de koppeling onder aan deze pagina of met behulp van de koppeling SQL Insights-feedback in de Azure Portal.
 
-Selecteer **SQL (preview)** in het gedeelte **inzichten** van het menu Azure monitor van de Azure Portal. Klik op **waarschuwingen**
+## <a name="enable-alert-rules"></a>Waarschuwingsregels inschakelen 
+Gebruik de volgende stappen om de waarschuwingen in de Azure Monitor in te Azure Portal.De waarschuwingsregels die worden gemaakt, vallen binnen het bereik van alle SQL-resources die worden bewaakt onder het geselecteerde bewakingsprofiel.  Wanneer een waarschuwingsregel wordt geactiveerd, wordt deze geactiveerd op het specifieke SQL-exemplaar of de specifieke database.
 
-:::image type="content" source="media/sql-insights-alerts/alerts-button.png" alt-text="Knop waarschuwingen":::
+> [!NOTE]
+> U kunt ook aangepaste regels voor [logboekwaarschuwingen](../alerts/alerts-log.md) maken door query's uit te stellen op de gegevenssets in de *tabel InsightsMetrics* en deze query's vervolgens op te slaan als waarschuwingsregel. 
 
-Het deel venster **waarschuwingen** wordt weer gegeven aan de rechter kant van de pagina. Standaard worden geactiveerde waarschuwingen voor SQL-resources in het geselecteerde bewakings profiel weer gegeven op basis van de waarschuwings regels die u al hebt gemaakt. Selecteer **waarschuwings sjablonen**, waarin de lijst met beschik bare sjablonen wordt weer gegeven die u kunt gebruiken om een waarschuwings regel te maken.
+Selecteer **SQL (preview)** in **de sectie Inzichten** van het Azure Monitor menu in de Azure Portal. Klik op **Waarschuwingen**
 
-:::image type="content" source="media/sql-insights-alerts/alert-templates.png" alt-text="Waarschuwings sjablonen":::
+:::image type="content" source="media/sql-insights-alerts/alerts-button.png" alt-text="De knop Waarschuwingen":::
 
-Controleer op de pagina **waarschuwings regel maken** de standaard instellingen voor de regel en bewerk deze indien nodig. U kunt ook een [actie groep](../alerts/action-groups.md) selecteren om meldingen en acties te maken wanneer de waarschuwings regel wordt geactiveerd. Klik op **waarschuwings regel inschakelen** om de waarschuwings regel te maken zodra u alle bijbehorende eigenschappen hebt gecontroleerd.
+Het **deelvenster** Waarschuwingen wordt aan de rechterkant van de pagina geopend. Standaard worden geactiveerde waarschuwingen voor SQL-resources weergegeven in het geselecteerde bewakingsprofiel op basis van de waarschuwingsregels die u al hebt gemaakt. Selecteer **Waarschuwingssjablonen.** Hiermee wordt de lijst met beschikbare sjablonen weergegeven die u kunt gebruiken om een waarschuwingsregel te maken.
+
+:::image type="content" source="media/sql-insights-alerts/alert-templates.png" alt-text="Waarschuwingssjablonen":::
+
+Controleer op **de pagina Waarschuwingsregel** maken de standaardinstellingen voor de regel en bewerk deze zo nodig. U kunt ook een [actiegroep selecteren om](../alerts/action-groups.md) meldingen en acties te maken wanneer de waarschuwingsregel wordt geactiveerd. Klik **op Waarschuwingsregel inschakelen** om de waarschuwingsregel te maken nadat u alle eigenschappen ervan hebt geverifieerd.
 
 
-:::image type="content" source="media/sql-insights-alerts/alert-rule.png" alt-text="Pagina waarschuwings regels":::
+:::image type="content" source="media/sql-insights-alerts/alert-rule.png" alt-text="Pagina Waarschuwingsregels":::
 
-Klik op **waarschuwings regel implementeren** als u de waarschuwings regel onmiddellijk wilt implementeren. Klik op **sjabloon weer geven** als u de regel sjabloon wilt weer geven voordat u deze daad werkelijk implementeert.
+Als u de waarschuwingsregel onmiddellijk wilt implementeren, klikt u **op Waarschuwingsregel implementeren.** Klik **op Sjabloon weergeven** als u de regelsjabloon wilt weergeven voordat u deze daadwerkelijk implementeert.
 
-:::image type="content" source="media/sql-insights-alerts/alert-rule-deploy.png" alt-text="Waarschuwings regel implementeren":::
+:::image type="content" source="media/sql-insights-alerts/alert-rule-deploy.png" alt-text="Waarschuwingsregel implementeren":::
 
-Als u ervoor kiest om de sjablonen weer te geven, selecteert u **implementeren** op de pagina sjabloon om de waarschuwings regel te maken.
+Als u ervoor kiest om de sjablonen weer te geven, **selecteert u Implementeren** op de sjabloonpagina om de waarschuwingsregel te maken.
 
-:::image type="content" source="media/sql-insights-alerts/view-template-deploy.png" alt-text="Implementeren vanuit weergave sjabloon":::
+:::image type="content" source="media/sql-insights-alerts/view-template-deploy.png" alt-text="Implementeren vanuit weergavesjabloon":::
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [waarschuwingen vindt u in azure monitor](../alerts/alerts-overview.md).
+Meer informatie over [waarschuwingen in Azure Monitor](../alerts/alerts-overview.md).
 

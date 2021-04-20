@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 07/27/2020
-ms.openlocfilehash: ea097119111d5dbd5eba3c11aba549d201186e3f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 394b3390386c60e2a64f52dd944dfcdb0d33951e
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104592180"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727020"
 ---
 # <a name="what-is-azure-sql"></a>Wat is Azure SQL? 
 [!INCLUDE[appliesto-asf](includes/appliesto-asf.md)]
@@ -36,7 +36,7 @@ Als u geen ervaring hebt met Azure SQL, bekijk dan de video *Wat is Azure SQL* u
 > [!VIDEO https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/What-is-Azure-SQL-3-of-61/player]
 
 > [!TIP]
-> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://microsoft.qualtrics.com/jfe/form/SV_ePOznHhP4gDKfGu?channel=456).
+> Hoe kunnen we Azure SQL verbeteren? [Neem de enquête .](https://microsoft.qualtrics.com/jfe/form/SV_ePOznHhP4gDKfGu?channel=456)
 
 ## <a name="overview"></a>Overzicht
 
@@ -98,18 +98,19 @@ Azure SQL Database biedt de volgende implementatieopties:
 ### <a name="sql-server-on-azure-vm"></a>SQL Server op virtuele Azure-machine
 
 [SQL Server op een virtuele Azure-machine](virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) valt in de branchecategorie *Infrastructure-as-a-Service (IaaS)* en stelt u in staat SQL Server uit te voeren binnen een volledig beheerde virtuele machine (VM) in Azure. 
-- Geschikt voor migraties en toepassingen waarvoor toegang op besturingssysteemniveau is vereist. Virtuele SQL-machines in Azure zijn klaar voor lift-and-shift voor bestaande toepassingen waarvoor een snelle migratie naar de cloud met minimale of geen wijzigingen nodig is. Virtuele SQL-machines bieden volledige beheermogelijkheden voor de SQL Server-instantie en het onderliggende besturingssysteem voor migratie naar Azure. 
-- Snelle ontwikkelings- en testscenario's als u geen on-premises SQL Server-hardware wilt kopen die niet bestemd is voor productie. Virtuele SQL-machines worden ook uitgevoerd op gestandaardiseerde hardware die eigendom is van en die wordt gehost en beheerd door Microsoft. Wanneer u virtuele SQL-machines gebruikt, kunt u eenvoudig een bestaande licentie gebruiken, of kunt u een SQL Server-licentie gebruiken die al is opgenomen in een installatiekopie van SQL Server en alleen betalen voor wanneer u deze gebruikt. U kunt de VM ook stoppen of hervatten als dat nodig is. 
 - SQL Server die is geïnstalleerd en wordt gehost in de cloud, wordt uitgevoerd op virtuele Windows Server- of Linux-machines die worden uitgevoerd in Azure, ook wel bekend als een infrastructuur als een service (IaaS). Virtuele SQL-machines zijn een goede optie voor het migreren van on-premises SQL Server-databases en -toepassingen zonder databases te wijzigen. Alle recente versies en edities van SQL Server zijn beschikbaar voor installatie op een virtuele IaaS-machine. 
-
-    Het belangrijkste verschil van SQL Database en SQL Managed Instance is dat met SQL Server op virtuele Azure-machines volledige controle over de database-engine mogelijk is. U kunt kiezen wanneer u het onderhoud of de toepassing van een patch wilt starten, het herstelmodel wijzigen in eenvoudig of met bulksgewijs geregistreerde wijzigingen, de service onderbreken of starten wanneer dit nodig is en de SQL Server-database-engine volledig aanpassen. Deze extra beheermogelijkheden brengen met zich mee dat u verantwoordelijk bent voor het beheer van de virtuele machine.
+- Geschikt voor migraties en toepassingen waarvoor toegang op besturingssysteemniveau is vereist. Virtuele SQL-machines in Azure zijn klaar voor lift-and-shift voor bestaande toepassingen waarvoor een snelle migratie naar de cloud met minimale of geen wijzigingen nodig is. Virtuele SQL-machines bieden volledige beheermogelijkheden voor de SQL Server-instantie en het onderliggende besturingssysteem voor migratie naar Azure. 
+- Het belangrijkste verschil van SQL Database en SQL Managed Instance is dat met SQL Server op virtuele Azure-machines volledige controle over de database-engine mogelijk is. U kunt kiezen wanneer u het onderhoud of de toepassing van een patch wilt starten, het herstelmodel wijzigen in eenvoudig of met bulksgewijs geregistreerde wijzigingen, de service onderbreken of starten wanneer dit nodig is en de SQL Server-database-engine volledig aanpassen. Deze extra beheermogelijkheden brengen met zich mee dat u verantwoordelijk bent voor het beheer van de virtuele machine.
+- Snelle ontwikkelings- en testscenario's als u geen on-premises SQL Server-hardware wilt kopen die niet bestemd is voor productie. Virtuele SQL-machines worden ook uitgevoerd op gestandaardiseerde hardware die eigendom is van en die wordt gehost en beheerd door Microsoft. Wanneer u virtuele SQL-machines gebruikt, kunt u eenvoudig een bestaande licentie gebruiken, of kunt u een SQL Server-licentie gebruiken die al is opgenomen in een installatiekopie van SQL Server en alleen betalen voor wanneer u deze gebruikt. U kunt de VM ook stoppen of hervatten als dat nodig is. 
 - Geoptimaliseerd om bestaande toepassingen te migreren naar Azure of bestaande on-premises toepassingen uit te breiden naar de cloud in hybride implementaties. Bovendien kunt u SQL Server op een virtuele machine gebruiken om traditionele SQL Server-toepassingen te ontwikkelen en te testen. Met virtuele SQL-machines hebt u de volledige beheerdersrechten van een speciale instantie van SQL Server en een cloud-VM. Het is een ideale keuze als een organisatie al IT-bronnen beschikbaar heeft voor het onderhouden van de virtuele machines. Met deze mogelijkheden kunt u een aangepast systeem bouwen voor de specifieke prestaties en beschikbaarheidsvereisten van uw toepassing.
 
-Andere verschillen vindt u in de volgende tabel, maar *zowel SQL Database als SQL Managed Instance zijn geoptimaliseerd om de totale beheerkosten te verlagen tot het minimum voor het inrichten en beheren van veel databases.* Lopende beheerkosten worden verminderd omdat u geen virtuele machines, besturingssysteem of databasesoftware hoeft te beheren. U hoeft upgrades, hoge beschikbaarheid of [back-ups](database/automated-backups-overview.md) niet te beheren. 
-
-Over het algemeen kunnen SQL Database en SQL Managed Instance het aantal databases dat wordt beheerd door één IT- of ontwikkelingsresource aanzienlijk verhogen. [Elastische pools](database/elastic-pool-overview.md) ondersteunen ook SaaS-multitenant-toepassingsarchitecturen met functies zoals tenantisolatie en de mogelijkheid om te schalen om de kosten te verlagen door resources te delen tussen databases. [SQL Managed Instance](managed-instance/sql-managed-instance-paas-overview.md) biedt ondersteuning voor functies voor het bereik van de instantie, waardoor bestaande toepassingen eenvoudig kunnen worden gemigreerd en resources worden gedeeld tussen databases.
 
 ### <a name="comparison-table"></a>Vergelijkingstabel
+
+Aanvullende verschillen worden vermeld in de volgende tabel, maar zowel SQL Database als SQL Managed Instance zijn geoptimaliseerd om de totale beheerkosten tot een minimum te beperken voor het inrichten en beheren van veel *databases.* Lopende beheerkosten worden verminderd omdat u geen virtuele machines, besturingssysteem of databasesoftware hoeft te beheren. U hoeft upgrades, hoge beschikbaarheid of [back-ups](database/automated-backups-overview.md) niet te beheren. 
+
+Over het algemeen kunnen SQL Database en SQL Managed Instance het aantal databases dat wordt beheerd door één IT- of ontwikkelingsresource aanzienlijk verhogen. [Elastische pools](database/elastic-pool-overview.md) ondersteunen ook SaaS-multitenant-toepassingsarchitecturen met functies zoals tenantisolatie en de mogelijkheid om te schalen om de kosten te verlagen door resources te delen tussen databases. [SQL Managed Instance](managed-instance/sql-managed-instance-paas-overview.md) biedt ondersteuning voor functies voor het bereik van de instantie, waardoor bestaande toepassingen eenvoudig kunnen worden gemigreerd en resources worden gedeeld tussen databases. Terwijl SQL Server [azure-VM's](virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) een ervaring bieden die het meest lijkt op de on-premises omgeving waar ze bekend mee zijn. 
+
 
 | Azure SQL Database | Azure SQL Managed Instance | SQL Server op virtuele Azure-machine |
 | :--- | :--- | :--- |

@@ -87,6 +87,8 @@
               href: app/resource-manager-web-app.md
             - name: Azure Functions
               href: app/resource-manager-function-app.md
+        - name: Containerinzichten
+          href: containers/resource-manager-container-insights.md
         - name: Gegevensverzamelingsregels
           href: agents/resource-manager-data-collection-rules.md
         - name: Diagnostische instellingen
@@ -95,10 +97,10 @@
           href: logs/resource-manager-workspace.md
         - name: Logboekquery's
           href: logs/resource-manager-log-queries.md
+        - name: SQL-inzichten
+          href: insights/resource-manager-sql-insights.md
         - name: Werkmappen
           href: visualize/resource-manager-workbooks.md
-        - name: Containerinzichten
-          href: containers/resource-manager-container-insights.md
         - name: VM-inzichten
           href: vm/resource-manager-vminsights.md
     - name: Azure CLI

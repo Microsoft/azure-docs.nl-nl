@@ -3,16 +3,15 @@ title: Hoge beschikbaarheid van Azure Large Instances voor SAP op RHEL
 description: Meer informatie over het automatiseren van SAP HANA database-failover met behulp van een Pacemaker-cluster in Red Hat Enterprise Linux.
 author: jaawasth
 ms.author: jaawasth
-ms.service: virtual-machines-linux
-ms.subservice: workloads
+ms.service: virtual-machines-sap
 ms.topic: how-to
-ms.date: 02/08/2021
-ms.openlocfilehash: dc27fd67a3801815464ecd37fea567c02dee6e49
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.date: 04/19/2021
+ms.openlocfilehash: f7b6e6efbbd17655b4f68d79ac26ee34ae754a3b
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/19/2021
-ms.locfileid: "107719039"
+ms.locfileid: "107728442"
 ---
 # <a name="azure-large-instances-high-availability-for-sap-on-rhel"></a>Hoge beschikbaarheid van Azure Large Instances voor SAP op RHEL
 
@@ -33,38 +32,28 @@ De volgende tabel bevat de hostnamen die in dit artikel worden gebruikt. De code
 
 Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instellen om een vertrouwensrelatie tussen knooppunten tot stand te brengen.
 
-1. Gebruik de volgende opdrachten om identieke te `/etc/hosts` maken op beide knooppunten.
+1. Gebruik de volgende opdrachten om identiek te maken `/etc/hosts` op beide knooppunten.
 
     ```
     root@sollabdsm35 ~]# cat /etc/hosts
     27.0.0.1 localhost localhost.azlinux.com
-    0.60.0.35 sollabdsm35.azlinux.com sollabdsm35 node1
-    0.60.0.36 sollabdsm36.azlinux.com sollabdsm36 node2
-    0.20.251.150 sollabdsm36-st
-
+    10.60.0.35 sollabdsm35.azlinux.com sollabdsm35 node1
+    10.60.0.36 sollabdsm36.azlinux.com sollabdsm36 node2
+    10.20.251.150 sollabdsm36-st
     10.20.251.151 sollabdsm35-st
-
-    
-
     10.20.252.151 sollabdsm36-back
-
     10.20.252.150 sollabdsm35-back
-
-    
-
     10.20.253.151 sollabdsm36-node
-
     10.20.253.150 sollabdsm35-node
-
     ```
 
 2.  De SSH-sleutels maken en uitwisselen.
     1. SSH-sleutels genereren.
 
-       ```
+    ```
        [root@sollabdsm35 ~]# ssh-keygen -t rsa -b 1024
        [root@sollabdsm36 ~]# ssh-keygen -t rsa -b 1024
-       ```
+    ```
     2. Kopieer sleutels naar de andere hosts voor SSH zonder wachtwoord.
     
        ```
@@ -82,8 +71,6 @@ Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instelle
 
     SELINUX=disabled
 
-    
-
     [root@sollabdsm36 ~]# vi /etc/selinux/config
 
     ...
@@ -97,8 +84,6 @@ Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instelle
     [root@sollabdsm35 ~]# sestatus
 
     SELinux status: disabled
-
-    
 
     [root@sollabdsm36 ~]# sestatus
 
@@ -134,8 +119,6 @@ Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instelle
     
         Ref time (UTC) : Thu Jan 28 18:46:10 2021
     
-        
-    
         chronyc sources
     
         210 Number of sources = 8
@@ -162,7 +145,6 @@ Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instelle
         ```
         node1:~ # yum update
         ```
- 
 
 7. Installeer de SAP HANA- en RHEL-HA-opslagplaatsen.
 
@@ -176,11 +158,11 @@ Voordat u het cluster kunt configureren, moet u SSH-sleuteluitwisseling instelle
     ```
       
 
-8. Installeer de hulpprogramma's Pacemaker, SBD, OpenIPMI, ipmitools en fencing_sbd op alle knooppunten.
+8. Installeer de hulpprogramma's Pacemaker, SBD, OpenIPMI, ipmitool en fencing_sbd op alle knooppunten.
 
     ``` 
     yum install pcs sbd fence-agent-sbd.x86_64 OpenIPMI
-    ipmitools
+    ipmitool
     ```
 
   ## <a name="configure-watchdog"></a>Watchdog configureren
@@ -202,8 +184,6 @@ In deze sectie leert u hoe u Watchdog configureert. In deze sectie worden dezelf
 
     Active: inactive (dead)
 
-    
-
     Nov 28 23:02:40 sollabdsm35 systemd[1]: Collecting watchdog.service
 
     ```
@@ -211,7 +191,6 @@ In deze sectie leert u hoe u Watchdog configureert. In deze sectie worden dezelf
 2. De standaard-Linux-watchdog, die tijdens de installatie wordt geïnstalleerd, is de iTCO-watchdog die niet wordt ondersteund door UCS- en HPE SDFlex-systemen. Daarom moet deze watchdog worden uitgeschakeld.
     1. De verkeerde watchdog is geïnstalleerd en geladen op het systeem:
        ```
-   
        sollabdsm35:~ # lsmod |grep iTCO
    
        iTCO_wdt 13480 0
@@ -228,7 +207,6 @@ In deze sectie leert u hoe u Watchdog configureert. In deze sectie worden dezelf
         
     3. Om ervoor te zorgen dat het stuurprogramma niet wordt geladen tijdens de volgende keer opstarten van het systeem, moet het stuurprogramma worden geblokkeerd. Als u de iTCO-modules wilt blokkeren, voegt u het volgende toe aan het einde van het `50-blacklist.conf` bestand:
        ```
-   
        sollabdsm35:~ # vi /etc/modprobe.d/50-blacklist.conf
    
         unload the iTCO watchdog modules
@@ -266,8 +244,6 @@ In deze sectie leert u hoe u Watchdog configureert. In deze sectie worden dezelf
 3. Het vereiste apparaat is standaard /dev/watchdog wordt niet gemaakt.
 
     ```
-    No watchdog device was created
-
     sollabdsm35:~ # ls -l /dev/watchdog
 
     ls: cannot access /dev/watchdog: No such file or directory
@@ -332,7 +308,7 @@ In deze sectie leert u hoe u Watchdog configureert. In deze sectie worden dezelf
 ## <a name="sbd-configuration"></a>SBD-configuratie
 In deze sectie leert u hoe u SBD configureert. In deze sectie worden dezelfde twee hosts gebruikt, en , waarnaar aan het begin van `sollabdsm35` `sollabdsm36` dit artikel wordt verwezen.
 
-1.  Zorg ervoor dat de iSCSI- of FC-schijf zichtbaar is op beide knooppunten. In dit voorbeeld wordt een op FC gebaseerd SBD-apparaat gebruikt. Zie de referentiedocumentatie voor meer informatie [](http://www.linux-ha.org/wiki/SBD_Fencing)over SBD-fencing.
+1.  Zorg ervoor dat de iSCSI- of FC-schijf zichtbaar is op beide knooppunten. In dit voorbeeld wordt een op FC gebaseerd SBD-apparaat gebruikt. Zie Design Guidance for RHEL High Availability Clusters - SBD Considerations (Ontwerp richtlijnen voor RHEL-clusters met hoge beschikbaarheid [- SBD-overwegingen) voor meer informatie over SBD-fencing.](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faccess.redhat.com%2Farticles%2F2941601&data=04%7C01%7Cralf.klahr%40microsoft.com%7Cd49d7a3e3871449cdecc08d8c77341f1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637478645171139432%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=c%2BUAC5gmgpFNWZCQFfiqcik8CH%2BmhH2ly5DsOV1%2FE5M%3D&reserved=0)
 2.  De LUN-ID moet identiek zijn op alle knooppunten.
   
 3.  Controleer de status van meerdere paden voor het SBD-apparaat.
@@ -402,18 +378,15 @@ In deze sectie leert u hoe u SBD configureert. In deze sectie worden dezelfde tw
 7.  Voeg het SBD-apparaat toe aan het SBD-configuratiebestand.
 
     ```
-    \# SBD_DEVICE specifies the devices to use for exchanging sbd messages
-
-    \# and to monitor. If specifying more than one path, use ";" as
-
-    \# separator.
-
-    \#
+    # SBD_DEVICE specifies the devices to use for exchanging sbd messages
+    # and to monitor. If specifying more than one path, use ";" as
+    # separator.
+    #
 
     SBD_DEVICE="/dev/mapper/3600a098038304179392b4d6c6e2f4b62"
-    \## Type: yesno
+    ## Type: yesno
      Default: yes
-     \# Whether to enable the pacemaker integration.
+     # Whether to enable the pacemaker integration.
     SBD_PACEMAKER=yes
     ```
 
@@ -443,22 +416,16 @@ In deze sectie initialiseert u het cluster. In deze sectie worden dezelfde twee 
     ```
     systemctl start pcsd
     ```
-  
-  
 
 5.  Voer de clusterverificatie alleen uit vanaf knooppunt1.
 
     ```
     pcs cluster auth sollabdsm35 sollabdsm36
 
-
-
         Username: hacluster
 
             Password:
-
             sollabdsm35.localdomain: Authorized
-
             sollabdsm36.localdomain: Authorized
 
      ``` 
@@ -509,20 +476,16 @@ In deze sectie initialiseert u het cluster. In deze sectie worden dezelfde twee 
 
 8. Als één knooppunt niet lid wordt van het cluster, controleert u of de firewall nog steeds wordt uitgevoerd.
 
-  
-
 9. Het SBD-apparaat maken en inschakelen
     ```
     pcs stonith create SBD fence_sbd devices=/dev/mapper/3600a098038303f4c467446447a
     ```
   
-
 10. Stop het cluster om de clusterservices opnieuw op te starten (op alle knooppunten).
 
     ```
     pcs cluster stop --all
     ```
-
 
 11. Start de clusterservices opnieuw (op alle knooppunten).
 
@@ -631,7 +594,7 @@ In deze sectie initialiseert u het cluster. In deze sectie worden dezelfde twee 
 
     Present Countdown: 19 sec
 
-    [root@sollabdsm351 ~] lsof /dev/watchdog
+    [root@sollabdsm35 ~] lsof /dev/watchdog
 
     COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME
 
@@ -670,6 +633,7 @@ In deze sectie initialiseert u het cluster. In deze sectie worden dezelfde twee 
 19. Voor de rest van de SAP HANA kunt u STONITH uitschakelen door het volgende in te stellen:
 
    * pcs-eigenschappenset `stonith-enabled=false`
+   * Het is soms eenvoudiger om STONITH gedeactiveerd te houden tijdens de installatie van het cluster, omdat u onverwacht opnieuw opstarten van het systeem voorkomt.
    * Deze parameter moet worden ingesteld op true voor productief gebruik. Als deze parameter niet is ingesteld op true, wordt het cluster niet ondersteund.
    * pcs-eigenschappenset `stonith-enabled=true`
 
@@ -677,7 +641,7 @@ In deze sectie initialiseert u het cluster. In deze sectie worden dezelfde twee 
 
 In deze sectie integreert u HANA in het cluster. In deze sectie worden dezelfde twee hosts, `sollabdsm35` en , gebruikt waarnaar aan het begin van dit artikel wordt `sollabdsm36` verwezen.
 
-Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossing die is geoptimaliseerd voor kosten, waarbij u het secundaire systeem kunt gebruiken om het QAS-systeem uit te voeren. We raden deze methode niet aan omdat er geen systeem meer is om updates te testen op de clustersoftware, het besturingssysteem of HANA, en configuratie-updates kunnen leiden tot ongeplande downtime van het PRD-systeem. Als het PRD-systeem moet worden geactiveerd op het secundaire systeem, moet de QAS bovendien worden afgesloten op het secundaire knooppunt. De tweede optie is om het QAS-systeem op één cluster te installeren en een tweede cluster voor de PRD te gebruiken. Met deze optie kunt u ook alle onderdelen testen voordat ze in productie worden genomen. In dit artikel wordt beschreven hoe u de tweede optie configureert.
+Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossing die is geoptimaliseerd voor kosten, waarbij u het secundaire systeem kunt gebruiken om het QAS-systeem uit te voeren. We raden deze methode niet aan omdat er geen systeem over blijft om updates te testen op de clustersoftware, het besturingssysteem of HANA, en configuratie-updates kunnen leiden tot ongeplande downtime van het PRD-systeem. Als het PRD-systeem moet worden geactiveerd op het secundaire systeem, moet de QAS bovendien worden afgesloten op het secundaire knooppunt. De tweede optie is om het QAS-systeem op één cluster te installeren en een tweede cluster voor de PRD te gebruiken. Met deze optie kunt u ook alle onderdelen testen voordat ze in productie worden genomen. In dit artikel wordt beschreven hoe u de tweede optie configureert.
 
 
 * Dit proces is een build van de RHEL-beschrijving op de pagina:
@@ -693,7 +657,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
    
        * su - hr2adm
    
-       * hdbsql -u system -p SAPhana10 -i 00 "select value from
+       * hdbsql -u system -p $YourPass -i 00 "select value from
        "SYS"."M_INIFILE_CONTENTS" where key='log_mode'"
    
        
@@ -704,7 +668,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
        ```
     2. SAP HANA systeemreplicatie werkt alleen nadat de eerste back-up is uitgevoerd. Met de volgende opdracht maakt u een eerste back-up in de `/tmp/` map . Selecteer een correct back-upbestandssysteem voor de database. 
        ```
-       * hdbsql -i 00 -u system -p SAPhana10 "BACKUP DATA USING FILE
+       * hdbsql -i 00 -u system -p $YourPass "BACKUP DATA USING FILE
        ('/tmp/backup')"
    
    
@@ -721,18 +685,14 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
    
        -rw-r----- 1 hr2adm sapsys 1996496896 Oct 26 23:31 backup_databackup_3_1
    
-       ```
-    
+       ```  
 
     3. Back-up maken van alle databasecontainers van deze database.
-       ```
+       ``` 
+       * hdbsql -i 00 -u system -p $YourPass -d SYSTEMDB "BACKUP DATA USING
+       FILE ('/tmp/sydb')"     
    
-       * hdbsql -i 00 -u system -p SAPhana10 -d SYSTEMDB "BACKUP DATA USING
-       FILE ('/tmp/sydb')"
-   
-       
-   
-       * hdbsql -i 00 -u system -p SAPhana10 -d SYSTEMDB "BACKUP DATA FOR HR2
+       * hdbsql -i 00 -u system -p $YourPass -d SYSTEMDB "BACKUP DATA FOR HR2
        USING FILE ('/tmp/rh2')"
    
        ```
@@ -959,7 +919,7 @@ Er zijn twee opties voor het integreren van HANA. De eerste optie is een oplossi
 
 #### <a name="log-replication-mode-description"></a>Beschrijving van de logboekreplicatiemodus
 
-Zie de officiële SAP-documentatie voor meer informatie over de modus voor [logboekreplicatie.](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/c039a1a5b8824ecfa754b55e0caffc01.html)
+Zie de officiële SAP-documentatie voor meer informatie over de modus voor [logboekreplicatie.](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/627bd11e86c84ec2b9fcdf585d24011c.html)
   
 
 #### <a name="network-setup-for-hana-system-replication"></a>Netwerkinstallatie voor HANA-systeemreplicatie
@@ -982,7 +942,7 @@ In het volgende voorbeeld is `[system_replication_communication]listeninterface`
 
   
 
-### <a name="source-sap-ag-sap-hana-hrs-networking"></a>Bron-SAP AG SAP HANA HRS-netwerken
+Zie Network Configuration [for SAP HANA System Replication (Netwerkconfiguratie voor systeemreplicatie) voor meer informatie.](https://www.sap.com/documents/2016/06/18079a1c-767c-0010-82c7-eda71af511fa.html)
 
   
 
@@ -995,7 +955,7 @@ global.ini
 <ip-address_site>=<internal-host-name_site>
 
 
-## <a name="configure-sap-hana-in-a-pacemaker-cluster"></a>Een SAP HANA configureren in een Pacemaker-cluster
+## <a name="configure-sap-hana-in-a-pacemaker-cluster"></a>Een SAP HANA in een Pacemaker-cluster configureren
 In deze sectie leert u hoe u een SAP HANA configureert in een Pacemaker-cluster. In deze sectie worden dezelfde twee hosts en gebruikt waarnaar aan het begin van `sollabdsm35` `sollabdsm36` dit artikel wordt verwezen.
 
 Zorg ervoor dat u aan de volgende vereisten hebt voldaan:  
@@ -1024,9 +984,8 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
     [root@node1 ~]# pcs resource defaults migration-threshold=5000
     ```
 2.  Corosync configureren.
+    Zie How [can I configure my RHEL 7 High Availability Cluster with pacemaker and corosync (Hoe](https://access.redhat.com/solutions/1293523)kan ik mijn RHEL 7-cluster met hoge beschikbaarheid configureren met Pacemaker en corosync) voor meer informatie.
     ```
-    https://access.redhat.com/solutions/1293523 --> quorum information RHEL7
-
     cat /etc/corosync/corosync.conf
 
     totem {
@@ -1090,71 +1049,60 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
     ```
   
 
-1.  Maak een gekloonde SAPHanaTopology-resource.
-    ```
-    pcs resource create SAPHanaTopology_HR2_00 SAPHanaTopology SID=HR2 InstanceNumber=00 --clone clone-max=2 clone-node-max=1 interleave=true
-    SAPHanaTopology resource is gathering status and configuration of SAP
-    HANA System Replication on each node. SAPHanaTopology requires
-    following attributes to be configured.
+3.  Maak een gekloonde SAPHanaTopology-resource.
+    De SAPHanaTopology-resource verzamelt de status en configuratie van SAP HANA systeemreplicatie op elk knooppunt. SAPHanaTopology vereist dat de volgende kenmerken worden geconfigureerd.
+       ```
+       pcs resource create SAPHanaTopology_HR2_00 SAPHanaTopology SID=HR2 InstanceNumber=00 --clone clone-max=2 clone-node-max=1    interleave=true
+       ```
 
+    | Kenmerknaam | Description  |
+    |---|---|
+    | SID | SAP-systeem-id (SID) van SAP HANA installatie. Moet hetzelfde zijn voor alle knooppunten. |
+    | InstanceNumber | Idntifier van 2-cijferige SAP-instantie.|
 
-
-        Attribute Name Description
-
-        SID SAP System Identifier (SID) of SAP HANA installation. Must be
-    same for all nodes.
-
-    InstanceNumber 2-digit SAP Instance identifier.
-    pcs resource show SAPHanaTopology_HR2_00-clone
-
-    Clone: SAPHanaTopology_HR2_00-clone
-
+    * Resourcestatus
+       ```
+       pcs resource show SAPHanaTopology_HR2_00
+   
+       InstanceNumber 2-digit SAP Instance identifier.
+       pcs resource show SAPHanaTopology_HR2_00-clone
+   
+       Clone: SAPHanaTopology_HR2_00-clone
+   
         Meta Attrs: clone-max=2 clone-node-max=1 interleave=true
-
+   
         Resource: SAPHanaTopology_HR2_00 (class=ocf provider=heartbeat
-    type=SAPHanaTopology)
-
+       type=SAPHanaTopology)
+   
         Attributes: InstanceNumber=00 SID=HR2
-
+   
         Operations: monitor interval=60 timeout=60
-    (SAPHanaTopology_HR2_00-monitor-interval-60)
-
+       (SAPHanaTopology_HR2_00-monitor-interval-60)
+   
         start interval=0s timeout=180
-    (SAPHanaTopology_HR2_00-start-interval-0s)
-
+       (SAPHanaTopology_HR2_00-start-interval-0s)
+   
         stop interval=0s timeout=60 (SAPHanaTopology_HR2_00-stop-interval-0s)
+   
+       ```
 
-    ```
+4.  Maak een primaire/secundaire SAPHana-resource.
+    * De SAPHana-resource is verantwoordelijk voor het starten, stoppen en opnieuw SAP HANA database. Deze resource moet worden uitgevoerd als een primaire/secundaire clusterresource. De resource heeft de volgende kenmerken.
 
-3.  Maak een primaire/secundaire SAPHana-resource.
-
-    ```
-    SAPHana resource is responsible for starting, stopping and relocating the SAP HANA database. This resource must be run as a Primary/    Secondary cluster resource. The resource has the following attributes.
-
-    
-
-    Attribute Name Required? Default value Description
-
-    SID Yes None SAP System Identifier (SID) of SAP HANA installation. Must be same for all nodes.
-
-    InstanceNumber Yes none 2-digit SAP Instance identifier.
-
-    PREFER_SITE_TAKEOVER
-
-    no yes Should cluster prefer to switchover to secondary instance instead of restarting primary locally? ("no": Do prefer restart locally;   "yes": Do prefer takeover to remote site)
-
-    AUTOMATED_REGISTER no false Should the former SAP HANA primary be registered as secondary after takeover and DUPLICATE_PRIMARY_TIMEOUT?     ("false": no, manual intervention will be needed; "true": yes, the former primary will be registered by resource agent as secondary)
-
-    DUPLICATE_PRIMARY_TIMEOUT no 7200 Time difference (in seconds) needed between primary time stamps, if a dual-primary situation occurs. If   the time difference is less than the time gap, then the cluster holds one or both instances in a "WAITING" status. This is to give an   admin a chance to react on a failover. A failed former primary will be registered after the time difference is passed. After this   registration to the new primary all data will be overwritten by the system replication.
-    ```
-  
+| Kenmerknaam            | Vereist? | Standaardwaarde | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|---------------------------|-----------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SID                       | Yes       | Geen          | SAP-systeem-id (SID) van SAP HANA installatie. Moet hetzelfde zijn voor alle knooppunten.                                                                                                                                                                                                                                                                                                                                                                                       |
+| InstanceNumber            | Yes       | geen          | 2-cijferige SAP-exemplaar-id.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| PREFER_SITE_TAKEOVER      | nee        | ja           | Moet het cluster liever overschakelen naar een secundair exemplaar in plaats van het primaire exemplaar lokaal opnieuw op te starten? ('nee': start liever lokaal opnieuw op; "Ja": Liever overnemen dan externe site)                                                                                                                                                                                                                                                                                            |
+|                           |           |               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| AUTOMATED_REGISTER        | nee        | FALSE         | Moet de voormalige SAP HANA worden geregistreerd als secundaire na overname en DUPLICATE_PRIMARY_TIMEOUT? ("false": nee, handmatige interventie is nodig; "true": ja, de voormalige primaire wordt door de resourceagent geregistreerd als secundair)                                                                                                                                                                                                                        |
+| DUPLICATE_PRIMARY_TIMEOUT | nee        | 7200          | Tijdsverschil (in seconden) dat nodig is tussen de primaire tijdstempels, als er sprake is van een dual-primaire situatie. Als het tijdsverschil kleiner is dan het tijdsverschil, heeft het cluster een of beide exemplaren met de status WACHTENd. Dit is om een beheerder de kans te geven te reageren op een failover. Een mislukte primaire primaire wordt geregistreerd nadat het tijdsverschil is verstreken. Na deze registratie bij de nieuwe primaire replica worden alle gegevens overschreven door de systeemreplicatie. |
 
 5.  Maak de HANA-resource.
     ```
     pcs resource create SAPHana_HR2_00 SAPHana SID=HR2 InstanceNumber=00 PREFER_SITE_TAKEOVER=true DUPLICATE_PRIMARY_TIMEOUT=7200   AUTOMATED_REGISTER=true primary notify=true clone-max=2 clone-node-max=1 interleave=true
 
     pcs resource show SAPHana_HR2_00-primary
-
 
 
     Primary: SAPHana_HR2_00-primary
@@ -1252,10 +1200,8 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
     ```
 
 6.  Maak een resource voor een virtueel IP-adres.
-
+    Het cluster bevat het virtuele IP-adres om het primaire exemplaar van de SAP HANA. Hieronder vindt u een voorbeeldopdracht voor het maken van een IPaddr2-resource met IP-adres 10.7.0.84/24.
     ```
-    Cluster will contain Virtual IP address in order to reach the Primary instance of SAP HANA. Below is example command to create IPaddr2  resource with IP 10.7.0.84/24
-
     pcs resource create vip_HR2_00 IPaddr2 ip="10.7.0.84"
     pcs resource show vip_HR2_00
 
@@ -1272,23 +1218,21 @@ Zorg ervoor dat u aan de volgende vereisten hebt voldaan:
     ```
 
 7.  Beperkingen maken.
-
-    ```
-    For correct operation we need to ensure that SAPHanaTopology resources are started before starting the SAPHana resources and also that  the virtual IP address is present on the node where the Primary resource of SAPHana is running. To achieve this, the following 2    constraints need to be created.
-
-    pcs constraint order SAPHanaTopology_HR2_00-clone then SAPHana_HR2_00-primary symmetrical=false
-    pcs constraint colocation add vip_HR2_00 with primary SAPHana_HR2_00-primary 2000
-    ```
+    * Voor een juiste werking moeten we ervoor zorgen dat SAPHanaTopology-resources worden gestart voordat de SAPHana-resources worden gestart, en dat het virtuele IP-adres aanwezig is op het knooppunt waarop de primaire resource van SAPHana wordt uitgevoerd. Hiervoor moeten de volgende twee beperkingen worden gemaakt.
+       ```
+       pcs constraint order SAPHanaTopology_HR2_00-clone then SAPHana_HR2_00-primary symmetrical=false
+       pcs constraint colocation add vip_HR2_00 with primary SAPHana_HR2_00-primary 2000
+       ```
 
 ###  <a name="testing-the-manual-move-of-saphana-resource-to-another-node"></a>Het handmatig verplaatsen van een SAPHana-resource naar een ander knooppunt testen
 
 #### <a name="sap-hana-takeover-by-cluster"></a>(SAP Hana overnemen per cluster)
 
 
-Als u de overstap van de SAPHana-resource van het ene knooppunt naar het andere wilt testen, gebruikt u de onderstaande opdracht. Houd er rekening mee dat de optie niet moet worden gebruikt bij het uitvoeren van de volgende opdracht, omdat de `--primary` SAPHana-resource intern werkt.
+Gebruik de onderstaande opdracht om het verplaatsen van de SAPHana-resource van het ene knooppunt naar het andere te testen. Houd er rekening mee dat de optie niet moet worden gebruikt bij het uitvoeren van de volgende opdracht, omdat de `--primary` SAPHana-resource intern werkt.
 ```pcs resource move SAPHana_HR2_00-primary```
 
-Nadat elke pcs-resource verplaatsen opdracht aanroepen, maakt het cluster locatiebeperkingen voor het verplaatsen van de resource te bereiken. Deze beperkingen moeten worden verwijderd om automatische failover in de toekomst toe te staan.
+Nadat elke pcs resource verplaatsen opdracht aanroepen, maakt het cluster locatiebeperkingen voor het verplaatsen van de resource te bereiken. Deze beperkingen moeten worden verwijderd om automatische failover in de toekomst toe te staan.
 Als u ze wilt verwijderen, kunt u de volgende opdracht gebruiken.
 ```
 pcs resource clear SAPHana_HR2_00-primary
@@ -1325,7 +1269,7 @@ Node Attributes:
   * gedegradeerde host:
 
     ```
-    hdbsql -i 00 -u system -p SAPhana10 -n 10.7.0.82
+    hdbsql -i 00 -u system -p $YourPass -n 10.7.0.82
 
     result:
 
@@ -1336,7 +1280,7 @@ Node Attributes:
   * Gepromoveerde host:
 
     ```
-    hdbsql -i 00 -u system -p SAPhana10 -n 10.7.0.84
+    hdbsql -i 00 -u system -p $YourPass -n 10.7.0.84
     
     Welcome to the SAP HANA Database interactive terminal.
     
@@ -1360,20 +1304,17 @@ Node Attributes:
 Met de optie `AUTOMATED_REGISTER=false` kunt u niet heen en weer schakelen.
 
 Als deze optie is ingesteld op false, moet u het knooppunt opnieuw registreren:
-
-  
 ```
 hdbnsutil -sr_register --remoteHost=node2 --remoteInstance=00 --replicationMode=syncmem --name=DC1
 ```
-  
 
 Knooppunt2, dat de primaire host was, fungeert nu als de secundaire host.
 
-Overweeg deze optie in te stellen op true om de registratie van de gedegradeerde host te automatiseren.
-
+U kunt deze optie instellen op true om de registratie van de gedegradeerde host te automatiseren.
   
 ```
 pcs resource update SAPHana_HR2_00-primary AUTOMATED_REGISTER=true
-
 pcs cluster node clear node1
 ```
+
+Of u liever automatisch registreert, is afhankelijk van het klantscenario. Het automatisch opnieuw registreren van het knooppunt na een overname is eenvoudiger voor het bewerkingsteam. Mogelijk wilt u het knooppunt echter handmatig registreren om eerst aanvullende tests uit te voeren om ervoor te zorgen dat alles werkt zoals verwacht.

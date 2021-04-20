@@ -98,7 +98,7 @@
           href: reservations/reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/toc.json
         - name: Gebruiksgegevens voor afzonderlijke abonnementen
           href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
-        - name: Bedrijfs- en Microsoft-klantovereenkomst gegevens
+        - name: Gebruiksgegevens voor enterprise Microsoft-klantovereenkomst en bedrijfsgegevens
           href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
     - name: Billing
       items:
@@ -394,7 +394,7 @@
       href: /rest/api/cost-management
     - name: Azure Consumption REST API
       href: /rest/api/consumption
-    - name: Arm REST API sjabloon voor verbruik
+    - name: Sjabloon voor REST API ARM-budget
       href: /azure/templates/microsoft.consumption/budgets
     - name: Voorbeelden van Azure Cost Management REST API
       href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
@@ -410,15 +410,15 @@
       href: manage/consumption-api-overview.md
     - name: Azure Consumption REST API
       href: /rest/api/consumption
-    - name: Overzicht van bedrijfsrapportage REST API rapportage
+    - name: Overzicht van enterprise REST API rapportage
       href: manage/enterprise-api.md
-    - name: REST API's voor Enterprise-rapportage
+    - name: REST API's voor Enterprise Reporting
       href: /rest/api/billing/enterprise/billing-enterprise-api-balance-summary
     - name: Reservations
       items:
         - name: Reserveringen REST API
           href: reservations/reservation-apis.md?toc=/azure/cost-management-billing/toc.json
-        - name: Azure PowerShell cmdlets voor reserveringen
+        - name: Azure PowerShell-cmdlets voor reserveringen
           href: /powershell/module/azurerm.reservations
         - name: Azure CLI voor reserveringen
           href: /cli/azure/reservations/reservation
@@ -428,6 +428,8 @@
           href: /rest/api/consumption/reservationsdetails
 - name: Resources
   items:
+    - name: Veelgestelde vragen
+      href: cost-management-billing-faq.yml
     - name: Uw vaardigheden ontwikkelen met Microsoft Learn
       href: /learn/browse/?products=azure-cost-management
     - name: Feedbackforum voor Cost Management

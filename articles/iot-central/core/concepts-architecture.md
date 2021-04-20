@@ -1,5 +1,5 @@
 ---
-title: Architecturale concepten in azure IoT Central | Microsoft Docs
+title: Architectuurconcepten in Azure IoT Central | Microsoft Docs
 description: In dit artikel worden de belangrijkste concepten besproken die betrekking hebben op de architectuur van Azure IoT Central
 author: dominicbetts
 ms.author: dobett
@@ -8,166 +8,134 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: c2d5310d1a664aa2e22d4241d8066e41d9c82bd1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bcda4ca252101ed1505f71a1b5f9fe9a0d8d16b9
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97796717"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107728388"
 ---
 # <a name="azure-iot-central-architecture"></a>Azure IoT Central-architectuur
 
-Dit artikel bevat een overzicht van de Microsoft Azure IoT Central architectuur.
-
-![Architectuur op het hoogste niveau](media/concepts-architecture/architecture.png)
+In dit artikel vindt u een overzicht van de belangrijkste concepten in de Azure IoT Central architectuur.
 
 ## <a name="devices"></a>Apparaten
 
-Apparaten wisselen gegevens uit met uw Azure IoT Central-toepassing. Een apparaat kan:
+Apparaten wisselen gegevens uit met uw Azure IoT Central toepassing. Een apparaat kan:
 
 - Metingen zoals telemetrie verzenden.
-- Synchroniseer de instellingen met uw toepassing.
+- Synchroniseer instellingen met uw toepassing.
 
-De gegevens die een apparaat met uw toepassing kan uitwisselen, worden in Azure IoT Central gespecificeerd in een apparaatsjabloon. Zie [meta gegevens beheer](#metadata-management)voor meer informatie over Apparaatinstellingen.
+De gegevens die een apparaat met uw toepassing kan uitwisselen, worden in Azure IoT Central gespecificeerd in een apparaatsjabloon. Zie Apparaatsjablonen voor meer informatie [over apparaatsjablonen.](concepts-device-templates.md)
 
-Raadpleeg [connectiviteit](concepts-get-connected.md)van apparaten voor meer informatie over de manier waarop apparaten verbinding maken met uw Azure IOT Central-toepassing.
+Zie Apparaatconnectiviteit voor meer informatie over hoe apparaten verbinding maken Azure IoT Central [uw toepassing.](concepts-get-connected.md)
 
 ## <a name="azure-iot-edge-devices"></a>Azure IoT Edge-apparaten
 
-En apparaten die zijn gemaakt met behulp van de [Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks), kunt u ook [Azure IOT edge apparaten](../../iot-edge/about-iot-edge.md) verbinden met een IOT Central-toepassing. Met IoT Edge kunt u Cloud Intelligence en aangepaste logica rechtstreeks uitvoeren op IoT-apparaten die worden beheerd door IoT Central. Met de IoT Edge runtime kunt u het volgende doen:
+Naast apparaten die zijn gemaakt met behulp van de [Azure IoT SDK's,](https://github.com/Azure/azure-iot-sdks)kunt u ook Azure IoT Edge [verbinden](../../iot-edge/about-iot-edge.md) met een IoT Central toepassing. IoT Edge kunt u cloudintelligentie en aangepaste logica rechtstreeks uitvoeren op IoT-apparaten die worden beheerd door IoT Central. Met IoT Edge runtime kunt u het volgende doen:
 
 - Workloads op het apparaat installeren en bijwerken.
-- IoT Edge beveiligings standaarden op het apparaat onderhouden.
+- Houd IoT Edge beveiligingsstandaarden op het apparaat aan.
 - Ervoor zorgen dat de IoT Edge-modules altijd worden uitgevoerd.
 - De status van de module aan de cloud rapporteren voor externe bewaking.
 - De communicatie tussen downstream bladknooppuntapparaten en een IoT Edge-apparaat, tussen modules op een IoT Edge-apparaat en tussen een IoT Edge-apparaat en de cloud beheren.
 
 ![Azure IoT Central met Azure IoT Edge](./media/concepts-architecture/iotedge.png)
 
-IoT Central kunt de volgende mogelijkheden voor IoT Edge apparaten:
+IoT Central schakelt u de volgende mogelijkheden in voor IoT Edge apparaten:
 
-- Device-sjablonen om de mogelijkheden van een IoT Edge apparaat te beschrijven, zoals:
-  - Upload functionaliteit voor het implementatie manifest, waarmee u een manifest voor een apparaat wagen kunt beheren.
-  - Modules die worden uitgevoerd op het IoT Edge apparaat.
-  - De telemetrie van elke module verzendt.
-  - De eigenschappen van elke module rapporteren.
-  - De opdrachten waarop elke module reageert, worden beantwoord.
-  - De relaties tussen een IoT Edge gateway apparaat en het downstream-apparaat.
-  - Cloud eigenschappen die niet op het IoT Edge apparaat zijn opgeslagen.
+- Apparaatsjablonen om de mogelijkheden van een IoT Edge te beschrijven, zoals:
+  - Uploadmogelijkheid voor distributiemanifest, waarmee u een manifest voor een hele groep apparaten kunt beheren.
+  - Modules die worden uitgevoerd op IoT Edge apparaat.
+  - De telemetrie die elke module verzendt.
+  - De eigenschappen die elke module rapporteert.
+  - De opdrachten waar elke module op reageert.
+  - De relaties tussen een IoT Edge gatewayapparaat en downstreamapparaat.
+  - Cloudeigenschappen die niet zijn opgeslagen op het IoT Edge apparaat.
   - Aanpassingen, dashboards en formulieren die deel uitmaken van uw IoT Central-toepassing.
 
-  Zie het artikel [Azure IOT edge apparaten verbinden met een Azure IOT Central-toepassing](./concepts-iot-edge.md) voor meer informatie.
+  Zie het artikel Connect Azure IoT Edge devices to an Azure IoT Central application (Verbinding maken [Azure IoT Edge met een Azure IoT Central toepassing).](./concepts-iot-edge.md)
 
-- De mogelijkheid om IoT Edge-apparaten op schaal in te richten met behulp van Azure IoT Device Provisioning Service
+- De mogelijkheid om apparaten op schaal IoT Edge inrichten met behulp van Azure IoT Device Provisioning Service
 - Regels en acties.
-- Aangepaste Dash boards en analyses.
-- Doorlopende gegevens export van telemetrie vanaf IoT Edge apparaten.
+- Aangepaste dashboards en analyses.
+- Continue gegevensexport van telemetrie van IoT Edge apparaten.
 
 ### <a name="iot-edge-device-types"></a>IoT Edge typen apparaten
 
 IoT Central classificeert IoT Edge apparaattypen als volgt:
 
-- Blade apparaten. Een IoT Edge apparaat kan downstream Leaf-apparaten hebben, maar deze apparaten zijn niet ingericht in IoT Central.
-- Gateway apparaten met downstream-apparaten. Zowel het gateway apparaat als de downstream-apparaten zijn ingericht in IoT Central
+- Leaf-apparaten. Een IoT Edge kan downstream leaf-apparaten hebben, maar deze apparaten worden niet ingericht in IoT Central.
+- Gatewayapparaten met downstreamapparaten. Zowel gatewayapparaten als downstreamapparaten worden ingericht in IoT Central
 
-![Overzicht van IoT Central IoT Edge](./media/concepts-architecture/gatewayedge.png)
+![IoT Central met IoT Edge Overview](./media/concepts-architecture/gatewayedge.png)
 
 ### <a name="iot-edge-patterns"></a>IoT Edge patronen
 
-IoT Central ondersteunt de volgende IoT Edge patronen voor apparaten:
+IoT Central ondersteunt de volgende IoT Edge-apparaatpatronen:
 
-#### <a name="iot-edge-as-leaf-device"></a>IoT Edge als blad apparaat
+#### <a name="iot-edge-as-leaf-device"></a>IoT Edge als leaf-apparaat
 
-![IoT Edge als blad apparaat](./media/concepts-architecture/edgeasleafdevice.png)
+![IoT Edge als leaf-apparaat](./media/concepts-architecture/edgeasleafdevice.png)
 
-Het IoT Edge apparaat is ingericht in IoT Central en downstream-apparaten en hun telemetrie wordt weer gegeven op het IoT Edge apparaat. Downstream-apparaten die zijn verbonden met het IoT Edge apparaat, zijn niet ingericht in IoT Central.
+Het IoT Edge apparaat wordt ingericht in IoT Central en alle downstreamapparaten en de telemetrie wordt weergegeven als afkomstig van het IoT Edge apparaat. Downstreamapparaten die zijn verbonden met IoT Edge apparaat, worden niet ingericht in IoT Central.
 
-#### <a name="iot-edge-gateway-device-connected-to-downstream-devices-with-identity"></a>IoT Edge gateway apparaat verbonden met downstream-apparaten met identiteit
+#### <a name="iot-edge-gateway-device-connected-to-downstream-devices-with-identity"></a>IoT Edge-gatewayapparaat met identiteit verbonden met downstreamapparaten
 
-![IoT Edge met downstream-apparaat-id](./media/concepts-architecture/edgewithdownstreamdeviceidentity.png)
+![IoT Edge downstreamapparaat-id](./media/concepts-architecture/edgewithdownstreamdeviceidentity.png)
 
-Het IoT Edge apparaat is ingericht in IoT Central samen met de downstream-apparaten die zijn verbonden met het IoT Edge apparaat. Runtime-ondersteuning voor het inrichten van downstream-apparaten via de gateway wordt momenteel niet ondersteund.
+Het IoT Edge apparaat wordt ingericht in IoT Central downstreamapparaten die zijn verbonden met IoT Edge apparaat. Runtime-ondersteuning voor het inrichten van downstreamapparaten via de gateway wordt momenteel niet ondersteund.
 
-#### <a name="iot-edge-gateway-device-connected-to-downstream-devices-with-identity-provided-by-the-iot-edge-gateway"></a>IoT Edge gateway apparaat verbonden met downstream-apparaten met identiteit die is verschaft door de IoT Edge gateway
+#### <a name="iot-edge-gateway-device-connected-to-downstream-devices-with-identity-provided-by-the-iot-edge-gateway"></a>IoT Edge-gatewayapparaat dat is verbonden met downstreamapparaten met een identiteit die wordt geleverd door de IoT Edge-gateway
 
-![IoT Edge met het downstream-apparaat zonder identiteit](./media/concepts-architecture/edgewithoutdownstreamdeviceidentity.png)
+![IoT Edge downstreamapparaat zonder identiteit](./media/concepts-architecture/edgewithoutdownstreamdeviceidentity.png)
 
-Het IoT Edge apparaat is ingericht in IoT Central samen met de downstream-apparaten die zijn verbonden met het IoT Edge apparaat. Runtime-ondersteuning van gateway die identiteit levert aan downstream-apparaten en het inrichten van downstream-apparaten wordt momenteel niet ondersteund. Als u uw eigen module voor identiteits vertalingen zet, kan IoT Central dit patroon ondersteunen.
+Het IoT Edge apparaat wordt ingericht in IoT Central downstreamapparaten die zijn verbonden met IoT Edge apparaat. Runtime-ondersteuning voor gateway die identiteit biedt aan downstreamapparaten en inrichting van downstreamapparaten wordt momenteel niet ondersteund. Als u uw eigen module voor identiteitsvertaling gebruikt, IoT Central dit patroon ondersteunen.
 
-## <a name="cloud-gateway"></a>Cloud gateway
+## <a name="cloud-gateway"></a>Cloudgateway
 
-Azure IoT Central maakt gebruik van Azure IoT Hub als een Cloud gateway die connectiviteit van apparaten mogelijk maakt. IoT Hub maakt het volgende mogelijk:
+Azure IoT Central gebruikt Azure IoT Hub als een cloudgateway die apparaatconnectiviteit mogelijk maakt. IoT Hub schakelt het volgende in:
 
-- Gegevens opname op schaal in de Cloud.
+- Gegevens opnemen op schaal in de cloud.
 - Apparaatbeheer.
-- Connectiviteit van beveiligde apparaten.
+- Beveiligde apparaatconnectiviteit.
 
-Zie voor meer informatie over IoT Hub [Azure IOT hub](../../iot-hub/index.yml).
+Zie voor meer informatie IoT Hub meer informatie [Azure IoT Hub.](../../iot-hub/index.yml)
 
-Zie [connectiviteit van apparaten](concepts-get-connected.md)voor meer informatie over de connectiviteit van apparaten in azure IOT Central.
+Zie Apparaatconnectiviteit voor meer Azure IoT Central [over apparaatconnectiviteit in de Azure IoT Central.](concepts-get-connected.md)
 
 ## <a name="data-stores"></a>Gegevensopslag
 
-In azure IoT Central worden toepassings gegevens opgeslagen in de Cloud. De opgeslagen toepassings gegevens zijn onder andere:
+Azure IoT Central worden toepassingsgegevens opgeslagen in de cloud. Opgeslagen toepassingsgegevens zijn onder andere:
 
-- Device-sjablonen.
+- Apparaatsjablonen.
 - Apparaat-id's.
-- Meta gegevens van het apparaat.
-- Gebruikers gegevens en-rollen.
+- Metagegevens van het apparaat.
+- Gebruikers- en rolgegevens.
 
-Azure IoT Central gebruikt een time series Store voor de meet gegevens die vanaf uw apparaten worden verzonden. Time Series-gegevens van apparaten die worden gebruikt door de analyse service.
-
-## <a name="analytics"></a>Analyse
-
-De analyse service is verantwoordelijk voor het genereren van de aangepaste rapportage gegevens die door de toepassing worden weer gegeven. Een operator kan [de analyse aanpassen](howto-create-analytics.md) die in de toepassing wordt weer gegeven. De Analytics-service is boven op [Azure time series Insights](https://azure.microsoft.com/services/time-series-insights/) gebouwd en verwerkt de meet gegevens die vanaf uw apparaten worden verzonden.
-
-## <a name="rules-and-actions"></a>Regels en acties
-
-[Regels en acties](tutorial-create-telemetry-rules.md) kunnen nauw samen worden gebruikt om taken in de toepassing te automatiseren. Een Builder kan regels definiëren op basis van de telemetrie van apparaten, zoals de Tempe ratuur die een gedefinieerde drempel waarde overschrijdt. Azure IoT Central gebruikt een Stream-processor om te bepalen wanneer aan de voor waarden van de regel wordt voldaan. Wanneer aan een regel voorwaarde wordt voldaan, wordt een door de Builder gedefinieerde actie geactiveerd. Een actie kan bijvoorbeeld een e-mail verzenden om een technicus op de hoogte te stellen dat de Tempe ratuur op een apparaat te hoog is.
-
-## <a name="metadata-management"></a>Beheer van meta gegevens
-
-In een Azure IoT Central-toepassing worden met Apparaatinstellingen het gedrag en de mogelijkheden van typen apparaten gedefinieerd. Een sjabloon voor een koel kast bevat bijvoorbeeld de telemetrie die een koel kast naar uw toepassing verzendt.
-
-![Sjabloon architectuur](media/concepts-architecture/template-architecture.png)
-
-In een IoT Central- [apparaatprofiel](concepts-device-templates.md) bevat:
-
-- Een **apparaatprofiel** om de mogelijkheden van een apparaat op te geven, zoals de telemetrie die het verzendt, de eigenschappen die de status van het apparaat definiëren en de opdrachten waarop het apparaat reageert. De mogelijkheden van het apparaat zijn ingedeeld in een of meer interfaces.
-- Met **Cloud eigenschappen** geeft u de eigenschappen op IOT Central winkels voor een apparaat. Deze eigenschappen worden alleen opgeslagen in IoT Central en worden nooit naar een apparaat verzonden.
-- Met **weer gaven** worden de Dash boards en formulieren opgegeven die de opbouw functie maakt, zodat de operator de apparaten kan controleren en beheren.
-- Met **aanpassingen** kan de opbouw functie enkele van de definities in het model van het apparaat overschrijven om ze relevanter te maken voor de IOT Central-toepassing.
-
-Een toepassing kan een of meer gesimuleerde en echte apparaten op basis van elk apparaatprofiel hebben.
+Azure IoT Central gebruikt een tijdreeksopslag voor de meetgegevens die vanaf uw apparaten worden verzonden. Tijdreeksgegevens van apparaten die worden gebruikt door de analyseservice.
 
 ## <a name="data-export"></a>Gegevensexport
 
-In een Azure IoT Central-toepassing kunt u [uw gegevens voortdurend exporteren](howto-export-data.md) naar uw eigen azure-Event Hubs en Azure service bus exemplaren. U kunt uw gegevens ook periodiek exporteren naar uw Azure Blob-opslag account. IoT Central kunt metingen, apparaten en apparaatinstellingen exporteren.
+In een Azure IoT Central kunt u [uw](howto-export-data.md) gegevens continu exporteren naar uw eigen Azure Event Hubs en Azure Service Bus instanties. U kunt uw gegevens ook periodiek exporteren naar uw Azure Blob Storage-account. IoT Central kunt metingen, apparaten en apparaatsjablonen exporteren.
 
-## <a name="batch-device-updates"></a>Updates voor batch-apparaten
+## <a name="batch-device-updates"></a>Batch-apparaatupdates
 
-In een Azure IoT Central-toepassing kunt u [taken maken en uitvoeren](howto-run-a-job.md) om verbonden apparaten te beheren. Met deze taken kunt u bulksgewijs updates uitvoeren op eigenschappen of instellingen van het apparaat, of opdracht geven. U kunt bijvoorbeeld een taak maken om de snelheid van de ventilator voor meerdere gekoelde verkoop machines te verg Roten.
+In een Azure IoT Central kunt u taken maken en [uitvoeren om](howto-run-a-job.md) verbonden apparaten te beheren. Met deze taken kunt u bulksgewijs updates uitvoeren voor apparaateigenschappen of -instellingen, of opdrachten uitvoeren. U kunt bijvoorbeeld een taak maken om de ventilatorsnelheid voor meerdere gekoelde verkoopautomaat te verhogen.
 
 ## <a name="role-based-access-control-rbac"></a>Toegangsbeheer op basis van rollen (RBAC)
 
-Elke IoT Central toepassing heeft zijn eigen ingebouwde RBAC-systeem. Een [beheerder kan toegangs regels definiëren](howto-manage-users-roles.md) voor een Azure IOT Central-toepassing met behulp van een van de vooraf gedefinieerde rollen of door een aangepaste rol te maken. Rollen bepalen tot welke gebieden van de toepassing gebruikers toegang hebben en welke acties ze kunnen uitvoeren.
+Elke IoT Central toepassing heeft een eigen ingebouwd RBAC-systeem. Een [beheerder kan toegangsregels voor een](howto-manage-users-roles.md) Azure IoT Central definiëren met behulp van een van de vooraf gedefinieerde rollen of door een aangepaste rol te maken. Rollen bepalen tot welke gebieden van de toepassing gebruikers toegang hebben en welke acties ze kunnen uitvoeren.
 
 ## <a name="security"></a>Beveiliging
 
-Beveiligings functies in azure IoT Central zijn onder andere:
+Beveiligingsfuncties binnen Azure IoT Central zijn onder andere:
 
-- Gegevens worden in transit en op rest versleuteld.
-- Verificatie wordt door Azure Active Directory of een micro soft-account verschaft. Verificatie met twee factoren wordt ondersteund.
-- Volledige isolatie van de Tenant.
+- Gegevens worden tijdens de overdracht en at-rest versleuteld.
+- Verificatie wordt geleverd door een Azure Active Directory of een Microsoft-account. Verificatie met twee factoren wordt ondersteund.
+- Volledige tenantisolatie.
 - Beveiliging op apparaatniveau.
-
-## <a name="ui-shell"></a>UI-shell
-
-De UI-shell is een moderne, op de browser gebaseerde toepassing die in de Cloud is gebaseerd.
-Een beheerder kan de gebruikers interface van de toepassing aanpassen door aangepaste Thema's toe te passen en de Help-koppelingen te wijzigen zodat deze naar uw eigen aangepaste Help-bronnen verwijzen. Zie het artikel over [de Azure IOT Central-gebruikers interface aanpassen](howto-customize-ui.md) voor meer informatie over UI-aanpassing.
-
-Een operator kan gepersonaliseerde toepassings dashboards maken. U kunt verschillende Dash boards hebben die verschillende gegevens weer geven en hiertussen scha kelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u over de architectuur van Azure IoT Central hebt geleerd, is de voorgestelde volgende stap in azure IoT Central meer informatie over de [connectiviteit van apparaten](concepts-get-connected.md) .
+Nu u hebt geleerd over de architectuur van Azure IoT Central, is de voorgestelde volgende stap om meer te weten te komen over apparaatconnectiviteit [in](concepts-get-connected.md) Azure IoT Central.

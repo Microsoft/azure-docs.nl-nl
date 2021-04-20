@@ -1,5 +1,5 @@
 ---
-title: Quick start voor anomalie detectie .NET multidimensionale-client bibliotheek
+title: Anomaly Detector quickstart voor .NET-clientbibliotheek met meerdere varianten
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: mrbullwinkle
@@ -8,27 +8,29 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/06/2021
 ms.author: mbullwin
-ms.openlocfilehash: 1318a8c410f14f4a1dc91072d66f18e39f7ca7e7
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: b3acea520859de10825468a4d37c3030f9b862bd
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107316029"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107732457"
 ---
-Ga aan de slag met de Anomaliey detector multidimensionale-client bibliotheek voor .NET. Volg deze stappen om het pakket te installeren en te beginnen met het gebruik van de algoritmen die door de service worden gebruikt. Met de nieuwe multidimensionale anomalie detectie-Api's kunnen ontwikkel aars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen van groepen met metrische gegevens, zonder dat er machine learning kennis of labels zijn vereist. Afhankelijkheden en tussen correlaties tussen verschillende signalen worden automatisch geteld als sleutel factoren. Zo kunt u uw complexe systemen proactief beveiligen tegen storingen.
+Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de algoritmen van de service te gaan gebruiken. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
-Gebruik de afwijkende detector multidimensionale-client bibliotheek voor .NET voor het volgende:
+Gebruik de Anomaly Detector multivariate clientbibliotheek voor .NET voor het volgende:
 
-* Afwijkingen op systeem niveau van een groep tijd reeksen detecteren.
-* Wanneer een wille keurige tijd reeks niet meer vertelt en u alle signalen moet bekijken om een probleem te detecteren.
-* Het predicaat onderhoud van dure fysieke activa met tien tot honderden verschillende typen Sens oren die verschillende aspecten van de systeem status meten.
+* Anomalieën op systeemniveau detecteren uit een groep tijdreeksen.
+* Wanneer een afzonderlijke tijdreeks u niet veel vertelt en u alle signalen moet bekijken om een probleem te detecteren.
+* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende typen sensoren die verschillende aspecten van de systeemtoestand meten.
+
+[Broncode van de bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/anomalydetector/Azure.AI.AnomalyDetector) | [Pakket (NuGet)](https://www.nuget.org/packages/Azure.AI.AnomalyDetector/3.0.0-preview.3)
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services)
 * De huidige versie van [.NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 * Zodra u een Azure-abonnement hebt, <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Anomaly Detector-resource maken"  target="_blank">maakt u een Anomaly Detector-resource </a> in Azure Portal om uw sleutel en eindpunt op te halen. Wacht tot deze is geïmplementeerd en selecteer de knop **Ga naar resource**.
-    * U hebt de sleutel en het eindpunt nodig van de resource die u maakt om de toepassing te verbinden met de Anomaly Detector-API. Plak uw sleutel en eind punt in de onderstaande code verderop in de Quick Start.
+    * U hebt de sleutel en het eindpunt nodig van de resource die u maakt om de toepassing te verbinden met de Anomaly Detector-API. Plak uw sleutel en eindpunt later in de quickstart in de onderstaande code.
     U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
 
 ## <a name="setting-up"></a>Instellen
@@ -84,7 +86,7 @@ using Microsoft.Identity.Client;
 using NUnit.Framework;
 ```
 
-Maak in de methode van de toepassing `main()` variabelen voor het Azure-eind punt van uw resource, uw API-sleutel en een aangepaste gegevens bron.
+Maak in de -methode van de toepassing variabelen voor het Azure-eindpunt van uw resource, uw `main()` API-sleutel en een aangepaste gegevensbron.
 
 ```csharp
 string endpoint = "YOUR_API_KEY";
@@ -92,11 +94,11 @@ string apiKey =  "YOUR_ENDPOINT";
 string datasource = "YOUR_SAMPLE_ZIP_FILE_LOCATED_IN_AZURE_BLOB_STORAGE_WITH_SAS";
 ```
 
- Voor het gebruik van de anomalie detectie multidimensionale-Api's moeten we ons eigen model trainen voordat ze detectie kunnen gebruiken. Gegevens die worden gebruikt voor de training, zijn een batch van een tijd reeks, elke time series moet in CSV-indeling zijn met twee kolommen, tijds tempel en waarde. Alle tijd reeksen moeten worden ingepakt in één ZIP-bestand en geüpload naar [Azure Blob-opslag](../../../../storage/blobs/storage-blobs-introduction.md#blobs). Standaard wordt de bestands naam gebruikt om de variabele voor de tijd reeks weer te geven. U kunt ook een extra meta.jsvoor het bestand opnemen in het zip-bestand als u wilt dat de naam van de variabele afwijkt van de naam van het zip-bestand. Nadat we een [URL voor BLOB SAS (Shared Access signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het zip-bestand voor de training gebruiken.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, een tijdstempel en een waarde. Alle tijdreeksen moeten worden ingepakt in één ZIP-bestand en geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md#blobs) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we een [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze code fragmenten laten zien hoe u het volgende kunt doen met de Anomaliey detector multidimensionale-client bibliotheek voor .NET:
+Deze codefragmenten laten zien hoe u het volgende kunt doen met de Anomaly Detector multivariate clientbibliotheek voor .NET:
 
 * [De client verifiëren](#authenticate-the-client)
 * [Het model trainen](#train-the-model)
@@ -106,7 +108,7 @@ Deze code fragmenten laten zien hoe u het volgende kunt doen met de Anomaliey de
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Exemplaar een anomalie detectie-client met uw eind punt en sleutel.
+Een Anomaly Detector client instantieren met uw eindpunt en sleutel.
 
 ```csharp
 var endpointUri = new Uri(endpoint);
@@ -117,7 +119,7 @@ AnomalyDetectorClient client = new AnomalyDetectorClient(endpointUri, credential
 
 ## <a name="train-the-model"></a>Het model trainen
 
-Maak een nieuwe privé-async-taak zoals hieronder om uw model te trainen. U gebruikt `TrainMultivariateModel` om het model te trainen en `GetMultivariateModelAysnc` te controleren wanneer de training is voltooid.
+Maak een nieuwe privé-async-taak zoals hieronder wordt weergegeven om het trainen van uw model af te handelen. U gebruikt om `TrainMultivariateModel` het model te trainen en om te controleren wanneer de training is `GetMultivariateModelAysnc` voltooid.
 
 ```csharp
 private async Task trainAsync(AnomalyDetectorClient client, string datasource, DateTimeOffset start_time, DateTimeOffset end_time, int max_tryout = 500)
@@ -174,7 +176,7 @@ private async Task trainAsync(AnomalyDetectorClient client, string datasource, D
 
 ## <a name="detect-anomalies"></a>Afwijkingen detecteren
 
-Als u afwijkingen wilt detecteren die gebruikmaken van uw nieuwe getrainde model, maakt u een met een `private async Task` naam `detectAsync` . U maakt een nieuw `DetectionRequest` en geeft dit als een para meter aan `DetectAnomalyAsync` .
+Als u afwijkingen wilt detecteren met behulp van uw zojuist getrainde model, maakt u een `private async Task` met de naam `detectAsync` . U maakt een nieuwe `DetectionRequest` en geeft deze door als parameter aan `DetectAnomalyAsync` .
 
 ```csharp
 private async Task<DetectionResult> detectAsync(AnomalyDetectorClient client, string datasource, Guid model_id, DateTimeOffset start_time, DateTimeOffset end_time, int max_tryout = 500)
@@ -216,7 +218,7 @@ private async Task<DetectionResult> detectAsync(AnomalyDetectorClient client, st
 
 ## <a name="export-model"></a>Model exporteren
 
-Als u het model dat u eerder hebt getraind wilt exporteren, maakt u een met een `private async Task` naam `exportAysnc` . U gebruikt `ExportModelAsync` en geeft u de model-id van het model dat u wilt exporteren.
+Als u het model wilt exporteren dat u eerder hebt getraind, maakt u een `private async Task` met de naam `exportAysnc` . U gebruikt en `ExportModelAsync` geeft de model-id door van het model dat u wilt exporteren.
 
 ```csharp
 private async Task exportAsync(AnomalyDetectorClient client, Guid model_id, string model_path = "model.zip")
@@ -244,7 +246,7 @@ private async Task exportAsync(AnomalyDetectorClient client, Guid model_id, stri
 
 ## <a name="delete-model"></a>Model verwijderen
 
-Als u een model wilt verwijderen dat u eerder hebt gemaakt `DeleteMultivariateModelAsync` , geeft u de model-id op van het model dat u wilt verwijderen. Als u een model-ID wilt ophalen, kunt u het `getModelNumberAsync` volgende doen:
+Als u een model wilt verwijderen dat u eerder hebt gemaakt, gebruikt en de model-id door te geven van `DeleteMultivariateModelAsync` het model dat u wilt verwijderen. Als u een model-id wilt ophalen, kunt u `getModelNumberAsync` ons :
 
 ```csharp
 private async Task deleteAsync(AnomalyDetectorClient client, Guid model_id)
@@ -272,7 +274,7 @@ private async Task<int> getModelNumberAsync(AnomalyDetectorClient client, bool d
 
 ## <a name="main-method"></a>De methode Main
 
-Nu u alle onderdelen hebt, moet u extra code toevoegen aan de methode Main om uw nieuw gemaakte taken aan te roepen.
+Nu u alle onderdeelonderdelen hebt, moet u extra code toevoegen aan uw hoofdmethode om uw zojuist gemaakte taken aan te roepen.
 
 ```csharp
 
@@ -340,4 +342,4 @@ dotnet run
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Best practices voor anomalie detectie multidimensionale](../../concepts/best-practices-multivariate.md)
+* [Anomaly Detector best practices voor meerdere varianten](../../concepts/best-practices-multivariate.md)

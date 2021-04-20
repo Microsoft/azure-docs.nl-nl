@@ -2,22 +2,20 @@
 title: Azure VMware Solution verbinden met uw on-premises omgeving
 description: Leer Azure VMware Solution verbinden met uw on-premises omgeving.
 ms.topic: tutorial
-ms.date: 03/13/2021
-ms.openlocfilehash: 0b26dc4756cb37544c2b2f8c5a75df0ac1a9d629
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/19/2021
+ms.openlocfilehash: 392d82a9aca9b60b394a5d5f4a7e6b0111438e59
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103491789"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107725607"
 ---
 # <a name="connect-azure-vmware-solution-to-your-on-premises-environment"></a>Azure VMware Solution verbinden met uw on-premises omgeving
 
 In dit artikel gaat u door met het gebruik van de [informatie verzameld tijden de planning](production-ready-deployment-steps.md) om Azure VMware Solution te verbinden met uw on-premises omgeving.
 
-Voordat u begint, zijn er twee vereisten om Azure VMware Solution te verbinden met uw on-premises omgeving:
+Voordat u begint, moet u een ExpressRoute-circuit van uw on-premises omgeving naar Azure hebben.
 
-- Een ExpressRoute-circuit van uw on-premises omgeving naar Azure.
-- Een/29 niet-overlappend CIDR-netwerk adres blok voor de ExpressRoute-Global Reach peering, die u hebt gedefinieerd als onderdeel van de [plannings fase](production-ready-deployment-steps.md).
 
 >[!NOTE]
 > U kunt verbinding maken via VPN, maar dit wordt niet besproken in deze quickstart.
@@ -26,9 +24,9 @@ Voordat u begint, zijn er twee vereisten om Azure VMware Solution te verbinden m
 
 Als u een on-premises verbinding tot stand wilt brengen met uw VMware Solution-privécloud met behulp van ExpressRoute Global Reach, volg dan de zelfstudie [On-premises omgevingen peeren met een privécloud](tutorial-expressroute-global-reach-private-cloud.md).
 
-Deze zelf studie resulteert in een verbinding zoals in het diagram wordt weer gegeven.
+Deze zelfstudie resulteert in een verbinding zoals weergegeven in het diagram.
 
-:::image type="content" source="media/pre-deployment/azure-vmware-solution-on-premises-diagram.png" alt-text="ExpressRoute Global Reach on-premises netwerk verbindings diagram." lightbox="media/pre-deployment/azure-vmware-solution-on-premises-diagram.png" border="false":::
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-on-premises-diagram.png" alt-text="ExpressRoute Global Reach on-premises netwerkverbindingsdiagram." lightbox="media/pre-deployment/azure-vmware-solution-on-premises-diagram.png" border="false":::
 
 ## <a name="verify-on-premises-network-connectivity"></a>On-premises netwerkverbinding controleren
 

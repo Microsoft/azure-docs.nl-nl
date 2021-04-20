@@ -1,51 +1,53 @@
 ---
-title: Zin en uitlijning-aangepaste vertaler
+title: Koppelen en uitlijnen van zinnen - Custom Translator
 titleSuffix: Azure Cognitive Services
-description: Tijdens de uitvoering van de training worden zinnen in parallelle documenten gekoppeld of uitgelijnd. Aangepaste Translator leert vertalingen per zin, door een zin te lezen, de vertaling van deze zin. Vervolgens worden woorden en zinsdelen in deze twee zinnen op elkaar uitgelijnd.
+description: Tijdens de uitvoering van de training worden zinnen in parallelle documenten gekoppeld of uitgelijnd. Custom Translator leert vertalingen met één zin tegelijk, door een zin te lezen, de vertaling van deze zin. Vervolgens worden woorden en woordgroepen in deze twee zinnen op elkaar afgestemd.
 author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 08/17/2020
+ms.date: 04/19/2021
 ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 0c33d766bfd3dff47ddb151e8ce4ea7b25c37548
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 43268afccbe66a21d2ce78709ba372a8a6682444
+ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98897948"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107727146"
 ---
-# <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Zin en uitlijning in parallelle documenten
+# <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Koppelen en uitlijnen van zinnen in parallelle documenten
 
-Na het uploaden van documenten, worden de zinnen die aanwezig zijn in parallelle documenten gekoppeld of uitgelijnd. De aangepaste vertaler rapporteert het aantal zinnen dat kan worden gekoppeld als de uitgelijnde zinnen in elk van de gegevens sets.
+Nadat documenten zijn geüpload, worden zinnen in parallelle documenten gekoppeld of uitgelijnd. Custom Translator het aantal zinnen dat kan worden gekoppeld als de uitgelijnde zinnen in elk van de gegevenssets.
 
-## <a name="pairing-and-alignment-process"></a>Proces voor koppelen en uitlijnen
+## <a name="pairing-and-alignment-process"></a>Koppelings- en uitlijningsproces
 
-Aangepaste vertalers leren de vertalingen van zinnen per zin. Er wordt een zin uit de bron tekst gelezen en vervolgens de vertaling van deze zin van de doel tekst. Vervolgens worden woorden en zinsdelen in deze twee zinnen op elkaar uitgelijnd. Dit proces maakt het mogelijk om in één zin een kaart van de woorden en zinsdelen te maken naar de equivalente woorden en zinsdelen in de vertaling van zijn zin. Uitlijning probeert ervoor te zorgen dat de systeem treinen op zinnen met vertalingen van elkaar worden uitgevoerd.
+Custom Translator leert vertalingen van zinnen met één zin tegelijk. Er wordt een zin uit de brontekst gelezen en vervolgens de vertaling van deze zin uit de doeltekst. Vervolgens worden woorden en woordgroepen in deze twee zinnen op elkaar afgestemd. Met dit proces kan een kaart worden gemaakt van de woorden en woordgroepen in één zin met de equivalente woorden en zinnen in de vertaling van de zin. Uitlijning probeert ervoor te zorgen dat het systeem wordt traint op zinnen die vertalingen van elkaar zijn.
 
 ## <a name="pre-aligned-documents"></a>Vooraf uitgelijnde documenten
 
-Als u weet dat u parallelle documenten hebt, kunt u de opmaak van de zin onderdrukken door vooraf uitgelijnde tekst bestanden op te geven. U kunt alle zinnen uit beide documenten uitpakken in een tekst bestand, één zin per regel geordend en uploaden met een `.align` uitbrei ding. De `.align` uitbrei ding signaleert aangepaste vertalers, waarna de uitlijning van de zin moet worden overgeslagen.
+Als u weet dat u parallelle documenten hebt, kunt u de uitlijning van zinnen overschrijven door vooraf uitgelijnde tekstbestanden op te geven. U kunt alle zinnen uit beide documenten uitpakken in een tekstbestand, één zin per regel orden en uploaden met een `.align` extensie. De `.align` extensie geeft aan Custom Translator zinuitlijning moet worden overgeslagen.
 
-Voor de beste resultaten probeert u te controleren of u één zin per regel hebt in uw bestanden. U hebt geen nieuwe regel tekens binnen een zin, omdat dit resulteert in slechte uitlijning.
+Voor de beste resultaten moet u ervoor zorgen dat uw bestanden één zin per regel bevatten. Gebruik geen nieuwelijntekens binnen een zin, omdat dit tot slechte uitlijning zal leiden.
 
-## <a name="suggested-minimum-number-of-sentences"></a>Voorgesteld minimum aantal zinnen
+## <a name="suggested-minimum-number-of-sentences"></a>Voorgesteld minimumaantal zinnen
 
-Voor een succes volle training bevat de onderstaande tabel het minimale aantal zinnen dat is vereist in elk document type.Deze beperking is een veiligheids netwerk om ervoor te zorgen dat uw parallelle zinnen voldoende unieke woorden lijst hebben om een omzettings model te kunnen trainen. De algemene richt lijn heeft meer parallelle zinnen in het domein van de vertaling van menselijke vertalingen en moet kwalitatief hoogwaardige modellen produceren.
+Om een training te laten slagen, toont de onderstaande tabel het minimale aantal zinnen dat is vereist voor elk documenttype.Deze beperking is een veiligheidsnet om ervoor te zorgen dat uw parallelle zinnen voldoende unieke woorden bevatten om een vertaalmodel te trainen. De algemene richtlijn is dat meer in-domain parallelle zinnen van menselijke vertaling modellen van hogere kwaliteit moeten produceren.
 
-| Document type   | Aanbevolen minimum aantal zinnen | Maximum aantal zinnen |
+| Documenttype   | Voorgesteld minimumaantal zinnen | Maximum aantal zinnen |
 |------------|--------------------------------------------|--------------------------------|
 | Training   | 10.000                                     | Geen bovengrens                 |
 | Afstemmen     | 500                                      | 2500       |
 | Testen    | 500                                      | 2500  |
-| Woordenlijst | 0                                          | Geen bovengrens                 |
+| Woordenlijst | 0                                          | 250.000                 |
 
 > [!NOTE]
-> - De training kan niet worden gestart en mislukt als er niet wordt voldaan aan het minimum aantal zinnen van 10.000 voor training. 
-> - Afstemmen en testen zijn optioneel. Als u deze niet opgeeft, zal het systeem een passend percentage verwijderen van de training die moet worden gebruikt voor validatie en testen. 
-> - U kunt een model trainen met alleen woordenlijst gegevens. Raadpleeg [Wat is een woorden lijst](./what-is-dictionary.md).
+>
+> - De training wordt niet start en mislukt als niet wordt voldaan aan het minimumaantal van 10.000 zinnen voor Training.
+> - Afstemmen en testen zijn optioneel. Als u deze niet op geeft, verwijdert het systeem het juiste percentage uit Training om te gebruiken voor validatie en testen.
+> - U kunt een model trainen met alleen woordenlijstgegevens. Raadpleeg Wat [is woordenlijst?](./what-is-dictionary.md).
+> - Als uw woordenlijst meer dan 250.000 zinnen bevat, is **[Document Translator](https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/overview)** waarschijnlijk een betere keuze.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van een [woorden lijst](what-is-dictionary.md) in Custom Translator.
+- Meer informatie over het gebruik [van een woordenlijst](what-is-dictionary.md) in Custom Translator.

@@ -147,7 +147,7 @@
           items:
             - name: Overzicht
               href: retail/overview-iot-central-retail.md
-            - name: In-Store Analytics-kassaarchitectuur
+            - name: In-Store Analytics-betalingsarchitectuur
               href: retail/store-analytics-architecture.md
             - name: Architectuur voor slim voorraadbeheer
               href: retail/architecture-smart-inventory-management.md
@@ -171,7 +171,7 @@
           items:
             - name: Overzicht
               href: government/overview-iot-central-government.md
-            - name: Architectuur voor bewaking van verbonden afval
+            - name: Bewakingsarchitectuur voor verbonden afval
               href: government/concepts-connectedwastemanagement-architecture.md
             - name: Architectuur voor bewaking van waterverbruik maken
               href: government/concepts-waterconsumptionmonitoring-architecture.md
@@ -217,8 +217,6 @@
           href: core/howto-connect-ruuvi.md
         - name: Een Rigado Cascade 500 voorbereiden en verbinden
           href: core/howto-connect-rigado-cascade-500.md
-        - name: Verbinding maken met andere IoT-clouds
-          href: core/howto-build-iotc-device-bridge.md
     - name: Geïntegreerde oplossingen bouwen
       items:
         - name: Tegels toevoegen aan uw dashboard
@@ -235,7 +233,7 @@
           href: core/howto-export-data.md
         - name: Gegevens exporteren naar cloudbestemmingen (verouderd)
           href: core/howto-export-data-legacy.md
-        - name: Gegevens voor Azure IoT Central
+        - name: Gegevens transformeren
           href: core/howto-transform-data.md
         - name: Werkstromen gebruiken voor integratie met andere services
           href: core/howto-configure-rules-advanced.md
@@ -245,6 +243,8 @@
           href: core/howto-create-custom-analytics.md
         - name: Uw gegevens visualiseren in Power BI
           href: core/howto-connect-powerbi.md
+        - name: Verbinding maken met andere IoT-clouds
+          href: core/howto-build-iotc-device-bridge.md
         - name: Uw toepassing verbinden met Dynamics 365 Field Services
           href: government/how-to-configure-connected-field-services.md
     - name: Uw apparaten beheren
@@ -253,7 +253,7 @@
           href: core/howto-manage-devices.md
         - name: Een taak uitvoeren
           href: core/howto-run-a-job.md
-        - name: Apparaten verplaatsen van IoT Hub
+        - name: Apparaten van IoT Hub
           href: core/how-to-move-device-to-iot.md
     - name: Uw oplossing beheren
       items:
@@ -313,7 +313,7 @@
       href: /samples/browse/?expanded=azure&products=azure-iot-central
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json
-    - name: Woordenlijst voor IoT
+    - name: IoT-woordenlijst
       href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json
     - name: Azure IoT-services
       items:

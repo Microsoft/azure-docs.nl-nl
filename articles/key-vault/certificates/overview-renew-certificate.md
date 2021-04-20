@@ -3,19 +3,18 @@ title: Informatie over het verlengen van Azure Key Vault-certificaten
 description: In dit artikel wordt beschreven hoe u Azure Key Vault-certificaten kunt verlengen.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
 ms.topic: overview
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: 0492575bef93a1b08d48475c3ab32ecbc7becd6e
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: 082b0fd4d3324502516dcd2b45b9ad16a919c773
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107364291"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749218"
 ---
 # <a name="renew-your-azure-key-vault-certificates"></a>Azure Key Vault-certificaten verlengen
 
@@ -74,7 +73,7 @@ Azure Key Vault verwerkt ook het automatisch verlengen van zelfondertekende cert
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 * Als het uitgegeven certificaat in Azure Portal de status *uitgeschakeld* heeft, gaat u naar **Certificaatbewerking** om het foutbericht voor dat certificaat te bekijken.
-* Fouttype 'De CSR die wordt gebruikt om uw certificaat op te halen, is al gebruikt. Probeer een nieuw certificaat te genereren met een nieuwe CSR.
+* Fouttype ' De CSR die wordt gebruikt om uw certificaat op te halen, is al gebruikt. Probeer een nieuw certificaat te genereren met een nieuwe CSR.
   Ga naar de sectie Geavanceerd beleid van het certificaat en controleer of de optie **Sleutel** opnieuw gebruiken bij verlenging is uitgeschakeld.
 
 

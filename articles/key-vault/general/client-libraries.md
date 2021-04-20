@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/14/2020
 ms.author: mbaldwin
-ms.openlocfilehash: c5b07c1059e146aaf3c3c2a26038514eb614a3cc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 37e67ad869af23b51497e1497865f620bae612aa
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102505916"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749182"
 ---
 # <a name="client-libraries-for-azure-key-vault"></a>Clientbibliotheken voor Azure Key Vault
 
@@ -35,4 +35,4 @@ Elke SDK heeft afzonderlijke clientbibliotheken voor een sleutelkluis, geheimen,
 
 - Zie de [gids voor Azure Key Vault-ontwikkelaars](developers-guide.md) (vooralsnog Engelstalig).
 - Meer informatie over het [verifiëren bij een sleutelkluis](authentication.md)
-- Meer informatie over het [beveiligen van toegang tot een sleutelkluis](secure-your-key-vault.md)
+- Meer informatie over het [beveiligen van toegang tot een sleutelkluis](security-overview.md)

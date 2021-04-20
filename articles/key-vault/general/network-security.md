@@ -3,19 +3,18 @@ title: Key Vault-firewalls en virtuele netwerken configureren - Azure Key Vault
 description: Stapsgewijze instructies om Key Vault-firewalls en virtuele netwerken te configureren
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 40094c00a4b896756c5c0e51116e0ae33ae2a096
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.openlocfilehash: 8352deb00f6954d862b9e44646cce1604e2c5428
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106580736"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749614"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Azure Key Vault-firewalls en virtuele netwerken configureren
 
@@ -36,11 +35,11 @@ Wanneer u een nieuwe sleutel kluis maakt, wordt de Azure Key Vault-firewall stan
 Wanneer u de Key Vault-firewall inschakelt, krijgt u de optie om vertrouwde Microsoft-services toe te staan deze firewall over te slaan. De lijst met vertrouwde services bevat niet elke Azure-service. Zo bevindt Azure DevOps zich niet in de lijst met vertrouwde services. **Dit betekent niet dat services die niet worden weergegeven in de lijst met vertrouwde services niet worden vertrouwd of onveilig zijn.** De lijst met vertrouwde services bevat services waarbij Microsoft alle code beheert die op de service wordt uitgevoerd. Omdat gebruikers aangepaste code kunnen schrijven in Azure-services zoals Azure DevOps, biedt Microsoft geen optie om een algemene goedkeuring voor de service te maken. Bovendien betekent het feit dat een service op de lijst met vertrouwde services staat, niet dat deze in alle scenario's is toegestaan. 
 
 Als u wilt bepalen of een service die u wilt gebruiken, zich in de lijst met vertrouwde services bevindt, raadpleegt u [dit document](./overview-vnet-service-endpoints.md#trusted-services).
-Volg de instructies in de hand leiding voor [Portal, Azure CLI en Power shell](https://docs.microsoft.com/azure/key-vault/general/network-security#use-the-azure-portal) voor meer informatie.
+Volg hier de instructies voor [Portal, Azure CLI en Powershell](https://docs.microsoft.com/azure/key-vault/general/network-security#use-the-azure-portal) voor instructies
 
 ### <a name="key-vault-firewall-enabled-ipv4-addresses-and-ranges---static-ips"></a>Key Vault Firewall ingeschakeld (IPv4-adressen en -bereiken - vaste IP-adressen)
 
-Als u een bepaalde service wilt toestaan om toegang te krijgen tot de sleutelkluis via de firewall van Key Vault, kunt u het IP-adres ervan toevoegen aan de acceptatielijst van de sleutelkluis. Deze configuratie is het meest geschikt voor services die gebruikmaken van vaste IP-adressen of bekende bereiken. Er geldt een limiet van 1000 CIDR-bereiken voor deze aanvraag.
+Als u een bepaalde service wilt toestaan om toegang te krijgen tot de sleutelkluis via de firewall van Key Vault, kunt u het IP-adres ervan toevoegen aan de acceptatielijst van de sleutelkluis. Deze configuratie is het meest geschikt voor services die gebruikmaken van vaste IP-adressen of bekende bereiken. Er geldt een limiet van 1000 CIDR-bereik voor dit geval.
 
 Als u een IP-adres of bereik van een Azure-resource, zoals een web-app of logische app, wilt toestaan, voert u de volgende stappen uit.
 
@@ -69,7 +68,7 @@ In dit geval moet u de resource in een virtueel netwerk maken en vervolgens verk
 Zie het document [hier](./private-link-service.md)als u wilt weten hoe u een verbinding met een privékoppeling kunt configureren in uw sleutelkluis.
 
 > [!IMPORTANT]
-> Als de firewallregels van kracht zijn, kunnen gebruikers alleen Key Vault-[gegevenslaagbewerkingen](secure-your-key-vault.md#data-plane-access-control) uitvoeren wanneer hun aanvragen afkomstig zijn van toegestane virtuele netwerken of IPv4-adresbereiken. Dit is tevens van toepassing voor toegang tot Key Vault vanuit Azure Portal. Hoewel gebruikers kunnen bladeren naar een sleutelkluis van Azure Portal, kunnen ze mogelijk geen sleutels, geheimen of certificaten weergeven als hun clientcomputer niet in de lijst met toegestane clients staat. Dit is ook van invloed op de Key Vault-kiezer door andere Azure-Services. Gebruikers zien mogelijk een lijst met sleutelkluizen, maar geen lijst met sleutels als firewallregels hun clientcomputer weigeren.
+> Als de firewallregels van kracht zijn, kunnen gebruikers alleen Key Vault-[gegevenslaagbewerkingen](security-overview.md#privileged-access) uitvoeren wanneer hun aanvragen afkomstig zijn van toegestane virtuele netwerken of IPv4-adresbereiken. Dit is tevens van toepassing voor toegang tot Key Vault vanuit Azure Portal. Hoewel gebruikers kunnen bladeren naar een sleutelkluis van Azure Portal, kunnen ze mogelijk geen sleutels, geheimen of certificaten weergeven als hun clientcomputer niet in de lijst met toegestane clients staat. Dit is ook van invloed op de Key Vault-kiezer door andere Azure-Services. Gebruikers zien mogelijk een lijst met sleutelkluizen, maar geen lijst met sleutels als firewallregels hun clientcomputer weigeren.
 
 > [!NOTE]
 > Houd rekening met de volgende configuratielimieten:

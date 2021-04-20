@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 04/09/2021
 ms.custom: generated
-ms.openlocfilehash: c89e6ed98e0a71f530cefda4cc1f42a27996d805
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: f4112d4b9bf55e45ec865f5c8606ead9088a7983
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107518504"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107752386"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -37,7 +37,7 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | **Compute** |  |  |
 > | [Inzender voor klassieke virtuele machines](#classic-virtual-machine-contributor) | Hiermee kunt u klassieke virtuele machines beheren, maar geen toegang krijgen tot deze machines, en niet het virtuele netwerk of het opslagaccount waarmee ze zijn verbonden. | d73bb868-a0df-4d4d-bd69-98a00b01fccb |
 > | [Aanmeldgegevens van de beheerder van de virtuele machine](#virtual-machine-administrator-login) | De Virtual Machines in de portal weergeven en u aanmelden als beheerder | 1c0163c0-47e6-4577-8991-ea5c82e286e4 |
-> | [Inzender voor virtuele machines](#virtual-machine-contributor) | Hiermee kunt u virtuele machines beheren, maar geen toegang tot deze machines, en niet tot het virtuele netwerk of opslagaccount waarmee ze zijn verbonden. | 9980e02c-c2be-4d73-94e8-173b1dc7cf3c |
+> | [Inzender voor virtuele machines](#virtual-machine-contributor) | Hiermee kunt u virtuele machines beheren, maar geen toegang krijgen tot deze machines en niet tot het virtuele netwerk of opslagaccount waarmee ze zijn verbonden. | 9980e02c-c2be-4d73-94e8-173b1dc7cf3c |
 > | [Gebruikersmelding voor virtuele machine](#virtual-machine-user-login) | Bekijk Virtual Machines in de portal en meld u aan als een gewone gebruiker. | fb879df8-f326-4884-b1cf-06f3ad86be52 |
 > | **Netwerken** |  |  |
 > | [Inzender voor CDN-eindpunten](#cdn-endpoint-contributor) | Kan CDN-eindpunten beheren, maar kan geen toegang verlenen aan andere gebruikers. | 426e0c7f-0c7e-4658-b36f-ff54d6c29b45 |
@@ -48,26 +48,26 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [Inzender voor DNS-zone](#dns-zone-contributor) | Hiermee kunt u DNS-zones en recordsets beheren in Azure DNS, maar kunt u niet beheren wie er toegang toe heeft. | befefa01-2a29-4197-83a8-272ff33ce314 |
 > | [Inzender voor netwerken](#network-contributor) | Hiermee kunt u netwerken beheren, maar geen toegang tot deze netwerken. | 4d97b98b-1d4f-4787-a291-c67834d212e7 |
 > | [Privé-DNS zone-inzender](#private-dns-zone-contributor) | Hiermee kunt u privé-DNS-zonebronnen beheren, maar niet de virtuele netwerken waar ze aan zijn gekoppeld. | b12aa53e-6015-4669-85d0-8515ebb3ae7f |
-> | [Traffic Manager-inzender](#traffic-manager-contributor) | Hiermee kunt u Traffic Manager beheren, maar kunt u niet bepalen wie er toegang tot heeft. | a4b10055-b0c7-44c2-b00f-c7b5b3550cf7 |
+> | [Traffic Manager-inzender](#traffic-manager-contributor) | Hiermee kunt u Traffic Manager beheren, maar kunt u niet bepalen wie er toegang toe heeft. | a4b10055-b0c7-44c2-b00f-c7b5b3550cf7 |
 > | **Storage** |  |  |
 > | [Avere-inzender](#avere-contributor) | Kan een cluster met Avere vFXT maken en beheren. | 4f8fab4f-1852-4a58-a46a-8eaf358af14a |
-> | [Avere Operator](#avere-operator) | Wordt gebruikt door het Avere vFXT cluster om het cluster te beheren | c025889f-8102-4ebf-b32c-fc0c6f0c6bd9 |
+> | [Avere-operator](#avere-operator) | Wordt gebruikt door het Avere vFXT cluster om het cluster te beheren | c025889f-8102-4ebf-b32c-fc0c6f0c6bd9 |
 > | [Back-upbijdrager](#backup-contributor) | Hiermee kunt u de back-upservice beheren, maar u kunt geen kluizen maken en anderen toegang geven | 5e467623-bb1f-42f4-a55d-6e525e11384b |
 > | [Back-upoperator](#backup-operator) | Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, het maken van een kluis en het verlenen van toegang aan anderen | 00c29273-979b-4161-815c-10b084fb9324 |
 > | [Back-uplezer](#backup-reader) | Kan back-upservices weergeven, maar kan geen wijzigingen aanbrengen | a795c7a0-d4a2-40c1-ae25-d81f01202912 |
 > | [Inzender voor klassieke opslagaccounts](#classic-storage-account-contributor) | Hiermee kunt u klassieke opslagaccounts beheren, maar geen toegang tot deze accounts. | 86e8f5dc-a6e9-4c67-9d15-de283e8eac25 |
 > | [Klassieke servicerol sleuteloperator voor opslagaccounts](#classic-storage-account-key-operator-service-role) | Sleuteloperators voor klassieke opslagaccounts kunnen sleutels in klassieke opslagaccounts in een lijst met en opnieuw worden weergegeven | 985d6b00-f706-48f5-a6fe-d0ca12fb668d |
 > | [Data Box-inzender](#data-box-contributor) | Hiermee kunt u alles beheren onder Data Box Service, behalve toegang te verlenen aan anderen. | add466c9-e687-43fc-8d98-dfcf8d720be5 |
-> | [Data Box Lezer](#data-box-reader) | Hiermee kunt u de Data Box beheren, behalve het maken van order- of bewerkingsgegevens en het verlenen van toegang aan anderen. | 028f4ed7-e2a9-465e-a8f4-9c0ffdfdc027 |
+> | [Data Box Reader](#data-box-reader) | Hiermee kunt u de Data Box beheren, behalve het maken van order- of bewerkingsgegevens en het verlenen van toegang aan anderen. | 028f4ed7-e2a9-465e-a8f4-9c0ffdfdc027 |
 > | [Data Lake Analytics Developer](#data-lake-analytics-developer) | Hiermee kunt u uw eigen taken verzenden, bewaken en beheren, maar geen accounts maken Data Lake Analytics verwijderen. | 47b7735b-770e-4598-a7da-8b91488b4c88 |
 > | [Lezer en gegevenstoegang](#reader-and-data-access) | Hiermee kunt u alles bekijken, maar u kunt geen opslagaccount of ingesloten resource verwijderen of maken. Het biedt ook lees-/schrijftoegang tot alle gegevens in een opslagaccount via toegang tot opslagaccountsleutels. | c12c1c16-33a1-487b-954d-41c89c60f349 |
 > | [Inzender voor opslagaccounts](#storage-account-contributor) | Staat beheer van opslagaccounts toe. Biedt toegang tot de accountsleutel, die kan worden gebruikt voor toegang tot gegevens via gedeelde sleutelautorisatie. | 17d1049b-9a84-46fb-8f53-869881c3d3ab |
-> | [Servicerol Sleuteloperator voor opslagaccount](#storage-account-key-operator-service-role) | Maakt het mogelijk om toegangssleutels voor opslagaccounts weer te geven en opnieuw te gebruiken. | 81a9662b-bebf-436f-a333-f67b29880f12 |
+> | [Servicerol Sleuteloperator voor opslagaccounts](#storage-account-key-operator-service-role) | Maakt het mogelijk om toegangssleutels voor opslagaccounts weer te geven en opnieuw te gebruiken. | 81a9662b-bebf-436f-a333-f67b29880f12 |
 > | [Inzender voor Storage Blob-gegevens](#storage-blob-data-contributor) | Lees, schrijf en verwijder Azure Storage containers en blobs. Zie Machtigingen voor het aanroepen van blob- en wachtrijgegevensbewerkingen voor meer informatie over welke acties vereist zijn voor een [bepaalde gegevensbewerking.](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
 > | [Eigenaar van opslagblobgegevens](#storage-blob-data-owner) | Biedt volledige toegang tot Azure Storage blobcontainers en -gegevens, waaronder het toewijzen van POSIX-toegangsbeheer. Zie Machtigingen voor het aanroepen van blob- en wachtrijgegevensbewerkingen voor meer informatie over welke acties vereist zijn voor een [bepaalde gegevensbewerking.](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | [Lezer voor opslagblobgegevens](#storage-blob-data-reader) | Lees en vermeld Azure Storage containers en blobs. Zie Machtigingen voor het aanroepen van blob- en wachtrijgegevensbewerkingen voor meer informatie over welke acties vereist zijn voor een [bepaalde gegevensbewerking.](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | [Storage Blob Delegator](#storage-blob-delegator) | Haal een sleutel voor gebruikersdelegatie op, die vervolgens kan worden gebruikt om een Shared Access Signature te maken voor een container of blob die is ondertekend met Azure AD-referenties. Zie Create [a user delegation SAS (Een SAS voor gebruikersdelegatie maken) voor meer informatie.](/rest/api/storageservices/create-user-delegation-sas) | db58b8e5-c6ad-4a2a-8342-4190687cbf4a |
-> | [Inzender voor opslagbestandsgegevens via SMB-share](#storage-file-data-smb-share-contributor) | Hiermee kunt u lezen, schrijven en verwijderen van toegang tot bestanden/mappen in Azure-bestands shares. Deze rol heeft geen ingebouwd equivalent op Windows-bestandsservers. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
+> | [Inzender voor opslagbestandsgegevens via SMB-share](#storage-file-data-smb-share-contributor) | Hiermee kunt u lezen, schrijven en verwijderen van toegang tot bestanden/mappen in Azure-bestands shares. Deze rol heeft geen ingebouwde equivalent op Windows-bestandsservers. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
 > | [Inzender met verhoogde bevoegdheden voor opslagbestandsgegevens via SMB-share](#storage-file-data-smb-share-elevated-contributor) | Hiermee kunnen ACL's voor bestanden/mappen in Azure-bestands shares worden gelezen, geschreven, verwijderd en gewijzigd. Deze rol is gelijk aan een wijzigings-ACL voor bestands share op Windows-bestandsservers. | a7264617-510b-434b-a828-9731dc254ea7 |
 > | [Lezer voor opslagbestandgegevens via SMB-share](#storage-file-data-smb-share-reader) | Biedt leestoegang tot bestanden/mappen in Azure-bestands shares. Deze rol is gelijk aan een bestandsdeel-ACL voor lezen op Windows-bestandsservers. | aba4ae5f-2193-4029-9191-0cb91df5e314 |
 > | [Inzender voor opslagwachtrijgegevens](#storage-queue-data-contributor) | Lees, schrijf en verwijder Azure Storage wachtrijen en wachtrijberichten. Zie Machtigingen voor het aanroepen van blob- en wachtrijgegevensbewerkingen voor meer informatie over welke acties vereist zijn voor een [bepaalde gegevensbewerking.](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations) | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
@@ -80,11 +80,11 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [Azure Spring Cloud-gegevenslezer](#azure-spring-cloud-data-reader) | Leestoegang tot Azure Spring Cloud toestaan | b5537268-8956-4941-a8f0-646150406f0c |
 > | [Inzender voor zoekservice](#search-service-contributor) | Hiermee kunt u Zoekservices beheren, maar geen toegang krijgen tot deze services. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | [SignalR AccessKey Reader](#signalr-accesskey-reader) | Toegangssleutels SignalR Service lezen | 04165923-9d83-45d5-8227-78b77b0a687e |
-> | [SignalR App Server (preview)](#signalr-app-server-preview) | Hiermee kan uw app-server toegang SignalR Service met AAD-auth-opties. | 420fcaa2-552c-430f-98ca-3264be4806c7 |
+> | [SignalR App Server (preview)](#signalr-app-server-preview) | Hiermee geeft u uw app-server toegang SignalR Service met AAD-auth-opties. | 420fcaa2-552c-430f-98ca-3264be4806c7 |
 > | [SignalR-inzender](#signalr-contributor) | SignalR-serviceresources maken, lezen, bijwerken en verwijderen | 8cf5e20a-e4b2-4e9d-b3a1-5ceb692c2761 |
 > | [Serverloze inzender van SignalR (preview)](#signalr-serverless-contributor-preview) | Hiermee kan uw app toegang krijgen tot de service in de serverloze modus met AAD-auth-opties. | fd53cd77-2268-407a-8f46-7e7863d0f521 |
 > | [SignalR Service eigenaar (preview)](#signalr-service-owner-preview) | Volledige toegang tot Azure SignalR Service REST API's | 7e4f1700-ea5a-4f59-8f37-079cfe29dce3 |
-> | [SignalR Service Lezer (preview)](#signalr-service-reader-preview) | Alleen-lezentoegang tot Azure SignalR Service REST API's | ddde6b66-c0df-4114-a159-3618637b3035 |
+> | [SignalR Service Reader (preview)](#signalr-service-reader-preview) | Alleen-lezentoegang tot Azure SignalR Service REST API's | ddde6b66-c0df-4114-a159-3618637b3035 |
 > | [Inzender voor webplannen](#web-plan-contributor) | Hiermee kunt u de webplannen voor websites beheren, maar geen toegang tot de websites. | 2cc479cb-7b4d-49a8-b449-8c00fd0f0a4b |
 > | [Inzender voor websites](#website-contributor) | Hiermee kunt u websites (geen webplannen) beheren, maar geen toegang tot deze websites. | de139f84-1756-47ae-9be6-808fbbe84772 |
 > | **Containers** |  |  |
@@ -93,49 +93,49 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [AcrPull](#acrpull) | acr pull | 7f951dda-4ed3-4680-a7ca-43fe172d538d |
 > | [AcrPush](#acrpush) | acr push | 8311e382-0749-4cb8-b61a-304f252e45ec |
 > | [AcrQuarantineReader](#acrquarantinereader) | acr quarantine data reader | cdda3590-29a3-44f6-95f2-9f980659eb04 |
-> | [AcrQuarantineWriter](#acrquarantinewriter) | acr quarantine data writer | c8d4ff99-41c3-41a8-9f60-21df be59608 |
-> | [Azure Kubernetes Service clusterbeheerdersrol](#azure-kubernetes-service-cluster-admin-role) | De actie Clusterbeheerderreferenties opsommen. | 0ab0b1a8-8aac-4efd-b8c2-3ee1fb270be8 |
+> | [AcrQuarantineWriter](#acrquarantinewriter) | acr quarantine data writer | c8d4ff99-41c3-41a8-9f60-21dfische59608 |
+> | [Azure Kubernetes Service rol clusterbeheerder](#azure-kubernetes-service-cluster-admin-role) | De actie Clusterbeheerderreferenties opsommen. | 0ab0b1a8-8aac-4efd-b8c2-3ee1fb270be8 |
 > | [Azure Kubernetes Service clustergebruikersrol](#azure-kubernetes-service-cluster-user-role) | Lijst met gebruikersreferenties voor cluster. | 4abbcc35-e782-43d8-92c5-2d3f1bd2253f |
-> | [Azure Kubernetes Service Inzender-rol](#azure-kubernetes-service-contributor-role) | Verleent toegang tot lees- en Azure Kubernetes Service clusters | ed7f3fbd-7b88-4dd4-9017-9adb7ce333f8 |
+> | [Azure Kubernetes Service inzendersrol](#azure-kubernetes-service-contributor-role) | Verleent toegang tot lees- en Azure Kubernetes Service clusters | ed7f3fbd-7b88-4dd4-9017-9adb7ce333f8 |
 > | [Azure Kubernetes Service RBAC-beheerder](#azure-kubernetes-service-rbac-admin) | Hiermee kunt u alle resources onder cluster/naamruimte beheren, behalve resourcequota en naamruimten bijwerken of verwijderen. | 3498e952-d568-435e-9b2c-8d77e338d7f7 |
 > | [Azure Kubernetes Service RBAC-clusterbeheerder](#azure-kubernetes-service-rbac-cluster-admin) | Hiermee kunt u alle resources in het cluster beheren. | b1ff04bb-8a4e-4dc4-8eb5-8693973ce19b |
-> | [Azure Kubernetes Service RBAC-lezer](#azure-kubernetes-service-rbac-reader) | Hiermee staat u alleen-lezentoegang toe om de meeste objecten in een naamruimte te zien. Het weergeven van rollen of rolbindingen is niet toegestaan. Deze rol staat het weergeven van geheimen niet toe, omdat het lezen van de inhoud van Geheimen toegang biedt tot ServiceAccount-referenties in de naamruimte, waardoor API-toegang mogelijk is als elk ServiceAccount in de naamruimte (een vorm van escalatie van bevoegdheden). Door deze rol toe te passen op clusterbereik, krijgt u toegang tot alle naamruimten. | 7f6c6a51-bcf8-42ba-9220-52d62157d7db |
-> | [Azure Kubernetes Service RBAC Writer](#azure-kubernetes-service-rbac-writer) | Hiermee staat u lees-/schrijftoegang toe tot de meeste objecten in een naamruimte. Deze rol staat het weergeven of wijzigen van rollen of rolbindingen niet toe. Met deze rol kunt u echter toegang krijgen tot Geheimen en pods uitvoeren als elk ServiceAccount in de naamruimte, zodat deze kan worden gebruikt om de API-toegangsniveaus van elk ServiceAccount in de naamruimte te verkrijgen. Als u deze rol op clusterbereik toe passen, krijgt u toegang tot alle naamruimten. | a7ffa36f-339b-4b5c-8bdf-e2c188b2c0eb |
+> | [Azure Kubernetes Service RBAC-lezer](#azure-kubernetes-service-rbac-reader) | Staat alleen-lezentoegang toe om de meeste objecten in een naamruimte te zien. Het weergeven van rollen of rolbindingen is niet toegestaan. Deze rol staat het weergeven van geheimen niet toe, omdat het lezen van de inhoud van Geheimen toegang biedt tot ServiceAccount-referenties in de naamruimte, waardoor API-toegang mogelijk is als elk ServiceAccount in de naamruimte (een vorm van escalatie van bevoegdheden). Door deze rol toe te passen op clusterbereik, krijgt u toegang tot alle naamruimten. | 7f6c6a51-bcf8-42ba-9220-52d62157d7db |
+> | [Azure Kubernetes Service RBAC Writer](#azure-kubernetes-service-rbac-writer) | Hiermee staat u lees-/schrijftoegang toe tot de meeste objecten in een naamruimte. Deze rol staat het weergeven of wijzigen van rollen of rolbindingen niet toe. Met deze rol kunt u echter toegang krijgen tot Geheimen en pods uitvoeren als een serviceaccount in de naamruimte, zodat deze kan worden gebruikt om de API-toegangsniveaus van elk ServiceAccount in de naamruimte te verkrijgen. Door deze rol toe te passen op clusterbereik, krijgt u toegang tot alle naamruimten. | a7ffa36f-339b-4b5c-8bdf-e2c188b2c0eb |
 > | **Databases** |  |  |
 > | [Cosmos DB rol accountlezer](#cosmos-db-account-reader-role) | Kan de Azure Cosmos DB lezen. Zie [Inzender voor DocumentDB-accounts](#documentdb-account-contributor) voor het beheren Azure Cosmos DB accounts. | fbdf93bf-df7d-467e-a4d2-9458aa1360c8 |
-> | [Cosmos DB Operator](#cosmos-db-operator) | Hiermee kunt u Azure Cosmos DB accounts beheren, maar geen toegang krijgen tot gegevens in deze accounts. Hiermee voorkomt u toegang tot accountsleutels en verbindingsreeksen. | 230815da-be43-4aae-9cb4-875f7bd000aa |
+> | [Cosmos DB Operator](#cosmos-db-operator) | Hiermee kunt u uw Azure Cosmos DB beheren, maar geen toegang krijgen tot gegevens in deze accounts. Hiermee voorkomt u toegang tot accountsleutels en verbindingsreeksen. | 230815da-be43-4aae-9cb4-875f7bd000aa |
 > | [CosmosBackupOperator](#cosmosbackupoperator) | Kan een herstelaanvraag indienen voor een Cosmos DB database of een container voor een account | db7b14f2-5adf-42da-9f96-f2ee17cb5cb |
 > | [CosmosRestoreOperator](#cosmosrestoreoperator) | Kan herstelactie uitvoeren voor Cosmos DB databaseaccount met continue back-upmodus | 5432c526-bc82-444a-b7ba-57c5b0b5b34f |
 > | [Inzender voor DocumentDB-account](#documentdb-account-contributor) | Kan uw Azure Cosmos DB beheren. Azure Cosmos DB staat voorheen bekend als DocumentDB. | 5bd9cd88-fe45-4216-938b-f97437e15450 |
 > | [Redis Cache-inzender](#redis-cache-contributor) | Hiermee kunt u Redis-caches beheren, maar geen toegang tot deze caches. | e0f68234-74aa-48ed-b826-c38b57376e17 |
 > | [Inzender voor SQL DB](#sql-db-contributor) | Hiermee kunt u SQL-databases beheren, maar geen toegang krijgen tot deze databases. U kunt ook hun beveiligingsbeleid of hun bovenliggende SQL-servers niet beheren. | 9b7fa17d-e63e-47b0-bb0a-15c516ac86ec |
 > | [SQL Managed Instance-inzender](#sql-managed-instance-contributor) | Hiermee kunt u SQL Managed Instances en de vereiste netwerkconfiguratie beheren, maar u kunt geen toegang verlenen aan anderen. | 4939a1f6-9ae0-4e48-a1e0-f2cbe897382d |
-> | [SQL-beveiligingsbeheerder](#sql-security-manager) | Hiermee kunt u het beveiligingsbeleid van SQL-servers en -databases beheren, maar geen toegang tot deze servers. | 056cd41c-7e88-42e1-933e-88ba6a50c9c3 |
-> | [SQL Server-inzender](#sql-server-contributor) | Hiermee kunt u SQL-servers en -databases beheren, maar geen toegang krijgen tot deze servers en niet het bijbehorende beveiligingsbeleid. | 6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437 |
+> | [SQL-beveiligingsbeheerder](#sql-security-manager) | Hiermee kunt u het beveiligingsbeleid van SQL-servers en -databases beheren, maar geen toegang tot deze servers en databases. | 056cd41c-7e88-42e1-933e-88ba6a50c9c3 |
+> | [SQL Server-inzender](#sql-server-contributor) | Hiermee kunt u SQL-servers en -databases beheren, maar geen toegang krijgen tot deze servers, en niet het bijbehorende beveiligingsbeleid. | 6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437 |
 > | **Analyse** |  |  |
-> | [Azure Event Hubs gegevenseigenaar](#azure-event-hubs-data-owner) | Biedt volledige toegang tot Azure Event Hubs resources. | f526a384-b230-433a-b45c-95f59c4a2dec |
-> | [Azure Event Hubs Ontvanger van gegevens](#azure-event-hubs-data-receiver) | Hiermee krijgt u toegang tot Azure Event Hubs resources. | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
-> | [Azure Event Hubs gegevens afzender](#azure-event-hubs-data-sender) | Hiermee kunt u toegang tot Azure Event Hubs verzenden. | 2b629674-e913-4c01-ae53-ef4638d8f975 |
+> | [Azure Event Hubs eigenaar van gegevens](#azure-event-hubs-data-owner) | Biedt volledige toegang tot Azure Event Hubs resources. | f526a384-b230-433a-b45c-95f59c4a2dec |
+> | [Azure Event Hubs-ontvanger](#azure-event-hubs-data-receiver) | Hiermee krijgt u toegang tot Azure Event Hubs resources. | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
+> | [Azure Event Hubs Afzender van gegevens](#azure-event-hubs-data-sender) | Hiermee kunt u toegang tot Azure Event Hubs verzenden. | 2b629674-e913-4c01-ae53-ef4638d8f975 |
 > | [Data Factory-inzender](#data-factory-contributor) | Maak en beheer gegevensfabrieken en onderliggende resources in deze resources. | 673868aa-7521-48a0-acc6-0f60742d39f5 |
-> | [Gegevens ops purgeren](#data-purger) | Privégegevens verwijderen uit een Log Analytics-werkruimte. | 150f5e0c-0603-4f03-8c7f-cf70034c4e90 |
+> | [Gegevens ops purger](#data-purger) | Privégegevens verwijderen uit een Log Analytics-werkruimte. | 150f5e0c-0603-4f03-8c7f-cf70034c4e90 |
 > | [HDInsight-clusteroperator](#hdinsight-cluster-operator) | Hiermee kunt u HDInsight-clusterconfiguraties lezen en wijzigen. | 61ed4efc-fab3-44fd-b111-e24485cc132a |
 > | [Inzender voor HDInsight Domain Services](#hdinsight-domain-services-contributor) | Kan domain services-gerelateerde bewerkingen lezen, maken, wijzigen en verwijderen die nodig zijn voor HDInsight-Enterprise Security Package | 8d8d5a11-05d3-4bda-a417-a08778121c7c |
-> | [Inzender van Log Analytics](#log-analytics-contributor) | Log Analytics-inzender kan alle bewakingsgegevens lezen en bewakingsinstellingen bewerken. Het bewerken van bewakingsinstellingen omvat het toevoegen van de VM-extensie aan VM's; opslagaccountsleutels lezen om het verzamelen van logboeken van Azure Storage; Automation-accounts maken en configureren; oplossingen toevoegen; en azure diagnostics configureren voor alle Azure-resources. | 92aaf0da-9dab-42b6-94a3-d43ce8d16293 |
-> | [Lezer van Log Analytics](#log-analytics-reader) | De Log Analytics-lezer kan alle bewakingsgegevens bekijken en doorzoeken, evenals bewakingsinstellingen, waaronder het weergeven van de configuratie van diagnostische Azure-gegevens op alle Azure-resources. | 73c42c96-874c-492b-b04d-ab87d138a893 |
-> | [Purview DataAtor](#purview-data-curator) | De Microsoft.Purview-gegevenscurator kan catalogusgegevensobjecten maken, lezen, wijzigen en verwijderen en relaties tussen objecten tot stand brengen. Deze rol is in preview en kan worden gewijzigd. | 8a3c2885-9b38-4fd2-9d99-91af537c1347 |
-> | [Gegevenslezer voor purviewen](#purview-data-reader) | De Microsoft.Purview-gegevenslezer kan catalogusgegevensobjecten lezen. Deze rol is in preview en kan worden gewijzigd. | ff100721-1b9d-43d8-af52-42b69c1272db |
-> | [Gegevensbronbeheerder purviewen](#purview-data-source-administrator) | De microsoft.Purview-gegevensbronbeheerder kan gegevensbronnen en gegevensscans beheren. Deze rol is in preview en kan worden gewijzigd. | 200bba9e-f0c8-430f-892b-6f0794863803 |
+> | [Inzender van Log Analytics](#log-analytics-contributor) | Log Analytics-inzender kan alle bewakingsgegevens lezen en bewakingsinstellingen bewerken. Het bewerken van bewakingsinstellingen omvat het toevoegen van de VM-extensie aan VM's; lezen van opslagaccountsleutels om het verzamelen van logboeken van de Azure Storage; Automation-accounts maken en configureren; oplossingen toevoegen; en azure diagnostics configureren voor alle Azure-resources. | 92aaf0da-9dab-42b6-94a3-d43ce8d16293 |
+> | [Lezer van Log Analytics](#log-analytics-reader) | Log Analytics-lezer kan alle bewakingsgegevens bekijken en doorzoeken, evenals bewakingsinstellingen, inclusief het bekijken van de configuratie van Diagnostische gegevens van Azure voor alle Azure-resources. | 73c42c96-874c-492b-b04d-ab87d138a893 |
+> | [Purview DataAtor](#purview-data-curator) | De Microsoft.Purview-gegevenscursator kan catalogusgegevensobjecten maken, lezen, wijzigen en verwijderen en relaties tussen objecten tot stand brengen. Deze rol is in preview en kan worden gewijzigd. | 8a3c2885-9b38-4fd2-9d99-91af537c1347 |
+> | [Gegevenslezer purviewen](#purview-data-reader) | De Microsoft.Purview-gegevenslezer kan catalogusgegevensobjecten lezen. Deze rol is in preview en kan worden gewijzigd. | ff100721-1b9d-43d8-af52-42b69c1272db |
+> | [Purview Data Source Administrator](#purview-data-source-administrator) | De beheerder van de Microsoft.Purview-gegevensbron kan gegevensbronnen en gegevensscans beheren. Deze rol is in preview en kan worden gewijzigd. | 200bba9e-f0c8-430f-892b-6f0794863803 |
 > | [Inzender van schemaregisters (preview)](#schema-registry-contributor-preview) | Schemaregistergroepen en schema's lezen, schrijven en verwijderen. | 5dffeca3-4936-4216-b2bc-10343a5abb25 |
 > | [Lezer van schemaregisters (preview)](#schema-registry-reader-preview) | Schemaregistergroepen en schema's lezen en weergeven. | 2c56ea50-c6b3-40a6-83c0-9d98858bc7d2 |
 > | **Blockchain** |  |  |
-> | [Toegang tot blockchain-lid-knooppunt (preview)](#blockchain-member-node-access-preview) | Hiermee kunt u toegang krijgen tot blockchainlidknooppunten | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
+> | [Toegang tot blockchain-lid-knooppunt (preview)](#blockchain-member-node-access-preview) | Hiermee kunt u toegang krijgen tot knooppunten die lid zijn van blockchain | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
 > | **AI + machine learning** |  |  |
-> | [Cognitive Services-inzender](#cognitive-services-contributor) | Hiermee kunt u sleutels van de Cognitive Services. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
+> | [Cognitive Services-inzender](#cognitive-services-contributor) | Hiermee kunt u sleutels maken, lezen, bijwerken, verwijderen en beheren van Cognitive Services. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
 > | [Cognitive Services Custom Vision-inzender](#cognitive-services-custom-vision-contributor) | Volledige toegang tot het project, inclusief de mogelijkheid om projecten weer te geven, te maken, te bewerken of te verwijderen. | c1ff6cc2-c111-46fe-8896-e0ef812ad9f3 |
 > | [Cognitive Services Custom Vision implementatie](#cognitive-services-custom-vision-deployment) | Modellen publiceren, publiceren of exporteren. Implementatie kan het project weergeven, maar kan niet worden bijgewerkt. | 5c4089e1-6d96-4d2f-b296-c1bc7137275f |
 > | [Cognitive Services Custom Vision Labeler](#cognitive-services-custom-vision-labeler) | Trainingsafbeeldingen weergeven, bewerken en de afbeeldingstags maken, toevoegen, verwijderen of verwijderen. Labelaars kunnen het project bekijken, maar kunnen niets anders dan trainingsafbeeldingen en tags bijwerken. | 88424f51-ebe7-446f-bc41-7fa16989e96c |
 > | [Cognitive Services Custom Vision Reader](#cognitive-services-custom-vision-reader) | Alleen-lezenacties in het project. Lezers kunnen het project niet maken of bijwerken. | 93586559-c37d-4a6b-ba08-b9f0940c2d73 |
-> | [Cognitive Services Custom Vision Cognitive Services Custom Vision](#cognitive-services-custom-vision-trainer) | Bekijk, bewerk projecten en train de modellen, met inbegrip van de mogelijkheid om de modellen te publiceren, uit te publiceren en te exporteren. Docenten kunnen het project niet maken of verwijderen. | 0a5ae4ab-0d65-4eeb-be61-29fc9b54394b |
+> | [Cognitive Services Custom Vision Cognitive Services Custom Vision](#cognitive-services-custom-vision-trainer) | Bekijk, bewerk projecten en train de modellen, inclusief de mogelijkheid om de modellen te publiceren, te publiceren, te publiceren en te exporteren. Docenten kunnen het project niet maken of verwijderen. | 0a5ae4ab-0d65-4eeb-be61-29fc9b54394b |
 > | [Cognitive Services Gegevenslezer (preview)](#cognitive-services-data-reader-preview) | Hiermee kunt u Cognitive Services lezen. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
 > | [Cognitive Services Metrics Advisor Administrator](#cognitive-services-metrics-advisor-administrator) | Volledige toegang tot het project, inclusief de configuratie op systeemniveau. | cb43c632-a144-4ec5-977c-e80c4affc34a |
 > | [Cognitive Services QnA Maker Editor](#cognitive-services-qna-maker-editor) | Hier kunt u een KB maken, bewerken, importeren en exporteren. U kunt een KB niet publiceren of verwijderen. | f4cc2bf9-21be-47a1-bdf1-5c5804381025 |
@@ -147,10 +147,10 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [Inhoudslezer voor apparaatupdates](#device-update-content-reader) | Geeft u leestoegang tot inhoudsbewerkingen, maar staat het aanbrengen van wijzigingen niet toe | d1ee9a80-8b14-47f0-bdc2-f4a351625a7b |
 > | [Beheerder van apparaatupdate-implementaties](#device-update-deployments-administrator) | Biedt u volledige toegang tot beheerbewerkingen | e4237640-0e3d-4a46-8fda-70bc94856432 |
 > | [Lezer voor implementaties van apparaatupdates](#device-update-deployments-reader) | Geeft u leestoegang tot beheerbewerkingen, maar staat het aanbrengen van wijzigingen niet toe | 49e2f5d2-7741-4835-8efa-19e1fe35e47f |
-> | [Lezer apparaatupdate](#device-update-reader) | Geeft u leestoegang tot beheer- en inhoudsbewerkingen, maar staat het aanbrengen van wijzigingen niet toe | e9dba6fb-3d52-4cf0-bce3-f06ce71b9e0f |
+> | [Lezer voor apparaatupdates](#device-update-reader) | Geeft u leestoegang tot beheer- en inhoudsbewerkingen, maar staat het aanbrengen van wijzigingen niet toe | e9dba6fb-3d52-4cf0-bce3-f06ce71b9e0f |
 > | **Mixed reality** |  |  |
 > | [Remote Rendering Administrator](#remote-rendering-administrator) | Biedt de gebruiker conversie-, sessie-, rendering- en diagnostische mogelijkheden voor Azure Remote Rendering | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
-> | [Remote Rendering Client](#remote-rendering-client) | Biedt de gebruiker mogelijkheden voor sessie-, rendering- en diagnostische gegevens voor Azure Remote Rendering. | d39065c4-c120-43c9-ab0a-63eed9795f0a |
+> | [Remote Rendering Client](#remote-rendering-client) | Biedt gebruikers mogelijkheden voor het beheren van sessies, rendering en diagnostische Azure Remote Rendering. | d39065c4-c120-43c9-ab0a-63eed9795f0a |
 > | [Spatial Anchors-account inzender](#spatial-anchors-account-contributor) | Hiermee kunt u spatial anchors in uw account beheren, maar niet verwijderen | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
 > | [Spatial Anchors accounteigenaar](#spatial-anchors-account-owner) | Hiermee kunt u ruimtelijke ankers in uw account beheren, inclusief het verwijderen ervan | 70bbe301-9835-447d-afdd-19eb3167307c |
 > | [Spatial Anchors-accountlezer](#spatial-anchors-account-reader) | Hiermee kunt u eigenschappen van ruimtelijke ankers in uw account zoeken en lezen | 5d51204f-eb77-4b1c-b86a-2ec626c49413 |
@@ -162,7 +162,7 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [App Configuration gegevenslezer](#app-configuration-data-reader) | Hiermee staat u leestoegang tot App Configuration gegevens toe. | 516239f1-63e1-4d78-a4de-a74fb236a071 |
 > | [Azure Service Bus gegevenseigenaar](#azure-service-bus-data-owner) | Biedt volledige toegang tot Azure Service Bus resources. | 090c5cfd-751d-490a-894a-3ce6f1109419 |
 > | [Azure Service Bus-ontvanger](#azure-service-bus-data-receiver) | Hiermee kunt u toegang krijgen tot Azure Service Bus resources. | 4f6d3b9b-027b-4f4c-9142-0e5a2a2247e0 |
-> | [Azure Service Bus Afzender van gegevens](#azure-service-bus-data-sender) | Hiermee kunt u toegang tot Azure Service Bus verzenden. | 69a216fc-b8fb-44d8-bc22-1f3c2cd27a39 |
+> | [Azure Service Bus gegevens afzender](#azure-service-bus-data-sender) | Hiermee kunt u toegang tot Azure Service Bus verzenden. | 69a216fc-b8fb-44d8-bc22-1f3c2cd27a39 |
 > | [Azure Stack registratie-eigenaar](#azure-stack-registration-owner) | Hiermee kunt u Azure Stack beheren. | 6f12a6df-dd06-4f3e-bcb1-ce8be600526a |
 > | [EventGrid-inzender](#eventgrid-contributor) | Hiermee kunt u EventGrid-bewerkingen beheren. | 1e241071-0855-49ea-94dc-649edcd759de |
 > | [EventGrid EventSubscription Contributor](#eventgrid-eventsubscription-contributor) | Hiermee kunt u gebeurtenisabonnementbewerkingen voor EventGrid beheren. | 428e0ff0-5e57-4d9c-a221-2c70d0e0a443 |
@@ -188,7 +188,7 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [Azure Sentinel Responder](#azure-sentinel-responder) | Azure Sentinel Responder | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
 > | [Key Vault Administrator](#key-vault-administrator) | Voer alle gegevensvlakbewerkingen uit op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
 > | [Key Vault Certificates Officer](#key-vault-certificates-officer) | Voer een actie uit op de certificaten van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | a4417e6f-fecd-4de8-b567-7b0420556985 |
-> | [Key Vault-inzender](#key-vault-contributor) | U kunt sleutelkluizen beheren, maar u kunt geen rollen toewijzen in Azure RBAC en biedt u geen toegang tot geheimen, sleutels of certificaten. | f25e0fa2-a7c8-4377-a976-54943a77a395 |
+> | [Key Vault Inzender](#key-vault-contributor) | U kunt sleutelkluizen beheren, maar u kunt geen rollen toewijzen in Azure RBAC en biedt geen toegang tot geheimen, sleutels of certificaten. | f25e0fa2-a7c8-4377-a976-54943a77a395 |
 > | [Key Vault Crypto Officer](#key-vault-crypto-officer) | Voer een actie uit op de sleutels van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
 > | [Key Vault cryptoserviceversleutelingsgebruiker](#key-vault-crypto-service-encryption-user) | Metagegevens van sleutels lezen en wrap-/unwrap-bewerkingen uitvoeren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
 > | [Key Vault cryptogebruiker](#key-vault-crypto-user) | Cryptografische bewerkingen uitvoeren met behulp van sleutels. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 12338af0-0e69-4776-bea7-57ae8d297424 |
@@ -234,7 +234,7 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [Lezer van beheerde toepassingen](#managed-applications-reader) | Hiermee kunt u resources in een beheerde app lezen en JIT-toegang aanvragen. | b9331d33-8a36-4f8c-b097-4f54124fdb44 |
 > | [Rol registratietoewijzing beheerde services verwijderen](#managed-services-registration-assignment-delete-role) | Met de rol Registratietoewijzing beheerde services kunnen tenantgebruikers die beheren de registratietoewijzing verwijderen die is toegewezen aan hun tenant. | 91c1777a-f3dc-4fae-b103-61d183457e46 |
 > | [Inzender voor beheergroep](#management-group-contributor) | Rol inzender voor beheergroep | 5d58bcaf-24a5-4b20-bdb6-eed9f69fbe4c |
-> | [Lezer van beheergroep](#management-group-reader) | Rol van lezer van beheergroep | ac63b705-f282-497d-ac71-919bf39d939d |
+> | [Lezer van beheergroep](#management-group-reader) | Lezersrol beheergroep | ac63b705-f282-497d-ac71-919bf39d939d |
 > | [New Relic APM-account inzender](#new-relic-apm-account-contributor) | Hiermee kunt u New Relic Application Performance Management accounts en toepassingen beheren, maar geen toegang tot deze accounts. | 5d28c62d-5b37-4476-8438-e587778df237 |
 > | [Policy Insights Data Writer (preview)](#policy-insights-data-writer-preview) | Hiermee staat u leestoegang toe tot resourcebeleid en schrijftoegang tot beleidsgebeurtenissen voor resourcecomponenten. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
 > | [Operator voor quotumaanvraag](#quota-request-operator) | Lees en maak quotumaanvragen, haal de status van de quotumaanvraag op en maak ondersteuningstickets. | 0e5f05e5-9ab9-446b-b98d-1e2157c94125 |
@@ -258,10 +258,10 @@ De volgende tabel bevat een korte beschrijving van elke ingebouwde rol. Klik op 
 > | [Hostoperator voor bureaubladvirtualisatiesessie](#desktop-virtualization-session-host-operator) | Operator van de Bureaubladvirtualisatiesessiehost. | 2ad6aaab-ead9-4eaa-8ac5-da422f562408 |
 > | [DesktopVirtualisatiegebruiker](#desktop-virtualization-user) | Hiermee kan de gebruiker de toepassingen in een toepassingsgroep gebruiken. | 1d18fff3-a72a-46b5-b4a9-0b38a3cd7e63 |
 > | [Gebruikerssessieoperator voor bureaubladvirtualisatie](#desktop-virtualization-user-session-operator) | Operator van de Uesr-sessie voor bureaubladvirtualisatie. | ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6 |
-> | [Inzender voor Bureaubladvirtualisatiewerkruimte](#desktop-virtualization-workspace-contributor) | Inzender van de bureaubladvirtualisatiewerkruimte. | 21efdde3-836f-432b-bf3d-3e8e734d4b2b |
-> | [Werkruimtelezer voor bureaubladvirtualisatie](#desktop-virtualization-workspace-reader) | Lezer van de werkruimte Bureaubladvirtualisatie. | 0fa44ee9-7a7d-466b-9bb2-2bf446b1204d |
-> | [Schijfback-uplezer](#disk-backup-reader) | Biedt machtigingen voor back-upkluis voor het uitvoeren van schijfback-ups. | 3e5e47e6-65f7-47ef-90b5-e5dd4d455f24 |
-> | [Operator voor schijfherstel](#disk-restore-operator) | Biedt machtigingen voor het maken van een back-upkluis om schijfherstel uit te voeren. | b50d9833-a0cb-478e-945f-707fcc997c13 |
+> | [Inzender voor bureaubladvirtualisatiewerkruimte](#desktop-virtualization-workspace-contributor) | Inzender van de werkruimte Bureaubladvirtualisatie. | 21efdde3-836f-432b-bf3d-3e8e734d4b2b |
+> | [Lezer voor bureaubladvirtualisatiewerkruimte](#desktop-virtualization-workspace-reader) | Lezer van de werkruimte Bureaubladvirtualisatie. | 0fa44ee9-7a7d-466b-9bb2-2bf446b1204d |
+> | [Schijfback-uplezer](#disk-backup-reader) | Geeft toestemming om een back-up van de back-up van de schijf te maken. | 3e5e47e6-65f7-47ef-90b5-e5dd4d455f24 |
+> | [Operator voor schijfherstel](#disk-restore-operator) | Geeft toestemming om een back-upkluis te maken om schijfherstel uit te voeren. | b50d9833-a0cb-478e-945f-707fcc997c13 |
 > | [Inzender voor schijfmomentopnamen](#disk-snapshot-contributor) | Biedt machtigingen voor back-upkluis voor het beheren van schijfmomentopnamen. | 7efff54f-a5b4-42b5-a1c5-5411624893ce |
 > | [Inzender voor Scheduler-taakverzamelingen](#scheduler-job-collections-contributor) | Hiermee kunt u Scheduler-taakverzamelingen beheren, maar geen toegang tot deze verzamelingen. | 188a0f2f-5c9e-469b-ae67-2aa5ce574b94 |
 > | [Services Hub Operator](#services-hub-operator) | Met Services Hub Operator kunt u alle lees-, schrijf- en verwijderingsbewerkingen uitvoeren die betrekking hebben op Services Hub-connectors. | 82200a5b-e217-47a5-b665-6d8765ee745b |
@@ -362,12 +362,12 @@ Verleent volledige toegang voor het beheren van alle resources, inclusief de mog
 
 ### <a name="reader"></a>Lezer
 
-Alles weergeven resources, maar u kunt geen wijzigingen aanbrengen. [Meer informatie](rbac-and-directory-admin-roles.md)
+Alles weergeven resources, maar staat u niet toe om wijzigingen aan te brengen. [Meer informatie](rbac-and-directory-admin-roles.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | */lezen | Lees resources van alle typen, met uitzondering van geheimen. |
+> | */read | Lees alle typen resources, met uitzondering van geheimen. |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -406,7 +406,7 @@ Hiermee kunt u gebruikerstoegang tot Azure-resources beheren. [Meer informatie](
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | */lezen | Lees resources van alle typen, met uitzondering van geheimen. |
+> | */read | Lees alle typen resources, met uitzondering van geheimen. |
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/* | Autorisatie beheren |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
 > | **NotActions** |  |
@@ -447,7 +447,7 @@ Hiermee kunt u gebruikerstoegang tot Azure-resources beheren. [Meer informatie](
 
 ### <a name="classic-virtual-machine-contributor"></a>Inzender voor klassieke virtuele machines
 
-Hiermee kunt u klassieke virtuele machines beheren, maar geen toegang tot deze machines, en niet tot het virtuele netwerk of opslagaccount waarmee ze zijn verbonden.
+Hiermee kunt u klassieke virtuele machines beheren, maar geen toegang krijgen tot deze machines, en niet het virtuele netwerk of het opslagaccount waarmee ze zijn verbonden.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -584,7 +584,7 @@ Hiermee kunt u virtuele machines beheren, maar geen toegang krijgen tot deze mac
 > | [Microsoft.Compute](resource-provider-operations.md#microsoftcompute)/disks/delete | Hiermee verwijdert u de schijf |
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/schedules/* |  |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
-> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/applicationGateways/backendAddressPools/join/action | Voegt een back-endadresgroep van een toepassingsgateway toe. Kan niet worden gewaarschuwd. |
+> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/applicationGateways/backendAddressPools/join/action | Voegt een back-adresgroep van de toepassingsgateway toe. Kan niet worden gewaarschuwd. |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/loadBalancers/backendAddressPools/join/action | Voegt een back load balancer adresgroep toe. Kan niet worden gewaarschuwd. |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/loadBalancers/inboundNatPools/join/action | Voegt een load balancer inkomende NAT-pool toe. Kan niet worden gewaarschuwd. |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/loadBalancers/inboundNatRules/join/action | Voegt een load balancer inkomende nat-regel toe. Kan niet worden gewaarschuwd. |
@@ -605,7 +605,7 @@ Hiermee kunt u virtuele machines beheren, maar geen toegang krijgen tot deze mac
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/protectedItems/write | Een beveiligd back-upitem maken |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupPolicies/read | Retourneert alle beveiligingsbeleidsregels |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupPolicies/write | Beveiligingsbeleid maken |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/read | Met de get vault-bewerking wordt een object op de azure-resource van het type 'kluis' |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/read | Met de bewerking Kluis opsluizen wordt een object op halen dat de Azure-resource van het type 'kluis' vertegenwoordigt |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/usages/read | Retourneert gebruiksgegevens voor een Recovery Services-kluis. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/write | Met een kluisbewerking maakt u een Azure-resource van het type 'kluis' |
 > | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
@@ -1011,7 +1011,7 @@ Hiermee kunt u DNS-zones en recordsets beheren in Azure DNS, maar kunt u niet be
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/dnsZones/* | DNS-zones en -records maken en beheren |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
@@ -1162,7 +1162,7 @@ Hiermee kunt u privé-DNS-zonebronnen beheren, maar niet de virtuele netwerken w
 
 ### <a name="traffic-manager-contributor"></a>Traffic Manager-inzender
 
-Hiermee kunt u Traffic Manager beheren, maar kunt u niet bepalen wie er toegang toe heeft.
+Hiermee kunt u Traffic Manager beheren, maar kunt u niet bepalen wie er toegang tot heeft.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1229,9 +1229,9 @@ Kan een cluster met Avere vFXT maken en beheren. [Meer informatie](../avere-vfxt
 > | [Microsoft.Compute](resource-provider-operations.md#microsoftcompute)/disks/* |  |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/*/read |  |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/networkInterfaces/* |  |
-> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/read | De definitie van het virtuele netwerk op halen |
+> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/read | De definitie van het virtuele netwerk op te halen |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/subnetten/read | Haalt een subnetdefinitie van een virtueel netwerk op |
-> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/subnets/join/action | Voegt een virtueel netwerk toe. Kan niet worden gewaarschuwd. |
+> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/subnets/join/action | Wordt lid van een virtueel netwerk. Kan niet worden gewaarschuwd. |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/subnets/joinViaServiceEndpoint/action | Voegt resource, zoals opslagaccount of SQL database aan een subnet. Kan niet worden gewaarschuwd. |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/networkSecurityGroups/join/action | Wordt lid van een netwerkbeveiligingsgroep. Kan niet worden gewaarschuwd. |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
@@ -1370,11 +1370,11 @@ Hiermee kunt u de back-upservice beheren, maar u kunt geen kluizen maken en toeg
 > | Acties | Beschrijving |
 > | --- | --- |
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
-> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/read | De definitie van het virtuele netwerk op halen |
+> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/read | De definitie van het virtuele netwerk op te halen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/* |  |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/operationResults/* | Bewerkingsresultaten beheren voor back-upbeheer |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/* | Back-upcontainers maken en beheren in back-up-fabrics van Recovery Services-kluis |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/refreshContainers/action | Vernieuwt de lijst met containers |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/refreshContainers/action | Vernieuwt de containerlijst |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupJobs/* | Back-uptaken maken en beheren |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupJobsExport/action | Taken exporteren |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupOperationResults/* | Resultaten van back-upbeheerbewerkingen maken en beheren |
@@ -1407,8 +1407,8 @@ Hiermee kunt u de back-upservice beheren, maar u kunt geen kluizen maken en toeg
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupValidateFeatures/action | Functies valideren |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringAlerts/write | De waarschuwing wordt opgelost. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/operations/read | Bewerking retourneert de lijst met bewerkingen voor een resourceprovider |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/read | Haalt de bewerkingsstatus op voor een bepaalde bewerking |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionIntents/read | Alle back-upbeveiligingsintentensen |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/read | Haalt bewerkingsstatus op voor een bepaalde bewerking |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionIntents/read | Alle back-upbeveiligingsintentensen vermeld |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -1491,7 +1491,7 @@ Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, he
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/read | De definitie van het virtuele netwerk op te halen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/operationResults/read | Retourneert de status van de bewerking |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/operationResults/read | Haalt het resultaat op van de bewerking die is uitgevoerd op de beveiligingscontainer. |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/operationResults/read | Haalt het resultaat op van de bewerking uitgevoerd op de beveiligingscontainer. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/protectedItems/backup/action | Voert een back-up uit voor beveiligd item. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/protectedItems/operationResults/read | Haalt het resultaat op van de bewerking uitgevoerd op beveiligde items. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read | Retourneert de status van bewerking uitgevoerd op beveiligde items. |
@@ -1548,8 +1548,8 @@ Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, he
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupCrrOperationsStatus/read | Retourneert de CRR-bewerkingsstatus voor Recovery Services-kluis. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringAlerts/write | De waarschuwing wordt opgelost. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/operations/read | Bewerking retourneert de lijst met bewerkingen voor een resourceprovider |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/read | Haalt de bewerkingsstatus op voor een bepaalde bewerking |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionIntents/read | Alle back-upbeveiligingsintentensen |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/read | Haalt bewerkingsstatus op voor een bepaalde bewerking |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionIntents/read | Alle back-upbeveiligingsintentensen vermeld |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -1669,7 +1669,7 @@ Kan back-upservices bekijken, maar kan geen wijzigingen aanbrengen [Meer informa
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectedItems/read | Retourneert de lijst met alle beveiligde items. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionContainers/read | Retourneert alle containers die tot het abonnement behoren |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupUsageSummaries/read | Retourneert samenvattingen voor beveiligde items en beveiligde servers voor een Recovery Services. |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/extendedInformation/read | Met de bewerking Uitgebreide informatie op halen haalt u de uitgebreide informatie van een object op die de Azure-resource van het type ?vault vertegenwoordigt? |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/extendedInformation/read | Met de bewerking Uitgebreide informatie op halen worden de uitgebreide gegevens van een object op de azure-resource van het type ?vault? |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringAlerts/read | Haalt de waarschuwingen voor de Recovery Services-kluis op. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/read | Met de get vault-bewerking wordt een object op de azure-resource van het type 'kluis' |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/registeredIdentities/operationResults/read | De bewerking Bewerkingsresultaten op halen kan worden gebruikt om de bewerkingsstatus en het resultaat voor de asynchroon verzonden bewerking op te halen |
@@ -1685,8 +1685,8 @@ Kan back-upservices bekijken, maar kan geen wijzigingen aanbrengen [Meer informa
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringConfigurations/* |  |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringAlerts/write | De waarschuwing wordt opgelost. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/operations/read | Bewerking retourneert de lijst met bewerkingen voor een resourceprovider |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/read | Haalt de bewerkingsstatus op voor een bepaalde bewerking |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionIntents/read | Alle back-upbeveiligingsintentensen |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/read | Haalt bewerkingsstatus op voor een bepaalde bewerking |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/backupProtectionIntents/read | Alle back-upbeveiligingsintentensen vermeld |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/usages/read | Retourneert gebruiksgegevens voor een Recovery Services-kluis. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupValidateFeatures/action | Functies valideren |
 > | **NotActions** |  |
@@ -1898,7 +1898,7 @@ Hiermee kunt u alles beheren onder Data Box Service, behalve toegang te verlenen
 }
 ```
 
-### <a name="data-box-reader"></a>Data Box Lezer
+### <a name="data-box-reader"></a>Data Box Reader
 
 Hiermee kunt u Data Box service beheren, behalve het maken van order- of bewerkingsgegevens en het verlenen van toegang aan anderen. [Meer informatie](../databox/data-box-logs.md)
 
@@ -1957,7 +1957,7 @@ Hiermee kunt u Data Box service beheren, behalve het maken van order- of bewerki
 
 ### <a name="data-lake-analytics-developer"></a>Data Lake Analytics Developer
 
-Hiermee kunt u uw eigen taken verzenden, bewaken en beheren, maar geen accounts maken Data Lake Analytics verwijderen. [Meer informatie](../data-lake-analytics/data-lake-analytics-manage-use-portal.md)
+Hiermee kunt u uw eigen taken verzenden, bewaken en beheren, maar geen accounts Data Lake Analytics maken of verwijderen. [Meer informatie](../data-lake-analytics/data-lake-analytics-manage-use-portal.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2357,7 +2357,7 @@ Haal een sleutel voor gebruikersdelegatie op, die vervolgens kan worden gebruikt
 
 ### <a name="storage-file-data-smb-share-contributor"></a>Inzender voor opslagbestandsgegevens via SMB-share
 
-Hiermee kunt u lezen, schrijven en verwijderen van toegang tot bestanden/mappen in Azure-bestands shares. Deze rol heeft geen ingebouwd equivalent op Windows-bestandsservers. [Meer informatie](../storage/files/storage-files-identity-auth-active-directory-enable.md)
+Hiermee kunt u lezen, schrijven en verwijderen van toegang tot bestanden/mappen in Azure-bestands shares. Deze rol heeft geen ingebouwde equivalent op Windows-bestandsservers. [Meer informatie](../storage/files/storage-files-identity-auth-active-directory-enable.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2741,7 +2741,7 @@ Verleent toegang tot het lezen van kaartgerelateerde gegevens uit een Azure Maps
 
 ### <a name="azure-spring-cloud-data-reader"></a>Azure Spring Cloud gegevenslezer
 
-Leestoegang tot gegevens Azure Spring Cloud meer [informatie toestaan](../spring-cloud/how-to-access-data-plane-azure-ad-rbac.md)
+Leestoegang toestaan tot Azure Spring Cloud Data [Meer informatie](../spring-cloud/how-to-access-data-plane-azure-ad-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -2837,7 +2837,7 @@ Toegangssleutels SignalR Service lezen
 > | Acties | Beschrijving |
 > | --- | --- |
 > | [Microsoft.SignalRService](resource-provider-operations.md#microsoftsignalrservice)/*/read |  |
-> | [Microsoft.SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/listkeys/action | De waarde van SignalR-toegangssleutels weergeven in de beheerportal of via de API |
+> | [Microsoft.SignalRService](resource-provider-operations.md#microsoftsignalrservice)/SignalR/listkeys/action | De waarde van SignalR-toegangssleutels weergeven in de beheerportal of via api |
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
@@ -3172,13 +3172,13 @@ Hiermee kunt u websites (geen webplannen) beheren, maar geen toegang tot deze we
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/components/* | Insights-onderdelen maken en beheren |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/certificates/* | Websitecertificaten maken en beheren |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/listSitesAssignedToHostName/read | Haal namen op van sites die zijn toegewezen aan hostnaam. |
-> | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/serverFarms/join/action | Een abonnement App Service maken |
+> | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/serverFarms/join/action | Een App Service maken |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/serverFarms/read | De eigenschappen van een App Service krijgen |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/sites/* | Websites maken en beheren (voor het maken van een site zijn ook schrijfmachtigingen vereist voor het gekoppelde App Service plan) |
 > | **NotActions** |  |
@@ -3233,7 +3233,7 @@ acr delete [Meer informatie](../container-registry/container-registry-roles.md)
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | [Microsoft.ContainerRegistry](resource-provider-operations.md#microsoftcontainerregistry)/registries/artifacts/delete | Artefact in een containerregister verwijderen. |
+> | [Microsoft.ContainerRegistry](resource-provider-operations.md#microsoftcontainerregistry)/registries/artifacts/delete | Verwijder artefact in een containerregister. |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -3430,7 +3430,7 @@ acr quarantine data writer
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | [Microsoft.ContainerRegistry](resource-provider-operations.md#microsoftcontainerregistry)/registries/quarantine/read | Pull- of Get quarantined images from container registry (In quarantaine geplaatste afbeeldingen uit het containerregister halen) |
+> | [Microsoft.ContainerRegistry](resource-provider-operations.md#microsoftcontainerregistry)/registries/quarantine/read | Pull- of Get quarantined images from container registry (In quarantaine geplaatste afbeeldingen uit containerregister halen) |
 > | [Microsoft.ContainerRegistry](resource-provider-operations.md#microsoftcontainerregistry)/registries/quarantine/write | Quarantainetoestand van in quarantaine geplaatste afbeeldingen schrijven/wijzigen |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -3711,7 +3711,7 @@ Hiermee kunt u alle resources in het cluster beheren. [Meer informatie](../aks/m
 
 ### <a name="azure-kubernetes-service-rbac-reader"></a>Azure Kubernetes Service RBAC-lezer
 
-Hiermee staat u alleen-lezentoegang toe om de meeste objecten in een naamruimte te zien. Het weergeven van rollen of rolbindingen is niet toegestaan. Deze rol staat het weergeven van geheimen niet toe, omdat het lezen van de inhoud van Geheimen toegang biedt tot ServiceAccount-referenties in de naamruimte, waardoor API-toegang mogelijk is als elk ServiceAccount in de naamruimte (een vorm van escalatie van bevoegdheden). Door deze rol toe te passen op clusterbereik, krijgt u toegang tot alle naamruimten. [Meer informatie](../aks/manage-azure-rbac.md)
+Staat alleen-lezentoegang toe om de meeste objecten in een naamruimte te zien. Het weergeven van rollen of rolbindingen is niet toegestaan. Deze rol staat het weergeven van geheimen niet toe, omdat het lezen van de inhoud van Geheimen toegang biedt tot ServiceAccount-referenties in de naamruimte, waardoor API-toegang mogelijk is als elk ServiceAccount in de naamruimte (een vorm van escalatie van bevoegdheden). Door deze rol toe te passen op clusterbereik, krijgt u toegang tot alle naamruimten. [Meer informatie](../aks/manage-azure-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -3733,11 +3733,11 @@ Hiermee staat u alleen-lezentoegang toe om de meeste objecten in een naamruimte 
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/apps/statefulsets/read | Leest statefulsets |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/autoscaling/horizontalpodautoscalers/read | Leest horizontalpodautoscalers |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/batch/cronjobs/read | Cronjobs lezen |
-> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/batch/jobs/read | Taken lezen |
+> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/batch/jobs/read | Leest taken |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/configmaps/read | Leest configuratiekaarten |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/endpoints/read | Leest eindpunten |
-> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/events.k8s.io/events/read | Gebeurtenissen lezen |
-> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/events/read | Gebeurtenissen lezen |
+> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/events.k8s.io/events/read | Leest gebeurtenissen |
+> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/events/read | Leest gebeurtenissen |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/extensions/daemonsets/read | Daemonsets lezen |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/extensions/deployments/read | Leest implementaties |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/extensions/ingresses/read | Leest ingresses |
@@ -3853,7 +3853,7 @@ Hiermee staat u lees-/schrijftoegang toe tot de meeste objecten in een naamruimt
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/extensions/networkpolicies/* |  |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/extensions/replicasets/* |  |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/limitranges/read | Leeslimieten |
-> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/namespaces/read | Naamruimten lezen |
+> | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/namespaces/read | Leest naamruimten |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/networking.k8s.io/ingresses/* |  |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/networking.k8s.io/networkpolicies/* |  |
 > | [Microsoft.ContainerService](resource-provider-operations.md#microsoftcontainerservice)/managedClusters/persistentvolumeclaims/* |  |
@@ -3997,7 +3997,7 @@ Hiermee kunt u Azure Cosmos DB beheren, maar geen toegang krijgen tot gegevens i
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
-> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/subnets/joinViaServiceEndpoint/action | Voegt resource, zoals opslagaccount of SQL database, toe aan een subnet. Kan niet worden gewaarschuwd. |
+> | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/subnetten/joinViaServiceEndpoint/action | Voegt resource, zoals opslagaccount of SQL database, toe aan een subnet. Kan niet worden gewaarschuwd. |
 > | **NotActions** |  |
 > | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/readonlyKeys/* |  |
 > | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/databaseAccounts/regenerateKey/* |  |
@@ -4558,7 +4558,7 @@ Hiermee kunt u SQL-servers en -databases beheren, maar geen toegang krijgen tot 
 > | --- | --- |
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/locations/*/read |  |
@@ -4584,7 +4584,7 @@ Hiermee kunt u SQL-servers en -databases beheren, maar geen toegang krijgen tot 
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/recommendedSensitivityLabels/* |  |
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/schemas/tables/columns/sensitivityLabels/* |  |
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/securityAlertPolicies/* | Beveiligingswaarschuwingsbeleid voor SQL Server-database bewerken |
-> | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/securityMetrics/* | Metrische beveiligingsgegevens van SQL Server-database bewerken |
+> | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/securityMetrics/* | Metrische gegevens voor beveiliging van SQL Server-database bewerken |
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/sensitivityLabels/* |  |
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessments/* |  |
 > | [Microsoft.Sql](resource-provider-operations.md#microsoftsql)/servers/databases/vulnerabilityAssessmentScans/* |  |
@@ -4749,7 +4749,7 @@ Hiermee krijgt u toegang tot Azure Event Hubs resources. [Meer informatie](../ev
 
 ### <a name="azure-event-hubs-data-sender"></a>Azure Event Hubs Afzender van gegevens
 
-Hiermee kunt u toegang tot Azure Event Hubs resources verzenden. [Meer informatie](../event-hubs/authenticate-application.md)
+Hiermee kunt u toegang tot Azure Event Hubs verzenden. [Meer informatie](../event-hubs/authenticate-application.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -4799,7 +4799,7 @@ Maak en beheer gegevensfabrieken en onderliggende resources in deze resources. [
 > | [Microsoft.DataFactory](resource-provider-operations.md#microsoftdatafactory)/dataFactories/* | Maak en beheer gegevensfabrieken en onderliggende resources in deze resources. |
 > | [Microsoft.DataFactory](resource-provider-operations.md#microsoftdatafactory)/factories/* | Maak en beheer gegevensfabrieken en onderliggende resources in deze resources. |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
@@ -5053,7 +5053,7 @@ Log Analytics-inzender kan alle bewakingsgegevens lezen en bewakingsinstellingen
 
 ### <a name="log-analytics-reader"></a>Lezer van Log Analytics
 
-Log Analytics-lezer kan alle bewakingsgegevens bekijken en doorzoeken, evenals bewakingsinstellingen, inclusief het bekijken van de configuratie van diagnostische gegevens van Azure voor alle Azure-resources. [Meer informatie](../azure-monitor/logs/manage-access.md)
+Log Analytics-lezer kan alle bewakingsgegevens bekijken en doorzoeken, evenals bewakingsinstellingen, inclusief het bekijken van de configuratie van Diagnostische gegevens van Azure voor alle Azure-resources. [Meer informatie](../azure-monitor/logs/manage-access.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -5141,9 +5141,9 @@ De Microsoft.Purview-gegevenscursator kan catalogusgegevensobjecten maken, lezen
 }
 ```
 
-### <a name="purview-data-reader"></a>Gegevenslezer voor purviewen
+### <a name="purview-data-reader"></a>Gegevenslezer voor purview
 
-De Microsoft.Purview-gegevenslezer kan catalogusgegevensobjecten lezen. Deze rol is in preview en kan worden gewijzigd.
+De microsoft.Purview-gegevenslezer kan catalogusgegevensobjecten lezen. Deze rol is in preview en kan worden gewijzigd.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -5356,7 +5356,7 @@ Hiermee kunt u toegang krijgen tot blockchain-lidknooppunten [Meer informatie](.
 
 ### <a name="cognitive-services-contributor"></a>Cognitive Services-inzender
 
-Hiermee kunt u sleutels van de Cognitive Services. [Meer informatie](../cognitive-services/cognitive-services-virtual-networks.md)
+Hiermee kunt u sleutels maken, lezen, bijwerken, verwijderen en beheren van Cognitive Services. [Meer informatie](../cognitive-services/cognitive-services-virtual-networks.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -5370,7 +5370,7 @@ Hiermee kunt u sleutels van de Cognitive Services. [Meer informatie](../cognitiv
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/logDefinitions/read | Logboekdefinities lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/metricdefinitions/read | Metrische definities lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/metrics/read | Metrische gegevens lezen |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/operations/read | Haalt implementatiebewerkingen op of vermeldt deze. |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/operationresults/read | Haal de resultaten van de abonnementsbewerking op. |
@@ -5533,7 +5533,7 @@ Trainingsafbeeldingen weergeven, bewerken en de afbeeldingstags maken, toevoegen
 > | *geen* |  |
 > | **DataActions** |  |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/*/read |  |
-> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/predictions/query/action | Haal afbeeldingen op die zijn verzonden naar uw voorspellings-eindpunt. |
+> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/predictions/query/action | Haal afbeeldingen op die naar uw voorspellings-eindpunt zijn verzonden. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/images/* |  |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/tags/* |  |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/images/suggested/* |  |
@@ -5621,7 +5621,7 @@ Alleen-lezenacties in het project. Lezers kunnen het project niet maken of bijwe
 
 ### <a name="cognitive-services-custom-vision-trainer"></a>Cognitive Services Custom Vision Cognitive Services Custom Vision
 
-Bekijk, bewerk projecten en train de modellen, met inbegrip van de mogelijkheid om de modellen te publiceren, uit te publiceren en te exporteren. Docenten kunnen het project niet maken of verwijderen. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
+Bekijk, bewerk projecten en train de modellen, inclusief de mogelijkheid om de modellen te publiceren, te publiceren, te publiceren en te exporteren. Docenten kunnen het project niet maken of verwijderen. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -5766,11 +5766,11 @@ Hier kunt u een KB maken, bewerken, importeren en exporteren. U kunt een KB niet
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/create/write | Asynchrone bewerking voor het maken van een nieuwe KnowledgeBase. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/write | Asynchrone bewerking voor het wijzigen van een knowledgebase of het vervangen van de inhoud van knowledgebase. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/generateanswer/action | GenerateAnswer-aanroep om een query uit te voeren op de KnowledgeBase. |
-> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/train/action | Train aanroepen om suggesties toe te voegen aan de KnowledgeBase. |
+> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/train/action | Train aanroep om suggesties toe te voegen aan de KnowledgeBase. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/alterations/read | Download wijzigingen uit runtime. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/alterations/write | Vervang wijzigingen in gegevens. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointkeys/read | Haalt eindpuntsleutels voor een eindpunt op |
-> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointkeys/refreshkeys/action | Genereert opnieuw een eindpuntsleutel. |
+> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointkeys/refreshkeys/action | Genereert een eindpuntsleutel opnieuw. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointsettings/read | Haalt eindpuntinstellingen voor een eindpunt op |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointsettings/write | Eindpunt-seettings voor een eindpunt bijwerken. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/operations/read | Haalt details op van een specifieke langdurige bewerking. |
@@ -5783,7 +5783,7 @@ Hier kunt u een KB maken, bewerken, importeren en exporteren. U kunt een KB niet
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/alterations/read | Download wijzigingen uit runtime. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/alterations/write | Vervang wijzigingen in gegevens. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/read | Haalt eindpuntsleutels voor een eindpunt op |
-> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/refreshkeys/action | Genereert opnieuw een eindpuntsleutel. |
+> | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/refreshkeys/action | Genereert een eindpuntsleutel opnieuw. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/read | Haalt eindpuntinstellingen voor een eindpunt op |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/write | Eindpunt-seettings voor een eindpunt bijwerken. |
 > | [Microsoft.CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/operations/read | Haalt details op van een specifieke langlopende bewerking. |
@@ -6335,7 +6335,7 @@ Geeft u leestoegang tot beheer- en inhoudsbewerkingen, maar biedt geen mogelijkh
 
 ### <a name="remote-rendering-administrator"></a>Remote Rendering Administrator
 
-Biedt de gebruiker mogelijkheden voor conversie, sessie-, rendering- en diagnostische Azure Remote Rendering [meer informatie](../remote-rendering/how-tos/authentication.md)
+Biedt gebruikers conversie-, beheer- en rendering- en diagnostische mogelijkheden voor Azure Remote Rendering [meer informatie](../remote-rendering/how-tos/authentication.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -6388,7 +6388,7 @@ Biedt de gebruiker mogelijkheden voor conversie, sessie-, rendering- en diagnost
 
 ### <a name="remote-rendering-client"></a>Remote Rendering Client
 
-Biedt gebruikers mogelijkheden voor het beheren van sessies, rendering en diagnostische Azure Remote Rendering. [Meer informatie](../remote-rendering/how-tos/authentication.md)
+Biedt de gebruiker mogelijkheden voor het beheren van sessies, rendering en diagnostische Azure Remote Rendering. [Meer informatie](../remote-rendering/how-tos/authentication.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -6433,7 +6433,7 @@ Biedt gebruikers mogelijkheden voor het beheren van sessies, rendering en diagno
 }
 ```
 
-### <a name="spatial-anchors-account-contributor"></a>Spatial Anchors-account inzender
+### <a name="spatial-anchors-account-contributor"></a>Spatial Anchors accountbijdrager
 
 Hiermee kunt u spatial anchors in uw account beheren, maar niet verwijderen [Meer informatie](../spatial-anchors/concepts/authentication.md)
 
@@ -6632,7 +6632,7 @@ Kan de service en de API's beheren [Meer informatie](../api-management/api-manag
 }
 ```
 
-### <a name="api-management-service-operator-role"></a>API Management Rol serviceoperator
+### <a name="api-management-service-operator-role"></a>API Management rol serviceoperator
 
 Kan de service beheren, maar niet de API's [Meer informatie](../api-management/api-management-role-based-access-control.md)
 
@@ -6641,7 +6641,7 @@ Kan de service beheren, maar niet de API's [Meer informatie](../api-management/a
 > | --- | --- |
 > | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/*/read | Exemplaren API Management Service lezen |
 > | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/backup/action | Backup API Management Service naar de opgegeven container in een door de gebruiker opgegeven opslagaccount |
-> | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/delete | Een API Management Service-exemplaar verwijderen |
+> | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/delete | Een API Management service-exemplaar verwijderen |
 > | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/managedeployments/action | SKU/eenheden wijzigen, regionale implementaties van API Management Service toevoegen/verwijderen |
 > | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/read | Metagegevens lezen voor een API Management Service-exemplaar |
 > | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/restore/action | Restore API Management Service from the specified container in a user provided storage account (Een service herstellen vanuit de opgegeven container in een door de gebruiker opgegeven opslagaccount) |
@@ -6650,7 +6650,7 @@ Kan de service beheren, maar niet de API's [Meer informatie](../api-management/a
 > | [Microsoft.ApiManagement](resource-provider-operations.md#microsoftapimanagement)/service/write | Een service-API Management maken of bijwerken |
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
@@ -6924,7 +6924,7 @@ Hiermee kunt u toegang krijgen tot Azure Service Bus resources. [Meer informatie
 }
 ```
 
-### <a name="azure-service-bus-data-sender"></a>Azure Service Bus Afzender van gegevens
+### <a name="azure-service-bus-data-sender"></a>Azure Service Bus gegevens afzender
 
 Hiermee kunt u toegang tot Azure Service Bus verzenden. [Meer informatie](../service-bus-messaging/authenticate-application.md)
 
@@ -7208,7 +7208,7 @@ Rol geeft gebruiker of principal volledige toegang tot FHIR-gegevens [Meer infor
 
 ### <a name="fhir-data-exporter"></a>FHIR Data Export
 
-Rol staat gebruiker of principal toe om FHIR-gegevens te lezen en te exporteren [Meer informatie](../healthcare-apis/fhir/configure-azure-rbac.md)
+Met Rol kan de gebruiker of principal FHIR-gegevens lezen en exporteren [Meer informatie](../healthcare-apis/fhir/configure-azure-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -7492,7 +7492,7 @@ Hiermee kunt u logische apps beheren, maar de toegang tot deze apps niet wijzige
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/connections/* | Een verbinding maken en beheren. |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/customApis/* | Hiermee maakt en beheert u een aangepaste API. |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/serverFarms/join/action | Een App Service-abonnement |
-> | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/serverFarms/read | De eigenschappen van een App Service krijgen |
+> | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/serverFarms/read | De eigenschappen van een App Service op |
 > | [Microsoft.Web](resource-provider-operations.md#microsoftweb)/sites/functions/listSecrets/action | Lijst met functiegeheimen. |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -7818,7 +7818,7 @@ Azure Sentinel Automation-inzender [Meer informatie](../sentinel/roles.md)
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.Logic](resource-provider-operations.md#microsoftlogic)/workflows/triggers/read | Leest de trigger. |
 > | [Microsoft.Logic](resource-provider-operations.md#microsoftlogic)/workflows/triggers/listCallbackUrl/action | Haalt de callback-URL voor de trigger op. |
-> | [Microsoft.Logic](resource-provider-operations.md#microsoftlogic)/workflows/runs/read | Leest de werkstroom uit te voeren. |
+> | [Microsoft.Logic](resource-provider-operations.md#microsoftlogic)/workflows/runs/read | Leest de werkstroom die wordt uitgevoerd. |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -7930,7 +7930,7 @@ Azure Sentinel Reader [Meer informatie](../sentinel/roles.md)
 > | [Microsoft.SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/*/read |  |
 > | [Microsoft.SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/dataConnectorsCheckRequirements/action | Gebruikersautorisatie en -licentie controleren |
 > | [Microsoft.SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/threatIntelligence/indicators/query/action | Indicatoren voor bedreigingsinformatie voor query's |
-> | [Microsoft.SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/threatIntelligence/queryIndicators/action | Indicatoren voor bedreigingsinformatie voor query's |
+> | [Microsoft.SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/threatIntelligence/queryIndicators/action | Query's uitvoeren op bedreigingsinformatie-indicatoren |
 > | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/analytics/query/action | Zoeken met behulp van een nieuwe engine. |
 > | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/*/read | Log Analytics-gegevens weergeven |
 > | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/LinkedServices/read | Haal gekoppelde services op onder de opgegeven werkruimte. |
@@ -8090,7 +8090,7 @@ Azure Sentinel Responder [Meer informatie](../sentinel/roles.md)
 
 ### <a name="key-vault-administrator"></a>Key Vault Administrator
 
-Alle gegevensvlakbewerkingen uitvoeren op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure.
+Voer alle gegevensvlakbewerkingen uit op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -8210,7 +8210,7 @@ Voer een actie uit op de certificaten van een sleutelkluis, behalve machtigingen
 
 ### <a name="key-vault-contributor"></a>Key Vault-inzender
 
-U kunt sleutelkluizen beheren, maar u kunt geen rollen toewijzen in Azure RBAC en biedt u geen toegang tot geheimen, sleutels of certificaten. [Meer informatie](../key-vault/general/secure-your-key-vault.md)
+U kunt sleutelkluizen beheren, maar u kunt geen rollen toewijzen in Azure RBAC en biedt geen toegang tot geheimen, sleutels of certificaten. [Meer informatie](../key-vault/general/security-overview.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -8438,7 +8438,7 @@ Metagegevens van sleutelkluizen en de certificaten, sleutels en geheimen lezen. 
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
-> | [Microsoft.KeyVault](resource-provider-operations.md#microsoftkeyvault)/checkNameAvailability/read | Controleert of de naam van een sleutelkluis geldig is en niet wordt gebruikt |
+> | [Microsoft.KeyVault](resource-provider-operations.md#microsoftkeyvault)/checkNameAvailability/read | Controleert of de naam van een sleutelkluis geldig is en niet in gebruik is |
 > | [Microsoft.KeyVault](resource-provider-operations.md#microsoftkeyvault)/deletedVaults/read | De eigenschappen van zacht verwijderde sleutelkluizen weergeven |
 > | [Microsoft.KeyVault](resource-provider-operations.md#microsoftkeyvault)/locations/*/read |  |
 > | [Microsoft.KeyVault](resource-provider-operations.md#microsoftkeyvault)/vaults/*/read |  |
@@ -8738,7 +8738,7 @@ Dit is een verouderde rol. Gebruik in plaats daarvan Beveiligingsbeheerder.
 > | [Microsoft.ClassicCompute](resource-provider-operations.md#microsoftclassiccompute)/virtualMachines/*/write | Schrijfconfiguratie voor klassieke virtuele machines |
 > | [Microsoft.ClassicNetwork](resource-provider-operations.md#microsoftclassicnetwork)/*/read | Configuratie-informatie over het klassieke netwerk lezen |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
-> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
+> | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee worden de beschikbaarheidsstatussen voor alle resources in het opgegeven bereik opgeslagen |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Security](resource-provider-operations.md#microsoftsecurity)/* | Beveiligingsonderdelen en -beleid maken en beheren |
@@ -8863,7 +8863,7 @@ Hiermee kunt u uw virtuele machines in uw virtuele machine verbinden, starten, o
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/claimAnyVm/action | Claim een willekeurige claimbare virtuele machine in het lab. |
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/createEnvironment/action | Maak virtuele machines in een lab. |
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/ensureCurrentUserProfile/action | Zorg ervoor dat de huidige gebruiker een geldig profiel heeft in het lab. |
-> | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/formulas/delete | Formules verwijderen. |
+> | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/formulas/delete | Verwijder formules. |
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/formulas/read | Formules lezen. |
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/formulas/write | Formules toevoegen of wijzigen. |
 > | [Microsoft.DevTestLab](resource-provider-operations.md#microsoftdevtestlab)/labs/policySets/evaluatePolicies/action | Evalueert labbeleid. |
@@ -9142,7 +9142,7 @@ Kan alle bewakingsgegevens lezen en bewakingsinstellingen bewerken. Zie ook [Aan
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/workbooks/* |  |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/privateLinkScopes/* |  |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/privateLinkScopeOperationStatuses/* |  |
-> | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/write | Hiermee maakt u een nieuwe werkruimte of koppelingen naar een bestaande werkruimte door de klant-id op te geven uit de bestaande werkruimte. |
+> | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/write | Hiermee maakt u een nieuwe werkruimte of koppelingen naar een bestaande werkruimte door de klant-id van de bestaande werkruimte op te geven. |
 > | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/intelligencepacks/* | Lees-/schrijf-/verwijder-oplossingspakketten voor log analytics. |
 > | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/savedSearches/* | Opgeslagen zoekopdrachten in Log Analytics lezen/schrijven/verwijderen. |
 > | [Microsoft.OperationalInsights](resource-provider-operations.md#microsoftoperationalinsights)/workspaces/search/action | Hiermee wordt een zoekquery uitgevoerd |
@@ -9462,7 +9462,7 @@ Automation-operators kunnen taken starten, stoppen, opschorten en hervatten [Mee
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/hybridRunbookWorkerGroups/read | Leest Hybrid Runbook Worker resources |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/read | Haalt een Azure Automation op |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/resume/action | Hervat een Azure Automation taak |
-> | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/stop/action | Stopt een Azure Automation taak |
+> | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/stop/action | Een taak Azure Automation gestopt |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/streams/read | Haalt een Azure Automation taakstroom op |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/suspend/action | Een Azure Automation opschorten |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/jobs/write | Hiermee maakt u Azure Automation taak |
@@ -9471,7 +9471,7 @@ Automation-operators kunnen taken starten, stoppen, opschorten en hervatten [Mee
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/linkedWorkspace/read | Haalt de werkruimte op die is gekoppeld aan het Automation-account |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/read | Haalt een Azure Automation-account op |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/runbooks/read | Haalt een Azure Automation runbook op |
-> | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/schedules/read | Haalt een Azure Automation-asset op |
+> | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/schedules/read | Haalt een Azure Automation asset op |
 > | [Microsoft.Automation](resource-provider-operations.md#microsoftautomation)/automationAccounts/schedules/write | Hiermee maakt of werkt u een Azure Automation asset |
 > | [Microsoft.Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
 > | [Microsoft.ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/read | Hiermee haalt u de beschikbaarheidsstatussen op voor alle resources in het opgegeven bereik |
@@ -9829,7 +9829,7 @@ Hiermee kunt u alle resources in het cluster/de naamruimte weergeven, met uitzon
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/jobs/read | Leest taken |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/configmaps/read | Leest configmaps |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/endpoints/read | Leest eindpunten |
-> | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events.k8s.io/events/read | Gebeurtenissen lezen |
+> | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events.k8s.io/events/read | Leest gebeurtenissen |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events/read | Gebeurtenissen lezen |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/extensions/daemonsets/read | Daemonsets lezen |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/extensions/deployments/read | Leest implementaties |
@@ -9938,8 +9938,8 @@ Hiermee kunt u alles bijwerken in cluster/naamruimte, behalve (cluster)rollen en
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/batch/jobs/* |  |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/configmaps/* |  |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/endpoints/* |  |
-> | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events.k8s.io/events/read | Leest gebeurtenissen |
-> | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events/read | Leest gebeurtenissen |
+> | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events.k8s.io/events/read | Gebeurtenissen lezen |
+> | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/events/read | Gebeurtenissen lezen |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/extensions/daemonsets/* |  |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/extensions/deployments/* |  |
 > | [Microsoft.Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/extensions/ingresses/* |  |
@@ -10275,7 +10275,7 @@ Kan kosten bekijken en kostenconfiguratie beheren (bijvoorbeeld budgetten, expor
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/subscriptions/resourceGroups/read | Hiermee haalt u resourcegroepen op of vermeldt u deze. |
 > | [Microsoft.Support](resource-provider-operations.md#microsoftsupport)/* | Een ondersteuningsticket maken en bijwerken |
 > | [Microsoft.Advisor](resource-provider-operations.md#microsoftadvisor)/configurations/read | Configuraties krijgen |
-> | [Microsoft.Advisor](resource-provider-operations.md#microsoftadvisor)/recommendations/read | Aanbevelingen lezen |
+> | [Microsoft.Advisor](resource-provider-operations.md#microsoftadvisor)/recommendations/read | Leest aanbevelingen |
 > | [Microsoft.Management](resource-provider-operations.md#microsoftmanagement)/managementGroups/read | Lijst met beheergroepen voor de geverifieerde gebruiker. |
 > | [Microsoft.Billing](resource-provider-operations.md#microsoftbilling)/billingProperty/read |  |
 > | **NotActions** |  |
@@ -10418,7 +10418,7 @@ Hiermee kunnen gebruikers hiërarchie-instellingen bewerken en verwijderen
 
 ### <a name="kubernetes-cluster---azure-arc-onboarding"></a>Kubernetes-cluster - Azure Arc onboarding
 
-Roldefinitie voor het autoreren van elke gebruiker/service om connectedClusters-resource te maken [Meer informatie](../azure-arc/kubernetes/connect-cluster.md)
+Roldefinitie om elke gebruiker/service te autoreren om connectedClusters-resource te maken [Meer informatie](../azure-arc/kubernetes/connect-cluster.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -10525,7 +10525,7 @@ Hiermee kunt u acties lezen en uitvoeren op resources van beheerde toepassingen
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | */lezen | Lees resources van alle typen, met uitzondering van geheimen. |
+> | */read | Lees alle typen resources, met uitzondering van geheimen. |
 > | [Microsoft.Solutions](resource-provider-operations.md#microsoftsolutions)/applications/read | Hiermee haalt u een lijst met toepassingen op. |
 > | [Microsoft.Solutions](resource-provider-operations.md#microsoftsolutions)/*/action |  |
 > | **NotActions** |  |
@@ -10561,14 +10561,14 @@ Hiermee kunt u acties lezen en uitvoeren op resources van beheerde toepassingen
 }
 ```
 
-### <a name="managed-applications-reader"></a>Lezer van beheerde toepassingen
+### <a name="managed-applications-reader"></a>Lezer voor beheerde toepassingen
 
 Hiermee kunt u resources in een beheerde app lezen en JIT-toegang aanvragen.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | */lezen | Lees resources van alle typen, met uitzondering van geheimen. |
+> | */read | Lees alle typen resources, met uitzondering van geheimen. |
 > | [Microsoft.Resources](resource-provider-operations.md#microsoftresources)/deployments/* | Een implementatie maken en beheren |
 > | [Microsoft.Solutions](resource-provider-operations.md#microsoftsolutions)/jitRequests/* |  |
 > | **NotActions** |  |
@@ -10604,7 +10604,7 @@ Hiermee kunt u resources in een beheerde app lezen en JIT-toegang aanvragen.
 }
 ```
 
-### <a name="managed-services-registration-assignment-delete-role"></a>Rol registratietoewijzing beheerde services verwijderen
+### <a name="managed-services-registration-assignment-delete-role"></a>Rol verwijderen van registratietoewijzing beheerde services
 
 Met de rol Registratietoewijzing beheerde services kunnen tenantgebruikers die beheren de registratietoewijzing verwijderen die is toegewezen aan hun tenant. [Meer informatie](../lighthouse/how-to/remove-delegation.md)
 
@@ -10612,7 +10612,7 @@ Met de rol Registratietoewijzing beheerde services kunnen tenantgebruikers die b
 > | Acties | Beschrijving |
 > | --- | --- |
 > | [Microsoft.ManagedServices](resource-provider-operations.md#microsoftmanagedservices)/registrationAssignments/read | Hiermee haalt u een lijst met registratietoewijzingen van Managed Services op. |
-> | [Microsoft.ManagedServices](resource-provider-operations.md#microsoftmanagedservices)/registrationAssignments/delete | Hiermee verwijdert u registratietoewijzing voor Beheerde services. |
+> | [Microsoft.ManagedServices](resource-provider-operations.md#microsoftmanagedservices)/registrationAssignments/delete | Hiermee verwijdert u registratietoewijzing voor Managed Services. |
 > | [Microsoft.ManagedServices](resource-provider-operations.md#microsoftmanagedservices)/operationStatuses/read | Leest de bewerkingsstatus voor de resource. |
 > | **NotActions** |  |
 > | *geen* |  |
@@ -10790,7 +10790,7 @@ Hiermee kunt u New Relic Application Performance Management accounts en toepassi
 
 ### <a name="policy-insights-data-writer-preview"></a>Policy Insights Data Writer (preview)
 
-Hiermee staat u leestoegang toe tot resourcebeleid en schrijftoegang tot beleidsgebeurtenissen voor resourcecomponenten. [Meer informatie](../governance/policy/concepts/policy-for-kubernetes.md)
+Hiermee staat u leestoegang tot resourcebeleid en schrijftoegang tot beleidsgebeurtenissen voor resourcecomponenten toe. [Meer informatie](../governance/policy/concepts/policy-for-kubernetes.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -11105,7 +11105,7 @@ Hiermee kunt u failover en failback uitvoeren, maar geen andere beheerbewerkinge
 > | [Microsoft.Network](resource-provider-operations.md#microsoftnetwork)/virtualNetworks/read | De definitie van het virtuele netwerk op te halen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/allocatedStamp/read | GetAllocatedStamp is een interne bewerking die wordt gebruikt door de service |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/allocateStamp/action | AllocateStamp is een interne bewerking die wordt gebruikt door de service |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/extendedInformation/read | Met de bewerking Uitgebreide informatie op halen haalt u de uitgebreide informatie van een object op die de Azure-resource van het type ?vault vertegenwoordigt? |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/extendedInformation/read | Met de bewerking Uitgebreide informatie op halen worden de uitgebreide gegevens van een object op de azure-resource van het type ?vault? |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/read | Met de get vault-bewerking wordt een object op de azure-resource van het type 'kluis' |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/refreshContainers/read |  |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/registeredIdentities/operationResults/read | De bewerking Bewerkingsresultaten op halen kan worden gebruikt om de bewerkingsstatus en het resultaat voor de asynchroon verzonden bewerking op te halen |
@@ -11255,18 +11255,18 @@ Hiermee kunt u de Site Recovery weergeven, maar geen andere beheerbewerkingen ui
 > | --- | --- |
 > | [Microsoft.Authorization](resource-provider-operations.md#microsoftauthorization)/*/read | Rollen en roltoewijzingen lezen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/locations/allocatedStamp/read | GetAllocatedStamp is een interne bewerking die wordt gebruikt door de service |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/extendedInformation/read | Met de bewerking Uitgebreide informatie op halen haalt u de uitgebreide informatie van een object op die de Azure-resource van het type ?vault vertegenwoordigt? |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/extendedInformation/read | Met de bewerking Uitgebreide informatie op halen worden de uitgebreide gegevens van een object op de azure-resource van het type ?vault? |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringAlerts/read | Haalt de waarschuwingen voor de Recovery Services-kluis op. |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/monitoringConfigurations/notificationConfiguration/read |  |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/read | Met de get vault-bewerking wordt een object op de azure-resource van het type 'kluis' |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/refreshContainers/read |  |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/registeredIdentities/operationResults/read | De bewerking Bewerkingsresultaten op halen kan worden gebruikt om de bewerkingsstatus en het resultaat voor de asynchroon verzonden bewerking op te halen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/Vaults/registeredIdentities/read | De bewerking Containers get kan worden gebruikt om de containers op te halen die zijn geregistreerd voor een resource. |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationAlertSettings/read | Alle instellingen voor waarschuwingen lezen |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationAlertSettings/read | Alle waarschuwingsinstellingen lezen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationEvents/read | Alle gebeurtenissen lezen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/read | Alle fabrics lezen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/replicationNetworks/read | Alle netwerken lezen |
-> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Alle netwerktoewijzingen lezen |
+> | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Netwerktoewijzingen lezen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/replicationProtectionContainers/read | Alle beveiligingscontainers lezen |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Lees alle beveiligende items |
 > | [Microsoft.RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices)/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Lees alle beveiligde items |

@@ -3,7 +3,6 @@ title: 'Azure Quickstart: Een certificaat uit Key Vault instellen en ophalen met
 description: Quickstart waarin wordt getoond hoe u een certificaat uit Azure Key Vault instelt en ophaalt met behulp van de Azure Portal
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
@@ -11,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/24/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 0a35f83286abe5ae33f6d3c44ee7b05faf692512
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: be138a0c97e02cace45a57d8d6b32d7c9aea83b7
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479216"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749974"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-the-azure-portal"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van de Azure-portal
 

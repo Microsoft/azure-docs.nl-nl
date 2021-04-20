@@ -1,45 +1,39 @@
 ---
-title: Azure Key Vault beveiligings werelden | Microsoft Docs
-description: Azure Key Vault is een service met meerdere tenants. Er wordt gebruikgemaakt van een pool met Hsm's op elke Azure-locatie. Alle locaties in een geografische regio delen een cryptografische grens.
+title: Azure Key Vault beveiligingswerelden | Microsoft Docs
+description: Azure Key Vault is een service met meerdere tenants. Er wordt gebruikgemaakt van een groep HMS's in elke Azure-regio. Alle regio's in een geografische regio delen een cryptografische grens.
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
 author: msmbaldwin
 ms.author: mbaldwin
-manager: rkarlin
 ms.date: 07/03/2017
-ms.openlocfilehash: d21deea13aac3d40c452a183c340d3108a1a01f4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0d82a3cb4c08d47b6827072378b9827037d32412
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97936325"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751810"
 ---
-# <a name="azure-key-vault-security-worlds-and-geographic-boundaries"></a>Azure Key Vault beveiligings werelden en geografische grenzen
+# <a name="azure-key-vault-security-worlds-and-geographic-boundaries"></a>Azure Key Vault beveiligingswerelden en geografische grenzen
 
-Azure Key Vault is een service met meerdere tenants en maakt gebruik van een groep Hardware Security modules (Hsm's) op elke Azure-locatie. 
+Azure-producten zijn beschikbaar in een aantal [Azure-geografieën,](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)met elke Azure-geografie die een of meer regio's bevat. De geografie Europa bevat bijvoorbeeld twee regio's, Europa - noord en Europa - west, terwijl de enige regio in de geografie Brazilië Brazilië - zuid.
 
-Alle Hsm's op Azure-locaties in dezelfde geografische regio delen dezelfde cryptografische grens (Thales Security World). Bijvoorbeeld: VS-Oost en VS-West delen dezelfde beveiligings wereld omdat ze deel uitmaken van de geografische locatie van de Verenigde Staten. Op dezelfde manier delen alle Azure-locaties in Japan dezelfde beveiligings wereld en alle Azure-locaties in Australië, India, enzovoort. 
+Azure Key Vault is een service met meerdere tenants die gebruikmaakt van een groep HMS's (Hardware Security Modules). Alle HMS's in een geografie delen dezelfde cryptografische grens, aangeduid als een 'beveiligingswereld'. Elke geografie komt overeen met één beveiligingswereld en vice versa.
 
-## <a name="backup-and-restore-behavior"></a>Gedrag voor back-up en herstel
-
-Een back-up die is gemaakt van een sleutel kluis in één Azure-locatie kan worden hersteld naar een sleutel kluis in een andere Azure-locatie, zolang beide voor waarden waar zijn:
-
-- Beide Azure-locaties behoren tot dezelfde geografische locatie
-- Beide sleutel kluizen behoren tot hetzelfde Azure-abonnement
-
-Zo kan een back-up die is gemaakt door een bepaald abonnement op een sleutel in een sleutel kluis in West-India, alleen worden hersteld naar een andere sleutel kluis in hetzelfde abonnement en geografische locatie. India-West, Centraal-India of India-zuid.
-
-## <a name="regions-and-products"></a>Regio's en producten
-
-- [Azure-regio's](https://azure.microsoft.com/regions/)
-- [Micro soft-producten per regio](https://azure.microsoft.com/regions/services/)
-
-Regio's worden toegewezen aan beveiligings werelden, weer gegeven als primaire koppen in de tabellen:
-
-In het artikel producten per regio, **bijvoorbeeld het tabblad** VS-Oost, centraal VS, VS-West alle toewijzing aan de regio in het land van Amerika. 
+VS - oost en VS - west delen dezelfde beveiligingswereld omdat ze deel uitmaken van de geografie (Verenigde Staten). Op dezelfde manier delen alle Azure-regio's in Japan dezelfde beveiligingswereld, net als alle Azure-regio's in Australië, enzovoort.
 
 >[!NOTE]
->Een uitzonde ring hierop is dat US DOD-Oost en US DOD CENTRAL hun eigen beveiligings werelden hebben. 
+> Een uitzondering hierop is dat US DOD EAST en US DOD CENTRAL hun eigen beveiligingswerelden hebben.
 
-Op het tabblad **Europa** , Noord-Europa en West-Europa, wordt ook toegewezen aan de regio Europa. Hetzelfde geldt ook op het tabblad **Azië en Stille Oceaan** .
+## <a name="backup-and-restore-behavior"></a>Back-up- en herstelgedrag
+
+Een back-up van een sleutel uit een sleutelkluis in de ene Azure-regio kan worden hersteld naar een sleutelkluis in een andere Azure-regio, zolang aan beide voorwaarden wordt voldaan:
+
+- Beide Azure-regio's behoren tot dezelfde geografie.
+- Beide sleutelkluizen behoren tot hetzelfde Azure-abonnement.
+
+Een back-up van een sleutel in een sleutelkluis in India - west kan bijvoorbeeld worden hersteld naar een andere sleutelkluis in hetzelfde abonnement in de geografische regio India (India - west, India - centraal en India - zuid regio's).
+
+## <a name="next-steps"></a>Volgende stappen
+
+- Zie [Microsoft-producten per regio](https://azure.microsoft.com/regions/services/)

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 769a63819925caa50ff364869b8d9a14c3258a2e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3d8f20f598243754e3fd39f649e7c84d55b64817
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102214538"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751666"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-javascript-version-4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor geheimen voor JavaScript (versie 4)
 
@@ -154,7 +154,7 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 In deze quickstart wordt de aangemelde gebruiker gebruikt voor de verificatie bij de sleutelkluis. Dit is de voorkeursmethode voor lokale ontwikkeling. Voor toepassingen die zijn geïmplementeerd in Azure, moet beheerde identiteit worden toegewezen aan App Service of aan Virtuele machine. Zie [Overzicht van beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.
 
-In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voor beeld wordt de klasse [DefaultAzureCredential ()](https://docs.microsoft.com/javascript/api/@azure/identity/defaultazurecredential) uit de [Azure Identity-bibliotheek](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme)gebruikt, waarmee we dezelfde code kunnen gebruiken in verschillende omgevingen met verschillende opties om identiteiten te bieden. Zie [Gids voor ontwikkelaars](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code) voor meer informatie over het verifiëren van een sleutelkluis.
+In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voorbeeld wordt de klasse ['DefaultAzureCredential()'](https://docs.microsoft.com/javascript/api/@azure/identity/defaultazurecredential) van [de Azure Identity Library](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme)gebruikt, waarmee we dezelfde code kunnen gebruiken in verschillende omgevingen met verschillende opties om identiteit te bieden. Zie ontwikkelaarshandleiding voor Key Vault meer informatie [over het authenticeren van een app.](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code)
 
 Voeg de volgende code aan de 'main()'-functie
 
@@ -285,6 +285,6 @@ In deze quickstart hebt u een sleutelkluis gemaakt, een geheim opgeslagen en dat
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Lees een [Overzicht van Azure Key Vault-geheimen](about-secrets.md)
-- Instructies voor [veilige toegang tot een sleutelkluis](../general/secure-your-key-vault.md)
+- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
 - Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

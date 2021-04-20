@@ -1,6 +1,6 @@
 ---
-title: Aanbevolen procedures voor het gebruik van Key Vault-Azure Key Vault | Microsoft Docs
-description: Meer informatie over aanbevolen procedures voor Azure Key Vault, waaronder het beheren van toegang, wanneer u afzonderlijke sleutel kluizen, back-ups, logboek registratie en herstel opties gebruikt.
+title: Best practices voor het gebruik van Key Vault - Azure Key Vault | Microsoft Docs
+description: Meer informatie over best practices voor Azure Key Vault, waaronder het beheren van toegang, wanneer u afzonderlijke sleutelkluizen, back-up-, logboekregistratie- en herstelopties gebruikt.
 services: key-vault
 author: msmbaldwin
 tags: azure-key-vault
@@ -9,51 +9,51 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/29/2021
 ms.author: mbaldwin
-ms.openlocfilehash: e81cbd7e6584f4a280ab9507a989b52d3b188f2d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 83fc2639ccfeccb7de974739562e1a212bac78a4
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105566605"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749902"
 ---
-# <a name="best-practices-to-use-key-vault"></a>Aanbevolen procedures voor het gebruik van Key Vault
+# <a name="best-practices-to-use-key-vault"></a>Best practices voor het gebruik van Key Vault
 
-## <a name="use-separate-key-vaults"></a>Gebruik afzonderlijke sleutel kluizen
+## <a name="use-separate-key-vaults"></a>Afzonderlijke sleutelkluizen gebruiken
 
-Onze aanbeveling is een kluis per toepassing per omgeving te gebruiken (ontwikkeling, voor bereiding en productie). Zo kunt u geen geheimen delen tussen omgevingen en vermindert u ook de dreiging in het geval van een schending.
+Het wordt aanbevolen om per toepassing per omgeving een kluis te gebruiken (ontwikkeling, preproductie en productie). Dit helpt u geen geheimen te delen in omgevingen en vermindert ook de bedreiging in het geval van een inbreuk.
 
-## <a name="control-access-to-your-vault"></a>Toegang tot uw kluis beheren
+## <a name="control-access-to-your-vault"></a>Toegang tot uw kluis bepalen
 
-Azure Key Vault is een cloudservice die versleutelingssleutels en geheimen, zoals certificaten, verbindingsreeksen en wachtwoorden, beveiligt. Omdat deze gegevens gevoelig en zakelijk kritiek zijn, moet u de toegang tot uw sleutel kluizen beveiligen door alleen geautoriseerde toepassingen en gebruikers toe te staan. In dit [artikel](secure-your-key-vault.md) vindt u een overzicht van het toegangs model van Key Vault. Hierin worden verificatie en autorisatie uitgelegd en wordt beschreven hoe u de toegang tot uw sleutel kluizen kunt beveiligen.
+Azure Key Vault is een cloudservice die versleutelingssleutels en geheimen, zoals certificaten, verbindingsreeksen en wachtwoorden, beveiligt. Omdat deze gegevens gevoelig en bedrijfskritiek zijn, moet u de toegang tot uw sleutelkluizen beveiligen door alleen geautoriseerde toepassingen en gebruikers toe te staan. In [dit artikel](security-overview.md) vindt u een overzicht van Key Vault toegangsmodel. Hier wordt verificatie en autorisatie uitgelegd en wordt beschreven hoe u de toegang tot uw sleutelkluizen beveiligt.
 
 Suggesties voor het beheren van de toegang tot uw kluis zijn als volgt:
-1. Vergren deling van toegang tot uw abonnement, resource groep en sleutel kluizen (Azure RBAC)
-2. Toegangs beleid maken voor elke kluis
-3. Access principal met minimale bevoegdheden gebruiken om toegang te verlenen
-4. Firewall-en [VNET-service-eind punten](overview-vnet-service-endpoints.md) inschakelen
+1. Toegang tot uw abonnement, resourcegroep en sleutelkluizen (Azure RBAC) vergrendelen
+2. Toegangsbeleid maken voor elke kluis
+3. Toegangsprincipaal met minste bevoegdheden gebruiken om toegang te verlenen
+4. Firewall- en [VNET-service-eindpunten in-](overview-vnet-service-endpoints.md)
 
 ## <a name="backup"></a>Backup
 
-Zorg ervoor dat u regel matig back-ups van uw kluis onderneemt op het bijwerken/verwijderen/maken van objecten in een kluis.
+Zorg ervoor dat u regelmatig back-ups van uw kluis maakt bij het bijwerken/verwijderen/maken van objecten in een kluis.
 
-### <a name="azure-powershell-backup-commands"></a>Azure PowerShell-back-upopdrachten
+### <a name="azure-powershell-backup-commands"></a>Azure PowerShell Back-upopdrachten
 
 * [Back-upcertificaat](/powershell/module/azurerm.keyvault/Backup-AzureKeyVaultCertificate)
 * [Back-upsleutel](/powershell/module/azurerm.keyvault/Backup-AzureKeyVaultKey)
 * [Back-upgeheim](/powershell/module/azurerm.keyvault/Backup-AzureKeyVaultSecret)
 
-### <a name="azure-cli-backup-commands"></a>Back-upopdrachten van Azure CLI
+### <a name="azure-cli-backup-commands"></a>Azure CLI Backup-opdrachten
 
 * [Back-upcertificaat](/cli/azure/keyvault/certificate#az-keyvault-certificate-backup)
 * [Back-upsleutel](/cli/azure/keyvault/key#az-keyvault-key-backup)
 * [Back-upgeheim](/cli/azure/keyvault/secret#az-keyvault-secret-backup)
 
 
-## <a name="turn-on-logging"></a>Logboek registratie inschakelen
+## <a name="turn-on-logging"></a>Logboekregistratie inschakelen
 
-[Schakel logboek registratie in](logging.md) voor uw kluis. Stel ook waarschuwingen in.
+[Schakel logboekregistratie in](logging.md) voor uw kluis. Stel ook waarschuwingen in.
 
-## <a name="turn-on-recovery-options"></a>Herstel opties inschakelen
+## <a name="turn-on-recovery-options"></a>Herstelopties in-
 
-1. Schakel [zacht verwijderen](soft-delete-overview.md)in.
-2. Schakel opschonen beveiliging in als u wilt dat de geheime sleutel wordt verwijderd tegen het verwijderen van het geheim of de kluis, zelfs nadat het zacht verwijderen is ingeschakeld.
+1. Schakel Soft [Delete in.](soft-delete-overview.md)
+2. Schakel beveiliging tegen opsluizen in als u zich wilt beschermen tegen het geforceer verwijderen van het geheim/de kluis, zelfs nadat de soft-delete is ingeschakeld.

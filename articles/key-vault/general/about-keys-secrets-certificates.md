@@ -3,19 +3,18 @@ title: Overzicht van sleutels, geheimen en certificaten in Azure Key Vault
 description: Overzicht van REST-interface van Azure Key Vault en detailinformatie voor ontwikkelaars over sleutels, geheimen en certificaten.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: overview
 ms.date: 04/17/2020
 ms.author: mbaldwin
-ms.openlocfilehash: f2a33b4011b0bb89ca17010fc787aebe8c17fc92
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e3eb77d15c288c93298da6dd79a76565e5d67f96
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102183927"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749938"
 ---
 # <a name="azure-key-vault-keys-secrets-and-certificates-overview"></a>Overzicht van sleutels, geheimen en certificaten in Azure Key Vault
 

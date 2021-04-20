@@ -3,7 +3,6 @@ title: Zelfstudie over roulatie voor resources met één set in Azure Key Vault 
 description: Gebruik deze zelfstudie om te leren hoe u het rouleren van een geheim kunt automatiseren voor resources die gebruikmaken van één set verificatiereferenties.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: rotation
 ms.service: key-vault
 ms.subservice: secrets
@@ -11,12 +10,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 526c3d2d85a3f2877f82b3b764f395c51f7c05c0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e66be3b0e3ecae5caa1a76294cc8b8dc11a5f207
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99805227"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107748660"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Het rouleren van een geheim voor resources met één set verificatiereferenties automatiseren
 
@@ -45,7 +44,7 @@ U kunt de onderstaande implementatiekoppeling gebruiken als u geen bestaande sle
 
 [![Afbeelding met een knop met het label Implementeren naar Azure.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmain%2FARM-Templates%2FInitial-Setup%2Fazuredeploy.json)
 
-1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**. Groep een naam geven, gebruiken we **akvrotation** in deze zelf studie.
+1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**. Geef de groep een naam. In deze zelfstudie gebruiken we **akvrotation.**
 1. Typ bij **Aanmeldgegevens SQL-beheerder** de aanmeldings-id van de SQL-beheerder. 
 1. Selecteer **Controleren + maken**.
 1. Selecteer **Maken**
@@ -213,7 +212,7 @@ Als u een geheim met een korte vervaldatum maakt, wordt een `SecretNearExpiry`-g
 
 Als u wilt controleren of het geheim is gerouleerd, gaat u naar **Key Vault** > **Geheimen**:
 
-:::image type="content" source="../media/rotate-8.png" alt-text="Scherm afbeelding die laat zien hoe u toegang krijgt tot Key Vault > geheimen.":::
+:::image type="content" source="../media/rotate-8.png" alt-text="Schermopname die laat zien hoe u toegang krijgt Key Vault > Geheimen.":::
 
 Open het **sqlPassword**-geheim en bekijk de oorspronkelijke en gerouleerde versies:
 

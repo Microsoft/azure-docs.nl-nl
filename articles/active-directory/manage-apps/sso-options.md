@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: iangithinji
 ms.reviewer: arvindh, japere
-ms.openlocfilehash: d81ad34c81a451f1faecb6cb33c0cc427567f122
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: 202ccf6f540ec78c2bb30e0f0a0173609bba578c
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107379601"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751450"
 ---
 # <a name="single-sign-on-options-in-azure-ad"></a>Opties voor eenmalige aanmelding in Azure AD
 
@@ -86,13 +86,12 @@ Bij aanmelding op basis van een wachtwoord melden gebruikers zich aan bij de toe
 
 Eenmalige aanmelding op basis van een wachtwoord maakt gebruik van de bestaande verificatieprocedure die door de toepassing wordt geboden. Wanneer u eenmalige aanmelding op basis van een wachtwoord inschakelt voor een toepassing, worden gebruikersnamen en wachtwoorden voor de toepassing door Azure AD verzameld en beveiligd. Gebruikersreferenties worden versleuteld opgeslagen in de map.
 
+Daarnaast kan de beheerder beleid voor voorwaardelijke toegang van Azure AD of meervoudige verificatie inschakelen voor eenmalige aanmelding op basis van een wachtwoord.
+
 Kies voor eenmalige aanmelding op basis van wachtwoord wanneer:
 
 - Een toepassing geen ondersteuning biedt voor het protocol van eenmalige aanmelding op basis van SAML.
 - Verificatie voor een toepassing wordt uitgevoerd met een gebruikersnaam en wachtwoord in plaats van toegangstokens en headers.
-
->[!NOTE]
->U geen beleid voor voorwaardelijke toegang of meervoudige verificatie kunt toepassen voor eenmalige aanmelding op basis van een wachtwoord.
 
 Eenmalige aanmelding op basis van een wachtwoord wordt ondersteund voor alle cloud-toepassingen die een HTML-aanmeldingspagina hebben. De gebruiker kan een van de volgende browsers gebruiken:
 

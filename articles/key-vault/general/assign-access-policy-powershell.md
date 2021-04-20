@@ -1,39 +1,38 @@
 ---
-title: Een Azure Key Vault toegangs beleid toewijzen
-description: De Azure Portal, Azure CLI of Azure PowerShell gebruiken om Key Vault een toegangs beleid toe te wijzen aan een beveiligings-principal of een toepassings identiteit.
+title: Een toegangsbeleid voor Azure Key Vault toewijzen
+description: Het gebruik van Azure Portal, Azure CLI of Azure PowerShell om een Key Vault toe te wijzen aan een beveiligingsprincipaal of toepassings-id.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 4637715b2ba885d58ebb4c5f3ed40a79be2f815b
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 1c7c31f38d6a59f4ded17e1e1fd7e985ce59922a
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105968727"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751414"
 ---
-# <a name="assign-a-key-vault-access-policy-using-azure-powershell"></a>Een Key Vault toegangs beleid toewijzen met behulp van Azure PowerShell
+# <a name="assign-a-key-vault-access-policy-using-azure-powershell"></a>Een toegangsbeleid voor Key Vault toewijzen met behulp van Azure PowerShell
 
-Een Key Vault toegangs beleid bepaalt of een bepaalde beveiligingsprincipal, namelijk een gebruiker, toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de [Azure Portal](assign-access-policy-portal.md), de [Azure cli](assign-access-policy-cli.md)of Azure PowerShell (dit artikel).
+Een Key Vault-toegangsbeleid bepaalt of een bepaalde beveiligingsprincipaal, [namelijk](../secrets/index.yml)een gebruiker, toepassing of gebruikersgroep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen,](../keys/index.yml)sleutels en [certificaten.](../certificates/index.yml) U kunt toegangsbeleid toewijzen met behulp [van de Azure Portal,](assign-access-policy-portal.md) [de Azure CLI](assign-access-policy-cli.md)of Azure PowerShell (dit artikel).
 
 [!INCLUDE [key-vault-access-policy-limits.md](../../../includes/key-vault-access-policy-limits.md)]
 
-Zie [New-AzureADGroup](/powershell/module/azuread/new-azureadgroup) en [add-AzADGroupMember](/powershell/module/az.resources/add-azadgroupmember)voor meer informatie over het maken van groepen in azure Active Directory met behulp van Azure PowerShell.
+Zie [New-AzureADGroup](/powershell/module/azuread/new-azureadgroup) en [Add-AzADGroupMember](/powershell/module/az.resources/add-azadgroupmember)voor meer informatie over het maken van groepen in Azure Active Directory met Azure PowerShell.
 
-## <a name="configure-powershell-and-sign-in"></a>Power shell configureren en aanmelden
+## <a name="configure-powershell-and-sign-in"></a>PowerShell configureren en aanmelden
 
-1. Als u opdrachten lokaal wilt uitvoeren, installeert u [Azure PowerShell](/powershell/azure/) als u dat nog niet hebt gedaan.
+1. Als u opdrachten lokaal wilt uitvoeren, [installeert Azure PowerShell](/powershell/azure/) als u dat nog niet hebt gedaan.
 
-    Als u opdrachten rechtstreeks in de Cloud wilt uitvoeren, gebruikt u de [Azure Cloud shell](../../cloud-shell/overview.md).
+    Als u opdrachten rechtstreeks in de cloud wilt uitvoeren, gebruikt u [de Azure Cloud Shell](../../cloud-shell/overview.md).
 
-1. Alleen lokale Power shell:
+1. Alleen lokale PowerShell:
 
-    1. Installeer de [Azure Active Directory Power shell-module](https://www.powershellgallery.com/packages/AzureAD).
+    1. Installeer de [Azure Active Directory PowerShell-module](https://www.powershellgallery.com/packages/AzureAD).
 
     1. Meld u aan bij Azure:
 
@@ -41,44 +40,44 @@ Zie [New-AzureADGroup](/powershell/module/azuread/new-azureadgroup) en [add-AzAD
         Login-AzAccount
         ```
     
-## <a name="acquire-the-object-id"></a>De object-ID ophalen
+## <a name="acquire-the-object-id"></a>De object-id verkrijgen
 
-Bepaal de object-ID van de toepassing, groep of gebruiker aan wie u het toegangs beleid wilt toewijzen:
+Bepaal de object-id van de toepassing, groep of gebruiker waaraan u het toegangsbeleid wilt toewijzen:
 
-- Toepassingen en andere service-principals: gebruik de cmdlet [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) met de `-SearchString` para meter om de resultaten te filteren op de naam van de gewenste Service-Principal:
+- Toepassingen en andere service-principals: gebruik de cmdlet [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) met de parameter om resultaten te filteren op de naam van de `-SearchString` gewenste service-principal:
 
     ```azurepowershell-interactive
     Get-AzADServicePrincipal -SearchString <search-string>
     ```
 
-- Groepen: gebruik de cmdlet [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup) met de `-SearchString` para meter om de resultaten te filteren op de naam van de gewenste groep:
+- Groepen: gebruik de cmdlet [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup) met de parameter om resultaten te filteren `-SearchString` op de naam van de gewenste groep:
 
     ```azurepowershell-interactive
     Get-AzADGroup -SearchString <search-string>
     ```
     
-    In de uitvoer wordt de object-ID weer gegeven als `Id` .
+    In de uitvoer wordt de object-id vermeld als `Id` .
 
-- Gebruikers: gebruik de cmdlet [Get-AzADUser](/powershell/module/az.resources/get-azaduser) om het e-mail adres van de gebruiker door te geven aan de `-UserPrincipalName` para meter.
+- Gebruikers: gebruik de cmdlet [Get-AzADUser](/powershell/module/az.resources/get-azaduser) om het e-mailadres van de gebruiker door te geven aan de `-UserPrincipalName` parameter .
 
     ```azurepowershell-interactive
      Get-AzAdUser -UserPrincipalName <email-address-of-user>
     ```
 
-    In de uitvoer wordt de object-ID weer gegeven als `Id` .
+    In de uitvoer wordt de object-id vermeld als `Id` .
 
-## <a name="assign-the-access-policy"></a>Het toegangs beleid toewijzen
+## <a name="assign-the-access-policy"></a>Het toegangsbeleid toewijzen
 
-Gebruik de cmdlet [set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) om het toegangs beleid toe te wijzen:
+Gebruik de cmdlet [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) om het toegangsbeleid toe te wijzen:
 
 ```azurepowershell-interactive
 Set-AzKeyVaultAccessPolicy -VaultName <key-vault-name> -ObjectId <Id> -PermissionsToSecrets <secrets-permissions> -PermissionsToKeys <keys-permissions> -PermissionsToCertificates <certificate-permissions    
 ```
 
-U hoeft alleen `-PermissionsToSecrets` , en toe te voegen, `-PermissionsToKeys` en `-PermissionsToCertificates` bij het toewijzen van machtigingen aan deze specifieke typen. De toegestane waarden voor `<secret-permissions>` , `<key-permissions>` en zijn te `<certificate-permissions>` vinden in de documentatie van [set-AzKeyVaultAccessPolicy-para meters](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy#parameters) .
+U hoeft alleen `-PermissionsToSecrets` , en toe te wijzen wanneer u `-PermissionsToKeys` `-PermissionsToCertificates` machtigingen toewijst aan deze specifieke typen. De toegestane waarden voor , en worden opgegeven in de documentatie `<secret-permissions>` `<key-permissions>` `<certificate-permissions>` [Set-AzKeyVaultAccessPolicy - Parameters.](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy#parameters)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Azure Key Vault-beveiliging: Identiteits- en toegangsbeheer](security-overview.md#identity-management)
-- [Beveilig uw sleutel kluis](secure-your-key-vault.md).
+- [Beveilig uw sleutelkluis.](security-overview.md)
 - [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)

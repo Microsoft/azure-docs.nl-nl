@@ -1,158 +1,157 @@
 ---
-title: Overzicht van Azure Key Vault herstel | Microsoft Docs
-description: Key Vault herstel functies zijn ontworpen om te voor komen dat uw sleutel kluis en geheimen, sleutels en certificaten die zijn opgeslagen in de sleutel kluis per ongeluk of opzettelijk worden verwijderd.
+title: Azure Key Vault overzicht van | Microsoft Docs
+description: Key Vault Recovery-functies zijn ontworpen om te voorkomen dat uw sleutelkluis en geheimen, sleutels en certificaten onbedoeld of opzettelijk worden verwijderd die zijn opgeslagen in de sleutelkluis.
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.author: mbaldwin
 author: msmbaldwin
-manager: rkarlin
 ms.date: 09/30/2020
-ms.openlocfilehash: a8e8e791f0dbe18322ad43364ae4ffd09b430caf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c3ffbba9546ada54a42c3f2c2aa5d98da599b353
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98790381"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749724"
 ---
-# <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault herstel beheer met zacht verwijderen en de beveiliging opschonen
+# <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault herstelbeheer met bescherming tegen soft delete en opseen
 
-Dit artikel heeft betrekking op twee herstel functies van Azure Key Vault, zacht verwijderen en beveiliging opschonen. Dit document bevat een overzicht van deze functies en laat zien hoe u deze kunt beheren via de Azure Portal, Azure CLI en Azure PowerShell.
+In dit artikel worden twee herstelfuncties van Azure Key Vault beschreven: de beveiliging tegen soft delete en ops purge. Dit document bevat een overzicht van deze functies en laat zien hoe u deze kunt beheren via de Azure Portal, Azure CLI en Azure PowerShell.
 
-Zie voor meer informatie over Key Vault.
-- [Overzicht van Key Vault](overview.md)
-- [Overzicht van Azure Key Vault sleutels, geheimen en certificaten](about-keys-secrets-certificates.md)
+Zie voor meer informatie Key Vault
+- [Key Vault overzicht](overview.md)
+- [Azure Key Vault overzicht van sleutels, geheimen en certificaten](about-keys-secrets-certificates.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement - [Een gratis abonnement maken](https://azure.microsoft.com/free/dotnet)
-* [Power shell-module](/powershell/azure/install-az-ps).
+* [PowerShell-module](/powershell/azure/install-az-ps).
 * [Azure-CLI](/cli/azure/install-azure-cli)
 * Een sleutelkluis: u kunt er een maken met behulp van [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md)
-* De gebruiker heeft de volgende machtigingen nodig (op abonnements niveau) om bewerkingen uit te voeren op voorlopig verwijderde kluizen:
+* De gebruiker heeft de volgende machtigingen (op abonnementsniveau) nodig om bewerkingen uit te voeren op soft-leted kluizen:
 
   | Machtiging | Beschrijving |
   |---|---|
-  |Micro soft. de sleutel kluis/locaties/deletedVaults/lezen|De eigenschappen van een voorlopig verwijderde sleutel kluis weer geven|
-  |Microsoft.KeyVault/locations/deletedVaults/purge/action|Een voorlopig verwijderde sleutel kluis leegmaken|
+  |Microsoft.KeyVault/locations/deletedVaults/read|De eigenschappen van een sleutelkluis met een zachte verwijderde sleutel weergeven|
+  |Microsoft.KeyVault/locations/deletedVaults/purge/action|Een sleutelkluis met een zachte verwijderde sleutel opsluizen|
 
 
-## <a name="what-are-soft-delete-and-purge-protection"></a>Wat is zacht verwijderen en de beveiliging opschonen
+## <a name="what-are-soft-delete-and-purge-protection"></a>Wat is de beveiliging tegen verwijderen en opseen van gegevens?
 
-[Zacht verwijderen](soft-delete-overview.md) en de beveiliging opschonen zijn twee verschillende herstel functies voor de sleutel kluis.
+[Beveiliging tegen soft](soft-delete-overview.md) delete en opsluizen zijn twee verschillende herstelfuncties voor de sleutelkluis.
 
 > [!IMPORTANT]
-> Het inschakelen van zacht verwijderen is van cruciaal belang om ervoor te zorgen dat uw sleutel kluizen en referenties tegen onbedoeld verwijderen worden beschermd. Het inschakelen van voorlopig verwijderen wordt echter beschouwd als een belang rijke wijziging omdat u mogelijk uw toepassings logica moet wijzigen of extra machtigingen voor uw service-principals moet bieden. Voordat u voorlopig verwijderen inschakelt met behulp van de onderstaande instructies, moet u ervoor zorgen dat uw toepassing is compatibel met de wijziging die in dit document wordt beschreven [ .](soft-delete-change.md)
+> Het in-/uitschakelen van een zachte verwijdering is essentieel om ervoor te zorgen dat uw sleutelkluizen en referenties worden beschermd tegen onbedoeld verwijderen. Het in-/uitschakelen van een zachte delete wordt echter beschouwd als een belangrijke wijziging omdat u uw toepassingslogica moet wijzigen of aanvullende machtigingen moet verlenen aan uw service-principals. Zorg ervoor dat uw toepassing compatibel is met de wijziging door gebruik te maken van dit document voordat u de soft delete in de onderstaande instructies [ **in bedrijf gaat nemen.**](soft-delete-change.md)
 
-**Zacht verwijderen** is ontworpen om onbedoelde verwijdering van uw sleutel kluis en sleutels, geheimen en certificaten die zijn opgeslagen in de sleutel kluis te voor komen. Denk na over zacht verwijderen, zoals een prullenbak. Wanneer u een sleutel kluis of een sleutel kluis-object verwijdert, kan het worden hersteld voor een door de gebruiker Configureer bare Bewaar periode of een standaard waarde van 90 dagen. Sleutel kluizen in de voorlopig verwijderde status kunnen ook worden **opgeschoond** , wat betekent dat ze permanent worden verwijderd. Zo kunt u de sleutel kluizen en sleutel kluis objecten opnieuw maken met dezelfde naam. Voor het herstellen en verwijderen van sleutel kluizen en objecten zijn machtigingen voor het verhoogde toegangs beleid vereist. **Zodra de functie voor voorlopig verwijderen is ingeschakeld, kan deze niet worden uitgeschakeld.**
+**U kunt de** sleutelkluis en sleutels, geheimen en certificaten die in de sleutelkluis zijn opgeslagen, niet per ongeluk verwijderen. U kunt soft-delete zien als een prullenbak. Wanneer u een sleutelkluis of een sleutelkluisobject verwijdert, blijft deze herstelbaar voor een door de gebruiker configureerbare retentieperiode of een standaardperiode van 90 dagen. Sleutelkluizen met de status 'soft deleted' kunnen ook worden **verwijderd,** wat betekent dat ze permanent worden verwijderd. Hiermee kunt u sleutelkluizen en sleutelkluisobjecten opnieuw maken met dezelfde naam. Voor het herstellen en verwijderen van sleutelkluizen en -objecten zijn verhoogde toegangsbeleidmachtigingen vereist. **Zodra de functie voor zacht verwijderen is ingeschakeld, kan deze niet meer worden uitgeschakeld.**
 
-Het is belang rijk te weten dat de **namen van sleutel kluizen wereld wijd uniek zijn**. u kunt dus geen sleutel kluis maken met dezelfde naam als een sleutel kluis in de voorlopig verwijderde status. De namen van sleutels, geheimen en certificaten zijn ook uniek binnen een sleutel kluis. Het is niet mogelijk om een geheim, sleutel of certificaat met dezelfde naam als een andere te maken in de voorlopig verwijderde status.
+Het is belangrijk te weten dat namen van sleutelkluizen wereldwijd uniek **zijn,** zodat u geen sleutelkluis met dezelfde naam als een sleutelkluis met de status 'soft deleted' kunt maken. Op dezelfde manier zijn de namen van sleutels, geheimen en certificaten uniek binnen een sleutelkluis. U kunt geen geheim, sleutel of certificaat maken met dezelfde naam als een ander certificaat met de status 'zacht verwijderd'.
 
-Het **opschonen** van de beveiliging is zodanig ontworpen dat het verwijderen van uw sleutel kluis, sleutels, geheimen en certificaten door een kwaadwillende Insider wordt voor komen. U beschouwt dit als een prullenbak met een op tijd gebaseerde vergren deling. U kunt items op elk gewenst moment herstellen tijdens de Configureer bare Bewaar periode. **U kunt een sleutel kluis pas definitief verwijderen of wissen nadat de Bewaar periode is verstreken.** Zodra de Bewaar periode is verstreken, wordt de sleutel kluis of het sleutel kluis object automatisch verwijderd.
+**Beveiliging tegen opsluizen** is ontworpen om te voorkomen dat uw sleutelkluis, sleutels, geheimen en certificaten door een kwaadwillende insider worden verwijderd. U kunt dit zien als een prullenbak met een vergrendeling op basis van tijd. U kunt items op elk moment tijdens de configureerbare retentieperiode herstellen. **U kunt een sleutelkluis pas definitief verwijderen of opslappen als de retentieperiode is verstreken.** Zodra de bewaarperiode is verstreken, wordt de sleutelkluis of het sleutelkluisobject automatisch verwijderd.
 
 > [!NOTE]
-> Het opschonen van de beveiliging is zo ontworpen dat er geen beheerdersrol of machtiging is die het opschonen van de beveiliging kan overschrijven, uitschakelen of omzeilen. **Wanneer het leegmaken van de beveiliging is ingeschakeld, kan het niet worden uitgeschakeld of overschreven door iedereen, waaronder micro soft.** Dit betekent dat u een verwijderde sleutel kluis moet herstellen of wachten totdat de Bewaar periode is verstreken voordat u de naam van de sleutel kluis opnieuw gebruikt.
+> Beveiliging opskeren is zo ontworpen dat de beveiliging tegen opstingen door geen enkele beheerdersrol of machtiging kan worden overschrijven, uitgeschakeld of omzeild. **Zodra beveiliging tegen opsisten is ingeschakeld, kan deze niet worden uitgeschakeld of overschrijven door iedereen, inclusief Microsoft.** Dit betekent dat u een verwijderde sleutelkluis moet herstellen of moet wachten tot de bewaarperiode is verstreken voordat u de naam van de sleutelkluis opnieuw gebruikt.
 
-Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.md) voor meer informatie over voorlopig verwijderen
+Zie voor meer informatie over soft-delete [Azure Key Vault overzicht van soft-delete](soft-delete-overview.md)
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
 
-## <a name="verify-if-soft-delete-is-enabled-on-a-key-vault-and-enable-soft-delete"></a>Controleren of de functie voor voorlopig verwijderen is ingeschakeld voor een sleutel kluis en het voorlopig verwijderen inschakelen
+## <a name="verify-if-soft-delete-is-enabled-on-a-key-vault-and-enable-soft-delete"></a>Controleer of soft delete is ingeschakeld voor een sleutelkluis en schakel de functie voor soft delete in
 
 1. Meld u aan bij Azure Portal.
 1. Selecteer uw sleutelkluis.
-1. Klik op de Blade eigenschappen.
-1. Controleer of het keuze rondje naast voorlopig verwijderen is ingesteld op ' herstel inschakelen '.
-1. Als voorlopig verwijderen niet is ingeschakeld op de sleutel kluis, klikt u op het keuze rondje om zacht verwijderen in te scha kelen en klikt u op opslaan.
+1. Klik op de blade Eigenschappen.
+1. Controleer of het radioknopje naast de functie voor het verwijderen van de functie Voor verwijderen is ingesteld op Herstel inschakelen.
+1. Als de functie voor het verwijderen van de sleutelkluis niet is ingeschakeld, klikt u op het radio-knop om de functie Voor verwijderen in te stellen en klikt u op Opslaan.
 
-:::image type="content" source="../media/key-vault-recovery-1.png" alt-text="Bij eigenschappen wordt zacht verwijderen gemarkeerd, evenals de waarde om deze in te scha kelen.":::
+:::image type="content" source="../media/key-vault-recovery-1.png" alt-text="Bij Eigenschappen is Soft-Delete gemarkeerd, evenals de waarde die moet worden ingeschakeld.":::
 
-## <a name="grant-access-to-a-service-principal-to-purge-and-recover-deleted-secrets"></a>Toegang verlenen aan een Service-Principal om verwijderde geheimen te verwijderen en te herstellen
+## <a name="grant-access-to-a-service-principal-to-purge-and-recover-deleted-secrets"></a>Toegang verlenen aan een service-principal om verwijderde geheimen op te leeg te maken en te herstellen
 
 1. Meld u aan bij Azure Portal.
 1. Selecteer uw sleutelkluis.
-1. Klik op de Blade toegangs beleid.
-1. Zoek in de tabel de rij van de beveiligingsprincipal waaraan u toegang wilt verlenen (of Voeg een nieuwe beveiligingsprincipal toe).
-1. Klik op de vervolg keuzelijst voor sleutels, certificaten en geheimen.
-1. Ga naar de onderkant van de vervolg keuzelijst en klik op herstellen en leegmaken
-1. Beveiligings-principals hebben ook de functies Get en List nodig om de meeste bewerkingen uit te voeren.
+1. Klik op de blade Toegangsbeleid.
+1. Zoek in de tabel de rij van de beveiligingsprincipaal die u toegang wilt verlenen (of voeg een nieuwe beveiligingsprincipaal toe).
+1. Klik op de vervolgkeuzepagina voor sleutels, certificaten en geheimen.
+1. Schuif naar de onderkant van de vervolgkeuzepagina en klik op Herstellen en Opsvallen
+1. Beveiligings-principals hebben ook get- en list-functionaliteit nodig om de meeste bewerkingen uit te voeren.
 
-:::image type="content" source="../media/key-vault-recovery-2.png" alt-text="In het navigatie deel venster aan de linkerkant wordt het toegangs beleid gemarkeerd. In het toegangs beleid wordt de vervolg keuzelijst met geheime posities weer gegeven. er zijn vier items geselecteerd: ophalen, weer geven, herstellen en opschonen.":::
+:::image type="content" source="../media/key-vault-recovery-2.png" alt-text="In het linkernavigatiedeelvenster is Toegangsbeleid gemarkeerd. Bij Toegangsbeleid wordt de vervolgkeuzelijst Geheime posities weergegeven en zijn vier items geselecteerd: Get, List, Recover en Purge.":::
 
-## <a name="list-recover-or-purge-a-soft-deleted-key-vault"></a>Een tijdelijke, verwijderde sleutel kluis weer geven, herstellen of verwijderen
+## <a name="list-recover-or-purge-a-soft-deleted-key-vault"></a>Een snel verwijderde sleutelkluis opsluizen, herstellen of leeg maken
 
 1. Meld u aan bij Azure Portal.
-1. Klik boven aan de pagina op de zoek balk.
-1. Klik onder recente Services op Key Vault. Klik niet op een individuele sleutel kluis.
-1. Klik boven aan het scherm op de optie voor het beheren van verwijderde kluizen
-1. Er wordt een context venster geopend aan de rechter kant van het scherm.
+1. Klik op de zoekbalk boven aan de pagina.
+1. Klik onder Recente services op Key Vault. Klik niet op een afzonderlijke sleutelkluis.
+1. Klik bovenaan het scherm op de optie Verwijderde kluizen beheren
+1. Aan de rechterkant van het scherm wordt een contextvenster geopend.
 1. Selecteer uw abonnement.
-1. Als uw sleutel kluis zacht is verwijderd, wordt deze weer gegeven in het context venster aan de rechter kant.
-1. Als er te veel kluizen zijn, kunt u klikken op ' meer laden ' onder aan het context venster of het gebruik van CLI of Power shell om de resultaten op te halen.
-1. Wanneer u de kluis hebt gevonden die u wilt herstellen of verwijderen, schakelt u het selectie vakje ernaast in.
-1. Selecteer de optie herstellen onder aan het deel venster context als u de sleutel kluis wilt herstellen.
-1. Selecteer de optie opschonen als u de sleutel kluis permanent wilt verwijderen.
+1. Als uw sleutelkluis is verwijderd, wordt deze weergegeven in het contextvenster aan de rechterkant.
+1. Als er te veel kluizen zijn, kunt u onderaan het contextvenster op Meer laden klikken of CLI of PowerShell gebruiken om de resultaten te krijgen.
+1. Zodra u de kluis hebt gevonden die u wilt herstellen of opsluizen, selecteert u het selectievakje er naast.
+1. Selecteer de optie Herstellen onderaan het contextvenster als u de sleutelkluis wilt herstellen.
+1. Selecteer de optie voor opsluizen als u de sleutelkluis permanent wilt verwijderen.
 
-:::image type="content" source="../media/key-vault-recovery-3.png" alt-text="Op sleutel kluizen is de optie verwijderde kluizen beheren gemarkeerd.":::
+:::image type="content" source="../media/key-vault-recovery-3.png" alt-text="In Sleutelkluizen is de optie Verwijderde kluizen beheren gemarkeerd.":::
 
-:::image type="content" source="../media/key-vault-recovery-4.png" alt-text="Op verwijderde sleutel kluizen beheren is de enige genoteerde sleutel kluis gemarkeerd en geselecteerd, en de knop herstellen is gemarkeerd.":::
+:::image type="content" source="../media/key-vault-recovery-4.png" alt-text="In Verwijderde sleutelkluizen beheren is de enige vermelde sleutelkluis gemarkeerd en geselecteerd en is de knop Herstellen gemarkeerd.":::
 
-## <a name="list-recover-or-purge-soft-deleted-secrets-keys-and-certificates"></a>Tijdelijke verwijderde geheimen, sleutels en certificaten weer geven, herstellen of verwijderen
+## <a name="list-recover-or-purge-soft-deleted-secrets-keys-and-certificates"></a>Lijst met, herstellen of ops leeg maken van de geheimen, sleutels en certificaten die u hebt verwijderd
 
 1. Meld u aan bij Azure Portal.
 1. Selecteer uw sleutelkluis.
-1. Selecteer de Blade die overeenkomt met het geheime type dat u wilt beheren (sleutels, geheimen of certificaten).
-1. Klik aan de bovenkant van het scherm op "verwijderde (sleutels, geheimen of certificaten beheren)
-1. Er wordt een context venster weer gegeven aan de rechter kant van het scherm.
-1. Als uw geheim, sleutel of certificaat niet wordt weer gegeven in de lijst, heeft het niet de status zacht verwijderd.
+1. Selecteer de blade die overeenkomt met het geheimtype dat u wilt beheren (sleutels, geheimen of certificaten).
+1. Klik bovenaan het scherm op Verwijderde items beheren (sleutels, geheimen of certificaten)
+1. Aan de rechterkant van het scherm wordt een contextvenster weergegeven.
+1. Als uw geheim, sleutel of certificaat niet wordt weergegeven in de lijst, heeft het niet de status 'soft-leted'.
 1. Selecteer het geheim, de sleutel of het certificaat dat u wilt beheren.
-1. Selecteer de optie om onder in het context venster te herstellen of te wissen.
+1. Selecteer de optie om te herstellen of op te halen onderaan het contextvenster.
 
-:::image type="content" source="../media/key-vault-recovery-5.png" alt-text="Op sleutels is de optie Verwijderde sleutels beheren gemarkeerd.":::
+:::image type="content" source="../media/key-vault-recovery-5.png" alt-text="In Sleutels is de optie Verwijderde sleutels beheren gemarkeerd.":::
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ## <a name="key-vault-cli"></a>Key Vault (CLI)
 
-* Controleren of de functie voor het voorlopig verwijderen van een sleutel kluis is ingeschakeld
+* Controleren of voor een sleutelkluis soft-delete is ingeschakeld
 
     ```azurecli
     az keyvault show --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME}
     ```
 
-* Voorlopig verwijderen inschakelen op de sleutel kluis
+* Soft-delete inschakelen voor sleutelkluis
 
-    Voor alle nieuwe sleutel kluizen is de functie voor voorlopig verwijderen standaard ingeschakeld. Als u momenteel een sleutel kluis hebt waarvoor geen tijdelijke verwijdering is ingeschakeld, gebruikt u de volgende opdracht om de optie voorlopig verwijderen in te scha kelen.
+    Voor alle nieuwe sleutelkluizen is standaard de functie voor soft delete ingeschakeld. Als u momenteel een sleutelkluis hebt waar voorlopig verwijderen niet is ingeschakeld, gebruikt u de volgende opdracht om voorlopig verwijderen in teschakelen.
 
     ```azurecli
     az keyvault update --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME} --enable-soft-delete true
     ```
 
-* Sleutel kluis verwijderen (herstelbaar als voorlopig verwijderen is ingeschakeld)
+* Sleutelkluis verwijderen (herstelbaar als de functie voor zacht verwijderen is ingeschakeld)
 
     ```azurecli
     az keyvault delete --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME}
     ```
 
-* Alle voorlopig verwijderde sleutel kluizen weer geven
+* Alle zacht verwijderde sleutelkluizen op een lijst zetten
 
     ```azurecli
     az keyvault list-deleted --subscription {SUBSCRIPTION ID} --resource-type vault
     ```
 
-* Tijdelijke, verwijderde sleutel herstellen-kluis
+* Snel verwijderde sleutelkluis herstellen
 
     ```azurecli
     az keyvault recover --subscription {SUBSCRIPTION ID} -n {VAULT NAME}
     ```
 
-* Tijdelijke verwijderde sleutel kluis leegmaken **(waarschuwing! met deze bewerking wordt uw sleutel kluis permanent verwijderd.)**
+* Zacht verwijderde sleutelkluis leeg **maken (WAARSCHUWING! MET DEZE BEWERKING WORDT UW SLEUTELKLUIS PERMANENT VERWIJDERD)**
 
     ```azurecli
     az keyvault purge --subscription {SUBSCRIPTION ID} -n {VAULT NAME}
     ```
 
-* Leegmaken van beveiliging op sleutel-kluis inschakelen
+* Beveiliging tegen opsluizen inschakelen voor sleutelkluis
 
     ```azurecli
     az keyvault update --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME} --enable-purge-protection true
@@ -160,7 +159,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 ## <a name="certificates-cli"></a>Certificaten (CLI)
 
-* Toegang verlenen om certificaten te verwijderen en te herstellen
+* Toegang verlenen om certificaten op te halen en te herstellen
 
     ```azurecli
     az keyvault set-policy --upn user@contoso.com --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME}  --certificate-permissions recover purge
@@ -172,7 +171,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
     az keyvault certificate delete --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {CERTIFICATE NAME}
     ```
 
-* Verwijderde certificaten weer geven
+* Lijst met verwijderde certificaten
 
     ```azurecli
     az keyvault certificate list-deleted --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME}
@@ -184,7 +183,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
     az keyvault certificate recover --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {CERTIFICATE NAME}
     ```
 
-* Voorlopig verwijderd certificaat leegmaken **(waarschuwing! met deze bewerking wordt uw certificaat permanent verwijderd.)**
+* Soft-leted certificaat leeg maken **(WAARSCHUWING! MET DEZE BEWERKING WORDT UW CERTIFICAAT PERMANENT VERWIJDERD)**
 
     ```azurecli
     az keyvault certificate purge --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {CERTIFICATE NAME}
@@ -192,7 +191,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 ## <a name="keys-cli"></a>Sleutels (CLI)
 
-* Toegang verlenen om sleutels te verwijderen en te herstellen
+* Toegang verlenen om sleutels op te halen en te herstellen
 
     ```azurecli
     az keyvault set-policy --upn user@contoso.com --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME}  --key-permissions recover purge
@@ -216,7 +215,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
     az keyvault key recover --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {KEY NAME}
     ```
 
-* Zacht verwijderde sleutel leegmaken **(waarschuwing! met deze bewerking wordt uw sleutel permanent verwijderd.)**
+* Zacht verwijderde sleutel leeg maken **(WAARSCHUWING! MET DEZE BEWERKING WORDT UW SLEUTEL PERMANENT VERWIJDERD)**
 
     ```azurecli
     az keyvault key purge --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {KEY NAME}
@@ -224,7 +223,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 ## <a name="secrets-cli"></a>Geheimen (CLI)
 
-* Toegang verlenen om geheimen te verwijderen en te herstellen
+* Toegang verlenen om geheimen op te halen en te herstellen
 
     ```azurecli
     az keyvault set-policy --upn user@contoso.com --subscription {SUBSCRIPTION ID} -g {RESOURCE GROUP} -n {VAULT NAME}  --secret-permissions recover purge
@@ -236,7 +235,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
     az keyvault secret delete --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {SECRET NAME}
     ```
 
-* Verwijderde geheimen weer geven
+* Verwijderde geheimen op een lijst zetten
 
     ```azurecli
     az keyvault secret list-deleted --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME}
@@ -248,7 +247,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
     az keyvault secret recover --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {SECRET NAME}
     ```
 
-* Zacht verwijderd geheim opschonen **(waarschuwing! met deze bewerking wordt uw geheim permanent verwijderd.)**
+* Zacht verwijderd geheim leeg maken **(WAARSCHUWING! MET DEZE BEWERKING WORDT UW GEHEIM PERMANENT VERWIJDERD)**
 
     ```azurecli
     az keyvault secret purge --subscription {SUBSCRIPTION ID} --vault-name {VAULT NAME} --name {SECRET NAME}
@@ -256,39 +255,39 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-## <a name="key-vault-powershell"></a>Key Vault (Power shell)
+## <a name="key-vault-powershell"></a>Key Vault (PowerShell)
 
-* Controleren of de functie voor het voorlopig verwijderen van een sleutel kluis is ingeschakeld
+* Controleren of voor een sleutelkluis soft-delete is ingeschakeld
 
     ```powershell
     Get-AzKeyVault -VaultName "ContosoVault"
     ```
 
-* Sleutel kluis verwijderen
+* Sleutelkluis verwijderen
 
     ```powershell
     Remove-AzKeyVault -VaultName 'ContosoVault'
     ```
 
-* Alle voorlopig verwijderde sleutel kluizen weer geven
+* Een lijst maken van alle sleutelkluizen die zijn verwijderd
 
     ```powershell
     Get-AzKeyVault -InRemovedState
     ```
 
-* Tijdelijke, verwijderde sleutel herstellen-kluis
+* Snel verwijderde sleutelkluis herstellen
 
     ```powershell
     Undo-AzKeyVaultRemoval -VaultName ContosoVault -ResourceGroupName ContosoRG -Location westus
     ```
 
-* Verwijder de voorlopig verwijderde sleutel-kluis **(waarschuwing! met deze bewerking wordt uw sleutel kluis permanent verwijderd.)**
+* Zacht verwijderde sleutelkluis leeg **maken (WAARSCHUWING! MET DEZE BEWERKING WORDT UW SLEUTELKLUIS PERMANENT VERWIJDERD)**
 
     ```powershell
     Remove-AzKeyVault -VaultName ContosoVault -InRemovedState -Location westus
     ```
 
-* Leegmaken van beveiliging op sleutel-kluis inschakelen
+* Beveiliging tegen opsluizen inschakelen voor sleutelkluis
 
     ```powershell
     ($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName "ContosoVault").ResourceId).Properties | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true"
@@ -296,9 +295,9 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
     Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
     ```
 
-## <a name="certificates-powershell"></a>Certificaten (Power shell)
+## <a name="certificates-powershell"></a>Certificaten (PowerShell)
 
-* Machtigingen verlenen om certificaten te herstellen en op te schonen
+* Machtigingen verlenen om certificaten te herstellen en op te halen
 
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@contoso.com -PermissionsToCertificates recover,purge
@@ -310,27 +309,27 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
   Remove-AzKeyVaultCertificate -VaultName ContosoVault -Name 'MyCert'
   ```
 
-* Alle verwijderde certificaten in een sleutel kluis weer geven
+* Een lijst met alle verwijderde certificaten in een sleutelkluis maken
 
   ```powershell
   Get-AzKeyVaultCertificate -VaultName ContosoVault -InRemovedState
   ```
 
-* Een certificaat herstellen met de status verwijderd
+* Een certificaat met de status Verwijderd herstellen
 
   ```powershell
   Undo-AzKeyVaultCertificateRemoval -VaultName ContosoVault -Name 'MyCert'
   ```
 
-* Een voorlopig verwijderd certificaat leegmaken **(waarschuwing! met deze bewerking wordt uw certificaat permanent verwijderd.)**
+* Een zacht verwijderd certificaat leeg maken **(WAARSCHUWING! MET DEZE BEWERKING WORDT UW CERTIFICAAT PERMANENT VERWIJDERD)**
 
   ```powershell
   Remove-AzKeyVaultcertificate -VaultName ContosoVault -Name 'MyCert' -InRemovedState
   ```
 
-## <a name="keys-powershell"></a>Sleutels (Power shell)
+## <a name="keys-powershell"></a>Sleutels (PowerShell)
 
-* Machtigingen verlenen voor het herstellen en leegmaken van sleutels
+* Machtigingen verlenen om sleutels te herstellen en op te halen
 
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@contoso.com -PermissionsToKeys recover,purge
@@ -342,27 +341,27 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
   Remove-AzKeyVaultKey -VaultName ContosoVault -Name 'MyKey'
   ```
 
-* Alle verwijderde certificaten in een sleutel kluis weer geven
+* Een lijst met alle verwijderde certificaten in een sleutelkluis maken
 
   ```powershell
   Get-AzKeyVaultKey -VaultName ContosoVault -InRemovedState
   ```
 
-* Een voorlopig verwijderde sleutel herstellen
+* Een zacht verwijderde sleutel herstellen
 
     ```powershell
     Undo-AzKeyVaultKeyRemoval -VaultName ContosoVault -Name ContosoFirstKey
     ```
 
-* Een voorlopig verwijderde sleutel leegmaken **(waarschuwing! met deze bewerking wordt uw sleutel permanent verwijderd.)**
+* Een zacht verwijderde sleutel leeg maken **(WAARSCHUWING! MET DEZE BEWERKING WORDT UW SLEUTEL PERMANENT VERWIJDERD)**
 
     ```powershell
     Remove-AzKeyVaultKey -VaultName ContosoVault -Name ContosoFirstKey -InRemovedState
     ```
 
-## <a name="secrets-powershell"></a>Geheimen (Power shell)
+## <a name="secrets-powershell"></a>Geheimen (PowerShell)
 
-* Machtigingen verlenen om geheimen te herstellen en op te schonen
+* Machtigingen verlenen om geheimen te herstellen en op te halen
 
     ```powershell
     Set-AzKeyVaultAccessPolicy -VaultName ContosoVault -UserPrincipalName user@contoso.com -PermissionsToSecrets recover,purge
@@ -374,19 +373,19 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
   Remove-AzKeyVaultSecret -VaultName ContosoVault -name SQLPassword
   ```
 
-* Alle verwijderde geheimen in een sleutel kluis weer geven
+* Een lijst met alle verwijderde geheimen in een sleutelkluis maken
 
   ```powershell
   Get-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState
   ```
 
-* Een geheim herstellen met de status verwijderd
+* Een geheim met de status Verwijderd herstellen
 
   ```powershell
   Undo-AzKeyVaultSecretRemoval -VaultName ContosoVault -Name SQLPAssword
   ```
 
-* Een geheim in een verwijderde staat verwijderen **(waarschuwing! met deze bewerking wordt uw sleutel permanent verwijderd.)**
+* Een geheim met de status Verwijderd leeg maken **(WAARSCHUWING! MET DEZE BEWERKING WORDT UW SLEUTEL PERMANENT VERWIJDERD)**
 
   ```powershell
   Remove-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState -name SQLPassword
@@ -395,10 +394,10 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Key Vault Power shell-cmdlets](/powershell/module/az.keyvault)
-- [Azure CLI-opdrachten Key Vault](/cli/azure/keyvault)
+- [Azure Key Vault PowerShell-cmdlets](/powershell/module/az.keyvault)
+- [Key Vault Azure CLI-opdrachten](/cli/azure/keyvault)
 - [Back-up voor Azure Key Vault](backup.md)
 - [Key Vault-logboekregistratie inschakelen](howto-logging.md)
-- [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)
+- [Veilige toegang tot een sleutelkluis](security-overview.md)
 - [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
-- [Aanbevolen procedures voor het gebruik van een sleutel kluis](security-overview.md)
+- [Best practices voor het gebruik van een sleutelkluis](security-overview.md)

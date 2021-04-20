@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: b8f36d7490e24247f1f8482c9dece86b68015d73
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: 598bbef0ceb24f3eb5932239a4146e1693521f24
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107376100"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751324"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-python"></a>Quickstart: Azure Key Vault-clientbibliotheek met certificaten voor Python
 
@@ -213,7 +213,7 @@ az group delete --resource-group KeyVault-PythonQS-rg
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Overzicht van Azure Key Vault](../general/overview.md)
-- [Veilige toegang tot een sleutelkluis](../general/secure-your-key-vault.md)
+- [Veilige toegang tot een sleutelkluis](../general/security-overview.md)
 - [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
 - [Overzicht van Key Vault-beveiliging](../general/security-overview.md)
 - [Verifiëren met Key Vault](../general/authentication.md)

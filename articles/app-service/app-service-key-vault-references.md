@@ -1,58 +1,58 @@
 ---
 title: Key Vault-referenties gebruiken
-description: Meer informatie over het instellen van Azure App Service en Azure Functions om Azure Key Vault verwijzingen te gebruiken. Key Vault geheimen beschikbaar maken voor uw toepassings code.
+description: Meer informatie over het instellen van Azure App Service en Azure Functions het gebruik van Azure Key Vault referenties. Maak Key Vault geheimen beschikbaar voor uw toepassingscode.
 author: mattchenderson
 ms.topic: article
 ms.date: 02/05/2021
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: e0bba85cc99e1751f39172ac320fe721d6f02e87
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: b87001f9b283c774096fe669d58a9b487174625d
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106076782"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107750766"
 ---
-# <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Gebruik Key Vault verwijzingen voor App Service en Azure Functions
+# <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Gebruik Key Vault voor App Service en Azure Functions
 
-In dit onderwerp wordt beschreven hoe u kunt werken met geheimen van Azure Key Vault in uw App Service of Azure Functions toepassing zonder dat u code wijzigingen hoeft aan te brengen. [Azure Key Vault](../key-vault/general/overview.md) is een service die gecentraliseerd geheimen beheer biedt, met volledige controle over het toegangs beleid en de controle geschiedenis.
+In dit onderwerp ziet u hoe u werkt met geheimen van Azure Key Vault in uw App Service of Azure Functions-toepassing zonder dat er codewijzigingen nodig zijn. [Azure Key Vault](../key-vault/general/overview.md) is een service die gecentraliseerd geheimenbeheer biedt, met volledige controle over toegangsbeleid en controlegeschiedenis.
 
-## <a name="granting-your-app-access-to-key-vault"></a>Toegang tot Key Vault verlenen aan uw app
+## <a name="granting-your-app-access-to-key-vault"></a>Uw app toegang verlenen tot Key Vault
 
-Als u geheimen van Key Vault wilt lezen, moet er een kluis zijn gemaakt en moet u uw app toegang geven tot het bestand.
+Als u geheimen wilt lezen uit Key Vault, moet u een kluis hebben gemaakt en uw app toestemming geven om er toegang toe te krijgen.
 
-1. Maak een sleutel kluis door de [Key Vault Snelstartgids](../key-vault/secrets/quick-create-cli.md)te volgen.
+1. Maak een sleutelkluis door de Key Vault [te volgen.](../key-vault/secrets/quick-create-cli.md)
 
-1. Maak een door het [systeem toegewezen beheerde identiteit](overview-managed-identity.md) voor uw toepassing.
+1. Maak een [door het systeem toegewezen beheerde identiteit](overview-managed-identity.md) voor uw toepassing.
 
    > [!NOTE] 
-   > Key Vault verwijzingen worden momenteel alleen door het systeem toegewezen beheerde identiteiten ondersteund. Door de gebruiker toegewezen identiteiten kunnen niet worden gebruikt.
+   > Key Vault bieden momenteel alleen ondersteuning voor door het systeem toegewezen beheerde identiteiten. Door de gebruiker toegewezen identiteiten kunnen niet worden gebruikt.
 
-1. Maak een [toegangs beleid in Key Vault](../key-vault/general/secure-your-key-vault.md#key-vault-access-policies) voor de toepassings-id die u eerder hebt gemaakt. Schakel de geheime machtiging ' Get ' in voor dit beleid. Configureer de "geautoriseerde toepassing" of `applicationId` instellingen niet, omdat deze niet compatibel is met een beheerde identiteit.
+1. Maak een [toegangsbeleid in Key Vault](../key-vault/general/security-overview.md#privileged-access) voor de toepassings-id die u eerder hebt gemaakt. Schakel de machtiging Geheim 'Get' in voor dit beleid. Configureer de 'geautoriseerde toepassing' of `applicationId` instellingen niet, omdat dit niet compatibel is met een beheerde identiteit.
 
-### <a name="access-network-restricted-vaults"></a>Toegang tot netwerk met beperkte kluizen
+### <a name="access-network-restricted-vaults"></a>Toegang tot kluizen met beperkte netwerktoegang
 
 > [!NOTE]
-> Op Linux gebaseerde toepassingen kunnen geen geheimen van een sleutel kluis met een beperkt netwerk oplossen tenzij de app wordt gehost in een [app service Environment](./environment/intro.md).
+> Linux-toepassingen kunnen momenteel geen geheimen uit een sleutelkluis met beperkte netwerksleutel oplossen, tenzij de app wordt gehost binnen [een App Service Environment](./environment/intro.md).
 
-Als uw kluis is geconfigureerd met [netwerk beperkingen](../key-vault/general/overview-vnet-service-endpoints.md), moet u er ook voor zorgen dat de toepassing toegang heeft tot het netwerk.
+Als uw kluis is geconfigureerd met [netwerkbeperkingen,](../key-vault/general/overview-vnet-service-endpoints.md)moet u er ook voor zorgen dat de toepassing netwerktoegang heeft.
 
-1. Zorg ervoor dat de toepassing uitgaande netwerk mogelijkheden heeft geconfigureerd, zoals wordt beschreven in [app service-netwerk functies](./networking-features.md) en [Azure functions-netwerk opties](../azure-functions/functions-networking-options.md).
+1. Zorg ervoor dat voor de toepassing uitgaande netwerkmogelijkheden zijn geconfigureerd, zoals beschreven in App Service [netwerkfuncties](./networking-features.md) en [Azure Functions netwerkopties.](../azure-functions/functions-networking-options.md)
 
-2. Zorg ervoor dat de configuratie accounts van de kluis voor het netwerk of subnet waarlangs uw app toegang heeft.
+2. Zorg ervoor dat de configuratieaccounts van de kluis voor het netwerk of subnet zijn waarmee uw app toegang krijgt.
 
 > [!IMPORTANT]
-> Het openen van een kluis via de integratie van het virtuele netwerk is momenteel niet compatibel met [Automatische updates voor geheimen zonder een opgegeven versie](#rotation).
+> Toegang tot een kluis via integratie van virtuele netwerken is momenteel niet compatibel met automatische updates voor [geheimen zonder een opgegeven versie](#rotation).
 
-## <a name="reference-syntax"></a>Verwijzings syntaxis
+## <a name="reference-syntax"></a>Verwijzingssyntaxis
 
-Een Key Vault verwijzing is van het formulier `@Microsoft.KeyVault({referenceString})` , waarbij `{referenceString}` wordt vervangen door een van de volgende opties:
+Een Key Vault heeft de vorm `@Microsoft.KeyVault({referenceString})` , waarbij wordt vervangen door een van de volgende `{referenceString}` opties:
 
 > [!div class="mx-tdBreakAll"]
-> | Verwijzings reeks                                                            | Description                                                                                                                                                                                 |
+> | Referentiereeks                                                            | Description                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | SecretUri =_SecretUri_                                                       | De **SecretUri** moet de volledige gegevenslaag URI zijn van een geheim in Key Vault, eventueel met inbegrip van een versie, bijvoorbeeld, `https://myvault.vault.azure.net/secrets/mysecret/` of `https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931`  |
-> | Kluisnaam =_kluis_; Geheim =_geheim_; SecretVersion =_SecretVersion_ | De **kluisnaam** is vereist en moet de naam van uw Key Vault bron zijn. De naam van het **geheim** is vereist en moet het doel geheim zijn. De **SecretVersion** is optioneel, maar als deze aanwezig is, is dit de versie van het geheim dat moet worden gebruikt. |
+> | SecretUri =_secretUri_                                                       | De **SecretUri** moet de volledige gegevensvlak-URI zijn van een geheim in Key Vault, eventueel inclusief een versie, bijvoorbeeld `https://myvault.vault.azure.net/secrets/mysecret/` of `https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931`  |
+> | VaultName=_vaultName_; SecretName =_secretName_; SecretVersion=_secretVersion_ | De **VaultName** is vereist en moet de naam van uw Key Vault resource. De **SecretName** is vereist en moet de naam van het doelgeheim zijn. De **SecretVersion** is optioneel, maar als aanwezig de versie aangeeft van het geheim dat moet worden gebruikt. |
 
 Een volledige verwijzing ziet er bijvoorbeeld als volgt uit:
 
@@ -69,24 +69,24 @@ U kunt ook het volgende doen:
 ## <a name="rotation"></a>Rotatie
 
 > [!IMPORTANT]
-> [Het openen van een kluis via de integratie van het virtuele netwerk](#access-network-restricted-vaults) is momenteel niet compatibel met automatische updates voor geheimen zonder een opgegeven versie.
+> [Toegang tot een kluis via integratie van virtuele netwerken](#access-network-restricted-vaults) is momenteel niet compatibel met automatische updates voor geheimen zonder een opgegeven versie.
 
-Als er in de verwijzing geen versie is opgegeven, gebruikt de app de nieuwste versie die in Key Vault aanwezig is. Als nieuwere versies beschikbaar komen, zoals bij een rotatie gebeurtenis, wordt de app automatisch bijgewerkt en wordt de nieuwste versie binnen één dag gebruikt. Wijzigingen in de configuratie van de app zorgen ervoor dat de meest recente versies van alle geheimen waarnaar wordt verwezen direct worden bijgewerkt.
+Als er geen versie is opgegeven in de verwijzing, gebruikt de app de nieuwste versie die bestaat in Key Vault. Wanneer nieuwere versies beschikbaar komen, zoals bij een rotatiegebeurtenis, wordt de app automatisch bijgewerkt en wordt binnen één dag de nieuwste versie gebruikt. Eventuele configuratiewijzigingen die in de app worden aangebracht, zorgen voor een onmiddellijke update van de nieuwste versies van alle geheimen waarnaar wordt verwezen.
 
-## <a name="source-application-settings-from-key-vault"></a>Instellingen van de bron toepassing van Key Vault
+## <a name="source-application-settings-from-key-vault"></a>Brontoepassingsinstellingen van Key Vault
 
-Key Vault verwijzingen kunnen worden gebruikt als waarden voor [Toepassings instellingen](configure-common.md#configure-app-settings), zodat u geheimen in Key Vault in plaats van de site configuratie kunt blijven gebruiken. Toepassings instellingen worden op rest versleuteld, maar als u de mogelijkheden van een geheim beheer nodig hebt, moeten ze in Key Vault gaan.
+Key Vault kunnen worden gebruikt als waarden [](configure-common.md#configure-app-settings)voor toepassingsinstellingen, zodat u geheimen in Key Vault plaats van de site-configuratie kunt bewaren. Toepassingsinstellingen worden in rust veilig versleuteld, maar als u mogelijkheden voor geheimbeheer nodig hebt, moeten ze worden Key Vault.
 
-Als u een Key Vault referentie voor een toepassings instelling wilt gebruiken, stelt u de verwijzing in als de waarde van de instelling. Uw app kan naar het geheim verwijzen via de sleutel normaal. Er zijn geen code wijzigingen vereist.
+Als u een Key Vault voor een toepassingsinstelling wilt gebruiken, stelt u de verwijzing in als de waarde van de instelling. Uw app kan op de gebruikelijke manier verwijzen naar het geheim via de sleutel. Er zijn geen codewijzigingen vereist.
 
 > [!TIP]
-> De meeste toepassings instellingen die gebruikmaken van Key Vault verwijzingen moeten worden gemarkeerd als sleuf instellingen, omdat u voor elke omgeving afzonderlijke kluizen moet hebben.
+> De meeste toepassingsinstellingen Key Vault referenties moeten worden gemarkeerd als site-instellingen, omdat u afzonderlijke kluizen voor elke omgeving moet hebben.
 
 ### <a name="azure-resource-manager-deployment"></a>Implementatie van Azure Resource Manager
 
-Wanneer u de implementatie van resources via Azure Resource Manager sjablonen automatiseert, moet u mogelijk uw afhankelijkheden in een bepaalde volg orde rangschikken om deze functie te kunnen gebruiken. Houd er rekening mee dat u de toepassings instellingen moet definiëren als hun eigen resource, in plaats van een `siteConfig` eigenschap in de site definitie te gebruiken. Dit komt doordat de site eerst moet worden gedefinieerd, zodat de door het systeem toegewezen identiteit wordt gemaakt en kan worden gebruikt in het toegangs beleid.
+Bij het automatiseren van resource-implementaties via Azure Resource Manager sjablonen, moet u mogelijk uw afhankelijkheden in een bepaalde volgorde sequentieën om deze functie te laten werken. Let op: u moet uw toepassingsinstellingen definiëren als hun eigen resource, in plaats van een eigenschap in de `siteConfig` sitedefinitie te gebruiken. Dit komt doordat de site eerst moet worden gedefinieerd, zodat de door het systeem toegewezen identiteit hiermee wordt gemaakt en kan worden gebruikt in het toegangsbeleid.
 
-Een voor beeld van een pseudo-sjabloon voor een functie-app kan er als volgt uitzien:
+Een voorbeeld van een pseudosjabloon voor een functie-app kan er als volgt uitzien:
 
 ```json
 {
@@ -190,30 +190,30 @@ Een voor beeld van een pseudo-sjabloon voor een functie-app kan er als volgt uit
 ```
 
 > [!NOTE] 
-> In dit voor beeld is de bron beheer implementatie afhankelijk van de toepassings instellingen. Dit is normaal gesp roken onveilig gedrag, omdat het bijwerken van de app-instelling asynchroon werkt. Omdat we echter de `WEBSITE_ENABLE_SYNC_UPDATE_SITE` toepassings instelling hebben opgenomen, is de update synchroon. Dit betekent dat de implementatie van broncode beheer alleen begint zodra de instellingen van de toepassing volledig zijn bijgewerkt.
+> In dit voorbeeld is de implementatie van broncodebeheer afhankelijk van de toepassingsinstellingen. Dit is normaal gesproken onveilig gedrag, omdat de update van de app-instelling asynchroon werkt. Omdat we de toepassingsinstelling hebben `WEBSITE_ENABLE_SYNC_UPDATE_SITE` opgenomen, is de update echter synchroon. Dit betekent dat de implementatie van broncodebeheer pas begint wanneer de toepassingsinstellingen volledig zijn bijgewerkt.
 
-## <a name="troubleshooting-key-vault-references"></a>Problemen met Key Vault verwijzingen oplossen
+## <a name="troubleshooting-key-vault-references"></a>Problemen met Key Vault oplossen
 
-Als een verwijzing niet correct wordt opgelost, wordt in plaats daarvan de referentie waarde gebruikt. Dit betekent dat voor toepassings instellingen een omgevings variabele wordt gemaakt waarvan de waarde de `@Microsoft.KeyVault(...)` syntaxis heeft. Dit kan ertoe leiden dat de toepassing fouten genereert, omdat er een geheim van een bepaalde structuur werd verwacht.
+Als een verwijzing niet correct wordt opgelost, wordt in plaats daarvan de referentiewaarde gebruikt. Dit betekent dat voor toepassingsinstellingen een omgevingsvariabele wordt gemaakt waarvan de waarde de `@Microsoft.KeyVault(...)` syntaxis heeft. Dit kan ertoe leiden dat de toepassing fouten veroorzaakt, omdat er een geheim van een bepaalde structuur werd verwacht.
 
-Dit wordt meestal veroorzaakt door een onjuiste configuratie van het Key Vault- [toegangs beleid](#granting-your-app-access-to-key-vault). Het kan echter ook worden veroorzaakt door een geheim dat niet meer aanwezig is of een syntaxis fout in de verwijzing zelf.
+Dit komt meestal door een onjuiste configuratie van het Key Vault [toegangsbeleid](#granting-your-app-access-to-key-vault). Dit kan echter ook het gevolg zijn van een geheim dat niet meer bestaat of een syntaxisfout in de verwijzing zelf.
 
-Als de syntaxis juist is, kunt u andere oorzaken voor fouten weer geven door de huidige oplossings status in de portal te controleren. Navigeer naar toepassings instellingen en selecteer bewerken voor de betreffende verwijzing. Onder de instellings configuratie ziet u status informatie, inclusief eventuele fouten. Als deze ontbreken, betekent dit dat de verwijzings syntaxis ongeldig is.
+Als de syntaxis juist is, kunt u andere oorzaken voor fouten bekijken door de huidige oplossingsstatus in de portal te controleren. Navigeer naar Toepassingsinstellingen en selecteer Bewerken voor de referentie in kwestie. Onder de instellingsconfiguratie ziet u statusinformatie, inclusief eventuele fouten. De afwezigheid van deze impliceert dat de verwijzingssyntaxis ongeldig is.
 
-U kunt ook een van de ingebouwde detectoren gebruiken om aanvullende informatie te krijgen.
+U kunt ook een van de ingebouwde detectoren gebruiken om aanvullende informatie op te halen.
 
-### <a name="using-the-detector-for-app-service"></a>De detector voor App Service gebruiken
+### <a name="using-the-detector-for-app-service"></a>De detector gebruiken voor App Service
 
 1. Navigeer in de portal naar uw app.
 2. Selecteer **Problemen vaststellen en oplossen**.
-3. Kies **Beschik baarheid en prestaties** en selecteer **Web-app lager.**
-4. Zoek **Key Vault diagnostische gegevens over toepassings instellingen** en klik op **meer informatie**.
+3. Kies **Beschikbaarheid en prestaties en** selecteer **Web-app niet beschikbaar.**
+4. Zoek **Key Vault application settings diagnostics en** klik op Meer **informatie.**
 
 
-### <a name="using-the-detector-for-azure-functions"></a>De detector voor Azure Functions gebruiken
+### <a name="using-the-detector-for-azure-functions"></a>De detector gebruiken voor Azure Functions
 
 1. Navigeer in de portal naar uw app.
-2. Navigeer naar **platform functies.**
+2. Navigeer naar **Platformfuncties.**
 3. Selecteer **Problemen vaststellen en oplossen**.
-4. Kies **Beschik baarheid en prestaties** en selecteer **functie-app omlaag of rapportage fouten.**
-5. Klik op **Key Vault diagnostische gegevens over toepassings instellingen.**
+4. Kies **Beschikbaarheid en prestaties en** selecteer **Functie-app niet beschikbaar of rapporteert fouten.**
+5. Klik op **Key Vault Diagnostische gegevens van toepassingsinstellingen.**

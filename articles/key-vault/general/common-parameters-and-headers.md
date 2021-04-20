@@ -1,36 +1,35 @@
 ---
 title: Algemene parameters en headers
-description: De para meters en kopteksten die gemeen schappelijk zijn voor alle bewerkingen die u kunt uitvoeren in verband met Key Vault resources.
+description: De parameters en headers die gemeenschappelijk zijn voor alle bewerkingen die u kunt uitvoeren met betrekking tot Key Vault resources.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d1d93bcd84fd9460e658b221089a4b24d46b0429
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 616b6061b08258d465b09902556de6903b873199
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "83005821"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749866"
 ---
 # <a name="common-parameters-and-headers"></a>Algemene parameters en headers
 
-De volgende informatie is gebruikelijk voor alle bewerkingen die u kunt uitvoeren in verband met Key Vault resources:
+De volgende informatie is gebruikelijk voor alle bewerkingen die u kunt uitvoeren met betrekking tot Key Vault resources:
 
-- De HTTP- `Host` header moet altijd aanwezig zijn en moet de kluis hostnaam opgeven. Bijvoorbeeld: `Host: contoso.vault.azure.net`. Houd er rekening mee dat de meeste client technologieën de `Host` header van de URI vullen. Bijvoorbeeld: `GET https://contoso.vault.azure.net/secrets/mysecret{...}` de as wordt ingesteld `Host` als `contoso.vault.azure.net` . Dit betekent dat als u Key Vault gebruikt voor onbewerkte IP-adressen `GET https://10.0.0.23/secrets/mysecret{...}` , de automatische waarde van de `Host` koptekst onjuist is en u hand matig zeker weet dat de `Host` header de kluis-hostnaam bevat.
-- Vervang door `{api-version}` de API-versie in de URI.
-- Vervang door `{subscription-id}` de id van uw abonnement in de URI
-- Vervang door `{resource-group-name}` de resource groep. Zie Resource groepen gebruiken om Azure-resources te beheren voor meer informatie.
-- Vervang door `{vault-name}` de naam van uw sleutel kluis in de URI.
-- Stel de content-type-header in op Application/JSON.
-- Stel de autorisatie-header in op een JSON Web Token die u van Azure Active Directory (AAD) hebt verkregen. Zie voor meer informatie [verificatie van Azure Resource Manager](authentication-requests-and-responses.md) aanvragen.
+- De `Host` HTTP-header moet altijd aanwezig zijn en moet de hostnaam van de kluis opgeven. Bijvoorbeeld: `Host: contoso.vault.azure.net`. Houd er rekening mee dat de meeste clienttechnologieën de `Host` header van de URI vullen. Stelt bijvoorbeeld `GET https://contoso.vault.azure.net/secrets/mysecret{...}` de `Host` in als `contoso.vault.azure.net` . Dit betekent dat als u toegang hebt tot Key Vault met behulp van raw IP-adres, zoals , de automatische waarde van header onjuist is en u handmatig moet ervoor zorgen dat de header de hostnaam van de kluis `GET https://10.0.0.23/secrets/mysecret{...}` `Host` `Host` bevat.
+- Vervang `{api-version}` door de API-versie in de URI.
+- Vervang `{subscription-id}` door uw abonnements-id in de URI
+- Vervang `{resource-group-name}` door de resourcegroep. Zie Resourcegroepen gebruiken om Azure-resources te beheren voor meer informatie.
+- Vervang `{vault-name}` door de naam van uw sleutelkluis in de URI.
+- Stel de Content-Type-header in op application/json.
+- Stel de autorisatie-header in op een JSON Web Token die u van Azure Active Directory (AAD) hebt ontvangen. Zie Authenticating Azure Resource Manager requests [(Aanvragen voor Azure Resource Manager](authentication-requests-and-responses.md) authenticeren) voor meer informatie.
 
-## <a name="common-error-response"></a>Veelvoorkomende fout melding
-De service gebruikt HTTP-status codes om aan te geven of de fout is geslaagd. Daarnaast bevatten fouten een antwoord met de volgende indeling:
+## <a name="common-error-response"></a>Veelvoorkomende foutreactie
+De service gebruikt HTTP-statuscodes om aan te geven of de service is geslaagd of mislukt. Bovendien bevatten fouten een antwoord in de volgende indeling:
 
 ```
    {  
@@ -41,7 +40,7 @@ De service gebruikt HTTP-status codes om aan te geven of de fout is geslaagd. Da
    }  
 ```
 
-|Elementnaam | Type | Beschrijving |
+|Elementnaam | Type | Description |
 |---|---|---|
 | code | tekenreeks | Het type fout dat is opgetreden.|
 | message | tekenreeks | Een beschrijving van de oorzaak van de fout. |
@@ -49,4 +48,4 @@ De service gebruikt HTTP-status codes om aan te geven of de fout is geslaagd. Da
 
 
 ## <a name="see-also"></a>Zie ook
- [Naslag informatie over Azure Key Vault REST API](/rest/api/keyvault/)
+ [Azure Key Vault REST API referentie](/rest/api/keyvault/)

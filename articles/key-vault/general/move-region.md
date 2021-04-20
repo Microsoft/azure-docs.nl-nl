@@ -1,47 +1,47 @@
 ---
-title: Een sleutel kluis verplaatsen naar een andere regio-Azure Key Vault | Microsoft Docs
-description: Dit artikel bevat richt lijnen voor het verplaatsen van een sleutel kluis naar een andere regio.
+title: Een sleutelkluis verplaatsen naar een andere regio - Azure Key Vault | Microsoft Docs
+description: Dit artikel bevat richtlijnen voor het verplaatsen van een sleutelkluis naar een andere regio.
 services: key-vault
-author: ShaneBala-keyvault
+author: msmbaldwin
 manager: ravijan
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.date: 04/24/2020
-ms.author: sudbalas
-ms.openlocfilehash: 97956b8c6f18d37acd07543b8921b4973be3bda9
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.date: 03/31/2021
+ms.author: mbaldwin
+ms.openlocfilehash: ac2f6347776c2f5d230065b80b1c0336e21e181c
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106066650"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751792"
 ---
-# <a name="move-an-azure-key-vault-across-regions"></a>Een Azure-sleutel kluis verplaatsen tussen regio's
+# <a name="move-an-azure-key-vault-across-regions"></a>Een Azure-sleutelkluis tussen regio's verplaatsen
 
-Azure Key Vault biedt geen ondersteuning voor het verplaatsen van resources, waardoor het verplaatsen van een sleutel kluis van de ene regio naar een andere kan worden toegestaan. In dit artikel worden tijdelijke oplossingen behandeld voor organisaties die een bedrijf nodig hebben om een sleutel kluis naar een andere regio te verplaatsen. Voor elke oplossing geldt een beperking. Het is belang rijk om te begrijpen wat de gevolgen van deze tijdelijke oplossingen zijn voordat u ze in een productie omgeving probeert toe te passen.
+Azure Key Vault biedt geen ondersteuning voor een bewerking voor het verplaatsen van resources, zodat een sleutelkluis van de ene regio naar de andere kan worden verplaatst. In dit artikel worden tijdelijke oplossingen beschreven voor organisaties die een bedrijf nodig hebben om een sleutelkluis naar een andere regio te verplaatsen. Elke tijdelijke oplossing heeft beperkingen. Het is essentieel om inzicht te krijgen in de implicaties van deze tijdelijke oplossingen voordat u ze in een productieomgeving probeert toe te passen.
 
-Als u een sleutel kluis naar een andere regio wilt verplaatsen, maakt u een sleutel kluis in die andere regio en kopieert u elk afzonderlijk geheim hand matig van uw bestaande sleutel kluis naar de nieuwe sleutel kluis. U kunt dit doen door een van de volgende twee opties te gebruiken.
+Als u een sleutelkluis naar een andere regio wilt verplaatsen, maakt u een sleutelkluis in die andere regio en kopieert u vervolgens handmatig elk afzonderlijk geheim van uw bestaande sleutelkluis naar de nieuwe sleutelkluis. U kunt dit doen met behulp van een van de volgende twee opties.
 
 ## <a name="design-considerations"></a>Overwegingen bij het ontwerpen
 
-Houd rekening met de volgende concepten voordat u begint:
+Voordat u begint, moet u rekening houden met de volgende concepten:
 
-* Namen van sleutelkluizen zijn globaal uniek. U kunt een kluis naam niet opnieuw gebruiken.
-* U moet uw toegangs beleid en netwerk configuratie-instellingen opnieuw configureren in de nieuwe sleutel kluis.
-* U moet zacht verwijderen opnieuw configureren en beveiliging opschonen in de nieuwe sleutel kluis.
-* Met de back-up-en herstel bewerking blijven uw instellingen voor het door draaien van gegevens niet behouden. Mogelijk moet u de instellingen opnieuw configureren.
+* Namen van sleutelkluizen zijn globaal uniek. U kunt de naam van een kluis niet opnieuw gebruiken.
+* U moet uw toegangsbeleid en netwerkconfiguratie-instellingen opnieuw configureren in de nieuwe sleutelkluis.
+* U moet de beveiliging voor het verwijderen en opsluizen van de nieuwe sleutelkluis opnieuw configureren.
+* Met de back-up- en herstelbewerking blijven uw instellingen voor automatische herstelbewerkingen niet behouden. Mogelijk moet u de instellingen opnieuw configureren.
 
-## <a name="option-1-use-the-key-vault-backup-and-restore-commands"></a>Optie 1: de back-up-en herstel opdrachten van de sleutel kluis gebruiken
+## <a name="option-1-use-the-key-vault-backup-and-restore-commands"></a>Optie 1: de opdrachten voor back-up en herstel van de sleutelkluis gebruiken
 
-U kunt met behulp van de back-upopdracht back-ups maken van elk afzonderlijk geheim, dezelfde sleutel en elk certificaat in uw kluis. Uw geheimen worden gedownload als een versleutelde blob. U kunt de BLOB vervolgens herstellen in de nieuwe sleutel kluis. Zie [Azure Key Vault-opdrachten](/powershell/module/azurerm.keyvault#key_vault)voor een lijst met opdrachten.
+U kunt een back-up maken van elk afzonderlijk geheim, elke sleutel en elk certificaat in uw kluis met behulp van de back-upopdracht. Uw geheimen worden gedownload als een versleutelde blob. Vervolgens kunt u de blob herstellen in uw nieuwe sleutelkluis. Zie voor een lijst met opdrachten [Azure Key Vault opdrachten.](/powershell/module/azurerm.keyvault#key_vault)
 
-Het gebruik van de opdrachten backup en Restore heeft twee beperkingen:
+Het gebruik van de back-up- en herstelopdrachten heeft twee beperkingen:
 
-* U kunt geen back-up maken van een sleutel kluis in één Geografie en deze herstellen in een andere geografie. Zie [Azure-geografi](https://azure.microsoft.com/global-infrastructure/geographies/)(Engelstalig) voor meer informatie.
+* U kunt geen back-up maken van een sleutelkluis in één geografie en deze herstellen in een andere geografie. Zie Azure-geografieën [voor meer informatie.](https://azure.microsoft.com/global-infrastructure/geographies/)
 
 * Met de back-upopdracht maakt u een back-up van alle versies van elk geheim. Als u een geheim hebt met een groot aantal vorige versies (meer dan 10), kan de aanvraag de maximaal toegestane grootte overschrijden en kan de bewerking mislukken.
 
-## <a name="option-2-manually-download-and-upload-the-key-vault-secrets"></a>Optie 2: de sleutel kluis geheimen hand matig downloaden en uploaden
+## <a name="option-2-manually-download-and-upload-the-key-vault-secrets"></a>Optie 2: De sleutelkluisgeheimen handmatig downloaden en uploaden
 
-U kunt bepaalde geheime typen hand matig downloaden. U kunt certificaten bijvoorbeeld downloaden als een PFX-bestand. Met deze optie worden de geografische beperkingen voor sommige geheime typen, zoals certificaten, geëlimineerd. U kunt de PFX-bestanden uploaden naar elke sleutel kluis in elke gewenste regio. De geheimen worden gedownload in een indeling die niet met een wacht woord is beveiligd. U bent zelf verantwoordelijk voor het beveiligen van uw geheimen tijdens het verplaatsen.
+U kunt bepaalde geheime typen handmatig downloaden. U kunt bijvoorbeeld certificaten downloaden als pfx-bestand. Met deze optie worden de geografische beperkingen voor sommige geheime typen, zoals certificaten, geëlimineerd. U kunt de PFX-bestanden uploaden naar elke sleutelkluis in elke regio. De geheimen worden gedownload in een indeling die niet is beveiligd met een wachtwoord. U bent verantwoordelijk voor het beveiligen van uw geheimen tijdens de overstap.

@@ -2,19 +2,18 @@
 title: Beschikbaarheid en redundantie in Azure Key Vault - Azure Key Vault | Microsoft Docs
 description: Meer informatie over beschikbaarheid en redundantie in Azure Key Vault.
 services: key-vault
-author: ShaneBala-keyvault
-manager: ravijan
+author: msmbaldwin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
-ms.date: 08/28/2020
-ms.author: sudbalas
-ms.openlocfilehash: 27184e267bb0472dad6fc9176dfdeee68d5eae58
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 03/31/2021
+ms.author: mbaldwin
+ms.openlocfilehash: 3c5afc92044fcb109bedd38298b0b027ebeb437d
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105611817"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749686"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Beschikbaarheid en redundantie in Azure Key Vault
 
@@ -23,7 +22,7 @@ Azure Key Vault bevat meerdere lagen van redundantie om ervoor te zorgen dat uw 
 > [!NOTE]
 > Deze informatie is van toepassing op kluizen. Voor beheerde HSM-groepen wordt een ander model voor hoge beschikbaarheid en herstel na noodgevallen gebruikt. Raadpleeg de [documentatie over herstel na noodgevallen voor beheerde HSM's](../managed-hsm/disaster-recovery-guide.md) voor meer informatie.
 
-De inhoud van uw sleutelkluis wordt gerepliceerd binnen de regio en naar een secundaire regio op minstens 150 mijl afstand, maar binnen dezelfde geografische locatie voor het behoud van de hoge duurzaamheid van uw sleutels en geheimen. Raadpleeg [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen. De uitzondering op het model voor gekoppelde regio's is Brazilië - zuid, waarmee alleen de optie voor het behoud van gegevens in Brazilië - zuid wordt toegestaan. Brazilië - zuid maakt gebruik van ZRS (zone-redundante opslag) om uw gegevens drie keer te repliceren binnen één locatie/regio. Voor Azure Premium worden slechts 2 van de drie regio's gebruikt voor het repliceren van gegevens van de HSM.  
+De inhoud van uw sleutelkluis wordt gerepliceerd binnen de regio en naar een secundaire regio op minstens 150 mijl afstand, maar binnen dezelfde geografische locatie voor het behoud van de hoge duurzaamheid van uw sleutels en geheimen. Raadpleeg [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen. De uitzondering op het model voor gekoppelde regio's is Brazilië - zuid, waarmee alleen de optie voor het behoud van gegevens in Brazilië - zuid wordt toegestaan. Brazilië - zuid maakt gebruik van ZRS (zone-redundante opslag) om uw gegevens drie keer te repliceren binnen één locatie/regio. Voor AKV Premium worden slechts 2 van de 3 regio's gebruikt om gegevens van de HSM's te repliceren.  
 
 Als afzonderlijke onderdelen van de sleutelkluis-service niet meer werken, nemen alternatieve onderdelen in de regio het over om uw aanvraag te verwerken om ervoor te zorgen dat de functionaliteit niet wordt verminderd. U hoeft geen actie te ondernemen om dit proces te starten. Dit gebeurt automatisch en is transparant voor u.
 

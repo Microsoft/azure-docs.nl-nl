@@ -1,18 +1,18 @@
 ---
 title: Inleiding
-description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure.
+description: Meer informatie over de functies en voordelen van Azure VMware Solution voor het implementeren en beheren van VMware-workloads in Azure. Azure VMware Solution SLA garandeert dat Azure VMware-beheerhulpprogramma's (vCenter Server en NSX Manager) ten minste 99,9% van de tijd beschikbaar zijn.
 ms.topic: overview
-ms.date: 03/24/2021
-ms.openlocfilehash: 32dd73108dc12d7d7acc605f43a0fbf6d2cf1cd7
-ms.sourcegitcommit: 5fd1f72a96f4f343543072eadd7cdec52e86511e
+ms.date: 04/20/2021
+ms.openlocfilehash: 9471aa2e427d28e0b8211dc8b25b2e61a4bfa8c4
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106107980"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107752638"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
-Azure VMware Solution voorziet u van privéclouds die vSphere-clusters bevatten. Deze clusters zijn gebouwd op basis van een toegewezen bare-metal Azure-infrastructuur. Bij de initiële implementatie zijn er minimaal drie hosts. Extra hosts kunnen één voor één worden toegevoegd, tot een maximum van 16 hosts per cluster.  Alle ingerichte privéclouds beschikken over vCenter Server, vSAN, vSphere en NSX-T. U kunt workloads migreren vanuit uw on-premises omgevingen, nieuwe virtuele machines (VM's) implementeren en Azure-services gebruiken vanuit uw privéclouds.
+Azure VMware Solution voorziet u van privéclouds die vSphere-clusters bevatten. Deze clusters zijn gebouwd op basis van een toegewezen bare-metal Azure-infrastructuur. Bij de initiële implementatie zijn er minimaal drie hosts. Extra hosts kunnen één voor één worden toegevoegd, tot een maximum van 16 hosts per cluster.  Alle ingerichte privéclouds beschikken over vCenter Server, vSAN, vSphere en NSX-T. U kunt workloads migreren vanuit uw on-premises omgevingen, nieuwe virtuele machines (VM's) implementeren en Azure-services gebruiken vanuit uw privéclouds.  Azure VMware-beheerhulpprogramma's (vCenter Server en NSX Manager) zijn ten minste 99,9% van de tijd beschikbaar. Zie voor meer informatie [Azure VMware Solution SLA.](https://aka.ms/avs/sla)
 
 Azure VMware Solution is een VMware-gevalideerde oplossing met voortdurende validatie van en testen op verbeteringen en upgrades. Microsoft beheert en onderhoudt de infrastructuur en software voor privéclouds. Zo kunt u zich richten op het ontwikkelen en uitvoeren van werkbelastingen in uw privéclouds. 
 
@@ -55,7 +55,7 @@ In uw privécloud kunt u:
 
 Bewaken dat de patronen in de Azure VMware Solution vergelijkbaar zijn met Azure VM's binnen het IaaS-platform. Zie voor meer informatie en uitleg [VM's van Azure bewaken met Azure Monitor](../azure-monitor/vm/monitor-vm-azure.md).
 
-## <a name="customer-communication"></a>Communicatie van klanten
+## <a name="customer-communication"></a>Klantcommunicatie
 [!INCLUDE [customer-communications](includes/customer-communications.md)]
 
 ## <a name="next-steps"></a>Volgende stappen

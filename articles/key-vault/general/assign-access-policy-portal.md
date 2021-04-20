@@ -1,59 +1,58 @@
 ---
-title: Een Azure Key Vault toegangs beleid (Portal) toewijzen
-description: Het Azure Portal gebruiken om een Key Vault toegangs beleid toe te wijzen aan een beveiligingsprincipal of toepassings identiteit.
+title: Een toegangsbeleid voor Azure Key Vault toewijzen (portal)
+description: Het gebruik van de Azure Portal om een Key Vault toegangsbeleid toe te wijzen aan een beveiligingsprincipaal of toepassings-id.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a64a91e6f41f3fba7584630380ffb878979b4389
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 443b269e7155fc206ee50e7907a7acded2c22f53
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105968761"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751486"
 ---
 # <a name="assign-a-key-vault-access-policy-using-the-azure-portal"></a>Key Vault-toegangsbeleid toewijzen met behulp van Azure Portal
 
-Een Key Vault toegangs beleid bepaalt of een bepaalde beveiligingsprincipal, namelijk een gebruiker, toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de Azure Portal (dit artikel), de [Azure cli](assign-access-policy-cli.md)of [Azure PowerShell](assign-access-policy-powershell.md).
+Een Key Vault-toegangsbeleid bepaalt of een bepaalde beveiligingsprincipaal, [namelijk](../secrets/index.yml)een gebruiker, toepassing of gebruikersgroep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen,](../keys/index.yml)sleutels en [certificaten.](../certificates/index.yml) U kunt toegangsbeleid toewijzen met behulp van de Azure Portal (dit artikel), [de Azure CLI](assign-access-policy-cli.md)of [Azure PowerShell](assign-access-policy-powershell.md).
 
 [!INCLUDE [key-vault-access-policy-limits.md](../../../includes/key-vault-access-policy-limits.md)]
 
-Zie [een basis groep maken en leden toevoegen](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) voor meer informatie over het maken van groepen in azure Active Directory via de Azure Portal.
+Zie Een basisgroep maken en leden toevoegen Azure Active Directory meer [](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) informatie over het maken van groepen in Azure Portal
 
 ## <a name="assign-an-access-policy"></a>Een toegangsbeleid toewijzen
 
-1.  Ga in het [Azure Portal](https://portal.azure.com)naar de Key Vault resource. 
+1.  [Navigeer in Azure Portal](https://portal.azure.com)naar de Key Vault resource. 
 
-1.  Selecteer onder **instellingen** **toegangs beleid** en selecteer vervolgens **toegangs beleid toevoegen**:
+1.  Selecteer **onder Instellingen** de optie **Toegangsbeleid** en selecteer **vervolgens Toegangsbeleid toevoegen:**
 
-    ![Selecteer toegangs beleid, selecteren functie toewijzing toevoegen](../media/authentication/assign-policy-portal-01.png)
+    ![Selecteer Toegangsbeleid en selecteer Roltoewijzing toevoegen](../media/authentication/assign-policy-portal-01.png)
 
-1.  Selecteer de gewenste machtigingen onder **certificaat machtigingen**, **sleutel machtigingen** en **geheime machtigingen**. U kunt ook een sjabloon selecteren die algemene combi Naties van machtigingen bevat:
+1.  Selecteer de machtigingen die u wilt onder **Certificaatmachtigingen,** **Sleutelmachtigingen** en **Geheime machtigingen.** U kunt ook een sjabloon selecteren die veelgebruikte machtigingscombinaties bevat:
 
-    ![Machtigingen voor toegangs beleid opgeven](../media/authentication/assign-policy-portal-02.png)
+    ![Machtigingen voor toegangsbeleid opgeven](../media/authentication/assign-policy-portal-02.png)
 
-1. Kies onder **Principal selecteren** de koppeling **geen geselecteerd** om het deel venster voor de selectie van **principals** te openen. Voer de naam van de gebruiker, app of Service-Principal in het zoek veld in, selecteer het gewenste resultaat en kies vervolgens **selecteren**.
+1. Kies **onder Principal selecteren** de koppeling Geen **geselecteerd** om het selectiedeelvenster **Principal** te openen. Voer de naam van de gebruiker, app of service-principal in het zoekveld in, selecteer het juiste resultaat en kies **vervolgens Selecteren.**
 
-    ![De beveiligingsprincipal voor het toegangs beleid selecteren](../media/authentication/assign-policy-portal-03.png)
+    ![De beveiligingsprincipaal voor het toegangsbeleid selecteren](../media/authentication/assign-policy-portal-03.png)
 
-    Als u een beheerde identiteit voor de app gebruikt, zoekt en selecteert u de naam van de app zelf. (Zie [Key Vault-verificatie-app-identiteit en service-principals](authentication.md#app-identity-and-security-principals)voor meer informatie over beheerde identiteits-en service-principals.)
+    Als u een beheerde identiteit voor de app gebruikt, zoekt en selecteert u de naam van de app zelf. (Zie Verificatie van Key Vault - app-identiteit en service-principals voor meer informatie over beheerde identiteiten [en service-principals.)](authentication.md#app-identity-and-security-principals)
  
-1.  Selecteer in het deel venster **toegangs beleid toevoegen** de optie **toevoegen** om het toegangs beleid op te slaan.
+1.  Selecteer in het **deelvenster Toegangsbeleid toevoegen** de optie **Toevoegen om** het toegangsbeleid op te slaan.
 
-    ![Het toegangs beleid toevoegen aan de beveiligings-principal die is toegewezen](../media/authentication/assign-policy-portal-04.png)
+    ![Het toegangsbeleid toevoegen met de toegewezen beveiligingsprincipaal](../media/authentication/assign-policy-portal-04.png)
 
-1. Ga terug naar de pagina **toegangs beleid** , Controleer of uw toegangs beleid wordt weer gegeven onder **huidige toegangs beleid** en selecteer vervolgens **Opslaan**. Toegangs beleid wordt pas toegepast wanneer u ze opslaat.
+1. Controleer op de **pagina Toegangsbeleid** of uw toegangsbeleid wordt vermeld onder **Huidig** toegangsbeleid en selecteer **vervolgens Opslaan.** Toegangsbeleid wordt pas toegepast als u ze hebt op slaan.
 
-    ![De wijzigingen in het toegangs beleid opslaan](../media/authentication/assign-policy-portal-05.png)
+    ![Wijzigingen in het toegangsbeleid opslaan](../media/authentication/assign-policy-portal-05.png)
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Azure Key Vault-beveiliging: Identiteits- en toegangsbeheer](security-overview.md#identity-management)
-- [Beveilig uw sleutel kluis](secure-your-key-vault.md).
+- [Beveilig uw sleutelkluis.](security-overview.md)
 - [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)

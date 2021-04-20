@@ -1,4 +1,4 @@
-- name: Documentatie voor Cloud Services (uitgebreide ondersteuning)
+- name: Azure Cloud Services (uitgebreide ondersteuning) documentatie
   href: index.yml
 - name: Overzicht
   items:
@@ -6,26 +6,26 @@
       href: overview.md
     - name: Vereisten voor implementatie
       href: deploy-prerequisite.md
-    - name: Configuratie bestanden en-pakketten
+    - name: Bestanden en verpakking config
       href: cloud-services-model-and-package.md
 - name: Zelfstudies
   items:
-    - name: Een Cloud service implementeren-Portal
+    - name: Een cloudservice implementeren - Portal
       href: deploy-portal.md
-    - name: Een Cloud service implementeren-Power shell
+    - name: Een cloudservice implementeren - PowerShell
       href: deploy-powershell.md
-    - name: Een Cloud service implementeren-sjabloon
+    - name: Een cloudservice implementeren - sjabloon
       href: deploy-template.md
-    - name: Een Cloud service implementeren-SDK
+    - name: Een cloudservice implementeren - SDK
       href: deploy-sdk.md
-    - name: Een Cloud service implementeren-Visual Studio
+    - name: Een cloudservice implementeren - Visual Studio
       href: /visualstudio/azure/cloud-services-extended-support?context=%2fazure%2fcloud-services-extended-support%2fcontext%2fcontext
   expanded: true
 - name: Concepten
   items:
     - name: Uitbreidingen
       href: extensions.md
-    - name: Beschik bare VM-grootten
+    - name: Beschikbare VM-grootten
       href: available-sizes.md
     - name: Patches voor gastbesturingssysteem
       href: ../cloud-services/cloud-services-guestos-msrc-releases.md?context=/azure/cloud-services-extended-support/context/context
@@ -35,29 +35,29 @@
       href: ../cloud-services/cloud-services-guestos-update-matrix.md?context=/azure/cloud-services-extended-support/context/context
     - name: XML-schema
       items:
-        - name: Csdef XML-schema
+        - name: CSDEF XML-schema
           href: schema-csdef-file.md
         - name: LoadBalancerProbe-schema
           href: schema-csdef-loadbalancerprobe.md
-        - name: Webrollen schema
+        - name: WebRole-schema
           href: schema-csdef-webrole.md
         - name: WorkerRole-schema
           href: schema-csdef-workerrole.md
         - name: NetworkTrafficRules-schema
           href: schema-csdef-networktrafficrules.md
-        - name: Cscfg XML-schema
+        - name: XML-schema voor Cscfg
           href: schema-cscfg-file.md
-        - name: Rollen schema
+        - name: Rolschema
           href: schema-cscfg-role.md
         - name: NetworkConfiguration-schema
           href: schema-cscfg-networkconfiguration.md
 - name: Procedures
   items:
-    - name: Migreren naar Cloud Services (uitgebreide ondersteuning)
+    - name: Migreren naar Azure Cloud Services (uitgebreide ondersteuning)
       items:
         - name: Migratieoverzicht
           href: in-place-migration-overview.md
-        - name: Technische Details voor migratie
+        - name: Technische details van migratie
           href: in-place-migration-technical-details.md
         - name: Migreren met behulp van de Azure Portal
           href: in-place-migration-portal.md
@@ -65,23 +65,23 @@
           href: in-place-migration-powershell.md
         - name: Veelvoorkomende fouten en bekende problemen
           href: in-place-migration-common-errors.md
-    - name: Extensies Toep assen
+    - name: Extensies toepassen
       items:
-        - name: Extern bureaublad extensie Toep assen
+        - name: De extensie Extern bureaublad toepassen
           href: enable-rdp.md
-        - name: WAD-extensie Toep assen
+        - name: WAD-extensie toepassen
           href: enable-wad.md
     - name: Waarschuwingen inschakelen
       href: enable-alerts.md
-    - name: Schalen configureren
+    - name: Schaalbaarheid configureren
       href: configure-scaling.md
     - name: Certificaten
       href: certificates-and-key-vault.md
-    - name: ARM-sjabloon genereren met behulp van portal
+    - name: EEN ARM-sjabloon genereren met behulp van de portal
       href: generate-template-portal.md
-    - name: Twee Cloud Services wisselen
+    - name: Cloudservice-implementaties wisselen
       href: swap-cloud-service.md
-    - name: SKU-gegevens overschrijven
+    - name: SKU-details overschrijven
       href: override-sku.md
     - name: Problemen oplossen
       items:
@@ -91,23 +91,23 @@
           href: faq.md
 - name: Voorbeelden
   items:
-    - name: Voorbeeld sjablonen
+    - name: Voorbeeldsjablonen
       href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
-    - name: Een nieuwe Cloud service maken
+    - name: Een nieuwe cloudservice maken
       href: sample-create-cloud-service.md
-    - name: Details van Cloud service ophalen
+    - name: Details van cloudservice op halen
       href: sample-get-cloud-service.md
-    - name: Een Cloud service opnieuw instellen
+    - name: Een cloudservice opnieuw instellen
       href: sample-reset-cloud-service.md
 - name: Referentie
   items:
-    - name: Voor beelden van implementatie bestanden
+    - name: Voorbeeldimplementatiebestanden
       href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
-    - name: AZ. Microsoftcompute-module
+    - name: Az.CloudService-module
       href: 'https://www.powershellgallery.com/packages/Az.CloudService/0.1.0'
     - name: PowerShell-cmdlets
       href: /powershell/module/az.cloudservice/#cloudservice
-    - name: Naslag informatie voor ARM-sjablonen
+    - name: ARM-sjabloonreferentie
       href: /azure/templates/microsoft.compute/cloudservices
     - name: REST
       href: /rest/api/compute/cloudservices

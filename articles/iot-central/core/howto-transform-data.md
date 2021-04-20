@@ -1,18 +1,18 @@
 ---
 title: Gegevens voor Azure IoT Central | Microsoft Docs
-description: IoT-apparaten verzenden gegevens in verschillende indelingen die u mogelijk moet transformeren. In dit artikel wordt beschreven hoe u gegevens zowel onderweg IoT Central als onderweg kunt transformeren. In de beschreven scenario's IoT Edge en Azure Functions.
+description: IoT-apparaten verzenden gegevens in verschillende indelingen die u mogelijk moet transformeren. In dit artikel wordt beschreven hoe u gegevens zowel onderweg IoT Central als onderweg kunt transformeren. In de scenario's die worden beschreven IoT Edge en Azure Functions.
 author: dominicbetts
 ms.author: dobett
 ms.date: 04/09/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 7d9575bedbdce96ef59e9b1d77b9034162bc16bf
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: 6032300bd203db78e8cd147cf79300d6dcd9b1dc
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107730444"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751684"
 ---
 # <a name="transform-data-for-iot-central"></a>Gegevens voor IoT Central
 
@@ -37,7 +37,7 @@ In de volgende tabel ziet u drie voorbeeldtransformatietypen:
 |------------------------|-------------|----------|-------|
 | Berichtindeling         | Converteren naar of bewerken van JSON-berichten. | CSV naar JSON  | Bij ingress. IoT Central accepteert alleen waarde-JSON-berichten. Zie Nettoladingen [voor telemetrie, eigenschappen en](concepts-telemetry-properties-commands.md)opdrachten voor meer informatie. |
 | Berekeningen           | Wiskundige functies die [Azure Functions](../../azure-functions/index.yml) kunnen worden uitgevoerd. | Eenheidsconversie van Fahrenheit naar Celsius.  | Transformeer met behulp van het egress-patroon om te profiteren van schaalbaar apparaatingressie via directe verbinding met IoT Central. Door de gegevens te transformeren, kunt u IoT Central functies zoals visualisaties en taken gebruiken. |
-| Berichtverrijking     | Verrijkingen van externe gegevensbronnen die niet worden gevonden in apparaateigenschappen of telemetrie. Zie [IoT-gegevens](howto-export-data.md) exporteren naar cloudbestemmingen met behulp van gegevensexport voor meer informatie over interne verrijkingen | Weerinformatie toevoegen aan berichten met locatiegegevens van apparaten. | Transformeer met behulp van het egress-patroon om te profiteren van schaalbaar apparaatingressie via directe verbinding met IoT Central. |
+| Berichtverrijking     | Verrijkingen van externe gegevensbronnen die niet worden gevonden in apparaateigenschappen of telemetrie. Zie [IoT-gegevens](howto-export-data.md) exporteren naar cloudbestemmingen met behulp van gegevensexport voor meer informatie over interne verrijkingen | Weerinformatie toevoegen aan berichten met behulp van locatiegegevens van apparaten. | Transformeer met behulp van het egress-patroon om te profiteren van schaalbaar apparaatingressie via directe verbinding met IoT Central. |
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -51,21 +51,21 @@ Er zijn twee opties om apparaatgegevens bij ingress te transformeren:
 
 - **IoT Edge:** gebruik een IoT Edge-module om gegevens van downstreamapparaten te transformeren voordat u de gegevens naar uw IoT Central verzenden.
 
-- **IoT Central** apparaatbrug: de [IoT Central-apparaatbrug](https://github.com/Azure/iotc-device-bridge) verbindt andere IoT-apparaatwolken, zoals Sigfox, Particle en The Things Network, met IoT Central. De apparaatbrug maakt gebruik van een Azure-functie voor het doorsturen van de gegevens en u kunt de functie aanpassen om de apparaatgegevens te transformeren.
+- **IoT Central** apparaatbrug: de [IoT Central-apparaatbrug](howto-build-iotc-device-bridge.md) verbindt andere IoT-apparaatwolken, zoals Sigfox, Particle en The Things Network, met IoT Central. De apparaatbrug maakt gebruik van een Azure-functie voor het doorsturen van de gegevens en u kunt de functie aanpassen om de apparaatgegevens te transformeren.
 
 ### <a name="use-iot-edge-to-transform-device-data"></a>Gebruik IoT Edge om apparaatgegevens te transformeren
 
 :::image type="content" source="media/howto-transform-data/transform-ingress.png" alt-text="Gegevenstransformatie bij ingress met behulp van IoT Edge" border="false":::
 
-In dit scenario transformeert een IoT Edge de gegevens van downstreamapparaten voordat deze naar uw IoT Central worden doorgestuurd. Op hoog niveau zijn de stappen voor het configureren van dit scenario:
+In dit scenario transformeert een IoT Edge de gegevens van downstreamapparaten voordat deze worden doorgestuurd naar IoT Central toepassing. Op hoog niveau zijn de stappen voor het configureren van dit scenario:
 
-1. **Een IoT Edge instellen:** installeer en inrichten van een IoT Edge-apparaat als gateway en verbind de gateway met uw IoT Central toepassing.
+1. **Een IoT Edge** instellen: installeer en inrichten van een IoT Edge-apparaat als gateway en verbind de gateway met uw IoT Central toepassing.
 
-1. **Sluit het downstreamapparaat aan op IoT Edge apparaat:** Verbind downstreamapparaten met het IoT Edge apparaat en provision ze in uw IoT Central toepassing.
+1. **Sluit het downstreamapparaat aan op IoT Edge apparaat:** Verbind downstreamapparaten met het IoT Edge apparaat en inrichten voor uw IoT Central toepassing.
 
-1. **Apparaatgegevens transformeren in IoT Edge:** Maak een IoT Edge module om de gegevens te transformeren. Implementeer de module op het IoT Edge gatewayapparaat dat de getransformeerde apparaatgegevens doorsturen naar uw IoT Central toepassing.
+1. **Apparaatgegevens transformeren in IoT Edge:** Maak een IoT Edge om de gegevens te transformeren. Implementeer de module op het IoT Edge gatewayapparaat dat de getransformeerde apparaatgegevens doorsturen naar uw IoT Central toepassing.
 
-1. **Controleren:** verzend gegevens van een downstreamapparaat naar de gateway en controleer of de getransformeerde apparaatgegevens uw IoT Central bereiken.
+1. **Controleren:** gegevens verzenden van een downstreamapparaat naar de gateway en controleren of de getransformeerde apparaatgegevens uw IoT Central bereiken.
 
 In het voorbeeld dat in de volgende secties wordt beschreven, verzendt het downstreamapparaat CSV-gegevens in de volgende indeling naar IoT Edge gatewayapparaat:
 
@@ -92,7 +92,7 @@ De volgende stappen laten zien hoe u dit scenario in kunt stellen en configurere
 
 ### <a name="build-the-custom-module"></a>De aangepaste module bouwen
 
-In dit scenario voert het IoT Edge een aangepaste module uit die de gegevens van het downstreamapparaat transformeert. Voordat u het apparaat implementeert en IoT Edge configureren, moet u het volgende doen:
+In dit scenario voert het IoT Edge een aangepaste module uit die de gegevens van het downstreamapparaat transformeert. Voordat u het IoT Edge implementeert en configureert, moet u het volgende doen:
 
 - Bouw de aangepaste module.
 - Voeg de aangepaste module toe aan een containerregister.
@@ -114,7 +114,7 @@ Een containerregister maken:
 
     Noteer de waarden `username` en . U gebruikt deze `password` later.
 
-De aangepaste module bouwen in de [Azure Cloud Shell:](https://shell.azure.com/)
+De aangepaste module bouwen in de [Azure Cloud Shell](https://shell.azure.com/):
 
 1. [Navigeer in Azure Cloud Shell](https://shell.azure.com/)naar een geschikte map.
 1. Voer de volgende opdracht uit om de GitHub-opslagplaats met de broncode van de module te klonen:
@@ -130,11 +130,11 @@ De aangepaste module bouwen in de [Azure Cloud Shell:](https://shell.azure.com/)
     az acr build --registry $REGISTRY_NAME --image transformmodule:0.0.1-amd64 -f Dockerfile.amd64 .
     ```
 
-    Het kan enkele minuten duren voordat de vorige opdrachten zijn uitgevoerd.
+    Het uitvoeren van de vorige opdrachten kan enkele minuten duren.
 
 ### <a name="set-up-an-iot-edge-device"></a>Een apparaat IoT Edge instellen
 
-In dit scenario wordt een IoT Edge gatewayapparaat gebruikt om de gegevens van downstreamapparaten te transformeren. In deze sectie wordt beschreven hoe u IoT Central voor gateway- en downstreamapparaten in uw IoT Central maken. IoT Edge gebruiken een implementatiemanifest om hun modules te configureren.
+In dit scenario wordt een IoT Edge gatewayapparaat gebruikt om de gegevens van downstreamapparaten te transformeren. In deze sectie wordt beschreven hoe u IoT Central voor de gateway en downstreamapparaten in uw IoT Central maken. IoT Edge gebruiken een implementatiemanifest om hun modules te configureren.
 
 Voor het maken van een apparaatsjabloon voor het downstreamapparaat wordt in dit scenario een eenvoudig thermostaatapparaatmodel gebruikt:
 
@@ -144,9 +144,9 @@ Voor het maken van een apparaatsjabloon voor het downstreamapparaat wordt in dit
 
 1. Selecteer **+ Nieuw,** selecteer **IoT-apparaat** en selecteer **Volgende: Aanpassen.**
 
-1. Voer *Thermostat* in als de sjabloonnaam en selecteer **Volgende: Controleren.** Selecteer vervolgens **Maken**.
+1. Voer *Thermostaat* in als de sjabloonnaam en selecteer **Volgende: Controleren.** Selecteer vervolgens **Maken**.
 
-1. Selecteer **Een model importeren** en importeer hetthermostat-2.js *bestand* dat u eerder hebt gedownload.
+1. Selecteer **Een model importeren** en importeer dethermostat-2.jshet *bestand* dat u eerder hebt gedownload.
 
 1. Selecteer **Publiceren om** de nieuwe apparaatsjabloon te publiceren.
 
@@ -164,7 +164,7 @@ Een apparaatsjabloon maken voor het IoT Edge gatewayapparaat:
 
 1. Selecteer **+ Nieuw,** selecteer **Azure IoT Edge** en selecteer **vervolgens Volgende: Aanpassen.**
 
-1. Voer *IoT Edge gatewayapparaat in* als de naam van de apparaatsjabloon. Selecteer **Dit is een gatewayapparaat.** Selecteer **Bladeren om** de gegevens temoduledeployment.jshet distributiemanifestbestand dat u eerder hebt bewerkt. 
+1. Voer *IoT Edge gatewayapparaat in* als de naam van de apparaatsjabloon. Selecteer **Dit is een gatewayapparaat.** Selecteer **Bladeren om** het bestandmoduledeployment.jsnaar *het* distributiemanifestbestand te uploaden dat u eerder hebt bewerkt.
 
 1. Wanneer het implementatiemanifest is gevalideerd, selecteert **u Volgende: Controleren** en selecteert u **vervolgens Maken.**
 
@@ -178,11 +178,11 @@ Een gatewayapparaat registreren in IoT Central:
 
 1. Ga in IoT Central toepassing naar de **pagina** Apparaten.
 
-1. Selecteer **IoT Edge gatewayapparaat en** selecteer Een apparaat **maken.** Voer *IoT Edge gatewayapparaat* in als de apparaatnaam, voer *gateway-01* in als de apparaat-id en zorg ervoor dat **IoT Edge gatewayapparaat** is geselecteerd als de apparaatsjabloon. Selecteer **Maken**.
+1. Selecteer **IoT Edge gatewayapparaat en** selecteer Een apparaat **maken.** Voer *IoT Edge gatewayapparaat* in als de apparaatnaam, voer *gateway-01* in als de apparaat-id en zorg ervoor dat IoT Edge **gatewayapparaat** is geselecteerd als de apparaatsjabloon. Selecteer **Maken**.
 
 1. Klik in de lijst met apparaten op het **IoT Edge gatewayapparaat** en selecteer vervolgens **Verbinding maken.**
 
-1. Noteer de waarden voor **id-bereik,** **apparaat-id** en primaire **sleutel** voor het **IoT Edge gatewayapparaat.** U gebruikt deze later.
+1. Noteer de waarden voor **ID-bereik,** **Apparaat-id** en Primaire sleutel voor het **IoT Edge gatewayapparaat.**  U gebruikt deze later.
 
 Een downstreamapparaat registreren in IoT Central:
 
@@ -223,7 +223,7 @@ Controleren of het IoT Edge correct wordt uitgevoerd:
 
 1. Selecteer het **tabblad Modules** en controleer de status van de drie modules. Het duurt enkele minuten voordat de IoT Edge wordt opstart in de virtuele machine. Wanneer deze is gestart, is de status van de drie modules **Wordt uitgevoerd.** Als de IoT Edge runtime niet start, zie [Problemen met uw IoT Edge oplossen.](../../iot-edge/troubleshoot.md)
 
-Om uw IoT Edge als gateway te laten functioneren, heeft het enkele certificaten nodig om de identiteit te bewijzen voor alle downstreamapparaten. In dit artikel wordt gebruikgemaakt van democertificaten. Gebruik certificaten van uw certificeringsinstantie in een productieomgeving.
+Om uw IoT Edge als gateway te laten functioneren, heeft het enkele certificaten nodig om de identiteit te bewijzen voor downstreamapparaten. In dit artikel wordt gebruikgemaakt van democertificaten. Gebruik certificaten van uw certificeringsinstantie in een productieomgeving.
 
 De democertificaten genereren en deze installeren op uw gatewayapparaat:
 
@@ -251,10 +251,10 @@ De democertificaten genereren en deze installeren op uw gatewayapparaat:
     Nadat u de vorige opdrachten hebt uitgevoerd, zijn de volgende bestanden klaar voor gebruik in de volgende stappen:
 
     - *~/certs/certs/azure-iot-test-only.root.ca.cert.pem:* het basis-CA-certificaat dat wordt gebruikt om alle andere democertificaten te maken voor het testen van een IoT Edge scenario.
-    - *~/certs/certs/iot-edge-device-mycacert-full-chain.cert.pem:* een CA-certificaat voor apparaten waarnaar wordt verwezen vanuit het *bestand config.yaml.* In een gatewayscenario is dit CA-certificaat de manier waarop IoT Edge apparaat de identiteit verifieert voor downstreamapparaten.
+    - *~/certs/certs/iot-edge-device-mycacert-full-chain.cert.pem:* een CA-certificaat voor apparaten waarnaar wordt verwezen vanuit het *bestand config.yaml.* In een gatewayscenario is dit CA-certificaat de manier waarop IoT Edge apparaat de identiteit verifieert naar downstreamapparaten.
     - *~/certs/private/iot-edge-device-mycacert.key.pem:* de persoonlijke sleutel die is gekoppeld aan het CA-certificaat van het apparaat.
 
-    Zie Democertificaten maken om de apparaatfuncties IoT Edge testen voor meer informatie [over deze democertificaten.](../../iot-edge/how-to-create-test-certificates.md)
+    Zie Democertificaten maken om de apparaatfuncties IoT Edge te testen voor meer informatie [over deze democertificaten.](../../iot-edge/how-to-create-test-certificates.md)
 
 1. Open het *bestand config.yaml* in een teksteditor. Bijvoorbeeld:
 
@@ -271,7 +271,7 @@ De democertificaten genereren en deze installeren op uw gatewayapparaat:
       trusted_ca_certs: "file:///home/AzureUser/certs/certs/azure-iot-test-only.root.ca.cert.pem"
     ```
 
-    In het bovenstaande voorbeeld wordt ervan uitgenomen dat u bent aangemeld als **AzureUser** en dat u een apparaat-CA hebt gemaakt met de naam 'mycacert'.
+    In het bovenstaande voorbeeld wordt ervan uitgenomen dat u bent aangemeld als **AzureUser** en een apparaat-CA hebt gemaakt met de naam 'mycacert'.
 
 1. Sla de wijzigingen op en start de IoT Edge runtime:
 
@@ -279,7 +279,7 @@ De democertificaten genereren en deze installeren op uw gatewayapparaat:
     sudo systemctl restart iotedge
     ```
 
-Als de IoT Edge wordt gestart na uw wijzigingen, verandert  de status van de $edgeAgent en **$edgeHub** modules in **Wordt uitgevoerd.** U kunt deze statuswaarden bekijken op de **pagina Modules** voor uw gatewayapparaat in IoT Central.
+Als de IoT Edge runtime wordt gestart na uw wijzigingen, verandert de status van de $edgeAgent en **$edgeHub** modules in **Wordt uitgevoerd.**  U kunt deze statuswaarden bekijken op de **pagina Modules** voor uw gatewayapparaat in IoT Central.
 
 Als de runtime niet start, controleert u de wijzigingen die u hebt aangebracht in *config.yaml* en raadpleegt u Problemen met uw [IoT Edge oplossen.](../../iot-edge/troubleshoot.md)
 
@@ -292,7 +292,7 @@ Een downstreamapparaat verbinden met het IoT Edge gatewayapparaat:
     > [!TIP]
     > Mogelijk moet u poort 22 openen voor SSH-toegang op beide virtuele machines voordat u SSH kunt gebruiken om verbinding te maken vanaf uw lokale computer of de Azure Cloud Shell.
 
-1. Als u de GitHub-opslagplaats wilt klonen met de broncode voor het downstream-voorbeeldapparaat, moet u de volgende opdracht uitvoeren:
+1. Voer de volgende opdracht uit om de GitHub-opslagplaats te klonen met de broncode voor het voorbeeld-downstreamapparaat:
 
     ```bash
     cd ~
@@ -336,9 +336,9 @@ Een downstreamapparaat verbinden met het IoT Edge gatewayapparaat:
 
 Als u wilt controleren of het scenario wordt uitgevoerd, gaat u **naar IoT Edge gatewayapparaat** in IoT Central:
 
-:::image type="content" source="media/howto-transform-data/transformed-data.png" alt-text="Schermopname van getransformeerde gegevens op de pagina apparaten.":::
+:::image type="content" source="media/howto-transform-data/transformed-data.png" alt-text="Schermopname met getransformeerde gegevens op de pagina apparaten.":::
 
-- Selecteer **Modules**. Controleer of de drie IoT Edge modules **$edgeAgent**, **$edgeHub** en **transformmodule** worden uitgevoerd.
+- Selecteer **Modules**. Controleer of de drie IoT Edge modules **$edgeAgent**, **$edgeHub** **en transformmodule** worden uitgevoerd.
 - Selecteer **downstreamapparaten en** controleer of het downstreamapparaat is ingericht.
 - Selecteer **Onbewerkte gegevens.** De telemetriegegevens in de **kolom Niet-gemodelleerde gegevens** zien er als volgende uit:
 
@@ -346,31 +346,31 @@ Als u wilt controleren of het scenario wordt uitgevoerd, gaat u **naar IoT Edge 
     {"device":{"deviceId":"downstream-01"},"measurements":{"temperature":85.21208,"pressure":59.97321,"humidity":77.718124,"scale":"farenheit"}}
     ```
 
-Omdat het IoT Edge apparaat de gegevens van het downstreamapparaat transformeert, wordt de telemetrie gekoppeld aan het gatewayapparaat in IoT Central. Als u de telemetrie wilt visualiseren, maakt u een nieuwe versie van IoT Edge gatewayapparaatsjabloon met definities voor de telemetrietypen. 
+Omdat het IoT Edge apparaat de gegevens van het downstreamapparaat transformeert, wordt de telemetrie gekoppeld aan het gatewayapparaat in IoT Central. Als u de telemetrie wilt visualiseren, maakt u een nieuwe versie van **IoT Edge-gatewayapparaatsjabloon** met definities voor de telemetrietypen.
 
 ## <a name="data-transformation-at-egress"></a>Gegevenstransformatie bij egress
 
-U kunt uw apparaten verbinden met IoT Central, de apparaatgegevens exporteren naar een berekeningsent engine om deze te transformeren en de getransformeerde gegevens vervolgens terugsturen naar IoT Central voor apparaatbeheer en -analyse. Bijvoorbeeld:
+U kunt uw apparaten verbinden met IoT Central, de apparaatgegevens exporteren naar een berekeningsen engine om deze te transformeren en de getransformeerde gegevens vervolgens terugsturen naar IoT Central voor apparaatbeheer en -analyse. Bijvoorbeeld:
 
 - Uw apparaten verzenden locatiegegevens naar IoT Central.
 - IoT Central exporteert de gegevens naar een berekeningsen engine die de locatiegegevens verbetert met weersinformatie.
 - De berekeningsen engine stuurt de verbeterde gegevens terug naar IoT Central.
 
-U kunt de apparaatbrug [IoT Central gebruiken](https://github.com/Azure/iotc-device-bridge) als berekeningsent engine om gegevens te transformeren die vanuit de IoT Central.
+U kunt de apparaatbrug [IoT Central gebruiken](https://github.com/Azure/iotc-device-bridge) als berekeningsent engine om gegevens te transformeren die zijn geëxporteerd uit IoT Central.
 
-Een voordeel van het transformeren van gegevens bij degress is dat uw apparaten rechtstreeks verbinding maken met IoT Central, waardoor u eenvoudig opdrachten naar apparaten kunt verzenden of apparaateigenschappen kunt bijwerken. Met deze methode kunt u echter meer berichten gebruiken dan uw maandelijkse toewijzing en de kosten voor het gebruik van Azure IoT Central.
+Een voordeel van het transformeren van gegevens bij het verzenden is dat uw apparaten rechtstreeks verbinding maken met IoT Central, waardoor u eenvoudig opdrachten naar apparaten kunt verzenden of apparaateigenschappen kunt bijwerken. Met deze methode kunt u echter meer berichten gebruiken dan uw maandelijkse toewijzing en de kosten voor het gebruik van Azure IoT Central.
 
-### <a name="use-the-iot-central-device-bridge-to-transform-device-data"></a>De apparaatbrug IoT Central gebruiken om apparaatgegevens te transformeren
+### <a name="use-the-iot-central-device-bridge-to-transform-device-data"></a>De apparaatbrug IoT Central apparaat te gebruiken om apparaatgegevens te transformeren
 
 :::image type="content" source="media/howto-transform-data/transform-egress.png" alt-text="Gegevenstransformatie bij een IoT Edge" border="false":::
 
-In dit scenario transformeert een berekeningsent engine apparaatgegevens die zijn geëxporteerd uit IoT Central deze terug te sturen naar uw IoT Central toepassing. Op hoog niveau zijn de stappen voor het configureren van dit scenario:
+In dit scenario transformeert een berekeningsen engine apparaatgegevens die zijn geëxporteerd uit IoT Central voordat deze worden terugsturen naar uw IoT Central toepassing. Op hoog niveau zijn de stappen voor het configureren van dit scenario:
 
-1. **De berekeningsen engine instellen:** Maak een IoT Central om te fungeren als een berekeningsen engine voor gegevenstransformatie.
+1. **De berekeningsen engine instellen:** Maak een IoT Central apparaatbrug om te fungeren als een berekeningsent engine voor gegevenstransformatie.
 
-1. **Apparaatgegevens in de apparaatbrug transformeren:** Gegevens in de apparaatbrug transformeren door de functiecode van de apparaatbrug te wijzigen voor uw use-case voor gegevenstransformatie.
+1. **Apparaatgegevens in de apparaatbrug transformeren:** Transformeer gegevens in de apparaatbrug door de functiecode van de apparaatbrug te wijzigen voor uw use-case voor gegevenstransformatie.
 
-1. **Schakel de gegevensstroom van IoT Central naar de apparaatbrug in:** Exporteert de gegevens van IoT Central apparaatbrug voor transformatie. Vervolgens worden de getransformeerde gegevens doorgestuurd naar IoT Central. Wanneer u de gegevensexport maakt, gebruikt u eigenschapsfilters voor berichten om alleen niet-omgevormde gegevens te exporteren.
+1. **Schakel de gegevensstroom van IoT Central naar de apparaatbrug in:** Exporteert de gegevens van IoT Central apparaatbrug voor transformatie. Vervolgens worden de getransformeerde gegevens doorgestuurd naar IoT Central. Wanneer u de gegevensexport maakt, gebruikt u filters voor bericht-eigenschappen om alleen niet-omgevormde gegevens te exporteren.
 
 1. **Controleren:** verbind uw apparaat met IoT Central app en controleer op onbewerkte apparaatgegevens en getransformeerde gegevens in IoT Central.
 
@@ -407,9 +407,9 @@ De apparaatbrug verzendt de getransformeerde gegevens vervolgens naar IoT Centra
 
 De volgende stappen laten zien hoe u dit scenario in kunt stellen en configureren:
 
-### <a name="retrieve-your-iot-central-connection-settings"></a>Uw verbindingsinstellingen IoT Central gegevens ophalen
+### <a name="retrieve-your-iot-central-connection-settings"></a>Uw verbindingsinstellingen voor IoT Central ophalen
 
-Voordat u dit scenario in stelt, moet u enkele verbindingsinstellingen van uw IoT Central krijgen:
+Voordat u dit scenario in stelt, moet u enkele verbindingsinstellingen van uw IoT Central toepassing:
 
 1. Meld u aan bij uw IoT Central toepassing.
 
@@ -421,7 +421,7 @@ Voordat u dit scenario in stelt, moet u enkele verbindingsinstellingen van uw Io
 
 ### <a name="set-up-a-compute-engine"></a>Een berekeningsen engine instellen
 
-In dit scenario wordt dezelfde implementatie Azure Functions als de IoT Central device bridge. Als u de apparaatbrug wilt implementeren, selecteert u de knop Implementeren in **Azure** hieronder en gebruikt u de informatie in de volgende tabel om het formulier Aangepaste **implementatie in te** vullen:
+In dit scenario wordt dezelfde implementatie Azure Functions gebruikt als de IoT Central apparaatbrug. Als u de apparaatbrug wilt implementeren, selecteert u de knop Implementeren in **Azure** hieronder en gebruikt u de informatie in de volgende tabel om het formulier Aangepaste **implementatie in te** vullen:
 
 | Veld | Waarde |
 | ----- | ----- |
@@ -488,7 +488,7 @@ De apparaatbrug configureren om de geëxporteerde apparaatgegevens te transforme
 
 1. Noteer de functie-URL. U hebt deze waarde later nodig:
 
-    :::image type="content" source="media/howto-transform-data/get-function-url.png" alt-text="De functie-URL op halen":::
+    :::image type="content" source="media/howto-transform-data/get-function-url.png" alt-text="De functie-URL op te halen":::
 
 ### <a name="enable-data-flow-from-iot-central-to-the-device-bridge"></a>Gegevensstroom van IoT Central naar de apparaatbrug inschakelen
 
@@ -508,25 +508,25 @@ Als u een apparaatsjabloon wilt toevoegen aan IoT Central toepassing, navigeert 
 
 De gegevensexport instellen om gegevens naar uw Device Bridge te verzenden:
 
-1. Selecteer in IoT Central toepassing **Gegevensexport.**
+1. Selecteer in IoT Central toepassing **gegevensexport.**
 
-1. Selecteer **+ Nieuwe bestemming om** een bestemming te maken voor gebruik met de apparaatbrug. Roep de *doel-compute-functie aan* **en** selecteer **webhook bij Doeltype.** Voor de Callback-URL selecteert u Plakken in de functie-URL die u eerder hebt noteren. Laat **autorisatie** op **Geen verificatie.**
+1. Selecteer **+ Nieuwe bestemming om** een bestemming te maken voor gebruik met de apparaatbrug. Roep de doelfunctie *Compute aan* bij **Doeltype** en selecteer **Webhook.** Voor de Callback-URL selecteert u Plakken in de functie-URL die u eerder hebt noteren. Laat **autorisatie** op **Geen verificatie.**
 
 1. Sla de wijzigingen op.
 
-1. Selecteer de **+ Nieuwe export en** maak een gegevensexport met de naam Compute *export*.
+1. Selecteer + **Nieuwe export en maak** een gegevensexport met de naam *Rekenexport.*
 
-1. Voeg een filter toe om alleen apparaatgegevens te exporteren voor de apparaatsjabloon die u gebruikt. Selecteer **+ Filteren,** selecteer het item Apparaatsjabloon, selecteer de operator **Is** gelijk aan en selecteer de apparaatsjabloon Rekenmodel die u zojuist hebt gemaakt.  
+1. Voeg een filter toe om alleen apparaatgegevens te exporteren voor de apparaatsjabloon die u gebruikt. Selecteer **+ Filteren,** selecteer het item **Apparaatsjabloon,** selecteer de operator **Is** gelijk aan en selecteer de apparaatsjabloon **Rekenmodel** die u zojuist hebt gemaakt.
 
-1. Voeg een berichtfilter toe om onderscheid te maken tussen getransformeerde en niet-getransformeerde gegevens. Met dit filter wordt voorkomen dat getransformeerde waarden naar de apparaatbrug worden verzonden. Selecteer **+ Filter bericht-eigenschap** en voer de berekende naamwaarde in *en* selecteer vervolgens de operator **Bestaat niet.** De `computed` tekenreeks wordt gebruikt als trefwoord in de voorbeeldcode van de apparaatbrug.
+1. Voeg een berichtfilter toe om onderscheid te maken tussen getransformeerde en niet-getransformeerde gegevens. Met dit filter wordt voorkomen dat getransformeerde waarden terug worden verzonden naar de apparaatbrug. Selecteer **het filter + Bericht-eigenschap** en voer de berekende naamwaarde in en selecteer vervolgens de operator Bestaat **niet.**  De `computed` tekenreeks wordt gebruikt als trefwoord in de voorbeeldcode van de apparaatbrug.
 
-1. Selecteer voor het doel de **compute-functiebestemming** die u eerder hebt gemaakt.
+1. Selecteer voor de bestemming het doel van **de Compute-functie** dat u eerder hebt gemaakt.
 
-1. Sla de wijzigingen op. Na een minuut of zo wordt **de exportstatus** als In **orde weer geven.**
+1. Sla de wijzigingen op. Na een minuut of zo wordt **de exportstatus** als In **orde weergeven.**
 
 ### <a name="verify"></a>Verifiëren
 
-Het voorbeeldapparaat dat u gebruikt om het scenario te testen, wordt geschreven in Node.js. Zorg ervoor dat u Node.js NPM hebt geïnstalleerd op uw lokale computer. Als u deze vereisten niet wilt installeren, gebruikt u de Azure Cloud Shell[u](https://shell.azure.com/) ze vooraf hebt geïnstalleerd.
+Het voorbeeldapparaat dat u gebruikt om het scenario te testen, wordt geschreven in Node.js. Zorg ervoor dat u Node.js NPM hebt geïnstalleerd op uw lokale computer. Als u deze vereisten niet wilt installeren, gebruikt u de Azure Cloud Shell[vooraf](https://shell.azure.com/) geïnstalleerd.
 
 Een voorbeeldapparaat uitvoeren dat het scenario test:
 
@@ -556,7 +556,7 @@ Een voorbeeldapparaat uitvoeren dat het scenario test:
     node device.js
     ```
 
-1. Het resultaat van deze opdracht ziet er als volgt uit:
+1. Het resultaat van deze opdracht ziet eruit als de volgende uitvoer:
 
     ```output
     registration succeeded
@@ -570,7 +570,7 @@ Een voorbeeldapparaat uitvoeren dat het scenario test:
     send status: MessageEnqueued [{"data":"40.5, 36.41, 14.6043, 14.079"}]
     ```
 
-1. Navigeer IoT Central uw toepassing naar het apparaat met de **naam computeDevice**. In de **weergave Onbewerkte** gegevens zijn er twee verschillende telemetriestromen die ongeveer elke vijf seconden worden weergeven. De stroom met niet-gemodelleerde gegevens is de oorspronkelijke telemetrie. De stroom met gemodelleerde gegevens zijn de gegevens die door de functie zijn getransformeerd:
+1. Navigeer IoT Central uw toepassing naar het apparaat met de **naam computeDevice**. In de **weergave Onbewerkte** gegevens zijn twee verschillende telemetriestromen die ongeveer om de vijf seconden worden weergeven. De stroom met niet-gemodelleerde gegevens is de oorspronkelijke telemetrie. De stroom met gemodelleerde gegevens zijn de gegevens die door de functie zijn getransformeerd:
 
     :::image type="content" source="media/howto-transform-data/egress-telemetry.png" alt-text="Schermopname van de oorspronkelijke en getransformeerde onbewerkte gegevens.":::
 
@@ -582,9 +582,9 @@ De twee resourcegroepen die u in deze handleiding hebt gebruikt, zijn **ingress-
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd over de verschillende opties voor het transformeren van apparaatgegevens voor IoT Central, zowel bij in- als uitgangsgegevens. Het artikel bevatte walkthroughs voor twee specifieke scenario's:
+In dit artikel hebt u geleerd over de verschillende opties voor het transformeren van apparaatgegevens voor IoT Central, zowel bij in- als uittreding. Het artikel bevatte walkthroughs voor twee specifieke scenario's:
 
-- Gebruik een IoT Edge om gegevens van downstreamapparaten te transformeren voordat de gegevens naar uw IoT Central verzonden.
+- Gebruik een IoT Edge-module om gegevens van downstreamapparaten te transformeren voordat de gegevens naar uw IoT Central verzonden.
 - Gebruik Azure Functions om gegevens buiten de IoT Central. In dit scenario gebruikt IoT Central een gegevensexport om binnenkomende gegevens te verzenden naar een Azure-functie die moet worden getransformeerd. De functie stuurt de getransformeerde gegevens terug naar uw IoT Central toepassing.
 
-Nu u hebt geleerd hoe u apparaatgegevens kunt transformeren buiten uw Azure IoT Central-toepassing, kunt u leren Hoe u analyse gebruikt om apparaatgegevens te analyseren [in IoT Central](howto-create-analytics.md).
+Nu u hebt geleerd hoe u apparaatgegevens buiten uw Azure IoT Central-toepassing kunt transformeren, kunt u leren Hoe u analyse gebruikt om apparaatgegevens te analyseren [in IoT Central.](howto-create-analytics.md)

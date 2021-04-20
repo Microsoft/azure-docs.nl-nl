@@ -3,19 +3,18 @@ title: Toepassingen toegang verlenen tot een Azure-sleutelkluis met behulp van A
 description: Meer informatie over het bieden van toegang tot sleutels, geheimen en certificaten met behulp van op rollen gebaseerd toegangsbeheer van Azure.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.date: 8/30/2020
+ms.date: 04/15/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: a1e9f499b54b0cf3b75a78e76a44c1df6e3e3b3e
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 9fb8eb79a381473b26a6ea14d8b71d24ac26f485
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479845"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749452"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control"></a>Toegang bieden tot Key Vault, certificaten en geheimen met op rollen gebaseerd toegangsbeheer van Azure
 
@@ -51,7 +50,7 @@ Meer informatie Azure Key Vault richtlijnen voor beheer, zie:
 
 | Ingebouwde rol | Beschrijving | Id |
 | --- | --- | --- |
-| Key Vault Administrator| Alle gegevensvlakbewerkingen uitvoeren op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
+| Key Vault Administrator| Voer alle gegevensvlakbewerkingen uit op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
 | Key Vault Certificates Officer | Voer een actie uit op de certificaten van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | a4417e6f-fecd-4de8-b567-7b0420556985 |
 | Key Vault Crypto Officer | Voer een actie uit op de sleutels van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
 | Key Vault cryptoserviceversleutelingsgebruiker | Metagegevens van sleutels lezen en wrap-/unwrap-bewerkingen uitvoeren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
@@ -76,7 +75,7 @@ Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
 ### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Azure RBAC-machtigingen inschakelen op Key Vault
 
 > [!NOTE]
-> Voor het wijzigen van het machtigingsmodel is de machtiging Microsoft.Authorization/roleAssignments/write vereist, die deel uitmaakt van de rollen Eigenaar en [Gebruikerstoegangbeheerder.](../../role-based-access-control/built-in-roles.md#user-access-administrator) [](../../role-based-access-control/built-in-roles.md#owner) Klassieke abonnementsbeheerdersrollen zoals 'Servicebeheerder' en 'Medebeheerder' worden niet ondersteund.
+> Voor het wijzigen van het machtigingsmodel is de machtiging Microsoft.Authorization/roleAssignments/write vereist, die deel uitmaakt van de rollen Eigenaar en [Beheerder van gebruikerstoegang.](../../role-based-access-control/built-in-roles.md#user-access-administrator) [](../../role-based-access-control/built-in-roles.md#owner) Klassieke abonnementsbeheerdersrollen zoals 'Servicebeheerder' en 'Medebeheerder' worden niet ondersteund.
 
 1.  Azure RBAC-machtigingen inschakelen voor een nieuwe sleutelkluis:
 
@@ -92,7 +91,7 @@ Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
 ### <a name="assign-role"></a>Rol toewijzen
 
 > [!Note]
-> Het is raadzaam om de unieke rol-id te gebruiken in plaats van de rolnaam in scripts. Als de naam van een rol wordt gewijzigd, blijven uw scripts daarom werken. In dit document wordt de rolnaam alleen gebruikt voor leesbaarheid.
+> Het is raadzaam om de unieke rol-id te gebruiken in plaats van de rolnaam in scripts. Als de naam van een rol wordt gewijzigd, blijven uw scripts daarom werken. In dit document wordt de naam van de rol alleen gebruikt voor leesbaarheid.
 
 Voer de volgende opdracht uit om een roltoewijzing te maken:
 

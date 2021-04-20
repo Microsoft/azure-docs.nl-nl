@@ -1,138 +1,133 @@
 ---
-title: 'Snelstartgids: aan de slag'
-description: In deze Quick Start leert u hoe u aan de slag kunt met het inzicht in de basis werk stroom voor de implementatie van Defender voor IoT.
+title: 'Quickstart: Aan de slag'
+description: In deze quickstart leert u hoe u aan de slag gaat met inzicht in de basiswerkstroom voor Defender for IoT-implementatie.
 ms.topic: quickstart
-ms.date: 2/18/2021
-ms.openlocfilehash: aa26ea26a3fb0a08d931657cb7ad236c68972e2f
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.date: 04/17/2021
+ms.openlocfilehash: b1e7686e1d68d5a3f239320930d69f22c78e13cb
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106384950"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107750442"
 ---
-# <a name="quickstart-get-started-with-defender-for-iot"></a>Snelstartgids: aan de slag met Defender voor IoT
+# <a name="quickstart-get-started-with-defender-for-iot"></a>Quickstart: Aan de slag met Defender for IoT
 
-Dit artikel bevat een overzicht van de stappen die u moet nemen om Azure Defender voor IoT in te stellen. Voor het proces moet u het volgende doen:
+Dit artikel bevat een overzicht van de stappen die u moet nemen om de Azure Defender for IoT. Voor het proces moet u het volgende doen:
 
-- Registreer uw abonnement en Sens oren in de Azure Defender voor IoT-Portal.
-- Installeer de sensor-en on-premises beheer console-software.
-- Voer de eerste activering van de sensor en de beheer console uit.
+- Registreer uw abonnement en sensoren in de Azure Defender for IoT portal.
+- Installeer de sensor- en on-premises beheerconsolesoftware.
+- Voer de initiële activering van de sensor en de beheerconsole uit.
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="permission-requirements"></a>Machtigingsvereisten
 
-- Geen
+Voor sommige installatiestappen zijn specifieke gebruikersmachtigingen vereist.
 
-## <a name="permission-requirements"></a>Machtigings vereisten
+Beheerdersmachtigingen zijn vereist om de sensor en beheerconsole te activeren, SSL/TLS-certificaten te uploaden en nieuwe wachtwoorden te genereren.
 
-Voor sommige installatie stappen zijn specifieke gebruikers machtigingen vereist.
+In de volgende tabel worden machtigingen voor gebruikerstoegang voor Azure Defender for IoT portal beschreven:
 
-Gebruikers machtigingen voor beheerders zijn vereist voor het activeren van de sensor-en beheer console, het uploaden van SSL/TLS-certificaten en het genereren van nieuwe wacht woorden.
-
-In de volgende tabel worden de machtigingen voor gebruikers toegang voor Azure Defender voor IoT-Portal tools beschreven:
-
-| Machtiging | Beveiligingslezer | Beveiligingsbeheerder | Mede werker van abonnement | Abonnements eigenaar |
+| Machtiging | Beveiligingslezer | Beveiligingsbeheerder | Abonnementsbijdrager | Abonnementseigenaar |
 |--|--|--|--|--|
-| Alle Defender voor IoT-schermen en-gegevens weer geven | ✓ | ✓ | ✓ | ✓ |
+| Details en toegang tot software, activeringsbestanden en bedreigingsinformatiepakketten weergeven  | ✓ | ✓ | ✓ | ✓ |
 | Een sensor onboarden  |  |  ✓ | ✓ | ✓ |
-| Update prijzen  |  |  ✓ | ✓ | ✓ |
-| Wacht woord herstellen  | ✓  |  ✓ | ✓ | ✓ |
+| Prijzen bijwerken  |  |  ✓ | ✓ | ✓ |
+| Wachtwoord herstellen  | ✓  |  ✓ | ✓ | ✓ |
 
-## <a name="identify-the-solution-infrastructure"></a>De oplossings infrastructuur identificeren
+## <a name="identify-the-solution-infrastructure"></a>De infrastructuur van de oplossing identificeren
 
-**Verhelder uw netwerk installatie vereisten**
+**Uw netwerkinstallatiebehoeften verduidelijken**
 
-Onderzoek uw netwerk architectuur, bewaakte band breedte en andere netwerk gegevens. Zie [about Azure Defender voor IOT Network Setup](how-to-set-up-your-network.md)(Engelstalig) voor meer informatie.
+Onderzoek uw netwerkarchitectuur, bewaakte bandbreedte en andere netwerkdetails. Zie About [Azure Defender for IoT network setup (Over Azure Defender for IoT netwerkinstallatie) voor meer informatie.](how-to-set-up-your-network.md)
 
-**Verduidelijk welke Sens oren en beheer console apparaten vereist zijn voor het verwerken van de netwerk belasting**
+**Verduidelijken welke sensoren en beheerconsoleapparaten vereist zijn voor het afhandelen van de netwerkbelasting**
 
-Azure Defender voor IoT ondersteunt zowel fysieke als virtuele implementaties. Voor de fysieke implementaties kunt u verschillende gecertificeerde apparaten kopen. Zie voor meer informatie [vereiste apparaten identificeren](how-to-identify-required-appliances.md).
+Azure Defender for IoT ondersteunt zowel fysieke als virtuele implementaties. Voor de fysieke implementaties kunt u verschillende gecertificeerde apparaten aanschaffen. Zie Vereiste apparaten identificeren [voor meer informatie.](how-to-identify-required-appliances.md)
 
-U wordt aangeraden het geschatte aantal apparaten te berekenen dat wordt bewaakt. Later, wanneer u uw Azure-abonnement registreert bij de portal, wordt u gevraagd dit nummer in te voeren. Getallen kunnen worden toegevoegd met intervallen van 1.000 seconden. De aantallen bewaakte apparaten worden *toegewezen apparaten* genoemd.
+U wordt aangeraden het geschatte aantal apparaten te berekenen dat wordt bewaakt. Later, wanneer u uw Azure-abonnement registreert bij de portal, wordt u gevraagd dit nummer in te voeren. Getallen kunnen worden toegevoegd met intervallen van 1000 seconden. Het aantal bewaakte apparaten wordt *vastgelegde apparaten genoemd.*
 
-## <a name="register-with-azure-defender-for-iot"></a>Registreren bij Azure Defender voor IoT
+## <a name="register-with-azure-defender-for-iot"></a>Registreren bij Azure Defender for IoT
 
 Registratie omvat:
 
-- Het voorbereiden van uw Azure-abonnementen op Defender voor IoT.
+- Onboarding van uw Azure-abonnementen voor Defender for IoT.
 - Vastgelegde apparaten definiëren.
-- Een activerings bestand downloaden voor de on-premises beheer console.
+- Download een activeringsbestand voor de on-premises beheerconsole.
 
 Aanmelden:
 
-1. Ga naar de portal van Azure Defender voor IoT.
+1. Ga naar Azure Defender for IoT portal.
 
-1. Selecteer **abonnement voor onboarding**.
+1. Selecteer **Abonnement onboarden.**
 
-1. Selecteer op de pagina met **prijzen** een abonnement of maak een nieuwe, en voeg het aantal toegewezen apparaten toe.
+1. Selecteer op **de** pagina Prijzen een abonnement of maak een nieuw abonnement en voeg het aantal vastgelegde apparaten toe.
 
-1. Selecteer het tabblad **de on-premises beheer console downloaden** en sla het gedownloade activerings bestand op. Dit bestand bevat de geaggregeerde vastgelegde apparaten die u hebt gedefinieerd. Het bestand wordt na de eerste aanmelding geüpload naar de beheer console.
+1. Selecteer het **tabblad De on-premises beheerconsole downloaden** en sla het gedownloade activeringsbestand op. Dit bestand bevat de samengevoegde vastgelegde apparaten die u hebt gedefinieerd. Het bestand wordt geüpload naar de beheerconsole na de eerste aanmelding.
 
-Zie [niet meer vrijgeven a subscription](how-to-manage-subscriptions.md#offboard-a-subscription)(Engelstalig) voor meer informatie over het niet meer vrijgeven van een abonnement.
+Zie Offboard a subscription (Een abonnement offboarden) voor meer informatie over het [offboarden van een abonnement.](how-to-manage-subscriptions.md#offboard-a-subscription)
 
-## <a name="install-and-set-up-the-on-premises-management-console"></a>De on-premises beheer console installeren en instellen
+## <a name="install-and-set-up-the-on-premises-management-console"></a>De on-premises beheerconsole installeren en instellen
 
-Na het verkrijgen van uw on-premises beheer console-apparaat:
+Nadat u uw on-premises beheerconsoleapparaat hebt verkregen:
 
-- Down load het ISO-pakket vanuit de Azure Defender voor IoT-Portal.
-- De software installeren.
-- De installatie van de oorspronkelijke beheer console activeren en uitvoeren.
+- Download het ISO-pakket via Azure Defender for IoT portal.
+- Installeer de software.
+- Activeer en voer de eerste installatie van de beheerconsole uit.
 
-Installeren en instellen van:
+Installeren en instellen:
 
-1. Selecteer **aan de slag** vanuit de Defender voor IOT-Portal.
-1. Selecteer het tabblad **on-premises beheer console** .
-1. Kies een versie en selecteer **downloaden**.
-1. De on-premises beheer console-software installeren. Zie voor meer informatie [Defender voor IOT-installatie](how-to-install-software.md).
-1. De beheer console activeren en instellen. Zie [uw on-premises beheer console activeren en instellen](how-to-activate-and-set-up-your-on-premises-management-console.md)voor meer informatie.
+1. Selecteer **Aan de slag** in de Defender for IoT-portal.
+1. Selecteer het **tabblad On-premises beheerconsole.**
+1. Kies een versie en selecteer **Downloaden.**
+1. Installeer de on-premises beheerconsolesoftware. Zie Defender [for IoT-installatie voor meer informatie.](how-to-install-software.md)
+1. Activeer en stel de beheerconsole in. Zie Activate [and set up your on-premises management console](how-to-activate-and-set-up-your-on-premises-management-console.md)(Uw on-premises beheerconsole activeren en instellen) voor meer informatie.
 
-## <a name="onboard-a-sensor"></a>Een sensor onboarden
+## <a name="onboard-a-sensor"></a>Een sensor onboarden ##
 
-Een sensor onboarden door deze te registreren bij Azure Defender voor IoT en een sensor activerings bestand te downloaden:
+Onboard een sensor door deze te registreren bij Azure Defender for IoT en een activeringsbestand voor de sensor te downloaden:
 
-1. Definieer de naam van een sensor en koppel deze aan een abonnement.
+1. Definieer een sensornaam en koppel deze aan een abonnement.
+1. Kies een verbindingsmodus voor de sensor:
 
-1. Kies een sensor beheer modus:
+   - **Verbonden sensoren in de** cloud: informatie die door sensoren wordt gedetecteerd, wordt weergegeven in de sensorconsole. Bovendien wordt waarschuwingsinformatie geleverd via een IoT-hub en kan deze worden gedeeld met andere Azure-services, zoals Azure Sentinel.  U kunt er ook voor kiezen om automatisch bedreigingsinformatiepakketten van de Azure Defender for IoT naar uw sensoren te pushen. Zie Onderzoek naar bedreigingsinformatie [en pakketten voor meer informatie.](how-to-work-with-threat-intelligence-packages.md)
 
-   - **Met de Cloud verbonden Sens oren**: informatie die Sens oren detecteert wordt weer gegeven in de sensor console. Daarnaast worden waarschuwings gegevens geleverd via een IoT-hub en kunnen ze worden gedeeld met andere Azure-Services, zoals Azure Sentinel.
+   - **Lokaal beheerde sensoren:** informatie die door sensoren wordt gedetecteerd, wordt weergegeven in de sensorconsole. Als u werkt in een netwerk met ruimte in de lucht en een uniforme weergave wilt van alle informatie die door meerdere lokaal beheerde sensoren wordt gedetecteerd, werkt u met de on-premises beheerconsole.
 
-   - **Lokaal beheerde Sens oren**: informatie die Sens oren detecteert wordt weer gegeven in de sensor console. Als u werkt met een Air-gapped-netwerk en u een uniforme weer gave wilt van alle informatie die wordt gedetecteerd door meerdere lokaal beheerde Sens oren, werkt u met de on-premises beheer console. 
+1. Download een activeringsbestand voor de sensor.
 
-1. Down load een sensor activerings bestand.
-
-Zie voor meer informatie [Sens oren voor onboarding en beheren in de Defender voor IOT-Portal](how-to-manage-sensors-on-the-cloud.md).
+Zie Sensoren onboarden en beheren in de [Defender for IoT-portal](how-to-manage-sensors-on-the-cloud.md)voor meer informatie over onboarding.
 
 ## <a name="install-and-set-up-the-sensor"></a>De sensor installeren en instellen
 
-Down load het ISO-pakket vanuit de Azure Defender voor IoT-Portal, installeer de software en stel de sensor in.
+Download het ISO-pakket via Azure Defender for IoT portal, installeer de software en stel de sensor in.
 
-1. Selecteer **aan de slag** vanuit de Defender voor IOT-Portal.
+1. Selecteer **Aan de slag** in de Defender for IoT-portal.
 
-1. Selecteer **sensor instellen**.
+1. Selecteer **Sensor instellen.**
 
-1. Kies een versie en selecteer **downloaden**.
+1. Kies een versie en selecteer **Downloaden.**
 
-1. Installeer de sensor software. Zie voor meer informatie [Defender voor IOT-installatie](how-to-install-software.md).
+1. Installeer de sensorsoftware. Zie Defender [for IoT-installatie voor meer informatie.](how-to-install-software.md)
 
-1. Uw sensor activeren en instellen. Zie [Aanmelden en een sensor activeren](how-to-activate-and-set-up-your-sensor.md)voor meer informatie.
+1. Activeer en stel de sensor in. Zie Aanmelden en een sensor activeren [voor meer informatie.](how-to-activate-and-set-up-your-sensor.md)
 
-## <a name="connect-sensors-to-an-on-premises-management-console"></a>Sens oren verbinden met een on-premises beheer console
+## <a name="connect-sensors-to-an-on-premises-management-console"></a>Sensoren verbinden met een on-premises beheerconsole
 
-Verbind Sens oren met de beheer console om ervoor te zorgen dat:
+Sluit sensoren aan op de beheerconsole om ervoor te zorgen dat:
 
-- Sens oren sturen waarschuwings-en apparaat-inventaris gegevens naar de on-premises beheer console.
+- Sensoren verzenden informatie over waarschuwingen en apparaatinventarisatie naar de on-premises beheerconsole.
 
-- De on-premises beheer console kan sensor back-ups uitvoeren, waarschuwingen beheren die Sens oren detecteren, het verbreken van de sensor onderzoeken en andere activiteiten uitvoeren op verbonden Sens oren.
+- De on-premises beheerconsole kan sensorback-ups uitvoeren, waarschuwingen beheren die door sensoren worden gedetecteerd, sensorverbrekingen onderzoeken en andere activiteiten uitvoeren op verbonden sensoren.
 
-Het is raadzaam om meerdere Sens oren te groeperen die dezelfde netwerken in één zone bewaken. Dit leidt tot Coalesce-gegevens die worden verzameld door meerdere Sens oren.
+U wordt aangeraden meerdere sensoren te groeperen die dezelfde netwerken in één zone bewaken. Als u dit doet, worden gegevens verzameld door meerdere sensoren.
 
-Zie [Sens oren verbinden met de on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md#connect-sensors-to-the-on-premises-management-console)voor meer informatie.
+Zie Connect [sensors to the on-premises management console (Sensoren verbinden met de on-premises beheerconsole) voor meer informatie.](how-to-activate-and-set-up-your-on-premises-management-console.md#connect-sensors-to-the-on-premises-management-console)
 
-## <a name="populate-azure-sentinel-with-alert-information-optional"></a>Azure-Sentinel vullen met waarschuwings gegevens (optioneel)
+## <a name="populate-azure-sentinel-with-alert-information-optional"></a>Gegevens in Azure Sentinel met waarschuwingsgegevens (optioneel)
 
-Waarschuwings gegevens verzenden naar Azure Sentinel door Azure Sentinel te configureren. Zie [uw gegevens verbinden vanuit Defender voor IOT naar Azure Sentinel](how-to-configure-with-sentinel.md).
+Verzend waarschuwingsgegevens naar Azure Sentinel door het configureren van Azure Sentinel. Zie [Connect your data from Defender for IoT to Azure Sentinel](how-to-configure-with-sentinel.md).
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="next-steps"></a>Volgende stappen ##
 
-> [!div class="nextstepaction"]
-> [Welkom bij Azure Defender voor IOT](overview.md) 
->  [Azure Defender voor IOT-architectuur](architecture.md)
+[Welkom bij Azure Defender for IoT](overview.md)
+
+[Azure Defender for IoT architectuur](architecture.md)

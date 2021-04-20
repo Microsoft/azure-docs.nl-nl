@@ -4,18 +4,18 @@ ms.service: key-vault
 ms.topic: include
 ms.date: 03/09/2021
 ms.author: ambapat
-ms.openlocfilehash: c2548b1669366564809ed2fde725cb3399922a29
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9ecfcff00e6f44f5c739513c063baaa3fa02a3db
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104803338"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107753290"
 ---
-Azure Key Vault-service ondersteunt twee resource typen: kluizen en beheerde Hsm's. In de volgende twee secties worden de service limieten voor elk van beide beschreven.
+Azure Key Vault-service ondersteunt twee resourcetypen: kluizen en beheerde HMS's. In de volgende twee secties worden de servicelimieten voor elk van beide beschreven.
 
-### <a name="resource-type-vault"></a>Resource type: kluis
+### <a name="resource-type-vault"></a>Resourcetype: kluis
 
-In deze sectie worden de service limieten voor het resource type beschreven `vaults` .
+In deze sectie worden servicelimieten voor resourcetype `vaults` beschreven.
 
 #### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Belangrijkste transacties (maximum aantal transacties in 10 seconden per kluis per regio<sup>1</sup>):
 
@@ -53,62 +53,62 @@ Zie de [Azure Key Vault-beperkingsrichtlijnen](../articles/key-vault/general/ove
 
 #### <a name="backup-keys-secrets-certificates"></a>Back-upsleutels, geheimen, certificaten
 
-Wanneer u een back-up maakt van een object dat is opgeslagen in een sleutelkluis (zoals een geheim, sleutel of certificaat), wordt het object door de back-upbewerking gedownload als een versleutelde blob. Deze blob kan niet buiten Azure worden ontsleuteld. Als u bruikbare gegevens wilt ophalen uit deze blob, moet u de BLOB herstellen in een sleutel kluis binnen hetzelfde Azure-abonnement en Azure-Geografie
+Wanneer u een back-up maakt van een object dat is opgeslagen in een sleutelkluis (zoals een geheim, sleutel of certificaat), wordt het object door de back-upbewerking gedownload als een versleutelde blob. Deze blob kan niet buiten Azure worden ontsleuteld. Als u gebruiksgegevens uit deze blob wilt halen, moet u de blob herstellen in een sleutelkluis binnen hetzelfde Azure-abonnement en dezelfde Azure-geografie
 
-| Transactietype | Maxi maal toegestane sleutel kluis object versies |
+| Transactietype | Maximale toegestane versies van sleutelkluisobjecten |
 | --- | --- |
-| Back-up maken van afzonderlijke sleutel, geheim, certfiicate |500 |
+| Back-up maken van afzonderlijke sleutel, geheim, certificaat |500 |
 
 > [!NOTE]
-> Poging tot het maken van een back-up van een sleutel, geheim of certificaat object met meer versies dan de limiet, resulteert in een fout. Het is niet mogelijk om eerdere versies van een sleutel, geheim of certificaat te verwijderen. 
+> Als u probeert een back-up te maken van een sleutel, geheim of certificaatobject met meer versies dan de bovengrens, resulteert dit in een fout. Het is niet mogelijk om eerdere versies van een sleutel, geheim of certificaat te verwijderen. 
 
 #### <a name="azure-private-link-integration"></a>Azure Private Link- integratie
 
 > [!NOTE]
-> Het aantal sleutelkluizen met ingeschakelde privé-eindpunten per abonnement is een aanpasbare limiet. De limiet die hieronder wordt weergegeven, is de standaardlimiet. Als u een hogere limiet wilt aanvragen voor uw service, kunt u een e-mail sturen naar akv-privatelink@microsoft.com. We zullen deze aanvragen per geval goedkeuren.
+> Het aantal sleutelkluizen met ingeschakelde privé-eindpunten per abonnement is een aanpasbare limiet. De limiet die hieronder wordt weergegeven, is de standaardlimiet. Als u een limietverhoging voor uw service wilt aanvragen, maakt u een ondersteuningsaanvraag en wordt deze per geval beoordeeld.
 
 | Resource | Limiet |
 | -------- | -----:|
 | Privé-eindpunten per sleutelkluis | 64 |
 | Sleutelkluizen met privé-eindpunten per abonnement | 400 |
 
-### <a name="resource-type-managed-hsm-preview"></a>Resource type: beheerde HSM (preview-versie)
+### <a name="resource-type-managed-hsm-preview"></a>Resourcetype: Beheerde HSM (preview)
 
-In deze sectie worden de service limieten voor het resource type beschreven `managed HSM` .
+In deze sectie worden servicelimieten voor resourcetype `managed HSM` beschreven.
 
-#### <a name="object-limits"></a>Object limieten
+#### <a name="object-limits"></a>Objectlimieten
 
 |Item|Limieten|
 |----|------:|
-Aantal HSM-exemplaren per abonnement per regio|1 (tijdens de preview-versie)
-Aantal sleutels per HSM-groep|5000
+Aantal HSM-exemplaren per abonnement per regio|1 (tijdens de preview)
+Aantal sleutels per HSM-pool|5000
 Aantal versies per sleutel|100
-Aantal definities van aangepaste rollen per HSM|50
-Aantal roltoewijzingen in het HSM-bereik|50
-Aantal roltoewijzingen voor elk afzonderlijke sleutel bereik|10
+Aantal aangepaste roldefinities per HSM|50
+Aantal roltoewijzingen op HSM-bereik|50
+Aantal roltoewijzingen voor elk afzonderlijk sleutelbereik|10
 |||
 
-#### <a name="transaction-limits-for-administrative-operations-number-of-operations-per-second-per-hsm-instance"></a>Transactie limieten voor beheer bewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
+#### <a name="transaction-limits-for-administrative-operations-number-of-operations-per-second-per-hsm-instance"></a>Transactielimieten voor beheerbewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
 |Bewerking |Aantal bewerkingen per seconde|
 |----|------:|
-Alle RBAC-bewerkingen<br/>(bevat alle ruwe bewerkingen voor roldefinities en roltoewijzingen)|5
-Volledige HSM-back-up/herstellen<br/>(er wordt slechts één gelijktijdige back-up-of herstel bewerking per HSM-exemplaar ondersteund)|1
+Alle RBAC-bewerkingen<br/>(bevat alle CRUD-bewerkingen voor roldefinities en roltoewijzingen)|5
+Volledige back-up/herstel van HSM<br/>(slechts één gelijktijdige back-up- of herstelbewerking per ondersteund HSM-exemplaar)|1
 
-#### <a name="transaction-limits-for-cryptographic-operations-number-of-operations-per-second-per-hsm-instance"></a>Transactie limieten voor cryptografische bewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
+#### <a name="transaction-limits-for-cryptographic-operations-number-of-operations-per-second-per-hsm-instance"></a>Transactielimieten voor cryptografische bewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
 
-- Elke beheerde HSM-instantie bestaat uit drie taak verdelingen HSM-partities. De doorvoer limieten zijn een functie van de onderliggende toegewezen hardware-capaciteit voor elke partitie. In de onderstaande tabellen wordt de maximale door Voer weer gegeven met ten minste één partitie beschikbaar. De werkelijke door Voer kan Maxi maal 3x hoger zijn als alle drie de partities beschikbaar zijn.
-- Er wordt ervan uitgegaan dat er één sleutel wordt gebruikt om maximale door voer te krijgen. Als er bijvoorbeeld één RSA-2048-sleutel wordt gebruikt, is de maximale door Voer 1100 teken bewerkingen. Als u 1100 verschillende sleutels gebruikt met 1 trans actie per seconde, kunnen ze niet dezelfde door Voer uitvoeren.
+- Elk beheerd hsm-exemplaar bestaat uit drie HSM-partities met load balanced. De doorvoerlimieten zijn een functie van de onderliggende hardwarecapaciteit die voor elke partitie wordt toegewezen. In de onderstaande tabellen wordt de maximale doorvoer weergegeven met ten minste één partitie beschikbaar. De werkelijke doorvoer kan maximaal 3 x hoger zijn als alle 3 de partities beschikbaar zijn.
+- Bij het genoteerde doorvoerlimieten wordt ervan uitgenomen dat er één sleutel wordt gebruikt om een maximale doorvoer te bereiken. Als bijvoorbeeld één RSA-2048-sleutel wordt gebruikt, is de maximale doorvoer 1100 aanmeldingsbewerkingen. Als u 1100 verschillende sleutels gebruikt met elk 1 transactie per seconde, kunnen ze niet dezelfde doorvoer bereiken.
 
-##### <a name="rsa-key-operations-number-of-operations-per-second-per-hsm-instance"></a>RSA-sleutel bewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
+##### <a name="rsa-key-operations-number-of-operations-per-second-per-hsm-instance"></a>RSA-sleutelbewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
 
 |Bewerking|2048-bits|3072-bits|4096-bits|
 |--|--:|--:|--:|
 Sleutel maken|1| 1| 1
-Sleutel verwijderen (voorlopig verwijderen)|10|10|10 
-Sleutel opschonen|10|10|10 
+Sleutel verwijderen (soft-delete)|10|10|10 
+Sleutel ops purge|10|10|10 
 Back-upsleutel|10|10|10 
 Sleutel herstellen|10|10|10 
-Belang rijke gegevens ophalen|1100|1100|1100
+Sleutelgegevens op halen|1100|1100|1100
 Versleutelen|10.000|10.000|6000
 Ontsleutelen|1100|360|160
 Wrap|10.000|10.000|6000
@@ -117,36 +117,36 @@ Teken|1100|360|160
 Verifiëren|10.000|10.000|6000
 |||||
 
-##### <a name="ec-key-operations-number-of-operations-per-second-per-hsm-instance"></a>EC-sleutel bewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
+##### <a name="ec-key-operations-number-of-operations-per-second-per-hsm-instance"></a>EC-sleutelbewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
 
-In deze tabel wordt het aantal bewerkingen per seconde voor elk type curve beschreven.
+In deze tabel wordt het aantal bewerkingen per seconde voor elk curvetype beschreven.
 
 |Bewerking|P-256|P-256K|P-384|P-521|
 |---|---:|---:|---:|---:|
 Sleutel maken| 1| 1| 1| 1
-Sleutel verwijderen (voorlopig verwijderen)|10|10|10|10
-Sleutel opschonen|10|10|10|10
+Sleutel verwijderen (soft-delete)|10|10|10|10
+Sleutel ops purge|10|10|10|10
 Back-upsleutel|10|10|10|10
 Sleutel herstellen|10|10|10|10
-Belang rijke gegevens ophalen|1100|1100|1100|1100
+Sleutelinformatie verkrijgen|1100|1100|1100|1100
 Teken|260|260|165|56
 Verifiëren|130|130|82|28
 ||||||
 
 
-##### <a name="aes-key-operations-number-of-operations-per-second-per-hsm-instance"></a>AES-sleutel bewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
-- Voor versleutelings-en ontsleutel bewerkingen wordt uitgegaan van een 4KB-pakket grootte.
-- Doorvoer limieten voor versleutelen/ontsleutelen zijn van toepassing op AES-CBC-en AES-GCM-algoritmen.
-- Doorvoer limieten voor omloop/uitpakken zijn van toepassing op het AES-KW-algoritme.
+##### <a name="aes-key-operations-number-of-operations-per-second-per-hsm-instance"></a>AES-sleutelbewerkingen (aantal bewerkingen per seconde per HSM-exemplaar)
+- Voor versleutelings- en ontsleutelingsbewerkingen wordt uit van een pakketgrootte van 4 KB uitgenomen.
+- Doorvoerlimieten voor versleutelen/ontsleutelen zijn van toepassing op AES-CBC- en AES-GCM-algoritmen.
+- Doorvoerlimieten voor Wrap/Unwrap zijn van toepassing op het AES-KW-algoritme.
 
 |Bewerking|128-bits|192-bits|256-bits|
 |--|--:|--:|--:|
 Sleutel maken|1| 1| 1
-Sleutel verwijderen (voorlopig verwijderen)|10|10|10
-Sleutel opschonen|10|10|10
+Sleutel verwijderen (soft-delete)|10|10|10
+Sleutel opskeren|10|10|10
 Back-upsleutel|10|10|10
 Sleutel herstellen|10|10|10
-Belang rijke gegevens ophalen|1100|1100|1100
+Sleutelgegevens op halen|1100|1100|1100
 Versleutelen|8000|8000 |8000 
 Ontsleutelen|8000|8000|8000
 Wrap|9000|9000|9000

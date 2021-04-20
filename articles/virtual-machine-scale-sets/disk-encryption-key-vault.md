@@ -9,16 +9,16 @@ ms.subservice: disks
 ms.date: 10/10/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: e05940cecd8ebdc4e61281406aafd5edc266cabc
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 77a2fc900e3888575fb6411a8c2b76b2c639d719
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107483126"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107748584"
 ---
 # <a name="create-and-configure-a-key-vault-for-azure-disk-encryption"></a>Een sleutelkluis voor Azure Disk Encryption maken en configureren
 
-Azure Disk Encryption gebruikt Azure Key Vault om sleutels en geheimen voor schijfversleuteling te beheren.  Zie [Aan de slag met Azure Key Vault](../key-vault/general/overview.md) en [Uw sleutelkluis beveiligen](../key-vault/general/secure-your-key-vault.md) voor meer informatie over sleutelkluizen.
+Azure Disk Encryption gebruikt Azure Key Vault om sleutels en geheimen voor schijfversleuteling te beheren.  Zie Aan de slag met [](../key-vault/general/overview.md) de beveiligingsfuncties Azure Key Vault en Azure Key Vault voor meer informatie [over sleutelkluizen.](../key-vault/general/security-overview.md)
 
 Een sleutelkluis maken en configureren voor gebruik met Azure Disk Encryption bestaat uit drie stappen:
 

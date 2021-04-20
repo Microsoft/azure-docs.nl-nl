@@ -100,6 +100,8 @@
       items:
         - name: Berichtsessies
           href: message-sessions.md
+        - name: Detectie van dubbele berichten
+          href: duplicate-detection.md
         - name: Onderwerpfilters en acties
           href: topic-filters.md
         - name: Berichten doorzoeken
@@ -174,7 +176,7 @@
           href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
           items:
-            - name: JMS-entiteiten (Java Message Service) 2.0
+            - name: Java Message Service (JMS) 2.0-entiteiten
               href: java-message-service-20-entities.md
             - name: JMS-ontwikkelaarsaccounts (Java Message Service) guide.md
               href: jms-developer-guide.md
@@ -206,8 +208,6 @@
           items:
             - name: Berichten vooraf ophalen
               href: service-bus-prefetch.md
-            - name: Detectie van dubbele berichten
-              href: duplicate-detection.md
             - name: Berichten uitstellen
               href: message-deferral.md
             - name: Entiteiten koppelen met automatisch doorsturen
@@ -236,6 +236,14 @@
           href: service-bus-integrate-with-rabbitmq.md
     - name: Beheren
       items:
+        - name: Sessies inschakelen voor een wachtrij of abonnement
+          href: enable-message-sessions.md
+        - name: Duplicaatdetectie inschakelen voor een wachtrij of onderwerp
+          href: enable-duplicate-detection.md
+        - name: Partities voor een wachtrij of onderwerp inschakelen
+          href: enable-partitions.md
+        - name: Automatisch doorsturen voor een wachtrij of abonnement inschakelen
+          href: enable-auto-forward.md
         - name: Verplaatsen tussen regio's
           href: move-across-regions.md
         - name: Messaging-eenheden automatisch bijwerken

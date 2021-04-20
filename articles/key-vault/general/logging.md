@@ -3,19 +3,18 @@ title: Logboekregistratie voor Azure Key Vault | Microsoft Docs
 description: Meer informatie over het bewaken van de toegang van uw sleutelkluizen door logboekregistratie voor Azure Key Vault in te schakelen. Hierbij wordt de informatie opgeslagen in een Azure-opslagaccount dat u opgeeft.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 99313cf1248ef5e90d7cd60d528a58c7925298d0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5847fcb2cf553e1fcc744877e52dbbdf1f24d992
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102499523"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107751828"
 ---
 # <a name="azure-key-vault-logging"></a>Logboekregistratie voor Azure Key Vault
 

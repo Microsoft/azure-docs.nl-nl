@@ -5,11 +5,12 @@
   href: overview.md
   items:
     - name: Wat is nieuw?
+      displayName: 'version, versions, servicing, information, timeline, support, support date, dates, versioning, policy'
       href: release-notes.md
-    - name: Wat is architectuur zonder agents
+    - name: Wat is een oplossingsarchitectuur zonder agent
       displayName: 'deployment, where to deploy'
       href: architecture.md
-    - name: Wat is een oplossings architectuur op basis van een agent
+    - name: Wat is een oplossingsarchitectuur op basis van een agent?
       href: architecture-agent-based.md
 - name: Snelstartgidsen
   expanded: true
@@ -24,28 +25,28 @@
           href: getting-started.md
     - name: Oplossing met agent voor apparaatbouwers
       items:
-        - name: Onboarden naar Defender voor IoT-oplossing op basis van een agent
+        - name: Onboarding voor een oplossing op basis van een Defender for IoT-agent
           displayName: 'IoT Hub, existing, enable'
           href: quickstart-onboard-iot-hub.md
-        - name: Defender installeren voor IoT micro agent (preview)
+        - name: Defender for IoT-microagent installeren (preview)
           displayName: 'package, authentication, methods, certificate, authenticate, version'
           href: quickstart-standalone-agent-binary-installation.md
-        - name: Een Defender IoT micro Agent-module maken (preview)
+        - name: Een Defender IoT-microagentmodule dubbel maken (preview)
           href: quickstart-create-micro-agent-module-twin.md
-        - name: De Defender voor IoT micro agent bouwen op basis van de bron code (preview)
+        - name: De Defender for IoT-microagent bouwen op basis van broncode (preview)
           displayName: 'baseline, configuration, customize, distribution'
           href: quickstart-building-the-defender-micro-agent-from-source.md
-        - name: Defender-IoT-micro agent voor Azure RTO'S configureren
+        - name: Defender-IoT-micro-agent configureren voor Azure RTOS
           href: quickstart-azure-rtos-security-module.md
         - name: Azure-resources toevoegen aan uw IoT-oplossing
           displayName: 'resources, monitored, resource'
           href: quickstart-configure-your-solution.md
         - name: Klassiek
           items:
-            - name: Overzicht van de beveiligings agent
+            - name: Overzicht van beveiligingsagent
               displayName: 'platforms, C, C#, agent,'
               href: security-agent-architecture.md
-            - name: Een azureiotsecurity-module maken dubbele
+            - name: Een azureiotsecurity-module dubbel maken
               displayName: 'module twin, security module'
               href: quickstart-create-security-twin.md
 - name: Concepten
@@ -56,30 +57,30 @@
           href: concept-key-concepts.md
     - name: Oplossing met agent voor apparaatbouwer
       items:
-        - name: Overzicht van agent portfolio en ondersteuning van besturings systemen (preview-versie)
+        - name: Overzicht van agentportfolio en ondersteuning van besturingssysteem (preview)
           displayName: 'standalone agent, micro agent, RTOS'
           href: concept-agent-portfolio-overview-os-support.md
-        - name: Overzicht van zelfstandige micro agent (preview-versie)
+        - name: Overzicht van zelfstandige microagents (preview)
           displayName: 'endpoint, posture, distribution, flexible, model'
           href: concept-standalone-micro-agent-overview.md
-        - name: Verificatie van beveiligings agent (preview-versie)
+        - name: Verificatie van beveiligingsagent (preview)
           displayName: 'connection string, certificate, authentication'
           href: concept-security-agent-authentication.md
-        - name: Security postuur-CIS-Bench Mark
+        - name: Beveiligingsstatus - CIS-benchmark
           href: concept-security-posture.md
-        - name: Gebeurtenis aggregatie (preview-versie)
+        - name: Aggregatie van gebeurtenissen (preview)
           displayName: 'process events, network connection'
           href: concept-event-aggregation.md
         - name: Ingebouwde waarschuwingen voor IoT Hub
           displayName: 'binary command line, disable firewall, port forwarding detection, possible attempt to disable auditd logging detected, reverse shells, successful bruteforce attempt, successful local login, web shell, Behavior similar, Crypto coin, suspicious, Exposed Docker,'
           href: concept-security-alerts.md
-        - name: Aangepaste beveiligings waarschuwingen voor IoT Hub
+        - name: Aangepaste beveiligingswaarschuwingen voor IoT Hub
           href: concept-customizable-security-alerts.md
-        - name: Beveiligings aanbevelingen voor IoT Hub
+        - name: Beveiligingsaanbevelingen voor IoT Hub
           href: concept-recommendations.md
         - name: Klassiek
           items:
-            - name: Defender-IoT-micro agent
+            - name: Defender-IoT-micro-agent
               displayName: 'device twins, Defender-IoT-micro-agent twin'
               href: concept-security-module.md
             - name: Edge Defender-IoT-micro-agent
@@ -92,15 +93,15 @@
             - name: Basislijn
               displayName: 'custom, setting, properties'
               href: concept-baseline.md
-            - name: Azure-beveiligings basislijn voor Azure Defender voor IoT
+            - name: Azure-beveiligingsbasislijn voor Azure Defender for IoT
               displayName: 'identity management, active directory, privileged access, data protection, incident response, posture, vulnerability, governance'
               href: security-baseline.md
-            - name: Defender-IoT-micro-agent klassieke gebeurtenis aggregatie
+            - name: Klassieke gebeurtenisaggregatie defender-IoT-micro-agent
               displayName: 'twin, default, configuration, alerts'
               href: event-aggregation.md
-            - name: Beveiligings waarschuwingen op basis van een agent
+            - name: Beveiligingswaarschuwingen op basis van een agent
               href: agent-based-security-alerts.md
-            - name: Aangepaste waarschuwingen op basis van agent beveiliging
+            - name: Aangepaste beveiligingswaarschuwingen op basis van een agent
               href: agent-based-security-custom-alerts.md
             - name: Aanbevelingen op basis van een agent
               href: agent-based-recommendations.md
@@ -121,7 +122,7 @@
               href: how-to-install-software.md
         - name: Uw sensoren voorbereiden
           items:
-            - name: Sens oren beheren
+            - name: Sensoren beheren
               displayName: 'onboard, cloud, register, activate, offboard, subscription, subscriptions, offboarding'
               href: how-to-manage-sensors-on-the-cloud.md
             - name: Uw sensor activeren en instellen
@@ -183,20 +184,20 @@
           displayName: 'connections, Purdue, zoom, delete device'
         - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
           items:
-            - name: Meer informatie over sensor waarschuwingen
+            - name: Sensorwaarschuwingen begrijpen
               href: how-to-work-with-alerts-on-your-sensor.md
-            - name: Waarschuwingen filteren en beheren via de pagina waarschuwingen
+            - name: Waarschuwingen filteren en beheren op de pagina Waarschuwingen
               href: how-to-view-alerts.md
-            - name: Over waarschuwings berichten
+            - name: Over waarschuwingsberichten
               href: how-to-view-information-provided-in-alerts.md
               displayName: 'PCAP, metadata, alerts, link, device map,'
-            - name: Waarschuwings typen en-beschrijvingen
+            - name: Waarschuwingstypen en beschrijvingen
               href: alert-engine-messages.md
               displayName: 'alert, alerts, description, engine, anomaly, protocol, policy, malware, violation, operational, severity, minor, major, critical, warning, alerts list, security alerts,'
-            - name: Waarschuwings gebeurtenissen beheren
+            - name: Waarschuwingsgebeurtenissen beheren
               href: how-to-manage-the-alert-event.md
               displayName: 'PCAP, acknowledge, learn, mute, policy'
-            - name: Waarschuwings werk stromen versnellen
+            - name: Waarschuwingswerkstromen versnellen
               href: how-to-accelerate-alert-incident-response.md
               displayName: 'custom, alerts, comments, groups'
             - name: Waarschuwingsinformatie doorsturen
@@ -205,23 +206,23 @@
         - name: 'Inzicht krijgen in globale, regionale en lokale bedreigingen'
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
           displayName: 'site, business unit, region, map'
-        - name: 'Weinig informatie apparaten, waarschuwingen en Sens oren per zone'
+        - name: 'Weinig informatieapparaten, waarschuwingen en sensoren per zone'
           href: how-to-view-information-per-zone.md
           displayName: zones
         - name: Werken met waarschuwingen in de on-premises beheerconsole
           href: how-to-work-with-alerts-on-premises-management-console.md
         - name: Rapporten maken
           items:
-            - name: Rapporten voor risico analyse maken
+            - name: Risicoanalyserapporten maken
               href: how-to-create-risk-assessment-reports.md
               displayName: 'vulnerability, security score, score, CVE'
-            - name: Aanvals vector rapporten maken
+            - name: Aanvalsvectorrapporten maken
               href: how-to-create-attack-vector-reports.md
               displayName: 'Attack surface, prediction,simulation'
-            - name: Rapporten voor gegevens analyse maken
+            - name: Rapporten voor gegevensmining maken
               displayName: 'CVE, activity'
               href: how-to-create-data-mining-queries.md
-            - name: Rapporten met trends en statistieken maken
+            - name: Trends en statistiekenrapporten maken
               href: how-to-create-trends-and-statistics-reports.md
               displayName: 'widgets, charts'
         - name: Apparaatinformatie verrijken
@@ -262,22 +263,22 @@
         - name: Verbinding maken met Azure Sentinel
           displayName: 'log analytics, service notes'
           href: how-to-configure-with-sentinel.md
-        - name: Azure Defender voor IoT-oplossing op basis van een agent configureren
+        - name: Een Azure Defender for IoT op basis van een agent configureren
           displayName: 'data, collection, geolocation, log analytics, raw events'
           href: how-to-configure-agent-based-solution.md
-        - name: Aanbeveling voor CIS-benchmark tests onderzoeken
+        - name: Aanbeveling voor CIS-benchmark onderzoeken
           href: how-to-investigate-cis-benchmark.md
         - name: Aangepaste waarschuwingen maken
           displayName: security group
           href: quickstart-create-custom-alerts.md
-        - name: Defender-IoT-micro agent voor Azure RTO'S
+        - name: Defender-IoT-micro-agent voor Azure RTOS
           href: iot-security-azure-rtos.md
           items:
-            - name: Werken met Defender-IoT-micro agent voor Azure RTO'S
+            - name: Werken met Defender-IoT-micro-agent voor Azure RTOS
               href: how-to-azure-rtos-security-module.md
-            - name: Meer informatie over de Defender-IoT-micro agent voor Azure RTO'S
+            - name: Meer inzicht in de Defender-IoT-micro-agent voor Azure RTOS
               href: concept-rtos-security-module.md
-            - name: Defender-IoT-micro agent voor Azure RTO'S-waarschuwingen en-aanbevelingen
+            - name: Defender-IoT-micro-agent voor Azure RTOS waarschuwingen en aanbevelingen
               href: concept-rtos-security-alerts-recommendations.md
         - name: Klassiek
           items:
@@ -314,7 +315,7 @@
               href: how-to-investigate-device.md
     - name: Problemen oplossen
       items:
-        - name: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
+        - name: Problemen met Defender IoT-microagent oplossen (preview)
           displayName: 'service status, review logs'
           href: troubleshoot-defender-micro-agent.md
 - name: Referentie
@@ -336,7 +337,7 @@
           href: resources-frequently-asked-questions.md
     - name: Oplossing met agent voor apparaatbouwers
       items:
-        - name: Defender-IoT-micro agent voor Azure RTO'S-API
+        - name: Defender-IoT-micro-agent voor Azure RTOS API
           displayNAme: 'prototype, disable'
           href: azure-rtos-security-module-api.md
         - name: Veelgestelde vragen - agent
@@ -346,30 +347,28 @@
           href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: Defender for IoT-woordenlijst
       href: references-defender-for-iot-glossary.md
-    - name: Functie ondersteuning en buiten gebruik stellen
+    - name: Ondersteuning en pensioen van functies
       items:
-        - name: Functie ondersteuning en buiten gebruik stellen
+        - name: Ondersteuning en pensioen van functies
           displayName: 'C, C#, deprecation, support'
           href: edge-security-module-deprecation.md
 - name: Resource
   items:
+    - name: Uw beveiligingsvaardigheden ontwikkelen met Microsoft Learn
+      href: /learn/browse/?term=securityS&terms=securityS
+    - name: Documentatie voor Azure Security Center
+      href: ../security-center/
+    - name: Documentatie over beveiliging in Azure
+      href: ../security/index.yml
+    - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure IoT'
+      href: 'https://techcommunity.microsoft.com/t5/iot-security/bd-p/IoTSecurity'
+    - name: Regionale beschikbaarheid
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Prijzen
+      href: 'https://azure.microsoft.com/pricing/details/azure-defender/'
+    - name: Video's
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'
     - name: Oplossing met agent voor apparaatbouwer
       items:
-        - name: Uw beveiligingsvaardigheden ontwikkelen met Microsoft Learn
-          href: /learn/browse/?term=securityS&terms=securityS
-        - name: Documentatie voor Azure Security Center
-          href: ../security-center/
-        - name: Documentatie over beveiliging in Azure
-          href: ../security/index.yml
-        - name: Azure RTO'S Defender-IoT-micro-agent op Stack Overflow
+        - name: Azure RTOS Defender-IoT-micro-agent op Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-rtos+azure-iot-security-module'
-        - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure IoT'
-          href: 'https://techcommunity.microsoft.com/t5/iot-security/bd-p/IoTSecurity'
-        - name: Regionale beschikbaarheid
-          href: 'https://azure.microsoft.com/regions/services/'
-        - name: Prijzen
-          href: 'https://azure.microsoft.com/pricing/details/azure-defender/'
-        - name: Ondersteunings beleid voor Azure Defender voor IoT
-          href: support-policies.md
-        - name: Video's
-          href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'

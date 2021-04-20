@@ -4,18 +4,18 @@ description: Verzamelingen van afbeeldingen of andere artefacten overdragen van 
 ms.topic: article
 ms.date: 10/07/2020
 ms.custom: ''
-ms.openlocfilehash: e921880eb0b8ae5a38e69c9c0045f6a26d84084d
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 7784ce3e5e0171c84fb1f1da6e69f7d38bec9637
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107497979"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107737402"
 ---
 # <a name="transfer-artifacts-to-another-registry"></a>Artefacten overdragen naar een ander register
 
 In dit artikel wordt beschreven hoe u verzamelingen met afbeeldingen of andere registerartefacten van het ene Azure-containerregister naar een ander register kunt overdragen. De bron- en doelregisters kunnen zich in dezelfde of verschillende abonnementen, Active Directory-tenants, Azure-clouds of fysiek losgekoppelde clouds. 
 
-Als u artefacten wilt  overdragen, maakt u een overdrachtspijplijn die artefacten repliceert tussen twee registers met behulp van [blobopslag:](../storage/blobs/storage-blobs-introduction.md)
+Als u artefacten wilt  overdragen, maakt u een overdrachtspijplijn die artefacten tussen twee registers repliceert met behulp van [blobopslag:](../storage/blobs/storage-blobs-introduction.md)
 
 * Artefacten uit een bronregister worden geëxporteerd naar een blob in een bronopslagaccount 
 * De blob wordt gekopieerd van het bronopslagaccount naar een doelopslagaccount
@@ -25,7 +25,7 @@ Overdracht is ideaal voor het kopiëren van inhoud tussen twee Azure-containerre
 
 In dit artikel gebruikt u Azure Resource Manager sjabloonimplementaties om de overdrachtspijplijn te maken en uit te voeren. De Azure CLI wordt gebruikt voor het inrichten van de bijbehorende resources, zoals opslaggeheimen. Azure CLI versie 2.2.0 of hoger wordt aanbevolen. Als u de CLI wilt installeren of upgraden, raadpleegt u [Azure CLI installeren][azure-cli].
 
-Deze functie is beschikbaar in de **servicelaag Premium** Container Registry. Zie Azure Container Registry servicelagen voor meer [informatie over registerservicelagen en -limieten.](container-registry-skus.md)
+Deze functie is beschikbaar in de **servicelaag van het** Premium-containerregister. Zie Azure Container Registry servicelagen voor meer [informatie over registerservicelagen en -limieten.](container-registry-skus.md)
 
 > [!IMPORTANT]
 > Deze functie is momenteel beschikbaar als preview-product. Previews worden voor u beschikbaar gesteld op voorwaarde dat u akkoord gaat met de [aanvullende gebruiksvoorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
@@ -69,11 +69,11 @@ Opslagverificatie maakt gebruik van SAS-tokens, beheerd als geheimen in sleutelk
 
 ### <a name="things-to-know"></a>Dingen die u moet weten
 * ExportPipeline en ImportPipeline staan doorgaans in verschillende Active Directory-tenants die zijn gekoppeld aan de bron- en doelwolken. Voor dit scenario zijn afzonderlijke beheerde identiteiten en sleutelkluizen vereist voor het exporteren en importeren van resources. Voor testdoeleinden kunnen deze resources in dezelfde cloud worden geplaatst en identiteiten delen.
-* Standaard maken de sjablonen ExportPipeline en ImportPipeline elk een door het systeem toegewezen beheerde identiteit mogelijk voor toegang tot key vault-geheimen. De ExportPipeline- en ImportPipeline-sjablonen ondersteunen ook een door de gebruiker toegewezen identiteit die u op geeft. 
+* Standaard maken de sjablonen ExportPipeline en ImportPipeline elk een door het systeem toegewezen beheerde identiteit mogelijk voor toegang tot key vault-geheimen. De ExportPipeline- en ImportPipeline-sjablonen ondersteunen ook een door de gebruiker toegewezen identiteit die u op verstrekt. 
 
 ## <a name="create-and-store-sas-keys"></a>SAS-sleutels maken en opslaan
 
-Overdracht maakt gebruik van SAS-tokens (Shared Access Signature) voor toegang tot de opslagaccounts in de bron- en doelomgevingen. Genereer en sla tokens op zoals beschreven in de volgende secties.  
+Overdracht maakt gebruik van SAS-tokens (Shared Access Signature) voor toegang tot de opslagaccounts in de bron- en doelomgevingen. Genereer tokens en sla deze op, zoals beschreven in de volgende secties.  
 
 ### <a name="generate-sas-token-for-export"></a>SAS-token genereren voor export
 
@@ -81,7 +81,7 @@ Voer de [opdracht az storage container generate-sas][az-storage-container-genera
 
 *Aanbevolen tokenmachtigingen:* Lezen, Schrijven, Lijst, Toevoegen. 
 
-In het volgende voorbeeld wordt opdrachtuitvoer toegewezen aan de EXPORT_SAS omgevingsvariabele, vooraf vooraf laten gaan door het teken '?'. Werk de `--expiry` waarde voor uw omgeving bij:
+In het volgende voorbeeld wordt opdrachtuitvoer toegewezen aan de EXPORT_SAS omgevingsvariabele, voorafgevoegd met het teken '?'. Werk de `--expiry` waarde voor uw omgeving bij:
 
 ```azurecli
 EXPORT_SAS=?$(az storage container generate-sas \
@@ -95,7 +95,7 @@ EXPORT_SAS=?$(az storage container generate-sas \
 
 ### <a name="store-sas-token-for-export"></a>SAS-token opslaan voor export
 
-Sla het SAS-token op in de Azure-sleutelkluis van uw bron met [az keyvault secret set][az-keyvault-secret-set]:
+Sla het SAS-token op in de Azure-sleutelkluis van uw bron [met az keyvault secret set][az-keyvault-secret-set]:
 
 ```azurecli
 az keyvault secret set \
@@ -110,7 +110,7 @@ Voer de [opdracht az storage container generate-sas][az-storage-container-genera
 
 *Aanbevolen tokenmachtigingen:* Lezen, Verwijderen, Lijst
 
-In het volgende voorbeeld wordt opdrachtuitvoer toegewezen aan de IMPORT_SAS omgevingsvariabele, vooraf vooraf laten gaan door het teken '?'. Werk de `--expiry` waarde voor uw omgeving bij:
+In het volgende voorbeeld wordt opdrachtuitvoer toegewezen aan de IMPORT_SAS omgevingsvariabele, voorafgevoegd met het teken '?'. Werk de `--expiry` waarde voor uw omgeving bij:
 
 ```azurecli
 IMPORT_SAS=?$(az storage container generate-sas \
@@ -135,7 +135,7 @@ az keyvault secret set \
 
 ## <a name="create-exportpipeline-with-resource-manager"></a>ExportPipeline maken met Resource Manager
 
-Maak een ExportPipeline-resource voor uw broncontainerregister met behulp Azure Resource Manager sjabloonimplementatie.
+Maak een ExportPipeline-resource voor uw broncontainerregister met behulp van Azure Resource Manager sjabloonimplementatie.
 
 Kopieer ExportPipeline Resource Manager [sjabloonbestanden naar](https://github.com/Azure/acr/tree/master/docs/image-transfer/ExportPipelines) een lokale map.
 
@@ -159,13 +159,13 @@ De `options` eigenschap voor de exportpijplijnen ondersteunt optionele Booleaans
 
 ### <a name="create-the-resource"></a>De resource maken
 
-Voer [az deployment group create uit om][az-deployment-group-create] een resource met de naam *exportPipeline te maken,* zoals wordt weergegeven in de volgende voorbeelden. Met de eerste optie schakelt de voorbeeldsjabloon standaard een door het systeem toegewezen identiteit in de ExportPipeline-resource in. 
+Voer [az deployment group create uit om][az-deployment-group-create] een resource met de naam *exportPipeline* te maken, zoals wordt weergegeven in de volgende voorbeelden. Met de eerste optie wordt met de voorbeeldsjabloon standaard een door het systeem toegewezen identiteit in de ExportPipeline-resource ingeschakeld. 
 
 Met de tweede optie kunt u de resource voorzien van een door de gebruiker toegewezen identiteit. (Het maken van de door de gebruiker toegewezen identiteit wordt niet weergegeven.)
 
 Met beide opties configureert de sjabloon de identiteit voor toegang tot het SAS-token in de exportsleutelkluis. 
 
-#### <a name="option-1-create-resource-and-enable-system-assigned-identity"></a>Optie 1: Resource maken en door het systeem toegewezen identiteit inschakelen
+#### <a name="option-1-create-resource-and-enable-system-assigned-identity"></a>Optie 1: Een resource maken en een door het systeem toegewezen identiteit inschakelen
 
 ```azurecli
 az deployment group create \
@@ -177,7 +177,7 @@ az deployment group create \
 
 #### <a name="option-2-create-resource-and-provide-user-assigned-identity"></a>Optie 2: Een resource maken en een door de gebruiker toegewezen identiteit verstrekken
 
-Geef in deze opdracht de resource-id van de door de gebruiker toegewezen identiteit op als een extra parameter.
+In deze opdracht geeft u de resource-id van de door de gebruiker toegewezen identiteit op als een extra parameter.
 
 ```azurecli
 az deployment group create \
@@ -200,7 +200,7 @@ EXPORT_RES_ID=$(az deployment group show \
 
 ## <a name="create-importpipeline-with-resource-manager"></a>ImportPipeline maken met Resource Manager 
 
-Maak een ImportPipeline-resource in het doelcontainerregister met behulp Azure Resource Manager sjabloonimplementatie. De pijplijn is standaard ingeschakeld om automatisch te importeren wanneer het opslagaccount in de doelomgeving een artefact-blob heeft.
+Maak een ImportPipeline-resource in het doelcontainerregister met behulp van Azure Resource Manager sjabloonimplementatie. De pijplijn is standaard ingeschakeld om automatisch te importeren wanneer het opslagaccount in de doelomgeving een artefact-blob heeft.
 
 Kopieer ImportPipeline Resource Manager [sjabloonbestanden naar](https://github.com/Azure/acr/tree/master/docs/image-transfer/ImportPipelines) een lokale map.
 
@@ -224,13 +224,13 @@ De `options` eigenschap voor de importpijplijn ondersteunt optionele Booleaanse 
 
 ### <a name="create-the-resource"></a>De resource maken
 
-Voer [az deployment group create uit om][az-deployment-group-create] een resource met de naam *importPipeline te maken,* zoals wordt weergegeven in de volgende voorbeelden. Met de eerste optie schakelt de voorbeeldsjabloon standaard een door het systeem toegewezen identiteit in de ImportPipeline-resource in. 
+Voer [az deployment group create uit om][az-deployment-group-create] een resource te maken met de naam *importPipeline,* zoals wordt weergegeven in de volgende voorbeelden. Met de eerste optie schakelt de voorbeeldsjabloon standaard een door het systeem toegewezen identiteit in de ImportPipeline-resource in. 
 
 Met de tweede optie kunt u de resource voorzien van een door de gebruiker toegewezen identiteit. (Het maken van de door de gebruiker toegewezen identiteit wordt niet weergegeven.)
 
 Met beide opties configureert de sjabloon de identiteit voor toegang tot het SAS-token in de importsleutelkluis. 
 
-#### <a name="option-1-create-resource-and-enable-system-assigned-identity"></a>Optie 1: Een resource maken en een door het systeem toegewezen identiteit inschakelen
+#### <a name="option-1-create-resource-and-enable-system-assigned-identity"></a>Optie 1: Resource maken en door het systeem toegewezen identiteit inschakelen
 
 ```azurecli
 az deployment group create \
@@ -242,7 +242,7 @@ az deployment group create \
 
 #### <a name="option-2-create-resource-and-provide-user-assigned-identity"></a>Optie 2: Een resource maken en een door de gebruiker toegewezen identiteit verstrekken
 
-In deze opdracht geeft u de resource-id van de door de gebruiker toegewezen identiteit op als een extra parameter.
+Geef in deze opdracht de resource-id van de door de gebruiker toegewezen identiteit op als een extra parameter.
 
 ```azurecli
 az deployment group create \
@@ -253,7 +253,7 @@ az deployment group create \
   --parameters userAssignedIdentity="/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myUserAssignedIdentity"
 ```
 
-Als u van plan bent de import handmatig uit te voeren, noteert u de resource-id ( `id` ) van de pijplijn. U kunt deze waarde opslaan in een omgevingsvariabele voor later gebruik door de [opdracht az deployment group show uit te][az-deployment-group-show] voeren. Bijvoorbeeld:
+Als u van plan bent de import handmatig uit te voeren, noteert u de resource-id ( `id` ) van de pijplijn. U kunt deze waarde opslaan in een omgevingsvariabele voor later gebruik door de opdracht [az deployment group show uit te][az-deployment-group-show] voeren. Bijvoorbeeld:
 
 ```azurecli
 IMPORT_RES_ID=$(az deployment group show \
@@ -265,7 +265,7 @@ IMPORT_RES_ID=$(az deployment group show \
 
 ## <a name="create-pipelinerun-for-export-with-resource-manager"></a>Pijplijn makenUitvoeren voor exporteren met Resource Manager 
 
-Maak een PipelineRun-resource voor uw broncontainerregister met behulp Azure Resource Manager sjabloonimplementatie. Deze resource voert de ExportPipeline-resource uit die u eerder hebt gemaakt en exporteert opgegeven artefacten uit het containerregister als een blob naar uw bronopslagaccount.
+Maak een PipelineRun-resource voor uw broncontainerregister met behulp Azure Resource Manager sjabloonimplementatie. Deze resource voert de ExportPipeline-resource uit die u eerder hebt gemaakt en exporteert opgegeven artefacten vanuit uw containerregister als een blob naar uw bronopslagaccount.
 
 Kopieer PipelineRun Resource Manager [sjabloonbestanden naar](https://github.com/Azure/acr/tree/master/docs/image-transfer/PipelineRun/PipelineRun-Export) een lokale map.
 
@@ -274,14 +274,14 @@ Voer de volgende parameterwaarden in het bestand `azuredeploy.parameters.json` i
 |Parameter  |Waarde  |
 |---------|---------|
 |registryName     | Naam van het broncontainerregister      |
-|pipelineRunName     |  Naam die u kiest voor de run       |
+|pipelineRunName     |  De naam die u kiest voor de run       |
 |pipelineResourceId     |  Resource-id van de exportpijplijn.<br/>Voorbeeld: `/subscriptions/<subscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.ContainerRegistry/registries/<sourceRegistryName>/exportPipelines/myExportPipeline`|
-|targetName     |  Naam die u kiest voor de artefactblob die is geëxporteerd naar uw bronopslagaccount, zoals *myblob*
-|Artefacten | Matrix van bronartefacten die moeten worden overdragen, als tags of manifest-digests<br/>Voorbeeld: `[samples/hello-world:v1", "samples/nginx:v1" , "myrepository@sha256:0a2e01852872..."]` |
+|targetName     |  Naam die u kiest voor de artefactblob die wordt geëxporteerd naar uw bronopslagaccount, zoals *myblob*
+|Artefacten | Matrix van bronartefacten die moeten worden overdragen, als tags of manifest digests<br/>Voorbeeld: `[samples/hello-world:v1", "samples/nginx:v1" , "myrepository@sha256:0a2e01852872..."]` |
 
 Als u een PipelineRun-resource met identieke eigenschappen opnieuw wilt installeren, moet u ook de eigenschap [forceUpdateTag](#redeploy-pipelinerun-resource) gebruiken.
 
-Voer [az deployment group create uit om][az-deployment-group-create] de resource PipelineRun te maken. In het volgende voorbeeld wordt de implementatie *exportPipelineRun genoemd.*
+Voer [az deployment group create uit om][az-deployment-group-create] de PipelineRun-resource te maken. In het volgende voorbeeld wordt de implementatie *exportPipelineRun genoemd.*
 
 ```azurecli
 az deployment group create \
@@ -291,7 +291,7 @@ az deployment group create \
   --parameters azuredeploy.parameters.json
 ```
 
-Sla voor later gebruik de resource-id van de pijplijn-run op in een omgevingsvariabele:
+Voor later gebruik moet u de resource-id van de pijplijn-run opslaan in een omgevingsvariabele:
 
 ```azurecli
 EXPORT_RUN_RES_ID=$(az deployment group show \
@@ -312,7 +312,7 @@ az storage blob list \
 
 ## <a name="transfer-blob-optional"></a>Blob overdragen (optioneel) 
 
-Gebruik het AzCopy-hulpprogramma of andere methoden om [blobgegevens over](../storage/common/storage-use-azcopy-v10.md#transfer-data) te dragen van het bronopslagaccount naar het doelopslagaccount.
+Gebruik het hulpprogramma AzCopy of andere methoden om [blobgegevens over](../storage/common/storage-use-azcopy-v10.md#transfer-data) te dragen van het bronopslagaccount naar het doelopslagaccount.
 
 Met de volgende opdracht wordt bijvoorbeeld myblob gekopieerd van de [`azcopy copy`](../storage/common/storage-ref-azcopy-copy.md) *overdrachtscontainer* in het bronaccount naar de *overdrachtscontainer* in het doelaccount. Als de blob in het doelaccount bestaat, wordt deze overschreven. Verificatie maakt gebruik van SAS-tokens met de juiste machtigingen voor de bron- en doelcontainers. (Stappen voor het maken van tokens worden niet weergegeven.)
 
@@ -325,7 +325,7 @@ azcopy copy \
 
 ## <a name="trigger-importpipeline-resource"></a>ImportPipeline-resource activeren
 
-Als u de parameter van de ImportPipeline hebt ingeschakeld (de standaardwaarde), wordt de pijplijn geactiveerd nadat de blob is gekopieerd naar `sourceTriggerStatus` het doelopslagaccount. Het kan enkele minuten duren voordat artefacten zijn geïmporteerd. Wanneer het importeren is voltooid, controleert u het importeren van artefacten door de opslagplaatsen in het doelcontainerregister weer te brengen. Voer bijvoorbeeld [az acr repository list uit:][az-acr-repository-list]
+Als u de parameter van de ImportPipeline (de standaardwaarde) hebt ingeschakeld, wordt de pijplijn geactiveerd nadat de blob is gekopieerd naar `sourceTriggerStatus` het doelopslagaccount. Het kan enkele minuten duren voordat artefacten zijn geïmporteerd. Wanneer het importeren is voltooid, controleert u het importeren van artefacten door de opslagplaatsen in het doelcontainerregister weer te brengen. Voer bijvoorbeeld [az acr repository list uit:][az-acr-repository-list]
 
 ```azurecli
 az acr repository list --name <target-registry-name>
@@ -335,7 +335,7 @@ Als u de parameter van de importpijplijn niet hebt ingeschakeld, moet u de `sour
 
 ## <a name="create-pipelinerun-for-import-with-resource-manager-optional"></a>PipelineRun maken voor importeren met Resource Manager (optioneel) 
  
-U kunt ook een PipelineRun-resource gebruiken om een ImportPipeline te activeren voor het importeren van artefacten in uw doelcontainerregister.
+U kunt ook een PipelineRun-resource gebruiken om een ImportPipeline te activeren voor het importeren van artefacten in het doelcontainerregister.
 
 Kopieer PipelineRun Resource Manager [sjabloonbestanden naar](https://github.com/Azure/acr/tree/master/docs/image-transfer/PipelineRun/PipelineRun-Import) een lokale map.
 
@@ -344,7 +344,7 @@ Voer de volgende parameterwaarden in het bestand `azuredeploy.parameters.json` i
 |Parameter  |Waarde  |
 |---------|---------|
 |registryName     | Naam van het doelcontainerregister      |
-|pipelineRunName     |  De naam die u voor de run kiest       |
+|pipelineRunName     |  Naam die u kiest voor de run       |
 |pipelineResourceId     |  Resource-id van de importpijplijn.<br/>Voorbeeld: `/subscriptions/<subscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.ContainerRegistry/registries/<sourceRegistryName>/importPipelines/myImportPipeline`       |
 |Sourcename     |  Naam van de bestaande blob voor geëxporteerde artefacten in uw opslagaccount, zoals *myblob*
 
@@ -360,7 +360,7 @@ az deployment group create \
   --parameters azuredeploy.parameters.json
 ```
 
-Sla voor later gebruik de resource-id van de pijplijn-run op in een omgevingsvariabele:
+Voor later gebruik moet u de resource-id van de pijplijn-run opslaan in een omgevingsvariabele:
 
 ```azurecli
 IMPORT_RUN_RES_ID=$(az deployment group show \
@@ -376,9 +376,9 @@ Wanneer de implementatie is voltooid, controleert u het importeren van artefacte
 az acr repository list --name <target-registry-name>
 ```
 
-## <a name="redeploy-pipelinerun-resource"></a>PipelineRun-resource opnieuw gebruiken
+## <a name="redeploy-pipelinerun-resource"></a>PipelineRun-resource opnieuw
 
-Als u een PipelineRun-resource met identieke eigenschappen opnieuw wilt *installeren,* moet u gebruikmaken van de **eigenschap forceUpdateTag.** Deze eigenschap geeft aan dat de resource PipelineRun opnieuw moet worden gemaakt, zelfs als de configuratie niet is gewijzigd. Zorg ervoor dat forceUpdateTag steeds anders is wanneer u de PipelineRun-resource opnieuwplot. In het onderstaande voorbeeld wordt een PipelineRun opnieuw gemaakt voor export. De huidige datum/tijd wordt gebruikt om forceUpdateTag in te stellen, zodat deze eigenschap altijd uniek is.
+Als u een PipelineRun-resource met identieke eigenschappen opnieuw wilt *inzetten,* moet u gebruikmaken van de **eigenschap forceUpdateTag.** Deze eigenschap geeft aan dat de resource PipelineRun opnieuw moet worden gemaakt, zelfs als de configuratie niet is gewijzigd. Zorg ervoor dat forceUpdateTag anders is telkens wanneer u de PipelineRun-resource opnieuwplot. In het onderstaande voorbeeld wordt een PipelineRun voor export opnieuw gemaakt. De huidige datum/tijd wordt gebruikt om forceUpdateTag in te stellen, waardoor deze eigenschap altijd uniek is.
 
 ```console
 CURRENT_DATETIME=`date +"%Y-%m-%d:%T"`
@@ -415,9 +415,15 @@ az resource delete \
 
 * **Sjabloonimlementatie of fouten oplossen**
   * Als een pijplijn niet kan worden uitgevoerd, bekijkt u `pipelineRunErrorMessage` de eigenschap van de run-resource.
-  * Zie Troubleshoot ARM template deployments (Problemen [met ARM-sjabloonimplementaties](../azure-resource-manager/templates/template-tutorial-troubleshoot.md) oplossen) voor veelvoorkomende fouten bij de implementatie van sjablonen
+  * Zie Problemen met ARM-sjabloonimplementaties oplossen voor veelvoorkomende fouten [bij sjabloonimplementaties](../azure-resource-manager/templates/template-tutorial-troubleshoot.md)
+* **Problemen met toegang tot opslag**<a name="problems-accessing-storage"></a>
+  * Als er een fout `403 Forbidden` uit de opslag wordt weergegeven, hebt u waarschijnlijk een probleem met uw SAS-token.
+  * Het SAS-token is momenteel mogelijk niet geldig. Het SAS-token is mogelijk verlopen of de sleutels van het opslagaccount zijn mogelijk gewijzigd sinds het SAS-token is gemaakt. Controleer of het SAS-token geldig is door te proberen het SAS-token te gebruiken om te verifiëren voor toegang tot de container van het opslagaccount. Plaats bijvoorbeeld een bestaand blob-eindpunt gevolgd door het SAS-token in de adresbalk van een nieuw Microsoft Edge InPrivate-venster of upload een blob naar de container met het SAS-token met behulp van `az storage blob upload` .
+  * Het SAS-token heeft mogelijk niet voldoende toegestane resourcetypen. Controleer of het SAS-token machtigingen heeft gekregen voor Service, Container en Object onder Toegestane resourcetypen ( `srt=sco` in het SAS-token).
+  * Het SAS-token heeft mogelijk niet voldoende machtigingen. Voor exportpijplijnen zijn de vereiste sas-tokenmachtigingen Lezen, Schrijven, Lijst en Toevoegen. Voor importpijplijnen zijn de vereiste sas-tokenmachtigingen Lezen, Verwijderen en Lijst. (De machtiging Verwijderen is alleen vereist als voor de importpijplijn `DeleteSourceBlobOnSuccess` de optie is ingeschakeld.)
+  * Het SAS-token is mogelijk niet geconfigureerd om alleen met HTTPS te werken. Controleer of het SAS-token is geconfigureerd voor gebruik met alleen HTTPS ( `spr=https` in het SAS-token).
 * **Problemen met het exporteren of importeren van opslagblobs**
-  * SAS-token is mogelijk verlopen of heeft onvoldoende machtigingen voor de opgegeven export- of importuitvoer
+  * Het SAS-token kan ongeldig zijn of onvoldoende machtigingen hebben voor de opgegeven export- of importuitvoer. Zie [Problemen met toegang tot opslag](#problems-accessing-storage).
   * Bestaande opslagblob in het bronopslagaccount wordt mogelijk niet overschreven tijdens meerdere exportuitvoeren. Controleer of de optie OverwriteBlob is ingesteld in de exportuitvoer en dat het SAS-token voldoende machtigingen heeft.
   * De opslagblob in het doelopslagaccount wordt mogelijk niet verwijderd nadat de import is uitgevoerd. Controleer of de optie DeleteBlobOnSuccess is ingesteld in de importuitvoer en of het SAS-token voldoende machtigingen heeft.
   * Opslagblob niet gemaakt of verwijderd. Controleer of de container die is opgegeven bij de export- of importuitvoer bestaat, of dat er een opgegeven opslagblob bestaat voor handmatige importuitvoer. 
@@ -426,9 +432,9 @@ az resource delete \
 * **Problemen met de overdracht van artefacten**
   * Niet alle artefacten, of geen, worden overgedragen. Bevestig de spelling van artefacten in de exportuitvoer en de naam van de blob in export- en importuitvoer. Bevestig dat u maximaal 50 artefacten overdraagt.
   * Het uitvoeren van de pijplijn is mogelijk niet voltooid. Een export- of importuitvoer kan enige tijd duren. 
-  * Geef voor andere pijplijnproblemen de [correlatie-id](../azure-resource-manager/templates/deployment-history.md) van de implementatie van de uitvoer- of importuitvoer naar het Azure Container Registry team.
+  * Voor andere pijplijnproblemen geeft u de [correlatie-id](../azure-resource-manager/templates/deployment-history.md) van de implementatie van de exportuitvoer of importuitvoer op bij Azure Container Registry team.
 * **Problemen met het binnenhalen van de afbeelding in een fysiek geïsoleerde omgeving**
-  * Als er fouten optreden met betrekking tot vreemde lagen of pogingen om mcr.microsoft.com op te lossen wanneer u probeert een afbeelding op te halen in een fysiek geïsoleerde omgeving, heeft uw afbeeldingsmanifest waarschijnlijk niet-distribueerbare lagen. Vanwege de aard van een fysiek geïsoleerde omgeving, kunnen deze afbeeldingen vaak niet worden pull. U kunt controleren of dit het geval is door het afbeeldingsmanifest te controleren op verwijzingen naar externe registers. Als dit het geval is, moet u de niet-distribueerbare lagen naar uw openbare cloud-ACR pushen voordat u een exportpijplijnuitvoer voor die afbeelding implementeert. Zie Niet-distribueerbare lagen naar een register pushen Hoe kan ik u hulp nodig [hebt bij het maken van een push-uiting.](./container-registry-faq.md#how-do-i-push-non-distributable-layers-to-a-registry)
+  * Als er fouten optreden met betrekking tot vreemde lagen of pogingen om mcr.microsoft.com op te lossen wanneer u probeert een afbeelding op te halen in een fysiek geïsoleerde omgeving, heeft uw afbeeldingsmanifest waarschijnlijk niet-distribueerbare lagen. Vanwege de aard van een fysiek geïsoleerde omgeving, kunnen deze afbeeldingen vaak niet worden pullen. U kunt controleren of dit het geval is door het afbeeldingsmanifest te controleren op verwijzingen naar externe registers. Als dit het geval is, moet u de niet-distribueerbare lagen naar uw openbare cloud-ACR pushen voordat u een exportpijplijnuitvoer voor die afbeelding implementeert. Zie Niet-distribueerbare lagen naar een register Hoe kan ik te pushen voor [meer informatie over hoe u dit doet.](./container-registry-faq.md#how-do-i-push-non-distributable-layers-to-a-registry)
 
 ## <a name="next-steps"></a>Volgende stappen
 

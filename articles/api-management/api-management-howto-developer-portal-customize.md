@@ -7,12 +7,12 @@ ms.service: api-management
 ms.topic: tutorial
 ms.date: 11/16/2020
 ms.author: apimpm
-ms.openlocfilehash: 90544fbafe7393630c3f3fbc694ae367eccb7f90
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7c341dee3106530715248355da4412b97ed30980
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96012971"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739616"
 ---
 # <a name="tutorial-access-and-customize-the-developer-portal"></a>Zelfstudie: De ontwikkelaarsportal openen en aanpassen
 
@@ -45,6 +45,35 @@ Volg de onderstaande stappen om toegang te krijgen tot de beheerde versie van de
 1. Blader in [Azure Portal](https://portal.azure.com) naar uw API Management-exemplaar.
 1. Selecteer de knop **Ontwikkelaarsportal** in de bovenste navigatiebalk. Er wordt een nieuw browsertabblad geopend met een beheerversie van de portal.
 
+
+## <a name="developer-portal-architectural-concepts"></a>Architectuurconcepten voor ontwikkelaarsportal
+
+De portalonderdelen kunnen logisch worden onderverdeeld in twee categorieën: *code* en *inhoud.*
+
+### <a name="code"></a>Code
+
+Code wordt onderhouden in de GitHub API Management opslagplaats voor [ontwikkelaarsportal](https://github.com/Azure/api-management-developer-portal) voor ontwikkelaars en bevat:
+
+- **Widgets:** vertegenwoordigen visuele elementen en combineren HTML, JavaScript, stijlbaarheid, instellingen en inhoudstoewijzing. Voorbeelden zijn een afbeelding, een teksta alinea, een formulier, een lijst met API's, enzovoort.
+- **Stijldefinities:** geef op hoe widgets kunnen worden vorm gegeven
+- **Engine:** deze engine genereert statische webpagina's van portalinhoud en is geschreven in JavaScript
+- **Visuele editor:** hiermee kunt u in de browser aanpassingen en ontwerpervaring gebruiken
+
+### <a name="content"></a>Content
+
+Inhoud is onderverdeeld in twee subcategorieën: *portalinhoud en* *API Management inhoud.*
+
+*De inhoud van* de portal is specifiek voor de portal en omvat:
+
+- **Pagina's:** bijvoorbeeld landingspagina, API-zelfstudies, blogposts
+- **Media:** afbeeldingen, animaties en andere inhoud op basis van bestanden
+- **Indelingen:** sjablonen die worden afgestemd op een URL en definiëren hoe pagina's worden weergegeven
+- **Stijlen:** waarden voor stijldefinities, zoals lettertypen, kleuren, randen
+- **Instellingen** : configuraties zoals favicon, websitemetagegevens
+
+    Portalinhoud, met uitzondering van media, wordt uitgedrukt als JSON-documenten.
+
+*API Management inhoud* bevat entiteiten zoals API's, bewerkingen, producten, abonnementen.
 ## <a name="understand-the-portals-administrative-interface"></a>De beheerinterface van de portal begrijpen
 
 ### <a name="default-content"></a>Standaardinhoud 
@@ -138,7 +167,7 @@ Nadat u de portal hebt gepubliceerd, kunt u deze bereiken via dezelfde URL als h
 
 ## <a name="apply-the-cors-policy-on-apis"></a>Het CORS-beleid toepassen op API's
 
-Schakel CORS (Cross-Origin Resource Sharing) in voor uw API's om de bezoekers van de portal de API's te laten testen via de ingebouwde interactieve console. Raadpleeg het [Overzicht van de Azure API Management-ontwikkelaarsportal](api-management-howto-developer-portal.md#cors) voor de details.
+Schakel CORS (Cross-Origin Resource Sharing) in voor uw API's om de bezoekers van de portal de API's te laten testen via de ingebouwde interactieve console. Zie veelgestelde vragen over [de Azure API Management-ontwikkelaarsportal voor meer informatie.](developer-portal-faq.md#cors)
 
 ## <a name="next-steps"></a>Volgende stappen
 

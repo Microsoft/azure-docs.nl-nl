@@ -1,24 +1,24 @@
 ---
 title: 'Zelfstudie: Uw domein en subdomein hosten - Azure DNS'
-description: In deze zelfstudie leert u hoe u Azure DNS kunt configureren om uw DNS-zones te hosten.
+description: In deze zelfstudie leert u hoe u Azure DNS dns-zones te hosten.
 services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
-ms.date: 3/11/2019
+ms.date: 04/19/2021
 ms.author: rohink
-ms.openlocfilehash: a8f64ab3141459142def12a1758b0fe0a94ca432
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c9c0568eb4d8a7403fc29f34a4c4e9f6e0fadecd
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92282164"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107738860"
 ---
 # <a name="tutorial-host-your-domain-in-azure-dns"></a>Zelfstudie: Uw domein hosten in Azure DNS
 
 U kunt Azure DNS gebruiken om uw DNS-domein te hosten en uw DNS-records te beheren. Door uw domeinen in Azure te hosten, kunt u uw DNS-records met dezelfde referenties, API's, hulpprogramma's en facturering beheren als voor uw andere Azure-services.
 
-Stel dat u het domein contoso.net koopt van een domeinnaamregistrar en vervolgens een zone met de naam contoso.net in Azure DNS maakt. Omdat u de eigenaar van het domein bent, zal uw registrar u de optie bieden om de adressen van NS-records (naamserver) te configureren voor uw domein. De registrar slaat deze NS-records op in de bovenliggende .NET-zone. Internetgebruikers over de hele wereld worden daarna naar uw domein in de Azure DNS-zone omgeleid wanneer ze proberen DNS-records om te zetten in contoso.net.
+Stel dat u het domein koopt `contoso.net` bij een domeinnaamregistrar en vervolgens een zone maakt met de naam `contoso.net` in Azure DNS. Omdat u de eigenaar van het domein bent, biedt uw registrar u de optie om de naamserverrecords (NS)-records voor uw domein te configureren. De registrar slaat deze NS-records op in de bovenliggende .NET-zone. Internetgebruikers over de hele wereld worden daarna naar uw domein in de Azure DNS-zone omgeleid wanneer ze proberen DNS-records om te zetten in contoso.net.
 
 
 In deze zelfstudie leert u het volgende:
@@ -36,7 +36,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 U moet een domeinnaam beschikbaar hebben voor testen die u kunt hosten in Azure DNS. U moet het volledige beheer over dit domein hebben. Volledig beheer betekent ook de mogelijkheid om naamserverrecords (NS) voor het domein in te stellen.
 
-In dit voorbeeld verwijzen we naar het bovenliggende domein als **contoso.net**
+In dit voorbeeld verwijzen we naar het bovenliggende domein, een `contoso.net` .
 
 ## <a name="create-a-dns-zone"></a>Een DNS-zone maken
 
@@ -45,27 +45,27 @@ In dit voorbeeld verwijzen we naar het bovenliggende domein als **contoso.net**
    ![DNS-zone](./media/dns-delegate-domain-azure-dns/openzone650.png)
 
 1. Selecteer **DNS-zone maken**.
-1. Voer op de pagina **DNS-zone maken** de volgende waarden in en selecteer vervolgens **Maken**: bijvoorbeeld **contoso.net**
-      > [!NOTE] 
-      > Raadpleeg de [zelfstudie Een nieuwe onderliggende DNS-zone maken](./tutorial-public-dns-zones-child.md) als de nieuwe zone die u maakt, een onderliggende zone is (bijvoorbeeld bovenliggende zone = contoso.net, onderliggende zone = onderliggendezone.contoso.net)
+
+1. Voer op **de pagina DNS-zone** maken de volgende waarden in en selecteer **vervolgens Maken.** Bijvoorbeeld `contoso.net`.
+
+   > [!NOTE] 
+   > Als de nieuwe zone die u maakt een onderliggende zone is (bijvoorbeeld Bovenliggende zone = Onderliggende zone = ), raadpleegt u de zelfstudie Een nieuwe onderliggende `contoso.net` `child.contoso.net` [DNS-zone maken](./tutorial-public-dns-zones-child.md)
 
     | **Instelling** | **Waarde** | **Details** |
     |--|--|--|
-    | **Projectdetails:**  |  |  |
     | **Resourcegroep**    | ContosoRG | Maak een resourcegroep. De naam van de resourcegroep moet uniek zijn binnen het abonnement dat u hebt geselecteerd. De locatie van de resourcegroep heeft geen invloed op de DNS-zone. De locatie van de DNS-zone is altijd 'global' en wordt niet weergegeven. |
-    | **Exemplaardetails:** |  |  |
     | **Onderliggende zone**        | uitgeschakeld laten | Omdat deze zone **geen** [onderliggende zone](./tutorial-public-dns-zones-child.md) is, moet u dit selectievakje uitgeschakeld laten |
-    | **Name**              | contoso.net | Veld voor de naam van de bovenliggende zone      |
+    | **Name**              | `contoso.net` | Veld voor de naam van de bovenliggende zone      |
     | **Locatie**          | VS - oost | Dit veld is gebaseerd op de locatie die is geselecteerd tijdens het maken van de resourcegroep  |
     
 
 ## <a name="retrieve-name-servers"></a>Naamservers ophalen
 
-Voordat u uw DNS-zone naar Azure DNS kunt delegeren, moet u weten wat de naamservers voor uw zone zijn. Telkens wanneer er een zone wordt gemaakt, wijst Azure DNS naamservers uit een groep toe.
+Voordat u uw DNS-zone naar Azure DNS kunt delegeren, moet u weten wat de naamservers voor uw zone zijn. Azure DNS geeft naamservers uit een groep telkens als een zone wordt gemaakt.
 
-1. Nu de DNS-zone is gemaakt, selecteert u **Alle resources** in het deelvenster **Favorieten** in Azure Portal. Selecteer op de pagina **Alle resources** uw DNS-zone. Als het abonnement dat u hebt geselecteerd al verschillende resources bevat, kunt u uw domeinnaam invoeren in het vak **Filteren op naam** om gemakkelijk toegang te krijgen tot de toepassingsgateway. 
+1. Nu de DNS-zone is gemaakt, selecteert u **Alle resources** in het deelvenster **Favorieten** in Azure Portal. Selecteer op de pagina **Alle resources** uw DNS-zone. Als het abonnement dat u hebt geselecteerd al verschillende resources heeft, kunt u uw domeinnaam invoeren in het vak **Filteren** op naam om eenvoudig toegang te krijgen tot de toepassingsgateway. 
 
-1. U vindt de naamservers op de pagina DNS-zone. In dit voorbeeld zijn de naamservers *ns1-01.azure-dns.com*, *ns2 01.azure dns.net*, *ns3-01.azure-dns.org* en *ns4-01.azure-dns.info* aan de zone contoso.net toegewezen:
+1. U vindt de naamservers op de pagina DNS-zone. In dit voorbeeld is aan de zone `contoso.net` naamservers `ns1-01.azure-dns.com` , , * en `ns2-01.azure-dns.net` `ns3-01.azure-dns.org` `ns4-01.azure-dns.info` toegewezen:
 
    ![Lijst met naamservers](./media/dns-delegate-domain-azure-dns/viewzonens500.png)
 
@@ -73,7 +73,7 @@ Azure DNS maakt automatisch gezaghebbende NS-records in uw zone die de toegeweze
 
 ## <a name="delegate-the-domain"></a>Het domein delegeren
 
-Nu de DNS-zone is gemaakt en u de naamservers hebt, moet u het bovenliggende domein bijwerken met de Azure DNS-naamservers. Elke registrar heeft zijn eigen hulpprogramma's voor DNS-beheer om de naamserverrecords voor een domein te wijzigen. 
+Zodra de DNS-zone is gemaakt en u de naamservers hebt, moet u het bovenliggende domein bijwerken met de Azure DNS naamservers. Elke registrar heeft zijn eigen hulpprogramma's voor DNS-beheer om de naamserverrecords voor een domein te wijzigen. 
 
 1. Ga naar de DNS-beheerpagina van de registrar, bewerk de NS-records en vervang de NS-records door de Azure DNS-naamservers.
 
@@ -86,7 +86,7 @@ Delegeringen die gebruikmaken van de naamservers in uw eigen zone, ook wel *vani
 
 ## <a name="verify-the-delegation"></a>Controleren of de delegatie werkt
 
-Nadat u het delegeren hebt voltooid, kunt u controleren of het werkt door een hulpprogramma zoals *nslookup* te gebruiken om een query op het SOA-record (Start of Authority) voor uw zone uit te voeren. Het SOA-record wordt automatisch gemaakt wanneer de zone wordt gemaakt. Mogelijk moet u tien minuten of langer wachten nadat het delegeren is voltooid voordat u kunt controleren of het werkt. Het kan even duren voordat wijzigingen zijn doorgegeven via het DNS-systeem.
+Nadat u het delegeren hebt voltooid, kunt u controleren of het werkt door een hulpprogramma zoals *nslookup* te gebruiken om een query op het SOA-record (Start of Authority) voor uw zone uit te voeren. Het SOA-record wordt automatisch gemaakt wanneer de zone wordt gemaakt. Mogelijk moet u na het voltooien van de delegering ten minste tien minuten wachten voordat u kunt controleren of de overdracht werkt. Het kan even duren voordat wijzigingen zijn doorgegeven via het DNS-systeem.
 
 U hoeft de Azure DNS-naamservers niet op te geven. Als de overdracht correct is ingesteld, zal het standaard-DNS-omzettingsproces de naamservers automatisch vinden.
 
@@ -116,7 +116,7 @@ U hoeft de Azure DNS-naamservers niet op te geven. Als de overdracht correct is 
 
 U kunt de resourcegroep **contosoRG** behouden als u de volgende zelfstudie wilt doen. Verwijder anders de resourcegroep **contosoRG** om de resources die in deze zelfstudie zijn gemaakt te verwijderen.
 
-- Selecteer de resourcegroep **contosoRG** en selecteer vervolgens **Resourcegroep verwijderen**. 
+Selecteer de resourcegroep **contosoRG** en selecteer vervolgens **Resourcegroep verwijderen**. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

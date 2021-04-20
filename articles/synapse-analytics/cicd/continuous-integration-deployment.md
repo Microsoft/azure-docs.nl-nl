@@ -1,19 +1,19 @@
 ---
 title: Continue integratie en levering voor Synapse-werkruimte
-description: Leer hoe u continue integratie en levering kunt gebruiken om wijzigingen in de werkruimte van de ene omgeving (ontwikkeling, test, productie) in een andere te implementeren.
-author: liud
+description: Leer hoe u continue integratie en levering kunt gebruiken om wijzigingen in de werkruimte van de ene omgeving (ontwikkeling, test, productie) in de andere te implementeren.
+author: liudan66
 ms.service: synapse-analytics
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 5f68e3698f8616b581d319bc19d2a8c636c79c36
-ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
+ms.openlocfilehash: 833478d956560c981bd6cc3ba03b48bb602f563c
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107566083"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739670"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse werkruimte
 
@@ -21,16 +21,61 @@ ms.locfileid: "107566083"
 
 Continue integratie (CI) is het proces van het automatiseren van het bouwen en testen van code telkens als een teamlid wijzigingen aan het versiebeheer doorvoering. Continue implementatie (CD) is het proces voor het bouwen, testen, configureren en implementeren van meerdere test- of faseringsomgevingen naar een productieomgeving.
 
-Voor Azure Synapse werkruimte verplaatsen continue integratie en levering (CI/CD) alle entiteiten van de ene omgeving (ontwikkeling, test, productie) naar een andere. Als u uw werkruimte wilt promoveren naar een andere werkruimte, zijn er twee onderdelen: gebruik Azure Resource Manager [sjablonen](../../azure-resource-manager/templates/overview.md) om werkruimte-resources (pools en werkruimte) te maken of bij te werken; artefacten (SQL-scripts, notebook, Spark-taakdefinitie, pijplijnen, gegevenssets, gegevensstromen, en meer) migreren met Synapse CI/CD-hulpprogramma's in Azure DevOps. 
+In een Azure Synapse Analytics verplaatst continue integratie en levering (CI/CD) alle entiteiten van de ene omgeving (ontwikkeling, test, productie) naar een andere. Als u uw werkruimte wilt promoveren naar een andere werkruimte, zijn er twee onderdelen. Gebruik eerst een [Azure Resource Manager sjabloon (ARM-sjabloon) om](../../azure-resource-manager/templates/overview.md) werkruimte-resources (pools en werkruimte) te maken of bij te werken. Migreert vervolgens artefacten (SQL-scripts, notebook, Spark-taakdefinitie, pijplijnen, gegevenssets, gegevensstromen, Azure Synapse Analytics CI/CD-hulpprogramma's in Azure DevOps). 
 
-In dit artikel wordt beschreven hoe u een Azure-release-pijplijn gebruikt om de implementatie van een Synapse-werkruimte in meerdere omgevingen te automatiseren.
+In dit artikel wordt beschreven hoe u een Azure DevOps-release-pijplijn gebruikt om de implementatie van een Azure Synapse in meerdere omgevingen te automatiseren.
 
 ## <a name="prerequisites"></a>Vereisten
 
--   De werkruimte die wordt gebruikt voor ontwikkeling is geconfigureerd met een Git-opslagplaats in Studio. Zie [Broncodebeheer in Synapse Studio.](source-control.md)
--   Er is een Azure DevOps-project voorbereid voor het uitvoeren van de release-pijplijn.
+Deze vereisten en configuraties moeten zijn geïmplementeerd om de implementatie van een Azure Synapse in meerdere omgevingen te automatiseren.
 
-## <a name="set-up-a-release-pipelines"></a>Een release-pijplijnen instellen
+### <a name="azure-devops"></a>Azure DevOps
+
+- Er is een Azure DevOps-project voorbereid voor het uitvoeren van de release-pijplijn.
+- [Verleen alle gebruikers die de code 'Basic' incheckt toegang](/azure/devops/organizations/accounts/add-organization-users?view=azure-devops&tabs=preview-page)op organisatieniveau, zodat ze de repo kunnen zien.
+- Verleen eigendomsrechten aan de Azure Synapse-repo.
+- Zorg ervoor dat u een zelf-hostende Azure DevOps VM-agent hebt gemaakt of gebruik een gehoste Azure DevOps-agent.
+- Machtigingen voor [het maken van een Azure Resource Manager-serviceverbinding voor de resourcegroep](/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml).
+- Een Azure Active Directory (Azure AD) moet de [extensie Azure DevOps Synapse Workspace Deployment Agent installeren in de Azure DevOps-organisatie](/azure/devops/marketplace/install-extension).
+- Maak of benoem een bestaand serviceaccount om de pijplijn als uit te voeren. U kunt een persoonlijk toegang token gebruiken in plaats van een serviceaccount, maar uw pijplijnen werken niet nadat het gebruikersaccount is verwijderd.
+
+### <a name="azure-active-directory"></a>Azure Active Directory
+
+- Maak in Azure AD een service-principal voor implementatie. De synapse-werkruimte-implementatietaak biedt geen ondersteuning voor het gebruik van een beheerde identiteit in verion 1* en eerder.
+- Azure AD-beheerdersrechten zijn vereist voor deze actie.
+
+### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
+
+> [!NOTE]
+> U kunt deze vereisten automatiseren en implementeren met behulp van dezelfde pijplijn, een ARM-sjabloon of de Azure CLI, maar het proces wordt niet in dit artikel beschreven.
+
+- De 'bronwerkruimte' die wordt gebruikt voor ontwikkeling, moet worden geconfigureerd met een Git-opslagplaats in Synapse Studio. Zie Broncodebeheer [in](source-control.md#configuration-method-2-manage-hub)Synapse Studio.
+
+- Een lege werkruimte om in te implementeren. De lege werkruimte instellen:
+
+  1. Maak een nieuwe Azure Synapse Analytics werkruimte.
+  1. Verleen de VM-agent en de inzendersrechten van de service-principal aan de resourcegroep waarin de nieuwe werkruimte wordt gehost.
+  1. Configureer in de nieuwe werkruimte de verbinding met de Git-repo niet.
+  1. Zoek in Azure Portal de nieuwe werkruimte Azure Synapse Analytics werkruimte en verleen uzelf en iedereen die de Azure DevOps-pijplijn gaat uitvoeren Azure Synapse Analytics eigendomsrechten voor de werkruimte. 
+  1. Voeg de Azure DevOps VM-agent en de service-principal toe aan de rol Inzender voor de werkruimte (deze moet zijn overgenomen, maar controleer of dit het is).
+  1. Ga in Azure Synapse Analytics werkruimte naar **Studio**  >    >  **IAM beheren.** Voeg de Azure DevOps VM-agent en de service-principal toe aan de groep werkruimtebeheerders.
+  1. Open het opslagaccount dat wordt gebruikt voor de werkruimte. Voeg in IAM de VM-agent en de service-principal toe aan de rol Inzender voor opslagblobgegevens selecteren.
+  1. Maak een sleutelkluis in het ondersteuningsabonnement en zorg ervoor dat zowel de bestaande werkruimte als de nieuwe werkruimte ten minste de machtigingEN GET en LIST voor de kluis hebben.
+  1. De geautomatiseerde implementatie werkt alleen als de verbindingsreeksen die zijn opgegeven in uw gekoppelde services zich in de sleutelkluis hebben.
+
+### <a name="additional-prerequisites"></a>Aanvullende vereisten
+ 
+ - Spark-pools en zelf-hostende integratieruntimes worden niet in een pijplijn gemaakt. Als u een gekoppelde service hebt die gebruikmaakt van een zelf-hostende Integration Runtime, maakt u deze handmatig in de nieuwe werkruimte.
+ - Als u notebooks ontwikkelt en deze hebt verbonden met een Spark-pool, maakt u de Spark-pool opnieuw in de werkruimte.
+ - Notebooks die zijn gekoppeld aan een Spark-pool die niet bestaat in een omgeving, worden niet geïmplementeerd.
+ - De namen van de Spark-pool moeten in beide werkruimten hetzelfde zijn.
+ - Noem alle databases, SQL-pools en andere resources hetzelfde in beide werkruimten.
+ - Als uw inrichtende SQL-pools worden onderbroken wanneer u probeert te implementeren, kan de implementatie mislukken.
+
+Zie CI CD in Azure Synapse Analytics [Part 4 - The Release Pipeline voor meer informatie.](https://techcommunity.microsoft.com/t5/data-architecture-blog/ci-cd-in-azure-synapse-analytics-part-4-the-release-pipeline/ba-p/2034434) 
+
+
+## <a name="set-up-a-release-pipeline"></a>Een release-pijplijn instellen
 
 1.  Open [in Azure DevOps](https://dev.azure.com/)het project dat voor de release is gemaakt.
 
@@ -58,9 +103,9 @@ In dit artikel wordt beschreven hoe u een Azure-release-pijplijn gebruikt om de 
 
     ![Een artefact toevoegen](media/release-creation-publish-branch.png)
 
-## <a name="set-up-a-stage-task-for-arm-resource-create-and-update"></a>Een fasetaak instellen voor het maken en bijwerken van ARM-resources 
+## <a name="set-up-a-stage-task-for-an-arm-template-to-create-and-update-resource"></a>Een fasetaak instellen voor een ARM-sjabloon om een resource te maken en bij te werken 
 
-Voeg een Azure Resource Manager implementatietaak toe om resources te maken of bij te werken, inclusief werkruimten en pools:
+Als u een ARM-sjabloon hebt om een resource te implementeren, zoals een Azure Synapse-werkruimte, Spark- en SQL-pools of een sleutelkluis, voegt u een Azure Resource Manager Deployment-taak toe om deze resources te maken of bij te werken:
 
 1. Selecteer fasetaken weergeven in de **faseweergave.**
 
@@ -68,9 +113,9 @@ Voeg een Azure Resource Manager implementatietaak toe om resources te maken of b
 
 1. Maak een nieuwe taak. Zoek naar **ARM-sjabloonimplementatie** en selecteer **vervolgens Toevoegen.**
 
-1. Selecteer in de implementatietaak het abonnement, de resourcegroep en de locatie voor de doelwerkruimte. Geef indien nodig referenties op.
+1. Selecteer in de taak Implementatie het abonnement, de resourcegroep en de locatie voor de doelwerkruimte. Geef indien nodig referenties op.
 
-1. Selecteer **resourcegroep** maken of bijwerken **in de lijst Actie.**
+1. Selecteer **resourcegroep** maken of bijwerken in **de lijst Actie.**
 
 1. Selecteer de knop met het beletselteken (**...**) naast het **vak** Sjabloon. Blader naar de sjabloon Azure Resource Manager doelwerkruimte
 
@@ -87,11 +132,11 @@ Voeg een Azure Resource Manager implementatietaak toe om resources te maken of b
     ![Toestemming](media/release-creation-grant-permission.png)
 
  > [!WARNING]
-> In de implementatiemodus Volledig worden resources verwijderd die bestaan in **de resourcegroep,** maar niet zijn opgegeven in de nieuwe Resource Manager sjabloon. Raadpleeg implementatiemodi voor Azure Resource Manager [meer informatie](../../azure-resource-manager/templates/deployment-modes.md)
+> In de implementatiemodus Voltooien worden resources verwijderd die in de resourcegroep bestaan, maar niet zijn opgegeven in de nieuwe Resource Manager **sjabloon.** Raadpleeg implementatiemodi voor meer [informatie Azure Resource Manager implementatiemodi](../../azure-resource-manager/templates/deployment-modes.md)
 
-## <a name="set-up-a-stage-task-for-artifacts-deployment"></a>Een fasetaak instellen voor de implementatie van artefacten 
+## <a name="set-up-a-stage-task-for-synapse-artifacts-deployment"></a>Een fasetaak instellen voor de implementatie van Synapse-artefacten 
 
-Gebruik de implementatie-extensie van de [Synapse-werkruimte](https://marketplace.visualstudio.com/items?itemName=AzureSynapseWorkspace.synapsecicd-deploy) om andere items in de Synapse-werkruimte te implementeren, zoals gegevensset, SQL-script, notebook, Spark-taakdefinitie, gegevensstroom, pijplijn, gekoppelde service, referenties en IR (Integration Runtime).  
+Gebruik de [implementatie-extensie van de Synapse-werkruimte](https://marketplace.visualstudio.com/items?itemName=AzureSynapseWorkspace.synapsecicd-deploy) om andere items in de Synapse-werkruimte te implementeren, zoals gegevensset, SQL-script, notebook, Spark-taakdefinitie, gegevensstroom, pijplijn, gekoppelde service, referenties en IR (Integration Runtime).  
 
 1. Zoek en haal de extensie op **via Azure DevOps Marketplace**(https://marketplace.visualstudio.com/azuredevops) 
 
@@ -103,7 +148,7 @@ Gebruik de implementatie-extensie van de [Synapse-werkruimte](https://marketplac
 
 1. Zorg ervoor dat de service-principal van de Azure DevOps-pijplijn de machtiging van het abonnement heeft gekregen en ook is toegewezen als werkruimtebeheerder voor de doelwerkruimte. 
 
-1. Maak een nieuwe taak. Zoek naar **implementatie van Synapse-werkruimte** en selecteer **vervolgens Toevoegen.**
+1. Maak een nieuwe taak. Zoek naar **synapse-werkruimte-implementatie** en selecteer **vervolgens Toevoegen.**
 
      ![Extensie toevoegen](media/add-extension-task.png)
 
@@ -111,26 +156,26 @@ Gebruik de implementatie-extensie van de [Synapse-werkruimte](https://marketplac
 
 1. Selecteer **...** naast het vak **Sjabloonparameters** om het parametersbestand te kiezen.
 
-1. Selecteer de verbinding, resourcegroep en naam van de doelwerkruimte. 
+1. Selecteer de verbinding, de resourcegroep en de naam van de doelwerkruimte. 
 
-1. Selecteer **...** naast het vak **Sjabloonparameters overschrijven** en voer de gewenste parameterwaarden in voor de doelwerkruimte. 
+1. Selecteer **...** naast het vak **Sjabloonparameters** overschrijven en voer de gewenste parameterwaarden in voor de doelwerkruimte, inclusief verbindingsreeksen en accountsleutels die worden gebruikt in uw gekoppelde services. [Klik hier voor meer informatie] (https://techcommunity.microsoft.com/t5/data-architecture-blog/ci-cd-in-azure-synapse-analytics-part-4-the-release-pipeline/ba-p/2034434)
 
     ![Synapse-werkruimte implementeren](media/create-release-artifacts-deployment.png)
 
 > [!IMPORTANT]
-> In CI/CD-scenario's moet het type Integration Runtime (IR) in verschillende omgevingen hetzelfde zijn. Als u bijvoorbeeld een zelf-hostende IR in de ontwikkelomgeving hebt, moet dezelfde IR ook van het type zelf-hostend zijn in andere omgevingen, zoals test en productie. En als u integratieruntimes in meerdere fasen deelt, moet u de integratieruntimes configureren als gekoppelde zelf-hostend in alle omgevingen, zoals ontwikkeling, testen en productie.
+> In CI/CD-scenario's moet het type Integratieruntime (IR) in verschillende omgevingen hetzelfde zijn. Als u bijvoorbeeld een zelf-hostende IR in de ontwikkelomgeving hebt, moet dezelfde IR ook van het type zelf-hostend zijn in andere omgevingen, zoals test en productie. En als u integratieruntimes in meerdere fasen deelt, moet u de integratieruntimes configureren als gekoppelde zelf-hostend in alle omgevingen, zoals ontwikkeling, testen en productie.
 
 ## <a name="create-release-for-deployment"></a>Release voor implementatie maken 
 
-Nadat u alle wijzigingen hebt op slaan, kunt u **Release maken selecteren** om handmatig een release te maken. Zie Azure [DevOps-releasetriggers](/azure/devops/pipelines/release/triggers) als u het maken van releases wilt automatiseren
+Nadat u alle wijzigingen hebt op slaan, kunt u **Release maken selecteren** om handmatig een release te maken. Zie [Azure DevOps-releasetriggers](/azure/devops/pipelines/release/triggers) als u het maken van releases wilt automatiseren
 
-   ![Release maken selecteren](media/release-creation-manually.png)
+   ![Selecteer Release maken](media/release-creation-manually.png)
 
 ## <a name="use-custom-parameters-of-the-workspace-template"></a>Aangepaste parameters van de werkruimtesjabloon gebruiken 
 
-U gebruikt geautomatiseerde CI/CD en u wilt bepaalde eigenschappen wijzigen tijdens de implementatie, maar de eigenschappen worden niet standaard geparameteriseerd. In dit geval kunt u de standaardparametersjabloon overschrijven.
+U gebruikt geautomatiseerde CI/CD en u wilt enkele eigenschappen wijzigen tijdens de implementatie, maar de eigenschappen worden niet standaard geparameteriseerd. In dit geval kunt u de standaardparametersjabloon overschrijven.
 
-Als u de standaardparametersjabloon wilt overschrijven, moet u een aangepaste parametersjabloon maken, een bestand met de naam **template-parameters-definition.jsop** in de hoofdmap van uw git-samenwerkings branch. U moet die exacte bestandsnaam gebruiken. Wanneer u publiceert vanuit de samenwerkingsbranche, leest de Synapse-werkruimte dit bestand en gebruikt de configuratie ervan om de parameters te genereren. Als er geen bestand wordt gevonden, wordt de standaardparametersjabloon gebruikt.
+Als u de standaardparametersjabloon wilt overschrijven, moet u een aangepaste parametersjabloon maken, een bestand met de naam **template-parameters-definition.js** in de hoofdmap van uw git-samenwerkingstak. U moet die exacte bestandsnaam gebruiken. Wanneer u publiceert vanuit de samenwerkingsbranche, leest de Synapse-werkruimte dit bestand en gebruikt de configuratie ervan om de parameters te genereren. Als er geen bestand wordt gevonden, wordt de standaardparametersjabloon gebruikt.
 
 ### <a name="custom-parameter-syntax"></a>Aangepaste parametersyntaxis
 
@@ -143,7 +188,7 @@ Hier volgen enkele richtlijnen voor het maken van het aangepaste parametersbesta
       * `=` betekent dat de huidige waarde als de standaardwaarde voor de parameter moet worden gebruikt.
       * `-` betekent dat de standaardwaarde voor de parameter niet behouden.
       * `|` is een speciaal geval voor geheimen uit Azure Key Vault voor verbindingsreeksen of sleutels.
-   * `<name>` is de naam van de parameter . Als deze leeg is, krijgt deze de naam van de eigenschap. Als de waarde begint met een `-` teken, wordt de naam ingekort. Zou bijvoorbeeld `AzureStorage1_properties_typeProperties_connectionString` worden ingekort tot `AzureStorage1_connectionString` .
+   * `<name>` is de naam van de parameter . Als deze leeg is, krijgt deze de naam van de eigenschap. Als de waarde begint met een `-` teken, wordt de naam ingekort. Wordt bijvoorbeeld `AzureStorage1_properties_typeProperties_connectionString` ingekort tot `AzureStorage1_connectionString` .
    * `<stype>` is het type parameter. Als `<stype>` leeg is, is het standaardtype `string` . Ondersteunde `string` waarden: `securestring` , , , , en `int` `bool` `object` `secureobject` `array` .
 * Het opgeven van een matrix in het bestand geeft aan dat de overeenkomende eigenschap in de sjabloon een matrix is. Synapse doorkeert alle objecten in de matrix met behulp van de opgegeven definitie. Het tweede object, een tekenreeks, wordt de naam van de eigenschap, die wordt gebruikt als de naam voor de parameter voor elke iteratie.
 * Een definitie kan niet specifiek zijn voor een resource-exemplaar. Elke definitie is van toepassing op alle resources van dat type.
@@ -225,6 +270,7 @@ Hier ziet u een voorbeeld van hoe een definitie van een parametersjabloon eruitz
     }
 }
 ```
+
 Hier volgt een uitleg van hoe de voorgaande sjabloon wordt samengesteld, onderverdeeld naar resourcetype.
 
 #### <a name="notebooks"></a>Notebooks 
@@ -262,19 +308,19 @@ Hier volgt een uitleg van hoe de voorgaande sjabloon wordt samengesteld, onderve
 
 ## <a name="best-practices-for-cicd"></a>Best practices voor CI/CD
 
-Als u Git-integratie met uw Synapse-werkruimte gebruikt en een CI/CD-pijplijn hebt die uw wijzigingen verplaatst van ontwikkeling naar test en vervolgens naar productie, raden we de volgende best practices aan:
+Als u Git-integratie met uw Azure Synapse-werkruimte gebruikt en een CI/CD-pijplijn hebt die uw wijzigingen verplaatst van ontwikkeling naar test en vervolgens naar productie, raden we u de volgende best practices aan:
 
--   **Git-integratie.** Configureer alleen uw Synapse-ontwikkelwerkruimte met Git-integratie. Wijzigingen in test- en productiewerkruimten worden geïmplementeerd via CI/CD en hebben geen Git-integratie nodig.
+-   **Git-integratie.** Configureer alleen uw ontwikkelwerkruimte Azure Synapse git-integratie. Wijzigingen in test- en productiewerkruimten worden geïmplementeerd via CI/CD en hebben geen Git-integratie nodig.
 -   **Pools voorbereiden vóór de migratie van artefacten.** Als u een SQL-script of notebook hebt gekoppeld aan pools in de ontwikkelwerkruimte, wordt dezelfde naam van pools in verschillende omgevingen verwacht. 
 -   **Infrastructure as Code (IaC).** Voor het beheer van infrastructuur (netwerken, virtuele machines, load balancers en verbindingstopologie) in een beschrijvend model wordt dezelfde versiebeheer gebruikt als het DevOps-team gebruikt voor broncode. 
 -   **Andere**. Zie [best practices voor ADF-artefacten](../../data-factory/continuous-integration-deployment.md#best-practices-for-cicd)
 
 ## <a name="troubleshooting-artifacts-deployment"></a>Problemen met de implementatie van artefacten oplossen 
 
-### <a name="use-the-synapse-workspace-deployment-task"></a>De implementatietaak van de Synapse-werkruimte gebruiken
+### <a name="use-the-azure-synapse-analytics-workspace-deployment-task"></a>De implementatietaak Azure Synapse Analytics werkruimte gebruiken
 
-In Synapse zijn er een aantal artefacten die geen ARM-resources zijn. Dit wijkt af van Azure Data Factory. De arm-sjabloonimplementatietaak werkt niet goed om Synapse-artefacten te implementeren
+In Azure Synapse Analytics zijn er een aantal artefacten die geen ARM-resources zijn. Dit wijkt af van Azure Data Factory. De implementatietaak van de ARM-sjabloon werkt niet goed om de Azure Synapse Analytics te implementeren.
  
 ### <a name="unexpected-token-error-in-release"></a>Onverwachte tokenfout in release
 
-Wanneer uw parameterbestand parameterwaarden bevat die geen escape-teken hebben, kan de release-pijplijn het bestand niet parseren en wordt de fout 'onverwacht token' gegenereerd. We raden u aan parameters te overschrijven of Azure KeyVault te gebruiken om parameterwaarden op te halen. U kunt ook dubbele escapetekens gebruiken als tijdelijke oplossing.
+Wanneer uw parameterbestand parameterwaarden bevat die geen escape-teken hebben, kan de release-pijplijn het bestand niet parseren en wordt de fout 'onverwacht token' gegenereerd. We raden u aan parameters te overschrijven of Azure Key Vault parameterwaarden op te halen. U kunt ook dubbele escapetekens gebruiken als tijdelijke oplossing.

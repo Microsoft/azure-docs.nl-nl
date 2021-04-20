@@ -1,6 +1,6 @@
 ---
-title: Het nalevings dashboard voor regelgeving gebruiken in Azure Security Center
-description: Meer informatie over het toevoegen en verwijderen van reglementaire normen van het regelgevings dashboard voor naleving in Security Center
+title: Het dashboard voor naleving van regelgeving gebruiken in Azure Security Center
+description: Informatie over het toevoegen en verwijderen van regelgevingsstandaarden uit het dashboard voor naleving van regelgeving in Security Center
 services: security-center
 documentationcenter: na
 author: memildin
@@ -13,63 +13,63 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 768f686889663d9b1af4b88d84b361ac9460a5a0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dab6b504fe026324251b7284fc3abdb52bb9911a
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100381729"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107738950"
 ---
-# <a name="customize-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>De set van standaarden aanpassen in het dash board nalevings regelgeving
+# <a name="customize-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>De set standaarden aanpassen in uw dashboard voor naleving van regelgeving
 
-Azure Security Center vergelijkt voortdurend de configuratie van uw resources met vereisten in de industrie normen,-voor schriften en-benchmarks. Het **nalevings dashboard** van de regelgeving biedt inzicht in uw nalevings postuur op basis van de manier waarop u aan specifieke nalevings vereisten voldoet.
-
-
-## <a name="how-are-regulatory-compliance-standards-represented-in-security-center"></a>Hoe worden nalevings normen voor regelgeving weer gegeven in Security Center?
-
-Industrie normen, reglementaire normen en benchmarks worden weer gegeven in het dash board voor naleving van de regelgeving van de Security Center. Elke standaard is een initiatief dat is gedefinieerd in Azure Policy.
-
-Als u de nalevings gegevens wilt zien die zijn toegewezen als beoordelingen in uw dash board, voegt u een nalevings standaard toe aan uw beheer groep of abonnement vanuit de pagina **beveiligings beleid** . Zie [werken met beveiligings beleid](tutorial-security-policy.md)voor meer informatie over Azure Policy en initiatieven.
-
-Wanneer u een Standard-of Bench Mark aan het geselecteerde bereik hebt toegewezen, wordt de standaard weer gegeven in het dash board nalevings beleid met alle gekoppelde nalevings gegevens die zijn toegewezen als evaluaties. U kunt ook samenvattings rapporten downloaden voor de standaarden die zijn toegewezen.
-
-Micro soft houdt zelf de regelgevings normen bij en verbetert de dekking van een aantal pakketten in de loop van de tijd. Wanneer micro soft nieuwe inhoud voor het initiatief uitgeeft, wordt deze automatisch in het dash board weer gegeven als nieuw beleid dat is toegewezen aan besturings elementen in de standaard.
+Azure Security Center vergelijkt voortdurend de configuratie van uw resources met vereisten in industrienormen, regelgeving en benchmarks. Het **dashboard voor naleving van** regelgeving biedt inzicht in uw nalevingsstatus op basis van hoe u aan specifieke nalevingsvereisten voldoet.
 
 
-## <a name="what-regulatory-compliance-standards-are-available-in-security-center"></a>Welke normen voor naleving van regelgeving zijn beschikbaar in Security Center?
+## <a name="how-are-regulatory-compliance-standards-represented-in-security-center"></a>Hoe worden nalevingsstandaarden voor regelgeving weergegeven in Security Center?
 
-Aan elk abonnement is standaard de **Azure Security-benchmark** waarde toegewezen. Dit zijn de door micro soft ontworpen, specifieke Azure-richt lijnen voor de aanbevolen procedures voor beveiliging en naleving op basis van algemene nalevings kaders. [Meer informatie over Azure Security-benchmark](../security/benchmarks/introduction.md).
+Industriestandaarden, regelgevingsstandaarden en benchmarks worden weergegeven in Security Center dashboard voor naleving van regelgeving. Elke standaard is een initiatief dat is gedefinieerd in Azure Policy.
 
-U kunt ook standaarden toevoegen zoals:
+Als u nalevingsgegevens wilt zien die als evaluaties in uw dashboard zijn toegevoegd, voegt u een nalevingsstandaard toe aan uw beheergroep of abonnement op de **pagina Beveiligingsbeleid.** Zie Werken met beveiligingsbeleid Azure Policy meer informatie over Azure Policy [en initiatieven.](tutorial-security-policy.md)
+
+Wanneer u een standaard of benchmark hebt toegewezen aan uw geselecteerde bereik, wordt de standaard weergegeven in uw dashboard voor naleving van regelgeving met alle bijbehorende nalevingsgegevens die zijn toegewezen als evaluaties. U kunt ook samenvattingsrapporten downloaden voor alle toegewezen standaarden.
+
+Microsoft houdt de regelgevingsstandaarden zelf bij en verbetert de dekking in sommige pakketten na een bepaalde periode automatisch. Wanneer Microsoft nieuwe inhoud voor het initiatief publiceert, wordt deze automatisch in uw dashboard weergegeven als nieuw beleid dat is toe te passen aan besturingselementen in de standaard.
+
+
+## <a name="what-regulatory-compliance-standards-are-available-in-security-center"></a>Welke nalevingsstandaarden voor regelgeving zijn beschikbaar in Security Center?
+
+Standaard is aan elk abonnement de **Azure Security-benchmark** toegewezen. Dit zijn de door Microsoft opgestelde, azure-specifieke richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingskaders. [Meer informatie over Azure Security-benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction).
+
+U kunt ook standaarden toevoegen, zoals:
 
 - NIST SP 800-53 R4
 - SWIFT CSP CSCF-v2020
-- UK-officiële en UK NHS
+- UK Official en UK NHS
 - Canada Federal PBMM
 - Azure CIS 1.1.0
 
-Standaarden worden toegevoegd aan het dash board zodra deze beschikbaar komen.
+Standaarden worden toegevoegd aan het dashboard zodra ze beschikbaar komen.
 
 
-## <a name="add-a-regulatory-standard-to-your-dashboard"></a>Een regelgevings norm toevoegen aan uw dash board
+## <a name="add-a-regulatory-standard-to-your-dashboard"></a>Een regelgevingsstandaard toevoegen aan uw dashboard
 
-In de volgende stappen wordt uitgelegd hoe u een pakket kunt toevoegen om te controleren of u voldoet aan een van de ondersteunde regelgevings standaarden.
+In de volgende stappen wordt uitgelegd hoe u een pakket toevoegt om uw naleving van een van de ondersteunde regelgevingsstandaarden te bewaken.
 
 > [!NOTE]
-> Als u standaarden wilt toevoegen aan uw dash board, moet Azure Defender zijn ingeschakeld voor het abonnement. Daarnaast hebben alleen gebruikers die eigenaar of Inzender zijn de benodigde machtigingen om nalevings standaarden toe te voegen. 
+> Als u standaarden wilt toevoegen aan uw dashboard, moet het abonnement Azure Defender ingeschakeld. Bovendien hebben alleen gebruikers die eigenaar of beleidsbijdrager zijn de benodigde machtigingen om nalevingsstandaarden toe te voegen. 
 
-1. Selecteer op de zijbalk van Security Center **reglementaire naleving** om het nalevings dashboard voor regelgeving te openen. Hier kunt u de nalevings standaarden zien die momenteel zijn toegewezen aan de momenteel geselecteerde abonnementen.   
+1. Selecteer Security Center de zijbalk Van  regelgeving om het dashboard voor naleving van regelgeving te openen. Hier ziet u de nalevingsstandaarden die momenteel zijn toegewezen aan de geselecteerde abonnementen.   
 
-1. Selecteer aan de bovenkant van de pagina **nalevings beleid beheren**. De pagina beleids beheer wordt weer gegeven.
+1. Selecteer boven aan de pagina Nalevingsbeleid **beheren.** De pagina Beleidsbeheer wordt weergegeven.
 
-1. Selecteer het abonnement of de beheer groep waarvoor u de nalevings postuur wilt beheren. 
+1. Selecteer het abonnement of de beheergroep waarvoor u het nalevingsstatusbeleid voor regelgeving wilt beheren. 
 
     > [!TIP]
-    > U kunt het beste het hoogste bereik selecteren waarvoor de standaard geldt, zodat de nalevings gegevens worden geaggregeerd en bijgehouden voor alle geneste resources. 
+    > We raden u aan het hoogste bereik te selecteren waarvoor de standaard van toepassing is, zodat nalevingsgegevens worden geaggregeerd en bij te houden voor alle geneste resources. 
 
-1. Als u de standaarden wilt toevoegen die relevant zijn voor uw organisatie, klikt u op **meer standaarden toevoegen**. 
+1. Als u de standaarden wilt toevoegen die relevant zijn voor uw organisatie, klikt **u op Meer standaarden toevoegen.** 
 
-1. Op de pagina **nalevings normen voor regelgeving toevoegen** kunt u zoeken naar een van de beschik bare standaarden, waaronder:
+1. Op de **pagina Standaarden voor naleving van regelgeving** toevoegen kunt u zoeken naar een van de beschikbare standaarden, waaronder:
 
     - **NIST SP 800-53 R4**
     - **NIST SP 800 171 R2**
@@ -79,49 +79,49 @@ In de volgende stappen wordt uitgelegd hoe u een pakket kunt toevoegen om te con
     - **HIPAA HITRUST**
     - **Azure CIS 1.1.0**
     
-    ![Reglementaire normen toevoegen aan het nalevings Dashboard van het regelgevend Azure Security Center](./media/update-regulatory-compliance-packages/dynamic-regulatory-compliance-additional-standards.png)
+    ![Regelgevingsstandaarden toevoegen aan Azure Security Center dashboard voor naleving van regelgeving](./media/update-regulatory-compliance-packages/dynamic-regulatory-compliance-additional-standards.png)
 
-1. Selecteer **toevoegen** en voer alle benodigde gegevens in voor het specifieke initiatief, zoals Scope, para meters en herstel.
+1. Selecteer **Toevoegen** en voer alle benodigde gegevens in voor het specifieke initiatief, zoals bereik, parameters en herstel.
 
-1. Selecteer op de zijbalk van Security Center opnieuw **regelgevende naleving** om terug te gaan naar het dash board voor nalevings vereisten.
+1. Selecteer Security Center de zijbalk opnieuw  Naleving van regelgeving om terug te gaan naar het dashboard voor naleving van regelgeving.
 
-    Uw nieuwe standaard wordt weer gegeven in uw lijst met industrie & reglementaire normen. 
+    Uw nieuwe standaard wordt weergegeven in de lijst met industriestandaarden & regelgeving. 
 
     > [!NOTE]
-    > Het kan enkele uren duren voordat een nieuw toegevoegde standaard wordt weer gegeven in het dash board voor compatibiliteit.
+    > Het kan enkele uren duren voordat een nieuw toegevoegde standaard wordt weergegeven in het nalevingsdashboard.
 
     :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Dashboard voor naleving van regelgeving" lightbox="./media/security-center-compliance-dashboard/compliance-dashboard.png":::
 
-## <a name="remove-a-standard-from-your-dashboard"></a>Een standaard uit uw dash board verwijderen
+## <a name="remove-a-standard-from-your-dashboard"></a>Een standaard verwijderen uit uw dashboard
 
-Als een van de opgegeven regelgevings normen niet relevant is voor uw organisatie, is het een eenvoudig proces om ze te verwijderen uit de gebruikers interface. Zo kunt u het nalevings Dashboard van de regelgeving verder aanpassen en zich richten op de standaarden die van toepassing zijn op u.
+Als een van de opgegeven regelgevingsstandaarden niet relevant is voor uw organisatie, is het een eenvoudig proces om ze uit de gebruikersinterface te verwijderen. Hiermee kunt u het dashboard voor naleving van regelgeving verder aanpassen en u richten op de standaarden die van toepassing zijn op u.
 
 Een standaard verwijderen:
 
-1. Selecteer in het menu van Security Center het **beveiligings beleid**.
+1. Selecteer Security Center beveiligingsbeleid in het menu **van de Security Center.**
 
 1. Selecteer het relevante abonnement waarvan u een standaard wilt verwijderen.
 
     > [!NOTE]
-    > U kunt een standaard van een abonnement verwijderen, maar niet uit een beheer groep. 
+    > U kunt een standaard uit een abonnement verwijderen, maar niet uit een beheergroep. 
 
-    De pagina beveiligings beleid wordt geopend. Voor het geselecteerde abonnement worden het standaard beleid, de industrie-en regelgevings normen en eventuele aangepaste initiatieven weer gegeven die u hebt gemaakt.
+    De pagina beveiligingsbeleid wordt geopend. Voor het geselecteerde abonnement worden het standaardbeleid, de industrie- en regelgevingsstandaarden en eventuele aangepaste initiatieven weergegeven die u hebt gemaakt.
 
-    :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard.png" alt-text="Het verwijderen van een regelgevings standaard van uw regelgevings dashboard voor naleving in Azure Security Center":::
+    :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard.png" alt-text="Een regelgevingsstandaard verwijderen uit uw dashboard voor naleving van regelgeving in Azure Security Center":::
 
-1. Selecteer **uitschakelen** voor de standaard die u wilt verwijderen. Er wordt een bevestigings venster weer gegeven.
+1. Selecteer Uitschakelen voor de standaard die u **wilt verwijderen.** Er wordt een bevestigingsvenster weergegeven.
 
-    :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard-confirm.png" alt-text="Bevestig dat u de geselecteerde regelgevings standaard wilt verwijderen":::
+    :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard-confirm.png" alt-text="Bevestig dat u de regelgevingsstandaard die u hebt geselecteerd, echt wilt verwijderen":::
 
 1. Selecteer **Ja**. De standaard wordt verwijderd. 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u **nalevings normen kunt toevoegen** om uw naleving met reglementaire en industrie normen te bewaken.
+In dit artikel hebt u geleerd hoe u **nalevingsstandaarden kunt toevoegen om** uw naleving met regelgevings- en branchestandaarden te bewaken.
 
-Zie de volgende pagina's voor gerelateerde materialen:
+Zie de volgende pagina's voor gerelateerd materiaal:
 
-- [Azure Security-benchmark](../security/benchmarks/introduction.md)
-- [Security Center compliance-nalevings dashboard](security-center-compliance-dashboard.md) : informatie over het volgen en exporteren van uw nalevings gegevens met Security Center en externe hulpprogram ma's
+- [Azure Security-benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction)
+- [Dashboard voor naleving van regelgeving in Security Center:](security-center-compliance-dashboard.md) informatie over het bijhouden en exporteren van uw nalevingsgegevens voor regelgeving met Security Center en externe hulpprogramma's
 - [Werken met beveiligingsbeleid](tutorial-security-policy.md)

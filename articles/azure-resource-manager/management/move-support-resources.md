@@ -1,14 +1,14 @@
 ---
-title: Ondersteuning voor verplaatsen van bewerking op resourcetype
+title: Ondersteuning voor verplaatsen van bewerking per resourcetype
 description: Een lijst met de Azure-resourcetypen die kunnen worden verplaatst naar een nieuwe resourcegroep, een nieuw abonnement of een nieuwe regio.
 ms.topic: conceptual
 ms.date: 04/16/2021
-ms.openlocfilehash: c159b6e5f64f3052a6584034aa58b058b1426b16
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: a56a9e6f04aa800e16bbab0190ce7b41d87da590
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107725562"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107740084"
 ---
 # <a name="move-operation-support-for-resources"></a>Ondersteuning voor verplaatsen van resources
 
@@ -377,7 +377,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | sqlinstances | Nee | Nee | Nee |
 > | sqlmanagedinstances | Nee | Nee | Nee |
 > | sqlserverinstances | Nee | Nee | Nee |
-> | sqlserverregistrations | Ja | Ja | Nee |
+> | sqlserverregisters | Ja | Ja | Nee |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
 
@@ -399,7 +399,7 @@ Ga naar de naamruimte van een resourceprovider:
 > [!div class="mx-tableFixed"]
 > | Resourcetype | Resourcegroep | Abonnement | Regio verplaatsen |
 > | ------------- | ----------- | ---------- | ----------- |
-> | batchaccounts | Ja | Ja | Batch-accounts kunnen niet rechtstreeks van de ene regio naar de andere worden verplaatst, maar u kunt wel een sjabloon gebruiken om een sjabloon te exporteren, te wijzigen en de sjabloon in de nieuwe regio te implementeren. <br/><br/> Meer informatie over [het verplaatsen van een Batch-account tussen regio's](../../batch/best-practices.md#moving-batch-accounts-across-regions) |
+> | batchaccounts | Ja | Ja | Batch-accounts kunnen niet rechtstreeks van de ene regio naar de andere worden verplaatst, maar u kunt een sjabloon gebruiken om een sjabloon te exporteren, te wijzigen en de sjabloon in de nieuwe regio te implementeren. <br/><br/> Meer informatie over [het verplaatsen van een Batch-account tussen regio's](../../batch/best-practices.md#moving-batch-accounts-across-regions) |
 
 ## <a name="microsoftbilling"></a>Microsoft.Billing
 
@@ -861,7 +861,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | ------------- | ----------- | ---------- | ----------- |
 > | flexibleServers | Nee | Nee | Nee |
 > | servergroepen | Nee | Nee | Nee |
-> | Servers | Ja | Ja | U kunt een leesreplica tussen regio's gebruiken om een bestaande server te verplaatsen. [Meer informatie.](../../postgresql/howto-move-regions-portal.md)
+> | Servers | Ja | Ja | U kunt een leesreplica tussen regio's gebruiken om een bestaande server te verplaatsen. [Meer informatie](../../postgresql/howto-move-regions-portal.md).
 > | serversv2 | Ja | Ja | Nee |
 > | singleservers | Ja | Ja | Nee |
 
@@ -874,7 +874,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | implementaties | Ja | Ja | Nee |
 > | servicetopologies | Ja | Ja | Nee |
 > | servicetopologies/services | Ja | Ja | Nee |
-> | servicetopologies/services/serviceunits | Ja | Ja | Nee |
+> | servicetopologies /services/serviceunits | Ja | Ja | Nee |
 > | stappen | Ja | Ja | Nee |
 
 ## <a name="microsoftdesktopvirtualization"></a>Microsoft.DesktopVirtualization
@@ -962,7 +962,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | Resourcetype | Resourcegroep | Abonnement | Regio verplaatsen |
 > | ------------- | ----------- | ---------- | ----------- |
 > | Domeinen | Ja | Ja | Nee |
-> | eventsubscriptions | Nee: kan niet onafhankelijk worden verplaatst, maar automatisch worden verplaatst met geabonneerde resource. | Nee: kan niet onafhankelijk worden verplaatst, maar automatisch worden verplaatst met een geabonneerde resource. | No |
+> | eventsubscriptions | Nee: kan niet onafhankelijk worden verplaatst, maar automatisch worden verplaatst met geabonneerde resource. | Nee: kan niet onafhankelijk worden verplaatst, maar automatisch worden verplaatst met geabonneerde resource. | No |
 > | extensiontopics | Nee | Nee | Nee |
 > | partnernamespaces | Ja | Ja | Nee |
 > | partnerregisters | Nee | Nee | Nee |
@@ -1107,7 +1107,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | actiegroepen | Ja | Ja | Nee |
 > | activitylogalerts | Nee | Nee | Nee |
 > | waarschuwingsrules | Ja | Ja | Nee |
-> | automatische schaalinstellingen | Ja | Ja | Nee |
+> | automatische schaalsets | Ja | Ja | Nee |
 > | basislijn | Nee | Nee | Nee |
 > | Onderdelen | Ja | Ja | Nee |
 > | datacollectionrules | Nee | Nee | Nee |
@@ -1136,7 +1136,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | scheduledqueryrules | Ja | Ja | Nee |
 > | topologie | Nee | Nee | Nee |
 > | transacties | Nee | Nee | Nee |
-> | vminsightsonboardingstatussen | Nee | Nee | Nee |
+> | vminsightsonboardingstatuses | Nee | Nee | Nee |
 > | webtests | Ja | Ja | Nee |
 > | webtests /gettestresultfile | Nee | Nee | Nee |
 > | werkmappen | Ja | Ja | Nee |
@@ -1167,7 +1167,7 @@ Ga naar de naamruimte van een resourceprovider:
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
 > [!IMPORTANT]
-> Sleutelkluizen die worden gebruikt voor schijfversleuteling kunnen niet worden verplaatst naar een resourcegroep in hetzelfde abonnement of tussen abonnementen.
+> Sleutelkluizen die worden gebruikt voor schijfversleuteling, kunnen niet worden verplaatst naar een resourcegroep in hetzelfde abonnement of tussen abonnementen.
 
 > [!div class="mx-tableFixed"]
 > | Resourcetype | Resourcegroep | Abonnement | Regio verplaatsen |
@@ -1354,7 +1354,7 @@ Ga naar de naamruimte van een resourceprovider:
 > | Resourcetype | Resourcegroep | Abonnement | Regio verplaatsen |
 > | ------------- | ----------- | ---------- | ----------- |
 > | Overeenkomsten | Nee | Nee | Nee |
-> | offertypes | Nee | Nee | Nee |
+> | aanbiedingstypen | Nee | Nee | Nee |
 
 ## <a name="microsoftmedia"></a>Microsoft.Media
 
@@ -1513,7 +1513,7 @@ Ga naar de naamruimte van een resourceprovider:
 > [!div class="mx-tableFixed"]
 > | Resourcetype | Resourcegroep | Abonnement | Regio verplaatsen |
 > | ------------- | ----------- | ---------- | ----------- |
-> | managementassociations | Nee | Nee | Nee |
+> | beheerkoppelingen | Nee | Nee | Nee |
 > | beheerconfiguraties | Ja | Ja | Nee |
 > | oplossingen | Ja | Ja | Nee |
 > | Weergaven | Ja | Ja | Nee |

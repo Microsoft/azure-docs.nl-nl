@@ -6,19 +6,18 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
-ms.date: 9/25/2018
+ms.date: 04/19/2021
 ms.author: rohink
-ms.openlocfilehash: 4bdfc950cc1277809811dc2c548a57cc2138a8e4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e0101133c68142845a8ada50d9921d341cf10ad0
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "77149946"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107738788"
 ---
 # <a name="tutorial-configure-an-alias-record-to-support-apex-domain-names-with-traffic-manager"></a>Zelfstudie: een Azure DNS-aliasrecord configureren om het gebruik van hoofddomeinnaam met Traffic Manager te ondersteunen 
 
 U kunt een aliasrecord maken voor uw hoofddomeinnaam om te verwijzen naar een Azure Traffic Manager-profiel. Bijvoorbeeld: contoso.com. In plaats van hiervoor een omleidingsservice te gebruiken, kunt u Azure DNS zo configureren dat deze rechtstreeks vanuit uw zone naar een Traffic Manager-profiel verwijst. 
-
 
 In deze zelfstudie leert u het volgende:
 
@@ -27,7 +26,6 @@ In deze zelfstudie leert u het volgende:
 > * Een Traffic Manager-profiel maken.
 > * Een aliasrecord maken.
 > * De aliasrecord testen.
-
 
 Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
@@ -39,24 +37,28 @@ Zie voor instructies voor het hosten van uw domein in Azure DNS [Zelfstudie: Uw 
 Het voorbeelddomein dat wordt gebruikt voor deze zelfstudie is contoso.com, maar u moet uw eigen domeinnaam gebruiken.
 
 ## <a name="create-the-network-infrastructure"></a>De netwerkinfrastructuur maken
+
 Maak eerst een virtueel netwerk en een subnet waaraan u de webservers gaat toevoegen.
+
 1. Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azure.com).
 2. Selecteer helemaal linksboven in de portal **Een resource maken**. Typ *resourcegroep* in het zoekvak en maak een resourcegroep met de naam **RG-DNS-Alias-TM**.
 3. Selecteer **Een resource maken** > **Netwerken** > **Virtueel netwerk**.
 4. Maak een virtueel netwerk met de naam **VNet-Servers**. Plaats het in de resourcegroep **RG-DNS-Alias-TM** en geef het subnet de naam **SN-Web**.
 
 ## <a name="create-two-web-server-virtual-machines"></a>Maak twee virtuele machines die als webserver dienen
+
 1. Selecteer **Een resource maken** > **Windows Server 2016 VM**.
 2. Geef **Web-01** op als naam en plaats de virtuele machine in de resourcegroep **RG-DNS-Alias-TM**. Voer een gebruikersnaam en wachtwoord in en selecteer **OK**.
 3. Voor **Grootte**, selecteert u een SKU met 8 GB RAM-geheugen.
 4. Selecteer voor **Instellingen** het virtuele netwerk **VNet-Servers** en het subnet **SN-Web**.
 5. Selecteer **Openbaar IP-adres**. Bij **Toewijzing** selecteer t u **Statisch** en selecteert u vervolgens **OK**.
-6. Selecteer voor openbare inkomende poorten **HTTP** > **HTTPS** > **RDP (3389)** en selecteer vervolgens **OK**.
+6. Voor openbare binnenkomende poorten selecteert u **HTTP (80)**  >  **HTTPS (443)**  >  **RDP (3389)** en vervolgens **OK.**
 7. Op de pagina **Overzicht** selecteert u **Maken**. Deze procedure duurt een paar minuten.
 
 Herhaal dit proces om nog een virtuele machine te maken, genaamd **Web-02**.
 
 ### <a name="add-a-dns-label"></a>Een DNS-label toevoegen
+
 De openbare IP-adressen hebben een DNS-label nodig om met Traffic Manager te kunnen werken.
 1. Selecteer in de resourcegroep **RG-DNS-Alias-TM** het openbare IP-adres **Web-01-ip**.
 2. Selecteer onder **Instellingen** de optie **Configuratie**.

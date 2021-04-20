@@ -3,18 +3,18 @@ title: Inleiding tot IoT Plug en Play | Microsoft Docs
 description: Informatie over IoT Plug en Play. IoT Plug en Play is gebaseerd op een open modeltaal waarmee slimme IoT-apparaten hun mogelijkheden kunnen declareren. IoT-apparaten presenteren die declaratie, een apparaatmodel genoemd, wanneer er verbinding wordt gemaakt met cloudoplossingen. Vervolgens kan met de cloudoplossing automatisch inzicht worden verkregen in het apparaat en kan interactie worden gestart zonder dat u code hoeft te schrijven.
 author: rido-min
 ms.author: rmpablos
-ms.date: 07/06/2020
+ms.date: 03/21/2021
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 manager: eliotgra
 ms.custom: references_regions
-ms.openlocfilehash: eb39939f4a48a549479605dcccc346094359875f
-ms.sourcegitcommit: 3ee3045f6106175e59d1bd279130f4933456d5ff
+ms.openlocfilehash: 91a09db16524ebc7e4c04069b69b1c42c67538c6
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106079009"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739706"
 ---
 # <a name="what-is-iot-plug-and-play"></a>Wat is IoT Plug en Play?
 
@@ -45,13 +45,13 @@ IoT Plug en Play is handig voor twee typen ontwikkelaars:
 
 ## <a name="use-iot-plug-and-play-devices"></a>IoT Plug en Play-apparaten gebruiken
 
-Als oplossings bouwer kunt u [IOT Central](../iot-central/core/overview-iot-central.md) of [IOT hub](../iot-hub/about-iot-hub.md) gebruiken om een IOT-oplossing in de cloud te ontwikkelen die gebruikmaakt van IOT-Plug en Play apparaten.
+Als bouwer van oplossingen [](../iot-central/core/overview-iot-central.md) kunt u IoT Central of [IoT Hub](../iot-hub/about-iot-hub.md) om een in de cloud gehoste IoT-oplossing te ontwikkelen die gebruikmaakt van IoT-Plug en Play apparaten.
 
-Met de Web-UI in IoT Central kunt u de voor waarden van apparaten bewaken, regels maken en miljoenen apparaten en hun gegevens in hun levens cyclus beheren. IoT Plug en Play-apparaten maken rechtstreeks verbinding met een IoT Central toepassing waar u aanpas bare Dash boards kunt gebruiken om uw apparaten te bewaken en beheren. U kunt ook Apparaatbeheer gebruiken in de gebruikers interface van IoT Central om DTDL modellen te maken en te bewerken.
+Met de webinterface in IoT Central u apparaatvoorwaarden bewaken, regels maken en miljoenen apparaten en hun gegevens gedurende hun levenscyclus beheren. Met IoT Plug en Play apparaten rechtstreeks verbinding maken met een IoT Central-toepassing, waar u aanpasbare dashboards kunt gebruiken om uw apparaten te bewaken en te beheren. U kunt ook apparaatsjablonen gebruiken in de IoT Central webgebruikersinterface om DTDL-modellen te maken en te bewerken.
 
-IoT Hub-een beheerde Cloud service: fungeert als een Message hub voor beveiligde, bidirectionele communicatie tussen uw IoT-toepassing en uw apparaten. Wanneer u een IoT-Plug en Play apparaat verbindt met een IoT-hub, kunt u het hulp programma [Azure IOT Explorer](./howto-use-iot-explorer.md) gebruiken om de telemetrie, eigenschappen en opdrachten weer te geven die in het DTDL-model zijn gedefinieerd.
+IoT Hub - een beheerde cloudservice - fungeert als een berichtenhub voor veilige, bi-directionele communicatie tussen uw IoT-toepassing en uw apparaten. Wanneer u een IoT Plug en Play-apparaat verbindt met een IoT-hub, kunt u het [hulpprogramma Azure IoT Explorer](./howto-use-iot-explorer.md) gebruiken om de telemetrie, eigenschappen en opdrachten weer te geven die zijn gedefinieerd in het DTDL-model.
 
-Als er bestaande Sens oren zijn gekoppeld aan een Windows-of Linux-gateway, kunt u [IoT Plug en Play Bridge](./concepts-iot-pnp-bridge.md)gebruiken om deze Sens oren te verbinden en IoT-Plug en Play apparaten te maken zonder dat u de software/firmware van het apparaat (voor [ondersteunde protocollen](./concepts-iot-pnp-bridge.md#supported-protocols-and-sensors)) hoeft te schrijven.
+Als u bestaande sensoren hebt gekoppeld aan een Windows- of Linux-gateway, kunt u [IoT Plug en Play Bridge](./concepts-iot-pnp-bridge.md)gebruiken om deze sensoren te verbinden en IoT Plug en Play-apparaten te maken zonder dat u apparaatsoftware/firmware hoeft te schrijven (voor ondersteunde [protocollen).](./concepts-iot-pnp-bridge.md#supported-protocols-and-sensors)
 
 ## <a name="develop-an-iot-device-application"></a>Een IoT-apparaattoepassing ontwikkelen
 

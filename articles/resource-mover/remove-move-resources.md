@@ -1,49 +1,49 @@
 ---
-title: Resources verwijderen uit een Verplaats verzameling in azure resource-overschakeling
-description: Meer informatie over het verwijderen van resources uit een Verplaats verzameling in azure resource-overschakeling.
+title: Resources verwijderen uit een verzameling voor verplaatsen in Azure Resource Mover
+description: Meer informatie over het verwijderen van resources uit een verzameling voor verplaatsen in Azure Resource Mover.
 manager: evansma
 author: rayne-wiselman
 ms.service: resource-move
 ms.topic: how-to
 ms.date: 02/22/2020
 ms.author: raynew
-ms.openlocfilehash: 25311e93e1081b3c7638c275c39153b2c357048d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 067aa245223bce0e8fa009b88af760a26f7ce3dc
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102559109"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739022"
 ---
-# <a name="manage-move-collections-and-resource-groups"></a>Verplaats verzamelingen en resource groepen beheren
+# <a name="manage-move-collections-and-resource-groups"></a>Verzamelingen en resourcegroepen verplaatsen beheren
 
-In dit artikel wordt beschreven hoe u resources verwijdert uit een Verplaats verzameling of een verzameling/resource groep verplaatsen in [Azure resource](overview.md)-overschakeling verwijdert. Verzamelingen verplaatsen worden gebruikt bij het verplaatsen van Azure-resources tussen Azure-regio's.
+In dit artikel wordt beschreven hoe u resources verwijdert uit een verzameling voor verplaatsen of een verzameling/resourcegroep voor verplaatsen in [Azure Resource Mover.](overview.md) Verplaatsen van verzamelingen wordt gebruikt bij het verplaatsen van Azure-resources tussen Azure-regio's.
 
-## <a name="remove-a-resource-portal"></a>Een resource verwijderen (Portal)
+## <a name="remove-a-resource-portal"></a>Een resource verwijderen (portal)
 
-U kunt resources in een verzameling voor verplaatsen in de resource-verhuizer-portal als volgt verwijderen:
+U kunt resources in een verzameling voor verplaatsen als volgt verwijderen in de Resource Mover-portal:
 
-1. Selecteer in **meerdere regio's** alle resources die u uit de verzameling wilt verwijderen en selecteer **verwijderen**. 
+1. Selecteer **in Tussen** regio's alle resources die u uit de verzameling wilt verwijderen en selecteer **Verwijderen.** 
 
-    ![Te verwijderen knop](./media/remove-move-resources/portal-select-resources.png)
+    ![Knop om te selecteren om te verwijderen](./media/remove-move-resources/portal-select-resources.png)
 
-2. Klik in **resources verwijderen** op **verwijderen**.
+2. Klik **in Resources verwijderen** op **Verwijderen.**
 
-    ![Knop om resources uit een verplaatsings verzameling te verwijderen](./media/remove-move-resources/remove-portal.png)
+    ![Knop om te selecteren om resources te verwijderen uit een verzameling voor verplaatsen](./media/remove-move-resources/remove-portal.png)
 
-## <a name="remove-a-move-collectionresource-group-portal"></a>Een verzameling/resource groep voor verplaatsen verwijderen (Portal)
+## <a name="remove-a-move-collectionresource-group-portal"></a>Een verzameling/resourcegroep voor verplaatsen verwijderen (portal)
 
-U kunt een verzameling/resource groep verplaatsen in de Portal verwijderen.
+U kunt een verzameling/resourcegroep voor verplaatsen verwijderen in de portal.
 
-1. Volg de instructies in de bovenstaande procedure om resources uit de verzameling te verwijderen. Als u een resource groep wilt verwijderen, moet u ervoor zorgen dat deze geen resources bevat.
-2. Verwijder de verzameling of de resource groep die u wilt verplaatsen.  
+1. Volg de instructies in de bovenstaande procedure om resources uit de verzameling te verwijderen. Als u een resourcegroep verwijdert, moet u ervoor zorgen dat deze geen resources bevat.
+2. Verwijder de verzameling of resourcegroep verplaatsen.  
 
-## <a name="remove-a-resource-powershell"></a>Een resource verwijderen (Power shell)
+## <a name="remove-a-resource-powershell"></a>Een resource verwijderen (PowerShell)
 
-Met Power shell-cmdlets kunt u één resource uit een MoveCollection verwijderen of meerdere resources verwijderen.
+Met PowerShell-cmdlets kunt u één resource uit een MoveCollection verwijderen of meerdere resources verwijderen.
 
 ### <a name="remove-a-single-resource"></a>Eén resource verwijderen
 
-Verwijder een resource (in ons voor beeld het virtuele netwerk *psdemorm-vnet*) als volgt:
+Verwijder een resource (in ons voorbeeld het virtuele netwerk *psdemorm-vnet*) als volgt:
 
 ```azurepowershell-interactive
 # Remove a resource using the resource ID
@@ -51,11 +51,11 @@ Remove-AzResourceMoverMoveResource -ResourceGroupName "RG-MoveCollection-demoRMS
 ```
 **Uitvoer na het uitvoeren van de cmdlet**
 
-![Uitvoer tekst nadat een resource is verwijderd uit een verzameling voor verplaatsen](./media/remove-move-resources/powershell-remove-single-resource.png)
+![Uitvoertekst na het verwijderen van een resource uit een verzameling voor verplaatsen](./media/remove-move-resources/powershell-remove-single-resource.png)
 
 ### <a name="remove-multiple-resources"></a>Meerdere resources verwijderen
 
-U verwijdert meerdere resources als volgt:
+Verwijder meerdere resources als volgt:
 
 1. Afhankelijkheden valideren:
 
@@ -124,6 +124,7 @@ What happens when you remove a VM resource from a move collection depends on the
 **Discard failed** | We recommend that you discard the moves so that the target resources are deleted first.<br/><br/> After that, the resource goes back to the **Initiate move pending** state, and you can continue from there. | We recommend that you discard the moves so that the target resources are deleted first.<br/><br/> After that, the resource goes back to the **Initiate move pending** state, and you can continue from there.
 **Delete source pending** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region.  | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region.
 **Delete source failed** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region. | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region.
+**Move completed** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target or source region. |  Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target or source region.
 
 ## SQL resource state after removing
 
@@ -143,6 +144,7 @@ What happens when you remove an Azure SQL resource from a move collection depend
 **Discard failed** | We recommend that you discard the moves so that the target resources are deleted first.<br/><br/> After that, the resource goes back to the **Initiate move pending** state, and you can continue from there. 
 **Delete source pending** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region. 
 **Delete source failed** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region. 
+**Move completed** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target or source region.
 
 ## Next steps
 

@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 4/19/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: e90253100b86397c5ca4873d5c38a3511ba21555
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: ecbc76651f09a9b4f2bde01c733cace5037f5fd4
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107728567"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107738824"
 ---
 # <a name="add-an-update-to-device-update-for-iot-hub"></a>Een update toevoegen aan Apparaatupdate voor IoT Hub
 Meer informatie over het toevoegen van een nieuwe update aan Apparaatupdate voor IoT Hub.
@@ -30,7 +30,7 @@ Meer informatie over het toevoegen van een nieuwe update aan Apparaatupdate voor
 
 ## <a name="obtain-an-update-for-your-devices"></a>Een update voor uw apparaten verkrijgen
 
-Nu Apparaatupdate is [ingesteld,](create-device-update-account.md)kunt u uw apparaten bijwerken. Maar eerst hebt u het daadwerkelijke updatebestand(en) nodig voor de apparaten die u gaat implementeren.
+Nu Apparaatupdate is [ingesteld,](create-device-update-account.md)kunt u uw apparaten bijwerken. Vervolgens hebt u het daadwerkelijke updatebestand(en) nodig dat u op deze apparaten implementeert.
 
 Als u apparaten van een OEM of oplossingsintegrator hebt aangeschaft, zal die organisatie waarschijnlijk updatebestanden voor u leveren, zonder dat u de updates hoeft te maken. Neem contact op met de OEM of oplossingsintegrator om na te gaan hoe deze updates beschikbaar maken.
 
@@ -62,7 +62,7 @@ Als u dit nog niet hebt gedaan, zorg er dan voor dat u vertrouwd bent met de bas
     $importManifest | Out-File '.\importManifest.json' -Encoding UTF8
     ```
 
-    Hier volgen enkele voorbeeldwaarden voor de bovenstaande parameters. U kunt ook het volledige [importmanifestschema bekijken](import-schema.md) voor meer informatie.
+    Hier volgen enkele voorbeeldwaarden voor de bovenstaande parameters. U kunt ook het volledige [importmanifestschema weergeven](import-schema.md) voor meer informatie.
 
     | Parameter | Beschrijving |
     | --------- | ----------- |

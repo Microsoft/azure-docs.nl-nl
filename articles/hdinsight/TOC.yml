@@ -42,15 +42,15 @@
       items:
         - name: Versiebeheer
           items:
-            - name: Introductie van versies
+            - name: Inleiding tot versie-versies
               href: ./hdinsight-overview-versioning.md
             - name: HDInsight-versies
               href: ./hdinsight-component-versioning.md
-            - name: 'HDInsight-versie 4,0'
+            - name: HDInsight versie 4.0
               href: ./hdinsight-40-component-versioning.md
             - name: HDInsight-versie 3.6
               href: ./hdinsight-36-component-versioning.md
-            - name: Verouderde HDInsight-versies
+            - name: HDInsight-versies die zijn teruggetrokken
               href: ./hdinsight-retired-versions.md
         - name: Enterprise Security Package
           href: ./enterprise-security-package.md
@@ -190,7 +190,7 @@
                   href: ./optimize-hive-ambari.md
                 - name: Apache Pig optimaliseren
                   href: ./optimize-pig-ambari.md
-            - name: Hostnamen van cluster knooppunten zoeken
+            - name: Hostnamen van clusterknooppunten zoeken
               href: ./find-host-name.md
             - name: Clusterknooppunten opnieuw opstarten
               href: ./cluster-reboot-vm.md
@@ -246,7 +246,7 @@
               href: ./hadoop/apache-hadoop-visual-studio-tools-get-started.md
             - name: Spark- en Hive-hulpprogramma's voor VSCode
               href: ./hdinsight-for-vscode.md
-            - name: Naslag informatie over HDInsight-configuratie-instellingen
+            - name: Naslag voor HDInsight-configuratie-instellingen
               href: ./hdinsight-config-for-vscode.md
         - name: Bewaking
           items:
@@ -260,6 +260,8 @@
               href: ./hdinsight-cluster-availability.md
             - name: Clusterbeschikbaarheid - Azure Monitor-logboeken
               href: ./cluster-availability-monitor-logs.md
+            - name: Azure Monitor tabelupdates
+              href: ./log-analytics-migration.md
         - name: Problemen oplossen
           items:
             - name: Verhoging van CPU-kernquotum aanvragen
@@ -835,9 +837,9 @@
               href: ./interactive-query/apache-hive-query-odbc-driver-powershell.md
         - name: Beheren
           items:
-            - name: Hive-tabellen kopiëren tussen opslag accounts
+            - name: Hive-tabellen kopiëren tussen opslagaccounts
               href: ./interactive-query/hive-migration-across-storage-accounts.md
-            - name: Standaard Hive-metastore migreren naar externe meta Store in azure HDInsight
+            - name: Standaard Hive-metastore migreren naar externe metastore op Azure HDInsight
               href: ./interactive-query/hive-default-metastore-export-import.md
             - name: Hive-workloads migreren naar HDInsight 4.0
               href: ./interactive-query/apache-hive-migrate-workloads.md

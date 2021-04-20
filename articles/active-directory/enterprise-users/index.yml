@@ -1,22 +1,23 @@
 ### YamlMime:Landing
 title: Documentatie voor Enterprise-gebruikersbeheer - Azure AD
-summary: Azure AD biedt services voor gebruikersbeheer, zoals groepen en licenties, zodat u belangrijke gebruikersbeheertaken snel kunt uitvoeren. Wijs licenties toe, wijs toegang tot toepassingen toe aan groepen of gebruikers, en voeg domeinnamen toe of beheer ze.
+summary: Azure AD biedt services voor gebruikersbeheer, zodat u licenties kunt toewijzen, uw groepen en gebruikers kunt beheren en domeinnamen kunt toevoegen of beheren.
 metadata:
-  title: Documentatie voor gebruikers, groepen, licenties en domeinen van Azure Active Directory
+  title: Azure Active Directory voor gebruikers, groepen, licenties en domeinen
   description: Meer informatie over het gebruik van groepen, domeinnamen en licenties voor het beheren van gebruikersverificatie in uw Azure AD-organisatie.
   services: active-directory
   ms.service: active-directory
-  manager: daveba
+  ms.subservice: enterprise-users
+  manager: mtillman
   ms.topic: landing-page
-  ms.date: 10/19/2020
+  ms.date: 04/18/2021
   author: curtand
   ms.author: curtand
-  ms.openlocfilehash: a919a9785163776cfbcfb52a378405c0ac870035
-  ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-  ms.translationtype: HT
+  ms.openlocfilehash: 8a129cf6e000a2e644f2fc7168d9e3105de0f957
+  ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/23/2020
-  ms.locfileid: "95503050"
+  ms.lasthandoff: 04/20/2021
+  ms.locfileid: "107739292"
 landingContent:
 - title: Over Enterprise-gebruikersbeheer
   linkLists:

@@ -1,32 +1,32 @@
 ---
-title: IoT Plug en Play Digital apparaatdubbels beheren
-description: IoT Plug en Play-apparaat beheren met Digital-dubbele Api's
+title: IoT-gegevens Plug en Play digitale tweelingen beheren
+description: IoT-Plug en Play beheren met digital twin-API's
 author: prashmo
 ms.author: prashmo
-ms.date: 07/20/2020
+ms.date: 12/17/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ddb8027c145f6a38bfcd953be66dae2943a20c3a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e68003878dc0e9275461100a59e0f45486c2978f
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97654605"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739868"
 ---
-# <a name="manage-iot-plug-and-play-digital-twins"></a>IoT Plug en Play Digital apparaatdubbels beheren
+# <a name="manage-iot-plug-and-play-digital-twins"></a>IoT-Plug en Play digitale tweelingen beheren
 
-IoT Plug en Play biedt ondersteuning voor het verkrijgen van digitale **dubbele** en **bijgewerkte digitale dubbele** bewerkingen om digitale apparaatdubbels te beheren. U kunt de rest- [api's](/rest/api/iothub/service/digitaltwin) of een van de [service-sdk's](libraries-sdks.md)gebruiken.
+IoT Plug en Play ondersteuning voor **Get digital twin** en Update digital **twin** operations to manage digital twins (Digitale tweelingen bijwerken om digitale tweelingen te beheren). U kunt de [REST API's of](/rest/api/iothub/service/digitaltwin) een van de [service-SDK's gebruiken.](libraries-sdks.md)
 
-Op het moment van schrijven is de Digital-dubbele API-versie `2020-09-30` .
+Op het moment van schrijven is de digital twin API-versie `2020-09-30` .
 
 ## <a name="update-a-digital-twin"></a>Een digital twin bijwerken
 
-Een IoT Plug en Play-apparaat implementeert een model dat wordt beschreven door [Digital Apparaatdubbels Definition Language v2 (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl). Ontwikkel aars van oplossingen kunnen de **update digitale dubbele API** gebruiken voor het bijwerken van de status van het onderdeel en de eigenschappen van de digitale twee.
+Een IoT Plug en Play implementeert een model dat wordt [beschreven door Digital Twins Definition Language v2 (DTDL).](https://github.com/Azure/opendigitaltwins-dtdl) Oplossingsontwikkelaars kunnen de **API Digital Twin bijwerken gebruiken om** de status van het onderdeel en de eigenschappen van de digitale tweeling bij te werken.
 
-Het IoT-Plug en Play apparaat dat als voor beeld wordt gebruikt in dit artikel, implementeert het [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) met de [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat-onderdelen.
+Het IoT Plug en Play apparaat dat als voorbeeld in dit artikel wordt gebruikt, implementeert het [temperatuurcontrollermodel](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) met [thermostaatonderdelen.](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json)
 
-Het volgende code fragment toont het antwoord op een **Get Digital-dubbele** aanvraag die is opgemaakt als een JSON-object. Zie voor meer informatie over de Digital-dubbele indeling [begrijpen IoT Plug en Play Digital apparaatdubbels](./concepts-digital-twin.md#digital-twin-example):
+Het volgende codefragment toont het antwoord op een **Get digital twin-aanvraag** opgemaakt als een JSON-object. Zie Understand IoT Plug en Play [digital twins (IoT-gegevens](./concepts-digital-twin.md#digital-twin-example)en digitale tweelingen begrijpen) voor meer informatie over de digital twin-indeling:
 
 ```json
 {
@@ -58,9 +58,9 @@ Het volgende code fragment toont het antwoord op een **Get Digital-dubbele** aan
 }
 ```
 
-Met Digital apparaatdubbels kunt u een volledig onderdeel of eigenschap bijwerken met behulp van een [JSON-patch](http://jsonpatch.com/).
+Met digital twins kunt u een volledig onderdeel of eigenschap bijwerken met behulp van een [JSON-patch](http://jsonpatch.com/).
 
-U kunt de `targetTemperature` eigenschap bijvoorbeeld als volgt bijwerken:
+U kunt de eigenschap bijvoorbeeld `targetTemperature` als volgt bijwerken:
 
 ```json
 [
@@ -72,7 +72,7 @@ U kunt de `targetTemperature` eigenschap bijvoorbeeld als volgt bijwerken:
 ]
 ```
 
-Met de vorige update wordt de gewenste waarde van een eigenschap in het bijbehorende onderdeel niveau ingesteld `$metadata` , zoals wordt weer gegeven in het volgende code fragment. IoT Hub werkt de gewenste versie van de eigenschap bij:
+Met de vorige update wordt de gewenste waarde van een eigenschap in het bijbehorende onderdeelniveau in het bijbehorende onderdeelniveau, `$metadata` zoals weergegeven in het volgende fragment. IoT Hub werkt de gewenste versie van de eigenschap bij:
 
 ```json
 "thermostat1": {
@@ -92,13 +92,13 @@ Met de vorige update wordt de gewenste waarde van een eigenschap in het bijbehor
 
 ### <a name="add-replace-or-remove-a-component"></a>Een onderdeel toevoegen, vervangen of verwijderen
 
-Voor bewerkingen op onderdeel niveau is een lege object `$metadata` markering vereist in de waarde.
+Bewerkingen op onderdeelniveau vereisen een lege `$metadata` objectmarkering binnen de waarde.
 
-Met een bewerking toevoegen of vervangen onderdeel worden de gewenste waarden van alle gegeven eigenschappen ingesteld. Ook worden de gewenste waarden voor Beschrijf bare eigenschappen die niet bij de update zijn meegeleverd, verwijderd.
+Met een bewerking onderdeel toevoegen of vervangen worden de gewenste waarden van alle opgegeven eigenschappen. Ook worden de gewenste waarden geweken voor beschrijfbare eigenschappen die niet zijn opgegeven bij de update.
 
-Als u een onderdeel verwijdert, worden de gewenste waarden van alle Beschrijf bare eigenschappen gewist. Een apparaat synchroniseert uiteindelijk deze verwijdering en stopt met het rapporteren van de afzonderlijke eigenschappen. Het onderdeel wordt vervolgens verwijderd uit de digitale twee.
+Als u een onderdeel verwijdert, worden de gewenste waarden van alle beschrijfbare eigenschappen geweken. Een apparaat synchroniseert deze verwijdering uiteindelijk en stopt met het rapporteren van de afzonderlijke eigenschappen. Het onderdeel wordt vervolgens verwijderd uit de digitale tweeling.
 
-In het volgende voor beeld van de JSON-patch ziet u hoe u een onderdeel kunt toevoegen, vervangen of verwijderen:
+In het volgende JSON Patch-voorbeeld ziet u hoe u een onderdeel toevoegt, vervangt of verwijdert:
 
 ```json
 [
@@ -128,11 +128,11 @@ In het volgende voor beeld van de JSON-patch ziet u hoe u een onderdeel kunt toe
 
 ### <a name="add-replace-or-remove-a-property"></a>Een eigenschap toevoegen, vervangen of verwijderen
 
-Met een toevoeg-of vervang bewerking stelt u de gewenste waarde van een eigenschap in. Het apparaat kan de status synchroniseren en een update van de waarde met een `ack` code, versie en beschrijving rapporteren.
+Met een bewerking voor toevoegen of vervangen stelt u de gewenste waarde van een eigenschap in. Het apparaat kan de status synchroniseren en een update van de waarde rapporteren, samen met `ack` een code, versie en beschrijving.
 
-Als u een eigenschap verwijdert, wordt de gewenste waarde van de eigenschap gewist als deze is ingesteld. Het apparaat kan vervolgens deze eigenschap niet meer melden en wordt verwijderd uit het onderdeel. Als deze eigenschap de laatste is in het onderdeel, wordt het onderdeel ook verwijderd.
+Als u een eigenschap verwijdert, wordt de gewenste waarde van de eigenschap geweken als deze is ingesteld. Het apparaat kan vervolgens stoppen met het rapporteren van deze eigenschap en wordt verwijderd uit het onderdeel. Als deze eigenschap de laatste eigenschap in het onderdeel is, wordt het onderdeel ook verwijderd.
 
-In het volgende voor beeld van de JSON-patch ziet u hoe u een eigenschap binnen een onderdeel toevoegt, vervangt of verwijdert:
+In het volgende JSON Patch-voorbeeld ziet u hoe u een eigenschap in een onderdeel toevoegt, vervangt of verwijdert:
 
 ```json
 [
@@ -153,46 +153,46 @@ In het volgende voor beeld van de JSON-patch ziet u hoe u een eigenschap binnen 
 ]
 ```
 
-### <a name="rules-for-setting-the-desired-value-of-a-digital-twin-property"></a>Regels voor het instellen van de gewenste waarde van een digitale dubbele eigenschap
+### <a name="rules-for-setting-the-desired-value-of-a-digital-twin-property"></a>Regels voor het instellen van de gewenste waarde van een eigenschap van een digitale tweeling
 
 **Naam**
 
-De naam van een onderdeel of eigenschap moet een geldige DTDL v2-naam hebben.
+De naam van een onderdeel of eigenschap moet een geldige DTDL v2-naam zijn.
 
-Toegestane tekens zijn a-z, A-Z, 0-9 (niet als het eerste teken) en het onderstrepings teken (niet als het eerste of laatste teken).
+Toegestane tekens zijn a-z, A-Z, 0-9 (niet als eerste teken) en onderstrepingsteken (niet als het eerste of laatste teken).
 
-Een naam kan 1-64 tekens lang zijn.
+Een naam mag 1-64 tekens lang zijn.
 
-**Eigenschaps waarde**
+**Eigenschapswaarde**
 
-De waarde moet een geldige [DTDL v2-eigenschap](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#property)zijn.
+De waarde moet een geldige [DTDL v2-eigenschap zijn.](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#property)
 
-Alle primitieve typen worden ondersteund. In complexe typen worden opsommingen, kaarten en objecten ondersteund. Zie [DTDL v2-schema's](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#schemas)voor meer informatie.
+Alle primitieve typen worden ondersteund. Binnen complexe typen worden enums, kaarten en objecten ondersteund. Zie [DTDL v2 Schema's voor meer informatie.](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#schemas)
 
 Eigenschappen ondersteunen geen matrix of een complex schema met een matrix.
 
-Er wordt een maximum diepte van vijf niveaus ondersteund voor een complex object.
+Een maximale diepte van vijf niveaus wordt ondersteund voor een complex object.
 
-Alle veld namen binnen complex object moeten geldige DTDL v2-namen hebben.
+Alle veldnamen binnen een complex object moeten geldige DTDL v2-namen zijn.
 
-Alle kaart sleutels moeten geldige DTDL v2-namen zijn.
+Alle kaartsleutels moeten geldige DTDL v2-namen zijn.
 
-## <a name="troubleshoot-update-digital-twin-api-errors"></a>Problemen met update digitale dubbele API-fouten oplossen
+## <a name="troubleshoot-update-digital-twin-api-errors"></a>Problemen met update van digital twin-API oplossen
 
-De digitale dubbele API genereert het volgende algemene fout bericht:
+De digital twin-API geeft het volgende algemene foutbericht weer:
 
 `ErrorCode:ArgumentInvalid;'{propertyName}' exists within the device twin and is not digital twin conformant property. Please refer to aka.ms/dtpatch to update this to be conformant.`
 
-Als u deze fout ziet, zorg er dan voor dat de update patch de [regels voor het instellen van de gewenste waarde van een digitale dubbele eigenschap](#rules-for-setting-the-desired-value-of-a-digital-twin-property) volgt
+Als deze fout wordt weergegeven, moet u ervoor zorgen dat de updatepatch de regels volgt voor het instellen van de [gewenste waarde van een eigenschap van een digitale tweeling](#rules-for-setting-the-desired-value-of-a-digital-twin-property)
 
-Wanneer u een onderdeel bijwerkt, moet u ervoor zorgen dat de [lege object $metadata markering](#add-replace-or-remove-a-component) is ingesteld.
+Wanneer u een onderdeel bij werkt, moet u ervoor zorgen dat het [lege object $metadata markering](#add-replace-or-remove-a-component) is ingesteld.
 
-Updates kunnen mislukken als de gerapporteerde waarden van een apparaat niet voldoen aan de [IOT Plug en Play-conventies](./concepts-convention.md#writable-properties).
+Updates kunnen mislukken als de gerapporteerde waarden van een apparaat niet voldoen aan de [IoT Plug en Play-conventies.](./concepts-convention.md#writable-properties)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u over digitale apparaatdubbels hebt geleerd, zijn hier enkele aanvullende bronnen:
+Nu u meer hebt geleerd over digitale tweelingen, zijn hier enkele aanvullende resources:
 
 - [Interactie met een apparaat vanuit uw oplossing](quickstart-service.md)
-- [IoT digitale dubbele REST API](/rest/api/iothub/service/digitaltwin)
+- [IoT Digital Twin-REST API](/rest/api/iothub/service/digitaltwin)
 - [Azure IoT Explorer](howto-use-iot-explorer.md)

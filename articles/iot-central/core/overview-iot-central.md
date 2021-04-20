@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc, contperf-fy21q2
-ms.openlocfilehash: 03b9c7d5231745f77d40abed16273514cac2692c
-ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
+ms.openlocfilehash: 88f59c1b3fc1014cef5035845f1f2e8616bea908
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107715078"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739904"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
@@ -41,7 +41,7 @@ De IoT Central verwijst naar vier gebruikersrollen die communiceren met een IoT 
 
 ## <a name="create-your-iot-central-application"></a>Een IoT Central-toepassing maken
 
-U kunt snel een nieuwe toepassing IoT Central implementeren en deze vervolgens aanpassen aan uw specifieke vereisten. Begin met een algemene _toepassingssjabloon_ of met een van de toepassingssjablonen die gericht zijn op de branche:
+U kunt snel een nieuwe IoT Central implementeren en deze vervolgens aanpassen aan uw specifieke vereisten. Begin met een algemene _toepassingssjabloon_ of met een van de branchegerichte toepassingssjablonen:
 
 - [Retail](../retail/overview-iot-central-retail.md)
 - [Energie](../energy/overview-iot-central-energy.md)
@@ -52,7 +52,7 @@ Zie de [quickstart Een nieuwe toepassing](quick-deploy-iot-central.md) maken voo
 
 ## <a name="connect-devices"></a>Apparaten verbinden
 
-Nadat u uw toepassing hebt aanmaken, bestaat de eerste stap uit het maken en verbinden van apparaten. Elk apparaat dat is verbonden met IoT Central maakt gebruik van _een apparaatsjabloon_. Een apparaatsjabloon is de blauwdruk die de eigenschappen en het gedrag van een bepaald type apparaat definieert, zoals:
+Nadat u uw toepassing hebt aanmaken, bestaat de eerste stap uit het maken en verbinden van apparaten. Elk apparaat dat is verbonden IoT Central maakt gebruik van _een apparaatsjabloon_. Een apparaatsjabloon is de blauwdruk die de eigenschappen en het gedrag van een bepaald type apparaat definieert, zoals:
 
 - De telemetriegegevens die worden verstuurd. Voorbeelden zijn temperatuur en vochtigheid. Telemetrie bestaat uit het streamen van gegevens.
 - Bedrijfseigenschappen die kunnen worden gewijzigd door een operator. Voorbeelden zijn een klantadres en een datum van laatste service.
@@ -62,7 +62,7 @@ Nadat u uw toepassing hebt aanmaken, bestaat de eerste stap uit het maken en ver
 
 Elke [apparaatsjabloon](howto-set-up-template.md) omvat:
 
-- Een _apparaatmodel met_ een beschrijving van de mogelijkheden die een apparaat moet implementeren. De apparaatmogelijkheden zijn:
+- Een _apparaatmodel dat_ de mogelijkheden beschrijft die een apparaat moet implementeren. De apparaatmogelijkheden zijn:
 
   - De telemetrie die naar IoT Central wordt gestreamd.
   - De alleen-lezeneigenschappen die worden gebruikt om de status aan IoT Central te rapporteren.
@@ -98,7 +98,7 @@ Als operator gebruikt u de IoT Central-toepassing om [de apparaten te beheren](h
 
 U kunt [aangepaste regels en acties definiëren die](howto-configure-rules.md) worden gebruikt voor het streamen van gegevens vanaf verbonden apparaten. Een operator kan deze regels op apparaatniveau in- of uitschakelen om taken binnen de toepassing te beheren en automatiseren.
 
-Voor elke IoT-oplossing die is ontworpen voor gebruik op schaal, is een gestructureerde aanpak van apparaatbeheer belangrijk. Het is niet voldoende om uw apparaten alleen maar te verbinden met de cloud. U moet ervoor zorgen dat uw apparaten verbonden blijven en goed blijven werken. Gebruik de volgende IoT Central voor het beheren van uw apparaten gedurende de levenscyclus van de toepassing:
+Net als bij elke IoT-oplossing die is ontworpen om op schaal te werken, is een gestructureerde benadering van apparaatbeheer belangrijk. Het is niet voldoende om uw apparaten alleen maar te verbinden met de cloud. U moet ervoor zorgen dat uw apparaten verbonden blijven en goed blijven werken. Gebruik de volgende IoT Central voor het beheren van uw apparaten gedurende de hele levenscyclus van de toepassing:
 
 ### <a name="dashboards"></a>Dashboards
 

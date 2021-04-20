@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: devx-track-csharp, mvc
 ms.date: 06/18/2020
-ms.openlocfilehash: 1834f21a3e25308f6be86eba2961cc983b14a5db
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 71e973e359c21c9ec6a77de93b8b56dfa16da342
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104721542"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739166"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-framework"></a>Quickstart: Azure Cache voor Redis in .NET Framework gebruiken
 
@@ -21,7 +21,7 @@ In deze quickstart neemt u Azure Cache voor Redis op in een .NET Framework-app v
 
 ## <a name="skip-to-the-code-on-github"></a>Ga naar de code op GitHub
 
-Als u direct naar de code wilt gaan, raadpleegt u de [.NET Framework Quick](https://github.com/Azure-Samples/azure-cache-redis-samples/tree/main/quickstart/dotnet) start op github.
+Als u direct naar de code wilt gaan, bekijkt u [de .NET Framework quickstart](https://github.com/Azure-Samples/azure-cache-redis-samples/tree/main/quickstart/dotnet) op GitHub.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,11 +40,11 @@ Bewerk het bestand *CacheSecrets.config* en voeg de volgende inhoud toe:
 
 ```xml
 <appSettings>
-    <add key="CacheConnection" value="<cache-name>.redis.cache.windows.net,abortConnect=false,ssl=true,allowAdmin=true,password=<access-key>"/>
+    <add key="CacheConnection" value="<host-name>,abortConnect=false,ssl=true,allowAdmin=true,password=<access-key>"/>
 </appSettings>
 ```
 
-Vervang `<cache-name>` door de hostnaam van uw cache.
+Vervang `<host-name>` door de hostnaam van uw cache.
 
 Vervang `<access-key>` door de primaire sleutel voor uw cache.
 
@@ -53,7 +53,7 @@ Vervang `<access-key>` door de primaire sleutel voor uw cache.
 
 Klik in Visual Studio op **File** > **New** > **Project**.
 
-Selecteer **Console-app (.NET Framework)** en **Volgende** om uw app te configureren. Typ een **project naam**, controleer of **.NET Framework 4.6.1** of hoger is geselecteerd en klik vervolgens op **maken** om een nieuwe console toepassing te maken.
+Selecteer **Console-app (.NET Framework)** en **Volgende** om uw app te configureren. Typ een **Projectnaam,** controleer **of .NET Framework 4.6.1** of hoger  is geselecteerd en klik vervolgens op Maken om een nieuwe consoletoepassing te maken.
 
 <a name="configure-the-cache-clients"></a>
 
@@ -128,7 +128,7 @@ De waarde van de appSetting *CacheConnection* wordt gebruikt om vanuit Azure Por
 
 ## <a name="handle-redisconnectionexception-and-socketexception-by-reconnecting"></a>RedisConnectionException en SocketException verwerken door opnieuw verbinding te maken
 
-Een aanbevolen best practice wanneer u methoden aanroept, `ConnectionMultiplexer` is om automatisch te proberen om de verbinding op te lossen en af te `RedisConnectionException` `SocketException` sluiten.
+Een aanbevolen best practice bij het aanroepen van methoden op is om te proberen en uitzonderingen automatisch op te lossen door de verbinding te sluiten `ConnectionMultiplexer` `RedisConnectionException` en opnieuw te `SocketException` maken.
 
 Voeg de volgende `using`-instructies toe aan *Program.cs*:
 
@@ -137,7 +137,7 @@ using System.Net.Sockets;
 using System.Threading;
 ```
 
-Voeg in *Program. cs* de volgende leden toe aan de `Program` klasse:
+Voeg *in Program.cs* de volgende leden toe aan de `Program` klasse :
 
 ```csharp
 private static long lastReconnectTicks = DateTimeOffset.MinValue.UtcTicks;

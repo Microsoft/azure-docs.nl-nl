@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: reference
 ms.date: 04/11/2021
 ms.author: memildin
-ms.openlocfilehash: bb79bbe918bb1a68b982ae4d44739c2c77a11434
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.openlocfilehash: 5f94b17fac17a7238b3f4b7eef218961df7a42d5
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107719147"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739958"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -37,7 +37,7 @@ De updates in april zijn onder meer:
 
 ### <a name="recently-pulled-container-registry-images-are-now-rescanned-weekly-general-availability"></a>Onlangs opgehaalde containerregister-afbeeldingen worden nu wekelijks opnieuw gescand (algemene beschikbaarheid)
 
-Azure Defender voor containerregisters bevat een ingebouwde scanner voor beveiligingsprobleem. Met deze scanner worden alle afbeeldingen die u naar het register pusht en alle binnen de afgelopen 30 dagen opgehaalde afbeeldingen direct gescand.
+Azure Defender voor containerregisters bevat een ingebouwde scanner voor beveiligingsprobleem. Deze scanner scant onmiddellijk elke afbeelding die u naar het register pusht en elke afbeelding die u in de afgelopen 30 dagen hebt opgehaald.
 
 Er worden elke dag nieuwe beveiligingsproblemen ontdekt. Met deze update worden containerafbeeldingen die in de afgelopen 30 dagen uit uw registers zijn gehaald, elke week **opnieuw** gescand. Dit zorgt ervoor dat nieuw ontdekte beveiligingsproblemen worden geïdentificeerd in uw afbeeldingen.
 
@@ -54,10 +54,10 @@ Wanneer u Azure Arc hebt ingeschakeld voor uw niet-Azure Kubernetes-clusters, bi
 
 Gebruik de aanbeveling (**Azure Arc kubernetes-clusters** moeten de extensie van Azure Defender hebben geïnstalleerd) en de extensie om Kubernetes-clusters te beveiligen die zijn geïmplementeerd in andere cloudproviders, hoewel niet op hun beheerde Kubernetes-services.
 
-Deze integratie tussen Azure Security Center, Azure Defender kubernetes Azure Arc Kubernetes biedt:
+Deze integratie tussen Azure Security Center, Azure Defender en Azure Arc Kubernetes brengt het volgende met zich mee:
 
 - Eenvoudig inrichten van de Azure Defender-extensie voor niet-beveiligde Azure Arc Kubernetes-clusters (handmatig en op schaal)
-- Bewaking van de Azure Defender-extensie en de inrichtingstoestand ervan vanuit de Azure Arc-portal
+- Bewaking van de Azure Defender-extensie en de inrichtingstoestand vanuit de Azure Arc Portal
 - Beveiligingsaanbevelingen van Security Center worden gerapporteerd op de nieuwe pagina Beveiliging van Azure Arc Portal
 - Geïdentificeerde beveiligingsrisico's van Azure Defender worden gerapporteerd op de nieuwe pagina Beveiliging van Azure Arc Portal
 - Azure Arc Kubernetes-clusters zijn geïntegreerd in het Azure Security Center platform en de ervaring
@@ -84,11 +84,11 @@ Meer informatie in [Inzicht Azure Policy gastconfiguratie van de Azure Policy.](
 
 ### <a name="cmk-recommendations-moved-to-best-practices-security-control"></a>CMK-aanbevelingen verplaatst naar aanbevolen procedures voor beveiligingsbeheer
 
-Het beveiligingsprogramma van elke organisatie bevat vereisten voor gegevensversleuteling. Standaard worden de gegevens van Azure-klanten 'at rest' versleuteld met door de service beheerde sleutels. Door de klant beheerde sleutels (CMK) zijn echter vaak vereist om te voldoen aan regelgevingsnormen. Met CMK's kunt u uw gegevens versleutelen met [Azure Key Vault](../key-vault/general/overview.md) sleutel die door u is gemaakt en eigendom is. Dit geeft u volledige controle en verantwoordelijkheid voor de levenscyclus van de sleutel, inclusief roulatie en beheer.
+Het beveiligingsprogramma van elke organisatie bevat vereisten voor gegevensversleuteling. Standaard worden de gegevens van Azure-klanten 'at rest' versleuteld met door de service beheerde sleutels. Door de klant beheerde sleutels (CMK) zijn echter doorgaans vereist om te voldoen aan regelgevingsnormen. Met CMK's kunt u uw gegevens versleutelen met [Azure Key Vault](../key-vault/general/overview.md) sleutel die door u is gemaakt en eigendom is. Dit geeft u volledige controle en verantwoordelijkheid voor de levenscyclus van de sleutel, inclusief roulatie en beheer.
 
 Azure Security Center beveiligingscontroles zijn logische groepen gerelateerde beveiligingsaanbevelingen en weerspiegelen uw kwetsbare aanvalsoppervlakken. Elk besturingselement heeft een maximum aantal punten dat u aan uw veilige score kunt toevoegen als u alle aanbevelingen in het besturingselement herstelt voor al uw resources. Het **beveiligingsbeheer voor best practices voor beveiliging** implementeren is nul punten waard. Aanbevelingen in dit besturingselement hebben dus geen invloed op uw beveiligde score.
 
-De onderstaande aanbevelingen worden verplaatst  naar beveiligingsbesturingselement aanbevolen procedures voor beveiliging implementeren om de optionele aard ervan beter weer te geven. Deze overstap zorgt ervoor dat deze aanbevelingen de meest geschikte controle hebben om te voldoen aan hun doelstelling.
+De onderstaande aanbevelingen worden verplaatst  naar beveiligingsbesturingselement aanbevolen procedures voor beveiliging implementeren om de optionele aard ervan beter weer te geven. Deze overstap zorgt ervoor dat deze aanbevelingen de meest geschikte controle hebben om aan hun doelstelling te voldoen.
 
 - Voor Azure Cosmos DB-accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest
 - Azure Machine Learning-werkruimten moeten worden versleuteld met een door de klant beheerde sleutel (CMK)
@@ -136,7 +136,7 @@ De Azure Defender waarschuwingen die hieronder worden vermeld, zijn afgeschaft.
 De volgende twee aanbevelingen zijn afgeschaft en de wijzigingen kunnen leiden tot een lichte invloed op uw secure score:
 
 - **Uw machines moeten opnieuw worden opgestart om systeemupdates toe te passen**
-- **De bewakingsagent moet op uw computers zijn geïnstalleerd.** Deze aanbeveling heeft alleen betrekking op on-premises machines en een deel van de logica wordt overgedragen naar een andere aanbeveling. Statusproblemen met **Log Analytics-agent** moeten worden opgelost op uw computers
+- **De bewakingsagent moet op uw computers zijn geïnstalleerd.** Deze aanbeveling heeft alleen betrekking op on-premises machines en een deel van de logica wordt overgebracht naar een andere aanbeveling. De statusproblemen van de **Log Analytics-agent** moeten worden opgelost op uw computers
 
 We raden u aan om uw configuraties voor continue export en werkstroomautomatisering te controleren om te zien of deze aanbevelingen in deze configuraties zijn opgenomen. Bovendien moeten dashboards of andere bewakingshulpprogramma's die deze kunnen gebruiken, dienovereenkomstig worden bijgewerkt.
 
@@ -188,11 +188,11 @@ U kunt de nieuwe integratie gebruiken om gebruik te maken van de out-of-the-box-
 
 Er worden drie sjablonenrapporten aangeboden:
 
-- **Beveiligde score in de tijd:** de scores en wijzigingen in uw abonnementen bijhouden in aanbevelingen voor uw resources
+- **Beveiligde score in de tijd:** de scores en wijzigingen in de aanbevelingen voor uw resources voor uw abonnementen bijhouden
 - **Systeemupdates:** ontbrekende systeemupdates weergeven op resources, besturingssysteem, ernst en meer
-- **Resultaten van evaluatie van beveiligingslesources:** bekijk de resultaten van scans van beveiligingsprobleem van uw Azure-resources
+- **Resultaten van evaluatie van beveiligingslesources:** bekijk de resultaten van scans van beveiligingsleeds van uw Azure-resources
 
-Meer informatie over het gebruik van deze rapporten of het bouwen van uw eigen [uitgebreide, interactieve rapporten van Security Center maken.](custom-dashboards-azure-workbooks.md)
+Meer informatie over het gebruik van deze rapporten of het bouwen van uw eigen [uitgebreide, interactieve rapporten van Security Center gegevens](custom-dashboards-azure-workbooks.md).
 
 :::image type="content" source="media/custom-dashboards-azure-workbooks/secure-score-over-time-snip.png" alt-text="Rapport Over een veilige score in de tijd":::
 
@@ -215,7 +215,7 @@ Meer informatie over het [beheren van de standaarden in uw dashboard voor nalevi
 
 De pagina's met aanbevelingsdetails bevatten nu de werkbalkknop Verkennen in ARG. Gebruik deze knop om een query Azure Resource Graph te openen en de gegevens van de aanbeveling te verkennen, exporteren en delen.
 
-Azure Resource Graph (ARG) biedt directe toegang tot resourcegegevens in uw cloudomgevingen met robuuste mogelijkheden voor filteren, groeperen en sorteren. Het is een snelle en efficiënte manier om via een programma of vanuit de Azure Portal.
+Azure Resource Graph (ARG) biedt directe toegang tot resourcegegevens in uw cloudomgevingen met robuuste filter-, groeperings- en sorteermogelijkheden. Het is een snelle en efficiënte manier om via een programma of vanuit de Azure Portal.
 
 Meer informatie over [Azure Resource Graph (ARG).](../governance/resource-graph/index.yml)
 
@@ -242,7 +242,7 @@ Er zijn twee updates voor de functies van dit beleid:
 
 Aan de slag met [sjablonen voor werkstroomautomatisering](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
 
-Meer informatie over het [automatiseren van antwoorden op Security Center triggers](workflow-automation.md).
+Meer informatie over het [automatiseren van reacties op Security Center triggers.](workflow-automation.md)
 
 
 ### <a name="two-legacy-recommendations-no-longer-write-data-directly-to-azure-activity-log"></a>Twee verouderde aanbevelingen schrijven geen gegevens meer rechtstreeks naar het Azure-activiteitenlogboek 
@@ -285,7 +285,7 @@ Updates in februari zijn onder andere:
 - [Directe koppeling naar beleid vanaf de pagina met aanbevelingsdetails](#direct-link-to-policy-from-recommendation-details-page)
 - [Aanbeveling voor SQL-gegevensclassificatie heeft geen invloed meer op uw beveiligingsscore](#sql-data-classification-recommendation-no-longer-affects-your-secure-score)
 - [Werkstroomautomatiseringen kunnen worden geactiveerd door wijzigingen in evaluaties van naleving van regelgeving (in preview)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-in-preview)
-- [Verbeteringen van de pagina Assetinventarisatie](#asset-inventory-page-enhancements)
+- [Verbeteringen aan de assetinventarisatiepagina](#asset-inventory-page-enhancements)
 
 
 ### <a name="new-security-alerts-page-in-the-azure-portal-released-for-general-availability-ga"></a>Nieuwe pagina met beveiligingswaarschuwingen in de Azure Portal voor algemene beschikbaarheid (GA)
@@ -306,11 +306,11 @@ De pagina Beveiligingswaarschuwingen van Azure Security Center is opnieuw ontwor
 
 ### <a name="kubernetes-workload-protection-recommendations-released-for-general-availability-ga"></a>Aanbevelingen voor beveiliging van Kubernetes-workloads uitgebracht voor algemene beschikbaarheid
 
-Met trots kondigen we de algemene beschikbaarheid (GA) aan van de reeks aanbevelingen voor kubernetes-workloadbeveiligingen.
+Met trots kondigen we de algemene beschikbaarheid (GA) aan van de reeks aanbevelingen voor Kubernetes-workloadbeveiligingen.
 
 Om ervoor te zorgen dat Kubernetes-workloads standaard zijn beveiligd, heeft Security Center aanbevelingen voor beveiliging op Kubernetes-niveau toegevoegd, waaronder afdwingingsopties met Kubernetes-toegangsbeheer.
 
-Wanneer de Azure Policy-invoegsel voor Kubernetes is geïnstalleerd op uw Azure Kubernetes Service-cluster (AKS), wordt elke aanvraag voor de Kubernetes API-server gecontroleerd op basis van de vooraf gedefinieerde set aanbevolen procedures ( weergegeven als 13 beveiligingsaanbevelingen) voordat deze in het cluster worden opgeslagen. Vervolgens kunt u instellingen configureren om de aanbevolen procedures af te dwingen en ze te verplichten voor toekomstige workloads.
+Wanneer de Azure Policy-invoegsel voor Kubernetes is geïnstalleerd op uw Azure Kubernetes Service-cluster (AKS), wordt elke aanvraag naar de Kubernetes API-server gecontroleerd op basis van de vooraf gedefinieerde set aanbevolen procedures ( weergegeven als 13 beveiligingsaanbevelingen) voordat deze in het cluster worden opgeslagen. Vervolgens kunt u instellingen configureren om de aanbevolen procedures af te dwingen en ze te verplichten voor toekomstige workloads.
 
 U kunt er bijvoorbeeld voor zorgen dat containers met machtigingen niet moeten worden gemaakt, en toekomstige aanvragen hiervoor worden dan geblokkeerd.
 
@@ -341,7 +341,7 @@ Gebruik deze koppeling om de beleidsdefinitie weer te geven en de evaluatielogic
 
 Als u de lijst met aanbevelingen in [](recommendations-reference.md)onze referentiehandleiding voor beveiligingsaanbevelingen bekijkt, ziet u ook koppelingen naar de pagina's met beleidsdefinitie:
 
-:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="De pagina Azure Policy voor een specifiek beleid rechtstreeks openen vanaf de Azure Security Center aanbevelingenpagina" lightbox="media/release-notes/view-policy-definition-from-documentation.png":::
+:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Toegang tot de Azure Policy voor een specifiek beleid rechtstreeks vanaf de Azure Security Center aanbevelingenpagina" lightbox="media/release-notes/view-policy-definition-from-documentation.png":::
 
 
 ### <a name="sql-data-classification-recommendation-no-longer-affects-your-secure-score"></a>Aanbeveling voor SQL-gegevensclassificatie heeft geen invloed meer op uw beveiligingsscore
@@ -352,7 +352,7 @@ Zie Beveiligingsmaatregelen en hun aanbevelingen voor een volledige lijst met al
 ### <a name="workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-in-preview"></a>Werkstroomautomatiseringen kunnen worden geactiveerd door wijzigingen in evaluaties van naleving van regelgeving (in preview)
 We hebben een derde gegevenstype toegevoegd aan de triggeropties voor uw werkstroomautomatiseringen: wijzigingen in evaluaties van naleving van regelgeving.
 
-Meer informatie over het gebruik van de hulpprogramma's voor werkstroomautomatisering in [Antwoorden op Security Center triggers automatiseren.](workflow-automation.md)
+Meer informatie over het gebruik van de hulpprogramma's voor werkstroomautomatisering in [Reacties op Security Center triggers automatiseren.](workflow-automation.md)
 
 :::image type="content" source="media/release-notes/regulatory-compliance-triggers-workflow-automation.png" alt-text="Wijzigingen in evaluaties van naleving van regelgeving gebruiken om een werkstroomautomatisering te activeren" lightbox="media/release-notes/regulatory-compliance-triggers-workflow-automation.png":::
 
@@ -364,7 +364,7 @@ Security Center van de assetinventarispagina is op de volgende manieren verbeter
 
     :::image type="content" source="media/release-notes/unregistered-subscriptions.png" alt-text="Aantal niet-geregistreerde abonnementen in de samenvattingen boven aan de pagina assetinventarisatie":::
 
-- Filters zijn uitgebreid en uitgebreid met:
+- Filters zijn uitgebreid en uitgebreid met onder andere:
     - **Tellingen:** elk filter geeft het aantal resources weer dat voldoet aan de criteria van elke categorie
 
         :::image type="content" source="media/release-notes/counts-in-inventory-filters.png" alt-text="Tellingen in de filters op de assetinventarispagina van Azure Security Center":::
@@ -390,7 +390,7 @@ Updates in januari zijn onder andere:
 - [Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen](#35-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark)
 - [CSV-export van een gefilterde lijst met aanbevelingen](#csv-export-of-filtered-list-of-recommendations)
 - [Resources die niet van toepassing zijn, worden nu gerapporteerd als 'Compatibel' in Azure Policy evaluaties](#not-applicable-resources-now-reported-as-compliant-in-azure-policy-assessments)
-- [Wekelijkse momentopnamen van gegevens over de veilige score en naleving van regelgeving exporteren met continue export (preview)](#export-weekly-snapshots-of-secure-score-and-regulatory-compliance-data-with-continuous-export-preview)
+- [Wekelijkse momentopnamen van beveiligde score- en nalevingsgegevens exporteren met continue export (preview)](#export-weekly-snapshots-of-secure-score-and-regulatory-compliance-data-with-continuous-export-preview)
 
 
 ### <a name="azure-security-benchmark-is-now-the-default-policy-initiative-for-azure-security-center"></a>Azure Security Benchmark is nu het standaardbeleidsinitiatief voor Azure Security Center
@@ -412,9 +412,9 @@ Bestaande aanbevelingen worden niet beïnvloed en naarmate de benchmark groeit, 
 Zie de volgende pagina's voor meer informatie:
 
 - [Meer informatie over Azure Security Benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction)
-- [De set standaarden in uw dashboard voor naleving van regelgeving aanpassen](update-regulatory-compliance-packages.md)
+- [De set standaarden aanpassen in uw dashboard voor naleving van regelgeving](update-regulatory-compliance-packages.md)
 
-### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga"></a>Evaluatie van beveiligingsprobleem voor on-premises machines en computers met meerdere cloudservices wordt vrijgegeven voor algemene beschikbaarheid
+### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga"></a>Evaluatie van beveiligingsleed voor on-premises machines en computers met meerdere cloudservices wordt uitgebracht voor algemene beschikbaarheid
 
 In oktober hebben we een preview voor het scannen van servers met Azure Arc met [Azure Defender voor servers](defender-for-servers-introduction.md) geïntegreerde evaluatie van beveiligingsproblemen (mogelijk gemaakt door Qualys).
 
@@ -444,7 +444,7 @@ Op de pagina met de beveiligde score worden nu de geaggregeerde beveiligde score
 
 Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging in Azure Security Center](secure-score-security-controls.md).
 
-### <a name="secure-score-api-is-released-for-general-availability-ga"></a>Beveiligde score-API wordt uitgebracht voor algemene beschikbaarheid (GA)
+### <a name="secure-score-api-is-released-for-general-availability-ga"></a>Beveiligde score-API wordt uitgebracht voor algemene beschikbaarheid
 
 U hebt nu toegang tot uw score via de [API voor de secure score.](/rest/api/securitycenter/securescores/) De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. Bijvoorbeeld:
 
@@ -458,16 +458,16 @@ Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging 
 
 ### <a name="dangling-dns-protections-added-to-azure-defender-for-app-service"></a>Daning van DNS-beveiligingen toegevoegd aan Azure Defender voor App Service
 
-Overnames van subdomeinen vormen een veelvoorkomende bedreiging met hoge urgentie voor organisaties. Een overname van een subdomein kan plaatsvinden wanneer u een DNS-record hebt die naar een website met deprovisioning wijst. Dergelijke DNS-records worden ook wel 'dansende DNS'-vermeldingen genoemd. CNAME-records zijn met name kwetsbaar voor deze bedreiging. 
+Overnames van subdomeinen vormen een veelvoorkomende bedreiging met hoge urgentie voor organisaties. Een subdomeinovername kan plaatsvinden wanneer u een DNS-record hebt die naar een website met deprovisioning wijst. Dergelijke DNS-records worden ook wel 'boven elkaar geplaatste DNS'-vermeldingen genoemd. CNAME-records zijn met name kwetsbaar voor deze bedreiging. 
 
 Met subdomeinovernames kunnen bedreigingsac actors verkeer dat is bedoeld voor het domein van een organisatie, omleiden naar een site die schadelijke activiteiten uitvoeren.
 
-Azure Defender voor App Service detecteert nu aaneengebaarde DNS-vermeldingen wanneer een App Service website buiten gebruik wordt gesteld. Dit is het moment waarop de DNS-vermelding verwijst naar een niet-bestaande resource en uw website kwetsbaar is voor een overname van een subdomein. Deze beveiligingen zijn beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een externe domeinregistrar en van toepassing zijn op zowel App Service in Windows als App Service op Linux.
+Azure Defender voor App Service detecteert nu bovenende DNS-vermeldingen wanneer een App Service website buiten gebruik wordt gesteld. Dit is het moment waarop de DNS-vermelding verwijst naar een niet-bestaande resource en uw website kwetsbaar is voor een overname van een subdomein. Deze beveiligingen zijn beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een externe domeinregistrar en van toepassing zijn op zowel App Service in Windows als App Service op Linux.
 
 Meer informatie:
 
 - [App Service waarschuwingsverwijzingstabel](alerts-reference.md#alerts-azureappserv) : bevat twee nieuwe Azure Defender waarschuwingen die worden activeren wanneer een bovenende DNS-vermelding wordt gedetecteerd
-- [Blokkerende DNS-vermeldingen voorkomen en overname van subdomein](../security/fundamentals/subdomain-takeover.md) voorkomen : meer informatie over de bedreiging van overname van subdomeinen en het dansbare DNS-aspect
+- [Blokkerende DNS-vermeldingen voorkomen en overname van subdomeinen](../security/fundamentals/subdomain-takeover.md) voorkomen : meer informatie over de bedreiging van overname van subdomeinen en het dansbare DNS-aspect
 - [Inleiding tot Azure Defender voor App Service](defender-for-app-service-introduction.md)
 
 
@@ -487,7 +487,7 @@ Deze mogelijkheid betekent dat Security Center zichtbaarheid en beveiliging bied
 - Geïntegreerde eindpuntdetectie en -respons (EDR)
 - Detectie van onjuiste beveiligingsconfiguraties
 - Eén weergave met beveiligingsaanbevelingen van alle cloudproviders
-- Al uw resources opnemen in Security Center van de secure score-berekeningen van uw bedrijf
+- Al uw resources opnemen in de Security Center van uw bedrijf
 - Evaluaties van naleving van regelgeving van uw AWS- en GCP-resources
 
 Selecteer in Security Center menu de optie **Multi-cloudconnectoren** en u ziet de opties voor het maken van nieuwe connectors:
@@ -511,13 +511,13 @@ Met deze preview-functie kunt u nu een uitzondering maken voor een aanbeveling v
 
 - **Een abonnement of beheergroep** vrijstellen om ervoor te zorgen dat de aanbeveling geen invloed heeft op uw beveiligde score en in de toekomst niet wordt weergegeven voor het abonnement of de beheergroep. Dit heeft betrekking op bestaande resources en alle resources die u in de toekomst maakt. De aanbeveling wordt gemarkeerd met de specifieke reden die u selecteert voor het bereik dat u hebt geselecteerd.
 
-Meer informatie vindt u in [Resources en aanbevelingen uit uw beveiligde score vrijstellen.](exempt-resource.md)
+Meer informatie vindt u in [Resources en aanbevelingen van uw beveiligde score vrijstellen.](exempt-resource.md)
 
 
 
 ### <a name="users-can-now-request-tenant-wide-visibility-from-their-global-administrator"></a>Gebruikers kunnen nu tenantbrede zichtbaarheid aanvragen bij hun globale beheerder
 
-Als een gebruiker geen machtigingen heeft om Security Center zien, ziet hij of zij nu een koppeling om machtigingen aan te vragen bij de globale beheerder van de organisatie. De aanvraag bevat de gevraagde rol en de reden waarom deze nodig is.
+Als een gebruiker geen machtigingen heeft om Security Center zien, ziet deze nu een koppeling om machtigingen aan te vragen bij de globale beheerder van de organisatie. De aanvraag bevat de gevraagde rol en de reden waarom deze nodig is.
 
 :::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Banner die een gebruiker informeert dat deze machtigingen voor de hele tenant kan aanvragen.":::
 
@@ -745,7 +745,7 @@ Deze hulpprogramma's zijn verbeterd en uitgebreid op de volgende manieren:
 
 - **Het deployifnotexist-beleid van continue export is verbeterd**. Het beleid is nu:
 
-    - **Controleer of de configuratie is ingeschakeld.** Als dat niet het geval is, wordt het beleid weergegeven als niet-compatibel en wordt er een compatibele resource gemaakt. Meer informatie over de geleverde Azure Policy sjablonen op het tabblad 'Op schaal implementeren met Azure Policy' in [Een continue export instellen.](continuous-export.md#set-up-a-continuous-export)
+    - **Controleer of de configuratie is ingeschakeld.** Als dat niet het geval is, wordt het beleid weergegeven als niet-compatibel en wordt er een compatibele resource gemaakt. Meer informatie over de opgegeven Azure Policy sjablonen op het tabblad 'Op schaal implementeren met Azure Policy' in [Een continue export instellen.](continuous-export.md#set-up-a-continuous-export)
 
     - **Ondersteuning voor het exporteren van beveiligingsresultaten.** Wanneer u de Azure Policy sjablonen gebruikt, kunt u uw continue export configureren om bevindingen op te stellen. Dit is relevant bij het exporteren van aanbevelingen met 'subaanbevelingen' (zoals bevindingen van scanners voor beveiligingsevaluatie) of specifieke systeemupdates voor de 'hoofdaanbeveling': "Systeemupdates moeten op uw computers worden geïnstalleerd".
     
@@ -770,7 +770,7 @@ Updates in november omvatten:
 
 ### <a name="29-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark"></a>Er zijn 29 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen
 
-Azure Security Benchmark is de door Microsoft opgestelde, azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingskaders. [Meer informatie over Azure Security-benchmark](../security/benchmarks/introduction.md).
+Azure Security Benchmark is de door Microsoft opgestelde, azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevings frameworks. [Meer informatie over Azure Security-benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction).
 
 De volgende 29 preview-aanbevelingen zijn toegevoegd aan Security Center om de dekking van deze benchmark te verhogen.
 
@@ -846,7 +846,7 @@ Meer informatie over hoe u [Security Center-gegevens continue exporteert](contin
 
 ### <a name="system-updates-should-be-installed-on-your-machines-recommendation-now-includes-subrecommendations"></a>Aanbeveling 'Systeemupdates moeten worden geïnstalleerd op uw computers' bevat nu subrecommendations
 
-De aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers** is verbeterd. De nieuwe versie bevat subrecommendations voor elke ontbrekende update en biedt de volgende verbeteringen:
+De aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers** is verbeterd. De nieuwe versie bevat subrecommendations voor elke ontbrekende update en bevat de volgende verbeteringen:
 
 - Een opnieuw ontworpen ervaring op de Azure Security Center-pagina's van Azure Portal. De pagina met aanbevelingsinformatie voor **Er moeten systeemupdates worden geïnstalleerd op uw computer** bevat de lijst met resultaten zoals hieronder wordt weergegeven. Wanneer u één resultaat selecteert, wordt het deelvenster Details geopend met een koppeling naar de herstelgegevens en een lijst met betrokken resources.
 

@@ -1,165 +1,170 @@
 ---
-title: Azure Monitor voor Azure Data Explorer (preview) | Microsoft Docs
-description: In dit artikel wordt Azure Monitor inzichten voor Azure Data Explorer-clusters beschreven.
+title: Azure Monitor voor Azure Data Explorer (preview)| Microsoft Docs
+description: In dit artikel worden Azure Monitor insights voor Azure Data Explorer clusters beschreven.
 services: azure-monitor
 ms.topic: conceptual
 ms.date: 01/05/2021
 author: lgayhardt
 ms.author: lagayhar
-ms.openlocfilehash: dcfe12b30e336863c8e112d9ad675a2f57fe48f4
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: ac147df90d3fa0c27bb4299c57ec79d9a9031710
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102179133"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107737586"
 ---
-# <a name="azure-monitor-for-azure-data-explorer-preview"></a>Azure Monitor voor Azure Data Explorer (preview-versie)
+# <a name="azure-monitor-for-azure-data-explorer-preview"></a>Azure Monitor voor Azure Data Explorer (preview)
 
-Azure Monitor voor Azure Data Explorer (preview) biedt uitgebreide bewaking van uw clusters door een uniforme weer gave te bieden van uw cluster prestaties, bewerkingen, gebruik en fouten.
-In dit artikel wordt uitgelegd hoe u Azure Monitor voor de onboarding en het gebruik van Azure Data Explorer (preview) kunt gebruiken.
+Azure Monitor voor Azure Data Explorer (preview) biedt uitgebreide bewaking van uw clusters door een uniforme weergave te bieden van de prestaties, bewerkingen, gebruik en fouten van uw cluster.
+Dit artikel helpt u inzicht te krijgen in het onboarden en gebruiken van Azure Monitor voor Azure Data Explorer (preview).
 
-## <a name="introduction-to-azure-monitor-for-azure-data-explorer-preview"></a>Inleiding tot Azure Monitor voor Azure Data Explorer (preview-versie)
+## <a name="introduction-to-azure-monitor-for-azure-data-explorer-preview"></a>Inleiding tot Azure Monitor voor Azure Data Explorer (preview)
 
-Voordat u naar de ervaring gaat, moet u weten hoe de informatie wordt gepresenteerd en gevisualiseerd.
--    **Op schaal perspectief** met een moment opname weergave van de primaire meet waarden van uw clusters kunt u eenvoudig de prestaties van query's, opname en export bewerkingen bijhouden.
--   **Zoom analyse** van een bepaald Azure Data Explorer-cluster uit om gedetailleerde analyse uit te voeren.
--    **Aanpasbaar** waar u kunt wijzigen welke metrische gegevens u wilt zien, wijzigen of instellen van drempel waarden die met uw limieten worden uitgelijnd en uw eigen aangepaste werkmappen opslaan. Grafieken in de werkmap kunnen worden vastgemaakt aan Azure-Dash boards.
+Voordat u in de ervaring gaat kijken, moet u begrijpen hoe deze informatie presenteert en visualiseert.
+-    **Bij schaalperspectief met** een momentopnameweergave van de primaire metrische gegevens van uw clusters, om eenvoudig de prestaties van query's, opname- en exportbewerkingen bij te houden.
+-   **Analyse van een bepaald** cluster Azure Data Explorer om gedetailleerde analyse uit te voeren.
+-    **Aanpasbaar** waar u kunt wijzigen welke metrische gegevens u wilt zien, wijzigen of drempelwaarden instellen die zijn afgestemd op uw limieten, en uw eigen aangepaste werkmappen opslaan. Grafieken in de werkmap kunnen worden vastgemaakt aan Azure-dashboards.
 
-## <a name="view-from-azure-monitor-at-scale-perspective"></a>Weer geven van Azure Monitor (op schaal perspectief)
+## <a name="view-from-azure-monitor-at-scale-perspective"></a>Weergave vanuit Azure Monitor (op schaalperspectief)
 
-Vanuit Azure Monitor kunt u de belangrijkste prestatie gegevens voor het cluster weer geven, met inbegrip van metrische gegevens voor query's, opname en export bewerkingen uit meerdere clusters in uw abonnement, en kunt u prestatie problemen identificeren.
+Vanuit Azure Monitor kunt u de belangrijkste metrische prestatiegegevens voor het cluster bekijken, inclusief metrische gegevens voor query's, opname- en exportbewerkingen vanuit meerdere clusters in uw abonnement, en prestatieproblemen helpen identificeren.
 
-Voer de volgende stappen uit om de prestaties van uw clusters in al uw abonnementen weer te geven:
+Voer de volgende stappen uit om de prestaties van uw clusters voor al uw abonnementen weer te geven:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com/)
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/)
 
-2. Selecteer **monitor** in het linkerdeel venster in het Azure Portal en selecteer in de sectie Insights-Hub **Azure Data Explorer-clusters (preview)**.
+2. Selecteer **Controleren** in het linkerdeelvenster in het Azure Portal en selecteer onder de sectie Insights Hub de **optie Azure Data Explorer Clusters (preview)**.
 
-![Scherm afbeelding van overzichts ervaring met meerdere grafieken](./media/data-explorer/insights-hub.png)
+![Schermopname van overzichtservaring met meerdere grafieken](./media/data-explorer/insights-hub.png)
 
 ### <a name="overview-tab"></a>Tabblad Overzicht
 
-Op het tabblad **overzicht** voor het geselecteerde abonnement worden in de tabel interactieve metrische gegevens weer gegeven voor de Azure-Data Explorer clusters gegroepeerd in het abonnement. U kunt de resultaten filteren op basis van de opties die u selecteert in de volgende vervolg keuzelijsten:
+Op het **tabblad** Overzicht voor het geselecteerde abonnement worden in de tabel interactieve metrische gegevens weergegeven voor de Azure Data Explorer clusters die binnen het abonnement zijn gegroepeerd. U kunt resultaten filteren op basis van de opties die u in de volgende vervolgkeuzelijsten selecteert:
 
-* Abonnementen: alleen abonnementen met Azure Data Explorer-clusters worden weer gegeven.
+* Abonnementen: alleen abonnementen met Azure Data Explorer clusters worden weergegeven.
 
-* Azure Data Explorer-clusters: standaard zijn Maxi maal vijf clusters vooraf geselecteerd. Als u in de scope selector alle of meerdere clusters selecteert, worden er Maxi maal 200 clusters geretourneerd.
+* Azure Data Explorer clusters zijn standaard slechts maximaal vijf clusters vooraf geselecteerd. Als u alle of meerdere clusters in de bereik-selector selecteert, worden maximaal 200 clusters geretourneerd.
 
-* Tijds bereik: standaard wordt de laatste 24 uur aan gegevens weer gegeven op basis van de overeenkomstige gemaakte selecties.
+* Tijdsbereik: geeft standaard de laatste 24 uur aan informatie weer op basis van de bijbehorende selecties.
 
-De tegel item, onder de vervolg keuzelijst, geeft het totale aantal Azure Data Explorer-clusters in de geselecteerde abonnementen weer en laat zien hoeveel er is geselecteerd. Er zijn voorwaardelijke kleur codes voor de kolommen: behoud Alive, CPU, opname gebruik en cache gebruik. Oranje gecodeerde cellen hebben waarden die niet duurzaam zijn voor het cluster. 
+Met de tellertegel wordt onder de vervolgkeuzelijst het totale aantal Azure Data Explorer-clusters in de geselecteerde abonnementen weergegeven en wordt weergegeven hoeveel er zijn geselecteerd. Er zijn voorwaardelijke kleurcoderingen voor de kolommen: Keep alive, CPU, Ingestion Utilization en Cache Utilization. Met oranje code gecodeerde cellen hebben waarden die niet duurzaam zijn voor het cluster. 
 
-Voor een beter begrip van de metrische gegevens, raden we u aan de documentatie over [Azure Data Explorer metrische gegevens](/azure/data-explorer/using-metrics#cluster-metrics)te lezen.
+Voor een beter begrip van de verschillende metrische gegevens raden we u aan de documentatie over de metrische [gegevens Azure Data Explorer lezen.](/azure/data-explorer/using-metrics#cluster-metrics)
 
-### <a name="query-performance-tab"></a>Tabblad Query prestaties
+### <a name="query-performance-tab"></a>Tabblad Queryprestaties
 
-Dit tabblad bevat de query duur, het totale aantal gelijktijdige query's en het totale aantal vertraagde query's.
+Op dit tabblad ziet u de queryduur, het totale aantal gelijktijdige query's en het totale aantal beperkt query's.
 
-![Scherm afbeelding van het tabblad Query prestaties](./media/data-explorer/query-performance.png)
+![Schermopname van het tabblad Queryprestaties](./media/data-explorer/query-performance.png)
 
-### <a name="ingestion-performance-tab"></a>Tabblad opname prestaties
+### <a name="ingestion-performance-tab"></a>Tabblad Opnameprestaties
 
-Dit tabblad bevat de opname latentie, geslaagde opname resultaten, mislukte opname resultaten, opname volume en gebeurtenissen die zijn verwerkt voor Event/IoT hubs.
+Op dit tabblad ziet u de opnamelatentie, de resultaten van de opname, de mislukte opnameresultaten, het opnamevolume en de gebeurtenissen die worden verwerkt voor Event/IoT Hubs.
 
-[![Scherm afbeelding van het tabblad opname prestaties](./media/data-explorer/ingestion-performance.png)](./media/data-explorer/ingestion-performance.png#lightbox)
+[![Schermopname van het tabblad Opnameprestaties](./media/data-explorer/ingestion-performance.png)](./media/data-explorer/ingestion-performance.png#lightbox)
 
-### <a name="streaming-ingest-performance-tab"></a>Het tabblad prestaties van streaming-opname
+### <a name="streaming-ingest-performance-tab"></a>Tabblad Prestaties streaming-opname
 
-Dit tabblad bevat informatie over de gemiddelde gegevens frequentie, de gemiddelde duur en de aanvraag frequentie.
+Dit tabblad bevat informatie over de gemiddelde gegevenssnelheid, gemiddelde duur en aanvraagsnelheid.
 
-### <a name="export-performance-tab"></a>Tabblad Export prestaties
+### <a name="export-performance-tab"></a>Tabblad Prestaties exporteren
 
-Dit tabblad bevat informatie over geëxporteerde records, de achterstand, het aantal in behandeling en het gebruiks percentage voor doorlopende export bewerkingen.
+Dit tabblad bevat informatie over geëxporteerde records, de late tijd, het aantal in behandeling en het gebruikspercentage voor continue exportbewerkingen.
 
-## <a name="view-from-an-azure-data-explorer-cluster-resource-drill-down-analysis"></a>Weer geven vanuit een Azure Data Explorer-cluster resource (analyse in-en uitzoomen)
+## <a name="view-from-an-azure-data-explorer-cluster-resource-drill-down-analysis"></a>Weergeven vanuit een Azure Data Explorer clusterresource (analyse van inzoomen)
 
-Voor toegang tot Azure Monitor voor Azure Data Explorer-clusters rechtstreeks vanuit een Azure Data Explorer-cluster:
+Voor toegang Azure Monitor voor Azure Data Explorer clusters rechtstreeks vanuit een Azure Data Explorer cluster:
 
-1. Selecteer in de Azure Portal **Azure Data Explorer-clusters**.
+1. Selecteer in Azure Portal de optie **Azure Data Explorer Clusters.**
 
-2. Kies een Azure Data Explorer-cluster in de lijst. Klik in de sectie bewaking op **inzichten (preview-versie)**.
+2. Kies in de lijst een Azure Data Explorer Cluster. Kies in de sectie Bewaking **de optie Inzichten (preview)**.
 
-Deze weer gaven zijn ook toegankelijk door de resource naam van een Azure Data Explorer-cluster te selecteren in de Azure Monitor Insights-weer gave.
+Deze weergaven zijn ook toegankelijk door de resourcenaam van een Azure Data Explorer cluster te selecteren in Azure Monitor inzichtweergave.
 
-Azure Monitor voor Azure Data Explorer combineert logboeken en metrische gegevens om een algemene bewakings oplossing te bieden. Voor het opnemen van op Logboeken gebaseerde visualisaties moeten gebruikers de [Diagnostische logboek registratie van hun Azure Data Explorer-cluster inschakelen en naar een log Analytics-werk ruimte verzenden.](/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) De diagnostische logboeken die moeten worden ingeschakeld, zijn: **opdracht**, **query**, **TableDetails** en **TableUsageStatistics**.
+Azure Monitor voor Azure Data Explorer combineert zowel logboeken als metrische gegevens om een wereldwijde bewakingsoplossing te bieden. Voor het opnemen van visualisaties op basis van logboeken moeten gebruikers diagnostische logboekregistratie van hun Azure Data Explorer-cluster inschakelen en naar [een Log Analytics-werkruimte verzenden.](/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs). De diagnostische logboeken die moeten worden ingeschakeld, zijn: **Opdracht,** **Query,** **TableDetails** en **TableUsageStatistics.**
 
-![Scherm afbeelding van een blauwe knop waarmee de tekst ' logboeken voor bewaking inschakelen ' wordt weer gegeven](./media/data-explorer/enable-logs.png)
-
-
- Op het tabblad **overzicht** ziet u:
-
-- Tegels met metrische gegevens markeren de beschik baarheid en de algehele status van het cluster om de status snel te beoordelen.
-
-- Een samen vatting van actieve [Advisor-aanbevelingen](/azure/data-explorer/azure-advisor) en de status van de [resource status](/azure/data-explorer/monitor-with-resource-health) .
-
-- Grafieken met de belangrijkste CPU-en geheugen gebruikers en het aantal unieke gebruikers gedurende een bepaalde periode.
+![Schermopname van een blauwe knop met de tekst Logboeken inschakelen voor bewaking](./media/data-explorer/enable-logs.png)
 
 
-[![Scherm opname van de weer gave van een Azure Data Explorer-cluster resource](./media/data-explorer/overview.png)](./media/data-explorer/overview.png#lightbox)
+ Op **het tabblad** Overzicht ziet u het volgende:
 
-Op het tabblad **belangrijkste metrische** gegevens ziet u een overzicht van een deel van de metrische gegevens van het cluster, gegroepeerd op: algemene metrische gegevens, aan query's gerelateerde, opname-en streaming-gerelateerde metrische gegevens.
+- Tegels met metrische gegevens die de beschikbaarheid en algemene status van het cluster markeren om snel de status ervan te beoordelen.
 
-[![Scherm opname van fouten weergave](./media/data-explorer/key-metrics.png)](./media/data-explorer/key-metrics.png#lightbox)
+- Een samenvatting van actieve [Advisor-aanbevelingen en](/azure/data-explorer/azure-advisor) [de status van de](/azure/data-explorer/monitor-with-resource-health) resource.
 
-Op het tabblad **gebruik** kunnen gebruikers de prestaties van de opdrachten en query's van het cluster dieper opduiken. Op deze pagina kunt u het volgende doen:
+- Grafieken met de belangrijkste CPU- en geheugenverbruikers en het aantal unieke gebruikers in de tijd.
+
+
+[![Schermopname van de weergave van Azure Data Explorer clusterresource](./media/data-explorer/overview.png)](./media/data-explorer/overview.png#lightbox)
+
+Op het tabblad **Belangrijke** metrische gegevens ziet u een uniforme weergave van enkele van de metrische gegevens van het cluster, gegroepeerd op: algemene metrische gegevens, query's, opnamegerelateerde gegevens en metrische gegevens met betrekking tot streaming-opname.
+
+[![Schermopname van de weergave Fouten](./media/data-explorer/key-metrics.png)](./media/data-explorer/key-metrics.png#lightbox)
+
+Op **het** tabblad Gebruik kunnen gebruikers dieper in op de prestaties van de opdrachten en query's van het cluster. Op deze pagina kunt u het volgende doen:
  
- - Bekijk welke werkbelasting groepen, gebruikers en toepassingen de meeste query's verzenden of de meeste CPU en het geheugen verbruiken (zodat u weet welke workloads de zwaarste query's voor het cluster moeten worden uitgevoerd).
- - Bepaal de belangrijkste werkbelasting groepen, gebruikers en toepassingen op mislukte query's.
- - Identificeer recente wijzigingen in het aantal query's, vergeleken met het historische dagelijks gemiddelde (in de afgelopen 16 dagen), per werkbelasting groep, gebruiker en toepassing.
- - Spoor trends en pieken in het aantal query's, het geheugen en het CPU-gebruik op werkbelasting groep, gebruiker, toepassing en opdracht type.
+ - Bekijk welke workloadgroepen, gebruikers en toepassingen de meeste query's verzenden of de meeste CPU en geheugen gebruiken (zodat u begrijpt welke workloads de zwaarste query's verzenden die het cluster moet verwerken).
+ - Identificeer de belangrijkste workloadgroepen, gebruikers en toepassingen op basis van mislukte query's.
+ - Recente wijzigingen in het aantal query's identificeren, vergeleken met het historische dagelijkse gemiddelde (in de afgelopen 16 dagen), per werkbelastinggroep, gebruiker en toepassing.
+ - Identificeer trends en pieken in het aantal query's, geheugen en CPU-verbruik per workloadgroep, gebruiker, toepassing en opdrachttype.
 
-[![Scherm afbeelding van een bewerkings weergave met ring grafieken van de bovenste toepassing op basis van de opdracht en het aantal query's, Top-principals op opdrachten en query's en de belangrijkste opdrachten op opdracht typen](./media/data-explorer/usage.png)](./media/data-explorer/usage.png#lightbox)
+[![Schermopname van de weergave bewerkingen met donut-grafieken van de bovenste toepassing op opdracht en aantal query's, belangrijkste principals op opdracht- en querytelling en belangrijkste opdrachten op opdrachttypen](./media/data-explorer/usage.png)](./media/data-explorer/usage.png#lightbox)
 
-[![Scherm afbeelding van een bewerkings weergave met lijn diagrammen van het aantal query's per toepassing, totaal geheugen per toepassing en totale CPU per toepassing](./media/data-explorer/usage-2.png)](./media/data-explorer/usage-2.png#lightbox)
+[![Schermopname van de weergave Bewerkingen met lijndiagrammen van het aantal query's per toepassing, het totale geheugen per toepassing en het totale CPU-gebruik per toepassing](./media/data-explorer/usage-2.png)](./media/data-explorer/usage-2.png#lightbox)
 
-Op het tabblad **tabellen** worden de laatste en historische eigenschappen van tabellen in het cluster weer gegeven. U kunt zien welke tabellen de meeste ruimte verbruiken, de historie van de groei bijhouden op tabel grootte, dynamische gegevens en het aantal rijen in de loop van de tijd.
+Op **het tabblad** Tabellen worden de meest recente en historische eigenschappen van tabellen in het cluster weergegeven. U kunt zien welke tabellen de meeste ruimte verbruiken, de groeigeschiedenis bijhouden op tabelgrootte, hot data en het aantal rijen in de tijd.
 
-Op het tabblad **cache** kunnen gebruikers hun werkelijke Zoek patronen van query's analyseren en deze vergelijken met het geconfigureerde cache beleid (voor elke tabel). U kunt tabellen identificeren die worden gebruikt door de meeste query's en tabellen die helemaal niet worden opgevraagd, en het cache beleid dienovereenkomstig aan te passen. U kunt bepaalde aanbevelingen voor cache beleid verkrijgen voor specifieke tabellen in Azure Advisor (momenteel zijn cache aanbevelingen alleen beschikbaar vanuit het [hoofd Azure Advisor dash board](/azure/data-explorer/azure-advisor#use-the-azure-advisor-recommendations)), op basis van de werkelijke query's in de afgelopen 30 dagen en een niet-geoptimaliseerd cache beleid voor ten minste 95% van de query's. Aanbevelingen voor cache reductie in Azure Advisor zijn beschikbaar voor clusters die ' gebonden aan gegevens ' zijn (wat betekent dat het cluster weinig CPU en weinig opname verbruikt, maar vanwege een hoge gegevens capaciteit kan het cluster niet worden geschaald of geschaald).
+Op **het tabblad Cache** kunnen gebruikers de zoekpatronen van hun werkelijke query's analyseren en deze vergelijken met het geconfigureerde cachebeleid (voor elke tabel). U kunt tabellen identificeren die worden gebruikt door de meeste query's en tabellen die helemaal niet worden opgevraagd en het cachebeleid dienovereenkomstig aanpassen. U kunt bepaalde aanbevelingen voor cachebeleid krijgen voor specifieke tabellen in Azure Advisor (momenteel zijn cacheaanbevelingen alleen beschikbaar via het hoofddashboard [van de Azure Advisor),](/azure/data-explorer/azure-advisor#use-the-azure-advisor-recommendations)op basis van het terugkijken van werkelijke query's in de afgelopen 30 dagen en een niet-geoptimaliseerd cachebeleid voor ten minste 95% van de query's. Aanbevelingen voor het verminderen van de cache in Azure Advisor zijn beschikbaar voor clusters die worden 'gebonden door gegevens' (wat betekent dat het cluster een laag CPU- en laag opnamegebruik heeft, maar vanwege een hoge gegevenscapaciteit kan het cluster niet worden ingeschaald of omlaag geschaald).
 
-[![Scherm opname van cache Details](./media/data-explorer/cache-tab.png)](./media/data-explorer/cache-tab.png#lightbox)
+[![Schermopname van cachedetails](./media/data-explorer/cache-tab.png)](./media/data-explorer/cache-tab.png#lightbox)
 
-## <a name="pin-to-azure-dashboard"></a>Aan Azure-dash board vastmaken
+Op **het tabblad Clustergrenzen worden** de clustergrenzen weergegeven op basis van uw gebruik. Op dit tabblad kunt u het CPU-, opname- en cachegebruik inspecteren. Deze metrische gegevens worden als 'Laag', 'Gemiddeld' of 'Hoog' scoren. Deze metrische gegevens en scores zijn belangrijk bij het bepalen van de optimale SKU en het aantal exemplaren voor uw cluster. Deze worden meegenomen in Azure Advisor aanbeveling voor SKU/grootte. Op dit tabblad kunt u een tegel met metrische gegevens en diepgaande kennis selecteren om inzicht te krijgen in de trend en hoe de score wordt bepaald. U kunt ook de aanbeveling Azure Advisor SKU/grootte voor uw cluster weergeven. In de volgende afbeelding kunt u bijvoorbeeld zien dat alle metrische gegevens worden scoren als 'Laag', waardoor het cluster een kostenaanbeveling ontvangt, zodat het kan in-/omlaag schalen en kosten kan besparen.
 
-U kunt een van de metrische gedeeltes (van het perspectief ' op schaal ') aan een Azure-dash board vastmaken door het pictogram met het punaise te selecteren in de rechter bovenhoek van de sectie.
+> [!div class="mx-imgBorder"]
+> [![Schermopname van de clustergrenzen.](./media/data-explorer/cluster-boundaries.png)](./media/data-explorer/cluster-boundaries.png#lightbox)
 
-![Scherm afbeelding van het pictogram pincode geselecteerd](./media/data-explorer/pin.png)
+## <a name="pin-to-azure-dashboard"></a>Vastmaken aan Azure-dashboard
 
-## <a name="customize-azure-monitor-for-azure-data-explorer-cluster"></a>Azure Monitor voor Azure Data Explorer-cluster aanpassen
+U kunt een van de secties met metrische gegevens (van het perspectief op schaal) vastmaken aan een Azure-dashboard door het punaisepictogram rechtsboven in de sectie te selecteren.
 
-In deze sectie worden algemene scenario's beschreven voor het bewerken van de werkmap om uw behoeften aan te passen aan uw gegevens analyse:
-* De werkmap zo beperken dat er altijd een bepaald abonnement of Azure Data Explorer cluster (s) wordt geselecteerd
+![Schermopname van het geselecteerde speldpictogram](./media/data-explorer/pin.png)
+
+## <a name="customize-azure-monitor-for-azure-data-explorer-cluster"></a>De Azure Monitor voor Azure Data Explorer cluster aanpassen
+
+In deze sectie worden algemene scenario's belicht voor het bewerken van de werkmap om deze aan te passen ter ondersteuning van uw gegevensanalysebehoeften:
+* Bereik van de werkmap om altijd een bepaald abonnement of een bepaald Azure Data Explorer cluster(s) te selecteren
 * Metrische gegevens in het raster wijzigen
-* Drempel waarden wijzigen of kleur rendering/coderen
+* Drempelwaarden wijzigen of kleuren weergeven/coderen
 
-U kunt de aanpassingen beginnen door de bewerkings modus in te scha kelen door de knop **aanpassen** te selecteren in de bovenste werk balk.
+U kunt aanpassingen starten door de bewerkingsmodus in te schakelen door de knop **Aanpassen** te selecteren in de bovenste werkbalk.
 
-![Scherm afbeelding van de knop aanpassen](./media/data-explorer/customize.png)
+![Schermopname van de knop Aanpassen](./media/data-explorer/customize.png)
 
-Aanpassingen worden opgeslagen in een aangepaste werkmap om te voor komen dat de standaard configuratie in onze gepubliceerde werkmap wordt overschreven. Werkmappen worden opgeslagen in een resource groep, hetzij in het gedeelte Mijn rapporten dat persoonlijk is voor u of in de sectie gedeelde rapporten die toegankelijk is voor iedereen die toegang heeft tot de resource groep. Nadat u de aangepaste werkmap hebt opgeslagen, moet u naar de galerie met werkmappen gaan om deze te starten.
+Aanpassingen worden opgeslagen in een aangepaste werkmap om te voorkomen dat de standaardconfiguratie in onze gepubliceerde werkmap wordt overschreven. Werkmappen worden opgeslagen in een resourcegroep, in de sectie Mijn rapporten die voor u privé is of in de sectie Gedeelde rapporten die toegankelijk is voor iedereen met toegang tot de resourcegroep. Nadat u de aangepaste werkmap hebt op slaan, moet u naar de werkmapgalerie gaan om deze te starten.
 
-![Scherm opname van de werkmap galerie](./media/data-explorer/gallery.png)
+![Schermopname van de werkmapgalerie](./media/data-explorer/gallery.png)
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Raadpleeg voor algemene richt lijnen voor probleem oplossing het [artikel specifieke informatie over probleem](troubleshoot-workbooks.md)oplossing op basis van een werkmap.
+Raadpleeg het artikel over het oplossen van problemen met toegewezen op werkmapken gebaseerde inzichten voor algemene [richtlijnen voor probleemoplossing.](troubleshoot-workbooks.md)
 
-Deze sectie helpt u bij het diagnosticeren en oplossen van problemen met enkele veelvoorkomende problemen die kunnen optreden bij het gebruik van Azure Monitor voor Azure Data Explorer cluster (preview). Gebruik de onderstaande lijst om de informatie te vinden die relevant is voor uw specifieke probleem.
+Deze sectie helpt u bij het diagnosticeren en oplossen van een aantal veelvoorkomende problemen die kunnen voorkomen bij het gebruik van Azure Monitor voor Azure Data Explorer Cluster (preview). Gebruik de onderstaande lijst om de informatie te vinden die relevant is voor uw specifieke probleem.
 
-### <a name="why-dont-i-see-all-my-subscriptions-in-the-subscription-picker"></a>Waarom zie ik niet al mijn abonnementen in de abonnements kiezer?
+### <a name="why-dont-i-see-all-my-subscriptions-in-the-subscription-picker"></a>Waarom zie ik niet al mijn abonnementen in de abonnementsverkender?
 
-Er worden alleen abonnementen weer gegeven die Azure Data Explorer-clusters bevatten, die u hebt gekozen in het geselecteerde abonnements filter, die zijn geselecteerd in het "adres lijst" in de Azure Portal-header.
+We geven alleen abonnementen weer die Azure Data Explorer Clusters bevatten, die zijn gekozen uit het geselecteerde abonnementsfilter, die zijn geselecteerd in de map + abonnement in de Azure Portal koptekst.
 
-![Scherm opname van het abonnements filter](./media/key-vaults-insights-overview/Subscriptions.png)
+![Schermopname van het abonnementsfilter](./media/key-vaults-insights-overview/Subscriptions.png)
 
-### <a name="why-do-i-not-see-any-data-for-my-azure-data-explorer-cluster-under-the-usage-tables-or-cache-sections"></a>Waarom zie ik geen gegevens voor mijn Azure Data Explorer-cluster in de secties gebruik, tabellen of cache?
+### <a name="why-do-i-not-see-any-data-for-my-azure-data-explorer-cluster-under-the-usage-tables-or-cache-sections"></a>Waarom zie ik geen gegevens voor mijn Azure Data Explorer cluster in de secties Gebruik, Tabellen of Cache?
 
-Als u gegevens op basis van uw logboeken wilt weer geven, moet u [Diagnostische logboeken inschakelen](/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) voor elk van de Azure Data Explorer-clusters die u wilt bewaken. Dit kan worden gedaan onder de diagnostische instellingen voor elk cluster. U moet uw gegevens verzenden naar een Log Analytics-werk ruimte. De diagnostische logboeken die moeten worden ingeschakeld, zijn: opdracht, query, TableDetails en TableUsageStatistics.
+Als u uw gegevens op basis [](/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) van logboeken wilt weergeven, moet u diagnostische logboeken inschakelen voor elk van de Azure Data Explorer Clusters die u wilt bewaken. Dit kan worden gedaan onder de diagnostische instellingen voor elk cluster. U moet uw gegevens verzenden naar een Log Analytics-werkruimte. De diagnostische logboeken die moeten worden ingeschakeld, zijn: Command, Query, TableDetails en TableUsageStatistics.
 
-### <a name="i-have-already-enabled-logs-for-my-azure-data-explorer-cluster-why-am-i-still-unable-to-see-my-data-under-commands-and-queries"></a>Ik heb logboeken voor mijn Azure Data Explorer-cluster al ingeschakeld, waarom kan ik mijn gegevens nog steeds niet zien onder opdrachten en Query's?
+### <a name="i-have-already-enabled-logs-for-my-azure-data-explorer-cluster-why-am-i-still-unable-to-see-my-data-under-commands-and-queries"></a>Ik heb al logboeken ingeschakeld voor mijn Azure Data Explorer Cluster. Waarom kan ik mijn gegevens nog steeds niet zien onder Opdrachten en query's?
 
-Op dit moment werken Diagnostische logboeken niet met terugwerkende kracht, zodat de gegevens alleen worden weer gegeven wanneer er acties zijn uitgevoerd op uw Azure-Data Explorer. Daarom kan het enige tijd duren, variërend van uren tot een dag, afhankelijk van de manier waarop uw Azure Data Explorer-cluster actief is.
+Diagnostische logboeken werken momenteel niet met terugwerkende kracht, dus de gegevens worden pas weergegeven zodra er acties zijn ondernomen voor uw Azure Data Explorer. Daarom kan het enige tijd duren, variërend van uren tot een dag, afhankelijk van hoe actief uw Azure Data Explorer cluster is.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de scenario's werkmappen zijn ontworpen voor ondersteuning, het ontwerpen van nieuwe en het aanpassen van bestaande rapporten en meer door [interactieve rapporten maken met Azure monitor werkmappen](../visualize/workbooks-overview.md)te controleren.
+Lees meer over de scenario's die werkmappen ondersteunen, hoe u nieuwe rapporten kunt maken en aanpassen, en meer door Interactieve rapporten maken met Azure Monitor [te bekijken.](../visualize/workbooks-overview.md)

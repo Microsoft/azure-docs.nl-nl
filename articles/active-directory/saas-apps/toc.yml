@@ -1755,7 +1755,7 @@
           href: softeon-tutorial.md
         - name: Software AG Cloud
           href: software-ag-cloud-tutorial.md
-        - name: SolarWinds Service Desk
+        - name: SolarWinds-Service Desk
           href: samanage-tutorial.md
         - name: Soloinsight-CloudGate SSO
           href: soloinsight-cloudgate-sso-tutorial.md
@@ -2057,7 +2057,7 @@
           href: workteam-tutorial.md
         - name: Wrike
           href: wrike-tutorial.md
-        - name: Wunaru-app
+        - name: Wuru-app
           href: wuru-app-tutorial.md
         - name: XaitPorter
           href: xaitporter-tutorial.md
@@ -2150,7 +2150,7 @@
           href: /azure/databricks/administration-guide/users-groups/scim/aad?bc=%2fazure%2factive-directory%2fsaas-apps%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fsaas-apps%2ftoc.json
         - name: AWS Single Sign-On
           href: aws-single-sign-on-provisioning-tutorial.md
-        - name: Automatic User Provisioning (Automatische gebruikers inrichten)
+        - name: Termijn - Automatische gebruikers inrichten
           href: bentley-automatic-user-provisioning-tutorial.md
         - name: BitaBIZ
           href: bitabiz-provisioning-tutorial.md
@@ -2204,6 +2204,8 @@
           href: druva-provisioning-tutorial.md
         - name: Envoy
           href: envoy-provisioning-tutorial.md
+        - name: Eletive
+          href: eletive-provisioning-tutorial.md
         - name: Elium
           href: elium-provisioning-tutorial.md
         - name: Federated Directory

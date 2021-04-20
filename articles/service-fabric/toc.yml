@@ -356,6 +356,8 @@
               href: service-fabric-cluster-resource-manager-movement-cost.md
             - name: Services voor automatisch schalen
               href: service-fabric-cluster-resource-manager-autoscaling.md
+            - name: Knooppunttagging
+              href: service-fabric-cluster-resource-manager-node-tagging.md
     - name: Controle en diagnose
       items:
         - name: Bewakingsoverzicht
@@ -440,19 +442,19 @@
                   href: service-fabric-develop-csharp-applications-with-vs-code.md
                 - name: Java Service Fabric-toepassingen ontwikkelen met VS Code
                   href: service-fabric-develop-java-applications-with-vs-code.md
-    - name: Service Fabric beheerde clusters gebruiken
+    - name: Beheerde Service Fabric gebruiken
       items:
         - name: Een virtuelemachineschaalsetextensie toevoegen aan een beheerd clusterknooppunttype
           href: how-to-managed-cluster-vmss-extension.md
         - name: Uw beheerde cluster configureren
           href: how-to-managed-cluster-configuration.md
-        - name: NSG-regels en andere opties voor beheerde cluster netwerken toevoegen
+        - name: NSG-regels en andere opties voor beheerde clusternetwerken toevoegen
           href: how-to-managed-cluster-networking.md
-        - name: Beheerde cluster toepassingen implementeren met ARM-sjabloon
+        - name: Beheerde clustertoepassingen implementeren met een ARM-sjabloon
           href: how-to-managed-cluster-app-deployment-template.md
-        - name: Schijf versleuteling inschakelen voor beheerde cluster knooppunten
+        - name: Schijfversleuteling inschakelen voor beheerde clusterknooppunten
           href: how-to-enable-managed-cluster-disk-encryption.md
-        - name: Beheerde identiteit voor beheerde cluster knooppunten gebruiken
+        - name: Beheerde identiteit gebruiken voor beheerde clusterknooppunten
           href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
     - name: Plannen en voorbereiden
       items:
@@ -502,7 +504,7 @@
                   href: service-fabric-how-to-remove-node-type.md
             - name: Upgraden
               items:
-                - name: Service Fabric cluster upgrades beheren
+                - name: Clusterupgrades Service Fabric beheren
                   href: service-fabric-cluster-upgrade-version-azure.md
                 - name: De clusterconfiguratie upgraden
                   href: service-fabric-cluster-config-upgrade-azure.md

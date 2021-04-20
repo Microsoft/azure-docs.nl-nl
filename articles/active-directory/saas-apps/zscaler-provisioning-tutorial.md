@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 9f368a4aebc4d5de38ebbab800241366650633e6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 92553e9d598823ee1b812a4f07480dec380b2490
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97936580"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739418"
 ---
 # <a name="tutorial-configure-zscaler-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler configureren voor automatische inrichting van gebruikers
 
@@ -76,6 +76,10 @@ Voordat u automatische inrichting van gebruikers configureert en inschakelt, moe
 ## <a name="configuring-automatic-user-provisioning-to-zscaler"></a>Automatische gebruikersinrichting voor Zscaler configureren
 
 In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Zscaler te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+
+
+> [!NOTE]
+> Open een [ondersteuningsticket](https://help.zscaler.com/) om een domein te maken in Zscaler.
 
 > [!TIP]
 > U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Zscaler, waarvoor u de instructies in de [Zelfstudie eenmalige aanmelding voor Zscaler](zscaler-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.

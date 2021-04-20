@@ -7,19 +7,19 @@ author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 34a839eb6996f2b37c07bb2e54f81a1d21044fa9
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 8023dcc29fe8ea3af853237e911524549e4d2bcb
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107502663"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739634"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Ingebouwde Azure Policy-definities voor Azure Security Center
 
 Deze pagina is een index van [Azure Policy](../governance/policy/overview.md) ingebouwde beleidsdefinities met betrekking tot Azure Security Center. De volgende groeperingen van beleidsdefinities zijn beschikbaar:
 
 - De [initiatiefgroep](#azure-security-center-initiatives) vermeldt de Azure Policy initiatiefdefinities in de categorie 'Security Center'.
-- De [standaardinitiatiefgroep](#azure-security-center-initiatives) bevat alle Azure Policy-definities die deel uitmaken van Security Center standaardinitiatief, [Azure Security Benchmark.](../security/benchmarks/introduction.md) Deze door Microsoft geschreven, zeer gerespecteerde benchmark bouwt voort op controles van het [Center for Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het National Institute of Standards and Technology [(NIST)](https://www.nist.gov/) met een focus op cloudgerichte beveiliging.
+- De [standaardinitiatiefgroep](#azure-security-center-initiatives) bevat alle Azure Policy-definities die deel uitmaken van Security Center standaardinitiatief, [Azure Security Benchmark.](https://docs.microsoft.com/security/benchmark/azure/introduction) Deze door Microsoft geschreven, zeer gerespecteerde benchmark bouwt voort op controles van het [Center for Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het National Institute of Standards and Technology [(NIST)](https://www.nist.gov/) met een focus op cloudgerichte beveiliging.
 - De [categoriegroep](#azure-security-center-category) bevat alle Azure Policy definities in de categorie 'Security Center'.
 
 Zie Werken met beveiligingsbeleid voor meer informatie [over beveiligingsbeleid.](./tutorial-security-policy.md) Zie [Ingebouwde Azure Policy-definities](../governance/policy/samples/built-in-policies.md) voor aanvullende ingebouwde modules voor Azure Policy voor andere services.

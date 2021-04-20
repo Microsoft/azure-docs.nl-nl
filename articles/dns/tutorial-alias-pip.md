@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
-ms.date: 9/25/2018
+ms.date: 04/19/2021
 ms.author: rohink
-ms.openlocfilehash: d3017d09e94040d16950598dad360fe32930c16b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 28e37ad0b404b5275a224c8debab5c11c07948b4
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "80985436"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107738806"
 ---
 # <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Zelfstudie: Een aliasrecord zo configureren dat deze naar een openbaar Azure-IP-adres verwijst 
 
@@ -36,8 +36,8 @@ Het voorbeelddomein dat wordt gebruikt voor deze zelfstudie is contoso.com, maar
 
 ## <a name="create-the-network-infrastructure"></a>De netwerkinfrastructuur maken
 Maak eerst een virtueel netwerk en een subnet waaraan u de webservers gaat toevoegen.
-1. Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azure.com).
-2. Selecteer helemaal linksboven in de portal **Een resource maken**. Typ *resourcegroep* in het zoekvak en maak een resourcegroep met de naam **RG-DNS-Alias-pip**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+2. Selecteer **Een resource maken** in het linkerpaneel van de Azure Portal. Typ *resourcegroep* in het zoekvak en maak een resourcegroep met de naam **RG-DNS-Alias-pip**.
 3. Selecteer **Een resource maken** > **Netwerken** > **Virtueel netwerk**.
 4. Maak een virtueel netwerk met de naam **VNet-Server**. Plaats het in de resourcegroep **RG-DNS-Alias-pip** en geef het subnet de naam **SN-Web**.
 
@@ -45,10 +45,10 @@ Maak eerst een virtueel netwerk en een subnet waaraan u de webservers gaat toevo
 1. Selecteer **Een resource maken** > **Windows Server 2016 VM**.
 2. Geef **Web-01** op als naam en plaats de virtuele machine in de resourcegroep **RG-DNS-Alias-TM**. Voer een gebruikersnaam en wachtwoord in en selecteer **OK**.
 3. Voor **Grootte**, selecteert u een SKU met 8 GB RAM-geheugen.
-4. Selecteer voor **Instellingen** het virtuele netwerk **VNet-Servers** en het subnet **SN-Web**. Selecteer voor openbare inkomende poorten **HTTP** > **HTTPS** > **RDP (3389)** en selecteer vervolgens **OK**.
+4. Selecteer voor **Instellingen** het virtuele netwerk **VNet-Servers** en het subnet **SN-Web**. Voor openbare binnenkomende poorten selecteert u **HTTP (80)**  >  **HTTPS (443)**  >  **RDP (3389)** en vervolgens **OK.**
 5. Op de pagina **Overzicht** selecteert u **Maken**.
 
-Deze procedure duurt een paar minuten. Aan de virtuele machine is een NIC gekoppeld. Deze heeft een eenvoudig, dynamisch, openbaar IP-adres met de naam Web-01-ip. Het openbare IP-adres wordt telkens gewijzigd wanneer de virtuele machine opnieuw wordt opgestart.
+Deze implementatie duurt enkele minuten. De virtuele machine heeft een gekoppelde NIC met een eenvoudig dynamisch openbaar IP-adres met de naam Web-01-ip. Het openbare IP-adres wordt telkens gewijzigd wanneer de virtuele machine opnieuw wordt opgestart.
 
 ### <a name="install-iis"></a>IIS installeren
 

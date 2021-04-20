@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/10/2021
 ms.author: duau
-ms.openlocfilehash: 033ffb6e274432c5398779ba3e3226c626c10ce8
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 5972e95425513e789725ed8de142c721d58011f3
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107496704"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739922"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute
 
@@ -44,7 +44,7 @@ In de volgende tabel vindt u een toewijzing van Azure-regio's aan ExpressRoute-l
 | **Australië - overheid** | Australië Centraal, Australië Centraal 2 |Canberra, Canberra2 |
 | **Europa** | Frankrijk - centraal, Frankrijk - zuid, Duitsland - noord, Duitsland - west-centraal, Europa - noord, Noorwegen - oost, Noorwegen - west, Zwitserland - noord, Zwitserland - west, VK - west, VK - zuid, Europa - west |Amsterdam, Amsterdam2, Amsterdam, Parijs, Dublin, Dublin, Wales2, Genève, Londen, Londen2, Laten, Laten, Cf, Nulen, Newport(Wales), Parijs, Stavanger, Keer, Zique |
 | **Noord-Amerika** | VS - oost, VS - west, VS - oost 2, VS - west 2, VS - centraal, VS - zuid-centraal, VS - noord-centraal, VS - west-centraal, Canada - centraal, Canada - oost |Atlanta, Chicago, Dallas, Denver, Las Vegas, Los Angeles, Los Angeles2, Miami, Minneapolis, Montreal, New York, Phoenix, Quebec City, Queretaro(Mexico), Quincy, San Antonio, Seattle, Silicon Valley, Silicon Valley2, Toronto, Toronto2, Vancouver, Washington DC, Washington DC2 |
-| **Azië** | Azië - oost, Azië - zuidoost | Hongkong, Hongkong, Hongkong2, Laten, Laten Lump Lumpur, Singapore, Singapore2, |
+| **Azië** | Azië - oost, Azië - zuidoost | Hongkong, Hongkong, Hongkong2, Laten, Lump Lumpur, Singapore, Singapore2, |
 | **India** | India - west, India - centraal, India - zuid |Chennai, Chennai2, Mumbai, Mumbai2 |
 | **Japan** | Japan - west, Japan - oost |Osaka, Tokio, Tokio2 |
 | **Oceanië** | Australië - zuidoost, Australië - oost |Auckland, Melbourne, Perth, Sydney, Sydney2 | 
@@ -111,7 +111,7 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Los Angeles** | [CoreSite LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | n.v.t. | 10G, 100G | CoreSite, Equinix, Megaport, Neutrona Networks, NTT, Zayo |
 | **Los Angeles2** | [Equinix LA1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/los-angeles-data-centers/la1/) | 1 | n.v.t. | 10G, 100G | Equinix |
 | **Madrid** | [InterxionCHU1](https://www.interxion.com/es/donde-estamos/europa/madrid) | 1 | Europa -west | 10G, 100G | Interxion |
-| **Marseille** |[Interxion ME1](https://www.interxion.com/Locations/marseille/) | 1 | Frankrijk - zuid | n.v.t. | DE-CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
+| **Marseille** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Frankrijk - zuid | n.v.t. | DE-CIX, GEANT, Interxion, Jaguar Network, Ooredoo Cloud Connect |
 | **Melbourne** | [NextDC M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Australië - zuidoost | 10G, 100G | AARNet, Devoli, Equinix, Megaport, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
 | **Miami** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | n.v.t. | 10G, 100G | Claro, C3ntro, Equinix, Megaport, Neutrona Networks |
 | **Milaan** | [IRIDEOS](https://irideos.it/en/data-centers/) | 1 | n.v.t. | 10G | Colt, Equinix, Fastweb, IRIDEOS, Retelit |
@@ -144,8 +144,8 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Sydney** | [Equinix SY2](https://www.equinix.com/locations/asia-colocation/australia-colocation/sydney-data-centers/sy2/) | 2 | Australië - oost | 10G, 100G | AARNet, AT&T NetBond, British Telecom, Devoli, Equinix, Kordia, Megaport, NEXTDC, NTT Communications, Optus, Orange, Spark NZ, Telstra Corporation, TPG Telecom, Verizon, Vocus Group NZ |
 | **Sydney2** | [NextDC S1](https://www.nextdc.com/data-centres/s1-sydney-data-centre) | 2 | Australië - oost | 10G, 100G | Megaport, NextDC |
 | **Taipei** | Chief Telecom | 2 | n.v.t. | 10G | Chief Telecom, Chunghwa Telecom, FarEasTone |
-| **Tokio** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Japan East | 10G, 100G | Aryaka Networks, AT&T NetBond, BBIX, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, Megaport, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
-| **Tokio2** | [AT TOKIO](https://www.attokyo.com/) | 2 | Japan East | 10G, 100G | AT TOKIO, Megaport, Tokai Communications |
+| **Tokio** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Japan - oost | 10G, 100G | Aryaka Networks, AT&T NetBond, BBIX, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, Megaport, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
+| **Tokio2** | [AT TOKIO](https://www.attokyo.com/) | 2 | Japan - oost | 10G, 100G | AT TOKIO, Megaport, Tokai Communications |
 | **Toronto** | [Cologix TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Canada - midden | 10G, 100G | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Reach Megaport, Telus, Verizon, Zayo |
 | **Toronto2** | [10-12-20](https://www.alliedreit.com/property/905-king-st-w/) | 1 | Canada - midden | 10G, 100G | |
 | **Vancouver** | [Cologix VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | n.v.t. | 10G | Cologix, Megaport, Telus |
@@ -173,12 +173,12 @@ Nationale Azure-clouds zijn geïsoleerd van elkaar en van wereldwijde commercië
 | **Washington DC** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | US DoD East, US Gov Virginia | 10G, 100G | AT&T NetBond, CenturyLink Cloud Connect, Equinix, Level 3 Communications, Megaport, Verizon |
 
 ### <a name="china"></a>China
-| **Locatie** | **Dienstverleners** |
-| --- | --- |
-| **Beijing** |China Telecom |
-| **Peking2** | China Telecom, China Unicom, GDS |
-| **Shanghai** |China Telecom |
-| **Shanghai2** | China Telecom, China Unicom, GDS |
+| **Locatie** | **Adres** | **Lokale Azure-regio's** | **ER Direct** | **Dienstverleners** |
+| --- | --- | --- | --- | --- |
+| **Beijing** | China Telecom | n.v.t. | 10G | China Telecom |
+| **Peking2** | GDS | n.v.t. | 10G | China Telecom, China Unicom, GDS |
+| **Shanghai** | China Telecom | n.v.t. | 10G | China Telecom |
+| **Shanghai2** | GDS | n.v.t. | 10G | China Telecom, China Unicom, GDS |
 
 Zie [ExpressRoute in China](http://www.windowsazure.cn/home/features/expressroute/) voor meer informatie.
 
@@ -221,14 +221,14 @@ Als u extern bent en geen glasvezelconnectiviteit hebt of als u andere connectiv
 | **Atlanta** | Equinix| HadoenEn
 | **Kaapstad** | Teraco | MTN |
 | **Chennai** | Tata Communications | Tata Teleservices |
-| **Chicago** | Equinix| 1000, Spectrum Enterprise, Windstream |
-| **Dallas** | Equinix, Megaport | Axtel, C3ntro Telecom, Transcript Business, Welke Welkes, Data Foundry, Spectrum Enterprise, Transtelco |
+| **Chicago** | Equinix| Hadeens, Spectrum Enterprise, Windstream |
+| **Dallas** | Equinix, Megaport | Axtel, C3ntro Telecom, Transcript Business, Welke Zij, Data Foundry, Spectrum Enterprise, Transtelco |
 | **Frankfurt** | Interxion | BICS, Cinia, Equinix, Nianet, QSC AG, Telekom Deutschland GmbH |
 | **Hamburg** | Equinix | Cinia |
 | **Hongkong SAR** | Equinix | Chief, Macroview Telecom |
 | **Johannesburg** | Teraco | MTN |
-| **Londen** | BICS, Equinix, euNetworks| Bezeq International Ltd., CoreAzure, Epsilon Telecommunications Limited, Exponential E, HSO, NexGen Networks, Accredit, Tamares Telecom, Zain |
-| **Los Angeles** | Equinix |Crown Castle, Spectrum Enterprise, Transtelco |
+| **Londen** | BICS, Equinix, euNetworks| Bezeq International Ltd., CoreAzure, Epsilon Telecommunications Limited, Exponential E, HSO, NexGen Networks, Curve, Tamares Telecom, Zain |
+| **Los Angeles** | Equinix |Hadoe, Spectrum Enterprise, Transtelco |
 | **Madrid** | Level3 | Zertia |
 | **Montreal** | Cologix| Airgate Technologies, Inc. Aptum Technologies, Rogers, Zirro |
 | **Mumbai** | Tata Communications | Tata Teleservices |

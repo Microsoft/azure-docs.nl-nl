@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Apparaatupdate voor IoT Hub documentatie
+title: Documentatie over apparaatupdate voor IoT Hub
 summary: Apparaatupdate voor IoT Hub is een service waarmee u over-the-air updates (OTA) kunt implementeren op uw IoT-apparaten.
 metadata:
-  title: Apparaatupdate voor IoT Hub documentatie
+  title: Documentatie over apparaatupdate voor IoT Hub
   description: Apparaatupdate voor IoT Hub is een service waarmee u over-the-air updates (OTA) kunt implementeren op uw IoT-apparaten.
   services: iot-hub
   ms.service: iot-hub
@@ -11,12 +11,12 @@ metadata:
   ms.author: philmea
   manager: philmea
   ms.date: 2/17/2021
-  ms.openlocfilehash: 9fd99eeefcae6667dfcc9a11c7d623f5d213ffac
-  ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+  ms.openlocfilehash: 13ada7214e8e4b1eb5a0ad0ca38840e25c53be95
+  ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 04/13/2021
-  ms.locfileid: "107377816"
+  ms.lasthandoff: 04/20/2021
+  ms.locfileid: "107739058"
 landingContent:
 - title: Over apparaatupdate
   linkLists:
@@ -32,7 +32,7 @@ landingContent:
       url: create-device-update-account.md
     - text: Agent voor apparaatupdates inrichten
       url: device-update-agent-provisioning.md
-    - text: Een update importeren
+    - text: Een update toevoegen
       url: import-update.md
     - text: Een updategroep maken
       url: create-update-group.md
@@ -54,7 +54,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Agent voor apparaatupdates bouwen en uitvoeren
+    - text: De agent voor apparaatupdates bouwen en uitvoeren
       url: device-update-agent-provisioning.md#how-to-build-and-run-device-update-agent
 - title: Aan de slag
   linkLists:
@@ -64,7 +64,7 @@ landingContent:
       url: device-update-simulator.md
     - text: Apparaatupdate op Raspberry Pi
       url: device-update-raspberry-pi.md
-    - text: Apparaatupdate op Ubuntu Server 18.04 x64 Package agent
+    - text: Apparaatupdate op Ubuntu Server 18.04 x64 Package Agent
       url: device-update-ubuntu-agent.md
 - title: API- en SDK-naslaginformatie
   linkLists:

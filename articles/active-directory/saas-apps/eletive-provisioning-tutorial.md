@@ -1,0 +1,163 @@
+---
+title: 'Zelfstudie: Eletive configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en de inrichting van gebruikersaccounts van Azure AD naar Eletive.
+services: active-directory
+documentationcenter: ''
+author: Zhchia
+writer: Zhchia
+manager: beatrizd
+ms.assetid: 8a775422-e6d7-4cd5-b8d1-cc8a2db24c4f
+ms.service: active-directory
+ms.subservice: saas-app-tutorial
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 04/16/2021
+ms.author: Zhchia
+ms.openlocfilehash: 393629be5c30eb3d97dae1de1c06e2d4cf7af94d
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107741757"
+---
+# <a name="tutorial-configure-eletive-for-automatic-user-provisioning"></a>Zelfstudie: Eletive configureren voor automatische inrichting van gebruikers
+
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Eletive als Azure Active Directory (Azure AD) om automatische inrichting van gebruikers te configureren. Wanneer deze configuratie is geconfigureerd, worden gebruikers en groepen in Azure AD automatisch ingericht en gede-ingericht voor [Eletive](https://app.eletive.com/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
+
+
+## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
+> [!div class="checklist"]
+> * Gebruikers maken in Eletive
+> * Gebruikers verwijderen in Eletive wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Eletive
+> * Een aanmelding bij Eletive (aanbevolen)
+
+## <a name="prerequisites"></a>Vereisten
+
+In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
+
+* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
+* Een gebruikersaccount in Eletive met beheertoegang.
+
+## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
+1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
+2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
+3. Bepaal welke gegevens moeten [worden weergegeven tussen Azure AD en Eletive.](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) 
+
+## <a name="step-2-configure-eletive-to-support-provisioning-with-azure-ad"></a>Stap 2. Eletive configureren ter ondersteuning van inrichting met Azure AD
+
+1. Meld u aan [bij Eletive](https://app.eletive.com/). Navigeer **naar**  ->  **InstellingenFuncties.**
+
+    ![Functies](media/eletive-provisioning-tutorial/settings.png)
+
+2.  Schakel **Integraties** en **SCIM 2.0 in.**
+
+    ![Integraties](media/eletive-provisioning-tutorial/scim.png)
+
+3.  **Navigeer naar**  ->  **InstellingenIntegraties.**
+
+4.  Klik op **Gebruikers inrichten.**
+
+    ![Tabblad](media/eletive-provisioning-tutorial/user.png)
+
+5.  Klik op **Verbinden.**
+
+    ![Knop](media/eletive-provisioning-tutorial/connect.png)
+
+6.  Kopieer de SCIM 2.0-URL en het Bearer-token en sla deze op. Deze waarden worden ingevoerd in het veld Tenant-URL en Geheim token op het tabblad Inrichten van uw Eletive-toepassing in Azure Portal.
+
+
+## <a name="step-3-add-eletive-from-the-azure-ad-application-gallery"></a>Stap 3. Eletive toevoegen vanuit de Azure AD-toepassingsgalerie
+
+Voeg Eletive toe vanuit de Azure AD-toepassingsgalerie om te beginnen met het beheren van de inrichting in Eletive. Als u eerder Eletive voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+
+## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
+
+Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) wordt beschreven. 
+
+* Wanneer u gebruikers en groepen toewijst aan Eletive, moet u een andere rol dan **Standaardtoegang selecteren.** Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als de enige beschikbare rol voor de toepassing de standaardtoegangsrol is, kunt u het toepassingsmanifest bijwerken [om](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) rollen toe te voegen. 
+
+* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u het bereik bepalen door een of twee gebruikers of groepen toe te wijzen aan de app. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) opgeven. 
+
+
+## <a name="step-5-configure-automatic-user-provisioning-to-eletive"></a>Stap 5. Automatische inrichting van gebruikers configureren voor Eletive 
+
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+
+### <a name="to-configure-automatic-user-provisioning-for-eletive-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Eletive in Azure AD:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
+
+    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+
+2. Selecteer **Eletive** in de lijst met toepassingen.
+
+    ![De koppeling Eletive in de lijst met toepassingen](common/all-applications.png)
+
+3. Selecteer het tabblad **Inrichten**.
+
+    ![Tabblad Inrichting](common/provisioning.png)
+
+4. Stel de **Inrichtingsmodus** in op **Automatisch**.
+
+    ![De inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
+
+5. Voer in **de sectie Beheerdersreferenties** uw Eletive Tenant URL en Secret Token in. Klik **op Verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met Eletive. Als de verbinding mislukt, controleert u of uw Eletive-account beheerdersmachtigingen heeft en probeert u het opnieuw.
+
+    ![Token](common/provisioning-testconnection-tenanturltoken.png)
+
+6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
+
+    ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
+
+7. Selecteer **Opslaan**.
+
+8. Selecteer onder **de sectie Toewijzingen** de optie **Synchronisatie Azure Active Directory gebruikers tot Eletive.**
+
+9. Controleer de gebruikerskenmerken die zijn gesynchroniseerd van Azure AD naar Eletive in de **sectie Kenmerktoewijzing.** De kenmerken die als overeenkomende eigenschappen **zijn** geselecteerd, worden gebruikt om de gebruikersaccounts in Eletive te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)doelkenmerk te wijzigen, moet u ervoor zorgen dat de Eletive API ondersteuning biedt voor het filteren van gebruikers op basis van dat kenmerk. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
+   |emails[type eq "work"].value|Tekenreeks|
+   |externalId|Tekenreeks|
+   |name.givenName|Tekenreeks|
+   |name.familyName|Tekenreeks|
+   |preferredLanguage|Tekenreeks|
+   |userType|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:eletive:2.0:User:participateInSurvey|Tekenreeks|
+
+10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+
+11. Als u de Azure AD-inrichtingsservice wilt inschakelen voor Eletive, wijzigt u **de Inrichtingsstatus** in **Aan** in de **sectie** Instellingen.
+
+    ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
+
+12. Definieer de gebruikers en/of groepen die u wilt inrichten voor Eletive door de gewenste waarden te kiezen in **Bereik** in de **sectie** Instellingen.
+
+    ![Inrichtingsbereik](common/provisioning-scope.png)
+
+13. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
+
+    ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
+
+Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
+
+## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
+Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
+
+1. Gebruik de [inrichtingslogboeken](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
+2. Controleer de [voortgangsbalk](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
+3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status) voor meer informatie over quarantainestatussen.  
+
+## <a name="more-resources"></a>Meer bronnen
+
+* [Gebruikersaccountinrichting voor zakelijke apps beheren](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+
+## <a name="next-steps"></a>Volgende stappen
+
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../manage-apps/check-status-user-account-provisioning.md)

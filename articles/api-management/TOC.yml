@@ -173,48 +173,74 @@
           href: api-management-howto-manage-protocols-ciphers.md
     - name: Ontwikkelaarservaring aanpassen
       items:
-        - name: Inzicht in de ontwikkelaarsportal
-          href: api-management-howto-developer-portal.md
-        - name: Migreren van de afgeschafte naar de nieuwe ontwikkelaarsportal
-          href: developer-portal-deprecated-migration.md
-        - name: Verifiëren met Azure AD
-          href: api-management-howto-aad.md
-        - name: Verifiëren met Azure AD B2C
-          href: api-management-howto-aad-b2c.md
-        - name: Gedelegeerde verificatie
-          href: api-management-howto-setup-delegation.md
-        - name: E-mailmeldingen en sjablonen
-          href: api-management-howto-configure-notifications.md
-        - name: OAuth-ondersteuning in de console inschakelen
-          href: api-management-howto-oauth2.md
-        - name: Afgeschafte portal - de portal aanpassen
-          href: api-management-customize-styles.md
-        - name: Afgeschafte portal - pagina's en indelingen bewerken
-          href: api-management-modify-content-layout.md
-        - name: Afgeschafte portal - aanpassen met sjablonen
-          href: api-management-developer-portal-templates.md
-    - name: Afgeschafte portalsjablonen
-      items:
-        - name: Naslaginformatie over gegevensmodellen
-          href: api-management-template-data-model-reference.md
-        - name: Paginabesturingselementen
-          href: api-management-page-controls.md
-        - name: Sjablonen
-          href: api-management-developer-portal-templates-reference.md
-        - name: API's
-          href: api-management-api-templates.md
-        - name: Producten
-          href: api-management-product-templates.md
-        - name: Toepassingen
-          href: api-management-application-templates.md
-        - name: Problemen
-          href: api-management-issue-templates.md
-        - name: Gebruikersprofiel
-          href: api-management-user-profile-templates.md
-        - name: Pagina's
-          href: api-management-page-templates.md
-        - name: Sjabloonresources
-          href: api-management-template-resources.md
+        - name: De ontwikkelaarsportal gebruiken
+          items:
+            - name: Inzicht in de ontwikkelaarsportal
+              href: api-management-howto-developer-portal.md
+            - name: Veelgestelde vragen
+              href: developer-portal-faq.md
+            - name: Portalimplementaties automatiseren
+              href: automate-portal-deployments.md
+            - name: Migreren van de afgeschafte naar de nieuwe ontwikkelaarsportal
+              href: developer-portal-deprecated-migration.md
+            - name: Verifiëren met Azure AD
+              href: api-management-howto-aad.md
+            - name: Verifiëren met Azure AD B2C
+              href: api-management-howto-aad-b2c.md
+            - name: Verificatie delegeren
+              href: api-management-howto-setup-delegation.md
+            - name: OAuth-ondersteuning in de console inschakelen
+              href: api-management-howto-oauth2.md
+            - name: E-mailmeldingen en sjablonen
+              href: api-management-howto-configure-notifications.md
+            - name: Integratie van Application Insights
+              href: developer-portal-integrate-application-insights.md
+            - name: Integratie van Google Tag Manager
+              href: developer-portal-integrate-google-tag-manager.md
+        - name: Zelf-hostend ontwikkelaarsportal
+          items:
+            - name: Zelf-hostende portal maken
+              href: developer-portal-self-host.md
+            - name: Alternatieve benaderingen voor zelfhosting
+              href: developer-portal-alternative-processes-self-host.md
+            - name: Widgets implementeren
+              href: developer-portal-implement-widgets.md
+            - name: Widgets voor bijdragen
+              href: developer-portal-widget-contribution-guidelines.md
+            - name: Communitywidgets gebruiken
+              href: developer-portal-use-community-widgets.md
+            - name: Zelf-hostende portal testen
+              href: developer-portal-testing.md
+        - name: Afgeschafte portal
+          items:
+            - name: Afgeschafte portal - de portal aanpassen
+              href: api-management-customize-styles.md
+            - name: Afgeschafte portal - pagina's en indelingen bewerken
+              href: api-management-modify-content-layout.md
+            - name: Afgeschafte portal - aanpassen met sjablonen
+              href: api-management-developer-portal-templates.md
+        - name: Afgeschafte portalsjablonen
+          items:
+            - name: Naslaginformatie over gegevensmodellen
+              href: api-management-template-data-model-reference.md
+            - name: Paginabesturingselementen
+              href: api-management-page-controls.md
+            - name: Sjablonen
+              href: api-management-developer-portal-templates-reference.md
+            - name: API's
+              href: api-management-api-templates.md
+            - name: Producten
+              href: api-management-product-templates.md
+            - name: Toepassingen
+              href: api-management-application-templates.md
+            - name: Problemen
+              href: api-management-issue-templates.md
+            - name: Gebruikersprofiel
+              href: api-management-user-profile-templates.md
+            - name: Pagina's
+              href: api-management-page-templates.md
+            - name: Sjabloonresources
+              href: api-management-template-resources.md
     - name: Beleid definiëren
       items:
         - name: Beleid instellen of bewerken

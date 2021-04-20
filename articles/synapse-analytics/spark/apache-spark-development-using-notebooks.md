@@ -1,6 +1,6 @@
 ---
 title: Synapse Studio notebooks
-description: In dit artikel leert u hoe u een Azure Synapse Studio-notebooks maakt en ontwikkelt voor het voorbereiden en visualiseren van gegevens.
+description: In dit artikel leert u hoe u Azure Synapse Studio-notebooks kunt maken en ontwikkelen voor het voorbereiden en visualiseren van gegevens.
 services: synapse analytics
 author: ruixinxu
 ms.service: synapse-analytics
@@ -10,14 +10,14 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: 4230ced172de52e5acf45e071fa2a49a332eb696
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.openlocfilehash: 6859a2f8571c11e6ef93a5e5b1635cdbe39ad001
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107719219"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107737658"
 ---
-# <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Notebooks maken, ontwikkelen Synapse Studio onderhouden in Azure Synapse Analytics
+# <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Notebooks in Synapse Studio maken, ontwikkelen en Azure Synapse Analytics
 
 Een Synapse Studio notebook is een webinterface voor het maken van bestanden die livecode, visualisaties en verhalende tekst bevatten. Notebooks zijn een goede plaats om ideeën te valideren en snelle experimenten te gebruiken om inzichten uit uw gegevens te verkrijgen. Notebooks worden ook veel gebruikt voor gegevensvoorbereiding, gegevensvisualisatie, machine learning en andere big data-scenario's.
 
@@ -25,13 +25,13 @@ Met een Azure Synapse Studio-notebook kunt u het volgende doen:
 
 * Aan de slag met nul installatie-inspanningen.
 * Gegevens beveiligen met ingebouwde beveiligingsfuncties voor ondernemingen.
-* Analyseer gegevens in onbewerkte indelingen (CSV, txt, JSON, enzovoort), verwerkte bestandsindelingen (parquet, Delta Lake, ORC, enzovoort) en SQL-gegevensbestanden in tabelvorm voor Spark en SQL.
+* Analyseer gegevens in onbewerkte indelingen (CSV, txt, JSON, enzovoort), verwerkte bestandsindelingen (parquet, Delta Lake, ORC, enzovoort) en sql-gegevensbestanden in tabelvorm voor Spark en SQL.
 * Wees productief met verbeterde ontwerpmogelijkheden en ingebouwde gegevensvisualisatie.
 
 In dit artikel wordt beschreven hoe u notebooks gebruikt in Azure Synapse Studio.
 
 ## <a name="preview-of-the-new-notebook-experience"></a>Preview van de nieuwe notebookervaring
-Het Synapse-team heeft het nieuwe notebookonderdeel in Synapse Studio gebracht om consistente notebookervaring te bieden voor Microsoft-klanten en de detecteerbaarheid, productiviteit, delen en samenwerking te maximaliseren. De nieuwe notebook-ervaring is gereed voor preview. Schakel de **knop Preview-functies** in de notebookwerkbalk in. In de onderstaande tabel wordt de functievergelijking tussen bestaande notebooks (ook wel 'klassieke notebook' genoemd) met de nieuwe preview-versie beschreven.  
+Het Synapse-team heeft het nieuwe notebookonderdeel in Synapse Studio om consistente notebookervaring te bieden voor Microsoft-klanten en de detecteerbaarheid, productiviteit, delen en samenwerking te maximaliseren. De nieuwe notebookervaring is gereed voor preview. Schakel de **knop Preview-functies** in de notebookwerkbalk in. In de onderstaande tabel worden de functievergelijkingen tussen bestaande notebooks (ook wel 'klassieke notebook' genoemd) met de nieuwe preview-versie beschreven.  
 
 |Functie|Klassieke notebook|Preview-notebook|
 |--|--|--|
@@ -40,19 +40,19 @@ Het Synapse-team heeft het nieuwe notebookonderdeel in Synapse Studio gebracht o
 |%load| Niet ondersteund |&#9745;|
 |%%html| Niet ondersteund |&#9745;|
 |Slepen en neerzetten om een cel te verplaatsen| Niet ondersteund |&#9745;|
-|Tekstcel opmaken met werkbalkknoppen|&#9745;| Niet beschikbaar |
+|Tekstcel opmaken met knoppen op de werkbalk|&#9745;| Niet beschikbaar |
 |Celbewerking ongedaan maken| &#9745;| Niet beschikbaar |
 
 
 ## <a name="create-a-notebook"></a>Een notebook maken
 
-Er zijn twee manieren om een notebook te maken. U kunt een nieuw notebook maken of een bestaand notebook importeren in Azure Synapse werkruimte van **de Objectverkenner.** Azure Synapse Studio-notebooks kunnen standaard IPYNB Jupyter Notebook bestanden herkennen.
+Er zijn twee manieren om een notebook te maken. U kunt een nieuw notebook maken of een bestaand notebook importeren in een Azure Synapse werkruimte vanuit **Objectverkenner**. Azure Synapse Studio-notebooks kunnen standaard IPYNB Jupyter Notebook bestanden herkennen.
 
-![notebook voor importeren maken](./media/apache-spark-development-using-notebooks/synapse-create-import-notebook-2.png)
+![importnotenote maken](./media/apache-spark-development-using-notebooks/synapse-create-import-notebook-2.png)
 
 ## <a name="develop-notebooks"></a>Notebooks ontwikkelen
 
-Notebooks bestaan uit cellen. Dit zijn afzonderlijke codeblokken of tekstblokken die onafhankelijk of als groep kunnen worden uitvoeren.
+Notebooks bestaan uit cellen. Dit zijn afzonderlijke codeblokken of tekstblokken die onafhankelijk of als groep kunnen worden gebruikt.
 
 ### <a name="add-a-cell"></a>Een cel toevoegen
 
@@ -79,7 +79,7 @@ Er zijn meerdere manieren om een nieuwe cel aan uw notebook toe te voegen.
 
     ![add-azure-notebook-cell-between-space](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-add-cell-2.png)
 
-3. Gebruik [aznb-sneltoetsen onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op A** om een cel boven de huidige cel in te voegen. Druk **op B** om een cel onder de huidige cel in te voegen.
+3. Gebruik [aznb Shortcut keys onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op A** om een cel boven de huidige cel in te voegen. Druk **op B** om een cel onder de huidige cel in te voegen.
 
 ---
 
@@ -111,11 +111,11 @@ De volgende afbeelding is een voorbeeld van hoe u een PySpark-query kunt schrijv
 
    ![Magic-opdrachten voor Synapse Spark](./media/apache-spark-development-using-notebooks/synapse-spark-magics.png)
 
-### <a name="use-temp-tables-to-reference-data-across-languages&quot;></a>Tijdelijke tabellen gebruiken om te verwijzen naar gegevens in verschillende talen
+### <a name="use-temp-tables-to-reference-data-across-languages&quot;></a>Tijdelijke tabellen gebruiken om te verwijzen naar gegevens in meerdere talen
 
 U kunt niet rechtstreeks verwijzen naar gegevens of variabelen in verschillende talen in een Synapse Studio notebook. In Spark kan naar een tijdelijke tabel in meerdere talen worden verwezen. Hier is een voorbeeld van het lezen van een DataFrame in en het gebruik van een `Scala` `PySpark` tijdelijke `SparkSQL` Spark-tabel als tijdelijke oplossing.
 
-1. Lees in Cel 1 een DataFrame uit een SQL-poolconnector met behulp van Scala en maak een tijdelijke tabel.
+1. Lees in Cel 1 een DataFrame van een SQL-poolconnector met behulp van Scala en maak een tijdelijke tabel.
 
    ```scala
    %%scala
@@ -123,25 +123,25 @@ U kunt niet rechtstreeks verwijzen naar gegevens of variabelen in verschillende 
    scalaDataFrame.createOrReplaceTempView( "mydataframetable" )
    ```
 
-2. In Cel 2 query's uitvoeren op de gegevens met behulp van Spark SQL.
+2. In Cel 2 kunt u een query uitvoeren op de gegevens met behulp van Spark SQL.
    
    ```sql
    %%sql
    SELECT * FROM mydataframetable
    ```
 
-3. Gebruik in Cel 3 de gegevens in PySpark.
+3. Gebruik in cel 3 de gegevens in PySpark.
 
    ```python
    %%pyspark
    myNewPythonDataFrame = spark.sql("SELECT * FROM mydataframetable")
    ```
 
-### <a name="ide-style-intellisense"></a>IDE-stijl IntelliSense
+### <a name="ide-style-intellisense"></a>IntelliSense in IDE-stijl
 
-Azure Synapse Studio-notebooks zijn geïntegreerd met de Editor van Monaco om IDE-stijl IntelliSense naar de celeditor te brengen. Syntaxismarkering, foutmarkering en automatische code-aanvullingen helpen u om sneller code te schrijven en problemen te identificeren.
+Azure Synapse Studio-notebooks zijn geïntegreerd met de Monaco-editor om IDE-stijl IntelliSense naar de celeditor te brengen. Syntaxismarkering, foutmarkering en automatische code-aanvullingen helpen u om sneller code te schrijven en problemen te identificeren.
 
-De IntelliSense-functies zijn op verschillende volwassenheidsniveaus voor verschillende talen. Gebruik de volgende tabel om te zien wat er wordt ondersteund.
+De IntelliSense-functies hebben verschillende volwassenheidsniveaus voor verschillende talen. Gebruik de volgende tabel om te zien wat er wordt ondersteund.
 
 |Talen| Syntaxis markeren | Syntaxisfoutmarkering  | Voltooiing van syntaxiscode | Voltooiing van variabele code| Voltooiing van systeemfunctiecode| Voltooiing van gebruikersfunctiecode| Smart Indent | Code Folding|
 |--|--|--|--|--|--|--|--|--|
@@ -150,11 +150,23 @@ De IntelliSense-functies zijn op verschillende volwassenheidsniveaus voor versch
 |SparkSQL|Ja|Ja|-|-|-|-|-|-|
 |.NET voor Spark (C#)|Yes|-|-|-|-|-|-|-|
 
-### <a name="format-text-cell-with-toolbar-buttons"></a>Tekstcel opmaken met werkbalkknoppen
+
+
+### <a name="code-snippets"></a>Codefragmenten
+
+Azure Synapse Studio-notebooks bieden codefragmenten waarmee u eenvoudiger veelgebruikte codepatronen kunt invoeren, zoals het configureren van uw Spark-sessie, het lezen van gegevens als een Spark DataFrame of het tekenen van grafieken met matplotlib, enzovoort.
+
+Fragmenten worden weergegeven in [IntelliSense, gecombineerd](#ide-style-intellisense) met andere suggesties. De inhoud van de codefragmenten wordt uitgelijnd met de taal van de codecel. U kunt beschikbare codefragmenten bekijken door **Fragment** te typen, anders worden trefwoorden weergegeven in de titel van het fragment in de codeceleditor. Als u bijvoorbeeld Lezen **typt,** ziet u de lijst met fragmenten voor het lezen van gegevens uit verschillende gegevensbronnen.
+
+![Synapse-codefragmenten](./media/apache-spark-development-using-notebooks/synapse-code-snippets.gif#lightbox)
+
+
+
+### <a name="format-text-cell-with-toolbar-buttons"></a>Tekstcel opmaken met knoppen op de werkbalk
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-U kunt de opmaakknoppen in de werkbalk van de tekstcellen gebruiken om algemene Markdown-acties uit te voeren. Het omvat vetgedrukte tekst, het italiseren van tekst, het invoegen van codefragmenten, het invoegen van niet-geordende lijst, het invoegen van een geordende lijst en het invoegen van een afbeelding vanuit een URL.
+U kunt de opmaakknoppen op de werkbalk van tekstcellen gebruiken om algemene Markdown-acties uit te voeren. Het omvat vetgedrukte tekst, het italiseren van tekst, het invoegen van codefragmenten, het invoegen van een niet-geordende lijst, het invoegen van een geordende lijst en het invoegen van een afbeelding vanuit een URL.
 
   ![Werkbalk van Synapse-tekstcel](./media/apache-spark-development-using-notebooks/synapse-text-cell-toolbar.png)
 
@@ -170,7 +182,7 @@ De werkbalk van de knop Opmaak is nog niet beschikbaar voor de preview-notebooke
 
 Selecteer de **knop Ongedaan** maken of druk **op Ctrl+Z om** de meest recente celbewerking in te trekken. U kunt nu tot de laatste 20 historische celacties ongedaan maken. 
 
-   ![Synapse-cellen ongedaan maken](./media/apache-spark-development-using-notebooks/synapse-undo-cells.png)
+   ![Cellen ongedaan maken met Synapse](./media/apache-spark-development-using-notebooks/synapse-undo-cells.png)
 # <a name="preview-notebook"></a>[Preview-notebook](#tab/preview)
 
 De bewerking Cel ongedaan maken is nog niet beschikbaar voor de preview-notebookervaring. 
@@ -181,9 +193,9 @@ De bewerking Cel ongedaan maken is nog niet beschikbaar voor de preview-notebook
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Selecteer het beletselmenu (...) voor toegang tot het menu extra celacties aan de rechterkant. Selecteer vervolgens **Cel omhoog verplaatsen of** Cel omlaag verplaatsen **om** de huidige cel te verplaatsen. 
+Selecteer het beletselmenu (...) voor toegang tot het menu andere celacties aan de rechterkant. Selecteer vervolgens **Cel omhoog verplaatsen of** Cel omlaag verplaatsen **om** de huidige cel te verplaatsen. 
 
-U kunt ook [sneltoetsen gebruiken onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op Ctrl+Alt+"** om de huidige cel omhoog te verplaatsen. Druk **op Ctrl+Alt+ om** de huidige cel omlaag te verplaatsen.
+U kunt ook [sneltoetsen gebruiken onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op Ctrl + Alt + om** de huidige cel omhoog te gaan. Druk **op Ctrl+Alt+↓** om de huidige cel omlaag te verplaatsen.
 
    ![move-a-cell](./media/apache-spark-development-using-notebooks/synapse-move-cells.png)
 
@@ -198,7 +210,7 @@ Klik aan de linkerkant van een cel en sleep deze naar de gewenste positie.
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Als u een cel wilt verwijderen, selecteert u het beletselmenu (...) voor toegang tot het menu extra celacties helemaal rechts en selecteert u **vervolgens Cel verwijderen.** 
+Als u een cel wilt verwijderen, selecteert u het beletselmenu (...) voor toegang tot het menu andere celacties helemaal rechts en selecteert u **vervolgens Cel verwijderen.** 
 
 U kunt ook [sneltoetsen gebruiken onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op D,D** om de huidige cel te verwijderen.
   
@@ -234,7 +246,7 @@ Selecteer het **beletselletsel (...)** meer opdrachten op de celwerkbalk en de *
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Selecteer **linksboven in** de uitvoer van de huidige cel de knop voor samenvgevouwen uitvoer om deze samen te klappen. Selecteer celuitvoer **tonen** terwijl de celuitvoer is samengevouwen om de uitvoer uit te vouwen.
+Selecteer de **samengevouwen uitvoerknop** linksboven in de uitvoer van de huidige cel om deze samen te klappen. Selecteer celuitvoer **tonen** terwijl de celuitvoer is samengevouwen om de uitvoer uit te vouwen.
 
    ![collapse-cell-output](./media/apache-spark-development-using-notebooks/synapse-collapse-cell-output.gif)
 
@@ -249,13 +261,13 @@ Selecteer het **beletselletsel(...)** bij Meer opdrachten op de celwerkbalk en d
 
 ## <a name="run-notebooks"></a>Notebooks gebruiken
 
-U kunt de codecellen in uw notebook afzonderlijk of in één keer uitvoeren. De status en voortgang van elke cel worden weergegeven in het notebook.
+U kunt de codecellen in uw notebook afzonderlijk of allemaal tegelijk uitvoeren. De status en voortgang van elke cel worden weergegeven in het notebook.
 
 ### <a name="run-a-cell"></a>Een cel uitvoeren
 
 Er zijn verschillende manieren om de code in een cel uit te voeren.
 
-1. Beweeg de muisaanwijzer over de cel die u wilt uitvoeren en selecteer de knop **Cel** uitvoeren of druk **op Ctrl+Enter.**
+1. Beweeg de muisaanwijzer over de cel die u wilt uitvoeren en selecteer de **knop Cel** uitvoeren of druk **op Ctrl+Enter.**
 
    ![run-cell-1](./media/apache-spark-development-using-notebooks/synapse-run-cell.png)
   
@@ -273,13 +285,13 @@ Selecteer de **knop Alles** uitvoeren om alle cellen in het huidige notebook ope
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Als u helemaal rechts toegang wilt krijgen tot het extra celactiesmenu, selecteert u het beletselletselmenu (**...**). Selecteer vervolgens **Cellen uitvoeren hierboven om** alle cellen boven de huidige opeenvolgend uit te voeren. Selecteer **Cellen uitvoeren hieronder** om alle cellen onder de huidige opeenvolgend uit te voeren.
+Als u helemaal rechts toegang wilt krijgen tot het menu andere celacties, selecteert u het beletselletselmenu (**...**). Selecteer vervolgens **Cellen uitvoeren hierboven om** alle cellen boven de huidige opeenvolgend uit te voeren. Selecteer **Cellen uitvoeren hieronder** om alle cellen onder de huidige opeenvolgend uit te voeren.
 
    ![run-cells-above-or-below](./media/apache-spark-development-using-notebooks/synapse-run-cells-above-or-below.png)
 
 # <a name="preview-notebook"></a>[Preview-notebook](#tab/preview)
 
-Vouw de vervolgkeuzelijst uit via **de** knop Alles uitvoeren en selecteer vervolgens Cellen **uitvoeren hierboven** om alle cellen boven de huidige opeenvolgend uit te voeren. Selecteer **Cellen uitvoeren hieronder** om alle cellen onder de huidige opeenvolgend uit te voeren.
+Vouw de vervolgkeuzelijst uit met **de** knop Alles uitvoeren en selecteer vervolgens Cellen **uitvoeren hierboven** om alle cellen boven de huidige opeenvolgend uit te voeren. Selecteer **Cellen uitvoeren hieronder om** alle cellen onder de huidige opeenvolgend uit te voeren.
 
    ![azure-notebook-run-cells-above-or-below](./media/apache-spark-development-using-notebooks/synapse-aznb-run-cells-above-or-below.png)
 
@@ -328,7 +340,7 @@ De uitvoeringsstatus van een cel wordt stap voor stap weergegeven onder de cel o
 
 ### <a name="spark-progress-indicator"></a>Voortgangsindicator van Spark
 
-Azure Synapse Studio-notebook is uitsluitend gebaseerd op Spark. Codecellen worden uitgevoerd op de serverloze Apache Spark groep op afstand. Er wordt een voortgangsindicator van de Spark-taak weergegeven met een realtime voortgangsbalk om inzicht te krijgen in de uitvoeringsstatus van de taak.
+Azure Synapse Studio-notebook is uitsluitend gebaseerd op Spark. Codecellen worden uitgevoerd op de serverloze Apache Spark groep op afstand. Er wordt een voortgangsindicator van een Spark-taak weergegeven met een realtime voortgangsbalk die u inzicht geeft in de uitvoeringsstatus van de taak.
 Het aantal taken per job of fase helpt u bij het identificeren van het parallelle niveau van uw Spark-job. U kunt ook dieper inzoomen op de Spark-gebruikersinterface van een specifieke taak (of fase) door de koppeling in de taaknaam (of fasenaam) te selecteren.
 
 
@@ -336,11 +348,11 @@ Het aantal taken per job of fase helpt u bij het identificeren van het parallell
 
 ### <a name="spark-session-config"></a>Configuratie van Spark-sessie
 
-U kunt de time-outduur, het aantal en de grootte van uitvoerders opgeven die aan de huidige Spark-sessie moeten worden opgegeven in **Sessie configureren.** Start de Spark-sessie opnieuw op om configuratiewijzigingen door te voeren. Alle notebookvariabelen in de cache worden gew cleared.
+U kunt de time-outduur, het aantal en de grootte van uitvoerders opgeven die aan de huidige Spark-sessie moeten worden opgegeven in **Sessie configureren.** Start de Spark-sessie opnieuw op om de configuratiewijzigingen door te voeren. Alle notebookvariabelen in de cache worden gew cleared.
 
 [![sessiebeheer](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-spark-session-management.png)](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-spark-session-management.png#lightbox)
 
-#### <a name="spark-session-config-magic-command"></a>Magic-opdracht voor spark-sessie config
+#### <a name="spark-session-config-magic-command"></a>Magic-opdracht voor Spark-sessie config
 U kunt ook spark-sessie-instellingen opgeven via een magic-opdracht **%%configureer**. De Spark-sessie moet opnieuw worden gestart om het instellingeneffect te bereiken. U wordt aangeraden de **%%configure aan het** begin van uw notebook uit te voeren. Hier is een voorbeeld, raadpleeg voor https://github.com/cloudera/livy#request-body een volledige lijst met geldige parameters 
 
 ```
@@ -382,7 +394,7 @@ df1 = spark.read.option('header', 'true') \
 
 ```
 
-#### <a name="read-a-csv-from-azure-blob-storage-as-a-spark-dataframe"></a>Een CSV van een Azure Blob Storage als een Spark DataFrame
+#### <a name="read-a-csv-from-azure-blob-storage-as-a-spark-dataframe"></a>Een CSV lezen uit Azure Blob Storage spark-dataframe
 
 ```python
 
@@ -441,9 +453,9 @@ U kunt bekende Jupyter Magic-opdrachten gebruiken in Azure Synapse Studio-notebo
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Beschikbare line magics: [%lsmagic,](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic) [%time,](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time) [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit)
+Beschikbare line magics: [%lsmagic,](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic) [%time,](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time) [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit)
 
-Beschikbare cel magics: [%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages),[%%configure](#spark-session-config-magic-command)
+Beschikbare cel magics: [%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), %%capture , [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages),[%%configure](#spark-session-config-magic-command) [](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture)
 
 
 
@@ -467,24 +479,24 @@ Selecteer de **knop Toevoegen aan pijplijn** in de rechterbovenhoek om een noteb
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Als u een parameter wilt instellen voor uw notebook, selecteert u het beletselteken (...) voor toegang tot het extra menu voor celacties aan de rechterkant. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
+Als u een parameter wilt instellen voor uw notebook, selecteert u het beletselteken (...) voor toegang tot het menu andere celacties aan de rechterkant. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
 
 ![toggle-parameter](./media/apache-spark-development-using-notebooks/toggle-parameter-cell.png)
 
 # <a name="preview-notebook"></a>[Preview-notebook](#tab/preview)
 
-Als u een parameter wilt instellen voor uw notebook, selecteert u het beletselteken (...) voor toegang tot de meer **opdrachten** op de celwerkbalk. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
+Als u de parameter van uw notebook wilt instellen, selecteert u het beletselteken (...) voor toegang tot de meer **opdrachten** op de celwerkbalk. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
 
 ![azure-notebook-toggle-parameter](./media/apache-spark-development-using-notebooks/azure-notebook-toggle-parameter-cell.png)
 
 ---
 
-Azure Data Factory zoekt naar de parameterscel en behandelt deze cel als standaardwaarden voor de parameters die tijdens de uitvoering worden doorgegeven. De uitvoeringsen engine voegt een nieuwe cel toe onder de parameterscel met invoerparameters om de standaardwaarden te overschrijven. Wanneer er geen parameterscel is aangewezen, wordt de geïnjecteerde cel boven aan het notebook ingevoegd.
+Azure Data Factory zoekt naar de parameterscel en behandelt deze cel als standaardwaarden voor de parameters die tijdens de uitvoering worden doorgegeven. De uitvoeringsen engine voegt een nieuwe cel toe onder de parameterscel met invoerparameters om de standaardwaarden te overschrijven. Wanneer er geen parameterscel wordt aangewezen, wordt de geïnjecteerde cel bovenaan het notebook ingevoegd.
 
 
-### <a name="assign-parameters-values-from-a-pipeline"></a>Parameterswaarden toewijzen vanuit een pijplijn
+### <a name="assign-parameters-values-from-a-pipeline"></a>Parameters uit een pijplijn toewijzen
 
-Zodra u een notebook met parameters hebt gemaakt, kunt u deze uitvoeren vanuit een pijplijn met de Azure Synapse Notebook-activiteit. Nadat u de activiteit aan uw pijplijn-canvas hebt toevoegen, kunt u de parameters instellen onder de sectie Basisparameters op het **tabblad** Instellingen.  
+Zodra u een notebook met parameters hebt gemaakt, kunt u deze uitvoeren vanuit een pijplijn met de Azure Synapse Notebook-activiteit. Nadat u de activiteit aan uw pijplijn-canvas hebt toevoegen, kunt u de parameterswaarden instellen onder de sectie Basisparameters op het **tabblad** Instellingen.  
 
 ![Een parameter toewijzen](./media/apache-spark-development-using-notebooks/assign-parameter.png)
 
@@ -512,8 +524,8 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudiger navigeren en code uitv
 
 | Bewerking |Synapse Studio notebooksnelkoppelingen maken  |
 |--|--|
-|Voer de huidige cel uit en selecteer hieronder | Shift+Enter |
-|Voer de huidige cel uit en voeg hieronder in | Alt+Enter |
+|Voer de huidige cel uit en selecteer hieronder | Shift + Enter |
+|Voer de huidige cel uit en voeg hieronder in | Alt +Enter |
 |Selecteer de bovenstaande cel| Omhoog |
 |Selecteer de onderstaande cel| Buiten gebruik |
 |Cel hierboven invoegen| A |
@@ -529,8 +541,8 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudiger navigeren en code uitv
 
 | Bewerking |Synapse Studio notebooksnelkoppelingen maken  |
 |--|--|
-|Voer de huidige cel uit en selecteer hieronder | Shift + Enter |
-|Voer de huidige cel uit en voeg hieronder in | Alt +Enter |
+|Voer de huidige cel uit en selecteer hieronder | Shift+Enter |
+|Voer de huidige cel uit en voeg hieronder in | Alt+Enter |
 |Huidige cel uitvoeren| Ctrl+Enter |
 |Selecteer de bovenstaande cel| Omhoog |
 |Selecteer de onderstaande cel| Buiten gebruik |
@@ -551,14 +563,14 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudiger navigeren en code uitv
 | Bewerking |Synapse Studio notebooksnelkoppelingen maken  |
 |--|--|
 |Cursor omhoog verplaatsen | Omhoog |
-|Cursor omlaag verplaatsen|Buiten gebruik|
+|De cursor omlaag verplaatsen|Buiten gebruik|
 |Ongedaan maken|Ctrl + Z|
 |Opnieuw uitvoeren|Ctrl + Y|
-|Opmerkingen/opmerkingen bij de opmerking|Ctrl + /|
+|Opmerkingen/opmerkingen bij de opmerkingen|Ctrl + /|
 |Woord vóór verwijderen|Ctrl + Backspace|
 |Woord verwijderen na|Ctrl + Verwijderen|
-|Naar cel starten gaan|Ctrl + Start|
-|Naar cel beëindigen gaan |Ctrl + End|
+|Ga naar het begin van de cel|Ctrl + Start|
+|Naar het cel-einde gaan |Ctrl + End|
 |Eén woord links gaan|Ctrl + links|
 |Ga één woord naar rechts|Ctrl + Rechts|
 |Alles selecteren|Ctrl + A|
@@ -569,7 +581,7 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudiger navigeren en code uitv
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Bekijk Synapse-voorbeeldnote notebooks](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks)
+- [Synapse-voorbeeldnote notebooks controleren](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks)
 - [Quickstart: Een Apache Spark-pool maken in Azure Synapse Analytics met behulp van webhulpprogramma's](../quickstart-apache-spark-notebook.md)
 - [Wat is Apache Spark in Azure Synapse Analytics?](apache-spark-overview.md)
 - [.NET voor Apache Spark gebruiken met Azure Synapse Analytics](spark-dotnet.md)

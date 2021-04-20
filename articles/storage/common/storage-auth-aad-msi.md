@@ -1,7 +1,7 @@
 ---
-title: Toegang tot gegevens met een beheerde identiteit autoriseren
+title: Toegang verlenen tot gegevens met een beheerde identiteit
 titleSuffix: Azure Storage
-description: Gebruik beheerde identiteiten voor Azure-resources voor het machtigen van BLOB-en wachtrij gegevens toegang vanuit toepassingen die worden uitgevoerd in virtuele machines van Azure, functie-apps en anderen.
+description: Gebruik beheerde identiteiten voor Azure-resources om toegang tot blob- en wachtrijgegevens te autoreren vanuit toepassingen die worden uitgevoerd in Azure-VM's, functie-apps en andere.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,67 +11,67 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 552d2587f35ed391b470c6d5b1693b79fd57306b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2aa6730759a9aa1aaab3156c55bf19e82641b8ea
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98879575"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739328"
 ---
-# <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Toegang tot Blob-en wachtrij gegevens toestaan met beheerde identiteiten voor Azure-resources
+# <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Toegang verlenen tot blob- en wachtrijgegevens met beheerde identiteiten voor Azure-resources
 
-Azure Blob-en Queue Storage ondersteunen Azure Active Directory-verificatie (Azure AD) met [beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md). Beheerde identiteiten voor Azure-resources kunnen toegang verlenen tot Blob-en wachtrij gegevens met behulp van Azure AD-referenties van toepassingen die worden uitgevoerd in azure virtual machines (Vm's), functie-apps, schaal sets voor virtuele machines en andere services. Door beheerde identiteiten voor Azure-resources te gebruiken in combi natie met Azure AD-verificatie kunt u voor komen dat referenties worden opgeslagen in uw toepassingen die in de cloud worden uitgevoerd.  
+Azure Blob- en Queue Storage ondersteunen Azure Active Directory verificatie (Azure AD) met [beheerde identiteiten voor Azure-resources.](../../active-directory/managed-identities-azure-resources/overview.md) Beheerde identiteiten voor Azure-resources kunnen toegang verlenen tot blob- en wachtrijgegevens met behulp van Azure AD-referenties van toepassingen die worden uitgevoerd in virtuele Azure-machines (VM's), functie-apps, virtuele-machineschaalsets en andere services. Door beheerde identiteiten voor Azure-resources samen met Azure AD-verificatie te gebruiken, kunt u voorkomen dat referenties worden opgeslagen bij uw toepassingen die in de cloud worden uitgevoerd.  
 
-In dit artikel wordt beschreven hoe u toegang kunt verlenen tot BLOB-of wachtrij gegevens van een Azure-VM met beheerde identiteiten voor Azure-resources. Ook wordt beschreven hoe u uw code kunt testen in de ontwikkel omgeving.
+In dit artikel wordt beschreven hoe u toegang tot blob- of wachtrijgegevens van een Azure-VM autoreert met behulp van beheerde identiteiten voor Azure-resources. Ook wordt beschreven hoe u uw code in de ontwikkelomgeving test.
 
-## <a name="enable-managed-identities-on-a-vm"></a>Beheerde identiteiten op een virtuele machine inschakelen
+## <a name="enable-managed-identities-on-a-vm"></a>Beheerde identiteiten op een VM inschakelen
 
-Voordat u beheerde identiteiten voor Azure-resources kunt gebruiken om toegang te verlenen tot blobs en wacht rijen van uw VM, moet u eerst beheerde identiteiten voor Azure-resources inschakelen op de VM. Zie een van de volgende artikelen voor meer informatie over het inschakelen van beheerde identiteiten voor Azure-resources:
+Voordat u beheerde identiteiten voor Azure-resources kunt gebruiken om toegang te verlenen tot blobs en wachtrijen vanaf uw VM, moet u eerst beheerde identiteiten inschakelen voor Azure-resources op de VM. Zie een van de volgende artikelen voor meer informatie over het inschakelen van beheerde identiteiten voor Azure-resources:
 
 - [Azure-portal](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 - [Azure PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
 - [Azure-CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
 - [Azure Resource Manager-sjabloon](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
-- [Client bibliotheken Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
+- [Azure Resource Manager-clientbibliotheken](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
-Zie [beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten.
+Zie Beheerde identiteiten voor Azure-resources voor meer informatie over [beheerde identiteiten.](../../active-directory/managed-identities-azure-resources/overview.md)
 
 ## <a name="authenticate-with-the-azure-identity-library"></a>Verifiëren met de Azure Identity-bibliotheek
 
-De Azure Identity client-bibliotheek biedt ondersteuning voor Azure Azure AD-token verificatie voor de [Azure SDK](https://github.com/Azure/azure-sdk). De nieuwste versies van de Azure Storage-client bibliotheken voor .NET, Java, python en Java script zijn geïntegreerd met de Azure-identiteits bibliotheek om een OAuth 2,0-token te verkrijgen voor autorisatie van Azure Storage aanvragen.
+De Azure Identity-clientbibliotheek biedt ondersteuning voor Azure AD-tokenverificatie voor de [Azure SDK.](https://github.com/Azure/azure-sdk) De nieuwste versies van de Azure Storage-clientbibliotheken voor .NET, Java, Python en JavaScript kunnen worden geïntegreerd met de Azure Identity-bibliotheek om een eenvoudige en veilige manier te bieden om een OAuth 2.0-token te verkrijgen voor autorisatie van Azure Storage-aanvragen.
 
-Een voor deel van de Azure Identity client-bibliotheek is dat u dezelfde code kunt gebruiken om te verifiëren of uw toepassing wordt uitgevoerd in de ontwikkel omgeving of in Azure. De Azure Identity client-bibliotheek voor .NET verifieert een beveiligings-principal. Wanneer uw code wordt uitgevoerd in azure, is de beveiligingsprincipal een beheerde identiteit voor Azure-resources. In de ontwikkel omgeving bestaat de beheerde identiteit niet, zodat de client bibliotheek de gebruiker of een Service-Principal verifieert voor test doeleinden.
+Een voordeel van de Azure Identity-clientbibliotheek is dat u hiermee dezelfde code kunt gebruiken om te verifiëren of uw toepassing wordt uitgevoerd in de ontwikkelomgeving of in Azure. De Azure Identity-clientbibliotheek voor .NET verifieert een beveiligingsprincipaal. Wanneer uw code wordt uitgevoerd in Azure, is de beveiligingsprincipaal een beheerde identiteit voor Azure-resources. In de ontwikkelomgeving bestaat de beheerde identiteit niet, dus de clientbibliotheek verifieert de gebruiker of een service-principal voor testdoeleinden.
 
-Na de verificatie krijgt de Azure Identity client-bibliotheek een token referentie. Deze token referentie wordt vervolgens ingekapseld in het service-client object dat u maakt om bewerkingen uit te voeren op basis van Azure Storage. De bibliotheek verwerkt dit voor u probleemloos door de juiste token referentie op te halen.
+Na de authenticatie krijgt de Azure Identity-clientbibliotheek een tokenreferentie. Deze tokenreferentie wordt vervolgens ingekapseld in het serviceclientobject dat u maakt om bewerkingen uit te voeren op Azure Storage. De bibliotheek verwerkt dit naadloos voor u door de juiste tokenreferenties op te zoeken.
 
-Zie de [Azure Identity client-bibliotheek voor .net](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/identity/Azure.Identity)voor meer informatie over de Azure Identity client-bibliotheek voor .net. Zie [Azure. Identity naam ruimte](/dotnet/api/azure.identity)voor referentie documentatie voor de Azure Identity client-bibliotheek.
+Zie Azure Identity-clientbibliotheek voor .NET voor meer informatie over de [Azure Identity-clientbibliotheek voor .NET.](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/identity/Azure.Identity) Zie Azure.Identity Namespace voor referentiedocumentatie voor de [Azure Identity-clientbibliotheek.](/dotnet/api/azure.identity)
 
 ### <a name="assign-azure-roles-for-access-to-data"></a>Azure-rollen toewijzen voor toegang tot gegevens
 
-Wanneer een Azure AD-beveiligingsprincipal probeert toegang te krijgen tot BLOB-of wachtrij gegevens, moet die beveiligingsprincipal machtigingen hebben voor de resource. Of de beveiligingsprincipal een beheerde identiteit in azure of een Azure AD-gebruikers account voor het uitvoeren van code in de ontwikkel omgeving is, moet aan de beveiligingsprincipal een Azure-rol worden toegewezen die toegang verleent tot BLOB-of wachtrij gegevens in Azure Storage. Voor informatie over het toewijzen van machtigingen via Azure RBAC, zie de sectie **Azure rollen toewijzen voor toegangs rechten** in [toegang tot Azure-blobs en-wacht rijen toestaan met behulp van Azure Active Directory](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights).
+Wanneer een Azure AD-beveiligingsprincipaal toegang probeert te krijgen tot blob- of wachtrijgegevens, moet die beveiligingsprincipaal machtigingen hebben voor de resource. Of de beveiligingsprincipaal nu een beheerde identiteit in Azure is of een Azure AD-gebruikersaccount dat code in de ontwikkelomgeving gebruikt, aan de beveiligingsprincipaal moet een Azure-rol worden toegewezen die toegang verleent tot blob- of wachtrijgegevens in Azure Storage. Zie de sectie Azure-rollen toewijzen voor toegangsrechten **in** Toegang verlenen tot [Azure-blobs](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights)en -wachtrijen met behulp van Azure Active Directory voor meer informatie over het toewijzen van machtigingen via Azure RBAC.
 
 > [!NOTE]
-> Wanneer u een Azure Storage-account maakt, worden er niet automatisch machtigingen toegewezen om toegang te krijgen tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of container of wachtrij.
+> Wanneer u een Azure Storage account maakt, krijgt u niet automatisch machtigingen voor toegang tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resourcegroep, opslagaccount of container of wachtrij.
 >
-> Voordat u een rol toewijst voor toegang tot gegevens, kunt u via de Azure Portal toegang krijgen tot gegevens in uw opslag account, omdat de Azure Portal ook de account sleutel kan gebruiken voor toegang tot gegevens. Zie [kiezen hoe u de toegang tot BLOB-gegevens in de Azure Portal autoriseren](../blobs/authorize-data-operations-portal.md)voor meer informatie.
+> Voordat u uzelf een rol voor gegevenstoegang toewijst, hebt u toegang tot gegevens in uw opslagaccount via de Azure Portal, omdat de Azure Portal ook de accountsleutel kan gebruiken voor toegang tot gegevens. Zie Choose how to authorize access to blob data in the Azure Portal (Kiezen hoe u toegang [tot blobgegevens autor](../blobs/authorize-data-operations-portal.md)Azure Portal) voor meer Azure Portal.
 
-### <a name="authenticate-the-user-in-the-development-environment"></a>De gebruiker verifiëren in de ontwikkel omgeving
+### <a name="authenticate-the-user-in-the-development-environment"></a>De gebruiker verifiëren in de ontwikkelomgeving
 
-Wanneer uw code wordt uitgevoerd in de ontwikkel omgeving, wordt de verificatie mogelijk automatisch verwerkt of is er mogelijk een browser aanmelding vereist, afhankelijk van de hulpprogram ma's die u gebruikt. Bijvoorbeeld: micro soft Visual Studio ondersteunt eenmalige aanmelding (SSO), zodat het actieve Azure AD-gebruikers account automatisch wordt gebruikt voor verificatie. Zie [eenmalige aanmelding bij toepassingen](../../active-directory/manage-apps/what-is-single-sign-on.md)voor meer informatie over SSO.
+Wanneer uw code wordt uitgevoerd in de ontwikkelomgeving, wordt verificatie mogelijk automatisch verwerkt of is er mogelijk een browsermelding vereist, afhankelijk van de hulpprogramma's die u gebruikt. Microsoft Visual Studio bijvoorbeeld eenmalige aanmelding (SSO), zodat het actieve Azure AD-gebruikersaccount automatisch wordt gebruikt voor verificatie. Zie Eenmalige aanmelding voor toepassingen voor meer informatie [over SSO.](../../active-directory/manage-apps/what-is-single-sign-on.md)
 
-Andere ontwikkel hulpprogramma's vragen u mogelijk om u aan te melden via een webbrowser.
+Andere ontwikkelhulpprogramma's vragen u mogelijk om u aan te melden via een webbrowser.
 
-### <a name="authenticate-a-service-principal-in-the-development-environment"></a>Een Service-Principal verifiëren in de ontwikkel omgeving
+### <a name="authenticate-a-service-principal-in-the-development-environment"></a>Een service-principal verifiëren in de ontwikkelomgeving
 
-Als uw ontwikkel omgeving geen ondersteuning biedt voor eenmalige aanmelding of aanmelding via een webbrowser, kunt u een Service-Principal gebruiken om te verifiëren vanuit de ontwikkel omgeving.
+Als uw ontwikkelomgeving geen ondersteuning biedt voor een aanmelding of aanmelding via een webbrowser, kunt u een service-principal gebruiken om te verifiëren vanuit de ontwikkelomgeving.
 
 #### <a name="create-the-service-principal"></a>De service-principal maken
 
-Roep de opdracht [AZ AD SP create-for-RBAC](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) om een service-principal te maken met Azure CLI en een Azure-rol toe te wijzen. Geef een Azure Storage rol voor gegevens toegang op om toe te wijzen aan de nieuwe service-principal. Daarnaast kunt u het bereik voor de roltoewijzing opgeven. Zie [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md)voor meer informatie over de ingebouwde rollen die voor Azure Storage worden verstrekt.
+Als u een service-principal wilt maken met Azure CLI en een Azure-rol wilt toewijzen, roept u de [opdracht az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) aan. Geef een Azure Storage rol voor gegevenstoegang op om toe te wijzen aan de nieuwe service-principal. Geef daarnaast het bereik voor de roltoewijzing op. Zie Ingebouwde Azure-rollen voor meer informatie over de ingebouwde rollen die voor Azure Storage [worden geleverd.](../../role-based-access-control/built-in-roles.md)
 
-Als u onvoldoende machtigingen hebt om een rol toe te wijzen aan de Service-Principal, moet u mogelijk de eigenaar van het account of de beheerder vragen de roltoewijzing uit te voeren.
+Als u niet voldoende machtigingen hebt om een rol toe te wijzen aan de service-principal, moet u mogelijk de accounteigenaar of beheerder vragen om de roltoewijzing uit te voeren.
 
-In het volgende voor beeld wordt de Azure CLI gebruikt om een nieuwe service-principal te maken en de rol van **BLOB-gegevens lezer voor opslag** toe te wijzen aan het account bereik
+In het volgende voorbeeld wordt de Azure CLI  gebruikt om een nieuwe service-principal te maken en de rol Gegevenslezer voor opslagblob toe te wijzen met accountbereik
 
 ```azurecli-interactive
 az ad sp create-for-rbac \
@@ -80,7 +80,7 @@ az ad sp create-for-rbac \
     --scopes /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>
 ```
 
-De `az ad sp create-for-rbac` opdracht retourneert een lijst met Service-Principal-eigenschappen in JSON-indeling. Kopieer deze waarden zodat u ze kunt gebruiken om de vereiste omgevings variabelen in de volgende stap te maken.
+De `az ad sp create-for-rbac` opdracht retourneert een lijst met service-principal-eigenschappen in JSON-indeling. Kopieer deze waarden zodat u ze in de volgende stap kunt gebruiken om de benodigde omgevingsvariabelen te maken.
 
 ```json
 {
@@ -97,24 +97,24 @@ De `az ad sp create-for-rbac` opdracht retourneert een lijst met Service-Princip
 
 #### <a name="set-environment-variables"></a>Omgevingsvariabelen instellen
 
-De Azure Identity client-bibliotheek leest waarden uit drie omgevings variabelen tijdens runtime om de service-principal te verifiëren. De volgende tabel beschrijft de waarde die moet worden ingesteld voor elke omgevings variabele.
+De Azure Identity-clientbibliotheek leest waarden uit drie omgevingsvariabelen tijdens runtime om de service-principal te verifiëren. In de volgende tabel wordt de waarde beschreven die moet worden ingesteld voor elke omgevingsvariabele.
 
 |Omgevingsvariabele|Waarde
 |-|-
-|`AZURE_CLIENT_ID`|De App-ID voor de Service-Principal
-|`AZURE_TENANT_ID`|De Azure AD-Tenant-ID van de Service-Principal
-|`AZURE_CLIENT_SECRET`|Het wacht woord dat voor de Service-Principal is gegenereerd
+|`AZURE_CLIENT_ID`|De app-id voor de service-principal
+|`AZURE_TENANT_ID`|De Azure AD-tenant-id van de service-principal
+|`AZURE_CLIENT_SECRET`|Het wachtwoord dat is gegenereerd voor de service-principal
 
 > [!IMPORTANT]
-> Nadat u de omgevings variabelen hebt ingesteld, sluit u het console venster en opent u het opnieuw. Als u Visual Studio of een andere ontwikkel omgeving gebruikt, moet u de ontwikkel omgeving mogelijk opnieuw opstarten om de nieuwe omgevings variabelen te registreren.
+> Nadat u de omgevingsvariabelen hebt ingesteld, sluit u het consolevenster en opent u het opnieuw. Als u een Visual Studio of een andere ontwikkelomgeving gebruikt, moet u de ontwikkelomgeving mogelijk opnieuw opstarten om de nieuwe omgevingsvariabelen te kunnen registreren.
 
-Zie [identiteit voor Azure-app maken in de portal](../../active-directory/develop/howto-create-service-principal-portal.md)voor meer informatie.
+Zie Identiteit maken voor [Azure-app in de portal voor meer informatie.](../../active-directory/develop/howto-create-service-principal-portal.md)
 
 [!INCLUDE [storage-install-packages-blob-and-identity-include](../../../includes/storage-install-packages-blob-and-identity-include.md)]
 
-## <a name="net-code-example-create-a-block-blob"></a>.NET-code voorbeeld: een blok-Blob maken
+## <a name="net-code-example-create-a-block-blob"></a>Voorbeeld van .NET-code: Een blok-blob maken
 
-Voeg de volgende `using` instructies toe aan uw code voor het gebruik van de identiteits-en Azure Storage-client bibliotheken van Azure.
+Voeg de volgende `using` instructies toe aan uw code om de Azure Identity- en Azure Storage-clientbibliotheken te gebruiken.
 
 ```csharp
 using Azure;
@@ -126,7 +126,7 @@ using System.Text;
 using System.Threading.Tasks;
 ```
 
-Maak een instantie van de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) -klasse om een token referentie op te halen die door uw code kan worden gebruikt om aanvragen voor Azure Storage te autoriseren. In het volgende code voorbeeld ziet u hoe de referenties van de geverifieerde token worden opgehaald en gebruikt om een service-client object te maken. vervolgens gebruikt u de service-client om een nieuwe BLOB te uploaden:
+Als u een tokenreferentie wilt opvragen die uw code kan gebruiken om aanvragen voor Azure Storage, maakt u een exemplaar van de [klasse DefaultAzureCredential.](/dotnet/api/azure.identity.defaultazurecredential) In het volgende codevoorbeeld ziet u hoe u de geverifieerde tokenreferentie op kunt halen en gebruiken om een serviceclientobject te maken en vervolgens de serviceclient kunt gebruiken om een nieuwe blob te uploaden:
 
 ```csharp
 async static Task CreateBlockBlobAsync(string accountName, string containerName, string blobName)
@@ -164,11 +164,11 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 ```
 
 > [!NOTE]
-> Als u aanvragen voor BLOB-of wachtrij gegevens met Azure AD wilt autoriseren, moet u HTTPS voor die aanvragen gebruiken.
+> Als u aanvragen wilt autoreren voor blob- of wachtrijgegevens met Azure AD, moet u HTTPS gebruiken voor deze aanvragen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Toegangs rechten voor opslag gegevens beheren met Azure RBAC](./storage-auth-aad-rbac-portal.md).
-- [Gebruik Azure AD met opslag toepassingen](storage-auth-aad-app.md).
-- [Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot BLOB-gegevens](../blobs/authorize-data-operations-powershell.md)
-- [Zelf studie: toegang tot opslag van App Service met beheerde Identies](../../app-service/scenario-secure-app-access-storage.md)
+- [Toegangsrechten voor opslaggegevens beheren met Azure RBAC](./storage-auth-aad-rbac-portal.md).
+- [Gebruik Azure AD met opslagtoepassingen](storage-auth-aad-app.md).
+- [PowerShell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot blobgegevens](../blobs/authorize-data-operations-powershell.md)
+- [Zelfstudie: Toegang tot opslag App Service met behulp van beheerde identiteiten](../../app-service/scenario-secure-app-access-storage.md)

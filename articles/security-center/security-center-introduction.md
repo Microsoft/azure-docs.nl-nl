@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: c4861192c7f2bbfb2a51e19b88daee45b501949b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 741cd68145b262c1f200ced9a7f28b25673b6925
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100634767"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107738914"
 ---
 # <a name="what-is-azure-security-center"></a>Wat is Azure Security Center?
 
@@ -72,7 +72,7 @@ Met Security Center kunt u **schaduw-IT-abonnementen identificeren**. Wanneer u 
 
 ### <a name="continuous-assessments"></a>Doorlopende beoordelingen
 
-Security Center detecteert doorlopend nieuwe resources die voor uw workloads worden geïmplementeerd en beoordeelt of deze zijn geconfigureerd volgens de best practices voor de beveiliging. Als dit niet het geval is, worden ze gemarkeerd en ontvangt u een lijst met prioriteit die aanbevelingen bevat voor de problemen die moeten worden opgelost zodat uw machines kunnen worden beveiligd. Deze lijst met aanbevelingen is ingeschakeld en wordt ondersteund door [Azure Security Bench Mark](../security/benchmarks/introduction.md), de door micro soft ontworpen, Azure specifieke set richt lijnen voor best practices voor beveiliging en naleving op basis van algemene nalevings kaders. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
+Security Center detecteert doorlopend nieuwe resources die voor uw workloads worden geïmplementeerd en beoordeelt of deze zijn geconfigureerd volgens de best practices voor de beveiliging. Als dit niet het geval is, worden ze gemarkeerd en ontvangt u een lijst met prioriteit die aanbevelingen bevat voor de problemen die moeten worden opgelost zodat uw machines kunnen worden beveiligd. Deze lijst met aanbevelingen wordt ingeschakeld en ondersteund door [Azure Security Benchmark,](https://docs.microsoft.com/security/benchmark/azure/introduction)de door Microsoft opgestelde, azure-specifieke set richtlijnen voor aanbevolen procedures voor beveiliging en naleving op basis van algemene nalevingskaders. Deze breed gerespecteerde benchmark bouwt voort op de controles van het [Center for Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het National Institute of Standards and Technology [(NIST)](https://www.nist.gov/) met de focus op cloudgerichte beveiliging.
 
 Om u te laten zien hoe belangrijk elke aanbeveling is voor uw algehele beveiligingspositie, groepeert Security Center de aanbevelingen in beveiligingsbeheeropties en voegt het een **beveiligingsscore** toe aan elke beheeroptie. Dit is van cruciaal belang bij **het stellen van prioriteiten bij uw beveiligingswerkzaamheden**.
 
@@ -101,11 +101,11 @@ Met de beveiliging tegen bedreigingen van Security Center kunt u bedreigingen de
 
 De beveiliging tegen bedreigingen van Security Center bevat een complete analyse van de aanvalsketen, waarbij automatisch waarschuwingen in uw omgeving aan elkaar worden gerelateerd op basis van de cyberaanvalsketenanalyse, zodat u een beter inzicht hebt in de hele geschiedenis van een aanval; waar deze is gestart en welke impact deze had op uw resources.
 
-:::image type="content" source="media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Lijst met beveiligings waarschuwingen voor Azure Security Center":::
+:::image type="content" source="media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Azure Security Center de lijst met beveiligingswaarschuwingen":::
 
 ### <a name="integration-with-microsoft-defender-for-endpoint"></a>Integratie met Microsoft Defender voor Eindpunt
 
-Azure Defender voor servers bevat automatische, systeem eigen integratie met micro soft Defender voor eind punt. Meer informatie over [het beveiligen van uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt](security-center-wdatp.md)
+Azure Defender voor servers omvat automatische, systeemeigen integratie met Microsoft Defender for Endpoint. Meer informatie: [Uw eindpunten beveiligen met Security Center geïntegreerde EDR-oplossing: Microsoft Defender for Endpoint](security-center-wdatp.md)
 
 
 ### <a name="protect-paas"></a>PaaS beveiligen

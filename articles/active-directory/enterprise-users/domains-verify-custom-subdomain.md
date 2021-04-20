@@ -1,44 +1,45 @@
 ---
-title: Type verificatie van subdomein wijzigen met behulp van Power shell en Graph-Azure Active Directory | Microsoft Docs
-description: De standaard instellingen voor verificatie van subdomeinen die zijn overgenomen van de hoofd domein instellingen, worden gewijzigd in Azure Active Directory.
+title: Verificatietype subdomein wijzigen met Behulp van PowerShell en Graph - Azure Active Directory | Microsoft Docs
+description: Wijzig de standaardinstellingen voor subdomeinverificatie die zijn overgenomen van de hoofddomeininstellingen in Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: curtand
 manager: daveba
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2020
+ms.date: 04/18/2021
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 734e6824f13e62ad080500eff18c4892e1f76807
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f4acf01a6672d17e62b6ebf5c6f43c8d6145f95a
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "95503671"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739310"
 ---
-# <a name="change-subdomain-authentication-type-in-azure-active-directory"></a>Het verificatie type van het subdomein wijzigen in Azure Active Directory
+# <a name="change-subdomain-authentication-type-in-azure-active-directory"></a>Verificatietype subdomein wijzigen in Azure Active Directory
 
-Nadat een hoofd domein is toegevoegd aan Azure Active Directory (Azure AD), nemen alle volgende subdomeinen die aan die hoofdmap in uw Azure AD-organisatie zijn toegevoegd, automatisch de verificatie-instelling over van het hoofd domein. Als u echter de instellingen voor domein verificatie onafhankelijk van de hoofd domein instellingen wilt beheren, kunt u nu met de API voor Microsoft Graph. Als u bijvoorbeeld een federatief hoofd domein hebt, zoals contoso.com, kunt u dit artikel helpen bij het controleren van een subdomein, zoals child.contoso.com, in plaats van Federated.
+Nadat een hoofddomein is toegevoegd aan Azure Active Directory (Azure AD), nemen alle volgende subdomeinen die zijn toegevoegd aan die hoofdmap in uw Azure AD-organisatie automatisch de verificatie-instelling over van het hoofddomein. Als u de instellingen voor domeinverificatie echter onafhankelijk van de instellingen van het hoofddomein wilt beheren, kunt u nu de Microsoft Graph API. Als u bijvoorbeeld een federatief hoofddomein hebt, zoals contoso.com, kan dit artikel u helpen bij het verifiëren van een subdomein, zoals child.contoso.com beheerd in plaats van federatief.
 
-Wanneer het bovenliggende domein in de Azure AD-Portal federatief is en de beheerder een beheerd subdomein probeert te verifiëren op de pagina **aangepaste domein namen** , krijgt u de fout ' kan het domein niet toevoegen ' met de reden "een of meer eigenschappen bevatten ongeldige waarden". Als u dit subdomein probeert toe te voegen vanuit het Microsoft 365-beheer centrum, wordt een vergelijk bare fout weer gegeven. Meer informatie over de fout vindt u [in een onderliggend domein wijzigingen in het bovenliggende domein niet overnemen in Office 365, Azure of intune](/office365/troubleshoot/administration/child-domain-fails-inherit-parent-domain-changes).
+Wanneer in de Azure AD-portal het bovenliggende domein federatief is en de  beheerder probeert een beheerd subdomein te verifiëren op de pagina Aangepaste domeinnamen, krijgt u de fout 'Kan domein niet toevoegen' met de reden 'Een of meer eigenschappen bevatten ongeldige waarden'. Als u dit subdomein probeert toe te voegen vanuit de Microsoft 365-beheercentrum, wordt er een vergelijkbare fout weergegeven. Zie Een onderliggend domein neemt geen bovenliggende domeinwijzigingen over [in Office 365, Azure of Intune voor meer](/office365/troubleshoot/administration/child-domain-fails-inherit-parent-domain-changes)informatie over de fout.
 
 ## <a name="how-to-verify-a-custom-subdomain"></a>Een aangepast subdomein controleren
 
-Omdat subdomeinen het verificatie type van het hoofd domein standaard overnemen, moet u het subdomein promo veren naar een hoofd domein in azure AD met behulp van de Microsoft Graph zodat u het verificatie type kunt instellen op het gewenste type.
+Omdat subdomeinen het verificatietype van het hoofddomein standaard overnemen, moet u het subdomein promoveren naar een hoofddomein in Azure AD met behulp van de Microsoft Graph, zodat u het verificatietype kunt instellen op het gewenste type.
 
-### <a name="add-the-subdomain-and-view-its-authentication-type"></a>Het subdomein toevoegen en het verificatie type weer geven
+### <a name="add-the-subdomain-and-view-its-authentication-type"></a>Het subdomein toevoegen en het verificatietype weergeven
 
-1. Gebruik Power shell om het nieuwe subdomein met het standaard verificatie type van het hoofd domein toe te voegen. De beheer centrums van Azure AD en Microsoft 365 ondersteunen deze bewerking nog niet.
+1. Gebruik PowerShell om het nieuwe subdomein toe te voegen, dat het standaardverificatietype van het hoofddomein heeft. De Azure AD- en Microsoft 365-beheercentrums bieden nog geen ondersteuning voor deze bewerking.
 
    ```powershell
    New-MsolDomain -Name "child.mydomain.com" -Authentication Federated
    ```
 
-1. Gebruik [Azure AD Graph Explorer](https://graphexplorer.azurewebsites.net) om het domein op te halen. Omdat het domein geen hoofd domein is, neemt het het verificatie type van het hoofd domein over. Uw opdracht en resultaten kunnen er als volgt uitzien, met behulp van uw eigen Tenant-ID:
+1. Gebruik [Azure AD Graph Explorer om](https://graphexplorer.azurewebsites.net) het domein op te halen. Omdat het domein geen hoofddomein is, neemt het het verificatietype van het hoofddomein over. Uw opdracht en resultaten kunnen er als volgt uitzien, met behulp van uw eigen tenant-id:
 
    ```http
    GET https://graph.windows.net/{tenant_id}/domains?api-version=1.6
@@ -62,23 +63,23 @@ Omdat subdomeinen het verificatie type van het hoofd domein standaard overnemen,
      },
    ```
 
-### <a name="use-azure-ad-graph-explorer-api-to-make-this-a-root-domain"></a>De API van Azure AD Graph Explorer gebruiken om dit hoofd domein te maken
+### <a name="use-azure-ad-graph-explorer-api-to-make-this-a-root-domain"></a>Azure AD Graph Explorer-API gebruiken om dit een hoofddomein te maken
 
-Gebruik de volgende opdracht om het subdomein te promo veren:
+Gebruik de volgende opdracht om het subdomein te promoveren:
 
 ```http
 POST https://graph.windows.net/{tenant_id}/domains/child.mydomain.com/promote?api-version=1.6
 ```
 
-### <a name="change-the-subdomain-authentication-type"></a>Het verificatie type van het subdomein wijzigen
+### <a name="change-the-subdomain-authentication-type"></a>Het verificatietype voor het subdomein wijzigen
 
-1. Gebruik de volgende opdracht om het verificatie type subdomein te wijzigen:
+1. Gebruik de volgende opdracht om het verificatietype voor het subdomein te wijzigen:
 
    ```powershell
    Set-MsolDomainAuthentication -DomainName child.mydomain.com -Authentication Managed
    ```
 
-1. Controleer via GET in azure AD Graph Explorer dat het verificatie type subdomein nu wordt beheerd:
+1. Controleer via GET in Azure AD Graph Explorer of het verificatietype van het subdomein nu wordt beheerd:
 
    ```http
    GET https://graph.windows.net/{{tenant_id} }/domains?api-version=1.6
@@ -109,4 +110,4 @@ POST https://graph.windows.net/{tenant_id}/domains/child.mydomain.com/promote?ap
 
 - [Aangepaste domeinnamen toevoegen](../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)
 - [Domeinnamen beheren](domains-manage.md)
-- [Een aangepaste domein naam ForceDelete met Microsoft Graph-API](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true)
+- [ForceDelete a custom domain name with Microsoft Graph API](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true)

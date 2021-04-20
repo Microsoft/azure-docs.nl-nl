@@ -16,6 +16,8 @@
       href: multi-factor-authentication-end-user-app-passwords.md
     - name: Aanmelden
       href: user-help-sign-in.md?toc=./toc.json
+    - name: Aanmelden met werk- of schoolaccount
+      href: multi-factor-authentication-end-user-signin.md
     - name: Help opvragen
       href: multi-factor-authentication-end-user-troubleshoot.md
 - name: Hulp bij wachtwoord opnieuw instellen
@@ -50,7 +52,7 @@
       href: auth-app-android-china.md
     - name: Een back-up maken van uw accounts en deze herstellen
       href: user-help-auth-app-backup-recovery.md
-    - name: Wacht woorden importeren in verificator-app
+    - name: Wachtwoorden importeren in authenticator-app
       href: user-help-authenticator-app-import-passwords.md
     - name: Veelgestelde vragen
       href: user-help-auth-app-faq.md
@@ -72,7 +74,7 @@
       href: my-account-portal-sign-ins-page.md
     - name: Uw portalinstellingen wijzigen
       href: my-account-portal-settings.md
-    - name: Een beheerder van mijn account zoeken
+    - name: Een mijn accountbeheerder zoeken
       href: my-account-find-administrator.md
     - name: Wisselen van organisatie
       href: cross-tenant-switcher.md

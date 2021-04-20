@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/01/2021
 ms.author: barclayn
-ms.openlocfilehash: 942b77f8338636f9dda5dcf6cd4262dad57b4b0a
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: 6aa502e1ed0e49192220174d5a8573690035a4a3
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726264"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739130"
 ---
 # <a name="issuer-service-communication-examples-preview"></a>Voorbeelden van servicecommunicatie van verlener (preview)
 
@@ -31,9 +31,9 @@ Als u een verifieerbare referentie wilt uitgeven, krijgt Authenticator via het d
 | ------- | ----------- |
 | Toekenningstype | Moet het toekenningstype voor autorisatiecode ondersteunen. |
 | Tokenindeling | Moet niet-versleutelde compacte JWT's produceren. |
-| Handtekeningalgoritme | Moet JWT's produceren die zijn ondertekend met RSA 256. |
+| Handtekeningalgoritme | Moet JWT's produceren die zijn ondertekend met RS 256. |
 | Configuratiedocument | Moet ondersteuning OpenID Connect configuratiedocument en `jwks_uri` . | 
-| Clientregistratie | Moet openbare clientregistratie ondersteunen met behulp van `redirect_uri` de waarde `vclient://openid/` . | 
+| Clientregistratie | Moet openbare clientregistratie ondersteunen met behulp van `redirect_uri` de waarde `vcclient://openid/` . | 
 | PKCE | Aanbevolen uit veiligheidsoverwegingen, maar niet vereist. |
 
 Hieronder vindt u voorbeelden van de HTTP-aanvragen die naar uw id-provider worden verzonden. Uw id-provider moet deze aanvragen accepteren en hierop reageren in overeenstemming met OpenID Connect verificatiestandaard.
@@ -76,7 +76,7 @@ Connection: Keep-Alive
 
 Wanneer een autorisatieaanvraag wordt ontvangen, moet uw id-provider de gebruiker verifiëren en de benodigde stappen nemen om de aanmelding te voltooien, zoals meervoudige verificatie.
 
-U kunt het aanmeldingsproces aanpassen aan uw behoeften. U kunt gebruikers vragen aanvullende informatie te verstrekken, servicevoorwaarden te accepteren, te betalen voor hun referentie en meer. Zodra alle stappen zijn voltooid, reageert u op de autorisatieaanvraag door om te leiden naar de omleidings-URI, zoals hieronder wordt weergegeven. 
+U kunt het aanmeldingsproces aanpassen aan uw behoeften. U kunt gebruikers vragen aanvullende informatie op te geven, servicevoorwaarden te accepteren, te betalen voor hun referentie en meer. Zodra alle stappen zijn voltooid, reageert u op de autorisatieaanvraag door om te leiden naar de omleidings-URI, zoals hieronder wordt weergegeven. 
 
 ```HTTP
 vcclient://openid/?code=nbafhjbh1ub1yhbj1h4jr1&state=12345

@@ -1,6 +1,6 @@
 ---
-title: Zelf studie-metrische gegevens en logboeken instellen en gebruiken met een Azure IoT hub
-description: Zelf studie-informatie over het instellen en gebruiken van metrische gegevens en logboeken met een Azure IoT hub. Zo beschikt u over gegevens die u kunt analyseren om problemen met de hub op te sporen.
+title: 'Zelfstudie: metrische gegevens en logboeken instellen en gebruiken met een Azure IoT-hub'
+description: 'Zelfstudie: meer informatie over het instellen en gebruiken van metrische gegevens en logboeken met een Azure IoT-hub. Zo beschikt u over gegevens die u kunt analyseren om problemen met de hub op te sporen.'
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 - devx-track-csharp
-ms.openlocfilehash: 1e2983fb50ce3ad1482db85025677cba5fee0c2e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 62958dc374598e6f530af398f722001e5ed51acd
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104889587"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739688"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-logs-with-an-iot-hub"></a>Zelfstudie: Metrische gegevens en logboeken instellen en gebruiken met een IoT-hub
 
@@ -219,7 +219,7 @@ U stelt als volgt waarschuwingen voor metrische gegevens in:
 
 1. Configureer eerst de voorwaarde op basis waarvan de waarschuwing wordt geactiveerd.
 
-    1. Onder **voor waarde**, selecteert u **voor waarde toevoegen**. Typ in het deelvenster **Signaallogica configureren** de tekst 'Telemetrie' in het zoekvak en selecteer **Verzonden telemetrieberichten**.
+    1. Selecteer **onder Voorwaarde** de optie Voorwaarde **toevoegen.** Typ in het deelvenster **Signaallogica configureren** de tekst 'Telemetrie' in het zoekvak en selecteer **Verzonden telemetrieberichten**.
 
        :::image type="content" source="media/tutorial-use-metrics-and-diags/configure-signal-logic-telemetry-messages-sent.png" alt-text="Schermopname waarin het selecteren van het metrische gegeven wordt weergegeven.":::
 
@@ -245,7 +245,7 @@ U stelt als volgt waarschuwingen voor metrische gegevens in:
 
 1. Configureer nu de actie voor de waarschuwing.
 
-    1. Ga terug naar het deel venster **waarschuwings regel maken** en selecteer **actie groepen toevoegen** onder **acties**. Selecteer in het deelvenster **Een actiegroep selecteren om aan deze waarschuwingsregel toe te voegen** de optie **Actiegroep maken**.
+    1. Selecteer in het **deelvenster Waarschuwingsregel maken** onder **Acties** de optie **Actiegroepen toevoegen.** Selecteer in het deelvenster **Een actiegroep selecteren om aan deze waarschuwingsregel toe te voegen** de optie **Actiegroep maken**.
 
     1. Geef op het tabblad **Basisgegevens** in het deelvenster **Actiegroep maken** een naam en een weergavenaam op voor de actiegroep.
 

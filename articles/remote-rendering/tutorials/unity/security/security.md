@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b1bcba264589d6cbe9b4f671e1e4f2c9b1dbf2c5
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 6e595f7ff313ff85a12209e8c124b9aa376b20b6
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594245"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107739736"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Zelfstudie: Azure Remote Rendering en modelopslag beveiligen
 
@@ -188,7 +188,7 @@ We hebben nog een 'wachtwoord', AccountKey (accountsleutel), dat uit de lokale t
 
 Met AAD-verificatie kunt u bepalen welke personen of groepen op een meer bewaakte manier gebruikmaken van ARR. ARR bevat ingebouwde ondersteuning voor het accepteren van [toegangstokens](../../../../active-directory/develop/access-tokens.md) in plaats van een accountsleutel te gebruiken. U kunt toegangstokens beschouwen als een tijdgebonden, gebruikersspecifieke sleutel, waarmee alleen bepaalde onderdelen van de specifieke resource worden ontgrendeld waarvoor deze zijn aangevraagd.
 
-Het **RemoteRenderingCoordinator** -script heeft een gemachtigde met de naam **ARRCredentialGetter**, die een methode bevat die een **SessionConfiguration** -object retourneert, dat wordt gebruikt om het beheer van externe sessies te configureren. We kunnen een andere methode toewijzen aan **ARRCredentialGetter**, zodat we een Azure-aantekening kan gebruiken om een **SessionConfiguration** -object te genereren dat een Azure-toegangs token bevat. Dit toegangstoken is uniek voor de gebruiker die zich aanmeldt.
+Het **script RemoteRenderingCoordinator** heeft een gemachtigde met de naam **ARRCredentialGetter,** die een methode bevat die een **SessionConfiguration-object** retourneert, dat wordt gebruikt om het beheer van externe sessies te configureren. We kunnen een andere methode toewijzen aan **ARRCredentialGetter,** zodat we een Azure-aanmeldingsstroom kunnen gebruiken om een **SessionConfiguration-object** te genereren dat een Azure Access Token bevat. Dit toegangstoken is uniek voor de gebruiker die zich aanmeldt.
 
 1. Volg de [Instructies: Verificatie configureren - Verificatie voor geïmplementeerde toepassingen](../../../how-tos/authentication.md#authentication-for-deployed-applications). Volg de specifieke instructies in de documentatie voor Azure Spatial Anchors voor [gebruikersverificatie van Azure AD](../../../../spatial-anchors/concepts/authentication.md?tabs=csharp#azure-ad-user-authentication). Dit omvat het registreren van een nieuwe Azure Active Directory-toepassing en het configureren van toegang tot uw ARR-exemplaar.
 1. Nadat u de nieuwe AAD-toepassing hebt geconfigureerd, controleert u of uw AAD-toepassing eruitziet zoals in de volgende afbeeldingen:
@@ -204,14 +204,14 @@ Het **RemoteRenderingCoordinator** -script heeft een gemachtigde met de naam **A
     >[!NOTE]
     > Een rol van *Eigenaar* is niet voldoende om sessies te kunnen beheren via de clienttoepassing. Aan elke gebruiker die u de mogelijkheid wilt geven om sessies te beheren, moet u de rol van **Remote Rendering-client** toewijzen. Aan elke gebruiker die u de mogelijkheid wilt geven om sessies te beheren en modellen te converteren, moet u de rol van **Remote Rendering-beheerder** toewijzen.
 
-Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te maken met de AAR-service. We doen dit door een instantie van **BaseARRAuthentication** te implementeren, waarmee een nieuw **SessionConfiguration** -object wordt geretourneerd. In dit geval worden de accountgegevens geconfigureerd met het Azure-toegangstoken.
+Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te maken met de AAR-service. We doen dit door een exemplaar van **BaseARRAuthentication** te implementeren, waarmee een nieuw **SessionConfiguration-object wordt** retourneren. In dit geval worden de accountgegevens geconfigureerd met het Azure-toegangstoken.
 
 1. Maak een nieuw script met de naam **AADAuthentication** en vervang de code door het volgende:
 
     ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
-
+    
     using Microsoft.Azure.RemoteRendering;
     using Microsoft.Identity.Client;
     using System;
@@ -219,17 +219,9 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
     using System.Threading;
     using System.Threading.Tasks;
     using UnityEngine;
-
+    
     public class AADAuthentication : BaseARRAuthentication
     {
-        [SerializeField]
-        private string accountDomain;
-        public string AccountDomain
-        {
-            get => accountDomain.Trim();
-            set => accountDomain = value;
-        }
-
         [SerializeField]
         private string activeDirectoryApplicationClientID;
         public string ActiveDirectoryApplicationClientID
@@ -237,7 +229,7 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
             get => activeDirectoryApplicationClientID.Trim();
             set => activeDirectoryApplicationClientID = value;
         }
-
+    
         [SerializeField]
         private string azureTenantID;
         public string AzureTenantID
@@ -245,7 +237,15 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
             get => azureTenantID.Trim();
             set => azureTenantID = value;
         }
-
+    
+        [SerializeField]
+        private string azureRemoteRenderingDomain;
+        public string AzureRemoteRenderingDomain
+        {
+            get => azureRemoteRenderingDomain.Trim();
+            set => azureRemoteRenderingDomain = value;
+        }
+    
         [SerializeField]
         private string azureRemoteRenderingAccountID;
         public string AzureRemoteRenderingAccountID
@@ -255,37 +255,37 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
         }
     
         [SerializeField]
-        private string azureRemoteRenderingAccountAuthenticationDomain;
-        public string AzureRemoteRenderingAccountAuthenticationDomain
+        private string azureRemoteRenderingAccountDomain;
+        public string AzureRemoteRenderingAccountDomain
         {
-            get => azureRemoteRenderingAccountAuthenticationDomain.Trim();
-            set => azureRemoteRenderingAccountAuthenticationDomain = value;
-        }
-
+            get => azureRemoteRenderingAccountDomain.Trim();
+            set => azureRemoteRenderingAccountDomain = value;
+        }    
+    
         public override event Action<string> AuthenticationInstructions;
-
+    
         string authority => "https://login.microsoftonline.com/" + AzureTenantID;
-
+    
         string redirect_uri = "https://login.microsoftonline.com/common/oauth2/nativeclient";
-
-        string[] scopes => new string[] { "https://sts." + AzureRemoteRenderingAccountAuthenticationDomain + "/mixedreality.signin" };
-
+    
+        string[] scopes => new string[] { "https://sts." + AzureRemoteRenderingAccountDomain + "/mixedreality.signin" };
+    
         public void OnEnable()
         {
             RemoteRenderingCoordinator.ARRCredentialGetter = GetAARCredentials;
             this.gameObject.AddComponent<ExecuteOnUnityThread>();
         }
-
+    
         public async override Task<SessionConfiguration> GetAARCredentials()
         {
             var result = await TryLogin();
             if (result != null)
             {
                 Debug.Log("Account signin successful " + result.Account.Username);
-
+    
                 var AD_Token = result.AccessToken;
-
-                return await Task.FromResult(new SessionConfiguration(AzureRemoteRenderingAccountAuthenticationDomain, AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
+    
+                return await Task.FromResult(new SessionConfiguration(AzureRemoteRenderingAccountDomain, AzureRemoteRenderingDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
             }
             else
             {
@@ -293,7 +293,7 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
             }
             return default;
         }
-
+    
         private Task DeviceCodeReturned(DeviceCodeResult deviceCodeDetails)
         {
             //Since everything in this task can happen on a different thread, invoke responses on the main Unity thread
@@ -303,10 +303,10 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
                 Debug.Log(deviceCodeDetails.Message);
                 AuthenticationInstructions?.Invoke(deviceCodeDetails.Message);
             });
-
+    
             return Task.FromResult(0);
         }
-
+    
         public override async Task<AuthenticationResult> TryLogin()
         {
             var clientApplication = PublicClientApplicationBuilder.Create(ActiveDirectoryApplicationClientID).WithAuthority(authority).WithRedirectUri(redirect_uri).Build();
@@ -314,11 +314,11 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
             try
             {
                 var accounts = await clientApplication.GetAccountsAsync();
-
+    
                 if (accounts.Any())
                 {
                     result = await clientApplication.AcquireTokenSilent(scopes, accounts.First()).ExecuteAsync();
-
+    
                     return result;
                 }
                 else
@@ -356,7 +356,7 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
                 Debug.LogError("GetAccountsAsync");
                 Debug.LogException(ex);
             }
-
+    
             return null;
         }
     }
@@ -372,10 +372,10 @@ Voor deze code gebruiken we de [apparaatcodestroom](../../../../active-directory
 Het belangrijkste deel van deze klasse vanuit het perspectief van ARR is deze regel:
 
 ```cs
-return await Task.FromResult(new SessionConfiguration(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
+return await Task.FromResult(new SessionConfiguration(AzureRemoteRenderingAccountDomain, AzureRemoteRenderingDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
 ```
 
-Hier maken we een nieuw **SessionConfiguration** -object met behulp van het account domein, de account-id, het account verificatie domein en het toegangs token. Dit token wordt vervolgens gebruikt door de ARR-service om Remote Rendering-sessies op te vragen, te maken en samen te voegen zolang de gebruiker is geautoriseerd op basis van de op rollen gebaseerde machtigingen die eerder zijn geconfigureerd.
+Hier maken we een nieuw **SessionConfiguration-object** met behulp van het remote rendering-domein, de account-id, het accountdomein en het toegangsteken. Dit token wordt vervolgens gebruikt door de ARR-service om Remote Rendering-sessies op te vragen, te maken en samen te voegen zolang de gebruiker is geautoriseerd op basis van de op rollen gebaseerde machtigingen die eerder zijn geconfigureerd.
 
 Na deze wijziging ziet de huidige status van de toepassing en de toegang tot uw Azure-resources er als volgt uit:
 
@@ -393,11 +393,11 @@ Als AAD-verificatie actief is, moet u zich telkens wanneer u de toepassing start
 
 1. Vul uw waarden voor de client-id en de tenant-id in. Deze waarden vindt u op de overzichtspagina van de app-registratie:
 
-    * Het **accountdomein** is hetzelfde domein als het accountdomein van **RemoteRenderingCoordinator**.
     * De **client-id van de Active Directory-toepassing** is de *toepassings-id (of client-id)* die te vinden is in de registratie van uw AAD-app (zie de onderstaande afbeelding).
     * De **Azure-tenant-id** is de *directory-id (tenant-id)* die te vinden is in de registratie van uw AAD-app (zie de onderstaande afbeelding).
+    * **Azure Remote Rendering domein** is hetzelfde domein dat u hebt gebruikt in het Remote Rendering-domein van **RemoteRenderingCoordinator.**
     * De **account-id van Azure Remote Rendering** is de **account-id** die u hebt gebruikt voor **RemoteRenderingCoordinator**.
-    * **Accountverificatiedomein** is hetzelfde **Accountverificatiedomein** dat u hebt gebruikt in **RemoteRenderingCoordinator**.
+    * **Azure Remote Rendering accountdomein** is hetzelfde **accountdomein** dat u hebt gebruikt in **remoteRenderingCoordinator.**
 
     ![Schermopname waarin de Application (client) ID en Directory (tenant) ID zijn gemarkeerd.](./media/app-overview-data.png)
 

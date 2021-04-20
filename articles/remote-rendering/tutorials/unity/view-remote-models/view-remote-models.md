@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d8784bc4744e2d4beb6a72fdc0df0fd0b32346f9
-ms.sourcegitcommit: 73d80a95e28618f5dfd719647ff37a8ab157a668
+ms.openlocfilehash: f43e5b77580b7071ce48b39190c26a53f99f8cf5
+ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105605005"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107740117"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Zelfstudie: U bekijkt een model dat extern wordt weergegeven
 
@@ -33,7 +33,7 @@ Voor deze zelfstudie hebt u het volgende nodig:
 * Windows SDK 10.0.18362.0 [(download)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * De nieuwste versie van Visual Studio 2019 [(download)](https://visualstudio.microsoft.com/vs/older-downloads/)
 * Git [(downloaden)](https://git-scm.com/downloads)
-* Unity (Zie [systeem vereisten](../../../overview/system-requirements.md#unity) voor ondersteunde versies)
+* Unity (zie [systeemvereisten](../../../overview/system-requirements.md#unity) voor ondersteunde versies)
 * Basiskennis van Unity en de C# -taal (bijvoorbeeld: scripts en objecten maken, prefabs gebruiken, Unity-gebeurtenissen configureren enz.)
 
 ## <a name="provision-an-azure-remote-rendering-arr-instance"></a>Een instantie van Azure Remote Rendering (ARR) inrichten
@@ -52,7 +52,7 @@ In dit voorbeeld wordt ervan uitgegaan dat het project wordt gemaakt in een map 
 
 ## <a name="include-the-azure-remote-rendering-package"></a>Het Azure Remote Rendering-pakket toevoegen
 
-[Volg de instructies](../../../how-tos/unity/install-remote-rendering-unity-package.md) voor het toevoegen van het pakket voor externe rendering van Azure aan een Unity-project.
+[Volg de instructies](../../../how-tos/unity/install-remote-rendering-unity-package.md) voor het toevoegen van het Azure Remote Rendering pakket aan een Unity-project.
 
 
 ## <a name="configure-the-camera"></a>De camera configureren
@@ -182,14 +182,15 @@ public class RemoteRenderingCoordinator : MonoBehaviour
 
     public static RemoteRenderingCoordinator instance;
 
-    // AccountDomain must be '<region>.mixedreality.azure.com' - if no '<region>' is specified, connections will fail
-    // The list of regions is available at https://docs.microsoft.com/azure/remote-rendering/reference/regions
+    // Account
+    // RemoteRenderingDomain must be '<region>.mixedreality.azure.com' - if no '<region>' is specified, connections will fail
+    // For most people '<region>' is either 'westus2' or 'westeurope'
     [SerializeField]
-    private string accountDomain = "westus2.mixedreality.azure.com";
-    public string AccountDomain
+    private string remoteRenderingDomain = "westus2.mixedreality.azure.com";
+    public string RemoteRenderingDomain
     {
-        get => accountDomain.Trim();
-        set => accountDomain = value;
+        get => remoteRenderingDomain.Trim();
+        set => remoteRenderingDomain = value;
     }
 
     [Header("Development Account Credentials")]
@@ -201,12 +202,12 @@ public class RemoteRenderingCoordinator : MonoBehaviour
     }
 
     [SerializeField]
-    private string accountAuthenticationDomain = "<enter your account authentication domain here>";
-    public string AccountAuthenticationDomain
+    private string accountDomain = "<enter your account domain here>";
+    public string AccountDomain
     {
-        get => accountAuthenticationDomain.Trim();
-        set => accountAuthenticationDomain = value;
-    }   
+        get => accountDomain.Trim();
+        set => accountDomain = value;
+    }    
 
     [SerializeField]
     private string accountKey = "<enter your account key here>";
@@ -272,7 +273,7 @@ public class RemoteRenderingCoordinator : MonoBehaviour
             if (currentCoordinatorState != value)
             {
                 currentCoordinatorState = value;
-                Debug.Log($"State changed to: {currentCoordinatorState}");
+                Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, null, "{0}", $"State changed to: {currentCoordinatorState}");
                 CoordinatorStateChange?.Invoke(currentCoordinatorState);
             }
         }
@@ -297,7 +298,7 @@ public class RemoteRenderingCoordinator : MonoBehaviour
     private async Task<SessionConfiguration> GetDevelopmentCredentials()
     {
         Debug.LogWarning("Using development credentials! Not recommended for production.");
-        return await Task.FromResult(new SessionConfiguration(AccountAuthenticationDomain, AccountDomain, AccountId, AccountKey));
+        return await Task.FromResult(new SessionConfiguration(AccountDomain, RemoteRenderingDomain, AccountId, AccountKey));
     }
 
     /// <summary>
@@ -531,7 +532,7 @@ De remote rendering-coördinator en het vereiste script (*ARRServiceUnity*) zijn
 1. Voeg het *RemoteRenderingCoordinator*-script toe aan het GameObject **RemoteRenderingCoordinator**.\
 ![RemoteRenderingCoordinator-component toevoegen](./media/add-coordinator-script.png)
 1. Controleer of het *ARRServiceUnity*-script, dat wordt weergegeven als *Service* in de Inspector, automatisch wordt toegevoegd aan het GameObject. Ter informatie, dit is een resultaat dat `[RequireComponent(typeof(ARRServiceUnity))]` heeft bovenaan het **RemoteRenderingCoordinator**-script.
-1. Voeg uw Azure Remote Rendering-referenties, uw accountverificatiedomein en het accountdomein toe aan het coördinatorscript:\
+1. Voeg uw Azure Remote Rendering, uw accountdomein en het domein Remote Rendering toe aan het coördinatorscript:\
 ![Uw referenties toevoegen](./media/configure-coordinator-script.png)
 
 ## <a name="initialize-azure-remote-rendering"></a>Azure Remote Rendering initialiseren

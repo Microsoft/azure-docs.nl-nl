@@ -1,59 +1,59 @@
 ---
-title: Container exemplaar implementeren op GitHub-actie
-description: Configureer een GitHub-actie waarmee de stappen voor het maken, pushen en implementeren van een container installatie kopie naar Azure Container Instances worden geautomatiseerd.
+title: Een container-exemplaar implementeren met de GitHub-actie
+description: Een GitHub-actie configureren die stappen automatiseert voor het bouwen, pushen en implementeren van een container-Azure Container Instances
 ms.topic: article
 ms.date: 08/20/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 1409d8fc1430cd9bf67bd735d9826a74979d495b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e6a4d9ecff292d79f132f933c36b0030e04f4efa
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98762955"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771295"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Een GitHub-actie configureren voor het maken van een containerinstantie
 
-[Github-acties](https://docs.github.com/en/actions) is een reeks functies in github voor het automatiseren van uw werk stromen voor software ontwikkeling op dezelfde locatie waar u code opslaat en samen werken aan pull-aanvragen en-problemen.
+[GitHub Actions](https://docs.github.com/en/actions) is een suite met functies in GitHub waarmee u uw werkstromen voor softwareontwikkeling kunt automatiseren op dezelfde plaats waar u code opgeslagen en samenwerkt aan pull-aanvragen en -problemen.
 
-Gebruik de actie [implementeren naar Azure container instances](https://github.com/azure/aci-deploy) github voor het automatiseren van de implementatie van één Container naar Azure container instances. Met deze actie kunt u eigenschappen instellen voor een container exemplaar dat vergelijkbaar is met die in de opdracht [AZ container Create][az-container-create] .
+Gebruik de [GitHub Azure Container Instances actie](https://github.com/azure/aci-deploy) Implementeren om de implementatie van één container naar een Azure Container Instances. Met de actie kunt u eigenschappen instellen voor een container-instantie die vergelijkbaar is met die in de [opdracht az container create.][az-container-create]
 
-In dit artikel wordt beschreven hoe u een werk stroom instelt in een GitHub-opslag plaats die de volgende acties uitvoert:
+In dit artikel wordt beschreven hoe u een werkstroom in een GitHub-opslagplaats in kunt stellen die de volgende acties uitvoert:
 
 * Een installatiekopie bouwen op basis van een Dockerfile
-* De installatie kopie naar een Azure container Registry pushen
-* De container installatie kopie implementeren in een Azure-container exemplaar
+* De afbeelding naar een Azure-containerregister pushen
+* De containerafbeelding implementeren in een Azure-container-instantie
 
-In dit artikel ziet u twee manieren om de werk stroom in te stellen:
+In dit artikel worden twee manieren beschreven om de werkstroom in te stellen:
 
-* [Github-werk stroom configureren](#configure-github-workflow) : Maak een werk stroom in een github-opslag plaats met de actie implementeren naar Azure container instances en andere acties.  
-* [Cli-extensie gebruiken](#use-deploy-to-azure-extension) : gebruik de `az container app up` opdracht in de uitbrei ding [implementeren naar Azure](https://github.com/Azure/deploy-to-azure-cli-extension) in de Azure cli. Met deze opdracht stroomlijnt u het maken van de GitHub-werk stroom en implementaties tappen.
+* [GitHub-werkstroom configureren:](#configure-github-workflow) maak een werkstroom in een GitHub-opslagplaats met behulp van de actie Implementeren Azure Container Instances acties en andere acties.  
+* [CLI-extensie gebruiken:](#use-deploy-to-azure-extension) gebruik de `az container app up` opdracht in de extensie Implementeren in [Azure](https://github.com/Azure/deploy-to-azure-cli-extension) in de Azure CLI. Met deze opdracht stroomlijnt u het maken van de GitHub-werkstroom en implementatiestappen.
 
 > [!IMPORTANT]
-> De GitHub-actie voor Azure Container Instances is momenteel beschikbaar als preview-versie. Previews worden voor u beschikbaar gesteld op voorwaarde dat u akkoord gaat met de [aanvullende gebruiksvoorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
+> De GitHub-actie voor Azure Container Instances is momenteel in preview. Previews worden voor u beschikbaar gesteld op voorwaarde dat u akkoord gaat met de [aanvullende gebruiksvoorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Github-account** : Maak een account op https://github.com Als u er nog geen hebt.
-* **Azure cli** : u kunt de Azure Cloud shell of een lokale installatie van de Azure CLI gebruiken om de stappen van Azure CLI uit te voeren. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
-* **Azure container Registry** : als u er nog geen hebt, maakt u een Azure-container register in de Basic-laag met behulp van de [Azure cli](../container-registry/container-registry-get-started-azure-cli.md), [Azure Portal](../container-registry/container-registry-get-started-portal.md)of een andere methode. Noteer de resource groep die wordt gebruikt voor de implementatie, die wordt gebruikt voor de GitHub-werk stroom.
+* **GitHub-account:** maak een account https://github.com op als u er nog geen hebt.
+* **Azure CLI:** u kunt de Azure Cloud Shell of een lokale installatie van de Azure CLI gebruiken om de Azure CLI-stappen uit te voeren. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+* **Azure Container Registry:** als u er nog geen hebt, maakt u een Azure-containerregister in de basic-laag met behulp van [de Azure CLI,](../container-registry/container-registry-get-started-azure-cli.md) [Azure Portal](../container-registry/container-registry-get-started-portal.md)of andere methoden. Noteer de resourcegroep die wordt gebruikt voor de implementatie, die wordt gebruikt voor de GitHub-werkstroom.
 
-## <a name="set-up-repo"></a>Opslag plaats instellen
+## <a name="set-up-repo"></a>Een repo instellen
 
-* Voor de voor beelden in dit artikel gebruikt u GitHub om de volgende opslag plaats te splitsen: https://github.com/Azure-Samples/acr-build-helloworld-node
+* Voor de voorbeelden in dit artikel gebruikt u GitHub om de volgende opslagplaats te forken: https://github.com/Azure-Samples/acr-build-helloworld-node
 
-  Deze opslag plaats bevat een Dockerfile en bron bestanden voor het maken van een container installatie kopie van een kleine web-app.
+  Deze repo bevat een Dockerfile en bronbestanden om een containerafbeelding van een kleine web-app te maken.
 
   ![Schermafbeelding van de knop Fork (gemarkeerd) in GitHub](../container-registry/media/container-registry-tutorial-quick-build/quick-build-01-fork.png)
 
-* Zorg ervoor dat acties zijn ingeschakeld voor uw opslag plaats. Navigeer naar uw gevorkte opslag plaats en selecteer **instellingen**  >  **acties**. Zorg ervoor dat in **acties machtigingen** **lokale acties en derden inschakelen voor deze opslag plaats** is geselecteerd.
+* Zorg ervoor dat Acties is ingeschakeld voor uw opslagplaats. Navigeer naar de gevorkte opslagplaats en selecteer   >  **InstellingenActies**. Zorg **ervoor dat in Machtigingen** voor acties de optie Lokale en externe acties **inschakelen** voor deze opslagplaats is geselecteerd.
 
-## <a name="configure-github-workflow"></a>GitHub-werk stroom configureren
+## <a name="configure-github-workflow"></a>GitHub-werkstroom configureren
 
-### <a name="create-service-principal-for-azure-authentication"></a>Een service-principal maken voor Azure-verificatie
+### <a name="create-service-principal-for-azure-authentication"></a>Service-principal maken voor Azure-verificatie
 
-In de GitHub-werk stroom moet u Azure-referenties opgeven om te verifiëren bij de Azure CLI. In het volgende voor beeld wordt een service-principal gemaakt met de rol Inzender in het bereik van de resource groep voor uw container register.
+In de GitHub-werkstroom moet u Azure-referenties voor verificatie bij de Azure CLI leveren. In het volgende voorbeeld wordt een service-principal gemaakt met de rol Inzender die is beperkt tot de resourcegroep voor uw containerregister.
 
-Haal eerst de resource-ID van de resource groep op. Vervang de naam van uw groep in de volgende opdracht [AZ Group show][az-group-show] :
+Haal eerst de resource-id van uw resourcegroep op. Vervang de naam van uw groep in de volgende [opdracht az group show:][az-group-show]
 
 ```azurecli
 groupId=$(az group show \
@@ -61,7 +61,7 @@ groupId=$(az group show \
   --query id --output tsv)
 ```
 
-Gebruik [AZ AD SP create-for-RBAC][az-ad-sp-create-for-rbac] om de service-principal te maken:
+Gebruik [az ad sp create-for-rbac om][az-ad-sp-create-for-rbac] de service-principal te maken:
 
 ```azurecli
 az ad sp create-for-rbac \
@@ -87,13 +87,13 @@ De uitvoer ziet er ongeveer zo uit:
 }
 ```
 
-Sla de JSON-uitvoer op omdat deze wordt gebruikt in een latere stap. Let ook `clientId` op de, die u moet uitvoeren om de service-principal bij te werken in de volgende sectie.
+Sla de JSON-uitvoer op omdat deze in een latere stap wordt gebruikt. Noteer ook de `clientId` , die u nodig hebt om de service-principal in de volgende sectie bij te werken.
 
-### <a name="update-service-principal-for-registry-authentication"></a>Service-Principal bijwerken voor register verificatie
+### <a name="update-service-principal-for-registry-authentication"></a>Service-principal bijwerken voor registerverificatie
 
-Werk de referenties van de Azure-Service-Principal bij om push-en pull-toegang tot uw container register mogelijk te maken. Met deze stap wordt de GitHub-werk stroom ingeschakeld om de service-principal te [verifiëren met het container register](../container-registry/container-registry-auth-service-principal.md) en om een docker-installatie kopie te pushen en te verzamelen. 
+Werk de referenties van de Azure-service-principal bij om push- en pull-toegang tot uw containerregister toe te staan. Met deze stap kan de GitHub-werkstroom de service-principal gebruiken om te verifiëren bij uw [containerregister](../container-registry/container-registry-auth-service-principal.md) en om een Docker-afbeelding te pushen en op te halen. 
 
-De resource-ID van het container register ophalen. Vervang de naam van het REGI ster in de volgende [AZ ACR show][az-acr-show] opdracht:
+Haal de resource-id van het containerregister op. Vervang de naam van het register in de volgende [opdracht az acr show:][az-acr-show]
 
 ```azurecli
 registryId=$(az acr show \
@@ -101,7 +101,7 @@ registryId=$(az acr show \
   --query id --output tsv)
 ```
 
-Gebruik [AZ Role Assignment Create][az-role-assignment-create] om de AcrPush-rol toe te wijzen. Dit biedt push-en pull-toegang tot het REGI ster. Vervang de client-ID van de Service-Principal door:
+Gebruik [az role assignment create om][az-role-assignment-create] de rol AcrPush toe te wijzen, waardoor push- en pull-toegang tot het register wordt gegeven. Vervang de client-id van uw service-principal:
 
 ```azurecli
 az role assignment create \
@@ -110,26 +110,26 @@ az role assignment create \
   --role AcrPush
 ```
 
-### <a name="save-credentials-to-github-repo"></a>Referenties opslaan in GitHub opslag plaats
+### <a name="save-credentials-to-github-repo"></a>Referenties opslaan in GitHub-opslagplaats
 
-1. Ga in de GitHub-gebruikers interface naar uw gevorkte opslag plaats en selecteer **instellingen**  >  **geheimen**. 
+1. Navigeer in de GitHub-gebruikersinterface naar uw gevorkte opslagplaats en selecteer  >  **InstellingenGeheimen.** 
 
-1. Selecteer **een nieuw geheim toevoegen** om de volgende geheimen toe te voegen:
+1. Selecteer **Een nieuw geheim toevoegen om** de volgende geheimen toe te voegen:
 
 |Geheim  |Waarde  |
 |---------|---------|
-|`AZURE_CREDENTIALS`     | De volledige JSON-uitvoer van de stap voor het maken van de Service-Principal |
-|`REGISTRY_LOGIN_SERVER`   | De naam van de aanmeldings server van het REGI ster (alle kleine letters). Voor beeld: *myregistry.azurecr.io*        |
-|`REGISTRY_USERNAME`     |  De `clientId` van de JSON-uitvoer van de service-principal maken       |
-|`REGISTRY_PASSWORD`     |  De `clientSecret` van de JSON-uitvoer van de service-principal maken |
-| `RESOURCE_GROUP` | De naam van de resource groep die u hebt gebruikt om de service-principal te bereiken |
+|`AZURE_CREDENTIALS`     | De volledige JSON-uitvoer van de stap voor het maken van de service-principal |
+|`REGISTRY_LOGIN_SERVER`   | De naam van de aanmeldingsserver van uw register (in kleine letters). Voorbeeld: *myregistry.azurecr.io*        |
+|`REGISTRY_USERNAME`     |  De `clientId` van de JSON-uitvoer van het maken van de service-principal       |
+|`REGISTRY_PASSWORD`     |  De `clientSecret` van de JSON-uitvoer van het maken van de service-principal |
+| `RESOURCE_GROUP` | De naam van de resourcegroep die u hebt gebruikt voor het bereik van de service-principal |
 
-### <a name="create-workflow-file"></a>Werk stroom bestand maken
+### <a name="create-workflow-file"></a>Werkstroombestand maken
 
-1. Selecteer in de gebruikers interface van github de optie **acties**  >  **nieuwe werk stroom**.
-1. Selecteer **zelf een werk stroom instellen**.
-1. Plak in **nieuw bestand bewerken** de volgende YAML-inhoud om de voorbeeld code te overschrijven. Accepteer de standaard bestandsnaam `main.yml` of geef een bestands naam op die u kiest.
-1. Selecteer **door voeren starten**, geef eventueel korte en uitgebreide beschrijvingen van uw door Voer op en selecteer **nieuw bestand door voeren**.
+1. Selecteer in de GitHub-gebruikersinterface **Acties**  >  **Nieuwe werkstroom.**
+1. Selecteer **Zelf een werkstroom instellen.**
+1. Plak **in Nieuw bestand bewerken** de volgende YAML-inhoud om de voorbeeldcode te overschrijven. Accepteer de standaardbestandsnaam `main.yml` of geef een bestandsnaam op die u kiest.
+1. Selecteer **Commit starten,** geef desgewenst korte en uitgebreide beschrijvingen van uw door te geven en selecteer **Nieuw bestand commit.**
 
 ```yml
 on: [push]
@@ -171,15 +171,15 @@ jobs:
             location: 'west us'
 ```
 
-### <a name="validate-workflow"></a>Werk stroom valideren
+### <a name="validate-workflow"></a>Werkstroom valideren
 
-Nadat u het werk stroom bestand hebt doorgevoerd, wordt de werk stroom geactiveerd. Als u de voortgang van de werk stroom wilt bekijken, gaat u naar **Action**  >  **workflows**. 
+Nadat u het werkstroombestand hebt door gegeven, wordt de werkstroom geactiveerd. Als u de voortgang van de werkstroom wilt bekijken, gaat **u naar**  >  **ActiesWerkstromen.** 
 
-![Werk stroom voortgang weer geven](./media/container-instances-github-action/github-action-progress.png)
+![Voortgang van werkstroom weergeven](./media/container-instances-github-action/github-action-progress.png)
 
-Zie de [uitvoerings geschiedenis van de werk stroom](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history) bekijken voor informatie over het weer geven van de status en de resultaten van elke stap in de werk stroom. Als de werk stroom niet is voltooid, raadpleegt [u logboeken weer geven om fouten te onderzoeken](https://docs.github.com/en/actions/managing-workflow-runs/using-workflow-run-logs#viewing-logs-to-diagnose-failures).
+Zie [Werkstroomuitloopgeschiedenis weergeven](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history) voor informatie over het weergeven van de status en resultaten van elke stap in uw werkstroom. Zie Logboeken weergeven om fouten vast te stellen als de [werkstroom niet is voltooid.](https://docs.github.com/en/actions/managing-workflow-runs/using-workflow-run-logs#viewing-logs-to-diagnose-failures)
 
-Wanneer de werk stroom is voltooid, haalt u informatie op over het container exemplaar met de naam *ACI-SampleApp* door de opdracht [AZ container show][az-container-show] uit te voeren. Vervang de naam van uw resource groep: 
+Wanneer de werkstroom is voltooid, kunt u informatie krijgen over de container-instantie met de naam *aci-sampleapp* door de opdracht [az container show uit te][az-container-show] voeren. Vervang de naam van uw resourcegroep: 
 
 ```azurecli
 az container show \
@@ -197,35 +197,35 @@ FQDN                                   ProvisioningState
 aci-action01.westus.azurecontainer.io  Succeeded
 ```
 
-Nadat het exemplaar is ingericht, gaat u naar de FQDN van de container in uw browser om de actieve web-app weer te geven.
+Nadat het exemplaar is ingericht, gaat u naar de FQDN van de container in uw browser om de web-app te bekijken die wordt uitgevoerd.
 
-![De web-app wordt uitgevoerd in de browser](./media/container-instances-github-action/github-action-container.png)
+![Web-app uitvoeren in browser](./media/container-instances-github-action/github-action-container.png)
 
-## <a name="use-deploy-to-azure-extension"></a>De extensie implementeren naar Azure gebruiken
+## <a name="use-deploy-to-azure-extension"></a>Implementeren in Azure-extensie gebruiken
 
-U kunt ook de [extensie implementeren naar Azure](https://github.com/Azure/deploy-to-azure-cli-extension) gebruiken in de Azure CLI om de werk stroom te configureren. De `az container app up` opdracht in de uitbrei ding krijgt invoer parameters van u om een werk stroom in te stellen om te implementeren in azure container instances. 
+U kunt ook de extensie [Implementeren naar Azure](https://github.com/Azure/deploy-to-azure-cli-extension) in de Azure CLI gebruiken om de werkstroom te configureren. Met `az container app up` de opdracht in de extensie worden invoerparameters van u gebruikt om een werkstroom in te stellen voor implementatie Azure Container Instances. 
 
-De werk stroom die door de Azure CLI is gemaakt, is vergelijkbaar met de werk stroom die u [hand matig kunt maken met behulp van github](#configure-github-workflow).
+De werkstroom die door de Azure CLI is gemaakt, is vergelijkbaar met de werkstroom die u [handmatig kunt maken met behulp van GitHub](#configure-github-workflow).
 
 ### <a name="additional-prerequisite"></a>Aanvullende vereiste
 
-Naast de [vereisten](#prerequisites) en [opslag plaats-instellingen](#set-up-repo) voor dit scenario, moet u de  **uitbrei ding implementeren naar Azure** voor de Azure cli installeren.
+Naast de vereisten [en](#prerequisites) de installatie [van de repo](#set-up-repo) voor dit scenario, moet u de extensie Implementeren in  **Azure** voor de Azure CLI installeren.
 
-Voer de opdracht [AZ extension add][az-extension-add] uit om de extensie te installeren:
+Voer de [opdracht az extension add][az-extension-add] uit om de extensie te installeren:
 
 ```azurecli
 az extension add \
   --name deploy-to-azure
 ```
 
-Zie [extensies gebruiken met Azure cli](/cli/azure/azure-cli-extensions-overview)voor meer informatie over het zoeken, installeren en beheren van uitbrei dingen.
+Zie Extensies gebruiken met Azure CLI voor meer informatie over het zoeken, installeren en beheren [van extensies.](/cli/azure/azure-cli-extensions-overview)
 
 ### <a name="run-az-container-app-up"></a>`az container app up` uitvoeren
 
-Als u de opdracht [AZ container app up][az-container-app-up] wilt uitvoeren, geeft u Mini maal:
+Als u de opdracht [az container app up wilt][az-container-app-up] uitvoeren, geeft u ten minste het volgende op:
 
-* De naam van uw Azure container Registry, bijvoorbeeld *myregistry*
-* De URL naar uw GitHub-opslag plaats, bijvoorbeeld `https://github.com/<your-GitHub-Id>/acr-build-helloworld-node`
+* De naam van uw Azure-containerregister, bijvoorbeeld *myregistry*
+* De URL naar uw GitHub-opslagplaats, bijvoorbeeld `https://github.com/<your-GitHub-Id>/acr-build-helloworld-node`
 
 Voorbeeldopdracht:
 
@@ -235,16 +235,16 @@ az container app up \
   --repository https://github.com/myID/acr-build-helloworld-node
 ```
 
-### <a name="command-progress"></a>Opdracht voortgang
+### <a name="command-progress"></a>Voortgang van de opdracht
 
-* Geef desgevraagd uw GitHub-referenties op of geef een [github Personal Access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) (Pat) op die *opslag plaats* en *beveiligingsbereiken heeft om te verifiëren* met uw github-account. Als u GitHub-referenties opgeeft, maakt de opdracht een PAT voor u. Volg de extra prompts om de werk stroom te configureren.
+* Geef des gevraagd uw GitHub-referenties op of geef een persoonlijk  [GitHub-toegang token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) (PAT) op met opslagplaats- en gebruikersbereiken voor verificatie met uw GitHub-account.  Als u GitHub-referenties op geeft, maakt de opdracht een PAT voor u. Volg aanvullende aanwijzingen om de werkstroom te configureren.
 
-* Met deze opdracht maakt u opslag plaats geheimen voor de werk stroom:
+* Met de opdracht maakt u de geheimen van de repo voor de werkstroom:
 
-  * Referenties van de service-principal voor de Azure CLI
-  * Referenties voor toegang tot het Azure container Registry
+  * Referenties voor de service-principal voor de Azure CLI
+  * Referenties voor toegang tot het Azure-containerregister
 
-* Nadat de opdracht het werk stroom bestand heeft doorgevoerd in uw opslag plaats, wordt de werk stroom geactiveerd. 
+* Nadat de opdracht het werkstroombestand naar uw repo heeft door gegeven, wordt de werkstroom geactiveerd. 
 
 De uitvoer ziet er ongeveer zo uit:
 
@@ -258,11 +258,11 @@ Workflow succeeded
 Your app is deployed at:  http://acr-build-helloworld-node.eastus.azurecontainer.io:8080/
 ```
 
-Als u de werk stroom status en resultaten van elke stap in de GitHub-gebruikers interface wilt weer geven, raadpleegt u de [werk stroom uitvoerings geschiedenis weer geven](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history).
+Als u de werkstroomstatus en resultaten van elke stap in de GitHub-gebruikersinterface wilt bekijken, gaat u [naar Weergave van de werkstroomuitloopgeschiedenis.](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history)
 
-### <a name="validate-workflow"></a>Werk stroom valideren
+### <a name="validate-workflow"></a>Werkstroom valideren
 
-De werk stroom implementeert een Azure-container instantie met de basis naam van uw GitHub-opslag plaats, in dit geval *ACR-build-HelloWorld-node*. Wanneer de werk stroom is voltooid, haalt u informatie op over de container instantie met de naam *ACR-build-HelloWorld-node* door de opdracht [AZ container show][az-container-show] uit te voeren. Vervang de naam van uw resource groep: 
+De werkstroom implementeert een Azure-container-instantie met de basisnaam van uw GitHub-opslagplaats, in dit geval *acr-build-helloworld-node*. Wanneer de werkstroom is voltooid, kunt u informatie krijgen over de container-instantie met de naam *acr-build-helloworld-node* door de [opdracht az container show uit te][az-container-show] voeren. Vervang de naam van uw resourcegroep: 
 
 ```azurecli
 az container show \
@@ -280,7 +280,7 @@ FQDN                                                   ProvisioningState
 acr-build-helloworld-node.westus.azurecontainer.io     Succeeded
 ```
 
-Nadat het exemplaar is ingericht, gaat u naar de FQDN van de container in uw browser om de actieve web-app weer te geven.
+Nadat het exemplaar is ingericht, gaat u naar de FQDN van de container in uw browser om de web-app te bekijken die wordt uitgevoerd.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -292,7 +292,7 @@ az container delete \
   --resource-group <resource-group-name>
 ```
 
-Als u de resource groep en alle resources erin wilt verwijderen, voert u de opdracht [AZ Group delete][az-group-delete] uit:
+Als u de resourcegroep en alle resources in de groep wilt verwijderen, moet u de [opdracht az group delete][az-group-delete] uitvoeren:
 
 ```azurecli
 az group delete \
@@ -301,7 +301,7 @@ az group delete \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Blader door de [github Marketplace](https://github.com/marketplace?type=actions) voor meer acties voor het automatiseren van uw werk stroom voor ontwikkel aars
+Blader door [de GitHub Marketplace](https://github.com/marketplace?type=actions) voor meer acties om uw ontwikkelingswerkstroom te automatiseren
 
 
 <!-- LINKS - external -->
@@ -310,13 +310,13 @@ Blader door de [github Marketplace](https://github.com/marketplace?type=actions)
 <!-- LINKS - internal -->
 
 [azure-cli-install]: /cli/azure/install-azure-cli
-[az-group-show]: /cli/azure/group#az-group-show
-[az-group-delete]: /cli/azure/group#az-group-delete
-[az-ad-sp-create-for-rbac]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
-[az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
-[az-container-create]: /cli/azure/container#az-container-create
-[az-acr-show]: /cli/azure/acr#az-acr-show
-[az-container-show]: /cli/azure/container#az-container-show
-[az-container-delete]: /cli/azure/container#az-container-delete
-[az-extension-add]: /cli/azure/extension#az-extension-add
+[az-group-show]: /cli/azure/group#az_group_show
+[az-group-delete]: /cli/azure/group#az_group_delete
+[az-ad-sp-create-for-rbac]: /cli/azure/ad/sp#az_ad_sp_create_for_rbac
+[az-role-assignment-create]: /cli/azure/role/assignment#az_role_assignment_create
+[az-container-create]: /cli/azure/container#az_container_create
+[az-acr-show]: /cli/azure/acr#az_acr_show
+[az-container-show]: /cli/azure/container#az_container_show
+[az-container-delete]: /cli/azure/container#az_container_delete
+[az-extension-add]: /cli/azure/extension#az_extension_add
 [az-container-app-up]: /cli/azure/ext/deploy-to-azure/container/app#ext-deploy-to-azure-az-container-app-up

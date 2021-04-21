@@ -1,5 +1,5 @@
 ---
-title: 'Zelf studie: beheerde identiteit om verbinding te maken Key Vault'
+title: 'Zelfstudie: Beheerde identiteit om verbinding te Key Vault'
 description: Beheerde identiteit instellen om Key Vault te koppelen met een Azure Spring Cloud-app
 author: MikeDodaro
 ms.author: brendm
@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: bbfafeaf9ce24911bb4893748d456d22e02fc411
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 870a04af244d18826e1041316895f746e27870eb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104879177"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786581"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te koppelen met een Azure Spring Cloud-app
 
@@ -29,14 +29,14 @@ Met Azure Key Vault kunt u veilig de toegang tot tokens, wachtwoorden, certifica
 * [Maven 3.0 of hoger installeren](https://maven.apache.org/download.cgi)
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resourcegroep die zowel de Key Vault als de Spring Cloud bevat met behulp van de opdracht [az group create](/cli/azure/group#az-group-create):
+Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resourcegroep die zowel de Key Vault als de Spring Cloud bevat met behulp van de opdracht [az group create](/cli/azure/group#az_group_create):
 
 ```azurecli-interactive
 az group create --name "myResourceGroup" -l "EastUS"
 ```
 
 ## <a name="set-up-your-key-vault"></a>Uw sleutelkluis instellen
-Als u een sleutelkluis wilt maken, gebruikt u de opdracht [az keyvault create](/cli/azure/keyvault#az-keyvault-create):
+Als u een sleutelkluis wilt maken, gebruikt u de opdracht [az keyvault create](/cli/azure/keyvault#az_keyvault_create):
 
 > [!Important]
 > Elke sleutelkluis moet een unieke naam hebben. Vervang <your-keyvault-name> in de volgende voorbeelden door de naam van uw sleutelkluis.
@@ -47,7 +47,7 @@ az keyvault create --name "<your-keyvault-name>" -g "myResourceGroup"
 
 Noteer de geretourneerde `vaultUri`, die de notatie "https://<your-keyvault-name>.vault.azure.net/" heeft. Deze wordt in de volgende stap gebruikt.
 
-U kunt nu met de opdracht [az keyvault secret set](/cli/azure/keyvault/secret#az-keyvault-secret-set) een geheim in uw sleutelkluis plaatsen:
+U kunt nu met de opdracht [az keyvault secret set](/cli/azure/keyvault/secret#az_keyvault_secret_set) een geheim in uw sleutelkluis plaatsen:
 
 ```azurecli-interactive
 az keyvault secret set --vault-name "<your-keyvault-name>" \
@@ -69,7 +69,7 @@ az spring-cloud app create -n "springapp" -s "myspringcloud" -g "myResourceGroup
 export SERVICE_IDENTITY=$(az spring-cloud app show --name "springapp" -s "myspringcloud" -g "myResourceGroup" | jq -r '.identity.principalId')
 ```
 
-Noteer de geretourneerde `url` , die de indeling heeft `https://<your-app-name>.azuremicroservices.io` . Deze wordt in de volgende stap gebruikt.
+Noteer de geretourneerde `url` , die de notatie `https://<your-app-name>.azuremicroservices.io` heeft. Deze wordt in de volgende stap gebruikt.
 
 
 ## <a name="grant-your-app-access-to-key-vault"></a>Uw app toegang verlenen tot Key Vault

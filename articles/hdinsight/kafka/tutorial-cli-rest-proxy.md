@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 02/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ff11b8461b483f5a66df19bb1b108a1fe1168fb9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cfb9ff9e6b107c9da84b164a055453994fc29229
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98944028"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786635"
 ---
 # <a name="tutorial-create-an-apache-kafka-rest-proxy-enabled-cluster-in-hdinsight-using-azure-cli"></a>Zelfstudie: Een cluster met de Apache Kafka REST-proxy ingeschakeld maken in HDInsight met behulp van Azure CLI
 
@@ -82,7 +82,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     export componentVersion=kafka=2.1
     ```
 
-1. [Maak de resourcegroep](/cli/azure/group#az-group-create) door de onderstaande opdracht in te voeren:
+1. [Maak de resourcegroep](/cli/azure/group#az_group_create) door de onderstaande opdracht in te voeren:
 
     ```azurecli
      az group create \
@@ -90,7 +90,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
         --name $resourceGroupName
     ```
 
-1. [Maak een Azure Storage-account](/cli/azure/storage/account#az-storage-account-create) door de onderstaande opdracht in te voeren:
+1. [Maak een Azure Storage-account](/cli/azure/storage/account#az_storage_account_create) door de onderstaande opdracht in te voeren:
 
     ```azurecli
     # Note: kind BlobStorage is not available as the default storage account.
@@ -103,7 +103,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
         --sku Standard_LRS
     ```
 
-1. [Extraheer de primaire sleutel](/cli/azure/storage/account/keys#az-storage-account-keys-list) uit het Azure Storage-account en sla deze op in een variabele door de onderstaande opdracht in te voeren:
+1. [Extraheer de primaire sleutel](/cli/azure/storage/account/keys#az_storage_account_keys_list) uit het Azure Storage-account en sla deze op in een variabele door de onderstaande opdracht in te voeren:
 
     ```azurecli
     export storageAccountKey=$(az storage account keys list \
@@ -112,7 +112,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
         --query [0].value -o tsv)
     ```
 
-1. [Maak een Azure Storage-container](/cli/azure/storage/container#az-storage-container-create) door de onderstaande opdracht in te voeren:
+1. [Maak een Azure Storage-container](/cli/azure/storage/container#az_storage_container_create) door de onderstaande opdracht in te voeren:
 
     ```azurecli
     az storage container create \
@@ -121,7 +121,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
         --account-name $storageAccount
     ```
 
-1. [Maak het HDInsight-cluster](/cli/azure/hdinsight#az-hdinsight-create). Noteer de volgende parameters voordat u de opdracht invoert:
+1. [Maak het HDInsight-cluster](/cli/azure/hdinsight#az_hdinsight_create). Noteer de volgende parameters voordat u de opdracht invoert:
 
     1. Vereiste parameters voor Kafka-clusters:
 

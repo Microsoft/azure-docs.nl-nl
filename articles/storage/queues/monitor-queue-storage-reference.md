@@ -1,71 +1,71 @@
 ---
-title: Naslag informatie voor Azure Queue Storage monitoring-gegevens
-description: Naslag informatie over Logboeken en metrieken voor het bewaken van gegevens van Azure Queue Storage.
+title: Azure Queue Storage naslaginformatie over bewakingsgegevens
+description: Naslaginformatie over logboeken en metrische gegevens voor het bewaken van Azure Queue Storage.
 author: normesta
 services: azure-monitor
 ms.author: normesta
-ms.date: 10/02/2020
+ms.date: 04/20/2021
 ms.topic: reference
 ms.service: azure-monitor
 ms.subservice: logs
-ms.custom: monitoring
-ms.openlocfilehash: 95f20737b044140fe12ea939e71cd2397cb4826d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: subject-monitoring
+ms.openlocfilehash: 506f5a46688f597b8ac5db341c5bbe5eb5fb67c8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100576690"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107763141"
 ---
-# <a name="azure-queue-storage-monitoring-data-reference"></a>Naslag informatie voor Azure Queue Storage monitoring-gegevens
+# <a name="azure-queue-storage-monitoring-data-reference"></a>Azure Queue Storage naslaginformatie over bewakingsgegevens
 
-Zie [bewaking Azure Storage](monitor-queue-storage.md) voor meer informatie over het verzamelen en analyseren van bewakings gegevens voor Azure Storage.
+Zie [Bewakingsgegevens Azure Storage](monitor-queue-storage.md) voor meer informatie over het verzamelen en analyseren van bewakingsgegevens voor Azure Storage.
 
 ## <a name="metrics"></a>Metrische gegevens
 
-De volgende tabellen geven een lijst van de platform gegevens die zijn verzameld voor Azure Storage.
+In de volgende tabellen worden de metrische platformgegevens vermeld die zijn verzameld voor Azure Storage.
 
 ### <a name="capacity-metrics"></a>Metrische gegevens over capaciteit
 
-Metrische waarden voor capaciteit worden dagelijks vernieuwd (Maxi maal 24 uur). De tijdgranulariteit definieert het tijds interval waarvoor metrische waarden worden weer gegeven. De ondersteunde tijd korrels voor alle metrische gegevens over capaciteit zijn één uur (PT1H).
+Waarden voor metrische capaciteitsgegevens worden dagelijks vernieuwd (maximaal 24 uur). Het tijdsinterval definieert het tijdsinterval waarvoor metrische waarden worden weergegeven. Het ondersteunde tijds grain voor alle metrische capaciteitsgegevens is één uur (PT1H).
 
-Azure Storage biedt de volgende metrische gegevens over capaciteit in Azure Monitor.
+Azure Storage biedt de volgende metrische capaciteitsgegevens in Azure Monitor.
 
-#### <a name="account-level-capacity-metrics"></a>Metrische capaciteit op account niveau
+#### <a name="account-level-capacity-metrics"></a>Metrische gegevens voor capaciteit op accountniveau
 
 [!INCLUDE [Account-level capacity metrics](../../../includes/azure-storage-account-capacity-metrics.md)]
 
 #### <a name="queue-storage-metrics"></a>Queue Storage metrische gegevens
 
-In deze tabel worden [Queue Storage metrische gegevens](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsqueueservices)weer gegeven.
+In deze tabel ziet [u Queue Storage metrische gegevens.](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsqueueservices)
 
 | Metrisch | Beschrijving |
 | ------------------- | ----------------- |
-| **QueueCapacity** | De hoeveelheid Queue Storage die wordt gebruikt door het opslag account. <br><br> Teleenheid `Bytes` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
-| **QueueCount** | Het aantal wacht rijen in het opslag account. <br><br> Teleenheid `Count` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
-| **QueueMessageCount** | Het geschatte aantal wachtrij berichten in het opslag account. <br><br> Teleenheid `Count` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
+| **QueueCapacity** | De hoeveelheid Queue Storage die door het opslagaccount wordt gebruikt. <br><br> Eenheid: `Bytes` <br> Aggregatietype: `Average` <br> Voorbeeld van waarde: `1024` |
+| **QueueCount** | Het aantal wachtrijen in het opslagaccount. <br><br> Eenheid: `Count` <br> Aggregatietype: `Average` <br> Voorbeeld van waarde: `1024` |
+| **QueueMessageCount** | Het aantal niet-verkende wachtrijberichten in het opslagaccount. <br><br> Eenheid: `Count` <br> Aggregatietype: `Average` <br> Voorbeeld van waarde: `1024` |
 
 ### <a name="transaction-metrics"></a>Metrische gegevens voor transacties
 
-Metrische gegevens over trans acties worden verzonden voor elke aanvraag naar een opslag account van Azure Storage naar Azure Monitor. In het geval van geen activiteit in uw opslag account, worden er geen gegevens in de periode weer gegeven. Alle metrische gegevens over trans acties zijn beschikbaar op zowel account-als Queue Storage service niveau. De tijd korrel definieert het tijds interval dat metrische waarden worden weer gegeven. De ondersteunde tijd korrels voor alle metrische gegevens van de trans actie zijn PT1H en PT1M.
+Metrische gegevens voor transacties worden bij elke aanvraag naar een opslagaccount van Azure Storage naar Azure Monitor. In het geval van geen activiteit op uw opslagaccount, zijn er geen gegevens over metrische transactiegegevens in de periode. Alle metrische gegevens voor transacties zijn beschikbaar op zowel account- als Queue Storage serviceniveau. Het tijdsinterval definieert het tijdsinterval dat metrische waarden worden weergegeven. De ondersteunde tijdsgranen voor alle metrische gegevens voor transacties zijn PT1H en PT1M.
 
 [!INCLUDE [Transaction metrics](../../../includes/azure-storage-account-transaction-metrics.md)]
 
 <a id="metrics-dimensions"></a>
 
-## <a name="metrics-dimensions"></a>Metrische dimensies
+## <a name="metrics-dimensions"></a>Dimensies voor metrische gegevens
 
 Azure Storage ondersteunt de volgende dimensies voor metrische gegevens in Azure Monitor.
 
 [!INCLUDE [Metrics dimensions](../../../includes/azure-storage-account-metrics-dimensions.md)]
 
-## <a name="resource-logs-preview"></a>Resource Logboeken (preview-versie)
+## <a name="resource-logs-preview"></a>Resourcelogboeken (preview)
 
 > [!NOTE]
-> Azure Storage-Logboeken in Azure Monitor bevinden zich in de open bare preview-versie en is beschikbaar voor preview-tests in alle open bare Cloud regio's. Met deze preview-versie kunt u logboeken maken voor blobs (inclusief Azure Data Lake Storage Gen2), bestanden, wacht rijen, tabellen, Premium-opslag accounts in versie 1 voor algemeen gebruik en voor algemeen gebruik v2-opslag accounts. Klassieke opslag accounts worden niet ondersteund.
+> Azure Storage logboeken in Azure Monitor is in openbare preview en is beschikbaar voor preview-tests in alle openbare cloudregio's. Deze preview maakt logboeken mogelijk voor blobs (waaronder Azure Data Lake Storage Gen2), bestanden, wachtrijen, tabellen, Premium Storage-accounts in opslagaccounts voor algemeen gebruik v1 en v2 voor algemeen gebruik. Klassieke opslagaccounts worden niet ondersteund.
 
-De volgende tabel geeft een lijst van de eigenschappen voor Azure Storage bron Logboeken wanneer ze worden verzameld in Azure Monitor Logboeken of Azure Storage. De eigenschappen beschrijven de bewerking, de service en het type autorisatie dat is gebruikt om de bewerking uit te voeren.
+De volgende tabel bevat de eigenschappen voor Azure Storage resourcelogboeken wanneer ze worden verzameld in Azure Monitor logboeken of Azure Storage. De eigenschappen beschrijven de bewerking, de service en het type autorisatie dat is gebruikt om de bewerking uit te voeren.
 
-### <a name="fields-that-describe-the-operation"></a>Velden waarin de bewerking wordt beschreven
+### <a name="fields-that-describe-the-operation"></a>Velden die de bewerking beschrijven
 
 [!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-logs-properties-operation.md)]
 
@@ -73,11 +73,11 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Storage bron L
 
 [!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-logs-properties-authentication.md)]
 
-### <a name="fields-that-describe-the-service"></a>Velden waarin de service wordt beschreven
+### <a name="fields-that-describe-the-service"></a>Velden die de service beschrijven
 
 [!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-logs-properties-service.md)]
 
 ## <a name="see-also"></a>Zie ook
 
-- Zie [azure Queue Storage bewaken](monitor-queue-storage.md) voor een beschrijving van het controleren van Azure Queue Storage.
-- Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Bewakingsde Azure Queue Storage](monitor-queue-storage.md) voor een beschrijving van Azure Queue Storage.
+- Zie [Azure-resources bewaken met Azure Monitor](../../azure-monitor/essentials/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

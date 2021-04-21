@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: azure-redhat-openshift
 ms.date: 10/26/2020
-ms.openlocfilehash: 55c1b6f6c6690f0c8f00a8a2469834781f35fb3c
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: dda4fc6a80bbe07977f8d2a5ffcbea895a4e1fe6
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102449795"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771835"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Zelfstudie: Een Azure Red Hat OpenShift 4-cluster maken
 
@@ -27,7 +27,7 @@ Als u ervoor kiest om CLI lokaal te installeren en gebruiken, moet u Azure CLI v
 
 Azure Red Hat OpenShift vereist minimaal 40 kernen om een OpenShift-cluster te maken en uit te voeren. Het standaardquotum voor Azure-resources voor een nieuw Azure-abonnement voldoet niet aan deze vereiste. Als u een verhoging van de resourcelimiet wilt aanvragen, raadpleegt u [Standaardquotum: limieten verhogen per VM-reeks](../azure-portal/supportability/per-vm-quota-requests.md).
 
-ARO pull Secret heeft geen invloed op de kosten van de RH open Shift-licentie voor ARO.
+Het pull-geheim van ARO wijzigt de kosten van de RH OpenShift-licentie voor ARO niet.
 
 ### <a name="verify-your-permissions"></a>Uw machtigingen controleren
 
@@ -100,7 +100,7 @@ Als u een aangepast domein opgeeft voor uw cluster, moet u rekening houden met h
 
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Een virtueel netwerk met twee lege subnetten maken
 
-Nu gaat u een virtueel netwerk met twee lege subnetten maken. Als u een bestaand virtueel netwerk hebt dat aan uw behoeften voldoet, kunt u deze stap overs Laan.
+Nu gaat u een virtueel netwerk met twee lege subnetten maken. Als u een bestaand virtueel netwerk hebt dat aan uw behoeften voldoet, kunt u deze stap overslaan.
 
 1. **Stel de volgende variabelen in de shell-omgeving in waarin u de opdrachten en `az` wilt uitvoeren.**
 
@@ -112,7 +112,7 @@ Nu gaat u een virtueel netwerk met twee lege subnetten maken. Als u een bestaand
 
 2. **Maak een resourcegroep.**
 
-   Een Azure-resourcegroep is een logische groep waarin Azure-resources worden geïmplementeerd en beheerd. Wanneer u een resourcegroep maakt, wordt u gevraagd een locatie op te geven. Op deze locatie worden de metagegevens van de resourcegroep opgeslagen. Dit is ook de locatie waar uw resources worden uitgevoerd in Azure als u tijdens het maken van de resource geen andere regio opgeeft. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az-group-create).
+   Een Azure-resourcegroep is een logische groep waarin Azure-resources worden geïmplementeerd en beheerd. Wanneer u een resourcegroep maakt, wordt u gevraagd een locatie op te geven. Op deze locatie worden de metagegevens van de resourcegroep opgeslagen. Dit is ook de locatie waar uw resources worden uitgevoerd in Azure als u tijdens het maken van de resource geen andere regio opgeeft. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az_group_create).
     
    > [!NOTE] 
    > Azure Red Hat OpenShift is niet in alle regio’s beschikbaar waarin een Azure-resource kan worden gemaakt. Zie [Beschikbare regio's](https://azure.microsoft.com/en-gb/global-infrastructure/services/?products=openshift) voor informatie over waar Azure Red Hat OpenShift wordt ondersteund.

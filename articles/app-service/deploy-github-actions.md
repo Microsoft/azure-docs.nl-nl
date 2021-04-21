@@ -1,33 +1,33 @@
 ---
-title: CI/CD configureren met GitHub-acties
-description: Leer hoe u uw code kunt implementeren in Azure App Service van een CI/CD-pijp lijn met GitHub-acties. Pas de bouw taken aan en Voer complexe implementaties uit.
+title: CI/CD configureren met GitHub Actions
+description: Meer informatie over het implementeren van uw code Azure App Service een CI/CD-pijplijn met GitHub Actions. Pas de buildtaken aan en voer complexe implementaties uit.
 ms.devlang: na
 ms.topic: article
 ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 59eb56dd188edf258c3631cde957c0864454ad76
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.openlocfilehash: 1ed2b007ae00516a030e67b7f6abacbd00a8d403
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106582206"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772879"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Implementeren in App Service met behulp van GitHub Actions
 
-Aan de slag met [github-acties](https://docs.github.com/en/actions/learn-github-actions) om uw werk stroom te automatiseren en te implementeren in [Azure app service](overview.md) van github. 
+Ga aan de [slag GitHub Actions](https://docs.github.com/en/actions/learn-github-actions) om uw werkstroom te automatiseren en vanuit GitHub Azure App Service [implementeren.](overview.md) 
 
 ## <a name="prerequisites"></a>Vereisten 
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account.  
-- Een werkende Azure App Service-app. 
-    - .NET: [een ASP.net core-web-app maken in azure](quickstart-dotnetcore.md)
-    - ASP.NET: [een ASP.NET Framework-web-app maken in azure](quickstart-dotnet-framework.md)
-    - Java script: [een Node.js-web-app maken in azure app service](quickstart-nodejs.md)  
-    - Java: [een Java-app maken op Azure app service](quickstart-java.md)
-    - Python: [een python-app maken in azure app service](quickstart-python.md)
+- Een werkende Azure App Service app. 
+    - .NET: [een ASP.NET Core-web-app maken in Azure](quickstart-dotnetcore.md)
+    - ASP.NET: [Een ASP.NET Framework-web-app maken in Azure](quickstart-dotnet-framework.md)
+    - JavaScript: [een Node.js-web-app maken in Azure App Service](quickstart-nodejs.md)  
+    - Java: [Een Java-app maken op Azure App Service](quickstart-java.md)
+    - Python: [Een Python-app maken in Azure App Service](quickstart-python.md)
 
 ## <a name="workflow-file-overview"></a>Overzicht van werkstroom bestand
 
@@ -37,50 +37,50 @@ Het bestand heeft drie secties:
 
 |Sectie  |Taken  |
 |---------|---------|
-|**Verificatie** | 1. Definieer een service-principal of publicatie profiel. <br /> 2. Maak een GitHub-opslagplaats. |
-|**Build** | 1. Stel de omgeving in. <br /> 2. bouw de web-app. |
-|**Implementeren** | 1. Implementeer de web-app. |
+|**Verificatie** | 1. Definieer een service-principal of publicatieprofiel. <br /> 2. Maak een GitHub-opslagplaats. |
+|**Build** | 1. De omgeving instellen. <br /> 2. Bouw de web-app. |
+|**Implementeren** | 1. De web-app implementeren. |
 
-## <a name="use-the-deployment-center"></a>Het implementatie centrum gebruiken
+## <a name="use-the-deployment-center"></a>Het implementatiecentrum gebruiken
 
-U kunt snel aan de slag met GitHub-acties met behulp van het App Service Deployment Center. Hiermee wordt automatisch een werk stroom bestand gegenereerd op basis van uw toepassings stack en dit door voeren in uw GitHub-opslag plaats in de juiste map.
+U kunt snel aan de slag met GitHub Actions met behulp van App Service Deployment Center. Hiermee wordt automatisch een werkstroombestand gegenereerd op basis van uw toepassingsstack en wordt dit bestand in uw GitHub-opslagplaats in de juiste map geplaatst.
 
-1. Navigeer naar uw webapp in het Azure Portal
-1. Klik aan de linkerkant op **implementatie centrum**
-1. Selecteer bij **continue implementatie (CI/cd)** **github**
-1. Selecteer vervolgens **github-acties**
-1. Gebruik de vervolg keuzelijsten om uw GitHub-opslag plaats, vertakking en toepassings stack te selecteren
-    - Als de geselecteerde vertakking is beveiligd, kunt u toch door gaan met het toevoegen van het werk stroom bestand. Controleer de branch-beveiliging voordat u doorgaat.
-1. In het laatste scherm kunt u uw selecties bekijken en een voor beeld bekijken van het werk stroom bestand dat wordt doorgevoerd naar de opslag plaats. Als de selecties juist zijn, klikt u op **volt ooien**
+1. Navigeer naar uw web-app in Azure Portal
+1. Klik aan de linkerkant op **Implementatiecentrum**
+1. Selecteer **onder Continue implementatie (CI/CD)** de optie **GitHub**
+1. Selecteer vervolgens **GitHub Actions**
+1. Gebruik de vervolgkeuzen om uw GitHub-opslagplaats, -vertakking en toepassingsstack te selecteren
+    - Als de geselecteerde vertakking is beveiligd, kunt u het werkstroombestand nog steeds toevoegen. Zorg ervoor dat u uw vertakkingsbeveiligingen controleert voordat u doorgaat.
+1. In het laatste scherm kunt u uw selecties bekijken en een voorbeeld bekijken van het werkstroombestand dat wordt vastgelegd in de opslagplaats. Als de selecties juist zijn, klikt u op **Voltooien**
 
-Hiermee wordt het werk stroom bestand door doorgevoerd naar de opslag plaats. De werk stroom voor het maken en implementeren van uw app wordt onmiddellijk gestart.
+Hiermee wordt het werkstroombestand naar de opslagplaats doorgeslagen. De werkstroom voor het bouwen en implementeren van uw app begint onmiddellijk.
 
-## <a name="set-up-a-workflow-manually"></a>Een werk stroom hand matig instellen
+## <a name="set-up-a-workflow-manually"></a>Handmatig een werkstroom instellen
 
-U kunt ook een werk stroom implementeren zonder het implementatie centrum te gebruiken. Hiervoor moet u eerst implementatie referenties genereren. 
+U kunt ook een werkstroom implementeren zonder het Implementatiecentrum te gebruiken. Als u dit wilt doen, moet u eerst implementatiereferenties genereren. 
 
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
-De aanbevolen manier om te verifiëren met Azure-app Services voor GitHub-acties is met een publicatie profiel. U kunt ook verifiëren met een Service-Principal, maar voor het proces zijn meer stappen vereist. 
+De aanbevolen manier om te verifiëren met Azure-app Services voor GitHub Actions is met een publicatieprofiel. U kunt ook verifiëren met een service-principal, maar voor het proces zijn meer stappen vereist. 
 
-Sla de referentie of service-principal voor het publicatie profiel op als een [github-geheim](https://docs.github.com/en/actions/reference/encrypted-secrets) voor verificatie bij Azure. U hebt toegang tot het geheim in uw werk stroom. 
+Sla uw publicatieprofielreferentie of service-principal op als [een GitHub-geheim om](https://docs.github.com/en/actions/reference/encrypted-secrets) te verifiëren bij Azure. U hebt toegang tot het geheim in uw werkstroom. 
 
 # <a name="publish-profile"></a>[Profiel publiceren](#tab/applevel)
 
-Een publicatie profiel is een referentie op app-niveau. Stel uw publicatie profiel in als een GitHub-geheim. 
+Een publicatieprofiel is een referentie op app-niveau. Stel uw publicatieprofiel in als een GitHub-geheim. 
 
-1. Ga naar de app-service in de Azure Portal. 
+1. Ga naar uw app-service in de Azure Portal. 
 
-1. Selecteer op de pagina **overzicht** de optie **publicatie profiel ophalen**.
+1. Selecteer op **de pagina** Overzicht de optie **Publicatieprofiel opmaken.**
 
 1. Sla het gedownloade bestand op. U gebruikt de inhoud van het bestand om een GitHub-geheim te maken.
 
 > [!NOTE]
-> Vanaf 2020 oktober moeten voor Linux-web-apps de app-instelling zijn `WEBSITE_WEBDEPLOY_USE_SCM` ingesteld op `true` **voordat het publicatie profiel** kan worden gedownload. Deze vereiste wordt in de toekomst verwijderd.
+> Vanaf oktober 2020 moet voor Linux-web-apps de app-instelling zijn ingesteld op voordat `WEBSITE_WEBDEPLOY_USE_SCM` `true` **het publicatieprofiel wordt gedownload.** Deze vereiste wordt in de toekomst verwijderd.
 
 # <a name="service-principal"></a>[Service-principal](#tab/userlevel)
 
-U kunt een [service-principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
+U kunt een [service-principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -88,7 +88,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
                             --sdk-auth
 ```
 
-In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik.
+Vervang in het bovenstaande voorbeeld de tijdelijke aanduidingen door uw abonnements-id, resourcegroepnaam en app-naam. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {
@@ -101,7 +101,7 @@ In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abo
 ```
 
 > [!IMPORTANT]
-> Het is altijd een goed idee om minimale toegang te verlenen. Het bereik in het vorige voor beeld is beperkt tot de specifieke App Service-app en niet de hele resource groep.
+> Het is altijd een goed idee om minimale toegang te verlenen. Het bereik in het vorige voorbeeld is beperkt tot de specifieke App Service app en niet tot de hele resourcegroep.
 
 ---
 
@@ -110,11 +110,11 @@ In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abo
 
 # <a name="publish-profile"></a>[Profiel publiceren](#tab/applevel)
 
-In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
+Blader [in GitHub](https://github.com/)door uw opslagplaats, selecteer **Instellingen > Geheimen > Een nieuw geheim toevoegen.**
 
-Als u [referenties op app-niveau](#generate-deployment-credentials)wilt gebruiken, plakt u de inhoud van het gedownloade bestand met het publicatie profiel in het veld waarde van het geheim. Geef het geheim een naam `AZURE_WEBAPP_PUBLISH_PROFILE` .
+Als u [referenties op app-niveau wilt](#generate-deployment-credentials)gebruiken, plakt u de inhoud van het gedownloade publicatieprofielbestand in het waardeveld van het geheim. Noem het geheim `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
-Wanneer u uw GitHub-werk stroom configureert, gebruikt u de `AZURE_WEBAPP_PUBLISH_PROFILE` in de actie Azure-web-app implementeren. Bijvoorbeeld:
+Wanneer u uw GitHub-werkstroom configureert, gebruikt u `AZURE_WEBAPP_PUBLISH_PROFILE` de in de actie Azure-web-app implementeren. Bijvoorbeeld:
     
 ```yaml
 - uses: azure/webapps-deploy@v2
@@ -124,9 +124,9 @@ Wanneer u uw GitHub-werk stroom configureert, gebruikt u de `AZURE_WEBAPP_PUBLIS
 
 # <a name="service-principal"></a>[Service-principal](#tab/userlevel)
 
-In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
+Blader [in GitHub](https://github.com/)door uw opslagplaats, selecteer **Instellingen > Geheimen > Een nieuw geheim toevoegen.**
 
-Als u [referenties op gebruikers niveau](#generate-deployment-credentials)wilt gebruiken, plakt u de volledige JSON-uitvoer van de Azure cli-opdracht in het veld waarde van het geheim. Geef het geheim de naam `AZURE_CREDENTIALS`.
+Als u referenties op gebruikersniveau wilt gebruiken, plakt u de volledige JSON-uitvoer van de Azure [CLI-opdracht](#generate-deployment-credentials)in het waardeveld van het geheim. Geef het geheim de naam `AZURE_CREDENTIALS`.
 
 Wanneer u het werkstroombestand later configureert, gebruikt u het geheim voor de invoer `creds` van de Azure-aanmeldingsactie. Bijvoorbeeld:
 
@@ -140,9 +140,9 @@ Wanneer u het werkstroombestand later configureert, gebruikt u het geheim voor d
 
 ## <a name="set-up-the-environment"></a>De omgeving instellen
 
-Het instellen van de omgeving kan worden uitgevoerd met behulp van een van de installatie acties.
+U kunt de omgeving instellen met behulp van een van de installatieacties.
 
-|**Taal**  |**Installatie actie**  |
+|**Taal**  |**Installatieactie**  |
 |---------|---------|
 |**.NET**     | `actions/setup-dotnet` |
 |**ASP.NET**     | `actions/setup-dotnet` |
@@ -150,7 +150,7 @@ Het instellen van de omgeving kan worden uitgevoerd met behulp van een van de in
 |**JavaScript** | `actions/setup-node` |
 |**Python**     | `actions/setup-python` |
 
-In de volgende voor beelden ziet u hoe u de omgeving instelt voor de verschillende ondersteunde talen:
+De volgende voorbeelden laten zien hoe u de omgeving in kunt stellen voor de verschillende ondersteunde talen:
 
 **.NET**
 
@@ -209,15 +209,15 @@ jobs:
 
 ## <a name="build-the-web-app"></a>De web-app bouwen
 
-Het proces van het bouwen van een web-app en het implementeren van Azure App Service wijzigingen, afhankelijk van de taal. 
+Het proces van het bouwen van een web-app en het implementeren in Azure App Service afhankelijk van de taal. 
 
-In de volgende voor beelden ziet u het deel van de werk stroom dat de web-app bouwt in verschillende ondersteunde talen.
+De volgende voorbeelden tonen het deel van de werkstroom waarmee de web-app wordt gebouwd, in verschillende ondersteunde talen.
 
 Voor alle talen kunt u de hoofdmap van de web-app instellen met `working-directory` . 
 
 **.NET**
 
-De omgevings variabele `AZURE_WEBAPP_PACKAGE_PATH` stelt het pad naar uw web-app-project in. 
+De `AZURE_WEBAPP_PACKAGE_PATH` omgevingsvariabele stelt het pad naar uw web-app-project in. 
 
 ```yaml
 - name: dotnet build and publish
@@ -228,7 +228,7 @@ De omgevings variabele `AZURE_WEBAPP_PACKAGE_PATH` stelt het pad naar uw web-app
 ```
 **ASP.NET**
 
-U kunt NuGet-afhankelijkheden herstellen en MSBuild uitvoeren met `run` . 
+U kunt NuGet-afhankelijkheden herstellen en msbuild uitvoeren met `run` . 
 
 ```yaml
 - name: NuGet to restore dependencies as well as project-specific tools that are specified in the project file
@@ -250,7 +250,7 @@ U kunt NuGet-afhankelijkheden herstellen en MSBuild uitvoeren met `run` .
 
 **JavaScript**
 
-Voor Node.js, kunt u de `working-directory` Directory NPM instellen of wijzigen in `pushd` . 
+Voor Node.js kunt u instellen of `working-directory` wijzigen voor npm-directory in `pushd` . 
 
 ```yaml
 - name: npm install, build, and test
@@ -273,21 +273,21 @@ Voor Node.js, kunt u de `working-directory` Directory NPM instellen of wijzigen 
 
 ## <a name="deploy-to-app-service"></a>Implementeren naar App Service
 
-Als u uw code wilt implementeren in een App Service-app, gebruikt u de `azure/webapps-deploy@v2` actie. Deze actie heeft vier para meters:
+Als u uw code wilt implementeren in App Service app, gebruikt u de `azure/webapps-deploy@v2` actie . Deze actie heeft vier parameters:
 
 | **Parameter**  | **Uitleg**  |
 |---------|---------|
-| **app-naam** | Lang De naam van de App Service-app | 
-| **publicatie profiel** | Beschrijving Inhoud van profiel bestand publiceren met Web Deploy-geheimen |
-| **package** | Beschrijving Het pad naar het pakket of de map. Het pad kan *. zip, *. War, *. jar of een te implementeren map bevatten |
-| **sleuf naam** | Beschrijving Voer een bestaande sleuf in, behalve de productie [sleuf](deploy-staging-slots.md) |
+| **app-name** | (Vereist) Naam van de App Service app | 
+| **publish-profile** | (Optioneel) Inhoud van profielbestand publiceren met Web Deploy-geheimen |
+| **package** | (Optioneel) Pad naar pakket of map. Het pad kan *.zip, *.war, *.jar of een map bevatten om te implementeren |
+| **sleufnaam** | (Optioneel) Een andere bestaande sleuf dan de productiesleuf [invoeren](deploy-staging-slots.md) |
 
 
 # <a name="publish-profile"></a>[Profiel publiceren](#tab/applevel)
 
 ### <a name="net-core"></a>.NET Core
 
-Een .NET core-app bouwen en implementeren in azure met behulp van een Azure Publish-profiel. De `publish-profile` invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een .NET Core-app in Azure met behulp van een Azure-publicatieprofiel. De `publish-profile` invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: .NET Core CI
@@ -331,7 +331,7 @@ jobs:
 
 ### <a name="aspnet"></a>ASP.NET
 
-Bouw en implementeer een ASP.NET MVC-app die gebruikmaakt van NuGet en `publish-profile` voor authenticatie. 
+Bouw en implementeer een ASP.NET MVC-app die gebruikmaakt van NuGet en `publish-profile` voor verificatie. 
 
 
 ```yaml
@@ -374,7 +374,7 @@ jobs:
 
 ### <a name="java"></a>Java
 
-Bouw en implementeer een Java-lente-app in azure met behulp van een Azure Publish-profiel. De `publish-profile` invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een Java Spring-app in Azure met behulp van een Azure-publicatieprofiel. De `publish-profile` invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: Java CI with Maven
@@ -403,7 +403,7 @@ jobs:
         package: my/target/*.jar
 ```
 
-Als u een `war` in plaats van een wilt implementeren `jar` , wijzigt u de `package` waarde. 
+Als u een `war` wilt implementeren in plaats van een , `jar` wijzigt u de `package` waarde. 
 
 
 ```yaml
@@ -417,7 +417,7 @@ Als u een `war` in plaats van een wilt implementeren `jar` , wijzigt u de `packa
 
 ### <a name="javascript"></a>Javascript 
 
-Bouw en implementeer een Node.js-app in azure met behulp van het publicatie Profiel van de app. De `publish-profile` invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een Node.js-app in Azure met behulp van het publicatieprofiel van de app. De `publish-profile` invoer verwijst naar `AZURE_WEBAPP_PUBLISH_PROFILE` het geheim dat u eerder hebt gemaakt.
 
 ```yaml
 # File: .github/workflows/workflow.yml
@@ -458,7 +458,7 @@ jobs:
 
 ### <a name="python"></a>Python 
 
-Bouw en implementeer een python-app in azure met behulp van het publicatie Profiel van de app. U ziet hoe de `publish-profile` invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een Python-app in Azure met behulp van het publicatieprofiel van de app. U ziet dat `publish-profile` de invoer verwijst naar het `AZURE_WEBAPP_PUBLISH_PROFILE` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: Python CI
@@ -497,7 +497,7 @@ jobs:
 
 ### <a name="net-core"></a>.NET Core 
 
-Een .NET core-app bouwen en implementeren in azure met behulp van een Azure-Service-Principal. U ziet hoe de `creds` invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een .NET Core-app in Azure met behulp van een Azure-service-principal. U ziet dat `creds` de invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
 
 
 ```yaml
@@ -549,7 +549,7 @@ jobs:
 
 ### <a name="aspnet"></a>ASP.NET
 
-Bouw en implementeer een ASP.NET MVC-app in azure met behulp van een Azure-Service-Principal. U ziet hoe de `creds` invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een ASP.NET MVC-app in Azure met behulp van een Azure-service-principal. U ziet dat `creds` de invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: Deploy ASP.NET MVC App deploy to Azure Web App
@@ -600,7 +600,7 @@ jobs:
 
 ### <a name="java"></a>Java 
 
-Bouw en implementeer een Java-lente-app in azure met behulp van een Azure-Service-Principal. U ziet hoe de `creds` invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een Java Spring-app in Azure met behulp van een Azure-service-principal. U ziet dat `creds` de invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: Java CI with Maven
@@ -638,7 +638,7 @@ jobs:
 
 ### <a name="javascript"></a>Javascript 
 
-Een Node.js-app bouwen en implementeren in azure met behulp van een Azure-Service-Principal. U ziet hoe de `creds` invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een Node.js-app in Azure met behulp van een Azure-service-principal. U ziet dat `creds` de invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: JavaScript CI
@@ -689,7 +689,7 @@ jobs:
 
 ### <a name="python"></a>Python 
 
-Een python-app bouwen en implementeren in azure met behulp van een Azure-Service-Principal. U ziet hoe de `creds` invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
+Bouw en implementeer een Python-app in Azure met behulp van een Azure-service-principal. U ziet dat `creds` de invoer verwijst naar het `AZURE_CREDENTIALS` geheim dat u eerder hebt gemaakt.
 
 ```yaml
 name: Python application
@@ -734,9 +734,9 @@ jobs:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U vindt onze set acties die zijn gegroepeerd in verschillende opslag plaatsen op GitHub, elk met documentatie en voor beelden die u kunnen helpen bij het gebruik van GitHub voor CI/CD en uw apps te implementeren in Azure.
+U vindt onze set acties gegroepeerd in verschillende opslagplaatsen op GitHub, die elk documentatie en voorbeelden bevatten om u te helpen GitHub voor CI/CD te gebruiken en uw apps te implementeren in Azure.
 
-- [Werk stromen voor acties die moeten worden geïmplementeerd in azure](https://github.com/Azure/actions-workflow-samples)
+- [Werkstromen voor acties die in Azure moeten worden geïmplementeerd](https://github.com/Azure/actions-workflow-samples)
 
 - [Azure-aanmelding](https://github.com/Azure/login)
 
@@ -744,10 +744,10 @@ U vindt onze set acties die zijn gegroepeerd in verschillende opslag plaatsen op
 
 - [Azure WebApp voor containers](https://github.com/Azure/webapps-container-deploy)
 
-- [Aanmelden/afmelden bij docker](https://github.com/Azure/docker-login)
+- [Docker-aanmelding/-aanmelding](https://github.com/Azure/docker-login)
 
 - [Gebeurtenissen die workflows activeren](https://docs.github.com/en/actions/reference/events-that-trigger-workflows)
 
 - [K8s implementeren](https://github.com/Azure/k8s-deploy)
 
-- [Starter-werk stromen](https://github.com/actions/starter-workflows)
+- [Starterwerkstromen](https://github.com/actions/starter-workflows)

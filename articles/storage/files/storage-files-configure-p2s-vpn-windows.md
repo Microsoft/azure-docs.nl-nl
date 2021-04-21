@@ -1,39 +1,39 @@
 ---
 title: Een punt-naar-site-VPN (P2S) in Windows configureren voor gebruik met Azure Files | Microsoft Docs
-description: Een punt-naar-site-VPN (P2S) in Windows configureren voor gebruik met Azure Files
+description: Een punt-naar-site-VPN (P2S) configureren in Windows voor gebruik met Azure Files
 author: roygara
 ms.service: storage
 ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 6253deb53229172cd499a6aa14b8d8f19bc07b63
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: de342267292c6a93c4a1ba2eae232403ccaf9514
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94629254"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107785267"
 ---
-# <a name="configure-a-point-to-site-p2s-vpn-on-windows-for-use-with-azure-files"></a>Een punt-naar-site-VPN (P2S) in Windows configureren voor gebruik met Azure Files
-U kunt een punt-naar-site-VPN-verbinding (P2S) gebruiken om uw Azure-bestands shares te koppelen via SMB van buiten Azure, zonder dat u poort 445 hoeft te openen. Een punt-naar-site-VPN-verbinding is een VPN-verbinding tussen Azure en een afzonderlijke client. Als u een punt-naar-site-VPN-verbinding met Azure Files wilt gebruiken, moet er een punt-naar-site-VPN-verbinding worden geconfigureerd voor elke client die verbinding wil maken. Als u veel clients hebt die verbinding moeten maken met uw Azure-bestands shares van uw on-premises netwerk, kunt u een S2S-VPN-verbinding (site-naar-site) gebruiken in plaats van een punt-naar-site-verbinding voor elke client. Zie [een site-naar-site-VPN configureren voor gebruik met Azure files voor](storage-files-configure-s2s-vpn.md)meer informatie.
+# <a name="configure-a-point-to-site-p2s-vpn-on-windows-for-use-with-azure-files"></a>Een punt-naar-site-VPN (P2S) configureren in Windows voor gebruik met Azure Files
+U kunt een punt-naar-site-VPN-verbinding (P2S) gebruiken om uw Azure-bestands shares via SMB van buiten Azure te verbinden, zonder poort 445 te openen. Een punt-naar-site-VPN-verbinding is een VPN-verbinding tussen Azure en een afzonderlijke client. Als u een punt-naar-site-VPN-verbinding met Azure Files wilt gebruiken, moet er een punt-naar-site-VPN-verbinding worden geconfigureerd voor elke client die verbinding wil maken. Als u veel clients hebt die verbinding moeten maken met uw Azure-bestands shares vanuit uw on-premises netwerk, kunt u een site-naar-site-VPN-verbinding (S2S) gebruiken in plaats van een punt-naar-site-verbinding voor elke client. Zie Een [site-naar-site-VPN configureren](storage-files-configure-s2s-vpn.md)voor gebruik met Azure Files voor meer Azure Files.
 
-We raden u ten zeerste aan om [netwerk overwegingen te lezen voor directe toegang tot de Azure-bestands share](storage-files-networking-overview.md) voordat u doorgaat met deze procedure voor een volledige bespreking van de beschik bare netwerk opties voor Azure files.
+We raden u ten zeerste aan netwerkoverwegingen te lezen voor rechtstreekse toegang tot [Azure-bestands](storage-files-networking-overview.md) delen voordat u verdergaat met dit artikel voor een volledige bespreking van de netwerkopties die beschikbaar zijn voor Azure Files.
 
-In het artikel worden de stappen beschreven voor het configureren van een punt-naar-site-VPN in Windows (Windows-client en Windows Server) om Azure-bestands shares rechtstreeks on-premises te koppelen. Als u Azure File Sync verkeer via een VPN wilt omleiden, raadpleegt u [Azure file sync proxy-en Firewall instellingen configureren](storage-sync-files-firewall-and-proxy.md).
+In dit artikel worden de stappen beschreven voor het configureren van een punt-naar-site-VPN in Windows (Windows-client en Windows Server) om Azure-bestands shares rechtstreeks on-premises te mounten. Zie Configuring Azure File Sync proxy and firewall settings (Proxy- en firewallinstellingen configureren) als u verkeer Azure File Sync via een VPN [wilt omgeleid.](../file-sync/file-sync-firewall-and-proxy.md)
 
 ## <a name="prerequisites"></a>Vereisten
-- De meest recente versie van de module Azure PowerShell. Voor meer informatie over het installeren van de Azure PowerShell, raadpleegt u [de module Azure PowerShell installeren](/powershell/azure/install-az-ps) en selecteert u uw besturings systeem. Als u liever de Azure CLI in Windows gebruikt, kunt u de onderstaande instructies echter weer geven voor Azure PowerShell.
+- De meest recente versie van de Azure PowerShell module. Zie Install [the Azure PowerShell module](/powershell/azure/install-az-ps) (De module Azure PowerShell installeren) en selecteer uw besturingssysteem voor meer informatie over het installeren van de Azure PowerShell. Als u liever de Azure CLI in Windows gebruikt, kunt u dit doen, maar de onderstaande instructies worden weergegeven voor Azure PowerShell.
 
-- Een Azure-bestands share die u on-premises wilt koppelen. Azure-bestands shares worden geïmplementeerd in opslag accounts. Dit zijn beheer constructies die een gedeelde opslag groep vertegenwoordigen, waarbij u meerdere bestands shares en andere opslag resources, zoals BLOB-containers of wacht rijen, kunt implementeren. Meer informatie over het implementeren van Azure-bestands shares en opslag accounts vindt u in [een Azure-bestands share maken](storage-how-to-create-file-share.md).
+- Een Azure-bestands share die u on-premises wilt toevoegen. Azure-bestands shares worden geïmplementeerd in opslagaccounts. Dit zijn beheersin constructies die een gedeelde opslaggroep vertegenwoordigen waarin u meerdere bestands shares kunt implementeren, evenals andere opslagbronnen, zoals blobcontainers of wachtrijen. Meer informatie over het implementeren van Azure-bestands shares en opslagaccounts vindt u in [Een Azure-bestands share maken.](storage-how-to-create-file-share.md)
 
-- Een persoonlijk eind punt voor het opslag account dat de Azure-bestands share bevat die u on-premises wilt koppelen. Zie [Azure files Network-eind punten configureren](storage-files-networking-endpoints.md?tabs=azure-powershell)voor meer informatie over het maken van een persoonlijk eind punt. 
+- Een privé-eindpunt voor het opslagaccount met de Azure-bestands share die u on-premises wilt toevoegen. Zie Configuring Azure Files network endpoints (Netwerk Azure Files eindpunten configureren) voor meer informatie over het maken van een [privé-eindpunt.](storage-files-networking-endpoints.md?tabs=azure-powershell) 
 
 ## <a name="deploy-a-virtual-network"></a>Een virtueel netwerk implementeren
-Als u toegang wilt krijgen tot uw Azure-bestands share en andere Azure-resources via een punt-naar-site-VPN, moet u een virtueel netwerk of VNet maken. De P2S VPN-verbinding die u automatisch maakt, is een brug tussen uw on-premises Windows-computer en dit virtuele Azure-netwerk.
+Als u on-premises toegang wilt krijgen tot uw Azure-bestands share en andere Azure-resources via een punt-naar-site-VPN, moet u een virtueel netwerk of VNet maken. De P2S VPN-verbinding die u automatisch maakt, is een brug tussen uw on-premises Windows-computer en dit virtuele Azure-netwerk.
 
-Met de volgende Power Shell maakt u een virtueel Azure-netwerk met drie subnetten: één voor het service-eind punt van uw opslag account, een voor het privé-eind punt van uw opslag account, dat is vereist voor toegang tot het opslag account op locatie zonder aangepaste route ring te maken voor het open bare IP-adres van het opslag account dat kan worden gewijzigd, en één voor de virtuele netwerk 
+Met de volgende PowerShell maakt u een virtueel Azure-netwerk met drie subnetten: één voor het service-eindpunt van uw opslagaccount, één voor het privé-eindpunt van uw opslagaccount. Dit is vereist voor toegang tot het on-premises opslagaccount zonder aangepaste routering te maken voor het openbare IP-adres van het opslagaccount dat kan worden gewijzigd, en een voor uw virtuele netwerkgateway die de VPN-service levert. 
 
-Vergeet niet om `<region>` , `<resource-group>` en `<desired-vnet-name>` met de juiste waarden voor uw omgeving te vervangen.
+Vergeet niet om `<region>` , en te vervangen door de juiste waarden voor uw `<resource-group>` `<desired-vnet-name>` omgeving.
 
 ```PowerShell
 $region = "<region>"
@@ -78,8 +78,8 @@ $gatewaySubnet = $virtualNetwork.Subnets | `
     Where-Object { $_.Name -eq "GatewaySubnet" }
 ```
 
-## <a name="create-root-certificate-for-vpn-authentication"></a>Basis certificaat voor VPN-verificatie maken
-Als u wilt dat VPN-verbindingen van uw on-premises Windows-computers worden geverifieerd voor toegang tot uw virtuele netwerk, moet u twee certificaten maken: een basis certificaat, dat wordt verschaft aan de gateway van de virtuele machine en een client certificaat, dat wordt ondertekend met het basis certificaat. Met de volgende Power shell wordt het basis certificaat gemaakt. het client certificaat wordt gemaakt nadat de gateway van het virtuele Azure-netwerk is gemaakt met informatie van de gateway. 
+## <a name="create-root-certificate-for-vpn-authentication"></a>Basiscertificaat voor VPN-verificatie maken
+Als u wilt dat VPN-verbindingen van uw on-premises Windows-machines worden geverifieerd voor toegang tot uw virtuele netwerk, moet u twee certificaten maken: een basiscertificaat dat wordt verstrekt aan de gateway van de virtuele machine en een clientcertificaat dat wordt ondertekend met het basiscertificaat. Met de volgende PowerShell wordt het basiscertificaat gemaakt; het clientcertificaat wordt gemaakt nadat de gateway van het virtuele Azure-netwerk is gemaakt met informatie van de gateway. 
 
 ```PowerShell
 $rootcertname = "CN=P2SRootCert"
@@ -125,13 +125,13 @@ foreach($line in $rawRootCertificate) {
 }
 ```
 
-## <a name="deploy-virtual-network-gateway"></a>Virtuele netwerk gateway implementeren
-De gateway van het virtuele Azure-netwerk is de service die door uw on-premises Windows-computers wordt verbonden. Voor het implementeren van deze service zijn twee basis onderdelen vereist: een openbaar IP-adres waarmee de gateway naar uw clients wordt geïdentificeerd, waar deze zich ook in de wereld bevinden en een basis certificaat dat u eerder hebt gemaakt, dat wordt gebruikt om uw clients te verifiëren.
+## <a name="deploy-virtual-network-gateway"></a>Virtuele netwerkgateway implementeren
+De gateway van het virtuele Azure-netwerk is de service die uw on-premises Windows-machines verbinden. Voor het implementeren van deze service zijn twee basisonderdelen vereist: een openbaar IP-adres waarmee de gateway voor uw clients wordt identificeert, waar ter wereld ze zich ook in de wereld, en een basiscertificaat dat u eerder hebt gemaakt, dat wordt gebruikt om uw clients te verifiëren.
 
-Vergeet niet door `<desired-vpn-name-here>` de gewenste naam voor deze resources te vervangen.
+Vergeet niet om te `<desired-vpn-name-here>` vervangen door de naam die u voor deze resources wilt gebruiken.
 
 > [!Note]  
-> Het implementeren van de virtuele Azure-netwerk gateway kan Maxi maal 45 minuten duren. Terwijl deze resource wordt geïmplementeerd, wordt door dit Power shell-script geblokkeerd om de implementatie te volt ooien. Dit is normaal.
+> Het implementeren van de virtuele Azure-netwerkgateway kan tot 45 minuten duren. Terwijl deze resource wordt geïmplementeerd, wordt dit PowerShell-script geblokkeerd om de implementatie te kunnen uitvoeren. Dit is normaal.
 
 ```PowerShell
 $vpnName = "<desired-vpn-name-here>" 
@@ -166,8 +166,8 @@ $vpn = New-AzVirtualNetworkGateway `
     -VpnClientRootCertificates $azRootCertificate
 ```
 
-## <a name="create-client-certificate"></a>Client certificaat maken
-Het client certificaat wordt gemaakt met de URI van de virtuele netwerk gateway. Dit certificaat is ondertekend met het basis certificaat dat u eerder hebt gemaakt.
+## <a name="create-client-certificate"></a>Clientcertificaat maken
+Het clientcertificaat wordt gemaakt met de URI van de gateway van het virtuele netwerk. Dit certificaat is ondertekend met het basiscertificaat dat u eerder hebt gemaakt.
 
 ```PowerShell
 $clientcertpassword = "1234"
@@ -212,9 +212,9 @@ Export-PfxCertificate `
 ```
 
 ## <a name="configure-the-vpn-client"></a>De VPN-client configureren
-De gateway van het virtuele netwerk van Azure maakt een downloadbaar pakket met configuratie bestanden die nodig zijn om de VPN-verbinding op uw lokale Windows-computer te initialiseren. De VPN-verbinding wordt geconfigureerd met de functie [altijd op VPN](/windows-server/remote/remote-access/vpn/always-on-vpn/) van Windows 10/Windows Server 2016 +. Dit pakket bevat ook uitvoer bare pakketten die de verouderde Windows VPN-client configureren, als dat nodig is. In deze hand leiding wordt altijd op VPN gebruikt in plaats van de verouderde Windows VPN-client als de always on VPN-client toestaan dat eind gebruikers verbinding maken met of de verbinding verbreken met de Azure VPN zonder beheerders machtigingen voor hun computer. 
+De gateway van het virtuele Azure-netwerk maakt een downloadbaar pakket met configuratiebestanden die vereist zijn voor het initialiseren van de VPN-verbinding op uw on-premises Windows-computer. We configureren de VPN-verbinding met behulp van de [functie Always On VPN](/windows-server/remote/remote-access/vpn/always-on-vpn/) van Windows 10/Windows Server 2016+. Dit pakket bevat ook uitvoerbare pakketten waarmee de verouderde Windows VPN-client wordt geconfigureerd, indien gewenst. In deze handleiding wordt Always On VPN gebruikt in plaats van de verouderde Windows VPN-client, omdat eindgebruikers met de Always On VPN-client verbinding kunnen maken met/de verbinding met Azure VPN kunnen verbreken zonder beheerdersmachtigingen voor hun computer. 
 
-Met het volgende script wordt het client certificaat geïnstalleerd dat vereist is voor verificatie van de virtuele netwerk gateway, het downloaden en installeren van het VPN-pakket. Vergeet niet om `<computer1>` `<computer2>` de gewenste computers te vervangen. U kunt dit script uitvoeren op net zoveel computers als gewenst door meer Power shell-sessies toe te voegen aan de `$sessions` matrix. Het account dat u gebruikt, moet een beheerder zijn op elk van deze machines. Als een van deze computers de lokale computer is waarop u het script uitvoert, moet u het script uitvoeren vanuit een Power shell-sessie met verhoogde bevoegdheden. 
+Met het volgende script installeert u het clientcertificaat dat is vereist voor verificatie bij de gateway van het virtuele netwerk, en downloadt en installeert u het VPN-pakket. Vergeet niet om `<computer1>` en te vervangen door de `<computer2>` gewenste computers. U kunt dit script op zoveel machines uitvoeren als u wilt door meer PowerShell-sessies aan de matrix toe te `$sessions` voegen. Uw gebruiksaccount moet een beheerder zijn op elk van deze computers. Als een van deze computers de lokale computer is waar u het script vandaan gebruikt, moet u het script uitvoeren vanuit een PowerShell-sessie met verhoogde bevoegdheid. 
 
 ```PowerShell
 $sessions = [System.Management.Automation.Runspaces.PSSession[]]@()
@@ -291,8 +291,8 @@ foreach ($session in $sessions) {
 Remove-Item -Path $vpnTemp -Recurse
 ```
 
-## <a name="mount-azure-file-share"></a>Azure-bestands share koppelen
-Nu u uw punt-naar-site-VPN hebt ingesteld, kunt u het gebruiken om de Azure-bestands share te koppelen op de computers die u installeert via Power shell. In het volgende voor beeld wordt de share gekoppeld, wordt de hoofdmap van de share vermeld om te bewijzen dat de share daad werkelijk is gekoppeld en wordt de share ontkoppeld. Helaas is het niet mogelijk om de share permanent te koppelen via externe communicatie met Power shell. Zie [een Azure-bestands share gebruiken met Windows](storage-how-to-use-files-windows.md)om permanent te koppelen. 
+## <a name="mount-azure-file-share"></a>Een Azure-bestands share toevoegen
+Nu u uw punt-naar-site-VPN hebt ingesteld, kunt u deze gebruiken om de Azure-bestands share te installeren op de computers die u hebt ingesteld via PowerShell. In het volgende voorbeeld wordt de share aan de share toegevoegd, wordt de hoofdmap van de share weergegeven om te bewijzen dat de share daadwerkelijk is bevestigd en wordt de share ontkoppeld. Het is helaas niet mogelijk om de share permanent te mounten via remoting van PowerShell. Zie Een Azure-bestands share gebruiken met Windows als u deze permanent [wilt toevoegen.](storage-how-to-use-files-windows.md) 
 
 ```PowerShell
 $myShareToMount = "<file-share>"
@@ -337,6 +337,6 @@ Invoke-Command `
 ```
 
 ## <a name="see-also"></a>Zie ook
-- [Netwerk overwegingen voor directe toegang tot Azure-bestands shares](storage-files-networking-overview.md)
-- [Een punt-naar-site-VPN (P2S) op Linux configureren voor gebruik met Azure Files](storage-files-configure-p2s-vpn-linux.md)
+- [Netwerkoverwegingen voor directe toegang tot Azure-bestands delen](storage-files-networking-overview.md)
+- [Een punt-naar-site-VPN (P2S) configureren in Linux voor gebruik met Azure Files](storage-files-configure-p2s-vpn-linux.md)
 - [Een site-naar-site-VPN (S2S) configureren voor gebruik met Azure Files](storage-files-configure-s2s-vpn.md)

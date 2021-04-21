@@ -1,6 +1,6 @@
 ---
-title: Uw Tenant-ID zoeken-Azure Active Directory
-description: Instructies voor het zoeken en Azure Active Directory van de Tenant-ID naar een bestaand Azure-abonnement.
+title: Uw tenant-id vinden - Azure Active Directory
+description: Instructies voor het vinden en Azure Active Directory tenant-id in een bestaand Azure-abonnement.
 services: active-directory
 author: ajburnle
 manager: daveba
@@ -11,20 +11,20 @@ ms.topic: how-to
 ms.date: 10/30/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
-ms.custom: it-pro, devx-track-azurecli
+ms.custom: it-pro, devx-track-azurepowershell
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 910e68e5b8933875f252faf65fb58e514dee8254
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cba823775849fdad8407c7bb697a53761e8ccbcd
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96326587"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107764347"
 ---
-# <a name="how-to-find-your-azure-active-directory-tenant-id"></a>Uw Azure Active Directory Tenant-ID zoeken
+# <a name="how-to-find-your-azure-active-directory-tenant-id"></a>Uw tenant-id Azure Active Directory vinden
 
-Azure-abonnementen hebben een vertrouwens relatie met Azure Active Directory (Azure AD). Azure AD wordt vertrouwd voor het verifiëren van gebruikers, services en apparaten voor het abonnement. Aan elk abonnement is een Tenant-ID gekoppeld en er zijn een aantal manieren om de Tenant-ID voor uw abonnement te vinden.
+Azure-abonnementen hebben een vertrouwensrelatie met Azure Active Directory (Azure AD). Azure AD wordt vertrouwd om gebruikers, services en apparaten voor het abonnement te verifiëren. Aan elk abonnement is een tenant-id gekoppeld en er zijn een aantal manieren waarop u de tenant-id voor uw abonnement kunt vinden.
 
-## <a name="find-tenant-id-through-the-azure-portal"></a>Tenant-ID zoeken via de Azure Portal
+## <a name="find-tenant-id-through-the-azure-portal"></a>Tenant-id zoeken via de Azure Portal
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
  
@@ -32,26 +32,26 @@ Azure-abonnementen hebben een vertrouwens relatie met Azure Active Directory (Az
 
 1. Selecteer **Eigenschappen**.
 
-1. Schuif vervolgens omlaag naar het veld **Tenant-id** . Uw Tenant-ID wordt in het vak weer.
+1. Schuif vervolgens omlaag naar het **veld Tenant-id.** Uw tenant-id staat in het vak.
 
-:::image type="content" source="media/active-directory-how-to-find-tenant/portal-tenant-id.png" alt-text="Azure Active Directory-Properties-Tenant-ID-veld Tenant-ID":::
+:::image type="content" source="media/active-directory-how-to-find-tenant/portal-tenant-id.png" alt-text="Azure Active Directory - Eigenschappen - Tenant-id - Veld Tenant-id":::
 
-## <a name="find-tenant-id-with-powershell"></a>Tenant-ID zoeken met Power shell
+## <a name="find-tenant-id-with-powershell"></a>Tenant-id zoeken met PowerShell
 
-U kunt de Tenant ook programmatisch vinden. Als u de Tenant-ID met Azure PowerShell wilt zoeken, gebruikt u de cmdlet `Get-AzTenant` .
+U kunt de tenant ook programmatisch vinden. Gebruik de cmdlet om Azure PowerShell tenant-id te `Get-AzTenant` vinden.
 
 ```azurepowershell-interactive
 Connect-AzAccount
 Get-AzTenant
 ```
    
-Zie voor meer informatie deze Azure PowerShell-cmdlet-verwijzing voor [Get-AzTenant](/powershell/module/az.accounts/get-aztenant).
+Zie voor meer informatie deze naslaginformatie Azure PowerShell cmdlet voor [Get-AzTenant](/powershell/module/az.accounts/get-aztenant).
 
 
-## <a name="find-tenant-id-with-cli"></a>Tenant-ID zoeken met CLI
-Als u een opdracht regel interface wilt gebruiken om de Tenant-ID te vinden, kunt u dit doen met [Azure cli](/cli/azure/install-azure-cli) of [Microsoft 365 cli](https://pnp.github.io/cli-microsoft365/). 
+## <a name="find-tenant-id-with-cli"></a>Tenant-id zoeken met CLI
+Als u een opdrachtregelinterface wilt gebruiken om de tenant-id te vinden, kunt u dit doen met [Azure CLI](/cli/azure/install-azure-cli) of [Microsoft 365 CLI.](https://pnp.github.io/cli-microsoft365/) 
 
-Gebruik voor Azure CLI een van de opdrachten **AZ login**, **AZ account list** of **AZ account Tenant List** , zoals wordt weer gegeven in het volgende voor beeld. Let op de eigenschap **tenantId** voor elk van uw abonnementen in de uitvoer van elke opdracht.
+Gebruik voor Azure CLI een van de opdrachten **az login,** **az account list** of az account tenant **list,** zoals wordt weergegeven in het volgende voorbeeld. Let op **de eigenschap tenantId** voor elk van uw abonnementen in de uitvoer van elke opdracht.
 
 ```azurecli-interactive
 az login
@@ -59,22 +59,22 @@ az account list
 az account tenant list
 ```
 
-Zie voor meer informatie [AZ login](/cli/azure/reference-index#az_login) opdracht verwijzing, [AZ account](/cli/azure/ext/account/account) Command Reference of [AZ account Tenant](/cli/azure/ext/account/account/tenant) opdracht verwijzing.
+Zie az [login](/cli/azure/reference-index#az_login) command reference, [az account](/cli/azure/ext/account/account) command reference of az account [tenant](/cli/azure/ext/account/account/tenant) command reference voor meer informatie.
 
 
-Voor Microsoft 365 CLI gebruikt u de **Tenant-id** van de cmdlet, zoals weer gegeven in het volgende voor beeld:
+Voor Microsoft 365 CLI gebruikt u de **tenant-id** van de cmdlet, zoals wordt weergegeven in het volgende voorbeeld:
  
 ```cli
 m365 tenant id get
 ```
 
-Zie voor meer informatie de Microsoft 365 [-Tenant-id](https://pnp.github.io/cli-microsoft365/cmd/tenant/id/id-get/) opdracht verwijzing ophalen.
+Zie de naslaginformatie over de [tenant Microsoft 365-id voor het verkrijgen](https://pnp.github.io/cli-microsoft365/cmd/tenant/id/id-get/) van opdrachten voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als u een nieuwe Azure AD-Tenant wilt maken, raadpleegt u [Quick Start: een nieuwe Tenant maken in azure Active Directory](active-directory-access-create-new-tenant.md).
+- Als u een nieuwe Azure AD-tenant wilt maken, gaat u [naar Quickstart: Een nieuwe tenant maken in Azure Active Directory](active-directory-access-create-new-tenant.md).
 
-- Zie [een Azure-abonnement koppelen aan of toevoegen aan uw Azure Active Directory-Tenant](active-directory-how-subscriptions-associated-directory.md)voor meer informatie over het koppelen of toevoegen van een abonnement aan een Tenant.
+- Zie Een Azure-abonnement koppelen of toevoegen aan uw tenant voor meer informatie over het koppelen of toevoegen [van een Azure Active Directory tenant.](active-directory-how-subscriptions-associated-directory.md)
 
-- Zie [de gebruikers object-id zoeken](/partner-center/find-ids-and-domain-names#find-the-user-object-id)voor meer informatie over het vinden van de object-id.
+- Zie Find the user object ID (De object-id van de gebruiker zoeken) voor meer informatie over het vinden van de [object-id.](/partner-center/find-ids-and-domain-names#find-the-user-object-id)

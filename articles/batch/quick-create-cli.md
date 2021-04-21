@@ -4,12 +4,12 @@ description: In deze quickstart ziet u hoe u een Batch-account maakt en een Batc
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 297af47b6280381646e654eaededfe8b71a5d874
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8d3005233320a7ba0d00f186944a0a8c0c456647
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97106679"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765301"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-azure-cli"></a>Quickstart: Uw eerste Batch-taak uitvoeren met Azure CLI
 
@@ -25,7 +25,7 @@ De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf 
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
+Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az_group_create). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
 In het volgende voorbeeld wordt een resourcegroep met de naam *QuickstartBatch-rg* gemaakt in de locatie *eastus2*.
 
@@ -37,7 +37,7 @@ az group create \
 
 ## <a name="create-a-storage-account"></a>Create a storage account
 
-U kunt een Azure-opslagaccount aan het Batch-account koppelen. Hoewel dit niet is vereist voor deze snelstartgids, is een opslagaccount handig voor het implementeren van toepassingen, en voor het opslaan van invoer- en uitvoergegevens voor de meeste workloads uit de praktijk. Maak een opslagaccount in de resourcegroep met behulp van de opdracht [az storage account create](/cli/azure/storage/account#az-storage-account-create).
+U kunt een Azure-opslagaccount aan het Batch-account koppelen. Hoewel dit niet is vereist voor deze snelstartgids, is een opslagaccount handig voor het implementeren van toepassingen, en voor het opslaan van invoer- en uitvoergegevens voor de meeste workloads uit de praktijk. Maak een opslagaccount in de resourcegroep met behulp van de opdracht [az storage account create](/cli/azure/storage/account#az_storage_account_create).
 
 ```azurecli-interactive
 az storage account create \
@@ -49,7 +49,7 @@ az storage account create \
 
 ## <a name="create-a-batch-account"></a>Batch-account maken
 
-Maak een Batch-account met behulp van de opdracht [az batch account create](/cli/azure/batch/account#az-batch-account-create). U hebt een account nodig om rekenresources (pools met rekenknooppunten) en Batch-taken te maken.
+Maak een Batch-account met behulp van de opdracht [az batch account create](/cli/azure/batch/account#az_batch_account_create). U hebt een account nodig om rekenresources (pools met rekenknooppunten) en Batch-taken te maken.
 
 In het volgende voorbeeld wordt een Batch-account met de naam *mybatchaccount* gemaakt in *QuickstartBatch-rg* en wordt het door u gemaakte opslagaccount gekoppeld.  
 
@@ -61,7 +61,7 @@ az batch account create \
     --location eastus2
 ```
 
-Als u rekenpools en -taken wilt maken en beheren, moet u zich verifiëren bij Batch. Meld u aan bij het account met behulp van de opdracht [az batch account login](/cli/azure/batch/account#az-batch-account-login). Nadat u zich hebt aangemeld, maken de `az batch`-opdrachten gebruik van deze accountcontext.
+Als u rekenpools en -taken wilt maken en beheren, moet u zich verifiëren bij Batch. Meld u aan bij het account met behulp van de opdracht [az batch account login](/cli/azure/batch/account#az_batch_account_login). Nadat u zich hebt aangemeld, maken de `az batch`-opdrachten gebruik van deze accountcontext.
 
 ```azurecli-interactive
 az batch account login \
@@ -72,7 +72,7 @@ az batch account login \
 
 ## <a name="create-a-pool-of-compute-nodes"></a>Een pool met rekenknooppunten maken
 
-Nu u beschikt over een Batch-account, maakt u een voorbeeldpool met Linux-rekenknooppunten met behulp van de opdracht [az batch pool create](/cli/azure/batch/pool#az-batch-pool-create). In het volgende voorbeeld wordt een pool gemaakt met de naam *mypool* met *Standard_A1_v2*-knooppunten van 2 grootten waarop Ubuntu 16.04 TNS wordt uitgevoerd. De voorgestelde knooppuntgrootte in dit snelle voorbeeld biedt een goede balans tussen prestaties en kosten.
+Nu u beschikt over een Batch-account, maakt u een voorbeeldpool met Linux-rekenknooppunten met behulp van de opdracht [az batch pool create](/cli/azure/batch/pool#az_batch_pool_create). In het volgende voorbeeld wordt een pool gemaakt met de naam *mypool* met *Standard_A1_v2*-knooppunten van 2 grootten waarop Ubuntu 16.04 TNS wordt uitgevoerd. De voorgestelde knooppuntgrootte in dit snelle voorbeeld biedt een goede balans tussen prestaties en kosten.
  
 ```azurecli-interactive
 az batch pool create \
@@ -82,7 +82,7 @@ az batch pool create \
     --node-agent-sku-id "batch.node.ubuntu 16.04"
 ```
 
-De pool wordt onmiddellijk gemaakt in Batch, maar het duurt enkele minuten voordat de rekenknooppunten zijn toegewezen en gestart. Gedurende deze periode heeft de pool de status `resizing`. Als u de status van de pool wilt zien, voert u de opdracht [az batch pool show](/cli/azure/batch/pool#az-batch-pool-show) uit. Met deze opdracht worden alle eigenschappen van de pool weergegeven en kunt u zoeken naar specifieke eigenschappen. Met de volgende opdracht wordt de toewijzingsstatus van de pool opgehaald:
+De pool wordt onmiddellijk gemaakt in Batch, maar het duurt enkele minuten voordat de rekenknooppunten zijn toegewezen en gestart. Gedurende deze periode heeft de pool de status `resizing`. Als u de status van de pool wilt zien, voert u de opdracht [az batch pool show](/cli/azure/batch/pool#az_batch_pool_show) uit. Met deze opdracht worden alle eigenschappen van de pool weergegeven en kunt u zoeken naar specifieke eigenschappen. Met de volgende opdracht wordt de toewijzingsstatus van de pool opgehaald:
 
 ```azurecli-interactive
 az batch pool show --pool-id mypool \
@@ -93,7 +93,7 @@ Ga door met de volgende stappen om een Batch-taak en taken te maken terwijl de s
 
 ## <a name="create-a-job"></a>Een taak maken
 
-Nu u beschikt over een pool, kunt u een Batch-taak maken om uit te voeren op deze pool. Een Batch-taak is een logische groep met een of meer taken. Een Batch-taak omvat instellingen die gemeenschappelijk zijn voor de taken, zoals prioriteit en de pool waarop taken moeten worden uitgevoerd. Maak een Batch-taak met behulp van de opdracht [az batch job create](/cli/azure/batch/job#az-batch-job-create). In het volgende voorbeeld wordt een taak *myjob* gemaakt in de pool *mypool*. De Batch-taak heeft in eerste instantie geen taken.
+Nu u beschikt over een pool, kunt u een Batch-taak maken om uit te voeren op deze pool. Een Batch-taak is een logische groep met een of meer taken. Een Batch-taak omvat instellingen die gemeenschappelijk zijn voor de taken, zoals prioriteit en de pool waarop taken moeten worden uitgevoerd. Maak een Batch-taak met behulp van de opdracht [az batch job create](/cli/azure/batch/job#az_batch_job_create). In het volgende voorbeeld wordt een taak *myjob* gemaakt in de pool *mypool*. De Batch-taak heeft in eerste instantie geen taken.
 
 ```azurecli-interactive
 az batch job create \
@@ -103,7 +103,7 @@ az batch job create \
 
 ## <a name="create-tasks"></a>Taken maken
 
-Gebruik nu de opdracht [az batch task create](/cli/azure/batch/task#az-batch-task-create) om taken te maken voor uitvoering in de Batch-taak. In dit voorbeeld maakt u vier identieke taken. Met elke taak wordt een `command-line` uitgevoerd om de variabelen voor de Batch-omgeving op een rekenknooppunt weer te geven. Vervolgens is er een pauze van 90 seconden. Wanneer u Batch gebruikt, geeft u uw app of script op deze opdrachtregel op. Batch biedt een aantal manieren om apps en scripts te implementeren op rekenknooppunten.
+Gebruik nu de opdracht [az batch task create](/cli/azure/batch/task#az_batch_task_create) om taken te maken voor uitvoering in de Batch-taak. In dit voorbeeld maakt u vier identieke taken. Met elke taak wordt een `command-line` uitgevoerd om de variabelen voor de Batch-omgeving op een rekenknooppunt weer te geven. Vervolgens is er een pauze van 90 seconden. Wanneer u Batch gebruikt, geeft u uw app of script op deze opdrachtregel op. Batch biedt een aantal manieren om apps en scripts te implementeren op rekenknooppunten.
 
 Met het volgende Bash-script worden 4 parallelle taken gemaakt (*mytask1* tot en met *mytask4*).
 
@@ -123,7 +123,7 @@ In de opdrachtuitvoer ziet u de instellingen voor elk van de taken. De taken wor
 
 Nadat u een taak hebt gemaakt, wordt deze in Batch in de wachtrij geplaatst voor uitvoering op de pool. Zodra een knooppunt beschikbaar is om de taak uit te voeren, wordt de taak uitgevoerd.
 
-Gebruik de opdracht [az batch task show](/cli/azure/batch/task#az-batch-task-show) om de status van de Batch-taken weer te geven. In het volgende voorbeeld worden details weergegeven over *mytask1* die wordt uitgevoerd op een van de knooppunten in de pool.
+Gebruik de opdracht [az batch task show](/cli/azure/batch/task#az_batch_task_show) om de status van de Batch-taken weer te geven. In het volgende voorbeeld worden details weergegeven over *mytask1* die wordt uitgevoerd op een van de knooppunten in de pool.
 
 ```azurecli-interactive
 az batch task show \
@@ -190,13 +190,13 @@ AZ_BATCH_TASK_USER_IDENTITY=PoolNonAdmin
 
 Als u wilt doorgaan met Batch-zelfstudies en -voorbeelden, gebruikt u het Batch-account en het gekoppelde opslagaccount dat in deze snelstartgids is gemaakt. Voor het Batch-account zelf worden geen kosten in rekening gebracht.
 
-Er worden kosten berekend voor pools zolang de knooppunten actief zijn, zelfs als er geen taken zijn gepland. Wanneer u een pool niet meer nodig hebt, verwijdert u deze met de opdracht [az batch pool delete](/cli/azure/batch/pool#az-batch-pool-delete). Wanneer u de pool verwijdert, wordt ook alle taakuitvoer op de knooppunten verwijderd.
+Er worden kosten berekend voor pools zolang de knooppunten actief zijn, zelfs als er geen taken zijn gepland. Wanneer u een pool niet meer nodig hebt, verwijdert u deze met de opdracht [az batch pool delete](/cli/azure/batch/pool#az_batch_pool_delete). Wanneer u de pool verwijdert, wordt ook alle taakuitvoer op de knooppunten verwijderd.
 
 ```azurecli-interactive
 az batch pool delete --pool-id mypool
 ```
 
-U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken om de resourcegroep, het Batch-account, de pools en alle gerelateerde resources te verwijderen wanneer u deze niet meer nodig hebt. U verwijdert de resources als volgt:
+U kunt de opdracht [az group delete](/cli/azure/group#az_group_delete) gebruiken om de resourcegroep, het Batch-account, de pools en alle gerelateerde resources te verwijderen wanneer u deze niet meer nodig hebt. U verwijdert de resources als volgt:
 
 ```azurecli-interactive
 az group delete --name QuickstartBatch-rg

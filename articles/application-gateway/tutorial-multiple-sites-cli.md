@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 350962aed89d04c5508e7b2c50e8a838cd5a7174
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cb924ab1f8947fefc83ed35a409628a576fad4b9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94566143"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772667"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Een toepassingsgateway maken waarop meerdere websites worden gehost met Azure CLI
 
-U kunt Azure CLI gebruiken om [het hosten van meerdere websites](multiple-site-overview.md) te configureren als u een [toepassingsgateway maakt](overview.md). In dit artikel definieert u back-end-adres groepen met behulp van virtuele machines met schaal sets. Vervolgens configureert u listeners en regels op basis van domeinen waarvan u eigenaar bent om er zeker van te zijn dat webverkeer bij de juiste servers in de pools binnenkomen. In dit artikel wordt ervan uitgegaan dat u beschikt over meerdere domeinen en gebruikmaakt van voor beelden van *www- \. contoso.com* en *www- \. fabrikam.com*.
+U kunt Azure CLI gebruiken om [het hosten van meerdere websites](multiple-site-overview.md) te configureren als u een [toepassingsgateway maakt](overview.md). In dit artikel definieert u back-endefinieer-adresgroepen met behulp van virtuele-machineschaalsets. Vervolgens configureert u listeners en regels op basis van domeinen waarvan u eigenaar bent om er zeker van te zijn dat webverkeer bij de juiste servers in de pools binnenkomen. In dit artikel wordt ervan uitgenomen dat u eigenaar bent van meerdere domeinen en gebruikt u voorbeelden van *www \. contoso.com* *en www \. fabrikam.com*.
 
 In dit artikel leert u het volgende:
 
@@ -77,7 +77,7 @@ az network public-ip create \
 
 ## <a name="create-the-application-gateway"></a>De toepassingsgateway maken
 
-U kunt [az network application-gateway create](/cli/azure/network/application-gateway#az-network-application-gateway-create) gebruiken om de toepassingsgateway te maken. Als u met de Azure CLI een toepassingsgateway maakt, geeft u configuratiegegevens op, zoals capaciteit, SKU en HTTP-instellingen. De toepassingsgateway wordt toegewezen aan *myAGSubnet* en *myAGPublicIPAddress*, die u eerder hebt gemaakt. 
+U kunt [az network application-gateway create](/cli/azure/network/application-gateway#az_network_application_gateway_create) gebruiken om de toepassingsgateway te maken. Als u met de Azure CLI een toepassingsgateway maakt, geeft u configuratiegegevens op, zoals capaciteit, SKU en HTTP-instellingen. De toepassingsgateway wordt toegewezen aan *myAGSubnet* en *myAGPublicIPAddress*, die u eerder hebt gemaakt. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -105,7 +105,7 @@ Het kan enkele minuten duren voordat de toepassingsgateway is gemaakt. Nadat de 
 
 ### <a name="add-the-backend-pools"></a>Back-endpools toevoegen
 
-Voeg de back-endservers toe die nodig zijn om de back-endservers te bevatten met [AZ Network Application-Gateway address-pool Create](/cli/azure/network/application-gateway/address-pool#az-network-application-gateway-address-pool-create)
+Voeg de back-endpools toe die nodig zijn om de back-endservers op te nemen [met az network application-gateway address-pool create](/cli/azure/network/application-gateway/address-pool#az_network_application_gateway_address-pool_create)
 ```azurecli-interactive
 az network application-gateway address-pool create \
   --gateway-name myAppGateway \
@@ -120,11 +120,11 @@ az network application-gateway address-pool create \
 
 ### <a name="add-listeners"></a>Listeners toevoegen
 
-Voeg listeners toe die nodig zijn om verkeer te routeren met [AZ Network Application-Gateway HTTP-listener Create](/cli/azure/network/application-gateway/http-listener#az-network-application-gateway-http-listener-create).
+Voeg listeners toe die nodig zijn om verkeer te leiden [met az network application-gateway http-listener create.](/cli/azure/network/application-gateway/http-listener#az_network_application_gateway_http_listener_create)
 
 >[!NOTE]
-> Met Application Gateway of WAF v2 SKU kunt u ook Maxi maal 5 hostnamen per listener configureren. u kunt joker tekens gebruiken in de hostnaam. Zie [namen van hostnamen in de listener](multiple-site-overview.md#wildcard-host-names-in-listener-preview) voor meer informatie.
->Als u meerdere hostnamen en Joker tekens wilt gebruiken in een listener met behulp van Azure CLI, moet u `--host-names` in plaats van gebruiken `--host-name` . Met host-namen kunt u Maxi maal vijf hostnamen als door spaties gescheiden waarden vermelden. Bijvoorbeeld: `--host-names "*.contoso.com *.fabrikam.com"`
+> Met Application Gateway of WAF v2 SKU kunt u ook maximaal 5 hostnamen per listener configureren en kunt u jokertekens gebruiken in de hostnaam. Zie [hostnamen met jokertekens in de listener](multiple-site-overview.md#wildcard-host-names-in-listener-preview) voor meer informatie.
+>Als u meerdere hostnamen en jokertekens in een listener wilt gebruiken met behulp van Azure CLI, moet u gebruiken `--host-names` in plaats van `--host-name` . Met hostnamen kunt u maximaal vijf hostnamen noemen als door spaties gescheiden waarden. Bijvoorbeeld: `--host-names "*.contoso.com *.fabrikam.com"`
 
 ```azurecli-interactive
 az network application-gateway http-listener create \
@@ -146,9 +146,9 @@ az network application-gateway http-listener create \
 
 ### <a name="add-routing-rules"></a>Routeringsregels toevoegen
 
-Regels worden verwerkt in de volg orde waarin ze worden weer gegeven. Verkeer wordt omgeleid met behulp van de eerste regel die overeenkomt, ongeacht de specificiteit. Als u bijvoorbeeld een regel hebt die van een basislistener gebruikmaakt en een regel die via dezelfde poort van een listener voor meerdere sites gebruikmaakt, moet de regel voor de listener voor meerdere sites vermeld worden vóór de regel met de basislistener, opdat de regel voor meerdere sites kan functioneren zoals het hoort. 
+Regels worden verwerkt in de volgorde waarin ze worden weergegeven. Verkeer wordt omgeleid met behulp van de eerste regel die overeenkomt, ongeacht de specificiteit. Als u bijvoorbeeld een regel hebt die van een basislistener gebruikmaakt en een regel die via dezelfde poort van een listener voor meerdere sites gebruikmaakt, moet de regel voor de listener voor meerdere sites vermeld worden vóór de regel met de basislistener, opdat de regel voor meerdere sites kan functioneren zoals het hoort. 
 
-In dit voor beeld maakt u twee nieuwe regels en verwijdert u de standaard regel die is gemaakt tijdens de implementatie van de toepassings gateway. U kunt de regel toevoegen met [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az-network-application-gateway-rule-create).
+In dit voorbeeld maakt u twee nieuwe regels en verwijdert u de standaardregel die is gemaakt toen u de toepassingsgateway hebt geïmplementeerd. U kunt de regel toevoegen met [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az_network_application_gateway_rule_create).
 
 ```azurecli-interactive
 az network application-gateway rule create \
@@ -225,7 +225,7 @@ done
 
 ## <a name="create-a-cname-record-in-your-domain"></a>Een CNAME-record in uw domein maken
 
-Als de toepassingsgateway met het bijbehorende openbare IP-adres is gemaakt, kunt u het DNS-adres ophalen en dit gebruiken om een CNAME-record in uw domein te maken. Gebruik [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) om het DNS-adres van de toepassingsgateway op te halen. Kopieer de waarde *fqdn* van DNSSettings en gebruik deze als de waarde van de CNAME-record die u maakt. 
+Als de toepassingsgateway met het bijbehorende openbare IP-adres is gemaakt, kunt u het DNS-adres ophalen en dit gebruiken om een CNAME-record in uw domein te maken. Gebruik [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show) om het DNS-adres van de toepassingsgateway op te halen. Kopieer de waarde *fqdn* van DNSSettings en gebruik deze als de waarde van de CNAME-record die u maakt. 
 
 ```azurecli-interactive
 az network public-ip show \
@@ -235,11 +235,11 @@ az network public-ip show \
   --output tsv
 ```
 
-Het gebruik van A-records wordt niet aanbevolen, omdat het VIP kan worden gewijzigd wanneer de toepassings Gateway opnieuw wordt opgestart.
+Het gebruik van A-records wordt niet aanbevolen omdat het VIP kan worden gewijzigd wanneer de toepassingsgateway opnieuw wordt gestart.
 
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 
-Voer uw domeinnaam in de adresbalk van de browser in. Zoals http: \/ /www.contoso.com.
+Voer uw domeinnaam in de adresbalk van de browser in. Bijvoorbeeld http: \/ /www.contoso.com.
 
 ![Contoso-site testen in toepassingsgateway](./media/tutorial-multiple-sites-cli/application-gateway-nginxtest1.png)
 

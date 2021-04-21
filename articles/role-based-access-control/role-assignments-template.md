@@ -1,6 +1,6 @@
 ---
-title: Azure-rollen toewijzen met behulp van Azure Resource Manager sjablonen-Azure RBAC
-description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers, groepen, service-principals of beheerde identiteiten met behulp van Azure Resource Manager sjablonen en Azure RBAC (op rollen gebaseerd toegangs beheer).
+title: Azure-rollen toewijzen met behulp Azure Resource Manager-sjablonen - Azure RBAC
+description: Meer informatie over het verlenen van toegang tot Azure-resources voor gebruikers, groepen, service-principals of beheerde identiteiten met behulp van Azure Resource Manager-sjablonen en op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -10,28 +10,28 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 01/21/2021
 ms.author: rolyon
-ms.openlocfilehash: 65b4ec369085e44cdffb0550e9eeaef0196cd35a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ba1df23b40de82a8ef901541884ef29ea0b504a1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100556014"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771871"
 ---
-# <a name="assign-azure-roles-using-azure-resource-manager-templates"></a>Azure-rollen toewijzen met behulp van Azure Resource Manager sjablonen
+# <a name="assign-azure-roles-using-azure-resource-manager-templates"></a>Azure-rollen toewijzen met behulp Azure Resource Manager sjablonen
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] Naast het gebruik van Azure PowerShell of de Azure CLI kunt u rollen toewijzen met behulp van [Azure Resource Manager-sjablonen](../azure-resource-manager/templates/template-syntax.md). Sjablonen kunnen nuttig zijn als u resources consistent en herhaaldelijk wilt implementeren. In dit artikel wordt beschreven hoe u rollen toewijst met behulp van sjablonen.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)]Naast het gebruik van Azure PowerShell of de Azure CLI kunt u rollen toewijzen met behulp [van Azure Resource Manager sjablonen.](../azure-resource-manager/templates/template-syntax.md) Sjablonen kunnen handig zijn als u resources consistent en herhaaldelijk wilt implementeren. In dit artikel wordt beschreven hoe u rollen toewijst met behulp van sjablonen.
 
 ## <a name="prerequisites"></a>Vereisten
 
 [!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
 
-## <a name="get-object-ids"></a>Object-Id's ophalen
+## <a name="get-object-ids"></a>Object-ID's op halen
 
-Als u een rol wilt toewijzen, moet u de ID opgeven van de gebruiker, groep of toepassing waaraan u de rol wilt toewijzen. De ID heeft de volgende indeling: `11111111-1111-1111-1111-111111111111` . U kunt de ID ophalen met behulp van de Azure Portal, Azure PowerShell of Azure CLI.
+Als u een rol wilt toewijzen, moet u de id opgeven van de gebruiker, groep of toepassing aan wie u de rol wilt toewijzen. De id heeft de volgende indeling: `11111111-1111-1111-1111-111111111111` . U kunt de id op de Azure Portal, Azure PowerShell of Azure CLI.
 
 ### <a name="user"></a>Gebruiker
 
-Als u de ID van een gebruiker wilt ophalen, kunt u de opdrachten [Get-AzADUser](/powershell/module/az.resources/get-azaduser) of [AZ AD User show](/cli/azure/ad/user#az-ad-user-show) gebruiken.
+U kunt de opdrachten [Get-AzADUser](/powershell/module/az.resources/get-azaduser) of az [ad user show](/cli/azure/ad/user#az_ad_user_show) gebruiken om de id van een gebruiker op te halen.
 
 ```azurepowershell
 $objectid = (Get-AzADUser -DisplayName "{name}").id
@@ -43,7 +43,7 @@ objectid=$(az ad user show --id "{email}" --query objectId --output tsv)
 
 ### <a name="group"></a>Groep
 
-Als u de ID van een groep wilt ophalen, kunt u de opdrachten [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup) of [AZ Ad Group show](/cli/azure/ad/group#az-ad-group-show) gebruiken.
+U kunt de opdrachten [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup) of az [ad group show](/cli/azure/ad/group#az_ad_group_show) gebruiken om de id van een groep op te halen.
 
 ```azurepowershell
 $objectid = (Get-AzADGroup -DisplayName "{name}").id
@@ -55,7 +55,7 @@ objectid=$(az ad group show --group "{name}" --query objectId --output tsv)
 
 ### <a name="managed-identities"></a>Beheerde identiteiten
 
-U kunt de ID van een beheerde identiteit ophalen met behulp van [Get-AzAdServiceprincipal](/powershell/module/az.resources/get-azadserviceprincipal) of [AZ AD SP](/cli/azure/ad/sp) -opdrachten.
+Als u de id van een beheerde identiteit wilt weten, kunt u de opdrachten [Get-AzAdServiceprincipal](/powershell/module/az.resources/get-azadserviceprincipal) of [az ad sp](/cli/azure/ad/sp) gebruiken.
 
 ```azurepowershell
 $objectid = (Get-AzADServicePrincipal -DisplayName <Azure resource name>).id
@@ -67,7 +67,7 @@ objectid=$(az ad sp list --display-name <Azure resource name> --query [].objectI
 
 ### <a name="application"></a>Toepassing
 
-Als u de ID wilt ophalen van een service-principal (identiteit die wordt gebruikt door een toepassing), kunt u de opdrachten [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) of [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) gebruiken. Gebruik voor een service-principal de object-ID en **niet** de toepassings-id.
+U kunt de opdrachten [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) of az ad sp list gebruiken om de id van een service-principal (identiteit die wordt gebruikt door een [toepassing) op te](/cli/azure/ad/sp#az_ad_sp_list) halen. Gebruik voor een service-principal de object-id en **niet de** toepassings-id.
 
 ```azurepowershell
 $objectid = (Get-AzADServicePrincipal -DisplayName "{name}").id
@@ -79,18 +79,18 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 
 ## <a name="assign-an-azure-role"></a>Een Azure-rol toewijzen
 
-In azure RBAC wijst u een rol toe om toegang te verlenen.
+In Azure RBAC wijst u een rol toe om toegang te verlenen.
 
-### <a name="resource-group-scope-without-parameters"></a>Bereik van de resource groep (zonder para meters)
+### <a name="resource-group-scope-without-parameters"></a>Bereik van resourcegroep (zonder parameters)
 
-In de volgende sjabloon ziet u een eenvoudige manier om een rol toe te wijzen. Sommige waarden worden opgegeven in de sjabloon. In de volgende sjabloon ziet u:
+De volgende sjabloon toont een eenvoudige manier om een rol toe te wijzen. Sommige waarden worden opgegeven in de sjabloon. In de volgende sjabloon wordt het volgende gedemonstreerd:
 
--  De rol van [lezer](built-in-roles.md#reader) toewijzen aan een gebruiker, groep of toepassing in een bereik van een resource groep
+-  De rol Lezer [toewijzen aan](built-in-roles.md#reader) een gebruiker, groep of toepassing in een resourcegroepbereik
 
 Als u de sjabloon wilt gebruiken, moet u het volgende doen:
 
 - Een nieuw JSON-bestand maken en de sjabloon kopiëren
-- Vervang door `<your-principal-id>` de id van een gebruiker, groep, beheerde identiteit of toepassing om de rol toe te wijzen aan
+- Vervang `<your-principal-id>` door de id van een gebruiker, groep, beheerde identiteit of toepassing om de rol aan toe te wijzen
 
 ```json
 {
@@ -110,7 +110,7 @@ Als u de sjabloon wilt gebruiken, moet u het volgende doen:
 }
 ```
 
-Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een resource groep met de naam ExampleGroup.
+Hier volgen een voorbeeld [van opdrachten voor New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [az deployment group create](/cli/azure/deployment/group#az_deployment_group_create) voor het starten van de implementatie in een resourcegroep met de naam ExampleGroup.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json
@@ -120,21 +120,21 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac
 az deployment group create --resource-group ExampleGroup --template-file rbac-test.json
 ```
 
-Hieronder ziet u een voor beeld van de toewijzing van de rol van lezers aan een gebruiker voor een resource groep na het implementeren van de sjabloon.
+Hieronder ziet u een voorbeeld van de roltoewijzing Lezer aan een gebruiker voor een resourcegroep na de implementatie van de sjabloon.
 
-![Roltoewijzing op het bereik van de resource groep](./media/role-assignments-template/role-assignment-template.png)
+![Roltoewijzing bij het bereik van de resourcegroep](./media/role-assignments-template/role-assignment-template.png)
 
-### <a name="resource-group-or-subscription-scope"></a>Resource groep of abonnements bereik
+### <a name="resource-group-or-subscription-scope"></a>Resourcegroep of abonnementsbereik
 
-De vorige sjabloon is niet zeer flexibel. De volgende sjabloon maakt gebruik van para meters en kan worden gebruikt in verschillende bereiken. In de volgende sjabloon ziet u:
+De vorige sjabloon is niet erg flexibel. De volgende sjabloon maakt gebruik van parameters en kan worden gebruikt op verschillende scopes. In de volgende sjabloon wordt het volgende gedemonstreerd:
 
-- Een rol toewijzen aan een gebruiker, groep of toepassing in een resource groep of abonnements bereik
-- De rol van eigenaar, bijdrager en lezer opgeven als een para meter
+- Een rol toewijzen aan een gebruiker, groep of toepassing in een resourcegroep of abonnementsbereik
+- De rollen Eigenaar, Inzender en Lezer opgeven als parameter
 
 Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 
-- De ID van een gebruiker, groep, beheerde identiteit of toepassing waaraan de rol moet worden toegewezen
-- Een unieke ID die wordt gebruikt voor de roltoewijzing, of u kunt de standaard-ID gebruiken
+- De id van een gebruiker, groep, beheerde identiteit of toepassing waar de rol aan moet worden toegewezen
+- Een unieke id die wordt gebruikt voor de roltoewijzing of u kunt de standaard-id gebruiken
 
 ```json
 {
@@ -186,9 +186,9 @@ Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 ```
 
 > [!NOTE]
-> Deze sjabloon is niet idempotent tenzij dezelfde `roleNameGuid` waarde wordt gegeven als een para meter voor elke implementatie van de sjabloon. Als er geen `roleNameGuid` wordt geleverd, wordt er standaard een nieuwe GUID gegenereerd voor elke implementatie en mislukken volgende implementaties met een `Conflict: RoleAssignmentExists` fout.
+> Deze sjabloon is niet idempotent, tenzij dezelfde waarde wordt opgegeven als `roleNameGuid` een parameter voor elke implementatie van de sjabloon. Als er geen is opgegeven, wordt standaard een nieuwe GUID gegenereerd voor elke implementatie en mislukken volgende `roleNameGuid` implementaties met een `Conflict: RoleAssignmentExists` fout.
 
-Het bereik van de roltoewijzing wordt bepaald op basis van het niveau van de implementatie. Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een bereik van een resource groep.
+Het bereik van de roltoewijzing wordt bepaald op basis van het niveau van de implementatie. Hier volgen een voorbeeld van de opdrachten [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [az deployment group create](/cli/azure/deployment/group#az_deployment_group_create) voor het starten van de implementatie in het bereik van een resourcegroep.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
@@ -198,7 +198,7 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac
 az deployment group create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
-Hier vindt u een voor beeld van [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) en [AZ Deployment sub Create](/cli/azure/deployment/sub#az_deployment_sub_create) opdrachten voor het starten van de implementatie op een abonnements bereik en het opgeven van de locatie.
+Hier volgen een voorbeeld van de opdrachten [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) en [az deployment sub create](/cli/azure/deployment/sub#az_deployment_sub_create) voor het starten van de implementatie in een abonnementsbereik en het opgeven van de locatie.
 
 ```azurepowershell
 New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
@@ -210,17 +210,17 @@ az deployment sub create --location centralus --template-file rbac-test.json --p
 
 ### <a name="resource-scope"></a>Resourcebereik
 
-Als u een rol wilt toewijzen op het niveau van een resource, stelt u de `scope` eigenschap van de roltoewijzing in op de naam van de resource.
+Als u een rol moet toewijzen op het niveau van een resource, stelt u de eigenschap voor de roltoewijzing in `scope` op de naam van de resource.
 
-In de volgende sjabloon ziet u:
+In de volgende sjabloon wordt het volgende gedemonstreerd:
 
 - Een nieuw opslagaccount maken
-- Een rol toewijzen aan een gebruiker, groep of toepassing in het bereik van het opslag account
-- De rol van eigenaar, bijdrager en lezer opgeven als een para meter
+- Een rol toewijzen aan een gebruiker, groep of toepassing in het bereik van het opslagaccount
+- De rollen Eigenaar, Inzender en Lezer opgeven als parameter
 
 Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 
-- De ID van een gebruiker, groep, beheerde identiteit of toepassing waaraan de rol moet worden toegewezen
+- De id van een gebruiker, groep, beheerde identiteit of toepassing om de rol aan toe te wijzen
 
 ```json
 {
@@ -291,7 +291,7 @@ Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 }
 ```
 
-Als u de vorige sjabloon wilt implementeren, gebruikt u de opdrachten van de resource groep. Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een resource bereik.
+Als u de vorige sjabloon wilt implementeren, gebruikt u de resourcegroepopdrachten. Hier volgen een voorbeeld van de opdrachten [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [az deployment group create](/cli/azure/deployment/group#az_deployment_group_create) voor het starten van de implementatie in een resourcebereik.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Contributor
@@ -301,25 +301,25 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac
 az deployment group create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Contributor
 ```
 
-Hieronder ziet u een voor beeld van de toewijzing van de rol Inzender aan een gebruiker van een opslag account na de implementatie van de sjabloon.
+Hieronder ziet u een voorbeeld van de roltoewijzing Inzender aan een gebruiker voor een opslagaccount nadat de sjabloon is geïmplementeerd.
 
-![Roltoewijzing bij resource bereik](./media/role-assignments-template/role-assignment-template-resource.png)
+![Roltoewijzing op resourcebereik](./media/role-assignments-template/role-assignment-template-resource.png)
 
-### <a name="new-service-principal"></a>Nieuwe Service-Principal
+### <a name="new-service-principal"></a>Nieuwe service-principal
 
-Als u een nieuwe Service-Principal maakt en een rol onmiddellijk probeert toe te wijzen aan die Service-Principal, kan die roltoewijzing in sommige gevallen mislukken. Als u bijvoorbeeld een nieuwe beheerde identiteit maakt en vervolgens probeert een rol toe te wijzen aan die Service-Principal in hetzelfde Azure Resource Manager sjabloon, kan de roltoewijzing mislukken. De oorzaak van deze fout is waarschijnlijk een replicatie vertraging. De service-principal wordt gemaakt in één regio. de roltoewijzing kan echter plaatsvinden in een andere regio waarvoor de Service-Principal nog niet is gerepliceerd.
+Als u een nieuwe service-principal maakt en onmiddellijk een rol probeert toe te wijzen aan die service-principal, kan die roltoewijzing in sommige gevallen mislukken. Als u bijvoorbeeld een nieuwe beheerde identiteit maakt en vervolgens probeert een rol toe te wijzen aan die service-principal in dezelfde Azure Resource Manager-sjabloon, kan de roltoewijzing mislukken. De reden voor deze fout is waarschijnlijk een replicatievertraging. De service-principal wordt in één regio gemaakt; De roltoewijzing kan echter plaatsvinden in een andere regio die de service-principal nog niet heeft gerepliceerd.
 
-Als u dit scenario wilt aanpakken, moet u de `principalType` eigenschap instellen op `ServicePrincipal` bij het maken van de roltoewijzing. U moet ook de `apiVersion` toewijzing van de roltoewijzing instellen op `2018-09-01-preview` of hoger.
+Als u dit scenario wilt aanpakken, moet u de eigenschap `principalType` instellen op bij het maken van de `ServicePrincipal` roltoewijzing. U moet ook de `apiVersion` van de roltoewijzing instellen op `2018-09-01-preview` of hoger.
 
-In de volgende sjabloon ziet u:
+In de volgende sjabloon wordt het volgende gedemonstreerd:
 
-- Een nieuwe beheerde ID voor de service-principal maken
+- Een nieuwe service-principal voor beheerde identiteiten maken
 - Het opgeven van de `principalType`
-- De rol van Inzender toewijzen aan de Service-Principal in een bereik van een resource groep
+- De rol Inzender toewijzen aan die service-principal in het bereik van een resourcegroep
 
 Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 
-- De basis naam van de beheerde identiteit, of u kunt de standaard teken reeks gebruiken
+- De basisnaam van de beheerde identiteit of u kunt de standaardreeks gebruiken
 
 ```json
 {
@@ -360,7 +360,7 @@ Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 }
 ```
 
-Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een bereik van een resource groep.
+Hier volgen een voorbeeld van de opdrachten [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [az deployment group create](/cli/azure/deployment/group#az_deployment_group_create) voor het starten van de implementatie op een resourcegroepbereik.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup2 -TemplateFile rbac-test.json
@@ -370,13 +370,13 @@ New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup2 -TemplateFile rba
 az deployment group create --resource-group ExampleGroup2 --template-file rbac-test.json
 ```
 
-Hieronder ziet u een voor beeld van de toewijzing van de rol Inzender aan een nieuwe beheerde ID service-principal na de implementatie van de sjabloon.
+Hieronder ziet u een voorbeeld van de roltoewijzing Inzender voor een nieuwe service-principal voor beheerde identiteit na de implementatie van de sjabloon.
 
-![Roltoewijzing voor een nieuwe beheerde ID service-principal](./media/role-assignments-template/role-assignment-template-msi.png)
+![Roltoewijzing voor een nieuwe service-principal voor beheerde identiteiten](./media/role-assignments-template/role-assignment-template-msi.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Quickstart: ARM-sjablonen maken en implementeren met behulp van Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
 - [Informatie over de structuur en de syntaxis van ARM-sjablonen](../azure-resource-manager/templates/template-syntax.md)
-- [Resource groepen en-resources op abonnements niveau maken](../azure-resource-manager/templates/deploy-to-subscription.md)
+- [Resourcegroepen en resources maken op abonnementsniveau](../azure-resource-manager/templates/deploy-to-subscription.md)
 - [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/?term=rbac)

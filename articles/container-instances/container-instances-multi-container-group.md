@@ -1,32 +1,32 @@
 ---
-title: Zelf studie-een groeps sjabloon met meerdere containers implementeren
-description: In deze zelf studie leert u hoe u een container groep met meerdere containers in Azure Container Instances kunt implementeren met behulp van een Azure Resource Manager sjabloon met de Azure CLI.
+title: 'Zelfstudie: Een groep met meerdere containers implementeren - sjabloon'
+description: In deze zelfstudie leert u hoe u een containergroep met meerdere containers in Azure Container Instances implementeert met behulp van een Azure Resource Manager-sjabloon met de Azure CLI.
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: bc956bed8324398c2d60f4641cd0bcb821fb51c2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 93ab139342795634a968cd538672e0e1b9bb08ae
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93091341"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107763897"
 ---
-# <a name="tutorial-deploy-a-multi-container-group-using-a-resource-manager-template"></a>Zelf studie: een groep met meerdere containers implementeren met behulp van een resource manager-sjabloon
+# <a name="tutorial-deploy-a-multi-container-group-using-a-resource-manager-template"></a>Zelfstudie: Een groep met meerdere containers implementeren met behulp van Resource Manager sjabloon
 
 > [!div class="op_single_selector"]
 > * [YAML](container-instances-multi-container-yaml.md)
 > * [Resource Manager](container-instances-multi-container-group.md)
 
-Azure Container Instances ondersteunt de implementatie van meerdere containers op één host met behulp van een [container groep](container-instances-container-groups.md). Een container groep is handig bij het bouwen van een sollicitatie stick voor logboek registratie, bewaking of andere configuraties waarbij een service een tweede gekoppelde procedure nodig heeft.
+Azure Container Instances ondersteunt de implementatie van meerdere containers op één host met behulp van een [containergroep](container-instances-container-groups.md). Een containergroep is handig bij het bouwen van een sidecar voor toepassingen voor logboekregistratie, bewaking of een andere configuratie waarbij een service een tweede gekoppeld proces nodig heeft.
 
-In deze zelf studie voert u de stappen uit voor het uitvoeren van een eenvoudige configuratie voor twee containers door een Azure Resource Manager-sjabloon te implementeren met behulp van de Azure CLI. In deze zelfstudie leert u procedures om het volgende te doen:
+In deze zelfstudie volgt u de stappen voor het uitvoeren van een eenvoudige sidecar-configuratie met twee containers door een Azure Resource Manager implementeren met behulp van de Azure CLI. In deze zelfstudie leert u procedures om het volgende te doen:
 
 > [!div class="checklist"]
-> * Een sjabloon voor een groep met meerdere containers configureren
-> * De container groep implementeren
-> * De logboeken van de containers weer geven
+> * Een groepssjabloon met meerdere containers configureren
+> * De containergroep implementeren
+> * De logboeken van de containers weergeven
 
-Een resource manager-sjabloon kan gemakkelijk worden aangepast voor scenario's waarin u aanvullende Azure-service bronnen (bijvoorbeeld een Azure Files share of een virtueel netwerk) moet implementeren met de container groep. 
+Een Resource Manager-sjabloon kan direct worden aangepast voor scenario's waarin u extra Azure-serviceresources (bijvoorbeeld een Azure Files-share of een virtueel netwerk) met de containergroep moet implementeren. 
 
 > [!NOTE]
 > Groepen met meerdere containers zijn momenteel beperkt tot Linux-containers. 
@@ -37,13 +37,13 @@ Een resource manager-sjabloon kan gemakkelijk worden aangepast voor scenario's w
 
 ## <a name="configure-a-template"></a>Een sjabloon configureren
 
-Begin door de volgende JSON te kopiëren naar een nieuw bestand met de naam `azuredeploy.json` . In Azure Cloud Shell kunt u Visual Studio code gebruiken om het bestand in uw werkmap te maken:
+Begin met het kopiëren van de volgende JSON naar een nieuw bestand met de naam `azuredeploy.json` . In Azure Cloud Shell kunt u Visual Studio Code gebruiken om het bestand in uw werkmap te maken:
 
 ```
 code azuredeploy.json
 ```
 
-In deze resource manager-sjabloon wordt een container groep met twee containers, een openbaar IP-adres en twee blootgestelde poorten gedefinieerd. De eerste container in de groep voert een Internet gerichte webtoepassing uit. De tweede container, de zijspan wagen, maakt een HTTP-aanvraag voor de hoofd webtoepassing via het lokale netwerk van de groep.
+Deze Resource Manager definieert een containergroep met twee containers, een openbaar IP-adres en twee openstaat poorten. Met de eerste container in de groep wordt een internet-gerichte webtoepassing uitgevoerd. De tweede container, de sidecar, maakt een HTTP-aanvraag naar de hoofdwebtoepassing via het lokale netwerk van de groep.
 
 ```JSON
 {
@@ -131,7 +131,7 @@ In deze resource manager-sjabloon wordt een container groep met twee containers,
 }
 ```
 
-Als u een REGI ster van een persoonlijke container installatie kopie wilt gebruiken, voegt u een object toe aan het JSON-document met de volgende indeling. Zie voor een voorbeeld implementatie van deze configuratie de documentatie over de [ACI Resource Manager-sjabloon][template-reference] .
+Als u een privéregister met containerafbeeldingen wilt gebruiken, voegt u een -object toe aan het JSON-document met de volgende indeling. Zie de referentiedocumentatie [ACI][template-reference] Resource Manager-sjabloon voor een voorbeeld van de implementatie van deze configuratie.
 
 ```JSON
 "imageRegistryCredentials": [
@@ -151,7 +151,7 @@ Een resourcegroep maken met de opdracht [az group create][az-group-create].
 az group create --name myResourceGroup --location eastus
 ```
 
-Implementeer de sjabloon met de opdracht [AZ Deployment Group Create][az-deployment-group-create] .
+Implementeer de sjabloon met de [opdracht az deployment group create.][az-deployment-group-create]
 
 ```azurecli-interactive
 az deployment group create --resource-group myResourceGroup --template-file azuredeploy.json
@@ -159,15 +159,15 @@ az deployment group create --resource-group myResourceGroup --template-file azur
 
 U ontvangt binnen enkele seconden een eerste reactie van Azure.
 
-## <a name="view-deployment-state"></a>Implementatie status weer geven
+## <a name="view-deployment-state"></a>Implementatietoestand weergeven
 
-Als u de status van de implementatie wilt weer geven, gebruikt u de volgende opdracht [AZ container show][az-container-show] :
+Als u de status van de implementatie wilt weergeven, gebruikt u de [volgende opdracht az container show:][az-container-show]
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name myContainerGroup --output table
 ```
 
-Als u de actieve toepassing wilt bekijken, gaat u naar het IP-adres in uw browser. Het IP-adres is bijvoorbeeld `52.168.26.124` in deze voorbeeld uitvoer:
+Als u de toepassing die wordt uitgevoerd wilt weergeven, gaat u naar het IP-adres in uw browser. Het IP-adres staat `52.168.26.124` bijvoorbeeld in deze voorbeelduitvoer:
 
 ```console
 Name              ResourceGroup    Status    Image                                                                                               IP:ports              Network    CPU/Memory       OsType    Location
@@ -177,7 +177,7 @@ myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tut
 
 ## <a name="view-container-logs"></a>Containerlogboeken ophalen
 
-Bekijk de logboek uitvoer van een container met behulp van de opdracht [AZ container logs][az-container-logs] . Het `--container-name` argument geeft de container aan waaruit logboeken moeten worden opgehaald. In dit voor beeld `aci-tutorial-app` is de container opgegeven.
+Bekijk de logboekuitvoer van een container met behulp van [de opdracht az container logs.][az-container-logs] Met `--container-name` het argument geeft u de container op waaruit logboeken moeten worden op halen. In dit voorbeeld wordt `aci-tutorial-app` de container opgegeven.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-app
@@ -187,12 +187,12 @@ Uitvoer:
 
 ```console
 listening on port 80
-::1 - - [02/Jul/2020:23:17:48 +0000] "HEAD / HTTP/1.1&quot; 200 1663 &quot;-&quot; &quot;curl/7.54.0"
-::1 - - [02/Jul/2020:23:17:51 +0000] "HEAD / HTTP/1.1&quot; 200 1663 &quot;-&quot; &quot;curl/7.54.0"
-::1 - - [02/Jul/2020:23:17:54 +0000] "HEAD / HTTP/1.1&quot; 200 1663 &quot;-&quot; &quot;curl/7.54.0"
+::1 - - [02/Jul/2020:23:17:48 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [02/Jul/2020:23:17:51 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [02/Jul/2020:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
-Als u de logboeken voor de container voor de zijspan wagen wilt weer geven, voert u een vergelijk bare opdracht uit die de `aci-tutorial-sidecar` container opgeeft.
+Als u de logboeken voor de sidecar-container wilt zien, moet u een vergelijkbare opdracht uitvoeren om de container op te `aci-tutorial-sidecar` geven.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-sidecar
@@ -218,26 +218,26 @@ Date: Thu, 02 Jul 2020 20:36:41 GMT
 Connection: keep-alive
 ```
 
-Zoals u ziet, maakt de zijspan wagen regel matig een HTTP-aanvraag voor de hoofd webtoepassing via het lokale netwerk van de groep om ervoor te zorgen dat deze wordt uitgevoerd. Dit voor beeld van een zijspan wagen kan worden uitgebreid om een waarschuwing te activeren als het een andere HTTP-antwoord code dan heeft ontvangen `200 OK` .
+Zoals u ziet, maakt de sidecar periodiek een HTTP-aanvraag naar de hoofdwebtoepassing via het lokale netwerk van de groep om ervoor te zorgen dat deze wordt uitgevoerd. Dit sidecar-voorbeeld kan worden uitgebreid om een waarschuwing te activeren als deze een andere HTTP-antwoordcode dan heeft `200 OK` ontvangen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelf studie hebt u een Azure Resource Manager sjabloon gebruikt om een groep met meerdere containers in Azure Container Instances te implementeren. U hebt geleerd hoe u:
+In deze zelfstudie hebt u een Azure Resource Manager gebruikt voor het implementeren van een groep met meerdere containers in Azure Container Instances. U hebt geleerd hoe u:
 
 > [!div class="checklist"]
-> * Een sjabloon voor een groep met meerdere containers configureren
-> * De container groep implementeren
-> * De logboeken van de containers weer geven
+> * Een groepssjabloon met meerdere containers configureren
+> * De containergroep implementeren
+> * De logboeken van de containers weergeven
 
-Zie [Azure Resource Manager sjablonen voor Azure container instances](container-instances-samples-rm.md)voor aanvullende sjabloon voorbeelden.
+Zie voor meer voorbeelden van [sjablonen Azure Resource Manager sjablonen voor Azure Container Instances.](container-instances-samples-rm.md)
 
-U kunt ook een groep met meerdere containers opgeven met behulp van een [yaml-bestand](container-instances-multi-container-yaml.md). Omdat de indeling van de YAML beknoptere aard is, is implementatie met een YAML-bestand een goede keuze wanneer uw implementatie alleen container instanties bevat.
+U kunt ook een groep met meerdere containers opgeven met behulp van een [YAML-bestand](container-instances-multi-container-yaml.md). Vanwege de beknoptere aard van de YAML-indeling is implementatie met een YAML-bestand een goede keuze wanneer uw implementatie alleen container-exemplaren bevat.
 
 
 <!-- LINKS - Internal -->
 [aci-tutorial]: ./container-instances-tutorial-prepare-app.md
-[az-container-logs]: /cli/azure/container#az-container-logs
-[az-container-show]: /cli/azure/container#az-container-show
-[az-group-create]: /cli/azure/group#az-group-create
-[az-deployment-group-create]: /cli/azure/deployment/group#az-deployment-group-create
+[az-container-logs]: /cli/azure/container#az_container_logs
+[az-container-show]: /cli/azure/container#az_container_show
+[az-group-create]: /cli/azure/group#az_group_create
+[az-deployment-group-create]: /cli/azure/deployment/group#az_deployment_group_create
 [template-reference]: /azure/templates/microsoft.containerinstance/containergroups

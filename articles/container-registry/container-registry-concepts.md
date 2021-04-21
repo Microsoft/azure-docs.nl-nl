@@ -1,76 +1,76 @@
 ---
-title: Over registers, opslag plaatsen, afbeeldingen en artefacten
-description: Inleiding tot de belangrijkste concepten van Azure-container registers, opslag plaatsen, container installatie kopieën en andere artefacten.
+title: Over registers, opslagplaatsen, afbeeldingen en artefacten
+description: Inleiding tot de belangrijkste concepten van Azure-containerregisters, opslagplaatsen, containerafbeeldingen en andere artefacten.
 ms.topic: article
 ms.date: 01/29/2021
-ms.openlocfilehash: 27c4604820dda50686b6cb3f36e69b38283750c3
-ms.sourcegitcommit: 77d7639e83c6d8eb6c2ce805b6130ff9c73e5d29
+ms.openlocfilehash: 64ab3812b3f23a7b3a480d3530c82bd39f2d29a5
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106381919"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784079"
 ---
-# <a name="about-registries-repositories-and-artifacts"></a>Over registers, opslag plaatsen en artefacten
+# <a name="about-registries-repositories-and-artifacts"></a>Over registers, opslagplaatsen en artefacten
 
-In dit artikel worden de belangrijkste concepten van container registers, opslag plaatsen en container installatie kopieën en gerelateerde artefacten geïntroduceerd. 
+In dit artikel worden de belangrijkste concepten van containerregisters, opslagplaatsen en containerafbeeldingen en gerelateerde artefacten beschreven. 
 
-:::image type="content" source="media/container-registry-concepts/registry-elements.png" alt-text="REGI ster, opslag plaatsen en artefacten":::
+:::image type="content" source="media/container-registry-concepts/registry-elements.png" alt-text="Register, opslagplaatsen en artefacten":::
 
 ## <a name="registry"></a>Register
 
-Een container *register* is een service waarmee container installatie kopieën en gerelateerde artefacten worden opgeslagen en gedistribueerd. Docker hub is een voor beeld van een openbaar container register dat fungeert als een algemene catalogus van docker-container installatie kopieën. Azure Container Registry biedt gebruikers rechtstreeks controle over hun container inhoud, met geïntegreerde verificatie, [geo-replicatie](container-registry-geo-replication.md) die wereld wijde distributie en betrouw baarheid ondersteunt voor implementaties van netwerken, [virtuele netwerken met persoonlijke koppelingen](container-registry-private-link.md), [Label vergrendeling](container-registry-image-lock.md)en vele andere verbeterde functies. 
+Een *containerregister* is een service die containerafbeeldingen en gerelateerde artefacten opseert en distribueert. Docker Hub is een voorbeeld van een openbaar containerregister dat fungeert als een algemene catalogus met Docker-containerafbeeldingen. Azure Container Registry biedt gebruikers directe controle over hun containerinhoud, met geïntegreerde verificatie, [geo-replicatie](container-registry-geo-replication.md) ter ondersteuning van wereldwijde distributie en betrouwbaarheid voor implementaties dicht bij het netwerk, configuratie van virtuele netwerken [met Private Link,](container-registry-private-link.md) [tagvergrendeling](container-registry-image-lock.md)en vele andere verbeterde functies. 
 
-Naast docker-compatibele container installatie kopieën ondersteunt Azure Container Registry diverse [inhouds artefacten](container-registry-image-formats.md) , waaronder helm-grafieken en OCI-afbeeldings indelingen (open container Initiative).
+Naast met Docker compatibele containerafbeeldingen biedt Azure Container Registry [](container-registry-image-formats.md) ondersteuning voor diverse inhoudsartefacten, waaronder Helm-grafieken en OCI-afbeeldingsindelingen (Open Container Initiative).
 
 ## <a name="repository"></a>Opslagplaats
 
-Een *opslag plaats* is een verzameling container installatie kopieën of andere artefacten in een REGI ster met dezelfde naam, maar met verschillende labels. De volgende drie installatie kopieën bevinden zich bijvoorbeeld in de `acr-helloworld` opslag plaats:
+Een *opslagplaats* is een verzameling containerafbeeldingen of andere artefacten in een register met dezelfde naam, maar met verschillende tags. De volgende drie afbeeldingen staan bijvoorbeeld in de `acr-helloworld` opslagplaats:
 
-- *ACR-HelloWorld: nieuwste*
-- *ACR-HelloWorld: v1*
-- *ACR-HelloWorld: v2*
+- *acr-helloworld:latest*
+- *acr-helloworld:v1*
+- *acr-helloworld:v2*
 
-Opslagplaats namen kunnen ook [naam ruimten](container-registry-best-practices.md#repository-namespaces)bevatten. Met naam ruimten kunt u verwante opslag plaatsen en eigendoms artefacten in uw organisatie identificeren met door komma's gescheiden namen. Het REGI ster beheert echter alle opslag plaatsen onafhankelijk, niet als een-hiërarchie. Bijvoorbeeld:
+Namen van opslagplaatsen kunnen ook [naamruimten bevatten.](container-registry-best-practices.md#repository-namespaces) Met naamruimten kunt u gerelateerde opslagplaatsen en het eigendom van artefacten in uw organisatie identificeren met behulp van namen met slash-scheidingstekens. Het register beheert echter alle opslagplaatsen onafhankelijk, niet als een hiërarchie. Bijvoorbeeld:
 
-- *Marketing/campaign10-18/Web: v2*
-- *Marketing-campaign10-18/API: v3*
-- *Marketing-campaign10-18/Email-Sender: v2*
-- *product-retouren/webverzending: 20180604*
-- *product-retourneert/legacy-integrator: 20180715*
+- *marketing/campaign10-18/web:v2*
+- *marketing/campaign10-18/api:v3*
+- *marketing/campaign10-18/email-sender:v2*
+- *product-returns/web-submission:20180604*
+- *product-returns/legacy-integrator:20180715*
 
-Opslagplaats namen mogen alleen bestaan uit kleine letters, punten, streepjes, onderstrepings tekens en slashes. 
+Namen van opslagplaatsen kunnen alleen kleine alfanumerieke tekens, punten, streepjes, onderstrepingstekens en slashes bevatten. 
 
-Zie voor de volledige naamgevings regels voor opslag plaatsen de [specificatie open container Initiative distributie](https://github.com/docker/distribution/blob/master/docs/spec/api.md#overview).
+Zie Open Container Initiative Distribution Specification (Specificatie van Open Container Initiative Distribution) voor volledige naamgevingsregels [voor opslagplaatsen.](https://github.com/docker/distribution/blob/master/docs/spec/api.md#overview)
 
 ## <a name="artifact"></a>Artefact
 
-Een container installatie kopie of ander artefact in een REGI ster is gekoppeld aan een of meer tags, heeft een of meer lagen en wordt geïdentificeerd door een manifest. Meer informatie over hoe deze onderdelen aan elkaar zijn gerelateerd, kan u helpen uw REGI ster effectief te beheren.
+Een containerafbeelding of ander artefact in een register is gekoppeld aan een of meer tags, heeft een of meer lagen en wordt geïdentificeerd door een manifest. Inzicht in hoe deze onderdelen zich tot elkaar verhouden, kan u helpen uw register effectief te beheren.
 
 ### <a name="tag"></a>Tag
 
-De- *tag* voor een afbeelding of ander artefact specificeert de versie. Een enkel artefact in een opslag plaats kan worden toegewezen aan een of meer tags en kan ook ' zonder Tags ' zijn. Dat wil zeggen dat u alle tags uit een installatie kopie kunt verwijderen terwijl de gegevens van de afbeelding (de lagen) in het REGI ster blijven.
+De *tag* voor een afbeelding of een ander artefact geeft de versie aan. Eén artefact in een opslagplaats kan worden toegewezen aan een of meer tags en kan ook 'zonder tag' zijn. Dat wil zeggen dat u alle tags uit een afbeelding kunt verwijderen, terwijl de gegevens van de afbeelding (de lagen) in het register blijven.
 
-De opslag plaats (of opslag plaats en naam ruimte) plus een tag definieert de naam van een afbeelding. U kunt een installatie kopie pushen en ophalen door de naam op te geven in de push-of pull-bewerking. De tag `latest` wordt standaard gebruikt als u er geen opgeeft in uw docker-opdrachten.
+De opslagplaats (of opslagplaats en naamruimte) plus een tag definieert de naam van een afbeelding. U kunt een afbeelding pushen en pullen door de naam op te geven in de push- of pull-bewerking. De tag wordt standaard gebruikt als u er geen op geeft `latest` in uw Docker-opdrachten.
 
-Hoe u container installatie kopieën labelt, wordt door uw scenario's begeleid om ze te ontwikkelen of te implementeren. Stabiele Tags worden bijvoorbeeld aanbevolen voor het onderhouden van uw basis installatie kopieën en unieke labels voor het implementeren van installatie kopieën. Zie voor meer informatie [aanbevelingen voor het coderen en versie beheer van container installatie kopieën](container-registry-image-tag-version.md).
+Hoe u containerafbeeldingen tagt, wordt begeleid door uw scenario's om ze te ontwikkelen of te implementeren. Stabiele tags worden bijvoorbeeld aanbevolen voor het onderhouden van uw basisafbeeldingen en unieke tags voor het implementeren van afbeeldingen. Zie Recommendations for [tagging and versioning container images (Aanbevelingen voor het taggen en versieren van containerafbeeldingen) voor meer informatie.](container-registry-image-tag-version.md)
 
-Raadpleeg de [docker-documentatie](https://docs.docker.com/engine/reference/commandline/tag/)voor de naamgevings regels voor labels.
+Zie de Docker-documentatie voor [naamgevingsregels voor tags.](https://docs.docker.com/engine/reference/commandline/tag/)
 
 ### <a name="layer"></a>Laag
 
-Container installatie kopieën en artefacten bestaan uit een of meer *lagen*. Met verschillende typen artefacten worden lagen verschillend gedefinieerd. In een docker-container installatie kopie correspondeert bijvoorbeeld elke laag met een regel in de Dockerfile die de afbeelding definieert:
+Containerafbeeldingen en artefacten zijn uit een of meer *lagen.* Verschillende artefacttypen definiëren lagen anders. In een Docker-containerafbeelding komt elke laag bijvoorbeeld overeen met een regel in de Dockerfile die de afbeelding definieert:
 
-:::image type="content" source="media/container-registry-concepts/container-image-layers.png" alt-text="Lagen van een container installatie kopie":::
+:::image type="content" source="media/container-registry-concepts/container-image-layers.png" alt-text="Lagen van een containerafbeelding":::
 
-Artefacten in een register share gang bare lagen, waardoor de efficiëntie van opslag wordt verhoogd. Het is bijvoorbeeld mogelijk dat verschillende installatie kopieën in verschillende opslag plaatsen een gemeen schappelijke ASP.NET Core base-laag hebben, maar er wordt slechts één exemplaar van die laag opgeslagen in het REGI ster. Laag delen optimaliseert ook laag distributie naar knoop punten, met meerdere artefacten die algemene lagen delen. Als een afbeelding die al in een knoop punt staat, de laag ASP.NET Core heeft, wordt de laag door de volgende pull-bewerking van een andere afbeelding die naar dezelfde laag verwijst, niet naar het knoop punt overgedragen. In plaats daarvan verwijst deze naar de laag die al bestaat op het knoop punt.
+Artefacten in een register delen gemeenschappelijke lagen, waardoor de efficiëntie van de opslag wordt verbeterd. Verschillende afbeeldingen in verschillende opslagplaatsen kunnen bijvoorbeeld een gemeenschappelijke ASP.NET Core-basislaag hebben, maar er wordt slechts één kopie van die laag opgeslagen in het register. Delen van lagen optimaliseert ook laagdistributie naar knooppunten, met meerdere artefacten die algemene lagen delen. Als een afbeelding die al op een knooppunt staat, de laag ASP.NET Core als basis bevat, wordt de laag niet door de volgende pull van een andere afbeelding die verwijst naar dezelfde laag naar het knooppunt. In plaats daarvan verwijst deze naar de laag die al op het knooppunt staat.
 
-Lagen worden niet gedeeld door de verschillende registers om te zorgen voor veilige isolatie en bescherming tegen de mogelijke laag bewerking.
+Lagen worden niet gedeeld tussen registers om veilige isolatie en bescherming te bieden tegen mogelijke laagbewerkingen.
 
 ### <a name="manifest"></a>Manifest
 
-Elke container installatie kopie of artefact die naar een container register is gepusht, is gekoppeld aan een *manifest*. Het manifest dat door het REGI ster wordt gegenereerd wanneer de inhoud wordt gepusht, identificeert de artefacten uniek en geeft de lagen aan. U kunt de manifesten voor een opslag plaats weer geven met de Azure CLI [-opdracht AZ ACR repository show-manifests][az-acr-repository-show-manifests]. 
+Elke container-afbeelding of elk artefact dat naar een containerregister wordt pusht, is gekoppeld aan een *manifest*. Het manifest, dat door het register wordt gegenereerd wanneer de inhoud wordt pushen, identificeert de artefacten op unieke manier en specificeert de lagen. U kunt de manifesten voor een opslagplaats weer geven met de Azure CLI-opdracht [az acr repository show-manifests.][az-acr-repository-show-manifests] 
 
-Een basis manifest voor een Linux- `hello-world` installatie kopie ziet er ongeveer als volgt uit:
+Een basismanifest voor een `hello-world` Linux-afbeelding ziet er ongeveer als volgt uit:
 
   ```json
   {
@@ -91,13 +91,13 @@ Een basis manifest voor een Linux- `hello-world` installatie kopie ziet er ongev
   }
   ```
 
-U kunt de manifesten voor een opslag plaats weer geven met de Azure CLI [-opdracht AZ ACR repository show-manifests][az-acr-repository-show-manifests]:
+U kunt de manifesten voor een opslagplaats weer geven met de Azure CLI-opdracht [az acr repository show-manifests][az-acr-repository-show-manifests]:
 
 ```azurecli
 az acr repository show-manifests --name <acrName> --repository <repositoryName>
 ```
 
-Geef bijvoorbeeld de manifesten voor de opslag plaats ' ACR-HelloWorld ' weer:
+Vermeld bijvoorbeeld de manifesten voor de opslagplaats 'acr-helloworld':
 
 ```azurecli
 az acr repository show-manifests --name myregistry --repository acr-helloworld
@@ -130,31 +130,31 @@ az acr repository show-manifests --name myregistry --repository acr-helloworld
 ]
 ```
 
-### <a name="manifest-digest"></a>Manifest Digest
+### <a name="manifest-digest"></a>Manifest digest
 
-Manifesten worden geïdentificeerd aan de hand van een unieke SHA-256-Hash of met de samen vatting van het *manifest*. Elke afbeelding of elk afzonderlijk artefact: of het label is gelabeld of niet, wordt geïdentificeerd door de samen vatting. De Digest-waarde is uniek, zelfs als de laag gegevens van het artefact gelijk zijn aan die van een ander artefact. Dit mechanisme biedt u de mogelijkheid om herhaaldelijk gelabelde installatie kopieën naar een REGI ster te pushen. U kunt bijvoorbeeld herhaaldelijk `myimage:latest` naar uw REGI ster pushen zonder fout omdat elke installatie kopie wordt geïdentificeerd door de unieke samen vatting.
+Manifesten worden geïdentificeerd door een unieke SHA-256-hash of *manifest digest.* Elke afbeelding of elk artefact, ongeacht of deze is getagd of niet, wordt geïdentificeerd door de samenvatting ervan. De samenvattingswaarde is uniek, zelfs als de laaggegevens van het artefact identiek zijn aan die van een ander artefact. Met dit mechanisme kunt u herhaaldelijk identiek getagde afbeeldingen naar een register pushen. U kunt bijvoorbeeld herhaaldelijk zonder fouten naar uw register pushen, omdat elke afbeelding `myimage:latest` wordt geïdentificeerd door de unieke samenvatting.
 
-U kunt een artefact van een REGI ster ophalen door de samen vatting op te geven in de pull-bewerking. Sommige systemen kunnen worden geconfigureerd om te worden opgehaald door Digest, omdat hiermee wordt gegarandeerd dat de versie van de installatie kopie wordt opgehaald, zelfs als een afbeelding met identieke labels later naar het REGI ster wordt gepusht.
+U kunt een artefact uit een register halen door de samenvatting ervan op te geven in de pull-bewerking. Sommige systemen kunnen worden geconfigureerd voor pull door digest, omdat hiermee wordt gegarandeerd dat de versie van de afbeelding wordt getrokken, zelfs als een identiek getagde afbeelding later naar het register wordt pusht.
 
 > [!IMPORTANT]
-> Als u herhaaldelijk gewijzigde artefacten met identieke Tags pusht, kunt u ' zwevende '-artefacten maken die niet zijn gelabeld, maar nog steeds ruimte in uw REGI ster gebruiken. Niet-gelabelde afbeeldingen worden niet weer gegeven in de Azure CLI of in het Azure Portal wanneer u afbeeldingen op label lijst of weer geven. De lagen zijn echter nog steeds aanwezig en gebruiken ruimte in het REGI ster. Als u een niet-gecodeerde afbeelding verwijdert, maakt u register ruimte vrij wanneer het manifest de enige is, of het laatste, dat verwijst naar een bepaalde laag. Zie [container installatie kopieën in azure container Registry verwijderen](container-registry-delete.md)voor meer informatie over het vrijmaken van ruimte die wordt gebruikt door niet-gecodeerde installatie kopieën.
+> Als u herhaaldelijk gewijzigde artefacten met identieke tags pusht, kunt u 'zwevende' artefacten maken die niet zijn gelabeld, maar nog steeds ruimte in uw register verbruiken. Afbeeldingen zonder tag worden niet weergegeven in de Azure CLI of in de Azure Portal wanneer u afbeeldingen per tag welijst of bekijkt. De lagen zijn echter nog steeds aanwezig en verbruiken ruimte in uw register. Als u een niet-getagged afbeelding wilt verwijderen, wordt er registerruimte vrij gemaakt wanneer het manifest de enige of de laatste is, die verwijst naar een bepaalde laag. Zie Containerafbeeldingen verwijderen in Azure Container Registry voor meer informatie over het vrij maken van ruimte die wordt gebruikt [door afbeeldingen zonder Azure Container Registry.](container-registry-delete.md)
 
-## <a name="addressing-an-artifact"></a>Een artefact adresseren
+## <a name="addressing-an-artifact"></a>Een artefact aanpakken
 
-Als u een register artefact wilt adresseren voor push-en pull-bewerkingen met docker of andere client hulpprogramma's, combineert u de volledige naam van het REGI ster, de naam van de opslag plaats (inclusief pad naar de naam ruimte) en een artefact code of manifest Digest. Zie de voor gaande secties voor uitleg over deze voor waarden.
+Als u een registerartefact wilt aanpakken voor push- en pull-bewerkingen met Docker of andere clienthulpprogramma's, combineert u de volledig gekwalificeerde registernaam, de naam van de opslagplaats (inclusief het naamruimtepad, indien van toepassing) en een artefacttag of manifest digest. Zie de vorige secties voor uitleg over deze termen.
 
-  **Adres op label**: `[loginServerUrl]/[repository][:tag]`
+  **Adres op tag**: `[loginServerUrl]/[repository][:tag]`
     
-  **Adres per Digest**: `[loginServerUrl]/[repository@sha256][:digest]`  
+  **Adres per samenvatting:**`[loginServerUrl]/[repository@sha256][:digest]`  
 
-Wanneer u docker of andere client hulpprogramma's gebruikt om artefacten naar een Azure container Registry te halen of pushen, gebruikt u de volledig gekwalificeerde URL van het REGI ster, ook wel de naam van de *aanmeldings server* genoemd. In de Azure-Cloud bevindt de volledig gekwalificeerde URL van een Azure container Registry zich in de indeling `myregistry.azurecr.io` (alle kleine letters).
+Wanneer u Docker of andere clienthulpprogramma's gebruikt om artefacten op te halen of te pushen naar een Azure-containerregister, gebruikt u de volledig gekwalificeerde URL van het register, ook wel de naam van de *aanmeldingsserver* genoemd. In de Azure-cloud heeft de volledig gekwalificeerde URL van een Azure-containerregister de indeling `myregistry.azurecr.io` (in kleine letters).
 
 > [!NOTE]
-> * U kunt geen poort nummer opgeven in de URL van de aanmeldings server van het REGI ster, zoals `myregistry.azurecr.io:443` . 
-> * Het label `latest` wordt standaard gebruikt als u geen tag opgeeft in uw opdracht.  
+> * U kunt geen poortnummer opgeven in de aanmeldingsserver-URL van het register, zoals `myregistry.azurecr.io:443` . 
+> * De tag wordt standaard gebruikt als u geen tag op te geven `latest` in de opdracht.  
 
    
-### <a name="push-by-tag"></a>Push by-tag
+### <a name="push-by-tag"></a>Pushen per tag
 
 Voorbeelden: 
 
@@ -162,13 +162,13 @@ Voorbeelden:
 
    `docker push myregistry.azurecr.io/marketing/email-sender`
 
-### <a name="pull-by-tag"></a>Pull by-tag
+### <a name="pull-by-tag"></a>Pull by tag
 
 Voorbeeld: 
 
   `docker pull myregistry.azurecr.io/marketing/campaign10-18/email-sender:v2`
 
-### <a name="pull-by-manifest-digest"></a>Pull by manifest Digest
+### <a name="pull-by-manifest-digest"></a>Pull by manifest digest
 
 
 Voorbeeld:
@@ -179,11 +179,9 @@ Voorbeeld:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [register opslag](container-registry-storage.md) en [ondersteunde inhouds indelingen](container-registry-image-formats.md) in azure container Registry.
+Meer informatie over [registeropslag en](container-registry-storage.md) [ondersteunde inhoudsindelingen](container-registry-image-formats.md) in Azure Container Registry.
 
-Meer informatie over het [pushen en ophalen van installatie kopieën](container-registry-get-started-docker-cli.md) van Azure container Registry.
+Meer informatie over het [pushen en pullen van afbeeldingen](container-registry-get-started-docker-cli.md) Azure Container Registry.
 
 <!-- LINKS - Internal -->
-[az-acr-repository-show-manifests]: /cli/azure/acr/repository#az-acr-repository-show-manifests
-
-
+[az-acr-repository-show-manifests]: /cli/azure/acr/repository#az_acr_repository_show_manifests

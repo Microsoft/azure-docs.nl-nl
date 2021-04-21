@@ -1,57 +1,57 @@
 ---
-title: Azure Red Hat open Shift v4. x configureren met container Insights | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u bewaking configureert voor een Kubernetes-cluster met Azure Monitor dat wordt gehost op Azure Red Hat open Shift versie 4 of hoger.
+title: Configureer Azure Red Hat OpenShift v4.x met Container Insights | Microsoft Docs
+description: In dit artikel wordt beschreven hoe u bewaking configureert voor een Kubernetes-cluster met Azure Monitor die wordt gehost op Azure Red Hat OpenShift versie 4 of hoger.
 ms.topic: conceptual
 ms.date: 03/05/2021
-ms.openlocfilehash: 7c44a7c6eea6182316d626e3e8501f9aa63eef78
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: 11c702d1f46725a12e90a01dc1b38467344a1123
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106221514"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784637"
 ---
-# <a name="configure-azure-red-hat-openshift-v4x-with-container-insights"></a>Azure Red Hat open Shift v4. x configureren met container Insights
+# <a name="configure-azure-red-hat-openshift-v4x-with-container-insights"></a>Configureer Azure Red Hat OpenShift v4.x met Container Insights
 
-Container Insights biedt een uitgebreide bewakings ervaring voor Azure Kubernetes service (AKS) en AKS-engine clusters. In dit artikel wordt beschreven hoe u een vergelijk bare bewakings ervaring kunt krijgen door bewaking in te scha kelen voor Kubernetes-clusters die worden gehost op [Azure Red Hat open Shift](../../openshift/intro-openshift.md) versie 4. x.
+Container Insights biedt een uitgebreide bewakingservaring voor AKS Azure Kubernetes Service engineclusters (AKS) en AKS. In dit artikel wordt beschreven hoe u een vergelijkbare bewakingservaring bereikt door bewaking in te schakelen voor Kubernetes-clusters die worden gehost [op Azure Red Hat OpenShift](../../openshift/intro-openshift.md) versie 4.x.
 
 >[!NOTE]
->De ondersteuning voor Azure Red Hat open Shift is op dit moment een functie in Public Preview.
+>Ondersteuning voor Azure Red Hat OpenShift is op dit moment een functie in openbare preview.
 >
 
-U kunt container Insights inschakelen voor een of meer bestaande implementaties van Azure Red Hat open Shift v4. x door gebruik te maken van de ondersteunde methoden die in dit artikel worden beschreven.
+U kunt Container Insights inschakelen voor een of meer bestaande implementaties van Azure Red Hat OpenShift v4.x met behulp van de ondersteunde methoden die in dit artikel worden beschreven.
 
-Voer voor een bestaand cluster dit [bash-script uit in de Azure cli](/cli/azure/openshift#az-openshift-create&preserve-view=true).
+Voer voor een bestaand cluster dit [Bash-script uit in de Azure CLI.](/cli/azure/openshift#az_openshift_create&preserve-view=true)
 
 ## <a name="supported-and-unsupported-features"></a>Ondersteunde en niet-ondersteunde functies
 
-Container Insights ondersteunt de bewaking van Azure Red Hat open Shift v4. x, zoals beschreven in het [overzicht van container Insights](container-insights-overview.md), met uitzonde ring van de volgende functies:
+Container Insights biedt ondersteuning voor Azure Red Hat OpenShift v4.x, zoals beschreven in Overzicht van [Container Insights,](container-insights-overview.md)met uitzondering van de volgende functies:
 
-- Live-gegevens (preview-versie)
-- [Metrische gegevens verzamelen](container-insights-update-metrics.md) van cluster knooppunten en peulen en deze opslaan in de data base met Azure monitor gegevens
+- Live data (preview)
+- [Metrische gegevens verzamelen](container-insights-update-metrics.md) van clusterknooppunten en -pods en deze opslaan in Azure Monitor database met metrische gegevens
 
 ## <a name="prerequisites"></a>Vereisten
 
-- De Azure CLI-versie 2.0.72 of hoger  
+- De Azure CLI versie 2.0.72 of hoger  
 
-- Het [helm 3](https://helm.sh/docs/intro/install/) cli-hulp programma
+- Het [Helm 3](https://helm.sh/docs/intro/install/) CLI-hulpprogramma
 
-- Nieuwste versie van open [SHIFT cli](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html)
+- Nieuwste versie van [OpenShift CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html)
 
 - [Bash-versie 4](https://www.gnu.org/software/bash/)
 
-- Het opdracht regel programma [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- Het [Kubectl-opdrachtregelprogramma](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 - Een [Log Analytics-werkruimte](../logs/design-logs-deployment.md).
 
-    Container Insights ondersteunt een Log Analytics-werk ruimte in de regio's die worden vermeld in azure- [producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Om uw eigen werk ruimte te maken, kan deze worden gemaakt via [Azure Resource Manager](../logs/resource-manager-workspace.md), via [Power shell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in de [Azure Portal](../logs/quick-create-workspace.md).
+    Container Insights ondersteunt een Log Analytics-werkruimte in de regio's die worden vermeld in [Azure-producten per regio.](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor) Als u uw eigen werkruimte wilt maken, kunt u deze maken [via Azure Resource Manager](../logs/resource-manager-workspace.md), via [PowerShell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)of in [de Azure Portal](../logs/quick-create-workspace.md).
 
-- Als u de functies in container Insights wilt inschakelen en openen, moet u Mini maal een rol voor Azure- *Inzender* hebben in het Azure-abonnement en een rol van [*log Analytics bijdrager*](../logs/manage-access.md#manage-access-using-azure-permissions) in de log Analytics-werk ruimte, geconfigureerd met container Insights.
+- Als u de functies in Container Insights wilt inschakelen en  openen, moet u minimaal de rol Azure-inzender hebben in het Azure-abonnement en de rol [*Log Analytics-inzender*](../logs/manage-access.md#manage-access-using-azure-permissions) in de Log Analytics-werkruimte, geconfigureerd met Container insights.
 
-- Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met container Insights.
+- Als u de bewakingsgegevens wilt weergeven, moet u de [*rol Van Log Analytics-lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de Log Analytics-werkruimte, geconfigureerd met Container Insights.
 
 ## <a name="enable-monitoring-for-an-existing-cluster"></a>Bewaking inschakelen voor een bestaand cluster
 
-Ga als volgt te werk om bewaking in te scha kelen voor een Azure Red Hat open Shift versie 4 of hoger-cluster dat is geïmplementeerd in azure met behulp van het meegeleverde bash-script:
+Als u bewaking wilt inschakelen voor Azure Red Hat OpenShift cluster van versie 4 of hoger dat in Azure is geïmplementeerd met behulp van het opgegeven Bash-script, doet u het volgende:
 
 1. Meld u aan bij Azure door de volgende opdracht uit te voeren:
 
@@ -59,20 +59,20 @@ Ga als volgt te werk om bewaking in te scha kelen voor een Azure Red Hat open Sh
     az login
     ```
 
-1. Down load en sla dit op in een lokale map het script waarmee uw cluster wordt geconfigureerd met de invoeg toepassing voor bewaking door de volgende opdracht uit te voeren:
+1. Download en sla in een lokale map het script op dat uw cluster configureert met de bewakings-invoegservice door de volgende opdracht uit te voeren:
 
     `curl -o enable-monitoring.sh -L https://aka.ms/enable-monitoring-bash-script`
 
-1. Maak verbinding met ARO v4-cluster met behulp van de instructies in de [zelf studie: verbinding maken met een Azure Red Hat open Shift 4-cluster](../../openshift/tutorial-connect-cluster.md).
+1. Maak verbinding met het ARO v4-cluster met behulp van de instructies in [Zelfstudie: Verbinding maken met een Azure Red Hat OpenShift 4-cluster.](../../openshift/tutorial-connect-cluster.md)
 
 
-### <a name="integrate-with-an-existing-workspace"></a>Integreren met een bestaande werk ruimte
+### <a name="integrate-with-an-existing-workspace"></a>Integreren met een bestaande werkruimte
 
-In deze sectie schakelt u de bewaking van uw cluster in met behulp van het bash-script dat u eerder hebt gedownload. Als u wilt integreren met een bestaande Log Analytics-werk ruimte, moet u beginnen met het identificeren van de volledige Resource-ID van uw Log Analytics werk ruimte die is vereist voor de `logAnalyticsWorkspaceResourceId` para meter, en voert u de opdracht uit om de invoeg toepassing voor bewaking in te scha kelen met de opgegeven werk ruimte.
+In deze sectie gaat u de bewaking van uw cluster inschakelen met behulp van het Bash-script dat u eerder hebt gedownload. Als u wilt integreren met een bestaande Log Analytics-werkruimte, begint u met het identificeren van de volledige resource-id van uw Log Analytics-werkruimte die vereist is voor de parameter. Voer vervolgens de opdracht uit om de bewakings-invoegruimte in te stellen voor de opgegeven `logAnalyticsWorkspaceResourceId` werkruimte.
 
-Als u geen werk ruimte hebt om op te geven, kunt u door gaan naar de sectie de [standaard werkruimte integreren](#integrate-with-the-default-workspace) en het script een nieuwe werk ruimte laten maken.
+Als u geen werkruimte hoeft op te geven, [](#integrate-with-the-default-workspace) kunt u naar de sectie Integreren met de standaardwerkruimte gaan en het script een nieuwe werkruimte voor u laten maken.
 
-1. Een lijst met alle abonnementen waartoe u toegang hebt door de volgende opdracht uit te voeren:
+1. Voer de volgende opdracht uit om alle abonnementen weer te geven waar u toegang tot hebt:
 
     ```azurecli
     az account list --all -o table
@@ -88,42 +88,42 @@ Als u geen werk ruimte hebt om op te geven, kunt u door gaan naar de sectie de [
 
 1. Kopieer de waarde voor **SubscriptionId**.
 
-1. Ga naar het abonnement dat als host fungeert voor de Log Analytics-werk ruimte door de volgende opdracht uit te voeren:
+1. Schakel over naar het abonnement dat als host voor de Log Analytics-werkruimte wordt gebruikt door de volgende opdracht uit te voeren:
 
     ```azurecli
     az account set -s <subscriptionId of the workspace>
     ```
 
-1. De lijst met werk ruimten in uw abonnementen weer geven in de standaard JSON-indeling door de volgende opdracht uit te voeren:
+1. Geef de lijst met werkruimten in uw abonnementen weer in de standaard-JSON-indeling door de volgende opdracht uit te voeren:
 
     ```
     az resource list --resource-type Microsoft.OperationalInsights/workspaces -o json
     ```
 
-1. Zoek in de uitvoer de naam van de werk ruimte en kopieer de volledige Resource-ID van die Log Analytics werk ruimte onder de veld **-id**.
+1. Zoek in de uitvoer de naam van de werkruimte en kopieer vervolgens de volledige resource-id van die Log Analytics-werkruimte onder de **veld-id**.
 
-1. Voer de volgende opdracht uit om controle in te scha kelen. Vervang de waarden voor de `azureAroV4ClusterResourceId` `logAnalyticsWorkspaceResourceId` para meters en.
+1. Voer de volgende opdracht uit om bewaking in teschakelen. Vervang de waarden voor de `azureAroV4ClusterResourceId` `logAnalyticsWorkspaceResourceId` parameters en .
 
     ```bash
     export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
     export logAnalyticsWorkspaceResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>" 
     ```
 
-    Dit is de opdracht die u moet uitvoeren nadat u de drie variabelen hebt gevuld met export opdrachten:
+    Dit is de opdracht die u moet uitvoeren nadat u de drie variabelen hebt gevuld met Export-opdrachten:
 
     `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --workspace-id $logAnalyticsWorkspaceResourceId`
 
-Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens voor de status voor het cluster kunt weer geven.
+Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische statusgegevens voor het cluster kunt bekijken.
 
-### <a name="integrate-with-the-default-workspace"></a>Integreren met de standaardwerk ruimte
+### <a name="integrate-with-the-default-workspace"></a>Integreren met de standaardwerkruimte
 
-In deze sectie schakelt u bewaking in voor uw Azure Red Hat open Shift v4. x-cluster met behulp van het bash-script dat u hebt gedownload.
+In deze sectie gaat u bewaking inschakelen voor uw Azure Red Hat OpenShift v4.x-cluster met behulp van het Bash-script dat u hebt gedownload.
 
-In dit voor beeld bent u niet verplicht een bestaande werk ruimte vooraf te maken of op te geven. Met deze opdracht vereenvoudigt u het proces voor u door een standaardwerk ruimte te maken in de standaard resource groep van het cluster abonnement als er nog geen bestaat in de regio.
+In dit voorbeeld bent u niet verplicht om vooraf een bestaande werkruimte te maken of op te geven. Met deze opdracht vereenvoudigt u het proces door een standaardwerkruimte te maken in de standaardresourcegroep van het clusterabonnement, als deze nog niet bestaat in de regio.
 
-De standaardwerk ruimte die wordt gemaakt, heeft de indeling *DefaultWorkspace- \<GUID> - \<Region>*.  
+De standaardwerkruimte die wordt gemaakt, heeft de indeling *DefaultWorkspace- \<GUID> - \<Region>*.  
 
-Vervang de waarde voor de `azureAroV4ClusterResourceId` para meter.
+Vervang de waarde voor de `azureAroV4ClusterResourceId` parameter .
 
 ```bash
 export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
@@ -131,32 +131,32 @@ export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGrou
 
 Bijvoorbeeld:
 
-' bash enable-monitoring.sh--resource-id $azureAroV 4ClusterResourceId 
+'bash enable-monitoring.sh --resource-id $azureAroV 4ClusterResourceId 
 
-Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens van de status voor het cluster kunt weer geven.
+Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische statusgegevens voor het cluster kunt bekijken.
 
-### <a name="enable-monitoring-from-the-azure-portal"></a>Bewaking van de Azure Portal inschakelen
+### <a name="enable-monitoring-from-the-azure-portal"></a>Bewaking inschakelen vanuit de Azure Portal
 
-In de weer gave met meerdere clusters in container Insights worden uw Azure Red Hat open Shift-clusters gemarkeerd waarvoor geen bewaking is ingeschakeld op het tabblad niet- **bewaakte clusters** . De optie **inschakelen** naast het cluster initieert geen controle van de bewaking vanuit de portal. U wordt omgeleid naar dit artikel om de bewaking hand matig in te scha kelen door de stappen te volgen die eerder in dit artikel zijn beschreven.
+De weergave met meerdere clusters in Container Insights markeert uw Azure Red Hat OpenShift clusters die geen bewaking hebben ingeschakeld op het tabblad **Niet-gecontroleerd clusters.** Met **de** optie Inschakelen naast uw cluster wordt onboarding van bewaking niet gestart vanuit de portal. U wordt omgeleid naar dit artikel om bewaking handmatig in te stellen door de stappen te volgen die eerder in dit artikel zijn beschreven.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **Azure monitor** in het linkerdeel venster of op de start pagina.
+1. Selecteer in het linkerdeelvenster of op de startpagina **Azure Monitor.**
 
-1. Selecteer in de sectie **inzichten** de optie **containers**.
+1. Selecteer containers **in de** sectie **Inzichten.**
 
-1. Selecteer op de pagina **monitor-containers** de optie niet- **bewaakte clusters**.
+1. Selecteer op **de pagina Monitor - containers** de optie **Niet-bewaakte clusters.**
 
-1. Selecteer in de lijst met niet-bewaakte clusters het cluster en selecteer vervolgens **inschakelen**.
+1. Selecteer het cluster in de lijst met niet-bewaakte clusters en selecteer vervolgens **Inschakelen.**
 
-    U kunt de resultaten in de lijst identificeren door te zoeken naar de waarde **Aro** in de kolom **cluster type** . Nadat u **inschakelen** hebt geselecteerd, wordt u omgeleid naar dit artikel.
+    U kunt de resultaten in de lijst identificeren door te zoeken naar de **ARO-waarde** in de **kolom Clustertype.** Nadat u **Inschakelen hebt** geselecteerd, wordt u omgeleid naar dit artikel.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Nu u bewaking hebt ingeschakeld om het status-en resource gebruik van uw RedHat open Shift versie 4. x-cluster en de werk belastingen die hierop worden uitgevoerd te verzamelen, leert u [hoe u container Insights kunt gebruiken](container-insights-analyze.md) .
+- Nu u bewaking hebt ingeschakeld voor het verzamelen van status- en resourcegebruik van uw RedHat OpenShift versie 4.x-cluster en de workloads die erop worden uitgevoerd, leert u hoe [u](container-insights-analyze.md) Container Insights gebruikt.
 
-- De container agent verzamelt standaard de container-logboeken *stdout* en *stderr* van alle containers die worden uitgevoerd in alle naam ruimten, met uitzonde ring van uitvoeren-System. Als u een container logboek verzameling wilt configureren die specifiek is voor een bepaalde naam ruimte of naam ruimten, bekijkt u de configuratie van de [container Insights-agent](container-insights-agent-config.md) om de instellingen voor het verzamelen van gegevens te configureren die u wilt instellen voor het configuratie bestand van uw *ConfigMap* .
+- De containeragent verzamelt standaard de containerlogboeken *stdout* en *stderr* van alle containers die worden uitgevoerd in alle naamruimten, met uitzondering van kube-system. Als u een containerlogboekverzameling wilt configureren die specifiek is voor een bepaalde naamruimte of naamruimten, controleert u de configuratie van de [Container Insights-agent](container-insights-agent-config.md) om de instellingen voor gegevensverzameling te configureren die u wilt gebruiken voor uw *ConfigMap-configuratiebestand.*
 
-- Als u Prometheus-metrische gegevens uit uw cluster wilt opwaarderen en analyseren, raadpleegt u [Prometheus metrische gegevens uitval configureren](container-insights-prometheus-integration.md).
+- Als u metrische Prometheus-gegevens uit uw cluster wilt scrapen en analyseren, bekijkt u [Metrische scraping voor Prometheus configureren.](container-insights-prometheus-integration.md)
 
-- Zie [het bewaken van uw Azure Red Hat open Shift-cluster stoppen](./container-insights-optout-openshift-v3.md)voor meer informatie over het stoppen van het bewaken van het cluster met behulp van container Insights.
+- Zie Het bewaken van uw cluster stoppen met het bewaken van uw cluster met behulp van Container Insights voor meer informatie over het stoppen van de bewaking [van Azure Red Hat OpenShift cluster.](./container-insights-optout-openshift-v3.md)

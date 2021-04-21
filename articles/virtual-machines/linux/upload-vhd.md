@@ -1,6 +1,6 @@
 ---
-title: Een aangepaste Linux-VM uploaden of kopiëren met Azure CLI
-description: Een aangepaste virtuele machine uploaden of kopiëren met behulp van het Resource Manager-implementatie model en de Azure CLI
+title: Een aangepaste linux-VM uploaden of kopiëren met Azure CLI
+description: Een aangepaste virtuele machine uploaden of kopiëren met behulp van het Resource Manager implementatiemodel en de Azure CLI
 services: virtual-machines
 documentationcenter: ''
 author: cynthn
@@ -16,49 +16,49 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: 9d549d77b4a60f7543f69a9fd89e8b538c95d010
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ecad48592ecfb6723548a27997cfe1b81545b24a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102564608"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107759595"
 ---
-# <a name="create-a-linux-vm-from-a-custom-disk-with-the-azure-cli"></a>Een virtuele Linux-machine maken op basis van een aangepaste schijf met de Azure CLI
+# <a name="create-a-linux-vm-from-a-custom-disk-with-the-azure-cli"></a>Een linux-VM maken op een aangepaste schijf met de Azure CLI
 
 <!-- rename to create-vm-specialized -->
 
-In dit artikel wordt beschreven hoe u een aangepaste virtuele harde schijf (VHD) uploadt en hoe u een bestaande VHD in azure kopieert. De zojuist gemaakte VHD wordt vervolgens gebruikt voor het maken van nieuwe virtuele Linux-machines (Vm's). U kunt een Linux-distributie installeren en configureren op uw vereisten en vervolgens die VHD gebruiken om een nieuwe virtuele Azure-machine te maken.
+In dit artikel wordt beschreven hoe u een aangepaste virtuele harde schijf (VHD) uploadt en hoe u een bestaande VHD in Azure kopieert. De zojuist gemaakte VHD wordt vervolgens gebruikt om nieuwe virtuele Linux-machines (VM's) te maken. U kunt een Linux-distributie installeren en configureren om aan uw vereisten te voldoen en vervolgens die VHD gebruiken om een nieuwe virtuele Azure-machine te maken.
 
-Als u meerdere virtuele machines vanaf uw aangepaste schijf wilt maken, moet u eerst een installatie kopie maken op basis van uw virtuele machine of VHD. Zie [een aangepaste installatie kopie van een virtuele Azure-machine maken met behulp van de CLI](tutorial-custom-images.md)voor meer informatie.
+Als u meerdere VM's wilt maken van uw aangepaste schijf, maakt u eerst een afbeelding van uw VM of VHD. Zie Create a custom image of an Azure VM by using the CLI (Een [aangepaste afbeelding van een Azure-VM maken met behulp van de CLI) voor meer informatie.](tutorial-custom-images.md)
 
-U hebt twee opties voor het maken van een aangepaste schijf:
+U hebt twee opties om een aangepaste schijf te maken:
 * Een VHD uploaden
-* Een bestaande virtuele machine van Azure kopiëren
+* Een bestaande Azure-VM kopiëren
 
 
 ## <a name="requirements"></a>Vereisten
-Als u de volgende stappen wilt uitvoeren, moet u:
+Als u de volgende stappen wilt voltooien, hebt u het volgende nodig:
 
-- Een virtuele Linux-machine die is voor bereid voor gebruik in Azure. In het gedeelte [de VM voorbereiden](#prepare-the-vm) van dit artikel wordt beschreven hoe u distributie informatie kunt vinden over het installeren van de Azure Linux-agent (waagent), die nodig is om verbinding te maken met een virtuele machine via SSH.
-- Het VHD-bestand van een bestaande door [Azure goedgekeurde Linux-distributie](endorsed-distros.md) (of Zie [informatie over niet-goedgekeurde distributies](create-upload-generic.md)) naar een virtuele schijf in de VHD-indeling. Er zijn meerdere hulpprogram ma's voor het maken van een virtuele machine en VHD:
-  - Installeer en configureer [qemu](https://en.wikibooks.org/wiki/QEMU/Installing_QEMU) of [KVM](https://www.linux-kvm.org/page/RunningKVM), waarbij u gebruik maakt van VHD als uw installatie kopie-indeling. Als dat nodig is, kunt u [een installatie kopie converteren](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) met `qemu-img convert` .
-  - U kunt ook Hyper-V gebruiken [in Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) of [op Windows Server 2012/2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
+- Een virtuele Linux-machine die is voorbereid voor gebruik in Azure. In de sectie [De VM](#prepare-the-vm) voorbereiden van dit artikel wordt beschreven hoe u distributiespecifieke informatie vindt over het installeren van de Azure Linux-agent (waagent), die u nodig hebt om via SSH verbinding te maken met een VM.
+- Het VHD-bestand van een bestaande Door Azure goedgekeurde [Linux-distributie](endorsed-distros.md) (of zie informatie voor [niet-goedgekeurde distributies)](create-upload-generic.md)naar een virtuele schijf in de VHD-indeling. Er bestaan meerdere hulpprogramma's om een VM en VHD te maken:
+  - Installeer en configureer [QEMU](https://en.wikibooks.org/wiki/QEMU/Installing_QEMU) of [KVM,](https://www.linux-kvm.org/page/RunningKVM)en zorg dat u VHD gebruikt als uw installatierindeling. Indien nodig kunt u een [afbeelding converteren](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) met `qemu-img convert` .
+  - U kunt hyper-V ook gebruiken [op Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) of op Windows [Server 2012/2012 R2.](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11))
 
 > [!NOTE]
-> De nieuwere VHDX-indeling wordt niet ondersteund in Azure. Wanneer u een virtuele machine maakt, geeft u VHD op als de indeling. Indien nodig kunt u VHDX-schijven converteren naar VHD met [qemu-img Convert](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) of de [Convert-VHD](/powershell/module/hyper-v/convert-vhd) Power shell-cmdlet. Azure biedt geen ondersteuning voor het uploaden van dynamische Vhd's. Daarom moet u dergelijke schijven converteren naar statische Vhd's voordat u deze uploadt. U kunt hulpprogram ma's zoals [Azure VHD-Hulpprogram ma's gebruiken voor](https://github.com/Microsoft/azure-vhd-utils-for-go) het converteren van dynamische schijven tijdens het proces van het uploaden naar Azure.
+> De nieuwere VHDX-indeling wordt niet ondersteund in Azure. Wanneer u een VM maakt, geeft u VHD op als de indeling. Indien nodig kunt u VHDX-schijven converteren naar VHD met [qemu-img convert](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) of de [PowerShell-cmdlet Convert-VHD.](/powershell/module/hyper-v/convert-vhd) Azure biedt geen ondersteuning voor het uploaden van dynamische VHD's, dus u moet dergelijke schijven converteren naar statische VHD's voordat u uploadt. U kunt hulpprogramma's zoals [Azure VHD-hulpprogramma's](https://github.com/Microsoft/azure-vhd-utils-for-go) voor GO gebruiken om dynamische schijven te converteren tijdens het uploaden naar Azure.
 > 
 > 
 
 
-- Zorg ervoor dat de nieuwste [Azure cli](/cli/azure/install-az-cli2) is geïnstalleerd en dat u bent aangemeld bij een Azure-account met [AZ login](/cli/azure/reference-index#az-login).
+- Zorg ervoor dat u de nieuwste [versie van Azure CLI](/cli/azure/install-az-cli2) hebt geïnstalleerd en dat u bent aangemeld bij een Azure-account met az [login](/cli/azure/reference-index#az_login).
 
-Vervang in de volgende voor beelden voorbeeld parameter namen met uw eigen waarden, zoals `myResourceGroup` , `mystorageaccount` en `mydisks` .
+Vervang in de volgende voorbeelden voorbeeldparameternamen door uw eigen waarden, `myResourceGroup` zoals `mystorageaccount` , en `mydisks` .
 
 <a id="prepimage"> </a>
 
 ## <a name="prepare-the-vm"></a>De virtuele machine voorbereiden
 
-Azure ondersteunt diverse Linux-distributies (Zie [goedgekeurde distributies](endorsed-distros.md)). In de volgende artikelen wordt beschreven hoe u de verschillende Linux-distributies voorbereidt die worden ondersteund in Azure:
+Azure ondersteunt verschillende Linux-distributies (zie [Goedgekeurde distributies).](endorsed-distros.md) In de volgende artikelen wordt beschreven hoe u de verschillende Linux-distributies voorbereidt die worden ondersteund in Azure:
 
 * [CentOS-distributies](create-upload-centos.md)
 * [Debian Linux](debian-create-upload-vhd.md)
@@ -66,30 +66,30 @@ Azure ondersteunt diverse Linux-distributies (Zie [goedgekeurde distributies](en
 * [Red Hat Enterprise Linux](redhat-create-upload-vhd.md)
 * [SLES en OpenSUSE](suse-create-upload-vhd.md)
 * [Ubuntu](create-upload-ubuntu.md)
-* [Overige: niet-goedgekeurde distributies](create-upload-generic.md)
+* [Overig: niet-goedgekeurde distributies](create-upload-generic.md)
 
-Zie ook de [installatie notities van Linux](create-upload-generic.md#general-linux-installation-notes) voor meer algemene tips over het voorbereiden van Linux-installatie kopieën voor Azure.
+Zie ook de [Opmerkingen bij de installatie van Linux](create-upload-generic.md#general-linux-installation-notes) voor meer algemene tips over het voorbereiden van Linux-installatie images voor Azure.
 
 > [!NOTE]
-> De [Sla](https://azure.microsoft.com/support/legal/sla/virtual-machines/) van het Azure-platform is alleen van toepassing op Vm's waarop Linux wordt uitgevoerd wanneer een van de getekende distributies wordt gebruikt met de configuratie details zoals opgegeven onder ondersteunde versies in [Linux op Azure-Endorsed distributies](endorsed-distros.md).
+> De SLA van het [Azure-platform](https://azure.microsoft.com/support/legal/sla/virtual-machines/) is alleen van toepassing op VM's met Linux wanneer een van de goedgekeurde distributies wordt gebruikt met de configuratiegegevens zoals opgegeven onder Ondersteunde versies in Linux op [Azure-Endorsed-distributies.](endorsed-distros.md)
 > 
 > 
 
-## <a name="option-1-upload-a-vhd"></a>Optie 1: een VHD uploaden
+## <a name="option-1-upload-a-vhd"></a>Optie 1: Een VHD uploaden
 
-U kunt nu VHD direct uploaden naar een beheerde schijf. Zie [een VHD uploaden naar Azure met behulp van Azure cli](disks-upload-vhd-to-managed-disk-cli.md)voor instructies.
+U kunt nu VHD rechtstreeks uploaden naar een beheerde schijf. Zie Upload [a VHD to Azure using Azure CLI (Een VHD uploaden naar Azure met behulp van Azure CLI) voor instructies.](disks-upload-vhd-to-managed-disk-cli.md)
 
-## <a name="option-2-copy-an-existing-vm"></a>Optie 2: een bestaande VM kopiëren
+## <a name="option-2-copy-an-existing-vm"></a>Optie 2: Een bestaande VM kopiëren
 
-U kunt ook een aangepaste virtuele machine in azure maken en vervolgens de besturingssysteem schijf kopiëren en deze koppelen aan een nieuwe virtuele machine om een andere kopie te maken. Dit is prima voor het testen, maar als u een bestaande Azure-VM als model voor meerdere nieuwe Vm's wilt gebruiken, maakt u in plaats daarvan een *installatie kopie* . Zie [een aangepaste installatie kopie van een virtuele Azure-machine maken met behulp van de CLI](tutorial-custom-images.md)voor meer informatie over het maken van een installatie kopie van een bestaande virtuele machine van Azure.
+U kunt ook een aangepaste VM maken in Azure en vervolgens de besturingssysteemschijf kopiëren en deze koppelen aan een nieuwe VM om nog een kopie te maken. Dit is prima om te testen, maar als u een bestaande Azure-VM als model wilt gebruiken voor meerdere nieuwe VM's, maakt u in plaats daarvan *een* afbeelding. Zie Create a custom image of an Azure VM by using the CLI (Een aangepaste azure-VM maken met behulp van de CLI) voor meer informatie over het maken van een afbeelding op basis [van een bestaande Azure-VM.](tutorial-custom-images.md)
 
-Als u een bestaande VM wilt kopiëren naar een andere regio, wilt u mogelijk azcopy gebruiken om [een kopie van een schijf in een andere regio](disks-upload-vhd-to-managed-disk-cli.md#copy-a-managed-disk)te bevinden. 
+Als u een bestaande VM naar een andere regio wilt kopiëren, kunt u azcopy gebruiken om een kopie van een schijf in een [andere regio te maken.](disks-upload-vhd-to-managed-disk-cli.md#copy-a-managed-disk) 
 
-Anders moet u een moment opname van de virtuele machine maken en vervolgens een nieuwe VHD met een besturings systeem van de moment opname aanmaken.
+Anders moet u een momentopname van de VM maken en vervolgens een nieuwe VHD voor het besturingssysteem maken van de momentopname.
 
 ### <a name="create-a-snapshot"></a>Een momentopname maken
 
-In dit voor beeld maakt u een moment opname van een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* en maakt u een moment opname met de naam *osDiskSnapshot*.
+In dit voorbeeld wordt een momentopname gemaakt van een VM met de naam *myVM* in resourcegroep *myResourceGroup* en wordt een momentopname gemaakt met de *naam osDiskSnapshot.*
 
 ```azurecli
 osDiskId=$(az vm show -g myResourceGroup -n myVM --query "storageProfile.osDisk.managedDisk.id" -o tsv)
@@ -100,15 +100,15 @@ az snapshot create \
 ```
 ###  <a name="create-the-managed-disk"></a>De beheerde schijf maken
 
-Een nieuwe beheerde schijf maken op basis van de moment opname.
+Maak een nieuwe beheerde schijf op de momentopname.
 
-De ID van de moment opname ophalen. In dit voor beeld heeft de moment opname de naam *osDiskSnapshot* en bevindt deze zich in de resource groep *myResourceGroup* .
+Haal de id van de momentopname op. In dit voorbeeld heeft de momentopname *de naam osDiskSnapshot* en staat deze in de resourcegroep *myResourceGroup.*
 
 ```azurecli
 snapshotId=$(az snapshot show --name osDiskSnapshot --resource-group myResourceGroup --query [id] -o tsv)
 ```
 
-Maak de beheerde schijf. In dit voor beeld maken we een beheerde schijf met de naam *myManagedDisk* in de moment opname, waar de schijf zich in de standaard opslag bevindt en de grootte van 128 GB heeft.
+Maak de beheerde schijf. In dit voorbeeld maken we een beheerde schijf met de naam *myManagedDisk* op basis van onze momentopname, waarbij de schijf in standaardopslag is en een grootte heeft van 128 GB.
 
 ```azurecli
 az disk create \
@@ -121,7 +121,7 @@ az disk create \
 
 ## <a name="create-the-vm"></a>De VM maken
 
-Maak een virtuele machine met [AZ VM Create](/cli/azure/vm#az-vm-create) en attach (--attach-OS-disk) de beheerde schijf als de besturingssysteem schijf. In het volgende voor beeld wordt een VM gemaakt met de naam *myNewVM* met behulp van de beheerde schijf die u hebt gemaakt op basis van de GEÜPLOADe VHD
+Maak uw VM [met az vm create](/cli/azure/vm#az_vm_create) en koppel (--attach-os-disk) de beheerde schijf als de besturingssysteemschijf. In het volgende voorbeeld wordt een VM met de *naam myNewVM gemaakt* met behulp van de beheerde schijf die u hebt gemaakt op basis van uw geüploade VHD:
 
 ```azurecli
 az vm create \
@@ -132,7 +132,7 @@ az vm create \
     --attach-os-disk myManagedDisk
 ```
 
-U moet met de referenties van de bron-VM een SSH-verbinding met de virtuele machine kunnen maken. 
+U moet met de referenties van de bron-VM SSH kunnen gebruiken voor de VM. 
 
 ## <a name="next-steps"></a>Volgende stappen
-Nadat u uw aangepaste virtuele schijf hebt voor bereid en geüpload, kunt u meer lezen over het [gebruik van Resource Manager en sjablonen](../../azure-resource-manager/management/overview.md). Het is ook mogelijk dat u [een gegevens schijf wilt toevoegen](add-disk.md) aan de nieuwe virtuele machines. Als u toepassingen hebt die worden uitgevoerd op uw Vm's die u wilt openen, moet u [poorten en eind punten openen](nsg-quickstart.md).
+Nadat u uw aangepaste virtuele schijf hebt voorbereid en geüpload, kunt u meer lezen over het [gebruik Resource Manager en sjablonen.](../../azure-resource-manager/management/overview.md) U kunt ook een [gegevensschijf toevoegen aan](add-disk.md) uw nieuwe VM's. Als er toepassingen worden uitgevoerd op uw VM's die u wilt openen, moet u [poorten en eindpunten openen.](nsg-quickstart.md)

@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.author: caya
-ms.openlocfilehash: bfff962f6d302f589acc437550fa25f76ec7ce35
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 2fe615da256099c3135f607a7b6f8095bb93b442
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102040415"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772838"
 ---
-# <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway"></a>Zelf studie: invoeg toepassing Application Gateway ingangs controller inschakelen voor een bestaand AKS-cluster met een bestaande Application Gateway
+# <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway"></a>Zelfstudie: Application Gateway invoeg-invoegversie inschakelen voor een bestaand AKS-cluster met een bestaande Application Gateway
 
-U kunt Azure CLI of portal gebruiken om de invoeg toepassing [Application Gateway ingangs controller (AGIC)](ingress-controller-overview.md) in te scha kelen voor een bestaand [AKS-cluster (Kubernetes Services) van Azure](https://azure.microsoft.com/services/kubernetes-service/) . In deze zelfstudie leert u hoe u de invoegtoepassing AGIC kunt gebruiken om uw Kubernetes-toepassing beschikbaar te maken in een bestaand AKS-cluster via een bestaande Application Gateway die wordt geïmplementeerd in afzonderlijke virtuele netwerken. U begint met het maken van een AKS-cluster in één virtueel netwerk en een Application Gateway in een afzonderlijk virtueel netwerk om bestaande resources te simuleren. Vervolgens schakelt u de AGIC-invoeg toepassing in, vergelijkt u de twee virtuele netwerken met elkaar en implementeert u een voorbeeld toepassing die via de Application Gateway wordt weer gegeven met behulp van de invoeg toepassing AGIC. Als u de AGIC-invoegtoepassing inschakelt voor een bestaande Application Gateway en een bestaand AKS-cluster in hetzelfde virtuele netwerk, kunt u de peering-stap hieronder overslaan. De invoegtoepassing biedt een veel snellere manier om AGIC voor uw AKS-cluster te implementeren dan [eerder via Helm](ingress-controller-overview.md#difference-between-helm-deployment-and-aks-add-on), en biedt ook een volledig beheerde ervaring.  
+U kunt Azure CLI of Portal gebruiken om de Application Gateway AGIC-invoegversie [(Ingress Controller)](ingress-controller-overview.md) in te stellen voor een bestaand [AKS-cluster (Azure Kubernetes Services).](https://azure.microsoft.com/services/kubernetes-service/) In deze zelfstudie leert u hoe u de invoegtoepassing AGIC kunt gebruiken om uw Kubernetes-toepassing beschikbaar te maken in een bestaand AKS-cluster via een bestaande Application Gateway die wordt geïmplementeerd in afzonderlijke virtuele netwerken. U begint met het maken van een AKS-cluster in één virtueel netwerk en een Application Gateway in een afzonderlijk virtueel netwerk om bestaande resources te simuleren. Vervolgens gaat u de AGIC-invoegtoepassing inschakelen, de twee virtuele netwerken peeren en een voorbeeldtoepassing implementeren die via de Application Gateway wordt blootgesteld met behulp van de AGIC-invoegtoepassing. Als u de AGIC-invoegtoepassing inschakelt voor een bestaande Application Gateway en een bestaand AKS-cluster in hetzelfde virtuele netwerk, kunt u de peering-stap hieronder overslaan. De invoegtoepassing biedt een veel snellere manier om AGIC voor uw AKS-cluster te implementeren dan [eerder via Helm](ingress-controller-overview.md#difference-between-helm-deployment-and-aks-add-on), en biedt ook een volledig beheerde ervaring.  
 
 In deze zelfstudie leert u het volgende:
 
@@ -24,8 +24,8 @@ In deze zelfstudie leert u het volgende:
 > * Een resourcegroep maken 
 > * Een nieuw AKS-cluster maken 
 > * Een nieuwe Application Gateway maken 
-> * De invoeg toepassing AGIC inschakelen in het bestaande AKS-cluster via Azure CLI 
-> * De invoeg toepassing AGIC inschakelen in het bestaande AKS-cluster via de portal 
+> * De AGIC-invoegversie inschakelen in het bestaande AKS-cluster via Azure CLI 
+> * De AGIC-invoegversie inschakelen in het bestaande AKS-cluster via de portal 
 > * Het virtuele netwerk van Application Gateway koppelen aan het virtuele netwerk van het AKS-cluster
 > * Een voorbeeldtoepassing implementeren met behulp van AGIC voor inkomend verkeer op het AKS-cluster
 > * Controleren of de toepassing bereikbaar is via Application Gateway
@@ -36,7 +36,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-In Azure kunt u verwante resources toewijzen aan een resourcegroep. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de locatie (regio) *canadacentral*. 
+In Azure kunt u verwante resources toewijzen aan een resourcegroep. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az_group_create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de locatie (regio) *canadacentral*. 
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location canadacentral
@@ -52,7 +52,7 @@ In het volgende voorbeeld implementeert u een nieuw AKS-cluster met de naam *myC
 az aks create -n myCluster -g myResourceGroup --network-plugin azure --enable-managed-identity 
 ```
 
-Zie [hier](/cli/azure/aks#az-aks-create) referentiemateriaal over het configureren van aanvullende parameters voor de opdracht `az aks create`. 
+Zie [hier](/cli/azure/aks#az_aks_create) referentiemateriaal over het configureren van aanvullende parameters voor de opdracht `az aks create`. 
 
 ## <a name="deploy-a-new-application-gateway"></a>Een nieuwe Azure Application Gateway implementeren 
 
@@ -69,27 +69,27 @@ az network application-gateway create -n myApplicationGateway -l canadacentral -
 > [!NOTE]
 > De invoegtoepassing Application Gateway Ingress Controller (AGIC) ondersteunt **alleen** Application Gateway v2-SKU's (Standard en WAF) en **niet** de Application Gateway v1-SKU's. 
 
-## <a name="enable-the-agic-add-on-in-existing-aks-cluster-through-azure-cli"></a>De invoeg toepassing AGIC inschakelen in het bestaande AKS-cluster via Azure CLI 
+## <a name="enable-the-agic-add-on-in-existing-aks-cluster-through-azure-cli"></a>De AGIC-invoegversie inschakelen in een bestaand AKS-cluster via Azure CLI 
 
-Als u Azure CLI wilt blijven gebruiken, kunt u door gaan met het inschakelen van de invoeg toepassing AGIC in het AKS-cluster dat u hebt gemaakt, *myCluster* en geeft u de AGIC-invoeg toepassing op om de bestaande Application Gateway te gebruiken die u hebt gemaakt, *myApplicationGateway*.
+Als u Azure CLI wilt blijven gebruiken, kunt u de AGIC-invoeggebruiker blijven inschakelen in het AKS-cluster dat u hebt gemaakt, *myCluster,* en de AGIC-invoeggebruiker opgeven om de bestaande Application Gateway te gebruiken die u hebt gemaakt, *myApplicationGateway*.
 
 ```azurecli-interactive
 appgwId=$(az network application-gateway show -n myApplicationGateway -g myResourceGroup -o tsv --query "id") 
 az aks enable-addons -n myCluster -g myResourceGroup -a ingress-appgw --appgw-id $appgwId
 ```
 
-## <a name="enable-the-agic-add-on-in-existing-aks-cluster-through-portal"></a>De invoeg toepassing AGIC in het bestaande AKS-cluster inschakelen via de portal 
+## <a name="enable-the-agic-add-on-in-existing-aks-cluster-through-portal"></a>De AGIC-invoegversie inschakelen in een bestaand AKS-cluster via de portal 
 
-Als u Azure Portal wilt gebruiken om AGIC-invoeg toepassing in te scha kelen, gaat u naar (en navigeert u naar uw AKS-cluster via de portal [- https://aka.ms/azure/portal/aks/agic) ](https://aka.ms/azure/portal/aks/agic) koppeling. Ga vanaf deze pagina naar het tabblad netwerken in uw AKS-cluster. U ziet een sectie Application Gateway ingangs controller, waarmee u de invoeg toepassing voor de ingangs controller kunt in-of uitschakelen met behulp van de portal-gebruikers interface. Schakel het selectie vakje naast de optie ingang inschakelen in en selecteer het Application Gateway dat u hebt gemaakt, *myApplicationGateway* in de vervolg keuzelijst. 
+Als u een Azure Portal agic-invoeggebruiker wilt inschakelen, gaat u naar [( https://aka.ms/azure/portal/aks/agic) ](https://aka.ms/azure/portal/aks/agic) en navigeert u naar uw AKS-cluster via de portalkoppeling. Ga van hieruit naar het tabblad Netwerken in uw AKS-cluster. U ziet een sectie Application Gateway van een ingangscontroller, waarmee u de invoeg-app voor toegangsgressiecontrollers kunt in- of uitschakelen met behulp van de gebruikersinterface van de portal. Schakel het selectievakje in naast Controller voor inschakelen en selecteer het Application Gateway dat u hebt gemaakt, *myApplicationGateway,* in het vervolgkeuzemenu. 
 
-![Controller portal voor Application Gateway ingang](./media/tutorial-ingress-controller-add-on-existing/portal-ingress-controller-add-on.png)
+![Application Gateway-ingangscontrollerportal](./media/tutorial-ingress-controller-add-on-existing/portal-ingress-controller-add-on.png)
 
-## <a name="peer-the-two-virtual-networks-together"></a>Koppel de twee virtuele netwerken als peers
+## <a name="peer-the-two-virtual-networks-together&quot;></a>Koppel de twee virtuele netwerken als peers
 
 Omdat we het AKS-cluster in een eigen virtueel netwerk hebben geïmplementeerd en de Application Gateway in een ander virtueel netwerk, moet u de twee virtuele netwerken met elkaar verbinden als peers, zodat het verkeer van de Application Gateway naar de pods in het cluster kan stromen. Voor de peering van de twee virtuele netwerken moet de Azure CLI-opdracht twee keer worden uitgevoerd, om ervoor te zorgen dat de verbinding bi-directioneel is. Met de eerste opdracht maakt u een peering-verbinding van het virtuele Application Gateway netwerk naar het virtuele AKS-netwerk; met de tweede opdracht wordt een peering-verbinding in de andere richting gemaakt.
 
 ```azurecli-interactive
-nodeResourceGroup=$(az aks show -n myCluster -g myResourceGroup -o tsv --query "nodeResourceGroup")
+nodeResourceGroup=$(az aks show -n myCluster -g myResourceGroup -o tsv --query &quot;nodeResourceGroup")
 aksVnetName=$(az network vnet list -g $nodeResourceGroup -o tsv --query "[0].name")
 
 aksVnetId=$(az network vnet show -n $aksVnetName -g $nodeResourceGroup -o tsv --query "id")

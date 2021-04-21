@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 04/15/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 9fb8eb79a381473b26a6ea14d8b71d24ac26f485
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 966f704bd47b4b238ed72579a6103bd2e4348849
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107749452"
+ms.locfileid: "107772213"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control"></a>Toegang bieden tot Key Vault, certificaten en geheimen met op rollen gebaseerd toegangsbeheer van Azure
 
@@ -50,7 +50,7 @@ Meer informatie Azure Key Vault richtlijnen voor beheer, zie:
 
 | Ingebouwde rol | Beschrijving | Id |
 | --- | --- | --- |
-| Key Vault Administrator| Voer alle gegevensvlakbewerkingen uit op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
+| Key Vault Administrator| Alle gegevensvlakbewerkingen uitvoeren op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
 | Key Vault Certificates Officer | Voer een actie uit op de certificaten van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | a4417e6f-fecd-4de8-b567-7b0420556985 |
 | Key Vault Crypto Officer | Voer een actie uit op de sleutels van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
 | Key Vault cryptoserviceversleutelingsgebruiker | Metagegevens van sleutels lezen en wrap-/unwrap-bewerkingen uitvoeren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
@@ -75,9 +75,9 @@ Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
 ### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Azure RBAC-machtigingen inschakelen op Key Vault
 
 > [!NOTE]
-> Voor het wijzigen van het machtigingsmodel is de machtiging Microsoft.Authorization/roleAssignments/write vereist, die deel uitmaakt van de rollen Eigenaar en [Beheerder van gebruikerstoegang.](../../role-based-access-control/built-in-roles.md#user-access-administrator) [](../../role-based-access-control/built-in-roles.md#owner) Klassieke abonnementsbeheerdersrollen zoals 'Servicebeheerder' en 'Medebeheerder' worden niet ondersteund.
+> Voor het wijzigen van het machtigingsmodel is de machtiging Microsoft.Authorization/roleAssignments/write vereist, die deel uitmaakt van de rollen Eigenaar en [Gebruikerstoegangbeheerder.](../../role-based-access-control/built-in-roles.md#user-access-administrator) [](../../role-based-access-control/built-in-roles.md#owner) Klassieke abonnementsbeheerdersrollen zoals 'Servicebeheerder' en 'Medebeheerder' worden niet ondersteund.
 
-1.  Azure RBAC-machtigingen inschakelen voor een nieuwe sleutelkluis:
+1.  Azure RBAC-machtigingen inschakelen voor nieuwe sleutelkluis:
 
     ![Azure RBAC-machtigingen inschakelen - nieuwe kluis](../media/rbac/image-1.png)
 
@@ -86,7 +86,7 @@ Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
     ![Azure RBAC-machtigingen inschakelen - bestaande kluis](../media/rbac/image-2.png)
 
 > [!IMPORTANT]
-> Als u een Azure RBAC-machtigingsmodel instelt, worden alle machtigingen voor toegangsbeleid ongeldig. Dit kan uitval veroorzaken wanneer er geen equivalente Azure-rollen worden toegewezen.
+> Als u het Azure RBAC-machtigingsmodel instelt, worden alle machtigingen voor toegangsbeleid ongeldig. Dit kan uitval veroorzaken wanneer er geen equivalente Azure-rollen worden toegewezen.
 
 ### <a name="assign-role"></a>Rol toewijzen
 
@@ -236,7 +236,7 @@ Voor het maken van een nieuw geheim \> (Geheimen +Genereren/importeren) wordt de
 
 ### <a name="creating-custom-roles"></a>Aangepaste rollen maken 
 
-[az role definition create command](/cli/azure/role/definition#az-role-definition-create)
+[az role definition create command](/cli/azure/role/definition#az_role_definition_create)
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli

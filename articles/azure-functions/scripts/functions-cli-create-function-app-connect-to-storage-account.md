@@ -4,12 +4,12 @@ description: Azure CLI-scriptvoorbeeld - Een Azure-functie maken die verbinding 
 ms.topic: sample
 ms.date: 04/20/2017
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 13120ad4478febf9281ff423a3a7a8f8f3b25845
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 539c3a7dd95045b2e569dbb339be0e5a0c845902
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97934404"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786275"
 ---
 # <a name="create-a-function-app-with-a-named-storage-account-connection"></a>Een functie-app maken met een benoemde verbinding voor een opslagaccount 
 
@@ -35,11 +35,11 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep met locatie. |
-| [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Een opslagaccount maken. |
-| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Hiermee maakt u een functie-app in het serverloze [verbruiksabonnement](../consumption-plan.md). |
-| [az storage account show-connection-string](/cli/azure/storage/account#az-storage-account-show-connection-string) | Hiermee wordt de verbindingsreeks voor het account opgehaald. |
-| [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) | Hiermee stelt u de verbindingsreeks in als een app-instelling in de functie-app. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep met locatie. |
+| [az storage account create](/cli/azure/storage/account#az_storage_account_create) | Een opslagaccount maken. |
+| [az functionapp create](/cli/azure/functionapp#az_functionapp_create) | Hiermee maakt u een functie-app in het serverloze [verbruiksabonnement](../consumption-plan.md). |
+| [az storage account show-connection-string](/cli/azure/storage/account#az_storage_account_show_connection_string) | Hiermee wordt de verbindingsreeks voor het account opgehaald. |
+| [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az_functionapp_config_appsettings_set) | Hiermee stelt u de verbindingsreeks in als een app-instelling in de functie-app. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

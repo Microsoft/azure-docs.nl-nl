@@ -1,258 +1,258 @@
 ---
-title: Een Azure IoT Edge-module aanbieding maken met het partner centrum in azure Marketplace
-description: Meer informatie over het maken, configureren en publiceren van een IoT Edge module aanbod in azure Marketplace met behulp van partner centrum.
+title: Een aanbieding Azure IoT Edge module maken met Partner Center in Azure Marketplace
+description: Meer informatie over het maken, configureren en publiceren van een aanbieding voor IoT Edge module in Azure Marketplace met Partner Center.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: 6de387605a8c127485b68773b6cd1b19c7136d17
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: 12600cadaa84ae116818eec06459d5db0c05304a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107107496"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107773416"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Aanbieding voor IoT Edge-module maken
 
-In dit artikel wordt beschreven hoe u een Internet of Things (IoT) Edge-module aanbieding voor Azure Marketplace maakt en publiceert. Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner Center](../create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is inge schreven in het Commercial Marketplace-programma.
+In dit artikel wordt beschreven hoe u een aanbieding voor Internet of Things Edge-module (IoT) maakt en publiceert voor Azure Marketplace. Voordat u begint, [maakt u een commerciële Marketplace-account in Partner Center](../create-account.md) als u dit nog niet hebt gedaan. Zorg ervoor dat uw account is ingeschreven in het commerciële marketplace-programma.
 
 ## <a name="create-a-new-offer"></a>Een nieuwe aanbieding maken
 
-1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-2. Selecteer in het menu links de optie **commerciële Marketplace**-  >  **overzicht**.
-3. Selecteer op de pagina overzicht **+ nieuwe aanbieding**  >  **IOT Edge module**.
+1. Meld u aan [bij Partner Center](https://partner.microsoft.com/dashboard/home).
+2. Selecteer in het navigatiemenu aan de linkerkant **Commercial Marketplace**  >  **Overview**.
+3. Selecteer op de pagina Overzicht **+ Nieuwe aanbieding IoT Edge**  >  **module**.
 
-    ![Illustreert het navigatie menu.](./media/new-offer-iot-edge.png)
+    ![Illustreert het linkernavigatiemenu.](./media/new-offer-iot-edge.png)
 
 > [!IMPORTANT]
-> Nadat een aanbieding is gepubliceerd, worden wijzigingen die zijn aangebracht in het partner centrum alleen weer gegeven in online winkels na het opnieuw publiceren van de aanbieding. Zorg ervoor dat u altijd opnieuw publiceert nadat u wijzigingen hebt aangebracht.
+> Nadat een aanbieding is gepubliceerd, worden de wijzigingen in de aanbieding Partner Center alleen in online winkels weergegeven nadat de aanbieding opnieuw is gepubliceerd. Zorg ervoor dat u altijd opnieuw kunt publiceren nadat u wijzigingen hebt aangebracht.
 
-### <a name="offer-id-and-alias"></a>Aanbiedings-ID en alias
+### <a name="offer-id-and-alias"></a>Aanbiedings-id en -alias
 
-Voer een **aanbiedings-id** in. Dit is een unieke id voor elke aanbieding in uw account.
+Voer een **aanbiedings-id in.** Dit is een unieke id voor elke aanbieding in uw account.
 
-- Deze ID is zichtbaar voor klanten in het webadres voor de Marketplace-aanbieding en Azure Resource Manager sjablonen, indien van toepassing.
-- Gebruik alleen kleine letters en cijfers. Dit kan afbreek streepjes en onderstrepings tekens bevatten, maar mag niet langer zijn dan 50. Als u bijvoorbeeld **test-aanbieding-1** invoert, is het webadres van de aanbieding `https://azuremarketplace.microsoft.com/marketplace/../test-offer-1` .
-- De aanbiedings-ID kan niet worden gewijzigd nadat u **maken** hebt geselecteerd.
+- Deze id is zichtbaar voor klanten in het webadres voor de Marketplace-aanbieding en Azure Resource Manager sjablonen, indien van toepassing.
+- Gebruik alleen kleine letters en cijfers. Het kan afbreekstreepingen en onderstrepingstekens bevatten, maar geen spaties en mag maximaal 50 tekens bevatten. Als u bijvoorbeeld **test-offer-1** op geeft, is het webadres van de aanbieding `https://azuremarketplace.microsoft.com/marketplace/../test-offer-1` .
+- De aanbiedings-id kan niet worden gewijzigd nadat u **Maken hebt geselecteerd.**
 
-Voer een **alias** voor de aanbieding in. Dit is de naam die wordt gebruikt voor de aanbieding in Partner Center.
+Voer een **aanbiedingsalias in.** Dit is de naam die wordt gebruikt voor de aanbieding in Partner Center.
 
-- Deze naam wordt niet gebruikt in Marketplace en wijkt af van de naam van de aanbieding en andere waarden die aan klanten worden weer gegeven.
-- Dit kan niet worden gewijzigd nadat u **maken** hebt geselecteerd.
+- Deze naam wordt niet gebruikt in de marketplace en verschilt van de naam van de aanbieding en andere waarden die aan klanten worden weergegeven.
+- Dit kan niet worden gewijzigd nadat u Maken **hebt geselecteerd.**
 
-Selecteer **maken** om de aanbieding te genereren en door te gaan.
+Selecteer **Maken om** de aanbieding te genereren en door te gaan.
 
 ## <a name="offer-overview"></a>Overzicht van aanbieding
 
-De **overzichts** pagina van de aanbieding bevat een visuele weer gave van de stappen die nodig zijn om deze aanbieding (zowel voltooid als gepland) te publiceren en hoe lang elke stap moet worden voltooid.
+Op **de pagina Overzicht** van aanbieding ziet u een visuele weergave van de stappen die nodig zijn om deze aanbieding te publiceren (zowel voltooid als binnenkort) en hoe lang elke stap moet duren.
 
 Deze pagina bevat koppelingen voor het uitvoeren van bewerkingen op deze aanbieding op basis van de selectie die u maakt. Bijvoorbeeld:
 
-- Als de aanbieding een concept is-concept verwijderen
-- Als de aanbieding Live is: [de aanbieding wordt niet meer verkocht](update-existing-offer.md#stop-selling-an-offer-or-plan)
-- Als de aanbieding in Preview- [Live](../review-publish-offer.md#previewing-and-approving-your-offer) staat
-- Als u Publisher-afmelding niet hebt voltooid, kunt u het [Publiceren annuleren.](../review-publish-offer.md#cancel-publishing)
+- Als de aanbieding een concept is: conceptaanbieding verwijderen
+- Als de aanbieding live is: verkoop [van de aanbieding stoppen](update-existing-offer.md#stop-selling-an-offer-or-plan)
+- Als de aanbieding in preview is - [Go-live](../review-publish-offer.md#previewing-and-approving-your-offer)
+- Als u het afloggen van de uitgever nog niet hebt voltooid: [publicatie annuleren.](../review-publish-offer.md#cancel-publishing)
 
-## <a name="offer-setup"></a>Installatie van aanbieding
+## <a name="offer-setup"></a>Aanbieding instellen
 
 Volg deze stappen om uw aanbieding in te stellen.
 
 ### <a name="customer-leads"></a>Leads van klanten
 
-Wanneer u uw aanbieding naar Marketplace publiceert met het partner centrum, kunt u deze optioneel koppelen aan uw CRM-systeem (Customer Relationship Management). Zo kunt u contact gegevens van klanten ontvangen zodra iemand interesse in of gebruikt voor uw product.
+Wanneer u uw aanbieding met een Partner Center naar marketplace publiceert, kunt u deze desgewenst verbinden met uw CRM-systeem (Customer Relationship Management). Hiermee kunt u contactgegevens van klanten ontvangen zodra iemand interesse heeft in uw product of uw product gebruikt.
 
-1. Selecteer een leadbestemming waarnaar wij de klantenleads moeten sturen. Het partner Centrum ondersteunt de volgende CRM-systemen:
+1. Selecteer een leadbestemming waarnaar wij de klantenleads moeten sturen. Partner Center ondersteunt de volgende CRM-systemen:
 
-    - [Dynamics 365](commercial-marketplace-lead-management-instructions-dynamics.md) voor klant betrokkenheid
+    - [Dynamics 365](commercial-marketplace-lead-management-instructions-dynamics.md) for Customer Engagement
     - [Marketo](commercial-marketplace-lead-management-instructions-marketo.md)
     - [Salesforce](commercial-marketplace-lead-management-instructions-salesforce.md)
 
     > [!NOTE]
-    > Als uw CRM-systeem niet hierboven wordt vermeld, gebruikt u [Azure Table](commercial-marketplace-lead-management-instructions-azure-table.md) of [https-eind punt](commercial-marketplace-lead-management-instructions-https.md) om klant lead gegevens op te slaan en exporteert u de gegevens vervolgens naar uw CRM-systeem.
+    > Als uw CRM-systeem hierboven niet wordt vermeld, gebruikt u [Azure Table](commercial-marketplace-lead-management-instructions-azure-table.md) of [Https Endpoint](commercial-marketplace-lead-management-instructions-https.md) om klant leadgegevens op te slaan en exporteert u de gegevens vervolgens naar uw CRM-systeem.
 
-2. Verbind uw aanbieding met de doel locatie van de lead wanneer u publiceert in het partner centrum.
-3. Controleer of de verbinding met de doel locatie juist is geconfigureerd. Nadat u het in het partner centrum hebt gepubliceerd, valideren we de verbinding en sturen we u een test lead. Wanneer u een voor beeld van de aanbieding bekijkt voordat deze live gaat, kunt u ook uw lead verbinding testen door zelf te proberen de aanbieding aan te schaffen in de preview-omgeving.
-4. Zorg ervoor dat de verbinding met de doel locatie van de lead bijgewerkt blijft, zodat u geen leads kwijtraakt.
+2. Verbind uw aanbieding met de leadbestemming bij het publiceren in Partner Center.
+3. Controleer of de verbinding met de leadbestemming juist is geconfigureerd. Nadat u deze hebt gepubliceerd in Partner Center, valideren we de verbinding en sturen we u een test lead. Terwijl u een voorbeeld van de aanbieding bekijkt voordat deze live gaat, kunt u uw leadverbinding ook testen door de aanbieding zelf te kopen in de preview-omgeving.
+4. Zorg ervoor dat de verbinding met de leadbestemming bijgewerkt blijft, zodat u geen leads verliest.
 
-Hier volgen enkele aanvullende bronnen voor het beheer van leads:
+Hier volgen enkele aanvullende resources voor leadbeheer:
 
 - [Leads van uw aanbieding in de commerciële marketplace](commercial-marketplace-get-customer-leads.md)
-- [Veelgestelde vragen over Lead beheer](../lead-management-faq.md#common-questions-about-lead-management)
-- [Problemen met configuratie fouten van de lead oplossen](../lead-management-faq.md#publishing-config-errors)
-- [Overzicht Lead beheer](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) PDF (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
+- [Veelvoorkomende vragen over leadbeheer](../lead-management-faq.md#common-questions-about-lead-management)
+- [Problemen met leadconfiguratie oplossen](../lead-management-faq.md#publishing-config-errors)
+- [Overzicht van leadbeheer](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) PDF (Zorg ervoor dat de pop-upblokkering is uitgeschakeld).
 
-Selecteer **concept opslaan** voordat u doorgaat.
+Selecteer **Concept opslaan voordat** u doorgaat.
 
 ### <a name="properties"></a>Eigenschappen
 
-Op deze pagina kunt u de categorieën definiëren die worden gebruikt voor het groeperen van uw aanbieding op Marketplace en de juridische contracten die uw aanbieding ondersteunen.
+Op deze pagina kunt u de categorieën definiëren die worden gebruikt voor het groepen van uw aanbieding op de marketplace en de juridische contracten die uw aanbieding ondersteunen.
 
 #### <a name="category"></a>Categorie
 
-Selecteer categorieën en subcategorieën om uw aanbieding te plaatsen in de juiste Zoek gebieden voor Marketplace. Zorg ervoor dat u beschrijft hoe uw aanbod deze categorieën ondersteunt in de beschrijving van de aanbieding. Selecteer:
+Selecteer categorieën en subcategorieën om uw aanbieding in de juiste marketplace-zoekgebieden te plaatsen. Beschrijf in de beschrijving van de aanbieding hoe uw aanbieding ondersteuning biedt voor deze categorieën. Selecteer:
 
-- Ten minste één en Maxi maal twee categorieën, met inbegrip van een primaire en secundaire categorie (optioneel).
-- Maxi maal twee subcategorieën voor elke primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert u **niet van toepassing**.
+- Ten minste één en maximaal twee categorieën, waaronder een primaire en een secundaire categorie (optioneel).
+- Maximaal twee subcategorieën voor elke primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert **u Niet van toepassing.**
 
-Bekijk de volledige lijst met categorieën en subcategorieën in [Aanbevolen procedures voor aanbiedingen](../gtm-offer-listing-best-practices.md). In Marketplace worden IOT Edge-modules altijd weer gegeven in de categorie  **Internet of Things**  >  **IOT Edge module**   .
+Zie de volledige lijst met categorieën en subcategorieën in [Best practices voor aanbiedingsvermeldingen.](../gtm-offer-listing-best-practices.md) In de marketplace worden IoT Edge modules altijd weergegeven onder de  **categorie Internet of Things**  >  **IoT Edge module.**  
 
 #### <a name="legal"></a>Juridisch
 
-U moet voor waarden voor de aanbieding opgeven. U hebt hiervoor twee opties:
+U moet voorwaarden voor de aanbieding verstrekken. U hebt hiervoor twee opties:
 
-- Gebruik het standaard contract voor micro soft Commercial Marketplace.
-- Geef uw eigen voor waarden op.
+- Gebruik de Standaardcontract voor de commerciële Marketplace van Microsoft.
+- Geef uw eigen voorwaarden op.
 
-##### <a name="standard-contract-for-the-microsoft-commercial-marketplace"></a>Standard-contract voor micro soft Commercial Marketplace
+##### <a name="standard-contract-for-the-microsoft-commercial-marketplace"></a>Standaardcontract voor de commerciële Marketplace van Microsoft
 
-We bieden een standaard contract sjabloon om trans acties in de commerciële Marketplace te vergemakkelijken. U kunt ervoor kiezen om uw oplossing aan te bieden onder het standaard contract, wat klanten alleen eenmaal hoeven te controleren en accepteren. Dit is een goede optie als u geen aangepaste voor waarden wilt aanwijzen.
+We bieden een Standaardcontract om transacties in de commerciële marketplace mogelijk te maken. U kunt ervoor kiezen om uw oplossing aan te bieden onder Standaardcontract, die klanten slechts één keer hoeven te controleren en accepteren. Dit is een goede optie als u geen aangepaste voorwaarden wilt maken.
 
-Zie voor meer informatie over het standaard contract [Standard-contract voor de micro soft Commercial Marketplace](../standard-contract.md). U kunt ook het [standaard](https://go.microsoft.com/fwlink/?linkid=2041178) -PDF-bestand downloaden (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
+Zie Voor meer informatie over de Standaardcontract, [Standaardcontract voor de commerciële Marketplace van Microsoft.](../standard-contract.md) U kunt ook de [Standaardcontract](https://go.microsoft.com/fwlink/?linkid=2041178) PDF downloaden (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
 
-Als u het standaard contract wilt gebruiken, schakelt u het selectie vakje **het standaard contract voor commerciële Marketplace van micro soft gebruiken** in en klikt u op **accepteren**.
-
-> [!NOTE]
-> Nadat u een aanbieding hebt gepubliceerd met het standaard contract voor micro soft Commercial Marketplace, kunt u uw eigen aangepaste voor waarden niet gebruiken. U kunt uw oplossing aanbieden onder het Standard-contract of onder uw eigen voor waarden.
-
-![Illustreert het gebruik van het standaard contract voor het selectie vakje commerciële Marketplace van micro soft.](media//iot-edge-module-standard-contract-checkbox.png)
-
-##### <a name="your-own-terms-and-conditions"></a>Uw eigen voor waarden
-
-Als u uw eigen aangepaste voor waarden wilt opgeven, voert u deze in het vak voor **waarden** in. U kunt een onbeperkte hoeveelheid tekst tekens in dit vak invoeren. Klanten moeten deze voor waarden accepteren voordat ze uw aanbieding kunnen proberen.
-
-Selecteer **concept opslaan** voordat u doorgaat naar de volgende sectie, aanbieding aanbieden.
-
-## <a name="offer-listing"></a>Aanbieding weer geven
-
-Hier definieert u de details van het aanbod dat op Marketplace wordt weer gegeven. Dit omvat de naam van de aanbieding, beschrijving, installatie kopieën, enzovoort. Zorg ervoor dat u het beleid volgt dat wordt beschreven op de beleids pagina van micro soft tijdens het configureren van deze aanbieding.
+Als u de Standaardcontract wilt gebruiken, selecteert u het selectievakje De Standaardcontract gebruiken voor de commerciële marketplace van **Microsoft** en klikt u vervolgens op **Accepteren.**
 
 > [!NOTE]
-> De details van de aanbieding hoeven niet in het Engels te zijn als de beschrijving van de aanbieding begint met de woord groep ' deze toepassing is alleen beschikbaar in [niet-Engelse taal] '. Het is ook handig om een nuttige koppeling te bieden om inhoud te bieden in een andere taal dan die wordt gebruikt in de details van de aanbieding.
+> Nadat u een aanbieding hebt gepubliceerd met behulp van het Standard-contract voor de commerciële marketplace van Microsoft, kunt u uw eigen aangepaste voorwaarden niet gebruiken. Bied uw oplossing aan onder de Standaardcontract of onder uw eigen voorwaarden.
+
+![Illustreert het gebruik van Standaardcontract selectievakje voor de commerciële marketplace van Microsoft.](media//iot-edge-module-standard-contract-checkbox.png)
+
+##### <a name="your-own-terms-and-conditions"></a>Uw eigen voorwaarden
+
+Als u uw eigen aangepaste voorwaarden wilt verstrekken, voert u deze in het vak **Voorwaarden** in. U kunt een onbeperkt aantal tekens tekst invoeren in dit vak. Klanten moeten deze voorwaarden accepteren voordat ze uw aanbieding kunnen proberen.
+
+Selecteer **Concept opslaan** voordat u verdergaat met de volgende sectie, Aanbiedingsvermelding.
+
+## <a name="offer-listing"></a>Aanbiedingsvermelding
+
+Hier definieert u de aanbiedingsgegevens die worden weergegeven in marketplace. Dit omvat de naam van de aanbieding, beschrijving, afbeeldingen, en meer. Zorg ervoor dat u het beleid volgt dat wordt beschreven op de beleidspagina van Microsoft tijdens het configureren van deze aanbieding.
+
+> [!NOTE]
+> Aanbiedingsdetails zijn niet vereist in het Engels als de beschrijving van de aanbieding begint met de zin 'Deze toepassing is alleen beschikbaar in [niet-Engelse taal].' U kunt ook een nuttige koppeling geven om inhoud aan te bieden in een andere taal dan de taal die wordt gebruikt in de aanbiedingsvermelding.
 
 ### <a name="name"></a>Name
 
-De naam die u hier opgeeft, wordt weer gegeven als de titel van uw aanbieding. Dit veld is vooraf ingevuld met de tekst die u hebt ingevoerd in het vak **aanbiedings alias** wanneer u de aanbieding hebt gemaakt. U kunt deze naam later wijzigen.
+De naam die u hier optreedt, wordt weergegeven als de titel van uw aanbieding. Dit veld wordt vooraf ingevuld met de tekst die u hebt ingevoerd in het **vak Aanbiedingsalias** toen u de aanbieding maakte. U kunt deze naam later wijzigen.
 
 De naam:
 
-- Kan worden gemerkt (en u kunt symbolen van het handels merk of copyright bevatten).
+- Kan handelsmerken zijn (en u kunt handelsmerken of auteursrechtsymbolen opnemen).
 - Mag niet langer zijn dan 50 tekens.
-- Kan geen emojis bevatten.
+- Kan geen emoji's bevatten.
 
-### <a name="search-results-summary"></a>Samen vatting van zoek resultaten
+### <a name="search-results-summary"></a>Samenvatting van zoekresultaten
 
-Geef een korte beschrijving van uw aanbieding. Dit kan Maxi maal 100 tekens lang zijn en wordt gebruikt in Zoek resultaten voor Marketplace.
+Geef een korte beschrijving van uw aanbieding op. Dit kan maximaal 100 tekens lang zijn en wordt gebruikt in marketplace-zoekresultaten.
 
-### <a name="long-summary"></a>Lange samen vatting
+### <a name="long-summary"></a>Lange samenvatting
 
-Geef een gedetailleerdere beschrijving van uw aanbieding. Dit kan Maxi maal 256 tekens lang zijn en wordt gebruikt in Zoek resultaten voor Marketplace.
+Geef een gedetailleerde beschrijving van uw aanbieding op. Deze mag maximaal 256 tekens lang zijn en wordt gebruikt in marketplace-zoekresultaten.
 
 ### <a name="description"></a>Description
 
 [!INCLUDE [Long description-1](./includes/long-description-1.md)]
 
-IoT Edge module-aanbiedingen moeten aan de onderkant van de beschrijving een alinea met minimale hardwarevereisten bevatten, zoals:
+IoT Edge moduleaanbiedingen moeten onder aan de beschrijving een alinea met minimale hardwarevereisten bevatten, zoals:
 
-- Minimale hardwarevereisten: Linux x64 en arm32 OS, 1 GB RAM, 500 MB aan opslag ruimte
+- Minimale hardwarevereisten: Linux x64 en arm32 OS, 1 GB RAM, 500 MB aan opslag
 
 [!INCLUDE [Long description-2](./includes/long-description-2.md)]
 
 [!INCLUDE [Long description-3](./includes/long-description-3.md)]
 
-#### <a name="privacy-policy-url"></a>URL van privacybeleid
+#### <a name="privacy-policy-url"></a>URL voor privacybeleid
 
-Voer het webadres in van het privacybeleid van uw organisatie. U bent verantwoordelijk om ervoor te zorgen dat uw aanbieding voldoet aan de wetten en voor schriften van de privacy. U bent ook verantwoordelijk voor het posten van een geldig privacybeleid op uw website.
+Voer het webadres van het privacybeleid van uw organisatie in. U bent verantwoordelijk om ervoor te zorgen dat uw aanbieding voldoet aan de privacywetgeving en -regelgeving. U bent ook verantwoordelijk voor het plaatsen van een geldig privacybeleid op uw website.
 
 #### <a name="useful-links"></a>Handige koppelingen
 
-Bied aanvullende online documenten over uw aanbieding. U kunt Maxi maal 25 koppelingen toevoegen. Selecteer **+ een koppeling toevoegen** en vul vervolgens de volgende velden in om een koppeling toe te voegen:
+Geef aanvullende onlinedocumenten over uw aanbieding op. U kunt maximaal 25 koppelingen toevoegen. Als u een koppeling wilt toevoegen, **selecteert u + Een koppeling toevoegen** en vult u de volgende velden in:
 
-- **Titel** : klanten zien de titel op de pagina met details van de aanbieding.
-- **Koppeling (URL)** : Voer een koppeling voor klanten in om uw online document weer te geven. De koppeling moet beginnen met `http://` of `https://` .
+- **Titel:** klanten zien de titel op de detailpagina van uw aanbieding.
+- **Koppeling (URL) :** voer een koppeling in voor klanten om uw onlinedocument weer te geven. De koppeling moet beginnen met `http://` of `https://` .
 
-Zorg ervoor dat u ten minste één koppeling naar uw documentatie en een koppeling naar de compatibele IoT Edge apparaten toevoegt vanuit de [Azure IOT-apparaatinstantie](https://devicecatalog.azure.com/).
+Zorg ervoor dat u ten minste één koppeling naar uw documentatie en één koppeling naar de compatibele IoT Edge-apparaten uit de [Azure IoT-apparaatcatalogus toevoegt.](https://devicecatalog.azure.com/)
 
 ### <a name="contact-information"></a>Contactgegevens
 
-U moet de naam, het e-mail adres en het telefoon nummer opgeven voor een **ondersteunings contact** en een **technische contact persoon.** Deze informatie wordt niet weer gegeven aan klanten. Het is beschikbaar voor micro soft en kan worden meegeleverd met de Cloud Solution Provider (CSP)-partners.
+U moet de naam, het e-mailadres en het telefoonnummer voor een contactpersoon **voor** ondersteuning en een technische **contactpersoon verstrekken.** Deze informatie wordt niet weergegeven aan klanten. Het is beschikbaar voor Microsoft en kan worden verstrekt aan Cloud Solution Provider (CSP)-partners.
 
-- Ondersteunings contact (vereist): voor algemene ondersteunings vragen.
-- Technische contact persoon (vereist): voor technische vragen en certificerings problemen.
-- CSP-programma: Neem contact op met de leverancier van het CSP-programma.
+- Contactpersoon voor ondersteuning (vereist): voor algemene ondersteuningsvragen.
+- Technische contactpersoon (vereist): voor technische vragen en certificeringsproblemen.
+- Contactpersoon voor CSP-programma (optioneel): voor vragen van resellers met betrekking tot het CSP-programma.
 
-Geef in de sectie **ondersteunings contact persoon** het webadres op van de **ondersteunings website** waar partners ondersteuning voor uw aanbieding kunnen vinden op basis van het feit of de aanbieding beschikbaar is in wereld wijd Azure, Azure Government of beide.
+Geef **in** de sectie Contactpersoon voor  ondersteuning het webadres van de ondersteuningswebsite op waar partners ondersteuning voor uw aanbieding kunnen vinden op basis van of de aanbieding beschikbaar is in Azure, Azure Government wereldwijd of beide.
 
-Geef in de sectie **contact persoon** van het CSP-programma de koppeling op (**CSP-programma marketing materiaal**) waarin CSP-partners marketing materiaal voor uw aanbieding kunnen vinden.
+Geef in de sectie Contactpersoon voor **CSP-programma** de koppeling **(CSP Program Marketing Materials)** op waar CSP-partners marketingmateriaal voor uw aanbieding kunnen vinden.
 
-#### <a name="additional-marketplace-listing-resources"></a>Aanvullende bronnen voor Marketplace-lijst
+#### <a name="additional-marketplace-listing-resources"></a>Aanvullende marketplace-vermeldingsbronnen
 
-Zie [Aanbevolen procedures](../gtm-offer-listing-best-practices.md)voor aanbieding voor meer informatie over het maken van aanbiedingen.
+Zie Best practices voor aanbiedingsvermeldingen voor meer informatie over [het maken van aanbiedingen.](../gtm-offer-listing-best-practices.md)
 
-### <a name="marketplace-images"></a>Marketplace-installatie kopieën
+### <a name="marketplace-images"></a>Marketplace-afbeeldingen
 
-Bied logo's en installatie kopieën die u kunt gebruiken met uw aanbieding. Alle installatie kopieën moeten de PNG-indeling hebben. Vage afbeeldingen worden geweigerd.
+Geef logo's en afbeeldingen op die u met uw aanbieding kunt gebruiken. Alle afbeeldingen moeten de PNG-indeling hebben. Wazige afbeeldingen worden geweigerd.
 
 [!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!Note]
->Als u een probleem hebt met het uploaden van bestanden, moet u ervoor zorgen dat uw lokale netwerk de door https://upload.xboxlive.com Partner Center gebruikte service niet blokkeert.
+>Als u problemen hebt met het uploaden van bestanden, moet u ervoor zorgen dat uw lokale netwerk de service die wordt gebruikt door de https://upload.xboxlive.com Partner Center.
 
-#### <a name="store-logos"></a>Winkel logo's
+#### <a name="store-logos"></a>Logo's opslaan
 
-Geef een PNG-bestand voor het logo van **grote** grootte op. Het partner centrum gebruikt deze om een **klein** en **gemiddeld** logo te maken. U kunt deze desgewenst later vervangen door andere installatie kopieën.
+Geef een PNG-bestand op voor het logo **Van** grote grootte. Partner Center gebruikt deze om een **klein** en een medium logo **te** maken. U kunt deze eventueel later vervangen door andere afbeeldingen.
 
 - **Groot** (van 216 x 216 tot 350 x 350 px, vereist)
 - **Gemiddeld** (90 x 90 px, optioneel)
 - **Klein** (48 x 48 px, optioneel)
 
-Deze logo's worden op verschillende plaatsen in de vermelding gebruikt:
+Deze logo's worden op verschillende plaatsen in de lijst gebruikt:
 
 [!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
 
 [!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
-#### <a name="screenshots-optional"></a>Scherm afbeeldingen (optioneel)
+#### <a name="screenshots-optional"></a>Schermopnamen (optioneel)
 
-Voeg Maxi maal vijf scherm opnamen toe die laten zien hoe uw aanbieding werkt. Elk moet 1280 x 720 pixels groot en in PNG-indeling zijn.
+Voeg maximaal vijf schermafbeeldingen toe die laten zien hoe uw aanbieding werkt. Elk moet 1280 x 720 pixels groot zijn en een PNG-indeling hebben.
 
 #### <a name="videos-optional"></a>Video's (optioneel)
 
-Voeg Maxi maal vijf Video's toe die uw aanbieding aantonen. Voer de naam van de video, het webadres en een miniatuur van de PNG-afbeelding van de video in op 1280 x 720 pixels.
+Voeg maximaal vijf video's toe die uw aanbieding demonstreren. Voer de naam van de video, het webadres en een PNG-miniatuurafbeelding van de video in met een grootte van 1280 x 720 pixels.
 
-#### <a name="marketplace--examples"></a>Marketplace-voor beelden
+#### <a name="marketplace--examples"></a>Marketplace-voorbeelden
 
-Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in azure Marketplace:
+Hier ziet u een voorbeeld van hoe aanbiedingsgegevens worden weergegeven in Azure Marketplace:
 
-:::image type="content" source="media/example-iot-azure-marketplace-offer.png" alt-text="Illustreert hoe deze aanbieding wordt weer gegeven in azure Marketplace.":::
+:::image type="content" source="media/example-iot-azure-marketplace-offer.png" alt-text="Illustreert hoe deze aanbieding wordt weergegeven in Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
 
 1. Groot logo
 2. Categorieën
-3. Ondersteunings adres (koppeling)
+3. Ondersteuningsadres (koppeling)
 4. Voorwaarden
-5. Adres van privacybeleid (koppeling)
+5. Adres van het privacybeleid (koppeling)
 6. Name
 7. Samenvatting
 8. Description
 9. Handige koppelingen
-10. Scherm afbeeldingen/Video's
+10. Schermopnamen/video's
 
-<br>Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in de zoek resultaten van Azure Marketplace:
+<br>Hier is een voorbeeld van hoe aanbiedingsgegevens worden weergegeven in Azure Marketplace zoekresultaten:
 
-:::image type="content" source="media/example-iot-azure-marketplace-offer-search-results.png" alt-text="Illustreert hoe deze aanbieding wordt weer gegeven in de zoek resultaten voor Azure Marketplace.":::
+:::image type="content" source="media/example-iot-azure-marketplace-offer-search-results.png" alt-text="Illustreert hoe deze aanbieding wordt weergegeven in Azure Marketplace zoekresultaten.":::
 
 #### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
 
 1. Klein logo
 2. Naam van aanbieding
-3. Samen vatting van zoek resultaten
+3. Samenvatting van zoekresultaten
 
-<br>Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in de Azure Portal:
+<br>Hier ziet u een voorbeeld van hoe aanbiedingsgegevens worden weergegeven in de Azure Portal:
 
-:::image type="content" source="media/example-iot-azure-portal-offer.png" alt-text="Illustreert hoe deze aanbieding wordt weer gegeven in de Azure Portal.":::
+:::image type="content" source="media/example-iot-azure-portal-offer.png" alt-text="Illustreert hoe deze aanbieding wordt weergegeven in de Azure Portal.":::
 
 #### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
 
@@ -261,167 +261,167 @@ Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in
 3. Handige koppelingen
 4. Schermopnamen
 
-<br>Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in de Azure Portal Zoek resultaten:
+<br>Hier is een voorbeeld van hoe aanbiedingsgegevens worden weergegeven in de Azure Portal zoekresultaten:
 
-:::image type="content" source="media/example-iot-azure-portal-offer-search-results.png" alt-text="Illustreert hoe deze aanbieding wordt weer gegeven in de Azure Portal Zoek resultaten.":::
+:::image type="content" source="media/example-iot-azure-portal-offer-search-results.png" alt-text="Illustreert hoe deze aanbieding wordt weergegeven in de Azure Portal zoekresultaten.":::
 
 #### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
 
 1. Klein logo
 2. Naam van aanbieding
-3. Samen vatting van zoek resultaten
+3. Samenvatting van zoekresultaten
 
-<br>Selecteer **concept opslaan** voordat u doorgaat naar de volgende sectie, voor beeld.
+<br>Selecteer **Concept opslaan voordat** u doorgaat met de volgende sectie, Preview.
 
 ## <a name="preview"></a>Preview
 
-Op het **tabblad preview** kunt u een beperkte preview- **doel groep** kiezen voor het valideren van uw aanbieding voordat u deze live publiceert naar het bredere publiek van de Marketplace.
+Op het **tabblad Preview kunt** u een beperkte **preview-doelgroep** kiezen voor het valideren van uw aanbieding voordat u deze live publiceert naar de bredere marketplace-doelgroep.
 
 > [!IMPORTANT]
-> Nadat u uw aanbieding in Preview hebt bekeken, moet u **Live go** selecteren om uw aanbieding naar het publiek te publiceren.
+> Nadat u uw aanbieding in preview hebt bekeken, moet u **Live gaan selecteren** om uw aanbieding naar het publiek te publiceren.
 
-Geef uw preview-doel groep op met behulp van de Azure-abonnements-ID-GUID'S, samen met een optionele beschrijving voor elk. Geen van deze velden kan worden gezien door klanten.
+Geef uw preview-doelgroep op met behulp van GUID's voor Azure-abonnements-id's, samen met een optionele beschrijving voor elke doelgroep. Geen van deze velden kan door klanten worden gezien.
 
 > [!NOTE]
-> U kunt uw Azure-abonnements-ID vinden op de pagina Abonnementen in de Azure Portal.
+> U vindt uw Azure-abonnements-id op de pagina Abonnementen in de Azure Portal.
 
-Voeg ten minste één Azure-abonnements-ID afzonderlijk toe (Maxi maal 10) of door een CSV-bestand te uploaden (Maxi maal 100). Door deze abonnement-Id's toe te voegen, definieert u wie een voor beeld van uw aanbieding kan bekijken voordat deze Live wordt gepubliceerd. Als uw aanbieding al Live is, kunt u een preview-doel groep definiëren om wijzigingen of updates van uw aanbieding te testen.
+Voeg ten minste één Azure-abonnements-id toe, afzonderlijk (maximaal 10) of door een CSV-bestand (maximaal 100) te uploaden. Door deze abonnements-ID's toe te voegen, definieert u wie een preview van uw aanbieding kan bekijken voordat deze live wordt gepubliceerd. Als uw aanbieding al live is, kunt u een preview-doelgroep definiëren om wijzigingen of updates voor uw aanbieding te testen.
 
-Selecteer **concept opslaan** voordat u doorgaat naar de volgende sectie, plan overzicht.
+Selecteer **Concept opslaan** voordat u doorgaat met de volgende sectie, Planoverzicht.
 
-## <a name="plan-overview"></a>Overzicht van plan
+## <a name="plan-overview"></a>Planoverzicht
 
-Op dit tabblad kunt u verschillende plan opties bieden binnen dezelfde aanbieding in Partner Center. Plannen (voorheen Sku's) kunnen verschillen in wat voor Clouds beschikbaar zijn, zoals globale Clouds, overheids Clouds en de afbeelding waarnaar wordt verwezen door het plan. Als u uw aanbieding in Marketplace wilt aanbieden, moet u ten minste één abonnement instellen.
+Op dit tabblad kunt u verschillende abonnementsopties binnen dezelfde aanbieding in Partner Center. Plannen (voorheen SKU's genoemd) kunnen verschillen wat betreft de beschikbare clouds, zoals wereldwijde clouds, overheidswolken en de afbeelding waarnaar in het plan wordt verwezen. Als u uw aanbieding wilt aanbieden in de Marketplace, moet u ten minste één abonnement instellen.
 
-U kunt Maxi maal 100 abonnementen maken voor elke aanbieding: Maxi maal 45 van deze kunnen privé zijn. Meer informatie over privé-abonnementen [vindt u in de micro soft Commercial Marketplace](../private-offers.md).
+U kunt maximaal 100 abonnementen maken voor elke aanbieding: maximaal 45 van deze abonnementen kunnen privé zijn. Meer informatie over privé-abonnementen in [Privéaanbiedingen in de commerciële marketplace van Microsoft.](../private-offers.md)
 
-Nadat u uw plannen hebt gemaakt, wordt op het tabblad Overzicht van het **plan** het volgende weer gegeven:
+Nadat u uw plannen hebt gemaakt, wordt **op het tabblad Planoverzicht** het volgende weergegeven:
 
 - Namen van plannen
 - Prijsmodel
-- Azure-regio's (wereld wijd of overheid)
-- Huidige publicatie status
-- Beschik bare acties
+- Azure-regio's (wereldwijd of overheid)
+- Huidige publicatiestatus
+- Beschikbare acties
 
-De acties die beschikbaar zijn in het plan overzicht variëren, afhankelijk van de huidige status van uw abonnement. Deze omvatten:
+De acties die beschikbaar zijn in het planoverzicht variëren afhankelijk van de huidige status van uw plan. Deze omvatten:
 
-- **Concept verwijderen**: als de plan status een concept is.
-- **Verkoop plan stoppen**: als de plan status Live is gepubliceerd.
+- **Concept verwijderen:** als de status van het plan concept is.
+- **Verkoopplan stoppen:** als de status van het plan live wordt gepubliceerd.
 
 ### <a name="create-new-plan"></a>Nieuw plan maken
 
-Selecteer **nieuw plan maken**. Het dialoog venster **nieuw plan** wordt weer gegeven.
+Selecteer **Nieuw plan maken.** Het dialoogvenster Nieuw **plan** wordt weergegeven.
 
-Maak in het vak **abonnement-id** een unieke plan-id voor elk abonnement in deze aanbieding. Deze ID is zichtbaar voor klanten in het webadres van het product. Gebruik alleen kleine letters en cijfers, streepjes of onderstrepings tekens en Maxi maal 50.
+Maak in **het vak** Plan ID een unieke plan-id voor elk plan in deze aanbieding. Deze id is zichtbaar voor klanten in het webadres van het product. Gebruik alleen kleine letters en cijfers, streepjes of onderstrepingstekens en maximaal 50 tekens.
 
-Voer in het vak **naam van abonnement** een naam in voor dit abonnement. Klanten zien deze naam wanneer ze bepalen welk abonnement binnen uw aanbieding moet worden geselecteerd. Maak in deze aanbieding een unieke naam voor elk abonnement. U kunt bijvoorbeeld een aanbiedings naam van **Windows Server** gebruiken met plannen **Windows Server 2016** en **Windows Server 2019**.
+Voer in **het vak** Plannaam een naam in voor dit plan. Klanten zien deze naam bij het kiezen van een abonnement in uw aanbieding. Maak een unieke naam voor elk plan in deze aanbieding. U kunt bijvoorbeeld een aanbiedingsnaam van **Windows Server gebruiken met** abonnementen op Windows Server **2016** en **Windows Server 2019.**
 
 > [!NOTE]
-> De plan-ID kan niet worden gewijzigd nadat u **maken** hebt geselecteerd.
+> De plan-id kan niet worden gewijzigd nadat u **Maken hebt geselecteerd.**
 
 Selecteer **Maken**.
 
-### <a name="plan-setup"></a>Installatie plannen
+### <a name="plan-setup"></a>Installatie van plan
 
-Op dit tabblad kunt u configureren in welke Clouds het plan beschikbaar is. Uw antwoorden op dit tabblad bepalen welke velden op andere tabbladen worden weer gegeven.
+Op dit tabblad kunt u configureren in welke clouds het abonnement beschikbaar is. Uw antwoorden op dit tabblad beïnvloeden welke velden worden weergegeven op andere tabbladen.
 
 #### <a name="azure-regions"></a>Azure-regio's
 
-Alle plannen voor IoT Edge module aanbiedingen worden automatisch beschikbaar gemaakt in **Azure Global**.  Uw abonnement kan door klanten worden gebruikt in alle wereld wijde Azure-regio's die gebruikmaken van Marketplace. Zie [geografische Beschik baarheid en valuta ondersteuning](../marketplace-geo-availability-currencies.md)voor meer informatie.
+Alle abonnementen voor IoT Edge moduleaanbiedingen worden automatisch beschikbaar gesteld in **Azure Global.**  Uw plan kan worden gebruikt door klanten in alle Azure-regio's wereldwijd die gebruikmaken van de marketplace. Zie Geografische beschikbaarheid en valutaondersteuning [voor meer informatie.](../marketplace-geo-availability-currencies.md)
 
-Selecteer de optie [Azure Government](../../azure-government/documentation-government-welcome.md) om uw oplossing hier weer te geven. Dit is een community-Cloud met gecontroleerde toegang voor klanten van de Amerikaanse federale, staats-en lokale of tribale overheids instanties en partners die in aanmerking komen voor de overheid. Als uitgever bent u verantwoordelijk voor nalevings controles, beveiligings maatregelen en aanbevolen procedures voor deze Cloud community. Azure Government maakt gebruik van fysiek geïsoleerde data centers en netwerken (alleen in de Verenigde Staten). Voordat u naar Azure Government [publiceert](../../azure-government/documentation-government-manage-marketplace-partners.md) , moet u de oplossing in dat gebied testen en bevestigen, omdat de resultaten mogelijk verschillend zijn. Als u uw oplossing wilt klaarzetten en testen, vraagt u een proef account aan bij [Microsoft Azure Government proef versie](https://azure.microsoft.com/global-infrastructure/government/request/).
+Selecteer de [Azure Government](../../azure-government/documentation-government-welcome.md) om uw oplossing hier weer te laten zien. Dit is een overheidscloud met beheerde toegang voor klanten van Amerikaanse federale, staats- en lokale of overheidsinstanties, en partners die in aanmerking komen om ze te bedienen. Als uitgever bent u verantwoordelijk voor alle nalevingscontroles, beveiligingsmaatregelen en best practices voor deze cloud-community. Azure Government fysiek geïsoleerde datacenters en netwerken (alleen in de Verenigde Staten). Voordat [u](../../azure-government/documentation-government-manage-marketplace-partners.md) publiceert Azure Government, test en bevestigt u uw oplossing binnen dat gebied, aangezien de resultaten mogelijk anders zijn. Als u uw oplossing wilt faseer en testen, vraagt u een proefaccount aan [bij Microsoft Azure Government proefversie.](https://azure.microsoft.com/global-infrastructure/government/request/)
 
 > [!NOTE]
-> Nadat uw plan is gepubliceerd en beschikbaar is in een specifieke regio, kunt u die regio niet verwijderen.
+> Nadat uw abonnement is gepubliceerd en beschikbaar is in een specifieke regio, kunt u die regio niet verwijderen.
 
-#### <a name="azure-government-certifications"></a>Azure Government-certificeringen
+#### <a name="azure-government-certifications"></a>Azure Government certificeringen
 
-Deze optie is alleen zichtbaar als **Azure Government** is geselecteerd onder **Azure-regio's**.
+Deze optie is alleen zichtbaar **als** Azure Government is geselecteerd onder **Azure-regio's.**
 
-Azure Government services verwerken gegevens die onderworpen zijn aan bepaalde wettelijke voor schriften en vereisten. Bijvoorbeeld FedRAMP, NIST 800,171 (DIB), ITAR, IRS 1075, DoD N4 en CJIS. Als u uw certificeringen voor deze Program ma's wilt behalen, kunt u Maxi maal 100 koppelingen opgeven die uw certificeringen beschrijven. Dit kunnen koppelingen zijn naar uw aanbiedingen op het programma, rechtstreeks of op uw eigen website. Deze koppelingen zijn alleen zichtbaar voor Azure Government klanten.
+Azure Government-services verwerken gegevens die onderhevig zijn aan bepaalde wettelijke voorschriften en vereisten. Bijvoorbeeld FedRAMP, NIST 800.171 (DIB), ITAR, IRS 1075, DoD L4 en CJIS. Om uw certificeringen voor deze programma's onder de aandacht te brengen, kunt u maximaal 100 koppelingen opgeven die uw certificeringen beschrijven. Dit kunnen koppelingen naar uw vermeldingen op het programma rechtstreeks of naar uw eigen website zijn. Deze koppelingen zijn alleen zichtbaar Azure Government klanten.
 
-### <a name="plan-listing"></a>Aanbieding plannen
+### <a name="plan-listing"></a>Abonnementsvermelding
 
-Dit tabblad bevat specifieke informatie voor elk abonnement binnen dezelfde aanbieding.
+Op dit tabblad wordt specifieke informatie weergegeven voor elk ander abonnement binnen dezelfde aanbieding.
 
-### <a name="plan-name"></a>Plan naam
+### <a name="plan-name"></a>Naam van plan
 
-Dit is vooraf ingevuld met de naam die u hebt opgegeven bij het maken van het abonnement. U kunt deze naam, indien nodig, wijzigen. Het kan Maxi maal 50 tekens lang zijn. Deze naam wordt weer gegeven als de titel van dit plan in azure Marketplace en de Azure Portal. De naam wordt als de standaard modulenaam gebruikt nadat het plan gereed is om te worden gebruikt.
+Deze wordt vooraf ingevuld met de naam die u aan uw plan hebt gegeven toen u het maakte. U kunt deze naam zo nodig wijzigen. Deze mag maximaal 50 tekens lang zijn. Deze naam wordt weergegeven als de titel van dit plan in Azure Marketplace en de Azure Portal. Het wordt gebruikt als de standaardnaam van de module nadat het plan gereed is om te worden gebruikt.
 
-### <a name="plan-summary"></a>Samen vatting plannen
+### <a name="plan-summary"></a>Abonnementsoverzicht
 
-Geef een korte samen vatting van uw abonnement (niet de aanbieding). Deze samen vatting wordt weer gegeven in de zoek resultaten van Azure Marketplace en kan Maxi maal 100 tekens bevatten.
+Geef een kort overzicht van uw abonnement (niet de aanbieding). Deze samenvatting wordt weergegeven in Azure Marketplace en kan maximaal 100 tekens bevatten.
 
-### <a name="plan-description"></a>Plan beschrijving
+### <a name="plan-description"></a>Beschrijving van het plan
 
-Beschrijf wat dit plan uniek maakt, evenals verschillen tussen de plannen binnen uw aanbieding. Beschrijf de aanbieding niet, alleen het abonnement. Deze beschrijving wordt weer gegeven in azure Marketplace en in de Azure Portal op de aanbiedings pagina. Dit kan hetzelfde zijn als de inhoud die u in de samen vatting van het abonnement hebt gegeven en Maxi maal 2.000 tekens bevat.
+Beschrijf wat dit plan uniek maakt, evenals de verschillen tussen plannen binnen uw aanbieding. Beschrijf de aanbieding niet, alleen het plan. Deze beschrijving wordt weergegeven in Azure Marketplace en in de Azure Portal op de aanbiedingspagina. Dit kan dezelfde inhoud zijn die u hebt opgegeven in het planoverzicht en maximaal 2000 tekens bevatten.
 
-Selecteer **concept opslaan** nadat u deze velden hebt voltooid.
+Selecteer **Concept opslaan** na het voltooien van deze velden.
 
-#### <a name="plan-examples"></a>Voor beelden plannen
+#### <a name="plan-examples"></a>Planvoorbeelden
 
-Hier volgt een voor beeld van de details van het Azure Marketplace-plan (alle prijzen in de lijst zijn alleen bedoeld als voor beeld van de werkelijke kosten):
+Hier is een voorbeeld van Azure Marketplace van een abonnement (alle vermelde prijzen zijn alleen bedoeld voor voorbeelddoeleinden en zijn niet bedoeld om de werkelijke kosten weer te geven):
 
-:::image type="content" source="media/example-iot-azure-marketplace-plan.png" alt-text="Illustreert Details van het Azure Marketplace-abonnement.":::
-
-#### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
-
-1. Naam van aanbieding
-2. Plan naam
-3. Plan beschrijving
-
-<br>Hier volgt een voor beeld van de details van het Azure Portal plan (alle prijzen in de lijst zijn alleen bedoeld als voor beeld van de werkelijke kosten):
-
-:::image type="content" source="media/example-iot-azure-marketplace-plan-details.png" alt-text="Illustreert de details van het Azure Portal plan.":::
+:::image type="content" source="media/example-iot-azure-marketplace-plan.png" alt-text="Illustreert Azure Marketplace plandetails.":::
 
 #### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
 
 1. Naam van aanbieding
-2. Plan naam
-3. Plan beschrijving
+2. Plannaam
+3. Beschrijving van het plan
+
+<br>Hier is een voorbeeld van de details Azure Portal het abonnement (alle vermelde prijzen zijn alleen bedoeld voor voorbeelddoeleinden en zijn niet bedoeld om de werkelijke kosten weer te geven):
+
+:::image type="content" source="media/example-iot-azure-marketplace-plan-details.png" alt-text="Illustreert de details Azure Portal uw abonnement.":::
+
+#### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
+
+1. Naam van aanbieding
+2. Plannaam
+3. Beschrijving van het plan
 
 ### <a name="availability"></a>Beschikbaarheid
 
-Als u uw gepubliceerde aanbieding wilt verbergen zodat klanten deze niet kunnen zoeken, zoeken of kopen op Marketplace, schakelt u het selectie vakje **plan verbergen** op het tabblad Beschik baarheid in.
+Als u uw gepubliceerde aanbieding wilt verbergen zodat klanten deze niet kunnen zoeken, zoeken of kopen in marketplace, selecteert u het selectievakje Plan verbergen op het tabblad Beschikbaarheid. 
 
-Dit veld wordt meestal gebruikt wanneer:
+Dit veld wordt vaak gebruikt wanneer:
 
-- De aanbieding is bedoeld om alleen indirect te worden gebruikt wanneer er wordt verwezen naar een andere toepassing.
+- De aanbieding is bedoeld om alleen indirect te worden gebruikt wanneer er naar wordt verwezen via een andere toepassing.
 - De aanbieding mag niet afzonderlijk worden gekocht.
-- Het plan werd gebruikt voor de eerste test en is niet meer relevant.
-- Het abonnement werd gebruikt voor tijdelijke of seizoen aanbiedingen en kan niet meer worden aangeboden.
+- Het plan is gebruikt voor de eerste test en is niet meer relevant.
+- Het plan is gebruikt voor tijdelijke of seizoensgebonden aanbiedingen en mag niet meer worden aangeboden.
 
 ## <a name="technical-configuration"></a>Technische configuratie
 
-Het **IOT Edge-module** aanbod type is een specifiek type container dat wordt uitgevoerd op een IOT edge apparaat. Op het tabblad **technische configuratie** vindt u referentie gegevens voor de opslag plaats van de container installatie kopie in de [Azure container Registry](https://azure.microsoft.com/services/container-registry/), samen met de configuratie-instellingen waarmee klanten de module eenvoudig kunnen gebruiken.
+Het **IoT Edge moduleaanbiedingstype** is een specifiek type container dat wordt uitgevoerd op een IoT Edge apparaat. Op het **tabblad Technische** configuratie geeft u referentie-informatie op voor de opslagplaats voor containerafbeeldingen in de [Azure Container Registry,](https://azure.microsoft.com/services/container-registry/)samen met configuratie-instellingen die klanten de module eenvoudig laten gebruiken.
 
-Nadat de aanbieding is gepubliceerd, wordt uw IoT Edge container installatie kopie gekopieerd naar Azure Marketplace in een specifiek openbaar container register. Alle aanvragen van Azure-gebruikers die gebruikmaken van uw module, worden aangeboden vanuit het open bare container register van Azure Marketplace, niet in uw persoonlijke container register.
+Nadat de aanbieding is gepubliceerd, wordt IoT Edge containerkopie gekopieerd naar Azure Marketplace in een specifiek openbaar containerregister. Alle aanvragen van Azure-gebruikers om uw module te gebruiken, worden uitgevoerd vanuit Azure Marketplace openbare containerregister, niet uw persoonlijke containerregister.
 
-U kunt richten op meerdere platformen en verschillende versies van de module container installatie kopie bieden met behulp van tags. Zie [de technische activa van uw IOT Edge-module voorbereiden](create-iot-edge-module-asset.md)voor meer informatie over tags en versie beheer.
+U kunt zich richten op meerdere platforms en verschillende versies van de containerafbeelding van de module leveren met behulp van tags. Zie Prepare your IoT Edge module technical assets (Technische assets voor uw IoT Edge module voorbereiden) voor meer informatie over [tags en versiebeheer.](create-iot-edge-module-asset.md)
 
-### <a name="image-repository-details"></a>Details van de afbeeldings opslagplaats
+### <a name="image-repository-details"></a>Details van opslagplaats voor afbeeldingen
 
-U geeft de volgende informatie op het tabblad **Details van de afbeeldings opslagplaats** .
+U geeft de volgende informatie op het tabblad Details van de opslagplaats **voor afbeeldingen** op.
 
-**Selecteer de installatie kopie bron**: Selecteer de optie **Azure container Registry** .
+**Selecteer de bron van de afbeelding:** selecteer **de Azure Container Registry** selecteren.
 
-**Azure-abonnements-id**: Geef de abonnements-id op waarvoor het resource gebruik wordt gerapporteerd en de services worden gefactureerd voor de Azure container Registry die uw container installatie kopie bevatten. U kunt deze ID vinden op de [pagina Abonnementen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) in het Azure Portal.
+**Azure-abonnements-id:** geef de abonnements-id op waar resourcegebruik wordt gerapporteerd en services worden gefactureerd voor de Azure Container Registry die uw containerafbeelding bevat. U vindt deze id op de [pagina Abonnementen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) in de Azure Portal.
 
-**Naam van de Azure-resource groep**: Geef de naam op van de [resource groep](../../azure-resource-manager/management/manage-resource-groups-portal.md) die de Azure container Registry bevat met de container installatie kopie. De resource groep moet toegankelijk zijn in de abonnements-ID (hierboven). U vindt de naam op de pagina [resource groepen](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceGroups) in de Azure Portal.
+**Naam van Azure-resourcegroep:** geef de [naam van de resourcegroep](../../azure-resource-manager/management/manage-resource-groups-portal.md) op die de Azure Container Registry de containerafbeelding bevat. De resourcegroep moet toegankelijk zijn in de abonnements-id (hierboven). U vindt de naam op de [pagina Resourcegroepen](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceGroups) in de Azure Portal.
 
-**Azure container Registry-naam**: Geef de naam op van de [Azure container Registry](../../container-registry/container-registry-intro.md) met de container installatie kopie. Het container register moet aanwezig zijn in de Azure-resource groep die u eerder hebt opgegeven. Geef alleen de register naam op, niet de volledige naam van de aanmeldings server. Zorg ervoor dat u **azurecr.io** weglaat uit de naam. U kunt de register naam vinden op de [pagina container registers](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ContainerRegistry%2Fregistries) in de Azure Portal.
+**Naam van Azure-containerregister:** geef de naam op van de [Azure Container Registry](../../container-registry/container-registry-intro.md) die uw containerafbeelding heeft. Het containerregister moet aanwezig zijn in de Azure-resourcegroep die u eerder hebt opgegeven. Geef alleen de registernaam op, niet de volledige aanmeldingsservernaam. Zorg ervoor dat u **azurecr.io** naam weglaten. U vindt de registernaam op de [pagina Containerregisters](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ContainerRegistry%2Fregistries) in Azure Portal.
 
-**Gebruikers naam van de beheerder voor de Azure container Registry**: Geef de [gebruikers naam](../../container-registry/container-registry-authentication.md#admin-account)van de beheerder op die is gekoppeld aan de Azure container Registry met de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. Als u de gebruikers naam en het wacht woord van de beheerder wilt ophalen, stelt u de eigenschap **beheerder** in op **True** met behulp van de Azure Command-Line interface (CLI). U kunt desgewenst **beheerder** instellen om in te **scha kelen** in de Azure Portal.
+**Gebruikersnaam van beheerder voor de Azure Container Registry:** geef de [gebruikersnaam](../../container-registry/container-registry-authentication.md#admin-account)van de beheerder op die is gekoppeld aan de Azure Container Registry die uw containerafbeelding heeft. De gebruikersnaam en het wachtwoord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het register. Als u de gebruikersnaam en  het wachtwoord van de beheerder wilt op halen, stelt u de eigenschap met beheerdersrechten in op Waar met **behulp** van de Azure Command-Line Interface (CLI). U kunt eventueel Gebruiker **met beheerdersrechten instellen** **op Inschakelen** in Azure Portal.
 
-:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Illustreert het dialoog venster update container Registry.":::
+:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Illustreert het dialoogvenster Containerregister bijwerken.":::
 
-#### <a name="call-out-description"></a>Beschrijving van aanroep
+#### <a name="call-out-description"></a>Beschrijving van de oproep
 
 1. Gebruiker met beheerdersrechten
 
-<br>**Wacht woord voor de Azure container Registry**: Geef het wacht woord op voor de beheerder van de gebruikers naam die is gekoppeld aan de Azure container Registry en heeft de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. U kunt het wacht woord ophalen van de Azure portal door naar **container Registry**  >  **toegangs sleutels** of met Azure CLI te gaan met behulp van de [weer geven opdracht.](/cli/azure/acr/credential#az-acr-credential-show)
+<br>**Wachtwoord voor de Azure Container Registry:** geef het wachtwoord op voor de gebruikersnaam van de beheerder die is gekoppeld aan de Azure Container Registry en die uw containerafbeelding heeft. De gebruikersnaam en het wachtwoord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het register. U kunt het wachtwoord ophalen uit de Azure Portal door naar Container Registry  >  **toegangssleutels** of met Azure CLI te gaan met behulp van de [opdracht show.](/cli/azure/acr/credential#az_acr_credential_show)
 
-:::image type="content" source="media/example-iot-access-keys.png" alt-text="Illustreert het scherm toegangs sleutel in de Azure Portal.":::
+:::image type="content" source="media/example-iot-access-keys.png" alt-text="Illustreert het scherm met de toegangssleutel in Azure Portal.":::
 
 #### <a name="call-out-descriptions"></a>Beschrijvingen van aanroepen
 
@@ -429,70 +429,70 @@ U geeft de volgende informatie op het tabblad **Details van de afbeeldings opsla
 2. Gebruikersnaam
 3. Wachtwoord
 
-**De naam van de opslag plaats in de Azure container Registry**. Geef de naam op van de Azure Container Registry opslag plaats met uw installatie kopie. U geeft de naam van de opslag plaats op wanneer u de installatie kopie naar het REGI ster pusht. U kunt de naam van de opslag plaats vinden door naar de [](https://azure.microsoft.com/services/container-registry/)  >  **pagina container Registry opslagplaatsen** te gaan. Zie [container register opslagplaatsen weer geven in de Azure Portal](../../container-registry/container-registry-repositories.md)voor meer informatie. Nadat de naam is ingesteld, kan deze niet meer worden gewijzigd. Gebruik een unieke naam voor elke aanbieding in uw account.
+**De naam van de opslagplaats in Azure Container Registry**. Geef de naam op van de Azure Container Registry opslagplaats met uw afbeelding. U geeft de naam van de opslagplaats op wanneer u de afbeelding naar het register pusht. U kunt de naam van de [](https://azure.microsoft.com/services/container-registry/)opslagplaats vinden door naar de pagina Container Registry  >  **opslagplaatsen te gaan.** Zie Opslagplaatsen voor [containerregisters](../../container-registry/container-registry-repositories.md)weergeven in de Azure Portal. Nadat de naam is ingesteld, kan deze niet meer worden gewijzigd. Gebruik een unieke naam voor elke aanbieding in uw account.
 
 > [!NOTE]
-> Er wordt geen ondersteuning geboden voor versleutelde Azure Container Registry voor de module voor Edge-certificaten. Azure Container Registry moet worden gemaakt zonder dat versleuteling is ingeschakeld.
+> Encrypted Azure Container Registry voor edge-modulecertificering wordt niet ondersteund. Azure Container Registry moet worden gemaakt zonder versleuteling ingeschakeld.
 
-### <a name="image-tags-for-new-versions-of-your-offer"></a>Afbeeldings Tags voor nieuwe versies van uw aanbieding
+### <a name="image-tags-for-new-versions-of-your-offer"></a>Afbeeldingstags voor nieuwe versies van uw aanbieding
 
-Klanten moeten automatisch updates kunnen ophalen van de Azure Marketplace wanneer u een update publiceert. Als ze niet willen bijwerken, moeten ze een specifieke versie van de installatie kopie kunnen blijven. U kunt dit doen door telkens wanneer u een update voor de installatie kopie maakt, nieuwe afbeeldings tags toe te voegen.
+Klanten moeten automatisch updates kunnen ontvangen van de Azure Marketplace wanneer u een update publiceert. Als ze niet willen bijwerken, moeten ze een specifieke versie van uw afbeelding kunnen gebruiken. U kunt dit doen door nieuwe afbeeldingstags toe te voegen telkens wanneer u een update voor de afbeelding maakt.
 
-**Afbeeldings code**. Dit veld moet een **laatste** tag bevatten die verwijst naar de nieuwste versie van uw installatie kopie op alle ondersteunde platforms. Het moet ook een versie label bevatten (bijvoorbeeld vanaf xx. xx. xx, waarbij XX een getal is). Klanten moeten [manifest Tags](https://github.com/estesp/manifest-tool) gebruiken om meerdere platforms te bereiken. Alle labels waarnaar wordt verwezen door een manifest-tag, moeten ook worden toegevoegd, zodat ze kunnen worden geüpload. Alle manifest Tags (met uitzonde ring van de laatste tag) moeten beginnen met X. Y-of X. Y. Z-waarbij X, Y en Z gehele getallen zijn. Als een van de nieuwste Tags bijvoorbeeld verwijst naar 1.0.1-Linux-x64, 1.0.1-Linux-arm32 en 1.0.1-Windows-arm32, moeten deze zes Tags worden toegevoegd aan dit veld. Zie [de technische activa van uw IOT Edge-module voorbereiden](create-iot-edge-module-asset.md) voor meer informatie over tags en versie beheer.
+**Afbeeldingstag**. Dit veld moet een nieuwste tag **bevatten** die naar de nieuwste versie van uw afbeelding op alle ondersteunde platforms wijst. Het moet ook een versietag bevatten (bijvoorbeeld beginnend met xx.xx.xx, waarbij xx een getal is). Klanten moeten [manifesttags gebruiken om](https://github.com/estesp/manifest-tool) zich op meerdere platforms te richten. Alle tags waarnaar wordt verwezen door een manifesttag moeten ook worden toegevoegd, zodat we ze kunnen uploaden. Alle manifesttags (met uitzondering van de meest recente tag) moeten beginnen met X.Y- of X.Y.Z, waarbij X, Y en Z gehele getallen zijn. Als een meest recente tag bijvoorbeeld wijst naar 1.0.1-linux-x64, 1.0.1-linux-arm32 en 1.0.1-windows-arm32, moeten deze zes tags aan dit veld worden toegevoegd. Zie Prepare your IoT Edge module technical assets (Technische assets voor uw IoT Edge module voorbereiden) voor meer informatie over [tags en versiebeheer.](create-iot-edge-module-asset.md)
 
-### <a name="default-deployment-settings-optional"></a>Standaard implementatie-instellingen (optioneel)
+### <a name="default-deployment-settings-optional"></a>Standaardimplementatie-instellingen (optioneel)
 
-Definieer de meest voorkomende instellingen voor het implementeren van uw IoT Edge-module. Optimaliseer klant implementaties door uw IoT Edge module out-of-the-box te laten starten met deze standaard instellingen.
+Definieer de meest voorkomende instellingen voor het implementeren van IoT Edge module. Optimaliseer klantimplementaties door ze uw IoT Edge-module standaard te laten starten met deze standaardinstellingen.
 
-**Standaard routes**. De IoT Edge hub beheert de communicatie tussen modules, de IoT Hub en apparaten. U kunt routes instellen voor de invoer van gegevens en de uitvoer tussen modules en de IoT Hub, waarmee u de flexibiliteit krijgt om berichten te verzenden waar ze moeten zijn, zonder dat er extra services nodig zijn om berichten te verwerken of extra code te schrijven. Routes worden gemaakt met behulp van naam/waarde-paren. U kunt Maxi maal vijf standaard route namen definiëren, elk Maxi maal 512 tekens lang.
+**Standaardroutes.** De IoT Edge Hub beheert de communicatie tussen modules, de IoT Hub en apparaten. U kunt routes instellen voor gegevensinvoer en -uitvoer tussen modules en de IoT Hub. Dit biedt u de flexibiliteit om berichten te verzenden waar ze naartoe moeten zonder dat er aanvullende services nodig zijn om berichten te verwerken of aanvullende code te schrijven. Routes worden gemaakt met behulp van naam/waarde-paren. U kunt maximaal vijf standaardroutenamen definiëren, elk maximaal 512 tekens lang.
 
-Zorg ervoor dat u de juiste [route syntaxis](../../iot-edge/module-composition.md#declare-routes)gebruikt) in uw route waarde (meestal gedefinieerd als van/Message/* in $upstream). Dit betekent dat alle berichten die door modules worden verzonden, naar uw IoT Hub gaan. Als u wilt verwijzen naar uw module, gebruikt u de standaard module naam. de naam van uw **aanbieding** is geen spaties of speciale tekens. Als u wilt verwijzen naar andere modules die nog niet bekend zijn, gebruikt u de <FROM_MODULE_NAME> Conventie om uw klanten te laten weten dat ze deze gegevens moeten bijwerken. Zie voor meer informatie over IoT Edge routes [routes declareren](../../iot-edge/module-composition.md#declare-routes).
+Zorg ervoor dat u de juiste [routesyntaxis](../../iot-edge/module-composition.md#declare-routes)gebruikt in de routewaarde (meestal gedefinieerd als FROM/message/* INTO $upstream). Dit betekent dat berichten die door modules worden verzonden, naar uw IoT Hub. Als u naar uw module wilt verwijzen, gebruikt u de standaardnaam van de module. Dit is de naam van uw **aanbieding,** zonder spaties of speciale tekens. Als u wilt verwijzen naar andere modules die nog niet bekend zijn, gebruikt u de <FROM_MODULE_NAME> conventie om uw klanten te laten weten dat ze deze informatie moeten bijwerken. Zie Routes declare IoT Edge meer informatie [over de routes.](../../iot-edge/module-composition.md#declare-routes)
 
-Als module ContosoModule bijvoorbeeld luistert naar invoer op ContosoInput en uitvoer gegevens op ContosoOutput, is het zinvol om de volgende twee standaard routes te definiëren:
+Als module ContosoModule bijvoorbeeld luistert naar invoer op ContosoInput- en uitvoergegevens in ContosoOutput, is het zinvol om de volgende twee standaardroutes te definiëren:
 
-- #1 van naam: ToContosoModule
-- Waarde #1: van/messages/modules/<FROM_MODULE_NAME>/outputs/* in BrokeredEndpoint ("/modules/ContosoModule/inputs/ContosoInput")
-- #2 van naam: FromContosoModuleToCloud
-- Waarde #2: van/messages/modules/ContonsoModule/outputs/ContosoOutput naar $upstream
+- Naam #1: ToContosoModule
+- Waarde #1: FROM /messages/modules/<FROM_MODULE_NAME>/outputs/* INTO BrokeredEndpoint("/modules/ContosoModule/inputs/ContosoInput")
+- Naam #2: FromContosoModuleToCloud
+- Waarde #2: FROM /messages/modules/ContonsoModule/outputs/ContosoOutput INTO $upstream
 
-**Standaard module dubbele gewenste eigenschappen**. Een module dubbele is een JSON-document in de IoT Hub waarin de status informatie voor een module-exemplaar wordt opgeslagen, inclusief gewenste eigenschappen. Gewenste eigenschappen worden samen met gerapporteerde eigenschappen gebruikt voor het synchroniseren van module configuratie of-voor waarden. De back-end van de oplossing kan gewenste eigenschappen instellen en de module kan deze lezen. De module kan ook wijzigings meldingen ontvangen in de gewenste eigenschappen. Gewenste eigenschappen worden gemaakt met Maxi maal vijf paren naam/waarde en elke standaard waarde moet kleiner zijn dan 512 tekens. U kunt Maxi maal vijf naam/waarde dubbele gewenste eigenschappen definiëren. Waarden van dubbele gewenste eigenschappen moeten een geldige JSON, niet-escaped zijn, zonder matrices met een Maxi maal geneste hiërarchie van vier niveaus. In een scenario waarbij een para meter die vereist is voor een standaard waarde niet logisch is (bijvoorbeeld het IP-adres van de server van een klant), kunt u een para meter toevoegen als de standaard waarde. Zie [gewenste eigenschappen definiëren of bijwerken](../../iot-edge/module-composition.md#define-or-update-desired-properties)voor meer informatie over dubbele gewenste eigenschappen.
+**Standaard gewenste eigenschappen van module twin**. Een module dubbel is een JSON-document in de IoT Hub waarin de statusinformatie voor een module-exemplaar wordt op slaat, inclusief de gewenste eigenschappen. Gewenste eigenschappen worden samen met gerapporteerde eigenschappen gebruikt om moduleconfiguratie of -voorwaarden te synchroniseren. De back-end van de oplossing kan gewenste eigenschappen instellen en de module kan deze lezen. De module kan ook wijzigingsmeldingen ontvangen in de gewenste eigenschappen. Gewenste eigenschappen worden gemaakt met maximaal vijf naam-waardeparen en elke standaardwaarde moet uit minder dan 512 tekens bestaan. U kunt maximaal vijf gewenste eigenschappen voor de naam/waarde-dubbel definiëren. Waarden van de gewenste dubbeleigenschappen moeten geldige JSON zijn, zonder escape,zonder matrices met een maximale geneste hiërarchie van vier niveaus. In een scenario waarin een parameter die is vereist voor een standaardwaarde niet zinvol is (bijvoorbeeld het IP-adres van de server van een klant), kunt u een parameter toevoegen als de standaardwaarde. Zie Gewenste eigenschappen definiëren of bijwerken voor meer informatie over gewenste [dubbeleigenschappen.](../../iot-edge/module-composition.md#define-or-update-desired-properties)
 
-Als een module bijvoorbeeld een dynamisch Configureer bare vernieuwings frequentie ondersteunt met behulp van dubbele gewenste eigenschappen, is het zinvol om de volgende standaard dubbele gewenste eigenschap te definiëren:
+Als een module bijvoorbeeld een dynamisch configureerbare vernieuwingssnelheid ondersteunt met behulp van de gewenste dubbeleigenschappen, is het zinvol om de volgende standaard gewenste eigenschap van de dubbel te definiëren:
 
-- #1 van naam: RefreshRate
-- Waarde #1:60
+- Naam #1: RefreshRate
+- Waarde #1: 60
 
-**Standaard omgevings variabelen**. Omgevings variabelen bieden aanvullende informatie over een module die het configuratie proces helpt. Omgevings variabelen worden gemaakt met behulp van naam/waarde-paren. De naam en waarde van elke standaard omgevings variabele moet kleiner zijn dan 512 tekens en u kunt Maxi maal vijf definiëren. Als een para meter die vereist is voor een standaard waarde niet logisch is (bijvoorbeeld het IP-adres van de server van een klant), kunt u een para meter toevoegen als de standaard waarde.
+**Standaardomgevingsvariabelen**. Omgevingsvariabelen bieden aanvullende informatie aan een module die het configuratieproces helpt. Omgevingsvariabelen worden gemaakt met behulp van naam/waarde-paren. Elke standaardnaam en waarde van de omgevingsvariabele moet uit minder dan 512 tekens bestaan en u kunt maximaal vijf tekens definiëren. Wanneer een vereiste parameter voor een standaardwaarde niet zinvol is (bijvoorbeeld het IP-adres van de server van een klant), kunt u een parameter toevoegen als de standaardwaarde.
 
-Als er bijvoorbeeld een module vereist is om de gebruiksrecht overeenkomst te accepteren voordat deze wordt gestart, kunt u de volgende omgevings variabele definiëren:
+Als een module bijvoorbeeld gebruiksvoorwaarden moet accepteren voordat deze wordt gestart, kunt u de volgende omgevingsvariabele definiëren:
 
-- Name #1: ACCEPT_EULA
+- Naam #1: ACCEPT_EULA
 - Waarde #1: Y
 
-**Standaard opties voor container maken**. Opties voor het maken van containers Maak het maken van de docker-container van de IoT Edge module direct. IoT Edge ondersteunt docker engine API-container opties maken. Bekijk alle opties in [lijst containers.](https://docs.docker.com/engine/api/v1.30/#operation/ContainerList) Het veld voor het maken van opties moet een geldige JSON, een niet-escape teken en minder dan 512 tekens zijn.
+**Standaardopties voor het maken van containers.** Opties voor het maken van containers leiden naar het maken van IoT Edge Docker-container voor de nieuwe module. IoT Edge ondersteunt opties voor het maken van containers voor de Docker-engine-API. Bekijk alle opties op [Containers lijst.](https://docs.docker.com/engine/api/v1.30/#operation/ContainerList) Het veld Opties maken moet een geldige JSON, een niet-escape-teken en minder dan 512 tekens zijn.
 
-Als een module bijvoorbeeld poort binding vereist, definieert u de volgende Create-opties:
+Als voor een module bijvoorbeeld poortbinding is vereist, definieert u de volgende maakopties:
 
-"HostConfig": {"PortBindings": {"5012/TCP": [{"HostPort": "5012"}]}
+"HostConfig":{"PortBindings":{"5012/tcp":[{"HostPort":"5012"}]}
 
 ## <a name="review-and-publish"></a>Beoordelen en publiceren
 
-Nadat u alle vereiste delen van de aanbieding hebt voltooid, kunt u deze verzenden om te controleren en te publiceren.
+Nadat u alle vereiste secties van de aanbieding hebt voltooid, kunt u deze indienen om te controleren en te publiceren.
 
-Selecteer in de rechter bovenhoek van de portal **controleren en publiceren**.
+Selecteer controleren en publiceren in de rechterbovenhoek van de **portal.**
 
-Op de pagina controleren kunt u de publicatie status zien:
+Op de controlepagina ziet u de publicatiestatus:
 
-- Bekijk de voltooiings status voor elke sectie van de aanbieding. U kunt pas publiceren als alle secties van de aanbieding zijn gemarkeerd als voltooid.
-    - **Niet gestart** : de sectie is niet gestart en moet worden voltooid.
-    - **Onvolledig** : de sectie bevat fouten die moeten worden hersteld of waarvoor u meer informatie moet opgeven. Zie de secties eerder in dit document voor meer informatie.
-    - **Voltooid** : de sectie bevat alle vereiste gegevens en er zijn geen fouten. Alle onderdelen van de aanbieding moeten volledig zijn voordat u de aanbieding kunt indienen.
-- Geef test instructies op het certificerings team om te controleren of uw aanbieding correct is getest. Geef ook aanvullende notities op die handig zijn voor het leren van uw aanbieding.
+- Bekijk de voltooiingsstatus voor elke sectie van de aanbieding. U kunt pas publiceren als alle secties van de aanbieding zijn gemarkeerd als voltooid.
+    - **Niet gestart:** de sectie is niet gestart en moet worden voltooid.
+    - **Onvolledig:** de sectie bevat fouten die moeten worden opgelost of die vereisen dat u meer informatie verstrekt. Zie de secties eerder in dit document voor hulp.
+    - **Voltooid:** de sectie bevat alle vereiste gegevens en er zijn geen fouten. Alle secties van de aanbieding moeten zijn voltooid voordat u de aanbieding kunt indienen.
+- Geef het certificeringsteam testinstructies om ervoor te zorgen dat uw aanbieding correct is getest. Geef ook eventuele aanvullende opmerkingen op die nuttig zijn om inzicht te krijgen in uw aanbieding.
 
-Selecteer **publiceren** om de aanbieding voor publicatie in te dienen.
+Selecteer Publiceren om de aanbieding voor publicatie in **te dienen.**
 
-We sturen u een e-mail om u te laten weten wanneer een preview-versie van de aanbieding beschikbaar is om te controleren en goed te keuren. Als u uw aanbieding naar het publiek wilt publiceren, gaat u naar partner centrum en selecteert u **Go-Live**.
+We sturen u een e-mailbericht om u te laten weten wanneer een preview-versie van de aanbieding beschikbaar is om te controleren en goed te keuren. Als u uw aanbieding wilt publiceren, gaat u naar Partner Center selecteert u **Go-live.**
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een bestaande aanbieding bijwerken in de commerciële Marketplace](update-existing-offer.md)
+- [Een bestaande aanbieding bijwerken in de commerciële marketplace](update-existing-offer.md)

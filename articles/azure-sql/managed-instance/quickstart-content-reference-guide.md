@@ -12,12 +12,12 @@ author: davidtrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 07/11/2019
-ms.openlocfilehash: c84c81fa81cf4ba9be454eea5782927a09c3252a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ec767e5f3a88c52f9686eec8f7e458ab517ee35f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101690954"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784331"
 ---
 # <a name="getting-started-with-azure-sql-managed-instance"></a>Aan de slag met Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -44,7 +44,7 @@ Als eerste stap moet u uw eerste SQL Managed Instance maken met de netwerkomgevi
   > - U kunt ook een ExpressRoute- of site-naar-site-verbinding van uw lokale netwerk gebruiken. Deze methoden worden echter niet besproken in deze quickstarts.
   > - Als u de retentieperiode van 0 (onbeperkte retentie) wijzigt in een andere waarde, moet u er rekening mee houden dat retentie alleen van toepassing is op logboeken die zijn geschreven nadat de waarde is gewijzigd, (logboeken die zijn geschreven tijdens de periode waarin de retentie was ingesteld op onbeperkt, blijven behouden, zelfs nadat retentie is ingeschakeld).
 
-Als alternatief voor het handmatig maken van SQL Managed Instance kunt u [PowerShell](scripts/create-configure-managed-instance-powershell.md), [PowerShell met een Resource Manager-sjabloon](./create-template-quickstart.md) of [Azure CLI](/cli/azure/sql/mi#az-sql-mi-create) gebruiken om dit proces te scripten en automatiseren.
+Als alternatief voor het handmatig maken van SQL Managed Instance kunt u [PowerShell](scripts/create-configure-managed-instance-powershell.md), [PowerShell met een Resource Manager-sjabloon](./create-template-quickstart.md) of [Azure CLI](/cli/azure/sql/mi#az_sql_mi_create) gebruiken om dit proces te scripten en automatiseren.
 
 ### <a name="migrate-your-databases"></a>Uw databases migreren
 

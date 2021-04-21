@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.date: 07/20/2019
 ms.author: victorh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 89ba84be61469ff07eff55bb9cd114fe124b3ec2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 01df6a12437808aa903046d2923c735ded5067ee
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94566602"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772753"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-the-azure-cli"></a>Webverkeer met een toepassingsgateway beheren met behulp van Azure CLI
 
-De toepassingsgateway wordt gebruikt voor het beheren en beveiligen van webverkeer naar servers die door u worden onderhouden. U kunt de Azure CLI gebruiken om een [toepassings gateway](overview.md) te maken die gebruikmaakt van een [schaalset voor virtuele machines](../virtual-machine-scale-sets/overview.md) voor back-endservers. In dit voor beeld bevat de schaalset twee exemplaren van virtuele machines. De schaalset wordt toegevoegd aan de standaard back-end-groep van de toepassings gateway.
+De toepassingsgateway wordt gebruikt voor het beheren en beveiligen van webverkeer naar servers die door u worden onderhouden. U kunt de Azure CLI gebruiken om een [toepassingsgateway te maken](overview.md) die gebruikmaakt van een [virtuele-machineschaalset](../virtual-machine-scale-sets/overview.md) voor back-endservers. In dit voorbeeld bevat de schaalset twee exemplaren van virtuele machines. De schaalset wordt toegevoegd aan de standaardback-endpool van de toepassingsgateway.
 
 In dit artikel leert u het volgende:
 
@@ -35,7 +35,7 @@ U kunt deze procedure desgewenst voltooien met behulp van [Azure PowerShell](tut
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az-group-create).
+Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az_group_create).
 
 In het volgende voorbeeld wordt de resourcegroep *myResourceGroupAG* gemaakt op de locatie *eastus*.
 
@@ -71,7 +71,7 @@ az network public-ip create \
 
 ## <a name="create-an-application-gateway"></a>Een toepassingsgateway maken
 
-Gebruik [AZ Network Application-Gateway Create](/cli/azure/network/application-gateway) om de toepassings gateway te maken met de naam *myAppGateway*. Als u met de Azure CLI een toepassingsgateway maakt, geeft u configuratiegegevens op, zoals capaciteit, SKU en HTTP-instellingen. De toepassingsgateway wordt toegewezen aan *myAGSubnet* en *myPublicIPAddress*, die u zojuist hebt gemaakt. 
+Gebruik [az network application-gateway create om](/cli/azure/network/application-gateway) de toepassingsgateway met de naam *myAppGateway te maken.* Als u met de Azure CLI een toepassingsgateway maakt, geeft u configuratiegegevens op, zoals capaciteit, SKU en HTTP-instellingen. De toepassingsgateway wordt toegewezen aan *myAGSubnet* en *myPublicIPAddress*, die u zojuist hebt gemaakt. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -89,7 +89,7 @@ az network application-gateway create \
   --public-ip-address myAGPublicIPAddress
 ```
 
- Het kan enkele minuten duren voordat de toepassingsgateway is gemaakt. Nadat de toepassings gateway is gemaakt, ziet u deze nieuwe functies:
+ Het kan enkele minuten duren voordat de toepassingsgateway is gemaakt. Nadat de toepassingsgateway is gemaakt, ziet u deze nieuwe functies:
 
 - *appGatewayBackendPool*: een toepassingsgateway moet ten minste één back-endadresgroep hebben.
 - *appGatewayBackendHttpSettings*: hiermee wordt aangegeven dat voor de communicatie poort 80 en een HTTP-protocol worden gebruikt.
@@ -99,7 +99,7 @@ az network application-gateway create \
 
 ## <a name="create-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset maken
 
-In dit voorbeeld maakt u een virtuele-machineschaalset die servers biedt voor de back-endpool in de toepassingsgateway. De virtuele machines in de schaalset worden gekoppeld aan *myBackendSubnet* en *appGatewayBackendPool*. Gebruik [az vmss create](/cli/azure/vmss#az-vmss-create) om de schaalset te maken.
+In dit voorbeeld maakt u een virtuele-machineschaalset die servers biedt voor de back-endpool in de toepassingsgateway. De virtuele machines in de schaalset worden gekoppeld aan *myBackendSubnet* en *appGatewayBackendPool*. Gebruik [az vmss create](/cli/azure/vmss#az_vmss_create) om de schaalset te maken.
 
 ```azurecli-interactive
 az vmss create \

@@ -2,26 +2,20 @@
 title: "Zelfstudie: virtuele Azure-netwerken maken en beheren voor Linux-VM's"
 description: In deze zelfstudie leert u hoe u Azure CLI gebruikt voor het maken en beheren van virtuele Azure-netwerken voor virtuele Linux-machines
 services: virtual-machines
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
 ms.collection: linux
-tags: azure-resource-manager
 ms.subservice: networking
-ms.assetid: ''
 ms.service: virtual-machines
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 6356d9b587847ff2b49574b970109ada0d785660
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cfc76ffd05b6348c9a585a64e3f2868f28f5e5cd
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102564625"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107811702"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Zelfstudie: Virtuele Azure-netwerken voor virtuele Linux-machines maken en beheren met de Azure CLI
 
@@ -302,4 +296,4 @@ In deze zelfstudie hebt u Azure-netwerken met betrekking tot virtuele machines g
 > * Netwerkverkeer beveiligen
 > * Een back-end virtuele machine maken
 
-Zie [back-up en herstel na nood geval voor schijven](../backup-and-disaster-recovery-for-azure-iaas-disks.md)voor meer informatie over het beveiligen van uw VM-schijven.
+Zie Back-up en herstel na noodherstel voor schijven voor meer informatie over het beveiligen [van uw VM-schijven.](../backup-and-disaster-recovery-for-azure-iaas-disks.md)

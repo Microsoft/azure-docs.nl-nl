@@ -1,6 +1,6 @@
 ---
-title: Azure API Management-back-ends | Microsoft Docs
-description: Meer informatie over aangepaste back-ends in API Management
+title: Back-API Management van Azure | Microsoft Docs
+description: Meer informatie over aangepaste back-API Management
 services: api-management
 documentationcenter: ''
 author: dlepow
@@ -9,33 +9,34 @@ ms.service: api-management
 ms.topic: article
 ms.date: 01/29/2021
 ms.author: apimpm
-ms.openlocfilehash: 54a46e999391507f5ec7d927f62b88fcd2169b75
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: a0ef3a2c1f2f1fc5cdf00737d1984f6cb13c40d0
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99500615"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813016"
 ---
-# <a name="backends-in-api-management"></a>Back-ends in API Management
+# <a name="backends-in-api-management"></a>Back-API Management
 
-Een *back* -end (of *API-back-end*) in API Management is een HTTP-service waarmee u de front-end-API en de bewerkingen ervan implementeert.
+Een *back-end* (of *API-back-end)* in API Management is een HTTP-service die uw front-end-API en de bewerkingen ervan implementeert.
 
-Bij het importeren van bepaalde Api's configureert API Management de API-back-end automatisch. API Management configureert bijvoorbeeld de back-end bij het importeren van [een OpenAPI-specificatie](import-api-from-oas.md), SOAP- [API](import-soap-api.md)of Azure-resources, zoals een door http geactiveerd [Azure functie-app](import-function-app-as-api.md) of [logische app](import-logic-app-as-api.md).
+Wanneer u bepaalde API's importeert, API Management de API-back-end automatisch geconfigureerd. De back-API Management bijvoorbeeld geconfigureerd bij het importeren van een [OpenAPI-specificatie,](import-api-from-oas.md) [SOAP API](import-soap-api.md)of Azure-resources, zoals een door HTTP geactiveerde [Azure-functie-app](import-function-app-as-api.md) of [logische app](import-logic-app-as-api.md).
 
-API Management biedt ook ondersteuning voor het gebruik van andere Azure-resources, zoals een [service Fabric cluster](how-to-configure-service-fabric-backend.md) of een aangepaste service als een API-back-end. Voor het gebruik van deze aangepaste back-ends is extra configuratie vereist, bijvoorbeeld om referenties van aanvragen voor de back-end-service te autoriseren en API-bewerkingen te definiëren. U kunt deze back-endservers configureren en beheren in de Azure Portal of met behulp van Azure-Api's of-hulpprogram ma's.
+API Management ondersteunt ook het gebruik van andere Azure-resources, zoals een [Service Fabric-cluster](how-to-configure-service-fabric-backend.md) of een aangepaste service als api-back-end. Voor het gebruik van deze aangepaste back-ends is extra configuratie vereist, bijvoorbeeld om referenties van aanvragen aan de back-endservice te autoreren en API-bewerkingen te definiëren. U configureert en beheert deze back-Azure Portal in de Azure Portal of met behulp van Azure API's of hulpprogramma's.
 
-Nadat u een back-end hebt gemaakt, kunt u naar de back-end-URL in uw Api's verwijzen. Gebruik het [`set-backend-service`](api-management-transformation-policies.md#SetBackendService) beleid om een binnenkomende API-aanvraag om te leiden naar de aangepaste back-end in plaats van de standaard back-end voor die API.
+Nadat u een back-end hebt aanmaken, kunt u verwijzen naar de back-end-URL in uw API's. Gebruik het beleid om een binnenkomende API-aanvraag om te leiden naar de aangepaste back-end in plaats [`set-backend-service`](api-management-transformation-policies.md#SetBackendService) van de standaardback-end voor die API.
 
-## <a name="benefits-of-backends"></a>Voor delen van back-ends
+## <a name="benefits-of-backends"></a>Voordelen van back-enden
 
-Een aangepaste back-end heeft verschillende voor delen, waaronder:
+Een aangepaste back-end heeft verschillende voordelen, waaronder:
 
-* Abstracten informatie over de back-end-service, bevordering van de bruikbaarheid van Api's en verbeterd governance  
-* Eenvoudig te gebruiken door een transformatie beleid te configureren voor een bestaande API
-* Maakt gebruik van API Management functionaliteit om geheimen in Azure Key Vault te behouden als [benoemde waarden](api-management-howto-properties.md) zijn geconfigureerd voor koptekst-of query parameter verificatie
+* Abstractie van informatie over de back-endservice, het bevorderen van herbruikbaarheid tussen API's en verbeterde governance  
+* Eenvoudig te gebruiken door een transformatiebeleid voor een bestaande API te configureren
+* Maakt gebruik van API Management functionaliteit voor het onderhouden van [](api-management-howto-properties.md) geheimen in Azure Key Vault als benoemde waarden zijn geconfigureerd voor verificatie van header- of queryparameters
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Stel een [service Fabric back-end](how-to-configure-service-fabric-backend.md) in met behulp van de Azure Portal.
-* Back-ends kunnen ook worden geconfigureerd met behulp van de sjablonen API Management [rest API](/rest/api/apimanagement), [Azure PowerShell](/powershell/module/az.apimanagement/new-azapimanagementbackend)of [Azure Resource Manager](../service-fabric/service-fabric-tutorial-deploy-api-management.md).
+* Stel een [back-Service Fabric in met](how-to-configure-service-fabric-backend.md) behulp van de Azure Portal.
+* Back-Azure PowerShell kunnen ook worden geconfigureerd met behulp van de API Management [REST API](/rest/api/apimanagement), [Azure PowerShell](/powershell/module/az.apimanagement/new-azapimanagementbackend)of [Azure Resource Manager sjablonen.](../service-fabric/service-fabric-tutorial-deploy-api-management.md)
 

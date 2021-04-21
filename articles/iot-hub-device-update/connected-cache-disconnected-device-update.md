@@ -1,46 +1,46 @@
 ---
-title: Ondersteuning voor niet-verbonden apparaat bijwerken met micro soft Connected cache | Microsoft Docs
+title: Meer informatie over ondersteuning voor niet-verbonden apparaatupdates met Microsoft Verbonden cache | Microsoft Docs
 titleSuffix: Device Update for Azure IoT Hub
-description: Ondersteuning voor niet-verbonden apparaat bijwerken met micro soft Connected cache
+description: Meer informatie over ondersteuning voor niet-verbonden apparaatupdates met Microsoft Verbonden cache
 author: andyriv
 ms.author: andyriv
 ms.date: 2/16/2021
 ms.topic: conceptual
 ms.service: iot-hub-device-update
-ms.openlocfilehash: e2b27934f58402ecfb7dabf5560dc43e45f3f7dd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e216d42ff1f279d87e657126514fcfb50960f806
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101679260"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107811900"
 ---
-# <a name="understand-support-for-disconnected-device-updates"></a>Ondersteuning voor niet-verbonden apparaat-updates
+# <a name="understand-support-for-disconnected-device-updates"></a>Ondersteuning voor niet-verbonden apparaatupdates begrijpen
 
-In een transparant Gateway scenario kunnen een of meer apparaten hun berichten door geven via één gateway apparaat dat de verbinding met Azure IoT Hub onderhoudt. In dergelijke gevallen is het mogelijk dat de onderliggende apparaten geen verbinding met internet hebben of dat ze mogelijk geen inhoud van het Internet mogen downloaden. In de micro soft Connected cache preview IoT Edge-module wordt het apparaat bijgewerkt voor Azure IoT Hub klanten met de mogelijkheid van een intelligente in-Network cache, waarmee op installatie kopieën gebaseerde en op pakketten gebaseerde updates van op Linux-OS gebaseerde apparaten achter en IoT Edge gateway (downstream IoT-apparaten) kunnen worden IoT Hub bespaard.
+In een scenario met een transparante gateway kunnen een of meer apparaten hun berichten doorgeven via één gatewayapparaat dat de verbinding met de Azure IoT Hub. In dergelijke gevallen hebben de onderliggende apparaten mogelijk geen internetverbinding of mogen ze mogelijk geen inhoud van internet downloaden. De module Microsoft Verbonden cache Preview IoT Edge biedt apparaatupdates voor Azure IoT Hub-klanten met de mogelijkheid van een intelligente in-netwerkcache, waarmee updates op basis van afbeeldingen en pakketten van linux-besturingssysteemapparaten achter en IoT Edge-gateway (downstream-IoT-apparaten) mogelijk zijn en waarmee ook bandbreedte wordt besparen voor apparaatupdates voor Azure IoT Hub-klanten.
 
-## <a name="how-does-microsoft-connected-cache-preview-for-device-update-for-azure-iot-hub-work"></a>Hoe werkt micro soft verbonden cache Preview voor het bijwerken van apparaten met Azure IoT Hub?
+## <a name="how-does-microsoft-connected-cache-preview-for-device-update-for-azure-iot-hub-work"></a>Hoe werkt Microsoft Verbonden cache preview voor apparaatupdates Azure IoT Hub werken?
 
-Micro soft Connected cache is een intelligente, transparante cache voor inhoud die is gepubliceerd voor het bijwerken van apparaten voor Azure IoT Hub inhoud en kan worden aangepast aan het opslaan van inhoud van andere bronnen, zoals pakket opslagplaatsen. Micro soft Connected cache is een koude cache die door client aanvragen wordt geheten voor de exacte bestands bereiken die worden aangevraagd door de Delivery Optimization-client en geen pre-seeding inhoud heeft. In het diagram en de stapsgewijze beschrijving hieronder wordt uitgelegd hoe micro soft Connected cache werkt in de apparaat bijwerken voor Azure IoT Hub-infra structuur.
+Microsoft Verbonden cache Preview is een intelligente, transparante cache voor inhoud die is gepubliceerd voor Apparaatupdate voor Azure IoT Hub-inhoud en kan worden aangepast om inhoud uit andere bronnen, zoals pakketopslagopslag, in de cache op te nemen. Microsoft Verbonden cache is een koude cache die wordt opgewarmd door clientaanvragen voor de exacte bestandsbereiken die zijn aangevraagd door de Delivery Optimization-client en die geen inhoud vooraf seedt. In het diagram en de stapsgewijle beschrijving hieronder wordt uitgelegd hoe Microsoft Verbonden cache werkt in de apparaatupdate voor Azure IoT Hub infrastructuur.
 
 >[!Note]
->Bij het definiëren van deze stroom is ervan uitgegaan dat de IoT Edge gateway een Internet verbinding heeft. Voor het scenario downstream IoT Edge gateway (geneste rand) kan de ' Content Delivery Network ' (CDN) worden beschouwd als de MCC die worden gehost op de bovenliggende IoT Edge gateway.
+>Bij het definiëren van deze stroom wordt ervan uitgegaan dat de IoT Edge gateway internetverbinding heeft. Voor het downstream IoT Edge-gatewayscenario (Nested Edge) kan 'Content Delivery Network' (CDN) worden beschouwd als de MCC die wordt gehost op de bovenliggende IoT Edge gateway.
 
-  :::image type="content" source="media/connected-cache-overview/disconnected-device-update.png" alt-text="Update van niet-verbonden apparaat" lightbox="media/connected-cache-overview/disconnected-device-update.png":::
+  :::image type="content" source="media/connected-cache-overview/disconnected-device-update.png" alt-text="Apparaatupdate is verbroken" lightbox="media/connected-cache-overview/disconnected-device-update.png":::
 
-1. Micro soft Connected cache wordt geïmplementeerd als een IoT Edge module naar de on-premises server.
-2. Apparaat-update voor Azure IoT Hub-clients zijn geconfigureerd voor het downloaden van inhoud van micro soft Connected cache door middel van het kenmerk GatewayHostName van het apparaat connection string voor IoT-Leaf-apparaten **of** parent_hostname ingesteld in het bestand config. toml voor IOT Edge onderliggende apparaten.
-3. Update van het apparaat voor Azure IoT Hub-clients in beide gevallen ontvangen update-opdrachten voor het downloaden van inhoud van de update voor de Azure IoT Hub-service en het bijwerken van inhoud aan de met micro soft verbonden cache vragen in plaats van het CDN. Micro soft Connected cache is standaard geconfigureerd om te Luis teren op http-poort 80 en de Delivery Optimization-client maakt de inhouds aanvraag op poort 80 zodat het bovenliggende item moet worden geconfigureerd om op deze poort te Luis teren.  Op dit moment wordt alleen het HTTP-protocol ondersteund.
-4. De micro soft Connected cache server downloadt inhoud van het CDN, zaait de lokale cache op schijf en levert de inhoud aan de update van het apparaat voor Azure IoT Hub client.
+1. Microsoft Verbonden cache wordt geïmplementeerd als een IoT Edge-module op de on-prem-server.
+2. Apparaatupdates voor Azure IoT Hub-clients zijn geconfigureerd voor het downloaden van inhoud van Microsoft Verbonden cache op basis van het kenmerk GatewayHostName van het apparaat connection string voor IoT Leaf-apparaten OF **parent_hostname** ingesteld in config.toml voor onderliggende IoT Edge-apparaten.
+3. Apparaatupdate voor Azure IoT Hub-clients ontvangen in beide gevallen opdrachten voor het downloaden van update-inhoud van de apparaatupdate voor Azure IoT Hub-service en vragen update-inhoud aan bij microsoft Verbonden cache in plaats van het CDN. Microsoft Verbonden cache is standaard geconfigureerd om te luisteren op HTTP-poort 80 en de Delivery Optimization-client doet de inhoudsaanvraag op poort 80, zodat de bovenliggende poort moet worden geconfigureerd om te luisteren op deze poort.  Op dit moment wordt alleen het HTTP-protocol ondersteund.
+4. De Microsoft Verbonden cache-server downloadt inhoud van het CDN, verwerkt de lokale cache die op schijf is opgeslagen en levert de inhoud aan de apparaatupdate voor Azure IoT Hub client.
    
 >[!Note]
->Wanneer u updates op basis van pakketten gebruikt, wordt de micro soft Connected cache-server door de beheerder geconfigureerd met de vereiste pakket-hostnaam.
+>Wanneer u updates op basis van pakketten gebruikt, wordt de Microsoft Verbonden cache-server geconfigureerd door de beheerder met de vereiste hostnaam van het pakket.
 
-5. Volgende aanvragen van andere updates voor Azure IoT Hub-clients voor dezelfde update-inhoud zijn nu afkomstig uit de cache en micro soft Connected cache maakt geen aanvragen voor dezelfde inhoud aan het CDN.
+5. Volgende aanvragen van andere apparaatupdates voor Azure IoT Hub-clients voor dezelfde update-inhoud zijn nu afkomstig uit de cache en Microsoft Verbonden cache zal geen aanvragen indienen bij het CDN voor dezelfde inhoud.
 
-### <a name="supporting-industrial-iot-iiot-with-parentchild-hosting-scenarios"></a>Industriële IoT (IIoT) ondersteunen met scenario's voor het hosten van bovenliggende en onderliggende toepassingen
+### <a name="supporting-industrial-iot-iiot-with-parentchild-hosting-scenarios"></a>IIoT (Industrial IoT) ondersteunen met bovenliggende/onderliggende hostingscenario's
 
-Wanneer een downstream-of onderliggend IoT Edge gateway als host fungeert voor de micro soft Connected cache-server, wordt deze geconfigureerd om update-inhoud aan te vragen bij de bovenliggende IoT Edge gateway, waarbij de micro soft Connected cache-server wordt gehost. Dit is vereist voor zo veel niveaus als nodig is voordat de bovenliggende IoT Edge gateway die als host fungeert voor een micro soft Connected cache-server met Internet toegang wordt bereikt. Vanaf de met internet verbonden server wordt de inhoud aangevraagd vanuit het CDN waarop de inhoud wordt teruggestuurd naar de onderliggende IoT Edge gateway die de inhoud oorspronkelijk heeft aangevraagd. De inhoud wordt op elk niveau op schijf opgeslagen.
+Wanneer een downstream- of onderliggende IoT Edge-gateway de Microsoft Verbonden cache-server host, wordt deze geconfigureerd om update-inhoud aan te vragen bij de bovenliggende IoT Edge-gateway, waar de Microsoft Verbonden cache-server wordt gehost. Dit is vereist voor zoveel niveaus als nodig is voordat u de bovenliggende IoT Edge gateway bereikt die als host Verbonden cache Microsoft-server met internettoegang. Vanaf de met internet verbonden server wordt de inhoud aangevraagd bij het CDN. Op dat moment wordt de inhoud terug geleverd aan de onderliggende IoT Edge-gateway die de inhoud oorspronkelijk heeft aangevraagd. De inhoud wordt op elk niveau op schijf opgeslagen.
 
-## <a name="access-to-the-microsoft-connected-cache-preview-for-device-update-for-azure-iot-hub"></a>Toegang tot de door micro soft verbonden cache Preview voor het bijwerken van apparaten voor Azure IoT Hub
+## <a name="access-to-the-microsoft-connected-cache-preview-for-device-update-for-azure-iot-hub"></a>Toegang tot de Microsoft Verbonden cache preview voor apparaatupdates voor Azure IoT Hub
 
-De micro soft Connected cache IoT Edge-module wordt uitgebracht als een preview voor klanten die oplossingen implementeren met behulp van de update van het apparaat voor Azure IoT Hub. Toegang tot de preview is per uitnodiging. [Vraag toegang](https://aka.ms/MCCForDeviceUpdateForIoT) aan tot de micro soft Connected cache Preview voor het bijwerken van updates voor IOT uitschakelen en geef de gevraagde informatie op als u toegang wilt tot de module.
+De Microsoft Verbonden cache IoT Edge-module wordt uitgebracht als preview-versie voor klanten die oplossingen implementeren met apparaatupdates voor Azure IoT Hub. Toegang tot de preview is via een uitnodiging. [Vraag toegang](https://aka.ms/MCCForDeviceUpdateForIoT) tot de Microsoft Verbonden cache Preview voor apparaatupdate voor IoT- en geef de gevraagde informatie op als u toegang wilt tot de module.

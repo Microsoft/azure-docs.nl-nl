@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 11/19/2020
 ms.author: nanditav
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6ddafb0e76799e3d8011232534c505f97c79b22e
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 71249534c6a088088213659b5a45e042229721c7
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107751126"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813178"
 ---
 # <a name="encryption-for-azure-synapse-analytics-workspaces"></a>Versleuteling voor Azure Synapse Analytics-werkruimten
 
@@ -24,7 +24,7 @@ In dit artikel wordt het volgende beschreven:
 
 ## <a name="encryption-of-data-at-rest"></a>Versleuteling van data-at-rest
 
-Een volledige versleuteling-at-rest-oplossing zorgt ervoor dat de gegevens nooit in niet-versleutelde vorm worden opgeslagen. Dubbele versleuteling van data-at-rest vermindert bedreigingen met twee afzonderlijke versleutelingslagen om bescherming te bieden tegen eventuele bedreigingen in één laag. Azure Synapse Analytics biedt een tweede versleutelingslaag voor de gegevens in uw werkruimte met een door de klant beheerde sleutel. Deze sleutel wordt in uw [Azure Key Vault,](../../key-vault/general/overview.md)zodat u eigenaar kunt worden van sleutelbeheer en -rotatie.
+Een volledige versleuteling-at-rest-oplossing zorgt ervoor dat de gegevens nooit in niet-versleutelde vorm worden opgeslagen. Dubbele versleuteling van data-at-rest vermindert bedreigingen met twee afzonderlijke versleutelingslagen om bescherming te bieden tegen eventuele bedreigingen in één laag. Azure Synapse Analytics biedt een tweede versleutelingslaag voor de gegevens in uw werkruimte met een door de klant beheerde sleutel. Deze sleutel wordt in uw [Azure Key Vault,](../../key-vault/general/overview.md)zodat u eigenaar kunt worden van sleutelbeheer en rotatie.
 
 De eerste versleutelingslaag voor Azure-services wordt ingeschakeld met door het platform beheerde sleutels. Standaard worden Azure Disks en gegevens in Azure Storage-accounts automatisch 'at rest' versleuteld. Meer informatie over hoe versleuteling wordt gebruikt in Microsoft Azure in overzicht [van Azure Encryption](../../security/fundamentals/encryption-overview.md).
 
@@ -53,7 +53,7 @@ Werkruimten kunnen worden geconfigureerd om dubbele versleuteling in te stellen 
 
 ### <a name="key-access-and-workspace-activation"></a>Sleuteltoegang en activering van werkruimte
 
-Het Azure Synapse versleutelingsmodel met door de klant beheerde sleutels omvat de werkruimte die toegang heeft tot de sleutels in Azure Key Vault om zo nodig te versleutelen en ontsleutelen. De sleutels worden toegankelijk gemaakt voor de werkruimte via een toegangsbeleid of [Azure Key Vault RBAC-toegang.](../../key-vault/general/rbac-guide.md) Wanneer u machtigingen verleent via een [Azure Key Vault-toegangsbeleid,](../../key-vault/general/security-overview.md#key-vault-authentication-options) kiest u de optie Alleen toepassing tijdens het maken van het beleid (selecteer de beheerde identiteit van de werkruimte en voeg deze niet toe als een geautoriseerde toepassing).
+Het Azure Synapse-versleutelingsmodel met door de klant beheerde sleutels omvat de werkruimte die toegang heeft tot de sleutels in Azure Key Vault om zo nodig te versleutelen en ontsleutelen. De sleutels worden toegankelijk gemaakt voor de werkruimte via een toegangsbeleid of [via Azure Key Vault RBAC-toegang.](../../key-vault/general/rbac-guide.md) Wanneer u machtigingen verleent via een [Azure Key Vault-toegangsbeleid,](../../key-vault/general/security-features.md#key-vault-authentication-options) kiest u de optie Alleen toepassing tijdens het maken van het beleid (selecteer de beheerde identiteit van de werkruimte en voeg deze niet toe als een geautoriseerde toepassing).
 
  Aan de beheerde identiteit van de werkruimte moeten de machtigingen worden verleend die nodig zijn voor de sleutelkluis voordat de werkruimte kan worden geactiveerd. Deze gefaseerd aanpak voor het activeren van werkruimten zorgt ervoor dat gegevens in de werkruimte worden versleuteld met de door de klant beheerde sleutel. Houd er rekening mee dat versleuteling kan worden ingeschakeld of uitgeschakeld voor toegewezen SQL-pools. Elke pool is niet standaard ingeschakeld voor versleuteling.
 

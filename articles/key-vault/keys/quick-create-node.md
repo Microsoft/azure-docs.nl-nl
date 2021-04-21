@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: c0066409732f4492186ea0bf604261e1ab59ca9f
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 08de0045a19b0f07308778f8716fa48abded445b
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750298"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815536"
 ---
 # <a name="quickstart-azure-key-vault-key-client-library-for-javascript-version-4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor sleutels voor JavaScript (versie 4)
 
@@ -272,6 +272,6 @@ In deze quickstart hebt u een sleutelkluis gemaakt, een sleutel opgeslagen en di
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Lees een [Overzicht van Azure Key Vault-sleutels](about-keys.md)
-- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-overview.md)
+- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-features.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

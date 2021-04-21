@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 01/27/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4141e60370b397e799664b7d42384bbeb096bd05
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f5281c02f68598b1cf121a6ab8a574f0694f5ea2
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99071168"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813430"
 ---
 # <a name="quickstart-set-and-retrieve-a-key-from-azure-key-vault-using-azure-cli"></a>Quickstart: Een sleutel instellen in Azure Key Vault en daaruit ophalen met behulp van Azure CLI
 
@@ -45,7 +45,7 @@ Typ de onderstaande opdrachten om de sleutel **ExampleKey** te maken:
 az keyvault key create --vault-name "<your-unique-keyvault-name>" -n ExampleKey --protection software
 ```
 
-U kunt nu naar deze sleutel die u aan Azure Key Vault hebt toegevoegd, verwijzen met behulp van de URI ervan. Gebruik **' https://<your-unique-sleutel kluis-name>. Vault.Azure.net/Keys/ExampleKey '** om de huidige versie op te halen. 
+U kunt nu naar deze sleutel die u aan Azure Key Vault hebt toegevoegd, verwijzen met behulp van de URI ervan. Gebruik **https://<your-unique-keyvault-name>.vault.azure.net/keys/ExampleKey'** om de huidige versie op te halen. 
 
 Een eerder opgeslagen sleutel weergeven:
 
@@ -66,4 +66,4 @@ In deze quickstart hebt u een sleutelkluis gemaakt en daar een sleutel in opgesl
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

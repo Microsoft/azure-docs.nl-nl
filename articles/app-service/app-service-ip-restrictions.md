@@ -1,159 +1,159 @@
 ---
-title: Toegangs beperkingen Azure App Service
-description: Meer informatie over het beveiligen van uw app in Azure App Service door toegangs beperkingen in te stellen.
+title: Azure App Service toegangsbeperkingen
+description: Meer informatie over het beveiligen van uw app in Azure App Service door toegangsbeperkingen in te stellen.
 author: ccompy
 ms.assetid: 3be1f4bd-8a81-4565-8a56-528c037b24bd
 ms.topic: article
 ms.date: 12/17/2020
 ms.author: ccompy
-ms.custom: seodec18
-ms.openlocfilehash: 420dade645d1a4ee32bb888aecb76b033d5756e1
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: seodec18, devx-track-azurepowershell
+ms.openlocfilehash: 541af6d0051d06de5721b22616fbf1e2867b71d6
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731293"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107833360"
 ---
-# <a name="set-up-azure-app-service-access-restrictions"></a>Toegangs beperkingen voor Azure App Service instellen
+# <a name="set-up-azure-app-service-access-restrictions"></a>Toegangsbeperkingen Azure App Service instellen
 
-Door toegangs beperkingen in te stellen, kunt u een lijst met voor rang gegeven toestaan/weigeren definiëren die de netwerk toegang tot uw app beheert. De lijst kan IP-adressen of Azure Virtual Network subnetten bevatten. Als er sprake is van een of meer vermeldingen, bestaat er al een impliciete *weigering* aan het einde van de lijst.
+Door toegangsbeperkingen in te stellen, kunt u een op prioriteit geordende lijst voor toestaan/weigeren definiëren waarmee de netwerktoegang tot uw app wordt bepaald. De lijst kan IP-adressen of Azure Virtual Network s bevatten. Wanneer er een of meer vermeldingen zijn, bestaat er een *impliciete deny all* aan het einde van de lijst.
 
-De functie voor toegangs beperking werkt met alle door Azure App Service gehoste workloads. De werk belastingen kunnen Web apps, API apps, Linux-apps, Linux-container-apps en-functies bevatten.
+De toegangsbeperking werkt met alle Azure App Service gehoste workloads. De workloads kunnen web-apps, API-apps, Linux-apps, Linux-container-apps en Functions omvatten.
 
-Wanneer er een aanvraag wordt ingediend bij uw app, wordt het van-adres geëvalueerd op basis van de regels in de lijst met toegangs restricties. Als het van-adres zich in een subnet bevindt dat is geconfigureerd met Service-eind punten naar micro soft. Web, wordt het bron-subnet vergeleken met de regels voor het virtuele netwerk in de lijst met toegangs restricties. Als het adres niet is toegestaan op basis van de regels in de lijst, reageert de service met een [HTTP 403-](https://en.wikipedia.org/wiki/HTTP_403) status code.
+Wanneer er een aanvraag wordt ingediend bij uw app, wordt het FROM-adres geëvalueerd op basis van de regels in uw toegangsbeperkingslijst. Als het FROM-adres zich in een subnet dat is geconfigureerd met service-eindpunten voor Microsoft.Web, wordt het bronsubnet vergeleken met de regels voor virtuele netwerken in uw lijst met toegangsbeperkingen. Als het adres geen toegang krijgt op basis van de regels in de lijst, antwoordt de service met een [HTTP 403-statuscode.](https://en.wikipedia.org/wiki/HTTP_403)
 
-De functie voor toegangs beperking wordt geïmplementeerd in de front-end rollen van App Service, die een upstream zijn van de werk nemers waar de code wordt uitgevoerd. Toegangs beperkingen zijn daarom effectief op het netwerk toegangscontrole lijsten (Acl's).
+De toegangsbeperkingsmogelijkheid wordt geïmplementeerd in de App Service front-endrollen, die upstream zijn van de werkrolhosts waarop uw code wordt uitgevoerd. Daarom zijn toegangsbeperkingen effectief netwerktoegangsbeheerlijsten (ACL's).
 
-De mogelijkheid om de toegang tot uw web-app vanuit een virtueel Azure-netwerk te beperken, is ingeschakeld door [service-eind punten][serviceendpoints]. Met Service-eind punten kunt u de toegang beperken tot een multi tenant-service van geselecteerde subnetten. Het is niet mogelijk om het verkeer te beperken tot apps die worden gehost in een App Service Environment. Als u een App Service Environment hebt, kunt u de toegang tot uw app beheren door IP-adres regels toe te passen.
+De mogelijkheid om de toegang tot uw web-app vanuit een virtueel Azure-netwerk te beperken, wordt ingeschakeld door [service-eindpunten][serviceendpoints]. Met service-eindpunten kunt u de toegang tot een service met meerdere tenants vanuit geselecteerde subnetten beperken. Het werkt niet om verkeer te beperken tot apps die worden gehost in een App Service Environment. Als u zich in een App Service Environment, kunt u de toegang tot uw app controleren door IP-adresregels toe te passen.
 
 > [!NOTE]
-> De service-eind punten moeten beide zijn ingeschakeld op de netwerk zijde en voor de Azure-service waarmee ze worden ingeschakeld. Zie [Virtual Network Service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md)voor een lijst met Azure-Services die service-eind punten ondersteunen.
+> De service-eindpunten moeten zowel aan de netwerkzijde als voor de Azure-service waarmee ze worden ingeschakeld, zijn ingeschakeld. Voor een lijst met Azure-services die service-eindpunten ondersteunen, Virtual Network [service-eindpunten.](../virtual-network/virtual-network-service-endpoints-overview.md)
 >
 
-:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-flow.png" alt-text="Diagram van de stroom van toegangs beperkingen.":::
+:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-flow.png" alt-text="Diagram van de stroom van toegangsbeperkingen.":::
 
-## <a name="manage-access-restriction-rules-in-the-portal"></a>Toegangs beperkings regels beheren in de portal
+## <a name="manage-access-restriction-rules-in-the-portal"></a>Toegangsbeperkingsregels beheren in de portal
 
-Ga als volgt te werk om een toegangs beperkings regel toe te voegen aan uw app:
+Ga als volgt te werk om een toegangsbeperkingsregel toe te voegen aan uw app:
 
 1. Meld u aan bij Azure Portal.
 
-1. Selecteer **netwerken** in het linkerdeel venster.
+1. Selecteer Netwerken in het **linkerdeelvenster.**
 
-1. Selecteer in het deel venster **netwerken** onder **toegangs beperkingen** de optie **toegangs beperkingen configureren**.
+1. Selecteer in **het deelvenster** Netwerken onder Toegangsbeperkingen de optie **Toegangsbeperkingen** **configureren.**
 
-    :::image type="content" source="media/app-service-ip-restrictions/access-restrictions.png" alt-text="Scherm opname van het deel venster met netwerk opties App Service in de Azure Portal.":::
+    :::image type="content" source="media/app-service-ip-restrictions/access-restrictions.png" alt-text="Schermopname van App Service deelvenster Netwerkopties in de Azure Portal.":::
 
-1. Bekijk op de pagina **toegangs beperkingen** de lijst met toegangs beperkings regels die voor uw app zijn gedefinieerd.
+1. Bekijk op **de pagina Toegangsbeperkingen** de lijst met toegangsbeperkingsregels die zijn gedefinieerd voor uw app.
 
-   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-browse.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in de Azure Portal, waarin de lijst met toegangs beperkings regels wordt weer gegeven die zijn gedefinieerd voor de geselecteerde app.":::
+   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-browse.png" alt-text="Schermopname van de pagina Toegangsbeperkingen in de Azure Portal met de lijst met toegangsbeperkingsregels die zijn gedefinieerd voor de geselecteerde app.":::
 
-   In de lijst worden alle huidige beperkingen weer gegeven die worden toegepast op de app. Als u een beperking voor het virtuele netwerk hebt voor uw app, wordt in de tabel aangegeven of de service-eind punten zijn ingeschakeld voor micro soft. Web. Als er geen beperkingen zijn gedefinieerd voor uw app, is de app vanaf elke locatie toegankelijk.
+   In de lijst worden alle huidige beperkingen weergegeven die op de app worden toegepast. Als u een beperking voor het virtuele netwerk voor uw app hebt, wordt in de tabel laten zien of de service-eindpunten zijn ingeschakeld voor Microsoft.Web. Als er geen beperkingen zijn gedefinieerd voor uw app, is de app overal toegankelijk.
 
-### <a name="add-an-access-restriction-rule"></a>Een toegangs beperkings regel toevoegen
+### <a name="add-an-access-restriction-rule"></a>Een toegangsbeperkingsregel toevoegen
 
-Als u een toegangs beperkings regel wilt toevoegen aan uw app, selecteert u **regel toevoegen** in het deel venster **toegangs beperkingen** . Nadat u een regel hebt toegevoegd, wordt deze onmiddellijk van kracht. 
+Als u een toegangsbeperkingsregel aan uw app wilt toevoegen, selecteert u in het deelvenster **Toegangsbeperkingen** de optie **Regel toevoegen.** Nadat u een regel toevoegt, wordt deze onmiddellijk van kracht. 
 
-Regels worden in volg orde van prioriteit afgedwongen, te beginnen met het laagste getal in de kolom **prioriteit** . Een impliciete *weigering* is van kracht nadat u zelfs één regel hebt toegevoegd.
+Regels worden afgedwongen in volgorde van prioriteit, beginnend bij het laagste getal in de **kolom Prioriteit.** Een *impliciete deny all* is van kracht nadat u zelfs maar één regel toevoegt.
 
-Ga als volgt te werk in het deel venster **toegangs beperking toevoegen** wanneer u een regel maakt:
+Ga als **volgt te werk** in het deelvenster Toegangsbeperking toevoegen wanneer u een regel maakt:
 
-1. Selecteer onder **actie** de optie **toestaan** of **weigeren**.  
+1. Selecteer **onder** Actie de optie **Toestaan** of **Weigeren.**  
 
-   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-ip-add.png?v2" alt-text="Scherm opname van het deel venster ' toegangs beperking toevoegen '.":::
+   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-ip-add.png?v2" alt-text="Schermopname van het deelvenster Toegangsbeperking toevoegen.":::
 
-1. Voer eventueel een naam en beschrijving van de regel in.
-1. Voer in het vak **prioriteit** een prioriteits waarde in.
-1. Selecteer in de vervolg keuzelijst **type** het type regel.
+1. Voer desgewenst een naam en beschrijving van de regel in.
+1. Voer in **het** vak Prioriteit een prioriteitswaarde in.
+1. Selecteer in **de** vervolgkeuzelijst Type het type regel.
 
 De verschillende typen regels worden beschreven in de volgende secties.
 
 > [!NOTE]
-> - Er geldt een limiet van 512 toegangs beperkings regels. Als u meer dan 512 toegangs beperkings regels nodig hebt, raden we u aan om een zelfstandig beveiligings product te installeren, zoals Azure front deur, Azure-app gateway of een alternatieve WAF.
+> - Er geldt een limiet van 512 toegangsbeperkingsregels. Als u meer dan 512 toegangsbeperkingsregels nodig hebt, raden we u aan om een zelfstandig beveiligingsproduct te installeren, zoals Azure Front Door, Azure-app Gateway of een alternatieve WAF.
 >
-#### <a name="set-an-ip-address-based-rule"></a>Een op IP-adres gebaseerde regel instellen
+#### <a name="set-an-ip-address-based-rule"></a>Een regel op basis van IP-adressen instellen
 
 Volg de procedure zoals beschreven in de vorige sectie, maar met de volgende toevoeging:
-* Selecteer voor stap 4 in de vervolg keuzelijst **type** de optie **IPv4** of **IPv6**. 
+* Selecteer voor stap 4 in **de vervolgkeuzelijst Type** de optie **IPv4** of **IPv6.** 
 
-Geef het **IP-adres blok** op in de CIDR-notatie (classable Inter-Domain Routing) voor zowel IPv4-als IPv6-adressen. Als u een adres wilt opgeven, kunt u iets zoals *1.2.3.4/32* gebruiken, waarbij de eerste vier octetten uw IP-adres vertegenwoordigen en */32* het masker is. De IPv4 CIDR-notatie voor alle adressen is 0.0.0.0/0. Zie [klasseloze Inter-Domain route ring](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)voor meer informatie over CIDR-notatie. 
+Geef het **IP-adresblok** op in Inter-Domain CIDR-notatie (Classless Inter-Domain Routing) voor zowel de IPv4- als IPv6-adressen. Als u een adres wilt opgeven, kunt u bijvoorbeeld *1.2.3.4/32* gebruiken, waarbij de eerste vier octets uw IP-adres vertegenwoordigen en */32* het masker is. De IPv4 CIDR-notatie voor alle adressen is 0.0.0.0/0. Zie Classless Inter-Domain Routing voor meer informatie over [CIDR-notatie.](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) 
 
-#### <a name="set-a-service-endpoint-based-rule"></a>Een regel op basis van een service-eind punt instellen
+#### <a name="set-a-service-endpoint-based-rule"></a>Een regel op basis van een service-eindpunt instellen
 
-* Selecteer voor stap 4 in de vervolg keuzelijst **type** de optie **Virtual Network**.
+* Selecteer voor stap 4 in **de vervolgkeuzelijst Type** **de optie Virtual Network.**
 
-   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-vnet-add.png?v2" alt-text="Scherm afbeelding van het deel venster beperking toevoegen met het Virtual Network type geselecteerd.":::
+   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-vnet-add.png?v2" alt-text="Schermopname van het deelvenster Beperking toevoegen met het Virtual Network geselecteerd.":::
 
-Geef de vervolg keuzelijst **abonnement**, **Virtual Network** en **subnet** op die overeenkomen met wat u de toegang wilt beperken.
+Geef de **vervolgkeuzelijsten** **Abonnement, Virtual Network** en **Subnet** op, die overeenkomen met de lijsten waarvoor u de toegang wilt beperken.
 
-Door service-eind punten te gebruiken, kunt u de toegang beperken tot geselecteerde subnetten van het virtuele netwerk van Azure. Als service-eind punten niet al zijn ingeschakeld met micro soft. web voor het geselecteerde subnet, worden ze automatisch ingeschakeld, tenzij u het selectie vakje **ontbrekende micro soft. webservice-eind punten negeren** inschakelt. Het scenario waarin u mogelijk service-eind punten in de app wilt inschakelen, maar niet het subnet is afhankelijk van het feit of u gemachtigd bent om deze in te scha kelen op het subnet. 
+Met behulp van service-eindpunten kunt u de toegang tot geselecteerde subnetten van virtuele Azure-netwerken beperken. Als service-eindpunten nog niet zijn ingeschakeld met Microsoft.Web voor het subnet dat u hebt geselecteerd, worden deze automatisch ingeschakeld, tenzij u het selectievakje Ontbrekende **Microsoft.Web-service-eindpunten** negeren inschakelen. Het scenario waarin u mogelijk service-eindpunten wilt inschakelen voor de app, maar niet het subnet, is voornamelijk afhankelijk van of u over de machtigingen voor het inschakelen ervan op het subnet bent. 
 
-Als iemand anders de service-eind punten in het subnet moet inschakelen, schakelt u het selectie vakje **ontbrekende micro soft. web service-eind punten negeren** in. Uw app wordt geconfigureerd voor service-eind punten in de verwachting dat ze later in het subnet worden ingeschakeld. 
+Als u iemand anders nodig hebt om service-eindpunten in te kunnenschakelen in het subnet, selecteert u het selectievakje Ontbrekende **Microsoft.Web-service-eindpunten** negeren. Uw app wordt geconfigureerd voor service-eindpunten, in afwachting dat deze later in het subnet worden ingeschakeld. 
 
-U kunt Service-eind punten niet gebruiken om de toegang te beperken tot apps die worden uitgevoerd in een App Service Environment. Als uw app zich in een App Service Environment bevindt, kunt u de toegang hiertoe beheren door IP-toegangs regels toe te passen. 
+U kunt service-eindpunten niet gebruiken om de toegang te beperken tot apps die worden uitgevoerd in een App Service Environment. Wanneer uw app zich in een App Service Environment, kunt u de toegang tot de app controleren door IP-toegangsregels toe te passen. 
 
-Met Service-eind punten kunt u uw app configureren met toepassings gateways of andere Web Application Firewall (WAF)-apparaten. U kunt ook toepassingen met meerdere lagen configureren met beveiligde back-ends. Zie [netwerk functies en app service](networking-features.md) en [Application Gateway integratie met Service-eind punten](networking/app-gateway-with-service-endpoints.md)voor meer informatie.
+Met service-eindpunten kunt u uw app configureren met toepassingsgateways of andere WAF-apparaten (Web Application Firewall). U kunt ook toepassingen met meerdere lagen configureren met beveiligde back-ends. Zie Netwerkfuncties en integratie [App Service en Application Gateway](networking-features.md) met [service-eindpunten](networking/app-gateway-with-service-endpoints.md)voor meer informatie.
 
 > [!NOTE]
-> - Service-eind punten worden momenteel niet ondersteund voor web-apps die gebruikmaken van IP-Secure Sockets Layer (VIP) voor virtueel IP-verkeer.
+> - Service-eindpunten worden momenteel niet ondersteund voor web-apps die ip-Secure Sockets Layer (SSL) virtueel IP-adres (VIP) gebruiken.
 >
-#### <a name="set-a-service-tag-based-rule"></a>Een op code gebaseerde regel voor een service instellen
+#### <a name="set-a-service-tag-based-rule"></a>Een regel op basis van servicetags instellen
 
-* Selecteer voor stap 4 in de vervolg keuzelijst **type** de optie **service label**.
+* Selecteer servicetag in de **vervolgkeuzelijst Type** **voor stap** 4.
 
-   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-service-tag-add.png?v2" alt-text="Scherm afbeelding van het deel venster beperking toevoegen met het servicetag type geselecteerd.":::
+   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-service-tag-add.png?v2" alt-text="Schermopname van het deelvenster Beperking toevoegen met het servicetagtype geselecteerd.":::
 
-Elke servicetag vertegenwoordigt een lijst met IP-adresbereiken van Azure-Services. Een lijst met deze services en koppelingen naar de specifieke bereiken vindt u in de documentatie voor de [service label][servicetags].
+Elke servicetag vertegenwoordigt een lijst met IP-adresbereiken van Azure-services. Een lijst met deze services en koppelingen naar de specifieke reeksen vindt u in de [servicetagdocumentatie][servicetags].
 
-Alle beschik bare service tags worden ondersteund in toegangs beperkings regels. Ter vereenvoudiging is alleen een lijst met de meest voorkomende Tags beschikbaar via de Azure Portal. Gebruik Azure Resource Manager sjablonen of scripts om geavanceerde regels te configureren, zoals regionale regels voor het bereik. Dit zijn de tags die beschikbaar zijn via Azure Portal:
+Alle beschikbare servicetags worden ondersteund in toegangsbeperkingsregels. Voor het gemak is alleen een lijst met de meest voorkomende tags beschikbaar via de Azure Portal. Gebruik Azure Resource Manager of scripts om geavanceerdere regels te configureren, zoals regels met een regionaal bereik. Dit zijn de tags die beschikbaar zijn via Azure Portal:
 
 * ActionGroup
 * ApplicationInsightsAvailability
 * AzureCloud
 * AzureCognitiveSearch
 * AzureEventGrid
-* AzureFrontDoor. back-end
+* AzureFrontDoor.Backend
 * AzureMachineLearning
 * AzureTrafficManager
 * LogicApps
 
 ### <a name="edit-a-rule"></a>Een regel bewerken
 
-1. Als u wilt beginnen met het bewerken van een bestaande beperkings regel voor toegang, selecteert u op de pagina **toegangs beperkingen** de regel die u wilt bewerken.
+1. Als u een bestaande regel voor toegangsbeperkingen wilt bewerken, selecteert u op de pagina **Toegangsbeperkingen** de regel die u wilt bewerken.
 
-1. Breng in het deel venster **toegangs beperking bewerken** de gewenste wijzigingen aan en selecteer **regel bijwerken**. Bewerkingen zijn direct van kracht, met inbegrip van wijzigingen in de volg orde van prioriteit.
+1. Maak in **het deelvenster Toegangsbeperking** bewerken uw wijzigingen en selecteer **vervolgens Regel bijwerken.** Bewerkingen zijn onmiddellijk van kracht, met inbegrip van wijzigingen in volgorde van prioriteit.
 
-   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-ip-edit.png?v2" alt-text="Scherm afbeelding van het deel venster ' toegangs beperking bewerken ' in de Azure Portal, waarin de velden voor een bestaande toegangs beperkings regel worden weer gegeven.":::
+   :::image type="content" source="media/app-service-ip-restrictions/access-restrictions-ip-edit.png?v2" alt-text="Schermopname van het deelvenster Toegangsbeperking bewerken in Azure Portal, met de velden voor een bestaande toegangsbeperkingsregel.":::
 
    > [!NOTE]
-   > Wanneer u een regel bewerkt, kunt u niet scha kelen tussen regel typen. 
+   > Wanneer u een regel bewerkt, kunt u niet schakelen tussen regeltypen. 
 
 ### <a name="delete-a-rule"></a>Een regel verwijderen
 
-Als u een regel wilt verwijderen, selecteert u op de pagina **toegangs beperkingen** het beletsel teken (**...**) naast de regel die u wilt verwijderen en selecteert u vervolgens **verwijderen**.
+Als u een regel wilt verwijderen, selecteert u op de pagina **Toegangsbeperkingen** het beletselteken (**...**) naast de regel die u wilt verwijderen en selecteert u **vervolgens Verwijderen.**
 
-:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-delete.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen, met het weglatings teken naast de regel voor toegangs beperking die moet worden verwijderd.":::
+:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-delete.png" alt-text="Schermopname van de pagina Toegangsbeperkingen, met het beletselteken Verwijderen naast de regel voor toegangsbeperking die moet worden verwijderd.":::
 
-## <a name="access-restriction-advanced-scenarios"></a>Geavanceerde scenario's voor toegangs beperking
-In de volgende secties worden een aantal geavanceerde scenario's beschreven die gebruikmaken van toegangs beperkingen.
+## <a name="access-restriction-advanced-scenarios"></a>Geavanceerde scenario's voor toegangsbeperking
+In de volgende secties worden enkele geavanceerde scenario's met toegangsbeperkingen beschreven.
 
-### <a name="filter-by-http-header"></a>Filteren op http-header
+### <a name="filter-by-http-header"></a>Filteren op HTTP-header
 
-Als onderdeel van een regel kunt u extra http-header filters toevoegen. De volgende http-header namen worden ondersteund:
-* X-doorgestuurd-voor
-* X-doorgestuurd-host
+Als onderdeel van een regel kunt u extra http-headerfilters toevoegen. De volgende http-headernamen worden ondersteund:
+* X-Forwarded-For
+* X-Forwarded-Host
 * X-Azure-FDID
 * X-FD-HealthProbe
 
-Voor elke koptekst naam kunt u Maxi maal 8 waarden toevoegen, gescheiden door komma's. De http-header filters worden geëvalueerd na de regel zelf en beide voor waarden moeten waar zijn om de regel toe te passen.
+Voor elke headernaam kunt u maximaal 8 waarden toevoegen, gescheiden door komma's. De HTTP-headerfilters worden geëvalueerd na de regel zelf en beide voorwaarden moeten waar zijn om de regel toe te passen.
 
 ### <a name="multi-source-rules"></a>Regels voor meerdere bronnen
 
-Met regels voor meerdere bronnen kunt u Maxi maal 8 IP-bereiken of 8 Service Tags combi neren in één regel. U kunt dit gebruiken als u meer dan 512 IP-bereiken hebt of als u logische regels wilt maken waarin meerdere IP-bereiken worden gecombineerd met één http-header filter.
+Met regels voor meerdere bronnen kunt u maximaal 8 IP-adresbereiken of 8 servicetags combineren in één regel. U kunt dit gebruiken als u meer dan 512 IP-adresbereiken hebt of als u logische regels wilt maken waarbij meerdere IP-adresbereiken worden gecombineerd met één http-headerfilter.
 
-Regels voor meerdere bronnen worden op dezelfde manier gedefinieerd als voor het definiëren van regels met één bron, maar met elk bereik gescheiden door een komma.
+Regels voor meerdere bronnen worden op dezelfde manier gedefinieerd als u regels met één bron definieert, maar met elk bereik gescheiden door komma's.
 
-Power shell-voor beeld:
+PowerShell-voorbeeld:
 
   ```azurepowershell-interactive
   Add-AzWebAppAccessRestrictionRule -ResourceGroupName "ResourceGroup" -WebAppName "AppName" `
@@ -161,26 +161,26 @@ Power shell-voor beeld:
     -Priority 100 -Action Allow
   ```
 
-### <a name="block-a-single-ip-address"></a>Eén IP-adres blok keren
+### <a name="block-a-single-ip-address"></a>Eén IP-adres blokkeren
 
-Wanneer u uw eerste toegangs beperkings regel toevoegt, voegt de service een expliciete regel voor het *weigeren van alle* regels toe met de prioriteit 2147483647. In de praktijk is de regel expliciet *Alles weigeren* de laatste regel die moet worden uitgevoerd en blokkeert deze de toegang tot een IP-adres dat niet expliciet is toegestaan door een regel voor *toestaan* .
+Wanneer u uw eerste regel voor toegangsbeperking toevoegt, voegt de service een expliciete regel alle weigeren toe met een prioriteit van 2147483647.  In de praktijk is de *expliciete* regel Alles weigeren de laatste regel die moet worden uitgevoerd en blokkeert deze de toegang tot alle IP-adressen die niet expliciet zijn toegestaan door een *regel* toestaan.
 
-Voor een scenario waarbij u een enkel IP-adres of een blok met IP-adressen expliciet wilt blok keren, maar toegang tot alle andere wilt toestaan, voegt u een expliciete regel voor *toestaan* toe.
+Voor een scenario waarin u expliciet één IP-adres of een blok MET IP-adressen wilt blokkeren, maar toegang tot alle andere adressen wilt toestaan, voegt u een expliciete regel Alles *toestaan* toe.
 
-:::image type="content" source="media/app-service-ip-restrictions/block-single-address.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in de Azure Portal, waarbij één geblokkeerd IP-adres wordt weer gegeven.":::
+:::image type="content" source="media/app-service-ip-restrictions/block-single-address.png" alt-text="Schermopname van de pagina Toegangsbeperkingen in de Azure Portal, met één geblokkeerd IP-adres.":::
 
 ### <a name="restrict-access-to-an-scm-site"></a>Toegang tot een SCM-site beperken 
 
-Naast het beheren van de toegang tot uw app, kunt u de toegang beperken tot de SCM-site die wordt gebruikt door uw app. De SCM-site is zowel het Web Deploy-eind punt als de kudu-console. U kunt toegangs beperkingen voor de SCM-site afzonderlijk toewijzen vanuit de app of dezelfde set beperkingen voor zowel de app als de SCM-site gebruiken. Wanneer u **dezelfde beperkingen als \<app name>** selectie vakje inschakelt, wordt alles leeg gelaten. Als u het selectie vakje uitschakelt, worden de instellingen van uw SCM-site opnieuw toegepast. 
+U kunt niet alleen de toegang tot uw app bepalen, maar ook de toegang beperken tot de SCM-site die door uw app wordt gebruikt. De SCM-site is zowel het web-implementatie-eindpunt als de Kudu-console. U kunt toegangsbeperkingen aan de SCM-site afzonderlijk toewijzen vanuit de app of dezelfde set beperkingen gebruiken voor zowel de app als de SCM-site. Wanneer u het **selectievakje \<app name> Dezelfde beperkingen als** incheckt, wordt alles leeg gelaten. Als u het selectievakje uitcheckt, worden uw SCM-site-instellingen opnieuw toegepast. 
 
-:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-scm-browse.png" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in de Azure Portal, waarin wordt weer gegeven dat er geen toegangs beperkingen zijn ingesteld voor de SCM-site of de app.":::
+:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-scm-browse.png" alt-text="Schermopname van de pagina Toegangsbeperkingen in de Azure Portal, waarin wordt weergegeven dat er geen toegangsbeperkingen zijn ingesteld voor de SCM-site of de app.":::
 
-### <a name="restrict-access-to-a-specific-azure-front-door-instance"></a>Toegang tot een specifiek exemplaar van de Azure-front-deur beperken
-Verkeer van de voor deur van Azure naar uw toepassing is afkomstig uit een bekende set IP-bereiken die zijn gedefinieerd in het label AzureFrontDoor. back-service. Met een beperkings regel voor service tags kunt u het verkeer beperken tot alleen de herkomst van de voor deur van Azure. Om ervoor te zorgen dat verkeer alleen afkomstig is uit uw specifieke exemplaar, moet u de binnenkomende aanvragen verder filteren op basis van de unieke http-header die door Azure front-deur wordt verzonden.
+### <a name="restrict-access-to-a-specific-azure-front-door-instance"></a>Toegang tot een specifiek Azure Front Door beperken
+Verkeer van Azure Front Door naar uw toepassing is afkomstig van een bekende set IP-adresbereiken die zijn gedefinieerd in de servicetag AzureFrontDoor.Backend. Met behulp van een beperkingsregel voor servicetags kunt u verkeer beperken tot alleen afkomstig van Azure Front Door. Om ervoor te zorgen dat verkeer alleen afkomstig is van uw specifieke exemplaar, moet u de binnenkomende aanvragen verder filteren op basis van de unieke HTTP-header die Azure Front Door verzendt.
 
-:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-frontdoor.png?v2" alt-text="Scherm afbeelding van de pagina toegangs beperkingen in het Azure Portal, waarin wordt weer gegeven hoe u de Azure front-deur kunt toevoegen.":::
+:::image type="content" source="media/app-service-ip-restrictions/access-restrictions-frontdoor.png?v2" alt-text="Schermopname van de pagina Toegangsbeperkingen in de Azure Portal, waarin wordt weergegeven hoe u een Azure Front Door toevoegt.":::
 
-Power shell-voor beeld:
+PowerShell-voorbeeld:
 
   ```azurepowershell-interactive
   $afd = Get-AzFrontDoor -Name "MyFrontDoorInstanceName"
@@ -189,11 +189,11 @@ Power shell-voor beeld:
     -HttpHeader @{'x-azure-fdid' = $afd.FrontDoorId}
   ```
 
-## <a name="manage-access-restriction-rules-programmatically"></a>Toegangs beperkings regels programmatisch beheren
+## <a name="manage-access-restriction-rules-programmatically"></a>Toegangsbeperkingsregels programmatisch beheren
 
-U kunt toegangs beperkingen programmatisch toevoegen door een van de volgende handelingen uit te voeren: 
+U kunt toegangsbeperkingen via een van de volgende programma's toevoegen: 
 
-* Gebruik [de Azure cli](/cli/azure/webapp/config/access-restriction). Bijvoorbeeld:
+* Gebruik [de Azure CLI](/cli/azure/webapp/config/access-restriction). Bijvoorbeeld:
    
   ```azurecli-interactive
   az webapp config access-restriction add --resource-group ResourceGroup --name AppName \
@@ -208,17 +208,17 @@ U kunt toegangs beperkingen programmatisch toevoegen door een van de volgende ha
       -Name "Ip example rule" -Priority 100 -Action Allow -IpAddress 122.133.144.0/24
   ```
    > [!NOTE]
-   > Voor het werken met Service Tags, HTTP-headers of regels met meerdere bronnen is ten minste versie 5.7.0 vereist. U kunt de versie van de geïnstalleerde module controleren met: **Get-InstalledModule-name AZ**
+   > Voor het werken met servicetags, HTTP-headers of regels voor meerdere bronnen is ten minste versie 5.7.0 vereist. U kunt de versie van de geïnstalleerde module controleren met: **Get-InstalledModule -Name Az**
 
-U kunt waarden ook hand matig instellen door een van de volgende handelingen uit te voeren:
+U kunt waarden ook handmatig instellen door het volgende te doen:
 
-* Gebruik een [Azure rest API](/rest/api/azure/) put-bewerking in de app-configuratie in azure Resource Manager. De locatie voor deze informatie in Azure Resource Manager is:
+* Gebruik een [Azure REST API](/rest/api/azure/) PUT-bewerking op de app-configuratie in Azure Resource Manager. De locatie voor deze informatie in Azure Resource Manager is:
 
-  management.azure.com/subscriptions/**-abonnements-id**/resourceGroups/**resource groepen**/providers/Microsoft.web/sites/**Web-app-naam**/config/Web? API-Version = 2020-06-01
+  management.azure.com/subscriptions/**abonnements-id**/resourceGroups/**resourcegroepen**/providers/Microsoft.Web/sites/**web-app name**/config/web?api-version=2020-06-01
 
-* Gebruik een resource manager-sjabloon. U kunt bijvoorbeeld resources.azure.com gebruiken en het ipSecurityRestrictions-blok bewerken om de vereiste JSON toe te voegen.
+* Gebruik een Resource Manager sjabloon. U kunt bijvoorbeeld een resources.azure.com en het blok ipSecurityRestrictions bewerken om de vereiste JSON toe te voegen.
 
-  De JSON-syntaxis voor het vorige voor beeld is:
+  De JSON-syntaxis voor het eerdere voorbeeld is:
 
   ```json
   {
@@ -234,7 +234,7 @@ U kunt waarden ook hand matig instellen door een van de volgende handelingen uit
     }
   }
   ```
-  De JSON-syntaxis voor een geavanceerd voor beeld met de beperking service label en http-header is:
+  De JSON-syntaxis voor een geavanceerd voorbeeld met servicetag en http-headerbeperking is:
   ```json
   {
     "properties": {
@@ -255,13 +255,13 @@ U kunt waarden ook hand matig instellen door een van de volgende handelingen uit
     }
   }
   ```
-## <a name="set-up-azure-functions-access-restrictions"></a>Toegangs beperkingen voor Azure Functions instellen
+## <a name="set-up-azure-functions-access-restrictions"></a>Toegangsbeperkingen Azure Functions instellen
 
-Er zijn ook toegangs beperkingen beschikbaar voor functie-apps met dezelfde functionaliteit als App Service-abonnementen. Wanneer u toegangs beperkingen inschakelt, schakelt u ook de Azure Portal code-editor uit voor niet-toegestane IP-adressen.
+Toegangsbeperkingen zijn ook beschikbaar voor functie-apps met dezelfde functionaliteit als App Service abonnementen. Wanneer u toegangsbeperkingen inschakelen, schakelt u ook de Azure Portal code-editor voor alle niet-toegestaan IP's.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Toegangs beperkingen voor Azure Functions](../azure-functions/functions-networking-options.md#inbound-access-restrictions)  
-[Integratie met Service-eind punten Application Gateway](networking/app-gateway-with-service-endpoints.md)
+[Toegangsbeperkingen voor Azure Functions](../azure-functions/functions-networking-options.md#inbound-access-restrictions)  
+[Application Gateway integratie met service-eindpunten](networking/app-gateway-with-service-endpoints.md)
 
 <!--Links-->
 [serviceendpoints]: ../virtual-network/virtual-network-service-endpoints-overview.md

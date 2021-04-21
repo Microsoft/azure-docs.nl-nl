@@ -1,6 +1,6 @@
 ---
 title: Veelgestelde vragen over configuratie
-description: Krijg antwoorden op veelgestelde vragen over problemen met de configuratie en het beheer van Azure App Service.
+description: Krijg antwoorden op veelgestelde vragen over configuratie- en beheerproblemen voor Azure App Service.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue
@@ -8,136 +8,137 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 843e11e7f2df404a6bf1866da7b383ee9d1097de
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: d4b6ceef837d985db004e9d925b554c54c287424
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100574785"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107834530"
 ---
-# <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Veelgestelde vragen over configuratie en beheer voor Web Apps in azure
+# <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Veelgestelde vragen over configuratie en beheer voor Web Apps in Azure
 
-In dit artikel vindt u antwoorden op veelgestelde vragen over configuratie-en beheer problemen voor de [Web apps functie van Azure app service](https://azure.microsoft.com/services/app-service/web/).
+Dit artikel biedt antwoorden op veelgestelde vragen over configuratie- en beheerproblemen voor de [Web Apps-functie van Azure App Service](https://azure.microsoft.com/services/app-service/web/).
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
-## <a name="are-there-limitations-i-should-be-aware-of-if-i-want-to-move-app-service-resources"></a>Zijn er beperkingen waar ik rekening mee moet houden als ik App Service resources wil verplaatsen?
+## <a name="are-there-limitations-i-should-be-aware-of-if-i-want-to-move-app-service-resources"></a>Zijn er beperkingen waar ik rekening mee moet houden als ik mijn App Service verplaatsen?
 
-Als u van plan bent App Service resources te verplaatsen naar een nieuwe resource groep of een nieuw abonnement, zijn er enkele beperkingen waar u rekening mee moet houden. Zie [app service beperkingen](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md)voor meer informatie.
+Als u van plan bent om App Service te verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement, zijn er enkele beperkingen waar u rekening mee moet houden. Zie beperkingen voor App Service [meer informatie.](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md)
 
-## <a name="how-do-i-use-a-custom-domain-name-for-my-web-app"></a>Hoe kan ik een aangepaste domein naam voor mijn web-app gebruiken?
+## <a name="how-do-i-use-a-custom-domain-name-for-my-web-app"></a>Hoe kan ik een aangepaste domeinnaam gebruiken voor mijn web-app?
 
-Voor antwoorden op veelgestelde vragen over het gebruik van een aangepaste domein naam met uw Azure-web-app, zie onze video over zeven minuten [een aangepaste domein naam toevoegen](https://channel9.msdn.com/blogs/Azure-App-Service-Self-Help/Add-a-Custom-Domain-Name). De video biedt een overzicht van het toevoegen van een aangepaste domein naam. Hierin wordt beschreven hoe u uw eigen URL gebruikt in plaats van de *. azurewebsites.net-URL met uw App Service web-app. U ziet ook een gedetailleerd overzicht van [hoe u een aangepaste domein naam kunt toewijzen](app-service-web-tutorial-custom-domain.md).
+Zie onze video van zeven minuten Een aangepaste domeinnaam toevoegen voor antwoorden op veelvoorkomende vragen over het gebruik van een aangepaste [domeinnaam met uw Azure-web-app.](https://channel9.msdn.com/blogs/Azure-App-Service-Self-Help/Add-a-Custom-Domain-Name) De video biedt een overzicht van het toevoegen van een aangepaste domeinnaam. In dit artikel wordt beschreven hoe u uw eigen URL gebruikt in plaats van de *.azurewebsites.net-URL met uw App Service web-app. U kunt ook een gedetailleerd overzicht bekijken van het toevoegen van [een aangepaste domeinnaam.](app-service-web-tutorial-custom-domain.md)
 
 
-## <a name="how-do-i-purchase-a-new-custom-domain-for-my-web-app"></a>Hoe kan ik een nieuw aangepast domein voor mijn web-app aanschaffen?
+## <a name="how-do-i-purchase-a-new-custom-domain-for-my-web-app"></a>Hoe kan ik een nieuw aangepast domein aanschaffen voor mijn web-app?
 
-Zie [een aangepaste domein naam kopen en configureren in app service](manage-custom-dns-buy-domain.md)voor meer informatie over het kopen en instellen van een aangepast domein voor uw app service Web-app.
+Zie Een aangepaste domeinnaam kopen en configureren in App Service voor meer informatie over het kopen en instellen van een aangepast [domein](manage-custom-dns-buy-domain.md)voor uw App Service-web-app.
 
 
 ## <a name="how-do-i-upload-and-configure-an-existing-tlsssl-certificate-for-my-web-app"></a>Hoe kan ik een bestaand TLS/SSL-certificaat voor mijn web-app uploaden en configureren?
 
-Zie [een TLS/SSL-certificaat toevoegen aan uw app service-app](configure-ssl-certificate.md)voor meer informatie over het uploaden en instellen van een bestaand aangepast TLS/SSL-certificaat.
+Zie Een TLS/SSL-certificaat toevoegen aan uw App Service-app voor meer informatie over het uploaden en instellen van [een bestaand aangepast TLS/SSL-certificaat.](configure-ssl-certificate.md)
 
 
-## <a name="how-do-i-purchase-and-configure-a-new-tlsssl-certificate-in-azure-for-my-web-app"></a>Hoe kan ik kopen en configureren van een nieuw TLS/SSL-certificaat in azure voor mijn web-app?
+## <a name="how-do-i-purchase-and-configure-a-new-tlsssl-certificate-in-azure-for-my-web-app"></a>Hoe kan ik een nieuw TLS/SSL-certificaat kopen en configureren in Azure voor mijn web-app?
 
-Zie [een TLS/SSL-certificaat toevoegen aan uw app service app](configure-ssl-certificate.md)voor meer informatie over het aanschaffen en instellen van een TLS/SSL-certificaat voor uw app service Web-app.
+Zie Een TLS/SSL-certificaat toevoegen aan uw App Service-app voor meer informatie over het kopen en instellen van een [TLS/SSL-certificaat](configure-ssl-certificate.md)voor uw App Service-web-app.
 
 
-## <a name="how-do-i-move-application-insights-resources"></a>Application Insights resources Hoe kan ik verplaatsen?
+## <a name="how-do-i-move-application-insights-resources"></a>Hoe kan ik resources Application Insights verplaatsen?
 
-Azure-toepassing Insights biedt momenteel geen ondersteuning voor de verplaatsings bewerking. Als uw oorspronkelijke resource groep een Application Insights resource bevat, kunt u die resource niet verplaatsen. Als u de Application Insights resource opneemt wanneer u een App Service app probeert te verplaatsen, mislukt de hele verplaatsings bewerking. Application Insights en het App Service plan hoeven echter niet in dezelfde resource groep te staan als de app om de app correct te laten functioneren.
+Momenteel biedt Azure-toepassing Insights geen ondersteuning voor de bewerking voor verplaatsen. Als uw oorspronkelijke resourcegroep een Application Insights bevat, kunt u die resource niet verplaatsen. Als u de Application Insights opgeeft wanneer u een app App Service verplaatst, mislukt de hele bewerking voor verplaatsen. De Application Insights en het App Service hoeven zich echter niet in dezelfde resourcegroep te hebben als de app om de app correct te laten werken.
 
-Zie [app service beperkingen](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md)voor meer informatie.
+Zie beperkingen voor App Service [meer informatie.](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md)
 
-## <a name="where-can-i-find-a-guidance-checklist-and-learn-more-about-resource-move-operations"></a>Waar vind ik een controle lijst met instructies en meer informatie over het verplaatsen van resources?
+## <a name="where-can-i-find-a-guidance-checklist-and-learn-more-about-resource-move-operations"></a>Waar vind ik een controlelijst voor richtlijnen en meer informatie over het verplaatsen van resources?
 
-[App service beperkingen](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md) laten zien hoe u resources verplaatst naar een nieuw abonnement of naar een nieuwe resource groep in hetzelfde abonnement. U kunt informatie krijgen over de controle lijst voor het verplaatsen van resources, informatie over de services die de verplaatsings bewerking ondersteunen en meer informatie over App Service beperkingen en andere onderwerpen.
+[App Service beperkingen](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md) ziet u hoe u resources verplaatst naar een nieuw abonnement of naar een nieuwe resourcegroep in hetzelfde abonnement. U kunt informatie krijgen over de controlelijst voor het verplaatsen van resources, leren welke services de bewerking voor verplaatsen ondersteunen en meer informatie over App Service beperkingen en andere onderwerpen.
 
-## <a name="how-do-i-set-the-server-time-zone-for-my-web-app"></a>Hoe kan ik de tijd zone van de server instellen voor mijn web-app?
+## <a name="how-do-i-set-the-server-time-zone-for-my-web-app"></a>Hoe kan ik de servertijdzone voor mijn web-app instellen?
 
-De tijd zone van de server instellen voor uw web-app:
+De servertijdzone voor uw web-app instellen:
 
-1. Ga in het Azure Portal, in uw App Service-abonnement, naar het menu **Toepassings instellingen** .
-2. Voeg onder **app-instellingen** deze instelling toe:
+1. Ga in Azure Portal uw App Service naar het menu **Toepassingsinstellingen.**
+2. Voeg **onder App-instellingen** deze instelling toe:
     * Sleutel = WEBSITE_TIME_ZONE
-    * Waarde = *de tijd zone die u wilt*
+    * Waarde = *de tijdzone die u wilt*
 3. Selecteer **Opslaan**.
 
-Zie de uitvoer van de Windows-opdracht voor de app-services die worden uitgevoerd in Windows `tzutil /L` . Gebruik de waarde van de tweede regel van elke vermelding. Bijvoorbeeld: "Tonga (standaard tijd)". Sommige van deze waarden worden ook weer gegeven in de kolom **tijd zone** in de [standaard tijd zones](/windows-hardware/manufacture/desktop/default-time-zones).
+Zie de uitvoer van de Windows-opdracht voor de App Services die worden uitgevoerd in `tzutil /L` Windows. Gebruik de waarde van de tweede regel van elk item. Bijvoorbeeld: 'Standaardtijd voor Reguliere tijd'. Sommige van deze waarden worden ook vermeld in de **kolom Tijdzone** in [Standaardtijdzones.](/windows-hardware/manufacture/desktop/default-time-zones)
 
-Voor de app-services die worden uitgevoerd op Linux, stelt u een waarde in van de [IANA TZ-data base](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Bijvoorbeeld: "America/Adak".
+Voor de App Services die worden uitgevoerd op Linux stelt u een waarde in vanuit de [IANA TZ-database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Bijvoorbeeld: 'America/Adak'.
 
-## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>Waarom mislukken mijn doorlopende webtaken?
+## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>Waarom mislukken mijn doorlopende webjobs soms?
 
-Web-apps worden standaard uit het geheugen verwijderd als ze gedurende een bepaalde periode niet actief zijn. Hiermee kan het systeem bronnen besparen. In Basic-en Standard-abonnementen kunt u de instelling **altijd op** inschakelen om de web-app voortdurend te laden. Als uw web-app doorlopende webtaken uitvoert, moet u **altijd** inschakelen of de webjobs worden mogelijk niet betrouwbaar uitgevoerd. Zie [een voortdurend actieve Webtaak maken](webjobs-create.md#CreateContinuous)voor meer informatie.
+Web-apps worden standaard verwijderd als ze een bepaalde periode niet actief zijn. Hierdoor kan het systeem resources besparen. In Basic- en Standard-abonnementen kunt u de instelling **Altijd** aan in om de web-app altijd te laden. Als in uw web-app doorlopende webjobs worden uitgevoerd, moet u **Always On** in- of de webjobs mogelijk niet betrouwbaar uitvoeren. Zie Create [a continuously running WebJob (Een continu lopende webjob maken) voor meer informatie.](webjobs-create.md#CreateContinuous)
 
-## <a name="how-do-i-get-the-outbound-ip-address-for-my-web-app"></a>Hoe kan ik het uitgaande IP-adres voor mijn web-app ophalen?
+## <a name="how-do-i-get-the-outbound-ip-address-for-my-web-app"></a>Hoe kan ik het uitgaande IP-adres voor mijn web-app op?
 
-U kunt als volgt de lijst met uitgaande IP-adressen voor uw web-app ophalen:
+De lijst met uitgaande IP-adressen voor uw web-app op te halen:
 
-1. Ga in de Azure Portal op de Blade van de web-app naar het menu **Eigenschappen** .
-2. Zoek naar **uitgaande IP-adressen**.
+1. Ga in Azure Portal blade van uw web-app naar **het** menu Eigenschappen.
+2. Zoek naar **uitgaande IP-adressen.**
 
-De lijst met uitgaande IP-adressen wordt weer gegeven.
+De lijst met uitgaande IP-adressen wordt weergegeven.
 
-Zie [uitgaande netwerk adressen](environment/app-service-app-service-environment-network-architecture-overview.md#outbound-network-addresses)voor meer informatie over het ophalen van het uitgaande IP-adres als uw website wordt gehost in een app service environment.
+Zie Uitgaande [netwerkadressen](environment/app-service-app-service-environment-network-architecture-overview.md#outbound-network-addresses)voor meer informatie over het op halen van het uitgaande IP-adres als uw website wordt gehost in een App Service Environment.
 
-## <a name="how-do-i-get-a-reserved-or-dedicated-inbound-ip-address-for-my-web-app"></a>Hoe kan ik een gereserveerd of specifiek inkomend IP-adres voor mijn web-app ophalen?
+## <a name="how-do-i-get-a-reserved-or-dedicated-inbound-ip-address-for-my-web-app"></a>Hoe kan ik een gereserveerd of toegewezen inkomende IP-adres voor mijn web-app?
 
-Voor het instellen van een toegewezen of gereserveerd IP-adres voor inkomende oproepen naar uw Azure app-website, installeert en configureert u een TLS/SSL-certificaat op basis van IP.
+Als u een toegewezen of gereserveerd IP-adres wilt instellen voor binnenkomende aanroepen naar de website van uw Azure-app, installeert en configureert u een TLS/SSL-certificaat op basis van IP.
 
-Houd er rekening mee dat voor het gebruik van een toegewezen of gereserveerd IP-adres voor inkomende oproepen uw App Service plan moet zijn opgenomen in een basis-of hoger service abonnement.
+Als u een toegewezen of gereserveerd IP-adres wilt gebruiken voor binnenkomende oproepen, moet uw App Service een Basic- of hoger serviceplan hebben.
 
-## <a name="can-i-export-my-app-service-certificate-to-use-outside-azure-such-as-for-a-website-hosted-elsewhere"></a>Kan ik mijn App Service-certificaat exporteren voor gebruik buiten Azure, zoals voor een website die elders wordt gehost? 
+## <a name="can-i-export-my-app-service-certificate-to-use-outside-azure-such-as-for-a-website-hosted-elsewhere"></a>Kan ik mijn certificaat App Service om buiten Azure te gebruiken, bijvoorbeeld voor een website die elders wordt gehost? 
 
-Ja, u kunt ze exporteren voor gebruik buiten Azure. Zie [Veelgestelde vragen voor app service certificaten en aangepaste domeinen](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview)voor meer informatie.
+Ja, u kunt ze exporteren voor gebruik buiten Azure. Zie Veelgestelde vragen over het verkrijgen van [App Service en aangepaste domeinen voor meer informatie.](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview)
 
-## <a name="can-i-export-my-app-service-certificate-to-use-with-other-azure-cloud-services"></a>Kan ik mijn App Service-certificaat exporteren voor gebruik met andere Azure-Cloud Services?
+## <a name="can-i-export-my-app-service-certificate-to-use-with-other-azure-cloud-services"></a>Kan ik mijn certificaat App Service voor gebruik met andere Azure-cloudservices exporteren?
 
-De portal biedt een eersteklas ervaring voor het implementeren van een App Service-certificaat via Azure Key Vault tot App Service apps. We hebben echter aanvragen ontvangen van klanten voor het gebruik van deze certificaten buiten het App Service-platform, bijvoorbeeld met Azure Virtual Machines. Zie [een lokale pfx-kopie maken van een app service certificaat](https://blogs.msdn.microsoft.com/appserviceteam/2017/02/24/creating-a-local-pfx-copy-of-app-service-certificate/)voor meer informatie over het maken van een lokale pfx-kopie van uw app service-certificaat zodat u het certificaat met andere Azure-resources kunt gebruiken.
+De portal biedt een eersteklas ervaring voor het implementeren van een App Service certificaat via Azure Key Vault in App Service apps. We ontvangen echter aanvragen van klanten om deze certificaten buiten het App Service gebruiken, bijvoorbeeld met Azure Virtual Machines. Zie Een lokale PFX-kopie van een App Service-certificaat maken voor meer informatie over het maken van een lokale PFX-kopie van uw [App Service-certificaat,](https://blogs.msdn.microsoft.com/appserviceteam/2017/02/24/creating-a-local-pfx-copy-of-app-service-certificate/)zodat u het certificaat met andere Azure-resources kunt gebruiken.
 
-Zie [Veelgestelde vragen voor app service certificaten en aangepaste domeinen](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview)voor meer informatie.
+Zie Veelgestelde vragen over App Service [en aangepaste domeinen voor meer informatie.](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview)
 
 
-## <a name="why-do-i-see-the-message-partially-succeeded-when-i-try-to-back-up-my-web-app"></a>Waarom wordt het bericht ' gedeeltelijk geslaagd ' weer gegeven wanneer ik een back-up wil maken van mijn web-app?
+## <a name="why-do-i-see-the-message-partially-succeeded-when-i-try-to-back-up-my-web-app"></a>Waarom zie ik het bericht Gedeeltelijk geslaagd wanneer ik een back-up van mijn web-app probeer te maken?
 
-Een veelvoorkomende oorzaak van het mislukken van de back-up is dat sommige bestanden door de toepassing worden gebruikt. Bestanden die in gebruik zijn, worden vergrendeld tijdens het uitvoeren van de back-up. Hiermee wordt voor komen dat er een back-up van deze bestanden wordt gemaakt. Dit kan resulteren in een ' gedeeltelijk geslaagde ' status. U kunt dit voor komen door bestanden van het back-upproces uit te sluiten. U kunt ervoor kiezen om alleen een back-up te maken van wat er nodig is. Zie voor meer informatie [back-ups maken van alleen de belang rijke onderdelen van uw site met Azure web apps](https://zainrizvi.io/blog/creating-partial-backups-of-your-site-with-azure-web-apps/).
+Een veelvoorkomende oorzaak van een back-upfout is dat sommige bestanden door de toepassing worden gebruikt. Bestanden die in gebruik zijn, worden vergrendeld terwijl u de back-up maakt. Dit voorkomt dat er een back-up van deze bestanden wordt maken en kan leiden tot de status Gedeeltelijk geslaagd. U kunt dit voorkomen door bestanden uit te sluiten van het back-upproces. U kunt ervoor kiezen alleen een back-up te maken van de benodigde back-up. Zie Backup [just the important parts of your site with Azure web apps (Back-up maken van alleen de belangrijke onderdelen van uw site met Azure-web-apps) voor meer informatie.](https://zainrizvi.io/blog/creating-partial-backups-of-your-site-with-azure-web-apps/)
 
-## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Hoe kan ik een header uit het HTTP-antwoord verwijderen?
+## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Hoe kan ik header verwijderen uit het HTTP-antwoord?
 
-Als u de kopteksten van het HTTP-antwoord wilt verwijderen, moet u het web.config-bestand van de site bijwerken. Zie [standaard server headers op uw Azure-websites verwijderen](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/)voor meer informatie.
+Als u de headers uit het HTTP-antwoord wilt verwijderen, moet u het web.config site bijwerken. Zie Standaardserverheaders verwijderen op uw [Azure-websites voor meer informatie.](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/)
 
-## <a name="is-app-service-compliant-with-pci-standard-30-and-31"></a>Is App Service compatibel met de PCI-standaard 3,0 en 3,1?
+## <a name="is-app-service-compliant-with-pci-standard-30-and-31"></a>Voldoet App Service aan PCI Standard 3.0 en 3.1?
 
-Op dit moment is de Web Apps-functie van Azure App Service in overeenstemming met de versie 1 van het PCI Data Security Standard (DSS) 3,0. PCI DSS versie 3,1 is op ons plan. Er wordt al gepland hoe de invoering van de nieuwste standaard wordt voortgezet.
+Momenteel is Web Apps functie van Azure App Service compatibel met PCI Data Security Standard (DSS) versie 3.0 Level 1. PCI DSS versie 3.1 staat op de planning. Er wordt al gepland hoe de implementatie van de meest recente standaard wordt verlopen.
 
-Voor PCI DSS versie 3,1-certificering is het uitschakelen van Transport Layer Security (TLS) 1,0 vereist. Op dit moment is het uitschakelen van TLS 1,0 geen optie voor de meeste App Service-abonnementen. Als u echter App Service Environment gebruikt of als u bereid bent om uw werk belasting naar App Service Environment te migreren, kunt u meer controle krijgen over uw omgeving. Hiervoor moet u TLS 1,0 uitschakelen door contact op te nemen met de ondersteuning van Azure. In de nabije toekomst gaan we deze instellingen voor gebruikers toegankelijk maken.
+PCI DSS versie 3.1-certificering moet Transport Layer Security (TLS) 1.0 worden uitschakelen. Het uitschakelen van TLS 1.0 is momenteel geen optie voor de meeste App Service-abonnementen. Als u echter gebruik App Service Environment of bereid bent om uw workload te migreren naar App Service Environment, krijgt u meer controle over uw omgeving. Dit omvat het uitschakelen van TLS 1.0 door contact op te nemen met Ondersteuning voor Azure. In de nabije toekomst zijn we van plan deze instellingen toegankelijk te maken voor gebruikers.
 
-Zie [Microsoft Azure app service Web-app-compatibiliteit met PCI Standard 3,0 en 3,1](https://support.microsoft.com/help/3124528)voor meer informatie.
+Zie naleving van Microsoft Azure App Service [web-apps met PCI Standard 3.0 en 3.1 voor meer informatie.](https://support.microsoft.com/help/3124528)
 
-## <a name="how-do-i-use-the-staging-environment-and-deployment-slots"></a>Hoe kan ik de faserings omgeving en implementatie sleuven gebruiken?
+## <a name="how-do-i-use-the-staging-environment-and-deployment-slots"></a>Hoe kan ik de faseringsomgeving en implementatiesleuven gebruiken?
 
-Wanneer u uw Web-App Service app implementeert in Standard-en Premium App Service-abonnementen, kunt u deze implementeren op een afzonderlijke implementatie site in plaats van naar de standaard productie sleuf. Implementatie sites zijn live web apps met hun eigen hostnamen. Inhoud van de web-app en configuratie-elementen kunnen worden omgewisseld tussen twee implementatie sleuven, met inbegrip van de productie site.
+Wanneer u in Standard- App Service Premium-abonnementen uw web-app implementeert in App Service, kunt u implementeren naar een afzonderlijke implementatiesleuf in plaats van naar de standaardproductiesleuf. Implementatiesleuven zijn live web-apps met hun eigen hostnamen. Inhoud van web-apps en configuratie-elementen kunnen worden gewisseld tussen twee implementatiesleuven, waaronder de productiesleuf.
 
-Zie [een faserings omgeving instellen in app service](deploy-staging-slots.md)voor meer informatie over het gebruik van implementatie sites.
+Zie Een faseringsomgeving instellen in App Service voor meer informatie over het gebruik [van implementatiesleuven.](deploy-staging-slots.md)
 
-## <a name="how-do-i-access-and-review-webjob-logs"></a>Hoe kan ik toegang en de weer geven webtaaks logboeken?
+## <a name="how-do-i-access-and-review-webjob-logs"></a>Hoe kan ik webjoblogboeken openen en controleren?
 
-Webtaaks logboeken bekijken:
+WebJob-logboeken controleren:
 
-1. Meld u aan bij uw **kudu-website** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
-2. Selecteer de Webtaak.
-3. Selecteer de knop **uitvoer in-/uitschakelen** .
-4. Selecteer de **Download** koppeling om het uitvoer bestand te downloaden.
-5. Selecteer **afzonderlijke aanroepen** voor afzonderlijke uitvoeringen.
-6. Selecteer de knop **uitvoer in-/uitschakelen** .
-7. Selecteer de download koppeling.
+1. Meld u aan bij uw **Kudu-website** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
+2. Selecteer de webjob.
+3. Selecteer de knop Uitvoer in-/uitschakelen. 
+4. Selecteer de koppeling Downloaden om het uitvoerbestand **te** downloaden.
+5. Voor afzonderlijke runs selecteert u **Afzonderlijke aanroepen.**
+6. Selecteer de knop Uitvoer in-/uitschakelen. 
+7. Selecteer de downloadkoppeling.
 
-## <a name="im-trying-to-use-hybrid-connections-with-sql-server-why-do-i-see-the-message-systemoverflowexception-arithmetic-operation-resulted-in-an-overflow"></a>Ik probeer Hybride verbindingen te gebruiken met SQL Server. Waarom wordt het bericht ' System. OverflowException: reken kundige bewerking resulteerde in een overloop '?
+## <a name="im-trying-to-use-hybrid-connections-with-sql-server-why-do-i-see-the-message-systemoverflowexception-arithmetic-operation-resulted-in-an-overflow"></a>Ik probeer hybride verbindingen te gebruiken met SQL Server. Waarom zie ik het bericht System.OverflowException: Arithmetic operation resulted in an overflow? (System.OverflowException: Rekenkundige bewerking heeft geleid tot een overloop)?
 
-Als u Hybride verbindingen gebruikt voor toegang tot SQL Server, kan een Microsoft .NET update op 10 mei 2016 ertoe leiden dat verbindingen mislukken. Dit bericht kan worden weer gegeven:
+Als u hybride verbindingen gebruikt voor toegang tot SQL Server, kan een Microsoft .NET-update op 10 mei 2016 ertoe leiden dat verbindingen mislukken. Mogelijk ziet u dit bericht:
 
 ```
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
@@ -145,124 +146,124 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 ### <a name="resolution"></a>Oplossing
 
-De uitzonde ring is veroorzaakt door een probleem met de Hybrid Connection Manager dat sindsdien is opgelost. Zorg ervoor dat u [uw Hybrid Connection Manager bijwerkt](https://go.microsoft.com/fwlink/?LinkID=841308) om dit probleem op te lossen.
+De uitzondering is veroorzaakt door een probleem met de Hybrid Connection Manager die sindsdien is opgelost. Zorg ervoor dat u [uw Hybrid Connection Manager](https://go.microsoft.com/fwlink/?LinkID=841308) om dit probleem op te lossen.
 
-## <a name="how-do-i-add-a-url-rewrite-rule"></a>Hoe kan ik een regel voor het opnieuw schrijven van een URL toevoegen?
+## <a name="how-do-i-add-a-url-rewrite-rule"></a>Hoe kan ik een regel voor het herschrijven van URL's toevoegen?
 
-Als u een regel voor het herschrijven van een URL wilt toevoegen, maakt u een web.config bestand met de relevante configuratie vermeldingen in de map **wwwroot** . Zie [Azure-app Services: informatie over het herschrijven van url's](/archive/blogs/madhurabharadwaj/azure-app-services-understanding-url-re-write)voor meer informatie.
+Als u een regel voor het herschrijven van een URL wilt toevoegen, maakt u web.config bestand met de relevante configuratie-vermeldingen in de **map wwwroot.** Zie voor meer informatie [Azure-app Services: Understanding URL rewrite ( Url herschrijven).](/archive/blogs/madhurabharadwaj/azure-app-services-understanding-url-re-write)
 
-## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Hoe kan ik inkomend verkeer naar App Service beheren?
+## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Hoe kan ik het inkomende verkeer naar App Service?
 
-Op site niveau hebt u twee opties voor het beheren van inkomend verkeer naar App Service:
+Op siteniveau hebt u twee opties voor het beheren van inkomende verkeer naar App Service:
 
-* Schakel dynamische IP-beperkingen in. Zie [IP-en domein beperkingen voor Azure websites](https://azure.microsoft.com/blog/ip-and-domain-restrictions-for-windows-azure-web-sites/)voor meer informatie over het inschakelen van dynamische IP-beperkingen.
-* Module beveiliging inschakelen. Zie [ModSecurity Web Application firewall op Azure websites](https://azure.microsoft.com/blog/modsecurity-for-azure-websites/)voor meer informatie over het inschakelen van module beveiliging.
+* Schakel dynamische IP-beperkingen in. Zie IP- en domeinbeperkingen voor Azure-websites voor meer informatie over het in-/uitvoeren van [dynamische IP-beperkingen.](https://azure.microsoft.com/blog/ip-and-domain-restrictions-for-windows-azure-web-sites/)
+* Schakel Modulebeveiliging in. Zie ModSecurity web application firewall on [Azure websites (ModSecurity-webtoepassingsfirewall op Azure-websites)](https://azure.microsoft.com/blog/modsecurity-for-azure-websites/)voor meer informatie over het in-/uitvoeren van modulebeveiliging.
 
-Als u App Service Environment gebruikt, kunt u [Barracuda-firewall](https://azure.microsoft.com/blog/configuring-barracuda-web-application-firewall-for-azure-app-service-environment/)gebruiken.
+Als u een App Service Environment, kunt u [barracuda-firewall gebruiken.](https://azure.microsoft.com/blog/configuring-barracuda-web-application-firewall-for-azure-app-service-environment/)
 
-## <a name="how-do-i-block-ports-in-an-app-service-web-app"></a>Poorten in een App Service web-app Hoe kan ik blok keren?
+## <a name="how-do-i-block-ports-in-an-app-service-web-app"></a>Hoe kan ik poorten blokkeren in een App Service-web-app?
 
-In de App Service gedeelde Tenant omgeving is het niet mogelijk specifieke poorten te blok keren vanwege de aard van de infra structuur. De TCP-poorten 4020, 4022 en 4024 kunnen ook zijn geopend voor fout opsporing op afstand van Visual Studio.
+In de App Service gedeelde tenantomgeving is het niet mogelijk om specifieke poorten te blokkeren vanwege de aard van de infrastructuur. TCP-poorten 4020, 4022 en 4024 zijn mogelijk ook geopend voor Visual Studio externe debugging.
 
-In App Service Environment hebt u volledige controle over binnenkomend en uitgaand verkeer. U kunt netwerk beveiligings groepen gebruiken om specifieke poorten te beperken of blok keren. Zie [Inleiding tot app service Environment](https://azure.microsoft.com/blog/introducing-app-service-environment/)voor meer informatie over app service environment.
+In App Service Environment hebt u volledige controle over het inkomende en uitgaande verkeer. U kunt netwerkbeveiligingsgroepen gebruiken om specifieke poorten te beperken of te blokkeren. Zie Inleiding tot App Service Environment voor meer [informatie over App Service Environment.](https://azure.microsoft.com/blog/introducing-app-service-environment/)
 
-## <a name="how-do-i-capture-an-f12-trace"></a>Hoe kan ik een F12-tracering vastleggen?
+## <a name="how-do-i-capture-an-f12-trace"></a>Hoe kan ik een F12-traceer vastleggen?
 
-U hebt twee opties voor het vastleggen van een F12-tracering:
+U hebt twee opties voor het vastleggen van een F12-trace:
 
-* F12 HTTP-tracering
+* F12 HTTP-trace
 * F12-console-uitvoer
 
-### <a name="f12-http-trace"></a>F12 HTTP-tracering
+### <a name="f12-http-trace"></a>F12 HTTP-trace
 
-1. Ga in Internet Explorer naar uw website. Het is belang rijk dat u zich aanmeldt voordat u de volgende stappen uitvoert. Als dat niet het geval is, worden met de F12-tracering gevoelige aanmeldings gegevens vastgelegd.
+1. Ga Internet Explorer naar uw website. Het is belangrijk om u aan te melden voordat u de volgende stappen gaat volgen. Anders legt de F12-traceer gevoelige aanmeldingsgegevens vast.
 2. Druk op F12.
-3. Controleer of het tabblad **netwerk** is geselecteerd en selecteer vervolgens de knop groen **afspelen** .
-4. Voer de stappen uit om het probleem te reproduceren.
-5. Selecteer de knop rood **stoppen** .
-6. Selecteer de knop **Opslaan** (schijf pictogram) en sla het har-bestand op (in Internet Explorer en micro soft Edge) *of* Klik met de rechter muisknop op het har-bestand en selecteer vervolgens **Opslaan als har met inhoud** (Chrome).
+3. Controleer of het **tabblad** Netwerk is geselecteerd en selecteer vervolgens de groene knop **Afspelen.**
+4. De stappen volgen om het probleem te reproduceren.
+5. Selecteer de rode **knop Stoppen.**
+6. Selecteer  de knop Opslaan (schijfpictogram) en sla het HAR-bestand op  (in Internet Explorer en Microsoft Edge) of klik met de rechtermuisknop op het HAR-bestand en selecteer vervolgens Opslaan als **HAR** met inhoud (in Chrome).
 
 ### <a name="f12-console-output"></a>F12-console-uitvoer
 
-1. Selecteer het tabblad **console** .
-2. Voor elk tabblad met meer dan nul items, selecteert u het tabblad (**fout**, **waarschuwing** of **informatie**). Als het tabblad niet is geselecteerd, is het pictogram van het tabblad grijs of zwart wanneer u de cursor uit het verplaatst.
-3. Klik met de rechter muisknop in het bericht gebied van het deel venster en selecteer vervolgens **Alles kopiëren**.
+1. Selecteer het **tabblad** Console.
+2. Selecteer voor elk tabblad met meer dan nul items het tabblad (**Fout,** **Waarschuwing** of **Informatie).** Als het tabblad niet is geselecteerd, is het tabbladpictogram grijs of zwart wanneer u de cursor weg verplaatst.
+3. Klik met de rechtermuisknop in het berichtgebied van het deelvenster en selecteer **alles kopiëren.**
 4. Plak de gekopieerde tekst in een bestand en sla het bestand op.
 
-U kunt de [har-Viewer](http://www.softwareishard.com/har/viewer/)gebruiken om een har-bestand weer te geven.
+Als u een HAR-bestand wilt weergeven, kunt u de [HAR-viewer gebruiken.](http://www.softwareishard.com/har/viewer/)
 
-## <a name="why-do-i-get-an-error-when-i-try-to-connect-an-app-service-web-app-to-a-virtual-network-that-is-connected-to-expressroute"></a>Waarom krijg ik een fout melding wanneer ik een App Service web-app probeer te verbinden met een virtueel netwerk dat is verbonden met ExpressRoute?
+## <a name="why-do-i-get-an-error-when-i-try-to-connect-an-app-service-web-app-to-a-virtual-network-that-is-connected-to-expressroute"></a>Waarom krijg ik een foutmelding wanneer ik probeer een App Service web-app te verbinden met een virtueel netwerk dat is verbonden met ExpressRoute?
 
-Als u probeert een Azure-web-app te verbinden met een virtueel netwerk dat is verbonden met Azure ExpressRoute, mislukt dit. Het volgende bericht wordt weer gegeven: gateway is geen VPN-gateway.
+Als u probeert een Azure-web-app te verbinden met een virtueel netwerk dat is verbonden met Azure ExpressRoute, mislukt dit. Het volgende bericht wordt weergegeven: Gateway is geen VPN-gateway.
 
-Op dit moment kunt u geen punt-naar-site-VPN-verbindingen hebben met een virtueel netwerk dat is verbonden met ExpressRoute. Een punt-naar-site-VPN en ExpressRoute kunnen niet worden gecombineerd voor hetzelfde virtuele netwerk. Zie [limieten en beperkingen voor ExpressRoute-en site-naar-site-VPN-verbindingen](../expressroute/expressroute-howto-coexist-classic.md#limits-and-limitations)voor meer informatie.
+Op dit moment kunt u geen punt-naar-site-VPN-verbindingen hebben met een virtueel netwerk dat is verbonden met ExpressRoute. Een punt-naar-site-VPN en ExpressRoute kunnen niet naast elkaar bestaan voor hetzelfde virtuele netwerk. Zie Limieten en beperkingen [voor ExpressRoute- en site-naar-site-VPN-verbindingen voor meer informatie.](../expressroute/expressroute-howto-coexist-classic.md#limits-and-limitations)
 
-## <a name="how-do-i-connect-an-app-service-web-app-to-a-virtual-network-that-has-a-static-routing-policy-based-gateway"></a>Hoe kan ik een App Service web-app verbinden met een virtueel netwerk dat een statische routerings gateway (op basis van beleid) heeft?
+## <a name="how-do-i-connect-an-app-service-web-app-to-a-virtual-network-that-has-a-static-routing-policy-based-gateway"></a>Hoe kan ik een App Service-web-app verbinden met een virtueel netwerk met een gateway voor statische routering (op basis van beleid) ?
 
-Op dit moment wordt het verbinden van een App Service web-app met een virtueel netwerk met een statische routerings gateway (op beleid gebaseerd) niet ondersteund. Als het virtuele netwerk van het doel al bestaat, moet er een punt-naar-site-VPN zijn ingeschakeld, met een dynamische routerings gateway voordat het kan worden verbonden met een app. Als uw gateway is ingesteld op statische route ring, kunt u geen punt-naar-site-VPN inschakelen. 
+Momenteel wordt het verbinden van App Service web-app met een virtueel netwerk met een gateway voor statische routering (op beleid gebaseerd) niet ondersteund. Als uw virtuele doelnetwerk al bestaat, moet punt-naar-site-VPN met een gateway voor dynamische routering zijn ingeschakeld voordat het kan worden verbonden met een app. Als uw gateway is ingesteld op statische routering, kunt u geen punt-naar-site-VPN inschakelen. 
 
-Zie [een app integreren met een virtueel Azure-netwerk](web-sites-integrate-with-vnet.md)voor meer informatie.
+Zie Een app integreren met een virtueel [Azure-netwerk voor meer informatie.](web-sites-integrate-with-vnet.md)
 
-## <a name="in-my-app-service-environment-why-can-i-create-only-one-app-service-plan-even-though-i-have-two-workers-available"></a>Waarom kan ik in mijn App Service Environment slechts één App Service plan maken, zelfs als ik twee werk rollen heb?
+## <a name="in-my-app-service-environment-why-can-i-create-only-one-app-service-plan-even-though-i-have-two-workers-available"></a>Waarom kan App Service Environment in mijn App Service slechts één abonnement maken, ook al heb ik twee werknemers beschikbaar?
 
-Om fout tolerantie te bieden, vereist App Service Environment dat elke werk groep ten minste één extra reken resource nodig heeft. Er kan geen werk belasting worden toegewezen aan de extra Compute-resource.
+Om fouttolerantie te kunnen bieden, App Service Environment elke werkgroep ten minste één extra rekenresource nodig. Aan de extra rekenresource kan geen workload worden toegewezen.
 
-Zie [How to Create a app service Environment](environment/app-service-web-how-to-create-an-app-service-environment.md)voor meer informatie.
+Zie How [to create an App Service Environment (Een App Service Environment) voor meer informatie.](environment/app-service-web-how-to-create-an-app-service-environment.md)
 
-## <a name="why-do-i-see-timeouts-when-i-try-to-create-an-app-service-environment"></a>Waarom zie ik time-outs wanneer ik een App Service Environment probeer te maken?
+## <a name="why-do-i-see-timeouts-when-i-try-to-create-an-app-service-environment"></a>Waarom zie ik time-outs wanneer ik een nieuwe App Service Environment?
 
-Soms mislukt het maken van een App Service Environment. In dat geval ziet u de volgende fout in de activiteiten logboeken:
+Soms kan het maken van App Service Environment mislukt. In dat geval ziet u de volgende fout in de activiteitenlogboeken:
 ```
 ResourceID: /subscriptions/{SubscriptionID}/resourceGroups/Default-Networking/providers/Microsoft.Web/hostingEnvironments/{ASEname}
 Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provision operation did not complete within the allowed timeout period."}}
 ```
 
-U kunt dit oplossen door ervoor te zorgen dat geen van de volgende voor waarden waar is:
+U kunt dit oplossen door ervoor te zorgen dat aan geen van de volgende voorwaarden wordt voldaan:
 * Het subnet is te klein.
 * Het subnet is niet leeg.
-* ExpressRoute voor komt dat de netwerk connectiviteits vereisten van een App Service Environment.
-* Een slechte netwerk beveiligings groep voor komt de netwerk verbindings vereisten van een App Service Environment.
-* Geforceerde tunneling is ingeschakeld.
+* ExpressRoute voorkomt de netwerkverbindingsvereisten van een App Service Environment.
+* Een slechte netwerkbeveiligingsgroep voorkomt de netwerkverbindingsvereisten van een App Service Environment.
+* Geforceerd tunnelen is ingeschakeld.
 
-Zie [frequente problemen bij het implementeren (maken) van een nieuwe Azure app service Environment](/archive/blogs/waws/most-frequent-issues-when-deploying-creating-a-new-azure-app-service-environment-ase)voor meer informatie.
+Zie Frequent [issues when deploying (creating) a new Azure App Service Environment (Veelgestelde](/archive/blogs/waws/most-frequent-issues-when-deploying-creating-a-new-azure-app-service-environment-ase)problemen bij het implementeren (maken) van een Azure App Service Environment.
 
-## <a name="why-cant-i-delete-my-app-service-plan"></a>Waarom kan ik mijn App Service-abonnement niet verwijderen?
+## <a name="why-cant-i-delete-my-app-service-plan"></a>Waarom kan ik mijn abonnement App Service verwijderen?
 
-U kunt een App Service plan niet verwijderen als er App Service apps zijn gekoppeld aan het App Service plan. Voordat u een App Service-abonnement verwijdert, verwijdert u alle gekoppelde App Service apps uit het App Service plan.
+U kunt een abonnement App Service verwijderen als er App Service zijn gekoppeld aan het App Service abonnement. Voordat u een App Service verwijdert, verwijdert u alle gekoppelde App Service-apps uit het App Service abonnement.
 
-## <a name="how-do-i-schedule-a-webjob"></a>Hoe kan ik een Webtaak plannen?
+## <a name="how-do-i-schedule-a-webjob"></a>Hoe kan ik webjob plannen?
 
-U kunt een geplande Webtaak maken met behulp van cron-expressies:
+U kunt een geplande webjob maken met behulp van Cron-expressies:
 
-1. Maak een bestand met de instellingen. job.
-2. Neem in dit JSON-bestand een eigenschap schema op met behulp van een cron-expressie: 
+1. Maak een settings.job-bestand.
+2. Neem in dit JSON-bestand een schema-eigenschap op met behulp van een Cron-expressie: 
     ```json
     { "schedule": "{second}
     {minute} {hour} {day}
     {month} {day of the week}" }
     ```
 
-Zie [een geplande Webtaak maken met behulp van een cron-expressie](webjobs-create.md#CreateScheduledCRON)voor meer informatie over geplande webjobs.
+Zie Een geplande webjob maken met behulp van een Cron-expressie voor meer informatie over [geplande webjobs.](webjobs-create.md#CreateScheduledCRON)
 
-## <a name="how-do-i-perform-penetration-testing-for-my-app-service-app"></a>Hoe kan ik indringings tests uitvoeren voor mijn App Service-app?
+## <a name="how-do-i-perform-penetration-testing-for-my-app-service-app"></a>Hoe kan ik penetratietests uitvoeren voor mijn App Service app?
 
-[Dien een aanvraag](https://portal.msrc.microsoft.com/engage/pentest)in om indringings tests uit te voeren.
+Als u penetratietests wilt uitvoeren, [dient u een aanvraag in.](https://portal.msrc.microsoft.com/engage/pentest)
 
-## <a name="how-do-i-configure-a-custom-domain-name-for-an-app-service-web-app-that-uses-traffic-manager"></a>Hoe kan ik een aangepaste domein naam configureren voor een App Service web-app die gebruikmaakt van Traffic Manager?
+## <a name="how-do-i-configure-a-custom-domain-name-for-an-app-service-web-app-that-uses-traffic-manager"></a>Hoe kan ik een aangepaste domeinnaam configureren voor een App Service web-app die gebruikmaakt van Traffic Manager?
 
-Zie [een aangepaste domein naam configureren voor een Azure-web-app met Traffic Manager](configure-domain-traffic-manager.md)voor meer informatie over het gebruik van een aangepaste domein naam met een app service-app die gebruikmaakt van Azure Traffic Manager voor taak verdeling.
+Zie Een aangepaste domeinnaam configureren voor een [Azure-web-app](configure-domain-traffic-manager.md)met Traffic Manager voor meer informatie over het gebruik van een aangepaste domeinnaam met een App Service-app die gebruikmaakt van Azure Traffic Manager voor taakverdeling.
 
 ## <a name="my-app-service-certificate-is-flagged-for-fraud-how-do-i-resolve-this"></a>Mijn App Service-certificaat is gemarkeerd voor fraude. Hoe los ik dit op?
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Tijdens de domein verificatie van een App Service certificaat kan het volgende bericht worden weer gegeven:
+Tijdens de domeinverificatie van een App Service certificaataankoop ziet u mogelijk het volgende bericht:
 
-"Uw certificaat is gemarkeerd voor mogelijke fraude. De aanvraag wordt momenteel gecontroleerd. Als het certificaat binnen 24 uur niet kan worden gebruikt, neemt u contact op met de ondersteuning van Azure. "
+'Uw certificaat is gemarkeerd voor mogelijke fraude. De aanvraag wordt momenteel beoordeeld. Als het certificaat niet binnen 24 uur kan worden bruikbaar, neemt u contact op met Ondersteuning voor Azure.
 
-Wanneer het bericht aangeeft, kan het tot 24 uur duren voordat het proces voor fraude verificatie is voltooid. Gedurende deze periode wordt het bericht nog steeds weer gegeven.
+Zoals in het bericht wordt aangegeven, kan het tot 24 uur duren voordat dit fraudecontroleproces is voltooid. Gedurende deze tijd blijft u het bericht zien.
 
-Als uw App Service-certificaat dit bericht na 24 uur blijft weer geven, voert u het volgende Power shell-script uit. Het script neemt rechtstreeks contact op met de [certificaat provider](https://www.godaddy.com/) om het probleem op te lossen.
+Als uw App Service dit bericht na 24 uur nog steeds wordt weergegeven, moet u het volgende PowerShell-script uitvoeren. Het script neemt rechtstreeks contact op [met de certificaatprovider](https://www.godaddy.com/) om het probleem op te lossen.
 
 ```powershell
 Connect-AzAccount
@@ -275,36 +276,36 @@ Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Gr
 
 ## <a name="how-do-authentication-and-authorization-work-in-app-service"></a>Hoe werken verificatie en autorisatie in App Service?
 
-Zie voor gedetailleerde documentatie voor verificatie en autorisatie in App Service documenten voor verschillende aanmeldingen voor identiteits providers:
+Voor gedetailleerde documentatie over verificatie en autorisatie in App Service, zie docs for various identify provider sign-ins:
 * [Azure Active Directory](configure-authentication-provider-aad.md)
 * [Facebook](configure-authentication-provider-facebook.md)
 * [Google](configure-authentication-provider-google.md)
 * [Microsoft-account](configure-authentication-provider-microsoft.md)
 * [Twitter](configure-authentication-provider-twitter.md)
 
-## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Hoe kan ik het standaard domein *. azurewebsites.net omleiden naar het aangepaste domein van mijn Azure-web-app?
+## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Hoe kan ik standaarddomein *.azurewebsites.net omleiden naar het aangepaste domein van mijn Azure-web-app?
 
-Wanneer u een nieuwe website maakt met behulp van Web Apps in azure, wordt een standaard *site naam*. azurewebsites.net domein aan uw site toegewezen. Als u een aangepaste hostnaam aan uw site toevoegt en niet wilt dat gebruikers toegang hebben tot uw standaard-azurewebsites.net-domein, kunt u de standaard-URL omleiden. Zie [het standaard domein omleiden naar uw aangepaste domein in azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/)voor meer informatie over het omleiden van alle verkeer van het standaard domein van uw website naar uw aangepaste domein.
+Wanneer u een nieuwe website maakt met behulp van Web Apps in Azure, wordt een *standaardsitenaam*.azurewebsites.net-domein toegewezen aan uw site. Als u een aangepaste hostnaam aan uw site toevoegt en niet wilt dat gebruikers toegang hebben tot uw standaarddomein *.azurewebsites.net, kunt u de standaard-URL omleiden. Zie Het standaarddomein omleiden naar uw aangepaste domein in [Azure-web-apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/)voor meer informatie over het omleiden van al het verkeer van het standaarddomein van uw website naar uw aangepaste domein.
 
-## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Hoe kan ik bepalen welke versie van .NET version in App Service is geïnstalleerd?
+## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Hoe kan ik bepalen welke versie van .NET is geïnstalleerd in App Service?
 
-De snelste manier om te zoeken naar de versie van Microsoft .NET die in App Service is geïnstalleerd, is met behulp van de kudu-console. U kunt de kudu-console openen vanuit de portal of met behulp van de URL van uw App Service-app. Zie voor gedetailleerde instructies [de geïnstalleerde .net-versie bepalen in app service](/archive/blogs/waws/how-to-determine-the-installed-net-version-in-azure-app-services).
+De snelste manier om de versie te vinden van Microsoft .NET die is geïnstalleerd in App Service is met behulp van de Kudu-console. U hebt toegang tot de Kudu-console vanuit de portal of via de URL van uw App Service app. Zie De geïnstalleerde [.NET-versie](/archive/blogs/waws/how-to-determine-the-installed-net-version-in-azure-app-services)bepalen in App Service voor gedetailleerde instructies.
 
-## <a name="why-isnt-autoscale-working-as-expected"></a>Waarom werkt de functie voor automatisch schalen niet zoals verwacht?
+## <a name="why-isnt-autoscale-working-as-expected"></a>Waarom werkt automatisch schalen niet zoals verwacht?
 
-Als Azure automatisch schalen niet is geschaald in of geschaald naar verwachting van het web-app-exemplaar, is het mogelijk dat er een scenario wordt gebruikt waarin wordt beoogd niet te schalen om een oneindige lus te voor komen vanwege ' gaat en neer '. Dit gebeurt meestal wanneer er geen geschikte marge is tussen de drempel waarden voor uitschalen en schalen. Zie [Aanbevolen procedures voor automatisch schalen](../azure-monitor/autoscale/autoscale-best-practices.md#autoscale-best-practices)voor meer informatie over het voor komen van ' gaat en neer ' en het lezen van de best practices voor automatisch schalen.
+Als automatisch schalen van Azure niet is in- of uitschalen van het web-app-exemplaar zoals verwacht, komt u mogelijk tegen een scenario aan waarin we er opzettelijk voor kiezen om niet te schalen om een oneindige lus te voorkomen vanwege 'flapping'. Dit gebeurt meestal wanneer er geen voldoende marge is tussen de drempelwaarden voor uitschalen en inschalen. Zie Best practices voor automatisch schalen voor meer informatie over het voorkomen van 'flapping' en voor meer informatie over andere best practices voor automatisch [schalen.](../azure-monitor/autoscale/autoscale-best-practices.md#autoscale-best-practices)
 
-## <a name="why-does-autoscale-sometimes-scale-only-partially"></a>Waarom wordt de functie voor automatisch schalen soms slechts gedeeltelijk geschaald?
+## <a name="why-does-autoscale-sometimes-scale-only-partially"></a>Waarom wordt automatisch schalen soms slechts gedeeltelijk geschaald?
 
-Automatisch schalen wordt geactiveerd wanneer metrische gegevens de vooraf geconfigureerde grenzen overschrijden. Soms zult u merken dat de capaciteit slechts gedeeltelijk is gevuld vergeleken met wat u verwacht. Dit kan gebeuren wanneer het aantal exemplaren dat u wilt, niet beschikbaar is. In dat scenario wordt automatisch schalen gedeeltelijk gevuld met het beschik bare aantal exemplaren. Automatisch schalen voert vervolgens de herverdelings logica uit om meer capaciteit te krijgen. De overige instanties worden toegewezen. Houd er rekening mee dat dit enkele minuten kan duren.
+Automatisch schalen wordt geactiveerd wanneer metrische gegevens de vooraf geconfigureerde grenzen overschrijden. Soms merkt u misschien dat de capaciteit slechts gedeeltelijk is gevuld in vergelijking met wat u verwacht. Dit kan gebeuren wanneer het aantal instanties dat u wilt niet beschikbaar zijn. In dat scenario wordt Automatisch schalen gedeeltelijk gevuld met het beschikbare aantal exemplaren. Automatisch schalen voert vervolgens de logica voor opnieuw in balans brengen uit om meer capaciteit te krijgen. De resterende exemplaren worden toegewezen. Houd er rekening mee dat dit enkele minuten kan duren.
 
-Als u het verwachte aantal exemplaren na een paar minuten niet ziet, kan het zijn dat de gedeeltelijke aanvulling genoeg is om de metrische gegevens binnen de grenzen te brengen. Het kan ook zijn dat de functie voor automatisch schalen omlaag is geschaald omdat de grens van de lagere metrieken is bereikt.
+Als u na een paar minuten niet het verwachte aantal exemplaren ziet, kan dit zijn omdat de gedeeltelijke metrische gegevens voldoende waren om de metrische gegevens binnen de grenzen te brengen. Het is ook mogelijk dat automatisch schalen omlaag is geschaald omdat de ondergrens voor metrische gegevens is bereikt.
 
-Als geen van deze voor waarden van toepassing is en het probleem zich blijft voordoen, dient u een ondersteunings aanvraag in.
+Als geen van deze voorwaarden van toepassing is en het probleem zich blijft voordoen, dient u een ondersteuningsaanvraag in.
 
-## <a name="how-do-i-turn-on-http-compression-for-my-content"></a>Hoe kan ik HTTP-compressie voor mijn inhoud inschakelen?
+## <a name="how-do-i-turn-on-http-compression-for-my-content"></a>Hoe kan ik HTTP-compressie voor mijn inhoud in?
 
-Als u compressie wilt inschakelen voor statische en dynamische inhouds typen, voegt u de volgende code toe aan het web.config-bestand op toepassings niveau:
+Als u compressie zowel voor statische als dynamische inhoudstypen wilt in- of in- of uitdrukken, voegt u de volgende code toe aan het web.config toepassingsniveau:
 
 ```xml
 <system.webServer>
@@ -312,11 +313,11 @@ Als u compressie wilt inschakelen voor statische en dynamische inhouds typen, vo
 </system.webServer>
 ```
 
-U kunt ook de specifieke dynamische en statische MIME-typen opgeven die u wilt comprimeren. Zie voor meer informatie onze reactie op een forum vraag in [httpCompression-instellingen op een eenvoudige Azure-website](https://social.msdn.microsoft.com/Forums/azure/890b6d25-f7dd-4272-8970-da7798bcf25d/httpcompression-settings-on-a-simple-azure-website?forum=windowsazurewebsitespreview).
+U kunt ook de specifieke dynamische en statische MIME-typen opgeven die u wilt comprimeren. Zie onze reactie op een forumvraag in [httpCompression-instellingen op een eenvoudige Azure-website](https://social.msdn.microsoft.com/Forums/azure/890b6d25-f7dd-4272-8970-da7798bcf25d/httpcompression-settings-on-a-simple-azure-website?forum=windowsazurewebsitespreview)voor meer informatie.
 
 ## <a name="how-do-i-migrate-from-an-on-premises-environment-to-app-service"></a>Hoe kan ik migreren van een on-premises omgeving naar App Service?
 
-Als u sites van Windows-en Linux-webservers wilt migreren naar App Service, kunt u Azure App Service Migration Assistant gebruiken. Het hulp programma voor migratie maakt indien nodig web-apps en data bases en publiceert vervolgens de inhoud. Zie [Azure App Service Migration Assistant](https://appmigration.microsoft.com/)voor meer informatie.
+Als u sites wilt migreren van Windows- en Linux-webservers naar App Service, kunt u Azure App Service Migration Assistant. Het hulpprogramma voor migratie maakt zo nodig web-apps en databases in Azure en publiceert vervolgens de inhoud. Zie voor meer informatie [Azure App Service Migration Assistant](https://appmigration.microsoft.com/).
 
 ## <a name="why-is-my-certificate-issued-for-11-months-and-not-for-a-full-year"></a>Waarom is mijn certificaat uitgegeven voor 11 maanden en niet voor een volledig jaar?
 

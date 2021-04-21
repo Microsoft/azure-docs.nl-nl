@@ -10,13 +10,13 @@ ms.workload: identity
 ms.date: 01/28/2021
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.custom: azureday1
-ms.openlocfilehash: 06837ab0f4685787f8d2615e81d0405fdb8ec711
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: azureday1, devx-track-azurepowershell
+ms.openlocfilehash: 5bb52799836b1975de9d936e04fb53987effb300
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99062557"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832622"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Zelfstudie: Toegang tot Microsoft Graph krijgen vanuit een beveiligde app als de app
 
@@ -125,9 +125,9 @@ De klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecreden
 
 Zie het [voorbeeld op GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-dotnet-storage-graphapi/tree/main/3-WebApp-graphapi-managed-identity) als u deze code wilt bekijken als onderdeel van een voorbeeldtoepassing.
 
-### <a name="install-the-microsoftidentitywebmicrosoftgraph-client-library-package"></a>Het client bibliotheek pakket micro soft. Identity. Web. MicrosoftGraph installeren
+### <a name="install-the-microsoftidentitywebmicrosoftgraph-client-library-package"></a>Installeer het clientbibliotheekpakket Microsoft.Identity.Web.MicrosoftGraph
 
-Installeer het [micro soft. Identity. Web. MicrosoftGraph NuGet-pakket](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) in uw project met behulp van de opdracht regel interface van .net core of de Package Manager-console in Visual Studio.
+Installeer het [Microsoft.Identity.Web.MicrosoftGraph NuGet-pakket](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) in uw project met behulp van de .NET Core-opdrachtregelinterface of de Pakketbeheer-console in Visual Studio.
 
 # <a name="command-line"></a>[Opdrachtregel](#tab/command-line)
 

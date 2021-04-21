@@ -10,21 +10,21 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: 6859a2f8571c11e6ef93a5e5b1635cdbe39ad001
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: c28bc47945882e6b7bbd39d1ba8524a1f7491ceb
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107737658"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835200"
 ---
-# <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Notebooks in Synapse Studio maken, ontwikkelen en Azure Synapse Analytics
+# <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Notebooks maken, ontwikkelen en Synapse Studio in Azure Synapse Analytics
 
 Een Synapse Studio notebook is een webinterface voor het maken van bestanden die livecode, visualisaties en verhalende tekst bevatten. Notebooks zijn een goede plaats om ideeën te valideren en snelle experimenten te gebruiken om inzichten uit uw gegevens te verkrijgen. Notebooks worden ook veel gebruikt voor gegevensvoorbereiding, gegevensvisualisatie, machine learning en andere big data-scenario's.
 
 Met een Azure Synapse Studio-notebook kunt u het volgende doen:
 
 * Aan de slag met nul installatie-inspanningen.
-* Gegevens beveiligen met ingebouwde beveiligingsfuncties voor ondernemingen.
+* Gegevens beveiligen met ingebouwde beveiligingsfuncties voor bedrijven.
 * Analyseer gegevens in onbewerkte indelingen (CSV, txt, JSON, enzovoort), verwerkte bestandsindelingen (parquet, Delta Lake, ORC, enzovoort) en sql-gegevensbestanden in tabelvorm voor Spark en SQL.
 * Wees productief met verbeterde ontwerpmogelijkheden en ingebouwde gegevensvisualisatie.
 
@@ -46,7 +46,7 @@ Het Synapse-team heeft het nieuwe notebookonderdeel in Synapse Studio om consist
 
 ## <a name="create-a-notebook"></a>Een notebook maken
 
-Er zijn twee manieren om een notebook te maken. U kunt een nieuw notebook maken of een bestaand notebook importeren in een Azure Synapse werkruimte vanuit **Objectverkenner**. Azure Synapse Studio-notebooks kunnen standaard IPYNB Jupyter Notebook bestanden herkennen.
+Er zijn twee manieren om een notebook te maken. U kunt een nieuw notebook maken of een bestaand notebook importeren in Azure Synapse werkruimte van **de Objectverkenner.** Azure Synapse Studio-notebooks kunnen standaard IPYNB Jupyter Notebook bestanden herkennen.
 
 ![importnotenote maken](./media/apache-spark-development-using-notebooks/synapse-create-import-notebook-2.png)
 
@@ -79,7 +79,7 @@ Er zijn meerdere manieren om een nieuwe cel aan uw notebook toe te voegen.
 
     ![add-azure-notebook-cell-between-space](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-add-cell-2.png)
 
-3. Gebruik [aznb Shortcut keys onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op A** om een cel boven de huidige cel in te voegen. Druk **op B** om een cel onder de huidige cel in te voegen.
+3. Gebruik [aznb-sneltoetsen onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op A** om een cel boven de huidige cel in te voegen. Druk **op B** om een cel onder de huidige cel in te voegen.
 
 ---
 
@@ -156,7 +156,7 @@ De IntelliSense-functies hebben verschillende volwassenheidsniveaus voor verschi
 
 Azure Synapse Studio-notebooks bieden codefragmenten waarmee u eenvoudiger veelgebruikte codepatronen kunt invoeren, zoals het configureren van uw Spark-sessie, het lezen van gegevens als een Spark DataFrame of het tekenen van grafieken met matplotlib, enzovoort.
 
-Fragmenten worden weergegeven in [IntelliSense, gecombineerd](#ide-style-intellisense) met andere suggesties. De inhoud van de codefragmenten wordt uitgelijnd met de taal van de codecel. U kunt beschikbare codefragmenten bekijken door **Fragment** te typen, anders worden trefwoorden weergegeven in de titel van het fragment in de codeceleditor. Als u bijvoorbeeld Lezen **typt,** ziet u de lijst met fragmenten voor het lezen van gegevens uit verschillende gegevensbronnen.
+Fragmenten worden weergegeven in [IntelliSense, gecombineerd](#ide-style-intellisense) met andere suggesties. De inhoud van de codefragmenten wordt uitgelijnd met de taal van de codecel. U kunt beschikbare codefragmenten bekijken door **Fragment** te typen, anders worden er trefwoorden weergegeven in de titel van het fragment in de codeceleditor. Als u bijvoorbeeld Lezen **typt,** ziet u de lijst met fragmenten voor het lezen van gegevens uit verschillende gegevensbronnen.
 
 ![Synapse-codefragmenten](./media/apache-spark-development-using-notebooks/synapse-code-snippets.gif#lightbox)
 
@@ -166,7 +166,7 @@ Fragmenten worden weergegeven in [IntelliSense, gecombineerd](#ide-style-intelli
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-U kunt de opmaakknoppen op de werkbalk van tekstcellen gebruiken om algemene Markdown-acties uit te voeren. Het omvat vetgedrukte tekst, het italiseren van tekst, het invoegen van codefragmenten, het invoegen van een niet-geordende lijst, het invoegen van een geordende lijst en het invoegen van een afbeelding vanuit een URL.
+U kunt de opmaakknoppen op de werkbalk van tekstcellen gebruiken om algemene Markdown-acties uit te voeren. Het omvat vetgedrukte tekst, het italiseren van tekst, het invoegen van codefragmenten, het invoegen van niet-geordende lijst, het invoegen van een geordende lijst en het invoegen van een afbeelding vanuit een URL.
 
   ![Werkbalk van Synapse-tekstcel](./media/apache-spark-development-using-notebooks/synapse-text-cell-toolbar.png)
 
@@ -193,7 +193,7 @@ De bewerking Cel ongedaan maken is nog niet beschikbaar voor de preview-notebook
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Selecteer het beletselmenu (...) voor toegang tot het menu andere celacties aan de rechterkant. Selecteer vervolgens **Cel omhoog verplaatsen of** Cel omlaag verplaatsen **om** de huidige cel te verplaatsen. 
+Selecteer het beletselmenu (...) voor toegang tot het menu andere celacties helemaal rechts. Selecteer vervolgens **Cel omhoog verplaatsen of** Cel omlaag verplaatsen **om** de huidige cel te verplaatsen. 
 
 U kunt ook [sneltoetsen gebruiken onder de opdrachtmodus](#shortcut-keys-under-command-mode). Druk **op Ctrl + Alt + om** de huidige cel omhoog te gaan. Druk **op Ctrl+Alt+↓** om de huidige cel omlaag te verplaatsen.
 
@@ -246,7 +246,7 @@ Selecteer het **beletselletsel (...)** meer opdrachten op de celwerkbalk en de *
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Selecteer de **samengevouwen uitvoerknop** linksboven in de uitvoer van de huidige cel om deze samen te klappen. Selecteer celuitvoer **tonen** terwijl de celuitvoer is samengevouwen om de uitvoer uit te vouwen.
+Selecteer **linksboven in** de uitvoer van de huidige cel de knop voor samenvgevouwen uitvoer om deze samen te klappen. Selecteer celuitvoer **tonen** terwijl de celuitvoer is samengevouwen om de uitvoer uit te vouwen.
 
    ![collapse-cell-output](./media/apache-spark-development-using-notebooks/synapse-collapse-cell-output.gif)
 
@@ -291,7 +291,7 @@ Als u helemaal rechts toegang wilt krijgen tot het menu andere celacties, select
 
 # <a name="preview-notebook"></a>[Preview-notebook](#tab/preview)
 
-Vouw de vervolgkeuzelijst uit met **de** knop Alles uitvoeren en selecteer vervolgens Cellen **uitvoeren hierboven** om alle cellen boven de huidige opeenvolgend uit te voeren. Selecteer **Cellen uitvoeren hieronder om** alle cellen onder de huidige opeenvolgend uit te voeren.
+Vouw de vervolgkeuzelijst uit via **de** knop Alles uitvoeren en selecteer vervolgens Cellen **uitvoeren hierboven** om alle cellen boven de huidige opeenvolgend uit te voeren. Selecteer **Cellen uitvoeren hieronder om** alle cellen onder de huidige opeenvolgend uit te voeren.
 
    ![azure-notebook-run-cells-above-or-below](./media/apache-spark-development-using-notebooks/synapse-aznb-run-cells-above-or-below.png)
 
@@ -331,16 +331,32 @@ Bijvoorbeeld: ``` %run /path/notebookA ```.
 
 ---
 
+### <a name="variable-explorer"></a>Variabeleverkenner
+
+# <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
+
+Wordt niet ondersteund.
+
+# <a name="preview-notebook"></a>[Preview-notebook](#tab/preview)
+
+Synapse Notebook biedt een ingebouwde verkenner voor variabelen om de lijst met de naam, het type, de lengte en de waarde van de variabelen te bekijken in de huidige Spark-sessie voor PySpark-cellen (Python). Meer variabelen worden automatisch weer geven wanneer ze worden gedefinieerd in de codecellen. Als u op elke kolomkop klikt, worden de variabelen in de tabel gesorteerd.
+
+U kunt de knop **Variabelen op de notebook-opdrachtbalk** selecteren om de variabeleverkenner te openen of te verbergen.
+
+![azure-notebook-variable-explorer](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-variable-explorer.png)
+
+
+---
 
 ### <a name="cell-status-indicator"></a>Celstatusindicator
 
-De uitvoeringsstatus van een cel wordt stap voor stap weergegeven onder de cel om u te helpen de huidige voortgang te bekijken. Zodra de uitvoering van de cel is voltooid, wordt er een uitvoeringssamenvatting met de totale duur en eindtijd weergegeven en bewaard voor toekomstig gebruik.
+De uitvoeringsstatus van een cel wordt stapsgewijs weergegeven onder de cel om u te helpen de huidige voortgang te bekijken. Zodra de uitvoering van de cel is voltooid, wordt er een uitvoeringssamenvatting met de totale duur en eindtijd weergegeven en bewaard voor toekomstig gebruik.
 
 ![celstatus](./media/apache-spark-development-using-notebooks/synapse-cell-status.png)
 
 ### <a name="spark-progress-indicator"></a>Voortgangsindicator van Spark
 
-Azure Synapse Studio-notebook is uitsluitend gebaseerd op Spark. Codecellen worden uitgevoerd op de serverloze Apache Spark groep op afstand. Er wordt een voortgangsindicator van een Spark-taak weergegeven met een realtime voortgangsbalk die u inzicht geeft in de uitvoeringsstatus van de taak.
+Azure Synapse Studio-notebook is uitsluitend gebaseerd op Spark. Codecellen worden uitgevoerd op de serverloze Apache Spark groep op afstand. Er wordt een voortgangsindicator van een Spark-taak weergegeven met een realtime voortgangsbalk om u inzicht te geven in de uitvoeringsstatus van de taak.
 Het aantal taken per job of fase helpt u bij het identificeren van het parallelle niveau van uw Spark-job. U kunt ook dieper inzoomen op de Spark-gebruikersinterface van een specifieke taak (of fase) door de koppeling in de taaknaam (of fasenaam) te selecteren.
 
 
@@ -348,12 +364,12 @@ Het aantal taken per job of fase helpt u bij het identificeren van het parallell
 
 ### <a name="spark-session-config"></a>Configuratie van Spark-sessie
 
-U kunt de time-outduur, het aantal en de grootte van uitvoerders opgeven die aan de huidige Spark-sessie moeten worden opgegeven in **Sessie configureren.** Start de Spark-sessie opnieuw op om de configuratiewijzigingen door te voeren. Alle notebookvariabelen in de cache worden gew cleared.
+U kunt de time-outduur, het aantal en de grootte van uitvoerders opgeven die aan de huidige Spark-sessie moeten worden opgegeven in **Sessie configureren.** Start de Spark-sessie opnieuw op om configuratiewijzigingen door te voeren. Alle notebookvariabelen in de cache worden geweerd.
 
 [![sessiebeheer](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-spark-session-management.png)](./media/apache-spark-development-using-notebooks/synapse-azure-notebook-spark-session-management.png#lightbox)
 
 #### <a name="spark-session-config-magic-command"></a>Magic-opdracht voor Spark-sessie config
-U kunt ook spark-sessie-instellingen opgeven via een magic-opdracht **%%configureer**. De Spark-sessie moet opnieuw worden gestart om het instellingeneffect te bereiken. U wordt aangeraden de **%%configure aan het** begin van uw notebook uit te voeren. Hier is een voorbeeld, raadpleeg voor https://github.com/cloudera/livy#request-body een volledige lijst met geldige parameters 
+U kunt ook spark-sessie-instellingen opgeven via een magic-opdracht **%%configureer**. De Spark-sessie moet opnieuw worden gestart om de instellingen van kracht te laten worden. U wordt aangeraden de **opdracht %%configure aan** het begin van uw notebook uit te voeren. Hier is een voorbeeld, raadpleeg voor https://github.com/cloudera/livy#request-body een volledige lijst met geldige parameters 
 
 ```
 %%configure -f
@@ -479,13 +495,13 @@ Selecteer de **knop Toevoegen aan pijplijn** in de rechterbovenhoek om een noteb
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
-Als u een parameter wilt instellen voor uw notebook, selecteert u het beletselteken (...) voor toegang tot het menu andere celacties aan de rechterkant. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
+Als u een parameter wilt instellen voor uw notebook, selecteert u het beletselteken (...) voor toegang tot het menu andere celacties helemaal rechts. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
 
 ![toggle-parameter](./media/apache-spark-development-using-notebooks/toggle-parameter-cell.png)
 
 # <a name="preview-notebook"></a>[Preview-notebook](#tab/preview)
 
-Als u de parameter van uw notebook wilt instellen, selecteert u het beletselteken (...) voor toegang tot de meer **opdrachten** op de celwerkbalk. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
+Als u een parameter wilt instellen voor uw notebook, selecteert u het beletselteken (...) om toegang te krijgen tot de **meer opdrachten** op de celwerkbalk. Selecteer vervolgens **Parametercel in-/uitschakelen** om de cel aan te wijzen als de parametercel.
 
 ![azure-notebook-toggle-parameter](./media/apache-spark-development-using-notebooks/azure-notebook-toggle-parameter-cell.png)
 
@@ -512,11 +528,11 @@ Net als bij Jupyter Notebooks hebben Azure Synapse Studio-notebooks een modale g
 
    ![opdrachtmodus](./media/apache-spark-development-using-notebooks/synapse-command-mode-2.png)
 
-2. De bewerkingsmodus wordt aangegeven door een tekstcursor waarin u wordt gevraagd om in het editorgebied te typen. Wanneer een cel in de bewerkingsmodus is, kunt u in de cel typen. Voer de bewerkingsmodus in `Enter` door op of met de muis te drukken om te selecteren in het editorgebied van een cel.
+2. De bewerkingsmodus wordt aangeduid met een tekstcursor waarin u wordt gevraagd om in het editorgebied te typen. Wanneer een cel in de bewerkingsmodus is, kunt u in de cel typen. Voer de bewerkingsmodus in door met de muis te drukken of `Enter` te selecteren in het editorgebied van een cel.
    
    ![bewerkingsmodus](./media/apache-spark-development-using-notebooks/synapse-edit-mode-2.png)
 
-### <a name="shortcut-keys-under-command-mode"></a>Sneltoetsen in de opdrachtmodus
+### <a name="shortcut-keys-under-command-mode"></a>Sneltoetsen onder de opdrachtmodus
 
 # <a name="classical-notebook"></a>[Klassieke notebook](#tab/classical)
 
@@ -531,9 +547,9 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudiger navigeren en code uitv
 |Cel hierboven invoegen| A |
 |Voeg de onderstaande cel in| B |
 |Geselecteerde cellen hierboven uitbreiden| Shift + omhoog |
-|Geselecteerde cellen hieronder uitbreiden| Shift + down|
+|Geselecteerde cellen hieronder uitbreiden| Shift +down|
 |Cel omhoog verplaatsen| Ctrl +Alt+· |
-|Cel omlaag verplaatsen| Ctrl +Alt+↓ |
+|Cel omlaag verplaatsen| Ctrl +Alt+ |
 |Geselecteerde cellen verwijderen| D, D |
 |Overschakelen naar de bewerkingsmodus| Enter |
 
@@ -549,7 +565,7 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudiger navigeren en code uitv
 |Vorige cel selecteren| K |
 |Volgende cel selecteren| J |
 |Cel hierboven invoegen| A |
-|Cel hieronder invoegen| B |
+|Voeg de onderstaande cel in| B |
 |Geselecteerde cellen verwijderen| Shift+D |
 |Overschakelen naar de bewerkingsmodus| Enter |
 

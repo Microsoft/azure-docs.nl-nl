@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: overview
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 7f8bc4cadc720c7ac02a7246e741552e81eb3876
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: ab54192480a1c36a27c175254d6d4d275b67c8b7
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106057147"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835322"
 ---
 # <a name="what-is-azure-virtual-wan"></a>Wat is Azure Virtual WAN?
 
@@ -73,7 +73,7 @@ Met Virtual WAN zijn de volgende typen connectiviteit mogelijk: Site-naar-site-V
 
 U kunt verbinding maken met uw resources in Azure via een site-to-site-IPsec/IKE (IKEv2)-verbinding. Raadpleeg [Een site-naar-site-verbinding maken met Virtual WAN](virtual-wan-site-to-site-portal.md) voor meer informatie. 
 
-Voor dit type verbinding is een VPN-apparaat of een Virtual WAN-partnerapparaat vereist. Virtual WAN-partners bieden automatisering voor connectiviteit, wat de mogelijkheid is om de apparaatgegevens te exporteren naar Azure, de Azure-configuratie te downloaden en verbinding te maken met Azure Virtual WAN. Raadpleeg het artikel [Virtuele WAN-partners en locaties](virtual-wan-locations-partners.md) voor een lijst met de beschikbare partners en locaties. Als uw VPN/SD-WAN-apparaat niet in de genoemde koppeling wordt vermeld, kunt u de stapsgewijze instructies in [Een site-naar-site-verbinding maken met Azure Virtual WAN](virtual-wan-site-to-site-portal.md) gebruiken om de verbinding in te stellen.
+Voor dit type verbinding is een VPN-apparaat of een Virtual WAN-partnerapparaat vereist. Virtual WAN-partners bieden automatisering voor connectiviteit, wat de mogelijkheid is om de apparaatgegevens te exporteren naar Azure, de Azure-configuratie te downloaden en verbinding te maken met Azure Virtual WAN. Raadpleeg het artikel [Virtuele WAN-partners en locaties](virtual-wan-locations-partners.md) voor een lijst met de beschikbare partners en locaties. Als uw VPN/SD-WAN-apparaatprovider niet wordt vermeld in de genoemde koppeling, kunt u gewoon de stapsgewijs instructies gebruiken Een [site-naar-site-verbinding](virtual-wan-site-to-site-portal.md) maken met behulp van Virtual WAN om de verbinding in te stellen.
 
 ### <a name="user-vpn-point-to-site-connections"></a><a name="uservpn"></a>Gebruikers-VPN-verbindingen (punt-naar-site)
 

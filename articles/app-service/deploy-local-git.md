@@ -5,13 +5,13 @@ ms.assetid: ac50a623-c4b8-4dfd-96b2-a09420770063
 ms.topic: article
 ms.date: 02/16/2021
 ms.reviewer: dariac
-ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: e0dc9093503cab92a71517a21a8788814d16cbbe
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.custom: seodec18, devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 3196233728bb7f6493bbc06234c62d261ac99254
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107772861"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832334"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Lokale Git-implementatie in Azure App Service
 
@@ -127,7 +127,7 @@ Set-AzResource -PropertyObject $PropertiesObject -ResourceGroupName <group-name>
 
     Als uw externe Git-URL al de gebruikersnaam en het wachtwoord bevat, wordt u hier niet om gevraagd. 
    
-1. Controleer de uitvoer. Mogelijk ziet u runtimespecifieke automatisering, zoals MSBuild voor ASP.NET, Node.js `npm install` en `pip install` voor Python. 
+1. Controleer de uitvoer. Mogelijk ziet u runtimespecifieke automatisering, zoals MSBuild voor ASP.NET, voor Node.js `npm install` en `pip install` voor Python. 
    
 1. Blader naar uw app in Azure Portal om te controleren of de inhoud is geïmplementeerd.
 

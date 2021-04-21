@@ -2,18 +2,18 @@
 title: Overzicht van servers met Azure Arc
 description: Lees meer informatie over het gebruik van Azure Arc voor servers om servers te beheren die buiten Azure worden gehost alsof het Azure-resources zijn.
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
-ms.date: 02/18/2021
+ms.date: 04/21/2021
 ms.topic: overview
-ms.openlocfilehash: 863cab073018c5a592cba6e94451a9af038ebd52
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 324f6cc29bd9e4eca1a20413032c213c2618a11e
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105023330"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831992"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
-Met Azure Arc ingeschakelde servers kunt u uw fysieke Windows-en Linux-servers en virtuele machines die worden gehost *buiten* Azure, op uw bedrijfs netwerk of een andere Cloud provider beheren. Deze beheer ervaring is ontworpen om consistent te zijn met de manier waarop u systeem eigen Azure virtual machines beheert. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, is opgenomen in een resourcegroep en profiteert van standaard Azure-constructies, zoals Azure Policy en het toepassen van tags. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
+Azure Arc ingeschakelde servers kunt u uw fysieke Windows- en Linux-servers en virtuele machines beheren die buiten Azure, in uw bedrijfsnetwerk *of* een andere cloudprovider worden gehost. Deze beheerervaring is ontworpen om consistent te zijn met de manier waarop u systeemeigen virtuele Azure-machines beheert. Wanneer een hybride machine aan Azure wordt gekoppeld, wordt deze een gekoppelde machine en wordt deze behandeld als een resource in Azure. Elke gekoppelde machine heeft een resource-id, is opgenomen in een resourcegroep en profiteert van standaard Azure-constructies, zoals Azure Policy en het toepassen van tags. Serviceproviders die de on-premises infrastructuur van een klant beheren, kunnen met behulp van [Azure Lighthouse](../../lighthouse/how-to/manage-hybrid-infrastructure-arc.md) met Azure Arc hun hybride machines beheren in meerdere klantomgevingen, net als ze vandaag de dag met systeemeigen Azure-resources doen.
 
 Om deze ervaring te bieden voor hybride machines die buiten Azure worden gehost, moet de Azure Connected Machine-agent worden geïnstalleerd op elke machine die u aan Azure wilt koppelen. Deze agent levert geen andere functionaliteit en vervangt de [Log Analytics-agent](../../azure-monitor/agents/log-analytics-agent.md) van Azure niet. De Log Analytics-agent voor Windows en Linux is vereist wanneer u het besturingssysteem en workloads op de machine proactief wilt monitoren, deze wilt beheren met Automation-runbooks of oplossingen zoals Updatebeheer, of andere Azure-services zoals [Azure Security Center](../../security-center/security-center-introduction.md) wilt gebruiken.
 
@@ -23,11 +23,11 @@ Wanneer u uw machine verbindt met servers met Azure Arc, kunt u de volgende conf
 
 - [Azure Policy-gastconfiguraties](../../governance/policy/concepts/guest-configuration.md) toewijzen met dezelfde ervaring als beleidstoewijzing voor virtuele Azure-machines. Tegenwoordig worden door het gastconfiguratiebeleid geen configuraties toegepast, maar worden alleen instellingen binnen in de machine gecontroleerd. Zie [Prijzen voor Azure Policy](https://azure.microsoft.com/pricing/details/azure-policy/) voor informatie over de kosten van het gebruik van de richtlijnen voor de Azure Policy-gastconfiguratie met servers met Azure Arc.
 
-- Rapport over configuratie wijzigingen van geïnstalleerde software, micro soft-Services, Windows-REGI ster en-bestanden en Linux-daemons op bewaakte servers met behulp van Azure Automation [Wijzigingen bijhouden en inventaris](../../automation/change-tracking/overview.md) en [Azure Security Center bestands integriteit controleren](../../security-center/security-center-file-integrity-monitoring.md)voor servers die zijn ingeschakeld met [Azure Defender voor servers](../../security-center/defender-for-servers-introduction.md).
+- Rapporteren over configuratiewijzigingen over geïnstalleerde software, Microsoft-services, Windows-register en -bestanden en Linux-daemons op bewaakte servers met behulp van Azure Automation [Wijzigingen bijhouden en inventaris](../../automation/change-tracking/overview.md) en [Azure Security Center File Integrity Monitoring](../../security-center/security-center-file-integrity-monitoring.md)voor servers die zijn ingeschakeld met Azure Defender voor [servers](../../security-center/defender-for-servers-introduction.md).
 
-- Controleer de prestaties van het gastbesturingssysteem van uw verbonden computer en ontdek toepassingscomponenten om hun processen en afhankelijkheden te controleren met andere resources die de door de toepassing worden gecommuniceerd met behulp van [Azure Monitor voor VM's](../../azure-monitor/vm/vminsights-overview.md).
+- Controleer de prestaties van het gastbesturingssysteem van uw verbonden machine en detecteer toepassingsonderdelen om hun processen en afhankelijkheden te bewaken met andere resources die de toepassing communiceert met behulp van [VM-inzichten.](../../azure-monitor/vm/vminsights-overview.md)
 
-- Vereenvoudig de implementatie met andere Azure-services zoals Azure Automation [State Configuration](../../automation/automation-dsc-overview.md) en Azure Monitor Log Analytics-werkruimte door gebruik te maken van de ondersteunde [Azure VM-extensies](manage-vm-extensions.md) voor uw niet-Azure Windows- of Linux-machine. Dit omvat het uitvoeren van configuratie na de implementatie of software-installatie met behulp van de aangepaste scriptextensie.
+- Vereenvoudig de implementatie met behulp van andere Azure-services, zoals Azure Automation [State Configuration](../../automation/automation-dsc-overview.md) en Azure Monitor Log Analytics-werkruimte, met behulp van de ondersteunde [Azure VM-extensies](manage-vm-extensions.md) voor uw niet-Azure Windows- of Linux-machine. Dit omvat het uitvoeren van configuratie na de implementatie of software-installatie met behulp van de aangepaste scriptextensie.
 
 - Gebruik [Updatebeheer](../../automation/update-management/overview.md) in Azure Automation om updates van het besturingssysteem voor uw Windows- en Linux-servers te beheren
 
@@ -44,7 +44,7 @@ Aanmeldingsgegevens die zijn verzameld en opgeslagen in een Log Analytics-werkru
 
 Zie de pagina met [Azure-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc) voor een definitieve lijst met ondersteunde regio's voor servers met Azure Arc.
 
-In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest worden opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als er sprake is van een regionale storing en als u meerdere locaties hebt die een geografisch redundante service ondersteunen, is het raadzaam om de computers op elke locatie te verbinden met een andere Azure-regio.
+In de meeste gevallen moet de locatie die u selecteert bij het maken van het installatiescript de Azure-regio zijn die geografisch het dichtst bij de locatie van uw machine ligt. Data-at-rest worden opgeslagen in de Azure-geografie die de door u opgegeven regio bevat. Dit kan ook van invloed zijn op welke regio u kiest als u gegevenslocatievereisten hebt. Als de Azure-regio waaraan uw machine is gekoppeld, wordt getroffen door een storing, heeft dit geen invloed op de gekoppelde machine, maar beheerbewerkingen die gebruikmaken van Azure kunnen mogelijk niet worden voltooid. Als er sprake is van een regionale storing en u meerdere locaties hebt die een geografisch redundante service ondersteunen, kunt u het beste de machines op elke locatie verbinden met een andere Azure-regio.
 
 De volgende metagegevens over de verbonden machine worden verzameld en opgeslagen in de regio waarin de Azure Arc-machine is geconfigureerd:
 
@@ -57,10 +57,10 @@ Als de machine bijvoorbeeld is geregistreerd bij Azure Arc in de regio VS - oost
 
 ### <a name="supported-environments"></a>Ondersteunde omgevingen
 
-Arc ingeschakelde servers ondersteunen het beheer van fysieke servers en virtuele machines die *buiten* Azure worden gehost. Zie [verbonden computer agent-vereisten](agent-overview.md#supported-environments)voor specifieke details over de hybride Cloud omgevingen die virtuele machines hosten.
+Arc-servers ondersteunen het beheer van fysieke servers en virtuele machines die *buiten* Azure worden gehost. Zie Vereisten voor connected machine-agent voor specifieke informatie over welke hybride cloudomgevingen die VM's [hosten.](agent-overview.md#supported-environments)
 
 > [!NOTE]
-> Arc ingeschakelde servers zijn niet ontworpen of worden ondersteund om het beheer van virtuele machines die in Azure worden uitgevoerd, in te scha kelen.
+> Arc-servers zijn niet ontworpen of ondersteund voor het inschakelen van beheer van virtuele machines die worden uitgevoerd in Azure.
 
 ### <a name="agent-status"></a>Agenstatus
 

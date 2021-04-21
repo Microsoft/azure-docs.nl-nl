@@ -1,64 +1,65 @@
 ---
-title: Pre-scripts en post scripts beheren in uw Updatebeheer-implementatie in azure
-description: In dit artikel leest u hoe u vooraf-scripts en post scripts voor update-implementaties configureert en beheert.
+title: Prescripts en post-scripts beheren in uw Updatebeheer-implementatie in Azure
+description: In dit artikel wordt beschreven hoe u scripts vóór en na de scripts voor update-implementaties configureert en beheert.
 services: automation
 ms.subservice: update-management
 ms.date: 03/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 676e5f03c8d0085a4d041662a80c63d385071919
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 51067095b7ebb33da61908b1424752b481668f5f
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106166714"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830802"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Scripts voorafgaand aan de back-up en scripts die erop volgen, beheren
 
-Pre-scripts en post scripts zijn runbooks die in uw Azure Automation-account worden uitgevoerd voordat (vóór taak) en na (na taak) een update-implementatie. Scripts en post scripts die in de Azure-context worden uitgevoerd, zijn niet lokaal. Pre-scripts worden uitgevoerd aan het begin van de update-implementatie. Post-scripts worden aan het einde van de implementatie uitgevoerd en nadat opnieuw opstarten is geconfigureerd.
+Scripts vóór en na de scripts zijn runbooks die in uw Azure Automation-account worden uitgevoerd vóór (pre-taak) en na (post-task) een update-implementatie. Scripts vóór en na de scripts worden uitgevoerd in de Azure-context, niet lokaal. Prescripts worden uitgevoerd aan het begin van de update-implementatie. Na de scripts worden uitgevoerd aan het einde van de implementatie en na opnieuw opstarten die zijn geconfigureerd.
 
-## <a name="pre-script-and-post-script-requirements"></a>Pre-script-en post script-vereisten
+## <a name="pre-script-and-post-script-requirements"></a>Vereisten voor prescript en post-script
 
-Een runbook kan alleen worden gebruikt als een pre-script of post script als u het wilt importeren in uw Automation-account en [het runbook wilt publiceren](../manage-runbooks.md#publish-a-runbook).
+Als u een runbook wilt gebruiken als een prescript of post-script, moet u het importeren in uw Automation-account en het [runbook publiceren.](../manage-runbooks.md#publish-a-runbook)
 
-Op dit moment worden alleen runbooks van Power shell en Python 2 ondersteund als pre/post-scripts. Andere runbook-typen zoals python 3, grafische power shell-werk stroom, grafische power shell-werk stroom worden momenteel niet ondersteund als pre/post-scripts.
+Momenteel worden alleen PowerShell- en Python 2-runbooks ondersteund als pre-/post-scripts. Andere runbooktypen, zoals Python 3, Graphical, PowerShell Workflow en Graphical PowerShell Workflow, worden momenteel niet ondersteund als Pre/Post-scripts.
 
-## <a name="pre-script-and-post-script-parameters"></a>Pre-script en post-script-para meters
+## <a name="pre-script-and-post-script-parameters"></a>Parameters pre-script en post-script
 
-Wanneer u pre-scripts en post scripts configureert, kunt u de para meters door geven, net zoals bij het plannen van een runbook. Para meters worden gedefinieerd op het moment dat de update-implementatie wordt gemaakt. Scripts en post scripts ondersteunen de volgende typen:
+Wanneer u scripts vóór en na de scripts configureert, kunt u parameters doorgeven, net als bij het plannen van een runbook. Parameters worden gedefinieerd op het moment dat de update-implementatie wordt gemaakt. Scripts vóór en na de scripts ondersteunen de volgende typen:
 
-* char
-* DBCS
-* integer
-* omvang
-* komma
-* afzonderlijke
-* Dubbelklik
-* DateTime
-* tekenreeksexpressie
+* [char]
+* [byte]
+* [int]
+* [lang]
+* [decimaal]
+* [enkel]
+* [dubbel]
+* [DateTime]
+* [tekenreeks]
 
-De runbook-para meters pre-script en post-script bieden geen ondersteuning voor Boole-, object-of matrix typen. Deze waarden zorgen ervoor dat de runbooks mislukken. 
+Runbookparameters voor prescript en post-script bieden geen ondersteuning voor booleaanse, object- of matrixtypen. Deze waarden zorgen ervoor dat de runbooks mislukken. 
 
-Als u een ander object type nodig hebt, kunt u dit naar een ander type converteren met uw eigen logica in het runbook.
+Als u een ander objecttype nodig hebt, kunt u het casten naar een ander type met uw eigen logica in het runbook.
 
-Naast uw standaard runbook-para meters `SoftwareUpdateConfigurationRunContext` wordt de para meter (type JSON-teken reeks) opgegeven. Als u de para meter in uw pre-script of post-script-runbook definieert, wordt deze automatisch door gegeven door de update-implementatie. De para meter bevat informatie over de update-implementatie. Dit is een subset van informatie die wordt geretourneerd door de [SoftwareUpdateconfigurations-API](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration). In de volgende secties worden de bijbehorende eigenschappen gedefinieerd.
+Naast de standaardrunbookparameters wordt `SoftwareUpdateConfigurationRunContext` de parameter (type JSON-tekenreeks) opgegeven. Als u de parameter definieert in uw prescript- of postscript-runbook, wordt deze automatisch doorgegeven door de update-implementatie. De parameter bevat informatie over de update-implementatie. Dit is een subset van informatie die wordt geretourneerd door de [SoftwareUpdateconfigurations-API.](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration) In de onderstaande secties worden de bijbehorende eigenschappen bepaald.
 
-### <a name="softwareupdateconfigurationruncontext-properties"></a>SoftwareUpdateConfigurationRunContext-eigenschappen
+### <a name="softwareupdateconfigurationruncontext-properties"></a>Eigenschappen van SoftwareUpdateConfigurationRunContext
 
 |Eigenschap  |Beschrijving  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | De naam van de configuratie van de software-update.        |
-|SoftwareUpdateConfigurationRunId     | De unieke ID voor de uitvoering.        |
-|SoftwareUpdateConfigurationSettings     | Een verzameling eigenschappen die betrekking hebben op de configuratie van de software-update.         |
-|SoftwareUpdateConfigurationSettings. Operating     | De besturings systemen die zijn gericht op de update-implementatie.         |
-|SoftwareUpdateConfigurationSettings. duur     | De maximale duur van de update-implementatie zoals `PT[n]H[n]M[n]S` iso8601, ook wel het onderhouds venster genoemd.          |
-|SoftwareUpdateConfigurationSettings. Windows     | Een verzameling eigenschappen die betrekking hebben op Windows-computers.         |
-|SoftwareUpdateConfigurationSettings. Windows. excludedKbNumbers     | Een lijst met Kb's die zijn uitgesloten van de update-implementatie.        |
-|SoftwareUpdateConfigurationSettings. Windows. includedUpdateClassifications     | Update classificaties geselecteerd voor de update-implementatie.        |
-|SoftwareUpdateConfigurationSettings. Windows. rebootSetting     | Instellingen voor de update-implementatie opnieuw opstarten.        |
-|azureVirtualMachines     | Een lijst met resourceIds voor de virtuele Azure-machines in de update-implementatie.        |
-|nonAzureComputerNames|Een lijst met de FQDN-namen van niet-Azure-computers in de update-implementatie.|
+|SoftwareUpdateConfigurationRunId     | De unieke id voor de run.        |
+|SoftwareUpdateConfigurationSettings     | Een verzameling eigenschappen met betrekking tot de configuratie van software-updates.         |
+|SoftwareUpdateConfigurationSettings.operatingSystem     | De besturingssystemen die zijn bedoeld voor de update-implementatie.         |
+|SoftwareUpdateConfigurationSettings.duration     | De maximale duur van de update-implementatie wordt `PT[n]H[n]M[n]S` uitgevoerd volgens ISO8601, ook wel het onderhoudsvenster genoemd.          |
+|SoftwareUpdateConfigurationSettings.Windows     | Een verzameling eigenschappen met betrekking tot Windows-computers.         |
+|SoftwareUpdateConfigurationSettings.Windows.excludedKbNumbers     | Een lijst met KB's die zijn uitgesloten van de update-implementatie.        |
+|SoftwareUpdateConfigurationSettings.Windows.includedUpdateClassifications     | Updateclassificaties die zijn geselecteerd voor de update-implementatie.        |
+|SoftwareUpdateConfigurationSettings.Windows.rebootSetting     | Instellingen voor opnieuw opstarten voor de update-implementatie.        |
+|azureVirtualMachines     | Een lijst met resourceIds voor de Azure-VM's in de update-implementatie.        |
+|nonAzureComputerNames|Een lijst met de FQDN's van niet-Azure-computers in de update-implementatie.|
 
-Het volgende voor beeld is een JSON-teken reeks die is door gegeven aan de para meter **SoftwareUpdateConfigurationRunContext** :
+In het volgende voorbeeld wordt een JSON-tekenreeks doorgegeven aan de parameter **SoftwareUpdateConfigurationRunContext:**
 
 ```json
 "SoftwareUpdateConfigurationRunContext": {
@@ -88,38 +89,38 @@ Het volgende voor beeld is een JSON-teken reeks die is door gegeven aan de para 
   }
 ```
 
-Een volledig voor beeld met alle eigenschappen vindt u op: [Software-update configuratie op naam ophalen](/rest/api/automation/softwareupdateconfigurations/getbyname#examples).
+Een volledig voorbeeld met alle eigenschappen vindt u op: [Configuratie van software-update op basis van naam op halen.](/rest/api/automation/softwareupdateconfigurations/getbyname#examples)
 
 > [!NOTE]
-> Het `SoftwareUpdateConfigurationRunContext` object kan dubbele vermeldingen voor machines bevatten. Dit kan ervoor zorgen dat scripts en post scripts meerdere keren op dezelfde computer worden uitgevoerd. U kunt dit probleem omzeilen door `Sort-Object -Unique` alleen unieke VM-namen te selecteren.
+> Het `SoftwareUpdateConfigurationRunContext` -object kan dubbele vermeldingen voor machines bevatten. Dit kan ertoe leiden dat scripts vóór en na de scripts meerdere keren op dezelfde computer worden uitgevoerd. Als u dit gedrag wilt omdraaien, `Sort-Object -Unique` gebruikt u om alleen unieke VM-namen te selecteren.
 
-## <a name="use-a-pre-script-or-post-script-in-a-deployment"></a>Een pre-script of post script gebruiken in een implementatie
+## <a name="use-a-pre-script-or-post-script-in-a-deployment"></a>Een prescript of post-script gebruiken in een implementatie
 
-Als u een pre-script of post script wilt gebruiken in een update-implementatie, moet u beginnen met het maken van een update-implementatie. Selecteer **pre-scripts + post scripts**. Met deze actie opent **u de pagina pre-scripts + post-scripts selecteren** .
+Als u een prescript of post-script wilt gebruiken in een update-implementatie, begint u met het maken van een update-implementatie. Selecteer **Pre-scripts + Post-Scripts.** Met deze actie wordt **de pagina Prescripts en na scripts selecteren** geopend.
 
 ![Scripts selecteren](./media/pre-post-scripts/select-scripts.png)
 
-Selecteer het script dat u wilt gebruiken. In dit voor beeld gebruiken we het runbook **UpdateManagement-TurnOnVms** . Wanneer u het runbook selecteert, wordt de pagina **script configureren** geopend. Selecteer **vooraf script** en selecteer vervolgens **OK**.
+Selecteer het script dat u wilt gebruiken. In dit voorbeeld gebruiken we het runbook **UpdateManagement-TurnOnVms.** Wanneer u het runbook selecteert, wordt **de pagina Script configureren** geopend. Selecteer **Pre-Script** en vervolgens **OK.**
 
-Herhaal dit proces voor het script **UpdateManagement-TurnOffVms** . Maar wanneer u het **script type** kiest, selecteert u **post-script**.
+Herhaal dit proces voor het script **UpdateManagement-TurnOffVms.** Maar wanneer u het **scripttype kiest,** selecteert **u Post-Script**.
 
-In het gedeelte **geselecteerde items** worden nu de geselecteerde scripts weer gegeven. Een is een pre-script en de andere is een post script:
+In **de sectie Geselecteerde items** ziet u nu beide geselecteerde scripts. Het ene is een prescript en het andere is een post-script:
 
 ![Geselecteerde items](./media/pre-post-scripts/selected-items.png)
 
-De configuratie van de update-implementatie volt ooien.
+De configuratie van uw update-implementatie voltooien.
 
-Wanneer de update-implementatie is voltooid, kunt u naar **Update-implementaties** gaan om de resultaten weer te geven. Zoals u kunt zien, is de status van het pre-script en het post script:
+Wanneer de update-implementatie is voltooid, kunt u naar **Update-implementaties gaan om** de resultaten weer te geven. Zoals u ziet, wordt de status opgegeven voor het prescript en het postscript:
 
 ![Resultaten bijwerken](./media/pre-post-scripts/update-results.png)
 
-Als u de update-implementatie-uitvoering selecteert, worden er aanvullende details van pre-scripts en post scripts weer gegeven. Er wordt een koppeling naar de script bron op het moment van de uitvoering gegeven.
+Als u de update-implementatierun selecteert, ziet u aanvullende details van de scripts vóór en na de scripts. Er wordt een koppeling naar de scriptbron gegeven op het moment van de run.
 
-![Resultaten van implementatie-uitvoering](./media/pre-post-scripts/deployment-run.png)
+![Resultaten van de implementatieuit voeren](./media/pre-post-scripts/deployment-run.png)
 
 ## <a name="stop-a-deployment"></a>Een implementatie stoppen
 
-Als u een implementatie op basis van een pre-script wilt stoppen, moet u een uitzonde ring [genereren](../automation-runbook-execution.md#throw) . Als dat niet het geval is, worden de implementatie en het post script nog steeds uitgevoerd. Het volgende code fragment laat zien hoe u een uitzonde ring genereert met behulp van Power shell.
+Als u een implementatie wilt stoppen op basis van een prescript, moet u [een uitzondering](../automation-runbook-execution.md#throw) geven. Als u dit niet hebt, worden de implementatie en het nascript nog steeds uitgevoerd. Het volgende codefragment laat zien hoe u een uitzondering kunt maken met behulp van PowerShell.
 
 ```powershell
 #In this case, we want to terminate the patch job if any run fails.
@@ -134,35 +135,35 @@ foreach($summary in $finalStatus)
 }
 ```
 
-In Python 2 wordt de verwerking van uitzonde ringen beheerd in een [try](https://www.python-course.eu/exception_handling.php) -blok.
+In Python 2 wordt de afhandeling van uitzonderingen beheerd in een [try-blok.](https://www.python-course.eu/exception_handling.php)
 
-## <a name="interact-with-machines"></a>Communiceren met computers
+## <a name="interact-with-machines"></a>Interactie met computers
 
-Scripts en post scripts worden uitgevoerd als runbooks in uw Automation-account en niet rechtstreeks op de computers in uw implementatie. Taken en post-taken worden ook uitgevoerd in de Azure-context en hebben geen toegang tot niet-Azure-machines. In de volgende secties ziet u hoe u rechtstreeks met de computers kunt werken, ongeacht of het nu virtuele machines van Azure of niet-Azure is.
+Scripts vóór en na de scripts worden uitgevoerd als runbooks in uw Automation-account en niet rechtstreeks op de computers in uw implementatie. Pre-taken en post-taken worden ook uitgevoerd in de Azure-context en hebben geen toegang tot niet-Azure-machines. In de volgende secties ziet u hoe u rechtstreeks met de machines kunt werken, ongeacht of het Azure-VM's of niet-Azure-machines zijn.
 
-### <a name="interact-with-azure-machines"></a>Communiceren met Azure-machines
+### <a name="interact-with-azure-machines"></a>Interactie met Azure-machines
 
-Pre-tasks en post-tasks worden uitgevoerd als runbooks en worden niet systeem eigen uitgevoerd op uw virtuele Azure-machines in uw implementatie. Als u met uw Azure-Vm's wilt communiceren, hebt u de volgende items nodig:
+Pre-taken en post-taken worden uitgevoerd als runbooks en worden niet standaard uitgevoerd op uw Azure-VM's in uw implementatie. Voor interactie met uw Azure-VM's hebt u het volgende nodig:
 
-* Een uitvoeren als-account
+* Een Uitvoeren als-account
 * Een runbook dat u wilt uitvoeren
 
-Als u wilt communiceren met Azure-machines, moet u de cmdlet [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand) gebruiken om te communiceren met uw Azure-vm's. Zie voor een voor beeld van hoe u dit doet, het runbook [-voor beeld updatebeheer script uitvoeren met de opdracht Run](https://github.com/azureautomation/update-management-run-script-with-run-command).
+Als u wilt communiceren met Azure-machines, moet u de cmdlet [Invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand) gebruiken om te communiceren met uw Azure-VM's. Zie voor een voorbeeld van hoe u dit doet het [runbookvoorbeeld Updatebeheer - script uitvoeren met de opdracht Uitvoeren.](https://github.com/azureautomation/update-management-run-script-with-run-command)
 
-### <a name="interact-with-non-azure-machines"></a>Communiceren met niet-Azure-machines
+### <a name="interact-with-non-azure-machines"></a>Interactie met niet-Azure-machines
 
-Taken en taken die na uitvoering worden uitgevoerd in de Azure-context en die geen toegang hebben tot niet-Azure-machines. Als u wilt communiceren met de niet-Azure-computers, hebt u de volgende items nodig:
+Pre-taken en post-taken worden uitgevoerd in de Azure-context en hebben geen toegang tot niet-Azure-machines. Als u wilt communiceren met de niet-Azure-machines, hebt u het volgende nodig:
 
-* Een uitvoeren als-account
+* Een Uitvoeren als-account
 * Hybrid Runbook Worker geïnstalleerd op de computer
 * Een runbook dat u lokaal wilt uitvoeren
 * Een bovenliggend runbook
 
-Een bovenliggend runbook wordt uitgevoerd in de Azure-context om te communiceren met niet-Azure-machines. Met dit runbook wordt een onderliggend runbook aangeroepen met de cmdlet [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook) . U moet de `RunOn` para meter opgeven en de naam opgeven van de Hybrid Runbook worker waarmee het script moet worden uitgevoerd. Zie het runbook-voor beeld [updatebeheer script lokaal uitvoeren](https://github.com/azureautomation/update-management-run-script-locally).
+Voor interactie met niet-Azure-machines wordt een bovenliggend runbook uitgevoerd in de Azure-context. Met dit runbook wordt een onderliggend runbook aanroepen met de cmdlet [Start-AzAutomationRunbook.](/powershell/module/Az.Automation/Start-AzAutomationRunbook) U moet de parameter opgeven en de naam van de Hybrid Runbook Worker `RunOn` voor het uitvoeren van het script. Zie het runbookvoorbeeld [Updatebeheer - script lokaal uitvoeren.](https://github.com/azureautomation/update-management-run-script-locally)
 
-## <a name="abort-patch-deployment"></a>Patch implementatie afbreken
+## <a name="abort-patch-deployment"></a>Implementatie van patches afbreken
 
-Als uw pre-script een fout retourneert, wilt u uw implementatie mogelijk afbreken. Hiervoor moet u een fout in het script [genereren](/powershell/module/microsoft.powershell.core/about/about_throw) voor eventuele logica die een fout zou vormen.
+Als uw prescript een fout retourneert, kunt u uw implementatie afbreken. Als u dit wilt doen, [moet](/powershell/module/microsoft.powershell.core/about/about_throw) u een fout in uw script veroorzaken voor elke logica die een fout zou vormen.
 
 ```powershell
 if (<My custom error logic>)
@@ -172,7 +173,7 @@ if (<My custom error logic>)
 }
 ```
 
-Als u in Python 2 een fout wilt genereren wanneer zich een bepaalde voor waarde voordoet, gebruikt u een instructie [Raise](https://docs.python.org/2.7/reference/simple_stmts.html#the-raise-statement) .
+Als u in Python 2 een fout wilt geven wanneer een bepaalde voorwaarde optreedt, gebruikt u een [raise-instructie.](https://docs.python.org/2.7/reference/simple_stmts.html#the-raise-statement)
 
 ```python
 If (<My custom error logic>)
@@ -181,22 +182,22 @@ If (<My custom error logic>)
 
 ## <a name="samples"></a>Voorbeelden
 
-Voor beelden voor pre-scripts en post-scripts vindt u in de [Azure Automation github-organisatie](https://github.com/azureautomation) en de [PowerShell Gallery](https://www.powershellgallery.com/packages?q=Tags%3A%22UpdateManagement%22+Tags%3A%22Automation%22), of u kunt ze importeren via de Azure Portal. Als u dit wilt doen, selecteert u in uw Automation-account, onder **proces automatisering**, **Runbooks galerie**. Gebruik **updatebeheer** voor het filter.
+Voorbeelden voor scripts vóór en na de scripts vindt u in de [GitHub-organisatie Azure Automation](https://github.com/azureautomation) en [de PowerShell Gallery,](https://www.powershellgallery.com/packages?q=Tags%3A%22UpdateManagement%22+Tags%3A%22Automation%22)of u kunt ze importeren via de Azure Portal. Selecteer in uw Automation-account onder **Procesautomatisering** de optie **Runbooks Gallery**. Gebruik **Updatebeheer** voor het filter.
 
-![Galerie lijst](./media/pre-post-scripts/runbook-gallery.png)
+![Galerielijst](./media/pre-post-scripts/runbook-gallery.png)
 
-U kunt ook zoeken naar de naam van het script, zoals wordt weer gegeven in de volgende lijst:
+U kunt ze ook zoeken op de naam van hun script, zoals wordt weergegeven in de volgende lijst:
 
-* Updatebeheer-Vm's inschakelen
-* Updatebeheer-Vm's uitschakelen
-* Updatebeheer script lokaal uitvoeren
-* Updatebeheer-sjabloon voor pre/post-scripts
-* Updatebeheer script uitvoeren met de opdracht uitvoeren
+* Updatebeheer- VM's in bedrijf
+* Updatebeheer- VM's uitschakelen
+* Updatebeheer- Script lokaal uitvoeren
+* Updatebeheer - Sjabloon voor pre-/postscripts
+* Updatebeheer- Script uitvoeren met Uitvoeropdracht
 
 > [!IMPORTANT]
-> Nadat u de runbooks hebt geïmporteerd, moet u deze publiceren voordat ze kunnen worden gebruikt. Hiertoe gaat u naar het runbook in uw Automation-account, selecteert u **bewerken** en selecteert u vervolgens **publiceren**.
+> Nadat u de runbooks hebt geïmporteerd, moet u ze publiceren voordat ze kunnen worden gebruikt. Als u dit wilt doen, gaat u naar het runbook in uw Automation-account, selecteert u **Bewerken** en selecteert u **vervolgens Publiceren.**
 
-De voor beelden zijn gebaseerd op de basis sjabloon die in het volgende voor beeld is gedefinieerd. Deze sjabloon kan worden gebruikt om uw eigen runbook te maken voor gebruik met pre-scripts en post scripts. De benodigde logica voor verificatie met Azure en het verwerken van de `SoftwareUpdateConfigurationRunContext` para meter is opgenomen.
+De voorbeelden zijn allemaal gebaseerd op de basissjabloon die in het volgende voorbeeld is gedefinieerd. Deze sjabloon kan worden gebruikt om uw eigen runbook te maken voor gebruik met prescripts en postscripts. De benodigde logica voor het authenticeren met Azure en het verwerken van `SoftwareUpdateConfigurationRunContext` de parameter is opgenomen.
 
 ```powershell
 <#
@@ -250,8 +251,8 @@ $variable = Get-AutomationVariable -Name $runId
 ```
 
 > [!NOTE]
-> Voor niet-grafische power shell-runbooks `Add-AzAccount` en `Add-AzureRMAccount` aliassen voor [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). U kunt deze cmdlets gebruiken of u kunt [uw modules bijwerken](../automation-update-azure-modules.md) naar de nieuwste versie in uw Automation-account. Zelfs wanneer u juist een nieuw Automation-account heeft aangemaakt, moet u mogelijk uw modules bijwerken.
+> Voor niet-grafische PowerShell-runbooks `Add-AzAccount` en zijn `Add-AzureRMAccount` aliassen voor [Connect-AzAccount.](/powershell/module/az.accounts/connect-azaccount) U kunt deze cmdlets gebruiken of u kunt [uw modules bijwerken](../automation-update-azure-modules.md) naar de nieuwste versie in uw Automation-account. Zelfs wanneer u juist een nieuw Automation-account heeft aangemaakt, moet u mogelijk uw modules bijwerken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [updates en patches voor uw virtuele machines beheren](manage-updates-for-vm.md)voor meer informatie over update beheer.
+Zie Updates en patches voor uw [VM's beheren](manage-updates-for-vm.md)voor meer informatie over updatebeheer.

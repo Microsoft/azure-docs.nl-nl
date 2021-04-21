@@ -3,13 +3,13 @@ title: Een TypeScript-functie maken via de opdrachtregel - Azure Functions
 description: Ontdek hoe u een TypeScript-functie maakt vanaf de opdrachtregel en vervolgens het lokale project publiceert op serverloze hosting in Azure Functions.
 ms.date: 11/03/2020
 ms.topic: quickstart
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 488ef9fa3fd5b6c09ed435483dbf8f6fa3eb5bef
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: c7b37700d93ea129ba46de81989f06dd2afe52ba
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97937192"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831812"
 ---
 # <a name="quickstart-create-a-typescript-function-in-azure-from-the-command-line"></a>Quickstart: Een TypeScript-functie maken in Azure vanaf de opdrachtregel
 

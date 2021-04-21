@@ -7,12 +7,13 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 628bb9886264574bf33ac927cf5480f91144c39c
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: eca74ffe7b62cc5071d8ebaeefab52e5e59409d4
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107534002"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832226"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-powershell"></a>Quickstart: Azure Attestation instellen met behulp van Microsoft Azure PowerShell
 
@@ -121,7 +122,7 @@ New-AzResourceGroup -Name $attestationResourceGroup -Location $location
 ```
 
  > [!NOTE]
-   > Zodra een Attestation-provider is gemaakt in deze resourcegroep, moet een Azure AD-gebruiker de rol **Attestation-inzender** hebben voor de provider om bewerkingen uit te voeren zoals beleidsconfiguratie/ beheer van beleidscertificaten voor ondertekenen. Deze machtigingen kunnen ook worden overgenomen  door rollen zoals Eigenaar (jokertekenmachtigingen)/  Inzender (machtigingen met jokertekens) voor het abonnement/de resourcegroep.  
+   > Zodra een Attestation-provider is gemaakt in deze resourcegroep, moet een Azure AD-gebruiker de rol **Attestation-inzender** hebben voor de provider om bewerkingen uit te voeren zoals beleidsconfiguratie/ certificaatbeheer voor beleidsverleners. Deze machtigingen kunnen ook worden overgenomen  door rollen zoals Eigenaar (machtigingen voor jokertekens)/  Inzender (machtigingen met jokertekens) in het abonnement of de resourcegroep.  
 
 
 ## <a name="create-and-manage-an-attestation-provider"></a>Maak en beheer een Attestation-provider
@@ -174,7 +175,7 @@ Voor het beheren van beleid, heeft een Azure AD-gebruiker de volgende machtiging
 - Microsoft.Attestation/attestationProviders/attestation/write
 - Microsoft.Attestation/attestationProviders/attestation/delete
 
- Als u deze acties wilt uitvoeren, moet een Azure AD-gebruiker de **rol Attestation-inzender** hebben voor de Attestation-provider. Deze machtigingen kunnen ook worden overgenomen  door rollen zoals Eigenaar (jokertekenmachtigingen)/  Inzender (machtigingen met jokertekens) voor het abonnement of de resourcegroep.  
+ Als u deze acties wilt uitvoeren, moet een Azure AD-gebruiker de **rol Attestation-inzender** hebben voor de Attestation-provider. Deze machtigingen kunnen ook worden overgenomen  door rollen zoals Eigenaar (machtigingen voor jokertekens)/  Inzender (machtigingen met jokertekens) in het abonnement of de resourcegroep.  
 
 Voor het lezen van beleid, heeft een Azure AD-gebruiker de volgende machtigingen nodig voor 'Acties':
 - Microsoft.Attestation/attestationProviders/attestation/read

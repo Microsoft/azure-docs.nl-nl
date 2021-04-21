@@ -7,12 +7,13 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 5eefcb55bb5447d557f097af872847576aa86eed
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 9d3e34bee3d0f1420b379638389e6fad0a2fed60
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107519303"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831560"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Microsoft Azure attestation-gids voor probleemoplossing
 
@@ -66,7 +67,7 @@ b. Raadpleeg de richtlijnen [hier om](../role-based-access-control/role-assignme
 
 c. Als u geen geschikte roltoewijzing vindt, volgt u de [instructies](../role-based-access-control/role-assignments-powershell.md) hier
 
-## <a name="2-http--400-errors"></a>2. HTTP : 400 fouten
+## <a name="2-http--400-errors"></a>2. HTTP – 400-fouten
 
 ### <a name="http-status-code"></a>HTTP-statuscode
 400
@@ -75,7 +76,7 @@ Er zijn verschillende redenen waarom een aanvraag 400 kan retourneren. Hieronder
 
 ### <a name="21-attestation-failure-due-to-policy-evaluation-errors"></a>2.1. Attestation-fout vanwege beleidsevaluatiefouten
 
-Attestation-beleid bevat autorisatieregels en uitgifteregels. Enclave-bewijs wordt geëvalueerd op basis van de autorisatieregels. Uitgifteregels definiëren de claims die moeten worden opgenomen in het Attestation-token. Als claims in enclave-bewijs niet voldoen aan de autorisatieregels, retourneren attest-aanroepen een beleidsevaluatiefout. 
+Attestation-beleid bevat autorisatieregels en uitgifteregels. Enclave-bewijs wordt geëvalueerd op basis van de autorisatieregels. Uitgifteregels definiëren de claims die moeten worden opgenomen in het Attestation-token. Als claims in enclave-bewijs niet voldoen aan autorisatieregels, retourneren attest-aanroepen een beleidsevaluatiefout. 
 
 **Foutcode** PolicyEvaluationError
 
@@ -202,7 +203,7 @@ At line:1 char:1
 
 **Foutcode** InvalidOperation
 
-**Scenariovoorbeelden** Ongeldige inhoud opgegeven (bijvoorbeeld beleid uploaden/niet-ondertekend beleid wanneer beleidsondertekening is vereist)
+**Scenariovoorbeelden** Ongeldige inhoud opgegeven (bijvoorbeeld uploadbeleid/niet-ondertekend beleid wanneer beleidsondertekening is vereist)
 
 ```
 Native operation failed with 74: ..\Shared\base64url.h(226)\(null)!: (caller: ) Exception(0) 83FF004A Bad message    Msg:[Unknown base64 character: 41 (')')]
@@ -218,7 +219,7 @@ At line:1 char:1
 
 Als ondertekening van beleid is vereist, moet attestation-beleid alleen worden geconfigureerd in de indeling RFC7519 JSON Web Token (JWT). Als ondertekening van beleid niet is vereist, kan het beleid worden geconfigureerd in tekst- of JWT-indeling.
 
-Als u een beleid in JWT-indeling wilt configureren, gebruikt u JWT met een claim met de naam AttestationPolicy. De waarde van de claim is base64URL gecodeerde versie van de beleidstekst. Als de Attestation-provider is geconfigureerd met certificaten voor beleidsafwegingen, moet de JWT worden ondertekend met een persoonlijke sleutel van een van de geldige certificaten van de beleidsverlener die aan de provider zijn gekoppeld. 
+Als u een beleid in JWT-indeling wilt configureren, gebruikt u JWT met een claim met de naam AttestationPolicy. De waarde van de claim is base64URL gecodeerde versie van de beleidstekst. Als de Attestation-provider is geconfigureerd met certificaten voor beleidsverleners, moet de JWT worden ondertekend met een persoonlijke sleutel van een van de geldige certificaten voor beleidsverlener die aan de provider zijn gekoppeld. 
 
 Als u een beleid in tekstindeling wilt configureren, geeft u rechtstreeks beleidstekst op.
 

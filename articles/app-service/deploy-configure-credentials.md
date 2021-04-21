@@ -4,16 +4,16 @@ description: Meer informatie over de typen implementatiereferenties in Azure App
 ms.topic: article
 ms.date: 02/11/2021
 ms.reviewer: byvinyal
-ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: b77a26f61e1168846156de990806bbed2f7c41e3
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.custom: seodec18, devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 008bfa58c117fc1b43227ba73902d921cec25795
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107789533"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830571"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Implementatiereferenties configureren voor Azure App Service
-Voor het beveiligen van app-implementatie vanaf een lokale computer [ondersteunt Azure App Service](./overview.md) twee typen referenties voor lokale [Git-implementatie](deploy-local-git.md) en [FTP/S-implementatie.](deploy-ftp.md) Deze referenties zijn niet hetzelfde als de referenties van uw Azure-abonnement.
+Ter beveiliging van app-implementatie vanaf een lokale computer ondersteunt [Azure App Service](./overview.md) twee typen referenties voor lokale [Git-implementatie](deploy-local-git.md) en [FTP/S-implementatie.](deploy-ftp.md) Deze referenties zijn niet hetzelfde als de referenties van uw Azure-abonnement.
 
 [!INCLUDE [app-service-deploy-credentials](../../includes/app-service-deploy-credentials.md)]
 
@@ -37,7 +37,7 @@ De JSON-uitvoer toont het wachtwoord als `null`.
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-U kunt de referenties voor het gebruikersbereik niet configureren met Azure PowerShell. Gebruik een andere methode of overweeg het [gebruik van referenties voor het toepassingsbereik.](#appscope) 
+U kunt de referenties voor het gebruikersbereik niet configureren met Azure PowerShell. Gebruik een andere methode of overweeg het [gebruik van referenties voor toepassingsbereik.](#appscope) 
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
@@ -45,20 +45,20 @@ U kunt uw referenties voor het gebruikersbereik configureren op de resourcepagin
 
 In de [Azure Portal](https://portal.azure.com)moet u ten minste één app hebben voordat u toegang hebt tot de pagina met implementatiereferenties. Uw referenties voor het gebruikersbereik configureren:
 
-1. Selecteer in het linkermenu van uw app > FTPS-referenties van het implementatiecentrum of lokale  >   **Git-/FTPS-referenties.**
+1. Selecteer in het linkermenu van uw app de > FTPS-referenties van het implementatiecentrum of lokale  >   **Git-/FTPS-referenties.**
 
     ![Laat zien hoe u het FTP-dashboard kunt selecteren in het implementatiecentrum in Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-2. Schuif omlaag naar **Gebruikersbereik,** configureer **de gebruikersnaam** en **het wachtwoord** en selecteer **vervolgens Opslaan.**
+2. Schuif omlaag naar **Gebruikersbereik,** configureer **de gebruikersnaam** en het **wachtwoord** en selecteer **opslaan.**
 
 Zodra u uw implementatiereferenties hebt ingesteld, kunt u de gebruikersnaam van de *Git-implementatie* vinden op de pagina **Overzicht van uw** app.
 
-![Laat zien hoe u de gebruikersnaam voor de Git-implementatie kunt vinden op de pagina Overzicht van uw app.](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
+![Laat zien hoe u de gebruikersnaam van de Git-implementatie kunt vinden op de pagina Overzicht van uw app.](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
 
-Als De Git-implementatie is geconfigureerd, wordt op de pagina een **Gebruikersnaam voor Git/implementatie weergegeven;** anders een **FTP-/implementatie-gebruikersnaam**.
+Als De Git-implementatie is geconfigureerd, wordt op de pagina een **gebruikersnaam voor Git/implementatie weergegeven;** anders een **FTP-/implementatie-gebruikersnaam.**
 
 > [!NOTE]
-> In Azure wordt uw implementatiewachtwoord voor het gebruikersbereik niet weer geven. Als u het wachtwoord bent vergeten, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
+> Azure geeft uw implementatiewachtwoord voor het gebruikersbereik niet weer. Als u het wachtwoord bent vergeten, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
 >
 > 
 
@@ -66,9 +66,9 @@ Als De Git-implementatie is geconfigureerd, wordt op de pagina een **Gebruikersn
 
 ## <a name="use-user-scope-credentials-with-ftpftps"></a>Referenties voor gebruikersbereik gebruiken met FTP/FTPS
 
-Voor de authenticatie bij een FTP/FTPS-eindpunt met referenties voor het gebruikersbereik is een gebruikersnaam in de volgende indeling vereist: `<app-name>\<user-name>`
+Voor de authenticatie bij een FTP/FTPS-eindpunt met referenties voor gebruikersbereik is een gebruikersnaam met de volgende indeling vereist: `<app-name>\<user-name>`
 
-Omdat referenties voor het gebruikersbereik zijn gekoppeld aan de gebruiker en niet aan een specifieke resource, moet de gebruikersnaam deze indeling hebben om de aanmeldingsactie naar het juiste app-eindpunt te leiden.
+Aangezien referenties voor het gebruikersbereik zijn gekoppeld aan de gebruiker en niet aan een specifieke resource, moet de gebruikersnaam deze indeling hebben om de aanmeldingsactie naar het juiste app-eindpunt te sturen.
 
 ## <a name="get-application-scope-credentials"></a><a name="appscope"></a>Referenties voor toepassingsbereik op halen
 
@@ -88,7 +88,7 @@ az webapp deployment list-publishing-credentials --resource-group <group-name> -
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Haal de referenties voor het toepassingsbereik op met [de opdracht Get-AzWebAppPublishingProfile.](/powershell/module/az.websites/get-azwebapppublishingprofile) Bijvoorbeeld:
+Haal de referenties voor het toepassingsbereik op met de [opdracht Get-AzWebAppPublishingProfile.](/powershell/module/az.websites/get-azwebapppublishingprofile) Bijvoorbeeld:
 
 ```azurepowershell-interactive
 Get-AzWebAppPublishingProfile -ResourceGroupName <group-name> -Name <app-name>
@@ -100,7 +100,7 @@ Get-AzWebAppPublishingProfile -ResourceGroupName <group-name> -Name <app-name>
 
     ![Laat zien hoe u het FTP-dashboard kunt selecteren in het implementatiecentrum in Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-2. Selecteer in **de sectie Toepassingsbereik** de **koppeling Kopiëren** om de gebruikersnaam of het wachtwoord te kopiëren.
+2. Selecteer in **de sectie** Toepassingsbereik de koppeling **Kopiëren** om de gebruikersnaam of het wachtwoord te kopiëren.
 
 -----
 
@@ -116,7 +116,7 @@ az resource invoke-action --action newpassword --resource-group <group-name> --n
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Stel de referenties voor het toepassingsbereik opnieuw in met [de opdracht Invoke-AzResourceAction:](/powershell/module/az.resources/invoke-azresourceaction)
+Stel de referenties voor het toepassingsbereik opnieuw in met de [opdracht Invoke-AzResourceAction:](/powershell/module/az.resources/invoke-azresourceaction)
 
 ```azurepowershell-interactive
 Invoke-AzResourceAction -ResourceGroupName <group-name> -ResourceType Microsoft.Web/sites -ResourceName <app-name> -Action newpassword
@@ -134,7 +134,7 @@ Invoke-AzResourceAction -ResourceGroupName <group-name> -ResourceType Microsoft.
 
 ## <a name="disable-basic-authentication"></a>Basisverificatie uitschakelen
 
-Sommige organisaties moeten voldoen aan de beveiligingsvereisten en schakelen de toegang liever uit via FTP of WebDeploy. Op deze manier hebben de leden van de organisatie alleen toegang tot de App Services via API's die worden beheerd door Azure Active Directory (Azure AD).
+Sommige organisaties moeten voldoen aan beveiligingsvereisten en schakelen de toegang liever uit via FTP of WebDeploy. Op deze manier hebben de leden van de organisatie alleen toegang tot de App Services via API's die worden beheerd door Azure Active Directory (Azure AD).
 
 ### <a name="ftp"></a>FTP
 
@@ -144,23 +144,23 @@ Voer de volgende CLI-opdracht uit om FTP-toegang tot de site uit te schakelen. V
 az resource update --resource-group <resource-group> --name ftp --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Als u wilt controleren of FTP-toegang is geblokkeerd, kunt u proberen te verifiëren met behulp van een FTP-client zoals FileZilla. Als u de publicatiereferenties wilt ophalen, gaat u naar de overzichtsblade van uw site en klikt u op Publicatieprofiel downloaden. Gebruik de FTP-hostnaam, gebruikersnaam en het wachtwoord van het bestand om te verifiëren. U krijgt een 401-foutbericht dat aangeeft dat u niet bent geautoriseerd.
+Als u wilt controleren of FTP-toegang is geblokkeerd, kunt u proberen te verifiëren met behulp van een FTP-client, zoals FileZilla. Als u de publicatiereferenties wilt ophalen, gaat u naar de overzichtsblade van uw site en klikt u op Publicatieprofiel downloaden. Gebruik de FTP-hostnaam, gebruikersnaam en het wachtwoord van het bestand om te verifiëren. U krijgt dan een 401-foutbericht dat aangeeft dat u niet bent geautoriseerd.
 
 ### <a name="webdeploy-and-scm"></a>WebDeploy en SCM
 
-Voer de volgende CLI-opdracht uit om eenvoudige toegang tot de WebDeploy-poort en SCM-site uit te schakelen. Vervang de tijdelijke aanduidingen door uw resourcegroep en sitenaam. 
+Voer de volgende CLI-opdracht uit om basistoegang tot de WebDeploy-poort en SCM-site uit te schakelen. Vervang de tijdelijke aanduidingen door uw resourcegroep en sitenaam. 
 
 ```azurecli-interactive
 az resource update --resource-group <resource-group> --name scm --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Als u wilt controleren of de referenties voor het publicatieprofiel zijn geblokkeerd op WebDeploy, publiceert u een [web-app met behulp Visual Studio 2019.](/visualstudio/deployment/quickstart-deploy-to-azure)
+Als u wilt controleren of de referenties voor het publicatieprofiel zijn geblokkeerd op WebDeploy, probeert u een web-app te publiceren met [Visual Studio 2019.](/visualstudio/deployment/quickstart-deploy-to-azure)
 
 ### <a name="disable-access-to-the-api"></a>Toegang tot de API uitschakelen
 
-De API in de vorige sectie maakt gebruik van op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC). Dit betekent dat u een aangepaste rol kunt maken en gebruikers met lagere machtigingen kunt toewijzen aan de rol, zodat ze geen basisvereeniging op sites kunnen inschakelen. [](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role) Volg deze instructies om de aangepaste [rol te configureren.](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role)
+De API in de vorige sectie wordt op rollen gebaseerd toegangsbeheer van [](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role) Azure (Azure RBAC) gebruikt. Dit betekent dat u een aangepaste rol kunt maken en gebruikers met lagere machtigingen kunt toewijzen aan de rol, zodat ze geen basisvereeniging op sites kunnen inschakelen. Volg deze instructies om de aangepaste [rol te configureren.](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role)
 
-U kunt ook [een](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) Azure Monitor om geslaagde verificatieaanvragen te controleren en Azure Policy om deze configuratie af te dwingen voor alle sites in uw abonnement. [](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy)
+U kunt ook [Azure Monitor](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) om geslaagde verificatieaanvragen te controleren en Azure Policy [om](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy) deze configuratie af te dwingen voor alle sites in uw abonnement.
 
 ## <a name="next-steps"></a>Volgende stappen
 

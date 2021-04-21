@@ -4,15 +4,16 @@ description: Meer informatie over het maken van een Python-functie vanaf de opdr
 ms.date: 11/03/2020
 ms.topic: quickstart
 ms.custom:
-- devx-track-python
+- devx-track-powershell
 - devx-track-azurecli
+- devx-track-azurepowershell
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 626cff867a336880689373c289087e2332a816ee
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: e144304ae1b36ca02d4b8796e7994e87b09505d9
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107787445"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831092"
 ---
 # <a name="quickstart-create-a-python-function-in-azure-from-the-command-line"></a>Quickstart: Een Python-functie maken in Azure vanaf de opdrachtregel
 
@@ -292,7 +293,7 @@ Voordat u uw functiecode kunt implementeren in Azure, moet u een <abbr title="Ee
 
     ---
 
-    Vervang `<STORAGE_NAME>` door een naam die geschikt is voor u en <abbr title="De naam moet uniek zijn voor alle opslagaccounts die door alle Azure-klanten wereldwijd worden gebruikt. U kunt bijvoorbeeld een combinatie van uw persoonlijke naam of bedrijfsnaam, toepassingsnaam en numerieke id gebruiken, zoals in contosobizappstorage20.">uniek in Azure Storage</abbr>. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een account voor algemeen gebruik op dat wordt [ondersteund door Functions](storage-considerations.md#storage-account-requirements).
+    Vervang `<STORAGE_NAME>` door een naam die geschikt is voor u en <abbr title="De naam moet uniek zijn voor alle opslagaccounts die worden gebruikt door alle Azure-klanten wereldwijd. U kunt bijvoorbeeld een combinatie van uw persoonlijke naam of bedrijfsnaam, toepassingsnaam en numerieke id gebruiken, zoals in contosobizappstorage20.">uniek in Azure Storage</abbr>. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een account voor algemeen gebruik op dat wordt [ondersteund door Functions](storage-considerations.md#storage-account-requirements).
     
     Voor het opslagaccount worden gedurende deze quickstart slechts een paar dollarcenten in rekening gebracht.
 
@@ -364,7 +365,7 @@ Functions in msdocs-azurefunctions-qs:
 
 ---
 
-## <a name="7-invoke-the-function-on-azure"></a>7. De functie in Azure aanroepen
+## <a name="7-invoke-the-function-on-azure"></a>7. De functie aanroepen in Azure
 
 Omdat uw functie gebruikmaakt van een HTTP-trigger, roept u deze aan door een HTTP-aanvraag naar de URL ervan te maken in de browser of met een hulpprogramma zoals <abbr title="Een opdrachtregelprogramma voor het genereren van HTTP-aanvragen naar een URL; Zie https://curl.se/">curl</abbr>. 
 

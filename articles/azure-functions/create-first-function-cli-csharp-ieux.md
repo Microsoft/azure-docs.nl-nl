@@ -6,13 +6,14 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-csharp
 - devx-track-azurecli
+- devx-track-azurepowershell
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 2d03f8c820e0a8b6a19394649db66f8028b62781
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: fb287333ba8b0b4fc0bb35ce91d2e3113ff50e2b
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107768791"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831110"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-from-the-command-line"></a>Quickstart: Een C#-functie maken in Azure vanaf de opdrachtregel
 
@@ -24,7 +25,7 @@ ms.locfileid: "107768791"
 > - [Python](create-first-function-cli-python.md)
 > - [TypeScript](create-first-function-cli-typescript.md)
 
-In dit artikel gebruikt u opdrachtregelprogramma's om een op een C#-klassenbibliotheek gebaseerde functie te maken die reageert op HTTP-aanvragen. Nadat u de code lokaal hebt getest, implementeert u deze in de <abbr title="Een runtime-computingomgeving waarin alle details van de server transparant zijn voor toepassingsontwikkelaars, wat het proces van het implementeren en beheren van code vereenvoudigt.">serverloos</abbr> omgeving van <abbr title="De service van Azure die een goedkope serverloze computingomgeving biedt voor toepassingen.">Azure Functions</abbr>.
+In dit artikel gebruikt u opdrachtregelprogramma's om een op een C#-klassenbibliotheek gebaseerde functie te maken die reageert op HTTP-aanvragen. Nadat u de code lokaal hebt getest, implementeert u deze in de <abbr title="Een runtime-computingomgeving waarin alle details van de server transparant zijn voor toepassingsontwikkelaars, waardoor het implementatie- en beheerproces van code wordt vereenvoudigd.">serverloos</abbr> omgeving van <abbr title="De service van Azure die een voordelige serverloze computingomgeving biedt voor toepassingen.">Azure Functions</abbr>.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
@@ -32,7 +33,7 @@ Er is ook een [Versie op basis van Visual Studio Code](create-first-function-vs-
 
 ## <a name="1-prepare-your-environment"></a>1. Uw omgeving voorbereiden
 
-+ Een Azure-account krijgen <abbr title="Het profiel dat factureringsgegevens voor Azure-gebruik bijhoudt.">account</abbr> met een actief <abbr title="De basisorganisatiestructuur waarin u resources in Azure beheert, meestal gekoppeld aan een individu of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
++ Een Azure-account krijgen <abbr title="Het profiel dat factureringsgegevens voor Azure-gebruik bijhoudt.">account</abbr> met een actief <abbr title="De basisstructuur van de organisatie waarin u resources in Azure beheert, meestal gekoppeld aan een individu of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 
 + Installeer [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
 
@@ -48,11 +49,11 @@ Er is ook een [Versie op basis van Visual Studio Code](create-first-function-vs-
 
 ### <a name="2-verify-prerequisites"></a>2. Vereisten controleren
 
-Controleer uw vereisten, die afhankelijk zijn van het gebruik van de Azure CLI of Azure PowerShell voor het maken van Azure-resources:
+Controleer uw vereisten, die afhankelijk zijn van of u de Azure CLI gebruikt of Azure PowerShell voor het maken van Azure-resources:
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-+ Voer uit in een terminal- of opdrachtvenster `func --version` om te controleren of de <abbr title="De set opdrachtregelprogramma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3.x.
++ Voer in een terminal- of opdrachtvenster uit `func --version` om te controleren of de <abbr title="De set opdrachtregelprogramma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3.x.
 
 + **Uitvoeren** `az --version` om te controleren of de Versie van Azure CLI 2.4 of hoger is.
 
@@ -62,7 +63,7 @@ Controleer uw vereisten, die afhankelijk zijn van het gebruik van de Azure CLI o
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-+**Uitvoeren** `func --version` om te controleren of Azure Functions Core Tools versie 3.x is.
++**Uitvoeren** `func --version` om te controleren of de Azure Functions Core Tools versie 3.x zijn.
 
 + **Uitvoeren** `(Get-Module -ListAvailable Az).Version` en controleer versie 5.0 of hoger. 
 
@@ -74,7 +75,7 @@ Controleer uw vereisten, die afhankelijk zijn van het gebruik van de Azure CLI o
 
 ## <a name="3-create-a-local-function-project"></a>3. Een lokaal functieproject maken
 
-In deze sectie maakt u een lokale <abbr title="Een logische container voor een of meer afzonderlijke functies die samen kunnen worden geïmplementeerd en beheerd.">Azure Functions project</abbr> in C#. Elke functie in het project reageert op een specifieke <abbr title="Een gebeurtenis die de code van de functie aanroept, zoals een HTTP-aanvraag, een wachtrijbericht of een specifiek tijdstip.">activeren</abbr>.
+In deze sectie maakt u een lokale <abbr title="Een logische container voor een of meer afzonderlijke functies die samen kunnen worden geïmplementeerd en beheerd.">Azure Functions project</abbr> in C#. Elke functie in het project reageert op een specifiek <abbr title="Een gebeurtenis die de code van de functie aanroept, zoals een HTTP-aanvraag, een wachtrijbericht of een specifiek tijdstip.">activeren</abbr>.
 
 1. Voer de `func init` opdracht uit om een Functions-project te maken in een map met de naam *LocalFunctionProj* met de opgegeven runtime:  
 
@@ -96,7 +97,7 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
     ``` 
     Het `--name` argument is de unieke naam van uw functie (HttpExample).
 
-    Met `--template` het argument wordt de trigger van de functie (HTTP) opgegeven.
+    Met `--template` het argument wordt de trigger (HTTP) van de functie opgegeven.
 
     
     <br/>   
@@ -141,15 +142,15 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
     <details>
     <summary><strong>Ik zie HttpExample niet in de uitvoer</strong></summary>
 
-    Als HttpExample niet wordt weergegeven, hebt u de host waarschijnlijk van buiten de hoofdmap van het project gestart. In dat geval gebruikt u <kbd>Ctrl+C om</kbd> de host te stoppen, naar de hoofdmap van het project te navigeren en de vorige opdracht opnieuw uit te voeren.
+    Als HttpExample niet wordt weergegeven, hebt u de host waarschijnlijk gestart buiten de hoofdmap van het project. Gebruik in dat geval <kbd>Ctrl+C</kbd> om de host te stoppen, navigeer naar de hoofdmap van het project en voer de vorige opdracht opnieuw uit.
     </details>
 
-1. Kopieer de URL van uw **HttpExample-functie** uit deze uitvoer naar een browser en plaats de querytekenreeks **?name=<YOUR_NAME>**, waardoor de volledige URL als wordt **http://localhost:7071/api/HttpExample?name=Functions** weergegeven. In de browser moet een bericht als **Hallo functies worden weergegeven:**
+1. Kopieer de URL van uw **HttpExample-functie** van deze uitvoer naar een browser en plaats de querytekenreeks **?name=<YOUR_NAME>**, waardoor de volledige URL als wordt **http://localhost:7071/api/HttpExample?name=Functions** weergegeven. In de browser moet een bericht worden weergegeven als **Hallo functies:**
 
     ![Resultaat van de functie lokaal uitgevoerd in de browser](../../includes/media/functions-run-function-test-local-cli/function-test-local-browser.png)
 
 
-1. Selecteer  <kbd>Ctrl+C en</kbd> kies <kbd>y om</kbd> de functions-host te stoppen.
+1. Selecteer  <kbd>Ctrl+C en</kbd> kies <kbd>y om</kbd> de Functions-host te stoppen.
 
 <br/>
 
@@ -157,7 +158,7 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
     
 ## <a name="5-create-supporting-azure-resources-for-your-function"></a>5. Ondersteunende Azure-resources maken voor uw functie
 
-Voordat u uw functiecode in Azure kunt implementeren, moet u een <abbr title="Een logische container voor gerelateerde Azure-resources die u als eenheid kunt beheren.">resourcegroep</abbr>A <abbr title="Een account dat al uw Azure Storage-gegevensobjecten bevat. Het opslagaccount biedt een unieke naamruimte voor uw opslaggegevens.">opslagaccount</abbr>, en een <abbr title="De cloudresource die als host fungeert voor serverloze functies in Azure, die de onderliggende rekenomgeving biedt waarin functies worden uitgevoerd.">functie-app</abbr> met behulp van de volgende opdrachten:
+Voordat u uw functiecode kunt implementeren in Azure, moet u een <abbr title="Een logische container voor gerelateerde Azure-resources die u als eenheid kunt beheren.">resourcegroep</abbr>A <abbr title="Een account dat al uw Azure Storage-gegevensobjecten bevat. Het opslagaccount biedt een unieke naamruimte voor uw opslaggegevens.">opslagaccount</abbr>, en een <abbr title="De cloudresource die als host fungeert voor serverloze functies in Azure, die de onderliggende rekenomgeving biedt waarin functies worden uitgevoerd.">functie-app</abbr> met behulp van de volgende opdrachten:
 
 1. Als u dit nog niet hebt gedaan, meldt u zich aan bij Azure:
 
@@ -245,7 +246,7 @@ Voordat u uw functiecode in Azure kunt implementeren, moet u een <abbr title="Ee
     <details>
     <summary><strong>Wat zijn de kosten van de resources die zijn ingericht in Azure?</strong></summary>
 
-    Met deze opdracht maakt u een functie-app die wordt uitgevoerd in de opgegeven taalruntime onder het [Azure Functions Consumption-abonnement](consumption-plan.md). Dit is gratis voor de hoeveelheid gebruik die u hier maakt. Met deze opdracht wordt in dezelfde resourcegroep ook een gekoppelde instantie van Azure Application Insights ingericht, waarmee u uw functie-app kunt bewaken en logboeken kunt weergeven. Zie [Monitor Azure Functions](functions-monitoring.md) (Azure Functions bewaken) voor meer informatie. Er worden pas kosten in rekening gebracht voor de instantie als u deze activeert.
+    Met deze opdracht maakt u een functie-app die wordt uitgevoerd in de opgegeven taalruntime onder het [Azure Functions Consumption-abonnement.](consumption-plan.md)Dit is gratis voor de hoeveelheid gebruik die u hier maakt. Met deze opdracht wordt in dezelfde resourcegroep ook een gekoppelde instantie van Azure Application Insights ingericht, waarmee u uw functie-app kunt bewaken en logboeken kunt weergeven. Zie [Monitor Azure Functions](functions-monitoring.md) (Azure Functions bewaken) voor meer informatie. Er worden pas kosten in rekening gebracht voor de instantie als u deze activeert.
     </details>
 
 <br/>
@@ -255,7 +256,7 @@ Voordat u uw functiecode in Azure kunt implementeren, moet u een <abbr title="Ee
 ## <a name="6-deploy-the-function-project-to-azure"></a>6. Het functieproject implementeren in Azure
 
 
-**Kopiëren** ' func azure funtionapp publish <APP_NAME> in uw terminal **Vervang door** de naam van `<APP_NAME>` uw app.
+**Kopiëren** ' func azure funtionapp publish <APP_NAME> in uw terminal **Vervang** `<APP_NAME>` door de naam van uw app.
 **Uitvoeren**
 
 ```console

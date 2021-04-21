@@ -3,13 +3,14 @@ title: Een aangepaste container configureren
 description: Meer informatie over het configureren van een aangepaste container in Azure App Service. In dit artikel worden de meest algemene configuratietaken beschreven.
 ms.topic: article
 ms.date: 02/23/2021
+ms.custom: devx-track-azurepowershell
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 7bfebe318d93a544c964d70ea0a28144a7f0e43b
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 48d2eeec1bdb1b9b4a393b4116092f043716077c
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107764239"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832029"
 ---
 # <a name="configure-a-custom-container-for-azure-app-service"></a>Een aangepaste container configureren voor Azure App Service
 
@@ -139,7 +140,7 @@ Deze methode werkt zowel voor apps met één container als voor apps met meerder
 
 U kunt de *map C:\home* in het bestandssysteem van uw app gebruiken om bestanden bij het opnieuw opstarten persistent te maken en deze te delen tussen exemplaren. De `C:\home` in uw app wordt geleverd om uw container-app toegang te geven tot permanente opslag.
 
-Wanneer permanente opslag is uitgeschakeld, worden schrijf schrijffuncties naar de `C:\home` map niet persistent gemaakt. [Docker-hostlogboeken en containerlogboeken](#access-diagnostic-logs) worden opgeslagen in een standaard permanente gedeelde opslag die niet is gekoppeld aan de container. Wanneer permanente opslag is ingeschakeld, blijven alle schrijfgegevens naar de map persistent en zijn ze toegankelijk voor alle exemplaren van een uitschaalbare app en zijn `C:\home` logboeken toegankelijk op `C:\home\LogFiles` .
+Wanneer permanente opslag is uitgeschakeld, worden schrijf schrijffuncties naar de `C:\home` map niet persistent gemaakt. [Docker-hostlogboeken en containerlogboeken](#access-diagnostic-logs) worden opgeslagen in een standaard permanente gedeelde opslag die niet is gekoppeld aan de container. Wanneer permanente opslag is ingeschakeld, blijven alle schrijf schrijfingen naar de map persistent en zijn ze toegankelijk voor alle exemplaren van een uitschaalbare app en zijn `C:\home` logboeken toegankelijk op `C:\home\LogFiles` .
 
 ::: zone-end
 
@@ -147,7 +148,7 @@ Wanneer permanente opslag is uitgeschakeld, worden schrijf schrijffuncties naar 
 
 U kunt de *map /home* in het bestandssysteem van uw app gebruiken om bestanden bij het opnieuw opstarten persistent te maken en deze te delen tussen exemplaren. De `/home` in uw app wordt geleverd om uw container-app toegang te geven tot permanente opslag.
 
-Wanneer permanente opslag is uitgeschakeld, worden schrijf schrijffuncties naar de map niet persistent gemaakt tijdens het opnieuw opstarten van apps of `/home` tussen meerdere exemplaren. De enige uitzondering hierop is `/home/LogFiles` de map , die wordt gebruikt voor het opslaan van de Docker- en containerlogboeken. Wanneer permanente opslag is ingeschakeld, blijven alle schrijf schrijfingen naar de map persistent en zijn ze toegankelijk voor alle exemplaren van een `/home` geschaalde app.
+Wanneer permanente opslag is uitgeschakeld, worden schrijffuncties naar de map niet persistent gemaakt tijdens het opnieuw opstarten van apps of `/home` tussen meerdere exemplaren. De enige uitzondering hierop is `/home/LogFiles` de map , die wordt gebruikt voor het opslaan van de Docker- en containerlogboeken. Wanneer permanente opslag is ingeschakeld, blijven alle schrijf schrijfingen naar de map persistent en zijn ze toegankelijk voor alle exemplaren van een `/home` uitschaalde app.
 
 ::: zone-end
 
@@ -174,11 +175,11 @@ De front-ends bevinden zich in Azure-datacenters. Als u TLS/SSL gebruikt voor uw
 
 ::: zone pivot="container-windows"
 
-## <a name="customize-aspnet-machine-key-injection"></a>Een ASP.NET machinesleutelinjectie aanpassen
+## <a name="customize-aspnet-machine-key-injection"></a>Computersleutelinjectie ASP.NET aanpassen
 
  Tijdens het starten van de container worden automatisch gegenereerde sleutels in de container geïnjecteerd als de machinesleutels voor ASP.NET cryptografische routines. U vindt [deze sleutels in uw container door](#connect-to-the-container) te zoeken naar de volgende omgevingsvariabelen: , , , `MACHINEKEY_Decryption` `MACHINEKEY_DecryptionKey` `MACHINEKEY_ValidationKey` `MACHINEKEY_Validation` . 
 
-De nieuwe sleutels bij elke herstart kunnen opnieuw worden ASP.NET formulierverificatie en weergavetoestand, als uw app er afhankelijk van is. Als u wilt voorkomen dat sleutels automatisch opnieuw worden gebruikt, stelt u deze handmatig [in App Service app-instellingen.](#configure-environment-variables) 
+De nieuwe sleutels bij elke herstart kunnen opnieuw worden ingesteld ASP.NET formulierverificatie en weergave-status, als uw app er afhankelijk van is. Als u wilt voorkomen dat sleutels automatisch opnieuw worden gebruikt, stelt u deze handmatig [in App Service app-instellingen.](#configure-environment-variables) 
 
 ## <a name="connect-to-the-container"></a>Verbinding maken met de container
 
@@ -214,7 +215,7 @@ Als u het Docker-logboek probeert te downloaden dat momenteel wordt gebruikt met
 
 ### <a name="with-the-kudu-api"></a>Met de Kudu-API
 
-Navigeer rechtstreeks `https://<app-name>.scm.azurewebsites.net/api/logs/docker` naar om de metagegevens voor de Docker-logboeken te bekijken. Er wordt mogelijk meer dan één logboekbestand weergegeven en met de eigenschap `href` kunt u het logboekbestand rechtstreeks downloaden. 
+Navigeer rechtstreeks `https://<app-name>.scm.azurewebsites.net/api/logs/docker` naar om de metagegevens voor de Docker-logboeken te bekijken. Mogelijk wordt meer dan één logboekbestand weergegeven en met de eigenschap kunt u `href` het logboekbestand rechtstreeks downloaden. 
 
 Als u alle logboeken samen in één ZIP-bestand wilt downloaden, gaat u naar `https://<app-name>.scm.azurewebsites.net/api/logs/docker/zip` .
 
@@ -232,7 +233,7 @@ In PowerShell:
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WEBSITE_MEMORY_LIMIT_MB"=2000}
 ```
 
-De waarde is gedefinieerd in MB en moet kleiner en gelijk zijn aan het totale fysieke geheugen van de host. In een abonnement met App Service 8 GB RAM mag het cumulatieve totaal van voor alle apps bijvoorbeeld niet groter `WEBSITE_MEMORY_LIMIT_MB` zijn dan 8 GB. Informatie over hoeveel geheugen beschikbaar is voor elke prijscategorie vindt u [in](https://azure.microsoft.com/pricing/details/app-service/windows/)App Service prijsinformatie in de sectie Premium **Container (Windows)-abonnement.**
+De waarde is gedefinieerd in MB en moet kleiner en gelijk zijn aan het totale fysieke geheugen van de host. In een abonnement met App Service 8 GB RAM mag het cumulatieve totaal van voor alle apps bijvoorbeeld niet groter `WEBSITE_MEMORY_LIMIT_MB` zijn dan 8 GB. Informatie over hoeveel geheugen beschikbaar is voor elke prijscategorie vindt u [in](https://azure.microsoft.com/pricing/details/app-service/windows/)App Service prijzen in de sectie Premium **Container (Windows)-abonnement.**
 
 ## <a name="customize-the-number-of-compute-cores"></a>Het aantal rekenkernen aanpassen
 

@@ -146,22 +146,24 @@
           href: document-translation/create-sas-tokens.md
     - name: Referentie
       items:
-        - name: Documentindelingen opmaken
-          href: document-translation/reference/get-document-formats.md
-        - name: Woordenlijstindelingen krijgen
-          href: document-translation/reference/get-glossary-formats.md
-        - name: Documentopslagbron op halen
-          href: document-translation/reference/get-document-storage-source.md
-        - name: Batchaanvraag verzenden
-          href: document-translation/reference/submit-batch-request.md
-        - name: Status van bewerkingsdocumenten op halen
-          href: document-translation/reference/get-operation-documents-status.md
+        - name: Ondersteunde documentindelingen krijgen
+          href: document-translation/reference/get-supported-document-formats.md
+        - name: Ondersteunde woordenlijstindelingen krijgen
+          href: document-translation/reference/get-supported-glossary-formats.md
+        - name: Ondersteunde opslagbronnen op halen
+          href: document-translation/reference/get-supported-storage-sources.md
+        - name: Vertaling starten
+          href: document-translation/reference/start-translation.md
         - name: De status van documenten op halen
+          href: document-translation/reference/get-documents-status.md
+        - name: Documentstatus op halen
           href: document-translation/reference/get-document-status.md
-        - name: Bewerkingen op halen
-          href: document-translation/reference/get-operations.md
-        - name: Bewerking annuleren
-          href: document-translation/reference/cancel-operation.md
+        - name: De vertaalstatus op halen
+          href: document-translation/reference/get-translations-status.md
+        - name: Vertaalstatus op halen
+          href: document-translation/reference/get-translation-status.md
+        - name: Vertaling annuleren
+          href: document-translation/reference/cancel-translation.md
 - name: Instructiegidsen
   items:
     - name: Gereedheid voor bedrijven

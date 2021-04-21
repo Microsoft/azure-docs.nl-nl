@@ -1,28 +1,29 @@
 ---
-title: Een runtime-Azure Functions richten
+title: Runtimeversies Azure Functions doel
 description: Azure Functions ondersteunt meerdere versies van de runtime. Meer informatie over het opgeven van de runtime-versie van een functie-app die wordt gehost in Azure.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 9a9f8fca1c39fd0251df3e3a8da3d789aae4d3d6
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: ca107ec2f0ce04bf7b1eae3a98087217c267d33d
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107779269"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830912"
 ---
-# <a name="how-to-target-azure-functions-runtime-versions"></a>Een runtime-Azure Functions richten
+# <a name="how-to-target-azure-functions-runtime-versions"></a>Runtime-Azure Functions gebruiken
 
-Een functie-app wordt uitgevoerd op een specifieke versie van de Azure Functions runtime. Er zijn drie belangrijke versies: [3.x, 2.x en 1.x.](functions-versions.md) Functie-apps worden standaard gemaakt in versie 3.x van de runtime. In dit artikel wordt uitgelegd hoe u een functie-app in Azure configureert om te worden uitgevoerd op de versie die u kiest. Zie Code and test Azure Functions local (Code en testomgeving lokaal) voor meer informatie over het [configureren van een lokale ontwikkelomgeving Azure Functions een specifieke versie.](functions-run-local.md)
+Een functie-app wordt uitgevoerd op een specifieke versie van de Azure Functions runtime. Er zijn drie belangrijke versies: [3.x, 2.x en 1.x.](functions-versions.md) Functie-apps worden standaard gemaakt in versie 3.x van de runtime. In dit artikel wordt uitgelegd hoe u een functie-app configureert in Azure om uit te voeren op de versie die u kiest. Zie Code and test Azure Functions local (Code en testomgeving lokaal) voor meer informatie over het configureren [van een lokale ontwikkelomgeving Azure Functions een specifieke versie.](functions-run-local.md)
 
-De manier waarop u een specifieke versie handmatig richt, is afhankelijk van of u Windows of Linux gebruikt.
+De manier waarop u zich handmatig op een specifieke versie richt, is afhankelijk van het feit of u Windows of Linux gebruikt.
 
 ## <a name="automatic-and-manual-version-updates"></a>Automatische en handmatige versie-updates
 
 _Deze sectie is niet van toepassing bij het uitvoeren van uw functie-app [op Linux.](#manual-version-updates-on-linux)_
 
-Azure Functions kunt u zich richten op een specifieke versie van de runtime in Windows met behulp van `FUNCTIONS_EXTENSION_VERSION` de toepassingsinstelling in een functie-app. De functie-app blijft op de opgegeven hoofdversie totdat u expliciet kiest voor een nieuwe versie. Als u alleen de belangrijkste versie opgeeft, wordt de functie-app automatisch bijgewerkt naar nieuwe secundaire versies van de runtime wanneer deze beschikbaar komen. Nieuwe secundaire versies mogen geen belangrijke wijzigingen introduceren. 
+Azure Functions kunt u zich richten op een specifieke versie van de runtime in Windows met behulp van `FUNCTIONS_EXTENSION_VERSION` de toepassingsinstelling in een functie-app. De functie-app blijft op de opgegeven hoofdversie totdat u expliciet kiest om over te gaan naar een nieuwe versie. Als u alleen de belangrijkste versie opgeeft, wordt de functie-app automatisch bijgewerkt naar nieuwe secundaire versies van de runtime wanneer deze beschikbaar komen. Nieuwe secundaire versies mogen geen belangrijke wijzigingen introduceren. 
 
-Als u een secundaire versie opgeeft (bijvoorbeeld '2.0.12345'), wordt de functie-app vastgemaakt aan die specifieke versie totdat u deze expliciet wijzigt. Oudere secundaire versies worden regelmatig verwijderd uit de productieomgeving. Als uw secundaire versie wordt verwijderd, wordt uw functie-app weer uitgevoerd met de nieuwste versie in plaats van de versie die is ingesteld in `FUNCTIONS_EXTENSION_VERSION` . Daarom moet u snel eventuele problemen met uw functie-app oplossen waarvoor een specifieke secundaire versie is vereist. Vervolgens kunt u terugkeren naar de belangrijkste versie. Secundaire versieverwijderingen worden aangekondigd in [App Service aankondigingen](https://github.com/Azure/app-service-announcements/issues).
+Als u een secundaire versie opgeeft (bijvoorbeeld '2.0.12345'), wordt de functie-app vastgemaakt aan die specifieke versie totdat u deze expliciet wijzigt. Oudere secundaire versies worden regelmatig verwijderd uit de productieomgeving. Als uw secundaire versie wordt verwijderd, wordt uw functie-app weer uitgevoerd op de nieuwste versie in plaats van de versie die is ingesteld in `FUNCTIONS_EXTENSION_VERSION` . Als zodanig moet u snel eventuele problemen met uw functie-app oplossen waarvoor een specifieke secundaire versie is vereist. Vervolgens kunt u terugkeren naar de belangrijkste versie. Secundaire versieverwijderingen worden aangekondigd in [App Service aankondigingen](https://github.com/Azure/app-service-announcements/issues).
 
 > [!NOTE]
 > Als u vastmaken aan een specifieke belangrijke versie van Azure Functions en vervolgens probeert te publiceren naar Azure met behulp van Visual Studio, wordt er een dialoogvenster weergegeven waarin u wordt gevraagd om bij te werken naar de nieuwste versie of de publicatie te annuleren. Voeg de eigenschap toe aan `<DisableFunctionExtensionVersionUpdate>true</DisableFunctionExtensionVersionUpdate>` het bestand om dit te `.csproj` voorkomen.
@@ -69,9 +70,9 @@ az functionapp config appsettings list --name <function_app> \
 --resource-group <my_resource_group>
 ```
 
-Vervang in deze code door `<function_app>` de naam van uw functie-app. Vervang ook `<my_resource_group>` door de naam van de resourcegroep voor uw functie-app. 
+Vervang in deze code `<function_app>` door de naam van uw functie-app. Vervang ook `<my_resource_group>` door de naam van de resourcegroep voor uw functie-app. 
 
-U ziet `FUNCTIONS_EXTENSION_VERSION` de in de volgende uitvoer, die voor de duidelijkheid is afgekapt:
+U ziet de in de volgende uitvoer, die `FUNCTIONS_EXTENSION_VERSION` voor de duidelijkheid is afgekapt:
 
 ```output
 [

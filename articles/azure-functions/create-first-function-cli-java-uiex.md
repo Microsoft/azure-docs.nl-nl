@@ -5,13 +5,14 @@ ms.date: 11/03/2020
 ms.topic: quickstart
 ms.custom:
 - devx-track-java
+- devx-track-azurepowershell
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: a270f482438129b7b07506744bf3f9489b242900
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 910e19137873ed5c34584b3293ebd4248c5fe2f8
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107787481"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831902"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -25,7 +26,7 @@ ms.locfileid: "107787481"
 
 Gebruik opdrachtregelprogramma's om een Java-functie te maken die reageert op HTTP-aanvragen. Test de code lokaal en implementeer deze vervolgens in de serverloze omgeving van Azure Functions.
 
-Voor het voltooien van deze snelstart worden kosten in de kosten voor een paar dollarcent of minder in uw <abbr title="Het profiel dat factureringsgegevens voor Azure-gebruik bijhoudt.">Azure-account</abbr>.
+Als u deze quickstart voltooit, worden er slechts enkele dollarcenten of minder in uw kosten ingerekend <abbr title="Het profiel dat factureringsgegevens voor Azure-gebruik bijhoudt.">Azure-account</abbr>.
 
 Als u liever niet ontwikkelt met Maven, raadpleegt u onze vergelijkbare zelfstudies voor Java-ontwikkelaars met [Gradle](./functions-create-first-java-gradle.md), [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) en [Visual Studio Code](create-first-function-vs-code-java.md).
 
@@ -45,7 +46,7 @@ Voordat u begint, moet u het volgende hebben:
 
 ### <a name="prerequisite-check"></a>Controle van vereisten
 
-+ Voer in een terminal- of opdrachtvenster uit `func --version` om te controleren of de <abbr title="De set opdrachtregelprogramma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3.x.
++ Voer uit in een terminal- of opdrachtvenster `func --version` om te controleren of de <abbr title="De set opdrachtregelprogramma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3.x.
 
 + Voer `az --version` uit om te controleren of u versie 2.4 of hoger hebt van de Azure CLI.
 
@@ -82,7 +83,7 @@ In Azure Functions is een functieproject een container voor een of meer afzonder
 
     <br/>
     <details>
-    <summary><strong>Functies uitvoeren in Java 11</strong></summary>
+    <summary><strong>Functies uitvoeren op Java 11</strong></summary>
 
     Gebruik `-DjavaVersion=11` als u uw functies wilt uitvoeren in Java 11. Zie [Java-versies](functions-reference-java.md#java-versions) voor meer informatie.
     </details>
@@ -131,7 +132,7 @@ Het archetype genereert ook een moduletest voor uw functie. Wanneer u de functie
 <details>
 <summary><strong>Code voor pom.xml</strong></summary>
 
-Instellingen voor de Azure-resources die zijn  gemaakt voor het hosten van uw app, worden gedefinieerd in het configuratie-element van de invoegvoeging met een **groupId** van in het `com.microsoft.azure` *gegenereerde* pom.xmlbestand. Met het configuratie-element hieronder wordt bijvoorbeeld een implementatie op basis van Maven instrueren om een functie-app te maken in de `java-functions-group` resourcegroep in de `westus` <abbr title="Een geografische verwijzing naar een specifiek Azure-datacenter waarin resources worden toegewezen.">regio</abbr>. De functie-app zelf wordt uitgevoerd in Windows binnen het `java-functions-app-service-plan`-plan. Dit is standaard een serverloos verbruiksabonnement.
+Instellingen voor de Azure-resources die zijn  gemaakt voor het hosten van uw app, worden gedefinieerd in het configuratie-element van de invoegvoegserver met een **groupId** van in het `com.microsoft.azure` *gegenereerde* pom.xmlbestand. Met het configuratie-element hieronder wordt bijvoorbeeld een implementatie op basis van Maven instrueert om een functie-app te maken in de `java-functions-group` resourcegroep in de `westus` <abbr title="Een geografische verwijzing naar een specifiek Azure-datacenter waarin resources worden toegewezen.">regio</abbr>. De functie-app zelf wordt uitgevoerd in Windows binnen het `java-functions-app-service-plan`-plan. Dit is standaard een serverloos verbruiksabonnement.
 
 :::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-107":::
 
@@ -143,7 +144,7 @@ U kunt deze instellingen wijzigen om te bepalen hoe resources worden gemaakt in 
 
 ## <a name="3-run-the-function-locally"></a>3. De functie lokaal uitvoeren
 
-1. **Voer uw functie** uit door de lokale Azure Functions runtime host te starten vanuit de *map LocalFunctionProj:*
+1. **Voer de functie uit** door de lokale Azure Functions runtime host starten vanuit de *map LocalFunctionProj:*
 
     ```console
     mvn clean package
@@ -164,15 +165,15 @@ U kunt deze instellingen wijzigen om te bepalen hoe resources worden gemaakt in 
     ...
     </pre>
 
-    Als HttpExample niet verschijnt zoals hierboven weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. In dat geval gebruikt u <kbd>Ctrl+C om</kbd> de host te stoppen, naar de hoofdmap van het project te navigeren en de vorige opdracht opnieuw uit te voeren.
+    Als HttpExample niet verschijnt zoals hierboven weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. Gebruik in dat geval <kbd>Ctrl+C</kbd> om de host te stoppen, navigeer naar de hoofdmap van het project en voer de vorige opdracht opnieuw uit.
 
-1. **Kopieer de URL** van uw functie uit deze uitvoer naar een browser en kopieer de querytekenreeks , waardoor de `HttpExample` volledige URL wordt `?name=<YOUR_NAME>` gemaakt, zoals `http://localhost:7071/api/HttpExample?name=Functions` . In de browser moet een bericht als het volgende weergeven `Hello Functions`:
+1. **Kopieer de URL van** uw functie uit deze uitvoer naar een browser en kopieer de `HttpExample` querytekenreeks en maak de volledige `?name=<YOUR_NAME>` URL, zoals `http://localhost:7071/api/HttpExample?name=Functions` . In de browser moet een bericht als het volgende weergeven `Hello Functions`:
 
     ![Resultaat van de functie lokaal uitgevoerd in de browser](./media/functions-create-first-azure-function-azure-cli/function-test-local-browser.png)
 
     De terminal waarin u uw project hebt gestart, toont ook de logboek uitvoer wanneer u aanvragen doet.
 
-1. Wanneer u klaar bent, gebruikt u <kbd>Ctrl+C en</kbd> kiest <kbd>u y om</kbd> de functions-host te stoppen.
+1. Wanneer u klaar bent, gebruikt u <kbd>Ctrl +C</kbd> en kiest <kbd>u y om</kbd> de functions-host te stoppen.
 
 <br>
 <hr/>
@@ -216,7 +217,7 @@ Als u een functie-app wilt maken die wordt uitgevoerd op Linux in plaats van Win
 
 <br/>
 <details>
-<summary><strong>Wat wordt er gemaakt in Azure?</strong></summary>
+<summary><strong>Wat wordt er in Azure gemaakt?</strong></summary>
 
 + Resourcegroep. Met de naam _java-functions-group_.
 + Opslagaccount. Vereist door Funtions. De naam wordt willekeurig gegenereerd op basis van de vereisten van het opslagaccount.
@@ -227,13 +228,13 @@ Als u een functie-app wilt maken die wordt uitgevoerd op Linux in plaats van Win
 <br>
 <hr/>
 
-## <a name="5-invoke-the-function-on-azure"></a>5. De functie in Azure aanroepen
+## <a name="5-invoke-the-function-on-azure"></a>5. De functie aanroepen in Azure
 
 Omdat uw functie gebruikmaakt van een HTTP-trigger, roept u deze aan door een **HTTP-aanvraag** naar de URL ervan te maken in de browser of met een hulpprogramma zoals <abbr title="Een opdrachtregelprogramma voor het genereren van HTTP-aanvragen naar een URL; Zie https://curl.se/">curl</abbr>.
 
 # <a name="browser"></a>[Browser](#tab/browser)
 
-Kopieer de volledige **Aanroep-URL** die wordt weergegeven in de uitvoer van de opdracht naar een adresbalk van de `publish` browser, en voer de queryparameter `&name=Functions` toe. De browser moet vergelijkbare uitvoer weergeven als u de functie lokaal hebt uitgevoerd.
+Kopieer de volledige **Aanroep-URL** die wordt weergegeven in de uitvoer van de opdracht naar een adresbalk van de `publish` browser, met de queryparameter `&name=Functions` . De browser moet vergelijkbare uitvoer weergeven als u de functie lokaal hebt uitgevoerd.
 
 ![De uitvoer van de functie die wordt uitgevoerd op Azure in een browser](../../includes/media/functions-run-remote-azure-cli/function-test-cloud-browser.png)
 
@@ -252,7 +253,7 @@ Voer [`curl`](https://curl.haxx.se/) uit met de **aanroep-URL** en voeg de param
 
 ## <a name="6-clean-up-resources"></a>6. Resources ops schonen
 
-Als u verder gaat met de [volgende stap en](#next-steps) een Azure Storage <abbr title="In Azure Storage een manier om een functie te koppelen aan een opslagwachtrij, zodat deze berichten in de wachtrij kan maken.">wachtrijuitvoerbinding</abbr>, bewaar al uw resources terwijl u verder gaat bouwen op wat u al hebt gedaan.
+Als u verder gaat met de [volgende stap en](#next-steps) een Azure Storage <abbr title="In Azure Storage betekent een manier om een functie te koppelen aan een opslagwachtrij, zodat deze berichten in de wachtrij kan maken.">wachtrijuitvoerbinding</abbr>, bewaar al uw resources terwijl u verder gaat bouwen op wat u al hebt gedaan.
 
 Gebruik anders de volgende opdracht om de resourcegroep en alle bijbehorende resources te verwijderen om te voorkomen dat er verdere kosten in rekening worden gebracht.
 

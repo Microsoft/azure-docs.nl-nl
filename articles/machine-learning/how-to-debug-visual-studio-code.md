@@ -1,7 +1,7 @@
 ---
-title: Interactieve fout opsporing met Visual Studio code
+title: Interactieve debugging met Visual Studio Code
 titleSuffix: Azure Machine Learning
-description: Interactief fouten opsporen Azure Machine Learning code, pijp lijnen en implementaties met Visual Studio code
+description: Interactief fouten opsporen Azure Machine Learning code, pijplijnen en implementaties met behulp van Visual Studio Code
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,116 +9,116 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 09/30/2020
-ms.openlocfilehash: 783b5afdaef369582614cde3525f7968fdb5e567
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 69a69afedbd86871987a8e62b55dfc070121cc78
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102508636"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813862"
 ---
-# <a name="interactive-debugging-with-visual-studio-code"></a>Interactieve fout opsporing met Visual Studio code
+# <a name="interactive-debugging-with-visual-studio-code"></a>Interactieve debugging met Visual Studio Code
 
 
 
-Leer hoe u interactief fouten opspoort Azure Machine Learning experimenten, pijp lijnen en implementaties met Visual Studio code (VS code) en [debugpy](https://github.com/microsoft/debugpy/).
+Leer hoe u interactief fouten opsport Azure Machine Learning experimenten, pijplijnen en implementaties met behulp van Visual Studio Code (VS Code) en [foutopsporing](https://github.com/microsoft/debugpy/).
 
 ## <a name="run-and-debug-experiments-locally"></a>Experimenten lokaal uitvoeren en fouten opsporen
 
-Gebruik de Azure Machine Learning-extensie om uw machine learning experimenten te valideren, uit te voeren en fouten op te sporen voordat u deze naar de Cloud verzendt.
+Gebruik de Azure Machine Learning extensie om uw experimenten te valideren, uit te voeren machine learning fouten op te sporen voordat u ze naar de cloud indient.
 
 ### <a name="prerequisites"></a>Vereisten
 
-* Azure Machine Learning VS code-extensie (preview-versie). Zie [Azure machine learning VS code-extensie instellen](tutorial-setup-vscode-extension.md)voor meer informatie.
+* Azure Machine Learning VS Code-extensie (preview). Zie Set [up Azure Machine Learning VS Code extension (VS Code-extensie instellen) voor meer informatie.](tutorial-setup-vscode-extension.md)
 * [Docker](https://www.docker.com/get-started)
   * Docker Desktop voor Mac en Windows
   * Docker-engine voor Linux.
 * [Python 3](https://www.python.org/downloads/)
 
 > [!NOTE]
-> Zorg ervoor dat u in Windows [docker configureert voor het gebruik van Linux-containers](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
+> In Windows moet u [Docker configureren voor het gebruik van Linux-containers.](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers)
 
 > [!TIP]
-> Voor Windows, hoewel dit niet vereist is, is het raadzaam [docker te gebruiken met het Windows-subsysteem voor Linux (WSL) 2](/windows/wsl/tutorials/wsl-containers#install-docker-desktop).
+> Voor Windows is het, hoewel niet vereist, raadzaam om Docker te gebruiken [met Windows-subsysteem voor Linux (WSL) 2.](/windows/wsl/tutorials/wsl-containers#install-docker-desktop)
 
 > [!IMPORTANT]
-> Voordat u uw experiment lokaal uitvoert, moet u ervoor zorgen dat docker actief is.
+> Voordat u uw experiment lokaal gaat uitvoeren, moet u ervoor zorgen dat Docker wordt uitgevoerd.
 
-### <a name="debug-experiment-locally"></a>Debug experiment lokaal
+### <a name="debug-experiment-locally"></a>Lokaal fouten opsporen in experiment
 
-1. Open in VS code de weer gave Azure Machine Learning extensie.
-1. Vouw het knoop punt abonnement met uw werk ruimte uit. Als u er nog geen hebt, kunt u [een Azure machine learning-werk ruimte maken](how-to-manage-resources-vscode.md#create-a-workspace) met behulp van de extensie.
-1. Vouw het knoop punt van de werk ruimte uit.
-1. Klik met de rechter muisknop op het knoop punt **experimenten** en selecteer **experiment maken**. Wanneer de prompt wordt weer gegeven, geeft u een naam op voor uw experiment.
-1. Vouw het knoop punt **experimenten** uit, klik met de rechter muisknop op het experiment dat u wilt uitvoeren en selecteer **Run experimenten**.
-1. Selecteer **lokaal** in de lijst met opties om uw experiment uit te voeren.
-1. De **eerste keer alleen in Windows gebruiken**. Selecteer **Ja** als u wordt gevraagd of u de bestands share wilt toestaan. Wanneer u bestands share inschakelt, kan docker de directory met uw script koppelen aan de container. Daarnaast kunt u met docker de logboeken en uitvoer van de uitvoering opslaan in een tijdelijke map op uw systeem.
-1. Selecteer **Ja** om het experiment op te lossen. Anders selecteert u **Nee**. Als u Nee kiest, wordt uw experiment lokaal uitgevoerd zonder dat dit aan het fout opsporingsprogramma is gekoppeld.
-1. Selecteer **nieuwe uitvoerings configuratie maken** om uw uitvoerings configuratie te maken. De uitvoerings configuratie definieert het script dat u wilt uitvoeren, afhankelijkheden en gegevens sets die worden gebruikt. Als u er al een hebt, selecteert u deze in de vervolg keuzelijst.
-    1. Kies uw omgeving. U kunt kiezen uit een van de [Azure machine learning](resource-curated-environments.md) met de curator of uw eigen maken.
-    1. Geef de naam op van het script dat u wilt uitvoeren. Het pad is relatief ten opzichte van de map die in VS code is geopend.
-    1. Kies of u een Azure Machine Learning gegevensset wilt gebruiken of niet. U kunt [Azure machine learning gegevens sets](how-to-manage-resources-vscode.md#create-dataset) maken met behulp van de extensie.
-    1. Debugpy is vereist om het fout opsporingsprogramma te koppelen aan de container die uw experiment uitvoert. Als u debugpy wilt toevoegen als een afhankelijkheid, selecteert u **Debugpy toevoegen**. Anders selecteert u **overs Laan**. Als u debugpy niet toevoegt als afhankelijkheid, wordt uw experiment uitgevoerd zonder dat het fout opsporingsprogramma is gekoppeld.
-    1. Een configuratie bestand met de instellingen voor het uitvoeren van de configuratie wordt geopend in de editor. Als u tevreden bent met de instellingen, selecteert u **experiment verzenden**. U kunt ook het opdracht palet openen (**> opdracht palet weer geven**) in de menu balk en de `Azure ML: Submit experiment` opdracht invoeren in het tekstvak.
-1. Zodra het experiment is verzonden, wordt een docker-installatie kopie met uw script en de configuraties die zijn opgegeven in de configuratie van de uitvoering, gemaakt.
+1. Open in VS Code de weergave Azure Machine Learning extensie.
+1. Vouw het abonnements knooppunt met uw werkruimte uit. Als u nog geen werkruimte hebt, kunt u een Azure Machine Learning [maken](how-to-manage-resources-vscode.md#create-a-workspace) met behulp van de extensie .
+1. Vouw uw werkruimte-knooppunt uit.
+1. Klik met de rechtermuisknop op **het knooppunt Experimenten** en selecteer **Experiment maken.** Wanneer de prompt wordt weergegeven, geeft u een naam op voor uw experiment.
+1. Vouw het **knooppunt Experimenten** uit, klik met de rechtermuisknop op het experiment dat u wilt uitvoeren en selecteer **Experiment uitvoeren.**
+1. Selecteer Lokaal in de lijst met opties voor het uitvoeren van **uw** experiment.
+1. **Gebruik voor de eerste keer alleen in Windows.** Wanneer u wordt gevraagd om de bestands share toe te staan, selecteert **u Ja.** Wanneer u bestands delen inschakelen, kan Docker de map met uw script aan de container toevoegen. Daarnaast kan Docker de logboeken en uitvoer van uw run opslaan in een tijdelijke map op uw systeem.
+1. Selecteer **Ja om** fouten in uw experiment op te sporen. Anders selecteert u **Nee**. Als u Nee selecteert, wordt uw experiment lokaal uitgevoerd zonder dat u het aan het debugger koppelt.
+1. Selecteer **Nieuwe configuratie voor uitvoeren maken om** de uitvoeringsconfiguratie te maken. De uitvoeringsconfiguratie definieert het script dat u wilt uitvoeren, afhankelijkheden en gebruikte gegevenssets. Als u er al een hebt, kunt u deze ook selecteren in de vervolgkeuzekeuze.
+    1. Kies uw omgeving. U kunt kiezen uit een van de [Azure Machine Learning gecureerd](resource-curated-environments.md) of uw eigen maken.
+    1. Geef de naam op van het script dat u wilt uitvoeren. Het pad is relatief ten opzichte van de map die is geopend in VS Code.
+    1. Kies of u een Azure Machine Learning wilt gebruiken. U kunt een [Azure Machine Learning maken met behulp](how-to-manage-resources-vscode.md#create-dataset) van de extensie .
+    1. Foutopsporing is vereist om het foutopsporingsygger te koppelen aan de container waarin uw experiment wordt uitgevoerd. Als u foutopsporing wilt toevoegen als afhankelijkheid, selecteert **u Foutopsporing toevoegen .** Selecteer anders **Overslaan.** Als u foutopsporing niet toevoegt als een afhankelijkheid, wordt uw experiment uitgevoerd zonder dat u dit aan het foutopsporingsopsporingsexegger koppelt.
+    1. Er wordt een configuratiebestand met de configuratie-instellingen voor de uitvoering geopend in de editor. Als u tevreden bent met de instellingen, selecteert u **Experiment verzenden.** U kunt ook het opdrachtenpalet (**View > Command Palette**) openen in de menubalk en de opdracht invoeren in het `Azure ML: Submit experiment` tekstvak.
+1. Zodra het experiment is verzonden, wordt er een Docker-installatiebestand met uw script en de configuraties gemaakt die zijn opgegeven in de uitvoeringsconfiguratie.
 
-    Wanneer het proces voor het bouwen van de docker-installatie kopie wordt gestart, wordt de inhoud van de `60_control_log.txt` Bestands stroom naar de uitvoer console in VS code.
+    Wanneer het bouwproces van de Docker-afbeelding begint, wordt de inhoud van de `60_control_log.txt` bestandsstroom naar de uitvoerconsole in VS Code gestreamd.
 
     > [!NOTE]
-    > De eerste keer dat uw docker-installatie kopie wordt gemaakt, kan het enkele minuten duren.
+    > De eerste keer dat uw Docker-afbeelding wordt gemaakt, kan dit enkele minuten duren.
 
-1. Zodra uw installatie kopie is gemaakt, wordt er een prompt weer gegeven om het fout opsporingsprogramma te starten. Stel de onderbrekings punten in het script in en selecteer **fout opsporing starten** wanneer u klaar bent om de fout opsporing te starten. Hiermee koppelt u het fout opsporingsprogramma VS code aan de container met uw experiment. U kunt ook in de uitbrei ding Azure Machine Learning de muis aanwijzer boven het knoop punt voor de huidige uitvoering en het pictogram afspelen selecteren om het fout opsporingsprogramma te starten.
+1. Zodra de afbeelding is gemaakt, verschijnt er een prompt om het debugger te starten. Stel de onderbrekingspunten in uw script in en selecteer **Start debugger** wanneer u klaar bent om debuggen te starten. Als u dit doet, wordt het VS Code-debugger gekoppeld aan de container waar uw experiment wordt uitgevoerd. U kunt ook in de extensie Azure Machine Learning het knooppunt voor uw huidige run aanwijzen en het pictogram Afspelen selecteren om het debugger te starten.
 
     > [!IMPORTANT]
-    > U kunt niet meerdere foutopsporingssessie voor één experiment hebben. U kunt in twee of meer experimenten echter fouten opsporen met behulp van meerdere exemplaren van VS code.
+    > U kunt niet meerdere foutopsporingssessies voor één experiment hebben. U kunt echter fouten opsporen in twee of meer experimenten met behulp van meerdere VS Code-exemplaren.
 
-Op dit moment moet u uw code kunnen stapsgewijs door lopen en fouten opsporen met behulp van VS code.
+Op dit moment moet u uw code stapsgewijs kunnen doorsluizen en fouten opsporen met behulp van VS Code.
 
-Als u de uitvoering wilt annuleren, klikt u met de rechter muisknop op het knoop punt uitvoeren en selecteert u **uitvoeren annuleren**.
+Als u de run op een bepaald moment wilt annuleren, klikt u met de rechtermuisknop op uw run-knooppunt en **selecteert u Run annuleren.**
 
-Net als bij extern experimenteren, kunt u het knoop punt uitvoeren uitvouwen om de logboeken en uitvoer te controleren.
+Net als bij externe experimentuitvoer kunt u uw run-knooppunt uitbreiden om de logboeken en uitvoer te inspecteren.
 
 > [!TIP]
-> Docker-installatie kopieën die gebruikmaken van de afhankelijkheden die in uw omgeving zijn gedefinieerd, worden tussen uitvoeringen opnieuw gebruikt. Als u echter een experiment uitvoert met een nieuwe of andere omgeving, wordt er een nieuwe installatie kopie gemaakt. Omdat deze installatie kopieën worden opgeslagen in uw lokale opslag, kunt u het beste oude of ongebruikte docker-installatie kopieën verwijderen. Als u installatie kopieën van uw systeem wilt verwijderen, gebruikt u de docker- [cli](https://docs.docker.com/engine/reference/commandline/rmi/) of de [VS code docker-extensie](https://code.visualstudio.com/docs/containers/overview).
+> Docker-afbeeldingen die gebruikmaken van dezelfde afhankelijkheden die in uw omgeving zijn gedefinieerd, worden hergebruikt tussen runs. Als u echter een experiment met een nieuwe of een andere omgeving wilt uitvoeren, wordt er een nieuwe afbeelding gemaakt. Omdat deze afbeeldingen worden opgeslagen in uw lokale opslag, is het raadzaam om oude of ongebruikte Docker-afbeeldingen te verwijderen. Als u installatie afbeeldingen van uw systeem wilt verwijderen, gebruikt u [de Docker CLI](https://docs.docker.com/engine/reference/commandline/rmi/) of de [VS Code Docker-extensie](https://code.visualstudio.com/docs/containers/overview).
 
 ## <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Fouten in Machine Learning-pijplijnen opsporen en oplossen
 
-In sommige gevallen moet u mogelijk interactief fouten opsporen in de python-code die wordt gebruikt in uw ML-pijp lijn. U kunt met behulp van VS code en debugpy koppelen aan de code zoals deze wordt uitgevoerd in de trainings omgeving.
+In sommige gevallen moet u mogelijk interactief fouten opsporen in de Python-code die wordt gebruikt in uw ML-pijplijn. Door VS Code en debugpy te gebruiken, kunt u aan de code koppelen terwijl deze wordt uitgevoerd in de trainingsomgeving.
 
 ### <a name="prerequisites"></a>Vereisten
 
-* Een __Azure machine learning-werk ruimte__ die is geconfigureerd voor het gebruik van een __Azure Virtual Network__.
-* Een __Azure machine learning pijp lijn__ die gebruikmaakt van python-scripts als onderdeel van de pijplijn stappen. Bijvoorbeeld een PythonScriptStep.
-* Een Azure Machine Learning Compute-Cluster, dat zich __in het virtuele netwerk__ bevindt en wordt __gebruikt door de pijp lijn voor training__.
-* Een __ontwikkel omgeving__ die zich __in het virtuele netwerk__ bevindt. De ontwikkel omgeving kan een van de volgende zijn:
+* Een __Azure Machine Learning werkruimte__ die is geconfigureerd voor het gebruik van een Azure __Virtual Network.__
+* Een __Azure Machine Learning pijplijn die__ gebruikmaakt van Python-scripts als onderdeel van de pijplijnstappen. Bijvoorbeeld een PythonScriptStep.
+* Een Azure Machine Learning Compute-cluster, dat __zich in het__ virtuele netwerk en wordt gebruikt door de __pijplijn voor het trainen van__.
+* Een __ontwikkelomgeving__ in __het virtuele netwerk__. De ontwikkelomgeving kan een van de volgende zijn:
 
-  * Een virtuele machine van Azure in het virtuele netwerk
-  * Een reken instantie van een notebook-VM in het virtuele netwerk
-  * Een client computer met een particuliere netwerk verbinding met het virtuele netwerk, hetzij via VPN of via ExpressRoute.
+  * Een virtuele Azure-machine in het virtuele netwerk
+  * Een reken-exemplaar van notebook-VM in het virtuele netwerk
+  * Een clientmachine met een particuliere netwerkverbinding met het virtuele netwerk, hetzij via VPN of via ExpressRoute.
 
-Zie [Virtual Network-isolatie en privacy overview](how-to-network-security-overview.md)voor meer informatie over het gebruik van een Azure-Virtual Network met Azure machine learning.
+Zie Voor meer informatie over het gebruik van een Azure Virtual Network met Azure Machine Learning, zie [Virtueel netwerkisolatie en privacyoverzicht.](how-to-network-security-overview.md)
 
 > [!TIP]
-> Hoewel u kunt werken met Azure Machine Learning-resources die zich niet achter een virtueel netwerk bevinden, wordt het gebruik van een virtueel netwerk aanbevolen.
+> Hoewel u kunt werken met Azure Machine Learning resources die zich niet achter een virtueel netwerk, wordt het gebruik van een virtueel netwerk aanbevolen.
 
 ### <a name="how-it-works"></a>Uitleg
 
-Met uw ML pijplijn stappen voert u python-scripts uit. Deze scripts zijn gewijzigd om de volgende acties uit te voeren:
+Met de ml-pijplijnstappen worden Python-scripts uitgevoerd. Deze scripts worden gewijzigd om de volgende acties uit te voeren:
 
-1. Registreer het IP-adres van de host waarop ze worden uitgevoerd. U gebruikt het IP-adres om de fout opsporing aan het script te koppelen.
+1. Registreer het IP-adres van de host waar ze op worden uitgevoerd. U gebruikt het IP-adres om het debugger te verbinden met het script.
 
-2. Start het onderdeel debugpy debug en wacht tot er een fout opsporingsprogramma is om verbinding te maken.
+2. Start het foutopsporingsonderdeel debugpy en wacht tot een foutopsporingsopsporingsonderdeel verbinding maakt.
 
-3. Vanuit uw ontwikkel omgeving bewaakt u de logboeken die zijn gemaakt door het trainings proces om het IP-adres te vinden waarop het script wordt uitgevoerd.
+3. Vanuit uw ontwikkelomgeving bewaakt u de logboeken die tijdens het trainingsproces zijn gemaakt om het IP-adres te vinden waarop het script wordt uitgevoerd.
 
-4. U vertelt het IP-adres om het fout opsporingsprogramma te verbinden met behulp van een `launch.json` bestand.
+4. U vertelt VS Code het IP-adres om het debugger te verbinden met behulp van een `launch.json` -bestand.
 
-5. U koppelt het fout opsporingsprogramma en interactieve stap door het script.
+5. U koppelt het debugger en doorsuurt het script interactief.
 
 ### <a name="configure-python-scripts"></a>Python-scripts configureren
 
-Als u fout opsporing wilt inschakelen, moet u de volgende wijzigingen aanbrengen in de python-script (s) die worden gebruikt door de stappen in uw ML-pijp lijn:
+Als u debuggen wilt inschakelen, moet u de volgende wijzigingen aanbrengen in de Python-script(s) die worden gebruikt door stappen in uw ML-pijplijn:
 
-1. Voeg de volgende import instructies toe:
+1. Voeg de volgende importinspraken toe:
 
     ```python
     import argparse
@@ -128,7 +128,7 @@ Als u fout opsporing wilt inschakelen, moet u de volgende wijzigingen aanbrengen
     from azureml.core import Run
     ```
 
-1. Voeg de volgende argumenten toe. Met deze argumenten kunt u de debugger zo nodig inschakelen en de time-out voor het koppelen van het fout opsporingsprogramma instellen:
+1. Voeg de volgende argumenten toe. Met deze argumenten kunt u het debugger naar behoefte inschakelen en de time-out instellen voor het koppelen van het debugger:
 
     ```python
     parser.add_argument('--remote_debug', action='store_true')
@@ -143,14 +143,14 @@ Als u fout opsporing wilt inschakelen, moet u de volgende wijzigingen aanbrengen
                         help=f'Defines Port of VS Code client')
     ```
 
-1. Voeg de volgende-instructies toe. Met deze instructies wordt de huidige uitvoerings context geladen, zodat u het IP-adres van het knoop punt waarop de code wordt uitgevoerd, kunt vastleggen:
+1. Voeg de volgende -instructies toe. Met deze instructies wordt de context van de huidige run geladen, zodat u het IP-adres kunt logboeken van het knooppunt waarin de code wordt uitgevoerd:
 
     ```python
     global run
     run = Run.get_context()
     ```
 
-1. Voeg een `if` instructie toe die debugpy start en wacht tot een fout opsporingsprogramma is gekoppeld. Als er voor de time-out geen fout opsporingsprogramma is gekoppeld, wordt het script gewoon voortgezet. Zorg ervoor dat u de `HOST` waarden en vervangt door `PORT` `listen` uw eigen waarde.
+1. Voeg een `if` -instructie toe die begint met foutopsporing en wacht tot een foutopsporingsopsporingsopsporing wordt toegevoegd. Als er geen debugger wordt gekoppeld vóór de time-out, wordt het script gewoon voortgezet. Zorg ervoor dat u de `HOST` waarden en vervangt door uw eigen `PORT` `listen` functie.
 
     ```python
     if args.remote_debug:
@@ -167,7 +167,7 @@ Als u fout opsporing wilt inschakelen, moet u de volgende wijzigingen aanbrengen
         print(f'Debugger attached = {debugpy.is_client_connected()}')
     ```
 
-In het volgende python-voor beeld ziet u een eenvoudig `train.py` bestand dat fout opsporing mogelijk maakt:
+In het volgende Python-voorbeeld ziet u een `train.py` eenvoudig bestand waarmee u kunt debuggen:
 
 ```python
 # Copyright (c) Microsoft. All rights reserved.
@@ -228,9 +228,9 @@ if not (args.output_train is None):
     print("%s created" % args.output_train)
 ```
 
-### <a name="configure-ml-pipeline"></a>ML-pijp lijn configureren
+### <a name="configure-ml-pipeline"></a>ML-pijplijn configureren
 
-Als u de Python-pakketten wilt opgeven die nodig zijn om debugpy te starten en de uitvoerings context op te halen, moet u een omgeving maken en instellen `pip_packages=['debugpy', 'azureml-sdk==<SDK-VERSION>']` . Wijzig de SDK-versie zodat deze overeenkomt met die die u gebruikt. Het volgende code fragment laat zien hoe u een omgeving maakt:
+Als u de Python-pakketten wilt leveren die nodig zijn om foutopsporing te starten en de context van de run op te halen, maakt u een omgeving en stelt u `pip_packages=['debugpy', 'azureml-sdk==<SDK-VERSION>']` in. Wijzig de SDK-versie in de versie die u gebruikt. In het volgende codefragment wordt gedemonstreerd hoe u een omgeving maakt:
 
 ```python
 # Use a RunConfiguration to specify some additional requirements for this step.
@@ -255,7 +255,7 @@ run_config.environment.python.conda_dependencies = CondaDependencies.create(cond
                                                                            pip_packages=['debugpy', 'azureml-sdk==<SDK-VERSION>'])
 ```
 
-In de sectie [python-scripts configureren](#configure-python-scripts) zijn nieuwe argumenten toegevoegd aan de scripts die worden gebruikt door uw ml-pijplijn stappen. Het volgende code fragment laat zien hoe u deze argumenten kunt gebruiken om fout opsporing in te scha kelen voor het onderdeel en om een time-out in te stellen. Ook wordt gedemonstreerd hoe u de omgeving die u eerder hebt gemaakt, kunt gebruiken door het volgende in te stellen `runconfig=run_config` :
+In de [sectie Python-scripts configureren](#configure-python-scripts) zijn nieuwe argumenten toegevoegd aan de scripts die worden gebruikt door uw ML-pijplijnstappen. In het volgende codefragment wordt gedemonstreerd hoe u deze argumenten gebruikt om debugging voor het onderdeel in te stellen en een time-out in te stellen. Ook wordt gedemonstreerd hoe u de omgeving gebruikt die u eerder hebt gemaakt door in te `runconfig=run_config` stellen:
 
 ```python
 # Use RunConfig from a pipeline step
@@ -268,33 +268,33 @@ step1 = PythonScriptStep(name="train_step",
                          allow_reuse=False)
 ```
 
-Wanneer de pijp lijn wordt uitgevoerd, maakt elke stap een onderliggende uitvoering. Als fout opsporing is ingeschakeld, wordt in het gewijzigde script informatie die lijkt op de volgende tekst in de `70_driver_log.txt` voor de onderliggende uitvoering:
+Wanneer de pijplijn wordt uitgevoerd, maakt elke stap een onderliggende run. Als debuggen is ingeschakeld, registreert het gewijzigde script informatie die vergelijkbaar is met de volgende tekst in de `70_driver_log.txt` voor de onderliggende run:
 
 ```text
 Timeout for debug connection: 300
 ip_address: 10.3.0.5
 ```
 
-Sla de `ip_address` waarde op. Deze wordt gebruikt in de volgende sectie.
+Sla de waarde `ip_address` op. Deze wordt gebruikt in de volgende sectie.
 
 > [!TIP]
-> U kunt ook het IP-adres van de uitvoerings logboeken voor de onderliggende uitvoering van deze pijplijn stap vinden. Zie voor meer informatie over het weer geven van deze informatie [Azure ml experimenten en metrische gegevens bewaken](how-to-track-experiments.md).
+> U kunt ook het IP-adres vinden in de runlogboeken voor de onderliggende run voor deze pijplijnstap. Zie Azure [ML-experiment](how-to-log-view-metrics.md)uitvoeren en metrische gegevens bewaken voor meer informatie over het weergeven van deze informatie.
 
 ### <a name="configure-development-environment"></a>De ontwikkelomgeving configureren
 
-1. Gebruik de volgende opdracht om debugpy te installeren op uw VS code Development Environment:
+1. Gebruik de volgende opdracht om Debugpy te installeren in uw VS Code-ontwikkelomgeving:
 
     ```bash
     python -m pip install --upgrade debugpy
     ```
 
-    Zie [fout opsporing op afstand](https://code.visualstudio.com/docs/python/debugging#_debugging-by-attaching-over-a-network-connection)voor meer informatie over het gebruik van DEBUGPY met VS-code.
+    Zie Externe foutopsporing voor meer informatie over het gebruik van foutopsporing [met](https://code.visualstudio.com/docs/python/debugging#_debugging-by-attaching-over-a-network-connection)VS Code.
 
-1. Als u VS code wilt configureren om te communiceren met de Azure Machine Learning Compute waarop de fout opsporing wordt uitgevoerd, maakt u een nieuwe configuratie voor fout opsporing:
+1. Maak een nieuwe foutopsporingsconfiguratie om VS Code te configureren om te communiceren met de Azure Machine Learning rekenkracht die het foutopsporingsbestand wordt uitgevoerd:
 
-    1. Selecteer in VS code het menu __fout opsporing__ en selecteer vervolgens __Open configuraties__. Er wordt een bestand met de naam __launch.js__ geopend.
+    1. Selecteer in VS Code het menu __Fouten opsporen__ en selecteer __vervolgens Configuraties openen.__ Een bestand met __delaunch.jsop__ wordt geopend.
 
-    1. Zoek in het bestand __launch.jsop__ de regel die bevat `"configurations": [` en voeg de volgende tekst toe. Wijzig de `"host": "<IP-ADDRESS>"` vermelding in het IP-adres dat in uw logboeken wordt weer gegeven in de vorige sectie. Wijzig de `"localRoot": "${workspaceFolder}/code/step"` vermelding in een lokale map met een kopie van het script waarin fouten worden opgespoord:
+    1. Zoek in __launch.jsbestand__ de regel die `"configurations": [` bevat en voeg de volgende tekst er achter in. Wijzig de `"host": "<IP-ADDRESS>"` vermelding in het IP-adres dat in uw logboeken uit de vorige sectie is geretourneerd. Wijzig de vermelding in een lokale map die een kopie bevat van het script dat `"localRoot": "${workspaceFolder}/code/step"` wordt ontspord:
 
         ```json
         {
@@ -317,47 +317,47 @@ Sla de `ip_address` waarde op. Deze wordt gebruikt in de volgende sectie.
         > Als er al andere vermeldingen in de sectie configuraties staan, voegt u een komma (,) toe na de code die u hebt ingevoegd.
 
         > [!TIP]
-        > De best practice, met name voor pijp lijnen, is om de resources voor scripts in afzonderlijke directory's te blijven, zodat de code alleen relevant is voor elk van de stappen. In dit voor beeld wordt `localRoot` naar de voorbeeld waarde verwezen `/code/step1` .
+        > De best practice, met name voor pijplijnen, is het bewaren van de resources voor scripts in afzonderlijke directories, zodat code alleen relevant is voor elk van de stappen. In dit voorbeeld `localRoot` verwijst de voorbeeldwaarde naar `/code/step1` .
         >
-        > Als u fouten opspoort in meerdere scripts, maakt u in verschillende directory's een afzonderlijke configuratie sectie voor elk script.
+        > Als u meerdere scripts wilt debuggen, maakt u in verschillende directories een afzonderlijke configuratiesectie voor elk script.
 
-    1. Sla de __launch.jsop in__ het bestand.
+    1. Sla de __launch.jsop in het__ bestand.
 
-### <a name="connect-the-debugger"></a>De debugger verbinden
+### <a name="connect-the-debugger"></a>Verbinding maken met het debugger
 
-1. Open VS code en open een lokale kopie van het script.
-2. Stel onderbrekings punten in waar het script moet worden gestopt zodra u het hebt gekoppeld.
-3. Terwijl het onderliggende proces het script uitvoert en de `Timeout for debug connection` wordt weer gegeven in de logboeken, gebruikt u de F5-toets of selecteert u __fout opsporing__. Wanneer u hierom wordt gevraagd, selecteert u de __Azure machine learning berekenen: configuratie van externe fout opsporing__ . U kunt ook het pictogram voor fout opsporing selecteren in de zijbalk, het __Azure machine learning: externe fout opsporing__ in het vervolg keuzemenu voor fout opsporing en vervolgens de groene pijl gebruiken om het fout opsporingsprogramma te koppelen.
+1. Open VS Code en open een lokale kopie van het script.
+2. Stel onderbrekingspunten in waar u wilt dat het script stopt nadat u het hebt gekoppeld.
+3. Terwijl het onderliggende proces het script wordt uitgevoerd en de wordt weergegeven in de logboeken, gebruikt u de toets F5 of `Timeout for debug connection` __selecteert u Fouten opsporen.__ Wanneer u hier om wordt gevraagd, __selecteert Azure Machine Learning compute: configuratie voor externe foutopsporing.__ U kunt ook het pictogram voor foutopsporing selecteren in de zijbalk, de __vermelding Azure Machine Learning:__ remote debug in de vervolgkeuzelijst Fouten opsporen en vervolgens de groene pijl gebruiken om het foutopsporingspictogram te koppelen.
 
-    Op dit punt verbindt de VS code met debugpy op het reken knooppunt en stopt dit met het onderbrekings punt dat u eerder hebt ingesteld. U kunt nu de code door lopen terwijl deze wordt uitgevoerd, variabelen weer geven, enzovoort.
+    Op dit moment maakt VS Code verbinding met debugpy op het reken knooppunt en stopt het bij het onderbrekingspunt dat u eerder hebt ingesteld. U kunt nu de code stapsgewijs bekijken terwijl deze wordt uitgevoerd, variabelen weergeven, enzovoort.
 
     > [!NOTE]
-    > Als in het logboek een vermelding wordt weer gegeven `Debugger attached = False` , is de time-out verlopen en wordt het script voortgezet zonder het fout opsporingsprogramma. Dien de pijp lijn opnieuw in en sluit de debugger na het `Timeout for debug connection` bericht en voordat de time-out is verlopen.
+    > Als in het logboek een vermelding wordt weergegeven met de tekst , is de time-out verlopen en wordt `Debugger attached = False` het script voortgezet zonder het debugger. Verzend de pijplijn opnieuw en verbind het debugger na het bericht `Timeout for debug connection` en voordat de time-out verloopt.
 
-## <a name="debug-and-troubleshoot-deployments"></a>Problemen opsporen en oplossingen oplossen
+## <a name="debug-and-troubleshoot-deployments"></a>Fouten opsporen en problemen met implementaties oplossen
 
-In sommige gevallen moet u mogelijk interactief fouten opsporen in de python-code die in uw model implementatie is opgenomen. Als het script voor de vermelding bijvoorbeeld mislukt en de reden niet kan worden bepaald door aanvullende logboek registratie. U kunt met behulp van VS code en de debugpy koppelen aan de code die wordt uitgevoerd in de docker-container.
+In sommige gevallen moet u mogelijk interactief fouten opsporen in de Python-code in uw modelimplementatie. Bijvoorbeeld als het invoerscript mislukt en de reden niet kan worden bepaald door aanvullende logboekregistratie. Met behulp van VS Code en de foutopsporingsopsporing kunt u koppelen aan de code die wordt uitgevoerd in de Docker-container.
 
 > [!IMPORTANT]
-> Deze methode van fout opsporing werkt niet wanneer u `Model.deploy()` `LocalWebservice.deploy_configuration` een model gebruikt en lokaal implementeert. In plaats daarvan moet u een installatie kopie maken met behulp van de methode [model. package ()](/python/api/azureml-core/azureml.core.model.model#package-workspace--models--inference-config-none--generate-dockerfile-false-) .
+> Deze methode voor het debuggen werkt niet wanneer u `Model.deploy()` en gebruikt om een model lokaal te `LocalWebservice.deploy_configuration` implementeren. In plaats daarvan moet u een afbeelding maken met behulp van de [methode Model.package().](/python/api/azureml-core/azureml.core.model.model#package-workspace--models--inference-config-none--generate-dockerfile-false-)
 
-Voor lokale web service-implementaties is een werkende docker-installatie op uw lokale systeem vereist. Raadpleeg de [docker-documentatie](https://docs.docker.com/)voor meer informatie over het gebruik van docker. Houd er rekening mee dat bij het werken met reken instanties al docker is geïnstalleerd.
+Voor lokale webservice-implementaties is een werkende Docker-installatie op uw lokale systeem vereist. Zie de Docker-documentatie voor meer informatie over het gebruik [van Docker.](https://docs.docker.com/) Houd er rekening mee dat Docker al is geïnstalleerd wanneer u met reken-exemplaren werkt.
 
 ### <a name="configure-development-environment"></a>De ontwikkelomgeving configureren
 
-1. Gebruik de volgende opdracht om debugpy te installeren op uw lokale en ontwikkelings omgeving:
+1. Gebruik de volgende opdracht om debugpy te installeren in uw lokale VS Code-ontwikkelomgeving:
 
     ```bash
     python -m pip install --upgrade debugpy
     ```
 
-    Zie [fout opsporing op afstand](https://code.visualstudio.com/docs/python/debugging#_debugging-by-attaching-over-a-network-connection)voor meer informatie over het gebruik van DEBUGPY met VS-code.
+    Zie Externe foutopsporing voor meer informatie over het gebruik van [debugpy met](https://code.visualstudio.com/docs/python/debugging#_debugging-by-attaching-over-a-network-connection)VS Code.
 
-1. Als u VS code wilt configureren om met de docker-installatie kopie te communiceren, maakt u een nieuwe configuratie voor fout opsporing:
+1. Maak een nieuwe foutopsporingsconfiguratie om VS Code te configureren voor communicatie met de Docker-installatier:
 
-    1. Selecteer in VS code het menu __fout opsporing__ in de uitbrei ding van de __uitvoering__ en selecteer vervolgens __Open configuraties__. Er wordt een bestand met de naam __launch.js__ geopend.
+    1. Selecteer in VS Code het menu __Foutopsporing__ in __de run-extention__ en selecteer vervolgens __Configuraties openen.__ Een bestand met __delaunch.jsop__ wordt geopend.
 
-    1. Zoek in het bestand __launch.jsop__ het item __' configuraties '__ (de regel die bevat `"configurations": [` ) en voeg de volgende tekst toe. 
+    1. Zoek in __launch.jsbestand__ het item __'configuraties'__ (de regel die bevat) en `"configurations": [` voeg de volgende tekst er achter in. 
 
         ```json
         {
@@ -376,7 +376,7 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
             ]
         }
         ```
-        Na het invoegen moet de __launch.jsop__ het bestand er ongeveer als volgt uitzien:
+        Na het invoegen moet de __launch.jsop__ het bestand er ongeveer als volgt uit zien:
         ```json
         {
         // Use IntelliSense to learn about possible attributes.
@@ -413,13 +413,13 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
         > [!IMPORTANT]
         > Als er al andere vermeldingen in de sectie configuraties staan, voegt u een komma ( __,__ ) toe na de code die u hebt ingevoegd.
 
-        Deze sectie wordt gekoppeld aan de docker-container via poort __5678__.
+        In deze sectie wordt gekoppeld aan de Docker-container met behulp van __poort 5678.__
 
-    1. Sla de __launch.jsop in__ het bestand.
+    1. Sla de __launch.jsop in het__ bestand.
 
-### <a name="create-an-image-that-includes-debugpy"></a>Een installatie kopie maken die debugpy bevat
+### <a name="create-an-image-that-includes-debugpy"></a>Een afbeelding maken die foutopsporing bevat
 
-1. Wijzig de Conda-omgeving voor uw implementatie, zodat deze debugpy bevat. In het volgende voor beeld ziet u hoe u het toevoegt met behulp van de `pip_packages` para meter:
+1. Wijzig de conda-omgeving voor uw implementatie, zodat deze foutopsporing bevat. In het volgende voorbeeld wordt gedemonstreerd hoe u deze toevoegt met behulp van de `pip_packages` parameter :
 
     ```python
     from azureml.core.conda_dependencies import CondaDependencies 
@@ -435,7 +435,7 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
         f.write(myenv.serialize_to_string())
     ```
 
-1. Als u debugpy wilt starten en wilt wachten op een verbinding wanneer de service wordt gestart, voegt u het volgende toe aan de bovenkant van het `score.py` bestand:
+1. Als u foutopsporing wilt starten en wilt wachten op een verbinding wanneer de service wordt gestart, voegt u het volgende toe aan het begin van het `score.py` bestand:
 
     ```python
     import debugpy
@@ -446,10 +446,10 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
     print("Debugger attached...")
     ```
 
-1. Maak een installatie kopie op basis van de omgevings definitie en haal de installatie kopie op in het lokale REGI ster. 
+1. Maak een -afbeelding op basis van de omgevingsdefinitie en haal de -afbeelding naar het lokale register. 
 
     > [!NOTE]
-    > In dit voor beeld wordt ervan uitgegaan dat `ws` naar uw Azure machine learning-werk ruimte verwijst en dat `model` het model dat wordt geïmplementeerd. Het `myenv.yml` bestand bevat de Conda-afhankelijkheden die zijn gemaakt in stap 1.
+    > In dit voorbeeld wordt ervan uitgenomen dat naar `ws` Azure Machine Learning werkruimte wijst en dat dit het model is dat wordt `model` geïmplementeerd. Het `myenv.yml` bestand bevat de Conda-afhankelijkheden die in stap 1 zijn gemaakt.
 
     ```python
     from azureml.core.conda_dependencies import CondaDependencies
@@ -466,38 +466,38 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
     package.pull()
     ```
 
-    Nadat de installatie kopie is gemaakt en gedownload (dit proces kan meer dan tien minuten duren, dus wacht een ogen blik), het pad naar de installatie kopie (inclusief opslag plaats, naam en tag, in dit geval ook wel de samen vatting) wordt weer gegeven in een bericht dat lijkt op het volgende:
+    Zodra de afbeelding is gemaakt en gedownload (dit proces kan meer dan 10 minuten duren, dus wacht even met geduld), wordt het pad naar de afbeelding (inclusief opslagplaats, naam en tag, in dit geval ook de samenvatting) ten slotte weergegeven in een bericht dat er ongeveer als volgt uit zien:
 
     ```text
     Status: Downloaded newer image for myregistry.azurecr.io/package@sha256:<image-digest>
     ```
 
-1. Om het gemakkelijker te maken met de installatie kopie, kunt u de volgende opdracht gebruiken om een tag voor deze installatie kopie toe te voegen. Vervang `myimagepath` in de volgende opdracht door de locatie waarde uit de vorige stap.
+1. Om het eenvoudiger te maken om lokaal met de afbeelding te werken, kunt u de volgende opdracht gebruiken om een tag toe te voegen voor deze afbeelding. Vervang `myimagepath` in de volgende opdracht door de locatiewaarde uit de vorige stap.
 
     ```bash
     docker tag myimagepath debug:1
     ```
 
-    Voor de rest van de stappen kunt u de lokale installatie kopie `debug:1` gebruiken in plaats van de waarde van het volledige pad naar de afbeelding.
+    Voor de rest van de stappen kunt u naar de lokale afbeelding verwijzen als in `debug:1` plaats van de waarde voor het volledige pad naar de afbeelding.
 
 ### <a name="debug-the-service"></a>Fouten opsporen in de service
 
 > [!TIP]
-> Als u een time-out instelt voor de debugpy-verbinding in het `score.py` bestand, moet u de VS-code verbinden met de foutopsporingssessie voordat de time-out verloopt. Start VS code, open het lokale exemplaar van `score.py` , stel een onderbrekings punt in en laat het gereed om door te gaan voordat u de stappen in deze sectie uitvoert.
+> Als u een time-out voor de foutopsporingsverbinding in het bestand in stelt, moet u VS Code verbinden met de foutopsporingssessie voordat `score.py` de time-out verloopt. Start VS Code, open de lokale kopie van , stel een onderbrekingspunt in en gebruik de stappen in deze sectie voordat u verder `score.py` gaat.
 >
-> Zie [fout opsporing](https://code.visualstudio.com/Docs/editor/debugging)voor meer informatie over het opsporen van fouten en het instellen van onderbrekings punten.
+> Zie Debugging voor meer informatie over het debuggen en instellen [van onderbrekingspunten.](https://code.visualstudio.com/Docs/editor/debugging)
 
-1. Gebruik de volgende opdracht om een docker-container met behulp van de installatie kopie te starten:
+1. Gebruik de volgende opdracht om een Docker-container te starten met behulp van de -afbeelding:
 
     ```bash
     docker run -it --name debug -p 8000:5001 -p 5678:5678 -v <my_local_path_to_score.py>:/var/azureml-app/score.py debug:1 /bin/bash
     ```
 
-    Hiermee koppelt `score.py` u uw lokale map aan de container. Wijzigingen die in de editor zijn aangebracht, worden daarom automatisch weer gegeven in de container
+    Hiermee koppelt u `score.py` uw lokaal aan het bestand in de container. Wijzigingen die in de editor zijn aangebracht, worden daarom automatisch doorgevoerd in de container
 
-2. Voor een betere ervaring kunt u met een nieuwe VS code-interface naar de container gaan. Selecteer de `Docker` uitbrei ding van de VS-code balk, zoek de lokale container die u hebt gemaakt, in deze documentatie `debug:1` . Klik met de rechter muisknop op deze container en selecteer en `"Attach Visual Studio Code"` vervolgens wordt er automatisch een nieuwe VS code-interface geopend. deze interface toont de binnenkant van de gemaakte container.
+2. Voor een betere ervaring kunt u naar de container gaan met een nieuwe VS-code-interface. Selecteer de omvang in de zijbalk van VS Code en zoek de lokale container die u hebt gemaakt. In deze `Docker` documentatie is dat `debug:1` . Klik met de rechtermuisknop op deze container en selecteer . Vervolgens wordt er automatisch een nieuwe VS Code-interface geopend. Deze interface toont de binnenzijde `"Attach Visual Studio Code"` van de gemaakte container.
 
-    ![De container VS code interface](./media/how-to-troubleshoot-deployment/container-interface.png)
+    ![De VS Code-interface van de container](./media/how-to-troubleshoot-deployment/container-interface.png)
 
 3. Voer in de container de volgende opdracht uit in de shell
 
@@ -506,27 +506,27 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
     ```
     Vervolgens ziet u de volgende uitvoer in de shell in uw container:
 
-    ![De container uitvoer console uitvoeren](./media/how-to-troubleshoot-deployment/container-run.png)
+    ![De uitvoer van de containeruitvoerconsole](./media/how-to-troubleshoot-deployment/container-run.png)
 
-4. Als u VS code aan debugpy in de container wilt koppelen, opent u VS code en gebruikt u de toets F5 of selecteert u __fout opsporing__. Wanneer u hierom wordt gevraagd, selecteert u de __Azure machine learning implementatie: docker debug__ -configuratie. U kunt ook het pictogram uitbrei ding van __uitvoer__ in de zijbalk selecteren, de __Azure machine learning implementatie: docker debug__ -vermelding in het vervolg keuzemenu voor fout opsporing en vervolgens de groene pijl gebruiken om het fout opsporingsprogramma te koppelen.
+4. Als u VS Code wilt koppelen om fouten op te sporen in de container, opent u VS Code en gebruikt u de toets F5 of __selecteert u Fouten opsporen.__ Wanneer u hier om wordt gevraagd, __selecteert u Azure Machine Learning Implementatie: Docker-foutopsporingsconfiguratie.__ U kunt ook het pictogram Run __extention__ selecteren in de zijbalk, de __vermelding Azure Machine Learning Deployment: Docker Debug__ in de vervolgkeuzelijst Foutopsporing en vervolgens de groene pijl gebruiken om het foutopsporingspictogram te koppelen.
 
-    ![Het pictogram fout opsporing, de knop fout opsporing starten en de configuratie kiezer](./media/how-to-troubleshoot-deployment/start-debugging.png)
+    ![Het foutopsporingspictogram, de foutopsporingsknop en de configuratie-selector](./media/how-to-troubleshoot-deployment/start-debugging.png)
     
-    Nadat u op de groene pijl hebt geklikt en de debugger hebt gekoppeld, kunt u in de container VS code-interface enkele nieuwe gegevens zien:
+    Nadat u op de groene pijl hebt geklikt en het debugger hebt gekoppeld, ziet u in de VS Code-interface van de container enkele nieuwe informatie:
     
-    ![Er is informatie toegevoegd aan het fout opsporingsprogramma voor containers](./media/how-to-troubleshoot-deployment/debugger-attached.png)
+    ![De gekoppelde gegevens van het containerdebugger](./media/how-to-troubleshoot-deployment/debugger-attached.png)
     
-    Wat u kunt zien, vindt u in uw belangrijkste VS-code Interface:
+    In uw belangrijkste VS Code-interface ziet u ook het volgende:
 
-    ![Het VS-code-onderbrekings punt in score.py](./media/how-to-troubleshoot-deployment/local-debugger.png)
+    ![Het VS Code-onderbrekingspunt in score.py](./media/how-to-troubleshoot-deployment/local-debugger.png)
 
-En nu is het lokale onderdeel `score.py` dat is gekoppeld aan de container, al gestopt op het onderbrekings punt waar u instelt. Op dit punt verbindt de VS code met debugpy in de docker-container en stopt de docker-container met het onderbrekings punt dat u eerder hebt ingesteld. U kunt nu de code door lopen terwijl deze wordt uitgevoerd, variabelen weer geven, enzovoort.
+En nu is de lokale die is gekoppeld aan de container, al gestopt bij de `score.py` onderbrekingspunten waar u hebt ingesteld. Op dit moment maakt VS Code verbinding met debugpy in de Docker-container en wordt de Docker-container gestopt op het onderbrekingspunt dat u eerder hebt ingesteld. U kunt nu de code stapsgewijs bekijken terwijl deze wordt uitgevoerd, variabelen bekijken, enzovoort.
 
-Zie [fouten opsporen in uw Python-code](https://code.visualstudio.com/docs/python/debugging)voor meer informatie over het gebruik van VS code voor het opsporen van problemen met python.
+Zie Fouten opsporen in uw [Python-code](https://code.visualstudio.com/docs/python/debugging)voor meer informatie over het gebruik van VS Code voor het opsporen van fouten in Python.
 
 ### <a name="stop-the-container"></a>De container stoppen
 
-Als u de container wilt stoppen, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om de container te stoppen:
 
 ```bash
 docker stop debug
@@ -534,9 +534,9 @@ docker stop debug
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u versus externe code hebt ingesteld, kunt u een reken instantie gebruiken als externe Compute van VS code om uw code interactief te debuggen. 
+Nu u VS Code Remote hebt ingesteld, kunt u een reken-exemplaar gebruiken als externe rekenkracht van VS Code om interactief fouten in uw code op te sporen. 
 
-Meer informatie over het oplossen van problemen:
+Meer informatie over probleemoplossing:
 
 * [Implementatie van lokaal model](how-to-troubleshoot-deployment-local.md)
 * [Implementatie van extern model](how-to-troubleshoot-deployment.md)

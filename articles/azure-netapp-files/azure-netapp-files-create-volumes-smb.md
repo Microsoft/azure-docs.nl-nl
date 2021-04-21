@@ -12,29 +12,29 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 04/19/2021
+ms.date: 04/20/2021
 ms.author: b-juche
-ms.openlocfilehash: 9bb995e5e3038d7a4cd24f0db2608461c8848497
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: 28fc465627032522afb9da8f6ec0fad704834d09
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726286"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813700"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
-Azure NetApp Files biedt ondersteuning voor het maken van volumes met NFS (NFSv3 en NFSv4.1), SMB3 of dual-protocol (NFSv3 en SMB). Capaciteitsgebruik van een volume wordt in mindering gebracht op de ingerichte capaciteit van de pool. 
+Azure NetApp Files ondersteunt het maken van volumes met NFS (NFSv3 en NFSv4.1), SMB3 of dual protocol (NFSv3 en SMB). Capaciteitsgebruik van een volume wordt in mindering gebracht op de ingerichte capaciteit van de pool. 
 
-In dit artikel wordt beschreven hoe u een SMB3-volume maakt. Zie een NFS-volume maken [voor NFS-volumes.](azure-netapp-files-create-volumes.md) Zie Create [a dual-protocol volume (Een dual-protocol volume](create-volumes-dual-protocol.md)maken) voor volumes met dubbele protocollen.
+In dit artikel wordt beschreven hoe u een SMB3-volume maakt. Zie Een [NFS-volume maken voor NFS-volumes.](azure-netapp-files-create-volumes.md) Zie Create [a dual-protocol volume (Een dual-protocol volume maken) voor](create-volumes-dual-protocol.md)volumes met dubbele protocollen.
 
 ## <a name="before-you-begin"></a>Voordat u begint 
 
 * U dient al een capaciteitspool te hebben ingesteld. Zie [Een capaciteitspool instellen.](azure-netapp-files-set-up-capacity-pool.md)     
-* Er moet een subnet zijn gedelegeerd aan Azure NetApp Files. Zie [Een subnet delegeren aan Azure NetApp Files.](azure-netapp-files-delegate-subnet.md)
+* Er moet een subnet zijn gedelegeerd aan Azure NetApp Files. Zie [Een subnet delegeren aan Azure NetApp Files](azure-netapp-files-delegate-subnet.md).
 
 ## <a name="configure-active-directory-connections"></a>Active Directory-verbindingen configureren 
 
-Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Als u nog geen Active Directory-verbindingen voor Azure NetApp-bestanden hebt geconfigureerd, volgt u de instructies in Active Directory-verbindingen maken [en beheren.](create-active-directory-connections.md)
+Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Als u Active Directory-verbindingen voor Azure NetApp-bestanden niet hebt geconfigureerd, volgt u de instructies die worden beschreven in [Active Directory-verbindingen](create-active-directory-connections.md)maken en beheren.
 
 ## <a name="add-an-smb-volume"></a>Een SMB-volume toevoegen
 
@@ -75,15 +75,15 @@ Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Al
         Geef het subnet op dat u wilt gebruiken voor het volume.  
         Het opgegeven subnet moet zijn gedelegeerd aan Azure NetApp Files. 
         
-        Als u nog geen subnet hebt gedelegeerd, kunt u op **Nieuwe maken klikken** op de pagina Een volume maken. Geef vervolgens op de pagina Subnet maken de subnetgegevens op, en selecteer **Microsoft.NetApp/volumes** om het subnet te delegeren aan Azure NetApp Files. In elk VNet kan slechts één subnet worden gedelegeerd aan Azure NetApp Files.   
+        Als u nog geen subnet hebt gedelegeerd, kunt u klikken op **Nieuwe maken** op de pagina Een volume maken. Geef vervolgens op de pagina Subnet maken de subnetgegevens op, en selecteer **Microsoft.NetApp/volumes** om het subnet te delegeren aan Azure NetApp Files. In elk VNet kan slechts één subnet worden gedelegeerd aan Azure NetApp Files.   
  
         ![ Een volume maken](../media/azure-netapp-files/azure-netapp-files-new-volume.png)
     
         ![Subnet maken](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
 
-    * Als u een bestaand momentopnamebeleid wilt  toepassen op het volume, klikt u op de sectie Geavanceerd weergeven om het uit te vouwen, geeft u op of u het momentopnamepad wilt verbergen en selecteert u een momentopnamebeleid in het pull-downmenu. 
+    * Als u een bestaand momentopnamebeleid wilt  toepassen op het volume, klikt u op Geavanceerde sectie weergeven om het uit te vouwen, geeft u op of u het momentopnamepad wilt verbergen en selecteert u een beleid voor momentopnamen in het pull-downmenu. 
 
-        Zie Beleid voor momentopnamen beheren voor meer informatie over het maken [van een beleid voor momentopnamen.](azure-netapp-files-manage-snapshots.md#manage-snapshot-policies)
+        Zie Beleid voor momentopnamen beheren voor meer informatie over het maken van een [beleid voor momentopnamen.](azure-netapp-files-manage-snapshots.md#manage-snapshot-policies)
 
         ![Geavanceerde selectie tonen](../media/azure-netapp-files/volume-create-advanced-selection.png)
 
@@ -116,7 +116,7 @@ Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Al
         > [!IMPORTANT]   
         > De functie Continue beschikbaarheid van SMB is momenteel beschikbaar als openbare preview. U moet een aanvraag voor een wachtlijst indienen voor toegang tot de functie via de pagina voor het indienen **[Azure NetApp Files SMB Continuous Availability Shares Public Preview.](https://aka.ms/anfsmbcasharespreviewsignup)** Wacht op een officiële bevestigingsmail van het Azure NetApp Files voordat u de functie Continue beschikbaarheid gebruikt.   
         > 
-        > U moet continue beschikbaarheid alleen inschakelen voor SQL-workloads. Het gebruik van SMB-shares voor continue beschikbaarheid voor andere workloads dan SQL Server *wordt niet* ondersteund. Deze functie wordt momenteel ondersteund op Windows SQL Server. Linux SQL Server wordt momenteel niet ondersteund. Als u een niet-beheerdersaccount (domein) gebruikt voor het installeren van SQL Server, moet u ervoor zorgen dat aan het account de vereiste beveiligingsrechten zijn toegewezen. Als het domeinaccount niet over de vereiste beveiligingsrechten ( ) en de bevoegdheid kan niet worden ingesteld op domeinniveau, kunt u de bevoegdheid verlenen aan het account met behulp van de beveiligingsrechten gebruikers veld van `SeSecurityPrivilege` Active Directory-verbindingen.  Zie [Een Active Directory-verbinding maken.](create-active-directory-connections.md#create-an-active-directory-connection)
+        > U moet continue beschikbaarheid alleen inschakelen voor SQL Server en [FsLogix-gebruikersprofielcontainers.](../virtual-desktop/create-fslogix-profile-container.md) Het gebruik van SMB-shares voor continue beschikbaarheid voor andere workloads dan SQL Server en FsLogix-gebruikersprofielcontainers *wordt niet* ondersteund. Deze functie wordt momenteel ondersteund op Windows SQL Server. Linux SQL Server wordt momenteel niet ondersteund. Als u een niet-beheerdersaccount (domein) gebruikt voor het installeren van SQL Server, moet u ervoor zorgen dat aan het account de vereiste beveiligingsrechten zijn toegewezen. Als het domeinaccount niet over de vereiste beveiligingsrechten ( ) en de bevoegdheid kan niet worden ingesteld op domeinniveau, kunt u de bevoegdheid verlenen aan het account met behulp van de beveiligingsrechten gebruikers veld van `SeSecurityPrivilege` Active Directory-verbindingen.  Zie [Een Active Directory-verbinding maken.](create-active-directory-connections.md#create-an-active-directory-connection)
 
     <!-- [1/13/21] Commenting out command-based steps below, because the plan is to use form-based (URL) registration, similar to CRR feature registration -->
     <!-- 
@@ -150,7 +150,7 @@ Toegang tot een SMB-volume wordt beheerd via machtigingen.
 
 ### <a name="share-permissions"></a>Machtigingen voor delen  
 
-Een nieuw volume heeft standaard de sharemachtigingen **Iedereen/Volledig** beheer. Leden van de groep Domeinad administrators kunnen de machtigingen voor delen als volgt wijzigen:  
+Een nieuw volume heeft standaard de **machtigingen iedereen /volledig** beheer delen. Leden van de groep Domeinad administrators kunnen de machtigingen voor delen als volgt wijzigen:  
 
 1. Wijs de share toe aan een station.  
 2. Klik met de rechtermuisknop op het station, **selecteer Eigenschappen** en ga vervolgens naar het **tabblad** Beveiliging.
@@ -159,7 +159,7 @@ Een nieuw volume heeft standaard de sharemachtigingen **Iedereen/Volledig** behe
 
 ### <a name="ntfs-file-and-folder-permissions"></a>NTFS-bestands- en mapmachtigingen  
 
-U kunt machtigingen voor een bestand  of map instellen met behulp van het tabblad Beveiliging van de eigenschappen van het object in de Windows SMB-client.
+U kunt machtigingen instellen voor een  bestand of map met behulp van het tabblad Beveiliging van de eigenschappen van het object in de Windows SMB-client.
  
 ![Bestands- en mapmachtigingen instellen](../media/azure-netapp-files/set-file-folder-permissions.png) 
 

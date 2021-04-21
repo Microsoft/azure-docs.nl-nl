@@ -2,47 +2,45 @@
   href: index.yml
 - name: Overzicht
   items:
-    - name: Wat is industrieel IoT?
+    - name: Wat is Industriële IoT?
       href: overview-what-is-industrial-iot.md
-    - name: Wat is de OPC-Uitgever?
+    - name: Wat is OPC Publisher?
       href: overview-what-is-opc-publisher.md
-    - name: Wat is het industrieel IoT-platform?
-      href: overview-what-is-industrial-iot-platform.md
 - name: Zelfstudies
   items:
-    - name: Zelfstandig zelf studies voor OPC Publisher
+    - name: Zelfstandige opC Publisher-zelfstudies
       items:
-        - name: Zelfstandige installatie van OPC Publisher-modus
+        - name: Zelfstandige modus voor OPC Publisher implementeren
           href: tutorial-publisher-deploy-opc-publisher-standalone.md
         - name: OPC Publisher configureren
           href: tutorial-publisher-configure-opc-publisher.md
-        - name: Fijnafstelling van prestaties en geheugen van de OPC-Uitgever
+        - name: Prestaties en geheugenafstemming van de OPC Publisher
           href: tutorial-publisher-performance-memory-tuning-opc-publisher.md
-    - name: Zelf studies voor IIoT-platform (georganisatiede modus)
+    - name: IIoT Platform-zelfstudies (orchestrated mode)
       items:
         - name: IIoT-platform implementeren
           href: tutorial-deploy-industrial-iot-platform.md
         - name: IIoT-onderdelen configureren
           href: tutorial-configure-industrial-iot-components.md
-        - name: IIoT-gegevens verzamelen in ADX
+        - name: IIoT-gegevens in ADX pullen
           href: tutorial-industrial-iot-azure-data-explorer.md
-        - name: Visualiseren en analyseren van de gegevens met behulp van Time Series Insights
+        - name: De gegevens visualiseren en analyseren met behulp Time Series Insights
           href: tutorial-visualize-data-time-series-insights.md
 - name: Referentie
   items:
-    - name: Opdracht regel argumenten
+    - name: Opdrachtregelargumenten
       href: reference-command-line-arguments.md
-    - name: OPC-indeling van het telemetrie-configuratie bestand
+    - name: OpC Publisher-bestandsindeling voor telemetrieconfiguratie
       href: reference-opc-publisher-telemetry-format.md
 - name: Resources
   items:
-    - name: OPC Publisher GitHub-opslag plaats
+    - name: GitHub-opslagplaats voor OPC Publisher
       href: 'https://github.com/Azure/Industrial-IoT'
-    - name: IIoT platform GitHub-opslag plaats
+    - name: GitHub-opslagplaats voor IIoT Platform
       href: 'https://github.com/Azure/iot-edge-opc-publisher'
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-accelerators/toc.json&bc=/azure/iot-accelerators/breadcrumb/toc.json
-    - name: IoT-woorden lijst
+    - name: Woordenlijst voor IoT
       href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-accelerators/toc.json&bc=/azure/iot-accelerators/breadcrumb/toc.json
     - name: Azure IoT-services
       items:

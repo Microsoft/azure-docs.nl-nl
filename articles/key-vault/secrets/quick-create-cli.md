@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-azurecli
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 655ea1920fc80c8cd677281f09cfca21120e1d61
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: dc5fa0eeabc437f16ca64c34b4bb72e62c0c3b21
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726354"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815014"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Quickstart: een geheim uit Azure Key Vault instellen en ophalen met behulp van Azure CLI
 
@@ -68,4 +68,4 @@ In deze quickstart hebt u een sleutelkluis gemaakt en daar een geheim in opgesla
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Meer informatie over het [opslaan van geheimen met meerdere Key Vault](multiline-secrets.md)
 - Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

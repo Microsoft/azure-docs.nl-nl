@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/05/2021
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: b87001f9b283c774096fe669d58a9b487174625d
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 1e6f46b205790d81a3e76d2aafbcf7e13dbb5afd
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750766"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815212"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Gebruik Key Vault voor App Service en Azure Functions
 
@@ -28,7 +28,7 @@ Als u geheimen wilt lezen uit Key Vault, moet u een kluis hebben gemaakt en uw a
    > [!NOTE] 
    > Key Vault bieden momenteel alleen ondersteuning voor door het systeem toegewezen beheerde identiteiten. Door de gebruiker toegewezen identiteiten kunnen niet worden gebruikt.
 
-1. Maak een [toegangsbeleid in Key Vault](../key-vault/general/security-overview.md#privileged-access) voor de toepassings-id die u eerder hebt gemaakt. Schakel de machtiging Geheim 'Get' in voor dit beleid. Configureer de 'geautoriseerde toepassing' of `applicationId` instellingen niet, omdat dit niet compatibel is met een beheerde identiteit.
+1. Maak een [toegangsbeleid in Key Vault](../key-vault/general/security-features.md#privileged-access) voor de toepassings-id die u eerder hebt gemaakt. Schakel de machtiging Geheim 'Get' in voor dit beleid. Configureer de 'geautoriseerde toepassing' of `applicationId` instellingen niet, omdat dit niet compatibel is met een beheerde identiteit.
 
 ### <a name="access-network-restricted-vaults"></a>Toegang tot kluizen met beperkte netwerktoegang
 
@@ -71,7 +71,7 @@ U kunt ook het volgende doen:
 > [!IMPORTANT]
 > [Toegang tot een kluis via integratie van virtuele netwerken](#access-network-restricted-vaults) is momenteel niet compatibel met automatische updates voor geheimen zonder een opgegeven versie.
 
-Als er geen versie is opgegeven in de verwijzing, gebruikt de app de nieuwste versie die bestaat in Key Vault. Wanneer nieuwere versies beschikbaar komen, zoals bij een rotatiegebeurtenis, wordt de app automatisch bijgewerkt en wordt binnen één dag de nieuwste versie gebruikt. Eventuele configuratiewijzigingen die in de app worden aangebracht, zorgen voor een onmiddellijke update van de nieuwste versies van alle geheimen waarnaar wordt verwezen.
+Als er geen versie is opgegeven in de verwijzing, gebruikt de app de nieuwste versie die bestaat in Key Vault. Wanneer er nieuwere versies beschikbaar komen, zoals bij een rotatiegebeurtenis, wordt de app automatisch bijgewerkt en wordt binnen één dag de nieuwste versie gebruikt. Eventuele configuratiewijzigingen die in de app worden aangebracht, zorgen voor een onmiddellijke update van de nieuwste versies van alle geheimen waarnaar wordt verwezen.
 
 ## <a name="source-application-settings-from-key-vault"></a>Brontoepassingsinstellingen van Key Vault
 
@@ -198,7 +198,7 @@ Als een verwijzing niet correct wordt opgelost, wordt in plaats daarvan de refer
 
 Dit komt meestal door een onjuiste configuratie van het Key Vault [toegangsbeleid](#granting-your-app-access-to-key-vault). Dit kan echter ook het gevolg zijn van een geheim dat niet meer bestaat of een syntaxisfout in de verwijzing zelf.
 
-Als de syntaxis juist is, kunt u andere oorzaken voor fouten bekijken door de huidige oplossingsstatus in de portal te controleren. Navigeer naar Toepassingsinstellingen en selecteer Bewerken voor de referentie in kwestie. Onder de instellingsconfiguratie ziet u statusinformatie, inclusief eventuele fouten. De afwezigheid van deze impliceert dat de verwijzingssyntaxis ongeldig is.
+Als de syntaxis juist is, kunt u andere oorzaken voor fouten bekijken door de huidige oplossingsstatus in de portal te controleren. Navigeer naar Toepassingsinstellingen en selecteer Bewerken voor de referentie in kwestie. Onder de instellingsconfiguratie ziet u statusinformatie, inclusief eventuele fouten. Het ontbreken van deze impliceert dat de verwijzingssyntaxis ongeldig is.
 
 U kunt ook een van de ingebouwde detectoren gebruiken om aanvullende informatie op te halen.
 
@@ -207,7 +207,7 @@ U kunt ook een van de ingebouwde detectoren gebruiken om aanvullende informatie 
 1. Navigeer in de portal naar uw app.
 2. Selecteer **Problemen vaststellen en oplossen**.
 3. Kies **Beschikbaarheid en prestaties en** selecteer **Web-app niet beschikbaar.**
-4. Zoek **Key Vault application settings diagnostics en** klik op Meer **informatie.**
+4. Zoek **Key Vault Application Settings Diagnostics** en klik op Meer **informatie.**
 
 
 ### <a name="using-the-detector-for-azure-functions"></a>De detector gebruiken voor Azure Functions
@@ -216,4 +216,4 @@ U kunt ook een van de ingebouwde detectoren gebruiken om aanvullende informatie 
 2. Navigeer naar **Platformfuncties.**
 3. Selecteer **Problemen vaststellen en oplossen**.
 4. Kies **Beschikbaarheid en prestaties en** selecteer **Functie-app niet beschikbaar of rapporteert fouten.**
-5. Klik op **Key Vault Diagnostische gegevens van toepassingsinstellingen.**
+5. Klik op **Key Vault Application Settings Diagnostics.**

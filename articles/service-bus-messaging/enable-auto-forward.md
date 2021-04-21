@@ -1,29 +1,39 @@
 ---
-title: Automatisch doorsturen inschakelen Azure Service Bus wachtrijen en abonnementen
+title: Automatisch doorsturen inschakelen voor Azure Service Bus en abonnementen
 description: In dit artikel wordt uitgelegd hoe u automatisch doorsturen inschakelen voor wachtrijen en abonnementen met behulp van Azure Portal, PowerShell, CLI en programmeertalen (C#, Java, Python en JavaScript)
 ms.topic: how-to
 ms.date: 04/19/2021
-ms.openlocfilehash: ef22ae08485dc896c94858db4e422cf89a00ec1f
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: e5f69a82aac96deaf96f0ae6aaa1a26d0ee3aaf3
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107755226"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814662"
 ---
-# <a name="enable-auto-forwarding-for-azure-service-bus-queues-and-subscriptions"></a>Automatisch doorsturen inschakelen Azure Service Bus wachtrijen en abonnementen
-Met Service Bus functie voor automatisch doorsturen kunt u een wachtrij of abonnement aan een andere wachtrij of een ander onderwerp dat deel uitmaakt van dezelfde naamruimte, aan elkaar vastketenen. Wanneer automatisch doorsturen is ingeschakeld, Service Bus berichten die in de eerste wachtrij of het eerste abonnement (bron) worden geplaatst, automatisch verwijderd en in de tweede wachtrij of het tweede onderwerp (doel) geplaatst. Het is nog steeds mogelijk om rechtstreeks een bericht naar de doelentiteit te verzenden. Zie [Chaining Service Bus tities with auto forwarding (Entiteiten Service Bus automatisch doorsturen) voor meer informatie.](service-bus-auto-forwarding.md) In dit artikel worden verschillende manieren beschreven om automatisch doorsturen in te Service Bus wachtrijen en abonnementen. 
+# <a name="enable-auto-forwarding-for-azure-service-bus-queues-and-subscriptions"></a>Automatisch doorsturen inschakelen voor Azure Service Bus en abonnementen
+Met Service Bus functie voor automatisch doorsturen kunt u een wachtrij of abonnement aan een andere wachtrij of een ander onderwerp dat deel uitmaakt van dezelfde naamruimte, aan elkaar vastketenen. Wanneer automatisch doorsturen is ingeschakeld, Service Bus berichten die in de eerste wachtrij of het eerste abonnement (bron) worden geplaatst, automatisch verwijderd en in de tweede wachtrij of het tweede onderwerp (doel) geplaatst. Het is nog steeds mogelijk om een bericht rechtstreeks naar de doelentiteit te verzenden. Zie [Chaining Service Bus tities with auto forwarding (Entiteiten Service Bus automatisch doorsturen) voor meer informatie.](service-bus-auto-forwarding.md) In dit artikel worden verschillende manieren beschreven om automatisch doorsturen in te Service Bus wachtrijen en abonnementen. 
 
 > [!IMPORTANT]
-> De basislaag van Service Bus biedt geen ondersteuning voor de functie voor automatisch doorsturen. De lagen Standard en Premium ondersteunen de functie. Zie Prijzen voor Service Bus verschillen [tussen deze lagen.](https://azure.microsoft.com/pricing/details/service-bus/)
+> De basislaag van Service Bus biedt geen ondersteuning voor de functie voor automatisch doorsturen. De standard- en premium-lagen ondersteunen de functie. Zie Prijzen voor Service Bus [verschillen tussen deze lagen.](https://azure.microsoft.com/pricing/details/service-bus/)
 
 ## <a name="using-azure-portal"></a>Azure Portal gebruiken
-Wanneer u een  wachtrij **of** een abonnement voor een onderwerp in de Azure Portal, selecteert u Berichten doorsturen naar **wachtrij/onderwerp,** zoals wordt weergegeven in de volgende voorbeelden. Geef vervolgens op of u berichten wilt doorsturen naar een wachtrij of een onderwerp. In dit voorbeeld wordt de **optie Wachtrij** geselecteerd en wordt een wachtrij **(myqueue)** uit dezelfde naamruimte geselecteerd.
+Wanneer u een wachtrij **of** **een** abonnement voor een onderwerp in de Azure Portal maakt, selecteert u Berichten doorsturen naar **wachtrij/onderwerp,** zoals wordt weergegeven in de volgende voorbeelden. Geef vervolgens op of u berichten wilt doorsturen naar een wachtrij of een onderwerp. In dit voorbeeld wordt de **optie Wachtrij** geselecteerd en wordt een wachtrij uit dezelfde naamruimte geselecteerd.
 
 ### <a name="create-a-queue-with-auto-forwarding-enabled"></a>Een wachtrij maken met automatisch doorsturen ingeschakeld
 :::image type="content" source="./media/enable-auto-forward/create-queue.png" alt-text="Automatisch doorsturen inschakelen op het moment dat de wachtrij wordt gemaakt":::
 
 ### <a name="create-a-subscription-for-a-topic-with-auto-forwarding-enabled"></a>Een abonnement maken voor een onderwerp met automatisch doorsturen ingeschakeld
 :::image type="content" source="./media/enable-auto-forward/create-subscription.png" alt-text="Automatisch doorsturen inschakelen op het moment dat het abonnement wordt gemaakt":::
+
+### <a name="update-the-auto-forward-setting-for-an-existing-queue"></a>De instelling voor automatisch doorsturen voor een bestaande wachtrij bijwerken
+Selecteer op **de** pagina Overzicht voor Service Bus wachtrij de huidige waarde voor de instelling **Berichten doorsturen naar.** In het volgende voorbeeld is de huidige waarde **Uitgeschakeld.** In het **venster Berichten doorsturen naar wachtrij/onderwerp** kunt u de wachtrij of het onderwerp selecteren waarin u wilt dat de berichten worden doorgestuurd. 
+
+:::image type="content" source="./media/enable-auto-forward/queue-auto-forward.png" alt-text="Automatisch doorsturen inschakelen voor een bestaande wachtrij":::
+
+### <a name="update-the-auto-forward-setting-for-an-existing-subscription"></a>De instelling voor automatisch doorsturen bijwerken voor een bestaand abonnement
+Selecteer op **de** pagina Overzicht voor Service Bus abonnement de huidige waarde voor de instelling **Berichten doorsturen naar.** In het volgende voorbeeld is de huidige waarde **Uitgeschakeld.** In het **venster Berichten doorsturen naar wachtrij/onderwerp** kunt u de wachtrij of het onderwerp selecteren waarin u wilt dat de berichten worden doorgestuurd. 
+
+:::image type="content" source="./media/enable-auto-forward/subscription-auto-forward.png" alt-text="Automatisch doorsturen inschakelen voor een bestaand abonnement":::
 
 ## <a name="using-azure-cli"></a>Azure CLI gebruiken
 Als **u een wachtrij** wilt maken waarvoor automatisch doorsturen is ingeschakeld, gebruikt u de opdracht met die is ingesteld op de naam van de wachtrij of het onderwerp waarvoor u de berichten wilt [`az servicebus queue create`](/cli/azure/servicebus/queue#az_servicebus_queue_create) `--forward-to` doorsturen. 
@@ -36,7 +46,29 @@ az servicebus queue create \
     --forward-to myqueue2
 ```
 
-Als **u een abonnement** wilt maken voor een onderwerp waarvoor automatisch doorsturen is ingeschakeld, gebruikt u de opdracht met ingesteld op de naam van de wachtrij of het onderwerp waarvoor u de berichten wilt [`az servicebus topic subscription create`](/cli/azure/servicebus/topic/subscription#az_servicebus_topic_subscription_create) `--forward-to` doorsturen.
+Als **u de** instelling automatisch doorsturen voor een bestaande wachtrij wilt bijwerken, gebruikt u de opdracht met ingesteld op de naam van de wachtrij of het onderwerp waarvoor u de berichten wilt [`az servicebus queue update`](/cli/azure/servicebus/queue#az_servicebus_queue_update) `--forward-to` doorsturen. 
+
+```azurecli-interactive
+az servicebus queue update \
+    --resource-group myresourcegroup \
+    --namespace-name mynamespace \
+    --name myqueue \
+    --forward-to myqueue2
+```
+
+
+Als u een **abonnement** op een onderwerp wilt maken waarvoor automatisch doorsturen is ingeschakeld, gebruikt u de opdracht met en stelt u in op de naam van de wachtrij of het onderwerp waarvoor u de berichten [`az servicebus topic subscription create`](/cli/azure/servicebus/topic/subscription#az_servicebus_topic_subscription_create) wilt `--forward-to` doorsturen.
+
+```azurecli-interactive
+az servicebus topic subscription create \
+    --resource-group myresourcegroup \
+    --namespace-name mynamespace \
+    --topic-name mytopic \
+    --name mysubscription \
+    --forward-to myqueue2
+```
+
+Als u de instelling **voor automatisch** doorsturen voor een abonnement op een onderwerp wilt bijwerken, gebruikt u de opdracht met en stelt u in op de naam van de wachtrij of het onderwerp waarvoor u de berichten wilt [`az servicebus topic subscription update`](/cli/azure/servicebus/topic/subscription#az_servicebus_topic_subscription_update) `--forward-to` doorsturen.
 
 ```azurecli-interactive
 az servicebus topic subscription create \
@@ -57,7 +89,22 @@ New-AzServiceBusQueue -ResourceGroup myresourcegroup `
     -ForwardTo myqueue2
 ```
 
-Als u een **abonnement** wilt maken voor een onderwerp waarvoor automatisch doorsturen is ingeschakeld, gebruikt u de opdracht met en stelt u in op de naam van de wachtrij of het onderwerp waarvoor u wilt dat de berichten [`New-AzServiceBusSubscription`](/powershell/module/az.servicebus/new-azservicebussubscription) worden `-ForwardTo` doorgestuurd.
+Als **u de instelling automatisch doorsturen voor een bestaande wachtrij wilt** bijwerken, gebruikt u de opdracht zoals wordt weergegeven in het volgende [`Set-AzServiceBusQueue`](/powershell/module/az.servicebus/set-azservicebusqueue) voorbeeld.
+
+```azurepowershell-interactive
+$queue=Get-AzServiceBusQueue -ResourceGroup myresourcegroup `
+    -NamespaceName mynamespace `
+    -QueueName myqueue 
+
+$queue.ForwardTo='myqueue2'
+
+Set-AzServiceBusQueue -ResourceGroup myresourcegroup `
+    -NamespaceName mynamespace `
+    -QueueName myqueue `
+    -QueueObj $queue
+``` 
+
+Als u een **abonnement** wilt maken voor een onderwerp waarvoor automatisch doorsturen is ingeschakeld, gebruikt u de opdracht met die is ingesteld op de naam van de wachtrij of het onderwerp waarvoor u de berichten [`New-AzServiceBusSubscription`](/powershell/module/az.servicebus/new-azservicebussubscription) wilt `-ForwardTo` doorsturen.
 
 ```azurepowershell-interactive
 New-AzServiceBusSubscription -ResourceGroup myresourcegroup `
@@ -65,6 +112,23 @@ New-AzServiceBusSubscription -ResourceGroup myresourcegroup `
     -TopicName mytopic `
     -SubscriptionName mysubscription `
     -ForwardTo myqueue2
+```
+
+Zie het volgende voorbeeld als u de instelling voor **automatisch doorsturen voor een** bestaand abonnement wilt bijwerken.
+
+```azurepowershell-interactive
+$subscription=Get-AzServiceBusSubscription -ResourceGroup myresourcegroup `
+    -NamespaceName mynamespace `
+    -TopicName mytopic `
+    -SubscriptionName mysub
+
+$subscription.ForwardTo='mytopic2'
+
+Set-AzServiceBusSubscription -ResourceGroup myresourcegroup `
+    -NamespaceName mynamespace `
+    -Name mytopic `
+    -SubscriptionName mysub `
+    -SubscriptionObj $subscription 
 ```
 
 ## <a name="using-azure-resource-manager-template"></a>Azure Resource Manager-sjabloon gebruiken
@@ -208,6 +272,6 @@ Probeer de voorbeelden in de taal van uw keuze om de Azure Service Bus verkennen
 - [Azure Service Bus clientbibliotheekvoorbeelden voor TypeScript](/samples/azure/azure-sdk-for-js/service-bus-typescript/)
 - [Voorbeelden van Azure.Messaging.ServiceBus voor .NET](/samples/azure/azure-sdk-for-net/azuremessagingservicebus-samples/)
 
-Zoek voorbeelden voor de oudere .NET- en Java-clientbibliotheken hieronder:
+Voorbeelden voor de oudere .NET- en Java-clientbibliotheken vindt u hieronder:
 - [Microsoft.Azure.ServiceBus-voorbeelden voor .NET](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/)
 - [azure-servicebus-voorbeelden voor Java](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus/MessageBrowse)

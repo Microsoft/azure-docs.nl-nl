@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: quickstart
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: f7f6f5d82c5fda7101e80ddcb8b17dc6bdef6532
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 588bee2922ee44f3f89b5d252b5b4a6991d26b82
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99070254"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815122"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-cli"></a>Quickstart: een sleutelkluis maken met behulp van de Azure CLI
 
@@ -43,6 +43,6 @@ Azure Key Vault is een cloudservice die een beveiligd archief biedt voor [sleute
 In deze quickstart hebt u een sleutelkluis gemaakt en deze vervolgens weer verwijderd. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](overview.md)
-- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-overview.md)
+- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-features.md)
 - Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault)
 

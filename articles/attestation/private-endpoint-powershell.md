@@ -7,12 +7,13 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 03/26/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 8ff2e73a8557c6b1761c852ac58a46037a122ddb
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: ceefd4695583822536d8cc4c14614af7f6736f70
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105628523"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830120"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-powershell"></a>Quickstart: Een privé-eindpunt maken met behulp van de Azure PowerShell
 
@@ -21,7 +22,7 @@ Aan de slag met Azure Private Link door een privé-eindpunt te gebruiken om veil
 In deze quickstart maakt u een privé-eindpunt voor Azure Attestation en implementeert u een virtuele machine om de privé-verbinding te testen.  
 
 > [!NOTE]
-> De huidige implementatie omvat alleen de optie Automatische goed keuring. Het abonnement moet worden toegevoegd aan een acceptatie lijst om door te kunnen gaan met het maken van een persoonlijk eind punt. Neem contact op met het service team of dien een ondersteunings aanvraag voor Azure in op de [ondersteunings pagina van Azure](https://azure.microsoft.com/support/options/) voordat u doorgaat met de onderstaande stappen.
+> De huidige implementatie bevat alleen de optie voor automatische goedkeuring. Het abonnement moet worden toegevoegd aan een lijst met toegestane eindpunten om door te kunnen gaan met het maken van een privé-eindpunt. Neem contact op met het serviceteam of dien een aanvraag ondersteuning voor Azure op de ondersteuning voor Azure [pagina](https://azure.microsoft.com/support/options/) voordat u doorgaat met de onderstaande stappen.
 
 ## <a name="prerequisites"></a>Vereisten
 

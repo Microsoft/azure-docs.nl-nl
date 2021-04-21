@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 04/19/2021
 ms.author: memildin
-ms.openlocfilehash: e12578fa6da679587d41fb25b17b00eb1645299a
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.openlocfilehash: a9997fac66dd49af04f4ed78737118d605e27072
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107718409"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107829868"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Uw eindpunten beveiligen met Security Center geïntegreerde EDR-oplossing: Microsoft Defender for Endpoint
 
@@ -28,7 +28,7 @@ Microsoft Defender for Endpoint is een holistische, cloudoplossing voor eindpunt
 > [!TIP]
 > Oorspronkelijk gestart als **Windows Defender ATP,** is de naam van dit EDR-product (Endpoint Detection and Response) in 2019 gewijzigd in **Microsoft Defender ATP.**
 >
-> Bij Ignite 2020 hebben we de [Microsoft Defender XDR-suite](https://www.microsoft.com/security/business/threat-protection) gestart en is de naam van dit EDR-onderdeel gewijzigd in **Microsoft Defender for Endpoint**.
+> Tijdens Ignite 2020 hebben we de [Microsoft Defender XDR-suite](https://www.microsoft.com/security/business/threat-protection) gelanceerd en is de naam van dit EDR-onderdeel gewijzigd in **Microsoft Defender for Endpoint**.
 
 
 ## <a name="availability"></a>Beschikbaarheid
@@ -39,7 +39,7 @@ Microsoft Defender for Endpoint is een holistische, cloudoplossing voor eindpunt
 | Prijzen:                        | [Azure Defender voor servers](defender-for-servers-introduction.md) is vereist                                                                                                                                                                                                                                             |
 | Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure Arc machines met Windows|
 | Ondersteunde versies van Windows voor detectie:  |  • Windows Server 2019, 2016, 2012 R2 en 2008 R2 SP1<br> • [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)<br> • [Windows 10 Enterprise meerdere sessies](../virtual-desktop/windows-10-multisession-faq.yml) (voorheen Enterprise for Virtual Desktops (EVD)|
-| Niet-ondersteunde besturingssystemen:  |  • Windows 10 (anders dan EVD of WVD)<br> • Linux|
+| Niet-ondersteunde besturingssystemen:  |  • Windows 10 (andere dan EVD of WVD)<br> • Linux|
 | Vereiste rollen en machtigingen: | De integratie in- of uitschakelen: **Beveiligingsbeheerder** of **Eigenaar**<br>MDATP-waarschuwingen weergeven in Security Center: **Beveiligingslezer,** **Lezer,** **Inzender voor resourcegroep,** **Resourcegroepeigenaar,** Beveiligingsbeheerder, Abonnementseigenaar of **Inzender voor abonnementen** |
 | Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
@@ -62,29 +62,33 @@ Door Defender for Endpoint te integreren met Security Center, profiteert u van d
 
     :::image type="content" source="./media/security-center-wdatp/microsoft-defender-security-center.png" alt-text="Microsoft Defender for Endpoint's eigen Security Center" lightbox="./media/security-center-wdatp/microsoft-defender-security-center.png":::
 
-## <a name="microsoft-defender-for-endpoint-tenant-location"></a>Locatie van de Microsoft Defender voor eindpunt-tenant
+## <a name="what-are-the-requirements-for-the-microsoft-defender-for-endpoint-tenant"></a>Wat zijn de vereisten voor de Microsoft Defender for Endpoint-tenant?
 
-Wanneer u een Azure Security Center voor het bewaken van uw servers, wordt er automatisch een Microsoft Defender for Endpoint-tenant gemaakt. Gegevens die door Defender for Endpoint worden verzameld, worden opgeslagen op de geografische locatie van de tenant, zoals aangegeven tijdens het inrichten. Klantgegevens , in gepseudonimiseerde vorm, kunnen ook worden opgeslagen in de centrale opslag- en verwerkingssystemen in de Verenigde Staten. 
+Wanneer u Azure Security Center servers bewaakt, wordt er automatisch een Microsoft Defender for Endpoint-tenant gemaakt. 
 
-Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw eigen licentie voor Microsoft Defender voor eindpunt hebt en uw gegevens naar een andere locatie wilt verplaatsen, neem dan contact op met Microsoft-ondersteuning tenant opnieuw in te stellen.
+- **Locatie:** Gegevens die door Defender for Endpoint worden verzameld, worden opgeslagen op de geografische locatie van de tenant, zoals aangegeven tijdens het inrichten. Klantgegevens , in gepseudonimiseerde vorm, kunnen ook worden opgeslagen in de centrale opslag- en verwerkingssystemen in de Verenigde Staten. Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw eigen licentie voor Microsoft Defender voor eindpunt hebt en uw gegevens naar een andere locatie wilt verplaatsen, neem dan contact op met Microsoft-ondersteuning tenant opnieuw in te stellen.
+- **Abonnementen verplaatsen:** Als u uw Azure-abonnement hebt verplaatst tussen Azure-tenants, zijn enkele handmatige voorbereidende stappen vereist voordat Security Center Defender for Endpoint implementeert. Neem contact op met [Microsoft Ondersteuning voor volledige informatie.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
 
-## <a name="enable-the-microsoft-defender-for-endpoint-integration"></a>De integratie van Microsoft Defender voor eindpunten inschakelen
+## <a name="enable-the-microsoft-defender-for-endpoint-integration"></a>De integratie van Microsoft Defender for Endpoint inschakelen
 
 ### <a name="prerequisites"></a>Vereisten
 
-Controleer of uw computer voldoet aan de vereiste vereisten voor Defender for Endpoint:
+Controleer of uw computer voldoet aan de vereisten voor Defender for Endpoint:
 
-1. De netwerkinstellingen configureren die worden beschreven in [Instellingen voor apparaatproxy en internetverbinding configureren](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
-1. Als u Defender op een eindpunt implementeert op een on-premises machine, verbindt u deze met Azure Arc zoals wordt uitgelegd in Hybride machines verbinden met [Azure Arc-servers](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
-1. Alleen voor Windows Server 2019-computers controleert u of op uw computers een geldige agent wordt uitgevoerd en dat u de extensie MicrosoftMonitoringAgent hebt
-1. Schakel **Azure Defender voor servers in.** Zie [Quickstart: Azure Defender](enable-azure-defender.md).
-1. Als u Microsoft Defender for Endpoints al hebt gelicentieerd en geïmplementeerd op uw servers, verwijdert u deze met behulp van de procedure die wordt beschreven in [Offboard Windows-servers.](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers)
+1. Zorg ervoor dat de machine, indien nodig, is verbonden met Azure:
+
+    - Configureer **voor Windows-servers** de netwerkinstellingen die worden beschreven in [Instellingen voor apparaatproxy en internetverbinding configureren](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet)
+    - Voor **on-premises** machines verbindt u deze met Azure Arc zoals uitgelegd in Hybride [machines verbinden met Azure Arc ingeschakelde servers](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)
+    - Voor **Windows Server 2019-** en [Windows Virtual Desktop-machines (WVD)](../virtual-desktop/overview.md) controleert u of op uw computers de Log Analytics-agent wordt uitgevoerd en dat u de extensie MicrosoftMonitoringAgent hebt.
+    
+1. Schakel **Azure Defender voor servers in.** Zie [Quickstart: Azure Defender.](enable-azure-defender.md)
+1. Als u Microsoft Defender voor eindpunten al hebt gelicentieerd en geïmplementeerd op uw servers, verwijdert u deze met behulp van de procedure die wordt beschreven in [Offboard Windows-servers.](/windows/security/threat-protection/microsoft-defender-atp/configure-server-endpoints#offboard-windows-servers)
 1. Als u uw abonnement hebt verplaatst tussen Azure-tenants, zijn ook enkele handmatige voorbereidende stappen vereist. Neem contact op met [Microsoft Ondersteuning voor volledige informatie.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
 
 ### <a name="enable-the-integration"></a>De integratie inschakelen
-1. Selecteer Security Center in het menu  van & en selecteer het abonnement dat u wilt wijzigen.
+1. Selecteer Security Center in het menu prijzen **&** instellingen en selecteer het abonnement dat u wilt wijzigen.
 1. Selecteer **Detectie van dreigingen**.
 1. Selecteer **Microsoft Defender voor eindpunt toegang geven tot mijn gegevens** en selecteer **Opslaan.**
 
@@ -108,7 +112,7 @@ Een goedaardige testwaarschuwing voor Microsoft Defender for Endpoint genereren:
 1. Maak een map C:\test-MDATP-test.
 1. Gebruik Extern bureaublad toegang tot uw computer.
 1. Open een opdrachtregelvenster.
-1. Kopieer de volgende opdracht bij de prompt en voer deze uit. Het opdrachtpromptvenster wordt automatisch gesloten.
+1. Kopieer bij de prompt en voer de volgende opdracht uit. Het opdrachtpromptvenster wordt automatisch gesloten.
 
     ```powershell
     powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-MDATP-test\\invoice.exe'); Start-Process 'C:\\test-MDATP-test\\invoice.exe'
@@ -137,7 +141,7 @@ Als u al een licentie hebt voor Microsoft Defender for Endpoint, hoeft u niet te
 Neem contact op met het ondersteuningsteam van Security Center en geef de relevante werkruimte-ID, regio en licentiegegevens van elke relevante licentie op om uw korting te bevestigen.
 
 ### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Hoe kan ik overstappen van een EDR-hulpprogramma van derden?
-Volledige instructies voor het overschakelen van een niet-Microsoft-eindpuntoplossing zijn beschikbaar in de documentatie van Microsoft Defender voor eindpunten: [Migratieoverzicht.](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration)
+Volledige instructies voor het overstappen van een niet-Microsoft-eindpuntoplossing zijn beschikbaar in de microsoft Defender for Endpoint-documentatie: [Migratieoverzicht.](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration)
   
 
 

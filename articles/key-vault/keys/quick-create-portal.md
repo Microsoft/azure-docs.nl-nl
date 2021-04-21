@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/24/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 75ea1c0e92e4d22e73178685472eb1953565a616
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 1c6cca640d8607a355e0ffca36e3af502df5052c
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750334"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815500"
 ---
 # <a name="quickstart-set-and-retrieve-a-key-from-azure-key-vault-using-the-azure-portal"></a>Snelstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van de Azure-portal
 
@@ -82,4 +82,4 @@ In deze snelstart hebt u een sleutelkluis gemaakt en daar een sleutel in opgesla
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

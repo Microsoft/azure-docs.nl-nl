@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: ba5b375f75d2655045e62583679839c8dd2a5720
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 0c1a3362c4f1dfd3396ccd4704933d06d2611414
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107752440"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814113"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-the-azure-portal"></a>Quickstart: Een geheim uit Azure Key Vault instellen en ophalen met behulp van de Azure Portal
 
@@ -81,8 +81,8 @@ Als u die niet meer nodig hebt, verwijdert u de resourcegroep. Hierdoor worden o
 In deze quickstart hebt u een Key Vault gemaakt en daar een geheim in opgeslagen. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
-- Lees [Veilige toegang tot een sleutelkluis](../general/security-overview.md)
+- Lees [Veilige toegang tot een sleutelkluis](../general/security-features.md)
 - Zie [Key Vault gebruiken met App Service-web-app](../general/tutorial-net-create-vault-azure-web-app.md)
 - Zie [Key Vault gebruiken met toepassing die is geïmplementeerd op VM](../general/tutorial-net-virtual-machine.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

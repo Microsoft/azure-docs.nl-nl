@@ -9,16 +9,16 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5e45b242d85d761dcbe3593c59174942ef1a62a5
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: b9e61a72af1e2d07fc45a9265de6008fa4e509ef
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107749056"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813772"
 ---
-# <a name="create-and-configure-a-key-vault-for-azure-disk-encryption-on-a-windows-vm"></a>Een sleutelkluis maken en configureren voor Azure Disk Encryption een Windows-VM
+# <a name="create-and-configure-a-key-vault-for-azure-disk-encryption-on-a-windows-vm"></a>Een sleutelkluis maken en configureren Azure Disk Encryption een Windows-VM
 
-Azure Disk Encryption gebruikt Azure Key Vault om sleutels en geheimen voor schijfversleuteling te beheren.  Zie [Aan de slag met Azure Key Vault](../../key-vault/general/overview.md) en [Uw sleutelkluis beveiligen](../../key-vault/general/security-overview.md) voor meer informatie over sleutelkluizen. 
+Azure Disk Encryption gebruikt Azure Key Vault om sleutels en geheimen voor schijfversleuteling te beheren.  Zie [Aan de slag met Azure Key Vault](../../key-vault/general/overview.md) en [Uw sleutelkluis beveiligen](../../key-vault/general/security-features.md) voor meer informatie over sleutelkluizen. 
 
 > [!WARNING]
 > - Als u eerder een Azure Disk Encryption Azure AD hebt gebruikt om een VM te versleutelen, moet u deze optie blijven gebruiken om uw VM te versleutelen. Zie [Een sleutelkluis maken en configureren voor Azure Disk Encryption met Azure AD (vorige versie)](disk-encryption-key-vault-aad.md) voor meer informatie.
@@ -65,7 +65,7 @@ Connect-AzAccount
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Azure Disk Encryption CLI-script voor vereisten](https://github.com/ejarvi/ade-cli-getting-started)
-- [Azure Disk Encryption PowerShell-script met vereisten](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)
+- [Azure Disk Encryption PowerShell-script voor vereisten](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)
 - Meer [informatie Azure Disk Encryption scenario's op Windows-VM's](disk-encryption-windows.md)
 - Meer informatie over het [oplossen van problemen Azure Disk Encryption](disk-encryption-troubleshooting.md)
 - De [voorbeeldscripts Azure Disk Encryption lezen](disk-encryption-sample-scripts.md)

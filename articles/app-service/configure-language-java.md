@@ -11,18 +11,18 @@ ms.reviewer: cephalin
 ms.custom: seodec18, devx-track-java, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
 adobe-target: true
-ms.openlocfilehash: cbf530b31797c2c72496548b3ed8f2928378ce9f
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 134ac04c4f6fb5f0e38a868adc735fc816fbc875
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107779485"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107829508"
 ---
 # <a name="configure-a-java-app-for-azure-app-service"></a>Een Java-app voor Azure App Service configureren
 
-Azure App Service kunnen Java-ontwikkelaars snel hun Java SE-, Tomcat- en JBoss EAP-webtoepassingen bouwen, implementeren en schalen in een volledig beheerde service. Toepassingen implementeren met Maven-invoegtoepassingen, vanaf de opdrachtregel of in editors zoals IntelliJ, Eclipse of Visual Studio Code.
+Azure App Service kunnen Java-ontwikkelaars snel hun Java SE-, Tomcat- en JBoss EAP-webtoepassingen bouwen, implementeren en schalen in een volledig beheerde service. Implementeer toepassingen met Maven-invoegtoepassingen, vanaf de opdrachtregel of in editors zoals IntelliJ, Eclipse of Visual Studio Code.
 
-Deze handleiding bevat belangrijke concepten en instructies voor Java-ontwikkelaars die App Service. Als u deze nog nooit Azure App Service, moet u eerst de [Java-quickstart](quickstart-java.md) lezen. Algemene vragen over het gebruik App Service die niet specifiek zijn voor Java-ontwikkeling, worden beantwoord in [de veelgestelde App Service.](faq-configuration-and-management.md)
+Deze handleiding bevat belangrijke concepten en instructies voor Java-ontwikkelaars die App Service. Als u dit nog nooit Azure App Service, moet u eerst de [Java-quickstart](quickstart-java.md) doorlezen. Algemene vragen over het gebruik App Service die niet specifiek zijn voor Java-ontwikkeling, worden beantwoord in [de veelgestelde App Service .](faq-configuration-and-management.md)
 
 ## <a name="deploying-your-app"></a>Uw app implementeren
 
@@ -35,7 +35,7 @@ Anders is uw implementatiemethode afhankelijk van uw archieftype:
 Als u .jar-bestanden wilt implementeren in Java SE, gebruikt `/api/zipdeploy/` u het eindpunt van de Kudu-site. Raadpleeg deze documentatie voor meer informatie [over deze API.](./deploy-zip.md#rest) 
 
 > [!NOTE]
->  Uw JAR-toepassing moet een naam hebben `app.jar` App Service om uw toepassing te identificeren en uit te voeren. Met de Maven-invoegtoepassing (hierboven) wordt de naam van uw toepassing automatisch voor u gewijzigd tijdens de implementatie. Als u de naam van uw JAR niet wilt wijzigen in *app.jar,* kunt u een shellscript uploaden met de opdracht om uw JAR-app uit te voeren. Plak het absolute pad naar dit script in het [tekstvak Opstartbestand](faq-app-service-linux.md#built-in-images) in de sectie Configuratie van de portal. Het opstartscript kan niet worden uitgevoerd vanuit de map waarin deze is geplaatst. Gebruik daarom altijd absolute paden om te verwijzen naar bestanden in het opstartscript (bijvoorbeeld: `java -jar /home/myapp/myapp.jar`).
+>  Uw JAR-toepassing moet een naam hebben `app.jar` App Service om uw toepassing te identificeren en uit te voeren. De naam van uw toepassing wordt tijdens de implementatie automatisch gewijzigd in de Maven-invoegtoepassing (hierboven genoemd). Als u de naam van uw JAR niet wilt wijzigen in *app.jar,* kunt u een shellscript uploaden met de opdracht om uw JAR-app uit te voeren. Plak het absolute pad naar dit script in het [tekstvak Opstartbestand](faq-app-service-linux.md#built-in-images) in de sectie Configuratie van de portal. Het opstartscript kan niet worden uitgevoerd vanuit de map waarin deze is geplaatst. Gebruik daarom altijd absolute paden om te verwijzen naar bestanden in het opstartscript (bijvoorbeeld: `java -jar /home/myapp/myapp.jar`).
 
 ### <a name="tomcat"></a>Tomcat
 
@@ -51,11 +51,11 @@ Gebruik FTP om .ear-bestanden [te implementeren.](deploy-ftp.md)
 
 ::: zone-end
 
-Implementeer uw .war of .jar niet met FTP. Het FTP-hulpprogramma is ontworpen om opstartscripts, afhankelijkheden of andere runtimebestanden te uploaden. Het is niet de optimale keuze voor het implementeren van web-apps.
+Implementeer uw .war- of .jar-naam niet met FTP. Het FTP-hulpprogramma is ontworpen om opstartscripts, afhankelijkheden of andere runtimebestanden te uploaden. Het is niet de optimale keuze voor het implementeren van web-apps.
 
-## <a name="logging-and-debugging-apps"></a>Apps voor logboekregistratie en -debuggen
+## <a name="logging-and-debugging-apps"></a>Logboekregistratie en debuggen van apps
 
-Prestatierapporten, verkeersvisualisaties en statuscontrole zijn beschikbaar voor elke app via de Azure Portal. Zie overzicht van diagnostische [Azure App Service voor meer informatie.](overview-diagnostics.md)
+Prestatierapporten, verkeersvisualisaties en statuscontroles zijn beschikbaar voor elke app via de Azure Portal. Zie overzicht van diagnostische [Azure App Service voor meer informatie.](overview-diagnostics.md)
 
 ### <a name="stream-diagnostic-logs"></a>Diagnostische logboeken streamen
 
@@ -80,13 +80,13 @@ Zie Stream-logboeken in Cloud Shell voor [meer Cloud Shell.](troubleshoot-diagno
 
 ### <a name="troubleshooting-tools"></a>Hulpprogramma's voor probleemoplossing
 
-De ingebouwde Java-installatie afbeeldingen zijn gebaseerd op het Alpine Linux-besturingssysteem. [](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) Gebruik `apk` pakketbeheer om hulpprogramma's of opdrachten voor probleemoplossing te installeren.
+De ingebouwde Java-installatie afbeeldingen zijn gebaseerd op het Alpine Linux-besturingssysteem. [](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) Gebruik pakketbeheer `apk` om hulpprogramma's of opdrachten voor probleemoplossing te installeren.
 
 ::: zone-end
 
-### <a name="flight-recorder"></a>Vluchtrecorder
+### <a name="flight-recorder"></a>Flight Recorder
 
-Alle Java-runtimes op App Service de Azul JVM's worden bij de Zulu Flight Recorder gebruikt. U kunt dit gebruiken om JVM-, systeem- en toepassingsgebeurtenissen vast te registreren en problemen in uw Java-toepassingen op te lossen.
+Alle Java-runtimes op App Service azul JVM's worden bij de Zulu Flight Recorder gebruikt. U kunt dit gebruiken om JVM-, systeem- en toepassingsgebeurtenissen vast te registreren en problemen in uw Java-toepassingen op te lossen.
 
 ::: zone pivot="platform-windows"
 
@@ -94,7 +94,7 @@ Alle Java-runtimes op App Service de Azul JVM's worden bij de Zulu Flight Record
 
 Als u een getijde opname wilt maken, hebt u de PID (proces-id) van de Java-toepassing nodig. Als u de PID wilt vinden, opent u een browser naar de SCM-site van uw web-app op https://<your-site-name>.scm.azurewebsites.net/ProcessExplorer/. Op deze pagina worden de processen weergegeven die worden uitgevoerd in uw web-app. Zoek het proces met de naam 'java' in de tabel en kopieer de bijbehorende PID (proces-id).
 
-Open vervolgens de console **Voor foutopsporing** in de bovenste werkbalk van de SCM-site en voer de volgende opdracht uit. Vervang `<pid>` door de proces-id die u eerder hebt gekopieerd. Met deze opdracht start u een profiler-opname van 30 seconden van uw Java-toepassing en genereert u een bestand met de naam `timed_recording_example.jfr` in de `D:\home` map .
+Open vervolgens de Console **voor foutopsporing** in de bovenste werkbalk van de SCM-site en voer de volgende opdracht uit. Vervang `<pid>` door de proces-id die u eerder hebt gekopieerd. Met deze opdracht start u een profiler-opname van 30 seconden van uw Java-toepassing en genereert u een bestand met de naam `timed_recording_example.jfr` in de `D:\home` map .
 
 ```
 jcmd <pid> JFR.start name=TimedRecording settings=profile duration=30s filename="D:\home\timed_recording_example.JFR"
@@ -112,17 +112,17 @@ Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
 116 /home/site/wwwroot/app.jar
 ```
 
-Voer de onderstaande opdracht uit om een opname van 30 seconden van de JVM te starten. Hiermee profileert u de JVM en maakt u een JFR-bestand met de *naam jfr_example.jfr* in de basismap. (Vervang 116 door de pid van uw Java-app.)
+Voer de onderstaande opdracht uit om een opname van 30 seconden van de JVM te starten. Hiermee profileren we de JVM en maakt u een JFR-bestand met de *naam jfr_example.jfr* in de basismap. (Vervang 116 door de pid van uw Java-app.)
 
 ```shell
 jcmd 116 JFR.start name=MyRecording settings=profile duration=30s filename="/home/jfr_example.jfr"
 ```
 
-Tijdens het interval van 30 seconden kunt u controleren of de opname plaatsvindt door uit te `jcmd 116 JFR.check` gaan. Hiermee worden alle opnamen voor het opgegeven Java-proces weer gegeven.
+Tijdens het interval van 30 seconden kunt u controleren of de opname plaatsvindt door uit te laten. `jcmd 116 JFR.check` Hiermee worden alle opnamen voor het opgegeven Java-proces weer gegeven.
 
 #### <a name="continuous-recording"></a>Continue opname
 
-U kunt Zulu Flight Recorder gebruiken om uw Java-toepassing continu te profileren met minimale gevolgen voor de runtimeprestaties[(bron).](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf) Voer de volgende Azure CLI-opdracht uit om een app-instelling met de naam JAVA_OPTS de benodigde configuratie te maken. De inhoud van de JAVA_OPTS app-instelling wordt doorgegeven aan de `java` opdracht wanneer uw app wordt gestart.
+U kunt Zulu Flight Recorder gebruiken om uw Java-toepassing continu te profileren met minimale invloed op de runtimeprestaties[(bron).](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf) Voer de volgende Azure CLI-opdracht uit om een app-instelling met de naam JAVA_OPTS de benodigde configuratie te maken. De inhoud van de JAVA_OPTS app-instelling wordt doorgegeven aan de `java` opdracht wanneer uw app wordt gestart.
 
 ```azurecli
 az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --settings JAVA_OPTS=-XX:StartFlightRecording=disk=true,name=continuous_recording,dumponexit=true,maxsize=1024m,maxage=1d
@@ -138,7 +138,7 @@ jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 
 #### <a name="analyze-jfr-files"></a>Bestanden `.jfr` analyseren
 
-Gebruik [FTPS om](deploy-ftp.md) uw JFR-bestand te downloaden naar uw lokale computer. Als u het JFR-bestand wilt analyseren, downloadt en installeert [u Zulu Mission Control](https://www.azul.com/products/zulu-mission-control/). Zie de [Azul-documentatie](https://docs.azul.com/zmc/) en de installatie-instructies voor instructies voor Zulu Mission [Control.](/java/azure/jdk/java-jdk-flight-recorder-and-mission-control)
+Gebruik [FTPS om](deploy-ftp.md) uw JFR-bestand naar uw lokale computer te downloaden. Als u het JFR-bestand wilt analyseren, downloadt en installeert [u Zulu Mission Control.](https://www.azul.com/products/zulu-mission-control/) Zie de [Azul-documentatie](https://docs.azul.com/zmc/) en de installatie-instructies voor instructies voor Zulu Mission [Control.](/java/azure/jdk/java-jdk-flight-recorder-and-mission-control)
 
 ### <a name="app-logging"></a>App-logboekregistratie
 
@@ -155,7 +155,7 @@ Azure Blob Storage logboekregistratie voor linux-App Services kunnen alleen word
 
 ::: zone-end
 
-Als uw toepassing [gebruikmaakt van Logback](https://logback.qos.ch/) of [Log4j](https://logging.apache.org/log4j) voor tracering, kunt u deze traceringen doorsturen naar Azure-toepassing Insights met behulp van de configuratie-instructies voor het logboekregistratie-framework in Logboeken voor Java-tracering [verkennen in Application Insights](../azure-monitor/app/java-trace-logs.md).
+Als uw toepassing [gebruikmaakt van Logback](https://logback.qos.ch/) of [Log4j](https://logging.apache.org/log4j) voor tracering, kunt u deze traceringen doorsturen voor controle naar Azure-toepassing Insights met behulp van de configuratie-instructies voor het logboekregistratie-framework in Java-traceerlogboeken [verkennen in Application Insights](../azure-monitor/app/java-trace-logs.md).
 
 ## <a name="customization-and-tuning"></a>Aanpassen en afstemmen
 
@@ -170,7 +170,7 @@ Azure App Service linux biedt ondersteuning voor out-of-the-box afstemming en aa
 
 ### <a name="set-java-runtime-options"></a>Opties voor Java-runtime instellen
 
-Als u toegewezen geheugen of andere opties voor JVM-runtime wilt instellen, maakt u een [app-instelling](configure-common.md#configure-app-settings) met de `JAVA_OPTS` naam met de opties. App Service deze instelling door als een omgevingsvariabele aan de Java-runtime wanneer deze wordt gestart.
+Als u toegewezen geheugen of andere JVM-runtimeopties wilt instellen, maakt u een [app-instelling](configure-common.md#configure-app-settings) met de `JAVA_OPTS` naam met de opties. App Service deze instelling door als een omgevingsvariabele aan de Java-runtime wanneer deze wordt gestart.
 
 Maak in Azure Portal **onder** Toepassingsinstellingen voor de web-app een nieuwe app-instelling met de naam die de aanvullende instellingen `JAVA_OPTS` bevat, zoals `-Xms512m -Xmx1204m` .
 
@@ -233,7 +233,7 @@ Als u de prestaties van Tomcat-toepassingen wilt verbeteren, kunt u uw JSP-besta
 
 Java-toepassingen die worden uitgevoerd in App Service hebben dezelfde set [best practices](../security/fundamentals/paas-applications-using-app-services.md) voor beveiliging als andere toepassingen.
 
-### <a name="authenticate-users-easy-auth"></a>Gebruikers verifiëren (Easy Auth)
+### <a name="authenticate-users-easy-auth"></a>Gebruikers verifiëren (Eenvoudige verificatie)
 
 Stel app-verificatie in de Azure Portal met de **optie Verificatie en autorisatie.** Hier kunt u verificatie inschakelen met behulp van Azure Active Directory of sociale aanmeldingen, zoals Facebook, Google of GitHub. Azure Portal configuratie werkt alleen wanneer u één verificatieprovider configureert. Zie Configure your [App Service app to use Azure Active Directory login](configure-authentication-provider-aad.md) (Uw app configureren Azure Active Directory en de gerelateerde artikelen voor andere id-providers) voor meer informatie. Als u meerdere aanmeldingsproviders wilt inschakelen, volgt u de instructies in het artikel [App Service verificatie](app-service-authentication-how-to.md) aanpassen.
 
@@ -243,7 +243,7 @@ Spring Boot kunnen ontwikkelaars de Azure Active Directory Spring Boot [gebruike
 
 #### <a name="tomcat"></a>Tomcat
 
-Uw Tomcat-toepassing heeft rechtstreeks vanuit de servlet toegang tot de claims van de gebruiker door het principal-object naar een kaartobject te casten. Met het object Kaart wordt elk claimtype aan een verzameling claims voor dat type toegevoegd. In de onderstaande code `request` is een exemplaar van `HttpServletRequest` .
+Uw Tomcat-toepassing heeft rechtstreeks vanuit de servlet toegang tot de claims van de gebruiker door het principal-object naar een kaartobject te casten. Met het object Kaart wordt elk claimtype aan een verzameling van de claims voor dat type toe te voegen. In de onderstaande code `request` is een exemplaar van `HttpServletRequest` .
 
 ```java
 Map<String, Collection<String>> map = (Map<String, Collection<String>>) request.getUserPrincipal();
@@ -263,7 +263,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Gebruik het pad om gebruikers af te `/.auth/ext/logout` melden. Als u andere acties wilt uitvoeren, raadpleegt u de documentatie over [App Service gebruik van verificatie en autorisatie.](./app-service-authentication-how-to.md) Er is ook officiële documentatie over de Tomcat [HttpServletRequest-interface](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) en de methoden ervan. De volgende servlet-methoden worden ook geseed op basis van uw App Service configuratie:
+Gebruik het pad om gebruikers af te `/.auth/ext/logout` melden. Als u andere acties wilt uitvoeren, raadpleegt u de documentatie over [App Service verificatie en autorisatiegebruik.](./app-service-authentication-how-to.md) Er is ook officiële documentatie over de Tomcat [HttpServletRequest-interface](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) en de methoden ervan. De volgende servlet-methoden worden ook geseed op basis van uw App Service configuratie:
 
 ```java
 public boolean isSecure()
@@ -301,9 +301,9 @@ Er is mogelijk aanvullende configuratie nodig voor het versleutelen van uw JDBC-
 - [MongoDB](https://mongodb.github.io/mongo-java-driver/3.4/driver/tutorials/ssl/)
 - [Cassandra](https://docs.datastax.com/en/developer/java-driver/4.3/)
 
-#### <a name="initialize-the-java-key-store"></a>Het Java-sleutelopslag initialiseren
+#### <a name="initialize-the-java-key-store"></a>Het Java Key Store initialiseren
 
-Als u het object wilt `import java.security.KeyStore` initialiseren, laadt u het keystore-bestand met het wachtwoord. Het standaardwachtwoord voor beide sleutelopslag is 'changeit'.
+Als u het `import java.security.KeyStore` object wilt initialiseren, laadt u het keystore-bestand met het wachtwoord. Het standaardwachtwoord voor beide sleutelopslag is 'changeit'.
 
 ```java
 KeyStore keyStore = KeyStore.getInstance("jks");
@@ -319,26 +319,26 @@ keyStore.load(
 
 #### <a name="manually-load-the-key-store"></a>Het sleutelopslag handmatig laden
 
-U kunt certificaten handmatig laden in het sleutelopslag. Maak een app-instelling, , met de waarde om uit te App Service de certificaten automatisch in het `SKIP_JAVA_KEYSTORE_LOAD` `1` sleutelopslag te laden. Alle openbare certificaten die via de App Service zijn geüpload Azure Portal worden opgeslagen onder `/var/ssl/certs/` . Persoonlijke certificaten worden opgeslagen onder `/var/ssl/private/` .
+U kunt certificaten handmatig laden in het sleutelopslag. Maak een app-instelling, , met de waarde om uit te App Service de certificaten automatisch in het `SKIP_JAVA_KEYSTORE_LOAD` `1` sleutelopslag te laden. Alle openbare certificaten die via de App Service zijn geüpload naar Azure Portal worden opgeslagen onder `/var/ssl/certs/` . Persoonlijke certificaten worden opgeslagen onder `/var/ssl/private/` .
 
-U kunt communiceren met of fouten opsporen in het Hulpprogramma voor Java-sleutels door [een SSH-verbinding](configure-linux-open-ssh-session.md) met uw App Service en de opdracht uit te `keytool` voeren. Zie de [documentatie over het sleutelhulpprogramma](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) voor een lijst met opdrachten. Raadpleeg de officiële documentatie voor meer informatie over de [KeyStore-API.](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html)
+U kunt het Java Key Tool gebruiken of er fouten in opsporen door [een SSH-verbinding](configure-linux-open-ssh-session.md) met uw App Service en de opdracht uit te `keytool` voeren. Zie de [documentatie over het sleutelhulpprogramma](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) voor een lijst met opdrachten. Raadpleeg de officiële documentatie voor meer informatie over de [KeyStore-API.](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html)
 
 ::: zone-end
 
-## <a name="configure-apm-platforms"></a>APM-platforms configureren
+## <a name="configure-apm-platforms"></a>APM-platformen configureren
 
-In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure App Service op Linux verbinden met de APM-platformen (Application Performance Monitoring) van NewRelic en AppDynamics.
+In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure App Service op Linux kunt verbinden met de platformen NewRelic en AppDynamics application performance monitoring (APM).
 
 ### <a name="configure-new-relic"></a>Een New Relic
 
 ::: zone pivot="platform-windows"
 
-1. Maak een NewRelic-account [op NewRelic.com](https://newrelic.com/signup)
+1. Een NewRelic-account maken [op NewRelic.com](https://newrelic.com/signup)
 2. Download de Java-agent van NewRelic. Deze heeft een bestandsnaam die vergelijkbaar is *metnewrelic-java-x.x.x.zip*.
-3. Kopieer uw licentiesleutel. U hebt deze later nodig om de agent te configureren.
+3. Kopieer uw licentiesleutel. U hebt deze nodig om de agent later te configureren.
 4. [SSH in uw App Service en](configure-linux-open-ssh-session.md) maak een nieuwe map */home/site/wwwroot/apm.*
-5. Upload de uitgepakte NewRelic Java-agentbestanden naar een map onder */home/site/wwwroot/apm.* De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/newrelic staan.*
-6. Wijzig het YAML-bestand op */home/site/wwwroot/apm/newrelic/newrelic.yml* en vervang de tijdelijke aanduidingslicentiewaarde door uw eigen licentiesleutel.
+5. Upload de uitgepakte NewRelic Java-agentbestanden naar een map onder */home/site/wwwroot/apm.* De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/newrelic.*
+6. Wijzig het YAML-bestand op */home/site/wwwroot/apm/newrelic/newrelic.yml* en vervang de waarde van de tijdelijke aanduiding door uw eigen licentiesleutel.
 7. Blader in Azure Portal naar uw toepassing in App Service en maak een nieuwe toepassingsinstelling.
 
     - Maak **voor Java SE-apps** een omgevingsvariabele met de `JAVA_OPTS` naam met de waarde `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
@@ -347,12 +347,12 @@ In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure
 ::: zone-end
 ::: zone pivot="platform-linux"
 
-1. Een NewRelic-account maken [op NewRelic.com](https://newrelic.com/signup)
+1. Maak een NewRelic-account [op NewRelic.com](https://newrelic.com/signup)
 2. Download de Java-agent van NewRelic. Deze heeft een bestandsnaam die vergelijkbaar is *metnewrelic-java-x.x.x.zip*.
-3. Kopieer uw licentiesleutel. U hebt deze nodig om de agent later te configureren.
+3. Kopieer uw licentiesleutel. U hebt deze later nodig om de agent te configureren.
 4. [SSH in uw App Service en](configure-linux-open-ssh-session.md) maak een nieuwe map */home/site/wwwroot/apm.*
-5. Upload de uitgepakte NewRelic Java-agentbestanden naar een map onder */home/site/wwwroot/apm.* De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/newrelic staan.*
-6. Wijzig het YAML-bestand op */home/site/wwwroot/apm/newrelic/newrelic.yml* en vervang de tijdelijke aanduidingslicentiewaarde door uw eigen licentiesleutel.
+5. Upload de uitgepakte NewRelic Java-agentbestanden naar een map onder */home/site/wwwroot/apm.* De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/newrelic.*
+6. Wijzig het YAML-bestand op */home/site/wwwroot/apm/newrelic/newrelic.yml* en vervang de waarde van de tijdelijke aanduiding door uw eigen licentiesleutel.
 7. Blader in Azure Portal naar uw toepassing in App Service en maak een nieuwe toepassingsinstelling.
    
     - Maak **voor Java SE-apps** een omgevingsvariabele met de `JAVA_OPTS` naam met de waarde `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar` .
@@ -360,7 +360,7 @@ In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure
 
 ::: zone-end
 
->  Als u al een omgevingsvariabele voor of hebt, moet u de optie toevoegen aan `JAVA_OPTS` het einde van de huidige `CATALINA_OPTS` `-javaagent:/...` waarde.
+>  Als u al een omgevingsvariabele voor of hebt, moet u de optie `JAVA_OPTS` toevoegen aan het einde van de huidige `CATALINA_OPTS` `-javaagent:/...` waarde.
 
 ### <a name="configure-appdynamics"></a>AppDynamics configureren
 
@@ -369,11 +369,11 @@ In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure
 1. Een AppDynamics-account maken [op AppDynamics.com](https://www.appdynamics.com/community/register/)
 2. Download de Java-agent van de AppDynamics-website. De bestandsnaam is vergelijkbaar met *AppServerAgent-x.x.x.xxxxx.zip*
 3. Gebruik de [Kudu-console om](https://github.com/projectkudu/kudu/wiki/Kudu-console) een nieuwe map */home/site/wwwroot/apm te maken.*
-4. Upload de Java-agentbestanden naar een map onder */home/site/wwwroot/apm*. De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/appdynamics (*
+4. Upload de Java-agentbestanden naar een map onder */home/site/wwwroot/apm.* De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/appdynamics .*
 5. Blader in Azure Portal naar uw toepassing in App Service en maak een nieuwe toepassingsinstelling.
 
-   - Maak **voor Java SE-apps** een omgevingsvariabele met de `JAVA_OPTS` naam met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
-   - Maak **voor Tomcat-apps** een omgevingsvariabele met de `CATALINA_OPTS` naam en de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
+   - Maak **voor Java SE-apps** een omgevingsvariabele met de naam `JAVA_OPTS` met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
+   - Maak **voor Tomcat-apps** een omgevingsvariabele met de `CATALINA_OPTS` naam met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
 
 ::: zone-end
 ::: zone pivot="platform-linux"
@@ -381,26 +381,26 @@ In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure
 1. Een AppDynamics-account maken [op AppDynamics.com](https://www.appdynamics.com/community/register/)
 2. Download de Java-agent van de AppDynamics-website. De bestandsnaam is vergelijkbaar met *AppServerAgent-x.x.x.xxxxx.zip*
 3. [SSH in uw App Service en](configure-linux-open-ssh-session.md) maak een nieuwe map */home/site/wwwroot/apm.*
-4. Upload de Java-agentbestanden naar een map onder */home/site/wwwroot/apm*. De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/appdynamics (*
+4. Upload de Java-agentbestanden naar een map onder */home/site/wwwroot/apm.* De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/appdynamics .*
 5. Blader in Azure Portal naar uw toepassing in App Service en maak een nieuwe toepassingsinstelling.
 
    - Maak **voor Java SE-apps** een omgevingsvariabele met de naam `JAVA_OPTS` met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
-   - Maak **voor Tomcat-apps** een omgevingsvariabele met de `CATALINA_OPTS` naam en de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
+   - Maak **voor Tomcat-apps** een omgevingsvariabele met de `CATALINA_OPTS` naam met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
 
 ::: zone-end
 
 > [!NOTE]
->  Als u al een omgevingsvariabele voor of hebt, moet u de optie `JAVA_OPTS` toevoegen aan het einde van de huidige `CATALINA_OPTS` `-javaagent:/...` waarde.
+>  Als u al een omgevingsvariabele voor of hebt, moet u de optie toevoegen aan `JAVA_OPTS` het einde van de huidige `CATALINA_OPTS` `-javaagent:/...` waarde.
 
 ## <a name="configure-data-sources"></a>Gegevensbronnen configureren
 
 ### <a name="java-se"></a>Java SE
 
-Als u verbinding wilt maken met gegevensbronnen in Spring Boot toepassingen, raden we u aan verbindingsreeksen te maken en deze in uw *bestand application.properties te* injecteren.
+Als u verbinding wilt maken met gegevensbronnen in Spring Boot toepassingen, raden we u aan verbindingsreeksen te maken en deze in het *bestand application.properties te* injecteren.
 
-1. Stel in de sectie Configuratie van de pagina App Service een naam in voor de tekenreeks, plak uw JDBC-connection string in het waardeveld en stel het type in op Aangepast. U kunt deze instelling desgewenst instellen connection string sleufinstelling.
+1. Stel in de sectie Configuratie van de pagina App Service een naam in voor de tekenreeks, plak uw JDBC-connection string in het waardeveld en stel het type in op Aangepast. U kunt deze optie eventueel instellen connection string sleufinstelling.
 
-    Deze connection string is toegankelijk voor onze toepassing als een omgevingsvariabele met de naam `CUSTOMCONNSTR_<your-string-name>` . De naam van de connection string die we hierboven hebben gemaakt, heeft bijvoorbeeld de naam `CUSTOMCONNSTR_exampledb` .
+    Deze connection string is toegankelijk voor onze toepassing als een omgevingsvariabele met de naam `CUSTOMCONNSTR_<your-string-name>` . De naam van de connection string die we hierboven hebben gemaakt, krijgt bijvoorbeeld de naam `CUSTOMCONNSTR_exampledb` .
 
 2. In het *bestand application.properties* verwijst u naar connection string naam van de omgevingsvariabele. In ons voorbeeld gebruiken we het volgende.
 
@@ -408,7 +408,7 @@ Als u verbinding wilt maken met gegevensbronnen in Spring Boot toepassingen, rad
     app.datasource.url=${CUSTOMCONNSTR_exampledb}
     ```
 
-Raadpleeg de documentatie [Spring Boot over gegevenstoegang](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-data-access.html) en externe [configuraties](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) voor meer informatie over dit onderwerp.
+Raadpleeg de documentatie [Spring Boot over gegevenstoegang en](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-data-access.html) externe [configuraties](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) voor meer informatie over dit onderwerp.
 
 ::: zone pivot="platform-windows"
 
@@ -422,7 +422,7 @@ Deze instructies zijn van toepassing op alle databaseverbindingen. U moet tijdel
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Downloaden](https://dev.mysql.com/downloads/connector/j/) (selecteer 'Platform onafhankelijk') |
 | SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Downloaden](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server#download)                                                           |
 
-Als u Tomcat wilt configureren voor het gebruik van Java Database Connectivity (JDBC) of de Java Persistence API (JPA), moet u eerst de omgevingsvariabele aanpassen die bij het starten door Tomcat wordt `CATALINA_OPTS` ingelezen. Stel deze waarden in via een app-instelling in de [App Service Maven-invoegvoegapp](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
+Als u Tomcat wilt configureren voor het gebruik van Java Database Connectivity (JDBC) of de Java Persistence API (JPA), moet u eerst de omgevingsvariabele aanpassen die bij het starten door `CATALINA_OPTS` Tomcat wordt ingelezen. Stel deze waarden in via een app-instelling in de [App Service Maven-invoegvoegomgeving](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
 ```xml
 <appSettings>
@@ -441,7 +441,7 @@ Bepaal vervolgens of de gegevensbron beschikbaar moet zijn voor één toepassing
 
 1. Maak een *context.xml* in de *map META-INF/* van uw project. Maak de *map META-INF/als* deze nog niet bestaat.
 
-2. Voeg *context.xml* een `Context` -element toe om de gegevensbron te koppelen aan een JNDI-adres. Vervang de `driverClassName` tijdelijke aanduiding door de klassenaam van uw stuurprogramma uit de bovenstaande tabel.
+2. Voeg *context.xml* een `Context` -element toe om de gegevensbron te koppelen aan een JNDI-adres. Vervang de tijdelijke aanduiding door de klassenaam van uw stuurprogramma `driverClassName` uit de bovenstaande tabel.
 
     ```xml
     <Context>
@@ -465,6 +465,232 @@ Bepaal vervolgens of de gegevensbron beschikbaar moet zijn voor één toepassing
     </resource-env-ref>
     ```
 
+#### <a name="shared-server-level-resources"></a>Gedeelde resources op serverniveau
+
+Tomcat-installaties op App Service in Windows bestaan in gedeelde ruimte op App Service-abonnement. U kunt een Tomcat-installatie niet rechtstreeks wijzigen voor configuratie voor de hele server. Als u configuratiewijzigingen op serverniveau wilt aanbrengen in uw Tomcat-installatie, moet u Tomcat kopiëren naar een lokale map, waarin u de configuratie van Tomcat kunt wijzigen. 
+
+##### <a name="automate-creating-custom-tomcat-on-app-start"></a>Het maken van aangepaste Tomcat automatiseren bij het starten van de app
+
+U kunt een opstartscript gebruiken om acties uit te voeren voordat een web-app wordt gestart. Het opstartscript voor het aanpassen van Tomcat moet de volgende stappen uitvoeren:
+
+1. Controleer of Tomcat al lokaal is gekopieerd en geconfigureerd. Als dat zo is, kan het opstartscript hier eindigen.
+2. Kopieer Tomcat lokaal.
+3. De vereiste configuratiewijzigingen aanbrengen.
+4. Geef aan dat de configuratie is voltooid.
+
+Hier is een PowerShell-script dat deze stappen voltooit:
+
+```powershell
+    # Check for marker file indicating that config has already been done
+    if(Test-Path "$LOCAL_EXPANDED\tomcat\config_done_marker"){
+        return 0
+    }
+
+    # Delete previous Tomcat directory if it exists
+    # In case previous config could not be completed or a new config should be forcefully installed
+    if(Test-Path "$LOCAL_EXPANDED\tomcat"){
+        Remove-Item "$LOCAL_EXPANDED\tomcat" --recurse
+    }
+
+    # Copy Tomcat to local
+    # Using the environment variable $AZURE_TOMCAT90_HOME uses the 'default' version of Tomcat
+    Copy-Item -Path "$AZURE_TOMCAT90_HOME\*" -Destination "$LOCAL_EXPANDED\tomcat" -Recurse
+
+    # Perform the required customization of Tomcat
+    {... customization ...}
+
+    # Mark that the operation was a success
+    New-Item -Path "$LOCAL_EXPANDED\tomcat\config_done_marker" -ItemType File
+```
+
+##### <a name="transforms"></a>Transformaties
+
+Een veelvoorkomende toepassing voor het aanpassen van een Tomcat-versie is het wijzigen van de `server.xml` `context.xml` configuratiebestanden , of `web.xml` Tomcat. App Service wijzigt deze bestanden al om platformfuncties te bieden. Als u deze functies wilt blijven gebruiken, is het belangrijk dat u de inhoud van deze bestanden behoudt wanneer u er wijzigingen in aan brengen. Hiervoor raden we u aan een [XSL-transformatie (XSLT) te gebruiken.](https://www.w3schools.com/xml/xsl_intro.asp) Gebruik een XSL-transformatie om wijzigingen aan te brengen in de XML-bestanden met behoud van de oorspronkelijke inhoud van het bestand.
+
+###### <a name="example-xslt-file"></a>Voorbeeld van XSLT-bestand
+
+Met deze voorbeeldtransformator wordt een nieuw connector-knooppunt toegevoegd aan `server.xml` . Noteer *identiteitstransformatie,* waarmee de oorspronkelijke inhoud van het bestand behouden blijft.
+
+```xml
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="xml" indent="yes"/>
+  
+    <!-- Identity transform: this ensures that the original contents of the file are included in the new file -->
+    <!-- Ensure that your transform files include this block -->
+    <xsl:template match="@* | node()" name="Copy">
+      <xsl:copy>
+        <xsl:apply-templates select="@* | node()"/>
+      </xsl:copy>
+    </xsl:template>
+  
+    <xsl:template match="@* | node()" mode="insertConnector">
+      <xsl:call-template name="Copy" />
+    </xsl:template>
+  
+    <xsl:template match="comment()[not(../Connector[@scheme = 'https']) and
+                                   contains(., '&lt;Connector') and
+                                   (contains(., 'scheme=&quot;https&quot;') or
+                                    contains(., &quot;scheme='https'&quot;))]">
+      <xsl:value-of select="." disable-output-escaping="yes" />
+    </xsl:template>
+  
+    <xsl:template match="Service[not(Connector[@scheme = 'https'] or
+                                     comment()[contains(., '&lt;Connector') and
+                                               (contains(., 'scheme=&quot;https&quot;') or
+                                                contains(., &quot;scheme='https'&quot;))]
+                                    )]
+                        ">
+      <xsl:copy>
+        <xsl:apply-templates select="@* | node()" mode="insertConnector" />
+      </xsl:copy>
+    </xsl:template>
+  
+    <!-- Add the new connector after the last existing Connnector if there is one -->
+    <xsl:template match="Connector[last()]" mode="insertConnector">
+      <xsl:call-template name="Copy" />
+  
+      <xsl:call-template name="AddConnector" />
+    </xsl:template>
+  
+    <!-- ... or before the first Engine if there is no existing Connector -->
+    <xsl:template match="Engine[1][not(preceding-sibling::Connector)]"
+                  mode="insertConnector">
+      <xsl:call-template name="AddConnector" />
+  
+      <xsl:call-template name="Copy" />
+    </xsl:template>
+  
+    <xsl:template name="AddConnector">
+      <!-- Add new line -->
+      <xsl:text>&#xa;</xsl:text>
+      <!-- This is the new connector -->
+      <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true" 
+                 maxThreads="150" scheme="https" secure="true" 
+                 keystroreFile="${{user.home}}/.keystore" keystorePass="changeit"
+                 clientAuth="false" sslProtocol="TLS" />
+    </xsl:template>
+
+</xsl:stylesheet>
+```
+
+###### <a name="function-for-xsl-transform"></a>Functie voor XSL-transformatie
+
+PowerShell heeft ingebouwde hulpprogramma's voor het transformeren van XML-bestanden met behulp van XSL-transformaties. Het volgende script is een voorbeeldfunctie die u in kunt gebruiken om `startup.ps1` de transformatie uit te voeren:
+
+```powershell
+    function TransformXML{
+        param ($xml, $xsl, $output)
+
+        if (-not $xml -or -not $xsl -or -not $output)
+        {
+            return 0
+        }
+
+        Try
+        {
+            $xslt_settings = New-Object System.Xml.Xsl.XsltSettings;
+            $XmlUrlResolver = New-Object System.Xml.XmlUrlResolver;
+            $xslt_settings.EnableScript = 1;
+
+            $xslt = New-Object System.Xml.Xsl.XslCompiledTransform;
+            $xslt.Load($xsl,$xslt_settings,$XmlUrlResolver);
+            $xslt.Transform($xml, $output);
+
+        }
+
+        Catch
+        {
+            $ErrorMessage = $_.Exception.Message
+            $FailedItem = $_.Exception.ItemName
+            Write-Host  'Error'$ErrorMessage':'$FailedItem':' $_.Exception;
+            return 0
+        }
+        return 1
+    }
+```
+
+##### <a name="app-settings"></a>App-instellingen
+
+Het platform moet ook weten waar uw aangepaste versie van Tomcat is geïnstalleerd. U kunt de locatie van de installatie instellen in de `CATALINA_BASE` app-instelling.
+
+U kunt de Azure CLI gebruiken om deze instelling te wijzigen:
+
+```powershell
+    az webapp config appsettings set -g $MyResourceGroup -n $MyUniqueApp --settings CATALINA_BASE="%LOCAL_EXPANDED%\tomcat"
+```
+
+U kunt de instelling ook handmatig wijzigen in de Azure Portal:
+
+1. Ga naar **Instellingen**  >  **Configuratie**  >  **Toepassingsinstellingen.**
+1. Selecteer **Nieuwe toepassingsinstelling.**
+1. Gebruik deze waarden om de instelling te maken:
+   1. **Naam:**`CATALINA_BASE`
+   1. **Waarde**: `"%LOCAL_EXPANDED%\tomcat"`
+
+##### <a name="example-startupps1"></a>Voorbeeld startup.ps1
+
+Met het volgende voorbeeldscript wordt een aangepaste Tomcat gekopieerd naar een lokale map, wordt een XSL-transformatie uitgevoerd en wordt aangegeven dat de transformatie is geslaagd:
+
+```powershell
+    # Locations of xml and xsl files
+    $target_xml="$LOCAL_EXPANDED\tomcat\conf\server.xml"
+    $target_xsl="$HOME\site\server.xsl"
+
+    # Define the transform function
+    # Useful if transforming multiple files
+    function TransformXML{
+        param ($xml, $xsl, $output)
+
+        if (-not $xml -or -not $xsl -or -not $output)
+        {
+            return 0
+        }
+
+        Try
+        {
+            $xslt_settings = New-Object System.Xml.Xsl.XsltSettings;
+            $XmlUrlResolver = New-Object System.Xml.XmlUrlResolver;
+            $xslt_settings.EnableScript = 1;
+
+            $xslt = New-Object System.Xml.Xsl.XslCompiledTransform;
+            $xslt.Load($xsl,$xslt_settings,$XmlUrlResolver);
+            $xslt.Transform($xml, $output);
+        }
+
+        Catch
+        {
+            $ErrorMessage = $_.Exception.Message
+            $FailedItem = $_.Exception.ItemName
+            Write-Host  'Error'$ErrorMessage':'$FailedItem':' $_.Exception;
+            return 0
+        }
+        return 1
+    }
+
+    # Check for marker file indicating that config has already been done
+    if(Test-Path "$LOCAL_EXPANDED\tomcat\config_done_marker"){
+        return 0
+    }
+
+    # Delete previous Tomcat directory if it exists
+    # In case previous config could not be completed or a new config should be forcefully installed
+    if(Test-Path "$LOCAL_EXPANDED\tomcat"){
+        Remove-Item "$LOCAL_EXPANDED\tomcat" --recurse
+    }
+
+    # Copy Tomcat to local
+    # Using the environment variable $AZURE_TOMCAT90_HOME uses the 'default' version of Tomcat
+    Copy-Item -Path "$AZURE_TOMCAT90_HOME\*" -Destination "$LOCAL_EXPANDED\tomcat" -Recurse
+
+    # Perform the required customization of Tomcat
+    $success = TransformXML -xml $target_xml -xsl $target_xsl -output $target_xml
+
+    # Mark that the operation was a success if successful
+    if($success){
+        New-Item -Path "$LOCAL_EXPANDED\tomcat\config_done_marker" -ItemType File
+    }
+```
+
 #### <a name="finalize-configuration"></a>Configuratie finaliseren
 
 Ten slotte plaatsen we de stuurprogramma-JAR's in het Tomcat-klassepad en starten we uw App Service. Zorg ervoor dat de JDBC-stuurprogrammabestanden beschikbaar zijn voor de Tomcat-klasseloader door ze in de map */home/tomcat/lib te* plaatsen. (Maak deze map als deze nog niet bestaat.) Voer de volgende stappen uit om App Service te uploaden naar uw App Service-exemplaar:
@@ -483,7 +709,7 @@ Ten slotte plaatsen we de stuurprogramma-JAR's in het Tomcat-klassepad en starte
 
 3. Maak verbinding met de lokale tunnelingpoort met uw SFTP-client en upload de bestanden naar de *map /home/tomcat/lib.*
 
-U kunt ook een FTP-client gebruiken om het JDBC-stuurprogramma te uploaden. Volg deze [instructies voor het verkrijgen van uw FTP-referenties.](deploy-configure-credentials.md)
+U kunt ook een FTP-client gebruiken om het JDBC-stuurprogramma te uploaden. Volg deze [instructies om uw FTP-referenties op te vragen.](deploy-configure-credentials.md)
 
 ---
 
@@ -500,7 +726,7 @@ Deze instructies zijn van toepassing op alle databaseverbindingen. U moet tijdel
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Downloaden](https://dev.mysql.com/downloads/connector/j/) (selecteer 'Platform onafhankelijk') |
 | SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Downloaden](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server#download)                                                           |
 
-Als u Tomcat wilt configureren voor het gebruik van Java Database Connectivity (JDBC) of de Java Persistence API (JPA), moet u eerst de omgevingsvariabele aanpassen die bij het starten door `CATALINA_OPTS` Tomcat wordt ingelezen. Stel deze waarden in via een app-instelling in de [App Service Maven-invoegvoegomgeving](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
+Als u Tomcat wilt configureren voor het gebruik van Java Database Connectivity (JDBC) of de Java Persistence API (JPA), moet u eerst de omgevingsvariabele aanpassen die bij het starten door Tomcat wordt `CATALINA_OPTS` ingelezen. Stel deze waarden in via een app-instelling in [de App Service Maven-invoegvoegapp](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
 ```xml
 <appSettings>
@@ -545,9 +771,9 @@ Bepaal vervolgens of de gegevensbron beschikbaar moet zijn voor één toepassing
 
 #### <a name="shared-server-level-resources"></a>Gedeelde resources op serverniveau
 
-Als u een gedeelde gegevensbron op serverniveau toevoegt, moet u de gegevensbron van Tomcat bewerken server.xml. Upload eerst een [opstartscript en](faq-app-service-linux.md#built-in-images) stel het pad naar het script **in** Configuration  >  **Startup Command in.** U kunt het opstartscript uploaden met [ftp](deploy-ftp.md).
+Als u een gedeelde gegevensbron op serverniveau toevoegt, moet u de gegevensbron van Tomcat bewerken server.xml. Upload eerst een [opstartscript en](faq-app-service-linux.md#built-in-images) stel het pad naar het script in **configuratie-opstartopdracht**  >  **in.** U kunt het opstartscript uploaden met [FTP.](deploy-ftp.md)
 
-Met het opstartscript wordt een [xsl-transformatie](https://www.w3schools.com/xml/xsl_intro.asp) uitgevoerd naar het server.xml bestand en wordt het resulterende XML-bestand uitgevoerd naar `/usr/local/tomcat/conf/server.xml` . Het opstartscript moet libxslt installeren via apk. Uw xsl-bestand en opstartscript kunnen worden geüpload via FTP. Hieronder vindt u een voorbeeld van een opstartscript.
+Uw opstartscript maakt een [xsl-transformatie](https://www.w3schools.com/xml/xsl_intro.asp) naar het server.xml bestand en geeft het resulterende XML-bestand uit naar `/usr/local/tomcat/conf/server.xml` . Het opstartscript moet libxslt installeren via apk. Uw xsl-bestand en opstartscript kunnen worden geüpload via FTP. Hieronder vindt u een voorbeeld van een opstartscript.
 
 ```sh
 # Install libxslt. Also copy the transform file to /home/tomcat/conf/
@@ -621,9 +847,9 @@ Hieronder vindt u een voorbeeld van een xsl-bestand. In het xsl-voorbeeldbestand
 
 #### <a name="finalize-configuration"></a>Configuratie finaliseren
 
-Plaats ten slotte de stuurprogramma-JAR's in het Tomcat-klassepad en start de App Service.
+Plaats ten slotte de stuurprogramma-JAR's in het Tomcat-klassepad en start uw App Service.
 
-1. Zorg ervoor dat de JDBC-stuurprogrammabestanden beschikbaar zijn voor de Tomcat-klasseloader door ze in de map */home/tomcat/lib te* plaatsen. (Maak deze map als deze nog niet bestaat.) Als u deze bestanden wilt uploaden naar App Service-exemplaar, moet u de volgende stappen uitvoeren:
+1. Zorg ervoor dat de JDBC-stuurprogrammabestanden beschikbaar zijn voor de Tomcat-klasseloader door ze in de map */home/tomcat/lib te* plaatsen. (Maak deze map als deze nog niet bestaat.) Voer de volgende stappen uit om App Service te uploaden naar uw App Service-exemplaar:
 
     1. Installeer in [Cloud Shell](https://shell.azure.com)de web-app-extensie:
 
@@ -645,7 +871,7 @@ Plaats ten slotte de stuurprogramma-JAR's in het Tomcat-klassepad en start de Ap
 
 ### <a name="jboss-eap"></a>JBoss EAP
 
-Er zijn drie belangrijke stappen bij het registreren van een gegevensbron bij [JBoss EAP:](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/configuration_guide/datasource_management)het uploaden van het JDBC-stuurprogramma, het toevoegen van het JDBC-stuurprogramma als module en het registreren van de module. App Service is een stateless hostingservice, dus de configuratieopdrachten voor het toevoegen en registreren van de gegevensbronmodule moeten worden gescript en toegepast zodra de container wordt gestart.
+Er zijn drie belangrijke stappen bij het registreren van een gegevensbron bij [JBoss EAP:](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/configuration_guide/datasource_management)het uploaden van het JDBC-stuurprogramma, het toevoegen van het JDBC-stuurprogramma als module en het registreren van de module. App Service is een stateless hostingservice, dus de configuratieopdrachten voor het toevoegen en registreren van de gegevensbronmodule moeten als script worden uitgevoerd en toegepast zodra de container wordt gestart.
 
 1. Verkrijg het JDBC-stuurprogramma van uw database. 
 2. Maak een XML-moduledefinitiebestand voor het JDBC-stuurprogramma. Het onderstaande voorbeeld is een moduledefinitie voor PostgreSQL.
@@ -694,19 +920,19 @@ Als u wilt controleren of de gegevensbron is toegevoegd aan de JBoss-server, voe
 
 App Service kunnen gebruikers de belangrijkste versie van de JVM kiezen, zoals Java 8 of Java 11, evenals de secundaire versie, zoals 1.8.0_232 of 11.0.5. U kunt er ook voor kiezen om de secundaire versie automatisch bij te stellen wanneer er nieuwe secundaire versies beschikbaar komen. In de meeste gevallen moeten productiesites gebruikmaken van vastgemaakte secundaire JVM-versies. Hiermee voorkomt u onverwachte uitval tijdens het automatisch bijwerken van een secundaire versie.
 
-Als u ervoor kiest om de secundaire versie vast te maken, moet u de secundaire JVM-versie op de site periodiek bijwerken. Om ervoor te zorgen dat uw toepassing wordt uitgevoerd op de nieuwere secundaire versie, maakt u een staging-site en verhoogt u de secundaire versie op de staging-site. Nadat u hebt bevestigd dat de toepassing correct wordt uitgevoerd op de nieuwe secundaire versie, kunt u de staging- en productiesleuven wisselen.
+Als u ervoor kiest om de secundaire versie vast te maken, moet u de secundaire JVM-versie periodiek bijwerken op de site. Om ervoor te zorgen dat uw toepassing wordt uitgevoerd op de nieuwere secundaire versie, maakt u een staging-site en verhoogt u de secundaire versie op de staging-site. Zodra u hebt bevestigd dat de toepassing correct wordt uitgevoerd in de nieuwe secundaire versie, kunt u de staging- en productiesleuven wisselen.
 
 ## <a name="jboss-eap-hardware-options"></a>JBoss EAP-hardwareopties
 
-JBoss EAP is alleen beschikbaar in de hardwareopties Premium en Isolated. Klanten die tijdens de openbare preview een JBoss EAP-site op een gratis, gedeelde, basic- of standard-laag hebben gemaakt, moeten omhoog schalen naar de Premium- of Isolated-hardwarelaag om onverwacht gedrag te voorkomen.
+JBoss EAP is alleen beschikbaar voor de Premium- en Isolated-hardwareopties. Klanten die tijdens de openbare preview een JBoss EAP-site hebben gemaakt in de categorie Gratis, Gedeeld, Basic of Standard, moeten opschalen naar de Premium- of Isolated-hardwarelaag om onverwacht gedrag te voorkomen.
 
 ## <a name="java-runtime-statement-of-support"></a>Ondersteuningsverklaring voor Java-runtime
 
 ### <a name="jdk-versions-and-maintenance"></a>JDK-versies en -onderhoud
 
-De ondersteunde Java Development Kit (JDK) van Azure wordt [geleverd](https://www.azul.com/downloads/azure-only/zulu/) via [Azul Systems](https://www.azul.com/). Azul Zulu Enterprise-builds van OpenJDK zijn een gratis, multiplatform- en productieklaar distributie van de OpenJDK voor Azure en Azure Stack wordt door Microsoft en Azul Systems. Ze bevatten alle onderdelen voor het maken en uitvoeren van Java SE-toepassingen. U kunt de JDK installeren vanuit [Java JDK-installatie.](/azure/developer/java/fundamentals/java-jdk-long-term-support)
+De ondersteunde Java Development Kit (JDK) van Azure wordt [zulu](https://www.azul.com/downloads/azure-only/zulu/) geleverd via [Azul Systems](https://www.azul.com/). Azul Zulu Enterprise-builds van OpenJDK zijn een gratis, voor meerdere platforms klaarstaande distributie van de OpenJDK voor Azure en Azure Stack wordt door Microsoft en Azul Systems. Ze bevatten alle onderdelen voor het maken en uitvoeren van Java SE-toepassingen. U kunt de JDK installeren vanuit [Java JDK-installatie.](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 
-Belangrijke versie-updates worden geleverd via nieuwe runtimeopties in Azure App Service. Klanten werken bij naar deze nieuwere versies van Java door hun App Service-implementatie te configureren en zijn verantwoordelijk voor het testen en ervoor zorgen dat de grote update aan hun behoeften voldoet.
+Belangrijke versie-updates worden geleverd via nieuwe runtime-opties in Azure App Service. Klanten werken bij naar deze nieuwere versies van Java door hun App Service te configureren en zijn verantwoordelijk voor het testen en ervoor zorgen dat de grote update aan hun behoeften voldoet.
 
 Ondersteunde JDK's worden in januari, april, juli en oktober van elk jaar automatisch gepatcht op kwartaalbasis. Raadpleeg dit ondersteuningsdocument voor meer informatie over Java [in Azure.](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 
@@ -714,23 +940,23 @@ Ondersteunde JDK's worden in januari, april, juli en oktober van elk jaar automa
 
 Patches en oplossingen voor belangrijke beveiligingsproblemen worden uitgebracht zodra ze beschikbaar komen vanuit Azul Systems. Een 'major' beveiligingsprobleem wordt gedefinieerd door een basisscore van 9.0 of hoger op het [NIST Common Vulnerability Scoring System, versie 2.](https://nvd.nist.gov/vuln-metrics/cvss)
 
-Tomcat 8.0 heeft het einde van de levensduur (EOL) bereikt vanaf [30 september 2018.](https://tomcat.apache.org/tomcat-80-eol.html) Hoewel de runtime nog steeds beschikbaar is op Azure App Service, worden beveiligingsupdates niet toegepast op Tomcat 8.0. Migreert uw toepassingen indien mogelijk naar Tomcat 8.5 of 9.0. Tomcat 8.5 en 9.0 zijn beschikbaar op Azure App Service. Zie de [officiële Tomcat-site](https://tomcat.apache.org/whichversion.html) voor meer informatie. 
+Tomcat 8.0 heeft het einde van de levensduur (EOL) bereikt vanaf [30 september 2018.](https://tomcat.apache.org/tomcat-80-eol.html) Hoewel de runtime nog steeds beschikbaar is op Azure App Service, worden in Azure geen beveiligingsupdates toegepast op Tomcat 8.0. Migreert uw toepassingen indien mogelijk naar Tomcat 8.5 of 9.0. Tomcat 8.5 en 9.0 zijn beschikbaar op Azure App Service. Zie de [officiële Tomcat-site](https://tomcat.apache.org/whichversion.html) voor meer informatie. 
 
 ### <a name="deprecation-and-retirement"></a>Afschaffing en pensioen
 
-Als een ondersteunde Java-runtime wordt teruggetrokken, krijgen Azure-ontwikkelaars die de betrokken runtime gebruiken ten minste zes maanden voordat de runtime wordt teruggetrokken een kennisgeving over afschaffing.
+Als een ondersteunde Java-runtime wordt verwijderd, krijgen Azure-ontwikkelaars die de betrokken runtime gebruiken ten minste zes maanden voordat de runtime wordt teruggetrokken een kennisgeving over afschaffing.
 
 
 ### <a name="local-development"></a>Lokale ontwikkeling
 
-Ontwikkelaars kunnen de productie-editie van Azul Zulu Enterprise JDK voor lokale ontwikkeling downloaden van de [downloadsite van Azul.](https://www.azul.com/downloads/azure-only/zulu/)
+Ontwikkelaars kunnen de Productie-editie van Azul Zulu Enterprise JDK voor lokale ontwikkeling downloaden via de [downloadsite van Azul.](https://www.azul.com/downloads/azure-only/zulu/)
 
 ### <a name="development-support"></a>Ondersteuning voor ontwikkeling
 
-Productondersteuning voor de door Azure ondersteunde [Azul Zulu JDK](https://www.azul.com/downloads/azure-only/zulu/) is beschikbaar via Microsoft bij het ontwikkelen voor Azure of [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) met een [ondersteuning voor Azure-abonnement](https://azure.microsoft.com/support/plans/).
+Productondersteuning voor de door Azure ondersteunde [Azul Zulu JDK](https://www.azul.com/downloads/azure-only/zulu/) is beschikbaar via Microsoft bij het ontwikkelen voor Azure of [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) met een ondersteuning voor Azure [abonnement](https://azure.microsoft.com/support/plans/).
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Ga naar [het Azure voor Java-ontwikkelaarscentrum](/java/azure/) voor azure-quickstarts, zelfstudies en Java-referentiedocumentatie.
 
-Algemene vragen over het gebruik van App Service voor Linux die niet specifiek zijn voor de Java-ontwikkeling, worden beantwoord in [de veelgestelde vragen App Service Linux.](faq-app-service-linux.md)
+Algemene vragen over het gebruik App Service voor Linux die niet specifiek zijn voor de Java-ontwikkeling, worden beantwoord in [de veelgestelde vragen App Service Linux.](faq-app-service-linux.md)

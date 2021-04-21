@@ -17,17 +17,19 @@
       href: ./quickstarts/client-libraries.md
 - name: Voorbeelden
   items:
-    - name: Interactieve demo
+    - name: Interactieve demo (univariate)
       href: 'https://aka.ms/adDemo'
-    - name: Jupyter Notebook
+    - name: Jupyter Notebook (univariate)
       href: 'https://github.com/Azure-Samples/AnomalyDetector/tree/master/ipython-notebook'
+    - name: Jupyter Notebook (multivariate)
+      href: 'https://github.com/Azure-Samples/AnomalyDetector/blob/master/ipython-notebook/Multivariate%20API%20Demo%20Notebook.ipynb'
     - name: Azure-voorbeelden
       href: 'https://docs.microsoft.com/samples/browse/?products=azure&terms=anomaly-detector'
 - name: Instructiegidsen
   items:
     - name: Afwijkingen in uw gegevens identificeren
       href: how-to/identify-anomalies.md
-    - name: Een Anomaly Detector
+    - name: Implementatie Anomaly Detector
       items:
         - name: Implementeren naar IoT Edge
           href: how-to/deploy-anomaly-detection-on-iot-edge.md
@@ -55,13 +57,13 @@
       href: concepts/best-practices-multivariate.md
     - name: Anomaly Detector API-best practices (univariate)
       href: concepts/anomaly-detection-best-practices.md
-    - name: Architectuur voor predictief onderhoud (multivariate)
+    - name: Architectuur voor voorspellend onderhoud (multivariabel)
       href: concepts/multivariate-architecture.md
     - name: Problemen met meerdere varianten oplossen
       href: concepts/troubleshoot.md
-    - name: Spectrum residuen (SR) en convolutionele neurale net (CNN) anomaliedetectie
+    - name: Neurale residuen (SR) en anomaliedetectie van convolutionele neurale netwerken (CNN)
       href: 'https://arxiv.org/abs/1906.03821'
-    - name: Anomaliedetectie voor meerdere tijdreeksen via het netwerk voor grafieken
+    - name: Anomaliedetectie met meerdere tijdreeksen via het netwerk voor grafieken aandacht
       href: 'https://arxiv.org/abs/2009.02040'
 - name: Zelfstudies
   items:

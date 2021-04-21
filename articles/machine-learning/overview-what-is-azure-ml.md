@@ -10,12 +10,12 @@ author: BlackMist
 ms.date: 04/08/2021
 ms.custom: devx-track-python
 adobe-target: true
-ms.openlocfilehash: 4f97883c157d04358322b01cab7049dcbbabdc4f
-ms.sourcegitcommit: d40ffda6ef9463bb75835754cabe84e3da24aab5
+ms.openlocfilehash: cd395f0ff29eed1e09f5bdac882482b201052c90
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107031083"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814820"
 ---
 # <a name="what-is-azure-machine-learning"></a>Wat is Azure Machine Learning?
 
@@ -40,7 +40,7 @@ Prognoses of voorspellingen op basis van machine learning kunnen apps en apparat
 ## <a name="machine-learning-tools-to-fit-each-task"></a>Machine learning-hulpprogramma's voor elke taak 
 
 Azure Machine Learning biedt alle hulpprogramma's die ontwikkelaars en gegevenswetenschappers nodig hebben voor hun machine learning-werkstromen, waaronder:
-+ De [Azure machine learning Designer](tutorial-designer-automobile-price-train-score.md): modules slepen-n-neerzetten om uw experimenten te bouwen en vervolgens pijp lijnen te implementeren in een omgeving met weinig code.
++ De [Azure Machine Learning designer:](tutorial-designer-automobile-price-train-score.md)sleep modules met slepen en neerzetten om uw experimenten te bouwen en implementeer pijplijnen vervolgens in een omgeving met weinig code.
 
 + Jupyter-notebooks: gebruik onze [voorbeelden van notebooks](https://github.com/Azure/MachineLearningNotebooks) of maak uw eigen notebooks om onze <a href="/python/api/overview/azure/ml/intro" target="_blank">SDK voor Python</a> in te zetten voor uw machine learning. 
 
@@ -48,11 +48,11 @@ Azure Machine Learning biedt alle hulpprogramma's die ontwikkelaars en gegevensw
 
 + De [Many Models Solution Accelerator](https://aka.ms/many-models) (preview) heeft Azure Machine Learning als basis en stelt u in staat om honderden, of zelfs duizenden machine Learning-modellen, te trainen, te gebruiken en te beheren.
 
-+ [Machine learning-extensie voor Visual Studio code (preview)](how-to-set-up-vs-code-remote.md) biedt u een volledig functionele ontwikkel omgeving voor het maken en beheren van uw machine learning-projecten.
++ [Machine learning-extensie voor Visual Studio Code (preview)](how-to-set-up-vs-code-remote.md) biedt u een volledige ontwikkelomgeving voor het bouwen en beheren van uw machine learning projecten.
 
-+ [Machine learning cli](reference-azure-machine-learning-cli.md) is een Azure cli-extensie die opdrachten biedt voor het beheren van Azure machine learning-resources vanaf de opdracht regel.
++ [Machine learning CLI](reference-azure-machine-learning-cli.md) is een Azure CLI-extensie die opdrachten biedt voor het beheren Azure Machine Learning resources vanaf de opdrachtregel.
 
-+ [Integratie met open source frameworks](concept-open-source.md) zoals PyTorch, tensor flow en scikit-Learn en veel meer voor het trainen, implementeren en beheren van het end-to-end-machine learning proces.
++ [Integratie met opensource-frameworks](concept-open-source.md) zoals PyTorch, TensorFlow en scikit-learn en nog veel meer voor het trainen, implementeren en beheren van het end-to-end machine learning proces.
 
 + [Reinforcement learning](how-to-use-reinforcement-learning.md) met Ray RLlib
 
@@ -78,14 +78,14 @@ U kunt de SDK ook gebruiken voor het [automatiseren van het trainen en afstemmen
 
 + **Experimenten bijhouden**
 
-  Meer informatie over het [bijhouden en visualiseren van experimenten voor datatechnologie](tutorial-first-experiment-automated-ml.md) in de studio. 
+  Meer informatie over het [bijhouden en visualiseren van experimenten voor datatechnologie](how-to-track-monitor-analyze-runs.md) in de studio. 
 
-    ![Details van de uitvoering in Azure Machine Learning Studio](media/how-to-track-experiments/experimentation-tab.gif)
+    :::image type="content" source="media/how-to-track-monitor-analyze-runs/run-history.png" alt-text="Details van de uitvoering in Azure Machine Learning Studio":::
 
 
 + **En nog veel meer...**
 
-  Ga naar Azure Machine Learning Studio op [ml.azure.com](https://studio.azureml.net). 
+  Ga naar Azure Machine Learning Studio op [ml.azure.com](https://studio.azureml.net).
 
 
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: Implementatie- en levenscyclusbeheer
@@ -130,8 +130,8 @@ Uw Azure Storage-account, rekendoelen en andere resources kunnen veilig worden g
 - + [Aan de slag gaan in uw eigen ontwikkelomgeving](tutorial-1st-experiment-sdk-setup-local.md)
   + [Jupyter-notebooks gebruiken op een rekeninstantie om ML-modellen te trainen en te implementeren](tutorial-1st-experiment-sdk-setup.md)
   + [Geautomatiseerde machine learning gebruiken voor het trainen en implementeren van ML-modellen](tutorial-first-experiment-automated-ml.md) 
-  + [Resources beheren in Visual Studio code](how-to-manage-resources-vscode.md)
-  + [Visual Studio code gebruiken om een installatie kopie classificatie model te trainen en te implementeren](tutorial-train-deploy-image-classification-model-vscode.md)
+  + [Resources beheren in Visual Studio Code](how-to-manage-resources-vscode.md)
+  + [Gebruik Visual Studio Code om een afbeeldingsclassificatiemodel te trainen en te implementeren](tutorial-train-deploy-image-classification-model-vscode.md)
   + [Slepen en neerzetten van de ontwerpfunctie gebruiken voor trainen en implementeren](tutorial-designer-automobile-price-train-score.md) 
   + [De machine learning-CLI gebruiken voor het trainen en implementeren van een model](tutorial-train-deploy-model-cli.md)
 

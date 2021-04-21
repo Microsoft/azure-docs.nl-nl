@@ -9,12 +9,12 @@ ms.subservice: secrets
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 6d4f3f744a85c14c42ffef1c894b237081e871f8
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: dc4368075e1cecb43887c9fab21e55b23208dbab
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107752422"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814924"
 ---
 # <a name="about-azure-key-vault-secrets"></a>Over Azure Key Vault-geheimen
 
@@ -132,5 +132,5 @@ Instructiegidsen voor het beheren van de toegang in Key Vault:
 - [Informatie over sleutels, geheimen en certificaten](../general/about-keys-secrets-certificates.md)
 - [Over sleutels](../keys/about-keys.md)
 - [Over certificaten](../certificates/about-certificates.md)
-- [Veilige toegang tot een sleutelkluis](../general/security-overview.md)
+- [Veilige toegang tot een sleutelkluis](../general/security-features.md)
 - [Gids voor Key Vault-ontwikkelaars](../general/developers-guide.md)

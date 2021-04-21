@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 10/14/2020
 ms.author: sebansal
-ms.openlocfilehash: 48686fb78dc4295da3bd390d92ae3837cd09a4d0
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 048482c6b52d3fd9225224bd3b4ff3ee66bf24fd
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105639432"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815356"
 ---
-# <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template"></a>Snelstartgids: een Azure-sleutel kluis en een sleutel maken met ARM-sjabloon 
+# <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template"></a>Quickstart: Een Azure-sleutelkluis en een sleutel maken met behulp van een ARM-sjabloon 
 
 [Azure Key Vault](../general/overview.md) is een cloudservice die een veilig archief biedt voor geheimen, zoals sleutels, wachtwoorden, certificaten en andere geheimen. Deze quickstart behandelt het implementeren van een ARM-sjabloon (Azure Resource Manager-sjabloon) voor het maken van een sleutelkluis en een sleutel.
 
@@ -29,7 +29,7 @@ ms.locfileid: "105639432"
 Voor het voltooien van dit artikel, is het volgende vereist:
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-- Voor de gebruiker moet een ingebouwde rol voor Azure zijn toegewezen. inzender. [Klik hier voor meer informatie](../../role-based-access-control/role-assignments-portal.md)
+- Aan de gebruiker moet een ingebouwde Azure-rol worden toegewezen, bijvoorbeeld inzender. [Klik hier voor meer informatie](../../role-based-access-control/role-assignments-portal.md)
 - Uw Azure AD-gebruikersobject-id is in de sjabloon nodig om machtigingen te kunnen configureren. Met de volgende procedure wordt de object-id (GUID) opgehaald.
 
     1. Voer de volgende Azure PowerShell- of de Azure CLI-opdracht uit door **Proberen** te selecteren en het script vervolgens in het shell-deelvenster te plakken. Plak het script door met de rechtermuisknop op de shell te klikken en **Plakken** te selecteren.
@@ -168,7 +168,7 @@ In de sjabloon worden twee resources gedefinieerd:
 In [Azure-quickstart-sjablonen](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Keyvault&pageNumber=1&sort=Popular) vindt u meer voorbeelden van Azure Key Vault-sjablonen.
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
-U kunt [Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal), Azure PowerShell, Azure CLI of rest API gebruiken. Zie voor meer informatie over implementatie methoden [sjablonen implementeren](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-powershell).
+U kunt [Azure Portal,](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal)Azure PowerShell, Azure CLI of REST API. Zie Sjablonen implementeren voor meer informatie [over implementatiemethoden.](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-powershell)
 
 ## <a name="review-deployed-resources"></a>Geïmplementeerde resources bekijken
 
@@ -223,4 +223,4 @@ In deze quickstart hebt u een sleutelkluis en een sleutel gemaakt met behulp van
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Meer informatie over [Azure Resource Manager](../../azure-resource-manager/management/overview.md)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

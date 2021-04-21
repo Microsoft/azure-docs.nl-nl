@@ -1,6 +1,6 @@
 ---
-title: Aangepaste analyse regels maken voor het detecteren van bedreigingen met Azure Sentinel | Microsoft Docs
-description: Gebruik deze zelf studie voor meer informatie over het maken van aangepaste analyse regels voor het detecteren van beveiligings Risico's met Azure Sentinel. Profiteer van gebeurtenis groepering, waarschuwings groepering en waarschuwings verrijking en meer informatie over automatisch uitgeschakeld.
+title: Aangepaste analyseregels maken om bedreigingen te detecteren met Azure Sentinel| Microsoft Docs
+description: Gebruik deze zelfstudie om te leren hoe u aangepaste analyseregels maakt om beveiligingsrisico's te detecteren met Azure Sentinel. Profiteer van gebeurtenisgroepering, waarschuwingsgroepering en waarschuwingsverrijking en begrijp AUTOMATISCH UITGESCHAKELD.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -12,59 +12,59 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/10/2021
+ms.date: 04/21/2021
 ms.author: yelevin
-ms.openlocfilehash: 70b56e70ec0e6f511142c48cc89720c054807a5c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 180a5edd00b6085ffd91568471ca763f5e4e9711
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105042795"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814852"
 ---
-# <a name="tutorial-create-custom-analytics-rules-to-detect-threats"></a>Zelf studie: aangepaste analyse regels maken voor het detecteren van bedreigingen
+# <a name="tutorial-create-custom-analytics-rules-to-detect-threats"></a>Zelfstudie: Aangepaste analyseregels maken om bedreigingen te detecteren
 
-Nu u [uw gegevens bronnen](quickstart-onboard.md) aan Azure Sentinel hebt gekoppeld, kunt u aangepaste analyse regels maken om u te helpen bij het detecteren van bedreigingen en afwijkend gedrag die aanwezig zijn in uw omgeving. Deze regels zoeken naar specifieke gebeurtenissen of gebeurtenissen sets in uw omgeving, waarschuwt u wanneer bepaalde drempel waarden voor de gebeurtenis of de omstandigheden zijn bereikt, genereert incidenten voor uw SOC to sorteren en onderzoek en reageert op bedreigingen met geautomatiseerde tracking-en herstel processen. 
+Nu u uw [](quickstart-onboard.md) gegevensbronnen hebt verbonden met Azure Sentinel, kunt u aangepaste analyseregels maken om bedreigingen en afwijkende gedragingen in uw omgeving te detecteren. Deze regels zoeken naar specifieke gebeurtenissen of reeksen gebeurtenissen in uw omgeving, waarschuwen u wanneer bepaalde drempelwaarden of voorwaarden voor gebeurtenissen zijn bereikt, genereren incidenten voor uw SOC om bedreigingen te onderzoeken en te onderzoeken met automatische tracerings- en herstelprocessen. 
 
-Deze zelf studie helpt u bij het maken van aangepaste regels voor het detecteren van bedreigingen met Azure Sentinel.
+Deze zelfstudie helpt u bij het maken van aangepaste regels voor het detecteren van bedreigingen met Azure Sentinel.
 
-Na het volt ooien van deze zelf studie kunt u het volgende doen:
+Na het voltooien van deze zelfstudie kunt u het volgende doen:
 > [!div class="checklist"]
-> * Analytics-regels maken
+> * Analyseregels maken
 > * Definiëren hoe gebeurtenissen en waarschuwingen worden verwerkt
 > * Definiëren hoe waarschuwingen en incidenten worden gegenereerd
-> * Automatische reacties op bedreigingen voor uw regels kiezen
+> * Automatische bedreigingsreacties kiezen voor uw regels
 
-## <a name="create-a-custom-analytics-rule-with-a-scheduled-query"></a>Een aangepaste analyse regel maken met een geplande query
+## <a name="create-a-custom-analytics-rule-with-a-scheduled-query"></a>Een aangepaste analyseregel maken met een geplande query
 
-1. Selecteer in het navigatie menu van de Azure-Sentinel **Analytics**.
+1. Selecteer in Azure Sentinel navigatiemenu **Analytics.**
 
-1. Selecteer in de actie balk aan de bovenkant de optie **+ maken** en selecteer **geplande query regel**. Hiermee opent u de **wizard Analytics-regel**.
+1. Selecteer in de actiebalk bovenaan **+ Maken en** selecteer Geplande **queryregel.** Hiermee opent u de **wizard Analyseregel.**
 
     :::image type="content" source="media/tutorial-detect-threats-custom/create-scheduled-query-small.png" alt-text="Geplande query maken" lightbox="media/tutorial-detect-threats-custom/create-scheduled-query-full.png":::
 
-### <a name="analytics-rule-wizard---general-tab"></a>Wizard analyse regel-tabblad Algemeen
+### <a name="analytics-rule-wizard---general-tab"></a>Wizard Analyseregel - tabblad Algemeen
 
-- Geef een unieke **naam** en **Beschrijving** op. 
+- Geef een unieke **naam en** een **Beschrijving op.** 
 
-- In het veld **tactiek** kunt u kiezen uit verschillende categorieën aanvallen waarmee de regel wordt geclassificeerd. Deze zijn gebaseerd op de tactiek van het [Mitre ATT&VERzonken](https://attack.mitre.org/) Framework.
+- In het **veld Tactieken** kunt u kiezen uit de categorieën van aanvallen waarmee u de regel classificeert. Deze zijn gebaseerd op de tactieken van het [MITRE ATT-&CK-framework.](https://attack.mitre.org/)
 
-- Stel de **Ernst** van de waarschuwing in op de juiste manier. 
+- Stel waar nodig **de ernst van** de waarschuwing in. 
 
-- Wanneer u de regel maakt, wordt de **status** standaard **ingeschakeld** , wat betekent dat deze onmiddellijk wordt uitgevoerd nadat u deze hebt gemaakt. Als u niet wilt dat deze onmiddellijk wordt uitgevoerd, selecteert u **uitgeschakeld**. de regel wordt toegevoegd aan het tabblad **actieve regels** en u kunt het gebruiken wanneer u het nodig hebt.
+- Wanneer u de regel maakt, **is** **de status** standaard Ingeschakeld, wat betekent dat deze onmiddellijk wordt uitgevoerd nadat u klaar bent met het maken ervan. Als u niet wilt dat de regel onmiddellijk wordt uitgevoerd, selecteert u Uitgeschakeld. De regel wordt toegevoegd aan het tabblad Actieve regels en u kunt de regel daar inschakelen wanneer u deze nodig hebt. 
 
-   :::image type="content" source="media/tutorial-detect-threats-custom/general-tab.png" alt-text="Beginnen met het maken van een aangepaste analyse regel":::
+   :::image type="content" source="media/tutorial-detect-threats-custom/general-tab.png" alt-text="Een aangepaste analyseregel maken":::
 
-## <a name="define-the-rule-query-logic-and-configure-settings"></a>Definieer de regel query logica en configureer de instellingen
+## <a name="define-the-rule-query-logic-and-configure-settings"></a>De logica van de regelquery definiëren en instellingen configureren
 
-Op het tabblad **regel logica instellen** kunt u een query rechtstreeks in het veld **regel query** schrijven, of de query in log Analytics maken en deze vervolgens kopiëren en plakken.
+Op het **tabblad Regellogica** instellen kunt u  een query rechtstreeks in het veld Regelquery schrijven of de query maken in Log Analytics en deze hier kopiëren en plakken.
 
-- Query's worden geschreven in de Kusto-querytaal (KQL). Meer informatie over KQL- [concepten](/azure/data-explorer/kusto/concepts/) en- [query's](/azure/data-explorer/kusto/query/)en over deze handige [naslag handleiding](/azure/data-explorer/kql-quick-reference).
+- Query's worden geschreven in de Kusto-querytaal (KQL). Meer informatie over [](/azure/data-explorer/kusto/concepts/) KQL-concepten en [-query's](/azure/data-explorer/kusto/query/)en deze handige [snelzoekgids.](/azure/data-explorer/kql-quick-reference)
 
-- In het voor beeld in deze scherm afbeelding wordt een query uitgevoerd voor de tabel *SecurityEvent* om een type [mislukte Windows-aanmeldings gebeurtenissen](/windows/security/threat-protection/auditing/event-4625)weer te geven.
+- In het voorbeeld in deze schermopname wordt een query op de *tabel SecurityEvent* weergegeven om een type mislukte [Windows-aanmeldingsgebeurtenissen weer te geven.](/windows/security/threat-protection/auditing/event-4625)
 
-   :::image type="content" source="media/tutorial-detect-threats-custom/set-rule-logic-tab-1-new.png" alt-text="De logica en instellingen van de query regel configureren" lightbox="media/tutorial-detect-threats-custom/set-rule-logic-tab-all-1-new.png":::
+   :::image type="content" source="media/tutorial-detect-threats-custom/set-rule-logic-tab-1-new.png" alt-text="Logica en instellingen voor queryregels configureren" lightbox="media/tutorial-detect-threats-custom/set-rule-logic-tab-all-1-new.png":::
 
-- Hier volgt een andere voorbeeld query: er wordt een waarschuwing weer gegeven wanneer een afwijkend aantal resources wordt gemaakt in [Azure activity](../azure-monitor/essentials/activity-log.md).
+- Hier is nog een voorbeeldquery, een query die u waarschuwt wanneer er een afwijkende hoeveelheid resources wordt gemaakt in [Azure Activity](../azure-monitor/essentials/activity-log.md).
 
     ```kusto
     AzureActivity
@@ -74,190 +74,190 @@ Op het tabblad **regel logica instellen** kunt u een query rechtstreeks in het v
     ```
 
     > [!NOTE]
-    > #### <a name="rule-query-best-practices"></a>Best practices voor regel query's
-    > - De lengte van de query moet tussen 1 en 10.000 tekens lang zijn en mag niet " `search *` " of " `union *` " bevatten.
+    > #### <a name="rule-query-best-practices"></a>Best practices voor regelquery's
+    > - De querylengte moet tussen de 1 en 10.000 tekens lang zijn en mag niet `search *` " " of " " `union *` bevatten. U kunt door de [gebruiker gedefinieerde functies gebruiken om](/azure/data-explorer/kusto/query/functions/user-defined-functions) de beperking van de querylengte op te lossen.
     >
-    > - Het gebruik van ADX-functies voor het maken van Azure Data Explorer query's in het Log Analytics query venster **wordt niet ondersteund**.
+    > - Het gebruik van ADX-functies Azure Data Explorer query's in het Log Analytics-queryvenster **wordt niet ondersteund.**
     >
-    > - Wanneer u de **`bag_unpack`** functie in een query gebruikt, mislukt de query als u de kolommen als velden gebruikt `project field1` en de kolom niet bestaat. Als u dit probleem wilt voor komen, moet u de kolom als volgt projecteren:
+    > - Wanneer u de functie in een query gebruikt en u de kolommen projectt als velden met behulp van ' en de kolom niet bestaat, mislukt **`bag_unpack`** `project field1` de query. Als bescherming tegen dit gebeurt, moet u de kolom als volgt projecteren:
     >   - `project field1 = column_ifexists("field1","")`
 
-### <a name="alert-enrichment"></a>Waarschuwings verrijking
+### <a name="alert-enrichment"></a>Verrijking van waarschuwingen
 
 > [!IMPORTANT]
-> De functies voor de verrijking van waarschuwingen zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> De functies voor waarschuwingsverrijking zijn momenteel beschikbaar als **PREVIEW.** Zie de Aanvullende gebruiksvoorwaarden voor [Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voorwaarden die van toepassing zijn op Azure-functies die bètaversies, preview-functies of anderszins nog niet algemeen beschikbaar zijn.
     
-- Gebruik de sectie configuratie van **entiteits toewijzing** om para meters van uw query resultaten toe te wijzen aan door Sentinel herkende entiteiten van Azure. Entiteiten verrijken de uitvoer van de regels (waarschuwingen en incidenten) met essentiële informatie die fungeert als de bouw stenen van eventuele onderzoeken processen en herstel acties die volgen. Ze zijn ook de criteria op basis waarvan u waarschuwingen kunt groeperen in incidenten op het tabblad **incident instellingen** .
+- Gebruik de **sectie Entiteitstoewijzingsconfiguratie** om parameters uit de queryresultaten toe te Azure Sentinel herkende entiteiten. Entiteiten verrijken de uitvoer van de regels (waarschuwingen en incidenten) met essentiële informatie die fungeert als de bouwstenen van onderzoekprocessen en herstelacties die volgen. Dit zijn ook de criteria waarmee u waarschuwingen kunt groeperen in incidenten op het **tabblad Incidentinstellingen.**
 
-    Meer informatie over [entiteiten in azure Sentinel](entities-in-azure-sentinel.md).
+    Meer informatie over [entiteiten in Azure Sentinel](entities-in-azure-sentinel.md).
 
-    Zie [gegevens velden toewijzen aan entiteiten in azure Sentinel](map-data-fields-to-entities.md) voor volledige instructies voor entiteits toewijzing, samen met belang rijke informatie over [achterwaartse compatibiliteit](map-data-fields-to-entities.md#notes-on-the-new-version).
+    Zie [Gegevensvelden toewijzen aan entiteiten in](map-data-fields-to-entities.md) Azure Sentinel voor volledige instructies voor entiteitstoewijzing, samen met belangrijke informatie over [achterwaartse compatibiliteit.](map-data-fields-to-entities.md#notes-on-the-new-version)
 
-- Gebruik de sectie **aangepaste Details** configuratie om gebeurtenis gegevens items uit uw query op te halen en deze in te trekken in de waarschuwingen die door deze regel worden geproduceerd, zodat u de zicht baarheid van gebeurtenissen in uw waarschuwingen en incidenten onmiddellijk kunt zien.
+- Gebruik de **configuratiesectie** Aangepaste details om gebeurtenisgegevensitems uit uw query te extraheren en deze weer te geven in de waarschuwingen die door deze regel worden geproduceerd, zodat u direct inzicht krijgt in de gebeurtenisinhoud in uw waarschuwingen en incidenten.
 
-    Meer informatie over aangepaste Details van halen in waarschuwingen en de [volledige instructies](surface-custom-details-in-alerts.md).
+    Meer informatie over het weergeven van aangepaste details in waarschuwingen en de [volledige instructies.](surface-custom-details-in-alerts.md)
 
-### <a name="query-scheduling-and-alert-threshold"></a>Query planning en drempel waarde voor waarschuwingen
+### <a name="query-scheduling-and-alert-threshold"></a>Queryplanning en waarschuwingsdrempelwaarde
 
-- Stel in de sectie **query planning** de volgende para meters in:
+- Stel in **de sectie Queryplanning** de volgende parameters in:
 
-   :::image type="content" source="media/tutorial-detect-threats-custom/set-rule-logic-tab-2.png" alt-text="Query planning en gebeurtenis groepering instellen" lightbox="media/tutorial-detect-threats-custom/set-rule-logic-tab-all-2-new.png":::
+   :::image type="content" source="media/tutorial-detect-threats-custom/set-rule-logic-tab-2.png" alt-text="Queryplanning en gebeurtenisgroepering instellen" lightbox="media/tutorial-detect-threats-custom/set-rule-logic-tab-all-2-new.png":::
 
-    - Stel de **query run** in om te bepalen hoe vaak de query wordt uitgevoerd, zo vaak elke vijf minuten of als een regel matig als een keer per 14 dagen.
+    - Stel **Elke query uitvoeren** in om te bepalen hoe vaak de query wordt uitgevoerd, zo vaak als elke 5 minuten of zo vaak als elke 14 dagen.
 
-    - Stel **opzoek gegevens van de laatste** in om de tijds periode te bepalen van de gegevens die worden gedekt door de query. Dit kan bijvoorbeeld de afgelopen 10 minuten aan gegevens of de afgelopen 6 uur aan gegevens opvragen. Het maximum is 14 dagen.
+    - Stel **Opzoekgegevens** van de laatste in om de periode te bepalen van de gegevens die door de query worden gedekt. Er kunnen bijvoorbeeld query's worden uitgevoerd op de afgelopen 10 minuten aan gegevens of de afgelopen 6 uur aan gegevens. Het maximum is 14 dagen.
 
         > [!NOTE]
-        > **Query-intervallen en lookback periode**
+        > **Queryintervallen en lookback-periode**
         >
-        >  Deze twee instellingen zijn onafhankelijk van elkaar, tot een bepaald punt. U kunt een query uitvoeren met een kort interval voor een tijds periode die langer is dan het interval (als gevolg van overlappende query's), maar u kunt geen query uitvoeren met een interval dat de dekkings periode overschrijdt, anders worden er hiaten in de algehele query dekking.
+        >  Deze twee instellingen zijn onafhankelijk van elkaar, tot een bepaald punt. U kunt een query uitvoeren met een kort interval voor een periode die langer is dan het interval (in feite overlappende query's), maar u kunt een query niet uitvoeren met een interval dat de dekkingsperiode overschrijdt, anders hebt u hiaten in de totale querydekking.
         >
-        > **Opname vertraging**
+        > **Opnamevertraging**
         >
-        > Voor een **latentie** die kan optreden tussen de generatie van een gebeurtenis bij de bron en de opname in azure Sentinel, en om ervoor te zorgen dat het volledige dekking zonder gegevens duplicatie plaatsvindt, voert Azure Sentinel geplande analyse regels uit op een **vertraging van vijf minuten** van de geplande tijd.
+        > Om rekening te houden met **latentie** die kan optreden tussen het genereren van een gebeurtenis bij de bron en de opname ervan in Azure Sentinel,  en om een volledige dekking zonder gegevensduplicatie te garanderen, voert Azure Sentinel geplande analyseregels uit op een vertraging van vijf minuten vanaf de geplande tijd.
         >
-        > Voor een gedetailleerde technische uitleg waarom deze vertraging nood zakelijk is en hoe dit probleem wordt opgelost, raadpleegt u het uitstekende blog bericht van Loek Marsiano voor het onderwerp '[opname vertraging verwerken in azure-waarschuwings regels voor Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/handling-ingestion-delay-in-azure-sentinel-scheduled-alert-rules/ba-p/2052851)'.
+        > Voor een gedetailleerde technische uitleg over waarom deze vertraging nodig is en hoe dit probleem wordt opgelost, zie de uitstekende blogpost van Ron Mars technical over het onderwerp "[Handling ingestion delay in Azure Sentinel scheduled alert rules](https://techcommunity.microsoft.com/t5/azure-sentinel/handling-ingestion-delay-in-azure-sentinel-scheduled-alert-rules/ba-p/2052851)" (Opnamevertraging verwerken in Azure Sentinel geplande waarschuwingsregels).
 
-- Gebruik de sectie **waarschuwings drempel** om het gevoeligheids niveau van de regel te definiëren. Stel bijvoorbeeld een **waarschuwing genereren wanneer het aantal query resultaten** **groter is dan** en voer het getal 1000 in als u wilt dat de regel alleen een waarschuwing genereert als de query meer dan 1000 resultaten retourneert telkens wanneer deze wordt uitgevoerd. Dit is een verplicht veld. Als u geen drempel waarde wilt instellen, dus als u wilt dat uw waarschuwing elke gebeurtenis registreert, voert u 0 in het veld getal in.
+- Gebruik de **sectie Waarschuwingsdrempel** om het gevoeligheidsniveau van de regel te definiëren. Stel bijvoorbeeld Waarschuwing genereren wanneer het aantal **queryresultaten** is groter **dan** in en voer het getal 1000 in als u wilt dat de regel alleen een waarschuwing genereert als de query telkens wanneer deze wordt uitgevoerd meer dan 1000 resultaten retourneert. Dit is een vereist veld, dus als u geen drempelwaarde wilt instellen, dat wil zeggen, als u wilt dat uw waarschuwing elke gebeurtenis registreert, voert u 0 in het getalveld in.
     
 ### <a name="results-simulation"></a>Simulatie van resultaten
 
-Selecteer in het gedeelte **simulatie van resultaten** in de rechter kant van de wizard de optie **testen met huidige gegevens** en er wordt een grafiek weer gegeven met de resultaten (logboek gebeurtenissen) die de query zou hebben gegenereerd over de laatste 50 keer dat deze zou zijn uitgevoerd, volgens het momenteel gedefinieerde schema. Als u de query wijzigt, selecteert u opnieuw **testen met huidige gegevens** om de grafiek bij te werken. De grafiek toont het aantal resultaten gedurende de gedefinieerde tijds periode, die wordt bepaald door de instellingen in de sectie **query planning** .
+Selecteer  in het gebied Resultatensimulatie aan de  rechterkant van de wizard de optie Testen met huidige gegevens. Azure Sentinel geeft een grafiek weer van de resultaten (logboekgebeurtenissen) die de query in de afgelopen 50 keer zou hebben gegenereerd, volgens de momenteel gedefinieerde planning. Als u de query wijzigt, **selecteert u opnieuw Testen met huidige gegevens om** de grafiek bij te werken. In de grafiek ziet u het aantal resultaten gedurende de gedefinieerde periode, dat wordt bepaald door de instellingen in de sectie **Queryplanning.**
   
-Hier ziet u hoe de resultaten simulatie eruit kan zien als de query in de bovenstaande scherm afbeelding. De linkerkant is de standaard weergave en de rechter kant is wat u ziet wanneer u de muis aanwijzer boven een punt in de tijd van de grafiek houdt.
+Hier ziet u hoe de resultatensimulatie eruit kan zien voor de query in de bovenstaande schermopname. De linkerkant is de standaardweergave en de rechterkant is wat u ziet wanneer u de muisaanwijzer over een bepaald tijdstip in de grafiek beweegt.
 
-:::image type="content" source="media/tutorial-detect-threats-custom/results-simulation.png" alt-text="Scherm afbeeldingen met resultaten simulatie":::
+:::image type="content" source="media/tutorial-detect-threats-custom/results-simulation.png" alt-text="Schermopnamen van resultatensimulatie":::
 
-Als u ziet dat uw query te veel of te frequente waarschuwingen zou activeren, kunt u experimenteren met de instellingen in de [secties](#query-scheduling-and-alert-threshold) **query planning** en **waarschuwings drempel** en vervolgens **test met huidige gegevens** selecteren.
+Als u ziet dat uw query te veel of te vaak waarschuwingen activeert,  kunt u experimenteren met de instellingen in de secties **Queryplanning** en [Waarschuwingsdrempelwaarde](#query-scheduling-and-alert-threshold) en selecteert u opnieuw **Testen** met huidige gegevens.
 
-### <a name="event-grouping-and-rule-suppression"></a>Gebeurtenissen groeperen en regel onderdrukking
+### <a name="event-grouping-and-rule-suppression"></a>Gebeurtenisgroepering en regelonderdrukking
 
 > [!IMPORTANT]
-> Gebeurtenis groepering is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> Gebeurtenisgroepering is momenteel beschikbaar in **preview.** Zie de aanvullende gebruiksvoorwaarden voor [Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voorwaarden die van toepassing zijn op Azure-functies die bètaversies of preview-functies hebben of die nog niet algemeen beschikbaar zijn.
     
-- Kies onder **gebeurtenis groepering** een van de twee manieren om de groepering van **gebeurtenissen** in **waarschuwingen** te verwerken: 
+- Kies **onder Gebeurtenisgroepering** een van de twee manieren om het groeperen van gebeurtenissen in **waarschuwingen** te **verwerken:** 
 
-    - **Alle gebeurtenissen groeperen in één waarschuwing** (de standaard instelling). De regel genereert één waarschuwing elke keer dat deze wordt uitgevoerd, mits de query meer resultaten oplevert dan de opgegeven **drempel waarde** voor de waarschuwing. De waarschuwing bevat een samen vatting van alle gebeurtenissen die in de resultaten worden geretourneerd. 
+    - **Groeperen van alle gebeurtenissen in één waarschuwing** (de standaardinstelling). De regel genereert telkens wanneer deze wordt uitgevoerd één waarschuwing, zolang de query meer resultaten retourneert dan de opgegeven **waarschuwingsdrempelwaarde hierboven.** De waarschuwing bevat een samenvatting van alle gebeurtenissen die in de resultaten worden geretourneerd. 
 
-    - **Een waarschuwing voor elke gebeurtenis activeren**. De regel genereert een unieke waarschuwing voor elke gebeurtenis die door de query wordt geretourneerd. Dit is handig als u wilt dat gebeurtenissen afzonderlijk worden weer gegeven of dat u ze wilt groeperen op bepaalde para meters, per gebruiker, hostnaam of iets anders. U kunt deze para meters definiëren in de query.
+    - **Een waarschuwing voor elke gebeurtenis activeren**. De regel genereert een unieke waarschuwing voor elke gebeurtenis die door de query wordt geretourneerd. Dit is handig als u wilt dat gebeurtenissen afzonderlijk worden weergegeven of als u ze wilt groeperen op bepaalde parameters, op gebruiker, hostnaam of iets anders. U kunt deze parameters definiëren in de query.
     
-        Het aantal waarschuwingen dat momenteel door een regel kan worden gegenereerd, is maximaal 20. Als in een bepaalde regel **gebeurtenis groepering** is ingesteld om **een waarschuwing voor elke gebeurtenis te activeren** en de query van de regel meer dan 20 gebeurtenissen retourneert, genereert elk van de eerste 19 gebeurtenissen een unieke waarschuwing en wordt de twintigste waarschuwing weer gegeven met de volledige set geretourneerde gebeurtenissen. Met andere woorden, de twintigste waarschuwing is wat zou zijn gegenereerd onder de **groep alle gebeurtenissen in één waarschuwings** optie.
+        Het aantal waarschuwingen dat momenteel door een regel kan worden gegenereerd, is maximaal 20. Als in een bepaalde regel Gebeurtenisgroepering **is** ingesteld op Een waarschuwing activeren voor elke gebeurtenis en de query van de regel meer dan 20 gebeurtenissen retourneert, genereert elk van de eerste 19 gebeurtenissen een unieke waarschuwing en wordt met de 20e waarschuwing de volledige set geretourneerde gebeurtenissen samengevat.  Met andere woorden, de 20e waarschuwing is wat er zou zijn gegenereerd onder de optie Alle gebeurtenissen **groeperen in één waarschuwingsoptie.**
 
     > [!NOTE]
-    > Wat is het verschil tussen **gebeurtenissen** en **waarschuwingen**?
+    > Wat is het verschil tussen **gebeurtenissen en** **waarschuwingen?**
     >
-    > - Een **gebeurtenis** is een beschrijving van één exemplaar van een actie. Zo kan één vermelding in een logboek bestand tellen als een gebeurtenis. In deze context verwijst een gebeurtenis naar een enkel resultaat dat wordt geretourneerd door een query in een Analytics-regel.
+    > - Een **gebeurtenis** is een beschrijving van één exemplaar van een actie. Eén vermelding in een logboekbestand kan bijvoorbeeld als een gebeurtenis worden geteld. In deze context verwijst een gebeurtenis naar één resultaat dat wordt geretourneerd door een query in een analyseregel.
     >
-    > - Een **waarschuwing** is een verzameling gebeurtenissen die samen worden genomen en belang rijk zijn in het oogpunt van beveiliging. Een waarschuwing kan één gebeurtenis bevatten als de gebeurtenis aanzienlijke beveiligings implicaties heeft: een administratieve aanmelding vanuit een buitenlands land buiten kantoor uren, bijvoorbeeld.
+    > - Een **waarschuwing** is een verzameling gebeurtenissen die samen belangrijk zijn vanuit het oogpunt van beveiliging. Een waarschuwing kan één gebeurtenis bevatten als de gebeurtenis aanzienlijke gevolgen heeft voor de beveiliging, bijvoorbeeld een administratieve aanmelding vanuit een ander land buiten kantooruren.
     >
-    > - Op die manier zijn er **incidenten**? De interne logica van Azure Sentinel maakt **incidenten** van **waarschuwingen** of groepen waarschuwingen. De wachtrij incidenten is het brand punt van de sorteren, het onderzoek en het herstel van de sociale analisten.
+    > - Wat zijn **incidenten?** Azure Sentinel interne logica maakt **incidenten** op uit **waarschuwingen** of groepen waarschuwingen. De incidentenwachtrij is het centrale punt van het werk van SOC-analisten: triage, onderzoek en herstel.
     > 
-    > Azure Sentinel neemt onbewerkte gebeurtenissen van sommige gegevens bronnen en de al verwerkte waarschuwingen van anderen. Het is belang rijk te weten welk abonnement u op elk moment gebruikt.
+    > Azure Sentinel worden onbewerkte gebeurtenissen uit sommige gegevensbronnen opgenomen en worden waarschuwingen van andere bronnen al verwerkt. Het is belangrijk om te weten met welke u te maken hebt.
 
-- In het gedeelte **onderdrukking** kunt u de instelling voor het **uitvoeren van de query stoppen nadat de waarschuwing is gegenereerd** inschakelen **op** als u een waarschuwing hebt ontvangen, wilt u de bewerking van deze regel voor een bepaalde periode voor het overschrijden van het query-interval onderbreken. Als u dit inschakelt, moet u de uitvoering van de **query stoppen** instellen op de tijd die nodig is voor het stoppen van de query, tot 24 uur.
+- In  de sectie Onderdrukking kunt u de instelling Stop  **running query after alert is generated** (Stoppen met uitvoeren van query nadat de waarschuwing is gegenereerd) aan zetten als u, zodra u een waarschuwing krijgt, de bewerking van deze regel wilt opschorten voor een periode van tijd die het queryinterval overschrijdt. Als u deze in kunt stellen, moet u Stoppen met uitvoeren **van query** voor instellen op de hoeveelheid tijd dat de query niet meer mag worden uitgevoerd, maximaal 24 uur.
 
 ## <a name="configure-the-incident-creation-settings"></a>De instellingen voor het maken van incidenten configureren
 
-Op het tabblad **instellingen voor incidenten** kunt u kiezen of en hoe Azure Sentinel waarschuwingen in incidenten kan omzetten. Als dit tabblad alleen wordt weer gegeven, maakt Azure Sentinel een afzonderlijke, afzonderlijk incident van elke waarschuwing. U kunt ervoor kiezen om geen incidenten te maken of om verschillende waarschuwingen in één incident te groeperen, door de instellingen op dit tabblad te wijzigen.
+Op het **tabblad Incidentinstellingen** kunt u kiezen of en hoe Azure Sentinel waarschuwingen om te zetten in incidenten waarop actie kan worden ondernomen. Als dit tabblad met rust wordt gelaten, Azure Sentinel één incident maken, gescheiden van elke waarschuwing. U kunt ervoor kiezen om geen incidenten te maken of verschillende waarschuwingen te groeperen in één incident door de instellingen op dit tabblad te wijzigen.
 
 > [!IMPORTANT]
-> Het tabblad incident instellingen is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> Het tabblad incidentinstellingen is momenteel beschikbaar als **PREVIEW.** Zie de Aanvullende gebruiksvoorwaarden voor [Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voorwaarden die van toepassing zijn op Azure-functies die bètaversies, preview-functies of anderszins nog niet algemeen beschikbaar zijn.
 
 :::image type="content" source="media/tutorial-detect-threats-custom/incident-settings-tab.png" alt-text="Definieer de instellingen voor het maken van incidenten en het groeperen van waarschuwingen":::
 
 ### <a name="incident-settings"></a>Incidentinstellingen
 
-In de sectie **incident instellingen** worden **incidenten gemaakt op basis van waarschuwingen die door deze analyse regel worden geactiveerd** , standaard ingesteld op **ingeschakeld**, wat betekent dat Azure Sentinel één afzonderlijk incident maakt van elke waarschuwing die wordt geactiveerd door de regel.
+In de sectie  **Incidentinstellingen** wordt Incidenten maken op basis van waarschuwingen die worden geactiveerd door deze analyseregel standaard ingesteld op **Ingeschakeld.** Dit betekent dat Azure Sentinel één afzonderlijk incident maakt van elke waarschuwing die door de regel wordt geactiveerd.
     
-- Als u niet wilt dat deze regel resulteert in het maken van incidenten (als deze regel bijvoorbeeld alleen gegevens voor de volgende analyse verzamelt), stelt u deze in op **uitgeschakeld**.
+- Als u niet wilt dat deze regel leidt tot het maken van incidenten (bijvoorbeeld als deze regel alleen is om informatie te verzamelen voor volgende analyse), stelt u deze in op **Uitgeschakeld.**
 
-- Zie de volgende sectie als u een enkel incident wilt maken op basis van een groep waarschuwingen in plaats van één.
+- Als u wilt dat er één incident wordt gemaakt van een groep waarschuwingen, in plaats van één voor elke waarschuwing, bekijkt u de volgende sectie.
 
-### <a name="alert-grouping"></a>Groepering van waarschuwingen
+### <a name="alert-grouping"></a>Waarschuwingsgroepering
 
-Als u  een enkel incident wilt genereren op basis van een groep van maxi maal 150 vergelijk bare of terugkerende waarschuwingen (zie opmerking), stelt u **gerelateerde waarschuwingen in, die door deze analyse regel worden geactiveerd, naar incidenten** op **ingeschakeld** en stelt u de volgende para meters in.
+Als  u in de sectie Waarschuwingsgroepering wilt dat één incident wordt gegenereerd op basis van een groep van maximaal 150 vergelijkbare of terugkerende waarschuwingen (zie opmerking), stelt u Groepsgerelateerde waarschuwingen, geactiveerd door deze **analyseregel,** in op Ingeschakeld voor incidenten en stelt u de volgende parameters in.
 
-- **De groep beperken tot waarschuwingen die zijn gemaakt in het geselecteerde tijds bestek**: Bepaal het tijds bestek waarbinnen de vergelijk bare of terugkerende waarschuwingen samen worden gegroepeerd. Alle bijbehorende waarschuwingen binnen deze tijds periode genereren gezamenlijk een incident of een reeks incidenten (afhankelijk van de groeperings instellingen hieronder). Waarschuwingen buiten deze tijds periode genereren een afzonderlijk incident of een reeks incidenten.
+- **Beperk de groep tot waarschuwingen die binnen** het geselecteerde tijdsbestek zijn gemaakt: bepaal het tijdsbestek waarin de vergelijkbare of terugkerende waarschuwingen worden gegroepeerd. Alle bijbehorende waarschuwingen binnen dit tijdsbestek genereren gezamenlijk een incident of een reeks incidenten (afhankelijk van de onderstaande groeperingsinstellingen). Waarschuwingen buiten dit tijdsbestek genereren een afzonderlijk incident of een reeks incidenten.
 
-- **Groeps waarschuwingen die door deze analyse regel worden geactiveerd in één incident per**: Kies de basis waarop waarschuwingen worden gegroepeerd:
+- **Groepswaarschuwingen die door deze analyseregel worden** geactiveerd in één incident door : Kies de basis waarop waarschuwingen worden gegroepeerd:
 
-    - **Groepeer waarschuwingen in één incident als alle entiteiten overeenkomen**: waarschuwingen worden gegroepeerd als ze identieke waarden delen voor elk van de toegewezen entiteiten (gedefinieerd op het tabblad set-regel logica hierboven). Dit is de aanbevolen instelling.
+    - **Waarschuwingen groeperen** in één incident als alle entiteiten overeenkomen: waarschuwingen worden gegroepeerd als ze identieke waarden delen voor elk van de entiteiten die zijn gedefinieerd (gedefinieerd op het tabblad Regellogica instellen hierboven). Dit is de aanbevolen instelling.
 
-    - **Alle waarschuwingen groeperen die door deze regel in één incident worden geactiveerd**: alle waarschuwingen die door deze regel worden gegenereerd, worden gegroepeerd, zelfs als ze geen identieke waarden delen.
+    - **Groepeert alle waarschuwingen die door** deze regel worden geactiveerd in één incident: alle waarschuwingen die door deze regel worden gegenereerd, worden gegroepeerd, zelfs als ze geen identieke waarden delen.
 
-    - **Groepeer waarschuwingen in één incident als de geselecteerde entiteiten overeenkomen**: waarschuwingen worden gegroepeerd als ze identieke waarden delen voor een aantal toegewezen entiteiten (die u kunt selecteren in de vervolg keuzelijst). U kunt deze instelling gebruiken als u bijvoorbeeld afzonderlijke incidenten wilt maken op basis van de bron-of doel-IP-adressen.
+    - **Groepswaarschuwingen** in één incident als de geselecteerde entiteiten overeenkomen: waarschuwingen worden gegroepeerd als ze identieke waarden delen voor sommige van de entiteiten die zijn toegevoegd (die u kunt selecteren in de vervolgkeuzelijst). U kunt deze instelling gebruiken als u bijvoorbeeld afzonderlijke incidenten wilt maken op basis van de bron- of doel-IP-adressen.
 
-- **Gesloten afsluitende incidenten opnieuw openen**: als een incident is opgelost en gesloten, en later een andere waarschuwing wordt gegenereerd die tot dat incident moet behoren, stelt u deze instelling in op **ingeschakeld** als u wilt dat het gesloten incident opnieuw wordt geopend en schakelt u deze optie **uit als u** wilt dat de waarschuwing een nieuw incident maakt.
+- Gesloten overeenkomende incidenten opnieuw **openen:** als een incident is opgelost en gesloten en later een andere waarschuwing  wordt gegenereerd die bij dat incident hoort,  stelt u deze instelling in op Ingeschakeld als u wilt dat het gesloten incident opnieuw wordt geopend en laat u Uitgeschakeld staan als u wilt dat de waarschuwing een nieuw incident maakt.
     
     > [!NOTE]
-    > **Maxi maal 150 waarschuwingen** kunnen in één incident worden gegroepeerd. Als er meer dan 150 waarschuwingen worden gegenereerd door een regel die deze in één incident groepeert, wordt er een nieuw incident gegenereerd met dezelfde incident Details als het origineel en worden de overmatige waarschuwingen gegroepeerd in het nieuwe incident.
+    > **Er kunnen maximaal 150 waarschuwingen** worden gegroepeerd in één incident. Als er meer dan 150 waarschuwingen worden gegenereerd door een regel die ze in één incident groepeert, wordt er een nieuw incident gegenereerd met dezelfde incidentdetails als het oorspronkelijke incident en worden de overtollige waarschuwingen gegroepeerd in het nieuwe incident.
 
 ## <a name="set-automated-responses-and-create-the-rule"></a>Automatische antwoorden instellen en de regel maken
 
-1. Op het tabblad **geautomatiseerde antwoorden** selecteert u de playbooks die u automatisch wilt uitvoeren wanneer een waarschuwing wordt gegenereerd door de aangepaste regel. Zie [reageren op bedreigingen](tutorial-respond-threats-playbook.md)voor meer informatie over het maken en automatiseren van playbooks.
+1. Selecteer op **het tabblad Geautomatiseerde** antwoorden de playbooks die u automatisch wilt uitvoeren wanneer een waarschuwing wordt gegenereerd door de aangepaste regel. Zie Respond to threats (Reageren op bedreigingen) voor meer informatie over het maken en [automatiseren van playbooks.](tutorial-respond-threats-playbook.md)
 
-    :::image type="content" source="media/tutorial-detect-threats-custom/automated-response-tab.png" alt-text="De instellingen voor automatische antwoorden definiëren":::
+    :::image type="content" source="media/tutorial-detect-threats-custom/automated-response-tab.png" alt-text="De instellingen voor geautomatiseerde antwoorden definiëren":::
 
-1. Selecteer **controleren en maken** om alle instellingen voor de nieuwe waarschuwings regel te bekijken. Wanneer het bericht validatie is voltooid wordt weer gegeven, selecteert u **maken** om uw waarschuwings regel te initialiseren.
+1. Selecteer **Controleren en maken om** alle instellingen voor de nieuwe waarschuwingsregel te controleren. Wanneer het bericht Validatie is geslaagd wordt weergegeven, selecteert u **Maken om** de waarschuwingsregel te initialiseren.
 
     :::image type="content" source="media/tutorial-detect-threats-custom/review-and-create-tab.png" alt-text="Alle instellingen controleren en de regel maken":::
 
-## <a name="view-the-rule-and-its-output"></a>De regel en de uitvoer weer geven
+## <a name="view-the-rule-and-its-output"></a>De regel en de uitvoer ervan weergeven
   
-- U kunt de zojuist gemaakte aangepaste regel (van het type ' gepland ') vinden in de tabel onder het tabblad **actieve regels** op het hoofd scherm van de **analyse** . In deze lijst kunt u elke regel inschakelen, uitschakelen of verwijderen.
+- U vindt de zojuist gemaakte aangepaste regel (van het type Gepland) in de tabel onder het **tabblad Actieve** regels op het hoofdscherm **Analyse.** In deze lijst kunt u elke regel inschakelen, uitschakelen of verwijderen.
 
-- Als u de resultaten van de waarschuwings regels die u maakt, wilt weer geven, gaat u naar de pagina **incidenten** , waar u de [incidenten](tutorial-investigate-cases.md)kunt sorteren, onderzoeken en de bedreigingen herstelt.
+- Als u de resultaten wilt bekijken van  de waarschuwingsregels die u maakt, gaat u naar de pagina Incidenten, waar u incidenten kunt [zoeken,](tutorial-investigate-cases.md)onderzoeken en de bedreigingen kunt herstellen.
 
 > [!NOTE]
-> Waarschuwingen die zijn gegenereerd in azure Sentinel zijn beschikbaar via [Microsoft Graph beveiliging](/graph/security-concept-overview). Zie de [documentatie over Microsoft Graph Security Alerts](/graph/api/resources/security-api-overview)(Engelstalig) voor meer informatie.
+> Waarschuwingen die worden gegenereerd in Azure Sentinel zijn beschikbaar [via Microsoft Graph Security](/graph/security-concept-overview). Zie de documentatie Microsoft Graph [Beveiligingswaarschuwingen voor meer informatie.](/graph/api/resources/security-api-overview)
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-### <a name="issue-no-events-appear-in-query-results"></a>Probleem: er worden geen gebeurtenissen weer gegeven in de query resultaten
+### <a name="issue-no-events-appear-in-query-results"></a>Probleem: Er worden geen gebeurtenissen weergegeven in queryresultaten
 
-Als **gebeurtenis groepering** is ingesteld om **een waarschuwing voor elke gebeurtenis te activeren**, dan in bepaalde scenario's, wanneer de query resultaten op een later tijdstip worden weer gegeven (bijvoorbeeld wanneer u terugdraait op waarschuwingen van een incident), is het mogelijk dat er geen query resultaten worden weer gegeven. Dit komt doordat de verbinding van de gebeurtenis met de waarschuwing wordt bereikt door het hashen van de gegevens van de betreffende gebeurtenis en het opnemen van de hash in de query. Als de query resultaten zijn gewijzigd nadat de waarschuwing is gegenereerd, is de hash niet langer geldig en worden er geen resultaten weer gegeven. 
+Als gebeurtenisgroepering **is** ingesteld om een waarschuwing voor elke gebeurtenis te **activeren,** is het mogelijk dat er in bepaalde scenario's, wanneer de queryresultaten op een later tijdstip worden weergegeven (bijvoorbeeld wanneer u terugvoeert naar waarschuwingen van een incident), er geen queryresultaten worden weergegeven. Dit komt doordat de verbinding van de gebeurtenis met de waarschuwing wordt bereikt door het hashen van de informatie van de specifieke gebeurtenis en het opnemen van de hash in de query. Als de queryresultaten zijn gewijzigd sinds de waarschuwing is gegenereerd, is de hash niet langer geldig en worden er geen resultaten weergegeven. 
 
-Als u de gebeurtenissen wilt zien, verwijdert u de regel hand matig met de hash uit de query van de regel en voert u de query uit.
+Als u de gebeurtenissen wilt zien, verwijdert u handmatig de regel met de hash uit de query van de regel en voer u de query uit.
 
-### <a name="issue-a-scheduled-rule-failed-to-execute-or-appears-with-auto-disabled-added-to-the-name"></a>Probleem: een geplande regel kan niet worden uitgevoerd of wordt weer gegeven wanneer automatisch uitgeschakeld is toegevoegd aan de naam
+### <a name="issue-a-scheduled-rule-failed-to-execute-or-appears-with-auto-disabled-added-to-the-name"></a>Probleem: Een geplande regel kan niet worden uitgevoerd of wordt weergegeven met AUTOMATISCH UITGESCHAKELD toegevoegd aan de naam
 
-Het is een zeldzame voorval dat een geplande query regel niet kan worden uitgevoerd, maar dit kan gebeuren. Azure Sentinel classificeert fouten vooraf als tijdelijk of permanent, op basis van het specifieke type fout en de omstandigheden die ernaar hebben geleid.
+Het komt zelden voor dat een geplande queryregel niet kan worden uitgevoerd, maar dit kan wel gebeuren. Azure Sentinel classificeert fouten van te voren als tijdelijk of permanent, op basis van het specifieke type fout en de omstandigheden die ertoe hebben geleid.
 
 #### <a name="transient-failure"></a>Tijdelijke fout
 
-Een tijdelijke fout treedt op als gevolg van een tijdelijke situatie en gaat binnenkort terug naar normaal, waarbij de uitvoering van de regel slaagt. Enkele voor beelden van fouten die door Azure Sentinel worden geclassificeerd als tijdelijk:
+Een tijdelijke fout treedt op als gevolg van een tijdelijke situatie die binnenkort weer normaal wordt, waarna de uitvoering van de regel slaagt. Enkele voorbeelden van fouten die Azure Sentinel als tijdelijk worden classificeert:
 
-- Het duurt te lang voordat een regel query wordt uitgevoerd en er een time-out optreedt.
-- Verbindings problemen tussen gegevens bronnen en Log Analytics, of tussen Log Analytics en Azure Sentinel.
+- Het duurt te lang om een regelquery uit te voeren en er t/m een times-out uit te voeren.
+- Connectiviteitsproblemen tussen gegevensbronnen en Log Analytics, of tussen Log Analytics en Azure Sentinel.
 - Andere nieuwe en onbekende fouten worden beschouwd als tijdelijk.
 
-In het geval van een tijdelijke storing wordt de regel door Azure Sentinel continu opnieuw proberen uit te voeren na vooraf vastgestelde en steeds toenemende intervallen, tot een bepaald punt. Daarna wordt de regel opnieuw uitgevoerd op het volgende geplande tijdstip. Een regel wordt nooit automatisch uitgeschakeld vanwege een tijdelijke fout.
+In het geval van een tijdelijke fout blijft Azure Sentinel de regel opnieuw uitvoeren na vooraf bepaalde en steeds toenemende intervallen, tot een bepaald punt. Daarna wordt de regel pas opnieuw uitgevoerd op het volgende geplande tijdstip. Een regel wordt nooit automatisch uitgeschakeld vanwege een tijdelijke fout.
 
-#### <a name="permanent-failure---rule-auto-disabled"></a>Permanente fout-automatische uitgeschakelde regel
+#### <a name="permanent-failure---rule-auto-disabled"></a>Permanente fout - regel automatisch uitgeschakeld
 
-Een permanente fout treedt op als gevolg van een wijziging in de voor waarden waardoor de regel kan worden uitgevoerd, zonder dat er sprake is van een menselijke interventie. Hier volgen enkele voor beelden van fouten die zijn geclassificeerd als permanent:
+Een permanente fout treedt op als gevolg van een wijziging in de voorwaarden waardoor de regel kan worden uitgevoerd, die zonder menselijke tussenkomst niet terugkeert naar hun vorige status. Hier volgen enkele voorbeelden van fouten die zijn geclassificeerd als permanent:
 
-- De doel werkruimte (waarop de regel query wordt uitgevoerd) is verwijderd.
-- De doel tabel (waarop de regel query wordt uitgevoerd) is verwijderd.
-- De Azure-Sentinel is verwijderd uit de doel werkruimte.
-- Een functie die door de regel query wordt gebruikt, is niet meer geldig. de service is gewijzigd of verwijderd.
-- De machtigingen voor een van de gegevens bronnen van de regel query zijn gewijzigd.
-- Een van de gegevens bronnen van de regel query is verwijderd of de verbinding is verbroken.
+- De doelwerkruimte (waarop de regelquery is uitgevoerd) is verwijderd.
+- De doeltabel (waarop de regelquery is uitgevoerd) is verwijderd.
+- Azure Sentinel is verwijderd uit de doelwerkruimte.
+- Een functie die wordt gebruikt door de regelquery is niet langer geldig; deze is gewijzigd of verwijderd.
+- Machtigingen voor een van de gegevensbronnen van de regelquery zijn gewijzigd.
+- Een van de gegevensbronnen van de regelquery is verwijderd of de verbinding is verbroken.
 
-**In het geval van een vooraf bepaald aantal opeenvolgende permanente fouten, van hetzelfde type en van dezelfde regel,** Azure Sentinel stopt met het uitvoeren van de regel en neemt ook de volgende stappen:
+**In het geval van een vooraf bepaald aantal opeenvolgende permanente fouten, van** hetzelfde type en volgens dezelfde regel, Azure Sentinel de regel niet meer probeert uit te voeren en voert ook de volgende stappen uit:
 
-- Hiermee schakelt u de regel uit.
-- Voegt de woorden **' automatisch uitgeschakeld '** toe aan het begin van de naam van de regel.
+- Hiermee schakelt u de regel.
+- Voegt de woorden **'AUTO DISABLED' toe** aan het begin van de naam van de regel.
 - Hiermee wordt de reden voor de fout (en het uitschakelen) toegevoegd aan de beschrijving van de regel.
 
-U kunt eenvoudig de aanwezigheid van automatische uitgeschakelde regels bepalen door de regel lijst te sorteren op naam. De regels voor automatisch uitschakelen bevinden zich boven aan de lijst.
+U kunt eenvoudig de aanwezigheid van automatisch uitgeschakelde regels bepalen door de lijst met regels op naam te sorteren. De automatisch uitgeschakelde regels staan bovenaan of bovenaan de lijst.
 
-SOC managers moeten de regel lijst regel matig controleren op de aanwezigheid van automatische uitgeschakelde regels.
+SOC-managers moeten de regellijst regelmatig controleren op de aanwezigheid van regels voor automatisch uitgeschakelde regels.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelf studie hebt u geleerd hoe u aan de slag gaat met het detecteren van bedreigingen met behulp van Azure Sentinel.
+In deze zelfstudie hebt u geleerd hoe u bedreigingen kunt detecteren met behulp van Azure Sentinel.
 
-- Meer informatie over het [onderzoeken van incidenten in azure Sentinel](tutorial-investigate-cases.md).
-- Meer informatie over [entiteiten in azure Sentinel](entities-in-azure-sentinel.md).
-- Meer informatie over het [instellen van automatische bedreigings reacties in azure Sentinel](tutorial-respond-threats-playbook.md).
+- Meer informatie over [het onderzoeken van incidenten in Azure Sentinel](tutorial-investigate-cases.md).
+- Meer informatie [over entiteiten in Azure Sentinel](entities-in-azure-sentinel.md).
+- Meer informatie over het [instellen van geautomatiseerde bedreigingsreacties in Azure Sentinel](tutorial-respond-threats-playbook.md).

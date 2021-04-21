@@ -3,13 +3,13 @@ title: Functies uitschakelen in Azure Functions
 description: Meer informatie over het uitschakelen en inschakelen van functies in Azure Functions.
 ms.topic: conceptual
 ms.date: 03/15/2021
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 03803abfda010c81fa8286a478d626ef39db59fb
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.custom: devx-track-csharp, devx-track-azurepowershell
+ms.openlocfilehash: c4743603504639cba5c48af57046179a0680b371
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107777577"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107829874"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Functies uitschakelen in Azure Functions
 
@@ -68,7 +68,7 @@ Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOUR
 
 ## <a name="functions-in-a-slot"></a>Functies in een sleuf
 
-App-instellingen zijn standaard ook van toepassing op apps die worden uitgevoerd in implementatiesleuven. U kunt echter de app-instelling die door de sleuf wordt gebruikt, overschrijven door een specifieke app-instelling voor de sleuf in te stellen. U wilt bijvoorbeeld dat een functie actief is in productie, maar niet tijdens het testen van de implementatie, zoals een door een timer geactiveerde functie. 
+Standaard zijn app-instellingen ook van toepassing op apps die worden uitgevoerd in implementatiesleuven. U kunt echter de app-instelling die door de sleuf wordt gebruikt, overschrijven door een specifieke app-instelling voor de sleuf in te stellen. U wilt bijvoorbeeld dat een functie actief is in productie, maar niet tijdens het testen van de implementatie, zoals een door een timer geactiveerde functie. 
 
 Een functie alleen uitschakelen in de staging-sleuf:
 

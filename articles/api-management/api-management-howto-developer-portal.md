@@ -9,12 +9,13 @@ ms.service: api-management
 ms.topic: article
 ms.date: 04/15/2021
 ms.author: apimpm
-ms.openlocfilehash: aaf02affce924232deb56bf7694771c838b0b323
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 3f5da5ed6c828278eb25a9fa4fa5cfb90e16f8f4
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107739598"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815955"
 ---
 # <a name="overview-of-the-developer-portal"></a>Overzicht van de ontwikkelaarsportal
 
@@ -43,10 +44,10 @@ Uw API Management bevat een ingebouwde, altijd up-to-date, **beheerde ontwikkela
 
 Als u deze wilt uitbreiden met aangepaste logica, die niet out-of-the-box wordt ondersteund, kunt u de codebasis ervan wijzigen. De codebasis van de portal is [beschikbaar in een GitHub-opslagplaats.](https://github.com/Azure/api-management-developer-portal) U kunt bijvoorbeeld een nieuwe widget implementeren die kan worden geïntegreerd met een ondersteuningssysteem van derden. Wanneer u nieuwe functionaliteit implementeert, kunt u een van de volgende opties kiezen:
 
-- **De resulterende portal** zelf hosten buiten uw API Management service. Wanneer u de portal zelf host, wordt u de onderhouder en bent u verantwoordelijk voor de upgrades. Ondersteuning voor Azure is alleen beperkt tot de basisinstallatie van [zelf-hostende portals.](developer-portal-self-host.md)
-- Open een pull-aanvraag voor het API Management team om nieuwe functionaliteit samen te voegen met **de** codebasis van de beheerde portal.
+- **De resulterende portal** zelf hosten buiten uw API Management service. Wanneer u de portal zelf host, wordt u de onderhouder en bent u verantwoordelijk voor de upgrades. Ondersteuning voor Azure van de Ondersteuning voor Azure is alleen beperkt tot de [basisinstallatie van zelf-hostende portals](developer-portal-self-host.md).
+- Open een pull-aanvraag voor het API Management team om  nieuwe functionaliteit samen te voegen met de codebasis van de beheerde portal.
 
-Raadpleeg de [GitHub-opslagplaats](https://github.com/Azure/api-management-developer-portal) en de zelfstudie voor het implementeren van een widget voor meer informatie en instructies over [de uit te voeren extensibility.](developer-portal-implement-widgets.md) In de [zelfstudie voor het](api-management-howto-developer-portal-customize.md) aanpassen van de beheerde portal  wordt u door het beheervenster van de portal geleid. Dit is gebruikelijk voor beheerde en **zelf-hostbare** versies.
+Raadpleeg de [GitHub-opslagplaats](https://github.com/Azure/api-management-developer-portal) en de zelfstudie voor het implementeren van een widget voor meer informatie en instructies over [de uit te voeren extensibility.](developer-portal-implement-widgets.md) In de [zelfstudie voor het aanpassen](api-management-howto-developer-portal-customize.md) van de beheerde portal  wordt u door het beheervenster van de portal geleid. Dit is gebruikelijk voor beheerde en **zelf-hostbare** versies.
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -57,7 +58,7 @@ Meer informatie over de nieuwe ontwikkelaarsportal:
 - [Zelf-hostende versie van de portal instellen](developer-portal-self-host.md)
 - [Uw eigen widget implementeren](developer-portal-implement-widgets.md)
 
-Blader door andere resources:
+Door andere resources bladeren:
 
 - [GitHub-opslagplaats met de broncode](https://github.com/Azure/api-management-developer-portal)
 - [Veelgestelde vragen over de ontwikkelaarsportal](developer-portal-faq.md)

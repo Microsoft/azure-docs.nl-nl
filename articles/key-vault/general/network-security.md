@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8352deb00f6954d862b9e44646cce1604e2c5428
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 1f2df113b855ef85906e00a0316b09870ff20fb7
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107749614"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814366"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Azure Key Vault-firewalls en virtuele netwerken configureren
 
@@ -68,7 +68,7 @@ In dit geval moet u de resource in een virtueel netwerk maken en vervolgens verk
 Zie het document [hier](./private-link-service.md)als u wilt weten hoe u een verbinding met een privékoppeling kunt configureren in uw sleutelkluis.
 
 > [!IMPORTANT]
-> Als de firewallregels van kracht zijn, kunnen gebruikers alleen Key Vault-[gegevenslaagbewerkingen](security-overview.md#privileged-access) uitvoeren wanneer hun aanvragen afkomstig zijn van toegestane virtuele netwerken of IPv4-adresbereiken. Dit is tevens van toepassing voor toegang tot Key Vault vanuit Azure Portal. Hoewel gebruikers kunnen bladeren naar een sleutelkluis van Azure Portal, kunnen ze mogelijk geen sleutels, geheimen of certificaten weergeven als hun clientcomputer niet in de lijst met toegestane clients staat. Dit is ook van invloed op de Key Vault-kiezer door andere Azure-Services. Gebruikers zien mogelijk een lijst met sleutelkluizen, maar geen lijst met sleutels als firewallregels hun clientcomputer weigeren.
+> Als de firewallregels van kracht zijn, kunnen gebruikers alleen Key Vault-[gegevenslaagbewerkingen](security-features.md#privileged-access) uitvoeren wanneer hun aanvragen afkomstig zijn van toegestane virtuele netwerken of IPv4-adresbereiken. Dit is tevens van toepassing voor toegang tot Key Vault vanuit Azure Portal. Hoewel gebruikers kunnen bladeren naar een sleutelkluis van Azure Portal, kunnen ze mogelijk geen sleutels, geheimen of certificaten weergeven als hun clientcomputer niet in de lijst met toegestane clients staat. Dit is ook van invloed op de Key Vault-kiezer door andere Azure-Services. Gebruikers zien mogelijk een lijst met sleutelkluizen, maar geen lijst met sleutels als firewallregels hun clientcomputer weigeren.
 
 > [!NOTE]
 > Houd rekening met de volgende configuratielimieten:
@@ -175,4 +175,4 @@ U kunt als volgt Key Vault-firewalls en virtuele netwerken configureren met behu
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Service-eindpunten voor virtuele netwerken voor Key Vault](overview-vnet-service-endpoints.md)
-* [Overzicht van Azure Key Vault-beveiliging](security-overview.md)
+* [Overzicht van Azure Key Vault-beveiliging](security-features.md)

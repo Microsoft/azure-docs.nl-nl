@@ -5,18 +5,18 @@ ms.devlang: php
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: c40bc01553b9e848d668c0a699e9dcc9929f079e
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 94cbe0fa6669546cee8e989a6db2fcbb428cb9d0
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107779323"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107829436"
 ---
 # <a name="configure-a-php-app-for-azure-app-service"></a>Een PHP-app configureren voor Azure App Service
 
-In deze handleiding ziet u hoe u uw PHP-web-apps, mobiele back-ends en API-apps configureert in Azure App Service.
+Deze handleiding laat zien hoe u uw PHP-web-apps, mobiele back-ends en API-apps configureert in Azure App Service.
 
-Deze handleiding bevat belangrijke concepten en instructies voor PHP-ontwikkelaars die apps implementeren in App Service. Als u deze zelfstudie nog Azure App Service, volgt u eerst de [PHP-quickstart](quickstart-php.md) en [PHP met MySQL-zelfstudie.](tutorial-php-mysql-app.md)
+Deze handleiding bevat belangrijke concepten en instructies voor PHP-ontwikkelaars die apps implementeren in App Service. Als u deze zelfstudie nog Azure App Service, volgt u eerst de [php-quickstart](quickstart-php.md) en [PHP met MySQL-zelfstudie.](tutorial-php-mysql-app.md)
 
 ## <a name="show-php-version"></a>PHP-versie tonen
 
@@ -27,6 +27,9 @@ Als u de huidige PHP-versie wilt zien, moet u de volgende opdracht uitvoeren in 
 ```azurecli-interactive
 az webapp config show --resource-group <resource-group-name> --name <app-name> --query phpVersion
 ```
+
+> [!NOTE]
+> Als u een ontwikkelingssleuf wilt aanpakken, moet u de parameter `--slot` opnemen, gevolgd door de naam van de sleuf.
 
 Als u alle ondersteunde PHP-versies wilt zien, moet u de volgende opdracht uitvoeren in [Cloud Shell](https://shell.azure.com):
 
@@ -44,6 +47,9 @@ Als u de huidige PHP-versie wilt zien, moet u de volgende opdracht uitvoeren in 
 az webapp config show --resource-group <resource-group-name> --name <app-name> --query linuxFxVersion
 ```
 
+> [!NOTE]
+> Als u een ontwikkelingssleuf wilt aanpakken, moet u de parameter `--slot` opnemen, gevolgd door de naam van de sleuf.
+
 Als u alle ondersteunde PHP-versies wilt zien, moet u de volgende opdracht uitvoeren in [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
@@ -59,7 +65,7 @@ az webapp list-runtimes --linux | grep PHP
 Voer de volgende opdracht uit in [Cloud Shell](https://shell.azure.com) php-versie in te stellen op 7.4:
 
 ```azurecli-interactive
-az webapp config set --name <app-name> --resource-group <resource-group-name> --php-version 7.4
+az webapp config set --resource-group <resource-group-name> --name <app-name> --php-version 7.4
 ```
 
 ::: zone-end
@@ -69,7 +75,7 @@ az webapp config set --name <app-name> --resource-group <resource-group-name> --
 Voer de volgende opdracht uit in [Cloud Shell](https://shell.azure.com) PHP-versie in te stellen op 7.2:
 
 ```azurecli-interactive
-az webapp config set --name <app-name> --resource-group <resource-group-name> --linux-fx-version "PHP|7.2"
+az webapp config set --resource-group <resource-group-name> --name <app-name> --linux-fx-version "PHP|7.2"
 ```
 
 ::: zone-end
@@ -91,7 +97,7 @@ kuduscript --node --scriptType bash --suppressPrompt
 
 De hoofdmap van uw opslagplaats heeft nu twee extra bestanden: *.deployment* *en deploy.sh*.
 
-Open *deploy.sh* en zoek de `Deployment` sectie, die er als de volgende uitziet:
+Open *deploy.sh* en zoek de `Deployment` sectie die er als de volgende uitziet:
 
 ```bash
 ##################################################################################################################################
@@ -217,7 +223,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Zie [Oryx-configuratie](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md) voor aanvullende omgevingsvariabelen om bouwautomatisering aan te passen.
 
-Zie App Service Oryx-documentatie: Hoe [PHP-apps](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/php.md)worden gedetecteerd en gebouwd voor meer informatie over hoe php-apps worden uitgevoerd en gebouwd in Linux.
+Zie App Service [Oryx-documentatie: Hoe PHP-apps](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/php.md)worden gedetecteerd en gebouwd voor meer informatie over hoe php-apps worden uitgevoerd en gebouwd in Linux.
 
 ## <a name="customize-start-up"></a>Opstarten aanpassen
 
@@ -288,7 +294,7 @@ Populaire webframeworks bieden toegang tot de `X-Forwarded-*`-informatie in het 
 Als u wijzigingen moet aanbrengen in uw PHP-installatie, kunt u een van dephp.ini [ wijzigen](https://www.php.net/manual/ini.list.php) door deze stappen te volgen.
 
 > [!NOTE]
-> De beste manier om de PHP-versie en de huidigephp.inizien, is door [phpinfo() aan te](https://php.net/manual/function.phpinfo.php) roepen in uw app. 
+> De beste manier om de PHP-versie en de huidigephp.inizien, is [door phpinfo() aan te](https://php.net/manual/function.phpinfo.php) roepen in uw app. 
 >
 
 ### <a name="customize-non-php_ini_system-directives"></a><a name="Customize-non-PHP_INI_SYSTEM directives"></a>Instructies voor niet-PHP_INI_SYSTEM aanpassen
@@ -297,7 +303,7 @@ Als u wijzigingen moet aanbrengen in uw PHP-installatie, kunt u een van dephp.in
 
 Als u PHP_INI_USER-, PHP_INI_PERDIR- en PHP_INI_ALL-instructies wilt aanpassen (zie [php.ini-instructies),](https://www.php.net/manual/ini.list.php)voegt u een bestand toe aan de hoofdmap `.user.ini` van uw app.
 
-Voeg configuratie-instellingen toe aan `.user.ini` het bestand met dezelfde syntaxis die u in een bestand zou `php.ini` gebruiken. Als u bijvoorbeeld de instelling wilt in- en instellen op `display_errors` 10 miljoen, bevat het bestand `upload_max_filesize` `.user.ini` de volgende tekst:
+Voeg configuratie-instellingen toe aan `.user.ini` het bestand met dezelfde syntaxis die u in een bestand zou `php.ini` gebruiken. Als u bijvoorbeeld de instelling wilt in- en instellen op `display_errors` 10 miljoen, bevat uw bestand `upload_max_filesize` `.user.ini` de volgende tekst:
 
 ```
  ; Example Settings
@@ -340,9 +346,9 @@ Als alternatief voor het gebruik *van .htaccess* kunt u [ini_set()](https://www.
 
 ::: zone pivot="platform-windows"  
 
-Als u PHP_INI_SYSTEM -instructies wilt aanpassen (zie [php.ini-instructies](https://www.php.net/manual/ini.list.php)), kunt u de *.htaccess-benadering niet* gebruiken. App Service biedt een afzonderlijk mechanisme met behulp van de `PHP_INI_SCAN_DIR` app-instelling.
+Als u PHP_INI_SYSTEM wilt aanpassen [ (ziephp.ini-instructies](https://www.php.net/manual/ini.list.php)), kunt u de *HTACCESS-methode niet* gebruiken. App Service biedt een afzonderlijk mechanisme met behulp van de `PHP_INI_SCAN_DIR` app-instelling.
 
-Voer eerst de volgende opdracht uit in de [Cloud Shell](https://shell.azure.com) app-instelling toe te voegen met de naam `PHP_INI_SCAN_DIR` :
+Voer eerst de volgende opdracht uit in [de](https://shell.azure.com) Cloud Shell om een app-instelling met de naam toe te `PHP_INI_SCAN_DIR` voegen:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PHP_INI_SCAN_DIR="d:\home\site\ini"
@@ -368,7 +374,7 @@ Start de app opnieuw om de wijzigingen door te voeren.
 
 Als u PHP_INI_SYSTEM wilt aanpassen [ (ziephp.ini-instructies](https://www.php.net/manual/ini.list.php)), kunt u de *HTACCESS-methode niet* gebruiken. App Service biedt een afzonderlijk mechanisme met behulp van de `PHP_INI_SCAN_DIR` app-instelling.
 
-Voer eerst de volgende opdracht uit in [de](https://shell.azure.com) Cloud Shell om een app-instelling met de naam toe te `PHP_INI_SCAN_DIR` voegen:
+Voer eerst de volgende opdracht uit in de [Cloud Shell](https://shell.azure.com) om een app-instelling met de naam toe te `PHP_INI_SCAN_DIR` voegen:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PHP_INI_SCAN_DIR="/usr/local/etc/php/conf.d:/home/site/ini"
@@ -378,7 +384,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Navigeer naar de web-SSH-sessie met uw Linux-container ( `https://<app-name>.scm.azurewebsites.net/webssh/host` ).
 
-Maak een map in met de naam en maak vervolgens een `/home/site` `ini` *.ini-bestand* in de `/home/site/ini` map (bijvoorbeeld *settings.ini)* met de instructies die u wilt aanpassen. Gebruik dezelfde syntaxis die u in eenphp.ini *gebruiken.* 
+Maak een map in met de naam en maak vervolgens een `/home/site` `ini` *INI-bestand* in de `/home/site/ini` map (bijvoorbeeld *settings.ini)* met de instructies die u wilt aanpassen. Gebruik dezelfde syntaxis die u in eenphp.ini *gebruiken.* 
 
 > [!TIP]
 > In de ingebouwde Linux-containers in App Service *wordt /home* gebruikt als persistente gedeelde opslag. 
@@ -408,7 +414,7 @@ De ingebouwde PHP-installaties bevatten de meest gebruikte extensies. U kunt aan
 
 Als u aanvullende extensies wilt inschakelen, volgt u deze stappen:
 
-Voeg een map toe aan de hoofdmap van uw app en plaats de extensiebestanden in de map `bin` `.dll` *(bijvoorbeeldmongodb.dll*). Zorg ervoor dat de extensies compatibel zijn met de PHP-versie in Azure en compatibel zijn met VC9 en niet-thread-safe (nts).
+Voeg een map toe aan de hoofdmap van uw app en plaats de extensiebestanden in de map `bin` `.dll` *(bijvoorbeeldmongodb.dll*). Zorg ervoor dat de extensies compatibel zijn met de PHP-versie in Azure en compatibel zijn met VC9 en niet thread-safe (nts).
 
 Implementeer uw wijzigingen.
 

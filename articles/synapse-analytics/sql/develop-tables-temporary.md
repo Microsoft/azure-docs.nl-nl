@@ -1,6 +1,6 @@
 ---
-title: Tijdelijke tabellen gebruiken in Synapse SQL
-description: Essentiële richt lijnen voor het gebruik van tijdelijke tabellen in Synapse SQL.
+title: Tijdelijke tabellen in Synapse SQL
+description: Essentiële richtlijnen voor het gebruik van tijdelijke tabellen in Synapse SQL.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -10,30 +10,30 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 06faa1da71331c299245a93af96166880e7732de
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8513df83196b3521a749515c6bb22caad7d255b7
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96451787"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816030"
 ---
 # <a name="temporary-tables-in-synapse-sql"></a>Tijdelijke tabellen in Synapse SQL
 
-Dit artikel bevat essentiële richt lijnen voor het gebruik van tijdelijke tabellen en markeert de principes van tijdelijke tabellen op sessie niveau binnen Synapse SQL. 
+Dit artikel bevat essentiële richtlijnen voor het gebruik van tijdelijke tabellen en bevat de principes van tijdelijke tabellen op sessieniveau binnen Synapse SQL. 
 
-Zowel de exclusieve SQL-groep als serverloze SQL-pool bronnen kunnen gebruikmaken van tijdelijke tabellen. Serverloze SQL-pool heeft beperkingen die aan het einde van dit artikel worden besproken. 
+Zowel de toegewezen SQL-pool als serverloze SQL-poolbronnen kunnen gebruikmaken van tijdelijke tabellen. Serverloze SQL-pool heeft beperkingen die aan het einde van dit artikel worden besproken. 
 
 ## <a name="temporary-tables"></a>Tijdelijke tabellen
 
-Tijdelijke tabellen zijn handig bij het verwerken van gegevens, met name tijdens trans formatie waarbij de tussenliggende resultaten tijdelijk zijn. Met Synapse SQL bestaan er tijdelijke tabellen op sessie niveau.  Ze zijn alleen zichtbaar voor de sessie waarin ze zijn gemaakt. Als zodanig worden ze automatisch verwijderd wanneer deze sessie wordt afgemeld. 
+Tijdelijke tabellen zijn handig bij het verwerken van gegevens, met name tijdens transformatie waarbij de tussenliggende resultaten tijdelijk zijn. Met Synapse SQL bestaan tijdelijke tabellen op sessieniveau.  Ze zijn alleen zichtbaar voor de sessie waarin ze zijn gemaakt. Als zodanig worden ze automatisch uitgevallen wanneer de sessie wordt afgekapt. 
 
-## <a name="temporary-tables-in-dedicated-sql-pool"></a>Tijdelijke tabellen in de toegewezen SQL-groep
+## <a name="temporary-tables-in-dedicated-sql-pool"></a>Tijdelijke tabellen in toegewezen SQL-pool
 
-In de resource van de exclusieve SQL-groep bieden tijdelijke tabellen een prestatie voordeel omdat hun resultaten naar een lokale locatie worden geschreven in plaats van externe opslag.
+In de toegewezen SQL-poolresource bieden tijdelijke tabellen prestatievoordeel omdat de resultaten naar lokale in plaats van naar externe opslag worden geschreven.
 
 ### <a name="create-a-temporary-table"></a>Een tijdelijke tabel maken
 
-Tijdelijke tabellen worden gemaakt door het voor voegsel van de tabel naam te maken met een `#` .  Bijvoorbeeld:
+Tijdelijke tabellen worden gemaakt door de tabelnaam vooraf te laten gaan door een `#` .  Bijvoorbeeld:
 
 ```sql
 CREATE TABLE #stats_ddl
@@ -53,7 +53,7 @@ WITH
 )
 ```
 
-Tijdelijke tabellen kunnen ook worden gemaakt met `CTAS` behulp van dezelfde benadering:
+Tijdelijke tabellen kunnen ook worden gemaakt met exact `CTAS` dezelfde benadering:
 
 ```sql
 CREATE TABLE #stats_ddl
@@ -94,13 +94,13 @@ GROUP BY
 ```
 
 > [!NOTE]
-> `CTAS` is een krachtige opdracht en het toegevoegde voor deel van het gebruik van de transactie logboek ruimte is efficiënt. 
+> `CTAS` is een krachtige opdracht en heeft het extra voordeel efficiënt te zijn in het gebruik van transactielogboekruimte. 
 > 
 > 
 
-### <a name="drop-temporary-tables"></a>Tijdelijke tabellen verwijderen
+### <a name="drop-temporary-tables"></a>Tijdelijke tabellen neerzetten
 
-Wanneer er een nieuwe sessie wordt gemaakt, moeten er geen tijdelijke tabellen aanwezig zijn.  Als u echter dezelfde opgeslagen procedure aanroept die een tijdelijke met dezelfde naam maakt, om ervoor te zorgen dat uw `CREATE TABLE` instructies slagen, gebruikt u een eenvoudige controle van het voor komen met  `DROP` : 
+Wanneer er een nieuwe sessie wordt gemaakt, mogen er geen tijdelijke tabellen bestaan.  Als u echter dezelfde opgeslagen procedure aanroept die een tijdelijke met dezelfde naam maakt, gebruikt u een eenvoudige controle vooraf met om ervoor te zorgen dat uw instructies `CREATE TABLE` zijn  `DROP` geslaagd: 
 
 ```sql
 IF OBJECT_ID('tempdb..#stats_ddl') IS NOT NULL
@@ -109,17 +109,17 @@ BEGIN
 END
 ```
 
-Voor het coderen van consistentie is het een goed idee om dit patroon te gebruiken voor zowel tabellen als tijdelijke tabellen.  Het is ook een goed idee om `DROP TABLE` tijdelijke tabellen te verwijderen wanneer u er klaar mee bent.  
+Voor het coderen van consistentie is het een goed idee om dit patroon te gebruiken voor zowel tabellen als tijdelijke tabellen.  Het is ook een goed idee om te gebruiken om `DROP TABLE` tijdelijke tabellen te verwijderen wanneer u hiermee klaar bent.  
 
-Bij het ontwikkelen van opgeslagen procedures is het gebruikelijk om de door u gebundelde opdrachten aan het einde van een procedure te bekijken om ervoor te zorgen dat deze objecten worden opgeruimd.
+Bij de ontwikkeling van opgeslagen procedures is het gebruikelijk dat de drop-opdrachten aan het einde van een procedure worden gebundeld om ervoor te zorgen dat deze objecten worden opgeschoond.
 
 ```sql
 DROP TABLE #stats_ddl
 ```
 
-### <a name="modularize-code"></a>Modularize-code
+### <a name="modularize-code"></a>Code modulariseren
 
-Tijdelijke tabellen kunnen overal in een gebruikers sessie worden gebruikt. Deze mogelijkheid kan vervolgens worden misbruikt om u te helpen bij het modularize van uw toepassings code.  Om te demonstreren, wordt met de volgende opgeslagen procedure DDL gegenereerd om alle statistieken in de-data base bij te werken met een statistische naam:
+Tijdelijke tabellen kunnen overal in een gebruikerssessie worden gebruikt. Deze mogelijkheid kan vervolgens worden gebruikt om u te helpen uw toepassingscode te modulariseren.  Ter demonstratie genereert de volgende opgeslagen procedure DDL om alle statistieken in de database bij te werken op basis van de statistieknaam:
 
 ```sql
 CREATE PROCEDURE    [dbo].[prc_sqldw_update_stats]
@@ -188,16 +188,16 @@ SELECT
     THEN 'UPDATE STATISTICS '+[two_part_name]+'('+[stats_name]+') WITH RESAMPLE;'
     END AS [update_stats_ddl]
 ,   [seq_nmbr]
-FROM    t1
+FROM    #stats_ddl
 ;
 GO
 ```
 
-In deze fase is de enige actie die is opgetreden, het maken van een opgeslagen procedure waarmee de tijdelijke tabel #stats_ddl wordt gegenereerd.  De opgeslagen procedure daalt #stats_ddl als deze al bestaat. Deze drop zorgt ervoor dat deze niet kan mislukken als er meer dan één keer in een sessie wordt uitgevoerd.  
+In deze fase is de enige actie die heeft plaatsgevonden het maken van een opgeslagen procedure die de tijdelijke #stats_ddl genereert.  De opgeslagen procedure wordt #stats_ddl als deze al bestaat. Deze daling zorgt ervoor dat deze niet mislukt als deze meer dan één keer binnen een sessie wordt uitgevoerd.  
 
-Omdat de opgeslagen procedure zich niet `DROP TABLE` aan het einde van de opgeslagen procedure bevindt, blijft de gemaakte tabel aanwezig en kan deze buiten de opgeslagen procedure worden gelezen.  
+Omdat er geen aan het einde van de opgeslagen procedure is, blijft de gemaakte tabel achter en kan deze buiten de opgeslagen procedure worden gelezen wanneer de opgeslagen `DROP TABLE` procedure is voltooid.  
 
-In tegens telling tot andere SQL Server-data bases, kunt u met Synapse SQL de tijdelijke tabel gebruiken buiten de procedure waarmee deze wordt gemaakt.  De tijdelijke tabellen die zijn gemaakt via een toegewezen SQL-groep, kunnen **overal** in de sessie worden gebruikt. Als gevolg hiervan hebt u meer modulaire en beheersbaarere code, zoals wordt geïllustreerd in het voor beeld hieronder:
+In tegenstelling tot andere SQL Server databases kunt Synapse SQL tijdelijke tabel gebruiken buiten de procedure waarmee deze is gemaakt.  De tijdelijke tabellen die zijn gemaakt via een toegewezen SQL-pool, kunnen overal **in** de sessie worden gebruikt. Als gevolg hiervan hebt u meer modulaire en beheerbare code, zoals wordt gedemonstreerd in het onderstaande voorbeeld:
 
 ```sql
 EXEC [dbo].[prc_sqldw_update_stats] @update_type = 1, @sample_pct = NULL;
@@ -218,21 +218,21 @@ END
 DROP TABLE #stats_ddl;
 ```
 
-### <a name="temporary-table-limitations"></a>Tijdelijke tabel beperkingen
+### <a name="temporary-table-limitations"></a>Beperkingen van tijdelijke tabel
 
-De toegewezen SQL-groep heeft enkele implementatie beperkingen voor tijdelijke tabellen:
+Toegewezen SQL-pool heeft een aantal implementatiebeperkingen voor tijdelijke tabellen:
 
-- Alleen tijdelijke tabellen met een sessie bereik worden ondersteund.  Globale tijdelijke tabellen worden niet ondersteund.
-- Er kunnen geen weer gaven worden gemaakt voor tijdelijke tabellen.
-- Tijdelijke tabellen kunnen alleen worden gemaakt met hash-of round robin distributie.  De replicatie van de tijdelijke tabel wordt niet ondersteund. 
+- Alleen tijdelijke tabellen met sessiebereik worden ondersteund.  Globale tijdelijke tabellen worden niet ondersteund.
+- Weergaven kunnen niet worden gemaakt in tijdelijke tabellen.
+- Tijdelijke tabellen kunnen alleen worden gemaakt met hash- of round robin distributie.  Gerepliceerde tijdelijke tabeldistributie wordt niet ondersteund. 
 
-## <a name="temporary-tables-in-serverless-sql-pool"></a>Tijdelijke tabellen in een serverloze SQL-groep
+## <a name="temporary-tables-in-serverless-sql-pool"></a>Tijdelijke tabellen in serverloze SQL-pool
 
-Tijdelijke tabellen in een serverloze SQL-groep worden ondersteund, maar het gebruik ervan is beperkt. Ze kunnen niet worden gebruikt in query's die doel bestanden hebben. 
+Tijdelijke tabellen in een serverloze SQL-pool worden ondersteund, maar het gebruik ervan is beperkt. Ze kunnen niet worden gebruikt in query's die gericht zijn op bestanden. 
 
-U kunt bijvoorbeeld geen tijdelijke tabel toevoegen met gegevens uit bestanden in de opslag. Het aantal tijdelijke tabellen is beperkt tot 100 en de totale grootte is beperkt tot 100 MB.
+U kunt bijvoorbeeld geen tijdelijke tabel met gegevens uit bestanden in de opslag toevoegen. Het aantal tijdelijke tabellen is beperkt tot 100 en de totale grootte is beperkt tot 100 MB.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over het ontwikkelen van tabellen de [tabellen ontwerpen met behulp van het artikel Synapse SQL-resources](develop-tables-overview.md) .
+Zie het artikel Tabellen ontwerpen met behulp van de Synapse SQL voor meer informatie [over het ontwikkelen van tabellen.](develop-tables-overview.md)
 

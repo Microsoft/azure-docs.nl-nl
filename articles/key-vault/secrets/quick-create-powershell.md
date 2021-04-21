@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: Stel & een geheim op te halen uit Key Vault met behulp van Power shell'
+title: "Quickstart: Stel in & geheim op te halen uit Key Vault behulp van PowerShell'"
 description: In deze quickstart leert u hoe u met behulp van Azure PowerShell geheimen kunt maken, ophalen en verwijderen in een Azure-sleutelkluis.
 services: key-vault
 author: msmbaldwin
@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurepowershell
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 5e3b78dfb8f08f1a596ad12884ec088cd36c4a98
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8a0ebfc90fb57a6e67d7c9e41b78d9db502b2720
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104582444"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814636"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Quickstart: Een geheim uit Azure Key Vault instellen en ophalen met PowerShell
 
@@ -57,7 +57,7 @@ Converteer eerst de waarde van **hVFkk965BuUv** naar een beveiligde tekenreeks d
 $secretvalue = ConvertTo-SecureString "hVFkk965BuUv" -AsPlainText -Force
 ```
 
-Gebruik vervolgens de Azure PowerShell [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet om een geheim te maken in **Key Vault met de** waarde **hVFkk965BuUv** :
+Gebruik vervolgens de cmdlet Azure PowerShell [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) om een geheim te maken in Key Vault met de naam **ExamplePassword** met de waarde **hVFkk965BuUv:**
 
 
 ```azurepowershell-interactive
@@ -96,6 +96,6 @@ Remove-AzResourceGroup -Name ContosoResourceGroup
 In deze quickstart hebt u een sleutelkluis gemaakt en daar een geheim in opgeslagen. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
-- Meer informatie over het [opslaan van meerregelige geheimen in Key Vault](multiline-secrets.md)
+- Meer informatie over het [opslaan van geheimen met meerdere Key Vault](multiline-secrets.md)
 - Zie de referentie voor de [Azure PowerShell Key Vault-cmdlets](/powershell/module/az.keyvault/#key_vault)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

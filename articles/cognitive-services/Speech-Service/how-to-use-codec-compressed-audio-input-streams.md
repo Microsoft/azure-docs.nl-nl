@@ -12,16 +12,16 @@ ms.date: 03/30/2020
 ms.author: amishu
 ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-set-twenty-two
-ms.openlocfilehash: f02a9a3b493ed0f3068e6e0ccd2daa40850a4fb6
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: db902019b4fb1237c8403c719862d8fca4ba4f28
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726174"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772519"
 ---
 # <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Codec gecomprimeerde audio-invoer gebruiken met de Speech SDK
 
-De Speech Service SDK biedt een manier om gecomprimeerde audio-indelingen rechtstreeks naar de Speech-service te verzenden met behulp van een of (beide benaderingen worden niet rechtstreeks naar de back-end gestreamd, er wordt nog steeds een onbewerkte PCM naar de `PullStream` service verzonden). `PushStream`
+De Speech Service SDK kan gecomprimeerde audio-indelingen accepteren. Het decoompresseert de audio voordat deze als onbewerkte PCM via de kabel naar de Speech-service wordt verzendt.
 
 Platform | Talen | Ondersteunde GStreamer-versie
 | :--- | ---: | :---:

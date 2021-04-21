@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 6f8cfc314c75221a88b58095cc71ea685280ac49
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 98922829e83f84078c3d8cadae15844dba194c93
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102501007"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107800359"
 ---
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -21,7 +21,7 @@ ms.locfileid: "102501007"
 
 Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. 
 
-Maak een resourcegroep met behulp van de Azure CLI-opdracht [az group create](/cli/azure/group#az-group-create), de Azure PowerShell-opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) of vanuit de [Azure-portal](https://portal.azure.com).
+Maak een resourcegroep met behulp van de Azure CLI-opdracht [az group create](/cli/azure/group#az_group_create), de Azure PowerShell-opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) of vanuit de [Azure-portal](https://portal.azure.com).
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -37,7 +37,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 
 *Als u al een sleutelkluis hebt, kunt u verdergaan naar [Set key vault advanced access policies](#set-key-vault-advanced-access-policies) (Geavanceerde toegangsbeleidsregels voor sleutelkluizen instellen).*
 
-Maak een sleutelkluis met behulp van de Azure CLI-opdracht [az keyvault create](/cli/azure/keyvault#az-keyvault-create), de Azure Powershell-opdracht [New-AzKeyvault](/powershell/module/az.keyvault/new-azkeyvault), de [Azure-portal](https://portal.azure.com) of een [Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
+Maak een sleutelkluis met behulp van de Azure CLI-opdracht [az keyvault create](/cli/azure/keyvault#az_keyvault_create), de Azure Powershell-opdracht [New-AzKeyvault](/powershell/module/az.keyvault/new-azkeyvault), de [Azure-portal](https://portal.azure.com) of een [Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
 >[!WARNING]
 > Uw sleutelkluis en VM's moeten deel uitmaken van hetzelfde abonnement. Om ervoor te zorgen dat versleutelingsgeheimen geen regionale grenzen overschrijden, vereist Azure Disk Encryption dat de sleutelkluis en de virtuele machines in dezelfde regio staan. Maak en gebruik een sleutelkluis die zich in hetzelfde abonnement en dezelfde regio bevindt als de virtuele machines die moeten worden versleuteld. 
@@ -75,7 +75,7 @@ Als u de sleutelkluis voor schijfversleuteling, implementatie of sjabloonimpleme
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Gebruik [az keyvault update](/cli/azure/keyvault#az-keyvault-update) om schijfversleuteling in te schakelen voor de sleutelkluis. 
+Gebruik [az keyvault update](/cli/azure/keyvault#az_keyvault_update) om schijfversleuteling in te schakelen voor de sleutelkluis. 
 
  - **Key Vault inschakelen voor schijfversleuteling:** Enabled-for-disk-encryption is vereist. 
 
@@ -129,7 +129,7 @@ Gebruik [az keyvault update](/cli/azure/keyvault#az-keyvault-update) om schijfve
 
 Als u een Key Encryption Key (KEK) wilt gebruiken als een extra beveiligingslaag voor versleutelingssleutels, voegt u een KEK toe aan uw sleutelkluis. Wanneer er een KEK is opgegeven, gebruikt Azure Disk Encryption die sleutel om de versleutelingsgeheimen te verpakken voordat er naar Key Vault wordt geschreven.
 
-U kunt een nieuwe KEK genereren met behulp van de Azure CLI-opdracht [az keyvault key create](/cli/azure/keyvault/key#az-keyvault-key-create), de Azure PowerShell-cmdlet [Add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey) of de [Azure-portal](https://portal.azure.com/). U moet een RSA-sleuteltype genereren. Azure Disk Encryption biedt nog geen ondersteuning voor het gebruik van Elliptic Curve-sleutels.
+U kunt een nieuwe KEK genereren met behulp van de Azure CLI-opdracht [az keyvault key create](/cli/azure/keyvault/key#az_keyvault_key_create), de Azure PowerShell-cmdlet [Add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey) of de [Azure-portal](https://portal.azure.com/). U moet een RSA-sleuteltype genereren. Azure Disk Encryption biedt nog geen ondersteuning voor het gebruik van Elliptic Curve-sleutels.
 
 U kunt in plaats daarvan een KEK importeren uit uw HSM voor on-premises sleutelbeheer. Zie onze [Key Vault-documentatie](../articles/key-vault/keys/hsm-protected-keys.md) voor meer informatie.
 
@@ -145,15 +145,15 @@ Azure Disk Encryption biedt geen ondersteuning voor het opgeven van poortnummers
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Gebruik de Azure CLI-opdracht [eyvault key create](/cli/azure/keyvault/key#az-keyvault-key-create) om een nieuwe KEK te genereren en op te slaan in uw sleutelkluis.
+Gebruik de Azure CLI-opdracht [eyvault key create](/cli/azure/keyvault/key#az_keyvault_key_create) om een nieuwe KEK te genereren en op te slaan in uw sleutelkluis.
 
 ```azurecli-interactive
 az keyvault key create --name "myKEK" --vault-name "<your-unique-keyvault-name>" --kty RSA
 ```
 
-U kunt in plaats daarvan een persoonlijke sleutel importeren met behulp van de Azure CLI-opdracht [az keyvault key import](/cli/azure/keyvault/key#az-keyvault-key-import):
+U kunt in plaats daarvan een persoonlijke sleutel importeren met behulp van de Azure CLI-opdracht [az keyvault key import](/cli/azure/keyvault/key#az_keyvault_key_import):
 
-In beide gevallen geeft u de naam van uw KEK op aan de Azure CLI [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryption-enable)-parameter --key-encryption-key. 
+In beide gevallen geeft u de naam van uw KEK op aan de Azure CLI [az vm encryption enable](/cli/azure/vm/encryption#az_vm_encryption_enable)-parameter --key-encryption-key. 
 
 ```azurecli-interactive
 az vm encryption enable -g "MyResourceGroup" --name "myVM" --disk-encryption-keyvault "<your-unique-keyvault-name>" --key-encryption-key "myKEK"
@@ -167,7 +167,7 @@ Gebruik de Azure PowerShell-cmdlet [Add-AzKeyVaultKey](/powershell/module/az.key
 Add-AzKeyVaultKey -Name "myKEK" -VaultName "<your-unique-keyvault-name>" -Destination "HSM"
 ```
 
-U kunt in plaats daarvan een persoonlijke sleutel importeren met behulp van de Azure PowerShell-opdracht [az keyvault key import](/cli/azure/keyvault/key#az-keyvault-key-import).
+U kunt in plaats daarvan een persoonlijke sleutel importeren met behulp van de Azure PowerShell-opdracht [az keyvault key import](/cli/azure/keyvault/key#az_keyvault_key_import).
 
 In beide gevallen geeft u de id van uw KEK-sleutelkluis en de URL van uw KEK op aan de Azure PowerShell [Set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension)-parameters -KeyEncryptionKeyVaultId en -KeyEncryptionKeyUrl. Houd er rekening mee dat in dit voorbeeld wordt aangenomen dat u dezelfde sleutelkluis gebruikt voor zowel de schijfversleutelingssleutel als de KEK.
 

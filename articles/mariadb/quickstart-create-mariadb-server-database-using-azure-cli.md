@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3279150d0cb7b287f0a78581094a51356033596c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 042c70fdd08a6de2b97c4560eb2b6a24eec0bb34
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98662157"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789965"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-by-using-the-azure-cli"></a>Quickstart: Een Azure Database for MariaDB-server maken met behulp van de Azure CLI
 
@@ -25,7 +25,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 - Voor dit artikel is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-Als u meerdere abonnementen hebt, kiest u het abonnement dat de resource bevat of het abonnement waarvoor u wordt gefactureerd. Selecteer als volgt een specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account#az-account-set):
+Als u meerdere abonnementen hebt, kiest u het abonnement dat de resource bevat of het abonnement waarvoor u wordt gefactureerd. Selecteer als volgt een specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account#az_account_set):
 
 ```azurecli-interactive
 az account set --subscription 00000000-0000-0000-0000-000000000000
@@ -33,7 +33,7 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een [Azure-resourcegroep](../azure-resource-manager/management/overview.md) met de opdracht [az group create](/cli/azure/group#az-group-create). Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en groepsgewijs worden beheerd.
+Maak een [Azure-resourcegroep](../azure-resource-manager/management/overview.md) met de opdracht [az group create](/cli/azure/group#az_group_create). Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en groepsgewijs worden beheerd.
 
 In het volgende voorbeeld wordt een resourcegroep met de naam `myresourcegroup` gemaakt op de locatie `westus`:
 
@@ -43,7 +43,7 @@ az group create --name myresourcegroup --location westus
 
 ## <a name="create-an-azure-database-for-mariadb-server"></a>Een Azure Database for MariaDB-server maken
 
-U maakt een Azure Database for MariaDB-server met de opdracht [az mariadb server create](/cli/azure/mariadb/server#az-mariadb-server-create). Een server kan meerdere databases beheren. Een aparte database wordt doorgaans gebruikt voor elk project of voor elke gebruiker.
+U maakt een Azure Database for MariaDB-server met de opdracht [az mariadb server create](/cli/azure/mariadb/server#az_mariadb_server_create). Een server kan meerdere databases beheren. Een aparte database wordt doorgaans gebruikt voor elk project of voor elke gebruiker.
 
 Instelling | Voorbeeldwaarde | Beschrijving
 ---|---|---
@@ -77,7 +77,7 @@ az mariadb server create --resource-group myresourcegroup --name mydemoserver  -
 
 ## <a name="configure-a-firewall-rule"></a>Een firewallregel configureren
 
-U kunt met de opdracht [az mariadb server firewall rule create](/cli/azure/mariadb/server/firewall-rule#az-mariadb-server-firewall-rule-create) een firewallregel op serverniveau maken voor een Azure Database for MariaDB-server. Een firewallregel op serverniveau stelt een externe toepassing, zoals het opdrachtregelprogramma mysql of MySQL Workbench, in staat om verbinding te maken met uw server via de Azure Database for MariaDB-servicefirewall.
+U kunt met de opdracht [az mariadb server firewall rule create](/cli/azure/mariadb/server/firewall-rule#az_mariadb_server_firewall_rule_create) een firewallregel op serverniveau maken voor een Azure Database for MariaDB-server. Een firewallregel op serverniveau stelt een externe toepassing, zoals het opdrachtregelprogramma mysql of MySQL Workbench, in staat om verbinding te maken met uw server via de Azure Database for MariaDB-servicefirewall.
 
 In het volgende voorbeeld wordt een firewallregel met de naam `AllowMyIP` gemaakt, die verbindingen van een specifiek IP-adres, 192.168.0.1, toestaat. Vervang dit door een IP-adres of een bereik van IP-adressen dat overeenkomt met de locatie waaruit u verbinding maakt.
 
@@ -231,7 +231,7 @@ Als u deze resources niet voor een andere snelstart of zelfstudie nodig hebt, ku
 az group delete --name myresourcegroup
 ```
 
-Als u alleen de server wilt verwijderen die u hebt gemaakt in deze snelstart, voert u de opdracht [az mariadb server delete](/cli/azure/mariadb/server#az-mariadb-server-delete) uit:
+Als u alleen de server wilt verwijderen die u hebt gemaakt in deze snelstart, voert u de opdracht [az mariadb server delete](/cli/azure/mariadb/server#az_mariadb_server_delete) uit:
 
 ```azurecli-interactive
 az mariadb server delete --resource-group myresourcegroup --name mydemoserver

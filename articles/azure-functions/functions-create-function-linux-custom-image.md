@@ -5,12 +5,12 @@ ms.date: 12/2/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp, mvc, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
 zone_pivot_groups: programming-languages-set-functions-full
-ms.openlocfilehash: 1c7a9fd83131ea6282d2ef4860b744fa348153ed
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7950bfb4a57db812da87f4e5f76f3075d50a8293
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98070912"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782265"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Een functie in Linux maken met een aangepaste container
 
@@ -360,13 +360,13 @@ Als u uw functiecode wilt implementeren in Azure, moet u drie resources maken:
 
 U gebruikt opdrachten van de Azure CLI om deze items te maken. Elke opdracht biedt JSON-uitvoer bij voltooiing.
 
-1. Meld u aan bij Azure met de opdracht [az login](/cli/azure/reference-index#az-login):
+1. Meld u aan bij Azure met de opdracht [az login](/cli/azure/reference-index#az_login):
 
     ```azurecli
     az login
     ```
     
-1. Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam `AzureFunctionsContainers-rg` gemaakt in de regio `westeurope`. (Over het algemeen maakt u een resourcegroep en resources in een regio bij u in de buurt, waarbij u een beschikbare regio kiest met behulp van de opdracht `az account list-locations`.)
+1. Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az_group_create). In het volgende voorbeeld wordt een resourcegroep met de naam `AzureFunctionsContainers-rg` gemaakt in de regio `westeurope`. (Over het algemeen maakt u een resourcegroep en resources in een regio bij u in de buurt, waarbij u een beschikbare regio kiest met behulp van de opdracht `az account list-locations`.)
 
     ```azurecli
     az group create --name AzureFunctionsContainers-rg --location westeurope
@@ -375,7 +375,7 @@ U gebruikt opdrachten van de Azure CLI om deze items te maken. Elke opdracht bie
     > [!NOTE]
     > Het is niet mogelijk om Linux- en Windows-apps in dezelfde resourcegroep te hosten. Als u een bestaande resourcegroep met de naam `AzureFunctionsContainers-rg` hebt die een Windows-functie-app of web-app bevat, moet u een andere resourcegroep gebruiken.
     
-1. Maak een algemeen opslagaccount in de resourcegroep en regio met behulp van de opdracht [az storage account create](/cli/azure/storage/account#az-storage-account-create). Vervang in het volgende voorbeeld `<storage_name>` door een globaal unieke naam van uw keuze. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een typische account voor algemeen gebruik op.
+1. Maak een algemeen opslagaccount in de resourcegroep en regio met behulp van de opdracht [az storage account create](/cli/azure/storage/account#az_storage_account_create). Vervang in het volgende voorbeeld `<storage_name>` door een globaal unieke naam van uw keuze. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een typische account voor algemeen gebruik op.
 
     ```azurecli
     az storage account create --name <storage_name> --location westeurope --resource-group AzureFunctionsContainers-rg --sku Standard_LRS
@@ -397,7 +397,7 @@ U gebruikt opdrachten van de Azure CLI om deze items te maken. Elke opdracht bie
 
 Een functie-app in Azure beheert de uitvoering van uw functies in uw hostingabonnement. In dit gedeelte gebruikt u de Azure-resources uit het vorige gedeelte om een functie-app te maken op basis van een installatiekopie in Docker Hub en deze met behulp van een verbindingsreeks te configureren voor Azure Storage.
 
-1. Maak de functie-app met behulp van de opdracht [az functionapp create](/cli/azure/functionapp#az-functionapp-create). Vervang in het volgende voorbeeld `<storage_name>` door de naam die u in het vorige gedeelte hebt gebruikt voor het opslagaccount. Vervang ook `<app_name>` door een globaal unieke naam van uw keuze en `<docker_id>` door uw Docker-ID.
+1. Maak de functie-app met behulp van de opdracht [az functionapp create](/cli/azure/functionapp#az_functionapp_create). Vervang in het volgende voorbeeld `<storage_name>` door de naam die u in het vorige gedeelte hebt gebruikt voor het opslagaccount. Vervang ook `<app_name>` door een globaal unieke naam van uw keuze en `<docker_id>` door uw Docker-ID.
 
     ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python,programming-language-java"
     ```azurecli
@@ -410,7 +410,7 @@ Een functie-app in Azure beheert de uitvoering van uw functies in uw hostingabon
     ```
     ::: zone-end
     
-    Met de parameter *deployment-container-image-name* wordt de installatiekopie opgegeven die moet worden gebruikt voor de functie-app. U kunt de opdracht [az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show) gebruiken om informatie weer te geven over de installatiekopie die wordt gebruikt voor de implementatie. U kunt ook de opdracht [az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set) gebruiken om vanuit een andere installatiekopie te implementeren.
+    Met de parameter *deployment-container-image-name* wordt de installatiekopie opgegeven die moet worden gebruikt voor de functie-app. U kunt de opdracht [az functionapp config container show](/cli/azure/functionapp/config/container#az_functionapp_config_container_show) gebruiken om informatie weer te geven over de installatiekopie die wordt gebruikt voor de implementatie. U kunt ook de opdracht [az functionapp config container set](/cli/azure/functionapp/config/container#az_functionapp_config_container_set) gebruiken om vanuit een andere installatiekopie te implementeren.
 
 1. Gebruik de opdracht [az storage account show-connection-string](/cli/azure/storage/account) om de verbindingsreeks weer te geven voor het opslagaccount dat u hebt gemaakt. Vervang `<storage-name>` door de naam van het opslagaccount dat u hierboven hebt gemaakt:
 
@@ -418,7 +418,7 @@ Een functie-app in Azure beheert de uitvoering van uw functies in uw hostingabon
     az storage account show-connection-string --resource-group AzureFunctionsContainers-rg --name <storage_name> --query connectionString --output tsv
     ```
     
-1. Voeg deze instelling toe aan de functie-app met behulp van de opdracht [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). Vervang in de volgende opdracht `<app_name>` door de naam van uw functie-app en vervang `<connection_string>` door de verbindingsreeks uit de vorige stap (een lange gecodeerde tekenreeks die begint met 'DefaultEndpointProtocol='):
+1. Voeg deze instelling toe aan de functie-app met behulp van de opdracht [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az_functionapp_config_ppsettings_set). Vervang in de volgende opdracht `<app_name>` door de naam van uw functie-app en vervang `<connection_string>` door de verbindingsreeks uit de vorige stap (een lange gecodeerde tekenreeks die begint met 'DefaultEndpointProtocol='):
  
     ```azurecli
     az functionapp config appsettings set --name <app_name> --resource-group AzureFunctionsContainers-rg --settings AzureWebJobsStorage=<connection_string>
@@ -513,13 +513,13 @@ Als de installatiekopie is geïmplementeerd in de functie-app in Azure, kunt u d
 
 U kunt instellen dat Azure Functions uw implementatie van een installatiekopie automatisch bijwerkt wanneer u de installatiekopie in het register bijwerkt.
 
-1. Schakel continue implementatie in met behulp van de opdracht [az functionapp deployment container config](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-config), waarbij u `<app_name>` vervangt door de naam van uw functie-app:
+1. Schakel continue implementatie in met behulp van de opdracht [az functionapp deployment container config](/cli/azure/functionapp/deployment/container#az_functionapp_deployment_container_config), waarbij u `<app_name>` vervangt door de naam van uw functie-app:
 
     ```azurecli
     az functionapp deployment container config --enable-cd --query CI_CD_URL --output tsv --name <app_name> --resource-group AzureFunctionsContainers-rg
     ```
     
-    Met deze opdracht wordt continue implementatie ingeschakeld en wordt de webhook-URL van de implementatie geretourneerd. (U kunt deze URL later op elk gewenst moment ophalen met behulp van de opdracht [az functionapp deployment container show-cd-url](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-show-cd-url).)
+    Met deze opdracht wordt continue implementatie ingeschakeld en wordt de webhook-URL van de implementatie geretourneerd. (U kunt deze URL later op elk gewenst moment ophalen met behulp van de opdracht [az functionapp deployment container show-cd-url](/cli/azure/functionapp/deployment/container#az_functionapp_deployment_container_show_cd_url).)
 
 1. Kopieer de webhook-URL van de implementatie naar het klembord.
 

@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 01/12/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: c39169c0531a73bd00db7de5fe393ef8c51c8c96
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d7e931a55ec0a9d46a8b92d4353bd2de8edd8818
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102509418"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107777829"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Zelfstudie: Een AKS-cluster (Azure Kubernetes Service) implementeren
 
@@ -21,7 +21,7 @@ Kubernetes biedt een gedistribueerd platform voor toepassingen in containers. Me
 > * De Kubernetes-CLI (kubectl) installeren
 > * Kubectl configureren om verbinding te maken met uw AKS-cluster
 
-In latere zelf studies wordt de Azure stem-toepassing geïmplementeerd in het cluster, geschaald en bijgewerkt.
+In latere zelfstudies wordt de Azure Vote-toepassing geïmplementeerd in het cluster, geschaald en bijgewerkt.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -33,9 +33,9 @@ Voor deze zelfstudie moet u Azure CLI versie 2.0.53 of hoger uitvoeren. Voer `az
 
 AKS-clusters kunnen gebruikmaken van Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes). Met deze vorm van toegangsbeheer kunt u de toegang tot resources definiëren op basis van rollen die zijn toegewezen aan gebruikers. Machtigingen worden gecombineerd als aan een gebruiker meerdere rollen zijn toegewezen, en machtigingen kunnen gelden voor één enkele naamruimte of voor een heel cluster. Standaard wordt Kubernetes-RBAC automatisch ingeschakeld in Azure CLI wanneer u een AKS-cluster maakt.
 
-Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup*. Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus*. In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus*. Zie [quota's, beperkingen voor de grootte van virtuele machines en beschik baarheid van regio's in azure Kubernetes service (AKS)][quotas-skus-regions] voor meer informatie over resource limieten en beschik baarheid van REGIO'S voor AKS.
+Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup*. Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus*. In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus*. Zie Quota, groottebeperkingen voor virtuele machines en beschikbaarheid in regio's [in Azure Kubernetes Service (AKS)][quotas-skus-regions] voor meer informatie over resourcelimieten en beschikbaarheid in regio's voor AKS.
 
-Als u een AKS-cluster wilt toestaan om te communiceren met andere Azure-resources, wordt er automatisch een cluster identiteit gemaakt, omdat u er geen hebt opgegeven. Hier wordt aan deze cluster-id [het recht verleend om installatie kopieën te halen][container-registry-integration] uit het Azure container Registry-exemplaar (ACR) dat u in de vorige zelf studie hebt gemaakt. Als u de opdracht wilt uitvoeren, moet u een rol voor **eigenaar** of een **Azure-account beheerder** hebben op het Azure-abonnement.
+Als u wilt dat een AKS-cluster kan communiceren met andere Azure-resources, wordt er automatisch een clusteridentiteit gemaakt, omdat u er geen hebt opgegeven. Hier krijgt deze clusteridentiteit het recht om afbeeldingen op te halen uit het ACR-exemplaar (Azure Container Registry) dat u in de vorige zelfstudie hebt gemaakt. [][container-registry-integration] Als u de opdracht wilt uitvoeren,  moet u de rol Eigenaar of **Azure-accountbeheerder** hebben voor het Azure-abonnement.
 
 ```azurecli
 az aks create \
@@ -46,7 +46,7 @@ az aks create \
     --attach-acr <acrName>
 ```
 
-Als u wilt voor komen dat een **eigenaar** of een rol beheerder voor een **Azure-account** nodig is, kunt u ook hand matig een Service-Principal configureren om installatie kopieën van ACR te halen. Zie [ACR-verificatie met service-principals](../container-registry/container-registry-auth-service-principal.md) of [Verifiëren vanaf Kubernetes met pullgeheim](../container-registry/container-registry-auth-kubernetes.md) voor meer informatie. U kunt ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal voor eenvoudiger beheer.
+Om te voorkomen dat u de rol **Eigenaar of** **Azure-accountbeheerder** nodig hebt, kunt u ook handmatig een service-principal configureren om afbeeldingen op te halen uit ACR. Zie [ACR-verificatie met service-principals](../container-registry/container-registry-auth-service-principal.md) of [Verifiëren vanaf Kubernetes met pullgeheim](../container-registry/container-registry-auth-kubernetes.md) voor meer informatie. U kunt ook een beheerde identiteit [gebruiken in plaats](use-managed-identity.md) van een service-principal voor eenvoudiger beheer.
 
 Na enkele minuten is de implementatie voltooid en retourneert JSON opgemaakte informatie over de AKS-implementatie.
 
@@ -103,12 +103,12 @@ Ga door naar de volgende zelfstudie voor informatie over het implementeren van t
 [aks-tutorial-deploy-app]: ./tutorial-kubernetes-deploy-application.md
 [aks-tutorial-prepare-acr]: ./tutorial-kubernetes-prepare-acr.md
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
-[az ad sp create-for-rbac]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
-[az acr show]: /cli/azure/acr#az-acr-show
-[az role assignment create]: /cli/azure/role/assignment#az-role-assignment-create
-[az aks create]: /cli/azure/aks#az-aks-create
-[az aks install-cli]: /cli/azure/aks#az-aks-install-cli
-[az aks get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[az ad sp create-for-rbac]: /cli/azure/ad/sp#az_ad_sp_create_for_rbac
+[az acr show]: /cli/azure/acr#az_acr_show
+[az role assignment create]: /cli/azure/role/assignment#az_role_assignment_create
+[az aks create]: /cli/azure/aks#az_aks_create
+[az aks install-cli]: /cli/azure/aks#az_aks_install_cli
+[az aks get-credentials]: /cli/azure/aks#az_aks_get_credentials
 [azure-cli-install]: /cli/azure/install-azure-cli
 [container-registry-integration]: ./cluster-container-registry-integration.md
 [quotas-skus-regions]: quotas-skus-regions.md

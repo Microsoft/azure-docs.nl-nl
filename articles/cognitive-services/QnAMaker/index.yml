@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Documentatie voor QnA Maker
   description: QnA Maker is een cloudgebaseerde API-service voor het maken van een vraag- en antwoordlaag over uw gegevens in gespreksstijl. Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen. De QnA Maker-service beantwoordt de in natuurlijke taal gestelde vragen van uw gebruikers door deze te koppelen aan de best mogelijke antwoorden uit de QnA's in uw Knowledge Base.
-  ms.openlocfilehash: d993dfcc4d486190e2501940465598b53808b965
-  ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+  ms.openlocfilehash: 05ea6890e9b02c82bfca563108c92ed00e0f759b
+  ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102613881"
+  ms.lasthandoff: 04/20/2021
+  ms.locfileid: "107766875"
 landingContent:
 - title: Over QnA Maker
   linkLists:
@@ -60,7 +60,7 @@ landingContent:
     links:
     - text: 'Quickstart: Met behulp van Postman of cURL'
       url: quickstarts/get-answer-from-knowledge-base-using-url-tool.md
-    - text: 'Snelstartgids: SDK en REST API gebruiken'
+    - text: 'Quickstart: SDK en REST API'
       url: quickstarts/quickstart-sdk.md
   - linkListType: how-to-guide
     links:
@@ -109,7 +109,7 @@ landingContent:
     - text: Azure PowerShell
       url: /powershell/module/az.cognitiveservices/#cognitive_services
     - text: Azure-opdrachtregelinterface (CLI)
-      url: /cli/azure/cognitiveservices#az-cognitiveservices-list
+      url: /cli/azure/cognitiveservices#az_cognitiveservices_list
 - title: Help en feedback
   linkLists:
   - linkListType: reference

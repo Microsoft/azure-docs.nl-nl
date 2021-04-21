@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.author: sumuth
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 2e546801f95d9d884bdfb3f09a18b3fa6e2d78a1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7fc59c0d9036a2e83c742f51fc17750d40e057fe
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97364979"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791423"
 ---
 # <a name="quickstart-use-github-actions-to-connect-to-azure-postgresql"></a>Quickstart: GitHub Actions gebruiken om verbinding te maken met Azure PostgreSQL
 
@@ -41,7 +41,7 @@ Het bestand heeft twee secties:
 
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
-U kunt een [service-principal](../active-directory/develop/app-objects-and-service-principals.md) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac&preserve-view=true) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
+U kunt een [service-principal](../active-directory/develop/app-objects-and-service-principals.md) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac&preserve-view=true) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
 Vervang de tijdelijke aanduidingen `server-name` door de naam van uw PostgreSQL-server die wordt gehost in Azure. Vervang `subscription-id` en `resource-group` door de abonnements-id en de resourcegroep die zijn verbonden met de PostgreSQL-server.
 

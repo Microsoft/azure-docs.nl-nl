@@ -4,12 +4,12 @@ description: Met dit Azure CLI-script wordt een virtuele machine in een lab gema
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/11/2020
-ms.openlocfilehash: c7625f62d7897d61903f864b216ccf9aa13648ea
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 779ddee7da4248ce11b906c2a4736fe7851603cf
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102198418"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786743"
 ---
 # <a name="use-azure-cli-to-create-and-verify-availability-of-a-virtual-machine-in-a-lab-in-azure-devtest-labs"></a>Azure CLI gebruiken om een virtuele machine in een lab te maken en de beschikbaarheid te controleren in Azure DevTest Labs
 
@@ -37,9 +37,9 @@ In dit script worden de volgende opdrachten gebruikt:
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az lab vm create ](/cli/azure/lab/vm#az-lab-vm-create) | Hiermee wordt een virtuele machine (VM) in een lab gemaakt. |
-| [az lab vm show](/cli/azure/lab/vm#az-lab-vm-show) | Hiermee wordt de status van de virtuele machine in een lab weergegeven. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az lab vm create ](/cli/azure/lab/vm#az_lab_vm_create) | Hiermee wordt een virtuele machine (VM) in een lab gemaakt. |
+| [az lab vm show](/cli/azure/lab/vm#az_lab_vm_show) | Hiermee wordt de status van de virtuele machine in een lab weergegeven. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

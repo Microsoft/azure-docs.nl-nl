@@ -1,6 +1,6 @@
 ---
-title: Aangepaste Azure-rollen maken of bijwerken met Azure CLI-Azure RBAC
-description: Meer informatie over het weer geven, maken, bijwerken of verwijderen van aangepaste Azure-rollen met Azure CLI en Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
+title: Aangepaste Azure-rollen maken of bijwerken met behulp van Azure CLI - Azure RBAC
+description: Meer informatie over het maken, bijwerken of verwijderen van aangepaste Azure-rollen met behulp van Azure CLI en op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 31dabcf77f0db76047919fa76d00f1c5ed3c96d6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d3d05ba65e0d3918f1651c36cd17700ebf74de76
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97369137"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778333"
 ---
 # <a name="create-or-update-azure-custom-roles-using-azure-cli"></a>Aangepaste Azure-rollen maken of bijwerken met behulp van Azure CLI
 
@@ -28,9 +28,9 @@ ms.locfileid: "97369137"
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Als de [ingebouwde rollen van Azure](built-in-roles.md) niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen aangepaste rollen maken. In dit artikel wordt beschreven hoe u aangepaste rollen oplijstt, maakt, bijwerkt of verwijdert met behulp van Azure CLI.
+Als de [ingebouwde rollen van Azure](built-in-roles.md) niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen aangepaste rollen maken. In dit artikel wordt beschreven hoe u aangepaste rollen kunt maken, maken, bijwerken of verwijderen met behulp van Azure CLI.
 
-Zie [zelf studie: een aangepaste Azure-rol maken met behulp van Azure cli](tutorial-custom-role-cli.md)voor een stapsgewijze zelf studie over het maken van een aangepaste rol.
+Zie Zelfstudie: Een aangepaste Azure-rol maken met behulp van Azure CLI voor een [stapsgewijse zelfstudie over](tutorial-custom-role-cli.md)het maken van een aangepaste rol.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,7 +41,7 @@ Als u aangepaste rollen wilt maken, hebt u het volgende nodig:
 
 ## <a name="list-custom-roles"></a>Aangepaste rollen opvragen
 
-Gebruik [AZ Role definition List](/cli/azure/role/definition#az-role-definition-list)om aangepaste rollen weer te geven die beschikbaar zijn voor toewijzing. In het volgende voor beeld wordt een lijst weer gegeven met alle aangepaste rollen in het huidige abonnement.
+Gebruik az role definition list om aangepaste rollen weer te geven die beschikbaar zijn [voor toewijzing.](/cli/azure/role/definition#az_role_definition_list) In het volgende voorbeeld worden alle aangepaste rollen in het huidige abonnement vermeld.
 
 ```azurecli
 az role definition list --custom-role-only true --output json --query '[].{roleName:roleName, roleType:roleType}'
@@ -64,15 +64,15 @@ az role definition list --custom-role-only true --output json --query '[].{roleN
 ]
 ```
 
-## <a name="list-a-custom-role-definition"></a>Een aangepaste roldefinitie weer geven
+## <a name="list-a-custom-role-definition"></a>Een aangepaste roldefinitie in een lijst zetten
 
-Als u een aangepaste roldefinitie wilt weer geven, gebruikt u de [lijst AZ Role definition](/cli/azure/role/definition#az-role-definition-list). Dit is dezelfde opdracht die u zou gebruiken voor een ingebouwde rol.
+Gebruik az role definition list om een aangepaste roldefinitie [weer te geven.](/cli/azure/role/definition#az_role_definition_list) Dit is dezelfde opdracht die u zou gebruiken voor een ingebouwde rol.
 
 ```azurecli
 az role definition list --name {roleName}
 ```
 
-In het volgende voor beeld wordt de roldefinitie van de *virtuele-machine operator* weer gegeven:
+In het volgende voorbeeld wordt de *roldefinitie Operator van* virtuele machine vermeld:
 
 ```azurecli
 az role definition list --name "Virtual Machine Operator"
@@ -114,7 +114,7 @@ az role definition list --name "Virtual Machine Operator"
 ]
 ```
 
-In het volgende voor beeld worden alleen de acties van de rol *virtuele-machine operator* vermeld:
+In het volgende voorbeeld worden alleen de acties van de rol *Operator van virtuele machine* vermeld:
 
 ```azurecli
 az role definition list --name "Virtual Machine Operator" --output json --query '[].permissions[0].actions'
@@ -140,15 +140,15 @@ az role definition list --name "Virtual Machine Operator" --output json --query 
 
 ## <a name="create-a-custom-role"></a>Een aangepaste rol maken
 
-Gebruik [AZ Role definition Create](/cli/azure/role/definition#az-role-definition-create)om een aangepaste rol te maken. De roldefinitie kan een JSON-beschrijving of een pad naar een bestand met een JSON-beschrijving zijn.
+Gebruik az role definition create om een aangepaste [rol te maken.](/cli/azure/role/definition#az_role_definition_create) De roldefinitie kan een JSON-beschrijving zijn of een pad naar een bestand met een JSON-beschrijving.
 
 ```azurecli
 az role definition create --role-definition {roleDefinition}
 ```
 
-In het volgende voor beeld wordt een aangepaste rol met de naam *virtuele-machine operator* gemaakt. Met deze aangepaste rol krijgt u toegang tot alle Lees bewerkingen van *micro soft. Compute*-, *micro soft. Storage*-en *micro soft. Network* resource providers en wordt er toegang toegewezen om virtuele machines te starten, opnieuw op te starten en te bewaken. Deze aangepaste rol kan in twee abonnementen worden gebruikt. In dit voor beeld wordt een JSON-bestand gebruikt als invoer.
+In het volgende voorbeeld wordt een aangepaste rol gemaakt met de *naam Operator voor virtuele machines.* Met deze aangepaste rol wordt toegang toegewezen aan alle leesbewerkingen van de resourceproviders *Microsoft.Compute,* *Microsoft.Storage* en *Microsoft.Network* en wordt toegang toegewezen om virtuele machines te starten, opnieuw op te starten en te bewaken. Deze aangepaste rol kan worden gebruikt in twee abonnementen. In dit voorbeeld wordt een JSON-bestand als invoer gebruikt.
 
-vmoperator.jsop
+vmoperator.jsaan
 
 ```json
 {
@@ -183,13 +183,13 @@ az role definition create --role-definition ~/roles/vmoperator.json
 
 ## <a name="update-a-custom-role"></a>Een aangepaste rol bijwerken
 
-Als u een aangepaste rol wilt bijwerken, gebruikt u eerst de [lijst AZ Role definition](/cli/azure/role/definition#az-role-definition-list) om de roldefinitie op te halen. Breng vervolgens de gewenste wijzigingen aan in de functie definitie. Gebruik tenslotte de [Update AZ Role definition](/cli/azure/role/definition#az-role-definition-update) om de bijgewerkte roldefinitie op te slaan.
+Als u een aangepaste rol wilt bijwerken, gebruikt u [eerst az role definition list om](/cli/azure/role/definition#az_role_definition_list) de roldefinitie op te halen. Ten tweede moet u de gewenste wijzigingen aanbrengen in de roldefinitie. Gebruik tot slot [az role definition update om](/cli/azure/role/definition#az_role_definition_update) de bijgewerkte roldefinitie op te slaan.
 
 ```azurecli
 az role definition update --role-definition {roleDefinition}
 ```
 
-In het volgende voor beeld wordt de *micro soft. Insights-diagnosticSettings/-* bewerking toegevoegd aan `Actions` en wordt een beheer groep toegevoegd aan `AssignableScopes` voor de aangepaste rol van de operator voor de *virtuele machine* . Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
+In het volgende voorbeeld wordt de *bewerking Microsoft.Insights/diagnosticSettings/* toegevoegd aan en wordt een beheergroep toegevoegd aan voor de aangepaste rol `Actions` `AssignableScopes` *Virtuele-machineoperator.* Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 
 vmoperator.jsop
 
@@ -228,13 +228,13 @@ az role definition update --role-definition ~/roles/vmoperator.json
 
 ## <a name="delete-a-custom-role"></a>Een aangepaste rol verwijderen
 
-Gebruik [AZ Role definition delete](/cli/azure/role/definition#az-role-definition-delete)om een aangepaste functie te verwijderen. Als u de te verwijderen rol wilt opgeven, gebruikt u de rolnaam of de rol-ID. Gebruik [AZ Role definition List](/cli/azure/role/definition#az-role-definition-list)om de rol-id te bepalen.
+Als u een aangepaste rol wilt verwijderen, gebruikt [u az role definition delete.](/cli/azure/role/definition#az_role_definition_delete) Als u de rol wilt opgeven die u wilt verwijderen, gebruikt u de rolnaam of de rol-id. Gebruik az role definition list om de [rol-id te bepalen.](/cli/azure/role/definition#az_role_definition_list)
 
 ```azurecli
 az role definition delete --name {roleNameOrId}
 ```
 
-In het volgende voor beeld wordt de aangepaste rol van de *operator virtuele machine* verwijderd.
+In het volgende voorbeeld wordt de aangepaste *rol Operator* voor virtuele machines verwijderd.
 
 ```azurecli
 az role definition delete --name "Virtual Machine Operator"
@@ -244,4 +244,4 @@ az role definition delete --name "Virtual Machine Operator"
 
 - [Zelfstudie: Een aangepaste Azure-rol maken met Azure CLI](tutorial-custom-role-cli.md)
 - [Aangepaste Azure-rollen](custom-roles.md)
-- [Azure-resource provider bewerkingen](resource-provider-operations.md)
+- [Bewerkingen van Azure-resourceproviders](resource-provider-operations.md)

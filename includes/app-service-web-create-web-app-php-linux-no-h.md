@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 02/02/2018
 ms.author: cephalin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: ae371082dbb1ece4a62df37743e4d2a4a62998d3
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 4f843c5d35bee5311168073e42b620686b1d9adf
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107512497"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779421"
 ---
 <!-- Please keep this file set to PHP 7.2, as that's the highest PHP version Laravel supports (as shown in the PHP+MySQL tutorial) -->
 
 Een [web-app](../articles/app-service/overview.md#app-service-on-linux) maken in het App Service-plan `myAppServicePlan`. 
 
-In Cloud Shell kunt u de opdracht [`az webapp create`](/cli/azure/webapp#az-webapp-create) gebruiken. Vervang in het volgende voorbeeld `<app-name>` door een unieke naam (geldige tekens zijn `a-z`, `0-9`, en `-`). De runtime is ingesteld op `PHP|7.2`. Voer [`az webapp list-runtimes --linux`](/cli/azure/webapp#az-webapp-list-runtimes) uit als u alle ondersteunde runtimes wilt zien. 
+In Cloud Shell kunt u de opdracht [`az webapp create`](/cli/azure/webapp#az_webapp_create) gebruiken. Vervang in het volgende voorbeeld `<app-name>` door een unieke naam (geldige tekens zijn `a-z`, `0-9`, en `-`). De runtime is ingesteld op `PHP|7.2`. Voer [`az webapp list-runtimes --linux`](/cli/azure/webapp#az_webapp_list_runtimes) uit als u alle ondersteunde runtimes wilt zien. 
 
 ```azurecli-interactive
 # Bash
@@ -46,7 +46,7 @@ Local git is configured with url of 'https://&lt;username&gt;@&lt;app-name&gt;.s
 }
 </pre>
 
-U hebt ™ lege nieuwe web-app gemaakt, met Git-implementatie ingeschakeld.
+U hebt een nieuwe lege web-app gemaakt, met Git-implementatie ingeschakeld.
 
 > [!NOTE]
 > De URL van de externe Git wordt weergegeven in de eigenschap `deploymentLocalGitUrl`, met de indeling `https://<username>@<app-name>.scm.azurewebsites.net/<app-name>.git`. Sla deze URL op, want u hebt deze later nodig.

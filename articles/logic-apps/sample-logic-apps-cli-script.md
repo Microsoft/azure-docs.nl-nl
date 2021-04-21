@@ -1,22 +1,22 @@
 ---
-title: Voor beeld van Azure CLI-script-een logische app maken
-description: Voorbeeld script voor het maken van een logische app via de extensie Logic Apps in de Azure CLI.
+title: Voorbeeld van Azure CLI-script - een logische app maken
+description: Voorbeeldscript voor het maken van een logische app via de Logic Apps-extensie in de Azure CLI.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/30/2020
-ms.openlocfilehash: a4553ceee482fb232e9ab56deca650be93f9dc6b
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b81d9b4a637965dd103d8fa89305424686a0c72c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102218040"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789911"
 ---
-# <a name="azure-cli-script-sample---create-a-logic-app"></a>Voor beeld van Azure CLI-script-een logische app maken
+# <a name="azure-cli-script-sample---create-a-logic-app"></a>Voorbeeld van Azure CLI-script - een logische app maken
 
-Met dit script maakt u een voor beeld van een logische app via de [Azure CLI Logic apps extension](/cli/azure/ext/logic/logic), ( `az logic` ). Voor een gedetailleerde hand leiding voor het maken en beheren van logische apps via de Azure CLI raadpleegt u de [Logic apps Snelstartgids voor de Azure cli](quickstart-logic-apps-azure-cli.md).
+Met dit script maakt u een voorbeeld van een logische app via de [Azure CLI Logic Apps extensie](/cli/azure/ext/logic/logic), ( `az logic` ). Voor een gedetailleerde handleiding voor het maken en beheren van logische apps via de Azure CLI, zie de Logic Apps [quickstart voor de Azure CLI.](quickstart-logic-apps-azure-cli.md)
 
 > [!WARNING]
 > De Azure CLI Logic Apps-extensie is momenteel *experimenteel* en *niet gedekt door klantenondersteuning*. Wees voorzichtig wanneer u deze CLI-extensie gebruikt, vooral als u ervoor kiest de extensie in productieomgevingen te gebruiken.
@@ -26,8 +26,8 @@ Met dit script maakt u een voor beeld van een logische app via de [Azure CLI Log
 * Een Azure-account met een actief abonnement. Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Azure CLI](/cli/azure/install-azure-cli), geïnstalleerd op uw lokale computer.
 * De [Azure CLI Logic Apps-extensie](/cli/azure/azure-cli-extensions-list), geïnstalleerd op uw computer. Gebruik de volgende opdracht om deze extensie te installeren: `az extension add --name logic`
-* Een [werk stroom definitie](quickstart-logic-apps-azure-cli.md#workflow-definition) voor uw logische app. Dit JSON-bestand moet voldoen aan het [taal schema voor de werk stroom definitie](logic-apps-workflow-definition-language.md).
-* Een API-verbinding met een e-mail account via een ondersteunde [Logic Apps-Connector](../connectors/apis-list.md) in dezelfde resource groep als uw logische app. In dit voor beeld wordt de [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md) -connector gebruikt, maar u kunt ook andere connectors gebruiken, zoals [Outlook.com](../connectors/connectors-create-api-outlook.md).
+* Een [werkstroomdefinitie](quickstart-logic-apps-azure-cli.md#workflow-definition) voor uw logische app. Dit JSON-bestand moet het taalschema [van de werkstroomdefinitie volgen.](logic-apps-workflow-definition-language.md)
+* Een API-verbinding met een e-mailaccount via een [Logic Apps connector](../connectors/apis-list.md) in dezelfde resourcegroep als uw logische app. In dit voorbeeld wordt de [Office 365 Outlook-connector](../connectors/connectors-create-api-office365-outlook.md) gebruikt, maar u kunt ook andere connectors gebruiken, [zoals Outlook.com](../connectors/connectors-create-api-outlook.md).
 
 ### <a name="prerequisite-check"></a>Controle van vereisten
 
@@ -39,21 +39,21 @@ Valideer uw omgeving voordat u begint:
 
   * Als u de nieuwste versie niet hebt, werkt u uw installatie bij door de [installatiehandleiding voor uw besturingssysteem of platform](/cli/azure/install-azure-cli) te volgen.
 
-### <a name="sample-workflow-explanation"></a>Uitleg van de voorbeeld werk stroom
+### <a name="sample-workflow-explanation"></a>Uitleg van voorbeeldwerkstroom
 
-In dit voor beeld van een werk stroom definitie bestand wordt dezelfde Basic Logic app gemaakt als de [Logic apps Snelstartgids voor de Azure Portal](quickstart-create-first-logic-app-workflow.md). 
+In dit voorbeeld van een werkstroomdefinitiebestand wordt dezelfde eenvoudige logische app gemaakt als [Logic Apps quickstart voor de Azure Portal](quickstart-create-first-logic-app-workflow.md). 
 
-Deze voorbeeld werk stroom: 
+Deze voorbeeldwerkstroom: 
 
-1. Hiermee geeft u een schema op, `$schema` voor de logische app.
+1. Hiermee geeft u een schema, `$schema` , op voor de logische app.
 
-1. Hiermee definieert u een trigger voor de logische app in de lijst met triggers, `triggers` . De trigger wordt `recurrence` elke drie uur herhaald (). De acties worden geactiveerd wanneer een nieuw feed-item wordt gepubliceerd ( `When_a_feed_item_is_published` ) voor de opgegeven RSS-feed ( `feedUrl` ).
+1. Hiermee definieert u een trigger voor de logische app in de lijst met triggers, `triggers` . De trigger wordt elke 3 uur `recurrence` recurseert ( ). De acties worden geactiveerd wanneer een nieuw feeditem wordt gepubliceerd ( `When_a_feed_item_is_published` ) voor de opgegeven RSS-feed ( `feedUrl` ).
 
-1. Hiermee definieert u een actie voor de logische app in de lijst met acties, `actions` . De actie verzendt een e-mail ( `Send_an_email_(V2)` ) via Microsoft 365 met details van de RSS-feed-items zoals opgegeven in de sectie Body ( `body` ) van de invoer van de actie ( `inputs` ).
+1. Hiermee definieert u een actie voor de logische app in de lijst met acties, `actions` . Met de actie wordt een e-mail ( ) verzonden via Microsoft 365 met details van de RSS-feeditems zoals opgegeven in de sectie body () van de invoer van de `Send_an_email_(V2)` `body` actie ( `inputs` ).
 
-## <a name="sample-workflow-definition"></a>Definitie van de voorbeeld werk stroom
+## <a name="sample-workflow-definition"></a>Voorbeeldwerkstroomdefinitie
 
-Voordat u het voorbeeld script uitvoert, moet u eerst een definitie van een voorbeeld [werk stroom](#prerequisites)maken.
+Voordat u het voorbeeldscript gaat uitvoeren, moet u eerst een voorbeeldwerkstroomdefinitie [maken.](#prerequisites)
 
 1. Maak een JSON-bestand `testDefinition.json` op uw computer. 
 
@@ -136,20 +136,20 @@ Voordat u het voorbeeld script uitvoert, moet u eerst een definitie van een voor
 
 1. Werk de waarden van de tijdelijke aanduidingen bij met uw eigen gegevens:
 
-    1. Vervang de tijdelijke aanduiding voor het e-mail adres ( `"To": "test@example.com"` ). U moet een e-mail adres gebruiken dat compatibel is met Logic Apps connectors. Zie de [vereisten](#prerequisites)voor meer informatie.
+    1. Vervang het e-mailadres van de tijdelijke aanduiding ( `"To": "test@example.com"` ). U moet een e-mailadres gebruiken dat compatibel is met Logic Apps-connectors. Zie de vereisten voor [meer informatie.](#prerequisites)
 
-    1. Aanvullende details van de connector vervangen als u een andere e-mail Connector gebruikt dan de Office 365 Outlook-Connector.
+    1. Vervang aanvullende connectorgegevens als u een andere e-mailconnector gebruikt dan de Office 365 Outlook-connector.
 
-    1. Vervang de waarden van de tijdelijke aanduiding ( `00000000-0000-0000-0000-000000000000` ) voor uw verbindings-id's ( `connectionId` en `id` ) onder de para meter Connections ( `$connections` ) door uw eigen abonnements waarden.
+    1. Vervang de tijdelijke aanduiding abonnementswaarden ( ) voor uw `00000000-0000-0000-0000-000000000000` verbindings-id's ( en ) onder de `connectionId` `id` parameter connections ( ) door uw `$connections` eigen abonnementswaarden.
 
 1. Sla uw wijzigingen op.
 
 ## <a name="sample-script"></a>Voorbeeldscript
 
 > [!NOTE]
-> Dit voor beeld is geschreven voor de `bash` shell. Als u dit voor beeld wilt uitvoeren in een andere shell, zoals Windows Power shell of opdracht prompt, moet u mogelijk wijzigingen aanbrengen in uw script.
+> Dit voorbeeld is geschreven voor de `bash` shell. Als u dit voorbeeld wilt uitvoeren in een andere shell, zoals Windows PowerShell of opdrachtprompt, moet u mogelijk wijzigingen aanbrengen in uw script.
 
-Voer de volgende opdracht uit om verbinding te maken met Azure voordat u dit voorbeeld script uitvoert:
+Voordat u dit voorbeeldscript gaat uitvoeren, moet u deze opdracht uitvoeren om verbinding te maken met Azure:
 
 ```azurecli-interactive
 
@@ -157,7 +157,7 @@ az login
 
 ```
 
-Ga vervolgens naar de map waarin u de werk stroom definitie hebt gemaakt. Als u bijvoorbeeld het JSON-bestand van de werk stroom definitie hebt gemaakt op uw bureau blad:
+Navigeer vervolgens naar de map waarin u de werkstroomdefinitie hebt gemaakt. Als u bijvoorbeeld het JSON-bestand van de werkstroomdefinitie op uw bureaublad hebt gemaakt:
 
 ```azurecli
 
@@ -165,7 +165,7 @@ cd ~/Desktop
 
 ```
 
-Voer dit script uit om een logische app te maken. 
+Voer vervolgens dit script uit om een logische app te maken. 
 
 ```azurecli-interactive
 
@@ -183,7 +183,7 @@ az logic workflow create --resource-group "testResourceGroup" --location "westus
 
 ### <a name="clean-up-deployment"></a>Opschonen van implementatie
 
-Wanneer u klaar bent met het gebruik van het voorbeeld script, voert u de volgende opdracht uit om de resource groep en alle geneste resources te verwijderen, met inbegrip van de logische app.
+Nadat u klaar bent met het voorbeeldscript, kunt u de volgende opdracht uitvoeren om uw resourcegroep en alle geneste resources te verwijderen, inclusief de logische app.
 
 ```azurecli-interactive
 
@@ -193,13 +193,13 @@ az group delete --name testResourceGroup --yes
 
 ## <a name="script-explanation"></a>Uitleg van het script
 
-In dit voorbeeld script worden de volgende opdrachten gebruikt om een nieuwe resource groep en logische app te maken.
+In dit voorbeeldscript worden de volgende opdrachten gebruikt om een nieuwe resourcegroep en logische app te maken.
 
 | Opdracht | Opmerkingen |
 | ------- | ----- |
-| [`az group create`](/cli/azure/group#az-group-create) | Hiermee maakt u een resource groep waarin de resources van de logische app zijn opgeslagen. |
-| [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create) | Hiermee maakt u een logische app op basis van de werk stroom die is gedefinieerd in de para meter `--definition` . |
-| [`az group delete`](/cli/azure/vm/extension) | Hiermee verwijdert u een resource groep en alle geneste resources. |
+| [`az group create`](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin de resources van uw logische app worden opgeslagen. |
+| [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create) | Hiermee maakt u een logische app op basis van de werkstroom die is gedefinieerd in de parameter `--definition` . |
+| [`az group delete`](/cli/azure/vm/extension) | Hiermee verwijdert u een resourcegroep en alle geneste resources. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

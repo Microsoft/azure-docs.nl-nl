@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/06/2021
 ms.author: mbullwin
-ms.openlocfilehash: b3acea520859de10825468a4d37c3030f9b862bd
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: a657b8f5bf967131a0168dbea5bb1db86b3b559e
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107732457"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107799810"
 ---
 Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de algoritmen van de service te gaan gebruiken. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
@@ -225,11 +225,9 @@ private async Task exportAsync(AnomalyDetectorClient client, Guid model_id, stri
 {
     try
     {
-        Response model_response = await client.ExportModelAsync(model_id).ConfigureAwait(false);
-        Stream model;
-        if (model_response.ContentStream != null)
+        Stream model = await client.ExportModelAsync(model_id).ConfigureAwait(false);
+        if (model != null)
         {
-            model = model_response.ContentStream;
             var fileStream = File.Create(model_path);
             model.Seek(0, SeekOrigin.Begin);
             model.CopyTo(fileStream);
@@ -246,7 +244,7 @@ private async Task exportAsync(AnomalyDetectorClient client, Guid model_id, stri
 
 ## <a name="delete-model"></a>Model verwijderen
 
-Als u een model wilt verwijderen dat u eerder hebt gemaakt, gebruikt en de model-id door te geven van `DeleteMultivariateModelAsync` het model dat u wilt verwijderen. Als u een model-id wilt ophalen, kunt u `getModelNumberAsync` ons :
+Als u een model wilt verwijderen dat u eerder hebt gemaakt, gebruikt en de model-id door te geven van `DeleteMultivariateModelAsync` het model dat u wilt verwijderen. Als u een model-id wilt ophalen, kunt u het volgende `getModelNumberAsync` doen:
 
 ```csharp
 private async Task deleteAsync(AnomalyDetectorClient client, Guid model_id)

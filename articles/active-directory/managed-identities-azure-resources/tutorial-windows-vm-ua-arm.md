@@ -1,5 +1,5 @@
 ---
-title: 'Zelf studie: een beheerde identiteit gebruiken om toegang te krijgen tot Azure Resource Manager-Windows-Azure AD'
+title: 'Zelfstudie: Een beheerde identiteit gebruiken voor toegang tot Azure Resource Manager - Windows - Azure AD'
 description: Een zelfstudie die u helpt bij het doorlopen van het proces voor het krijgen van toegang tot Azure Resource Manager met een door de gebruiker toegewezen beheerde identiteit op een Windows-VM.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,13 @@ ms.workload: identity
 ms.date: 12/02/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f46d92c38d2d2567eeaafce0f9c5c9c3b5dd44c5
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 37b7b6332bdd000968dc136b946d61ebe82d87ad
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307058"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107776371"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Zelfstudie: Toegang krijgen tot Azure Resource Manager met een door de gebruiker toegewezen beheerde identiteit op een Windows-VM
 
@@ -45,7 +46,7 @@ In deze zelfstudie leert u procedures om het volgende te doen:
 
 - [Een Windows-VM maken](../../virtual-machines/windows/quick-create-portal.md)
 
-- Om de stappen voor het maken van de vereiste resources en het rolbeheer in deze zelfstudie uit te voeren, moet uw account 'Eigenaar'-machtigingen hebben voor het juiste bereik (uw abonnement of resourcegroep). Als u hulp nodig hebt bij roltoewijzing, raadpleegt u [Azure-rollen toewijzen om de toegang tot uw Azure-abonnements resources te beheren](../../role-based-access-control/role-assignments-portal.md).
+- Om de stappen voor het maken van de vereiste resources en het rolbeheer in deze zelfstudie uit te voeren, moet uw account 'Eigenaar'-machtigingen hebben voor het juiste bereik (uw abonnement of resourcegroep). Zie Azure-rollen toewijzen om toegang tot uw Azure-abonnementsbronnen te beheren als u hulp nodig hebt met [roltoewijzing.](../../role-based-access-control/role-assignments-portal.md)
 
 - Als u de voorbeeldscripts wilt uitvoeren, hebt u twee opties:
     - Gebruik de [Azure Cloud Shell](../../cloud-shell/overview.md), die u kunt openen met behulp van de knop **Probeer het nu** in de rechterbovenhoek van Code::Blocks.

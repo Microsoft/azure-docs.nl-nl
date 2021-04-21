@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 1d7b6cd6d61be6df66d215613222c12a0f2c9c5e
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: a595d677cf0964083526cb7e2c73471148be0fd4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105606705"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778414"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-by-using-the-azure-cli"></a>Quickstart: Een Azure Database for PostgreSQL-server maken met behulp van Azure CLI
 
@@ -34,11 +34,11 @@ In deze quickstart wordt beschreven hoe u [Azure CLI](/cli/azure/get-started-wit
         az account set --subscription <subscription id>
         ```
 
-    - Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
+    - Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az_account_list).
 
 ## <a name="create-an-azure-database-for-postgresql-server"></a>Een Azure-database voor PostgreSQL-server maken
 
-Maak een [Azure-resourcegroep](../azure-resource-manager/management/overview.md) met behulp van de opdracht [az group create](/cli/azure/group#az-group-create) en maak vervolgens de PostgreSQL-server in deze resourcegroep. U moet een unieke naam opgeven. In het volgende voorbeeld wordt een resourcegroep met de naam `myresourcegroup` gemaakt op de locatie `westus`.
+Maak een [Azure-resourcegroep](../azure-resource-manager/management/overview.md) met behulp van de opdracht [az group create](/cli/azure/group#az_group_create) en maak vervolgens de PostgreSQL-server in deze resourcegroep. U moet een unieke naam opgeven. In het volgende voorbeeld wordt een resourcegroep met de naam `myresourcegroup` gemaakt op de locatie `westus`.
 
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
@@ -62,7 +62,7 @@ sku-name|GP_Gen5_2| De naam van de prijscategorie en de berekeningsconfiguratie.
 
 >[!IMPORTANT] 
 >- De standaardversie van PostgreSQL op uw server is 9.6. Zie [Supported PostgreSQL major versions](./concepts-supported-versions.md) (Primaire ondersteunde versies van PostgreSQL) voor een overzicht van alle ondersteunde versies.
->- Als u alle argumenten voor de opdracht **az postgres server create** wilt weergeven, raadpleegt u [dit referentiedocument](/cli/azure/postgres/server#az-postgres-server-create).
+>- Als u alle argumenten voor de opdracht **az postgres server create** wilt weergeven, raadpleegt u [dit referentiedocument](/cli/azure/postgres/server#az_postgres_server_create).
 >- SSL is standaard ingeschakeld op de server. Zie [SSL-connectiviteit configureren](./concepts-ssl-connection-security.md) voor meer informatie over SSL.
 
 ## <a name="configure-a-server-level-firewall-rule"></a>Een serverfirewallregel configureren 

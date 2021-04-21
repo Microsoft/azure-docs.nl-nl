@@ -9,12 +9,12 @@ ms.date: 03/12/2021
 ms.author: msangapu
 ms.custom: seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: f02aa9fc1bd31bdde6214ab906136a2cac8f1772
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 6519f3fe7335ed41f4d5ef67771aaa738a33e4a8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107478305"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782599"
 ---
 # <a name="continuous-deployment-with-custom-containers-in-azure-app-service"></a>Continue implementatie met aangepaste containers in Azure App Service
 
@@ -70,7 +70,7 @@ In **de vervolgkeuzelijst** Register worden de registers in hetzelfde abonnement
 > Als u wilt implementeren vanuit een register in een ander abonnement, **selecteert u** in **plaats daarvan Privéregister** in **Registerbron.**
 
 ::: zone pivot="container-windows"
-**Selecteer** de **te implementeren afbeelding** **en** tag. Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
+**Selecteer** de te **implementeren afbeelding** **en** tag. Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
 ::: zone-end
 ::: zone pivot="container-linux"
 Volg de volgende stap, afhankelijk van het **containertype**:
@@ -92,24 +92,7 @@ Selecteer **in Toegang tot** opslagplaats **of** de te implementeren afbeelding 
 Als u een persoonlijke afbeelding selecteert, **geeft u** **de aanmelding** (gebruikersnaam) en het **wachtwoord van** het Docker-account op.
 
 ::: zone pivot="container-windows"
-**Gebruik** de naam van de afbeelding en de tag in **Volledige afbeeldingsnaam en Tag**, gescheiden door een `:` (bijvoorbeeld `nginx:latest` ). Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
-::: zone-end
-::: zone pivot="container-linux"
-Volg de volgende stap, afhankelijk van het **containertype**:
-- Selecteer **voor Docker Compose** **het** register voor uw persoonlijke afbeeldingen. **Klik** **op Bestand kiezen** om uw [Docker Compose-bestand](https://docs.docker.com/compose/compose-file/)te uploaden of plak de inhoud van uw Docker Compose-bestand in **Config**. 
-- Voor **Enkele container** geeft u **de** naam van de afbeelding en de tag op in Volledige naam van de afbeelding en **Tag**, gescheiden door een `:` (bijvoorbeeld `nginx:latest` ). Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
-::: zone-end
-
-App Service wordt de tekenreeks **in** opstartbestand toegevoegd aan het einde van de opdracht [ `docker run` (als `[COMMAND] [ARG...]` het segment)](https://docs.docker.com/engine/reference/run/) bij het starten van de container.
-
-# <a name="private-registry"></a>[Privéregister](#tab/private)
-
-Typ **in Server-URL** **de** URL van de server, te beginnen **met https://**.
-
-Typ **in Aanmelden** en **Wachtwoord** **uw** aanmeldingsreferenties voor uw privéregister.
-
-::: zone pivot="container-windows"
-**Gebruik** de naam van de afbeelding en de tag in **Volledige afbeeldingsnaam en Tag**, gescheiden door een `:` (bijvoorbeeld `nginx:latest` ). Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
+**Gebruik** de naam van de afbeelding en de tag in Volledige afbeeldingsnaam **en Tag**, gescheiden door een `:` (bijvoorbeeld `nginx:latest` ). Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
 ::: zone-end
 ::: zone pivot="container-linux"
 Volg de volgende stap, afhankelijk van het **containertype**:
@@ -118,6 +101,23 @@ Volg de volgende stap, afhankelijk van het **containertype**:
 ::: zone-end
 
 App Service wordt de tekenreeks **in** Het opstartbestand toegevoegd aan het einde van de opdracht [ `docker run` (als `[COMMAND] [ARG...]` het segment)](https://docs.docker.com/engine/reference/run/) bij het starten van de container.
+
+# <a name="private-registry"></a>[Privéregister](#tab/private)
+
+Typ **in Server-URL** **de** URL van de server, te beginnen **met https://**.
+
+Typ **in Aanmelden** en **Wachtwoord** **uw** aanmeldingsreferenties voor uw privéregister.
+
+::: zone pivot="container-windows"
+**Gebruik** de naam van de afbeelding en de tag in **Volledige** afbeeldingsnaam en Tag , gescheiden door een `:` (bijvoorbeeld `nginx:latest` ). Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
+::: zone-end
+::: zone pivot="container-linux"
+Volg de volgende stap, afhankelijk van het **containertype**:
+- Selecteer **voor Docker Compose** **het** register voor uw persoonlijke afbeeldingen. **Klik** **op Bestand kiezen** om uw [Docker Compose-bestand](https://docs.docker.com/compose/compose-file/)te uploaden of plak de inhoud van uw Docker Compose-bestand in **Config**. 
+- Voor **Enkele container** geeft u **de** naam van de afbeelding en de tag op in Volledige naam van de afbeelding en **Tag**, gescheiden door een `:` (bijvoorbeeld `nginx:latest` ). Als u wilt, **typt u** de opstartopdracht in **Opstartbestand**. 
+::: zone-end
+
+App Service wordt de tekenreeks **in** opstartbestand toegevoegd aan het einde van de opdracht [ `docker run` (als `[COMMAND] [ARG...]` het segment)](https://docs.docker.com/engine/reference/run/) bij het starten van de container.
 
 -----
 
@@ -128,21 +128,21 @@ App Service wordt de tekenreeks **in** Het opstartbestand toegevoegd aan het ein
 ## <a name="4-enable-cicd"></a>4. CI/CD inschakelen
 ::: zone-end
 
-App Service ondersteunt CI/CD-integratie met Azure Container Registry en Docker Hub. Als u dit wilt inschakelen, **selecteert** **u Aan** in **Doorlopende implementatie.**
+App Service ondersteunt CI/CD-integratie met Azure Container Registry en Docker Hub. Als u dit wilt inschakelen, **selecteert** **u Aan** in **Continue implementatie.**
 
 ::: zone pivot="container-linux"
 > [!NOTE]
-> Als u **GitHub Actions** in **Bron** selecteert, krijgt u deze optie niet omdat CI/CD rechtstreeks wordt GitHub Actions verwerkt. In plaats daarvan ziet u de sectie **Werkstroomconfiguratie,** waarin u kunt klikken **op** **Preview-bestand om** het werkstroombestand te inspecteren. Azure legt dit bestand vast in de geselecteerde GitHub-bronopslagplaats om build- en implementatietaken te verwerken. Zie How [CI/CD works with GitHub Actions (Hoe CI/CD werkt met GitHub Actions).](#how-cicd-works-with-github-actions)
+> Als u **GitHub Actions** bron **selecteert,** krijgt u deze optie niet omdat CI/CD rechtstreeks door de GitHub Actions verwerkt. In plaats daarvan ziet u een sectie **Werkstroomconfiguratie,** waarin u kunt **klikken** op **Voorbeeldbestand om** het werkstroombestand te inspecteren. Azure legt dit bestand vast in de geselecteerde GitHub-bronopslagplaats om build- en implementatietaken te verwerken. Zie How [CI/CD works with GitHub Actions (Hoe CI/CD werkt met GitHub Actions) voor meer GitHub Actions.](#how-cicd-works-with-github-actions)
 ::: zone-end
 
 Wanneer u deze optie inschakelen, App Service een webhook toegevoegd aan uw opslagplaats in Azure Container Registry of Docker Hub. Uw opslagplaats plaatst deze webhook wanneer de geselecteerde afbeelding wordt bijgewerkt met `docker push` . De webhook zorgt ervoor dat uw App Service-app opnieuw wordt gestart en uitgevoerd `docker pull` om de bijgewerkte afbeelding op te halen.
 
-**Voor andere privéregisters kunt u** handmatig of als stap in een CI/CD-pijplijn een bericht naar de webhook plaatsen. Klik **in Webhook-URL** **op de** knop **Kopiëren** om de webhook-URL op te halen.
+**Voor andere privéregisters kunt** u handmatig of als stap in een CI/CD-pijplijn naar de webhook posten. Klik **in Webhook-URL** **op de** knop **Kopiëren** om de webhook-URL op te halen.
 
 ::: zone pivot="container-linux"
 > [!NOTE]
 > Ondersteuning voor apps met meerdere containers (Docker Compose) is beperkt: 
-> - Voor Azure Container Registry maakt App Service een webhook in het geselecteerde register met het register als bereik. Een naar een opslagplaats in het register (met inbegrip van de opslagplaatsen waarnaar niet wordt verwezen door uw `docker push` Docker Compose-bestand) activeert het opnieuw starten van de app. Mogelijk wilt u [de webhook wijzigen](../container-registry/container-registry-webhook.md) in een kleiner bereik.
+> - Voor Azure Container Registry maakt App Service een webhook in het geselecteerde register met het register als bereik. Een naar een opslagplaats in het register (inclusief de opslagplaatsen waarnaar niet wordt verwezen door uw `docker push` Docker Compose-bestand) activeert het opnieuw starten van de app. Mogelijk wilt u [de webhook wijzigen](../container-registry/container-registry-webhook.md) in een smaller bereik.
 > - Docker Hub biedt geen ondersteuning voor webhooks op registerniveau. U moet **de** webhooks handmatig toevoegen aan de afbeeldingen die zijn opgegeven in uw Docker Compose-bestand.
 ::: zone-end
 
@@ -159,24 +159,24 @@ Wanneer u deze optie inschakelen, App Service een webhook toegevoegd aan uw opsl
 
 ## <a name="how-cicd-works-with-github-actions"></a>Hoe CI/CD werkt met GitHub Actions
 
-Als u kiest **GitHub Actions** **bron** (zie [Implementatiebron](#2-choose-deployment-source)kiezen ), App Service u CI/CD op de volgende manieren in:
+Als u kiest **GitHub Actions** in **Bron** (zie [Implementatiebron](#2-choose-deployment-source)kiezen), App Service u CI/CD op de volgende manieren in:
 
 - Zet een werkstroombestand GitHub Actions uw GitHub-opslagplaats op om build- en implementatietaken naar uw App Service.
-- Voegt de referenties voor uw privéregister toe als GitHub-geheimen. Het gegenereerde werkstroombestand voert de [actie Azure/docker-login](https://github.com/Azure/docker-login) uit om u aan te melden met uw privéregister en voert vervolgens uit om `docker push` dit te implementeren.
-- Voegt het publicatieprofiel voor uw app toe als een GitHub-geheim. Het gegenereerde werkstroombestand gebruikt dit geheim om te verifiëren met App Service en voert vervolgens de [actie Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) uit om de bijgewerkte afbeelding te configureren, waardoor een app opnieuw wordt opgestart om de bijgewerkte afbeelding op te halen.
+- Voegt de referenties voor uw privéregister toe als GitHub-geheimen. Het gegenereerde werkstroombestand voert de [actie Azure/docker-login](https://github.com/Azure/docker-login) uit om u aan te melden met uw privéregister en voert vervolgens uit om dit `docker push` te implementeren.
+- Hiermee wordt het publicatieprofiel voor uw app toegevoegd als een GitHub-geheim. Het gegenereerde werkstroombestand gebruikt dit geheim om te verifiëren met App Service en voert vervolgens de actie [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) uit om de bijgewerkte afbeelding te configureren, waardoor een app opnieuw wordt opgestart om de bijgewerkte afbeelding op te halen.
 - Legt informatie vast uit de [werkstroomrunlogboeken](https://docs.github.com/actions/managing-workflow-runs/using-workflow-run-logs) en geeft deze weer op **het tabblad Logboeken** in het **Implementatiecentrum van uw app.**
 
-U kunt de GitHub Actions buildprovider op de volgende manieren aanpassen:
+U kunt de GitHub Actions build-provider op de volgende manieren aanpassen:
 
 - Pas het werkstroombestand aan nadat het is gegenereerd in uw GitHub-opslagplaats. Zie Werkstroomsyntaxis [voor meer GitHub Actions.](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions) Zorg ervoor dat de werkstroom eindigt met de [actie Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) om het opnieuw starten van de app te activeren.
-- Als de geselecteerde vertakking is beveiligd, kunt u nog steeds een voorbeeld van het werkstroombestand bekijken zonder de configuratie op te slaan. Vervolgens voegt u het en de vereiste GitHub-geheimen handmatig toe aan uw opslagplaats. Deze methode geeft u niet de logboekintegratie met de Azure Portal.
+- Als de geselecteerde vertakking is beveiligd, kunt u nog steeds een voorbeeld van het werkstroombestand bekijken zonder de configuratie op te slaan. Voeg het bestand en de vereiste GitHub-geheimen handmatig toe aan uw opslagplaats. Deze methode geeft u geen logboekintegratie met de Azure Portal.
 - Implementeer in plaats van een publicatieprofiel met behulp van [een service-principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) in Azure Active Directory.
 
 #### <a name="authenticate-with-a-service-principal"></a>Verifiëren met een service-principal
 
 Deze optionele configuratie vervangt de standaardverificatie door publicatieprofielen in het gegenereerde werkstroombestand.
 
-**Genereer** een service-principal met de [opdracht az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de Azure [CLI.](/cli/azure/) Vervang in het volgende voorbeeld *\<subscription-id>* , en door uw eigen *\<group-name>* *\<app-name>* waarden. **Sla** de volledige JSON-uitvoer op voor de volgende stap, met inbegrip van het hoogste `{}` niveau.
+**Genereer** een service-principal met de [opdracht az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) in de Azure [CLI.](/cli/azure/) Vervang in het volgende voorbeeld *\<subscription-id>* , en door uw eigen *\<group-name>* *\<app-name>* waarden. **Sla** de volledige JSON-uitvoer op voor de volgende stap, met inbegrip van het hoogste `{}` niveau.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myAppDeployAuth" --role contributor \
@@ -213,7 +213,7 @@ Wijzig in het werkstroombestand dat is gegenereerd **door het Implementatiecentr
 
 ## <a name="automate-with-cli"></a>Automatiseren met CLI
 
-Voer  [az webapp config container set](/cli/azure/webapp/config/container#az-webapp-config-container-set)uit om het containerregister en de Docker-afbeelding te configureren.
+Voer  [az webapp config container set](/cli/azure/webapp/config/container#az_webapp_config_container_set)uit om het containerregister en de Docker-afbeelding te configureren.
 
 # <a name="azure-container-registry"></a>[Azure Container Registry](#tab/acr)
 
@@ -240,14 +240,14 @@ az webapp config container set --name <app-name> --resource-group <group-name> -
 -----
 
 ::: zone pivot="container-linux"
-Als u een app met meerdere containers (Docker Compose) wilt  **configureren,** moet u een Docker Compose-bestand lokaal voorbereiden en vervolgens az [webapp config container set](/cli/azure/webapp/config/container#az-webapp-config-container-set) uitvoeren met de parameter `--multicontainer-config-file` . Als uw Docker Compose-bestand persoonlijke afbeeldingen bevat, voegt **u** `--docker-registry-server-*` parameters toe zoals weergegeven in het vorige voorbeeld.
+Als u een app met meerdere containers  (Docker Compose) wilt configureren, bereidt u een Docker Compose-bestand lokaal voor en voer **vervolgens** [az webapp config container set](/cli/azure/webapp/config/container#az_webapp_config_container_set) uit met de parameter `--multicontainer-config-file` . Als uw Docker Compose-bestand persoonlijke afbeeldingen bevat, voegt **u** `--docker-registry-server-*` parameters toe zoals weergegeven in het vorige voorbeeld.
 
 ```azurecli-interactive
 az webapp config container set --resource-group <group-name> --name <app-name> --multicontainer-config-file <docker-compose-file>
 ```
 ::: zone-end
 
-Voer  [az webapp deployment container config](/cli/azure/webapp/deployment/container#az-webapp-deployment-container-config) uit met de parameter om CI/CD vanuit het containerregister naar uw app te `--enable-cd` configureren. Met de opdracht wordt de webhook-URL uitgevoerd, maar u moet de webhook in het register handmatig in een afzonderlijke stap maken. In het volgende voorbeeld wordt CI/CD in uw app in staat gemaakt en wordt vervolgens de webhook-URL in de uitvoer gebruikt om de webhook te maken in Azure Container Registry.
+Voer  [az webapp deployment container config](/cli/azure/webapp/deployment/container#az_webapp_deployment-container-config) uit met de parameter om CI/CD vanuit het containerregister te configureren voor uw `--enable-cd` app. Met de opdracht wordt de webhook-URL uitgevoerd, maar u moet de webhook in het register handmatig maken in een afzonderlijke stap. In het volgende voorbeeld wordt CI/CD in uw app in staat gemaakt en wordt vervolgens de webhook-URL in de uitvoer gebruikt om de webhook te maken in Azure Container Registry.
 
 ```azurecli-interactive
 ci_cd_url=$(az webapp deployment container config --name <app-name> --resource-group <group-name> --enable-cd true --query CI_CD_URL --output tsv)

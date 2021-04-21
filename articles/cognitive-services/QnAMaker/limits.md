@@ -1,45 +1,45 @@
 ---
-title: Limieten en grenzen-QnA Maker
-description: QnA Maker heeft meta limieten voor delen van de Knowledge Base en de service. Het is belang rijk dat u uw Knowledge Base binnen deze grenzen houdt om te testen en te publiceren.
+title: Limieten en grenzen - QnA Maker
+description: QnA Maker heeft metalimieten voor delen van de knowledge base en service. Het is belangrijk om uw knowledge base binnen deze limieten te houden om te testen en te publiceren.
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/09/2020
-ms.openlocfilehash: 1e57ae537c271e61f0b2d37f5320cb177b04802b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ad498575b029f918538909a9b5b2d52c71c1389c
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98164869"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816364"
 ---
-# <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Limieten en grenzen voor de Knowledge Base QnA Maker
+# <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>QnA Maker en grenzen van knowledge base
 
-QnA Maker grenzen die hieronder worden aangegeven, zijn een combi natie van de [limieten voor de prijs categorie voor Azure Cognitive Search](../../search/search-limits-quotas-capacity.md) en de [QnA Maker prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/). U moet beide sets limieten kennen om inzicht te krijgen in het aantal kennissen dat u per resource kunt maken en hoe groot elke kennis database kan groeien.
+QnA Maker de onderstaande limieten zijn [](../../search/search-limits-quotas-capacity.md) een combinatie van de limieten Azure Cognitive Search prijscategorie en de [limieten QnA Maker prijscategorie](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/). U moet beide limieten kennen om te begrijpen hoeveel knowledge bases u per resource kunt maken en hoe groot elke knowledge base kan groeien.
 
-## <a name="knowledge-bases"></a>Kennis bases
+## <a name="knowledge-bases"></a>Knowledge bases
 
-Het maximum aantal kennis grondslagen is gebaseerd op [limieten voor Azure-Cognitive Search lagen](../../search/search-limits-quotas-capacity.md).
+Het maximum aantal Knowledge Bases is gebaseerd op Azure Cognitive Search [laaglimieten](../../search/search-limits-quotas-capacity.md).
 
-|**Azure Cognitive Search-laag** | **Gratis** | **Basic** |**S1** | **S2**| **S3** |**S3 HD**|
+|**Azure Cognitive Search laag** | **Gratis** | **Basic** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
-|Maxi maal aantal gepubliceerde kennis grondslagen toegestaan|2|14|49|199|199|2.999|
+|Maximum aantal gepubliceerde Knowledge Bases dat is toegestaan|2|14|49|199|199|2,999|
 
- Als uw laag bijvoorbeeld 15 toegestane indexen heeft, kunt u 14 Knowledge bases publiceren (1 index per gepubliceerde kennis basis). De vijftiende index, `testkb` , wordt gebruikt voor alle kennis grondslagen voor ontwerpen en testen.
+ Als uw laag bijvoorbeeld 15 toegestane indexen heeft, kunt u 14 knowledge bases publiceren (1 index per gepubliceerde Knowledge Base). De vijftiende index, `testkb` , wordt gebruikt voor alle Knowledge Bases voor het maken en testen.
 
-## <a name="extraction-limits"></a>Extractie limieten
+## <a name="extraction-limits"></a>Extractielimieten
 
-### <a name="file-naming-constraints"></a>Beperkingen voor bestands naamgeving
+### <a name="file-naming-constraints"></a>Beperkingen voor bestandsnaamgeving
 
-Bestands namen mogen niet de volgende tekens bevatten:
+Bestandsnamen mogen niet de volgende tekens bevatten:
 
-|Geen teken gebruiken|
+|Gebruik geen teken|
 |--|
-|Enkele aanhalings tekens `'`|
-|Dubbele aanhalings tekens `"`|
+|Enkele aangave `'`|
+|Dubbele aangave `"`|
 
 ### <a name="maximum-file-size"></a>Maximale bestandsgrootte
 
-|Indeling|Maximale bestands grootte (MB)|
+|Indeling|Maximale bestandsgrootte (MB)|
 |--|--|
 |`.docx`|10|
 |`.pdf`|25|
@@ -49,66 +49,86 @@ Bestands namen mogen niet de volgende tekens bevatten:
 
 ### <a name="maximum-number-of-files"></a>Maximum aantal bestanden
 
-Het maximum aantal bestanden dat kan worden geëxtraheerd en de maximale bestands grootte is gebaseerd op uw **[QnA Maker prijs categorie limieten](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/)**.
+Het maximum aantal bestanden dat kan worden geëxtraheerd en de maximale bestandsgrootte is gebaseerd op de limieten QnA Maker **[de prijscategorie](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/)**.
 
 > [!NOTE]
-> QnA Maker Managed (preview) is een gratis service zonder limieten voor het aantal bronnen dat kan worden toegevoegd. De door Voer is momenteel beperkt tot 10 trans acties per seconde voor zowel beheer-Api's als Voorspellings-Api's.
+> QnA Maker beheerd (preview) is een gratis service zonder limieten voor het aantal bronnen dat kan worden toegevoegd. Doorvoer is momenteel begrensd op 10 transacties per seconde voor zowel beheer-API's als voorspellings-API's.
 
-### <a name="maximum-number-of-deep-links-from-url"></a>Maximum aantal diep gaande koppelingen van URL
+### <a name="maximum-number-of-deep-links-from-url"></a>Maximum aantal dieptekoppelingen van URL
 
-Het maximum aantal diep gaande koppelingen dat kan worden verkend voor het uitpakken van QnAs van een URL-pagina is **20**.
+Het maximum aantal dieptekoppelingen dat kan worden verkend voor extractie van QnA's van een URL-pagina is **20**.
 
-## <a name="metadata-limits"></a>Limieten voor meta gegevens
+## <a name="metadata-limits"></a>Limieten voor metagegevens
 
-Meta gegevens worden weer gegeven als een op tekst gebaseerde sleutel: waardepaar, zoals `product:windows 10` . Het wordt opgeslagen en vergeleken in kleine letters.
+Metagegevens worden weergegeven als een sleutel-waardepaar op basis van tekst, zoals `product:windows 10` . Deze wordt in kleine gevallen opgeslagen en vergeleken.
 
-### <a name="by-azure-cognitive-search-pricing-tier"></a>Door de prijs categorie voor Azure Cognitive Search
+### <a name="by-azure-cognitive-search-pricing-tier"></a>Op Azure Cognitive Search prijscategorie
 
-Het maximum aantal meta gegevens velden per Knowledge Base is gebaseerd op de **[limieten van uw Azure Cognitive Search-laag](../../search/search-limits-quotas-capacity.md)**.
+Het maximum aantal metagegevensvelden per Knowledge Base is gebaseerd op uw **[Azure Cognitive Search laaglimieten](../../search/search-limits-quotas-capacity.md)**.
 
-|**Azure Cognitive Search-laag** | **Gratis** | **Basic** |**S1** | **S2**| **S3** |**S3 HD**|
+|**Azure Cognitive Search laag** | **Gratis** | **Basic** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
-|Maximum aantal meta gegevens velden per QnA Maker service (in alle Kb's)|1000|100 *|1000|1000|1000|1000|
+|Maximumaantal metagegevensvelden per QnA Maker service (voor alle KB's)|1000|100*|1000|1000|1000|1000|
 
 ### <a name="by-name-and-value"></a>Op naam en waarde
 
-De lengte en de acceptabele tekens voor de naam en waarde van de meta gegevens worden weer gegeven in de volgende tabel.
+De lengte en acceptabele tekens voor de naam en waarde van de metagegevens worden in de volgende tabel vermeld.
 
-|Item|Toegestane tekens|Overeenkomst met regex-patroon|Maximum aantal tekens|
+|Item|Toegestane chars|Regex-patroon komt overeen|Maximum aantal chars|
 |--|--|--|--|
-|Naam (sleutel)|Hulp<br>alfanumeriek (letters en cijfers)<br>`_` weigeren<br> Mag geen spaties bevatten.|`^[a-zA-Z0-9_]+$`|100|
-|Waarde|Maakt alles mogelijk behalve<br>`:` punt<br>`|` (verticale pijp)<br>Er is slechts één waarde toegestaan.|`^[^:|]+$`|500|
+|Naam (sleutel)|Kunt<br>alfanumeriek (letters en cijfers)<br>`_` (onderstrepingsteken)<br> Mag geen spaties bevatten.|`^[a-zA-Z0-9_]+$`|100|
+|Waarde|Hiermee staat u alles toe behalve<br>`:` (dubbele punt)<br>`|` (verticale pijp)<br>Er is slechts één waarde toegestaan.|`^[^:|]+$`|500|
 |||||
 
-## <a name="knowledge-base-content-limits"></a>Limieten voor Knowledge Base-inhoud
-Algemene limieten voor de inhoud van de Knowledge Base:
-* Lengte van antwoord tekst: 25.000 tekens
-* Lengte van de vraag tekst: 1.000 tekens
-* Lengte van de tekst van de meta gegevens sleutel: 100 tekens
-* Lengte van tekst van meta gegevens waarde: 500 tekens
-* Ondersteunde tekens voor de naam van de meta gegevens: alfabetten, cijfers en `_`
-* Ondersteunde tekens voor de meta gegevens waarde: alle behalve `:` en `|`
-* Lengte van bestands naam: 200
-* Ondersteunde bestands indelingen: '. TSV ', '. PDF ', '. txt ', '. docx ', '. xlsx '.
+## <a name="knowledge-base-content-limits"></a>Knowledge Base inhoudslimieten instellen
+Algemene limieten voor de inhoud in de knowledge base:
+* Lengte van antwoordtekst: 25.000 tekens
+* Lengte van vraagtekst: 1000 tekens
+* Lengte van de tekst van de metagegevenssleutel: 100 tekens
+* Lengte van de tekst van de metagegevenswaarde: 500 tekens
+* Ondersteunde tekens voor metagegevensnaam: alfabeten, cijfers en `_`
+* Ondersteunde tekens voor metagegevenswaarde: Alle behalve `:` en `|`
+* Lengte van bestandsnaam: 200
+* Ondersteunde bestandsindelingen: ".tsv", ".pdf", ".txt", ".docx", ".xlsx".
 * Maximum aantal alternatieve vragen: 300
-* Maximum aantal antwoord paren voor vraag: is afhankelijk van de gekozen **[Azure Cognitive Search-laag](../../search/search-limits-quotas-capacity.md#document-limits)** . Een vraag-en-antwoord paar worden toegewezen aan een document in azure Cognitive Search index.
-* URL/HTML-pagina: 1.000.000 tekens
+* Maximum aantal vraag-antwoordparen: is afhankelijk van de **[Azure Cognitive Search gekozen](../../search/search-limits-quotas-capacity.md#document-limits)** laag. Een vraag-en-antwoordpaar wordt gekoppeld aan een document Azure Cognitive Search index.
+* URL-/HTML-pagina: 1 miljoen tekens
 
-## <a name="create-knowledge-base-call-limits"></a>Maak Knowledge Base-oproep limieten:
-Dit zijn de limieten voor elke actie voor het maken van een Knowledge Base; dat wil zeggen, klikken op *KB maken* of de CREATEKNOWLEDGEBASE-API aanroepen.
+## <a name="create-knowledge-base-call-limits"></a>Aanroeplimieten voor Knowledge Base maken:
+Deze staan voor de limieten voor elke actie voor het maken van een knowledge base; Dat wil zeggen dat u op *KB maken klikt* of de Api CreateKnowledgeBase aanroept.
 * Aanbevolen maximum aantal alternatieve vragen per antwoord: 300
-* Maximum aantal Url's: 10
+* Maximum aantal URL's: 10
 * Maximum aantal bestanden: 10
-* Maxi maal toegestane aantal QnAs per oproep: 1000
+* Maximumaantal toegestane QnA's per aanroep: 1000
 
-## <a name="update-knowledge-base-call-limits"></a>Limieten voor Knowledge Base-aanroepen bijwerken
-Dit duidt op de limieten voor elke update-actie. dat wil zeggen, klikken op *opslaan en trainen* of het aanroepen van de UPDATEKNOWLEDGEBASE-API.
-* Lengte van elke bron naam: 300
-* Aanbevolen maximum aantal alternatieve vragen dat is toegevoegd of verwijderd: 300
-* Maximum aantal meta gegevens velden dat is toegevoegd of verwijderd: 10
-* Maximum aantal Url's dat kan worden vernieuwd: 5
-* Maxi maal toegestane aantal QnAs per oproep: 1000
+## <a name="update-knowledge-base-call-limits"></a>Aanroeplimieten voor Knowledge Base bijwerken
+Deze staan voor de limieten voor elke updateactie; dat wil zeggen, klikken op *Opslaan en trainen* of de UpdateKnowledgeBase-API aanroepen.
+* Lengte van elke bronnaam: 300
+* Aanbevolen maximum aantal alternatieve vragen toegevoegd of verwijderd: 300
+* Maximum aantal metagegevensvelden dat is toegevoegd of verwijderd: 10
+* Maximum aantal URL's dat kan worden vernieuwd: 5
+* Maximumaantal toegestane QnA's per aanroep: 1000
+
+## <a name="add-unstructured-file-limits"></a>Niet-gestructureerde bestandslimieten toevoegen
+
+> [!NOTE]
+> * Als u grotere bestanden wilt gebruiken dan de limiet toestaat, kunt u het bestand ops delen in kleinere bestanden voordat u ze naar de API verstuurt. 
+
+Deze vertegenwoordigen de limieten wanneer ongestructureerde bestanden worden gebruikt voor het maken van *KB* of het aanroepen van de CreateKnowledgeBase-API:
+* Lengte van het bestand: de eerste 32000 tekens worden geëxtrah
+* Maximaal 3 antwoorden per bestand.
+
+## <a name="prebuilt-question-answering-limits"></a>Vooraf gebouwde limieten voor het beantwoorden van vragen
+
+> [!NOTE]
+> * Als u grotere documenten wilt gebruiken dan de limiet toestaat, kunt u de tekst in kleinere stukken tekst ops delen voordat u ze naar de API verstuurt. 
+> * Een document bestaat uit één tekenreeks van teksttekens.  
+
+Deze vertegenwoordigen de limieten wanneer vooraf gebouwde API wordt gebruikt om een *antwoord te* genereren of de GenerateAnswer-API aan te roepen:
+* Aantal documenten: 5
+* Maximale grootte van één document: 5120 tekens
+* Maximaal 3 antwoorden per document.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over wanneer en hoe u de [service prijs categorieën](How-To/set-up-qnamaker-service-azure.md#upgrade-qna-maker-sku)wijzigt.
+Meer informatie over wanneer en hoe u [de serviceprijscategorie wijzigt.](How-To/set-up-qnamaker-service-azure.md#upgrade-qna-maker-sku)

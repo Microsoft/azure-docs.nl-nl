@@ -4,16 +4,16 @@ description: Als u uiterst beschikbare en flexibele toepassingen in Azure wilt m
 author: prsandhu
 ms.service: azure
 ms.topic: conceptual
-ms.date: 04/13/2021
+ms.date: 04/21/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: b59062395c0b05f36dd0f5bd00fbd1acb3ccb2a9
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 4c592c2d67df1e792200cc36449a6268807bbb56
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107529800"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816256"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
@@ -27,16 +27,16 @@ Alle Azure-beheerservices zijn ontworpen om bestand te zijn tegen storingen op r
 ![conceptuele weergave van een Azure-regio met 3 zones](./media/az-region/azure-region-availability-zones.png)
 
 
-Azure-services die Beschikbaarheidszones kunnen worden onderverdeeld in drie categorieën: **zone-redundante** en **niet-regionale** services.  Workloads van klanten kunnen worden gecategoriseerd om elk van deze architectuurscenario's te gebruiken om te voldoen aan de prestaties en duurzaamheid van toepassingen.
+Azure-services Beschikbaarheidszones kunnen worden onderverdeeld in drie categorieën: **zone-redundante** en **niet-regionale** services.  Workloads van klanten kunnen worden gecategoriseerd om elk van deze architectuurscenario's te gebruiken om te voldoen aan de prestaties en duurzaamheid van toepassingen.
 
-- **Zonelijke services:** een resource kan worden geïmplementeerd in een specifieke, zelf geselecteerde beschikbaarheidszone om strengere latentie- of prestatievereisten te bereiken.  Tolerantie is zelf ontworpen door toepassingen en gegevens te repliceren naar een of meer zones in de regio.  Resources kunnen worden vastgemaakt aan een specifieke zone. Virtuele machines, beheerde schijven of standaard-IP-adressen kunnen bijvoorbeeld worden vastgemaakt aan een specifieke zone, waardoor de tolerantie wordt verhoogd door een of meer exemplaren van resources over zones te verdelen.
+- **Zonespecifieke services:** een resource kan worden geïmplementeerd in een specifieke, zelf geselecteerde beschikbaarheidszone om strengere latentie- of prestatievereisten te bereiken.  Tolerantie wordt zelf ontworpen door toepassingen en gegevens te repliceren naar een of meer zones in de regio.  Resources kunnen worden vastgemaakt aan een specifieke zone. Virtuele machines, beheerde schijven of standaard-IP-adressen kunnen bijvoorbeeld worden vastgemaakt aan een specifieke zone, waardoor de tolerantie wordt verhoogd door een of meer exemplaren van resources te verdelen over zones.
 
-- **Zone-redundante services:** het Azure-platform repliceert de resource en gegevens tussen zones.  Microsoft beheert de levering van hoge beschikbaarheid omdat Azure automatisch exemplaren binnen de regio repliceert en distribueert.  ZRS repliceert bijvoorbeeld de gegevens in drie zones, zodat een zonefout geen invloed heeft op de ha van de gegevens. 
+- **Zone-redundante services:** resources worden automatisch gerepliceerd of gedistribueerd over zones. ZRS repliceert bijvoorbeeld de gegevens in drie zones, zodat een zonefout geen invloed heeft op de ha van de gegevens.  
 
 - **Niet-regionale services: services** zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval. 
 
 
-Als u uitgebreide bedrijfscontinuïteit in Azure wilt bereiken, bouwt u uw toepassingsarchitectuur met behulp van de combinatie van Beschikbaarheidszones met Azure-regioparen. U kunt uw toepassingen en gegevens synchroon repliceren met behulp van Beschikbaarheidszones binnen een Azure-regio voor hoge beschikbaarheid en asynchroon repliceren tussen Azure-regio's voor bescherming tegen noodherstel. Lees Oplossingen bouwen voor hoge beschikbaarheid met behulp van Beschikbaarheidszones [voor meer Beschikbaarheidszones.](/azure/architecture/high-availability/building-solutions-for-high-availability) 
+Voor uitgebreide bedrijfscontinuïteit in Azure bouwt u uw toepassingsarchitectuur met behulp van de combinatie van Beschikbaarheidszones met Azure-regioparen. U kunt uw toepassingen en gegevens synchroon repliceren met behulp van Beschikbaarheidszones binnen een Azure-regio voor hoge beschikbaarheid en asynchroon repliceren tussen Azure-regio's voor bescherming tegen noodherstel. Lees Oplossingen bouwen voor [hoge beschikbaarheid met behulp van](/azure/architecture/high-availability/building-solutions-for-high-availability)Beschikbaarheidszones . 
 
 ## <a name="azure-services-supporting-availability-zones"></a>Azure-services die ondersteuning Beschikbaarheidszones
 
@@ -72,7 +72,7 @@ Als u uitgebreide bedrijfscontinuïteit in Azure wilt bereiken, bouwt u uw toepa
 
 ### <a name="zone-resilient-services"></a>Zone Resilient Services 
 
-:globe_with_meridians: niet-regionale services: services zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval.
+:globe_with_meridians: niet-regionale services : services zijn altijd beschikbaar vanuit Azure-geografieën en zijn bestand tegen zonebrede uitval en regiobrede uitval.
 
 :large_blue_diamond: bestand tegen zonebrede uitval 
 
@@ -219,7 +219,7 @@ Azure-beschikbaarheidszones zijn beschikbaar met uw Azure-abonnement. Meer infor
 - [Een beheerde schijf toevoegen met Behulp van PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
 - [Een zone-redundante virtuele-machineschaalset maken](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
 - [VM's verdelen over zones met behulp van Standard Load Balancer met een zone-redundante front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
-- [VM's binnen een zone met een Standard Load Balancer met een zonelijke front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
+- [Load balancer VM's binnen een zone met behulp van Standard Load Balancer zone met een zone-front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard)
 - [Zone-redundante opslag](../storage/common/storage-redundancy.md)
 - [SQL Database algemeen gebruik](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
 - [Geo-noodherstel Event Hubs](../event-hubs/event-hubs-geo-dr.md#availability-zones)

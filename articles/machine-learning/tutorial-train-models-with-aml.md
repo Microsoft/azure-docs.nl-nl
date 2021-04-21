@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 09/28/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 85dea807ee09338e7f0e9e388f6b196fd3beef33
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 6c5691759983d8ec40598834e5dbcd507ccf00cf
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104588661"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816868"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Zelfstudie: Modellen voor de classificatie van afbeeldingen trainen met MNIST-gegevens en scikit-learn 
 
@@ -93,7 +93,7 @@ print(ws.name, ws.location, ws.resource_group, sep='\t')
 ```
 
 >[!NOTE]
-> De eerste keer dat u de volgende code uitvoert, wordt u mogelijk gevraagd om u te verifiëren bij uw werk ruimte. Volg de instructies op het scherm.
+> U wordt mogelijk gevraagd om u te verifiëren bij uw werkruimte wanneer u de volgende code de eerste keer hebt uitgevoerd. Volg de instructies op het scherm.
 
 ### <a name="create-an-experiment"></a>Een experiment maken
 
@@ -396,7 +396,7 @@ Aan het einde van de training ziet de widget er als volgt uit:
 
 ![Notebook-widget](./media/tutorial-train-models-with-aml/widget.png)
 
-Als u een uitvoering wilt annuleren, kunt u [deze instructies](./how-to-manage-runs.md) volgen.
+Als u een uitvoering wilt annuleren, kunt u [deze instructies](./how-to-track-monitor-analyze-runs.md) volgen.
 
 ### <a name="get-log-results-upon-completion"></a>Resultaten van logboeken weergeven bij voltooiing
 

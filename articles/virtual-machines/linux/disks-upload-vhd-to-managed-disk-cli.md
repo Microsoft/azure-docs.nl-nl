@@ -8,12 +8,12 @@ ms.date: 06/15/2020
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 285f0acd5097ce68cddee6f732b17944dffb0eba
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 0f48856f085737040ca16afcca1e56be1da4843e
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107762565"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816742"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-cli"></a>Een VHD uploaden naar Azure of een beheerde schijf kopiëren naar een andere regio - Azure CLI
 
@@ -59,7 +59,7 @@ Als u een Premium SSD of een standard SSD wilt uploaden, vervangt u **standard_l
 
 Nu u een lege beheerde schijf hebt gemaakt die is geconfigureerd voor het uploadproces, kunt u er een VHD naar uploaden. Als u een VHD naar de schijf wilt uploaden, hebt u een schrijfbare SAS nodig, zodat u hier naar kunt verwijzen als de bestemming voor uw upload.
 
-Als u een beschrijfbare SAS van uw lege beheerde schijf wilt genereren, vervangt u `<yourdiskname>` en en gebruikt u de volgende `<yourresourcegroupname>` opdracht:
+Als u een beschrijfbare SAS van uw lege beheerde schijf wilt genereren, vervangt u `<yourdiskname>` en en en gebruikt u de volgende `<yourresourcegroupname>` opdracht:
 
 ```azurecli
 az disk grant-access -n <yourdiskname> -g <yourresourcegroupname> --access-level Write --duration-in-seconds 86400
@@ -122,7 +122,7 @@ targetSASURI=$(az disk grant-access -n $targetDiskName -g $targetRG  --access-le
 
 sourceSASURI=$(az disk grant-access -n $sourceDiskName -g $sourceRG --duration-in-seconds 86400 --query [accessSas] -o tsv)
 
-.\azcopy copy $sourceSASURI $targetSASURI --blob-type PageBlob
+azcopy copy $sourceSASURI $targetSASURI --blob-type PageBlob
 
 az disk revoke-access -n $sourceDiskName -g $sourceRG
 

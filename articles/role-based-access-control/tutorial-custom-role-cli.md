@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 319bca74c8e781e5dc5022e9fb901b2edca24a80
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e3743697d58d0f5b167b123df59bc5638aa60489
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87485640"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771673"
 ---
 # <a name="tutorial-create-an-azure-custom-role-using-azure-cli"></a>Zelfstudie: Een aangepaste Azure-rol maken met Azure CLI
 
@@ -86,7 +86,7 @@ De eenvoudigste manier om een aangepaste rol te maken, is door een JSON-sjabloon
     "Microsoft.Support/*"
     ```
 
-1. De id van uw abonnement kunt u opvragen met de opdracht [az account list](/cli/azure/account#az-account-list).
+1. De id van uw abonnement kunt u opvragen met de opdracht [az account list](/cli/azure/account#az_account_list).
 
     ```azurecli
     az account list --output table
@@ -118,7 +118,7 @@ De eenvoudigste manier om een aangepaste rol te maken, is door een JSON-sjabloon
     }
     ```
     
-1. Gebruik voor het maken van de nieuwe aangepaste rol de opdracht [az role definition create](/cli/azure/role/definition#az-role-definition-create) en geef het JSON-definitiebestand voor de rol op.
+1. Gebruik voor het maken van de nieuwe aangepaste rol de opdracht [az role definition create](/cli/azure/role/definition#az_role_definition_create) en geef het JSON-definitiebestand voor de rol op.
 
     ```azurecli
     az role definition create --role-definition "~/CustomRoles/ReaderSupportRole.json"
@@ -155,7 +155,7 @@ De eenvoudigste manier om een aangepaste rol te maken, is door een JSON-sjabloon
 
 ## <a name="list-custom-roles"></a>Aangepaste rollen opvragen
 
-- Als u een overzicht wilt zien van alle aangepaste rollen, gebruikt u de opdracht [az role definition list](/cli/azure/role/definition#az-role-definition-list) met de parameter `--custom-role-only`.
+- Als u een overzicht wilt zien van alle aangepaste rollen, gebruikt u de opdracht [az role definition list](/cli/azure/role/definition#az_role_definition_list) met de parameter `--custom-role-only`.
 
     ```azurecli
     az role definition list --custom-role-only true
@@ -225,7 +225,7 @@ Als u de aangepaste rol wilt bijwerken, moet u eerst het JSON-bestand bijwerken 
     }
     ```
         
-1. Als u de aangepaste rol wilt bijwerken, gebruikt u de opdracht [az role definition update](/cli/azure/role/definition#az-role-definition-update) en geeft u het bijgewerkte JSON-bestand op.
+1. Als u de aangepaste rol wilt bijwerken, gebruikt u de opdracht [az role definition update](/cli/azure/role/definition#az_role_definition_update) en geeft u het bijgewerkte JSON-bestand op.
 
     ```azurecli
     az role definition update --role-definition "~/CustomRoles/ReaderSupportRole.json"
@@ -261,7 +261,7 @@ Als u de aangepaste rol wilt bijwerken, moet u eerst het JSON-bestand bijwerken 
     
 ## <a name="delete-a-custom-role"></a>Een aangepaste rol verwijderen
 
-- Gebruik de opdracht [az role definition delete](/cli/azure/role/definition#az-role-definition-delete) en geef de naam of id van de rol op om de aangepaste rol te verwijderen.
+- Gebruik de opdracht [az role definition delete](/cli/azure/role/definition#az_role_definition_delete) en geef de naam of id van de rol op om de aangepaste rol te verwijderen.
 
     ```azurecli
     az role definition delete --name "Reader Support Tickets"

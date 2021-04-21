@@ -8,16 +8,13 @@ ms.topic: quickstart
 ms.service: azure-analysis-services
 tags:
 - azure-resource-manager
-ms.custom:
-- subject-armqs
-- references_regions
-- mode-arm
-ms.openlocfilehash: 3e9210bb94cca354a7c0a5cb5c81b6153900b4ec
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.custom: devx-track-azurepowershell - subject-armqs - references_regions - mode-arm
+ms.openlocfilehash: e7203f4b5890ab81cbf337c5f3201d85a3aef0c0
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107538214"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107769362"
 ---
 # <a name="quickstart-create-a-server---arm-template"></a>Quickstart: Een server maken - ARM-sjabloon
 

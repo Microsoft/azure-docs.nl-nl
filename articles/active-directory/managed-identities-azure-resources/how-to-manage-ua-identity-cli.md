@@ -1,6 +1,6 @@
 ---
-title: Door de gebruiker toegewezen beheerde identiteit beheren-Azure CLI-Azure AD
-description: Stapsgewijze instructies voor het maken, weer geven en verwijderen van een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure CLI.
+title: Door de gebruiker toegewezen beheerde identiteit beheren - Azure CLI - Azure AD
+description: Stapsgewijs instructies voor het maken, opsn en verwijderen van een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure CLI.
 services: active-directory
 documentationcenter: ''
 author: barclayn
@@ -16,19 +16,19 @@ ms.date: 04/17/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 68f305156645d69049519cd383f06b28ab9b5e03
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a26f13b71ae96f4d6593cb4a4d9107f8ef6c207c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98184863"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784871"
 ---
-# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-the-azure-cli"></a>Een door de gebruiker toegewezen beheerde identiteit maken, weer geven of verwijderen met behulp van de Azure CLI
+# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-the-azure-cli"></a>Een door de gebruiker toegewezen beheerde identiteit maken, op een lijst zetten of verwijderen met behulp van de Azure CLI
 
 
-Beheerde identiteiten voor Azure-resources bieden Azure-Services met een beheerde identiteit in Azure Active Directory. U kunt deze identiteit gebruiken voor verificatie bij services die ondersteuning bieden voor Azure AD-verificatie, zonder dat er referenties in uw code nodig zijn. 
+Beheerde identiteiten voor Azure-resources bieden Azure-services een beheerde identiteit in Azure Active Directory. U kunt deze identiteit gebruiken om te verifiëren bij services die Azure AD-verificatie ondersteunen, zonder referenties in uw code te hoeven gebruiken. 
 
-In dit artikel leert u hoe u een door de gebruiker toegewezen beheerde identiteit kunt maken, weer geven en verwijderen met behulp van Azure CLI.
+In dit artikel leert u hoe u een door de gebruiker toegewezen beheerde identiteit maakt, vermeldt en verwijdert met behulp van Azure CLI.
 
 Als u nog geen Azure-account hebt, [registreer u dan voor een gratis account](https://azure.microsoft.com/free/) voordat u verdergaat.
 
@@ -39,47 +39,47 @@ Als u nog geen Azure-account hebt, [registreer u dan voor een gratis account](ht
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 > [!NOTE]   
-> Als u de gebruikers machtigingen wilt wijzigen wanneer u een app Service-Principal gebruikt met CLI, moet u de Service-Principal extra machtigingen opgeven in azure AD Graph API als delen van CLI GET-aanvragen uitvoeren voor de Graph API. Als dat niet het geval is, kunt u het bericht ' onvoldoende bevoegdheden om de bewerking te volt ooien ' ontvangen. Als u dit wilt doen, gaat u naar de registratie van de app in Azure Active Directory, selecteert u uw app, klikt u op API-machtigingen, schuift u omlaag en selecteert u Azure Active Directory Graph. Van daaruit selecteert u toepassings machtigingen en voegt u vervolgens de juiste machtigingen toe. 
+> Als u gebruikersmachtigingen wilt wijzigen wanneer u een app-service-principal gebruikt met behulp van CLI, moet u de service-principal aanvullende machtigingen in Azure AD Graph API als delen van CLI GET-aanvragen uitvoeren op de Graph API. Anders ontvangt u mogelijk het bericht 'Onvoldoende bevoegdheden om de bewerking te voltooien'. Hiervoor gaat u naar de app-registratie in Azure Active Directory, selecteert u uw app, klikt u op API-machtigingen, schuift u omlaag en selecteert u Azure Active Directory Graph. Selecteer hier Toepassingsmachtigingen en voeg vervolgens de juiste machtigingen toe. 
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Een door de gebruiker toegewezen beheerde identiteit maken 
 
-Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, moet uw account beschikken over de rol toewijzing [beheerde identiteits bijdrage](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) .
+Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, heeft uw account de roltoewijzing [Inzender voor beheerde](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) identiteit nodig.
 
-Gebruik de opdracht [AZ Identity Create](/cli/azure/identity#az-identity-create) om een door de gebruiker toegewezen beheerde identiteit te maken. Met de `-g` para meter wordt de resource groep opgegeven waarin de door de gebruiker toegewezen beheerde identiteit moet worden gemaakt `-n` . de para meter geeft de naam op. Vervang de `<RESOURCE GROUP>` `<USER ASSIGNED IDENTITY NAME>` para meters en door uw eigen waarden:
+Gebruik de [opdracht az identity create](/cli/azure/identity#az_identity_create) om een door de gebruiker toegewezen beheerde identiteit te maken. De parameter geeft de resourcegroep aan waar de door de gebruiker toegewezen beheerde identiteit moet worden gemaakt en de `-g` parameter geeft de naam `-n` op. Vervang de `<RESOURCE GROUP>` `<USER ASSIGNED IDENTITY NAME>` parameterwaarden en door uw eigen waarden:
 
 [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
 ```azurecli-interactive
 az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
 ```
-## <a name="list-user-assigned-managed-identities"></a>Door de gebruiker toegewezen beheerde identiteiten weer geven
+## <a name="list-user-assigned-managed-identities"></a>Lijst met door de gebruiker toegewezen beheerde identiteiten
 
-Als u een door de gebruiker toegewezen beheerde identiteit wilt weer geven/lezen, moet uw account beschikken over de rol [Managed Identity](../../role-based-access-control/built-in-roles.md#managed-identity-operator) of [Managed id contributor](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) .
+Als u een door de gebruiker toegewezen beheerde [](../../role-based-access-control/built-in-roles.md#managed-identity-operator) identiteit wilt zien/lezen, moet uw account de roltoewijzing Operator voor beheerde identiteit of Inzender voor [beheerde](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) identiteit hebben.
 
-Als u door de gebruiker toegewezen beheerde identiteiten wilt weer geven, gebruikt u de opdracht [AZ ID List](/cli/azure/identity#az-identity-list) . Vervang de `<RESOURCE GROUP>` door uw eigen waarde:
+Gebruik de opdracht [az identity list](/cli/azure/identity#az_identity_list) om door de gebruiker toegewezen beheerde identiteiten weer te geven. Vervang de `<RESOURCE GROUP>` door uw eigen waarde:
 
 ```azurecli-interactive
 az identity list -g <RESOURCE GROUP>
 ```
 
-In het JSON-antwoord hebben door de gebruiker toegewezen beheerde identiteiten een `"Microsoft.ManagedIdentity/userAssignedIdentities"` waarde geretourneerd voor de sleutel, `type` .
+In het JSON-antwoord hebben door de gebruiker toegewezen beheerde identiteiten `"Microsoft.ManagedIdentity/userAssignedIdentities"` een waarde geretourneerd voor sleutel, `type` .
 
 `"type": "Microsoft.ManagedIdentity/userAssignedIdentities"`
 
 ## <a name="delete-a-user-assigned-managed-identity"></a>Een door de gebruiker toegewezen beheerde identiteit verwijderen
 
-Als u een door de gebruiker toegewezen beheerde identiteit wilt verwijderen, moet uw account beschikken over de rol toewijzing [beheerde identiteits bijdrage](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) .
+Als u een door de gebruiker toegewezen beheerde identiteit wilt verwijderen, heeft uw account de roltoewijzing Inzender [voor beheerde](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) identiteit nodig.
 
-Als u een door de gebruiker toegewezen beheerde identiteit wilt verwijderen, gebruikt u de opdracht [AZ Identity delete](/cli/azure/identity#az-identity-delete) .  De para meter-n specificeert de naam en de-g para meter geeft de resource groep op waarin de door de gebruiker toegewezen beheerde identiteit is gemaakt. Vervang de `<USER ASSIGNED IDENTITY NAME>` `<RESOURCE GROUP>` para meters en waarden door uw eigen waarden:
+Als u een door de gebruiker toegewezen beheerde identiteit wilt verwijderen, gebruikt u [de opdracht az identity delete.](/cli/azure/identity#az_identity_delete)  De -n parameter geeft u de naam en de -g parameter geeft u de resourcegroep waar de door de gebruiker toegewezen beheerde identiteit is gemaakt. Vervang de `<USER ASSIGNED IDENTITY NAME>` parameters en door uw eigen `<RESOURCE GROUP>` waarden:
 
 ```azurecli-interactive
 az identity delete -n <USER ASSIGNED IDENTITY NAME> -g <RESOURCE GROUP>
 ```
 > [!NOTE]
-> Als u een door de gebruiker toegewezen beheerde identiteit verwijdert, wordt de verwijzing niet verwijderd uit een resource waaraan deze is toegewezen. Verwijder deze uit de VM-VMSS met behulp van de `az vm/vmss identity remove` opdracht
+> Als u een door de gebruiker toegewezen beheerde identiteit verwijdert, wordt de verwijzing niet verwijderd uit een resource aan wie deze is toegewezen. Verwijder deze uit VM/VMSS met behulp van de `az vm/vmss identity remove` opdracht
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [AZ Identity](/cli/azure/identity)voor een volledige lijst met Azure cli-identiteits opdrachten.
+Zie az identity voor een volledige lijst met Azure [CLI-identiteitsopdrachten.](/cli/azure/identity)
 
-Voor informatie over het toewijzen van een door de gebruiker toegewezen beheerde identiteit aan een Azure-VM raadpleegt u [beheerde identiteiten voor Azure-resources configureren op een virtuele Azure-machine met behulp van Azure cli](qs-configure-cli-windows-vm.md#user-assigned-managed-identity)
+Zie Beheerde identiteiten configureren voor Azure-resources op een [Azure-VM](qs-configure-cli-windows-vm.md#user-assigned-managed-identity) met behulp van Azure CLI voor meer informatie over het toewijzen van een door de gebruiker toegewezen beheerde identiteit aan een Azure-VM

@@ -5,12 +5,12 @@ ms.assetid: 6feac128-c728-4491-8b79-962da9a40788
 ms.topic: quickstart
 ms.date: 08/01/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: f6876d0aef0d3d87e038b623c395f8368a14e90c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c04e1b33233abebde746fd7fb1ef8d761dba7e4e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97561848"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107788201"
 ---
 # <a name="create-a-php-web-app-in-azure-app-service"></a>Een PHP-web-app maken in Azure App Service
 
@@ -78,9 +78,9 @@ Druk in uw terminalvenster op **Ctrl + C** om de webserver af te sluiten.
 
 ## <a name="create-a-web-app"></a>Een webtoepassing maken
 
-Maak in Cloud Shell een web-app in het App Service-plan van `myAppServicePlan` met de opdracht [`az webapp create`](/cli/azure/webapp#az-webapp-create). 
+Maak in Cloud Shell een web-app in het App Service-plan van `myAppServicePlan` met de opdracht [`az webapp create`](/cli/azure/webapp#az_webapp_create). 
 
-Vervang in het volgende voorbeeld `<app-name>` door een unieke naam (geldige tekens zijn `a-z`, `0-9`, en `-`). De runtime is ingesteld op `PHP|7.4`. Voer [`az webapp list-runtimes`](/cli/azure/webapp#az-webapp-list-runtimes) uit als u alle ondersteunde runtimes wilt zien. 
+Vervang in het volgende voorbeeld `<app-name>` door een unieke naam (geldige tekens zijn `a-z`, `0-9`, en `-`). De runtime is ingesteld op `PHP|7.4`. Voer [`az webapp list-runtimes`](/cli/azure/webapp#az_webapp_list_runtimes) uit als u alle ondersteunde runtimes wilt zien. 
 
 ```azurecli-interactive
 # Bash

@@ -1,42 +1,42 @@
 ---
-title: Een Azure Kubernetes-service starten en stoppen (AKS)
-description: Meer informatie over het stoppen of starten van een Azure Kubernetes service-cluster (AKS).
+title: Een AKS (Azure Kubernetes Service) starten en stoppen
+description: Meer informatie over het stoppen of starten van Azure Kubernetes Service cluster (AKS).
 services: container-service
 ms.topic: article
 ms.date: 09/24/2020
 author: palma21
-ms.openlocfilehash: 87d51f9c1d084faf79c7ec1cf1255a6fb3c8245d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2d3c946bc2f98b0c06fe33dcaaa77a5399f6d56b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103201006"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782725"
 ---
-# <a name="stop-and-start-an-azure-kubernetes-service-aks-cluster"></a>Een AKS-cluster (Azure Kubernetes service) stoppen en starten
+# <a name="stop-and-start-an-azure-kubernetes-service-aks-cluster"></a>Een AKS-cluster (Azure Kubernetes Service) stoppen en starten
 
-Uw AKS-workloads hoeven mogelijk niet continu te worden uitgevoerd, bijvoorbeeld een ontwikkelings cluster dat alleen tijdens kantoor uren wordt gebruikt. Dit leidt ertoe dat uw Azure Kubernetes service (AKS)-cluster niet actief is en dat niet meer dan de systeem onderdelen uitvoert. U kunt de cluster footprint verminderen door [alle `User` knooppunt groepen te schalen naar 0](scale-cluster.md#scale-user-node-pools-to-0), maar uw [ `System` pool](use-system-pools.md) is nog steeds vereist voor het uitvoeren van de systeem onderdelen terwijl het cluster actief is. Als u uw kosten verder in deze peri Oden wilt optimaliseren, kunt u het cluster volledig uitschakelen (stoppen). Met deze actie worden uw besturings vlak en agent knooppunten helemaal gestopt, zodat u op alle berekenings kosten kunt besparen, terwijl u alle objecten en de cluster status opslaat voor wanneer u het opnieuw start. U kunt vervolgens direct naar rechts gaan waar u na het weekend bent of dat uw cluster alleen actief is terwijl u uw batch-taken uitvoert.
+Uw AKS-workloads hoeven mogelijk niet continu te worden uitgevoerd, bijvoorbeeld een ontwikkelcluster dat alleen tijdens bedrijfsuren wordt gebruikt. Dit leidt tot momenten waarop uw AKS-cluster (Azure Kubernetes Service) mogelijk inactief is en niet meer wordt uitgevoerd dan de systeemonderdelen. U kunt de footprint van het cluster verminderen door alle knooppuntgroepen te schalen naar [ `User` 0,](scale-cluster.md#scale-user-node-pools-to-0)maar uw [ `System` pool](use-system-pools.md) is nog steeds vereist om de systeemonderdelen uit te voeren terwijl het cluster wordt uitgevoerd. Als u uw kosten tijdens deze perioden verder wilt optimaliseren, kunt u uw cluster volledig uitschakelen (stoppen). Met deze actie worden uw besturingsvlak en agentknooppunten helemaal gestopt, zodat u kunt besparen op alle rekenkosten, terwijl u al uw objecten en clustertoestand behoudt die zijn opgeslagen voor wanneer u deze opnieuw start. U kunt vervolgens verder gaan waar u na een weekend bent gebleven of om uw cluster alleen uit te voeren terwijl u uw batchtaken hebt uitgevoerd.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
+In dit artikel wordt ervan uitgenomen dat u een bestaand AKS-cluster hebt. Als u een AKS-cluster nodig hebt, bekijkt u de AKS-quickstart met behulp van [de Azure CLI][aks-quickstart-cli] of met behulp van de [Azure Portal][aks-quickstart-portal].
 
 ### <a name="limitations"></a>Beperkingen
 
-Bij het gebruik van de functie voor het starten/stoppen van het cluster gelden de volgende beperkingen:
+Wanneer u de clusterfunctie start/stop gebruikt, gelden de volgende beperkingen:
 
-- Deze functie wordt alleen ondersteund voor Virtual Machine Scale Sets-back-upclusters.
-- De cluster status van een gestopt AKS-cluster wordt Maxi maal 12 maanden bewaard. Als uw cluster langer dan 12 maanden wordt gestopt, kan de status van het cluster niet worden hersteld. Zie het [AKS-ondersteunings beleid](support-policies.md)voor meer informatie.
-- U kunt een gestopt AKS-cluster alleen starten of verwijderen. Als u een bewerking wilt uitvoeren zoals schalen of upgraden, start u eerst uw cluster.
+- Deze functie wordt alleen ondersteund voor Virtual Machine Scale Sets ondersteunde clusters.
+- De clustertoestand van een gestopt AKS-cluster blijft maximaal 12 maanden bewaard. Als uw cluster langer dan 12 maanden is gestopt, kan de clustertoestand niet worden hersteld. Zie AKS Support [Policies (AKS-ondersteuningsbeleid) voor meer informatie.](support-policies.md)
+- U kunt alleen een gestopt AKS-cluster starten of verwijderen. Als u een bewerking wilt uitvoeren, zoals schalen of upgraden, start u eerst uw cluster.
 
 ## <a name="stop-an-aks-cluster"></a>Een AKS-cluster stoppen
 
-Met de opdracht kunt u de `az aks stop` knoop punten en het besturings vlak van een actief AKS-cluster stoppen. In het volgende voor beeld wordt een cluster met de naam *myAKSCluster* gestopt:
+U kunt de opdracht gebruiken `az aks stop` om een actief AKS-clusterknooppunten en besturingsvlak te stoppen. In het volgende voorbeeld wordt een cluster met de *naam myAKSCluster gestopt:*
 
 ```azurecli-interactive
 az aks stop --name myAKSCluster --resource-group myResourceGroup
 ```
 
-U kunt controleren wanneer het cluster wordt gestopt door de opdracht [AZ AKS show][az-aks-show] te gebruiken en de `powerState` weer gave te bevestigen zoals `Stopped` op de onderstaande uitvoer:
+U kunt controleren wanneer uw cluster is gestopt met behulp van de [opdracht az aks show][az-aks-show] en de weergegeven zoals in de `powerState` `Stopped` onderstaande uitvoer bevestigen:
 
 ```json
 {
@@ -52,21 +52,21 @@ U kunt controleren wanneer het cluster wordt gestopt door de opdracht [AZ AKS sh
 }
 ```
 
-Als de `provisioningState` laat zien `Stopping` , betekent dit dat uw cluster nog niet volledig is gestopt.
+Als de `provisioningState` laat zien dat uw cluster nog niet volledig is `Stopping` gestopt.
 
 > [!IMPORTANT]
-> Als u pod- [Verstorings budgetten](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) gebruikt, kan de stop bewerking langer duren omdat het proces voor het uitvoeren van de onderbreking meer tijd in beslag neemt.
+> Als u [podonderbrekingsbudgetten](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) gebruikt, kan de stopbewerking langer duren omdat het opslekken meer tijd in beslag neemt.
 
 ## <a name="start-an-aks-cluster"></a>Een AKS-cluster starten
 
-Met de opdracht kunt u de `az aks start` knoop punten en het besturings vlak van een gestopt AKS-cluster starten. Het cluster wordt opnieuw opgestart met de vorige status van het besturings systeem en het aantal agent knooppunten.  
-In het volgende voor beeld wordt een cluster met de naam *myAKSCluster* gestart:
+U kunt de opdracht gebruiken om de knooppunten en het besturingsvlak van een `az aks start` gestopt AKS-cluster te starten. Het cluster wordt opnieuw opgestart met de vorige status van het besturingsvlak en het aantal agentknooppunten.  
+In het volgende voorbeeld wordt een cluster met de *naam myAKSCluster gestart:*
 
 ```azurecli-interactive
 az aks start --name myAKSCluster --resource-group myResourceGroup
 ```
 
-U kunt controleren wanneer het cluster is gestart met behulp van de opdracht [AZ AKS show][az-aks-show] en de `powerState` weer gave bevestigen `Running` zoals op de onderstaande uitvoer:
+U kunt controleren wanneer uw cluster is gestart met behulp van de [opdracht az aks show][az-aks-show] en de shows als bevestigen in de `powerState` `Running` onderstaande uitvoer:
 
 ```json
 {
@@ -82,13 +82,13 @@ U kunt controleren wanneer het cluster is gestart met behulp van de opdracht [AZ
 }
 ```
 
-Als de `provisioningState` laat zien `Starting` , betekent dit dat uw cluster nog niet volledig is gestart.
+Als de `provisioningState` laat zien dat uw cluster nog niet volledig is `Starting` gestart.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- `User`Zie [ `User` groepen schalen tot 0](scale-cluster.md#scale-user-node-pools-to-0)voor meer informatie over het schalen van groepen naar 0.
-- Zie [een steun knooppunt groep toevoegen aan AKS](spot-node-pool.md)voor meer informatie over het besparen van kosten met behulp van spot-exemplaren.
-- Zie [AKS-ondersteunings beleid](support-policies.md)voor meer informatie over het AKS-ondersteunings beleid.
+- Zie Pools schalen naar 0 voor meer informatie over het schalen `User` [van pools naar `User` 0.](scale-cluster.md#scale-user-node-pools-to-0)
+- Zie Een spot-knooppuntgroep toevoegen aan AKS voor meer informatie over het besparen van kosten [met spot-exemplaren.](spot-node-pool.md)
+- Zie AKS-ondersteuningsbeleid voor meer informatie over [het AKS-ondersteuningsbeleid.](support-policies.md)
 
 <!-- LINKS - external -->
 
@@ -96,9 +96,9 @@ Als de `provisioningState` laat zien `Starting` , betekent dit dat uw cluster no
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
-[az-feature-register]: /cli/azure/feature#az-feature-register
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
+[az-feature-register]: /cli/azure/feature#az_feature_register
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-provider-register]: /cli/azure/provider#az_provider_register
 [az-aks-show]: /cli/azure/aks#az_aks_show

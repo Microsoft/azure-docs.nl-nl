@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 02/14/2021
-ms.openlocfilehash: 727196f274db3abae75a38d3ecdf31a78dec0fab
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: d21ee7a60d11a154737c5380ec20d3e9c4490962
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107725940"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786059"
 ---
 # <a name="how-to-update-alert-rules-or-action-rules-when-their-target-resource-moves-to-a-different-azure-region"></a>Waarschuwingsregels of actieregels bijwerken wanneer de doelresource wordt verplaatst naar een andere Azure-regio
 
@@ -47,7 +47,7 @@ Het probleem is van toepassing op deze regeltypen:
 
 - Waarschuwingsregels voor activiteitenlogboek
 - Actieregels
-- Waarschuwingen voor metrische gegevens: zie de volgende sectie Waarschuwingsregels op basis van metrische [gegevens voor meer informatie.](#alert-rules-based-on-metrics)
+- Waarschuwingen voor metrische gegevens: zie de volgende sectie Waarschuwingsregels op basis van [metrische gegevens voor meer informatie.](#alert-rules-based-on-metrics)
 
 > [!NOTE]
 > Waarschuwingsregels voor zoeken in logboeken en waarschuwingsregels voor slimme detector worden niet beïnvloed omdat hun bereik een werkruimte of Application Insights. Geen van deze scopes ondersteunt momenteel regiobewegingen.
@@ -104,8 +104,8 @@ Als **slechts enkele** resources in het bereik zijn verplaatst, moet u de verpla
 
 ### <a name="change-the-scope-of-a-rule-using-azure-cli"></a>Het bereik van een regel wijzigen met behulp van Azure CLI
 
-1.  Haal de bestaande regel op ([waarschuwingen voor metrische gegevens,](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-show) [waarschuwingen voor activiteitenlogboek).](/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)
-2.  Het regelbereik rechtstreeks bijwerken ([waarschuwingen voor metrische gegevens,](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-update)waarschuwingen [voor activiteitenlogboek](/cli/azure/monitor/activity-log/alert/scope))
+1.  Haal de bestaande regel op ([waarschuwingen voor metrische gegevens,](/cli/azure/monitor/metrics/alert#az_monitor_metrics_alert_show) [waarschuwingen voor activiteitenlogboek).](/cli/azure/monitor/activity-log/alert#az_monitor_activity_log-alert_list)
+2.  Het regelbereik rechtstreeks bijwerken ([waarschuwingen voor metrische gegevens,](/cli/azure/monitor/metrics/alert#az_monitor_metrics_alert_update)waarschuwingen [voor activiteitenlogboek](/cli/azure/monitor/activity-log/alert/scope))
 3.  Splits zo nodig in twee regels (relevant voor sommige gevallen van waarschuwingen voor metrische gegevens, zoals hierboven is aangegeven).
 
 ## <a name="next-steps"></a>Volgende stappen

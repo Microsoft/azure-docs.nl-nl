@@ -1,17 +1,17 @@
 ---
-title: 'Zelf studie: beheerde identiteit om Azure Functions aan te roepen'
+title: 'Zelfstudie: Beheerde identiteit voor het aanroepen van Azure Functions'
 description: Beheerde identiteit gebruiken om Azure Functions aan te roepen vanuit een Azure Spring Cloud-app
 author: MarkGardner
 ms.author: margard
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/10/2020
-ms.openlocfilehash: 99e3611711e9a25119a4428d7736a36073163894
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b737ea751d3b3d2132691e04a1a2cd853748db65
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104879183"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792503"
 ---
 # <a name="tutorial-use-a-managed-identity-to-invoke-azure-functions-from-an-azure-spring-cloud-app"></a>Zelfstudie: Een beheerde identiteit gebruiken om Azure Functions aan te roepen vanuit een Azure Spring Cloud-app
 
@@ -29,7 +29,7 @@ Zowel Azure Functions als App Services hebben ingebouwde ondersteuning voor Azur
 
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resourcegroep die zowel de Functie-app als de Spring Cloud bevat met behulp van de opdracht [az group create](/cli/azure/group#az-group-create):
+Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resourcegroep die zowel de Functie-app als de Spring Cloud bevat met behulp van de opdracht [az group create](/cli/azure/group#az_group_create):
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -37,7 +37,7 @@ az group create --name myResourceGroup --location eastus
 
 
 ## <a name="create-a-function-app"></a>Een functie-app maken
-Als u een functie-app wilt maken, moet u eerst een back-upopslagaccount maken met behulp van de opdracht [az storage account create](/cli/azure/storage/account#az-storage-account-create):
+Als u een functie-app wilt maken, moet u eerst een back-upopslagaccount maken met behulp van de opdracht [az storage account create](/cli/azure/storage/account#az_storage_account_create):
 
 > [!Important]
 > Elke functie-app en elk opslagaccount moeten een unieke naam hebben. Vervang in de volgende voorbeelden <your-functionapp-name> door de naam van uw functie-app en <your-storageaccount-name> door de naam van uw opslagaccount.

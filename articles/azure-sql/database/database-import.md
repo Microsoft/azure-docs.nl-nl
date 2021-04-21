@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/29/2020
-ms.openlocfilehash: 2412d3d2851d1b4d251b50ff3068b7dcafcccee8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: eddcab2c0a34ef437e4f2f1e2203fee9065133a4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105642034"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781879"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Quickstart: Een BACPAC-bestand importeren in een database in Azure SQL Database of Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -89,7 +89,7 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 > [Een SQL Managed Instance](../managed-instance/sql-managed-instance-paas-overview.md) biedt momenteel geen ondersteuning voor het migreren van een database naar een instantiedatabase vanuit een BACPAC-bestand met behulp van Azure PowerShell. Als u in een SQL Managed Instance wilt importeren, gebruikt u SQL Server Management Studio of SQLPackage.
 
 > [!NOTE]
-> Op de machines waarmee import-/exportaanvragen worden verwerkt die zijn verzonden via de portal of PowerShell, moet het BACPAC-bestand worden opgeslagen, evenals tijdelijke bestanden die worden gegenereerd door Data-Tier Application Framework (DacFX). De benodigde schijfruimte varieert aanzienlijk tussen databases met dezelfde grootte. Er kan tot drie keer zoveel schijfruimte nodig zijn als de grootte van de database. Machines waarmee de import-/exportaanvraag wordt uitgevoerd, hebben slechts 450 GB lokale schijfruimte. Als gevolg hiervan kunnen sommige aanvragen mislukken met de fout ' er is onvoldoende ruimte op de schijf '. Dit kan worden opgelost door sqlpackage.exe uit te voeren op een machine met voldoende lokale schijfruimte. Bij het importeren/exporteren van databases die groter zijn dan 150 GB, gebruikt u SqlPackage om dit probleem te voorkomen.
+> Op de machines waarmee import-/exportaanvragen worden verwerkt die zijn verzonden via de portal of PowerShell, moet het BACPAC-bestand worden opgeslagen, evenals tijdelijke bestanden die worden gegenereerd door Data-Tier Application Framework (DacFX). De benodigde schijfruimte varieert aanzienlijk tussen databases met dezelfde grootte. Er kan tot drie keer zoveel schijfruimte nodig zijn als de grootte van de database. Machines waarmee de import-/exportaanvraag wordt uitgevoerd, hebben slechts 450 GB lokale schijfruimte. Als gevolg hiervan kunnen sommige aanvragen mislukken met de fout 'Er is onvoldoende ruimte op de schijf'. Dit kan worden opgelost door sqlpackage.exe uit te voeren op een machine met voldoende lokale schijfruimte. Bij het importeren/exporteren van databases die groter zijn dan 150 GB, gebruikt u SqlPackage om dit probleem te voorkomen.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -128,7 +128,7 @@ $importStatus
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Gebruik de opdracht [az-sql-db-import](/cli/azure/sql/db#az-sql-db-import) om een aanvraag voor het importeren van een database te verzenden naar Azure. Afhankelijk van de grootte van de database kan het enige tijd duren voordat de importbewerking is voltooid. Het op DTU gebaseerde inrichtingsmodel ondersteunt de waarden voor geselecteerde databases met een maximale grootte voor elke laag. Bij het importeren van een database [moet u een van deze ondersteunde waarden gebruiken](/sql/t-sql/statements/create-database-transact-sql). 
+Gebruik de opdracht [az-sql-db-import](/cli/azure/sql/db#az_sql_db_import) om een aanvraag voor het importeren van een database te verzenden naar Azure. Afhankelijk van de grootte van de database kan het enige tijd duren voordat de importbewerking is voltooid. Het op DTU gebaseerde inrichtingsmodel ondersteunt de waarden voor geselecteerde databases met een maximale grootte voor elke laag. Bij het importeren van een database [moet u een van deze ondersteunde waarden gebruiken](/sql/t-sql/statements/create-database-transact-sql). 
 
 ```azurecli
 # get the storage account key
@@ -145,9 +145,9 @@ az sql db import --resource-group "<resourceGroup>" --server "<server>" --name "
 > [!TIP]
 > Zie [Database uit een BACPAC-bestand importeren](scripts/import-from-bacpac-powershell.md) voor een ander scriptvoorbeeld.
 
-## <a name="cancel-the-import-request"></a>De import aanvraag annuleren
+## <a name="cancel-the-import-request"></a>De importaanvraag annuleren
 
-Gebruik de [API data base-annuleren](/rest/api/sql/databaseoperations/cancel) of de Power shell [-opdracht stop-AzSqlDatabaseActivity](/powershell/module/az.sql/Stop-AzSqlDatabaseActivity). Hier volgt een voor beeld van een Power shell-opdracht.
+Gebruik de [DATABASE Operations - Cancel API](/rest/api/sql/databaseoperations/cancel) of de Powershell [Stop-AzSqlDatabaseActivity-opdracht](/powershell/module/az.sql/Stop-AzSqlDatabaseActivity), hier een voorbeeld van een PowerShell-opdracht.
 
 ```cmd
 Stop-AzSqlDatabaseActivity -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName -OperationId $Operation.OperationId

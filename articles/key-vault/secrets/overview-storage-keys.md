@@ -9,12 +9,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 09/18/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 871c9f83d7bdc3f4c9e2f3b53c0b855483995152
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 573e4c9d8db3f07f223826ab648f2ef57e1d9c58
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107748606"
+ms.locfileid: "107766313"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Sleutels voor opslagaccounts beheren met Key Vault en de Azure CLI
 > [!IMPORTANT]
@@ -67,14 +67,14 @@ Gebruik de Azure CLI-opdracht [az role assignment create](/cli/azure/role/assign
 
 - `--role`: Geef de Azure-rol 'servicerol Sleuteloperator voor opslagaccounts' door. Deze rol beperkt het toegangsbereik voor uw opslagaccount. Geef voor een klassiek opslagaccount de rol 'servicerol Sleuteloperator voor klassieke opslagaccounts' door.
 - `--assignee`: Geef de waarde 'https://vault.azure.net ' door. Dit is de URL voor Key Vault in de openbare Azure-cloud. (Gebruik voor de Azure Government-cloud '--asingee-object-id'; raadpleeg [Toepassings-id van de service-principal](#service-principal-application-id).)
-- `--scope`: Geef de resource-id voor uw opslagaccount op. Deze ziet eruit als `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`. Als u uw abonnements-id wilt vinden, gebruikt u de Azure CLI-opdracht [az account list](/cli/azure/account?#az-account-list). Als u wilt zoeken naar de naam van het opslagaccount en de resourcegroep van het opslagaccount, gebruikt u de Azure CLI-opdracht [az storage account list](/cli/azure/storage/account?#az-storage-account-list).
+- `--scope`: Geef de resource-id voor uw opslagaccount op. Deze ziet eruit als `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`. Als u uw abonnements-id wilt vinden, gebruikt u de Azure CLI-opdracht [az account list](/cli/azure/account?#az_account_list). Als u wilt zoeken naar de naam van het opslagaccount en de resourcegroep van het opslagaccount, gebruikt u de Azure CLI-opdracht [az storage account list](/cli/azure/storage/account?#az_storage_account_list).
 
 ```azurecli-interactive
 az role assignment create --role "Storage Account Key Operator Service Role" --assignee 'https://vault.azure.net' --scope "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>"
  ```
 ### <a name="give-your-user-account-permission-to-managed-storage-accounts"></a>Uw gebruikersaccount machtigingen geven voor beheerde opslagaccounts
 
-Gebruik de Azure CLI-cmdlet [az keyvault-set-policy](/cli/azure/keyvault?#az-keyvault-set-policy) om het toegangsbeleid van Key Vault bij te werken en machtigingen voor opslagaccounts te verlenen aan uw gebruikersaccount.
+Gebruik de Azure CLI-cmdlet [az keyvault-set-policy](/cli/azure/keyvault?#az_keyvault_set_policy) om het toegangsbeleid van Key Vault bij te werken en machtigingen voor opslagaccounts te verlenen aan uw gebruikersaccount.
 
 ```azurecli-interactive
 # Give your user principal access to all storage account permissions, on your Key Vault instance
@@ -85,11 +85,11 @@ az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --storage
 Houd er rekening mee dat machtigingen voor opslagaccounts niet beschikbaar zijn op de pagina Toegangsbeleid van het opslagaccount in Azure Portal.
 ### <a name="create-a-key-vault-managed-storage-account"></a>Een door Key Vault beheerd opslagaccount maken
 
- Maak een door Key Vault beheerd opslagaccount met behulp van de Azure CLI-opdracht [az keyvault storage](/cli/azure/keyvault/storage?#az-keyvault-storage-add). Stel een periode voor opnieuw genereren van 90 dagen in. Wanneer het tijd is om te roteren, genereert Key Vault de sleutel die niet actief is opnieuw. Vervolgens wordt de zojuist gemaakte sleutel als actief ingesteld. Er wordt altijd slechts één van de sleutels gebruikt voor het uitgeven van SAS-tokens; dit is de actieve sleutel. Geef de opdracht de volgende parameterwaarden:
+ Maak een door Key Vault beheerd opslagaccount met behulp van de Azure CLI-opdracht [az keyvault storage](/cli/azure/keyvault/storage?#az_keyvault_storage_add). Stel een periode voor opnieuw genereren van 90 dagen in. Wanneer het tijd is om te roteren, genereert Key Vault de sleutel die niet actief is opnieuw. Vervolgens wordt de zojuist gemaakte sleutel als actief ingesteld. Er wordt altijd slechts één van de sleutels gebruikt voor het uitgeven van SAS-tokens; dit is de actieve sleutel. Geef de opdracht de volgende parameterwaarden:
 
-- `--vault-name`: Geef de naam van de sleutelkluis door. Als u de naam van de sleutelkluis wilt vinden, gebruikt u de Azure CLI-opdracht [az keyvault list](/cli/azure/keyvault?#az-keyvault-list).
-- `-n`: Geef de naam van het opslagaccount door. Als u de naam van uw opslagaccount wilt vinden, gebruikt u de Azure CLI-opdracht [az storage account list](/cli/azure/storage/account?#az-storage-account-list).
-- `--resource-id`: Geef de resource-id voor uw opslagaccount op. Deze ziet eruit als `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`. Als u uw abonnements-id wilt vinden, gebruikt u de Azure CLI-opdracht [az account list](/cli/azure/account?#az-account-list). Als u wilt zoeken naar de naam van het opslagaccount en de resourcegroep van het opslagaccount, gebruikt u de Azure CLI-opdracht [az storage account list](/cli/azure/storage/account?#az-storage-account-list).
+- `--vault-name`: Geef de naam van de sleutelkluis door. Als u de naam van de sleutelkluis wilt vinden, gebruikt u de Azure CLI-opdracht [az keyvault list](/cli/azure/keyvault?#az_keyvault_list).
+- `-n`: Geef de naam van het opslagaccount door. Als u de naam van uw opslagaccount wilt vinden, gebruikt u de Azure CLI-opdracht [az storage account list](/cli/azure/storage/account?#az_storage_account_list).
+- `--resource-id`: Geef de resource-id voor uw opslagaccount op. Deze ziet eruit als `/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>`. Als u uw abonnements-id wilt vinden, gebruikt u de Azure CLI-opdracht [az account list](/cli/azure/account?#az_account_list). Als u wilt zoeken naar de naam van het opslagaccount en de resourcegroep van het opslagaccount, gebruikt u de Azure CLI-opdracht [az storage account list](/cli/azure/storage/account?#az_storage_account_list).
    
  ```azurecli-interactive
 az keyvault storage add --vault-name <YourKeyVaultName> -n <YourStorageAccountName> --active-key-name key1 --auto-regenerate-key --regeneration-period P90D --resource-id "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<YourStorageAccountName>"
@@ -108,7 +108,7 @@ Met de opdrachten in deze sectie voert u de volgende acties uit:
 
 ### <a name="create-a-shared-access-signature-token"></a>Een SAS-token maken
 
-Maak een SAS-definitie met behulp van de Azure CLI-opdracht [az storage account generate-sas](/cli/azure/storage/account?#az-storage-account-generate-sas). Voor deze bewerking zijn de machtigingen `storage` en `setsas` vereist.
+Maak een SAS-definitie met behulp van de Azure CLI-opdracht [az storage account generate-sas](/cli/azure/storage/account?#az_storage_account_generate_sas). Voor deze bewerking zijn de machtigingen `storage` en `setsas` vereist.
 
 
 ```azurecli-interactive
@@ -124,7 +124,7 @@ Deze uitvoer wordt in de volgende stap doorgegeven aan de parameter `--template-
 
 ### <a name="generate-a-shared-access-signature-definition"></a>Een SAS-definitie genereren
 
-Gebruik de Azure CLI-opdracht [az keyvault storage sas-definition create](/cli/azure/keyvault/storage/sas-definition?#az-keyvault-storage-sas-definition-create), waarbij de uitvoer van de vorige stap wordt doorgegeven aan de parameter `--template-uri`, om een SAS-definitie te maken.  U kunt elke gewenste naam doorgeven aan de parameter `-n`.
+Gebruik de Azure CLI-opdracht [az keyvault storage sas-definition create](/cli/azure/keyvault/storage/sas-definition?#az_keyvault_storage_sas_definition_create), waarbij de uitvoer van de vorige stap wordt doorgegeven aan de parameter `--template-uri`, om een SAS-definitie te maken.  U kunt elke gewenste naam doorgeven aan de parameter `-n`.
 
 ```azurecli-interactive
 az keyvault storage sas-definition create --vault-name <YourKeyVaultName> --account-name <YourStorageAccountName> -n <YourSASDefinitionName> --validity-period P2D --sas-type account --template-uri <OutputOfSasTokenCreationStep>

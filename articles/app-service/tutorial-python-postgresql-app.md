@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: 8e9656aa1f850dc9e59ab71b5df605df8dd49269
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 882a9fb0f8d528ca21cdc8149c60b9d5bdaf1723
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105732802"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767091"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Zelfstudie: Een Django-web-app implementeren met PostgreSQL in Azure App Service
 
@@ -39,7 +39,7 @@ U kunt ook de [versie voor de Azure-portal van deze zelfstudie](/azure/developer
 
 1. U moet beschikken over een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 1. Installeer <a href="https://www.python.org/downloads/" target="_blank">Python 3.6 of hoger</a>.
-1. Installeer de <a href="/cli/azure/install-azure-cli" target="_blank">Azure cli</a> 2.18.0 of hoger, waarmee u opdrachten in een shell uitvoert om Azure-resources in te richten en te configureren.
+1. Installeer de <a href="/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> 2.18.0 of hoger, waarmee u opdrachten in een shell kunt uitvoeren om Azure-resources in terichten en te configureren.
 
 Open een terminalvenster en controleer of uw Python-versie 3.6 of hoger is:
 
@@ -69,7 +69,7 @@ Controleer of uw Azure CLI-versie 2.18.0 of hoger is:
 az --version
 ```
 
-Als u een upgrade wilt uitvoeren, voert u de `az upgrade` opdracht uit (versie 2.11 + vereist) of raadpleegt u <a href="/cli/azure/install-azure-cli" target="_blank">de Azure cli installeren</a>.
+Als u een upgrade wilt uitvoeren, probeert u de `az upgrade` opdracht (vereist versie 2.11+) of zie <a href="/cli/azure/install-azure-cli" target="_blank">De Azure CLI installeren.</a>
 
 Meld u vervolgens aan bij Azure via de CLI:
 
@@ -160,7 +160,7 @@ Wanneer de opdracht voltooid is, wordt een JSON-object uitgevoerd dat verschille
 
 <!-- not all locations support az postgres up -->
 > [!TIP]
-> `-l <location-name>` kan worden ingesteld op een van de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/). U kunt de regio's beschikbaar maken voor uw abonnement met de opdracht [`az account list-locations`](/cli/azure/account#az-account-list-locations). Voor productie-apps plaatst u uw database en uw app in dezelfde locatie.
+> `-l <location-name>` kan worden ingesteld op een van de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/). U kunt de regio's beschikbaar maken voor uw abonnement met de opdracht [`az account list-locations`](/cli/azure/account#az_account_list_locations). Voor productie-apps plaatst u uw database en uw app in dezelfde locatie.
 
 Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
@@ -172,7 +172,7 @@ In deze sectie maakt u een app-host in de App Service-app, koppelt u deze app aa
 
 Controleer in de terminal of u zich in de opslagmap *djangoapp* die de code van de app bevat bevindt.
 
-Een App Service-app maken (het hostproces) met de opdracht [`az webapp up`](/cli/azure/webapp#az-webapp-up):
+Een App Service-app maken (het hostproces) met de opdracht [`az webapp up`](/cli/azure/webapp#az_webapp_up):
 
 ```azurecli
 az webapp up --resource-group DjangoPostgres-tutorial-rg --location westus2 --plan DjangoPostgres-tutorial-plan --sku B1 --name <app-name>
@@ -205,7 +205,7 @@ Nu de code is geïmplementeerd naar App Service, is de volgende stap om de app t
 
 De code van de app verwacht database-informatie te vinden in vier omgevingsvariabelen genaamd `DBHOST`, `DBNAME`, `DBUSER` en `DBPASS`.
 
-Om omgevingsvariabelen in te stellen in App Service, maakt u 'app-instellingen' met de volgende opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
+Om omgevingsvariabelen in te stellen in App Service, maakt u 'app-instellingen' met de volgende opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set).
 
 ```azurecli
 az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNAME="pollsdb" DBUSER="<username>" DBPASS="<password>"
@@ -231,7 +231,7 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 
     Vervang `<app-name>` door de naam die u eerder hebt gebruikt in de opdracht `az webapp up`.
 
-    U kunt een alternatieve verbinding maken met een SSH-sessie met behulp van de [`az webapp ssh`](/cli/azure/webapp#az_webapp_ssh) opdracht. Voor Windows is voor deze opdracht de Azure CLI 2.18.0 of hoger vereist.
+    U kunt ook verbinding maken met een SSH-sessie met de [`az webapp ssh`](/cli/azure/webapp#az_webapp_ssh) opdracht . Voor deze opdracht in Windows is Azure CLI 2.18.0 of hoger vereist.
 
     Als u geen verbinding kunt maken met de SSH-sessie, kan de app zelf niet worden gestart. [Raadpleeg de diagnostische logboeken](#6-stream-diagnostic-logs) voor meer informatie. Als u de benodigde app-instellingen in de vorige sectie bijvoorbeeld niet hebt gemaakt, wordt in de logboeken `KeyError: 'DBNAME'` aangegeven.
 

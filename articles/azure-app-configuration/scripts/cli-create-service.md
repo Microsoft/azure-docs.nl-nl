@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 01/24/2020
 ms.author: alkemper
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4554ca64dccaa69e3a6fb63e5c28a6bcbb1a32e4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4a341e9772c67da7781a5cec92f286c037c55ce9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96930837"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107768892"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Een Azure App-configuratiearchief maken
 
@@ -69,9 +69,9 @@ In dit script worden de volgende opdrachten gebruikt voor het maken van een nieu
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az appconfig create](/cli/azure/appconfig#az-appconfig-create) | Hiermee wordt een resource voor een App Configuration-archief gemaakt. |
-| [az appconfig credential list](/cli/azure/appconfig/credential#az-appconfig-credential-list) | Lijst met toegangssleutels voor een App Configuration-archief. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az appconfig create](/cli/azure/appconfig#az_appconfig_create) | Hiermee wordt een resource voor een App Configuration-archief gemaakt. |
+| [az appconfig credential list](/cli/azure/appconfig/credential#az_appconfig_credential_list) | Lijst met toegangssleutels voor een App Configuration-archief. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

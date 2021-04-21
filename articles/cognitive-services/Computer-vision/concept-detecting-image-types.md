@@ -1,7 +1,7 @@
 ---
-title: Detectie van installatie kopie type-Computer Vision
+title: Detectie van afbeeldingstype - Computer Vision
 titleSuffix: Azure Cognitive Services
-description: Concepten met betrekking tot de functie voor het detecteren van het afbeeldings type van de Computer Vision-API.
+description: Concepten met betrekking tot de functie detectie van afbeeldingstype van de Computer Vision API.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,33 +11,33 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 6d2ed00f3fc6f5b52a9a13a96f1e1659e30f02d5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dc24788ddd21ca2b7df1f9f92238c776dee33016
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "96532598"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778873"
 ---
-# <a name="detecting-image-types-with-computer-vision"></a>Afbeeldings typen detecteren met Computer Vision
+# <a name="detecting-image-types-with-computer-vision"></a>Afbeeldingstypen detecteren met Computer Vision
 
-Met de API voor het [analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) van afbeeldingen kunt Computer Vision het inhouds type van installatie kopieën analyseren om aan te geven of een afbeelding een illustratie of een lijn tekening is.
+Met de [Analyze Image-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) Computer Vision het inhoudstype van afbeeldingen analyseren, waarmee wordt aangegeven of een afbeelding een illustratie of een lijntekening is.
 
-## <a name="detecting-clip-art"></a>Illustraties detecteren
+## <a name="detecting-clip-art"></a>Illustratie detecteren
 
-Computer Vision analyseert een afbeelding en verkleint de kans dat de afbeelding wordt geillustratied op een schaal van 0 tot 3, zoals wordt beschreven in de volgende tabel.
+Computer Vision analyseert een afbeelding en analyseert de kans dat de afbeelding een illustratie wordt op een schaal van 0 tot 3, zoals beschreven in de volgende tabel.
 
 | Waarde | Betekenis |
 |-------|---------|
 | 0 | Non-clip-art (geen illustratie) |
-| 1 | Dubbel |
-| 2 | Normaal-clip-art |
-| 3 | Goede clip art |
+| 1 | Dubbelzinnig |
+| 2 | Normale illustratie |
+| 3 | Goede illustratie |
 
-### <a name="clip-art-detection-examples"></a>Voor beelden van clip art-detectie
+### <a name="clip-art-detection-examples"></a>Voorbeelden van illustratiedetectie
 
-In de volgende JSON-antwoorden ziet u wat Computer Vision als resultaat geeft wanneer u de kans op de voorbeeld afbeeldingen die illustraties worden, wilt beoordelen.
+De volgende JSON-antwoorden laten zien wat Computer Vision retourneert wanneer de kans wordt beoordeeld dat de voorbeeldafbeeldingen illustratief zijn.
 
-![Een illustratie afbeelding van een segment van kaas](./Images/cheese_clipart.png)
+![Een illustratieafbeelding van een stuk kaas](./Images/cheese_clipart.png)
 
 ```json
 {
@@ -54,7 +54,7 @@ In de volgende JSON-antwoorden ziet u wat Computer Vision als resultaat geeft wa
 }
 ```
 
-![Een blauw huis en de voor tuin](./Images/house_yard.png)
+![Een blauw huis en de voorste erf](./Images/house_yard.png)
 
 ```json
 {
@@ -71,15 +71,15 @@ In de volgende JSON-antwoorden ziet u wat Computer Vision als resultaat geeft wa
 }
 ```
 
-## <a name="detecting-line-drawings"></a>Lijn tekeningen detecteren
+## <a name="detecting-line-drawings"></a>Lijntekeningen detecteren
 
-Computer Vision analyseert een afbeelding en retourneert een Booleaanse waarde die aangeeft of de afbeelding een lijn tekening is.
+Computer Vision een afbeelding analyseert en een Booleaanse waarde retourneert die aangeeft of de afbeelding een lijntekening is.
 
-### <a name="line-drawing-detection-examples"></a>Voor beelden van regel tekening detectie
+### <a name="line-drawing-detection-examples"></a>Voorbeelden van lijntekeningdetectie
 
-In de volgende JSON-antwoorden ziet u wat Computer Vision retourneert wanneer wordt aangegeven of de voorbeeld afbeeldingen lijn tekeningen zijn.
+De volgende JSON-antwoorden laten zien wat Computer Vision retourneert wanneer wordt aangegeven of de voorbeeldafbeeldingen lijntekeningen zijn.
 
-![Een lijn teken afbeelding van een Lion](./Images/lion_drawing.png)
+![Een lijntekeningafbeelding van een man](./Images/lion_drawing.png)
 
 ```json
 {
@@ -115,6 +115,6 @@ In de volgende JSON-antwoorden ziet u wat Computer Vision retourneert wanneer wo
 
 ## <a name="use-the-api"></a>De API gebruiken
 
-De functie detectie van het afbeeldings type maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `ImageType` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"imageType"` sectie.
+De functie detectie van afbeeldingstype maakt deel uit van [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) API. U kunt deze API aanroepen via een native SDK of via REST-aanroepen. Neem `ImageType` op in de **queryparameter visualFeatures.** Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de tekenreeks voor de inhoud van de `"imageType"` sectie.
 
 * [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

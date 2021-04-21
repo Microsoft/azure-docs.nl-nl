@@ -1,20 +1,20 @@
 ---
-title: Beschik baarheid van persoonlijke Azure-koppelingen
-description: In dit artikel leest u over welke Azure-Services persoonlijke koppelingen ondersteunen.
+title: Azure Private Link beschikbaarheid
+description: In dit artikel leert u welke Azure-services ondersteuning bieden Private Link.
 author: asudbring
 ms.author: allensu
 ms.service: private-link
 ms.topic: conceptual
 ms.date: 3/15/2021
 ms.custom: template-concept,references_regions
-ms.openlocfilehash: 26485c84749b7d4c91159476b3f683c2b0f3831b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 866eb9feb152c0094cd5281fe4820ccc4589386f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103555426"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778315"
 ---
-# <a name="azure-private-link-availability"></a>Beschik baarheid van persoonlijke Azure-koppelingen
+# <a name="azure-private-link-availability"></a>Azure Private Link beschikbaarheid
 
 Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overview.md) in uw virtuele netwerk toegang tot Azure PaaS-services (bijvoorbeeld Azure Storage en SQL Database) en in Azure gehoste services van klanten of partners. 
 
@@ -23,7 +23,7 @@ Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overvie
 
 ## <a name="service-availability"></a>Beschikbaarheid van de service
 
-De volgende tabellen geven een lijst van de services voor persoonlijke koppelingen en de regio's waar ze beschikbaar zijn. 
+In de volgende tabellen worden de Private Link services en de regio's waar ze beschikbaar zijn weergegeven. 
 
 ### <a name="ai--machine-learning"></a>AI en Machine Learning
 
@@ -45,7 +45,7 @@ De volgende tabellen geven een lijst van de services voor persoonlijke koppeling
 |Ondersteunde services  |Beschikbare regio's | Andere overwegingen | Status  |
 |:-------------------|:-----------------|:----------------|:--------|
 |Azure App Configuration | Alle openbare regio's      |  | Preview  </br> [Meer informatie over het maken van een privé-eindpunt voor Azure App Configuration](../azure-app-configuration/concept-private-endpoint.md) |
-|Door Azure beheerde schijven | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's    | [Selecteren voor bekende beperkingen](../virtual-machines/disks-enable-private-links-for-import-export-portal.md#limitations) | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Managed Disks.](../virtual-machines/disks-enable-private-links-for-import-export-portal.md)   |
+|Door Azure beheerde schijven | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's    | [Selecteer voor bekende beperkingen](../virtual-machines/disks-enable-private-links-for-import-export-portal.md#limitations) | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Managed Disks.](../virtual-machines/disks-enable-private-links-for-import-export-portal.md)   |
 
 ### <a name="containers"></a>Containers
 
@@ -76,7 +76,7 @@ De volgende tabellen geven een lijst van de services voor persoonlijke koppeling
 |Ondersteunde services  |Beschikbare regio's | Andere overwegingen | Status  |
 |:-------------------|:-----------------|:----------------|:--------|
 | Azure IoT Hub | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure IoT Hub.](../iot-hub/virtual-network-support.md) |
-|  Azure Digital Twins         | Alle open bare regio's die worden ondersteund door Azure Digital Apparaatdubbels     |  | Preview <br/> [Meer informatie over het maken van een persoonlijk eind punt voor Azure Digital Apparaatdubbels.](../digital-twins/how-to-enable-private-link-portal.md)      |
+|  Azure Digital Twins         | Alle openbare regio's die worden ondersteund door Azure Digital Twins     |  | Preview <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Digital Twins.](../digital-twins/how-to-enable-private-link-portal.md)      |
 
 ### <a name="management-and-governance"></a>Beheer en governance
 
@@ -96,7 +96,7 @@ De volgende tabellen geven een lijst van de services voor persoonlijke koppeling
 |:-------------------|:-----------------|:----------------|:--------|
 | Azure Blob Storage (inclusief Data Lake Storage Gen2)       |  Alle openbare regio's<br/> Alle Government-regio's       |  Ondersteund op Account Kind General Purpose V2 | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Blob Storage.](tutorial-private-endpoint-storage-portal.md)  |
 | Azure Files | Alle openbare regio's<br/> Alle Government-regio's      | |   Algemene beschikbaarheid <br/> [Meer informatie over het maken van Azure Files-netwerkeindpunten.](../storage/files/storage-files-networking-endpoints.md)   |
-| Azure File Sync | Alle openbare regio's      | |   Algemene beschikbaarheid <br/> [Meer informatie over het maken van Azure Files-netwerkeindpunten.](../storage/files/storage-sync-files-networking-endpoints.md)   |
+| Azure File Sync | Alle openbare regio's      | |   Algemene beschikbaarheid <br/> [Meer informatie over het maken van Azure Files-netwerkeindpunten.](../storage/file-sync/file-sync-networking-endpoints.md)   |
 | Azure Queue Storage       |  Alle openbare regio's<br/> Alle Government-regio's       |  Ondersteund op Account Kind General Purpose V2 | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Queue Storage.](tutorial-private-endpoint-storage-portal.md) |
 | Azure Table Storage       |  Alle openbare regio's<br/> Alle Government-regio's       |  Ondersteund op Account Kind General Purpose V2 | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Table Storage.](tutorial-private-endpoint-storage-portal.md)  |
 | Azure Batch | Alle openbare regio's, behalve: Duitsland CENTRAAL, Duitsland NOORDOOST <br/> Alle Government-regio's  | | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Batch.](../batch/private-connectivity.md) |
@@ -105,11 +105,11 @@ De volgende tabellen geven een lijst van de services voor persoonlijke koppeling
 |Ondersteunde services  |Beschikbare regio's | Andere overwegingen | Status  |
 |:-------------------|:-----------------|:----------------|:--------|
 | Azure SignalR | VS - OOST, VS - ZUID-CENTRAAL,<br/>VS - WEST 2, alle Chinese regio's      |  | Preview   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure SignalR.](../azure-signalr/howto-private-endpoints.md)   |
-|Azure Web Apps | Alle openbare regio's<br/> China-noord 2 & Oost 2    | Ondersteund met een PremiumV2-, PremiumV3- of Function Premium-abonnement  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Web Apps.](./tutorial-private-endpoint-webapp-portal.md)   |
+|Azure Web Apps | Alle openbare regio's<br/> China - noord 2 & East 2    | Ondersteund met een PremiumV2-, PremiumV3- of Function Premium-abonnement  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Web Apps.](./tutorial-private-endpoint-webapp-portal.md)   |
 |Azure Search | Alle openbare regio's <br/> Alle Government-regio's | Ondersteund met service in de privémodus | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Search.](../search/service-create-private-endpoint.md)    |
 |Azure Relay | Alle openbare regio's      |  | Preview <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Relay.](../azure-relay/private-link-service.md)  |
 
-### <a name="private-link-service-with-a-standard-load-balancer"></a>Persoonlijke koppelings service met een standaard load balancer
+### <a name="private-link-service-with-a-standard-load-balancer"></a>Private Link service met een load balancer
 
 |Ondersteunde services  |Beschikbare regio's | Andere overwegingen | Status  |
 |:-------------------|:-----------------|:----------------|:--------|

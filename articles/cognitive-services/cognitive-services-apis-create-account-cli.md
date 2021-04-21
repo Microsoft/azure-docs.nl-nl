@@ -1,7 +1,7 @@
 ---
-title: Een Cognitive Services resource maken met behulp van de Azure CLI
+title: Een resource Cognitive Services maken met behulp van de Azure CLI
 titleSuffix: Azure Cognitive Services
-description: Ga aan de slag met Azure Cognitive Services door het maken en abonneren van een resource met behulp van de Azure-opdracht regel interface.
+description: Ga aan de Azure Cognitive Services door een resource te maken en u te abonneren op een resource met behulp van de Azure-opdrachtregelinterface.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,51 +10,51 @@ keywords: cognitieve services, cognitieve intelligentie, cognitieve oplossingen,
 ms.topic: quickstart
 ms.date: 3/22/2021
 ms.author: aahi
-ms.openlocfilehash: 08ff2f416a00002cde5767111ba5a6824a721324
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 26e3b264b7268f7a9ffdb592beef7d76844646f5
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104868168"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789137"
 ---
-# <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Snelstartgids: een Cognitive Services resource maken met behulp van de Azure Command-Line interface (CLI)
+# <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Quickstart: Een Cognitive Services maken met behulp van de Azure Command-Line Interface (CLI)
 
-Gebruik deze Quick Start om aan de slag te gaan met Azure Cognitive Services met behulp van de [Azure-opdracht regel interface (CLI)](/cli/azure/install-azure-cli).
+Gebruik deze quickstart om aan de slag te Azure Cognitive Services met behulp van [de Azure-opdrachtregelinterface (CLI).](/cli/azure/install-azure-cli)
 
 Azure Cognitive Services bestaat uit cloudservices met REST API's en clientbibliotheek-SDK's waarmee ontwikkelaars cognitieve intelligentie in toepassingen kunnen bouwen zonder directe kennis of vaardigheden op het gebied van kunstmatige intelligentie (AI) of gegevenswetenschap. Met Azure Cognitive Services kunnen ontwikkelaars eenvoudig cognitieve functies toevoegen aan hun toepassingen met cognitieve oplossingen die kunnen zien, horen, spreken en begrijpen. Er zijn zelfs al toepassingen die beginnen te redeneren.
 
-Cognitive Services worden vertegenwoordigd door Azure- [resources](../azure-resource-manager/management/manage-resources-portal.md) die u in uw Azure-abonnement hebt gemaakt. Nadat u de resource hebt gemaakt, gebruikt u de sleutels en het eind punt dat u hebt gegenereerd voor het verifiëren van uw toepassingen.
+Cognitive Services worden vertegenwoordigd door [Azure-resources die](../azure-resource-manager/management/manage-resources-portal.md) u in uw Azure-abonnement maakt. Nadat u de resource hebt gemaakt, gebruikt u de sleutels en het eindpunt die voor u zijn gegenereerd om uw toepassingen te verifiëren.
 
-In deze Quick Start leert u hoe u zich kunt registreren voor Azure Cognitive Services en hoe u een account met een single-service of meerdere service-abonnement kunt maken met behulp van de [Azure-opdracht regel interface (CLI)](/cli/azure/install-azure-cli). Deze services worden vertegenwoordigd door Azure- [resources](../azure-resource-manager/management/manage-resources-portal.md), waarmee u verbinding kunt maken met een of meer van de azure-Cognitive Services-API's.
+In deze quickstart leert u hoe u zich kunt registreren voor Azure Cognitive Services en een account kunt maken met één service of abonnement voor meerdere service, met behulp van de Azure-opdrachtregelinterface [(CLI).](/cli/azure/install-azure-cli) Deze services worden vertegenwoordigd door [Azure-resources,](../azure-resource-manager/management/manage-resources-portal.md)waarmee u verbinding kunt maken met een of meer van de Azure Cognitive Services API's.
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een geldig Azure-abonnement: [Maak er gratis een](https://azure.microsoft.com/free/cognitive-services) .
-* De [Azure-opdracht regel interface (CLI)](/cli/azure/install-azure-cli)
+* Een geldig Azure-abonnement: [maak er gratis](https://azure.microsoft.com/free/cognitive-services) een.
+* De [Azure-opdrachtregelinterface (CLI)](/cli/azure/install-azure-cli)
 
-## <a name="install-the-azure-cli-and-sign-in"></a>De Azure CLI installeren en aanmelden
+## <a name="install-the-azure-cli-and-sign-in"></a>De Azure CLI installeren en u aanmelden
 
-Installeer de [Azure CLI](/cli/azure/install-azure-cli). Als u zich wilt aanmelden bij de lokale installatie van de CLI, voert u de opdracht [AZ login](/cli/azure/reference-index#az-login) :
+Installeer de [Azure CLI](/cli/azure/install-azure-cli). Voer de opdracht [az login](/cli/azure/reference-index#az_login) uit om u aan te melden bij de lokale installatie van de CLI:
 
 ```azurecli-interactive
 az login
 ```
 
-U kunt ook de knop groene **try it** gebruiken om deze opdrachten uit te voeren in uw browser.
+U kunt ook de groene knop **Uitproberen gebruiken** om deze opdrachten in uw browser uit te voeren.
 
-## <a name="create-a-new-azure-cognitive-services-resource-group"></a>Een nieuwe Azure Cognitive Services-resource groep maken
+## <a name="create-a-new-azure-cognitive-services-resource-group"></a>Een nieuwe resourcegroep Azure Cognitive Services maken
 
-Voordat u een Cognitive Services resource maakt, moet u een Azure-resource groep hebben om de resource te kunnen bevatten. Wanneer u een nieuwe resource maakt, hebt u de optie om een nieuwe resource groep te maken of een bestaande te gebruiken. In dit artikel wordt beschreven hoe u een nieuwe resourcegroep maakt.
+Voordat u een Cognitive Services resource maakt, moet u een Azure-resourcegroep hebben die de resource bevat. Wanneer u een nieuwe resource maakt, hebt u de mogelijkheid om een nieuwe resourcegroep te maken of een bestaande resourcegroep te gebruiken. In dit artikel wordt beschreven hoe u een nieuwe resourcegroep maakt.
 
-### <a name="choose-your-resource-group-location"></a>De locatie van de resource groep kiezen
+### <a name="choose-your-resource-group-location"></a>Kies de locatie van uw resourcegroep
 
-Als u een resource wilt maken, hebt u een van de Azure-locaties die beschikbaar zijn voor uw abonnement. U kunt een lijst met beschik bare locaties ophalen met de opdracht [AZ account list-locations](/cli/azure/account#az-account-list-locations) . De meeste Cognitive Services kunnen vanaf verschillende locaties worden geopend. Kies het account dat het dichtst bij u ligt of Bekijk welke locaties beschikbaar zijn voor de service.
+Als u een resource wilt maken, hebt u een van de Azure-locaties nodig die beschikbaar zijn voor uw abonnement. U kunt een lijst met beschikbare locaties ophalen met de [opdracht az account list-locations.](/cli/azure/account#az_account_list_locations) De Cognitive Services zijn toegankelijk vanaf verschillende locaties. Kies de locatie die het dichtst bij u in de buurt is of kijk welke locaties beschikbaar zijn voor de service.
 
 > [!IMPORTANT]
-> * Onthoud uw Azure-locatie, omdat u deze nodig hebt wanneer u de Azure Cognitive Services aanroept.
-> * De beschik baarheid van sommige Cognitive Services kan per regio verschillen. Zie [Azure-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)voor meer informatie.
+> * Onthoud uw Azure-locatie, omdat u deze nodig hebt bij het aanroepen van Azure Cognitive Services.
+> * De beschikbaarheid van sommige Cognitive Services kan per regio verschillen. Zie Azure-producten per [regio voor meer informatie.](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
 
 ```azurecli-interactive
 az account list-locations \
@@ -62,9 +62,9 @@ az account list-locations \
     --out table
 ```
 
-Nadat u uw Azure-locatie hebt, maakt u een nieuwe resource groep in de Azure CLI met behulp van de opdracht [AZ Group Create](/cli/azure/group#az-group-create) .
+Nadat u uw Azure-locatie hebt, maakt u een nieuwe resourcegroep in de Azure CLI met behulp van [de opdracht az group create.](/cli/azure/group#az_group_create)
 
-Vervang in het onderstaande voor beeld de Azure-locatie door `westus2` een van de Azure-locaties die beschikbaar zijn voor uw abonnement.
+Vervang in het onderstaande voorbeeld de Azure-locatie `westus2` door een van de Beschikbare Azure-locaties voor uw abonnement.
 
 ```azurecli-interactive
 az group create \
@@ -74,19 +74,19 @@ az group create \
 
 ## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
 
-### <a name="choose-a-cognitive-service-and-pricing-tier"></a>Een cognitieve service en prijs categorie kiezen
+### <a name="choose-a-cognitive-service-and-pricing-tier"></a>Een cognitieve service en prijscategorie kiezen
 
-Wanneer u een nieuwe resource maakt, moet u weten wat de soort service is die u wilt gebruiken, samen met de gewenste [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/) (of SKU). U gebruikt deze en andere informatie als para meters bij het maken van de resource.
+Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie [(of](https://azure.microsoft.com/pricing/details/cognitive-services/) SKU) die u wilt gebruiken. U gebruikt deze en andere informatie als parameters bij het maken van de resource.
 
 ### <a name="multi-service"></a>Multi-service
 
 | Service                    | Soort                      |
 |----------------------------|---------------------------|
-| Meerdere services. Zie de pagina met [prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/) voor meer informatie.            | `CognitiveServices`     |
+| Meerdere services. Zie de [pagina met](https://azure.microsoft.com/pricing/details/cognitive-services/) prijzen voor meer informatie.            | `CognitiveServices`     |
 
 
 > [!NOTE]
-> Veel van de onderstaande Cognitive Services hebben een gratis laag die u kunt gebruiken om de service te proberen. Als u de gratis laag wilt gebruiken, gebruikt u `F0` als de SKU voor uw resource.
+> Veel van de Cognitive Services hebben een gratis laag die u kunt gebruiken om de service uit te proberen. Als u de gratis laag wilt gebruiken, gebruikt `F0` u als de SKU voor uw resource.
 
 ### <a name="vision"></a>Vision
 
@@ -124,17 +124,17 @@ Wanneer u een nieuwe resource maakt, moet u weten wat de soort service is die u 
 | Content Moderator | `ContentModerator` |
 | Personalizer      | `Personalizer`     |
 
-U vindt een lijst met ' soorten ' beschik bare cognitieve service ' met de opdracht [AZ cognitiveservices account list-typen](/cli/azure/cognitiveservices/account#az-cognitiveservices-account-list-kinds) :
+U vindt een lijst met beschikbare soorten Cognitive Service met de [opdracht az cognitiveservices account list-kinds:](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_list_kinds)
 
 ```azurecli-interactive
 az cognitiveservices account list-kinds
 ```
 
-### <a name="add-a-new-resource-to-your-resource-group"></a>Een nieuwe resource toevoegen aan de resource groep
+### <a name="add-a-new-resource-to-your-resource-group"></a>Een nieuwe resource toevoegen aan uw resourcegroep
 
-Als u een nieuwe Cognitive Services resource wilt maken en hierop wilt abonneren, gebruikt u de opdracht [AZ cognitiveservices account create](/cli/azure/cognitiveservices/account#az-cognitiveservices-account-create) . Met deze opdracht wordt een nieuwe factureer bare resource toegevoegd aan de resource groep die u eerder hebt gemaakt. Wanneer u een nieuwe resource maakt, moet u weten wat de soort service is die u wilt gebruiken, samen met de prijs categorie (of SKU) en een Azure-locatie:
+Gebruik de opdracht [az cognitiveservices account create](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_create) om Cognitive Services nieuwe resource te maken en u te abonneren. Met deze opdracht wordt een nieuwe factureerbare resource toegevoegd aan de resourcegroep die u eerder hebt gemaakt. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie:
 
-U kunt een F0 (gratis) resource maken voor anomalie detectie, `anomaly-detector-resource` met de naam met de onderstaande opdracht.
+U kunt een F0-resource (gratis) maken voor Anomaly Detector, met de naam `anomaly-detector-resource` met de onderstaande opdracht.
 
 ```azurecli-interactive
 az cognitiveservices account create \
@@ -150,13 +150,13 @@ az cognitiveservices account create \
 
 ## <a name="get-the-keys-for-your-resource"></a>De sleutels voor uw resource ophalen
 
-Als u zich wilt aanmelden bij de lokale installatie van de Command-Line interface (CLI), gebruikt u de opdracht [AZ login](/cli/azure/reference-index#az-login) .
+Als u zich wilt aanmelden bij uw lokale installatie van Command-Line Interface(CLI), gebruikt u [de opdracht az login.](/cli/azure/reference-index#az_login)
 
 ```azurecli-interactive
 az login
 ```
 
-Gebruik de opdracht [AZ cognitiveservices account Keys List](/cli/azure/cognitiveservices/account/keys#az-cognitiveservices-account-keys-list) om de sleutels voor uw cognitieve service resource op te halen.
+Gebruik de [opdracht az cognitiveservices account keys list](/cli/azure/cognitiveservices/account/keys#az_cognitiveservices_account_keys_list) om de sleutels voor uw Cognitive Service-resource op te halen.
 
 ```azurecli-interactive
     az cognitiveservices account keys list \
@@ -171,11 +171,11 @@ Gebruik de opdracht [AZ cognitiveservices account Keys List](/cli/azure/cognitiv
 Prijscategorieën (en het bedrag dat in rekening wordt gebracht) zijn gebaseerd op het aantal transacties dat u verzendt met behulp van uw verificatiegegevens. Voor elke prijsklasse wordt het volgende gespecificeerd:
 * het maximumaantal toegestane transacties per seconde (TPS).
 * servicefuncties die zijn ingeschakeld binnen de prijscategorie.
-* De kosten voor een vooraf gedefinieerd aantal trans acties. Boven deze hoeveelheid worden er extra kosten in rekening gebracht, zoals is opgegeven in de [prijs informatie](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) voor uw service.
+* De kosten voor een vooraf gedefinieerd aantal transacties. Als u dit bedrag boven dit bedrag komt, worden extra kosten in rekening brengen, zoals opgegeven in de [prijsgegevens](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) voor uw service.
 
-## <a name="get-current-quota-usage-for-your-resource"></a>Huidig quotum gebruik voor uw resource ophalen
+## <a name="get-current-quota-usage-for-your-resource"></a>Huidig quotumgebruik voor uw resource op halen
 
-Gebruik de opdracht [AZ cognitiveservices account list-Usage](/cli/azure/cognitiveservices/account#az-cognitiveservices-account-list-usage) om het gebruik van uw cognitieve service resource op te halen.
+Gebruik de [opdracht az cognitiveservices account list-usage](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_list_usage) om het gebruik voor uw Cognitive Service-resource op te halen.
 
 ```azurecli-interactive
 az cognitiveservices account list-usage \
@@ -186,9 +186,9 @@ az cognitiveservices account list-usage \
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u een Cognitive Services resource wilt opschonen en verwijderen, kunt u deze of de resource groep verwijderen. Als u de resourcegroep verwijdert, worden ook eventuele andere bijbehorende resources in de groep verwijderd.
+Als u een resource wilt ops schonen en Cognitive Services verwijderen, kunt u deze of de resourcegroep verwijderen. Als u de resourcegroep verwijdert, worden ook eventuele andere bijbehorende resources in de groep verwijderd.
 
-Als u de resource groep en de bijbehorende resources wilt verwijderen, gebruikt u de opdracht AZ Group Delete.
+Als u de resourcegroep en de bijbehorende resources wilt verwijderen, gebruikt u de opdracht az group delete.
 
 ```azurecli-interactive
 az group delete --name cognitive-services-resource-group
@@ -196,8 +196,8 @@ az group delete --name cognitive-services-resource-group
 
 ## <a name="see-also"></a>Zie ook
 
-* Zie **[aanvragen verifiëren voor Azure Cognitive Services](authentication.md)** over het veilig werken met Cognitive Services.
-* Zie **[Wat is Azure Cognitive Services?](./what-are-cognitive-services.md)** voor een lijst met verschillende categorieën in cognitive Services.
-* Zie **[ondersteuning voor natuurlijke](language-support.md)** talen voor een overzicht van de natuurlijke talen die Cognitive Services ondersteunt.
-* Zie **[Cognitive Services als containers gebruiken](cognitive-services-container-support.md)** voor meer informatie over het gebruik van Cognitive Services on-premises.
-* Zie **[kosten plannen en beheren voor Cognitive Services](plan-manage-costs.md)** voor het schatten van de kosten van het gebruik van Cognitive Services.
+* Zie **[Aanvragen verifiëren voor Azure Cognitive Services](authentication.md)** over het veilig werken met Cognitive Services.
+* Zie **[Wat zijn Azure Cognitive Services?](./what-are-cognitive-services.md)** voor een lijst met verschillende categorieën binnen Cognitive Services.
+* Zie **[Ondersteuning voor natuurlijke taal](language-support.md)** voor een overzicht van de natuurlijke talen die Cognitive Services ondersteunt.
+* Zie **[Use Cognitive Services as containers (Gebruik](cognitive-services-container-support.md)** Cognitive Services containers) om te begrijpen hoe u Cognitive Services on-Cognitive Services gebruikt.
+* Zie **[Kosten plannen en beheren voor Cognitive Services](plan-manage-costs.md)** kosten van het gebruik van Cognitive Services.

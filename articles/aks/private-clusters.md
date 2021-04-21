@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een AKS Azure Kubernetes Service
 services: container-service
 ms.topic: article
 ms.date: 3/31/2021
-ms.openlocfilehash: 339bb41aed5ead3d7ee7d1217bfbc771cf068832
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.openlocfilehash: 76785caedb9ca97d947e83f5aa8ff5b32d827914
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107719111"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772897"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een privé-Azure Kubernetes Service maken
 
@@ -71,7 +71,7 @@ Waarbij `--enable-private-cluster` een verplichte vlag is voor een privécluster
 De volgende parameters kunnen worden gebruikt voor het configureren Privé-DNS Zone.
 
 - 'Systeem' is de standaardwaarde. Als het argument --private-dns-zone wordt weggelaten, maakt AKS een Privé-DNS zone in de knooppuntresourcegroep.
-- 'Geen' betekent dat AKS geen nieuwe Privé-DNS maken.  Hiervoor moet u Bring Your Own DNS Server gebruiken en de DNS-resolutie voor de privé-FQDN configureren.  Als u geen DNS-resolutie configureert, kan DNS alleen worden opgelost binnen de agentknooppunten en worden clusterproblemen veroorzaakt na de implementatie. 
+- 'Geen' betekent dat AKS geen Privé-DNS maken.  Hiervoor moet u Bring Your Own DNS Server gebruiken en de DNS-resolutie voor de privé-FQDN configureren.  Als u geen DNS-resolutie configureert, kan DNS alleen worden opgelost binnen de agentknooppunten en worden clusterproblemen veroorzaakt na de implementatie. 
 - 'CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID' vereist dat u een Privé-DNS Zone in deze indeling maakt voor azure global cloud: `privatelink.<region>.azmk8s.io` . U hebt de resource-id van die Privé-DNS zone nodig.  Daarnaast hebt u een door de gebruiker toegewezen identiteit of service-principal met ten minste de `private dns zone contributor`  rollen `vnet contributor` en nodig.
 - 'fqdn-subdomain' kan alleen worden gebruikt met 'CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID' om subdomeinmogelijkheden te bieden aan `privatelink.<region>.azmk8s.io`
 
@@ -191,14 +191,14 @@ Zoals vermeld, is peering voor virtuele netwerken een manier om toegang te krijg
 * Voor klanten die de Azure Container Registry met privé-AKS moeten kunnen werken, moet het virtuele netwerk Container Registry peering hebben met het virtuele netwerk van het agentcluster.
 * Geen ondersteuning voor het converteren van bestaande AKS-clusters naar privéclusters
 * Als u het privé-eindpunt in het klantsubnet wilt verwijderen of wijzigen, werkt het cluster niet meer. 
-* Nadat klanten de A-record op hun eigen DNS-servers hebben bijgewerkt, zouden die pods na de migratie nog steeds de FQDN apiserver oplossen naar het oudere IP-adres totdat ze opnieuw worden opgestart. Klanten moeten hostNetwork Pods en standaard-DNSPolicy Pods opnieuw starten na de migratie van het besturingsvlak.
+* Nadat klanten de A-record op hun eigen DNS-servers hebben bijgewerkt, zouden die pods de FQDN van apiserver na de migratie nog steeds oplossen naar het oudere IP-adres totdat ze opnieuw zijn opgestart. Klanten moeten hostNetwork Pods en standaard-DNSPolicy Pods opnieuw starten na de migratie van het besturingsvlak.
 * In het geval van onderhoud op het besturingsvlak kan het [IP-adres van uw AKS](./limit-egress-traffic.md) worden gewijzigd. In dit geval moet u de A-record bijwerken die verwijst naar het privé-IP-adres van de API-server op uw aangepaste DNS-server en aangepaste pods of implementaties opnieuw starten met hostNetwork.
 
 <!-- LINKS - internal -->
-[az-provider-register]: /cli/azure/provider#az-provider-register
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-provider-register]: /cli/azure/provider#az_provider_register
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
 [private-link-service]: ../private-link/private-link-service-overview.md#limitations
 [virtual-network-peering]: ../virtual-network/virtual-network-peering-overview.md
 [azure-bastion]: ../bastion/tutorial-create-host-portal.md

@@ -10,57 +10,57 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: 42ce7a1760ecdb1dcbd5275927f351bef5da07a8
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 0d171dee87a391c5e1d66db10363e6823ef387c1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107531159"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774157"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Logboekregistratie van resources voor een netwerkbeveiligingsgroep
 
 Een netwerkbeveiligingsgroep (NSG) bevat regels die verkeer naar een subnet, netwerkinterface of beide toestaan of weigeren. 
 
-Wanneer u logboekregistratie voor een NSG inschakelen, kunt u de volgende typen resourcelogboekgegevens verzamelen:
+Wanneer u logboekregistratie voor een NSG inschakelen, kunt u de volgende typen informatie over resourcelogboek verzamelen:
 
 * **Gebeurtenis:** Vermeldingen worden geregistreerd waarvoor NSG-regels worden toegepast op VM's, op basis van het MAC-adres.
 * **Regelteller:** Bevat vermeldingen voor het aantal keren dat elke NSG-regel wordt toegepast om verkeer te weigeren of toe te staan. De status voor deze regels wordt elke 300 seconden verzameld.
 
-Resourcelogboeken zijn alleen beschikbaar voor NSG's die zijn geïmplementeerd via Azure Resource Manager implementatiemodel. U kunt logboekregistratie van resources niet inschakelen voor NSG's die zijn geïmplementeerd via het klassieke implementatiemodel. Zie Inzicht in Azure-implementatiemodellen voor een beter begrip [van de twee modellen.](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+Resourcelogboeken zijn alleen beschikbaar voor NSG's die zijn geïmplementeerd via het Azure Resource Manager implementatiemodel. U kunt logboekregistratie van resources niet inschakelen voor NSG's die zijn geïmplementeerd via het klassieke implementatiemodel. Zie Inzicht in Azure-implementatiemodellen voor een beter begrip [van de twee modellen.](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 
-Resourcelogboekregistratie wordt afzonderlijk ingeschakeld voor *elke* NSG voor wie u diagnostische gegevens wilt verzamelen. Zie Logboekregistratie van Azure-activiteiten als u in plaats daarvan bent geïnteresseerd in [activiteitenlogboeken (operationele logboeken).](../azure-monitor/essentials/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Zie Azure Network Watcher [NSG-stroomlogboeken](../network-watcher/network-watcher-nsg-flow-logging-overview.md) als u geïnteresseerd bent in IP-verkeer dat via NSG's stroomt 
+Resourcelogboekregistratie wordt afzonderlijk ingeschakeld voor *elke* NSG voor wie u diagnostische gegevens wilt verzamelen. Zie Logboekregistratie van Azure-activiteiten als u geïnteresseerd bent in activiteitenlogboeken [(operationele logboeken).](../azure-monitor/essentials/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Zie Azure Network Watcher [NSG-stroomlogboeken](../network-watcher/network-watcher-nsg-flow-logging-overview.md) als u geïnteresseerd bent in IP-verkeer dat via NSG's stroomt 
 
 ## <a name="enable-logging"></a>Logboekregistratie inschakelen
 
-U kunt Azure [Portal,](#azure-portal) [PowerShell](#powershell)of [de Azure CLI](#azure-cli) gebruiken om logboekregistratie van resources in teschakelen.
+U kunt Azure [Portal,](#azure-portal) [PowerShell](#powershell)of de [Azure CLI](#azure-cli) gebruiken om logboekregistratie van resources in teschakelen.
 
 ### <a name="azure-portal"></a>Azure Portal
 
 1. Meld u aan bij de [portal](https://portal.azure.com).
 2. Selecteer **Alle services en** typ vervolgens *netwerkbeveiligingsgroepen.* Wanneer **Netwerkbeveiligingsgroepen** worden weergegeven in de zoekresultaten, selecteert u deze.
 3. Selecteer de NSG voor wie u logboekregistratie wilt inschakelen.
-4. Selecteer **onder BEWAKING** de optie **Diagnostische logboeken** en selecteer vervolgens Diagnostische gegevens **in-** en uit te stellen, zoals wordt weergegeven in de volgende afbeelding:
+4. Selecteer **onder BEWAKING** de optie **Diagnostische logboeken** en selecteer **vervolgens Diagnostische** gegevens in- en weer te geven, zoals wordt weergegeven in de volgende afbeelding:
 
    ![Diagnostische gegevens inschakelen](./media/virtual-network-nsg-manage-log/turn-on-diagnostics.png)
 
-5. Voer **onder Diagnostische instellingen** de volgende gegevens in of selecteer deze en selecteer **opslaan:**
+5. Voer **onder Diagnostische instellingen** de volgende gegevens in of selecteer deze. Selecteer vervolgens **Opslaan:**
 
     | Instelling                                                                                     | Waarde                                                          |
     | ---------                                                                                   |---------                                                       |
     | Naam                                                                                        | Een naam naar keuze.  Bijvoorbeeld: *myNsgDiagnostics*      |
-    | **Archiveren naar een opslagaccount,** **streamen naar een Event Hub** en Verzenden naar Log **Analytics** | U kunt zoveel bestemmingen selecteren als u kiest. Zie Logboekbestemmingen voor meer informatie [over deze bestemmingen.](#log-destinations)                                                                                                                                           |
-    | LOG                                                                                         | Selecteer een of beide logboekcategorieën. Zie Logboekcategorieën voor meer informatie over de gegevens die zijn vastgelegd voor [elke categorie.](#log-categories)                                                                                                                                             |
+    | **Archiveren naar een opslagaccount,** **streamen naar een Event Hub** en Verzenden naar Log **Analytics** | U kunt zoveel bestemmingen selecteren als u wilt. Zie Logboekbestemmingen voor meer informatie [over deze .](#log-destinations)                                                                                                                                           |
+    | LOG                                                                                         | Selecteer een of beide logboekcategorieën. Zie Logboekcategorieën voor meer informatie over de gegevens die voor elke categorie [zijn geregistreerd.](#log-categories)                                                                                                                                             |
 6. Logboeken weergeven en analyseren. Zie Logboeken weergeven [en analyseren voor meer informatie.](#view-and-analyze-logs)
 
 ### <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-U kunt de volgende opdrachten uitvoeren in de [Azure Cloud Shell](https://shell.azure.com/powershell)of door PowerShell uit te voeren vanaf uw computer. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u PowerShell vanaf uw computer hebt uitgevoerd, hebt u de Azure PowerShell module versie 1.0.0 of hoger nodig. Voer `Get-Module -ListAvailable Az` uit op uw computer om de geïnstalleerde versie te vinden. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Als u PowerShell lokaal gebruikt, moet u ook uitvoeren om u aan te melden bij Azure met een account met `Connect-AzAccount` [de benodigde machtigingen.](virtual-network-network-interface.md#permissions)
+U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud Shell](https://shell.azure.com/powershell)of door PowerShell op uw computer uit te voeren. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u PowerShell op uw computer hebt uitgevoerd, hebt u de Azure PowerShell module versie 1.0.0 of hoger nodig. Voer `Get-Module -ListAvailable Az` uit op uw computer om de geïnstalleerde versie te vinden. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Als u PowerShell lokaal gebruikt, moet u ook uitvoeren om u aan te melden bij Azure met een account met `Connect-AzAccount` [de benodigde machtigingen.](virtual-network-network-interface.md#permissions)
 
 Als u logboekregistratie van resources wilt inschakelen, hebt u de id van een bestaande NSG nodig. Als u geen bestaande NSG hebt, kunt u er een maken met [New-AzNetworkSecurityGroup.](/powershell/module/az.network/new-aznetworksecuritygroup)
 
-Haal de netwerkbeveiligingsgroep op voor wie u resourcelogregistratie wilt inschakelen met [Get-AzNetworkSecurityGroup.](/powershell/module/az.network/get-aznetworksecuritygroup) Als u bijvoorbeeld een NSG met de *naam myNsg* wilt ophalen die zich in een resourcegroep met de *naam myResourceGroup* bevindt, voert u de volgende opdracht in:
+Haal de netwerkbeveiligingsgroep op voor wie u resourcelogregistratie wilt inschakelen met [Get-AzNetworkSecurityGroup.](/powershell/module/az.network/get-aznetworksecuritygroup) Als u bijvoorbeeld een NSG met de naam *myNsg* wilt ophalen die bestaat in een resourcegroep met de naam *myResourceGroup,* voert u de volgende opdracht in:
 
 ```azurepowershell-interactive
 $Nsg=Get-AzNetworkSecurityGroup `
@@ -68,7 +68,7 @@ $Nsg=Get-AzNetworkSecurityGroup `
   -ResourceGroupName myResourceGroup
 ```
 
-U kunt resourcelogboeken naar drie doeltypen schrijven. Zie Logboekbestemmingen voor [meer informatie.](#log-destinations) In dit artikel worden logboeken als voorbeeld verzonden naar de *Log Analytics-bestemming.* Haal een bestaande Log Analytics-werkruimte [op met Get-AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspace). Als u bijvoorbeeld een bestaande werkruimte met de *naam myWorkspace* wilt ophalen in een resourcegroep met de naam *myWorkspaces,* voert u de volgende opdracht in:
+U kunt resourcelogboeken schrijven naar drie doeltypen. Zie Logboekbestemmingen voor [meer informatie.](#log-destinations) In dit artikel worden logboeken als voorbeeld verzonden naar de *Log Analytics-bestemming.* Haal een bestaande Log Analytics-werkruimte op [met Get-AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspace). Als u bijvoorbeeld een bestaande werkruimte met de *naam myWorkspace* wilt ophalen in een resourcegroep met de *naam myWorkspaces,* voert u de volgende opdracht in:
 
 ```azurepowershell-interactive
 $Oms=Get-AzOperationalInsightsWorkspace `
@@ -78,7 +78,7 @@ $Oms=Get-AzOperationalInsightsWorkspace `
 
 Als u geen bestaande werkruimte hebt, kunt u er een maken met [New-AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace).
 
-Er zijn twee soorten logboekregistratie waar u logboeken voor kunt inschakelen. Zie Logboekcategorieën [voor meer informatie.](#log-categories) Schakel resourcelogregistratie in voor de NSG [met Set-AzDiagnosticSetting.](/powershell/module/az.monitor/set-azdiagnosticsetting) In het volgende voorbeeld worden zowel gebeurtenis- als tellercategoriegegevens in de werkruimte voor een NSG gelogd, met behulp van de ID's voor de NSG en de werkruimte die u eerder hebt opgehaald:
+Er zijn twee soorten logboekregistratie waar u logboeken voor kunt inschakelen. Zie Logboekcategorieën [voor meer informatie.](#log-categories) Schakel resourcelogregistratie in voor de NSG [met Set-AzDiagnosticSetting.](/powershell/module/az.monitor/set-azdiagnosticsetting) In het volgende voorbeeld worden zowel gebeurtenis- als tellercategoriegegevens in de werkruimte voor een NSG gelogd, met behulp van de -ID's voor de NSG en de werkruimte die u eerder hebt opgehaald:
 
 ```azurepowershell-interactive
 Set-AzDiagnosticSetting `
@@ -87,17 +87,17 @@ Set-AzDiagnosticSetting `
   -Enabled $true
 ```
 
-Als u alleen gegevens voor de ene of de andere categorie wilt logboeken, in plaats van beide, voegt u de optie toe aan de vorige opdracht, gevolgd door `-Categories` *NetworkSecurityGroupEvent* of *NetworkSecurityGroupRuleCounter.* Als u zich wilt aanmelden bij een [andere](#log-destinations) bestemming dan een Log Analytics-werkruimte, gebruikt u de juiste parameters voor een Azure [Storage-account](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) [of Event Hub.](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs)
+Als u alleen gegevens voor de ene categorie of de andere wilt logboeken, in plaats van beide, voegt u de optie toe aan de vorige opdracht, gevolgd door `-Categories` *NetworkSecurityGroupEvent* of *NetworkSecurityGroupRuleCounter.* Als u zich wilt aanmelden bij een [andere](#log-destinations) bestemming dan een Log Analytics-werkruimte, gebruikt u de juiste parameters voor een Azure [Storage-account](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) of [Event Hub.](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs)
 
 Logboeken weergeven en analyseren. Zie Logboeken weergeven [en analyseren voor meer informatie.](#view-and-analyze-logs)
 
 ### <a name="azure-cli"></a>Azure CLI
 
-U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud Shell](https://shell.azure.com/bash)of door de Azure CLI op uw computer uit te voeren. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u de CLI vanaf uw computer hebt uitgevoerd, hebt u versie 2.0.38 of hoger nodig. Voer `az --version` uit op uw computer om de geïnstalleerde versie te vinden. Zie Azure CLI installeren als u een upgrade [wilt uitvoeren.](/cli/azure/install-azure-cli) Als u de CLI lokaal gebruikt, moet u ook uitvoeren om u aan te melden bij Azure met een account met `az login` [de benodigde machtigingen.](virtual-network-network-interface.md#permissions)
+U kunt de volgende opdrachten uitvoeren in de [Azure Cloud Shell](https://shell.azure.com/bash)of door de Azure CLI uit te voeren vanaf uw computer. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u de CLI vanaf uw computer hebt uitgevoerd, hebt u versie 2.0.38 of hoger nodig. Voer `az --version` uit op uw computer om de geïnstalleerde versie te vinden. Zie Azure CLI installeren als u een upgrade [wilt uitvoeren.](/cli/azure/install-azure-cli) Als u de CLI lokaal gebruikt, moet u ook uitvoeren om u aan te melden bij Azure met een account met `az login` [de benodigde machtigingen.](virtual-network-network-interface.md#permissions)
 
-Als u logboekregistratie van resources wilt inschakelen, hebt u de id van een bestaande NSG nodig. Als u geen bestaande NSG hebt, kunt u er een maken [met az network nsg create.](/cli/azure/network/nsg#az-network-nsg-create)
+Als u logboekregistratie van resources wilt inschakelen, hebt u de id van een bestaande NSG nodig. Als u geen bestaande NSG hebt, kunt u er een maken [met az network nsg create.](/cli/azure/network/nsg#az_network_nsg_create)
 
-Haal de netwerkbeveiligingsgroep op voor wie u resourcelogregistratie wilt inschakelen [met az network nsg show](/cli/azure/network/nsg#az-network-nsg-show). Als u bijvoorbeeld een NSG met de naam *myNsg* wilt ophalen die bestaat in een resourcegroep met de naam *myResourceGroup,* voert u de volgende opdracht in:
+Haal de netwerkbeveiligingsgroep op voor wie u resourcelogregistratie wilt inschakelen [met az network nsg show](/cli/azure/network/nsg#az_network_nsg_show). Als u bijvoorbeeld een NSG met de naam *myNsg* wilt ophalen die bestaat in een resourcegroep met de naam *myResourceGroup,* voert u de volgende opdracht in:
 
 ```azurecli-interactive
 nsgId=$(az network nsg show \
@@ -107,9 +107,9 @@ nsgId=$(az network nsg show \
   --output tsv)
 ```
 
-U kunt resourcelogboeken schrijven naar drie doeltypen. Zie Logboekbestemmingen [voor meer informatie.](#log-destinations) In dit artikel worden logboeken als voorbeeld verzonden naar de *Log Analytics-bestemming.* Zie Logboekcategorieën [voor meer informatie.](#log-categories)
+U kunt resourcelogboeken schrijven naar drie doeltypen. Zie Logboekbestemmingen voor [meer informatie.](#log-destinations) In dit artikel worden logboeken als voorbeeld verzonden naar de *Log Analytics-bestemming.* Zie Logboekcategorieën [voor meer informatie.](#log-categories)
 
-Schakel resourcelogboekregistratie in voor de NSG [met az monitor diagnostic-settings create.](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) In het volgende voorbeeld worden zowel gebeurtenis- als tellercategoriegegevens in een bestaande werkruimte met de naam *myWorkspace*, die bestaat in een resourcegroep met de naam *myWorkspaces,* en de id van de NSG die u eerder hebt opgehaald:
+Schakel resourcelogboekregistratie in voor de NSG [met az monitor diagnostic-settings create.](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_create) In het volgende voorbeeld worden zowel gebeurtenis- als tellercategoriegegevens in een bestaande werkruimte met de naam *myWorkspace* gelogd, die bestaat in een resourcegroep met de naam *myWorkspaces* en de id van de NSG die u eerder hebt opgehaald:
 
 ```azurecli-interactive
 az monitor diagnostic-settings create \
@@ -120,9 +120,9 @@ az monitor diagnostic-settings create \
   --resource-group myWorkspaces
 ```
 
-Als u geen bestaande werkruimte hebt, kunt u er een maken met behulp van [de Azure Portal](../azure-monitor/logs/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [PowerShell.](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace) Er zijn twee soorten logboekregistratie waar u logboeken voor kunt inschakelen.
+Als u geen bestaande werkruimte hebt, kunt u er een maken met de [Azure Portal](../azure-monitor/logs/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [PowerShell.](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace) Er zijn twee soorten logboekregistratie waar u logboeken voor kunt inschakelen.
 
-Als u alleen gegevens voor de ene of de andere categorie wilt opslaan, verwijdert u de categorie waar u geen gegevens voor wilt opslaan in de vorige opdracht. Als u zich wilt aanmelden bij een [andere](#log-destinations) bestemming dan een Log Analytics-werkruimte, gebruikt u de juiste parameters voor een Azure [Storage-account](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) [of Event Hub.](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs)
+Als u alleen gegevens voor de ene of de andere categorie wilt opslaan, verwijdert u de categorie waar u in de vorige opdracht geen gegevens voor wilt opslaan. Als u zich wilt aanmelden bij een [andere](#log-destinations) bestemming dan een Log Analytics-werkruimte, gebruikt u de juiste parameters voor een Azure [Storage-account](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) [of Event Hub.](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs)
 
 Logboeken weergeven en analyseren. Zie Logboeken weergeven [en analyseren voor meer informatie.](#view-and-analyze-logs)
 

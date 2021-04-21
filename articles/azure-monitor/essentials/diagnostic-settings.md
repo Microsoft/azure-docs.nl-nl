@@ -6,12 +6,12 @@ ms.author: bwren
 services: azure-monitor
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: 32cb1a54e8d3b4cca942616bb249968c4ed9e50c
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 60ac56cfda026871afa1725bbd54625b7ce7585e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107477839"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789191"
 ---
 # <a name="create-diagnostic-settings-to-send-platform-logs-and-metrics-to-different-destinations"></a>Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen
 [Platformlogboeken](./platform-logs-overview.md) in Azure, inclusief het Azure-activiteitenlogboek en de Azure-resourcelogboeken, bieden gedetailleerde diagnose- en controlegegevens voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. [Metrische platformgegevens](./data-platform-metrics.md) worden standaard verzameld en gewoonlijk opgeslagen in de database met metrische gegevens van Azure Monitor. In dit artikel vindt u informatie over het maken en configureren van diagnostische instellingen voor het verzenden van metrische platformgegevens en platformlogboeken naar verschillende bestemmingen.
@@ -42,7 +42,7 @@ In de volgende video wordt u door routeringsplatformlogboeken met diagnostische 
 ## <a name="destinations"></a>Bestemmingen
 Platformlogboeken en metrische gegevens kunnen worden verzonden naar de bestemmingen in de volgende tabel. 
 
-| Doel | Beschrijving |
+| Doel | Description |
 |:---|:---|
 | [Log Analytics-werkruimte](../logs/design-logs-deployment.md) | Door logboeken en metrische gegevens naar een Log Analytics-werkruimte te verzenden, kunt u ze analyseren met andere bewakingsgegevens die door Azure Monitor zijn verzameld met behulp van krachtige logboekquery's en kunt u ook gebruikmaken van andere Azure Monitor-functies, zoals waarschuwingen en visualisaties. |
 | [Event hubs](../../event-hubs/index.yml) | Door logboeken en metrische gegevens naar Event Hubs kunt u gegevens streamen naar externe systemen, zoals SIEM's van derden en andere oplossingen voor logboekanalyse.  |
@@ -56,8 +56,8 @@ Alle bestemmingen voor de diagnostische instelling moeten worden gemaakt voordat
 | Doel | Vereisten |
 |:---|:---|
 | Log Analytics-werkruimte | De werkruimte hoeft zich niet in dezelfde regio te hebben als de resource die wordt bewaakt.|
-| Event Hubs | Het beleid voor gedeelde toegang voor de naamruimte definieert de machtigingen die het streamingmechanisme heeft. Voor streaming Event Hubs zijn de machtigingen Beheren, Verzenden en Luisteren vereist. Als u de diagnostische instelling wilt bijwerken zodat streaming wordt opgenomen, moet u over de listKey-machtiging voor die Event Hubs autorisatieregel.<br><br>De Event Hub-naamruimte moet zich in dezelfde regio als de resource die wordt bewaakt, als de resource regionaal is. |
-| Azure Storage-account | Gebruik geen bestaand opslagaccount waarin andere, niet-bewakingsgegevens zijn opgeslagen, zodat u de toegang tot de gegevens beter kunt controleren. Als u het activiteitenlogboek en de resourcelogboeken echter samen archiveren, kunt u ervoor kiezen om hetzelfde opslagaccount te gebruiken om alle bewakingsgegevens op een centrale locatie te houden.<br><br>Als u de gegevens wilt verzenden naar onveranderbare opslag, stelt u het onveranderbare beleid voor het opslagaccount in zoals beschreven in Onveranderbaarheidsbeleid instellen en beheren [voor Blob Storage.](../../storage/blobs/storage-blob-immutability-policies-manage.md) U moet alle stappen in dit artikel volgen, waaronder het inschakelen van beveiligde schrijf-apps voor app-blobs.<br><br>Het opslagaccount moet zich in dezelfde regio als de resource die wordt bewaakt, als de resource regionaal is. |
+| Event Hubs | Het beleid voor gedeelde toegang voor de naamruimte definieert de machtigingen die het streamingmechanisme heeft. Voor streaming naar Event Hubs zijn de machtigingen Beheren, Verzenden en Luisteren vereist. Als u de diagnostische instelling wilt bijwerken zodat streaming wordt opgenomen, moet u over de listKey-machtiging voor die Event Hubs autorisatieregel.<br><br>De Event Hub-naamruimte moet zich in dezelfde regio als de resource die wordt bewaakt, als de resource regionaal is. |
+| Azure Storage-account | Gebruik geen bestaand opslagaccount waarin andere, niet-bewakingsgegevens zijn opgeslagen, zodat u de toegang tot de gegevens beter kunt controleren. Als u het activiteitenlogboek en de resourcelogboeken echter samen archiveren, kunt u ervoor kiezen om hetzelfde opslagaccount te gebruiken om alle bewakingsgegevens op een centrale locatie te houden.<br><br>Als u de gegevens wilt verzenden naar onveranderbare opslag, stelt u het onveranderbare beleid voor het opslagaccount in zoals beschreven in Beleid voor onveranderbaarheid instellen en beheren [voor Blob Storage.](../../storage/blobs/storage-blob-immutability-policies-manage.md) U moet alle stappen in dit artikel volgen, waaronder het inschakelen van beveiligde schrijf-apps voor app-blobs.<br><br>Het opslagaccount moet zich in dezelfde regio als de resource die wordt bewaakt, als de resource regionaal is. |
 
 > [!NOTE]
 > Azure Data Lake Storage Gen2-accounts worden momenteel niet ondersteund als doel voor diagnostische instellingen, zelfs als ze kunnen worden weergegeven als een geldige optie in de Azure-portal.
@@ -98,7 +98,7 @@ U kunt diagnostische instellingen configureren in de Azure Portal vanuit het Azu
 
 4. **Categoriedetails (wat moet worden gerouteerd)** - Vink het selectievakje aan voor elke gegevenscategorie die u later naar de opgegeven bestemmingen wilt verzenden. De lijst met categorieën varieert per Azure-service.
 
-     - **AllMetrics routeert** de metrische platformgegevens van een resource naar het Azure-logboekopslag, maar in logboekformulier. Deze metrische gegevens worden meestal alleen verzonden naar Azure Monitor tijdreeksdatabase met metrische gegevens. Door ze te verzenden naar Azure Monitor Logs Store (die doorzoekbaar is via Log Analytics), kunt u ze integreren in query's die zoeken in andere logboeken. Deze optie is mogelijk niet beschikbaar voor alle resourcetypen. Wanneer dit wordt ondersteund, [Azure Monitor ondersteunde metrische](./metrics-supported.md) gegevens vermeld welke metrische gegevens worden verzameld voor welke resourcetypen.
+     - **AllMetrics routeert** de metrische platformgegevens van een resource naar de Azure-logboekopslag, maar in logboekformulier. Deze metrische gegevens worden doorgaans alleen verzonden naar Azure Monitor tijdreeksdatabase met metrische gegevens. Door ze te verzenden naar Azure Monitor Logs Store (dat doorzoekbaar is via Log Analytics), kunt u ze integreren in query's die zoeken in andere logboeken. Deze optie is mogelijk niet beschikbaar voor alle resourcetypen. Wanneer dit wordt ondersteund, [Azure Monitor ondersteunde metrische](./metrics-supported.md) gegevens vermeld welke metrische gegevens worden verzameld voor welke resourcetypen.
 
        > [!NOTE]
        > Zie de beperking voor het routeren van metrische Azure Monitor logboeken eerder in dit artikel.  
@@ -110,12 +110,12 @@ U kunt diagnostische instellingen configureren in de Azure Portal vanuit het Azu
 
       ![Verzenden naar Log Analytics of Event Hubs](media/diagnostic-settings/send-to-log-analytics-event-hubs.png)
 
-    1. **Log Analytics:** voer het abonnement en de werkruimte in.  Als u geen werkruimte hebt, moet u er een [maken voordat u doorgaat.](../logs/quick-create-workspace.md)
+    1. **Log Analytics:** voer het abonnement en de werkruimte in.  Als u geen werkruimte hebt, moet u er een maken [voordat u doorgaat.](../logs/quick-create-workspace.md)
 
     1. **Event Hubs:** geef de volgende criteria op:
        - Het abonnement waarvan de Event Hub deel uitmaakt
        - De Event Hub-naamruimte: als u er nog geen hebt, moet u er [een maken](../../event-hubs/event-hubs-create.md)
-       - Een Event Hub-naam (optioneel) om alle gegevens naar te verzenden. Als u geen naam opgeeft, wordt er een Event Hub gemaakt voor elke logboekcategorie. Als u meerdere categorieën verstuurt, kunt u een naam opgeven om het aantal gemaakte Event Hubs te beperken. Zie [Azure Event Hubs quota en limieten voor](../../event-hubs/event-hubs-quotas.md) meer informatie.
+       - Een Event Hub-naam (optioneel) om alle gegevens naar te verzenden. Als u geen naam opgeeft, wordt er een Event Hub gemaakt voor elke logboekcategorie. Als u meerdere categorieën verstuurt, kunt u een naam opgeven om het aantal gemaakte Event Hubs te beperken. Zie [Azure Event Hubs quota en limieten](../../event-hubs/event-hubs-quotas.md) voor meer informatie.
        - Een Event Hub-beleid (optioneel) Een beleid definieert de machtigingen die het streamingmechanisme heeft. Zie [Event-hubs-features voor meer informatie.](../../event-hubs/event-hubs-features.md#publisher-policy)
 
     1. **Opslag:** kies het abonnement, het opslagaccount en het retentiebeleid.
@@ -148,10 +148,10 @@ Set-AzDiagnosticSetting -Name KeyVault-Diagnostics -ResourceId /subscriptions/xx
 
 ## <a name="create-using-azure-cli"></a>Maken met behulp van Azure CLI
 
-Gebruik de [opdracht az monitor diagnostic-settings create om](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) een diagnostische instelling te maken met Azure [CLI.](/cli/azure/monitor) Zie de documentatie voor deze opdracht voor beschrijvingen van de parameters.
+Gebruik de [opdracht az monitor diagnostic-settings create om](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_create) een diagnostische instelling te maken met Azure [CLI.](/cli/azure/monitor) Zie de documentatie voor deze opdracht voor beschrijvingen van de parameters.
 
 > [!IMPORTANT]
-> U kunt deze methode niet gebruiken voor het Azure-activiteitenlogboek. Gebruik in plaats [daarvan diagnostische instelling maken in Azure Monitor](./resource-manager-diagnostic-settings.md) met behulp van Resource Manager sjabloon om een Resource Manager sjabloon te maken en deze te implementeren met CLI.
+> U kunt deze methode niet gebruiken voor het Azure-activiteitenlogboek. Gebruik in plaats [daarvan diagnostische instelling maken in Azure Monitor](./resource-manager-diagnostic-settings.md) een Resource Manager sjabloon om een Resource Manager te maken en deze te implementeren met CLI.
 
 Hieronder volgt een voorbeeld van een CLI-opdracht voor het maken van een diagnostische instelling met behulp van alle drie de bestemmingen. De syntaxis is iets anders, afhankelijk van uw client.
 
@@ -194,10 +194,10 @@ az monitor diagnostic-settings create  \
 Zie [Resource Manager sjabloonvoorbeelden](./resource-manager-diagnostic-settings.md) voor diagnostische instellingen in Azure Monitor diagnostische instellingen te maken of bij te werken met een Resource Manager sjabloon.
 
 ## <a name="create-using-rest-api"></a>Maken met REST-API
-Zie [Diagnostische instellingen](/rest/api/monitor/diagnosticsettings) om diagnostische instellingen te maken of bij te werken met behulp van [Azure Monitor REST API](/rest/api/monitor/).
+Zie [Diagnostische instellingen om](/rest/api/monitor/diagnosticsettings) diagnostische instellingen te maken of bij te werken met behulp van [Azure Monitor REST API](/rest/api/monitor/).
 
 ## <a name="create-using-azure-policy"></a>Maken met Azure Policy
-Omdat er een diagnostische instelling moet worden gemaakt voor elke Azure-resource, Azure Policy worden gebruikt om automatisch een diagnostische instelling te maken wanneer elke resource wordt gemaakt. Zie [Deploy Azure Monitor at scale using Azure Policy (Een Azure Monitor implementeren met](../deploy-scale.md) behulp Azure Policy voor meer informatie.
+Omdat er een diagnostische instelling moet worden gemaakt voor elke Azure-resource, Azure Policy worden gebruikt om automatisch een diagnostische instelling te maken wanneer elke resource wordt gemaakt. Zie [Deploy Azure Monitor at scale using Azure Policy (Een Azure Monitor implementeren](../deploy-scale.md) met behulp Azure Policy voor meer informatie.
 
 ## <a name="metric-category-is-not-supported-error"></a>Fout: Metrische categorie wordt niet ondersteund
 Wanneer u een diagnostische instelling implementeert, ontvangt u het volgende foutbericht:
@@ -212,12 +212,12 @@ waar uw implementatie eerder is geslaagd.
 
 Het probleem treedt op wanneer u een Resource Manager gebruikt, de diagnostische instellingen REST API, Azure CLI of Azure PowerShell. Diagnostische instellingen die zijn gemaakt via Azure Portal worden niet beïnvloed, omdat alleen de ondersteunde categorienamen worden weergegeven.
 
-Het probleem wordt veroorzaakt door een recente wijziging in de onderliggende API. Andere metrische categorieën dan 'AllMetrics' worden niet ondersteund en zijn nooit ondersteund, met uitzondering van enkele zeer specifieke Azure-services. In het verleden werden andere categorienamen genegeerd bij het implementeren van een diagnostische instelling. De Azure Monitor back-end heeft deze categorieën eenvoudig omgeleid naar 'AllMetrics'.  Vanaf februari 2021 is de back-end bijgewerkt om specifiek te bevestigen dat de opgegeven categorie met metrische gegevens juist is. Door deze wijziging zijn sommige implementaties mislukt.
+Het probleem wordt veroorzaakt door een recente wijziging in de onderliggende API. Andere metrische categorieën dan 'AllMetrics' worden niet ondersteund en zijn nooit ondersteund, met uitzondering van enkele zeer specifieke Azure-services. In het verleden werden andere categorienamen genegeerd bij het implementeren van een diagnostische instelling. De Azure Monitor back-end heeft deze categorieën omgeleid naar 'AllMetrics'.  Vanaf februari 2021 is de back-end bijgewerkt om specifiek te bevestigen dat de opgegeven categorie met metrische gegevens juist is. Door deze wijziging zijn sommige implementaties mislukt.
 
-Als deze foutmelding wordt weergegeven, moet u uw implementaties bijwerken om eventuele metrische categorienamen te vervangen door 'AllMetrics' om het probleem op te lossen. Als de implementatie eerder meerdere categorieën toevoegde, moet er slechts één worden bewaard met de verwijzing 'AllMetrics'. Als het probleem zich blijft voor doen, kunt u contact opnemen met ondersteuning voor Azure via de Azure Portal. 
+Als deze fout wordt weergegeven, moet u uw implementaties bijwerken om eventuele metrische categorienamen te vervangen door 'AllMetrics' om het probleem op te lossen. Als de implementatie eerder meerdere categorieën toevoegde, moet er slechts één worden bewaard met de verwijzing 'AllMetrics'. Als het probleem zich blijft voor doen, kunt u contact opnemen met ondersteuning voor Azure via de Azure Portal. 
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Meer informatie over azure-platformlogboeken](./platform-logs-overview.md)
+- [Meer informatie over logboeken van het Azure-platform](./platform-logs-overview.md)

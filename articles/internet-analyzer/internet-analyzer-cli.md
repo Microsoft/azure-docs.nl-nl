@@ -7,12 +7,12 @@ ms.service: internet-analyzer
 ms.topic: tutorial
 ms.date: 10/16/2019
 ms.author: mebeatty
-ms.openlocfilehash: a9a9fe93ebe302a76d69249dc56933e1bcc924d1
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 46caae53ed81de335c2b9d5ddbd3fd7f89424fdd
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102200084"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780411"
 ---
 # <a name="create-an-internet-analyzer-test-using-cli-preview"></a>Een Internet Analyzer-test maken met behulp van CLI (Preview)
 
@@ -50,7 +50,7 @@ De Internet Analyzer CLI maakt de volgende typen resources beschikbaar:
 
 5. Selecteer uw abonnements-id waaraan toegang tot de openbare preview van Internet Analyzer is verleend.
 
-    Nadat u zich hebt aangemeld, ziet u een lijst met abonnementen die zijn gekoppeld aan uw Azure-account. De abonnementsgegevens met `isDefault: true` zijn het abonnement dat momenteel is geactiveerd na aanmelden. Als u een ander abonnement wilt selecteren, gebruikt u de opdracht [az account set](/cli/azure/account#az-account-set) met de abonnements-id waarnaar moet worden overgeschakeld. Zie [Meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli) voor meer informatie over het selecteren van abonnementen.
+    Nadat u zich hebt aangemeld, ziet u een lijst met abonnementen die zijn gekoppeld aan uw Azure-account. De abonnementsgegevens met `isDefault: true` zijn het abonnement dat momenteel is geactiveerd na aanmelden. Als u een ander abonnement wilt selecteren, gebruikt u de opdracht [az account set](/cli/azure/account#az_account_set) met de abonnements-id waarnaar moet worden overgeschakeld. Zie [Meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli) voor meer informatie over het selecteren van abonnementen.
 
     Er zijn ook manieren om u niet-interactief aan te melden. Deze manieren worden uitvoerig behandeld in [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli).
 

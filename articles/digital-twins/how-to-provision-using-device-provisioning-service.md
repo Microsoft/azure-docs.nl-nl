@@ -1,35 +1,35 @@
 ---
 title: Apparaten automatisch beheren met Device Provisioning Service
 titleSuffix: Azure Digital Twins
-description: Zie een geautomatiseerd proces instellen voor het inrichten en in gebruik nemen van IoT-apparaten in Azure Digital Twins device provisioning service (DPS).
+description: Zie hoe u een geautomatiseerd proces in kunt stellen om IoT-apparaten in te Azure Digital Twins met behulp van Device Provisioning Service (DPS).
 author: baanders
 ms.author: baanders
 ms.date: 3/21/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 2ee2aad290c03743d8a2627922446b8167f3ffee
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 51b5714f9009cbe48aa49c6a04a1434cec12396e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107480415"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107790685"
 ---
-# <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Apparaten automatisch beheren in Azure Digital Twins device provisioning service (DPS)
+# <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Apparaten automatisch beheren in Azure Digital Twins met Device Provisioning Service (DPS)
 
 In dit artikel leert u hoe u Azure Digital Twins integreert met [Device Provisioning Service (DPS).](../iot-dps/about-iot-dps.md)
 
 Met de oplossing die in dit artikel wordt **** beschreven, kunt u het proces voor het inrichten en IoT Hub apparaten in Azure Digital Twins automatiseren met behulp van Device Provisioning Service. **** 
 
-Zie de sectie Levenscyclus  van apparaten van de documentatie voor apparaatbeheer van IoT Hub voor meer informatie over [  ](../iot-hub/iot-hub-device-management-overview.md#device-lifecycle) de inrichtings- en terugloopfasen en voor meer informatie over de algemene fasen voor apparaatbeheer die gemeenschappelijk zijn voor alle IoT-projecten van ondernemingen. 
+Zie de sectie  Apparaatlevenscyclus van de documentatie over apparaatbeheer van IoT Hub voor meer informatie over [  ](../iot-hub/iot-hub-device-management-overview.md#device-lifecycle) de fasen voor het inrichten en in gebruik stellen van apparaten en voor een beter begrip van de algemene fasen voor apparaatbeheer die gemeenschappelijk zijn voor alle IoT-projecten van het bedrijf. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u de inrichting kunt instellen, moet u het volgende instellen:
-* een **Azure Digital Twins-exemplaar**. Volg de instructies in Instructies: Een exemplaar en verificatie instellen om een Azure Digital [*Twins-exemplaar*](how-to-set-up-instance-portal.md) te maken. Verzamel de **_hostnaam_** van het exemplaar in de Azure Portal [(instructies).](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)
-* een **IoT-hub**. Zie de sectie Een *IoT Hub* maken van deze IoT Hub [quickstart voor instructies.](../iot-hub/quickstart-send-telemetry-cli.md)
-* een [**Azure-functie die**](../azure-functions/functions-overview.md) gegevens van digitale tweelingen bij werkt op basis van IoT Hub gegevens. Volg de instructies in [*Instructies: IoT-hubgegevens*](how-to-ingest-iot-hub-data.md) opnemen om deze Azure-functie te maken. Verzamel de **_functienaam om_** deze in dit artikel te gebruiken.
+* een **Azure Digital Twins-exemplaar**. Volg de instructies in Instructies: Een exemplaar en verificatie instellen om een Azure Digital [*Twins-exemplaar*](how-to-set-up-instance-portal.md) te maken. Verzamel de **_hostnaam_** van het exemplaar in de Azure Portal ([instructies](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
+* een **IoT-hub**. Zie de sectie Een IoT Hub maken van *IoT Hub* [quickstart voor instructies.](../iot-hub/quickstart-send-telemetry-cli.md)
+* een [**Azure-functie**](../azure-functions/functions-overview.md) die gegevens van digitale tweelingen bij werkt op basis van IoT Hub gegevens. Volg de instructies in [*Instructies: IoT-hubgegevens opnemen om*](how-to-ingest-iot-hub-data.md) deze Azure-functie te maken. Verzamel de **_functienaam om_** deze in dit artikel te gebruiken.
 
-In dit voorbeeld wordt ook een **apparaatsimulator** gebruikt die het inrichten met device provisioning service omvat. De apparaatsimulator bevindt zich hier: [Azure Digital Twins en IoT Hub Integration Sample](/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Haal het voorbeeldproject op uw computer op door naar de voorbeeldkoppeling te gaan en de knop **Bladeren in code** onder de titel te selecteren. Hiermee gaat u naar de GitHub-opslagplaats voor het voorbeeld, die u als een kunt *downloaden. Zip-bestand* door de knop **Code en** ZIP downloaden **te selecteren.** 
+In dit voorbeeld wordt ook een **apparaatsimulator** gebruikt die het inrichten met device provisioning service omvat. De apparaatsimulator bevindt zich [hier: Azure Digital Twins en IoT Hub Integration Sample](/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Haal het voorbeeldproject op uw computer op door naar de voorbeeldkoppeling te gaan en de knop Bladeren in **code** onder de titel te selecteren. Hiermee gaat u naar de GitHub-opslagplaats voor het voorbeeld, die u als een kunt *downloaden. Zip-bestand* door de knop **Code en** ZIP downloaden **te selecteren.** 
 
 :::image type="content" source="media/how-to-provision-using-device-provisioning-service/download-repo-zip.png" alt-text="Schermopname van de opslagplaats digital-twins-iothub-integration op GitHub. De knop Code is geselecteerd. Er wordt een klein dialoogvenster weergegeven waarin de knop ZIP downloaden is gemarkeerd." lightbox="media/how-to-provision-using-device-provisioning-service/download-repo-zip.png":::
 
@@ -79,7 +79,7 @@ az iot dps create --name <Device Provisioning Service name> --resource-group <re
 
 ### <a name="add-a-function-to-use-with-device-provisioning-service"></a>Een functie toevoegen voor gebruik met Device Provisioning Service
 
-In uw functie-app-project dat u hebt gemaakt in de sectie [vereisten,](#prerequisites) maakt u een nieuwe functie voor gebruik met Device Provisioning Service. Deze functie wordt gebruikt door de Device Provisioning Service in een aangepast toewijzingsbeleid [om](../iot-dps/how-to-use-custom-allocation-policies.md) een nieuw apparaat in terichten.
+In uw functie-app-project dat u hebt gemaakt in de sectie [vereisten,](#prerequisites) maakt u een nieuwe functie voor gebruik met device provisioning service. Deze functie wordt gebruikt door de Device Provisioning Service in een aangepast toewijzingsbeleid [om](../iot-dps/how-to-use-custom-allocation-policies.md) een nieuw apparaat in terichten.
 
 Open eerst het functie-app-project in Visual Studio computer en volg de onderstaande stappen.
 
@@ -150,11 +150,11 @@ Kopieer vervolgens in de map van de apparaatsimulator het bestand .env.template 
 
     :::image type="content" source="media/how-to-provision-using-device-provisioning-service/id-scope.png" alt-text="Schermopname van de Azure Portal van de overzichtspagina voor apparaatinrichting om de waarde voor id-bereik te kopiëren." lightbox="media/how-to-provision-using-device-provisioning-service/id-scope.png":::
 
-* PROVISIONING_REGISTRATION_ID: U kunt een registratie-id voor uw apparaat kiezen.
+* PROVISIONING_REGISTRATION_ID: u kunt een registratie-id voor uw apparaat kiezen.
 * ADT_MODEL_ID: `dtmi:contosocom:DigitalTwins:Thermostat;1`
-* PROVISIONING_SYMMETRIC_KEY: Dit is de primaire sleutel voor de inschrijving die u eerder hebt ingesteld. Als u deze waarde opnieuw wilt op halen, gaat u naar de device provisioning service in de Azure Portal, selecteert u Registraties beheren en selecteert u vervolgens de registratiegroep die u eerder hebt gemaakt en kopieert u de *primaire sleutel*.
+* PROVISIONING_SYMMETRIC_KEY: Dit is de primaire sleutel voor de inschrijving die u eerder hebt ingesteld. Om deze waarde opnieuw op te halen, gaat u naar de device provisioning service in de Azure Portal, selecteert u Inschrijvingen beheren en selecteert u vervolgens de registratiegroep die u eerder hebt gemaakt en kopieert u de *Primaire sleutel*.
 
-    :::image type="content" source="media/how-to-provision-using-device-provisioning-service/sas-primary-key.png" alt-text="Schermopname van de Azure Portal van de pagina Inschrijvingen beheren van de Device Provisioning Service om de waarde van de primaire SAS-sleutel te kopiëren." lightbox="media/how-to-provision-using-device-provisioning-service/sas-primary-key.png":::
+    :::image type="content" source="media/how-to-provision-using-device-provisioning-service/sas-primary-key.png" alt-text="Schermopname van de Azure Portal van de pagina inschrijvingen beheren door de Device Provisioning Service om de waarde van de primaire SAS-sleutel te kopiëren." lightbox="media/how-to-provision-using-device-provisioning-service/sas-primary-key.png":::
 
 Gebruik nu de bovenstaande waarden om de bestandsinstellingen voor .env bij te werken.
 
@@ -170,7 +170,7 @@ Sla het bestand op en sluit het.
 
 ### <a name="start-running-the-device-simulator"></a>Start met het uitvoeren van de apparaatsimulator
 
-Start de *apparaatsimulator* nog steeds in de map device-simulator in het opdrachtvenster met behulp van de volgende opdracht:
+Start de apparaatsimulator nog steeds in de map *device-simulator* in het opdrachtvenster met behulp van de volgende opdracht:
 
 ```cmd
 node .\adt_custom_register.js
@@ -181,33 +181,33 @@ U ziet dat het apparaat wordt geregistreerd en verbonden met IoT Hub en vervolge
 
 ### <a name="validate"></a>Valideren
 
-Als gevolg van de stroom die u in dit artikel hebt ingesteld, wordt het apparaat automatisch geregistreerd bij Azure Digital Twins. Gebruik de volgende [Azure Digital Twins CLI-opdracht](how-to-use-cli.md) om de dubbel van het apparaat te vinden in de Azure Digital Twins die u hebt gemaakt.
+Als gevolg van de stroom die u in dit artikel hebt ingesteld, wordt het apparaat automatisch geregistreerd in Azure Digital Twins. Gebruik de volgende [Azure Digital Twins CLI-opdracht](how-to-use-cli.md) om de dubbel van het apparaat te vinden in Azure Digital Twins exemplaar dat u hebt gemaakt.
 
 ```azurecli-interactive
 az dt twin show -n <Digital Twins instance name> --twin-id "<Device Registration ID>"
 ```
 
-Als het goed is, ziet u de dubbel van het apparaat dat wordt gevonden in Azure Digital Twins-exemplaar.
+Als het goed is, ziet u dat de dubbel van het apparaat wordt gevonden in Azure Digital Twins exemplaar.
 :::image type="content" source="media/how-to-provision-using-device-provisioning-service/show-provisioned-twin.png" alt-text="Schermopname van de Opdrachtvenster met de zojuist gemaakte tweeling." lightbox="media/how-to-provision-using-device-provisioning-service/show-provisioned-twin.png":::
 
-## <a name="auto-retire-device-using-iot-hub-lifecycle-events"></a>Apparaat automatisch uit gebruik te IoT Hub levenscyclusgebeurtenissen
+## <a name="auto-retire-device-using-iot-hub-lifecycle-events"></a>Apparaat automatisch uit gebruik maken met behulp IoT Hub levenscyclusgebeurtenissen
 
 In deze sectie koppelt u de levenscyclusgebeurtenissen IoT Hub aan Azure Digital Twins apparaten automatisch uit gebruik te kunnen maken via het onderstaande pad. Dit is een fragment van de volledige architectuur die eerder [is weergegeven.](#solution-architecture)
 
-:::image type="content" source="media/how-to-provision-using-device-provisioning-service/retire.png" alt-text="Diagram van de apparaatstroom Voor het verwijderen van apparaten: een fragment van het architectuurdiagram van de oplossing, met de secties voor het labelen van getallen van de stroom. Het thermostaatapparaat wordt weergegeven zonder verbindingen met de Azure-services in het diagram. Gegevens van een handmatige actie Apparaat verwijderen stromen via IoT Hub (1) > Event Hubs (2) > Azure Functions > Azure Digital Twins (3)." lightbox="media/how-to-provision-using-device-provisioning-service/retire.png":::
+:::image type="content" source="media/how-to-provision-using-device-provisioning-service/retire.png" alt-text="Diagram van de apparaatstroom Apparaat uit gebruik maken: een fragment van het architectuurdiagram van de oplossing, met secties van de stroom met het labelen van getallen. Het thermostaatapparaat wordt weergegeven zonder verbindingen met de Azure-services in het diagram. Gegevens van een handmatige actie Apparaat verwijderen stromen via IoT Hub (1) > Event Hubs (2) > Azure Functions > Azure Digital Twins (3)." lightbox="media/how-to-provision-using-device-provisioning-service/retire.png":::
 
 Hier is een beschrijving van de processtroom:
 1. Een extern of handmatig proces activeert het verwijderen van een apparaat in IoT Hub.
 2. IoT Hub verwijdert het apparaat en genereert [](../iot-hub/iot-hub-device-management-overview.md#device-lifecycle) een levenscyclusgebeurtenis van het apparaat die wordt doorgeleid naar een [Event Hub.](../event-hubs/event-hubs-about.md)
 3. Een Azure-functie verwijdert de dubbel van het apparaat in Azure Digital Twins.
 
-In de volgende secties worden de stappen voor het instellen van deze apparaatstroom voor automatisch buiten gebruik stellen doorlopen.
+De volgende secties doorlopen de stappen voor het instellen van deze apparaatstroom voor automatisch buiten gebruik stellen.
 
 ### <a name="create-an-event-hub"></a>Een Event Hub maken
 
 Vervolgens maakt u een Azure Event [Hub](../event-hubs/event-hubs-about.md) voor het ontvangen van IoT Hub levenscyclusgebeurtenissen. 
 
-Volg de stappen die worden beschreven in [*de quickstart Een Event Hub*](../event-hubs/event-hubs-create.md) maken. Noem de levenscyclus *van uw Event Hubgebeurtenissen.* In de volgende secties gebruikt u deze event hub-naam wanneer u IoT Hub route en een Azure-functie in te stellen.
+Volg de stappen die worden beschreven in de quickstart [*Een Event Hub*](../event-hubs/event-hubs-create.md) maken. Noem de levenscyclus van uw Event *Hubevents.* In de volgende secties gebruikt u deze event hub-naam wanneer u IoT Hub route en een Azure-functie in te stellen.
 
 In de onderstaande schermopname ziet u hoe de Event Hub wordt gemaakt.
 :::image type="content" source="media/how-to-provision-using-device-provisioning-service/create-event-hub-lifecycle-events.png" alt-text="Schermopname van het Azure Portal voor het maken van een Event Hub met de naam lifecycleevents." lightbox="media/how-to-provision-using-device-provisioning-service/create-event-hub-lifecycle-events.png":::
@@ -216,7 +216,7 @@ In de onderstaande schermopname ziet u hoe de Event Hub wordt gemaakt.
 
 Vervolgens moet u een [SAS-beleid (Shared Access Signature)](../event-hubs/authorize-access-shared-access-signature.md) maken om de Event Hub te configureren met uw functie-app.
 Dit wilt doen
-1. Navigeer naar de Event Hub die u zojuist hebt gemaakt in Azure Portal en selecteer **Beleid** voor gedeelde toegang in de menuopties aan de linkerkant.
+1. Navigeer naar de Event Hub die u zojuist hebt gemaakt in de Azure Portal **selecteer** Gedeeld toegangsbeleid in de menuopties aan de linkerkant.
 2. Selecteer **Toevoegen**. Voer in *het venster SAS-beleid* toevoegen dat wordt geopend een beleidsnaam van uw keuze in en schakel *het* selectievakje Luisteren in.
 3. Selecteer **Maken**.
     
@@ -224,9 +224,9 @@ Dit wilt doen
 
 #### <a name="configure-event-hub-with-function-app"></a>Event Hub configureren met functie-app
 
-Configureer vervolgens de Azure-functie-app [](#prerequisites) die u in de sectie vereisten hebt ingesteld om met uw nieuwe Event Hub te werken. U doet dit door een omgevingsvariabele in te stellen in de functie-app met de connection string.
+Configureer vervolgens de Azure-functie-app die u hebt ingesteld in de sectie [Vereisten](#prerequisites) om te werken met uw nieuwe Event Hub. U doet dit door een omgevingsvariabele in te stellen in de functie-app met de connection string.
 
-1. Open het beleid dat u zojuist hebt gemaakt en kopieer de waarde **verbindingsreeks-primaire** sleutel.
+1. Open het beleid dat u zojuist hebt gemaakt en kopieer de waarde **verbindingsreeks-primaire sleutel.**
 
     :::image type="content" source="media/how-to-provision-using-device-provisioning-service/event-hub-sas-policy-connection-string.png" alt-text="Schermopname van de Azure Portal de primaire sleutel connection string kopiëren." lightbox="media/how-to-provision-using-device-provisioning-service/event-hub-sas-policy-connection-string.png":::
 
@@ -269,7 +269,7 @@ U gaat nu een route voor IoT Hub instellen om levenscyclusgebeurtenissen van app
 Eerst moet u een Event Hub-eindpunt maken in uw IoT-hub. Vervolgens voegt u een route toe in IoT Hub om levenscyclusgebeurtenissen naar dit Event Hub-eindpunt te verzenden.
 Volg deze stappen om een Event Hub-eindpunt te maken:
 
-1. [Navigeer in Azure Portal](https://portal.azure.com/)naar de IoT-hub [](#prerequisites) die u hebt gemaakt in de sectie vereisten en selecteer Berichtroutering **in** de menuopties aan de linkerkant.
+1. [Navigeer in Azure Portal](https://portal.azure.com/)naar de IoT-hub [](#prerequisites) die u hebt gemaakt in de sectie Vereisten en selecteer Berichtroutering **in** de menuopties aan de linkerkant.
 2. Selecteer het **tabblad Aangepaste eindpunten.**
 3. Selecteer **+ Toevoegen en** kies Event **Hubs om** een eindpunt van het type Event Hubs toe te voegen.
 
@@ -292,7 +292,7 @@ Vervolgens voegt u een route toe die verbinding maakt met het eindpunt dat u in 
 2. Kies op *de pagina Een route* toevoegen die wordt geopend de volgende waarden:
 
    * **Naam:** kies een naam voor uw route. 
-   * **Eindpunt:** kies het event hubs-eindpunt dat u eerder hebt gemaakt in de vervolgkeuzekeuze.
+   * **Eindpunt:** kies het Event Hubs-eindpunt dat u eerder hebt gemaakt in de vervolgkeuzekeuze.
    * **Gegevensbron:** kies *Levenscyclusgebeurtenissen voor apparaten.*
    * **Routeringsquery:** voer `opType='deleteDeviceIdentity'` in. Deze query beperkt de levenscyclusgebeurtenissen van het apparaat om alleen de verwijdergebeurtenissen te verzenden.
 
@@ -330,7 +330,7 @@ U ziet dat de dubbel van het apparaat niet meer kan worden gevonden in Azure Dig
 
 Als u de resources die in dit artikel zijn gemaakt niet meer nodig hebt, volgt u deze stappen om ze te verwijderen.
 
-Met de Azure Cloud Shell of lokale Azure CLI kunt u alle Azure-resources in een resourcegroep verwijderen met de [opdracht az group delete.](/cli/azure/group#az-group-delete) Hiermee verwijdert u de resourcegroep; het Azure Digital Twins-exemplaar; de IoT-hub en de hubapparaatregistratie; het Event Grid-onderwerp en de bijbehorende abonnementen; de Event Hubs-naamruimte en Azure Functions apps, inclusief bijbehorende resources zoals opslag.
+Met de Azure Cloud Shell of lokale Azure CLI kunt u alle Azure-resources in een resourcegroep verwijderen met de [opdracht az group delete.](/cli/azure/group#az_group_delete) Hiermee verwijdert u de resourcegroep; het Azure Digital Twins-exemplaar; de IoT-hub en de hubapparaatregistratie; het Event Grid-onderwerp en de bijbehorende abonnementen; de Event Hubs-naamruimte en Azure Functions apps, inclusief bijbehorende resources zoals opslag.
 
 > [!IMPORTANT]
 > Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle resources daarin worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert. 

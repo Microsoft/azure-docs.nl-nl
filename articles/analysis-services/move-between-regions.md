@@ -1,71 +1,71 @@
 ---
-title: Azure Analysis Services verplaatsen naar een andere regio | Microsoft Docs
-description: Hierin wordt beschreven hoe u een Azure Analysis Services resource verplaatst naar een andere regio.
+title: Verplaatsen Azure Analysis Services naar een andere regio | Microsoft Docs
+description: Beschrijft hoe u een resource Azure Analysis Services verplaatsen naar een andere regio.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.custom: references_regions
-ms.openlocfilehash: 049ff6d14c3967481eb73037814082fa261154e3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: references_regions , devx-track-azurepowershell
+ms.openlocfilehash: 2b698ffaddb4bc818eaabda34022ab58ff05fe5f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96497925"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786347"
 ---
-# <a name="move-analysis-services-to-a-different-region"></a>Analysis Services verplaatsen naar een andere regio
+# <a name="move-analysis-services-to-a-different-region"></a>Verplaatsen Analysis Services naar een andere regio
 
-In dit artikel wordt beschreven hoe u een Analysis Services server-resource naar een andere Azure-regio kunt verplaatsen. U kunt uw server om een aantal redenen verplaatsen naar een andere regio, bijvoorbeeld om te profiteren van een Azure-regio dichter bij gebruikers, om alleen service plannen te gebruiken die worden ondersteund in specifieke regio's, of om te voldoen aan de interne beleids-en beheer vereisten. 
+In dit artikel wordt beschreven hoe u een Analysis Services serverresource naar een andere Azure-regio verplaatst. U kunt uw server om verschillende redenen verplaatsen naar een andere regio, bijvoorbeeld om te profiteren van een Azure-regio dichter bij gebruikers, om serviceplannen te gebruiken die alleen in specifieke regio's worden ondersteund, of om te voldoen aan de vereisten voor intern beleid en governance. 
 
-In deze en gekoppelde gekoppelde artikelen leert u het volgende:
+In deze en gekoppelde artikelen leert u het volgende:
 
 > [!div class="checklist"]
 > 
-> * Back-up maken van een bron server model-Data Base naar [Blob Storage](../storage/blobs/storage-blobs-introduction.md).
-> * Een [resource sjabloon](../azure-resource-manager/templates/overview.md)voor een bron server exporteren.
-> * Een opslag- [Shared Access Signature (SAS)](../storage/common/storage-sas-overview.md)ophalen.
-> * Wijzig de resource sjabloon.
-> * Implementeer de sjabloon om een nieuwe doel server te maken.
-> * Herstel een model database op de nieuwe doel server.
-> * Controleer de nieuwe doel server en data base.
-> * Verwijder de bron server.
+> * Een back-up maken van een bronservermodeldatabase naar [Blob Storage](../storage/blobs/storage-blobs-introduction.md).
+> * Een bronserverresourcesjabloon [exporteren.](../azure-resource-manager/templates/overview.md)
+> * Haal een Shared [Access Signature (SAS) voor opslag op.](../storage/common/storage-sas-overview.md)
+> * Wijzig de resourcesjabloon.
+> * Implementeer de sjabloon om een nieuwe doelserver te maken.
+> * Een modeldatabase herstellen naar de nieuwe doelserver.
+> * Controleer de nieuwe doelserver en database.
+> * Verwijder de bronserver.
 
-In dit artikel wordt beschreven hoe u een resource sjabloon gebruikt voor het migreren van een enkele Analysis Services server met een **basis configuratie** naar een andere regio *en* resource groep in hetzelfde abonnement. Als u een sjabloon gebruikt, blijven geconfigureerde server eigenschappen behouden, zodat de doel server is geconfigureerd met dezelfde eigenschappen, behalve regio en resource groep als de bron server. In dit artikel wordt het verplaatsen van gekoppelde resources die deel uitmaken van dezelfde resource groep, zoals gegevens bron-, opslag-en gateway resources, niet beschreven. 
+In dit artikel wordt beschreven hoe u een resourcesjabloon gebruikt om één Analysis Services-server met een basisconfiguratie te migreren naar een andere regio en *resourcegroep* in hetzelfde abonnement.  Het gebruik van een sjabloon behoudt geconfigureerde servereigenschappen om ervoor te zorgen dat de doelserver is geconfigureerd met dezelfde eigenschappen, met uitzondering van regio en resourcegroep, als de bronserver. In dit artikel wordt niet beschreven hoe u gekoppelde resources verplaatst die deel kunnen uitmaken van dezelfde resourcegroep, zoals gegevensbron-, opslag- en gatewayresources. 
 
-Voordat u een server naar een andere regio verplaatst, is het raadzaam om een gedetailleerd plan te maken. Overweeg aanvullende bronnen zoals gateways en opslag die ook moeten worden verplaatst. Bij elk abonnement is het belang rijk dat u een of meer test bewerkingen uitvoert met test servers voordat u een productie server verplaatst.
-
-> [!IMPORTANT]
-> Client toepassingen en verbindings reeksen maken verbinding met Analysis Services met behulp van de volledige server naam, een URI die de regio bevat waarin de server zich bevindt. Bijvoorbeeld `asazure://westcentralus.asazure.windows.net/advworks01`. Wanneer u een server naar een andere regio verplaatst, maakt u effectief een nieuwe server bron in een andere regio. deze heeft een andere regio dan de server naam-URI. Client toepassingen en verbindings reeksen die in scripts worden gebruikt, moeten verbinding maken met de nieuwe server met behulp van de nieuwe server naam-URI. Het gebruik van een [Server naam alias](analysis-services-server-alias.md) kan het aantal locaties beperken dat de server naam-URI moet worden gewijzigd, maar moet worden geïmplementeerd voordat een regio wordt verplaatst.
+Voordat u een server naar een andere regio verplaatst, is het raadzaam om een gedetailleerd plan te maken. Overweeg aanvullende resources, zoals gateways en opslag, die mogelijk ook moeten worden verplaatst. Bij elk plan is het belangrijk om een of meer proefbewerkingen met testservers te voltooien voordat u een productieserver verplaatst.
 
 > [!IMPORTANT]
-> Azure-regio's gebruiken verschillende IP-adresbereiken. Als er Firewall uitzonderingen zijn geconfigureerd voor de regio waarin uw server en/of opslag account zich bevindt, kan het nodig zijn om een ander IP-adres bereik te configureren. Zie [Veelgestelde vragen over Analysis Services-netwerk verbinding](analysis-services-network-faq.md)voor meer informatie.
+> Clienttoepassingen en verbindingsreeksen maken verbinding met Analysis Services met behulp van de volledige servernaam. Dit is een URI die de regio bevat waarin de server zich in zich. Bijvoorbeeld `asazure://westcentralus.asazure.windows.net/advworks01`. Wanneer u een server naar een andere regio verplaatst, maakt u effectief een nieuwe serverresource in een andere regio, die een andere regio heeft in de servernaam URI. Clienttoepassingen en verbindingsreeksen die in scripts worden gebruikt, moeten verbinding maken met de nieuwe server met behulp van de nieuwe servernaam URI. Het gebruik [van een servernaamalias](analysis-services-server-alias.md) kan het aantal plaatsen beperken waar de servernaam URI moet worden gewijzigd, maar moet worden geïmplementeerd voordat een regio wordt verplaatst.
+
+> [!IMPORTANT]
+> Azure-regio's gebruiken verschillende IP-adresbereiken. Als er firewall-uitzonderingen zijn geconfigureerd voor de regio waarin uw server en/of opslagaccount zich bevinden, kan het nodig zijn om een ander IP-adresbereik te configureren. Zie Veelgestelde vragen over het gebruik van Analysis Services [netwerkconnectiviteit voor meer informatie.](analysis-services-network-faq.md)
 
 > [!NOTE]
-> In dit artikel wordt beschreven hoe u een back-up van een Data Base naar een doel server terugzet vanuit een opslag container in de regio van de bron server. In sommige gevallen kan het herstellen van back-ups vanuit een andere regio slechte prestaties hebben, met name voor grote data bases. Voor de beste prestaties tijdens het herstellen van de Data Base kunt u een nieuwe opslag container in de doel server regio migreren of maken. Kopieer de ABF-back-upbestanden van de bron regio opslag container naar de doel regio opslag container voordat u de Data Base naar de doel server herstelt. In het kader van dit artikel, in sommige gevallen, met name bij zeer grote data bases, wordt het uitvoeren van een Data Base op de doel server, het opnieuw maken en vervolgens verwerken van database gegevens, mogelijk rendabeler dan met back-up/herstel.
+> In dit artikel wordt beschreven hoe u een databaseback-up herstelt naar een doelserver vanuit een opslagcontainer in de regio van de bronserver. In sommige gevallen kunnen het herstellen van back-ups vanuit een andere regio slechte prestaties hebben, met name voor grote databases. Migreert of maakt een nieuwe opslagcontainer in de doelserverregio voor de beste prestaties tijdens het herstellen van de database. Kopieer de .abf-back-upbestanden van de opslagcontainer voor de bronregio naar de opslagcontainer in de doelregio voordat u de database naar de doelserver herstelt. Hoewel dit niet binnen het bereik van dit artikel valt, kan het in sommige gevallen, met name bij zeer grote databases, rendabeler zijn om een database uit uw bronserver te scripten, opnieuw te maken en vervolgens te verwerken op de doelserver om databasegegevens te laden dan back-up/herstel te gebruiken.
 
 > [!NOTE]
-> Als u een on-premises gegevens gateway gebruikt om verbinding te maken met gegevens bronnen, moet u de gateway bron ook verplaatsen naar de doel server regio. Zie [een on-premises gegevens gateway installeren en configureren](analysis-services-gateway-install.md)voor meer informatie.
+> Als u een on-premises gegevensgateway gebruikt om verbinding te maken met gegevensbronnen, moet u de gatewayresource ook verplaatsen naar de doelserverregio. Zie Een on-premises gegevensgateway installeren en [configureren voor meer informatie.](analysis-services-gateway-install.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-- **Azure-opslag account**: vereist voor het opslaan van een. ABF-back-upbestand.
-- **SQL Server Management Studio (SSMS)**: vereist voor het maken van back-ups en het herstellen van model databases.
-- **Azure PowerShell**. Alleen vereist als u ervoor kiest om deze taak te volt ooien met behulp van Power shell.
+- **Azure-opslagaccount:** vereist voor het opslaan van een .abf-back-upbestand.
+- **SQL Server Management Studio (SSMS)**: vereist voor het maken van back-ups en het herstellen van modeldatabases.
+- **Azure PowerShell**. Alleen vereist als u ervoor kiest om deze taak te voltooien met behulp van PowerShell.
 
 ## <a name="prepare"></a>Voorbereiden
 
-### <a name="backup-model-databases"></a>Back-upmodel databases
+### <a name="backup-model-databases"></a>Back-upmodeldatabases
 
-Als er nog geen **opslag instellingen** voor de bron server zijn geconfigureerd, volgt u de stappen in [opslag instellingen configureren](analysis-services-backup.md#configure-storage-settings).
+Als **opslaginstellingen nog** niet zijn geconfigureerd voor de bronserver, volgt u de stappen in [Opslaginstellingen configureren.](analysis-services-backup.md#configure-storage-settings)
 
-Wanneer opslag instellingen zijn geconfigureerd, volgt u de stappen in [back-up](analysis-services-backup.md#backup) om een model database te maken. ABF-back-up in uw opslag container. U kunt later de ABF-back-up naar uw nieuwe doel server herstellen.
+Wanneer de opslaginstellingen zijn geconfigureerd, volgt u de stappen in [Back-up om](analysis-services-backup.md#backup) een ABF-back-up van een modeldatabase te maken in uw opslagcontainer. Later herstelt u de .abf-back-up naar de nieuwe doelserver.
 
 
 ### <a name="export-template"></a>Sjabloon exporteren
 
-De sjabloon bevat configuratie-eigenschappen van de bron server.
+De sjabloon bevat configuratie-eigenschappen van de bronserver.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -73,34 +73,34 @@ Een sjabloon exporteren via de Azure-portal:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-2. Selecteer **alle resources** en selecteer vervolgens uw Analysis Services-server.
+2. Selecteer **Alle resources** en selecteer vervolgens uw Analysis Services server.
 
-3. Selecteer > **instellingen**  >  **sjabloon exporteren**.
+3. Selecteer > **Instellingen Sjabloon**  >  **exporteren.**
 
-4. Kies **downloaden** in de Blade **sjabloon exporteren** .
+4. Kies **Downloaden** op de blade **Sjabloon** exporteren.
 
-5. Zoek het zip-bestand dat u hebt gedownload van de portal en pak dat bestand vervolgens uit naar een map.
+5. Zoek het ZIP-bestand dat u hebt gedownload uit de portal en open het bestand in een map.
 
-   Het zip-bestand bevat de. json-bestanden waaruit de sjabloon en de vereiste para meters bestaan voor het implementeren van een nieuwe server.
+   Het zip-bestand bevat de JSON-bestanden die de sjabloon en parameters bevatten die nodig zijn om een nieuwe server te implementeren.
 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Een sjabloon exporteren met behulp van Power shell:
+Een sjabloon exporteren met behulp van PowerShell:
 
-1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
+1. Meld u aan bij uw Azure-abonnement met de [opdracht Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
 
    ```azurepowershell-interactive
    Connect-AzAccount
    ```
-2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van de server bron die u wilt verplaatsen.
+2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van de serverresource die u wilt verplaatsen.
 
    ```azurepowershell-interactive
    $context = Get-AzSubscription -SubscriptionId <subscription-id>
    Set-AzContext $context
    ```
 
-3. Exporteer de sjabloon van de bron server. Met deze opdrachten wordt een JSON-sjabloon met de ResourceGroupName als bestands naam opgeslagen in de huidige map.
+3. Exporteert u de sjabloon van de bronserver. Met deze opdrachten wordt een json-sjabloon met de ResourceGroupName als bestandsnaam opgeslagen in uw huidige map.
 
    ```azurepowershell-interactive
    $resource = Get-AzResource `
@@ -113,41 +113,41 @@ Een sjabloon exporteren met behulp van Power shell:
    ```
 ---
 
-### <a name="get-storage-shared-access-signature-sas"></a>Shared Access Signature (SAS) voor opslag ophalen
+### <a name="get-storage-shared-access-signature-sas"></a>Shared Access Signature (SAS) voor opslag op halen
 
-Bij het implementeren van een doel server op basis van een sjabloon is een SAS-token voor gebruikers overdracht (als URI) vereist om de opslag container op te geven die de database back-up bevat.
+Bij het implementeren van een doelserver vanuit een sjabloon is een SAS-token voor gebruikersdelegatie (als een URI) vereist om de opslagcontainer op te geven die de back-up van de database bevat.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Een Shared Access Signature ophalen met behulp van de portal:
+Een shared access signature op te halen via de portal:
 
-1. Selecteer in de portal het opslag account dat wordt gebruikt om een back-up te maken van uw server database.
+1. Selecteer in de portal het opslagaccount dat wordt gebruikt om een back-up te maken van uw serverdatabase.
 
-2. Selecteer **Storage Explorer** en vouw vervolgens **BLOB-containers** uit. 
+2. Selecteer **Storage Explorer** en vouw **blobcontainers uit.** 
 
-3. Klik met de rechter muisknop op uw opslag container en selecteer vervolgens **Shared Access Signature ophalen**.
+3. Klik met de rechtermuisknop op uw opslagcontainer en selecteer **vervolgens Shared Access Signature**.
 
     :::image type="content" source="media/move-between-regions/get-sas.png" alt-text="SAS ophalen":::
 
-4. Selecteer in **Shared Access Signature** **maken**. Standaard verloopt de SAS over 24 uur.
+4. Selecteer **Shared Access Signature** in **het dialoogvenster Maken.** Standaard verloopt de SAS binnen 24 uur.
 
 5. Kopieer de **URI** en sla deze op. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u een gedeelde toegangs handtekening wilt ophalen met behulp van Power shell, volgt u de stappen in [een gebruikers delegering Sa's maken voor een container of BLOB met Power shell](../storage/blobs/storage-blob-user-delegation-sas-create-powershell.md#create-a-user-delegation-sas-for-a-blob).
+Volg de stappen in Create a user delegation SAS for a container or blob with PowerShell (Een SAS voor gebruikersdelegatie maken voor een container of blob met PowerShell) om een handtekening voor gedeelde toegang op te [halen met behulp van PowerShell.](../storage/blobs/storage-blob-user-delegation-sas-create-powershell.md#create-a-user-delegation-sas-for-a-blob)
 
 ---
 
 ### <a name="modify-the-template"></a>De sjabloon aanpassen
 
-Gebruik een tekst editor om de template.jste wijzigen van het bestand dat u hebt geëxporteerd, het wijzigen van de eigenschappen van de regio en de BLOB-container. 
+Gebruik een teksteditor om de gegevens te template.jsbestand dat u hebt geëxporteerd, en wijzig de eigenschappen van de regio- en blobcontainer. 
 
 De sjabloon wijzigen:
 
-1. In een tekst editor, in de eigenschap **Location** , geeft u de nieuwe doel regio op. Plak in de eigenschap **backupBlobContainerUri** de opslag container-URI met SAS-sleutel. 
+1. Geef in een teksteditor in **de eigenschap location** de nieuwe doelregio op. Plak in **de eigenschap backupBlobContainerUri** de opslagcontainer-URI met sas-sleutel. 
 
-    In het volgende voor beeld wordt de doel regio voor Server advworks1 ingesteld op `South Central US` en wordt de opslag container-URI met de hand tekening voor gedeelde toegang opgegeven: 
+    In het volgende voorbeeld wordt de doelregio voor server advworks1 ingesteld op en wordt de `South Central US` opslagcontainer-URI met shared access signature opgegeven: 
 
     ```json
     "resources": [
@@ -177,7 +177,7 @@ De sjabloon wijzigen:
 
 #### <a name="regions"></a>Regio's
 
-Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor meer informatie over Azure-regio's. Als u regio's wilt ophalen met behulp van Power shell, voert u de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation) uit.
+Zie Azure-locaties om [Azure-regio's op te halen.](https://azure.microsoft.com/global-infrastructure/locations/) Voer de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation) uit om regio's op te halen met behulp van PowerShell.
 
 ```azurepowershell-interactive
    Get-AzLocation | format-table 
@@ -185,13 +185,13 @@ Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations
 
 ## <a name="move"></a>Verplaatsen
 
-Als u een nieuwe server bron in een andere regio wilt implementeren, gebruikt u de **template.jsvoor** het bestand dat u in de vorige secties hebt geëxporteerd en gewijzigd.
+Als u een nieuwe serverresource in een  andere regio wilt implementeren, gebruikt u detemplate.jsin het bestand dat u in de vorige secties hebt geëxporteerd en gewijzigd.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Selecteer in de portal **een resource maken**.
+1. Selecteer een resource maken **in de portal.**
 
-2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
+2. In **Marketplace doorzoeken** typt u **sjabloonimplementatie** en drukt u op **ENTER.**
 
 3. Selecteer **Sjabloonimlementatie**.
 
@@ -199,27 +199,27 @@ Als u een nieuwe server bron in een andere regio wilt implementeren, gebruikt u 
 
 5. Selecteer **Bouw uw eigen sjabloon in de editor**.
 
-6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsvoor** het bestand dat u hebt geëxporteerd en gewijzigd.
+6. Selecteer **Bestand laden** en volg de instructies voor het laden van detemplate.js **in** het bestand dat u hebt geëxporteerd en gewijzigd.
 
-7. Controleer of in de sjabloon editor de juiste eigenschappen voor de nieuwe doel server worden weer gegeven.
+7. Controleer of in de sjablooneditor de juiste eigenschappen voor de nieuwe doelserver worden weergeven.
 
 8. Selecteer **Opslaan**.
 
-9. Voer de eigenschaps waarden in of Selecteer deze:
+9. Voer de eigenschapswaarden in of selecteer deze:
 
     - **Abonnement**: selecteer het Azure-abonnement.
     
-    - **Resource groep**: Selecteer **nieuwe maken** en voer vervolgens de naam van een resource groep in. U kunt een bestaande resource groep selecteren, die er nog geen Analysis Services server met dezelfde naam bevat.
+    - **Resourcegroep:** selecteer **Nieuwe maken** en voer vervolgens de naam van een resourcegroep in. U kunt een bestaande resourcegroep selecteren op voorwaarde dat deze nog geen Analysis Services server met dezelfde naam bevat.
     
-    - **Locatie**: Selecteer de regio die u in de sjabloon hebt opgegeven.
+    - **Locatie:** selecteer dezelfde regio die u hebt opgegeven in de sjabloon.
 
-10. Selecteer **controleren en maken**.
+10. Selecteer **Controleren en maken.**
 
-11. Bekijk de voor waarden en basis informatie en selecteer vervolgens **maken**.
+11. Lees de voorwaarden en Basisbeginselen en selecteer vervolgens **Maken.**
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Gebruik de volgende opdrachten om uw sjabloon te implementeren:
+Gebruik deze opdrachten om uw sjabloon te implementeren:
 
 ```azurepowershell-interactive
    $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -230,21 +230,21 @@ Gebruik de volgende opdrachten om uw sjabloon te implementeren:
    ```
 ---
 
-### <a name="get-target-server-uri"></a>URI van doel server ophalen
+### <a name="get-target-server-uri"></a>Doelserver-URI op halen
 
-Als u verbinding wilt maken met de nieuwe doel server van SSMS om de model database te herstellen, moet u de nieuwe URI voor de doel server ophalen.
+Als u vanuit SSMS verbinding wilt maken met de nieuwe doelserver om de modeldatabase te herstellen, moet u de nieuwe doelserver-URI krijgen.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-De URI van de server in de portal ophalen:
+Ga als volgende te werk om de server-URI op te halen in de portal:
 
-1. Ga in de portal naar de nieuwe doel server bron.
+1. Ga in de portal naar de nieuwe doelserverresource.
 
-2. Kopieer op de pagina **overzicht** de URL van de **Server naam** .
+2. Kopieer op **de** pagina Overzicht de **servernaam** URI.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u de URI van de server wilt ophalen met behulp van Power shell, gebruikt u de volgende opdrachten:
+Gebruik de volgende opdrachten om de server-URI op te halen met behulp van PowerShell:
 
 ```azurepowershell-interactive
    $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -256,43 +256,43 @@ Kopieer **ServerFullName** uit de uitvoer.
 
 ---
 
-### <a name="restore-model-database"></a>Model database herstellen
+### <a name="restore-model-database"></a>Modeldatabase herstellen
 
-Volg de stappen die worden beschreven in [herstellen](analysis-services-backup.md#restore) om de model database te herstellen. ABF-back-up naar de nieuwe doel server.
+Volg de stappen die worden beschreven in [Herstellen](analysis-services-backup.md#restore) om de .abf-back-up van de modeldatabase te herstellen naar de nieuwe doelserver.
 
-Optioneel: nadat u de model database hebt hersteld, verwerkt u het model en de tabellen om gegevens uit gegevens bronnen te vernieuwen. Het model en de tabel verwerken met behulp van SSMS:
+Optioneel: Na het herstellen van de modeldatabase verwerkt u het model en de tabellen om gegevens uit gegevensbronnen te vernieuwen. Het model en de tabel verwerken met behulp van SSMS:
 
-1. Klik in SSMS met de rechter muisknop op de model database > **process-data base**.
+1. Klik in SSMS met de rechtermuisknop op de modeldatabase > **Procesdatabase**.
 
-2. Vouw **tabellen** uit, klik met de rechter muisknop op een tabel. Selecteer in **proces tabel (len)** alle tabellen en selecteer vervolgens **OK**.
+2. Vouw **Tabellen uit** en klik met de rechtermuisknop op een tabel. Selecteer **in Procestabel(s)** alle tabellen en selecteer vervolgens **OK.**
 
 ## <a name="verify"></a>Verifiëren
 
-1. Ga in de portal naar de nieuwe doel server.
+1. Ga in de portal naar de nieuwe doelserver.
 
-2. Controleer op de pagina overzicht, in **modellen op Analysis Services server**, de herstelde modellen worden weer gegeven.
+2. Controleer op de pagina Overzicht in **Modellen op Analysis Services-server** of herstelde modellen worden weergegeven.
 
-3. Gebruik een client toepassing als Power BI of Excel om verbinding te maken met het model op de nieuwe server. Controleer of model objecten zoals tabellen, metingen, hiërarchieën worden weer gegeven. 
+3. Gebruik een clienttoepassing zoals Power BI of Excel om verbinding te maken met het model op de nieuwe server. Controleer of modelobjecten zoals tabellen, metingen en hiërarchieën worden weergegeven. 
 
-4. Voer alle automatiserings scripts uit. Controleer of deze zijn uitgevoerd.
+4. Voer automatiseringsscripts uit. Controleer of ze zijn uitgevoerd.
 
-Optioneel: [ALM Toolkit](http://alm-toolkit.com/) is een *open source* -hulp programma voor het vergelijken en beheren van Power BI gegevens sets *en* Analysis Services tabellaire model databases. Gebruik de Toolkit om verbinding te maken met zowel de bron-als de doel server database en vergelijk. Als uw database migratie is voltooid, worden model objecten dezelfde definitie. 
+Optioneel: [ALM Toolkit](http://alm-toolkit.com/) is een *open source* voor het vergelijken en beheren Power BI gegevenssets  en databases Analysis Services tabellair model. Gebruik de toolkit om verbinding te maken met de bron- en doelserverdatabases en om deze te vergelijken. Als de databasemigratie is geslaagd, krijgen modelobjecten dezelfde definitie. 
 
 :::image type="content" source="media/move-between-regions/alm-toolkit.png" alt-text="ALM Toolkit":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Nadat u hebt gecontroleerd of de client toepassingen verbinding kunnen maken met de nieuwe server en alle automatiserings scripts correct worden uitgevoerd, verwijdert u de bron server. 
+Nadat u hebt gecontroleerd of clienttoepassingen verbinding kunnen maken met de nieuwe server en alle automatiseringsscripts correct worden uitgevoerd, verwijdert u de bronserver. 
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-De bron server verwijderen uit de portal:
+De bronserver verwijderen uit de portal:
 
-Selecteer **verwijderen** op de pagina **overzicht** van de bron server.
+Selecteer verwijderen op de pagina **Overzicht van** de **bronserver.**
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u de bron server wilt verwijderen met behulp van Power shell, gebruikt u de opdracht Remove-AzAnalysisServicesServer.
+Als u de bronserver wilt verwijderen met behulp van PowerShell, gebruikt u de Remove-AzAnalysisServicesServer opdracht.
 
 ```azurepowershell-interactive
 Remove-AzAnalysisServicesServer -Name "myserver" -ResourceGroupName "myResourceGroup"
@@ -301,4 +301,4 @@ Remove-AzAnalysisServicesServer -Name "myserver" -ResourceGroupName "myResourceG
 ---
 
 > [!NOTE]
-> Na het volt ooien van een regio, wordt het aanbevolen om de nieuwe doel server een opslag container in dezelfde regio voor back-ups te gebruiken in plaats van de opslag container in de regio van de bron server.
+> Nadat een regio is verplaatst, is het raadzaam dat uw nieuwe doelserver een opslagcontainer in dezelfde regio gebruikt voor back-ups, in plaats van de opslagcontainer in de bronserverregio.

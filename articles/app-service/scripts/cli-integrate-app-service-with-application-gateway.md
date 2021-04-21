@@ -16,12 +16,12 @@ ms.workload: web
 ms.date: 12/09/2019
 ms.author: madsd
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 3820e7bf00f99a846dd2be0edeaf4248e0dfd8ad
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d30cc27fc3c546619e85bb9aabd0b31c10102e96
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97006076"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787805"
 ---
 # <a name="integrate-app-service-with-application-gateway-using-cli"></a>App Service integreren met Application Gateway met behulp van CLI
 
@@ -45,16 +45,16 @@ In dit script worden de volgende opdrachten gebruikt voor het maken van een reso
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [`az group create`](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [`az network vnet create`](/cli/azure/network/vnet#az-network-vnet-create) | Hiermee maakt u een virtueel netwerk. |
-| [`az network public-ip create`](/cli/azure/network/public-ip#az-network-public-ip-create) | Hiermee maakt u een openbaar IP-adres. |
-| [`az network public-ip show`](/cli/azure/network/public-ip#az-network-public-ip-show) | Details van een openbaar IP-adres weergeven. |
-| [`az appservice plan create`](/cli/azure/appservice/plan#az-appservice-plan-create) | Hiermee maakt u een App Service-plan. |
-| [`az webapp create`](/cli/azure/webapp#az-webapp-create) | Hiermee maakt u een App Service-web-app. |
-| [`az webapp show`](/cli/azure/webapp#az-webapp-show) | Details van een App Service-web-app weergeven. |
-| [`az webapp config access-restriction add`](/cli/azure/webapp/config/access-restriction#az-webapp-config-access-restriction-add) | Hiermee voegt u een toegangsbeperking toe aan de App Service-web-app. |
-| [`az network application-gateway create`](/cli/azure/network/application-gateway#az-network-application-gateway-create) | Hiermee maakt u een toepassingsgateway. |
-| [`az network application-gateway http-settings update`](/cli/azure/network/application-gateway/http-settings#az-network-application-gateway-http-settings-update) | Hiermee werkt u HTTP-instellingen van Application Gateway bij. |
+| [`az group create`](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [`az network vnet create`](/cli/azure/network/vnet#az_network_vnet_create) | Hiermee maakt u een virtueel netwerk. |
+| [`az network public-ip create`](/cli/azure/network/public-ip#az_network_public_ip_create) | Hiermee maakt u een openbaar IP-adres. |
+| [`az network public-ip show`](/cli/azure/network/public-ip#az_network_public_ip_show) | Details van een openbaar IP-adres weergeven. |
+| [`az appservice plan create`](/cli/azure/appservice/plan#az_appservice_plan_create) | Hiermee maakt u een App Service-plan. |
+| [`az webapp create`](/cli/azure/webapp#az_webapp_create) | Hiermee maakt u een App Service-web-app. |
+| [`az webapp show`](/cli/azure/webapp#az_webapp_show) | Details van een App Service-web-app weergeven. |
+| [`az webapp config access-restriction add`](/cli/azure/webapp/config/access-restriction#az_webapp_config_access_restriction_add) | Hiermee voegt u een toegangsbeperking toe aan de App Service-web-app. |
+| [`az network application-gateway create`](/cli/azure/network/application-gateway#az_network_application_gateway_create) | Hiermee maakt u een toepassingsgateway. |
+| [`az network application-gateway http-settings update`](/cli/azure/network/application-gateway/http-settings#az_network-application-gateway-http_settings_update) | Hiermee werkt u HTTP-instellingen van Application Gateway bij. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

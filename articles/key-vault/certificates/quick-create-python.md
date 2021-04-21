@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: 598bbef0ceb24f3eb5932239a4146e1693521f24
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 62249f579909c3f8bfa9bcdf4e77e45453fcb68b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107751324"
+ms.locfileid: "107792017"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-python"></a>Quickstart: Azure Key Vault-clientbibliotheek met certificaten voor Python
 
@@ -183,7 +183,7 @@ Gebruik de [get_certificate](/python/api/azure-keyvault-certificates/azure.keyva
 retrieved_certificate = client.get_certificate(certificateName)
  ```
 
-U kunt ook controleren of het certificaat is ingesteld met de Azure CLI-opdracht [az keyvault certificate show](/cli/azure/keyvault/certificate?#az-keyvault-certificate-show).
+U kunt ook controleren of het certificaat is ingesteld met de Azure CLI-opdracht [az keyvault certificate show](/cli/azure/keyvault/certificate?#az_keyvault_certificate_show).
 
 ### <a name="delete-a-certificate"></a>Een certificaat verwijderen
 
@@ -196,7 +196,7 @@ deleted_certificate = poller.result()
 
 De methode `begin_delete_certificate` is asynchroon en retourneert een pollerobject. Wanneer de methode `result` van de poller wordt aangeroepen, wordt er gewacht totdat deze voltooid is.
 
-U kunt controleren of het certificaat is verwijderd met de Azure CLI-opdracht [az keyvault certificate show](/cli/azure/keyvault/certificate?#az-keyvault-certificate-show).
+U kunt controleren of het certificaat is verwijderd met de Azure CLI-opdracht [az keyvault certificate show](/cli/azure/keyvault/certificate?#az_keyvault_certificate_show).
 
 Zodra een certificaat is verwijderd, heeft dit nog een tijdje de status Verwijderd maar herstelbaar. Gebruik een andere certificaatnaam als u de code nogmaals uitvoert.
 

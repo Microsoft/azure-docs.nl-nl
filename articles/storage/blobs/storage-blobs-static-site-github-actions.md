@@ -1,6 +1,6 @@
 ---
 title: GitHub Actions gebruiken om een statische site te implementeren in Azure Storage
-description: Azure Storage van statische website-hosting met GitHub-acties
+description: Azure Storage statische website hosten met GitHub Actions
 author: juliakm
 ms.service: storage
 ms.topic: how-to
@@ -9,43 +9,43 @@ ms.reviewer: dineshm
 ms.date: 01/11/2021
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 2192cdb3072edba2e5597a697feef99ba4d2070d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3ae0904eda2608026ad09ba8b8993008380725f4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102210254"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107788525"
 ---
-# <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Stel een GitHub actions-werk stroom in om uw statische website te implementeren in Azure Storage
+# <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Een werkstroom GitHub Actions om uw statische website te implementeren in Azure Storage
 
-Aan de slag met [github-acties](https://docs.github.com/en/actions) met behulp van een werk stroom voor het implementeren van een statische site naar een Azure Storage-account. Zodra u een werk stroom voor GitHub-acties hebt ingesteld, kunt u uw site automatisch implementeren in azure vanaf GitHub wanneer u wijzigingen aanbrengt in de code van uw site.
+Ga aan de [slag GitHub Actions](https://docs.github.com/en/actions) met behulp van een werkstroom om een statische site te implementeren in een Azure-opslagaccount. Zodra u een GitHub Actions hebt ingesteld, kunt u uw site automatisch vanuit GitHub implementeren in Azure wanneer u wijzigingen aan de code van uw site aan brengt.
 
 > [!NOTE]
-> Als u [statische web apps van Azure](../../static-web-apps/index.yml)gebruikt, hoeft u de werk stroom voor github-acties niet hand matig in te stellen.
-> Met Azure static Web Apps wordt automatisch een GitHub actions-werk stroom gemaakt. 
+> Als u een [Azure Static Web Apps](../../static-web-apps/index.yml)gebruikt, hoeft u niet handmatig een werkstroom voor GitHub Actions instellen.
+> Azure Static Web Apps maakt automatisch een GitHub Actions werkstroom voor u. 
 
 ## <a name="prerequisites"></a>Vereisten
 
-Een Azure-abonnement en GitHub-account. 
+Een Azure-abonnement en Een GitHub-account. 
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Een GitHub-opslag plaats met de code van uw statische website. Als u geen GitHub-account hebt, [kunt u zich gratis registreren](https://github.com/join).  
-- Een werkende statische website die wordt gehost in Azure Storage. Meer informatie over het [hosten van een statische website in azure Storage](storage-blob-static-website-how-to.md). Als u dit voor beeld wilt volgen, moet u ook [Azure CDN](static-website-content-delivery-network.md)implementeren.
+- Een GitHub-opslagplaats met de code van uw statische website. Als u geen GitHub-account hebt, [kunt u zich gratis registreren](https://github.com/join).  
+- Een werkende statische website die wordt gehost in Azure Storage. Meer informatie over het [hosten van een statische website in Azure Storage.](storage-blob-static-website-how-to.md) Als u dit voorbeeld wilt volgen, moet u ook [Azure CDN.](static-website-content-delivery-network.md)
 
 > [!NOTE]
-> Het is gebruikelijk om een CDN (Content Delivery Network) te gebruiken om de latentie van uw gebruikers over de hele wereld te reduceren en om het aantal trans acties naar uw opslag account te verminderen. Het implementeren van statische inhoud naar een cloud-gebaseerde opslag service kan de nood zaak voor een dure reken instantie verminderen. Zie voor meer informatie een [patroon voor het hosten van statische inhoud](/azure/architecture/patterns/static-content-hosting).
+> Het is gebruikelijk om een netwerk voor contentlevering (CDN) te gebruiken om de latentie voor uw gebruikers over de hele wereld te verminderen en het aantal transacties naar uw opslagaccount te verminderen. Het implementeren van statische inhoud in een cloudopslagservice kan de behoefte aan mogelijk dure rekenkracht verminderen. Zie Static [Content Hosting pattern (Patroon Hosting van statische inhoud) voor meer informatie.](/azure/architecture/patterns/static-content-hosting)
 
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
-U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
+U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
-Vervang de tijdelijke aanduiding door `myStaticSite` de naam van uw site die wordt gehost in azure Storage. 
+Vervang de tijdelijke aanduiding `myStaticSite` door de naam van uw site die wordt gehost in Azure Storage. 
 
 ```azurecli-interactive
    az ad sp create-for-rbac --name {myStaticSite} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
 ```
 
-In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnements-id en resourcegroepsnaam. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw opslag account zoals hieronder wordt beschreven. Kopieer dit JSON-object voor later gebruik.
+In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnements-id en resourcegroepsnaam. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw opslagaccount, vergelijkbaar met het onderstaande. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {
@@ -58,7 +58,7 @@ In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnemen
 ```
 
 > [!IMPORTANT]
-> Het is altijd een goed idee om minimale toegang te verlenen. Het bereik in het vorige voor beeld is beperkt tot de specifieke App Service-app en niet de hele resource groep.
+> Het is altijd een goed idee om minimale toegang te verlenen. Het bereik in het vorige voorbeeld is beperkt tot de specifieke App Service app en niet tot de hele resourcegroep.
 
 ## <a name="configure-the-github-secret"></a>Het GitHub-geheim configureren
 
@@ -80,7 +80,7 @@ In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnemen
 
 1. Ga naar **Acties** voor uw GitHub-opslagplaats. 
 
-    :::image type="content" source="media/storage-blob-static-website/storage-blob-github-actions-header.png" alt-text="Menu-item GitHub acties":::
+    :::image type="content" source="media/storage-blob-static-website/storage-blob-github-actions-header.png" alt-text="Menu-item GitHub-acties":::
 
 1. Selecteer **Uw werkstroom zelf instellen**. 
 
@@ -117,7 +117,7 @@ In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnemen
               creds: ${{ secrets.AZURE_CREDENTIALS }}
     ```
 
-1. Gebruik de actie Azure CLI om uw code te uploaden naar Blob Storage en uw CDN-eind punt te verwijderen. `az storage blob upload-batch`Vervang de tijdelijke aanduiding voor door de naam van uw opslag account. Het script wordt geüpload naar de `$web` container. `az cdn endpoint purge`Vervang de tijdelijke aanduidingen door de naam van uw CDN-profiel, de naam van het CDN-eind punt en de resource groep.
+1. Gebruik de Azure CLI-actie om uw code te uploaden naar blob-opslag en om uw CDN-eindpunt op te purpen. Vervang `az storage blob upload-batch` voor de tijdelijke aanduiding door de naam van uw opslagaccount. Het script wordt geüpload naar de `$web` container. Vervang `az cdn endpoint purge` voor de tijdelijke aanduidingen door uw CDN-profielnaam, CDN-eindpuntnaam en resourcegroep.
 
     ```yaml
         - name: Upload to blob storage
@@ -183,9 +183,9 @@ In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnemen
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer uw statische website en GitHub-opslag plaats niet meer nodig zijn, moet u de resources opschonen die u hebt geïmplementeerd door de resource groep en de GitHub-opslag plaats te verwijderen. 
+Wanneer uw statische website en GitHub-opslagplaats niet meer nodig zijn, schoont u de resources op die u hebt geïmplementeerd door de resourcegroep en uw GitHub-opslagplaats te verwijderen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Meer informatie over statische Web Apps van Azure](../../static-web-apps/index.yml)
+> [Meer informatie over Azure Static Web Apps](../../static-web-apps/index.yml)

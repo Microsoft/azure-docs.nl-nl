@@ -4,12 +4,12 @@ description: Informatie over hoe u herstelacties op bestandsniveau uitvoert op e
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d977919b806be32b84001a9b91dc9e396fbd63ce
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dc3ce601a92020c0fe405935b8dc57242d852a1f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96557906"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765319"
 ---
 # <a name="restore-files-to-a-virtual-machine-in-azure"></a>Bestanden herstellen naar een virtuele machine in Azure
 
@@ -43,7 +43,7 @@ Wanneer de gegevensoverdracht is voltooid, wordt de momentopname verwijderd en w
 
 Als u per ongeluk een bestand verwijdert of er wijzigingen in aanbrengt, kunt u afzonderlijke bestanden herstellen vanaf een herstelpunt. Hiervoor kunt u op een herstelpunt door de bestanden bladeren waarvan een back-up is gemaakt en alleen de bestanden voor herstel selecteren die u nodig hebt. In dit voorbeeld verwijderen we een bestand van een webserver om het herstelproces op bestandsniveau te demonstreren.
 
-1. Haal het IP-adres van uw VM op met [az vm show](/cli/azure/vm#az-vm-show) om verbinding te maken met uw VM:
+1. Haal het IP-adres van uw VM op met [az vm show](/cli/azure/vm#az_vm_show) om verbinding te maken met uw VM:
 
      ```azurecli-interactive
      az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
@@ -79,7 +79,7 @@ Als u per ongeluk een bestand verwijdert of er wijzigingen in aanbrengt, kunt u 
 
 Als u uw bestanden wilt herstellen, biedt Azure Backup een op uw VM uit te voeren script waarmee uw herstelpunt als een lokale schijf wordt verbonden. U kunt door de bestanden op deze lokale schijf bladeren, bestanden naar de VM zelf herstellen en vervolgens de verbinding met het herstelpunt verbreken. Azure Backup blijft back-ups maken van uw gegevens op basis van het toegewezen beleid voor planning en retentie.
 
-1. Als u de herstelpunten voor uw VM in een lijst wilt opnemen, gebruikt u [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). In dit voorbeeld wordt het meest recente herstelpunt geselecteerd voor de VM met de naam *myVM*, die wordt beveiligd in *myRecoveryServicesVault*:
+1. Als u de herstelpunten voor uw VM in een lijst wilt opnemen, gebruikt u [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az_backup_recoverypoint_list). In dit voorbeeld wordt het meest recente herstelpunt geselecteerd voor de VM met de naam *myVM*, die wordt beveiligd in *myRecoveryServicesVault*:
 
     ```azurecli-interactive
     az backup recoverypoint list \
@@ -91,7 +91,7 @@ Als u uw bestanden wilt herstellen, biedt Azure Backup een op uw VM uit te voere
         --output tsv
     ```
 
-2. Gebruik [az backup restore files mount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-mount-rp) om het script op te halen waarmee het herstelpunt met de VM wordt verbonden. In het volgende voorbeeld wordt het script opgehaald voor de VM met de naam *myVM*, die wordt beveiligd in *myRecoveryServicesVault*.
+2. Gebruik [az backup restore files mount-rp](/cli/azure/backup/restore/files#az_backup_restore_files_mount_rp) om het script op te halen waarmee het herstelpunt met de VM wordt verbonden. In het volgende voorbeeld wordt het script opgehaald voor de VM met de naam *myVM*, die wordt beveiligd in *myRecoveryServicesVault*.
 
     Vervang *myRecoveryPointName* door de naam van het herstelpunt dat u hebt verkregen in de voorgaande opdracht:
 
@@ -141,7 +141,7 @@ Nu u het herstelscript hebt gekopieerd naar uw VM, kunt u de herstelpunten verbi
     ./myVM_we_1571974050985163527.sh
     ```
 
-    Terwijl het script wordt uitgevoerd, wordt u gevraagd om een wachtwoord op te geven voor toegang tot het herstelpunt. Geef het wachtwoord op dat wordt weergegeven in de vorige opdracht [az backup restore files mount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-mount-rp), waarmee het herstelscript werd gegenereerd.
+    Terwijl het script wordt uitgevoerd, wordt u gevraagd om een wachtwoord op te geven voor toegang tot het herstelpunt. Geef het wachtwoord op dat wordt weergegeven in de vorige opdracht [az backup restore files mount-rp](/cli/azure/backup/restore/files#az_backup_restore_files_mount_rp), waarmee het herstelscript werd gegenereerd.
 
     U krijgt het pad voor het herstelpunt via de uitvoer van het script. Het volgende voorbeeld toont dat het herstelpunt is gekoppeld aan */home/azureuser/myVM-20170919213536/Volume1*:
 
@@ -181,7 +181,7 @@ Nu u het herstelscript hebt gekopieerd naar uw VM, kunt u de herstelpunten verbi
     exit
     ```
 
-7. Ontkoppel het herstelpunt van uw VM met [az backup restore files unmount-rp](/cli/azure/backup/restore/files#az-backup-restore-files-unmount-rp). In het volgende voorbeeld wordt het herstelpunt van de VM met de naam *myVM* in *myRecoveryServicesVault* ontkoppeld.
+7. Ontkoppel het herstelpunt van uw VM met [az backup restore files unmount-rp](/cli/azure/backup/restore/files#az_backup_restore_files_unmount_rp). In het volgende voorbeeld wordt het herstelpunt van de VM met de naam *myVM* in *myRecoveryServicesVault* ontkoppeld.
 
     Vervang *myRecoveryPointName* door de naam van het herstelpunt dat u hebt verkregen in de voorgaande opdracht:
 

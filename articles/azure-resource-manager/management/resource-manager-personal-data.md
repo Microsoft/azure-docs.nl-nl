@@ -1,70 +1,70 @@
 ---
 title: Persoonsgegevens
-description: Meer informatie over het beheren van persoonlijke gegevens die zijn gekoppeld aan Azure Resource Manager bewerkingen.
+description: Meer informatie over het beheren van persoonsgegevens die zijn gekoppeld Azure Resource Manager bewerkingen.
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.openlocfilehash: 2f616fa58c53a7f666978bd1db60d10a9266e342
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9087d3e46f38aab3de7774ea341ebd9cbc2d7d1f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105934203"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107785951"
 ---
 # <a name="manage-personal-data-associated-with-azure-resource-manager"></a>Persoonlijke gegevens beheren die zijn gekoppeld aan Azure Resource Manager
 
-Als u wilt voor komen dat gevoelige informatie zichtbaar wordt, verwijdert u de persoonlijke gegevens die u mogelijk hebt verstrekt in implementaties, resource groepen of tags. Azure Resource Manager biedt bewerkingen waarmee u persoonlijke gegevens kunt beheren die u mogelijk hebt verstrekt in implementaties, resource groepen of tags.
+Verwijder persoonlijke gegevens die u mogelijk hebt opgegeven in implementaties, resourcegroepen of tags om te voorkomen dat gevoelige informatie beschikbaar wordt gesteld. Azure Resource Manager biedt bewerkingen voor het beheren van persoonsgegevens die u mogelijk hebt opgegeven in implementaties, resourcegroepen of tags.
 
 [!INCLUDE [Handle personal data](../../../includes/gdpr-intro-sentence.md)]
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="delete-personal-data-in-deployment-history"></a>Persoonlijke gegevens verwijderen in de implementatie geschiedenis
+## <a name="delete-personal-data-in-deployment-history"></a>Persoonlijke gegevens in de implementatiegeschiedenis verwijderen
 
-Voor implementaties worden in Resource Manager parameter waarden en status berichten in de implementatie geschiedenis bewaard. Deze waarden blijven behouden totdat u de implementatie uit de geschiedenis verwijdert. Als u wilt zien of u persoons gegevens in deze waarden hebt ingevoerd, vermeldt u de implementaties. Als u persoonlijke gegevens vindt, verwijdert u de implementaties uit de geschiedenis.
+Voor implementaties behoudt Resource Manager parameterwaarden en statusberichten in de implementatiegeschiedenis. Deze waarden blijven behouden totdat u de implementatie uit de geschiedenis verwijdert. Als u wilt zien of u persoonsgegevens in deze waarden hebt opgegeven, vermeldt u de implementaties. Als u persoonsgegevens vindt, verwijdert u de implementaties uit de geschiedenis.
 
-Als u **implementaties** in de geschiedenis wilt weer geven, gebruikt u:
+Als u **implementaties** in de geschiedenis wilt bekijken, gebruikt u:
 
-* [Lijst op resource groep](/rest/api/resources/resources/deployments/listbyresourcegroup)
+* [Lijst op resourcegroep](/rest/api/resources/deployments/listbyresourcegroup)
 * [Get-AzResourceGroupDeployment](/powershell/module/az.resources/Get-AzResourceGroupDeployment)
-* [AZ-implementatie groeps lijst](/cli/azure/deployment/group#az_deployment_group_list)
+* [az deployment group list](/cli/azure/deployment/group#az_deployment_group_list)
 
-Als u **implementaties** uit de geschiedenis wilt verwijderen, gebruikt u:
+Als u **implementaties uit de** geschiedenis wilt verwijderen, gebruikt u:
 
-* [Verwijderen](/rest/api/resources/resources/deployments/delete)
+* [Verwijderen](/rest/api/resources/deployments/delete)
 * [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/Remove-AzResourceGroupDeployment)
-* [AZ-implementatie groep verwijderen](/cli/azure/deployment/group#az_deployment_group_delete)
+* [az deployment group delete](/cli/azure/deployment/group#az_deployment_group_delete)
 
-## <a name="delete-personal-data-in-resource-group-names"></a>Persoonlijke gegevens verwijderen uit de namen van resource groepen
+## <a name="delete-personal-data-in-resource-group-names"></a>Persoonlijke gegevens in resourcegroepnamen verwijderen
 
-De naam van de resource groep blijft behouden totdat u de resource groep verwijdert. Als u wilt zien of u persoons gegevens in de namen hebt ingevoerd, vermeldt u de resource groepen. Als u persoonlijke gegevens vindt, [verplaatst u de resources](move-resource-group-and-subscription.md) naar een nieuwe resource groep en verwijdert u de resource groep met persoons gegevens in de naam.
+De naam van de resourcegroep blijft bestaan totdat u de resourcegroep verwijdert. Als u wilt zien of u persoonsgegevens in de namen hebt opgegeven, vermeldt u de resourcegroepen. Als u persoonsgegevens vindt, [verplaatst u de resources](move-resource-group-and-subscription.md) naar een nieuwe resourcegroep en verwijdert u de resourcegroep met persoonsgegevens in de naam.
 
-Als u **resource groepen** wilt weer geven, gebruikt u:
+Als u **resourcegroepen wilt opslijst,** gebruikt u:
 
-* [List](/rest/api/resources/resources/resourcegroups/list)
+* [List](/rest/api/resources/resourcegroups/list)
 * [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup)
-* [AZ Group List](/cli/azure/group#az-group-list)
+* [az group list](/cli/azure/group#az_group_list)
 
-Als u **resource groepen** wilt verwijderen, gebruikt u:
+Als u **resourcegroepen wilt verwijderen,** gebruikt u:
 
-* [Verwijderen](/rest/api/resources/resources/resourcegroups/delete)
+* [Verwijderen](/rest/api/resources/resourcegroups/delete)
 * [Remove-AzResourceGroup](/powershell/module/az.resources/Remove-AzResourceGroup)
-* [az group delete](/cli/azure/group#az-group-delete)
+* [az group delete](/cli/azure/group#az_group_delete)
 
-## <a name="delete-personal-data-in-tags"></a>Persoonlijke gegevens in Tags verwijderen
+## <a name="delete-personal-data-in-tags"></a>Persoonlijke gegevens in tags verwijderen
 
-Tags namen en waarden blijven behouden totdat u de tag verwijdert of wijzigt. Als u wilt zien of u persoons gegevens in de tags hebt ingevoerd, geeft u de tags weer. Als u persoonlijke gegevens vindt, verwijdert u de tags.
+Tagsnamen en -waarden blijven behouden totdat u de tag verwijdert of wijzigt. Als u wilt zien of u persoonsgegevens hebt opgegeven in de tags, vermeldt u de tags. Als u persoonsgegevens vindt, verwijdert u de tags.
 
-Als u **Tags** wilt weer geven, gebruikt u:
+Als u **tags wilt opslijst,** gebruikt u:
 
-* [List](/rest/api/resources/resources/tags/list)
+* [List](/rest/api/resources/tags/list)
 * [Get-AzTag](/powershell/module/az.resources/Get-AzTag)
-* [AZ-label lijst](/cli/azure/tag#az-tag-list)
+* [az tag list](/cli/azure/tag#az_tag_list)
 
-Als u **Tags** wilt verwijderen, gebruikt u:
+Als u **tags wilt verwijderen,** gebruikt u:
 
-* [Verwijderen](/rest/api/resources/resources/tags/delete)
+* [Verwijderen](/rest/api/resources/tags/delete)
 * [Remove-AzTag](/powershell/module/az.resources/Remove-AzTag)
-* [AZ tag Delete](/cli/azure/tag#az-tag-delete)
+* [az tag delete](/cli/azure/tag#az_tag_delete)
 
 ## <a name="next-steps"></a>Volgende stappen
-* Zie voor een overzicht van Azure Resource Manager de functie [Wat is Resource Manager?](overview.md)
+* Zie Wat is Azure Resource Manager? voor een overzicht [van Resource Manager?](overview.md)

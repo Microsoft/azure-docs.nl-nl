@@ -1,7 +1,7 @@
 ---
 title: 'Quickstart: Een profiel en eindpunt maken - Resource Manager-sjabloon'
 titleSuffix: Azure Content Delivery Network
-description: In deze Quick Start leert u hoe u een Azure Content Delivery Network-profiel en een resource manager-sjabloon maakt
+description: In deze quickstart leert u hoe u een Azure Content Delivery Network-profiel en eindpunt maakt Resource Manager sjabloon
 services: cdn
 author: asudbring
 manager: KumudD
@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs, devx-track-azurecli
 ms.date: 06/25/2020
 ms.author: allensu
-ms.openlocfilehash: a36484bea3a2bc9caadc5cf4482aae3bea84eafa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 31f0510ed50c9d48a46524a353d7c872b368f75c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102560460"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779035"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint---arm-template"></a>Quickstart: Een Azure CDN-profiel en -eindpunt maken - ARM-sjabloon
 
@@ -98,7 +98,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 ### <a name="azure-cli"></a>Azure CLI
 
-U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken om de resourcegroep en alle gerelateerde resources daarin te verwijderen wanneer u ze niet meer nodig hebt.
+U kunt de opdracht [az group delete](/cli/azure/group#az_group_delete) gebruiken om de resourcegroep en alle gerelateerde resources daarin te verwijderen wanneer u ze niet meer nodig hebt.
 
 ```azurecli-interactive 
   az group delete \
@@ -127,4 +127,4 @@ In deze quickstart hebt u het volgende gemaakt:
 Als u meer wilt weten over Azure CDN en Azure Resource Manager, vindt u meer informatie in de onderstaande artikelen.
 
 > [!div class="nextstepaction"]
-> [Zelf studie: CDN gebruiken voor het leveren van statische inhoud van een web-app](cdn-add-to-web-app.md)
+> [Zelfstudie: CDN gebruiken om statische inhoud van een web-app te leveren](cdn-add-to-web-app.md)

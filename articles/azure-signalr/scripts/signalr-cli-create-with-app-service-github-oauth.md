@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/22/2018
 ms.author: zhshang
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: ee9f0253f2ec27b4afbbb6c5dc1ff3f5c129fe8a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c46ac350c1bf7f7593f334a9a7fa5df1af7b19d8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94841798"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787319"
 ---
 # <a name="create-a-web-app-that-uses-signalr-service-and-github-authentication"></a>Een web-app maken die gebruikmaakt van de service SignalR en GitHub-verificatie
 
@@ -107,14 +107,14 @@ Elke opdracht in de tabel is een koppeling naar specifieke documentatie over de 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az signalr create](/cli/azure/signalr#az-signalr-create) | Hiermee maakt u een resource voor de Azure SignalR-service. |
-| [az signalr key list](/cli/azure/signalr/key#az-signalr-key-list) | Hiermee vraagt u de sleutels op die door uw toepassing worden gebruikt om realtime updates van inhoud te pushen met SignalR. |
-| [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create) | Hiermee maakt u een Azure App Service-plan voor het hosten van web-apps. |
-| [az webapp create](/cli/azure/webapp#az-webapp-create) | Hiermee maakt u een Azure-web-app met behulp van het App Service-hostingplan. |
-| [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) | Hiermee voegt u nieuwe app-instellingen toe voor de web-app. Deze app-instellingen worden gebruikt voor het opslaan van de SignalR-verbindingsreeks en geheimen van GitHub OAuth-app. |
-| [az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) | Hiermee werkt u de implementatiereferenties bij. |
-| [az webapp deployment source config-local-git](/cli/azure/webapp/deployment/source#az-webapp-deployment-source-config-local-git) | Hiermee haalt u een URL op voor een eindpunt van de git-opslagplaats voor het klonen en pushen voor de implementatie van de web-app. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az signalr create](/cli/azure/signalr#az_signalr_create) | Hiermee maakt u een resource voor de Azure SignalR-service. |
+| [az signalr key list](/cli/azure/signalr/key#az_signalr_key_list) | Hiermee vraagt u de sleutels op die door uw toepassing worden gebruikt om realtime updates van inhoud te pushen met SignalR. |
+| [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create) | Hiermee maakt u een Azure App Service-plan voor het hosten van web-apps. |
+| [az webapp create](/cli/azure/webapp#az_webapp_create) | Hiermee maakt u een Azure-web-app met behulp van het App Service-hostingplan. |
+| [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) | Hiermee voegt u nieuwe app-instellingen toe voor de web-app. Deze app-instellingen worden gebruikt voor het opslaan van de SignalR-verbindingsreeks en geheimen van GitHub OAuth-app. |
+| [az webapp deployment user set](/cli/azure/webapp/deployment/user#az_webapp_deployment_user_set) | Hiermee werkt u de implementatiereferenties bij. |
+| [az webapp deployment source config-local-git](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config_local_git) | Hiermee haalt u een URL op voor een eindpunt van de git-opslagplaats voor het klonen en pushen voor de implementatie van de web-app. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

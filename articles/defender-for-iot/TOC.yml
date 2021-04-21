@@ -21,7 +21,7 @@
           displayName: 'firewall, proxy, open ports'
           href: quickstart-system-prerequisites.md
         - name: Aan de slag met Azure Defender for IoT
-          displayName: 'getting started, registration, onboarding'
+          displayName: 'getting started, registration, onboarding, activation, threat intelligence'
           href: getting-started.md
     - name: Oplossing met agent voor apparaatbouwers
       items:
@@ -31,7 +31,7 @@
         - name: Defender for IoT-microagent installeren (preview)
           displayName: 'package, authentication, methods, certificate, authenticate, version'
           href: quickstart-standalone-agent-binary-installation.md
-        - name: Een Defender IoT-microagentmodule dubbel maken (preview)
+        - name: Een Defender IoT-modulemodule van een microagent maken (preview)
           href: quickstart-create-micro-agent-module-twin.md
         - name: De Defender for IoT-microagent bouwen op basis van broncode (preview)
           displayName: 'baseline, configuration, customize, distribution'
@@ -103,7 +103,7 @@
               href: agent-based-security-alerts.md
             - name: Aangepaste beveiligingswaarschuwingen op basis van een agent
               href: agent-based-security-custom-alerts.md
-            - name: Aanbevelingen op basis van een agent
+            - name: Aanbevelingen op basis van agent
               href: agent-based-recommendations.md
 - name: Instructiegidsen
   items:
@@ -122,8 +122,8 @@
               href: how-to-install-software.md
         - name: Uw sensoren voorbereiden
           items:
-            - name: Sensoren beheren
-              displayName: 'onboard, cloud, register, activate, offboard, subscription, subscriptions, offboarding'
+            - name: Sensors onboarden
+              displayName: 'onboard, cloud, register, version, activate, offboard, subscription, threat intelligence, packages, connected'
               href: how-to-manage-sensors-on-the-cloud.md
             - name: Uw sensor activeren en instellen
               displayName: 'deployment, onboard, register, activation, SSL, TLS, certificate, cloud connected, sign in, login, setup, learning mode, initial'
@@ -171,6 +171,7 @@
           displayName: 'mail, SMTP, activation, certificate, software update, backup, restore, proxy, password recovery'
         - name: Werken met bedreigingsinformatiepakketten
           href: how-to-work-with-threat-intelligence-packages.md
+          displayName: 'packages, automatic, intelligence, push, threat'
         - name: Werken met informatie over de inventaris van apparaten
           items:
             - name: Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken
@@ -184,7 +185,7 @@
           displayName: 'connections, Purdue, zoom, delete device'
         - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
           items:
-            - name: Sensorwaarschuwingen begrijpen
+            - name: Inzicht in sensorwaarschuwingen
               href: how-to-work-with-alerts-on-your-sensor.md
             - name: Waarschuwingen filteren en beheren op de pagina Waarschuwingen
               href: how-to-view-alerts.md
@@ -216,7 +217,7 @@
             - name: Risicoanalyserapporten maken
               href: how-to-create-risk-assessment-reports.md
               displayName: 'vulnerability, security score, score, CVE'
-            - name: Aanvalsvectorrapporten maken
+            - name: Rapporten voor aanvalsvectoren maken
               href: how-to-create-attack-vector-reports.md
               displayName: 'Attack surface, prediction,simulation'
             - name: Rapporten voor gegevensmining maken

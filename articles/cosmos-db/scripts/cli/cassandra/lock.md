@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 07/29/2020
-ms.openlocfilehash: 94ff29d2c3272b61ff09fa0e564fcf2fcd281130
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b2c1e663c659935e7e820f30a281099058a4cf34
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94566041"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770989"
 ---
 # <a name="create-a-resource-lock-for-azure-cosmos-cassandra-api-keyspace-and-table-using-azure-cli"></a>Een resourcevergrendeling maken voor een Azure Cosmos Cassandra-API-keyspace en -tabel met behulp van Azure CLI
 [!INCLUDE[appliesto-cassandra-api](../../../includes/appliesto-cassandra-api.md)]
@@ -34,10 +34,10 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az lock create](/cli/azure/lock#az-lock-create) | Hiermee wordt een vergrendeling gemaakt. |
-| [az lock list](/cli/azure/lock#az-lock-list) | Hiermee worden vergrendelingsgegevens weergegeven. |
-| [az lock show](/cli/azure/lock#az-lock-show) | Hiermee worden eigenschappen van een vergrendeling weergegeven. |
-| [az lock delete](/cli/azure/lock#az-lock-delete) | Hiermee wordt een vergrendeling verwijderd. |
+| [az lock create](/cli/azure/lock#az_lock_create) | Hiermee wordt een vergrendeling gemaakt. |
+| [az lock list](/cli/azure/lock#az_lock_list) | Hiermee worden vergrendelingsgegevens weergegeven. |
+| [az lock show](/cli/azure/lock#az_lock_show) | Hiermee worden eigenschappen van een vergrendeling weergegeven. |
+| [az lock delete](/cli/azure/lock#az_lock_delete) | Hiermee wordt een vergrendeling verwijderd. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,15 +1,15 @@
 ---
 title: Logboeken van container-exemplaren & gebeurtenissen
-description: Meer informatie over het ophalen van containerlogboeken en gebeurtenissen in Azure Container Instances om containerproblemen op te lossen
+description: Meer informatie over het ophalen van containerlogboeken en -gebeurtenissen in Azure Container Instances om containerproblemen op te lossen
 ms.topic: article
 ms.date: 12/30/2019
 ms.custom: mvc
-ms.openlocfilehash: b2b7ffb2cb4a7b1171afa42c2ef5a64b2bd928f8
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: f5eb8c878164846ed2f1daf1cb7e5014e0c62c55
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107379278"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107764041"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Containerlogboeken en gebeurtenissen ophalen in Azure Container Instances
 
@@ -17,7 +17,7 @@ Als u een container in Azure Container Instances hebt die zich niet goed gedraag
 
 ## <a name="view-logs"></a>Logboeken weergeven
 
-Als u logboeken vanuit uw toepassingscode in een container wilt weergeven, kunt u de [opdracht az container logs][az-container-logs] gebruiken.
+Als u logboeken van uw toepassingscode in een container wilt weergeven, kunt u de [opdracht az container logs][az-container-logs] gebruiken.
 
 Hieronder volgt logboekuitvoer van de voorbeeldcontainer op basis van een taak in De opdrachtregel instellen in een [containerin](container-instances-start-command.md#azure-cli-example)instance nadat u een ongeldige URL hebt opgegeven met behulp van een opdrachtregel overschrijven:
 
@@ -48,7 +48,7 @@ urllib.error.HTTPError: HTTP Error 404: Not Found
 
 ## <a name="attach-output-streams"></a>Uitvoerstromen koppelen
 
-De [opdracht az container attach][az-container-attach] biedt diagnostische informatie tijdens het opstarten van de container. Zodra de container is gestart, worden STDOUT en STDERR naar uw lokale console gestreamd.
+De [opdracht az container attach biedt][az-container-attach] diagnostische informatie tijdens het opstarten van de container. Zodra de container is gestart, worden STDOUT en STDERR naar uw lokale console gestreamd.
 
 Hier is bijvoorbeeld uitvoer van de op taken gebaseerde container in De opdrachtregel instellen in een [container-instantie](container-instances-start-command.md#azure-cli-example)nadat u een geldige URL hebt opgegeven van een groot tekstbestand dat moet worden verwerkt:
 
@@ -154,6 +154,6 @@ Meer informatie over het [oplossen van veelvoorkomende container- en](container-
 Meer informatie over het verzenden van logboek- en gebeurtenisgegevens voor containergroepen [naar Azure Monitor logboeken.](container-instances-log-analytics.md)
 
 <!-- LINKS - Internal -->
-[az-container-attach]: /cli/azure/container#az-container-attach
-[az-container-logs]: /cli/azure/container#az-container-logs
-[az-container-show]: /cli/azure/container#az-container-show
+[az-container-attach]: /cli/azure/container#az_container_attach
+[az-container-logs]: /cli/azure/container#az_container_logs
+[az-container-show]: /cli/azure/container#az_container_show

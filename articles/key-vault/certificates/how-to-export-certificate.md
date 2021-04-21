@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.custom: mvc
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: 116bafe2e26ca3af5b4ed68373d20e1e787502b7
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0efe0164d8e1a4e5bc3b9d6d7313855740afd316
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105729198"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767903"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Certificaten exporteren uit Azure Key Vault
 
@@ -61,7 +61,7 @@ az keyvault certificate download --file
                                  [--version]
 ```
 
-Bekijk [voorbeelden en parameterdefinities](/cli/azure/keyvault/certificate#az-keyvault-certificate-download) voor meer informatie.
+Bekijk [voorbeelden en parameterdefinities](/cli/azure/keyvault/certificate#az_keyvault_certificate_download) voor meer informatie.
 
 Downloaden als certificaat betekent dat het openbare gedeelte wordt opgehaald. Als u zowel de privésleutel als de openbare metagegevens wilt hebben, kunt u deze downloaden als geheim.
 
@@ -75,7 +75,7 @@ az keyvault secret download -–file {nameofcert.pfx}
                             [--version]
 ```
 
-Zie [parameterdefinities](/cli/azure/keyvault/secret#az-keyvault-secret-download) voor meer informatie.
+Zie [parameterdefinities](/cli/azure/keyvault/secret#az_keyvault_secret_download) voor meer informatie.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -101,7 +101,7 @@ $pfxFileByte = $x509Cert.Export($type, $password)
 [System.IO.File]::WriteAllBytes("KeyVault.pfx", $pfxFileByte)
 ```
 
-Met deze opdracht wordt de volledige keten van certificaten geëxporteerd met een persoonlijke sleutel (dat wil zeggen, zoals de sjabloon is geïmporteerd). Het certificaat is beveiligd met een wachtwoord.
+Met deze opdracht exporteert u de volledige keten van certificaten met een persoonlijke sleutel (dat wil zeggen dezelfde als die is geïmporteerd). Het certificaat is beveiligd met een wachtwoord.
 Zie [Get-AzKeyVaultCertificate - Voorbeeld 2](/powershell/module/az.keyvault/Get-AzKeyVaultCertificate)voor meer informatie over de **Get-AzKeyVaultCertificate**-opdracht en para meters.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)

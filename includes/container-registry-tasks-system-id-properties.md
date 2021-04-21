@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 07/06/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 1b7c8487eb42204f2741679c9ef6eb2717c272cd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c059746262cdaf2901c765d3ce3848887b2e629c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "86057348"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781114"
 ---
-In de uitvoer van de opdracht ziet u in de `identity` sectie een identiteit van `SystemAssigned` het type is ingesteld in de taak. De `principalId` is de principal-id van de taak identiteit:
+In de uitvoer van de opdracht toont `identity` de sectie een identiteit van het type dat is ingesteld in de `SystemAssigned` taak. De `principalId` is de principal-id van de taakidentiteit:
 
 ```console
 [...]
@@ -28,7 +28,7 @@ In de uitvoer van de opdracht ziet u in de `identity` sectie een identiteit van 
   "location": "eastus",
 [...]
 ``` 
-Gebruik de opdracht [AZ ACR Task show][az-acr-task-show] om de principalId in een variabele op te slaan, die u in latere opdrachten kunt gebruiken. Vervang de naam van uw taak en het REGI ster door de volgende opdracht:
+Gebruik de [opdracht az acr task show][az-acr-task-show] om de principalId op te slaan in een variabele, voor gebruik in latere opdrachten. Vervang de naam van uw taak en het register in de volgende opdracht:
 
 ```azurecli
 principalID=$(az acr task show \
@@ -37,4 +37,4 @@ principalID=$(az acr task show \
 ```
 
 <!-- LINKS - Internal -->
-[az-acr-task-show]: /cli/azure/acr/task#az-acr-task-show
+[az-acr-task-show]: /cli/azure/acr/task#az_acr_task_show

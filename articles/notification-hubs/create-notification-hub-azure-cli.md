@@ -14,12 +14,12 @@ ms.author: dbradish
 ms.reviewer: thsomasu
 ms.lastreviewed: 03/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6c565be3aea43fc4dc86fd793e0dc2dea0b08d4c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d8400eb051c09fac4cb88863ad2fac12d2ca0a1b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94563746"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789857"
 ---
 # <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Een Azure notification hub maken met behulp van de Azure-CLI
 
@@ -38,7 +38,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Azure Notification Hubs moeten, zoals alle Azure-resources, worden geïmplementeerd in een resourcegroep.  Met resourcegroepen kunt u gerelateerde Azure-resources organiseren en beheren.  Zie [Wat is Azure Resource Manager?](../azure-resource-manager/management/overview.md) voor meer informatie over resourcegroepen.
 
-Maak voor deze quickstart een resourcegroep met de naam **spnhubrg** op de locatie **eastus** met behulp van de volgende [az group create](/cli/azure/group#az-group-create)-opdracht.
+Maak voor deze quickstart een resourcegroep met de naam **spnhubrg** op de locatie **eastus** met behulp van de volgende [az group create](/cli/azure/group#az_group_create)-opdracht.
 
 ```azurecli
 az group create --name spnhubrg --location eastus

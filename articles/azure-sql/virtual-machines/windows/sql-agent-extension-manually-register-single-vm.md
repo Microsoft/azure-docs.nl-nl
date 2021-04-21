@@ -1,6 +1,6 @@
 ---
-title: Registreren met de SQL IaaS agent-extensie
-description: Registreer uw Azure SQL Server-virtuele machine met de SQL IaaS agent-extensie om functies in te scha kelen voor SQL Server virtuele machines die buiten Azure Marketplace zijn geïmplementeerd, evenals naleving en verbeterde beheer baarheid.
+title: Registreren met SQL IaaS-agentextensie
+description: Registreer uw virtuele Azure SQL Server-machine met de SQL IaaS Agent-extensie om functies in te stellen voor virtuele SQL Server-machines die buiten Azure Marketplace zijn geïmplementeerd, evenals naleving en verbeterde beheerbaarheid.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
@@ -15,59 +15,59 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurecli, devx-track-azurepowershell, contperf-fy21q2
-ms.openlocfilehash: 3cea15114e125951a8fbec73f965b272a4f8053d
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: e34876c76259b8274e0b0ef9059659802eb55cf1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106284155"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765445"
 ---
-# <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>SQL Server VM registreren met de SQL IaaS agent-extensie
+# <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>Een virtuele SQL Server registreren met de SQL IaaS-agentextensie
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-Registreer uw SQL Server-VM met de [SQL IaaS agent-extensie](sql-server-iaas-agent-extension-automate-management.md) om een schat aan functie voordelen voor uw SQL Server op Azure VM te ontgrendelen. 
+Registreer uw SQL Server-VM met de [SQL IaaS Agent-extensie](sql-server-iaas-agent-extension-automate-management.md) om een schat aan functievoordelen te ontgrendelen voor uw SQL Server op Azure VM. 
 
-In dit artikel leert u hoe u een enkele SQL Server virtuele machine kunt registreren met de SQL IaaS agent-extensie. U kunt ook alle SQL Server Vm's [automatisch](sql-agent-extension-automatic-registration-all-vms.md) of [meerdere vm's in bulk](sql-agent-extension-manually-register-vms-bulk.md)registreren.
+In dit artikel leert u hoe u één virtuele SQL Server registreren met de SQL IaaS Agent-extensie. U kunt ook alle virtuele SQL Server of [](sql-agent-extension-automatic-registration-all-vms.md) meerdere [VM's die bulksgewijs zijn gescript registreren.](sql-agent-extension-manually-register-vms-bulk.md)
 
 
 ## <a name="overview"></a>Overzicht
 
-Als u zich registreert met de [SQL Server IaaS agent-extensie](sql-server-iaas-agent-extension-automate-management.md) , wordt de _resource_ van de **virtuele SQL-machine** in uw abonnement gemaakt. Dit is een _afzonderlijke_ resource van de bron van de virtuele machine. Als u de registratie van uw SQL Server-VM ongedaan maakt vanuit de extensie, wordt de _resource_ van de **virtuele SQL-machine** verwijderd, maar wordt de werkelijke virtuele machine niet weggehaald.
+Als u zich registreert bij [SQL Server IaaS](sql-server-iaas-agent-extension-automate-management.md) Agent-extensie, wordt de **sql-resource** voor de virtuele _machine_ binnen uw abonnement gemaakt. Dit is een afzonderlijke _resource_ van de virtuele-machineresource. Als u de registratie van SQL Server VM bij de extensie ongedaan maakt, wordt de _resource_ van de virtuele **SQL-machine** verwijderd, maar wordt de daadwerkelijke virtuele machine niet verwijderd.
 
-Als u een installatie kopie van een Azure-SQL Server VM implementeert via de Azure Portal wordt de virtuele machine van SQL Server automatisch geregistreerd met de extensie. Als u echter zelf SQL Server wilt installeren op een virtuele machine van Azure of als u een virtuele machine van Azure wilt inrichten vanaf een aangepaste VHD, moet u uw SQL Server VM registreren bij de SQL IaaS agent-extensie om de volledige functie voordelen en beheer baarheid te ontgrendelen. 
+Als u een virtuele SQL Server-Azure Marketplace implementeert via de Azure Portal registreert u automatisch de SQL Server-VM met de extensie. Als u er echter voor kiest om SQL Server zelf te installeren op een virtuele Azure-machine of als u een virtuele Azure-machine wilt inrichten vanaf een aangepaste VHD, moet u uw SQL Server-VM registreren bij de SQL IaaS Agent-extensie om volledige voordelen en beheerbaarheid van functies te ontgrendelen. 
 
-Als u de SQL IaaS agent-extensie wilt gebruiken, moet u [uw abonnement eerst registreren bij de provider **micro soft. SqlVirtualMachine**](#register-subscription-with-resource-provider). Dit geeft de SQL IaaS-extensie de mogelijkheid om resources te maken binnen dat specifieke abonnement.
+Als u de SQL IaaS Agent-extensie wilt gebruiken, moet u uw abonnement eerst registreren bij de [ **provider Microsoft.SqlVirtualMachine,**](#register-subscription-with-resource-provider)waarmee de SQL IaaS-extensie resources binnen dat specifieke abonnement kan maken.
 
 > [!IMPORTANT]
-> Met de SQL IaaS agent-extensie worden gegevens verzameld voor het snelle doel om klanten optionele voor delen te geven bij het gebruik van SQL Server binnen Azure Virtual Machines. Micro soft gebruikt deze gegevens niet voor licentie controles zonder voorafgaande toestemming van de klant. Raadpleeg de [SQL Server-aanvulling voor privacy](/sql/sql-server/sql-server-privacy#non-personal-data) voor meer informatie.
+> De SQL IaaS Agent-extensie verzamelt gegevens om klanten optionele voordelen te bieden bij het gebruik van SQL Server binnen Azure Virtual Machines. Microsoft gebruikt deze gegevens niet voor licentiecontroles zonder de vooraf toestemming van de klant. Zie het [SQL Server privacy supplement](/sql/sql-server/sql-server-privacy#non-personal-data) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u uw SQL Server-VM wilt registreren met de extensie, hebt u het volgende nodig: 
+Als u uw virtuele SQL Server met de extensie wilt registreren, hebt u het volgende nodig: 
 
 - Een [Azure-abonnement](https://azure.microsoft.com/free/).
-- Een Azure resource model [Windows Server 2008 (of hoger) virtuele machine](../../../virtual-machines/windows/quick-create-portal.md) met [SQL Server 2008 (of hoger) die is](https://www.microsoft.com/sql-server/sql-server-downloads) geïmplementeerd op de open bare of Azure Government Cloud. 
-- De nieuwste versie van [Azure cli](/cli/azure/install-azure-cli) of [Azure PowerShell (mini maal 5,0)](/powershell/azure/install-az-ps). 
+- Een virtuele machine van [Azure Resource Model met Windows Server 2008 (of hoger)](../../../virtual-machines/windows/quick-create-portal.md) met SQL Server [2008 (of hoger)](https://www.microsoft.com/sql-server/sql-server-downloads) geïmplementeerd in de openbare cloud of Azure Government cloud. 
+- De nieuwste versie van [Azure CLI](/cli/azure/install-azure-cli) of [Azure PowerShell (minimaal 5.0).](/powershell/azure/install-az-ps) 
 
 
-## <a name="register-subscription-with-resource-provider"></a>Een abonnement bij een resource provider registreren
+## <a name="register-subscription-with-resource-provider"></a>Abonnement registreren bij resourceprovider
 
-Als u uw SQL Server-VM wilt registreren met de SQL IaaS agent-extensie, moet u uw abonnement eerst registreren bij de resource provider **micro soft. SqlVirtualMachine** . Dit geeft de SQL IaaS agent-extensie de mogelijkheid om resources binnen uw abonnement te maken.  U kunt dit doen met behulp van de Azure Portal, de Azure CLI of Azure PowerShell.
+Als u uw virtuele SQL Server wilt registreren met de SQL IaaS Agent-extensie, moet u uw abonnement eerst registreren bij de resourceprovider **Microsoft.SqlVirtualMachine.** Dit biedt de SQL IaaS Agent-extensie de mogelijkheid om resources binnen uw abonnement te maken.  U kunt dit doen met behulp van de Azure Portal, de Azure CLI of Azure PowerShell.
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Open de Azure Portal en ga naar **alle services**. 
-1. Ga naar **abonnementen** en selecteer het gewenste abonnement.  
-1. Ga op de pagina **abonnementen** naar **extensies**. 
-1. Voer **SQL** in het filter in om de SQL-gerelateerde extensies te openen. 
-1. Selecteer **registreren**, **opnieuw registreren** of **registratie ongedaan** maken voor de  **micro soft. SqlVirtualMachine** -provider, afhankelijk van de gewenste actie. 
+1. Open de Azure Portal en ga naar **Alle services.** 
+1. Ga naar **Abonnementen en** selecteer het abonnement van belang.  
+1. Ga op de pagina Abonnementen naar **extensies.**  
+1. Voer **sql** in het filter in om de SQL-extensies weer te brengen. 
+1. Selecteer **Registreren,** **Registreren opnieuw** of Registratie **ongedaan** maken voor de provider  **Microsoft.SqlVirtualMachine,** afhankelijk van de gewenste actie. 
 
    ![De provider wijzigen](./media/sql-agent-extension-manually-register-single-vm/select-resource-provider-sql.png)
 
 
 ### <a name="command-line"></a>Opdrachtregel
 
-Registreer uw Azure-abonnement bij de **micro soft. SqlVirtualMachine** -provider met behulp van Azure CLI of Azure PowerShell. 
+Registreer uw Azure-abonnement bij de **provider Microsoft.SqlVirtualMachine** met behulp van Azure CLI of Azure PowerShell. 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
@@ -85,23 +85,23 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 ---
 
-## <a name="register-with-extension"></a>Registreren met uitbrei ding
+## <a name="register-with-extension"></a>Registreren met extensie
 
-Er zijn drie beheer modi voor de [uitbrei ding van de SQL Server IaaS-agent](sql-server-iaas-agent-extension-automate-management.md#management-modes). 
+Er zijn drie beheermodi voor de SQL Server [IaaS Agent-extensie](sql-server-iaas-agent-extension-automate-management.md#management-modes). 
 
-Als u de uitbrei ding registreert in de modus volledig beheer, wordt de SQL Server-service opnieuw gestart. u wordt aangeraden de uitbrei ding eerst te registreren in de licht gewicht modus en vervolgens [bij te werken naar volledig](#upgrade-to-full) tijdens een onderhouds venster. 
+Als u de extensie registreert in de modus volledig beheer, wordt de SQL Server-service opnieuw opgestart. Daarom is het raadzaam om de extensie eerst in de lichtgewicht modus te registreren en vervolgens tijdens een onderhoudsvenster een [upgrade](#upgrade-to-full) naar volledig uit te voeren. 
 
-### <a name="lightweight-management-mode"></a>Licht gewicht beheer modus
+### <a name="lightweight-management-mode"></a>Lichtgewicht beheermodus
 
-Gebruik de Azure CLI of Azure PowerShell om uw SQL Server-VM te registreren met de uitbrei ding in de Lightweight-modus. Hiermee wordt de SQL Server-service niet opnieuw gestart. U kunt op elk gewenst moment een upgrade uitvoeren naar de volledige modus, maar dan wordt de SQL Server-service opnieuw gestart, zodat u wordt geadviseerd te wachten tot een gepland onderhouds venster. 
+Gebruik de Azure CLI of Azure PowerShell om uw virtuele SQL Server te registreren bij de extensie in de lichtgewicht modus. Hiermee wordt de SQL Server service niet opnieuw gestart. U kunt vervolgens op elk moment upgraden naar de volledige modus, maar als u dit doet, wordt de SQL Server-service opnieuw opgestart. Het wordt daarom aanbevolen om te wachten tot een gepland onderhoudsvenster. 
 
-Geef het SQL Server-licentie type op als betalen per gebruik () als u `PAYG` een eigen licentie wilt gebruiken, Azure Hybrid Benefit () als u wilt betalen met `AHUB` uw eigen licenties of herstel na nood gevallen ( `DR` ) voor het activeren van de [gratis Dr-replica licentie](business-continuity-high-availability-disaster-recovery-hadr-overview.md#free-dr-replica-in-azure).
+Geef het SQL Server licentietype op als betalen per gebruik ( ) om per gebruik te betalen, Azure Hybrid Benefit ( ) om uw eigen licentie te gebruiken of herstel na noodherstel ( ) om de gratis `PAYG` `AHUB` `DR` [dr-replicalicentie](business-continuity-high-availability-disaster-recovery-hadr-overview.md#free-dr-replica-in-azure)te activeren.
 
-Failover-cluster exemplaren en implementaties met meerdere exemplaren kunnen alleen worden geregistreerd met de SQL IaaS agent-extensie in de Lightweight-modus. 
+Exemplaren van failovercluster en implementaties met meerdere exemplaren kunnen alleen worden geregistreerd bij de SQL IaaS Agent-extensie in de lichtgewicht modus. 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
-Registreer een SQL Server-VM in de licht gewicht modus met de Azure CLI: 
+Registreer een SQL Server-VM in de lichtgewicht modus met de Azure CLI: 
 
   ```azurecli-interactive
   # Register Enterprise or Standard self-installed VM in Lightweight mode
@@ -111,7 +111,7 @@ Registreer een SQL Server-VM in de licht gewicht modus met de Azure CLI:
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Registreer een SQL Server-VM in Lightweight-modus met Azure PowerShell:  
+Registreer een SQL Server-VM in de lichtgewicht modus met Azure PowerShell:  
 
 
   ```powershell-interactive
@@ -125,11 +125,11 @@ Registreer een SQL Server-VM in Lightweight-modus met Azure PowerShell:
 
 ---
 
-### <a name="full-management-mode"></a>Volledige beheer modus
+### <a name="full-management-mode"></a>Modus volledig beheer
 
-Als u uw SQL Server-VM in de volledige modus registreert, wordt de SQL Server-service opnieuw gestart. Ga voorzichtig verder. 
+Als u uw virtuele SQL Server in de volledige modus registreert, wordt de SQL Server gestart. Ga voorzichtig verder. 
 
-Gebruik de volgende Azure PowerShell opdracht om uw SQL Server-VM rechtstreeks te registreren in de volledige modus (en mogelijk de SQL Server-service opnieuw te starten): 
+Als u uw virtuele SQL Server wilt registreren in de volledige modus (en mogelijk de SQL Server-service opnieuw wilt opstarten), gebruikt u de volgende Azure PowerShell opdracht: 
 
   ```powershell-interactive
   # Get the existing  Compute VM
@@ -139,19 +139,19 @@ Gebruik de volgende Azure PowerShell opdracht om uw SQL Server-VM rechtstreeks t
   New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -SqlManagementType Full
   ```
 
-### <a name="noagent-management-mode"></a>Beheer modus voor niet-agent 
+### <a name="noagent-management-mode"></a>Beheermodus NoAgent 
 
-SQL Server 2008 en 2008 R2 geïnstalleerd op Windows Server 2008 (_niet R2_) kunnen worden geregistreerd met de SQL IaaS agent-extensie in de [modus zonder agent](sql-server-iaas-agent-extension-automate-management.md#management-modes). Met deze optie wordt de naleving gegarandeerd en kan de SQL Server virtuele machine worden bewaakt in de Azure Portal met beperkte functionaliteit.
+SQL Server 2008 en 2008 R2 geïnstalleerd op Windows Server 2008 (niet _R2_) kunnen worden geregistreerd met de SQL IaaS Agent-extensie in de [modus NoAgent.](sql-server-iaas-agent-extension-automate-management.md#management-modes) Deze optie garandeert naleving en zorgt ervoor dat SQL Server VM in de Azure Portal met beperkte functionaliteit kan worden bewaakt.
 
 
-Geef voor het **licentie type** ofwel: `AHUB` , `PAYG` , of op `DR` . Voor de **aanbieding** van de afbeelding geeft u `SQL2008-WS2008` of op `SQL2008R2-WS2008`
+Geef voor **het licentietype** het volgende op: `AHUB` , of `PAYG` `DR` . Geef voor **de aanbieding voor de afbeelding** een of `SQL2008-WS2008` op `SQL2008R2-WS2008`
 
-Als u uw SQL Server 2008 ( `SQL2008-WS2008` ) of 2008 R2 ( `SQL2008R2-WS2008` ) wilt registreren op Windows Server 2008-exemplaar, gebruikt u het volgende Azure CLI-of Azure PowerShell code fragment: 
+Als u uw SQL Server 2008 ( ) of 2008 R2 ( ) wilt registreren op `SQL2008-WS2008` het Windows Server 2008-exemplaar, gebruikt u het volgende Azure CLI- of `SQL2008R2-WS2008` Azure PowerShell-codefragment: 
 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
-Registreer uw SQL Server virtuele machine in de modus niet-agent met de Azure CLI: 
+Registreer uw SQL Server machine in de modus NoAgent met de Azure CLI: 
 
   ```azurecli-interactive
    az sql vm create -n sqlvm -g myresourcegroup -l eastus |
@@ -163,7 +163,7 @@ Registreer uw SQL Server virtuele machine in de modus niet-agent met de Azure CL
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
 
-Registreer uw SQL Server virtuele machine in de modus niet-agent met Azure PowerShell: 
+Registreer uw SQL Server-machine in de modus NoAgent met Azure PowerShell: 
 
   ```powershell-interactive
   # Get the existing compute VM
@@ -175,9 +175,9 @@ Registreer uw SQL Server virtuele machine in de modus niet-agent met Azure Power
 
 ---
 
-## <a name="verify-mode"></a>Modus controleren
+## <a name="verify-mode"></a>Modus Verifiëren
 
-U kunt de huidige modus van uw SQL Server IaaS-agent weer geven met behulp van Azure PowerShell: 
+U kunt de huidige modus van uw IaaS SQL Server agent weergeven met behulp van Azure PowerShell: 
 
 ```powershell-interactive
 # Get the SqlVirtualMachine
@@ -187,32 +187,32 @@ $sqlvm.SqlManagementType
 
 ## <a name="upgrade-to-full"></a>Upgraden naar volledig  
 
-SQL Server Vm's die de uitbrei ding in de *Lightweight* -modus hebben geregistreerd, kunnen worden bijgewerkt naar _volledig_ met behulp van de Azure Portal, de Azure CLI of de Azure PowerShell. SQL Server Vm's in de modus niet- _agent_ kunnen naar _volledig_ worden bijgewerkt nadat het besturings systeem is bijgewerkt naar Windows 2008 R2 of hoger. Het is niet mogelijk om dit te doen, maar u moet de registratie van de SQL Server VM [opheffen](#unregister-from-extension) vanuit de SQL IaaS agent-extensie. Als u dit doet, wordt de _bron_ van de **virtuele SQL-machine** verwijderd, maar wordt de werkelijke virtuele machine niet verwijderd. 
+SQL Server-VM's die de extensie *in* de  lichtgewicht modus hebben geregistreerd, kunnen upgraden naar volledig met behulp van de Azure Portal, de Azure CLI of Azure PowerShell. SQL Server-VM's in _de modus NoAgent_ kunnen worden bijgewerkt naar volledig _nadat_ het besturingssysteem is bijgewerkt naar Windows 2008 R2 en hoger. Het is niet mogelijk om te downgraden. [](#unregister-from-extension) Als u dit wilt doen, moet u de registratie van de virtuele SQL Server van de SQL IaaS-agentextensie ongedaan maken. Als u dit doet, wordt de **resource van de virtuele SQL-machine** _verwijderd,_ maar wordt de daadwerkelijke virtuele machine niet verwijderd. 
 
 > [!NOTE]
-> Wanneer u de beheer modus voor de SQL IaaS-extensie bijwerkt naar volledig, wordt de SQL Server-service opnieuw gestart. In sommige gevallen kan het opnieuw opstarten ertoe leiden dat de service principal names (Spn's) die zijn gekoppeld aan de SQL Server-service worden gewijzigd in het verkeerde gebruikers account. Als u verbindings problemen ondervindt nadat u de beheer modus hebt bijgewerkt naar vol, kunt u [de registratie van uw spn's ongedaan maken en opnieuw registreren](/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections).
+> Wanneer u de beheermodus voor de SQL IaaS-extensie naar volledig bijstart, wordt de SQL Server gestart. In sommige gevallen kan het opnieuw opstarten ertoe leiden dat de service-principal-namen (SPN's) die zijn gekoppeld aan de SQL Server-service worden gewijzigd in het verkeerde gebruikersaccount. Als u verbindingsproblemen hebt na het upgraden van de beheermodus naar volledig, maakt u de registratie van uw [SPN's ongedaan en](/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections)maakt u de registratie opnieuw.
 
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Voer de volgende stappen uit om de extensie bij te werken naar de volledige modus met behulp van de Azure Portal: 
+Als u de extensie wilt upgraden naar de volledige modus met behulp Azure Portal, volgt u deze stappen: 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Ga naar de resource van de [virtuele SQL-machines](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) . 
-1. Selecteer uw SQL Server-VM en selecteer **overzicht**. 
-1. Selecteer voor SQL Server Vm's met de IaaS of de modus voor licht gewicht de optie **alleen licentie type en editie-updates zijn beschikbaar met het uitbreidings bericht van de SQL IaaS-extensie** .
+1. Ga naar de [resource van uw virtuele SQL-machines.](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource) 
+1. Selecteer uw SQL Server-VM en selecteer **Overzicht.** 
+1. Voor SQL Server VM's met de modus NoAgent of lightweight IaaS selecteert u het bericht Alleen licentietype en editie-updates zijn beschikbaar met de **SQL IaaS-extensie.**
 
    ![Selecties voor het wijzigen van de modus vanuit de portal](./media/sql-agent-extension-manually-register-single-vm/change-sql-iaas-mode-portal.png)
 
-1. Schakel het selectie vakje **Ik ga akkoord met het opnieuw opstarten van de SQL Server-service op de virtuele machine** in en selecteer vervolgens **bevestigen** om de IaaS-modus naar volledig bij te werken. 
+1. Schakel het selectievakje Ik ga akkoord om de **SQL Server-service** op  de virtuele machine opnieuw op te starten in en selecteer vervolgens Bevestigen om uw IaaS-modus bij te werken naar volledig. 
 
-    ![Selectie vakje voor het accepteren van de SQL Server-service op de virtuele machine opnieuw](./media/sql-agent-extension-manually-register-single-vm/enable-full-mode-iaas.png)
+    ![Selectievakje voor akkoord gaan met het opnieuw starten van SQL Server service op de virtuele machine](./media/sql-agent-extension-manually-register-single-vm/enable-full-mode-iaas.png)
 
 ### <a name="command-line"></a>Opdrachtregel
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
-Als u de uitbrei ding naar de volledige modus wilt bijwerken, voert u het volgende Azure CLI-code fragment uit:
+Voer het volgende Azure CLI-codefragment uit om de extensie bij te werken naar de volledige modus:
 
   ```azurecli-interactive
   # Update to full mode
@@ -221,7 +221,7 @@ Als u de uitbrei ding naar de volledige modus wilt bijwerken, voert u het volgen
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Als u de uitbrei ding naar de volledige modus wilt bijwerken, voert u het volgende Azure PowerShell code fragment uit:
+Als u de extensie wilt upgraden naar de volledige modus, moet u het volgende Azure PowerShell codefragment:
 
   ```powershell-interactive
   # Get the existing  Compute VM
@@ -233,27 +233,27 @@ Als u de uitbrei ding naar de volledige modus wilt bijwerken, voert u het volgen
 
 ---
 
-## <a name="verify-registration-status"></a>Registratie status verifiëren
-U kunt controleren of uw SQL Server virtuele machine al is geregistreerd bij de SQL IaaS agent-extensie met behulp van de Azure Portal, de Azure CLI of de Azure PowerShell. 
+## <a name="verify-registration-status"></a>Registratiestatus controleren
+U kunt controleren of uw SQL Server-VM al is geregistreerd bij de SQL IaaS Agent-extensie met behulp van de Azure Portal, de Azure CLI of Azure PowerShell. 
 
 ### <a name="azure-portal"></a>Azure Portal 
 
-Voer de volgende stappen uit om de registratie status te verifiëren met behulp van de Azure Portal: 
+Volg deze stappen om de registratiestatus Azure Portal te controleren: 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
-1. Ga naar uw [SQL Server vm's](manage-sql-vm-portal.md).
-1. Selecteer uw SQL Server-VM in de lijst. Als uw SQL Server VM hier niet wordt weer gegeven, is deze waarschijnlijk niet geregistreerd bij de SQL IaaS agent-extensie. 
-1. Bekijk de waarde onder **status**. Als de **status** is **geslaagd**, is de SQL Server VM geregistreerd met de SQL IaaS agent-extensie. 
+1. Ga naar uw [SQL Server VM's](manage-sql-vm-portal.md).
+1. Selecteer uw SQL Server-VM in de lijst. Als uw SQL Server-VM hier niet wordt vermeld, is deze waarschijnlijk niet geregistreerd bij de SQL IaaS Agent-extensie. 
+1. Bekijk de waarde onder **Status**. Als  Status **Geslaagd** is, is de virtuele SQL Server is geregistreerd bij de SQL IaaS Agent-extensie. 
 
    ![Status controleren met SQL RP-registratie](./media/sql-agent-extension-manually-register-single-vm/verify-registration-status.png)
 
 ### <a name="command-line"></a>Opdrachtregel
 
-Controleer de huidige SQL Server VM-registratie status met behulp van Azure CLI of Azure PowerShell. `ProvisioningState` geeft aan `Succeeded` of de registratie is geslaagd. 
+Controleer de huidige SQL Server VM-registratie met behulp van Azure CLI of Azure PowerShell. `ProvisioningState` geeft weer `Succeeded` of de registratie is geslaagd. 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
-Voer het volgende code fragment uit om de registratie status te verifiëren met behulp van de Azure CLI:  
+Voer het volgende codefragment uit om de registratiestatus te controleren met behulp van de Azure CLI:  
 
   ```azurecli-interactive
   az sql vm show -n <vm_name> -g <resource_group>
@@ -261,7 +261,7 @@ Voer het volgende code fragment uit om de registratie status te verifiëren met 
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
 
-Voer het volgende code fragment uit om de registratie status te verifiëren met behulp van de Azure PowerShell:
+Voer het volgende codefragment uit om de registratiestatus Azure PowerShell te controleren:
 
   ```powershell-interactive
   Get-AzSqlVM -Name <vm_name> -ResourceGroupName <resource_group>
@@ -269,42 +269,42 @@ Voer het volgende code fragment uit om de registratie status te verifiëren met 
 
 ---
 
-Een fout geeft aan dat de SQL Server VM niet is geregistreerd met de extensie. 
+Er wordt een foutbericht weergegeven dat SQL Server VM niet is geregistreerd bij de extensie. 
 
 
-## <a name="unregister-from-extension"></a>Registratie bij extensie verwijderen
+## <a name="unregister-from-extension"></a>Registratie bij extensie ongedaan maken
 
-Als u de registratie van uw SQL Server-VM wilt opheffen met de SQL IaaS agent-extensie, verwijdert u de *resource* van de virtuele SQL-machine met behulp van de Azure portal of Azure cli. Als u de *resource* van de virtuele SQL-machine verwijdert, wordt de SQL Server VM niet verwijderd. Wees echter voorzichtig en volg de stappen om de virtuele machine per ongeluk te verwijderen bij het verwijderen van de *resource*. 
+Als u de registratie van uw virtuele SQL Server met de SQL IaaS Agent-extensie ongedaan wilt maken, verwijdert u de resource van de virtuele *SQL-machine* met behulp van de Azure Portal of Azure CLI. Als u de virtuele *SQL-machineresource verwijdert,* wordt de virtuele machine SQL Server verwijderd. Wees echter voorzichtig en volg de stappen zorgvuldig omdat het mogelijk is om per ongeluk de virtuele machine te verwijderen wanneer u probeert de resource te *verwijderen.* 
 
-Het ongedaan maken van de registratie van de virtuele SQL-machine met de SQL IaaS agent-extensie is nood zakelijk om de beheer modus te verlagen van de volledige. 
+Het ongedaan maken van de registratie van de virtuele SQL-machine met de SQL IaaS Agent-extensie is nodig om de beheermodus van volledig te downgraden. 
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Voer de volgende stappen uit om de registratie van uw SQL Server-VM bij de uitbrei ding ongedaan te maken met de Azure Portal:
+Als u de registratie van SQL Server VM bij de extensie ongedaan wilt maken met behulp van Azure Portal, volgt u deze stappen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
-1. Ga naar de SQL-VM-resource. 
+1. Navigeer naar de SQL VM-resource. 
   
-   ![Resource van virtuele SQL-machines](./media/sql-agent-extension-manually-register-single-vm/sql-vm-manage.png)
+   ![Resource voor virtuele SQL-machines](./media/sql-agent-extension-manually-register-single-vm/sql-vm-manage.png)
 
 1. Selecteer **Verwijderen**. 
 
-   ![Selecteer verwijderen in de bovenste navigatie balk](./media/sql-agent-extension-manually-register-single-vm/delete-sql-vm-resource.png)
+   ![Verwijderen selecteren in de bovenste navigatiebalk](./media/sql-agent-extension-manually-register-single-vm/delete-sql-vm-resource.png)
 
-1. Typ de naam van de virtuele SQL-machine en **Schakel het selectie vakje naast de virtuele machine uit**.
+1. Typ de naam van de virtuele SQL-machine en **vink het selectievakje naast de virtuele machine uit.**
 
-   ![Schakel de VM uit om te voor komen dat de werkelijke virtuele machine wordt verwijderd en selecteer vervolgens verwijderen om door te gaan met het verwijderen van de SQL-VM-resource](./media/sql-agent-extension-manually-register-single-vm/confirm-delete-of-resource-uncheck-box.png)
+   ![Schakel de VM uit om te voorkomen dat de daadwerkelijke virtuele machine wordt verwijderd en selecteer vervolgens Verwijderen om door te gaan met het verwijderen van de SQL-VM-resource](./media/sql-agent-extension-manually-register-single-vm/confirm-delete-of-resource-uncheck-box.png)
 
    >[!WARNING]
-   > Als u het selectie vakje naast de naam van de virtuele machine uitschakelt, wordt de virtuele machine volledig *verwijderd* . Schakel het selectie vakje uit om de registratie van de SQL Server VM bij de uitbrei ding ongedaan te maken, maar *Verwijder niet de daad werkelijke virtuele machine*. 
+   > Als het selectievakje naast de naam van de virtuele machine niet wordt gewist, wordt *de* virtuele machine volledig verwijderd. Verwijder het selectievakje om de registratie van de virtuele SQL Server de extensie ongedaan te maken, maar *verwijder niet de daadwerkelijke virtuele machine*. 
 
-1. Selecteer **verwijderen** om het verwijderen van de *bron* van de virtuele SQL-machine te bevestigen en niet de SQL Server VM. 
+1. Selecteer **Verwijderen om** te bevestigen dat de virtuele SQL-machineresource is verwijderd en niet de SQL Server virtuele machine.  
 
 ### <a name="command-line"></a>Opdrachtregel
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de registratie van uw SQL Server virtuele machine bij de uitbrei ding met Azure CLI ongedaan wilt maken, gebruikt u de opdracht [AZ SQL VM delete](/cli/azure/sql/vm#az-sql-vm-delete) . Hiermee wordt de SQL Server VM- *resource* verwijderd, maar wordt de virtuele machine niet verwijderd. 
+Gebruik de opdracht [az sql vm delete](/cli/azure/sql/vm#az_sql_vm_delete) SQL Server de registratie van uw VM bij de extensie met Azure CLI ongedaan te maken. Hiermee verwijdert u de SQL Server *VM-resource,* maar wordt de virtuele machine niet verwijderd. 
 
 
 ```azurecli-interactive
@@ -316,7 +316,7 @@ az sql vm delete
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Gebruik de opdracht [Remove-AzSqlVM](/powershell/module/az.sqlvirtualmachine/remove-azsqlvm)om de registratie van uw SQL Server-VM bij de uitbrei ding ongedaan te maken met Azure PowerShell. Hiermee wordt de SQL Server VM- *resource* verwijderd, maar wordt de virtuele machine niet verwijderd. 
+Gebruik de opdracht [Remove-AzSqlVM](/powershell/module/az.sqlvirtualmachine/remove-azsqlvm)om de registratie van SQL Server virtuele Azure PowerShell-VM bij de extensie ongedaan te maken. Hiermee verwijdert u de SQL Server *VM-resource,* maar wordt de virtuele machine niet verwijderd. 
 
 ```powershell-interactive
 Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
@@ -330,6 +330,6 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 Raadpleeg voor meer informatie de volgende artikelen: 
 
 * [Overzicht van SQL Server op een Windows-VM](sql-server-on-azure-vm-iaas-what-is-overview.md)
-* [Veelgestelde vragen over SQL Server op een Windows-VM](frequently-asked-questions-faq.md)  
-* [Prijs informatie voor SQL Server op een Windows-VM](pricing-guidance.md)
-* [Release opmerkingen voor SQL Server op een Windows-VM](../../database/doc-changes-updates-release-notes.md)
+* [Veelgestelde vragen SQL Server een Windows-VM](frequently-asked-questions-faq.md)  
+* [Prijsinformatie voor SQL Server een Windows-VM](pricing-guidance.md)
+* [Releasenotities voor SQL Server op een Windows-VM](../../database/doc-changes-updates-release-notes.md)

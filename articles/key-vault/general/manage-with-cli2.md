@@ -3,19 +3,18 @@ title: Azure Key Vault beheren met CLI - Azure Key Vault | Microsoft Docs
 description: Gebruik dit artikel om algemene taken in Key Vault te automatiseren met behulp van de Azure CLI
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c084df60fa2293a614726be44669a1465b399d2c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 0b29b668b21c375dd1202652b5093526f648c300
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105557204"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107749596"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Key Vault beheren met behulp van de Azure CLI 
 

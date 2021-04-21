@@ -4,7 +4,7 @@
   items:
     - name: Over Azure VMware Solution
       href: introduction.md
-    - name: Platform updates
+    - name: Platformupdates
       href: azure-vmware-solution-platform-updates.md
 - name: Snel starten
   items:
@@ -34,7 +34,7 @@
       href: tutorial-deploy-vmware-hcx.md
     - name: 8 - Een privécloud schalen
       href: tutorial-scale-private-cloud.md
-    - name: '9: een privécloud verwijderen'
+    - name: 9 - Een privécloud verwijderen
       href: tutorial-delete-private-cloud.md
 - name: Concepten
   items:
@@ -52,9 +52,9 @@
       href: concepts-upgrades.md
 - name: Instructiegidsen
   items:
-    - name: Host-quota aanvragen en Azure VMware-oplossing inschakelen
+    - name: Hostquotum aanvragen en Azure VMware Solution
       href: enable-azure-vmware-solution.md
-    - name: EA-en CSP-abonnementen verplaatsen
+    - name: EA- en CSP-abonnementen verplaatsen
       href: move-ea-csp-subscriptions.md
     - name: Kosten besparen met een gereserveerde instantie
       href: reserved-instance.md
@@ -62,7 +62,7 @@
       href: /azure/migrate/how-to-create-azure-vmware-solution-assessment?context=/azure/azure-vmware/context/context
     - name: DHCP beheren
       href: manage-dhcp.md
-    - name: NSX-netwerk onderdelen configureren
+    - name: NSX-netwerkonderdelen configureren
       href: configure-nsx-network-components-azure-portal.md
     - name: GitHub Enterprise Server instellen
       href: github-enterprise-server.md
@@ -72,13 +72,13 @@
       href: create-ipsec-tunnel.md
     - name: Windows Server-failovercluster
       href: windows-server-failover-cluster.md
-    - name: VSphere-referenties opnieuw instellen
+    - name: vSphere-referenties opnieuw instellen
       href: reset-vsphere-credentials.md
     - name: Herstel na noodgeval
       items:
         - name: Herstel na noodgevallen implementeren voor VM's
           href: disaster-recovery-for-virtual-machines.md
-        - name: Herstel na nood geval naar Azure
+        - name: Herstel na noodherstel naar Azure
           items:
             - name: Azure voorbereiden
               href: /azure/site-recovery/avs-tutorial-prepare-azure?context=/azure/azure-vmware/context/context
@@ -124,13 +124,13 @@
           href: vrealize-operations-for-azure-vmware-solution.md
         - name: VMware Horizon implementeren
           href: azure-vmware-solution-horizon.md
-        - name: Vm's implementeren vanuit de inhouds bibliotheek
+        - name: VM's implementeren vanuit de inhoudsbibliotheek
           href: deploy-vm-content-library.md
     - name: VMware-ecosysteem
       items:
         - name: Back-upoplossingen voor VM's
           href: ecosystem-back-up-vms.md
-        - name: Migratie oplossingen voor Vm's
+        - name: Migratieoplossingen voor VM's
           href: ecosystem-migration-vms.md
 - name: Resources
   items:
@@ -138,17 +138,19 @@
       items:
         - name: Opent een ondersteuningsaanvraag voor implementatiefouten
           href: fix-deployment-provisioning-failures.md
+        - name: Vix-foutcode voor VMware-hulpprogramma's = 21009
+          href: 'https://kb.vmware.com/s/article/2129927'
     - name: Veelgestelde vragen
       items:
         - name: Algemeen
           href: /azure/azure-vmware/faq#general
-        - name: Communicatie van klanten
+        - name: Communicatie van de klant
           href: /azure/azure-vmware/faq#customer-communication
         - name: Configuratie en installatie
           href: /azure/azure-vmware/faq#configuration-and-setup
         - name: VMware-software
           href: /azure/azure-vmware/faq#vmware-software
-        - name: 'Berekenen, back-ups maken en herstel na nood gevallen'
+        - name: 'Compute, back-up en herstel na noodherstel'
           href: '/azure/azure-vmware/faq#compute,-backup,-and-disaster-recovery'
         - name: Netwerken en interconnectiviteit
           href: /azure/azure-vmware/faq#networking-and-interconnectivity
@@ -162,15 +164,15 @@
           href: /azure/azure-vmware/faq#billing-and-support
     - name: Video's
       items:
-        - name: Afspeel lijst
+        - name: Afspeellijst
           href: 'https://youtube.com/playlist?list=PL1NLwHeM6ewbZu0dC0guj-OSpIoZnnJin'
-        - name: Integratie met Azure-service
+        - name: Integratie met Azure Service
           href: 'https://youtu.be/m26iLu6DHbU'
-        - name: Integratie met Azure-toepassing gateway
+        - name: Integratie met Azure Application Gateway
           href: 'https://youtu.be/BoQYvqzb6Y8'
-        - name: Migratie en capaciteits planning
+        - name: Migratie- en capaciteitsplanning
           href: 'https://youtu.be/NoNG-hkksrA'
-        - name: VCenter & NSX-T-wacht woorden draaien met Azure Logic app
+        - name: vCenter-& NSX-T-wachtwoorden roteren met behulp van Azure Logic App
           href: 'https://youtu.be/cK1qY3knj88'
 - name: Naslaginformatie
   items:

@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: overview
 ms.date: 06/18/2019
 ms.author: alkohli
-ms.openlocfilehash: cca08e1be0f81c26d0838566ac4900d36580b8b8
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: ca46ce3355edf2b77400011d023cd6af330a3b58
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106066293"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770429"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Wat is Azure Data Box Disk?
 
@@ -35,7 +35,7 @@ Azure-providers en niet-Azure-providers kunnen gegevens opnemen uit Azure Data B
 
 - **SharePoint Online**: gebruik Azure Data Box en SharePoint Migration Tool (SPMT) om de inhoud van bestandsshares te migreren naar SharePoint Online. Met behulp van Data Box bent u niet meer afhankelijk van de WAN-verbinding voor het overzetten van de gegevens. Zie voor meer informatie [Use the Azure Data Box Heavy to migrate your file share content to SharePoint Online](data-box-heavy-migrate-spo.md) (Azure Data Box Heavy gebruiken om inhoud van bestandsshares te migreren naar SharePoint Online).
 
-- **Azure File Sync**: hiermee repliceert u bestanden van uw Data Box naar een Azure-bestandsshare, zodat u uw bestandsservices kunt centraliseren en toch lokale toegang houdt tot uw gegevens. Zie [Azure File Sync implementeren](../storage/files/storage-sync-files-deployment-guide.md) voor meer informatie.
+- **Azure File Sync**: hiermee repliceert u bestanden van uw Data Box naar een Azure-bestandsshare, zodat u uw bestandsservices kunt centraliseren en toch lokale toegang houdt tot uw gegevens. Zie [Azure File Sync implementeren](../storage/file-sync/file-sync-deployment-guide.md) voor meer informatie.
 
 - **HDFS-archieven**: migreer gegevens van een on-premises HDFS-archief (Hadoop Distributed File System) van uw Hadoop-cluster naar Azure Storage met behulp van Data Box. Zie voor meer informatie [Migrate from on-prem HDFS store to Azure Storage with Azure Data Box](../storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster.md) (Migreren van on-premises HDFS-archief naar Azure Storage met Azure Data Box).
 

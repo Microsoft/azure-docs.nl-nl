@@ -7,20 +7,15 @@ ms.topic: overview
 ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: f0dcd763240205bd396fc8cd0301c2046098473b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7279c5578d969db9178ce85734e3a43f9eccdf8d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98070130"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780043"
 ---
 # <a name="what-is-azure-files"></a>Wat is Azure Files?
 Met Azure Files beschikt u over volledig beheerde bestandsshares in de cloud die toegankelijk zijn via het toonaangevende protocol [Server Message Block (SMB)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) of [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System). Azure-bestandsshares kunnen gelijktijdig worden gekoppeld door on-premises of cloudimplementaties. SMB-bestandsshares van Azure Files zijn toegankelijk via Windows-, Linux- en macOS-clients. NFS-bestandsshares van Azure Files zijn toegankelijk via Linux- of macOS-clients. Bovendien kunnen Azure-bestandsshares in de cache worden opgeslagen op Windows-servers met Azure File Sync voor snelle toegang tot locaties waar de gegevens worden gebruikt.
-
-## <a name="videos"></a>Video's
-| Inleiding tot Azure File Sync | Azure Files met Sync (Ignite 2019)  |
-|-|-|
-| [![Screencast van de video Inleiding tot Azure File Sync - klik om af te spelen.](./media/storage-files-introduction/azure-file-sync-video-snapshot.png)](https://www.youtube.com/watch?v=Zm2w8-TRn-o) | [![Screencast van de presentatie van Azure Files met Sync - klik om af te spelen.](./media/storage-files-introduction/ignite-2018-video.png)](https://www.youtube.com/embed/6E2p28XwovU) |
 
 De volgende video's behandelen enkele algemene gebruiksscenario's van Azure Files:
 * [Uw bestandsserver vervangen door een serverloze Azure-bestandsshare](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)

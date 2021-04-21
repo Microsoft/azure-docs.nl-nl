@@ -1,6 +1,6 @@
 ---
-title: Netwerk verkeer routeren-Azure CLI | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u netwerk verkeer via de Azure CLI kunt routeren met een route tabel.
+title: Netwerkverkeer routeer - Azure CLI-| Microsoft Docs
+description: In dit artikel leert u hoe u netwerkverkeer routeert met een routetabel met behulp van de Azure CLI.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ed2a97ccfb0a3b9b4b43021ab0fff1460919c9b9
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 2ff643c39820fa529c8678c7a36881dd25da354c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106060717"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107762493"
 ---
-# <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Netwerk verkeer routeren met een route tabel met behulp van de Azure CLI
+# <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Netwerkverkeer routeer met een routetabel met behulp van de Azure CLI
 
 Azure routeert standaard automatisch verkeer tussen alle subnetten in een virtueel netwerk. U kunt uw eigen routes maken om de standaardroutering van Azure te overschrijven. De mogelijkheid voor het maken van aangepaste routes is handig als u bijvoorbeeld verkeer tussen subnetten wilt routeren via een NVA (virtueel netwerkapparaat). In dit artikel leert u het volgende:
 
@@ -43,7 +43,7 @@ Azure routeert standaard automatisch verkeer tussen alle subnetten in een virtue
 
 ## <a name="create-a-route-table"></a>Een routetabel maken
 
-Voordat u een route tabel kunt maken, maakt u een resource groep met [AZ Group Create](/cli/azure/group) voor alle resources die in dit artikel zijn gemaakt. 
+Voordat u een routetabel kunt maken, maakt u een resourcegroep [met az group create voor](/cli/azure/group) alle resources die in dit artikel zijn gemaakt. 
 
 ```azurecli-interactive
 # Create a resource group.
@@ -52,7 +52,7 @@ az group create \
   --location eastus
 ```
 
-Maak een route tabel met [AZ Network Route-Table Create](/cli/azure/network/route-table#az-network-route-table-create). In het volgende voor beeld wordt een route tabel gemaakt met de naam *myRouteTablePublic*. 
+Maak een routetabel [met az network route-table create](/cli/azure/network/route-table#az_network_route_table_create). In het volgende voorbeeld wordt een routetabel met de *naam myRouteTablePublic gemaakt.* 
 
 ```azurecli-interactive
 # Create a route table
@@ -63,7 +63,7 @@ az network route-table create \
 
 ## <a name="create-a-route"></a>Een route maken
 
-Maak een route in de route tabel met [AZ Network Route-Table Route Create](/cli/azure/network/route-table/route#az-network-route-table-route-create). 
+Maak een route in de routetabel met [az network route-table route create.](/cli/azure/network/route-table/route#az_network_route_table_route_create) 
 
 ```azurecli-interactive
 az network route-table route create \
@@ -77,7 +77,7 @@ az network route-table route create \
 
 ## <a name="associate-a-route-table-to-a-subnet"></a>Een routetabel aan een subnet koppelen
 
-Voordat u een routetabel aan een subnet kunt koppelen, moet u een virtueel netwerk en subnet maken. Maak een virtueel netwerk met één subnet met [AZ Network vnet Create](/cli/azure/network/vnet).
+Voordat u een routetabel aan een subnet kunt koppelen, moet u een virtueel netwerk en subnet maken. Maak een virtueel netwerk met één subnet met [az network vnet create](/cli/azure/network/vnet).
 
 ```azurecli-interactive
 az network vnet create \
@@ -88,7 +88,7 @@ az network vnet create \
   --subnet-prefix 10.0.0.0/24
 ```
 
-Maak twee extra subnetten met [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet).
+Maak twee extra subnetten met [az network vnet subnet create.](/cli/azure/network/vnet/subnet)
 
 ```azurecli-interactive
 # Create a private subnet.
@@ -106,7 +106,7 @@ az network vnet subnet create \
   --address-prefix 10.0.2.0/24
 ```
 
-Koppel de *myRouteTablePublic* -route tabel aan het *open bare* subnet met [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet).
+Koppel de *routetabel myRouteTablePublic* aan het *openbare* subnet met [az network vnet subnet update](/cli/azure/network/vnet/subnet).
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -120,7 +120,7 @@ az network vnet subnet update \
 
 Een NVA is een VM die een netwerkfunctie uitvoert, zoals routering, firewall of WAN-optimalisatie.
 
-Maak een NVA in het *DMZ* -subnet met [AZ VM Create](/cli/azure/vm). Wanneer u een virtuele machine maakt, maakt Azure standaard een openbaar IP-adres en wijst deze toe aan de virtuele machine. De `--public-ip-address ""` para meter zorgt ervoor dat Azure geen openbaar IP-adres maakt en toewijst aan de virtuele machine omdat de virtuele machine niet via internet verbonden hoeft te zijn. Als SSH-sleutels niet al bestaan op de standaardlocatie van de sleutel, worden ze met deze opdracht gemaakt. Als u een specifieke set sleutels wilt gebruiken, gebruikt u de optie `--ssh-key-value`.
+Maak een NVA in het *DMZ-subnet* [met az vm create](/cli/azure/vm). Wanneer u een VM maakt, maakt en wijst Azure standaard een openbaar IP-adres toe aan de VM. De parameter geeft Azure de instructie om geen openbaar IP-adres te maken en toe te wijzen aan de VM, omdat de VM niet via `--public-ip-address ""` internet verbonden hoeft te zijn. Als SSH-sleutels niet al bestaan op de standaardlocatie van de sleutel, worden ze met deze opdracht gemaakt. Als u een specifieke set sleutels wilt gebruiken, gebruikt u de optie `--ssh-key-value`.
 
 ```azurecli-interactive
 az vm create \
@@ -133,9 +133,9 @@ az vm create \
   --generate-ssh-keys
 ```
 
-Het maken van de virtuele machine duurt een paar minuten. Ga niet verder met de volgende stap totdat Azure klaar is met het maken van de VM en het retour neren van uitvoer over de virtuele machine. 
+Het maken van de virtuele machine duurt een paar minuten. Ga pas verder met de volgende stap als Azure klaar is met het maken van de VM en uitvoer retourneert over de VM. 
 
-Een netwerkinterface kan alleen netwerkverkeer doorsturen dat niet voor zijn eigen IP-adres bestemd is, als doorsturen via IP voor de netwerkinterface is ingeschakeld. Schakel door sturen via IP in voor de netwerk interface met [AZ Network NIC update](/cli/azure/network/nic).
+Een netwerkinterface kan alleen netwerkverkeer doorsturen dat niet voor zijn eigen IP-adres bestemd is, als doorsturen via IP voor de netwerkinterface is ingeschakeld. Doorsturen via IP inschakelen voor de netwerkinterface [met az network nic update](/cli/azure/network/nic).
 
 ```azurecli-interactive
 az network nic update \
@@ -144,7 +144,7 @@ az network nic update \
   --ip-forwarding true
 ```
 
-In de VM moet het besturingssysteem of een toepassing die wordt uitgevoerd op de virtuele machine, ook netwerkverkeer kunnen doorsturen. Door sturen via IP inschakelen in het besturings systeem van de virtuele machine met [AZ VM extension set](/cli/azure/vm/extension):
+In de VM moet het besturingssysteem of een toepassing die wordt uitgevoerd op de virtuele machine, ook netwerkverkeer kunnen doorsturen. Schakel doorsturen via IP in het besturingssysteem van de VM in [met az vm extension set](/cli/azure/vm/extension):
 
 ```azurecli-interactive
 az vm extension set \
@@ -155,13 +155,13 @@ az vm extension set \
   --settings '{"commandToExecute":"sudo sysctl -w net.ipv4.ip_forward=1"}'
 ```
 
-Het kan een minuut duren voordat de opdracht is uitgevoerd.
+Het uitvoeren van de opdracht kan tot een minuut duren.
 
 ## <a name="create-virtual-machines"></a>Virtuele machines maken
 
-Maak twee Vm's in het virtuele netwerk, zodat u kunt valideren dat verkeer van het *open bare* subnet via de NVA in een latere stap wordt doorgestuurd naar het *privé* -subnet. 
+Maak twee virtuele machines in het virtuele netwerk, zodat u kunt valideren dat verkeer van het openbare *subnet* in een latere stap via de NVA wordt doorgeleid naar het privésubnet.  
 
-Maak een virtuele machine in het *open bare* subnet met [AZ VM Create](/cli/azure/vm). Met de `--no-wait` para meter kan Azure de opdracht op de achtergrond uitvoeren, zodat u kunt door gaan met de volgende opdracht. Er wordt een wacht woord gebruikt om dit artikel te stroom lijnen. Sleutels worden doorgaans gebruikt in productie-implementaties. Als u sleutels gebruikt, moet u ook het door sturen van SSH-agent configureren. Zie de documentatie voor uw SSH-client voor meer informatie. Vervang `<replace-with-your-password>` in de volgende opdracht door een wacht woord van uw keuze.
+Maak een virtuele machine in het *openbare* subnet [met az vm create](/cli/azure/vm). Met `--no-wait` de parameter kan Azure de opdracht op de achtergrond uitvoeren, zodat u verder kunt gaan met de volgende opdracht. Voor het stroomlijnen van dit artikel wordt een wachtwoord gebruikt. Sleutels worden doorgaans gebruikt in productie-implementaties. Als u sleutels gebruikt, moet u ook het doorsturen van de SSH-agent configureren. Zie de documentatie voor uw SSH-client voor meer informatie. Vervang `<replace-with-your-password>` in de volgende opdracht door een wachtwoord van uw keuze.
 
 ```azurecli-interactive
 adminPassword="<replace-with-your-password>"
@@ -177,7 +177,7 @@ az vm create \
   --no-wait
 ```
 
-Maak een virtuele machine in het *privé* -subnet.
+Maak een virtuele  machine in het privésubnet.
 
 ```azurecli-interactive
 az vm create \
@@ -190,7 +190,7 @@ az vm create \
   --admin-password $adminPassword
 ```
 
-Het maken van de virtuele machine duurt een paar minuten. Nadat de VM is gemaakt, toont de Azure CLI informatie die lijkt op het volgende voor beeld: 
+Het maken van de virtuele machine duurt een paar minuten. Nadat de VM is gemaakt, toont de Azure CLI soortgelijke informatie als in het volgende voorbeeld: 
 
 ```output
 {
@@ -205,25 +205,25 @@ Het maken van de virtuele machine duurt een paar minuten. Nadat de VM is gemaakt
 }
 ```
 
-Let op het **openbare IP-adres**. Dit adres wordt gebruikt voor toegang tot de virtuele machine via internet in een latere stap.
+Let op het **openbare IP-adres**. Dit adres wordt in een latere stap gebruikt voor toegang tot de VM via internet.
 
 ## <a name="route-traffic-through-an-nva"></a>Verkeer routeren via een NVA
 
-Gebruik de volgende opdracht om een SSH-sessie te maken met de *VM myvmprivate* -VM. Vervang door *\<publicIpAddress>* het open bare IP-adres van uw virtuele machine. In het bovenstaande voor beeld is het IP-adres *13.90.242.231*.
+Gebruik de volgende opdracht om een SSH-sessie te maken met de *VM myVmPrivate.* Vervang *\<publicIpAddress>* door het openbare IP-adres van uw VM. In het bovenstaande voorbeeld is het IP-adres *13.90.242.231.*
 
 ```bash
 ssh azureuser@<publicIpAddress>
 ```
 
-Wanneer u wordt gevraagd om een wacht woord, voert u het wacht woord in dat u hebt geselecteerd in [virtuele machines maken](#create-virtual-machines).
+Wanneer u wordt gevraagd om een wachtwoord, voert u het wachtwoord in dat u hebt geselecteerd in [Virtuele machines maken.](#create-virtual-machines)
 
-Gebruik de volgende opdracht om tracerings route te installeren op de *VM myvmprivate* -VM:
+Gebruik de volgende opdracht om traceerroute te installeren op *de VM myVmPrivate:*
 
 ```bash
 sudo apt-get install traceroute
 ```
 
-Gebruik de volgende opdracht om de route ring van het netwerk verkeer naar de *VM myvmpublic* -VM van de *VM myvmprivate* -VM te testen.
+Gebruik de volgende opdracht om de routering te testen voor netwerkverkeer naar de *VM myVmPublic* vanaf *de VM myVmPrivate.*
 
 ```bash
 traceroute myVmPublic
@@ -236,21 +236,21 @@ traceroute to myVmPublic (10.0.0.4), 30 hops max, 60 byte packets
 1  10.0.0.4 (10.0.0.4)  1.404 ms  1.403 ms  1.398 ms
 ```
 
-U ziet dat verkeer rechtstreeks vanuit *myVmPrivate* naar *myVmPublic* wordt geleid. De standaard routes van Azure routeren het verkeer rechtstreeks tussen subnetten. 
+U ziet dat verkeer rechtstreeks vanuit *myVmPrivate* naar *myVmPublic* wordt geleid. Standaardroutes van Azure worden verkeer rechtstreeks tussen subnetten gerouteerd. 
 
-Gebruik de volgende opdracht voor het SSHen van de *VM myvmpublic* -VM vanaf de *VM myvmprivate* VM:
+Gebruik de volgende opdracht om via SSH vanaf de *VM myVmPrivate* naar de VM *myVmPublic* te gaan:
 
 ```bash
 ssh azureuser@myVmPublic
 ```
 
-Gebruik de volgende opdracht om tracerings route te installeren op de *VM myvmpublic* -VM:
+Gebruik de volgende opdracht om traceerroute te installeren op *de VM myVmPublic:*
 
 ```bash
 sudo apt-get install traceroute
 ```
 
-Gebruik de volgende opdracht om de route ring van het netwerk verkeer naar de *VM myvmprivate* -VM van de *VM myvmpublic* -VM te testen.
+Gebruik de volgende opdracht om de routering voor netwerkverkeer naar de *VM myVmPrivate* vanaf *de VM myVmPublic* te testen.
 
 ```bash
 traceroute myVmPrivate
@@ -266,11 +266,11 @@ traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 
 U ziet dat de eerste hop 10.0.2.4 is, het privé IP-adres van het NVA. De tweede hop is 10.0.1.4, het privé- IP-adres van de VM *myVmPrivate*. Door de route die is toegevoegd aan de routetabel *myRouteTablePublic* en gekoppeld aan het *Openbare* subnet leidt Azure het verkeer via het NVA in plaats van rechtstreeks naar het *Privé*-subnet.
 
-Sluit de SSH-sessies op de *VM myvmpublic* -en *VM myvmprivate* -vm's.
+Sluit de SSH-sessies voor zowel de *VM's myVmPublic* als *myVmPrivate.*
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Gebruik [AZ Group delete](/cli/azure/group) om de resource groep en alle resources die deze bevat te verwijderen wanneer u deze niet meer nodig hebt.
+Gebruik az group [delete](/cli/azure/group) om de resourcegroep en alle resources die deze bevat te verwijderen wanneer u ze niet meer nodig hebt.
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes
@@ -278,6 +278,6 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een route tabel gemaakt en gekoppeld aan een subnet. U hebt een eenvoudig NVA gemaakt dat verkeer van een openbaar subnet naar een privé-subnet heeft geleid. U kunt allerlei vooraf geconfigureerde NVA's die netwerkfuncties uitvoeren zoals firewalls en WAN-optimalisatie, implementeren vanuit [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking). Zie [Routeringoverzicht](virtual-networks-udr-overview.md) en [Routetabel beheren](manage-route-table.md) voor meer informatie over routeren.
+In dit artikel hebt u een routetabel gemaakt en deze gekoppeld aan een subnet. U hebt een eenvoudig NVA gemaakt dat verkeer van een openbaar subnet naar een privé-subnet heeft geleid. U kunt allerlei vooraf geconfigureerde NVA's die netwerkfuncties uitvoeren zoals firewalls en WAN-optimalisatie, implementeren vanuit [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking). Zie [Routeringoverzicht](virtual-networks-udr-overview.md) en [Routetabel beheren](manage-route-table.md) voor meer informatie over routeren.
 
-Hoewel u veel Azure-resources binnen een virtueel netwerk kunt implementeren, kunnen resources voor sommige Azure PaaS-diensten niet in een virtueel netwerk worden geïmplementeerd. U kunt de toegang tot de resources van sommige Azure PaaS-diensten echter nog steeds beperken tot alleen verkeer vanaf een subnet van een virtueel netwerk. Zie [netwerk toegang tot PaaS-resources beperken](tutorial-restrict-network-access-to-resources-cli.md)voor meer informatie.
+Hoewel u veel Azure-resources binnen een virtueel netwerk kunt implementeren, kunnen resources voor sommige Azure PaaS-diensten niet in een virtueel netwerk worden geïmplementeerd. U kunt de toegang tot de resources van sommige Azure PaaS-diensten echter nog steeds beperken tot alleen verkeer vanaf een subnet van een virtueel netwerk. Zie Netwerktoegang tot [PaaS-resources beperken voor meer informatie.](tutorial-restrict-network-access-to-resources-cli.md)

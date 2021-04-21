@@ -1,6 +1,6 @@
 ---
-title: 'Voor beeld: een installatie kopie versie maken die is versleuteld met uw eigen sleutels'
-description: Maak een installatie kopie versie in een galerie met gedeelde afbeeldingen door door de klant beheerde versleutelings sleutels te gebruiken.
+title: Preview- Een versie van een afbeelding maken die is versleuteld met uw eigen sleutels
+description: Maak een versie van een afbeelding in een galerie met gedeelde afbeeldingen met behulp van door de klant beheerde versleutelingssleutels.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: shared-image-gallery
@@ -8,79 +8,79 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/3/2020
 ms.author: cynthn
-ms.openlocfilehash: 258d8ab6ab23a95d73b8ed0c2549f373cf097674
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 601b8236ca413dd510585bdfffddc3e892caa73b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102554085"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107759665"
 ---
-# <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Voor beeld: door de klant beheerde sleutels gebruiken voor het versleutelen van installatie kopieën
+# <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Preview: Door de klant beheerde sleutels gebruiken voor het versleutelen van afbeeldingen
 
-Afbeeldingen in een galerie met gedeelde installatie kopieën worden opgeslagen als moment opnamen, zodat ze automatisch worden versleuteld via versleuteling aan de server zijde. Versleuteling aan de server zijde maakt gebruik van 256-bits [AES-versleuteling](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), een van de krach tigste blok cijfers die beschikbaar zijn. Versleuteling aan de server zijde is ook FIPS 140-2-compatibel. Zie [crypto GRAFIE API: Next Generation](/windows/desktop/seccng/cng-portal)(Engelstalig) voor meer informatie over de onderliggende cryptografische modules die worden beheerd door Azure Managed disks.
+Afbeeldingen in een galerie met gedeelde afbeeldingen worden opgeslagen als momentopnamen, zodat ze automatisch worden versleuteld met versleuteling aan de serverzijde. Versleuteling aan de serverzijde [](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)maakt gebruik van 256-bits AES-versleuteling, een van de sterkste blokversleutelingen die beschikbaar zijn. Versleuteling aan de serverzijde voldoet ook aan FIPS 140-2. Zie [Cryptography API: Next Generation (Cryptografie-API: next generation)](/windows/desktop/seccng/cng-portal)voor meer informatie over de onderliggende cryptografische modules van beheerde Azure-schijven.
 
-U kunt vertrouwen op door het platform beheerde sleutels voor de versleuteling van uw installatie kopieën of uw eigen sleutels gebruiken. U kunt ook beide tegelijk gebruiken voor dubbele versleuteling. Als u ervoor kiest om versleuteling met uw eigen sleutels te beheren, kunt u een door de *klant beheerde sleutel* opgeven die moet worden gebruikt voor het versleutelen en ontsleutelen van alle schijven in uw installatie kopieën. 
+U kunt vertrouwen op door het platform beheerde sleutels voor de versleuteling van uw afbeeldingen of uw eigen sleutels gebruiken. U kunt beide ook samen gebruiken voor dubbele versleuteling. Als u ervoor kiest om versleuteling met  uw eigen sleutels te beheren, kunt u een door de klant beheerde sleutel opgeven die moet worden gebruikt voor het versleutelen en ontsleutelen van alle schijven in uw afbeeldingen. 
 
-Versleuteling aan de server zijde via door de klant beheerde sleutels maakt gebruik van Azure Key Vault. U kunt [uw RSA-sleutels](../key-vault/keys/hsm-protected-keys.md) importeren in uw sleutel kluis of nieuwe RSA-sleutels in azure Key Vault genereren.
+Versleuteling aan de serverzijde via door de klant beheerde sleutels maakt gebruik Azure Key Vault. U kunt uw [RSA-sleutels importeren in](../key-vault/keys/hsm-protected-keys.md) uw sleutelkluis of nieuwe RSA-sleutels genereren in Azure Key Vault.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor dit artikel moet u al een schijf versleuteling instellen in elke regio waar u de installatie kopie wilt repliceren:
+Voor dit artikel moet u al een schijfversleuteling hebben ingesteld in elke regio waar u uw afbeelding wilt repliceren:
 
-- Als u alleen een door de klant beheerde sleutel wilt gebruiken, raadpleegt u de artikelen over het inschakelen van door de klant beheerde sleutels met versleuteling aan de server zijde met behulp van de [Azure Portal](./disks-enable-customer-managed-keys-portal.md) of [Power shell](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-an-azure-key-vault-and-diskencryptionset-without-automatic-key-rotation).
+- Als u alleen een door de klant beheerde sleutel wilt gebruiken, bekijkt u de artikelen over het inschakelen van door de klant beheerde sleutels met versleuteling aan de serverzijde met behulp van [de Azure Portal](./disks-enable-customer-managed-keys-portal.md) of [PowerShell.](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-an-azure-key-vault-and-diskencryptionset-without-automatic-key-rotation)
 
-- Als u door het platform beheerde en door de klant beheerde sleutels wilt gebruiken (voor dubbele versleuteling), raadpleegt u de artikelen over het inschakelen van dubbele versleuteling in rust door gebruik te maken van de [Azure Portal](./disks-enable-double-encryption-at-rest-portal.md) of [Power shell](./windows/disks-enable-double-encryption-at-rest-powershell.md).
+- Zie de artikelen over het inschakelen van dubbele versleuteling in rust met behulp van de Azure Portal of [PowerShell](./windows/disks-enable-double-encryption-at-rest-powershell.md)als u zowel door het platform als door de klant beheerde sleutels wilt gebruiken [(voor](./disks-enable-double-encryption-at-rest-portal.md) dubbele versleuteling).
 
    > [!IMPORTANT]
-   > U moet de koppeling gebruiken [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) om toegang te krijgen tot de Azure Portal. Dubbele versleuteling bij rest is momenteel niet zichtbaar in de open bare Azure Portal tenzij u deze koppeling gebruikt.
+   > U moet de koppeling gebruiken [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) om toegang te krijgen tot Azure Portal. Dubbele versleuteling in rust is momenteel niet zichtbaar in de openbare Azure Portal tenzij u die koppeling gebruikt.
 
 ## <a name="limitations"></a>Beperkingen
 
-Wanneer u door de klant beheerde sleutels gebruikt voor het versleutelen van installatie kopieën in een galerie met gedeelde afbeeldingen, gelden de volgende beperkingen:   
+Wanneer u door de klant beheerde sleutels gebruikt voor het versleutelen van afbeeldingen in een galerie met gedeelde afbeeldingen, gelden deze beperkingen:   
 
-- Versleutelings sleutel sets moeten zich in hetzelfde abonnement benemen als uw installatie kopie.
+- Versleutelingssleutelsets moeten zich in hetzelfde abonnement als uw afbeelding hebben.
 
-- Coderings sleutel sets zijn regionale resources, zodat voor elke regio een andere versleutelings sleutel is ingesteld.
+- Versleutelingssleutelsets zijn regionale resources, dus voor elke regio is een andere versleutelingssleutelset vereist.
 
 - U kunt geen afbeeldingen kopiëren of delen die gebruikmaken van door de klant beheerde sleutels. 
 
-- Nadat u uw eigen sleutels hebt gebruikt om een schijf of installatie kopie te versleutelen, kunt u niet teruggaan naar met een platform beheerde sleutel voor het versleutelen van die schijven of installatie kopieën.
+- Nadat u uw eigen sleutels hebt gebruikt om een schijf of afbeelding te versleutelen, kunt u niet teruggaan naar met behulp van door het platform beheerde sleutels voor het versleutelen van deze schijven of afbeeldingen.
 
 
 > [!IMPORTANT]
-> Versleuteling via door de klant beheerde sleutels is momenteel beschikbaar als open bare preview.
-> Deze preview-versie is beschikbaar zonder een service overeenkomst en wij raden deze niet aan voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> Versleuteling via door de klant beheerde sleutels is momenteel in openbare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 
 ## <a name="powershell"></a>PowerShell
 
-Voor de open bare Preview moet u eerst de functie registreren:
+Voor de openbare preview moet u eerst de functie registreren:
 
 ```azurepowershell-interactive
 Register-AzProviderFeature -FeatureName SIGEncryption -ProviderNamespace Microsoft.Compute
 ```
 
-Het duurt enkele minuten voordat de registratie is voltooid. Gebruiken `Get-AzProviderFeature` om de status van de functie registratie te controleren:
+Het duurt enkele minuten voordat de registratie is afgelopen. Gebruik `Get-AzProviderFeature` om de status van de functieregistratie te controleren:
 
 ```azurepowershell-interactive
 Get-AzProviderFeature -FeatureName SIGEncryption -ProviderNamespace Microsoft.Compute
 ```
 
-Wanneer `RegistrationState` `Registered` u retourneert, kunt u door gaan met de volgende stap.
+Wanneer `RegistrationState` `Registered` retourneert, kunt u verder gaan met de volgende stap.
 
-Controleer de registratie van uw provider. Controleer of het wordt geretourneerd `Registered` .
+Controleer de registratie van uw provider. Zorg ervoor dat deze `Registered` retourneert.
 
 ```azurepowershell-interactive
 Get-AzResourceProvider -ProviderNamespace Microsoft.Compute | Format-table -Property ResourceTypes,RegistrationState
 ```
 
-Als deze niet wordt geretourneerd `Registered` , gebruikt u de volgende code om de providers te registreren:
+Als deze niet retournt, `Registered` gebruikt u de volgende code om de providers te registreren:
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
 ```
 
-Als u een schijf versleuteling wilt opgeven voor een installatie kopie versie, gebruikt u  [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion) met de `-TargetRegion` para meter: 
+Als u een schijfversleutelingsset wilt opgeven voor een versie van een afbeelding, gebruikt  [u New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion) met de `-TargetRegion` parameter : 
 
 ```azurepowershell-interactive
 
@@ -128,26 +128,26 @@ New-AzGalleryImageVersion `
 
 ### <a name="create-a-vm"></a>Een virtuele machine maken
 
-U kunt een virtuele machine (VM) maken vanuit een galerie met gedeelde afbeeldingen en door de klant beheerde sleutels gebruiken om de schijven te versleutelen. De syntaxis is hetzelfde als het maken van een [gegeneraliseerde](vm-generalized-image-version-powershell.md) of [gespecialiseerde](vm-specialized-image-version-powershell.md) virtuele machine uit een installatie kopie. Gebruik de Extended para meter set en voeg `Set-AzVMOSDisk -Name $($vmName +"_OSDisk") -DiskEncryptionSetId $diskEncryptionSet.Id -CreateOption FromImage` deze toe aan de VM-configuratie.
+U kunt een virtuele machine (VM) maken vanuit een galerie met gedeelde afbeeldingen en door de klant beheerde sleutels gebruiken om de schijven te versleutelen. De syntaxis is hetzelfde als het maken van een ge [generaliseerde](vm-generalized-image-version-powershell.md) of [gespecialiseerde](vm-specialized-image-version-powershell.md) VM van een -afbeelding. Gebruik de uitgebreide parameterset en voeg toe `Set-AzVMOSDisk -Name $($vmName +"_OSDisk") -DiskEncryptionSetId $diskEncryptionSet.Id -CreateOption FromImage` aan de VM-configuratie.
 
-Voor gegevens schijven voegt u de `-DiskEncryptionSetId $setID` para meter toe wanneer u [add-AzVMDataDisk](/powershell/module/az.compute/add-azvmdatadisk)gebruikt.
+Voeg voor gegevensschijven de `-DiskEncryptionSetId $setID` parameter toe wanneer u [Add-AzVMDataDisk gebruikt.](/powershell/module/az.compute/add-azvmdatadisk)
 
 
 ## <a name="cli"></a>CLI 
 
-Voor de open bare Preview moet u zich eerst registreren voor de functie. De registratie duurt ongeveer 30 minuten.
+Voor de openbare preview moet u zich eerst registreren voor de functie. De registratie duurt ongeveer 30 minuten.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.Compute --name SIGEncryption
 ```
 
-Controleer de status van de functie registratie:
+Controleer de status van de functieregistratie:
 
 ```azurecli-interactive
 az feature show --namespace Microsoft.Compute --name SIGEncryption | grep state
 ```
 
-Wanneer deze code wordt geretourneerd `"state": "Registered"` , kunt u door gaan naar de volgende stap.
+Wanneer deze code retourneert, `"state": "Registered"` kunt u verder gaan met de volgende stap.
 
 Controleer uw registratie:
 
@@ -155,16 +155,16 @@ Controleer uw registratie:
 az provider show -n Microsoft.Compute | grep registrationState
 ```
 
-Als deze niet is geregistreerd, voert u de volgende opdracht uit:
+Als er geen geregistreerd staat, voer dan de volgende opdracht uit:
 
 ```azurecli-interactive
 az provider register -n Microsoft.Compute
 ```
 
 
-Als u een schijf versleutelings voor een installatie kopie versie wilt opgeven, gebruikt u [AZ image galerie Create-Image-version](/cli/azure/sig/image-version#az-sig-image-version-create) met de `--target-region-encryption` para meter. De notatie voor `--target-region-encryption` is een door komma's gescheiden lijst met sleutels voor het versleutelen van het besturings systeem en de gegevens schijven. Dit ziet er als volgt uit: `<encryption set for the OS disk>,<Lun number of the data disk>,<encryption set for the data disk>,<Lun number for the second data disk>,<encryption set for the second data disk>`. 
+Als u een schijfversleutelingsset wilt opgeven voor een versie van een afbeelding, gebruikt [u az image gallery create-image-version](/cli/azure/sig/image-version#az_sig_image_version_create) met de parameter `--target-region-encryption` . De indeling voor `--target-region-encryption` is een door komma's gescheiden lijst met sleutels voor het versleutelen van het besturingssysteem en de gegevensschijven. Dit ziet er als volgt uit: `<encryption set for the OS disk>,<Lun number of the data disk>,<encryption set for the data disk>,<Lun number for the second data disk>,<encryption set for the second data disk>`. 
 
-Als de bron voor de besturingssysteem schijf een beheerde schijf of virtuele machine is, gebruikt `--managed-image` u om de bron voor de versie van de installatie kopie op te geven. In dit voor beeld is de bron een beheerde installatie kopie met een besturingssysteem schijf en een gegevens schijf op LUN 0. De besturingssysteem schijf wordt versleuteld met DiskEncryptionSet1 en de gegevens schijf wordt versleuteld met DiskEncryptionSet2.
+Als de bron voor de besturingssysteemschijf een beheerde schijf of een VM is, gebruikt u om de bron `--managed-image` voor de versie van de afbeelding op te geven. In dit voorbeeld is de bron een beheerde afbeelding met een besturingssysteemschijf en een gegevensschijf op LUN 0. De besturingssysteemschijf wordt versleuteld met DiskEncryptionSet1 en de gegevensschijf wordt versleuteld met DiskEncryptionSet2.
 
 ```azurecli-interactive
 az sig image-version create \
@@ -178,9 +178,9 @@ az sig image-version create \
    --managed-image "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myImage"
 ```
 
-Als de bron voor de besturingssysteem schijf een moment opname is, gebruikt `--os-snapshot` u om de besturingssysteem schijf op te geven. Als er moment opnamen van gegevens schijven zijn die ook deel moeten uitmaken van de installatie kopie versie, voegt u deze toe. Gebruik `--data-snapshot-luns` om het LUN op te geven en gebruik `--data-snapshots` om de moment opnamen op te geven.
+Als de bron voor de besturingssysteemschijf een momentopname is, gebruikt u om `--os-snapshot` de besturingssysteemschijf op te geven. Als er momentopnamen van gegevensschijven zijn die ook deel moeten uitmaken van de versie van de afbeelding, voegt u deze toe. Gebruik `--data-snapshot-luns` om het LUN op te geven en gebruik `--data-snapshots` om de momentopnamen op te geven.
 
-In dit voor beeld zijn de bronnen schijf momentopnamen. Er is een besturingssysteem schijf en een gegevens schijf op LUN 0. De besturingssysteem schijf wordt versleuteld met DiskEncryptionSet1 en de gegevens schijf wordt versleuteld met DiskEncryptionSet2.
+In dit voorbeeld zijn de bronnen momentopnamen van schijven. Er is een besturingssysteemschijf en een gegevensschijf op LUN 0. De besturingssysteemschijf wordt versleuteld met DiskEncryptionSet1 en de gegevensschijf wordt versleuteld met DiskEncryptionSet2.
 
 ```azurecli-interactive
 az sig image-version create \
@@ -199,27 +199,27 @@ az sig image-version create \
 
 ### <a name="create-the-vm"></a>De VM maken
 
-U kunt een virtuele machine maken op basis van een galerie met gedeelde afbeeldingen en door de klant beheerde sleutels gebruiken om de schijven te versleutelen. De syntaxis is hetzelfde als het maken van een [gegeneraliseerde](vm-generalized-image-version-cli.md) of [gespecialiseerde](vm-specialized-image-version-cli.md) virtuele machine uit een installatie kopie. U hoeft alleen de para meter toe te voegen `--os-disk-encryption-set` met de id van de versleutelings. Voor gegevens schijven voegt u `--data-disk-encryption-sets` een door spaties gescheiden lijst van de schijf versleutelings sets voor de gegevens schijven toe.
+U kunt een VM maken vanuit een galerie met gedeelde afbeeldingen en door de klant beheerde sleutels gebruiken om de schijven te versleutelen. De syntaxis is hetzelfde als het maken van een [ge generaliseerde](vm-generalized-image-version-cli.md) of [gespecialiseerde](vm-specialized-image-version-cli.md) VM op een afbeelding. Voeg de `--os-disk-encryption-set` parameter toe met de id van de versleutelingsset. Voeg voor gegevensschijven toe met een lijst met door spaties scheidingstekens van de schijfversleutelingssets `--data-disk-encryption-sets` voor de gegevensschijven.
 
 
 ## <a name="portal"></a>Portal
 
-Wanneer u de versie van de installatie kopie maakt in de portal, kunt u het tabblad **versleuteling** gebruiken om uw opslag versleutelings sets toe te passen.
+Wanneer u de versie van uw afbeelding in de portal maakt, kunt u het tabblad **Versleuteling** gebruiken om uw opslagversleutelingssets toe te passen.
 
 > [!IMPORTANT]
-> Als u dubbele versleuteling wilt gebruiken, moet u de koppeling gebruiken [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) om toegang te krijgen tot de Azure Portal. Dubbele versleuteling bij rest is momenteel niet zichtbaar in de open bare Azure Portal tenzij u deze koppeling gebruikt.
+> Als u dubbele versleuteling wilt gebruiken, moet u de koppeling gebruiken [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) om toegang te krijgen tot Azure Portal. Dubbele versleuteling in rust is momenteel niet zichtbaar in de openbare Azure Portal tenzij u die koppeling gebruikt.
 
 
-1. Selecteer op de pagina **versie van een installatie kopie maken** het tabblad **versleuteling** .
-2. Selecteer in **versleutelings type** **versleuteling op-rest met een door de klant beheerde sleutel** of **dubbele versleuteling met door het platform beheerde en door de klant beheerde sleutels**. 
-3. Selecteer een versleutelings groep in de vervolg keuzelijst **schijf versleuteling instellen** voor elke schijf in de installatie kopie. 
+1. Selecteer op **de pagina Een versie van de** afbeelding maken het tabblad **Versleuteling.**
+2. In **Versleutelingstype** selecteert u **Versleuteling in** rust met een door de klant beheerde sleutel of Dubbele versleuteling met door het platform beheerde en **door de klant beheerde sleutels.** 
+3. Selecteer voor elke schijf in de afbeelding  een versleutelingsset in de vervolgkeuzelijst Schijfversleutelingsset. 
 
 ### <a name="create-the-vm"></a>De VM maken
 
-U kunt een virtuele machine maken op basis van een installatie kopie versie en door de klant beheerde sleutels gebruiken om de schijven te versleutelen. Wanneer u de virtuele machine in de portal maakt, selecteert u op het tabblad **schijven** de optie **versleuteling in rust met door de klant beheerde sleutels** of **dubbele versleuteling met door het platform beheerde en door de klant beheerde sleutels** voor het **versleutelings type**. Vervolgens kunt u de versleutelings reeks selecteren in de vervolg keuzelijst.
+U kunt een VM maken van een versie van een afbeelding en door de klant beheerde sleutels gebruiken om de schijven te versleutelen. Wanneer u de VM in de portal maakt, selecteert u op het tabblad Schijven de optie Versleuteling **in** rust met door de klant beheerde sleutels of Dubbele versleuteling met **door het platform** beheerde en door de klant beheerde sleutels voor **Versleutelingstype.**  Vervolgens kunt u de versleutelingsset selecteren in de vervolgkeuzelijst.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [schijf versleuteling aan de server zijde](./disk-encryption.md).
+Meer informatie over [schijfversleuteling aan de serverzijde.](./disk-encryption.md)
 
-Zie voor meer informatie over het verstrekken van informatie over het aankoop plan [Azure Marketplace-informatie over het aankoop plan bij het maken van installatie kopieën](marketplace-images.md).
+Zie Informatie over het aankoopplan leveren bij het maken van Azure Marketplace voor informatie over het leveren van informatie over het [aankoopplan.](marketplace-images.md)

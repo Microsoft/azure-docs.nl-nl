@@ -4,12 +4,12 @@ description: Ontdek hoe u een JavaScript-functie maakt vanaf de opdrachtregel en
 ms.date: 11/03/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c9810b1eb9e5f6bc65843d65f2f2452eac1be703
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: b8db78e56087e7cb777d1aa85391d4b6ac2aae27
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102447313"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787535"
 ---
 # <a name="quickstart-create-a-javascript-function-in-azure-from-the-command-line"></a>Quickstart: Een JavaScript-functie maken in Azure vanaf de opdrachtregel
 
@@ -96,7 +96,7 @@ Desgewenst kunt u doorgaan naar [De functie lokaal uitvoeren](#run-the-function-
 
 :::code language="javascript" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-JavaScript/index.js":::
 
-Voor een HTTP-trigger ontvangt de functie aanvraaggegevens in de variabele `req` zoals gedefinieerd in *function.json*. Het antwoord wordt gedefinieerd als `res` in *function.jsop* en kan worden geopend met `context.res` . Zie [Azure Functions HTTP-triggers en -bindingen](./functions-bindings-http-webhook.md?tabs=javascript) voor meer informatie.
+Voor een HTTP-trigger ontvangt de functie aanvraaggegevens in de variabele `req` zoals gedefinieerd in *function.json*. Het antwoord wordt gedefinieerd als `res` in *function.jsen* kan worden gebruikt met `context.res` . Zie [Azure Functions HTTP-triggers en -bindingen](./functions-bindings-http-webhook.md?tabs=javascript) voor meer informatie.
 
 #### <a name="functionjson"></a>function.json
 
@@ -118,7 +118,7 @@ Elke binding vereist een richting, een type en een unieke naam. De HTTP-trigger 
     az functionapp create --resource-group AzureFunctionsQuickstart-rg --consumption-plan-location westeurope --runtime node --runtime-version 12 --functions-version 3 --name <APP_NAME> --storage-account <STORAGE_NAME>
     ```
     
-    Maak de functie-app in Azure met behulp van de opdracht [az functionapp create](/cli/azure/functionapp#az-functionapp-create). Als u Node.js 10 gebruikt, wijzigt u ook `--runtime-version` in `10`.
+    Maak de functie-app in Azure met behulp van de opdracht [az functionapp create](/cli/azure/functionapp#az_functionapp_create). Als u Node.js 10 gebruikt, wijzigt u ook `--runtime-version` in `10`.
     
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
     

@@ -1,7 +1,7 @@
 ---
-title: Inhouds Tags-Computer Vision
+title: Inhoudstags - Computer Vision
 titleSuffix: Azure Cognitive Services
-description: Leer concepten met betrekking tot de functie voor het coderen van afbeeldingen van de Computer Vision-API.
+description: Leer concepten met betrekking tot de functie afbeeldingen taggen van de Computer Vision API.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,24 +11,24 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: a75e55cd51890173b6733ab5f8c0f1bcbfeef0f5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3ef2d07b736d391fc3509266dea77fdc1b325ff2
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "96532972"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778711"
 ---
 # <a name="applying-content-tags-to-images"></a>Inhoudstags toepassen op afbeeldingen
 
-Computer Vision retourneert Tags op basis van duizenden herken bare objecten, in de praktijk, de achtergrond en de acties. Wanneer tags ambigu of niet algemeen bekend zijn, geeft de API-reactie tips om de betekenis van de tag in de context van een bekende situatie te verduidelijken. Tags worden niet als taxonomie geordend en er bestaan geen overnamehiërarchieën. Een verzameling inhoudstags vormt de basis voor een 'beschrijving van de afbeelding, weergegeven als voor mensen leesbare taal opgemaakt in volledige zinnen. Houd er rekening mee dat Engels op dit moment de enige ondersteunde taal is voor de beschrijving van afbeeldingen.
+Computer Vision retourneert tags op basis van duizenden herkenbare objecten, levende wezens, landschappen en acties. Wanneer tags ambigu of niet algemeen bekend zijn, geeft de API-reactie tips om de betekenis van de tag in de context van een bekende situatie te verduidelijken. Tags worden niet als taxonomie geordend en er bestaan geen overnamehiërarchieën. Een verzameling inhoudstags vormt de basis voor een 'beschrijving van de afbeelding, weergegeven als voor mensen leesbare taal opgemaakt in volledige zinnen. Houd er rekening mee dat Engels op dit moment de enige ondersteunde taal is voor de beschrijving van afbeeldingen.
 
 Na het uploaden van een afbeelding of het specificeren van een afbeeldings-URL, leveren de algoritmen van Computer Vision als output tags die zijn gebaseerd op objecten, levende wezens en acties die in de afbeelding zijn herkend. U kunt tagging niet alleen gebruiken voor het hoofdonderwerp, zoals een persoon op de voorgrond, maar ook voor de omgeving (binnen of buiten), meubels, gereedschap, planten, dieren, accessoires, gadgets enzovoort.
 
-## <a name="image-tagging-example"></a>Voor beeld van afbeeldings tagging
+## <a name="image-tagging-example"></a>Voorbeeld van taggen van afbeeldingen
 
-In het volgende JSON-antwoord ziet u wat Computer Vision als resultaat geeft bij het markeren van visuele functies die worden gedetecteerd in de voorbeeld afbeelding.
+Het volgende JSON-antwoord illustreert wat Computer Vision retourneert bij het taggen van visuele kenmerken die zijn gedetecteerd in de voorbeeldafbeelding.
 
-![Een blauw huis en de voor tuin](./Images/house_yard.png).
+![Een blauw huis en de voorste erf](./Images/house_yard.png).
 
 ```json
 {
@@ -85,10 +85,10 @@ In het volgende JSON-antwoord ziet u wat Computer Vision als resultaat geeft bij
 
 ## <a name="use-the-api"></a>De API gebruiken
 
-De functie Tags maken maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Tags` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"tags"` sectie.
+De tagfunctie maakt deel uit van de [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) API. U kunt deze API aanroepen via een native SDK of via REST-aanroepen. Neem `Tags` op in de **queryparameter visualFeatures.** Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de tekenreeks voor de inhoud van de `"tags"` sectie.
 
 * [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de gerelateerde concepten van het [categoriseren van afbeeldingen](concept-categorizing-images.md) en het [beschrijven van installatie kopieën](concept-describing-images.md).
+Meer informatie over de gerelateerde concepten van [het categoriseren van afbeeldingen](concept-categorizing-images.md) en het beschrijven van [afbeeldingen.](concept-describing-images.md)

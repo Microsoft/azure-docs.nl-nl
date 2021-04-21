@@ -1,50 +1,50 @@
 ---
-title: Door API server geautoriseerde IP-bereiken in azure Kubernetes service (AKS)
-description: Meer informatie over het beveiligen van uw cluster met behulp van een IP-adres bereik voor toegang tot de API-server in azure Kubernetes service (AKS)
+title: Geautoriseerde IP-adresbereiken van API-server in Azure Kubernetes Service (AKS)
+description: Meer informatie over het beveiligen van uw cluster met behulp van een IP-adresbereik voor toegang tot de API-server in Azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: article
 ms.date: 09/21/2020
-ms.openlocfilehash: 20c3d46e9a19c66c727e5a21bccd6caa0dc5f0ba
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8fca3fe61e26a031e6ea09692c9ba0781bfca21f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104771920"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107769639"
 ---
-# <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Veilige toegang tot de API-server met behulp van geautoriseerde IP-adresbereiken in azure Kubernetes service (AKS)
+# <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Beveiligde toegang tot de API-server met behulp van geautoriseerde IP-adresbereiken in Azure Kubernetes Service (AKS)
 
-In Kubernetes ontvangt de API-server aanvragen voor het uitvoeren van acties in het cluster, zoals het maken van resources of het schalen van het aantal knoop punten. De API-server is de centrale manier om met een cluster te communiceren en te beheren. Als u de beveiliging van het cluster wilt verbeteren en aanvallen wilt minimaliseren, moet de API-server alleen toegankelijk zijn vanuit een beperkt aantal IP-adresbereiken.
+In Kubernetes ontvangt de API-server aanvragen om acties uit te voeren in het cluster, zoals het maken van resources of het schalen van het aantal knooppunten. De API-server is de centrale manier om een cluster te gebruiken en te beheren. Om de clusterbeveiliging te verbeteren en aanvallen te minimaliseren, mag de API-server alleen toegankelijk zijn vanuit een beperkte set IP-adresbereiken.
 
-Dit artikel laat u zien hoe u met de API-server geautoriseerde IP-adresbereiken kunt beperken welke IP-adressen en CIDRs het beheer vlak kunnen hebben.
+In dit artikel wordt beschreven hoe u geautoriseerde IP-adresbereiken van de API-server gebruikt om te beperken welke IP-adressen en CIDR's toegang hebben tot het besturingsvlak.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 In dit artikel wordt beschreven hoe u een AKS-cluster maakt met behulp van de Azure CLI.
 
-U moet de Azure CLI-versie 2.0.76 of hoger hebben geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Azure CLI versie 2.0.76 of hoger moet zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ### <a name="limitations"></a>Beperkingen
 
-De functie voor door de API-server geautoriseerde IP-bereiken heeft de volgende beperkingen:
-- Op clusters die zijn gemaakt na de door de API server geautoriseerde IP-adresbereiken in oktober 2019, worden door API-server geautoriseerde IP-adresbereiken alleen ondersteund voor de *standaard* SKU Load Balancer. Bestaande clusters met de *basis* -SKU Load Balancer en de door de API server geautoriseerde IP-adresbereiken blijven werken, maar kunnen niet worden gemigreerd naar een *standaard* -SKU Load Balancer. Deze bestaande clusters blijven werken als hun Kubernetes-versie of besturings vlak wordt geüpgraded. Geautoriseerde IP-adresbereiken van de API-server worden niet ondersteund voor persoonlijke clusters.
-- Deze functie is niet compatibel met clusters die gebruikmaken van een [openbaar IP-adres per knoop punt](use-multiple-node-pools.md#assign-a-public-ip-per-node-for-your-node-pools).
+De functie Geautoriseerde IP-adresbereiken van de API-server heeft de volgende beperkingen:
+- Op clusters die zijn gemaakt na geautoriseerde IP-adresbereiken van de API-server die in oktober 2019 uit de preview-versie zijn verplaatst, worden geautoriseerde IP-adresbereiken van de API-server alleen ondersteund op de standaard-SKU-load balancer.  Bestaande clusters met de *Basic* SKU load balancer- en API-server geautoriseerde IP-adresbereiken die zijn geconfigureerd, blijven gewoon werken, maar kunnen niet worden gemigreerd naar een *Standard* SKU-load balancer. Deze bestaande clusters blijven ook werken als hun Kubernetes-versie of besturingsvlak wordt bijgewerkt. Geautoriseerde IP-adresbereiken van de API-server worden niet ondersteund voor privéclusters.
+- Deze functie is niet compatibel met clusters die gebruikmaken van [een openbaar IP-adres per knooppunt.](use-multiple-node-pools.md#assign-a-public-ip-per-node-for-your-node-pools)
 
-## <a name="overview-of-api-server-authorized-ip-ranges"></a>Overzicht van door de API server geautoriseerde IP-adresbereiken
+## <a name="overview-of-api-server-authorized-ip-ranges"></a>Overzicht van geautoriseerde IP-adresbereiken van API-server
 
-De Kubernetes API-server is hoe de onderliggende Kubernetes-Api's worden weer gegeven. Dit onderdeel biedt de interactie voor beheer hulpprogramma's, zoals `kubectl` of het Kubernetes-dash board. AKS biedt een cluster beheer vlak met één Tenant, met een speciale API-server. Standaard wordt aan de API-server een openbaar IP-adres toegewezen. u moet de toegang beheren via Kubernetes op basis van rollen (Kubernetes RBAC) of Azure RBAC.
+De Kubernetes-API-server is de manier waarop de onderliggende Kubernetes-API's beschikbaar worden gemaakt. Dit onderdeel biedt de interactie voor beheerhulpprogramma's, zoals `kubectl` of het Kubernetes-dashboard. AKS biedt een clusterbesturingsvlak met één tenant, met een toegewezen API-server. De API-server krijgt standaard een openbaar IP-adres toegewezen en u moet de toegang beheren met op kubernetes-rollen gebaseerd toegangsbeheer (Kubernetes RBAC) of Azure RBAC.
 
-Als u de toegang tot de anderszins toegankelijke AKS Control vlak/API-server wilt beveiligen, kunt u geautoriseerde IP-bereiken inschakelen en gebruiken. Met deze geautoriseerde IP-bereiken zijn alleen gedefinieerde IP-adresbereiken toegestaan om te communiceren met de API-server. Een aanvraag naar de API-server vanaf een IP-adres dat geen deel uitmaakt van deze toegestane IP-bereiken, wordt geblokkeerd. Blijf Kubernetes RBAC of Azure RBAC gebruiken om gebruikers en de acties die ze aanvragen te autoriseren.
+Als u de toegang tot de anderszins openbaar toegankelijke AKS-besturingsvlak/API-server wilt beveiligen, kunt u geautoriseerde IP-bereiken inschakelen en gebruiken. Met deze geautoriseerde IP-adresbereiken kunnen alleen gedefinieerde IP-adresbereiken communiceren met de API-server. Een aanvraag die wordt ingediend bij de API-server vanaf een IP-adres dat geen deel uitmaakt van deze geautoriseerde IP-adresbereiken, wordt geblokkeerd. Blijf Kubernetes RBAC of Azure RBAC gebruiken om gebruikers en de acties die ze aanvragen te autoreren.
 
-Zie [Kubernetes core-concepten voor AKS][concepts-clusters-workloads]voor meer informatie over de API-server en andere cluster onderdelen.
+Zie Kubernetes-kernconcepten voor AKS voor meer informatie over de API-server en andere [clusteronderdelen.][concepts-clusters-workloads]
 
-## <a name="create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled"></a>Een AKS-cluster maken waarvoor een API-server geautoriseerde IP-adresbereiken is ingeschakeld
+## <a name="create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled"></a>Een AKS-cluster maken met geautoriseerde IP-adresbereiken van de API-server
 
-Maak een cluster met behulp van de [AZ AKS Create][az-aks-create] en geef de *`--api-server-authorized-ip-ranges`* para meter op om een lijst met geautoriseerde IP-adresbereiken op te geven. Deze IP-adresbereiken zijn meestal adresbereiken die worden gebruikt door uw on-premises netwerken of open bare Ip's. Wanneer u een CIDR-bereik opgeeft, begint u met het eerste IP-adres in het bereik. *137.117.106.90/29* is bijvoorbeeld een geldig bereik, maar zorg ervoor dat u het eerste IP-adres in het bereik opgeeft, zoals *137.117.106.88/29*.
+Maak een cluster met [az aks create][az-aks-create] en geef de *`--api-server-authorized-ip-ranges`* parameter op om een lijst met geautoriseerde IP-adresbereiken op te geven. Deze IP-adresbereiken zijn meestal adresbereiken die worden gebruikt door uw on-premises netwerken of openbare IP-adressen. Wanneer u een CIDR-bereik opgeeft, begint u met het eerste IP-adres in het bereik. *137.117.106.90/29* is bijvoorbeeld een geldig bereik, maar zorg ervoor dat u het eerste IP-adres in het bereik opgeeft, zoals *137.117.106.88/29.*
 
 > [!IMPORTANT]
-> Uw cluster maakt standaard gebruik van de [standaard-SKU Load Balancer][standard-sku-lb] die u kunt gebruiken om de uitgaande gateway te configureren. Wanneer u toegestane IP-bereiken van de API-server inschakelt tijdens het maken van het cluster, is het open bare IP-adres voor uw cluster standaard ook toegestaan naast de bereiken die u opgeeft. Als u ' of geen waarde voor *'* opgeeft *`--api-server-authorized-ip-ranges`* , wordt de API-server geautoriseerde IP-adresbereiken uitgeschakeld. Als u Power shell gebruikt, gebruikt u *`--api-server-authorized-ip-ranges=""`* (met een gelijkteken) om problemen met het parseren te voor komen.
+> Uw cluster maakt standaard gebruik van de [Standard SKU-load balancer][standard-sku-lb] u kunt gebruiken om de uitgaande gateway te configureren. Wanneer u geautoriseerde IP-adresbereiken voor de API-server inschakelen tijdens het maken van het cluster, is het openbare IP-adres voor uw cluster standaard ook toegestaan naast de door u opgegeven bereik. Als u '' *of* geen waarde opgeeft voor , worden geautoriseerde IP-adresbereiken van de *`--api-server-authorized-ip-ranges`* API-server uitgeschakeld. Als u PowerShell gebruikt, gebruikt u *`--api-server-authorized-ip-ranges=""`* (met gelijkteken) om parseringsproblemen te voorkomen.
 
-In het volgende voor beeld wordt een cluster met één knoop punt met de naam *myAKSCluster* gemaakt in de resource groep met de naam *myResourceGroup* waarvoor geautoriseerde IP-bereiken voor de API-server zijn ingeschakeld. De toegestane IP-adresbereiken zijn *73.140.245.0/24*:
+In het volgende voorbeeld wordt een cluster met één knooppunt met de naam *myAKSCluster* gemaakt in de resourcegroep met de *naam myResourceGroup* met geautoriseerde IP-adresbereiken van de API-server ingeschakeld. De toegestane IP-adresbereiken *zijn 73.140.245.0/24:*
 
 ```azurecli-interactive
 az aks create \
@@ -58,18 +58,18 @@ az aks create \
 ```
 
 > [!NOTE]
-> Voeg deze bereiken toe aan een acceptatie lijst:
-> - Het open bare IP-adres van de firewall
-> - Elk bereik dat netwerken vertegenwoordigt waarvan u het cluster beheert
-> - Als u Azure dev Spaces op uw AKS-cluster gebruikt, moet u [extra bereiken op basis van uw regio][dev-spaces-ranges]toestaan.
+> U moet deze reeksen toevoegen aan een lijst met toegestane reeksen:
+> - Het openbare IP-adres van de firewall
+> - Elk bereik dat netwerken vertegenwoordigt waarmee u het cluster gaat beheren
+> - Als u Azure Dev Spaces gebruikt in uw AKS-cluster, moet u extra bereik toestaan op [basis van uw regio][dev-spaces-ranges].
 >
-> De bovengrens voor het aantal IP-bereiken dat u kunt opgeven, is 200.
+> De bovengrens voor het aantal IP-adresbereiken dat u kunt opgeven, is 200.
 >
-> Het kan zijn dat de regels tot 2min kunnen worden door gegeven. Wacht tijd voor het testen van de verbinding.
+> Het kan tot 2 minuten duren voor de regels zijn doorgegeven. Het kan tot die tijd duren wanneer u de verbinding test.
 
-### <a name="specify-the-outbound-ips-for-the-standard-sku-load-balancer"></a>Geef de uitgaande Ip's op voor de standaard-SKU load balancer
+### <a name="specify-the-outbound-ips-for-the-standard-sku-load-balancer"></a>Geef de uitgaande IP's op voor de Standard SKU-load balancer
 
-Als u een AKS-cluster maakt en u de uitgaande IP-adressen of voor voegsels voor het cluster opgeeft, worden deze adressen of voor voegsels ook toegestaan. Bijvoorbeeld:
+Als u bij het maken van een AKS-cluster de uitgaande IP-adressen of voorvoegsels voor het cluster opgeeft, zijn deze adressen of voorvoegsels ook toegestaan. Bijvoorbeeld:
 
 ```azurecli-interactive
 az aks create \
@@ -83,15 +83,15 @@ az aks create \
     --generate-ssh-keys
 ```
 
-In het bovenstaande voor beeld zijn alle IP-adressen die in de para meter zijn opgenomen, *`--load-balancer-outbound-ip-prefixes`* toegestaan in combi natie met de IP-adressen in de *`--api-server-authorized-ip-ranges`* para meter.
+In het bovenstaande voorbeeld zijn alle INP's die zijn opgegeven in de parameter toegestaan, samen *`--load-balancer-outbound-ip-prefixes`* met de IP's in de *`--api-server-authorized-ip-ranges`* parameter .
 
-In plaats daarvan kunt u de *`--load-balancer-outbound-ip-prefixes`* para meter opgeven om uitgaande Load Balancer IP-voor voegsels toe te staan.
+In plaats daarvan kunt u de parameter opgeven om uitgaande load balancer *`--load-balancer-outbound-ip-prefixes`* IP-voorvoegsels toe te staan.
 
-### <a name="allow-only-the-outbound-public-ip-of-the-standard-sku-load-balancer"></a>Alleen het uitgaande open bare IP-adres van de standaard-SKU toestaan load balancer
+### <a name="allow-only-the-outbound-public-ip-of-the-standard-sku-load-balancer"></a>Alleen het uitgaande openbare IP-adres van de Standard SKU-load balancer
 
-Wanneer u toegestane IP-bereiken van de API-server inschakelt tijdens het maken van het cluster, is het uitgaande open bare IP-adres voor de standaard SKU-load balancer voor uw cluster ook standaard toegestaan naast de bereiken die u opgeeft. Als u alleen het uitgaande open bare IP-adres van de standaard-SKU load balancer wilt toestaan, gebruikt u *0.0.0.0/32* bij het opgeven van de *`--api-server-authorized-ip-ranges`* para meter.
+Wanneer u geautoriseerde IP-adresbereiken van de API-server inschakelen tijdens het maken van het cluster, wordt het uitgaande openbare IP-adres voor de Standard-SKU-load balancer voor uw cluster standaard ook toegestaan, naast de door u opgegeven bereik. Als u alleen het uitgaande openbare IP-adres van de Standard SKU-load balancer wilt toestaan, gebruikt u *0.0.0.0/32* bij het opgeven van de *`--api-server-authorized-ip-ranges`* parameter.
 
-In het volgende voor beeld is alleen het uitgaande open bare IP-adres van de standaard-SKU-load balancer toegestaan en u hebt alleen toegang tot de API-server vanuit de knoop punten in het cluster.
+In het volgende voorbeeld is alleen het uitgaande openbare IP-adres van de Standard SKU load balancer toegestaan en hebt u alleen toegang tot de API-server vanaf de knooppunten in het cluster.
 
 ```azurecli-interactive
 az aks create \
@@ -104,11 +104,11 @@ az aks create \
     --generate-ssh-keys
 ```
 
-## <a name="update-a-clusters-api-server-authorized-ip-ranges"></a>De door de API-server geautoriseerde IP-adresbereiken van een cluster bijwerken
+## <a name="update-a-clusters-api-server-authorized-ip-ranges"></a>Geautoriseerde IP-adresbereiken bijwerken voor de API-server van een cluster
 
-Als u de door de API-server geautoriseerde IP-adresbereiken wilt bijwerken op een bestaand cluster, gebruikt u [AZ AKS update][az-aks-update] Command en gebruikt u de *`--api-server-authorized-ip-ranges`* ,--Load Balancer-uitgaand-IP-voor voegsels *, *`--load-balancer-outbound-ips`* of--Load Balancer-uitgaand-IP-voor voegsels* para meters.
+Als u de geautoriseerde IP-bereiken van de API-server op een bestaand cluster wilt bijwerken, gebruikt u de opdracht [az aks update][az-aks-update] en gebruikt u de *`--api-server-authorized-ip-ranges`* parameters ,--load-balancer-outbound-ip-prefixes *, of *`--load-balancer-outbound-ips`* --load-balancer-outbound-ip-prefixes.*
 
-In het volgende voor beeld worden de geautoriseerde IP-adresbereiken van de API-server bijgewerkt in het cluster met de naam *myAKSCluster* in de resource groep genaamd *myResourceGroup*. Het IP-adres bereik dat moet worden geautoriseerd, is *73.140.245.0/24*:
+In het volgende voorbeeld worden geautoriseerde IP-adresbereiken van de API-server bijgewerkt op het cluster met de naam *myAKSCluster* in de resourcegroep met de *naam myResourceGroup.* Het IP-adresbereik dat moet worden geautoriseerd, is *73.140.245.0/24:*
 
 ```azurecli-interactive
 az aks update \
@@ -117,11 +117,11 @@ az aks update \
     --api-server-authorized-ip-ranges  73.140.245.0/24
 ```
 
-U kunt ook *0.0.0.0/32* gebruiken bij het opgeven *`--api-server-authorized-ip-ranges`* van de para meter om alleen het open bare IP-adres van de standaard-SKU Load Balancer toe te staan.
+U kunt ook *0.0.0.0/32* gebruiken bij het opgeven van de parameter zodat alleen het openbare IP-adres van de *`--api-server-authorized-ip-ranges`* Standard SKU-load balancer.
 
-## <a name="disable-authorized-ip-ranges"></a>Toegestane IP-bereiken uitschakelen
+## <a name="disable-authorized-ip-ranges"></a>Geautoriseerde IP-adresbereiken uitschakelen
 
-Als u gemachtigde IP-bereiken wilt uitschakelen, gebruikt u [AZ AKS update][az-aks-update] en geeft u een leeg bereik op om IP-adresbereiken met de API-server uit te scha kelen. Bijvoorbeeld:
+Als u geautoriseerde IP-adresbereiken wilt uitschakelen, gebruikt u [az aks update][az-aks-update] en geeft u een leeg bereik op om geautoriseerde IP-adresbereiken voor de API-server uit te schakelen. Bijvoorbeeld:
 
 ```azurecli-interactive
 az aks update \
@@ -130,9 +130,9 @@ az aks update \
     --api-server-authorized-ip-ranges ""
 ```
 
-## <a name="find-existing-authorized-ip-ranges"></a>Bestaande gemachtigde IP-bereiken zoeken
+## <a name="find-existing-authorized-ip-ranges"></a>Bestaande geautoriseerde IP-adresbereiken zoeken
 
-Gebruik [AZ AKS show][az-aks-show] en geef de naam en resource groep van het cluster op om IP-bereiken te vinden die zijn gemachtigd. Bijvoorbeeld:
+Als u IP-adresbereiken wilt zoeken die zijn geautoriseerd, gebruikt u [az aks show][az-aks-show] en geeft u de naam en resourcegroep van het cluster op. Bijvoorbeeld:
 
 ```azurecli-interactive
 az aks show \
@@ -141,19 +141,19 @@ az aks show \
     --query apiServerAccessProfile.authorizedIpRanges'
 ```
 
-## <a name="update-disable-and-find-authorized-ip-ranges-using-azure-portal"></a>Gemachtigde IP-bereiken bijwerken, uitschakelen en zoeken met behulp van Azure Portal
+## <a name="update-disable-and-find-authorized-ip-ranges-using-azure-portal"></a>Geautoriseerde IP-adresbereiken bijwerken, uitschakelen en vinden met behulp Azure Portal
 
-De bovenstaande bewerkingen voor het toevoegen, bijwerken, zoeken en uitschakelen van geautoriseerde IP-bereiken kunnen ook worden uitgevoerd in de Azure Portal. Ga naar **netwerken** onder **instellingen** in de menu-Blade van de cluster bron om toegang te krijgen.
+De bovenstaande bewerkingen voor het toevoegen, bijwerken, zoeken en uitschakelen van geautoriseerde IP-adresbereiken kunnen ook worden uitgevoerd in de Azure Portal. Voor toegang gaat u naar **Netwerken onder** **Instellingen** op de menublade van uw clusterresource.
 
-:::image type="content" source="media/api-server-authorized-ip-ranges/ip-ranges-specified.PNG" alt-text="In een browser worden de netwerk instellingen van de cluster bron Azure Portal pagina weer gegeven. De opties ' opgegeven IP-bereik instellen ' en ' opgegeven IP-bereiken ' zijn gemarkeerd.":::
+:::image type="content" source="media/api-server-authorized-ip-ranges/ip-ranges-specified.PNG" alt-text="In een browser worden de netwerkinstellingen van de clusterresource Azure Portal weergegeven. De opties 'opgegeven IP-bereik instellen' en 'Opgegeven IP-adresbereiken' zijn gemarkeerd.":::
 
-## <a name="how-to-find-my-ip-to-include-in---api-server-authorized-ip-ranges"></a>Hoe vind ik mijn IP-adres om in te voegen `--api-server-authorized-ip-ranges` ?
+## <a name="how-to-find-my-ip-to-include-in---api-server-authorized-ip-ranges"></a>Mijn IP-adres vinden om op te nemen in `--api-server-authorized-ip-ranges` ?
 
-U moet uw ontwikkel computers, hulpprogram ma's of automatiserings-IP-adressen toevoegen aan de AKS-cluster lijst met goedgekeurde IP-bereiken om vanaf daar toegang te krijgen tot de API-server. 
+U moet uw ontwikkelmachines, hulpprogramma's of automatiserings-IP-adressen toevoegen aan de AKS-clusterlijst met goedgekeurde IP-bereiken om van hieruit toegang te krijgen tot de API-server. 
 
-Een andere optie is het configureren van een JumpBox met het benodigde hulp programma binnen een afzonderlijk subnet in het virtuele netwerk van de firewall. Hierbij wordt ervan uitgegaan dat uw omgeving een firewall heeft met het respectieve netwerk en dat u de firewall-Ip's hebt toegevoegd aan de gemachtigde bereiken. En als u tunneling van het subnet AKS naar het subnet van de firewall hebt geforceerd, dan is de JumpBox in het subnet van het cluster ook goed.
+Een andere optie is om een jumpbox te configureren met de benodigde hulpprogramma's binnen een afzonderlijk subnet in het virtuele netwerk van de firewall. Hier wordt ervan uit gegaan dat uw omgeving een firewall heeft met het desbetreffende netwerk en u de FIREWALL-IP's hebt toegevoegd aan geautoriseerde bereik. En als u geforceerd tunneling van het AKS-subnet naar het subnet Firewall hebt, dan is het ook prima om de jumpbox in het clustersubnet te hebben.
 
-Voeg een ander IP-adres toe aan de goedgekeurde bereiken met de volgende opdracht.
+Voeg nog een IP-adres toe aan de goedgekeurde reeksen met de volgende opdracht.
 
 ```bash
 # Retrieve your IP address
@@ -163,21 +163,21 @@ az aks update -g $RG -n $AKSNAME --api-server-authorized-ip-ranges $CURRENT_IP/3
 ```
 
 >> [!NOTE]
-> In het bovenstaande voor beeld worden de door de API server geautoriseerde IP-adresbereiken toegevoegd aan het cluster. Als u gemachtigde IP-bereiken wilt uitschakelen, gebruikt u AZ AKS update en geeft u een leeg bereik op. 
+> In het bovenstaande voorbeeld worden geautoriseerde IP-adresbereiken van de API-server op het cluster aan de API-server aangepast. Als u geautoriseerde IP-adresbereiken wilt uitschakelen, gebruikt u az aks update en geeft u een leeg bereik op. 
 
-U kunt ook de onderstaande opdracht op Windows-systemen gebruiken om het open bare IPv4-adres op te halen, of gebruik de stappen in [uw IP-adres zoeken](https://support.microsoft.com/en-gb/help/4026518/windows-10-find-your-ip-address).
+Een andere optie is om de onderstaande opdracht op Windows-systemen te gebruiken om het openbare IPv4-adres op te halen. U kunt ook de stappen in [Uw IP-adres zoeken gebruiken.](https://support.microsoft.com/en-gb/help/4026518/windows-10-find-your-ip-address)
 
 ```azurepowershell-interactive
 Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
 ```
 
-U kunt dit adres ook vinden door te zoeken in ' wat is mijn IP-adres ' in een Internet browser.
+U kunt dit adres ook vinden door in een internetbrowser te zoeken naar 'What is my IP address'.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u de API-server geautoriseerde IP-adresbereiken ingeschakeld. Deze benadering is een onderdeel van hoe u een veilig AKS-cluster kunt uitvoeren.
+In dit artikel hebt u geautoriseerde IP-adresbereiken ingeschakeld voor de API-server. Deze aanpak is een onderdeel van de manier waarop u een beveiligd AKS-cluster kunt uitvoeren.
 
-Zie voor meer informatie [beveiligings concepten voor toepassingen en clusters in AKS][concepts-security] en [Aanbevolen procedures voor het beveiligen van het cluster en upgrades in AKS][operator-best-practices-cluster-security].
+Zie Beveiligingsconcepten voor toepassingen en [clusters in AKS][concepts-security] en Best practices voor clusterbeveiliging en [-upgrades in AKS][operator-best-practices-cluster-security]voor meer informatie.
 
 <!-- LINKS - external -->
 [cni-networking]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md
@@ -186,9 +186,9 @@ Zie voor meer informatie [beveiligings concepten voor toepassingen en clusters i
 
 <!-- LINKS - internal -->
 [az-aks-update]: /cli/azure/ext/aks-preview/aks#ext-aks-preview-az-aks-update
-[az-aks-create]: /cli/azure/aks#az-aks-create
+[az-aks-create]: /cli/azure/aks#az_aks_create
 [az-aks-show]: /cli/azure/aks#az_aks_show
-[az-network-public-ip-list]: /cli/azure/network/public-ip#az-network-public-ip-list
+[az-network-public-ip-list]: /cli/azure/network/public-ip#az_network_public_ip_list
 [concepts-clusters-workloads]: concepts-clusters-workloads.md
 [concepts-security]: concepts-security.md
 [install-azure-cli]: /cli/azure/install-azure-cli

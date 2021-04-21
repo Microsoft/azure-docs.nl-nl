@@ -8,12 +8,12 @@ ms.date: 10/20/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: f1a502722156bc010dab917afdbd1d49ae93681a
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: 804c4732ce979cd9ec46c69456b3f731284c9c73
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107375981"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107748522"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-java"></a>Quickstart: Clientbibliotheek Azure Key Vault voor geheimen voor Java
 Aan de slag met de clientbibliotheek Azure Key Vault voor geheimen voor Java. Volg de onderstaande stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
@@ -281,4 +281,4 @@ In deze quickstart hebt u een sleutelkluis gemaakt, een geheim opgeslagen en dat
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Instructies voor [veilige toegang tot een sleutelkluis](../general/secure-your-key-vault.md)
+- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-overview.md)

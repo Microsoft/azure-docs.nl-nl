@@ -1,43 +1,43 @@
 ---
-title: Vm's en scale set-instanties implementeren op toegewezen hosts met behulp van de CLI
-description: Implementeer Vm's en scale set-instanties naar toegewezen hosts met behulp van de Azure CLI.
+title: VM's en schaalset-exemplaren implementeren op toegewezen hosts met behulp van de CLI
+description: Implementeer VM's en schaalset-exemplaren op toegewezen hosts met behulp van de Azure CLI.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: dedicated-hosts
 ms.topic: how-to
 ms.date: 11/12/2020
 ms.author: cynthn
-ms.openlocfilehash: 9d4117cafd665556fb60278aa4dc60dc14a27ada
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: adc09bf2572be563ff52cf9fa3d0dea51263d032
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101670522"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774409"
 ---
-# <a name="deploy-to-dedicated-hosts-using-the-azure-cli"></a>Implementeren naar toegewezen hosts met behulp van de Azure CLI
+# <a name="deploy-to-dedicated-hosts-using-the-azure-cli"></a>Implementeren op toegewezen hosts met behulp van de Azure CLI
  
 
-Dit artikel begeleidt u bij het maken van een toegewezen Azure- [host](../dedicated-hosts.md) voor het hosten van uw virtuele machines (vm's). 
+Dit artikel begeleidt u bij het maken van een toegewezen [Azure-host voor](../dedicated-hosts.md) het hosten van uw virtuele machines (VM's). 
 
-Zorg ervoor dat u Azure CLI-versie 2.16.0 of hoger hebt geïnstalleerd en dat u bent aangemeld bij een Azure-account met `az login` . 
+Zorg ervoor dat u Azure CLI versie 2.16.0 of hoger hebt geïnstalleerd en aangemeld bij een Azure-account met behulp van `az login` . 
 
 
 ## <a name="limitations"></a>Beperkingen
 
-- De grootten en typen hardware die beschikbaar zijn voor toegewezen hosts variëren per regio. Raadpleeg de pagina met [prijzen](https://aka.ms/ADHPricing) voor de host voor meer informatie.
+- De grootten en hardwaretypen die beschikbaar zijn voor toegewezen hosts variëren per regio. Raadpleeg de pagina met [hostprijzen voor](https://aka.ms/ADHPricing) meer informatie.
 
 ## <a name="create-resource-group"></a>Een resourcegroep maken 
-Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak de resource groep met AZ Group Create. In het volgende voor beeld wordt een resource groep met de naam *myDHResourceGroup* gemaakt op de locatie *VS-Oost* .
+Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Maak de resourcegroep met az group create. In het volgende voorbeeld wordt een resourcegroep met de *naam myDHResourceGroup gemaakt* op de *locatie VS -* oost.
 
 ```azurecli-interactive
 az group create --name myDHResourceGroup --location eastus 
 ```
  
-## <a name="list-available-host-skus-in-a-region"></a>Beschik bare host-Sku's in een regio weer geven
+## <a name="list-available-host-skus-in-a-region"></a>Lijst met beschikbare host-SKU's in een regio
 
-Niet alle host-Sku's zijn beschikbaar in alle regio's en beschikbaarheids zones. 
+Niet alle host-SKU's zijn beschikbaar in alle regio's en beschikbaarheidszones. 
 
-Geef de beschik baarheid van de host en eventuele beperkingen van de aanbieding weer voordat u begint met het inrichten van toegewezen hosts. 
+Vermeld de beschikbaarheid van de host en eventuele aanbiedingsbeperkingen voordat u begint met het inrichten van toegewezen hosts. 
 
 ```azurecli-interactive
 az vm list-skus -l eastus2  -r hostGroups/hosts  -o table  
@@ -45,16 +45,16 @@ az vm list-skus -l eastus2  -r hostGroups/hosts  -o table
  
 ## <a name="create-a-host-group"></a>Een hostgroep maken 
 
-Een **hostgroep** is een resource die een verzameling toegewezen hosts vertegenwoordigt. U maakt een hostgroep in een regio en een beschikbaarheids zone en voegt hierop hosts toe. Bij het plannen van hoge Beschik baarheid zijn er extra opties. U kunt een of beide van de volgende opties gebruiken met uw toegewezen hosts: 
-- Beschik over meerdere beschikbaarheids zones. In dit geval moet u een hostgroep hebben in elk van de zones die u wilt gebruiken.
-- Over meerdere fout domeinen die zijn toegewezen aan fysieke racks. 
+Een **hostgroep** is een resource die een verzameling toegewezen hosts vertegenwoordigt. U maakt een hostgroep in een regio en een beschikbaarheidszone en voegt er hosts aan toe. Bij het plannen van hoge beschikbaarheid zijn er aanvullende opties. U kunt een of beide van de volgende opties gebruiken met uw toegewezen hosts: 
+- Meerdere beschikbaarheidszones overspannen. In dit geval moet u een hostgroep hebben in elk van de zones die u wilt gebruiken.
+- Overspannen meerdere foutdomeinen die zijn toe te staan aan fysieke rekken. 
  
-In beide gevallen moet u het aantal fout domeinen voor uw hostgroep opgeven. Als u geen fout domeinen in uw groep wilt beslaan, gebruikt u het aantal fouten domein 1. 
+In beide gevallen moet u het aantal foutdomeinen voor uw hostgroep verstrekken. Als u geen foutdomeinen in uw groep wilt omspannen, gebruikt u het aantal foutdomeinen van 1. 
 
-U kunt er ook voor kiezen om zowel beschikbaarheids zones als fout domeinen te gebruiken. 
+U kunt ook besluiten om zowel beschikbaarheidszones als foutdomeinen te gebruiken. 
 
 
-In dit voor beeld wordt [AZ VM host Group Create](/cli/azure/vm/host/group#az-vm-host-group-create) gebruikt om een hostgroep te maken met behulp van zowel beschikbaarheids zones als fout domeinen. 
+In dit voorbeeld gebruiken we [az vm host group create](/cli/azure/vm/host/group#az_vm_host_group_create) om een hostgroep te maken met zowel beschikbaarheidszones als foutdomeinen. 
 
 ```azurecli-interactive
 az vm host group create \
@@ -64,12 +64,12 @@ az vm host group create \
    --platform-fault-domain-count 2 
 ``` 
 
-Voeg de `--automatic-placement true` para meter toe om uw vm's en instanties van schaal sets automatisch op hosts in een hostgroep te plaatsen. Zie voor meer informatie [hand matig versus automatische plaatsing ](../dedicated-hosts.md#manual-vs-automatic-placement).
+Voeg de `--automatic-placement true` parameter toe om uw VM's en schaalset-exemplaren automatisch op hosts in een hostgroep te plaatsen. Zie Handmatige [versus automatische plaatsing voor meer informatie. ](../dedicated-hosts.md#manual-vs-automatic-placement)
 
 
 ### <a name="other-examples"></a>Andere voorbeelden
 
-U kunt ook [AZ VM host Group Create](/cli/azure/vm/host/group#az-vm-host-group-create) gebruiken om een hostgroep te maken in beschikbaarheids zone 1 (en geen fout domeinen).
+U kunt ook [az vm host group create gebruiken om](/cli/azure/vm/host/group#az_vm_host_group_create) een hostgroep te maken in beschikbaarheidszone 1 (en geen foutdomeinen).
 
 ```azurecli-interactive
 az vm host group create \
@@ -79,7 +79,7 @@ az vm host group create \
    --platform-fault-domain-count 1 
 ```
  
-Het volgende maakt gebruik van [AZ VM host Group Create](/cli/azure/vm/host/group#az-vm-host-group-create) om een hostgroep te maken met behulp van alleen fout domeinen (die moeten worden gebruikt in regio's waar beschikbaarheids zones niet worden ondersteund). 
+Hieronder wordt [az vm host group create](/cli/azure/vm/host/group#az_vm_host_group_create) gebruikt om een hostgroep te maken met behulp van alleen foutdomeinen (te gebruiken in regio's waar beschikbaarheidszones niet worden ondersteund). 
 
 ```azurecli-interactive
 az vm host group create \
@@ -90,11 +90,11 @@ az vm host group create \
  
 ## <a name="create-a-host"></a>Een host maken 
 
-We gaan nu een toegewezen host maken in de hostgroep. Naast een naam voor de host, moet u de SKU voor de host opgeven. Host SKU legt de ondersteunde VM-serie en de generatie van de hardware voor uw specifieke host vast.  
+We gaan nu een toegewezen host maken in de hostgroep. Naast een naam voor de host moet u de SKU voor de host verstrekken. Host-SKU legt de ondersteunde VM-serie vast, evenals de hardwaregeneratie voor uw toegewezen host.  
 
-Zie voor meer informatie over de Sku's en prijzen van de host de [Azure dedicated host prijzen](https://aka.ms/ADHPricing).
+Zie prijzen voor Azure Dedicated Host host-SKU's [en prijzen.](https://aka.ms/ADHPricing)
 
-Gebruik [AZ VM host Create](/cli/azure/vm/host#az-vm-host-create) om een host te maken. Als u het aantal fout domeinen voor uw hostgroep instelt, wordt u gevraagd om het fout domein voor uw host op te geven.  
+Gebruik [az vm host create om](/cli/azure/vm/host#az_vm_host_create) een host te maken. Als u het aantal foutdomeinen voor uw hostgroep in stelt, wordt u gevraagd om het foutdomein voor uw host op te geven.  
 
 ```azurecli-interactive
 az vm host create \
@@ -108,7 +108,7 @@ az vm host create \
 
  
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken 
-Maak een virtuele machine binnen een speciale host met behulp van [AZ VM Create](/cli/azure/vm#az-vm-create). Als u een beschikbaarheids zone hebt opgegeven bij het maken van uw hostgroep, moet u dezelfde zone gebruiken bij het maken van de virtuele machine.
+Maak een virtuele machine binnen een toegewezen host met [az vm create.](/cli/azure/vm#az_vm_create) Als u een beschikbaarheidszone hebt opgegeven bij het maken van uw hostgroep, moet u dezelfde zone gebruiken bij het maken van de virtuele machine.
 
 ```azurecli-interactive
 az vm create \
@@ -121,10 +121,10 @@ az vm create \
    --zone 1
 ```
 
-Als u de virtuele machine op een specifieke host wilt plaatsen, gebruikt u `--host` in plaats van de hostgroep op te geven `--host-group` .
+Als u de VM op een specifieke host wilt plaatsen, gebruikt u in plaats `--host` van de hostgroep op te geven met `--host-group` .
  
 > [!WARNING]
-> Als u een virtuele machine maakt op een host die onvoldoende bronnen heeft, wordt de virtuele machine gemaakt met de status mislukt. 
+> Als u een virtuele machine maakt op een host die onvoldoende resources heeft, wordt de virtuele machine gemaakt met de status MISLUKT. 
 
 ## <a name="create-a-scale-set"></a>Een schaalset maken 
 
@@ -144,12 +144,12 @@ az vmss create \
   --zone 1
 ```
 
-Als u hand matig wilt kiezen op welke host de schaalset moet worden geïmplementeerd, voegt u `--host` de naam van de host toe.
+Als u handmatig wilt kiezen op welke host de schaalset moet worden geïmplementeerd, voegt u en `--host` de naam van de host toe.
 
 
-## <a name="check-the-status-of-the-host"></a>Controleer de status van de host
+## <a name="check-the-status-of-the-host"></a>De status van de host controleren
 
-U kunt de status van de host controleren en het aantal virtuele machines dat u nog steeds op de host kunt implementeren met behulp van [AZ VM host Get-instance-View](/cli/azure/vm/host#az-vm-host-get-instance-view).
+U kunt de status van de host controleren en met az [vm host get-instance-view](/cli/azure/vm/host#az_vm_host_get_instance_view)controleren hoeveel virtuele machines u nog steeds op de host kunt implementeren.
 
 ```azurecli-interactive
 az vm host get-instance-view \
@@ -157,7 +157,7 @@ az vm host get-instance-view \
    --host-group myHostGroup \
    --name myHost
 ```
- De uitvoer ziet er ongeveer als volgt uit:
+ De uitvoer ziet er ongeveer als de volgende uit:
  
 ```json
 {
@@ -255,16 +255,16 @@ az vm host get-instance-view \
 
 ```
  
-## <a name="export-as-a-template"></a>Exporteren als een sjabloon 
-U kunt een sjabloon exporteren als u nu een extra ontwikkel omgeving met dezelfde para meters of een productie omgeving wilt maken die overeenkomt met deze. Resource Manager maakt gebruik van JSON-sjablonen waarmee alle para meters voor uw omgeving worden gedefinieerd. U bouwt volledige omgevingen door te verwijzen naar deze JSON-sjabloon. U kunt JSON-sjablonen hand matig maken of een bestaande omgeving exporteren om de JSON-sjabloon voor u te maken. Gebruik [AZ Group export](/cli/azure/group#az-group-export) om de resource groep te exporteren.
+## <a name="export-as-a-template"></a>Exporteren als sjabloon 
+U kunt een sjabloon exporteren als u nu een extra ontwikkelomgeving wilt maken met dezelfde parameters of een productieomgeving die er overeenkomt. Resource Manager JSON-sjablonen gebruikt die alle parameters voor uw omgeving definiëren. U bouwt volledige omgevingen uit door te verwijzen naar deze JSON-sjabloon. U kunt JSON-sjablonen handmatig bouwen of een bestaande omgeving exporteren om de JSON-sjabloon voor u te maken. Gebruik [az group export om](/cli/azure/group#az_group_export) uw resourcegroep te exporteren.
 
 ```azurecli-interactive
 az group export --name myDHResourceGroup > myDHResourceGroup.json 
 ```
 
-Met deze opdracht maakt `myDHResourceGroup.json` u het bestand in de huidige werkmap. Wanneer u een omgeving maakt op basis van deze sjabloon, wordt u gevraagd om alle resource namen. U kunt deze namen invullen in het sjabloon bestand door de `--include-parameter-default-value` para meter toe te voegen aan de `az group export` opdracht. Bewerk de JSON-sjabloon om de resource namen op te geven of maak een parameters.jsvoor het bestand waarin de resource namen worden opgegeven.
+Met deze opdracht maakt `myDHResourceGroup.json` u het bestand in uw huidige werkmap. Wanneer u een omgeving maakt op basis van deze sjabloon, wordt u gevraagd om alle resourcenamen. U kunt deze namen in uw sjabloonbestand in vullen door de `--include-parameter-default-value` parameter toe te voegen aan de opdracht `az group export` . Bewerk uw JSON-sjabloon om de resourcenamen op te geven of maak een parameters.jsbestand waarin de resourcenamen worden opgegeven.
  
-Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create)om een omgeving te maken op basis van uw sjabloon.
+Gebruik az deployment group create om een omgeving te maken op basis van [uw sjabloon.](/cli/azure/deployment/group#az_deployment_group_create)
 
 ```azurecli-interactive
 az deployment group create \ 
@@ -275,27 +275,27 @@ az deployment group create \
 
 ## <a name="clean-up"></a>Opschonen 
 
-Er worden kosten in rekening gebracht voor uw specifieke hosts, zelfs wanneer er geen virtuele machines zijn geïmplementeerd. U moet alle hosts die u momenteel gebruikt, verwijderen om kosten te besparen.  
+Er worden kosten in rekening gebracht voor uw toegewezen hosts, zelfs wanneer er geen virtuele machines zijn geïmplementeerd. Verwijder alle hosts die u momenteel niet gebruikt om kosten te besparen.  
 
-U kunt een host alleen verwijderen als er geen virtuele machines meer worden gebruikt. Verwijder de virtuele machines met [AZ VM delete](/cli/azure/vm#az-vm-delete).
+U kunt een host alleen verwijderen wanneer er geen virtuele machines meer zijn die deze gebruiken. Verwijder de VM's [met az vm delete.](/cli/azure/vm#az_vm_delete)
 
 ```azurecli-interactive
 az vm delete -n myVM -g myDHResourceGroup
 ```
 
-Nadat u de Vm's hebt verwijderd, kunt u de host verwijderen met [AZ VM host delete](/cli/azure/vm/host#az-vm-host-delete).
+Nadat u de VM's hebt verwijderd, kunt u de host verwijderen met [az vm host delete.](/cli/azure/vm/host#az_vm_host_delete)
 
 ```azurecli-interactive
 az vm host delete -g myDHResourceGroup --host-group myHostGroup --name myHost 
 ```
  
-Zodra u al uw hosts hebt verwijderd, kunt u de hostgroep verwijderen met [AZ VM host group delete](/cli/azure/vm/host/group#az-vm-host-group-delete).  
+Nadat u al uw hosts hebt verwijderd, kunt u de hostgroep verwijderen met [az vm host group delete.](/cli/azure/vm/host/group#az_vm_host_group_delete)  
  
 ```azurecli-interactive
 az vm host group delete -g myDHResourceGroup --host-group myHostGroup  
 ```
  
-U kunt ook de hele resource groep verwijderen in één opdracht. Hiermee verwijdert u alle resources die zijn gemaakt in de groep, inclusief alle Vm's, hosts en hostgroepen.
+U kunt ook de hele resourcegroep verwijderen met één opdracht. Hiermee verwijdert u alle resources die in de groep zijn gemaakt, met inbegrip van alle VM's, hosts en hostgroepen.
  
 ```azurecli-interactive
 az group delete -n myDHResourceGroup 
@@ -303,8 +303,8 @@ az group delete -n myDHResourceGroup
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie voor meer informatie het overzicht [gespecialiseerde hosts](../dedicated-hosts.md) .
+- Zie overzicht van [Toegewezen hosts](../dedicated-hosts.md) voor meer informatie.
 
-- U kunt ook toegewezen hosts maken met behulp van de [Azure Portal](../dedicated-hosts-portal.md).
+- U kunt ook toegewezen hosts maken met behulp van [Azure Portal](../dedicated-hosts-portal.md).
 
-- [Hier](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)vindt u een voor beeld van een sjabloon, die zowel zones als fout domeinen gebruikt voor maximale tolerantie in een regio.
+- Hier vindt u [](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)een voorbeeldsjabloon, die zowel zones als foutdomeinen gebruikt voor maximale tolerantie in een regio.

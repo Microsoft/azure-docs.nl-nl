@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/07/2021
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a445e9869b0cd9928d95364f39e60fc892214b9a
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: ac0b206a86edf3157141b56e0c2623a8429b0c7a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107532459"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107785519"
 ---
 # <a name="tutorial-use-the-video-indexer-api"></a>Zelfstudie: de Video Indexer-API gebruiken
 
@@ -38,18 +38,19 @@ In dit artikel wordt uitgelegd hoe ontwikkelaars kunnen profiteren van de [Video
    > * U moet dezelfde provider gebruiken als voor het aanmelden bij Video Indexer.
    > * Persoonlijke Google- en Microsoft-accounts (Outlook/Live) kunnen alleen worden gebruikt voor proefaccounts. Accounts die gekoppeld zijn met Azure vereisen Azure Active Directory.
    > * Er kan slechts één actief account per e-mail zijn. Als een gebruiker zich probeert aan te melden met voor LinkedIn en later met voor Google, wordt in het laatste geval een foutpagina weergegeven met de naam dat user@gmail.com user@gmail.com de gebruiker al bestaat.
+
 2. Abonneer u.
 
-    Selecteer het [tabblad](https://api-portal.videoindexer.ai/products) Producten. Selecteer vervolgens Autorisatie en abonneer u.
+   Selecteer het [tabblad](https://api-portal.videoindexer.ai/products) Producten. Selecteer vervolgens Autorisatie en abonneer u.
     
-    ![Tabblad Producten in Video Indexer Developer Portal](./media/video-indexer-use-apis/authorization.png)
+   ![Tabblad Producten in Video Indexer Developer Portal](./media/video-indexer-use-apis/authorization.png)
 
-    > [!NOTE]
-    > Nieuwe gebruikers worden automatisch geabonneerd op Autorisatie.
+   > [!NOTE]
+   > Nieuwe gebruikers worden automatisch geabonneerd op Autorisatie.
     
-    Nadat u zich hebt geabonneerd, kunt u uw abonnement vinden onder **Autorisatie**  ->  **van producten.** Op de abonnementspagina vindt u de primaire en secundaire sleutels. De sleutels moeten beveiligd zijn. De sleutels mogen alleen door uw servercode gebruikt worden. Ze mogen niet beschikbaar zijn aan de clientzijde (.js, .html, etc.).
+   Nadat u zich hebt geabonneerd, kunt u uw abonnement vinden onder **Autorisatie**  ->  **van producten.** Op de abonnementspagina vindt u de primaire en secundaire sleutels. De sleutels moeten beveiligd zijn. De sleutels mogen alleen door uw servercode gebruikt worden. Ze mogen niet beschikbaar zijn aan de clientzijde (.js, .html, etc.).
 
-    ![Abonnement en sleutels in Video Indexer Developer Portal](./media/video-indexer-use-apis/subscriptions.png)
+   ![Abonnement en sleutels in Video Indexer Developer Portal](./media/video-indexer-use-apis/subscriptions.png)
 
 > [!TIP]
 > Een gebruiker van Video Indexer kan met één abonnementssleutel verbinding maken met meerdere Video Indexer-accounts. U kunt deze Video Indexer-accounts vervolgens koppelen aan verschillende Media Services-accounts.
@@ -64,7 +65,10 @@ Elke aanroep naar de Operations-API moet worden gekoppeld aan een toegangstoken 
 - Accountniveau: met toegangstokens op accountniveau kunt u bewerkingen uitvoeren op **accountniveau** of **videoniveau.** U kunt bijvoorbeeld een video uploaden, een lijst met alle video's maken, inzichten in video's verkrijgen, en meer.
 - Videoniveau: met toegangstokens op videoniveau kunt u bewerkingen uitvoeren op een specifieke **video.** U kunt bijvoorbeeld video-inzichten verkrijgen, bijschriften downloaden, widgets verkrijgen, en meer.
 
-U kunt bepalen of deze tokens alleen-lezen zijn of dat ze bewerking toestaan door **allowEdit=true/false op te geven.**
+U kunt het machtigingsniveau van tokens op twee manieren bepalen:
+
+* Voor **Accounttokens** kunt u de API **Accounttoegangstoken** met machtigingen krijgen gebruiken en het machtigingstype (Inzender voor lezer /  / **MyAccessManager** / **Eigenaar) opgeven.**
+* Voor alle typen tokens (inclusief **accounttokens)** kunt u **allowEdit=true/false opgeven.** **false** is het equivalent van een **lezermachtiging** (alleen-lezen) en **waar** is het equivalent van een inzendermachtiging (lezen-schrijven). 
 
 Voor de meeste server-naar-server-scenario's  gebruikt u waarschijnlijk hetzelfde account-token, omdat dit zowel **accountbewerkingen** als **videobewerkingen dekt.** Als u echter van plan bent om aanroepen aan de clientzijde uit te voeren naar Video Indexer (bijvoorbeeld vanuit JavaScript), kunt u het beste een token voor **videotoegang** gebruiken om te voorkomen dat clients toegang krijgen tot het hele account. Dat is ook de reden waarom u bij het insluiten van Video Indexer-clientcode in uw client (bijvoorbeeld met behulp van de widget Inzichten verkrijgen of Spelerwidget verkrijgen) een toegangsken voor **video's** moet leveren.  
 
@@ -221,5 +225,5 @@ Nadat u klaar bent met deze zelfstudie, verwijdert u resources die u niet van pl
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Details van de uitvoer-JSON bekijken](video-indexer-output-json-v2.md)
-- Bekijk de [voorbeeldcode die](https://github.com/Azure-Samples/media-services-video-indexer) een belangrijk aspect van het uploaden en indexeren van een video laat zien. Als u de code volgt, krijgt u een goed idee van het gebruik van onze API voor basisfunctionaliteiten. Lees de inline-opmerkingen en bekijk onze adviezen voor best practices.
+- Bekijk de [voorbeeldcode die](https://github.com/Azure-Samples/media-services-video-indexer) een belangrijk aspect laat zien van het uploaden en indexeren van een video. Als u de code volgt, krijgt u een goed idee van het gebruik van onze API voor basisfunctionaliteiten. Lees de inline opmerkingen en bekijk onze adviezen voor best practices.
 

@@ -1,6 +1,6 @@
 ---
-title: Azure lente Cloud CI/CD met GitHub-acties
-description: CI/CD-werk stroom voor Azure lente-Cloud bouwen met GitHub-acties
+title: Azure Spring Cloud CI/CD met GitHub Actions
+description: CI/CD-werkstroom voor Azure Spring Cloud met GitHub Actions
 author: MikeDodaro
 ms.author: barbkess
 ms.service: spring-cloud
@@ -8,36 +8,36 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 8400fcacbfa4c76aceb079b788255e3d3b83ce33
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: c52279108a8fd8d5a7ac8bbd7c8eb215097b21b0
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104878008"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791351"
 ---
-# <a name="azure-spring-cloud-cicd-with-github-actions"></a>Azure lente Cloud CI/CD met GitHub-acties
+# <a name="azure-spring-cloud-cicd-with-github-actions"></a>Azure Spring Cloud CI/CD met GitHub Actions
 
-GitHub-acties ondersteunen een geautomatiseerde werk stroom voor de levens cyclus van software ontwikkeling. Met GitHub-acties voor Azure lente-Cloud kunt u werk stromen maken in uw opslag plaats voor het bouwen, testen, inpakken, vrijgeven en implementeren van implementatie naar Azure. 
+GitHub Actions ondersteuning voor een geautomatiseerde levenscycluswerkstroom voor softwareontwikkeling. Met GitHub Actions for Azure Spring Cloud kunt u werkstromen in uw opslagplaats maken om in Azure te bouwen, testen, verpakken, vrijgeven en implementeren. 
 
 ## <a name="prerequisites"></a>Vereisten
-In dit voor beeld is de [Azure cli](/cli/azure/install-azure-cli)vereist.
+Voor dit voorbeeld is de [Azure CLI vereist.](/cli/azure/install-azure-cli)
 
 ::: zone pivot="programming-language-csharp"
-## <a name="set-up-github-repository-and-authenticate"></a>GitHub-opslag plaats en verificatie instellen
-U hebt een Azure-Service-Principal-referentie nodig om de Azure-aanmeldings actie te autoriseren. Als u een Azure-referentie wilt ophalen, voert u de volgende opdrachten uit op de lokale computer:
+## <a name="set-up-github-repository-and-authenticate"></a>GitHub-opslagplaats instellen en verifiëren
+U hebt een azure-service-principalreferentie nodig om de Azure-aanmeldingsactie te autor toestemming te geven. Voer de volgende opdrachten uit op uw lokale computer om een Azure-referentie op te halen:
 
 ```
 az login
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID> --sdk-auth 
 ```
 
-Om toegang te krijgen tot een specifieke resource groep kunt u het bereik beperken:
+Voor toegang tot een specifieke resourcegroep kunt u het bereik beperken:
 
 ```
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> --sdk-auth
 ```
 
-De opdracht moet een JSON-object uitvoeren:
+Met de opdracht moet een JSON-object worden uitgevoerd:
 
 ```JSON
 {
@@ -49,18 +49,18 @@ De opdracht moet een JSON-object uitvoeren:
 }
 ```
 
-In dit voor beeld wordt het steeltoe-voor [beeld gebruikt op github](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/steeltoe-sample).  Splits de opslag plaats, open de GitHub-opslagplaats pagina voor de fork en selecteer het tabblad **instellingen** . Open het menu **geheimen** en selecteer **nieuw geheim**:
+In dit voorbeeld wordt het [steeltoe-voorbeeld op GitHub gebruikt.](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/steeltoe-sample)  Maak een fork van de opslagplaats, open de pagina GitHub-opslagplaats voor de fork en selecteer het **tabblad** Instellingen. Open het menu **Geheimen** en selecteer **Nieuw geheim**:
 
  ![Nieuw geheim toevoegen](./media/github-actions/actions1.png)
 
-Stel de geheime naam `AZURE_CREDENTIALS` en de waarde ervan in op de JSON-teken reeks die u hebt gevonden onder de kop *uw github-opslag plaats instellen en verifiëren*.
+Stel de geheime naam en de waarde ervan in op de JSON-tekenreeks die u hebt gevonden onder de kop `AZURE_CREDENTIALS` *Uw GitHub-opslagplaats instellen en verifieert*.
 
  ![Geheime gegevens instellen](./media/github-actions/actions2.png)
 
-U kunt de Azure-aanmeldings referentie ook ophalen uit Key Vault in GitHub-acties, zoals wordt uitgelegd in [Azure lente verifiëren met Key Vault in github-acties](./spring-cloud-github-actions-key-vault.md).
+U kunt ook de Azure-aanmeldingsreferenties op Key Vault in GitHub-acties, zoals wordt uitgelegd in Azure Spring verifiëren [met Key Vault in GitHub Actions](./spring-cloud-github-actions-key-vault.md).
 
 ## <a name="provision-service-instance"></a>Service-exemplaar inrichten
-Voer de volgende opdrachten uit met behulp van de Azure CLI om uw Azure lente-Cloud service-exemplaar in te richten.
+Als u uw Azure Spring Cloud service-exemplaar wilt inrichten, voert u de volgende opdrachten uit met behulp van de Azure CLI.
 
 ```azurecli
 az extension add --name spring-cloud
@@ -69,14 +69,14 @@ az spring-cloud create -n <service instance name> -g <resource group name>
 az spring-cloud config-server git set -n <service instance name> --uri https://github.com/xxx/Azure-Spring-Cloud-Samples --label main --search-paths steeltoe-sample/config
 ```
 
-## <a name="build-the-workflow"></a>De werk stroom bouwen
-De werk stroom is gedefinieerd met behulp van de volgende opties.
+## <a name="build-the-workflow"></a>De werkstroom bouwen
+De werkstroom wordt gedefinieerd met behulp van de volgende opties.
 
-### <a name="prepare-for-deployment-with-azure-cli"></a>Voorbereiden op implementatie met Azure CLI
+### <a name="prepare-for-deployment-with-azure-cli"></a>Implementatie voorbereiden met Azure CLI
 
-De opdracht `az spring-cloud app create` is momenteel niet idempotent. Nadat u het eenmaal hebt uitgevoerd, krijgt u een fout melding als u dezelfde opdracht opnieuw uitvoert. We raden u aan deze werk stroom uit te voeren op bestaande Azure lente-Cloud-apps en-exemplaren.
+De opdracht `az spring-cloud app create` is momenteel niet idempotent. Nadat u deze eenmaal hebt uitgevoerd, krijgt u een foutmelding als u dezelfde opdracht opnieuw hebt uitgevoerd. We raden deze werkstroom aan voor Azure Spring Cloud apps en exemplaren.
 
-Gebruik de volgende Azure CLI-opdrachten voor voor bereiding:
+Gebruik de volgende Azure CLI-opdrachten ter voorbereiding:
 ```
 az configure --defaults group=<service group name>
 az configure --defaults spring-cloud=<service instance name>
@@ -84,9 +84,9 @@ az spring-cloud app create --name planet-weather-provider
 az spring-cloud app create --name solar-system-weather
 ```
 
-### <a name="deploy-with-azure-cli-directly"></a>Direct implementeren met Azure CLI
+### <a name="deploy-with-azure-cli-directly"></a>Rechtstreeks implementeren met Azure CLI
 
-Maak het `.github/workflows/main.yml` bestand in de opslag plaats met de volgende inhoud. Vervang `<your resource group name>` en `<your service name>` door de juiste waarden.
+Maak het `.github/workflows/main.yml` bestand in de opslagplaats met de volgende inhoud. Vervang `<your resource group name>` en door de juiste `<your service name>` waarden.
 
 ```yaml
 name: Steeltoe-CD
@@ -146,17 +146,17 @@ jobs:
 ::: zone-end
 
 ::: zone pivot="programming-language-java"
-## <a name="set-up-github-repository-and-authenticate"></a>GitHub-opslag plaats en verificatie instellen
-U hebt een Azure-Service-Principal-referentie nodig om de Azure-aanmeldings actie te autoriseren. Als u een Azure-referentie wilt ophalen, voert u de volgende opdrachten uit op de lokale computer:
+## <a name="set-up-github-repository-and-authenticate"></a>GitHub-opslagplaats instellen en verifiëren
+U hebt een azure-service-principalreferentie nodig om de Azure-aanmeldingsactie te autor toestemming te geven. Voer de volgende opdrachten uit op uw lokale computer om een Azure-referentie op te halen:
 ```
 az login
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID> --sdk-auth 
 ```
-Om toegang te krijgen tot een specifieke resource groep kunt u het bereik beperken:
+Voor toegang tot een specifieke resourcegroep kunt u het bereik beperken:
 ```
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> --sdk-auth
 ```
-De opdracht moet een JSON-object uitvoeren:
+Met de opdracht moet een JSON-object worden uitgevoerd:
 ```JSON
 {
     "clientId": "<GUID>",
@@ -167,31 +167,31 @@ De opdracht moet een JSON-object uitvoeren:
 }
 ```
 
-In dit voor beeld wordt het [PiggyMetrics](https://github.com/Azure-Samples/piggymetrics) -voor beeld gebruikt op github.  Fork het voor beeld, open de pagina GitHub repository en klik op het tabblad **instellingen** . Open het menu **geheimen** en klik op **een nieuw geheim toevoegen**:
+In dit voorbeeld wordt het [PiggyMetrics-voorbeeld](https://github.com/Azure-Samples/piggymetrics) op GitHub gebruikt.  Fork het voorbeeld, open de pagina van de GitHub-opslagplaats en klik op **het tabblad** Instellingen. Open **het** menu Geheimen en klik **op Een nieuw geheim toevoegen:**
 
  ![Nieuw geheim toevoegen](./media/github-actions/actions1.png)
 
-Stel de geheime naam `AZURE_CREDENTIALS` en de waarde ervan in op de JSON-teken reeks die u hebt gevonden onder de kop *uw github-opslag plaats instellen en verifiëren*.
+Stel de geheime naam en de waarde ervan in op de JSON-tekenreeks die u hebt gevonden onder de kop `AZURE_CREDENTIALS` *Uw GitHub-opslagplaats instellen en verifieren.*
 
  ![Geheime gegevens instellen](./media/github-actions/actions2.png)
 
-U kunt de Azure-aanmeldings referentie ook ophalen uit Key Vault in GitHub-acties, zoals wordt uitgelegd in [Azure lente verifiëren met Key Vault in github-acties](./spring-cloud-github-actions-key-vault.md).
+U kunt de Azure-aanmeldingsreferenties ook op Key Vault in GitHub-acties, zoals wordt uitgelegd in Azure Spring verifiëren [met Key Vault in GitHub Actions](./spring-cloud-github-actions-key-vault.md).
 
 ## <a name="provision-service-instance"></a>Service-exemplaar inrichten
-Voer de volgende opdrachten uit met behulp van de Azure CLI om uw Azure lente-Cloud service-exemplaar in te richten.
+Als u uw Azure Spring Cloud service-exemplaar wilt inrichten, voert u de volgende opdrachten uit met behulp van de Azure CLI.
 ```
 az extension add --name spring-cloud
 az group create --location eastus --name <resource group name>
 az spring-cloud create -n <service instance name> -g <resource group name>
 az spring-cloud config-server git set -n <service instance name> --uri https://github.com/xxx/piggymetrics --label config
 ```
-## <a name="build-the-workflow"></a>De werk stroom bouwen
-De werk stroom is gedefinieerd met behulp van de volgende opties.
+## <a name="build-the-workflow"></a>De werkstroom bouwen
+De werkstroom wordt gedefinieerd met behulp van de volgende opties.
 
-### <a name="prepare-for-deployment-with-azure-cli"></a>Voorbereiden op implementatie met Azure CLI
-De opdracht `az spring-cloud app create` is momenteel niet idempotent.  We raden u aan deze werk stroom uit te voeren op bestaande Azure lente-Cloud-apps en-exemplaren.
+### <a name="prepare-for-deployment-with-azure-cli"></a>Implementatie voorbereiden met Azure CLI
+De opdracht `az spring-cloud app create` is momenteel niet idempotent.  We raden deze werkstroom aan voor bestaande Azure Spring Cloud apps en exemplaren.
 
-Gebruik de volgende Azure CLI-opdrachten voor voor bereiding:
+Gebruik de volgende Azure CLI-opdrachten ter voorbereiding:
 ```
 az configure --defaults group=<service group name>
 az configure --defaults spring-cloud=<service instance name>
@@ -200,8 +200,8 @@ az spring-cloud app create --name auth-service
 az spring-cloud app create --name account-service
 ```
 
-### <a name="deploy-with-azure-cli-directly"></a>Direct implementeren met Azure CLI
-Maak het `.github/workflow/main.yml` bestand in de opslag plaats:
+### <a name="deploy-with-azure-cli-directly"></a>Rechtstreeks implementeren met Azure CLI
+Maak het `.github/workflow/main.yml` bestand in de opslagplaats:
 
 ```
 name: AzureSpringCloud
@@ -244,12 +244,12 @@ jobs:
         az spring-cloud app deploy -n auth-service --jar-path ${{ github.workspace }}/auth-service/target/auth-service.jar
 ```
 ### <a name="deploy-with-azure-cli-action"></a>Implementeren met Azure CLI-actie
-De `run` opdracht AZ maakt gebruik van de nieuwste versie van Azure cli. Als er belang rijke wijzigingen zijn, kunt u ook een specifieke versie van Azure CLI gebruiken met Azure/CLI `action` . 
+De opdracht az `run` maakt gebruik van de nieuwste versie van Azure CLI. Als er belangrijke wijzigingen zijn, kunt u ook een specifieke versie van Azure CLI gebruiken met `action` azure/CLI. 
 
 > [!Note] 
-> Deze opdracht wordt uitgevoerd in een nieuwe container, dus `env` werkt niet en de toegang tot cross Action-bestanden heeft mogelijk extra beperkingen.
+> Deze opdracht wordt uitgevoerd in een nieuwe container, dus werkt niet en toegang tot bestandsoverschrijdende acties `env` kan extra beperkingen hebben.
 
-Maak het github/workflow/Main. yml-bestand in de opslag plaats:
+Maak het bestand .github/workflow/main.yml in de opslagplaats:
 ```
 name: AzureSpringCloud
 on: push
@@ -288,8 +288,8 @@ jobs:
           az spring-cloud app deploy -n auth-service --jar-path $GITHUB_WORKSPACE/auth-service/target/auth-service.jar
 ```
 
-## <a name="deploy-with-maven-plugin"></a>Implementeren met maven-invoeg toepassing
-Een andere mogelijkheid is om de [maven-invoeg toepassing](./spring-cloud-quickstart.md) te gebruiken voor het implementeren van het jar en het bijwerken van de app-instellingen. De opdracht `mvn azure-spring-cloud:deploy` is idempotent en maakt zo nodig automatisch apps. U hoeft niet vooraf bijbehorende apps te maken.
+## <a name="deploy-with-maven-plugin"></a>Implementeren met De Maven-invoeg-app
+Een andere optie is om de [Maven-invoegapp te gebruiken](./spring-cloud-quickstart.md) voor het implementeren van de JAR en het bijwerken van app-instellingen. De opdracht `mvn azure-spring-cloud:deploy` is idempotent en maakt automatisch apps indien nodig. U hoeft niet van tevoren bijbehorende apps te maken.
 
 ```
 name: AzureSpringCloud
@@ -325,20 +325,20 @@ jobs:
 
 ::: zone-end
 
-## <a name="run-the-workflow"></a>De werk stroom uitvoeren
+## <a name="run-the-workflow"></a>De werkstroom uitvoeren
 
-GitHub- **acties** moeten automatisch worden ingeschakeld nadat u naar github hebt gepusht `.github/workflow/main.yml` . De actie wordt geactiveerd wanneer u een nieuwe door Voer pusht. Als u dit bestand in de browser maakt, moet uw actie al worden uitgevoerd.
+GitHub **Actions** moet automatisch worden ingeschakeld nadat u naar `.github/workflow/main.yml` GitHub hebt ge pusht. De actie wordt geactiveerd wanneer u een nieuwe door commit pusht. Als u dit bestand in de browser maakt, moet uw actie al zijn uitgevoerd.
 
-Als u wilt controleren of de actie is ingeschakeld, klikt u op het tabblad **acties** op de pagina github-opslag plaats:
+Als u wilt controleren of de actie is ingeschakeld, klikt u op **het tabblad Acties** op de pagina GitHub-opslagplaats:
 
-![De actie controleren is ingeschakeld](./media/github-actions/actions3.png)
+![De actie Controleren is ingeschakeld](./media/github-actions/actions3.png)
 
-Als uw actie in een fout wordt uitgevoerd, bijvoorbeeld als u de Azure-referentie niet hebt ingesteld, kunt u controles opnieuw uitvoeren nadat de fout is opgelost. Klik op de pagina GitHub-opslag plaats op **acties**, selecteer de specifieke werk stroom taak en klik vervolgens op de knop **controles opnieuw uitvoeren** om de controles opnieuw uit te voeren:
+Als uw actie fout wordt uitgevoerd, bijvoorbeeld als u de Azure-referentie niet hebt ingesteld, kunt u controles opnieuw uitvoeren nadat u de fout hebt opgelost. Klik op de pagina GitHub-opslagplaats op **Acties,** selecteer  de specifieke werkstroomtaak en klik vervolgens op de knop Controles opnieuw uitvoeren om controles opnieuw uit te voeren:
 
 ![Controles opnieuw uitvoeren](./media/github-actions/actions4.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Key Vault voor GitHub acties voor lente-Cloud](./spring-cloud-github-actions-key-vault.md)
-* [Service-principals Azure Active Directory](/cli/azure/ad/sp#az-ad-sp-create-for-rbac)
+* [Key Vault voor Spring Cloud GitHub-acties](./spring-cloud-github-actions-key-vault.md)
+* [Azure Active Directory service-principals](/cli/azure/ad/sp#az_ad_sp_create_for_rbac)
 * [GitHub-acties voor Azure](https://github.com/Azure/actions/)

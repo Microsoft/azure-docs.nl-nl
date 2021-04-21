@@ -1,109 +1,109 @@
 ---
-title: Configureer uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens in rust
+title: Uw eigen sleutel configureren voor het versleutelen Azure Event Hubs data-at-rest
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens rest.
 ms.topic: conceptual
 ms.date: 02/01/2021
-ms.openlocfilehash: c9d1ac1c3a3387600fed80939598baafe658054b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c608cd53c8ec71f219f015bab557d2b9b143d1c5
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100595993"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107752008"
 ---
-# <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels voor het versleutelen van Azure Event Hubs-gegevens op rest configureren met behulp van de Azure Portal
-Azure Event Hubs zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). De Event Hubs-service gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage, worden versleuteld met door micro soft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door micro soft beheerde sleutel, maar wordt de door micro soft beheerde sleutel versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels maken, draaien, uitschakelen en intrekken die worden gebruikt voor het versleutelen van door micro soft beheerde sleutels. Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor uw naam ruimte.
+# <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels configureren voor het versleutelen Azure Event Hubs data-at-rest met behulp van de Azure Portal
+Azure Event Hubs biedt versleuteling van data-at-rest met Azure Storage Service Encryption (Azure SSE). De Event Hubs service gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage worden versleuteld met door Microsoft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel aangeduid als Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door Microsoft beheerde sleutel, maar wordt de door Microsoft beheerde sleutel bovendien versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels die worden gebruikt voor het versleutelen van door Microsoft beheerde sleutels maken, draaien, uitschakelen en intrekken. Het inschakelen van de BYOK-functie is een een keer instellen van uw naamruimte.
 
 > [!NOTE]
-> - De BYOK-functionaliteit wordt ondersteund door [Event hubs toegewezen clusters met één Tenant](event-hubs-dedicated-overview.md) . Het kan niet worden ingeschakeld voor standaard Event Hubs naam ruimten.
-> - De versleuteling kan alleen worden ingeschakeld voor nieuwe of lege naam ruimten. Als de naam ruimte Event hubs bevat, mislukt de versleutelings bewerking.
+> - De BYOK-mogelijkheid wordt ondersteund door [Event Hubs toegewezen clusters met één tenant.](event-hubs-dedicated-overview.md) Deze functie kan niet worden ingeschakeld voor standaard Event Hubs naamruimten.
+> - De versleuteling kan alleen worden ingeschakeld voor nieuwe of lege naamruimten. Als de naamruimte Event Hubs bevat, mislukt de versleutelingsbewerking.
 
-U kunt Azure Key Vault gebruiken voor het beheren van uw sleutels en het controleren van uw sleutel gebruik. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
+U kunt uw Azure Key Vault gebruiken om uw sleutels te beheren en uw sleutelgebruik te controleren. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
 
-In dit artikel wordt beschreven hoe u een sleutel kluis kunt configureren met door de klant beheerde sleutels met behulp van de Azure Portal. Ga voor meer informatie over het maken van een sleutel kluis met behulp van de Azure Portal naar [Quick Start: een Azure Key Vault maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md).
+In dit artikel wordt beschreven hoe u een sleutelkluis configureert met door de klant beheerde sleutels met behulp van de Azure Portal. Zie Voor meer informatie over het maken van een sleutelkluis met behulp van de [Azure Portal, Quickstart: Een](../key-vault/general/quick-create-portal.md)Azure Key Vault maken met behulp van Azure Portal .
 
 > [!IMPORTANT]
-> Voor het gebruik van door de klant beheerde sleutels met Azure Event Hubs moet de sleutel kluis twee vereiste eigenschappen hebben geconfigureerd. Dit zijn:  **voorlopig verwijderen** en **niet opschonen**. Deze eigenschappen zijn standaard ingeschakeld wanneer u een nieuwe sleutel kluis maakt in de Azure Portal. Als u deze eigenschappen echter wilt inschakelen voor een bestaande sleutel kluis, moet u Power shell of Azure CLI gebruiken.
+> Als u door de klant beheerde sleutels Azure Event Hubs vereist dat voor de sleutelkluis twee vereiste eigenschappen zijn geconfigureerd. Dit zijn:  **Soft Delete** **en Do Not Purge**. Deze eigenschappen zijn standaard ingeschakeld wanneer u een nieuwe sleutelkluis maakt in de Azure Portal. Als u deze eigenschappen echter wilt inschakelen voor een bestaande sleutelkluis, moet u PowerShell of Azure CLI gebruiken.
 
 ## <a name="enable-customer-managed-keys"></a>Door de klant beheerde sleutels inschakelen
-Voer de volgende stappen uit om door de klant beheerde sleutels in te scha kelen in de Azure Portal:
+Als u door de klant beheerde sleutels in de Azure Portal, volgt u deze stappen:
 
-1. Navigeer naar uw Event Hubs Dedicated-cluster.
-1. Selecteer de naam ruimte waarvoor u BYOK wilt inschakelen.
-1. Selecteer op de pagina **instellingen** van uw event hubs-naam ruimte de optie **versleuteling**. 
-1. Selecteer de door de **klant beheerde sleutel versleuteling bij rest** , zoals wordt weer gegeven in de volgende afbeelding. 
+1. Navigeer naar Event Hubs Dedicated cluster.
+1. Selecteer de naamruimte waarin u BYOK wilt inschakelen.
+1. Selecteer op **de** pagina Instellingen van Event Hubs naamruimte de optie **Versleuteling.** 
+1. Selecteer **versleuteling at rest door de klant beheerde sleutel,** zoals wordt weergegeven in de volgende afbeelding. 
 
     ![Door de klant beheerde sleutel inschakelen](./media/configure-customer-managed-key/enable-customer-managed-key.png)
 
-## <a name="set-up-a-key-vault-with-keys"></a>Een sleutel kluis met sleutels instellen
-Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de klant beheerde sleutel koppelen aan uw Azure Event Hubs-naam ruimte. Event Hubs ondersteunt alleen Azure Key Vault. Als u de optie **versleuteling met door de klant beheerde sleutel** in de vorige sectie inschakelt, moet u de sleutel in azure Key Vault importeren. De sleutels moeten ook **zacht verwijderen** hebben en **niet leeg** zijn geconfigureerd voor de sleutel. Deze instellingen kunnen worden geconfigureerd met [Power shell](../key-vault/general/key-vault-recovery.md) of [cli](../key-vault/general/key-vault-recovery.md).
+## <a name="set-up-a-key-vault-with-keys"></a>Een sleutelkluis met sleutels instellen
+Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de klant beheerde sleutel koppelen aan uw Azure Event Hubs naamruimte. Event Hubs ondersteunt alleen Azure Key Vault. Als u de optie **Versleuteling met door** de klant beheerde sleutel in de vorige sectie inschakelen, moet u de sleutel importeren in Azure Key Vault. Voor de sleutels moet ook **De sleutel zijn** ingesteld op Soft Delete en Do Not **Purge.** Deze instellingen kunnen worden geconfigureerd met Behulp van [PowerShell](../key-vault/general/key-vault-recovery.md) of [CLI.](../key-vault/general/key-vault-recovery.md)
 
-1. Als u een nieuwe sleutel kluis wilt maken, volgt u de Azure Key Vault [Snelstartgids](../key-vault/general/overview.md). Zie [over sleutels, geheimen en certificaten](../key-vault/general/about-keys-secrets-certificates.md)voor meer informatie over het importeren van bestaande sleutels.
-1. Gebruik de opdracht AZ-sleutel [kluis maken](/cli/azure/keyvault#az-keyvault-create) om zowel zacht verwijderen als beveiliging opschonen in te scha kelen bij het maken van een kluis.
+1. Als u een nieuwe sleutelkluis wilt maken, volgt u de Azure Key Vault [Quickstart.](../key-vault/general/overview.md) Zie Over sleutels, geheimen en certificaten voor meer informatie over het importeren [van bestaande sleutels.](../key-vault/general/about-keys-secrets-certificates.md)
+1. Gebruik de opdracht [az keyvault create](/cli/azure/keyvault#az-keyvault-create) om bij het maken van een kluis zowel de beveiliging voor het verwijderen als het opsluizen van de kluis in te voeren.
 
     ```azurecli-interactive
     az keyvault create --name ContosoVault --resource-group ContosoRG --location westus --enable-soft-delete true --enable-purge-protection true
     ```    
-1. Gebruik de opdracht AZ-sleutel [kluis bijwerken](/cli/azure/keyvault#az-keyvault-update) om een schone beveiliging toe te voegen aan een bestaande kluis (waarvoor al zacht verwijderen is ingeschakeld).
+1. Gebruik de opdracht [az keyvault update](/cli/azure/keyvault#az-keyvault-update) om beveiliging tegen opsluizen toe te voegen aan een bestaande kluis (die al is ingeschakeld voor soft delete).
 
     ```azurecli-interactive
     az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge-protection true
     ```
-1. Maak sleutels door de volgende stappen uit te voeren:
-    1. Als u een nieuwe sleutel wilt maken, selecteert u **genereren/importeren** in het menu **sleutels** onder **instellingen**.
+1. Volg deze stappen om sleutels te maken:
+    1. Als u een nieuwe sleutel wilt maken, **selecteert u Genereren/importeren** in het menu **Sleutels** onder **Instellingen.**
         
-        ![Selecteer de knop genereren/importeren](./media/configure-customer-managed-key/select-generate-import.png)
-    1. Stel **Opties** in voor het **genereren** en geven van de sleutel een naam.
+        ![Selecteer de knop Genereren/importeren](./media/configure-customer-managed-key/select-generate-import.png)
+    1. Stel **Opties in** op **Genereren** en geef de sleutel een naam.
 
         ![Een sleutel maken](./media/configure-customer-managed-key/create-key.png) 
-    1. U kunt nu deze sleutel selecteren om te koppelen aan de Event Hubs naam ruimte voor het versleutelen van de vervolg keuzelijst. 
+    1. U kunt deze sleutel nu selecteren om te koppelen aan Event Hubs naamruimte voor versleuteling in de vervolgkeuzelijst. 
 
-        ![Selecteer een sleutel in de sleutel kluis](./media/configure-customer-managed-key/select-key-from-key-vault.png)
-    1. Vul de Details voor de sleutel in en klik op **selecteren**. Hiermee wordt de versleuteling van de door micro soft beheerde sleutel met uw sleutel (door de klant beheerde sleutel) ingeschakeld. 
+        ![Sleutel selecteren in sleutelkluis](./media/configure-customer-managed-key/select-key-from-key-vault.png)
+    1. Vul de details voor de sleutel in en klik op **Selecteren.** Hiermee wordt de versleuteling van de door Microsoft beheerde sleutel met uw sleutel (door de klant beheerde sleutel) ingeschakeld. 
 
 
-## <a name="rotate-your-encryption-keys"></a>Uw versleutelings sleutels draaien
-U kunt de sleutel in de sleutel kluis draaien met behulp van het rotatie mechanisme voor Azure-sleutel kluizen. Activerings-en verloop datums kunnen ook worden ingesteld op het automatiseren van sleutel rotatie. Met de Event Hubs-service worden nieuwe sleutel versies gedetecteerd en worden ze automatisch gestart.
+## <a name="rotate-your-encryption-keys"></a>Uw versleutelingssleutels roteren
+U kunt uw sleutel roteren in de sleutelkluis met behulp van het roulatiemechanisme van Azure Key Vaults. Activerings- en vervaldatums kunnen ook worden ingesteld om sleutelrotatie te automatiseren. De Event Hubs-service detecteert nieuwe sleutelversies en begint deze automatisch te gebruiken.
 
 ## <a name="revoke-access-to-keys"></a>Toegang tot sleutels intrekken
-Als u de toegang tot de versleutelings sleutels intrekt, worden de gegevens niet verwijderd uit Event Hubs. De gegevens kunnen echter niet worden geopend vanuit de naam ruimte Event Hubs. U kunt de versleutelings sleutel intrekken via toegangs beleid of door de sleutel te verwijderen. Meer informatie over toegangs beleid en het beveiligen van uw sleutel kluis van [beveiligde toegang tot een sleutel kluis](../key-vault/general/secure-your-key-vault.md).
+Als u de toegang tot de versleutelingssleutels inroept, worden de gegevens niet op Event Hubs. De gegevens zijn echter niet toegankelijk vanuit de Event Hubs naamruimte. U kunt de versleutelingssleutel intrekken via toegangsbeleid of door de sleutel te verwijderen. Meer informatie over toegangsbeleid en het beveiligen van uw sleutelkluis van [Beveiligde toegang tot een sleutelkluis.](../key-vault/general/security-overview.md)
 
-Zodra de versleutelings sleutel is ingetrokken, wordt de Event Hubs-service op de versleutelde naam ruimte niet meer bruikbaar. Als de toegang tot de sleutel is ingeschakeld of de sleutel verwijderen is hersteld, wordt de sleutel door Event Hubs service gekozen, zodat u toegang hebt tot de gegevens van de versleutelde Event Hubs naam ruimte.
+Zodra de versleutelingssleutel is ingetrokken, Event Hubs de service in de versleutelde naamruimte niet meer werkt. Als de toegang tot de sleutel is ingeschakeld of de verwijdersleutel is hersteld, kiest de Event Hubs-service de sleutel zodat u toegang hebt tot de gegevens uit de versleutelde Event Hubs-naamruimte.
 
 ## <a name="set-up-diagnostic-logs"></a>Diagnostische logboeken instellen 
-Door Diagnostische logboeken in te stellen voor met BYOK ingeschakelde naam ruimten hebt u de vereiste informatie over de bewerkingen. Deze logboeken kunnen worden ingeschakeld en later naar een Event Hub worden gestreamd of geanalyseerd via log Analytics of worden gestreamd naar opslag om aangepaste analyses uit te voeren. Zie [overzicht van Diagnostische logboeken van Azure](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over Diagnostische logboeken.
+Als u diagnostische logboeken instelt voor byok-naamruimten, krijgt u de vereiste informatie over de bewerkingen. Deze logboeken kunnen worden ingeschakeld en later worden gestreamd naar een Event Hub of worden geanalyseerd via Log Analytics of gestreamd naar de opslag om aangepaste analyses uit te voeren. Zie Overzicht van diagnostische logboeken van Azure voor meer informatie [over diagnostische logboeken.](../azure-monitor/essentials/platform-logs-overview.md)
 
-## <a name="enable-user-logs"></a>Gebruikers Logboeken inschakelen
-Volg deze stappen om Logboeken in te scha kelen voor door de klant beheerde sleutels.
+## <a name="enable-user-logs"></a>Gebruikerslogboeken inschakelen
+Volg deze stappen om logboeken in te stellen voor door de klant beheerde sleutels.
 
-1. Navigeer in het Azure Portal naar de naam ruimte waarop BYOK is ingeschakeld.
-1. Selecteer **Diagnostische instellingen** onder **bewaking**.
+1. Navigeer Azure Portal de naamruimte waarin BYOK is ingeschakeld.
+1. Selecteer **Diagnostische instellingen** onder **Bewaking.**
 
     ![Diagnostische instellingen selecteren](./media/configure-customer-managed-key/select-diagnostic-settings.png)
-1. Selecteer **+ Diagnostische instelling toevoegen**. 
+1. Selecteer **+Diagnostische instelling toevoegen.** 
 
-    ![Diagnostische instelling toevoegen selecteren](./media/configure-customer-managed-key/select-add-diagnostic-setting.png)
-1. Geef een **naam** op en selecteer waarnaar u de logboeken wilt streamen.
-1. Selecteer **CustomerManagedKeyUserLogs** en **Opslaan**. Met deze actie worden de logboeken voor BYOK in de naam ruimte ingeschakeld.
+    ![Selecteer Diagnostische instelling toevoegen](./media/configure-customer-managed-key/select-add-diagnostic-setting.png)
+1. Geef een **naam** op en selecteer waar u de logboeken naar wilt streamen.
+1. Selecteer **CustomerManagedKeyUserLogs** en **Save.** Met deze actie worden de logboeken voor BYOK in de naamruimte in staat gemaakt.
 
-    ![Selecteer door de klant beheerde sleutel gebruikers Logboeken](./media/configure-customer-managed-key/select-customer-managed-key-user-logs.png)
+    ![Selecteer de optie Door de klant beheerde sleutel voor gebruikerslogboeken](./media/configure-customer-managed-key/select-customer-managed-key-user-logs.png)
 
-## <a name="log-schema"></a>Logboek schema 
-Alle logboeken worden opgeslagen in de indeling van de JavaScript Object Notation (JSON). Elke vermelding bevat teken reeks velden die gebruikmaken van de indeling die wordt beschreven in de volgende tabel. 
+## <a name="log-schema"></a>Logboekschema 
+Alle logboeken worden opgeslagen in JavaScript Object Notation indeling (JSON). Elk item heeft tekenreeksvelden die gebruikmaken van de indeling die in de volgende tabel wordt beschreven. 
 
 | Naam | Beschrijving |
 | ---- | ----------- | 
 | TaskName | Beschrijving van de taak die is mislukt. |
-| ActivityId: | Interne ID die wordt gebruikt voor tracering. |
-| category | Hiermee wordt de classificatie van de taak gedefinieerd. Als de sleutel van uw sleutel kluis bijvoorbeeld wordt uitgeschakeld, zou dit een informatie categorie zijn, of als een sleutel niet kan worden teruggedraaid, kan dit onder een fout vallen. |
-| resourceId | Resource-ID Azure Resource Manager |
-| keyVault | Volledige naam van de sleutel kluis. |
-| sleutel | De naam van de sleutel die wordt gebruikt voor het versleutelen van de Event Hubs naam ruimte. |
+| ActivityId: | Interne id die wordt gebruikt voor het bijhouden van gegevens. |
+| category | Definieert de classificatie van de taak. Als de sleutel uit uw sleutelkluis bijvoorbeeld wordt uitgeschakeld, is het een informatiecategorie of als een sleutel niet kan worden uitschreven, kan deze onder een fout vallen. |
+| resourceId | Azure Resource Manager resource-id |
+| keyVault | Volledige naam van sleutelkluis. |
+| sleutel | De sleutelnaam die wordt gebruikt voor het versleutelen van Event Hubs naamruimte. |
 | versie | De versie van de sleutel die wordt gebruikt. |
-| bewerking | De bewerking die wordt uitgevoerd op de sleutel in uw sleutel kluis. Schakel bijvoorbeeld de sleutel, de tekst terugloop of de terugloop uit |
-| code | De code die aan de bewerking is gekoppeld. Voor beeld: fout code, 404 betekent dat de sleutel niet is gevonden. |
-| message | Elk fout bericht dat is gekoppeld aan de bewerking |
+| bewerking | De bewerking die wordt uitgevoerd op de sleutel in uw sleutelkluis. Schakel bijvoorbeeld de sleutel uit of schakel deze in, inpakken of uitpakken |
+| code | De code die aan de bewerking is gekoppeld. Voorbeeld: Foutcode 404 betekent dat de sleutel niet is gevonden. |
+| message | Elk foutbericht dat is gekoppeld aan de bewerking |
 
-Hier volgt een voor beeld van het logboek voor een door de klant beheerde sleutel:
+Hier is een voorbeeld van het logboek voor een door de klant beheerde sleutel:
 
 ```json
 {
@@ -135,18 +135,18 @@ Hier volgt een voor beeld van het logboek voor een door de klant beheerde sleute
 }
 ```
 
-## <a name="use-resource-manager-template-to-enable-encryption"></a>Resource Manager-sjabloon gebruiken om versleuteling in te scha kelen
-In deze sectie wordt beschreven hoe u de volgende taken kunt uitvoeren met behulp van **Azure Resource Manager sjablonen**. 
+## <a name="use-resource-manager-template-to-enable-encryption"></a>Een Resource Manager gebruiken om versleuteling in teschakelen
+In deze sectie ziet u hoe u de volgende taken uitvoert met behulp **Azure Resource Manager sjablonen.** 
 
-1. Maak een **Event hubs naam ruimte** met een beheerde service-identiteit.
-2. Maak een **sleutel kluis** en verleen de service-identiteit toegang tot de sleutel kluis. 
-3. Werk de Event Hubs naam ruimte bij met de sleutel kluis gegevens (sleutel/waarde). 
+1. Maak een **Event Hubs-naamruimte** met een beheerde service-identiteit.
+2. Maak een **sleutelkluis** en verleen de service-id toegang tot de sleutelkluis. 
+3. Werk de Event Hubs bij met de sleutelkluisgegevens (sleutel/waarde). 
 
 
-### <a name="create-an-event-hubs-cluster-and-namespace-with-managed-service-identity"></a>Een Event Hubs cluster en een naam ruimte maken met een beheerde service-identiteit
-In deze sectie wordt beschreven hoe u een Azure Event Hubs-naam ruimte met een beheerde service-identiteit maakt met behulp van een Azure Resource Manager sjabloon en Power shell. 
+### <a name="create-an-event-hubs-cluster-and-namespace-with-managed-service-identity"></a>Een cluster Event Hubs naamruimte maken met beheerde service-identiteit
+In deze sectie ziet u hoe u een Azure Event Hubs met beheerde service-identiteit maakt met behulp van een Azure Resource Manager en PowerShell. 
 
-1. Maak een Azure Resource Manager sjabloon voor het maken van een Event Hubs naam ruimte met een beheerde service-identiteit. Geef het bestand de naam: **CreateEventHubClusterAndNamespace.jsop**: 
+1. Maak een Azure Resource Manager om een Event Hubs maken met een beheerde service-identiteit. Noem het bestand: **CreateEventHubClusterAndNamespace.jsop**: 
 
     ```json
     {
@@ -215,13 +215,13 @@ In deze sectie wordt beschreven hoe u een Azure Event Hubs-naam ruimte met een b
        }
     }
     ```
-2. Maak een sjabloon parameter bestand met de naam: **CreateEventHubClusterAndNamespaceParams.jsop**. 
+2. Maak een sjabloonparameterbestand met de **naamCreateEventHubClusterAndNamespaceParams.jsop**. 
 
     > [!NOTE]
     > Vervang de volgende waarden: 
-    > - `<EventHubsClusterName>` -De naam van uw Event Hubs cluster    
-    > - `<EventHubsNamespaceName>` -Naam van de naam ruimte van uw Event Hubs
-    > - `<Location>` -Locatie van uw Event Hubs naam ruimte
+    > - `<EventHubsClusterName>` - Naam van uw Event Hubs cluster    
+    > - `<EventHubsNamespaceName>` - Naam van uw Event Hubs naamruimte
+    > - `<Location>` - Locatie van uw Event Hubs naamruimte
 
     ```json
     {
@@ -241,7 +241,7 @@ In deze sectie wordt beschreven hoe u een Azure Event Hubs-naam ruimte met een b
     }
     
     ```
-3. Voer de volgende Power shell-opdracht uit om de sjabloon te implementeren om een Event Hubs naam ruimte te maken. Vervolgens haalt u de ID van de Event Hubs naam ruimte op om deze later te gebruiken. Vervang door `{MyRG}` de naam van de resource groep voordat u de opdracht uitvoert.  
+3. Voer de volgende PowerShell-opdracht uit om de sjabloon te implementeren om een Event Hubs maken. Haal vervolgens de id van de Event Hubs op om deze later te gebruiken. Vervang `{MyRG}` door de naam van de resourcegroep voordat u de opdracht gaat uitvoeren.  
 
     ```powershell
     $outputs = New-AzResourceGroupDeployment -Name CreateEventHubClusterAndNamespace -ResourceGroupName {MyRG} -TemplateFile ./CreateEventHubClusterAndNamespace.json -TemplateParameterFile ./CreateEventHubClusterAndNamespaceParams.json
@@ -249,22 +249,22 @@ In deze sectie wordt beschreven hoe u een Azure Event Hubs-naam ruimte met een b
     $EventHubNamespaceId = $outputs.Outputs["eventHubNamespaceId"].value
     ```
  
-### <a name="grant-event-hubs-namespace-identity-access-to-key-vault"></a>Identiteit van Event Hubs naam ruimte verlenen toegang tot de sleutel kluis
+### <a name="grant-event-hubs-namespace-identity-access-to-key-vault"></a>Toegang Event Hubs naamruimte-id verlenen tot key vault
 
-1. Voer de volgende opdracht uit om een sleutel kluis te maken met **opschoon beveiliging** en **zacht verwijderen** ingeschakeld. 
+1. Voer de volgende opdracht uit om een sleutelkluis te maken met **beveiliging tegen opsluizen** en **soft-delete** ingeschakeld. 
 
     ```powershell
     New-AzureRmKeyVault -Name {keyVaultName} -ResourceGroupName {RGName}  -Location {location} -EnableSoftDelete -EnablePurgeProtection    
     ```     
     
-    OF    
+    (OF)    
     
-    Voer de volgende opdracht uit om een **bestaande sleutel kluis** bij te werken. Geef waarden op voor de naam van de resource groep en de sleutel kluis voordat u de opdracht uitvoert. 
+    Voer de volgende opdracht uit om een bestaande **sleutelkluis bij te werken.** Geef waarden op voor resourcegroep- en sleutelkluisnamen voordat u de opdracht gaat uitvoeren. 
     
     ```powershell
     ($updatedKeyVault = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -ResourceGroupName {RGName} -VaultName {keyVaultName}).ResourceId).Properties| Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"-Force | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true" -Force
     ``` 
-2. Stel het toegangs beleid voor de sleutel kluis zo in dat de beheerde identiteit van de Event Hubs naam ruimte toegang kan krijgen tot de sleutel waarde in de sleutel kluis. Gebruik de ID van de Event Hubs naam ruimte uit de vorige sectie. 
+2. Stel het toegangsbeleid voor de sleutelkluis in, zodat de beheerde identiteit van de Event Hubs-naamruimte toegang heeft tot de sleutelwaarde in de sleutelkluis. Gebruik de id van de Event Hubs naamruimte uit de vorige sectie. 
 
     ```powershell
     $identity = (Get-AzureRmResource -ResourceId $EventHubNamespaceId -ExpandProperties).Identity
@@ -272,15 +272,15 @@ In deze sectie wordt beschreven hoe u een Azure Event Hubs-naam ruimte met een b
     Set-AzureRmKeyVaultAccessPolicy -VaultName {keyVaultName} -ResourceGroupName {RGName} -ObjectId $identity.PrincipalId -PermissionsToKeys get,wrapKey,unwrapKey,list
     ```
 
-### <a name="encrypt-data-in-event-hubs-namespace-with-customer-managed-key-from-key-vault"></a>Gegevens in Event Hubs naam ruimte versleutelen met door de klant beheerde sleutel van de sleutel kluis
-U hebt de volgende stappen tot nu toe uitgevoerd: 
+### <a name="encrypt-data-in-event-hubs-namespace-with-customer-managed-key-from-key-vault"></a>Gegevens in Event Hubs-naamruimte versleutelen met door de klant beheerde sleutel uit key vault
+U hebt tot nu toe de volgende stappen uitgevoerd: 
 
-1. Er is een Premium-naam ruimte met een beheerde identiteit gemaakt.
-2. Maak een sleutel kluis en verleend de beheerde identiteit toegang tot de sleutel kluis. 
+1. U hebt een Premium-naamruimte gemaakt met een beheerde identiteit.
+2. Maak een sleutelkluis en verleende de beheerde identiteit toegang tot de sleutelkluis. 
 
-In deze stap werkt u de Event Hubs naam ruimte bij met sleutel kluis gegevens. 
+In deze stap gaat u de naamruimte Event Hubs sleutelkluis bijwerken met informatie over de sleutelkluis. 
 
-1. Maak een JSON-bestand met de naam **CreateEventHubClusterAndNamespace.jsop** met de volgende inhoud: 
+1. Maak een JSON-bestand **metCreateEventHubClusterAndNamespace.jsmet** de volgende inhoud: 
 
     ```json
     {
@@ -352,15 +352,15 @@ In deze stap werkt u de Event Hubs naam ruimte bij met sleutel kluis gegevens.
     }
     ``` 
 
-2. Een sjabloon parameter bestand maken: **UpdateEventHubClusterAndNamespaceParams.jsop**. 
+2. Maak een sjabloonparameterbestand: **UpdateEventHubClusterAndNamespaceParams.jsop**. 
 
     > [!NOTE]
     > Vervang de volgende waarden: 
-    > - `<EventHubsClusterName>` -De naam van uw Event Hubs cluster.        
-    > - `<EventHubsNamespaceName>` -Naam van de naam ruimte van uw Event Hubs
-    > - `<Location>` -Locatie van uw Event Hubs naam ruimte
-    > - `<KeyVaultName>` -Naam van uw sleutel kluis
-    > - `<KeyName>` -De naam van de sleutel in de sleutel kluis
+    > - `<EventHubsClusterName>` - Naam van uw Event Hubs cluster.        
+    > - `<EventHubsNamespaceName>` - Naam van uw Event Hubs naamruimte
+    > - `<Location>` - Locatie van uw Event Hubs naamruimte
+    > - `<KeyVaultName>` - Naam van uw sleutelkluis
+    > - `<KeyName>` - Naam van de sleutel in de sleutelkluis
 
     ```json
     {
@@ -385,33 +385,33 @@ In deze stap werkt u de Event Hubs naam ruimte bij met sleutel kluis gegevens.
        }
     }
     ```             
-3. Voer de volgende Power shell-opdracht uit om de Resource Manager-sjabloon te implementeren. Vervang door `{MyRG}` de naam van uw resource groep voordat u de opdracht uitvoert. 
+3. Voer de volgende PowerShell-opdracht uit om de sjabloon Resource Manager implementeren. Vervang `{MyRG}` door de naam van de resourcegroep voordat u de opdracht gaat uitvoeren. 
 
     ```powershell
     New-AzResourceGroupDeployment -Name UpdateEventHubNamespaceWithEncryption -ResourceGroupName {MyRG} -TemplateFile ./UpdateEventHubClusterAndNamespace.json -TemplateParameterFile ./UpdateEventHubClusterAndNamespaceParams.json 
     ```
 
 ## <a name="troubleshoot"></a>Problemen oplossen
-Schakel als best practice altijd Logboeken in, zoals wordt weer gegeven in de vorige sectie. Het helpt bij het volgen van de activiteiten wanneer BYOK-versleuteling is ingeschakeld. Het helpt ook om het probleem op te lossen.
+Schakel als best practice logboeken altijd in, zoals weergegeven in de vorige sectie. Het helpt bij het bijhouden van de activiteiten wanneer BYOK-versleuteling is ingeschakeld. Het helpt ook bij het oplossen van problemen.
 
-Hieronder vindt u de algemene fout codes die u moet zoeken wanneer BYOK-versleuteling is ingeschakeld.
+Hieronder volgen de veelvoorkomende foutcodes om te zoeken wanneer BYOK-versleuteling is ingeschakeld.
 
 | Bewerking | Foutcode | Resulterende status van gegevens |
 | ------ | ---------- | ----------------------- | 
-| De machtiging voor het verpakken/uitpakken van een sleutel kluis verwijderen | 403 |    Niet toegankelijk |
-| Het lidmaatschap van AAD-rollen verwijderen uit een AAD-principal die de machtiging voor terugloop/uitpakken heeft gekregen | 403 |  Niet toegankelijk |
-| Een versleutelings sleutel uit de sleutel kluis verwijderen | 404 | Niet toegankelijk |
-| De sleutel kluis verwijderen | 404 | Niet toegankelijk (Hiermee wordt verondersteld dat zacht verwijderen is ingeschakeld. Dit is een vereiste instelling.) |
-| De verval periode van de versleutelings sleutel wijzigen zodat deze al is verlopen | 403 |   Niet toegankelijk  |
-| De NBF (niet voor) wijzigen, waardoor de sleutel versleutelings sleutel niet actief is | 403 | Niet toegankelijk  |
-| Als u de optie **MSFT-Services toestaan** voor de sleutel kluis firewall selecteert of de netwerk toegang blokkeert voor de sleutel kluis met de versleutelings sleutel | 403 | Niet toegankelijk |
-| De sleutel kluis verplaatsen naar een andere Tenant | 404 | Niet toegankelijk |  
-| Onregelmatige netwerk problemen of DNS/AAD/MSI-onderbreking |  | Toegankelijk via de gegevens versleutelings sleutel in de cache |
+| Machtiging voor verpakken/uitpakken verwijderen uit een sleutelkluis | 403 |    Ontoegankelijk |
+| AAD-rollidmaatschap verwijderen uit een AAD-principal die de machtiging voor verpakken/uitpakken heeft verleend | 403 |  Ontoegankelijk |
+| Een versleutelingssleutel verwijderen uit de sleutelkluis | 404 | Ontoegankelijk |
+| De sleutelkluis verwijderen | 404 | Niet toegankelijk (ervan uit dat voorlopig verwijderen is ingeschakeld, wat een vereiste instelling is.) |
+| De verloopperiode voor de versleutelingssleutel wijzigen zodat deze al is verlopen | 403 |   Ontoegankelijk  |
+| De NBF wijzigen (niet eerder) zodat de sleutelversleutelingssleutel niet actief is | 403 | Ontoegankelijk  |
+| Selecteer de **optie MSFT Services toestaan voor** de firewall van de sleutelkluis of blokkeer op een andere manier de netwerktoegang tot de sleutelkluis die de versleutelingssleutel heeft | 403 | Ontoegankelijk |
+| De sleutelkluis verplaatsen naar een andere tenant | 404 | Ontoegankelijk |  
+| Onregelmatige netwerkprobleem of DNS/AAD/MSI-storing |  | Toegankelijk met de versleutelingssleutel voor gegevens in de cache |
 
 > [!IMPORTANT]
-> Als u geo-DR wilt inschakelen voor een naam ruimte die gebruikmaakt van de BYOK-versleuteling, moet de secundaire naam ruimte voor koppelen zich in een toegewijd cluster bevinden en moet er een door het systeem toegewezen beheerde identiteit zijn ingeschakeld. Zie [beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie.
+> Als u Geo-DR wilt inschakelen voor een naamruimte die gebruik maakt van de BYOK-versleuteling, moet de secundaire naamruimte voor koppelen zich in een toegewezen cluster en moet er een door het systeem toegewezen beheerde identiteit zijn ingeschakeld. Zie Beheerde identiteiten [voor Azure-resources voor meer informatie.](../active-directory/managed-identities-azure-resources/overview.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen:
 - [Event Hubs-overzicht](event-hubs-about.md)
-- [Overzicht van Key Vault](../key-vault/general/overview.md)
+- [Key Vault overzicht](../key-vault/general/overview.md)

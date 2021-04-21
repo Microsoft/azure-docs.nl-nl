@@ -9,16 +9,16 @@ ms.date: 01/06/2021
 ms.author: normesta
 ms.reviewer: jamsbak
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 58b8cdef604861342a6489ef4e57ff1d057cd3f4
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: 756258db1c6e91002bf3a7c2bd0f71f921ce655d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107377731"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107769927"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Gegevens filteren met behulp van Azure Data Lake Storage queryversnelling
 
-In dit artikel wordt beschreven hoe u queryversnelling gebruikt om een subset van gegevens op te halen uit uw opslagaccount. 
+In dit artikel wordt beschreven hoe u queryversnelling gebruikt om een subset met gegevens op te halen uit uw opslagaccount. 
 
 Met queryversnelling kunnen toepassingen en analyse-frameworks de gegevensverwerking aanzienlijk optimaliseren door alleen de gegevens op te halen die ze nodig hebben om een bepaalde bewerking uit te voeren. Zie Queryversnelling voor [Azure Data Lake Storage meer informatie.](data-lake-storage-query-acceleration.md)
 
@@ -45,7 +45,7 @@ Met queryversnelling kunnen toepassingen en analyse-frameworks de gegevensverwer
   - [Apache Maven](https://maven.apache.org/download.cgi) 
 
     > [!NOTE] 
-    > In dit artikel wordt ervan uitgenomen dat u een Java-project hebt gemaakt met behulp van Apache Maven. Zie Instellen voor een voorbeeld van het maken [](storage-quickstart-blobs-java.md#setting-up)van een project met behulp van Apache Maven.
+    > In dit artikel wordt ervan uitgenomen dat u een Java-project hebt gemaakt met behulp van Apache Maven. Zie Instellen voor een voorbeeld van het maken van een project met behulp [van](storage-quickstart-blobs-java.md#setting-up)Apache Maven.
   
   ### <a name="python"></a>[Python](#tab/python)
 
@@ -94,7 +94,7 @@ Als u queryversnelling wilt gebruiken, moet u eerst de functie queryversnelling 
 
 1. Open de [Azure Cloud Shell](../../cloud-shell/overview.md)of als u [](/cli/azure/install-azure-cli) de Azure CLI lokaal hebt geïnstalleerd, opent u een opdrachtconsoletoepassing zoals Windows PowerShell.
 
-2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op abonnement van het opslagaccount.
+2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslagaccount.
 
    ```azurecli-interactive
    az account set --subscription <subscription-id>
@@ -102,7 +102,7 @@ Als u queryversnelling wilt gebruiken, moet u eerst de functie queryversnelling 
 
    Vervang de `<subscription-id>` waarde van de tijdelijke aanduiding door de id van uw abonnement.
 
-3. Registreer de functie queryversnelling met behulp van [de opdracht az feature register.](/cli/azure/feature#az-feature-register)
+3. Registreer de functie queryversnelling met behulp van [de opdracht az feature register.](/cli/azure/feature#az_feature_register)
 
    ```azurecli
    az feature register --namespace Microsoft.Storage --name BlobQuery
@@ -122,7 +122,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuer
 
 #### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Gebruik de opdracht az feature om te controleren of de [registratie is](/cli/azure/feature#az-feature-show) voltooid.
+Gebruik de opdracht az feature om te controleren of de [registratie is](/cli/azure/feature#az_feature_show) voltooid.
 
 ```azurecli
 az feature show --namespace Microsoft.Storage --name BlobQuery
@@ -132,7 +132,7 @@ az feature show --namespace Microsoft.Storage --name BlobQuery
 
 ### <a name="step-3-register-the-azure-storage-resource-provider"></a>Stap 3: de resourceprovider Azure Storage registreren
 
-Nadat uw registratie is goedgekeurd, moet u de resourceprovider opnieuw Azure Storage registreren. 
+Nadat uw registratie is goedgekeurd, moet u de resourceprovider Azure Storage registreren. 
 
 #### <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -144,7 +144,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 
 #### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Gebruik de opdracht az [provider register](/cli/azure/provider#az-provider-register) om de resourceprovider te registreren.
+Gebruik de opdracht az [provider register](/cli/azure/provider#az_provider_register) om de resourceprovider te registreren.
 
 ```azurecli
 az provider register --namespace 'Microsoft.Storage'
@@ -154,7 +154,7 @@ az provider register --namespace 'Microsoft.Storage'
 
 ## <a name="set-up-your-environment"></a>Uw omgeving instellen
 
-### <a name="step-1-install-packages"></a>Stap 1: pakketten installeren 
+### <a name="step-1-install-packages"></a>Stap 1: Pakketten installeren 
 
 #### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -172,7 +172,7 @@ Update-Module -Name Az
 
 #### <a name="net"></a>[.NET](#tab/dotnet)
 
-1. Open een opdrachtprompt en wijzig map ( `cd` ) in uw projectmap Bijvoorbeeld:
+1. Open een opdrachtprompt en wijzig de map ( `cd` ) in uw projectmap, bijvoorbeeld:
 
    ```console
    cd myProject
@@ -255,7 +255,7 @@ using CsvHelper;
 using CsvHelper.Configuration;
 ```
 
-Als u voorbeelden wilt compileren die in dit artikel worden gepresenteerd, moet u deze instructies `using` ook toevoegen.
+Als u voorbeelden in dit artikel wilt compileren, moet u deze instructies `using` ook toevoegen.
 
 ```csharp
 using System.Threading.Tasks;
@@ -328,7 +328,7 @@ Get-QueryCsv $ctx $container $blob "SELECT * FROM BlobStorage WHERE _3 = 'Heming
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
-De async-methode verzendt de query naar de `BlobQuickQueryClient.QueryAsync` queryversnellings-API en streamt de resultaten vervolgens als een [Stream-object](/dotnet/api/system.io.stream) naar de toepassing.
+De async-methode `BlobQuickQueryClient.QueryAsync` verzendt de query naar de queryversnelling-API en streamt de resultaten vervolgens als een [Stream-object](/dotnet/api/system.io.stream) naar de toepassing.
 
 ```cs
 static async Task QueryHemingway(BlockBlobClient blob)
@@ -375,7 +375,7 @@ private static async Task DumpQueryCsv(BlockBlobClient blob, string query, bool 
 
 ### <a name="java"></a>[Java](#tab/java)
 
-De methode verzendt de query naar de API voor queryversnelling en streamt de resultaten vervolgens terug naar de toepassing als een object dat kan worden gelezen zoals elk ander `BlobQuickQueryClient.openInputStream()` `InputStream` InputStream-object.
+De methode verzendt de query naar de queryversnelling-API en streamt de resultaten vervolgens terug naar de toepassing als een object dat kan worden gelezen zoals elk ander `BlobQuickQueryClient.openInputStream()` `InputStream` InputStream-object.
 
 ```java
 static void QueryHemingway(BlobClient blobClient) {

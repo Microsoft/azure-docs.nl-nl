@@ -4,12 +4,12 @@ description: Een Azure-containerregister maken, geo-replicatie configureren, een
 ms.topic: tutorial
 ms.date: 06/30/2020
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 6abf1b7a524bc7dd28f1704a362749ac84de2389
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c5f5627462f016c857d956be46c276dda78e9b2b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97826077"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780655"
 ---
 # <a name="tutorial-prepare-a-geo-replicated-azure-container-registry"></a>Zelfstudie: Een Azure-containerregister met geo-replicatie voorbereiden
 
@@ -98,7 +98,7 @@ Navigeer naar uw nieuwe containerregister in Azure Portal en selecteer **Toegang
 
 Nu u geo-replicatie hebt geconfigureerd, maakt u een containerinstallatiekopie en pusht u deze naar het register. U moet u eerst aanmelden bij uw register voordat u er installatiekopieën naar pusht.
 
-Gebruik de opdracht [az acr login](/cli/azure/acr#az-acr-login) om de referenties voor het register te verifiëren en in de cache te plaatsen. Vervang `<acrName>` door de naam van het register dat u eerder hebt gemaakt.
+Gebruik de opdracht [az acr login](/cli/azure/acr#az_acr_login) om de referenties voor het register te verifiëren en in de cache te plaatsen. Vervang `<acrName>` door de naam van het register dat u eerder hebt gemaakt.
 
 ```azurecli
 az acr login --name <acrName>

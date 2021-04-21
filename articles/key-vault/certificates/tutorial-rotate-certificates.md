@@ -3,7 +3,6 @@ title: Zelfstudie - Frequentie van automatische rotatie van certificaten in Key 
 description: Zelfstudie over hoe u de frequentie van de automatische rotatie van certificaten in Azure Key Vault bijwerkt met de Azure-portal
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
@@ -11,12 +10,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/16/2020
 ms.author: sebansal
-ms.openlocfilehash: ec648f02918717dad6b739aa6ae99206bcec1d6e
-ms.sourcegitcommit: d63f15674f74d908f4017176f8eddf0283f3fac8
+ms.openlocfilehash: 48a531e054bf92c8ddc7761689b8fdf1df8a28a7
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106581811"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107750010"
 ---
 # <a name="tutorial-configure-certificate-auto-rotation-in-key-vault"></a>Zelfstudie: Automatische rotatie van certificaten in Key Vault configureren
 
@@ -51,7 +50,7 @@ Maak een certificaat of importeer een certificaat in de sleutelkluis (raadpleeg 
 
 ## <a name="update-certificate-lifecycle-attributes"></a>De levenscycluskenmerken van een certificaat bijwerken
 
-In Azure Key Vault kunt u de levens cyclus kenmerken van een certificaat bijwerken op het moment dat het certificaat wordt gemaakt of na.
+In Azure Key Vault kunt u de levenscycluskenmerken van een certificaat bijwerken, zowel op het moment dat het certificaat wordt gemaakt als daarna.
 
 Een certificaat dat wordt gemaakt in Key Vault kan de volgende vorm aannemen:
 
@@ -80,10 +79,12 @@ Key Vault roteert automatisch certificaten via gevestigde partnerschappen met CA
    - **Geldigheidsperiode**: Voer de waarde in (in maanden). Het maken van certificaten met een kort leven is een aanbevolen beveiligingspractice. Standaard is de geldigheidswaarde van nieuwe gemaakte certificaten 12 maanden.
    - **Actietype levensduur**: Selecteer de acties automatische verlenging en waarschuwing en werk vervolgens de **levensduurpercentage** of **Aantal dagen voor verlopen** bij. Standaard is de automatische verlenging van een certificaat ingesteld op 80% van de levensduur. Selecteer een van de volgende opties uit het vervolgkeuzemenu.
 
-        |  Automatische verlenging op een bepaald moment| Alle contactpersonen e-mailen op een bepaald moment |
-        |-----------|------|
-        |Als u deze optie selecteert, wordt automatische rotatie *ingeschakeld*. | Als u deze optie selecteert, wordt automatische rotatie *niet ingeschakeld*, maar worden alleen contactpersonen gewaarschuwd.|
-         You can learn about [setting up Email contact here](https://docs.microsoft.com/azure/key-vault/certificates/overview-renew-certificate#get-notified-about-certificate-expiration)
+      |  Automatische verlenging op een bepaald moment| Alle contactpersonen e-mailen op een bepaald moment |
+      |-----------|------|
+      |Als u deze optie selecteert, wordt automatische rotatie *ingeschakeld*. | Als u deze optie selecteert, wordt automatische rotatie *niet ingeschakeld*, maar worden alleen contactpersonen gewaarschuwd.|
+      
+      Meer informatie over het instellen [van een e-mailcontact vindt u hier](https://docs.microsoft.com/azure/key-vault/certificates/overview-renew-certificate#get-notified-about-certificate-expiration)
+
 1. Selecteer **Maken**.
 
 ![Levenscyclus van een certificaat](../media/certificates/tutorial-rotate-cert/create-cert-lifecycle.png)

@@ -1,31 +1,31 @@
 ---
-title: Installatie kopieën van het AKS-knoop punt (Azure Kubernetes service) upgraden
-description: Meer informatie over het bijwerken van de installatie kopieën op AKS-cluster knooppunten en-knooppunt groepen.
+title: AKS-Azure Kubernetes Service (AKS)-knooppunt bijwerken
+description: Meer informatie over het upgraden van de afbeeldingen op AKS-clusterknooppunten en knooppuntgroepen.
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: jpalma
-ms.openlocfilehash: 83d7d48922806334e2b49494fe0ef1d15e1a7a6a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4f6ac01c1d4df288c823142abbc93e981048d8db
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96531476"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767525"
 ---
-# <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Upgrade van installatie kopie van knoop punt Azure Kubernetes service (AKS)
+# <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Azure Kubernetes Service -knooppunt (AKS) upgraden
 
-AKS biedt ondersteuning voor het upgraden van installatie kopieën op een knoop punt zodat u up-to-date bent met de nieuwste besturings systemen en runtime-updates. AKS biedt een nieuwe installatie kopie per week met de nieuwste updates. het is dus handig om de installatie kopieën van uw knoop punt regel matig bij te werken voor de nieuwste functies, waaronder Linux-of Windows-patches. In dit artikel wordt beschreven hoe u installatie kopieën van AKS-cluster knooppunten bijwerkt en hoe u installatie kopieën van groeps knooppunten bijwerkt zonder de versie van Kubernetes bij te werken.
+AKS ondersteunt het upgraden van de afbeeldingen op een knooppunt, zodat u op de hoogte bent van de nieuwste updates voor het besturingssysteem en runtime. AKS biedt één nieuwe afbeelding per week met de nieuwste updates, dus het is handig om de afbeeldingen van uw knooppunt regelmatig bij te werken voor de nieuwste functies, waaronder Linux- of Windows-patches. In dit artikel wordt beschreven hoe u AKS-clusterknooppuntafbeeldingen bij kunt werken en hoe u afbeeldingen van knooppuntpools kunt bijwerken zonder de versie van Kubernetes bij te werken.
 
-Zie de [release opmerkingen voor AKS](https://github.com/Azure/AKS/releases)voor meer informatie over de nieuwste installatie kopieën van AKS.
+Zie de opmerkingen bij de [AKS-release](https://github.com/Azure/AKS/releases)voor meer informatie over de meest recente afbeeldingen van AKS.
 
-Zie [een AKS-cluster upgraden][upgrade-cluster]voor informatie over het bijwerken van de Kubernetes-versie voor uw cluster.
+Zie Een [AKS-cluster][upgrade-cluster]upgraden voor meer informatie over het upgraden van de Kubernetes-versie voor uw cluster.
 
 > [!NOTE]
-> Het AKS-cluster moet virtuele-machine schaal sets gebruiken voor de knoop punten.
+> Het AKS-cluster moet virtuele-machineschaalsets gebruiken voor de knooppunten.
 
-## <a name="check-if-your-node-pool-is-on-the-latest-node-image"></a>Controleren of de knooppunt groep zich op de laatste kopie van het knoop punt bevindt
+## <a name="check-if-your-node-pool-is-on-the-latest-node-image"></a>Controleer of uw knooppuntgroep zich op de meest recente knooppuntafbeelding
 
-Met de volgende opdracht kunt u zien wat de nieuwste versie van de knooppunt installatie kopie beschikbaar is voor de knooppunt groep: 
+Met de volgende opdracht kunt u zien wat de meest recente versie van de knooppuntafbeelding is die beschikbaar is voor uw knooppuntgroep: 
 
 ```azurecli
 az aks nodepool get-upgrades \
@@ -34,7 +34,7 @@ az aks nodepool get-upgrades \
     --resource-group myResourceGroup
 ```
 
-In de uitvoer ziet u het `latestNodeImageVersion` als in het voor beeld hieronder:
+In de uitvoer ziet u de like `latestNodeImageVersion` in het onderstaande voorbeeld:
 
 ```output
 {
@@ -49,7 +49,7 @@ In de uitvoer ziet u het `latestNodeImageVersion` als in het voor beeld hieronde
 }
 ```
 
-`nodepool1`De meest recente knooppunt installatie kopie is dus beschikbaar `AKSUbuntu-1604-2020.10.28` . U kunt dit nu vergelijken met de huidige versie van de installatie kopie die door de knooppunt groep wordt gebruikt door de volgende handelingen uit te voeren:
+Voor de `nodepool1` meest recente knooppuntafbeelding is dus `AKSUbuntu-1604-2020.10.28` beschikbaar. U kunt deze nu vergelijken met de huidige versie van de knooppuntafbeelding die wordt gebruikt door uw knooppuntgroep door het volgende uit te doen:
 
 ```azurecli
 az aks nodepool show \
@@ -59,17 +59,17 @@ az aks nodepool show \
     --query nodeImageVersion
 ```
 
-Een voor beeld van een uitvoer is:
+Een voorbeeld van uitvoer is:
 
 ```output
 "AKSUbuntu-1604-2020.10.08"
 ```
 
-In dit voor beeld kunt u een upgrade uitvoeren van de huidige versie van de `AKSUbuntu-1604-2020.10.08` installatie kopie naar de meest recente versie `AKSUbuntu-1604-2020.10.28` . 
+In dit voorbeeld kunt u dus upgraden van de huidige versie `AKSUbuntu-1604-2020.10.08` van de afbeelding naar de nieuwste versie `AKSUbuntu-1604-2020.10.28` . 
 
-## <a name="upgrade-all-nodes-in-all-node-pools"></a>Alle knoop punten in alle knooppunt groepen upgraden
+## <a name="upgrade-all-nodes-in-all-node-pools"></a>Alle knooppunten in alle knooppuntgroepen upgraden
 
-De upgrade van de knooppunt installatie kopie wordt uitgevoerd met `az aks upgrade` . Als u de installatie kopie van het knoop punt wilt bijwerken, gebruikt u de volgende opdracht:
+Het upgraden van de knooppuntafbeelding wordt uitgevoerd met `az aks upgrade` . Gebruik de volgende opdracht om de knooppuntafbeelding bij te upgraden:
 
 ```azurecli
 az aks upgrade \
@@ -78,13 +78,13 @@ az aks upgrade \
     --node-image-only
 ```
 
-Controleer tijdens de upgrade de status van de installatie kopie van het knoop punt met de volgende `kubectl` opdracht om de labels op te halen en de gegevens van de huidige knooppunt afbeelding te filteren:
+Controleer tijdens de upgrade de status van de knooppuntafbeeldingen met de volgende opdracht om de labels op te halen en de huidige afbeeldingsgegevens van het `kubectl` knooppunt uit te filteren:
 
 ```azurecli
 kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.kubernetes\.azure\.com\/node-image-version}{"\n"}{end}'
 ```
 
-Wanneer de upgrade is voltooid, gebruikt `az aks show` u om de bijgewerkte Details van de knooppunt groep op te halen. De huidige knooppunt afbeelding wordt weer gegeven in de `nodeImageVersion` eigenschap.
+Wanneer de upgrade is voltooid, gebruikt u om `az aks show` de bijgewerkte details van de knooppuntgroep op te halen. De huidige knooppuntafbeelding wordt weergegeven in de `nodeImageVersion` eigenschap .
 
 ```azurecli
 az aks show \
@@ -92,11 +92,11 @@ az aks show \
     --name myAKSCluster
 ```
 
-## <a name="upgrade-a-specific-node-pool"></a>Een specifieke knooppunt groep upgraden
+## <a name="upgrade-a-specific-node-pool"></a>Een specifieke knooppuntgroep upgraden
 
-Het bijwerken van de installatie kopie op een knooppunt groep is vergelijkbaar met het bijwerken van de installatie kopie in een cluster.
+Het upgraden van de afbeelding in een knooppuntgroep is vergelijkbaar met het upgraden van de afbeelding in een cluster.
 
-Als u de installatie kopie van het besturings systeem van de knooppunt groep wilt bijwerken zonder een Kubernetes-cluster upgrade uit te voeren, gebruikt u de `--node-image-only` optie in het volgende voor beeld:
+Als u de afbeelding van het besturingssysteem van de knooppuntgroep wilt bijwerken zonder een Kubernetes-clusterupgrade uit te voeren, gebruikt u de optie `--node-image-only` in het volgende voorbeeld:
 
 ```azurecli
 az aks nodepool upgrade \
@@ -106,13 +106,13 @@ az aks nodepool upgrade \
     --node-image-only
 ```
 
-Controleer tijdens de upgrade de status van de installatie kopie van het knoop punt met de volgende `kubectl` opdracht om de labels op te halen en de gegevens van de huidige knooppunt afbeelding te filteren:
+Controleer tijdens de upgrade de status van de knooppuntafbeeldingen met de volgende opdracht om de labels op te halen en de huidige afbeeldingsgegevens van het `kubectl` knooppunt uit te filteren:
 
 ```azurecli
 kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.kubernetes\.azure\.com\/node-image-version}{"\n"}{end}'
 ```
 
-Wanneer de upgrade is voltooid, gebruikt `az aks nodepool show` u om de bijgewerkte Details van de knooppunt groep op te halen. De huidige knooppunt afbeelding wordt weer gegeven in de `nodeImageVersion` eigenschap.
+Wanneer de upgrade is voltooid, gebruikt u om `az aks nodepool show` de bijgewerkte details van de knooppuntgroep op te halen. De huidige knooppuntafbeelding wordt weergegeven in de `nodeImageVersion` eigenschap .
 
 ```azurecli
 az aks nodepool show \
@@ -121,13 +121,13 @@ az aks nodepool show \
     --name mynodepool
 ```
 
-## <a name="upgrade-node-images-with-node-surge"></a>Knooppunt installatie kopieën bijwerken met overspanning van knoop punt
+## <a name="upgrade-node-images-with-node-surge"></a>Knooppuntafbeeldingen upgraden met pieken in knooppunt
 
-Als u het upgrade proces van de knooppunt installatie kopie wilt versnellen, kunt u uw knooppunt installatie kopieën bijwerken met behulp van een aanpas bare overspannings waarde. AKS gebruikt standaard één extra knoop punt voor het configureren van upgrades.
+Als u het upgradeproces van de knooppuntafbeelding wilt versnellen, kunt u uw knooppuntafbeeldingen upgraden met behulp van een aanpasbare piekwaarde voor het knooppunt. AKS gebruikt standaard één extra knooppunt om upgrades te configureren.
 
-Als u de snelheid van upgrades wilt verhogen, gebruikt u de `--max-surge` waarde voor het configureren van het aantal knoop punten dat moet worden gebruikt voor upgrades zodat ze sneller kunnen worden uitgevoerd. Zie de upgrade van het `--max-surge` [knoop punt piek aanpassen][max-surge]voor meer informatie over de verschillende instellingen.
+Als u de snelheid van upgrades wilt verhogen, gebruikt u de waarde om het aantal knooppunten te configureren dat moet worden gebruikt voor upgrades, zodat `--max-surge` ze sneller worden voltooid. Zie Upgrade van knooppuntpieken aanpassen voor meer informatie over de afwegingen van `--max-surge` [verschillende instellingen.][max-surge]
 
-Met de volgende opdracht stelt u de maximale piek waarde in voor het uitvoeren van een upgrade van een knooppunt installatie kopie:
+Met de volgende opdracht stelt u de maximale piekwaarde in voor het uitvoeren van een upgrade van een knooppuntafbeelding:
 
 ```azurecli
 az aks nodepool upgrade \
@@ -139,13 +139,13 @@ az aks nodepool upgrade \
     --no-wait
 ```
 
-Controleer tijdens de upgrade de status van de installatie kopie van het knoop punt met de volgende `kubectl` opdracht om de labels op te halen en de gegevens van de huidige knooppunt afbeelding te filteren:
+Controleer tijdens de upgrade de status van de knooppuntafbeeldingen met de volgende opdracht om de labels op te halen en de huidige afbeeldingsgegevens van het `kubectl` knooppunt uit te filteren:
 
 ```azurecli
 kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.kubernetes\.azure\.com\/node-image-version}{"\n"}{end}'
 ```
 
-Gebruiken `az aks nodepool show` om de bijgewerkte Details van de knooppunt groep op te halen. De huidige knooppunt afbeelding wordt weer gegeven in de `nodeImageVersion` eigenschap.
+Gebruik `az aks nodepool show` om de bijgewerkte details van de knooppuntgroep op te halen. De huidige knooppuntafbeelding wordt weergegeven in de `nodeImageVersion` eigenschap .
 
 ```azurecli
 az aks nodepool show \
@@ -156,15 +156,15 @@ az aks nodepool show \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [opmerkingen](https://github.com/Azure/AKS/releases) bij de release van AKS voor informatie over de nieuwste knooppunt installatie kopieën.
-- Meer informatie over het bijwerken van de Kubernetes-versie met [een upgrade voor een AKS-cluster][upgrade-cluster].
-- [Automatisch cluster-en knooppunt groeps upgrades Toep assen met GitHub-acties][github-schedule]
-- Meer informatie over meerdere knooppunt Pools en het upgraden van knooppunt Pools met het [maken en beheren van meerdere knooppunt groepen][use-multiple-node-pools].
+- Zie de [opmerkingen bij de AKS-release](https://github.com/Azure/AKS/releases) voor informatie over de meest recente knooppuntafbeeldingen.
+- Meer informatie over het upgraden van de Kubernetes-versie met [Een AKS-cluster upgraden.][upgrade-cluster]
+- [Automatisch cluster- en knooppuntgroepupgrades toepassen met GitHub Actions][github-schedule]
+- Meer informatie over meerdere knooppuntgroepen en het upgraden van knooppuntgroepen met [Meerdere knooppuntgroepen maken en beheren.][use-multiple-node-pools]
 
 <!-- LINKS - internal -->
 [upgrade-cluster]: upgrade-cluster.md
 [github-schedule]: node-upgrade-github-actions.md
 [use-multiple-node-pools]: use-multiple-node-pools.md
 [max-surge]: upgrade-cluster.md#customize-node-surge-upgrade
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update

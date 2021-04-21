@@ -5,12 +5,12 @@ ms.date: 07/23/2020
 ms.topic: quickstart
 ms.reviewer: ravastra
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 3442c3b6023edcde97aabcb13e91120ba6811027
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2d94640e1c6a037893fb1ad9198b82195c46dd24
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91323070"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107768121"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-azure-cli"></a>Quickstart: Een Azure Blockchain Service-blockchainlid maken met behulp van Azure CLI
 
@@ -34,7 +34,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, hebt u voor 
 
 1. Meld u aan.
 
-    Meld u aan met behulp van de opdracht [az login](/cli/azure/reference-index#az-login) als u een lokale installatie van de CLI gebruikt.
+    Meld u aan met behulp van de opdracht [az login](/cli/azure/reference-index#az_login) als u een lokale installatie van de CLI gebruikt.
 
     ```azurecli
     az login
@@ -56,7 +56,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, hebt u voor 
 
     Azure Blockchain Service moet, net zoals alle Azure-resources, in een resourcegroep zijn geïmplementeerd. Met resourcegroepen kunt u gerelateerde Azure-resources organiseren en beheren.
 
-    Maak voor deze quickstart eerst een resourcegroep met de naam _myResourceGroup_ op de locatie _eastus_ met behulp van de volgende [az group create](/cli/azure/group#az-group-create)-opdracht:
+    Maak voor deze quickstart eerst een resourcegroep met de naam _myResourceGroup_ op de locatie _eastus_ met behulp van de volgende [az group create](/cli/azure/group#az_group_create)-opdracht:
 
     ```azurecli-interactive
     az group create \

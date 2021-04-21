@@ -1,35 +1,35 @@
 ---
 title: Beheerde identiteiten voor Azure-resources met Service Bus
-description: In dit artikel wordt beschreven hoe u beheerde identiteiten kunt gebruiken voor toegang Azure Service Bus entiteiten (wachtrijen, onderwerpen en abonnementen).
+description: In dit artikel wordt beschreven hoe u beheerde identiteiten gebruikt om toegang te krijgen Azure Service Bus entiteiten (wachtrijen, onderwerpen en abonnementen).
 ms.topic: article
 ms.date: 01/21/2021
-ms.openlocfilehash: cac254ef6b57f1878620b1e3ca30e757d7f39a88
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 0558e00ac7e8ce67d2e5194b02d2de06f2d38ff1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107529456"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107785429"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-azure-service-bus-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory toegang tot Azure Service Bus resources
-[Beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) is een azure-functie waarmee u een beveiligde identiteit kunt maken die is gekoppeld aan de implementatie waaronder uw toepassingscode wordt uitgevoerd. Vervolgens kunt u die identiteit koppelen aan toegangsbeheerrollen die aangepaste machtigingen verlenen voor toegang tot specifieke Azure-resources die uw toepassing nodig heeft.
+[Beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) is een azure-functie waarmee u een beveiligde identiteit kunt maken die is gekoppeld aan de implementatie waaronder uw toepassingscode wordt uitgevoerd. Vervolgens kunt u die identiteit koppelen aan rollen voor toegangsbeheer die aangepaste machtigingen verlenen voor toegang tot specifieke Azure-resources die uw toepassing nodig heeft.
 
-Met beheerde identiteiten beheert het Azure-platform deze runtime-identiteit. U hoeft de toegangssleutels niet op te slaan en te beveiligen in uw toepassingscode of -configuratie, voor de identiteit zelf of voor de resources die u wilt openen. Een Service Bus-client-app die wordt uitgevoerd in een Azure App Service-toepassing of op een virtuele machine met ingeschakelde beheerde entiteiten voor ondersteuning van Azure-resources, hoeft geen SAS-regels en -sleutels of andere toegangstokens te verwerken. De client-app heeft alleen het eindpuntadres van de Service Bus Messaging-naamruimte nodig. Wanneer de app verbinding maakt, Service Bus de context van de beheerde entiteit aan de client in een bewerking die wordt weergegeven in een voorbeeld later in dit artikel. Zodra de client is gekoppeld aan een beheerde identiteit, Service Bus alle geautoriseerde bewerkingen uitvoeren. Autorisatie wordt verleend door een beheerde entiteit te koppelen aan Service Bus rollen. 
+Met beheerde identiteiten beheert het Azure-platform deze runtime-identiteit. U hoeft de toegangssleutels niet op te slaan en te beveiligen in uw toepassingscode of -configuratie, voor de identiteit zelf of voor de resources die u nodig hebt om toegang te krijgen. Een Service Bus-client-app die wordt uitgevoerd in een Azure App Service-toepassing of op een virtuele machine met ingeschakelde beheerde entiteiten voor Azure-resources, hoeft geen SAS-regels en -sleutels of andere toegangstokens te verwerken. De client-app heeft alleen het eindpuntadres van de Service Bus Messaging-naamruimte nodig. Wanneer de app verbinding maakt, Service Bus de context van de beheerde entiteit aan de client in een bewerking die wordt weergegeven in een voorbeeld verder in dit artikel. Zodra de client is gekoppeld aan een beheerde identiteit, Service Bus alle geautoriseerde bewerkingen uitvoeren. Autorisatie wordt verleend door een beheerde entiteit te koppelen aan Service Bus rollen. 
 
 ## <a name="overview"></a>Overzicht
 Wanneer een beveiligingsprincipaal (een gebruiker, groep of toepassing) toegang probeert te krijgen tot een Service Bus entiteit, moet de aanvraag worden geautoriseerd. Met Azure AD is toegang tot een resource een proces in twee stappen. 
 
  1. Eerst wordt de identiteit van de beveiligingsprincipaal geverifieerd en wordt een OAuth 2.0-token geretourneerd. De resourcenaam voor het aanvragen van een token is `https://servicebus.azure.net` .
- 1. Vervolgens wordt het token doorgegeven als onderdeel van een aanvraag aan de Service Bus-service om toegang te verlenen tot de opgegeven resource.
+ 1. Vervolgens wordt het token doorgegeven als onderdeel van een aanvraag aan de Service Bus-service om toegang tot de opgegeven resource te autor toestemming te geven.
 
 De verificatiestap vereist dat een toepassingsaanvraag een OAuth 2.0-toegangsteken tijdens runtime bevat. Als een toepassing wordt uitgevoerd binnen een Azure-entiteit, zoals een Azure-VM, een virtuele-machineschaalset of een Azure Function-app, kan deze een beheerde identiteit gebruiken voor toegang tot de resources. 
 
-De autorisatiestap vereist dat een of meer Azure-rollen worden toegewezen aan de beveiligingsprincipaal. Azure Service Bus biedt Azure-rollen die sets machtigingen voor Service Bus resources omvatten. De rollen die zijn toegewezen aan een beveiligingsprincipaal bepalen de machtigingen die de principal krijgt. Zie Ingebouwde Azure-rollen voor Azure Service Bus voor meer informatie over het toewijzen van [Azure-rollen aan Azure Service Bus.](#azure-built-in-roles-for-azure-service-bus) 
+Voor de autorisatiestap moeten een of meer Azure-rollen worden toegewezen aan de beveiligingsprincipaal. Azure Service Bus biedt Azure-rollen die sets machtigingen voor Service Bus resources omvatten. De rollen die zijn toegewezen aan een beveiligingsprincipaal bepalen de machtigingen die de principal krijgt. Zie Ingebouwde Azure-rollen voor Azure Service Bus voor meer informatie over het toewijzen [van Azure-rollen Azure Service Bus.](#azure-built-in-roles-for-azure-service-bus) 
 
-Native toepassingen en webtoepassingen die aanvragen indienen bij Service Bus kunnen ook worden geautoriseerd met Azure AD. In dit artikel wordt beschreven hoe u een toegangs token aanvraagt en dit gebruikt om aanvragen voor Service Bus resources. 
+Native toepassingen en webtoepassingen die aanvragen indienen bij Service Bus kunnen ook autoreren met Azure AD. In dit artikel wordt beschreven hoe u een toegangs token aanvraagt en dit gebruikt om aanvragen voor Service Bus verlenen. 
 
 
 ## <a name="assigning-azure-roles-for-access-rights"></a>Azure-rollen toewijzen voor toegangsrechten
-Azure Active Directory (Azure AD) autoreert toegangsrechten voor beveiligde resources via op rollen gebaseerd toegangsbeheer [van Azure (Azure RBAC).](../role-based-access-control/overview.md) Azure Service Bus definieert een set ingebouwde Azure-rollen die algemene sets machtigingen omvatten die worden gebruikt voor toegang tot Service Bus-entiteiten en u kunt ook aangepaste rollen definiëren voor toegang tot de gegevens.
+Azure Active Directory (Azure AD) autoreert toegangsrechten voor beveiligde resources via op rollen gebaseerd toegangsbeheer [van Azure (Azure RBAC).](../role-based-access-control/overview.md) Azure Service Bus definieert een set ingebouwde Azure-rollen die algemene sets machtigingen omvat die worden gebruikt voor toegang tot Service Bus-entiteiten. U kunt ook aangepaste rollen definiëren voor toegang tot de gegevens.
 
 Wanneer een Azure-rol wordt toegewezen aan een Azure AD-beveiligingsprincipaal, verleent Azure toegang tot deze resources voor die beveiligingsprincipaal. Toegang kan worden beperkt tot het abonnementsniveau, de resourcegroep of de Service Bus naamruimte. Een Azure AD-beveiligingsprincipaal kan een gebruiker, een groep, een toepassingsservice-principal of een beheerde identiteit voor Azure-resources zijn.
 
@@ -45,7 +45,7 @@ Voordat u een Azure-rol toewijst een beveiligingsprincipal, moet u het toegangsb
 
 In de volgende lijst worden de niveaus beschreven waarop u toegang tot Service Bus resources kunt beperken, te beginnen met het kleinste bereik:
 
-- **Wachtrij,** **onderwerp** of **abonnement:** roltoewijzing is van toepassing op de specifieke Service Bus entiteit. Momenteel biedt de Azure Portal geen ondersteuning voor het toewijzen van gebruikers/groepen/beheerde identiteiten aan Service Bus Azure-rollen op abonnementsniveau. Hier is een voorbeeld van het gebruik van de Azure [CLI-opdracht: az-role-assignment-create](/cli/azure/role/assignment?#az-role-assignment-create) om een identiteit toe te wijzen aan een Service Bus Azure-rol: 
+- **Wachtrij,** **onderwerp** of **abonnement:** roltoewijzing is van toepassing op de specifieke Service Bus entiteit. Momenteel biedt de Azure Portal geen ondersteuning voor het toewijzen van gebruikers/groepen/beheerde identiteiten aan Service Bus Azure-rollen op abonnementsniveau. Hier is een voorbeeld van het gebruik van de Azure [CLI-opdracht: az-role-assignment-create](/cli/azure/role/assignment?#az_role_assignment_create) om een identiteit toe te wijzen aan een Service Bus Azure-rol: 
 
     ```azurecli
     az role assignment create \
@@ -72,7 +72,7 @@ Voordat u beheerde identiteiten voor Azure-resources kunt gebruiken om Service B
 - [Azure Resource Manager-clientbibliotheken](../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
 ## <a name="grant-permissions-to-a-managed-identity-in-azure-ad"></a>Machtigingen verlenen aan een beheerde identiteit in Azure AD
-Als u een aanvraag bij de Service Bus-service wilt autoreren vanuit een beheerde identiteit in uw toepassing, configureert u eerst azure RBAC-instellingen (op rollen gebaseerd toegangsbeheer) voor die beheerde identiteit. Azure Service Bus definieert Azure-rollen die machtigingen omvatten voor het verzenden en lezen van Service Bus. Wanneer de Azure-rol wordt toegewezen aan een beheerde identiteit, krijgt de beheerde identiteit toegang tot Service Bus entiteiten binnen het juiste bereik.
+Als u vanuit een beheerde identiteit in uw toepassing een aanvraag bij de Service Bus-service wilt toestaan, configureert u eerst azure RBAC-instellingen (op rollen gebaseerd toegangsbeheer) voor die beheerde identiteit. Azure Service Bus definieert Azure-rollen die machtigingen omvatten voor het verzenden en lezen van Service Bus. Wanneer de Azure-rol wordt toegewezen aan een beheerde identiteit, krijgt de beheerde identiteit toegang tot Service Bus entiteiten binnen het juiste bereik.
 
 Zie Verifiëren en autoriseren met Azure Active Directory voor toegang tot Service Bus resources voor meer informatie over het toewijzen [Service Bus azure-rollen.](authenticate-application.md#azure-built-in-roles-for-azure-service-bus)
 
@@ -137,7 +137,7 @@ Als u berichten wilt verzenden of ontvangen, voert u de naam in van de naamruimt
 
 
 > [!NOTE]
-> - De beheerde identiteit werkt alleen binnen de Azure-omgeving, in App Services, Azure-VM's en schaalsets. Voor .NET-toepassingen biedt de bibliotheek Microsoft.Azure.Services.AppAuthentication, die wordt gebruikt door het Service Bus NuGet-pakket, een abstractie over dit protocol en ondersteunt deze een lokale ontwikkelervaring. Met deze bibliotheek kunt u uw code ook lokaal testen op uw ontwikkelmachine, met behulp van uw gebruikersaccount van Visual Studio, Azure CLI 2.0 of geïntegreerde Active Directory-verificatie. Zie [Service-to-service authentication to Azure Key Vault using .NET (Service-naar-service-verificatie met .NET)](/dotnet/api/overview/azure/service-to-service-authentication)voor meer informatie over lokale ontwikkelopties met deze bibliotheek.  
+> - De beheerde identiteit werkt alleen binnen de Azure-omgeving, in App Services, Azure-VM's en schaalsets. Voor .NET-toepassingen biedt de bibliotheek Microsoft.Azure.Services.AppAuthentication, die wordt gebruikt door het nuGet-pakket Service Bus, een abstractie van dit protocol en ondersteunt een lokale ontwikkelervaring. Met deze bibliotheek kunt u uw code ook lokaal testen op uw ontwikkelmachine, met behulp van uw gebruikersaccount van Visual Studio, Azure CLI 2.0 of geïntegreerde Active Directory-verificatie. Zie [Service-to-service authentication to Azure Key Vault using .NET (Service-naar-service-verificatie](/dotnet/api/overview/azure/service-to-service-authentication)met behulp van .NET) voor meer informatie over lokale ontwikkelopties met deze bibliotheek.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

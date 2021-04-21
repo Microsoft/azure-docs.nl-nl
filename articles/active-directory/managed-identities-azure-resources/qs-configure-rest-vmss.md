@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 01/29/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb14a6a82535ac5a7d36213b082d08aedbb44da5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 585e31ab566cc990af2819fcf9cdde0506560208
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99090617"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780169"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-rest-api-calls"></a>Beheerde identiteiten voor Azure-resources configureren op een virtuele-machineschaalset met behulp van REST API-aanroepen
 
@@ -60,13 +60,13 @@ In deze sectie leert u hoe u een door het systeem toegewezen beheerde identiteit
 
 Als u een virtuele-machineschaalset wilt maken waarvoor een door het systeem toegewezen beheerde identiteit is ingeschakeld, moet u een virtuele-machineschaalset maken en een toegangstoken ophalen om met CURL het Resource Manager-eindpunt aan te roepen met de waarde van het door het systeem toegewezen beheerde identiteitstype.
 
-1. Maak met [az group create](/cli/azure/group/#az-group-create) een [resourcegroep](../../azure-resource-manager/management/overview.md#terminology) voor de insluiting en implementatie van uw virtuele-machineschaalset en de bijbehorende resources. U kunt deze stap overslaan als u al een resourcegroep hebt die u in plaats daarvan wilt gebruiken:
+1. Maak met [az group create](/cli/azure/group/#az_group_create) een [resourcegroep](../../azure-resource-manager/management/overview.md#terminology) voor de insluiting en implementatie van uw virtuele-machineschaalset en de bijbehorende resources. U kunt deze stap overslaan als u al een resourcegroep hebt die u in plaats daarvan wilt gebruiken:
 
    ```azurecli-interactive 
    az group create --name myResourceGroup --location westus
    ```
 
-2. Maak een [netwerkinterface](/cli/azure/network/nic#az-network-nic-create) voor uw virtuele-machineschaalset:
+2. Maak een [netwerkinterface](/cli/azure/network/nic#az_network_nic_create) voor uw virtuele-machineschaalset:
 
    ```azurecli-interactive
     az network nic create -g myResourceGroup --vnet-name myVnet --subnet mySubnet -n myNic
@@ -325,7 +325,7 @@ In deze sectie leert u hoe u een door de gebruiker toegewezen beheerde identitei
    az account get-access-token
    ```
 
-2. Maak een [netwerkinterface](/cli/azure/network/nic#az-network-nic-create) voor uw virtuele-machineschaalset:
+2. Maak een [netwerkinterface](/cli/azure/network/nic#az_network_nic_create) voor uw virtuele-machineschaalset:
 
    ```azurecli-interactive
     az network nic create -g myResourceGroup --vnet-name myVnet --subnet mySubnet -n myNic

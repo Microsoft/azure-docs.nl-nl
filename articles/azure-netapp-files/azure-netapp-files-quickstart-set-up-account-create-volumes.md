@@ -8,12 +8,12 @@ ms.workload: storage
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: devx-track-azurecli, subject-armqs
-ms.openlocfilehash: 0b48963fa6cb28c836c57de8b46861ef83752231
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 77d5ce2cc903be51b7a38d6edc34bb8424c52ddb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107388552"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786095"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Quickstart: Azure NetApp Files instellen en een NFS-volume maken
 
@@ -147,7 +147,7 @@ Zie [Registreren voor Azure NetApp Files](azure-netapp-files-register.md) voor m
     > Om de regionaam te verkrijgen die wordt ondersteund door onze opdrachtregelprogramma's gebruikt u `az account list-locations --query "[].{Region:name}" --out table`
     >
 
-2. Maak een nieuwe resourcegroep met de opdracht [az group create](/cli/azure/group#az-group-create):
+2. Maak een nieuwe resourcegroep met de opdracht [az group create](/cli/azure/group#az_group_create):
 
     ```azurecli-interactive
     az group create \
@@ -155,7 +155,7 @@ Zie [Registreren voor Azure NetApp Files](azure-netapp-files-register.md) voor m
         --location $LOCATION
     ```
 
-3. Maak een Azure NetApp Files-account met de opdracht [az netappfiles account create](/cli/azure/netappfiles/account#az-netappfiles-account-create):
+3. Maak een Azure NetApp Files-account met de opdracht [az netappfiles account create](/cli/azure/netappfiles/account#az_netappfiles_account_create):
 
     ```azurecli-interactive
     az netappfiles account create \
@@ -226,7 +226,7 @@ Het volgende code fragment laat zien hoe u een NetApp-account maakt in een Azure
     SERVICE_LEVEL="Premium" # Valid values are Standard, Premium and Ultra
     ```
 
-2. Een nieuwe capaciteitspool maken met de opdracht [az netappfiles pool create](/cli/azure/netappfiles/pool#az-netappfiles-pool-create)
+2. Een nieuwe capaciteitspool maken met de opdracht [az netappfiles pool create](/cli/azure/netappfiles/pool#az_netappfiles_pool_create)
 
     ```azurecli-interactive
     az netappfiles pool create \
@@ -343,7 +343,7 @@ Het volgende codefragment laat zien hoe u een capaciteitspool maakt in een Azure
     SUBNET_NAME="myANFSubnet"
     ```
 
-1. Maak een virtueel netwerk zonder subnet met de opdracht [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create).
+1. Maak een virtueel netwerk zonder subnet met de opdracht [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create).
 
     ```azurecli-interactive
     az network vnet create \
@@ -354,7 +354,7 @@ Het volgende codefragment laat zien hoe u een capaciteitspool maakt in een Azure
 
     ```
 
-2. Maak een gedelegeerd subnet met de opdracht [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create).
+2. Maak een gedelegeerd subnet met de opdracht [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create).
 
     ```azurecli-interactive
     az network vnet subnet create \
@@ -365,7 +365,7 @@ Het volgende codefragment laat zien hoe u een capaciteitspool maakt in een Azure
         --delegations "Microsoft.NetApp/volumes"
     ```
 
-3. Maak het volume met de opdracht [az netappfiles volume create](/cli/azure/netappfiles/volume#az-netappfiles-volume-create).
+3. Maak het volume met de opdracht [az netappfiles volume create](/cli/azure/netappfiles/volume#az_netappfiles_volume_create).
 
     ```azurecli-interactive
     VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP --name $VNET_NAME --query "id" -o tsv)
@@ -449,7 +449,7 @@ Wanneer u klaar bent en als u wilt, kunt u de resourcegroep verwijderen. Het ver
 > [!IMPORTANT]
 > Alle resources binnen de resourcegroepen worden permanent verwijderd en kunnen niet worden hersteld.
 
-1. U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az-group-delete).
+1. U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az_group_delete).
 
     ```azurecli-interactive
     az group delete \

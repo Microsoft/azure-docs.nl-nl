@@ -3,19 +3,18 @@ title: Informatie over toegangsbeheer van Azure Key Vault-certificaten
 description: Overzicht van toegangsbeheer van Azure Key Vault-certificaten
 services: key-vault
 author: sebansal
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
 ms.topic: overview
 ms.date: 10/12/2020
 ms.author: sebansal
-ms.openlocfilehash: 1308debb34d724f93526b776f19e0cbf1914d945
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 54874f30384d7f4827b13a597a469bfc67bc8fd2
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92128543"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107752476"
 ---
 # <a name="certificate-access-control"></a>Toegangsbeheer voor certificaten
 

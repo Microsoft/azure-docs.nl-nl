@@ -1,119 +1,119 @@
 ---
-title: De kosten van het verbruiks abonnement in Azure Functions schatten
-description: Meer informatie over hoe u de kosten die u kunt doen bij het uitvoeren van uw functie-app in een verbruiks abonnement in azure, beter kunt schatten.
+title: Kosten van verbruiksplannen schatten in Azure Functions
+description: Meer informatie over het beter inschatten van de kosten die u kunt maken bij het uitvoeren van uw functie-app in een verbruiksplan in Azure.
 ms.date: 9/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4967e0ff79a638891da4f784cf2f5f1ca4ddfe51
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 648be6325cce5bad36795b113c8bbccb3e21d37b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100578565"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107773999"
 ---
 # <a name="estimating-consumption-plan-costs"></a>Kosten schatten voor verbruiksplan
 
-Er zijn momenteel drie typen hosting plannen voor een app die wordt uitgevoerd in Azure Functions, waarbij elk abonnement een eigen prijs model heeft: 
+Er zijn momenteel drie typen hostingplannen voor een app die wordt uitgevoerd in Azure Functions, met elk abonnement een eigen prijsmodel: 
 
 | Plannen | Description |
 | ---- | ----------- |
-| [**Verbruik**](consumption-plan.md) | Er worden alleen kosten in rekening gebracht voor de tijd dat uw functie-app wordt uitgevoerd. Dit abonnement bevat een [gratis][prijs pagina] voor granting per abonnement.|
-| [**Premium**](functions-premium-plan.md) | Biedt u dezelfde functies en schaal methode als het verbruiks abonnement, maar met verbeterde prestaties en VNET-toegang. De kosten zijn gebaseerd op de gekozen prijs categorie. Zie [Azure functions Premium-abonnement](functions-premium-plan.md)voor meer informatie. |
-| [**Toegewezen (App Service)**](dedicated-plan.md) <br/>(Basic-laag of hoger) | Wanneer u moet worden uitgevoerd in specifieke Vm's of in isolatie, gebruikt u aangepaste installatie kopieën of wilt u uw overtollige App Service plan capaciteit gebruiken. Maakt gebruik van de facturering van het [normale app service plan](https://azure.microsoft.com/pricing/details/app-service/). De kosten zijn gebaseerd op de gekozen prijs categorie.|
+| [**Verbruik**](consumption-plan.md) | Er worden alleen kosten in rekening gebracht voor de tijd dat uw functie-app wordt uitgevoerd. Dit abonnement bevat een pagina met[gratis toekenningsprijzen] per abonnement. []|
+| [**Premium**](functions-premium-plan.md) | Biedt u dezelfde functies en schaalmechanisme als het verbruiksplan, maar met verbeterde prestaties en VNET-toegang. De kosten zijn gebaseerd op de gekozen prijscategorie. Zie Premium-abonnement [Azure Functions voor meer informatie.](functions-premium-plan.md) |
+| [**Toegewezen (App Service)**](dedicated-plan.md) <br/>(Basic-laag of hoger) | Wanneer u wilt uitvoeren in toegewezen VM's of geïsoleerd, gebruikt u aangepaste afbeeldingen of wilt u uw overtollige capaciteit van App Service gebruiken. Maakt [gebruik van App Service abonnement.](https://azure.microsoft.com/pricing/details/app-service/) De kosten zijn gebaseerd op de gekozen prijscategorie.|
 
-U hebt het abonnement gekozen dat het beste past bij de prestaties en kosten vereisten van uw functie. Zie [Azure functions schalen en hosten](functions-scale.md)voor meer informatie.
+U hebt het plan gekozen dat het beste ondersteuning biedt voor uw functieprestaties en kostenvereisten. Zie Schalen en [hosten Azure Functions voor meer informatie.](functions-scale.md)
 
-Dit artikel behandelt alleen het verbruiks abonnement, omdat dit plan de variabele kosten als resultaat heeft. In dit artikel vervangt u het artikel [Veelgestelde vragen over het gebruik van kosten voor het verbruiks plan](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ) .
+In dit artikel wordt alleen het verbruiksplan beschreven, omdat dit plan resulteert in variabele kosten. In dit artikel wordt het artikel Veelgestelde vragen over facturering van [verbruiksplannen](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ) over kosten overschreven.
 
-Durable Functions kan ook worden uitgevoerd in een verbruiks abonnement. Zie [Durable functions facturering](./durable/durable-functions-billing.md)voor meer informatie over de kosten overwegingen bij het gebruik van Durable functions.
+Durable Functions kunnen ook worden uitgevoerd in een verbruiksplan. Zie facturering voor meer informatie over de kostenoverwegingen bij Durable Functions [gebruik van Durable Functions facturering.](./durable/durable-functions-billing.md)
 
 ## <a name="consumption-plan-costs"></a>Kosten van verbruiksabonnement
 
-De uitvoerings *kosten* van het uitvoeren van één functie worden gemeten in *GB seconden*. De uitvoerings kosten worden berekend door het geheugen gebruik te combi neren met de uitvoerings tijd. Een functie waarmee meer kosten worden uitgevoerd, zoals een functie die meer geheugen gebruikt. 
+De *uitvoeringskosten* van een uitvoering van één functie worden gemeten in *GB-seconden.* De uitvoeringskosten worden berekend door het geheugengebruik te combineren met de uitvoeringstijd. Een functie die langer wordt uitgevoerd, kost meer, net als een functie die meer geheugen verbruikt. 
 
-Bekijk een geval waarbij de hoeveelheid geheugen die wordt gebruikt door de functie constant blijft. In dit geval is het berekenen van de kosten eenvoudige vermenigvuldiging. Stel bijvoorbeeld dat uw functie gedurende drie seconden 0,5 GB verbruikt. De uitvoerings kosten zijn dan `0.5GB * 3s = 1.5 GB-seconds` . 
+Denk bijvoorbeeld aan een geval waarin de hoeveelheid geheugen die wordt gebruikt door de functie constant blijft. In dit geval is het berekenen van de kosten een eenvoudige vermenigvuldiging. Stel bijvoorbeeld dat uw functie 0,5 GB heeft verbruikt voor 3 seconden. Vervolgens zijn de uitvoeringskosten `0.5GB * 3s = 1.5 GB-seconds` . 
 
-Omdat het geheugen gebruik na verloop van tijd verandert, is de berekening in feite de integraal van het geheugen gebruik in de loop van de tijd.  Het systeem voert deze berekening uit door het geheugen gebruik van het proces (samen met de onderliggende processen) met regel matige tussen pozen te bemonsteren. Zoals vermeld op de [pagina met prijzen], wordt het geheugen gebruik naar boven afgerond naar de dichtstbijzijnde Bucket van 128 MB. Wanneer uw proces 160 MB gebruikt, worden er kosten in rekening gebracht voor 256 MB. De berekening houdt rekening met gelijktijdigheid, wat meerdere gelijktijdige uitvoeringen van functies in hetzelfde proces is.
+Omdat het geheugengebruik na een periode verandert, is de berekening in feite het integraal onderdeel van het geheugengebruik in de tijd.  Het systeem doet deze berekening door regelmatig een steekproef te nemen van het geheugengebruik van het proces (samen met onderliggende processen). Zoals vermeld op de [pagina met prijzen,]wordt het geheugengebruik afgerond naar de dichtstbijzijnde bucket van 128 MB. Wanneer uw proces 160 MB gebruikt, worden er kosten in rekening gebracht voor 256 MB. Bij de berekening wordt rekening gehouden met gelijktijdigheid. Dit zijn meerdere gelijktijdige functie-uitvoeringen in hetzelfde proces.
 
 > [!NOTE]
-> Hoewel het CPU-gebruik niet rechtstreeks wordt overwogen tijdens de uitvoerings kosten, kan dit gevolgen hebben voor de kosten wanneer dit van invloed is op de uitvoerings tijd van de functie.
+> Hoewel HET CPU-gebruik niet rechtstreeks wordt overwogen in de uitvoeringskosten, kan dit van invloed zijn op de kosten wanneer dit van invloed is op de uitvoeringstijd van de functie.
 
-Als er een fout optreedt voordat de functie code wordt uitgevoerd, wordt er geen kosten in rekening gebracht voor een uitvoering van een door HTTP geactiveerde functie. Dit betekent dat 401 reacties van het platform als gevolg van de validatie van de API-sleutel of de App Service verificatie/autorisatie-functie niet meegerekend voor uw uitvoerings kosten. Evenzo worden 5xx-status code reacties niet meegeteld wanneer ze optreden in het platform voordat een functie de aanvraag verwerkt. Een 5xx-antwoord dat door het platform wordt gegenereerd nadat de functie code is gestart, wordt nog steeds beschouwd als een uitvoering, zelfs als de fout niet wordt veroorzaakt door uw functie code.
+Wanneer er voor een http-geactiveerde functie een fout optreedt voordat uw functiecode wordt uitgevoerd, worden er geen kosten in rekening gebracht voor een uitvoering. Dit betekent dat 401-reacties van het platform vanwege de validatie van de API-sleutel of de functie App Service-verificatie/autorisatie niet meetellen voor de uitvoeringskosten. Op dezelfde manier worden reacties van 5xx-statuscodes niet geteld wanneer ze plaatsvinden op het platform voordat een functie de aanvraag verwerkt. Een 5xx-antwoord dat door het platform wordt gegenereerd nadat uw functiecode is gestart om uit te voeren, wordt nog steeds geteld als een uitvoering, zelfs als de fout niet wordt gegenereerd door uw functiecode.
 
-## <a name="other-related-costs"></a>Andere gerelateerde kosten
+## <a name="other-related-costs"></a>Overige gerelateerde kosten
 
-Wanneer u de totale kosten van het uitvoeren van uw functies in een plan wilt schatten, moet u er rekening mee houden dat de functions-runtime gebruikmaakt van verschillende andere Azure-Services, die elk afzonderlijk worden gefactureerd. Bij het berekenen van de prijzen voor functie-apps, moet u de triggers en bindingen die u met andere Azure-Services integreert, maken en betalen voor deze extra services. 
+Bij het schatten van de totale kosten van het uitvoeren van uw functies in een plan, moet u er rekening mee houden dat de Functions-runtime gebruikmaakt van verschillende andere Azure-services, die elk afzonderlijk worden gefactureerd. Wanneer u de prijzen voor functie-apps berekent, moet u voor alle triggers en bindingen die u hebt die zijn geïntegreerd met andere Azure-services, die extra services maken en betalen. 
 
-Voor functies die in een verbruiks plan worden uitgevoerd, zijn de totale kosten de uitvoerings kosten van uw functies plus de kosten van band breedte en extra services. 
+Voor functies die worden uitgevoerd in een verbruiksplan, zijn de totale kosten de uitvoeringskosten van uw functies, plus de kosten van bandbreedte en aanvullende services. 
 
-Gebruik de [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/?service=functions)bij het schatten van de totale kosten van uw functie-app en gerelateerde services. 
+Gebruik de Azure-prijscalculator bij het schatten van de totale kosten van uw functie-app en [gerelateerde services.](https://azure.microsoft.com/pricing/calculator/?service=functions) 
 
 | Gerelateerde kosten | Beschrijving |
 | ------------ | ----------- |
-| **Opslagaccount** | Voor elke functie-app moet u een gekoppeld Algemeen [Azure Storage account](../storage/common/storage-introduction.md#types-of-storage-accounts)hebben, dat [afzonderlijk wordt gefactureerd](https://azure.microsoft.com/pricing/details/storage/). Dit account wordt intern gebruikt door de functions-runtime, maar u kunt het ook gebruiken voor opslag triggers en bindingen. Als u geen opslag account hebt, wordt er één voor u gemaakt wanneer de functie-app wordt gemaakt. Zie [vereisten voor opslag accounts](storage-considerations.md#storage-account-requirements)voor meer informatie.|
-| **Application Insights** | Functies zijn afhankelijk van [Application Insights](../azure-monitor/app/app-insights-overview.md) om een krachtige bewakings ervaring te bieden voor uw functie-apps. Hoewel dit niet vereist is, moet u [Application Insights-integratie inschakelen](configure-monitoring.md#enable-application-insights-integration). Er wordt elke maand een gratis toekenning van telemetriegegevens opgenomen. Zie [de pagina met prijzen voor Azure monitor](https://azure.microsoft.com/pricing/details/monitor/)voor meer informatie. |
-| **Netwerkbandbreedte** | U betaalt niet voor gegevens overdracht tussen Azure-Services in dezelfde regio. U kunt echter kosten in rekening brengen voor uitgaande gegevens overdracht naar een andere regio of buiten Azure. Zie [prijs informatie voor band breedte](https://azure.microsoft.com/pricing/details/bandwidth/)voor meer informatie. |
+| **Opslagaccount** | Elke functie-app vereist dat u een gekoppeld Algemeen [Azure Storage account](../storage/common/storage-introduction.md#types-of-storage-accounts)hebt, dat [afzonderlijk wordt gefactureerd.](https://azure.microsoft.com/pricing/details/storage/) Dit account wordt intern gebruikt door de Functions-runtime, maar u kunt het ook gebruiken voor Storage-triggers en -bindingen. Als u geen opslagaccount hebt, wordt er een voor u gemaakt wanneer de functie-app wordt gemaakt. Zie Vereisten voor [opslagaccounts voor meer informatie.](storage-considerations.md#storage-account-requirements)|
+| **Application Insights** | Functions is afhankelijk van [Application Insights](../azure-monitor/app/app-insights-overview.md) een krachtige bewakingservaring te bieden voor uw functie-apps. Hoewel dit niet vereist is, moet u [de Application Insights inschakelen.](configure-monitoring.md#enable-application-insights-integration) Elke maand wordt een gratis toekenning van telemetriegegevens opgenomen. Zie de pagina met prijzen [Azure Monitor meer informatie.](https://azure.microsoft.com/pricing/details/monitor/) |
+| **Netwerkbandbreedte** | U betaalt niet voor gegevensoverdracht tussen Azure-services in dezelfde regio. U kunt echter kosten in rekening brengen voor uitgaande gegevensoverdrachten naar een andere regio of buiten Azure. Zie Prijsinformatie voor bandbreedte [voor meer informatie.](https://azure.microsoft.com/pricing/details/bandwidth/) |
 
-## <a name="behaviors-affecting-execution-time"></a>Gedrag van invloed op uitvoerings tijd
+## <a name="behaviors-affecting-execution-time"></a>Gedrag dat de uitvoeringstijd beïnvloedt
 
-Het volgende gedrag van uw functies kan de uitvoerings tijd beïnvloeden:
+Het volgende gedrag van uw functies kan van invloed zijn op de uitvoeringstijd:
 
-+ **Triggers en bindingen**: de tijd die nodig is voor het lezen van invoer van en het schrijven van uitvoer naar uw [functie bindingen](functions-triggers-bindings.md) , wordt als uitvoerings tijd beschouwd. Als uw functie bijvoorbeeld gebruikmaakt van een uitvoer binding voor het schrijven van een bericht naar een Azure Storage-wachtrij, bevat uw uitvoerings tijd de tijd die nodig is om het bericht naar de wachtrij te schrijven, dat is opgenomen in de berekening van de functie kosten. 
++ **Triggers en bindingen:** de tijd die nodig [is](functions-triggers-bindings.md) om invoer van en schrijfuitvoer naar uw functiebindingen te lezen, wordt geteld als uitvoeringstijd. Wanneer uw functie bijvoorbeeld een uitvoerbinding gebruikt om een bericht naar een Azure-opslagwachtrij te schrijven, bevat de uitvoeringstijd de tijd die nodig is om het bericht naar de wachtrij te schrijven. Dit is opgenomen in de berekening van de functiekosten. 
 
-+ **Asynchrone uitvoering**: de tijd die uw functie wacht op de resultaten van een async-aanvraag ( `await` in C#) als uitvoerings tijd. De berekening van de GB-seconde is gebaseerd op de begin-en eind tijd van de functie en het geheugen gebruik in die periode. Wat er gebeurt over die tijd in termen van CPU-activiteit wordt niet in de berekening gefactoreerd. U kunt kosten besparen tijdens asynchrone bewerkingen door gebruik te maken van [Durable functions](durable/durable-functions-overview.md). Er worden geen kosten in rekening gebracht voor de tijd die in de Orchestrator-functies wordt gebruikt om te wachten.
++ **Asynchrone uitvoering:** de tijd dat uw functie wacht op de resultaten van een asynchrone aanvraag ( `await` in C#) wordt geteld als uitvoeringstijd. De berekening van GB-seconde is gebaseerd op de begin- en eindtijd van de functie en het geheugengebruik in die periode. Wat er in die periode gebeurt in termen van CPU-activiteit, wordt niet meegenomen in de berekening. Mogelijk kunt u de kosten verlagen tijdens asynchrone bewerkingen met behulp van [Durable Functions](durable/durable-functions-overview.md). U wordt niet gefactureerd voor de tijd die is besteed aan awaits in orchestrator-functies.
 
-## <a name="viewing-cost-related-data"></a>Kosten-gerelateerde gegevens bekijken
+## <a name="viewing-cost-related-data"></a>Kostengerelateerde gegevens weergeven
 
-In [uw factuur](../cost-management-billing/understand/download-azure-invoice.md)kunt u de kosten gerelateerde gegevens van het **totale aantal uitvoeringen** bekijken-functies en **uitvoerings tijd-functies**, samen met de werkelijke gefactureerde kosten. Deze factuur gegevens zijn echter een maandelijkse statistische functie voor een eerdere factuur periode. 
+In [uw factuur](../cost-management-billing/understand/download-azure-invoice.md)kunt u de kostengerelateerde gegevens bekijken van Totaal aantal uitvoeringen **-** Functies en Uitvoeringstijd - **Functies**, samen met de werkelijke gefactureerde kosten. Deze factuurgegevens zijn echter een maandelijkse statistische functie voor een eerdere factuurperiode. 
 
-### <a name="function-app-level-metrics"></a>Metrische gegevens op app-niveau functie
+### <a name="function-app-level-metrics"></a>Metrische gegevens op app-niveau van functie
 
-Voor een beter begrip van de kosten impact van uw functies kunt u Azure Monitor gebruiken om de metrische gegevens weer te geven die momenteel worden gegenereerd door uw functie-apps. U kunt in de [Azure Portal] -of rest-api's een [Azure monitor Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md) gebruiken om deze gegevens op te halen.
+Als u meer inzicht wilt krijgen in de kostenimpact van uw functies, kunt u Azure Monitor om kostengerelateerde metrische gegevens weer te geven die momenteel worden gegenereerd door uw functie-apps. U kunt deze gegevens [Azure Monitor metrics explorer](../azure-monitor/essentials/metrics-getting-started.md) in de [Azure Portal] of REST API's.
 
 #### <a name="monitor-metrics-explorer"></a>Metrics Explorer bewaken
 
-Gebruik [Azure monitor Metrics Explorer](../azure-monitor/essentials/metrics-getting-started.md) om kostengerelateerde gegevens weer te geven voor de functie-apps van uw verbruiks plan in een grafische indeling. 
+Gebruik [Azure Monitor Metrics Explorer om](../azure-monitor/essentials/metrics-getting-started.md) kostengerelateerde gegevens voor uw verbruiksplanfunctie-apps in een grafische indeling weer te geven. 
 
-1. Klik boven aan de [Azure Portal] in **Zoek Services, resources en docs**  zoeken naar `monitor` en selecteer **monitor** onder **Services**.
+1. Bovenaan de Azure Portal [zoeken] naar **services, resources** en documenten zoeken en controleren selecteren `monitor` onder **Services.** 
 
-1. Selecteer aan de linkerkant **metrische gegevens**  >  en **Selecteer een resource** en gebruik vervolgens de instellingen onder de afbeelding om uw functie-app te kiezen.
+1. Selecteer aan de linkerkant  >  **Metrische gegevens Selecteer een resource** en gebruik vervolgens de instellingen onder de afbeelding om uw functie-app te kiezen.
 
-    ![De resource voor de functie-app selecteren](media/functions-consumption-costing/select-a-resource.png)
+    ![Uw functie-app-resource selecteren](media/functions-consumption-costing/select-a-resource.png)
 
       
     |Instelling  |Voorgestelde waarde  |Beschrijving  |
     |---------|---------|---------|
     | Abonnement    |  Uw abonnement  | Het abonnement met uw functie-app.  |
-    | Resourcegroep     | De resource groep  | De resource groep die de functie-app bevat.   |
-    | Resourcetype     |  App Services | Functie-apps worden weer gegeven als App Services instanties in monitor. |
+    | Resourcegroep     | Uw resourcegroep  | De resourcegroep die uw functie-app bevat.   |
+    | Resourcetype     |  App Services | Functie-apps worden weergegeven als App Services in Monitor. |
     | Resource     |  Uw functie-app  | De functie-app die moet worden bewaakt.        |
 
-1. Selecteer **Toep assen** om uw functie-app te kiezen als de te controleren bron.
+1. Selecteer **Toepassen om** uw functie-app te kiezen als de resource die u wilt bewaken.
 
-1. Kies bij **metriek** het **aantal functies** en de **som** voor **aggregatie**. Hiermee voegt u de som van de uitvoerings aantallen tijdens de gekozen periode toe aan de grafiek.
+1. Kies **in Metrische** gegevens **Het aantal uitvoeringen van functies** en **Som** **voor Aggregatie**. Hiermee wordt de som van het aantal uitvoeringen tijdens de gekozen periode toegevoegd aan de grafiek.
 
-    ![Definieer de metrische gegevens van een functie-app die u aan de grafiek wilt toevoegen](media/functions-consumption-costing/monitor-metrics-add-metric.png)
+    ![Metrische gegevens voor een functie-app definiëren om toe te voegen aan de grafiek](media/functions-consumption-costing/monitor-metrics-add-metric.png)
 
-1. Selecteer **metrische gegevens toevoegen** en herhaal stap 2-4 om **eenheden voor functie-uitvoering** toe te voegen aan de grafiek. 
+1. Selecteer **Metrische waarde toevoegen** en herhaal stap 2-4 om functie-uitvoeringseenheden aan **de** grafiek toe te voegen. 
 
-De resulterende grafiek bevat de totalen voor zowel uitvoerings metrieken in het gekozen tijds bereik, in dit geval twee uur.
+De resulterende grafiek bevat de totalen voor beide metrische uitvoeringsgegevens in het gekozen tijdsbereik, in dit geval twee uur.
 
-![Grafiek van het aantal functie-en uitvoerings eenheden](media/functions-consumption-costing/monitor-metrics-execution-sum.png)
+![Grafiek van het aantal uitvoeringen van functies en uitvoeringseenheden](media/functions-consumption-costing/monitor-metrics-execution-sum.png)
 
-Naarmate het aantal uitvoerings eenheden zoveel groter is dan het aantal uitvoeringen, toont de grafiek alleen uitvoerings eenheden.
+Omdat het aantal uitvoeringseenheden zoveel groter is dan het aantal uitvoeringen, toont de grafiek alleen uitvoeringseenheden.
 
-Dit diagram toont een totaal van 1.110.000.000 `Function Execution Units` verbruikt in een periode van twee uur, gemeten in MB milliseconden. Als u wilt converteren naar GB-seconden, deelt u door 1024000. In dit voor beeld verbruikt de functie `1110000000 / 1024000 = 1083.98` -app GB seconden. U kunt deze waarde nemen en vermenigvuldigen met de huidige prijs van de uitvoerings tijd op de pagina met prijs informatie voor de [pagina met prijzen][, waarmee]u rekening moet houden met de kosten van deze twee uur, ervan uitgaande dat u al een gratis toekenning van de uitvoerings tijd hebt gebruikt. 
+In dit diagram ziet u in totaal 1,11 miljard verbruikt in een periode van twee uur, gemeten `Function Execution Units` in MB milliseconden. Als u wilt converteren naar GB-seconden, deelt u door 1024000. In dit voorbeeld heeft de functie-app `1110000000 / 1024000 = 1083.98` GB-seconden verbruikt. U kunt deze waarde nemen en vermenigvuldigen met de huidige prijs van de uitvoeringstijd op de pagina met prijzen voor [Functions,][]waar u de kosten van deze twee uur krijgt, ervan uitgaande dat u al gratis toekenningen van uitvoeringstijd hebt gebruikt. 
 
 #### <a name="azure-cli"></a>Azure CLI
 
-De [Azure cli](/cli/azure/) bevat opdrachten voor het ophalen van metrische gegevens. U kunt de CLI vanuit een lokale opdracht omgeving of rechtstreeks vanuit de portal gebruiken met behulp van [Azure Cloud shell](../cloud-shell/overview.md). De volgende opdracht [AZ monitor Metrics List](/cli/azure/monitor/metrics#az-monitor-metrics-list) retourneert bijvoorbeeld elk uur gegevens over dezelfde tijds periode die eerder is gebruikt.
+De [Azure CLI heeft](/cli/azure/) opdrachten voor het ophalen van metrische gegevens. U kunt de CLI gebruiken vanuit een lokale opdrachtomgeving of rechtstreeks vanuit de portal met behulp [van Azure Cloud Shell](../cloud-shell/overview.md). De volgende opdracht [az monitor metrics list retourneert](/cli/azure/monitor/metrics#az_monitor_metrics_list) bijvoorbeeld elk uur gegevens over dezelfde periode die eerder is gebruikt.
 
-Zorg ervoor dat u vervangt door de `<AZURE_SUBSCRIPTON_ID>` id van uw Azure-abonnement met de opdracht.
+Zorg ervoor dat u vervangt `<AZURE_SUBSCRIPTON_ID>` door de id van uw Azure-abonnement met de opdracht .
 
 ```azurecli-interactive
 az monitor metrics list --resource /subscriptions/<AZURE_SUBSCRIPTION_ID>/resourceGroups/metrics-testing-consumption/providers/Microsoft.Web/sites/metrics-testing-consumption --metric FunctionExecutionUnits,FunctionExecutionCount --aggregation Total --interval PT1H --start-time 2019-09-11T21:46:00Z --end-time 2019-09-11T23:18:00Z
 ```
 
-Met deze opdracht wordt een JSON-nettolading geretourneerd die eruitziet als in het volgende voor beeld:
+Deze opdracht retourneert een JSON-nettolading die lijkt op het volgende voorbeeld:
 
 ```json
 {
@@ -192,20 +192,20 @@ Met deze opdracht wordt een JSON-nettolading geretourneerd die eruitziet als in 
   ]
 }
 ```
-Dit specifieke antwoord laat zien dat van `2019-09-11T21:46` tot `2019-09-11T23:18` , dat de app 1110000000 MB milliseconden (1083,98 GB-seconden) verbruikt.
+Dit specifieke antwoord laat zien dat de app van tot `2019-09-11T21:46` `2019-09-11T23:18` 11100000000 MB heeft verbruikt (1083,98 GB seconden).
 
-### <a name="function-level-metrics"></a>Metrische functie niveaus
+### <a name="function-level-metrics"></a>Metrische gegevens op functieniveau
 
-Eenheden voor het uitvoeren van functies zijn een combi natie van uitvoerings tijd en het geheugen gebruik. Dit maakt het een lastige meet waarde voor het geheugen gebruik. Geheugen gegevens zijn momenteel niet beschikbaar via Azure Monitor. Als u echter het geheugen gebruik van uw app wilt optimaliseren, kunt u de gegevens van de prestatie meter items die worden verzameld door Application Insights gebruiken.  
+Functie-uitvoeringseenheden zijn een combinatie van uitvoeringstijd en uw geheugengebruik, waardoor het lastig is om inzicht te krijgen in het geheugengebruik. Geheugengegevens zijn momenteel geen metrische gegevens die beschikbaar zijn via Azure Monitor. Als u echter het geheugengebruik van uw app wilt optimaliseren, kunt u de prestatiemetergegevens gebruiken die door de Application Insights.  
 
-Als u dit nog niet hebt gedaan, [schakelt u Application Insights in uw functie-app in](configure-monitoring.md#enable-application-insights-integration). Als deze integratie is ingeschakeld, kunt u [een query uitvoeren op deze telemetriegegevens in de portal](analyze-telemetry-data.md#query-telemetry-data). 
+Als u dit nog niet hebt gedaan, kunt [u Application Insights in uw functie-app inschakelen.](configure-monitoring.md#enable-application-insights-integration) Als deze integratie is ingeschakeld, kunt u [deze telemetriegegevens opvragen in de portal](analyze-telemetry-data.md#query-telemetry-data). 
 
 [!INCLUDE [functions-consumption-metrics-queries](../../includes/functions-consumption-metrics-queries.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Meer informatie over het bewaken van functie-apps](functions-monitoring.md)
+> [Meer informatie over functie-apps bewaken](functions-monitoring.md)
 
 [pagina met prijzen]:https://azure.microsoft.com/pricing/details/functions/
 [Azure-portal]: https://portal.azure.com

@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: b5bc453e2e0371ee0412824f01d99863b12d91e2
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: a270f482438129b7b07506744bf3f9489b242900
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107375369"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787481"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -33,7 +33,7 @@ Als u liever niet ontwikkelt met Maven, raadpleegt u onze vergelijkbare zelfstud
 
 Voordat u begint, moet u het volgende hebben:
 
-+ Een Azure-account met een actief account <abbr title="De basisstructuur van de organisatie waarin u resources in Azure beheert, meestal gekoppeld aan een persoon of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
++ Een Azure-account met een actief account <abbr title="De basisstructuur van de organisatie waarin u resources in Azure beheert, meestal gekoppeld aan een individu of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 
 + De [Azure Functions Core Tools](functions-run-local.md#v2), versie 3.x.
 
@@ -131,7 +131,7 @@ Het archetype genereert ook een moduletest voor uw functie. Wanneer u de functie
 <details>
 <summary><strong>Code voor pom.xml</strong></summary>
 
-Instellingen voor de Azure-resources die zijn  gemaakt voor het hosten van uw app, worden gedefinieerd in het configuratie-element van de invoeging met een **groupId** van in het `com.microsoft.azure` *gegenereerde* pom.xmlbestand. Met het configuratie-element hieronder wordt bijvoorbeeld een implementatie op basis van Maven instrueren om een functie-app te maken in de `java-functions-group` resourcegroep in de `westus` <abbr title="Een geografische verwijzing naar een specifiek Azure-datacenter waarin resources worden toegewezen.">regio</abbr>. De functie-app zelf wordt uitgevoerd in Windows binnen het `java-functions-app-service-plan`-plan. Dit is standaard een serverloos verbruiksabonnement.
+Instellingen voor de Azure-resources die zijn  gemaakt voor het hosten van uw app, worden gedefinieerd in het configuratie-element van de invoegvoeging met een **groupId** van in het `com.microsoft.azure` *gegenereerde* pom.xmlbestand. Met het configuratie-element hieronder wordt bijvoorbeeld een implementatie op basis van Maven instrueren om een functie-app te maken in de `java-functions-group` resourcegroep in de `westus` <abbr title="Een geografische verwijzing naar een specifiek Azure-datacenter waarin resources worden toegewezen.">regio</abbr>. De functie-app zelf wordt uitgevoerd in Windows binnen het `java-functions-app-service-plan`-plan. Dit is standaard een serverloos verbruiksabonnement.
 
 :::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-107":::
 
@@ -164,7 +164,7 @@ U kunt deze instellingen wijzigen om te bepalen hoe resources worden gemaakt in 
     ...
     </pre>
 
-    Als HttpExample niet verschijnt zoals hierboven weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. Gebruik in dat geval <kbd>Ctrl+C om</kbd> de host te stoppen, navigeer naar de hoofdmap van het project en voer de vorige opdracht opnieuw uit.
+    Als HttpExample niet verschijnt zoals hierboven weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. In dat geval gebruikt u <kbd>Ctrl+C om</kbd> de host te stoppen, naar de hoofdmap van het project te navigeren en de vorige opdracht opnieuw uit te voeren.
 
 1. **Kopieer de URL** van uw functie uit deze uitvoer naar een browser en kopieer de querytekenreeks , waardoor de `HttpExample` volledige URL wordt `?name=<YOUR_NAME>` gemaakt, zoals `http://localhost:7071/api/HttpExample?name=Functions` . In de browser moet een bericht als het volgende weergeven `Hello Functions`:
 
@@ -185,7 +185,7 @@ Er worden een functie-app en gerelateerde resources in Azure gemaakt wanneer u u
 <details>
 <summary><strong>Een functie-app maken die wordt uitgevoerd in Linux</strong></summary>
 
-Als u een functie-app wilt maken die wordt uitgevoerd op Linux in plaats van Windows, wijzigt u het `runtime.os` element in *hetpom.xml-bestand* van `windows` in `linux` . Het uitvoeren van Linux in een verbruiksplan wordt ondersteund in [deze regio's](https://github.com/Azure/azure-functions-host/wiki/Linux-Consumption-Regions). U kunt apps die worden uitgevoerd op Linux en apps die worden uitgevoerd in Windows niet dezelfde resourcegroep gebruiken.
+Als u een functie-app wilt maken die wordt uitgevoerd op Linux in plaats van Windows, wijzigt u het `runtime.os` element in het *pom.xml* van `windows` in `linux` . Het uitvoeren van Linux in een verbruiksplan wordt ondersteund in [deze regio's](https://github.com/Azure/azure-functions-host/wiki/Linux-Consumption-Regions). U kunt apps die worden uitgevoerd op Linux en apps die worden uitgevoerd in Windows niet dezelfde resourcegroep gebruiken.
 </details>
 
 1. Voordat u kunt implementeren, meldt u zich aan bij uw Azure-abonnement met behulp van Azure CLI of Azure PowerShell. 
@@ -195,7 +195,7 @@ Als u een functie-app wilt maken die wordt uitgevoerd op Linux in plaats van Win
     az login
     ```
 
-    Met de opdracht [az login](/cli/azure/reference-index#az-login) meldt u zich aan bij uw Azure-account.
+    Met de opdracht [az login](/cli/azure/reference-index#az_login) meldt u zich aan bij uw Azure-account.
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell) 
     ```azurepowershell

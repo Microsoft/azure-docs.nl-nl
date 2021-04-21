@@ -1,7 +1,7 @@
 ---
-title: TDE-beveiliging (Power shell & de Azure CLI) verwijderen
+title: TDE-beveiliging verwijderen (PowerShell & Azure CLI)
 titleSuffix: Azure SQL Database & Azure Synapse Analytics
-description: Meer informatie over hoe u kunt reageren op een mogelijk aangetast TDE-Protector voor Azure SQL Database of Azure Synapse Analytics met behulp van TDE met Bring Your Own Key-ondersteuning (BYOK).
+description: Informatie over hoe u reageert op een mogelijk aangetaste TDE-beveiliging voor Azure SQL Database of Azure Synapse Analytics met behulp van TDE met Bring Your Own Key (BYOK)-ondersteuning.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -12,54 +12,54 @@ author: shohamMSFT
 ms.author: shohamd
 ms.reviewer: vanto
 ms.date: 02/24/2020
-ms.openlocfilehash: c1613c61143044c4fa355c6225cf0fa1d4e2e09d
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: f98dcdd9c1a479703c82c01b4fd240507ea355de
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107308384"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784457"
 ---
-# <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Een Transparent Data Encryption-Protector (TDE) verwijderen met behulp van Power shell
+# <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Een TDE Transparent Data Encryption beveiliging verwijderen met behulp van PowerShell
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
 
-In dit onderwerp wordt beschreven hoe u kunt reageren op een mogelijk aangetast TDE-bescherming voor Azure SQL Database of Azure Synapse Analytics die gebruikmaakt van TDE met door de klant beheerde sleutels in Azure Key Vault-Bring Your Own Key (BYOK)-ondersteuning. Zie de [pagina overzicht](transparent-data-encryption-byok-overview.md)voor meer informatie over BYOK-ondersteuning voor TDe.
+In dit onderwerp wordt beschreven hoe u reageert op een mogelijk aangetaste TDE-bescherming voor Azure SQL Database of Azure Synapse Analytics die TDE gebruikt met door de klant beheerde sleutels in Azure Key Vault- Bring Your Own Key(BYOK)-ondersteuning. Zie de overzichtspagina voor meer informatie over BYOK-ondersteuning [voor](transparent-data-encryption-byok-overview.md)TDE.
 
 > [!CAUTION]
-> De procedures die in dit artikel worden beschreven, mogen alleen in uitzonderlijke gevallen of in test omgevingen worden uitgevoerd. Bekijk de stappen zorgvuldig, omdat het verwijderen van actief gebruikte TDE-Protectors van Azure Key Vault ertoe leidt dat de **Data Base niet meer beschikbaar** is.
+> De procedures die in dit artikel worden beschreven, mogen alleen worden uitgevoerd in extreme gevallen of in testomgevingen. Controleer de stappen zorgvuldig, omdat het verwijderen van actief gebruikte TDE-beveiligingen Azure Key Vault ertoe leidt **dat de database niet meer beschikbaar is.**
 
-Als een sleutel wordt vermoed om te worden aangetast, bijvoorbeeld dat een service of gebruiker ongeoorloofde toegang tot de sleutel had, is het raadzaam om de sleutel te verwijderen.
+Als er ooit wordt vermoed dat een sleutel is aangetast, zodat een service of gebruiker onbevoegde toegang tot de sleutel heeft gehad, kunt u de sleutel het beste verwijderen.
 
-Houd er rekening mee dat wanneer de TDE-Protector wordt verwijderd in Key Vault, in Maxi maal tien minuten, alle versleutelde data bases alle verbindingen met het bijbehorende fout bericht gaan weigeren en de status wijzigen in [ontoegankelijk](./transparent-data-encryption-byok-overview.md#inaccessible-tde-protector).
+Houd er rekening mee dat zodra de TDE-beveiliging in Key Vault is verwijderd, binnen tien minuten alle versleutelde databases alle verbindingen met [](./transparent-data-encryption-byok-overview.md#inaccessible-tde-protector)het bijbehorende foutbericht weigeren en de status ervan wijzigen in Niet-toegankelijk.
 
-Deze hand leiding gaat over twee benaderingen, afhankelijk van het gewenste resultaat na een reactie op incidenten:
+Deze handleiding gaat over twee benaderingen, afhankelijk van het gewenste resultaat na een incidentrespons die is aangetast:
 
-- De data bases in Azure SQL Database/Azure Synapse Analytics **ontoegankelijk** maken.
-- De data bases in Azure SQL Database/Azure Azure Synapse Analytics **ontoegankelijk** maken.
+- Als u de databases in Azure SQL Database/Azure Synapse Analytics **ontoegankelijk wilt maken.**
+- Als u de databases in Azure SQL Database/Azure Azure Synapse Analytics **ontoegankelijk wilt maken.**
 
 ## <a name="prerequisites"></a>Vereisten
 
-- U moet een Azure-abonnement hebben en een beheerder zijn voor dat abonnement
-- Azure PowerShell moet zijn geïnstalleerd en worden uitgevoerd.
-- In deze hand leiding wordt ervan uitgegaan dat u al een sleutel gebruikt uit Azure Key Vault als de TDE-Protector voor een Azure SQL Database of Azure Synapse. Zie [transparent Data Encryption met BYOK-ondersteuning](transparent-data-encryption-byok-overview.md) voor meer informatie.
+- U moet een Azure-abonnement hebben en een beheerder van dat abonnement zijn
+- U moet Azure PowerShell geïnstalleerd en uitgevoerd.
+- In deze handleiding wordt ervan uitgenomen dat u al een sleutel van Azure Key Vault gebruikt als TDE-beveiliging voor een Azure SQL Database of Azure Synapse. Zie [Transparent Data Encryption met BYOK-ondersteuning voor](transparent-data-encryption-byok-overview.md) meer informatie.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
- Raadpleeg [Azure PowerShell installeren](/powershell/azure/install-az-ps) voor instructies over de installatie van de Az-module. Zie [AzureRM. SQL](/powershell/module/AzureRM.Sql/)voor specifieke cmdlets.
+ Raadpleeg [Azure PowerShell installeren](/powershell/azure/install-az-ps) voor instructies over de installatie van de Az-module. Zie [AzureRM.Sql](/powershell/module/AzureRM.Sql/)voor specifieke cmdlets.
 
 > [!IMPORTANT]
-> De module Power shell Azure Resource Manager (RM) wordt nog steeds ondersteund, maar alle toekomstige ontwikkel aars voor de module AZ. SQL. De AzureRM-module blijft tot ten minste december 2020 bugfixes ontvangen.  De argumenten voor de opdrachten in de Az-module en in de AzureRm-modules zijn vrijwel identiek. Zie [Introductie van de nieuwe Az-module van Azure PowerShell](/powershell/azure/new-azureps-module-az) voor meer informatie over de compatibiliteit van de argumenten.
+> De Module PowerShell Azure Resource Manager (RM) wordt nog steeds ondersteund, maar alle toekomstige ontwikkeling is voor de Az.Sql-module. De AzureRM-module blijft tot ten minste december 2020 bugfixes ontvangen.  De argumenten voor de opdrachten in de Az-module en in de AzureRm-modules zijn vrijwel identiek. Zie [Introductie van de nieuwe Az-module van Azure PowerShell](/powershell/azure/new-azureps-module-az) voor meer informatie over de compatibiliteit van de argumenten.
 
 # <a name="the-azure-cli"></a>[De Azure CLI](#tab/azure-cli)
 
-Zie [de Azure cli installeren](/cli/azure/install-azure-cli)voor installatie.
+Zie Azure CLI installeren [voor de installatie.](/cli/azure/install-azure-cli)
 
 * * *
 
-## <a name="check-tde-protector-thumbprints"></a>TDE-beveiligings vingerafdrukken controleren
+## <a name="check-tde-protector-thumbprints"></a>Vingerafdruk van TDE-beveiliging controleren
 
-In de volgende stappen wordt beschreven hoe u kunt controleren of de TDE-beveiligings vingerafdrukten nog steeds worden gebruikt door virtuele logboek bestanden (VLF) van een bepaalde data base.
-De vinger afdruk van de huidige TDE-Protector van de data base en de data base-ID kunt u vinden door het volgende uit te voeren:
+In de volgende stappen wordt beschreven hoe u de vingerafdruk van de TDE-beveiliging controleert die nog steeds wordt gebruikt door Virtual Log Files (VLF) van een bepaalde database.
+De vingerafdruk van de huidige TDE-beveiliging van de database en de database-id kunt u vinden door het volgende uit te uitvoeren:
 
 ```sql
 SELECT [database_id],
@@ -69,31 +69,31 @@ SELECT [database_id],
  FROM [sys].[dm_database_encryption_keys]
 ```
 
-Met de volgende query worden de VLFs en de respectievelijke vinger afdrukken van de TDE-Protector in gebruik geretourneerd. Elke andere vinger afdruk verwijst naar een andere sleutel in Azure Key Vault (Azure):
+De volgende query retourneert de VLFs en de respectievelijke TDE-beveiliging vingerafdruk in gebruik. Elke verschillende vingerafdruk verwijst naar een andere sleutel in Azure Key Vault (AKV):
 
 ```sql
 SELECT * FROM sys.dm_db_log_info (database_id)
 ```
 
-U kunt ook Power shell of de Azure CLI gebruiken:
+U kunt ook PowerShell of de Azure CLI gebruiken:
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-De Power shell **-opdracht Get-AzureRmSqlServerKeyVaultKey**   biedt de vinger afdruk van de TDe-Protector die in de query wordt gebruikt, zodat u kunt zien welke sleutels moeten worden bewaard en welke sleutels moeten worden verwijderd in Azure. Alleen sleutels die niet meer door de Data Base worden gebruikt, kunnen veilig worden verwijderd uit Azure Key Vault.
+De **PowerShell-opdracht Get-AzureRmSqlServerKeyVaultKey** biedt de vingerafdruk van de TDE-beveiliging die in de query wordt gebruikt, zodat u kunt zien welke sleutels u wilt behouden en welke sleutels u wilt verwijderen   in AKV. Alleen sleutels die niet meer door de database worden gebruikt, kunnen veilig worden verwijderd uit Azure Key Vault.
 
 # <a name="the-azure-cli"></a>[De Azure CLI](#tab/azure-cli)
 
-De Power shell-opdracht **AZ SQL Server key show**   biedt de vinger afdruk van de TDe-Protector die in de query wordt gebruikt, zodat u kunt zien welke sleutels moeten worden bewaard en welke sleutels moeten worden verwijderd in Azure. Alleen sleutels die niet meer door de Data Base worden gebruikt, kunnen veilig worden verwijderd uit Azure Key Vault.
+De PowerShell-opdracht **az sql server key show** bevat de vingerafdruk van de TDE-beveiliging die in de query wordt gebruikt, zodat u kunt zien welke sleutels u wilt behouden en welke sleutels u   wilt verwijderen in AKV. Alleen sleutels die niet meer door de database worden gebruikt, kunnen veilig worden verwijderd uit Azure Key Vault.
 
 * * *
 
-## <a name="keep-encrypted-resources-accessible"></a>Versleutelde bronnen toegankelijk blijven
+## <a name="keep-encrypted-resources-accessible"></a>Versleutelde resources toegankelijk houden
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-1. Maak een [nieuwe sleutel in Key Vault](/powershell/module/az.keyvault/add-azkeyvaultkey). Zorg ervoor dat deze nieuwe sleutel wordt gemaakt in een afzonderlijke sleutel kluis van de mogelijk aangetast TDE-beveiliging, omdat toegangs beheer is ingericht op het niveau van de kluis.
+1. Maak een [nieuwe sleutel in Key Vault](/powershell/module/az.keyvault/add-azkeyvaultkey). Zorg ervoor dat deze nieuwe sleutel is gemaakt in een afzonderlijke sleutelkluis van de mogelijk aangetaste TDE-beveiliging, omdat toegangsbeheer is ingericht op kluisniveau.
 
-2. Voeg de nieuwe sleutel toe aan de server met de cmdlets [add-AzSqlServerKeyVaultKey](/powershell/module/az.sql/add-azsqlserverkeyvaultkey) en [set-AzSqlServerTransparentDataEncryptionProtector](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) en werk deze bij als de nieuwe TDe-beveiliging van de server.
+2. Voeg de nieuwe sleutel toe aan de server met behulp van de cmdlets [Add-AzSqlServerKeyVaultKey](/powershell/module/az.sql/add-azsqlserverkeyvaultkey) en [Set-AzSqlServerTransparentDataEncryptionProtector](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) en werk deze bij als de nieuwe TDE-beveiliging van de server.
 
    ```powershell
    # add the key from Key Vault to the server  
@@ -104,29 +104,29 @@ De Power shell-opdracht **AZ SQL Server key show**   biedt de vinger afdruk va
        -ServerName <LogicalServerName> -Type AzureKeyVault -KeyId <KeyVaultKeyId>
    ```
 
-3. Zorg ervoor dat de server en eventuele replica's zijn bijgewerkt naar de nieuwe TDE-beveiliging met behulp van de cmdlet [Get-AzSqlServerTransparentDataEncryptionProtector](/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector) .
+3. Zorg ervoor dat de server en eventuele replica's zijn bijgewerkt naar de nieuwe TDE-beveiliging met behulp van de cmdlet [Get-AzSqlServerTransparentDataEncryptionProtector.](/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector)
 
    > [!NOTE]
-   > Het kan enkele minuten duren voordat de nieuwe TDE-Protector is door gegeven aan alle data bases en secundaire data bases op de server.
+   > Het kan enkele minuten duren voordat de nieuwe TDE-beveiliging is doorgegeven aan alle databases en secundaire databases onder de server.
 
    ```powershell
    Get-AzSqlServerTransparentDataEncryptionProtector -ServerName <LogicalServerName> -ResourceGroupName <SQLDatabaseResourceGroupName>
    ```
 
-4. Maak een [back-up van de nieuwe sleutel](/powershell/module/az.keyvault/backup-azkeyvaultkey) in Key Vault.
+4. Maak een [back-up van de nieuwe](/powershell/module/az.keyvault/backup-azkeyvaultkey) sleutel in Key Vault.
 
    ```powershell
    # -OutputFile parameter is optional; if removed, a file name is automatically generated.
    Backup-AzKeyVaultKey -VaultName <KeyVaultName> -Name <KeyVaultKeyName> -OutputFile <DesiredBackupFilePath>
    ```
 
-5. Verwijder de aangetaste sleutel uit Key Vault met de cmdlet [Remove-AzKeyVaultKey](/powershell/module/az.keyvault/remove-azkeyvaultkey) .
+5. Verwijder de aangetaste sleutel uit Key Vault cmdlet [Remove-AzKeyVaultKey.](/powershell/module/az.keyvault/remove-azkeyvaultkey)
 
    ```powershell
    Remove-AzKeyVaultKey -VaultName <KeyVaultName> -Name <KeyVaultKeyName>
    ```
 
-6. Een sleutel herstellen naar Key Vault in de toekomst met de cmdlet [Restore-AzKeyVaultKey](/powershell/module/az.keyvault/restore-azkeyvaultkey) :
+6. Als u een sleutel wilt herstellen naar Key Vault in de toekomst met behulp van de cmdlet [Restore-AzKeyVaultKey:](/powershell/module/az.keyvault/restore-azkeyvaultkey)
 
    ```powershell
    Restore-AzKeyVaultKey -VaultName <KeyVaultName> -InputFile <BackupFilePath>
@@ -134,11 +134,11 @@ De Power shell-opdracht **AZ SQL Server key show**   biedt de vinger afdruk va
 
 # <a name="the-azure-cli"></a>[De Azure CLI](#tab/azure-cli)
 
-Zie de [Azure cli](/cli/azure/keyvault/key)-sleutel kluis voor naslag informatie over de opdracht.
+Zie azure CLI [keyvault voor naslag voor opdrachten.](/cli/azure/keyvault/key)
 
-1. Maak een [nieuwe sleutel in Key Vault](/cli/azure/keyvault/key#az-keyvault-key-create). Zorg ervoor dat deze nieuwe sleutel wordt gemaakt in een afzonderlijke sleutel kluis van de mogelijk aangetast TDE-beveiliging, omdat toegangs beheer is ingericht op het niveau van de kluis.
+1. Maak een [nieuwe sleutel in Key Vault](/cli/azure/keyvault/key#az_keyvault_key_create). Zorg ervoor dat deze nieuwe sleutel is gemaakt in een afzonderlijke sleutelkluis van de mogelijk aangetaste TDE-beveiliging, omdat toegangsbeheer is ingericht op kluisniveau.
 
-2. Voeg de nieuwe sleutel toe aan de server en werk deze bij als de nieuwe TDE-beveiliging van de-server.
+2. Voeg de nieuwe sleutel toe aan de server en werk deze bij als de nieuwe TDE-beveiliging van de server.
 
    ```azurecli
    # add the key from Key Vault to the server  
@@ -151,7 +151,7 @@ Zie de [Azure cli](/cli/azure/keyvault/key)-sleutel kluis voor naslag informatie
 3. Zorg ervoor dat de server en eventuele replica's zijn bijgewerkt naar de nieuwe TDE-beveiliging.
 
    > [!NOTE]
-   > Het kan enkele minuten duren voordat de nieuwe TDE-Protector is door gegeven aan alle data bases en secundaire data bases op de server.
+   > Het kan enkele minuten duren voordat de nieuwe TDE-beveiliging is doorgegeven aan alle databases en secundaire databases onder de server.
 
    ```azurecli
    az sql server tde-key show --resource-group <SQLDatabaseResourceGroupName> --server <LogicalServerName>
@@ -170,7 +170,7 @@ Zie de [Azure cli](/cli/azure/keyvault/key)-sleutel kluis voor naslag informatie
    az keyvault key delete --name <KeyVaultKeyName> --vault-name <KeyVaultName>
    ```
 
-6. Een sleutel herstellen naar Key Vault in de toekomst.
+6. Als u een sleutel wilt herstellen Key Vault in de toekomst.
 
    ```azurecli
    az keyvault key restore --file <BackupFilePath> --vault-name <KeyVaultName>
@@ -178,18 +178,18 @@ Zie de [Azure cli](/cli/azure/keyvault/key)-sleutel kluis voor naslag informatie
 
 * * *
 
-## <a name="make-encrypted-resources-inaccessible"></a>Versleutelde bronnen ontoegankelijk maken
+## <a name="make-encrypted-resources-inaccessible"></a>Versleutelde resources ontoegankelijk maken
 
-1. Verwijder de data bases die zijn versleuteld door de code die mogelijk is aangetast.
+1. De databases verwijderen die worden versleuteld door de mogelijk aangetaste sleutel.
 
-   Er wordt automatisch een back-up van de data base en logboek bestanden gemaakt, zodat de Data Base op elk gewenst moment kan worden hersteld (op voor waarde dat u de sleutel opgeeft). De data bases moeten worden verwijderd voordat een actieve TDE-Protector kan worden verwijderd om te voor komen dat er Maxi maal tien minuten van de meest recente trans acties verloren gaan.
+   Er wordt automatisch een back-up van de database en logboekbestanden gemaakt, zodat een herstel naar een bepaald tijdstip van de database op elk moment kan worden uitgevoerd (zolang u de sleutel verstrekt). De databases moeten worden verwijderd voordat een actieve TDE-beveiliging wordt verwijderd om mogelijk gegevensverlies van maximaal 10 minuten van de meest recente transacties te voorkomen.
 
-2. Maak een back-up van het sleutel materiaal van de TDE-Protector in Key Vault.
-3. De mogelijk gemanipuleerde sleutel uit Key Vault verwijderen
+2. Back-up van het sleutelmateriaal van de TDE-beveiliging in Key Vault.
+3. Verwijder de sleutel die mogelijk is aangetast uit Key Vault
 
 [!INCLUDE [sql-database-akv-permission-delay](../includes/sql-database-akv-permission-delay.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het draaien van de TDE-Protector van een server om te voldoen aan de beveiligings vereisten: [de transparent Data Encryption-Protector draaien met Power shell](transparent-data-encryption-byok-key-rotation.md)
-- Aan de slag met Bring Your Own Key ondersteuning voor TDE: [Schakel TDe met behulp van uw eigen sleutel in vanuit Key Vault met behulp van Power shell](transparent-data-encryption-byok-configure.md)
+- Meer informatie over het roteren van de TDE-beveiliging van een server om te voldoen aan de beveiligingsvereisten: De Transparent Data Encryption [draaien met behulp van PowerShell](transparent-data-encryption-byok-key-rotation.md)
+- Aan de slag Bring Your Own Key ondersteuning voor TDE: TDE in uw eigen sleutel in Key Vault [met behulp van PowerShell](transparent-data-encryption-byok-configure.md)

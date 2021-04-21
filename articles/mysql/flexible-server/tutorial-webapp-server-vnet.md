@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 03/18/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3e334eda46e5e67a0fc0755f5e02a0724d34a4b4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 13baf8f033338e242610d7b8c4eec14806cd5ec5
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104657634"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770017"
 ---
 # <a name="tutorial-create-an-azure-database-for-mysql---flexible-server-preview-with-app-services-web-app-in-virtual-network"></a>Zelfstudie: Azure Database for MySQL - Flexible Server (preview-versie) met App Services-web-app in een virtueel netwerk maken
 
@@ -24,8 +24,8 @@ In deze zelfstudie leert u hoe u een Azure App Service-web-app met MySQL Flexibl
 
 In deze zelfstudie leert u het volgende:
 >[!div class="checklist"]
-> * Een flexibele MySQL-server in een virtueel netwerk maken
-> * Een subnet maken om te delegeren aan App Service
+> * Een flexibele MySQL-server maken in een virtueel netwerk
+> * Een subnet maken dat u wilt delegeren aan App Service
 > * Een webtoepassing maken
 > * De web-app toevoegen aan het virtuele netwerk
 > * Verbinding maken met Postgres vanuit de web-app 
@@ -36,7 +36,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 In dit artikel moet u Azure CLI-versie 2.0 of later lokaal uitvoeren. Voer de opdracht `az --version` uit om de geïnstalleerde versie te zien. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
-U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az-login). Let op de **id**-eigenschap van de opdrachtuitvoer voor de naam van het desbetreffende abonnement.
+U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az_login). Let op de **id**-eigenschap van de opdrachtuitvoer voor de naam van het desbetreffende abonnement.
 
 ```azurecli
 az login
@@ -65,13 +65,13 @@ Kopieer de connection string en de naam van het zojuist gemaakte virtuele netwer
 > [!NOTE]
 > Noteer het wachtwoord dat voor u wordt gegenereerd als het niet is opgegeven. Als u het wachtwoord vergeet, kunt u het wachtwoord opnieuw instellen met behulp van de opdracht ``` az mysql flexible-server update```
 
-## <a name="create-subnet-for-app-service-endpoint"></a>Subnet maken voor App Service-eind punt
-We moeten nu een subnet hebben dat is overgedragen aan App Service web-app-eind punt. Voer de volgende opdracht uit om een nieuw subnet te maken in hetzelfde virtuele netwerk als de database server die is gemaakt. 
+## <a name="create-subnet-for-app-service-endpoint"></a>Subnet maken voor App Service eindpunt
+We moeten nu een subnet hebben dat is gedelegeerd naar App Service web-app-eindpunt. Voer de volgende opdracht uit om een nieuw subnet te maken in hetzelfde virtuele netwerk als de databaseserver is gemaakt. 
 
 ```azurecli
 az network vnet subnet create -g myresourcegroup --vnet-name VNETName --name webappsubnetName  --address-prefixes 10.0.1.0/24  --delegations Microsoft.Web/serverFarms --service-endpoints Microsoft.Web
 ```
-Noteer de naam van het virtuele netwerk en het subnet nadat deze opdracht is vereist om de VNET-integratie regel voor de web-app toe te voegen nadat deze is gemaakt. 
+Noteer de naam van het virtuele netwerk en de subnetnaam na deze opdracht. U hebt deze nodig om de VNET-integratieregel voor de web-app toe te voegen nadat deze is gemaakt. 
 
 ## <a name="create-a-web-app"></a>Een webtoepassing maken
 

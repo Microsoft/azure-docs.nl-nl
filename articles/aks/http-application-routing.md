@@ -1,72 +1,72 @@
 ---
-title: Invoeg toepassing voor het routeren van HTTP-toepassingen op de Azure Kubernetes-service (AKS)
-description: Gebruik de invoeg toepassing HTTP-toepassings routering voor het openen van toepassingen die zijn geïmplementeerd op de Azure Kubernetes-service (AKS).
+title: Invoegtoepassing http-toepassingsroutering op Azure Kubernetes Service (AKS)
+description: Gebruik de invoegtoepassing HTTP-toepassingsroutering om toegang te krijgen tot toepassingen die zijn geïmplementeerd op Azure Kubernetes Service (AKS).
 services: container-service
 author: lachie83
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: laevenso
-ms.openlocfilehash: 25fc021a48e8936f242df35f7485fc59a93bba13
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 95767e94a120b7f4595744beabc72fcd954e6e2f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102172797"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107783103"
 ---
 # <a name="http-application-routing"></a>Routering van HTTP-toepassing
 
-Met de oplossing voor het routeren van HTTP-toepassingen kunt u eenvoudig toegang krijgen tot toepassingen die zijn geïmplementeerd in uw Azure Kubernetes service-cluster (AKS). Wanneer de oplossing is ingeschakeld, wordt er een [ingangs controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) geconfigureerd in uw AKS-cluster. Terwijl toepassingen worden geïmplementeerd, worden met de oplossing ook openbaar toegankelijke DNS-namen gemaakt voor toepassingseindpunten.
+Met de routeringsoplossing voor HTTP-toepassingen hebt u eenvoudig toegang tot toepassingen die zijn geïmplementeerd in uw Azure Kubernetes Service (AKS)-cluster. Wanneer de oplossing is ingeschakeld, configureert deze een controller [voor ingress](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) in uw AKS-cluster. Terwijl toepassingen worden geïmplementeerd, worden met de oplossing ook openbaar toegankelijke DNS-namen gemaakt voor toepassingseindpunten.
 
-Wanneer de invoeg toepassing is ingeschakeld, wordt er een DNS-zone in uw abonnement gemaakt. Zie [DNS-prijzen][dns-pricing]voor meer informatie over DNS-kosten.
+Wanneer de invoeg-on is ingeschakeld, wordt er een DNS-zone in uw abonnement gemaakt. Zie Prijzen voor DNS voor meer informatie [over DNS-kosten.][dns-pricing]
 
 > [!CAUTION]
-> De invoeg toepassing voor het routeren van HTTP-toepassingen is ontworpen om snel een ingangs controller te maken en toegang te krijgen tot uw toepassingen. Deze invoeg toepassing is momenteel niet ontworpen voor gebruik in een productie omgeving en wordt niet aanbevolen voor productie gebruik. Zie [een HTTPS ingress-controller maken](./ingress-tls.md)voor implementaties van kant-en-klare ingebruiknames met meerdere REPLICA'S en TLS-ondersteuning.
+> De invoegtoepassing voor HTTP-toepassingsroutering is ontworpen om snel een controller voor toegangsgressie te maken en toegang te krijgen tot uw toepassingen. Deze invoeggebruiker is momenteel niet ontworpen voor gebruik in een productieomgeving en wordt niet aanbevolen voor productiegebruik. Zie Een [HTTPS-ingress-controller](./ingress-tls.md)maken voor implementaties die gereed zijn voor productie en die meerdere replica's en TLS-ondersteuning bevatten.
 
-## <a name="http-routing-solution-overview"></a>Overzicht van de oplossing voor HTTP-route ring
+## <a name="http-routing-solution-overview"></a>Overzicht van http-routeringsoplossing
 
-De invoeg toepassing implementeert twee onderdelen: een [Kubernetes ingress-controller][ingress] en een [externe DNS][external-dns] -controller.
+De invoegsel implementeert twee onderdelen: een [Kubernetes-controller][ingress] voor verkeer en een [extern-DNS-controller.][external-dns]
 
-- **Ingangs controller**: de ingangs controller wordt blootgesteld aan Internet door gebruik te maken van een Kubernetes-service van het type Load Balancer. De ingangs controller controleert en implementeert [Kubernetes][ingress-resource]inkomend bronnen, waarmee routes naar toepassings eindpunten worden gemaakt.
-- **Externe DNS-controller**: controleert op Kubernetes inkomende resources en maakt DNS A-records in de cluster-specifieke DNS-zone.
+- **Controller voor toegangsgressie:** de toegangscontroller wordt blootgesteld aan internet met behulp van een Kubernetes-service van het type LoadBalancer. De toegangscontroller bewaakt en implementeert [Kubernetes-toegangsingress-resources,][ingress-resource]waarmee routes naar toepassings-eindpunten worden gemaakt.
+- **Externe DNS-controller:** hiermee wordt gekeken naar kubernetes-resources voor binnenkomend verkeer en worden DNS A-records gemaakt in de clusterspecifieke DNS-zone.
 
-## <a name="deploy-http-routing-cli"></a>HTTP-route ring implementeren: CLI
+## <a name="deploy-http-routing-cli"></a>HTTP-routering implementeren: CLI
 
-De invoeg toepassing voor het routeren van HTTP-toepassingen kan worden ingeschakeld met de Azure CLI bij het implementeren van een AKS-cluster. Als u dit wilt doen, gebruikt u de opdracht [AZ AKS Create][az-aks-create] met het `--enable-addons` argument.
+De invoegtoepassing voor HTTP-toepassingsroutering kan worden ingeschakeld met de Azure CLI bij het implementeren van een AKS-cluster. Gebruik de opdracht [az aks create][az-aks-create] met het argument om dit te `--enable-addons` doen.
 
 ```azurecli
 az aks create --resource-group myResourceGroup --name myAKSCluster --enable-addons http_application_routing
 ```
 
 > [!TIP]
-> Als u meerdere invoeg toepassingen wilt inschakelen, geeft u ze op als een door komma's gescheiden lijst. Als u bijvoorbeeld HTTP-toepassings Routering en-bewaking wilt inschakelen, gebruikt u de indeling `--enable-addons http_application_routing,monitoring` .
+> Als u meerdere invoegtoepassingen wilt inschakelen, geeft u deze op als een door komma's gescheiden lijst. Als u bijvoorbeeld ROUTERING en bewaking van HTTP-toepassingen wilt inschakelen, gebruikt u de indeling `--enable-addons http_application_routing,monitoring` .
 
-U kunt ook HTTP-route ring inschakelen op een bestaand AKS-cluster met behulp van de opdracht [AZ AKS Enable-addons][az-aks-enable-addons] . Als u HTTP-route ring wilt inschakelen op een bestaand cluster, voegt u de `--addons` para meter toe en geeft u *http_application_routing* op, zoals in het volgende voor beeld wordt getoond:
+U kunt http-routering ook inschakelen op een bestaand AKS-cluster met behulp van [de opdracht az aks enable-addons.][az-aks-enable-addons] Als u HTTP-routering wilt inschakelen op een bestaand cluster, voegt u de parameter toe en http_application_routing `--addons` zoals wordt weergegeven in het volgende voorbeeld: 
 
 ```azurecli
 az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addons http_application_routing
 ```
 
-Nadat het cluster is geïmplementeerd of bijgewerkt, gebruikt u de opdracht [AZ AKS show][az-aks-show] om de naam van de DNS-zone op te halen.
+Nadat het cluster is geïmplementeerd of bijgewerkt, gebruikt u de [opdracht az aks show][az-aks-show] om de naam van de DNS-zone op te halen.
 
 ```azurecli
 az aks show --resource-group myResourceGroup --name myAKSCluster --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
 ```
 
-Deze naam is nodig om toepassingen te implementeren in het AKS-cluster en wordt weer gegeven in de volgende voorbeeld uitvoer:
+Deze naam is nodig om toepassingen te implementeren in het AKS-cluster en wordt weergegeven in de volgende voorbeelduitvoer:
 
 ```console
 9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io
 ```
 
-## <a name="deploy-http-routing-portal"></a>HTTP-route ring implementeren: Portal
+## <a name="deploy-http-routing-portal"></a>HTTP-routering implementeren: Portal
 
-De invoeg toepassing voor het routeren van HTTP-toepassingen kan worden ingeschakeld via de Azure Portal bij het implementeren van een AKS-cluster.
+De invoegtoepassing http-toepassingsroutering kan worden ingeschakeld via de Azure Portal bij het implementeren van een AKS-cluster.
 
-![De HTTP-routerings functie inschakelen](media/http-routing/create.png)
+![De functie HTTP-routering inschakelen](media/http-routing/create.png)
 
-Nadat het cluster is geïmplementeerd, bladert u naar de automatisch gemaakte AKS-resource groep en selecteert u de DNS-zone. Noteer de naam van de DNS-zone. Deze naam is nodig om toepassingen te implementeren in het AKS-cluster.
+Nadat het cluster is geïmplementeerd, bladert u naar de automatisch gemaakte AKS-resourcegroep en selecteert u de DNS-zone. Noteer de naam van de DNS-zone. Deze naam is nodig om toepassingen te implementeren in het AKS-cluster.
 
-![De DNS-zone naam ophalen](media/http-routing/dns.png)
+![De naam van de DNS-zone op halen](media/http-routing/dns.png)
 
 ## <a name="connect-to-your-aks-cluster"></a>Verbinding maken met uw AKS-cluster
 
@@ -78,22 +78,22 @@ Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u het loka
 az aks install-cli
 ```
 
-Gebruik de opdracht [az aks get-credentials][] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. In het volgende voor beeld worden referenties opgehaald voor het AKS-cluster met de naam *MyAKSCluster* in de *MyResourceGroup*:
+Gebruik de opdracht [az aks get-credentials][] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. In het volgende voorbeeld worden referenties voor het AKS-cluster met de *naam MyAKSCluster* in *myResourceGroup opgeslagen:*
 
 ```azurecli
 az aks get-credentials --resource-group MyResourceGroup --name MyAKSCluster
 ```
 
-## <a name="use-http-routing"></a>HTTP-route ring gebruiken
+## <a name="use-http-routing"></a>HTTP-routering gebruiken
 
-De oplossing voor het routeren van HTTP-toepassingen kan alleen worden geactiveerd voor ingangs bronnen die als volgt worden aantekend:
+De routeringsoplossing voor HTTP-toepassingen kan alleen worden geactiveerd voor ingress-resources met de volgende aantekeningen:
 
 ```yaml
 annotations:
   kubernetes.io/ingress.class: addon-http-application-routing
 ```
 
-Maak een bestand met de naam **samples-http-Application-Routing. yaml** en kopieer de volgende YAML. Update op regel 43 `<CLUSTER_SPECIFIC_DNS_ZONE>` met de naam van de DNS-zone die in de vorige stap van dit artikel is verzameld.
+Maak een bestand met de **naam samples-http-application-routing.yaml** en kopieer het in de volgende YAML. Werk op regel 43 bij met de DNS-zonenaam die in de vorige stap van dit artikel `<CLUSTER_SPECIFIC_DNS_ZONE>` is verzameld.
 
 ```yaml
 apiVersion: apps/v1
@@ -147,13 +147,13 @@ spec:
         path: /
 ```
 
-Gebruik de opdracht [kubectl Toep assen][kubectl-apply] om de resources te maken.
+Gebruik de [opdracht kubectl apply][kubectl-apply] om de resources te maken.
 
 ```bash
 kubectl apply -f samples-http-application-routing.yaml
 ```
 
-In het volgende voor beeld worden de gemaakte resources weer gegeven:
+In het volgende voorbeeld ziet u de gemaakte resources:
 
 ```bash
 $ kubectl apply -f samples-http-application-routing.yaml
@@ -163,19 +163,19 @@ service/aks-helloworld created
 ingress.networking.k8s.io/aks-helloworld created
 ```
 
-Open een webbrowser op *AKS-HelloWorld \<CLUSTER_SPECIFIC_DNS_ZONE\> .* bijvoorbeeld *AKS-HelloWorld.9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io* en controleer of u de demo toepassing ziet. Het kan enkele minuten duren voordat de toepassing wordt weer gegeven.
+Open een webbrowser naar *aks-helloworld. \<CLUSTER_SPECIFIC_DNS_ZONE\>*, bijvoorbeeld *aks-helloworld.9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io* en controleer of u de demotoepassing ziet. Het kan enkele minuten duren voordat de toepassing wordt weergegeven.
 
-## <a name="remove-http-routing"></a>HTTP-route ring verwijderen
+## <a name="remove-http-routing"></a>HTTP-routering verwijderen
 
-De oplossing voor HTTP-route ring kan worden verwijderd met behulp van de Azure CLI. Voer de volgende opdracht uit om de naam van het AKS-cluster en de resource groep te vervangen.
+De HTTP-routeringsoplossing kan worden verwijderd met behulp van de Azure CLI. Voer de volgende opdracht uit om uw AKS-cluster en resourcegroepnaam te vervangen.
 
 ```azurecli
 az aks disable-addons --addons http_application_routing --name myAKSCluster --resource-group myResourceGroup --no-wait
 ```
 
-Wanneer de invoeg toepassing voor het routeren van HTTP-toepassingen is uitgeschakeld, kunnen sommige Kubernetes-resources in het cluster blijven. Deze bronnen zijn onder andere *configMaps* en *geheimen*, en worden gemaakt in de *uitvoeren-systeem* naam ruimte. Als u een schoon cluster wilt behouden, kunt u deze resources verwijderen.
+Wanneer de invoegtoepassing http-toepassingsroutering is uitgeschakeld, kunnen sommige Kubernetes-resources in het cluster blijven. Deze resources omvatten *configMaps* en *geheimen* en worden gemaakt in de *naamruimte kube-system.* Als u een schoon cluster wilt onderhouden, kunt u deze resources verwijderen.
 
-Zoek naar *invoeg toepassingen-http-toepassings routerings* bronnen met behulp van de volgende [kubectl Get][kubectl-get] -opdrachten:
+Zoek naar *resources voor addon-http-application-routing* met behulp van de volgende [kubectl][kubectl-get] get-opdrachten:
 
 ```console
 kubectl get deployments --namespace kube-system
@@ -184,7 +184,7 @@ kubectl get configmaps --namespace kube-system
 kubectl get secrets --namespace kube-system
 ```
 
-In de volgende voorbeeld uitvoer ziet u configMaps die moeten worden verwijderd:
+In de volgende voorbeelduitvoer ziet u configMaps die moeten worden verwijderd:
 
 ```
 $ kubectl get configmaps --namespace kube-system
@@ -195,17 +195,17 @@ kube-system   addon-http-application-routing-tcp-services                0      
 kube-system   addon-http-application-routing-udp-services                0      9m7s
 ```
 
-Als u resources wilt verwijderen, gebruikt u de opdracht [kubectl verwijderen][kubectl-delete] . Geef het resource type, de resource naam en de naam ruimte op. In het volgende voor beeld wordt een van de vorige configmaps verwijderd:
+Als u resources wilt verwijderen, gebruikt u de [opdracht kubectl][kubectl-delete] delete. Geef het resourcetype, de resourcenaam en de naamruimte op. In het volgende voorbeeld wordt een van de vorige configmaps verwijderd:
 
 ```console
 kubectl delete configmaps addon-http-application-routing-nginx-configuration --namespace kube-system
 ```
 
-Herhaal de vorige `kubectl delete` stap voor alle *invoeg toepassingen-http-toepassings routerings* resources die in uw cluster gebleven zijn.
+Herhaal de vorige stap voor alle resources voor routering van `kubectl delete` *invoegtoepassing-http-toepassingen* die in uw cluster zijn gebleven.
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-Gebruik de [kubectl-logboeken][kubectl-logs] opdracht om de toepassings logboeken voor de externe DNS-toepassing weer te geven. De logboeken moeten bevestigen dat een A-en TXT DNS-record is gemaakt.
+Gebruik de [opdracht kubectl logs][kubectl-logs] om de toepassingslogboeken voor de external-DNS-toepassing weer te geven. De logboeken moeten bevestigen dat een A- en TXT DNS-record zijn gemaakt.
 
 ```
 $ kubectl logs -f deploy/addon-http-application-routing-external-dns -n kube-system
@@ -214,11 +214,11 @@ time="2018-04-26T20:36:19Z" level=info msg="Updating A record named 'aks-hellowo
 time="2018-04-26T20:36:21Z" level=info msg="Updating TXT record named 'aks-helloworld' to '"heritage=external-dns,external-dns/owner=default"' for Azure DNS zone '471756a6-e744-4aa0-aa01-89c4d162a7a7.canadaeast.aksapp.io'."
 ```
 
-Deze records kunnen ook worden weer gegeven in de bron van de DNS-zone in de Azure Portal.
+Deze records kunnen ook worden gezien op de DNS-zoneresource in de Azure Portal.
 
-![De DNS-records ophalen](media/http-routing/clippy.png)
+![De DNS-records op te halen](media/http-routing/clippy.png)
 
-Gebruik de [kubectl-logboeken][kubectl-logs] opdracht om de toepassings logboeken voor de nginx ingangs controller weer te geven. De logboeken moeten de `CREATE` van een ingangs bron en het opnieuw laden van de controller bevestigen. Alle HTTP-activiteiten worden vastgelegd.
+Gebruik de [opdracht kubectl logs][kubectl-logs] om de toepassingslogboeken voor de Nginx Ingress-controller weer te geven. De logboeken moeten de van `CREATE` een toegangsbeheerbron en het opnieuw laden van de controller bevestigen. Alle HTTP-activiteiten worden geregistreerd.
 
 ```bash
 $ kubectl logs -f deploy/addon-http-application-routing-nginx-ingress-controller -n kube-system
@@ -265,7 +265,7 @@ Verwijder de gekoppelde Kubernetes-objecten die in dit artikel zijn gemaakt met 
 kubectl delete -f samples-http-application-routing.yaml
 ```
 
-In de voorbeeld uitvoer ziet u dat Kubernetes-objecten zijn verwijderd.
+In de voorbeelduitvoer ziet u dat Kubernetes-objecten zijn verwijderd.
 
 ```bash
 $ kubectl delete -f samples-http-application-routing.yaml
@@ -277,15 +277,15 @@ ingress "aks-helloworld" deleted
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [https ingress on Azure Kubernetes service (AKS) (Engelstalig)][ingress-https]voor meer informatie over het installeren van een met https Beveiligde ingangs controller in AKS.
+Zie HTTPS [Ingress on Azure Kubernetes Service (AKS) voor][ingress-https]meer informatie over het installeren van een met HTTPS beveiligde toegangscontroller in AKS.
 
 <!-- LINKS - internal -->
-[az-aks-create]: /cli/azure/aks#az-aks-create
-[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-aks-create]: /cli/azure/aks#az_aks_create
+[az-aks-show]: /cli/azure/aks#az_aks_show
 [ingress-https]: ./ingress-tls.md
-[az-aks-enable-addons]: /cli/azure/aks#az-aks-enable-addons
-[az aks install-cli]: /cli/azure/aks#az-aks-install-cli
-[az aks get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[az-aks-enable-addons]: /cli/azure/aks#az_aks_enable_addons
+[az aks install-cli]: /cli/azure/aks#az_aks_install_cli
+[az aks get-credentials]: /cli/azure/aks#az_aks_get_credentials
 
 <!-- LINKS - external -->
 [dns-pricing]: https://azure.microsoft.com/pricing/details/dns/

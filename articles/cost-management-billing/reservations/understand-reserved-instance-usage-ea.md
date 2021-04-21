@@ -1,24 +1,24 @@
 ---
-title: Meer informatie over het gebruik van Azure-reserve ringen voor Enterprise Overeenkomst en de klant overeenkomst van micro soft
-description: Lees hoe u uw gebruiks gegevens kunt lezen om te begrijpen hoe een Azure-reserve ring van toepassing is op Enterprise Overeenkomst en het gebruik van de klant overeenkomst van micro soft.
+title: Inzicht in het gebruik van Azure-reserveringen voor Enterprise Agreement en Microsoft-klantovereenkomst
+description: Meer informatie over het lezen van uw gebruiksgegevens om te begrijpen hoe een Azure-reservering van toepassing is op Enterprise Agreement en Microsoft-klantovereenkomst gebruik.
 author: bandersmsft
 ms.reviewer: yashar
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 01/19/2020
+ms.date: 04/20/2021
 ms.author: banders
-ms.openlocfilehash: 0c69e9533130d6ca70c57422c7cdd5fc75adff72
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: edc1a80687f768723a3a218ecaa1f6459cd484ed
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683714"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107763555"
 ---
-# <a name="get-enterprise-agreement-and-microsoft-customer-agreement-reservation-costs-and-usage"></a>De kosten en het gebruik van Enterprise Overeenkomst en micro soft-klanten overeenkomst ophalen
+# <a name="get-enterprise-agreement-and-microsoft-customer-agreement-reservation-costs-and-usage"></a>Reserveringskosten Enterprise Agreement Microsoft-klantovereenkomst en gebruiksgegevens op te halen
 
-Uitgebreide gegevens voor reserverings kosten en gebruik zijn beschikbaar voor Enterprise Overeenkomst (EA) en het gebruik van micro soft Customer Agreement (MCA) in kosten beheer. In dit artikel worden de volgende onderwerpen besproken:
+Verbeterde gegevens voor reserveringskosten en -gebruik zijn beschikbaar voor Enterprise Agreement (EA) en Microsoft-klantovereenkomst (MCA) in Kostenbeheer. In dit artikel worden de volgende onderwerpen besproken:
 
 - Aankoopgegevens van reserveringen ophalen
 - Controleren welke abonnementen, resourcegroepen of resources de reservering hebben gebruikt
@@ -85,7 +85,7 @@ De informatie in de onderstaande tabel over metrische gegevens en filters kan he
 
 ## <a name="download-the-usage-csv-file-with-new-data"></a>CSV-bestand met nieuwe gebruiksgegevens downloaden
 
-Als u een EA-beheerder bent, kunt u het CSV-bestand downloaden dat nieuwe gebruiks gegevens bevat van Azure Portal. Deze gegevens zijn niet beschikbaar vanuit de EA Portal (ea.azure.com). U moet het gebruiksbestand downloaden via de Azure-portal (portal.azure.com) om de nieuwe gegevens te zien.
+Als u een EA-beheerder bent, kunt u het CSV-bestand met nieuwe gebruiksgegevens downloaden van Azure Portal. Deze gegevens zijn niet beschikbaar vanuit de EA Portal (ea.azure.com). U moet het gebruiksbestand downloaden via de Azure-portal (portal.azure.com) om de nieuwe gegevens te zien.
 
 Ga in de Azure-portal naar [Kostenbeheer en facturering](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/BillingAccounts).
 
@@ -95,7 +95,6 @@ Ga in de Azure-portal naar [Kostenbeheer en facturering](https://portal.azure.co
 ![Voorbeeld waarin wordt aangegeven waar u het CSV-bestand met gebruiksgegevens kunt downloaden in de Azure-portal](./media/understand-reserved-instance-usage-ea/portal-download-csv.png)
 4. Ga naar **Gebruik en kosten downloaden**, selecteer onder **Versie 2 gebruiksdetails** **Alle kosten (gebruik en aankopen)** en klik vervolgens op Downloaden. Herhaal dit voor **Afgeschreven kosten (gebruik en aankopen)** .
 
-De CSV-bestanden die u downloadt, bevatten de werkelijke kosten en afgeschreven kosten.
 
 ## <a name="common-cost-and-usage-tasks"></a>Algemene taken voor kosten en gebruik
 
@@ -158,8 +157,7 @@ Raadpleeg de volgende artikelen voor meer informatie over Azure-reserveringen:
 
 - [Wat zijn Azure-reserveringen?](save-compute-costs-reservations.md)
 - [Vooruitbetalen voor Virtual Machines met Azure Reserved VM Instances](../../virtual-machines/prepay-reserved-vm-instances.md)
-- [Vooruitbetalen voor compute-resources van SQL Database met gereserveerde capaciteit voor Azure SQL Database](../../azure-sql/database/reserved-capacity-overview.md)
-- [Azure-reserveringen beheren](manage-reserved-vm-instance.md)
 - [Begrijpen hoe de reserveringskorting wordt toegepast](../manage/understand-vm-reservation-charges.md)
-- [Inzicht in het gebruik van reserveringen voor uw abonnement met betalen per gebruik](understand-reserved-instance-usage.md)
 - [Kosten van Windows-software zijn niet inbegrepen bij reserveringen](reserved-instance-windows-software-costs.md)
+- [Service-principal gebruiken om kostengegevens op te halen](../manage/assign-roles-azure-service-principals.md)
+- [Kostenbeheerexports gebruiken](../costs/tutorial-export-acm-data.md)

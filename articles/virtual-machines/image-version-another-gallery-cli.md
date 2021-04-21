@@ -1,6 +1,6 @@
 ---
-title: Een afbeeldings versie kopiëren uit een andere galerie met de CLI
-description: Kopieer een installatie kopie versie vanuit een andere galerie met de Azure CLI.
+title: Een versie van een afbeelding kopiëren uit een andere galerie met behulp van de CLI
+description: Kopieer een versie van een afbeelding uit een andere galerie met de Azure CLI.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: shared-image-gallery
@@ -9,40 +9,40 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 0bea4fbac062b498dabe04e6e58d530d09b16d6d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e2cd885d886a0f13783e61a04c7243efdf12967e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102553099"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784979"
 ---
-# <a name="copy-an-image-from-another-gallery-using-the-azure-cli"></a>Een afbeelding uit een andere galerie kopiëren met behulp van de Azure CLI
+# <a name="copy-an-image-from-another-gallery-using-the-azure-cli"></a>Een afbeelding kopiëren uit een andere galerie met behulp van de Azure CLI
 
-Als u meerdere galerieën in uw organisatie hebt, kunt u ook installatie kopieën maken op basis van bestaande installatie kopie versies die zijn opgeslagen in andere galerieën. U kunt bijvoorbeeld een galerie voor ontwikkelen en testen hebben voor het maken en testen van nieuwe installatie kopieën. Wanneer ze klaar zijn om te worden gebruikt in de productie, kunt u deze naar een productie galerie kopiëren met behulp van dit voor beeld. U kunt ook een installatie kopie maken van een afbeelding in een andere galerie met behulp van [Azure PowerShell](image-version-another-gallery-powershell.md).
+Als u meerdere galerieën in uw organisatie hebt, kunt u ook versies van de afbeelding maken van bestaande versies van de afbeelding die zijn opgeslagen in andere galerieën. U hebt bijvoorbeeld een ontwikkelings- en testgalerie voor het maken en testen van nieuwe afbeeldingen. Wanneer ze klaar zijn voor gebruik in productie, kunt u ze kopiëren naar een productiegalerie met behulp van dit voorbeeld. U kunt ook een afbeelding maken van een afbeelding in een andere galerie met behulp [van Azure PowerShell](image-version-another-gallery-powershell.md).
 
 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Om dit artikel te volt ooien, moet u een bestaande bron galerie, afbeeldings definitie en installatie kopie versie hebben. U moet ook een doel galerie hebben. 
+Als u dit artikel wilt voltooien, moet u een bestaande brongalerie, definitie van de afbeelding en versie van de afbeelding hebben. U moet ook een doelgalerie hebben. 
 
-De versie van de bron installatie kopie moet worden gerepliceerd naar de regio waar uw doel Galerie zich bevindt. 
+De versie van de bronafbeelding moet worden gerepliceerd naar de regio waar uw doelgalerie zich bevindt. 
 
-Wanneer u dit artikel doorwerkt, vervangt u de resource namen waar nodig.
+Wanneer u dit artikel door werkt, vervangt u waar nodig de resourcenamen.
 
 
 
-## <a name="get-information-from-the-source-gallery"></a>Informatie ophalen uit de bron galerie
+## <a name="get-information-from-the-source-gallery"></a>Informatie verkrijgen uit de brongalerie
 
-U hebt gegevens nodig van de definitie van de bron installatie kopie, zodat u een kopie ervan kunt maken in uw nieuwe galerie.
+U hebt informatie uit de definitie van de bronafbeelding nodig, zodat u er een kopie van kunt maken in uw nieuwe galerie.
 
-Informatie weer geven over de beschik bare afbeeldings galerieën met de [lijst AZ sig](/cli/azure/sig#az-sig-list) om informatie over de bron galerie te vinden.
+Lijst met informatie over de beschikbare galerieën met afbeeldingen [met az sig list](/cli/azure/sig#az_sig_list) om informatie over de brongalerie te vinden.
 
 ```azurecli-interactive 
 az sig list -o table
 ```
 
-De afbeeldings definities in een galerie weer geven met behulp van de [lijst met AZ sig image-definition](/cli/azure/sig/image-definition#az-sig-image-definition-list). In dit voor beeld zoeken we naar afbeeldings definities in de galerie met de naam *myGallery* in de resource groep *myGalleryRG* .
+Gebruik [az sig image-definition list](/cli/azure/sig/image-definition#az_sig_image_definition_list)om de definities van de afbeeldingen in een galerie weer te geven. In dit voorbeeld zoeken we naar definities van afbeeldingen in de galerie met de naam *myGallery* in de resourcegroep *myGalleryRG.*
 
 ```azurecli-interactive 
 az sig image-definition list \
@@ -51,7 +51,7 @@ az sig image-definition list \
    -o table
 ```
 
-De versies van een installatie kopie in een galerie weer geven met behulp van [AZ sig installatie kopie versie lijst](/cli/azure/sig/image-version#az-sig-image-version-list) om de versie van de installatie kopie te zoeken die u wilt kopiëren naar de nieuwe galerie. In dit voor beeld zoeken we naar alle installatie kopieën die deel uitmaken van de definitie van de *myImageDefinition* -installatie kopie.
+Vermeld de versies van een afbeelding in een galerie met [az sig image-version list](/cli/azure/sig/image-version#az_sig_image_version_list) om de versie van de afbeelding te vinden die u naar uw nieuwe galerie wilt kopiëren. In dit voorbeeld zijn we op zoek naar alle versies van de afbeelding die deel uitmaken van de definitie van de *afbeelding myImageDefinition.*
 
 ```azurecli-interactive
 az sig image-version list \
@@ -61,7 +61,7 @@ az sig image-version list \
    -o table
 ```
 
-Zodra u alle informatie hebt die u nodig hebt, kunt u de ID van de bron installatie kopie ophalen met behulp van [AZ sig installatie kopie-versie weer geven](/cli/azure/sig/image-version#az-sig-image-version-show).
+Zodra u alle informatie hebt die u nodig hebt, kunt u de id van de versie van de bronafbeelding verkrijgen met [az sig image-version show.](/cli/azure/sig/image-version#az_sig_image_version_show)
 
 ```azurecli-interactive
 az sig image-version show \
@@ -73,9 +73,9 @@ az sig image-version show \
 ```
 
 
-## <a name="create-the-image-definition"></a>De definitie van de installatie kopie maken 
+## <a name="create-the-image-definition"></a>De definitie van de afbeelding maken 
 
-U moet een definitie van een installatie kopie maken die overeenkomt met de definitie van de installatie kopie van de versie van de bron installatie kopie. U kunt alle informatie die u nodig hebt voor het opnieuw maken van de definitie van de installatie kopie in uw nieuwe galerie weer geven met behulp van [AZ sig image-definition show](/cli/azure/sig/image-definition#az-sig-image-definition-show).
+U moet een definitie van een afbeelding maken die overeenkomt met de definitie van de afbeelding van de bronversie van de afbeelding. U kunt alle informatie zien die u nodig hebt om de definitie van de afbeelding opnieuw te maken in uw nieuwe galerie met [az sig image-definition show](/cli/azure/sig/image-definition#az_sig_image_definition_show).
 
 ```azurecli-interactive
 az sig image-definition show \
@@ -114,7 +114,7 @@ De uitvoer ziet er ongeveer uit zoals in dit voorbeeld:
 }
 ```
 
-Maak in uw nieuwe galerie een nieuwe definitie van de installatie kopie met behulp van de informatie uit de bovenstaande uitvoer.
+Maak een nieuwe definitie van de afbeelding in uw nieuwe galerie met behulp van de informatie uit de bovenstaande uitvoer.
 
 
 ```azurecli-interactive 
@@ -133,11 +133,11 @@ az sig image-definition create \
 
 ## <a name="create-the-image-version"></a>De installatiekopieversie maken
 
-Maak een versie met behulp van [AZ Image Gallery Create-Image galerie-version](/cli/azure/sig/image-version#az-sig-image-version-create). U moet de ID van de beheerde installatie kopie door geven om te gebruiken als basis voor het maken van de installatie kopie versie. U kunt [AZ Image List](/cli/azure/image?view#az-image-list) gebruiken om informatie over installatie kopieën in een resource groep op te halen. 
+Maak versies met [az image gallery create-image-version](/cli/azure/sig/image-version#az_sig_image_version_create). U moet de id van de beheerde afbeelding doorgeven om te gebruiken als basislijn voor het maken van de versie van de afbeelding. U kunt [az image list gebruiken om](/cli/azure/image?view#az_image_list) informatie op te halen over afbeeldingen in een resourcegroep. 
 
 Toegestane tekens voor een installatiekopieversie zijn cijfers en punten. Cijfers moeten binnen het bereik van een 32-bits geheel getal zijn. Indeling: *MajorVersion*.*MinorVersion*.*Patch*.
 
-In dit voor beeld is de versie van onze installatie kopie *1.0.0* en we gaan 1 replica maken in de regio *Zuid-Centraal VS* en 1 replica in de regio *VS-Oost* met zone-redundante opslag.
+In dit voorbeeld is de versie van onze afbeelding *1.0.0* en gaan we 1 replica maken  in de regio *VS* - zuid-centraal en 1 replica in de regio VS - oost met behulp van zone-redundante opslag.
 
 
 ```azurecli-interactive 
@@ -154,13 +154,13 @@ az sig image-version create \
 > [!NOTE]
 > U moet wachten tot de installatiekopieversie volledig is gebouwd en gerepliceerd voordat u dezelfde beheerde installatiekopie kunt gebruiken om een andere versie van de installatiekopie te maken.
 >
-> U kunt uw installatie kopie ook opslaan in Premium Storage door `--storage-account-type  premium_lrs` toe te voegen of [zone redundante opslag](../storage/common/storage-redundancy.md) te maken door toe te voegen `--storage-account-type  standard_zrs` Wanneer u de versie van de installatie kopie maakt.
+> U kunt uw afbeelding ook opslaan in Premium Storage door , of `--storage-account-type  premium_lrs` [Zone-redundante](../storage/common/storage-redundancy.md) opslag toe te voegen door toe te voegen `--storage-account-type  standard_zrs` wanneer u de versie van de afbeelding maakt.
 >
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Een virtuele machine maken van een [gegeneraliseerde](vm-generalized-image-version-cli.md) of een [gespecialiseerde](vm-specialized-image-version-cli.md) installatie kopie versie.
+Maak een VM van een [ge generaliseerde of](vm-generalized-image-version-cli.md) gespecialiseerde [versie](vm-specialized-image-version-cli.md) van de afbeelding.
 
-Probeer ook [Azure Image Builder uit (preview)](./image-builder-overview.md) om het maken van de installatie kopie versie te automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md). 
+Azure Image Builder [(preview)](./image-builder-overview.md) kan ook helpen bij het automatiseren van het maken van de versie van de afbeelding. U kunt deze zelfs gebruiken om een nieuwe versie van de afbeelding bij te werken en te maken op een bestaande versie van de [afbeelding.](./linux/image-builder-gallery-update-image-version.md) 
 
-Zie voor meer informatie over het verstrekken van informatie over het aankoop plan [Azure Marketplace-informatie over het aankoop plan bij het maken van installatie kopieën](marketplace-images.md).
+Zie Informatie over het aankoopplan leveren bij het maken van Azure Marketplace voor informatie over het leveren van informatie over het [aankoopplan.](marketplace-images.md)

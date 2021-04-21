@@ -3,14 +3,14 @@ author: aahill
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 02/09/2021
+ms.date: 04/19/2021
 ms.author: aahi
-ms.openlocfilehash: 791591f3d98f9e6902e89a880c464e6a609e3a1f
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: cee201c11d0415e1f63e7e6a9157b96a059503ba
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104599041"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765075"
 ---
 <a name="HOLTop"></a>
 
@@ -799,7 +799,7 @@ key_phrase_extraction_example(client)
 
 ---
 
-## <a name="use-the-api-asynchronously-with-the-batch-analyze-operation"></a>De API asynchroon gebruiken met de batch-analyse bewerking
+## <a name="use-the-api-asynchronously-with-the-batch-analyze-operation"></a>De API asynchroon gebruiken met de batchanalysebewerking
 
 # <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
 
@@ -808,15 +808,19 @@ key_phrase_extraction_example(client)
 Maak een nieuwe functie met de naam `analyze_batch_actions_example()` waaraan de client via een argument wordt doorgegeven en die vervolgens de functie `begin_analyze_batch_actions()` aanroept. Het resultaat is een langdurige bewerking waarvan de resultaten worden gepolld.
 
 ```python
-    def analyze_batch_actions_example(client):
+from azure.ai.textanalytics import (
+    RecognizeEntitiesAction
+)
+
+def analyze_batch_example(client):
         documents = [
             "Microsoft was founded by Bill Gates and Paul Allen."
         ]
 
-        poller = text_analytics_client.begin_analyze_batch_actions(
+        poller = client.begin_analyze_batch_actions(
             documents,
             display_name="Sample Text Analysis",
-            entities_recognition_tasks=[EntitiesRecognitionTask()]
+            actions=[RecognizeEntitiesAction()]
         )
 
         result = poller.result()
@@ -824,7 +828,7 @@ Maak een nieuwe functie met de naam `analyze_batch_actions_example()` waaraan de
 
         entities_recognition_task_result = action_results[0]
         print("Results of Entities Recognition action:")
-        docs = [doc for doc in first_action_result.document_results if not doc.is_error]
+        docs = [doc for doc in entities_recognition_task_result.document_results if not doc.is_error]
 
         for idx, doc in enumerate(docs):
             print("\nDocument text: {}".format(documents[idx]))
@@ -835,7 +839,7 @@ Maak een nieuwe functie met de naam `analyze_batch_actions_example()` waaraan de
                 print("...Offset: {}".format(entity.offset))
             print("------------------------------------------")
 
-analyze_example(client)
+analyze_batch_example(client)
 ```
 
 ### <a name="output"></a>Uitvoer
@@ -858,7 +862,7 @@ Entity: Paul Allen
 ------------------------------------------
 ```
 
-U kunt ook de batch analyse bewerking gebruiken om PII te detecteren en de sleutel woorden extractie uit te voeren. Bekijk het voor beeld van een [batch analyse](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/samples/sample_analyze_batch_actions.py) op github.
+U kunt ook de batchanalysebewerking gebruiken om PII te detecteren en sleuteltermextractie uit te voeren. Zie het [batch-analysevoorbeeld](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/samples/sample_analyze_batch_actions.py) op GitHub.
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 

@@ -7,17 +7,17 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, logicappspm
 ms.topic: overview
-ms.date: 08/01/2019
-ms.openlocfilehash: adf15904d4490647074d6e2b46ac7e9e871dd388
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/24/2021
+ms.openlocfilehash: 09d253aae4c054db5efdc252f62986044e1d366b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "86536399"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771853"
 ---
 # <a name="b2b-enterprise-integration-solutions-with-azure-logic-apps-and-enterprise-integration-pack"></a>B2B-bedrijfsintegratieoplossingen met Azure Logic Apps en Enterprise Integration Pack
 
-Voor Business-to-Business-oplossingen (B2B) en naadloze communicatie tussen organisaties kunt u geautomatiseerde, schaalbare bedrijfsintegratiewerkstromen maken met behulp van het Enterprise Integration Pack (EIP) met [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Hoewel organisaties verschillende protocollen en indelingen gebruiken, kunnen ze elektronisch berichten uitwisselen. Het EIP transformeert verschillende indelingen naar één indeling die de systemen van uw organisatie kunnen verwerken en ondersteunt standaardprotocollen binnen de industrie, waaronder [AS2](../logic-apps/logic-apps-enterprise-integration-as2.md), [X12](logic-apps-enterprise-integration-x12.md) en [EDIFACT](../logic-apps/logic-apps-enterprise-integration-edifact.md). U kunt ook de beveiliging van berichten verbeteren door versleuteling en digitale handtekeningen te gebruiken. Het EIP ondersteunt de volgende [connectors voor bedrijfsintegratie](../connectors/apis-list.md#integration-account-connectors) en industriestandaarden:
+Voor Business-to-Business-oplossingen (B2B) en naadloze communicatie tussen organisaties kunt u geautomatiseerde, schaalbare bedrijfsintegratiewerkstromen maken met behulp van het Enterprise Integration Pack (EIP) met [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Hoewel organisaties verschillende protocollen en indelingen gebruiken, kunnen ze elektronisch berichten uitwisselen. Het EIP transformeert verschillende indelingen naar één indeling die de systemen van uw organisatie kunnen verwerken en ondersteunt standaardprotocollen binnen de industrie, waaronder [AS2](../logic-apps/logic-apps-enterprise-integration-as2.md), [X12](logic-apps-enterprise-integration-x12.md) en [EDIFACT](../logic-apps/logic-apps-enterprise-integration-edifact.md). U kunt ook de beveiliging van berichten verbeteren door versleuteling en digitale handtekeningen te gebruiken. Het EIP ondersteunt de volgende [connectors voor bedrijfsintegratie](../connectors/managed.md#enterprise-connectors) en industriestandaarden:
 
 * Electronic Data Interchange (EDI)
 * Enterprise Application Integration (EAI)

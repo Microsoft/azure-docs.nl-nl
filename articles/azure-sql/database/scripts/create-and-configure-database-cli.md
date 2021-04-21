@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/25/2019
-ms.openlocfilehash: dc17ab55cb473036d8c40bd1e533bcc20c4c6259
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 00346accbccd67f542a8496ac097b0236c56a08c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92742266"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107773815"
 ---
 # <a name="use-the-azure-cli-to-create-a-single-database-and-configure-a-firewall-rule"></a>De Azure CLI gebruiken om een individuele database te maken en een firewallregel te configureren
 
@@ -50,9 +50,9 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Beschrijving |
 |---|---|
-| [az sql server](/cli/azure/sql/server#az-sql-server-create) | Serveropdrachten |
-| [az sql server firewall](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create) | Opdrachten voor serverfirewall. |
-| [az sql db](/cli/azure/sql/db#az-sql-db-create) | Databaseopdrachten. |
+| [az sql server](/cli/azure/sql/server#az_sql_server_create) | Serveropdrachten |
+| [az sql server firewall](/cli/azure/sql/server/firewall-rule#az_sql_server_firewall_rule_create) | Opdrachten voor serverfirewall. |
+| [az sql db](/cli/azure/sql/db#az_sql_db_create) | Databaseopdrachten. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,52 +1,51 @@
 ---
-title: Door micro soft verbonden cache op twee niveaus geneste Azure IoT Edge gateway met uitgaande niet-geverifieerde proxy | Microsoft Docs
+title: Microsoft Verbonden cache twee niveau genest Azure IoT Edge Gateway met uitgaande niet-| Microsoft Docs
 titleSuffix: Device Update for Azure IoT Hub
-description: Micro soft Connected cache op twee niveaus geneste Azure IoT Edge gateway met uitgaand niet-geverifieerde proxy zelf studie
+description: Microsoft Verbonden cache twee niveau genest Azure IoT Edge Gateway met uitgaande niet-gemachtigde proxyzelfstudie
 author: andyriv
 ms.author: andyriv
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: e9749dfd7b28551a4fc2e7c6ba70ba9cce4e5a69
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 623ce808423f76ae1be079e0424fe3ddf27d1d58
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107307296"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107811882"
 ---
-# <a name="microsoft-connected-cache-preview-deployment-scenario-sample-two-level-nested-azure-iot-edge-gateway-with-outbound-unauthenticated-proxy"></a>Voor beeld van micro soft Connected cache preview Deployment scenario: geneste Azure IoT Edge gateway op twee niveaus met uitgaande niet-geverifieerde proxy
+# <a name="microsoft-connected-cache-preview-deployment-scenario-sample-two-level-nested-azure-iot-edge-gateway-with-outbound-unauthenticated-proxy"></a>Voorbeeld van Verbonden cache preview-implementatie van Microsoft: Twee niveau geneste Azure IoT Edge Gateway met uitgaande niet-gemachtigde proxy
 
-Op basis van het onderstaande diagram is er in dit scenario een Azure IoT Edge gateway en een downstream Azure IoT Edge apparaat, een Azure IoT Edge gateway die is geparent op een andere Azure IoT Edge gateway en een proxy server op de IT-DMZ. Hieronder ziet u een voor beeld van de micro soft Connected cache environments Varia bles die in de Azure Portal UX worden ingesteld voor beide MCC-modules die zijn geïmplementeerd op de Azure IoT Edge gateways. In het voor beeld ziet u de configuratie voor twee niveaus van Azure IoT Edge gateways, maar er is geen limiet voor de diepte van upstream-hosts die door micro soft Connected cache worden ondersteund. Er is geen verschil in de MCC-container maken opties uit de vorige voor beelden.
+In het onderstaande diagram wordt het scenario beschreven waarin de ene Azure IoT Edge gateway directe toegang heeft tot CDN-resources en als bovenliggende gateway voor een andere Azure IoT Edge gateway. De onderliggende IoT Edge gateway werkt als het bovenliggende azure IoT Leaf-apparaat, zoals een Raspberry Pi. Zowel het Azure IoT Edge onderliggende apparaat als het Azure IoT-apparaat zijn geïsoleerd van internet. In het onderstaande voorbeeld wordt de configuratie voor twee niveaus van Azure IoT Edge-gateways gedemonstreerd, maar er is geen limiet voor de diepte van upstreamhosts die door Microsoft Verbonden cache worden ondersteund. Er is geen verschil in microsoft Verbonden cache container maken van de vorige voorbeelden.
 
-Raadpleeg voor meer informatie over het configureren van gelaagde implementaties van Azure IoT Edge gateways op de documentatie [verbinding maken downstream IOT edge apparaten-Azure IOT Edge](../iot-edge/how-to-connect-downstream-iot-edge-device.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11) . Houd er ook rekening mee dat bij het implementeren van Azure IoT Edge, micro soft Connected cache en aangepaste modules, alle modules zich in hetzelfde container register moeten bevinden.
+Raadpleeg de documentatie [Connect downstream IoT Edge devices - Azure IoT Edge](../iot-edge/how-to-connect-downstream-iot-edge-device.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11) (Downstream-verbinding maken met Azure IoT Edge-apparaten) voor meer informatie over het configureren van gelaagde implementaties van Azure IoT Edge gateways. Houd er ook rekening mee dat bij het Azure IoT Edge, Microsoft Verbonden cache en aangepaste modules alle modules zich in hetzelfde containerregister moeten bevinden.
 
-In het onderstaande diagram wordt het scenario beschreven waarbij één Azure IoT Edge gateway als rechtstreekse toegang tot CDN-bronnen fungeert als de bovenliggende site voor een andere Azure IoT Edge gateway die fungeert als bovenliggend item voor een Azure IoT-blad apparaat, zoals een Raspberry pi. Alleen de bovenliggende Azure IoT Edge gateway heeft Internet verbinding met CDN-bronnen en zowel het Azure IoT Edge onderliggende als het Azure IoT-apparaat zijn Internet geïsoleerd. 
+>[!Note]
+>Bij het implementeren Azure IoT Edge, Microsoft Verbonden cache en aangepaste modules, moeten alle modules zich in hetzelfde containerregister bevinden.
 
-  :::image type="content" source="media/connected-cache-overview/nested-level-proxy.png" alt-text="Door micro soft verbonden cache genest" lightbox="media/connected-cache-overview/nested-level-proxy.png":::
+  :::image type="content" source="media/connected-cache-overview/nested-level-proxy.png" alt-text="Microsoft Verbonden cache Genest" lightbox="media/connected-cache-overview/nested-level-proxy.png":::
 
 ## <a name="parent-gateway-configuration"></a>Configuratie van bovenliggende gateway
+1. Voeg de Microsoft Verbonden cache-module toe aan de implementatie van uw Azure IoT Edge-gatewayapparaat in Azure IoT Hub (zie Ondersteuning voor niet-verbonden apparaten voor meer informatie over het krijgen van de module). [](connected-cache-disconnected-device-update.md)
+2. Voeg de omgevingsvariabelen voor de implementatie toe. Hieronder vindt u een voorbeeld van de omgevingsvariabelen.
 
-1. Voeg de micro soft-module verbonden cache toe aan de implementatie van uw Azure IoT Edge gateway apparaat in azure IoT Hub.
-2. Voeg de omgevings variabelen voor de implementatie toe. Hieronder ziet u een voor beeld van omgevings variabelen.
+    **Omgevingsvariabelen**
 
-    **Omgevings variabelen**
+    | Name                          | Waarde                                                                 |
+    | ----------------------------- | ----------------------------------------------------------------------| 
+    | CACHE_NODE_ID                 | Beschrijvingen [van omgevingsvariabelen](connected-cache-configure.md) bekijken |
+    | CUSTOMER_ID                   | Beschrijvingen [van omgevingsvariabelen](connected-cache-configure.md) bekijken |
+    | CUSTOMER_KEY                  | Beschrijvingen [van omgevingsvariabelen](connected-cache-configure.md) bekijken |
+    | STORAGE_1_SIZE_GB             | 10                                                                    |
+    | CACHEABLE_CUSTOM_1_HOST       | Packagerepo.com:80                                                    |
+    | CACHEABLE_CUSTOM_1_CANONICAL  | Packagerepo.com                                                       |
+    | IS_SUMMARY_ACCESS_UNRESTRICTED| true                                                                  |
 
-    | Name                 | Waarde                                       |
-    | ----------------------------- | --------------------------------------------| 
-    | CACHE_NODE_ID                 | Zie beschrijving van omgevings variabele hierboven. |
-    | CUSTOMER_ID                   | Zie beschrijving van omgevings variabele hierboven. |
-    | CUSTOMER_KEY                  | Zie beschrijving van omgevings variabele hierboven. |
-    | STORAGE_ *N* _SIZE_GB           | N = 5                                       |
-    | CACHEABLE_CUSTOM_1_HOST       | Packagerepo.com:80                          |
-    | CACHEABLE_CUSTOM_1_CANONICAL  | Packagerepo.com                             |
-    | IS_SUMMARY_ACCESS_UNRESTRICTED| true                                        |
-    | UPSTREAM_PROXY                | IP-adres of FQDN van proxy server                     |
-
-3. Voeg de opties voor het maken van de container voor de implementatie toe. Er is geen verschil in de MCC-container Create-opties in het vorige voor beeld. Hieronder ziet u een voor beeld van de opties voor het maken van een container.
+3. Voeg de opties voor het maken van de container toe voor de implementatie. Er is geen verschil in opties voor het maken van MCC-containers uit het vorige voorbeeld. Hieronder vindt u een voorbeeld van de opties voor het maken van containers.
 
 ### <a name="container-create-options"></a>Opties voor het maken van containers
 
-```markdown
+```json
 {
     "HostConfig": {
         "Binds": [
@@ -65,38 +64,42 @@ In het onderstaande diagram wordt het scenario beschreven waarbij één Azure Io
             ]
         }
     }
+}
 ```
 
 ## <a name="child-gateway-configuration"></a>Configuratie van onderliggende gateway
 
 >[!Note]
->Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Zie voor meer informatie [verbinding maken met downstream IOT edge apparaten-Azure IOT Edge](../iot-edge/how-to-connect-downstream-iot-edge-device.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11#deploy-modules-to-lower-layer-devices) voor meer informatie.
+>Als u containers hebt gerepliceerd die worden gebruikt in uw configuratie in uw eigen privéregister, moet u de config.toml-instellingen en runtime-instellingen in uw module-implementatie wijzigen. Zie Verbinding maken met [downstreamapparaten](../iot-edge/how-to-connect-downstream-iot-edge-device.md?preserve-view=true&tabs=azure-portal&view=iotedge-2020-11#deploy-modules-to-lower-layer-devices) met IoT Edge - Azure IoT Edge meer informatie voor meer informatie.
 
-1. Wijzig het pad naar de afbeelding voor de Edge-agent, zoals wordt getoond in het volgende voor beeld:
 
-```markdown
-[agent]
-name = "edgeAgent"
-type = "docker"
-env = {}
-[agent.config]
-image = "<parent_device_fqdn_or_ip>:8000/iotedge/azureiotedge-agent:1.2.0-rc2"
-auth = {}
-```
-2. Wijzig de runtime-instellingen voor de Edge hub en de Edge-agent in de implementatie van Azure IoT Edge, zoals wordt geïllustreerd in dit voor beeld:
+1. Wijzig het pad naar de afbeelding voor de Edge-agent, zoals wordt gedemonstreerd in het onderstaande voorbeeld:
+
+    ```markdown
+    [agent]
+    name = "edgeAgent"
+    type = "docker"
+    env = {}
+    [agent.config]
+    image = "<parent_device_fqdn_or_ip>:8000/iotedge/azureiotedge-agent:1.2.0-rc2"
+    auth = {}
+    ```
+2. Wijzig de Runtime-instellingen van de Edge Hub- en Edge-agent in Azure IoT Edge implementatie zoals in dit voorbeeld wordt gedemonstreerd:
     
-    * Voer onder Edge hub in het veld installatie kopie ```$upstream:8000/iotedge/azureiotedge-hub:1.2.0-rc2```
-    * Onder Edge agent, in het veld afbeelding, voert u ```$upstream:8000/iotedge/azureiotedge-agent:1.2.0-rc2```
+    * Voer onder Edge Hub in het afbeeldingsveld in ```$upstream:8000/iotedge/azureiotedge-hub:1.2.0-rc2```
+    * Voer onder Edge Agent in het afbeeldingsveld in ```$upstream:8000/iotedge/azureiotedge-agent:1.2.0-rc2```
 
-3. Voeg de micro soft-module verbonden cache toe aan de implementatie van uw Azure IoT Edge gateway apparaat in azure IoT Hub.
+3. Voeg de Microsoft Verbonden cache-module toe aan uw Azure IoT Edge-gatewayapparaatimplementatie in Azure IoT Hub.
 
-   * Kies een naam voor de module: ```ConnectedCache```
-   * Wijzig de afbeeldings-URI: ```$upstream:8000/mcc/linux/iot/mcc-ubuntu-iot-amd64:latest```
+   * Kies een naam voor uw module: ```ConnectedCache```
+   * Wijzig de URI van de afbeelding: ```$upstream:8000/mcc/linux/iot/mcc-ubuntu-iot-amd64:latest```
 
-4. Voeg dezelfde omgevings variabelen en container Create-opties toe die in de bovenliggende implementatie worden gebruikt.
+4. Voeg dezelfde set omgevingsvariabelen en opties voor het maken van containers toe die worden gebruikt in de bovenliggende implementatie.
+>[!Note]
+>De CACHE_NODE_ID moet uniek zijn.  De CUSTOMER_ID en CUSTOMER_KEY zijn identiek aan de bovenliggende waarden. (Zie [Microsoft-Verbonden cache](connected-cache-configure.md)
 
-Voer de volgende opdracht uit in de terminal van het IoT Edge-apparaat dat als host fungeert voor de module of een apparaat in het netwerk voor een validatie van de juiste werking van micro soft Connected cache.
+Voer voor een validatie van goed functionerende Microsoft Verbonden cache de volgende opdracht uit in de terminal van het IoT Edge-apparaat dat als host voor de module of een apparaat in het netwerk wordt gebruikt. Vervang \<Azure IoT Edge Gateway IP\> door het IP-adres of de hostnaam van uw IoT Edge gateway. (Zie details van omgevingsvariabele voor informatie over de zichtbaarheid van dit rapport).
 
 ```bash
-    wget "http://<CHILD Azure IoT Edge Gateway IP>/mscomtest/wuidt.gif?cacheHostOrigin=au.download.windowsupdate.com
+    wget http://<CHILD Azure IoT Edge Gateway IP>/mscomtest/wuidt.gif?cacheHostOrigin=au.download.windowsupdate.com
 ```

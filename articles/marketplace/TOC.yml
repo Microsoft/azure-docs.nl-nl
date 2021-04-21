@@ -61,25 +61,18 @@
           href: test-drive-hosted-detailed-config.md
         - name: Een Azure-abonnement instellen voor gehoste test drives
           href: test-drive-azure-subscription-setup.md
-    - name: Gebruiksvermelding van Azure-klanten
+    - name: Gebruikskenmerken van klanten van Azure-partners
       href: azure-partner-customer-usage-attribution.md
     - name: Go-To-Market-opties
       items:
         - name: Kies uw marketplace-voordelen
           href: gtm-your-marketplace-benefits.md
-          items: null
-        - name: Collectieve verkoop met Microsoft
-          items:
-            - name: Overzicht van co-verkoop
-              href: co-sell-overview.md
-            - name: Vereisten voor co-verkoop
-              href: co-sell-requirements.md
-            - name: Co-verkoop configureren
-              href: co-sell-configure.md
-            - name: De status van de co-verkoop controleren
-              href: co-sell-status.md
-            - name: Co-celoplossingen migreren van OCP GTM
-              href: co-sell-solution-migration.md
+        - name: Betrokkenheid van partner bij collectieve verkoop
+          href: marketplace-co-sell.md
+        - name: Optie voor collectieve verkoop in Partnercentrum
+          href: commercial-marketplace-co-sell.md
+        - name: Co-celoplossingen migreren van OCP GTM
+          href: co-sell-solution-migration.md
         - name: Doorverkopen via CSP-partners
           href: cloud-solution-providers.md
         - name: Gids voor onboarding van Connect-programma
@@ -206,20 +199,32 @@
           href: create-consulting-service-pricing-availability.md
     - name: Dynamics 365-aanbiedingen
       items:
-        - name: Een Dynamics 365-aanbieding plannen
-          href: appsource-offer-publishing-guide.md
-        - name: Een Dynamics 365-aanbieding maken en publiceren
+        - name: Uw aanbieding plannen
+          href: marketplace-dynamics-365.md
+        - name: Een Customer Engagement-& Power Apps maken
           items:
-            - name: Een aanbieding voor Dynamics 365 for Customer Engagement en Power Apps maken
-              href: partner-center-portal/create-new-customer-engagement-offer.md
+            - name: De aanbieding maken
+              href: dynamics-365-customer-engage-offer-setup.md
+            - name: Eigenschappen
+              href: dynamics-365-customer-engage-properties.md
+            - name: Aanbiedingsvermelding
+              href: dynamics-365-customer-engage-offer-listing.md
+            - name: Beschikbaarheid
+              href: dynamics-365-customer-engage-availability.md
+            - name: Technische configuratie
+              href: dynamics-365-customer-engage-technical-configuration.md
+            - name: Aanvullende inhoud
+              href: dynamics-365-customer-engage-supplemental-content.md
+            - name: Beoordelen en publiceren
+              href: dynamics-365-customer-engage-review-publish.md
+        - name: Een Operations-aanbieding maken
+          items:
             - name: Een Dynamics 365 for Operations-aanbieding maken
-              items:
-                - name: Een Dynamics 365 for Operations-aanbieding maken
-                  href: partner-center-portal/create-new-operations-offer.md
-                - name: Functionele validatie
-                  href: dynamics-365-finance-operations-functional-validation.md
-            - name: Een Dynamics 365 Business Central-aanbieding maken
-              href: partner-center-portal/create-new-business-central-offer.md
+              href: partner-center-portal/create-new-operations-offer.md
+            - name: Functionele validatie
+              href: dynamics-365-finance-operations-functional-validation.md
+        - name: Een Business Central-aanbieding maken
+          href: partner-center-portal/create-new-business-central-offer.md
     - name: Aanbiedingen voor IoT Edge-module
       items:
         - name: Aanbieding voor IoT Edge-module plannen
@@ -228,8 +233,6 @@
           href: partner-center-portal/azure-iot-edge-module-creation.md
         - name: Technische assets voor IoT Edge-module voorbereiden
           href: partner-center-portal/create-iot-edge-module-asset.md
-        - name: Controlelijst vóór certificering
-          href: iot-edge-checklist.md
     - name: Aanbieding voor beheerde service
       items:
         - name: Een aanbieding voor beheerde service plannen
@@ -328,48 +331,6 @@
       href: partner-center-portal/downloads-dashboard.md
     - name: Dashboard voor classificaties en beoordelingen
       href: partner-center-portal/ratings-reviews.md
-    - name: Programmatische toegang tot analyses
-      items:
-        - name: Aan de slag
-          href: analytics-get-started.md
-        - name: Vereisten voor programmatische toegang
-          href: analytics-prerequisites.md
-        - name: Programmatisch toegangsparadigma
-          href: analytics-programmatic-access.md
-        - name: Uw eerste API-aanroep maken
-          href: analytics-make-your-first-api-call.md
-        - name: Lijst met systeemquery's
-          href: analytics-system-queries.md
-        - name: Voorbeeldquery's
-          href: analytics-sample-queries.md
-        - name: Voorbeeldtoepassing
-          href: analytics-sample-application.md
-        - name: Aangepaste queryspecificatie
-          href: analytics-custom-query-specification.md
-        - name: Veelgestelde vragen over Programmatic Analytics
-          href: analytics-programmatic-faq.md
-        - name: Naslaginformatie over de Analyse-API
-          items:
-            - name: Lijst met API's
-              href: analytics-available-apis.md
-            - name: Alle gegevenssets op halen
-              href: analytics-api-get-all-datasets.md
-            - name: API voor rapportquery's opvragen
-              href: analytics-api-get-report-queries.md
-            - name: API voor rapportquery's verwijderen
-              href: analytics-api-delete-report-queries.md
-            - name: Rapportquery's-API uitproberen
-              href: analytics-api-try-report-queries.md
-            - name: Rapport-API op halen
-              href: analytics-api-get-report.md
-            - name: Rapport-API bijwerken
-              href: analytics-api-update-report.md
-            - name: Rapport-API verwijderen
-              href: analytics-api-delete-report.md
-            - name: API voor rapportuitvoeringen onderbreken
-              href: analytics-api-pause-report-executions.md
-            - name: API voor rapportuitvoeringen hervatten
-              href: analytics-api-resume-report-executions.md
     - name: Factureringsafwijkingen naar data-data beheren
       href: anomaly-detection.md
     - name: Algemene vragen over analyses
@@ -470,8 +431,6 @@
       href: commercial-marketplace-co-sell-countries.md
     - name: Staatcodes voor collectieve verkoop
       href: commercial-marketplace-co-sell-states.md
-    - name: Diagram van referentiearchitectuur
-      href: reference-architecture-diagram.md
     - name: Categorieën en subcategorieën
       href: categories.md
     - name: Ondersteunde HTML-tags

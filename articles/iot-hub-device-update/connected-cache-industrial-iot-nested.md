@@ -1,42 +1,42 @@
 ---
-title: Micro soft Connected cache in een Azure IoT Edge voor de industriële IoT-configuratie | Microsoft Docs
-description: Micro soft Connected cache in een Azure IoT Edge voor de zelf studie over industriële IoT-configuratie
+title: Microsoft Verbonden cache binnen een Azure IoT Edge voor industriële IoT-configuratie | Microsoft Docs
+description: Zelfstudie Verbonden cache Microsoft Azure IoT Edge voor industriële IoT-configuratie
 author: andyriv
 ms.author: andyriv
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 0d70ed8b906c171c001c5bda81a79ca9b65febac
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 083c7bf6edc7da1fd617487e91b0a3848fb401fe
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101664631"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107811808"
 ---
-# <a name="microsoft-connected-cache-preview-deployment-scenario-sample-microsoft-connected-cache-within-an-azure-iot-edge-for-industrial-iot-configuration"></a>Voor beeld van micro soft Connected cache preview Deployment scenario: micro soft Connected cache in een Azure IoT Edge voor de industriële IoT-configuratie
+# <a name="microsoft-connected-cache-preview-deployment-scenario-sample-microsoft-connected-cache-within-an-azure-iot-edge-for-industrial-iot-configuration"></a>Voorbeeld van Verbonden cache preview-implementatie van Microsoft: Microsoft Verbonden cache in een Azure IoT Edge voor industriële IoT-configuratie
 
-Productie netwerken zijn vaak ingedeeld in hiërarchische lagen volgens het [Purdue-netwerk model](https://en.wikipedia.org/wiki/Purdue_Enterprise_Reference_Architecture) (opgenomen in de [ISA 95](https://en.wikipedia.org/wiki/ANSI/ISA-95) -en [ISA 99](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa99) -standaarden). In deze netwerken is alleen de toplaag verbonden met de Cloud en kunnen de lagere lagen in de hiërarchie alleen communiceren met aangrenzende Noord-en Zuid-lagen.
+Productienetwerken zijn vaak ingedeeld in hiërarchische lagen volgens het [Purdue-netwerkmodel](https://en.wikipedia.org/wiki/Purdue_Enterprise_Reference_Architecture) (opgenomen in de [ISA 95-](https://en.wikipedia.org/wiki/ANSI/ISA-95) en [ISA 99-standaarden).](https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa99) In deze netwerken heeft alleen de bovenste laag verbinding met de cloud en kunnen de lagere lagen in de hiërarchie alleen communiceren met aangrenzende noord- en zuidlagen.
 
-Dit GitHub-voor beeld, [Azure IOT Edge voor industriële IOT](https://github.com/Azure-Samples/iot-edge-for-iiot), implementeert het volgende:
+In dit [GitHub-voorbeeld, Azure IoT Edge voor Industrial IoT,](https://github.com/Azure-Samples/iot-edge-for-iiot)wordt het volgende geïmplementeerd:
 
-* Gesimuleerd Purdue-netwerk in azure
+* Gesimuleerd Purdue-netwerk in Azure
 * Industriële activa 
-* Hiërarchie van Azure IoT Edge gateways
+* Hiërarchie Azure IoT Edge gateways
   
-Deze onderdelen worden gebruikt om industriële gegevens te verkrijgen en deze veilig te uploaden naar de Cloud zonder de beveiliging van het netwerk in gevaar te brengen. Micro soft Connected cache kan worden geïmplementeerd ter ondersteuning van het downloaden van inhoud op alle niveaus binnen het ISA 95-compatibele netwerk.
+Deze onderdelen worden gebruikt om industriële gegevens te verkrijgen en veilig te uploaden naar de cloud zonder de beveiliging van het netwerk in gevaar te brengen. Microsoft Verbonden cache kunnen worden geïmplementeerd ter ondersteuning van het downloaden van inhoud op alle niveaus binnen het ISA 95-compatibele netwerk.
 
-De sleutel voor het configureren van implementaties van met micro soft verbonden caches in een ISA 95-compatibel netwerk is het configureren van zowel de proxy *als* de upstream-host op de L3-IOT Edge gateway.
+De sleutel voor het configureren van Microsoft Verbonden cache-implementaties binnen een ISA 95-compatibel netwerk is het configureren van zowel de *OT-proxy* als de upstream-host op de L3 IoT Edge-gateway.
 
-1. Configureer implementaties van met micro soft verbonden caches op de N5-en N4-niveaus, zoals beschreven in het Two-Level geneste IoT Edge gateway-voor beeld 
-2. De implementatie op de L3-IoT Edge gateway moet de volgende opgeven:
+1. Configureer Microsoft Verbonden cache-implementaties op het niveau L5 en L4, zoals beschreven in het voorbeeld Two-Level Geneste IoT Edge-gateway 
+2. De implementatie op de IoT Edge L3-gateway moet het volgende opgeven:
    
-   * UPSTREAM_HOST-de IP/FQDN van de N4-IoT Edge gateway, die door de L3 micro soft-verbonden cache wordt gevraagd om inhoud.
-   * UPSTREAM_PROXY-de IP/FQDN: poort van de proxy server.
+   * UPSTREAM_HOST: de IP/FQDN van de L4 IoT Edge-gateway, die door de L3 Microsoft-Verbonden cache inhoud wordt opgevraagd.
+   * UPSTREAM_PROXY: de IP/FQDN:POORT van de OT-proxyserver.
 
-3. De niet-geotde proxy moet de N4 MCC FQDN/IP-adres toevoegen aan de acceptatie lijst.
+3. De OT-proxy moet het L4 MCC FQDN/IP-adres toevoegen aan de allowlist.
 
-Als u wilt controleren of micro soft Connected cache correct werkt, voert u de volgende opdracht uit in de terminal van het IoT Edge apparaat, de module te hosten of een apparaat in het netwerk.
+Als u wilt controleren of Microsoft Verbonden cache goed werkt, voert u de volgende opdracht uit in de terminal van het IoT Edge-apparaat, waar de module of een apparaat in het netwerk wordt host. Vervang \<Azure IoT Edge Gateway IP\> door het IP-adres of de hostnaam van uw IoT Edge gateway. (Zie details van de omgevingsvariabele voor informatie over de zichtbaarheid van dit rapport).
 
 ```bash
-    wget "http://<L3 IoT Edge Gateway IP>/mscomtest/wuidt.gif?cacheHostOrigin=au.download.windowsupdate.com
+    wget http://<L3 IoT Edge Gateway IP>/mscomtest/wuidt.gif?cacheHostOrigin=au.download.windowsupdate.com
 ```

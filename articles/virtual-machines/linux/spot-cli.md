@@ -1,6 +1,6 @@
 ---
-title: CLI gebruiken voor het implementeren van Azure Spot Virtual Machines
-description: Meer informatie over het gebruik van de CLI voor het implementeren van Azure Spot Virtual Machines om kosten te besparen.
+title: CLI gebruiken om Azure Spot-Virtual Machines
+description: Meer informatie over het gebruik van de CLI voor het implementeren van Azure Spot Virtual Machines kosten te besparen.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: spot
@@ -9,37 +9,37 @@ ms.topic: how-to
 ms.date: 03/22/2021
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 90ad35757834c14abdffb017ff31b3296074ca24
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8e8bdaa7a812d8c7accfea59b58b75a58d50e21e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104802434"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789605"
 ---
-# <a name="deploy-azure-spot-virtual-machines-using-the-azure-cli"></a>Azure-Spot Virtual Machines implementeren met behulp van Azure CLI
+# <a name="deploy-azure-spot-virtual-machines-using-the-azure-cli"></a>Azure Spot Virtual Machines implementeren met behulp van de Azure CLI
 
-Met behulp van [Azure Spot Virtual Machines](../spot-vms.md) kunt u profiteren van onze ongebruikte capaciteit tegen een aanzienlijke kosten besparing. Op elk moment dat Azure de capaciteit nodig heeft, verwijdert de Azure-infra structuur Azure Spot Virtual Machines. Daarom zijn Azure Spot Virtual Machines geweldig voor workloads die onderbrekingen kunnen afhandelen, zoals batch verwerkings taken, ontwikkel-en test omgevingen, grootschalige werk belastingen en meer.
+Door [Azure Spot Virtual Machines](../spot-vms.md) kunt u profiteren van onze ongebruikte capaciteit tegen aanzienlijke kostenbesparingen. Op elk moment waarop Azure de capaciteit terug nodig heeft, zal de Azure-infrastructuur Azure Spot-Virtual Machines. Azure Spot Virtual Machines zijn daarom zeer goed voor workloads die onderbrekingen kunnen afhandelen, zoals batchverwerkingstaken, dev/test-omgevingen, grote rekenworkloads en meer.
 
-Prijzen voor Azure Spot Virtual Machines is variabel, op basis van de regio en de SKU. Zie prijzen voor VM'S voor [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) en [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/)voor meer informatie. 
+Prijzen voor Azure Spot Virtual Machines zijn variabel, op basis van regio en SKU. Zie VM-prijzen voor [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) en Windows voor meer [informatie.](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) 
 
-U hebt de mogelijkheid om een maximum prijs voor de virtuele machine in te stellen die u wilt betalen, per uur. U kunt de maximale prijs voor een virtuele machine van Azure spot instellen in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde `0.98765` is bijvoorbeeld een maximum prijs van $0,98765 USD per uur. Als u de maximale prijs instelt op `-1` , wordt de VM niet verwijderd op basis van de prijs. De prijs voor de VM is de huidige prijs voor de virtuele Azure-machine of de prijs voor een standaard-VM, die ooit minder is, zolang er capaciteit en quota beschikbaar zijn. Zie [Azure Spot Virtual Machines-prijzen](../spot-vms.md#pricing)voor meer informatie over het instellen van de maximum prijs.
+U hebt de mogelijkheid om een maximumprijs in te stellen die u per uur wilt betalen voor de VM. De maximumprijs voor een virtuele Spot-machine van Azure kan worden ingesteld in Amerikaanse dollars (USD), met maximaal 5 decimalen. De waarde zou bijvoorbeeld `0.98765` een maximale prijs van $ 0,98765 USD per uur zijn. Als u de maximumprijs in stelt op , wordt de VM niet op basis van `-1` de prijs onbetaald. De prijs voor de virtuele machine is de huidige prijs voor azure Spot Virtual Machine of de prijs voor een standaard-VM, die ooit lager is, zolang er capaciteit en quotum beschikbaar zijn. Zie Azure Spot Virtual Machines - [Pricing (Prijzen)](../spot-vms.md#pricing)voor meer informatie over het instellen van de maximumprijs.
 
-Het proces voor het maken van een virtuele Azure-machine met behulp van de Azure CLI is hetzelfde als die in het [artikel Quick](./quick-create-cli.md)start. U hoeft alleen de para meter---Priority spot toe te voegen, de `--eviction-policy` toewijzing in te stellen op ofwel ongedaan maken (dit is de standaard instelling) of `Delete` , en een maximum prijs te geven of `-1` . 
+Het proces voor het maken van een virtuele Azure Spot-machine met behulp van de Azure CLI is hetzelfde als beschreven in het [quickstart-artikel](./quick-create-cli.md). Voeg de parameter '--priority Spot' toe, stel de in op Toewijzing van de toewijzing (dit is de standaardinstelling) of , en `--eviction-policy` `Delete` geef een maximumprijs op of `-1` . 
 
 
 ## <a name="install-azure-cli"></a>Azure CLI installeren
 
-Als u Azure Spot Virtual Machines wilt maken, moet u de Azure CLI-versie 2.0.74 of hoger uitvoeren. Voer **AZ--version** uit om de versie te vinden. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli). 
+Als u Azure Spot Virtual Machines, moet u Azure CLI versie 2.0.74 of hoger uitvoeren. Voer **az --version uit om** de versie te vinden. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli). 
 
-Meld u aan bij Azure met [AZ login](/cli/azure/reference-index#az-login).
+Meld u aan bij Azure met [az login](/cli/azure/reference-index#az_login).
 
 ```azurecli-interactive
 az login
 ```
 
-## <a name="create-an-azure-spot-virtual-machine"></a>Een Azure spot-virtuele machine maken
+## <a name="create-an-azure-spot-virtual-machine"></a>Een virtuele Spot-machine in Azure maken
 
-In dit voor beeld ziet u hoe u een virtuele Linux-locatie van Azure implementeert die niet wordt verwijderd op basis van de prijs. Het verwijderings beleid is ingesteld om de toewijzing van de virtuele machine ongedaan te maken, zodat deze op een later tijdstip opnieuw kan worden opgestart. Als u de virtuele machine en de onderliggende schijf wilt verwijderen wanneer de virtuele machine wordt verwijderd, stelt u `--eviction-policy` in op `Delete` .
+In dit voorbeeld ziet u hoe u een virtuele Linux Azure Spot-machine implementeert die niet wordt onbezet op basis van de prijs. Het beleid voor de uitzetting is zo ingesteld dat de toewijzing van de VM wordt teruggeplaatst, zodat deze op een later tijdstip opnieuw kan worden opgestart. Als u de VM en de onderliggende schijf wilt verwijderen wanneer de VM wordt verwijderd, stelt u in `--eviction-policy` op `Delete` .
 
 ```azurecli-interactive
 az group create -n mySpotGroup -l eastus
@@ -56,7 +56,7 @@ az vm create \
 
 
 
-Nadat de VM is gemaakt, kunt u een query uitvoeren om de maximale facturerings prijs voor alle virtuele machines in de resource groep weer te geven.
+Nadat de VM is gemaakt, kunt u een query uitvoeren om de maximale factureringsprijs voor alle VM's in de resourcegroep te bekijken.
 
 ```azurecli-interactive
 az vm list \
@@ -65,60 +65,60 @@ az vm list \
    --output table
 ```
 
-## <a name="simulate-an-eviction"></a>Een verwijdering simuleren
+## <a name="simulate-an-eviction"></a>Een uitzetting simuleren
 
-U kunt een virtuele machine van Azure spot simuleren met behulp van REST, Power shell of de CLI om te testen hoe goed uw toepassing reageert op een plotselinge verwijdering.
+U kunt een azure spot-virtuele machine simuleren met BEHULP van REST, PowerShell of de CLI om te testen hoe goed uw toepassing reageert op een plotselinge uitzetting.
 
-In de meeste gevallen moet u de REST API [virtual machines simuleren](/rest/api/compute/virtualmachines/simulateeviction) gebruiken om te helpen bij het automatisch testen van toepassingen. Voor REST, een `Response Code: 204` betekent dat de gesimuleerde verwijdering is geslaagd. U kunt gesimuleerde verwijderingen combi neren met de [geplande gebeurtenis service](scheduled-events.md), om te automatiseren hoe uw app reageert wanneer de virtuele machine wordt verwijderd.
+In de meeste gevallen wilt u de REST API [Virtual Machines- Simulate Eviction](/rest/api/compute/virtualmachines/simulateeviction) gebruiken om te helpen bij het automatisch testen van toepassingen. Voor REST betekent `Response Code: 204` een dat de gesimuleerde uitzetting is geslaagd. U kunt gesimuleerde uitzettingen combineren met de [service](scheduled-events.md)Geplande gebeurtenis om te automatiseren hoe uw app reageert wanneer de VM wordt verwijderen.
 
-Als u geplande gebeurtenissen in actie wilt zien, kunt u [Azure vrijdag bekijken-azure Scheduled Events gebruiken om het onderhoud van vm's voor te bereiden](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance).
+Als u geplande gebeurtenissen in actie wilt zien, bekijkt u [Azure Friday - Azure Scheduled Events voorbereiden op VM-onderhoud.](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance)
 
 
 ### <a name="quick-test"></a>Snelle test
 
-Voor een snelle test om te laten zien hoe een gesimuleerde verwijdering werkt, gaat u verder met het uitvoeren van query's op de geplande gebeurtenis service om te zien hoe deze eruitziet wanneer u een verwijdering simuleert met behulp van de Azure CLI.
+Voor een snelle test om te laten zien hoe een gesimuleerde uitzetting werkt, gaan we een query uitvoeren op de geplande gebeurtenisservice om te zien hoe deze eruit ziet wanneer u een uitzetting simuleert met behulp van de Azure CLI.
 
-De geplande gebeurtenis service is ingeschakeld voor uw service, de eerste keer dat u een aanvraag voor gebeurtenissen doet. 
+De service Geplande gebeurtenis wordt ingeschakeld voor uw service wanneer u voor het eerst een aanvraag voor gebeurtenissen doet. 
 
-Extern in uw virtuele machine en open vervolgens een opdracht prompt. 
+Ga op afstand naar uw VM en open vervolgens een opdrachtprompt. 
 
-Typ het volgende vanaf de opdracht prompt op uw virtuele machine:
+Typ het volgende in de opdrachtprompt op uw virtuele VM:
 
 ```
 curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01
 ```
 
-Dit eerste antwoord kan Maxi maal twee minuten duren. Vanaf nu wordt de uitvoer bijna onmiddellijk weer gegeven.
+Dit eerste antwoord kan maximaal 2 minuten duren. Vanaf nu moeten ze vrijwel onmiddellijk uitvoer weergeven.
 
-Op een computer waarop de Azure CLI is geïnstalleerd (zoals uw lokale machine), simuleert u een verwijdering met [AZ VM simuleren-verwijderen](https://docs.microsoft.com/cli/azure/vm#az_vm_simulate_eviction). Vervang de naam van de resource groep en de virtuele machine door uw eigen naam. 
+Simuleer op een computer met de Azure CLI (zoals uw lokale computer) een uitzetting met [az vm simulate-eviction.](https://docs.microsoft.com/cli/azure/vm#az_vm_simulate_eviction) Vervang de naam van de resourcegroep en de VM door uw eigen naam. 
 
 ```azurecli-interactive
 az vm simulate-eviction --resource-group mySpotRG --name mySpot
 ```
 
-Als de aanvraag is uitgevoerd, is de reactie-uitvoer `Status: Succeeded` .
+De antwoorduitvoer heeft `Status: Succeeded` als de aanvraag is gemaakt.
 
-Ga snel terug naar uw externe verbinding met de virtuele spot machine en zoek het Scheduled Events-eind punt opnieuw op. Herhaal de volgende opdracht totdat u een uitvoer krijgt die meer informatie bevat:
+Ga snel terug naar uw externe verbinding met uw virtuele spot-machine en query's Scheduled Events eindpunt opnieuw. Herhaal de volgende opdracht totdat u een uitvoer met meer informatie krijgt:
 
 ```
 curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01
 ```
 
-Wanneer de geplande gebeurtenis service het verwijderings bericht ontvangt, krijgt u een antwoord dat er ongeveer als volgt uitziet:
+Wanneer de geplande gebeurtenisservice de melding van de uitzetting ontvangt, krijgt u een antwoord dat er ongeveer als het volgende uitziet:
 
 ```output
 {"DocumentIncarnation":1,"Events":[{"EventId":"A123BC45-1234-5678-AB90-ABCDEF123456","EventStatus":"Scheduled","EventType":"Preempt","ResourceType":"VirtualMachine","Resources":["myspotvm"],"NotBefore":"Tue, 16 Mar 2021 00:58:46 GMT","Description":"","EventSource":"Platform"}]}
 ```
 
-U ziet dat `"EventType":"Preempt"` en de resource de VM-resource is `"Resources":["myspotvm"]` . 
+U kunt zien dat `"EventType":"Preempt"` en de resource de VM-resource `"Resources":["myspotvm"]` is. 
 
-U kunt ook zien wanneer de virtuele machine wordt verwijderd door te controleren of de `"NotBefore"` virtuele machine niet vóór de opgegeven tijd wordt verwijderd, zodat het venster voor uw toepassing op een correcte manier kan worden afgesloten.
+U kunt ook zien wanneer de VM wordt gesloten door de te controleren: de VM wordt niet vóór de opgegeven tijd eruit gezet, zodat uw toepassing op een goede manier kan worden `"NotBefore"` afgesloten.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt ook een virtuele Azure-machine maken met behulp van [Azure PowerShell](../windows/spot-powershell.md), [Portal](../spot-portal.md)of een [sjabloon](spot-template.md).
+U kunt ook een virtuele Azure Spot-machine maken [met behulp Azure PowerShell,](../windows/spot-powershell.md) [portal](../spot-portal.md)of een [sjabloon](spot-template.md).
 
-Vraag actuele prijs informatie op met behulp van de [Azure retail-prijs-API](/rest/api/cost-management/retail-prices/azure-retail-prices) voor informatie over de virtuele machine van Azure spot. De `meterName` en `skuName` zijn beide opgenomen `Spot` .
+Query's uitvoeren op actuele prijsinformatie met behulp [van de API voor Azure-retailprijzen](/rest/api/cost-management/retail-prices/azure-retail-prices) voor informatie over Azure Spot Virtual Machine. De `meterName` en bevatten beide `skuName` `Spot` .
 
-Als er een fout optreedt, raadpleegt u [fout codes](../error-codes-spot.md).
+Zie Foutcodes als er een fout [is opgetreden.](../error-codes-spot.md)

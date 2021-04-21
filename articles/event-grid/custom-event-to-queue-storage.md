@@ -4,12 +4,12 @@ description: 'Quickstart: Gebruik Azure Event Grid en Azure CLI om een onderwerp
 ms.date: 02/02/2021
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 00808e7eca13824833673ef820d39b70bf618dd2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bb7712fbc5a0498695a8737d627f407eb6dfa575
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99493257"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107766821"
 ---
 # <a name="quickstart-route-custom-events-to-azure-queue-storage-with-azure-cli-and-event-grid"></a>Quickstart: Aangepaste gebeurtenissen naar Azure Queue Storage routeren met behulp van Azure CLI en Event Grid
 
@@ -29,7 +29,7 @@ Dit artikel bevat opdrachten voor het gebruik van Azure CLI.
 
 Event Grid-onderwerpen zijn Azure-resources en moeten in een Azure-resourcegroep worden geplaatst. De resourcegroep is een logische verzameling waarin Azure-resources worden geïmplementeerd en beheerd.
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create). 
+Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az_group_create). 
 
 In het volgende voorbeeld wordt een resourcegroep met de naam *gridResourceGroup* gemaakt op de locatie *westus2*.
 
@@ -118,9 +118,9 @@ Navigeer naar de opslagwachtrij in de portal en u ziet dat Event Grid deze drie 
 ![Berichten weergeven](./media/custom-event-to-queue-storage/messages.png)
 
 > [!NOTE]
-> Als u een [Azure-wachtrij opslag trigger gebruikt voor Azure functions](../azure-functions/functions-bindings-storage-queue-trigger.md) voor een wachtrij die berichten van Event grid ontvangt, wordt het volgende fout bericht weer gegeven bij de uitvoering van de functie: `The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.`
+> Als u een [Azure Queue Storage-trigger](../azure-functions/functions-bindings-storage-queue-trigger.md) voor Azure Functions gebruikt voor een wachtrij die berichten ontvangt van Event Grid, ziet u mogelijk het volgende foutbericht bij de uitvoering van de functie: `The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.`
 > 
-> De reden hiervoor is dat wanneer u een [Azure Queue-opslag trigger](../azure-functions/functions-bindings-storage-queue-trigger.md)gebruikt, Azure functions een **Base64-gecodeerde teken reeks** verwacht, maar Event grid berichten naar een opslag wachtrij verzendt in een tekst zonder opmaak. Het is momenteel niet mogelijk om de wachtrij trigger voor Azure Functions te configureren voor het accepteren van tekst zonder opmaak. 
+> De reden hiervoor is dat wanneer u een [Azure Queue Storage-trigger](../azure-functions/functions-bindings-storage-queue-trigger.md)gebruikt, Azure Functions een **met Base64** gecodeerde tekenreeks verwacht, maar Event Grid berichten in een tekst zonder opmaak naar een opslagwachtrij verzendt. Het is momenteel niet mogelijk om de wachtrijtrigger te configureren voor Azure Functions tekst zonder tekst te accepteren. 
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen

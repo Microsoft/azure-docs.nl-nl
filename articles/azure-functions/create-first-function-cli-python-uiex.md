@@ -1,18 +1,18 @@
 ---
-title: Een python-functie maken vanaf de opdracht regel voor Azure Functions
-description: Meer informatie over het maken van een python-functie vanaf de opdracht regel en het publiceren van het lokale project op serverloze hosting in Azure Functions.
+title: Een Python-functie maken vanaf de opdrachtregel voor Azure Functions
+description: Meer informatie over het maken van een Python-functie vanaf de opdrachtregel en het publiceren van het lokale project naar serverloze hosting in Azure Functions.
 ms.date: 11/03/2020
 ms.topic: quickstart
 ms.custom:
 - devx-track-python
 - devx-track-azurecli
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: da7f6fdaedd8105363cc62bf55bae2cb5f72f234
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 626cff867a336880689373c289087e2332a816ee
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102031647"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787445"
 ---
 # <a name="quickstart-create-a-python-function-in-azure-from-the-command-line"></a>Quickstart: Een Python-functie maken in Azure vanaf de opdrachtregel
 
@@ -24,21 +24,21 @@ ms.locfileid: "102031647"
 > - [PowerShell](create-first-function-cli-powershell.md)
 > - [TypeScript](create-first-function-cli-typescript.md)
 
-In dit artikel gebruikt u opdrachtregelprogramma’s om een Python-functie te maken die reageert op HTTP-aanvragen. Nadat u de code lokaal hebt getest, implementeert u deze in de <abbr title="Een runtime Computing Environment waarin alle details van de server transparant zijn voor toepassings ontwikkelaars, waardoor het proces van het implementeren en beheren van code wordt vereenvoudigd.">serverloos</abbr> omgeving van <abbr title="Een Azure-service die een voordelige serverloze computer omgeving biedt voor toepassingen.">Azure Functions</abbr>.
+In dit artikel gebruikt u opdrachtregelprogramma’s om een Python-functie te maken die reageert op HTTP-aanvragen. Nadat u de code lokaal hebt getest, implementeert u deze in de <abbr title="Een runtime-computingomgeving waarin alle details van de server transparant zijn voor toepassingsontwikkelaars, waardoor het implementatie- en beheerproces van code wordt vereenvoudigd.">serverloos</abbr> omgeving van <abbr title="Een Azure-service die een goedkope serverloze computingomgeving biedt voor toepassingen.">Azure Functions</abbr>.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
 
 Er is ook een [Versie op basis van Visual Studio Code](create-first-function-vs-code-python.md) van dit artikel.
 
-## <a name="1-configure-your-environment"></a>1. Configureer uw omgeving
+## <a name="1-configure-your-environment"></a>1. Uw omgeving configureren
 
 Voordat u begint, moet u het volgende hebben:
 
-+ Een Azure <abbr title="Het profiel waarmee facturerings gegevens voor Azure-gebruik worden bijgehouden.">account</abbr> met een actieve <abbr title="De basis organisatie structuur waarin u resources in azure beheert, meestal gekoppeld aan een individu of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
++ Een Azure-account <abbr title="Het profiel dat factureringsgegevens voor Azure-gebruik bijhoudt.">account</abbr> met een actief <abbr title="De basisstructuur van de organisatie waarin u resources in Azure beheert, meestal gekoppeld aan een individu of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 
 + De [Azure Functions Core Tools](functions-run-local.md#v2), versie 3.x. 
   
-+ Ofwel de <abbr title="Een reeks verschillende platform opdracht regel Programma's voor het werken met Azure-resources vanaf uw lokale ontwikkel computer, als alternatief voor het gebruik van de Azure Portal.">Azure CLI</abbr> of <abbr title="Een Power shell-module die opdrachten biedt voor het werken met Azure-resources vanaf uw lokale ontwikkel computer, als alternatief voor het gebruik van de Azure Portal.">Azure PowerShell</abbr> voor het maken van Azure-resources:
++ De <abbr title="Een set platformoverschrijdende opdrachtregelprogramma's voor het werken met Azure-resources vanaf uw lokale ontwikkelcomputer, als alternatief voor het gebruik van de Azure Portal.">Azure CLI</abbr> of <abbr title="Een PowerShell-module die opdrachten biedt voor het werken met Azure-resources vanaf uw lokale ontwikkelcomputer, als alternatief voor het gebruik van de Azure Portal.">Azure PowerShell</abbr> voor het maken van Azure-resources:
 
     + [Azure CLI](/cli/azure/install-azure-cli) versie 2.4 of hoger.
 
@@ -46,13 +46,13 @@ Voordat u begint, moet u het volgende hebben:
 
 + [Python 3.8 (64-bits)](https://www.python.org/downloads/release/python-382/), [Python 3.7 (64-bits)](https://www.python.org/downloads/release/python-375/), [Python 3.6 (64-bits)](https://www.python.org/downloads/release/python-368/), die allemaal door versie 3.x van Azure Functions worden ondersteund.
 
-### <a name="11-prerequisite-check"></a>1,1 controle op vereisten
+### <a name="11-prerequisite-check"></a>1.1 Controle van vereisten
 
-Controleer uw vereisten, afhankelijk van of u de Azure CLI of Azure PowerShell gebruikt voor het maken van Azure-resources:
+Controleer uw vereisten, die afhankelijk zijn van of u de Azure CLI gebruikt of Azure PowerShell voor het maken van Azure-resources:
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-+ Voer in een Terminal-of opdracht venster uit `func --version` om te controleren of de <abbr title="De set opdracht regel Programma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3. x.
++ Voer in een terminal- of opdrachtvenster uit `func --version` om te controleren of de <abbr title="De set opdrachtregelprogramma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3.x.
 
 + Voer `az --version` uit om te controleren of u versie 2.4 of hoger hebt van de Azure CLI.
 
@@ -62,7 +62,7 @@ Controleer uw vereisten, afhankelijk van of u de Azure CLI of Azure PowerShell g
 
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-+ Voer in een Terminal-of opdracht venster uit `func --version` om te controleren of de <abbr title="De set opdracht regel Programma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3. x.
++ Voer in een terminal- of opdrachtvenster uit `func --version` om te controleren of de <abbr title="De set opdrachtregelprogramma's voor het werken met Azure Functions op uw lokale computer.">Azure Functions Core Tools</abbr> zijn versie 3.x.
 
 + Voer `(Get-Module -ListAvailable Az).Version` uit en controleer of u versie 5.0 of hoger gebruikt. 
 
@@ -76,7 +76,7 @@ Controleer uw vereisten, afhankelijk van of u de Azure CLI of Azure PowerShell g
 
 ---
 
-## <a name="2-create-and-activate-a-virtual-environment"></a>2. <a name="create-venv"></a> een virtuele omgeving maken en activeren
+## <a name="2-create-and-activate-a-virtual-environment"></a>2. <a name="create-venv"></a> Een virtuele omgeving maken en activeren
 
 Voer de volgende opdrachten uit in een geschikte map om een virtuele omgeving met de naam `.venv` te maken en te activeren. Zorg ervoor dat u Python 3.8, 3.7 of 3.6 gebruikt, die wordt ondersteund door Azure Functions.
 
@@ -124,11 +124,11 @@ U voert alle volgende opdrachten uit in deze geactiveerde virtuele omgeving.
 
 ---
 
-## <a name="3-create-a-local-function-project"></a>3. een lokale functie project maken
+## <a name="3-create-a-local-function-project"></a>3. Een lokaal functieproject maken
 
-In deze sectie maakt u een lokale <abbr title="Een logische container voor een of meer afzonderlijke functies die samen kunnen worden geïmplementeerd en beheerd.">Azure Functions project</abbr> in python. Elke functie in het project reageert op een specifiek <abbr title="Het type gebeurtenis waarmee de code van de functie wordt aangeroepen, zoals een HTTP-aanvraag, een wachtrij bericht of een specifieke tijd.">activeren</abbr>.
+In deze sectie maakt u een lokale <abbr title="Een logische container voor een of meer afzonderlijke functies die samen kunnen worden geïmplementeerd en beheerd.">Azure Functions project</abbr> in Python. Elke functie in het project reageert op een specifiek <abbr title="Het type gebeurtenis dat de code van de functie aanroept, zoals een HTTP-aanvraag, een wachtrijbericht of een specifiek tijdstip.">activeren</abbr>.
 
-1. Voer de `func init` opdracht uit om een functions-project te maken in een map met de naam *LocalFunctionProj* met de opgegeven runtime:  
+1. Voer de `func init` opdracht uit om een Functions-project te maken in een map met de naam *LocalFunctionProj* met de opgegeven runtime:  
 
     ```console
     func init LocalFunctionProj --python
@@ -154,13 +154,13 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
     ```   
     Het `--name` argument is de unieke naam van uw functie (HttpExample).
 
-    Het `--template` argument geeft de trigger van de functie aan (http).
+    Met `--template` het argument wordt de trigger (HTTP) van de functie opgegeven.
     
-    `func new`Hiermee maakt u een submap die overeenkomt met de naam van de functie die een *\_ \_ init \_ \_ . py* -bestand bevat met de code van de functie en een configuratie bestand met de naam *function.jsop*.
+    `func new`maakt een submap die overeenkomt met de functienaam die een *\_ \_ init \_ \_ .py-bestand* bevat met de code van de functie en een configuratiebestand met de *naamfunction.jsop*.
 
     <br/>    
     <details>
-    <summary><strong>Code voor __init__. py</strong></summary>
+    <summary><strong>Code voor __init__.py</strong></summary>
     
     *\_\_init\_\_.py* bevat de Python-functie`main()` die wordt geactiveerd op basis van de configuratie in *function.json*.
     
@@ -171,9 +171,9 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
 
     <br/>
     <details>
-    <summary><strong>Code voor function.jsop</strong></summary>
+    <summary><strong>Code voor function.jsaan</strong></summary>
 
-    *function.js* is een configuratie bestand dat de <abbr title="Declaratieve verbindingen tussen een functie en andere resources. Een invoer binding biedt gegevens voor de functie. een uitvoer binding biedt gegevens van de functie aan andere resources.">invoer-en uitvoer bindingen</abbr> voor de functie, met inbegrip van het trigger type.
+    *function.jsis een* configuratiebestand dat definieert <abbr title="Declaratieve verbindingen tussen een functie en andere resources. Een invoerbinding levert gegevens aan de functie; een uitvoerbinding levert gegevens van de functie aan andere resources.">invoer- en uitvoerbindingen</abbr> voor de functie, met inbegrip van het triggertype.
     
     U kunt `scriptFile` zo nodig wijzigen om een ander Python-bestand aan te roepen.
     
@@ -186,7 +186,7 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
 
 ---
 
-## <a name="4-run-the-function-locally"></a>4. Voer de functie lokaal uit
+## <a name="4-run-the-function-locally"></a>4. De functie lokaal uitvoeren
 
 1. Voer uw functie uit door de lokale Azure Functions runtime host te starten vanuit de map *LocalFunctionProj*:
 
@@ -211,26 +211,26 @@ In deze sectie maakt u een lokale <abbr title="Een logische container voor een o
     
     <br/>
     <details>
-    <summary><strong>HttpExample wordt niet weer geven in de uitvoer</strong></summary>
+    <summary><strong>Ik zie HttpExample niet in de uitvoer</strong></summary>
 
-    Als HttpExample niet wordt weer gegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. In dat geval gebruikt u <kbd>CTRL + C</kbd> om de host te stoppen, navigeert u naar de hoofdmap van het project en voert u de vorige opdracht opnieuw uit.
+    Als HttpExample niet wordt weergegeven, hebt u de host waarschijnlijk gestart buiten de hoofdmap van het project. Gebruik in dat geval <kbd>Ctrl+C</kbd> om de host te stoppen, navigeer naar de hoofdmap van het project en voer de vorige opdracht opnieuw uit.
     </details>
 
-1. Kopieer de URL van de **HttpExample** -functie van deze uitvoer naar een browser en voeg de query teken reeks toe **? name =<YOUR_NAME>**, waardoor de volledige URL, zoals **http://localhost:7071/api/HttpExample?name=Functions** . In de browser moet een bericht als **Hello-functies** worden weer gegeven:
+1. Kopieer de URL van uw **HttpExample-functie** van deze uitvoer naar een browser en plaats de querytekenreeks **?name=<YOUR_NAME>**, waardoor de volledige URL als wordt **http://localhost:7071/api/HttpExample?name=Functions** weergegeven. In de browser moet een bericht worden weergegeven als **Hallo functies:**
 
     ![Resultaat van de functie lokaal uitgevoerd in de browser](../../includes/media/functions-run-function-test-local-cli/function-test-local-browser.png)
 
 1. De terminal waarin u uw project hebt gestart, toont ook de logboek uitvoer wanneer u aanvragen doet.
 
-1. Wanneer u klaar bent, gebruikt u <kbd>CTRL + C</kbd> en kiest u <kbd>y</kbd> om de functions-host te stoppen.
+1. Wanneer u klaar bent, gebruikt u <kbd>Ctrl +C</kbd> en kiest <kbd>u y om</kbd> de functions-host te stoppen.
 
 <br/>
 
 ---
 
-## <a name="5-create-supporting-azure-resources-for-your-function"></a>5. ondersteunende Azure-resources maken voor uw functie
+## <a name="5-create-supporting-azure-resources-for-your-function"></a>5. Ondersteunende Azure-resources maken voor uw functie
 
-Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr title="Een logische container voor gerelateerde Azure-resources die u kunt beheren als een eenheid.">resourcegroep</abbr>, een <abbr title="Een account dat al uw Azure Storage-gegevens objecten bevat. Het opslag account biedt een unieke naam ruimte voor uw opslag gegevens.">opslagaccount</abbr>, en een <abbr title="De Cloud resource die fungeert als host voor serverloze functies in azure, die de onderliggende reken omgeving biedt waarin functies worden uitgevoerd.">functie-app</abbr> met behulp van de volgende opdrachten:
+Voordat u uw functiecode kunt implementeren in Azure, moet u een <abbr title="Een logische container voor gerelateerde Azure-resources die u als eenheid kunt beheren.">resourcegroep</abbr>A <abbr title="Een account dat al uw Azure Storage-gegevensobjecten bevat. Het opslagaccount biedt een unieke naamruimte voor uw opslaggegevens.">opslagaccount</abbr>, en een <abbr title="De cloudresource die als host fungeert voor serverloze functies in Azure, die de onderliggende rekenomgeving biedt waarin functies worden uitgevoerd.">functie-app</abbr> met behulp van de volgende opdrachten:
 
 1. Als u dit nog niet hebt gedaan, meldt u zich aan bij Azure:
 
@@ -239,7 +239,7 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
     az login
     ```
 
-    Met de opdracht [az login](/cli/azure/reference-index#az-login) meldt u zich aan bij uw Azure-account.
+    Met de opdracht [az login](/cli/azure/reference-index#az_login) meldt u zich aan bij uw Azure-account.
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell) 
     ```azurepowershell
@@ -258,7 +258,7 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
     az group create --name AzureFunctionsQuickstart-rg --location westeurope
     ```
  
-    Met de opdracht [az group create](/cli/azure/group#az-group-create) maakt u een resourcegroep. In het algemeen maakt u de resource groep en-resources in een <abbr title="Een geografische verwijzing naar een specifiek Azure-Data Center waarin resources worden toegewezen.">regio</abbr> in de buurt van een beschik bare regio die wordt geretourneerd door de `az account list-locations` opdracht.
+    Met de opdracht [az group create](/cli/azure/group#az_group_create) maakt u een resourcegroep. Over het algemeen maakt u uw resourcegroep en resources in een <abbr title="Een geografische verwijzing naar een specifiek Azure-datacenter waarin resources worden toegewezen.">regio</abbr> bij u in de buurt, met behulp van een beschikbare regio die wordt geretourneerd door de `az account list-locations` opdracht .
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
@@ -272,7 +272,7 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
 
     Het is niet mogelijk om Linux- en Windows-apps in dezelfde resourcegroep te hosten. Als u een bestaande resourcegroep met de naam `AzureFunctionsQuickstart-rg` hebt die een Windows-functie-app of web-app bevat, moet u een andere resourcegroep gebruiken.
 
-1. Maak een Azure Storage account voor algemeen gebruik in uw resource groep en regio:
+1. Maak een account voor algemeen Azure Storage in uw resourcegroep en regio:
 
     # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -280,7 +280,7 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
     az storage account create --name <STORAGE_NAME> --location westeurope --resource-group AzureFunctionsQuickstart-rg --sku Standard_LRS
     ```
 
-    Met de opdracht [az storage account create](/cli/azure/storage/account#az-storage-account-create) maakt u het opslagaccount. 
+    Met de opdracht [az storage account create](/cli/azure/storage/account#az_storage_account_create) maakt u het opslagaccount. 
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
@@ -292,7 +292,7 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
 
     ---
 
-    Vervang door `<STORAGE_NAME>` een naam die geschikt is voor u en <abbr title="De naam moet uniek zijn voor alle opslag accounts die worden gebruikt door alle Azure-klanten wereld wijd. U kunt bijvoorbeeld een combi natie van uw persoonlijke of bedrijfs naam, toepassings naam en een numerieke id gebruiken, zoals in contosobizappstorage20.">uniek in Azure Storage</abbr>. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een account voor algemeen gebruik op dat wordt [ondersteund door Functions](storage-considerations.md#storage-account-requirements).
+    Vervang `<STORAGE_NAME>` door een naam die geschikt is voor u en <abbr title="De naam moet uniek zijn voor alle opslagaccounts die door alle Azure-klanten wereldwijd worden gebruikt. U kunt bijvoorbeeld een combinatie van uw persoonlijke naam of bedrijfsnaam, toepassingsnaam en numerieke id gebruiken, zoals in contosobizappstorage20.">uniek in Azure Storage</abbr>. Namen mogen drie tot 24 tekens bevatten en u mag alleen kleine letters gebruiken. Met `Standard_LRS` geeft u een account voor algemeen gebruik op dat wordt [ondersteund door Functions](storage-considerations.md#storage-account-requirements).
     
     Voor het opslagaccount worden gedurende deze quickstart slechts een paar dollarcenten in rekening gebracht.
 
@@ -316,13 +316,13 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
 
     ---
     
-    Vervang door `<STORAGE_NAME>` de naam van het account dat u in de vorige stap hebt gebruikt.
+    Vervang `<STORAGE_NAME>` door de naam van het account dat u in de vorige stap hebt gebruikt.
 
-    Vervangen `<APP_NAME>` door een <abbr title="Een naam die uniek moet zijn voor alle Azure-klanten wereld wijd. U kunt bijvoorbeeld een combi natie van uw persoonlijke of organisatie naam, toepassings naam en een numerieke id gebruiken, zoals in contoso-bizapp-func-20.">wereld wijd unieke naam die geschikt is voor u</abbr>. De `<APP_NAME>` is ook het standaard DNS-domein voor de functie-app. 
+    Vervangen `<APP_NAME>` door een <abbr title="Een naam die uniek moet zijn voor alle Azure-klanten wereldwijd. U kunt bijvoorbeeld een combinatie van uw persoonlijke naam of organisatienaam, toepassingsnaam en numerieke id gebruiken, zoals in contoso-bizapp-func-20.">wereldwijd unieke naam die geschikt is voor u</abbr>. De `<APP_NAME>` is ook het standaard DNS-domein voor de functie-app. 
     
     <br/>
     <details>
-    <summary><strong>Wat zijn de kosten van de resources die zijn ingericht in azure?</strong></summary>
+    <summary><strong>Wat zijn de kosten van de resources die zijn ingericht in Azure?</strong></summary>
 
     Met deze opdracht maakt u een functie-app die wordt uitgevoerd in de runtime van uw opgegeven taal binnen het [Azure Functions-verbruiksplan](functions-scale.md#overview-of-plans). Dit is gratis voor het gebruik dat u hier maakt. Met deze opdracht wordt in dezelfde resourcegroep ook een gekoppelde instantie van Azure Application Insights ingericht, waarmee u uw functie-app kunt bewaken en logboeken kunt weergeven. Zie [Monitor Azure Functions](functions-monitoring.md) (Azure Functions bewaken) voor meer informatie. Er worden pas kosten in rekening gebracht voor de instantie als u deze activeert.
     </details>
@@ -331,9 +331,9 @@ Voordat u uw functie code kunt implementeren in azure, moet u een maken <abbr ti
 
 ---
 
-## <a name="6-deploy-the-function-project-to-azure"></a>6. Implementeer het functie project in azure
+## <a name="6-deploy-the-function-project-to-azure"></a>6. Het functieproject implementeren in Azure
 
-Nadat u de functie-app in azure hebt gemaakt, bent u klaar om **uw lokale** functions-project te implementeren met behulp van de opdracht [func Azure functionapp Publish](functions-run-local.md#project-file-deployment) .  
+Nadat u uw functie-app in Azure hebt gemaakt, kunt u uw lokale **Functions-project** implementeren met behulp van de [opdracht func azure functionapp publish.](functions-run-local.md#project-file-deployment)  
 
 Vervang `<APP_NAME>` in het volgende voorbeeld door de naam van uw app.
 
@@ -341,7 +341,7 @@ Vervang `<APP_NAME>` in het volgende voorbeeld door de naam van uw app.
 func azure functionapp publish <APP_NAME>
 ```
 
-De `publish` opdracht toont resultaten die vergelijkbaar zijn met de volgende uitvoer (afgekapt voor eenvoud):
+De `publish` opdracht toont resultaten die vergelijkbaar zijn met de volgende uitvoer (afgekapt voor het gemak):
 
 <pre class="is-monospace is-size-small has-padding-medium has-background-tertiary has-text-tertiary-invert">
 ...
@@ -364,25 +364,25 @@ Functions in msdocs-azurefunctions-qs:
 
 ---
 
-## <a name="7-invoke-the-function-on-azure"></a>7. de functie aanroepen op Azure
+## <a name="7-invoke-the-function-on-azure"></a>7. De functie in Azure aanroepen
 
-Omdat uw functie gebruikmaakt van een HTTP-trigger, roept u deze aan door een HTTP-aanvraag in te stellen op de URL in de browser of met een hulp programma zoals <abbr title="Een opdracht regel programma voor het genereren van HTTP-aanvragen naar een URL; kijken https://curl.se/">curl</abbr>. 
+Omdat uw functie gebruikmaakt van een HTTP-trigger, roept u deze aan door een HTTP-aanvraag naar de URL ervan te maken in de browser of met een hulpprogramma zoals <abbr title="Een opdrachtregelprogramma voor het genereren van HTTP-aanvragen naar een URL; Zie https://curl.se/">curl</abbr>. 
 
 # <a name="browser"></a>[Browser](#tab/browser)
 
-Kopieer de volledige **invoke-URL** die wordt weer gegeven in de uitvoer van de `publish` opdracht naar een adres balk van de browser en voeg de query parameter **&name = functions** toe. De browser moet vergelijkbare uitvoer weergeven als u de functie lokaal hebt uitgevoerd.
+Kopieer de volledige **Aanroep-URL** die wordt weergegeven in de uitvoer van de opdracht naar een adresbalk van de browser, en&`publish` queryparameter toe aan **name=Functions.** De browser moet vergelijkbare uitvoer weergeven als u de functie lokaal hebt uitgevoerd.
 
 ![De uitvoer van de functie die wordt uitgevoerd op Azure in een browser](../../includes/media/functions-run-remote-azure-cli/function-test-cloud-browser.png)
 
 # <a name="curl"></a>[curl](#tab/curl)
 
-Voer uit [`curl`](https://curl.haxx.se/) met de **aanroepen-URL** en voeg de para meter **&name = functions** toe. De uitvoer van de opdracht moet de tekst ‘Hallo Functions’ zijn.
+Voer [`curl`](https://curl.haxx.se/) uit met de **Aanroep-URL**, en wijs de parameter **&name=Functions toe.** De uitvoer van de opdracht moet de tekst ‘Hallo Functions’ zijn.
 
 ![De uitvoer van de functie die wordt uitgevoerd op Azure met behulp van curl](../../includes/media/functions-run-remote-azure-cli/function-test-cloud-curl.png)
 
 ---
 
-### <a name="71-view-real-time-streaming-logs"></a>7,1 realtime streaming-logboeken weer geven
+### <a name="71-view-real-time-streaming-logs"></a>7.1 Realtime streaminglogboeken weergeven
 
 Voer de volgende opdracht uit om [streaminglogboeken](functions-run-local.md#enable-streaming-logs) in bijna realtime weer te geven in Application Insights in Azure Portal:
 
@@ -390,7 +390,7 @@ Voer de volgende opdracht uit om [streaminglogboeken](functions-run-local.md#ena
 func azure functionapp logstream <APP_NAME> --browser
 ```
 
-Vervang door `<APP_NAME>` de naam van uw functie-app.
+Vervang `<APP_NAME>` door de naam van uw functie-app.
 
 Roep in een afzonderlijk terminalvenster of in de browser opnieuw de externe functie aan. In de terminal wordt een uitgebreid logboek weergegeven van de uitvoering van de functie in Azure. 
 
@@ -400,7 +400,7 @@ Roep in een afzonderlijk terminalvenster of in de browser opnieuw de externe fun
 
 ## <a name="8-clean-up-resources"></a>8. Resources opschonen
 
-Als u doorgaat met de [volgende stap](#next-steps) en een <abbr title="Een manier om een functie te koppelen aan een opslag wachtrij, zodat deze berichten kan maken in de wachtrij. ">Uitvoer binding van Azure Storage wachtrij</abbr>, zorgt u ervoor dat al uw resources op de juiste plaats staan, zoals u gaat bouwen op wat u al hebt gedaan.
+Als u verder gaat met de [volgende stap en](#next-steps) een toevoegt <abbr title="Een manier om een functie te koppelen aan een opslagwachtrij, zodat deze berichten in de wachtrij kan maken. ">Azure Storage wachtrijuitvoerbinding</abbr>, bewaar al uw resources terwijl u verder gaat bouwen op wat u al hebt gedaan.
 
 Gebruik anders de volgende opdracht om de resourcegroep en alle bijbehorende resources te verwijderen om te voorkomen dat er verdere kosten in rekening worden gebracht.
 

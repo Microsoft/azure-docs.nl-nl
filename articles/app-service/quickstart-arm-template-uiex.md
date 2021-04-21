@@ -9,18 +9,18 @@ ms.date: 10/16/2020
 ms.custom: subject-armqs, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 7437a5208f94b435576b8a38dc65a6e798303a72
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: bce6bfb61eb59d1fa66c550a133ac8b6f8d7f2c5
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102179082"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107768998"
 ---
 # <a name="quickstart-create-app-service-app-using-an-arm-template"></a>Quickstart: App Service-app maken met behulp van een ARM-sjabloon
 
-Aan de slag met [Azure app service](overview.md) door een app te implementeren in de Cloud met behulp van een <abbr title="Een JSON-bestand waarmee declaratieve een of meer Azure-resources en-afhankelijkheden tussen de geïmplementeerde resources worden gedefinieerd. De sjabloon kan worden gebruikt om de resources consistent en herhaaldelijk te implementeren.">ARM-sjabloon</abbr> en [Azure cli](/cli/azure/get-started-with-azure-cli) in Cloud shell. Omdat u een gratis servicelaag van App Service gebruikt, zijn er geen kosten verbonden aan het voltooien van deze quickstart. <abbr title="In declaratieve syntaxis beschrijft u de beoogde implementatie zonder dat u de reeks programmeeropdrachten voor het maken van de implementatie hoeft te schrijven.">Voor de sjabloon is declaratieve syntaxis vereist.</abbr>
+Aan de slag [Azure App Service](overview.md) door een app in de cloud te implementeren met behulp van een <abbr title="Een JSON-bestand dat declaratief een of meer Azure-resources en afhankelijkheden tussen de geïmplementeerde resources definieert. De sjabloon kan worden gebruikt om de resources consistent en herhaaldelijk te implementeren.">ARM-sjabloon</abbr> en [Azure CLI](/cli/azure/get-started-with-azure-cli) in Cloud Shell. Omdat u een gratis servicelaag van App Service gebruikt, zijn er geen kosten verbonden aan het voltooien van deze quickstart. <abbr title="In declaratieve syntaxis beschrijft u de beoogde implementatie zonder dat u de reeks programmeeropdrachten voor het maken van de implementatie hoeft te schrijven.">Voor de sjabloon is declaratieve syntaxis vereist.</abbr>
 
- Als uw omgeving voldoet aan de vereisten en u vertrouwd bent met het gebruik van [arm-sjablonen](../azure-resource-manager/templates/overview.md), selecteert u de knop **implementeren in azure** . De sjabloon wordt in Azure Portal geopend.
+ Als uw omgeving voldoet aan de vereisten en u bekend bent met het gebruik van [ARM-sjablonen,](../azure-resource-manager/templates/overview.md)selecteert u **de knop Implementeren in Azure.** De sjabloon wordt in Azure Portal geopend.
 
 ::: zone pivot="platform-windows"
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-service-docs-windows%2Fazuredeploy.json)
@@ -32,13 +32,13 @@ Aan de slag met [Azure app service](overview.md) door een app te implementeren i
 
 <hr/>
 
-## <a name="1-prepare-your-environment"></a>1. uw omgeving voorbereiden
+## <a name="1-prepare-your-environment"></a>1. Uw omgeving voorbereiden
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 <hr/>
 
-## <a name="2-review-the-template"></a>2. Controleer de sjabloon
+## <a name="2-review-the-template"></a>2. De sjabloon controleren
 
 ::: zone pivot="platform-windows"
 De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/101-app-service-docs-windows). Hiermee wordt een App Service-plan en een App Service-app in Windows geïmplementeerd.
@@ -46,14 +46,14 @@ De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsja
 :::code language="json" source="~/quickstart-templates/101-app-service-docs-windows/azuredeploy.json":::
 
 <details>
-<summary>Welke resources en para meters zijn in de sjabloon gedefinieerd?</summary>
+<summary>Welke resources en parameters zijn gedefinieerd in de sjabloon?</summary>
 
 Er worden twee Azure-resources gedefinieerd in de sjabloon:
 
 * [**Microsoft.Web/serverfarms**](/azure/templates/microsoft.web/serverfarms): een App Service-plan maken.
 * [**Microsoft.Web/sites**](/azure/templates/microsoft.web/sites): een App Service-app maken.
 
-De volgende tabel bevat de standaard waarden voor para meters en beschrijvingen:
+In de volgende tabel worden de standaardparameters en de bijbehorende beschrijvingen beschreven:
 
 | Parameters | Type     | Standaardwaarde                | Beschrijving |
 |------------|---------|------------------------------|-------------|
@@ -73,17 +73,17 @@ De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsja
 
 :::code language="json" source="~/quickstart-templates/101-app-service-docs-linux/azuredeploy.json":::
 
-Deze sjabloon bevat Azure-resources en-para meters die voor uw gemak zijn gedefinieerd.
+Deze sjabloon bevat Azure-resources en -parameters die voor uw gemak zijn gedefinieerd.
 
 <details>
-<summary>Welke resources en para meters zijn in de sjabloon gedefinieerd?</summary>
+<summary>Welke resources en parameters zijn gedefinieerd in de sjabloon?</summary>
 
 Er worden twee Azure-resources gedefinieerd in de sjabloon:
 
 * [**Microsoft.Web/serverfarms**](/azure/templates/microsoft.web/serverfarms): een App Service-plan maken.
 * [**Microsoft.Web/sites**](/azure/templates/microsoft.web/sites): een App Service-app maken.
 
-De volgende tabel bevat de standaard waarden voor para meters en beschrijvingen:
+In de volgende tabel worden de standaardparameters en de bijbehorende beschrijvingen beschreven:
 
 | Parameters | Type     | Standaardwaarde                | Beschrijving |
 |------------|---------|------------------------------|-------------|
@@ -101,12 +101,12 @@ De volgende tabel bevat de standaard waarden voor para meters en beschrijvingen:
 
 <hr/>
 
-## <a name="3-deploy-the-template"></a>3. de sjabloon implementeren
+## <a name="3-deploy-the-template"></a>3. De sjabloon implementeren
 
 ::: zone pivot="platform-windows"
-Voer de volgende code uit om een .NET Framework-app in Windows te implementeren met behulp van Azure CLI. 
+Voer de onderstaande code uit om een .NET Framework-app in Windows te implementeren met behulp van Azure CLI. 
 
-Vervangen <abbr title="Geldige tekens zijn `a-z` :, `0-9` en `-` .">`<app-name>`</abbr> met een wereld wijd unieke app-naam. Voor meer informatie <abbr title="U kunt ook Azure Portal, Azure PowerShell, de REST API gebruiken.">implementatie methoden</abbr>, Zie [sjablonen implementeren](../azure-resource-manager/templates/deploy-powershell.md). U vindt [hier](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sites) meer App Service-sjabloonvoorbeelden.
+Vervangen <abbr title="Geldige tekens zijn `a-z` , `0-9` en `-` .">`<app-name>`</abbr> met een wereldwijd unieke app-naam. Meer informatie over andere <abbr title="U kunt ook Azure Portal, Azure PowerShell, de REST API gebruiken.">implementatiemethoden</abbr>, zie [Sjablonen implementeren.](../azure-resource-manager/templates/deploy-powershell.md) U vindt [hier](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sites) meer App Service-sjabloonvoorbeelden.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "southcentralus" &&
@@ -116,9 +116,9 @@ az deployment group create --resource-group myResourceGroup \
 ```
 ::: zone-end
 ::: zone pivot="platform-linux"
-Voer de volgende code uit om een python-app in Linux te maken. 
+Voer de onderstaande code uit om een Python-app te maken in Linux. 
 
-Vervangen <abbr title="Geldige tekens zijn `a-z` :, `0-9` en `-` .">`<app-name>`</abbr> met een wereld wijd unieke app-naam.
+Vervangen <abbr title="Geldige tekens zijn `a-z` , `0-9` en `-` .">`<app-name>`</abbr> door een wereldwijd unieke app-naam.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "southcentralus" &&
@@ -128,19 +128,19 @@ az deployment group create --resource-group myResourceGroup --parameters webAppN
 ::: zone-end
 
 <details>
-<summary>Wat is de code?</summary>
-<p>Met de opdrachten worden de volgende acties uitgevoerd:</p>
+<summary>Wat doet de code?</summary>
+<p>De opdrachten voeren de volgende acties uit:</p>
 <ul>
-<li>Een standaard instelling maken <abbr title="Een logische container voor gerelateerde Azure-resources die u kunt beheren als een eenheid.">resourcegroep</abbr>.</li>
-<li>Een standaard instelling maken <abbr title="Het plan dat de locatie, grootte en functies opgeeft van de webserver farm die als host fungeert voor uw app.">App Service-plan</abbr>.</li>
-<li><a href="/cli/azure/webapp#az-webapp-create">Maak een <abbr title="De weer gave van uw web-app, die uw app-code, DNS-hostnamen, certificaten en gerelateerde resources bevat. "> App App Service</abbr></a> met de opgegeven naam.</li>
+<li>Een standaardinstelling maken <abbr title="Een logische container voor gerelateerde Azure-resources die u als eenheid kunt beheren.">resourcegroep</abbr>.</li>
+<li>Een standaardinstelling maken <abbr title="Het plan waarmee de locatie, grootte en functies van de webserverfarm worden opgegeven die als host voor uw app wordt gebruikt.">App Service-plan</abbr>.</li>
+<li><a href="/cli/azure/webapp#az_webapp_create">Een maken <abbr title="De weergave van uw web-app, die uw app-code, DNS-hostnamen, certificaten en gerelateerde resources bevat. "> App Service app</abbr></a> met de opgegeven naam.</li>
 </ul>
 </details>
 
 ::: zone pivot="platform-windows"
 <details>
-<summary>Hoe kan ik een andere taal stack implementeren?</summary>
-Als u een andere taal stack wilt implementeren, werkt u <abbr title="Deze sjabloon is compatibel met .NET core, .NET Framework, PHP, Node.js en statische HTML-apps. "> taal parameter</abbr> met de juiste waarden. Raadpleeg <a href="/azure/app-service/quickstart-java-uiex">Java-app maken</a> voor Java.
+<summary>Hoe kan ik een andere taalstack implementeren?</summary>
+Als u een andere taalstack wilt implementeren, moet u bijwerken <abbr title="Deze sjabloon is compatibel met .NET Core-, .NET Framework-, PHPNode.js- en statische HTML-apps. "> taalparameter</abbr> met de juiste waarden. Raadpleeg <a href="/azure/app-service/quickstart-java-uiex">Java-app maken</a> voor Java.
 
 | Parameters | Type     | Standaardwaarde                | Beschrijving |
 |------------|---------|------------------------------|-------------|
@@ -152,7 +152,7 @@ Als u een andere taal stack wilt implementeren, werkt u <abbr title="Deze sjablo
 ::: zone-end
 ::: zone pivot="platform-linux"
 <details>
-<summary>Hoe kan ik een andere taal stack implementeren?</summary>
+<summary>Hoe kan ik een andere taalstack implementeren?</summary>
 Als u een andere taalstack wilt implementeren, werkt u `linuxFxVersion` bij met de juiste waarden. Voorbeelden worden hieronder weergegeven. Als u huidige versies wilt weergeven, voert u de volgende opdracht in de Cloud Shell uit: `az webapp config show --resource-group myResourceGroup --name <app-name> --query linuxFxVersion`
 
 | Taal    | Voorbeeld:                                              |
@@ -171,13 +171,13 @@ Als u een andere taalstack wilt implementeren, werkt u `linuxFxVersion` bij met 
 
 <hr/>
 
-## <a name="4-validate-the-deployment"></a>4. de implementatie valideren
+## <a name="4-validate-the-deployment"></a>4. De implementatie valideren
 
 Blader naar `http://<app_name>.azurewebsites.net/` en controleer of deze is gemaakt.
 
 <hr/>
 
-## <a name="5-clean-up-resources"></a>5. opschonen van resources
+## <a name="5-clean-up-resources"></a>5. Resources ops schonen
 
 [Verwijder de resourcegroep](../azure-resource-manager/management/delete-resource-group.md?tabs=azure-portal#delete-resource-group) als u deze niet meer nodig hebt.
 
@@ -191,4 +191,3 @@ Blader naar `http://<app_name>.azurewebsites.net/` en controleer of deze is gema
 - [PHP met MySQL](tutorial-php-mysql-app.md)
 - [Verbinding maken met Azure SQL-database met Java](../azure-sql/database/connect-query-java.md?toc=%2fazure%2fjava%2ftoc.json)
 - [Aangepast domein toewijzen](app-service-web-tutorial-custom-domain-uiex.md)
-

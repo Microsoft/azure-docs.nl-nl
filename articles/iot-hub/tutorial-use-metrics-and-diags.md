@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 - devx-track-csharp
-ms.openlocfilehash: 62958dc374598e6f530af398f722001e5ed51acd
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: 099b7f4e812e92503c7ed8e3eb733f2e49ccd8b9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107739688"
+ms.locfileid: "107768067"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-logs-with-an-iot-hub"></a>Zelfstudie: Metrische gegevens en logboeken instellen en gebruiken met een IoT-hub
 
@@ -409,7 +409,7 @@ In de sectie [Logboeken voor verbindingen en apparaattelemetrie verzamelen](#col
 
 Als u alle resources die u in deze zelfstudie hebt gemaakt, wilt verwijderen, verwijdert u de resourcegroep. Hiermee verwijdert u ook alle resources in de groep. In dit geval worden de IoT-hub, de Log Analytics-werkruimte en de resourcegroep zelf verwijderd. Als u diagrammen met metrische gegevens aan het dashboard hebt vastgemaakt, moet u die handmatig verwijderen door op de drie puntjes in de rechterbovenhoek van elk diagram te klikken en **Verwijderen** te selecteren. Zorg ervoor dat u de wijzigingen opslaat nadat u de diagrammen hebt verwijderd.
 
-U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az-group-delete).
+U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az_group_delete).
 
 ```azurecli-interactive
 az group delete --name ContosoResources

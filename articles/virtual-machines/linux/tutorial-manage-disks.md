@@ -9,12 +9,12 @@ ms.date: 08/20/2020
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
 ms.subservice: disks
-ms.openlocfilehash: bbecaa32f85c42954cea6c8e533f0f658eb2dfee
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 56e804bc0d479f09ef2900c42361fbd24eed1d98
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104802281"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765949"
 ---
 # <a name="tutorial---manage-azure-disks-with-the-azure-cli"></a>Zelfstudie: Azure-schijven beheren met de Azure CLI
 
@@ -70,13 +70,13 @@ Gegevensschijven kunnen worden gemaakt en aan een VM worden gekoppeld tijdens he
 
 ### <a name="attach-disk-at-vm-creation"></a>Schijf koppelen tijdens het maken van de virtuele machine
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create).
+Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az_group_create).
 
 ```azurecli-interactive
 az group create --name myResourceGroupDisk --location eastus
 ```
 
-Maak een VM met de opdracht [az vm create](/cli/azure/vm#az-vm-create). In het volgende voorbeeld wordt de VM *myVM* gemaakt, wordt het gebruikersaccount *azureuser* toegevoegd en worden SSH-sleutels gemaakt als deze nog niet bestaan. Het argument `--datadisk-sizes-gb` wordt gebruikt om op te geven dat een extra schijf moet worden gemaakt en gekoppeld aan de virtuele machine. Als u meer dan één schijf wilt maken en koppelen, gebruikt u een door spaties gescheiden lijst met waarden voor schijfgroottes. In het volgende voorbeeld wordt een virtuele machine gemaakt met twee gegevensschijven, beide van 128 GB. Omdat de schijfgrootte 128 GB is, zijn deze schijven beide geconfigureerd als P10, dat maximaal 500 IOP's per schijf biedt.
+Maak een VM met de opdracht [az vm create](/cli/azure/vm#az_vm_create). In het volgende voorbeeld wordt de VM *myVM* gemaakt, wordt het gebruikersaccount *azureuser* toegevoegd en worden SSH-sleutels gemaakt als deze nog niet bestaan. Het argument `--datadisk-sizes-gb` wordt gebruikt om op te geven dat een extra schijf moet worden gemaakt en gekoppeld aan de virtuele machine. Als u meer dan één schijf wilt maken en koppelen, gebruikt u een door spaties gescheiden lijst met waarden voor schijfgroottes. In het volgende voorbeeld wordt een virtuele machine gemaakt met twee gegevensschijven, beide van 128 GB. Omdat de schijfgrootte 128 GB is, zijn deze schijven beide geconfigureerd als P10, dat maximaal 500 IOP's per schijf biedt.
 
 ```azurecli-interactive
 az vm create \
@@ -91,7 +91,7 @@ az vm create \
 
 ### <a name="attach-disk-to-existing-vm"></a>Een schijf koppelen aan een bestaande virtuele machine
 
-Als u een nieuwe schijf wilt maken en koppelen aan een bestaande virtuele machine wilt maken, gebruikt u de opdracht [az vm disk attach](/cli/azure/vm/disk#az-vm-disk-attach). In het volgende voorbeeld wordt een Premium-schijf gemaakt met een grootte van 128 GB en gekoppeld aan de virtuele machine die u in de vorige stap hebt gemaakt.
+Als u een nieuwe schijf wilt maken en koppelen aan een bestaande virtuele machine wilt maken, gebruikt u de opdracht [az vm disk attach](/cli/azure/vm/disk#az_vm_disk_attach). In het volgende voorbeeld wordt een Premium-schijf gemaakt met een grootte van 128 GB en gekoppeld aan de virtuele machine die u in de vorige stap hebt gemaakt.
 
 ```azurecli-interactive
 az vm disk attach \
@@ -190,7 +190,7 @@ Wanneer u een momentopname van de schijf maakt, maakt Azure een alleen-lezen en 
 
 ### <a name="create-snapshot"></a>Momentopname maken
 
-Voordat u een momentopname maakt, hebt u de id of naam van de schijf nodig. Gebruik [az vm show](/cli/azure/vm#az-vm-show) om de schijf-id aan te geven. In dit voorbeeld wordt de schijf-id opgeslagen in een variabele, zodat deze in een later stadium kan worden gebruikt.
+Voordat u een momentopname maakt, hebt u de id of naam van de schijf nodig. Gebruik [az vm show](/cli/azure/vm#az_vm_show) om de schijf-id aan te geven. In dit voorbeeld wordt de schijf-id opgeslagen in een variabele, zodat deze in een later stadium kan worden gebruikt.
 
 ```azurecli-interactive
 osdiskid=$(az vm show \
@@ -200,7 +200,7 @@ osdiskid=$(az vm show \
    -o tsv)
 ```
 
-Nu u de id hebt, gebruikt u [az snapshot create](/cli/azure/snapshot#az-snapshot-create) om een momentopname van de schijf te maken.
+Nu u de id hebt, gebruikt u [az snapshot create](/cli/azure/snapshot#az_snapshot_create) om een momentopname van de schijf te maken.
 
 ```azurecli-interactive
 az snapshot create \
@@ -211,7 +211,7 @@ az snapshot create \
 
 ### <a name="create-disk-from-snapshot"></a>Schijf maken op basis van een momentopname
 
-Deze momentopname kan vervolgens met [az disk create](/cli/azure/disk#az-disk-create) worden geconverteerd naar een schijf die kan worden gebruikt om de virtuele machine opnieuw te maken.
+Deze momentopname kan vervolgens met [az disk create](/cli/azure/disk#az_disk_create) worden geconverteerd naar een schijf die kan worden gebruikt om de virtuele machine opnieuw te maken.
 
 ```azurecli-interactive
 az disk create \
@@ -222,7 +222,7 @@ az disk create \
 
 ### <a name="restore-virtual-machine-from-snapshot"></a>Virtuele machine herstellen op basis van een momentopname
 
-Voor het herstellen van de virtuele machine dient u de bestaande virtuele machine te verwijderen met [az vm delete](/cli/azure/vm#az-vm-delete).
+Voor het herstellen van de virtuele machine dient u de bestaande virtuele machine te verwijderen met [az vm delete](/cli/azure/vm#az_vm_delete).
 
 ```azurecli-interactive
 az vm delete \
@@ -244,7 +244,7 @@ az vm create \
 
 Alle gegevensschijven moeten opnieuw worden gekoppeld aan de virtuele machine.
 
-Zoek de naam van de gegevensschijf met de opdracht [az disk list](/cli/azure/disk#az-disk-list). In dit voorbeeld wordt de naam van de schijf in een variabele met de naam `datadisk` geplaatst, die in de volgende stap wordt gebruikt.
+Zoek de naam van de gegevensschijf met de opdracht [az disk list](/cli/azure/disk#az_disk_list). In dit voorbeeld wordt de naam van de schijf in een variabele met de naam `datadisk` geplaatst, die in de volgende stap wordt gebruikt.
 
 ```azurecli-interactive
 datadisk=$(az disk list \
@@ -253,7 +253,7 @@ datadisk=$(az disk list \
    -o tsv)
 ```
 
-Gebruik de opdracht [az vm disk attach](/cli/azure/vm/disk#az-vm-disk-attach) om de schijf te koppelen.
+Gebruik de opdracht [az vm disk attach](/cli/azure/vm/disk#az_vm_disk_attach) om de schijf te koppelen.
 
 ```azurecli-interactive
 az vm disk attach \

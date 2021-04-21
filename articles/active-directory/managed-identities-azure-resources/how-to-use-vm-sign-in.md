@@ -1,6 +1,6 @@
 ---
-title: Beheerde identiteiten op een Azure-VM gebruiken voor aanmelding-Azure ADV
-description: Stapsgewijze instructies en voor beelden voor het gebruik van een door Azure VM'S beheerde identiteit voor de Azure-service-principal voor het aanmelden van scripts en toegang tot bronnen.
+title: Beheerde identiteiten op een azure-VM gebruiken voor aanmelding - Azure ADV
+description: Stapsgewijse instructies en voorbeelden voor het gebruik van een door Azure-VM beheerde identiteiten voor de service-principal voor Azure-resources voor aanmelding bij scriptclients en toegang tot resources.
 services: active-directory
 documentationcenter: ''
 author: barclayn
@@ -15,18 +15,18 @@ ms.workload: identity
 ms.date: 01/29/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 61e83bd27c9434c4222e0161e3b643b183d1aa84
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 59366f1a5b4bd0572af1b36f7be2f5bf91392660
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99090957"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784781"
 ---
-# <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Beheerde identiteiten voor Azure-resources gebruiken op een Azure-VM voor aanmelding 
+# <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Beheerde identiteiten gebruiken voor Azure-resources op een Azure-VM voor aanmelden 
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]  
-In dit artikel vindt u voor beelden van Power shell-en CLI-scripts voor aanmelding met beheerde identiteiten voor de service-principal van Azure resources en richt lijnen voor belang rijke onderwerpen zoals fout afhandeling.
+Dit artikel bevat PowerShell- en CLI-scriptvoorbeelden voor aanmelding met behulp van beheerde identiteiten voor de service-principal voor Azure-resources en richtlijnen voor belangrijke onderwerpen zoals foutafhandeling.
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
@@ -34,27 +34,27 @@ In dit artikel vindt u voor beelden van Power shell-en CLI-scripts voor aanmeldi
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
-Als u van plan bent de Azure PowerShell of Azure CLI-voor beelden in dit artikel te gebruiken, moet u ervoor zorgen dat u de meest recente versie van [Azure PowerShell](/powershell/azure/install-az-ps) of [Azure cli](/cli/azure/install-azure-cli)installeert. 
+Als u van plan bent om de Azure PowerShell of Azure CLI-voorbeelden in dit artikel te gebruiken, moet u de nieuwste versie van [Azure PowerShell](/powershell/azure/install-az-ps) of [Azure CLI installeren.](/cli/azure/install-azure-cli) 
 
 > [!IMPORTANT]
-> - In elk voorbeeld script in dit artikel wordt ervan uitgegaan dat de opdracht regel-client wordt uitgevoerd op een virtuele machine met beheerde identiteiten voor Azure-resources ingeschakeld. Gebruik de VM-functie ' Connect ' in het Azure Portal om extern verbinding te maken met uw VM. Zie [beheerde identiteiten voor Azure-resources configureren op een virtuele machine met behulp van de Azure Portal](qs-configure-portal-windows-vm.md), of een van de variant artikelen (met behulp van Power shell, CLI, een sjabloon of een Azure SDK), voor meer informatie over het inschakelen van beheerde identiteiten voor Azure-resources op een virtuele machine. 
-> - Om te voor komen dat er fouten optreden tijdens de toegang tot de bron, moet de beheerde identiteit van de virtuele machine ten minste ' lezer ' hebben op het juiste bereik (de virtuele machine of hoger) om Azure Resource Manager bewerkingen op de virtuele machine toe te staan. Zie [beheerde identiteiten voor Azure-resources toegang tot een resource toewijzen met behulp van de Azure Portal](howto-assign-access-portal.md) voor meer informatie.
+> - In alle voorbeeldscripts in dit artikel wordt ervan uit gegaan dat de opdrachtregelclient wordt uitgevoerd op een VM met beheerde identiteiten voor Azure-resources ingeschakeld. Gebruik de VM-functie 'Verbinding maken' in Azure Portal om extern verbinding te maken met uw VM. Zie Beheerde identiteiten configureren voor Azure-resources op een VM met behulp van de Azure Portal of een van de variantartikelen (met behulp van PowerShell, CLI, een sjabloon of een Azure SDK) voor meer informatie over het inschakelen van beheerde identiteiten voor Azure-resources op een [VM.](qs-configure-portal-windows-vm.md) 
+> - Om fouten tijdens toegang tot resources te voorkomen, moet de beheerde identiteit van de VM ten minste 'Lezer'-toegang krijgen met het juiste bereik (de VM of hoger) om Azure Resource Manager-bewerkingen op de VM toe te staan. Zie [Beheerde identiteiten voor Azure-resources toegang tot een resource](howto-assign-access-portal.md) toewijzen met behulp van de Azure Portal voor meer informatie.
 
 ## <a name="overview"></a>Overzicht
 
-Beheerde identiteiten voor Azure-resources bieden een [Service-Principal-object](../develop/developer-glossary.md#service-principal-object) , dat wordt [gemaakt bij het inschakelen van beheerde identiteiten voor Azure-resources](overview.md) op de virtuele machine. De service-principal kan toegang krijgen tot Azure-resources en wordt gebruikt als identiteit door script/opdracht regel clients voor aanmelding en toegang tot bronnen. Traditioneel moet een script-client het volgende doen om toegang te krijgen tot beveiligde resources onder een eigen identiteit:  
+Beheerde identiteiten voor Azure-resources bieden een [service-principal-object](../develop/developer-glossary.md#service-principal-object) dat wordt gemaakt bij het inschakelen van beheerde identiteiten voor [Azure-resources](overview.md) op de VM. De service-principal kan toegang krijgen tot Azure-resources en worden gebruikt als een identiteit door script-/opdrachtregel-clients voor aanmelding en toegang tot resources. Normaal gezien moet een scriptclient het volgende doen om toegang te krijgen tot beveiligde resources onder zijn eigen identiteit:  
 
-   - als vertrouwelijk/webclient-toepassing worden geregistreerd en met Azure AD worden ingestemd
-   - Meld u aan onder de bijbehorende service-principal met behulp van de referenties van de app (die waarschijnlijk zijn Inge sloten in het script)
+   - worden geregistreerd bij en toestemming geven met Azure AD als een vertrouwelijke/webclienttoepassing
+   - meld u aan onder de service-principal, met behulp van de referenties van de app (die waarschijnlijk zijn ingesloten in het script)
 
-Met beheerde identiteiten voor Azure-resources hoeft de script-client niet meer te worden uitgevoerd, omdat deze zich kan aanmelden onder de beheerde identiteiten voor de service-principal voor Azure-resources. 
+Met beheerde identiteiten voor Azure-resources hoeft uw scriptclient geen van beide meer te doen, omdat deze zich kan aanmelden onder de beheerde identiteiten voor de service-principal voor Azure-resources. 
 
 ## <a name="azure-cli"></a>Azure CLI
 
 Het volgende script laat zien hoe u:
 
-1. Meld u aan bij Azure AD onder de beheerde identiteit van de virtuele machine voor Azure resources Service-Principal  
-2. Roep Azure Resource Manager aan en haal de Service-Principal-ID van de virtuele machine op. CLI zorgt voor het automatisch beheren van token-aanschaf/-gebruik. Zorg ervoor dat u de naam van uw virtuele machine vervangt door `<VM-NAME>` .  
+1. Meld u aan bij Azure AD onder de beheerde identiteit van de VM voor de service-principal voor Azure-resources  
+2. Roep Azure Resource Manager aan en haal de service-principal-id van de VM op. CLI zorgt automatisch voor het beheer van het verkrijgen/gebruiken van tokens. Zorg ervoor dat u de naam van uw virtuele machine vervangt door `<VM-NAME>` .  
 
    ```azurecli
    az login --identity
@@ -67,8 +67,8 @@ Het volgende script laat zien hoe u:
 
 Het volgende script laat zien hoe u:
 
-1. Meld u aan bij Azure AD onder de beheerde identiteit van de virtuele machine voor Azure resources Service-Principal  
-2. Roep een Azure Resource Manager-cmdlet aan om informatie over de virtuele machine op te halen. Power shell zorgt ervoor dat het token gebruik automatisch voor u wordt beheerd.  
+1. Meld u aan bij Azure AD onder de beheerde identiteit van de VM voor de service-principal voor Azure-resources  
+2. Roep een Azure Resource Manager-cmdlet aan om informatie over de VM op te halen. PowerShell beheert het tokengebruik automatisch voor u.  
 
    ```azurepowershell
    Add-AzAccount -identity
@@ -79,19 +79,19 @@ Het volgende script laat zien hoe u:
    echo "The managed identity for Azure resources service principal ID is $spID"
    ```
 
-## <a name="resource-ids-for-azure-services"></a>Resource-Id's voor Azure-Services
+## <a name="resource-ids-for-azure-services"></a>Resource-ID's voor Azure-services
 
-Zie [Azure-Services die ondersteuning bieden voor Azure AD-verificatie](services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) voor een lijst met resources die ondersteuning bieden voor Azure AD en die zijn getest met beheerde identiteiten voor Azure-resources en de bijbehorende resource-id's.
+Zie [Azure-services die Azure AD-verificatie](services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) ondersteunen voor een lijst met resources die Ondersteuning bieden voor Azure AD en die zijn getest met beheerde identiteiten voor Azure-resources en hun respectieve resource-id's.
 
-## <a name="error-handling-guidance"></a>Richt lijnen voor fout afhandeling 
+## <a name="error-handling-guidance"></a>Richtlijnen voor foutafhandeling 
 
-Antwoorden zoals de volgende kunnen erop duiden dat de beheerde identiteit van de virtuele machine voor Azure-resources niet correct is geconfigureerd:
+Antwoorden zoals hieronder kunnen erop wijzen dat de beheerde identiteit van de VM voor Azure-resources niet juist is geconfigureerd:
 
-- Power shell: *invoke-WebRequest: kan geen verbinding maken met de externe server*
-- CLI: *MSI: kan geen Token ophalen van `http://localhost:50342/oauth2/token` met de fout ' HTTPConnectionPool (host = ' localhost ', poort = 50342)* 
+- PowerShell: *Invoke-WebRequest: kan geen verbinding maken met de externe server*
+- CLI: MSI: Kan een token niet ophalen van met de fout *`http://localhost:50342/oauth2/token` HTTPConnectionPool(host='localhost', port=50342)* 
 
-Als u een van deze fouten ontvangt, keert u terug naar de Azure VM in de [Azure Portal](https://portal.azure.com) en gaat u naar de pagina **identiteit** en zorgt u ervoor dat het **toegewezen systeem** is ingesteld op Ja.
+Als u een van deze fouten ontvangt, gaat u terug naar  de azure-VM in de [Azure Portal](https://portal.azure.com) en gaat u naar de pagina Identiteit en zorgt u ervoor dat Systeem toegewezen **is** ingesteld op Ja.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als u beheerde identiteiten wilt inschakelen voor Azure-resources op een Azure-VM, raadpleegt u [Managed Identities voor Azure resources op een Azure-VM configureren met behulp van Power shell](qs-configure-powershell-windows-vm.md)of [beheerde identiteiten voor Azure-resources configureren op een Azure-VM met behulp van Azure cli](qs-configure-cli-windows-vm.md)
+- Zie Beheerde identiteiten configureren voor Azure-resources op een [Azure-VM](qs-configure-powershell-windows-vm.md)met behulp van PowerShell als u beheerde identiteiten voor Azure-resources wilt inschakelen op een Azure-VM, of Beheerde identiteiten configureren voor Azure-resources op een [azure-VM](qs-configure-cli-windows-vm.md) met behulp van Azure CLI

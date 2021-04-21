@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 01/12/2021
 ms.custom: mvc
-ms.openlocfilehash: dfebb6561e83c51063515ec655153aaaa7a09c0c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a268d39ec514fc7b88b555221ece7dc044ca49ba
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98251366"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767507"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Zelfstudie: toepassingen schalen in AKS (Azure Kubernetes Service)
 
@@ -21,7 +21,7 @@ Als u de zelfstudies hebt gevolgd, hebt u een werkend Kubernetes-cluster in AKS 
 > * Handmatig Kubernetes-pods schalen waarop uw toepassing wordt uitgevoerd
 > * Automatisch schalen configureren van pods die de front-end-app uitvoeren
 
-In latere zelf studies wordt de Azure stem-toepassing bijgewerkt naar een nieuwe versie.
+In latere zelfstudies wordt de Azure Vote-toepassing bijgewerkt naar een nieuwe versie.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -51,7 +51,7 @@ Als u het aantal pods in de implementatie van *azure-vote-front* handmatig wilt 
 kubectl scale --replicas=5 deployment/azure-vote-front
 ```
 
-Voer [kubectl][kubectl-get] opnieuw uit om te controleren of het nieuwe Peul is gemaakt met AKS. Na een minuut zijn de peulen beschikbaar in uw cluster:
+Voer [kubectl get pods opnieuw][kubectl-get] uit om te controleren of AKS de extra pods heeft gemaakt. Na een minuut of zo zijn de pods beschikbaar in uw cluster:
 
 ```console
 kubectl get pods
@@ -199,6 +199,6 @@ Ga verder met de volgende zelfstudie om te leren hoe u toepassingen bijwerkt in 
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
 [aks-tutorial-update-app]: ./tutorial-kubernetes-app-update.md
-[az-aks-scale]: /cli/azure/aks#az-aks-scale
+[az-aks-scale]: /cli/azure/aks#az_aks_scale
 [azure-cli-install]: /cli/azure/install-azure-cli
-[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-aks-show]: /cli/azure/aks#az_aks_show

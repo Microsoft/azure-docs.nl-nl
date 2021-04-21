@@ -1,6 +1,6 @@
 ---
-title: TLS-beëindiging met CLI-Azure-toepassing gateway
-description: Meer informatie over het maken van een toepassings gateway en het toevoegen van een certificaat voor het beëindigen van TLS met behulp van de Azure CLI.
+title: TLS-beëindiging met CLI - Azure Application Gateway
+description: Meer informatie over het maken van een toepassingsgateway en het toevoegen van een certificaat voor TLS-beëindiging met behulp van de Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 9ae15503e8f12f7ba70aa5a9d306306fa79745f9
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: a8779c2829ecd2e8975ff56011bf5f73631f2de9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106220382"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772668"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Een toepassingsgateway maken met TLS-beëindiging met behulp van de Azure CLI
 
-U kunt de Azure CLI gebruiken om een [toepassings gateway](overview.md) met een certificaat voor het [beëindigen van TLS](ssl-overview.md)te maken. Voor back-endservers kunt u een [schaalset voor virtuele machines](../virtual-machine-scale-sets/overview.md)gebruiken. In dit voorbeeld bevat de schaalset twee virtuele-machine-instanties die zijn toegevoegd aan de standaard back-endgroep van de toepassingsgateway.
+U kunt de Azure CLI gebruiken om een [toepassingsgateway te](overview.md) maken met een certificaat voor [TLS-beëindiging.](ssl-overview.md) Voor back-endservers kunt u een [virtuele-machineschaalset gebruiken.](../virtual-machine-scale-sets/overview.md) In dit voorbeeld bevat de schaalset twee virtuele-machine-instanties die zijn toegevoegd aan de standaard back-endgroep van de toepassingsgateway.
 
 In dit artikel leert u het volgende:
 
@@ -37,7 +37,7 @@ U kunt deze procedure desgewenst voltooien met behulp van [Azure PowerShell](tut
 
 ## <a name="create-a-self-signed-certificate"></a>Een zelfondertekend certificaat maken
 
-Voor gebruik in de productie moet u een geldig certificaat importeren dat is ondertekend door een vertrouwde provider. Voor dit artikel maakt u een zelfondertekend certificaat en een pfx-bestand met behulp van de openssl-opdracht.
+Voor gebruik in de productie moet u een geldig certificaat importeren dat is ondertekend door een vertrouwde provider. Voor dit artikel maakt u een zelf-ondertekend certificaat en PFX-bestand met behulp van de opdracht openssl.
 
 ```console
 openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out appgwcert.crt
@@ -122,7 +122,7 @@ az network application-gateway create \
 
 ## <a name="create-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset maken
 
-In dit voorbeeld maakt u een virtuele-machineschaalset die servers biedt voor de standaard back-endpool in de toepassingsgateway. De virtuele machines in de schaalset worden gekoppeld aan *myBackendSubnet* en *appGatewayBackendPool*. U kunt [az vmss create](/cli/azure/vmss#az-vmss-create) gebruiken om de schaalset te maken.
+In dit voorbeeld maakt u een virtuele-machineschaalset die servers biedt voor de standaard back-endpool in de toepassingsgateway. De virtuele machines in de schaalset worden gekoppeld aan *myBackendSubnet* en *appGatewayBackendPool*. U kunt [az vmss create](/cli/azure/vmss#az_vmss_create) gebruiken om de schaalset te maken.
 
 ```azurecli-interactive
 az vmss create \
@@ -165,11 +165,11 @@ az network public-ip show \
   --output tsv
 ```
 
-Kopieer het openbare IP-adres en plak het in de adresbalk van de browser. Voor dit voor beeld is de URL: **https://52.170.203.149** .
+Kopieer het openbare IP-adres en plak het in de adresbalk van de browser. Voor dit voorbeeld is de URL: **https://52.170.203.149** .
 
 ![Beveiligingswaarschuwing](./media/tutorial-ssl-cli/application-gateway-secure.png)
 
-Als u de beveiligings waarschuwing wilt accepteren als u een zelfondertekend certificaat hebt gebruikt, selecteert u **Details** en **gaat u naar de webpagina**. Uw beveiligde NGINX-site wordt vervolgens weergegeven zoals in het volgende voorbeeld:
+Als u de beveiligingswaarschuwing wilt accepteren als u een zelf-ondertekend certificaat hebt gebruikt, selecteert u **Details** en vervolgens **Ga verder naar de webpagina.** Uw beveiligde NGINX-site wordt vervolgens weergegeven zoals in het volgende voorbeeld:
 
 ![Basis-URL testen in de toepassingsgateway](./media/tutorial-ssl-cli/application-gateway-nginx.png)
 

@@ -1,7 +1,7 @@
 ---
-title: Beschrijvingen van installatie kopieën-Computer Vision
+title: Beschrijvingen van afbeeldingen - Computer Vision
 titleSuffix: Azure Cognitive Services
-description: Concepten met betrekking tot de functie beschrijving van afbeelding van de Computer Vision-API.
+description: Concepten met betrekking tot de afbeeldingsbeschrijvingsfunctie van de Computer Vision API.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,22 +11,22 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 4fd328dad3544697ba1f4896f7383be857b097a5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c517fa98bfc17d4702a51d4990e860b2ed7aaefd
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "96530660"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778927"
 ---
-# <a name="describe-images-with-human-readable-language"></a>Afbeeldingen beschrijven met een Human-Lees bare taal
+# <a name="describe-images-with-human-readable-language"></a>Afbeeldingen beschrijven met een door mensen leesbare taal
 
-Computer Vision kunt een afbeelding analyseren en een door de mens lees bare zin genereren waarin de inhoud wordt beschreven. Het algoritme retourneert een aantal beschrijvingen op basis van verschillende visuele functies en elke beschrijving krijgt een betrouwbaarheids Score. De uiteindelijke uitvoer is een lijst met beschrijvingen die zijn besteld van hoogste naar laagste betrouw baarheid.
+Computer Vision kunt een afbeelding analyseren en een door mensen leesbare zin genereren die de inhoud ervan beschrijft. Het algoritme retourneert in feite verschillende beschrijvingen op basis van verschillende visuele kenmerken en elke beschrijving krijgt een betrouwbaarheidsscore. De uiteindelijke uitvoer is een lijst met beschrijvingen die zijn geordend van hoogste naar laagste betrouwbaarheid.
 
-## <a name="image-description-example"></a>Voor beeld van installatie kopie beschrijving
+## <a name="image-description-example"></a>Voorbeeld van een beschrijving van de afbeelding
 
-In het volgende JSON-antwoord ziet u wat Computer Vision retourneert bij het beschrijven van de voorbeeld afbeelding op basis van de visuele functies.
+Het volgende JSON-antwoord illustreert wat Computer Vision retourneert bij het beschrijven van de voorbeeldafbeelding op basis van de visuele kenmerken.
 
-![Een zwarte en witte afbeelding van gebouwen in Manhattan](./Images/bw_buildings.png)
+![Een zwart-witfoto van gebouwen in New York](./Images/bw_buildings.png)
 
 ```json
 {
@@ -58,10 +58,10 @@ In het volgende JSON-antwoord ziet u wat Computer Vision retourneert bij het bes
 
 ## <a name="use-the-api"></a>De API gebruiken
 
-De functie beschrijving van afbeelding maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Description` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"description"` sectie.
+De functie beschrijving van de afbeelding maakt deel uit van [de Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) API. U kunt deze API aanroepen via een native SDK of via REST-aanroepen. Neem `Description` op in de **queryparameter visualFeatures.** Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de tekenreeks voor de inhoud van de `"description"` sectie.
 
 * [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de verwante concepten voor het [labelen van afbeeldingen](concept-tagging-images.md) en het [categoriseren van afbeeldingen](concept-categorizing-images.md).
+Meer informatie over de gerelateerde concepten van het [taggen van afbeeldingen](concept-tagging-images.md) [en het categoriseren van afbeeldingen.](concept-categorizing-images.md)

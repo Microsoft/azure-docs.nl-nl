@@ -1,46 +1,46 @@
 ---
-title: Met GPU ingeschakelde container instantie implementeren
-description: Meer informatie over het implementeren van Azure container instances voor het uitvoeren van Compute-container-apps met GPU-resources.
+title: Een container-exemplaar met GPU implementeren
+description: Meer informatie over het implementeren van Azure-container instances voor het uitvoeren van rekenintensieve container-apps met behulp van GPU-resources.
 ms.topic: article
 ms.date: 07/22/2020
-ms.openlocfilehash: 0d645d1fce24d1324e485d74e20bcf492d4444a7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6ffe4840d024c1e1f551966d05673c4ba83e1259
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93127005"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107764059"
 ---
-# <a name="deploy-container-instances-that-use-gpu-resources"></a>Container instanties implementeren die GPU-bronnen gebruiken
+# <a name="deploy-container-instances-that-use-gpu-resources"></a>Container-exemplaren implementeren die GPU-resources gebruiken
 
-Als u bepaalde computerintensieve werk belastingen op Azure Container Instances wilt uitvoeren, implementeert u de [container groepen](container-instances-container-groups.md) met *GPU-resources*. De container instanties in de groep hebben toegang tot een of meer NVIDIA Tesla-Gpu's tijdens het uitvoeren van container werkbelastingen, zoals CUDA en diepe leer toepassingen.
+Als u bepaalde rekenintensieve workloads wilt uitvoeren op Azure Container Instances, implementeert u [uw containergroepen](container-instances-container-groups.md) met *GPU-resources.* De container-exemplaren in de groep hebben toegang tot een of meer NVIDIA Tesla GPU's tijdens het uitvoeren van containerworkloads zoals CUDA en deep learning-toepassingen.
 
-In dit artikel wordt beschreven hoe u GPU-resources toevoegt wanneer u een container groep implementeert met behulp van een [yaml-bestand](container-instances-multi-container-yaml.md) of [Resource Manager-sjabloon](container-instances-multi-container-group.md). U kunt ook GPU-resources opgeven wanneer u een container exemplaar implementeert met behulp van de Azure Portal.
+In dit artikel wordt beschreven hoe u GPU-resources toevoegt wanneer u een containergroep implementeert met behulp van een [YAML-bestand](container-instances-multi-container-yaml.md) [of Resource Manager sjabloon](container-instances-multi-container-group.md). U kunt ook GPU-resources opgeven wanneer u een container-exemplaar implementeert met behulp van Azure Portal.
 
 > [!IMPORTANT]
-> Deze functie is momenteel beschikbaar als preview-versie en er [zijn enkele beperkingen van toepassing](#preview-limitations). Previews worden voor u beschikbaar gesteld op voorwaarde dat u akkoord gaat met de [aanvullende gebruiksvoorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
+> Deze functie is momenteel beschikbaar als preview-versie en er gelden [enkele beperkingen.](#preview-limitations) Previews worden voor u beschikbaar gesteld op voorwaarde dat u akkoord gaat met de [aanvullende gebruiksvoorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
 
 ## <a name="preview-limitations"></a>Preview-beperkingen
 
-In de preview-periode gelden de volgende beperkingen bij het gebruik van GPU-resources in container groepen. 
+In de preview zijn de volgende beperkingen van toepassing bij het gebruik van GPU-resources in containergroepen. 
 
 [!INCLUDE [container-instances-gpu-regions](../../includes/container-instances-gpu-regions.md)]
 
-De ondersteuning wordt gedurende de loop tijd aan extra regio's toegevoegd.
+Er wordt na een bepaalde periode ondersteuning toegevoegd voor extra regio's.
 
-**Ondersteunde typen besturings systeem**: alleen Linux
+**Ondersteunde besturingssysteemtypen:** alleen Linux
 
-**Aanvullende beperkingen**: GPU-bronnen kunnen niet worden gebruikt bij het implementeren van een container groep in een [virtueel netwerk](container-instances-vnet.md).
+**Aanvullende beperkingen:** GPU-resources kunnen niet worden gebruikt bij het implementeren van een containergroep in [een virtueel netwerk.](container-instances-vnet.md)
 
-## <a name="about-gpu-resources"></a>Over GPU-bronnen
+## <a name="about-gpu-resources"></a>Over GPU-resources
 
 ### <a name="count-and-sku"></a>Aantal en SKU
 
-Als u Gpu's wilt gebruiken in een container exemplaar, geeft u een *GPU-resource* op met de volgende gegevens:
+Als u GPU's in een container-instantie wilt gebruiken, geeft u een *GPU-resource op* met de volgende informatie:
 
-* **Count** -het aantal gpu's: **1**, **2** of **4**.
-* **SKU** -de GPU-SKU: **K80**, **P100** of **V100**. Elke SKU wordt toegewezen aan de NVIDIA Tesla GPU in een van de volgende Azure GPU-VM-families:
+* **Aantal:** het aantal GPU's: **1,** **2** of **4**.
+* **SKU:** de GPU-SKU: **K80,** **P100** of **V100.** Elke SKU wordt in een van de volgende VM-families met GPU-ondersteuning van Azure aan de NVIDIA Tesla GPU toe te kennen:
 
-  | SKU | VM-serie |
+  | SKU | VM-familie |
   | --- | --- |
   | K80 | [NC](../virtual-machines/nc-series.md) |
   | P100 | [NCv2](../virtual-machines/ncv2-series.md) |
@@ -48,28 +48,28 @@ Als u Gpu's wilt gebruiken in een container exemplaar, geeft u een *GPU-resource
 
 [!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
 
-Wanneer u GPU-resources implementeert, stelt u de CPU-en geheugen resources in die geschikt zijn voor de werk belasting, tot aan de maximum waarden die in de voor gaande tabel worden weer gegeven. Deze waarden zijn momenteel groter dan de CPU-en geheugen bronnen die beschikbaar zijn in container groepen zonder GPU-resources.  
+Wanneer u GPU-resources implementeert, stelt u cpu- en geheugenbronnen in die geschikt zijn voor de workload, tot de maximumwaarden die in de voorgaande tabel worden weergegeven. Deze waarden zijn momenteel groter dan de CPU- en geheugenresources die beschikbaar zijn in containergroepen zonder GPU-resources.  
 
 > [!IMPORTANT]
-> Standaard [abonnements limieten](container-instances-quotas.md) (quota's) voor GPU-resources verschillen per SKU. De standaard CPU-limieten voor de P100-en V100-Sku's worden in eerste instantie ingesteld op 0. Als u een toename in een beschik bare regio wilt aanvragen, moet u een [ondersteunings aanvraag voor Azure][azure-support]indienen.
+> [Standaardabonnementslimieten](container-instances-quotas.md) (quota) voor GPU-resources verschillen per SKU. De standaard CPU-limieten voor de SKU's P100 en V100 zijn in eerste instantie ingesteld op 0. Als u een verhoging in een beschikbare regio wilt aanvragen, dient u een aanvraag [in ondersteuning voor Azure verzenden.][azure-support]
 
 ### <a name="things-to-know"></a>Dingen die u moet weten
 
-* Het maken van de **implementatie tijd** van een container groep met GPU-bronnen duurt maxi maal **8-10 minuten**. Dit wordt veroorzaakt door de extra tijd voor het inrichten en configureren van een GPU-VM in Azure. 
+* **Implementatietijd:** het maken van een containergroep met **GPU-resources duurt maximaal 8-10 minuten.** Dit komt door de extra tijd voor het inrichten en configureren van een GPU-VM in Azure. 
 
-* **Prijzen** : vergelijkbaar met container groepen zonder GPU-resources, Azure-facturen voor bronnen die worden verbruikt gedurende de *duur* van een container groep met GPU-resources. De duur wordt berekend op basis van de tijd voor het ophalen van de installatie kopie van uw eerste container totdat de container groep wordt beëindigd. Het bevat niet de tijd voor het implementeren van de container groep.
+* **Prijzen:** net als bij containergroepen zonder GPU-resources,  worden in Azure kosten in rekening genomen voor resources die worden gebruikt gedurende de duur van een containergroep met GPU-resources. De duur wordt berekend op basis van de tijd die nodig is om de containerafbeelding op te halen totdat de containergroep wordt beëindigd. Dit omvat niet de tijd die nodig is om de containergroep te implementeren.
 
-  Zie de [prijs informatie](https://azure.microsoft.com/pricing/details/container-instances/).
+  Zie [prijsinformatie.](https://azure.microsoft.com/pricing/details/container-instances/)
 
-* **CUDA-Stuur Programma's** : container instanties met GPU-resources zijn vooraf ingericht met NVIDIA CUDA-Stuur Programma's en container-runtimes, zodat u container installatie kopieën kunt gebruiken die zijn ontwikkeld voor CUDA-workloads.
+* **CUDA-stuurprogramma's:** container instances met GPU-resources zijn vooraf ingericht met NVIDIA CUDA-stuurprogramma's en containerruntimes, zodat u containerafbeeldingen kunt gebruiken die zijn ontwikkeld voor CUDA-workloads.
 
-  We ondersteunen in deze fase alleen CUDA 9,0. U kunt bijvoorbeeld de volgende basis installatie kopieën voor uw docker-bestand gebruiken:
-  * [NVIDIA/CUDA: 9.0-base-Ubuntu 16.04](https://hub.docker.com/r/nvidia/cuda/)
-  * [tensor flow/tensor flow: 1.12.0-GPU-py3](https://hub.docker.com/r/tensorflow/tensorflow)
+  In deze fase ondersteunen we alleen CUDA 9.0. U kunt bijvoorbeeld de volgende basisafbeeldingen gebruiken voor uw Docker-bestand:
+  * [nvidia/cuda:9.0-base-ubuntu16.04](https://hub.docker.com/r/nvidia/cuda/)
+  * [tensorflow/tensorflow: 1.12.0-gpu-py3](https://hub.docker.com/r/tensorflow/tensorflow)
     
-## <a name="yaml-example"></a>YAML-voor beeld
+## <a name="yaml-example"></a>YAML-voorbeeld
 
-Een manier om GPU-resources toe te voegen, is door een container groep te implementeren met behulp van een [yaml-bestand](container-instances-multi-container-yaml.md). Kopieer de volgende YAML naar een nieuw bestand met de naam *GPU-Deploy-ACI. yaml* en sla het bestand op. Met deze YAML maakt u een container groep met de naam *gpucontainergroup* die een container exemplaar met een K80 GPU opgeeft. De instantie voert een voor beeld van een toepassing voor het optellen van CUDA vector. De resource-aanvragen zijn voldoende om de werk belasting uit te voeren.
+Eén manier om GPU-resources toe te voegen, is door een containergroep te implementeren met behulp van een [YAML-bestand](container-instances-multi-container-yaml.md). Kopieer de volgende YAML naar een nieuw bestand met de naam *gpu-deploy-aci.yaml* en sla het bestand op. Deze YAML maakt een containergroep met de *naam gpucontainergroup die* een container-exemplaar met een K80 GPU opgeeft. Het exemplaar voert een voorbeeld van een CUDA-toepassing voor vectoroptelling uit. De resourceaanvragen zijn voldoende om de workload uit te voeren.
 
 ```YAML
 additional_properties: {}
@@ -91,13 +91,13 @@ properties:
   restartPolicy: OnFailure
 ```
 
-Implementeer de container groep met de opdracht [AZ container Create][az-container-create] en geef de yaml-bestands naam op voor de `--file` para meter. U moet de naam van een resource groep en een locatie opgeven voor de container groep, zoals *ooster* , die GPU-resources ondersteunt.  
+Implementeer de containergroep met de [opdracht az container create,][az-container-create] met de naam van het YAML-bestand voor de `--file` parameter . U moet de naam van een resourcegroep en een locatie voor de containergroep, zoals *eastus,* die GPU-resources ondersteunt, leveren.  
 
 ```azurecli
 az container create --resource-group myResourceGroup --file gpu-deploy-aci.yaml --location eastus
 ```
 
-Het duurt enkele minuten om de implementatie te voltooien. Vervolgens wordt de container gestart en wordt er een bewerking voor het optellen van CUDA-vector uitgevoerd. Voer de opdracht [AZ container logs][az-container-logs] uit om de logboek uitvoer weer te geven:
+Het duurt enkele minuten om de implementatie te voltooien. Vervolgens wordt de container gestart en wordt een optellingsbewerking voor de CUDA-vector uitgevoerd. Voer de [opdracht az container logs][az-container-logs] uit om de logboekuitvoer weer te geven:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name gpucontainergroup --container-name gpucontainer
@@ -114,9 +114,9 @@ Test PASSED
 Done
 ```
 
-## <a name="resource-manager-template-example"></a>Voor beeld van Resource Manager-sjabloon
+## <a name="resource-manager-template-example"></a>Resource Manager voorbeeld van een sjabloon
 
-Een andere manier om een container groep te implementeren met GPU-resources is met behulp van een [Resource Manager-sjabloon](container-instances-multi-container-group.md). Begin met het maken van een bestand met `gpudeploy.json` de naam en kopieer vervolgens de volgende JSON naar de toepassing. In dit voor beeld wordt een container exemplaar geïmplementeerd met een V100-GPU die een [tensor flow](https://www.tensorflow.org/) -trainings taak uitvoert op de MNIST-gegevensset. De resource-aanvragen zijn voldoende om de werk belasting uit te voeren.
+Een andere manier om een containergroep met GPU-resources te implementeren, is met behulp van [een Resource Manager sjabloon](container-instances-multi-container-group.md). Begin met het maken van een bestand met de `gpudeploy.json` naam en kopieer de volgende JSON naar het bestand. In dit voorbeeld wordt een containerin instance geïmplementeerd met een V100 GPU die een [TensorFlow-trainings](https://www.tensorflow.org/) job op de MNIST-gegevensset. De resourceaanvragen zijn voldoende om de workload uit te voeren.
 
 ```JSON
 {
@@ -168,13 +168,13 @@ Een andere manier om een container groep te implementeren met GPU-resources is m
 }
 ```
 
-Implementeer de sjabloon met de opdracht [AZ Deployment Group Create][az-deployment-group-create] . U moet de naam opgeven van een resource groep die is gemaakt in een regio, zoals *ooster* , die GPU-resources ondersteunt.
+Implementeer de sjabloon met de [opdracht az deployment group create.][az-deployment-group-create] U moet de naam van een resourcegroep die is gemaakt in een regio zoals *eastus* die GPU-resources ondersteunt, leveren.
 
 ```azurecli-interactive
 az deployment group create --resource-group myResourceGroup --template-file gpudeploy.json
 ```
 
-Het duurt enkele minuten om de implementatie te voltooien. De container start en voert vervolgens de tensor flow-taak uit. Voer de opdracht [AZ container logs][az-container-logs] uit om de logboek uitvoer weer te geven:
+Het duurt enkele minuten om de implementatie te voltooien. Vervolgens wordt de TensorFlow-taak gestart en uitgevoerd door de container. Voer de [opdracht az container logs][az-container-logs] uit om de logboekuitvoer weer te geven:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name gpucontainergrouprm --container-name gpucontainer
@@ -209,13 +209,13 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Omdat het gebruik van GPU-resources kostbaar kan zijn, moet u ervoor zorgen dat uw containers niet voor een lange periode onverwacht worden uitgevoerd. Bewaak uw containers in het Azure Portal of Controleer de status van een container groep met de opdracht [AZ container show][az-container-show] . Bijvoorbeeld:
+Omdat het gebruik van GPU-resources duur kan zijn, moet u ervoor zorgen dat uw containers gedurende langere perioden niet onverwacht worden uitgevoerd. Controleer uw containers in de Azure Portal of controleer de status van een containergroep met de [opdracht az container show.][az-container-show] Bijvoorbeeld:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table
 ```
 
-Wanneer u klaar bent met de container instanties die u hebt gemaakt, verwijdert u deze met de volgende opdrachten:
+Wanneer u klaar bent met het werken met de container-exemplaren die u hebt gemaakt, verwijdert u deze met de volgende opdrachten:
 
 ```azurecli
 az container delete --resource-group myResourceGroup --name gpucontainergroup -y
@@ -224,8 +224,8 @@ az container delete --resource-group myResourceGroup --name gpucontainergrouprm 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het implementeren van een container groep met behulp van een [yaml-bestand](container-instances-multi-container-yaml.md) of een [Resource Manager-sjabloon](container-instances-multi-container-group.md).
-* Meer informatie over door [GPU geoptimaliseerde VM-grootten](../virtual-machines/sizes-gpu.md) in Azure.
+* Meer informatie over het implementeren van een containergroep met behulp van een [YAML-bestand](container-instances-multi-container-yaml.md) [of Resource Manager sjabloon](container-instances-multi-container-group.md).
+* Meer informatie over voor [GPU geoptimaliseerde VM-grootten](../virtual-machines/sizes-gpu.md) in Azure.
 
 
 <!-- IMAGES -->
@@ -236,8 +236,8 @@ az container delete --resource-group myResourceGroup --name gpucontainergrouprm 
 [azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest
 
 <!-- LINKS - Internal -->
-[az-container-create]: /cli/azure/container#az-container-create
-[az-container-show]: /cli/azure/container#az-container-show
-[az-container-logs]: /cli/azure/container#az-container-logs
-[az-container-show]: /cli/azure/container#az-container-show
-[az-deployment-group-create]: /cli/azure/deployment/group#az-deployment-group-create
+[az-container-create]: /cli/azure/container#az_container_create
+[az-container-show]: /cli/azure/container#az_container_show
+[az-container-logs]: /cli/azure/container#az_container_logs
+[az-container-show]: /cli/azure/container#az_container_show
+[az-deployment-group-create]: /cli/azure/deployment/group#az_deployment_group_create

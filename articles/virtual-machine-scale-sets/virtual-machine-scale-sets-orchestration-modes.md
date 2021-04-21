@@ -1,5 +1,5 @@
 ---
-title: Orchestration modes for virtual machine scale sets in Azure
+title: Orchestration-modi voor virtuele-machineschaalsets in Azure
 description: Meer informatie over het gebruik van flexibele en uniforme orchestration-modi voor virtuele-machineschaalsets in Azure.
 author: fitzgeraldsteele
 ms.author: fisteele
@@ -8,38 +8,38 @@ ms.service: virtual-machine-scale-sets
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 72e36a942eeaea00699f346db99a7ca3503495da
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: d089708ead67891164aee074394e923d2a84a977
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107481647"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774445"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Preview: Orchestration modes for virtual machine scale sets in Azure 
 
-Virtual Machines schaalsets bieden een logische groepering van door het platform beheerde virtuele machines. Met schaalsets maakt u een configuratiemodel voor virtuele machines, voegt u automatisch extra exemplaren toe of verwijdert u deze op basis van CPU- of geheugenbelasting en upgradet u automatisch naar de nieuwste versie van het besturingssysteem. Van oudsher kunt u met schaalsets virtuele machines maken met behulp van een VM-configuratiemodel dat werd opgegeven op het moment dat de schaalset werd gemaakt. De schaalset kan alleen virtuele machines beheren die impliciet zijn gemaakt op basis van het configuratiemodel. 
+Virtual Machines schaalsets bieden een logische groepering van door het platform beheerde virtuele machines. Met schaalsets maakt u een configuratiemodel voor virtuele machines, voegt u automatisch extra exemplaren toe of verwijdert u deze op basis van CPU- of geheugenbelasting, en upgradet u automatisch naar de nieuwste versie van het besturingssysteem. Van oudsher kunt u met schaalsets virtuele machines maken met behulp van een VM-configuratiemodel dat werd opgegeven op het moment dat de schaalset werd gemaakt. De schaalset kan alleen virtuele machines beheren die impliciet zijn gemaakt op basis van het configuratiemodel. 
 
-Met de orchestration-modi van schaalsets hebt u meer controle over de manier waarop exemplaren van virtuele machines worden beheerd door de schaalset. 
+Met de orchestration-modi van schaalsets hebt u meer controle over hoe virtuele-machine-exemplaren worden beheerd door de schaalset. 
 
 > [!IMPORTANT]
 > De orchestration-modus wordt gedefinieerd wanneer u de schaalset maakt en kan later niet worden gewijzigd of bijgewerkt.
 
 
-## <a name="scale-sets-with-uniform-orchestration"></a>Schaalsets met Uniform Orchestration
+## <a name="scale-sets-with-uniform-orchestration"></a>Schaalsets met uniform orchestration
 Geoptimaliseerd voor grootschalige staatloze workloads met identieke exemplaren.
 
-Virtuele-machineschaalsets met Uniform Orchestration gebruiken een profiel of sjabloon voor virtuele machines om omhoog te schalen naar de gewenste capaciteit. Hoewel er een mogelijkheid is om exemplaren van afzonderlijke virtuele machines te beheren of aan te passen, maakt Uniform gebruik van identieke VM-exemplaren. Afzonderlijke exemplaren van uniforme VM's worden beschikbaar gemaakt via de VM API-opdrachten van de virtuele-machineschaalset. Afzonderlijke exemplaren zijn niet compatibel met de standaard azure IaaS VM API-opdrachten, Azure-beheerfuncties zoals Azure Resource Manager-resourcetagging RBAC-machtigingen, Azure Backup of Azure Site Recovery. Uniforme orchestration biedt garanties voor hoge beschikbaarheid van foutdomeinen wanneer deze zijn geconfigureerd met minder dan 100 exemplaren. Uniforme orchestration is algemeen beschikbaar en biedt ondersteuning voor een volledig scala aan beheer en orchestration van schaalsets, waaronder automatisch schalen op basis van metrische gegevens, exemplaarbeveiliging en automatische upgrades van het besturingssysteem. 
+Virtuele-machineschaalsets met uniform orchestration gebruiken een profiel of sjabloon voor virtuele machines om omhoog te schalen naar de gewenste capaciteit. Hoewel er een mogelijkheid is om exemplaren van afzonderlijke virtuele machines te beheren of aan te passen, maakt Uniform gebruik van identieke VM-exemplaren. Afzonderlijke uniform VM-exemplaren worden beschikbaar gemaakt via de opdrachten van de VM-API voor de virtuele-machineschaalset. Afzonderlijke exemplaren zijn niet compatibel met de standaard azure IaaS VM API-opdrachten, Azure-beheerfuncties zoals RBAC-machtigingen voor Azure Resource Manager-resourcetagging, Azure Backup of Azure Site Recovery. Uniforme orchestration biedt garanties voor hoge beschikbaarheid van foutdomeinen wanneer deze zijn geconfigureerd met minder dan 100 exemplaren. Uniforme orchestration is algemeen beschikbaar en ondersteunt een volledig scala aan beheer en orchestration van schaalsets, waaronder automatisch schalen op basis van metrische gegevens, exemplaarbeveiliging en automatische upgrades van het besturingssysteem. 
 
 
 ## <a name="scale-sets-with-flexible-orchestration"></a>Schaalsets met flexibele orchestration 
 Hoge beschikbaarheid op schaal met identieke of meerdere typen virtuele machines.
 
-Met Flexibele orchestration biedt Azure een uniforme ervaring binnen het Azure VM-ecosysteem. Flexibele orchestration biedt garanties voor hoge beschikbaarheid (maximaal 1000 VM's) door VM's te spreiden over foutdomeinen in een regio of binnen een beschikbaarheidszone. Hierdoor kunt u uw toepassing uitschalen met behoud van de isolatie van foutdomeinen die essentieel is voor het uitvoeren van quorumgebaseerde of stateful workloads, waaronder:
+Met flexibele orchestration biedt Azure een uniforme ervaring in het Azure VM-ecosysteem. Flexibele orchestration biedt garanties voor hoge beschikbaarheid (maximaal 1000 VM's) door VM's te spreiden over foutdomeinen in een regio of binnen een beschikbaarheidszone. Hierdoor kunt u uw toepassing uitschalen terwijl de isolatie van foutdomeinen behouden blijft die essentieel is voor het uitvoeren van quorum- of stateful workloads, waaronder:
 - Workloads op basis van quorum
 - Open-Source databases
 - Stateful toepassingen
-- Services waarvoor hoge beschikbaarheid en grootschalige schaal vereist zijn
-- Services die typen virtuele machines willen combineren of spot- en on-demand VM's willen combineren
+- Services waarvoor hoge beschikbaarheid en grootschalige beschikbaarheid is vereist
+- Services die typen virtuele machines willen combineren of die gebruikmaken van spot- en on-demand VM's
 - Bestaande beschikbaarheidssettoepassingen  
 
 > [!IMPORTANT]
@@ -48,14 +48,14 @@ Met Flexibele orchestration biedt Azure een uniforme ervaring binnen het Azure V
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 
-## <a name="what-has-changed-with-flexible-orchestration-mode"></a>Wat is er gewijzigd in de flexibele orchestrationmodus?
-Een van de belangrijkste voordelen van Flexibele orchestration is dat het orchestration-functies biedt ten opzichte van standaard virtuele Azure IaaS-machines, in plaats van onderliggende virtuele machines in schaalsets. Dit betekent dat u alle standaard-VM-API's kunt gebruiken bij het beheren van flexibele orchestration-exemplaren, in plaats van de VM-API's van de virtuele-machineschaalset die u gebruikt met Uniform Orchestration. Tijdens de preview-periode zijn er verschillende verschillen tussen het beheren van exemplaren in Flexibele orchestration en Uniform Orchestration. Over het algemeen raden we u aan om waar mogelijk de standaard Azure IaaS VM-API's te gebruiken. In deze sectie worden voorbeelden belicht van best practices voor het beheren van VM-exemplaren met flexibele orchestration.  
+## <a name="what-has-changed-with-flexible-orchestration-mode"></a>Wat is er veranderd in de flexibele orchestrationmodus?
+Een van de belangrijkste voordelen van Flexibele orchestration is dat het orchestration-functies biedt ten opzichte van standaard virtuele Azure IaaS-machines, in plaats van onderliggende virtuele machines in een schaalset. Dit betekent dat u alle standaard-VM-API's kunt gebruiken bij het beheren van flexibele orchestration-exemplaren, in plaats van de VM-API's van de virtuele-machineschaalset die u gebruikt met Uniform Orchestration. Tijdens de preview-periode zijn er verschillende verschillen tussen het beheren van exemplaren in Flexibele orchestration en Uniform Orchestration. Over het algemeen raden we u aan om waar mogelijk de standaard Azure IaaS VM-API's te gebruiken. In deze sectie worden voorbeelden van best practices voor het beheren van VM-exemplaren met flexibele orchestration belicht.  
 
 ### <a name="assign-fault-domain-during-vm-creation"></a>Foutdomein toewijzen tijdens het maken van de VM
-U kunt het aantal foutdomeinen voor de flexibele orchestration-schaalset kiezen. Wanneer u een VM toevoegt aan een flexibele schaalset, verspreidt Azure exemplaren standaard gelijkmatig over foutdomeinen. Hoewel het raadzaam is om Azure het foutdomein toe te wijzen, kunt u voor geavanceerde of probleemoplossingsscenario's dit standaardgedrag overschrijven en het foutdomein opgeven waar het exemplaar wordt geland.
+U kunt het aantal foutdomeinen voor de flexibele orchestration-schaalset kiezen. Wanneer u een VM toevoegt aan een flexibele schaalset, verspreidt Azure exemplaren standaard gelijkmatig over foutdomeinen. Hoewel het raadzaam is om Azure het foutdomein toe te wijzen, kunt u voor geavanceerde scenario's of probleemoplossingsscenario's dit standaardgedrag overschrijven en het foutdomein opgeven waar het exemplaar wordt geland.
 
 ```azurecli-interactive 
-az vm create â€“vmss "myVMSS"  â€“-platform_fault_domain 1
+az vm create –vmss "myVMSS"  –-platform_fault_domain 1
 ```
 
 ### <a name="instance-naming"></a>Naamgeving van exemplaren 
@@ -65,11 +65,11 @@ Wanneer u een VM maakt en toevoegt aan een flexibele schaalset, hebt u volledige
 De voorkeursmethode is het gebruik van Azure Resource Graph voor het uitvoeren van query's voor alle virtuele machines in een virtuele-machineschaalset. Azure Resource Graph biedt efficiënte querymogelijkheden voor Azure-resources op schaal voor abonnementen. 
 
 ``` 
-|â€¯whereâ€¯typeâ€¯=~â€¯'Microsoft.Compute/virtualMachines' 
-|â€¯whereâ€¯properties.virtualMachineScaleSetâ€¯containsâ€¯"demo" 
-|â€¯extendâ€¯powerStateâ€¯=â€¯properties.extended.instanceView.powerState.code 
-|â€¯projectâ€¯name,â€¯resourceGroup,â€¯location,â€¯powerState 
-|â€¯orderâ€¯byâ€¯resourceGroupâ€¯desc,â€¯nameâ€¯desc 
+| where type =~ 'Microsoft.Compute/virtualMachines' 
+| where properties.virtualMachineScaleSet contains "demo" 
+| extend powerState = properties.extended.instanceView.powerState.code 
+| project name, resourceGroup, location, powerState 
+| order by resourceGroup desc, name desc 
 ```
 
 Het opvragen van resources [Azure Resource Graph](../governance/resource-graph/overview.md) is een handige en efficiënte manier om query's uit te voeren op Azure-resources en om API-aanroepen naar de resourceprovider te minimaliseren. Azure Resource Graph is een uiteindelijk consistente cache waarbij nieuwe of bijgewerkte resources maximaal 60 seconden niet worden weergegeven. U kunt:
@@ -101,28 +101,28 @@ In de volgende tabel worden de flexibele orchestrationmodus, de modus Uniform or
 |         Type virtuele machine  | Standaard Azure IaaS-VM (Microsoft.compute /virtualmachines)  | Specifieke VM's van schaalsets (Microsoft.compute /virtualmachinescalesets/virtualmachines)  | Standaard Azure IaaS-VM (Microsoft.compute /virtualmachines)  |
 |         SKU's ondersteund  |            D-serie, E-serie, F-serie, A-serie, B-serie, Intel, AMD  |            Alle SKU's  |            Alle SKU's  |
 |         Beschikbaarheidszones  |            Geef desgewenst alle exemplaren op in één beschikbaarheidszone |            Exemplaren in 1, 2 of 3 beschikbaarheidszones opgeven  |            Niet ondersteund  |
-|         Volledige controle over VM, NIC's, schijven  |            Ja  |            Beperkt beheer met VM-API voor virtuele-machineschaalsets  |            Ja  |
+|         Volledige controle over VM, NIC's, schijven  |            Yes  |            Beperkt beheer met VM-API voor virtuele-machineschaalsets  |            Yes  |
 |         Automatisch schalen  |            Nee  |            Ja  |            Nee  |
 |         VM toewijzen aan een specifiek foutdomein  |            Ja  |             Nee   |            Nee  |
 |         NIC's en schijven verwijderen bij het verwijderen van VM-exemplaren  |            Nee  |            Ja  |            Nee  |
-|         Upgradebeleid (VM-schaalsets) |            Nee  |            Automatisch, Rollend, Handmatig  |            N.v.t.  |
+|         Upgradebeleid (VM-schaalsets) |            No  |            Automatisch, Rollend, Handmatig  |            N.v.t.  |
 |         Automatische updates van het besturingssysteem (VM-schaalsets) |            Nee  |            Ja  |            N.v.t.  |
 |         In Gastbeveiligingspatching  |            Ja  |            Nee  |            Ja  |
 |         Meldingen beëindigen (VM-schaalsets) |            Nee  |            Ja  |            N.v.t.  |
 |         Exemplaarherstel (VM-schaalsets) |            Nee  |            Ja   |            N.v.t.  |
 |         Versneld netwerken  |            Ja  |            Ja  |            Ja  |
-|         Spotâ€ 1instances en pricingâ€ à  |            Ja, u kunt zowel Spot- als Regular-prioriteits instances hebben  |            Ja, instanties moeten alle Spot- of Regular-exemplaren zijn  |            Nee, alleen instanties met reguliere prioriteit  |
+|         Spot-exemplaren en prijzen   |            Ja, u kunt zowel Spot- als Regular-prioriteits instances hebben  |            Ja, instanties moeten alle Spot- of Regular-exemplaren zijn  |            Nee, alleen instanties met reguliere prioriteit  |
 |         Besturingssystemen combineren  |            Ja, Linux en Windows kunnen zich in dezelfde flexibele schaalset bevinden |            Nee, exemplaren zijn hetzelfde besturingssysteem  |               Ja, Linux en Windows kunnen zich in dezelfde flexibele schaalset bevinden |
 |         Toepassings health bewaken  |            Toepassings statusextensie  |            Toepassingstoestandsextensie of Azure Load Balancer-test  |            Toepassings statusextensie  |
-|         UltraSSDâ€ âDisksâ€ â  |            Ja  |            Ja, alleen voornale implementaties  |            Nee  |
-|         Infinibandâ€ à  |            Nee  |            Ja, alleen één plaatsingsgroep  |            Ja  |
-|         Writeâ€ âAcceleratorâ€ à  |            Nee  |            Ja  |            Ja  |
-|         Proximityâ€ âPlacement Groupsâ€ â  |            Ja  |            Ja  |            Ja  |
-|         Azure Dedicated Hostsa€ â  |            Nee  |            Ja  |            Ja  |
-|         Basic SLBâ€ â  |            Nee  |            Ja  |            Ja  |
+|         UltraSSD-schijven   |            Yes  |            Ja, alleen voornale implementaties  |            No  |
+|         Infiniband   |            No  |            Ja, alleen één plaatsingsgroep  |            Yes  |
+|         Write Accelerator   |            Nee  |            Ja  |            Ja  |
+|         Nabijheidsplaatsingsgroepen   |            Ja  |            Ja  |            Ja  |
+|         Toegewezen Azure-hosts   |            Nee  |            Ja  |            Ja  |
+|         Basic SLB   |            Nee  |            Ja  |            Ja  |
 |         Azure Load Balancer Standard-SKU |            Ja  |            Ja  |            Ja  |
 |         Application Gateway  |            Nee  |            Ja  |            Ja  |
-|         Onderhoudsbeheer...  |            Nee  |            Ja  |            Ja  |
+|         Onderhoudsbeheer   |            Nee  |            Ja  |            Ja  |
 |         Lijst met VM's in set  |            Ja  |            Ja  |            Ja, lijst met VM's in AvSet  |
 |         Azure-waarschuwingen  |            Nee  |            Ja  |            Ja  |
 |         VM Insights  |            Nee  |            Ja  |            Ja  |
@@ -135,7 +135,7 @@ In de volgende tabel worden de flexibele orchestrationmodus, de modus Uniform or
 Voordat u virtuele-machineschaalsets in de flexibele orchestration-modus kunt implementeren, moet u eerst uw abonnement registreren voor de preview-functie. Het kan enkele minuten duren voordat de registratie is voltooid. U kunt de volgende Azure PowerShell of Azure CLI-opdrachten gebruiken om u te registreren.
 
 ### <a name="azure-portal"></a>Azure Portal
-Navigeer naar de detailpagina voor het abonnement waarin u een schaalset wilt maken in de modus Flexibele orchestration en selecteer Preview-functies in het menu. Selecteer de twee orchestratorfuncties die u wilt inschakelen: _VMOrchestratorSingleFD_ en _VMOrchestratorMultiFD_ en druk op de knop Registreren. De registratie van functies kan maximaal 15 minuten duren.
+Navigeer naar de detailpagina voor het abonnement waarin u een schaalset wilt maken in de flexibele orchestrationmodus en selecteer Preview-functies in het menu. Selecteer de twee orchestratorfuncties die u wilt inschakelen: _VMOrchestratorSingleFD_ en _VMOrchestratorMultiFD_ en druk op de knop Registreren. De registratie van functies kan maximaal 15 minuten duren.
 
 ![Functieregistratie.](https://user-images.githubusercontent.com/157768/110361543-04d95880-7ff5-11eb-91a7-2e98f4112ae0.png)
 
@@ -165,7 +165,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0 
-Gebruik [az feature register om](/cli/azure/feature#az-feature-register) de preview voor uw abonnement in teschakelen. 
+Gebruik [az feature register om](/cli/azure/feature#az_feature_register) de preview voor uw abonnement in te stellen. 
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.Compute --name VMOrchestratorMultiFD
@@ -228,7 +228,7 @@ az vm create -n "$vmname" -g "$rg" -l $location --vmss $vmssflexname --image Ubu
 ```
 
 ### <a name="terraform"></a>Terraform
-Maak een flexibele virtuele-machineschaalset met Terraform. Voor dit proces is **terraform Azurerm-provider v2.15.0** of hoger vereist. Let op de volgende parameters:
+Maak een flexibele virtuele-machineschaalset met Terraform. Voor dit proces is **Terraform Azurerm-provider v2.15.0** of hoger vereist. Let op de volgende parameters:
 - Wanneer er geen zone is opgegeven, `platform_fault_domain_count` kan 1, 2 of 3 zijn, afhankelijk van de regio.
 - Wanneer een zone is opgegeven, `the fault domain count` kan 1 zijn.
 - `single_placement_group` parameter moet zijn `false` voor flexibele virtuele-machineschaalsets.
@@ -302,7 +302,7 @@ Zie [Azure-quickstart](https://github.com/Azure/azure-quickstart-templates/tree/
 
 **Hoeveel schaal biedt Flexibele orchestration ondersteuning?**
 
-U kunt maximaal 1000 VM's toevoegen aan een schaalset in de flexibele orchestrationmodus.
+U kunt maximaal 1000 VM's toevoegen aan een schaalset in de modus Flexibele orchestration.
 
 **Hoe verhoudt beschikbaarheid met Flexibele orchestration zich tot beschikbaarheidssets of uniform orchestration?**
 
@@ -331,20 +331,20 @@ InvalidParameter. The specified fault domain count 2 must fall in the range 1 to
 
 **Oorzaak:** De `platformFaultDomainCount` parameter is ongeldig voor de geselecteerde regio of zone. 
 
-**Oplossing:** U moet een geldige waarde `platformFaultDomainCount` selecteren. Voor zonale implementaties is de `platformFaultDomainCount` maximumwaarde 1. Voor regionale implementaties waarbij geen zone is opgegeven, varieert het maximum `platformFaultDomainCount` afhankelijk van de regio. Zie Manage the availability of VMs for scripts (De beschikbaarheid van [VM's voor scripts beheren)](../virtual-machines/availability.md) om het maximum aantal foutdomeinen per regio te bepalen. 
+**Oplossing:** U moet een geldige waarde `platformFaultDomainCount` selecteren. Voornale implementaties is de `platformFaultDomainCount` maximumwaarde 1. Voor regionale implementaties waarbij geen zone is opgegeven, varieert het maximum `platformFaultDomainCount` afhankelijk van de regio. Zie Manage the availability of VMs for scripts (De beschikbaarheid van [VM's voor scripts beheren)](../virtual-machines/availability.md) om het maximum aantal foutdomeinen per regio te bepalen. 
 
 ```
 OperationNotAllowed. Deletion of Virtual Machine Scale Set is not allowed as it contains one or more VMs. Please delete or detach the VM(s) before deleting the Virtual Machine Scale Set.
 ```
 
-**Oorzaak:** Een schaalset verwijderen in de flexibele orchestration-modus die is gekoppeld aan een of meer virtuele machines. 
+**Oorzaak:** Een schaalset verwijderen in de modus Flexibele orchestration die is gekoppeld aan een of meer virtuele machines. 
 
 **Oplossing:** Verwijder alle virtuele machines die zijn gekoppeld aan de schaalset in de modus Flexibele orchestration. Vervolgens kunt u de schaalset verwijderen.
 
 ```
 InvalidParameter. The value 'True' of parameter 'singlePlacementGroup' is not allowed. Allowed values are: False.
 ```
-**Oorzaak:** Het abonnement is geregistreerd voor de preview-versie van de flexibele orchestration-modus; De `singlePlacementGroup` parameter is echter ingesteld op *Waar.* 
+**Oorzaak:** Het abonnement is geregistreerd voor de preview-versie van de flexibele orchestrationmodus; De `singlePlacementGroup` parameter is echter ingesteld op *Waar.* 
 
 **Oplossing:** De `singlePlacementGroup` moet worden ingesteld op *False*. 
 

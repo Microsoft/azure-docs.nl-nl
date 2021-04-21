@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc, subject-armqs, devx-track-azurecli
-ms.openlocfilehash: 505859075ce58c5db6873544123710a11135651a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: bcb37c624f53d961020de022569a621ca1dfaba1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102198605"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107788961"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-dps-with-an-arm-template"></a>Quickstart: IoT Hub Device Provisioning Service (DPS) instellen met een ARM-sjabloon
 
@@ -37,7 +37,7 @@ Als uw omgeving voldoet aan de vereisten en u al bekend bent met het gebruik van
 De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstart-sjablonen](https://azure.microsoft.com/resources/templates/101-iothub-device-provisioning/).
 
 > [!NOTE]
-> Er is momenteel geen ARM-sjabloon ondersteuning voor het maken van inschrijvingen met nieuwe DPS-resources. Dit is een veelvoorkomende en begrepen aanvraag die wordt overwogen voor implementatie.
+> Er is momenteel geen ondersteuning voor ARM-sjablonen voor het maken van inschrijvingen met nieuwe DPS-resources. Dit is een veelvoorkomende en begrijpelijke aanvraag die in aanmerking komt voor implementatie.
 
 :::code language="json" source="~/quickstart-templates/101-iothub-device-provisioning/azuredeploy.json":::
 
@@ -136,7 +136,7 @@ Meld u aan bij uw Azure-account en selecteer uw abonnement.
 
 ## <a name="review-deployed-resources"></a>Geïmplementeerde resources bekijken
 
-1. Voer de volgende [opdracht voor het weergeven van resources](/cli/azure/resource#az-resource-list) uit en zoek de nieuwe inrichtingsservice en IoT-hub in de uitvoer om de implementatie te controleren:
+1. Voer de volgende [opdracht voor het weergeven van resources](/cli/azure/resource#az_resource_list) uit en zoek de nieuwe inrichtingsservice en IoT-hub in de uitvoer om de implementatie te controleren:
 
     ```azurecli
      az resource list -g "${projectName}rg"
@@ -171,4 +171,3 @@ In deze quickstart hebt u een IoT-hub en een Device Provisioning Service-exempla
 
 > [!div class="nextstepaction"]
 > [Quickstart voor het inrichten van een apparaat](./quick-create-simulated-device-symm-key.md)
-

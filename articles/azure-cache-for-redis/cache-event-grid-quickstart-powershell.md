@@ -1,37 +1,38 @@
 ---
-title: 'Snelstartgids: Azure cache voor redis-gebeurtenissen naar een webeindpunt door sturen met Power shell'
-description: Gebruik Azure Event Grid om u te abonneren op Azure cache voor redis-gebeurtenissen, de gebeurtenissen te verzenden naar een webhook en de gebeurtenissen in een webtoepassing te verwerken.
+title: 'Quickstart: Gebeurtenissen Azure Cache voor Redis naar een web-eindpunt met PowerShell'
+description: Gebruik Azure Event Grid u te abonneren op Azure Cache voor Redis gebeurtenissen, de gebeurtenissen naar een webhook te verzenden en de gebeurtenissen in een webtoepassing te verwerken.
 ms.date: 1/5/2021
 author: curib
 ms.author: cauribeg
 ms.topic: quickstart
 ms.service: cache
-ms.openlocfilehash: 6c3b433a8e433f39b723a7155bb6de116857efca
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: fa1ae9a7a2200944bd5da0211be88ba4955e3d03
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102508160"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107833882"
 ---
-# <a name="quickstart-route-azure-cache-for-redis-events-to-web-endpoint-with-powershell"></a>Snelstartgids: Azure cache voor redis-gebeurtenissen naar een webeindpunt door sturen met Power shell
+# <a name="quickstart-route-azure-cache-for-redis-events-to-web-endpoint-with-powershell"></a>Quickstart: Gebeurtenissen Azure Cache voor Redis naar een web-eindpunt met PowerShell
 
-Azure Event Grid is een gebeurtenisservice voor de cloud. In deze Quick Start gebruikt u Azure PowerShell om u te abonneren op Azure cache voor redis-gebeurtenissen, een gebeurtenis te activeren en de resultaten weer te geven. 
+Azure Event Grid is een gebeurtenisservice voor de cloud. In deze quickstart gebruikt u Azure PowerShell om u te abonneren op Azure Cache voor Redis gebeurtenissen, een gebeurtenis te activeren en de resultaten weer te geven. 
 
-Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. Als u deze Snelstartgids echter wilt vereenvoudigen, verzendt u gebeurtenissen naar een web-app waarmee de berichten worden verzameld en weer gegeven. Wanneer u de stappen in deze Snelstartgids hebt voltooid, ziet u dat de gebeurtenis gegevens naar de web-app zijn verzonden.
+Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. Ter vereenvoudiging van deze quickstart verzendt u echter gebeurtenissen naar een web-app waarmee de berichten worden verzameld en weergegeven. Wanneer u de stappen in deze quickstart hebt voltooid, ziet u dat de gebeurtenisgegevens naar de web-app zijn verzonden.
 
 ## <a name="setup"></a>Instellen
 
-Voor deze Quick start moet u de nieuwste versie van Azure PowerShell. Zie [Azure PowerShell installeren en configureren](/powershell/azure/install-Az-ps) als u de toepassing nog moet installeren of een upgrade moet uitvoeren.
+Voor deze quickstart moet u de nieuwste versie van de Azure PowerShell. Zie [Azure PowerShell installeren en configureren](/powershell/azure/install-Az-ps) als u de toepassing nog moet installeren of een upgrade moet uitvoeren.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
-Meld u aan bij uw Azure-abonnement met de `Connect-AzAccount` opdracht en volg de instructies op het scherm om te verifiëren.
+Meld u aan bij uw Azure-abonnement met de opdracht en volg de instructies op `Connect-AzAccount` het scherm om te verifiëren.
 
 ```powershell
 Connect-AzAccount
 ```
 
-In dit voor beeld wordt **westus2** gebruikt en wordt de selectie in een variabele opgeslagen voor gebruik in.
+In dit voorbeeld wordt **westus2 gebruikt** en wordt de selectie op een variabele op opslag voor gebruik in de rest van de tijd.
 
 ```powershell
 $location = "westus2"
@@ -39,7 +40,7 @@ $location = "westus2"
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Event Grid-onderwerpen worden geïmplementeerd als afzonderlijke Azure-resources en moeten worden ingericht onder een Azure-resource groep. Een resource groep is een logische verzameling waarin Azure-resources worden geïmplementeerd en beheerd.
+Event Grid worden geïmplementeerd als afzonderlijke Azure-resources en moeten worden ingericht onder een Azure-resourcegroep. Een resourcegroep is een logische verzameling waarin Azure-resources worden geïmplementeerd en beheerd.
 
 Maak een resourcegroep met de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
@@ -73,7 +74,7 @@ New-AzRedisCache
    [-Confirm]
    [<CommonParameters>]
 ```
-Zie de [Azure PowerShell-verwijzing](/powershell/module/az.rediscache/new-azrediscache)voor meer informatie over het maken van een cache-exemplaar in Power shell. 
+Zie voor meer informatie over het maken van een cache-exemplaar in PowerShell de [Azure PowerShell naslaginformatie.](/powershell/module/az.rediscache/new-azrediscache) 
 
 ## <a name="create-a-message-endpoint"></a>Het eindpunt van een bericht maken
 
@@ -97,9 +98,9 @@ Op de site zouden momenteel geen berichten moeten wijn weergeven.
 
 :::image type="content" source="media/cache-event-grid-portal/blank-event-grid-viewer.png" alt-text="Lege Event Grid Viewer-site.":::
 
-## <a name="subscribe-to-your-azure-cache-for-redis-event"></a>Abonneren op de redis-gebeurtenis van Azure cache
+## <a name="subscribe-to-your-azure-cache-for-redis-event"></a>Abonneren op uw Azure Cache voor Redis gebeurtenis
 
-In deze stap maakt u een abonnement op een onderwerp om te zien Event Grid welke gebeurtenissen u wilt bijhouden. In het volgende voor beeld wordt een abonnement genomen op het cache-exemplaar dat u hebt gemaakt en wordt de URL van uw web-app door gegeven als het eind punt voor gebeurtenis meldingen. Het eindpunt voor uw web-app moet het achtervoegsel `/api/updates/` bevatten.
+In deze stap abonneert u zich op een onderwerp om aan te geven Event Grid welke gebeurtenissen u wilt bijhouden. In het volgende voorbeeld ziet u hoe u zich abonneert op het cache-exemplaar dat u hebt gemaakt en hoe u de URL van uw web-app door geeft als eindpunt voor gebeurtenismeldingen. Het eindpunt voor uw web-app moet het achtervoegsel `/api/updates/` bevatten.
 
 ```powershell
 $cacheId = (Get-AzRedisCache -ResourceGroupName $resourceGroup -Name $cacheName).Id
@@ -113,9 +114,9 @@ New-AzEventGridSubscription `
 
 Bekijk opnieuw uw web-app en u zult zien dat er een validatiegebeurtenis voor een abonnement naartoe is verzonden. Selecteer het oogpictogram om de gebeurtenisgegevens uit te breiden. Via Event Grid wordt de validatiegebeurtenis verzonden zodat het eindpunt kan controleren of de gebeurtenisgegevens in aanmerking komen om ontvangen te worden. De web-app bevat code waarmee het abonnement kan worden gevalideerd.
 
-  :::image type="content" source="media/cache-event-grid-portal/subscription-event.png" alt-text="Azure Event Grid viewer.":::
+  :::image type="content" source="media/cache-event-grid-portal/subscription-event.png" alt-text="Azure Event Grid Viewer.":::
 
-## <a name="trigger-an-event-from-azure-cache-for-redis"></a>Een gebeurtenis activeren vanuit Azure cache voor redis
+## <a name="trigger-an-event-from-azure-cache-for-redis"></a>Een gebeurtenis activeren vanuit Azure Cache voor Redis
 
 Nu gaan we een gebeurtenis activeren om te zien hoe het bericht via Event Grid naar het eindpunt wordt gedistribueerd.
 
@@ -132,7 +133,7 @@ Import-AzRedisCache
       [-Confirm]
       [<CommonParameters>]
 ```
-Zie voor meer informatie over importeren in Power shell de [referentie Azure PowerShell](/powershell/module/az.rediscache/import-azrediscache). 
+Zie de naslaginformatie voor Azure PowerShell [](/powershell/module/az.rediscache/import-azrediscache)importeren in PowerShell. 
 
 U hebt de gebeurtenis geactiveerd en Event Grid heeft het bericht verzonden naar het eindpunt dat u hebt geconfigureerd toen u zich abonneerde. Bekijk uw web-app om de gebeurtenis te zien die u zojuist hebt verzonden.
 
@@ -155,7 +156,7 @@ U hebt de gebeurtenis geactiveerd en Event Grid heeft het bericht verzonden naar
 ```
 
 ## <a name="clean-up-resources"></a>Resources opschonen
-Als u van plan bent om met deze Azure-cache te blijven werken voor redis-exemplaar en gebeurtenis abonnement, kunt u de resources die u in deze Quick Start hebt gemaakt, niet opschonen. Als u niet wilt door gaan, gebruikt u de volgende opdracht om de resources te verwijderen die u in deze Quick Start hebt gemaakt.
+Als u van plan bent om door te gaan met Azure Cache voor Redis-exemplaar en gebeurtenisabonnement, moet u de resources die u in deze quickstart hebt gemaakt, niet ops schonen. Als u niet wilt doorgaan, gebruikt u de volgende opdracht om de resources te verwijderen die u in deze quickstart hebt gemaakt.
 
 ```powershell
 Remove-AzResourceGroup -Name $resourceGroup
@@ -163,7 +164,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u weet hoe u onderwerpen en gebeurtenis abonnementen maakt, leest u meer over Azure cache voor redis-gebeurtenissen en wat Event Grid u kunt doen:
+Nu u weet hoe u onderwerpen en gebeurtenisabonnementen maakt, kunt u meer leren over Azure Cache voor Redis gebeurtenissen en wat Event Grid u kunt doen:
 
-- [Reageren op Azure cache voor redis-gebeurtenissen](cache-event-grid.md)
+- [Reageren op Azure Cache voor Redis gebeurtenissen](cache-event-grid.md)
 - [Over Event Grid](../event-grid/overview.md)

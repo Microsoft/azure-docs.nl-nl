@@ -1,91 +1,91 @@
 ---
-title: Pod-verkeer beveiligen met netwerk beleid
+title: Podverkeer beveiligen met netwerkbeleid
 titleSuffix: Azure Kubernetes Service
-description: Meer informatie over het beveiligen van verkeer dat in en uit het meren aantal stromen met behulp van Kubernetes-netwerk beleid in azure Kubernetes service (AKS)
+description: Meer informatie over het beveiligen van verkeer dat in en uit pods stroomt met behulp van Kubernetes-netwerkbeleid in Azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: article
 ms.date: 03/16/2021
-ms.openlocfilehash: 17e14859ecdfe11872d5b0526d755d01bc1b034a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b05c4add0a62f07b187376d670f23179ba97f3a8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104577849"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767435"
 ---
-# <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Verkeer beveiligen tussen een Peul netwerk beleid dat wordt gebruikt in azure Kubernetes service (AKS)
+# <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Verkeer tussen pods beveiligen met behulp van netwerkbeleid in Azure Kubernetes Service (AKS)
 
-Wanneer u moderne, op micro Services gebaseerde toepassingen uitvoert in Kubernetes, wilt u vaak bepalen welke onderdelen met elkaar kunnen communiceren. Het principe van minimale bevoegdheden moet worden toegepast op de manier waarop verkeer tussen de peulen in een Azure Kubernetes service (AKS)-cluster kan stromen. Stel dat u het verkeer waarschijnlijk rechtstreeks wilt blok keren naar back-end-toepassingen. Met de functie *netwerk beleid* in Kubernetes kunt u regels definiëren voor binnenkomend en uitgaand verkeer tussen peulen in een cluster.
+Wanneer u moderne, op microservices gebaseerde toepassingen in Kubernetes gebruikt, wilt u vaak bepalen welke onderdelen met elkaar kunnen communiceren. Het principe van de minste bevoegdheden moet worden toegepast op de manier waarop verkeer tussen pods in een Azure Kubernetes Service (AKS)-cluster kan stromen. Stel dat u verkeer rechtstreeks naar back-endtoepassingen wilt blokkeren. Met *de functie Netwerkbeleid* in Kubernetes kunt u regels definiëren voor in- en uitverkeer tussen pods in een cluster.
 
-In dit artikel wordt beschreven hoe u de Network Policy Engine installeert en hoe u Kubernetes-netwerk beleid maakt om de stroom van verkeer tussen peul in AKS te beheren. Netwerk beleid mag alleen worden gebruikt voor Linux-knoop punten en een Peul in AKS.
+In dit artikel wordt beschreven hoe u de engine voor netwerkbeleid installeert en Kubernetes-netwerkbeleid maakt om de verkeersstroom tussen pods in AKS te controleren. Netwerkbeleid mag alleen worden gebruikt voor Linux-knooppunten en -pods in AKS.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-U moet de Azure CLI-versie 2.0.61 of hoger hebben geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Azure CLI versie 2.0.61 of hoger moet zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 > [!TIP]
-> Als u de functie netwerk beleid hebt gebruikt tijdens de preview-versie, wordt u aangeraden [een nieuw cluster te maken](#create-an-aks-cluster-and-enable-network-policy).
+> Als u de functie voor netwerkbeleid tijdens de preview hebt gebruikt, raden we u aan [een nieuw cluster te maken.](#create-an-aks-cluster-and-enable-network-policy)
 > 
-> Als u bestaande test clusters wilt blijven gebruiken die tijdens de preview worden gebruikt, voert u een upgrade van uw cluster uit naar een nieuwe Kubernetes-versie voor de nieuwste GA-versie en implementeert u vervolgens het volgende YAML-manifest om de gegevens van de Crashing-server en het Kubernetes-dash board te herstellen. Deze oplossing is alleen vereist voor clusters die de Calico-netwerk beleid-engine gebruiken.
+> Als u bestaande testclusters wilt blijven gebruiken die netwerkbeleid tijdens de preview-versie hebben gebruikt, upgradet u uw cluster naar een nieuwe Kubernetes-versies voor de nieuwste GA-release en implementeert u vervolgens het volgende YAML-manifest om de crashende metrische gegevensserver en het Kubernetes-dashboard op te lossen. Deze oplossing is alleen vereist voor clusters die de Network Policy Engine van Nuco gebruiken.
 >
-> [Lees de inhoud van dit yaml-manifest][calico-aks-cleanup] als beveiligings best practice om te begrijpen wat er in het AKS-cluster is geïmplementeerd.
+> Bekijk als best practice de inhoud van dit [YAML-manifest][calico-aks-cleanup] om te begrijpen wat er in het AKS-cluster is geïmplementeerd.
 >
 > `kubectl delete -f https://raw.githubusercontent.com/Azure/aks-engine/master/docs/topics/calico-3.3.1-cleanup-after-upgrade.yaml`
 
-## <a name="overview-of-network-policy"></a>Overzicht van netwerk beleid
+## <a name="overview-of-network-policy"></a>Overzicht van netwerkbeleid
 
-Alle peulen in een AKS-cluster kunnen standaard zonder beperkingen verkeer verzenden en ontvangen. Om de beveiliging te verbeteren, kunt u regels definiëren die de stroom van verkeer regelen. Back-end-toepassingen worden vaak alleen blootgesteld aan de vereiste front-end-services, bijvoorbeeld. Of database onderdelen zijn alleen toegankelijk voor de toepassings lagen waarmee ze verbinding maken.
+Alle pods in een AKS-cluster kunnen standaard zonder beperkingen verkeer verzenden en ontvangen. Om de beveiliging te verbeteren, kunt u regels definiëren die de verkeersstroom bepalen. Back-endtoepassingen worden bijvoorbeeld vaak alleen blootgesteld aan de vereiste front-endservices. Of databaseonderdelen zijn alleen toegankelijk voor de toepassingslagen die er verbinding mee maken.
 
-Netwerk beleid is een Kubernetes-specificatie waarmee het toegangs beleid voor communicatie tussen het gehele element wordt gedefinieerd. Met netwerk beleid definieert u een geordende set regels voor het verzenden en ontvangen van verkeer en past u deze toe op een verzameling van peulen die overeenkomen met een of meer label-selectors.
+Netwerkbeleid is een Kubernetes-specificatie die toegangsbeleid voor communicatie tussen pods definieert. Met behulp van netwerkbeleid definieert u een geordende set regels voor het verzenden en ontvangen van verkeer en past u deze toe op een verzameling pods die overeenkomen met een of meer label selectors.
 
-Deze regels voor netwerk beleid worden gedefinieerd als YAML-manifesten. Netwerk beleid kan worden opgenomen als onderdeel van een breder manifest dat ook een implementatie of service maakt.
+Deze netwerkbeleidsregels worden gedefinieerd als YAML-manifesten. Netwerkbeleid kan worden opgenomen als onderdeel van een breder manifest dat ook een implementatie of service maakt.
 
-### <a name="network-policy-options-in-aks"></a>Opties voor netwerk beleid in AKS
+### <a name="network-policy-options-in-aks"></a>Opties voor netwerkbeleid in AKS
 
-Azure biedt twee manieren om netwerk beleid te implementeren. U kiest een optie voor netwerk beleid wanneer u een AKS-cluster maakt. De beleids optie kan niet worden gewijzigd nadat het cluster is gemaakt:
+Azure biedt twee manieren om netwerkbeleid te implementeren. U kiest een netwerkbeleidsoptie wanneer u een AKS-cluster maakt. De beleidsoptie kan niet worden gewijzigd nadat het cluster is gemaakt:
 
-* De eigen implementatie van Azure, het *Azure-netwerk beleid* genoemd.
-* *Calico network policies*, een open-source netwerk-en netwerk beveiligings oplossing die is gegrondvest door [tigera][tigera].
+* De eigen implementatie van Azure, *azure-netwerkbeleid genoemd.*
+* *Kalico-netwerkbeleid,* een opensource-netwerk- en netwerkbeveiligingsoplossing die is gebouwd [door Tigera][tigera].
 
-Beide implementaties gebruiken Linux *iptables* om het opgegeven beleid af te dwingen. Beleids regels worden omgezet in sets toegestane en niet-toegestane IP-paren. Deze paren worden vervolgens geprogrammeerd als IPTable-filter regels.
+Beide implementaties gebruiken Linux *IPTables om* het opgegeven beleid af te dwingen. Beleidsregels worden omgezet in sets toegestane en niet-toegestane IP-paren. Deze paren worden vervolgens geprogrammeerd als IPTable-filterregels.
 
-### <a name="differences-between-azure-and-calico-policies-and-their-capabilities"></a>Verschillen tussen Azure-en Calico-beleid en hun mogelijkheden
+### <a name="differences-between-azure-and-calico-policies-and-their-capabilities"></a>Verschillen tussen Azure- en Kalico-beleid en hun mogelijkheden
 
 | Mogelijkheid                               | Azure                      | Calico                      |
 |------------------------------------------|----------------------------|-----------------------------|
-| Ondersteunde platforms                      | Linux                      | Linux, Windows Server 2019 (preview-versie)  |
-| Ondersteunde netwerk opties             | Azure-CNI                  | Azure CNI (Windows Server 2019 en Linux) en kubenet (Linux)  |
-| Compatibiliteit met Kubernetes-specificatie | Alle beleids typen die worden ondersteund |  Alle beleids typen die worden ondersteund |
-| Aanvullende functies                      | Geen                       | Uitgebreide beleids model dat bestaat uit globaal netwerk beleid, een globaal netwerk en een host-eind punt. `calicoctl`Zie [calicoctl User Reference][calicoctl](Engelstalig) voor meer informatie over het gebruik van de CLI voor het beheren van deze uitgebreide functies. |
-| Ondersteuning                                  | Ondersteund door ondersteunings-en technisch team van Azure | Ondersteuning voor Calico-community. Zie voor meer informatie over aanvullende betaalde ondersteuning [project Calico-ondersteunings opties][calico-support]. |
-| Logboekregistratie                                  | Regels die zijn toegevoegd aan of verwijderd uit IPTables worden geregistreerd op elke host onder */var/log/Azure-NPM.log* | Zie [Calico-onderdeel Logboeken][calico-logs] voor meer informatie. |
+| Ondersteunde platforms                      | Linux                      | Linux, Windows Server 2019 (preview)  |
+| Ondersteunde netwerkopties             | Azure CNI                  | Azure CNI (Windows Server 2019 en Linux) en kubenet (Linux)  |
+| Naleving van Kubernetes-specificatie | Alle ondersteunde beleidstypen |  Alle ondersteunde beleidstypen |
+| Aanvullende functies                      | Geen                       | Uitgebreid beleidsmodel dat bestaat uit Global Network Policy, Global Network Set en Host Endpoint. Zie voor meer informatie over het gebruik van de CLI voor het beheren van deze uitgebreide functies, refer aan `calicoctl` [de gebruikers.][calicoctl] |
+| Ondersteuning                                  | Ondersteund door ondersteuning voor Azure engineeringteam | Ondersteuning voor Deco-community. Zie Ondersteuningsopties voor Project Kalico voor meer informatie over [aanvullende betaalde ondersteuning.][calico-support] |
+| Logboekregistratie                                  | Regels die zijn toegevoegd/verwijderd in IPTables, worden op elke host geregistreerd onder */var/log/azure-npm.log* | Zie Logboeken van [Het Onderdeel van Kalico voor meer informatie][calico-logs] |
 
-## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Een AKS-cluster maken en netwerk beleid inschakelen
+## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Een AKS-cluster maken en netwerkbeleid inschakelen
 
-Voor een overzicht van het netwerk beleid in actie, gaan we maken en vervolgens uitvouwen op een beleid dat verkeers stroom definieert:
+Als u netwerkbeleid in actie wilt zien, gaan we een beleid maken en vervolgens uitbreiden dat de verkeersstroom definieert:
 
-* Al het verkeer naar pod geweigerd.
-* Verkeer op basis van pod-labels toestaan.
-* Verkeer toestaan op basis van naam ruimte.
+* Al het verkeer naar de pod weigeren.
+* Sta verkeer toe op basis van podlabels.
+* Sta verkeer toe op basis van naamruimte.
 
-Eerst gaan we een AKS-cluster maken dat netwerk beleid ondersteunt.
+Eerst maken we een AKS-cluster dat ondersteuning biedt voor netwerkbeleid.
 
 > [!IMPORTANT]
 >
-> De functie netwerk beleid kan alleen worden ingeschakeld wanneer het cluster is gemaakt. U kunt netwerk beleid niet inschakelen op een bestaand AKS-cluster.
+> De functie voor netwerkbeleid kan alleen worden ingeschakeld wanneer het cluster wordt gemaakt. U kunt netwerkbeleid niet inschakelen op een bestaand AKS-cluster.
 
-Als u Azure-netwerk beleid wilt gebruiken, moet u de [Azure cni-invoeg toepassing][azure-cni] gebruiken en uw eigen virtuele netwerken en subnetten definiëren. Zie [geavanceerde netwerken configureren][use-advanced-networking]voor meer gedetailleerde informatie over het plannen van de vereiste subnet bereiken. Calico-netwerk beleid kan worden gebruikt met dezelfde Azure CNI-invoeg toepassing of met de Kubenet CNI-invoeg toepassing.
+Als u Azure Network Policy wilt gebruiken, moet u de [Azure CNI en][azure-cni] uw eigen virtuele netwerk en subnetten definiëren. Zie Geavanceerde netwerken configureren voor meer informatie over het plannen van de vereiste [subnetbereiken.][use-advanced-networking] Het Netwerkbeleid voor Het netwerk kan worden gebruikt met dezelfde Azure CNI-in plug-in of met de Kubenet CNI-in plug-in.
 
-Het volgende voorbeeld script:
+Het volgende voorbeeldscript:
 
 * Hiermee maakt u een virtueel netwerk en subnet.
-* Hiermee maakt u een service-principal voor Azure Active Directory (Azure AD) voor gebruik met het AKS-cluster.
-* Hiermee wijst u *Inzender* machtigingen toe voor de AKS-Cluster service-principal in het virtuele netwerk.
-* Hiermee maakt u een AKS-cluster in het gedefinieerde virtuele netwerk en schakelt u netwerk beleid in.
-    * De optie _Azure-netwerk_ beleid wordt gebruikt. Als u in plaats daarvan Calico wilt gebruiken als de optie netwerk beleid, gebruikt u de `--network-policy calico` para meter. Opmerking: Calico kan worden gebruikt met ofwel `--network-plugin azure` of `--network-plugin kubenet` .
+* Hiermee maakt u Azure Active Directory service-principal (Azure AD) voor gebruik met het AKS-cluster.
+* Wijst *inzendermachtigingen* toe voor de AKS-clusterservice-principal in het virtuele netwerk.
+* Hiermee maakt u een AKS-cluster in het gedefinieerde virtuele netwerk en schakelt u netwerkbeleid in.
+    * De _optie Azure-netwerkbeleid_ wordt gebruikt. Als u in plaats daarvan Wilt gebruiken Als u Wilt gebruiken als de optie voor netwerkbeleid, gebruikt u de `--network-policy calico` parameter . Opmerking: Kalico kan worden gebruikt met `--network-plugin azure` of `--network-plugin kubenet` .
 
-Houd er rekening mee dat u, in plaats van een Service-Principal, een beheerde identiteit voor machtigingen kunt gebruiken. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
+In plaats van een service-principal te gebruiken, kunt u een beheerde identiteit gebruiken voor machtigingen. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 
-Geef uw eigen beveiligde *SP_PASSWORD* op. U kunt de *RESOURCE_GROUP_NAME* en *CLUSTER_NAME* variabelen vervangen:
+Geef uw eigen beveiligde *SP_PASSWORD*. U kunt de *RESOURCE_GROUP_NAME* en *CLUSTER_NAME* vervangen:
 
 ```azurecli-interactive
 RESOURCE_GROUP_NAME=myResourceGroup-NP
@@ -122,9 +122,9 @@ az role assignment create --assignee $SP_ID --scope $VNET_ID --role Contributor
 SUBNET_ID=$(az network vnet subnet show --resource-group $RESOURCE_GROUP_NAME --vnet-name myVnet --name myAKSSubnet --query id -o tsv)
 ```
 
-### <a name="create-an-aks-cluster-for-azure-network-policies"></a>Een AKS-cluster maken voor Azure-netwerk beleid
+### <a name="create-an-aks-cluster-for-azure-network-policies"></a>Een AKS-cluster maken voor Azure-netwerkbeleid
 
-Maak het AKS-cluster en geef het virtuele netwerk, de gegevens van de Service-Principal en *Azure* op voor de netwerk-plugin en het netwerk beleid.
+Maak het AKS-cluster en geef het virtuele netwerk, de informatie over de service-principal en *Azure op* voor de netwerkinvoeging en het netwerkbeleid.
 
 ```azurecli
 az aks create \
@@ -142,19 +142,19 @@ az aks create \
     --network-policy azure
 ```
 
-Het duurt een paar minuten om het cluster te maken. Wanneer het cluster gereed is, configureert `kubectl` u om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] . Met deze opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd voor het gebruik ervan:
+Het duurt een paar minuten om het cluster te maken. Wanneer het cluster klaar is, configureert u om verbinding te maken met uw Kubernetes-cluster met behulp van de `kubectl` [opdracht az aks get-credentials.][az-aks-get-credentials] Met deze opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd voor het gebruik ervan:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME
 ```
 
-### <a name="create-an-aks-cluster-for-calico-network-policies"></a>Een AKS-cluster maken voor Calico-netwerk beleid
+### <a name="create-an-aks-cluster-for-calico-network-policies"></a>Een AKS-cluster maken voor Het netwerkbeleid van Kalico
 
-Maak het AKS-cluster en geef het virtuele netwerk, service-principalgegevens, *Azure* voor de netwerk-plugin en *Calico* voor het netwerk beleid op. Als u *Calico* gebruikt als netwerk beleid, is Calico-netwerken mogelijk in zowel Linux-als Windows-knooppunt groepen.
+Maak het AKS-cluster en geef het virtuele netwerk, de informatie over de service-principal, *azure* voor de netwerkinvoegvoegsel en *de code voor* het netwerkbeleid op. Door *gebruik te maken van kalico* als netwerkbeleid, kunt u Met Behulp van Netwerkco netwerken op zowel Linux- als Windows-knooppuntgroepen.
 
-Als u van plan bent om Windows-knooppunt groepen aan uw cluster toe te voegen, moet u de `windows-admin-username` `windows-admin-password` para meters en toevoegen aan die voldoen aan de [vereisten voor Windows Server-wacht woorden][windows-server-password]. Als u Calico met Windows-knooppunt groepen wilt gebruiken, moet u ook de registreren `Microsoft.ContainerService/EnableAKSWindowsCalico` .
+Als u van plan bent Windows-knooppuntgroepen toe te voegen aan uw cluster, moet u de parameters en opnemen met die voldoen aan `windows-admin-username` `windows-admin-password` de [wachtwoordvereisten voor Windows Server.][windows-server-password] Als u Wilt Werkenco met Windows-knooppuntgroepen wilt gebruiken, moet u ook de `Microsoft.ContainerService/EnableAKSWindowsCalico` registreren.
 
-Registreer de `EnableAKSWindowsCalico` functie vlag met de opdracht [AZ feature REGI ster][az-feature-register] , zoals weer gegeven in het volgende voor beeld:
+Registreer de `EnableAKSWindowsCalico` functievlag met behulp van [de opdracht az feature register,][az-feature-register] zoals wordt weergegeven in het volgende voorbeeld:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAKSWindowsCalico"
@@ -166,22 +166,22 @@ az feature register --namespace "Microsoft.ContainerService" --name "EnableAKSWi
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableAKSWindowsCalico')].{Name:name,State:properties.state}"
 ```
 
-Als u klaar bent, vernieuwt u de registratie van de resource provider *micro soft. container service* met de opdracht [AZ provider REGI ster][az-provider-register] :
+Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider *Microsoft.ContainerService* met behulp van [de opdracht az provider register:][az-provider-register]
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
 ```
 
 > [!IMPORTANT]
-> Op dit moment is het gebruik van Calico-netwerk beleid met Windows-knoop punten beschikbaar op nieuwe clusters met Kubernetes versie 1,20 of hoger met Calico 3.17.2 en is vereist dat Azure CNI-netwerken worden gebruikt. Windows-knoop punten op AKS-clusters met Calico ingeschakeld hebben ook [direct server Return (DSR)][dsr] ingeschakeld.
+> Op dit moment is het gebruik van Het gebruik van Het Netwerkbeleid met Windows-knooppunten beschikbaar op nieuwe clusters met Kubernetes versie 1.20 of hoger met Versie 3.17.2 en vereist het gebruik van Azure CNI-netwerken. Voor Windows-knooppunten op AKS-clusters met Kalico is [ook Direct Server Return (DSR)][dsr] standaard ingeschakeld.
 >
-> Voor clusters met alleen Linux-knooppunt Pools met Kubernetes 1,20 met eerdere versies van Calico, wordt de Calico-versie automatisch bijgewerkt naar 3.17.2.
+> Voor clusters met alleen Linux-knooppuntgroepen met Kubernetes 1.20 met eerdere versies van Kalico wordt de Versie van Nuco automatisch bijgewerkt naar 3.17.2.
 
-Er is momenteel een preview-versie van Calico-netwerk beleid met Windows-knoop punten.
+Het beleid voor netwerknetwerken met Windows-knooppunten is momenteel beschikbaar als preview-versie.
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-Maak een gebruikers naam om te gebruiken als beheerders referenties voor uw Windows Server-containers in uw cluster. Met de volgende opdrachten wordt u naar een gebruikers naam gevraagd en deze WINDOWS_USERNAME instellen voor gebruik in een latere opdracht (Houd er rekening mee dat de opdrachten in dit artikel worden ingevoerd in een BASH-shell).
+Maak een gebruikersnaam om te gebruiken als beheerdersreferenties voor uw Windows Server-containers in uw cluster. De volgende opdrachten vragen u om een gebruikersnaam en stellen deze in WINDOWS_USERNAME voor gebruik in een latere opdracht (onthoud dat de opdrachten in dit artikel worden ingevoerd in een BASH-shell).
 
 ```azurecli-interactive
 echo "Please enter the username to use as administrator credentials for Windows Server containers on your cluster: " && read WINDOWS_USERNAME
@@ -206,7 +206,7 @@ az aks create \
     --network-policy calico
 ```
 
-Het duurt een paar minuten om het cluster te maken. Standaard wordt uw cluster gemaakt met alleen een Linux-knooppunt groep. Als u Windows-knooppunt groepen wilt gebruiken, kunt u er een toevoegen. Bijvoorbeeld:
+Het duurt een paar minuten om het cluster te maken. Uw cluster wordt standaard alleen gemaakt met een Linux-knooppuntgroep. Als u Windows-knooppuntgroepen wilt gebruiken, kunt u er een toevoegen. Bijvoorbeeld:
 
 ```azurecli
 az aks nodepool add \
@@ -217,42 +217,42 @@ az aks nodepool add \
     --node-count 1
 ```
 
-Wanneer het cluster gereed is, configureert `kubectl` u om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] . Met deze opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd voor het gebruik ervan:
+Wanneer het cluster klaar is, configureert u om verbinding te maken met uw Kubernetes-cluster met behulp van de `kubectl` [opdracht az aks get-credentials.][az-aks-get-credentials] Met deze opdracht worden referenties gedownload en de Kubernetes CLI geconfigureerd voor het gebruik ervan:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME
 ```
 
-## <a name="deny-all-inbound-traffic-to-a-pod"></a>Alle binnenkomend verkeer naar een pod weigeren
+## <a name="deny-all-inbound-traffic-to-a-pod"></a>Al het binnenkomende verkeer naar een pod weigeren
 
-Voordat u regels definieert om specifiek netwerk verkeer toe te staan, moet u eerst een netwerk beleid maken om al het verkeer te weigeren. Dit beleid geeft u een start punt om te beginnen met het maken van een allowlist voor alleen het gewenste verkeer. U kunt ook duidelijk zien dat verkeer wordt verwijderd wanneer het netwerk beleid wordt toegepast.
+Voordat u regels definieert om specifiek netwerkverkeer toe te staan, moet u eerst een netwerkbeleid maken om al het verkeer te weigeren. Dit beleid geeft u een beginpunt om te beginnen met het maken van een allowlist voor alleen het gewenste verkeer. U kunt ook duidelijk zien dat verkeer wordt weggevallen wanneer het netwerkbeleid wordt toegepast.
 
-Voor de voor beelden van toepassings omgeving en verkeers regels maakt u eerst een naam ruimte met de naam *ontwikkeling* om het voor beeld uit te voeren:
+Voor de omgevings- en verkeersregels van de voorbeeldtoepassing maken we eerst een naamruimte met de naam *ontwikkeling om* de voorbeeldpods uit te voeren:
 
 ```console
 kubectl create namespace development
 kubectl label namespace/development purpose=development
 ```
 
-Maak een voor beeld van een back-end-pod die NGINX uitvoert. Deze back-end pod kan worden gebruikt voor het simuleren van een voor beeld van een back-end-webtoepassing. Maak deze pod in de *ontwikkelings* naam ruimte en open poort *80* voor webverkeer. Voorzie de Pod met *app = webapp, Role = back-end* zodat we deze in de volgende sectie met een netwerk beleid kunnen richten:
+Maak een voorbeeld van een back-endpod met NGINX. Deze back-endpod kan worden gebruikt om een voorbeeld van een webtoepassing in de back-end te simuleren. Maak deze pod in de *naamruimte* development en open poort *80 om* webverkeer te bedienen. Label de pod *met app=webapp,role=backend,* zodat we deze in de volgende sectie met een netwerkbeleid kunnen richten:
 
 ```console
 kubectl run backend --image=mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine --labels app=webapp,role=backend --namespace development --expose --port 80
 ```
 
-Maak een andere pod en koppel een terminal sessie om te testen of u de standaard NGINX-webpagina kunt bereiken:
+Maak nog een pod en koppel een terminalsessie om te testen of u de standaard NGINX-webpagina kunt bereiken:
 
 ```console
 kubectl run --rm -it --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 network-policy --namespace development
 ```
 
-Gebruik bij de shell-prompt `wget` om te bevestigen dat u toegang hebt tot de standaard NGINX-webpagina:
+Gebruik bij de shell-prompt om te bevestigen dat u toegang hebt tot de standaard `wget` NGINX-webpagina:
 
 ```console
 wget -qO- http://backend
 ```
 
-In de volgende voorbeeld uitvoer ziet u dat de standaard NGINX-webpagina wordt geretourneerd:
+In de volgende voorbeelduitvoer ziet u dat de standaard NGINX-webpagina is geretourneerd:
 
 ```output
 <!DOCTYPE html>
@@ -262,15 +262,15 @@ In de volgende voorbeeld uitvoer ziet u dat de standaard NGINX-webpagina wordt g
 [...]
 ```
 
-Sluit de gekoppelde terminal sessie af. De test pod wordt automatisch verwijderd.
+Sluit de gekoppelde terminalsessie af. De testpod wordt automatisch verwijderd.
 
 ```console
 exit
 ```
 
-### <a name="create-and-apply-a-network-policy"></a>Een netwerk beleid maken en Toep assen
+### <a name="create-and-apply-a-network-policy"></a>Een netwerkbeleid maken en toepassen
 
-Nu u hebt bevestigd, kunt u de NGINX-webpagina van het voor beeld van de back-end pod gebruiken, een netwerk beleid maken om al het verkeer te weigeren. Maak een bestand `backend-policy.yaml` met de naam en plak het volgende YAML-manifest. Dit manifest maakt gebruik van een *podSelector* om het beleid te koppelen aan een Peul met de *app: webapp, Role: back-end* label, zoals uw voor beeld-NGINX pod. Er worden geen regels gedefinieerd bij inkomend *verkeer, waardoor* al het binnenkomende pod wordt geweigerd:
+Nu u hebt bevestigd dat u de eenvoudige NGINX-webpagina op de voorbeeld-back-endpod kunt gebruiken, maakt u een netwerkbeleid om al het verkeer te weigeren. Maak een bestand met de `backend-policy.yaml` naam en plak het volgende YAML-manifest. In dit manifest wordt een *podSelector* gebruikt om het beleid te koppelen aan pods met het label *app:webapp,role:backend,* zoals uw voorbeeld-NGINX-pod. Er zijn geen regels gedefinieerd onder *inkomende*, zodat al het binnenkomende verkeer naar de pod wordt geweigerd:
 
 ```yaml
 kind: NetworkPolicy
@@ -286,23 +286,23 @@ spec:
   ingress: []
 ```
 
-Ga naar [https://shell.azure.com](https://shell.azure.com) om Azure Cloud shell in uw browser te openen.
+Ga naar [https://shell.azure.com](https://shell.azure.com) om de Azure Cloud Shell openen in uw browser.
 
-Pas het netwerk beleid toe met behulp van de opdracht [kubectl apply][kubectl-apply] en geef de naam van het yaml-manifest op:
+Pas het netwerkbeleid toe met behulp van de [opdracht kubectl apply][kubectl-apply] en geef de naam van uw YAML-manifest op:
 
 ```console
 kubectl apply -f backend-policy.yaml
 ```
 
-### <a name="test-the-network-policy"></a>Het netwerk beleid testen
+### <a name="test-the-network-policy"></a>Het netwerkbeleid testen
 
-Laten we eens kijken of u de NGINX-webpagina op de back-end-pod opnieuw kunt gebruiken. Een andere test pod maken en een terminal sessie koppelen:
+Laten we eens kijken of u de NGINX-webpagina in de back-endpod opnieuw kunt gebruiken. Maak nog een testpod en koppel een terminalsessie:
 
 ```console
 kubectl run --rm -it --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 network-policy --namespace development
 ```
 
-In de shell-prompt kunt u gebruiken `wget` om te zien of u toegang hebt tot de standaard NGINX-webpagina. Stel deze keer een time-outwaarde in op *2* seconden. Het netwerk beleid blokkeert nu al het inkomende verkeer, zodat de pagina niet kan worden geladen, zoals wordt weer gegeven in het volgende voor beeld:
+Gebruik bij de shell-prompt om `wget` te zien of u toegang hebt tot de standaard NGINX-webpagina. Stel deze keer een time-outwaarde in op *2* seconden. Het netwerkbeleid blokkeert nu al het inkomende verkeer, zodat de pagina niet kan worden geladen, zoals wordt weergegeven in het volgende voorbeeld:
 
 ```console
 wget -qO- --timeout=2 http://backend
@@ -312,17 +312,17 @@ wget -qO- --timeout=2 http://backend
 wget: download timed out
 ```
 
-Sluit de gekoppelde terminal sessie af. De test pod wordt automatisch verwijderd.
+Sluit de gekoppelde terminalsessie af. De testpod wordt automatisch verwijderd.
 
 ```console
 exit
 ```
 
-## <a name="allow-inbound-traffic-based-on-a-pod-label"></a>Binnenkomend verkeer op basis van een pod label toestaan
+## <a name="allow-inbound-traffic-based-on-a-pod-label"></a>Inkomende verkeer toestaan op basis van een podlabel
 
-In de vorige sectie is een back-end NGINX pod gepland en is er een netwerk beleid gemaakt om al het verkeer te weigeren. We gaan een front-end-pod maken en het netwerk beleid bijwerken zodat verkeer van de front-end kan worden toegestaan.
+In de vorige sectie is een back-end NGINX-pod gepland en is een netwerkbeleid gemaakt om al het verkeer te weigeren. We gaan een front-endpod maken en het netwerkbeleid bijwerken om verkeer van front-endpods toe te staan.
 
-Werk het netwerk beleid bij om verkeer toe te staan van een Peul met de labels *app: webapp, Role: frontend* en in elke naam ruimte. Bewerk het vorige *back-yaml-* bestand en voeg *matchLabels* ingangs regels toe zodat uw manifest eruit ziet als in het volgende voor beeld:
+Werk het netwerkbeleid bij om verkeer van pods toe te staan met de labels *app:webapp,role:frontend* en in een naamruimte. Bewerk het vorige *backend-policy.yaml-bestand* en voeg regels voor het *binnenkomtagress matchLabels* toe, zodat uw manifest eruitziet als in het volgende voorbeeld:
 
 ```yaml
 kind: NetworkPolicy
@@ -345,27 +345,27 @@ spec:
 ```
 
 > [!NOTE]
-> Dit netwerk beleid maakt gebruik van een *namespaceSelector* -en *podSelector* -element voor de ingangs regel. De syntaxis van de YAML is belang rijk voor de regels voor inkomend verkeer. In dit voor beeld moeten beide elementen overeenkomen voor de ingangs regel die moet worden toegepast. Kubernetes-versies vóór *1,12* kunnen deze elementen niet goed interpreteren en het netwerk verkeer beperken zoals verwacht. Zie [gedrag van en van selecters][policy-rules]voor meer informatie over dit gedrag.
+> Dit netwerkbeleid maakt gebruik van *een naamruimteSelector* en een *podSelector-element* voor de regel voor ingress. De YAML-syntaxis is belangrijk om de regels voor ingress additief te maken. In dit voorbeeld moeten beide elementen overeenkomen om de regel voor ingress toe te passen. Kubernetes-versies vóór *1.12* interpreteren deze elementen mogelijk niet correct en beperken het netwerkverkeer zoals verwacht. Zie Gedrag van naar en van selectors voor meer informatie [over dit gedrag.][policy-rules]
 
-Pas het bijgewerkte netwerk beleid toe met behulp van de opdracht [kubectl apply][kubectl-apply] en geef de naam van het yaml-manifest op:
+Pas het bijgewerkte netwerkbeleid toe met behulp van [de opdracht kubectl apply][kubectl-apply] en geef de naam van uw YAML-manifest op:
 
 ```console
 kubectl apply -f backend-policy.yaml
 ```
 
-Een pod plannen die als *app = webapp, Role = frontend* wordt aangeduid en een terminal sessie koppelen:
+Plan een pod met het label *app=webapp,role=frontend* en koppel een terminalsessie:
 
 ```console
 kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace development
 ```
 
-In de shell-prompt kunt u gebruiken `wget` om te controleren of u toegang hebt tot de standaard NGINX-webpagina:
+Gebruik bij de shell-prompt om `wget` te zien of u toegang hebt tot de standaard NGINX-webpagina:
 
 ```console
 wget -qO- http://backend
 ```
 
-Omdat de ingangs regel verkeer met de labels *app: webapp, Role: frontend* toestaat, is het verkeer van de front-end-pod toegestaan. In de volgende voorbeeld uitvoer ziet u de standaard NGINX webpagina die wordt geretourneerd:
+Omdat de toegangsregel verkeer toestaat met pods die de *labels-app hebben: webapp,rol:* front-end, is het verkeer van de front-endpod toegestaan. In de volgende voorbeelduitvoer ziet u de standaard NGINX-webpagina die wordt geretourneerd:
 
 ```output
 <!DOCTYPE html>
@@ -375,21 +375,21 @@ Omdat de ingangs regel verkeer met de labels *app: webapp, Role: frontend* toest
 [...]
 ```
 
-Sluit de gekoppelde terminal sessie af. De Pod wordt automatisch verwijderd.
+Sluit de gekoppelde terminalsessie af. De pod wordt automatisch verwijderd.
 
 ```console
 exit
 ```
 
-### <a name="test-a-pod-without-a-matching-label"></a>Een pod zonder een overeenkomend label testen
+### <a name="test-a-pod-without-a-matching-label"></a>Een pod testen zonder een overeenkomend label
 
-Het netwerk beleid staat verkeer toe van een Peul gelabelde *app: webapp, Role:* front-end, maar moet al het andere verkeer weigeren. Laten we eens kijken of een andere pod zonder die labels toegang hebben tot de back-end NGINX pod. Een andere test pod maken en een terminal sessie koppelen:
+Het netwerkbeleid staat verkeer toe van pods met het label *app: webapp,rol: front-end,* maar moet al het andere verkeer weigeren. We gaan testen of een andere pod zonder deze labels toegang heeft tot de back-end NGINX-pod. Maak nog een testpod en koppel een terminalsessie:
 
 ```console
 kubectl run --rm -it --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 network-policy --namespace development
 ```
 
-In de shell-prompt kunt u gebruiken `wget` om te zien of u toegang hebt tot de standaard NGINX-webpagina. Het netwerk beleid blokkeert het inkomende verkeer, zodat de pagina niet kan worden geladen, zoals wordt weer gegeven in het volgende voor beeld:
+Gebruik bij de shell-prompt om te zien of u toegang hebt tot de `wget` standaard NGINX-webpagina. Het netwerkbeleid blokkeert het binnenkomende verkeer, zodat de pagina niet kan worden geladen, zoals wordt weergegeven in het volgende voorbeeld:
 
 ```console
 wget -qO- --timeout=2 http://backend
@@ -399,36 +399,36 @@ wget -qO- --timeout=2 http://backend
 wget: download timed out
 ```
 
-Sluit de gekoppelde terminal sessie af. De test pod wordt automatisch verwijderd.
+Sluit de gekoppelde terminalsessie af. De testpod wordt automatisch verwijderd.
 
 ```console
 exit
 ```
 
-## <a name="allow-traffic-only-from-within-a-defined-namespace"></a>Alleen verkeer van binnen een gedefinieerde naam ruimte toestaan
+## <a name="allow-traffic-only-from-within-a-defined-namespace"></a>Verkeer alleen toestaan vanuit een gedefinieerde naamruimte
 
-In de vorige voor beelden hebt u een netwerk beleid gemaakt dat al het verkeer heeft geweigerd en vervolgens het beleid bijgewerkt zodat verkeer van Peul met een specifiek label wordt toegestaan. Een andere gang bare behoefte is om alleen verkeer binnen een bepaalde naam ruimte te beperken. Als de voor gaande voor beelden zijn voor verkeer in een *ontwikkelings* naam ruimte, moet u een netwerk beleid maken waarmee wordt voor komen dat verkeer van een andere naam ruimte, zoals *productie*, het gehele verschil bereikt.
+In de vorige voorbeelden hebt u een netwerkbeleid gemaakt dat al het verkeer heeft geweigerd en vervolgens het beleid bijgewerkt om verkeer van pods met een specifiek label toe te staan. Een andere veelvoorkomende behoefte is om verkeer te beperken tot alleen binnen een bepaalde naamruimte. Als de vorige voorbeelden voor  verkeer in een ontwikkelingsnaamruimte waren, maakt u een netwerkbeleid dat voorkomt dat verkeer van een andere naamruimte, zoals *productie,* de pods bereikt.
 
-Maak eerst een nieuwe naam ruimte voor het simuleren van een productie naam ruimte:
+Maak eerst een nieuwe naamruimte om een productienaamruimte te simuleren:
 
 ```console
 kubectl create namespace production
 kubectl label namespace/production purpose=production
 ```
 
-Een test pod plannen in de *productie* naam ruimte die is gelabeld als *app = webapp, Role = frontend*. Een terminal sessie koppelen:
+Plan een testpod in de *productienaamruimte* die is gelabeld als *app=webapp,role=front-end.* Een terminalsessie koppelen:
 
 ```console
 kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace production
 ```
 
-Gebruik bij de shell-prompt `wget` om te bevestigen dat u toegang hebt tot de standaard NGINX-webpagina:
+Gebruik bij de shell-prompt om `wget` te bevestigen dat u toegang hebt tot de standaard NGINX-webpagina:
 
 ```console
 wget -qO- http://backend.development
 ```
 
-Omdat de labels voor de pod overeenkomen met wat momenteel is toegestaan in het netwerk beleid, wordt het verkeer toegestaan. Het netwerk beleid bekijkt niet de naam ruimten, alleen de labels pod. In de volgende voorbeeld uitvoer ziet u de standaard NGINX webpagina die wordt geretourneerd:
+Omdat de labels voor de pod overeenkomen met wat momenteel is toegestaan in het netwerkbeleid, is het verkeer toegestaan. Het netwerkbeleid kijkt niet naar de naamruimten, alleen naar de podlabels. In de volgende voorbeelduitvoer ziet u de standaard NGINX-webpagina die wordt geretourneerd:
 
 ```output
 <!DOCTYPE html>
@@ -438,15 +438,15 @@ Omdat de labels voor de pod overeenkomen met wat momenteel is toegestaan in het 
 [...]
 ```
 
-Sluit de gekoppelde terminal sessie af. De test pod wordt automatisch verwijderd.
+Sluit de gekoppelde terminalsessie af. De testpod wordt automatisch verwijderd.
 
 ```console
 exit
 ```
 
-### <a name="update-the-network-policy"></a>Het netwerk beleid bijwerken
+### <a name="update-the-network-policy"></a>Het netwerkbeleid bijwerken
 
-Laten we de sectie *namespaceSelector* van de ingangs regel bijwerken zodat alleen verkeer binnen de *ontwikkelings* naam ruimte wordt toegestaan. Bewerk het manifest bestand *back-end-Policy. yaml* zoals wordt weer gegeven in het volgende voor beeld:
+We gaan de sectie naamruimte van de toegangsregel *Bijwerken,* zodat alleen verkeer vanuit de *ontwikkelingsnaamruimte* wordt toegestaan. Bewerk het *manifestbestand backend-policy.yaml* zoals wordt weergegeven in het volgende voorbeeld:
 
 ```yaml
 kind: NetworkPolicy
@@ -470,23 +470,23 @@ spec:
           role: frontend
 ```
 
-In complexere voor beelden kunt u meerdere insluitings regels definiëren, zoals een *namespaceSelector* en een *podSelector*.
+In complexere voorbeelden kunt u meerdere regels voor ingress definiëren, zoals een *naamruimteSelector* en vervolgens een *podSelector*.
 
-Pas het bijgewerkte netwerk beleid toe met behulp van de opdracht [kubectl apply][kubectl-apply] en geef de naam van het yaml-manifest op:
+Pas het bijgewerkte netwerkbeleid toe met behulp van [de opdracht kubectl apply][kubectl-apply] en geef de naam van uw YAML-manifest op:
 
 ```console
 kubectl apply -f backend-policy.yaml
 ```
 
-### <a name="test-the-updated-network-policy"></a>Het bijgewerkte netwerk beleid testen
+### <a name="test-the-updated-network-policy"></a>Het bijgewerkte netwerkbeleid testen
 
-Een andere pod plannen in de *productie* naam ruimte en een terminal sessie koppelen:
+Plan nog een pod in de *productienaamruimte* en koppel een terminalsessie:
 
 ```console
 kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace production
 ```
 
-Gebruik bij de shell-prompt `wget` om te zien dat het netwerk beleid nu verkeer weigert:
+Gebruik bij de shell-prompt `wget` om te zien dat het netwerkbeleid verkeer nu weert:
 
 ```console
 wget -qO- --timeout=2 http://backend.development
@@ -496,25 +496,25 @@ wget -qO- --timeout=2 http://backend.development
 wget: download timed out
 ```
 
-Sluit de test pod af:
+Sluit de testpod af:
 
 ```console
 exit
 ```
 
-Wanneer het verkeer is geweigerd vanuit de *productie* naam ruimte, moet u een test pod weer plannen in de *ontwikkelings* naam ruimte en een terminal sessie koppelen:
+Als het verkeer uit de *productienaamruimte* wordt  geweigerd, moet u een testpod weer plannen in de ontwikkelingsnaamruimte en een terminalsessie koppelen:
 
 ```console
 kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace development
 ```
 
-Gebruik bij de shell-prompt `wget` om te zien dat het netwerk beleid het verkeer toestaat:
+Gebruik bij de shell-prompt om `wget` te zien of het netwerkbeleid het verkeer toestaat:
 
 ```console
 wget -qO- http://backend
 ```
 
-Verkeer is toegestaan omdat de pod in de naam ruimte is gepland die overeenkomt met wat is toegestaan in het netwerk beleid. In de volgende voorbeeld uitvoer ziet u de standaard NGINX opgehaalde webpagina:
+Verkeer is toegestaan omdat de pod is gepland in de naamruimte die overeenkomt met wat is toegestaan in het netwerkbeleid. In de volgende voorbeelduitvoer ziet u de standaard NGINX-webpagina die wordt geretourneerd:
 
 ```output
 <!DOCTYPE html>
@@ -524,7 +524,7 @@ Verkeer is toegestaan omdat de pod in de naam ruimte is gepland die overeenkomt 
 [...]
 ```
 
-Sluit de gekoppelde terminal sessie af. De test pod wordt automatisch verwijderd.
+Sluit de gekoppelde terminalsessie af. De testpod wordt automatisch verwijderd.
 
 ```console
 exit
@@ -532,7 +532,7 @@ exit
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-In dit artikel hebben we twee naam ruimten gemaakt en een netwerk beleid toegepast. Als u deze resources wilt opschonen, gebruikt u de opdracht [kubectl verwijderen][kubectl-delete] en geeft u de resource namen op:
+In dit artikel hebben we twee naamruimten gemaakt en een netwerkbeleid toegepast. Als u deze resources wilt ops schonen, gebruikt u [de opdracht kubectl delete][kubectl-delete] en geeft u de resourcenamen op:
 
 ```console
 kubectl delete namespace production
@@ -541,9 +541,9 @@ kubectl delete namespace development
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over netwerk bronnen [netwerk concepten voor toepassingen in azure Kubernetes service (AKS)][concepts-network].
+Zie Netwerkconcepten voor toepassingen in Azure Kubernetes Service (AKS) voor meer informatie over [netwerkresources.][concepts-network]
 
-Zie [Kubernetes network policies][kubernetes-network-policies](Engelstalig) voor meer informatie over beleid.
+Zie [Kubernetes-netwerkbeleid][kubernetes-network-policies]voor meer informatie over beleidsregels.
 
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
@@ -561,12 +561,12 @@ Zie [Kubernetes network policies][kubernetes-network-policies](Engelstalig) voor
 <!-- LINKS - internal -->
 [install-azure-cli]: /cli/azure/install-azure-cli
 [use-advanced-networking]: configure-azure-cni.md
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[az-aks-get-credentials]: /cli/azure/aks#az_aks_get_credentials
 [concepts-network]: concepts-network.md
-[az-feature-register]: /cli/azure/feature#az-feature-register
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-feature-register]: /cli/azure/feature#az_feature_register
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-provider-register]: /cli/azure/provider#az_provider_register
 [windows-server-password]: /windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements#reference
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
 [dsr]: ../load-balancer/load-balancer-multivip-overview.md#rule-type-2-backend-port-reuse-by-using-floating-ip

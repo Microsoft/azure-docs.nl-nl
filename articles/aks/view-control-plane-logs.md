@@ -1,59 +1,59 @@
 ---
-title: AKS-controller Logboeken (Azure Kubernetes service) weer geven
-description: Meer informatie over het inschakelen en weer geven van de logboeken voor het Kubernetes-besturings vlak in azure Kubernetes service (AKS)
+title: AKS Azure Kubernetes Service controllerlogboeken (AKS) weergeven
+description: Meer informatie over het inschakelen en weergeven van de logboeken voor het Kubernetes-besturingsvlak in Azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: article
 ms.date: 01/27/2020
-ms.openlocfilehash: 4027b2ca66b4d4319f7df347df6d671e6d48b772
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: 395422ca97b43488a7d7ad1c7434b20ccc59f2b0
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101735128"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767287"
 ---
-# <a name="enable-and-review-kubernetes-control-plane-logs-in-azure-kubernetes-service-aks"></a>Logboeken van Kubernetes-besturings vlak inschakelen en controleren in azure Kubernetes service (AKS)
+# <a name="enable-and-review-kubernetes-control-plane-logs-in-azure-kubernetes-service-aks"></a>Logboeken van het Kubernetes-besturingsvlak inschakelen en controleren in Azure Kubernetes Service (AKS)
 
-Met Azure Kubernetes service (AKS) worden de besturings vlak onderdelen, zoals de *uitvoeren-apiserver* en *uitvoeren-Controller-Manager* , als beheerde service verschaft. U maakt en beheert de knoop punten waarop de *kubelet* en de container runtime worden uitgevoerd en implementeert uw toepassingen via de beheerde Kubernetes API-server. Voor het oplossen van problemen met uw toepassing en services, moet u mogelijk de logboeken weer geven die door deze besturings vlak onderdelen zijn gegenereerd. In dit artikel wordt beschreven hoe u Azure Monitor-Logboeken kunt gebruiken om de logboeken van de Kubernetes te activeren en op te vragen.
+Met Azure Kubernetes Service (AKS) worden de onderdelen van het besturingsvlak, zoals de *kube-apiserver* en *kube-controller-manager,* geleverd als een beheerde service. U maakt en beheert de knooppunten die de *kubelet-* en containerruntime uitvoeren en implementeert uw toepassingen via de beheerde Kubernetes API-server. Als u problemen met uw toepassing en services wilt oplossen, moet u mogelijk de logboeken weergeven die zijn gegenereerd door deze onderdelen van het besturingsvlak. In dit artikel wordt beschreven hoe u Azure Monitor logboeken kunt gebruiken om de logboeken van de onderdelen van het Kubernetes-besturingsvlak in teschakelen en er query's op uit te voeren.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Voor dit artikel is een bestaand AKS-cluster vereist dat wordt uitgevoerd in uw Azure-account. Als u nog geen AKS-cluster hebt, kunt u er een maken met behulp van [Azure cli][cli-quickstart] of [Azure Portal][portal-quickstart]. Azure Monitor logboeken werken met AKS-clusters met zowel Kubernetes RBAC, Azure RBAC en niet-RBAC-ondersteuning.
+Voor dit artikel is een bestaand AKS-cluster vereist dat wordt uitgevoerd in uw Azure-account. Als u nog geen AKS-cluster hebt, maakt u er een met behulp van [de Azure CLI][cli-quickstart] of [Azure Portal.][portal-quickstart] Azure Monitor-logboeken werken met zowel Kubernetes RBAC, Azure RBAC als AKS-clusters zonder RBAC-ondersteuning.
 
 ## <a name="enable-resource-logs"></a>Resourcelogboeken inschakelen
 
-Azure Monitor-logboeken bieden een query taal en analyse-engine die inzicht biedt in uw omgeving om gegevens uit meerdere bronnen te verzamelen en te controleren. Een werk ruimte wordt gebruikt om de gegevens te sorteren en te analyseren en kan worden geïntegreerd met andere Azure-Services, zoals Application Insights en Security Center. Als u een ander platform wilt gebruiken om de logboeken te analyseren, kunt u in plaats daarvan een resource logboek verzenden naar een Azure-opslag account of Event Hub. Zie [Wat is Azure monitor-logboeken?][log-analytics-overview]voor meer informatie.
+Om gegevens uit meerdere bronnen te verzamelen en te controleren, Azure Monitor logboeken een querytaal en analyse-engine die inzicht bieden in uw omgeving. Een werkruimte wordt gebruikt voor het sorteren en analyseren van de gegevens en kan worden geïntegreerd met andere Azure-services, zoals Application Insights en Security Center. Als u een ander platform wilt gebruiken om de logboeken te analyseren, kunt u in plaats daarvan resourcelogboeken verzenden naar een Azure-opslagaccount of Event Hub. Zie Wat zijn Azure Monitor [logboeken? voor meer informatie.][log-analytics-overview]
 
-Azure Monitor-logboeken worden in de Azure Portal ingeschakeld en beheerd. Als u logboek verzameling wilt inschakelen voor de Kubernetes in uw AKS-cluster, opent u de Azure Portal in een webbrowser en voert u de volgende stappen uit:
+Azure Monitor logboeken worden ingeschakeld en beheerd in de Azure Portal. Als u logboekverzameling wilt inschakelen voor de onderdelen van het Kubernetes-besturingsvlak in uw AKS-cluster, opent u de Azure Portal in een webbrowser en voltooit u de volgende stappen:
 
-1. Selecteer de resource groep voor uw AKS-cluster, zoals *myResourceGroup*. Selecteer niet de resource groep die uw afzonderlijke AKS-cluster resources bevat, zoals *MC_myResourceGroup_myAKSCluster_eastus*.
+1. Selecteer de resourcegroep voor uw AKS-cluster, zoals *myResourceGroup.* Selecteer niet de resourcegroep die uw afzonderlijke AKS-clusterresources bevat, *zoals MC_myResourceGroup_myAKSCluster_eastus*.
 
-2. Klik aan de linkerkant op **Diagnostische instellingen**.
+2. Kies aan de linkerkant **Diagnostische instellingen.**
 
-3. Selecteer uw AKS-cluster, zoals *myAKSCluster*, en kies vervolgens **Diagnostische instelling toevoegen**.
-  :::image type="content" source="media\view-control-plane-logs\select-add-diagnostic-setting.PNG" alt-text="Scherm opname van Azure Portal in een browser venster met Diagnostische instellingen, waarin wordt aangegeven dat diagnostische instelling toevoegen moet worden geselecteerd":::
+3. Selecteer uw AKS-cluster, zoals *myAKSCluster,* en kies vervolgens **Diagnostische instelling toevoegen.**
+  :::image type="content" source="media\view-control-plane-logs\select-add-diagnostic-setting.PNG" alt-text="Schermopname van Azure Portal in een browservenster met diagnostische instellingen, waarmee wordt aangegeven dat Diagnostische instelling toevoegen moet zijn geselecteerd":::
 
-4. Voer een naam in, zoals *myAKSClusterLogs*, en selecteer vervolgens de optie om naar **log Analytics werk ruimte te verzenden**.
+4. Voer een naam in, zoals *myAKSClusterLogs,* en selecteer vervolgens de optie **Verzenden naar Log Analytics-werkruimte.**
 
-5. Selecteer een bestaande werk ruimte of maak een nieuwe. Als u een werk ruimte maakt, moet u een werkruimte naam, een resource groep en een locatie opgeven.
+5. Selecteer een bestaande werkruimte of maak een nieuwe. Als u een werkruimte maakt, geeft u een werkruimtenaam, een resourcegroep en een locatie op.
 
-6. Selecteer in de lijst met beschik bare Logboeken de logboeken die u wilt inschakelen. Voor dit voor beeld schakelt u de logboeken *uitvoeren-audit* en *uitvoeren-audit-admin* in. Veelvoorkomende logboeken zijn de *uitvoeren-apiserver*, *uitvoeren-Controller-Manager* en *uitvoeren scheduler*. U kunt de verzamelde logboeken retour neren en wijzigen als Log Analytics werk ruimten zijn ingeschakeld.
+6. Selecteer in de lijst met beschikbare logboeken de logboeken die u wilt inschakelen. Schakel voor dit voorbeeld de *logboeken kube-audit en* *kube-audit-admin in.* Algemene logboeken zijn onder andere *kube-apiserver,* *kube-controller-manager* en *kube-scheduler*. U kunt de verzamelde logboeken retourneren en wijzigen zodra Log Analytics-werkruimten zijn ingeschakeld.
 
-7. Wanneer u klaar bent, selecteert u **Opslaan** om het verzamelen van de geselecteerde Logboeken in te scha kelen.
-  :::image type="content" source="media\view-control-plane-logs\settings-selected.PNG" alt-text="Scherm opname van het venster diagnostische instelling toevoegen van Azure Portal. De bestemming ' Send to Log Analytics Workspace ' en de logs ' uitvoeren-audit ' en ' uitvoeren-audit-admin ' zijn geselecteerd":::
+7. Wanneer u klaar bent, **selecteert u Opslaan** om het verzamelen van de geselecteerde logboeken in te stellen.
+  :::image type="content" source="media\view-control-plane-logs\settings-selected.PNG" alt-text="Schermopname van Azure Portal het scherm Diagnostische instelling toevoegen van het scherm. De bestemming 'Verzenden naar Log Analytics-werkruimte' en logboeken 'kube-audit' en 'kube-audit-admin' zijn geselecteerd":::
 
-## <a name="log-categories"></a>Logboek Categorieën
+## <a name="log-categories"></a>Logboekcategorieën
 
-Naast de vermeldingen die door Kubernetes zijn geschreven, bevatten de audit logboeken van uw project ook vermeldingen van AKS.
+Naast vermeldingen die zijn geschreven door Kubernetes, bevatten de auditlogboeken van uw project ook vermeldingen uit AKS.
 
-Audit logboeken worden vastgelegd in drie categorieën: *uitvoeren-audit*, *uitvoeren-audit-admin* en *Guard*.
+Auditlogboeken worden vastgelegd in drie categorieën: *kube-audit,* *kube-audit-admin* en *guard.*
 
-- De categorie *uitvoeren* bevat alle controle logboek gegevens voor elke controle gebeurtenis, zoals *Get*, *List*, *Create*, *Update*, *Delete*, *patch* en *post*.
-- De categorie *uitvoeren-audit-admin* is een subset van de *uitvoeren-audit* logboek categorie. *uitvoeren-audit-admin* vermindert het aantal logboeken aanzienlijk door het uitsluiten van de controle gebeurtenissen *ophalen* en *weer geven* uit het logboek.
-- De categorie *Guard* beheert Azure AD en Azure RBAC-controles. Voor beheerde Azure AD: token in, gegevens van de gebruiker. Voor Azure RBAC: toegangs beoordelingen in en uit.
+- De *categorie kube-audit* bevat alle auditlogboekgegevens voor elke controlegebeurtenis, waaronder *get*, *list*, *create*, *update,* *delete,* *patch* en *post.*
+- De *categorie kube-audit-admin* is een subset van de categorie *kube-audit-logboek.* *Kube-audit-admin vermindert* het aantal logboeken aanzienlijk door de *get-* en list-controlegebeurtenissen uit het logboek uit te sluiten. 
+- De *categorie Guard* wordt beheerd door Azure AD en Azure RBAC-controles. Voor beheerde Azure AD: token in, gebruikersgegevens uit. Voor Azure RBAC: toegangsbeoordelingen in en uit.
 
-## <a name="schedule-a-test-pod-on-the-aks-cluster"></a>Een test pod plannen op het AKS-cluster
+## <a name="schedule-a-test-pod-on-the-aks-cluster"></a>Een testpod plannen in het AKS-cluster
 
-Als u een aantal logboeken wilt genereren, maakt u een nieuwe pod in uw AKS-cluster. Het volgende voor beeld van een YAML-manifest kan worden gebruikt voor het maken van een Basic NGINX-exemplaar. Maak een bestand met `nginx.yaml` de naam in een editor van uw keuze en plak de volgende inhoud:
+Als u logboeken wilt genereren, maakt u een nieuwe pod in uw AKS-cluster. Het volgende voorbeeld van een YAML-manifest kan worden gebruikt om een eenvoudige NGINX-instantie te maken. Maak een bestand met de `nginx.yaml` naam in een editor naar keuze en plak de volgende inhoud:
 
 ```yaml
 apiVersion: v1
@@ -77,7 +77,7 @@ spec:
     - containerPort: 80
 ```
 
-Maak de Pod met de opdracht [kubectl Create][kubectl-create] en geef uw yaml-bestand op, zoals wordt weer gegeven in het volgende voor beeld:
+Maak de pod met de [opdracht kubectl create][kubectl-create] en geef uw YAML-bestand op, zoals wordt weergegeven in het volgende voorbeeld:
 
 ```
 $ kubectl create -f nginx.yaml
@@ -85,16 +85,16 @@ $ kubectl create -f nginx.yaml
 pod/nginx created
 ```
 
-## <a name="view-collected-logs"></a>Verzamelde logboeken weer geven
+## <a name="view-collected-logs"></a>Verzamelde logboeken weergeven
 
-Het kan tot tien minuten duren voordat de diagnostische logboeken zijn ingeschakeld en worden weer gegeven.
+Het kan tot 10 minuten duren voordat de diagnostische logboeken zijn ingeschakeld en worden weergegeven.
 
 > [!NOTE]
-> Als u alle controle logboek gegevens voor naleving of andere doel einden nodig hebt, verzamelt en slaat u deze op in goedkope opslag, zoals Blob Storage. Gebruik de *uitvoeren-audit-admin-* logboek categorie voor het verzamelen en opslaan van een zinvolle set audit logboek gegevens voor controle-en waarschuwings doeleinden.
+> Als u alle auditlogboekgegevens voor naleving of andere doeleinden nodig hebt, verzamelt en opgeslagen in goedkope opslag, zoals blobopslag. Gebruik de *logboekcategorie kube-audit-admin* om een zinvolle set auditlogboekgegevens te verzamelen en op te slaan voor bewakings- en waarschuwingsdoeleinden.
 
-Ga in het Azure Portal naar uw AKS-cluster en selecteer **Logboeken** aan de linkerkant. Sluit het venster *voorbeeld query's* als dit wordt weer gegeven.
+Navigeer Azure Portal het AKS-cluster en selecteer **Logboeken** aan de linkerkant. Sluit het *venster Voorbeeldquery's* als dit wordt weergegeven.
 
-Kies **Logboeken** aan de linkerkant. Als u de *uitvoeren-audit* logboeken wilt weer geven, voert u de volgende query in het tekstvak in:
+Kies aan de linkerkant **Logboeken.** Als u de *logboeken van kube-audit wilt* weergeven, voert u de volgende query in het tekstvak in:
 
 ```
 AzureDiagnostics
@@ -102,7 +102,7 @@ AzureDiagnostics
 | project log_s
 ```
 
-Veel logboeken worden waarschijnlijk geretourneerd. Als u de query wilt verkleinen om de logboeken te bekijken over de NGINX pod die u in de vorige stap hebt gemaakt, voegt u een extra *where* -instructie toe om naar *NGINX* te zoeken, zoals wordt weer gegeven in de volgende voorbeeld query:
+Veel logboeken worden waarschijnlijk geretourneerd. Als u het bereik van de query wilt wijzigen om de logboeken weer te geven over de NGINX-pod die u in de vorige stap hebt gemaakt, voegt u een extra *where-instructie* toe om te zoeken naar *nginx,* zoals wordt weergegeven in de volgende voorbeeldquery:
 
 ```
 AzureDiagnostics
@@ -111,7 +111,7 @@ AzureDiagnostics
 | project log_s
 ```
 
-Voer de volgende query in het tekstvak in om de *uitvoeren-audit-admin-* logboeken weer te geven:
+Als u de *logboeken kube-audit-admin wilt* weergeven, voert u de volgende query in het tekstvak in:
 
 ```
 AzureDiagnostics
@@ -119,7 +119,7 @@ AzureDiagnostics
 | project log_s
 ```
 
-In dit voor beeld toont de query alle Create-taken in *uitvoeren-audit-admin*. Er zijn waarschijnlijk veel resultaten geretourneerd. Als u de query wilt afsluiten om de logboeken te bekijken over de NGINX pod die in de vorige stap zijn gemaakt, voegt u een extra *where* -instructie toe om naar *NGINX* te zoeken, zoals wordt weer gegeven in de volgende voorbeeld query.
+In dit voorbeeld toont de query alle maaktaken in *kube-audit-admin.* Er worden waarschijnlijk veel resultaten geretourneerd om het bereik van de query te wijzigen om de logboeken weer te geven over de NGINX-pod die in de vorige stap is gemaakt. Voeg een extra *where-instructie* toe om te zoeken naar *nginx,* zoals wordt weergegeven in de volgende voorbeeldquery.
 
 ```
 AzureDiagnostics
@@ -129,9 +129,9 @@ AzureDiagnostics
 ```
 
 
-Zie [verzamelde gegevens weer geven of analyseren met][analyze-log-analytics]logboek registratie van log Analytics voor meer informatie over het opvragen en filteren van uw logboek gegevens.
+Zie View or analyze data collected with log analytics log search (Gegevens weergeven of analyseren die zijn verzameld met zoeken in logboeken in Log Analytics) voor meer informatie over het doorzoeken en filteren van [uw logboekgegevens.][analyze-log-analytics]
 
-## <a name="log-event-schema"></a>Logboek gebeurtenis schema
+## <a name="log-event-schema"></a>Logboekgebeurtenisschema
 
 AKS registreert de volgende gebeurtenissen:
 
@@ -151,19 +151,19 @@ AKS registreert de volgende gebeurtenissen:
 * [KubeNodeInventory][log-schema-kubenodeinventory]
 * [KubePodInventory][log-schema-kubepodinventory]
 * [KubeServices][log-schema-kubeservices]
-* [Prestatie][log-schema-perf]
+* [Perf][log-schema-perf]
 
-## <a name="log-roles"></a>Logboek rollen
+## <a name="log-roles"></a>Logboekrollen
 
 | Rol                     | Beschrijving |
 |--------------------------|-------------|
-| *aksService*             | De weergave naam in het controle logboek voor de bewerking van het besturings vlak (van de hcpService) |
-| *masterclient*           | De weergave naam in het controle logboek voor MasterClientCertificate, het certificaat dat u krijgt van AZ AKS Get-credentials |
-| *nodeclient*             | De weergave naam voor ClientCertificate, die wordt gebruikt door agent knooppunten |
+| *aksService*             | De weergavenaam in het auditlogboek voor de besturingsvlakbewerking (van de hcpService) |
+| *masterclient*           | De weergavenaam in het auditlogboek voor MasterClientCertificate, het certificaat dat u krijgt van az aks get-credentials |
+| *nodeclient*             | De weergavenaam voor ClientCertificate, die wordt gebruikt door agentknooppunten |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u de logboeken kunt inschakelen en bekijken voor de onderdelen van het Kubernetes-besturings element in uw AKS-cluster. Als u verder wilt controleren en problemen wilt oplossen, kunt u ook [de Kubelet-logboeken weer geven][kubelet-logs] en [toegang tot SSH-knoop punt inschakelen][aks-ssh].
+In dit artikel hebt u geleerd hoe u de logboeken voor de onderdelen van het Kubernetes-besturingsvlak in uw AKS-cluster kunt inschakelen en controleren. Als u verder wilt controleren en problemen wilt oplossen, kunt u ook [de Kubelet-logboeken bekijken][kubelet-logs] en [SSH-knooppunttoegang inschakelen.][aks-ssh]
 
 <!-- LINKS - external -->
 [kubectl-create]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create
@@ -175,9 +175,9 @@ In dit artikel hebt u geleerd hoe u de logboeken kunt inschakelen en bekijken vo
 [analyze-log-analytics]: ../azure-monitor/logs/log-analytics-tutorial.md
 [kubelet-logs]: kubelet-logs.md
 [aks-ssh]: ssh.md
-[az-feature-register]: /cli/azure/feature#az-feature-register
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-feature-register]: /cli/azure/feature#az_feature_register
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-provider-register]: /cli/azure/provider#az_provider_register
 [log-schema-azureactivity]: /azure/azure-monitor/reference/tables/azureactivity
 [log-schema-azurediagnostics]: /azure/azure-monitor/reference/tables/azurediagnostics
 [log-schema-azuremetrics]: /azure/azure-monitor/reference/tables/azuremetrics

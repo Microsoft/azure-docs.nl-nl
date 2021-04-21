@@ -20,59 +20,41 @@
 - name: Zelfstudies
   items:
     - name: Windows-bestandsservers uitbreiden met Azure File Sync
-      href: storage-sync-files-extend-servers.md
+      href: ../file-sync/file-sync-extend-servers.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
 - name: Concepten
   items:
-    - name: Azure Files
+    - name: Planning voor de implementatie van Azure Files
+      href: storage-files-planning.md
+    - name: Beschikbare protocollen voor bestandsshares
+      href: storage-files-compare-protocols.md
+    - name: Op identiteit gebaseerde verificatie en autorisatie
+      href: storage-files-active-directory-overview.md
+    - name: Aandachtspunten voor netwerken voor directe toegang
+      href: storage-files-networking-overview.md
+    - name: Herstel na noodgevallen en failover
+      href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+    - name: Momentopnamen van Azure-bestandsshares
+      href: storage-snapshots-files.md
+    - name: Ontwikkeling
       items:
-        - name: Planning voor de implementatie van Azure Files
-          href: storage-files-planning.md
-        - name: Beschikbare protocollen voor bestandsshares
-          href: storage-files-compare-protocols.md
-        - name: Op identiteit gebaseerde verificatie en autorisatie
-          href: storage-files-active-directory-overview.md
-        - name: Aandachtspunten voor netwerken voor directe toegang
-          href: storage-files-networking-overview.md
-        - name: Herstel na noodgevallen en failover
-          href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Momentopnamen van Azure-bestandsshares
-          href: storage-snapshots-files.md
-        - name: Ontwikkeling
-          items:
-            - name: Gedeelde sleutelverificatie
-              href: /rest/api/storageservices/Authorization-for-the-Azure-Storage-Services
-            - name: Shared Access Signatures (SAS)
-              href: ../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Controleren en problemen oplossen
-          items:
-            - name: Transitie van klassieke metrische gegevens
-              href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-            - name: Bewaking (klassiek)
-              items:
-                - name: Storage Analytics
-                  href: ../common/storage-analytics.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-                - name: Metrische gegevens
-                  href: ../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-                - name: Logboeken
-                  href: ../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-                - name: 'Controleren, problemen vaststellen en problemen oplossen'
-                  href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Azure File Sync
+        - name: Gedeelde sleutelverificatie
+          href: /rest/api/storageservices/Authorization-for-the-Azure-Storage-Services
+        - name: Shared Access Signatures (SAS)
+          href: ../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+    - name: Controleren en problemen oplossen
       items:
-        - name: Planning voor de implementatie van Azure Files Sync
-          href: storage-sync-files-planning.md
-        - name: Aandachtspunten voor netwerken voor hybride toegang
-          href: storage-sync-files-networking-overview.md
-        - name: Cloudopslaglagen
+        - name: Transitie van klassieke metrische gegevens
+          href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Bewaking (klassiek)
           items:
-            - name: Overzicht van cloudopslaglagen
-              href: storage-sync-cloud-tiering-overview.md
-            - name: Overzicht van beleidsregels voor cloudopslaglagen
-              href: storage-sync-cloud-tiering-policy.md
-            - name: Uw beleid voor cloudopslaglagen kiezen
-              href: storage-sync-choose-cloud-tiering-policies.md
-            - name: Opslag in cloudlagen bewaken
-              href: storage-sync-monitor-cloud-tiering.md
+            - name: Storage Analytics
+              href: ../common/storage-analytics.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+            - name: Metrische gegevens
+              href: ../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+            - name: Logboeken
+              href: ../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+            - name: 'Controleren, problemen vaststellen en problemen oplossen'
+              href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Prestaties en schaal
       items:
         - name: Prestaties van SMB Multichannel
@@ -85,10 +67,12 @@
       href: storage-files-prevent-file-share-deletion.md
     - name: Back-ups van bestandsshares
       href: ../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Versleuteling at-rest
-      href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Versleuteling at-rest van gegevens met door de klant beheerde sleutels
-      href: ../common/customer-managed-keys-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+    - name: Versleuteling
+      items:
+        - name: Versleuteling at-rest
+          href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Versleuteling at-rest van gegevens met door de klant beheerde sleutels
+          href: ../common/customer-managed-keys-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Nalevingsaanbiedingen
       href: ../common/storage-compliance-offerings.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Veelgestelde vragen
@@ -99,8 +83,6 @@
       items:
         - name: Een SMB-bestandsshare maken
           href: storage-how-to-create-file-share.md
-        - name: Azure Files SYNC implementeren
-          href: storage-sync-files-deployment-guide.md
         - name: DFS-N gebruiken met Azure Files
           href: files-manage-namespaces.md
         - name: Een NFS-share maken
@@ -121,18 +103,10 @@
           href: storage-how-to-use-files-mac.md
     - name: Netwerk
       items:
-        - name: Azure Files
-          items:
-            - name: Azure Files-netwerkeindpunten configureren
-              href: storage-files-networking-endpoints.md
-            - name: DNS doorsturen configureren voor Azure Files
-              href: storage-files-networking-dns.md
-        - name: Azure File Sync
-          items:
-            - name: Azure Files Sync-netwerkeindpunten configureren
-              href: storage-sync-files-networking-endpoints.md
-            - name: Proxy- en firewallinstellingen van File Sync configureren
-              href: storage-sync-files-firewall-and-proxy.md
+        - name: Azure Files-netwerkeindpunten configureren
+          href: storage-files-networking-endpoints.md
+        - name: DNS doorsturen configureren voor Azure Files
+          href: storage-files-networking-dns.md
         - name: Site-naar-site-VPN configureren
           href: storage-files-configure-s2s-vpn.md
         - name: Punt-naar-site-VPN configureren in Windows
@@ -159,18 +133,10 @@
           href: storage-files-identity-auth-active-directory-domain-service-enable.md
     - name: Beheren
       items:
-        - name: Een server registreren bij Azure Files Sync
-          href: storage-sync-files-server-registration.md
-        - name: Een Azure Files Sync-servereindpunt toevoegen
-          href: storage-sync-files-server-endpoint.md
         - name: Opslag in onafhankelijke Azure-clouds beheren
           href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Een failover van account initiëren
           href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: 'Resources verplaatsen naar andere resourcegroepen, abonnementen en AAD-tenants'
-          href: storage-sync-resource-move.md
-        - name: Gelaagde bestanden beheren
-          href: storage-sync-how-to-manage-tiered-files.md
     - name: Gegevensbeveiliging
       items:
         - name: Voorlopig verwijderen inschakelen
@@ -219,12 +185,8 @@
               href: ../../backup/manage-afs-powershell.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
             - name: REST-API
               href: ../../backup/manage-azure-file-share-rest-api.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Controleren
-      items:
-        - name: Azure Files bewaken
-          href: storage-files-monitoring.md
-        - name: Azure File Sync bewaken
-          href: storage-sync-files-monitoring.md
+    - name: Azure Files bewaken
+      href: storage-files-monitoring.md
     - name: Migreren
       items:
         - name: Migreren naar Azure-bestandsshares
@@ -236,7 +198,7 @@
         - name: Hybride implementatie als doel
           items:
             - name: Bulkgegevens migreren in Azure File Sync met Azure Data Box
-              href: storage-sync-offline-data-transfer.md
+              href: ../file-sync/file-sync-offline-data-transfer.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
             - name: Migreren van Linux naar een hybride bestandsserver met Azure File Sync
               href: storage-files-migration-linux-hybrid.md
             - name: Migreren van on-premises NAS naar een hybride bestandsserver met Azure File Sync
@@ -311,8 +273,6 @@
           href: storage-troubleshooting-files-performance.md
         - name: Problemen met Azure Files in Linux oplossen (NFS)
           href: storage-troubleshooting-files-nfs.md
-        - name: Problemen met Azure Files Sync oplossen
-          href: storage-sync-files-troubleshoot.md
         - name: Problemen bij het verwijderen van Azure-bestandsshares oplossen
           href: storage-troubleshoot-cannot-delete-files-azure-file-share.md
         - name: Problemen met back-ups van bestandsshares oplossen
@@ -332,8 +292,6 @@
   items:
     - name: Azure-updates
       href: 'https://azure.microsoft.com/updates/?category=storage'
-    - name: Releaseopmerkingen Azure File Sync
-      href: storage-files-release-notes.md
     - name: Azure Files in Microsoft Q&A
       href: /answers/topics/azure-files.html
     - name: Azure Files in Stack Overflow

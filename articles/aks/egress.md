@@ -1,43 +1,43 @@
 ---
-title: Statisch IP-adres gebruiken voor uitgaand verkeer
+title: Statisch IP-adres gebruiken voor het verkeer voorgressie
 titleSuffix: Azure Kubernetes Service
-description: Meer informatie over het maken en gebruiken van een statisch openbaar IP-adres voor uitgaand verkeer in een Azure Kubernetes service (AKS)-cluster
+description: Meer informatie over het maken en gebruiken van een statisch openbaar IP-adres voor Azure Kubernetes Service (AKS)-cluster
 services: container-service
 ms.topic: article
 ms.date: 03/16/2021
-ms.openlocfilehash: e1f81bf4c4d35108557449a8bebd126bdf744191
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7cff3f5d66bb9872a0c949c6237150f8b69c9fa7
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104592367"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107773005"
 ---
-# <a name="use-a-static-public-ip-address-for-egress-traffic-with-a-basic-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Een statisch openbaar IP-adres gebruiken voor uitgaand verkeer met een *basis* -SKU Load Balancer in azure Kubernetes service (AKS)
+# <a name="use-a-static-public-ip-address-for-egress-traffic-with-a-basic-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Gebruik een statisch openbaar IP-adres voor het verkeer voorgressie met een *Basic* SKU-load balancer in Azure Kubernetes Service (AKS)
 
-Het uitgaande IP-adres van een Azure Kubernetes service-cluster (AKS) wordt standaard wille keurig toegewezen. Deze configuratie is niet ideaal wanneer u bijvoorbeeld een IP-adres voor toegang tot externe services moet identificeren. In plaats daarvan moet u mogelijk een statisch IP-adres toewijzen dat moet worden toegevoegd aan een allowlist voor toegang tot de service.
+Standaard wordt het ip-adres van een Azure Kubernetes Service AKS-cluster willekeurig toegewezen. Deze configuratie is niet ideaal wanneer u bijvoorbeeld een IP-adres moet identificeren voor toegang tot externe services. In plaats daarvan moet u mogelijk een statisch IP-adres toewijzen dat moet worden toegevoegd aan een allowlist voor servicetoegang.
 
-In dit artikel wordt beschreven hoe u een statisch openbaar IP-adres maakt en gebruikt voor gebruik met uitgaand verkeer in een AKS-cluster.
+In dit artikel wordt beschreven hoe u een statisch openbaar IP-adres maakt en gebruikt voor gebruik met het verkeer voorgressie in een AKS-cluster.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u de Azure Basic-Load Balancer gebruikt.  We raden u aan [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md)te gebruiken en u kunt meer geavanceerde functies gebruiken voor het [beheren van AKS](./limit-egress-traffic.md)uitgaand verkeer.
+In dit artikel wordt ervan uitgenomen dat u de Azure Basic-Load Balancer.  We raden u aan de [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md)en u kunt meer geavanceerde functies gebruiken voor het beheren van [het AKS-verkeer voor egressie.](./limit-egress-traffic.md)
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
+In dit artikel wordt ervan uitgenomen dat u een bestaand AKS-cluster hebt. Als u een AKS-cluster nodig hebt, bekijkt u de AKS-quickstart met behulp van [de Azure CLI][aks-quickstart-cli] of met behulp van de [Azure Portal][aks-quickstart-portal].
 
-Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Ook moet Azure CLI versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 > [!IMPORTANT]
-> In dit artikel wordt gebruikgemaakt van de *basis* -SKU Load Balancer met één knooppunt groep. Deze configuratie is niet beschikbaar voor meerdere knooppunt groepen, aangezien de *basis* -SKU Load Balancer niet wordt ondersteund met meerdere knooppunt groepen. Zie [een open bare Standard Load Balancer gebruiken in azure Kubernetes service (AKS)][slb] voor meer informatie over het gebruik van de *standaard* -SKU Load Balancer.
+> In dit artikel wordt de *Basis-SKU* load balancer met één knooppuntgroep. Deze configuratie is niet beschikbaar voor  meerdere knooppuntgroepen omdat de basis-SKU-load balancer niet wordt ondersteund met meerdere knooppuntgroepen. Zie [Use a public Standard Load Balancer in Azure Kubernetes Service (AKS) (Een][slb] openbare SKU gebruiken in Azure Kubernetes Service) voor meer informatie over het gebruik van de *Standard* SKU load balancer.
 
-## <a name="egress-traffic-overview"></a>Overzicht van uitgaand verkeer
+## <a name="egress-traffic-overview"></a>Overzicht van het egress-verkeer
 
-Uitgaand verkeer van een AKS-cluster volgt [Azure Load Balancer conventies][outbound-connections]. Voordat de eerste Kubernetes-service van het type `LoadBalancer` wordt gemaakt, maken de agent knooppunten in een AKS-cluster geen deel uit van een Azure Load Balancer groep. In deze configuratie hebben de knoop punten geen openbaar IP-adres op exemplaar niveau. Azure zet de uitgaande stroom om naar een IP-adres van een open bare bron dat niet configureerbaar of deterministisch is.
+Uitgaand verkeer van een AKS-cluster volgt [Azure Load Balancer conventies][outbound-connections]. Voordat de eerste Kubernetes-service van het type wordt gemaakt, maken de agentknooppunten in een AKS-cluster geen deel uit `LoadBalancer` van Azure Load Balancer groep. In deze configuratie hebben de knooppunten geen openbaar IP-adres op exemplaarniveau. Azure vertaalt de uitgaande stroom naar een openbaar bron-IP-adres dat niet configureerbaar of deterministisch is.
 
-Zodra een Kubernetes-service van het type `LoadBalancer` is gemaakt, worden er agent knooppunten toegevoegd aan een Azure Load Balancer groep. Load Balancer Basic kiest voor een eenmalige front-end voor uitgaande stromen wanneer meerdere (open bare) IP-frontends kandidaten voor uitgaande stromen zijn. Deze selectie kan niet worden geconfigureerd. u kunt het selectie algoritme het beste wille keurig beschouwen. Dit open bare IP-adres is alleen geldig voor de levens duur van die resource. Als u de Kubernetes Load Balancer-service verwijdert, worden de gekoppelde load balancer en het IP-adres ook verwijderd. Als u een specifiek IP-adres wilt toewijzen of een IP-adres voor opnieuw geïmplementeerde Kubernetes-Services wilt behouden, kunt u een statisch openbaar IP-adres maken en gebruiken.
+Zodra een Kubernetes-service van het type `LoadBalancer` is gemaakt, worden agentknooppunten toegevoegd aan een Azure Load Balancer groep. Load Balancer Basic kiest één front-end die moet worden gebruikt voor uitgaande stromen wanneer meerdere (openbare) IP-front-enden in de kandidaten zijn voor uitgaande stromen. Deze selectie kan niet worden geconfigureerd en u moet het selectiealgoritme als willekeurig beschouwen. Dit openbare IP-adres is alleen geldig voor de levensduur van die resource. Als u de Kubernetes LoadBalancer-service verwijdert, worden load balancer en IP-adres ook verwijderd. Als u een specifiek IP-adres wilt toewijzen of een IP-adres wilt behouden voor opnieuw geïmplementeerde Kubernetes-services, kunt u een statisch openbaar IP-adres maken en gebruiken.
 
 ## <a name="create-a-static-public-ip"></a>Een statisch openbaar IP-adres maken
 
-Haal de naam van de resource groep op met de opdracht [AZ AKS show][az-aks-show] en voeg de `--query nodeResourceGroup` query parameter toe. In het volgende voor beeld wordt de resource groep node opgehaald voor de AKS-cluster naam *myAKSCluster* in de naam van de resource groep *myResourceGroup*:
+Haal de naam van de resourcegroep op met [de opdracht az aks show][az-aks-show] en voeg de `--query nodeResourceGroup` queryparameter toe. In het volgende voorbeeld wordt de knooppuntresourcegroep voor de AKS-clusternaam *myAKSCluster* in de naam van de resourcegroep *myResourceGroup:*
 
 ```azurecli-interactive
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -45,7 +45,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeR
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Maak nu een statisch openbaar IP-adres met de opdracht [AZ Network Public IP Create][az-network-public-ip-create] . Geef de naam van de resource groep voor het knoop punt op die u hebt verkregen in de vorige opdracht en klik vervolgens op een naam voor de IP-adres bron, zoals *myAKSPublicIP*:
+Maak nu een statisch openbaar IP-adres met de [opdracht az network public ip create.][az-network-public-ip-create] Geef de naam van de knooppuntresourcegroep op die u in de vorige opdracht hebt verkregen en geef vervolgens een naam op voor de IP-adresresource, *zoals myAKSPublicIP:*
 
 ```azurecli-interactive
 az network public-ip create \
@@ -54,7 +54,7 @@ az network public-ip create \
     --allocation-method static
 ```
 
-Het IP-adres wordt weer gegeven, zoals wordt weer gegeven in de volgende verkorte voorbeeld uitvoer:
+Het IP-adres wordt weergegeven, zoals wordt weergegeven in de volgende verkorte voorbeelduitvoer:
 
 ```json
 {
@@ -68,7 +68,7 @@ Het IP-adres wordt weer gegeven, zoals wordt weer gegeven in de volgende verkort
   }
 ```
 
-U kunt later het open bare IP-adres ophalen met de opdracht [AZ Network Public-IP List][az-network-public-ip-list] . Geef de naam van de knooppunt resource groep op en voer vervolgens een query uit voor het *IP-adres* , zoals wordt weer gegeven in het volgende voor beeld:
+U kunt het openbare IP-adres later op halen met de [opdracht az network public-ip list.][az-network-public-ip-list] Geef de naam van de knooppuntresourcegroep op en zoek vervolgens naar *het ipAddress,* zoals wordt weergegeven in het volgende voorbeeld:
 
 ```azurecli-interactive
 $ az network public-ip list --resource-group MC_myResourceGroup_myAKSCluster_eastus --query [0].ipAddress --output tsv
@@ -78,7 +78,7 @@ $ az network public-ip list --resource-group MC_myResourceGroup_myAKSCluster_eas
 
 ## <a name="create-a-service-with-the-static-ip"></a>Een service maken met het statische IP-adres
 
-Als u een service met het statische open bare IP-adres wilt maken, voegt `loadBalancerIP` u de eigenschap en de waarde van het statische open bare IP-adres toe aan het yaml-manifest. Maak een bestand `egress-service.yaml` met de naam en kopieer de volgende YAML. Geef uw eigen open bare IP-adres op dat u in de vorige stap hebt gemaakt.
+Als u een service wilt maken met het statische openbare IP-adres, voegt u de eigenschap en de waarde van het statische openbare IP-adres toe `loadBalancerIP` aan het YAML-manifest. Maak een bestand met `egress-service.yaml` de naam en kopieer het in de volgende YAML. Geef uw eigen openbare IP-adres op dat u in de vorige stap hebt gemaakt.
 
 ```yaml
 apiVersion: v1
@@ -92,31 +92,31 @@ spec:
   - port: 80
 ```
 
-Maak de service en de implementatie met behulp van de `kubectl apply` opdracht.
+Maak de service en implementatie met de `kubectl apply` opdracht .
 
 ```console
 kubectl apply -f egress-service.yaml
 ```
 
-Met deze service wordt een nieuw frontend-IP-adres geconfigureerd op de Azure Load Balancer. Als er geen andere IP-adressen zijn geconfigureerd, moet dit adres nu worden gebruikt voor **alle** uitgangs verkeer. Wanneer er meerdere adressen zijn geconfigureerd op de Azure Load Balancer, zijn een van deze open bare IP-adressen een kandidaat voor uitgaande stromen en wordt er een wille keurige selectie geselecteerd.
+Deze service configureert een nieuw front-end-IP-adres op Azure Load Balancer. Als u geen andere IP-adressen hebt geconfigureerd, moet nu al het **verkeer** dat de egress gebruikt dit adres gebruiken. Wanneer meerdere adressen zijn geconfigureerd op de Azure Load Balancer, zijn al deze openbare IP-adressen een kandidaat voor uitgaande stromen en wordt er een willekeurig geselecteerd.
 
-## <a name="verify-egress-address"></a>Uitgangs adres controleren
+## <a name="verify-egress-address"></a>Het adres van het egress-adres controleren
 
-Als u wilt controleren of het statische open bare IP-adres wordt gebruikt, kunt u de DNS-zoek service gebruiken zoals `checkip.dyndns.org` .
+Als u wilt controleren of het statische openbare IP-adres wordt gebruikt, kunt u de DNS-zoekservice gebruiken, zoals `checkip.dyndns.org` .
 
-Starten en koppelen aan een Basic *Debian* Pod:
+Start en koppel aan een eenvoudige *Debian-pod:*
 
 ```console
 kubectl run -it --rm aks-ip --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11
 ```
 
-Om toegang te krijgen tot een website vanuit de container, gebruikt `apt-get` u om `curl` in de container te installeren.
+Als u vanuit de container toegang wilt krijgen tot een website, gebruikt `apt-get` u om deze in de container te `curl` installeren.
 
 ```console
 apt-get update && apt-get install curl -y
 ```
 
-Gebruik nu krul om toegang te krijgen tot de *checkip.dyndns.org* -site. Het uitgaande IP-adres wordt weer gegeven, zoals wordt weer gegeven in de volgende voorbeeld uitvoer. Dit IP-adres komt overeen met het statische open bare IP-adres dat is gemaakt en gedefinieerd voor de loadBalancer-service:
+Gebruik nu curl om toegang te krijgen tot *checkip.dyndns.org* site. Het IP-adres van het egress wordt weergegeven, zoals wordt weergegeven in de volgende voorbeelduitvoer. Dit IP-adres komt overeen met het statische openbare IP-adres dat is gemaakt en gedefinieerd voor de loadBalancer-service:
 
 ```console
 $ curl -s checkip.dyndns.org
@@ -126,16 +126,16 @@ $ curl -s checkip.dyndns.org
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt in plaats daarvan een ingangs controller gebruiken om te voor komen dat meerdere open bare IP-adressen op de Azure Load Balancer worden bewaard. Ingangs controllers bieden extra voor delen, zoals SSL/TLS-beëindiging, ondersteuning voor het opnieuw schrijven van URI'S en de upstream van SSL/TLS-versleuteling. Zie [een Basic ingress-controller maken in AKS][ingress-aks-cluster]voor meer informatie.
+Als u wilt voorkomen dat er meerdere openbare IP-adressen op de Azure Load Balancer, kunt u in plaats daarvan een controller voor ingress gebruiken. Ingress-controllers bieden extra voordelen, zoals SSL/TLS-beëindiging, ondersteuning voor herschrijven van URI's en upstream SSL/TLS-versleuteling. Zie Create [a basic ingress controller in AKS (Een eenvoudige controller voor ingress maken in AKS) voor meer informatie.][ingress-aks-cluster]
 
 <!-- LINKS - internal -->
-[az-network-public-ip-create]: /cli/azure/network/public-ip#az-network-public-ip-create
-[az-network-public-ip-list]: /cli/azure/network/public-ip#az-network-public-ip-list
-[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-network-public-ip-create]: /cli/azure/network/public-ip#az_network_public_ip_create
+[az-network-public-ip-list]: /cli/azure/network/public-ip#az_network_public_ip_list
+[az-aks-show]: /cli/azure/aks#az_aks_show
 [azure-cli-install]: /cli/azure/install-azure-cli
 [ingress-aks-cluster]: ./ingress-basic.md
 [outbound-connections]: ../load-balancer/load-balancer-outbound-connections.md#scenarios
-[public-ip-create]: /cli/azure/network/public-ip#az-network-public-ip-create
+[public-ip-create]: /cli/azure/network/public-ip#az_network_public_ip_create
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli

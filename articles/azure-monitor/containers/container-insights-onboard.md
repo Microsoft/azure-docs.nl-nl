@@ -1,29 +1,29 @@
 ---
-title: Container Insights inschakelen | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u container Insights inschakelt en configureert, zodat u kunt begrijpen hoe uw container presteert en welke prestatie problemen zijn geïdentificeerd.
+title: Container Insights-| Microsoft Docs
+description: In dit artikel wordt beschreven hoe u Container Insights kunt inschakelen en configureren, zodat u begrijpt hoe uw container presteert en welke prestatieproblemen zijn geïdentificeerd.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 01246a728f204ed9cb43eee392c637b495208aaf
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e0544232f40e93cce0705fff6814d29697a96218
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105109349"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782113"
 ---
-# <a name="enable-container-insights"></a>Container Insights inschakelen
+# <a name="enable-container-insights"></a>Container insights inschakelen
 
-Dit artikel bevat een overzicht van de opties die beschikbaar zijn voor het instellen van container Insights voor het bewaken van de prestaties van werk belastingen die zijn geïmplementeerd in Kubernetes omgevingen en die worden gehost op:
+In dit artikel vindt u een overzicht van de opties die beschikbaar zijn voor het instellen van Container Insights om de prestaties te bewaken van workloads die zijn geïmplementeerd in Kubernetes-omgevingen en worden gehost op:
 
 - [Azure Kubernetes Service (AKS)](../../aks/index.yml)  
-- [Azure Red Hat open Shift](../../openshift/intro-openshift.md) versie 3. x en 4. x  
-- [Red Hat open Shift](https://docs.openshift.com/container-platform/4.3/welcome/index.html) versie 4. x  
-- Een [Kubernetes-cluster met Arc-functionaliteit](../../azure-arc/kubernetes/overview.md)
+- [Azure Red Hat OpenShift](../../openshift/intro-openshift.md) versies 3.x en 4.x  
+- [Red Hat OpenShift](https://docs.openshift.com/container-platform/4.3/welcome/index.html) versie 4.x  
+- Een [Kubernetes-cluster met Arc](../../azure-arc/kubernetes/overview.md)
 
-U kunt ook de prestaties bewaken van werk belastingen die zijn geïmplementeerd op zelf beheerde Kubernetes-clusters die worden gehost op:
+U kunt ook de prestaties bewaken van workloads die worden geïmplementeerd op zelf-beheerde Kubernetes-clusters die worden gehost op:
 - Azure, met behulp van de [AKS-engine](https://github.com/Azure/aks-engine)
-- [Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) of on-premises, met behulp van de AKS-engine.
+- [Azure Stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) of on-premises, met behulp van de AKS-engine.
 
-U kunt container Insights inschakelen voor een nieuwe implementatie of voor een of meer bestaande implementaties van Kubernetes door gebruik te maken van een van de volgende ondersteunde methoden:
+U kunt Container Insights inschakelen voor een nieuwe implementatie of voor een of meer bestaande implementaties van Kubernetes met behulp van een van de volgende ondersteunde methoden:
 
 - Azure Portal
 - Azure PowerShell
@@ -37,45 +37,45 @@ U kunt container Insights inschakelen voor een nieuwe implementatie of voor een 
 Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 
 > [!IMPORTANT]
-> Log Analytics in containers geplaatste Linux-agent (POD) maakt API-aanroepen naar alle Windows-knoop punten op Kubelet beveiligde poort (10250) in het cluster voor het verzamelen van metrische gegevens over het knoop punt en de container prestaties. Kubelet beveiligde poort (: 10250) moet worden geopend in het virtuele netwerk van het cluster voor zowel binnenkomend als uitgaand verkeer voor Windows-knoop punten en de verzameling metrische prestatie gegevens over de container.
+> Met Log Analytics in een container geplaatste Linux-agent (replicasetpod) worden API-aanroepen naar alle Windows-knooppunten op kubelet Secure Port (10250) binnen het cluster gemaakt om metrische gegevens met betrekking tot knooppunt- en containerprestaties te verzamelen. Kubelet secure port (:10250) should be opened in the cluster's virtual network for both inbound and outbound for Windows Node and container performance related metrics collection to work.
 >
-> Als u een Kubernetes-cluster met Windows-knoop punten hebt, kunt u de netwerk beveiligings groep en het netwerk beleid controleren en configureren om ervoor te zorgen dat de Kubelet beveiligde poort (: 10250) wordt geopend voor zowel binnenkomend als uitgaand verkeer in het virtuele netwerk van het cluster.
+> Als u een Kubernetes-cluster met Windows-knooppunten hebt, controleert en configureert u de netwerkbeveiligingsgroep en het netwerkbeleid om ervoor te zorgen dat de beveiligde Kubelet-poort (:10250) is geopend voor zowel binnenkomende als uitgaande poort in het virtuele netwerk van het cluster.
 
 
-- U hebt een Log Analytics-werk ruimte.
+- U hebt een Log Analytics-werkruimte.
 
-   Container Insights biedt ondersteuning voor een Log Analytics-werk ruimte in de regio's die worden vermeld in [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor).
+   Container Insights ondersteunt een Log Analytics-werkruimte in de regio's die worden vermeld in [Beschikbare producten per regio.](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor)
 
-   U kunt een werk ruimte maken wanneer u controle inschakelt voor uw nieuwe AKS-cluster, of u kunt de voorbereidings ervaring laten maken van een standaardwerk ruimte in de standaard resource groep van het AKS-cluster abonnement. 
+   U kunt een werkruimte maken wanneer u bewaking inschakelen voor uw nieuwe AKS-cluster of u kunt de onboarding-ervaring een standaardwerkruimte laten maken in de standaardresourcegroep van het AKS-clusterabonnement. 
    
-   Als u ervoor kiest om de werk ruimte zelf te maken, kunt u deze maken via: 
+   Als u ervoor kiest om de werkruimte zelf te maken, kunt u deze maken via: 
    - [Azure Resource Manager](../logs/resource-manager-workspace.md)
    - [PowerShell](../logs/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)
    - [Azure Portal](../logs/quick-create-workspace.md) 
    
-   Zie [regio toewijzing voor container Insights](container-insights-region-mapping.md)voor een lijst met de ondersteunde toewijzings paren die voor de standaardwerk ruimte moeten worden gebruikt.
+   Zie Regiotoewijzing voor Container insights voor een lijst met de ondersteunde toewijzingsparen die moeten worden gebruikt voor de [standaardwerkruimte.](container-insights-region-mapping.md)
 
-- U bent lid van de groep *log Analytics Inzender* voor het inschakelen van container bewaking. Zie [werk ruimten beheren](../logs/manage-access.md)voor meer informatie over het controleren van de toegang tot een log Analytics-werk ruimte.
+- U bent lid van de log *analytics-inzendergroep* voor het inschakelen van containerbewaking. Zie Werkruimten beheren voor meer informatie over het beheren van toegang tot een Log [Analytics-werkruimte.](../logs/manage-access.md)
 
-- U bent lid van de groep [ *eigenaar*](../../role-based-access-control/built-in-roles.md#owner) op de AKS-cluster bron.
+- U bent lid van de groep [ *Eigenaar van* de](../../role-based-access-control/built-in-roles.md#owner) AKS-clusterresource.
 
    [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-- Als u de bewakings gegevens wilt bekijken, moet u de rol van [*log Analytics lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de log Analytics-werk ruimte, geconfigureerd met container Insights.
+- Als u de bewakingsgegevens wilt weergeven, moet u de [*rol Van Log Analytics-lezer*](../logs/manage-access.md#manage-access-using-azure-permissions) hebben in de Log Analytics-werkruimte, geconfigureerd met Container Insights.
 
-- Prometheus-metrische gegevens worden niet standaard verzameld. Voordat u [de agent configureert](container-insights-prometheus-integration.md) voor het verzamelen van de metrische gegevens, is het belang rijk om de [Prometheus-documentatie](https://prometheus.io/) te controleren om te begrijpen welke informatie kan worden verzameld en welke methoden worden ondersteund.
-- Een AKS-cluster kan worden gekoppeld aan een Log Analytics-werk ruimte in een ander Azure-abonnement in dezelfde Azure AD-Tenant. Dit kan momenteel niet worden uitgevoerd met Azure Portal, maar kan wel worden uitgevoerd met een Azure CLI-of Resource Manager-sjabloon.
+- Prometheus-metrische gegevens worden niet standaard verzameld. Voordat u [de agent](container-insights-prometheus-integration.md) configureert voor het verzamelen van de metrische gegevens, is het belangrijk dat u de [Prometheus-documentatie](https://prometheus.io/) bekijkt om te begrijpen welke gegevens kunnen worden verzameld en welke methoden worden ondersteund.
+- Een AKS-cluster kan worden gekoppeld aan een Log Analytics-werkruimte in een ander Azure-abonnement in dezelfde Azure AD-tenant. Dit kan momenteel niet worden gedaan met Azure Portal, maar kan worden gedaan met Azure CLI of Resource Manager sjabloon.
 
 ## <a name="supported-configurations"></a>Ondersteunde configuraties
 
-Container Insights officieel ondersteunt de volgende configuraties:
+Container Insights ondersteunt officieel de volgende configuraties:
 
-- Omgevingen: Azure Red Hat open Shift, Kubernetes on-premises en de AKS-engine op Azure en Azure Stack. Zie [de AKS-engine op Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)voor meer informatie.
-- De versies van Kubernetes en het ondersteunings beleid zijn hetzelfde als die welke worden [ondersteund in de Azure Kubernetes-service (AKS)](../../aks/supported-kubernetes-versions.md). 
+- Omgevingen: Azure Red Hat OpenShift, Kubernetes on-premises en de AKS-engine in Azure en Azure Stack. Zie de [AKS-engine op Azure Stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)voor meer Azure Stack.
+- De versies van Kubernetes en ondersteuningsbeleid zijn hetzelfde als de versies die worden ondersteund [in Azure Kubernetes Service (AKS).](../../aks/supported-kubernetes-versions.md) 
 
-## <a name="network-firewall-requirements"></a>Netwerk firewall vereisten
+## <a name="network-firewall-requirements"></a>Vereisten voor netwerkfirewalls
 
-De volgende tabel geeft een lijst van de proxy-en firewall configuratie-informatie die is vereist voor de container agent om te communiceren met container Insights. Al het netwerk verkeer van de agent is uitgaand naar Azure Monitor.
+De volgende tabel bevat de proxy- en firewallconfiguratiegegevens die nodig zijn om de containeragent te laten communiceren met Container Insights. Al het netwerkverkeer van de agent is uitgaand naar Azure Monitor.
 
 |Agentresource|Poort |
 |--------------|------|
@@ -85,56 +85,56 @@ De volgende tabel geeft een lijst van de proxy-en firewall configuratie-informat
 | `*.monitoring.azure.com` | 443 |
 | `login.microsoftonline.com` | 443 |
 
-De volgende tabel geeft een overzicht van de proxy-en firewall configuratie-informatie voor Azure China 21Vianet:
+De volgende tabel bevat de proxy- en firewallconfiguratiegegevens voor Azure China 21Vianet:
 
 |Agentresource|Poort |Beschrijving | 
 |--------------|------|-------------|
 | `*.ods.opinsights.azure.cn` | 443 | Gegevensopname |
 | `*.oms.opinsights.azure.cn` | 443 | OMS-onboarding |
-| `dc.services.visualstudio.com` | 443 | Voor telemetrie van agents die gebruikmaken van open bare Azure-Cloud Application Insights |
+| `dc.services.visualstudio.com` | 443 | Voor agent-telemetrie die gebruikmaakt van Azure Public Cloud Application Insights |
 
-De volgende tabel geeft een overzicht van de proxy-en firewall configuratie-informatie voor de Amerikaanse overheid van Azure:
+De volgende tabel bevat de proxy- en firewallconfiguratiegegevens voor Azure US Government:
 
 |Agentresource|Poort |Beschrijving | 
 |--------------|------|-------------|
 | `*.ods.opinsights.azure.us` | 443 | Gegevensopname |
 | `*.oms.opinsights.azure.us` | 443 | OMS-onboarding |
-| `dc.services.visualstudio.com` | 443 | Voor telemetrie van agents die gebruikmaken van open bare Azure-Cloud Application Insights |
+| `dc.services.visualstudio.com` | 443 | Voor agent-telemetrie die gebruikmaakt van Azure Public Cloud Application Insights |
 
 ## <a name="components"></a>Onderdelen
 
-De mogelijkheid om de prestaties te bewaken is afhankelijk van een container Log Analytics-agent voor Linux die specifiek is ontwikkeld voor container Insights. Deze gespecialiseerde agent verzamelt prestatie-en gebeurtenis gegevens van alle knoop punten in het cluster en de agent wordt automatisch geïmplementeerd en geregistreerd bij de opgegeven Log Analytics-werk ruimte tijdens de implementatie. 
+De mogelijkheid om de prestaties te bewaken is afhankelijk van een in een container geplaatste Log Analytics-agent voor Linux die speciaal is ontwikkeld voor Container Insights. Deze gespecialiseerde agent verzamelt prestatie- en gebeurtenisgegevens van alle knooppunten in het cluster en de agent wordt tijdens de implementatie automatisch geïmplementeerd en geregistreerd bij de opgegeven Log Analytics-werkruimte. 
 
-De agent versie is micro soft/OMS: ciprod04202018 of hoger en wordt weer gegeven met een datum in de volgende notatie: *mmddyyyy*.
+De versie van de agent is microsoft/oms:ciprod04202018 of hoger en wordt vertegenwoordigd door een datum in de volgende indeling: *mmddyyyy*.
 
 >[!NOTE]
->Met de algemene Beschik baarheid van Windows Server-ondersteuning voor AKS, heeft een AKS-cluster met Windows Server-knoop punten een preview-agent geïnstalleerd als een daemonset pod op elk afzonderlijk Windows Server-knoop punt om logboeken te verzamelen en door te sturen naar Log Analytics. Voor metrische gegevens over prestaties wordt een Linux-knoop punt dat automatisch in het cluster wordt geïmplementeerd als onderdeel van de standaard implementatie, de gegevens verzameld en doorgestuurd naar Azure Monitor voor alle Windows-knoop punten in het cluster.
+>Met de algemene beschikbaarheid van Windows Server-ondersteuning voor AKS, heeft een AKS-cluster met Windows Server-knooppunten een preview-agent geïnstalleerd als een daemonset-pod op elk afzonderlijk Windows-serverknooppunt om logboeken te verzamelen en door te geven aan Log Analytics. Voor metrische prestatiegegevens verzamelt en doorsturen een Linux-knooppunt dat automatisch in het cluster wordt geïmplementeerd als onderdeel van de standaardimplementatie, de gegevens namens alle Windows-knooppunten in het cluster naar Azure Monitor.
 
-Wanneer een nieuwe versie van de agent wordt uitgebracht, wordt deze automatisch geüpgraded op uw beheerde Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS). Zie [Release aankondigingen](https://github.com/microsoft/docker-provider/tree/ci_feature_prod)van de agent als u wilt bijhouden welke versies er worden uitgebracht.
+Wanneer er een nieuwe versie van de agent wordt uitgebracht, wordt deze automatisch bijgewerkt op uw beheerde Kubernetes-clusters die worden gehost op Azure Kubernetes Service (AKS). Zie aankondigingen van de [agentre](https://github.com/microsoft/docker-provider/tree/ci_feature_prod)release om bij te houden welke versies worden uitgebracht.
 
 > [!NOTE]
-> Als u al een AKS-cluster hebt geïmplementeerd, hebt u bewaking ingeschakeld met behulp van de Azure CLI of een gegeven Azure Resource Manager sjabloon, zoals verderop in dit artikel wordt uitgelegd. U kunt niet gebruiken `kubectl` om de agent bij te werken, te verwijderen, opnieuw te implementeren of te implementeren.
+> Als u al een AKS-cluster hebt geïmplementeerd, hebt u bewaking ingeschakeld met behulp van de Azure CLI of een opgegeven Azure Resource Manager-sjabloon, zoals verderop in dit artikel wordt beschreven. U kunt de agent niet upgraden, verwijderen, opnieuw implementeren `kubectl` of implementeren.
 >
-> De sjabloon moet worden geïmplementeerd in dezelfde resource groep als het cluster.
+> De sjabloon moet worden geïmplementeerd in dezelfde resourcegroep als het cluster.
 
-Als u container Insights wilt inschakelen, gebruikt u een van de methoden die worden beschreven in de volgende tabel:
+Als u Container Insights wilt inschakelen, gebruikt u een van de methoden die in de volgende tabel worden beschreven:
 
-| Implementatie status | Methode | Beschrijving |
+| Implementatietoestand | Methode | Beschrijving |
 |------------------|--------|-------------|
 | Nieuw Kubernetes-cluster | [Een AKS-cluster maken met behulp van de Azure CLI](../../aks/kubernetes-walkthrough.md#create-aks-cluster)| U kunt bewaking inschakelen voor een nieuw AKS-cluster dat u maakt met behulp van de Azure CLI. |
-| | [Een AKS-cluster maken met behulp van terraform](container-insights-enable-new-cluster.md#enable-using-terraform)| U kunt bewaking inschakelen voor een nieuw AKS-cluster dat u maakt met behulp van de open source-terraform. |
-| | [Een open Shift-cluster maken met behulp van een Azure Resource Manager sjabloon](container-insights-azure-redhat-setup.md#enable-for-a-new-cluster-using-an-azure-resource-manager-template) | U kunt de bewaking inschakelen voor een nieuw open Shift-cluster dat u maakt met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
-| | [Een open Shift-cluster maken met behulp van de Azure CLI](/cli/azure/openshift#az-openshift-create) | U kunt bewaking inschakelen wanneer u een nieuw open Shift-cluster implementeert met behulp van de Azure CLI. |
+| | [Een AKS-cluster maken met behulp van Terraform](container-insights-enable-new-cluster.md#enable-using-terraform)| U kunt bewaking inschakelen voor een nieuw AKS-cluster dat u maakt met behulp van het opensource-hulpprogramma Terraform. |
+| | [Een OpenShift-cluster maken met behulp van een Azure Resource Manager sjabloon](container-insights-azure-redhat-setup.md#enable-for-a-new-cluster-using-an-azure-resource-manager-template) | U kunt bewaking inschakelen voor een nieuw OpenShift-cluster dat u maakt met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
+| | [Een OpenShift-cluster maken met behulp van de Azure CLI](/cli/azure/openshift#az_openshift_create) | U kunt bewaking inschakelen wanneer u een nieuw OpenShift-cluster implementeert met behulp van de Azure CLI. |
 | Bestaand Kubernetes-cluster | [Bewaking van een AKS-cluster inschakelen met behulp van de Azure CLI](container-insights-enable-existing-clusters.md#enable-using-azure-cli) | U kunt bewaking inschakelen voor een AKS-cluster dat al is geïmplementeerd met behulp van de Azure CLI. |
-| |[Inschakelen voor AKS-cluster met behulp van terraform](container-insights-enable-existing-clusters.md#enable-using-terraform) | U kunt bewaking inschakelen voor een AKS-cluster dat al is geïmplementeerd met behulp van de open source-terraform. |
-| | [Inschakelen voor AKS-cluster van Azure Monitor](container-insights-enable-existing-clusters.md#enable-from-azure-monitor-in-the-portal)| U kunt bewaking inschakelen voor een of meer AKS-clusters die al zijn geïmplementeerd op de pagina met meerdere clusters in Azure Monitor. |
-| | [Inschakelen vanuit AKS-cluster](container-insights-enable-existing-clusters.md#enable-directly-from-aks-cluster-in-the-portal)| U kunt de bewaking rechtstreeks vanuit een AKS-cluster inschakelen in de Azure Portal. |
-| | [Inschakelen voor AKS-cluster met behulp van een Azure Resource Manager sjabloon](container-insights-enable-existing-clusters.md#enable-using-an-azure-resource-manager-template)| U kunt bewaking inschakelen voor een AKS-cluster met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
+| |[Inschakelen voor AKS-cluster met behulp van Terraform](container-insights-enable-existing-clusters.md#enable-using-terraform) | U kunt bewaking inschakelen voor een AKS-cluster dat al is geïmplementeerd met behulp van het opensource-hulpprogramma Terraform. |
+| | [Inschakelen voor AKS-cluster vanuit Azure Monitor](container-insights-enable-existing-clusters.md#enable-from-azure-monitor-in-the-portal)| U kunt bewaking inschakelen voor een of meer AKS-clusters die al zijn geïmplementeerd vanaf de pagina met meerdere clusters in Azure Monitor. |
+| | [Inschakelen vanuit AKS-cluster](container-insights-enable-existing-clusters.md#enable-directly-from-aks-cluster-in-the-portal)| U kunt bewaking rechtstreeks vanuit een AKS-cluster inschakelen in Azure Portal. |
+| | [Inschakelen voor AKS-cluster met behulp van een Azure Resource Manager sjabloon](container-insights-enable-existing-clusters.md#enable-using-an-azure-resource-manager-template)| U kunt bewaking voor een AKS-cluster inschakelen met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
 | | [Inschakelen voor hybride Kubernetes-cluster](container-insights-hybrid-setup.md) | U kunt bewaking inschakelen voor de AKS-engine die wordt gehost op Azure Stack of voor een Kubernetes-cluster dat on-premises wordt gehost. |
-| | [Inschakelen voor Kubernetes-cluster met Arc-functionaliteit](container-insights-enable-arc-enabled-clusters.md). | U kunt bewaking inschakelen voor uw Kubernetes-clusters die buiten Azure worden gehost en zijn ingeschakeld met Azure Arc. |
-| | [Inschakelen voor open Shift-cluster met behulp van een Azure Resource Manager sjabloon](container-insights-azure-redhat-setup.md#enable-using-an-azure-resource-manager-template) | U kunt controle inschakelen voor een bestaand openstaand cluster met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
-| | [Inschakelen voor open Shift-cluster van Azure Monitor](container-insights-azure-redhat-setup.md#from-the-azure-portal) | U kunt bewaking inschakelen voor een of meer openstaande clusters die al zijn geïmplementeerd vanaf de pagina multi cluster in Azure Monitor. |
+| | [Inschakelen voor Kubernetes-cluster](container-insights-enable-arc-enabled-clusters.md)met Arc. | U kunt bewaking inschakelen voor uw Kubernetes-clusters die buiten Azure worden gehost en zijn ingeschakeld met Azure Arc. |
+| | [OpenShift-cluster inschakelen met behulp van een Azure Resource Manager sjabloon](container-insights-azure-redhat-setup.md#enable-using-an-azure-resource-manager-template) | U kunt bewaking voor een bestaand OpenShift-cluster inschakelen met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
+| | [OpenShift-cluster inschakelen vanuit Azure Monitor](container-insights-azure-redhat-setup.md#from-the-azure-portal) | U kunt bewaking inschakelen voor een of meer OpenShift-clusters die al zijn geïmplementeerd vanaf de pagina met meerdere clusters in Azure Monitor. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u bewaking hebt ingeschakeld, kunt u beginnen met het analyseren van de prestaties van uw Kubernetes-clusters die worden gehost op Azure Kubernetes service (AKS), Azure Stack of een andere omgeving. Zie [Kubernetes-cluster prestaties weer geven](container-insights-analyze.md)voor meer informatie over het gebruik van container Insights.
+Nu u bewaking hebt ingeschakeld, kunt u beginnen met het analyseren van de prestaties van uw Kubernetes-clusters die worden gehost op Azure Kubernetes Service (AKS), Azure Stack of een andere omgeving. Zie Prestaties van [Kubernetes-clusters](container-insights-analyze.md)weergeven voor meer informatie over het gebruik van Container Insights.

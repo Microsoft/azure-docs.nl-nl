@@ -11,12 +11,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: 0a72bea08052e5cd17502a21a98b41cb5582a3b9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bd982ab6dc66674e705f080511282bcfeb909872
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96493624"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787166"
 ---
 # <a name="use-the-azure-cli-to-monitor-and-scale-a-single-database-in-azure-sql-database"></a>De Azure CLI gebruiken om een individuele database in Azure SQL Database te bewaken en te schalen
 
@@ -43,7 +43,7 @@ az account set -s $subscription # ...or use 'az login'
 [!code-azurecli-interactive[main](../../../../cli_scripts/sql-database/monitor-and-scale-database/monitor-and-scale-database.sh "Monitor and scale a database in Azure SQL Database")]
 
 > [!TIP]
-> Gebruik [az sql db op list](/cli/azure/sql/db/op?#az-sql-db-op-list) voor een lijst met bewerkingen die worden uitgevoerd op de database en gebruik [az sql db op cancel](/cli/azure/sql/db/op#az-sql-db-op-cancel) om een update van de database te annuleren.
+> Gebruik [az sql db op list](/cli/azure/sql/db/op?#az_sql_db_op_list) voor een lijst met bewerkingen die worden uitgevoerd op de database en gebruik [az sql db op cancel](/cli/azure/sql/db/op#az_sql_db_op_cancel) om een update van de database te annuleren.
 
 ### <a name="clean-up-deployment"></a>Opschonen van implementatie
 
@@ -60,7 +60,7 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 | Script | Beschrijving |
 |---|---|
 | [az sql server](/cli/azure/sql/server) | Serveropdrachten. |
-| [az sql db show-usage](/cli/azure/sql#az-sql-show-usage) | Toont de gebruikte grootte voor een database. |
+| [az sql db show-usage](/cli/azure/sql#az_sql_show_usage) | Toont de gebruikte grootte voor een database. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,13 +6,13 @@ author: mksuni
 ms.author: sumuth
 ms.topic: tutorial
 ms.date: 11/25/2020
-ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: b631173ed92905870e73e6c560d90aab08476ce1
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.custom: vc, devx-track-azurecli
+ms.openlocfilehash: 0c6211f4cd647addd6f1d18a153695d16a9d9952
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107480134"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770143"
 ---
 # <a name="tutorial-deploy-wordpress-app-on-aks-with-azure-database-for-mysql---flexible-server"></a>Zelfstudie: WordPress-app implementeren op AKS met Azure Database for MySQL: flexibele server
 
@@ -60,7 +60,7 @@ In de volgende voorbeelduitvoer ziet u dat de resourcegroep is gemaakt:
 
 ## <a name="create-aks-cluster"></a>AKS-cluster maken
 
-Gebruik de opdracht [az aks create](/cli/azure/aks#az-aks-create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
+Gebruik de opdracht [az aks create](/cli/azure/aks#az_aks_create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
 
 ```azurecli-interactive
 az aks create --resource-group wordpress-project --name myAKSCluster --node-count 1 --generate-ssh-keys
@@ -73,13 +73,13 @@ Na enkele minuten is de opdracht voltooid en retourneert deze informatie over he
 
 ## <a name="connect-to-the-cluster"></a>Verbinding maken met het cluster
 
-Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli](/cli/azure/aks#az-aks-install-cli):
+Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli](/cli/azure/aks#az_aks_install_cli):
 
 ```azurecli-interactive
 az aks install-cli
 ```
 
-Gebruik de opdracht [az aks get-credentials](/cli/azure/aks#az-aks-get-credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
+Gebruik de opdracht [az aks get-credentials](/cli/azure/aks#az_aks_get_credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group wordpress-project --name myAKSCluster
@@ -121,20 +121,20 @@ De gemaakte server heeft de volgende kenmerken:
 Download de [nieuwste WordPress](https://wordpress.org/download/)-versie. Maak een nieuwe directory, ```my-wordpress-app```, voor uw project en gebruik deze eenvoudige mappenstructuur
 
 ```
-â””â”€â”€â”€my-wordpress-app
-    â””â”€â”€â”€public
-        â”œâ”€â”€â”€wp-admin
-        â”‚   â”œâ”€â”€â”€css
+└───my-wordpress-app
+    └───public
+        ├───wp-admin
+        │   ├───css
         . . . . . . .
-        â”œâ”€â”€â”€wp-content
-        â”‚   â”œâ”€â”€â”€plugins
+        ├───wp-content
+        │   ├───plugins
         . . . . . . .
-        â””â”€â”€â”€wp-includes
+        └───wp-includes
         . . . . . . .
-        â”œâ”€â”€â”€wp-config-sample.php
-        â”œâ”€â”€â”€index.php
+        ├───wp-config-sample.php
+        ├───index.php
         . . . . . . .
-    â””â”€â”€â”€ Dockerfile
+    └─── Dockerfile
 
 ```
 
@@ -327,4 +327,3 @@ az group delete --name wordpress-project --yes --no-wait
 - Leer hoe u uw [cluster kunt schalen](../../aks/tutorial-kubernetes-scale.md)
 - Leer hoe u de [flexibele MySQL-server](./quickstart-create-server-cli.md) kunt beheren
 - Leer hoe u [serverparameters kunt configureren](./how-to-configure-server-parameters-cli.md) voor uw databaseserver.
-

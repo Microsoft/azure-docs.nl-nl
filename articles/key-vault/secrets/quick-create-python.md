@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurepowershell
-ms.openlocfilehash: 2f15aa394f7a271d6b3af49f0106611c4fc943a1
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: e06881d078b4e881174c3e931f7898cb622ad7f9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107753078"
+ms.locfileid: "107766349"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-python"></a>Quickstart: Azure Key Vault-clientbibliotheek voor geheimen voor Python
 
@@ -170,7 +170,7 @@ retrieved_secret = client.get_secret(secretName)
 
 De geheime waarde bevindt zich in `retrieved_secret.value`.
 
-U kunt ook een geheim ophalen met de Azure CLI-opdracht [az keyvault secret show](/cli/azure/keyvault/secret?#az-keyvault-secret-show).
+U kunt ook een geheim ophalen met de Azure CLI-opdracht [az keyvault secret show](/cli/azure/keyvault/secret?#az_keyvault_secret_show).
 
 ### <a name="delete-a-secret"></a>Een geheim verwijderen
 
@@ -183,7 +183,7 @@ deleted_secret = poller.result()
 
 De methode `begin_delete_secret` is asynchroon en retourneert een pollerobject. Wanneer de methode `result` van de poller wordt aangeroepen, wordt er gewacht totdat deze voltooid is.
 
-U kunt controleren of het geheim is verwijderd met de Azure CLI-opdracht [az keyvault secret show](/cli/azure/keyvault/secret?#az-keyvault-secret-show).
+U kunt controleren of het geheim is verwijderd met de Azure CLI-opdracht [az keyvault secret show](/cli/azure/keyvault/secret?#az_keyvault_secret_show).
 
 Zodra een geheim is verwijderd, heeft deze nog een tijdje de status Verwijderd maar herstelbaar. Gebruik een andere geheime naam als u de code nogmaals uitvoert.
 

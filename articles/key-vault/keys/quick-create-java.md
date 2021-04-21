@@ -8,12 +8,12 @@ ms.date: 01/05/2021
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.openlocfilehash: f0933a19ecfebfde8ac43ac3e88332506e2256ec
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 75cb7b6c9225e8579561f980df10da8994257133
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750373"
+ms.locfileid: "107777181"
 ---
 # <a name="quickstart-azure-key-vault-key-client-library-for-java"></a>Quickstart: Azure Key Vault-clientbibliotheek voor sleutels voor Java
 Ga aan de slag met de Azure Key Vault-clientbibliotheek voor sleutels voor Java. Volg de onderstaande stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
@@ -176,7 +176,7 @@ Nu uw toepassing is geverifieerd, kunt u een sleutel in uw sleutelkluis maken me
 keyClient.createKey(keyName, KeyType.RSA);
 ```
 
-U kunt controleren of de sleutel is ingesteld met de opdracht [az keyvault key show](/cli/azure/keyvault/key?#az-keyvault-key-show):
+U kunt controleren of de sleutel is ingesteld met de opdracht [az keyvault key show](/cli/azure/keyvault/key?#az_keyvault_key_show):
 
 ```azurecli
 az keyvault key show --vault-name <your-unique-key-vault-name> --name myKey
@@ -201,7 +201,7 @@ SyncPoller<DeletedKey, Void> deletionPoller = keyClient.beginDeleteKey(keyName);
 deletionPoller.waitForCompletion();
 ```
 
-U kunt controleren of de sleutel is verwijderd met de opdracht [az keyvault key show](/cli/azure/keyvault/key?#az-keyvault-key-show):
+U kunt controleren of de sleutel is verwijderd met de opdracht [az keyvault key show](/cli/azure/keyvault/key?#az_keyvault_key_show):
 
 ```azurecli
 az keyvault key show --vault-name <your-unique-key-vault-name> --name myKey

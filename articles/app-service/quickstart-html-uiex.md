@@ -8,12 +8,12 @@ ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: mvc, cli-validate, seodec18
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: be555039375e2d71d00bcf8ee58898f54cc3645a
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: 603d8e642cd2e88beec6ae34094a2c6c43d179ee
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107379567"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107768896"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Een statische HTML-web-app maken in Azure
 
@@ -23,7 +23,7 @@ In deze quickstart ziet u hoe u een eenvoudige HTML+CSS-site implementeert in <a
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Maak [Cloud Shell](../cloud-shell/overview.md)snelstartmap en wijzig deze in .
+In [Cloud Shell](../cloud-shell/overview.md)maakt u een quickstart-map en wijzigt u deze in .
 
 ```bash
 mkdir quickstart
@@ -52,22 +52,22 @@ az webapp up --location westeurope --name <app_name> --html
 <summary>Problemen oplossen</summary>
 <ul>
 <li>Als de opdracht niet wordt herkend, moet u ervoor zorgen dat de Azure CLI is geïnstalleerd zoals <code>az</code> beschreven in <a href="#1-prepare-your-environment">Uw omgeving voorbereiden.</a></li>
-<li>Vervang <code>&lt;app-name&gt;</code> door een naam die uniek is in Azure ( geldige tekens zijn , en <em> <code>a-z</code> <code>0-9</code> <code>-</code> </em> ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.</li>
+<li>Vervang <code>&lt;app-name&gt;</code> door een naam die uniek is in Heel Azure <em> (geldige tekens zijn , en <code>a-z</code> <code>0-9</code> <code>-</code> </em> ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.</li>
 <li>Met het argument <code>--sku F1</code> maakt u de web-app in de prijscategorie Gratis. Laat dit argument weg om een snellere Premium-laag te gebruiken, waarmee u kosten per uur in rekening worden gebracht.</li>
 <li>Het <code>--html</code> argument geeft aan dat alle mapinhoud moet worden behandeld als statische inhoud en dat buildautomatisering moet worden uitgeschakeld.</li>
-<li>U kunt eventueel het argument <code>--location &lt;location-name&gt;</code> toevoegen, waarbij <code>&lt;location-name&gt;</code> een beschikbare Azure-regio is. U kunt een lijst met toegestane regio's voor uw Azure-account ophalen door de opdracht uit te <a href="/cli/azure/appservice#az-appservice-list-locations"> <code>az account list-locations</code> </a> voeren.</li>
+<li>U kunt eventueel het argument <code>--location &lt;location-name&gt;</code> toevoegen, waarbij <code>&lt;location-name&gt;</code> een beschikbare Azure-regio is. U kunt een lijst met toegestane regio's voor uw Azure-account ophalen door de opdracht uit te <a href="/cli/azure/appservice#az_appservice_list_locations"> <code>az account list-locations</code> </a> voeren.</li>
 </ul>
 </details>
 
 Het volledig uitvoeren van de opdracht kan even duren. 
 
 <details>
-<summary>Wat doet <code>az webapp up</code> u?</summary>
+<summary>Wat is <code>az webapp up</code> er aan de doen?</summary>
 <p>Met de opdracht <code>az webapp up</code> worden de volgende acties uitgevoerd:</p>
 <ul>
 <li>Er wordt een standaardresourcegroep gemaakt.</li>
-<li>Een standaardplan App Service maken.</li>
-<li><a href="/cli/azure/webapp#az-webapp-create">Maak een App Service app</a> met de opgegeven naam.</li>
+<li>Maak een standaard App Service abonnement.</li>
+<li><a href="/cli/azure/webapp#az_webapp_create">Maak een App Service app</a> met de opgegeven naam.</li>
 <li>Er worden via zip bestanden van de huidige werkmap naar de app <a href="/azure/app-service/deploy-zip">geïmplementeerd</a>.</li>
 <li>Tijdens het uitvoeren worden berichten over het maken van resources, logboekregistratie en ZIP-implementaties verstrekt.</li>
 </ul>
@@ -90,7 +90,7 @@ Wanneer deze is klaar, wordt informatie weergegeven die lijkt op het volgende vo
 
 </details>
 
-U hebt de waarde later `resourceGroup` nodig om resources op [te](#6-clean-up-resources) schonen.
+U hebt de waarde `resourceGroup` later nodig om resources op [te](#6-clean-up-resources) schonen.
 
 <hr/>
 
@@ -106,7 +106,7 @@ De pagina wordt als een web-app uitgevoerd in Azure App Service.
 
 ## <a name="4-update-and-redeploy-the-app"></a>4. De app bijwerken en opnieuw installeren
 
-Typ in Cloud Shell om **de** `nano index.html` nanoteksteditor te openen. 
+Typ in Cloud Shell **om de** `nano index.html` nanoteksteditor te openen. 
 
 Wijzig in `<h1>` de koptag 'Azure App Service - Sample Static HTML Site' in 'Azure App Service'.
 
@@ -116,7 +116,7 @@ Wijzig in `<h1>` de koptag 'Azure App Service - Sample Static HTML Site' in 'Azu
 
 **Sluit** nano af met behulp van de opdracht `^X` .
 
-Ployer de app opnieuw met de `az webapp up` opdracht .
+Voer de app opnieuw uit met de `az webapp up` opdracht .
 
 ```bash
 az webapp up --html

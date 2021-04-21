@@ -8,12 +8,12 @@ ms.date: 03/29/2021
 ms.author: victorh
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d53f4b640154e4d7b02115d5043b37f6bb6e89ba
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 390fdd4d9e9d0bc62589484ab0c4ba7468bcaf4b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105731136"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107773095"
 ---
 # <a name="enable-web-application-firewall-using-the-azure-cli"></a>Web Application Firewall inschakelen met behulp van Azure CLI
 
@@ -38,7 +38,7 @@ U kunt deze procedure desgewenst voltooien met behulp van [Azure PowerShell](tut
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Gebruik de opdracht [az group create](/cli/azure/group#az-group-create) om een Azure-resourcegroep met de naam *myResourceGroupAG* te maken.
+Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Gebruik de opdracht [az group create](/cli/azure/group#az_group_create) om een Azure-resourcegroep met de naam *myResourceGroupAG* te maken.
 
 ```azurecli-interactive
 az group create --name myResourceGroupAG --location eastus
@@ -107,9 +107,9 @@ Het kan enkele minuten duren voordat de toepassingsgateway is gemaakt. Nadat de 
 
 ## <a name="create-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset maken
 
-In dit voorbeeld maakt u een virtuele-machineschaalset die twee servers biedt voor de back-endpool in de toepassingsgateway. De virtuele machines in de schaalset worden gekoppeld aan het subnet *myBackendSubnet*. U kunt [az vmss create](/cli/azure/vmss#az-vmss-create) gebruiken om de schaalset te maken.
+In dit voorbeeld maakt u een virtuele-machineschaalset die twee servers biedt voor de back-endpool in de toepassingsgateway. De virtuele machines in de schaalset worden gekoppeld aan het subnet *myBackendSubnet*. U kunt [az vmss create](/cli/azure/vmss#az_vmss_create) gebruiken om de schaalset te maken.
 
-Vervang \<username> en \<password> door uw waarden voordat u dit uitvoert.
+Vervang \<username> en door uw waarden voordat u dit gaat \<password> uitvoeren.
 
 ```azurecli-interactive
 az vmss create \
@@ -145,7 +145,7 @@ In dit artikel gebruikt de toepassingsgateway een opslagaccount voor het opslaan
 
 ### <a name="create-a-storage-account"></a>Create a storage account
 
-Maak een opslagaccount met de naam *myagstore1* met [az storage account create](/cli/azure/storage/account#az-storage-account-create).
+Maak een opslagaccount met de naam *myagstore1* met [az storage account create](/cli/azure/storage/account#az_storage_account_create).
 
 ```azurecli-interactive
 az storage account create \
@@ -158,7 +158,7 @@ az storage account create \
 
 ### <a name="configure-diagnostics"></a>Diagnostische gegevens configureren
 
-Configureer diagnostische gegevens om gegevens vast te leggen in de logboeken ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog en ApplicationGatewayFirewallLog. Vervang `<subscriptionId>` door uw abonnements-id en configureer vervolgens de diagnostische gegevens met [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create).
+Configureer diagnostische gegevens om gegevens vast te leggen in de logboeken ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog en ApplicationGatewayFirewallLog. Vervang `<subscriptionId>` door uw abonnements-id en configureer vervolgens de diagnostische gegevens met [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_create).
 
 ```azurecli-interactive
 appgwid=$(az network application-gateway show --name myAppGateway --resource-group myResourceGroupAG --query id -o tsv)
@@ -172,7 +172,7 @@ az monitor diagnostic-settings create --name appgwdiag --resource $appgwid \
 
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 
-Gebruik [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) om het openbare IP-adres van de toepassingsgateway op te halen. Kopieer het openbare IP-adres en plak het in de adresbalk van de browser.
+Gebruik [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show) om het openbare IP-adres van de toepassingsgateway op te halen. Kopieer het openbare IP-adres en plak het in de adresbalk van de browser.
 
 ```azurecli-interactive
 az network public-ip show \

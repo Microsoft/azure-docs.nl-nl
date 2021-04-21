@@ -5,12 +5,12 @@ ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 06/18/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
-ms.openlocfilehash: de8f0e64189014b303463dd8bd6c827990b88f9a
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 63194ab87e0f2228b8585e962394aa1ebfff48d6
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102178453"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767242"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Een Ruby- en een Postgres-app maken in Azure App Service op Linux
 
@@ -147,7 +147,7 @@ Wanneer de opdracht is voltooid, zoekt u de uitvoerregels die beginnen met `Ran 
 
 <!-- not all locations support az postgres up -->
 > [!TIP]
-> `--location <location-name>` kan worden ingesteld op een van de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/). U kunt de regio's beschikbaar maken voor uw abonnement met de opdracht [`az account list-locations`](/cli/azure/account#az-account-list-locations). Voor productie-apps plaatst u uw database en uw app in dezelfde locatie.
+> `--location <location-name>` kan worden ingesteld op een van de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/). U kunt de regio's beschikbaar maken voor uw abonnement met de opdracht [`az account list-locations`](/cli/azure/account#az_account_list_locations). Voor productie-apps plaatst u uw database en uw app in dezelfde locatie.
 
 ## <a name="connect-app-to-azure-postgres"></a>App verbinden met Azure Postgres
 
@@ -255,7 +255,7 @@ In deze stap implementeert u de met Postgres verbonden Rails-toepassing naar Azu
 
 ### <a name="configure-database-settings"></a>Database-instellingen configureren
 
-In App Service stelt u omgevingsvariabelen in als _app-instellingen_ met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) in de Cloud Shell.
+In App Service stelt u omgevingsvariabelen in als _app-instellingen_ met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) in de Cloud Shell.
 
 De volgende opdracht in de Cloud Shell configureert de app-instellingen `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, en `DB_PASSWORD`. Vervang de tijdelijke aanduidingen _&lt;appname>_ en _&lt;postgres-server-name>_ .
 

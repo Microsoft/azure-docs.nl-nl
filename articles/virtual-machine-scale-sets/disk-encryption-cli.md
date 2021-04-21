@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 10/15/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: e6630cbb44157f25bd2cbfcff25ec3132c74c61c
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d347be4e6727cdda659620befe20824678160020
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105565568"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792431"
 ---
 # <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli"></a>OS en gekoppelde gegevensschijven versleutelen in een virtuele-machineschaalset met Azure CLI
 
@@ -87,7 +87,7 @@ az keyvault update --name $keyvault_name --enabled-for-disk-encryption
 
 ## <a name="enable-encryption"></a>Versleuteling inschakelen
 
-Als u VM-exemplaren in een schaalset wilt versleutelen, moet u eerst bepaalde informatie over de Resource-ID van de sleutelkluis ophalen met [az keyvault show](/cli/azure/keyvault#ext-keyvault-preview-az-keyvault-show). Deze variabelen worden gebruikt om het versleutelingsproces vervolgens te starten met [az vmss encryption enable](/cli/azure/vmss/encryption#az-vmss-encryption-enable):
+Als u VM-exemplaren in een schaalset wilt versleutelen, moet u eerst bepaalde informatie over de Resource-ID van de sleutelkluis ophalen met [az keyvault show](/cli/azure/keyvault#ext-keyvault-preview-az-keyvault-show). Deze variabelen worden gebruikt om het versleutelingsproces vervolgens te starten met [az vmss encryption enable](/cli/azure/vmss/encryption#az_vmss_encryption_enable):
 
 ```azurecli-interactive
 # Get the resource ID of the Key Vault
@@ -103,7 +103,7 @@ az vmss encryption enable \
 
 Het kan een paar minuten duren voordat het versleutelingsproces wordt gestart.
 
-Als de schaalset een upgradebeleid heeft voor de schaalset die in een eerdere stap is gemaakt en op *automatisch* is ingesteld, wordt het versleutelingsproces automatisch gestart door de VM-exemplaren. Op schaalsets waarbij het upgradebeleid is ingesteld op handmatig, start u het versleutelingsbeleid voor de VM-exemplaren met [AZ vmss update-instances](/cli/azure/vmss#az-vmss-update-instances).
+Als de schaalset een upgradebeleid heeft voor de schaalset die in een eerdere stap is gemaakt en op *automatisch* is ingesteld, wordt het versleutelingsproces automatisch gestart door de VM-exemplaren. Op schaalsets waarbij het upgradebeleid is ingesteld op handmatig, start u het versleutelingsbeleid voor de VM-exemplaren met [AZ vmss update-instances](/cli/azure/vmss#az_vmss_update_instances).
 
 ### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Versleuteling inschakelen met KEK om de sleutel in te pakken
 
@@ -131,7 +131,7 @@ https://[keyvault-name].vault.azure.net/keys/[kekname]/[kek-unique-id]
 
 ## <a name="check-encryption-progress"></a>Voortgang van de versleuteling controleren
 
-Als u de status van de schijfversleuteling wilt controleren, gebruikt u [az vmss encryption show](/cli/azure/vmss/encryption#az-vmss-encryption-show):
+Als u de status van de schijfversleuteling wilt controleren, gebruikt u [az vmss encryption show](/cli/azure/vmss/encryption#az_vmss_encryption_show):
 
 ```azurecli-interactive
 az vmss encryption show --resource-group myResourceGroup --name myScaleSet
@@ -166,7 +166,7 @@ Wanneer VM-exemplaren worden versleuteld, wordt in de statuscode gerapporteerd *
 
 ## <a name="disable-encryption"></a>Versleuteling uitschakelen
 
-Als u geen schijven van versleutelde VM-exemplaren meer wilt gebruiken, kunt u versleuteling als volgt uitschakelen met [AZ vmss encryption disable](/cli/azure/vmss/encryption#az-vmss-encryption-disable):
+Als u geen schijven van versleutelde VM-exemplaren meer wilt gebruiken, kunt u versleuteling als volgt uitschakelen met [AZ vmss encryption disable](/cli/azure/vmss/encryption#az_vmss_encryption_disable):
 
 ```azurecli-interactive
 az vmss encryption disable --resource-group myResourceGroup --name myScaleSet

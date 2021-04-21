@@ -4,12 +4,12 @@ description: Met dit script maakt u een Batch-job en voegt u een reeks taken toe
 ms.topic: sample
 ms.date: 12/12/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b67925f48a9d2dbe0b4559d46d783b500e7a0773
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8e51fa96370b46c9a5a5d5ed6fd7593a06e45430
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93100912"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107768157"
 ---
 # <a name="cli-example-run-a-job-and-tasks-with-azure-batch"></a>CLI-voorbeeld: Een job en taken uitvoeren met Azure Batch
 
@@ -37,16 +37,16 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Hiermee wordt de Batch-account gemaakt. |
-| [az batch account login](/cli/azure/batch/account#az-batch-account-login) | Hiermee wordt authenticatie uitgevoerd met het opgegeven Batch-account voor verdere interactie met de CLI.  |
-| [az batch pool create](/cli/azure/batch/pool#az-batch-pool-create) | Hiermee wordt een groep rekenknooppunten gemaakt.  |
-| [az batch job create](/cli/azure/batch/job#az-batch-job-create) | Hiermee wordt een Batch-taak gemaakt.  |
-| [az batch task create](/cli/azure/batch/task#az-batch-task-create) | Hiermee voegt u een taak toe aan de opgegeven Batch-taak.  |
-| [az batch job set](/cli/azure/batch/job#az-batch-job-set) | Hiermee worden eigenschappen van een Batch-taak bijgewerkt.  |
-| [az batch job show](/cli/azure/batch/job#az-batch-job-show) | Hiermee worden details van een opgegeven Batch-taak opgehaald.  |
-| [az batch task show](/cli/azure/batch/task#az-batch-task-show) | Haalt de details van een taak op uit de opgegeven Batch-job.  |
-| [az group delete](/cli/azure/group#az-group-delete) | Hiermee verwijdert u een resourcegroep met inbegrip van alle geneste resources. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az batch account create](/cli/azure/batch/account#az_batch_account_create) | Hiermee wordt de Batch-account gemaakt. |
+| [az batch account login](/cli/azure/batch/account#az_batch_account_login) | Hiermee wordt authenticatie uitgevoerd met het opgegeven Batch-account voor verdere interactie met de CLI.  |
+| [az batch pool create](/cli/azure/batch/pool#az_batch_pool_create) | Hiermee wordt een groep rekenknooppunten gemaakt.  |
+| [az batch job create](/cli/azure/batch/job#az_batch_job_create) | Hiermee wordt een Batch-taak gemaakt.  |
+| [az batch task create](/cli/azure/batch/task#az_batch_task_create) | Hiermee voegt u een taak toe aan de opgegeven Batch-taak.  |
+| [az batch job set](/cli/azure/batch/job#az_batch_job_set) | Hiermee worden eigenschappen van een Batch-taak bijgewerkt.  |
+| [az batch job show](/cli/azure/batch/job#az_batch_job_show) | Hiermee worden details van een opgegeven Batch-taak opgehaald.  |
+| [az batch task show](/cli/azure/batch/task#az_batch_task_show) | Haalt de details van een taak op uit de opgegeven Batch-job.  |
+| [az group delete](/cli/azure/group#az_group_delete) | Hiermee verwijdert u een resourcegroep met inbegrip van alle geneste resources. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

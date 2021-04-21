@@ -1,178 +1,181 @@
 ---
-title: Azure Active Directory standaard instellingen voor beveiliging
-description: Standaard beleid voor beveiliging waarmee organisaties worden beschermd tegen algemene aanvallen in azure AD
+title: Azure Active Directory standaardinstellingen voor beveiliging
+description: Standaardbeleidsregels voor beveiliging die organisaties helpen beschermen tegen veelvoorkomende aanvallen in Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/13/2020
+ms.date: 04/20/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: efaf6060c0b09e071546038d9e30f2c8065059e7
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: efa88e1be5c5df5dd09cb5a97c8ece352496ccdb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98600141"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107769693"
 ---
-# <a name="what-are-security-defaults"></a>Wat zijn de standaard beveiligings instellingen?
+# <a name="what-are-security-defaults"></a>Wat zijn standaardinstellingen voor beveiliging?
 
-Het beheren van beveiliging kan lastig zijn met veelvoorkomende identiteits-gerelateerde aanvallen zoals wachtwoord spray, herhaling en phishing meer en populairder. De standaard instellingen voor beveiliging maken het gemakkelijker om uw organisatie te beschermen tegen deze aanvallen met vooraf geconfigureerde beveiliging:
+Het beheren van beveiliging kan lastig zijn omdat veelvoorkomende identiteitsgerelateerde aanvallen, zoals wachtwoord- en replayaanvallen en phishing, steeds populairder worden. Standaardinstellingen voor beveiliging maken het gemakkelijker om uw organisatie te beschermen tegen deze aanvallen met vooraf geconfigureerde beveiligingsinstellingen:
 
 - Vereisen dat alle gebruikers zich registreren voor Azure AD Multi-Factor Authentication.
-- Beheerders verplichten om multi-factor Authentication uit te voeren.
-- Verouderde verificatie protocollen blok keren.
-- Gebruikers verplichten om multi-factor Authentication zo nodig uit te voeren.
-- Beschermde activiteiten beveiligen, zoals toegang tot de Azure Portal.
+- Vereisen dat beheerders meervoudige verificatie uitvoeren.
+- Verouderde verificatieprotocollen blokkeren.
+- Gebruikers verplichten om multi-factor authentication uit te voeren wanneer dat nodig is.
+- Bevoorrechte activiteiten beveiligen, zoals toegang tot Azure Portal.
 
-![Scherm afbeelding van de Azure Portal met de wissel knop voor het inschakelen van standaard instellingen voor beveiliging](./media/concept-fundamentals-security-defaults/security-defaults-azure-ad-portal.png)
+![Schermopname van de Azure Portal met de schakelknop om de standaardinstellingen voor beveiliging in te schakelen](./media/concept-fundamentals-security-defaults/security-defaults-azure-ad-portal.png)
  
-Meer informatie over de beschik bare standaard instellingen voor de beveiliging vindt u in het blog bericht van Alex Weinert, waarin de [standaard instellingen voor beveiliging worden geïntroduceerd](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-security-defaults/ba-p/1061414).
+Meer informatie over waarom standaardinstellingen voor beveiliging beschikbaar worden gesteld, vindt u in het blogbericht Introducing security defaults (Introductie [van standaardinstellingen voor beveiliging)](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-security-defaults/ba-p/1061414)van Alex Weinert.
 
 ## <a name="availability"></a>Beschikbaarheid
 
-Micro soft maakt standaard beveiligings instellingen voor iedereen beschikbaar. Het doel is om ervoor te zorgen dat alle organisaties een basis niveau van beveiliging hebben ingeschakeld zonder extra kosten. U kunt de standaard instellingen voor beveiliging inschakelen in de Azure Portal. Als uw Tenant is gemaakt op of na 22 oktober 2019, is het mogelijk dat de standaard instellingen voor de beveiliging al zijn ingeschakeld in uw Tenant. Als u al onze gebruikers wilt beveiligen, worden de standaard instellingen voor de beveiliging geïmplementeerd naar alle nieuwe tenants die zijn gemaakt.
+Microsoft stelt standaardinstellingen voor beveiliging beschikbaar voor iedereen. Het doel is ervoor te zorgen dat voor alle organisaties een basisbeveiligingsniveau zonder extra kosten is ingeschakeld. U kunt de standaardinstellingen voor beveiliging in de Azure Portal. Als uw tenant is gemaakt op of na 22 oktober 2019, zijn de standaardinstellingen voor beveiliging mogelijk al ingeschakeld in uw tenant. Om al onze gebruikers te beschermen, worden de standaardinstellingen voor beveiliging uitgerold voor alle nieuwe tenants die worden gemaakt.
 
-### <a name="whos-it-for"></a>Voor wie is dit van toepassing?
+### <a name="whos-it-for"></a>Voor wie is het?
 
-- Als u een organisatie bent die uw beveiligings postuur wil verg Roten, maar u niet weet hoe of waar u moet beginnen, zijn de standaard instellingen voor de beveiliging.
-- Als u een organisatie bent die gebruikmaakt van de gratis laag van Azure Active Directory-licentie verlening, zijn de standaard instellingen voor de beveiliging.
+- Als u een organisatie bent die uw beveiligingsstatus wil verhogen, maar u niet weet hoe of waar u moet beginnen, zijn de standaardinstellingen voor beveiliging voor u.
+- Als u een organisatie bent die gebruikmaakt van de gratis laag van Azure Active Directory licenties, zijn de standaardinstellingen voor beveiliging voor u.
 
 ### <a name="who-should-use-conditional-access"></a>Wie moet voorwaardelijke toegang gebruiken?
 
-- Als u momenteel gebruikmaakt van beleids regels voor voorwaardelijke toegang om de signalen samen te brengen, beslissingen te nemen en organisatie beleid af te dwingen, zijn de standaard instellingen voor beveiliging waarschijnlijk niet geschikt voor u. 
-- Als u een organisatie bent met Azure Active Directory Premium licenties, zijn de standaard instellingen voor beveiliging waarschijnlijk niet geschikt voor u.
-- Als uw organisatie complexe beveiligings vereisten heeft, moet u rekening houden met voorwaardelijke toegang.
+- Als u een organisatie bent die momenteel gebruik maakt van beleidsregels voor voorwaardelijke toegang om signalen samen te brengen, beslissingen te nemen en organisatiebeleid af te dwingen, zijn de standaardinstellingen voor beveiliging waarschijnlijk niet goed voor u. 
+- Als u een organisatie bent met Azure Active Directory Premium licenties, zijn de standaardinstellingen voor beveiliging waarschijnlijk niet goed voor u.
+- Als uw organisatie complexe beveiligingsvereisten heeft, moet u voorwaardelijke toegang overwegen.
 
-## <a name="policies-enforced"></a>Beleids regels afgedwongen
+## <a name="policies-enforced"></a>Afgedwongen beleid
 
-### <a name="unified-multi-factor-authentication-registration"></a>Registratie Unified Multi-Factor Authentication
+### <a name="unified-multi-factor-authentication-registration"></a>Unified Multi-Factor Authentication-registratie
 
-Alle gebruikers in uw Tenant moeten zich registreren voor multi-factor Authentication (MFA) in de vorm van de Azure AD-Multi-Factor Authentication. Gebruikers hebben 14 dagen de tijd om zich te registreren voor Azure AD Multi-Factor Authentication met behulp van de Microsoft Authenticator-app. Nadat de 14 dagen zijn verstreken, kan de gebruiker zich pas aanmelden nadat de registratie is voltooid. De 14-daagse periode van een gebruiker begint na de eerste geslaagde interactieve aanmelding nadat de standaard instellingen voor de beveiliging zijn ingeschakeld.
+Alle gebruikers in uw tenant moeten zich registreren voor Meervoudige verificatie (MFA) in de vorm van Azure AD Multi-Factor Authentication. Gebruikers hebben 14 dagen de tijd om zich te registreren voor Azure AD Multi-Factor Authentication met behulp van de Microsoft Authenticator app. Nadat de 14 dagen zijn verstreken, kan de gebruiker zich pas aanmelden als de registratie is voltooid. De periode van 14 dagen begint na de eerste geslaagde interactieve aanmelding nadat de standaardinstellingen voor beveiliging zijn ingeschakeld.
 
 ### <a name="protecting-administrators"></a>Beheerders beveiligen
 
-Gebruikers met bevoorrechte toegang hebben meer toegang tot uw omgeving. Als gevolg van de kracht van deze accounts, moet u deze met speciale zorg behandelen. Een gemeen schappelijke methode voor het verbeteren van de beveiliging van geprivilegieerde accounts is het vereisen van een sterkere vorm van account verificatie voor het aanmelden. In azure AD kunt u een sterkere account verificatie krijgen door multi-factor Authentication te vereisen.
+Gebruikers met bevoegde toegang hebben meer toegang tot uw omgeving. Vanwege de kracht die deze accounts hebben, moet u ze met speciale zorg behandelen. Een veelgebruikte methode voor het verbeteren van de beveiliging van bevoegde accounts is het vereisen van een sterkere vorm van accountverificatie voor aanmelding. In Azure AD kunt u een sterkere accountverificatie krijgen door meervoudige verificatie te vereisen.
 
-Nadat de registratie met Azure AD Multi-Factor Authentication is voltooid, moeten de volgende negen Azure AD-beheerders rollen extra authenticatie uitvoeren elke keer dat ze zich aanmelden:
+Nadat de registratie bij Azure AD Multi-Factor Authentication is voltooid, moeten de volgende negen Azure AD-beheerdersrollen extra verificatie uitvoeren telkens wanneer ze zich aanmelden:
 
 - Globale beheerder
 - SharePoint-beheerder
 - Exchange-beheerder
-- Beheerder van voorwaardelijke toegang
+- Beheerder voor voorwaardelijke toegang
 - Beveiligingsbeheerder
-- Helpdesk beheerder
+- Helpdeskbeheerder
 - Factureringsbeheerder
 - Gebruikersbeheerder
-- Verificatie beheerder
+- Verificatiebeheerder
+
+> [!WARNING]
+> Zorg ervoor dat aan uw directory ten minste twee accounts met globale beheerdersbevoegdheden zijn toegewezen. Dit helpt in het geval dat één globale beheerder is vergrendeld. Zie het artikel Accounts voor noodtoegang beheren [in Azure AD voor meer informatie.](../roles/security-emergency-access.md)
 
 ### <a name="protecting-all-users"></a>Alle gebruikers beveiligen
 
-We denken meestal dat beheerders accounts de enige accounts zijn die extra authenticatie lagen nodig hebben. Beheerders hebben brede toegang tot gevoelige informatie en kunnen wijzigingen aanbrengen in instellingen voor het hele abonnement. Maar aanvallers richten zich vaak op eind gebruikers. 
+We denken vaak dat beheerdersaccounts de enige accounts zijn die extra verificatielagen nodig hebben. Beheerders hebben brede toegang tot gevoelige informatie en kunnen wijzigingen aanbrengen in instellingen voor het hele abonnement. Maar aanvallers richten zich vaak op eindgebruikers. 
 
-Wanneer deze aanvallers toegang krijgen, kunnen ze namens de houder van het oorspronkelijke account toegang tot bevoegde informatie vragen. Ze kunnen de volledige directory zelfs downloaden om een phishing-aanval uit te voeren op uw hele organisatie. 
+Nadat deze aanvallers toegang hebben, kunnen ze namens de oorspronkelijke accounthouder toegang aanvragen tot bevoegde informatie. Ze kunnen zelfs de volledige directory downloaden om een phishing-aanval uit te voeren op uw hele organisatie. 
 
-Een gemeen schappelijke methode voor het verbeteren van de beveiliging van alle gebruikers is het vereisen van een sterkere vorm van account verificatie, zoals Multi-Factor Authentication, voor iedereen. Nadat gebruikers Multi-Factor Authentication registratie hebben voltooid, wordt de gebruiker gevraagd om extra verificatie wanneer dit nodig is. Gebruikers worden primair gevraagd wanneer ze worden geverifieerd met een nieuw apparaat of nieuwe toepassing, of bij het uitvoeren van kritieke rollen en taken. Deze functionaliteit beveiligt alle toepassingen die zijn geregistreerd bij Azure AD met inbegrip van SaaS-toepassingen.
+Een veelgebruikte methode voor het verbeteren van de beveiliging voor alle gebruikers is het vereisen van een sterkere vorm van accountverificatie, zoals Multi-Factor Authentication, voor iedereen. Nadat gebruikers de registratie van Multi-Factor Authentication hebben voltooid, wordt hen indien nodig om aanvullende verificatie gevraagd. Gebruikers wordt voornamelijk gevraagd wanneer ze zich verifiëren met behulp van een nieuw apparaat of een nieuwe toepassing of bij het uitvoeren van kritieke rollen en taken. Met deze functionaliteit worden alle toepassingen beschermd die zijn geregistreerd bij Azure AD, inclusief SaaS-toepassingen.
 
-### <a name="blocking-legacy-authentication"></a>Verouderde verificatie blok keren
+### <a name="blocking-legacy-authentication"></a>Verouderde verificatie blokkeren
 
-Azure AD biedt ondersteuning voor diverse verificatie protocollen, waaronder verouderde verificatie, om uw gebruikers eenvoudig toegang te geven tot uw Cloud-apps. *Verouderde verificatie* is een term die verwijst naar een verificatie aanvraag die wordt gedaan door:
+Om uw gebruikers eenvoudig toegang te geven tot uw cloud-apps, ondersteunt Azure AD verschillende verificatieprotocollen, waaronder verouderde verificatie. *Verouderde verificatie* is een term die verwijst naar een verificatieaanvraag die wordt gedaan door:
 
 - Clients die geen moderne verificatie gebruiken (bijvoorbeeld een Office 2010-client).
-- Elke client die gebruikmaakt van oudere e-mail protocollen, zoals IMAP, SMTP of POP3.
+- Elke client die gebruikmaakt van oudere e-mailprotocollen, zoals IMAP, SMTP of POP3.
 
-De meeste pogingen om zich aan te melden, zijn van verouderde verificatie. Verouderde verificatie biedt geen ondersteuning voor Multi-Factor Authentication. Zelfs als er een Multi-Factor Authentication beleid is ingeschakeld in uw directory, kan een aanvaller zich verifiëren met behulp van een ouder protocol en Multi-Factor Authentication overs Laan. 
+Tegenwoordig zijn de meeste mislukte aanmeldingspogingen afkomstig van verouderde verificatie. Verouderde verificatie biedt geen ondersteuning voor Multi-Factor Authentication. Zelfs als u een Multi-Factor Authentication-beleid hebt ingeschakeld in uw directory, kan een aanvaller zich verifiëren met behulp van een ouder protocol en Multi-Factor Authentication omzeilen. 
 
-Nadat de standaard instellingen voor beveiliging zijn ingeschakeld in uw Tenant, worden alle verificatie aanvragen die door een ouder protocol worden uitgevoerd, geblokkeerd. Standaard instellingen voor beveiliging blokkeert Exchange Active Sync basis verificatie.
+Nadat de standaardinstellingen voor beveiliging zijn ingeschakeld in uw tenant, worden alle verificatieaanvragen van een ouder protocol geblokkeerd. Standaardinstellingen voor beveiliging blokkeert basisverificatie voor Exchange Active Sync.
 
 > [!WARNING]
-> Voordat u standaard instellingen voor beveiliging inschakelt, moet u ervoor zorgen dat uw beheerders geen oudere verificatie protocollen gebruiken. Zie voor meer informatie [hoe u de verouderde verificatie verlaat](concept-fundamentals-block-legacy-authentication.md).
+> Voordat u de standaardinstellingen voor beveiliging inschakelen, moet u ervoor zorgen dat uw beheerders geen oudere verificatieprotocollen gebruiken. Zie Verouderde verificatie voor meer [informatie.](concept-fundamentals-block-legacy-authentication.md)
 
-- [Een multifunctioneel apparaat of toepassing instellen om e-mail te verzenden met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
+- [Een apparaat of toepassing met meerdere functies instellen voor het verzenden van e-mail met behulp van Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 
-### <a name="protecting-privileged-actions"></a>Beschermde acties beveiligen
+### <a name="protecting-privileged-actions"></a>Bevoorrechte acties beveiligen
 
-Organisaties gebruiken verschillende Azure-Services die worden beheerd via de Azure Resource Manager-API, waaronder:
+Organisaties gebruiken verschillende Azure-services die worden beheerd via de Azure Resource Manager API, waaronder:
 
 - Azure Portal 
 - Azure PowerShell 
 - Azure CLI
 
-Het gebruik van Azure Resource Manager voor het beheren van uw services is een zeer geprivilegieerde actie. Azure Resource Manager kunt de configuratie van de Tenant breed wijzigen, zoals service-instellingen en abonnements facturering. Verificatie met één factor is kwetsbaar voor diverse aanvallen zoals phishing en wachtwoord spray. 
+Het Azure Resource Manager voor het beheren van uw services is een zeer bevoorrechte actie. Azure Resource Manager kunt configuraties voor de hele tenant wijzigen, zoals service-instellingen en abonnementsfacturering. Enkelvoudige verificatie is kwetsbaar voor verschillende aanvallen, zoals phishing en wachtwoordspray. 
 
-Het is belang rijk om de identiteit te verifiëren van gebruikers die toegang willen hebben Azure Resource Manager en om de configuraties bij te werken. U kunt hun identiteit verifiëren door extra verificatie te vereisen voordat u toegang toestaat.
+Het is belangrijk om de identiteit te controleren van gebruikers die toegang willen Azure Resource Manager en configuraties bij te werken. U verifieert hun identiteit door extra verificatie te vereisen voordat u toegang toestaat.
 
-Nadat u de standaard instellingen voor beveiliging in uw Tenant hebt ingeschakeld, moet elke gebruiker die toegang heeft tot de Azure Portal, Azure PowerShell of de Azure CLI, aanvullende verificatie volt ooien. Dit beleid is van toepassing op alle gebruikers die toegang hebben tot Azure Resource Manager, of het nu een beheerder of een gebruiker is. 
-
-> [!NOTE]
-> De pre-2017 Exchange Online-tenants hebben moderne verificatie standaard uitgeschakeld. Om te voor komen dat een aanmeldings proces tijdens het verifiëren via deze tenants mogelijk is, moet u [moderne verificatie inschakelen](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
+Nadat u de standaardinstellingen voor beveiliging in uw tenant hebt ingeschakeld, moet elke gebruiker die toegang heeft tot de Azure Portal, Azure PowerShell of de Azure CLI aanvullende verificatie voltooien. Dit beleid geldt voor alle gebruikers die toegang hebben tot Azure Resource Manager, ongeacht of ze een beheerder of een gebruiker zijn. 
 
 > [!NOTE]
-> Het Azure AD Connect synchronisatie account wordt uitgesloten van de standaard instellingen voor beveiliging en wordt niet gevraagd om u te registreren voor of om multi-factor Authentication uit te voeren. Organisaties mogen dit account niet voor andere doel einden gebruiken.
+> Voor Exchange Online-tenants van vóór 2017 is moderne verificatie standaard uitgeschakeld. Om de mogelijkheid van een aanmeldingslus tijdens de verificatie via deze tenants te voorkomen, moet u moderne [verificatie inschakelen.](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)
+
+> [!NOTE]
+> Het Azure AD Connect synchronisatieaccount wordt uitgesloten van de standaardinstellingen voor beveiliging en wordt niet gevraagd om te registreren voor meervoudige verificatie of om deze uit te voeren. Organisaties mogen dit account niet gebruiken voor andere doeleinden.
 
 ## <a name="deployment-considerations"></a>Overwegingen bij de implementatie
 
-De volgende aanvullende overwegingen zijn gerelateerd aan de implementatie van standaard instellingen voor beveiliging.
+De volgende aanvullende overwegingen hebben betrekking op de implementatie van standaardinstellingen voor beveiliging.
 
 ### <a name="authentication-methods"></a>Verificatiemethoden
 
-Met deze gratis standaard beveiligings instellingen is registratie en gebruik van Azure AD-Multi-Factor Authentication toegestaan **door alleen de Microsoft Authenticator app te gebruiken met behulp van meldingen**. Voorwaardelijke toegang staat het gebruik toe van elke verificatie methode die de beheerder inschakelt.
+Deze standaardinstellingen voor gratis beveiliging staan registratie en gebruik van Azure AD Multi-Factor Authentication toe met behulp van alleen de **Microsoft Authenticator-app met behulp van meldingen**. Met voorwaardelijke toegang kan elke verificatiemethode worden gebruikt die de beheerder wil inschakelen.
 
 | Methode | Standaardinstellingen voor de beveiliging | Voorwaardelijke toegang |
 | --- | --- | --- |
 | Melding via mobiele app | X | X |
-| Verificatie code van de mobiele app of het hardware-token | X * * | X |
-| SMS-bericht naar telefoon |   | X |
+| Verificatiecode van mobiele app of hardware-token | X** | X |
+| Sms-bericht naar telefoon |   | X |
 | Bellen naar telefoon |   | X |
-| App-wachtwoorden |   | X * * * |
+| App-wachtwoorden |   | X*** |
 
-- * * Gebruikers kunnen verificatie codes van de app Microsoft Authenticator gebruiken, maar kunnen ze alleen registreren met de meldings optie.
-- App-wacht woorden zijn alleen beschikbaar in MFA per gebruiker met verouderde verificatie scenario's als deze zijn ingeschakeld door beheerders.
+- ** Gebruikers kunnen verificatiecodes van de app Microsoft Authenticator gebruiken, maar kunnen zich alleen registreren met behulp van de meldingsoptie.
+- App-wachtwoorden zijn alleen beschikbaar in MFA per gebruiker met verouderde verificatiescenario's alleen als ingeschakeld door beheerders.
 
-### <a name="disabled-mfa-status"></a>Status van uitgeschakeld MFA
+### <a name="disabled-mfa-status"></a>MFA-status uitgeschakeld
 
-Als uw organisatie een vorige gebruiker van Azure AD Multi-Factor Authentication op basis van een gebruiker is, wordt niet gealarmd om gebruikers in de status **ingeschakeld** of **afgedwongen** te zien als u de multi-factor Authentication-status pagina bekijkt. **Uitgeschakeld** is de juiste status voor gebruikers die gebruikmaken van de standaard instellingen of Azure AD-multi-factor Authentication op basis van voorwaardelijke toegang.
+Als uw organisatie een eerdere gebruiker is van Azure AD Multi-Factor Authentication per gebruiker,  hoeft  u zich geen zorgen te maken dat gebruikers met de status Ingeschakeld of Afgedwongen niet worden weergegeven als u de pagina Multi-Factor Authentication-status bekijkt. **Uitgeschakeld** is de juiste status voor gebruikers die gebruikmaken van de standaardinstellingen voor beveiliging of voor voorwaardelijke toegang op basis van Azure AD Multi-Factor Authentication.
 
 ### <a name="conditional-access"></a>Voorwaardelijke toegang
 
-U kunt voorwaardelijke toegang gebruiken voor het configureren van beleids regels die vergelijkbaar zijn met de standaard instellingen voor beveiliging, maar met meer granulatie, inclusief gebruikers uitsluitingen, die niet beschikbaar zijn in de standaard instellingen van de beveiliging. Als u voorwaardelijke toegang gebruikt en beleid voor voorwaardelijke toegang hebt ingeschakeld in uw omgeving, zijn de standaard instellingen voor beveiliging niet voor u beschikbaar. Als u een licentie hebt die voorwaardelijke toegang biedt, maar geen beleid voor voorwaardelijke toegang hebt ingeschakeld in uw omgeving, kunt u de standaard instellingen voor beveiliging gebruiken totdat u beleid voor voorwaardelijke toegang inschakelt. Meer informatie over Azure AD-licentie verlening vindt u op de [Azure AD-pagina met prijzen](https://azure.microsoft.com/pricing/details/active-directory/).
+U kunt voorwaardelijke toegang gebruiken om beleidsregels te configureren die vergelijkbaar zijn met standaardinstellingen voor beveiliging, maar met meer granulariteit, waaronder gebruikersuitsluitingen, die niet beschikbaar zijn in standaardinstellingen voor beveiliging. Als u voorwaardelijke toegang gebruikt en beleid voor voorwaardelijke toegang hebt ingeschakeld in uw omgeving, zijn de standaardinstellingen voor beveiliging niet voor u beschikbaar. Als u een licentie hebt die voorwaardelijke toegang biedt maar geen beleid voor voorwaardelijke toegang hebt ingeschakeld in uw omgeving, kunt u de standaardinstellingen voor beveiliging gebruiken totdat u beleid voor voorwaardelijke toegang inschakelen. Meer informatie over Azure AD-licenties vindt u op de [pagina met prijzen voor Azure AD.](https://azure.microsoft.com/pricing/details/active-directory/)
 
-![Waarschuwings bericht dat u standaard instellingen of voorwaardelijke toegang kunt hebben](./media/concept-fundamentals-security-defaults/security-defaults-conditional-access.png)
+![Waarschuwingsbericht dat u de standaardinstellingen voor beveiliging kunt hebben of voorwaardelijke toegang niet beide](./media/concept-fundamentals-security-defaults/security-defaults-conditional-access.png)
 
-Hier vindt u stapsgewijze hand leidingen over hoe u voorwaardelijke toegang kunt gebruiken om gelijkwaardige beleids regels te configureren voor het beleid dat wordt ingeschakeld door de standaard instellingen voor beveiliging:
+Hier vindt u stapsgewijze handleidingen over hoe u voorwaardelijke toegang kunt gebruiken om gelijkwaardige beleidsregels te configureren voor die beleidsregels die standaard zijn ingeschakeld:
 
 - [MFA vereisen voor beheerders](../conditional-access/howto-conditional-access-policy-admin-mfa.md)
 - [MFA vereisen voor Azure-beheer](../conditional-access/howto-conditional-access-policy-azure-management.md)
-- [Verouderde verificatie blok keren](../conditional-access/howto-conditional-access-policy-block-legacy.md)
+- [Verouderde verificatie blokkeren](../conditional-access/howto-conditional-access-policy-block-legacy.md)
 - [MFA vereisen voor alle gebruikers](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
-- [Azure AD MFA-registratie vereisen](../identity-protection/howto-identity-protection-configure-mfa-policy.md) : vereist Azure AD Identity Protection onderdeel van Azure AD Premium P2.
+- [Azure AD MFA-registratie vereisen:](../identity-protection/howto-identity-protection-configure-mfa-policy.md) vereist Azure AD Identity Protection onderdeel van Azure AD Premium P2.
 
-## <a name="enabling-security-defaults"></a>Standaard instellingen voor beveiliging inschakelen
+## <a name="enabling-security-defaults"></a>Standaardinstellingen voor beveiliging inschakelen
 
-Standaard instellingen voor beveiliging in uw Directory inschakelen:
+Standaardinstellingen voor beveiliging inschakelen in uw directory:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com)   als beveiligings beheerder, beheerder voor voorwaardelijke toegang of globale beheerder.
-1. Blader naar **Azure Active Directory**   >  **Eigenschappen**.
-1. Selecteer **standaard instellingen voor beveiliging beheren**.
-1. Stel de **Schakel optie standaard instellingen inschakelen** in op **Ja**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com)beveiligingsbeheerder, beheerder voor voorwaardelijke   toegang of globale beheerder.
+1. Blader naar **Azure Active Directory**   >  **Eigenschappen.**
+1. Selecteer **Standaardinstellingen voor beveiliging beheren.**
+1. Stel de **schakelknop Standaardinstellingen voor beveiliging inschakelen** in op **Ja.**
 1. Selecteer **Opslaan**.
 
-## <a name="disabling-security-defaults"></a>Standaard instellingen voor beveiliging uitschakelen
+## <a name="disabling-security-defaults"></a>Standaardinstellingen voor beveiliging uitschakelen
 
-Organisaties die kiezen voor het implementeren van beleid voor voorwaardelijke toegang waarbij de standaard instellingen voor beveiliging worden vervangen, moeten de standaard instellingen voor beveiliging uitschakelen. 
+Organisaties die ervoor kiezen om beleid voor voorwaardelijke toegang te implementeren dat de standaardinstellingen voor beveiliging vervangt, moeten de standaardinstellingen voor beveiliging uitschakelen. 
 
-![Waarschuwings bericht voor het uitschakelen van de standaard instellingen voor het inschakelen van voorwaardelijke toegang](./media/concept-fundamentals-security-defaults/security-defaults-disable-before-conditional-access.png)
+![Waarschuwingsbericht: standaardinstellingen voor beveiliging uitschakelen om voorwaardelijke toegang in te schakelen](./media/concept-fundamentals-security-defaults/security-defaults-disable-before-conditional-access.png)
 
-Standaard instellingen voor beveiliging in uw Directory uitschakelen:
+Standaardinstellingen voor beveiliging in uw directory uitschakelen:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com)   als beveiligings beheerder, beheerder voor voorwaardelijke toegang of globale beheerder.
-1. Blader naar **Azure Active Directory**   >  **Eigenschappen**.
-1. Selecteer **standaard instellingen voor beveiliging beheren**.
-1. Stel de **standaard instellingen** voor het inschakelen van de beveiliging in op **Nee**.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com)beveiligingsbeheerder, beheerder voor voorwaardelijke   toegang of globale beheerder.
+1. Blader naar **Azure Active Directory**   >  **Eigenschappen.**
+1. Selecteer **Standaardinstellingen voor beveiliging beheren.**
+1. Stel de **schakelknop Standaardinstellingen voor beveiliging inschakelen** in op **Nee.**
 1. Selecteer **Opslaan**.
 
 ## <a name="next-steps"></a>Volgende stappen

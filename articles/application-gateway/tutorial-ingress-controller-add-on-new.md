@@ -1,22 +1,22 @@
 ---
-title: 'Zelf studie: de invoeg toepassing voor de ingangs controller inschakelen voor een nieuw AKS-cluster met een nieuwe Azure-toepassing gateway'
-description: Gebruik deze zelf studie voor meer informatie over het inschakelen van de invoeg toepassing ingangs controller voor het nieuwe AKS-cluster met een nieuw Application Gateway-exemplaar.
+title: 'Zelfstudie: De invoegversie van de invoegversie inschakelen voor een nieuw AKS-cluster met een Azure Application Gateway'
+description: Gebruik deze zelfstudie voor meer informatie over het inschakelen van de invoeggebruikte controller voor het inschakelen van uw nieuwe AKS-cluster met een nieuw Application Gateway-exemplaar.
 services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 03/02/2021
 ms.author: caya
-ms.openlocfilehash: c37168c5165f5402dd4f57c8557bc2b7b3603533
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: aad57c75481230db16a63aec7fb04fc5987ae8f0
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101720185"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772798"
 ---
-# <a name="tutorial-enable-the-ingress-controller-add-on-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Zelf studie: de invoeg toepassing voor de ingangs controller inschakelen voor een nieuw AKS-cluster met een nieuw Application Gateway-exemplaar
+# <a name="tutorial-enable-the-ingress-controller-add-on-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Zelfstudie: De invoegversie van de invoegversie van de invoegversie inschakelen voor een nieuw AKS-cluster met een nieuw Application Gateway invoegingsinvoegprogramma
 
-U kunt de Azure CLI gebruiken om de invoeg toepassing [Application Gateway ingangs controller (AGIC)](ingress-controller-overview.md) in te scha kelen voor een nieuw [Azure Kubernetes Services-cluster (AKS)](https://azure.microsoft.com/services/kubernetes-service/) .
+U kunt de Azure CLI gebruiken om de Application Gateway AGIC-invoegversie [(Ingress Controller)](ingress-controller-overview.md) in te stellen voor een nieuw [AKS-cluster (Azure Kubernetes Services).](https://azure.microsoft.com/services/kubernetes-service/)
 
 In deze zelfstudie maakt u een AKS-cluster waarvoor de AGIC-invoegtoepassing is ingeschakeld. Als u het cluster maakt, wordt automatisch een Azure Application Gateway-instantie gemaakt om te gebruiken. Vervolgens implementeert u een voorbeeldtoepassing die gebruikmaakt van de invoegtoepassing om via Application Gateway de toepassing beschikbaar te maken. 
 
@@ -36,7 +36,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-In Azure kunt u verwante resources toewijzen aan een resourcegroep. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie (regio) *canadacentral*: 
+In Azure kunt u verwante resources toewijzen aan een resourcegroep. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az_group_create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie (regio) *canadacentral*: 
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location canadacentral
@@ -60,7 +60,7 @@ Als u een nieuw AKS-cluster implementeert terwijl de AGIC-invoegtoepassing is in
 az aks create -n myCluster -g myResourceGroup --network-plugin azure --enable-managed-identity -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-cidr "10.2.0.0/16" --generate-ssh-keys
 ```
 
-Zie [dit referentiemateriaal](/cli/azure/aks#az-aks-create) voor meer informatie over het configureren van aanvullende parameters voor de opdracht `az aks create`. 
+Zie [dit referentiemateriaal](/cli/azure/aks#az_aks_create) voor meer informatie over het configureren van aanvullende parameters voor de opdracht `az aks create`. 
 
 > [!NOTE]
 > Het AKS-cluster dat u hebt gemaakt, wordt weergegeven in de resourcegroep *myResourceGroup* die u hebt gemaakt. De automatisch gemaakte Application Gateway-instantie bevindt zich echter in het knooppunt van de resourcegroep, waar zich de agentpools bevinden. De resourcegroep van het knooppunt heet standaard *MC_resource-group-name_cluster-name_location*, maar kan worden gewijzigd. 

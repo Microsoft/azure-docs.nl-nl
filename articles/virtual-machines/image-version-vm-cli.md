@@ -1,6 +1,6 @@
 ---
-title: Een installatie kopie van een virtuele machine maken met behulp van Azure CLI
-description: Meer informatie over het maken van een installatie kopie in een galerie met gedeelde afbeeldingen van een virtuele machine in Azure.
+title: Een afbeelding maken van een VM met behulp van Azure CLI
+description: Meer informatie over het maken van een afbeelding in een Shared Image Gallery van een VM in Azure.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: shared-image-gallery
@@ -10,39 +10,39 @@ ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7c35be8821b6763531b43ec85b10325e91f8bc5f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7bfe8b1255c88878c2dc4661e9daa3e16397e9f4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102556857"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792269"
 ---
-# <a name="create-an-image-version-from-a-vm-in-azure-using-the-azure-cli"></a>Een installatie kopie versie maken op basis van een virtuele machine in azure met behulp van Azure CLI
+# <a name="create-an-image-version-from-a-vm-in-azure-using-the-azure-cli"></a>Een versie van een afbeelding maken op basis van een VM in Azure met behulp van de Azure CLI
 
-Als u een bestaande VM hebt die u wilt gebruiken om meerdere, identieke Vm's te maken, kunt u die VM gebruiken om een installatie kopie te maken in een galerie met gedeelde afbeeldingen met behulp van de Azure CLI. U kunt ook een installatie kopie maken op basis van een virtuele machine met behulp van [Azure PowerShell](image-version-vm-powershell.md).
+Als u een bestaande VM hebt die u wilt gebruiken om meerdere identieke VM's te maken, kunt u die VM gebruiken om een afbeelding te maken in een Shared Image Gallery met behulp van de Azure CLI. U kunt ook een VM-afbeelding maken met behulp [van Azure PowerShell.](image-version-vm-powershell.md)
 
-Een **installatie kopie versie** is wat u gebruikt om een virtuele machine te maken wanneer u een galerie met gedeelde afbeeldingen gebruikt. U kunt net zo veel versies van een installatiekopie voor uw omgeving gebruiken als u nodig hebt. Wanneer u een installatie kopie-versie gebruikt om een virtuele machine te maken, wordt de versie van de installatie kopie gebruikt voor het maken van schijven voor de nieuwe virtuele machine. Versies van installatiekopieën kunnen meerdere keren worden gebruikt.
+Een **versie van een** afbeelding is wat u gebruikt om een VM te maken wanneer u een Shared Image Gallery. U kunt net zo veel versies van een installatiekopie voor uw omgeving gebruiken als u nodig hebt. Wanneer u een versie van een afbeelding gebruikt om een VM te maken, wordt de versie van de afbeelding gebruikt om schijven voor de nieuwe VM te maken. Versies van installatiekopieën kunnen meerdere keren worden gebruikt.
 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Als u dit artikel wilt volt ooien, moet u beschikken over een bestaande galerie met gedeelde installatie kopieën. 
+Als u dit artikel wilt voltooien, moet u een bestaande Shared Image Gallery. 
 
-U moet ook een bestaande virtuele machine in azure hebben, in dezelfde regio als uw galerie. 
+U moet ook een bestaande VM in Azure hebben, in dezelfde regio als uw galerie. 
 
-Als er een gegevens schijf aan de virtuele machine is gekoppeld, kan de grootte van de gegevens schijf niet groter zijn dan 1 TB.
+Als aan de VM een gegevensschijf is gekoppeld, mag de grootte van de gegevensschijf niet groter zijn dan 1 TB.
 
-Wanneer u dit artikel doorwerkt, vervangt u de resource namen waar nodig.
+Wanneer u dit artikel door werkt, vervangt u waar nodig de resourcenamen.
 
 ## <a name="get-information-about-the-vm"></a>Informatie over de VM ophalen
 
-U kunt een lijst weergeven met virtuele machines die beschikbaar zijn met [az vm list](/cli/azure/vm#az-vm-list). 
+U kunt een lijst weergeven met virtuele machines die beschikbaar zijn met [az vm list](/cli/azure/vm#az_vm_list). 
 
 ```azurecli-interactive
 az vm list --output table
 ```
 
-Zodra u de naam van de virtuele machine weet en in welke resourcegroep die zich bevindt kunt u de id van de virtuele machine ophalen met [az vm get-instance-view](/cli/azure/vm#az-vm-get-instance-view). 
+Zodra u de naam van de virtuele machine weet en in welke resourcegroep die zich bevindt kunt u de id van de virtuele machine ophalen met [az vm get-instance-view](/cli/azure/vm#az_vm_get_instance_view). 
 
 ```azurecli-interactive
 az vm get-instance-view -g MyResourceGroup -n MyVm --query id
@@ -59,7 +59,7 @@ Controleer of uw installatiekopiedefinitie het juiste type heeft. Als u de VM he
 
 Zie [Installatiekopiedefinities](./shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
-Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
+Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az_sig_image_definition_create).
 
 In dit voorbeeld heeft de definitie van de installatiekopie de naam *myImageDefinition* en is deze voor een [gespecialiseerde](./shared-image-galleries.md#generalized-and-specialized-images) installatiekopie van een Linux-besturingssysteem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
 
@@ -78,7 +78,7 @@ az sig image-definition create \
 
 ## <a name="create-the-image-version"></a>De installatiekopieversie maken
 
-Maak een installatiekopieversie van de virtuele machine met [az image gallery create-image-version](/cli/azure/sig/image-version#az-sig-image-version-create).  
+Maak een installatiekopieversie van de virtuele machine met [az image gallery create-image-version](/cli/azure/sig/image-version#az_sig_image_version_create).  
 
 Toegestane tekens voor een installatiekopieversie zijn cijfers en punten. Cijfers moeten binnen het bereik van een 32-bits geheel getal zijn. Indeling: *MajorVersion*.*MinorVersion*.*Patch*.
 
@@ -100,11 +100,11 @@ az sig image-version create \
 > [!NOTE]
 > U moet wachten tot de installatiekopieversie volledig is gebouwd en gerepliceerd voordat u dezelfde beheerde installatiekopie kunt gebruiken om een andere versie van de installatiekopie te maken.
 >
-> U kunt uw installatie kopie ook opslaan in Premium Storage door `--storage-account-type  premium_lrs` toe te voegen of [zone redundante opslag](../storage/common/storage-redundancy.md) te maken door toe te voegen `--storage-account-type  standard_zrs` Wanneer u de versie van de installatie kopie maakt.
+> U kunt uw afbeelding ook opslaan in Premium Storage door , of `--storage-account-type  premium_lrs` [Zone-redundante](../storage/common/storage-redundancy.md) opslag toe te voegen door toe te voegen `--storage-account-type  standard_zrs` wanneer u de versie van de afbeelding maakt.
 >
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Maak een virtuele machine op basis van de [gegeneraliseerde installatie kopie](vm-generalized-image-version-cli.md) met behulp van de Azure cli.
+Maak een VM op basis van [de ge generaliseerde afbeelding](vm-generalized-image-version-cli.md) met behulp van de Azure CLI.
 
-Zie voor meer informatie over het verstrekken van informatie over het aankoop plan [Azure Marketplace-informatie over het aankoop plan bij het maken van installatie kopieën](marketplace-images.md).
+Zie Informatie over het aankoopplan leveren bij het maken van Azure Marketplace voor informatie over het leveren van informatie over het [aankoopplan.](marketplace-images.md)

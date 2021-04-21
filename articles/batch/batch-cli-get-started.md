@@ -1,15 +1,15 @@
 ---
-title: Aan de slag met Azure CLI voor batch
+title: Aan de slag met Azure CLI voor Batch
 description: Een korte inleiding in de Batch-opdrachten in Azure CLI voor het beheren van Azure Batch-serviceresources
 ms.topic: how-to
 ms.date: 07/24/2018
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: bee25d9b8985f1627a5cfc05bfb336b83be60f74
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: befe2f6fe67ce7c2c4bb61153344103ee2aa70cb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92144755"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107768429"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Batch-resources beheren met Azure CLI
 
@@ -52,9 +52,9 @@ Als u de Azure CLI wilt gebruiken met Batch, moet u zich aanmelden en verifiëre
 Er zijn een aantal manieren om u aan te melden bij Azure, zoals u kunt lezen in [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli):
 
 1. [Interactief aanmelden](/cli/azure/authenticate-azure-cli). Meld u interactief aan wanneer u zelf Azure CLI-opdrachten uitvoert vanaf de opdrachtregel.
-2. [Meld u aan met een Service-Principal](/cli/azure/authenticate-azure-cli). Meld u aan met een service-principal wanneer u Azure CLI-opdrachten uitvoert vanuit een script of een toepassing.
+2. [Meld u aan met een service-principal](/cli/azure/authenticate-azure-cli). Meld u aan met een service-principal wanneer u Azure CLI-opdrachten uitvoert vanuit een script of een toepassing.
 
-Ten behoeve van dit artikel laten we zien hoe u zich interactief aanmeldt bij Azure. Typ [az login](/cli/azure/reference-index#az-login) op de opdrachtregel:
+Ten behoeve van dit artikel laten we zien hoe u zich interactief aanmeldt bij Azure. Typ [az login](/cli/azure/reference-index#az_login) op de opdrachtregel:
 
 ```azurecli
 # Log in to Azure and authenticate interactively.
@@ -69,25 +69,25 @@ De voorbeelden in de sectie Voorbeelden van shell-scripts laten ook zien hoe u e
 
 ### <a name="log-in-to-your-batch-account"></a>Aanmelden bij uw Batch-account
 
-Als u de Azure CLI wilt gebruiken voor het beheren van Batch-resources, zoals pools, functies en taken, moet u zich aanmelden bij uw Batch-account en u vervolgens verifiëren. U kunt zich aanmelden bij de Batch-service met de opdracht [az batch account login](/cli/azure/batch/account#az-batch-account-login). 
+Als u de Azure CLI wilt gebruiken voor het beheren van Batch-resources, zoals pools, functies en taken, moet u zich aanmelden bij uw Batch-account en u vervolgens verifiëren. U kunt zich aanmelden bij de Batch-service met de opdracht [az batch account login](/cli/azure/batch/account#az_batch_account_login). 
 
 Er zijn twee mogelijkheden voor verificatie van uw Batch-account:
 
-- **Met behulp van Azure Active Directory-verificatie (Azure AD)** 
+- **Met behulp Azure Active Directory (Azure AD)-verificatie** 
 
     Verificatie met Azure AD is de standaardinstelling als u de Azure CLI gebruikt met Batch en wordt aanbevolen voor de meeste scenario's. 
     
     Wanneer u zich interactief aanmeldt bij Azure, zoals beschreven in de vorige sectie, worden uw referenties in de cache opgeslagen, zodat de Azure CLI u met behulp van deze zelfde referenties kan aanmelden bij uw Batch-account. Als u zich aanmeldt bij Azure met behulp van een service-principal, worden deze referenties ook gebruikt voor aanmelding bij uw Batch-account.
 
-    Een voor deel van Azure AD is dat het Azure op rollen gebaseerd toegangs beheer (Azure RBAC) biedt. Met Azure RBAC is de toegang van een gebruiker afhankelijk van hun toegewezen rol, in plaats van of ze beschikken over de account sleutels. In plaats van account sleutels te beheren, kunt u Azure-rollen beheren en toegang en verificatie van Azure AD toestaan.  
+    Een voordeel van Azure AD is dat azure op rollen gebaseerd toegangsbeheer (Azure RBAC) biedt. Met Azure RBAC is de toegang van gebruikers afhankelijk van hun toegewezen rol, in plaats van of ze al dan niet over de accountsleutels beschikken. In plaats van accountsleutels te beheren, kunt u Azure-rollen beheren en Azure AD toegang en verificatie laten afhandelen.  
 
-     Als u zich via Azure AD wilt aanmelden bij uw Batch-account, gebruikt u de opdracht [az batch account login](/cli/azure/batch/account#az-batch-account-login): 
+     Als u zich via Azure AD wilt aanmelden bij uw Batch-account, gebruikt u de opdracht [az batch account login](/cli/azure/batch/account#az_batch_account_login): 
 
     ```azurecli
     az batch account login -g myresource group -n mybatchaccount
     ```
 
-- **Met behulp van gedeelde sleutel verificatie**
+- **Met behulp van gedeelde sleutelverificatie**
 
     Bij [gedeelde sleutelverificatie](/rest/api/batchservice/authenticate-requests-to-the-azure-batch-service#authentication-via-shared-key) worden de toegangssleutels van uw account gebruikt om Azure CLI-opdrachten te verifiëren voor de Batch-service.
 
@@ -162,9 +162,9 @@ De volgende tips kunnen helpen bij het oplossen van problemen met Azure CLI:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Raadpleeg de [documentatie van Azure cli](/cli/azure).
+* Zie de [Documentatie voor Azure CLI.](/cli/azure)
 * Meer informatie over de [Werkstroom van de batch-service en primaire resources](batch-service-workflow-features.md) als pools, knooppunten, jobs en taken.
-* Meer informatie over het gebruik van batch-sjablonen om Pools, taken en taken te maken zonder code te hoeven schrijven [Azure batch cli-sjablonen en-bestands overdracht](batch-cli-templates.md).
+* Meer informatie over het gebruik van Batch-sjablonen voor het maken van pools, jobs en taken zonder code te schrijven in [Use Azure Batch CLI templates and file transfer (Cli-sjablonen en bestandsoverdracht gebruiken).](batch-cli-templates.md)
 
 [github_readme]: https://github.com/Azure/azure-xplat-cli/blob/dev/README.md
 [rest_api]: /rest/api/batchservice/

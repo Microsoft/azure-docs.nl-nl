@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: 2c19ee2b8e7ec3c695b2c76c46402c118c559b40
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0012c3d208998786ef5aa34320f3bccc4e51ebe6
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98736235"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782779"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Zelfstudie: Azure SQL Database-verbinding vanuit App Service beveiligen met een beheerde identiteit
 
@@ -57,7 +57,7 @@ Schakel eerst Azure AD-verificatie in om SQL Database door een Azure AD-gebruike
 
 Als uw Azure AD-tenant nog geen gebruiker heeft, maakt u er een door de stappen te volgen op [Gebruikers toevoegen of verwijderen met behulp van Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md).
 
-Zoek de object-id van de Azure AD-gebruiker met behulp van de [`az ad user list`](/cli/azure/ad/user#az-ad-user-list) en vervang *\<user-principal-name>* . Het resultaat wordt opgeslagen in een variabele.
+Zoek de object-id van de Azure AD-gebruiker met behulp van de [`az ad user list`](/cli/azure/ad/user#az_ad_user_list) en vervang *\<user-principal-name>* . Het resultaat wordt opgeslagen in een variabele.
 
 ```azurecli-interactive
 azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-name>'" --query [].objectId --output tsv)
@@ -66,7 +66,7 @@ azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-na
 > Als u de lijst met alle UPN’s in Azure AD wilt zien, voert u `az ad user list --query [].userPrincipalName` uit.
 >
 
-Voeg deze Azure AD-gebruiker toe als een Active Directory-beheerder met behulp van opdracht [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) in de Cloud Shell. Vervang in de volgende opdracht *\<server-name>* met de servernaam (zonder het achtervoegsel `.database.windows.net`).
+Voeg deze Azure AD-gebruiker toe als een Active Directory-beheerder met behulp van opdracht [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin#az_sql_server_ad_admin_create) in de Cloud Shell. Vervang in de volgende opdracht *\<server-name>* met de servernaam (zonder het achtervoegsel `.database.windows.net`).
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server-name> --display-name ADMIN --object-id $azureaduser
@@ -176,7 +176,7 @@ Vervolgens configureert u uw App Service-app om verbinding te maken met SQL Data
 
 ### <a name="enable-managed-identity-on-app"></a>Een beheerde identiteit inschakelen voor een app
 
-Als u een beheerde identiteit voor uw Azure-app wilt inschakelen, gebruikt u de opdracht [az webapp identity assign](/cli/azure/webapp/identity#az-webapp-identity-assign) in de Cloud Shell. Vervang *\<app-name>* in de volgende opdracht.
+Als u een beheerde identiteit voor uw Azure-app wilt inschakelen, gebruikt u de opdracht [az webapp identity assign](/cli/azure/webapp/identity#az_webapp_identity_assign) in de Cloud Shell. Vervang *\<app-name>* in de volgende opdracht.
 
 ```azurecli-interactive
 az webapp identity assign --resource-group myResourceGroup --name <app-name>

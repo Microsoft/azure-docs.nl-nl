@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 06/15/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: aaef3f28ea9b7e41bce35661e9515f6efcc9ade5
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 0810f023f4e2e192f2cb0d83f2a028cdded9e275
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102184437"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779423"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure-app-service"></a>Zelfstudie: een PHP- en MySQL-app bouwen in Azure App Service
 
@@ -160,7 +160,7 @@ In deze stap maakt u een MySQL-database in [Azure Database for MySQL](../mysql/i
 
 ### <a name="create-a-mysql-server"></a>Een MySQL-server maken
 
-Maak vanuit Cloud Shell een server in Azure Database for MySQL met behulp van de opdracht [`az mysql server create`](/cli/azure/mysql/server#az-mysql-server-create).
+Maak vanuit Cloud Shell een server in Azure Database for MySQL met behulp van de opdracht [`az mysql server create`](/cli/azure/mysql/server#az_mysql_server_create).
 
 Met de volgende opdracht vervangt u de tijdelijke aanduiding *\<mysql-server-name>* door een unieke servernaam, de *\<admin-user>* door een gebruikersnaam en de tijdelijke aanduiding *\<admin-password>* door een wachtwoord. De servernaam wordt gebruikt als onderdeel van het MySQL-eindpunt (`https://<mysql-server-name>.mysql.database.azure.com`). De naam moet dus uniek zijn voor alle servers in Azure. Zie [Een Azure Database for MySQL-server maken](../mysql/quickstart-create-mysql-server-database-using-azure-cli.md#create-an-azure-database-for-mysql-server) voor meer informatie over het selecteren van de MySQL DB-SKU.
 
@@ -186,7 +186,7 @@ Wanneer de MySQL-server is gemaakt, toont de Azure CLI informatie die lijkt op d
 
 ### <a name="configure-server-firewall"></a>Een serverfirewall configureren
 
-Maak in de Cloud Shell een firewallregel voor uw MySQL-server om clientverbindingen toe te staan met behulp van de opdracht [`az mysql server firewall-rule create`](/cli/azure/mysql/server/firewall-rule#az-mysql-server-firewall-rule-create). Als zowel het IP-beginadres als het IP-eindadres zijn ingesteld op 0.0.0.0, wordt de firewall alleen geopend voor andere Azure-resources. 
+Maak in de Cloud Shell een firewallregel voor uw MySQL-server om clientverbindingen toe te staan met behulp van de opdracht [`az mysql server firewall-rule create`](/cli/azure/mysql/server/firewall-rule#az_mysql_server_firewall_rule_create). Als zowel het IP-beginadres als het IP-eindadres zijn ingesteld op 0.0.0.0, wordt de firewall alleen geopend voor andere Azure-resources. 
 
 ```azurecli-interactive
 az mysql server firewall-rule create --name allAzureIPs --server <mysql-server-name> --resource-group myResourceGroup --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
@@ -376,7 +376,7 @@ In deze stap implementeert u de met MySQL verbonden PHP-toepassing naar Azure Ap
 
 ### <a name="configure-database-settings"></a>Database-instellingen configureren
 
-In App Service stelt u de omgevingsvariabelen in op _app-instellingen_ met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
+In App Service stelt u de omgevingsvariabelen in op _app-instellingen_ met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set).
 
 De volgende opdracht configureert de app-instellingen `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, en `DB_PASSWORD`. Vervang de tijdelijke aanduidingen _&lt;app-name>_ en _&lt;mysql-server-name>_ .
 
@@ -407,7 +407,7 @@ In het lokale terminalvenster gebruikt u `php artisan` voor het genereren van ee
 php artisan key:generate --show
 ```
 
-In de Cloud Shell stelt u de toepassingssleutel in de App Service-app in met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set). Vervang de tijdelijke aanduidingen _&lt;app-name>_ en _&lt;outputofphpartisankey:generate>_ .
+In de Cloud Shell stelt u de toepassingssleutel in de App Service-app in met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set). Vervang de tijdelijke aanduidingen _&lt;app-name>_ en _&lt;outputofphpartisankey:generate>_ .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings APP_KEY="<output_of_php_artisan_key:generate>" APP_DEBUG="true"
@@ -421,7 +421,7 @@ az webapp config appsettings set --name <app-name> --resource-group myResourceGr
 
 Stel het pad van de virtuele toepassing voor de app in. Deze stap is vereist omdat de [levenscyclus van de Laravel-toepassing](https://laravel.com/docs/5.4/lifecycle) in de _openbare_ map begint en niet in de hoofdmap van de toepassing. Andere PHP-frameworks waarvan de levenscyclus start in de hoofdmap, kunnen functioneren zonder handmatige configuratie van het pad voor de virtuele toepassing.
 
-Stel in de Cloud Shell het pad voor de virtuele toepassing in met behulp van de opdracht [`az resource update`](/cli/azure/resource#az-resource-update). Vervang de tijdelijke aanduiding _&lt;app-name>_ .
+Stel in de Cloud Shell het pad voor de virtuele toepassing in met behulp van de opdracht [`az resource update`](/cli/azure/resource#az_resource_update). Vervang de tijdelijke aanduiding _&lt;app-name>_ .
 
 ```azurecli-interactive
 az resource update --name web --resource-group myResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<app_name> --set properties.virtualApplications[0].physicalPath="site\wwwroot\public" --api-version 2015-06-01
@@ -649,7 +649,7 @@ Als u taken hebt toegevoegd, worden deze in de database bewaard. Updates van het
 
 Terwijl uw PHP-toepassing in Azure App Service wordt uitgevoerd, kunt u de consolelogboeken doorgesluisd krijgen naar uw terminal. Op die manier krijgt u de dezelfde diagnostische berichten om toepassingsfouten op te sporen.
 
-Gebruik voor het starten van logboekstreaming de opdracht [`az webapp log tail`](/cli/azure/webapp/log#az-webapp-log-tail) in de Cloud Shell.
+Gebruik voor het starten van logboekstreaming de opdracht [`az webapp log tail`](/cli/azure/webapp/log#az_webapp_log_tail) in de Cloud Shell.
 
 ```azurecli-interactive
 az webapp log tail --name <app_name> --resource-group myResourceGroup

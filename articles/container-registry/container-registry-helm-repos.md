@@ -3,12 +3,12 @@ title: Helm-grafieken opslaan
 description: Meer informatie over het opslaan van Helm-grafieken voor uw Kubernetes-toepassingen met behulp van opslagplaatsen in Azure Container Registry
 ms.topic: article
 ms.date: 04/15/2021
-ms.openlocfilehash: 6698eb8f5e18511717e44bf5dc06a51d8f3903b8
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: c7dcdf222e9628daedb7e1c3617efb0b9c7af185
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107537310"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772375"
 ---
 # <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Helm-grafieken pushen en naar een Azure-containerregister halen
 
@@ -28,13 +28,13 @@ Helm 3 moet worden gebruikt voor het hosten van Helm-grafieken in Azure Containe
 * Gebruik opdrachten in de Helm CLI om Helm-grafieken in een register te `helm chart` pushen, op te halen en te beheren
 * Gebruik om grafieken vanuit een lokale opslagplaatscache te installeren op een `helm install` Kubernetes-cluster.
 > [!NOTE]
-> Vanaf Helm 3 worden [az acr helm-opdrachten][az-acr-helm] voor gebruik met de Helm 2-client afgeschaft. Er wordt minimaal drie maanden vooraf gewerkt voordat de opdracht wordt verwijderd. Zie Helm v2 migreren naar v3 als u eerder Helm 2-grafieken [hebt geïmplementeerd.](https://helm.sh/docs/topics/v2_v3_migration/)
+> Vanaf Helm 3 worden [az acr helm-opdrachten][az-acr-helm] voor gebruik met de Helm 2-client afgeschaft. Er wordt minimaal 3 maanden kennisgeving gegeven voordat de opdracht wordt verwijderd. Zie Helm v2 migreren naar v3 als u eerder Helm 2-grafieken [hebt geïmplementeerd.](https://helm.sh/docs/topics/v2_v3_migration/)
 
 ## <a name="prerequisites"></a>Vereisten
 
 De volgende resources zijn nodig voor het scenario in dit artikel:
 
-- **Een Azure-containerregister** in uw Azure-abonnement. Maak indien nodig een register met behulp van [de Azure Portal](container-registry-get-started-portal.md) of de [Azure CLI.](container-registry-get-started-azure-cli.md)
+- **Een Azure-containerregister** in uw Azure-abonnement. Maak indien nodig een register met behulp van de [Azure Portal](container-registry-get-started-portal.md) of [de Azure CLI.](container-registry-get-started-azure-cli.md)
 - **Helm-clientversie 3.1.0 of hoger:** voer uit om `helm version` uw huidige versie te vinden. Zie Helm installeren voor meer informatie over het installeren en upgraden [van Helm.][helm-install]
 - **Een Kubernetes-cluster** waarin u een Helm-grafiek installeert. Maak indien nodig een [Azure Kubernetes Service cluster][aks-quickstart]. 
 - **Azure CLI versie 2.0.71 of hoger:** voer uit `az --version` om de versie te vinden. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
@@ -291,12 +291,12 @@ az acr repository delete --name mycontainerregistry --image helm/hello-world:v1
 [azure-cli-install]: /cli/azure/install-azure-cli
 [aks-quickstart]: ../aks/kubernetes-walkthrough.md
 [acr-bestpractices]: container-registry-best-practices.md
-[az-configure]: /cli/azure/reference-index#az-configure
-[az-acr-login]: /cli/azure/acr#az-acr-login
+[az-configure]: /cli/azure/reference-index#az_configure
+[az-acr-login]: /cli/azure/acr#az_acr_login
 [az-acr-helm]: /cli/azure/acr/helm
 [az-acr-repository]: /cli/azure/acr/repository
-[az-acr-repository-show]: /cli/azure/acr/repository#az-acr-repository-show
-[az-acr-repository-delete]: /cli/azure/acr/repository#az-acr-repository-delete
-[az-acr-repository-show-tags]: /cli/azure/acr/repository#az-acr-repository-show-tags
-[az-acr-repository-show-manifests]: /cli/azure/acr/repository#az-acr-repository-show-manifests
+[az-acr-repository-show]: /cli/azure/acr/repository#az_acr_repository_show
+[az-acr-repository-delete]: /cli/azure/acr/repository#az_acr_repository_delete
+[az-acr-repository-show-tags]: /cli/azure/acr/repository#az_acr_repository_show_tags
+[az-acr-repository-show-manifests]: /cli/azure/acr/repository#az_acr_repository_show_manifests
 [acr-tasks]: container-registry-tasks-overview.md

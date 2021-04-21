@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 04/12/2021
 ms.author: banders
-ms.openlocfilehash: 13a9e3ad1dcdfa230d757230e3fdea91e4ee9d23
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: b2cdb106ab1c77c23626258f7e0708a20ffd3c4e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107310390"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772249"
 ---
 # <a name="buy-a-reservation"></a>Een reservering kopen
 
@@ -44,9 +44,9 @@ U beschikt over drie opties om een reservering te koppelen, afhankelijk van uw b
 
 Wanneer u reserveringskorting op uw gebruik toepast, wordt de reservering in deze volgorde door Azure verwerkt:
 
-1. Reserve ringen met één resource groeps bereik
-2. Reserve ringen met één abonnements bereik
-3. Reserve ringen met een gedeeld bereik (meerdere abonnementen), eerder beschreven
+1. Reserveringen met één resourcegroepbereik
+2. Reserveringen met één abonnementsbereik
+3. Reserveringen met een gedeeld bereik (meerdere abonnementen), zoals eerder beschreven
 
 U kunt het bereik altijd bijwerken nadat u een reservering hebt gekocht. Ga hiervoor naar de reservering, klik op **Configuratie** en koppel de reservering opnieuw. Het opnieuw koppelen van een reservering wordt niet als commerciële transactie beschouwd. Uw reserveringstermijn blijft ongewijzigd. Zie [Het bereik bijwerken na aanschaf van een reservering](manage-reserved-vm-instance.md#change-the-reservation-scope) voor meer informatie over het bijwerken van het bereik.
 
@@ -133,4 +133,8 @@ Voor klanten met afzonderlijk abonnementen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- [Meer informatie over machtigingen voor reserveringen](view-reservations.md)
 - [Reserveringen voor Azure-resources beheren](manage-reserved-vm-instance.md)
+- [Automatiseren met REST API's](/rest/api/reserved-vm-instances/reservationorder)
+- [Automatiseren met Azure PowerShell](/powershell/module/az.reservations)
+- [Automatiseren met cli](/cli/azure/reservations)

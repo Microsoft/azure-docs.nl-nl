@@ -6,13 +6,13 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: quickstart
 ms.custom: mvc, subject-armqs, devx-track-azurecli
-ms.date: 06/30/2020
-ms.openlocfilehash: 8cee79efd9be53ddb9d450f643c04f21ae5e7fca
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.date: 04/01/2021
+ms.openlocfilehash: bdeb80dc487d8418e21a40a29e5d2baab49d7b05
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102213994"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771889"
 ---
 # <a name="quickstart-create-and-deploy-a-logic-app-workflow-by-using-an-arm-template"></a>Quickstart: Een werkstroom voor een logische app maken en implementeren met behulp van een ARM-sjabloon
 
@@ -32,7 +32,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis Azure-account](http
 
 In deze snelstart wordt gebruikgemaakt van de sjabloon [**Een logische app maken**](https://azure.microsoft.com/resources/templates/101-logic-app-create/). U kunt deze vinden in de [galerie Azure-snelstartsjablonen](https://azure.microsoft.com/resources/templates), maar deze is te lang om hier weer te geven. In plaats daarvan kunt u het [azuredeploy.json-bestand](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) van de quickstart-sjabloon bekijken in de sjablonengalerie.
 
-De quickstart-sjabloon maakt een werkstroom voor de logische app die gebruikmaakt van de terugkeerpatroontrigger, die elk uur wordt uitgevoerd, en een [*ingebouwde* HTTP-actie](../connectors/apis-list.md#connector-types), waarmee een URL wordt aangeroepen die de status voor Azure retourneert. Een ingebouwde actie is systeemeigen voor het Azure Logic Apps-platform.
+De quickstart-sjabloon maakt een werkstroom voor de logische app die gebruikmaakt van de terugkeerpatroontrigger, die elk uur wordt uitgevoerd, en een [*ingebouwde* HTTP-actie](../connectors/built-in.md), waarmee een URL wordt aangeroepen die de status voor Azure retourneert. Een ingebouwde actie is systeemeigen voor het Azure Logic Apps-platform.
 
 Met deze sjabloon maakt u de volgende Azure-resource:
 
@@ -303,7 +303,7 @@ az group delete --name $resourceGroupName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-Zie [Azure CLI: az group delete](/cli/azure/group#az-group-delete) voor meer informatie.
+Zie [Azure CLI: az group delete](/cli/azure/group#az_group_delete) voor meer informatie.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

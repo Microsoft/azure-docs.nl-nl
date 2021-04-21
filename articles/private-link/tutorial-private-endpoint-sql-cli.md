@@ -1,5 +1,5 @@
 ---
-title: 'Zelf studie: verbinding maken met een Azure SQL-Server met behulp van een Azure-privé-eind punt-Azure CLI'
+title: 'Zelfstudie: Verbinding maken met een Azure SQL server met behulp van een azure-privé-eindpunt - Azure CLI'
 description: Gebruik deze zelfstudie om te leren hoe u een Azure SQL-server maakt met een privé-eindpunt met behulp van Azure CLI
 services: private-link
 author: asudbring
@@ -7,15 +7,15 @@ ms.service: private-link
 ms.topic: tutorial
 ms.date: 11/03/2020
 ms.author: allensu
-ms.custom: fasttrack-edit
-ms.openlocfilehash: a5562c5f40a321f5737fea73f6d7964b402953cb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: fasttrack-edit, devx-track-azurecli
+ms.openlocfilehash: a8fafeaaf974893c9a1a71115912f2a7b019ddd9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104889209"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771817"
 ---
-# <a name="tutorial-connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-cli"></a>Zelf studie: verbinding maken met een Azure SQL-Server met behulp van een Azure-privé-eind punt-Azure CLI
+# <a name="tutorial-connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-cli"></a>Zelfstudie: Verbinding maken met een Azure SQL server met behulp van een azure-privé-eindpunt - Azure CLI
 
 Een privé-eindpunt in Azure is de fundamentele bouwsteen voor een Private Link in Azure. Het biedt Azure-resources, zoals virtuele machines, de mogelijkheid om Private Link-resources te gebruiken om privé met elkaar communiceren.
 
@@ -74,7 +74,7 @@ az network vnet create \
     --subnet-prefixes 10.0.0.0/24
 ```
 
-Werk het subnet bij om het beleid voor het privé-eindpuntnetwerk uit te schakelen met [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update):
+Werk het subnet bij om het beleid voor het privé-eindpuntnetwerk uit te schakelen met [az network vnet subnet update](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_update):
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -84,7 +84,7 @@ az network vnet subnet update \
     --disable-private-endpoint-network-policies true
 ```
 
-Gebruik [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create) om een openbaar IP-adres voor de Bastion-host te maken:
+Gebruik [az network public-ip create](/cli/azure/network/public-ip#az_network_public_ip_create) om een openbaar IP-adres voor de Bastion-host te maken:
 
 * Maak een standaard zoneredundant openbaar IP-adres met de naam **myBastionIP**.
 * In **CreateSQLEndpointTutorial-rg**.
@@ -96,7 +96,7 @@ az network public-ip create \
     --sku Standard
 ```
 
-Gebruik [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) om een bastionsubnet te maken:
+Gebruik [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create) om een bastionsubnet te maken:
 
 * met de naam **AzureBastionSubnet**.
 * Adresvoorvoegsel van **10.0.1.0/24**.
@@ -111,7 +111,7 @@ az network vnet subnet create \
     --address-prefixes 10.0.1.0/24
 ```
 
-Gebruik [az network bastion create](/cli/azure/network/bastion#az-network-bastion-create) om een Bastion-host te maken:
+Gebruik [az network bastion create](/cli/azure/network/bastion#az_network_bastion_create) om een Bastion-host te maken:
 
 * met de naam **myBastionHost**.
 * In **CreateSQLEndpointTutorial-rg**.
@@ -152,6 +152,8 @@ az vm create \
     --subnet myBackendSubnet \
     --admin-username azureuser
 ```
+
+[!INCLUDE [ephemeral-ip-note.md](../../includes/ephemeral-ip-note.md)]
 
 ## <a name="create-an-azure-sql-server"></a>Een Azure SQL-server maken
 
@@ -328,6 +330,6 @@ In deze zelfstudie hebt u het volgende gemaakt:
 
 U hebt de virtuele machine gebruikt om de connectiviteit met de SQL-server via het privé-eindpunt veilig te testen.
 
-Als volgende stap hebt u mogelijk ook geïnteresseerd in de web- **app met een particuliere verbinding met het Azure SQL database** Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
+Als volgende stap bent u mogelijk ook geïnteresseerd in de **web-app** met privéconnectiviteit met Azure SQL-databasearchitectuurscenario, dat een webtoepassing buiten het virtuele netwerk verbindt met het privé-eindpunt van een database.
 > [!div class="nextstepaction"]
-> [Web-app met persoonlijke connectiviteit met Azure SQL database](/azure/architecture/example-scenario/private-web-app/private-web-app)
+> [Web-app met privéconnectiviteit met Azure SQL database](/azure/architecture/example-scenario/private-web-app/private-web-app)

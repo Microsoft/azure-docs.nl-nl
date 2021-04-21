@@ -1,6 +1,6 @@
 ---
 title: Netwerkeindpunten configureren voor Azure Files | Microsoft Docs
-description: Meer informatie over het configureren van Azure file Network-eind punten.
+description: Meer informatie over het configureren van Azure File-netwerk eindpunten.
 author: roygara
 ms.service: storage
 ms.topic: how-to
@@ -8,12 +8,12 @@ ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 079d7aa9b654a318c7269a41605c3e146b08f127
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 42e83facec7817b6588bf69977fea5ab74b6b10d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96621328"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107759875"
 ---
 # <a name="configuring-azure-files-network-endpoints"></a>Azure Files-netwerkeindpunten configureren
 
@@ -23,23 +23,23 @@ Azure Files biedt twee hoofdtypen eindpunten voor toegang tot Azure-bestandsshar
 
 Openbare en privé-eindpunten bestaan in het Azure-opslagaccount. Een opslagaccount is een beheerconstructie die een gedeelde opslaggroep vertegenwoordigt waarin u meerdere bestandsshares kunt implementeren, evenals andere opslagresources, zoals blob-containers of wachtrijen.
 
-Dit artikel richt zich op het configureren van de eindpunten van een opslagaccount voor het rechtstreeks openen van de Azure-bestandsshare. De meeste informatie in dit document is ook van toepassing op de manier waarop Azure File Sync samenwerkt met openbare en privé-eindpunten voor het opslagaccount. Als u echter meer wilt weten over aandachtspunten voor netwerken bij een Azure File Sync-implementatie, raadpleegt u [Azure File Sync proxy and firewall settings](storage-sync-files-firewall-and-proxy.md) (Azure File Sync-proxy- en firewallinstellingen).
+Dit artikel richt zich op het configureren van de eindpunten van een opslagaccount voor het rechtstreeks openen van de Azure-bestandsshare. De meeste informatie in dit document is ook van toepassing op de manier waarop Azure File Sync samenwerkt met openbare en privé-eindpunten voor het opslagaccount. Als u echter meer wilt weten over aandachtspunten voor netwerken bij een Azure File Sync-implementatie, raadpleegt u [Azure File Sync proxy and firewall settings](../file-sync/file-sync-firewall-and-proxy.md) (Azure File Sync-proxy- en firewallinstellingen).
 
 Het is raadzaam om [Azure Files networking considerations](storage-files-networking-overview.md) (Aandachtspunten voor Azure Files-netwerken) te lezen voordat u dit artikel verder leest.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - In dit artikel wordt ervan uitgegaan dat u al een Azure-abonnement hebt gemaakt. Als u nog geen abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
-- In dit artikel wordt ervan uitgegaan dat u al een Azure-bestands share hebt gemaakt in een opslag account waarmee u vanuit on-premises verbinding wilt maken. Zie [Een Azure-bestandsshare maken](storage-how-to-create-file-share.md) als u wilt lezen hoe u een Azure-bestandsshare maakt.
+- In dit artikel wordt ervan uitgenomen dat u al een Azure-bestands share hebt gemaakt in een opslagaccount waar u on-premises verbinding mee wilt maken. Zie [Een Azure-bestandsshare maken](storage-how-to-create-file-share.md) als u wilt lezen hoe u een Azure-bestandsshare maakt.
 - Als u van plan bent om Azure PowerShell te gebruiken, [installeert u de nieuwste versie](/powershell/azure/install-az-ps).
 - Als u van plan bent om de Artikel CLI te gebruiken, [installeert u de nieuwste versie](/cli/azure/install-azure-cli).
 
-## <a name="endpoint-configurations"></a>Eindpunt configuraties
+## <a name="endpoint-configurations"></a>Eindpuntconfiguraties
 
-U kunt uw eind punten zo configureren dat de netwerk toegang tot uw opslag account wordt beperkt. Er zijn twee benaderingen voor het beperken van de toegang van een opslagaccount tot een virtueel netwerk:
+U kunt uw eindpunten configureren om de netwerktoegang tot uw opslagaccount te beperken. Er zijn twee benaderingen voor het beperken van de toegang van een opslagaccount tot een virtueel netwerk:
 
 - [Een of meer privé-eindpunten maken voor het opslagaccount](#create-a-private-endpoint) en alle toegang tot het openbare eindpunt beperken. Hierdoor heeft alleen verkeer dat afkomstig is uit de gewenste virtuele netwerken toegang tot de Azure-bestandsshares binnen het opslagaccount.
-- [Beperk het open bare eind punt tot een of meer virtuele netwerken](#restrict-public-endpoint-access). Hiervoor wordt een voorziening van het virtuele netwerk gebruikt met de naam *service-eindpunten*. Wanneer u het verkeer beperkt tot een opslag account via een service-eind punt, hebt u nog steeds toegang tot het opslag account via het open bare IP-adres, maar is toegang alleen mogelijk vanaf de locaties die u opgeeft in uw configuratie.
+- [Beperk het openbare eindpunt tot een of meer virtuele netwerken.](#restrict-public-endpoint-access) Hiervoor wordt een voorziening van het virtuele netwerk gebruikt met de naam *service-eindpunten*. Wanneer u het verkeer naar een opslagaccount beperkt via een service-eindpunt, hebt u nog steeds toegang tot het opslagaccount via het openbare IP-adres, maar is toegang alleen mogelijk vanaf de locaties die u in uw configuratie opgeeft.
 
 ### <a name="create-a-private-endpoint"></a>Een privé-eindpunt maken
 
@@ -125,7 +125,7 @@ hostName=$(echo $httpEndpoint | cut -c7-$(expr length $httpEndpoint) | tr -d "/"
 nslookup $hostName
 ```
 
-Als alles in orde is, ziet u de volgende uitvoer, waarbij `192.168.0.5` het privé-IP-adres is van het privé-eindpunt in uw virtuele netwerk. U moet nog steeds storageaccount.file.core.windows.net gebruiken om uw bestands share te koppelen in plaats van het `privatelink` pad.
+Als alles in orde is, ziet u de volgende uitvoer, waarbij `192.168.0.5` het privé-IP-adres is van het privé-eindpunt in uw virtuele netwerk. U moet nog steeds storageaccount.file.core.windows.net om uw bestands share te mounten in plaats van het `privatelink` pad.
 
 ```Output
 Server:         127.0.0.53
@@ -138,13 +138,13 @@ Address: 192.168.0.5
 ```
 ---
 
-## <a name="restrict-public-endpoint-access"></a>Toegang tot open bare eind punten beperken
+## <a name="restrict-public-endpoint-access"></a>Toegang tot openbare eindpunten beperken
 
-Voor het beperken van toegang tot open bare eind punten moet u eerst algemene toegang tot het open bare eind punt uitschakelen. Het uitschakelen van de toegang tot het open bare eind punt heeft geen invloed op privé-eind punten. Nadat het open bare eind punt is uitgeschakeld, kunt u specifieke netwerken of IP-adressen selecteren die er toegang toe hebben. Over het algemeen beperken de meeste firewall-beleids regels voor een opslag account netwerk toegang tot een of meer virtuele netwerken.
+Als u eerst de toegang tot openbare eindpunten beperkt, moet u algemene toegang tot het openbare eindpunt uitschakelen. Het uitschakelen van toegang tot het openbare eindpunt heeft geen invloed op privé-eindpunten. Nadat het openbare eindpunt is uitgeschakeld, kunt u specifieke netwerken of IP-adressen selecteren die er mogelijk nog toegang toe hebben. Over het algemeen beperken de meeste firewallbeleidsregels voor een opslagaccount de netwerktoegang tot een of meer virtuele netwerken.
 
 #### <a name="disable-access-to-the-public-endpoint"></a>Toegang tot het openbare eindpunt uitschakelen
 
-Wanneer alle toegang tot het openbare eindpunt wordt uitgeschakeld, is het opslagaccount nog toegankelijk via de privé-eindpunten van het account. Anders worden geldige aanvragen voor het open bare eind punt van het opslag account geweigerd, tenzij ze afkomstig zijn van [een specifiek toegestane bron](#restrict-access-to-the-public-endpoint-to-specific-virtual-networks). 
+Wanneer alle toegang tot het openbare eindpunt wordt uitgeschakeld, is het opslagaccount nog toegankelijk via de privé-eindpunten van het account. Anders worden geldige aanvragen naar het openbare eindpunt van het opslagaccount geweigerd, tenzij ze afkomstig zijn [van een bron die specifiek is toegestaan.](#restrict-access-to-the-public-endpoint-to-specific-virtual-networks) 
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 [!INCLUDE [storage-files-networking-endpoints-public-disable-portal](../../../includes/storage-files-networking-endpoints-public-disable-portal.md)]

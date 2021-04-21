@@ -4,12 +4,12 @@ description: Lees hoe u een serverloze Python-functie-app maakt en een bestaande
 ms.topic: sample
 ms.date: 03/01/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 00bf0ecc9db3cf369fd75b427dcfba686aed0ed5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d0037cea24b1989c4f7a4d2ddd6bf3f8f7e812b3
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98035118"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107762277"
 ---
 # <a name="mount-a-file-share-to-a-python-function-app-using-azure-cli"></a>Een bestandsshare koppelen aan een Python-functie-app met behulp van Azure CLI
 
@@ -38,13 +38,13 @@ Elke opdracht in de tabel is een koppeling naar specifieke documentatie over de 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Hiermee wordt een Azure Storage-account gemaakt. |
-| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Hiermee maakt u een functie-app. |
-| [az storage share create](/cli/azure/storage/share#az-storage-share-create) | Hiermee maakt u een Azure Files-share in het opslagaccount. | 
-| [az storage directory create](/cli/azure/storage/directory#az-storage-directory-create) | Hiermee maakt u een map in de share. |
-| [az webapp config storage-account add](/cli/azure/webapp/config/storage-account#az-webapp-config-storage-account-add) | Hiermee koppelt u de share aan de functie-app. |
-| [az webapp config storage-account list](/cli/azure/webapp/config/storage-account#az-webapp-config-storage-account-list) | Hiermee worden de bestandsshares weergegeven die zijn gekoppeld aan de functie-app. | 
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az storage account create](/cli/azure/storage/account#az_storage_account_create) | Hiermee wordt een Azure Storage-account gemaakt. |
+| [az functionapp create](/cli/azure/functionapp#az_functionapp_create) | Hiermee maakt u een functie-app. |
+| [az storage share create](/cli/azure/storage/share#az_storage_share_create) | Hiermee maakt u een Azure Files-share in het opslagaccount. | 
+| [az storage directory create](/cli/azure/storage/directory#az_storage_directory_create) | Hiermee maakt u een map in de share. |
+| [az webapp config storage-account add](/cli/azure/webapp/config/storage-account#az_webapp_config_storage_account_add) | Hiermee koppelt u de share aan de functie-app. |
+| [az webapp config storage-account list](/cli/azure/webapp/config/storage-account#az_webapp_config_storage_account_list) | Hiermee worden de bestandsshares weergegeven die zijn gekoppeld aan de functie-app. | 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 05/18/2018
 ms.reviewer: avverma
 ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 68f311a949d6c7663c5602c444d1b7b9af09dcad
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b7fdf6d4893a6f6a970223671b28fdae6db3ef3d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96016723"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107762979"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Zelfstudie: Een virtuele-machineschaalset automatisch schalen met Azure CLI
 
@@ -55,7 +55,7 @@ az vmss create \
 
 ## <a name="define-an-autoscale-profile"></a>Een profiel voor automatisch schalen definiëren
 
-Als u automatisch schalen wilt inschakelen voor een schaalset, moet u eerst een profiel voor automatisch schalen definiëren. In dit profiel worden de minimum-, maximum- en standaardcapaciteit ingesteld voor de schaalset. Met behulp van deze limieten kunt u de kosten in de hand houden doordat er niet steeds VM-exemplaren hoeven te worden gemaakt, en kunt u aanvaardbare prestaties realiseren met een minimum aantal exemplaren die altijd kunnen worden ingeschaald. U maakt een profiel voor automatisch schalen met [az monitor autoscale create](/cli/azure/monitor/autoscale#az-monitor-autoscale-create). In het volgende voorbeeld worden de minimum- en standaardcapaciteit ingesteld op *2* VM-exemplaren en het maximum op *10*:
+Als u automatisch schalen wilt inschakelen voor een schaalset, moet u eerst een profiel voor automatisch schalen definiëren. In dit profiel worden de minimum-, maximum- en standaardcapaciteit ingesteld voor de schaalset. Met behulp van deze limieten kunt u de kosten in de hand houden doordat er niet steeds VM-exemplaren hoeven te worden gemaakt, en kunt u aanvaardbare prestaties realiseren met een minimum aantal exemplaren die altijd kunnen worden ingeschaald. U maakt een profiel voor automatisch schalen met [az monitor autoscale create](/cli/azure/monitor/autoscale#az_monitor_autoscale_create). In het volgende voorbeeld worden de minimum- en standaardcapaciteit ingesteld op *2* VM-exemplaren en het maximum op *10*:
 
 ```azurecli-interactive
 az monitor autoscale create \
@@ -72,7 +72,7 @@ az monitor autoscale create \
 
 Als de vraag van uw toepassing toeneemt, neemt de belasting van de VM-exemplaren in de schaalset ook toe. Als deze toegenomen belasting consistent is, en geen piekbelasting is, kunt u regels voor automatisch schalen configureren om het aantal VM-exemplaren in de schaalset te verhogen. Wanneer deze VM-exemplaren worden gemaakt en uw toepassingen worden geïmplementeerd, zorgt de schaalset ervoor dat er via de load balancer verkeer wordt gedistribueerd naar de exemplaren. U bepaalt welke meetwaarden gegevens moeten worden bewaakt, zoals CPU of schijf, hoe lang de belasting van de toepassing overeen moet komen met een bepaalde drempelwaarde en hoeveel VM-exemplaren er moeten worden toegevoegd aan de schaalset.
 
-We gaan een regel maken met [az monitor autoscale create](/cli/azure/monitor/autoscale/rule#az-monitor-autoscale-rule-create) waarmee het aantal VM-exemplaren in een schaalset wordt verhoogd wanneer de gemiddelde CPU-belasting gedurende een periode van vijf minuten groter dan 70% is. Wanneer de regel wordt geactiveerd, wordt het aantal VM-exemplaren met drie verhoogd.
+We gaan een regel maken met [az monitor autoscale create](/cli/azure/monitor/autoscale/rule#az_monitor_autoscale_rule_create) waarmee het aantal VM-exemplaren in een schaalset wordt verhoogd wanneer de gemiddelde CPU-belasting gedurende een periode van vijf minuten groter dan 70% is. Wanneer de regel wordt geactiveerd, wordt het aantal VM-exemplaren met drie verhoogd.
 
 ```azurecli-interactive
 az monitor autoscale rule create \
@@ -86,7 +86,7 @@ az monitor autoscale rule create \
 
 In het weekend of 's avonds kan de vraag voor uw toepassing afnemen. Als deze afgenomen belasting consistent is gedurende een bepaalde periode, kunt u regels voor automatisch schalen configureren om het aantal VM-exemplaren in de schaalset te verlagen. Deze inschaalactie reduceert de kosten voor het uitvoeren van uw schaalset, aangezien u alleen het aantal exemplaren uitvoert dat vereist is om te voldoen aan de actuele vraag.
 
-We gaan nog een regel maken met [az monitor autoscale create](/cli/azure/monitor/autoscale/rule#az-monitor-autoscale-rule-create), maar met deze regel wordt het aantal VM-exemplaren in een schaalset verlaagd wanneer de gemiddelde CPU-belasting gedurende een periode van vijf minuten minder dan 30% is. In het volgende voorbeeld wordt er een regel gedefinieerd voor het inschalen van het aantal VM-exemplaren met één:
+We gaan nog een regel maken met [az monitor autoscale create](/cli/azure/monitor/autoscale/rule#az_monitor_autoscale_rule_create), maar met deze regel wordt het aantal VM-exemplaren in een schaalset verlaagd wanneer de gemiddelde CPU-belasting gedurende een periode van vijf minuten minder dan 30% is. In het volgende voorbeeld wordt er een regel gedefinieerd voor het inschalen van het aantal VM-exemplaren met één:
 
 ```azurecli-interactive
 az monitor autoscale rule create \

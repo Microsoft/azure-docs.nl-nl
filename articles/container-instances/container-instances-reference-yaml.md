@@ -1,27 +1,27 @@
 ---
-title: YAML-verwijzing voor container groep
-description: Verwijzing voor het YAML-bestand dat wordt ondersteund door Azure Container Instances voor het configureren van een container groep
+title: YAML-verwijzing voor containergroep
+description: Naslag voor het YAML-bestand dat wordt Azure Container Instances om een containergroep te configureren
 ms.topic: article
 ms.date: 07/06/2020
-ms.openlocfilehash: d0ec8d13eebba1c60f5a52f8c43bdd8b90eeb913
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: efbea7b64ccdf685d4c82bd406f2aa09227e53e1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "87084757"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771133"
 ---
-# <a name="yaml-reference-azure-container-instances"></a>YAML-verwijzing: Azure Container Instances
+# <a name="yaml-reference-azure-container-instances"></a>YAML-naslag: Azure Container Instances
 
-In dit artikel worden de syntaxis en eigenschappen beschreven voor het YAML-bestand dat wordt ondersteund door Azure Container Instances om een [container groep](container-instances-container-groups.md)te configureren. Gebruik een YAML-bestand om de groeps configuratie in te voeren op de opdracht [AZ container Create][az-container-create] in de Azure cli. 
+In dit artikel worden de syntaxis en eigenschappen voor het YAML-bestand beschreven die worden Azure Container Instances om een [containergroep te configureren.](container-instances-container-groups.md) Gebruik een YAML-bestand om de groepsconfiguratie in te voeren in [de opdracht az container create][az-container-create] in de Azure CLI. 
 
-Een YAML-bestand is een handige manier om een container groep te configureren voor reproduceer bare implementaties. Het is een beknopt alternatief voor het gebruik van een [Resource Manager-sjabloon](/azure/templates/Microsoft.ContainerInstance/2019-12-01/containerGroups) of de Azure container instances sdk's om een container groep te maken of bij te werken.
+Een YAML-bestand is een handige manier om een containergroep te configureren voor reproduceerbare implementaties. Het is een beknopt alternatief voor het gebruik van [een Resource Manager-sjabloon](/azure/templates/Microsoft.ContainerInstance/2019-12-01/containerGroups) of de Azure Container Instances-SDK's om een containergroep te maken of bij te werken.
 
 > [!NOTE]
-> Deze verwijzing is van toepassing op YAML-bestanden voor Azure Container Instances REST API-versie `2019-12-01` .
+> Deze verwijzing is van toepassing op YAML-bestanden voor Azure Container Instances REST API versie `2019-12-01` .
 
 ## <a name="schema"></a>Schema 
 
-Het schema voor het YAML-bestand volgt, inclusief opmerkingen om de sleutel eigenschappen te markeren. Zie de sectie [eigenschaps waarden](#property-values) voor een beschrijving van de eigenschappen in dit schema.
+Het schema voor het YAML-bestand volgt, inclusief opmerkingen om belangrijke eigenschappen te markeren. Zie de sectie Eigenschapswaarden voor een beschrijving van de eigenschappen in [dit](#property-values) schema.
 
 ```yml
 name: string  # Name of the container group
@@ -148,62 +148,62 @@ properties: # Properties of container group
         readOnly: boolean
 ```
 
-## <a name="property-values"></a>Eigenschaps waarden
+## <a name="property-values"></a>Eigenschapswaarden
 
-De volgende tabellen bevatten een beschrijving van de waarden die u moet instellen in het schema.
-
-
-
-### <a name="microsoftcontainerinstancecontainergroups-object"></a>Micro soft. ContainerInstance/containerGroups-object
-
-|  Naam | Type | Vereist | Waarde |
-|  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Yes | De naam van de container groep. |
-|  apiVersion | vaste | Yes | 2018-10-01 |
-|  location | tekenreeks | No | De resource locatie. |
-|  tags | object | No | De resource Tags. |
-|  identity | object | No | De identiteit van de container groep, indien geconfigureerd. - [ContainerGroupIdentity-object](#containergroupidentity-object) |
-|  properties | object | Yes | [ContainerGroupProperties-object](#containergroupproperties-object) |
+In de volgende tabellen worden de waarden beschreven die u in het schema moet instellen.
 
 
 
-
-### <a name="containergroupidentity-object"></a>ContainerGroupIdentity-object
+### <a name="microsoftcontainerinstancecontainergroups-object"></a>Microsoft.ContainerInstance/containerGroups-object
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  type | vaste | No | Het type identiteit dat voor de container groep wordt gebruikt. Het type ' SystemAssigned, UserAssigned ' bevat zowel een impliciet gemaakte identiteit als een set door de gebruiker toegewezen identiteiten. Met het type geen worden identiteiten uit de container groep verwijderd. -SystemAssigned, UserAssigned, SystemAssigned, UserAssigned, geen |
-|  userAssignedIdentities | object | No | De lijst met gebruikers-id's die zijn gekoppeld aan de container groep. De sleutel verwijzingen van de gebruikers-id-woorden lijst worden Azure Resource Manager bron-Id's in de vorm: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName} '. |
+|  naam | tekenreeks | Yes | De naam van de containergroep. |
+|  apiVersion | Enum | Yes | 2018-10-01 |
+|  location | tekenreeks | No | De resourcelocatie. |
+|  tags | object | No | De resourcetags. |
+|  identity | object | No | De identiteit van de containergroep, indien geconfigureerd. - [Object ContainerGroupIdentity](#containergroupidentity-object) |
+|  properties | object | Yes | [Object ContainerGroupProperties](#containergroupproperties-object) |
 
 
 
 
-### <a name="containergroupproperties-object"></a>ContainerGroupProperties-object
-
-|  Naam | Type | Vereist | Waarde |
-|  ---- | ---- | ---- | ---- |
-|  containers | matrix | Yes | De containers in de container groep. - [Container object](#container-object) |
-|  imageRegistryCredentials | matrix | No | De register referenties voor de installatie kopie waarmee de container groep wordt gemaakt. - [ImageRegistryCredential-object](#imageregistrycredential-object) |
-|  restartPolicy | vaste | No | Start het beleid voor alle containers binnen de container groep opnieuw. - `Always` Altijd opnieuw opstarten opnieuw opstarten `OnFailure` bij fout- `Never` nooit opnieuw opstarten. -Always, OnFailure, Never |
-|  IPAdres | object | No | Het IP-adres type van de container groep. - [IpAddress-object](#ipaddress-object) |
-|  osType | vaste | Yes | Het type besturings systeem dat vereist is voor de containers in de container groep. -Windows of Linux |
-|  volumes | matrix | No | De lijst met volumes die kunnen worden gekoppeld door containers in deze container groep. - [Volume object](#volume-object) |
-|  diagnostische gegevens | object | No | De diagnostische gegevens voor een container groep. - [ContainerGroupDiagnostics-object](#containergroupdiagnostics-object) |
-|  networkProfile | object | No | De netwerk profiel gegevens voor een container groep. - [ContainerGroupNetworkProfile-object](#containergroupnetworkprofile-object) |
-|  dnsConfig | object | No | De DNS-configuratie-informatie voor een container groep. - [DnsConfiguration-object](#dnsconfiguration-object) |
-| sku | vaste | No | De SKU voor een container groep: Standard of dedicated |
-| encryptionProperties | object | No | De versleutelings eigenschappen voor een container groep. - [EncryptionProperties-object](#encryptionproperties-object) | 
-| initContainers | matrix | No | De init-containers voor een container groep. - [InitContainerDefinition-object](#initcontainerdefinition-object) |
-
-
-
-
-### <a name="container-object"></a>Container object
+### <a name="containergroupidentity-object"></a>Object ContainerGroupIdentity
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Yes | De door de gebruiker gegeven naam van het container exemplaar. |
-|  properties | object | Yes | De eigenschappen van het container exemplaar. - [ContainerProperties-object](#containerproperties-object) |
+|  type | Enum | No | Het type identiteit dat wordt gebruikt voor de containergroep. Het type 'SystemAssigned, UserAssigned' bevat zowel een impliciet gemaakte identiteit als een set door de gebruiker toegewezen identiteiten. Met het type Geen worden alle identiteiten uit de containergroep verwijderd. - SystemAssigned, UserAssigned, SystemAssigned, UserAssigned, None |
+|  userAssignedIdentities | object | No | De lijst met gebruikersidentiteiten die zijn gekoppeld aan de containergroep. De sleutelverwijzingen voor de gebruikersidentiteitswoordenlijst zijn Azure Resource Manager resource-id's in de vorm: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'. |
+
+
+
+
+### <a name="containergroupproperties-object"></a>Object ContainerGroupProperties
+
+|  Naam | Type | Vereist | Waarde |
+|  ---- | ---- | ---- | ---- |
+|  containers | matrix | Yes | De containers in de containergroep. - [Containerobject](#container-object) |
+|  imageRegistryCredentials | matrix | No | De registerreferenties van de afbeelding waarmee de containergroep wordt gemaakt. - [ImageRegistryCredential-object](#imageregistrycredential-object) |
+|  restartPolicy | Enum | No | Beleid voor opnieuw opstarten voor alle containers in de containergroep. - `Always` Altijd opnieuw `OnFailure` opstarten- Opnieuw opstarten bij fout: `Never` nooit opnieuw opstarten. - Always, OnFailure, Never |
+|  ipAddress | object | No | Het IP-adrestype van de containergroep. - [IpAddress-object](#ipaddress-object) |
+|  osType | Enum | Yes | Het besturingssysteemtype dat is vereist voor de containers in de containergroep. - Windows of Linux |
+|  volumes | matrix | No | De lijst met volumes die kunnen worden bevestigd door containers in deze containergroep. - [Volumeobject](#volume-object) |
+|  diagnostische gegevens | object | No | De diagnostische gegevens voor een containergroep. - [Object ContainerGroupDiagnostics](#containergroupdiagnostics-object) |
+|  networkProfile | object | No | De netwerkprofielgegevens voor een containergroep. - [Object ContainerGroupNetworkProfile](#containergroupnetworkprofile-object) |
+|  dnsConfig | object | No | De DNS-configuratiegegevens voor een containergroep. - [DnsConfiguration-object](#dnsconfiguration-object) |
+| sku | Enum | No | De SKU voor een containergroep- Standard of Dedicated |
+| encryptionProperties | object | No | De versleutelingseigenschappen voor een containergroep. - [Object EncryptionProperties](#encryptionproperties-object) | 
+| initContainers | matrix | No | De init-containers voor een containergroep. - [InitContainerDefinition-object](#initcontainerdefinition-object) |
+
+
+
+
+### <a name="container-object"></a>Containerobject
+
+|  Naam | Type | Vereist | Waarde |
+|  ---- | ---- | ---- | ---- |
+|  naam | tekenreeks | Yes | De door de gebruiker opgegeven naam van de container-instantie. |
+|  properties | object | Yes | De eigenschappen van de container-instantie. - [Object ContainerProperties](#containerproperties-object) |
 
 
 
@@ -212,9 +212,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  server | tekenreeks | Yes | De register server van de docker-installatie kopie zonder een protocol zoals http en HTTPS. |
-|  gebruikersnaam | tekenreeks | Yes | De gebruikers naam voor het persoonlijke REGI ster. |
-|  wachtwoord | tekenreeks | No | Het wacht woord voor het persoonlijke REGI ster. |
+|  server | tekenreeks | Yes | De Registerserver voor Docker-afbeeldingen zonder protocol, zoals 'http' en 'https'. |
+|  gebruikersnaam | tekenreeks | Yes | De gebruikersnaam voor het privéregister. |
+|  wachtwoord | tekenreeks | No | Het wachtwoord voor het privéregister. |
 
 
 
@@ -223,41 +223,41 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  ports | matrix | Yes | De lijst met poorten die worden weer gegeven in de container groep. - [Poort object](#port-object) |
-|  type | vaste | Yes | Hiermee geeft u op of het IP-adres beschikbaar is voor het open bare Internet of het persoonlijke VNET. -Openbaar of privé |
-|  IP | tekenreeks | No | Het IP-adres dat toegankelijk is voor het open bare Internet. |
-|  dnsNameLabel | tekenreeks | No | Het DNS-naam label voor het IP-adres. |
+|  ports | matrix | Yes | De lijst met poorten die worden weergegeven in de containergroep. - [Poortobject](#port-object) |
+|  type | Enum | Yes | Hiermee geeft u op of het IP-adres wordt blootgesteld aan het openbare internet of privé-VNET. - Openbaar of Privé |
+|  IP | tekenreeks | No | Het IP-adres wordt blootgesteld aan het openbare internet. |
+|  dnsNameLabel | tekenreeks | No | Het Dns-naamlabel voor het IP-adres. |
 
 
 
 
-### <a name="volume-object"></a>Volume object
+### <a name="volume-object"></a>Volumeobject
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
 |  naam | tekenreeks | Yes | De naam van het volume. |
-|  azureFile | object | No | Het Azure-bestands volume. - [AzureFileVolume-object](#azurefilevolume-object) |
-|  emptyDir | object | No | Het lege directory volume. |
+|  azureFile | object | No | Het Azure-bestandsvolume. - [AzureFileVolume-object](#azurefilevolume-object) |
+|  emptyDir | object | No | Het lege mapvolume. |
 |  geheim | object | No | Het geheime volume. |
-|  gitRepo | object | No | Het git opslag plaats-volume. - [GitRepoVolume-object](#gitrepovolume-object) |
+|  gitRepo | object | No | Het git-repo-volume. - [GitRepoVolume-object](#gitrepovolume-object) |
 
 
 
 
-### <a name="containergroupdiagnostics-object"></a>ContainerGroupDiagnostics-object
-
-|  Naam | Type | Vereist | Waarde |
-|  ---- | ---- | ---- | ---- |
-|  logAnalytics | object | No | Informatie over logboek analyse van container groep. - [LogAnalytics-object](#loganalytics-object) |
-
-
-
-
-### <a name="containergroupnetworkprofile-object"></a>ContainerGroupNetworkProfile-object
+### <a name="containergroupdiagnostics-object"></a>Object ContainerGroupDiagnostics
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  id | tekenreeks | Yes | De id voor een netwerk profiel. |
+|  logAnalytics | object | No | Logboekanalysegegevens voor containergroep. - [LogAnalytics-object](#loganalytics-object) |
+
+
+
+
+### <a name="containergroupnetworkprofile-object"></a>Object ContainerGroupNetworkProfile
+
+|  Naam | Type | Vereist | Waarde |
+|  ---- | ---- | ---- | ---- |
+|  id | tekenreeks | Yes | De id voor een netwerkprofiel. |
 
 
 
@@ -266,48 +266,48 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  Naam servers | matrix | Yes | De DNS-servers voor de container groep. -teken reeks |
-|  searchDomains | tekenreeks | No | De DNS-Zoek domeinen voor het opzoeken van hostnamen in de container groep. |
-|  opties | tekenreeks | No | De DNS-opties voor de container groep. |
+|  Nameservers | matrix | Yes | De DNS-servers voor de containergroep. - tekenreeks |
+|  searchDomains | tekenreeks | No | De DNS-zoekdomeinen voor het opzoeken van hostnamen in de containergroep. |
+|  opties | tekenreeks | No | De DNS-opties voor de containergroep. |
 
 
-### <a name="encryptionproperties-object"></a>EncryptionProperties-object
+### <a name="encryptionproperties-object"></a>Object EncryptionProperties
 
 | Naam  | Type  | Vereist  | Waarde |
 |  ---- | ---- | ---- | ---- |
-| vaultBaseUrl  | tekenreeks    | Yes   | De basis-URL van de sleutel kluis. |
-| keyName   | tekenreeks    | Yes   | De naam van de versleutelings sleutel. |
-| Versie    | tekenreeks    | Yes   | De versie van de versleutelings sleutel. |
+| vaultBaseUrl  | tekenreeks    | Yes   | De basis-URL van de sleutelkault. |
+| keyName   | tekenreeks    | Yes   | De naam van de versleutelingssleutel. |
+| keyVersion    | tekenreeks    | Yes   | De versie van de versleutelingssleutel. |
 
 ### <a name="initcontainerdefinition-object"></a>InitContainerDefinition-object
 
 | Naam  | Type  | Vereist  | Waarde |
 |  ---- | ---- | ---- | ---- |
 | naam  | tekenreeks |  Yes | De naam voor de init-container. |
-| properties    | object    | Yes   | De eigenschappen voor de init-container. - [InitContainerPropertiesDefinition-object](#initcontainerpropertiesdefinition-object)
+| properties    | object    | Yes   | De eigenschappen voor de init-container. - [Object InitContainerPropertiesDefinition](#initcontainerpropertiesdefinition-object)
 
 
-### <a name="containerproperties-object"></a>ContainerProperties-object
-
-|  Naam | Type | Vereist | Waarde |
-|  ---- | ---- | ---- | ---- |
-|  image | tekenreeks | Yes | De naam van de installatie kopie die wordt gebruikt om het container exemplaar te maken. |
-|  command | matrix | No | De opdrachten die moeten worden uitgevoerd binnen het container exemplaar in het formulier exec. -teken reeks |
-|  ports | matrix | No | De weer gegeven poorten op het container exemplaar. - [ContainerPort-object](#containerport-object) |
-|  Omgevings variabelen | matrix | No | De omgevings variabelen die in het container exemplaar moeten worden ingesteld. - [EnvironmentVariable-object](#environmentvariable-object) |
-|  resources | object | Yes | De resource vereisten van het container exemplaar. - [ResourceRequirements-object](#resourcerequirements-object) |
-|  volumeMounts | matrix | No | Het volume koppelt beschikbaar voor het container exemplaar. - [VolumeMount-object](#volumemount-object) |
-|  livenessProbe | object | No | De duur van de liveiteit. - [ContainerProbe-object](#containerprobe-object) |
-|  readinessProbe | object | No | De gereedheids test. - [ContainerProbe-object](#containerprobe-object) |
-
-
-
-
-### <a name="port-object"></a>Poort object
+### <a name="containerproperties-object"></a>Object ContainerProperties
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  protocol | vaste | No | Het protocol dat is gekoppeld aan de poort. -TCP of UDP |
+|  image | tekenreeks | Yes | De naam van de afbeelding die wordt gebruikt voor het maken van de container-instantie. |
+|  command | matrix | No | De opdrachten die moeten worden uitgevoerd in de container-instantie in exec-vorm. - tekenreeks |
+|  ports | matrix | No | De open zichtbare poorten op de container-instantie. - [ContainerPort-object](#containerport-object) |
+|  environmentVariables | matrix | No | De omgevingsvariabelen die moeten worden ingesteld in de container-instantie. - [EnvironmentVariable-object](#environmentvariable-object) |
+|  resources | object | Yes | De resourcevereisten van de container-instantie. - [ResourceRequirements-object](#resourcerequirements-object) |
+|  volumeMounts | matrix | No | De volume-mounts die beschikbaar zijn voor de container-instantie. - [VolumeMount-object](#volumemount-object) |
+|  livenessProbe | object | No | De test voor de liveheid. - [ContainerProbe-object](#containerprobe-object) |
+|  readinessProbe | object | No | De gereedheidstest. - [ContainerProbe-object](#containerprobe-object) |
+
+
+
+
+### <a name="port-object"></a>Poortobject
+
+|  Naam | Type | Vereist | Waarde |
+|  ---- | ---- | ---- | ---- |
+|  protocol | Enum | No | Het protocol dat is gekoppeld aan de poort. - TCP of UDP |
 |  poort | geheel getal | Yes | het poortnummer. |
 
 
@@ -317,10 +317,10 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  shareName | tekenreeks | Yes | De naam van de Azure-bestands share die moet worden gekoppeld als een volume. |
-|  Kenmerk | booleaans | No | De vlag waarmee wordt aangegeven of het Azure-bestand dat als een volume is gedeeld, alleen-lezen is. |
-|  storageAccountName | tekenreeks | Yes | De naam van het opslag account dat de Azure-bestands share bevat. |
-|  storageAccountKey | tekenreeks | No | De toegangs sleutel voor het opslag account die wordt gebruikt om toegang te krijgen tot de Azure-bestands share. |
+|  Sharenaam | tekenreeks | Yes | De naam van de Azure-bestands share die als een volume moet worden bevestigd. |
+|  Readonly | booleaans | No | De vlag die aangeeft of het gedeelde Azure-bestand als een volume alleen-lezen is. |
+|  storageAccountName | tekenreeks | Yes | De naam van het opslagaccount dat de Azure-bestands share bevat. |
+|  storageAccountKey | tekenreeks | No | De toegangssleutel voor het opslagaccount die wordt gebruikt voor toegang tot de Azure-bestands share. |
 
 
 
@@ -329,9 +329,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  map | tekenreeks | No | Naam van de doel directory. Mag niet bevatten of beginnen met...  Als '. ' is opgegeven, wordt de map van het volume de Git-opslag plaats.  Als dat niet het geval is, bevat het volume de Git-opslag plaats in de submap met de opgegeven naam. |
-|  repository | tekenreeks | Yes | URL van opslag plaats |
-|  revision | tekenreeks | No | Hash voor de opgegeven revisie door voeren. |
+|  map | tekenreeks | No | Naam van doelmap. Mag niet bevatten of beginnen met '..'.  Als '.' is opgegeven, wordt de volumemap de git-opslagplaats.  Anders bevat het volume, indien opgegeven, de Git-opslagplaats in de subdirectory met de opgegeven naam. |
+|  repository | tekenreeks | Yes | OPSLAGPLAATS-URL |
+|  revision | tekenreeks | No | Hash voor de opgegeven revisie commit. |
 
 
 
@@ -339,10 +339,10 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  workspaceId | tekenreeks | Yes | De werk ruimte-id voor log Analytics |
-|  workspaceKey | tekenreeks | Yes | De werkruimte sleutel voor log Analytics |
-|  logType | vaste | No | Het logboek type dat moet worden gebruikt. -ContainerInsights of ContainerInstanceLogs |
-|  metagegevens | object | No | Meta gegevens voor log Analytics. |
+|  workspaceId | tekenreeks | Yes | De werkruimte-id voor Log Analytics |
+|  workspaceKey | tekenreeks | Yes | De werkruimtesleutel voor Log Analytics |
+|  logType | Enum | No | Het logboektype dat moet worden gebruikt. - ContainerInsights of ContainerInstanceLogs |
+|  metagegevens | object | No | Metagegevens voor logboekanalyse. |
 
 
 ### <a name="initcontainerpropertiesdefinition-object"></a>InitContainerPropertiesDefinition-object
@@ -350,16 +350,16 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 | Naam  | Type  | Vereist  | Waarde |
 |  ---- | ---- | ---- | ---- |
 | image | tekenreeks    | No    | De afbeelding van de init-container. |
-| command   | matrix | No    | De opdracht die moet worden uitgevoerd binnen de init-container in het formulier exec. -teken reeks |
-| Omgevings variabelen | matrix  | No |De omgevings variabelen die moeten worden ingesteld in de init-container. - [EnvironmentVariable-object](#environmentvariable-object)
-| volumeMounts |matrix   | No    | Het volume koppelt beschikbaar voor de init-container. - [VolumeMount-object](#volumemount-object)
+| command   | matrix | No    | De opdracht die moet worden uitgevoerd in de init-container in exec-vorm. - tekenreeks |
+| environmentVariables | matrix  | No |De omgevingsvariabelen die moeten worden ingesteld in de init-container. - [EnvironmentVariable-object](#environmentvariable-object)
+| volumeMounts |matrix   | No    | De volume-mounts die beschikbaar zijn voor de init-container. - [VolumeMount-object](#volumemount-object)
 
 ### <a name="containerport-object"></a>ContainerPort-object
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  protocol | vaste | No | Het protocol dat is gekoppeld aan de poort. -TCP of UDP |
-|  poort | geheel getal | Yes | Het poort nummer dat wordt weer gegeven in de container groep. |
+|  protocol | Enum | No | Het protocol dat is gekoppeld aan de poort. - TCP of UDP |
+|  poort | geheel getal | Yes | Het poortnummer dat zichtbaar is in de containergroep. |
 
 
 
@@ -368,19 +368,19 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Yes | De naam van de omgevings variabele. |
-|  waarde | tekenreeks | No | De waarde van de omgevings variabele. |
-|  Securevalue op | tekenreeks | No | De waarde van de variabele beveiligde omgeving. |
+|  naam | tekenreeks | Yes | De naam van de omgevingsvariabele. |
+|  waarde | tekenreeks | No | De waarde van de omgevingsvariabele. |
+|  secureValue | tekenreeks | No | De waarde van de beveiligde omgevingsvariabele. |
 
 
 
 
-### <a name="resourcerequirements-object"></a>ResourceRequirements-object
+### <a name="resourcerequirements-object"></a>Object ResourceRequirements
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  requests | object | Yes | De resource aanvragen van dit container exemplaar. - [ResourceRequests-object](#resourcerequests-object) |
-|  limieten | object | No | De resource limieten van dit container exemplaar. - [ResourceLimits-object](#resourcelimits-object) |
+|  requests | object | Yes | De resourceaanvragen van deze container-instantie. - [ResourceRequests-object](#resourcerequests-object) |
+|  Grenzen | object | No | De resourcelimieten van deze container-instantie. - [ResourceLimits-object](#resourcelimits-object) |
 
 
 
@@ -389,9 +389,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  naam | tekenreeks | Yes | De naam van het volume koppeling. |
-|  mountPath | tekenreeks | Yes | Het pad binnen de container waarin het volume moet worden gekoppeld. Mag geen dubbele punt (:)) bevatten. |
-|  Kenmerk | booleaans | No | De vlag waarmee wordt aangegeven of de koppeling van het volume alleen-lezen is. |
+|  naam | tekenreeks | Yes | De naam van de volume-mount. |
+|  mountPath | tekenreeks | Yes | Het pad binnen de container waar het volume moet worden bevestigd. Mag geen dubbele punt (:). |
+|  Readonly | booleaans | No | De vlag die aangeeft of de volume-mount alleen-lezen is. |
 
 
 
@@ -400,13 +400,13 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  exec | object | No | De opdracht uitvoeren om te testen- [ContainerExec-object](#containerexec-object) |
-|  httpGet | object | No | De HTTP Get-instellingen voor het probe- [ContainerHttpGet-object](#containerhttpget-object) |
-|  initialDelaySeconds | geheel getal | No | De eerste vertraging in seconden. |
+|  Uitvoerend | object | No | De uitvoeringsopdracht voor test - [ContainerExec-object](#containerexec-object) |
+|  httpGet | object | No | De http get-instellingen om te controleren - [ContainerHttpGet-object](#containerhttpget-object) |
+|  initialDelaySeconds | geheel getal | No | De eerste vertragingsseconden. |
 |  periodSeconds | geheel getal | No | De periode seconden. |
-|  failureThreshold | geheel getal | No | De drempel waarde voor fouten. |
-|  successThreshold | geheel getal | No | De drempel waarde voor geslaagde pogingen. |
-|  timeoutSeconds | geheel getal | No | De time-outwaarde seconden. |
+|  failureThreshold | geheel getal | No | De drempelwaarde voor fouten. |
+|  successThreshold | geheel getal | No | De drempelwaarde voor succes. |
+|  time-outseconden | geheel getal | No | De time-out seconden. |
 
 
 
@@ -415,9 +415,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  memoryInGB | getal | Yes | De geheugen aanvraag in GB van dit container exemplaar. |
-|  verbruik | getal | Yes | De CPU-aanvraag van dit container exemplaar. |
-|  GPU | object | No | De GPU-aanvraag van dit container exemplaar. - [GpuResource-object](#gpuresource-object) |
+|  memoryInGB | getal | Yes | De geheugenaanvraag in GB van deze container-instantie. |
+|  Cpu | getal | Yes | De CPU-aanvraag van deze container-instantie. |
+|  Gpu | object | No | De GPU-aanvraag van deze container-instantie. - [GpuResource-object](#gpuresource-object) |
 
 
 
@@ -426,9 +426,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  memoryInGB | getal | No | De geheugen limiet in GB van dit container exemplaar. |
-|  verbruik | getal | No | De CPU-limiet van dit container exemplaar. |
-|  GPU | object | No | De GPU-limiet van dit container exemplaar. - [GpuResource-object](#gpuresource-object) |
+|  memoryInGB | getal | No | De geheugenlimiet in GB van deze container-instantie. |
+|  Cpu | getal | No | De CPU-limiet van deze container-instantie. |
+|  Gpu | object | No | De GPU-limiet van deze container-instantie. - [GpuResource-object](#gpuresource-object) |
 
 
 
@@ -437,7 +437,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  command | matrix | No | De opdrachten die moeten worden uitgevoerd in de container. -teken reeks |
+|  command | matrix | No | De opdrachten die in de container moeten worden uitgevoerd. - tekenreeks |
 
 
 
@@ -446,9 +446,9 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
-|  leertraject | tekenreeks | No | Het pad dat moet worden getest. |
-|  poort | geheel getal | Yes | Het poort nummer dat moet worden getest. |
-|  niveaus | vaste | No | Het schema. -http of https |
+|  leertraject | tekenreeks | No | Het pad dat moet worden onderzocht. |
+|  poort | geheel getal | Yes | Het poortnummer dat moet worden onderzocht. |
+|  Regeling | Enum | No | Het schema. - http of https |
 
 
 
@@ -458,15 +458,14 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
 |  count | geheel getal | Yes | Het aantal GPU-resources. |
-|  sku | vaste | Yes | De SKU van de GPU-resource. -K80, P100, V100 |
+|  sku | Enum | Yes | De SKU van de GPU-resource. - K80, P100, V100 |
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de zelf studie [een groep met meerdere containers implementeren met behulp van een yaml-bestand](container-instances-multi-container-yaml.md).
+Zie de zelfstudie [Een groep met meerdere containers implementeren met behulp van een YAML-bestand.](container-instances-multi-container-yaml.md)
 
-Zie voor beelden van het gebruik van een YAML-bestand voor het implementeren van container groepen in een [virtueel netwerk](container-instances-vnet.md) of het [koppelen van een extern volume](container-instances-volume-azure-files.md).
+Zie voorbeelden van het gebruik van een YAML-bestand voor het implementeren van containergroepen in een virtueel [netwerk](container-instances-vnet.md) of het [aan een extern volume toevoegen.](container-instances-volume-azure-files.md)
 
 <!-- LINKS - Internal -->
-[az-container-create]: /cli/azure/container#az-container-create
-
+[az-container-create]: /cli/azure/container#az_container_create

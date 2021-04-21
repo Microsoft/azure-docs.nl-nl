@@ -1,84 +1,84 @@
 ---
-title: Een Java-toepassing met open vrijheid/WebSphere vrijheid implementeren op een Azure Red Hat openshift 4-cluster
-description: Implementeer een Java-toepassing met open vrijheid/WebSphere vrijheid op een Azure Red Hat openshift 4-cluster.
+title: Een Java-toepassing implementeren met Open Dient/WebSphereSphere op een Azure Red Hat OpenShift 4-cluster
+description: Implementeer een Java-toepassing met Open Dient/WebSphereSphere op een Azure Red Hat OpenShift 4-cluster.
 author: jiangma
 ms.author: jiangma
 ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 10/30/2020
-keywords: Java, jakartaee, javaee, microprofile, open-vrijheid, WebSphere-vrijheid, Aro, openshift, Red Hat
-ms.openlocfilehash: 08fd3ab112498a983b438d5ba1f1f100816cbf5d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+keywords: java, hadee, javaee, microprofile, open-wilt, websphere-usb, aro, openshift, red hat
+ms.openlocfilehash: 2a308c7de754f395a3ef8a1bd97ed2441d27d21d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102212991"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107783571"
 ---
-# <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Een Java-toepassing met open vrijheid/WebSphere vrijheid implementeren op een Azure Red Hat openshift 4-cluster
+# <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Een Java-toepassing implementeren met Open Dient/WebSphereSphere op een Azure Red Hat OpenShift 4-cluster
 
-In deze hand leiding wordt gedemonstreerd hoe u uw Java-, Java EE-, [Jakarta ee](https://jakarta.ee/)-of [microprofile](https://microprofile.io/) -toepassing uitvoert op de open vrijheids-en WebSphere vrijheid-runtime en vervolgens de container toepassing implementeert in een Azure Red Hat open Shift (ARO) 4-cluster met behulp van de open vrijheids operator. In dit artikel wordt stapsgewijs uitgelegd hoe u een vrijheids toepassing voorbereidt, de Application docker-installatie kopie bouwt en de container toepassing uitvoert op een ARO 4-cluster.  Zie voor meer informatie over open vrijheid [de open vrijheid project-pagina](https://openliberty.io/). Zie [de product pagina van WebSphere vrijheid](https://www.ibm.com/cloud/websphere-liberty)voor meer informatie over IBM WebSphere vrijheid.
+In deze handleiding wordt gedemonstreerd hoe u uw Java-, Java [EE-, Pagina EE-](https://jakarta.ee/)of [MicroProfile-toepassing](https://microprofile.io/) kunt uitvoeren in de runtime Open Wilt/WebSphereSphere En vervolgens de containertoepassing implementeert in een Azure Red Hat OpenShift (ARO) 4-cluster met behulp van de Open Hebto Operator. In dit artikel wordt beschreven hoe u een Toepassingstoepassing voorbereidt, de Docker-toepassingsafbeelding bouwt en de in een container geplaatste toepassing op een ARO 4-cluster wordt uitgevoerd.  Zie de projectpagina Openen voor meer informatie [over Open Had.](https://openliberty.io/) Zie de productpagina van [WebSphereSphere](https://www.ibm.com/cloud/websphere-liberty)voor meer informatie over IBM WebSphere Page.
 
 [!INCLUDE [aro-support](includes/aro-support.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voer de volgende vereisten uit om deze hand leiding door te lopen.
+Voltooi de volgende vereisten om deze handleiding te kunnen doorlopen.
 
 > [!NOTE]
-> Azure Red Hat OpenShift vereist minimaal 40 kernen om een OpenShift-cluster te maken en uit te voeren. Het standaardquotum voor Azure-resources voor een nieuw Azure-abonnement voldoet niet aan deze vereiste. Als u een verhoging van de resourcelimiet wilt aanvragen, raadpleegt u [Standaardquotum: limieten verhogen per VM-reeks](../azure-portal/supportability/per-vm-quota-requests.md). Houd er rekening mee dat het gratis proef abonnement niet in aanmerking komt voor een quota verhoging, [upgrade naar een abonnement voor betalen per gebruik voordat u](../cost-management-billing/manage/upgrade-azure-subscription.md) een quota verhoging aanvraagt.
+> Azure Red Hat OpenShift vereist minimaal 40 kernen om een OpenShift-cluster te maken en uit te voeren. Het standaardquotum voor Azure-resources voor een nieuw Azure-abonnement voldoet niet aan deze vereiste. Als u een verhoging van de resourcelimiet wilt aanvragen, raadpleegt u [Standaardquotum: limieten verhogen per VM-reeks](../azure-portal/supportability/per-vm-quota-requests.md). Houd er rekening mee dat het gratis proefabonnement niet in aanmerking komt voor een quotumverhoging. [](../cost-management-billing/manage/upgrade-azure-subscription.md) Upgrade naar een abonnement met betalen per uur voordat u een quotumverhoging aanvraagt.
 
-1. Bereid een lokale computer voor met een UNIX-soortgelijk besturings systeem (bijvoorbeeld Ubuntu, macOS).
-1. Installeer een Java-SE-implementatie (bijvoorbeeld [AdoptOpenJDK openjdk 8 LTS/OpenJ9](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9)).
-1. Installeer [maven](https://maven.apache.org/download.cgi) 3.5.0 of hoger.
-1. Installeer [docker](https://docs.docker.com/get-docker/) voor uw besturings systeem.
-1. Installeer [Azure cli](/cli/azure/install-azure-cli) 2.0.75 of hoger.
-1. Controleren en installeren [`envsubst`](https://command-not-found.com/envsubst) als deze niet vooraf is geïnstalleerd in uw besturings systeem.
-1. Kloon de code voor dit voor beeld op het lokale systeem. Het voor beeld bevindt zich op [github](https://github.com/Azure-Samples/open-liberty-on-aro).
-1. Volg de instructies in [een Azure Red Hat open Shift 4-cluster maken](./tutorial-create-cluster.md).
+1. Bereid een lokale computer voor met een Unix-achtige besturingssysteem geïnstalleerd (bijvoorbeeld Ubuntu, macOS).
+1. Installeer een Java SE-implementatie (bijvoorbeeld [AdoptOpenJDK OpenJDK 8 LTS/OpenJ9).](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9)
+1. Installeer [Maven](https://maven.apache.org/download.cgi) 3.5.0 of hoger.
+1. Installeer [Docker voor](https://docs.docker.com/get-docker/) uw besturingssysteem.
+1. Installeer [Azure CLI](/cli/azure/install-azure-cli) 2.0.75 of hoger.
+1. Controleer en installeer [`envsubst`](https://command-not-found.com/envsubst) deze als deze niet vooraf is geïnstalleerd in uw besturingssysteem.
+1. Kloon de code voor dit voorbeeld op uw lokale systeem. Het voorbeeld staat op [GitHub.](https://github.com/Azure-Samples/open-liberty-on-aro)
+1. Volg de instructies in [Een Azure Red Hat OpenShift 4-cluster maken.](./tutorial-create-cluster.md)
 
-   Hoewel de stap ' een Red Hat pull-geheim ophalen ' is voorzien van het label optioneel, **is het vereist voor dit artikel**.  Met het pull-geheim kan uw Azure Red Hat open Shift-cluster de openstaande vrijheids operator vinden.
+   Hoewel de stap 'Een Pull-geheim van Red Hat krijgen' is gelabeld als optioneel, **is dit vereist voor dit artikel.**  Met het pull-geheim kan Azure Red Hat OpenShift cluster de Open Operator vinden.
 
-   Als u van plan bent geheugenintensieve toepassingen op het cluster uit te voeren, geeft u de juiste grootte van de virtuele machine voor de worker-knoop punten op met behulp van de `--worker-vm-size` para meter. `Standard_E4s_v3`Is bijvoorbeeld de minimale grootte van de virtuele machine om de Elasticsearch-operator in een cluster te installeren. Zie voor meer informatie:
+   Als u van plan bent om geheugenintensieve toepassingen op het cluster uit te voeren, geeft u de juiste grootte van de virtuele machine voor de werkknooppunten op met behulp van de `--worker-vm-size` parameter . Is bijvoorbeeld `Standard_E4s_v3` de minimale grootte van de virtuele machine om de Elasticsearch Operator op een cluster te installeren. Zie voor meer informatie:
 
-   * [Azure CLI om een cluster te maken](/cli/azure/aro#az-aro-create)
-   * [Ondersteunde grootten voor virtuele machines voor geoptimaliseerd geheugen](./support-policies-v4.md#memory-optimized)
-   * [Vereisten voor het installeren van de Elasticsearch-operator](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging-deploying.html#cluster-logging-deploy-eo-cli_cluster-logging-deploying)
+   * [Azure CLI voor het maken van een cluster](/cli/azure/aro#az_aro_create)
+   * [Ondersteunde grootten van virtuele machines voor geoptimaliseerd geheugen](./support-policies-v4.md#memory-optimized)
+   * [Vereisten voor het installeren van de Elasticsearch Operator](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging-deploying.html#cluster-logging-deploy-eo-cli_cluster-logging-deploying)
 
-1. Maak verbinding met het cluster door de stappen te volgen in [verbinding maken met een Azure Red Hat open Shift 4-cluster](./tutorial-connect-cluster.md).
-   * Volg de stappen in ' de openhouds-CLI installeren ', omdat de `oc` opdracht later in dit artikel wordt gebruikt.
-   * Noteer de URL van de cluster console, die er als volgt uitziet `https://console-openshift-console.apps.<random>.<region>.aroapp.io/` .
+1. Maak verbinding met het cluster door de stappen in [Verbinding maken met een Azure Red Hat OpenShift 4-cluster te volgen.](./tutorial-connect-cluster.md)
+   * Volg de stappen in De OpenShift CLI installeren, omdat we de opdracht `oc` later in dit artikel gebruiken.
+   * Noteren van de url van de clusterconsole die eruitziet als `https://console-openshift-console.apps.<random>.<region>.aroapp.io/` .
    * Noteer de `kubeadmin` referenties.
 
-1. Controleer of u zich kunt aanmelden bij open Shift CLI met het token voor gebruiker `kubeadmin` .
+1. Controleer of u zich kunt aanmelden bij de OpenShift CLI met het token voor gebruiker `kubeadmin` .
 
-### <a name="enable-the-built-in-container-registry-for-openshift"></a>Het ingebouwde container register voor open Shift inschakelen
+### <a name="enable-the-built-in-container-registry-for-openshift"></a>Het ingebouwde containerregister inschakelen voor OpenShift
 
-Met de stappen in deze zelf studie maakt u een docker-installatie kopie die moet worden gepusht naar een container register dat toegankelijk is voor open SHIFT. De eenvoudigste optie is het gebruik van het ingebouwde REGI ster van open SHIFT. Als u het ingebouwde container register wilt inschakelen, volgt u de stappen in een [ingebouwd container register configureren voor Azure Red Hat open Shift 4](built-in-container-registry.md). In dit artikel worden drie items van deze stappen gebruikt.
+Met de stappen in deze zelfstudie maakt u een Docker-afbeelding die naar een containerregister moet worden pushen dat toegankelijk is voor OpenShift. De eenvoudigste optie is om het ingebouwde register van OpenShift te gebruiken. Als u het ingebouwde containerregister wilt inschakelen, volgt u de stappen [in Ingebouwde containerregister configureren voor Azure Red Hat OpenShift 4.](built-in-container-registry.md) In dit artikel worden drie items uit deze stappen gebruikt.
 
-* De gebruikers naam en het wacht woord van de Azure AD-gebruiker voor het aanmelden bij de open Shift-webconsole.
-* De uitvoer van `oc whoami` na de volgende stappen voor het aanmelden bij de open Shift-cli.  Deze waarde wordt **Aad-gebruiker** voor de discussie genoemd.
-* De container register-URL.
+* De gebruikersnaam en het wachtwoord van de Azure AD-gebruiker voor aanmelding bij de OpenShift-webconsole.
+* De uitvoer van `oc whoami` na het volgen van de stappen voor het aanmelden bij de OpenShift CLI.  Deze waarde wordt **aad-user genoemd voor** discussie.
+* De URL van het containerregister.
 
-Houd rekening met deze items wanneer u de stappen hebt voltooid om het ingebouwde container register in te scha kelen.
+Noteer deze items wanneer u de stappen voor het inschakelen van het ingebouwde containerregister voltooit.
 
-### <a name="create-an-openshift-namespace-for-the-java-app"></a>Een open Shift-naam ruimte maken voor de Java-app
+### <a name="create-an-openshift-namespace-for-the-java-app"></a>Een OpenShift-naamruimte maken voor de Java-app
 
-1. Meld u met de referenties aan bij de open Shift-webconsole vanuit uw browser `kubeadmin` .
-2. Navigeer naar **beheer**  >  **naam** ruimten  >  **maken naam ruimte**.
-3. Vul bij `open-liberty-demo` **naam** in en selecteer **maken**, zoals volgende wordt weer gegeven.
+1. Meld u in uw browser aan bij de OpenShift-webconsole met behulp van `kubeadmin` de referenties.
+2. **Navigeer naar**  >  **Beheernaamruimten**  >  **Naamruimte maken.**
+3. Vul in `open-liberty-demo` bij **Naam** en selecteer **Maken,** zoals hierna wordt weergegeven.
 
-   ![naam ruimte maken](./media/howto-deploy-java-liberty-app/create-namespace.png)
+   ![naamruimte maken](./media/howto-deploy-java-liberty-app/create-namespace.png)
 
-### <a name="create-an-administrator-for-the-demo-project"></a>Een beheerder maken voor het demo project
+### <a name="create-an-administrator-for-the-demo-project"></a>Een beheerder maken voor het demoproject
 
-Naast Image Management worden aan de **Aad-gebruiker** ook beheerders machtigingen verleend voor het beheren van resources in het demo project van het Aro 4-cluster.  Meld u aan bij de open Shift CLI en wijs de **Aad-gebruiker** de benodigde bevoegdheden toe door de volgende stappen uit te voeren.
+Naast het beheer van afbeeldingen krijgt **de aad-gebruiker** ook beheerdersmachtigingen voor het beheren van resources in het demoproject van het ARO 4-cluster.  Meld u aan bij de OpenShift CLI en verleen **de aad-gebruiker** de benodigde bevoegdheden door deze stappen te volgen.
 
-1. Meld u met de referenties aan bij de open Shift-webconsole vanuit uw browser `kubeadmin` .
-1. Vouw in de rechter bovenhoek van de webconsole het context menu van de aangemelde gebruiker uit en selecteer vervolgens **aanmeldings opdracht kopiëren**.
-1. Meld u indien nodig aan bij een nieuw tabblad venster met dezelfde gebruiker.
-1. Selecteer **weergave token**.
-1. Kopieer de onderstaande waarde voor **aanmelding met dit token** naar het klem bord en voer deze uit in een shell, zoals hier wordt weer gegeven.
-1. Voer de volgende opdrachten uit om `admin` een rol toe te kennen aan de **Aad-gebruiker** in de naam ruimte `open-liberty-demo` .
+1. Meld u in uw browser aan bij de OpenShift-webconsole met behulp van `kubeadmin` de referenties.
+1. Vouw rechtsboven in de webconsole het contextmenu van de aangemelde gebruiker uit en selecteer **Vervolgens Aanmeldingsopdracht kopiëren.**
+1. Meld u indien nodig aan bij een nieuw tabbladvenster met dezelfde gebruiker.
+1. Selecteer **Token weergeven.**
+1. Kopieer de waarde die hieronder wordt weergegeven **Aanmelden met dit token** naar het klembord en voer deze uit in een shell, zoals hier wordt weergegeven.
+1. Voer de volgende opdrachten uit om de `admin` rol toe te staan aan de **aad-gebruiker** in de naamruimte `open-liberty-demo` .
 
    ```bash
    # Switch to project "open-liberty-demo"
@@ -90,35 +90,35 @@ Naast Image Management worden aan de **Aad-gebruiker** ook beheerders machtiging
    clusterrole.rbac.authorization.k8s.io/admin added: "kaaIjx75vFWovvKF7c02M0ya5qzwcSJ074RZBfXUc34"
    ```
 
-### <a name="install-the-open-liberty-openshift-operator"></a>De openstaande vrijheids operator open Shift installeren
+### <a name="install-the-open-liberty-openshift-operator"></a>De OpenShift OpenShift-operator installeren
 
-Nadat u een verbinding hebt gemaakt met het cluster, installeert u de open bare vrijheids operator.  De belangrijkste start pagina voor de open vrijheids operator bevindt zich op [github](https://github.com/OpenLiberty/open-liberty-operator).
+Nadat u het cluster heeft aanmaken en er verbinding mee maakt, installeert u de Operator Open Operator.  De belangrijkste startpagina voor de Operator Voor openen is op [GitHub.](https://github.com/OpenLiberty/open-liberty-operator)
 
-1. Meld u met de referenties aan bij de open Shift-webconsole vanuit uw browser `kubeadmin` .
-2. Navigeer naar **Opera tors**  >  **OperatorHub** en zoek naar een **open bare vrijheids operator**.
-3. Selecteer **Open-vrijheids operator** in de zoek resultaten.
+1. Meld u in uw browser aan bij de OpenShift-webconsole met behulp van `kubeadmin` de referenties.
+2. **Navigeer naar Operators**  >  **OperatorHub** en zoek naar Open Operator **.**
+3. Selecteer **Operator openen in** de zoekresultaten.
 4. Selecteer **Installeren**.
-5. Controleer in het pop- **Upabonnement operator maken** **alle naam ruimten op het cluster (standaard) voor de** **installatie modus**, het **bèta versie** - **Update kanaal** en de **automatische** **goedkeurings strategie**:
+5. Controleer in het pop-upabonnement **Operator** maken alle naamruimten in het cluster (standaard) voor Installatiemodus,  **bèta** voor **Updatekanaal** en Automatisch **voor** **goedkeuringsstrategie:** 
 
-   ![operator abonnement maken voor open vrijheids operator](./media/howto-deploy-java-liberty-app/install-operator.png)
-6. Selecteer **Abonneren** en wacht enkele minuten of twee totdat de open vrijheids operator wordt weer gegeven.
-7. Bekijk de open vrijheids operator met de status geslaagd.  Als u dit niet doet, moet u het probleem vaststellen en oplossen voordat u doorgaat.
-   :::image type="content" source="media/howto-deploy-java-liberty-app/open-liberty-operator-installed.png" alt-text="Geïnstalleerde Opera tors met open vrijheid is geïnstalleerd.":::
+   ![operatorabonnement maken voor Open Operator](./media/howto-deploy-java-liberty-app/install-operator.png)
+6. Selecteer **Abonneren** en wacht een paar minuten totdat de Operator openen wordt weergegeven.
+7. Bekijk de Operator Openen met de status Geslaagd.  Als u dit niet hebt gedaan, kunt u het probleem vaststellen en oplossen voordat u doorgaat.
+   :::image type="content" source="media/howto-deploy-java-liberty-app/open-liberty-operator-installed.png" alt-text="Geïnstalleerde operators met Open Operators is geïnstalleerd.":::
 
-## <a name="prepare-the-liberty-application"></a>De vrijheids toepassing voorbereiden
+## <a name="prepare-the-liberty-application"></a>De Toepassing Voormaken
 
-We gebruiken een Java EE 8-toepassing als het voor beeld in deze hand leiding. Open vrijheid is een [Java EE 8 Full profile](https://javaee.github.io/javaee-spec/javadocs/) compatibele server, zodat de toepassing eenvoudig kan worden uitgevoerd.  Open vrijheid is ook [Jakarta ee Full profile compatibel](https://jakarta.ee/specifications/platform/8/apidocs/).
+In deze handleiding gebruiken we een Java EE 8-toepassing als voorbeeld. Open Hebt is een server met volledig profiel voor [Java EE 8,](https://javaee.github.io/javaee-spec/javadocs/) zodat de toepassing eenvoudig kan worden uitgevoerd.  Open Zou is ook [geschikt voor het volledige profiel van De eE 8.](https://jakarta.ee/specifications/platform/8/apidocs/)
 
-### <a name="run-the-application-on-open-liberty"></a>De toepassing op open vrijheid uitvoeren
+### <a name="run-the-application-on-open-liberty"></a>De toepassing uitvoeren op Open Keer
 
-Als u de toepassing op open vrijheid wilt uitvoeren, moet u een open-vrijheids server configuratie bestand maken, zodat de [maven-invoeg](https://github.com/OpenLiberty/ci.maven#liberty-maven-plugin) toepassing de app voor implementatie kan inpakken. De vrijheids maven-invoeg toepassing is niet vereist voor het implementeren van de toepassing naar open SHIFT.  We gebruiken dit echter in dit voor beeld met de ontwikkelaars modus (open vrijheid).  Met de ontwikkelaars modus kunt u de toepassing eenvoudig lokaal uitvoeren. Voer de volgende stappen uit op de lokale computer.
+Als u de toepassing wilt uitvoeren op OpenLiggende, moet u een OpenHost-serverconfiguratiebestand maken, zodat de Invoegtoepassing Voor implementatie van [De Maven](https://github.com/OpenLiberty/ci.maven#liberty-maven-plugin) de toepassing kan verpakken. De Invoegtoepassing Voor Maven is niet vereist om de toepassing te implementeren in OpenShift.  In dit voorbeeld gebruiken we deze echter met de ontwikkelaarsmodus van Open Developer (dev).  Met de ontwikkelaarsmodus kunt u de toepassing eenvoudig lokaal uitvoeren. Voltooi de volgende stappen op uw lokale computer.
 
-1. Kopiëren `2-simple/src/main/liberty/config/server.xml` naar `1-start/src/main/liberty/config` , waarbij het bestaande bestand met een lengte van nul wordt overschreven. Hiermee `server.xml` configureert u de open vrijheids server met Java EE-functies.
-1. Kopiëren `2-simple/pom.xml` naar `1-start/pom.xml` .  Met deze stap voegt `liberty-maven-plugin` u de aan de pom toe.
-1. Wijzig de map in `1-start` uw lokale kloon.
-1. Voer `mvn clean package` uit in een-console om een War-pakket te genereren `javaee-cafe.war` in de Directory `./target` .
-1. Voer uit `mvn liberty:dev` om vrijheid open te gaan in de ontwikkelings modus.
-1. Wacht tot de server is gestart. De uitvoer van de console moet eindigen met het volgende bericht:
+1. Kopieer `2-simple/src/main/liberty/config/server.xml` naar `1-start/src/main/liberty/config` en overschrijf het bestaande bestand met de lengte van nul. Hiermee `server.xml` configureert u de Open Server met Java EE-functies.
+1. Kopieer `2-simple/pom.xml` naar `1-start/pom.xml` .  Met deze stap wordt de `liberty-maven-plugin` toegevoegd aan de POM.
+1. Wijzig de map in `1-start` van uw lokale kloon.
+1. Voer `mvn clean package` uit in een console om een war-pakket te genereren in de map `javaee-cafe.war` `./target` .
+1. Voer `mvn liberty:dev` uit om Open Gaan in de dev-modus te starten.
+1. Wacht totdat de server wordt gestart. De console-uitvoer moet eindigen met het volgende bericht:
 
    ```Text
    [INFO] CWWKM2015I: Match number: 1 is [6/10/20 10:26:09:517 CST] 00000022 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 6.447 seconds..
@@ -126,65 +126,65 @@ Als u de toepassing op open vrijheid wilt uitvoeren, moet u een open-vrijheids s
    [INFO] Source compilation was successful.
    ```
 
-1. Open `http://localhost:9080/` in uw browser om de start pagina van de toepassing te bezoeken. De toepassing ziet er ongeveer als volgt uit:
+1. Open `http://localhost:9080/` in uw browser om naar de startpagina van de toepassing te gaan. De toepassing ziet er ongeveer uit als in de volgende afbeelding:
 
-   ![Webgebruikersinterface voor de Java-Cafe](./media/howto-deploy-java-liberty-app/javaee-cafe-web-ui.png)
-1. Druk op **Control-C** om de toepassing te stoppen en de vrijheids server te openen.
+   ![Webinterface van JavaEE](./media/howto-deploy-java-liberty-app/javaee-cafe-web-ui.png)
+1. Druk **op Control-C** om de toepassing en De Server openen te stoppen.
 
-In de map `2-simple` van uw lokale kloon wordt het Maven-project weer gegeven met de bovenstaande wijzigingen die al zijn toegepast.
+In de `2-simple` map van uw lokale kloon wordt het Maven-project met de bovenstaande wijzigingen al toegepast.
 
-## <a name="prepare-the-application-image"></a>De installatie kopie van de toepassing voorbereiden
+## <a name="prepare-the-application-image"></a>De toepassingsafbeelding voorbereiden
 
-Als u uw vrijheids toepassing wilt implementeren en uitvoeren op een ARO 4-cluster, kunt u uw toepassing container plaatsen als docker-installatie kopie met behulp van [Open-vrijheids container installatie kopieën](https://github.com/OpenLiberty/ci.docker) of [WebSphere vrijheid container installatie kopieën](https://github.com/WASdev/ci.docker).
+Als u uw App App Wilt implementeren en uitvoeren op een ARO 4-cluster, containeriseert u uw toepassing als een Docker-afbeelding met behulp van [Open Hebto-containerafbeeldingen](https://github.com/OpenLiberty/ci.docker) of [WebSphere Image-containerafbeeldingen.](https://github.com/WASdev/ci.docker)
 
-### <a name="build-application-image"></a>Toepassings installatie kopie maken
+### <a name="build-application-image"></a>Toepassingsafbeelding bouwen
 
-Voer de volgende stappen uit om de installatie kopie van de toepassing samen te stellen:
+Voltooi de volgende stappen om de toepassingsafbeelding te bouwen:
 
-1. Wijzig de map in `2-simple` uw lokale kloon.
+1. Wijzig de map in `2-simple` van uw lokale kloon.
 2. Voer uit `mvn clean package` om de toepassing te verpakken.
-3. Voer een van de volgende opdrachten uit om de installatie kopie van de toepassing samen te stellen.
-   * Bouwen met een open vrijheids basis installatie kopie:
+3. Voer een van de volgende opdrachten uit om de toepassingsafbeelding te bouwen.
+   * Bouwen met een Open Kans-basisafbeelding:
 
      ```bash
      # Build and tag application image. This will cause Docker to pull the necessary Open Liberty base images.
      docker build -t javaee-cafe-simple:1.0.0 --pull .
      ```
 
-   * Bouwen met WebSphere vrijheid-basis installatie kopie:
+   * Bouw met de Basisafbeelding van WebSphere:
 
      ```bash
      # Build and tag application image. This will cause Docker to pull the necessary WebSphere Liberty base images.
      docker build -t javaee-cafe-simple:1.0.0 --pull --file=Dockerfile-wlp .
      ```
 
-### <a name="run-the-application-locally-with-docker"></a>De toepassing lokaal uitvoeren met docker
+### <a name="run-the-application-locally-with-docker"></a>De toepassing lokaal uitvoeren met Docker
 
-Voordat u de container toepassing implementeert op een extern cluster, voert u uit met uw lokale docker om te controleren of het werkt:
+Voordat u de containertoepassing implementeert in een extern cluster, moet u uitvoeren met uw lokale Docker om te controleren of deze werkt:
 
-1. Voer `docker run -it --rm -p 9080:9080 javaee-cafe-simple:1.0.0` uit in uw-console.
-2. Wacht tot de vrijheids server is gestart en de toepassing is geïmplementeerd.
-3. Open `http://localhost:9080/` in uw browser om de start pagina van de toepassing te bezoeken.
-4. Druk op **Control-C** om de toepassing en vrijheids server te stoppen.
+1. Voer `docker run -it --rm -p 9080:9080 javaee-cafe-simple:1.0.0` uit in uw console.
+2. Wacht tot De Server is begonnen en de toepassing is geïmplementeerd.
+3. Open `http://localhost:9080/` in uw browser om de startpagina van de toepassing te bezoeken.
+4. Druk **op Control-C** om de toepassing en De Server van Te stoppen.
 
-### <a name="push-the-image-to-the-container-image-registry"></a>Push de installatie kopie naar het container installatie kopie register
+### <a name="push-the-image-to-the-container-image-registry"></a>De afbeelding naar het register van de containerafbeelding pushen
 
-Wanneer u tevreden bent met de status van de toepassing, pusht u deze naar het ingebouwde REGI ster van de container installatie kopie door de onderstaande instructies te volgen.
+Wanneer u tevreden bent met de status van de toepassing, pusht u deze naar het ingebouwde register met containerafbeeldingen door de onderstaande instructies te volgen.
 
-#### <a name="log-in-to-the-openshift-cli-as-the-azure-ad-user"></a>Meld u aan bij de open Shift-CLI als de Azure AD-gebruiker
+#### <a name="log-in-to-the-openshift-cli-as-the-azure-ad-user"></a>Meld u als Azure AD-gebruiker aan bij de OpenShift CLI
 
-1. Meld u met de referenties van een Azure AD-gebruiker aan bij de open Shift-webconsole vanuit uw browser.
+1. Meld u in uw browser aan bij de OpenShift-webconsole met de referenties van een Azure AD-gebruiker.
 
-   1. Gebruik een InPrivate-, Incognito-of andere vergelijk bare browser venster functie om u aan te melden bij de-console.
-   1. **OpenID Connect** selecteren
+   1. Gebruik een InPrivate-, Incognito- of andere equivalente browservensterfunctie om u aan te melden bij de console.
+   1. Openid **selecteren**
 
    > [!NOTE]
-   > Noteer de gebruikers naam en het wacht woord waarmee u zich aanmeldt. Deze gebruikers naam en dit wacht woord functioneren als beheerder voor andere acties in deze en andere artikelen.
-1. Meld u aan met de open Shift CLI met behulp van de volgende stappen.  Voor discussies wordt dit proces aangeduid als `oc login` .
-   1. Vouw in de rechter bovenhoek van de webconsole het context menu van de aangemelde gebruiker uit en selecteer vervolgens **aanmeldings opdracht kopiëren**.
-   1. Meld u indien nodig aan bij een nieuw tabblad venster met dezelfde gebruiker.
-   1. Selecteer **weergave token**.
-   1. Kopieer de onderstaande waarde voor **aanmelding met dit token** naar het klem bord en voer deze uit in een shell, zoals hier wordt weer gegeven.
+   > Noteer de gebruikersnaam en het wachtwoord die u gebruikt om u hier aan te melden. Deze gebruikersnaam en dit wachtwoord werken als beheerder voor andere acties in deze en andere artikelen.
+1. Meld u aan met de OpenShift CLI door de volgende stappen uit te voeren.  Dit proces wordt ook wel `oc login` genoemd.
+   1. Vouw rechtsboven in de webconsole het contextmenu van de aangemelde gebruiker uit en selecteer **Vervolgens Aanmeldingsopdracht kopiëren.**
+   1. Meld u indien nodig aan bij een nieuw tabbladvenster met dezelfde gebruiker.
+   1. Selecteer **Token weergeven.**
+   1. Kopieer de waarde die hieronder wordt weergegeven **Aanmelden met dit token** naar het klembord en voer deze uit in een shell, zoals hier wordt weergegeven.
 
        ```bash
        oc login --token=XOdASlzeT7BHT0JZW6Fd4dl5EwHpeBlN27TAdWHseob --server=https://api.aqlm62xm.rnfghf.aroapp.io:6443
@@ -195,9 +195,9 @@ Wanneer u tevreden bent met de status van de toepassing, pusht u deze naar het i
        Using project "default".
        ```
 
-#### <a name="push-the-container-image-to-the-container-registry-for-openshift"></a>De container installatie kopie naar het container register voor open Shift pushen
+#### <a name="push-the-container-image-to-the-container-registry-for-openshift"></a>De container-afbeelding naar het containerregister voor OpenShift pushen
 
-Voer deze opdrachten uit om de installatie kopie naar het container register voor open SHIFT te pushen.
+Voer deze opdrachten uit om de afbeelding naar het containerregister voor OpenShift te pushen.
 
 ```bash
 # Note: replace "<Container_Registry_URL>" with the fully qualified name of the registry
@@ -217,7 +217,7 @@ WARNING! Using --password via the CLI is insecure. Use --password-stdin.
 Login Succeeded
 ```
 
-Push de installatie kopie naar het ingebouwde container installatie kopie register met de volgende opdracht.
+Push de afbeelding naar het ingebouwde register met containerafbeeldingen met de volgende opdracht.
 
 ```bash
 
@@ -226,46 +226,46 @@ docker push ${Container_Registry_URL}/open-liberty-demo/javaee-cafe-simple:1.0.0
 
 ## <a name="deploy-application-on-the-aro-4-cluster"></a>Toepassing implementeren in het ARO 4-cluster
 
-U kunt nu de voor beeld-vrijheids toepassing implementeren naar het Azure Red Hat open Shift 4-cluster dat u eerder hebt gemaakt tijdens het door lopen van de vereisten.
+U kunt de voorbeeldtoepassing Nu implementeren in het Azure Red Hat OpenShift 4-cluster dat u eerder hebt gemaakt bij het werken aan de vereisten.
 
 ### <a name="deploy-the-application-from-the-web-console"></a>De toepassing implementeren vanuit de webconsole
 
-Omdat we de open bare vrijheids operator voor het beheren van vrijheids toepassingen gebruiken, moeten we een exemplaar van de *aangepaste resource definitie* maken van het type OpenLibertyApplication. De operator zorgt vervolgens voor alle aspecten van het beheren van de open Shift-resources die vereist zijn voor de implementatie.
+Omdat we de Operator Open Operator gebruiken voor het beheren van Deen toepassingen, moeten we een exemplaar maken van de aangepaste resourcedefinitie , van het type 'OpenLibertyApplication'. De operator zorgt vervolgens voor alle aspecten van het beheren van de OpenShift-resources die vereist zijn voor implementatie.
 
-1. Meld u met de referenties van de Azure AD-gebruiker aan bij de open Shift-webconsole vanuit uw browser.
-1. Vouw **Start pagina** uit. Selecteer **projecten**  >  **Open-vrijheid-demo**.
-1. Navigeer naar **Opera tors**  >  **geïnstalleerde Opera tors**.
-1. Selecteer in het midden van de pagina **Open-vrijheids operator**.
-1. Selecteer in het midden van de pagina **Open-vrijheids toepassing**.  De navigatie van items in de gebruikers interface komt overeen met de werkelijke containment-hiërarchie van technologieën die in gebruik zijn.
+1. Meld u in uw browser aan bij de OpenShift-webconsole met de referenties van de Azure AD-gebruiker.
+1. Vouw **Start** uit, **selecteer Projecten**  >  **openen-nu-demo.**
+1. Navigeer naar **Operators**  >  **geïnstalleerde operators**.
+1. Selecteer in het midden van de pagina **Operator openen.**
+1. Selecteer in het midden van de pagina **De toepassing Openen.**  De navigatie van items in de gebruikersinterface weerspiegelt de daadwerkelijke insluitingshiërarchie van technologieën die worden gebruikt.
    <!-- Diagram source https://github.com/Azure-Samples/open-liberty-on-aro/blob/master/diagrams/aro-java-containment.vsdx -->
-   ![ARO Java containment](./media/howto-deploy-java-liberty-app/aro-java-containment.png)
+   ![ARO Java Containment](./media/howto-deploy-java-liberty-app/aro-java-containment.png)
 1. Selecteer **OpenLibertyApplication maken**
-1. Vervang de gegenereerde yaml met de uwe, die zich bevindt in `<path-to-repo>/2-simple/openlibertyapplication.yaml` .
+1. Vervang de gegenereerde yaml door de uwe, die zich bevindt in `<path-to-repo>/2-simple/openlibertyapplication.yaml` .
 1. Selecteer **Maken**. U keert terug naar de lijst met OpenLibertyApplications.
-1. Selecteer **Java-café-simpel**.
-1. Selecteer **resources** in het midden van de pagina.
-1. Selecteer in de tabel de koppeling voor **Java-café-eenvoudig** met het **soort** **route**.
-1. Op de pagina die wordt geopend, selecteert u de koppeling onder **locatie**.
+1. Selecteer **javaee-café-simple.**
+1. Selecteer resources in het midden van de **pagina.**
+1. Selecteer in de tabel de koppeling **voor javaee-café-simple** met **het Soort** **route**.
+1. Selecteer op de pagina die wordt geopend de koppeling onder **Locatie**.
 
-U ziet de start pagina van de toepassing die in de browser wordt geopend.
+De startpagina van de toepassing wordt geopend in de browser.
 
 ### <a name="delete-the-application-from-the-web-console"></a>De toepassing verwijderen uit de webconsole
 
-Wanneer u klaar bent met de toepassing, voert u de volgende stappen uit om de toepassing te verwijderen uit open SHIFT.
+Wanneer u klaar bent met de toepassing, volgt u deze stappen om de toepassing te verwijderen uit Open Shift.
 
-1. Vouw in het navigatie deel venster links de vermelding voor **Opera tors** uit.
-1. Selecteer **geïnstalleerde Opera tors**.
-1. Selecteer **Open-vrijheids operator**.
-1. Selecteer in het midden van de pagina **open bare vrijheids toepassing**.
-1. Selecteer het verticale weglatings teken (drie verticale puntjes) en selecteer vervolgens open- **vrijheid-toepassing verwijderen**.
+1. Vouw in het linkernavigatiedeelvenster de vermelding voor **Operators uit.**
+1. Selecteer **Geïnstalleerde operators.**
+1. Selecteer **Operator Voor openen.**
+1. Selecteer in het midden van de pagina **De Toepassing openen.**
+1. Selecteer het verticale beletselteken (drie verticale puntjes) en selecteer **vervolgens OpenLiberty-toepassing verwijderen.**
 
 ### <a name="deploy-the-application-from-cli"></a>De toepassing implementeren vanuit CLI
 
-In plaats van de gebruikers interface van de webconsole te gebruiken, kunt u de toepassing implementeren vanuit de CLI. Als u dit nog niet hebt gedaan, downloadt en installeert u het `oc` opdracht regel programma aan de hand van de Red Hat-documentatie [aan de slag met de CLI](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/getting-started-cli.html).
+In plaats van de gui van de webconsole te gebruiken, kunt u de toepassing implementeren vanuit de CLI. Als u dit nog niet hebt gedaan, downloadt en installeert u het opdrachtregelprogramma door de Red Hat-documentatie te volgen Aan de slag `oc` [met de CLI.](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/getting-started-cli.html)
 
-1. Meld u met de referenties van de Azure AD-gebruiker aan bij de open Shift-webconsole vanuit uw browser.
-2. Meld u aan bij de open Shift CLI met het token voor de Azure AD-gebruiker.
-3. Wijzig de map in `2-simple` uw lokale kloon en voer de volgende opdrachten uit om uw vrijheids toepassing te implementeren in het Aro 4-cluster.  De uitvoer van de opdracht wordt ook inline weer gegeven.
+1. Meld u in uw browser aan bij de OpenShift-webconsole met de referenties van de Azure AD-gebruiker.
+2. Meld u aan bij de OpenShift CLI met het token voor de Azure AD-gebruiker.
+3. Wijzig de map in van uw lokale kloon en voer de volgende opdrachten uit om uw Toepassing Te implementeren `2-simple` in het ARO 4-cluster.  Opdrachtuitvoer wordt ook inline weergegeven.
 
    ```bash
    # Switch to namespace "open-liberty-demo" where resources of demo app will belong to
@@ -291,8 +291,8 @@ In plaats van de gebruikers interface van de webconsole te gebruiken, kunt u de 
    javaee-cafe-simple   1/1     1            0           102s
    ```
 
-4. Controleer of er `1/1` onder de kolom wordt weer geven `READY` voordat u doorgaat.  Als dat niet het geval is, kunt u het probleem onderzoeken en oplossen voordat u doorgaat.
-5. De host van de route naar de toepassing detecteren met de `oc get route` opdracht, zoals hier wordt weer gegeven.
+4. Controleer het onder `1/1` de kolom voordat u `READY` doorgaat.  Zo niet, onderzoek het probleem en los het op voordat u doorgaat.
+5. Ontdek de host van de route naar de toepassing met de `oc get route` opdracht , zoals hier wordt weergegeven.
 
    ```bash
    # Get host of the route
@@ -302,7 +302,7 @@ In plaats van de gebruikers interface van de webconsole te gebruiken, kunt u de 
    Route Host: javaee-cafe-simple-open-liberty-demo.apps.aqlm62xm.rnfghf.aroapp.io
    ```
 
-   Zodra de vrijheids toepassing actief is, opent u de uitvoer van de **route host** in uw browser om de start pagina van de toepassing te bezoeken.
+   Zodra de Toepassing van Wordt uitgevoerd is, opent u de uitvoer van **Route Host** in uw browser om naar de startpagina van de toepassing te gaan.
 
 ### <a name="delete-the-application-from-cli"></a>De toepassing verwijderen uit CLI
 
@@ -314,23 +314,23 @@ oc delete -f openlibertyapplication.yaml
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Verwijder het ARO-cluster door de stappen in de [zelf studie te volgen: een Azure Red Hat open Shift 4-cluster verwijderen](./tutorial-delete-cluster.md)
+Verwijder het ARO-cluster door de stappen te volgen in [Zelfstudie: Een](./tutorial-delete-cluster.md) cluster Azure Red Hat OpenShift 4 verwijderen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding hebt u het volgende geleerd:
+In deze handleiding hebt u het volgende geleerd:
 > [!div class="checklist"]
 >
-> * De vrijheids toepassing voorbereiden
-> * De installatie kopie van de toepassing bouwen
-> * De container toepassing uitvoeren op een ARO 4-cluster met behulp van de GUI en de CLI
+> * De Toepassing Voormaken
+> * De toepassingsafbeelding bouwen
+> * De containertoepassing uitvoeren op een ARO 4-cluster met behulp van de GUI en de CLI
 
-In deze hand leiding vindt u meer informatie over de referenties die worden gebruikt:
+Meer informatie vindt u in de verwijzingen die in deze handleiding worden gebruikt:
 
-* [Open vrijheid](https://openliberty.io/)
+* [Open Door](https://openliberty.io/)
 * [Azure Red Hat OpenShift](https://azure.microsoft.com/services/openshift/)
-* [Open vrijheids operator](https://github.com/OpenLiberty/open-liberty-operator)
-* [Configuratie van vrijheids server openen](https://openliberty.io/docs/ref/config/)
-* [Vrijheid maven-invoeg toepassing](https://github.com/OpenLiberty/ci.maven#liberty-maven-plugin)
-* [Installatie kopieën van vrijheids containers openen](https://github.com/OpenLiberty/ci.docker)
-* [WebSphere vrijheid container-installatie kopieën](https://github.com/WASdev/ci.docker)
+* [Operator Voor openen](https://github.com/OpenLiberty/open-liberty-operator)
+* [Serverconfiguratie openen](https://openliberty.io/docs/ref/config/)
+* [De Maven-invoeg-app Voor het maken van een app](https://github.com/OpenLiberty/ci.maven#liberty-maven-plugin)
+* [Containerafbeeldingen openen in Tern](https://github.com/OpenLiberty/ci.docker)
+* [Afbeeldingen van WebSphere-container](https://github.com/WASdev/ci.docker)

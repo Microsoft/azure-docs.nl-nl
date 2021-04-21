@@ -1,6 +1,6 @@
 ---
 title: Gids voor Azure Key Vault-ontwikkelaars
-description: Ontwikkelaars kunnen met Azure Key Vault cryptografische sleutels binnen de Microsoft Azure beheren.
+description: Ontwikkelaars kunnen Azure Key Vault gebruiken om cryptografische sleutels binnen de Microsoft Azure beheren.
 services: key-vault
 author: msmbaldwin
 ms.service: key-vault
@@ -8,19 +8,19 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: f2c0b82f14fd16ecb9eef163e7a263f4327cfc46
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: 4f9523594c07209d530a143713061be6d0467af8
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107364546"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107753376"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
 Key Vault kunt u veilig toegang krijgen tot gevoelige informatie vanuit uw toepassingen:
 
-- Sleutels, geheimen en certificaten worden beveiligd zonder dat u de code zelf moet schrijven en u ze eenvoudig vanuit uw toepassingen kunt gebruiken.
-- U geeft klanten de mogelijkheid om hun eigen sleutels, geheimen en certificaten in bezit te hebben en te beheren, zodat u zich kunt concentreren op het leveren van de belangrijkste softwarefuncties. Op deze manier zijn uw toepassingen niet eigenaar van de verantwoordelijkheid of mogelijke aansprakelijkheid voor de tenantsleutels, geheimen en certificaten van uw klanten.
+- Sleutels, geheimen en certificaten worden beveiligd zonder dat u de code zelf moet schrijven en u ze eenvoudig kunt gebruiken vanuit uw toepassingen.
+- U kunt klanten de mogelijkheid bieden om hun eigen sleutels, geheimen en certificaten in bezit te hebben en te beheren, zodat u zich kunt concentreren op het leveren van de belangrijkste softwarefuncties. Op deze manier zijn uw toepassingen niet eigenaar van de verantwoordelijkheid of mogelijke aansprakelijkheid voor de tenantsleutels, geheimen en certificaten van uw klanten.
 - Uw toepassing kan sleutels gebruiken voor ondertekening en versleuteling, maar houdt het sleutelbeheer extern van uw toepassing. Zie Over sleutels voor meer [informatie over sleutels](../keys/about-keys.md)
 - U kunt referenties zoals wachtwoorden, toegangssleutels en SAS-tokens beheren door ze op te slaan in Key Vault geheimen. Zie [Over geheimen](../secrets/about-secrets.md)
 - Certificaten beheren. Zie About [Certificates (Over certificaten) voor meer informatie](../certificates/about-certificates.md)
@@ -35,7 +35,7 @@ Periodiek brengen we een openbare preview uit van een nieuwe Key Vault functie. 
 
 Key Vault beheer, vergelijkbaar met andere Azure-services, wordt uitgevoerd via Azure Resource Manager service. Azure Resource Manager is de implementatie- en beheersservice voor Azure. Het biedt een beheerlaag waarmee u resources in uw Azure-account kunt maken, bijwerken en verwijderen. Zie voor meer informatie [Azure Resource Manager](../../azure-resource-manager/management/overview.md)
 
-Toegang tot de beheerlaag wordt beheerd door [op rollen gebaseerd toegangsbeheer van Azure.](../../role-based-access-control/overview.md) In Key Vault kunt u in de beheerlaag, ook wel beheer- of besturingslaag genoemd, Sleutelkluizen en de kenmerken ervan maken en beheren, waaronder toegangsbeleid, maar niet sleutels, geheimen en certificaten, die worden beheerd op het gegevensvlak. U kunt een vooraf gedefinieerde rol `Key Vault Contributor` gebruiken om beheertoegang te verlenen tot Key Vault.     
+Toegang tot de beheerlaag wordt beheerd door [op rollen gebaseerd toegangsbeheer van Azure.](../../role-based-access-control/overview.md) In Key Vault, beheerlaag, ook wel beheer- of besturingslaag genoemd, kunt u key vaults en de kenmerken ervan maken en beheren, inclusief toegangsbeleid, maar niet sleutels, geheimen en certificaten, die worden beheerd op het gegevensvlak. U kunt een vooraf gedefinieerde rol `Key Vault Contributor` gebruiken om beheertoegang te verlenen tot Key Vault.     
 
 **API's en SDK's voor sleutelkluisbeheer:**
 
@@ -45,7 +45,7 @@ Toegang tot de beheerlaag wordt beheerd door [op rollen gebaseerd toegangsbeheer
 
 Zie [Clientbibliotheken](client-libraries.md) voor installatiepakketten en broncode.
 
-Zie beheervlak voor Key Vault meer informatie [Key Vault het beheervlak](./secure-your-key-vault.md#management-plane-and-azure-rbac)
+Zie beheervlak voor Key Vault meer informatie [Key Vault het beheervlak](security-overview.md)
 
 ## <a name="authenticate-to-key-vault-in-code"></a>Verifiëren voor Key Vault in code
 
@@ -76,14 +76,14 @@ Zie voor meer informatie over de libarary van de Azure Identity-client:
 >[!Note]
 > [App-verificatiebibliotheek](/dotnet/api/overview/azure/service-to-service-authentication) die is aanbevolen Key Vault .NET SDK versie 3, die momenteel is afgeschaft. Volg [AppAuthentication to Azure.Identity Migration Guidance](/dotnet/api/overview/azure/app-auth-migration) (Richtlijnen voor migratie van AppAuthentication naar Azure.Identity) om te migreren naar Key Vault .NET SDK versie 4.
 
-Voor zelfstudies over het verifiëren van Key Vault in toepassingen, zie:
+Zie voor zelfstudies over het verifiëren van Key Vault in toepassingen:
 - [Verifiëren om Key Vault in een toepassing die wordt gehost in VM in .NET](./tutorial-net-virtual-machine.md)
-- [Verifiëren bij Key Vault in een toepassing die wordt gehost in VM in Python](./tutorial-python-virtual-machine.md)
+- [Verifiëren voor Key Vault in een toepassing die wordt gehost in VM in Python](./tutorial-python-virtual-machine.md)
 - [Verifiëren om Key Vault te App Service](./tutorial-net-create-vault-azure-web-app.md)
 
 ## <a name="manage-keys-certificates-and-secrets"></a>Sleutels, certificaten en geheimen beheren
 
-De toegang tot sleutels, geheimen en certificaten wordt bepaald door de gegevensvlak. Toegangsbeheer voor de gegevensvlak kan worden uitgevoerd met behulp van toegangsbeleid voor lokale kluizen of Azure RBAC.
+De toegang tot sleutels, geheimen en certificaten wordt bepaald door het gegevensvlak. Toegangsbeheer voor de gegevensvlak kan worden uitgevoerd met behulp van toegangsbeleid voor lokale kluizen of Azure RBAC.
 
 **Sleutels-API's en SDK's**
 
@@ -105,7 +105,7 @@ De toegang tot sleutels, geheimen en certificaten wordt bepaald door de gegevens
 
 Zie [Clientbibliotheken](client-libraries.md) voor installatiepakketten en broncode.
 
-Zie Key Vault data plane and [access policies](./secure-your-key-vault.md#data-plane-and-access-policies) and Key Vault Key Vault Data Plane and Azure RBAC (Toegangsbeleid voor gegevensvlak en toegang tot gegevensvlak en Azure RBAC) voor meer Key Vault over de beveiliging van [gegevensvlakken.](./secure-your-key-vault.md#data-plane-and-azure-rbac)
+Zie beveiligingsoverzicht voor Key Vault meer informatie over de beveiliging [Key Vault gegevensvlak.](security-overview.md)
 
 ### <a name="code-examples"></a>Codevoorbeelden
 
@@ -130,7 +130,7 @@ Deze artikelen gaan over andere scenario's en services die gebruikmaken van of i
 
 - [Versleuteling-at-rest](../../security/fundamentals/encryption-atrest.md) maakt het mogelijk om gegevens te coderen (versleutelen) wanneer deze persistent zijn. Gegevensversleutelingssleutels worden vaak versleuteld met een sleutelversleutelingssleutel in Azure Key Vault om de toegang verder te beperken.
 - [Azure Information Protection](/azure/information-protection/plan-implement-tenant-key) kunt u uw eigen tenantsleutels manageren. In plaats van dat Microsoft uw tenantsleutel beheert (de standaardinstelling), kunt u bijvoorbeeld uw eigen tenantsleutel beheren om te voldoen aan specifieke regelgeving die van toepassing is op uw organisatie. Uw eigen tenantsleutel beheren wordt ook wel aangeduid als BYOK (Bring Your Own Key).
-- [met Azure Private Link Service](private-link-service.md) hebt u toegang tot Azure Services (bijvoorbeeld Azure Key Vault, Azure Storage en Azure Cosmos DB) en in Azure gehoste services van klanten/partners via een privé-eindpunt in uw virtuele netwerk.
+- [met Azure Private Link Service](private-link-service.md) hebt u toegang tot Azure-services (bijvoorbeeld Azure Key Vault, Azure Storage en Azure Cosmos DB) en in Azure gehoste klant-/partnerservices via een privé-eindpunt in uw virtuele netwerk.
 - Key Vault integratie met [Event Grid](../../event-grid/event-schema-key-vault.md)  kunnen gebruikers een melding ontvangen wanneer de status van een geheim dat is opgeslagen in de sleutelkluis is gewijzigd. U kunt nieuwe versie van geheimen distribueren naar toepassingen of geheimen die bijna verlopen draaien om uitval te voorkomen.
 - U kunt uw [Azure Devops-geheimen](/azure/devops/pipelines/release/azure-key-vault) beschermen tegen ongewenste toegang in Key Vault.
 - [Gebruik het geheim dat is opgeslagen in Key Vault DataBricks om verbinding te maken met Azure Storage](./integrate-databricks-blob-storage.md)
@@ -138,8 +138,8 @@ Deze artikelen gaan over andere scenario's en services die gebruikmaken van of i
 
 ## <a name="key-vault-overviews-and-concepts"></a>Key Vault en concepten
 
-- [Key Vault functie voor het](soft-delete-overview.md) verwijderen van gegevens wordt een functie beschreven waarmee verwijderde objecten kunnen worden hersteld, ongeacht of de verwijdering per ongeluk of opzettelijk is gemaakt.
-- [Key Vault beperking van de client](overview-throttling.md) wordt u op de basisconcepten van beperking gericht en biedt een benadering voor uw app.
+- [Key Vault functie voor het](soft-delete-overview.md) verwijderen van gegevens wordt een functie beschreven waarmee verwijderde objecten kunnen worden hersteld, ongeacht of het verwijderen per ongeluk of opzettelijk is gebeurd.
+- [Key Vault beperking van de client](overview-throttling.md) wordt u op de basisconcepten van beperking georiënteerd en biedt een benadering voor uw app.
 - [Key Vault beveiligingswerelden worden](overview-security-worlds.md) de relaties tussen regio's en beveiligingsgebieden beschreven.
 
 ## <a name="social"></a>Sociaal netwerken

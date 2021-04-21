@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/17/2021
 ms.author: mbaldwin
 ms.custom: mvc, devx-track-csharp, devx-track-azurepowershell
-ms.openlocfilehash: ce982b38faa72978e1b043d374a333b68aca80b6
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: c08d0c210e992cba5bca2695fda0bcf08c4689dc
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107374740"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772087"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-net"></a>Zelfstudie: Azure Key Vault gebruiken met een virtuele machine in .NET
 
@@ -115,7 +115,7 @@ xxxxxxxx-xx-xxxxxx   xxxxxxxx-xxxx-xxxx   SystemAssigned
 ---
 
 ## <a name="assign-permissions-to-the-vm-identity"></a>Machtigingen toewijzen aan de VM-identiteit
-Wijs de eerder gemaakte identiteitsmachtigingen toe aan uw sleutelkluis met de opdracht [az keyvault set-policy](/cli/azure/keyvault#az-keyvault-set-policy):
+Wijs de eerder gemaakte identiteitsmachtigingen toe aan uw sleutelkluis met de opdracht [az keyvault set-policy](/cli/azure/keyvault#az_keyvault_set_policy):
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli

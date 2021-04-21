@@ -4,16 +4,16 @@ description: Stel een toegewezen rekengroep (agentpool) in het register in om ee
 ms.topic: article
 ms.date: 10/12/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 21db066b3f18106938d11fbd8e2cfe688c1ef276
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: c23d2ab866f621db27488860ab62a41765faef40
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389550"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107763699"
 ---
 # <a name="run-an-acr-task-on-a-dedicated-agent-pool"></a>Een ACR-taak uitvoeren op een toegewezen agentpool
 
-Stel een door Azure beheerde VM-pool *(agentpool)* in om het uitvoeren van uw Azure Container Registry [in][acr-tasks] een toegewezen rekenomgeving mogelijk te maken. Nadat u een of meer pools in het register hebt geconfigureerd, kunt u een pool kiezen om een taak uit te voeren in plaats van de standaardrekenomgeving van de service.
+Stel een door Azure beheerde VM-pool *(agentpool)* in om het uitvoeren van uw Azure Container Registry [in][acr-tasks] een toegewezen rekenomgeving mogelijk te maken. Nadat u een of meer pools in uw register hebt geconfigureerd, kunt u een pool kiezen om een taak uit te voeren in plaats van de standaardrekenomgeving van de service.
 
 Een agentpool biedt:
 
@@ -22,7 +22,7 @@ Een agentpool biedt:
 - **Flexibele opties:** kies uit verschillende [poollagen en](#pool-tiers) schaalopties om te voldoen aan de workloadbehoeften van uw taak.
 - **Azure-beheer:** taakgroepen worden gepatcht en onderhouden door Azure en bieden gereserveerde toewijzing zonder dat de afzonderlijke VM's hoeven te worden onderhouden.
 
-Deze functie is beschikbaar in de **servicelaag Premium** Container Registry. Zie SKU's voor meer informatie over [registerservicelagen Azure Container Registry limieten.][acr-tiers]
+Deze functie is beschikbaar in de **servicelaag van het** Premium-containerregister. Zie SKU's voor meer informatie over [registerservicelagen Azure Container Registry limieten.][acr-tiers]
 
 > [!IMPORTANT]
 > Deze functie is momenteel beschikbaar als preview-versie en er gelden [enkele beperkingen.](#preview-limitations) Previews worden voor u beschikbaar gesteld op voorwaarde dat u akkoord gaat met de [aanvullende gebruiksvoorwaarden][terms-of-use]. Sommige aspecten van deze functionaliteit kunnen wijzigen voordat deze functionaliteit algemeen beschikbaar wordt.
@@ -31,7 +31,7 @@ Deze functie is beschikbaar in de **servicelaag Premium** Container Registry. Zi
 ## <a name="preview-limitations"></a>Preview-beperkingen
 
 - Taakagentpools ondersteunen momenteel Linux-knooppunten. Windows-knooppunten worden momenteel niet ondersteund.
-- Taakagentgroepen zijn beschikbaar in preview in de volgende regio's: VS - west 2, VS - zuid-centraal, VS - oost 2, VS - oost, VS - centraal, Europa - west, Europa - noord, Canada - centraal, USGov Arizona, USGov Texas en USGov Virginia.
+- Taakagentgroepen zijn beschikbaar als preview-versie in de volgende regio's: VS - west 2, VS - zuid-centraal, VS - oost 2, VS - oost, VS - centraal, Europa - west, Europa - noord, Canada - centraal, USGov Arizona, USGov Texas en USGov Virginia.
 - Voor elk register is het standaardquotum voor het totale aantal vCPU's (kernen) 16 voor alle standaardagentpools en 0 voor geïsoleerde agentpools. Open een [ondersteuningsaanvraag][open-support-ticket] voor aanvullende toewijzing.
 - U kunt een taak die wordt uitgevoerd op een agentpool momenteel niet annuleren.
 
@@ -91,7 +91,7 @@ az acr agentpool update \
 
 ### <a name="add-firewall-rules"></a>Firewallregels toevoegen
 
-Taakagentgroepen vereisen toegang tot de volgende Azure-services. De volgende firewallregels moeten worden toegevoegd aan bestaande netwerkbeveiligingsgroepen of door de gebruiker gedefinieerde routes.
+Taakagentgroepen hebben toegang tot de volgende Azure-services nodig. De volgende firewallregels moeten worden toegevoegd aan bestaande netwerkbeveiligingsgroepen of door de gebruiker gedefinieerde routes.
 
 | Richting | Protocol | Bron         | Bronpoort | Doel          | Dest-poort | Gebruikt    |
 |-----------|----------|----------------|-------------|----------------------|-----------|---------|
@@ -144,7 +144,7 @@ az acr build \
 
 ### <a name="automatically-triggered-task"></a>Automatisch geactiveerde taak
 
-Maak bijvoorbeeld een geplande taak in de agentpool met [az acr task create][az-acr-task-create]en door de parameter door te `--agent-pool` geven.
+Maak bijvoorbeeld een geplande taak op de agentpool met [az acr task create][az-acr-task-create], en door de parameter door te `--agent-pool` geven.
 
 ```azurecli
 az acr task create \
@@ -185,11 +185,11 @@ Bekijk de reeks zelfstudies voor meer voorbeelden van builds van container-ACR-t
 [azure-cli]:           /cli/azure/install-azure-cli
 [open-support-ticket]: https://aka.ms/acr/support/create-ticket
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
-[az-configure]: /cli/azure#az-configure
-[az-acr-agentpool-create]: /cli/azure/acr/agentpool#az-acr-agentpool-create
-[az-acr-agentpool-update]: /cli/azure/acr/agentpool#az-acr-agentpool-update
-[az-acr-agentpool-show]: /cli/azure/acr/agentpool#az-acr-agentpool-show
-[az-acr-build]: /cli/azure/acr#az-acr-build
-[az-acr-task-create]: /cli/azure/acr/task#az-acr-task-create
-[az-acr-task-run]: /cli/azure/acr/task#az-acr-task-run
+[az-configure]: /cli/azure#az_configure
+[az-acr-agentpool-create]: /cli/azure/acr/agentpool#az_acr_agentpool_create
+[az-acr-agentpool-update]: /cli/azure/acr/agentpool#az_acr_agentpool_update
+[az-acr-agentpool-show]: /cli/azure/acr/agentpool#az_acr_agentpool_show
+[az-acr-build]: /cli/azure/acr#az_acr_build
+[az-acr-task-create]: /cli/azure/acr/task#az_acr_task_create
+[az-acr-task-run]: /cli/azure/acr/task#az_acr_task_run
 [create-reg-cli]: container-registry-get-started-azure-cli.md

@@ -8,16 +8,16 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: aa3614aa3c4fbaec3611806406e5129379999bc3
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: eae8cca0302993c16ea29adddf6e4ee9b5b24be8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106067138"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770890"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
-Azure Data Box is een hybride oplossing waarmee u uw on-premises gegevens snel, gemakkelijk en betrouwbaar in Azure kunt importeren. U brengt uw gegevens over naar een opslag apparaat met door micro soft geleverde 80-TB (bruikbare capaciteit) en verzendt het apparaat vervolgens terug. Deze gegevens worden vervolgens geüpload in Azure.
+Azure Data Box is een hybride oplossing waarmee u uw on-premises gegevens snel, gemakkelijk en betrouwbaar in Azure kunt importeren. U kunt uw gegevens overdragen naar een door Microsoft geleverd opslagapparaat van 80 TB (gebruikscapaciteit) en het apparaat vervolgens terug verzenden. Deze gegevens worden vervolgens geüpload in Azure.
 
 In deze zelfstudie wordt beschreven hoe u een Azure Data Box bestelt. In deze zelfstudie komen deze onderwerpen aan bod:  
 
@@ -59,7 +59,7 @@ Zorg voordat u begint voor het volgende:
 
 **Aanmelden bij Azure**
 
-Open een Windows PowerShell-opdrachtvenster en meld u aan bij Azure met de opdracht [az login](/cli/azure/reference-index#az-login):
+Open een Windows PowerShell-opdrachtvenster en meld u aan bij Azure met de opdracht [az login](/cli/azure/reference-index#az_login):
 
 ```azurecli
 PS C:\Windows> az login
@@ -231,7 +231,7 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
     |Bronland/-regio    |    Selecteer het land/de regio waar uw gegevens zich momenteel bevinden.         |
     |Doel-Azure-regio     |     Selecteer de Azure-regio waarnaar u uw gegevens wilt overdragen. <br> Ga naar [Beschikbaarheid in de regio](data-box-overview.md#region-availability) voor meer informatie.            |
 
-    [![Een Azure data Box import volgorde ](media/data-box-deploy-ordered/select-data-box-import-04-b.png) starten](media/data-box-deploy-ordered/select-data-box-import-04-b.png#lightbox)
+    [![Een importorder Azure Data Box starten ](media/data-box-deploy-ordered/select-data-box-import-04-b.png)](media/data-box-deploy-ordered/select-data-box-import-04-b.png#lightbox)
 
 5. Selecteer **Data Box**. De maximale bruikbare capaciteit voor één bestelling is 80 TB. U kunt meerdere bestellingen doen voor grotere gegevensgrootten.
 
@@ -253,11 +253,11 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
     ![Wizard voor Data Box-importorder, het scherm Gegevensbestemming, met de opslagaccounts geselecteerd](media/data-box-deploy-ordered/select-data-box-import-07.png)
 
-    Selecteer op basis van de opgegeven Azure-regio een of meer opslag accounts uit de gefilterde lijst met bestaande opslag accounts. Data Box kan worden gekoppeld aan maximaal 10 opslagaccounts. U kunt ook een nieuw account van het type **Algemeen gebruik v1**, **Algemeen gebruik v2** of **Blob-opslag** maken.
+    Selecteer op basis van de opgegeven Azure-regio een of meer opslagaccounts in de gefilterde lijst met bestaande opslagaccounts. Data Box kan worden gekoppeld aan maximaal 10 opslagaccounts. U kunt ook een nieuw account van het type **Algemeen gebruik v1**, **Algemeen gebruik v2** of **Blob-opslag** maken.
 
    > [!NOTE]
-   > - Als u Azure Premium FileStorage-accounts selecteert, wordt het ingerichte quotum op de opslag account-share verhoogd naar de grootte van de gegevens die naar de bestands shares worden gekopieerd. Nadat het quotum is verhoogd, wordt het niet opnieuw aangepast, bijvoorbeeld als de Data Box uw gegevens niet kan kopiëren.
-   > - Dit quotum wordt gebruikt voor facturering. Nadat uw gegevens naar het Data Center zijn geüpload, moet u het quotum aanpassen aan uw behoeften. Zie voor meer informatie [over facturering](../../articles/storage/files/understanding-billing.md).
+   > - Als u Azure Premium FileStorage-accounts selecteert, wordt het inrichtende quotum voor de opslagaccount share vergroot tot de grootte van de gegevens die naar de bestands shares worden gekopieerd. Nadat het quotum is verhoogd, wordt het niet opnieuw aangepast, bijvoorbeeld als de Data Box uw gegevens niet kunnen kopiëren.
+   > - Dit quotum wordt gebruikt voor facturering. Nadat uw gegevens naar het datacenter zijn geüpload, moet u het quotum aanpassen om aan uw behoeften te voldoen. Zie Inzicht in facturering [voor meer informatie.](../../articles/storage/files/understanding-billing.md)
 
     Opslagaccounts met virtuele netwerken worden ondersteund. Als u wilt dat de Data Box-service kan werken met beveiligde opslagaccounts, schakelt u in de firewallinstellingen van het opslagaccount de vertrouwde services in. Zie [Azure Data Box toevoegen als een vertrouwde service](../storage/common/storage-network-security.md#exceptions) voor meer informatie.
 
@@ -356,10 +356,10 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
    - Als u uw eigen wachtwoord wilt gebruiken voor uw nieuwe apparaat, selecteert u **Voorkeur voor het apparaatwachtwoord instellen**. Selecteer **Uw eigen wachtwoord gebruiken** en typ een wachtwoord dat aan de beveiligingsvereisten voldoet.
      
-     Het wacht woord moet alfanumeriek zijn en tussen de 12 en 15 tekens bevatten, met ten minste één hoofd letter, één kleine letter, één speciaal teken en één cijfer. 
+     Het wachtwoord moet alfanumeriek zijn en moet tussen 12 en 15 tekens lang zijn, met ten minste één hoofdletter, één kleine letter, één speciaal teken en één cijfer. 
 
-     - Toegestane speciale tekens: @ #-$% ^! + = ; : _ ( )
-     - Tekens niet toegestaan: I i L o 0
+     - Toegestane speciale tekens: @ # - $ % ^ ! + = ; : _ ( )
+     - Tekens niet toegestaan: I I L o O 0
    
      ![Opties voor het gebruiken van uw eigen apparaatwachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-03.png)
 
@@ -371,10 +371,10 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
     1. Typ een wachtwoord voor elk opslagaccount in de order. Het wachtwoord wordt gebruikt voor alle shares voor het opslagaccount.
     
-       Het wacht woord moet alfanumeriek zijn en tussen de 12 en 64 tekens bevatten, met ten minste één hoofd letter, één kleine letter, één speciaal teken en één cijfer.
+       Het wachtwoord moet alfanumeriek zijn en moet tussen 12 en 64 tekens lang zijn, met ten minste één hoofdletter, één kleine letter, één speciaal teken en één cijfer.
 
-       - Toegestane speciale tekens: @ #-$% ^! + = ; : _ ( )
-       - Tekens niet toegestaan: I i L o 0
+       - Toegestane speciale tekens: @ # - $ % ^ ! + = ; : _ ( )
+       - Tekens niet toegestaan: I I L o O 0
      
     1. Selecteer **Kopiëren naar alle** om hetzelfde wachtwoord te gebruiken voor alle opslagaccounts. 
 
@@ -435,7 +435,7 @@ Voer de volgende stappen uit met behulp van Azure CLI om een apparaat te bestell
    |sku| Het specifieke Data Box-apparaat dat u bestelt. Geldige waarden zijn: "DataBox", "DataBoxDisk" en "DataBoxHeavy"| "DataBox" |
    |email-list| De e-mailadressen die zijn gekoppeld aan de bestelling.| "gusp@contoso.com" |
    |street-address1| Het adres waarnaar de bestelling wordt verzonden. | "15700 NE 39th St" |
-   |street-address2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | ' Buil ding 123 ' |
+   |street-address2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | Gebouw 123 |
    |city| De plaats waarnaar het apparaat wordt verzonden. | "Redmond" |
    |state-or-province| De staat/provincie waarnaar het apparaat wordt verzonden.| "WA" |
    |country| Het land waarnaar het apparaat wordt verzonden. | "United States" |
@@ -554,7 +554,7 @@ Voer de volgende stappen uit met behulp van Azure PowerShell om een apparaat te 
     |DataBoxType [vereist]| Het specifieke Data Box-apparaat dat u bestelt. Geldige waarden zijn: "DataBox", "DataBoxDisk" en "DataBoxHeavy"| "DataBox" |
     |EmailId [vereist]| De e-mailadressen die zijn gekoppeld aan de bestelling.| "gusp@contoso.com" |
     |StreetAddress1 [vereist]| Het adres waarnaar de bestelling wordt verzonden. | "15700 NE 39th St" |
-    |StreetAddress2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | ' Buil ding 123 ' |
+    |StreetAddress2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | Gebouw 123 |
     |StreetAddress3| De derde adresgegevens. | |
     |City [vereist]| De plaats waarnaar het apparaat wordt verzonden. | "Redmond" |
     |StateOrProvinceCode [vereist]| De staat/provincie waarnaar het apparaat wordt verzonden.| "WA" |
@@ -617,7 +617,7 @@ Microsoft bereidt de verzending vervolgens voor en verzendt het apparaat met een
 
 ### <a name="track-a-single-order"></a>Eén bestelling volgen
 
-Voor het bijhouden van informatie over één bestaande Azure Data Box order, voert u uit [`az databox job show`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-show) . De opdracht geeft informatie weer over de bestelling, zoals, maar niet beperkt tot: naam, resourcegroep, traceringsinformatie, abonnements-ID, contactgegevens, type verzending en apparaat-SKU.
+Voer uit om traceringsinformatie over één bestaande Azure Data Box op te [`az databox job show`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-show) halen. De opdracht geeft informatie weer over de bestelling, zoals, maar niet beperkt tot: naam, resourcegroep, traceringsinformatie, abonnements-ID, contactgegevens, type verzending en apparaat-SKU.
 
    ```azurecli
    az databox job show --resource-group <resource-group> --name <order-name>
@@ -658,7 +658,7 @@ Voor het bijhouden van informatie over één bestaande Azure Data Box order, voe
 
 ### <a name="list-all-orders"></a>Alle bestellingen weergeven
 
-Als u meerdere apparaten hebt besteld, kunt u uitvoeren [`az databox job list`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-list) om al uw Azure data Box orders weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
+Als u meerdere apparaten hebt besteld, kunt u uitvoeren om [`az databox job list`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-list) al uw Azure Data Box bekijken. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
 De opdracht geeft ook tijdstempels van elke bestelling weer.
 
 ```azurecli
@@ -734,7 +734,7 @@ Als u informatie wilt ophalen over een enkele, bestaande Azure Data Box-bestelli
 
 ### <a name="list-all-orders"></a>Alle bestellingen weergeven
 
-Als u meerdere apparaten hebt besteld, kunt u uitvoeren [`Get-AzDataBoxJob`](/powershell/module/az.databox/Get-AzDataBoxJob) om al uw Azure data Box orders weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
+Als u meerdere apparaten hebt besteld, kunt u uitvoeren om [`Get-AzDataBoxJob`](/powershell/module/az.databox/Get-AzDataBoxJob) al uw Azure Data Box bekijken. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
 De opdracht geeft ook tijdstempels van elke bestelling weer.
 
 ```azurepowershell
@@ -777,7 +777,7 @@ Als u een geannuleerde bestelling wilt verwijderen, gaat u naar **Overzicht** en
 
 ### <a name="cancel-an-order"></a>Een order annuleren
 
-Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job cancel`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-cancel) . U moet een reden opgeven voor het annuleren van de bestelling.
+Voer uit om Azure Data Box order te [`az databox job cancel`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-cancel) annuleren. U moet een reden opgeven voor het annuleren van de bestelling.
 
    ```azurecli
    az databox job cancel --resource-group <resource-group> --name <order-name> --reason <cancel-description>
@@ -814,7 +814,7 @@ Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job canc
 
 ### <a name="delete-an-order"></a>Een bestelling verwijderen
 
-Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`az databox job delete`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-delete) om de volg orde te verwijderen.
+Als u een order Azure Data Box geannuleerd, kunt u uitvoeren om [`az databox job delete`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-delete) de order te verwijderen.
 
    ```azurecli
    az databox job delete --name [-n] <order-name> --resource-group <resource-group> [--yes] [--verbose]
@@ -887,7 +887,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="delete-an-order"></a>Een bestelling verwijderen
 
-Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`Remove-AzDataBoxJob`](/powershell/module/az.databox/remove-azdataboxjob) om de volg orde te verwijderen.
+Als u een order Azure Data Box geannuleerd, kunt u uitvoeren om [`Remove-AzDataBoxJob`](/powershell/module/az.databox/remove-azdataboxjob) de order te verwijderen.
 
 ```azurepowershell
 Remove-AzDataBoxJob -Name <String> -ResourceGroup <String>

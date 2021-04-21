@@ -1,94 +1,94 @@
 ---
 title: Azure Functions ontwikkelen met Visual Studio
-description: Meer informatie over het ontwikkelen en testen van Azure Functions met behulp van Azure Functions-Hulpprogram Ma's voor Visual Studio 2019.
+description: Meer informatie over het ontwikkelen en testen Azure Functions met behulp van Azure Functions Tools for Visual Studio 2019.
 ms.custom: vs-azure, devx-track-csharp
 ms.topic: conceptual
 ms.date: 06/10/2020
-ms.openlocfilehash: 877c82e375b0ea469071402b83fadbd634177f3f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2cba0a9ad63e319af0a5eaa1c1c018c3b285c28a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97655812"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765571"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Azure Functions ontwikkelen met Visual Studio  
 
-Met Visual Studio kunt u C#-klassen bibliotheek functies ontwikkelen, testen en implementeren in Azure. Als deze ervaring uw eerste met Azure Functions is, raadpleegt [u een inleiding tot Azure functions](functions-overview.md).
+Visual Studio kunt u C#-klassebibliotheekfuncties ontwikkelen, testen en implementeren in Azure. Als deze ervaring uw eerste ervaring is met Azure Functions, zie [Een inleiding tot Azure Functions](functions-overview.md).
 
-Visual Studio biedt de volgende voor delen bij het ontwikkelen van uw functies: 
+Visual Studio biedt de volgende voordelen bij het ontwikkelen van uw functies: 
 
-* U kunt functies bewerken, bouwen en uitvoeren op uw lokale ontwikkel computer. 
-* Publiceer uw Azure Functions-project rechtstreeks naar Azure en maak indien nodig Azure-resources. 
-* Gebruik C#-kenmerken om functie bindingen rechtstreeks in de C#-code te declareren.
-* Ontwikkel en implementeer vooraf gecompileerde C#-functies. De vooraf vervulde functies bieden betere prestaties van het koude-start dan op C#-script gebaseerde functies. 
-* Codeer uw functies in C# terwijl u alle voor delen van Visual Studio-ontwikkeling hebt. 
+* Bewerk, bouw en voer functies uit op uw lokale ontwikkelcomputer. 
+* Publiceer uw Azure Functions project rechtstreeks naar Azure en maak zo nodig Azure-resources. 
+* Gebruik C#-kenmerken om functiebindingen rechtstreeks in de C#-code te declareeren.
+* Vooraf gecompileerde C#-functies ontwikkelen en implementeren. Vooraf voldoende functies bieden betere koude startprestaties dan C#-functies op basis van scripts. 
+* Codeer uw functies in C# en profiteer van alle voordelen van Visual Studio ontwikkeling. 
 
-In dit artikel vindt u informatie over het gebruik van Visual Studio voor het ontwikkelen van C#-klassen bibliotheek functies en het publiceren ervan naar Azure. Voordat u dit artikel leest, kunt u de [Snelstartgids voor Visual Studio](functions-create-your-first-function-visual-studio.md)volt ooien. 
+Dit artikel bevat informatie over het gebruik van Visual Studio het ontwikkelen van functies van de C#-klassebibliotheek en het publiceren ervan naar Azure. Voordat u dit artikel leest, kunt u de [Functions-quickstart voor Visual Studio.](functions-create-your-first-function-visual-studio.md) 
 
-Tenzij anders aangegeven, worden de procedures en voor beelden weer gegeven voor Visual Studio 2019. 
+Tenzij anders vermeld, zijn de weergegeven procedures en voorbeelden Visual Studio 2019. 
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Azure Functions-Hulpprogram Ma's. Als u Azure function tools wilt toevoegen, moet u de werk belasting voor **Azure Development** in uw Visual Studio-installatie. Azure Functions-Hulpprogram Ma's zijn beschikbaar in de Azure Development-workload, te beginnen met Visual Studio 2017.
+- Azure Functions Tools. Als u Azure Function Tools wilt toevoegen, moet u de **Workload Azure-ontwikkeling** opnemen in Visual Studio installatie. Azure Functions Tools is beschikbaar in de Azure-ontwikkelworkload vanaf Visual Studio 2017.
 
-- Andere resources die u nodig hebt, zoals een Azure Storage account, worden tijdens het publicatie proces in uw abonnement gemaakt.
+- Andere resources die u nodig hebt, zoals een Azure Storage account, worden tijdens het publicatieproces in uw abonnement gemaakt.
 
 - [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 > [!NOTE]
-> In Visual Studio 2017 installeert de werk belasting Azure Development Azure Functions-Hulpprogram Ma's als een afzonderlijke extensie. Wanneer u de installatie van Visual Studio 2017 bijwerkt, moet u ervoor zorgen dat u de [meest recente versie](#check-your-tools-version) van de Azure functions-hulpprogram ma's gebruikt. In de volgende secties ziet u hoe u de extensie van de Azure Functions-Hulpprogram Ma's in Visual Studio 2017 kunt controleren en (indien nodig) bijwerken. 
+> In Visual Studio 2017 installeert de workload Azure-ontwikkeling Azure Functions Tools als een afzonderlijke extensie. Wanneer u de installatie van Visual Studio 2017 bijwerkt, [](#check-your-tools-version) moet u ervoor zorgen dat u de meest recente versie van de Azure Functions gebruikt. In de volgende secties ziet u hoe u de extensie Azure Functions Tools in Visual Studio 2017 controleert en (indien nodig) bijwerkt. 
 >
 > Sla deze secties over als u Visual Studio 2019 gebruikt.
 
-### <a name="check-your-tools-version-in-visual-studio-2017"></a><a name="check-your-tools-version"></a>Controleer de versie van uw hulpprogram ma's in Visual Studio 2017
+### <a name="check-your-tools-version-in-visual-studio-2017"></a><a name="check-your-tools-version"></a>Controleer de versie van uw hulpprogramma's in Visual Studio 2017
 
-1. Kies in het menu **extra** de optie **extensies en updates**. Vouw **geïnstalleerde**  >  **hulpprogram ma's** uit en kies **Azure functions en hulpprogram ma's voor webjobs**.
+1. Kies **extensies en** updates in het menu **Extra.** Vouw **Geïnstalleerde**  >  **hulpprogramma's** uit en kies **Azure Functions en WebTakenProgramma's.**
 
-    ![De versie van de functie hulpprogramma's controleren](./media/functions-develop-vs/functions-vstools-check-functions-tools.png)
+    ![De versie van de Functions-hulpprogramma's controleren](./media/functions-develop-vs/functions-vstools-check-functions-tools.png)
 
-1. Noteer de geïnstalleerde **versie** en vergelijk deze versie met de meest recente versie die wordt vermeld in de [release opmerkingen](https://github.com/Azure/Azure-Functions/blob/master/VS-AzureTools-ReleaseNotes.md). 
+1. Noteer de **geïnstalleerde versie** en vergelijk deze versie met de nieuwste versie die wordt vermeld in de [release-opmerkingen](https://github.com/Azure/Azure-Functions/blob/master/VS-AzureTools-ReleaseNotes.md). 
 
-1. Als uw versie ouder is, werkt u de hulpprogram ma's in Visual Studio bij, zoals wordt weer gegeven in de volgende sectie.
+1. Als uw versie ouder is, werkt u uw hulpprogramma's bij in Visual Studio zoals wordt weergegeven in de volgende sectie.
 
-### <a name="update-your-tools-in-visual-studio-2017"></a>Werk uw hulpprogram ma's bij in Visual Studio 2017
+### <a name="update-your-tools-in-visual-studio-2017"></a>Uw hulpprogramma's bijwerken in Visual Studio 2017
 
-1. Vouw in het dialoog venster **extensies en updates** het onderdeel **updates**  >  **Visual Studio Marketplace** uit, kies **Azure functions en hulpprogram ma's voor webjobs** en selecteer **bijwerken**.
+1. Vouw in **het dialoogvenster Extensies** en updates **updates** Visual Studio  >  **Marketplace** uit, kies Azure Functions en **Webtakenprogramma's** en selecteer **Bijwerken.**
 
-    ![De functie hulpprogram ma's-versie bijwerken](./media/functions-develop-vs/functions-vstools-update-functions-tools.png)   
+    ![De versie van de Functions-hulpprogramma's bijwerken](./media/functions-develop-vs/functions-vstools-update-functions-tools.png)   
 
-1. Nadat de hulpprogram ma's update is gedownload, selecteert u **sluiten** en sluit u Visual Studio om de hulpprogram ma's bijwerken met VSIX Installer te activeren.
+1. Nadat de hulpprogramma's zijn gedownload, selecteert u Sluiten **en** sluit Visual Studio de hulpprogramma's te activeren met VSIX Installer.
 
-1. Kies in VSIX Installer **wijzigen** om de hulpprogram ma's bij te werken. 
+1. Kies wijzigen in VSIX Installer **om de** hulpprogramma's bij te werken. 
 
-1. Nadat de update is voltooid, kiest u **sluiten** en start u Visual Studio opnieuw.
+1. Nadat de update is voltooid, kiest u **Sluiten** en start u de Visual Studio.
 
 > [!NOTE]  
-> In Visual Studio 2019 en hoger wordt de uitbrei ding Azure Functions tools bijgewerkt als onderdeel van Visual Studio.  
+> In Visual Studio 2019 en hoger wordt de extensie Azure Functions tools bijgewerkt als onderdeel van Visual Studio.  
 
 ## <a name="create-an-azure-functions-project"></a>Een Azure Functions-project maken
 
 [!INCLUDE [Create a project using the Azure Functions](../../includes/functions-vstools-create.md)]
 
-Nadat u een Azure Functions project hebt gemaakt, maakt de project sjabloon een C#-project, installeert het `Microsoft.NET.Sdk.Functions` NuGet-pakket en stelt het doel raamwerk in. Het nieuwe project heeft de volgende bestanden:
+Nadat u een nieuw project Azure Functions, maakt de projectsjabloon een C#-project, installeert het NuGet-pakket en `Microsoft.NET.Sdk.Functions` stelt het doelkader in. Het nieuwe project heeft de volgende bestanden:
 
-* **host.jsop**: Hiermee kunt u de functie host configureren. Deze instellingen zijn van toepassing op zowel lokaal als in Azure. Zie [host.jsop referentie](functions-host-json.md)voor meer informatie.
+* **host.js:** hiermee kunt u de Functions-host configureren. Deze instellingen zijn van toepassing bij het lokaal uitvoeren van en in Azure. Zie voor meer informatie [host.jsnaslaginformatie.](functions-host-json.md)
 
-* **local.settings.jsop**: onderhoudt de instellingen die worden gebruikt bij het lokaal uitvoeren van functies. Deze instellingen worden niet gebruikt wanneer ze worden uitgevoerd in Azure. Zie [Local Settings file](#local-settings-file)(Engelstalig) voor meer informatie.
+* **local.settings.jsop**: Onderhoudt instellingen die worden gebruikt bij het lokaal uitvoeren van functies. Deze instellingen worden niet gebruikt bij het uitvoeren in Azure. Zie Local [settings file (Bestand met lokale instellingen) voor meer informatie.](#local-settings-file)
 
     >[!IMPORTANT]
-    >Omdat de local.settings.jsin het bestand geheimen kan bevatten, moet u dit uitsluiten van uw project broncode beheer. Zorg ervoor dat de instelling **kopiëren naar uitvoer Directory** voor dit bestand is ingesteld op **kopiëren indien nieuwer**. 
+    >Omdat de local.settings.jsbestand geheimen kan bevatten, moet u deze uitsluiten van het broncodebeheer van uw project. Zorg ervoor **dat de instelling Naar uitvoermap** kopiëren voor dit bestand is ingesteld op Kopiëren indien **nieuwer.** 
 
-Zie voor meer informatie [functions Class Library project](functions-dotnet-class-library.md#functions-class-library-project).
+Zie Functions-klassebibliotheekproject [voor meer informatie.](functions-dotnet-class-library.md#functions-class-library-project)
 
 [!INCLUDE [functions-local-settings-file](../../includes/functions-local-settings-file.md)]
 
-Visual Studio uploadt de instellingen in local.settings.jsniet automatisch wanneer u het project publiceert. Als u er zeker van wilt zijn dat deze instellingen ook in uw functie-app in azure voor komen, moet u deze uploaden nadat u uw project hebt gepubliceerd. Zie voor meer informatie [functie-app-instellingen](#function-app-settings). De waarden in een `ConnectionStrings` verzameling worden nooit gepubliceerd.
+Visual Studio uploadt niet automatisch de instellingen in local.settings.jswanneer u het project publiceert. Als u er zeker van wilt zijn dat deze instellingen ook aanwezig zijn in uw functie-app in Azure, uploadt u deze nadat u uw project hebt gepubliceerd. Zie Instellingen voor [functie-apps voor meer informatie.](#function-app-settings) De waarden in een `ConnectionStrings` verzameling worden nooit gepubliceerd.
 
-Uw code kan ook de waarden van de functie-app-instellingen lezen als omgevings variabelen. Zie [omgevings variabelen](functions-dotnet-class-library.md#environment-variables)voor meer informatie.
+Uw code kan ook de instellingenwaarden van de functie-app lezen als omgevingsvariabelen. Zie [Omgevingsvariabelen voor meer informatie.](functions-dotnet-class-library.md#environment-variables)
 
-## <a name="configure-your-build-output-settings"></a>De instellingen voor de build-uitvoer configureren
+## <a name="configure-your-build-output-settings"></a>De uitvoerinstellingen voor de build configureren
 
-Bij het bouwen van een Azure Functions project optimaliseert de build-hulpprogram ma's de uitvoer zo dat slechts één exemplaar van de assembly's die worden gedeeld met de functions-runtime, behouden blijft. Het resultaat is een geoptimaliseerde build waarmee zo veel mogelijk ruimte wordt bespaard. Wanneer u echter naar een recentere versie van een van uw project assembly's gaat, is het mogelijk dat de build-hulpprogram ma's niet weten dat deze assembly's bewaard moeten blijven. Om ervoor te zorgen dat deze assembly's tijdens het optimalisatie proces behouden blijven, kunt u ze opgeven met behulp `FunctionsPreservedDependencies` van elementen in het project bestand (. csproj):
+Wanneer u een Azure Functions-project bouwt, optimaliseren de buildhulpprogramma's de uitvoer, zodat slechts één kopie van alle assemblies die worden gedeeld met de functions-runtime, behouden blijft. Het resultaat is een geoptimaliseerde build die zoveel mogelijk ruimte bespaart. Wanneer u echter naar een recentere versie van uw projectassemblage gaat, weten de buildhulpprogramma's mogelijk niet dat deze assemblies moeten worden bewaard. Om ervoor te zorgen dat deze assemblies behouden blijven tijdens het optimalisatieproces, kunt u ze opgeven met behulp van elementen in het `FunctionsPreservedDependencies` projectbestand (.csproj) :
 
 ```xml
   <ItemGroup>
@@ -98,37 +98,37 @@ Bij het bouwen van een Azure Functions project optimaliseert de build-hulpprogra
   </ItemGroup>
 ```
 
-## <a name="configure-the-project-for-local-development"></a>Het project voor lokale ontwikkeling configureren
+## <a name="configure-the-project-for-local-development"></a>Het project configureren voor lokale ontwikkeling
 
-De functions runtime maakt intern gebruik van een Azure Storage-account. Voor alle trigger typen behalve HTTP en webhooks, stelt u de `Values.AzureWebJobsStorage` sleutel in op een geldige Azure Storage-account Connection String. De functie-app kan ook de [Azure Storage-emulator](../storage/common/storage-use-emulator.md) gebruiken voor de `AzureWebJobsStorage` verbindings instelling die door het project wordt vereist. Als u de emulator wilt gebruiken, stelt u de waarde `AzureWebJobsStorage` in op `UseDevelopmentStorage=true` . Wijzig deze instelling in een werkelijk opslag account connection string vóór de implementatie.
+De Functions-runtime maakt intern gebruik Azure Storage account. Voor alle andere triggertypen dan HTTP en webhooks stelt u de sleutel in op een geldig `Values.AzureWebJobsStorage` Azure Storage-connection string. Uw functie-app kan ook de [Azure Storage Emulator gebruiken](../storage/common/storage-use-emulator.md) voor de verbindingsinstelling `AzureWebJobsStorage` die vereist is voor het project. Als u de emulator wilt gebruiken, stelt u de waarde van `AzureWebJobsStorage` in op `UseDevelopmentStorage=true` . Wijzig deze instelling in een werkelijk opslagaccount connection string implementatie.
 
-Het opslag account connection string instellen:
+De opslagaccount instellen op connection string:
 
-1. Selecteer in Visual Studio   >  **Cloud Explorer** weer geven.
+1. Selecteer Visual Studio **Cloud**  >  **Explorer weergeven.**
 
-2. Vouw in **Cloud Explorer** **opslag accounts** uit en selecteer vervolgens uw opslag account. Op het tabblad **Eigenschappen** kopieert u de waarde van de **primaire verbindings reeks** .
+2. Vouw **in Cloud Explorer** **Opslagaccounts uit** en selecteer vervolgens uw opslagaccount. Kopieer op **het tabblad** Eigenschappen de waarde van de **primaire verbindingsreeks.**
 
-2. Open in uw project de local.settings.jsin het bestand en stel de waarde van de `AzureWebJobsStorage` sleutel in op de Connection String die u hebt gekopieerd.
+2. Open in uw project de local.settings.json file en stel de waarde van de sleutel in op de `AzureWebJobsStorage` connection string u hebt gekopieerd.
 
-3. Herhaal de vorige stap om unieke sleutels toe te voegen aan de `Values` matrix voor andere verbindingen die uw functies nodig hebben. 
+3. Herhaal de vorige stap om unieke sleutels toe te voegen aan de matrix voor andere `Values` verbindingen die vereist zijn voor uw functies. 
 
 ## <a name="add-a-function-to-your-project"></a>Een functie toevoegen aan uw project
 
-In C#-klassen bibliotheek functies worden de bindingen die worden gebruikt door de functie gedefinieerd door het Toep assen van kenmerken in de code. Wanneer u de functie triggers maakt op basis van de beschik bare sjablonen, worden de trigger kenmerken voor u toegepast. 
+In C#-klassebibliotheekfuncties worden de bindingen die worden gebruikt door de functie gedefinieerd door kenmerken toe te passen in de code. Wanneer u uw functietriggers maakt op basis van de opgegeven sjablonen, worden de triggerkenmerken voor u toegepast. 
 
-1. Klik in **Solution Explorer** met de rechter muisknop op het project knooppunt en selecteer   >  **Nieuw item** toevoegen. 
+1. Klik **Solution Explorer** met de rechtermuisknop op het project-knooppunt en selecteer **Nieuw**  >  **item toevoegen.** 
 
-2. Selecteer **Azure function**, voer een **naam** in voor de klasse en selecteer vervolgens **toevoegen**.
+2. Selecteer **Azure Function,** voer een **Naam in** voor de klasse en selecteer vervolgens **Toevoegen.**
 
-3. Kies uw trigger, stel de bindings eigenschappen in en selecteer **OK**. In het volgende voor beeld ziet u de instellingen voor het maken van een wachtrij opslag trigger functie. 
+3. Kies uw trigger, stel de bindingseigenschappen in en selecteer **ok.** In het volgende voorbeeld ziet u de instellingen voor het maken van een wachtrijopslagtriggerfunctie. 
 
-    ![Een activerings functie voor de wachtrij opslag maken](./media/functions-develop-vs/functions-vstools-create-queuetrigger.png)
+    ![Een triggerfunctie voor Queue Storage maken](./media/functions-develop-vs/functions-vstools-create-queuetrigger.png)
 
-    In deze trigger wordt een connection string gebruikt met een sleutel met de naam `QueueStorage` . Definieer deze connection string-instelling in de [local.settings.jsvoor het bestand](functions-run-local.md#local-settings-file).
+    In dit triggervoorbeeld wordt een connection string met een sleutel met de naam `QueueStorage` . Definieer connection string instelling in het [local.settings.jsbestand](functions-run-local.md#local-settings-file).
 
-4. Bekijk de zojuist toegevoegde klasse. U ziet een statische `Run()` methode die is voorzien van het `FunctionName` kenmerk. Dit kenmerk geeft aan dat de methode het toegangs punt voor de functie is.
+4. Bekijk de zojuist toegevoegde klasse. U ziet een statische `Run()` methode die wordt toegeschreven aan het kenmerk `FunctionName` . Dit kenmerk geeft aan dat de methode het toegangspunt voor de functie is.
 
-    De volgende C#-klasse vertegenwoordigt bijvoorbeeld een eenvoudige functie voor wachtrij opslag:
+    De volgende C#-klasse vertegenwoordigt bijvoorbeeld een eenvoudige triggerfunctie voor Queue Storage:
 
     ```csharp
     using System;
@@ -150,25 +150,25 @@ In C#-klassen bibliotheek functies worden de bindingen die worden gebruikt door 
     }
     ```
 
-Er wordt een binding-specifiek kenmerk toegepast op elke bindings parameter die is opgegeven voor de toegangs punt methode. Het kenmerk neemt de bindings gegevens op als para meters. In het vorige voor beeld is voor de eerste para meter een `QueueTrigger` kenmerk toegepast, dat aangeeft dat de functie voor de opslag van een wachtrij is ingeschakeld. De naam van de wachtrij en de connection string instelling worden door gegeven als para meters aan het `QueueTrigger` kenmerk. Zie [Azure Queue-opslag bindingen voor Azure functions](functions-bindings-storage-queue-trigger.md)voor meer informatie.
+Er wordt een bindingsspecifieke kenmerk toegepast op elke bindingsparameter die wordt opgegeven voor de methode van het toegangspunt. Het kenmerk gebruikt de bindingsgegevens als parameters. In het vorige voorbeeld is voor de eerste parameter een kenmerk toegepast, waarmee een triggerfunctie `QueueTrigger` queue storage wordt aangegeven. De naam van de wachtrij connection string naam van de instelling worden als parameters doorgegeven aan het `QueueTrigger` kenmerk . Zie Azure [Queue Storage-bindingen voor](functions-bindings-storage-queue-trigger.md)meer informatie Azure Functions .
 
-Gebruik de bovenstaande procedure om meer functies aan uw functie-app-project toe te voegen. Elke functie in het project kan een andere trigger hebben, maar een functie moet precies één trigger hebben. Zie [Azure functions triggers en bindingen concepten](functions-triggers-bindings.md)voor meer informatie.
+Gebruik de bovenstaande procedure om meer functies toe te voegen aan uw functie-app-project. Elke functie in het project kan een andere trigger hebben, maar een functie moet precies één trigger hebben. Zie triggers en [bindingsconcepten Azure Functions meer informatie.](functions-triggers-bindings.md)
 
 ## <a name="add-bindings"></a>Bindingen toevoegen
 
-Net als bij triggers worden de invoer-en uitvoer bindingen aan uw functie toegevoegd als bindings kenmerken. Voeg als volgt bindingen toe aan een functie:
+Net als bij triggers worden invoer- en uitvoerbindingen aan uw functie toegevoegd als bindingskenmerken. Voeg bindingen als volgt toe aan een functie:
 
-1. Zorg ervoor dat u [het project hebt geconfigureerd voor lokale ontwikkeling](#configure-the-project-for-local-development).
+1. Zorg ervoor dat u het [project hebt geconfigureerd voor lokale ontwikkeling.](#configure-the-project-for-local-development)
 
-2. Voeg het juiste NuGet-extensie pakket toe voor de specifieke binding. 
+2. Voeg het juiste NuGet-extensiepakket toe voor de specifieke binding. 
 
-   Zie [C# class library with Visual Studio](./functions-bindings-register.md#local-csharp)(Engelstalig) voor meer informatie. Zoek de binding-specifieke NuGet-pakket vereisten in het referentie artikel voor de binding. U kunt bijvoorbeeld pakket vereisten voor de trigger Event Hubs vinden in het [artikel over het event hubs binden van bindingen](functions-bindings-event-hubs.md).
+   Zie C#-klassebibliotheek met Visual Studio voor [Visual Studio.](./functions-bindings-register.md#local-csharp) Zoek de bindingsspecifieke NuGet-pakketvereisten in het referentieartikel voor de binding. Zoek bijvoorbeeld pakketvereisten voor de trigger Event Hubs in het [Event Hubs-bindingsverwijzingsartikel.](functions-bindings-event-hubs.md)
 
-3. Als er app-instellingen zijn die aan de binding moeten worden toegevoegd, voegt u deze toe aan de `Values` verzameling in het [lokale instellings bestand](functions-run-local.md#local-settings-file). 
+3. Als er app-instellingen zijn die de binding nodig heeft, voegt u deze toe aan de `Values` verzameling in het lokale [instellingsbestand](functions-run-local.md#local-settings-file). 
 
-   De functie gebruikt deze waarden wanneer deze lokaal wordt uitgevoerd. Wanneer de functie wordt uitgevoerd in de functie-app in azure, worden de instellingen van de [functie-app](#function-app-settings)gebruikt.
+   De functie gebruikt deze waarden wanneer deze lokaal wordt uitgevoerd. Wanneer de functie wordt uitgevoerd in de functie-app in Azure, worden de instellingen van [de functie-app gebruikt.](#function-app-settings)
 
-4. Voeg het juiste bindings kenmerk toe aan de hand tekening van de methode. In het volgende voor beeld wordt met een wachtrij bericht de functie geactiveerd en wordt met de uitvoer binding een nieuw wachtrij bericht gemaakt met dezelfde tekst in een andere wachtrij.
+4. Voeg het juiste bindingskenmerk toe aan de methodehandtekening. In het volgende voorbeeld activeert een wachtrijbericht de functie en maakt de uitvoerbinding een nieuw wachtrijbericht met dezelfde tekst in een andere wachtrij.
 
     ```csharp
     public static class SimpleExampleWithOutput
@@ -184,21 +184,21 @@ Net als bij triggers worden de invoer-en uitvoer bindingen aan uw functie toegev
         }
     }
     ```
-   De verbinding met de wachtrij opslag wordt opgehaald van de `AzureWebJobsStorage` instelling. Zie het naslag artikel voor de specifieke binding voor meer informatie. 
+   De verbinding met Queue Storage wordt verkregen via de `AzureWebJobsStorage` instelling. Zie het referentieartikel voor de specifieke binding voor meer informatie. 
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
 ## <a name="testing-functions"></a>Functies testen
 
-Met Azure Functions Core-hulpprogramma's kunt u Azure Functions-projecten uitvoeren op uw lokale ontwikkelcomputer. Zie [werken met Azure functions core tools](functions-run-local.md)voor meer informatie. De eerste keer dat u een functie vanuit Visual Studio start, wordt u gevraagd deze hulpprogram ma's te installeren. 
+Met Azure Functions Core-hulpprogramma's kunt u Azure Functions-projecten uitvoeren op uw lokale ontwikkelcomputer. Zie Werken met Azure Functions Core Tools [voor meer informatie.](functions-run-local.md) U wordt gevraagd deze hulpprogramma's te installeren wanneer u voor het eerst een functie start vanuit Visual Studio. 
 
-U kunt als volgt uw functie testen in Visual Studio:
+Uw functie testen in Visual Studio:
 
 1. Druk op F5. Accepteer desgevraagd de aanvraag van Visual Studio om Azure Functions Core (CLI)-hulpprogramma's te downloaden en installeren. Mogelijk moet u ook een firewall-uitzondering inschakelen, zodat de hulpprogramma's HTTP-aanvragen kunnen afhandelen.
 
-2. Wanneer het project wordt uitgevoerd, test u de code zoals u een geïmplementeerde functie zou testen. 
+2. Terwijl het project wordt uitgevoerd, test u uw code zoals u een geïmplementeerde functie zou testen. 
 
-   Zie [strategieën voor het testen van uw code in azure functions](functions-test-a-function.md)voor meer informatie. Wanneer u Visual Studio in de foutopsporingsmodus uitvoert, worden onderbrekings punten op de verwachte wijze bereikt.
+   Zie Strategies for testing your code in Azure Functions (Strategieën voor [het testen van uw code in Azure Functions).](functions-test-a-function.md) Wanneer u een Visual Studio in de foutopsporingsmodus, worden onderbrekingspunten zoals verwacht getroffen.
 
 <!---
 For an example of how to test a queue triggered function, see the [queue triggered function quickstart tutorial](functions-create-storage-queue-triggered-function.md#test-the-function).  
@@ -207,10 +207,10 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 ## <a name="publish-to-azure"></a>Publiceren naar Azure
 
-Wanneer u vanuit Visual Studio publiceert, worden er twee implementatie methoden gebruikt:
+Wanneer u vanuit Visual Studio publiceert, wordt een van de volgende twee implementatiemethoden gebruikt:
 
-* [Web Deploy](functions-deployment-technologies.md#web-deploy-msdeploy): pakketten en implementeert Windows-apps op elke IIS-server.
-* [Zip-implementatie met uitvoeren vanaf pakket ingeschakeld](functions-deployment-technologies.md#zip-deploy): aanbevolen voor Azure functions implementaties.
+* [Web Deploy:](functions-deployment-technologies.md#web-deploy-msdeploy)verpakt en implementeert Windows-apps op elke IIS-server.
+* [Zip-implementatie met uitvoeren vanaf pakket ingeschakeld: aanbevolen](functions-deployment-technologies.md#zip-deploy)voor Azure Functions implementaties.
 
 Gebruik de volgende stappen om uw project te publiceren naar een functie-app in Azure.
 
@@ -218,35 +218,35 @@ Gebruik de volgende stappen om uw project te publiceren naar een functie-app in 
 
 ## <a name="function-app-settings"></a>Instellingen voor functie-app
 
-Omdat Visual Studio deze instellingen niet automatisch uploadt wanneer u het project publiceert, moeten de instellingen die u toevoegt in het local.settings.jsop u ook worden toegevoegd aan de functie-app in Azure.
+Omdat Visual Studio instellingen niet automatisch uploadt wanneer u het project publiceert, moeten alle instellingen die u in de local.settings.jstoevoegt, ook toevoegen aan de functie-app in Azure.
 
-De eenvoudigste manier om de vereiste instellingen te uploaden naar uw functie-app in Azure is door de koppeling **Azure app service instellingen beheren** te selecteren die wordt weer gegeven nadat u uw project hebt gepubliceerd.
+De eenvoudigste manier om de vereiste instellingen naar uw functie-app in Azure te uploaden, is door de koppeling Azure App Service beheren **te** selecteren die wordt weergegeven nadat u uw project hebt gepubliceerd.
 
-:::image type="content" source="./media/functions-develop-vs/functions-vstools-app-settings.png" alt-text="Instellingen in het venster publiceren":::
+:::image type="content" source="./media/functions-develop-vs/functions-vstools-app-settings.png" alt-text="Instellingen in het venster Publiceren":::
 
-Als u deze koppeling selecteert, wordt het dialoog venster **Toepassings instellingen** weer gegeven voor de functie-app, waar u nieuwe toepassings instellingen kunt toevoegen of bestaande wijzigen.
+Als u deze koppeling **selecteert, wordt het dialoogvenster** Toepassingsinstellingen voor de functie-app weergegeven, waarin u nieuwe toepassingsinstellingen kunt toevoegen of bestaande kunt wijzigen.
 
 ![Toepassingsinstellingen](./media/functions-develop-vs/functions-vstools-app-settings2.png)
 
-**Lokale** geeft een instellings waarde in de local.settings.jsop bestand, en op **afstand** wordt een huidige instellings waarde weer gegeven in de functie-app in Azure. Kies **instelling toevoegen** om een nieuwe app-instelling te maken. Gebruik de **waarde invoegen uit lokale** koppeling om een instellings waarde naar het **externe** veld te kopiëren. Wijzigingen in behandeling worden naar het lokale instellingen bestand en de functie-app geschreven wanneer u **OK** selecteert.
+**Lokaal** geeft een instellingswaarde weer in local.settings.json-file en Extern **geeft** een huidige instellingswaarde weer in de functie-app in Azure. Kies **Instelling toevoegen om** een nieuwe app-instelling te maken. Gebruik de **koppeling Waarde invoegen uit Lokaal** om een instellingswaarde naar het veld Extern **te** kopiëren. Wijzigingen in behandeling worden naar het lokale instellingenbestand en de functie-app geschreven wanneer u **OK selecteert.**
 
 > [!NOTE]
-> De local.settings.jsin het bestand is standaard niet ingecheckt in broncode beheer. Dit betekent dat als u een project van een lokale functie kloont van broncode beheer, het project geen local.settings.jsheeft voor het bestand. In dit geval moet u de local.settings.jsin het bestand hand matig maken in de hoofdmap van het project, zodat het dialoog venster **Toepassings instellingen** werkt zoals verwacht. 
+> Standaard wordt de local.settings.jsin het bestand niet ingecheckt bij broncodebeheer. Dit betekent dat als u een lokaal Functions-project kloont vanuit broncodebeheer, het project geen local.settings.jsin het bestand. In dit geval moet u handmatig de local.settings.jsmaken in het bestand  in de hoofdmap van het project, zodat het dialoogvenster Toepassingsinstellingen werkt zoals verwacht. 
 
-U kunt ook toepassings instellingen op een van de volgende manieren beheren:
+U kunt toepassingsinstellingen ook op een van de volgende manieren beheren:
 
 * [Gebruik de Azure Portal](functions-how-to-use-azure-function-app-settings.md#settings).
-* [Gebruik de `--publish-local-settings` optie publiceren in de Azure functions core tools](functions-run-local.md#publish).
-* [Gebruik de Azure cli](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
+* [Gebruik de `--publish-local-settings` optie publiceren in de Azure Functions Core Tools](functions-run-local.md#publish).
+* [Gebruik de Azure CLI.](/cli/azure/functionapp/config/appsettings#az_functionapp_config_appsettings_set)
 
 ## <a name="monitoring-functions"></a>Functies bewaken
 
-De aanbevolen manier om de uitvoering van uw functies te controleren is door uw functie-app te integreren met Azure-toepassing Insights. Wanneer u een functie-app maakt in de Azure Portal, wordt deze integratie standaard voor u uitgevoerd. Wanneer u echter uw functie-app tijdens het publiceren van Visual Studio maakt, wordt de integratie in uw functie-app in azure niet uitgevoerd. Zie [Application Insights-integratie inschakelen](configure-monitoring.md#enable-application-insights-integration)voor meer informatie over het verbinden van Application Insights met uw functie-app.
+De aanbevolen manier om de uitvoering van uw functies te bewaken, is door uw functie-app te integreren met Azure-toepassing Insights. Wanneer u een functie-app maakt in Azure Portal, wordt deze integratie standaard voor u uitgevoerd. Wanneer u echter uw functie-app maakt tijdens Visual Studio publiceren, wordt de integratie in uw functie-app in Azure niet uitgevoerd. Zie Enable Application Insights integration (Integratie van Application Insights inschakelen) voor meer informatie over het maken van verbinding Application Insights met [uw functie Application Insights app.](configure-monitoring.md#enable-application-insights-integration)
 
-Zie [Azure functions bewaken](functions-monitoring.md)voor meer informatie over het bewaken van Application Insights.
+Zie Monitor Application Insights (Bewaking van Azure Functions) voor meer informatie over [bewaking met behulp Azure Functions.](functions-monitoring.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [werken met Azure functions core tools](functions-run-local.md)voor meer informatie over de Azure functions core tools.
+Zie Werken met Azure Functions Core Tools voor meer informatie [over Azure Functions Core Tools.](functions-run-local.md)
 
-Zie voor meer informatie over het ontwikkelen van functies als .NET-klassen bibliotheek [Azure functions C# Naslag informatie voor ontwikkel aars](functions-dotnet-class-library.md). In dit artikel vindt u ook koppelingen naar voor beelden van het gebruik van kenmerken voor het declareren van de verschillende typen bindingen die door Azure Functions worden ondersteund.    
+Zie voor meer informatie over het ontwikkelen van functies als .NET-klassebibliotheken [Azure Functions C#-referentie voor ontwikkelaars.](functions-dotnet-class-library.md) Dit artikel bevat ook koppelingen naar voorbeelden van het gebruik van kenmerken om de verschillende typen bindingen te declaren die worden ondersteund door Azure Functions.    

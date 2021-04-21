@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: glenga
-ms.openlocfilehash: 894a89126d1ee3ed909134f3e0dd914166568654
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 921127ffdd35007cc3fa2eaaa95cdb3fac8bbe15
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "90606149"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782266"
 ---
 U kunt de wachtrij bekijken in de [Azure Portal](../articles/storage/queues/storage-quickstart-queues-portal.md) of in de [Microsoft Azure Storage Explorer](https://storageexplorer.com/). U kunt de wachtrij ook bekijken in de Azure CLI, zoals wordt beschreven in de volgende stappen:
 
@@ -35,13 +35,13 @@ U kunt de wachtrij bekijken in de [Azure Portal](../articles/storage/queues/stor
     
     ---
     
-1. (Optioneel) Gebruik de opdracht [`az storage queue list`](/cli/azure/storage/queue#az-storage-queue-list) om de opslagwachtrijen in uw account te bekijken. De uitvoer van deze opdracht moet een wachtrij bevatten met de naam `outqueue`, die is gemaakt toen de functie het eerste bericht naar die wachtrij heeft geschreven.
+1. (Optioneel) Gebruik de opdracht [`az storage queue list`](/cli/azure/storage/queue#az_storage_queue_list) om de opslagwachtrijen in uw account te bekijken. De uitvoer van deze opdracht moet een wachtrij bevatten met de naam `outqueue`, die is gemaakt toen de functie het eerste bericht naar die wachtrij heeft geschreven.
     
     ```azurecli
     az storage queue list --output tsv
     ```
 
-1. Gebruik de opdracht [`az storage message get`](/cli/azure/storage/message#az-storage-message-get) om het bericht uit deze wachtrij te lezen. Dit moet de voornaam zijn die u eerder hebt gebruikt bij het testen van de functie. Met deze opdracht leest en verwijdert u het eerste bericht in de wachtrij. 
+1. Gebruik de opdracht [`az storage message get`](/cli/azure/storage/message#az_storage_message_get) om het bericht uit deze wachtrij te lezen. Dit moet de voornaam zijn die u eerder hebt gebruikt bij het testen van de functie. Met deze opdracht leest en verwijdert u het eerste bericht in de wachtrij. 
 
     # <a name="bash"></a>[bash](#tab/bash)
     

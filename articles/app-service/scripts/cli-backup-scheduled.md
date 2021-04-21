@@ -9,12 +9,12 @@ ms.date: 12/11/2017
 ms.author: msangapu
 ms.reviewer: cephalin
 ms.custom: mvc, seodec18, devx-track-azurecli
-ms.openlocfilehash: 500ac99cd35cfdf601be75a19a1d43f84795cbe8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: db1d0558f93b203af1605663533847d32afbcffb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97006417"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782545"
 ---
 # <a name="create-a-scheduled-backup-for-an-app-service-app-using-cli"></a>Een geplande back-up voor een App Service-app maken met CLI
 
@@ -38,15 +38,15 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [`az group create`](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [`az storage account create`](/cli/azure/storage/account#az-storage-account-create) | Hiermee maakt u een opslagaccount. |
-| [`az storage container create`](/cli/azure/storage/container#az-storage-container-create) | Hiermee wordt een Azure-opslagcontainer gemaakt. |
-| [`az storage container generate-sas`](/cli/azure/storage/container#az-storage-container-generate-sas) | Hiermee wordt een SAS-token gegenereerd voor een Azure-opslagcontainer.  |
-| [`az appservice plan create`](/cli/azure/appservice/plan#az-appservice-plan-create) | Hiermee maakt u een App Service-plan. |
-| [`az webapp create`](/cli/azure/webapp#az-webapp-create) | Hiermee maakt u een App Service-app. |
-| [`az webapp config backup update`](/cli/azure/webapp/config/backup#az-webapp-config-backup-update) | Hiermee configureert u het nieuwe back-upschema voor een App Service-app. |
-| [`az webapp config backup show`](/cli/azure/webapp/config/backup#az-webapp-config-backup-show) | Geeft het back-upschema voor een App Service-app weer. |
-| [`az webapp config backup list`](/cli/azure/webapp/config/backup#az-webapp-config-backup-list) | Hiermee haalt u een lijst op van back-ups voor een App Service-app. |
+| [`az group create`](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [`az storage account create`](/cli/azure/storage/account#az_storage_account_create) | Hiermee maakt u een opslagaccount. |
+| [`az storage container create`](/cli/azure/storage/container#az_storage_container_create) | Hiermee wordt een Azure-opslagcontainer gemaakt. |
+| [`az storage container generate-sas`](/cli/azure/storage/container#az_storage_container_generate_sas) | Hiermee wordt een SAS-token gegenereerd voor een Azure-opslagcontainer.  |
+| [`az appservice plan create`](/cli/azure/appservice/plan#az_appservice_plan_create) | Hiermee maakt u een App Service-plan. |
+| [`az webapp create`](/cli/azure/webapp#az_webapp_create) | Hiermee maakt u een App Service-app. |
+| [`az webapp config backup update`](/cli/azure/webapp/config/backup#az_webapp_config_backup_update) | Hiermee configureert u het nieuwe back-upschema voor een App Service-app. |
+| [`az webapp config backup show`](/cli/azure/webapp/config/backup#az_webapp_config_backup_show) | Geeft het back-upschema voor een App Service-app weer. |
+| [`az webapp config backup list`](/cli/azure/webapp/config/backup#az_webapp_config_backup_list) | Hiermee haalt u een lijst op van back-ups voor een App Service-app. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,32 +1,32 @@
 ---
 author: baanders
-description: bestand insluiten voor Azure Digital Apparaatdubbels-visualiseren met Azure Digital Apparaatdubbels Explorer
+description: bestand voor Azure Digital Twins opnemen - visualiseren met Azure Digital Twins Explorer
 ms.service: digital-twins
 ms.topic: include
 ms.date: 7/10/2020
 ms.author: baanders
-ms.openlocfilehash: 37bccbcd92f627fd45a7f786725afe5b2e475f3c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e752d6c6668ec751ff1e1bc3cd7fcc07d042d6fa
+ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "94533888"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107800186"
 ---
 ## <a name="visualization"></a>Visualisatie
 
-Hoewel de primaire manier om te communiceren met uw Azure Digital Apparaatdubbels-exemplaar via de [api's en sdk's](../articles/digital-twins/how-to-use-apis-sdks.md)gaat, kan het handig zijn om een visualisatie van de apparaatdubbels en grafieken te zien die u in uw exemplaar maakt.
+Hoewel de primaire manier om met uw Azure Digital Twins-exemplaar te communiceren via de API's en [SDK's](../articles/digital-twins/how-to-use-apis-sdks.md)is, kan het handig zijn om een visualisatie te zien van de tweelingen en grafieken die u in uw exemplaar maakt.
 
-De [**Azure Digital apparaatdubbels (ADT) Explorer**](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) is een voorbeeld toepassing voor het visualiseren en samen werken met Azure Digital apparaatdubbels. Volg de instructies van het voor beeld om de toepassings code te downloaden en uit te voeren. 
+De [**Azure Digital Twins Explorer**](/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) is een voorbeeldtoepassing voor het visualiseren en werken met Azure Digital Twins. Volg de instructies in het voorbeeld om de toepassingscode te downloaden en uit te voeren. 
 
-Met dit voor beeld ziet u een visuele weer gave van uw digitale apparaatdubbels en de grafiek die ze maken, onder andere aanmaak-en beheer activiteiten.
+Met dit voorbeeld ziet u een visuele weergave van uw digitale tweelingen en de grafiek die ze maken, naast andere activiteiten voor maken en beheren.
 
 Hier ziet u hoe de voorbeeldvisualisatie eruitziet:
 
 :::image type="content" source="../articles/digital-twins/media/includes/azure-digital-twins-explorer.png" alt-text="Schermopname van de voorbeeldtoepassing Azure Digital Twins-verkenner, waarop een grafiek van knooppunten die voor digital twins staan wordt weergegeven" lightbox="../articles/digital-twins/media/includes/azure-digital-twins-explorer.png":::
 
-U kunt ook het voor beeld gebruiken voor...
+U kunt het voorbeeld ook gebruiken om...
 * Modellen uploaden en verkennen
-* Grafieken van apparaatdubbels uploaden en bewerken
-* De apparaatdubbels-grafiek visualiseren met een aantal lay-outtechnieken
-* Eigenschappen van apparaatdubbels bewerken
-* Query's uitvoeren op de apparaatdubbels-grafiek
+* Grafieken van tweelingen uploaden en bewerken
+* De tweelinggrafiek visualiseren met een aantal indelingstechnieken
+* Eigenschappen van tweelingen bewerken
+* Query's uitvoeren op de tweelinggrafiek

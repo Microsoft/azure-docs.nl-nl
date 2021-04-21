@@ -8,13 +8,13 @@ metadata:
   ms.topic: landing-page
   author: shortpatti
   ms.author: v-patsho
-  ms.date: 03/30/2021
-  ms.openlocfilehash: 6e97c14acc291984a90182f322cbde3462b9daee
-  ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+  ms.date: 04/20/2021
+  ms.openlocfilehash: 8c754c7855848db3119d987a4147b08cd3aa2115
+  ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 04/08/2021
-  ms.locfileid: "107209804"
+  ms.lasthandoff: 04/20/2021
+  ms.locfileid: "107765337"
 landingContent:
 - title: Over Azure VMware Solution
   linkLists:
@@ -22,7 +22,7 @@ landingContent:
     links:
     - text: Wat is Azure VMware Solution?
       url: introduction.md
-    - text: Platform updates
+    - text: Platformupdates
       url: azure-vmware-solution-platform-updates.md
   - linkListType: concept
     links:
@@ -44,13 +44,13 @@ landingContent:
     links:
     - text: Algemeen
       url: /azure/azure-vmware/faq#general
-    - text: Communicatie van klanten
+    - text: Klantcommunicatie
       url: /azure/azure-vmware/faq#customer-communication
     - text: Configuratie en installatie
       url: /azure/azure-vmware/faq#configuration-and-setup
     - text: VMware-software
       url: /azure/azure-vmware/faq#vmware-software
-    - text: Berekenen, back-ups maken en herstel na nood gevallen
+    - text: Compute, back-up en herstel na noodherstel
       url: /azure/azure-vmware/faq#compute,-backup,-and-disaster-recovery
     - text: Netwerken en interconnectiviteit
       url: /azure/azure-vmware/faq#networking-and-interconnectivity
@@ -96,9 +96,9 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Host-quota aanvragen Azure VMware-oplossing
+    - text: Hostquotum aanvragen Azure VMware Solution
       url: enable-azure-vmware-solution.md
-    - text: EA-en CSP-abonnementen verplaatsen
+    - text: EA- en CSP-abonnementen verplaatsen
       url: move-ea-csp-subscriptions.md
     - text: Kosten besparen met een gereserveerde instantie
       url: reserved-instance.md
@@ -108,7 +108,7 @@ landingContent:
     links:
     - text: DHCP beheren
       url: manage-dhcp.md
-    - text: NSX-netwerk onderdelen configureren
+    - text: NSX-netwerkonderdelen configureren
       url: configure-nsx-network-components-azure-portal.md
     - text: Herstel na noodgevallen implementeren voor VM's
       url: disaster-recovery-for-virtual-machines.md
@@ -146,7 +146,7 @@ landingContent:
       url: vrealize-operations-for-azure-vmware-solution.md
     - text: VMware Horizon implementeren
       url: azure-vmware-solution-horizon.md
-    - text: Vm's implementeren vanuit de inhouds bibliotheek
+    - text: VM's implementeren vanuit de inhoudsbibliotheek
       url: deploy-vm-content-library.md
 - title: VMware-ecosysteem
   linkLists:
@@ -154,7 +154,7 @@ landingContent:
     links:
     - text: Back-upoplossingen voor VM's
       url: ecosystem-back-up-vms.md
-    - text: Migratie oplossingen voor Vm's
+    - text: Migratieoplossingen voor VM's
       url: ecosystem-migration-vms.md
 - title: Resources
   linkLists:
@@ -170,15 +170,15 @@ landingContent:
       url: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/vmware_private_cloud
   - linkListType: video
     links:
-    - text: Afspeel lijst
+    - text: Afspeellijst
       url: https://youtube.com/playlist?list=PL1NLwHeM6ewbZu0dC0guj-OSpIoZnnJin
-    - text: Integratie met Azure-service
+    - text: Integratie met Azure Service
       url: https://youtu.be/m26iLu6DHbU
-    - text: Integratie met Azure-toepassing gateway
+    - text: Integratie met Azure Application Gateway
       url: https://youtu.be/BoQYvqzb6Y8
-    - text: Migratie en capaciteits planning
+    - text: Migratie- en capaciteitsplanning
       url: https://youtu.be/NoNG-hkksrA
-    - text: VCenter & NSX-T-wacht woorden draaien met Azure Logic app
+    - text: VCenter-& NSX-T-wachtwoorden roteren met behulp van Azure Logic App
       url: https://youtu.be/cK1qY3knj88
 - title: Problemen oplossen
   linkLists:
@@ -186,3 +186,5 @@ landingContent:
     links:
     - text: Opent een ondersteuningsaanvraag voor implementatiefouten
       url: fix-deployment-provisioning-failures.md
+    - text: Vix-foutcode voor VMware-hulpprogramma's = 21009
+      url: https://kb.vmware.com/s/article/2129927

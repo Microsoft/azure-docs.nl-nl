@@ -1,7 +1,7 @@
 ---
 title: Wijzigen hoe een opslagaccount wordt gerepliceerd
 titleSuffix: Azure Storage
-description: Meer informatie over hoe u kunt wijzigen hoe gegevens in een bestaand opslag account worden gerepliceerd.
+description: Meer informatie over het wijzigen van de manier waarop gegevens in een bestaand opslagaccount worden gerepliceerd.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,65 +11,65 @@ ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ce3bda82e634cd80560d7915a08fa33218173779
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: eb8bbf852803df53c43cef90bd2229bfcddd60d4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105967188"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107766183"
 ---
 # <a name="change-how-a-storage-account-is-replicated"></a>Wijzigen hoe een opslagaccount wordt gerepliceerd
 
-Azure Storage slaat altijd meerdere kopieën van uw gegevens op, zodat deze beschermd zijn tegen geplande en niet-geplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk-of energie storingen en enorme natuur rampen. Redundantie zorgt ervoor dat uw opslag account voldoet aan de [Service Level Agreement (Sla) voor Azure Storage,](https://azure.microsoft.com/support/legal/sla/storage/) zelfs in het geval van fouten.
+Azure Storage slaat altijd meerdere kopieën van uw gegevens op, zodat deze worden beschermd tegen geplande en ongeplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk- of stroomstoringen en grote natuurrampen. Redundantie zorgt ervoor dat uw opslagaccount voldoet aan de [Sla (Service Level Agreement)](https://azure.microsoft.com/support/legal/sla/storage/) voor Azure Storage zelfs bij storingen.
 
 Azure Storage biedt de volgende typen replicatie:
 
 - Lokaal redundante opslag (LRS)
 - Zone-redundante opslag (ZRS)
-- Geografisch redundante opslag (GRS) of geografisch redundante opslag met lees toegang (RA-GRS)
-- Geo-zone-redundante opslag (GZRS) of geo-zone-redundante opslag met lees toegang (RA-GZRS)
+- Geografisch redundante opslag (GRS) of geografisch redundante opslag met leestoegang (RA-GRS)
+- Geografisch zone-redundante opslag (GZRS) of geografisch zone-redundante opslag met leestoegang (RA-GZRS)
 
-Zie [Azure Storage redundantie](storage-redundancy.md)voor een overzicht van elk van deze opties.
+Zie redundantie voor een overzicht van [Azure Storage opties.](storage-redundancy.md)
 
-## <a name="switch-between-types-of-replication"></a>Scha kelen tussen typen replicatie
+## <a name="switch-between-types-of-replication"></a>Wisselen tussen replicatietypen
 
-U kunt een opslag account overschakelen van het ene type replicatie naar elk ander type, maar sommige scenario's zijn eenvoudiger dan andere. Als u geo-replicatie wilt toevoegen aan of verwijderen uit de secundaire regio, kunt u de Azure Portal, Power shell of Azure CLI gebruiken om de replicatie-instelling bij te werken. Als u echter wilt wijzigen hoe gegevens worden gerepliceerd in de primaire regio, door te verplaatsen van LRS naar ZRS of andersom, moet u een hand matige migratie uitvoeren.
+U kunt een opslagaccount van het ene type replicatie naar een ander type overstappen, maar sommige scenario's zijn eenvoudiger dan andere. Als u geo-replicatie of leestoegang tot de secundaire regio wilt toevoegen of verwijderen, kunt u de Azure Portal, PowerShell of Azure CLI gebruiken om de replicatie-instelling bij te werken. Als u echter wilt wijzigen hoe gegevens worden gerepliceerd in de primaire regio, door over te gaan van LRS naar ZRS of vice versa, moet u een handmatige migratie uitvoeren.
 
-De volgende tabel bevat een overzicht van de manier waarop u van elk type replicatie naar een andere kunt overschakelen:
+De volgende tabel bevat een overzicht van hoe u kunt overschakelen van elk type replicatie naar een ander:
 
-| Draaien | ... naar LRS | ... naar GRS/RA-GRS | ... naar ZRS | ... naar GZRS/RA-GZRS |
+| Schakelen | ... naar LRS | ... naar GRS/RA-GRS | ... naar ZRS | ... naar GZRS/RA-GZRS |
 |--------------------|----------------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------|
-| <b>... van LRS</b> | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling<sup>1, 2</sup> te wijzigen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar GRS/RA-GRS en vraag vervolgens een Livemigratie aan.<sup>1</sup> |
-| <b>... van GRS/RA-GRS</b> | Azure Portal, Power shell of CLI gebruiken om de replicatie-instelling te wijzigen | N.v.t. | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar LRS en vraag vervolgens een Livemigratie aan | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen |
-| <b>... van ZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | N.v.t. | Een Live migratie aanvragen |
-| <b>... van GZRS/RA-GZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | Azure Portal, Power shell of CLI gebruiken om de replicatie-instelling te wijzigen | N.v.t. |
+| <b>... van LRS</b> | N.v.t. | Gebruik Azure Portal, PowerShell of CLI om de replicatie-instelling<sup>1,2 te wijzigen</sup> | Een handmatige migratie uitvoeren <br /><br /> OF <br /><br /> Een livemigratie aanvragen | Een handmatige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar GRS/RA-GRS en vraag vervolgens een livemigratie<sup>aan 1</sup> |
+| <b>... van GRS/RA-GRS</b> | Gebruik Azure Portal, PowerShell of CLI om de replicatie-instelling te wijzigen | N.v.t. | Een handmatige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar LRS en vraag vervolgens een livemigratie aan | Een handmatige migratie uitvoeren <br /><br /> OF <br /><br /> Een livemigratie aanvragen |
+| <b>... van ZRS</b> | Een handmatige migratie uitvoeren | Een handmatige migratie uitvoeren | N.v.t. | Een livemigratie aanvragen |
+| <b>... van GZRS/RA-GZRS</b> | Een handmatige migratie uitvoeren | Een handmatige migratie uitvoeren | Gebruik Azure Portal, PowerShell of CLI om de replicatie-instelling te wijzigen | N.v.t. |
 
-<sup>1</sup> maakt een eenmalige uitvulling van kosten.<br />
-<sup>2</sup> migratie van LRS naar GRS wordt niet ondersteund als het opslag account blobs in de laag Archive bevat.<br />
-<sup>3</sup> de conversie van ZRS naar GZRS/Ra-GZRS of vice versa wordt niet ondersteund in de volgende REGIO'S: VS Oost 2, VS Oost, Europa-West.
+<sup>1</sup> Er worden een een keer kosten in rekening voor het egress-gedrag in rekening brengen.<br />
+<sup>2</sup> Migratie van LRS naar GRS wordt niet ondersteund als het opslagaccount blobs in de archieflaag bevat.<br />
+<sup>3</sup> Conversie van ZRS naar GZRS/RA-GZRS of omgekeerd wordt niet ondersteund in de volgende regio's: US - oost 2, US - oost, Europa - west.
 
 > [!CAUTION]
-> Als u een [account-failover](storage-disaster-recovery-guidance.md) hebt uitgevoerd voor uw (RA-) GRS of (RA-) GZRS-account, is het account lokaal REDUNDANT (LRS) in de nieuwe primaire regio na de failover. Livemigratie naar ZRS of GZRS voor een LRS-account dat voortkomt uit een failover, wordt niet ondersteund. Dit geldt zelfs in het geval van zogenaamde failback-bewerkingen. Als u bijvoorbeeld een account-failover van RA-GZRS naar de LRS in de secundaire regio uitvoert en deze vervolgens opnieuw configureert in RA-GRS en een andere account-failover naar de oorspronkelijke primaire regio uitvoert, kunt u geen contact opnemen met de ondersteuning voor de oorspronkelijke Livemigratie naar RA-GZRS in de primaire regio. In plaats daarvan moet u een hand matige migratie uitvoeren naar ZRS of GZRS.
+> Als u een [account-failover](storage-disaster-recovery-guidance.md) hebt uitgevoerd voor uw (RA-)GRS- of (RA-)GZRS-account, is het account lokaal redundant (LRS) in de nieuwe primaire regio na de failover. Livemigratie naar ZRS of GZRS voor een LRS-account als gevolg van een failover wordt niet ondersteund. Dit geldt zelfs in het geval van zogenaamde failbackbewerkingen. Als u bijvoorbeeld een account-failover van RA-GZRS naar de LRS in de secundaire regio wilt uitvoeren en deze vervolgens opnieuw configureert naar RA-GRS en een andere account-failover naar de oorspronkelijke primaire regio wilt uitvoeren, kunt u geen contact opnemen met de ondersteuning voor de oorspronkelijke livemigratie naar RA-GZRS in de primaire regio. In plaats daarvan moet u een handmatige migratie uitvoeren naar ZRS of GZRS.
 
 ## <a name="change-the-replication-setting"></a>De replicatie-instelling wijzigen
 
-U kunt de Azure Portal, Power shell of Azure CLI gebruiken om de replicatie-instelling voor een opslag account te wijzigen, zolang u niet wijzigt hoe gegevens worden gerepliceerd in de primaire regio. Als u migreert van LRS in de primaire regio naar ZRS in de primaire regio of andersom, moet u een hand matige migratie of een Livemigratie uitvoeren.
+U kunt de Azure Portal, PowerShell of Azure CLI gebruiken om de replicatie-instelling voor een opslagaccount te wijzigen, zolang u niet wijzigt hoe gegevens worden gerepliceerd in de primaire regio. Als u migreert van LRS in de primaire regio naar ZRS in de primaire regio of omgekeerd, moet u een handmatige migratie of een livemigratie uitvoeren.
 
-Het wijzigen van de manier waarop uw opslag account wordt gerepliceerd, resulteert niet in de tijd voor uw toepassingen.
+Het wijzigen van de manier waarop uw opslagaccount wordt gerepliceerd, leidt niet tot wisselende tijd voor uw toepassingen.
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
-Voer de volgende stappen uit om de redundantie optie voor uw opslag account te wijzigen in de Azure Portal:
+Als u de redundantieoptie voor uw opslagaccount in de Azure Portal, volgt u deze stappen:
 
 1. Ga in Azure Portal naar uw opslagaccount.
-1. Selecteer de **configuratie** -instelling.
-1. Werk de **replicatie** -instelling bij.
+1. Selecteer de **instelling** Configuratie.
+1. Werk de instelling **Replicatie** bij.
 
-![Scherm afbeelding die laat zien hoe u de replicatie optie in de portal wijzigt](media/redundancy-migration/change-replication-option.png)
+![Schermopname die laat zien hoe u de replicatieoptie wijzigt in de portal](media/redundancy-migration/change-replication-option.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u de optie voor redundantie voor uw opslag account wilt wijzigen met Power shell, roept u de opdracht [set-AzStorageAccount](/powershell/module/az.storage/set-azstorageaccount) aan en geeft u de `-SkuName` para meter:
+Als u de redundantieoptie voor uw opslagaccount wilt wijzigen met PowerShell, roept u de [opdracht Set-AzStorageAccount](/powershell/module/az.storage/set-azstorageaccount) aan en geeft u de `-SkuName` parameter op:
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource_group> `
@@ -79,7 +79,7 @@ Set-AzStorageAccount -ResourceGroupName <resource_group> `
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de optie voor redundantie voor uw opslag account wilt wijzigen met Azure CLI, roept u de opdracht [AZ Storage account update](/cli/azure/storage/account#az-storage-account-update) aan en geeft u de `--sku` para meter:
+Als u de redundantieoptie voor uw opslagaccount wilt wijzigen met Azure CLI, roept u de [opdracht az storage account update](/cli/azure/storage/account#az_storage_account_update) aan en geeft u de parameter `--sku` op:
 
 ```azurecli-interactive
 az storage account update \
@@ -90,94 +90,94 @@ az storage account update \
 
 ---
 
-## <a name="perform-a-manual-migration-to-zrs-gzrs-or-ra-gzrs"></a>Een hand matige migratie uitvoeren naar ZRS, GZRS of RA-GZRS
+## <a name="perform-a-manual-migration-to-zrs-gzrs-or-ra-gzrs"></a>Een handmatige migratie uitvoeren naar ZRS, GZRS of RA-GZRS
 
-Als u wilt wijzigen hoe gegevens in uw opslag account worden gerepliceerd in de primaire regio, door te verplaatsen van LRS naar ZRS of andersom, kunt u ervoor kiezen om een hand matige migratie uit te voeren. Een handmatige migratie biedt meer flexibiliteit dan een livemigratie. U bepaalt de timing van een hand matige migratie, dus gebruik deze optie als u wilt dat de migratie op een bepaalde datum wordt voltooid.
+Als u wilt wijzigen hoe gegevens in uw opslagaccount worden gerepliceerd in de primaire regio, door over te gaan van LRS naar ZRS of vice versa, kunt u ervoor kiezen om een handmatige migratie uit te voeren. Een handmatige migratie biedt meer flexibiliteit dan een livemigratie. U kunt de timing van een handmatige migratie bepalen, dus gebruik deze optie als u wilt dat de migratie op een bepaalde datum is voltooid.
 
-Wanneer u een hand matige migratie uitvoert van LRS naar ZRS in de primaire regio of andersom, kan het doel opslag account geografisch redundant zijn en kan het ook worden geconfigureerd voor lees toegang tot de secundaire regio. U kunt bijvoorbeeld een LRS-account migreren naar een GZRS-of RA-GZRS-account in één stap.
+Wanneer u een handmatige migratie van LRS naar ZRS in de primaire regio of omgekeerd wilt uitvoeren, kan het doelopslagaccount geografisch redundant zijn en kan het ook worden geconfigureerd voor leestoegang tot de secundaire regio. U kunt bijvoorbeeld in één stap een LRS-account migreren naar een GZRS- of RA-GZRS-account.
 
-Een hand matige migratie kan leiden tot uitval tijd van toepassingen. Als voor uw toepassing hoge beschikbaarheid is vereist, biedt Microsoft u de mogelijkheid tot het uitvoeren van een livemigratie. Een livemigratie is een in-place migratie zonder uitvaltijd.
+Een handmatige migratie kan downtime van toepassingen tot gevolg hebben. Als voor uw toepassing hoge beschikbaarheid is vereist, biedt Microsoft u de mogelijkheid tot het uitvoeren van een livemigratie. Een livemigratie is een in-place migratie zonder uitvaltijd.
 
-Met een hand matige migratie kopieert u de gegevens van uw bestaande opslag account naar een nieuw opslag account dat gebruikmaakt van ZRS in de primaire regio. Als u een hand matige migratie wilt uitvoeren, kunt u een van de volgende opties gebruiken:
+Met een handmatige migratie kopieert u de gegevens van uw bestaande opslagaccount naar een nieuw opslagaccount dat gebruikmaakt van ZRS in de primaire regio. Als u een handmatige migratie wilt uitvoeren, kunt u een van de volgende opties gebruiken:
 
-- Gegevens kopiëren met behulp van een bestaand hulp programma, zoals AzCopy, een van de Azure Storage-client bibliotheken of een betrouwbaar hulp programma van derden.
-- Als u bekend bent met Hadoop of HDInsight, kunt u zowel het bron opslag account als het account voor het account voor de doel opslag koppelen aan uw cluster. Parallelliseren vervolgens het proces voor het kopiëren van gegevens met een hulp programma zoals DistCp.
+- Kopieer gegevens met behulp van een bestaand hulpprogramma, zoals AzCopy, een van de Azure Storage-clientbibliotheken of een betrouwbaar hulpprogramma van derden.
+- Als u bekend bent met Hadoop of HDInsight, kunt u zowel het bronopslagaccount als het doelopslagaccount aan uw cluster koppelen. Parallelliseer vervolgens het gegevenskopieerproces met een hulpprogramma zoals DistCp.
 
-## <a name="request-a-live-migration-to-zrs-gzrs-or-ra-gzrs"></a>Een Live migratie aanvragen bij ZRS, GZRS of RA-GZRS
+## <a name="request-a-live-migration-to-zrs-gzrs-or-ra-gzrs"></a>Een livemigratie aanvragen naar ZRS, GZRS of RA-GZRS
 
-Als u uw opslag account wilt migreren van LRS naar ZRS in de primaire regio zonder uitval tijd van toepassingen, kunt u een Livemigratie van micro soft aanvragen. Als u wilt migreren van LRS naar GZRS of RA-GZRS, moet u eerst overschakelen op GRS of RA-GRS en vervolgens een Livemigratie aanvragen. Op dezelfde manier kunt u een Livemigratie aanvragen van GRS of RA-GRS naar GZRS of RA-GZRS. Als u wilt migreren van GRS of RA-GRS naar ZRS, gaat u eerst naar LRS en vraagt u een Livemigratie aan.
+Als u uw opslagaccount zonder uitvaltijd van de toepassing wilt migreren van LRS naar ZRS in de primaire regio, kunt u een livemigratie van Microsoft aanvragen. Als u wilt migreren van LRS naar GZRS of RA-GZRS, schakelt u eerst over naar GRS of RA-GRS en vraagt u vervolgens een livemigratie aan. Op dezelfde manier kunt u een livemigratie aanvragen van GRS of RA-GRS naar GZRS of RA-GZRS. Als u wilt migreren van GRS of RA-GRS naar ZRS, schakelt u eerst over naar LRS en vraagt u vervolgens een livemigratie aan.
 
-Tijdens een Livemigratie kunt u toegang krijgen tot gegevens in uw opslag account zonder verlies van duurzaamheid of Beschik baarheid. De SLA van Azure Storage wordt onderhouden tijdens het migratie proces. Er is geen gegevens verlies gekoppeld aan een Livemigratie. Service-eind punten, toegangs sleutels, hand tekeningen voor gedeelde toegang en andere account opties blijven ongewijzigd na de migratie.
+Tijdens een livemigratie hebt u zonder verlies van duurzaamheid of beschikbaarheid toegang tot gegevens in uw opslagaccount. De Azure Storage SLA wordt onderhouden tijdens het migratieproces. Er is geen gegevensverlies gekoppeld aan een livemigratie. Service-eindpunten, toegangssleutels, handtekeningen voor gedeelde toegang en andere accountopties blijven na de migratie ongewijzigd.
 
-ZRS biedt alleen ondersteuning voor v2-accounts voor algemeen gebruik. Zorg er dus voor dat u uw opslag account bijwerkt voordat u een aanvraag voor een Livemigratie naar ZRS verzendt. Zie [Upgraden naar een algemeen v2-opslagaccount](storage-account-upgrade.md) voor meer informatie. Een opslag account moet gegevens bevatten die via livemigratie moeten worden gemigreerd.
+ZRS ondersteunt alleen v2-accounts voor algemeen gebruik, dus zorg ervoor dat u uw opslagaccount bij werkt voordat u een aanvraag voor een livemigratie naar ZRS indient. Zie [Upgraden naar een algemeen v2-opslagaccount](storage-account-upgrade.md) voor meer informatie. Een opslagaccount moet gegevens bevatten die moeten worden gemigreerd via livemigratie.
 
-Livemigratie wordt alleen ondersteund voor opslag accounts die gebruikmaken van de replicatie van LRS of GRS. Als uw account gebruikmaakt van RA-GRS, moet u eerst het replicatie type van uw account wijzigen in LRS of GRS voordat u doorgaat. Deze intermediair-stap verwijdert het secundaire alleen-lezen eindpunt dat door RA-GRS vóór de migratie wordt gegeven.
+Livemigratie wordt alleen ondersteund voor opslagaccounts die gebruikmaken van LRS- of GRS-replicatie. Als uw account RA-GRS gebruikt, moet u eerst het replicatietype van uw account wijzigen in LRS of GRS voordat u doorgaat. Met deze tussenliggende stap wordt het secundaire alleen-lezen eindpunt verwijderd dat vóór de migratie is geleverd door RA-GRS.
 
 Microsoft verwerkt uw aanvraag voor livemigratie onmiddellijk, maar er is geen garantie wanneer een livemigratie wordt voltooid. Als u uw gegevens vóór een bepaalde datum naar ZRS wilt migreren, wordt u aangeraden een handmatige migratie uit te voeren. In het algemeen geldt dat hoe meer gegevens u voor uw account hebt, hoe langer het duurt om die gegevens te migreren.
 
-U moet een hand matige migratie uitvoeren als:
+U moet een handmatige migratie uitvoeren als:
 
-- U wilt uw gegevens migreren naar een ZRS-opslag account dat zich in een andere regio dan het bron account bevindt.
-- Uw opslag account is een Premium-pagina-BLOB of een blok-BLOB-account.
+- U wilt uw gegevens migreren naar een ZRS-opslagaccount dat zich in een andere regio bevindt dan het bronaccount.
+- Uw opslagaccount is een Premium-pagina-blob- of blok-blob-account.
 - U wilt gegevens migreren van ZRS naar LRS, GRS of RA-GRS.
-- Uw opslag account bevat gegevens in de laag van het archief.
+- Uw opslagaccount bevat gegevens in de archieflaag.
 
-U kunt Live migratie aanvragen via de [ondersteunings portal van Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). 
+U kunt livemigratie aanvragen via Ondersteuning voor Azure [portal.](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) 
 
 > [!IMPORTANT]
-> Als u meer dan één opslag account moet migreren, maakt u één ondersteunings ticket en geeft u de namen van de accounts op die u wilt converteren op het tabblad **Details** .
+> Als u meer dan één opslagaccount wilt migreren, maakt u één ondersteuningsticket en geeft u de namen op van de accounts die u wilt converteren op het **tabblad Details.**
 
-Volg deze stappen om een Livemigratie aan te vragen:
+Volg deze stappen om een livemigratie aan te vragen:
 
-1. Ga in het Azure Portal naar een opslag account dat u wilt migreren.
-1. Onder **ondersteuning en probleem oplossing**, selecteer **nieuwe ondersteunings aanvraag**.
-1. Vul het tabblad **basis beginselen** in op basis van uw account gegevens:
-    - **Probleem type**: Selecteer **Technical**.
-    - **Service**: Selecteer **Mijn services** en vervolgens **beheer van opslag accounts**.
-    - **Resource**: Selecteer een opslag account om te migreren. Als u meerdere opslag accounts moet opgeven, kunt u dit doen in de sectie **Details** .
-    - **Probleem type**: **gegevens migratie** kiezen.
-    - **Subtype van probleem**: Kies **migreren naar ZRS, GZRS of Ra-GZRS**.
+1. Navigeer Azure Portal de pagina naar een opslagaccount dat u wilt migreren.
+1. Selecteer **onder Ondersteuning en probleemoplossing** de optie Nieuwe **ondersteuningsaanvraag.**
+1. Vul het **tabblad Basisinformatie** in op basis van uw accountgegevens:
+    - **Type probleem:** selecteer **Technisch.**
+    - **Service:** selecteer **Mijn services** en vervolgens **Opslagaccountbeheer.**
+    - **Resource:** selecteer een opslagaccount dat u wilt migreren. Als u meerdere opslagaccounts moet opgeven, kunt u dit doen in de **sectie Details.**
+    - **Probleemtype:** kies **Gegevensmigratie.**
+    - **Subtype probleem:** kies **Migreren naar ZRS, GZRS of RA-GZRS.**
 
-    :::image type="content" source="media/redundancy-migration/request-live-migration-basics-portal.png" alt-text="Scherm afbeelding die laat zien hoe u een Live migratie aanvraagt tabblad basis principes":::
+    :::image type="content" source="media/redundancy-migration/request-live-migration-basics-portal.png" alt-text="Schermopname die laat zien hoe u een livemigratie kunt aanvragen - tabblad Basisinformatie":::
 
-1. Selecteer **Next**. Op het tabblad **oplossingen** kunt u de geschiktheid van uw opslag accounts controleren voor migratie.
-1. Selecteer **Next**. Als u meer dan één opslag account hebt om te migreren, geeft u op het tabblad **Details** de naam op voor elk account, gescheiden door een punt komma.
+1. Selecteer **Next**. Op het **tabblad Oplossingen** kunt u controleren of uw opslagaccounts in aanmerking komen voor migratie.
+1. Selecteer **Next**. Als u meer dan één opslagaccount wilt migreren, geeft u op het tabblad **Details** de naam voor elk account op, gescheiden door puntkomma's.
 
-    :::image type="content" source="media/redundancy-migration/request-live-migration-details-portal.png" alt-text="Scherm afbeelding die laat zien hoe u een tabblad met Live-migratie aanvragen":::
+    :::image type="content" source="media/redundancy-migration/request-live-migration-details-portal.png" alt-text="Schermopname die laat zien hoe u een livemigratie aanvraagt - tabblad Details":::
 
-1. Vul de aanvullende vereiste informatie in op het tabblad **Details** en selecteer vervolgens **controleren + maken** om uw ondersteunings ticket te controleren en in te dienen. Een ondersteunings medewerker neemt contact met u op om eventuele hulp te bieden die u nodig hebt.
+1. Vul de aanvullende vereiste gegevens in op **het tabblad Details** en selecteer beoordelen en maken **om** uw ondersteuningsticket te controleren en in te dienen. Een ondersteuningspersoon neemt contact met u op om hulp te bieden die u mogelijk nodig hebt.
 
 > [!NOTE]
 > Premium-bestands shares (FileStorage-accounts) zijn alleen beschikbaar voor LRS en ZRS.
 >
-> GZRS-opslag accounts bieden momenteel geen ondersteuning voor de archief laag. Zie [Azure Blob-opslag: dynamische, koele en archief toegangs lagen](../blobs/storage-blob-storage-tiers.md) voor meer informatie.
+> GZRS-opslagaccounts bieden momenteel geen ondersteuning voor de archieflaag. Zie [Azure Blob-opslag: hot-, cool- en archieftoegangslagen](../blobs/storage-blob-storage-tiers.md) voor meer informatie.
 >
-> Managed disks zijn alleen beschikbaar voor LRS en kunnen niet worden gemigreerd naar ZRS. U kunt moment opnamen en installatie kopieën opslaan voor Standard SSD Managed disks op standaard HDD-opslag en [kiezen tussen opties voor LRS en ZRS](https://azure.microsoft.com/pricing/details/managed-disks/). Zie [Introduction to Azure Managed disks](../../virtual-machines/managed-disks-overview.md#integration-with-availability-sets)(Engelstalig) voor meer informatie over de integratie met beschikbaarheids sets.
+> Beheerde schijven zijn alleen beschikbaar voor LRS en kunnen niet worden gemigreerd naar ZRS. U kunt momentopnamen en afbeeldingen voor standaard beheerde SSD-schijven opslaan in standard HDD-opslag en kiezen [tussen LRS- en ZRS-opties.](https://azure.microsoft.com/pricing/details/managed-disks/) Zie Inleiding tot Azure Managed Disks voor meer informatie over integratie met [beschikbaarheidssets.](../../virtual-machines/managed-disks-overview.md#integration-with-availability-sets)
 
-## <a name="switch-from-zrs-classic"></a>Overschakelen van klassieke ZRS
+## <a name="switch-from-zrs-classic"></a>Overstappen van ZRS Classic
 
 > [!IMPORTANT]
-> Micro soft zal ZRS Classic-accounts op 31 maart 2021 terugboeken en migreren. Meer informatie vindt u voor ZRS Classic-klanten vóór afschaffing.
+> Op 31 maart 2021 worden ZRS Classic-accounts afgeschaft en gemigreerd. Meer details worden vóór de afschaffing verstrekt aan ZRS Classic-klanten.
 >
-> Nadat ZRS algemeen beschikbaar wordt in een bepaalde regio, kunnen klanten geen ZRS klassieke accounts meer maken van de Azure Portal in die regio. Het gebruik van micro soft power shell en Azure CLI voor het maken van ZRS klassieke accounts is een optie totdat ZRS Classic is afgeschaft. Zie [Azure Storage redundantie](storage-redundancy.md)voor meer informatie over waar ZRS beschikbaar is.
+> Nadat ZRS algemeen beschikbaar is in een bepaalde regio, kunnen klanten geen ZRS Classic-accounts meer maken op Azure Portal in die regio. Het gebruik van Microsoft PowerShell en Azure CLI om klassieke ZRS-accounts te maken is een optie totdat ZRS Classic wordt afgeschaft. Zie redundantie voor meer informatie over [waar ZRS Azure Storage beschikbaar is.](storage-redundancy.md)
 
-ZRS Classic repliceert asynchroon gegevens tussen data centers binnen een tot twee regio's. Gerepliceerde gegevens zijn mogelijk niet beschikbaar tenzij micro soft failover naar de secundaire initieert. Een klassiek ZRS-account kan niet worden geconverteerd naar of van LRS, GRS of RA-GRS. Klassieke ZRS-accounts bieden ook geen ondersteuning voor metrische gegevens of logboek registratie.
+Met de klassieke ZRS-service worden gegevens asynchroon gerepliceerd tussen datacenters binnen één tot twee regio's. Gerepliceerde gegevens zijn mogelijk niet beschikbaar, tenzij Microsoft een failover naar de secundaire replica initieert. Een klassiek ZRS-account kan niet worden geconverteerd naar of van LRS, GRS of RA-GRS. ZRS Classic-accounts bieden ook geen ondersteuning voor metrische gegevens of logboekregistratie.
 
-ZRS Classic is alleen beschikbaar voor **blok-blobs** in opslag accounts voor algemeen gebruik (GPv1). Zie [overzicht van Azure Storage-account](storage-account-overview.md)voor meer informatie over opslag accounts.
+ZRS Classic is alleen beschikbaar voor **blok-blobs** in algemeen V1-opslagaccounts (GPv1). Zie Overzicht van Azure-opslagaccounts voor meer [informatie over opslagaccounts.](storage-account-overview.md)
 
-Gebruik een van de volgende hulpprogram ma's: ZRS, Azure Storage Explorer, Power shell of Azure CLI om de ZRS-account gegevens hand matig te migreren naar of van een klassieke LRS-, GRS-, RA-GRS-of AZCOPY-account. U kunt ook uw eigen migratie oplossing bouwen met een van de Azure Storage-client bibliotheken.
+Als u ZRS-accountgegevens handmatig wilt migreren naar of van een LRS-, GRS-, RA-GRS- of ZRS Classic-account, gebruikt u een van de volgende hulpprogramma's: AzCopy, Azure Storage Explorer, PowerShell of Azure CLI. U kunt ook uw eigen migratieoplossing bouwen met een van de Azure Storage clientbibliotheken.
 
-U kunt ook uw klassieke ZRS-opslag account upgraden naar ZRS met behulp van de Azure Portal, Power shell of Azure CLI in regio's waar ZRS beschikbaar is.
+U kunt ook uw klassieke ZRS-opslagaccount upgraden naar ZRS met behulp van de Azure Portal, PowerShell of Azure CLI in regio's waar ZRS beschikbaar is.
 
 # <a name="portal"></a>[Portal](#tab/portal)
 
-Als u een upgrade wilt uitvoeren naar ZRS in de Azure Portal, gaat u naar de **configuratie** -instellingen van het account en kiest u **upgrade**:
+Als u wilt upgraden naar ZRS in Azure Portal, gaat u naar de **configuratie-instellingen** van het account en kiest u **Upgrade uitvoeren:**
 
 ![ZRS Classic upgraden naar ZRS in de portal](media/redundancy-migration/portal-zrs-classic-upgrade.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u wilt bijwerken naar ZRS met behulp van Power shell, roept u de volgende opdracht aan:
+Als u wilt upgraden naar ZRS met behulp van PowerShell, roept u de volgende opdracht aan:
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource_group> -AccountName <storage_account> -UpgradeToStorageV2
@@ -185,7 +185,7 @@ Set-AzStorageAccount -ResourceGroupName <resource_group> -AccountName <storage_a
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u een upgrade wilt uitvoeren naar ZRS met behulp van Azure CLI, roept u de volgende opdracht aan:
+Als u wilt upgraden naar ZRS met behulp van Azure CLI, roept u de volgende opdracht aan:
 
 ```cli
 az storage account update -g <resource_group> -n <storage_account> --set kind=StorageV2
@@ -193,19 +193,19 @@ az storage account update -g <resource_group> -n <storage_account> --set kind=St
 
 ---
 
-## <a name="costs-associated-with-changing-how-data-is-replicated"></a>De kosten voor het wijzigen van de manier waarop gegevens worden gerepliceerd
+## <a name="costs-associated-with-changing-how-data-is-replicated"></a>Kosten voor het wijzigen van de manier waarop gegevens worden gerepliceerd
 
-De kosten voor het wijzigen van de manier waarop gegevens worden gerepliceerd, zijn afhankelijk van het pad naar de conversie. Volg de rang orde van minst naar het duurste Azure Storage redundantie aanbiedingen zijn LRS, ZRS, GRS, RA-GRS, GZRS en RA-GZRS.
+De kosten voor het wijzigen van de manier waarop gegevens worden gerepliceerd, zijn afhankelijk van uw conversiepad. De aanbieding voor redundantie van de minst tot de duurste Azure Storage zijn LRS, ZRS, GRS, RA-GRS, GZRS en RA-GZRS.
 
-Als u bijvoorbeeld *van* LRS naar een ander type replicatie gaat, worden er extra kosten in rekening gebracht, omdat u overstapt naar een geavanceerd redundantie niveau. Als u migreert *naar* GRS of Ra-GRS, worden er kosten in rekening gebracht voor de uitgaande band breedte, omdat uw gegevens (in de primaire regio) worden gerepliceerd naar uw externe secundaire regio. Deze kosten zijn tijdens de eerste Setup eenmalige kosten. Nadat de gegevens zijn gekopieerd, worden er geen verdere migratie kosten in rekening gebracht. Zie [Azure Storage-pagina met prijzen](https://azure.microsoft.com/pricing/details/storage/blobs/)voor meer informatie over de bandbreedte kosten.
+Als u *bijvoorbeeld* van LRS naar een ander type replicatie gaat, worden er extra kosten in rekening gebracht omdat u naar een geavanceerder redundantieniveau overstapt. Als u *naar* GRS of RA-GRS migreert, worden er kosten in rekening voor de bandbreedte voor het verwijderen van gegevens in rekening brengen omdat uw gegevens (in uw primaire regio) worden gerepliceerd naar uw externe secundaire regio. Deze kosten zijn een een keer bij de eerste installatie. Nadat de gegevens zijn gekopieerd, worden er geen verdere migratiekosten meer in rekening gebracht. Zie de pagina Prijzen voor Azure Storage [meer informatie over bandbreedtekosten.](https://azure.microsoft.com/pricing/details/storage/blobs/)
 
-Als u uw opslag account migreert van GRS naar LRS, zijn er geen extra kosten, maar worden uw gerepliceerde gegevens verwijderd van de secundaire locatie.
+Als u uw opslagaccount migreert van GRS naar LRS, zijn er geen extra kosten, maar uw gerepliceerde gegevens worden verwijderd van de secundaire locatie.
 
 > [!IMPORTANT]
-> Als u uw opslag account migreert van RA-GRS naar GRS of LRS, wordt dat account gefactureerd als RA-GRS voor een extra periode van 30 dagen na de datum waarop deze is geconverteerd.
+> Als u uw opslagaccount migreert van RA-GRS naar GRS of LRS, wordt dat account nog 30 dagen na de datum waarop het is geconverteerd gefactureerd als RA-GRS.
 
 ## <a name="see-also"></a>Zie ook
 
 - [Azure Storage-redundantie](storage-redundancy.md)
-- [De eigenschap van de laatste synchronisatie tijd voor een opslag account controleren](last-sync-time-get.md)
-- [Geo-redundantie gebruiken om Maxi maal beschik bare toepassingen te ontwerpen](geo-redundant-design.md)
+- [Controleer de eigenschap Laatste synchronisatietijd voor een opslagaccount](last-sync-time-get.md)
+- [Geo-redundantie gebruiken om toepassingen met hoge beschikbare gegevens te ontwerpen](geo-redundant-design.md)

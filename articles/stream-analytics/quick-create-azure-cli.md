@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: a3cc4c3d6936a51ca2010209ce23e4d82c9333eb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 58dccf56cd493782a422b0ddf0386e31d4d87daf
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98016335"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765985"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Quickstart: een Azure Stream Analytics-taak maken via de Azure CLI
 
@@ -29,7 +29,7 @@ In deze quickstart gebruikt u de Azure CLI om een Stream Analytics-taak te defin
 
 - Maak een resourcegroep. Alle Azure-resources moeten worden geïmplementeerd in een resourcegroep. Met resourcegroepen kunt u gerelateerde Azure-resources organiseren en beheren.
 
-   Maak voor deze quickstart een resourcegroep met de naam *streamanalyticsrg* op de locatie *eastus* met behulp van de volgende [az group create](/cli/azure/group#az-group-create)-opdracht:
+   Maak voor deze quickstart een resourcegroep met de naam *streamanalyticsrg* op de locatie *eastus* met behulp van de volgende [az group create](/cli/azure/group#az_group_create)-opdracht:
 
    ```azurecli
    az group create --name streamanalyticsrg --location eastus

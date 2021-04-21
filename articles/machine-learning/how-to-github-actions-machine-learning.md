@@ -1,7 +1,7 @@
 ---
 title: GitHub-acties voor CI/CD
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het maken van een GitHub-actie werk stroom voor het trainen van een model op Azure Machine Learning
+description: Meer informatie over het maken van een GitHub Actions voor het trainen van een model op Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,19 +10,19 @@ ms.author: jukullam
 ms.date: 10/19/2020
 ms.topic: conceptual
 ms.custom: github-actions-azure
-ms.openlocfilehash: b21f53f8ec76257fc19e0e30cd025ecc46ad2188
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6505523aa367eaf202ece81a4253429e864e169a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102218278"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780367"
 ---
-# <a name="use-github-actions-with-azure-machine-learning"></a>GitHub-acties gebruiken met Azure Machine Learning
+# <a name="use-github-actions-with-azure-machine-learning"></a>Gebruik GitHub Actions met Azure Machine Learning
 
-Aan de slag met [github-acties](https://docs.github.com/en/actions) voor het trainen van een model op Azure machine learning. 
+Ga aan de [slag GitHub Actions](https://docs.github.com/en/actions) een model te trainen op Azure Machine Learning. 
 
 > [!NOTE]
-> GitHub-acties voor Azure Machine Learning worden meegeleverd als-is en worden niet volledig ondersteund door micro soft. Als u problemen ondervindt met een specifieke actie, opent u een probleem in de opslag plaats voor de actie. Als u bijvoorbeeld een probleem ondervindt met de actie AML-Deploy, meldt u het probleem in de [https://github.com/Azure/aml-deploy]( https://github.com/Azure/aml-deploy) opslag plaats.
+> GitHub Actions voor Azure Machine Learning worden geleverd zoals ze zijn en worden niet volledig ondersteund door Microsoft. Als u problemen ondervindt met een specifieke actie, opent u een probleem in de opslagplaats voor de actie. Als u bijvoorbeeld een probleem ondervindt met de actie aml-deploy, meldt u het probleem in [https://github.com/Azure/aml-deploy]( https://github.com/Azure/aml-deploy) de repo.
 
 ## <a name="prerequisites"></a>Vereisten 
 
@@ -38,24 +38,24 @@ Het bestand heeft vier secties:
 |Sectie  |Taken  |
 |---------|---------|
 |**Verificatie** | 1. Definieer een service-principal. <br /> 2. Maak een GitHub-opslagplaats. |
-|**Verbinding maken** | 1. Maak verbinding met de machine learning-werk ruimte. <br /> 2. Maak verbinding met een compute-doel. |
-|**Uitvoeren** | 1. Voer een training uit. |
-|**Implementeren** | 1. Registreer model in Azure Machine Learning REGI ster. 1. Het model implementeren. |
+|**Verbinding maken** | 1. Maak verbinding met machine learning werkruimte. <br /> 2. Verbinding maken met een rekendoel. |
+|**Uitvoeren** | 1. Dien een trainingsrun in. |
+|**Implementeren** | 1. Het model registreren in Azure Machine Learning register. 1. Het model implementeren. |
 
-## <a name="create-repository"></a>Opslag plaats maken
+## <a name="create-repository"></a>Opslagplaats maken
 
-Maak een nieuwe opslag plaats [met behulp van github-acties en Azure machine learning sjabloon](https://github.com/machine-learning-apps/ml-template-azure). 
+Maak een nieuwe opslagplaats op basis van [ml ops met GitHub Actions en Azure Machine Learning sjabloon](https://github.com/machine-learning-apps/ml-template-azure). 
 
-1. Open de [sjabloon](https://github.com/machine-learning-apps/ml-template-azure) op github. 
-2. Selecteer **deze sjabloon gebruiken**. 
+1. Open de [sjabloon](https://github.com/machine-learning-apps/ml-template-azure) op GitHub. 
+2. Selecteer **Deze sjabloon gebruiken.** 
 
-    :::image type="content" source="media/how-to-github-actions-machine-learning/gh-actions-use-template.png" alt-text="Selecteer deze sjabloon gebruiken":::
-3. Maak een nieuwe opslag plaats op basis van de sjabloon. Stel de naam van de opslag plaats in op `ml-learning` of een naam van uw keuze. 
+    :::image type="content" source="media/how-to-github-actions-machine-learning/gh-actions-use-template.png" alt-text="Selecteer Deze sjabloon gebruiken":::
+3. Maak een nieuwe opslagplaats op basis van de sjabloon. Stel de naam van de opslagplaats `ml-learning` in op of een naam naar keuze. 
 
 
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
-U kunt een [service-principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
+U kunt een [service-principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myML" --role contributor \
@@ -63,7 +63,7 @@ az ad sp create-for-rbac --name "myML" --role contributor \
                             --sdk-auth
 ```
 
-In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik.
+Vervang in het bovenstaande voorbeeld de tijdelijke aanduidingen door uw abonnements-id, resourcegroepnaam en app-naam. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {
@@ -77,13 +77,13 @@ In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abo
 
 ## <a name="configure-the-github-secret"></a>Het GitHub-geheim configureren
 
-1. In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
+1. Blader [in GitHub](https://github.com/)door uw opslagplaats, selecteer **Instellingen > Geheimen > Een nieuw geheim toevoegen.**
 
 2. Plak de volledige JSON-uitvoer van de Azure CLI-opdracht in het waardeveld van het geheim. Geef het geheim de naam `AZURE_CREDENTIALS`.
 
-## <a name="connect-to-the-workspace"></a>Verbinding maken met de werk ruimte
+## <a name="connect-to-the-workspace"></a>Verbinding maken met de werkruimte
 
-Gebruik de [actie Azure machine learning-werkruimte](https://github.com/marketplace/actions/azure-machine-learning-workspace) om verbinding te maken met uw Azure machine learning-werk ruimte. 
+Gebruik de [Azure Machine Learning-werkruimte om verbinding](https://github.com/marketplace/actions/azure-machine-learning-workspace) te maken met uw Azure Machine Learning werkruimte. 
 
 ```yaml
     - name: Connect/Create Azure Machine Learning Workspace
@@ -93,7 +93,7 @@ Gebruik de [actie Azure machine learning-werkruimte](https://github.com/marketpl
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
 ```
 
-De actie verwacht een `workspace.json` bestand standaard. Als het JSON-bestand een andere naam heeft, kunt u dit opgeven met de `parameters_file` invoer parameter. Als er geen bestand is, wordt er een nieuwe gemaakt met de naam van de opslag plaats.
+De actie verwacht standaard een `workspace.json` bestand. Als uw JSON-bestand een andere naam heeft, kunt u dit opgeven met de `parameters_file` invoerparameter. Als er geen bestand is, wordt er een nieuw bestand gemaakt met de naam van de opslagplaats.
 
 
 ```yaml
@@ -104,11 +104,11 @@ De actie verwacht een `workspace.json` bestand standaard. Als het JSON-bestand e
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
           parameters_file: "alternate_workspace.json"
 ```
-Met deze actie worden de eigenschappen van de werkruimte Azure Resource Manager (ARM) geschreven naar een configuratie bestand, dat door alle toekomstige Azure Machine Learning GitHub-acties wordt opgenomen. Het bestand wordt opgeslagen in `GITHUB_WORKSPACE/aml_arm_config.json` . 
+Met de actie worden de eigenschappen van Azure Resource Manager werkruimten (ARM) naar een configuratiebestand weggeslagen, dat door alle toekomstige Azure Machine Learning GitHub Actions. Het bestand wordt opgeslagen in `GITHUB_WORKSPACE/aml_arm_config.json` . 
 
-## <a name="connect-to-a-compute-target-in-azure-machine-learning"></a>Verbinding maken met een compute-doel in Azure Machine Learning
+## <a name="connect-to-a-compute-target-in-azure-machine-learning"></a>Verbinding maken met een rekendoel in Azure Machine Learning
 
-Gebruik de [Azure machine learning reken actie](https://github.com/Azure/aml-compute) om verbinding te maken met een compute-doel in azure machine learning.  Als het berekenings doel bestaat, wordt er met de actie verbinding mee gemaakt. Anders wordt er een nieuw Compute-doel gemaakt. De [AML-reken actie](https://github.com/Azure/aml-compute) ondersteunt alleen het Azure ml Compute-Cluster en de Azure Kubernetes-service (AKS). 
+Gebruik de [Azure Machine Learning Compute-actie om](https://github.com/Azure/aml-compute) verbinding te maken met een rekendoel in Azure Machine Learning.  Als het rekendoel bestaat, maakt de actie er verbinding mee. Anders maakt de actie een nieuw rekendoel. De [AML Compute-actie](https://github.com/Azure/aml-compute) ondersteunt alleen het Azure ML-rekencluster en Azure Kubernetes Service (AKS). 
 
 ```yaml
     - name: Connect/Create Azure Machine Learning Compute Target
@@ -119,7 +119,7 @@ Gebruik de [Azure machine learning reken actie](https://github.com/Azure/aml-com
 ```
 ## <a name="submit-training-run"></a>Trainingsuitvoering verzenden
 
-Gebruik de [Azure machine learning trainings actie](https://github.com/Azure/aml-run) om een ScriptRun, een Estimator of een pijp lijn, naar Azure machine learning te verzenden. 
+Gebruik de [Azure Machine Learning Training-actie om](https://github.com/Azure/aml-run) een ScriptRun, een estimator of een pijplijn te verzenden om een Azure Machine Learning. 
 
 ```yaml
     - name: Submit training run
@@ -129,9 +129,9 @@ Gebruik de [Azure machine learning trainings actie](https://github.com/Azure/aml
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
 ```
 
-## <a name="register-model-in-registry"></a>Model registreren in het REGI ster
+## <a name="register-model-in-registry"></a>Model registreren in register
 
-Gebruik de [Azure machine learning model actie registreren](https://github.com/Azure/aml-registermodel) om een model te registreren bij Azure machine learning.
+Gebruik de [actie Azure Machine Learning Model registreren om](https://github.com/Azure/aml-registermodel) een model te registreren voor Azure Machine Learning.
 
 ```yaml
     - name: Register model
@@ -143,9 +143,9 @@ Gebruik de [Azure machine learning model actie registreren](https://github.com/A
           experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
 ```
 
-## <a name="deploy-model-to-azure-machine-learning-to-aci"></a>Model implementeren naar Azure Machine Learning ACI
+## <a name="deploy-model-to-azure-machine-learning-to-aci"></a>Model implementeren om Azure Machine Learning ACI te implementeren
 
-Gebruik de [actie Azure machine learning implementeren](https://github.com/Azure/aml-deploy) om een model te implementeren en een eind punt voor het model te maken. U kunt ook de Azure Machine Learning implementeren gebruiken om te implementeren naar Azure Kubernetes service. Bekijk [deze voorbeeld werk stroom](https://github.com/Azure-Samples/mlops-enterprise-template) voor een model dat wordt geïmplementeerd in azure Kubernetes service.
+Gebruik de [actie Azure Machine Learning implementeren om](https://github.com/Azure/aml-deploy) een model te implementeren en een eindpunt voor het model te maken. U kunt ook de implementatie Azure Machine Learning implementeren naar Azure Kubernetes Service. Zie [deze voorbeeldwerkstroom](https://github.com/Azure-Samples/mlops-enterprise-template) voor een model dat wordt geïmplementeerd in Azure Kubernetes Service.
 
 ```yaml
     - name: Deploy model
@@ -158,9 +158,9 @@ Gebruik de [actie Azure machine learning implementeren](https://github.com/Azure
 
 ```
 
-## <a name="complete-example"></a>Voor beeld volt ooien
+## <a name="complete-example"></a>Volledig voorbeeld
 
-Train uw model en implementeer het op Azure Machine Learning. 
+Uw model trainen en implementeren naar Azure Machine Learning. 
 
 ```yaml
 # Actions train a model on Azure Machine Learning
@@ -223,9 +223,9 @@ jobs:
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als uw resource groep en opslag plaats niet meer nodig zijn, moet u de resources opschonen die u hebt geïmplementeerd door de resource groep en de GitHub-opslag plaats te verwijderen. 
+Wanneer uw resourcegroep en opslagplaats niet meer nodig zijn, schoont u de resources op die u hebt geïmplementeerd door de resourcegroep en uw GitHub-opslagplaats te verwijderen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK](./how-to-create-machine-learning-pipelines.md)
+> [Pijplijnen maken machine learning uitvoeren met Azure Machine Learning SDK](./how-to-create-machine-learning-pipelines.md)

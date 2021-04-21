@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: mvc, seodec18, devx-track-azurecli
-ms.openlocfilehash: abd96e513aadf44d0f313670e1437ebd16aa410c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 92fa93d64798f67f28ca0020731c63b7922866fe
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97006375"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782342"
 ---
 # <a name="connect-an-app-service-app-to-sql-database-using-cli"></a>Een App Service-app verbinden met SQL Database met behulp van CLI
 
@@ -38,13 +38,13 @@ Dit script gebruikt de volgende opdrachten voor het maken van een resourcegroep,
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [`az group create`](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [`az appservice plan create`](/cli/azure/appservice/plan#az-appservice-plan-create) | Hiermee maakt u een App Service-plan. |
-| [`az webapp create`](/cli/azure/webapp#az-webapp-create) | Hiermee maakt u een App Service-app. |
-| [`az sql server create`](/cli/azure/sql/server#az-sql-server-create) | Hiermee maakt u een server.  |
-| [`az sql db create`](/cli/azure/sql/db#az-sql-db-create) | Hiermee maakt u een nieuwe database. |
-| [`az sql db show-connection-string`](/cli/azure/sql/db#az-sql-db-show-connection-string) | Hiermee genereert u een verbindingsreeks voor een database. |
-| [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) | Hiermee kunt u een app-instelling voor een App Service-app maken of bijwerken. App-instellingen worden weergegeven als omgevingsvariabelen voor uw app. |
+| [`az group create`](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [`az appservice plan create`](/cli/azure/appservice/plan#az_appservice_plan_create) | Hiermee maakt u een App Service-plan. |
+| [`az webapp create`](/cli/azure/webapp#az_webapp_create) | Hiermee maakt u een App Service-app. |
+| [`az sql server create`](/cli/azure/sql/server#az_sql_server_create) | Hiermee maakt u een server.  |
+| [`az sql db create`](/cli/azure/sql/db#az_sql_db_create) | Hiermee maakt u een nieuwe database. |
+| [`az sql db show-connection-string`](/cli/azure/sql/db#az_sql_db_show-connection_string) | Hiermee genereert u een verbindingsreeks voor een database. |
+| [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) | Hiermee kunt u een app-instelling voor een App Service-app maken of bijwerken. App-instellingen worden weergegeven als omgevingsvariabelen voor uw app. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

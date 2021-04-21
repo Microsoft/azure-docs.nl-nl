@@ -1,29 +1,29 @@
 ---
 title: Toegang tot virtuele Azure-netwerken
-description: Overzicht van de manier waarop Integration service environments (ISEs) Logic apps toegang hebben tot Azure Virtual Networks (VNETs)
+description: Overzicht over hoe ISE's (Integration Service Environments) logische apps helpen toegang te krijgen tot virtuele Azure-netwerken (VNET's)
 services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
-ms.date: 01/11/2021
-ms.openlocfilehash: 4d83609eea57c2350881360ef757b1a291627c23
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/24/2021
+ms.openlocfilehash: 3070083040424b877159955dc2138f15319f05c8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100374725"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107766385"
 ---
-# <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Toegang tot Azure Virtual Network resources vanuit Azure Logic Apps met behulp van integratie service omgevingen (ISEs)
+# <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Toegang tot Azure Virtual Network-resources vanuit Azure Logic Apps met behulp van ISE's (Integration Service Environments)
 
-Soms hebben uw Logic apps toegang nodig tot beveiligde bronnen, zoals virtuele machines (Vm's) en andere systemen of services die zich binnen of verbonden met een [virtueel Azure-netwerk](../virtual-network/virtual-networks-overview.md)bevinden. Als u deze toegang wilt instellen, kunt u [een ISE ( *Integration service Environment* ) maken](../logic-apps/connect-virtual-network-vnet-isolated-environment.md). Een ISE is een exemplaar van de Logic Apps service dat gebruikmaakt van toegewezen bronnen en wordt afzonderlijk uitgevoerd op basis van de ' wereld wijde ' multi-tenant Logic Apps-service. Gegevens in een ISE blijven in [dezelfde regio waar u die ISE maakt en implementeert](https://azure.microsoft.com/global-infrastructure/data-residency/).
+Soms hebben uw logische apps toegang nodig tot beveiligde resources, zoals virtuele machines (VM's) en andere systemen of services, die zich binnen of verbonden met een virtueel [Azure-netwerk hebben.](../virtual-network/virtual-networks-overview.md) Als u deze toegang wilt instellen, kunt u [een ISE *(Integration Service Environment)* maken.](../logic-apps/connect-virtual-network-vnet-isolated-environment.md) Een ISE is een exemplaar van de Logic Apps-service die gebruikmaakt van toegewezen resources en afzonderlijk wordt uitgevoerd van de 'wereldwijde' multi-tenant Logic Apps service. Gegevens in een ISE blijven in [dezelfde regio waar u die ISE maakt en implementeert.](https://azure.microsoft.com/global-infrastructure/data-residency/)
 
-Sommige virtuele netwerken van Azure gebruiken bijvoorbeeld persoonlijke eind punten, die u kunt instellen via een [persoonlijke Azure-koppeling](../private-link/private-link-overview.md)om toegang te bieden tot Azure PaaS-Services, zoals Azure Storage, Azure Cosmos DB of Azure SQL database, partner services of klanten services die worden gehost op Azure. Als uw Logic apps toegang nodig hebben tot virtuele netwerken die gebruikmaken van privé-eind punten, moet u deze Logic apps maken, implementeren en uitvoeren in een ISE.
+Sommige virtuele Azure-netwerken maken bijvoorbeeld gebruik van privé-eindpunten die u kunt instellen via [Azure Private Link om](../private-link/private-link-overview.md)toegang te bieden tot Azure PaaS-services, zoals Azure Storage, Azure Cosmos DB of Azure SQL Database, partnerservices of klantservices die worden gehost in Azure. Als uw logische apps toegang nodig hebben tot virtuele netwerken die gebruikmaken van privé-eindpunten, moet u die logische apps binnen een ISE maken, implementeren en uitvoeren.
 
 Wanneer u een ISE maakt, wordt deze ISE via Azure in uw virtuele Azure-netwerk *geplaatst*. U kunt deze ISE vervolgens gebruiken als locatie voor de logische apps en integratieaccounts die toegang nodig hebben.
 
-![Integratie service omgeving selecteren](./media/connect-virtual-network-vnet-isolated-environment-overview/select-logic-app-integration-service-environment.png)
+![Integratieserviceomgeving selecteren](./media/connect-virtual-network-vnet-isolated-environment-overview/select-logic-app-integration-service-environment.png)
 
-In dit overzicht vindt u meer informatie over de [reden waarom u een ISE wilt gebruiken](#benefits), de [verschillen tussen de exclusieve en multi tenant Logic apps service](#difference), en hoe u rechtstreeks toegang hebt tot bronnen die zich binnen of verbonden hebben met uw virtuele Azure-netwerk.
+Dit overzicht biedt meer informatie over waarom u een [ISE](#benefits)wilt gebruiken, de verschillen tussen de toegewezen [en multi-tenant Logic Apps-service](#difference)en hoe u rechtstreeks toegang hebt tot resources die zich binnen uw virtuele Azure-netwerk of er verbinding mee maken.
 
 <a name="benefits"></a>
 
@@ -31,13 +31,13 @@ In dit overzicht vindt u meer informatie over de [reden waarom u een ISE wilt ge
 
 Het uitvoeren van logische apps in uw eigen afzonderlijk toegewezen instantie vermindert de invloed die andere Azure-tenants mogelijk hebben op de prestaties van uw apps, ook wel het [‘lawaaierige buren’-effect](https://en.wikipedia.org/wiki/Cloud_computing_issues#Performance_interference_and_noisy_neighbors) genoemd. Een ISE biedt ook de volgende voordelen:
 
-* Directe toegang tot bronnen die zich binnen of verbonden zijn met uw virtuele netwerk
+* Directe toegang tot resources die zich binnen uw virtuele netwerk of met uw virtuele netwerk hebben verbonden
 
-  Logic apps die u in een ISE maakt en uitvoert, kunnen [speciaal ontworpen connectors gebruiken die in uw ISE worden uitgevoerd](../connectors/apis-list.md#ise-connectors). Als er een ISE-connector bestaat voor een on-premises systeem of een gegevens bron, kunt u rechtstreeks verbinding maken zonder dat u de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)hoeft te gebruiken. Zie [dedicated versus multi tenant](#difference) en [toegang tot on-premises systemen](#on-premises) verderop in dit onderwerp voor meer informatie.
+  Logische apps die u in een ISE maakt en uitvoeren, kunnen speciaal ontworpen [connectors gebruiken die worden uitgevoerd in uw ISE.](../connectors/managed.md#ise-connectors) Als er een ISE-connector bestaat voor een on-premises systeem of gegevensbron, kunt u rechtstreeks verbinding maken zonder de [on-premises gegevensgateway te gebruiken.](../logic-apps/logic-apps-gateway-connection.md) Zie Dedicated versus [multi-tenant](#difference) en [Access to on-premises systems](#on-premises) verder in dit onderwerp voor meer informatie.
 
-* Blijvende toegang tot bronnen die zich buiten of niet verbonden met uw virtuele netwerk bevinden
+* Voortdurende toegang tot resources die buiten of niet zijn verbonden met uw virtuele netwerk
 
-  Logic apps die u in een ISE maakt en uitvoert, kunnen nog steeds connectors gebruiken die worden uitgevoerd in de multi tenant-Logic Apps service wanneer een ISE-specifieke connector niet beschikbaar is. Zie [dedicated versus multi tenant](#difference)voor meer informatie.
+  Logische apps die u in een ISE maakt en uitvoeren, kunnen nog steeds gebruikmaken van connectors die worden uitgevoerd in de Logic Apps-service met meerdere tenants wanneer er geen ISE-specifieke connector beschikbaar is. Zie Dedicated versus [multi-tenant voor meer informatie.](#difference)
 
 * Uw eigen statische IP-adressen, die zijn gescheiden van de statische IP-adressen die worden gedeeld via de logische apps in de service met meerdere tenants. U kunt ook één openbaar, statisch en voorspelbaar uitgaand IP-adres instellen om te communiceren met doelsystemen. Op deze manier hoeft u niet voor elke ISE een extra firewallopening in te stellen in deze doelsystemen.
 
@@ -45,84 +45,84 @@ Het uitvoeren van logische apps in uw eigen afzonderlijk toegewezen instantie ve
 
 <a name="difference"></a>
 
-## <a name="dedicated-versus-multi-tenant"></a>Toegewezen versus multi tenant
+## <a name="dedicated-versus-multi-tenant"></a>Toegewezen versus multi-tenant
 
-Wanneer u logische apps maakt en uitvoert in een ISE, krijgt u dezelfde gebruikers ervaringen en vergelijk bare mogelijkheden als de multi tenant-Logic Apps service. U kunt alle dezelfde ingebouwde triggers, acties en beheerde connectors gebruiken die beschikbaar zijn in de multi tenant-Logic Apps service. Sommige beheerde connectors bieden extra ISE-versies. Het verschil tussen ISE-connectors en niet-ISE-connectors bevindt zich in de locatie waar ze worden uitgevoerd en de labels die ze hebben in de ontwerp functie voor logische apps wanneer u werkt binnen een ISE.
+Wanneer u logische apps in een ISE maakt en uitvoeren, krijgt u dezelfde gebruikerservaringen en vergelijkbare mogelijkheden als de multiten tenant-Logic Apps service. U kunt dezelfde ingebouwde triggers, acties en beheerde connectors gebruiken die beschikbaar zijn in de multiten tenant Logic Apps service. Sommige beheerde connectors bieden aanvullende ISE-versies. Het verschil tussen ISE-connectors en niet-ISE-connectors zit hem in de plaats waar ze worden uitgevoerd en de labels die ze hebben in de Logic App Designer wanneer u binnen een ISE werkt.
 
 ![Connectors met en zonder labels in een ISE](./media/connect-virtual-network-vnet-isolated-environment-overview/labeled-trigger-actions-integration-service-environment.png)
 
-* Ingebouwde triggers en acties, zoals HTTP, tonen het **kern** label en worden uitgevoerd in dezelfde ISE als uw logische app.
+* Ingebouwde triggers en acties, zoals HTTP, geven het **CORE-label** weer en worden uitgevoerd in dezelfde ISE als uw logische app.
 
-* Beheerde connectors die het label **ISE** weer geven, zijn speciaal ontworpen voor ISEs en worden *altijd uitgevoerd in dezelfde ISE als uw logische app*. Dit zijn bijvoorbeeld enkele [connectors die ISE-versies aanbieden](../connectors/apis-list.md#ise-connectors):<p>
+* Beheerde connectors die het ISE-label weergeven, zijn speciaal ontworpen voor **ISE's** en worden altijd uitgevoerd in dezelfde *ISE als uw logische app.* Hier volgen bijvoorbeeld enkele [connectors die ISE-versies bieden:](../connectors/managed.md#ise-connectors)<p>
 
   * Azure Blob Storage, File Storage en Table Storage
-  * Azure Service Bus, Azure-wacht rijen, Azure Event Hubs
-  * Azure Automation, Azure Key Vault, Azure Event Grid en Azure Monitor logboeken
-  * FTP, SFTP-SSH, bestands systeem en SMTP
+  * Azure Service Bus, Azure Queues, Azure Event Hubs
+  * Azure Automation-, Azure Key Vault-, Azure Event Grid- en Azure Monitor logboeken
+  * FTP, SFTP-SSH, bestandssysteem en SMTP
   * SAP, IBM MQ, IBM DB2 en IBM 3270
   * SQL Server, Azure Synapse Analytics, Azure Cosmos DB
   * AS2, X12 en EDIFACT
 
-  Met zeldzame uitzonde ringen, als er een ISE-connector beschikbaar is voor een on-premises systeem of gegevens bron, kunt u rechtstreeks verbinding maken zonder de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)te gebruiken. Zie voor meer informatie [toegang tot on-premises systemen](#on-premises) verderop in dit onderwerp.
+  Met zeldzame uitzonderingen: als er een ISE-connector beschikbaar is voor een on-premises systeem of gegevensbron, kunt u rechtstreeks verbinding maken zonder de [on-premises gegevensgateway te gebruiken.](../logic-apps/logic-apps-gateway-connection.md) Zie Toegang tot [on-premises](#on-premises) systemen verder in dit onderwerp voor meer informatie.
 
-* Beheerde connectors die het **ISE** -label niet weer geven, blijven werken voor Logic apps in een ISE. Deze connectors worden *altijd uitgevoerd in de multi tenant-Logic apps-service*, niet in de ISE.
+* Beheerde connectors die het **ISE-label** niet weergeven, blijven werken voor logische apps binnen een ISE. Deze connectors *worden altijd uitgevoerd in de multiten tenant Logic Apps service*, niet in de ISE.
 
-* Aangepaste connectors die u *buiten een ISE* maakt, ongeacht of ze de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)nodig hebben, blijven werken voor logische apps in een ISE. Aangepaste connectors die u *in een ISE* maakt, werken echter niet met de on-premises gegevens gateway. Zie [toegang tot on-premises systemen](#on-premises)voor meer informatie.
+* Aangepaste connectors die u buiten een *ISE* maakt, ongeacht of de [on-premises](../logic-apps/logic-apps-gateway-connection.md)gegevensgateway is vereist, blijven werken voor logische apps binnen een ISE. Aangepaste connectors die u in een *ISE* maakt, werken echter niet met de on-premises gegevensgateway. Zie Toegang tot [on-premises systemen voor meer informatie.](#on-premises)
 
 <a name="on-premises"></a>
 
 ## <a name="access-to-on-premises-systems"></a>Toegang tot on-premises systemen
 
-Logic apps die in een ISE worden uitgevoerd, hebben rechtstreeks toegang tot on-premises systemen en gegevens bronnen die zich in of met een virtueel Azure-netwerk bevinden, met behulp van deze items:<p>
+Logische apps die in een ISE worden uitgevoerd, hebben rechtstreeks toegang tot on-premises systemen en gegevensbronnen die zich binnen of verbonden met een virtueel Azure-netwerk hebben door de volgende items te gebruiken:<p>
 
-* De HTTP-trigger of actie, waarin het **kern** label wordt weer gegeven
+* De HTTP-trigger of -actie, waarmee het **CORE-label wordt** weergegeven
 
-* De **ISE** -connector, indien beschikbaar, voor een on-premises systeem of gegevens bron
+* De **ISE-connector,** indien beschikbaar, voor een on-premises systeem of gegevensbron
 
-  Als er een ISE-connector beschikbaar is, kunt u rechtstreeks toegang krijgen tot het systeem of de gegevens bron zonder de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md). Als u echter toegang nodig hebt tot SQL Server van een ISE en Windows-verificatie wilt gebruiken, moet u de niet-ISE-versie van de connector en de on-premises gegevens gateway gebruiken. De ISE-versie van de connector biedt geen ondersteuning voor Windows-verificatie. Zie [ISE connectors](../connectors/apis-list.md#ise-connectors) and [Connect from a Integration service Environment](../connectors/apis-list.md#integration-service-environment)(Engelstalig) voor meer informatie.
+  Als er een ISE-connector beschikbaar is, hebt u rechtstreeks toegang tot het systeem of de gegevensbron zonder [de on-premises gegevensgateway](../logic-apps/logic-apps-gateway-connection.md). Als u echter toegang wilt tot SQL Server vanaf een ISE en Windows-verificatie wilt gebruiken, moet u de niet-ISE-versie van de connector en de on-premises gegevensgateway gebruiken. De ISE-versie van de connector biedt geen ondersteuning voor Windows-verificatie. Zie [ISE-connectors](../connectors/managed.md#ise-connectors) en Verbinding maken vanuit een [integratieserviceomgeving voor meer informatie.](../connectors/managed.md#integration-account-connectors)
 
 * Een aangepaste connector
 
-  * Aangepaste connectors die u *buiten een ISE* maakt, ongeacht of ze de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)nodig hebben, blijven werken voor logische apps in een ISE.
+  * Aangepaste connectors die u buiten een *ISE* maakt, ongeacht of de [on-premises](../logic-apps/logic-apps-gateway-connection.md)gegevensgateway is vereist, blijven werken voor logische apps binnen een ISE.
 
-  * Aangepaste connectors die u *in een ISE* maakt, werken niet met de on-premises gegevens gateway. Deze connectors hebben echter rechtstreeks toegang tot on-premises systemen en gegevens bronnen die zich binnen of verbonden hebben met het virtuele netwerk dat als host fungeert voor uw ISE. Logic apps die zich binnen een ISE bevinden, hebben doorgaans geen gegevens gateway nodig bij het openen van die bronnen.
+  * Aangepaste connectors die u in *een ISE maakt,* werken niet met de on-premises gegevensgateway. Deze connectors hebben echter rechtstreeks toegang tot on-premises systemen en gegevensbronnen die zich binnen of verbonden met het virtuele netwerk dat als host voor uw ISE gebruikt. Logische apps binnen een ISE hebben de gegevensgateway dus meestal niet nodig bij het openen van deze resources.
 
-Als u toegang wilt krijgen tot on-premises systemen en gegevens bronnen die geen ISE-connectors hebben, zich buiten het virtuele netwerk bevinden of niet zijn verbonden met uw virtuele netwerk, moet u de on-premises gegevens gateway nog gebruiken. Logic apps binnen een ISE kunnen Connect oren blijven gebruiken die geen het label **core** of **ISE** hebben. Deze connectors worden uitgevoerd in de multi tenant-Logic Apps service, in plaats van in uw ISE. 
+Als u toegang wilt krijgen tot on-premises systemen en gegevensbronnen die geen ISE-connectors hebben, zich buiten uw virtuele netwerk of niet met uw virtuele netwerk hebben verbonden, moet u nog steeds de on-premises gegevensgateway gebruiken. Logische apps binnen een ISE kunnen connectors blijven gebruiken die geen **CORE-** of **ISE-label** hebben. Deze connectors worden uitgevoerd in de multiten tenant Logic Apps-service, in plaats van in uw ISE. 
 
 <a name="ise-level"></a>
 
-## <a name="ise-skus"></a>ISE Sku's
+## <a name="ise-skus"></a>ISE-SKU's
 
-Wanneer u uw ISE maakt, kunt u de Developer SKU of Premium SKU selecteren. Deze SKU-optie is alleen beschikbaar bij het maken van ISE en kan later niet worden gewijzigd. Dit zijn de verschillen tussen deze Sku's:
+Wanneer u uw ISE maakt, kunt u de Developer SKU of Premium SKU selecteren. Deze SKU-optie is alleen beschikbaar bij het maken van ISE en kan later niet meer worden gewijzigd. Dit zijn de verschillen tussen deze SKU's:
 
 * **Developer**
 
-  Biedt een voordelige ISE die u kunt gebruiken voor het verkennen, experimenten, ontwikkelen en testen, maar niet voor productie-of prestatie testen. De Developer SKU bevat ingebouwde triggers en acties, standaard connectors, zakelijke connectors en één [gratis laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account voor een [vaste maandelijkse prijs](https://azure.microsoft.com/pricing/details/logic-apps). 
+  Biedt een voordelige ISE die u kunt gebruiken voor verkenning, experimenten, ontwikkeling en testen, maar niet voor productie- of prestatietests. De Ontwikkelaars-SKU bevat ingebouwde triggers en acties, Standard-connectors, Enterprise-connectors en één integratieaccount in de gratis laag voor een [vaste maandelijkse prijs.](https://azure.microsoft.com/pricing/details/logic-apps) [](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) 
 
   > [!IMPORTANT]
-  > Deze SKU heeft geen SLA (Service Level Agreement), schaal baarheid of redundantie tijdens recycling, wat betekent dat u vertragingen of downtime mogelijk ondervindt. Back-end-updates kunnen de service af en toe onderbreken.
+  > Deze SKU heeft geen SLA (Service Level Agreement), mogelijkheid tot omhoog schalen of redundantie tijdens het recyclen, wat betekent dat u vertragingen of downtime kunt ervaren. Back-end-updates kunnen de service af en toe onderbreken.
 
-  Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor informatie over capaciteit en limieten. Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over het werken met facturering voor ISEs.
+  Zie ISE-limieten in Azure Logic Apps voor informatie [over capaciteits- Azure Logic Apps.](logic-apps-limits-and-config.md#integration-service-environment-ise) Zie het Logic Apps voor meer informatie over [facturering voor ISE's.](../logic-apps/logic-apps-pricing.md#fixed-pricing)
 
 * **Premium**
 
-  Biedt een ISE die u kunt gebruiken voor de test van productie en prestaties. De Premium-SKU bevat SLA-ondersteuning, ingebouwde triggers en acties, standaard connectors, zakelijke connectors, een [standaard-laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account, een schaal bare mogelijkheid en redundantie tijdens het recyclen voor een [vaste maandelijkse prijs](https://azure.microsoft.com/pricing/details/logic-apps).
+  Biedt een ISE die u kunt gebruiken voor productie- en prestatietests. De Premium SKU bevat SLA-ondersteuning, ingebouwde triggers en acties, Standard-connectors, Enterprise-connectors, één integratieaccount in de Standard-laag, mogelijkheid tot omhoog schalen en redundantie tijdens het recyclen voor een vaste maandelijkse [prijs.](https://azure.microsoft.com/pricing/details/logic-apps) [](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits)
 
-  Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor informatie over capaciteit en limieten. Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over het werken met facturering voor ISEs.
+  Zie ISE-limieten in Azure Logic Apps voor informatie over [capaciteit en limieten.](logic-apps-limits-and-config.md#integration-service-environment-ise) Zie het Logic Apps voor meer informatie over [facturering voor ISE's.](../logic-apps/logic-apps-pricing.md#fixed-pricing)
 
 <a name="endpoint-access"></a>
 
-## <a name="ise-endpoint-access"></a>Toegang tot ISE-eind punt
+## <a name="ise-endpoint-access"></a>Toegang tot ISE-eindpunten
 
-Wanneer u uw ISE maakt, kunt u kiezen of u interne of Externe toegangs punten wilt gebruiken. Uw selectie bepaalt of aanvragen of webhooks worden geactiveerd op Logic apps in uw ISE kan aanroepen ontvangen van buiten uw virtuele netwerk. Deze eind punten zijn ook van invloed op de manier waarop u toegang hebt tot de invoer en uitvoer van de geschiedenis van de uitvoeringen van de Logic apps.
+Wanneer u uw ISE maakt, kunt u ervoor kiezen om eindpunten voor interne of externe toegang te gebruiken. Uw selectie bepaalt of aanvraag- of webhooktriggers op logische apps in uw ISE aanroepen van buiten uw virtuele netwerk kunnen ontvangen. Deze eindpunten zijn ook van invloed op de manier waarop u toegang hebt tot de invoer en uitvoer van de uitvoergeschiedenis van de runs van uw logische apps.
 
 > [!IMPORTANT]
-> U kunt het toegangs eindpunt alleen selecteren tijdens het maken van ISE. deze optie kan later niet worden gewijzigd.
+> U kunt het toegangs-eindpunt alleen selecteren tijdens het maken van de ISE en u kunt deze optie later niet meer wijzigen.
 
-* **Intern**: met persoonlijke eind punten kunt u aan Logic apps in uw ISE aanroepen waar u invoer en uitvoer van Logic apps *alleen vanuit het virtuele netwerk* weer geven en er toegang toe hebt.
+* **Intern:** met privé-eindpunten kunt u logische apps in uw ISE aanroepen, waar u invoer en uitvoer van de uitvoer van logic apps-uitvoer alleen vanuit uw virtuele netwerk kunt *bekijken en openen.*
 
   > [!IMPORTANT]
-  > Als u deze triggers op basis van webhook moet gebruiken, gebruikt u externe eind punten, *niet* interne eind punten, wanneer u uw ISE maakt:
+  > Als u deze op webhook gebaseerde triggers wilt gebruiken, gebruikt u externe *eindpunten,* geen interne eindpunten, wanneer u uw ISE maakt:
   > 
   > * Azure DevOps
   > * Azure Event Grid
@@ -130,32 +130,32 @@ Wanneer u uw ISE maakt, kunt u kiezen of u interne of Externe toegangs punten wi
   > * Office 365
   > * SAP (ISE-versie)
   > 
-  > Zorg er ook voor dat u verbinding hebt met het netwerk tussen de persoonlijke eind punten en de computer van waaruit u de uitvoerings geschiedenis wilt bekijken. Als u de uitvoerings geschiedenis van de logische app probeert weer te geven, krijgt u een fout melding met de tekst ' onverwachte fout '. Kan niet ophalen.
+  > Zorg er ook voor dat u een netwerkverbinding hebt tussen de privé-eindpunten en de computer van waar u toegang wilt krijgen tot de rungeschiedenis. Als u anders de geschiedenis van de run van uw logische app wilt weergeven, krijgt u een foutmelding met de fout 'Onverwachte fout. Kan niet ophalen.'
   >
-  > ![Azure Storage actie fout die voortkomt uit het onvermogen om verkeer te verzenden via een firewall](./media/connect-virtual-network-vnet-isolated-environment-overview/integration-service-environment-error.png)
+  > ![Azure Storage actiefout die het gevolg is van het niet kunnen verzenden van verkeer via de firewall](./media/connect-virtual-network-vnet-isolated-environment-overview/integration-service-environment-error.png)
   >
-  > Uw client computer kan bijvoorbeeld bestaan in het virtuele netwerk van de ISE of binnen een virtueel netwerk dat is verbonden met het virtuele netwerk van de ISE via peering of een virtueel particulier netwerk. 
+  > Uw clientcomputer kan bijvoorbeeld bestaan in het virtuele netwerk van de ISE of in een virtueel netwerk dat is verbonden met het virtuele netwerk van DEE via peering of een virtueel particulier netwerk. 
 
-* **Extern**: open bare eind punten maken het mogelijk om Logic apps in uw ISE aan te roepen, waar u de invoer en uitvoer van de geschiedenis van Logic apps *van buiten uw virtuele netwerk* kunt bekijken en openen. Als u netwerk beveiligings groepen (Nsg's) gebruikt, moet u ervoor zorgen dat deze zijn ingesteld met regels voor binnenkomende verbindingen zodat de invoer en uitvoer van de uitvoerings geschiedenis toegankelijk zijn. Zie [Enable Access for ISE](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access)voor meer informatie.
+* **Extern:** met openbare eindpunten kunt u logische apps in uw ISE aanroepen, waar u invoer en uitvoer van de uitvoer van logic apps-uitvoer van buiten het virtuele netwerk *kunt bekijken en openen.* Als u netwerkbeveiligingsgroepen (NSG's) gebruikt, moet u ervoor zorgen dat deze zijn ingesteld met regels voor binnenkomende verkeer om toegang tot de invoer en uitvoer van de uitvoeringsgeschiedenis toe te staan. Zie Enable [access for ISE (Toegang inschakelen voor ISE) voor meer informatie.](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access)
 
-Als u wilt bepalen of uw ISE een intern of extern toegangs punt gebruikt, selecteert u in het menu van uw ISE onder **instellingen** de optie **Eigenschappen** en gaat u naar de eigenschap **Access-eind punt** :
+Als u wilt bepalen of uw ISE een intern of extern toegangs-eindpunt gebruikt, selecteert u in het menu van uw ISE onder Instellingen **de** optie Eigenschappen **en** gaat u naar de eigenschap **Access endpoint:**
 
-![ISE-toegangs punt zoeken](./media/connect-virtual-network-vnet-isolated-environment-overview/find-ise-access-endpoint.png)
+![IsE-toegangs-eindpunt zoeken](./media/connect-virtual-network-vnet-isolated-environment-overview/find-ise-access-endpoint.png)
 
 <a name="pricing-model"></a>
 
 ## <a name="pricing-model"></a>Prijsmodel
 
-Logic apps, ingebouwde triggers, ingebouwde acties en connectors die worden uitgevoerd in uw ISE, gebruiken een vast prijs plan dat verschilt van het prijs plan op basis van verbruik. Zie [Logic apps prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven.
+Logische apps, ingebouwde triggers, ingebouwde acties en connectors die worden uitgevoerd in uw ISE, gebruiken een vast prijsplan dat verschilt van het prijsplan op basis van verbruik. Zie prijzenmodel voor [Logic Apps meer informatie.](../logic-apps/logic-apps-pricing.md#fixed-pricing) Zie prijzen voor Logic Apps [prijzen.](https://azure.microsoft.com/pricing/details/logic-apps/)
 
 <a name="create-integration-account-environment"></a>
 
-## <a name="integration-accounts-with-ise"></a>Integratie accounts met ISE
+## <a name="integration-accounts-with-ise"></a>Integratieaccounts met ISE
 
-U kunt integratie accounts gebruiken met Logic apps binnen een Integration service Environment (ISE). Deze integratie accounts moeten echter *dezelfde ISE* gebruiken als de gekoppelde logische apps. Logic apps in een ISE kunnen alleen verwijzen naar de integratie accounts die zich in dezelfde ISE bevinden. Wanneer u een integratie account maakt, kunt u uw ISE als locatie voor uw integratie account selecteren. Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over de prijzen en facturering voor integratie accounts met een ISE. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven. Zie [limieten voor integratie accounts](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)voor meer informatie over de limieten.
+U kunt integratieaccounts gebruiken met logische apps binnen een ISE (Integration Service Environment). Deze integratieaccounts moeten echter dezelfde *ISE gebruiken* als de gekoppelde logische apps. Logische apps in een ISE kunnen alleen verwijzen naar integratieaccounts in dezelfde ISE. Wanneer u een integratieaccount maakt, kunt u uw ISE selecteren als de locatie voor uw integratieaccount. Zie het Logic Apps prijsmodel voor meer informatie over hoe prijzen en facturering [werken voor integratieaccounts met een](../logic-apps/logic-apps-pricing.md#fixed-pricing)ISE. Zie prijzen voor Logic Apps [prijzen.](https://azure.microsoft.com/pricing/details/logic-apps/) Zie Limieten voor [integratieaccounts voor informatie over limieten.](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Verbinding maken met virtuele Azure-netwerken vanuit Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
 * Meer informatie over [Azure Virtual Network](../virtual-network/virtual-networks-overview.md)
-* Meer informatie over de [integratie van virtuele netwerken voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md)
+* Meer informatie over [integratie van virtuele netwerken voor Azure-services](../virtual-network/virtual-network-for-azure-services.md)

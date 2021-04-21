@@ -1,44 +1,44 @@
 ---
-title: Gpu's gebruiken op Azure Kubernetes service (AKS)
-description: Meer informatie over het gebruik van Gpu's voor high performance Compute of grafisch intensieve workloads op Azure Kubernetes service (AKS)
+title: GPU's op Azure Kubernetes Service (AKS) gebruiken
+description: Meer informatie over het gebruik van GPU's voor high performance reken- of grafisch-intensieve workloads op Azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: article
 ms.date: 08/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: d7e312f049acc0b74aa0a253864bfce6100044bd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5e36465c307443c8e6f135c5937bddbbb079b60e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96929137"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107783157"
 ---
-# <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Gebruik Gpu's voor computerintensieve werk belastingen op Azure Kubernetes service (AKS)
+# <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>GPU's gebruiken voor rekenintensieve workloads op Azure Kubernetes Service (AKS)
 
-Grafische verwerkings eenheden (Gpu's) worden vaak gebruikt voor computerintensieve werk belastingen, zoals grafische werk belastingen en visualisaties. AKS biedt ondersteuning voor het maken van knooppunt groepen met GPU-functionaliteit voor het uitvoeren van deze reken intensief werk belastingen in Kubernetes. Zie voor meer informatie over beschik bare virtuele machines met GPU voor [GPU geoptimaliseerde VM-grootten in azure][gpu-skus]. Voor AKS-knoop punten wordt een minimale grootte van *Standard_NC6* aangeraden.
+Grafische verwerkingseenheden (GPU's) worden vaak gebruikt voor rekenintensieve workloads, zoals grafische en visualisatieworkloads. AKS ondersteunt het maken van knooppuntgroepen met GPU om deze rekenintensieve workloads in Kubernetes uit te voeren. Zie Voor GPU geoptimaliseerde VM-grootten in Azure voor meer informatie over beschikbare [VM's][gpu-skus]met GPU. Voor AKS-knooppunten wordt een minimale grootte *van* Standard_NC6.
 
 > [!NOTE]
-> Virtuele machines met GPU bevatten gespecialiseerde hardware waarvoor hogere prijzen en beschik baarheid van de regio gelden. Zie de [prijs][azure-pricing] informatie en [Beschik baarheid van regio's][azure-availability]voor meer informatie.
+> VM's met GPU bevatten gespecialiseerde hardware die onderhevig is aan hogere prijzen en beschikbaarheid in regio's. Zie het prijsprogramma en de [beschikbaarheid][azure-pricing] in [regio's voor meer informatie.][azure-availability]
 
-Momenteel is het gebruik van knooppunt Pools met GPU ingeschakeld alleen beschikbaar voor Linux-knooppunt groepen.
+Op dit moment is het gebruik van knooppuntgroepen met GPU alleen beschikbaar voor Linux-knooppuntgroepen.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster met knoop punten die Gpu's ondersteunen. Uw AKS-cluster moet Kubernetes 1,10 of hoger uitvoeren. Als u een AKS-cluster nodig hebt dat aan deze vereisten voldoet, raadpleegt u de eerste sectie van dit artikel om [een AKS-cluster te maken](#create-an-aks-cluster).
+In dit artikel wordt ervan uitgenomen dat u een bestaand AKS-cluster hebt met knooppunten die GPU's ondersteunen. Op uw AKS-cluster moet Kubernetes 1.10 of hoger worden uitgevoerd. Als u een AKS-cluster nodig hebt dat aan deze vereisten voldoet, bekijkt u de eerste sectie van dit artikel om [een AKS-cluster te maken.](#create-an-aks-cluster)
 
-Ook moet de Azure CLI-versie 2.0.64 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Ook moet Azure CLI versie 2.0.64 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="create-an-aks-cluster"></a>Een AKS-cluster maken
 
-Als u een AKS-cluster nodig hebt dat voldoet aan de minimale vereisten (GPU-ingeschakeld knoop punt en Kubernetes versie 1,10 of hoger), voert u de volgende stappen uit. Als u al een AKS-cluster hebt dat aan deze vereisten voldoet, [gaat u verder met de volgende sectie](#confirm-that-gpus-are-schedulable).
+Als u een AKS-cluster nodig hebt dat voldoet aan de minimale vereisten (knooppunt met GPU en Kubernetes versie 1.10 of hoger), moet u de volgende stappen voltooien. Als u al een AKS-cluster hebt dat aan deze vereisten voldoet, [gaat u verder met de volgende sectie](#confirm-that-gpus-are-schedulable).
 
-Maak eerst een resource groep voor het cluster met behulp van de opdracht [AZ Group Create][az-group-create] . In het volgende voor beeld wordt de naam van een resource groep *myResourceGroup* in de regio *oostus* :
+Maak eerst een resourcegroep voor het cluster met behulp van [de opdracht az group create.][az-group-create] In het volgende voorbeeld wordt een resourcegroep met de *naam myResourceGroup* gemaakt in de *regio eastus:*
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Maak nu een AKS-cluster met behulp van de opdracht [AZ AKS Create][az-aks-create] . In het volgende voor beeld wordt een cluster gemaakt met één knoop punt van grootte `Standard_NC6` :
+Maak nu een AKS-cluster met de [opdracht az aks create.][az-aks-create] In het volgende voorbeeld wordt een cluster gemaakt met één knooppunt met de grootte `Standard_NC6` :
 
 ```azurecli-interactive
 az aks create \
@@ -48,23 +48,23 @@ az aks create \
     --node-count 1
 ```
 
-Haal de referenties voor uw AKS-cluster op met de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] :
+Haal de referenties voor uw AKS-cluster op met de [opdracht az aks get-credentials:][az-aks-get-credentials]
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-## <a name="install-nvidia-device-plugin"></a>De invoeg toepassing voor NVIDIA-apparaten installeren
+## <a name="install-nvidia-device-plugin"></a>NVIDIA-apparaatinvoeging installeren
 
-Voordat de Gpu's in de knoop punten kunnen worden gebruikt, moet u een Daemonset voor de invoeg toepassing voor NVIDIA-apparaten implementeren. Deze Daemonset voert een pod uit op elk knoop punt om de vereiste Stuur Programma's voor de Gpu's op te geven.
+Voordat de GPU's in de knooppunten kunnen worden gebruikt, moet u een DaemonSet implementeren voor de NVIDIA-apparaatinvoeging. Met deze DaemonSet wordt op elk knooppunt een pod uitgevoerd om de vereiste stuurprogramma's voor de GPU's op te geven.
 
-Maak eerst een naam ruimte met behulp van de kubectl-opdracht [naam ruimte maken][kubectl-create] , zoals *GPU-resources*:
+Maak eerst een naamruimte met behulp van de [opdracht kubectl create namespace,][kubectl-create] zoals *gpu-resources:*
 
 ```console
 kubectl create namespace gpu-resources
 ```
 
-Maak een bestand met de naam *NVIDIA-apparaat-plugin-DS. yaml* en plak het volgende YAML-manifest. Dit manifest wordt meegeleverd als onderdeel van de [NVIDIA-apparaat-invoeg toepassing voor Kubernetes-project][nvidia-github].
+Maak een bestand met de *naam nvidia-device-plugin-ds.yaml* en plak het volgende YAML-manifest. Dit manifest wordt geleverd als onderdeel van de [NVIDIA-apparaatinvoegsel voor Kubernetes-project][nvidia-github].
 
 ```yaml
 apiVersion: apps/v1
@@ -112,7 +112,7 @@ spec:
             path: /var/lib/kubelet/device-plugins
 ```
 
-Gebruik nu de opdracht [kubectl apply][kubectl-apply] om de daemonset te maken en bevestig dat de invoeg toepassing voor nvidia-apparaten is gemaakt, zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
+Gebruik nu de [opdracht kubectl apply][kubectl-apply] om de DaemonSet te maken en te bevestigen dat de NVIDIA-apparaatinvoeggebruiker is gemaakt, zoals wordt weergegeven in de volgende voorbeelduitvoer:
 
 ```console
 $ kubectl apply -f nvidia-device-plugin-ds.yaml
@@ -120,33 +120,33 @@ $ kubectl apply -f nvidia-device-plugin-ds.yaml
 daemonset "nvidia-device-plugin" created
 ```
 
-## <a name="use-the-aks-specialized-gpu-image-preview"></a>De AKS Special GPU-installatie kopie gebruiken (preview-versie)
+## <a name="use-the-aks-specialized-gpu-image-preview"></a>De gespecialiseerde GPU-afbeelding van AKS gebruiken (preview)
 
-Als alternatief voor deze stappen biedt AKS een volledig geconfigureerde AKS-installatie kopie die al de [invoeg toepassing voor nvidia-apparaten bevat voor Kubernetes][nvidia-github].
+Als alternatief voor deze stappen biedt AKS een volledig geconfigureerde AKS-afbeelding die al de NVIDIA-apparaatinvoegsel voor [Kubernetes bevat.][nvidia-github]
 
 > [!WARNING]
-> U moet niet hand matig de NVIDIA-apparaat-daemon voor de invoeg toepassing installeren voor clusters met behulp van de nieuwe AKS specialistische GPU-installatie kopie.
+> U moet de NVIDIA-apparaatinvoegings-daemonset voor clusters niet handmatig installeren met behulp van de nieuwe gespecialiseerde AKS GPU-installatie afbeelding.
 
 
-De `GPUDedicatedVHDPreview` functie registreren:
+Registreer de `GPUDedicatedVHDPreview` functie:
 
 ```azurecli
 az feature register --name GPUDedicatedVHDPreview --namespace Microsoft.ContainerService
 ```
 
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-list):
+Het kan enkele minuten duren voordat de status wordt weergeven als **Geregistreerd.** U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az_feature_list):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/GPUDedicatedVHDPreview')].{Name:name,State:properties.state}"
 ```
 
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) :
+Wanneer de status geregistreerd is, vernieuwt u de registratie van de `Microsoft.ContainerService` resourceprovider met behulp van [de opdracht az provider register:](/cli/azure/provider#az_provider_register)
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
 ```
 
-Als u de AKS-preview CLI-extensie wilt installeren, gebruikt u de volgende Azure CLI-opdrachten:
+Gebruik de volgende Azure CLI-opdrachten om de CLI-extensie aks-preview te installeren:
 
 ```azurecli
 az extension add --name aks-preview
@@ -158,36 +158,36 @@ Gebruik de volgende Azure CLI-opdrachten om de CLI-extensie AKS-preview te insta
 az extension update --name aks-preview
 ```
 
-### <a name="use-the-aks-specialized-gpu-image-on-new-clusters-preview"></a>De AKS specialistische GPU-installatie kopie gebruiken in nieuwe clusters (preview-versie)    
+### <a name="use-the-aks-specialized-gpu-image-on-new-clusters-preview"></a>De gespecialiseerde GPU-afbeelding van AKS gebruiken op nieuwe clusters (preview)    
 
-Configureer het cluster voor het gebruik van de AKS specialistische GPU-installatie kopie wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` vlag voor de GPU-agent knooppunten op uw nieuwe cluster om de AKS specialistische GPU-afbeelding te gebruiken.
+Configureer het cluster voor het gebruik van de gespecialiseerde GPU-afbeelding van AKS wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` vlag voor de GPU-agentknooppunten op uw nieuwe cluster om de gespecialiseerde GPU-afbeelding van AKS te gebruiken.
 
 ```azurecli
 az aks create --name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true
 ```
 
-Als u een cluster wilt maken met behulp van de gewone AKS-installatie kopieën, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` . U kunt er ook voor kiezen om meer gespecialiseerde GPU-knooppunt groepen toe te voegen aan de hand van hieronder.
+Als u een cluster wilt maken met behulp van de reguliere AKS-afbeeldingen, kunt u dit doen door de aangepaste tag weg te `--aks-custom-headers` laten. U kunt er ook voor kiezen om meer gespecialiseerde GPU-knooppuntgroepen toe te voegen zoals hieronder wordt weergegeven.
 
 
-### <a name="use-the-aks-specialized-gpu-image-on-existing-clusters-preview"></a>De AKS specialistische GPU-installatie kopie gebruiken in bestaande clusters (preview-versie)
+### <a name="use-the-aks-specialized-gpu-image-on-existing-clusters-preview"></a>De gespecialiseerde AKS-GPU-afbeelding gebruiken op bestaande clusters (preview)
 
-Configureer een nieuwe knooppunt groep om de AKS Special GPU-installatie kopie te gebruiken. Gebruik de `--aks-custom-headers` vlag Flag voor de GPU-agent knooppunten in de nieuwe knooppunt groep om de AKS Special GPU-installatie kopie te gebruiken.
+Configureer een nieuwe knooppuntgroep voor het gebruik van de gespecialiseerde GPU-afbeelding van AKS. Gebruik de `--aks-custom-headers` vlag voor de GPU-agentknooppunten in uw nieuwe knooppuntgroep om de gespecialiseerde AKS-GPU-afbeelding te gebruiken.
 
 ```azurecli
 az aks nodepool add --name gpu --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true
 ```
 
-Als u een knooppunt groep wilt maken met behulp van de gewone AKS-installatie kopieën, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` . 
+Als u een knooppuntgroep wilt maken met behulp van de reguliere AKS-afbeeldingen, kunt u dit doen door de aangepaste tag weg te `--aks-custom-headers` laten. 
 
 > [!NOTE]
-> Als uw GPU-SKU generatie 2 virtuele machines vereist, kunt u het volgende doen:
+> Als uw GPU-SKU virtuele machines van de tweede generatie vereist, kunt u het volgende maken:
 > ```azurecli
 > az aks nodepool add --name gpu --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_NC6s_v2 --node-count 1 --aks-custom-headers UseGPUDedicatedVHD=true,usegen2vm=true
 > ```
 
-## <a name="confirm-that-gpus-are-schedulable"></a>Controleer of de Gpu's Schedulable zijn
+## <a name="confirm-that-gpus-are-schedulable"></a>Controleer of GPU's kunnen worden geseuleerd
 
-Als uw AKS-cluster is gemaakt, controleert u of de Gpu's Schedulable zijn in Kubernetes. Vermeld eerst de knoop punten in uw cluster met behulp van de kubectl-opdracht [knoop punten ophalen][kubectl-get] :
+Nu uw AKS-cluster is gemaakt, controleert u of GPU's kunnen worden gesluisd in Kubernetes. Vermeld eerst de knooppunten in uw cluster met behulp van de [opdracht kubectl get nodes:][kubectl-get]
 
 ```console
 $ kubectl get nodes
@@ -196,9 +196,9 @@ NAME                       STATUS   ROLES   AGE   VERSION
 aks-nodepool1-28993262-0   Ready    agent   13m   v1.12.7
 ```
 
-Gebruik nu de opdracht [kubectl beschrijven knoop punt][kubectl-describe] om te bevestigen dat de gpu's Schedulable zijn. Onder het gedeelte *capaciteit* moet de GPU worden weer geven als `nvidia.com/gpu:  1` .
+Gebruik nu de [opdracht kubectl describe node][kubectl-describe] om te bevestigen dat de GPU's schedulable zijn. In de *sectie Capaciteit* moet de GPU worden vermeld als `nvidia.com/gpu:  1` .
 
-In het volgende verkorte voor beeld ziet u dat er een GPU beschikbaar is op het knoop punt met de naam *AKS-nodepool1-18821093-0*:
+In het volgende verkorte voorbeeld ziet u dat er een GPU beschikbaar is op het knooppunt met de naam *aks-nodepool1-18821093-0:*
 
 ```console
 $ kubectl describe node aks-nodepool1-28993262-0
@@ -248,14 +248,14 @@ Non-terminated Pods:         (9 in total)
 [...]
 ```
 
-## <a name="run-a-gpu-enabled-workload"></a>Een werk belasting met GPU uitvoeren
+## <a name="run-a-gpu-enabled-workload"></a>Een workload met GPU uitvoeren
 
-Als u de GPU in actie wilt zien, moet u een werk belasting met GPU plannen met de juiste resource aanvraag. In dit voor beeld wordt een [tensor flow](https://www.tensorflow.org/) -taak uitgevoerd op basis van de [MNIST-gegevensset](http://yann.lecun.com/exdb/mnist/).
+Als u de GPU in actie wilt zien, moet u een workload met GPU plannen met de juiste resourceaanvraag. In dit voorbeeld voeren we een [Tensorflow-taak](https://www.tensorflow.org/) uit op de [MNIST-gegevensset](http://yann.lecun.com/exdb/mnist/).
 
-Maak een bestand met de naam *samples-TF-mnist-demo. yaml* en plak het volgende YAML-manifest. Het volgende taak manifest bevat een resource limiet van `nvidia.com/gpu: 1` :
+Maak een bestand met de *naam samples-tf-mnist-demo.yaml* en plak het volgende YAML-manifest. Het volgende taakmanifest bevat een resourcelimiet van `nvidia.com/gpu: 1` :
 
 > [!NOTE]
-> Als er een fout is opgetreden die niet overeenkomt bij het aanroepen van Stuur Programma's, zoals de versie van het CUDA-stuur programma is niet voldoende voor de CUDA-runtime versie, raadpleegt u de compatibiliteits grafiek voor NVIDIA-Stuur [https://docs.nvidia.com/deploy/cuda-compatibility/index.html](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
+> Als er een fout wordt weergegeven over niet-overeenkomende versies bij het aanroepen van stuurprogramma's, zoals de versie van het CUDA-stuurprogramma is onvoldoende voor de CUDA-runtimeversie, bekijkt u de compatibiliteitsgrafiek van de NVIDIA-stuurprogrammamatrix: [https://docs.nvidia.com/deploy/cuda-compatibility/index.html](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
 
 ```yaml
 apiVersion: batch/v1
@@ -281,15 +281,15 @@ spec:
       restartPolicy: OnFailure
 ```
 
-Gebruik de opdracht [kubectl Toep assen][kubectl-apply] om de taak uit te voeren. Deze opdracht parseert het manifest bestand en maakt de gedefinieerde Kubernetes-objecten:
+Gebruik de [opdracht kubectl apply][kubectl-apply] om de taak uit te voeren. Met deze opdracht wordt het manifestbestand geparseerd en worden de gedefinieerde Kubernetes-objecten gemaakt:
 
 ```console
 kubectl apply -f samples-tf-mnist-demo.yaml
 ```
 
-## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>Bekijk de status en de uitvoer van de GPU-ingeschakelde werk belasting
+## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>De status en uitvoer van de gpu-workload weergeven
 
-Bewaak de voortgang van de taak met behulp van de opdracht [kubectl Get Jobs][kubectl-get] with het `--watch` argument. Het kan een paar minuten duren voordat de installatie kopie is opgehaald en de gegevensset wordt verwerkt. Wanneer in de kolom *voltooiings* de *1/1* wordt weer gegeven, is de taak voltooid. Sluit de `kubetctl --watch` opdracht af met *CTRL-C*:
+Controleer de voortgang van de taak met behulp van de [opdracht kubectl get jobs][kubectl-get] met het argument `--watch` . Het kan enkele minuten duren om eerst de afbeelding op te halen en de gegevensset te verwerken. Wanneer de *kolom COMPLETIONS* *1/1 toont,* is de taak voltooid. Sluit de `kubetctl --watch` opdracht af met *Ctrl+C:*
 
 ```console
 $ kubectl get jobs samples-tf-mnist-demo --watch
@@ -300,7 +300,7 @@ samples-tf-mnist-demo   0/1           3m29s      3m29s
 samples-tf-mnist-demo   1/1   3m10s   3m36s
 ```
 
-Als u de uitvoer van de GPU-ingeschakelde werk belasting wilt bekijken, moet u eerst de naam van de pod ophalen met de opdracht [kubectl Get peul][kubectl-get] :
+Als u de uitvoer van de workload met GPU wilt bekijken, moet u eerst de naam van de pod op halen met de [opdracht kubectl get pods:][kubectl-get]
 
 ```console
 $ kubectl get pods --selector app=samples-tf-mnist-demo
@@ -309,7 +309,7 @@ NAME                          READY   STATUS      RESTARTS   AGE
 samples-tf-mnist-demo-mtd44   0/1     Completed   0          4m39s
 ```
 
-Gebruik nu de [kubectl-logboeken][kubectl-logs] opdracht om de pod-logboeken weer te geven. In het volgende voor beeld worden pod-logboeken gecontroleerd of het juiste GPU-apparaat is gedetecteerd `Tesla K80` . Geef de naam op voor uw eigen Pod:
+Gebruik nu de [opdracht kubectl logs][kubectl-logs] om de podlogboeken weer te geven. In de volgende voorbeeldpodlogboeken wordt bevestigd dat het juiste GPU-apparaat is ontdekt, `Tesla K80` . Geef de naam op voor uw eigen pod:
 
 ```console
 $ kubectl logs samples-tf-mnist-demo-smnr6
@@ -388,7 +388,7 @@ Adding run metadata for 499
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de gekoppelde Kubernetes-objecten die in dit artikel zijn gemaakt wilt verwijderen, gebruikt u de opdracht [kubectl verwijderen][kubectl delete] als volgt:
+Als u de gekoppelde Kubernetes-objecten wilt verwijderen die in dit artikel zijn gemaakt, gebruikt u de opdracht [kubectl delete][kubectl delete] job als volgt:
 
 ```console
 kubectl delete jobs samples-tf-mnist-demo
@@ -396,9 +396,9 @@ kubectl delete jobs samples-tf-mnist-demo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Apache Spark-taken uitvoeren op AKS][aks-spark]om Apache Spark taken uit te voeren.
+Zie Taken Apache Spark uitvoeren op [AKS om Apache Spark uit te voeren.][aks-spark]
 
-Zie [Kubeflow Labs][kubeflow-labs](Engelstalig) voor meer informatie over het uitvoeren van machine learning (ml) workloads op Kubernetes.
+Zie [Kubeflow Labs][kubeflow-labs]voor meer machine learning het uitvoeren van ml-workloads op Kubernetes.
 
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
@@ -413,9 +413,9 @@ Zie [Kubeflow Labs][kubeflow-labs](Engelstalig) voor meer informatie over het ui
 [nvidia-github]: https://github.com/NVIDIA/k8s-device-plugin
 
 <!-- LINKS - internal -->
-[az-group-create]: /cli/azure/group#az-group-create
-[az-aks-create]: /cli/azure/aks#az-aks-create
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[az-group-create]: /cli/azure/group#az_group_create
+[az-aks-create]: /cli/azure/aks#az_aks_create
+[az-aks-get-credentials]: /cli/azure/aks#az_aks_get_credentials
 [aks-spark]: spark-job.md
 [gpu-skus]: ../virtual-machines/sizes-gpu.md
 [install-azure-cli]: /cli/azure/install-azure-cli

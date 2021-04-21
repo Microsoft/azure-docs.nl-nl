@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 9/21/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: a63c6f074178794db38b47950e176dd729344a54
-ms.sourcegitcommit: bfa7d6ac93afe5f039d68c0ac389f06257223b42
+ms.openlocfilehash: 7addfc3a0d91b85c4d63afa4ee6a55b5202c3855
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106492725"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770233"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-flexible-server-using-azure-cli"></a>Quickstart: Een Azure Database for MySQL Flexible Server maken met behulp van Azure CLI
 
@@ -32,13 +32,13 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, hebt u voor 
 
 ## <a name="prerequisites"></a>Vereisten
 
-U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az-login). Let op de eigenschap **id**, die verwijst naar **abonnements-id** voor uw Azure-account.
+U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/reference-index#az_login). Let op de eigenschap **id**, die verwijst naar **abonnements-id** voor uw Azure-account.
 
 ```azurecli-interactive
 az login
 ```
 
-Selecteer het specifieke abonnement in uw account met de opdracht [az account set](/cli/azure/account#az-account-set). Noteer de **id**-waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
+Selecteer het specifieke abonnement in uw account met de opdracht [az account set](/cli/azure/account#az_account_set). Noteer de **id**-waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az_account_list).
 
 ```azurecli-interactive
 az account set --subscription <subscription id>
@@ -97,7 +97,7 @@ Make a note of your password. If you forget, you would have to reset your passwo
 Als u een standaardinstelling wilt wijzigen, raadpleegt u de [referentiedocumentatie](/cli/azure/mysql/flexible-server) van Azure CLI voor de complete lijst van configureerbare CLI-parameters. 
 
 ## <a name="create-a-database"></a>Een database maken
-Voer de volgende opdracht uit om een Data Base te maken, **newdatabase** als u deze nog niet hebt gemaakt.
+Voer de volgende opdracht uit om een database te maken, **newdatabase** als u er nog geen hebt gemaakt.
 
 ```azurecli-interactive
 az mysql flexible-server db create -d newdatabase
@@ -147,11 +147,11 @@ Het resultaat wordt in JSON-indeling weergegeven. Noteer de **fullyQualifiedDoma
 }
 ```
 
-## <a name="connect-and-test-the-connection-using-azure-cli"></a>Verbinding maken en testen met behulp van Azure CLI
+## <a name="connect-and-test-the-connection-using-azure-cli"></a>Verbinding maken en de verbinding testen met behulp van Azure CLI
 
-Azure Database for MySQL flexibele server kunt u verbinding maken met uw MySQL-server met de Azure CLI- ```az mysql flexible-server connect``` opdracht. Met deze opdracht kunt u de verbinding met uw database server testen, een snelle start database maken en query's rechtstreeks op uw server uitvoeren zonder dat u mysql.exe of MySQL Workbench hoeft te installeren.  U kunt ook de opdracht uitvoeren in een interactieve modus gebruiken om meerdere query's uit te voeren.
+Azure Database for MySQL Flexibele server kunt u verbinding maken met uw mysql-server met behulp van de Azure ```az mysql flexible-server connect``` CLI-opdracht. Met deze opdracht kunt u de connectiviteit met uw databaseserver testen, een snelstartdatabase maken en query's rechtstreeks op uw server uitvoeren zonder dat u mysql.exe of MySQL Workbench moet installeren.  U kunt ook de opdracht uitvoeren in een interactieve modus voor het uitvoeren van meerdere query's.
 
-Voer het volgende script uit om de verbinding met de data base te testen en te valideren vanuit uw ontwikkel omgeving.
+Voer het volgende script uit om de verbinding met de database vanuit uw ontwikkelomgeving te testen en te valideren.
 
 ```azurecli-interactive
 az mysql flexible-server connect -n <servername> -u <username> -p <password> -d <databasename>
@@ -160,20 +160,20 @@ az mysql flexible-server connect -n <servername> -u <username> -p <password> -d 
 ```azurecli-interactive
 az mysql flexible-server connect -n mysqldemoserver1 -u dbuser -p "dbpassword" -d newdatabase
 ```
-De volgende uitvoer wordt weer geven voor een geslaagde verbinding:
+Als het goed is, ziet u de volgende uitvoer voor een geslaagde verbinding:
 
 ```output
 Command group 'mysql flexible-server' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 Connecting to newdatabase database.
 Successfully connected to mysqldemoserver1.
 ```
-Als de verbinding is mislukt, probeert u de volgende oplossingen:
-- Controleer of poort 3306 is geopend op de client computer.
-- Als de gebruikers naam en het wacht woord van de server beheerder juist zijn
-- Als u de firewall regel voor uw client computer hebt geconfigureerd
-- Als u uw server hebt geconfigureerd met persoonlijke toegang in virtuele netwerken, zorgt u ervoor dat de client computer zich in hetzelfde virtuele netwerk bevindt.
+Probeer de volgende oplossingen als de verbinding is mislukt:
+- Controleer of poort 3306 is geopend op uw clientmachine.
+- als de gebruikersnaam en het wachtwoord van de serverbeheerder juist zijn
+- als u een firewallregel hebt geconfigureerd voor uw clientmachine
+- Als u uw server hebt geconfigureerd met privétoegang in virtuele netwerken, moet u ervoor zorgen dat uw clientmachine zich in hetzelfde virtuele netwerk.
 
-Voer de volgende opdracht uit om één query uit te voeren met behulp van het ```--querytext``` argument ```-q``` .
+Voer de volgende opdracht uit om één query uit te voeren met ```--querytext``` behulp van argument , ```-q``` .
 
 ```azurecli-interactive
 az mysql flexible-server connect -n <server-name> -u <username> -p "<password>" -d <database-name> --querytext "<query text>"
@@ -183,17 +183,17 @@ az mysql flexible-server connect -n <server-name> -u <username> -p "<password>" 
 ```azurecli-interactive
 az mysql flexible-server connect -n mysqldemoserver1 -u dbuser -p "dbpassword" -d newdatabase -q "select * from table1;" --output table
 ```
-```az mysql flexible-server connect```Raadpleeg de documentatie [verbinding maken en vragen](connect-azure-cli.md) voor meer informatie over het gebruik van de opdracht.
+Raadpleeg de documentatie verbinding maken en query's uitvoeren voor meer informatie over het gebruik ```az mysql flexible-server connect``` [van](connect-azure-cli.md) de opdracht.
 
 ## <a name="connect-using-mysql-command-line-client"></a>Verbinding maken met de MySQL-opdrachtregel-client
 
-Als u een flexibele server hebt gemaakt met Persoonlijke toegang (VNet-integratie), moet u verbinding maken met uw server vanuit een resource binnen hetzelfde virtuele netwerk als uw server. U kunt een virtuele machine maken en toevoegen aan het virtuele netwerk dat is gemaakt met uw flexibele server. Raadpleeg de documentatie over het configureren van [persoonlijke toegang](how-to-manage-virtual-network-portal.md) voor meer informatie.
+Als u een flexibele server hebt gemaakt met Persoonlijke toegang (VNet-integratie), moet u verbinding maken met uw server vanuit een resource binnen hetzelfde virtuele netwerk als uw server. U kunt een virtuele machine maken en toevoegen aan het virtuele netwerk dat is gemaakt met uw flexibele server. Raadpleeg documentatie over [privétoegang configureren](how-to-manage-virtual-network-portal.md) voor meer informatie.
 
-Als u uw flexibele server met Openbare toegang (toegestane IP-adressen) hebt gemaakt, kunt u uw lokale IP-adres toevoegen aan de lijst met firewallregels op uw server. Raadpleeg de [documentatie over het maken of beheren van firewall regels](how-to-manage-firewall-portal.md) voor stapsgewijze instructies.
+Als u uw flexibele server met Openbare toegang (toegestane IP-adressen) hebt gemaakt, kunt u uw lokale IP-adres toevoegen aan de lijst met firewallregels op uw server. Raadpleeg [de documentatie over het maken of beheren van firewallregels](how-to-manage-firewall-portal.md) voor stapsgewijse richtlijnen.
 
-U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) gebruiken om vanuit uw lokale omgeving verbinding met de server te maken. Azure Database for MySQL flexibele server ondersteunt het verbinden van uw client toepassingen met de MySQL-service met behulp van Transport Layer Security (TLS), voorheen bekend als Secure Sockets Layer (SSL). TLS is een industrie standaard protocol dat versleutelde netwerk verbindingen tussen uw database server-en client toepassingen waarborgt, zodat u kunt voldoen aan de nalevings vereisten. Als u verbinding wilt maken met uw flexibele MySQL-server, moet u het [open bare SSL-certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) voor verificatie van de certificerings instantie downloaden. Zie [verbinding maken met Azure database for MySQL-flexibele server met versleutelde verbindingen](how-to-connect-tls-ssl.md) voor meer informatie over het maken van verbinding met versleutelde verbindingen of het uitschakelen van SSL.
+U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) gebruiken om vanuit uw lokale omgeving verbinding met de server te maken. Azure Database for MySQL Flexible Server ondersteunt het verbinden van uw clienttoepassingen met de MySQL-service met behulp van Transport Layer Security (TLS), voorheen bekend als Secure Sockets Layer (SSL). TLS is een standaardprotocol dat zorgt voor versleutelde netwerkverbindingen tussen uw databaseserver en clienttoepassingen, zodat u kunt voldoen aan de nalevingsvereisten. Als u verbinding wilt maken met uw flexibele MySQL-server, moet u het openbare [SSL-certificaat](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) voor verificatie van de certificeringsinstantie downloaden. Raadpleeg de documentatie Verbinding maken met [Azure Database for MySQL - Flexible Server](how-to-connect-tls-ssl.md) met versleutelde verbindingen voor meer informatie over het maken van verbinding met versleutelde verbindingen of het uitschakelen van SSL.
 
-In het volgende voor beeld ziet u hoe u verbinding maakt met uw flexibele server met behulp van de MySQL-opdracht regel interface. U moet eerst de MySQL-opdracht regel installeren als deze nog niet is geïnstalleerd. U downloadt het DigiCertGlobalRootCA-certificaat dat vereist is voor SSL-verbindingen. Gebruik de instelling--SSL-modus = vereist connection string om TLS/SSL-certificaat verificatie af te dwingen. Geef het pad van het lokale certificaat bestand door aan de para meter--ssl-ca. Vervang de waarden door uw werkelijke servernaam en wachtwoord.
+In het volgende voorbeeld ziet u hoe u verbinding maakt met uw flexibele server met behulp van de mysql-opdrachtregelinterface. U installeert eerst de mysql-opdrachtregel als deze nog niet is geïnstalleerd. U downloadt het DigiCertGlobalRootCA-certificaat dat is vereist voor SSL-verbindingen. Gebruik de instelling --ssl-mode=REQUIRED connection string TLS/SSL-certificaatverificatie af te dwingen. Geef het pad van het lokale certificaatbestand door aan de parameter --ssl-ca. Vervang de waarden door uw werkelijke servernaam en wachtwoord.
 
 ```bash
 sudo apt-get install mysql-client
@@ -201,29 +201,29 @@ wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA
 mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootCA.crt.pem
 ```
 
-Als u uw flexibele server hebt ingericht met behulp van **open bare toegang**, kunt u ook [Azure Cloud shell](https://shell.azure.com/bash) gebruiken om verbinding te maken met uw flexibele server met behulp van een vooraf geïnstalleerde mysql-client, zoals hieronder wordt weer gegeven:
+Als u uw flexibele server hebt ingericht met openbare **toegang,** kunt u [ook Azure Cloud Shell](https://shell.azure.com/bash) gebruiken om verbinding te maken met uw flexibele server met behulp van de vooraf geïnstalleerde mysql-client, zoals hieronder wordt weergegeven:
 
-Als u Azure Cloud Shell wilt gebruiken om verbinding te maken met uw flexibele server, moet u toegang tot het netwerk van Azure Cloud Shell op uw flexibele server toestaan. Hiertoe gaat u naar de Blade **netwerk** op Azure portal voor uw flexibele mysql-server en schakelt u het selectie vakje onder **firewall** in, waarbij ' open bare toegang vanaf een Azure-service in azure op deze server toestaan ' wordt weer gegeven in de onderstaande scherm afbeelding. Klik vervolgens op Opslaan om de instelling te behouden.
+Als u een Azure Cloud Shell uw flexibele server wilt gebruiken, moet u netwerktoegang vanaf Azure Cloud Shell tot uw flexibele server toestaan. Hiervoor gaat u naar de **blade** Netwerken op Azure Portal voor uw flexibele MySQL-server en selecteert u het vakje onder de sectie **Firewall** met de tekst 'Openbare toegang vanuit elke Azure-service binnen Azure tot deze server toestaan', zoals wordt weergegeven in de onderstaande schermopname, en klikt u op Opslaan om de instelling persistent te maken.
 
- > :::image type="content" source="./media/quickstart-create-server-portal/allow-access-to-any-azure-service.png" alt-text="Scherm afbeelding die laat zien hoe u Azure Cloud Shell toegang tot MySQL flexibele server voor open bare netwerk configuratie kunt toestaan.":::
+ > :::image type="content" source="./media/quickstart-create-server-portal/allow-access-to-any-azure-service.png" alt-text="Schermopname die laat zien hoe u toegang Azure Cloud Shell MySQL Flexibele server voor netwerkconfiguratie met openbare toegang.":::
  
  
 > [!NOTE]
-> Het controleren of het toegankelijk is voor het gebruik **van een Azure-service in azure naar deze server** moet alleen worden gebruikt voor ontwikkelen of testen. Hiermee wordt de firewall geconfigureerd om verbindingen toe te staan van IP-adressen die zijn toegewezen aan een Azure-service of-Asset, met inbegrip van verbindingen van de abonnementen van andere klanten.
+> Als u **openbare toegang vanuit een Azure-service binnen Azure** tot deze server toestaan incheckt, mag deze alleen worden gebruikt voor ontwikkeling of testen. De firewall wordt geconfigureerd om verbindingen toe te staan vanaf IP-adressen die zijn toegewezen aan een Azure-service of -asset, inclusief verbindingen van de abonnementen van andere klanten.
 
-Klik op **proberen** om de Azure Cloud shell te starten en gebruik de volgende opdrachten om verbinding te maken met uw flexibele server. Gebruik de servernaam, de gebruikersnaam en het wachtwoord in de opdracht. 
+Klik op **Proberen om** de Azure Cloud Shell te starten en gebruik de volgende opdrachten om verbinding te maken met uw flexibele server. Gebruik de servernaam, de gebruikersnaam en het wachtwoord in de opdracht. 
 
 ```azurecli-interactive
 wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl=true --ssl-ca=DigiCertGlobalRootCA.crt.pem
 ```
 > [!IMPORTANT]
-> Wanneer u verbinding maakt met uw flexibele server met behulp van Azure Cloud Shell, moet u de para meter--SSL = True gebruiken en niet-SSL-modus = vereist.
-> De primaire reden hiervoor is Azure Cloud Shell worden geleverd met een vooraf geïnstalleerde mysql.exe-client van een MariaDB-distributie waarvoor--SSL-para meter vereist is, terwijl de mysql-client van de distributie van Oracle vereist--SSL-modus para meter.
+> Wanneer u verbinding maakt met uw flexibele server met behulp van Azure Cloud Shell, moet u de parameter --ssl=true gebruiken en niet --ssl-mode=REQUIRED.
+> De belangrijkste reden is dat Azure Cloud Shell wordt geleverd met vooraf geïnstalleerde mysql.exe-client uit MariaDB-distributie waarvoor de parameter --ssl is vereist, terwijl de mysql-client van de Oracle-distributie de parameter --ssl-mode vereist.
 
-Als het volgende fout bericht wordt weer gegeven wanneer u verbinding maakt met uw flexibele server met behulp van de eerder genoemde opdracht, hebt u de firewall regel niet meer ingesteld met de optie ' open bare toegang vanaf een Azure-service toestaan in azure naar deze server ', maar eerder wel of niet opgeslagen. Stel de firewall opnieuw in en probeer het opnieuw.
+Als u het volgende foutbericht ziet tijdens het maken van verbinding met uw flexibele server met behulp van de opdracht eerder, hebt u het instellen van de firewallregel met behulp van de eerder genoemde optie 'Openbare toegang vanuit een Azure-service binnen Azure tot deze server toestaan' gemist of wordt de optie niet opgeslagen. Probeer de firewall opnieuw in te stellen en probeer het opnieuw.
 
-FOUT 2002 (HY000): kan geen verbinding maken met MySQL-server op <servername> (115)
+FOUT 2002 (HY000): Kan geen verbinding maken met MySQL-server op <servername> (115)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -242,6 +242,6 @@ az mysql flexible-server delete --resource-group myresourcegroup --name mydemose
 ## <a name="next-steps"></a>Volgende stappen
 
 >[!div class="nextstepaction"]
-> [Verbinding maken en query's uitvoeren met behulp van Azure cli](connect-azure-cli.md) 
->  [Verbinding maken met Azure database for MySQL-flexibele server met versleutelde verbindingen](how-to-connect-tls-ssl.md) 
->  [Een php-web-app (Laravel) bouwen met MySQL](tutorial-php-database-app.md)
+> [Verbinding maken en query's uitvoeren met Behulp van Azure CLI](connect-azure-cli.md) 
+>  [Verbinding maken met Azure Database for MySQL - Flexible Server met versleutelde verbindingen](how-to-connect-tls-ssl.md) 
+>  [Een PHP-web-app (Laravel) bouwen met MySQL](tutorial-php-database-app.md)

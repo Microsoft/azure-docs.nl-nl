@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 11/13/2018
 ms.author: zhshang
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 673a3583b1ec80fb3ad61ec35a1786a59939f6e8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e6e2484dc7fffdcecb64ef3b3afa3a7a4343d29c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94563321"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787301"
 ---
 # <a name="create-a-signalr-service-with-an-app-service"></a>Een SignalR-service maken met App Service
 
@@ -80,12 +80,12 @@ Elke opdracht in de tabel is een koppeling naar specifieke documentatie over de 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az signalr create](/cli/azure/signalr#az-signalr-create) | Hiermee maakt u een resource voor de Azure SignalR-service. |
-| [az signalr key list](/cli/azure/signalr/key#az-signalr-key-list) | Hiermee vraagt u de sleutels op die door uw toepassing worden gebruikt om realtime updates van inhoud te pushen met SignalR. |
-| [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create) | Hiermee maakt u een Azure App Service-plan voor het hosten van web-apps. |
-| [az webapp create](/cli/azure/webapp#az-webapp-create) | Hiermee maakt u een Azure-web-app met behulp van het App Service-hostingplan. |
-| [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) | Hiermee voegt u een nieuwe app-instelling toe voor de web-app. Deze app-instelling wordt gebruikt voor het opslaan van de verbindingsreeks van SignalR. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az signalr create](/cli/azure/signalr#az_signalr_create) | Hiermee maakt u een resource voor de Azure SignalR-service. |
+| [az signalr key list](/cli/azure/signalr/key#az_signalr_key_list) | Hiermee vraagt u de sleutels op die door uw toepassing worden gebruikt om realtime updates van inhoud te pushen met SignalR. |
+| [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create) | Hiermee maakt u een Azure App Service-plan voor het hosten van web-apps. |
+| [az webapp create](/cli/azure/webapp#az_webapp_create) | Hiermee maakt u een Azure-web-app met behulp van het App Service-hostingplan. |
+| [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) | Hiermee voegt u een nieuwe app-instelling toe voor de web-app. Deze app-instelling wordt gebruikt voor het opslaan van de verbindingsreeks van SignalR. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

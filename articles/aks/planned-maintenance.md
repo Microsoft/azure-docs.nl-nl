@@ -1,40 +1,40 @@
 ---
-title: Gepland onderhoud gebruiken voor uw Azure Kubernetes service-cluster (AKS) (preview)
+title: Gepland onderhoud gebruiken voor uw AKS Azure Kubernetes Service cluster (preview)
 titleSuffix: Azure Kubernetes Service
-description: Meer informatie over het gebruik van gepland onderhoud in azure Kubernetes service (AKS).
+description: Informatie over het gebruik van gepland onderhoud in Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: article
 ms.date: 03/03/2021
 ms.author: qpetraroia
 author: qpetraroia
-ms.openlocfilehash: deeb8375e2c1d30a71b0791886362bfb045ef6d7
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f1e0822e77d8466b1b9796041fbdba53c3f9c91f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105727821"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782905"
 ---
-# <a name="use-planned-maintenance-to-schedule-maintenance-windows-for-your-azure-kubernetes-service-aks-cluster-preview"></a>Gepland onderhoud gebruiken om onderhouds Vensters te plannen voor uw Azure Kubernetes service (AKS)-cluster (preview)
+# <a name="use-planned-maintenance-to-schedule-maintenance-windows-for-your-azure-kubernetes-service-aks-cluster-preview"></a>Gepland onderhoud gebruiken om onderhoudsvensters te plannen voor Azure Kubernetes Service AKS-cluster (preview)
 
-Er wordt een regel matig onderhoud uitgevoerd op uw AKS-cluster. Dit werk kan standaard op elk gewenst moment plaatsvinden. Met gepland onderhoud kunt u wekelijkse onderhouds Vensters plannen waarmee uw besturings vlak wordt bijgewerkt, evenals uw uitvoeren-systeem op een VMSS-exemplaar en de gevolgen voor de werk belasting tot een minimum worden beperkt. Eenmaal gepland, wordt al uw onderhoud uitgevoerd tijdens het venster dat u hebt geselecteerd. U kunt een of meer wekelijkse Vensters op het cluster plannen door een dag-of tijds bereik op een specifieke dag op te geven. Onderhouds Vensters worden geconfigureerd met behulp van de Azure CLI.
+Op uw AKS-cluster wordt regelmatig onderhoud automatisch uitgevoerd. Dit werk kan standaard op elk moment plaatsvinden. Met gepland onderhoud kunt u wekelijkse onderhoudsvensters plannen waarmee uw besturingsvlak en kube-system Pods op een VMSS-exemplaar worden bijgewerkt en de impact op de werkbelasting wordt geminimaliseerd. Zodra dit is gepland, wordt al uw onderhoud uitgevoerd tijdens het venster dat u hebt geselecteerd. U kunt een of meer wekelijkse vensters op uw cluster plannen door een dag of tijdsbereik op een specifieke dag op te geven. Onderhoudsvensters worden geconfigureerd met behulp van de Azure CLI.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
+In dit artikel wordt ervan uitgenomen dat u een bestaand AKS-cluster hebt. Als u een AKS-cluster nodig hebt, bekijkt u de AKS-quickstart met behulp van [de Azure CLI][aks-quickstart-cli] of met behulp van de [Azure Portal][aks-quickstart-portal].
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ### <a name="limitations"></a>Beperkingen
 
-Bij het gebruik van gepland onderhoud gelden de volgende beperkingen:
+Wanneer u gepland onderhoud gebruikt, gelden de volgende beperkingen:
 
-- AKS behoudt zich het recht voor om deze vensters te verstoren voor ongeplande of heractieve onderhouds bewerkingen die urgent of kritiek zijn.
-- Momenteel wordt het uitvoeren van onderhouds bewerkingen alleen beschouwd als *Best effort* en niet gegarandeerd binnen een opgegeven venster.
-- Updates kunnen Maxi maal zeven dagen worden geblokkeerd.
+- AKS behoudt zich het recht voor om deze vensters te breken voor niet-geplande/reactieve onderhoudsbewerkingen die urgent of kritiek zijn.
+- Op dit moment wordt het uitvoeren van onderhoudsbewerkingen alleen beschouwd als *'best-effort'* en worden ze niet gegarandeerd binnen een opgegeven periode.
+- Updates kunnen niet langer dan zeven dagen worden geblokkeerd.
 
 ### <a name="install-aks-preview-cli-extension"></a>De CLI-extensie aks-preview installeren
 
-U hebt ook de *AKS-preview* Azure cli-extensie versie 0.5.4 of hoger nodig. Installeer de Azure CLI *-extensie AKS-preview* met behulp van de opdracht [AZ extension add][az-extension-add] . Of installeer alle beschik bare updates met behulp van de opdracht [AZ extension update][az-extension-update] .
+U hebt ook de Azure *CLI-extensie aks-preview* versie 0.5.4 of hoger nodig. Installeer de *Azure CLI-extensie aks-preview* met behulp van de [opdracht az extension add.][az-extension-add] U kunt ook beschikbare updates installeren met behulp van [de opdracht az extension update.][az-extension-update]
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -44,18 +44,18 @@ az extension add --name aks-preview
 az extension update --name aks-preview
 ```
 
-## <a name="allow-maintenance-on-every-monday-at-100am-to-200am"></a>Onderhoud op elke maandag op 1 toestaan: am tot 2: am
+## <a name="allow-maintenance-on-every-monday-at-100am-to-200am"></a>Sta onderhoud toe op elke maandag van 01:00 tot 02:00 uur
 
-U kunt de opdracht gebruiken om een onderhouds venster toe te voegen `az aks maintenanceconfiguration add` .
+Als u een onderhoudsvenster wilt toevoegen, kunt u de opdracht `az aks maintenanceconfiguration add` gebruiken.
 
 > [!IMPORTANT]
-> Geplande onderhouds Vensters worden opgegeven in Coordinated Universal Time (UTC).
+> Geplande onderhoudsvensters worden opgegeven in Coordinated Universal Time (UTC).
 
 ```azurecli-interactive
 az aks maintenanceconfiguration add -g MyResourceGroup --cluster-name myAKSCluster --name default --weekday Monday  --start-hour 1
 ```
 
-In de volgende voorbeeld uitvoer ziet u het onderhouds venster van 1: am tot 2: am elke maandag.
+De volgende voorbeelduitvoer toont het onderhoudsvenster van 1:00 uur tot 2:00 uur elke maandag.
 
 ```json
 {- Finished ..
@@ -76,15 +76,15 @@ In de volgende voorbeeld uitvoer ziet u het onderhouds venster van 1: am tot 2: 
 }
 ```
 
-Als u het onderhoud op elk moment wilt toestaan gedurende een dag, laat u de para meter *begin-Hour* weg. Met de volgende opdracht wordt bijvoorbeeld elke maandag het onderhouds venster voor de hele dag ingesteld:
+Als u onderhoud wilt toestaan op elk moment van de dag, laat u de parameter *start-uur* weg. Met de volgende opdracht stelt u bijvoorbeeld elke maandag het onderhoudsvenster voor de volledige dag in:
 
 ```azurecli-interactive
 az aks maintenanceconfiguration add -g MyResourceGroup --cluster-name myAKSCluster --name default --weekday Monday
 ```
 
-## <a name="add-a-maintenance-configuration-with-a-json-file"></a>Een onderhouds configuratie met een JSON-bestand toevoegen
+## <a name="add-a-maintenance-configuration-with-a-json-file"></a>Een onderhoudsconfiguratie toevoegen met een JSON-bestand
 
-U kunt ook een JSON-bestand gebruiken om een onderhouds venster te maken in plaats van para meters te gebruiken. Maak een `test.json` bestand met de volgende inhoud:
+U kunt ook een JSON-bestand gebruiken om een onderhoudsvenster te maken in plaats van parameters. Maak een `test.json` bestand met de volgende inhoud:
 
 ```json
   {
@@ -113,29 +113,29 @@ U kunt ook een JSON-bestand gebruiken om een onderhouds venster te maken in plaa
 }
 ```
 
-In het bovenstaande JSON-bestand wordt elke dinsdag op 1 een onderhouds venster opgegeven: am-3: am en elke woensdag om 1: am-2: am en 6: am-7: am. Er is ook een uitzonde ring van *2021-05-26T03:00:00Z* naar *2021-05-30T12:00:00Z* waarbij onderhoud niet is toegestaan, zelfs niet als het overlapt met een onderhouds venster. Met de volgende opdracht wordt de onderhouds Vensters van toegevoegd `test.json` .
+Het bovenstaande JSON-bestand geeft elke dinsdag om 13:00 - 3:00 uur en elke woensdag om 13:00 - 2:00 uur en om 6:00 - 7:00 uur aan. Er is ook een uitzondering van *2021-05-26T03:00:00Z* tot *2021-05-30T12:00:00Z,* waarbij onderhoud niet is toegestaan, zelfs niet als het overlapt met een onderhoudsvenster. Met de volgende opdracht worden de onderhoudsvensters van `test.json` toegevoegd.
 
 ```azurecli-interactive
 az aks maintenanceconfiguration add -g MyResourceGroup --cluster-name myAKSCluster --name default --config-file ./test.json
 ```
 
-## <a name="update-an-existing-maintenance-window"></a>Een bestaand onderhouds venster bijwerken
+## <a name="update-an-existing-maintenance-window"></a>Een bestaand onderhoudsvenster bijwerken
 
-Als u een bestaande onderhouds configuratie wilt bijwerken, gebruikt u de `az aks maintenanceconfiguration update` opdracht.
+Gebruik de opdracht om een bestaande onderhoudsconfiguratie bij te `az aks maintenanceconfiguration update` werken.
 
 ```azurecli-interactive
 az aks maintenanceconfiguration update -g MyResourceGroup --cluster-name myAKSCluster --name default --weekday Monday  --start-hour 1
 ```
 
-## <a name="list-all-maintenance-windows-in-an-existing-cluster"></a>Alle onderhouds Vensters in een bestaand cluster weer geven
+## <a name="list-all-maintenance-windows-in-an-existing-cluster"></a>Alle onderhoudsvensters in een bestaand cluster opsommen
 
-Gebruik de opdracht om alle huidige onderhouds configuratie Vensters in uw AKS-cluster weer te geven `az aks maintenanceconfiguration list` .
+Als u alle huidige onderhoudsconfiguratievensters in uw AKS-cluster wilt zien, gebruikt u de `az aks maintenanceconfiguration list` opdracht .
 
 ```azurecli-interactive
 az aks maintenanceconfiguration list -g MyResourceGroup --cluster-name myAKSCluster
 ```
 
-In de onderstaande uitvoer ziet u dat er twee onderhouds Vensters zijn geconfigureerd voor myAKSCluster. Eén venster bevindt zich op maandag om 1: am en een ander venster op vrijdag om 4: am.
+In de onderstaande uitvoer ziet u dat er twee onderhoudsvensters zijn geconfigureerd voor myAKSCluster. Eén venster is op maandag om 13:00 uur en een ander venster is op vrijdag om 4:00 uur.
 
 ```json
 [
@@ -174,15 +174,15 @@ In de onderstaande uitvoer ziet u dat er twee onderhouds Vensters zijn geconfigu
 ]
 ```
 
-## <a name="show-a-specific-maintenance-configuration-window-in-an-aks-cluster"></a>Een specifiek onderhouds configuratie venster weer geven in een AKS-cluster
+## <a name="show-a-specific-maintenance-configuration-window-in-an-aks-cluster"></a>Een specifiek onderhoudsconfiguratievenster in een AKS-cluster tonen
 
-Gebruik de opdracht om een specifiek onderhouds configuratie venster in uw AKS-cluster weer te geven `az aks maintenanceconfiguration show` .
+Als u een specifiek onderhoudsconfiguratievenster in uw AKS-cluster wilt zien, gebruikt u de `az aks maintenanceconfiguration show` opdracht .
 
 ```azurecli-interactive
 az aks maintenanceconfiguration show -g MyResourceGroup --cluster-name myAKSCluster --name default
 ```
 
-In de volgende voorbeeld uitvoer ziet u het onderhouds venster *standaard*:
+In de volgende voorbeelduitvoer ziet u het onderhoudsvenster voor *standaard*:
 
 ```json
 {
@@ -203,9 +203,9 @@ In de volgende voorbeeld uitvoer ziet u het onderhouds venster *standaard*:
 }
 ```
 
-## <a name="delete-a-certain-maintenance-configuration-window-in-an-existing-aks-cluster"></a>Een bepaald onderhouds configuratie venster in een bestaand AKS-cluster verwijderen
+## <a name="delete-a-certain-maintenance-configuration-window-in-an-existing-aks-cluster"></a>Een bepaald onderhoudsconfiguratievenster in een bestaand AKS-cluster verwijderen
 
-Als u een bepaald onderhouds configuratie venster in uw AKS-cluster wilt verwijderen, gebruikt u de `az aks maintenanceconfiguration delete` opdracht.
+Gebruik de opdracht om een bepaald onderhoudsconfiguratievenster in uw AKS-cluster te `az aks maintenanceconfiguration delete` verwijderen.
 
 ```azurecli-interactive
 az aks maintenanceconfiguration delete -g MyResourceGroup --cluster-name myAKSCluster --name default
@@ -213,7 +213,7 @@ az aks maintenanceconfiguration delete -g MyResourceGroup --cluster-name myAKSCl
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [een AKS-cluster upgraden][aks-upgrade] om aan de slag te gaan met het upgraden van uw AKS-cluster
+- Zie Een AKS-cluster upgraden om aan de slag te gaan met het upgraden [van uw AKS-cluster][aks-upgrade]
 
 
 <!-- LINKS - Internal -->
@@ -221,10 +221,10 @@ az aks maintenanceconfiguration delete -g MyResourceGroup --cluster-name myAKSCl
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-feature-register]: /cli/azure/feature#az-feature-register
-[az-aks-install-cli]: /cli/azure/aks#az-aks-install-cli
-[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-feature-register]: /cli/azure/feature#az_feature_register
+[az-aks-install-cli]: /cli/azure/aks#az_aks_install_cli
+[az-provider-register]: /cli/azure/provider#az_provider_register
 [aks-upgrade]: upgrade-cluster.md

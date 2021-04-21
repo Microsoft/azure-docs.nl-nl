@@ -1,132 +1,132 @@
 ---
-title: Bronnen voor ontwikkel aars-Language Understanding
-description: Sdk's, REST Api's, CLI, helpen u bij het ontwikkelen van Language Understanding-apps (LUIS) in uw programmeer taal. Beheer uw Azure-resources en LUIS-voor spellingen.
+title: Resources voor ontwikkelaars - Language Understanding
+description: SDK's, REST API's, CLI helpen u bij het ontwikkelen Language Understanding apps (LUIS) in uw programmeertaal. Uw Azure-resources en LUIS-voorspellingen beheren.
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 01/12/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 08a1965aadf8f50625e54d7c5e3b3f6a44c0bbd4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 04c7d4a7e725d99c7dba94779d365312f8b960af
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98946173"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787103"
 ---
-# <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>SDK-, REST-en CLI-ontwikkelaars bronnen voor Language Understanding (LUIS)
+# <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>SDK-, REST- en CLI-resources voor ontwikkelaars voor Language Understanding (LUIS)
 
-Sdk's, REST Api's, CLI, helpen u bij het ontwikkelen van Language Understanding-apps (LUIS) in uw programmeer taal. Beheer uw Azure-resources en LUIS-voor spellingen.
+SDK's, REST API's, CLI helpen u bij het ontwikkelen Language Understanding apps (LUIS) in uw programmeertaal. Uw Azure-resources en LUIS-voorspellingen beheren.
 
-## <a name="azure-resource-management"></a>Azure-resource beheer
+## <a name="azure-resource-management"></a>Azure-resourcebeheer
 
-Gebruik de Azure Cognitive Services Management-laag voor het maken, bewerken, weer geven en verwijderen van de Language Understanding of de cognitieve service resource.
+Gebruik de Azure Cognitive Services Management-laag om de resource van de Language Understanding of Cognitive Service te maken, bewerken, weer te Language Understanding te verwijderen.
 
-Zoek naar de referentie documentatie op basis van het hulp programma:
+Zoek referentiedocumentatie op basis van het hulpprogramma:
 
-* [Azure-CLI](/cli/azure/cognitiveservices#az-cognitiveservices-list)
+* [Azure-CLI](/cli/azure/cognitiveservices#az_cognitiveservices_list)
 
 * [PowerShell voor Azure RM](/powershell/module/azurerm.cognitiveservices/#cognitive_services)
 
 
-## <a name="language-understanding-authoring-and-prediction-requests"></a>Aanvragen voor ontwerpen Language Understanding en voor spellingen
+## <a name="language-understanding-authoring-and-prediction-requests"></a>Language Understanding-ontwerp- en voorspellingsaanvragen
 
-De Language Understanding-service wordt geopend vanuit een Azure-resource die u moet maken. Er zijn twee resources:
+De Language Understanding-service is toegankelijk vanuit een Azure-resource die u moet maken. Er zijn twee resources:
 
-* Gebruik de **ontwerp** resource voor training voor het maken, bewerken, trainen en publiceren.
-* Gebruik de voor **Spelling** voor runtime om de tekst van de gebruiker te verzenden en een voor spelling te ontvangen.
+* Gebruik de **ontwerpresource** voor training om te maken, bewerken, trainen en publiceren.
+* Gebruik de **voorspelling voor** runtime om tekst van de gebruiker te verzenden en een voorspelling te ontvangen.
 
-Meer informatie over het [v3-Voorspellings eindpunt](luis-migration-api-v3.md).
+Meer informatie over het [V3-voorspellings-eindpunt.](luis-migration-api-v3.md)
 
-Gebruik [Cognitive Services voorbeeld code](https://github.com/Azure-Samples/cognitive-services-quickstart-code) om de meest voorkomende taken te leren en te gebruiken.
+Gebruik [Cognitive Services voorbeeldcode om](https://github.com/Azure-Samples/cognitive-services-quickstart-code) de meest voorkomende taken te leren en te gebruiken.
 
 ### <a name="rest-specifications"></a>REST-specificaties
 
-De [Luis-rest specificaties](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS), samen met alle [Azure rest-specificaties](https://github.com/Azure/azure-rest-api-specs), zijn openbaar beschikbaar op github.
+De [LUIS REST-specificaties](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS), samen met alle [Azure REST-specificaties,](https://github.com/Azure/azure-rest-api-specs)zijn openbaar beschikbaar op GitHub.
 
 ### <a name="rest-apis"></a>REST-API’s
 
-De API'S voor ontwerpen en voor spellingen van eind punten zijn beschikbaar via REST-Api's:
+Api's voor ontwerp- en voorspellings-eindpunten zijn beschikbaar via REST API's:
 
 |Type|Versie|
 |--|--|
-|Ontwerpen|[Offload](https://go.microsoft.com/fwlink/?linkid=2092087)<br>[Preview v3](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview)|
-|Voorspelling|[Offload](https://go.microsoft.com/fwlink/?linkid=2092356)<br>[V3](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/)|
+|Ontwerpen|[V2](https://go.microsoft.com/fwlink/?linkid=2092087)<br>[preview-versie V3](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview)|
+|Voorspelling|[V2](https://go.microsoft.com/fwlink/?linkid=2092356)<br>[V3](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/)|
 
-### <a name="rest-endpoints"></a>REST-eind punten
+### <a name="rest-endpoints"></a>REST-eindpunten
 
-LUIS heeft momenteel twee soorten eind punten:
+LUIS heeft momenteel twee typen eindpunten:
 
-* **ontwerpen** voor het trainings eindpunt
-* query **voorspelling** voor het runtime-eind punt.
+* **maken op** het eindpunt van de training
+* **queryvoorspelling** op het runtime-eindpunt.
 
 |Doel|URL|
 |--|--|
-|V2 ontwerpen voor het trainings eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appID}/`|
-|V3 ontwerpen voor het trainings eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/authoring/v3.0-preview/apps/{appID}/`|
-|V2 voor spelling-alle voor spellingen op runtime-eind punt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q={q}[&timezoneOffset][&verbose][&spellCheck][&staging][&bing-spell-check-subscription-key][&log]`|
-|Voor spelling van v3-versies voor spelling van runtime-eind punt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/{appId}/versions/{versionId}/predict?query={query}[&verbose][&log][&show-all-intents]`|
-|Voorspellings voorspelling voor voor spellingen voor het runtime-eind punt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/{appId}/slots/{slotName}/predict?query={query}[&verbose][&log][&show-all-intents]`|
+|V2-ontwerp op trainings-eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appID}/`|
+|V3-ontwerp op trainings-eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/authoring/v3.0-preview/apps/{appID}/`|
+|V2-voorspelling - alle voorspellingen over runtime-eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q={q}[&timezoneOffset][&verbose][&spellCheck][&staging][&bing-spell-check-subscription-key][&log]`|
+|V3-voorspelling - versievoorspelling op runtime-eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/{appId}/versions/{versionId}/predict?query={query}[&verbose][&log][&show-all-intents]`|
+|V3-voorspelling - slotvoorspelling op runtime-eindpunt|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/{appId}/slots/{slotName}/predict?query={query}[&verbose][&log][&show-all-intents]`|
 
-In de volgende tabel worden de para meters beschreven, aangeduid met accolades `{}` in de vorige tabel.
+In de volgende tabel worden de parameters in de vorige tabel uitgelegd, aangeduid met accolades. `{}`
 
 |Parameter|Doel|
 |--|--|
-|`your-resource-name`|Azure-resource naam|
-|`q` of `query`|utterance tekst verzonden vanuit client toepassing zoals chat-bot|
-|`version`|versie naam van 10 tekens|
+|`your-resource-name`|Azure-resourcenaam|
+|`q` of `query`|utterancetekst verzonden vanuit clienttoepassing zoals chatbot|
+|`version`|Versienaam van 10 tekens|
 |`slot`| `production` of `staging`|
 
-### <a name="rest-query-string-parameters"></a>Query teken reeks parameters voor REST
+### <a name="rest-query-string-parameters"></a>Parameters voor REST-queryreeks
 
 [!INCLUDE [V3 query params](./includes/v3-prediction-query-params.md)]
 
 ## <a name="app-schema"></a>App-schema
 
-Het [app-schema](app-schema-definition.md) wordt geïmporteerd en geëxporteerd in een- `.json` of- `.lu` indeling.
+Het [app-schema](app-schema-definition.md) wordt geïmporteerd en geëxporteerd in de `.json` indeling of `.lu` .
 
-### <a name="language-based-sdks"></a>Op taal gebaseerde Sdk's
+### <a name="language-based-sdks"></a>Op taal gebaseerde SDK's
 
 |Taal |Referentiedocumentatie|Pakket|Snelstartgidsen|
 |--|--|--|--|
-|C#|[Ontwerpen](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring)</br>[Voorspelling](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime)|[NuGet ontwerpen](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[NuGet-voor spelling](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Query voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
-|Go|[Ontwerpen en voors pellen](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
-|Java|[Ontwerpen en voors pellen](/java/api/overview/azure/cognitiveservices/client/languageunderstanding)|[Maven ontwerpen](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Maven-voor spelling](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
-|Javascript|[Ontwerpen](/javascript/api/@azure/cognitiveservices-luis-authoring/)<br>[Voorspelling](/javascript/api/@azure/cognitiveservices-luis-runtime/)|[NPM ontwerpen](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[NPM-voor spelling](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
-|Python|[Ontwerpen en voors pellen](./client-libraries-rest-api.md?pivots=rest-api)|[Pip](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
+|C#|[Ontwerpen](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring)</br>[Voorspelling](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime)|[NuGet-ontwerp](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[NuGet-voorspelling](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Queryvoorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
+|Go|[Maken en voorspellen](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[Sdk](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
+|Java|[Maken en voorspellen](/java/api/overview/azure/cognitiveservices/client/languageunderstanding)|[Maven-ontwerp](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Maven-voorspelling](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
+|Javascript|[Ontwerpen](/javascript/api/@azure/cognitiveservices-luis-authoring/)<br>[Voorspelling](/javascript/api/@azure/cognitiveservices-luis-runtime/)|[NPM-ontwerp](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[NPM-voorspelling](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
+|Python|[Maken en voorspellen](./client-libraries-rest-api.md?pivots=rest-api)|[Pip](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Ontwerpen](./client-libraries-rest-api.md?pivots=rest-api)<br>[Voorspelling](./client-libraries-rest-api.md?pivots=rest-api)|
 
 
 ### <a name="containers"></a>Containers
 
-Language Understanding (LUIS) biedt een [container](luis-container-howto.md) om on-premises en opgenomen versies van uw app te bieden.
+Language Understanding (LUIS) biedt een [container voor](luis-container-howto.md) on-premises en ingesloten versies van uw app.
 
 ### <a name="export-and-import-formats"></a>Indelingen exporteren en importeren
 
-Language Understanding biedt de mogelijkheid om uw app en de bijbehorende modellen te beheren in een JSON-indeling, de `.LU` indeling ([LUDown](https://github.com/microsoft/botbuilder-tools/blob/master/packages/Ludown)) en een gecomprimeerd pakket voor de Language Understanding-container.
+Language Understanding biedt de mogelijkheid om uw app en de modellen ervan te beheren in een JSON-indeling, de `.LU` indeling[(LUDown)](https://github.com/microsoft/botbuilder-tools/blob/master/packages/Ludown)en een gecomprimeerd pakket voor de Language Understanding container.
 
-Het importeren en exporteren van deze indelingen is beschikbaar via de Api's en vanuit de LUIS-Portal. De portal biedt importeren en exporteren als onderdeel van de lijst met apps en versies.
+Het importeren en exporteren van deze indelingen is beschikbaar via de API's en vanuit de LUIS-portal. De portal biedt importeren en exporteren als onderdeel van de lijst Met apps en versies.
 
-## <a name="workshops"></a>Constructie
+## <a name="workshops"></a>Workshops
 
-* GitHub: (workshop) [gesprek-AI: NLU met Luis](https://github.com/GlobalAICommunity/Workshop-Conversational-AI)
+* GitHub: [Conversational-AI (Workshop) : NLU met LUIS](https://github.com/GlobalAICommunity/Workshop-Conversational-AI)
 
 ## <a name="continuous-integration-tools"></a>Hulpprogramma's voor continue integratie
 
-* GitHub: (preview) [het ontwikkelen van een Luis-app met behulp van DevOps-procedures](https://github.com/Azure-Samples/LUIS-DevOps-Template)
-* GitHub: [NLU. DevOps](https://github.com/microsoft/NLU.DevOps) -tools die ondersteuning bieden voor continue integratie en implementatie voor NLU-Services.
+* GitHub: (preview) [Een LUIS-app ontwikkelen met behulp van DevOps-procedures](https://github.com/Azure-Samples/LUIS-DevOps-Template)
+* GitHub: [NLU. DevOps: hulpprogramma's](https://github.com/microsoft/NLU.DevOps) voor continue integratie en implementatie voor NLU-services.
 
-## <a name="bot-framework-tools"></a>Bot Framework tools
+## <a name="bot-framework-tools"></a>Bot Framework hulpprogramma's
 
-Het bot-Framework is beschikbaar als [een SDK](https://github.com/Microsoft/botframework) in verschillende talen en als een service met behulp van [Azure bot service](https://dev.botframework.com/).
+Het bot-framework is beschikbaar [als een SDK](https://github.com/Microsoft/botframework) in verschillende talen en als een service met [behulp van Azure Bot Service](https://dev.botframework.com/).
 
-Bot Framework biedt [verschillende hulpprogram ma's](https://github.com/microsoft/botbuilder-tools) voor het language Understanding, waaronder:
-* [Bot Framework-emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) : een bureaublad toepassing die bot-ontwikkel aars in staat stelt om bots te testen en op te sporen met behulp van de bot Framework SDK
-* [Bot Framework Composer](https://github.com/microsoft/BotFramework-Composer/blob/stable/README.md) : een geïntegreerd hulp programma voor ontwikkel aars en meerdere disciplinaire teams voor het bouwen van bots-en gespreks ervaringen met het micro soft bot Framework
-* Voor [beelden van bot-Framework](https://github.com/microsoft/botbuilder-samples) -in #C, java script, type script en python
+Bot Framework biedt [verschillende hulpprogramma's](https://github.com/microsoft/botbuilder-tools) voor Language Understanding, waaronder:
+* [Bot Framework emulator:](https://github.com/Microsoft/BotFramework-Emulator/releases) een bureaubladtoepassing waarmee botontwikkelaars bots kunnen testen en fouten kunnen opsporen die zijn gebouwd met de Bot Framework SDK
+* [Bot Framework Composer:](https://github.com/microsoft/BotFramework-Composer/blob/stable/README.md) een geïntegreerd ontwikkelhulpprogramma voor ontwikkelaars en teams met meerdere ontwikkelmogelijkheden om bots en gesprekservaringen met de Microsoft Bot Framework
+* [Bot Framework voorbeelden](https://github.com/microsoft/botbuilder-samples) : in #C, JavaScript, TypeScript en Python
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over de veelvoorkomende [HTTP-fout codes](luis-reference-response-codes.md)
-* [Referentie documentatie](../../index.yml) voor alle Api's en sdk's
-* [Bot Framework](https://github.com/Microsoft/botbuilder-dotnet) en [Azure bot service](https://dev.botframework.com/)
+* Meer informatie over de algemene [HTTP-foutcodes](luis-reference-response-codes.md)
+* [Referentiedocumentatie](../../index.yml) voor alle API's en SDK's
+* [Bot-framework](https://github.com/Microsoft/botbuilder-dotnet) [en -Azure Bot Service](https://dev.botframework.com/)
 * [LUDown](https://github.com/microsoft/botbuilder-tools/blob/master/packages/Ludown)
 * [Cognitieve containers](../cognitive-services-container-support.md)

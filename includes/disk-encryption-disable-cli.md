@@ -8,27 +8,27 @@ ms.topic: include
 ms.date: 06/19/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: ed2b13077ff5809899097254dde0fa8406e1db3b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 37571a82ca73342b8edfc4702686ccd9091887c4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "85601378"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771497"
 ---
-U kunt versleuteling uitschakelen met behulp van Azure PowerShell, de Azure CLI of met een resource manager-sjabloon. 
+U kunt versleuteling uitschakelen Azure PowerShell, de Azure CLI of met een Resource Manager sjabloon. 
 
 >[!IMPORTANT]
->Het uitschakelen van versleuteling met Azure Disk Encryption op Linux Vm's wordt alleen ondersteund voor gegevens volumes. Het wordt niet ondersteund op gegevens of besturingssysteem volumes als het volume van het besturings systeem is versleuteld.  
+>Het uitschakelen van versleuteling Azure Disk Encryption linux-VM's wordt alleen ondersteund voor gegevensvolumes. Het wordt niet ondersteund op gegevens- of besturingssysteemvolumes als het besturingssysteemvolume is versleuteld.  
 
-- **Schijf versleuteling uitschakelen met Azure PowerShell:** Als u de versleuteling wilt uitschakelen, gebruikt u de cmdlet [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption) . 
+- **Schijfversleuteling uitschakelen met Azure PowerShell:** Als u de versleuteling wilt uitschakelen, gebruikt u de cmdlet [Disable-AzVMDiskEncryption.](/powershell/module/az.compute/disable-azvmdiskencryption) 
      ```azurepowershell-interactive
      Disable-AzVMDiskEncryption -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM' [-VolumeType DATA]
      ```
 
-- **Versleuteling uitschakelen met Azure cli:** Als u versleuteling wilt uitschakelen, gebruikt u de opdracht [AZ VM Encryption Disable](/cli/azure/vm/encryption#az-vm-encryption-disable) . 
+- **Versleuteling uitschakelen met de Azure CLI:** Als u versleuteling wilt uitschakelen, gebruikt [u de opdracht az vm encryption disable.](/cli/azure/vm/encryption#az_vm_encryption_disable) 
      ```azurecli-interactive
      az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type DATA
      ```
-- **Versleuteling uitschakelen met een resource manager-sjabloon:** Gebruik de sjabloon [versleuteling uitschakelen in een actieve Linux-VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-linux-vm-without-aad) om versleuteling uit te scha kelen.
+- **Versleuteling uitschakelen met een Resource Manager sjabloon:** Gebruik de [sjabloon Versleuteling uitschakelen op een linux-VM-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-linux-vm-without-aad) die wordt uitgevoerd om versleuteling uit te schakelen.
      1. Klik op **Implementeren in Azure**.
-     2. Selecteer het abonnement, de resource groep, de locatie, de virtuele machine, de juridische voor waarden en de overeenkomst.
+     2. Selecteer het abonnement, de resourcegroep, de locatie, de VM, de juridische voorwaarden en de overeenkomst.

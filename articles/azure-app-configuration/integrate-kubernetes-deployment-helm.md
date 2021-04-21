@@ -8,12 +8,12 @@ ms.service: azure-app-configuration
 ms.topic: tutorial
 ms.date: 04/14/2020
 ms.author: shuawan
-ms.openlocfilehash: 4e38366ddcee07f38ca390acf9d580b8764c1c00
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6276fc2027e92d5b7baaf9237a928e7828a3b021
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99979824"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107775759"
 ---
 # <a name="integrate-with-kubernetes-deployment-using-helm"></a>Integreren met Kubernetes-implementatie met Helm
 
@@ -185,7 +185,7 @@ settings:
 Download de configuratie uit App Configuration eerst naar een *myConfig.yaml*-bestand. Gebruik een sleutelfilter om alleen de sleutels te downloaden die met **settings.** beginnen. Als het sleutelfilter in uw geval niet voldoende is om sleutels uit te sluiten van sleutelkluisverwijzingen, kunt u het argument **--skip-keyvault** gebruiken om ze uit te sluiten. 
 
 > [!TIP]
-> Meer informatie over de [exportopdracht](/cli/azure/appconfig/kv#az-appconfig-kv-export). 
+> Meer informatie over de [exportopdracht](/cli/azure/appconfig/kv#az_appconfig_kv_export). 
 
 ```azurecli-interactive
 az appconfig kv export -n myAppConfiguration -d file --path myConfig.yaml --key "settings.*"  --separator "." --format yaml

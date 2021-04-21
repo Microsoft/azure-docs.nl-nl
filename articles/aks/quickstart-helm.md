@@ -1,41 +1,41 @@
 ---
-title: Ontwikkelen op Azure Kubernetes service (AKS) met helm
-description: Gebruik helm met AKS en Azure Container Registry om toepassings containers in een cluster te verpakken en uit te voeren.
+title: Ontwikkelen op Azure Kubernetes Service (AKS) met Helm
+description: Gebruik Helm met AKS en Azure Container Registry om toepassingscontainers in een cluster te verpakken en uit te voeren.
 services: container-service
 author: zr-msft
 ms.topic: article
 ms.date: 03/15/2021
 ms.author: zarhoads
-ms.openlocfilehash: 4f5232920853908aa5ad714313ead201494caa0d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e293d0c58f265b25f3df0a218f84888467468f59
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103493071"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767489"
 ---
-# <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-helm"></a>Snelstartgids: ontwikkelen op Azure Kubernetes service (AKS) met helm
+# <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-helm"></a>Quickstart: Ontwikkelen op Azure Kubernetes Service (AKS) met Helm
 
-[Helm][helm] is een open-source-verpakkings programma waarmee u de levens cyclus van Kubernetes-toepassingen kunt installeren en beheren. Net als Linux-pakket beheer, zoals *apt* en *yum*, beheert helm Kubernetes-grafieken, die pakketten van vooraf geconfigureerde Kubernetes-resources zijn.
+[Helm][helm] is een opensource-pakketprogramma waarmee u de levenscyclus van Kubernetes-toepassingen kunt installeren en beheren. Helm is vergelijkbaar met Linux-pakketbeheerders zoals *APT* en *Yum* en beheert Kubernetes-grafieken. Dit zijn pakketten van vooraf geconfigureerde Kubernetes-resources.
 
-In deze Snelstartgids gebruikt u helm om een toepassing te verpakken en uit te voeren op AKS. Zie voor meer informatie over het installeren van een bestaande toepassing met behulp van helm de [installatie van bestaande toepassingen met helm in][helm-existing] de hand leiding voor AKS.
+In deze quickstart gebruikt u Helm om een toepassing in AKS te verpakken en uit te voeren. Zie de handleiding Bestaande toepassingen installeren met [Helm in AKS][helm-existing] voor meer informatie over het installeren van een bestaande toepassing met Helm.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u geen Azure-abonnement hebt, kunt u een [gratis account](https://azure.microsoft.com/free) maken.
 * [Azure CLI geïnstalleerd](/cli/azure/install-azure-cli).
-* [Helm v3 geïnstalleerd][helm-install].
+* [Helm v3 geïnstalleerd.][helm-install]
 
 ## <a name="create-an-azure-container-registry"></a>Een Azure Container Registry maken
-U moet de container installatie kopieën opslaan in een Azure Container Registry (ACR) om uw toepassing uit te voeren in uw AKS-cluster met behulp van helm. Geef uw eigen register naam op die uniek is binnen Azure en met 5-50 alfanumerieke tekens. De SKU *Basic* is een toegangspunt voor ontwikkelingsdoeleinden dat is geoptimaliseerd voor kosten, met een balans tussen opslag en doorvoer.
+U moet uw containerafbeeldingen opslaan in een Azure Container Registry (ACR) om uw toepassing in uw AKS-cluster uit te voeren met behulp van Helm. Geef uw eigen registernaam op die uniek is in Azure en 5-50 alfanumerieke tekens bevat. De SKU *Basic* is een toegangspunt voor ontwikkelingsdoeleinden dat is geoptimaliseerd voor kosten, met een balans tussen opslag en doorvoer.
 
-In het onderstaande voor beeld wordt [AZ ACR Create][az-acr-create] gebruikt om een ACR met de naam *MyHelmACR* in *MyResourceGroup* te maken met de *basis* -SKU.
+In het onderstaande voorbeeld [wordt az acr create gebruikt][az-acr-create] om een ACR met de naam *MyHelmACR* te maken in *MyResourceGroup* met de Basic-SKU. 
 
 ```azurecli
 az group create --name MyResourceGroup --location eastus
 az acr create --resource-group MyResourceGroup --name MyHelmACR --sku Basic
 ```
 
-Uitvoer is vergelijkbaar met het volgende voor beeld. Noteer uw *login server* -waarde voor uw ACR omdat u deze in een latere stap gaat gebruiken. In het onderstaande voor beeld is *myhelmacr.azurecr.io* de *login server* voor *myhelmacr*.
+De uitvoer is vergelijkbaar met het volgende voorbeeld. Noteer de *waarde van loginServer* voor uw ACR, aangezien u deze in een latere stap gaat gebruiken. In het onderstaande *voorbeeld myhelmacr.azurecr.io* de *loginServer voor* *MyHelmACR.*
 
 ```console
 {
@@ -61,9 +61,9 @@ Uitvoer is vergelijkbaar met het volgende voor beeld. Noteer uw *login server* -
 
 ## <a name="create-an-aks-cluster"></a>Een AKS-cluster maken
 
-Het nieuwe AKS-cluster heeft toegang tot uw ACR nodig om de container installatie kopieën te halen en uit te voeren. Gebruik de volgende opdracht om:
-* Maak een AKS-cluster met de naam *MyAKS* en koppel *MyHelmACR*.
-* Verleen het *MyAKS* -cluster toegang tot uw *MyHelmACR* -ACR.
+Uw nieuwe AKS-cluster moet toegang hebben tot uw ACR om de container-afbeeldingen op te halen en uit te voeren. Gebruik de volgende opdracht om:
+* Maak een AKS-cluster met de *naam MyAKS* en koppel *MyHelmACR.*
+* Verleen het *MyAKS-cluster* toegang tot uw *MyHelmACR* ACR.
 
 
 ```azurecli
@@ -72,15 +72,15 @@ az aks create -g MyResourceGroup -n MyAKS --location eastus  --attach-acr MyHelm
 
 ## <a name="connect-to-your-aks-cluster"></a>Verbinding maken met uw AKS-cluster
 
-Als u een Kubernetes-cluster lokaal wilt verbinden, gebruikt u de Kubernetes-opdracht regel client, [kubectl][kubectl]. `kubectl` is al geïnstalleerd als u Azure Cloud Shell gebruikt. 
+Als u een Kubernetes-cluster lokaal wilt verbinden, gebruikt u de Kubernetes-opdrachtregelclient, [kubectl][kubectl]. `kubectl` is al geïnstalleerd als u Azure Cloud Shell. 
 
-1. `kubectl`Lokaal installeren met behulp van de `az aks install-cli` opdracht:
+1. Installeer `kubectl` lokaal met behulp van de opdracht `az aks install-cli` :
 
     ```azurecli
     az aks install-cli
     ```
 
-2. Configureer `kubectl` om verbinding te maken met uw Kubernetes-cluster met behulp van de `az aks get-credentials` opdracht. In het volgende voor beeld van de opdracht worden referenties opgehaald voor het AKS-cluster met de naam *MyAKS* in de *MyResourceGroup*:  
+2. Configureer `kubectl` om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht `az aks get-credentials` . In het volgende opdrachtvoorbeeld worden referenties voor het AKS-cluster met de *naam MyAKS* in *myResourceGroup opgeslagen:*  
 
     ```azurecli
     az aks get-credentials --resource-group MyResourceGroup --name MyAKS
@@ -88,7 +88,7 @@ Als u een Kubernetes-cluster lokaal wilt verbinden, gebruikt u de Kubernetes-opd
 
 ## <a name="download-the-sample-application"></a>De voorbeeldtoepassing downloaden
 
-Deze Snelstartgids maakt gebruik [van een voor beeld Node.js toepassing uit de opslag plaats voor de voor beelden van Azure dev Spaces][example-nodejs]. Kloon de toepassing van GitHub en navigeer naar de `dev-spaces/samples/nodejs/getting-started/webfrontend` map.
+In deze quickstart wordt [een voorbeeld van Node.js toepassing uit de voorbeeldopslagplaats van Azure Dev Spaces gebruikt.][example-nodejs] Kloon de toepassing vanuit GitHub en navigeer naar de `dev-spaces/samples/nodejs/getting-started/webfrontend` map .
 
 ```console
 git clone https://github.com/Azure/dev-spaces
@@ -97,7 +97,7 @@ cd dev-spaces/samples/nodejs/getting-started/webfrontend
 
 ## <a name="create-a-dockerfile"></a>Een Dockerfile maken
 
-Maak een nieuw *Dockerfile* -bestand met behulp van de volgende opdrachten:
+Maak een nieuw *Dockerfile-bestand* met behulp van de volgende opdrachten:
 
 ```dockerfile
 FROM node:latest
@@ -114,9 +114,9 @@ EXPOSE 80
 CMD ["node","server.js"]
 ```
 
-## <a name="build-and-push-the-sample-application-to-the-acr"></a>De voorbeeld toepassing bouwen en pushen naar de ACR
+## <a name="build-and-push-the-sample-application-to-the-acr"></a>De voorbeeldtoepassing bouwen en pushen naar de ACR
 
-Met de voor gaande Dockerfile voert u de opdracht [AZ ACR build][az-acr-build] uit om een installatie kopie te bouwen en te pushen naar het REGI ster. `.`Aan het einde van de opdracht wordt de locatie van de Dockerfile (in dit geval de huidige map) ingesteld.
+Voer met behulp van het voorgaande Dockerfile de [opdracht az acr build][az-acr-build] uit om een afbeelding te bouwen en naar het register te pushen. De `.` aan het einde van de opdracht stelt de locatie van de Dockerfile (in dit geval de huidige map).
 
 ```azurecli
 az acr build --image webfrontend:v1 \
@@ -124,18 +124,18 @@ az acr build --image webfrontend:v1 \
   --file Dockerfile .
 ```
 
-## <a name="create-your-helm-chart"></a>Uw helm-grafiek maken
+## <a name="create-your-helm-chart"></a>Uw Helm-grafiek maken
 
-Genereer uw helm-grafiek met behulp van de `helm create` opdracht.
+Genereer uw Helm-grafiek met behulp van de `helm create` opdracht .
 
 ```console
 helm create webfrontend
 ```
 
-*Webfrontend/values. yaml* bijwerken:
-* Vervang het login server van het REGI ster dat u in een eerdere stap hebt genoteerd, zoals *myhelmacr.azurecr.io*.
-* Wijzigen `image.repository` in `<loginServer>/webfrontend`
-* Wijzigen `service.type` in `LoadBalancer`
+Werk *webfrontend/values.yaml bij:*
+* Vervang de loginServer van uw register die u in een eerdere stap hebt genoteerd, *zoals myhelmacr.azurecr.io*.
+* Wijzig `image.repository` in `<loginServer>/webfrontend`
+* Wijzig `service.type` in `LoadBalancer`
 
 Bijvoorbeeld:
 
@@ -156,7 +156,7 @@ service:
 ...
 ```
 
-Update `appVersion` `v1` in *webfrontend/Chart. yaml*. Bijvoorbeeld
+Werk `appVersion` bij naar in `v1` *webfrontend/Chart.yaml*. Bijvoorbeeld
 
 ```yml
 apiVersion: v2
@@ -167,15 +167,15 @@ name: webfrontend
 appVersion: v1
 ```
 
-## <a name="run-your-helm-chart"></a>Uw helm-grafiek uitvoeren
+## <a name="run-your-helm-chart"></a>Uw Helm-grafiek uitvoeren
 
-Installeer uw toepassing met behulp van de opdracht in uw helm-grafiek `helm install` .
+Installeer uw toepassing met behulp van uw Helm-grafiek met behulp van de `helm install` opdracht .
 
 ```console
 helm install webfrontend webfrontend/
 ```
 
-Het duurt enkele minuten voordat de service een openbaar IP-adres heeft geretourneerd. Bewaak de voortgang met de `kubectl get service` opdracht met het `--watch` argument.
+Het duurt enkele minuten voordat de service een openbaar IP-adres retournt. Controleer de voortgang met `kubectl get service` behulp van de opdracht met het argument `--watch` .
 
 ```console
 $ kubectl get service --watch
@@ -186,11 +186,11 @@ webfrontend         LoadBalancer  10.0.141.72   <pending>     80:32150/TCP   2m
 webfrontend         LoadBalancer  10.0.141.72   <EXTERNAL-IP> 80:32150/TCP   7m
 ```
 
-Navigeer naar de load balancer van uw toepassing in een browser met behulp van de `<EXTERNAL-IP>` om de voorbeeld toepassing te bekijken.
+Navigeer naar de load balancer van uw toepassing in een browser met behulp van de `<EXTERNAL-IP>` om de voorbeeldtoepassing te bekijken.
 
 ## <a name="delete-the-cluster"></a>Het cluster verwijderen
 
-Gebruik de opdracht [AZ Group delete][az-group-delete] om de resource groep, het AKS-cluster, het container register, de container installatie kopieën die zijn opgeslagen in de ACR en alle gerelateerde resources te verwijderen.
+Gebruik de [opdracht az group delete][az-group-delete] om de resourcegroep, het AKS-cluster, het containerregister, de containerafbeeldingen die zijn opgeslagen in de ACR en alle gerelateerde resources te verwijderen.
 
 ```azurecli-interactive
 az group delete --name MyResourceGroup --yes --no-wait
@@ -203,16 +203,16 @@ az group delete --name MyResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de helm-documentatie voor meer informatie over het gebruik van helm.
+Zie de Helm-documentatie voor meer informatie over het gebruik van Helm.
 
 > [!div class="nextstepaction"]
 > [Helm-documentatie][helm-documentation]
 
-[az-acr-create]: /cli/azure/acr#az-acr-create
-[az-acr-build]: /cli/azure/acr#az-acr-build
-[az-group-delete]: /cli/azure/group#az-group-delete
-[az aks get-credentials]: /cli/azure/aks#az-aks-get-credentials
-[az aks install-cli]: /cli/azure/aks#az-aks-install-cli
+[az-acr-create]: /cli/azure/acr#az_acr_create
+[az-acr-build]: /cli/azure/acr#az_acr_build
+[az-group-delete]: /cli/azure/group#az_group_delete
+[az aks get-credentials]: /cli/azure/aks#az_aks_get_credentials
+[az aks install-cli]: /cli/azure/aks#az_aks_install_cli
 [example-nodejs]: https://github.com/Azure/dev-spaces/tree/master/samples/nodejs/getting-started/webfrontend
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [helm]: https://helm.sh/

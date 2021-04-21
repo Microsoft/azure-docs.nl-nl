@@ -3,18 +3,18 @@ title: Best practices voor het register
 description: Leer hoe u Azure Container Registry effectief gebruikt door deze aanbevolen procedures te volgen.
 ms.topic: article
 ms.date: 01/07/2021
-ms.openlocfilehash: 01c8c7f547be9dd225022fb3315a4bdecc48c2bf
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0811cc4a5bffc21ffba19e64a3887eab6bc36fbb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100578140"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107784133"
 ---
 # <a name="best-practices-for-azure-container-registry"></a>Aanbevolen procedures voor Azure Container Registry
 
-Door deze aanbevolen procedures te volgen, kunt u de prestaties en het rendabele gebruik van uw persoonlijke REGI ster in azure maximaliseren om container installatie kopieën en andere artefacten op te slaan en te implementeren.
+Door deze best practices te volgen, kunt u de prestaties en het rendabele gebruik van uw privéregister in Azure maximaliseren voor het opslaan en implementeren van containerafbeeldingen en andere artefacten.
 
-Zie voor achtergrond informatie over Register concepten [over registers, opslag plaatsen en installatie kopieën](container-registry-concepts.md). Zie ook [aanbevelingen voor het labelen en versie beheer van container installatie kopieën](container-registry-image-tag-version.md) voor strategieën voor het labelen en de installatie kopieën in het REGI ster. 
+Zie About [registries, repositories, and images (Over registers, opslagplaatsen](container-registry-concepts.md)en afbeeldingen) voor achtergrondinformatie over registerconcepten. Zie ook [Recommendations for tagging and versioning container images](container-registry-image-tag-version.md) (Aanbevelingen voor het taggen en versieren van containerafbeeldingen) voor strategieën voor het taggen en versien van afbeeldingen in uw register. 
 
 ## <a name="network-close-deployment"></a>Implementatie dichtbij het netwerk
 
@@ -25,26 +25,26 @@ Bovendien brengen alle openbare clouds, waaronder Azure, netwerkkosten voor uitg
 
 ## <a name="geo-replicate-multi-region-deployments"></a>Geo-replicatie voor implementaties in meerdere regio’s
 
-Gebruik de functie voor [geo-replicatie](container-registry-geo-replication.md) in Azure Container Registry om containers naar meerdere regio's te implementeren. Of u nu internationale klanten vanuit lokale datacentra helpt of uw dat uw ontwikkelteam zich op verschillende locaties bevindt, u kunt uw registerbeheer vereenvoudigen en latentie minimaliseren door geo-replicatie op uw register toe te passen. U kunt ook regionale [webhooks](container-registry-webhook.md) configureren om u op de hoogte te stellen van gebeurtenissen in specifieke replica's, zoals wanneer installatie kopieën worden gepusht.
+Gebruik de functie voor [geo-replicatie](container-registry-geo-replication.md) in Azure Container Registry om containers naar meerdere regio's te implementeren. Of u nu internationale klanten vanuit lokale datacentra helpt of uw dat uw ontwikkelteam zich op verschillende locaties bevindt, u kunt uw registerbeheer vereenvoudigen en latentie minimaliseren door geo-replicatie op uw register toe te passen. U kunt ook regionale [webhooks configureren om](container-registry-webhook.md) u op de hoogte te stellen van gebeurtenissen in specifieke replica's, zoals wanneer afbeeldingen worden pushen.
 
-Geo-replicatie is beschikbaar voor [Premium](container-registry-skus.md) -registers. Zie de driedelige zelfstudie [Geo-replicatie in Azure Container Registry](container-registry-tutorial-prepare-registry.md) voor informatie over het gebruik van geo-replicatie.
+Geo-replicatie is [](container-registry-skus.md) beschikbaar met Premium-registers. Zie de driedelige zelfstudie [Geo-replicatie in Azure Container Registry](container-registry-tutorial-prepare-registry.md) voor informatie over het gebruik van geo-replicatie.
 
-## <a name="maximize-pull-performance"></a>Optimale pull-prestaties
+## <a name="maximize-pull-performance"></a>Pull-prestaties maximaliseren
 
-Naast het plaatsen van installatie kopieën, kunnen de kenmerken van uw installatie kopieën zelf de prestaties van het pull-systeem beïnvloeden.
+Naast het plaatsen van afbeeldingen dicht bij uw implementaties, kunnen kenmerken van uw afbeeldingen zelf invloed hebben op de pull-prestaties.
 
-* **Afbeeldings grootte** : Verklein de grootte van uw afbeeldingen door overbodige [lagen](container-registry-concepts.md#manifest) te verwijderen of de grootte van lagen te verminderen. Eén manier om de grootte van de installatie kopie te verkleinen is door gebruik te maken van de oplossing voor het bouwen van de [multi fase docker](https://docs.docker.com/develop/develop-images/multistage-build/) om alleen de benodigde runtime componenten op te nemen. 
+* **Afbeeldingsgrootte:** minimaliseer de grootte van uw afbeeldingen door onnodige lagen te [verwijderen](container-registry-concepts.md#manifest) of de grootte van lagen te verkleinen. Een manier om de grootte van de afbeelding te verkleinen, is door de [Docker-build-benadering](https://docs.docker.com/develop/develop-images/multistage-build/) met meerdere fases te gebruiken om alleen de benodigde runtime-onderdelen op te nemen. 
 
-  Controleer ook of de installatie kopie een lichtere basis installatie kopie van het besturings systeem kan bevatten. En als u een implementatie omgeving gebruikt, zoals Azure Container Instances die bepaalde basis installatie kopieën in de cache opslaat, controleert u of u een afbeelding slaag kunt wisselen voor een van de in de cache opgeslagen installatie kopieën. 
-* **Aantal lagen** : Hiermee wordt het aantal gebruikte lagen gebalanceerd. Als u te weinig hebt, kunt u niet profiteren van het opnieuw gebruiken en opslaan van lagen op de host. Te veel, en uw implementatie omgeving brengt meer tijd in betrekken en decomprimeren. Vijf tot tien lagen zijn optimaal.
+  Controleer ook of uw afbeelding een lichtere basis-OS-afbeelding kan bevatten. En als u een implementatieomgeving gebruikt, zoals Azure Container Instances die bepaalde basisafbeeldingen in de cache opgeslagen, controleert u of u een afbeeldingslaag kunt wisselen voor een van de afbeeldingen in de cache. 
+* **Aantal lagen: een balans** vinden tussen het aantal gebruikte lagen. Als u te weinig hebt, profiteert u niet van het hergebruik van lagen en opslaan in de caching op de host. Te veel en uw implementatieomgeving besteedt meer tijd aan het binnenhalen en decomprimeren. Vijf tot tien lagen is optimaal.
 
-Kies [ook een servicelaag](container-registry-skus.md) van Azure container Registry die voldoet aan de prestatie behoeften. De Premium-laag biedt de grootste band breedte en het hoogste tarief van gelijktijdige lees-en schrijf bewerkingen wanneer u grote hoeveel heden implementaties hebt.
+Kies ook een [servicelaag van](container-registry-skus.md) Azure Container Registry die voldoet aan uw prestatiebehoeften. De Premium-laag biedt de grootste bandbreedte en de hoogste snelheid van gelijktijdige lees- en schrijfbewerkingen wanneer u implementaties met een hoog volume hebt.
 
 ## <a name="repository-namespaces"></a>Opslagplaatsnaamruimten
 
-Door opslagplaats naam ruimten te gebruiken, kunt u het delen van één REGI ster op meerdere groepen binnen uw organisatie toestaan. Registers kunnen worden gedeeld tussen implementaties en teams. Azure Container Registry biedt ondersteuning voor geneste naamruimten, waardoor met geïsoleerde groepen kan worden gewerkt. Het REGI ster beheert echter alle opslag plaatsen onafhankelijk, niet als een-hiërarchie.
+Door naamruimten voor opslagplaatsen te gebruiken, kunt u toestaan dat één register wordt gedeeld in meerdere groepen binnen uw organisatie. Registers kunnen worden gedeeld tussen implementaties en teams. Azure Container Registry biedt ondersteuning voor geneste naamruimten, waardoor met geïsoleerde groepen kan worden gewerkt. Het register beheert echter alle opslagplaatsen onafhankelijk, niet als een hiërarchie.
 
-Neem bijvoorbeeld de volgende container installatiekopielabels in overweging. Installatie kopieën die voor het hele bedrijf worden gebruikt, `aspnetcore` worden in de hoofd naam ruimte geplaatst, terwijl container installatie kopieën die eigendom zijn van de producten en marketing groepen elk hun eigen naam ruimten gebruiken.
+Neem bijvoorbeeld de volgende container installatiekopielabels in overweging. Afbeeldingen die bedrijfsbreed worden gebruikt, zoals , worden in de hoofdnaamruimte geplaatst, terwijl containerafbeeldingen die eigendom zijn van de groepen Producten en Marketing elk hun eigen `aspnetcore` naamruimten gebruiken.
 
 - *contoso.azurecr.io/aspnetcore:2.0*
 - *contoso.azurecr.io/products/widget/web:1*
@@ -53,9 +53,9 @@ Neem bijvoorbeeld de volgende container installatiekopielabels in overweging. In
 
 ## <a name="dedicated-resource-group"></a>Toegewezen resourcegroep
 
-Omdat container registers resources zijn die worden gebruikt in meerdere container-hosts, moet een REGI ster zich in een eigen resource groep bevinden.
+Omdat containerregisters resources zijn die worden gebruikt op meerdere containerhosts, moet een register zich in een eigen resourcegroep bevinden.
 
-Hoewel u kunt experimenteren met een specifiek type host, zoals [Azure container instances](../container-instances/container-instances-overview.md), wilt u waarschijnlijk het container exemplaar verwijderen wanneer u klaar bent. Maar misschien wilt u de verzameling installatiekopieën die u naar Azure Container Registry hebt gepusht, wel houden. Door uw register in een eigen resourcegroep te plaatsen, verkleint u het risico dat u de verzameling installatiekopieën in het register per ongeluk verwijdert als u de resourcegroep van de containerinstantie verwijdert.
+Hoewel u kunt experimenteren met een specifiek hosttype, zoals [Azure Container Instances,](../container-instances/container-instances-overview.md)wilt u waarschijnlijk de container-instantie verwijderen wanneer u klaar bent. Maar misschien wilt u de verzameling installatiekopieën die u naar Azure Container Registry hebt gepusht, wel houden. Door uw register in een eigen resourcegroep te plaatsen, verkleint u het risico dat u de verzameling installatiekopieën in het register per ongeluk verwijdert als u de resourcegroep van de containerinstantie verwijdert.
 
 ## <a name="authentication-and-authorization"></a>Verificatie en autorisatie
 
@@ -63,18 +63,18 @@ Voor de verificatie van een Azure-containerregister bestaan er twee primaire sce
 
 | Type | Voorbeeldscenario | Aanbevolen methode |
 |---|---|---|
-| Afzonderlijke identiteit | Een ontwikkelaar die installatiekopieën binnenhaalt op of pusht vanaf zijn ontwikkelcomputer. | [az acr login](/cli/azure/acr#az-acr-login) |
+| Afzonderlijke identiteit | Een ontwikkelaar die installatiekopieën binnenhaalt op of pusht vanaf zijn ontwikkelcomputer. | [az acr login](/cli/azure/acr#az_acr_login) |
 | Headless/service-identiteit | Bouw en implementeer pijplijnen waarbij de gebruiker niet direct is betrokken. | [Service-principal](container-registry-authentication.md#service-principal) |
 
-Zie [verifiëren met een Azure container Registry](container-registry-authentication.md)voor uitgebreide informatie over deze en andere Azure container Registry verificatie scenario's.
+Zie Verifiëren met een [Azure-containerregister](container-registry-authentication.md)voor Azure Container Registry uitgebreide informatie over deze en andere verificatiescenario's.
 
-Azure Container Registry ondersteunt beveiligings procedures in uw organisatie om taken en bevoegdheden naar verschillende identiteiten te distribueren. Met [op rollen gebaseerd toegangs beheer](container-registry-roles.md)kunt u de juiste machtigingen toewijzen aan verschillende gebruikers, service-principals of andere identiteiten die verschillende register bewerkingen uitvoeren. U kunt bijvoorbeeld push machtigingen toewijzen aan een service-principal die wordt gebruikt in een build-pijp lijn en pull-machtigingen toewijzen aan een andere identiteit die wordt gebruikt voor de implementatie. [Tokens](container-registry-repository-scoped-permissions.md) maken voor nauw keurige, beperkte tijd toegang tot specifieke opslag plaatsen.
+Azure Container Registry ondersteunt beveiligingsprocedures in uw organisatie om taken en bevoegdheden naar verschillende identiteiten te distribueren. Wijs met op rollen gebaseerd toegangsbeheer de juiste machtigingen toe aan verschillende gebruikers, [service-principals](container-registry-roles.md)of andere identiteiten die verschillende registerbewerkingen uitvoeren. Wijs bijvoorbeeld pushmachtigingen toe aan een service-principal die wordt gebruikt in een build-pijplijn en wijs pull-machtigingen toe aan een andere identiteit die wordt gebruikt voor implementatie. Maak [tokens](container-registry-repository-scoped-permissions.md) voor een fijnafgepatrieerde, tijdsbegrensde toegang tot specifieke opslagplaatsen.
 
 ## <a name="manage-registry-size"></a>Registergrootte beheren      
 
-De opslag beperkingen van elke [container register service-laag][container-registry-skus] zijn bedoeld om te worden uitgelijnd met een typisch scenario: **Basic** om aan de slag te gaan, **standaard** voor de meeste productie toepassingen en **Premium** voor de prestaties van de Hyper-schaal en [geo-replicatie][container-registry-geo-replication]. Tijdens de levensduur van het register moet u de grootte ervan beheren door regelmatig ongebruikte inhoud te verwijderen.
+De opslagbeperkingen van elke [servicelaag van het containerregister][container-registry-skus] zijn bedoeld om te worden afgestemd op een typisch scenario: **Basic** om aan de slag te gaan, **Standard** voor de meeste productietoepassingen en **Premium** voor hyperschaalprestaties en [geo-replicatie.][container-registry-geo-replication] Tijdens de levensduur van het register moet u de grootte ervan beheren door regelmatig ongebruikte inhoud te verwijderen.
 
-Gebruik de Azure CLI [-opdracht AZ ACR show-Usage][az-acr-show-usage] om de huidige grootte van het REGI ster weer te geven:
+Gebruik de Azure CLI-opdracht [az acr show-usage om][az-acr-show-usage] de huidige grootte van uw register weer te geven:
 
 ```azurecli
 az acr show-usage --resource-group myResourceGroup --name myregistry --output table
@@ -87,29 +87,29 @@ Size      536870912000  185444288        Bytes
 Webhooks  100                            Count
 ```
 
-U kunt ook de huidige opslag locatie vinden die wordt gebruikt in het **overzicht** van het REGI ster in de Azure portal:
+U kunt de huidige opslag die wordt gebruikt ook vinden in het **overzicht** van uw register in de Azure Portal:
 
 ![Informatie over het registergebruik in Azure Portal][registry-overview-quotas]
 
-### <a name="delete-image-data"></a>Afbeeldings gegevens verwijderen
+### <a name="delete-image-data"></a>Afbeeldingsgegevens verwijderen
 
-Azure Container Registry ondersteunt verschillende methoden voor het verwijderen van afbeeldings gegevens uit het container register. U kunt installatie kopieën verwijderen via tag of manifest Digest of een hele opslag plaats verwijderen.
+Azure Container Registry ondersteunt verschillende methoden voor het verwijderen van afbeeldingsgegevens uit uw containerregister. U kunt afbeeldingen verwijderen met een tag of manifest digest, of een hele opslagplaats verwijderen.
 
-Zie [container installatie kopieën in azure container Registry verwijderen](container-registry-delete.md)voor meer informatie over het verwijderen van afbeeldings gegevens uit het REGI ster, inclusief niet-gelabeld (ook wel ' Dangling ' of ' zwevende ') installatie kopieën genoemd.
+Zie Containerafbeeldingen verwijderen in Azure Container Registry voor meer informatie over het verwijderen van afbeeldingsgegevens uit [het register,](container-registry-delete.md)inclusief niet-getagged (ook wel zwevende of zwevende) afbeeldingen genoemd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Azure Container Registry is beschikbaar in verschillende lagen (ook wel Sku's genoemd) die verschillende mogelijkheden bieden. Zie [Azure container Registry service lagen](container-registry-skus.md)voor meer informatie over de beschik bare service lagen.
+Azure Container Registry is beschikbaar in verschillende lagen (ook wel SKU's genoemd) die verschillende mogelijkheden bieden. Zie servicelagen Azure Container Registry [voor meer informatie over de beschikbare servicelagen.](container-registry-skus.md)
 
-Zie [Azure-beveiligings basislijn voor Azure container Registry](security-baseline.md)voor aanbevelingen voor het verbeteren van de beveiligings postuur van uw container registers.
+Zie Azure-beveiligingsbasislijn voor meer informatie over het verbeteren van de beveiligingsstatus van uw containerregisters [Azure Container Registry.](security-baseline.md)
 
 <!-- IMAGES -->
 [delete-repository-portal]: ./media/container-registry-best-practices/delete-repository-portal.png
 [registry-overview-quotas]: ./media/container-registry-best-practices/registry-overview-quotas.png
 
 <!-- LINKS - Internal -->
-[az-acr-repository-delete]: /cli/azure/acr/repository#az-acr-repository-delete
-[az-acr-show-usage]: /cli/azure/acr#az-acr-show-usage
+[az-acr-repository-delete]: /cli/azure/acr/repository#az_acr_repository_delete
+[az-acr-show-usage]: /cli/azure/acr#az_acr_show_usage
 [azure-cli]: /cli/azure
 [azure-portal]: https://portal.azure.com
 [container-registry-geo-replication]: container-registry-geo-replication.md

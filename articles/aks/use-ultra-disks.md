@@ -1,44 +1,44 @@
 ---
-title: Ondersteuning van ultra Disk inschakelen op de Azure Kubernetes-service (AKS)
-description: Meer informatie over het inschakelen en configureren van ultra schijven in een Azure Kubernetes service-cluster (AKS)
+title: Ondersteuning Ultra Disk inschakelen op Azure Kubernetes Service (AKS)
+description: Meer informatie over het inschakelen en configureren Ultra Disks in een AKS Azure Kubernetes Service cluster
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: c743162ed3f75386287e050443e82069e797ced9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7dbe0a75ce2079bdec752f7fee0c3e97e3ae2ffa
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102502566"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767345"
 ---
-# <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Gebruik Azure Ultra disks in azure Kubernetes service (preview)
+# <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Azure Ultra Disks gebruiken op Azure Kubernetes Service (preview)
 
-[Azure Ultra disks](../virtual-machines/disks-enable-ultra-ssd.md) biedt hoge door Voer, hoge IOPS en een consistente schijf opslag met lage latentie voor uw stateful toepassingen. Een belang rijk voor deel van ultra schijven is de mogelijkheid om de prestaties van de SSD in combi natie met uw workloads dynamisch te wijzigen zonder dat u de agent knooppunten opnieuw hoeft op te starten. Ultra disks zijn geschikt voor gegevensintensieve workloads.
+[Azure Ultra Disks](../virtual-machines/disks-enable-ultra-ssd.md) bieden hoge doorvoer, hoge IOPS en consistente schijfopslag met lage latentie voor uw stateful toepassingen. Een belangrijk voordeel van ultraschijven is de mogelijkheid om de prestaties van de SSD samen met uw werkbelastingen dynamisch te wijzigen zonder dat u de agentknooppunten opnieuw hoeft op te starten. Ultraschijven zijn geschikt voor gegevensintensieve workloads.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Deze functie kan alleen worden ingesteld tijdens het maken van het cluster of het maken van een knooppunt groep.
+Deze functie kan alleen worden ingesteld tijdens het maken van het cluster of het maken van een knooppuntgroep.
 
 > [!IMPORTANT]
-> Voor Azure Ultra disks is nodepools geïmplementeerd in beschikbaarheids zones en regio's die ondersteuning bieden voor deze schijven en alleen specifieke VM-reeksen. Bekijk het [**bereik en de beperkingen van ultra disks**](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations).
+> Voor Azure Ultra Disks zijn knooppuntpools vereist die zijn geïmplementeerd in beschikbaarheidszones en regio's die ondersteuning bieden voor deze schijven, evenals alleen specifieke VM-serie. Zie het bereik en de beperkingen voor de ga naar Ultra [**disks.**](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
 
-### <a name="register-the-enableultrassd-preview-feature"></a>De `EnableUltraSSD` Preview-functie registreren
+### <a name="register-the-enableultrassd-preview-feature"></a>De `EnableUltraSSD` preview-functie registreren
 
-Als u een AKS-cluster of een knooppunt groep wilt maken die kan profiteren van ultra schijven, moet u de `EnableUltraSSD` functie vlag inschakelen voor uw abonnement.
+Als u een AKS-cluster of een knooppuntgroep wilt maken die gebruik kan maken van Ultra Disks, moet u de `EnableUltraSSD` functievlag inschakelen voor uw abonnement.
 
-Registreer de `EnableUltraSSD` functie vlag met de opdracht [AZ feature REGI ster][az-feature-register] , zoals weer gegeven in het volgende voor beeld:
+Registreer de `EnableUltraSSD` functievlag met behulp van [de opdracht az feature register,][az-feature-register] zoals wordt weergegeven in het volgende voorbeeld:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.ContainerService" --name "EnableUltraSSD"
 ```
 
-Het duurt enkele minuten voordat de status is *geregistreerd*. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list][az-feature-list]:
+Het duurt enkele minuten voordat de status Geregistreerd *we weergeven.* U kunt de registratiestatus controleren met behulp van de opdracht [az feature list][az-feature-list]:
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableUltraSSD')].{Name:name,State:properties.state}"
 ```
 
-Als u klaar bent, vernieuwt u de registratie van de resource provider *micro soft. container service* met de opdracht [AZ provider REGI ster][az-provider-register] :
+Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider *Microsoft.ContainerService* met behulp van [de opdracht az provider register:][az-provider-register]
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -48,7 +48,7 @@ az provider register --namespace Microsoft.ContainerService
 
 ### <a name="install-aks-preview-cli-extension"></a>De CLI-extensie aks-preview installeren
 
-Als u een AKS-cluster of een knooppunt groep wilt maken die ultra disks kan gebruiken, hebt u de meest recente *AKS-preview cli-* extensie nodig. Installeer de Azure CLI *-extensie AKS-preview* met behulp van de opdracht [AZ extension add][az-extension-add] of installeer beschik bare updates met behulp van de opdracht [AZ extension update][az-extension-update] :
+Als u een AKS-cluster of een knooppuntgroep wilt maken die gebruik kan maken van Ultra Disks, hebt u de meest recente *CLI-extensie aks-preview* nodig. Installeer de *Azure CLI-extensie aks-preview* met behulp van de [opdracht az extension add][az-extension-add] of installeer beschikbare updates met de opdracht az extension [update:][az-extension-update]
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -59,48 +59,48 @@ az extension update --name aks-preview
 ``` 
 
 ### <a name="limitations"></a>Beperkingen
-- Bekijk het [ **bereik en de beperkingen van ultra disks** .](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
-- Het ondersteunde grootte bereik voor een ultra schijven ligt tussen 100 en 1500
+- Zie het bereik en de beperkingen voor de ga naar Ultra [ **Disks**](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
+- Het ondersteunde groottebereik voor ultraschijven ligt tussen 100 en 1500
 
-## <a name="create-a-new-cluster-that-can-use-ultra-disks"></a>Een nieuw cluster maken dat ultra schijven kan gebruiken
+## <a name="create-a-new-cluster-that-can-use-ultra-disks"></a>Een nieuw cluster maken dat ultraschijven kan gebruiken
 
-Maak een AKS-cluster dat kan profiteren van ultra schijven met behulp van de volgende CLI-opdrachten. Gebruik de `--aks-custom-headers` markering om de functie in te stellen `EnableUltraSSD` .
+Maak een AKS-cluster dat gebruik kan maken van Ultra Disks behulp van de volgende CLI-opdrachten. Gebruik de `--aks-custom-headers` vlag om de functie in te `EnableUltraSSD` stellen.
 
-Een Azure-resource groep maken:
+Een Azure-resourcegroep maken:
 
 ```azurecli-interactive
 # Create an Azure resource group
 az group create --name myResourceGroup --location westus2
 ```
 
-Maak het AKS-cluster met ondersteuning voor Ultra disks.
+Maak het AKS-cluster met ondersteuning voor Ultra Disks.
 
 ```azurecli-interactive
 # Create an AKS-managed Azure AD cluster
 az aks create -g MyResourceGroup -n MyManagedCluster -l westus2 --node-vm-size Standard_L8s_v2 --zones 1 2 --node-count 2 --aks-custom-headers EnableUltraSSD=true
 ```
 
-Als u clusters wilt maken zonder ondersteuning voor een ultra schijf, kunt u dit doen door de aangepaste para meter weg te laten `--aks-custom-headers` .
+Als u clusters wilt maken zonder ultraschijfondersteuning, kunt u dit doen door de aangepaste parameter weg te `--aks-custom-headers` laten.
 
-## <a name="enable-ultra-disks-on-an-existing-cluster"></a>Ultra disks inschakelen op een bestaand cluster
+## <a name="enable-ultra-disks-on-an-existing-cluster"></a>Ultraschijven inschakelen op een bestaand cluster
 
-U kunt Ultra schijven op bestaande clusters inschakelen door een nieuwe knooppunt groep toe te voegen aan uw cluster die ondersteuning biedt voor Ultra disks. Configureer een nieuwe knooppunt groep om ultra disks te gebruiken met behulp van de `--aks-custom-headers` vlag.
+U kunt ultraschijven inschakelen op bestaande clusters door een nieuwe knooppuntgroep toe te voegen aan uw cluster die ultraschijven ondersteunt. Configureer een nieuwe knooppuntgroep voor het gebruik van ultraschijven met behulp van de `--aks-custom-headers` vlag .
 
 ```azurecli
 az aks nodepool add --name ultradisk --cluster-name myAKSCluster --resource-group myResourceGroup --node-vm-size Standard_L8s_v2 --zones 1 2 --node-count 2 --aks-custom-headers EnableUltraSSD=true
 ```
 
-Als u nieuwe knooppunt groepen wilt maken zonder ondersteuning voor Ultra schijven, kunt u dit doen door de aangepaste para meter weg te laten `--aks-custom-headers` .
+Als u nieuwe knooppuntgroepen wilt maken zonder ondersteuning voor ultraschijven, kunt u dit doen door de aangepaste parameter weg te `--aks-custom-headers` laten.
 
-## <a name="use-ultra-disks-dynamically-with-a-storage-class"></a>Ultra schijven dynamisch gebruiken met een opslag klasse
+## <a name="use-ultra-disks-dynamically-with-a-storage-class"></a>Ultraschijven dynamisch gebruiken met een opslagklasse
 
-Voor het gebruik van ultra disk in onze implementaties of stateful sets kunt u een [opslag klasse voor dynamische inrichting](azure-disks-dynamic-pv.md)gebruiken.
+Als u ultraschijven wilt gebruiken in onze implementaties of stateful sets, kunt u een [opslagklasse gebruiken voor dynamische inrichting.](azure-disks-dynamic-pv.md)
 
-### <a name="create-the-storage-class"></a>De opslag klasse maken
+### <a name="create-the-storage-class"></a>De opslagklasse maken
 
-Een opslag klasse wordt gebruikt om te definiëren hoe een opslag eenheid dynamisch wordt gemaakt met een permanent volume. Zie [Kubernetes Storage klassen][kubernetes-storage-classes](Engelstalig) voor meer informatie over Kubernetes-opslag klassen.
+Een opslagklasse wordt gebruikt om te definiëren hoe een opslageenheid dynamisch wordt gemaakt met een permanent volume. Zie Kubernetes-opslagklassen voor meer informatie over [Kubernetes-opslagklassen.][kubernetes-storage-classes]
 
-In dit geval gaan we een opslag klasse maken die verwijst naar ultra disks. Maak een bestand `azure-ultra-disk-sc.yaml` met de naam en kopieer het in het volgende manifest.
+In dit geval maken we een opslagklasse die verwijst naar ultraschijven. Maak een bestand met de `azure-ultra-disk-sc.yaml` naam en kopieer het in het volgende manifest.
 
 ```yaml
 kind: StorageClass
@@ -117,7 +117,7 @@ parameters:
   diskMbpsReadWrite: "320"   # minimum value: 0.032/GiB
 ```
 
-Maak de opslag klasse met de opdracht [kubectl apply][kubectl-apply] en geef uw *Azure-Ultra-Disk-SC. yaml-* bestand op:
+Maak de opslagklasse met de [opdracht kubectl apply][kubectl-apply] en geef het *bestand azure-ultra-disk-sc.yaml* op:
 
 ```console
 $ kubectl apply -f azure-ultra-disk-sc.yaml
@@ -126,11 +126,11 @@ $ kubectl apply -f azure-ultra-disk-sc.yaml
 storageclass.storage.k8s.io/ultra-disk-sc created
 ```
 
-## <a name="create-a-persistent-volume-claim"></a>Een permanente volume claim maken
+## <a name="create-a-persistent-volume-claim"></a>Een permanente volumeclaim maken
 
-Een permanente volume claim (PVC) wordt gebruikt voor het automatisch inrichten van opslag op basis van een opslag klasse. In dit geval kan een PVC de eerder gemaakte opslag klasse gebruiken om een ultra schijf te maken.
+Een permanente volumeclaim (PERSISTENT) wordt gebruikt om automatisch opslag in terichten op basis van een opslagklasse. In dit geval kan een PVC de eerder gemaakte opslagklasse gebruiken om een ultraschijf te maken.
 
-Maak een bestand `azure-ultra-disk-pvc.yaml` met de naam en kopieer het in het volgende manifest. De claim vraagt een schijf met de naam `ultra-disk` die *1000 GB* groot is met *ReadWriteOnce* -toegang. De *Ultra-Disk-SC-* opslag klasse is opgegeven als de opslag klasse.
+Maak een bestand met de `azure-ultra-disk-pvc.yaml` naam en kopieer het in het volgende manifest. De claim vraagt een schijf met `ultra-disk` de naam aan die *1000 GB* groot is met *ReadWriteOnce-toegang.* De *ultra-disk-sc-opslagklasse* wordt opgegeven als de opslagklasse.
 
 ```yaml
 apiVersion: v1
@@ -146,7 +146,7 @@ spec:
       storage: 1000Gi
 ```
 
-Maak de permanente volume claim met de opdracht [kubectl apply][kubectl-apply] en geef uw *Azure-Ultra-Disk-PVC. yaml-* bestand op:
+Maak de permanente volumeclaim met de [opdracht kubectl apply][kubectl-apply] en geef het bestand *azure-ultra-disk-pv.yaml* op:
 
 ```console
 $ kubectl apply -f azure-ultra-disk-pvc.yaml
@@ -156,9 +156,9 @@ persistentvolumeclaim/ultra-disk created
 
 ## <a name="use-the-persistent-volume"></a>Het permanente volume gebruiken
 
-Als de permanente volume claim is gemaakt en de schijf is ingericht, kan een pod worden gemaakt met toegang tot de schijf. In het volgende manifest wordt een eenvoudige NGINX-pod gemaakt die gebruikmaakt van de permanente volume claim met de naam *Ultra-Disk* om de Azure-schijf te koppelen aan het pad `/mnt/azure` .
+Zodra de permanente volumeclaim is gemaakt en de schijf is ingericht, kan er een pod worden gemaakt met toegang tot de schijf. Met het volgende manifest maakt u een eenvoudige NGINX-pod die gebruikmaakt van de permanente volumeclaim met de naam ultra-disk om de *Azure-schijf* te mounten op het pad `/mnt/azure` .
 
-Maak een bestand `nginx-ultra.yaml` met de naam en kopieer het in het volgende manifest.
+Maak een bestand met de `nginx-ultra.yaml` naam en kopieer het in het volgende manifest.
 
 ```yaml
 kind: Pod
@@ -185,7 +185,7 @@ spec:
         claimName: ultra-disk
 ```
 
-Maak de Pod met de opdracht [kubectl apply][kubectl-apply] , zoals wordt weer gegeven in het volgende voor beeld:
+Maak de pod met de [opdracht kubectl apply,][kubectl-apply] zoals wordt weergegeven in het volgende voorbeeld:
 
 ```console
 $ kubectl apply -f nginx-ultra.yaml
@@ -193,7 +193,7 @@ $ kubectl apply -f nginx-ultra.yaml
 pod/nginx-ultra created
 ```
 
-U hebt nu een actieve pod met uw Azure-schijf die is gekoppeld in de `/mnt/azure` Directory. Deze configuratie kan worden weer gegeven bij het controleren van uw Pod via `kubectl describe pod nginx-ultra` , zoals wordt weer gegeven in het volgende versmald-voor beeld:
+U hebt nu een pod die wordt uitgevoerd met uw Azure-schijf die is bevestigd in de `/mnt/azure` map . Deze configuratie kan worden weergegeven bij het inspecteren van uw pod via , zoals `kubectl describe pod nginx-ultra` wordt weergegeven in het volgende verkorte voorbeeld:
 
 ```console
 $ kubectl describe pod nginx-ultra
@@ -221,8 +221,8 @@ Events:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Azure Ultra Disk gebruiken](../virtual-machines/disks-enable-ultra-ssd.md)voor meer informatie over Ultra disks.
-- Zie [Aanbevolen procedures voor opslag en back-ups in azure Kubernetes service (AKS)][operator-best-practices-storage] voor meer informatie over aanbevolen procedures voor opslag.
+- Zie Azure Ultra Disks gebruiken voor meer informatie over [ultraschijven.](../virtual-machines/disks-enable-ultra-ssd.md)
+- Zie Best practices voor opslag en back-ups in Azure Kubernetes Service [(AKS)][operator-best-practices-storage] voor meer informatie over best practices voor opslag.
 
 <!-- LINKS - external -->
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
@@ -236,18 +236,18 @@ Events:
 [azure-disk-volume]: azure-disk-volume.md
 [azure-files-pvc]: azure-files-dynamic-pv.md
 [premium-storage]: ../virtual-machines/disks-types.md
-[az-disk-list]: /cli/azure/disk#az-disk-list
-[az-snapshot-create]: /cli/azure/snapshot#az-snapshot-create
-[az-disk-create]: /cli/azure/disk#az-disk-create
-[az-disk-show]: /cli/azure/disk#az-disk-show
+[az-disk-list]: /cli/azure/disk#az_disk_list
+[az-snapshot-create]: /cli/azure/snapshot#az_snapshot_create
+[az-disk-create]: /cli/azure/disk#az_disk_create
+[az-disk-show]: /cli/azure/disk#az_disk_show
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli
 [operator-best-practices-storage]: operator-best-practices-storage.md
 [concepts-storage]: concepts-storage.md
 [storage-class-concepts]: concepts-storage.md#storage-classes
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
-[az-feature-register]: /cli/azure/feature#az-feature-register
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
+[az-feature-register]: /cli/azure/feature#az_feature_register
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-provider-register]: /cli/azure/provider#az_provider_register

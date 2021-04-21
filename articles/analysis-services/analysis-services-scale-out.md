@@ -1,146 +1,147 @@
 ---
-title: Azure Analysis Services scale-out | Microsoft Docs
-description: Azure Analysis Services servers repliceren met scale-out. Client query's kunnen vervolgens worden verdeeld over meerdere query replica's in een scale-out-query groep.
+title: Azure Analysis Services uitschalen| Microsoft Docs
+description: Repliceer Azure Analysis Services servers met uitschalen. Clientquery's kunnen vervolgens worden gedistribueerd over meerdere queryreplica's in een uitschaalquerypool.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 24ee31b941d836d296c30927cfb9636f3023fa89
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: a2385cb811e322bd44daefa03d821b2ae47e0652
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92019427"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107769244"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Uitschalen van Azure Analysis Services
 
-Met scale-out kunnen client query's worden verdeeld over meerdere *query replica's* in een *query groep*, waardoor de reactie tijden tijdens veel query's worden verminderd. U kunt ook de verwerking van de query groep scheiden, zodat de client query's niet nadelig worden beïnvloed door de verwerking van bewerkingen. Scale-out kan worden geconfigureerd in Azure Portal of door gebruik te maken van de Analysis Services REST API.
+Met uitschalen kunnen clientquery's  worden gedistribueerd over meerdere queryreplica's in een *querygroep,* waardoor de reactietijden tijdens hoge querywerkbelastingen worden verkort. U kunt de verwerking ook scheiden van de querygroep, zodat clientquery's niet nadelig worden beïnvloed door verwerkingsbewerkingen. Uitschalen kan worden geconfigureerd in Azure Portal of met behulp van de Analysis Services REST API.
 
-Uitschalen is beschikbaar voor servers in de prijs categorie Standard. Elke query replica wordt gefactureerd op basis van hetzelfde aantal als uw server. Alle query replica's worden in dezelfde regio gemaakt als uw server. Het aantal query replica's dat u kunt configureren, is beperkt door de regio waarin uw server zich bevindt. Zie [Beschik baarheid per regio](analysis-services-overview.md#availability-by-region)voor meer informatie. Als u uitschalen uitbreidt, wordt de hoeveelheid beschikbaar geheugen voor uw server niet verg root. Als u geheugen wilt verg Roten, moet u een upgrade voor uw abonnement uitvoeren. 
+Uitschalen is beschikbaar voor servers in de prijscategorie Standard. Elke queryreplica wordt gefactureerd tegen hetzelfde tarief als uw server. Alle queryreplica's worden gemaakt in dezelfde regio als uw server. Het aantal queryreplica's dat u kunt configureren, wordt beperkt door de regio waarin uw server zich in zich. Zie Beschikbaarheid per regio [voor meer informatie.](analysis-services-overview.md#availability-by-region) Door uit te schalen wordt de hoeveelheid beschikbaar geheugen voor uw server niet vergroot. Als u het geheugen wilt vergroten, moet u uw abonnement upgraden. 
 
 ## <a name="why-scale-out"></a>Waarom uitschalen?
 
-In een typische Server implementatie fungeert één server als zowel de verwerkings server als de query server. Als het aantal client query's voor modellen op uw server groter is dan de QPU (query processing units) voor het abonnement van uw server, of als de verwerking van modellen op hetzelfde moment als hoge query werkbelastingen plaatsvindt, kan de prestaties afnemen. 
+In een typische serverimplementatie fungeert één server als zowel verwerkingsserver als queryserver. Als het aantal clientquery's op modellen op uw server de QPU (Query Processing Units) voor het plan van uw server overschrijdt, of als de modelverwerking plaatsvindt op hetzelfde moment als hoge querywerkbelastingen, kunnen de prestaties afnemen. 
 
-Met scale-out kunt u een query pool maken met Maxi maal zeven aanvullende bronnen voor query replica's (acht totaal, inclusief uw *primaire* server). U kunt het aantal replica's in de query pool schalen om te voldoen aan QPU-vereisten op kritieke tijden, en u kunt op elk gewenst moment een verwerkings server scheiden van de query pool. 
+Met uitschalen kunt u een querygroep maken met maximaal zeven extra queryreplicaresources (in totaal acht, inclusief uw *primaire* server). U kunt het aantal replica's in de querygroep schalen om op kritieke momenten te voldoen aan de QPU-eisen en u kunt een verwerkingsserver op elk moment scheiden van de querygroep. 
 
-Ongeacht het aantal query replica's in een query groep, worden de verwerkings werkbelastingen niet verdeeld over query replica's. De primaire server fungeert als de verwerkings server. Query replica's bieden alleen query's voor de model databases die zijn gesynchroniseerd tussen de primaire server en elke replica in de query groep. 
+Ongeacht het aantal queryreplica's dat u in een querygroep hebt, worden verwerkingsworkloads niet verdeeld over queryreplica's. De primaire server fungeert als de verwerkingsserver. Queryreplica's dienen alleen query's voor de modeldatabases die zijn gesynchroniseerd tussen de primaire server en elke replica in de querygroep. 
 
-Wanneer u uitschaalt, kan het tot vijf minuten duren voordat nieuwe query replica's incrementeel worden toegevoegd aan de query groep. Wanneer alle nieuwe query replica's actief zijn, worden nieuwe client verbindingen verdeeld over alle resources in de query groep. Bestaande client verbindingen worden niet gewijzigd ten opzichte van de resource waarmee ze momenteel zijn verbonden. Bij het schalen in worden alle bestaande client verbindingen met een bron van de query groep die uit de query groep wordt verwijderd, beëindigd. Clients kunnen opnieuw verbinding maken met een resterende resource in de query groep.
+Bij het uitschalen kan het tot vijf minuten duren voordat nieuwe queryreplica's incrementeel worden toegevoegd aan de querygroep. Wanneer alle nieuwe queryreplica's actief zijn, worden nieuwe clientverbindingen verdeeld over resources in de querygroep. Bestaande clientverbindingen worden niet gewijzigd van de resource waar ze momenteel mee zijn verbonden. Bij het inschalen worden alle bestaande clientverbindingen met een querygroepresource die uit de querygroep wordt verwijderd, beëindigd. Clients kunnen opnieuw verbinding maken met een resterende querygroepresource.
 
 ## <a name="how-it-works"></a>Uitleg
 
-Wanneer u de eerste keer scale-out configureert, worden model databases op uw primaire server *automatisch* gesynchroniseerd met nieuwe replica's in een nieuwe query groep. Automatische synchronisatie wordt slechts één keer uitgevoerd. Tijdens automatische synchronisatie worden de gegevens bestanden van de primaire server (versleuteld op rest in Blob Storage) gekopieerd naar een tweede locatie, ook versleuteld op rest in Blob Storage. Replica's in de query groep worden vervolgens *gehydrateerd* met gegevens uit de tweede set bestanden. 
+Bij de eerste keer uitschalen worden modeldatabases  op uw primaire server automatisch gesynchroniseerd met nieuwe replica's in een nieuwe querygroep. Automatische synchronisatie vindt slechts één keer plaats. Tijdens automatische synchronisatie worden de gegevensbestanden van de primaire server (in rust versleuteld in blobopslag) gekopieerd naar een tweede locatie, ook versleuteld at rest in blob-opslag. Replica's in de querygroep worden vervolgens gedrenkt *met* gegevens uit de tweede set bestanden. 
 
-Hoewel een automatische synchronisatie alleen wordt uitgevoerd wanneer u een server voor de eerste keer uitbreidt, kunt u ook een hand matige synchronisatie uitvoeren. Bij het synchroniseren worden de gegevens van replica's in de query groep vergeleken met die van de primaire server. Wanneer modellen op de primaire server worden verwerkt (vernieuwd), moet er een synchronisatie worden uitgevoerd *nadat* de verwerkings bewerkingen zijn voltooid. Deze synchronisatie kopieert bijgewerkte gegevens van de bestanden van de primaire server in Blob Storage naar de tweede set bestanden. Replica's in de query groep worden vervolgens gehydrateerd met bijgewerkte gegevens uit de tweede set bestanden in Blob Storage. 
+Hoewel een automatische synchronisatie alleen wordt uitgevoerd wanneer u een server voor het eerst uitschaalt, kunt u ook een handmatige synchronisatie uitvoeren. Synchronisatie zorgt ervoor dat gegevens op replica's in de querygroep overeenkomen met die van de primaire server. Bij het verwerken (vernieuwen) van modellen op de primaire server moet een synchronisatie worden uitgevoerd *nadat* de verwerkingsbewerkingen zijn voltooid. Met deze synchronisatie worden bijgewerkte gegevens gekopieerd van de bestanden van de primaire server in blobopslag naar de tweede set bestanden. Replica's in de querygroep worden vervolgens voorzien van bijgewerkte gegevens uit de tweede set bestanden in blobopslag. 
 
-Wanneer u een volgende uitschaal bewerking uitvoert, bijvoorbeeld het aantal replica's in de query groep verhogen van twee naar vijf, worden de nieuwe replica's gehydrateerd met gegevens uit de tweede set bestanden in Blob Storage. Er is geen synchronisatie. Als u vervolgens een synchronisatie uitvoert nadat u uitschalen hebt uitgevoerd, worden de nieuwe replica's in de query groep twee keer gehydrateerd: een redundante Hydration. Wanneer u een volgende scale-out-bewerking uitvoert, is het belang rijk dat u rekening houdt met het volgende:
+Bij het uitvoeren van een volgende uitschaalbewerking, bijvoorbeeld het verhogen van het aantal replica's in de querygroep van twee naar vijf, worden de nieuwe replica's geschaald met gegevens uit de tweede set bestanden in blobopslag. Er is geen synchronisatie. Als u vervolgens na het uitschalen een synchronisatie uitvoert, worden de nieuwe replica's in de querygroep twee keer geslingeerd: een redundante redundante redundantie. Bij het uitvoeren van een volgende uitschaalbewerking is het belangrijk om het volgende in gedachten te houden:
 
-* Voer een synchronisatie uit *vóór de uitschaal bewerking* om redundante Hydration van de toegevoegde replica's te voor komen. Gelijktijdige synchronisatie-en scale-out bewerkingen die op hetzelfde moment worden uitgevoerd, zijn niet toegestaan.
+* Voer een synchronisatie uit *vóór de uitschaalbewerking om* redundante redundante redundantie van de toegevoegde replica's te voorkomen. Gelijktijdige synchronisatie- en uitschaalbewerkingen die op hetzelfde moment worden uitgevoerd, zijn niet toegestaan.
 
-* Wanneer u zowel verwerkings- *als* uitschaal bewerkingen automatiseert, is het belang rijk om eerst gegevens op de primaire server te verwerken, vervolgens een synchronisatie uit te voeren en vervolgens de uitschaal bewerking uit te voeren. Met deze reeks wordt de minimale impact op QPU en geheugen bronnen gegarandeerd.
+* Bij het automatiseren  van zowel verwerkings- als uitschaalbewerkingen is het belangrijk om eerst gegevens op de primaire server te verwerken, vervolgens een synchronisatie uit te voeren en vervolgens de uitschaalbewerking uit te voeren. Deze reeks garandeert minimale gevolgen voor QPU en geheugenbronnen.
 
-* Tijdens scale-out bewerkingen zijn alle servers in de query groep, met inbegrip van de primaire server, tijdelijk offline.
+* Tijdens uitschaalbewerkingen zijn alle servers in de querygroep, met inbegrip van de primaire server, tijdelijk offline.
 
-* Synchronisatie is ook toegestaan wanneer er geen replica's in de query groep zijn. Als u opschalen van nul naar een of meer replica's met nieuwe gegevens van een verwerkings bewerking op de primaire server, voert u de synchronisatie eerst uit zonder replica's in de query groep en vervolgens scale-out. Bij het synchroniseren van wordt geen redundante Hydration van de zojuist toegevoegde replica's voor komen.
+* Synchronisatie is toegestaan, zelfs wanneer er geen replica's in de querygroep zijn. Als u uitschaalt van nul naar een of meer replica's met nieuwe gegevens van een verwerkingsbewerking op de primaire server, voert u eerst de synchronisatie uit zonder replica's in de querygroep en vervolgens uitschalen. Synchronisatie vóór uitschalen voorkomt redundante redundante redundantie van de zojuist toegevoegde replica's.
 
-* Wanneer u een model database van de primaire server verwijdert, wordt deze niet automatisch verwijderd uit replica's in de query groep. U moet een synchronisatie bewerking uitvoeren met behulp van de Power shell [-opdracht Sync-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/sync-AzAnalysisServicesinstance) die het bestand/de s voor die data base verwijdert uit de gedeelde Blob-opslag locatie van de replica en de model database vervolgens op de replica's in de query groep verwijdert. Als u wilt bepalen of een model database bestaat voor replica's in de query pool, maar niet op de primaire server, moet u ervoor zorgen dat de **afzonderlijke verwerkings server van de query groep** is ingesteld op **Ja**. Gebruik vervolgens SSMS om verbinding te maken met de primaire server met behulp van de `:rw` kwalificatie om te controleren of de data base bestaat. Maak vervolgens verbinding met replica's in de query groep door verbinding te maken zonder de `:rw` kwalificatie om te zien of dezelfde data base ook bestaat. Als de data base bestaat in replica's in de query groep, maar niet op de primaire server, voert u een synchronisatie bewerking uit.   
+* Wanneer u een modeldatabase van de primaire server wilt verwijderen, wordt deze niet automatisch verwijderd uit replica's in de querygroep. U moet een synchronisatiebewerking uitvoeren met behulp van de [PowerShell-opdracht Sync-AzAnalysisServicesInstance,](/powershell/module/az.analysisservices/sync-AzAnalysisServicesinstance) die het bestand/de bestanden voor die database verwijdert uit de gedeelde blobopslaglocatie van de replica en vervolgens de modeldatabase op de replica's in de querygroep verwijdert. Als u wilt bepalen of er een modeldatabase bestaat op replica's in de querygroep, maar niet op de primaire server, zorgt u ervoor dat de instelling De verwerkingsserver scheiden van **de querygroep** is ingesteld op **Ja.** Gebruik vervolgens SSMS om verbinding te maken met de primaire server met behulp van de `:rw` kwalificatie om te zien of de database bestaat. Maak vervolgens verbinding met replica's in de querygroep door verbinding te maken zonder de kwalificatie om te zien `:rw` of dezelfde database ook bestaat. Als de database op replica's in de querygroep bestaat, maar niet op de primaire server, moet u een synchronisatiebewerking uitvoeren.   
 
-* Bij het wijzigen van de naam van een Data Base op de primaire server is er een extra stap die nodig is om ervoor te zorgen dat de data base correct is gesynchroniseerd met replica's. Nadat u de naam hebt gewijzigd, moet u een synchronisatie uitvoeren met behulp van de opdracht [Sync-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/sync-AzAnalysisServicesinstance) en de `-Database` para meter met de oude database naam opgeven. Deze synchronisatie verwijdert de data base en bestanden met de oude naam uit een of meer replica's. Voer vervolgens een andere synchronisatie uit `-Database` met de para meter met de naam van de nieuwe data base. Bij de tweede synchronisatie wordt de data base met de nieuwe naam gekopieerd naar de tweede set bestanden en worden eventuele replica's gehydrateerd. Deze synchronisaties kunnen niet worden uitgevoerd met behulp van de opdracht model synchroniseren in de portal.
+* Bij het wijzigen van de naam van een database op de primaire server is er een extra stap nodig om ervoor te zorgen dat de database correct wordt gesynchroniseerd met eventuele replica's. Nadat u de naam hebt hernoemd, voert u een synchronisatie uit met behulp van de opdracht [Sync-AzAnalysisServicesInstance,](/powershell/module/az.analysisservices/sync-AzAnalysisServicesinstance) die de parameter met de oude `-Database` databasenaam opgeeft. Met deze synchronisatie worden de database en bestanden met de oude naam uit alle replica's verwijderd. Voer vervolgens een andere synchronisatie uit en geef de `-Database` parameter op met de naam van de nieuwe database. Met de tweede synchronisatie wordt de zojuist benoemde database gekopieerd naar de tweede set bestanden en worden alle replica's verwijderd. Deze synchronisaties kunnen niet worden uitgevoerd met behulp van de opdracht Model synchroniseren in de portal.
 
-### <a name="synchronization-mode"></a>Synchronisatie modus
+### <a name="synchronization-mode"></a>Synchronisatiemodus
 
-Standaard worden query replica's volledig opnieuw gehydrateerd, niet incrementeel. Rehydratatie treedt op in fasen. Ze worden twee tegelijk losgekoppeld en gekoppeld (ervan uitgaande dat er ten minste drie replica's zijn) om ervoor te zorgen dat ten minste één replica online wordt gehouden voor query's op een bepaald moment. In sommige gevallen moeten clients mogelijk opnieuw verbinding maken met een van de online replica's terwijl dit proces plaatsvindt. Met behulp van de **ReplicaSyncMode** -instelling kunt u nu de synchronisatie van query's replica's opgeven, parallel. Parallelle synchronisatie biedt de volgende voor delen: 
+Queryreplica's worden standaard volledig gerehydrateerd, niet incrementeel. Rehydratatie vindt in fasen plaats. Ze worden losgekoppeld en twee tegelijk gekoppeld (ervan uitgaande dat er ten minste drie replica's zijn) om ervoor te zorgen dat ten minste één replica online wordt gehouden voor query's op een bepaald moment. In sommige gevallen moeten clients mogelijk opnieuw verbinding maken met een van de online replica's terwijl dit proces plaatsvindt. Met behulp van **de instelling ReplicaSyncMode** kunt u nu de synchronisatie van queryreplica's parallel opgeven. Parallelle synchronisatie biedt de volgende voordelen: 
 
-- Aanzienlijke vermindering van de synchronisatie tijd. 
-- Gegevens in replica's zijn waarschijnlijker consistent tijdens het synchronisatie proces. 
-- Omdat data bases tijdens het synchronisatie proces online blijven op alle replica's, hoeven clients niet opnieuw verbinding te maken. 
-- De cache in het geheugen wordt incrementeel bijgewerkt met alleen de gewijzigde gegevens. Dit kan sneller zijn dan het volledige reactiveren van het model. 
+- Aanzienlijke vermindering van de synchronisatietijd. 
+- Gegevens tussen replica's zijn waarschijnlijk consistent tijdens het synchronisatieproces. 
+- Omdat databases online worden gehouden op alle replica's tijdens het synchronisatieproces, hoeven clients niet opnieuw verbinding te maken. 
+- De cache in het geheugen wordt incrementeel bijgewerkt met alleen de gewijzigde gegevens, wat sneller kan zijn dan het model volledig te rehydrateren. 
 
 #### <a name="setting-replicasyncmode"></a>ReplicaSyncMode instellen
 
-Gebruik SSMS om ReplicaSyncMode in te stellen in geavanceerde eigenschappen. De mogelijke waarden zijn: 
+Gebruik SSMS om ReplicaSyncMode in te stellen in Geavanceerde eigenschappen. De mogelijke waarden zijn: 
 
-- `1` (standaard): volledige replica database rehydratatie in fasen (incrementeel). 
+- `1` (standaardinstelling): volledige replicadatabaserehydratatie in fasen (incrementeel). 
 - `2`: Geoptimaliseerde synchronisatie parallel. 
 
-![RelicaSyncMode-instelling](media/analysis-services-scale-out/aas-scale-out-sync-mode.png)
+![Instelling RelicaSyncMode](media/analysis-services-scale-out/aas-scale-out-sync-mode.png)
 
-Bij het instellen van **ReplicaSyncMode = 2**, afhankelijk van hoeveel van de cache moet worden bijgewerkt, kan extra geheugen worden gebruikt door de query replica's. Als u de data base online en beschikbaar wilt houden voor query's, afhankelijk van de hoeveelheid gegevens die is gewijzigd, kan het zijn dat de bewerking het geheugen van de replica moet *Double* hebben, omdat zowel de oude als de nieuwe segmenten tegelijkertijd in het geheugen worden bewaard. Replica knooppunten hebben dezelfde geheugen toewijzing als het primaire knoop punt en er is meestal extra geheugen op het primaire knoop punt voor de vernieuwings bewerkingen, waardoor het onwaarschijnlijk is dat er onvoldoende geheugen beschikbaar is voor de replica's. Daarnaast is het gebruikelijk dat de data base incrementeel wordt bijgewerkt op het primaire knoop punt en daarom de vereiste voor dubbele het geheugen ongebruikelijk moet zijn. Als er een fout optreedt in de synchronisatie bewerking, wordt de standaard techniek opnieuw geprobeerd (twee tegelijk koppelen/loskoppelen). 
+Bij het **instellen van ReplicaSyncMode=2** kan er, afhankelijk van hoeveel van de cache moet worden bijgewerkt, extra geheugen worden verbruikt door de queryreplica's. Om de database online te houden en beschikbaar te houden voor query's, kan  de bewerking, afhankelijk van hoeveel gegevens zijn gewijzigd, maximaal twee keer zoveel geheugen op de replica vereisen, omdat zowel de oude als de nieuwe segmenten tegelijkertijd in het geheugen worden bewaard. Replicaknooppunten hebben dezelfde geheugentoewijzing als het primaire knooppunt en er is normaal gesproken extra geheugen op het primaire knooppunt voor vernieuwingsbewerkingen, waardoor het onwaarschijnlijk is dat de replica's geen geheugen meer hebben. Daarnaast is het algemene scenario dat de database incrementeel wordt bijgewerkt op het primaire knooppunt en dat de vereiste voor het dubbele van het geheugen daarom ongebruikelijk moet zijn. Als er bij de synchronisatiebewerking een fout in het geheugen is opgetreden, wordt het opnieuw uitgevoerd met behulp van de standaardtechniek (twee tegelijk koppelen/loskoppelen). 
 
-### <a name="separate-processing-from-query-pool"></a>Afzonderlijke verwerking van de query pool
+### <a name="separate-processing-from-query-pool"></a>Verwerking scheiden van querygroep
 
-U kunt de verwerkings server scheiden van de query groep voor een maximale prestaties voor zowel verwerkings-als query bewerkingen. Wanneer deze worden gescheiden, worden nieuwe client verbindingen alleen toegewezen aan query replica's in de query groep. Als verwerkings bewerkingen slechts korte tijd duren, kunt u ervoor kiezen om de verwerkings server alleen te scheiden van de query pool voor de hoeveelheid tijd die nodig is voor het uitvoeren van verwerkings-en synchronisatie bewerkingen en deze vervolgens weer op te nemen in de query groep. Wanneer u de verwerkings server van de query groep scheidt of deze opnieuw in de query groep toevoegt, kan het tot vijf minuten duren voordat de bewerking is voltooid.
+Voor maximale prestaties voor zowel verwerkings- als querybewerkingen kunt u ervoor kiezen om uw verwerkingsserver te scheiden van de querygroep. Wanneer ze zijn gescheiden, worden nieuwe clientverbindingen alleen toegewezen aan queryreplica's in de querygroep. Als verwerkingsbewerkingen slechts een korte tijd duren, kunt u ervoor kiezen om de verwerkingsserver alleen te scheiden van de querygroep voor de hoeveelheid tijd die nodig is om verwerkings- en synchronisatiebewerkingen uit te voeren en deze vervolgens weer op te nemen in de querygroep. Wanneer u de verwerkingsserver van de querygroep scheidt of weer toevoegt aan de querygroep, kan het maximaal vijf minuten duren voordat de bewerking is voltooid.
 
 ## <a name="monitor-qpu-usage"></a>QPU-gebruik bewaken
 
-Als u wilt bepalen of uitschalen voor uw server nodig is, [controleert u de server](analysis-services-monitor.md) in azure Portal met behulp van metrische gegevens. Als uw QPU regel matig uitdergelijke, betekent dit dat het aantal query's voor uw modellen de limiet van QPU voor uw abonnement overschrijdt. De metrische gegevens wachtrij lengte van de query pool neemt ook toe wanneer het aantal query's in de wachtrij van de query thread de beschik bare QPU overschrijdt. 
+Als u wilt bepalen of uitschalen voor uw server nodig is, controleert u [uw server](analysis-services-monitor.md) in Azure Portal met behulp van metrische gegevens. Als uw QPU regelmatig uit het maximum komt, betekent dit dat het aantal query's op uw modellen de QPU-limiet voor uw plan overschrijdt. De metrische gegevens voor de wachtrijlengte van querypools nemen ook toe wanneer het aantal query's in de wachtrij van de querythreadpool de beschikbare QPU overschrijdt. 
 
-Een andere goede metrische waarde om te kijken, is gemiddelde QPU door ServerResourceType. Deze metrische gegevens vergelijkt de gemiddelde QPU voor de primaire server met de query groep. 
+Een andere goede metrische waarde om te bekijken is het gemiddelde QPU per ServerResourceType. Deze metrische waarde vergelijkt de gemiddelde QPU voor de primaire server met de querygroep. 
 
-![Metrische gegevens van query uitschalen](media/analysis-services-scale-out/aas-scale-out-monitor.png)
+![Metrische gegevens voor uitschalen van query's](media/analysis-services-scale-out/aas-scale-out-monitor.png)
 
-**QPU configureren met ServerResourceType**
+**QPU configureren op ServerResourceType**
 
-1. In een lijn diagram met metrische gegevens klikt u op **metrische gegevens toevoegen**. 
-2. Selecteer uw server in **resource**, Selecteer in **metrische naam ruimte** de optie **Analysis Services standaard metrieken** en selecteer vervolgens in **metrische gegevens** **QPU**, en selecteer vervolgens bij **aggregatie** de optie **Gem**. 
-3. Klik op **splitsing Toep assen**. 
-4. In **waarden** selecteert u **ServerResourceType**.  
+1. Klik in een lijndiagram met metrische gegevens **op Metrische waarde toevoegen.** 
+2. Selecteer in **RESOURCE** uw server, selecteer vervolgens in **METRISCHE** NAAMRUIMTE de **optie Analysis Services standard metrics** en selecteer vervolgens in **METRISCHE** GEGEVENS **QPU** en selecteer vervolgens in **AGGREGATIE** De optie **Gem.** 
+3. Klik **op Splitsen toepassen.** 
+4. Selecteer **in WAARDEN** De optie **ServerResourceType.**  
 
-### <a name="detailed-diagnostic-logging"></a>Gedetailleerde logboek registratie voor diagnostische gegevens
+### <a name="detailed-diagnostic-logging"></a>Gedetailleerde diagnostische logboekregistratie
 
-Gebruik Azure Monitor logboeken voor meer gedetailleerde diagnostische gegevens van Server bronnen die worden uitgeschaald. Met Logboeken kunt u Log Analytics query's gebruiken om de QPU en het geheugen van de server en de replica te verdelen. Zie voorbeeld query's in [Analysis Services diagnostische gegevens registratie](analysis-services-logging.md#example-queries)voor meer informatie.
+Gebruik Azure Monitor logboeken voor gedetailleerdere diagnostische gegevens van uitgebreide serverresources. Met logboeken kunt u Log Analytics-query's gebruiken om QPU en geheugen op server en replica uit te breken. Zie voor meer informatie voorbeeldquery's in Analysis Services [diagnostische logboekregistratie.](analysis-services-logging.md#example-queries)
 
 
 ## <a name="configure-scale-out"></a>Uitschalen configureren
 
 ### <a name="in-azure-portal"></a>In Azure Portal
 
-1. Klik in de portal op **uitschalen**. Gebruik de schuif regelaar om het aantal query replica servers te selecteren. Het aantal replica's dat u kiest, is naast uw bestaande server.  
+1. Klik in de portal op **Uitschalen.** Gebruik de schuifregelaar om het aantal queryreplicaservers te selecteren. Het aantal replica's dat u kiest, is een aanvulling op uw bestaande server.  
 
-2. Selecteer op **de verwerkings server scheiden van de query groep** Ja om de verwerkings server van de query servers uit te sluiten. Client [verbindingen](#connections) die gebruikmaken van de standaard Connection String (zonder `:rw` ) worden omgeleid naar replica's in de query groep. 
+2. Selecteer **ja in Scheid de verwerkingsserver van de querygroep** om uw verwerkingsserver uit te sluiten van queryservers. Clientverbindingen [met](#connections) de standaardwaarde connection string (zonder `:rw` ) worden omgeleid naar replica's in de querygroep. 
 
-   ![Schuif regelaar voor uitschalen](media/analysis-services-scale-out/aas-scale-out-slider.png)
+   ![Schuifregelaar voor uitschalen](media/analysis-services-scale-out/aas-scale-out-slider.png)
 
-3. Klik op **Opslaan** om uw nieuwe query replica servers in te richten. 
+3. Klik **op Opslaan om** uw nieuwe queryreplicaservers in terichten. 
 
-Bij het configureren van scale-out voor een server wordt de eerste keer dat modellen op de primaire server automatisch worden gesynchroniseerd met replica's in de query groep. Automatische synchronisatie vindt slechts eenmaal plaats, wanneer u scale-out voor het eerst op een of meer replica's configureert. Volgende wijzigingen in het aantal replica's op dezelfde server *activeren geen andere automatische synchronisatie*. De automatische synchronisatie wordt niet opnieuw uitgevoerd, zelfs niet als u de server instelt op nul replica's en vervolgens weer uitschaalt naar een wille keurig aantal replica's. 
+Wanneer u voor het eerst uitschalen voor een server configureert, worden modellen op uw primaire server automatisch gesynchroniseerd met replica's in de querygroep. Automatische synchronisatie vindt slechts één keer plaats wanneer u voor het eerst uitschalen naar een of meer replica's configureert. Volgende wijzigingen in het aantal replica's op dezelfde server *activeren geen andere automatische synchronisatie.* Automatische synchronisatie wordt niet opnieuw uitgevoerd, zelfs niet als u de server in stelt op nul replica's en vervolgens opnieuw uitschaalt naar een aantal replica's. 
 
 ## <a name="synchronize"></a>Synchroniseren 
 
-Synchronisatie bewerkingen moeten hand matig of via de REST API worden uitgevoerd.
+Synchronisatiebewerkingen moeten handmatig of met behulp van de REST API.
 
 ### <a name="in-azure-portal"></a>In Azure Portal
 
-In **overzicht** > model > **model synchroniseren**.
+In **Overzicht** > model > **Model synchroniseren.**
 
-![Pictogram synchroniseren](media/analysis-services-scale-out/aas-scale-out-sync.png)
+![Synchronisatiepictogram](media/analysis-services-scale-out/aas-scale-out-sync.png)
 
 ### <a name="rest-api"></a>REST-API
 
-Gebruik de **synchronisatie** bewerking.
+Gebruik de **synchronisatiebewerking.**
 
 #### <a name="synchronize-a-model"></a>Een model synchroniseren   
 
 `POST https://<region>.asazure.windows.net/servers/<servername>:rw/models/<modelname>/sync`
 
-#### <a name="get-sync-status"></a>Synchronisatie status ophalen  
+#### <a name="get-sync-status"></a>Synchronisatiestatus krijgen  
 
 `GET https://<region>.asazure.windows.net/servers/<servername>/models/<modelname>/sync`
 
-Retour status codes:
+Retourstatuscodes:
 
 
 |Code  |Beschrijving  |
 |---------|---------|
 |-1     |  Ongeldig       |
 |0     | Repliceren        |
-|1     |  Reactiveren       |
+|1     |  Rehydrateren       |
 |2     |   Voltooid       |
 |3     |   Mislukt      |
-|4     |    Wordt voltooid     |
+|4     |    Finaliseren     |
 |||
 
 
@@ -148,39 +149,39 @@ Retour status codes:
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Voordat u Power shell gebruikt, [moet u de nieuwste Azure PowerShell-module installeren of bijwerken](/powershell/azure/install-az-ps). 
+Voordat u PowerShell gebruikt, [installeert of updatet](/powershell/azure/install-az-ps)u de meest recente Azure PowerShell module . 
 
-Als u synchronisatie wilt uitvoeren, gebruikt u [Sync-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/sync-AzAnalysisServicesinstance).
+Gebruik [Sync-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/sync-AzAnalysisServicesinstance)om synchronisatie uit te voeren.
 
-Als u het aantal query replica's wilt instellen, gebruikt u [set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver). Geef de optionele `-ReadonlyReplicaCount` para meter op.
+Gebruik [Set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver)om het aantal queryreplica's in te stellen. Geef de optionele `-ReadonlyReplicaCount` parameter op.
 
-Als u de verwerkings server van de query groep wilt scheiden, gebruikt u [set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver). Geef de optionele `-DefaultConnectionMode` para meter op die moet worden gebruikt `Readonly` .
+Gebruik [Set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver)om de verwerkingsserver te scheiden van de querygroep. Geef de optionele `-DefaultConnectionMode` parameter op om te `Readonly` gebruiken.
 
-Zie [een Service-Principal gebruiken met de module AZ. AnalysisServices](analysis-services-service-principal.md#azmodule)voor meer informatie.
+Zie Using [a service principal with the Az.AnalysisServices module (Een service-principal gebruiken met de module Az.AnalysisServices) voor meer informatie.](analysis-services-service-principal.md#azmodule)
 
 ## <a name="connections"></a>Verbindingen
 
-Op de overzichts pagina van de server bevinden zich twee server namen. Als u nog geen uitschalen hebt geconfigureerd voor een server, werken beide server namen op hetzelfde niveau. Zodra u scale-out voor een server hebt geconfigureerd, moet u de juiste server naam opgeven, afhankelijk van het verbindings type. 
+Op de pagina Overzicht van uw server staan twee servernamen. Als u uitschalen voor een server nog niet hebt geconfigureerd, werken beide servernamen hetzelfde. Zodra u uitschalen voor een server hebt geconfigureerd, moet u de juiste servernaam opgeven, afhankelijk van het verbindingstype. 
 
-Voor client verbindingen van eind gebruikers, zoals Power BI Desktop, Excel en aangepaste apps, gebruikt u **Server naam**. 
+Voor clientverbindingen van eindgebruikers, zoals Power BI Desktop, Excel en aangepaste apps, gebruikt u **Servernaam.** 
 
-Voor SSMS, Visual Studio en verbindings reeksen in Power shell, Azure function-apps en AMO, gebruikt u de naam van de **beheer server**. De naam van de beheer server bevat een speciale `:rw` Kwalificatie (lezen/schrijven). Alle verwerkings bewerkingen worden uitgevoerd op de beheer server (primair).
+Gebruik voor SSMS, Visual Studio en verbindingsreeksen in PowerShell, Azure Function-apps en AMO de naam **van de beheerserver.** De naam van de beheerserver bevat een speciale `:rw` kwalificatie (lezen/schrijven). Alle verwerkingsbewerkingen worden uitgevoerd op de (primaire) beheerserver.
 
-![Server namen](media/analysis-services-scale-out/aas-scale-out-name.png)
+![Servernamen](media/analysis-services-scale-out/aas-scale-out-name.png)
 
-## <a name="scale-up-scale-down-vs-scale-out"></a>Omhoog schalen, omlaag schalen versus scale-out
+## <a name="scale-up-scale-down-vs-scale-out"></a>Omhoog schalen, omlaag schalen versus uitschalen
 
-U kunt de prijs categorie wijzigen op een server met meerdere replica's. Dezelfde prijs categorie is van toepassing op alle replica's. Bij een schaal bewerking worden eerst alle replica's in één keer omlaag gebracht. vervolgens worden alle replica's op de nieuwe prijs categorie weer geven.
+U kunt de prijscategorie op een server met meerdere replica's wijzigen. Dezelfde prijscategorie is van toepassing op alle replica's. Met een schaalbewerking worden eerst alle replica's in één keer omlaag schalen, waarna alle replica's in de nieuwe prijscategorie worden uitgevoerd.
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-**Probleem:** Fout bij het ophalen **van gebruikers kan het exemplaar van de server niet vinden \<Name of the server> in de verbindings modus readonly.**
+**Probleem:** Gebruikers krijgen de fout **'Instantie van server \<Name of the server> ' niet vinden in verbindingsmodus 'ReadOnly'.**
 
-**Oplossing:** Wanneer u de **afzonderlijke verwerking van de verwerkings server van de optie query groep** selecteert, worden client verbindingen die gebruikmaken van de standaard Connection String (zonder `:rw` ), omgeleid naar de replica's van de query groep. Als replica's in de query groep nog niet online zijn omdat de synchronisatie nog niet is voltooid, kunnen omgeleide client verbindingen mislukken. Als u mislukte verbindingen wilt voor komen, moeten er ten minste twee servers in de query groep aanwezig zijn bij het uitvoeren van een synchronisatie. Elke server wordt afzonderlijk gesynchroniseerd, terwijl anderen online blijven. Als u de verwerkings server niet in de query groep hebt tijdens de verwerking, kunt u deze verwijderen uit de groep voor verwerking en deze vervolgens opnieuw toevoegen aan de groep nadat de verwerking is voltooid, maar vóór de synchronisatie. Gebruik geheugen-en QPU-metrische gegevens om de synchronisatie status te bewaken.
+**Oplossing:** Wanneer u de optie De verwerkingsserver scheiden van de **querygroep** selecteert, worden clientverbindingen met de standaardwaarde connection string (zonder ) omgeleid naar `:rw` querygroepreplica's. Als replica's in de querygroep nog niet online zijn omdat de synchronisatie nog niet is voltooid, kunnen omgeleide clientverbindingen mislukken. Om mislukte verbindingen te voorkomen, moeten er ten minste twee servers in de querygroep zijn bij het uitvoeren van een synchronisatie. Elke server wordt afzonderlijk gesynchroniseerd terwijl anderen online blijven. Als u ervoor kiest om de verwerkingsserver niet in de querygroep te hebben tijdens de verwerking, kunt u ervoor kiezen om deze te verwijderen uit de pool voor verwerking en deze vervolgens weer toe te voegen aan de groep nadat de verwerking is voltooid, maar vóór de synchronisatie. Gebruik geheugen- en QPU-metrische gegevens om de synchronisatiestatus te bewaken.
 
 
 
 ## <a name="related-information"></a>Gerelateerde informatie
 
-[Metrische Server gegevens bewaken](analysis-services-monitor.md)   
-[Azure Analysis Services beheren](analysis-services-manage.md)
+[Metrische servergegevens bewaken](analysis-services-monitor.md)   
+[Beheer Azure Analysis Services](analysis-services-manage.md)

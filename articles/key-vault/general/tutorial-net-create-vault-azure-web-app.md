@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 479181e851e6f54246a2ad89e7529bf3f50bb8a4
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 901f2b938512f842a5b4c34adbfc61f9379e5131
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107751972"
+ms.locfileid: "107772159"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-in-net"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te verbinden met een Azure-web-app in .NET
 
@@ -85,7 +85,7 @@ git commit -m "first commit"
 
 U kunt FTP en lokale Git gebruiken om een Azure-web-app te implementeren met behulp van een *implementatiegebruiker*. Nadat u deze implementatiegebruiker hebt gemaakt, kunt u deze voor al uw Azure-implementaties gebruiken. Uw gebruikersnaam en wachtwoord voor implementatie op accountniveau verschillen van de referenties voor uw Azure-abonnement. 
 
-Als u de implementatiegebruiker wilt configureren, voert u de opdracht [az webapp deployment user set](/cli/azure/webapp/deployment/user?#az-webapp-deployment-user-set) uit. Kies een gebruikersnaam en wachtwoord die voldoen aan de volgende richtlijnen: 
+Als u de implementatiegebruiker wilt configureren, voert u de opdracht [az webapp deployment user set](/cli/azure/webapp/deployment/user?#az_webapp_deployment_user_set) uit. Kies een gebruikersnaam en wachtwoord die voldoen aan de volgende richtlijnen: 
 
 - De gebruikersnaam moet binnen Azure uniek zijn. Voor lokale Git-pushes mag deze geen apenstaartje (@) bevatten. 
 - Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen. 
@@ -100,7 +100,7 @@ Noteer uw gebruikersnaam en wachtwoord zodat u deze kunt gebruiken bij het imple
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep is een logische container waarin u uw Azure-resources implementeert en beheert. Maak een resourcegroep om zowel uw sleutelkluis als uw web-app in te bewaren met behulp van de opdracht [az group create](/cli/azure/group?#az-group-create):
+Een resourcegroep is een logische container waarin u uw Azure-resources implementeert en beheert. Maak een resourcegroep om zowel uw sleutelkluis als uw web-app in te bewaren met behulp van de opdracht [az group create](/cli/azure/group?#az_group_create):
 
 ```azurecli-interactive
 az group create --name "myResourceGroup" -l "EastUS"
@@ -243,7 +243,7 @@ In deze sectie configureert u de webtoegang tot de sleutelkluis en werkt u uw to
 
 In deze zelfstudie gebruiken we een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) voor het verifiëren van Key Vault. Met een beheerde identiteit worden toepassingsreferenties automatisch beheerd.
 
-Voer in Azure CLI de opdracht [az webapp-identity assign](/cli/azure/webapp/identity?#az-webapp-identity-assign) uit om de identiteit voor de toepassing te maken:
+Voer in Azure CLI de opdracht [az webapp-identity assign](/cli/azure/webapp/identity?#az_webapp_identity_assign) uit om de identiteit voor de toepassing te maken:
 
 ```azurecli-interactive
 az webapp identity assign --name "<your-webapp-name>" --resource-group "myResourceGroup"
@@ -259,7 +259,7 @@ Met deze opdracht wordt dit JSON-fragment geretourneerd:
 }
 ```
 
-Als u uw web-app toestemming wilt geven om bewerkingen voor **ophalen** en **weergeven** uit te voeren op uw sleutelkluis, geeft u de `principalId` door aan de Azure CLI-opdracht [az keyvault set-policy](/cli/azure/keyvault?#az-keyvault-set-policy):
+Als u uw web-app toestemming wilt geven om bewerkingen voor **ophalen** en **weergeven** uit te voeren op uw sleutelkluis, geeft u de `principalId` door aan de Azure CLI-opdracht [az keyvault set-policy](/cli/azure/keyvault?#az_keyvault_set_policy):
 
 ```azurecli-interactive
 az keyvault set-policy --name "<your-keyvault-name>" --object-id "<principalId>" --secret-permissions get list

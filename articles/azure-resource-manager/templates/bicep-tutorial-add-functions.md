@@ -1,21 +1,21 @@
 ---
-title: Zelf studie-functies toevoegen aan Azure Resource Manager Bicep-bestanden
+title: 'Zelfstudie: functies toevoegen aan Azure Resource Manager Bicep-bestanden'
 description: Voeg functies toe aan uw Bicep-bestanden om waarden te maken.
 author: mumian
-ms.date: 03/10/2021
+ms.date: 04/20/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: references_regions
-ms.openlocfilehash: b909beb0cce9ad04ba00068ee25247520dcff47d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 43dec6ceb21a6604bc0034b3f14b79ffd2cbe263
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102633152"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107773797"
 ---
-# <a name="tutorial-add-functions-to-azure-resource-manager-bicep-file"></a>Zelf studie: functies toevoegen aan Azure Resource Manager Bicep-bestand
+# <a name="tutorial-add-functions-to-azure-resource-manager-bicep-file"></a>Zelfstudie: Functies toevoegen aan Azure Resource Manager Bicep-bestand
 
-In deze zelf studie leert u hoe u [sjabloon functies](template-functions.md) kunt toevoegen aan uw Bicep-bestand. U gebruikt functies om waarden dynamisch samen te stellen. Naast deze systeemsjabloonfuncties kunt u ook [door de gebruiker gedefinieerde functies](./template-user-defined-functions.md) maken. Deze zelfstudie neemt ongeveer **7 minuten** in beslag.
+In deze zelfstudie leert u hoe u sjabloonfuncties [toevoegt](template-functions.md) aan uw Bicep-bestand. U gebruikt functies om waarden dynamisch samen te stellen. Bicep biedt momenteel geen ondersteuning voor door de gebruiker gedefinieerde functies. Deze zelfstudie neemt ongeveer **7 minuten** in beslag.
 
 [!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
 
@@ -23,21 +23,21 @@ In deze zelf studie leert u hoe u [sjabloon functies](template-functions.md) kun
 
 U wordt aangeraden om eerst de [zelfstudie over parameters](bicep-tutorial-add-parameters.md) te voltooien, maar dit is niet verplicht.
 
-U moet Visual Studio code hebben met de Bicep-extensie en een Azure PowerShell of Azure CLI. Zie [Bicep-hulpprogram ma's](bicep-tutorial-create-first-bicep.md#get-tools)voor meer informatie.
+U moet een Visual Studio code hebben met de Bicep-extensie en Azure PowerShell of Azure CLI. Zie Bicep tools [(Bicep-hulpprogramma's) voor meer informatie.](bicep-tutorial-create-first-bicep.md#get-tools)
 
 ## <a name="review-bicep-file"></a>Bicep-bestand controleren
 
-Aan het einde van de vorige zelf studie had uw Bicep-bestand de volgende inhoud:
+Aan het einde van de vorige zelfstudie had uw Bicep-bestand de volgende inhoud:
 
 :::code language="bicep" source="~/resourcemanager-templates/get-started-with-templates/add-sku/azuredeploy.bicep":::
 
-De locatie van het opslagaccount is in code vastgelegd als **US - oost**. Het is echter mogelijk dat u het opslagaccount moet implementeren in andere regio's. Er wordt nog een probleem opgetreden bij het oplossen van uw Bicep-bestand. U kunt een parameter voor de locatie toevoegen, maar het zou geweldig zijn als de standaardwaarde gebruiksvriendelijker was dan alleen een in code vastgelegde waarde.
+De locatie van het opslagaccount is in code vastgelegd als **US - oost**. Het is echter mogelijk dat u het opslagaccount moet implementeren in andere regio's. U hebt opnieuw te maken met een probleem dat uw Bicep-bestand niet flexibel is. U kunt een parameter voor de locatie toevoegen, maar het zou geweldig zijn als de standaardwaarde gebruiksvriendelijker was dan alleen een in code vastgelegde waarde.
 
 ## <a name="use-function"></a>Functie gebruiken
 
-Met functies kunt u flexibiliteit toevoegen aan uw Bicep-bestand door waarden dynamisch op te halen tijdens de implementatie. In deze zelfstudie gebruikt u een functie om de locatie op te halen van de resourcegroep die u voor de implementatie gebruikt.
+Functies voegen flexibiliteit toe aan uw Bicep-bestand door dynamisch waarden op te krijgen tijdens de implementatie. In deze zelfstudie gebruikt u een functie om de locatie op te halen van de resourcegroep die u voor de implementatie gebruikt.
 
-In het volgende voor beeld ziet u de wijzigingen voor het toevoegen van een para meter met de naam `location` . De standaardwaarde van de parameter roept de functie [resourceGroup](template-functions-resource.md#resourcegroup) aan. Deze functie retourneert een-object met informatie over de resourcegroep die wordt gebruikt voor de implementatie. Een van de eigenschappen van het object is een location-eigenschap. Wanneer u de standaardwaarde gebruikt, is de locatie van het opslagaccount hetzelfde als die van de resourcegroep. De resources in een resourcegroep hoeven niet dezelfde locatie te delen. U kunt zo nodig ook een andere locatie opgeven.
+In het volgende voorbeeld ziet u de wijzigingen voor het toevoegen van een parameter met de naam `location` . De standaardwaarde van de parameter roept de functie [resourceGroup](template-functions-resource.md#resourcegroup) aan. Deze functie retourneert een-object met informatie over de resourcegroep die wordt gebruikt voor de implementatie. Een van de eigenschappen van het object is een location-eigenschap. Wanneer u de standaardwaarde gebruikt, is de locatie van het opslagaccount hetzelfde als die van de resourcegroep. De resources in een resourcegroep hoeven niet dezelfde locatie te delen. U kunt zo nodig ook een andere locatie opgeven.
 
 Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
 
@@ -47,11 +47,11 @@ Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
 
 In de vorige zelfstudies hebt u een opslagaccount gemaakt in US - oost, maar uw resourcegroep is gemaakt in VS - centraal. Voor deze zelfstudie wordt uw opslagaccount in dezelfde regio gemaakt als de resourcegroep. Gebruik de standaardwaarde voor de locatie, zodat u deze parameterwaarde niet hoeft op te geven. U moet een nieuwe naam opgeven voor het opslagaccount, omdat u een opslagaccount maakt op een andere locatie. Gebruik bijvoorbeeld **store2** als voorvoegsel in plaats van **store1**.
 
-Zie [Resourcegroep maken](bicep-tutorial-create-first-bicep.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voor beeld wordt ervan uitgegaan dat u de variabele hebt ingesteld `bicepFile` op het pad naar het Bicep-bestand, zoals wordt weer gegeven in de [eerste zelf studie](bicep-tutorial-create-first-bicep.md#deploy-bicep-file).
+Zie [Resourcegroep maken](bicep-tutorial-create-first-bicep.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgenomen dat u de variabele hebt ingesteld op het pad naar het `bicepFile` Bicep-bestand, zoals wordt weergegeven in de [eerste zelfstudie.](bicep-tutorial-create-first-bicep.md#deploy-bicep-file)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u deze implementatie-cmdlet wilt uitvoeren, moet u over de [nieuwste versie](/powershell/azure/install-az-ps) van Azure PowerShell beschikken.
+Als u deze implementatie-cmdlet wilt uitvoeren, moet u de [nieuwste versie van](/powershell/azure/install-az-ps) Azure PowerShell.
 
 ```azurepowershell
 New-AzResourceGroupDeployment `

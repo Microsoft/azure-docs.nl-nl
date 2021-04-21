@@ -10,12 +10,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./create-first-function-cli-python-uiex
-ms.openlocfilehash: 1b6805434f8c697c1ea13925ee681fdc7b5f1a29
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f5c51630d111bd68e311a93100abb8266e2a8e27
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101704749"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787427"
 ---
 # <a name="quickstart-create-a-python-function-in-azure-from-the-command-line"></a>Quickstart: Een Python-functie maken in Azure vanaf de opdrachtregel
 
@@ -180,7 +180,7 @@ Gebruik de volgende opdrachten om deze items te maken. Zowel Azure CLI als Power
     az login
     ```
 
-    Met de opdracht [az login](/cli/azure/reference-index#az-login) meldt u zich aan bij uw Azure-account.
+    Met de opdracht [az login](/cli/azure/reference-index#az_login) meldt u zich aan bij uw Azure-account.
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell) 
     ```azurepowershell
@@ -199,7 +199,7 @@ Gebruik de volgende opdrachten om deze items te maken. Zowel Azure CLI als Power
     az group create --name AzureFunctionsQuickstart-rg --location westeurope
     ```
  
-    Met de opdracht [az group create](/cli/azure/group#az-group-create) maakt u een resourcegroep. Over het algemeen maakt u een resourcegroep en resources in een regio bij u in de buurt, waarbij u een beschikbare regio gebruikt die wordt geretourneerd door de opdracht `az account list-locations`.
+    Met de opdracht [az group create](/cli/azure/group#az_group_create) maakt u een resourcegroep. Over het algemeen maakt u een resourcegroep en resources in een regio bij u in de buurt, waarbij u een beschikbare regio gebruikt die wordt geretourneerd door de opdracht `az account list-locations`.
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
@@ -222,7 +222,7 @@ Gebruik de volgende opdrachten om deze items te maken. Zowel Azure CLI als Power
     az storage account create --name <STORAGE_NAME> --location westeurope --resource-group AzureFunctionsQuickstart-rg --sku Standard_LRS
     ```
 
-    Met de opdracht [az storage account create](/cli/azure/storage/account#az-storage-account-create) maakt u het opslagaccount. 
+    Met de opdracht [az storage account create](/cli/azure/storage/account#az_storage_account_create) maakt u het opslagaccount. 
 
     # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 

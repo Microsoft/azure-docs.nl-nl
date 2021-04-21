@@ -1,46 +1,46 @@
 ---
-title: Container groep implementeren in een virtueel Azure-netwerk
-description: Meer informatie over hoe u een container groep implementeert in een nieuw of bestaand virtueel Azure-netwerk met behulp van de Azure-opdracht regel interface.
+title: Een containergroep implementeren in een virtueel Azure-netwerk
+description: Leer hoe u een containergroep implementeert in een nieuw of bestaand virtueel Azure-netwerk met behulp van de Azure-opdrachtregelinterface.
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: b791d3f37809c2eca53f5a3cd34f7c44dd11ce40
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 44be66957aa745179ffe4cd00db75f1d47237dfc
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98028876"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107771043"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Containerinstanties implementeren in een virtueel Azure-netwerk
 
-[Azure Virtual Network](../virtual-network/virtual-networks-overview.md) biedt veilige, persoonlijke netwerken voor uw Azure-en on-premises resources. Door container groepen te implementeren in een virtueel Azure-netwerk, kunnen uw containers veilig communiceren met andere resources in het virtuele netwerk.
+[Azure Virtual Network](../virtual-network/virtual-networks-overview.md) beveiligde privénetwerken voor uw Azure- en on-premises resources. Door containergroepen te implementeren in een virtueel Azure-netwerk, kunnen uw containers veilig communiceren met andere resources in het virtuele netwerk.
 
-In dit artikel wordt beschreven hoe u de opdracht [AZ container Create][az-container-create] in de Azure cli gebruikt om container groepen te implementeren naar een nieuw virtueel netwerk of een bestaand virtueel netwerk. 
+In dit artikel wordt beschreven hoe u de [opdracht az container create][az-container-create] in de Azure CLI gebruikt om containergroepen te implementeren in een nieuw virtueel netwerk of een bestaand virtueel netwerk. 
 
-Zie [scenario's en resources voor het virtuele netwerk voor Azure container instances](container-instances-virtual-network-concepts.md)voor netwerk scenario's en-beperkingen.
+Zie Scenario's en resources voor virtuele netwerken voor [netwerkscenario's en -beperkingen voor Azure Container Instances.](container-instances-virtual-network-concepts.md)
 
 > [!IMPORTANT]
-> Implementatie van container groep naar een virtueel netwerk is algemeen beschikbaar voor Linux-containers, in de meeste regio's waar Azure Container Instances beschikbaar is. Zie [regio's en resources Beschik baarheid][container-regions]voor meer informatie. 
+> Implementatie van containergroep in een virtueel netwerk is algemeen beschikbaar voor Linux-containers, in de meeste regio's waar Azure Container Instances beschikbaar is. Zie Regio's en beschikbaarheid [van resources voor meer informatie.][container-regions] 
 
-Voor beelden in dit artikel zijn ingedeeld voor de bash-shell. Als u de voor keur geeft aan een andere shell, zoals Power shell of opdracht prompt, past u de regel vervolg tekens dienovereenkomstig aan.
+Voorbeelden in dit artikel zijn opgemaakt voor de Bash-shell. Als u de voorkeur geeft aan een andere shell, zoals PowerShell of opdrachtprompt, past u de tekens voor het vervolg van de regel dienovereenkomstig aan.
 
 
-## <a name="deploy-to-new-virtual-network"></a>Implementeren naar nieuw virtueel netwerk
+## <a name="deploy-to-new-virtual-network"></a>Implementeren in nieuw virtueel netwerk
 
-Als u wilt implementeren in een nieuw virtueel netwerk en Azure de netwerk resources automatisch voor u wilt maken, geeft u het volgende op wanneer u [AZ container Create][az-container-create]uitvoert:
+Als u wilt implementeren in een nieuw virtueel netwerk en Azure de netwerkresources automatisch voor u wilt laten maken, geeft u het volgende op wanneer u [az container create uitvoert:][az-container-create]
 
 * Naam van virtueel netwerk
-* Adres voorvoegsel van het virtuele netwerk in CIDR-indeling
+* Voorvoegsel van virtueel netwerkadres in CIDR-indeling
 * Subnetnaam
-* Adres voorvoegsel van het subnet in CIDR-indeling
+* Subnetadres voorvoegsel in CIDR-indeling
 
-Met de voor voegsels voor het virtuele netwerk en het subnet adres worden de adres ruimten voor het virtuele netwerk en het subnet opgegeven. Deze waarden worden weer gegeven in de CIDR-notatie (Classable Inter-Domain Routing), bijvoorbeeld `10.0.0.0/16` . Zie [een subnet van een virtueel netwerk toevoegen, wijzigen of verwijderen](../virtual-network/virtual-network-manage-subnet.md)voor meer informatie over het werken met subnetten.
+De adres voorvoegsels van het virtuele netwerk en het subnet geven de adresruimten voor respectievelijk het virtuele netwerk en subnet op. Deze waarden worden weergegeven in cidr-notatie (Classless Inter-Domain Routing), bijvoorbeeld `10.0.0.0/16` . Zie Een subnet van een virtueel netwerk toevoegen, wijzigen of verwijderen voor meer informatie over het werken met [subnetten.](../virtual-network/virtual-network-manage-subnet.md)
 
-Wanneer u uw eerste container groep met deze methode hebt geïmplementeerd, kunt u in hetzelfde subnet implementeren door het virtuele netwerk en de subnetnaam op te geven, of het netwerk profiel dat door Azure automatisch voor u wordt gemaakt. Omdat Azure het subnet delegeert naar Azure Container Instances, kunt u *alleen* container groepen implementeren naar het subnet.
+Zodra u uw eerste containergroep met deze methode hebt geïmplementeerd, kunt u implementeren naar hetzelfde subnet door de namen van het virtuele netwerk en subnet op te geven, of door het netwerkprofiel op te geven dat automatisch door Azure voor u wordt gemaakt. Omdat Azure het subnet delegeert aan Azure Container Instances, kunt u alleen *containergroepen* implementeren in het subnet.
 
 ### <a name="example"></a>Voorbeeld
 
-Met de volgende opdracht [AZ container Create][az-container-create] worden de instellingen voor een nieuw virtueel netwerk en subnet opgegeven. Geef de naam op van een resource groep die is gemaakt in een regio waarin implementaties van container groepen in een virtueel netwerk [beschikbaar](container-instances-region-availability.md)zijn. Met deze opdracht wordt de open bare container micro soft [ACI-HelloWorld][aci-helloworld] met een kleine Node.js webserver met een statische webpagina geïmplementeerd. In de volgende sectie implementeert u een tweede container groep naar hetzelfde subnet en test u de communicatie tussen de twee container exemplaren.
+Met de [volgende opdracht az container create][az-container-create] geeft u instellingen op voor een nieuw virtueel netwerk en subnet. Geef de naam op van een resourcegroep die is gemaakt in een regio waar implementaties van containergroepen in een virtueel netwerk beschikbaar [zijn.](container-instances-region-availability.md) Met deze opdracht wordt de openbare Microsoft [aci-helloworld-container][aci-helloworld] geïmplementeerd die een kleine webserver Node.js een statische webpagina wordt uitgevoerd. In de volgende sectie implementeert u een tweede containergroep in hetzelfde subnet en test u de communicatie tussen de twee container-exemplaren.
 
 ```azurecli
 az container create \
@@ -53,23 +53,23 @@ az container create \
   --subnet-address-prefix 10.0.0.0/24
 ```
 
-Wanneer u deze methode gebruikt voor het implementeren van een nieuw virtueel netwerk, kan het enkele minuten duren voordat de implementatie van de netwerk bronnen is gemaakt. Na de eerste implementatie worden extra container groeps implementaties naar hetzelfde subnet sneller uitgevoerd.
+Wanneer u met deze methode implementeert in een nieuw virtueel netwerk, kan de implementatie enkele minuten duren terwijl de netwerkbronnen worden gemaakt. Na de eerste implementatie worden extra containergroepimplementaties naar hetzelfde subnet sneller voltooid.
 
-## <a name="deploy-to-existing-virtual-network"></a>Implementeren in een bestaand virtueel netwerk
+## <a name="deploy-to-existing-virtual-network"></a>Implementeren in bestaand virtueel netwerk
 
-Een container groep implementeren in een bestaand virtueel netwerk:
+Een containergroep implementeren in een bestaand virtueel netwerk:
 
-1. Maak een subnet in uw bestaande virtuele netwerk, gebruik een bestaand subnet waarin een container groep al is geïmplementeerd, of gebruik een bestaand subnet dat *alle* andere resources heeft geleegd
-1. Implementeer een container groep met [AZ container Create][az-container-create] en geef een van de volgende opties op:
-   * Naam van het virtuele netwerk en het subnet
-   * Bron-ID van het virtuele netwerk en de resource-ID van het subnet, waarmee een virtueel netwerk van een andere resource groep kan worden gebruikt
-   * Naam of ID van het netwerk profiel, dat u kunt verkrijgen met de [lijst AZ Network profile][az-network-profile-list]
+1. Maak een subnet binnen uw bestaande virtuele netwerk, gebruik een bestaand subnet waarin al een containergroep is geïmplementeerd *of* gebruik een bestaand subnet dat is leeggemaakt van alle andere resources
+1. Implementeer een containergroep [met az container create][az-container-create] en geef een van de volgende opties op:
+   * Naam van virtueel netwerk en subnetnaam
+   * Resource-id van virtueel netwerk en resource-id van subnet, waarmee u een virtueel netwerk uit een andere resourcegroep kunt gebruiken
+   * De naam of id van het netwerkprofiel, die u kunt verkrijgen met [az network profile list][az-network-profile-list]
 
 ### <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld wordt een tweede container groep geïmplementeerd op hetzelfde subnet dat eerder is gemaakt en wordt de communicatie tussen de twee container instanties geverifieerd.
+In het volgende voorbeeld wordt een tweede containergroep geïmplementeerd in hetzelfde subnet dat u eerder hebt gemaakt en wordt de communicatie tussen de twee container-exemplaren gecontroleerd.
 
-Haal eerst het IP-adres op van de eerste container groep die u hebt geïmplementeerd, de *appcontainer*:
+Haal eerst het IP-adres op van de eerste containergroep die u hebt geïmplementeerd, *de appcontainer*:
 
 ```azurecli
 az container show --resource-group myResourceGroup \
@@ -77,13 +77,13 @@ az container show --resource-group myResourceGroup \
   --query ipAddress.ip --output tsv
 ```
 
-In de uitvoer wordt het IP-adres van de container groep in het privé-subnet weer gegeven. Bijvoorbeeld:
+In de uitvoer wordt het IP-adres van de containergroep in het privésubnet weergegeven. Bijvoorbeeld:
 
 ```console
 10.0.0.4
 ```
 
-Stel nu `CONTAINER_GROUP_IP` in op het IP-adres dat u hebt opgehaald met de `az container show` opdracht en voer de volgende `az container create` opdracht uit. Deze tweede container, *commchecker*, voert een alpine Linux-installatie kopie uit en voert een uitvoer uit `wget` op basis van het IP-adres van het particuliere subnet van de container groep.
+Stel nu in `CONTAINER_GROUP_IP` op het IP-adres dat u hebt opgehaald met de `az container show` opdracht en voer de volgende opdracht `az container create` uit. Deze tweede container, *commchecker,* voert een Alpine Linux-gebaseerde afbeelding uit en wordt uitgevoerd op basis van het IP-adres van het privé-subnet van de eerste `wget` containergroep.
 
 ```azurecli
 CONTAINER_GROUP_IP=<container-group-IP-address>
@@ -98,35 +98,35 @@ az container create \
   --subnet aci-subnet
 ```
 
-Nadat deze tweede container implementatie is voltooid, haalt u de logboeken op zodat u de uitvoer van de `wget` opdracht die deze heeft uitgevoerd, kunt zien:
+Nadat deze tweede containerimplementatie is voltooid, haalt u de logboeken op, zodat u de uitvoer kunt zien van de `wget` opdracht die is uitgevoerd:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name commchecker
 ```
 
-Als de tweede container met de eerste keer is gecommuniceerd, is de uitvoer vergelijkbaar met:
+Als de tweede container met de eerste is gecommuniceerd, is de uitvoer vergelijkbaar met:
 
 ```console
 Connecting to 10.0.0.4 (10.0.0.4:80)
 index.html           100% |*******************************|  1663   0:00:00 ETA
 ```
 
-De logboek uitvoer geeft aan dat er `wget` verbinding kan worden gemaakt met het index bestand van de eerste container met behulp van het bijbehorende privé-IP-adres op het lokale subnet. Het netwerk verkeer tussen de twee container groepen bleef binnen het virtuele netwerk.
+De logboekuitvoer moet laten zien dat het indexbestand verbinding heeft kunnen maken en downloaden vanuit de eerste container met behulp van het `wget` privé-IP-adres op het lokale subnet. Netwerkverkeer tussen de twee containergroepen blijft binnen het virtuele netwerk.
 
-### <a name="example---yaml"></a>Voor beeld-YAML
+### <a name="example---yaml"></a>Voorbeeld - YAML
 
-U kunt ook een container groep implementeren in een bestaand virtueel netwerk met behulp van een YAML-bestand, een [Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
-)of een andere programmatische methode, zoals met de PYTHON-SDK. 
+U kunt ook een containergroep implementeren in een bestaand virtueel netwerk met behulp van een YAML-bestand, een [Resource Manager-sjabloon of](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
+)een andere programmatische methode, zoals met de Python SDK. 
 
-Wanneer u bijvoorbeeld een YAML-bestand gebruikt, kunt u implementeren in een virtueel netwerk met een subnet dat is overgedragen aan Azure Container Instances. Geef de volgende eigenschappen op:
+Wanneer u bijvoorbeeld een YAML-bestand gebruikt, kunt u implementeren in een virtueel netwerk met een subnet dat is gedelegeerd Azure Container Instances. Geef de volgende eigenschappen op:
 
-* `ipAddress`: De instellingen voor het privé IP-adres van de container groep.
-  * `ports`: De poorten die moeten worden geopend, indien van toepassing.
-  * `protocol`: Het Protocol (TCP of UDP) voor de geopende poort.
-* `networkProfile`: Netwerk instellingen voor het virtuele netwerk en subnet.
-  * `id`: De volledige Resource Manager-Resource-ID van de `networkProfile` .
+* `ipAddress`: De instellingen voor het privé-IP-adres voor de containergroep.
+  * `ports`: de poorten die moeten worden geopend, indien aanwezig.
+  * `protocol`: Het protocol (TCP of UDP) voor de geopende poort.
+* `networkProfile`: Netwerkinstellingen voor het virtuele netwerk en subnet.
+  * `id`: De volledige Resource Manager resource-id van de `networkProfile` .
 
-Als u de ID van het netwerk profiel wilt ophalen, voert u de opdracht [AZ Network profile list][az-network-profile-list] uit en geeft u de naam op van de resource groep die het virtuele netwerk en het overgedragen subnet bevat.
+Voer de opdracht [az network profile list][az-network-profile-list] uit om de id van het netwerkprofiel op te halen, en geef de naam op van de resourcegroep die uw virtuele netwerk en gedelegeerd subnet bevat.
 
 ``` azurecli
 az network profile list --resource-group myResourceGroup \
@@ -139,7 +139,7 @@ Voorbeelduitvoer:
 /subscriptions/<Subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkProfiles/aci-network-profile-aci-vnet-aci-subnet
 ```
 
-Wanneer u de netwerk profiel-ID hebt, kopieert u de volgende YAML naar een nieuw bestand met de naam *vnet-Deploy-ACI. yaml*. `networkProfile`Vervang onder de waarde door de `id` id die u zojuist hebt opgehaald en sla het bestand op. Met deze YAML maakt u een container groep met de naam *appcontaineryaml* in uw virtuele netwerk.
+Zodra u de netwerkprofiel-id hebt, kopieert u de volgende YAML naar een nieuw bestand met de naam *vnet-deploy-aci.yaml.* Vervang `networkProfile` onder de waarde door de id die u zojuist hebt opgehaald en sla het bestand `id` op. Deze YAML maakt een containergroep met de *naam appcontaineryaml* in uw virtuele netwerk.
 
 ```YAML
 apiVersion: '2019-12-01'
@@ -170,14 +170,14 @@ tags: null
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
-Implementeer de container groep met de opdracht [AZ container Create][az-container-create] en geef de naam van het yaml-bestand op voor de `--file` para meter:
+Implementeer de containergroep met de [opdracht az container create,][az-container-create] met de naam van het YAML-bestand voor de `--file` parameter :
 
 ```azurecli
 az container create --resource-group myResourceGroup \
   --file vnet-deploy-aci.yaml
 ```
 
-Zodra de implementatie is voltooid, voert u de opdracht [AZ container show][az-container-show] uit om de status weer te geven. Voorbeelduitvoer:
+Zodra de implementatie is voltooid, kunt u de [opdracht az container show][az-container-show] uitvoeren om de status ervan weer te geven. Voorbeelduitvoer:
 
 ```console
 Name              ResourceGroup    Status    Image                                       IP:ports     Network    CPU/Memory       OsType    Location
@@ -187,9 +187,9 @@ appcontaineryaml  myResourceGroup  Running   mcr.microsoft.com/azuredocs/aci-hel
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-### <a name="delete-container-instances"></a>Container instanties verwijderen
+### <a name="delete-container-instances"></a>Container instances verwijderen
 
-Wanneer u klaar bent met de container instanties die u hebt gemaakt, verwijdert u deze met de volgende opdrachten:
+Wanneer u klaar bent met het werken met de container-exemplaren die u hebt gemaakt, verwijdert u deze met de volgende opdrachten:
 
 ```azurecli
 az container delete --resource-group myResourceGroup --name appcontainer -y
@@ -197,14 +197,14 @@ az container delete --resource-group myResourceGroup --name commchecker -y
 az container delete --resource-group myResourceGroup --name appcontaineryaml -y
 ```
 
-### <a name="delete-network-resources"></a>Netwerk bronnen verwijderen
+### <a name="delete-network-resources"></a>Netwerkbronnen verwijderen
 
-Voor deze functie zijn momenteel verschillende extra opdrachten vereist voor het verwijderen van de netwerk resources die u eerder hebt gemaakt. Als u de voorbeeld opdrachten in vorige secties van dit artikel hebt gebruikt om uw virtuele netwerk en subnet te maken, kunt u het volgende script gebruiken om die netwerk resources te verwijderen. In het script wordt ervan uitgegaan dat uw resource groep één virtueel netwerk met één netwerk profiel bevat.
+Voor deze functie zijn momenteel verschillende aanvullende opdrachten vereist om de netwerkresources te verwijderen die u eerder hebt gemaakt. Als u de voorbeeldopdrachten in de vorige secties van dit artikel hebt gebruikt om uw virtuele netwerk en subnet te maken, kunt u het volgende script gebruiken om deze netwerkbronnen te verwijderen. In het script wordt ervan uit gegaan dat uw resourcegroep één virtueel netwerk met één netwerkprofiel bevat.
 
-Voordat u het script uitvoert, stelt `RES_GROUP` u de variabele in op de naam van de resource groep met het virtuele netwerk en het subnet dat moet worden verwijderd. Werk de naam van het virtuele netwerk bij als u de naam die u eerder hebt voorgesteld niet hebt gebruikt `aci-vnet` . Het script is geformatteerd voor de bash-shell. Als u de voor keur geeft aan een andere shell, zoals Power shell of opdracht prompt, moet u de toewijzings-en toegangs rechten van de variabele dienovereenkomstig aanpassen.
+Voordat u het script gaat uitvoeren, stelt u de variabele in op de naam van de resourcegroep die het virtuele netwerk en subnet bevat dat `RES_GROUP` moet worden verwijderd. Werk de naam van het virtuele netwerk bij als u de eerder voorgestelde `aci-vnet` naam niet hebt gebruikt. Het script is opgemaakt voor de Bash-shell. Als u de voorkeur geeft aan een andere shell, zoals PowerShell of de opdrachtprompt, moet u de variabeletoewijzing en accessoires dienovereenkomstig aanpassen.
 
 > [!WARNING]
-> Met dit script worden resources verwijderd! Hiermee verwijdert u het virtuele netwerk en alle subnetten die het bevat. Zorg ervoor dat u *een* van de resources in het virtuele netwerk niet meer nodig hebt, met inbegrip van de subnetten die het bevat, voordat u dit script uitvoert. Nadat **deze bronnen zijn verwijderd, kunnen ze onherstelbaar zijn**.
+> Met dit script worden resources verwijderd. Hiermee verwijdert u het virtuele netwerk en alle subnetten die het bevat. Zorg ervoor dat u  geen resources meer nodig hebt in het virtuele netwerk, inclusief eventuele subnetten die het bevat, voordat u dit script gaat uitvoeren. Zodra deze resources zijn **verwijderd, kunnen ze niet meer worden teruggehaald.**
 
 ```azurecli
 # Replace <my-resource-group> with the name of your resource group
@@ -224,8 +224,8 @@ az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [een Azure-container groep met VNet maken](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
-)voor het implementeren van een nieuw virtueel netwerk, subnet, netwerk profiel en container groep met behulp van een resource manager-sjabloon.
+Zie Een [Azure-containergroep](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
+)maken met VNet als u een nieuw virtueel netwerk, subnet, netwerkprofiel en containergroep wilt implementeren met behulp van een Resource Manager-sjabloon.
 
 <!-- IMAGES -->
 [aci-vnet-01]: ./media/container-instances-vnet/aci-vnet-01.png
@@ -234,8 +234,8 @@ Zie [een Azure-container groep met VNet maken](https://github.com/Azure/azure-qu
 [aci-helloworld]: https://hub.docker.com/_/microsoft-azuredocs-aci-helloworld
 
 <!-- LINKS - Internal -->
-[az-container-create]: /cli/azure/container#az-container-create
-[az-container-show]: /cli/azure/container#az-container-show
-[az-network-vnet-create]: /cli/azure/network/vnet#az-network-vnet-create
-[az-network-profile-list]: /cli/azure/network/profile#az-network-profile-list
+[az-container-create]: /cli/azure/container#az_container_create
+[az-container-show]: /cli/azure/container#az_container_show
+[az-network-vnet-create]: /cli/azure/network/vnet#az_network_vnet_create
+[az-network-profile-list]: /cli/azure/network/profile#az_network_profile_list
 [container-regions]: container-instances-region-availability.md

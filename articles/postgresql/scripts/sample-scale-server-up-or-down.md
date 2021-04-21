@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.custom: mvc, devx-track-azurecli
 ms.topic: sample
 ms.date: 08/07/2019
-ms.openlocfilehash: b0a17b12c51c08cd39d0c4fb7860021b8c68e606
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 56fd88ab658e59cccb14a35559d1793bc3ad1aa0
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105606399"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778416"
 ---
 # <a name="monitor-and-scale-a-single-postgresql-server-using-azure-cli"></a>Eén PostgreSQL-server bewaken en de schaal ervan aanpassen met Azure CLI
 Met dit CLI-voorbeeldscript worden de compute- en opslagservices van een Azure Database for PostgreSQL-server aangepast nadat er query's zijn uitgevoerd op de metrische gegevens. Compute kan omhoog of omlaag worden geschaald. Opslag kan alleen omhoog worden geschaald. 
@@ -39,8 +39,8 @@ Dit script maakt gebruik van de opdrachten die in de volgende tabel worden weerg
 | **Opdracht** | **Opmerkingen** |
 |---|---|
 | [az group create](/cli/azure/group) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az postgres server create](/cli/azure/postgres/server#az-postgres-server-create) | Hiermee wordt een PostgreSQL-server gemaakt waar de SQL-database wordt gehost. |
-| [az postgres server update](/cli/azure/postgres/server#az-postgres-server-update) | Hiermee worden eigenschappen van de PostgreSQL-server bijgewerkt. |
+| [az postgres server create](/cli/azure/postgres/server#az_postgres_server_create) | Hiermee wordt een PostgreSQL-server gemaakt waar de SQL-database wordt gehost. |
+| [az postgres server update](/cli/azure/postgres/server#az_postgres_server_update) | Hiermee worden eigenschappen van de PostgreSQL-server bijgewerkt. |
 | [az monitor metrics list](/cli/azure/monitor/metrics) | Geeft de metrische waarde weer voor de resources. |
 | [az group delete](/cli/azure/group) | Hiermee verwijdert u een resourcegroep met inbegrip van alle geneste resources. |
 

@@ -1,5 +1,5 @@
 ---
-title: Service Mesh openen (preview)
+title: Open Service Mesh (preview)
 description: Open Service Mesh (OSM) in Azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: article
@@ -7,12 +7,12 @@ ms.date: 3/12/2021
 ms.custom: mvc, devx-track-azurecli
 ms.author: pgibson
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 65b02ae1baef97442828de747249ab6ffeaf2417
-ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
+ms.openlocfilehash: bbc07a7ee3f996c778cfc1b9d1764f10a613c50b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2021
-ms.locfileid: "107599468"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782941"
 ---
 # <a name="open-service-mesh-aks-add-on-preview"></a>Een Service Mesh AKS-invoegversie openen (preview)
 
@@ -26,7 +26,7 @@ OSM voert een op Envoy gebaseerd besturingsvlak uit op Kubernetes, kan worden ge
 
 ## <a name="capabilities-and-features"></a>Mogelijkheden en functies
 
-OSM biedt de volgende mogelijkheden en functies om een cloudeigen service-mesh te bieden voor uw Azure Kubernetes Service (AKS)-clusters:
+OSM biedt de volgende set mogelijkheden en functies om een cloudeigen service-mesh te bieden voor uw Azure Kubernetes Service (AKS)-clusters:
 
 - Communicatie van service naar service beveiligen door mTLS in te stellen
 
@@ -54,7 +54,7 @@ OSM kan uw AKS-implementaties ondersteunen met de volgende scenario's:
 
 ## <a name="osm-service-quotas-and-limits-preview"></a>Quota en limieten voor OSM-service (preview)
 
-OsM preview-beperkingen voor servicequota en -limieten vindt u op de pagina [AKS-quota en regionale limieten.](https://docs.microsoft.com/azure/aks/quotas-skus-regions)
+OsM-previewbeperkingen voor servicequota en -limieten vindt u op de pagina [AKS-quota en regionale limieten.](https://docs.microsoft.com/azure/aks/quotas-skus-regions)
 
 ::: zone pivot="client-operating-system-linux"
 
@@ -79,7 +79,7 @@ OsM preview-beperkingen voor servicequota en -limieten vindt u op de pagina [AKS
 
 ### <a name="register-the-aks-openservicemesh-preview-feature"></a>De `AKS-OpenServiceMesh` preview-functie registreren
 
-Als u een AKS-cluster wilt maken dat gebruik kan maken van de Open Service Mesh-invoegversie, moet u de `AKS-OpenServiceMesh` functievlag inschakelen voor uw abonnement.
+Als u een AKS-cluster wilt maken dat gebruik kan maken van de Open Service Mesh-invoeggebruik, moet u de `AKS-OpenServiceMesh` functievlag inschakelen voor uw abonnement.
 
 Registreer de `AKS-OpenServiceMesh` functievlag met behulp van [de opdracht az feature register,][az-feature-register] zoals wordt weergegeven in het volgende voorbeeld:
 
@@ -93,7 +93,7 @@ Het duurt enkele minuten voordat de status Geregistreerd _we weergeven._ Control
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-OpenServiceMesh')].{Name:name,State:properties.state}"
 ```
 
-Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider _Microsoft.ContainerService_ met behulp van de [opdracht az provider register:][az-provider-register]
+Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider _Microsoft.ContainerService_ met behulp van [de opdracht az provider register:][az-provider-register]
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -103,11 +103,11 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="install-open-service-mesh-osm-azure-kubernetes-service-aks-add-on-for-a-new-aks-cluster"></a>Open Service Mesh (OSM) Azure Kubernetes Service (AKS) voor een nieuw AKS-cluster installeren
 
-Voor een nieuw implementatiescenario voor AKS-clusters begint u met een geheel nieuwe implementatie van een AKS-cluster, waardoor de OSM-invoeg-invoegbewerking wordt uitgevoerd bij het maken van het cluster.
+Voor een nieuw implementatiescenario voor het AKS-cluster begint u met een geheel nieuwe implementatie van een AKS-cluster, waardoor de OSM-invoeg-on wordt gebruikt bij het maken van het cluster.
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-In Azure kunt u verwante resources toewijzen aan een resourcegroep. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de _naam myOsmAksGroup gemaakt_ op de _locatie eastus2_ (regio):
+In Azure kunt u verwante resources toewijzen aan een resourcegroep. Maak een resourcegroep met de opdracht [az group create](/cli/azure/group#az_group_create). In het volgende voorbeeld wordt een resourcegroep met de _naam myOsmAksGroup_ gemaakt op de _locatie eastus2_ (regio):
 
 ```azurecli-interactive
 az group create --name <myosmaksgroup> --location <eastus2>
@@ -115,10 +115,10 @@ az group create --name <myosmaksgroup> --location <eastus2>
 
 ### <a name="deploy-an-aks-cluster-with-the-osm-add-on-enabled"></a>Een AKS-cluster implementeren met de OSM-invoegversie ingeschakeld
 
-U implementeert nu een nieuw AKS-cluster met de OSM-invoegversie ingeschakeld.
+U implementeert nu een nieuw AKS-cluster met de OSM-invoegservice ingeschakeld.
 
 > [!NOTE]
-> Houd er rekening mee dat de volgende AKS-implementatieopdracht kortstondige schijven van het besturingssysteem gebruikt. Meer informatie over kortstondige besturingssysteemschijven voor [AKS vindt](https://docs.microsoft.com/azure/aks/cluster-configuration#ephemeral-os) u hier
+> Houd er rekening mee dat de volgende AKS-implementatieopdracht gebruikmaakt van kortstondige besturingssysteemschijven. Meer informatie over kortstondige besturingssysteemschijven voor [AKS vindt](https://docs.microsoft.com/azure/aks/cluster-configuration#ephemeral-os) u hier
 
 ```azurecli-interactive
 az aks create -n osm-addon-cluster -g <myosmaksgroup> --kubernetes-version 1.19.6 --node-osdisk-type Ephemeral --node-osdisk-size 30 --network-plugin azure --enable-managed-identity -a open-service-mesh
@@ -132,19 +132,19 @@ Haal toegangsreferenties op voor het nieuwe beheerde Kubernetes-cluster.
 az aks get-credentials -n <myosmakscluster> -g <myosmaksgroup>
 ```
 
-## <a name="enable-open-service-mesh-osm-azure-kubernetes-service-aks-add-on-for-an-existing-aks-cluster"></a>Open Service Mesh (OSM) Azure Kubernetes Service (AKS) inschakelen voor een bestaand AKS-cluster
+## <a name="enable-open-service-mesh-osm-azure-kubernetes-service-aks-add-on-for-an-existing-aks-cluster"></a>Open Service Mesh(OSM) Azure Kubernetes Service (AKS) inschakelen voor een bestaand AKS-cluster
 
 Voor een bestaand AKS-clusterscenario gaat u de OSM-invoegversie inschakelen voor een bestaand AKS-cluster dat al is geïmplementeerd.
 
 ### <a name="enable-the-osm-add-on-to-existing-aks-cluster"></a>De OSM-invoegversie inschakelen voor een bestaand AKS-cluster
 
-Als u de AKS OSM-invoegregel wilt inschakelen, moet u de opdracht uitvoeren `az aks enable-addons --addons` die de parameter doorgeeft `open-service-mesh`
+Als u de AKS OSM-invoeg-on wilt inschakelen, moet u de opdracht uitvoeren `az aks enable-addons --addons` die de parameter doorgeeft `open-service-mesh`
 
 ```azurecli-interactive
 az aks enable-addons --addons open-service-mesh -g <resource group name> -n <AKS cluster name>
 ```
 
-Als het goed is, ziet u uitvoer die vergelijkbaar is met de onderstaande uitvoer om te bevestigen dat de AKS OSM-invoeg-app is geïnstalleerd.
+Als het goed is, ziet u uitvoer die vergelijkbaar is met de uitvoer hieronder om te bevestigen dat de AKS OSM-invoeg-on is geïnstalleerd.
 
 ```json
 {- Finished ..
@@ -182,7 +182,7 @@ kubectl get services -n kube-system --selector app=osm-controller
 
 ## <a name="accessing-the-aks-osm-add-on"></a>Toegang tot de AKS OSM-invoeg-on
 
-Momenteel kunt u de configuratie van de OSM-controller openen en configureren via de configmap. Als u de configuratie-instellingen voor de OSM-controller wilt weergeven, moet u een query uitvoeren op de osm-config configmap via om `kubectl` de configuratie-instellingen ervan weer te geven.
+Momenteel kunt u de configuratie van de OSM-controller openen en configureren via de configmap. Als u de configuratie-instellingen voor de OSM-controller wilt weergeven, moet u een query uitvoeren op de osm-config configmap via om `kubectl` de configuratie-instellingen weer te geven.
 
 ```azurecli-interactive
 kubectl get configmap -n kube-system osm-config -o json | jq '.data'
@@ -213,7 +213,7 @@ U ziet **dat permissive_traffic_policy_mode** is geconfigureerd als **true.** De
 kubectl patch ConfigMap -n kube-system osm-config --type merge --patch '{"data":{"permissive_traffic_policy_mode":"true"}}'
 ```
 
-## <a name="deploy-a-new-application-to-be-managed-by-the-open-service-mesh-osm-azure-kubernetes-service-aks-add-on"></a>Een nieuwe toepassing implementeren die moet worden beheerd door de AKS-invoegtoepassing (Open Service Mesh) Azure Kubernetes Service (OSM)
+## <a name="deploy-a-new-application-to-be-managed-by-the-open-service-mesh-osm-azure-kubernetes-service-aks-add-on"></a>Een nieuwe toepassing implementeren die wordt beheerd door de AKS-invoegtoepassing (Open Service Mesh) Azure Kubernetes Service (OSM)
 
 ### <a name="before-you-begin"></a>Voordat u begint
 
@@ -377,7 +377,7 @@ Navigeer naar de volgende URL vanuit een browser `http://localhost:8080` . Als h
 
 ### <a name="disable-osm-permissive-traffic-mode-for-the-mesh"></a>OsM Permissive Traffic Mode uitschakelen voor de mesh
 
-Zoals eerder vermeld bij het weergeven van de configuratie van het OSM-cluster, wordt in de OSM-configuratie standaard het beleid voor de verkeersmodus ingeschakeld. In deze modus wordt het afdwingen van verkeersbeleid omzeild en detecteert OSM automatisch services die deel uitmaken van de service-mesh en programma's voor verkeersbeleidsregels op elke Sidecar van de Envoy-proxy om te kunnen communiceren met deze services.
+Zoals eerder vermeld bij het weergeven van de configuratie van het OSM-cluster, wordt in de OSM-configuratie standaard het beleid voor de verkeersmodus ingeschakeld. In deze modus wordt het afdwingen van verkeersbeleid omzeild en detecteert OSM automatisch services die deel uitmaken van de service-mesh en programma's voor beleidsregels voor verkeer op elke Sidecar van de Envoy-proxy om te kunnen communiceren met deze services.
 
 We schakelen nu het beleid voor de toegestane verkeersmodus uit en OSM heeft expliciet [SMI-beleid](https://smi-spec.io/) nodig dat op het cluster is geïmplementeerd om communicatie vanuit elke service toe te staan in de mesh. Als u de modus voor het permissieve verkeer wilt uitschakelen, moet u de volgende opdracht uitvoeren om de eigenschap configmap bij te werken en de waarde te wijzigen van `true` in `false` .
 
@@ -493,9 +493,9 @@ traffictarget.access.smi-spec.io/bookstore-access-bookwarehouse created
 httproutegroup.specs.smi-spec.io/bookwarehouse-service-routes created
 ```
 
-U kunt nu een port forwarding instellen op de bookbuyer- of bookstore-pods en zien dat de metrische gegevens voor zowel de gekochte boeken als de verkochte boeken weer oplopend zijn. U kunt ook hetzelfde doen voor de bookthief-pod om te controleren of er nog steeds geen boeken kunnen worden gestolen.
+U kunt nu een port forwarding instellen op de bookbuyer- of bookstore-pods en zien dat zowel de metrische gegevens voor boeken die zijn gekocht als boeken die worden verkocht, oplopend zijn. U kunt ook hetzelfde doen voor de bookthief-pod om te controleren of er nog steeds geen boeken kunnen worden gestolen.
 
-### <a name="apply-service-mesh-interface-smi-traffic-split-policies"></a>Beleid voor het splitsen van verkeer van Service Mesh Interface (SMI) toepassen
+### <a name="apply-service-mesh-interface-smi-traffic-split-policies"></a>SMI-beleid (Service Mesh Interface) voor het splitsen van verkeer toepassen
 
 Voor onze laatste demonstratie maken we een [SMI-beleid](https://smi-spec.io/) voor het splitsen van verkeer om het gewicht van de communicatie van de ene service naar meerdere services als back-end te configureren. Met de functie voor het splitsen van verkeer kunt u verbindingen met de ene service progressief naar een andere service verplaatsen door het verkeer te wegen op een schaal van 0 tot 100.
 
@@ -618,7 +618,7 @@ De volgende uitvoer wordt weergegeven.
 trafficsplit.split.smi-spec.io/bookstore-split created
 ```
 
-Stel een poort-forward tunnel in naar de bookbuyer-pod. U ziet nu boeken die worden gekocht in de bookstore v2-service. Als u de toename van aankopen blijft bekijken, ziet u een snellere toename van aankopen via de boekwinkel v2-service.
+Stel een doorgestuurde poorttunnel in naar de bookbuyer-pod. U ziet nu boeken die worden gekocht in de bookstore v2-service. Als u de toename van aankopen blijft bekijken, ziet u een snellere toename van aankopen via de boekwinkel v2-service.
 
 ![OSM bookbuyer books boough UI](./media/aks-osm-addon/osm-bookbuyer-traffic-split-ui.png)
 
@@ -626,7 +626,7 @@ Stel een poort-forward tunnel in naar de bookbuyer-pod. U ziet nu boeken die wor
 
 ### <a name="before-you-begin"></a>Voordat u begint
 
-In de stappen die in dit scenario worden beschreven, wordt ervan uitgenomen dat u de OSM AKS-invoegversie eerder hebt ingeschakeld voor uw AKS-cluster. Zo niet, bekijk dan de sectie [Enable Open Service Mesh (OSM) Azure Kubernetes Service (AKS) add-on (AKS) for an existing AKS cluster (Open Service Mesh (OSM) Azure Kubernetes Service)](#enable-open-service-mesh-osm-azure-kubernetes-service-aks-add-on-for-an-existing-aks-cluster) inschakelen voor een bestaand AKS-cluster voordat u doorgaat. Uw AKS-cluster moet bovendien versie Kubernetes en hoger zijn, Kubernetes RBAC hebben ingeschakeld en verbinding hebben gemaakt met het cluster (als u hulp nodig hebt met een van deze items, bekijkt u de AKS-quickstart en hebt u de `1.19+` `kubectl` AKS OSM-invoegversie geïnstalleerd). [](./kubernetes-walkthrough.md)
+In de stappen die in dit scenario worden beschreven, wordt ervan uitgenomen dat u de OSM AKS-invoegversie eerder hebt ingeschakeld voor uw AKS-cluster. Zo niet, bekijk dan de sectie [Enable Open Service Mesh (OSM) Azure Kubernetes Service (AKS) add-on (AKS) for an existing AKS cluster (Open Service Mesh (OSM) Azure Kubernetes Service)](#enable-open-service-mesh-osm-azure-kubernetes-service-aks-add-on-for-an-existing-aks-cluster) inschakelen voor een bestaand AKS-cluster voordat u doorgaat. Uw AKS-cluster moet bovendien versie Kubernetes en hoger zijn, Kubernetes RBAC hebben ingeschakeld en verbinding hebben gemaakt met het cluster (als u hulp nodig hebt met een van deze items, bekijkt u de `1.19+` `kubectl` [AKS-quickstart](./kubernetes-walkthrough.md)en hebt u de AKS OSM-invoegversie geïnstalleerd.
 
 U moet de volgende resources hebben geïnstalleerd:
 
@@ -759,7 +759,7 @@ Containers:
     Host Ports:    0/TCP, 0/TCP, 0/TCP
 ```
 
-Controleer of uw toepassing nog steeds functioneel is na de proxyinjectie van de Envoy-sidecar.
+Controleer of uw toepassing nog steeds functioneel is na de Envoy-sidecar-proxyinjectie.
 
 ### <a name="onboard-existing-deployed-applications-with-open-service-mesh-osm-permissive-traffic-policy-configured-as-false"></a>Onboarding van bestaande geïmplementeerde toepassingen met Open Service Mesh (OSM) Permissive Traffic Policy geconfigureerd als False
 
@@ -832,7 +832,7 @@ Er zijn verschillende technieken om uw implementatie bij te werken om een Kubern
 
 De laatste stap voor het toestaan van geautoriseerd verkeer in de mesh is het implementeren van het benodigde [SMI-toegangsbeleid](https://smi-spec.io/) voor verkeer voor uw toepassing. De hoeveelheid configuratie die u kunt bereiken met [SMI-beleid](https://smi-spec.io/) voor verkeerstoegang valt buiten het bereik van dit scenario, maar we beschrijven enkele van de algemene onderdelen van de specificatie en laten zien hoe u een eenvoudig TrafficTarget- en HTTPRouteGroup-beleid configureert om service-naar-service-communicatie voor uw toepassing mogelijk te maken.
 
-Met [de SMI](https://smi-spec.io/) [**Traffic Access Control**](https://github.com/servicemeshinterface/smi-spec/blob/main/apis/traffic-access/v1alpha3/traffic-access.md#traffic-access-control) kunnen gebruikers het toegangscontrolebeleid voor hun toepassingen definiëren. We richten ons op de **Resources van de TrafficTarget-** **en HTTPRoutGroup-API.**
+Met [de SMI](https://smi-spec.io/) [**Traffic Access Control**](https://github.com/servicemeshinterface/smi-spec/blob/main/apis/traffic-access/v1alpha3/traffic-access.md#traffic-access-control) kunnen gebruikers het toegangscontrolebeleid voor hun toepassingen definiëren. We richten ons op de **Resources van de TrafficTarget-** en **HTTPRoutGroup-API.**
 
 De TrafficTarget-resource bestaat uit drie hoofdconfiguratie-instellingen doel, regels en bronnen. Hieronder wordt een voorbeeld van TrafficTarget weergegeven.
 
@@ -861,7 +861,7 @@ spec:
 
 In de bovenstaande TrafficTarget-specificatie geeft de het serviceaccount aan `destination` dat is geconfigureerd voor de doelbronservice. Vergeet niet dat het serviceaccount dat eerder aan de implementatie is toegevoegd, wordt gebruikt om toegang te verlenen tot de implementatie waar deze aan is gekoppeld. De `rules` sectie , in dit specifieke voorbeeld, definieert het type HTTP-verkeer dat via de verbinding is toegestaan. U kunt fijn grain regex patronen voor de HTTP-headers configureren om specifiek te zijn voor welk verkeer is toegestaan via HTTP. De `sources` sectie is de communicatie die afkomstig is van de service. In deze specificatie wordt gelezen dat bookbuyer moet communiceren met de boekwinkel.
 
-De HTTPRouteGroup-resource bestaat uit een of een matrix van overeenkomsten met HTTP-headerinformatie en is een vereiste voor de TrafficTarget-specificatie. In het onderstaande voorbeeld ziet u dat de HTTPRouteGroup drie HTTP-acties autoriseert, twee GET en één POST.
+De HTTPRouteGroup-resource bestaat uit een of een matrix van overeenkomsten met HTTP-headergegevens en is een vereiste voor de TrafficTarget-specificatie. In het onderstaande voorbeeld ziet u dat de HTTPRouteGroup drie HTTP-acties autoriseert, twee GET en één POST.
 
 ```HTTPRouteGroup Example Spec
 apiVersion: specs.smi-spec.io/v1alpha4
@@ -888,7 +888,7 @@ spec:
     - POST
 ```
 
-Als u niet bekend bent met het type HTTP-verkeer dat uw front-endtoepassing maakt naar andere lagen van de toepassing, kunt u, omdat voor de TrafficTarget-specificatie een regel is vereist, het equivalent van een regel voor alles toestaan maken met behulp van de onderstaande specificatie voor HTTPRouteGroup.
+Als u niet bekend bent met het type HTTP-verkeer dat uw front-endtoepassing maakt naar andere lagen van de toepassing, kunt u voor de TrafficTarget-specificatie het equivalent van een regel voor alles toestaan maken met behulp van de onderstaande specificatie voor HTTPRouteGroup.
 
 ```HTTPRouteGroup Allow All Example
 apiVersion: specs.smi-spec.io/v1alpha4
@@ -903,7 +903,7 @@ spec:
     methods: ["GET","PUT","POST","DELETE","PATCH"]
 ```
 
-Zodra u de specificaties voor TrafficTarget en HTTPRouteGroup hebt geconfigureerd, kunt u ze samenbrengen als één YAML en implementeren. Hieronder vindt u de configuratie van het boekwinkelvoorbeeld.
+Zodra u de specificaties van TrafficTarget en HTTPRouteGroup hebt geconfigureerd, kunt u ze samenbrengen als één YAML en implementeren. Hieronder vindt u de configuratie van het boekwinkelvoorbeeld.
 
 ```Bookstore Example TrafficTarget and HTTPRouteGroup configuration
 kubectl apply -f - <<EOF
@@ -1172,7 +1172,7 @@ Terwijl de port forwarding is, navigeert u vanuit een browser naar de volgende `
 
 ![Afbeelding van OSM bookbuyer-app voor NGINX-gebruikersinterface](./media/aks-osm-addon/osm-agic-bookbuyer-img.png)
 
-### <a name="create-an-nginx-ingress-controller-in-azure-kubernetes-service-aks"></a>Een NGINX-controller voor ingress maken in Azure Kubernetes Service (AKS)
+### <a name="create-an-nginx-ingress-controller-in-azure-kubernetes-service-aks"></a>Een NGINX-controller voor binnengressen maken in Azure Kubernetes Service (AKS)
 
 Een controller voor inkomend verkeer is een stukje software dat omgekeerde proxy’s, configureerbare verkeersroutering en TLS-beëindiging voor Kubernetes-services biedt. Kubernetes-resources voor inkomend verkeer worden gebruikt om de regels en routes voor uitgaand verkeer worden geconfigureerd voor individuele Kubernetes-services. Met behulp van een controller en regels voor inkomend verkeer kan er één enkel IP-adres worden gebruikt voor het routeren van verkeer naar meerdere services in een Kubernetes-cluster.
 
@@ -1211,7 +1211,7 @@ NAME                                     TYPE           CLUSTER-IP    EXTERNAL-I
 nginx-ingress-ingress-nginx-controller   LoadBalancer   10.0.74.133   EXTERNAL_IP     80:32486/TCP,443:30953/TCP   44s   app.kubernetes.io/component=controller,app.kubernetes.io/instance=nginx-ingress,app.kubernetes.io/name=ingress-nginx
 ```
 
-Er zijn nog geen regels voor ingressen gemaakt. Daarom wordt de standaardpagina 404 van de NGINX-controller voor het ingress weergegeven als u naar het interne IP-adres bladert. In de volgende stappen worden regels voor ingress geconfigureerd.
+Er zijn nog geen regels voor ingressen gemaakt. Daarom wordt de standaardpagina 404 van de NGINX-controller voor het ingressen weergegeven als u naar het interne IP-adres bladert. In de volgende stappen worden regels voor ingress geconfigureerd.
 
 ### <a name="expose-the-bookbuyer-service-to-the-internet"></a>De bookbuyer-service op internet maken
 
@@ -1399,7 +1399,7 @@ Uitvoer toont de huidige OSM-configuratie voor het cluster.
 }
 ```
 
-U ziet **dat permissive_traffic_policy_mode** is geconfigureerd als **waar.** De modus voor het afdwingen van verkeersbeleid in OSM is een modus waarin het afdwingen van [het SMI-verkeersbeleid](https://smi-spec.io/) wordt omzeild. In deze modus detecteert OSM automatisch services die deel uitmaken van de service-mesh en programma's voor verkeersbeleidsregels op elke Envoy-proxy sidecar om te kunnen communiceren met deze services.
+U ziet **permissive_traffic_policy_mode** is geconfigureerd voor **true.** De modus voor het afdwingen van verkeersbeleid in OSM is een modus waarin het afdwingen van [het SMI-verkeersbeleid](https://smi-spec.io/) wordt omzeild. In deze modus detecteert OSM automatisch services die deel uitmaken van de service-mesh en programma's voor verkeersbeleidsregels op elke Envoy-proxy sidecar om te kunnen communiceren met deze services.
 
 ### <a name="create-namespaces-for-the-application"></a>Naamruimten voor de toepassing maken
 
@@ -1427,7 +1427,7 @@ namespace/bookwarehouse created
 
 ### <a name="onboard-the-namespaces-to-be-managed-by-osm"></a>Onboarding van de naamruimten die door OSM moeten worden beheerd
 
-Wanneer u de naamruimten toevoegt aan de OSM-mesh, kan de OSM-controller automatisch de Envoy sidecar-proxycontainers met uw toepassing injecteren. Voer de volgende opdracht uit om de naamruimten van de OSM-bookstore-toepassing te onboarden.
+Wanneer u de naamruimten aan de OSM-mesh toevoegt, kan de OSM-controller automatisch de Envoy sidecar-proxycontainers met uw toepassing injecteren. Voer de volgende opdracht uit om de naamruimten van de OSM-bookstore-toepassing te onboarden.
 
 ```azurecli-interactive
 osm namespace add bookstore bookbuyer bookthief bookwarehouse
@@ -1519,7 +1519,7 @@ NAME                         READY   STATUS    RESTARTS   AGE
 bookbuyer-7676c7fcfb-mtnrz   2/2     Running   0          7m8s
 ```
 
-Zodra we de naam van de pod hebben, kunnen we de opdracht port-forward gebruiken om een tunnel van ons lokale systeem naar de toepassing in het AKS-cluster in te stellen. Voer de volgende opdracht uit om port forward in te stellen voor de lokale systeempoort 8080. Gebruik opnieuw de naam van uw specifieke bookbuyer-pod.
+Zodra we de naam van de pod hebben, kunnen we de opdracht port-forward gebruiken om een tunnel in te stellen van ons lokale systeem naar de toepassing in het AKS-cluster. Voer de volgende opdracht uit om port forward in te stellen voor de lokale systeempoort 8080. Gebruik opnieuw de naam van uw specifieke bookbuyer-pod.
 
 ```azurecli-interactive
 kubectl port-forward bookbuyer-7676c7fcfb-mtnrz -n bookbuyer 8080:14001
@@ -1539,12 +1539,12 @@ Terwijl de port forwarding is, navigeert u vanuit een browser naar de volgende `
 ### <a name="create-an-azure-application-gateway-to-expose-the-bookbuyer-application-outside-the-aks-cluster"></a>Maak een Azure Application Gateway de bookbuyer-toepassing buiten het AKS-cluster weer te geven
 
 > [!NOTE]
-> Met de volgende aanwijzingen maakt u een nieuw exemplaar van de Azure Application Gateway moet worden gebruikt voor ingress. Als u een bestaand Azure Application Gateway u wilt gebruiken, gaat u naar de sectie voor het inschakelen van Application Gateway-invoeggebruikscontroller.
+> Met de volgende aanwijzingen maakt u een nieuw exemplaar van de Azure Application Gateway moet worden gebruikt voor ingress. Als u een bestaand Azure Application Gateway wilt gebruiken, gaat u naar de sectie voor het inschakelen van Application Gateway-invoeggebruikscontroller.
 
 #### <a name="deploy-a-new-application-gateway"></a>Een nieuwe Azure Application Gateway implementeren
 
 > [!NOTE]
-> We verwijzen naar bestaande documentatie voor het inschakelen van Application Gateway invoeg-invoegversie van de invoegversie van de toegangscontroller voor een bestaand AKS-cluster. Er zijn enkele wijzigingen aangebracht om het OSM-materiaal aan te passen. Meer gedetailleerde documentatie over dit onderwerp vindt u [hier.](https://docs.microsoft.com/azure/application-gateway/tutorial-ingress-controller-add-on-existing)
+> We verwijzen naar bestaande documentatie voor het inschakelen van Application Gateway invoegversie van de controller voor toegangsgressie voor een bestaand AKS-cluster. Er zijn enkele wijzigingen aangebracht om het OSM-materiaal aan te passen. Meer gedetailleerde documentatie over dit onderwerp vindt u [hier.](https://docs.microsoft.com/azure/application-gateway/tutorial-ingress-controller-add-on-existing)
 
 U implementeert nu een nieuwe Application Gateway om te simuleren dat er een bestaande Application Gateway is die u wilt gebruiken om het verkeer naar uw AKS-cluster te verdelen, _myCluster_. De naam van de Application Gateway wordt _myApplicationGateway_, maar u moet eerst een openbare IP-resource maken, _myPublicIp_, en een nieuw virtueel netwerk met de naam _myVnet_ en adresruimte 11.0.0.0/8, alsmede een subnetmet adresruimte 11.1.0.0/16 en de naam _mySubnet_, en uw Application Gateway implementeren in _mySubnet_ met behulp van _myPublicIp_.
 
@@ -1708,18 +1708,18 @@ U moet de volgende uitvoer zien
 
 Zowel Azure Monitor als Azure-toepassing Insights helpt u de beschikbaarheid en prestaties van uw toepassingen en services te maximaliseren door een uitgebreide oplossing te bieden voor het verzamelen, analyseren en gebruiken van telemetrie vanuit uw cloud- en on-premises omgevingen.
 
-De OSM AKS-invoegservice heeft diepe integraties in beide Azure-services en biedt een lijktloze Azure-ervaring voor het weergeven en reageren op kritieke KPI's die worden geleverd door metrische OSM-gegevens. Ga voor meer informatie over het inschakelen en configureren van deze services voor de OSM AKS-invoeg-on naar de pagina Azure Monitor voor [OSM](https://aka.ms/azmon/osmpreview) voor meer informatie.
+De OSM AKS-invoegservice heeft diepe integraties in beide Azure-services en biedt een lijktloze Azure-ervaring voor het weergeven en reageren op kritieke KPI's die worden geleverd door metrische OSM-gegevens. Ga naar de pagina Azure Monitor voor [OSM](https://aka.ms/azmon/osmpreview) voor meer informatie over het inschakelen en configureren van deze services voor de OSM AKS-invoegservice.
 
 ## <a name="tutorial-manually-deploy-prometheus-grafana-and-jaeger-to-view-open-service-mesh-osm-metrics-for-observability"></a>Zelfstudie: Prometheus, Grafana en Jaeger handmatig implementeren om metrische gegevens van Open Service Mesh (OSM) weer te geven voor waarneembaarheid
 
 > [!WARNING]
-> De installatie van Prometheus, Grafana en Jaeger wordt aangeboden als algemene richtlijnen om te laten zien hoe deze hulpprogramma's kunnen worden gebruikt om metrische OSM-gegevens weer te geven. De installatie-richtlijnen mogen niet worden gebruikt voor een productie-installatie. Raadpleeg de documentatie van elk hulpprogramma over hoe u de installaties het beste aan uw behoeften kunt voldoen. Het belangrijkste is het ontbreken van permanente opslag, wat betekent dat alle gegevens verloren gaan zodra een Prometheus Grafana en/of Jaeger-pod(s) zijn beëindigd.
+> De installatie van Prometheus, Grafana en Jaeger wordt aangeboden als algemene richtlijnen om te laten zien hoe deze hulpprogramma's kunnen worden gebruikt om metrische OSM-gegevens weer te geven. De installatie-richtlijnen mogen niet worden gebruikt voor een productie-installatie. Raadpleeg de documentatie van elk hulpprogramma over hoe u de installaties het beste aan uw behoeften kunt voldoen. De meest opvallende is het ontbreken van permanente opslag, wat betekent dat alle gegevens verloren gaan zodra een Prometheus Grafana en/of Jaeger-pod(s) zijn beëindigd.
 
 Open Service Mesh (OSM) genereert gedetailleerde metrische gegevens met betrekking tot al het verkeer binnen de mesh. Deze metrische gegevens bieden inzicht in het gedrag van toepassingen in de mesh, zodat gebruikers problemen met hun toepassingen kunnen oplossen, onderhouden en analyseren.
 
 Vanaf vandaag verzamelt OSM metrische gegevens rechtstreeks vanuit de sidecar-proxies (Envoy). OSM biedt uitgebreide metrische gegevens voor binnenkomend en uitgaand verkeer voor alle services in de mesh. Met deze metrische gegevens kan de gebruiker informatie krijgen over de totale hoeveelheid verkeer, fouten binnen het verkeer en de reactietijd voor aanvragen.
 
-OSM gebruikt Prometheus voor het verzamelen en opslaan van consistente metrische gegevens en statistieken voor verkeer voor alle toepassingen die in de mesh worden uitgevoerd. Prometheus is een opensource toolkit voor bewaking en waarschuwingen, die vaak wordt gebruikt in (maar niet beperkt tot) Kubernetes- en Service Mesh-omgevingen.
+OSM gebruikt Prometheus om consistente metrische gegevens en statistieken voor verkeer te verzamelen en op te slaan voor alle toepassingen die in de mesh worden uitgevoerd. Prometheus is een opensource toolkit voor bewaking en waarschuwingen, die vaak wordt gebruikt in (maar niet beperkt tot) Kubernetes- en Service Mesh-omgevingen.
 
 Elke toepassing die deel uitmaakt van de mesh wordt uitgevoerd in een Pod die een Envoy-sidecar bevat die metrische gegevens (proxygegevens) beschikbaar maakt in de Prometheus-indeling. Bovendien heeft elke Pod die deel uitmaakt van de mesh Prometheus-aantekeningen, waardoor de Prometheus-server de toepassing dynamisch kan scrapen. Met dit mechanisme wordt automatisch scraping van metrische gegevens mogelijk wanneer een nieuwe naamruimte/pod/service aan de mesh wordt toegevoegd.
 
@@ -2121,7 +2121,7 @@ kubectl get secret --namespace default osm-grafana -o jsonpath=&quot;{.data.admi
 
 Noteer het Grafana-wachtwoord.
 
-Vervolgens halen we de Grafana-pod op naar de poort naar het Grafana-dashboard om u aan te melden.
+Vervolgens halen we de Grafana-pod op die via poort naar het Grafana-dashboard moet worden doorgestuurd om u aan te melden.
 
 ```azurecli-interactive
 GRAF_POD_NAME=$(kubectl get pods -l &quot;app.kubernetes.io/name=grafana&quot; -o jsonpath=&quot;{.items[0].metadata.name}")
@@ -2132,7 +2132,7 @@ Open een browser tot `http://localhost:3000`
 
 Voer in het onderstaande aanmeldingsscherm admin **in** als de gebruikersnaam en gebruik het Grafana-wachtwoord dat u eerder hebt vastgelegd.
 
-![AFBEELDING VAN OSM Grafana Login Page UI](./media/aks-osm-addon/osm-grafana-ui-login.png)
+![AFBEELDING VAN OSM Grafana-aanmeldingspagina](./media/aks-osm-addon/osm-grafana-ui-login.png)
 
 #### <a name="configure-the-grafana-prometheus-data-source"></a>De Grafana Prometheus-gegevensbron configureren
 
@@ -2142,7 +2142,7 @@ Nadat u zich hebt aangemeld bij Grafana, bestaat de volgende stap uit het toevoe
 
 Klik op **de knop Gegevensbron toevoegen** en selecteer Prometheus onder tijdreeksdatabases.
 
-![AFBEELDING VAN DE SELECTIEPAGINA VAN OSM Grafana Datasources](./media/aks-osm-addon/osm-grafana-ui-datasources-select-prometheus.png)
+![Afbeelding van de gebruikersinterface van de selectiepagina van OSM Grafana Datasources](./media/aks-osm-addon/osm-grafana-ui-datasources-select-prometheus.png)
 
 Voer op **de onderstaande pagina Uw Prometheus-gegevensbron** configureren de FQDN van het Kubernetes-cluster in voor de Prometheus-service voor de INSTELLING HTTP-URL. De standaard-FQDN moet `stable-prometheus-server.default.svc.cluster.local` zijn. Nadat u het Prometheus-service-eindpunt hebt ingevoerd, schuift u naar de onderkant van de pagina en **selecteert u Opslaan & Testen.** U ontvangt een groen selectievakje dat aangeeft dat de gegevensbron werkt.
 
@@ -2153,7 +2153,7 @@ OSM-dashboards zijn beschikbaar via:
 - [Onze opslagplaats](https://github.com/grafana/grafana)en kunnen als json-blobs worden geïmporteerd via de webbeheerdersportal
 - of [online op Grafana.com](https://grafana.com/grafana/dashboards/14145)
 
-Als u een dashboard wilt importeren, gaat u naar het `+` -teken in het menu links en selecteert u `import` .
+Als u een dashboard wilt importeren, gaat u naar het `+` teken in het menu links en selecteert u `import` .
 U kunt het dashboard rechtstreeks importeren op hun id in `Grafana.com` . Ons dashboard gebruikt bijvoorbeeld id , u kunt de id rechtstreeks op het formulier gebruiken `OSM Mesh Details` `14145` en `import` selecteren:
 
 ![Afbeelding van de gebruikersinterface voor de importpagina van het OSM Grafana-dashboard](./media/aks-osm-addon/osm-grafana-dashboard-import.png)
@@ -2300,7 +2300,7 @@ osm-controller-b5bd66db-wvl9w   1/1     Running   0          31m
 ```
 
 Hoewel er op een bepaald moment één controller is uitbesteed, hebben we nog een controller die READY 1/1 is en Wordt uitgevoerd met 0 opnieuw opstarten. Als de kolom READY iets anders is dan 1/1, heeft de service-mesh een verbroken status.
-Kolom GEREED met 0/1 geeft aan dat de container van het besturingsvlak vastgelopen is. We moeten logboeken op halen. Zie get OSM Controller Logs from Ondersteuning voor Azure Center (Logboeken voor OSM-controller Ondersteuning voor Azure center) hieronder. Kolom GEREED met een getal dat hoger is dan 1 na de / geeft aan dat er sidecars zijn geïnstalleerd. OSM Controller werkt waarschijnlijk niet met sidecars die eraan zijn gekoppeld.
+Kolom READY met 0/1 geeft aan dat de container van het besturingsvlak vastgelopen is. We moeten logboeken op halen. Zie get OSM Controller Logs from Ondersteuning voor Azure Center (Logboeken voor OSM-controller Ondersteuning voor Azure center) hieronder. Kolom GEREED met een getal dat hoger is dan 1 na de / geeft aan dat er sidecars zijn geïnstalleerd. OSM Controller werkt waarschijnlijk niet met sidecars die eraan zijn gekoppeld.
 
 > [!NOTE]
 > Vanaf versie v0.8.2 is de OSM-controller niet in de ha-modus en wordt deze uitgevoerd in een geïmplementeerd met het aantal replica's van 1 - één pod. De pod heeft wel statustests en wordt opnieuw opgestart door de kubelet, indien nodig.
@@ -2500,7 +2500,7 @@ kubectl delete ValidatingWebhookConfiguration aks-osm-webhook-osm; kubectl patch
 #### <a name="check-the-osm-config-configmap"></a>Controleer de `osm-config` **ConfigMap**
 
 > [!NOTE]
-> De OSM-controller vereist niet dat `osm-config` de ConfigMap aanwezig is in de naamruimte kube-system. De controller heeft redelijke standaardwaarden voor de configuratie en kan zonder deze werken.
+> De OSM-controller vereist niet dat `osm-config` de ConfigMap aanwezig is in de kube-system-naamruimte. De controller heeft redelijke standaardwaarden voor de configuratie en kan zonder deze werken.
 
 Controleer of het bestaat:
 
@@ -2537,11 +2537,11 @@ kubectl get ConfigMap -n kube-system osm-config -o json | jq '.data'
 | enable_privileged_init_container | booleaans   | de waarde True, false                                             | `"false"`                              | Hiermee schakelt u bevoegde init-containers in voor pods in mesh. Indien onwaar, hebben init-containers alleen NET_ADMIN.                                                                                                                                   |
 | envoy_log_level                  | tekenreeks | trace, debug, info, waarschuwing, waarschuwen, fout, kritiek, uit | `"error"`                              | Hiermee stelt u de logboekverlening van de Sidecar van de Envoy-proxy in, alleen van toepassing op nieuw gemaakte pods die lid worden van de mesh. Als u het logboekniveau voor bestaande pods wilt bijwerken, start u de implementatie opnieuw met `kubectl rollout restart` .                            |
 | outbound_ip_range_exclusion_list | tekenreeks | door komma's gescheiden lijst met IP-adresbereiken van de vorm a.b.c.d/x | `-`                                    | Globale lijst met IP-adresbereiken die moeten worden uitgesloten van het onderscheppen van uitgaand verkeer door de sidecar-proxy.                                                                                                                                    |
-| permissive_traffic_policy_mode   | booleaans   | de waarde True, false                                             | `"false"`                              | Door in te stellen op , wordt de modus allow-all in de mesh inschakelen, dat wil zeggen geen afdwinging `true` van verkeersbeleid in de mesh. Als deze optie is `false` ingesteld op , schakelt u deny-all-verkeerbeleid in mesh in, dat wil zeggen dat een nodig is om services te laten `SMI Traffic Target` communiceren. |
-| prometheus_scraping              | booleaans   | de waarde True, false                                             | `"true"`                               | Hiermee schakelt u scraping van metrische prometheus-gegevens in sidecar-proxies in.                                                                                                                                                                                 |
+| permissive_traffic_policy_mode   | booleaans   | de waarde True, false                                             | `"false"`                              | Door in te stellen op , wordt de modus allow-all in de mesh inschakelen, dat wil zeggen geen afdwinging `true` van verkeersbeleid in de mesh. Als deze optie is `false` ingesteld op , schakelt deny-all-verkeerbeleid in mesh in, dat wil zeggen dat een nodig is om services te laten `SMI Traffic Target` communiceren. |
+| prometheus_scraping              | booleaans   | de waarde True, false                                             | `"true"`                               | Hiermee schakelt u het scrapen van metrische gegevens van Prometheus in op sidecar-proxies.                                                                                                                                                                                 |
 | service_cert_validity_duration   | tekenreeks | 24 uur, 1h30m (duur van elke tijd)                          | `"24h"`                                | Hiermee stelt u de geldigheidsduur van het servicecertificaat in, vertegenwoordigd als een reeks decimale getallen, elk met optionele breuk en een eenheidsachtervoegsel.                                                                                             |
 | tracing_enable                   | booleaans   | de waarde True, false                                             | `"false"`                              | Hiermee schakelt u Jaeger-tracering voor de mesh in.                                                                                                                                                                                                    |
-| tracing_address                  | tekenreeks | jaeger.mesh-namespace.svc.cluster.local                 | `jaeger.kube-system.svc.cluster.local` | Adres van de Jaeger-implementatie, als tracering is ingeschakeld.                                                                                                                                                                                |
+| tracing_address                  | tekenreeks | jaeger.mesh-namespace.svc.cluster.local                 | `jaeger.kube-system.svc.cluster.local` | Adres van de Jaeger-implementatie als tracering is ingeschakeld.                                                                                                                                                                                |
 | tracing_endpoint                 | tekenreeks | /api/v2/spans                                           | /api/v2/spans                          | Eindpunt voor het traceren van gegevens, als tracering is ingeschakeld.                                                                                                                                                                                          |
 | tracing_port                     | int    | een geheel getal dat niet nul is                              | `"9411"`                               | Poort waarop tracering is ingeschakeld.                                                                                                                                                                                                       |
 | use_https_ingress                | booleaans   | de waarde True, false                                             | `"false"`                              | Hiermee schakelt u HTTPS-ingress in de mesh in.                                                                                                                                                                                                      |

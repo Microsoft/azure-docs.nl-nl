@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 01/29/2018
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e9201f41c9552b6a60f9ccd8eacda60ac46f89eb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6e20a4324f46925b8f83d7519c481a1d5bfc06a9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99591615"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789299"
 ---
 # <a name="restrict-web-traffic-using-the-azure-cli"></a>Webverkeer beperken met de Azure CLI
 
@@ -45,15 +45,15 @@ In dit script worden de volgende opdrachten gebruikt om de implementatie te make
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create) | Hiermee maakt u een virtueel netwerk. |
-| [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) | Hiermee maakt u een subnet in een virtueel netwerk. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create) | Hiermee maakt u een virtueel netwerk. |
+| [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create) | Hiermee maakt u een subnet in een virtueel netwerk. |
 | [az network public-ip create](/cli/azure/network/public-ip) | Hiermee maakt u het openbare IP-adres voor de toepassingsgateway. |
 | [az network application-gateway create](/cli/azure/network/application-gateway) | Maak een toepassingsgateway. |
-| [az vmss create](/cli/azure/vmss#az-vmss-create) | Hiermee maakt u een schaalset voor virtuele machines. |
-| [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Hiermee maakt u een opslagaccount. |
-| [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) | Hiermee maakt u een opslagaccount. |
-| [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) | Hiermee haalt u het openbare IP-adres van de toepassingsgateway op. |
+| [az vmss create](/cli/azure/vmss#az_vmss_create) | Hiermee maakt u een schaalset voor virtuele machines. |
+| [az storage account create](/cli/azure/storage/account#az_storage_account_create) | Hiermee maakt u een opslagaccount. |
+| [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings#az_monitor_diagnostic_settings_create) | Hiermee maakt u een opslagaccount. |
+| [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show) | Hiermee haalt u het openbare IP-adres van de toepassingsgateway op. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

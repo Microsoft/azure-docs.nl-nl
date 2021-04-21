@@ -4,12 +4,12 @@ description: Gebruik Docker Compose om een toepassing met meerdere containers te
 ms.topic: tutorial
 ms.date: 10/28/2020
 ms.custom: ''
-ms.openlocfilehash: a71ff438feaef555a85c33d818c287c64621d40d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ef08b9f9e0f596f1d94c0e6edfd46f735fe78053
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92913837"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107786909"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-docker-compose"></a>Zelfstudie: Een groep met meerdere containers implementeren met behulp van Docker Compose 
 
@@ -166,7 +166,7 @@ docker-compose push
 
 Het kan een paar minuten duren om naar het register te pushen.
 
-Als u wilt controleren of de installatiekopie in het register is opgeslagen, voert u de opdracht [az acr repository show](/cli/azure/acr/repository#az-acr-repository-show) uit:
+Als u wilt controleren of de installatiekopie in het register is opgeslagen, voert u de opdracht [az acr repository show](/cli/azure/acr/repository#az_acr_repository_show) uit:
 
 ```azurecli
 az acr repository show --name <acrName> --repository azure-vote-front

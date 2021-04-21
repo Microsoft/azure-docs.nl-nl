@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c2e1a54861e47ba8009078ba718fba4fc738f0d
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 2c15090551ad9d84282f65925ff9c2cfbab7e14f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750316"
+ms.locfileid: "107773347"
 ---
 # <a name="quickstart-azure-key-vault-keys-client-library-for-python"></a>Quickstart: Azure Key Vault-sleutelclientbibliotheek voor Python
 
@@ -179,7 +179,7 @@ Om een sleutel uit Key Vault te lezen, gebruikt u de methode [get_key](/python/a
 retrieved_key = client.get_key(keyName)
  ```
 
-U kunt ook verifiëren dat de sleutel is ingesteld met de Azure CLI-opdracht [az keyvault key show](/cli/azure/keyvault/key?#az-keyvault-key-show).
+U kunt ook verifiëren dat de sleutel is ingesteld met de Azure CLI-opdracht [az keyvault key show](/cli/azure/keyvault/key?#az_keyvault_key_show).
 
 ### <a name="delete-a-key"></a>Een sleutel verwijderen
 
@@ -192,7 +192,7 @@ deleted_key = poller.result()
 
 De methode `begin_delete_key` is asynchroon en retourneert een pollerobject. Wanneer de methode `result` van de poller wordt aangeroepen, wordt er gewacht totdat deze voltooid is.
 
-U kunt verifiëren dat de sleutel is verwijderd met de Azure CLI-opdracht [az keyvault key show](/cli/azure/keyvault/key?#az-keyvault-key-show).
+U kunt verifiëren dat de sleutel is verwijderd met de Azure CLI-opdracht [az keyvault key show](/cli/azure/keyvault/key?#az_keyvault_key_show).
 
 Zodra een sleutel is verwijderd, heeft deze nog een tijdje de status Verwijderd maar herstelbaar. Gebruik een andere sleutelnaam als u de code nogmaals uitvoert.
 

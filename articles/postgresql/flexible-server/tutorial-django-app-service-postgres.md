@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 09/22/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: bcc9ca0175e0e03c62c2ce2b91d8ec337756a3cc
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 84fd0c368bcf39af1bae90dc83336ffdb8489768
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92490098"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791513"
 ---
 # <a name="tutorial-deploy-django-app-with-app-service-and-azure-database-for-postgresql---flexible-server-preview"></a>Zelfstudie: Django-app implementeren met App Service en Azure Database for PostgreSQL - Flexible Server (Preview)
 
@@ -105,7 +105,7 @@ In deze sectie maakt u een app-host in de App Service-app, koppelt u deze app aa
 
 Controleer in de terminal of u zich in de hoofdmap van de opslagplaats (`djangoapp`) die de code van de app bevat bevindt.
 
-Een App Service-app maken (het hostproces) met de opdracht [`az webapp up`](/cli/azure/webapp#az-webapp-up):
+Een App Service-app maken (het hostproces) met de opdracht [`az webapp up`](/cli/azure/webapp#az_webapp_up):
 
 ```azurecli
 
@@ -129,7 +129,7 @@ az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<pos
 - Schakel standaardlogboeken voor de app in, als die nog niet zijn ingeschakeld.
 - Upload de opslagplaats met behulp van ZIP-implementatie, met ingeschakelde bouwautomatisering.
 - Met de opdracht **az webapp vnet-integration** wordt de web-app toegevoegd in hetzelfde netwerk als de postgres-server.
-- De code van de app verwacht om database-informatie te vinden in een aantal omgevingsvariabelen. Om omgevingsvariabelen in te stellen in App Service, maakt u 'app-instellingen' met de opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
+- De code van de app verwacht om database-informatie te vinden in een aantal omgevingsvariabelen. Om omgevingsvariabelen in te stellen in App Service, maakt u 'app-instellingen' met de opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set).
 
 > [!TIP]
 > Veel Azure CLI-opdrachten cachen dezelfde parameters, zoals de naam van de resourcegroep en het App Service-abonnement, in het bestand *.azure/config*. Bijgevolg hoeft u niet al diezelfde parameters op te geven met latere opdrachten. Om bijvoorbeeld de app opnieuw te implementeren na wijzigingen, kunt u `az webapp up` gewoon opnieuw uitvoeren zonder parameters.

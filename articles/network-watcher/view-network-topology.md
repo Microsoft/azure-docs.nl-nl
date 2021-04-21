@@ -1,6 +1,6 @@
 ---
-title: Azure Virtual Network-topologie weer geven | Microsoft Docs
-description: Meer informatie over het weer geven van de resources in een virtueel netwerk en de relaties tussen de resources.
+title: Topologie van virtuele Azure-netwerk weergeven | Microsoft Docs
+description: Meer informatie over het weergeven van de resources in een virtueel netwerk en de relaties tussen de resources.
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -11,57 +11,57 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/09/2018
 ms.author: damendo
-ms.openlocfilehash: c04da65af27ebd5ac654bc059ae004c157a20f33
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f20fa22dac3fba4d01cbc5e398bafa4113e94a96
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "84737526"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780295"
 ---
-# <a name="view-the-topology-of-an-azure-virtual-network"></a>De topologie van een virtueel Azure-netwerk weer geven
+# <a name="view-the-topology-of-an-azure-virtual-network"></a>De topologie van een virtueel Azure-netwerk weergeven
 
-In dit artikel leert u hoe u resources kunt weer geven in een Microsoft Azure virtueel netwerk en de relaties tussen de resources. Een virtueel netwerk bevat bijvoorbeeld subnetten. Subnetten bevatten bronnen, zoals Azure Virtual Machines (VM). Vm's hebben een of meer netwerk interfaces. Aan elk subnet kan een netwerk beveiligings groep en een bijbehorende route tabel zijn gekoppeld. Met de topologie mogelijkheden van Azure Network Watcher kunt u alle resources in een virtueel netwerk, de resources die zijn gekoppeld aan resources in een virtueel netwerk en de relaties tussen de bronnen weer geven.
+In dit artikel leert u hoe u resources kunt weergeven in een Microsoft Azure virtueel netwerk en de relaties tussen de resources. Een virtueel netwerk bevat bijvoorbeeld subnetten. Subnetten bevatten resources, zoals Azure Virtual Machines (VM). VM's hebben een of meer netwerkinterfaces. Aan elk subnet kunnen een netwerkbeveiligingsgroep en een routetabel zijn gekoppeld. Met de topologiefunctie van Azure Network Watcher kunt u alle resources in een virtueel netwerk, de resources die zijn gekoppeld aan resources in een virtueel netwerk en de relaties tussen de resources weergeven.
 
-U kunt de [Azure Portal](#azure-portal), de [Azure cli](#azure-cli)of [Power shell](#powershell) gebruiken om een topologie weer te geven.
+U kunt de [Azure Portal,](#azure-portal)de [Azure CLI](#azure-cli)of [PowerShell](#powershell) gebruiken om een topologie weer te geven.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="view-topology---azure-portal"></a><a name = "azure-portal"></a>Topologie weer geven-Azure Portal
+## <a name="view-topology---azure-portal"></a><a name = "azure-portal"></a>Topologie weergeven - Azure Portal
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met een account dat over de benodigde [machtigingen](required-rbac-permissions.md)beschikt.
-2. Selecteer in de linkerbovenhoek van de portal **alle services**.
-3. Voer in het vak **alle services** filteren de *Network Watcher* in. Selecteer **Network Watcher** in de resultaten.
-4. Selecteer **Topologie**. Voor het genereren van een topologie is een Network Watcher vereist in dezelfde regio waarin het virtuele netwerk waarvan u de topologie wilt genereren, bestaat. Als u geen Network Watcher hebt ingeschakeld in de regio waarin het virtuele netwerk waarvoor u een topologie wilt genereren, in is opgenomen, worden de netwerk-volgers automatisch voor u in alle regio's gemaakt. De netwerk-volgers worden gemaakt in een resource groep met de naam **NetworkWatcherRG**.
-5. Selecteer een abonnement, de resource groep van een virtueel netwerk waarvan u de topologie wilt weer geven en selecteer vervolgens het virtuele netwerk. In de volgende afbeelding wordt een topologie weer gegeven voor een virtueel netwerk met de naam *MyVnet*, in de resource groep met de naam *MyResourceGroup*:
+1. Meld u aan [Azure Portal](https://portal.azure.com) account met de benodigde [machtigingen](required-rbac-permissions.md).
+2. Selecteer alle services in de linkerbovenhoek **van de portal.**
+3. Voer in **het filtervak** Alle services *Network Watcher.* Selecteer **Network Watcher** in de resultaten.
+4. Selecteer **Topologie**. Voor het genereren van een topologie is een netwerk-watcher vereist in dezelfde regio als het virtuele netwerk waarin u de topologie wilt genereren. Als u geen netwerk-watcher hebt ingeschakeld in de regio waarin het virtuele netwerk waarin u een topologie wilt genereren zich in zich heeft, worden netwerk-watchers automatisch voor u gemaakt in alle regio's. De network watchers worden gemaakt in een resourcegroep met de **naam NetworkWatcherRG.**
+5. Selecteer een abonnement, de resourcegroep van een virtueel netwerk waar u de topologie voor wilt weergeven en selecteer vervolgens het virtuele netwerk. In de volgende afbeelding wordt een topologie weergegeven voor een virtueel netwerk met de naam *MyVnet* in de resourcegroep met de *naam MyResourceGroup:*
 
-    ![Topologie weer geven](./media/view-network-topology/view-topology.png)
+    ![Topologie weergeven](./media/view-network-topology/view-topology.png)
 
-    Zoals u kunt zien in de vorige afbeelding, bevat het virtuele netwerk drie subnetten. In het ene subnet is een VM geïmplementeerd. Er is één netwerk interface gekoppeld aan de virtuele machine en er is een openbaar IP-adres gekoppeld aan de VM. Aan de andere twee subnetten is een route tabel gekoppeld. Elke route tabel bevat twee routes. Aan één subnet is een netwerk beveiligings groep gekoppeld. De topologie gegevens worden alleen weer gegeven voor de volgende resources:
+    Zoals u in de vorige afbeelding kunt zien, bevat het virtuele netwerk drie subnetten. In één subnet is een virtuele machine geïmplementeerd. Aan de VM is één netwerkinterface gekoppeld en er is een openbaar IP-adres aan gekoppeld. Aan de andere twee subnetten is een routetabel gekoppeld. Elke routetabel bevat twee routes. Aan één subnet is een netwerkbeveiligingsgroep gekoppeld. Topologie-informatie wordt alleen weergegeven voor resources die:
     
-    - Binnen dezelfde resource groep en regio als het virtuele *myVnet* -netwerk. Bijvoorbeeld, een netwerk beveiligings groep die bestaat in een andere resource groep dan *MyResourceGroup*, wordt niet weer gegeven, zelfs niet als de netwerk beveiligings groep is gekoppeld aan een subnet in het virtuele *MyVnet* -netwerk.
-    - Binnen, of gekoppeld aan resources binnen, het virtuele *myVnet* -netwerk. Bijvoorbeeld, een netwerk beveiligings groep die niet is gekoppeld aan een subnet of netwerk interface in het virtuele netwerk *myVnet* wordt niet weer gegeven, zelfs niet als de netwerk beveiligings groep zich in de *MyResourceGroup* -resource groep bevindt.
+    - Binnen dezelfde resourcegroep en regio als het virtuele *netwerk myVnet.* Een netwerkbeveiligingsgroep die zich in een andere resourcegroep dan *MyResourceGroup* bevindt, wordt bijvoorbeeld niet weergegeven, zelfs niet als de netwerkbeveiligingsgroep is gekoppeld aan een subnet in het virtuele netwerk *MyVnet.*
+    - Binnen het virtuele netwerk *myVnet,* of gekoppeld aan resources in het virtuele netwerk myVnet. Een netwerkbeveiligingsgroep die niet is gekoppeld aan een subnet of netwerkinterface in het virtuele *netwerk myVnet* wordt bijvoorbeeld niet weergegeven, zelfs niet als de netwerkbeveiligingsgroep zich in de resourcegroep *MyResourceGroup.*
 
-   De topologie die in de afbeelding wordt weer gegeven, is voor het virtuele netwerk dat is gemaakt na het implementeren van het **route verkeer via een voor beeld van een virtueel netwerk** voor het uitvoeren van netwerken, dat u kunt implementeren met behulp van [Azure cli](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)of [Power shell](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
+   De topologie die in de afbeelding wordt weergegeven, is voor het virtuele netwerk dat is gemaakt na de implementatie van het **scriptvoorbeeld** Verkeer via een virtueel netwerkapparaat implementeren, dat u kunt implementeren met behulp van [de Azure CLI](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)of [PowerShell](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 
-6. Selecteer **down load topologie** om de installatie kopie te downloaden als een bewerkbaar bestand, in SVG-indeling.
+6. Selecteer **Topologie downloaden om** de afbeelding te downloaden als een bewerkbaar bestand, in SVG-indeling.
 
-De resources die in het diagram worden weer gegeven, zijn een subset van de netwerk onderdelen in het virtuele netwerk. Als er bijvoorbeeld een netwerk beveiligings groep wordt weer gegeven, worden de beveiligings regels in het diagram niet weer gegeven in de grafiek. Hoewel het diagram niet is gedifferentieerd, vertegenwoordigen de lijnen een van de twee relaties: *opnemen* of *gekoppeld*. Genereer de topologie met [Power shell](#powershell) of de [Azure cli](#azure-cli)voor een overzicht van de volledige lijst met resources in het virtuele netwerk en het type relatie tussen de resources.
+De resources die in het diagram worden weergegeven, zijn een subset van de netwerkonderdelen in het virtuele netwerk. Wanneer bijvoorbeeld een netwerkbeveiligingsgroep wordt weergegeven, worden de beveiligingsregels in deze groep niet weergegeven in het diagram. Hoewel de lijnen in het diagram niet zijn gedifferentieerd, vertegenwoordigen de lijnen een van twee relaties: *Insluiting* of *gekoppelde*. Als u de volledige lijst met resources in het virtuele netwerk en het type relatie tussen de resources wilt zien, genereert u de topologie met [PowerShell](#powershell) of [de Azure CLI.](#azure-cli)
 
-## <a name="view-topology---azure-cli"></a><a name = "azure-cli"></a>Topologie weer geven-Azure CLI
+## <a name="view-topology---azure-cli"></a><a name = "azure-cli"></a>Topologie weergeven - Azure CLI
 
 U kunt de opdrachten uitvoeren in de volgende stappen:
-- In de Azure Cloud Shell, door het **selectie vakje** in de rechter bovenhoek van elke opdracht te selecteren. De Azure Cloud Shell is een gratis interactieve shell met algemene Azure-hulpprogram ma's die vooraf zijn geïnstalleerd en geconfigureerd voor gebruik met uw account.
-- Door de CLI vanaf uw computer uit te voeren. Als u de CLI vanaf uw computer uitvoert, is voor de stappen in dit artikel de Azure CLI-versie 2.0.31 of hoger vereist. Voer `az --version` uit om te kijken welke versie is geïnstalleerd. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli). Als u de Azure CLI lokaal uitvoert, moet u ook uitvoeren `az login` om een verbinding te maken met Azure.
+- Selecteer in Azure Cloud Shell **rechtsboven** in een opdracht de optie Proberen. De Azure Cloud Shell is een gratis interactieve shell met algemene Azure-hulpprogramma's die vooraf zijn geïnstalleerd en geconfigureerd voor gebruik met uw account.
+- Door de CLI uit te werken vanaf uw computer. Als u de CLI vanaf uw computer hebt uitgevoerd, is voor de stappen in dit artikel Versie 2.0.31 of hoger van Azure CLI vereist. Voer `az --version` uit om te kijken welke versie is geïnstalleerd. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli). Als u de Azure CLI lokaal gebruikt, moet u ook uitvoeren om `az login` een verbinding met Azure te maken.
 
-Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-permissions.md)beschikken.
+Het account dat u gebruikt, moet de benodigde [machtigingen hebben.](required-rbac-permissions.md)
 
-1. Als u al een Network Watcher in dezelfde regio hebt als het virtuele netwerk waarvoor u een topologie wilt maken, gaat u naar stap 3. Maak een resource groep die een Network Watcher bevat met [AZ Group Create](/cli/azure/group). In het volgende voor beeld wordt de resource groep gemaakt in de regio *eastus* :
+1. Als u al een netwerk-watcher hebt in dezelfde regio als het virtuele netwerk waar u een topologie voor wilt maken, gaat u verder met stap 3. Maak met az group create een resourcegroep die een network watcher [bevat.](/cli/azure/group) In het volgende voorbeeld wordt de resourcegroep gemaakt in de *regio eastus:*
 
     ```azurecli-interactive
     az group create --name NetworkWatcherRG --location eastus
     ```
 
-2. Maak een Network Watcher met [AZ Network Watcher configure](/cli/azure/network/watcher#az-network-watcher-configure). In het volgende voor beeld wordt een Network Watcher gemaakt in de regio *oostus* :
+2. Maak een netwerk-watcher met [az network watcher configure](/cli/azure/network/watcher#az_network_watcher_configure). In het volgende voorbeeld wordt een netwerk-watcher gemaakt in de *regio eastus:*
 
     ```azurecli-interactive
     az network watcher configure \
@@ -70,31 +70,31 @@ Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-p
       --enabled true
     ```
 
-3. Bekijk de topologie met [AZ Network Watcher show-topologie](/cli/azure/network/watcher#az-network-watcher-show-topology). In het volgende voor beeld wordt de topologie voor een resource groep met de naam *MyResourceGroup* weer gegeven:
+3. Bekijk de topologie met [az network watcher show-topology](/cli/azure/network/watcher#az_network_watcher_show_topology). In het volgende voorbeeld wordt de topologie voor een resourcegroep met de *naam MyResourceGroup bekeken:*
 
     ```azurecli-interactive
     az network watcher show-topology --resource-group MyResourceGroup
     ```
 
-    De topologie gegevens worden alleen geretourneerd voor bronnen die zich in dezelfde resource groep bevinden als de *MyResourceGroup* -resource groep en dezelfde regio als de Network Watcher. Bijvoorbeeld, een netwerk beveiligings groep die bestaat in een andere resource groep dan *MyResourceGroup*, wordt niet weer gegeven, zelfs niet als de netwerk beveiligings groep is gekoppeld aan een subnet in het virtuele *MyVnet* -netwerk.
+    Topologiegegevens worden alleen geretourneerd voor resources die zich in dezelfde resourcegroep als de resourcegroep *MyResourceGroup* en dezelfde regio als de network watcher hebben. Een netwerkbeveiligingsgroep die bestaat in een andere resourcegroep dan *MyResourceGroup* wordt bijvoorbeeld niet weergegeven, zelfs niet als de netwerkbeveiligingsgroep is gekoppeld aan een subnet in het virtuele netwerk *MyVnet.*
 
-   Meer informatie over de relaties en [Eigenschappen](#properties) in de geretourneerde uitvoer. Als u geen bestaand virtueel netwerk hebt om een topologie voor weer te geven, kunt u er een maken met behulp van het [route ring verkeer via een netwerk voorbeeld script van een virtueel apparaat](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) . Gebruik de [Portal](#azure-portal)om een diagram van de topologie weer te geven en te downloaden in een bewerkbaar bestand.
+   Meer informatie over de relaties en [eigenschappen](#properties) in de geretourneerde uitvoer. Als u geen bestaand virtueel netwerk hebt om een topologie voor weer te geven, kunt u er een maken met behulp van het scriptvoorbeeld Verkeer door een virtueel [netwerkapparaat](../virtual-network/scripts/virtual-network-cli-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) leiden. Als u een diagram van de topologie wilt bekijken en downloaden in een bewerkbaar bestand, gebruikt u de [portal](#azure-portal).
 
-## <a name="view-topology---powershell"></a><a name = "powershell"></a>Topologie weer geven-Power shell
+## <a name="view-topology---powershell"></a><a name = "powershell"></a>Topologie weergeven - PowerShell
 
 U kunt de opdrachten uitvoeren in de volgende stappen:
-- In de Azure Cloud Shell, door het **selectie vakje** in de rechter bovenhoek van elke opdracht te selecteren. De Azure Cloud Shell is een gratis interactieve shell met algemene Azure-hulpprogram ma's die vooraf zijn geïnstalleerd en geconfigureerd voor gebruik met uw account.
-- Door Power shell uit te voeren vanaf uw computer. Als u Power shell vanaf uw computer uitvoert, is voor dit artikel de module Azure PowerShell vereist `Az` . Voer `Get-Module -ListAvailable Az` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps). Als u PowerShell lokaal uitvoert, moet u ook `Connect-AzAccount` uitvoeren om verbinding te kunnen maken met Azure.
+- Selecteer in Azure Cloud Shell de optie **Proberen** rechtsboven in een opdracht. De Azure Cloud Shell is een gratis interactieve shell met algemene Azure-hulpprogramma's die vooraf zijn geïnstalleerd en geconfigureerd voor gebruik met uw account.
+- Door PowerShell uit te werken vanaf uw computer. Als u PowerShell vanaf uw computer hebt uitgevoerd, is voor dit artikel de Azure PowerShell `Az` vereist. Voer `Get-Module -ListAvailable Az` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps). Als u PowerShell lokaal uitvoert, moet u ook `Connect-AzAccount` uitvoeren om verbinding te kunnen maken met Azure.
 
-Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-permissions.md)beschikken.
+Het account dat u gebruikt, moet de benodigde [machtigingen hebben.](required-rbac-permissions.md)
 
-1. Als u al een Network Watcher in dezelfde regio hebt als het virtuele netwerk waarvoor u een topologie wilt maken, gaat u naar stap 3. Maak een resource groep die een Network Watcher bevat met [New-AzResourceGroup](/powershell/module/az.Resources/New-azResourceGroup). In het volgende voor beeld wordt de resource groep gemaakt in de regio *eastus* :
+1. Als u al een netwerk-watcher in dezelfde regio hebt als het virtuele netwerk waar u een topologie voor wilt maken, gaat u verder met stap 3. Maak een resourcegroep voor een netwerk-watcher met [New-AzResourceGroup](/powershell/module/az.Resources/New-azResourceGroup). In het volgende voorbeeld wordt de resourcegroep gemaakt in de *regio eastus:*
 
     ```azurepowershell-interactive
     New-AzResourceGroup -Name NetworkWatcherRG -Location EastUS
     ```
 
-2. Maak een Network Watcher met [New-AzNetworkWatcher](/powershell/module/az.network/new-aznetworkwatcher). In het volgende voor beeld wordt een Network Watcher gemaakt in de regio oostus:
+2. Maak een netwerk-watcher met [New-AzNetworkWatcher](/powershell/module/az.network/new-aznetworkwatcher). In het volgende voorbeeld wordt een netwerk-watcher gemaakt in de regio eastus:
 
     ```azurepowershell-interactive
     New-AzNetworkWatcher `
@@ -102,7 +102,7 @@ Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-p
       -ResourceGroupName NetworkWatcherRG
     ```
 
-3. Haal een Network Watcher-exemplaar op met [Get-AzNetworkWatcher](/powershell/module/az.network/get-aznetworkwatcher). In het volgende voor beeld wordt een Network Watcher opgehaald in de regio VS-Oost:
+3. Haal een Network Watcher op met [Get-AzNetworkWatcher](/powershell/module/az.network/get-aznetworkwatcher). In het volgende voorbeeld wordt een netwerk-watcher opgehaald in de regio VS - oost:
 
     ```azurepowershell-interactive
     $nw = Get-AzResource `
@@ -112,7 +112,7 @@ Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-p
       -ResourceGroupName $nw.ResourceGroupName
     ```
 
-4. Haal een topologie op met [Get-AzNetworkWatcherTopology](/powershell/module/az.network/get-aznetworkwatchertopology). In het volgende voor beeld wordt een topologie opgehaald voor een virtueel netwerk in de resource groep met de naam *MyResourceGroup*:
+4. Haal een topologie op [met Get-AzNetworkWatcherTopology](/powershell/module/az.network/get-aznetworkwatchertopology). In het volgende voorbeeld wordt een topologie opgehaald voor een virtueel netwerk in de resourcegroep met de *naam MyResourceGroup:*
 
     ```azurepowershell-interactive
     Get-AzNetworkWatcherTopology `
@@ -120,32 +120,32 @@ Het account dat u gebruikt, moet over de vereiste [machtigingen](required-rbac-p
       -TargetResourceGroupName MyResourceGroup
     ```
 
-   De topologie gegevens worden alleen geretourneerd voor bronnen die zich in dezelfde resource groep bevinden als de *MyResourceGroup* -resource groep en dezelfde regio als de Network Watcher. Bijvoorbeeld, een netwerk beveiligings groep die bestaat in een andere resource groep dan *MyResourceGroup*, wordt niet weer gegeven, zelfs niet als de netwerk beveiligings groep is gekoppeld aan een subnet in het virtuele *MyVnet* -netwerk.
+   Topologie-informatie wordt alleen geretourneerd voor resources die zich binnen dezelfde resourcegroep als de resourcegroep *MyResourceGroup* en dezelfde regio als de network watcher. Een netwerkbeveiligingsgroep die zich in een andere resourcegroep dan *MyResourceGroup* bevindt, wordt bijvoorbeeld niet weergegeven, zelfs niet als de netwerkbeveiligingsgroep is gekoppeld aan een subnet in het virtuele netwerk *MyVnet.*
 
-   Meer informatie over de relaties en [Eigenschappen](#properties) in de geretourneerde uitvoer. Als u geen bestaand virtueel netwerk hebt om een topologie voor weer te geven, kunt u er een maken met behulp van het [route ring verkeer via een netwerk voorbeeld script van een virtueel apparaat](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) . Gebruik de [Portal](#azure-portal)om een diagram van de topologie weer te geven en te downloaden in een bewerkbaar bestand.
+   Meer informatie over de relaties en [eigenschappen](#properties) in de geretourneerde uitvoer. Als u geen bestaand virtueel netwerk hebt om een topologie voor weer te geven, kunt u er een maken met behulp van het scriptvoorbeeld Verkeer door een virtueel [netwerkapparaat](../virtual-network/scripts/virtual-network-powershell-sample-route-traffic-through-nva.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) leiden. Als u een diagram van de topologie wilt weergeven en downloaden in een bewerkbaar bestand, gebruikt u de [portal](#azure-portal).
 
 ## <a name="relationships"></a>Relaties
 
-Alle resources die in een topologie worden geretourneerd, hebben een van de volgende typen relaties met een andere resource:
+Alle resources die in een topologie worden geretourneerd, hebben een van de volgende typen relatie met een andere resource:
 
 | Relatietype | Voorbeeld                                                                                                |
 | ---               | ---                                                                                                    |
-| Containment       | Een virtueel netwerk bevat een subnet. Een subnet bevat een netwerk interface.                            |
-| Bijbehorend        | Een netwerk interface is gekoppeld aan een virtuele machine. Een openbaar IP-adres is gekoppeld aan een netwerk interface. |
+| Containment       | Een virtueel netwerk bevat een subnet. Een subnet bevat een netwerkinterface.                            |
+| Bijbehorend        | Een netwerkinterface is gekoppeld aan een VM. Een openbaar IP-adres is gekoppeld aan een netwerkinterface. |
 
 ## <a name="properties"></a>Eigenschappen
 
 Alle resources die in een topologie worden geretourneerd, hebben de volgende eigenschappen:
 
-- **Naam**: de naam van de resource
-- **Id**: de URI van de resource.
-- **Locatie**: de Azure-regio waarin de resource zich bevindt.
-- **Koppelingen**: een lijst met koppelingen naar het object waarnaar wordt verwezen. Elke koppeling heeft de volgende eigenschappen:
-    - **AssociationType**: verwijst naar de relatie tussen het onderliggende object en de bovenliggende. Geldige waarden zijn *bevat* of *zijn gekoppeld*.
-    - **Naam**: de naam van de resource waarnaar wordt verwezen.
-    - **ResourceID**:-de URI van de resource waarnaar wordt verwezen in de koppeling.
+- **Naam:** de naam van de resource
+- **Id:** de URI van de resource.
+- **Locatie:** de Azure-regio waarin de resource zich bevindt.
+- **Verbanden:** een lijst met verbanden met het object waarnaar wordt verwezen. Elke associatie heeft de volgende eigenschappen:
+    - **AssociationType:** verwijst naar de relatie tussen het onderliggende object en het bovenliggende object. Geldige waarden zijn *Bevat* of *Gekoppeld.*
+    - **Naam:** de naam van de resource waarnaar wordt verwezen.
+    - **ResourceId:** de URI van de resource waarnaar wordt verwezen in de associatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [vaststellen van een probleem met het filteren van netwerk verkeer naar of van een virtuele machine](diagnose-vm-network-traffic-filtering-problem.md) met behulp van de IP-stroom verificatie van Network Watcher
-- Meer informatie over het oplossen [van een netwerk verkeer routerings probleem van een virtuele machine](diagnose-vm-network-routing-problem.md) met behulp van de volgende hop-mogelijkheid van Network Watcher
+- Meer informatie over het [vaststellen van een probleem met netwerkverkeersfilters](diagnose-vm-network-traffic-filtering-problem.md) van of naar een VM met behulp Network Watcher ip-stroom controleren
+- Meer informatie over het [diagnosticeren van een](diagnose-vm-network-routing-problem.md) probleem met routering van netwerkverkeer vanaf een virtuele Network Watcher van de volgende hopfunctie van Network Watcher

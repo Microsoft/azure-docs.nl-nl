@@ -1,7 +1,7 @@
 ---
-title: Wat is afbeeldings analyse?
+title: Wat is afbeeldingsanalyse?
 titleSuffix: Azure Cognitive Services
-description: De Image Analysis-Service maakt gebruik van vooraf getrainde AI-modellen om veel verschillende visuele functies uit afbeeldingen te halen.
+description: De Service voor afbeeldingsanalyse maakt gebruik van vooraf getrainde AI-modellen om veel verschillende visuele kenmerken uit afbeeldingen te extraheren.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,30 +11,30 @@ ms.topic: overview
 ms.date: 03/30/2021
 ms.author: pafarley
 keywords: computer vision, computer vision-toepassingen, computer vision-service
-ms.openlocfilehash: f262fdb49cac4ab9abe7f3f6873160d3059968c6
-ms.sourcegitcommit: b8995b7dafe6ee4b8c3c2b0c759b874dff74d96f
+ms.openlocfilehash: 0258eb7c57bc0734b5c0a67644cbaa4f62a34537
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106287236"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107766911"
 ---
-# <a name="what-is-image-analysis"></a>Wat is afbeeldings analyse?
+# <a name="what-is-image-analysis"></a>Wat is afbeeldingsanalyse?
 
 [!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
-Met de Computer Vision Image Analysis-Service kunt u een groot aantal verschillende visuele functies uit uw installatie kopieën ophalen. U kunt bijvoorbeeld bepalen of een afbeelding inhoud voor volwassenen bevat, specifieke merken of objecten zoeken, of mensen zoeken.
+De Computer Vision Image Analysis-service kan een groot aantal verschillende visuele kenmerken uit uw afbeeldingen extraheren. Het kan bijvoorbeeld bepalen of een afbeelding inhoud voor volwassenen bevat, specifieke merken of objecten zoeken of menselijke gezichten vinden.
 
-U kunt Image analyse gebruiken via een SDK van de client bibliotheek of door de [rest API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) rechtstreeks aan te roepen. Volg de [Quick](quickstarts-sdk/image-analysis-client-library.md) start om aan de slag te gaan.
+U kunt Afbeeldingsanalyse gebruiken via een clientbibliotheek-SDK of door de REST API [aan](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v2-ga/operations/5d986960601faab4bf452005) te roepen. Volg de [quickstart om](quickstarts-sdk/image-analysis-client-library.md) aan de slag te gaan.
 
 Deze documentatie bevat de volgende typen artikelen:
-* In de [Quick](./quickstarts-sdk/image-analysis-client-library.md) starts vindt u stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
-* De [hand leidingen](./Vision-API-How-to-Topics/HowToCallVisionAPI.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
-* De [conceptuele artikelen](concept-tagging-images.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
-* De [zelf studies](./tutorials/storage-lab-tutorial.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
+* De [quickstarts](./quickstarts-sdk/image-analysis-client-library.md) zijn stapsgewijs instructies voor het aanroepen van de service en het in korte tijd krijgen van resultaten. 
+* De [instructiegidsen bevatten](./Vision-API-How-to-Topics/HowToCallVisionAPI.md) instructies voor het gebruik van de service op specifiekere of aangepaste manieren.
+* De [conceptuele artikelen](concept-tagging-images.md) bevatten uitgebreide uitleg over de functionaliteit en functies van de service.
+* De [zelfstudies zijn](./tutorials/storage-lab-tutorial.md) langere handleidingen die laten zien hoe u deze service kunt gebruiken als onderdeel van bredere bedrijfsoplossingen.
 
-## <a name="image-analysis-features"></a>Functies voor het analyseren van afbeeldingen
+## <a name="image-analysis-features"></a>Functies voor afbeeldingsanalyse
 
-U kunt afbeeldingen analyseren om inzicht te krijgen in de visuele kenmerken en eigenschappen van die afbeeldingen. Alle functies in de onderstaande lijst zijn opgenomen in de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . Volg een [snelstart](./quickstarts-sdk/image-analysis-client-library.md) om aan de slag te gaan.
+U kunt afbeeldingen analyseren om inzicht te krijgen in de visuele kenmerken en eigenschappen van die afbeeldingen. Alle functies in de onderstaande lijst worden geleverd door de [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) API. Volg een [snelstart](./quickstarts-sdk/image-analysis-client-library.md) om aan de slag te gaan.
 
 
 ### <a name="tag-visual-features"></a>Visuele kenmerken taggen
@@ -87,7 +87,7 @@ U kunt Computer Vision gebruiken om [erotische inhoud te detecteren](concept-det
 
 ## <a name="image-requirements"></a>Vereisten voor installatiekopieën
 
-Afbeeldings analyse werkt op installatie kopieën die voldoen aan de volgende vereisten:
+Afbeeldingsanalyse werkt op afbeeldingen die voldoen aan de volgende vereisten:
 
 - De afbeelding moet worden weergegeven in de JPEG-, PNG-, GIF- of BMP-indeling
 - De afbeelding moet kleiner zijn dan 4 megabyte (MB)
@@ -99,6 +99,6 @@ Zoals geldt voor alle Cognitive Services, dienen ontwikkelaars die de Computer V
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga aan de slag met image analyse door de Snelstartgids-gids te volgen in uw voorkeurs taal voor ontwikkel aars:
+Ga aan de slag met afbeeldingsanalyse door de snelstartgids te volgen in de ontwikkeltaal van uw voorkeur:
 
 - [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/image-analysis-client-library.md)

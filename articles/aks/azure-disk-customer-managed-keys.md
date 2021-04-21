@@ -1,33 +1,33 @@
 ---
-title: Een door de klant beheerde sleutel gebruiken voor het versleutelen van Azure-schijven in azure Kubernetes service (AKS)
-description: Gebruik uw eigen sleutels (BYOK) om AKS-besturings systeem en gegevens schijven te versleutelen.
+title: Een door de klant beheerde sleutel gebruiken om Azure-schijven te versleutelen in Azure Kubernetes Service (AKS)
+description: Bring Your Own Keys (BYOK) om AKS-besturingssysteem- en gegevensschijven te versleutelen.
 services: container-service
 ms.topic: article
 ms.date: 09/01/2020
-ms.openlocfilehash: 4b1c311132cc812ccb2bbbc95c4b7414b108008c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c5c555d7eb5142f5f41f65b24f754c65450a2713
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102499200"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107776187"
 ---
-# <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Breng uw eigen sleutels (BYOK) met Azure-schijven in azure Kubernetes service (AKS)
+# <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Bring Your Own Keys (BYOK) met Azure-schijven in Azure Kubernetes Service (AKS)
 
-Azure Storage versleutelt alle gegevens in een opslag account in rust. Standaard worden gegevens versleuteld met door micro soft beheerde sleutels. Voor extra controle over versleutelings sleutels kunt u door de klant beheerde sleutels leveren voor versleuteling in rust voor het besturings systeem en de gegevens schijven voor uw AKS-clusters. Meer informatie over door de klant beheerde sleutels in [Linux][customer-managed-keys-linux] en [Windows][customer-managed-keys-windows].
+Azure Storage versleutelt alle gegevens in een opslagaccount at rest. Gegevens worden standaard versleuteld met door Microsoft beheerde sleutels. Voor extra controle over versleutelingssleutels kunt u door de klant beheerde sleutels leveren voor versleuteling in rust voor zowel het besturingssysteem als de gegevensschijven voor uw AKS-clusters. Meer informatie over door de klant beheerde sleutels in [Linux][customer-managed-keys-linux] en [Windows.][customer-managed-keys-windows]
 
 ## <a name="limitations"></a>Beperkingen
-* Ondersteuning voor gegevens schijf versleuteling is beperkt tot AKS-clusters met Kubernetes versie 1,17 en hoger.
-* Versleuteling van besturings systeem en gegevens schijf met door de klant beheerde sleutels kan alleen worden ingeschakeld bij het maken van een AKS-cluster.
+* Ondersteuning voor gegevensschijfversleuteling is beperkt tot AKS-clusters met Kubernetes versie 1.17 en hoger.
+* Versleuteling van het besturingssysteem en de gegevensschijf met door de klant beheerde sleutels kunnen alleen worden ingeschakeld bij het maken van een AKS-cluster.
 
 ## <a name="prerequisites"></a>Vereisten
-* U moet de beveiliging voor voorlopig verwijderen en leegmaken inschakelen voor *Azure Key Vault* wanneer u Key Vault gebruikt om beheerde schijven te versleutelen.
-* U hebt de Azure CLI-versie 2.11.1 of hoger nodig.
+* U moet bij het gebruik  van Azure Key Vault voor het versleutelen van beheerde schijven de beveiliging voor Key Vault verwijderen en ops manier inschakelen.
+* U hebt azure CLI versie 2.11.1 of hoger nodig.
 
-## <a name="create-an-azure-key-vault-instance"></a>Een Azure Key Vault-exemplaar maken
+## <a name="create-an-azure-key-vault-instance"></a>Een Azure Key Vault maken
 
-Gebruik een Azure Key Vault-exemplaar om uw sleutels op te slaan.  U kunt eventueel de Azure Portal gebruiken om [door de klant beheerde sleutels te configureren met Azure Key Vault][byok-azure-portal]
+Gebruik een Azure Key Vault om uw sleutels op te slaan.  U kunt eventueel de Azure Portal door de klant [beheerde sleutels configureren met Azure Key Vault][byok-azure-portal]
 
-Maak een nieuwe *resource groep*, maak een nieuw *Key Vault* -exemplaar en schakel de beveiliging voorlopig verwijderen en leegmaken in.  Zorg ervoor dat u dezelfde regio en de namen van de resource groepen voor elke opdracht gebruikt.
+Maak een nieuwe *resourcegroep,* maak vervolgens een nieuw *Key Vault* en schakel de beveiliging voor zacht verwijderen en ops manier in.  Zorg ervoor dat u voor elke opdracht dezelfde regio- en resourcegroepnamen gebruikt.
 
 ```azurecli-interactive
 # Optionally retrieve Azure region short names for use on upcoming commands
@@ -42,9 +42,9 @@ az group create -l myAzureRegionName -n myResourceGroup
 az keyvault create -n myKeyVaultName -g myResourceGroup -l myAzureRegionName  --enable-purge-protection true --enable-soft-delete true
 ```
 
-## <a name="create-an-instance-of-a-diskencryptionset"></a>Een instantie van een DiskEncryptionSet maken
+## <a name="create-an-instance-of-a-diskencryptionset"></a>Een exemplaar van een DiskEncryptionSet maken
 
-Vervang *myKeyVaultName* door de naam van uw sleutel kluis.  U hebt ook een *sleutel* nodig die is opgeslagen in azure Key Vault om de volgende stappen uit te voeren.  Sla uw bestaande sleutel op in het Key Vault dat u in de vorige stappen hebt gemaakt of [Genereer een nieuwe sleutel][key-vault-generate] en vervang *myKeyName* hieronder door de naam van uw sleutel.
+Vervang *myKeyVaultName* door de naam van uw sleutelkluis.  U hebt ook een sleutel *nodig die* is opgeslagen in Azure Key Vault volgende stappen uit te voeren.  Sla uw bestaande sleutel op in de Key Vault die u [][key-vault-generate] in de vorige stappen hebt gemaakt, of genereer een nieuwe sleutel en vervang *myKeyName* hieronder door de naam van uw sleutel.
     
 ```azurecli-interactive
 # Retrieve the Key Vault Id and store it in a variable
@@ -57,9 +57,9 @@ keyVaultKeyUrl=$(az keyvault key show --vault-name myKeyVaultName  --name myKeyN
 az disk-encryption-set create -n myDiskEncryptionSetName  -l myAzureRegionName  -g myResourceGroup --source-vault $keyVaultId --key-url $keyVaultKeyUrl 
 ```
 
-## <a name="grant-the-diskencryptionset-access-to-key-vault"></a>De toegang tot de DiskEncryptionSet verlenen aan de sleutel kluis
+## <a name="grant-the-diskencryptionset-access-to-key-vault"></a>De DiskEncryptionSet toegang verlenen tot de sleutelkluis
 
-Gebruik de DiskEncryptionSet-en resource groepen die u in de voor gaande stappen hebt gemaakt en verleen de DiskEncryptionSet-resource toegang tot de Azure Key Vault.
+Gebruik de DiskEncryptionSet en de resourcegroepen die u in de vorige stappen hebt gemaakt en verleen de resource DiskEncryptionSet toegang tot de Azure Key Vault.
 
 ```azurecli-interactive
 # Retrieve the DiskEncryptionSet value and set a variable
@@ -69,12 +69,12 @@ desIdentity=$(az disk-encryption-set show -n myDiskEncryptionSetName  -g myResou
 az keyvault set-policy -n myKeyVaultName -g myResourceGroup --object-id $desIdentity --key-permissions wrapkey unwrapkey get
 ```
 
-## <a name="create-a-new-aks-cluster-and-encrypt-the-os-disk"></a>Een nieuw AKS-cluster maken en de besturingssysteem schijf versleutelen
+## <a name="create-a-new-aks-cluster-and-encrypt-the-os-disk"></a>Een nieuw AKS-cluster maken en de besturingssysteemschijf versleutelen
 
-Maak een **nieuwe resource groep** en AKS-cluster en gebruik vervolgens uw sleutel om de besturingssysteem schijf te versleutelen. Door de klant beheerde sleutels worden alleen ondersteund in versies van Kubernetes die groter zijn dan 1,17. 
+Maak een **nieuwe resourcegroep en** een AKS-cluster en gebruik vervolgens uw sleutel om de besturingssysteemschijf te versleutelen. Door de klant beheerde sleutels worden alleen ondersteund in Kubernetes-versies die hoger zijn dan 1.17. 
 
 > [!IMPORTANT]
-> Zorg ervoor dat u een nieuwe resource-groep voor uw AKS-cluster maakt
+> Zorg ervoor dat u een nieuwe resoruce-groep voor uw AKS-cluster maakt
 
 ```azurecli-interactive
 # Retrieve the DiskEncryptionSet value and set a variable
@@ -87,13 +87,13 @@ az group create -n myResourceGroup -l myAzureRegionName
 az aks create -n myAKSCluster -g myResourceGroup --node-osdisk-diskencryptionset-id $diskEncryptionSetId --kubernetes-version KUBERNETES_VERSION --generate-ssh-keys
 ```
 
-Wanneer er nieuwe knooppunt groepen worden toegevoegd aan het hierboven gemaakte cluster, wordt de door de klant beheerde sleutel die tijdens het maken is gegeven, gebruikt voor het versleutelen van de besturingssysteem schijf.
+Wanneer er nieuwe knooppuntgroepen worden toegevoegd aan het hierboven gemaakte cluster, wordt de door de klant beheerde sleutel gebruikt om de besturingssysteemschijf te versleutelen.
 
-## <a name="encrypt-your-aks-cluster-data-diskoptional"></a>Uw AKS-cluster gegevens schijf versleutelen (optioneel)
-De coderings sleutel van de besturingssysteem schijf wordt gebruikt voor het versleutelen van de gegevens schijf als er geen sleutel wordt gegeven voor de gegevens schijf van v 1.17.2, en u kunt ook AKS-gegevens schijven met uw andere sleutels versleutelen.
+## <a name="encrypt-your-aks-cluster-data-diskoptional"></a>Uw AKS-clustergegevensschijf versleutelen (optioneel)
+De versleutelingssleutel van de besturingssysteemschijf wordt gebruikt voor het versleutelen van de gegevensschijf als er geen sleutel is opgegeven voor de gegevensschijf uit v1.17.2 en u kunt AKS-gegevensschijven ook versleutelen met uw andere sleutels.
 
 > [!IMPORTANT]
-> Zorg ervoor dat u beschikt over de juiste AKS-referenties. De beheerde identiteit moet Inzender toegang hebben tot de resource groep waar de diskencryptionset wordt geïmplementeerd. Anders krijgt u een fout melding dat de beheerde identiteit geen machtigingen heeft.
+> Zorg ervoor dat u de juiste AKS-referenties hebt. De beheerde identiteit moet inzenderstoegang hebben tot de resourcegroep waarin de diskencryptionset is geïmplementeerd. Anders krijgt u een foutmelding dat de beheerde identiteit geen machtigingen heeft.
 
 ```azurecli-interactive
 # Retrieve your Azure Subscription Id from id property as shown below
@@ -119,7 +119,7 @@ someuser@Azure:~$ az account list
 ]
 ```
 
-Maak een bestand met de naam **byok-Azure-disk. yaml** dat de volgende informatie bevat.  Vervang myAzureSubscriptionId, myResourceGroup en myDiskEncrptionSetName door uw waarden en pas de yaml toe.  Zorg ervoor dat u de resource groep gebruikt waarin uw DiskEncryptionSet wordt geïmplementeerd.  Als u de Azure Cloud Shell gebruikt, kan dit bestand worden gemaakt met behulp van VI of nano alsof het werkt op een virtueel of fysiek systeem:
+Maak een bestand met de **naam byok-azure-disk.yaml** dat de volgende informatie bevat.  Vervang myAzureSubscriptionId, myResourceGroup en myDiskEncrptionSetName door uw waarden en pas de yaml toe.  Zorg ervoor dat u de resourcegroep gebruikt waarin uw DiskEncryptionSet is geïmplementeerd.  Als u de Azure Cloud Shell gebruikt, kan dit bestand worden gemaakt met behulp van vi of nano, alsof het werkt op een virtueel of fysiek systeem:
 
 ```
 kind: StorageClass
@@ -143,13 +143,13 @@ kubectl apply -f byok-azure-disk.yaml
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Aanbevolen procedures voor AKS-cluster beveiliging][best-practices-security] controleren
+Best [practices voor AKS-clusterbeveiliging bekijken][best-practices-security]
 
 <!-- LINKS - external -->
 
 <!-- LINKS - internal -->
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
 [best-practices-security]: ./operator-best-practices-cluster-security.md
 [byok-azure-portal]: ../storage/common/customer-managed-keys-configure-key-vault.md
 [customer-managed-keys-windows]: ../virtual-machines/disk-encryption.md#customer-managed-keys

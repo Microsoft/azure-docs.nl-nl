@@ -1,78 +1,78 @@
 ---
-title: Basis installatie kopie-updates-taken
-description: Meer informatie over basis installatie kopieën voor installatie kopieën van de toepassings container en over hoe een update van een basis installatie kopie een Azure Container Registry taak kan activeren.
+title: Updates van basisafbeeldingen - Taken
+description: Meer informatie over basisafbeeldingen voor containerafbeeldingen van toepassingen en over hoe een update van een basisafbeelding een Azure Container Registry activeren.
 ms.topic: article
 ms.date: 01/22/2019
-ms.openlocfilehash: df33096830cd7b34a288c38c105aff3610315337
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fc501cc1db654c11675e5a4f0d19a5a56b63a165
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97707483"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781177"
 ---
-# <a name="about-base-image-updates-for-acr-tasks"></a>Over updates van basis installatie kopieën voor ACR-taken
+# <a name="about-base-image-updates-for-acr-tasks"></a>Over updates van basisafbeeldingen voor ACR-taken
 
-Dit artikel bevat achtergrond informatie over updates voor de basis installatie kopie van een toepassing en hoe deze updates een Azure Container Registry taak kunnen activeren.
+Dit artikel bevat achtergrondinformatie over updates van de basisafbeelding van een toepassing en hoe deze updates een Azure Container Registry activeren.
 
-## <a name="what-are-base-images"></a>Wat zijn basis installatie kopieën?
+## <a name="what-are-base-images"></a>Wat zijn basisafbeeldingen?
 
-Dockerfiles het definiëren van de meeste container installatie kopieën geven een bovenliggende installatie kopie op van waaruit de installatie kopie is gebaseerd, dikwijls aangeduid met de *basis installatie kopie*. Basisinstallatiekopieën bevatten doorgaans het besturingssysteem, bijvoorbeeld [Alpine Linux][base-alpine] of [Windows Nano Server][base-windows], waarop de overige lagen van de container worden toegepast. Ook kunnen basisinstallatiekopieën toepassingsframeworks zoals [Node.js][base-node] of [.NET Core][base-dotnet] bevatten. Deze basis installatie kopieën zijn gewoonlijk gebaseerd op open bare upstream-installatie kopieën. Diverse installatie kopieën van uw toepassing kunnen een gemeen schappelijke basis installatie kopie delen.
+Dockerfiles die de meeste containerafbeeldingen definiëren, geven een bovenliggende afbeelding op van waaruit de afbeelding is gebaseerd, vaak aangeduid als de *basisafbeelding*. Basisinstallatiekopieën bevatten doorgaans het besturingssysteem, bijvoorbeeld [Alpine Linux][base-alpine] of [Windows Nano Server][base-windows], waarop de overige lagen van de container worden toegepast. Ook kunnen basisinstallatiekopieën toepassingsframeworks zoals [Node.js][base-node] of [.NET Core][base-dotnet] bevatten. Deze basisafbeeldingen zijn doorgaans gebaseerd op openbare upstream-afbeeldingen. Verschillende toepassingsafbeeldingen kunnen een gemeenschappelijke basisafbeelding delen.
 
-Een basisinstallatiekopie wordt vaak door de installatiekopie-maintainer bijgewerkt om nieuwe functies of verbeteringen toe te voegen aan het besturingssysteem of framework in de installatiekopie. Beveiligingspatches zijn een andere veelvoorkomende oorzaak van een update van de basisinstallatiekopie. Wanneer deze upstream-updates worden uitgevoerd, moet u ook uw basis installatie kopieën bijwerken om de essentiële oplossing op te nemen. Elke toepassings installatie kopie moet vervolgens ook opnieuw worden opgebouwd om deze upstream-oplossingen op te nemen die nu zijn opgenomen in uw basis installatie kopie.
+Een basisinstallatiekopie wordt vaak door de installatiekopie-maintainer bijgewerkt om nieuwe functies of verbeteringen toe te voegen aan het besturingssysteem of framework in de installatiekopie. Beveiligingspatches zijn een andere veelvoorkomende oorzaak van een update van de basisinstallatiekopie. Wanneer deze upstream-updates optreden, moet u ook uw basisafbeeldingen bijwerken om de kritieke oplossing op te nemen. Elke toepassingsafbeelding moet vervolgens ook opnieuw worden opgebouwd om deze upstream-oplossingen op te nemen die nu zijn opgenomen in uw basisafbeelding.
 
-In sommige gevallen, zoals een team van een persoonlijke ontwikkeling, kan een basis installatie kopie meer dan het besturings systeem of het Framework opgeven. Een basis installatie kopie kan bijvoorbeeld een installatie kopie van een gedeeld service onderdeel zijn die moet worden bijgehouden. Leden van een team moeten deze basis afbeelding volgen voor het testen of moeten de installatie kopie regel matig bijwerken bij het ontwikkelen van installatie kopieën van toepassingen.
+In sommige gevallen, zoals een persoonlijk ontwikkelteam, kan een basisafbeelding meer dan besturingssysteem of framework opgeven. Een basisafbeelding kan bijvoorbeeld een gedeelde-serviceonderdeel-afbeelding zijn die moet worden bijgespoord. Leden van een team moeten deze basisafbeelding mogelijk bijhouden om te testen of moeten de afbeelding regelmatig bijwerken bij het ontwikkelen van toepassingsafbeeldingen.
 
-## <a name="maintain-copies-of-base-images"></a>Kopieën van basis installatie kopieën onderhouden
+## <a name="maintain-copies-of-base-images"></a>Kopieën van basisafbeeldingen onderhouden
 
-We raden u aan om de inhoud naar een Azure container Registry of een ander persoonlijk REGI ster te kopiëren voor alle inhoud in uw registers die afhankelijk zijn van basis inhoud in een openbaar REGI ster, zoals docker hub. Zorg er vervolgens voor dat u de installatie kopieën van uw toepassing bouwt door te verwijzen naar de persoonlijke basis installatie kopieën. Azure Container Registry biedt een functie voor het [importeren van afbeeldingen](container-registry-import-images.md) om eenvoudig inhoud van open bare registers of andere Azure-container registers te kopiëren. In de volgende sectie wordt beschreven hoe u met behulp van ACR-taken updates van basis afbeeldingen bijhoudt bij het bouwen van toepassings updates. U kunt basis installatie kopieën in uw eigen Azure-container registers en optioneel in de upstream-open bare registers volgen.
+Voor inhoud in uw registers die afhankelijk is van de basisinhoud die wordt onderhouden in een openbaar register, zoals Docker Hub, wordt u aangeraden de inhoud te kopiëren naar een Azure-containerregister of een ander persoonlijk register. Zorg er vervolgens voor dat u uw toepassingsafbeeldingen bouwt door te verwijzen naar de persoonlijke basisafbeeldingen. Azure Container Registry biedt een mogelijkheid [voor het importeren](container-registry-import-images.md) van afbeeldingen om eenvoudig inhoud te kopiëren uit openbare registers of andere Azure-containerregisters. In de volgende sectie wordt beschreven hoe u ACR-taken updates van basisafbeeldingen kunt bijhouden bij het bouwen van toepassingsupdates. U kunt updates van basisafbeeldingen bijhouden in uw eigen Azure-containerregisters en eventueel in upstream openbare registers.
 
-## <a name="track-base-image-updates"></a>Updates van basis installatie kopieën bijhouden
+## <a name="track-base-image-updates"></a>Updates van basisafbeeldingen bijhouden
 
-Met ACR Tasks hebt u de mogelijkheid om automatisch installatiekopieën te maken wanneer een containerinstallatiekopie wordt bijgewerkt. U kunt deze mogelijkheid gebruiken om kopieën van open bare basis installatie kopieën in uw Azure-container registers te onderhouden en bij te werken, en vervolgens toepassings installatie kopieën te maken die afhankelijk zijn van basis installatie kopieën.
+Met ACR Tasks hebt u de mogelijkheid om automatisch installatiekopieën te maken wanneer een containerinstallatiekopie wordt bijgewerkt. U kunt deze mogelijkheid gebruiken om kopieën van openbare basiskopieën in uw Azure-containerregisters te onderhouden en bij te werken en vervolgens toepassingsafbeeldingen te herbouwen die afhankelijk zijn van basisafbeeldingen.
 
-Met ACR-taken worden afhankelijkheden van basis installatie kopieën dynamisch gedetecteerd bij het samen stellen van een container installatie kopie. Als gevolg hiervan kan worden gedetecteerd wanneer de basis installatie kopie van een toepassings afbeelding wordt bijgewerkt. Met één vooraf geconfigureerde build-taak kan ACR-taken elke toepassings installatie kopie die verwijst naar de basis installatie kopie automatisch opnieuw samen stellen. Met deze automatische detectie en het opnieuw samen stellen van ACR-taken bespaart u de tijd en inspanningen die normaal gesp roken nodig zijn voor het hand matig bijhouden en bijwerken van elke toepassings installatie kopie die verwijst naar de bijgewerkte basis installatie kopie.
+ACR-taken worden afhankelijkheden van basisafbeeldingen dynamisch ontdekt wanneer er een containerafbeelding wordt gebouwd. Hierdoor kan worden gedetecteerd wanneer de basisafbeelding van een toepassingsafbeelding wordt bijgewerkt. Met één vooraf geconfigureerde buildtaak kan ACR-taken automatisch elke toepassingsafbeelding herbouwen die verwijst naar de basisafbeelding. Met deze automatische detectie en herbouwing bespaart ACR-taken u de tijd en moeite die normaal gesproken nodig is om elke toepassingsafbeelding die verwijst naar uw bijgewerkte basisafbeelding handmatig bij te houden en bij te werken.
 
-## <a name="base-image-locations"></a>Basis installatie kopie locaties
+## <a name="base-image-locations"></a>Locaties van basisafbeeldingen
 
-Voor installatie kopieën die zijn gebaseerd op een Dockerfile, detecteert een ACR-taak afhankelijkheden op basis installatie kopieën op de volgende locaties:
+Voor builds van een dockerfile detecteert een ACR-taak afhankelijkheden van basisafbeeldingen op de volgende locaties:
 
-* Hetzelfde Azure container Registry waarin de taak wordt uitgevoerd
-* Een ander persoonlijk Azure-container register in dezelfde of een andere regio 
-* Een open bare opslag plaats in docker hub 
-* Een open bare opslag plaats in micro soft Container Registry
+* Hetzelfde Azure-containerregister waar de taak wordt uitgevoerd
+* Een ander privé-Azure-containerregister in dezelfde of een andere regio 
+* Een openbare repo in Docker Hub 
+* Een openbare repo in Microsoft Container Registry
 
-Als de basis installatie kopie die in de `FROM` instructie is opgegeven, zich op een van deze locaties bevindt, voegt de ACR-taak een hook toe om ervoor te zorgen dat de installatie kopie opnieuw wordt opgebouwd op het moment dat de basis wordt bijgewerkt.
+Als de basisafbeelding die is opgegeven in de instructie zich op een van deze locaties bevindt, voegt de ACR-taak een hook toe om ervoor te zorgen dat de afbeelding opnieuw wordt opgebouwd wanneer de `FROM` basis ervan wordt bijgewerkt.
 
-## <a name="base-image-notifications"></a>Basis installatie kopie-meldingen
+## <a name="base-image-notifications"></a>Basisafbeeldingsmeldingen
 
-De tijd tussen het moment dat een basis installatie kopie wordt bijgewerkt en wanneer de afhankelijke taak wordt geactiveerd, is afhankelijk van de locatie van de basis installatie kopie:
+De tijd tussen het moment waarop een basisafbeelding wordt bijgewerkt en wanneer de afhankelijke taak wordt geactiveerd, is afhankelijk van de locatie van de basisafbeelding:
 
-* **Basis installatie kopieën van een open bare opslag plaats in docker hub of MCR** voor basis installatie kopieën in open bare opslag plaatsen, een ACR-taak controleert op installatie kopie-updates op een wille keurig interval tussen 10 en 60 minuten. Afhankelijke taken worden dienovereenkomstig uitgevoerd.
-* **Basis installatie kopieën van een Azure container Registry** : voor basis installatie kopieën in azure-container registers wordt een ACR-taak onmiddellijk geactiveerd wanneer de basis installatie kopie wordt bijgewerkt. De basis installatie kopie kan zich in dezelfde ACR bevinden als de taak wordt uitgevoerd of in een andere ACR in een wille keurige regio.
+* Basisafbeeldingen van een openbare opslagplaats in Docker Hub of **MCR:** voor basisafbeeldingen in openbare opslagplaatsen controleert een ACR-taak op updates van afbeeldingen met een willekeurig interval tussen 10 en 60 minuten. Afhankelijke taken worden dienovereenkomstig uitgevoerd.
+* **Basisafbeeldingen van een Azure-containerregister:** voor basisafbeeldingen in Azure-containerregisters activeert een ACR-taak onmiddellijk een run wanneer de basisafbeelding wordt bijgewerkt. De basisafbeelding kan zich in dezelfde ACR-omgeving als waar de taak wordt uitgevoerd of in een andere ACR in elke regio.
 
 ## <a name="additional-considerations"></a>Aanvullende overwegingen
 
-* **Basis installatie kopieën voor toepassings installatie** kopieën: op dit moment wordt met een ACR-taak alleen de basis installatie kopieën van updates voor de toepassing (*runtime*) bijgehouden. Updates voor tussenliggende installatie kopieën (*buildtime*) die worden gebruikt in de multi-fase Dockerfiles, worden niet bijgehouden.  
+* **Basisafbeeldingen voor toepassingsafbeeldingen:** momenteel houdt een ACR-taak alleen updates van basisafbeeldingen bij voor toepassingsafbeeldingen *(runtime).* Updates van basisafbeeldingen voor tussenliggende *(buildtime)-afbeeldingen* die worden gebruikt in Dockerfiles met meerdere fases, worden niet bij het bijhouden.  
 
-* **Standaard ingeschakeld** : wanneer u een ACR-taak maakt met de opdracht [AZ ACR Task Create][az-acr-task-create] , wordt de taak standaard *ingeschakeld* voor trigger door een update van de basis installatie kopie. Dat wil zeggen, de `base-image-trigger-enabled` eigenschap is ingesteld op True. Als u dit gedrag in een taak wilt uitschakelen, werkt u de eigenschap bij op ONWAAR. Voer bijvoorbeeld de volgende opdracht [AZ ACR Task update][az-acr-task-update] uit:
+* **Standaard ingeschakeld:** wanneer u een ACR-taak maakt met de opdracht [az acr task create,][az-acr-task-create] *wordt* de taak standaard ingeschakeld voor trigger door een update van de basisafbeelding. Dat wil zeggen dat `base-image-trigger-enabled` de eigenschap is ingesteld op Waar. Als u dit gedrag in een taak wilt uitschakelen, moet u de eigenschap bijwerken naar False. Voer bijvoorbeeld de volgende [opdracht az acr task update][az-acr-task-update] uit:
 
   ```azurecli
   az acr task update --registry myregistry --name mytask --base-image-trigger-enabled False
   ```
 
-* **Trigger voor het bijhouden van afhankelijkheden** : om een ACR-taak in te scha kelen om de afhankelijkheden van een container installatie kopie te bepalen en bij te houden, zoals de basis installatie kopie, moet u eerst de taak activeren om de installatie kopie **ten minste één keer** te bouwen. Activeer de taak bijvoorbeeld hand matig met behulp van de opdracht [AZ ACR Task run][az-acr-task-run] .
+* **Trigger** voor het bijhouden van afhankelijkheden: als u een ACR-taak wilt inschakelen om de afhankelijkheden van een container-image te bepalen en bij te houden , die de basisafbeelding bevatten, moet u eerst de taak activeren om de afbeelding ten minste één keer te **bouwen.** Activeer de taak bijvoorbeeld handmatig met de [opdracht az acr task run.][az-acr-task-run]
 
-* **Stabiele tag voor basis installatie kopie** : als u een taak wilt activeren bij het bijwerken van de basis installatie kopie, moet de basis installatie kopie een *stabiele* tag hebben, zoals `node:9-alpine` . Deze code ring is gebruikelijk voor een basis installatie kopie die wordt bijgewerkt met OS-en Framework patches naar een laatste stabiele release. Als de basis installatie kopie wordt bijgewerkt met een nieuwe versie label, wordt er geen taak geactiveerd. Zie de [Best practices-richt lijnen](container-registry-image-tag-version.md)voor meer informatie over afbeeldings codes. 
+* **Stabiele tag voor basisafbeelding:** als u een taak wilt activeren bij het bijwerken van de basisafbeelding, moet de basisafbeelding een stabiele *tag* hebben, zoals `node:9-alpine` . Dit taggen is gebruikelijk voor een basisafbeelding die is bijgewerkt met patches voor het besturingssysteem en framework naar een nieuwste stabiele release. Als de basisafbeelding wordt bijgewerkt met een nieuwe versietag, wordt er geen taak getriggerd. Zie de richtlijnen voor best practices voor meer informatie over het [taggen van afbeeldingen.](container-registry-image-tag-version.md) 
 
-* **Andere taak triggers** : in een taak die wordt geactiveerd door basis installatie kopie-updates, kunt u triggers ook inschakelen op basis van de [door Voer van de bron code](container-registry-tutorial-build-task.md) of [een planning](container-registry-tasks-scheduled.md). Een basis installatie kopie-update kan ook een [taak met meerdere stappen](container-registry-tasks-multi-step.md)activeren.
+* **Andere taaktriggers:** in een taak die wordt geactiveerd door [](container-registry-tutorial-build-task.md) updates van basisafbeeldingen, kunt u ook triggers inschakelen op basis van het invoeren van de broncode [of een schema](container-registry-tasks-scheduled.md). Een update van een basisafbeelding kan ook een [taak met meerdere stappen activeren.](container-registry-tasks-multi-step.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de volgende zelf studies voor scenario's voor het automatiseren van installatie kopieën van toepassingen nadat een basis installatie kopie is bijgewerkt:
+Zie de volgende zelfstudies voor scenario's voor het automatiseren van builds van toepassingsafbeeldingen nadat een basisafbeelding is bijgewerkt:
 
-* [De build van container installatie kopieën automatiseren wanneer een basis installatie kopie in hetzelfde REGI ster wordt bijgewerkt](container-registry-tutorial-base-image-update.md)
+* [Builds van containerafbeeldingen automatiseren wanneer een basisafbeelding wordt bijgewerkt in hetzelfde register](container-registry-tutorial-base-image-update.md)
 
-* [De build van container installatie kopieën automatiseren wanneer een basis installatie kopie in een ander REGI ster wordt bijgewerkt](container-registry-tutorial-base-image-update.md)
+* [Builds van containerafbeeldingen automatiseren wanneer een basisafbeelding wordt bijgewerkt in een ander register](container-registry-tutorial-base-image-update.md)
 
 
 <!-- LINKS - External -->
@@ -85,13 +85,13 @@ Raadpleeg de volgende zelf studies voor scenario's voor het automatiseren van in
 
 <!-- LINKS - Internal -->
 [azure-cli]: /cli/azure/install-azure-cli
-[az-acr-build]: /cli/azure/acr#az-acr-build
-[az-acr-pack-build]: /cli/azure/acr/pack#az-acr-pack-build
+[az-acr-build]: /cli/azure/acr#az_acr_build
+[az-acr-pack-build]: /cli/azure/acr/pack#az_acr_pack_build
 [az-acr-task]: /cli/azure/acr/task
-[az-acr-task-create]: /cli/azure/acr/task#az-acr-task-create
-[az-acr-task-run]: /cli/azure/acr/task#az-acr-task-run
-[az-acr-task-update]: /cli/azure/acr/task#az-acr-task-update
-[az-login]: /cli/azure/reference-index#az-login
+[az-acr-task-create]: /cli/azure/acr/task#az_acr_task_create
+[az-acr-task-run]: /cli/azure/acr/task#az_acr_task_run
+[az-acr-task-update]: /cli/azure/acr/task#az_acr_task_update
+[az-login]: /cli/azure/reference-index#az_login
 [az-login-service-principal]: /cli/azure/authenticate-azure-cli
 
 <!-- IMAGES -->

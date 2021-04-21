@@ -1,5 +1,5 @@
 ---
-title: Quick Start-telemetrie verzenden naar Azure IoT Hub (CLI) Quick Start
+title: 'Quickstart: Telemetrie verzenden naar Azure IoT Hub (CLI) quickstart'
 description: In deze quickstart lezen ontwikkelaars die nog geen ervaring hebben met IoT Hub hoe ze de Azure CLI kunnen gaan gebruiken om een IoT-hub te maken, telemetrie te verzenden en berichten tussen een apparaat en de hub weer te geven.
 ms.service: iot-hub
 ms.topic: quickstart
@@ -11,12 +11,12 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/06/2019
-ms.openlocfilehash: 4671880490a9ce9e29f49ede0e7687bdcf639a7e
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a34fd5480ae47678f250dbf888005c396ba32f38
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102199795"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792143"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-monitor-it-with-the-azure-cli"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en deze bewaken met de Azure CLI
 
@@ -45,7 +45,7 @@ Zo start u de Cloud Shell:
     > [!NOTE]
     > Als de Cloud Shell voor het eerst gebruikt, wordt u gevraagd opslag te maken. Dit is nodig om de Cloud Shell te gebruiken.  Selecteer een abonnement om een opslagaccount en een Microsoft Azure Files-share te maken. 
 
-2. Selecteer uw favoriete CLI-omgeving in de vervolgkeuzelijst **Omgeving selecteren**. In deze snelstartgids wordt gebruikgemaakt van de **bash**-omgeving. Alle volgende CLI-opdrachten werken ook in de Power shell-omgeving. 
+2. Selecteer uw favoriete CLI-omgeving in de vervolgkeuzelijst **Omgeving selecteren**. In deze snelstartgids wordt gebruikgemaakt van de **bash**-omgeving. Alle volgende CLI-opdrachten werken ook in de PowerShell-omgeving. 
 
     ![CLI-omgeving selecteren](media/quickstart-send-telemetry-cli/cloud-shell-environment.png)
 
@@ -55,7 +55,7 @@ In deze sectie bereidt u twee Azure CLI-sessies voor. Als u de Cloud Shell gebru
 
 Voor Azure CLI moet u zijn aangemeld bij uw Azure-account. Alle communicatie tussen uw Azure CLI-shell-sessie en uw IoT-hub wordt geverifieerd en versleuteld. Als gevolg hiervan heeft deze snelstartgids geen aanvullende verificatie, zoals een verbindingsreeks, nodig die u wel zou gebruiken met een echt apparaat.
 
-*  Voer de opdracht [az extension add](/cli/azure/extension#az-extension-add) toe om de Microsoft Azure IoT-extensie voor Azure CLI toe te voegen aan uw CLI-shell. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
+*  Voer de opdracht [az extension add](/cli/azure/extension#az_extension_add) toe om de Microsoft Azure IoT-extensie voor Azure CLI toe te voegen aan uw CLI-shell. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
 
    ```azurecli
    az extension add --name azure-iot
@@ -76,13 +76,13 @@ In deze sectie gebruikt u de Azure CLI voor het maken van een resourcegroep en e
 > [!TIP]
 > U kunt desgewenst een Azure-resourcegroep, een IoT Hub en andere resources maken met behulp van de [Azure-portal](iot-hub-create-through-portal.md), [Visual Studio-code](iot-hub-create-use-iot-toolkit.md) of andere programmatische methoden.  
 
-1. Voer de opdracht [az group create](/cli/azure/group#az-group-create) uit om een resourcegroep te maken. Met de volgende opdracht wordt een resourcegroep met de naam *MyResourceGroup* gemaakt op de locatie *VS - oost*. 
+1. Voer de opdracht [az group create](/cli/azure/group#az_group_create) uit om een resourcegroep te maken. Met de volgende opdracht wordt een resourcegroep met de naam *MyResourceGroup* gemaakt op de locatie *VS - oost*. 
 
     ```azurecli
     az group create --name MyResourceGroup --location eastus
     ```
 
-1. Voer de opdracht [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create) uit om een IoT-hub te maken. Het kan enkele minuten duren voordat een IoT-hub is gemaakt. 
+1. Voer de opdracht [az iot hub create](/cli/azure/iot/hub#az_iot_hub_create) uit om een IoT-hub te maken. Het kan enkele minuten duren voordat een IoT-hub is gemaakt. 
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. De naam van de IoT-hub moet wereldwijd uniek zijn in Azure. Deze tijdelijke aanduiding wordt gebruikt in de rest van deze quickstart om de naam van uw IoT-hub aan te geven.
 
@@ -184,12 +184,12 @@ Als u verder wilt gaan met het volgende aanbevolen artikel, kunt u de resources 
 > Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle resources daarin worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert. 
 
 Een resourcegroep verwijderen op naam:
-1. Voer de opdracht [az group delete](/cli/azure/group#az-group-delete) uit. Hiermee verwijdert u de resourcegroep, de IoT Hub en de apparaatregistratie die u hebt gemaakt.
+1. Voer de opdracht [az group delete](/cli/azure/group#az_group_delete) uit. Hiermee verwijdert u de resourcegroep, de IoT Hub en de apparaatregistratie die u hebt gemaakt.
 
     ```azurecli
     az group delete --name MyResourceGroup
     ```
-1. Voer de opdracht [az group list](/cli/azure/group#az-group-list) uit om te controleren of de resourcegroep is verwijderd.  
+1. Voer de opdracht [az group list](/cli/azure/group#az_group_list) uit om te controleren of de resourcegroep is verwijderd.  
 
     ```azurecli
     az group list

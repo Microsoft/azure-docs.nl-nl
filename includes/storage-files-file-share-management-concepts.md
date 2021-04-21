@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 12/26/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 8d26b6c92462abc13c42257d2c6e571156eacc0f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6c54bdc2738f9455926882c439ff8942c1c0a5a6
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96011753"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107759757"
 ---
-Azure-bestandsshares worden geïmplementeerd in *opslagaccounts*. Dat zijn objecten op het hoogste niveau die een gedeelde opslagpool vertegenwoordigen. Deze opslagpool kan worden gebruikt om meerdere bestandsshares en andere opslagresources, zoals blobcontainers, wachtrijen of tabellen, te implementeren. Alle opslagresources die in een opslagaccount worden geïmplementeerd, delen de limieten die van toepassing zijn op dat opslagaccount. Raadpleeg [Azure Files scalability and performance targets](../articles/storage/files/storage-files-scale-targets.md) (Schaalbaarheids- en prestatiedoelen in Azure Files) om de huidige limieten voor een opslagaccount te bekijken.
+Azure-bestandsshares worden geïmplementeerd in *opslagaccounts*. Dat zijn objecten op het hoogste niveau die een gedeelde opslagpool vertegenwoordigen. Deze opslagpool kan worden gebruikt om meerdere bestandsshares en andere opslagresources, zoals blobcontainers, wachtrijen of tabellen, te implementeren. Alle opslagresources die in een opslagaccount worden geïmplementeerd, delen de limieten die van toepassing zijn op dat opslagaccount. Zie Schaalbaarheids- en prestatiedoelen [voor Azure Files opslagaccountlimieten.](../articles/storage/files/storage-files-scale-targets.md)
 
 Er zijn twee belangrijke soorten opslagaccounts die u voor Azure Files-implementatie gaat gebruiken: 
 - **GPv2-opslagaccounts (versie twee voor algemeen gebruik)** : Met GPv2-opslagaccounts kunt u Azure-bestandsshares implementeren op (HDD-)hardware met een standaard/harde schijf. Naast het opslaan van Azure-bestandsshares kunnen GPv2-opslagaccounts andere opslagresources, zoals blobcontainers, wachtrijen of tabellen, opslaan. 

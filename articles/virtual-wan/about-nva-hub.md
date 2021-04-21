@@ -1,75 +1,75 @@
 ---
-title: 'Virtueel WAN van Azure: over het virtuele netwerk apparaat in de hub'
-description: In dit artikel vindt u meer informatie over virtuele netwerk apparaten in de virtuele WAN-hub.
+title: 'Azure Virtual WAN: Over virtueel netwerkapparaat in de hub'
+description: In dit artikel vindt u meer informatie over virtuele netwerkapparaten in de Virtual WAN hub.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: scottnap
-ms.openlocfilehash: e70b899ea0133704e4ecab42dd4c2a09bca41804
-ms.sourcegitcommit: b28e9f4d34abcb6f5ccbf112206926d5434bd0da
+ms.openlocfilehash: 7c3ae14cd409e7bfc9be77c1a593964b73a12ddc
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107226308"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791045"
 ---
-# <a name="about-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Over virtuele netwerk apparaten in een virtuele WAN-hub van Azure (preview)
+# <a name="about-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Over virtueel netwerkapparaat in een Azure Virtual WAN hub (preview)
 
-Azure Virtual WAN heeft met netwerk partners gewerkt om automatisering te bouwen waarmee het eenvoudig is om hun klant locatie-uitrusting (CPE) te verbinden met een Azure VPN-gateway in de virtuele hub. Azure werkt met geselecteerde netwerk partners om klanten in staat te stellen een virtueel netwerk apparaat (NVA) van derden rechtstreeks naar de virtuele hub te implementeren. Hierdoor kunnen klanten die hun vertakking CPE willen verbinden met dezelfde merk NVA in de virtuele hub, zodat ze profiteren van eigen end-to-end SD-WAN-mogelijkheden.
+Azure Virtual WAN heeft samengewerkt met netwerkpartners om automatisering te bouwen die het eenvoudig maakt om hun Customer Premise Equipment (CPE) te verbinden met een Azure VPN-gateway in de virtuele hub. Azure werkt samen met geselecteerde netwerkpartners om klanten in staat te stellen een virtueel netwerkapparaat (NVA) van derden rechtstreeks in de virtuele hub te implementeren. Hierdoor kunnen klanten die hun vertakking CPE willen verbinden met hetzelfde merk NVA in de virtuele hub, profiteren van eigen end-to-end SD-WAN-mogelijkheden.
 
-Barracuda Networks en Cisco Systems zijn de eerste partners die de Nva's bieden die rechtstreeks op de virtuele WAN-hub kunnen worden geïmplementeerd.  Zie [Barracuda CLOUDGEN WAN](https://www.barracuda.com/products/cloudgenwan), [Cisco Cloud opstap for multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) en [VMware SD-WAN](https://kb.vmware.com/s/article/82746) voor hun respectieve product documentatie. Azure werkt met meer partners, zodat u rekening moet houden met andere aanbiedingen.
+Barracuda Networks en Cisco Systems zijn de eerste partners die de NNA's leveren die rechtstreeks kunnen worden geïmplementeerd in Virtual WAN hub.  Zie [Barracuda CloudGen WAN,](https://www.barracuda.com/products/cloudgenwan) [Cisco Cloud OnRamp for Multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) en [VMware SD-WAN](https://kb.vmware.com/s/article/82746) voor hun respectieve productdocumentatie. Azure werkt met meer partners, dus u kunt verwachten dat er andere aanbiedingen volgen.
 
 > [!NOTE]
-> Alleen NVA-aanbiedingen die beschikbaar zijn om te worden geïmplementeerd in de virtuele WAN-hub, kunnen in de virtuele WAN-hub worden geïmplementeerd. Ze kunnen niet worden geïmplementeerd in een wille keurig virtueel netwerk in Azure.
+> Alleen NVA-aanbiedingen die beschikbaar zijn om te worden geïmplementeerd in de Virtual WAN hub kunnen worden geïmplementeerd in Virtual WAN hub. Ze kunnen niet worden geïmplementeerd in een willekeurig virtueel netwerk in Azure.
 
 ## <a name="how-does-it-work"></a><a name="how"></a>Hoe werkt het?
 
-De Nva's die beschikbaar zijn om rechtstreeks te worden geïmplementeerd in de virtuele WAN-hub van Azure, worden speciaal ontworpen om te worden gebruikt in de virtuele hub. De NVA-aanbieding wordt gepubliceerd naar Azure Marketplace als een beheerde toepassing. klanten kunnen de aanbieding rechtstreeks vanuit Azure Marketplace implementeren of ze kunnen de aanbieding via de virtuele hub implementeren via de Azure Portal.
+De NNA's die rechtstreeks in de Azure Virtual WAN-hub kunnen worden geïmplementeerd, zijn speciaal ontworpen voor gebruik in de virtuele hub. De NVA-aanbieding wordt naar Azure Marketplace gepubliceerd als een beheerde toepassing en klanten kunnen de aanbieding rechtstreeks vanuit Azure Marketplace implementeren of ze kunnen de aanbieding implementeren vanuit de virtuele hub via de Azure Portal.
 
-:::image type="content" source="./media/about-nva-hub/high-level-process.png" alt-text="Overzicht van het proces":::
+:::image type="content" source="./media/about-nva-hub/high-level-process.png" alt-text="Procesoverzicht":::
 
-De NVA-aanbieding van elke partner heeft een iets andere ervaring en functionaliteit op basis van hun implementatie vereisten. Er zijn echter enkele dingen die gemeen schappelijk zijn voor alle partner aanbiedingen voor NVA in de virtuele WAN-hub.
+De NVA-aanbieding van elke partner heeft een iets andere ervaring en functionaliteit op basis van hun implementatievereisten. Er zijn echter enkele dingen die gemeenschappelijk zijn voor alle partneraanbiedingen voor NVA in de Virtual WAN hub.
 
-* Een beheerde toepassings ervaring die wordt aangeboden via Azure Marketplace.
-* NVA capaciteit en facturering op basis van de infra structuur.
-* Metrische gegevens over de status, die worden belicht door Azure Monitor.
+* Een beheerde toepassingservaring die wordt aangeboden via Azure Marketplace.
+* Capaciteit en facturering op basis van NVA-infrastructuur.
+* Metrische gegevens over status die via Azure Monitor.
 
 ### <a name="managed-application"></a><a name="managed"></a>Beheerde toepassing
 
-Alle NVA-aanbiedingen die beschikbaar zijn om te worden geïmplementeerd in de virtuele WAN-hub, hebben een **beheerde toepassing** die beschikbaar is in azure Marketplace. Met beheerde toepassingen kunnen partners het volgende doen:
+Alle NVA-aanbiedingen die beschikbaar zijn om te worden geïmplementeerd in  de Virtual WAN-hub, hebben een beheerde toepassing die beschikbaar is in Azure Marketplace. Met beheerde toepassingen kunnen partners het volgende doen:
 
 * Bouw een aangepaste implementatie-ervaring voor hun NVA.
-* Geef een gespecialiseerde Resource Manager-sjabloon op waarmee de NVA rechtstreeks in de virtuele WAN-hub kan worden gemaakt.
-* Factuur software licentie kosten rechtstreeks of via Azure Marketplace.
-* Stel aangepaste eigenschappen en resource meters beschikbaar.
+* Geef een speciale Resource Manager sjabloon waarmee ze de NVA rechtstreeks in de Virtual WAN maken.
+* Factureren van softwarelicentiekosten rechtstreeks of via Azure Marketplace.
+* Aangepaste eigenschappen en resourcemeters weergeven.
 
-NVA-partners kunnen verschillende resources maken, afhankelijk van hun toestel-implementatie, configuratie licenties en beheer behoeften. Wanneer een klant een NVA maakt in de virtuele WAN-hub, zoals alle beheerde toepassingen, worden er twee resource groepen gemaakt in het abonnement.
+NVA-partners kunnen verschillende resources maken, afhankelijk van hun apparaatimplementatie, configuratielicenties en beheerbehoeften. Wanneer een klant een NVA maakt in de Virtual WAN hub, zoals alle beheerde toepassingen, worden er twee resourcegroepen gemaakt in hun abonnement.
 
-* **Resource groep van klant** : dit bevat een tijdelijke aanduiding voor de toepassing voor de beheerde toepassing. Partners kunnen deze gebruiken om te zien welke klant eigenschappen ze hier kiezen.
-* **Beheerde resource groep** : klanten kunnen resources in deze resource groep niet rechtstreeks configureren of wijzigen, omdat dit wordt bepaald door de uitgever van de beheerde toepassing. Deze resource groep bevat de **NetworkVirtualAppliances** -resource.
+* **Klantresourcegroep:** deze bevat een tijdelijke aanduiding voor de toepassing voor de beheerde toepassing. Partners kunnen dit gebruiken om de klanteigenschappen die ze hier kiezen, weer te geven.
+* **Beheerde resourcegroep:** klanten kunnen resources in deze resourcegroep niet rechtstreeks configureren of wijzigen, omdat dit wordt beheerd door de uitgever van de beheerde toepassing. Deze resourcegroep bevat de **resource NetworkVirtualAppliances.**
 
-:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Resource groepen voor beheerde toepassingen":::
+:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Resourcegroepen voor beheerde toepassingen":::
 
-### <a name="nva-infrastructure-units"></a><a name="units"></a>NVA-infrastructuur eenheden
+### <a name="nva-infrastructure-units"></a><a name="units"></a>NVA-infrastructuureenheden
 
-Wanneer u een NVA in de virtuele WAN-hub maakt, moet u het aantal NVA-infrastructuur eenheden kiezen dat u wilt implementeren. Een **NVA-infrastructuur eenheid** is een eenheid voor een cumulatieve bandbreedte capaciteit voor een NVA in de virtuele WAN-hub. Een **NVA-infrastructuur eenheid** is vergelijkbaar met een eenheid voor VPN- [schaal](pricing-concepts.md#scale-unit) afhankelijk van de manier waarop u rekening moet houden met capaciteit en grootte.
+Wanneer u een NVA maakt in de Virtual WAN hub, moet u het aantal NVA-infrastructuureenheden kiezen dat u wilt implementeren. Een **NVA-infrastructuureenheid** is een eenheid van cumulatieve bandbreedtecapaciteit voor een NVA in de Virtual WAN hub. Een **NVA-infrastructuureenheid** is vergelijkbaar met een [VPN-schaaleenheid](pricing-concepts.md#scale-unit) wat betreft de manier waarop u over capaciteit en de omvang denkt.
 
-* 1 NVA infrastructuur eenheid vertegenwoordigt 500 Mbps geaggregeerde band breedte voor alle filialen die in deze NVA komen, met een prijs van $0,25 per uur.
-* Azure ondersteunt van 1-80 NVA-infrastructuur eenheden voor een bepaalde implementatie van een virtuele NVA-hub.
-* Elke partner kan verschillende NVA infrastructuur eenheid-bundels zijn die een subset zijn van alle ondersteunde configuraties van de NVA-infrastructuur eenheid.
+* 1 NVA-infrastructuureenheid vertegenwoordigt 500 Mbps geaggregeerde bandbreedte voor alle siteverbindingen van filialen die in deze NVA komen, en kost $ 0,25/uur.
+* Azure ondersteunt 1-80 NVA-infrastructuureenheden voor een bepaalde implementatie van een virtuele NVA-hub.
+* Elke partner kan verschillende NVA Infrastructure Unit-bundels aanbieden die een subset zijn van alle ondersteunde NVA Infrastructure Unit-configuraties.
 
-Net als bij VPN-schaal eenheden kunt u, als u *1 NVA-infrastructuur eenheid = 500 Mbps* kiest, er twee exemplaren voor redundantie worden gemaakt, elk met een maximale door voer van 500 Mbps. Als u bijvoorbeeld vijf vertakkingen hebt, elk met een doorvoer van 10 Mbps, hebt u aan het eind van de vertakkingen een totaal van 50 Mbps nodig. Het plannen van de totale capaciteit van de NVA moet worden uitgevoerd na het beoordelen van de capaciteit die nodig is om het aantal branches naar de hub te ondersteunen.
+Net als bij VPN-schaaleenheden, als u *1 NVA-infrastructuureenheid = 500 Mbps* kiest, betekent dit dat er twee instanties voor redundantie worden gemaakt, elk met een maximale doorvoer van 500 Mbps. Als u bijvoorbeeld vijf vertakkingen hebt, elk met een doorvoer van 10 Mbps, hebt u aan het eind van de vertakkingen een totaal van 50 Mbps nodig. Planning voor geaggregeerde capaciteit van de NVA moet worden uitgevoerd na het evalueren van de capaciteit die nodig is om het aantal vertakkingen naar de hub te ondersteunen.
 
-## <a name="network-virtual-appliance-configuration-process"></a><a name="configuration"></a>Configuratie proces van virtueel netwerk apparaat
+## <a name="network-virtual-appliance-configuration-process"></a><a name="configuration"></a>Configuratieproces voor virtueel netwerkapparaat
 
-Partners hebben gewerkt om een ervaring te bieden waarbij de NVA automatisch worden geconfigureerd als onderdeel van het implementatie proces. Zodra de NVA is ingericht in de virtuele hub, moeten eventuele aanvullende configuraties die nodig zijn voor de NVA, worden uitgevoerd via de portal voor de NVA-partners of de beheer toepassing. Er is geen rechtstreekse toegang tot de NVA beschikbaar.
+Partners hebben ervoor gewerkt om een ervaring te bieden die de NVA automatisch configureert als onderdeel van het implementatieproces. Zodra de NVA is ingericht in de virtuele hub, moet elke aanvullende configuratie die mogelijk vereist is voor de NVA, worden uitgevoerd via de NVA-partnerportal of beheertoepassing. Directe toegang tot de NVA is niet beschikbaar.
 
-## <a name="site-and-connection-resources-with-nvas"></a><a name="resources"></a>Site-en verbindings bronnen met Nva's
+## <a name="site-and-connection-resources-with-nvas"></a><a name="resources"></a>Site- en verbindingsbronnen met N NVA's
 
-In tegens telling tot Azure VPN Gateway-configuraties hoeft u geen **site** resources, **site-naar-site-verbindings** resources of **punt-naar-site-verbindings** resources te maken om uw Branch-sites te verbinden met uw NVA in de virtuele WAN-hub. Dit wordt allemaal beheerd via de NVA-partner.
+In tegenstelling tot Azure VPN Gateway-configuraties hoeft  u geen site-resources, **site-naar-site-verbindingsbronnen** of resources voor **punt-naar-site-verbindingen** te maken om uw vertakkingssites te verbinden met uw NVA in de Virtual WAN hub. Dit wordt allemaal beheerd via de NVA-partner.
 
-U moet nog steeds hub-naar-VNet-verbindingen maken om uw virtuele WAN-hub te koppelen aan uw Azure Virtual Networks.
+U moet nog steeds hub-naar-VNet-verbindingen maken om uw Virtual WAN-hub te verbinden met uw virtuele Azure-netwerken.
 
 ## <a name="supported-regions"></a><a name="regions"></a>Ondersteunde regio’s
 
@@ -77,43 +77,44 @@ NVA in de virtuele hub is beschikbaar voor preview in de volgende regio's:
 
 |Geopolitieke regio | Azure-regio's|
 |---|---|
-| Noord-Amerika| VS-West, Zuid-Centraal VS, VS-Oost 2   |
-| Zuid-Amerika | Brazilië - zuid |
-| Europa | Europa-west, UK-zuid|
+| Noord-Amerika| Canada - centraal, Canada - oost, VS - centraal, VS - oost, VS - oost 2, VS - noord-centraal, VS - west-centraal, VS - west, VS - west 2 |
+| Zuid-Amerika | Brazilië - zuid, Brazilië - zuidoost |
+| Europa | Frankrijk - centraal, Frankrijk - zuid, Duitsland - noord, Duitsland - west-centraal, Europa - noord, Noorwegen - oost, Noorwegen - west, Zwitserland - noord, Zwitserland - west, VK - zuid, VK - west, Europa - west|
 |  Midden-Oosten | VAE - noord |
-| Azië | Japan East |
-| Australië | Australië - oost |
-
+| Azië |  Azië - oost, Japan - oost, Japan - west, Korea - centraal, Korea - zuid, Azië - zuidoost | 
+| Australië | Australië - zuidoost, Australië - oost, Australië - centraal, Australië - centraal 2|
+| Afrika | Zuid-Afrika - noord |
+| India | India - zuid, India - west, India - centraal | 
 ## <a name="faq"></a>Veelgestelde vragen
 
-### <a name="i-am-a-network-appliance-partner-and-want-to-get-our-nva-in-the-hub--can-i-join-this-partner-program"></a>Ik ben een netwerk apparaat partner en wil onze NVA in de hub ontvangen.  Kan ik lid worden van dit partner programma?
+### <a name="i-am-a-network-appliance-partner-and-want-to-get-our-nva-in-the-hub--can-i-join-this-partner-program"></a>Ik ben een netwerkapparaatpartner en wil onze NVA in de hub krijgen.  Kan ik deelnemen aan dit partnerprogramma?
 
-Helaas hebben we op dit moment geen capaciteit voor nieuwe partner aanbiedingen. Kom in november!
+Helaas hebben we op dit moment geen capaciteit om nieuwe partneraanbiedingen in te maken. Neem in november nog even contact met ons op.
 
-### <a name="can-i-deploy-any-nva-from-azure-marketplace-into-the-virtual-wan-hub"></a>Kan ik een wille keurige NVA implementeren vanuit Azure Marketplace in de virtuele WAN-hub?
+### <a name="can-i-deploy-any-nva-from-azure-marketplace-into-the-virtual-wan-hub"></a>Kan ik een NVA implementeren vanuit Azure Marketplace in Virtual WAN hub?
 
-Op dit moment zijn alleen [Barracuda CLOUDGEN WAN](https://aka.ms/BarracudaMarketPlaceOffer) -en [Cisco Cloud vWAN-toepassing](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cisco.cisco_cloud_vwan_app?tab=Overview) beschikbaar om te worden GEÏMPLEMENTEERD in de virtuele WAN-hub.
+Op dit moment zijn alleen [Barracuda CloudGen WAN](https://aka.ms/BarracudaMarketPlaceOffer)  [Cisco Cloud vWAN Application](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cisco.cisco_cloud_vwan_app?tab=Overview) en [VMware Sd-WAN](https://aka.ms/vmwareMarketplaceLink) beschikbaar om te worden geïmplementeerd in de Virtual WAN hub.
 
 ### <a name="what-is-the-cost-of-the-nva"></a>Wat zijn de kosten van de NVA?
 
-U moet een licentie voor de NVA aanschaffen bij de NVA-leverancier.  Voor uw Barracuda CloudGen WAN NVA van Barracuda-licentie raadpleegt u [Barracuda CLOUDGEN WAN-pagina](https://www.barracuda.com/products/cloudgenwan). Cisco biedt momenteel alleen BYOL (neem uw eigen licentie mee) die rechtstreeks van Cisco moeten worden aangeschaft. Daarnaast worden er ook kosten van micro soft in rekening gebracht voor de NVA-infrastructuur eenheden die u verbruikt en alle andere resources die u gebruikt. Zie [prijs begrippen](pricing-concepts.md)voor meer informatie.
+U moet een licentie voor de NVA aanschaffen bij de NVA-leverancier.  Zie de CloudGen WAN-pagina van Barracuda voor uw Barracuda CloudGen WAN NVA van [barracuda-licentie.](https://www.barracuda.com/products/cloudgenwan) Cisco biedt momenteel alleen byOL-licentiemodellen (Bring Your Own License) die rechtstreeks bij Cisco moeten worden aangeschaft. Daarnaast worden er door Microsoft kosten in rekening gebracht voor de NVA-infrastructuureenheden die u gebruikt en andere resources die u gebruikt. Zie Prijsconcepten [voor meer informatie.](pricing-concepts.md)
 
 ### <a name="can-i-deploy-an-nva-to-a-basic-hub"></a>Kan ik een NVA implementeren op een Basic-hub?
 
-Nee. U moet een standaard hub gebruiken als u een NVA wilt implementeren.
+Nee. U moet een Standard-hub gebruiken als u een NVA wilt implementeren.
 
 ### <a name="can-i-deploy-an-nva-into-a-secure-hub"></a>Kan ik een NVA implementeren in een beveiligde hub?
 
-Ja. Barracuda CloudGen WAN kan worden geïmplementeerd in een hub met Azure Firewall.
+Ja. NVA's van partners kunnen worden geïmplementeerd in een hub met Azure Firewall.
 
-### <a name="can-i-connect-any-cpe-device-in-my-branch-office-to-barracuda-cloudgen-wan-nva-in-the-hub"></a>Kan ik een CPE-apparaat in mijn filiaal aansluiten op Barracuda CloudGen WAN NVA in de hub?
+### <a name="can-i-connect-any-cpe-device-in-my-branch-office-to-barracuda-cloudgen-wan-nva-in-the-hub"></a>Kan ik elk CPE-apparaat in mijn filiaal verbinden met Barracuda CloudGen WAN NVA in de hub?
 
-Nee. Barracuda CloudGen WAN is alleen compatibel met Barracuda CPE-apparaten. Zie [de CLOUDGEN WAN-pagina van Barracuda](https://www.barracuda.com/products/cloudgenwan)voor meer informatie over CloudGen WAN-vereisten. Voor Cisco zijn er verschillende SD-WAN-apparaten die compatibel zijn. Zie [Cisco Cloud opstap for multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) Documenation voor compatibele CPES.
+Nee. Barracuda CloudGen WAN is alleen compatibel met Barracuda CPE-apparaten. Zie de Pagina CloudGen WAN van Barracuda voor meer informatie over [CloudGen WAN-vereisten.](https://www.barracuda.com/products/cloudgenwan) Voor Cisco zijn er verschillende SD-WAN CPE-apparaten die kunnen worden gecompatreerd. Zie [Cisco Cloud OnRamp for Multi-Cloud-documenation](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) voor compatable CPE's.
 
-### <a name="what-routing-scenarios-are-supported-with-nva-in-the-hub"></a>Welke routerings scenario's worden ondersteund met NVA in de hub?
+### <a name="what-routing-scenarios-are-supported-with-nva-in-the-hub"></a>Welke routeringsscenario's worden ondersteund met NVA in de hub?
 
-Alle routerings scenario's die worden ondersteund door virtuele WAN worden ondersteund met Nva's in de hub.
+Alle routeringsscenario's die Virtual WAN worden ondersteund met NNA's in de hub.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie het artikel [overzicht van Virtual WAN](virtual-wan-about.md) voor meer informatie over Virtual WAN.
+Zie het artikel Virtual WAN overzicht voor [meer Virtual WAN informatie.](virtual-wan-about.md)

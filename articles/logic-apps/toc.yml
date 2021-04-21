@@ -36,8 +36,12 @@
       href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Logic'
 - name: Concepten
   items:
-    - name: Connectors voor Logic Apps
+    - name: Overzicht van connectors voor Logic Apps
       href: ../connectors/apis-list.md
+    - name: Beheerde connectors voor Logic Apps
+      href: ../connectors/managed.md
+    - name: Ingebouwde connectors voor Logic Apps
+      href: ../connectors/built-in.md
     - name: Terugkerende werkstromen plannen
       href: concepts-schedule-automated-recurring-tasks-workflows.md
     - name: Serverloos met Azure

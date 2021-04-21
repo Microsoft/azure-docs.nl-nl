@@ -1,24 +1,24 @@
 ---
-title: 'Quick Start: een AKS-cluster implementeren met behulp van de Azure Portal'
+title: 'Quickstart: Een AKS-cluster implementeren met behulp van de Azure Portal'
 titleSuffix: Azure Kubernetes Service
 description: Lees hoe u met Azure Portal snel een Kubernetes-cluster kunt maken, een toepassing kunt implementeren en de prestaties kunt bewaken in Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: quickstart
 ms.date: 03/15/2021
 ms.custom: mvc, seo-javascript-october2019, contperf-fy21q3
-ms.openlocfilehash: aa07dd84cbd107aca77236f4d084ef95a7f1005b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 28ba2ffd2007aeb45081cf66b05395a2b8456bf7
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105544278"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779701"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met Azure Portal
 
 Azure Kubernetes Service (AKS) is een beheerde Kubernetes-service waarmee u snel clusters kunt implementeren en beheren. In deze quickstart gaat u het volgende doen:
-* Implementeer een AKS-cluster met behulp van de Azure Portal. 
-* Voer een toepassing met meerdere containers uit met een web-front-end en een redis-exemplaar in het cluster. 
-* Bewaak de status van het cluster en de peuling waarmee uw toepassing wordt uitgevoerd.
+* Implementeer een AKS-cluster met behulp van Azure Portal. 
+* Voer een toepassing met meerdere containers uit met een webfront-end en een Redis-exemplaar in het cluster. 
+* Controleer de status van het cluster en de pods die uw toepassing uitvoeren.
 
 ![Afbeelding van browsen naar de Azure Vote-voorbeeldtoepassing](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
@@ -37,13 +37,13 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 2. Selecteer **Containers** > **Kubernetes-service**.
 
 3. Configureer op de pagina **Basisprincipes** de volgende opties:
-    - **Project Details**: 
+    - **Projectdetails:** 
         * Selecteer een Azure-**abonnement**.
-        * Selecteer of maak een Azure- **resource groep**, zoals *myResourceGroup*.
-    - **Cluster Details**: 
+        * Selecteer of maak een **Azure-resourcegroep,** zoals *myResourceGroup.*
+    - **Clusterdetails:** 
         * Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*. 
         * Selecteer een **Regio** en **Kubernetes-versie** voor het AKS-cluster.
-    - **Primaire knooppunt groep**: 
+    - **Primaire knooppuntgroep:** 
         * Selecteer een VM-**knooppuntgrootte** voor de AKS-knooppunten. De VM-grootte kan *niet* meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
         * Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Stel voor deze quickstart het **Aantal knooppunten** in op *1*. Het aantal knooppunten kan nog *wel* worden gewijzigd als het cluster is geïmplementeerd.
     
@@ -51,56 +51,56 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 4. Selecteer **Volgende: knooppuntgroepen** wanneer u klaar bent.
 
-5. Behoud de standaard opties voor **knooppunt groepen** . Klik boven aan het venster op **Volgende: Verificatie**.
+5. Laat de **standaardopties voor Knooppuntgroepen** staan. Klik boven aan het venster op **Volgende: Verificatie**.
     > [!CAUTION]
-    > Het kan enkele minuten duren voordat nieuwe Azure AD-service-principals zijn door gegeven en beschikbaar komen, waardoor "Service-Principal niet gevonden" fouten en validatie fouten in Azure Portal. Als u deze bumper hebt bereikt, gaat u naar [ons artikel over probleem oplossing](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) voor risico beperking.
+    > Het kan enkele minuten duren voordat nieuw gemaakte Azure AD-service-principals zijn doorgegeven en beschikbaar zijn. Dit leidt tot fouten met de fout 'service-principal niet gevonden' en validatiefouten in Azure Portal. Als u deze bump tegen komt, raadpleegt u [ons artikel over probleemoplossing voor](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) oplossingen.
 
 6. Configureer de volgende opties op de pagina **Verificatie**:
-    - Maak een nieuwe cluster identiteit door een van de volgende:
-        * Het **authenticatie** veld met door **systeem assinged beheerde identiteit** verlaten of
-        * **Service-Principal** kiezen voor het gebruik van een service-principal. 
-            * Selecteer *(nieuw) standaard Service-Principal* om een standaard service-principal te maken, of
-            * Selecteer *Service-Principal configureren* om een bestaande te gebruiken. U moet de SPN-client-ID en het geheim van de bestaande Principal opgeven.
-    - Schakel de optie Kubernetes op basis van op rollen gebaseerd toegangs beheer (Kubernetes RBAC) in om meer nauw keurige controle over toegang te bieden tot de Kubernetes-resources die zijn geïmplementeerd in uw AKS-cluster.
+    - Maak een nieuwe clusteridentiteit door:
+        * Laat het **veld Verificatie** met een door het systeem beheerde identiteit **achter,** of
+        * **Service-principal kiezen** voor het gebruik van een service-principal. 
+            * Selecteer *(nieuwe) standaardservice-principal om* een standaardservice-principal te maken, of
+            * Selecteer *Service-principal configureren* om een bestaande te gebruiken. U moet de SPN-client-id en het geheim van de bestaande principal verstrekken.
+    - Schakel de optie Op kubernetes-rollen gebaseerd toegangsbeheer (Kubernetes RBAC) in om een meer fijnkeurig beheer te bieden over de toegang tot de Kubernetes-resources die in uw AKS-cluster zijn geïmplementeerd.
 
     Standaard worden *basis* netwerkfuncties gebruikt en Azure Monitor voor containers is ingeschakeld. 
 
 7. Klik op **Beoordelen en maken** en vervolgens op **Maken** wanneer de validatie is voltooid. 
 
 
-8. Het duurt een paar minuten om het AKS-cluster te maken. Wanneer de implementatie is voltooid, gaat u naar uw resource door een van de volgende handelingen uit te voeren:
+8. Het duurt een paar minuten om het AKS-cluster te maken. Wanneer de implementatie is voltooid, navigeert u naar uw resource door een van de volgende te kiezen:
     * Klik op **Ga naar resource** of
-    * Blader naar de AKS-cluster resource groep en selecteer de AKS-resource. 
-        * Een voor beeld van een cluster Dashboard: Blader naar *myResourceGroup* en selecteer *myAKSCluster* -resource.
+    * Blader naar de AKS-clusterresourcegroep en selecteer de AKS-resource. 
+        * Per voorbeeldclusterdashboard hieronder: bladeren naar *myResourceGroup* en *myAKSCluster-resource* selecteren.
 
         ![Voorbeeld van AKS-dashboard in de Azure-portal](media/kubernetes-walkthrough-portal/aks-portal-dashboard.png)
 
 ## <a name="connect-to-the-cluster"></a>Verbinding maken met het cluster
 
-Als u een Kubernetes-cluster wilt beheren, gebruikt u de Kubernetes-opdracht regel-client, [kubectl][kubectl]. `kubectl` is al geïnstalleerd als u Azure Cloud Shell gebruikt. 
+Als u een Kubernetes-cluster wilt beheren, gebruikt u de Kubernetes-opdrachtregelclient [kubectl][kubectl]. `kubectl` is al geïnstalleerd als u Azure Cloud Shell. 
 
 1. Open Cloud Shell met behulp van de knop `>_` boven in de Azure-portal.
 
     ![Open Azure Cloud Shell in de portal](media/kubernetes-walkthrough-portal/aks-cloud-shell.png)
 
     > [!NOTE]
-    > Voor het uitvoeren van deze bewerkingen in een installatie van een lokale shell:
+    > Deze bewerkingen uitvoeren in een lokale shell-installatie:
     > 1. Controleer of Azure CLI is geïnstalleerd.
-    > 2. Maak verbinding met Azure via de `az login` opdracht.
+    > 2. Maak verbinding met Azure via de `az login` opdracht .
 
-2. Configureer `kubectl` om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] . Met de volgende opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd om deze te gebruiken.
+2. Configureer `kubectl` om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht az [aks get-credentials.][az-aks-get-credentials] Met de volgende opdracht worden referenties gedownload en wordt de Kubernetes CLI geconfigureerd voor het gebruik ervan.
 
     ```azurecli
     az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
     ```
 
-3. Controleer de verbinding met uw cluster met `kubectl get` om een lijst met cluster knooppunten te retour neren.
+3. Controleer de verbinding met uw cluster met om `kubectl get` een lijst met clusterknooppunten te retourneren.
 
     ```console
     kubectl get nodes
     ```
 
-    In de uitvoer ziet u het enkele knoop punt dat u in de vorige stappen hebt gemaakt. Zorg ervoor dat de knooppunt status *gereed* is:
+    Uitvoer toont het enkele knooppunt dat in de vorige stappen is gemaakt. Zorg ervoor dat de knooppuntstatus Gereed *is:*
 
     ```output
     NAME                       STATUS    ROLES     AGE       VERSION
@@ -109,22 +109,22 @@ Als u een Kubernetes-cluster wilt beheren, gebruikt u de Kubernetes-opdracht reg
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
-In een Kubernetes-manifest bestand wordt de gewenste status van een cluster gedefinieerd, zoals welke container installatie kopieën moeten worden uitgevoerd. 
+Een Kubernetes-manifestbestand definieert de gewenste status van een cluster, zoals welke containerafbeeldingen moeten worden uitgevoerd. 
 
-In deze Snelstartgids gebruikt u een manifest om alle objecten te maken die nodig zijn om de Azure stem-toepassing uit te voeren. Dit manifest bevat twee Kubernetes-implementaties:
-* Het voor beeld van Azure stem python-toepassingen.
-* Een redis-exemplaar. 
+In deze quickstart gebruikt u een manifest om alle objecten te maken die nodig zijn om de Azure Vote-toepassing uit te voeren. Dit manifest bevat twee Kubernetes-implementaties:
+* De Azure Vote Python-voorbeeldtoepassingen.
+* Een Redis-exemplaar. 
 
-Er worden ook twee Kubernetes-Services gemaakt:
-* Een interne service voor het redis-exemplaar.
-* Een externe service voor toegang tot de Azure stem-toepassing via internet.
+Er worden ook twee Kubernetes-services gemaakt:
+* Een interne service voor het Redis-exemplaar.
+* Een externe service voor toegang tot de Azure Vote-toepassing via internet.
 
-1. Gebruik in de Cloud Shell een editor om een bestand te maken met de naam `azure-vote.yaml` , bijvoorbeeld:
+1. Gebruik in Cloud Shell editor een bestand met de naam `azure-vote.yaml` , zoals:
     * `code azure-vote.yaml`
-    * `nano azure-vote.yaml`, of 
+    * `nano azure-vote.yaml`Of 
     * `vi azure-vote.yaml`. 
 
-1. Kopiëren in de volgende YAML definitie:
+1. Kopieer de volgende YAML-definitie:
 
     ```yaml
     apiVersion: apps/v1
@@ -214,13 +214,13 @@ Er worden ook twee Kubernetes-Services gemaakt:
         app: azure-vote-front
     ```
 
-1. Implementeer de toepassing met behulp van de `kubectl apply` opdracht en geef de naam van het yaml-manifest op:
+1. Implementeer de toepassing met behulp `kubectl apply` van de opdracht en geef de naam van uw YAML-manifest op:
 
     ```console
     kubectl apply -f azure-vote.yaml
     ```
 
-    Uitvoer toont de geslaagde implementaties en services:
+    Uitvoer toont de gemaakte implementaties en services:
 
     ```output
     deployment "azure-vote-back" created
@@ -233,20 +233,20 @@ Er worden ook twee Kubernetes-Services gemaakt:
 
 Wanneer de toepassing wordt uitgevoerd, maakt een Kubernetes-service de front-end van de toepassing beschikbaar op internet. Dit proces kan enkele minuten duren.
 
-Als u de voortgang wilt bewaken, gebruikt u de `kubectl get service` opdracht met het `--watch` argument.
+Als u de voortgang wilt controleren, gebruikt `kubectl get service` u de opdracht met het argument `--watch` .
 
 ```console
 kubectl get service azure-vote-front --watch
 ```
 
-De **externe-IP** -uitvoer voor de `azure-vote-front` service wordt in eerste instantie weer gegeven als *in behandeling*.
+De **external-IP-uitvoer** voor de `azure-vote-front` service wordt in eerste instantie als in behandeling weer *geven.*
 
 ```output
 NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 azure-vote-front   LoadBalancer   10.0.37.27   <pending>     80:30572/TCP   6s
 ```
 
-Zodra het **externe IP** -adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt `CTRL-C` u om het `kubectl` controle proces te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
+Zodra het **EXTERNAL-IP-adres** is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het `kubectl` watch-proces te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
 
 
 ```output
@@ -259,27 +259,27 @@ Open een webbrowser naar het externe IP-adres van uw service om de Azure Vote-ap
 
 ## <a name="monitor-health-and-logs"></a>Status en logboeken controleren
 
-Toen u het cluster maakte, werd Azure Monitor voor containers ingeschakeld. Azure Monitor voor containers voorziet in metrische gegevens over de status voor zowel het AKS-cluster als de gehele uitvoering op het cluster.
+Toen u het cluster maakte, werd Azure Monitor voor containers ingeschakeld. Azure Monitor voor containers biedt metrische statusgegevens voor zowel het AKS-cluster als de pods die op het cluster worden uitgevoerd.
 
-Het kan een paar minuten duren voordat de metrische gegevens zijn ingevuld in de Azure Portal. Voor een overzicht van de huidige status, de uptime en het resource gebruik van Azure stemmen:
+Het duurt enkele minuten voordat metrische gegevens zijn ingevuld in Azure Portal. De huidige status, uptime en resourcegebruik voor de Azure Vote-pods weergeven:
 
-1. Ga terug naar de AKS-resource in het Azure Portal.
-1. Kies onder **bewaking** aan de linkerkant het gedeelte **inzichten**.
-1. Kies aan de bovenkant om **+ filter toe te voegen**.
-1. Selecteer **naam ruimte** als eigenschap en kies vervolgens *\<All but kube-system\>* .
-1. Selecteer **containers** om ze weer te geven.
+1. Blader terug naar de AKS-resource in de Azure Portal.
+1. Kies **onder** Bewaking aan de linkerkant **de optie Inzichten.**
+1. Kies bovenaan + **Filter toevoegen.**
+1. Selecteer **Naamruimte** als eigenschap en kies vervolgens *\<All but kube-system\>* .
+1. Selecteer **Containers om** ze weer te geven.
 
-De `azure-vote-back` `azure-vote-front` containers en worden weer gegeven, zoals wordt weer gegeven in het volgende voor beeld:
+De `azure-vote-back` `azure-vote-front` containers en worden weergegeven, zoals wordt weergegeven in het volgende voorbeeld:
 
 ![De status van actieve containers in AKS weergeven](media/kubernetes-walkthrough-portal/monitor-containers.png)
 
-`azure-vote-front`Selecteer **container logboeken weer geven** in de vervolg keuzelijst containers om de logboeken voor de pod weer te geven. Deze logboeken bevatten de stromen *stdout* en *stderr* van de container.
+Als u logboeken voor de `azure-vote-front` pod wilt weergeven, **selecteert u Containerlogboeken weergeven** in de vervolgkeuzelijst containers. Deze logboeken bevatten de stromen *stdout* en *stderr* van de container.
 
 ![De containerlogboeken in AKS weergeven](media/kubernetes-walkthrough-portal/monitor-container-logs.png)
 
 ## <a name="delete-cluster"></a>Cluster verwijderen
 
-Opschonen van uw overbodige resources om Azure-kosten te voor komen. Selecteer de knop **verwijderen** in het AKS-cluster dashboard. U kunt ook de opdracht [AZ AKS delete][az-aks-delete] gebruiken in de Cloud shell:
+Schoon uw overbodige resources op om Azure-kosten te voorkomen. Selecteer de **knop Verwijderen** op het AKS-clusterdashboard. U kunt ook de [opdracht az aks delete][az-aks-delete] gebruiken in de Cloud Shell:
 
 ```azurecli
 az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
@@ -291,14 +291,14 @@ az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
 
 ## <a name="get-the-code"></a>Code ophalen
 
-Er zijn al bestaande container installatie kopieën gebruikt in deze Quick Start om een Kubernetes-implementatie te maken. Het manifest bestand gerelateerde toepassings code, Dockerfile en Kubernetes is [beschikbaar op github.][azure-vote-app]
+In deze quickstart zijn al bestaande containerafbeeldingen gebruikt om een Kubernetes-implementatie te maken. De gerelateerde toepassingscode, Dockerfile en het Kubernetes-manifestbestand zijn [beschikbaar op GitHub.][azure-vote-app]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze Snelstartgids hebt u een Kubernetes-cluster geïmplementeerd en vervolgens een toepassing met meerdere containers geïmplementeerd. Open het Kubernetes-webdashboard voor uw AKS-cluster.
+In deze quickstart hebt u een Kubernetes-cluster geïmplementeerd en vervolgens een toepassing met meerdere containers geïmplementeerd. Toegang tot het Kubernetes-webdashboard voor uw AKS-cluster.
 
 
-Ga verder met de zelf studie voor het Kubernetes-cluster voor meer informatie over AKS door door loop een volledig voor beeld, waaronder het bouwen van een toepassing, het implementeren van een implementatie vanuit Azure Container Registry, het bijwerken van een actieve toepassing, het schalen en upgraden van uw cluster.
+Ga verder met de zelfstudie Kubernetes-cluster voor meer informatie over AKS door een volledig voorbeeld te volgen, waaronder het bouwen van een toepassing, het implementeren vanuit Azure Container Registry, het bijwerken van een toepassing die wordt uitgevoerd en het schalen en upgraden van uw cluster.
 
 > [!div class="nextstepaction"]
 > [AKS-zelfstudie][aks-tutorial]
@@ -312,8 +312,8 @@ Ga verder met de zelf studie voor het Kubernetes-cluster voor meer informatie ov
 
 <!-- LINKS - internal -->
 [kubernetes-concepts]: concepts-clusters-workloads.md
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
-[az-aks-delete]: /cli/azure/aks#az-aks-delete
+[az-aks-get-credentials]: /cli/azure/aks#az_aks_get_credentials
+[az-aks-delete]: /cli/azure/aks#az_aks_delete
 [aks-monitor]: ../azure-monitor/containers/container-insights-overview.md
 [aks-network]: ./concepts-network.md
 [aks-tutorial]: ./tutorial-kubernetes-prepare-app.md

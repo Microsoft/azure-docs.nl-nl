@@ -1,186 +1,186 @@
 ---
 title: Beheerervaring in meerdere tenants
-description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
+description: Azure gedelegeerd resourcebeheer maakt beheer voor alle tenants mogelijk.
 ms.date: 03/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 12c4aaa4dda159862344675c802603fcbda2f254
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 027d1d5e81d5a652a7e2d5441c40440c661f730f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105934322"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778621"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
-Als service provider kunt u [Azure Lighthouse](../overview.md) gebruiken voor het beheren van resources voor meerdere klanten vanuit uw eigen Azure Active Directory (Azure AD)-Tenant. Veel taken en services kunnen worden uitgevoerd voor beheerde tenants met behulp van [Azure delegated resource management](../concepts/azure-delegated-resource-management.md).
+Als serviceprovider kunt u [](../overview.md) Azure Lighthouse gebruiken voor het beheren van resources voor meerdere klanten vanuit uw eigen Azure Active Directory (Azure AD)-tenant. Veel taken en services kunnen worden uitgevoerd voor beheerde tenants met behulp van [gedelegeerd Azure-resourcebeheer.](../concepts/azure-delegated-resource-management.md)
 
 > [!TIP]
-> Azure delegated resource management kan ook worden gebruikt [binnen een onderneming met meerdere Azure AD-tenants](enterprise.md) , om cross-Tenant beheer te vereenvoudigen.
+> Gedelegeerd resourcebeheer van Azure kan ook worden gebruikt binnen een onderneming die meerdere [eigen Azure AD-tenants](enterprise.md) heeft om het beheer van meerdere tenants te vereenvoudigen.
 
-## <a name="understanding-tenants-and-delegation"></a>Wat zijn tenants en overdracht?
+## <a name="understanding-tenants-and-delegation"></a>Informatie over tenants en delegering
 
-Een Azure AD-Tenant is een representatie van een organisatie. Het is een toegewezen exemplaar van Azure AD dat een organisatie ontvangt wanneer ze een relatie met micro soft maken door zich aan te melden voor Azure, Microsoft 365 of andere services. Elke Azure AD-Tenant is uniek en gescheiden van andere Azure AD-tenants en heeft een eigen Tenant-ID (een GUID). Zie [Wat is Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md) voor meer informatie.
+Een Azure AD-tenant is een representatie van een organisatie. Het is een toegewezen exemplaar van Azure AD dat een organisatie ontvangt wanneer ze een relatie met Microsoft maken door zich te registreren voor Azure, Microsoft 365 of andere services. Elke Azure AD-tenant is verschillend en gescheiden van andere Azure AD-tenants en heeft een eigen tenant-id (een GUID). Zie Wat is Azure Active Directory? voor [meer Azure Active Directory.](../../active-directory/fundamentals/active-directory-whatis.md)
 
-Om Azure-resources voor een klant te kunnen beheren, moeten service providers zich dus aanmelden bij de Azure Portal met behulp van een account dat is gekoppeld aan de Tenant van die klant, waarbij een beheerder in de Tenant van de klant gebruikers accounts voor de service provider kan maken en beheren.
+Normaal gesproken moeten serviceproviders zich voor het beheren van Azure-resources voor een klant aanmelden bij de Azure Portal met een account dat is gekoppeld aan de tenant van die klant, waarvoor een beheerder in de tenant van de klant gebruikersaccounts voor de serviceprovider moet maken en beheren.
 
-Met Azure Lighthouse geeft het voorbereidings proces gebruikers in de Tenant van de service provider aan die kunnen werken aan gedelegeerde abonnementen en resource groepen in de Tenant van de klant. Deze gebruikers kunnen zich vervolgens aanmelden bij de Azure Portal met hun eigen referenties. Binnen het Azure Portal kunnen ze resources beheren die horen bij alle klanten waartoe ze toegang hebben. U kunt dit doen door de pagina [mijn klanten](../how-to/view-manage-customers.md) te bezoeken in het Azure portal of door rechtstreeks te werken in de context van het abonnement van de klant, hetzij in de Azure portal-of via-api's.
+Met Azure Lighthouse geeft het onboardingproces gebruikers binnen de tenant van de serviceprovider op die kunnen werken aan gedelegeerde abonnementen en resourcegroepen in de tenant van de klant. Deze gebruikers kunnen zich vervolgens aanmelden bij de Azure Portal met hun eigen referenties. Binnen de Azure Portal kunnen ze resources beheren die behoren tot alle klanten waarvoor ze toegang hebben. U kunt dit doen [](../how-to/view-manage-customers.md) door naar de pagina Mijn klanten in de Azure Portal te gaan of door rechtstreeks binnen de context van het abonnement van die klant te werken, in de Azure Portal of via API's.
 
-Azure Lighthouse biedt meer flexibiliteit voor het beheren van resources voor meerdere klanten, zonder dat u zich hoeft aan te melden bij verschillende accounts in verschillende tenants. Een service provider kan bijvoorbeeld twee klanten hebben met verschillende verantwoordelijkheden en toegangs niveaus. Met Azure Lighthouse kunnen geautoriseerde gebruikers zich aanmelden bij de Tenant van de service provider om toegang te krijgen tot deze bronnen.
+Azure Lighthouse biedt meer flexibiliteit voor het beheren van resources voor meerdere klanten zonder dat u zich bij verschillende accounts in verschillende tenants moet aanmelden. Een serviceprovider kan bijvoorbeeld twee klanten hebben met verschillende verantwoordelijkheden en toegangsniveaus. Met Azure Lighthouse kunnen gemachtigde gebruikers zich aanmelden bij de tenant van de serviceprovider voor toegang tot deze resources.
 
-![Diagram met klant resources die worden beheerd via één service provider Tenant.](../media/azure-delegated-resource-management-service-provider-tenant.jpg)
+![Diagram met klantbronnen die worden beheerd via één serviceprovider-tenant.](../media/azure-delegated-resource-management-service-provider-tenant.jpg)
 
-## <a name="apis-and-management-tool-support"></a>Ondersteuning voor Api's en beheer hulpprogramma's
+## <a name="apis-and-management-tool-support"></a>Ondersteuning voor API's en beheerprogramma's
 
-U kunt Beheer taken op gedelegeerde resources rechtstreeks uitvoeren in de portal of met behulp van Api's en beheer hulpprogramma's (zoals Azure CLI en Azure PowerShell). Alle bestaande Api's kunnen worden gebruikt bij het werken met gedelegeerde resources, zolang de functionaliteit wordt ondersteund voor cross-Tenant beheer en de gebruiker de juiste machtigingen heeft.
+U kunt beheertaken uitvoeren op gedelegeerde resources rechtstreeks in de portal of met behulp van API's en beheerhulpprogramma's (zoals Azure CLI en Azure PowerShell). Alle bestaande API's kunnen worden gebruikt bij het werken met gedelegeerde resources, zolang de functionaliteit wordt ondersteund voor beheer tussen tenants en de gebruiker de juiste machtigingen heeft.
 
-Met de [cmdlet Azure PowerShell Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) wordt `TenantId` standaard de voor de Tenant beheren weer gegeven. U kunt de `HomeTenantId` kenmerken en `ManagedByTenantIds` voor elk abonnement gebruiken om te bepalen of een geretourneerd abonnement hoort bij een beheerde Tenant of voor uw beheer Tenant.
+De Azure PowerShell [cmdlet Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) toont standaard de voor `TenantId` de beherende tenant. U kunt de kenmerken en voor elk abonnement gebruiken, zodat u kunt bepalen of een geretourneerd abonnement bij een beheerde tenant hoort of bij uw `HomeTenantId` `ManagedByTenantIds` beherende tenant.
 
-Net als bij Azure CLI-opdrachten, zoals [AZ account list](/cli/azure/account#az-account-list) , worden de-en-kenmerken weer gegeven `homeTenantId` `managedByTenants` . Als u deze waarden niet ziet wanneer u Azure CLI gebruikt, probeert u de cache te wissen door uit te voeren, `az account clear` gevolgd door `az login --identity` .
+Op dezelfde manier worden in Azure CLI-opdrachten zoals [az account list](/cli/azure/account#az_account_list) de kenmerken en `homeTenantId` `managedByTenants` weergegeven. Als u deze waarden niet ziet wanneer u Azure CLI gebruikt, probeert u uw cache te wissen door uit te gaan `az account clear` gevolgd door `az login --identity` .
 
-In de Azure REST API zijn de opdrachten [abonnementen ophalen](/rest/api/resources/subscriptions/get) en [abonnementen lijst](/rest/api/resources/subscriptions/list) opnemen `ManagedByTenant` .
+In de Azure REST API bevatten de opdrachten [Abonnementen - Get](/rest/api/resources/subscriptions/get) en Abonnementen [-](/rest/api/resources/subscriptions/list) `ManagedByTenant` Lijst.
 
 > [!NOTE]
-> Naast de Tenant informatie met betrekking tot Azure Lighthouse kunnen tenants die door deze Api's worden weer gegeven ook partner tenants weer spie gelen voor Azure Databricks of door Azure beheerde toepassingen.
+> Naast tenantgegevens met betrekking tot Azure Lighthouse, kunnen tenants die worden weergegeven door deze API's ook partnerten tenants voor Azure Databricks of door Azure beheerde toepassingen weerspiegelen.
 
-We bieden ook Api's die specifiek zijn voor het uitvoeren van Azure Lighthouse-taken. Zie de sectie **Naslag informatie** voor meer informatie.
+We bieden ook API's die specifiek zijn voor het uitvoeren van Azure Lighthouse taken. Zie de sectie Referentie voor **meer** informatie.
 
 ## <a name="enhanced-services-and-scenarios"></a>Verbeterde services en scenario's
 
-De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources in beheerde tenants. Hieronder vindt u enkele van de belangrijkste scenario's waarbij beheer van meerdere tenants met name effectief kan zijn.
+De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources in beheerde tenants. Hieronder vindt u enkele van de belangrijkste scenario's waarin beheer voor meerdere tenants met name effectief kan zijn.
 
-[Azure-boog](../../azure-arc/index.yml):
+[Azure Arc:](../../azure-arc/index.yml)
 
-- Hybride servers op schaal beheren- [servers met Azure-Arc-functionaliteit](../../azure-arc/servers/overview.md):
-  - [Windows Server-of Linux-computers buiten Azure beheren die zijn verbonden](../../azure-arc/servers/onboard-portal.md) met gedelegeerde abonnementen en/of resource groepen in azure
-  - Verbonden computers beheren met Azure-constructs, zoals Azure Policy en tagging
-  - Zorg ervoor dat dezelfde set beleids regels wordt toegepast op hybride omgevingen van klanten
-  - Azure Security Center gebruiken om de naleving van hybride omgevingen van klanten te bewaken
-- Hybride Kubernetes-clusters op schaal beheren- [Kubernetes van Azure Arc ingeschakeld (preview)](../../azure-arc/kubernetes/overview.md):
-  - [Kubernetes-clusters beheren die zijn verbonden](../../azure-arc/kubernetes/quickstart-connect-cluster.md) met gedelegeerde abonnementen en/of resource groepen in azure
-  - [GitOps gebruiken](../../azure-arc/kubernetes/tutorial-use-gitops-connected-cluster.md) voor verbonden clusters
-  - Beleid afdwingen in verbonden clusters
+- Hybride servers op schaal beheren - [Azure Arc ingeschakelde servers](../../azure-arc/servers/overview.md):
+  - [Windows Server- of Linux-machines buiten Azure beheren die zijn](../../azure-arc/servers/onboard-portal.md) verbonden met gedelegeerde abonnementen en/of resourcegroepen in Azure
+  - Verbonden machines beheren met behulp van Azure-constructies, zoals Azure Policy en taggen
+  - Zorg ervoor dat dezelfde set beleidsregels wordt toegepast op hybride omgevingen van klanten
+  - Gebruik Azure Security Center voor het bewaken van naleving in hybride omgevingen van klanten
+- Hybride Kubernetes-clusters op schaal beheren - [Azure Arc Kubernetes (preview)](../../azure-arc/kubernetes/overview.md):
+  - [Kubernetes-clusters beheren die zijn verbonden](../../azure-arc/kubernetes/quickstart-connect-cluster.md) met gedelegeerde abonnementen en/of resourcegroepen in Azure
+  - [GitOps gebruiken voor](../../azure-arc/kubernetes/tutorial-use-gitops-connected-cluster.md) verbonden clusters
+  - Beleid afdwingen voor verbonden clusters
 
-[Azure Automation](../../automation/index.yml):
+[Azure Automation:](../../automation/index.yml)
 
-- Automation-accounts gebruiken om toegang te krijgen tot en om te werken met gedelegeerde resources
+- Automation-accounts gebruiken voor toegang tot en werken met gedelegeerde resources
 
-[Azure backup](../../backup/index.yml):
+[Azure Backup:](../../backup/index.yml)
 
-- Back-ups maken van klant gegevens en deze herstellen [van on-premises workloads, Azure-vm's, Azure-bestands shares en meer](../..//backup/backup-overview.md#what-can-i-back-up)
-- Gegevens weer geven voor alle gedelegeerde klant resources in [Back-upcentrum](../../backup/backup-center-overview.md)
-- Gebruik de [back-upverkenner](../../backup/monitor-azure-backup-with-backup-explorer.md) voor het weer geven van operationele gegevens van back-upitems (inclusief Azure-resources die nog niet zijn geconfigureerd voor back-up) en controle-informatie (taken en waarschuwingen) voor gedelegeerde abonnementen. Backup Explorer is momenteel alleen beschikbaar voor Azure VM-gegevens.
-- Gebruik [back-uprapporten](../../backup/configure-reports.md) over gedelegeerde abonnementen om historische trends bij te houden, het verbruik van back-ups te analyseren en back-ups te controleren en te herstellen.
+- Back-up en herstel van [klantgegevens vanuit on-premises workloads, Azure-VM's, Azure-bestands shares en meer](../..//backup/backup-overview.md#what-can-i-back-up)
+- Gegevens weergeven voor alle gedelegeerde klantbronnen in [Backup Center](../../backup/backup-center-overview.md)
+- Gebruik de [Back-upverkenner](../../backup/monitor-azure-backup-with-backup-explorer.md) om operationele informatie weer te geven van back-upitems (waaronder Azure-resources die nog niet zijn geconfigureerd voor back-up) en bewakingsinformatie (taken en waarschuwingen) voor gedelegeerde abonnementen. De Back-upverkenner is momenteel alleen beschikbaar voor Azure VM-gegevens.
+- Gebruik [Back-uprapporten](../../backup/configure-reports.md) overgedragen abonnementen om historische trends bij te houden, het verbruik van back-upopslag te analyseren en back-ups en herstels te controleren.
 
-[Azure-blauw drukken](../../governance/blueprints/index.yml):
+[Azure Blueprints:](../../governance/blueprints/index.yml)
 
-- Azure-blauw drukken gebruiken om de implementatie van resource sjablonen en andere artefacten te organiseren (hiervoor is [extra toegang](https://www.wesleyhaakman.org/preparing-azure-lighthouse-customer-subscriptions-for-azure-blueprints/) vereist om het abonnement van de klant voor te bereiden)
+- Gebruik Azure Blueprints om de implementatie van resourcesjablonen en andere artefacten te beheren (hiervoor is extra toegang vereist om [het](https://www.wesleyhaakman.org/preparing-azure-lighthouse-customer-subscriptions-for-azure-blueprints/) klantabonnement voor te bereiden)
 
-[Azure Cost Management en facturering](../../cost-management-billing/index.yml):
+[Azure Cost Management + Billing:](../../cost-management-billing/index.yml)
 
-- Van de beheer-Tenant kunnen CSP-partners de kosten voor het gebruik van de belasting (niet inclusief aankopen) bekijken, beheren en analyseren voor klanten die zich onder het Azure-abonnement bevinden. De kosten zijn gebaseerd op de retail tarieven en de Azure RBAC-toegang (op rollen gebaseerd toegangs beheer) die de partner heeft voor het abonnement van de klant. Op dit moment kunt u de verbruiks kosten voor elk afzonderlijk klant abonnement bekijken op basis van de tarieven voor klanten die zijn gebaseerd op toegang tot Azure RBAC.
+- Vanuit de beherende tenant kunnen CSP-partners verbruikskosten vóór belasting bekijken, beheren en analyseren voor klanten die onder het Azure-plan vallen. De kosten worden gebaseerd op de detailhandelstarieven en de op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) die de partner heeft voor het abonnement van de klant. Op dit moment kunt u de verbruikskosten bekijken tegen retailtarieven voor elk afzonderlijk klantabonnement op basis van Azure RBAC-toegang.
 
-[Azure Key Vault](../../key-vault/general/index.yml):
+[Azure Key Vault:](../../key-vault/general/index.yml)
 
-- Sleutel kluizen maken in de tenants van de klant
-- Een beheerde identiteit gebruiken voor het maken van sleutel kluizen in de tenants van de klant
+- Sleutelkluizen maken in tenants van klanten
+- Een beheerde identiteit gebruiken om sleutelkluizen te maken in tenants van klanten
 
-[Azure Kubernetes service (AKS)](../../aks/index.yml):
+[Azure Kubernetes Service (AKS)](../../aks/index.yml):
 
-- Gehoste Kubernetes-omgevingen beheren en toepassingen in containers implementeren en beheren binnen de tenants van de klant
-- Clusters implementeren en beheren in de tenants van de klant
--   Gebruik Azure Monitor voor containers om de prestaties van de tenants van de klant te bewaken
+- Gehoste Kubernetes-omgevingen beheren en toepassingen in containers implementeren en beheren in tenants van klanten
+- Clusters implementeren en beheren in tenants van klanten
+-   Gebruik Azure Monitor voor containers om de prestaties van tenants van klanten te bewaken
 
-[Azure migrate](../../migrate/index.yml):
+[Azure Migrate:](../../migrate/index.yml)
 
-- Migratie projecten maken in de Tenant van de klant en Vm's migreren
+- Migratieprojecten maken in de tenant van de klant en VM's migreren
 
-[Azure monitor](../../azure-monitor/index.yml):
+[Azure Monitor:](../../azure-monitor/index.yml)
 
-- Waarschuwingen voor gedelegeerde abonnementen weer geven, met de mogelijkheid om waarschuwingen voor alle abonnementen weer te geven en te vernieuwen
-- Details van het activiteiten logboek voor gedelegeerde abonnementen weer geven
-- [Log Analytics](../../azure-monitor/logs/service-providers.md): gegevens opvragen uit externe werk ruimten in meerdere tenants (Houd er rekening mee dat Automation-accounts die worden gebruikt voor toegang tot gegevens uit werk ruimten in de tenants van de klant, moeten worden gemaakt in dezelfde Tenant)
-- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren](../../azure-monitor/alerts/alerts-activity-log.md) in de tenants van de klant
-- Maak waarschuwingen in klant tenants die automatisering activeren, zoals Azure Automation runbooks of Azure Functions, in de Tenant beheren via webhooks
-- [Diagnostische instellingen](../..//azure-monitor/essentials/diagnostic-settings.md) maken in de tenants van de klant om resource logboeken te verzenden naar werk ruimten in de Tenant beheren
-- Voor SAP-workloads [bewaakt u de metrische gegevens van SAP-oplossingen met een geaggregeerde weer gave van alle tenants van de klant](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/using-azure-lighthouse-and-azure-monitor-for-sap-solutions-to/ba-p/1537293)
+- Waarschuwingen voor gedelegeerde abonnementen weergeven, met de mogelijkheid om waarschuwingen voor alle abonnementen weer te geven en te vernieuwen
+- Details van activiteitenlogboek weergeven voor gedelegeerde abonnementen
+- [Log Analytics:](../../azure-monitor/logs/service-providers.md)query's uitvoeren op gegevens uit externe werkruimten in meerdere tenants (automation-accounts die worden gebruikt voor toegang tot gegevens uit werkruimten in tenants van klanten, moeten worden gemaakt in dezelfde tenant)
+- [Waarschuwingen voor activiteitenlogboek maken, weergeven en beheren](../../azure-monitor/alerts/alerts-activity-log.md) in tenants van klanten
+- Waarschuwingen maken in tenants van klanten die automatisering activeren, zoals Azure Automation runbooks of Azure Functions, in de beherende tenant via webhooks
+- Diagnostische [instellingen maken](../..//azure-monitor/essentials/diagnostic-settings.md) in tenants van klanten om resourcelogboeken te verzenden naar werkruimten in de beherende tenant
+- Voor SAP-workloads [controleert u de metrische gegevens van SAP Solutions met een geaggregeerde weergave voor tenants van klanten](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/using-azure-lighthouse-and-azure-monitor-for-sap-solutions-to/ba-p/1537293)
 
-[Azure-netwerken](../../networking/networking-overview.md):
+[Azure-netwerken:](../../networking/networking-overview.md)
 
-- [Azure Virtual Network](../../virtual-network/index.yml) en virtuele netwerk interface kaarten (vnic's) in beheerde tenants implementeren en beheren
-- [Azure firewall](../../firewall/overview.md) implementeren en configureren om Virtual Network Resources van klanten te beveiligen
-- Connectiviteits Services beheren, zoals [virtuele WAN](../../virtual-wan/virtual-wan-about.md)-, [ExpressRoute](../../expressroute/expressroute-introduction.md)-en [VPN-gateways](../../vpn-gateway/vpn-gateway-about-vpngateways.md) van Azure
-- Azure Lighthouse gebruiken ter ondersteuning van belang rijke scenario's voor het [MSP-programma van Azure Networking](../../networking/networking-partners-msp.md)
+- Azure-netwerkinterfacekaarten [Virtual Network](../../virtual-network/index.yml) virtuele netwerkinterfacekaarten (vNICs) implementeren en beheren binnen beheerde tenants
+- Implementatie en configuratie [van Azure Firewall](../../firewall/overview.md) om de resources van klanten Virtual Network beveiligen
+- Connectiviteitsservices zoals [Azure Virtual WAN,](../../virtual-wan/virtual-wan-about.md) [ExpressRoute](../../expressroute/expressroute-introduction.md)en [VPN Gateways beheren](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
+- Gebruik Azure Lighthouse voor de ondersteuning van belangrijke scenario's voor [het Azure-netwerken MSP-programma](../../networking/networking-partners-msp.md)
 
-[Azure Policy](../../governance/policy/index.yml):
+[Azure Policy:](../../governance/policy/index.yml)
 
-- Beleids definities maken en bewerken binnen gedelegeerde abonnementen
-- Beleids definities en beleids toewijzingen op meerdere tenants implementeren
-- Door de klant gedefinieerde beleids definities toewijzen binnen gedelegeerde abonnementen
-- Klanten zien beleid dat door de service provider is ontworpen naast het beleid dat ze zelf hebben ontworpen
-- Kan [deployIfNotExists herstellen of toewijzingen wijzigen binnen de beheerde Tenant](../how-to/deploy-policy-remediation.md)
-- Houd er rekening mee dat het weer geven van de nalevings Details voor niet-compatibele resources in de tenants van de klant momenteel niet wordt ondersteund
+- Beleidsdefinities binnen gedelegeerde abonnementen maken en bewerken
+- Beleidsdefinities en beleidstoewijzingen implementeren in meerdere tenants
+- Door de klant gedefinieerde beleidsdefinities toewijzen binnen gedelegeerde abonnementen
+- Klanten zien beleidsregels die zijn geschreven door de serviceprovider naast alle beleidsregels die ze zelf hebben gemaakt
+- Kan [deployIfNotExists herstellen of toewijzingen wijzigen binnen de beheerde tenant](../how-to/deploy-policy-remediation.md)
+- Houd er rekening mee dat het weergeven van nalevingsdetails voor niet-compatibele resources in tenants van klanten momenteel niet wordt ondersteund
 
-[Azure-resource grafiek](../../governance/resource-graph/index.yml):
+[Azure Resource Graph:](../../governance/resource-graph/index.yml)
 
-- Bevat nu de Tenant-ID in geretourneerde query resultaten, zodat u kunt bepalen of een abonnement bij een beheerde Tenant hoort
+- Bevat nu de tenant-id in de geretourneerde queryresultaten, zodat u kunt identificeren of een abonnement tot een beheerde tenant behoort
 
-[Azure Security Center](../../security-center/index.yml):
+[Azure Security Center:](../../security-center/index.yml)
 
-- Zicht baarheid van meerdere tenants
-  - Naleving van beveiligings beleid controleren en de beveiliging van alle resources van de Tenant garanderen
-  - Voortdurende naleving van regelgeving voor meerdere tenants in één weer gave
-  - Bewaak, sorteren en prioriteit geven aan bruikbare beveiligings aanbevelingen met een beveiligde score berekening
-- Beheer van cross-Tenant beveiliging postuur
+- Zichtbaarheid voor alle tenants
+  - Naleving van beveiligingsbeleid bewaken en beveiligingsdekking garanderen voor alle resources van alle tenants
+  - Continue bewaking van naleving van regelgeving voor meerdere tenants in één weergave
+  - Beveilig, triageer en prioriteer actiebare beveiligingsaanbevelingen met berekening van de beveiligingsscore
+- Beheer van beveiligingsstatussen voor alle tenants
   - Beveiligingsbeleid beheren
-  - Onderneem actie ondernemen voor bronnen die niet meer compatibel zijn met voor actie bare beveiligings aanbevelingen
-  - Aan beveiliging gerelateerde gegevens verzamelen en opslaan
-- Bedreigings detectie en-beveiliging tussen tenants
-  - Bedreigingen detecteren voor bronnen van tenants
-  - Geavanceerde beveiliging tegen bedreigingen Toep assen, zoals just-in-time-VM-toegang
-  - Configuratie van beveiligings groep met adaptieve netwerk beveiliging
-  - Zorg ervoor dat servers alleen de toepassingen en processen uitvoeren die ze moeten hebben met adaptieve toepassings besturings elementen
-  - Wijzigingen in belang rijke bestanden en register vermeldingen bewaken met FIM (File Integrity Monitoring)
-- Houd er rekening mee dat het hele abonnement moet worden gedelegeerd naar de beheer Tenant. Azure Security Center scenario's worden niet ondersteund met gedelegeerde resource groepen
+  - Actie ondernemen op resources die niet voldoen aan de beveiligingsaanbevelingen die kunnen worden uitgevoerd
+  - Beveiligingsgegevens verzamelen en opslaan
+- Detectie en beveiliging van bedreigingen tussen tenants
+  - Bedreigingen voor de resources van tenants detecteren
+  - Geavanceerde beveiliging tegen bedreigingen toepassen, zoals JIT-toegang (Just-In-Time)
+  - De netwerkbeveiligingsgroep configureren met adaptieve netwerkbeveiliging
+  - Zorg ervoor dat op servers alleen de toepassingen en processen worden uitgevoerd die moeten worden uitgevoerd met adaptieve toepassingsregelaars
+  - Wijzigingen in belangrijke bestanden en registergegevens bewaken met FIM (File Integrity Monitoring)
+- Houd er rekening mee dat het hele abonnement moet worden gedelegeerd aan de beherende tenant; Azure Security Center worden niet ondersteund met gedelegeerde resourcegroepen
 
-[Azure-Sentinel](../../sentinel/multiple-tenants-service-providers.md):
+[Azure Sentinel:](../../sentinel/multiple-tenants-service-providers.md)
 
-- Azure-Sentinel-resources beheren [in de tenants van de klant](../../sentinel/multiple-tenants-service-providers.md)
-- [Aanvallen bijhouden en beveiligings waarschuwingen op meerdere tenants weer geven](https://techcommunity.microsoft.com/t5/azure-sentinel/using-azure-lighthouse-and-azure-sentinel-to-monitor-across/ba-p/1043899)
-- [Incidenten weer geven](../../sentinel/multiple-workspace-view.md) in meerdere Azure-Sentinel-werk ruimten, verdeeld over tenants
+- Resources Azure Sentinel beheren [in tenants van klanten](../../sentinel/multiple-tenants-service-providers.md)
+- [Aanvallen bijhouden en beveiligingswaarschuwingen weergeven voor meerdere tenants](https://techcommunity.microsoft.com/t5/azure-sentinel/using-azure-lighthouse-and-azure-sentinel-to-monitor-across/ba-p/1043899)
+- [Incidenten weergeven](../../sentinel/multiple-workspace-view.md) in meerdere Azure Sentinel werkruimten verspreid over tenants
 
-[Azure service Health](../../service-health/index.yml):
+[Azure Service Health:](../../service-health/index.yml)
 
-- Bewaak de status van klant bronnen met Azure Resource Health
-- De status bijhouden van de Azure-Services die door uw klanten worden gebruikt
+- De status van klantbronnen bewaken met Azure Resource Health
+- De status bijhouden van de Azure-services die door uw klanten worden gebruikt
 
-[Azure site Recovery](../../site-recovery/index.yml):
+[Azure Site Recovery:](../../site-recovery/index.yml)
 
-- Opties voor herstel na nood gevallen voor virtuele Azure-machines in de tenants van de klant beheren (u kunt geen `RunAs` accounts gebruiken om VM-extensies te kopiëren)
+- Opties voor herstel na noodherstel beheren voor virtuele Azure-machines in tenants van klanten (u kunt geen accounts gebruiken om `RunAs` VM-extensies te kopiëren)
 
-[Azure virtual machines](../../virtual-machines/index.yml):
+[Azure Virtual Machines:](../../virtual-machines/index.yml)
 
-- Virtuele-machine uitbreidingen gebruiken om configuratie-en automatiserings taken na de implementatie op te geven op virtuele machines van Azure
-- Diagnostische gegevens over opstarten gebruiken om problemen met Azure Vm's op te lossen
-- Toegang tot Vm's met seriële console
-- Integreer Vm's met Azure Key Vault voor wacht woorden, geheimen of cryptografische sleutels voor schijf versleuteling met behulp van [beheerde identiteit via beleid](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/create-keyvault-secret), zodat geheimen worden opgeslagen in een Key Vault in de beheerde tenants
-- Houd er rekening mee dat u Azure Active Directory niet kunt gebruiken voor externe aanmelding bij Vm's
+- Extensies van virtuele machines gebruiken voor configuratie- en automatiseringstaken na de implementatie op Virtuele Azure-machines
+- Diagnostische gegevens over opstarten gebruiken om problemen met Azure-VM's op te lossen
+- Toegang tot VM's met seriële console
+- VM's integreren met Azure Key Vault voor wachtwoorden, geheimen of cryptografische sleutels voor schijfversleuteling met behulp van beheerde identiteit via beleid [,](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/create-keyvault-secret)zodat geheimen worden opgeslagen in een Key Vault in de beheerde tenants
+- Houd er rekening mee dat u geen toegangsgegevens Azure Active Directory voor externe aanmelding bij VM's
 
-Ondersteunings aanvragen:
+Ondersteuningsaanvragen:
 
-- [Ondersteunings aanvragen openen vanuit **Help en ondersteuning**](../../azure-portal/supportability/how-to-create-azure-support-request.md#getting-started) in de Azure portal voor gedelegeerde resources (het ondersteunings abonnement selecteren dat beschikbaar is voor het gedelegeerde bereik)
-- Gebruik de [Azure quota API](/rest/api/reserved-vm-instances/quotaapi) voor het weer geven en beheren van Azure-service quota's voor gedelegeerde klant resources
+- [Open ondersteuningsaanvragen **van Help en ondersteuning**](../../azure-portal/supportability/how-to-create-azure-support-request.md#getting-started) in de Azure Portal voor gedelegeerde resources (het selecteren van het ondersteuningsplan dat beschikbaar is voor het gedelegeerde bereik)
+- De [Azure Quota-API gebruiken voor](/rest/api/reserved-vm-instances/quotaapi) het weergeven en beheren van Azure-servicequota voor gedelegeerde klantbronnen
 
 ## <a name="current-limitations"></a>Huidige beperkingen
 
-Houd bij alle scenario's rekening met de volgende beperkingen:
+Houd bij alle scenario's rekening met de volgende huidige beperkingen:
 
-- Aanvragen die door Azure Resource Manager worden verwerkt, kunnen worden uitgevoerd met behulp van Azure Lighthouse. De bewerkings-Uri's voor deze aanvragen beginnen met `https://management.azure.com` . Aanvragen die worden verwerkt door een exemplaar van een resource type (zoals Key Vault geheimen toegang of toegang tot opslag gegevens), worden echter niet ondersteund met Azure Lighthouse. De bewerkings-Uri's voor deze aanvragen beginnen meestal met een adres dat uniek is voor uw exemplaar, zoals `https://myaccount.blob.core.windows.net` of `https://mykeyvault.vault.azure.net/` . De laatste is ook gegevens bewerkingen in plaats van beheer bewerkingen.
-- Roltoewijzingen moeten gebruikmaken [van ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md). Alle ingebouwde rollen worden momenteel ondersteund met Azure delegated resource management, met uitzonde ring van eigenaar of ingebouwde rollen met [`DataActions`](../../role-based-access-control/role-definitions.md#dataactions) machtiging. De rol beheerder van gebruikers toegang wordt alleen ondersteund voor beperkt gebruik bij het [toewijzen van rollen aan beheerde identiteiten](../how-to/deploy-policy-remediation.md#create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant).  Aangepaste rollen en [beheerders rollen voor klassieke abonnementen](../../role-based-access-control/classic-administrators.md) worden niet ondersteund.
-- Hoewel u abonnementen kunt opdoen die gebruikmaken van Azure Databricks, kunnen gebruikers in de Tenant beheren Azure Databricks werk ruimten op dit moment niet starten.
-- Hoewel u abonnementen en resource groepen met resource vergrendelingen kunt uitvoeren, worden deze vergren delingen niet voor komen dat door gebruikers in de Tenant beheren de acties worden uitgevoerd. [Weiger toewijzingen](../../role-based-access-control/deny-assignments.md) die door het systeem beheerde bronnen beveiligen, zoals die zijn gemaakt door door Azure beheerde toepassingen of Azure-blauw drukken (door het systeem toegewezen weigerings toewijzingen), voor komen dat gebruikers in de Tenant beheren op deze resources. op dit moment kunnen gebruikers in de Tenant van de klant echter geen eigen weigerings toewijzingen maken (toegewezen weigerings toewijzingen).
-- Overdracht van abonnementen over een [nationale Cloud](../../active-directory/develop/authentication-national-cloud.md) en de open bare Azure-Cloud of over twee afzonderlijke nationale Clouds wordt niet ondersteund.
+- Aanvragen die door Azure Resource Manager worden verwerkt, kunnen worden uitgevoerd met behulp Azure Lighthouse. De bewerkings-URI's voor deze aanvragen beginnen met `https://management.azure.com` . Aanvragen die worden verwerkt door een exemplaar van een resourcetype (zoals Key Vault-toegang tot geheimen of toegang tot opslaggegevens) worden echter niet ondersteund met Azure Lighthouse. De bewerkings-URI's voor deze aanvragen beginnen doorgaans met een adres dat uniek is voor uw exemplaar, zoals `https://myaccount.blob.core.windows.net` of `https://mykeyvault.vault.azure.net/` . De laatste zijn doorgaans ook gegevensbewerkingen in plaats van beheerbewerkingen.
+- Roltoewijzingen moeten [gebruikmaken van ingebouwde Azure-rollen.](../../role-based-access-control/built-in-roles.md) Alle ingebouwde rollen worden momenteel ondersteund met gedelegeerd Azure-resourcebeheer, met uitzondering van Eigenaar of ingebouwde rollen met [`DataActions`](../../role-based-access-control/role-definitions.md#dataactions) machtigingen. De rol Gebruikerstoegangbeheerder wordt alleen ondersteund voor beperkt gebruik bij het [toewijzen van rollen aan beheerde identiteiten.](../how-to/deploy-policy-remediation.md#create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant)  Aangepaste rollen en [klassieke abonnementsbeheerdersrollen](../../role-based-access-control/classic-administrators.md) worden niet ondersteund.
+- Hoewel u abonnementen kunt onboarden die gebruikmaken van Azure Databricks, kunnen gebruikers in de tenant die Azure Databricks beheren, op dit moment geen Azure Databricks in een gedelegeerd abonnement starten.
+- Hoewel u abonnementen en resourcegroepen met resourcevergrendelingen kunt onboarden, voorkomen deze vergrendelingen niet dat acties worden uitgevoerd door gebruikers in de beherende tenant. [Toewijzingen](../../role-based-access-control/deny-assignments.md) weigeren die door het systeem beheerde resources beveiligen, zoals resources die zijn gemaakt door door Azure beheerde toepassingen of Azure Blueprints (door het systeem toegewezen toewijzingen voor weigeren), verhinderen dat gebruikers in de beherende tenant op deze resources kunnen handelen; Op dit moment kunnen gebruikers in de tenant van de klant echter geen eigen toewijzingen voor weigeren maken (door de gebruiker toegewezen toewijzingen voor weigeren).
+- Delegering van abonnementen in een [nationale cloud](../../active-directory/develop/authentication-national-cloud.md) en de openbare Azure-cloud, of in twee afzonderlijke nationale clouds, wordt niet ondersteund.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Laat uw klanten onboarden naar Azure Lighthouse, door [gebruik te maken van Azure Resource Manager sjablonen](../how-to/onboard-customer.md) of door [een aanbieding met persoonlijke of open bare services te publiceren op Azure Marketplace](../how-to/publish-managed-services-offers.md).
-- [Bekijk en beheer klanten](../how-to/view-manage-customers.md) door naar **mijn klanten** te gaan in de Azure Portal.
+- Onboard uw klanten voor Azure Lighthouse, hetzij met behulp van [Azure Resource Manager-sjablonen](../how-to/onboard-customer.md) of door een aanbieding voor persoonlijke of openbare beheerde services te publiceren op [Azure Marketplace](../how-to/publish-managed-services-offers.md).
+- [Bekijk en beheer klanten](../how-to/view-manage-customers.md) door naar **Mijn klanten** in de Azure Portal.

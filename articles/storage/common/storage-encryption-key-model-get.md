@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: ef0f32ecc59bea6ee7a0f7ff12083fd2358c223c
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 08bc36500bbd95633d1cb1d02bf10a7397401aa4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107478910"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780115"
 ---
 # <a name="determine-which-azure-storage-encryption-key-model-is-in-use-for-the-storage-account"></a>Bepalen welk Azure Storage versleutelingssleutelmodel wordt gebruikt voor het opslagaccount
 
@@ -58,11 +58,11 @@ $account = Get-AzStorageAccount -ResourceGroupName <resource-group> `
 $account.Encryption.KeySource
 ```
 
-Als de waarde van de **eigenschap KeySource** `Microsoft.Storage` is, wordt het account versleuteld met door Microsoft beheerde sleutels. Als de waarde van de **eigenschap KeySource** is, wordt het account versleuteld `Microsoft.Keyvault` met door de klant beheerde sleutels.
+Als de waarde van de **eigenschap KeySource** `Microsoft.Storage` is, wordt het account versleuteld met door Microsoft beheerde sleutels. Als de waarde van de **eigenschap KeySource** `Microsoft.Keyvault` is, wordt het account versleuteld met door de klant beheerde sleutels.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Als u het versleutelingsmodel voor het opslagaccount wilt controleren met behulp van Azure CLI, roept u de opdracht [az storage account show](/cli/azure/storage/account#az-storage-account-show) aan en controleert u vervolgens de eigenschap **keySource** voor het account.
+Als u het versleutelingsmodel voor het opslagaccount wilt controleren met behulp van Azure CLI, roept u de opdracht [az storage account show](/cli/azure/storage/account#az_storage_account_show) aan en controleert u vervolgens de eigenschap **keySource** voor het account.
 
 ```azurecli-interactive
 key_source=$(az storage account show \

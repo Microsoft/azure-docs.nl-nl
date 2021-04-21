@@ -1,7 +1,7 @@
 ---
-title: Een IPv6-toepassing met dubbele stack implementeren-Standard Load Balancer-CLI
+title: Een IPv6-toepassing met dubbele stack implementeren - Standard Load Balancer - CLI
 titlesuffix: Azure Virtual Network
-description: In dit artikel wordt beschreven hoe u een IPv6 Dual stack-toepassing implementeert in een virtueel Azure-netwerk met behulp van Azure CLI.
+description: In dit artikel wordt beschreven hoe u een IPv6-toepassing met dubbele stack implementeert in een virtueel Azure-netwerk met behulp van Azure CLI.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 81635a5f81548f0b4edeeb62fae19c567c6942bb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bdcd18ab8b223681af0825c13d4927abf83ebfa7
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98932738"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774337"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli"></a>Een IPv6-toepassing met dubbele stack implementeren in het virtuele netwerk van Azure-CLI
+# <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli"></a>Een IPv6-toepassing met dubbele stack implementeren in een virtueel Azure-netwerk - CLI
 
-In dit artikel wordt beschreven hoe u een dual stack (IPv4 + IPv6)-toepassing implementeert met behulp van Standard Load Balancer in azure, met een virtueel netwerk van twee stacks met een dual stack-subnet, een Standard Load Balancer met dubbele (IPv4 + IPv6) front-end configuraties, Vm's met Nic's met een dubbele IP-configuratie, dubbele netwerk beveiligings groeps regels en dubbele open bare Ip's.
+In dit artikel wordt beschreven hoe u een toepassing met twee stacks (IPv4 + IPv6) implementeert met behulp van Standard Load Balancer in Azure. Dit omvat een virtueel netwerk met dubbele stack met een dual stack-subnet, een Standard Load Balancer met dubbele front-endconfiguraties (IPv4 + IPv6), VM's met NIC's met een dubbele IP-configuratie, regels voor dubbele netwerkbeveiligingsgroep en dubbele openbare IP-adressen.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -32,7 +32,7 @@ In dit artikel wordt beschreven hoe u een dual stack (IPv4 + IPv6)-toepassing im
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Voordat u een virtueel netwerk met twee stacks kunt maken, moet u een resource groep maken met [AZ Group Create](/cli/azure/group). In het volgende voor beeld wordt een resource groep met de naam *DsResourceGroup01* gemaakt op de locatie *eastus* :
+Voordat u uw virtuele netwerk met dubbele stack kunt maken, moet u een resourcegroep maken [met az group create.](/cli/azure/group) In het volgende voorbeeld wordt een resourcegroep met de *naam DsResourceGroup01* gemaakt op de *locatie eastus:*
 
 ```azurecli-interactive
 az group create \
@@ -40,8 +40,8 @@ az group create \
 --location eastus
 ```
 
-## <a name="create-ipv4-and-ipv6-public-ip-addresses-for-load-balancer"></a>Open bare IPv4-en IPv6-adressen maken voor load balancer
-Als u toegang wilt krijgen tot uw IPv4-en IPv6-eind punten op internet, hebt u open bare IPv4-en IPv6-adressen voor de load balancer nodig. Maak een openbaar IP-adres met [az network public-ip create](/cli/azure/network/public-ip). In het volgende voor beeld worden het IPv4-en IPv6-open bare IP-adres gemaakt met de naam *dsPublicIP_v4* en *dsPublicIP_v6* in de resource groep *DsResourceGroup01* :
+## <a name="create-ipv4-and-ipv6-public-ip-addresses-for-load-balancer"></a>Openbare IPv4- en IPv6-IP-adressen maken voor load balancer
+Voor toegang tot uw IPv4- en IPv6-eindpunten op internet hebt u openbare IPv4- en IPv6-IP-adressen nodig voor de load balancer. Maak een openbaar IP-adres met [az network public-ip create](/cli/azure/network/public-ip). In het volgende voorbeeld worden het openbare IPv4- en IPv6-IP-adres *dsPublicIP_v4* en *dsPublicIP_v6* gemaakt in de resourcegroep *DsResourceGroup01:*
 
 ```azurecli-interactive
 # Create an IPV4 IP address
@@ -64,9 +64,9 @@ az network public-ip create \
 
 ```
 
-## <a name="create-public-ip-addresses-for-vms"></a>Open bare IP-adressen voor Vm's maken
+## <a name="create-public-ip-addresses-for-vms"></a>Openbare IP-adressen voor VM's maken
 
-Als u op afstand toegang wilt krijgen tot uw virtuele machines op internet, hebt u open bare IPv4-IP-adressen voor de virtuele machines nodig. Maak een openbaar IP-adres met [az network public-ip create](/cli/azure/network/public-ip).
+Voor externe toegang tot uw VM's op internet hebt u openbare IPv4-IP-adressen voor de VM's nodig. Maak een openbaar IP-adres met [az network public-ip create](/cli/azure/network/public-ip).
 
 ```azurecli-interactive
 az network public-ip create \
@@ -88,11 +88,11 @@ az network public-ip create \
 
 ## <a name="create-standard-load-balancer"></a>Een Standard Load Balancer maken
 
-In deze sectie configureert u dual front-end-IP (IPv4 en IPv6) en de back-end-adres groep voor de load balancer en maakt u vervolgens een Standard Load Balancer.
+In deze sectie configureert u dubbele front-end-IP (IPv4 en IPv6) en de back-endadresgroep voor de load balancer en maakt u vervolgens een Standard Load Balancer.
 
 ### <a name="create-load-balancer"></a>Load balancer maken
 
-Maak de Standard Load Balancer met [AZ Network lb Create](/cli/azure/network/lb) met de naam **dsLB** die een front-end-groep met de naam **dsLbFrontEnd_v4** bevat, een back-end-groep met de naam **dsLbBackEndPool_v4** die is gekoppeld aan het open bare IPv4-IP-adres **dsPublicIP_v4** dat u in de vorige stap hebt gemaakt. 
+Maak de Standard Load Balancer met [az network lb create](/cli/azure/network/lb) met de naam **dsLB** die een front-endpool met de naam **dsLbFrontEnd_v4** bevat, een back-eindpuntgroep met de naam **dsLbBackEndPool_v4** die is gekoppeld aan het openbare IP-adres van IPv4 **dsPublicIP_v4** dat u in de vorige stap hebt gemaakt. 
 
 ```azurecli-interactive
 az network lb create \
@@ -107,7 +107,7 @@ az network lb create \
 
 ### <a name="create-ipv6-frontend"></a>IPv6-front-end maken
 
-Maak een IPV6-frontend-IP met [AZ Network lb frontend-IP Create](/cli/azure/network/lb/frontend-ip#az-network-lb-frontend-ip-create). In het volgende voor beeld wordt een front-end-IP-configuratie met de naam *dsLbFrontEnd_v6* gemaakt en wordt het *dsPublicIP_v6* adres gekoppeld:
+Maak een IPV6-front-end-IP [met az network lb frontend-ip create.](/cli/azure/network/lb/frontend-ip#az_network_lb_frontend_ip_create) In het volgende voorbeeld wordt een front-end-IP-configuratie met *de dsLbFrontEnd_v6* gemaakt en wordt het *dsPublicIP_v6* gekoppeld:
 
 ```azurecli-interactive
 az network lb frontend-ip create \
@@ -118,9 +118,9 @@ az network lb frontend-ip create \
 
 ```
 
-### <a name="configure-ipv6-back-end-address-pool"></a>Adres groep voor IPv6-back-end configureren
+### <a name="configure-ipv6-back-end-address-pool"></a>IPv6-back-endadresgroep configureren
 
-Maak een IPv6-back-end-adres groep met [AZ Network lb address-pool Create](/cli/azure/network/lb/address-pool#az-network-lb-address-pool-create). In het volgende voor beeld wordt een back-end-adres groep met de naam *dsLbBackEndPool_v6*  gemaakt, met inbegrip van Vm's met IPv6-NIC-configuraties:
+Maak een IPv6-back-endadresgroepen [met az network lb address-pool create.](/cli/azure/network/lb/address-pool#az_network_lb_address_pool_create) In het volgende voorbeeld wordt een back-endadresgroep met de *naam dsLbBackEndPool_v6*  om VM's met IPv6 NIC-configuraties op te nemen:
 
 ```azurecli-interactive
 az network lb address-pool create \
@@ -140,7 +140,7 @@ az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --pro
 
 Een load balancer-regel wordt gebruikt om de verdeling van het verkeer over de VM's te definiëren. U definieert de front-end-IP-configuratie voor het inkomende verkeer en de back-end-IP-groep om het verkeer te ontvangen, samen met de gewenste bron- en doelpoort. 
 
-Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) om een load balancer-regel te maken. In het volgende voor beeld worden load balancer-regels met de naam *dsLBrule_v4* en *dsLBrule_v6* en wordt het verkeer op *TCP* -poort *80* gebalanceerd naar de IPv4-en IPv6-front-end IP-configuraties:
+Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az_network_lb_rule_create) om een load balancer-regel te maken. In het volgende voorbeeld worden load balancer regels met de naam *dsLBrule_v4* en *dsLBrule_v6* gemaakt en wordt verkeer op *TCP-poort* *80* naar de IPv4- en IPv6-front-end-IP-configuraties ge balanceerd:
 
 ```azurecli-interactive
 az network lb rule create \
@@ -169,11 +169,11 @@ az network lb rule create \
 ```
 
 ## <a name="create-network-resources"></a>Netwerkbronnen maken
-Voordat u enkele Vm's implementeert, moet u ondersteunende netwerk bronnen maken-beschikbaarheidsset, netwerk beveiligings groep, virtueel netwerk en virtuele Nic's. 
+Voordat u een aantal VM's implementeert, moet u ondersteunende netwerkbronnen maken: beschikbaarheidsset, netwerkbeveiligingsgroep, virtueel netwerk en virtuele NIC's. 
 ### <a name="create-an-availability-set"></a>Een beschikbaarheidsset maken
-Als u de beschik baarheid van uw app wilt verbeteren, plaatst u uw virtuele machines in een beschikbaarheidsset.
+Plaats uw VM's in een beschikbaarheidsset om de beschikbaarheid van uw app te verbeteren.
 
-Maak een beschikbaarheidsset met behulp van [az vm availability-set create](/cli/azure/vm/availability-set). In het volgende voor beeld wordt een beschikbaarheidsset gemaakt met de naam *dsAVset*:
+Maak een beschikbaarheidsset met behulp van [az vm availability-set create](/cli/azure/vm/availability-set). In het volgende voorbeeld wordt een beschikbaarheidsset met de *naam dsAVset gemaakt:*
 
 ```azurecli-interactive
 az vm availability-set create \
@@ -186,11 +186,11 @@ az vm availability-set create \
 
 ### <a name="create-network-security-group"></a>Netwerkbeveiligingsgroep maken
 
-Maak een netwerk beveiligings groep voor de regels die van toepassing zijn op binnenkomende en uitgaande communicatie in uw VNet.
+Maak een netwerkbeveiligingsgroep voor de regels voor binnenkomende en uitgaande communicatie in uw VNet.
 
 #### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Een netwerk beveiligings groep maken met [AZ Network NSG Create](/cli/azure/network/nsg#az-network-nsg-create)
+Een netwerkbeveiligingsgroep maken met [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create)
 
 
 ```azurecli-interactive
@@ -201,9 +201,9 @@ az network nsg create \
 
 ```
 
-#### <a name="create-a-network-security-group-rule-for-inbound-and-outbound-connections"></a>Een regel voor de netwerk beveiligings groep maken voor binnenkomende en uitgaande verbindingen
+#### <a name="create-a-network-security-group-rule-for-inbound-and-outbound-connections"></a>Een netwerkbeveiligingsgroepsregel maken voor binnenkomende en uitgaande verbindingen
 
-Maak een regel voor de netwerk beveiligings groep om RDP-verbindingen toe te staan via poort 3389, Internet verbinding via poort 80 en voor uitgaande verbindingen met [AZ Network NSG Rule Create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create).
+Maak een netwerkbeveiligingsgroepsregel om RDP-verbindingen toe te staan via poort 3389, internetverbinding via poort 80 en voor uitgaande verbindingen met [az network nsg rule create.](/cli/azure/network/nsg/rule#az_network_nsg_rule_create)
 
 ```azurecli-interactive
 # Create inbound rule for port 3389
@@ -256,7 +256,7 @@ az network nsg rule create \
 
 ### <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
-Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). In het volgende voor beeld wordt een virtueel netwerk gemaakt met de naam *dsVNET* met subnetten *dsSubNET_v4* en *dsSubNET_v6*:
+Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). In het volgende voorbeeld wordt een virtueel netwerk met de *naam dsVNET* gemaakt met subnetten *dsSubNET_v4* en *dsSubNET_v6*:
 
 ```azurecli-interactive
 # Create the virtual network
@@ -278,7 +278,7 @@ az network vnet subnet create \
 
 ### <a name="create-nics"></a>NIC's maken
 
-Maak virtuele Nic's voor elke VM met [AZ Network NIC Create](/cli/azure/network/nic#az-network-nic-create). In het volgende voor beeld wordt een virtuele NIC gemaakt voor elke VM. Elke NIC heeft twee IP-configuraties (1 IPv4-configuratie, 1 IPv6-configuratie). U maakt de IPV6-configuratie met [AZ Network NIC IP-config Create](/cli/azure/network/nic/ip-config#az-network-nic-ip-config-create).
+Maak virtuele NIC's voor elke VM [met az network nic create.](/cli/azure/network/nic#az_network_nic_create) In het volgende voorbeeld wordt een virtuele NIC voor elke virtuele machine gemaakt. Elke NIC heeft twee IP-configuraties (1 IPv4-configuratie, 1 IPv6-configuratie). U maakt de IPV6-configuratie [met az network nic ip-config create.](/cli/azure/network/nic/ip-config#az_network_nic_ip_config_create)
  
 ```azurecli-interactive
 # Create NICs
@@ -329,9 +329,9 @@ az network nic ip-config create \
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-Maak de virtuele machines met [AZ VM Create](/cli/azure/vm#az-vm-create). In het volgende voorbeeld worden twee VM's en de vereiste onderdelen van het virtuele netwerk gemaakt als deze nog niet bestaan. 
+Maak de VM's [met az vm create](/cli/azure/vm#az_vm_create). In het volgende voorbeeld worden twee VM's en de vereiste onderdelen van het virtuele netwerk gemaakt als deze nog niet bestaan. 
 
-Maak de *dsVM0* van de virtuele machine als volgt:
+Maak de virtuele machine *dsVM0* als volgt:
 
 ```azurecli-interactive
  az vm create \
@@ -343,7 +343,7 @@ Maak de *dsVM0* van de virtuele machine als volgt:
 --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest  
 ```
 
-Maak de *dsVM1* van de virtuele machine als volgt:
+Maak de virtuele machine *dsVM1* als volgt:
 
 ```azurecli-interactive
 az vm create \
@@ -355,16 +355,16 @@ az vm create \
 --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest 
 ```
 
-## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Virtueel IPv6-netwerk met dubbele stack in Azure Portal weer geven
-U kunt het virtuele IPv6-netwerk met dubbele stack als volgt weer geven in Azure Portal:
-1. Voer in de zoek balk van de portal *dsVnet* in.
-2. Wanneer **myVirtualNetwork** wordt weergegeven in de zoekresultaten, selecteert u dit. Hiermee opent u de **overzichts** pagina van het virtuele netwerk met dubbele stack met de naam *dsVnet*. Het virtuele netwerk met dubbele stack toont de twee Nic's met zowel IPv4-als IPv6-configuraties die zich bevinden in het dubbele stack-subnet met de naam *dsSubnet*.
+## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Virtueel IPv6-netwerk met dubbele stack weergeven in Azure Portal
+U kunt het virtuele IPv6-netwerk met dubbele stack als Azure Portal weergeven:
+1. Voer in de zoekbalk van de portal *dsVnet in.*
+2. Wanneer **myVirtualNetwork** wordt weergegeven in de zoekresultaten, selecteert u dit. Hiermee start u de **pagina Overzicht** van het virtuele netwerk met dubbele stack met de *naam dsVnet.* Het virtuele netwerk met dubbele stack toont de twee NIC's met zowel IPv4- als IPv6-configuraties in het dual stack-subnet met de *naam dsSubnet.*
 
-  ![Virtueel IPv6-netwerk met dubbele stack in azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
+  ![Virtueel IPv6-netwerk met dubbele stack in Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken om de resourcegroep, de VM en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt.
+U kunt de opdracht [az group delete](/cli/azure/group#az_group_delete) gebruiken om de resourcegroep, de VM en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt.
 
 ```azurecli-interactive
  az group delete --name DsResourceGroup01
@@ -372,4 +372,4 @@ U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een Standard Load Balancer met een dubbele frontend-IP-configuratie (IPv4 en IPv6) gemaakt. U hebt ook een twee virtuele machines gemaakt die Nic's bevatten met dubbele IP-configuraties (IPV4 + IPv6) die zijn toegevoegd aan de back-end-pool van de load balancer. Zie [Wat is IPv6 voor azure Virtual Network?](ipv6-overview.md) voor meer informatie over IPv6-ondersteuning in azure Virtual Networks.
+In dit artikel hebt u een Standard Load Balancer met een dubbele front-end-IP-configuratie (IPv4 en IPv6). U hebt ook twee virtuele machines gemaakt met NIC's met dubbele IP-configuraties (IPV4 + IPv6) die zijn toegevoegd aan de back-endpool van de load balancer. Zie Wat is IPv6 voor Azure Virtual Network? voor meer informatie over [IPv6-ondersteuning](ipv6-overview.md) in virtuele Netwerken van Azure.

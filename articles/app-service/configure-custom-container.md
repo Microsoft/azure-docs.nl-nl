@@ -4,86 +4,86 @@ description: Meer informatie over het configureren van een aangepaste container 
 ms.topic: article
 ms.date: 02/23/2021
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 1d1a1292bc7583e4934ac176c34d2768700d11c5
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 7bfebe318d93a544c964d70ea0a28144a7f0e43b
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105036761"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107764239"
 ---
 # <a name="configure-a-custom-container-for-azure-app-service"></a>Een aangepaste container configureren voor Azure App Service
 
-In dit artikel leest u hoe u een aangepaste container kunt configureren om te worden uitgevoerd op Azure App Service.
+In dit artikel wordt beschreven hoe u een aangepaste container configureert om te worden uitgevoerd op Azure App Service.
 
 ::: zone pivot="container-windows"
 
-Deze hand leiding bevat belang rijke concepten en instructies voor container opslag van Windows-apps in App Service. Als u Azure App Service nog nooit hebt gebruikt, volgt u eerst de Snelstartgids en [zelf studie](tutorial-custom-container.md) van de [aangepaste container](quickstart-custom-container.md) .
+Deze handleiding bevat belangrijke concepten en instructies voor containerisatie van Windows-apps in App Service. Als u deze zelfstudie nog nooit Azure App Service, volgt u eerst de [quickstart](quickstart-custom-container.md) en [zelfstudie](tutorial-custom-container.md) voor aangepaste containers.
 
 ::: zone-end
 
 ::: zone pivot="container-linux"
 
-Deze hand leiding bevat belang rijke concepten en instructies voor container opslag Linux-apps in App Service. Als u Azure App Service nog nooit hebt gebruikt, volgt u eerst de Snelstartgids en [zelf studie](tutorial-custom-container.md) van de [aangepaste container](quickstart-custom-container.md) . Er is ook een Snelstartgids en [zelf studie](tutorial-multi-container-app.md)voor [apps met meerdere containers](quickstart-multi-container.md) .
+Deze handleiding bevat belangrijke concepten en instructies voor containerisatie van Linux-apps in App Service. Als u deze zelfstudie nog nooit Azure App Service, volgt u eerst de [quickstart](quickstart-custom-container.md) en [zelfstudie](tutorial-custom-container.md) voor aangepaste containers. Er is ook een [quickstart en](quickstart-multi-container.md) zelfstudie voor een app met meerdere [containers.](tutorial-multi-container-app.md)
 
 ::: zone-end
 
 ::: zone pivot="container-windows"
 
-## <a name="supported-parent-images"></a>Ondersteunde bovenliggende installatie kopieën
+## <a name="supported-parent-images"></a>Ondersteunde bovenliggende afbeeldingen
 
-Voor uw aangepaste Windows-installatie kopie moet u de juiste [bovenliggende installatie kopie (basis installatie kopie)](https://docs.docker.com/develop/develop-images/baseimages/) kiezen voor het gewenste Framework:
+Voor uw aangepaste Windows-afbeelding moet u de juiste [bovenliggende afbeelding (basisafbeelding)](https://docs.docker.com/develop/develop-images/baseimages/) kiezen voor het framework dat u wilt:
 
-- Als u .NET Framework-Apps wilt implementeren, gebruikt u een bovenliggende installatie kopie op basis van de Windows Server Core [LTSC-versie (Long-term Servicing Channel)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) . 
-- Als u .NET Core-Apps wilt implementeren, gebruikt u een bovenliggende installatie kopie op basis van de Windows Server nano [Semi-Annual-onderhouds kanaal (SAC)](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) -versie. 
+- Als u .NET Framework apps wilt implementeren, gebruikt u een bovenliggende afbeelding op basis van de release van Windows Server Core [Long-Term Servicing Channel (LTSC).](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 
+- Als u .NET Core-apps wilt implementeren, gebruikt u een bovenliggende installatie afbeelding op basis van de release Windows Server Nano [Semi-Annual Servicing Channel (SAC).](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) 
 
 Het duurt enige tijd om een bovenliggende installatiekopie te downloaden tijdens het opstarten van de app. U kunt deze opstarttijd echter verminderen door een van de volgende bovenliggende installatiekopieën te gebruiken die al in cache zijn opgeslagen in Azure App Service:
 
-- [MCR.Microsoft.com/Windows/ServerCore](https://hub.docker.com/_/microsoft-windows-servercore): 2004
-- [MCR.Microsoft.com/Windows/ServerCore](https://hub.docker.com/_/microsoft-windows-servercore): ltsc2019
-- [MCR.Microsoft.com/DOTNET/Framework/ASPNET](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/): 4,8-windowsservercore-2004
-- [MCR.Microsoft.com/DOTNET/Framework/ASPNET](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/): 4,8-windowsservercore-ltsc2019
-- [MCR.Microsoft.com/DotNet/core/runtime](https://hub.docker.com/_/microsoft-dotnet-core-runtime/): 3,1-nano server-2004
-- [MCR.Microsoft.com/DotNet/core/runtime](https://hub.docker.com/_/microsoft-dotnet-core-runtime/): 3,1-nano server-1909
-- [MCR.Microsoft.com/DotNet/core/runtime](https://hub.docker.com/_/microsoft-dotnet-core-runtime/): 3,1-nano server-1903
-- [MCR.Microsoft.com/DotNet/core/runtime](https://hub.docker.com/_/microsoft-dotnet-core-runtime/): 3,1-nano server-1809
-- [MCR.Microsoft.com/DotNet/core/ASPNET](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/): 3,1-nano server-2004
-- [MCR.Microsoft.com/DotNet/core/ASPNET](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/): 3,1-nano server-1909
-- [MCR.Microsoft.com/DotNet/core/ASPNET](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/): 3,1-nano server-1903
-- [MCR.Microsoft.com/DotNet/core/ASPNET](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/): 3,1-nano server-1809
+- [](https://hub.docker.com/_/microsoft-windows-servercore)mcr.microsoft.com/windows/servercore:2004
+- [mcr.microsoft.com/windows/servercore](https://hub.docker.com/_/microsoft-windows-servercore):ltsc2019
+- [](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/)mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-2004
+- [](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/)mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
+- [](https://hub.docker.com/_/microsoft-dotnet-core-runtime/)mcr.microsoft.com/dotnet/core/runtime:3.1-nanoserver-2004
+- [](https://hub.docker.com/_/microsoft-dotnet-core-runtime/)mcr.microsoft.com/dotnet/core/runtime:3.1-nanoserver-1909
+- [](https://hub.docker.com/_/microsoft-dotnet-core-runtime/)mcr.microsoft.com/dotnet/core/runtime:3.1-nanoserver-1903
+- [](https://hub.docker.com/_/microsoft-dotnet-core-runtime/)mcr.microsoft.com/dotnet/core/runtime:3.1-nanoserver-1809
+- [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/):3.1-nanoserver-2004
+- [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/):3.1-nanoserver-1909
+- [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/):3.1-nanoserver-1903
+- [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/):3.1-nanoserver-1809
 
 ::: zone-end
 
-## <a name="change-the-docker-image-of-a-custom-container"></a>De docker-installatie kopie van een aangepaste container wijzigen
+## <a name="change-the-docker-image-of-a-custom-container"></a>De Docker-afbeelding van een aangepaste container wijzigen
 
-Als u een bestaande aangepaste container-app wilt wijzigen van de huidige docker-installatie kopie naar een nieuwe installatie kopie, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om een bestaande aangepaste container-app te wijzigen van de huidige Docker-afbeelding in een nieuwe afbeelding:
 
 ```azurecli-interactive
 az webapp config container set --name <app-name> --resource-group <group-name> --docker-custom-image-name <docker-hub-repo>/<image>
 ```
 
-## <a name="use-an-image-from-a-private-registry"></a>Een installatie kopie van een persoonlijk REGI ster gebruiken
+## <a name="use-an-image-from-a-private-registry"></a>Een afbeelding uit een privéregister gebruiken
 
-Als u een installatie kopie uit een persoonlijk REGI ster wilt gebruiken, zoals Azure Container Registry, voert u de volgende opdracht uit:
+Als u een afbeelding uit een persoonlijk register wilt gebruiken, zoals Azure Container Registry, moet u de volgende opdracht uitvoeren:
 
 ```azurecli-interactive
 az webapp config container set --name <app-name> --resource-group <group-name> --docker-custom-image-name <image-name> --docker-registry-server-url <private-repo-url> --docker-registry-server-user <username> --docker-registry-server-password <password>
 ```
 
-*\<username>* Geef voor en *\<password>* de aanmeldings referenties voor uw persoonlijke register account op.
+Voor *\<username>* en levert u de *\<password>* aanmeldingsreferenties voor uw privéregisteraccount.
 
 ## <a name="i-dont-see-the-updated-container"></a>Ik zie de bijgewerkte container niet
 
-Als u de instellingen van de docker-container wijzigt zodat deze naar een nieuwe container verwijzen, kan het enkele minuten duren voordat de app HTTP-aanvragen van de nieuwe container verzendt. Terwijl de nieuwe container wordt opgehaald en gestart, blijft App Service aanvragen van de oude container blijven verwerken. Alleen wanneer de nieuwe container wordt gestart en er aanvragen kunnen worden ontvangen, worden App Service aanvragen verzonden.
+Als u de instellingen van uw Docker-container wijzigt om naar een nieuwe container te wijzen, kan het enkele minuten duren voordat de app HTTP-aanvragen van de nieuwe container afwerkt. Terwijl de nieuwe container wordt aangetrokken en gestart, App Service aanvragen van de oude container blijven verwerken. Alleen wanneer de nieuwe container is gestart en gereed is om aanvragen te ontvangen, App Service aanvragen naar de container verzenden.
 
-## <a name="how-container-images-are-stored"></a>Hoe container installatie kopieën worden opgeslagen
+## <a name="how-container-images-are-stored"></a>Hoe containerafbeeldingen worden opgeslagen
 
-De eerste keer dat u een aangepaste docker-installatie kopie uitvoert in App Service, bevat App Service een `docker pull` en worden alle afbeeldings lagen opgehaald. Deze lagen worden op schijf opgeslagen, zoals als u docker on-premises gebruikt. Telkens wanneer de app opnieuw wordt gestart, App Service een `docker pull` , maar worden alleen lagen opgehaald die zijn gewijzigd. Als er geen wijzigingen zijn, gebruikt App Service bestaande lagen op de lokale schijf.
+De eerste keer dat u een aangepaste Docker-afbeelding in een App Service, App Service een en worden alle lagen van `docker pull` de afbeelding pullt. Deze lagen worden op schijf opgeslagen, bijvoorbeeld als u On-premises Docker gebruikt. Telkens als de app opnieuw wordt opgestart, App Service een , maar alleen lagen die `docker pull` zijn gewijzigd. Als er geen wijzigingen zijn aangebracht, App Service bestaande lagen op de lokale schijf gebruikt.
 
-Als de app de reken instanties om een of andere reden wijzigt, zoals het omhoog en omlaag schalen van de prijs categorieën, moet App Service alle lagen opnieuw ophalen. Hetzelfde geldt als u uitbreidt om extra instanties toe te voegen. Er zijn ook zeldzame gevallen waarin de app-exemplaren kunnen veranderen zonder een schaal bewerking.
+Als de app om welke reden dan ook reken-exemplaren wijzigt, zoals het omhoog en omlaag schalen van de prijslagen, moeten App Service alle lagen weer omlaag halen. Hetzelfde geldt als u uitschaalt om extra exemplaren toe te voegen. Er zijn ook zeldzame gevallen waarin de app-exemplaren zonder schaalbewerking kunnen worden gewijzigd.
 
-## <a name="configure-port-number"></a>Poort nummer configureren
+## <a name="configure-port-number"></a>Poortnummer configureren
 
-App Service gaat er standaard van uit dat uw aangepaste container luistert op poort 80. Als uw container naar een andere poort luistert, stelt u de `WEBSITES_PORT` app-instelling in uw app service-app in. U kunt deze instellen via de [Cloud shell](https://shell.azure.com). In bash:
+Standaard wordt App Service dat uw aangepaste container luistert op poort 80. Als uw container naar een andere poort luistert, stelt u de `WEBSITES_PORT` app-instelling in uw App Service app in. U kunt deze instellen via de [Cloud Shell](https://shell.azure.com). In Bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITES_PORT=8000
@@ -95,11 +95,11 @@ In PowerShell:
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WEBSITES_PORT"="8000"}
 ```
 
-App Service staat momenteel toe dat uw container slechts één poort beschikbaar maakt voor HTTP-aanvragen. 
+App Service kan uw container momenteel slechts één poort beschikbaar maken voor HTTP-aanvragen. 
 
 ## <a name="configure-environment-variables"></a>Omgevingsvariabelen configureren
 
-Uw aangepaste container kan gebruikmaken van omgevings variabelen die extern moeten worden opgegeven. U kunt deze door geven via de [Cloud shell](https://shell.azure.com). In bash:
+Uw aangepaste container kan omgevingsvariabelen gebruiken die extern moeten worden opgegeven. U kunt deze doorgeven via de [Cloud Shell.](https://shell.azure.com) In Bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings DB_HOST="myownserver.mysql.database.azure.com"
@@ -111,12 +111,12 @@ In PowerShell:
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"DB_HOST"="myownserver.mysql.database.azure.com"}
 ```
 
-Wanneer uw app wordt uitgevoerd, worden de App Service app-instellingen automatisch in het proces geïnjecteerd als omgevings variabelen. U kunt container omgevings variabelen controleren met de URL `https://<app-name>.scm.azurewebsites.net/Env)` .
+Wanneer uw app wordt uitgevoerd, worden App Service app-instellingen automatisch als omgevingsvariabelen in het proces geïnjecteerd. U kunt containeromgevingsvariabelen controleren met de URL `https://<app-name>.scm.azurewebsites.net/Env)` .
 
-Als uw app gebruikmaakt van installatie kopieën uit een persoonlijk REGI ster of vanuit docker hub, worden de referenties voor toegang tot de opslag plaats opgeslagen in omgevings variabelen: `DOCKER_REGISTRY_SERVER_URL` , `DOCKER_REGISTRY_SERVER_USERNAME` en `DOCKER_REGISTRY_SERVER_PASSWORD` . Vanwege beveiligings Risico's worden geen van deze gereserveerde variabelen namen weer gegeven aan de toepassing.
+Als uw app gebruikmaakt van afbeeldingen uit een persoonlijk register of van Docker Hub, worden referenties voor toegang tot de opslagplaats opgeslagen in omgevingsvariabelen: `DOCKER_REGISTRY_SERVER_URL` , `DOCKER_REGISTRY_SERVER_USERNAME` en `DOCKER_REGISTRY_SERVER_PASSWORD` . Vanwege beveiligingsrisico's wordt geen van deze gereserveerde variabelenamen zichtbaar voor de toepassing.
 
 ::: zone pivot="container-windows"
-Voor IIS-of .NET Framework (4,0 of hoger)-containers worden ze `System.ConfigurationManager` door app service als .net-app-instellingen en verbindings reeksen automatisch ingevoegd. Voor alle andere talen of Framework worden ze als omgevings variabelen voor het proces geboden, met een van de volgende corresponderende voor voegsels:
+Voor containers op basis van IIS of .NET Framework (4.0 of hoger) worden ze automatisch als .NET-app-instellingen en verbindingsreeksen `System.ConfigurationManager` App Service. Voor alle andere taal of frameworks worden ze geleverd als omgevingsvariabelen voor het proces, met een van de volgende bijbehorende voorvoegsels:
 
 - `APPSETTING_`
 - `SQLCONTR_`
@@ -129,7 +129,7 @@ Voor IIS-of .NET Framework (4,0 of hoger)-containers worden ze `System.Configura
 
 ::: zone pivot="container-linux"
 
-Deze methode werkt zowel voor apps met één container als apps met meerdere containers, waarbij de omgevings variabelen worden opgegeven in het bestand *docker-Compose. yml* .
+Deze methode werkt zowel voor apps met één container als voor apps met meerdere containers, waarbij de omgevingsvariabelen zijn opgegeven in het bestand *docker-compose.yml.*
 
 ::: zone-end
 
@@ -137,21 +137,21 @@ Deze methode werkt zowel voor apps met één container als apps met meerdere con
 
 ::: zone pivot="container-windows"
 
-U kunt de *C:\home* -map in het bestands systeem van uw app gebruiken om bestanden op te slaan tijdens het opnieuw opstarten en ze te delen met alle instanties. De `C:\home` in uw app is beschikbaar om uw container-app toegang te geven tot permanente opslag.
+U kunt de *map C:\home* in het bestandssysteem van uw app gebruiken om bestanden bij het opnieuw opstarten persistent te maken en deze te delen tussen exemplaren. De `C:\home` in uw app wordt geleverd om uw container-app toegang te geven tot permanente opslag.
 
-Wanneer permanente opslag is uitgeschakeld, worden er geen schrijf bewerkingen naar de `C:\home` Directory bewaard. [Docker-host-logboeken en container logboeken](#access-diagnostic-logs) worden opgeslagen in een standaard permanente gedeelde opslag die niet aan de container is gekoppeld. Wanneer permanente opslag is ingeschakeld, worden alle schrijf bewerkingen naar de `C:\home` Directory persistent gemaakt en kunnen alle exemplaren van een uitgeschaalde app worden geopend. logboeken zijn toegankelijk op `C:\home\LogFiles` .
+Wanneer permanente opslag is uitgeschakeld, worden schrijf schrijffuncties naar de `C:\home` map niet persistent gemaakt. [Docker-hostlogboeken en containerlogboeken](#access-diagnostic-logs) worden opgeslagen in een standaard permanente gedeelde opslag die niet is gekoppeld aan de container. Wanneer permanente opslag is ingeschakeld, blijven alle schrijfgegevens naar de map persistent en zijn ze toegankelijk voor alle exemplaren van een uitschaalbare app en zijn `C:\home` logboeken toegankelijk op `C:\home\LogFiles` .
 
 ::: zone-end
 
 ::: zone pivot="container-linux"
 
-U kunt de */Home* -map in het bestands systeem van uw app gebruiken om bestanden op te slaan tijdens het opnieuw opstarten en ze te delen met alle instanties. De `/home` in uw app is beschikbaar om uw container-app toegang te geven tot permanente opslag.
+U kunt de *map /home* in het bestandssysteem van uw app gebruiken om bestanden bij het opnieuw opstarten persistent te maken en deze te delen tussen exemplaren. De `/home` in uw app wordt geleverd om uw container-app toegang te geven tot permanente opslag.
 
-Wanneer permanente opslag is uitgeschakeld, worden de schrijf bewerkingen naar de `/home` Directory niet opgeslagen in een app die opnieuw wordt gestart of over meerdere exemplaren. De enige uitzonde ring hierop is de `/home/LogFiles` map die wordt gebruikt voor het opslaan van de docker-en container Logboeken. Wanneer permanente opslag is ingeschakeld, worden alle schrijf bewerkingen naar de `/home` Directory persistent gemaakt en kunnen alle exemplaren van een uitgeschaalde app worden geopend.
+Wanneer permanente opslag is uitgeschakeld, worden schrijf schrijffuncties naar de map niet persistent gemaakt tijdens het opnieuw opstarten van apps of `/home` tussen meerdere exemplaren. De enige uitzondering hierop is `/home/LogFiles` de map , die wordt gebruikt voor het opslaan van de Docker- en containerlogboeken. Wanneer permanente opslag is ingeschakeld, blijven alle schrijf schrijfingen naar de map persistent en zijn ze toegankelijk voor alle exemplaren van een `/home` geschaalde app.
 
 ::: zone-end
 
-Permanente opslag is standaard uitgeschakeld en de instelling wordt niet weer gegeven in de app-instellingen. Als u deze wilt inschakelen, stelt u de `WEBSITES_ENABLE_APP_SERVICE_STORAGE` app-instelling in via de [Cloud shell](https://shell.azure.com). In bash:
+Permanente opslag is standaard uitgeschakeld en de instelling wordt niet weergegeven in de app-instellingen. Als u deze wilt inschakelen, stelt u `WEBSITES_ENABLE_APP_SERVICE_STORAGE` de app-instelling in via [Cloud Shell](https://shell.azure.com). In Bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=true
@@ -164,63 +164,63 @@ Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WE
 ```
 
 > [!NOTE]
-> U kunt ook [uw eigen permanente opslag configureren](configure-connect-to-azure-storage.md).
+> U kunt ook [uw eigen permanente opslag configureren.](configure-connect-to-azure-storage.md)
 
 ## <a name="detect-https-session"></a>HTTPS-sessie detecteren
 
-App Service stopt TLS/SSL bij de front-ends. Dit betekent dat TLS/SSL-aanvragen nooit naar uw app gaan. U hoeft geen ondersteuning voor TLS/SSL in uw app te implementeren. 
+App Service beëindigt TLS/SSL aan de front-ends. Dit betekent dat TLS/SSL-aanvragen nooit bij uw app komen. U hoeft dit niet te doen en mag geen ondersteuning voor TLS/SSL implementeren in uw app. 
 
-De front-ends bevinden zich in azure data centers. Als u gebruikmaakt van TLS/SSL met uw app, wordt uw verkeer via internet altijd veilig versleuteld.
+De front-ends bevinden zich in Azure-datacenters. Als u TLS/SSL gebruikt voor uw app, wordt uw verkeer via internet altijd veilig versleuteld.
 
 ::: zone pivot="container-windows"
 
-## <a name="customize-aspnet-machine-key-injection"></a>Injectie van ASP.NET-machine sleutel aanpassen
+## <a name="customize-aspnet-machine-key-injection"></a>Een ASP.NET machinesleutelinjectie aanpassen
 
- Tijdens het starten van de container worden automatisch gegenereerde sleutels in de container geïnjecteerd als de computer sleutels voor ASP.NET-cryptografische routines. U kunt [deze sleutels in de container vinden](#connect-to-the-container) door te zoeken naar de volgende omgevings variabelen: `MACHINEKEY_Decryption` , `MACHINEKEY_DecryptionKey` , `MACHINEKEY_ValidationKey` , `MACHINEKEY_Validation` . 
+ Tijdens het starten van de container worden automatisch gegenereerde sleutels in de container geïnjecteerd als de machinesleutels voor ASP.NET cryptografische routines. U vindt [deze sleutels in uw container door](#connect-to-the-container) te zoeken naar de volgende omgevingsvariabelen: , , , `MACHINEKEY_Decryption` `MACHINEKEY_DecryptionKey` `MACHINEKEY_ValidationKey` `MACHINEKEY_Validation` . 
 
-De nieuwe sleutels bij elke herstart kunnen de ASP.NET formulier verificatie en de weergave status opnieuw instellen als uw app hiervan afhankelijk is. Als u wilt voor komen dat sleutels automatisch opnieuw worden gegenereerd, [stelt u ze hand matig in als app service-app-instellingen](#configure-environment-variables). 
+De nieuwe sleutels bij elke herstart kunnen opnieuw worden ASP.NET formulierverificatie en weergavetoestand, als uw app er afhankelijk van is. Als u wilt voorkomen dat sleutels automatisch opnieuw worden gebruikt, stelt u deze handmatig [in App Service app-instellingen.](#configure-environment-variables) 
 
 ## <a name="connect-to-the-container"></a>Verbinding maken met de container
 
-U kunt rechtstreeks verbinding maken met uw Windows-container voor diagnostische taken door te navigeren naar `https://<app-name>.scm.azurewebsites.net/DebugConsole` . Het werkt als volgt:
+U kunt rechtstreeks verbinding maken met uw Windows-container voor diagnostische taken door naar te `https://<app-name>.scm.azurewebsites.net/DebugConsole` navigeren. Het werkt als volgt:
 
-- Met de console fout opsporing kunt u interactieve opdrachten uitvoeren, zoals het starten van Power shell-sessies, het inspecteren van register sleutels en het navigeren door het hele container bestands systeem.
-- Het werkt onafhankelijk van de grafische browser hierboven, waarin alleen de bestanden in uw [gedeelde opslag](#use-persistent-shared-storage)worden weer gegeven.
-- In een uitgeschaalde app is de console fout opsporing verbonden met een van de container exemplaren. U kunt een ander exemplaar selecteren in de vervolg keuzelijst **exemplaar** in het bovenste menu.
-- Wijzigingen die u aanbrengt in de container vanuit de-console blijven *niet* behouden wanneer uw app opnieuw wordt gestart (met uitzonde ring van wijzigingen in de gedeelde opslag), omdat deze geen deel uitmaakt van de docker-installatie kopie. Als u uw wijzigingen wilt behouden, zoals register instellingen en software-installatie, maakt u deze deel uit van de Dockerfile.
+- Met de console voor foutopsporing kunt u interactieve opdrachten uitvoeren, zoals het starten van PowerShell-sessies, het inspecteren van registersleutels en het navigeren door het hele containerbestandssysteem.
+- Het werkt afzonderlijk van de grafische browser erboven, waarin alleen de bestanden in uw gedeelde [opslag worden weergegeven.](#use-persistent-shared-storage)
+- In een uitschaalde app is de console voor foutopsporing verbonden met een van de container-exemplaren. U kunt een ander exemplaar selecteren in de **vervolgkeuzelijst Instantie** in het bovenste menu.
+- Wijzigingen die u in de container  aan de console aan brengen, blijven niet behouden wanneer uw app opnieuw wordt gestart (met uitzondering van wijzigingen in de gedeelde opslag), omdat deze geen deel uitmaakt van de Docker-afbeelding. Als u uw wijzigingen wilt blijven aanbrengen, zoals registerinstellingen en software-installatie, maakt u ze deel uit van het Dockerfile.
 
 ## <a name="access-diagnostic-logs"></a>Toegang tot diagnostische logboeken
 
-App Service registreert acties van de docker-host en activiteiten vanuit de container. Logboeken van de docker-host (platform-Logboeken) worden standaard verzonden, maar toepassings Logboeken of webserver logboeken in de container moeten hand matig worden ingeschakeld. Zie [toepassings logboeken inschakelen](troubleshoot-diagnostic-logs.md#enable-application-logging-linuxcontainer) en [logboek registratie van webserver inschakelen](troubleshoot-diagnostic-logs.md#enable-web-server-logging)voor meer informatie. 
+App Service registreert acties van de Docker-host en activiteiten vanuit de container. Logboeken van de Docker-host (platformlogboeken) worden standaard verzonden, maar toepassingslogboeken of webserverlogboeken vanuit de container moeten handmatig worden ingeschakeld. Zie Logboekregistratie van toepassingen [inschakelen](troubleshoot-diagnostic-logs.md#enable-application-logging-linuxcontainer) en Logboekregistratie [van webserver inschakelen voor meer informatie.](troubleshoot-diagnostic-logs.md#enable-web-server-logging) 
 
-Er zijn verschillende manieren om toegang te krijgen tot docker-logboeken:
+Er zijn verschillende manieren om toegang te krijgen tot Docker-logboeken:
 
 - [In Azure Portal](#in-azure-portal)
-- [Vanuit de kudu-console](#from-the-kudu-console)
-- [Met de kudu-API](#with-the-kudu-api)
+- [Vanuit de Kudu-console](#from-the-kudu-console)
+- [Met de Kudu-API](#with-the-kudu-api)
 - [Logboeken verzenden naar Azure Monitor](troubleshoot-diagnostic-logs.md#send-logs-to-azure-monitor-preview)
 
 ### <a name="in-azure-portal"></a>In Azure Portal
 
-Docker-logboeken worden weer gegeven in de portal, op de pagina **container instellingen** van uw app. De logboeken worden afgekapt, maar u kunt alle logboeken downloaden door te klikken op **downloaden**. 
+Docker-logboeken worden weergegeven in de portal op de **pagina Containerinstellingen** van uw app. De logboeken worden afgekapt, maar u kunt alle logboeken downloaden door op **Downloaden te klikken.** 
 
-### <a name="from-the-kudu-console"></a>Vanuit de kudu-console
+### <a name="from-the-kudu-console"></a>Vanuit de Kudu-console
 
-Navigeer naar `https://<app-name>.scm.azurewebsites.net/DebugConsole` en klik op de map **logfiles** om de afzonderlijke logboek bestanden weer te geven. Als u de volledige map met **logboek bestanden** wilt downloaden, klikt u op het **Download** pictogram links van de mapnaam. U kunt deze map ook openen met een FTP-client.
+Navigeer `https://<app-name>.scm.azurewebsites.net/DebugConsole` naar en klik op de map **LogFiles** om de afzonderlijke logboekbestanden te bekijken. Als u de volledige **Map LogFiles wilt** downloaden, klikt u op **het pictogram Downloaden** links van de mapnaam. U kunt deze map ook openen met behulp van een FTP-client.
 
-In de-console terminal kunt u de `C:\home\LogFiles` map niet standaard openen omdat permanente gedeelde opslag niet is ingeschakeld. U kunt dit gedrag inschakelen in de-console terminal door [permanente gedeelde opslag in te scha kelen](#use-persistent-shared-storage).
+In de consoleterminal hebt u standaard geen toegang tot de map `C:\home\LogFiles` omdat permanente gedeelde opslag niet is ingeschakeld. Als u dit gedrag wilt inschakelen in de consoleterminal, [moet u permanente gedeelde opslag inschakelen.](#use-persistent-shared-storage)
 
-Als u probeert het docker-logboek te downloaden dat momenteel in gebruik is met een FTP-client, wordt er mogelijk een fout bericht weer geven als gevolg van een bestands vergrendeling.
+Als u het Docker-logboek probeert te downloaden dat momenteel wordt gebruikt met behulp van een FTP-client, kan er een foutmelding worden weergegeven vanwege een bestandsvergrendeling.
 
-### <a name="with-the-kudu-api"></a>Met de kudu-API
+### <a name="with-the-kudu-api"></a>Met de Kudu-API
 
-Ga rechtstreeks naar `https://<app-name>.scm.azurewebsites.net/api/logs/docker` om meta gegevens voor de docker-logboeken weer te geven. Mogelijk worden er meerdere logboek bestanden weer gegeven, en `href` kunt u het logboek bestand rechtstreeks downloaden met de eigenschap. 
+Navigeer rechtstreeks `https://<app-name>.scm.azurewebsites.net/api/logs/docker` naar om de metagegevens voor de Docker-logboeken te bekijken. Er wordt mogelijk meer dan één logboekbestand weergegeven en met de eigenschap `href` kunt u het logboekbestand rechtstreeks downloaden. 
 
-Als u alle logboeken Samen in één ZIP-bestand wilt downloaden, gaat u naar Access `https://<app-name>.scm.azurewebsites.net/api/logs/docker/zip` .
+Als u alle logboeken samen in één ZIP-bestand wilt downloaden, gaat u naar `https://<app-name>.scm.azurewebsites.net/api/logs/docker/zip` .
 
-## <a name="customize-container-memory"></a>Container geheugen aanpassen
+## <a name="customize-container-memory"></a>Containergeheugen aanpassen
 
-Standaard zijn alle Windows-containers die in Azure App Service zijn geïmplementeerd, beperkt tot 1 GB RAM-geheugen. U kunt deze waarde wijzigen door de `WEBSITE_MEMORY_LIMIT_MB` app-instelling via de [Cloud shell](https://shell.azure.com)op te geven. In bash:
+Standaard zijn alle Windows-containers die zijn geïmplementeerd in Azure App Service beperkt tot 1 GB RAM-geheugen. U kunt deze waarde wijzigen door de `WEBSITE_MEMORY_LIMIT_MB` app-instelling op te geven via [de Cloud Shell](https://shell.azure.com). In Bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITE_MEMORY_LIMIT_MB=2000
@@ -232,11 +232,11 @@ In PowerShell:
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WEBSITE_MEMORY_LIMIT_MB"=2000}
 ```
 
-De waarde wordt gedefinieerd in MB en moet kleiner zijn dan of gelijk zijn aan het totale fysieke geheugen van de host. In een App Service-abonnement met 8 GB RAM-geheugen, mag het cumulatieve totaal van `WEBSITE_MEMORY_LIMIT_MB` voor alle apps bijvoorbeeld 8 GB niet overschrijden. Informatie over hoeveel geheugen beschikbaar is voor elke prijs categorie kunt u vinden in [app service prijzen](https://azure.microsoft.com/pricing/details/app-service/windows/)in de sectie **Premium container (Windows)-abonnement** .
+De waarde is gedefinieerd in MB en moet kleiner en gelijk zijn aan het totale fysieke geheugen van de host. In een abonnement met App Service 8 GB RAM mag het cumulatieve totaal van voor alle apps bijvoorbeeld niet groter `WEBSITE_MEMORY_LIMIT_MB` zijn dan 8 GB. Informatie over hoeveel geheugen beschikbaar is voor elke prijscategorie vindt u [in](https://azure.microsoft.com/pricing/details/app-service/windows/)App Service prijsinformatie in de sectie Premium **Container (Windows)-abonnement.**
 
-## <a name="customize-the-number-of-compute-cores"></a>Het aantal reken kernen aanpassen
+## <a name="customize-the-number-of-compute-cores"></a>Het aantal rekenkernen aanpassen
 
-Standaard wordt een Windows-container uitgevoerd met alle beschik bare kernen voor uw gekozen prijs categorie. U kunt bijvoorbeeld het aantal kernen verminderen dat door uw staging-sleuf wordt gebruikt. Als u het aantal kernen wilt beperken dat door een container wordt gebruikt, stelt `WEBSITE_CPU_CORES_LIMIT` u de app-instelling in op het gewenste aantal kernen. U kunt deze instellen via de [Cloud shell](https://shell.azure.com). In bash:
+Standaard wordt een Windows-container uitgevoerd met alle beschikbare kernen voor de gekozen prijscategorie. U kunt bijvoorbeeld het aantal kernen verminderen dat door uw staging-sleuf wordt gebruikt. Als u het aantal kernen wilt verminderen dat door een container wordt gebruikt, stelt u de `WEBSITE_CPU_CORES_LIMIT` app-instelling in op het gewenste aantal kernen. U kunt deze instellen via de [Cloud Shell](https://shell.azure.com). In Bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --slot staging --settings WEBSITE_CPU_CORES_LIMIT=1
@@ -249,22 +249,22 @@ Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WE
 ```
 
 > [!NOTE]
-> Bij het bijwerken van de app-instelling wordt automatisch opnieuw opstarten geactiveerd, waardoor minimale downtime wordt veroorzaakt. Voor een productie-app kunt u overwegen om deze naar een staging-sleuf te wisselen, de app-instelling in de staging-sleuf te wijzigen en deze vervolgens terug te wisselen naar productie.
+> Het bijwerken van de app-instelling activeert automatisch opnieuw opstarten, wat minimale downtime tot gevolg heeft. Voor een productie-app kunt u overwegen deze om te wisselen naar een staging-slot, de app-instelling in de staging-sleuf te wijzigen en deze vervolgens weer in productie te wisselen.
 
-Controleer het aangepaste nummer door naar de kudu-console ( `https://<app-name>.scm.azurewebsites.net` ) te gaan en de volgende opdrachten te typen met behulp van Power shell. Elke opdracht voert een getal uit.
+Controleer uw aangepaste nummer door naar de Kudu-console ( ) te gaan `https://<app-name>.scm.azurewebsites.net` en de volgende opdrachten te typen met behulp van PowerShell. Met elke opdracht wordt een getal uitgevoerd.
 
 ```PowerShell
 Get-ComputerInfo | ft CsNumberOfLogicalProcessors # Total number of enabled logical processors. Disabled processors are excluded.
 Get-ComputerInfo | ft CsNumberOfProcessors # Number of physical processors.
 ```
 
-De processoren kunnen multicore-of HyperThreading-processors zijn. Informatie over hoeveel kernen beschikbaar zijn voor elke prijs categorie kunt u vinden in [app service prijzen](https://azure.microsoft.com/pricing/details/app-service/windows/)in de sectie **Premium container (Windows)-abonnement** .
+De processors kunnen multicore- of hyperthreading-processors zijn. Informatie over het aantal kernen dat beschikbaar is voor elke prijscategorie vindt u in [App Service](https://azure.microsoft.com/pricing/details/app-service/windows/)prijzen in de sectie **Premium Container (Windows)-abonnement.**
 
-## <a name="customize-health-ping-behavior"></a>Gedrag van de status ping aanpassen
+## <a name="customize-health-ping-behavior"></a>Gedrag van status ping aanpassen
 
-App Service houdt in dat een container met succes wordt gestart wanneer de container wordt gestart en reageert op een HTTP-ping. De ping-aanvraag voor de status bevat de header `User-Agent= "App Service Hyper-V Container Availability Check"` . Als de container wordt gestart, maar niet reageert op een ping na een bepaalde tijd, App Service een gebeurtenis geregistreerd in het docker-logboek, wat aangeeft dat de container niet is gestart. 
+App Service beschouwt een container als een goed gestarte container wanneer de container wordt gestart en reageert op een HTTP-ping. De status ping aanvraag bevat de header `User-Agent= "App Service Hyper-V Container Availability Check"` . Als de container wordt gestart, maar na een bepaalde tijd niet reageert op een ping, registreert App Service een gebeurtenis in het Docker-logboek, waarin wordt gezegd dat de container niet is gestart. 
 
-Als uw toepassing resource intensief is, reageert de container mogelijk niet op de HTTP-ping in de tijd. Als u de acties wilt beheren wanneer HTTP-pings mislukken, stelt u de `CONTAINER_AVAILABILITY_CHECK_MODE` app-instelling in. U kunt deze instellen via de [Cloud shell](https://shell.azure.com). In bash:
+Als uw toepassing resource-intensief is, reageert de container mogelijk niet op tijd op de HTTP-ping. Als u de acties wilt bepalen wanneer HTTP-pings mislukken, stelt u de `CONTAINER_AVAILABILITY_CHECK_MODE` app-instelling in. U kunt deze instellen via de [Cloud Shell](https://shell.azure.com). In Bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings CONTAINER_AVAILABILITY_CHECK_MODE="ReportOnly"
@@ -276,17 +276,17 @@ In PowerShell:
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"CONTAINER_AVAILABILITY_CHECK_MODE"="ReportOnly"}
 ```
 
-De volgende tabel bevat de mogelijke waarden:
+In de volgende tabel ziet u de mogelijke waarden:
 
-| Waarde | Beschreven |
+| Waarde | Beschrijvingen |
 | - | - |
-| **Steller** | De container opnieuw opstarten na drie opeenvolgende beschikbaarheids controles |
-| **ReportOnly** | De standaard waarde. Start de container niet opnieuw op, maar rapport in de docker-logboeken voor de container na drie opeenvolgende beschikbaarheids controles. |
-| **Uit** | Controleer niet op Beschik baarheid. |
+| **Reparatie** | Start de container opnieuw op na drie opeenvolgende beschikbaarheidscontroles |
+| **ReportOnly** | De standaardwaarde. Start de container niet opnieuw op, maar rapporteer na drie opeenvolgende beschikbaarheidscontroles in de Docker-logboeken voor de container. |
+| **Uit** | Controleer niet op beschikbaarheid. |
 
-## <a name="support-for-group-managed-service-accounts"></a>Ondersteuning voor door groepen beheerde service accounts
+## <a name="support-for-group-managed-service-accounts"></a>Ondersteuning voor door groepen beheerde serviceaccounts
 
-Beheerde service accounts voor groepen (Gmsa's) worden momenteel niet ondersteund in Windows-containers in App Service.
+Door groepen beheerde serviceaccounts (gMSA's) worden momenteel niet ondersteund in Windows-containers in App Service.
 
 ::: zone-end
 
@@ -294,12 +294,12 @@ Beheerde service accounts voor groepen (Gmsa's) worden momenteel niet ondersteun
 
 ## <a name="enable-ssh"></a>SSH inschakelen
 
-SSH maakt veilige communicatie tussen een container en een client mogelijk. Als u een aangepaste container SSH wilt ondersteunen, moet u deze toevoegen aan uw docker-installatie kopie zelf.
+SSH maakt veilige communicatie tussen een container en een client mogelijk. Als u wilt dat een aangepaste container SSH ondersteunt, moet u deze toevoegen aan uw Docker-afbeelding zelf.
 
 > [!TIP]
-> Voor alle ingebouwde Linux-containers in App Service zijn de SSH-instructies toegevoegd aan de opslag plaatsen met installatie kopieën. U kunt de volgende instructies door lopen met de [ opslag plaatsNode.js 10,14](https://github.com/Azure-App-Service/node/blob/master/10.14) om te zien hoe deze er wordt ingeschakeld. De configuratie in de Node.js ingebouwde installatie kopie is iets anders, maar hetzelfde in principe.
+> Alle ingebouwde Linux-containers in App Service hebben de SSH-instructies toegevoegd in hun opslagplaatsen voor afbeeldingen. U kunt de volgende instructies volgen met de [Node.js 10.14-opslagplaats](https://github.com/Azure-App-Service/node/blob/master/10.14) om te zien hoe deze daar is ingeschakeld. De configuratie in Node.js ingebouwde installatie afbeelding is iets anders, maar in principe hetzelfde.
 
-- Voeg [een sshd_config-bestand](https://man.openbsd.org/sshd_config) toe aan uw opslag plaats, zoals in het volgende voor beeld.
+- Voeg [een sshd_config toe](https://man.openbsd.org/sshd_config) aan uw opslagplaats, zoals in het volgende voorbeeld.
 
     ```
     Port            2222
@@ -336,9 +336,9 @@ SSH maakt veilige communicatie tussen een container en een client mogelijk. Als 
     EXPOSE 80 2222
     ```
 
-    Deze configuratie staat geen externe verbindingen naar de container toe. Poort 2222 van de container is alleen toegankelijk in het brug netwerk van een particulier virtueel netwerk en is niet toegankelijk voor een aanvaller op internet.
+    Deze configuratie staat geen externe verbindingen naar de container toe. Poort 2222 van de container is alleen toegankelijk binnen het brugnetwerk van een particulier virtueel netwerk en is niet toegankelijk voor een aanvaller op internet.
 
-- Start de SSH-server in het opstart script voor uw container.
+- Start de SSH-server in het opstartscript voor uw container.
 
     ```bash
     /usr/sbin/sshd
@@ -348,23 +348,23 @@ SSH maakt veilige communicatie tussen een container en een client mogelijk. Als 
 
 [!INCLUDE [Access diagnostic logs](../../includes/app-service-web-logs-access-linux-no-h.md)]
 
-## <a name="configure-multi-container-apps"></a>Apps voor meerdere containers configureren
+## <a name="configure-multi-container-apps"></a>Apps met meerdere containers configureren
 
-- [Permanente opslag gebruiken in docker opstellen](#use-persistent-storage-in-docker-compose)
+- [Permanente opslag gebruiken in Docker Compose](#use-persistent-storage-in-docker-compose)
 - [Preview-beperkingen](#preview-limitations)
-- [Opties voor docker opstellen](#docker-compose-options)
+- [Opties voor Docker Compose](#docker-compose-options)
 
-### <a name="use-persistent-storage-in-docker-compose"></a>Permanente opslag gebruiken in docker opstellen
+### <a name="use-persistent-storage-in-docker-compose"></a>Permanente opslag gebruiken in Docker Compose
 
-Multi-container-apps zoals WordPress hebben permanente opslag nodig om goed te kunnen functioneren. Als u deze functie wilt inschakelen, moet de configuratie van de docker-samen stellen naar een opslag locatie *buiten* uw container verwijzen. Opslag locaties in uw container behouden geen wijzigingen na het opnieuw opstarten van de app.
+Apps met meerdere containers, zoals WordPress, hebben permanente opslag nodig om goed te kunnen werken. Als u dit wilt inschakelen, moet de configuratie van Docker Compose naar een opslaglocatie buiten *uw* container wijzen. De opslaglocaties in uw container blijven niet opgeslagen na het opnieuw opstarten van de app.
 
-Schakel permanente opslag in door de `WEBSITES_ENABLE_APP_SERVICE_STORAGE` app-instelling in te stellen met behulp van de opdracht [AZ webapp config appSettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) in [Cloud shell](https://shell.azure.com).
+U kunt permanente opslag inschakelen door de app-instelling in te stellen met behulp van de opdracht `WEBSITES_ENABLE_APP_SERVICE_STORAGE` [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) in [Cloud Shell](https://shell.azure.com).
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=TRUE
 ```
 
-Wijs in uw *docker-Compose. yml* -bestand de `volumes` optie toe aan `${WEBAPP_STORAGE_HOME}` . 
+Wijs *in het bestand docker-compose.yml* de optie toe aan `volumes` `${WEBAPP_STORAGE_HOME}` . 
 
 `WEBAPP_STORAGE_HOME` is een omgevingsvariabele in App Service die is toegewezen aan de permanente opslag voor uw app. Bijvoorbeeld:
 
@@ -379,15 +379,15 @@ wordpress:
 
 ### <a name="preview-limitations"></a>Preview-beperkingen
 
-Meerdere containers zijn momenteel beschikbaar als preview-versie. De volgende App Service platform functies worden niet ondersteund:
+Meerdere containers zijn momenteel beschikbaar als preview-versie. De volgende App Service platformfuncties worden niet ondersteund:
 
 - Verificatie / autorisatie
 - Beheerde identiteiten
 - CORS
 
-### <a name="docker-compose-options"></a>Opties voor docker opstellen
+### <a name="docker-compose-options"></a>Opties voor Docker Compose
 
-In de volgende lijsten worden ondersteunde en niet-ondersteunde docker-configuratie opties weer gegeven:
+In de volgende lijsten worden ondersteunde en niet-ondersteunde configuratieopties voor Docker Compose vermeld:
 
 #### <a name="supported-options"></a>Ondersteunde opties
 
@@ -409,7 +409,7 @@ In de volgende lijsten worden ondersteunde en niet-ondersteunde docker-configura
 - andere poorten dan 80 en 8080 (genegeerd)
 
 > [!NOTE]
-> Alle andere opties die niet expliciet worden aangeroepen, worden genegeerd in de open bare preview-versie.
+> Andere opties die niet expliciet worden genoemd, worden genegeerd in openbare preview.
 
 [!INCLUDE [robots933456](../../includes/app-service-web-configure-robots933456.md)]
 
@@ -418,7 +418,7 @@ In de volgende lijsten worden ondersteunde en niet-ondersteunde docker-configura
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Zelf studie: aangepaste software migreren naar Azure App Service met behulp van een aangepaste container](tutorial-custom-container.md)
+> [Zelfstudie: Aangepaste software migreren naar Azure App Service met behulp van een aangepaste container](tutorial-custom-container.md)
 
 ::: zone pivot="container-linux"
 
@@ -427,6 +427,6 @@ In de volgende lijsten worden ondersteunde en niet-ondersteunde docker-configura
 
 ::: zone-end
 
-Of Zie aanvullende bronnen:
+U kunt ook aanvullende resources bekijken:
 
-[Certificaat in Windows/Linux-containers laden](configure-ssl-certificate-in-code.md#load-certificate-in-linuxwindows-containers)
+[Certificaat laden in Windows-/Linux-containers](configure-ssl-certificate-in-code.md#load-certificate-in-linuxwindows-containers)

@@ -1,36 +1,39 @@
 ---
-title: GitHub acties werk stromen voor statische Web Apps van Azure
-description: Meer informatie over het gebruik van GitHub-opslag plaatsen voor het instellen van continue implementatie naar statische Web Apps van Azure.
+title: GitHub Actions werkstromen voor Azure Static Web Apps
+description: Meer informatie over het gebruik van GitHub-opslagplaatsen om continue implementatie in te stellen voor Azure Static Web Apps.
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 04/09/2021
 ms.author: cshoe
-ms.openlocfilehash: 4f1f432da33bded4fc0f04170673e5943dec5fb0
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: b20a1670c13a272ed48088567a205d854ac99179
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107311325"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791243"
 ---
-# <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub actions-werk stromen voor de preview-versie van Azure static Web Apps
+# <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub Actions werkstromen voor Azure Static Web Apps Preview
 
-Wanneer u een nieuwe statische web-app van Azure maakt, genereert Azure een werk stroom voor GitHub-acties om de continue implementatie van de app te beheren. De werk stroom wordt aangedreven door een YAML-bestand. In dit artikel wordt een overzicht van de structuur en opties van het werk stroom bestand beschreven.
+Wanneer u een nieuwe resource Azure Static Web Apps, genereert Azure een GitHub Actions om de continue implementatie van de app te beheren. De werkstroom wordt aangestuurd door een YAML-bestand. In dit artikel worden de structuur en opties van het werkstroombestand beschreven.
 
-Implementaties worden geïnitieerd door [Triggers](#triggers), waarmee [taken](#jobs) worden uitgevoerd die door afzonderlijke [stappen](#steps)worden gedefinieerd.
+Implementaties worden geïnitieerd door [triggers](#triggers), die [taken uitvoeren](#jobs) die zijn gedefinieerd door afzonderlijke [stappen](#steps).
 
-## <a name="file-location"></a>Bestands locatie
+> [!NOTE]
+> Azure Static Web Apps biedt ook ondersteuning voor Azure DevOps. Zie [Publiceren met Azure DevOps](publish-devops.md) voor informatie over het instellen van een pijplijn.
 
-Wanneer u uw GitHub-opslag plaats koppelt aan een statische Web Apps van Azure, wordt een werk stroom bestand toegevoegd aan de opslag plaats.
+## <a name="file-location"></a>Bestandslocatie
 
-Volg deze stappen om het gegenereerde werk stroom bestand weer te geven.
+Wanneer u uw GitHub-opslagplaats aan Azure Static Web Apps, wordt er een werkstroombestand toegevoegd aan de opslagplaats.
 
-1. Open de opslag plaats van de app op GitHub.
-1. Klik op het tabblad _code_ op de `.github/workflows` map.
-1. Klik op het bestand met een naam die er als volgt uitziet `azure-static-web-apps-<RANDOM_NAME>.yml` .
+Volg deze stappen om het gegenereerde werkstroombestand weer te geven.
 
-Het YAML-bestand in uw opslag plaats is vergelijkbaar met het volgende voor beeld:
+1. Open de opslagplaats van de app op GitHub.
+1. Klik op het tabblad _Code_ op de `.github/workflows` map .
+1. Klik op het bestand met een naam die eruitziet als `azure-static-web-apps-<RANDOM_NAME>.yml` .
+
+Het YAML-bestand in uw opslagplaats is vergelijkbaar met het volgende voorbeeld:
 
 ```yml
 name: Azure Static Web Apps CI/CD
@@ -81,7 +84,7 @@ jobs:
 
 ## <a name="triggers"></a>Triggers
 
-Met een [trigger](https://help.github.com/actions/reference/events-that-trigger-workflows) voor github-acties wordt een melding verzonden naar een github-werk stroom voor het uitvoeren van een taak die is gebaseerd op gebeurtenis triggers. Triggers worden weer gegeven met behulp `on` van de eigenschap in het werk stroom bestand.
+Een [GitHub Actions-trigger](https://help.github.com/actions/reference/events-that-trigger-workflows) waarschuwt een GitHub Actions om een taak uit te voeren op basis van gebeurtenistriggers. Triggers worden weergegeven met behulp van de `on` eigenschap in het werkstroombestand.
 
 ```yml
 on:
@@ -94,35 +97,35 @@ on:
       - main
 ```
 
-Via de instellingen die aan de eigenschap zijn gekoppeld `on` , kunt u definiëren welke vertakkingen een taak activeren en triggers instellen om te worden geactiveerd voor verschillende statussen van pull-aanvragen.
+Via instellingen die aan de eigenschap zijn gekoppeld, kunt u definiëren welke vertakkingen een taak activeren en triggers instellen om te `on` activeren voor verschillende pull-aanvraaginstellingen.
 
-In dit voor beeld wordt een werk stroom gestart, omdat de _hoofd_ vertakking verandert. Wijzigingen die de werk stroom starten, bevatten push door voeren en pull-aanvragen openen voor de gekozen vertakking.
+In dit voorbeeld wordt een werkstroom gestart wanneer de _hoofdvertakking_ verandert. Wijzigingen die de werkstroom starten, omvatten het pushen van commits en het openen van pull-aanvragen voor de gekozen vertakking.
 
 ## <a name="jobs"></a>Taken
 
-Voor elke gebeurtenis trigger moet een gebeurtenis-handler worden uitgevoerd. [Taken](https://help.github.com/actions/reference/workflow-syntax-for-github-actions#jobs) bepalen wat er gebeurt wanneer een gebeurtenis wordt geactiveerd.
+Elke gebeurtenistrigger vereist een gebeurtenis-handler. [Taken](https://help.github.com/actions/reference/workflow-syntax-for-github-actions#jobs) definiëren wat er gebeurt wanneer een gebeurtenis wordt geactiveerd.
 
-Er zijn twee beschik bare taken in het werk stroom bestand statisch Web Apps.
+In het Static Web Apps werkstroombestand zijn er twee beschikbare taken.
 
 | Naam                     | Beschrijving                                                                                                    |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `build_and_deploy_job`   | Wordt uitgevoerd wanneer u een push uitvoert of een pull-aanvraag opent voor de vertakking die in de eigenschap wordt vermeld `on` .          |
-| `close_pull_request_job` | Wordt alleen uitgevoerd wanneer u een pull-aanvraag sluit, waardoor de faserings omgeving die is gemaakt op basis van pull-aanvragen, wordt verwijderd. |
+| `build_and_deploy_job`   | Wordt uitgevoerd wanneer u commits pusht of een pull-aanvraag opent voor de vertakking die wordt vermeld in de `on` eigenschap .          |
+| `close_pull_request_job` | Wordt ALLEEN uitgevoerd wanneer u een pull-aanvraag sluit, waardoor de faseringsomgeving wordt verwijderd die is gemaakt van pull-aanvragen. |
 
 ## <a name="steps"></a>Stappen
 
-Stappen zijn opeenvolgende taken voor een taak. Met een stap worden acties uitgevoerd, zoals het installeren van afhankelijkheden, het uitvoeren van tests en het implementeren van uw toepassing naar productie.
+Stappen zijn sequentiële taken voor een job. Een stap voert acties uit zoals het installeren van afhankelijkheden, het uitvoeren van tests en het implementeren van uw toepassing in productie.
 
-Een werk stroom bestand definieert de volgende stappen.
+Een werkstroombestand definieert de volgende stappen.
 
 | Taak                      | Stappen                                                                                                                              |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `build_and_deploy_job`   | <ol><li>Hiermee wordt de opslag plaats in de omgeving van de actie gecontroleerd.<li>Bouwt en implementeert de opslag plaats naar statische Azure-Web Apps.</ol> |
-| `close_pull_request_job` | <ol><li>Hiermee wordt een statische Web Apps van Azure geïnformeerd dat een pull-aanvraag is gesloten.</ol>                                                        |
+| `build_and_deploy_job`   | <ol><li>Controleert de opslagplaats in de omgeving van de actie.<li>De opslagplaats wordt gebouwd en geïmplementeerd in Azure Static Web Apps.</ol> |
+| `close_pull_request_job` | <ol><li>Waarschuwt Azure Static Web Apps dat een pull-aanvraag is gesloten.</ol>                                                        |
 
 ## <a name="build-and-deploy"></a>Bouwen en implementeren
 
-De stap met de naam `Build and Deploy` bouwt en implementeert op uw statische Azure web apps-exemplaar. Onder de `with` sectie kunt u de volgende waarden voor uw implementatie aanpassen.
+De stap met de `Build and Deploy` naam wordt gebouwd en geïmplementeerd in Azure Static Web Apps-exemplaar. In de `with` sectie kunt u de volgende waarden voor uw implementatie aanpassen.
 
 ```yml
 with:
@@ -138,24 +141,24 @@ with:
 
 [!INCLUDE [static-web-apps-folder-structure](../../includes/static-web-apps-folder-structure.md)]
 
-De `repo_token` `action` waarden, en `azure_static_web_apps_api_token` worden door Azure static web apps voor u ingesteld, niet hand matig worden gewijzigd.
+De waarden , en worden voor `repo_token` u ingesteld door Azure Static Web Apps niet handmatig worden `action` `azure_static_web_apps_api_token` gewijzigd.
 
-## <a name="custom-build-commands"></a>Aangepaste build-opdrachten
+## <a name="custom-build-commands"></a>Aangepaste buildopdrachten
 
-U kunt een nauw keurige controle hebben over de opdrachten die tijdens een implementatie worden uitgevoerd. De volgende opdrachten kunnen worden gedefinieerd in de sectie van een taak `with` .
+U kunt een fijnkeurige controle hebben over welke opdrachten tijdens een implementatie worden uitgevoerd. De volgende opdrachten kunnen worden gedefinieerd onder de sectie van een `with` taak.
 
-De implementatie aanroept altijd `npm install` vóór een aangepaste opdracht.
+De implementatie roept altijd aan `npm install` vóór een aangepaste opdracht.
 
 | Opdracht             | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `app_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de toepassing voor statische inhoud.<br><br>Als u bijvoorbeeld een productie-build voor een hoek toepassing wilt configureren, maakt u een NPM-script `build-prod` met de naam voor uitvoeren `ng build --prod` en voert u `npm run build-prod` als de aangepaste opdracht in. Als dit veld leeg blijft, probeert de werk stroom de of-opdrachten uit te voeren `npm run build` `npm run build:azure` . |
-| `api_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de Azure Functions API-toepassing.                                                                                                                                                                                                                                                                                                  |
+| `app_build_command` | Hiermee definieert u een aangepaste opdracht die moet worden uitgevoerd tijdens de implementatie van de toepassing voor statische inhoud.<br><br>Als u bijvoorbeeld een productie-build voor een Angular-toepassing wilt configureren, maakt u een NPM-script met de naam om uit te voeren en in te voeren `build-prod` `ng build --prod` als de aangepaste `npm run build-prod` opdracht. Als dit leeg is, probeert de werkstroom de `npm run build` opdrachten of uit te `npm run build:azure` voeren. |
+| `api_build_command` | Hiermee definieert u een aangepaste opdracht die moet worden uitgevoerd tijdens de implementatie van Azure Functions API-toepassing.                                                                                                                                                                                                                                                                                                  |
 
-## <a name="skip-app-build"></a>App-build overs Laan
+## <a name="skip-app-build"></a>App-build overslaan
 
-Als u volledige controle nodig hebt over de manier waarop de front-end-toepassing is gebouwd, kunt u aangepaste build-stappen toevoegen in uw werk stroom. Vervolgens kunt u de statische-Web Apps actie configureren om het automatische buildproces over te slaan en alleen de app te implementeren die in een vorige stap is gemaakt.
+Als u volledige controle nodig hebt over hoe uw front-endtoepassing wordt gebouwd, kunt u aangepaste buildstappen toevoegen aan uw werkstroom. Vervolgens kunt u de Static Web Apps configureren om het automatische bouwproces te omzeilen en de app die in een vorige stap is gebouwd, te implementeren.
 
-Als u het maken van de app wilt overs Laan, stelt `skip_app_build` u in op `true` `app_location` de locatie van de map die u wilt implementeren.
+Als u het bouwen van de app wilt overslaan, stelt `skip_app_build` u in op en op de locatie van de map die u wilt `true` `app_location` implementeren.
 
 ```yml
 with:
@@ -172,24 +175,27 @@ with:
 
 | Eigenschap         | Beschrijving                                                 |
 | ---------------- | ----------------------------------------------------------- |
-| `skip_app_build` | Stel de waarde in op om `true` het bouwen van de front-end-app over te slaan. |
+| `skip_app_build` | Stel de waarde in op `true` om het bouwen van de front-end-app over te slaan. |
 
 > [!NOTE]
-> U kunt alleen de build voor de front-end-app overs Laan. Als uw app een API heeft, wordt deze nog steeds gemaakt door de statische Web Apps GitHub-actie.
+> U kunt de build voor de front-end-app alleen overslaan. Als uw app een API heeft, wordt deze nog steeds gebouwd door de Static Web Apps GitHub Action.
 
 ## <a name="route-file-location"></a>Locatie van routebestand
 
-U kunt de werk stroom aanpassen om te zoeken naar de [staticwebapp.config.js](routes.md) in een wille keurige map in uw opslag plaats. De volgende eigenschap kan worden gedefinieerd in de sectie van een taak `with` .
+U kunt de werkstroom aanpassen om te zoeken [ naar deroutes.jsin](routes.md) elke map in uw opslagplaats. De volgende eigenschap kan worden gedefinieerd in de sectie van een `with` taak.
 
 | Eigenschap          | Beschrijving                                                                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `routes_location` | Hiermee definieert u de maplocatie waar de _staticwebapp.config.jsin_ het bestand wordt gevonden. Deze locatie is relatief ten opzichte van de hoofdmap van de opslag plaats. |
+| `routes_location` | Hiermee definieert u de _maplocatie waarroutes.jsbestand_ is gevonden. Deze locatie is relatief ten opzichte van de hoofdmap van de opslagplaats. |
 
-Het is met name belang rijk dat u de locatie van uw _staticwebapp.config.jsop_ het bestand kunt vinden. Dit is vooral handig als uw front-end Framework-build-stap dit bestand niet standaard verplaatst naar de `output_location` .
+Expliciet zijn over de locatie van uw _routes.jsbestand_ is met name belangrijk als dit bestand niet standaard wordt verplaatst in de buildstap van uw front-end-framework. `output_location`
+
+> [!IMPORTANT]
+> Functionaliteit die is gedefinieerd in _routes.jsbestand_ is nu afgeschaft. Zie het Azure Static Web Apps [voor meer](./configuration.md) informatie overstaticwebapp.config.js _op_.
 
 ## <a name="environment-variables"></a>Omgevingsvariabelen
 
-U kunt omgevings variabelen instellen voor uw build via de `env` sectie van de configuratie van een taak.
+U kunt omgevingsvariabelen voor uw build instellen via de `env` sectie van de configuratie van een taak.
 
 ```yaml
 jobs:
@@ -217,9 +223,9 @@ jobs:
           HUGO_VERSION: 0.58.0
 ```
 
-## <a name="monorepo-support"></a>Monorepo-ondersteuning
+## <a name="monorepo-support"></a>Ondersteuning voor Monorepo
 
-Een monorepo is een opslag plaats met code voor meer dan één toepassing. Standaard worden in een statisch Web Apps werk stroom bestand alle bestanden in een opslag plaats bijgehouden, maar u kunt dit aanpassen om een enkele app te richten. Daarom heeft elke statische app voor monorepos een eigen configuratie bestand dat naast elkaar wordt weer in de map _. github/werk stromen_ van de opslag plaats.
+Een monorepo is een opslagplaats die code bevat voor meer dan één toepassing. Een werkstroombestand Static Web Apps standaard alle bestanden in een opslagplaats bij, maar u kunt dit aanpassen om één app als doel te gebruiken. Daarom heeft elke statische app voor monorepos een eigen configuratiebestand dat naast elkaar in de _map .github/workflows_ van de opslagplaats staat.
 
 ```files
 ├── .github
@@ -236,9 +242,9 @@ Een monorepo is een opslag plaats met code voor meer dan één toepassing. Stand
 └── README.md
 ```
 
-Als u een werk stroom bestand wilt richten op één app, geeft u de paden op in de `push` `pull_request` secties en.
+Als u een werkstroombestand wilt richten op één app, geeft u paden op in de `push` `pull_request` secties en .
 
-In het volgende voor beeld ziet u hoe u een `paths` knoop punt toevoegt aan de- `push` en- `pull_request` secties van een bestand met de naam _Azure-static-web-apps-Purple-pond. yml_.
+In het volgende voorbeeld wordt gedemonstreerd hoe u een knooppunt toevoegt aan de secties en van een bestand met de naam `paths` `push` `pull_request` _azure-static-web-apps-purple-pond.yml._
 
 ```yml
 on:
@@ -259,11 +265,11 @@ on:
       - .github/workflows/azure-static-web-apps-purple-pond.yml
 ```
 
-In dit geval activeren alleen de volgende bestanden een nieuwe build:
+In dit geval activeren alleen wijzigingen in de volgende bestanden een nieuwe build:
 
-- Alle bestanden in de map _app1_
-- Alle bestanden in de map _api1_
-- Wijzigingen in het werk stroom bestand _Azure-static-web-apps-Purple-pond. yml_ van de app
+- Alle bestanden in de _map app1_
+- Alle bestanden in de _map api1_
+- Wijzigingen in het werkstroombestand _azure-static-web-apps-purple-pond.yml van_ de app
 
 ## <a name="next-steps"></a>Volgende stappen
 

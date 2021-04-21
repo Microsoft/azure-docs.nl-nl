@@ -1,5 +1,5 @@
 ---
-title: Prijzen voor bewerking analyseren
+title: Prijzen van analysebewerkingen
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: aahill
@@ -7,14 +7,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 01/20/2021
+ms.date: 04/19/2021
 ms.author: aahi
-ms.openlocfilehash: ce0c6292f4d4517ba68b2d52ed6e2261f42ce19a
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.custom: references_regions
+ms.openlocfilehash: 9b5c30651f6ed3a4b6fc04ef369368ae63bc492f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090706"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765089"
 ---
 > [!CAUTION]
-> Als u de analyse bewerking wilt gebruiken, moet u ervoor zorgen dat uw Azure-resource gebruikmaakt van de standaard prijs categorie S.
+> * Als u de analysebewerking wilt gebruiken, moet u ervoor zorgen dat uw Azure-resource gebruik maakt van de prijscategorie S Standard.
+> * De analysebewerking is alleen beschikbaar in de volgende regio's: VS - west 2, VS - oost 2, VS - centraal, Europa - noord en Europa - west.

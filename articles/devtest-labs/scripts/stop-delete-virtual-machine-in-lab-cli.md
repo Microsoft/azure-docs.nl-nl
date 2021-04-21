@@ -4,12 +4,12 @@ description: Dit artikel bevat een Azure CLI-script waarmee u een virtuele machi
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/11/2020
-ms.openlocfilehash: 3f3802837685281339f0ca355c677e1a0ceac067
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: e30ee47c4f34fe6a71e8c934a4f36cb7edbbe20e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102198197"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107777310"
 ---
 # <a name="use-azure-cli-to-stop-and-delete-a-virtual-machine-in-a-lab-in-azure-devtest-labs"></a>Azure CLI gebruiken om een virtuele machine in een lab te stoppen en te verwijderen in Azure DevTest Labs
 
@@ -29,8 +29,8 @@ In dit script worden de volgende opdrachten gebruikt:
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az lab vm stop](/cli/azure/lab/vm#az-lab-vm-stop) | Hiermee wordt een virtuele machine (VM) in een lab gestopt. Deze bewerking kan enige tijd duren. |
-| [az lab vm delete](/cli/azure/lab/vm#az-lab-vm-delete) | Hiermee wordt een virtuele machine (VM) in een lab verwijderd. Deze bewerking kan enige tijd duren. |
+| [az lab vm stop](/cli/azure/lab/vm#az_lab_vm_stop) | Hiermee wordt een virtuele machine (VM) in een lab gestopt. Deze bewerking kan enige tijd duren. |
+| [az lab vm delete](/cli/azure/lab/vm#az_lab_vm_delete) | Hiermee wordt een virtuele machine (VM) in een lab verwijderd. Deze bewerking kan enige tijd duren. |
 
 
 ## <a name="next-steps"></a>Volgende stappen

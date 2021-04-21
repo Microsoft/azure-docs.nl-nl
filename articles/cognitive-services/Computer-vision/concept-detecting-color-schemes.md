@@ -1,7 +1,7 @@
 ---
-title: Detectie van kleuren schema-Computer Vision
+title: Detectie van kleurenschema's - Computer Vision
 titleSuffix: Azure Cognitive Services
-description: Concepten met betrekking tot het detecteren van het kleuren schema in afbeeldingen met behulp van de Computer Vision-API.
+description: Concepten met betrekking tot het detecteren van het kleurenschema in afbeeldingen met behulp van Computer Vision API.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,26 +11,26 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 4e7774d2cd100931f92ff80066ebea4463c6f65c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2b113c424851065e244c3943bf4a4816bae9bba8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "96532649"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778909"
 ---
-# <a name="detect-color-schemes-in-images"></a>Kleuren schema's in afbeeldingen detecteren
+# <a name="detect-color-schemes-in-images"></a>Kleurenschema's in afbeeldingen detecteren
 
-Computer Vision analyseert de kleuren in een afbeelding om drie verschillende kenmerken te bieden: de dominante voorgrond kleur, de dominante achtergrond kleur en de set dominante kleuren voor de afbeelding als geheel. De geretourneerde kleuren behoren tot de set: zwart, blauw, bruin, grijs, groen, oranje, roze, paars, rood, groen blauw, wit en geel. 
+Computer Vision analyseert de kleuren in een afbeelding om drie verschillende kenmerken te bieden: de dominante voorgrondkleur, de dominante achtergrondkleur en de set dominante kleuren voor de afbeelding als geheel. Geretourneerde kleuren horen bij de set: zwart, blauw, grijs, groen, oranje, roze, paars, rood, teal, wit en geel. 
 
-Computer Vision haalt ook een accent kleur op die de meest heldere kleur in de afbeelding vertegenwoordigt, op basis van een combi natie van dominante kleuren en verzadiging. De accent kleur wordt geretourneerd als een hexadecimale HTML-kleur code. 
+Computer Vision extraheert ook een accentkleur, die de meest opvallende kleur in de afbeelding vertegenwoordigt, op basis van een combinatie van dominante kleuren en verzadiging. De accentkleur wordt geretourneerd als een hexadecimale HTML-kleurcode. 
 
-Computer Vision retourneert ook een Booleaanse waarde die aangeeft of een afbeelding in zwart-wit is.
+Computer Vision retourneert ook een Booleaanse waarde die aangeeft of een afbeelding zwart-wit is.
 
-## <a name="color-scheme-detection-examples"></a>Voor beelden van kleuren schema's detectie
+## <a name="color-scheme-detection-examples"></a>Voorbeelden van detectie van kleurenschema's
 
-In het volgende voor beeld ziet u de JSON-reactie die wordt geretourneerd door Computer Vision bij het detecteren van het kleuren schema van de voorbeeld afbeelding. In dit geval is de afbeelding niet zwart en wit, maar de dominante voor-en achtergrond kleuren zijn zwart en de dominante kleuren voor de afbeelding als geheel zijn zwart en wit.
+Het volgende voorbeeld illustreert het JSON-antwoord dat door de Computer Vision bij het detecteren van het kleurenschema van de voorbeeldafbeelding. In dit geval is de voorbeeldafbeelding geen zwart-witafbeelding, maar zijn de dominante voor- en achtergrondkleuren zwart en zijn de dominante kleuren voor de afbeelding als geheel zwart-wit.
 
-![Buiten bergen in Zons ondergang met de silhouet van een persoon](./Images/mountain_vista.png)
+![Buitenser mountain bij vervalsen, met de mand van een persoon](./Images/mountain_vista.png)
 
 ```json
 {
@@ -50,36 +50,36 @@ In het volgende voor beeld ziet u de JSON-reactie die wordt geretourneerd door C
 }
 ```
 
-### <a name="dominant-color-examples"></a>Voor beelden van dominante kleuren
+### <a name="dominant-color-examples"></a>Voorbeelden van dominante kleuren
 
-In de volgende tabel ziet u de resulterende voor-, achtergrond-en afbeeldings kleuren voor elke voorbeeld afbeelding.
+In de volgende tabel ziet u de geretourneerde voorgrond-, achtergrond- en afbeeldingskleuren voor elke voorbeeldafbeelding.
 
 | Installatiekopie | Dominante kleuren |
 |-------|-----------------|
-|![Een witte bloem met een groene achtergrond](./Images/flower.png)| Voor grond: zwart<br/>Achtergrond: wit<br/>Kleuren: zwart, wit, groen|
-![Een trein die via een station wordt uitgevoerd](./Images/train_station.png) | Voor grond: zwart<br/>Achtergrond: zwart<br/>Kleuren: zwart |
+|![Een witte bloem met een groene achtergrond](./Images/flower.png)| Voorgrond: Zwart<br/>Achtergrond: Wit<br/>Kleuren: Zwart, Wit, Groen|
+![Een train die door een station loopt](./Images/train_station.png) | Voorgrond: Zwart<br/>Achtergrond: Zwart<br/>Kleuren: Zwart |
 
-### <a name="accent-color-examples"></a>Accent kleur-voor beelden
+### <a name="accent-color-examples"></a>Voorbeelden van accentkleur
 
- In de volgende tabel wordt de geretourneerde accent kleur weer gegeven als een hexadecimale HTML-kleur waarde voor elke voorbeeld afbeelding.
+ In de volgende tabel ziet u de geretourneerde accentkleur, als een hexadecimale HTML-kleurwaarde, voor elke voorbeeldafbeelding.
 
 | Installatiekopie | Accentkleur |
 |-------|--------------|
-|![Een persoon in een Zons ondergang van een Mountain Rock](./Images/mountain_vista.png) | #BB6D10 |
+|![Een persoon die op een bergsteen staat bij een vervalsen](./Images/mountain_vista.png) | #BB6D10 |
 |![Een witte bloem met een groene achtergrond](./Images/flower.png) | #C6A205 |
-|![Een trein die via een station wordt uitgevoerd](./Images/train_station.png) | #474A84 |
+|![Een train die wordt uitgevoerd via een station](./Images/train_station.png) | #474A84 |
 
-### <a name="black--white-detection-examples"></a>Voor beelden van zwarte & wit-detectie
+### <a name="black--white-detection-examples"></a>Voorbeelden van & van zwart-witdetectie
 
-In de volgende tabel ziet u de zwarte en witte evaluatie van Computer Vision in de voorbeeld afbeeldingen.
+In de volgende tabel Computer Vision de zwart-wit-evaluatie in de voorbeeldafbeeldingen.
 
 | Installatiekopie | Zwart & wit? |
 |-------|----------------|
-|![Een zwarte en witte afbeelding van gebouwen in Manhattan](./Images/bw_buildings.png) | true |
-|![Een blauw huis en de voor tuin](./Images/house_yard.png) | onjuist |
+|![Een zwart-witfoto van gebouwen in](./Images/bw_buildings.png) | true |
+|![Een blauw huis en de voorste erf](./Images/house_yard.png) | onjuist |
 
 ## <a name="use-the-api"></a>De API gebruiken
 
-De functie voor het detecteren van het kleuren schema maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Color` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"color"` sectie.
+De functie voor detectie van kleurenschema's maakt deel uit [van Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) API. U kunt deze API aanroepen via een native SDK of via REST-aanroepen. Neem `Color` op in de **queryparameter visualFeatures.** Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de tekenreeks voor de inhoud van de `"color"` sectie.
 
 * [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

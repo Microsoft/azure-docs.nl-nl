@@ -6,13 +6,13 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 10/30/2020
-ms.openlocfilehash: d90b9e38158d951990fffc21a43317c688da12c9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/24/2021
+ms.openlocfilehash: d05566c0734f95e14335c6165de0b2104fa19bc6
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99052039"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107764851"
 ---
 # <a name="quickstart-create-your-first-logic-apps-workflow---azure-portal"></a>Quickstart: Uw eerste werkstroom voor Logic Apps bouwen - Azure Portal
 
@@ -37,7 +37,7 @@ Als u wilt weten hoe u uw eerste logische app kunt maken en beheren via andere i
     > [!IMPORTANT]
     > Als u de [Gmail-connector](/connectors/gmail/) gebruikt, kunnen alleen accounts van G Suite deze connector zonder beperking in Logic Apps gebruiken. Als u een Gmail-consumentenaccount hebt, kunt u deze connector alleen gebruiken met specifieke, door Google goedgekeurde services, tenzij u [een Google-client-app maakt voor verificatie bij uw Gmail-connector](/connectors/gmail/#authentication-and-bring-your-own-application). Zie [Beleid voor gegevensbeveiliging en privacybeleid voor Google-connectors in Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md) voor meer informatie.
 
-* Als uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor *zowel* de [inkomende](logic-apps-limits-and-config.md#inbound) als [uitgaande](logic-apps-limits-and-config.md#outbound) IP-adressen die worden gebruikt door de Logic apps service of runtime in de Azure-regio waar uw logische app bestaat. Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](logic-apps-limits-and-config.md#outbound) in de Azure-regio van de logische app.
+* Als uw logische app moet communiceren via een firewall die verkeer beperkt tot  specifieke IP-adressen, moet die firewall toegang toestaan voor zowel de [binnenkomende](logic-apps-limits-and-config.md#inbound) als uitgaande [IP-adressen](logic-apps-limits-and-config.md#outbound) die worden gebruikt door de Logic Apps-service of runtime in de Azure-regio waar uw logische app zich bevindt. Als uw logische app ook beheerde [connectors](../connectors/managed.md)gebruikt, zoals de Office 365 Outlook-connector of SQL-connector, of aangepaste [connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor alle uitgaande  [IP-adressen](logic-apps-limits-and-config.md#outbound) van de beheerde connector in de Azure-regio van uw logische app.
 
 <a name="create-logic-app"></a>
 

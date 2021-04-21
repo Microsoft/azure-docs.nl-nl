@@ -6,15 +6,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 03/11/2021
+ms.date: 04/19/2021
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: d36efaf64edd51fd1c2b46b959af1a994f6ec956
-ms.sourcegitcommit: f0a3ee8ff77ee89f83b69bc30cb87caa80f1e724
+ms.openlocfilehash: 1fd102f0f94f1ce53bebfba94d4f4c1a1f9e3812
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105582562"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765090"
 ---
 <a name="HOLTop"></a>
 
@@ -216,7 +216,7 @@ Document sentiment: Positive
 
 ### <a name="opinion-mining"></a>Meninganalyse
 
-Maak een nieuwe functie met `SentimentAnalysisWithOpinionMiningExample()` de naam die de client gaat gebruiken die u eerder hebt gemaakt en roep de `AnalyzeSentimentBatch()` functie aan met `IncludeOpinionMining` de optie in de `AnalyzeSentimentOptions` Bag. Het geretourneerde `AnalyzeSentimentResultCollection`-object bevat de verzameling `AnalyzeSentimentResult` waarin `Response<DocumentSentiment>` voorkomt. Het verschil tussen `SentimentAnalysis()` en `SentimentAnalysisWithOpinionMiningExample()` is dat de laatste `SentenceOpinion` in elke zin wordt opgenomen, waarin een geanalyseerd doel en de gerelateerde beoordeling (en) worden weer gegeven. Als er een fout optreedt, wordt er een `RequestFailedException` gegenereerd.
+Maak een nieuwe functie met de naam die de client gebruikt die u eerder hebt gemaakt en roep de functie aan `SentimentAnalysisWithOpinionMiningExample()` met de optie in de `AnalyzeSentimentBatch()` `IncludeOpinionMining` `AnalyzeSentimentOptions` zak. Het geretourneerde `AnalyzeSentimentResultCollection`-object bevat de verzameling `AnalyzeSentimentResult` waarin `Response<DocumentSentiment>` voorkomt. Het verschil tussen en is dat de laatste in elke zin bevat, waarin een geanalyseerd doel en `SentimentAnalysis()` `SentimentAnalysisWithOpinionMiningExample()` de gerelateerde `SentenceOpinion` evaluatie(s) worden weer te zien. Als er een fout optreedt, wordt er een `RequestFailedException` gegenereerd.
 
 ```csharp
 static void SentimentAnalysisWithOpinionMiningExample(TextAnalyticsClient client)
@@ -717,13 +717,13 @@ Key phrases:
 
 ---
 
-## <a name="use-the-api-asynchronously-with-the-analyze-operation"></a>De API asynchroon gebruiken met de analyse bewerking
+## <a name="use-the-api-asynchronously-with-the-analyze-operation"></a>De API asynchroon gebruiken met de analysebewerking
 
 # <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
 
 [!INCLUDE [Analyze operation pricing](../analyze-operation-pricing-caution.md)]
 
-Maak een nieuwe functie met de naam `AnalyzeOperationExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de bijbehorende functie `StartAnalyzeBatchActionsAsync()` aan. Het geretourneerde `AnalyzeBatchActionsOperation` object bevat het `Operation` Interface-object. Aangezien het een langdurige bewerking is, moet `await` op `operation.WaitForCompletionAsync()` voor de waarde worden bijgewerkt. Zodra `WaitForCompletionAsync()` is voltooid, moet de verzameling worden bijgewerkt in `operation.Value`. Als er een fout optreedt, wordt er een `RequestFailedException` gegenereerd.
+Maak een nieuwe functie met de naam `AnalyzeOperationExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de bijbehorende functie `StartAnalyzeBatchActionsAsync()` aan. Het `AnalyzeBatchActionsOperation` geretourneerde object bevat het `Operation` interfaceobject. Aangezien het een langdurige bewerking is, moet `await` op `operation.WaitForCompletionAsync()` voor de waarde worden bijgewerkt. Zodra `WaitForCompletionAsync()` is voltooid, moet de verzameling worden bijgewerkt in `operation.Value`. Als er een fout optreedt, wordt er een `RequestFailedException` gegenereerd.
 
 
 ```csharp

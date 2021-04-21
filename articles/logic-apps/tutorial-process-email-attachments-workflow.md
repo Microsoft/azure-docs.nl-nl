@@ -6,13 +6,13 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
-ms.date: 02/27/2020
-ms.openlocfilehash: bd1715dc0a3767bc5826154616bbdc97c7b61dd3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/24/2021
+ms.openlocfilehash: 7809ba52b270f07da9e04bc18c7c12e2268f1b73
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99576360"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792233"
 ---
 # <a name="tutorial-automate-tasks-to-process-emails-by-using-azure-logic-apps-azure-functions-and-azure-storage"></a>Zelfstudie: Automatiseer taken om e-mails te verwerken met behulp van Azure Logic Apps, Azure Functions en Azure Storage
 
@@ -47,7 +47,7 @@ Wanneer u bent klaar, ziet uw logische app eruit als deze werkstroom op hoog niv
 
 * Download en installeer de [gratis Microsoft Azure Storage Explorer](https://storageexplorer.com/). Dit hulpprogramma help u om te controleren of uw opslagcontainer correct is ingesteld.
 
-* Als uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor *zowel* de [inkomende](logic-apps-limits-and-config.md#inbound) als [uitgaande](logic-apps-limits-and-config.md#outbound) IP-adressen die worden gebruikt door de Logic apps service of runtime in de Azure-regio waar uw logische app bestaat. Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](logic-apps-limits-and-config.md#outbound) in de Azure-regio van de logische app.
+* Als uw logische app moet communiceren via een firewall die verkeer beperkt tot  specifieke IP-adressen, moet die firewall toegang toestaan voor zowel de [binnenkomende](logic-apps-limits-and-config.md#inbound) als uitgaande [IP-adressen](logic-apps-limits-and-config.md#outbound) die worden gebruikt door de Logic Apps-service of runtime in de Azure-regio waar uw logische app zich bevindt. Als uw logische app ook beheerde [connectors](../connectors/managed.md)gebruikt, zoals de Office 365 Outlook-connector of SQL-connector, of aangepaste [connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor alle uitgaande  [IP-adressen](logic-apps-limits-and-config.md#outbound) van de beheerde connector in de Azure-regio van uw logische app.
 
 ## <a name="set-up-storage-to-save-attachments"></a>De opslag instellen om bijlagen te bewaren
 
@@ -104,7 +104,7 @@ U kunt binnenkomende e-mails en bijlagen als blobs opslaan in een [Azure-opslagc
 
       ![Voltooide opslagcontainer](./media/tutorial-process-email-attachments-workflow/created-storage-container.png)
 
-   U kunt ook [Azure PowerShell](/powershell/module/az.storage/new-azstoragecontainer) of [Azure CLI](/cli/azure/storage/container#az-storage-container-create) gebruiken om een opslagcontainer te maken.
+   U kunt ook [Azure PowerShell](/powershell/module/az.storage/new-azstoragecontainer) of [Azure CLI](/cli/azure/storage/container#az_storage_container_create) gebruiken om een opslagcontainer te maken.
 
 Koppel vervolgens Storage Explorer aan uw opslagaccount.
 

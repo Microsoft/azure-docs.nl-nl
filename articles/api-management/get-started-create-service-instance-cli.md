@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: een Azure API Management-exemplaar maken met CLI'
+title: 'Quickstart: Een Azure API Management maken met cli'
 description: Een nieuw API Management-service-exemplaar maken met behulp van Azure CLI.
 author: dlepow
 ms.service: api-management
@@ -7,14 +7,14 @@ ms.topic: quickstart
 ms.custom: ''
 ms.date: 09/10/2020
 ms.author: apimpm
-ms.openlocfilehash: 72d1faac02a21f23d46eb992af1d501bca89e71f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 19fc2e1629e7f67063e3cc3eec8cb3707b6dd2e4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101688073"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107775849"
 ---
-# <a name="quickstart-create-a-new-azure-api-management-service-instance-by-using-the-azure-cli"></a>Snelstartgids: een nieuw exemplaar van Azure API Management service maken met behulp van de Azure CLI
+# <a name="quickstart-create-a-new-azure-api-management-service-instance-by-using-the-azure-cli"></a>Quickstart: Een nieuw Azure API Management-service-exemplaar maken met behulp van de Azure CLI
 
 APIM (API Management) helpt organisaties bij het publiceren van API's naar externe en interne ontwikkelaars, en naar partnerontwikkelaars om alle mogelijkheden van hun gegevens en services te ontsluiten. API Management beschikt over de competenties die belangrijk zijn voor een geslaagd API-programma via ontwikkelaarsbetrokkenheid, zakelijke inzichten, analytische gegevens, beveiliging en bescherming. Met APIM kunt u moderne API-gateways maken en beheren voor bestaande back-endservices die op elke willekeurige locatie worden gehost. Zie het [overzicht](api-management-key-concepts.md) voor meer informatie.
 
@@ -30,7 +30,7 @@ In deze quickstart worden de stappen beschreven voor het maken van een nieuw API
 
 Azure API Management-exemplaren moeten, zoals alle Azure-resources, worden geïmplementeerd in een resourcegroep. Met resourcegroepen kunt u gerelateerde Azure-resources organiseren en beheren.
 
-Maak eerst een resourcegroep met de naam *myResourceGroup* in de locatie VS - centraal met behulp van de opdracht [az group create](/cli/azure/group#az-group-create):
+Maak eerst een resourcegroep met de naam *myResourceGroup* in de locatie VS - centraal met behulp van de opdracht [az group create](/cli/azure/group#az_group_create):
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location centralus
@@ -38,7 +38,7 @@ az group create --name myResourceGroup --location centralus
 
 ## <a name="create-a-new-service"></a>Een nieuwe service maken
 
-Met deze resourcegroep kunt u een API Management-service-exemplaar maken. Maak er een met behulp van de opdracht [az apim create](/cli/azure/apim#az-apim-create) en geef een servicenaam en de details van de uitgever op. De servicenaam moet uniek zijn binnen Azure. 
+Met deze resourcegroep kunt u een API Management-service-exemplaar maken. Maak er een met behulp van de opdracht [az apim create](/cli/azure/apim#az_apim_create) en geef een servicenaam en de details van de uitgever op. De servicenaam moet uniek zijn binnen Azure. 
 
 In het volgende voorbeeld wordt *myapim* gebruikt voor de servicenaam. Werk de naam bij naar een unieke waarde. Werk ook de naam van de organisatie van de uitgever van de API en het e-mailadres bij om meldingen te ontvangen. 
 
@@ -53,7 +53,7 @@ De opdracht maakt standaard het exemplaar in de ontwikkelaarslaag, een voordelig
 > [!TIP]
 > Het kan tussen de dertig en veertig minuten duren om een API Management-service in deze laag te maken en activeren. De vorige opdracht gebruikt de optie `--no-wait` zodat de opdracht onmiddellijk retourneert terwijl de service wordt gemaakt.
 
-Controleer de status van de implementatie door de opdracht [az apim show](/cli/azure/apim#az-apim-show) uit te voeren:
+Controleer de status van de implementatie door de opdracht [az apim show](/cli/azure/apim#az_apim_show) uit te voeren:
 
 ```azurecli-interactive
 az apim show --name myapim --resource-group myResourceGroup --output table
@@ -79,7 +79,7 @@ Als het API Management-service-exemplaar online is, kunt u het gebruiken. Begin 
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken om de resourcegroep en de API Management-service-exemplaar te verwijderen, wanneer u ze niet meer nodig hebt.
+U kunt de opdracht [az group delete](/cli/azure/group#az_group_delete) gebruiken om de resourcegroep en de API Management-service-exemplaar te verwijderen, wanneer u ze niet meer nodig hebt.
 
 ```azurecli-interactive
 az group delete --name myResourceGroup

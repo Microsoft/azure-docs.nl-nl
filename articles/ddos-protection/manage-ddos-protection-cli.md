@@ -1,5 +1,5 @@
 ---
-title: Een Azure DDoS Protection-abonnement maken en configureren met behulp van Azure CLI
+title: Een abonnement voor een Azure DDoS Protection maken en configureren met behulp van Azure CLI
 description: Meer informatie over het maken van een DDoS Protection-abonnement met behulp van Azure CLI
 services: ddos-protection
 documentationcenter: na
@@ -11,20 +11,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 98c71f3cf1c521c08d177acb89aad85301e61579
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.openlocfilehash: 8a8da50dc703d59dc16b5cb6253d39aeb33fd76d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107103008"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107777631"
 ---
-# <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-cli"></a>Snelstartgids: Azure DDoS Protection Standard maken en configureren met behulp van Azure CLI
+# <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-cli"></a>Quickstart: Een Standard-Azure DDoS Protection maken en configureren met behulp van Azure CLI
 
-Ga aan de slag met Azure DDoS Protection Standard met behulp van Azure CLI. 
+Aan de slag met Azure DDoS Protection Standard met behulp van Azure CLI. 
 
-In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt voor uw organisatie één DDoS-beschermingsplan configureren en virtuele netwerken vanuit meerdere abonnementen aan hetzelfde plan koppelen. 
+Een DDoS-beveiligingsplan definieert een set virtuele netwerken met DDoS-beveiligingsstandaard ingeschakeld voor alle abonnementen. U kunt voor uw organisatie één DDoS-beschermingsplan configureren en virtuele netwerken vanuit meerdere abonnementen aan hetzelfde plan koppelen. 
 
-In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een virtueel netwerk. 
+In deze quickstart maakt u een DDoS-beveiligingsplan en koppelt u dit aan een virtueel netwerk. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -35,11 +35,11 @@ In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een 
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor deze quickstart versie 2.0.28 of hoger van Azure CLI uitvoeren. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-ddos-protection-plan"></a>Een DDoS Protection Plan maken
+## <a name="create-a-ddos-protection-plan"></a>Een DDoS Protection maken
 
 In Azure kunt u verwante resources toewijzen aan een resourcegroep. U kunt een bestaande resourcegroep gebruiken of een nieuwe maken.
 
-Gebruik [AZ Group Create](/cli/azure/group#az-group-create)om een resource groep te maken. In dit voor beeld noemen we de _MyResourceGroup_ van de resource groep en gebruiken we de locatie _VS-Oost_ :
+Gebruik az group create om een [resourcegroep te maken.](/cli/azure/group#az_group_create) In dit voorbeeld geven we de resourcegroep de _naam MyResourceGroup_ en gebruiken we de locatie _VS -_ oost:
 
 ```azurecli-interactive
 az group create \
@@ -47,7 +47,7 @@ az group create \
     --location eastus
 ```
 
-Maak nu een DDoS-beveiligings plan met de naam _MyDdosProtectionPlan_:
+Maak nu een DDoS-beveiligingsplan met de _naam MyDdosProtectionPlan:_
 
 ```azurecli-interactive
 az network ddos-protection create \
@@ -59,7 +59,7 @@ az network ddos-protection create \
 
 ### <a name="enable-ddos-protection-for-a-new-virtual-network"></a>DDoS-beveiliging inschakelen voor een nieuw virtueel netwerk
 
-U kunt DDoS-beveiliging inschakelen bij het maken van een virtueel netwerk. In dit voor beeld noemen we onze virtuele netwerk _MyVnet_: 
+U kunt DDoS-beveiliging inschakelen bij het maken van een virtueel netwerk. In dit voorbeeld geven we ons virtuele netwerk de _naam MyVnet:_ 
 
 ```azurecli-interactive
 az network vnet create \
@@ -70,11 +70,11 @@ az network vnet create \
     --ddos-protection-plan MyDdosProtectionPlan
 ```
 
-U kunt een virtueel netwerk niet verplaatsen naar een andere resource groep of een ander abonnement wanneer DDoS standaard is ingeschakeld voor het virtuele netwerk. Als u een virtueel netwerk wilt verplaatsen waarbij DDoS Standard is ingeschakeld, moet u eerst DDoS-standaard uitschakelen, het virtuele netwerk verplaatsen en vervolgens DDoS Standard inschakelen. Na de verplaatsing worden de automatisch afgestemde beleids drempels voor alle beveiligde open bare IP-adressen in het virtuele netwerk opnieuw ingesteld.
+U kunt een virtueel netwerk niet verplaatsen naar een andere resourcegroep of een ander abonnement wanneer DDoS Standard is ingeschakeld voor het virtuele netwerk. Als u een virtueel netwerk wilt verplaatsen met DDoS Standard ingeschakeld, schakelt u eerst DDoS Standard uit, verplaatst u het virtuele netwerk en schakelt u vervolgens DDoS Standard in. Na de overstap worden de drempelwaarden voor automatisch afgestemde beleid voor alle beveiligde openbare IP-adressen in het virtuele netwerk opnieuw ingesteld.
 
 ### <a name="enable-ddos-protection-for-an-existing-virtual-network"></a>DDoS-beveiliging inschakelen voor een bestaand virtueel netwerk
 
-Wanneer u [een DDoS-beschermings plan maakt](#create-a-ddos-protection-plan), kunt u een of meer virtuele netwerken koppelen aan het plan. Als u meer dan één virtueel netwerk wilt toevoegen, kunt u gewoon de namen of Id's van een door spaties gescheiden lijst weer geven. In dit voor beeld voegen we _MyVnet_ toe:
+Wanneer [u een DDoS-beveiligingsplan maakt,](#create-a-ddos-protection-plan)kunt u een of meer virtuele netwerken aan het plan koppelen. Als u meer dan één virtueel netwerk wilt toevoegen, vermeldt u de namen of de ID's, gescheiden door spaties. In dit voorbeeld voegen we _MyVnet toe:_
 
 ```azurecli-interactive
 az group create \
@@ -99,7 +99,7 @@ az network vnet update \
 
 ## <a name="validate-and-test"></a>Valideren en testen
 
-Controleer eerst de details van uw DDoS-beveiligings plan:
+Controleer eerst de details van uw DDoS-beveiligingsplan:
 
 ```azurecli-interactive
 az network ddos-protection show \
@@ -107,11 +107,11 @@ az network ddos-protection show \
     --name MyDdosProtectionPlan
 ```
 
-Controleer of de opdracht de juiste gegevens van uw DDoS-beveiligings plan retourneert.
+Controleer of de opdracht de juiste details van uw DDoS-beveiligingsplan retourneert.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt uw resources voor de volgende zelf studie blijven gebruiken. Als u deze niet meer nodig hebt, verwijdert u de resource groep _MyResourceGroup_ . Wanneer u de resource groep verwijdert, verwijdert u ook het DDoS-beschermings plan en alle gerelateerde resources. 
+U kunt uw resources bewaren voor de volgende zelfstudie. Verwijder de resourcegroep _MyResourceGroup_ als u deze niet meer nodig hebt. Wanneer u de resourcegroep verwijdert, verwijdert u ook het DDoS-beveiligingsplan en alle bijbehorende resources. 
 
 Gebruik [az group delete](/cli/azure/group#az_group_delete) om de resourcegroep te verwijderen:
 
@@ -120,7 +120,7 @@ az group delete \
 --name MyResourceGroup 
 ```
 
-Een gegeven virtueel netwerk bijwerken om DDoS-beveiliging uit te scha kelen:
+Werk een bepaald virtueel netwerk bij om DDoS-beveiliging uit te schakelen:
 
 ```azurecli-interactive
 az network vnet update \
@@ -130,7 +130,7 @@ az network vnet update \
     --ddos-protection-plan ""
 ```
 
-Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele netwerken loskoppelen. 
+Als u een DDoS-beveiligingsplan wilt verwijderen, moet u er eerst alle virtuele netwerken van loskoppelen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,6 +1,6 @@
 ---
-title: Server parameters configureren-Azure CLI-Azure Database for MariaDB
-description: In dit artikel wordt beschreven hoe u de service parameters in Azure Database for MariaDB kunt configureren met behulp van het Azure CLI-opdracht regel programma.
+title: Serverparameters configureren - Azure CLI - Azure Database for MariaDB
+description: In dit artikel wordt beschreven hoe u de serviceparameters in Azure Database for MariaDB met behulp van het Azure CLI-opdrachtregelprogramma.
 author: savjani
 ms.author: pariks
 ms.service: mariadb
@@ -8,107 +8,107 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 10/1/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4009d8047dae7bf8d9ba66566ff8797fa09a8878
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a3ebcf5a381efceb5e7de503caf88f4ffd3b504e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98662301"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774733"
 ---
-# <a name="configure-server-parameters-in-azure-database-for-mariadb-using-the-azure-cli"></a>Server parameters configureren in Azure Database for MariaDB met behulp van de Azure CLI
-U kunt configuratie parameters voor een Azure Database for MariaDB server weer geven, tonen en bijwerken met behulp van Azure CLI, het opdracht regel programma van Azure. Een subset van de engine configuraties wordt weer gegeven op server niveau en kan worden gewijzigd.
+# <a name="configure-server-parameters-in-azure-database-for-mariadb-using-the-azure-cli"></a>Serverparameters configureren in Azure Database for MariaDB azure CLI
+U kunt configuratieparameters voor een Azure Database for MariaDB server in een lijst weer geven, tonen en bijwerken met behulp van Azure CLI, het Azure-opdrachtregelprogramma. Een subset van engineconfiguraties wordt op serverniveau zichtbaar en kan worden gewijzigd.
 
 >[!Note]
 > Serverparameters kunnen globaal worden bijgewerkt op serverniveau via de [Azure CLI](./howto-configure-server-parameters-cli.md), [PowerShell](./howto-configure-server-parameters-using-powershell.md) of [Azure Portal](./howto-server-parameters.md).
 
 ## <a name="prerequisites"></a>Vereisten
-Als u deze hand leiding wilt door lopen, hebt u het volgende nodig:
+Als u deze handleiding wilt door nemen, hebt u het volgende nodig:
 - [Een Azure Database for MariaDB server](quickstart-create-mariadb-server-database-using-azure-cli.md)
-- [Azure cli](/cli/azure/install-azure-cli) -opdracht regel programma of gebruik de Azure Cloud shell in de browser.
+- [Azure](/cli/azure/install-azure-cli) CLI-opdrachtregelprogramma of gebruik de Azure Cloud Shell in de browser.
 
-## <a name="list-server-configuration-parameters-for-azure-database-for-mariadb-server"></a>Server configuratie parameters voor Azure Database for MariaDB server weer geven
-Voer de opdracht [AZ mariadb Server Configuration List](/cli/azure/mariadb/server/configuration#az-mariadb-server-configuration-list) uit om alle para meters die kunnen worden gewijzigd op een server en hun waarden weer te geven.
+## <a name="list-server-configuration-parameters-for-azure-database-for-mariadb-server"></a>Serverconfiguratieparameters voor Azure Database for MariaDB server
+Voer de opdracht [az mariadb server configuration list](/cli/azure/mariadb/server/configuration#az_mariadb_server_configuration_list) uit om alle wijzigbare parameters in een server en hun waarden weer te geven.
 
-U kunt de server configuratie parameters weer geven voor de server **mydemoserver.mariadb.database.Azure.com** onder resource groep **myresourcegroup**.
+U kunt de serverconfiguratieparameters voor de **server** mydemoserver.mariadb.database.azure.com onder resourcegroep **myresourcegroup.**
 ```azurecli-interactive
 az mariadb server configuration list --resource-group myresourcegroup --server mydemoserver
 ```
 
-Zie de sectie MariaDB Reference op [Server systeem variabelen](https://mariadb.com/kb/en/library/server-system-variables/)voor de definitie van elk van de vermelde para meters.
+Zie de sectie MariaDB-referentie over serversysteemvariabelen voor de definitie van elk van [de vermelde](https://mariadb.com/kb/en/library/server-system-variables/)parameters.
 
-## <a name="show-server-configuration-parameter-details"></a>Details van server configuratie parameters weer geven
-Voer de opdracht [AZ mariadb Server Configuration show](/cli/azure/mariadb/server/configuration#az-mariadb-server-configuration-show) uit om details over een bepaalde configuratie parameter voor een server weer te geven.
+## <a name="show-server-configuration-parameter-details"></a>Details van serverconfiguratieparameters tonen
+Voer de opdracht [az mariadb server configuration show](/cli/azure/mariadb/server/configuration#az_mariadb_server_configuration_show) uit om details weer te geven over een bepaalde configuratieparameter voor een server.
 
-In dit voor beeld worden details weer gegeven van de configuratie parameter server van het **langzame \_ query \_ logboek** voor server **mydemoserver.mariadb.database.Azure.com** onder resource groep **myresourcegroup.**
+In dit voorbeeld ziet u details van de **\_ configuratieparameter \_** voor de serverserver voor langzame query's **mydemoserver.mariadb.database.azure.com** resourcegroep **myresourcegroup.**
 ```azurecli-interactive
 az mariadb server configuration show --name slow_query_log --resource-group myresourcegroup --server mydemoserver
 ```
 
-## <a name="modify-a-server-configuration-parameter-value"></a>Een waarde voor de para meter server configuratie wijzigen
-U kunt ook de waarde van een bepaalde server configuratie parameter wijzigen, waarmee de onderliggende configuratie waarde wordt bijgewerkt voor de MariaDB-server engine. Als u de configuratie wilt bijwerken, gebruikt u de opdracht [AZ mariadb server configuration set](/cli/azure/mariadb/server/configuration#az-mariadb-server-configuration-set) . 
+## <a name="modify-a-server-configuration-parameter-value"></a>De waarde van een serverconfiguratieparameter wijzigen
+U kunt ook de waarde van een bepaalde serverconfiguratieparameter wijzigen, waarmee de onderliggende configuratiewaarde voor de MariaDB-serveren engine wordt bijgewerkt. Gebruik de opdracht [az mariadb server configuration set om](/cli/azure/mariadb/server/configuration#az_mariadb_server_configuration_set) de configuratie bij te werken. 
 
-Voor het bijwerken van de configuratie parameter van de **langzame \_ query \_ logboek** server van server **mydemoserver.mariadb.database.Azure.com** onder resource groep **myresourcegroup.**
+Als u de **\_ configuratieparameter voor de \_** server met langzame querylogboekservers  wilt bijwerken, mydemoserver.mariadb.database.azure.com onder resourcegroep **myresourcegroup.**
 ```azurecli-interactive
 az mariadb server configuration set --name slow_query_log --resource-group myresourcegroup --server mydemoserver --value ON
 ```
 
-Als u de waarde van een configuratie parameter opnieuw wilt instellen, laat u de optionele `--value` para meter weg en de service wordt de standaard waarde. In het bovenstaande voor beeld zou er als volgt uitzien:
+Als u de waarde van een configuratieparameter opnieuw wilt instellen, laat u de optionele parameter weg en past de `--value` service de standaardwaarde toe. In het bovenstaande voorbeeld ziet het er als volgende uit:
 ```azurecli-interactive
 az mariadb server configuration set --name slow_query_log --resource-group myresourcegroup --server mydemoserver
 ```
 
-Met deze code wordt de langzame configuratie van het **\_ query \_ logboek** opnieuw ingesteld op de **standaard waarde.** 
+Met deze code wordt de configuratie **van het logboek voor langzame \_ \_ query's** opnieuw ingesteld op de standaardwaarde **UIT.** 
 
-## <a name="setting-parameters-not-listed"></a>Ingestelde para meters niet vermeld
-Als de server parameter die u wilt bijwerken niet wordt weer gegeven in de Azure Portal, kunt u eventueel de para meter instellen op het verbindings niveau met `init_connect` . Hiermee stelt u de server parameters in voor elke client die verbinding maakt met de server. 
+## <a name="setting-parameters-not-listed"></a>Parameters instellen die niet worden vermeld
+Als de serverparameter die u wilt bijwerken niet wordt vermeld in de Azure Portal, kunt u eventueel de parameter op verbindingsniveau instellen met behulp van `init_connect` . Hiermee stelt u de serverparameters in voor elke client die verbinding maakt met de server. 
 
-Werk de configuratie parameter **init \_ Connect** server van server **mydemoserver.mariadb.database.Azure.com** onder resource groep **myresourcegroup** bij om waarden in te stellen, zoals een tekenset.
+Werk de **init connect-serverconfiguratieparameter \_** van **de** server mydemoserver.mariadb.database.azure.com onder resourcegroep **myresourcegroup** om waarden zoals tekenset in te stellen.
 ```azurecli-interactive
 az mariadb server configuration set --name init_connect --resource-group myresourcegroup --server mydemoserver --value "SET character_set_client=utf8;SET character_set_database=utf8mb4;SET character_set_connection=latin1;SET character_set_results=latin1;"
 ```
 
-## <a name="working-with-the-time-zone-parameter"></a>Werken met de para meter tijd zone
+## <a name="working-with-the-time-zone-parameter"></a>Werken met de tijdzoneparameter
 
-### <a name="populating-the-time-zone-tables"></a>De tijd zone tabellen worden gevuld
+### <a name="populating-the-time-zone-tables"></a>De tijdzonetabellen vullen
 
-De tijdzone tabellen op uw server kunnen worden gevuld door de opgeslagen procedure aan te roepen `mysql.az_load_timezone` vanuit een hulp programma zoals de MariaDB-opdracht regel of MariaDB Workbench.
+De tijdzonetabellen op uw server kunnen worden gevuld door de opgeslagen procedure aan te roepen vanuit een hulpprogramma zoals de `mysql.az_load_timezone` MariaDB-opdrachtregel of MariaDB Workbench.
 
 > [!NOTE]
-> Als u de opdracht uitvoert `mysql.az_load_timezone` vanuit MariaDB Workbench, moet u de veilige update modus mogelijk eerst uitschakelen met `SET SQL_SAFE_UPDATES=0;` .
+> Als u de opdracht vanuit `mysql.az_load_timezone` MariaDB Workbench gebruikt, moet u mogelijk eerst de veilige updatemodus uitschakelen met behulp van `SET SQL_SAFE_UPDATES=0;` .
 
 ```sql
 CALL mysql.az_load_timezone();
 ```
 
 > [!IMPORTANT]
-> U moet de server opnieuw opstarten om te controleren of de tabellen van de tijd zone juist zijn ingevuld. Gebruik de [Azure Portal](howto-restart-server-portal.md) of [cli](howto-restart-server-cli.md)om de server opnieuw op te starten.
+> Start de server opnieuw op om ervoor te zorgen dat de tijdzonetabellen correct zijn ingevuld. Gebruik de Azure Portal of CLI [om de](howto-restart-server-portal.md) server opnieuw op [te starten.](howto-restart-server-cli.md)
 
-Voer de volgende opdracht uit om de beschik bare tijd zone waarden weer te geven:
+Voer de volgende opdracht uit om beschikbare tijdzonewaarden weer te geven:
 
 ```sql
 SELECT name FROM mysql.time_zone_name;
 ```
 
-### <a name="setting-the-global-level-time-zone"></a>De tijd zone van het globale niveau instellen
+### <a name="setting-the-global-level-time-zone"></a>De tijdzone op globaal niveau instellen
 
-De tijd zone globaal niveau kan worden ingesteld met behulp van de opdracht [AZ mariadb server configuration set](/cli/azure/mariadb/server/configuration#az-mariadb-server-configuration-set) .
+De tijdzone op globaal niveau kan worden ingesteld met de [opdracht az mariadb server configuration set.](/cli/azure/mariadb/server/configuration#az_mariadb_server_configuration_set)
 
-Met de volgende opdracht wordt de configuratie parameter van de **tijd \_ zone** server van server **mydemoserver.mariadb.database.Azure.com** onder resource groep **myresourcegroup** naar **VS/Pacific** bijgewerkt.
+Met de volgende opdracht wordt de configuratieparameter voor de **\_ tijdzoneserver** van **de** server mydemoserver.mariadb.database.azure.com resourcegroep **myresourcegroup** bijgewerkt **naar US/Pacific**.
 
 ```azurecli-interactive
 az mariadb server configuration set --name time_zone --resource-group myresourcegroup --server mydemoserver --value "US/Pacific"
 ```
 
-### <a name="setting-the-session-level-time-zone"></a>De tijd zone op sessie niveau instellen
+### <a name="setting-the-session-level-time-zone"></a>De tijdzone op sessieniveau instellen
 
-De tijd zone op sessie niveau kan worden ingesteld door de `SET time_zone` opdracht uit te voeren vanuit een hulp programma zoals de MariaDB-opdracht regel of MariaDB Workbench. In het volgende voor beeld wordt de tijd zone ingesteld op de **Amerikaanse/Pacific-** tijd zone.  
+De tijdzone op sessieniveau kan worden ingesteld door de opdracht uit te voeren vanaf een hulpprogramma zoals de `SET time_zone` MariaDB-opdrachtregel of MariaDB Workbench. In het onderstaande voorbeeld wordt de tijdzone naar de **tijdzone VS/Pacific.**  
 
 ```sql
 SET time_zone = 'US/Pacific';
 ```
 
-Raadpleeg de MariaDB-documentatie voor [datum-en tijd functies](https://mariadb.com/kb/en/library/date-time-functions/).
+Raadpleeg de MariaDB-documentatie voor [datum- en tijdfuncties.](https://mariadb.com/kb/en/library/date-time-functions/)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Server parameters configureren in azure Portal](howto-server-parameters.md)
+- Serverparameters [configureren in Azure Portal](howto-server-parameters.md)

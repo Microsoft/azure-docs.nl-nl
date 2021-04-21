@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein
 ms.date: 4/16/2021
-ms.openlocfilehash: 7dcbcddc5062470cc3d44fa55ea2591dd989d22d
-ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
+ms.openlocfilehash: d5b0c8e60632be5e058900680dc376b7f0761150
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107576394"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781573"
 ---
 # <a name="azure-sql-database-serverless"></a>Azure SQL Database serverloos maken
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,20 +25,20 @@ Serverloos is een compute-laag voor afzonderlijke databases in Azure SQL Databas
 
 ## <a name="serverless-compute-tier"></a>Serverloze compute-laag
 
-De serverloze rekenlaag voor individuele databases in Azure SQL Database wordt geparameteriseerd door een bereik voor automatisch schalen en een vertraging voor automatisch onderbreken. De configuratie van deze parameters vormt de ervaring voor databaseprestaties en de rekenkosten.
+De serverloze rekenlaag voor individuele databases in Azure SQL Database wordt geparameteriseerd door een bereik voor automatisch schalen en een vertraging voor automatisch onderbreken. De configuratie van deze parameters vormt de prestatie-ervaring van de database en de rekenkosten.
 
 ![serverloze facturering](./media/serverless-tier-overview/serverless-billing.png)
 
 ### <a name="performance-configuration"></a>Prestatieconfiguratie
 
-- De **minimale vCores en** maximum **vCores** zijn configureerbare parameters die het bereik van de rekencapaciteit definiëren dat beschikbaar is voor de database. Geheugen- en I/O-limieten zijn evenredig met het opgegeven vCore-bereik.  
-- De **vertraging voor automatisch onderbreken** is een configureerbare parameter die de periode definieert waarin de database inactief moet zijn voordat deze automatisch wordt onderbroken. De database wordt automatisch hervat wanneer de volgende aanmelding of andere activiteit plaatsvindt.  Automatisch onderbreken kan ook worden uitgeschakeld.
+- De **minimale vCores en** het maximum aantal **vCores** zijn configureerbare parameters die het bereik van de rekencapaciteit definiëren dat beschikbaar is voor de database. Geheugen- en I/O-limieten zijn evenredig met het opgegeven vCore-bereik.  
+- De **vertraging voor automatisch** onderbreken is een configureerbare parameter die de periode definieert waarin de database inactief moet zijn voordat deze automatisch wordt onderbroken. De database wordt automatisch hervat wanneer de volgende aanmelding of andere activiteit plaatsvindt.  Automatische pauze kan ook worden uitgeschakeld.
 
 ### <a name="cost"></a>Kosten
 
 - De kosten voor een serverloze database zijn de som van de rekenkosten en opslagkosten.
-- Wanneer het rekengebruik ligt tussen de geconfigureerde minimum- en maximumlimieten, worden de rekenkosten gebaseerd op de gebruikte vCore en het geheugen.
-- Wanneer het rekengebruik lager is dan de geconfigureerde minimumlimieten, worden de rekenkosten gebaseerd op de geconfigureerde minimum aantal vCores en min. geheugen.
+- Wanneer het rekengebruik tussen de geconfigureerde minimum- en maximumlimiet ligt, worden de rekenkosten gebaseerd op de gebruikte vCore en het geheugen.
+- Wanneer het rekengebruik lager is dan de geconfigureerde minimumlimieten, worden de rekenkosten gebaseerd op de min. vCores en het minimum aantal geconfigureerde geheugen.
 - Wanneer de database is onderbroken, zijn de rekenkosten nul en worden alleen opslagkosten gemaakt.
 - De opslagkosten worden op dezelfde manier bepaald als in de inrichtende rekenlaag.
 
@@ -57,18 +57,18 @@ Serverloos is geoptimaliseerd in prijs-prestatieverhouding voor individuele data
 ### <a name="scenarios-well-suited-for-provisioned-compute"></a>Scenario's die geschikt zijn voor inrichtende rekenkracht
 
 - Individuele databases met meer regelmatige, voorspelbare gebruikspatronen en een hoger gemiddeld rekengebruik gedurende een bepaalde periode.
-- Databases die geen prestatie-afwegingen kunnen tolereren die het gevolg zijn van frequentere geheugeninkorting of vertragingen bij het hervatting van een onderbroken status.
+- Databases die geen prestatie-afwegingen kunnen tolereren die het gevolg zijn van frequentere geheugeninkorting of vertragingen bij het hervatten van een onderbroken status.
 - Meerdere databases met onregelmatige, onvoorspelbare gebruikspatronen die kunnen worden geconsolideerd in elastische pools voor een betere optimalisatie van de prijsprestaties.
 
-## <a name="comparison-with-provisioned-compute-tier"></a>Vergelijking met inrichtende rekenlaag
+## <a name="comparison-with-provisioned-compute-tier"></a>Vergelijking met de inrichtende rekenlaag
 
-De volgende tabel bevat een overzicht van de verschillen tussen de serverloze rekenlaag en de inrichtende rekenlaag:
+De volgende tabel bevat een overzicht van het verschil tussen de serverloze rekenlaag en de inrichtende rekenlaag:
 
 | | **Serverloze compute** | **Inrichten van rekenkracht** |
 |:---|:---|:---|
-|**Databasegebruikspatroon**| Onregelmatige, onvoorspelbare gebruik met een lager gemiddeld rekengebruik gedurende een periode. | Meer reguliere gebruikspatronen met een hoger gemiddeld rekengebruik gedurende een bepaalde periode of meerdere databases die gebruikmaken van elastische pools.|
+|**Databasegebruikspatroon**| Onregelmatige, onvoorspelbare gebruik met een lager gemiddeld rekengebruik gedurende een periode. | Meer normale gebruikspatronen met een hoger gemiddeld rekengebruik gedurende een periode of meerdere databases die gebruikmaken van elastische pools.|
 | **Prestatiebeheerinspanning** |Lager|Hoger|
-|**Schaalbaarheid van rekenkracht**|Automatisch|Handmatig|
+|**Schalen van rekenkracht**|Automatisch|Handmatig|
 |**Reactiesnelheid van rekenkracht**|Lager na inactieve perioden|Onmiddellijke|
 |**Factureringsgranulariteit**|Per seconde|Per uur|
 
@@ -80,24 +80,24 @@ SQL Database serverloos wordt momenteel alleen ondersteund in de Algemeen-laag o
 
 ### <a name="scaling-responsiveness"></a>Reactiesnelheid schalen
 
-In het algemeen worden serverloze databases uitgevoerd op een machine met voldoende capaciteit om te voldoen aan de vraag naar resources zonder onderbreking van de hoeveelheid rekenkracht die is aangevraagd binnen de limieten die zijn ingesteld door de maximale vCores-waarde. Af en toe treedt taakverdeling automatisch op als de machine niet binnen een paar minuten kan voldoen aan de vraag naar resources. Als de vraag naar resources bijvoorbeeld 4 vCores is, maar er slechts twee vCores beschikbaar zijn, kan het enkele minuten duren voordat er vier vCores zijn opgegeven. De database blijft online tijdens taakverdeling, met uitzondering van een korte periode aan het einde van de bewerking wanneer verbindingen worden verwijderd.
+In het algemeen worden serverloze databases uitgevoerd op een computer met voldoende capaciteit om te voldoen aan de vraag naar resources, zonder onderbreking van de hoeveelheid rekenkracht die is aangevraagd binnen de limieten die zijn ingesteld door de maximale vCores-waarde. Af en toe treedt taakverdeling automatisch op als de machine binnen een paar minuten niet kan voldoen aan de vraag naar resources. Als de vraag naar resources bijvoorbeeld 4 vCores is, maar er slechts 2 vCores beschikbaar zijn, kan het enkele minuten duren voordat de load balancer van vier vCores is opgegeven. De database blijft online tijdens de taakverdeling, met uitzondering van een korte periode aan het einde van de bewerking wanneer verbindingen worden verwijderd.
 
 ### <a name="memory-management"></a>Geheugenbeheer
 
-Geheugen voor serverloze databases wordt vaker vrijgevorderd dan voor inrichtende rekendatabases. Dit gedrag is belangrijk voor het beheren van de kosten in serverloos en kan van invloed zijn op de prestaties.
+Geheugen voor serverloze databases wordt vaker vrijgevorderd dan voor inrichtende rekendatabases. Dit gedrag is belangrijk om de kosten in serverloos te beheersen en kan van invloed zijn op de prestaties.
 
 #### <a name="cache-reclamation"></a>Cache-reclamatie
 
-In tegenstelling tot inrichtende rekendatabases wordt geheugen uit de SQL-cache vrij gemaakt van een serverloze database wanneer het CPU- of actieve cachegebruik laag is.
+In tegenstelling tot inrichtende rekendatabases wordt geheugen uit de SQL-cache vrijgevorderd van een serverloze database wanneer het CPU- of actieve cachegebruik laag is.
 
-- Actief cachegebruik wordt als laag beschouwd wanneer de totale grootte van de laatst gebruikte cachegegevens een bepaalde tijd onder een drempelwaarde valt.
+- Actief cachegebruik wordt als laag beschouwd wanneer de totale grootte van de meest recent gebruikte cache-vermeldingen een bepaalde tijd onder een drempelwaarde komt.
 - Wanneer het vrijmaken van de cache wordt geactiveerd, wordt de grootte van de doelcache stapsgewijs gereduceerd tot een fractie van de vorige grootte en wordt het vrijmaken alleen voortgezet als het gebruik laag blijft.
-- Bij het vrijmaken van de cache is het beleid voor het selecteren van cache-vermeldingen die moeten worden verwijderd, hetzelfde selectiebeleid als voor inrichtende rekendatabases wanneer de geheugendruk hoog is.
+- Wanneer cache-vrijmaken plaatsvindt, is het beleid voor het selecteren van cache-vermeldingen die moeten worden verwijderd, hetzelfde selectiebeleid als voor inrichtende rekendatabases wanneer de geheugendruk hoog is.
 - De cachegrootte wordt nooit lager dan de minimumgeheugenlimiet, zoals gedefinieerd door min. vCores, die kunnen worden geconfigureerd.
 
-In zowel serverloze als inrichtende rekendatabases kunnen cache-vermeldingen worden verwijderd als al het beschikbare geheugen wordt gebruikt.
+In zowel serverloze als inrichtende rekendatabases kunnen cache-vermeldingen worden verwijderd als alle beschikbare geheugen wordt gebruikt.
 
-Houd er rekening mee dat wanneer het CPU-gebruik laag is, het actieve cachegebruik hoog kan blijven, afhankelijk van het gebruikspatroon en dat geheugen niet kan worden vrijgediend.  Er kunnen ook extra vertragingen optreden nadat de gebruikersactiviteit stopt voordat het geheugen wordt vrijgetrokken, omdat periodieke achtergrondprocessen reageren op eerdere gebruikersactiviteit.  Verwijderbewerkingen en QDS-opschoontaken genereren bijvoorbeeld gedupleterecords die zijn gemarkeerd voor verwijdering, maar niet fysiek worden verwijderd totdat het opschoningsproces wordt uitgevoerd waarbij gegevenspagina's in de cache kunnen worden gelezen.
+Houd er rekening mee dat wanneer het CPU-gebruik laag is, het actieve cachegebruik hoog kan blijven, afhankelijk van het gebruikspatroon en het vrijmaken van geheugen voorkomt.  Er kunnen ook extra vertragingen optreden nadat de gebruikersactiviteit is gestopt voordat het geheugen wordt vrijgetrokken, omdat periodieke achtergrondprocessen reageren op eerdere gebruikersactiviteit.  Verwijderbewerkingen en QDS-opschoontaken genereren bijvoorbeeld ghost-records die zijn gemarkeerd voor verwijdering, maar die niet fysiek worden verwijderd totdat het opschoningsproces wordt uitgevoerd waarbij gegevenspagina's in de cache kunnen worden gelezen.
 
 #### <a name="cache-hydration"></a>Cache-uiting
 
@@ -107,7 +107,7 @@ De SQL-cache groeit naarmate gegevens op dezelfde manier en met dezelfde snelhei
 
 ### <a name="auto-pausing"></a>Automatisch onderbreken
 
-Automatisch onderbreken wordt geactiveerd als aan alle volgende voorwaarden wordt voldaan voor de duur van de vertraging bij automatisch onderbreken:
+Automatisch onderbreken wordt geactiveerd als aan alle volgende voorwaarden wordt voldaan voor de duur van de vertraging voor automatisch onderbreken:
 
 - Aantal sessies = 0
 - CPU = 0 voor de gebruikersworkload die wordt uitgevoerd in de gebruikersgroep
@@ -118,7 +118,7 @@ De volgende functies bieden geen ondersteuning voor automatisch onderbreken, maa
 
 - Geo-replicatie (actieve geo-replicatie en groepen voor automatische failover).
 - Langetermijnretentie van back-ups (LTR).
-- De synchronisatiedatabase die wordt gebruikt in SQL Data Sync.  In tegenstelling tot synchronisatiedatabases ondersteunen hub- en liddatabases automatisch onderbreken.
+- De synchronisatiedatabase die wordt gebruikt in SQL-gegevenssynchronisatie.  In tegenstelling tot synchronisatiedatabases ondersteunen hub- en liddatabases automatisch onderbreken.
 - DNS-aliasing
 - De taakdatabase die wordt gebruikt in Elastische taken (preview).
 
@@ -126,7 +126,7 @@ Automatisch onderbreken wordt tijdelijk voorkomen tijdens de implementatie van s
 
 ### <a name="auto-resuming"></a>Automatisch hervat
 
-Automatische hervatting wordt geactiveerd als aan een van de volgende voorwaarden op elk moment wordt voldaan:
+Automatisch hervat wordt geactiveerd als een van de volgende voorwaarden op elk moment waar is:
 
 |Functie|Trigger voor automatisch hervatten|
 |---|---|
@@ -137,15 +137,15 @@ Automatische hervatting wordt geactiveerd als aan een van de volgende voorwaarde
 |Gegevensmaskering|Regels voor gegevensmaskering toevoegen, wijzigen, verwijderen of weergeven|
 |Transparent Data Encryption|Status of status van transparante gegevensversleuteling weergeven|
 |Evaluatie van beveiligingsproblemen|Ad-hocscans en periodieke scans indien ingeschakeld|
-|Query's uitvoeren op gegevensopslag (prestaties)|Instellingen voor queryopslag wijzigen of weergeven|
+|Query's uitvoeren op gegevensopslag (prestaties)|Query Store-instellingen wijzigen of weergeven|
 |Aanbevelingen voor prestaties|Prestatieaanbevelingen weergeven of toepassen|
 |Automatisch afstemmen|Toepassing en verificatie van aanbevelingen voor automatisch afstemmen, zoals automatisch indexeren|
 |Database kopiëren|Maak de database als kopie.<br>Exporteren naar een BACPAC-bestand.|
 |SQL-gegevenssynchronisatie|Synchronisatie tussen hub- en liddatabases die worden uitgevoerd volgens een configureerbare planning of die handmatig worden uitgevoerd|
-|Bepaalde databasemetagegevens wijzigen|Nieuwe databasetags toevoegen.<br>Het maximum aantal vCores, min. vCores of vertraging bij automatisch gebruik wijzigen.|
-|SQL Server Management Studio (SSMS)|Als u SSMS-versies eerder dan 18.1 gebruikt en een nieuw queryvenster opent voor een database op de server, wordt elke database die automatisch is onderbroken, hervat op dezelfde server. Dit gedrag treedt niet op als u SSMS versie 18.1 of hoger gebruikt.|
+|Bepaalde metagegevens van de database wijzigen|Nieuwe databasetags toevoegen.<br>Het wijzigen van het maximum aantal vCores, min. vCores of vertraging bij automatisch gebruik.|
+|SQL Server Management Studio (SSMS)|Als u SSMS-versies gebruikt die lager zijn dan 18.1 en een nieuw queryvenster opent voor een database op de server, wordt elke automatisch onderbroken database op dezelfde server hervat. Dit gedrag treedt niet op als u SSMS versie 18.1 of hoger gebruikt.|
 
-Bewaking, beheer of andere oplossingen die een van de hierboven genoemde bewerkingen uitvoeren, activeren automatisch hervatting.
+Bewaking, beheer of andere oplossingen die een van de bovenstaande bewerkingen uitvoeren, activeren automatisch hervatting.
 
 Automatische hervatting wordt ook geactiveerd tijdens de implementatie van een aantal service-updates waarvoor de database online moet zijn.
 
@@ -159,21 +159,21 @@ De latentie voor het automatisch hervatten en automatisch onderbreken van een se
 
 ### <a name="customer-managed-transparent-data-encryption-byok"></a>Door de klant beheerde transparante gegevensversleuteling (BYOK)
 
-Als [](transparent-data-encryption-byok-overview.md) het gebruik van door de klant beheerde transparante gegevensversleuteling (BYOK) en de serverloze database automatisch wordt onderbroken wanneer de sleutel wordt verwijderd of intrekken, blijft de database in de status automatisch onderbroken.  In dit geval wordt de database na de volgende hervatting binnen ongeveer tien minuten ontoegankelijk.  Zodra de database niet meer toegankelijk is, is het herstelproces hetzelfde als voor inrichtende rekendatabases.  Als de serverloze database online is wanneer een sleutel wordt verwijderd of intrekken, is de database ook binnen ongeveer tien minuten niet toegankelijk op dezelfde manier als bij inrichtende rekendatabases.
+Als [](transparent-data-encryption-byok-overview.md) het gebruik van door de klant beheerde transparante gegevensversleuteling (BYOK) en de serverloze database automatisch wordt onderbroken wanneer sleutelversleuteling of -intrekking plaatsvindt, blijft de database in de status Automatisch onderbroken.  In dit geval is de database na de volgende hervatting binnen ongeveer tien minuten ontoegankelijk.  Zodra de database niet meer toegankelijk is, is het herstelproces hetzelfde als voor inrichtende rekendatabases.  Als de serverloze database online is wanneer de sleutel wordt verwijderd of intrekken, is de database ook binnen ongeveer tien minuten op dezelfde manier ontoegankelijk als bij inrichtende rekendatabases.
 
 ## <a name="onboarding-into-serverless-compute-tier"></a>Onboarding in serverloze rekenlaag
 
 Het maken van een nieuwe database of het verplaatsen van een bestaande database naar een serverloze rekenlaag volgt hetzelfde patroon als het maken van een nieuwe database in de inrichtende rekenlaag en omvat de volgende twee stappen.
 
-1. Geef de servicedoelstelling op. De servicedoelstelling is van het oog op de servicelaag, het genereren van hardware en het maximum aantal vCores. Zie Serverloze [resourcelimieten voor opties voor servicedoelstelling](resource-limits-vcore-single-databases.md#general-purpose---serverless-compute---gen5)
+1. Geef de servicedoelstelling op. De servicedoelstelling staat voor de servicelaag, het genereren van hardware en het maximum aantal vCores. Zie Serverloze [resourcelimieten voor opties voor servicedoelstelling](resource-limits-vcore-single-databases.md#general-purpose---serverless-compute---gen5)
 
 
-2. Geef desgewenst het minimum aantal vCores en de vertraging voor automatisch gebruik op om de standaardwaarden te wijzigen. In de volgende tabel ziet u de beschikbare waarden voor deze parameters.
+2. Geef desgewenst de minimumvertraging voor vCores en autopause op om de standaardwaarden te wijzigen. In de volgende tabel ziet u de beschikbare waarden voor deze parameters.
 
    |Parameter|Waardeopties|Standaardwaarde|
    |---|---|---|---|
-   |Minimum aantal vCores|Is afhankelijk van het maximum aantal vCores dat is geconfigureerd. Zie [resourcelimieten.](resource-limits-vcore-single-databases.md#general-purpose---serverless-compute---gen5)|0,5 vCores|
-   |Vertraging bij automatisch gebruik|Minimaal: 60 minuten (1 uur)<br>Maximum: 10080 minuten (7 dagen)<br>Verhogingen: 10 minuten<br>Autopause uitschakelen: -1|60 minuten|
+   |Minimum aantal vCores|Afhankelijk van het maximum aantal vCores dat is geconfigureerd - zie [resourcelimieten.](resource-limits-vcore-single-databases.md#general-purpose---serverless-compute---gen5)|0,5 vCores|
+   |Vertraging bij automatisch gebruik|Minimaal: 60 minuten (1 uur)<br>Maximum: 10080 minuten (7 dagen)<br>Verhogingen: 10 minuten<br>Automatisch gebruik uitschakelen: -1|60 minuten|
 
 
 ### <a name="create-a-new-database-in-the-serverless-compute-tier"></a>Een nieuwe database maken in de serverloze rekenlaag
@@ -182,7 +182,7 @@ In de volgende voorbeelden wordt een nieuwe database gemaakt in de serverloze re
 
 #### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-Zie [Quickstart: Een individuele database maken in Azure SQL Database met behulp van de Azure Portal](single-database-create-quickstart.md).
+Zie [Quickstart: Een individuele database maken in Azure SQL Database met behulp van Azure Portal](single-database-create-quickstart.md).
 
 
 #### <a name="use-powershell"></a>PowerShell gebruiken
@@ -255,14 +255,14 @@ Het wijzigen van de maximale of minimale vCores en de vertraging bij automatisch
 
 ### <a name="use-the-azure-cli"></a>Azure CLI gebruiken
 
-Het wijzigen van de maximale of minimale vCores en de vertraging bij automatisch gebruik wordt uitgevoerd met behulp van de [opdracht az sql db update](/cli/azure/sql/db#az-sql-db-update) in Azure CLI met behulp van de argumenten , en `capacity` `min-capacity` `auto-pause-delay` .
+Het wijzigen van de maximale of minimale vCores en de vertraging voor automatisch gebruik wordt uitgevoerd met behulp van de [opdracht az sql db update](/cli/azure/sql/db#az_sql_db_update) in Azure CLI met behulp van de argumenten , en `capacity` `min-capacity` `auto-pause-delay` .
 
 
 ## <a name="monitoring"></a>Bewaking
 
 ### <a name="resources-used-and-billed"></a>Gebruikte en gefactureerde resources
 
-De resources van een serverloze database worden ingekapseld door app-pakketten, SQL-exemplaren en gebruikersresourcegroepentiteiten.
+De resources van een serverloze database worden ingekapseld door app-pakket, SQL-exemplaar en gebruikersresourcegroepentiteiten.
 
 #### <a name="app-package"></a>App-pakket
 
@@ -279,11 +279,11 @@ Metrische gegevens voor het bewaken van het resourcegebruik van het app-pakket e
 |Entiteit|Metrisch|Beschrijving|Eenheden|
 |---|---|---|---|
 |App-pakket|app_cpu_percent|Het percentage vCores dat door de app wordt gebruikt ten opzichte van het maximum aantal vCores dat is toegestaan voor de app.|Percentage|
-|App-pakket|app_cpu_billed|De hoeveelheid rekenkracht die voor de app wordt gefactureerd tijdens de rapportageperiode. Het bedrag dat tijdens deze periode wordt betaald, is het product van deze metrische gegevens en de prijs van de vCore-eenheid. <br><br>De waarden van deze metrische waarde worden bepaald door het maximum aantal gebruikte CPU's en het geheugen dat elke seconde wordt gebruikt, in de tijd samen te stellen. Als de gebruikte hoeveelheid kleiner is dan de minimale hoeveelheid die is ingericht zoals is ingesteld door de minimale vCores en het minimale geheugen, wordt de minimale hoeveelheid gefactureerd.Om DE CPU te vergelijken met het geheugen voor factureringsdoeleinden, wordt het geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore te schalen.|vCore-seconden|
+|App-pakket|app_cpu_billed|De hoeveelheid rekenkracht die voor de app wordt gefactureerd tijdens de rapportageperiode. Het bedrag dat tijdens deze periode wordt betaald, is het product van deze metrische gegevens en de prijs van de vCore-eenheid. <br><br>De waarden van deze metrische waarde worden bepaald door het maximum aantal gebruikte CPU's en geheugen dat elke seconde wordt gebruikt, in de tijd samen te stellen. Als de gebruikte hoeveelheid kleiner is dan de minimale hoeveelheid die is ingericht zoals is ingesteld door de minimale vCores en het minimale geheugen, wordt de minimale hoeveelheid gefactureerd.Om de CPU te vergelijken met het geheugen voor factureringsdoeleinden, wordt het geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore te schalen.|vCore-seconden|
 |App-pakket|app_memory_percent|Percentage geheugen dat door de app wordt gebruikt ten opzichte van het maximale geheugen dat is toegestaan voor de app.|Percentage|
 |Gebruikersgroep|cpu_percent|Het percentage vCores dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal vCores dat is toegestaan voor de werkbelasting van de gebruiker.|Percentage|
-|Gebruikersgroep|data_IO_percent|Percentage gegevens-IOPS dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal toegestane gegevens-IOPS voor gebruikersworkloads.|Percentage|
-|Gebruikersgroep|log_IO_percent|Percentage logboek-MB/s dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal logboek-MB/s dat is toegestaan voor de werkbelasting van de gebruiker.|Percentage|
+|Gebruikersgroep|data_IO_percent|Percentage gegevens-IOPS dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal toegestane gegevens-IOPS voor gebruikersworkload.|Percentage|
+|Gebruikersgroep|log_IO_percent|Percentage logboek-MB/s dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal logboek-MB/s dat is toegestaan voor gebruikersworkload.|Percentage|
 |Gebruikersgroep|workers_percent|Het percentage werkbelastingen dat wordt gebruikt door de werkbelasting van gebruikers ten opzichte van het maximum aantal werkbelastingen dat is toegestaan voor gebruikers.|Percentage|
 |Gebruikersgroep|sessions_percent|Het percentage sessies dat wordt gebruikt door de werkbelasting van de gebruiker ten opzichte van het maximum aantal sessies dat is toegestaan voor de werkbelasting van de gebruiker.|Percentage|
 
@@ -313,7 +313,7 @@ Zie Serverloze rekenlaag [voor resourcelimieten.](resource-limits-vcore-single-d
 
 ## <a name="billing"></a>Billing
 
-De hoeveelheid rekenkracht die wordt gefactureerd, is de maximale cpu die wordt gebruikt en het geheugen dat elke seconde wordt gebruikt. Als de gebruikte hoeveelheid CPU en het gebruikte geheugen kleiner is dan de minimale hoeveelheid die voor elk cpu-gebruik is ingericht, wordt het inrichtende bedrag gefactureerd. Als u CPU wilt vergelijken met geheugen voor factureringsdoeleinden, wordt het geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore te schalen.
+De hoeveelheid rekenkracht die wordt gefactureerd, is de maximale cpu die wordt gebruikt en het geheugen dat elke seconde wordt gebruikt. Als de gebruikte hoeveelheid CPU en het gebruikte geheugen minder is dan de minimale hoeveelheid die voor elk cpu-gebruik is ingericht, wordt het inrichtende bedrag gefactureerd. Als u CPU wilt vergelijken met geheugen voor factureringsdoeleinden, wordt het geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore te schalen.
 
 - **Gefactureerde resource:** CPU en geheugen
 - **Gefactureerd** bedrag: prijs per vCore * max (min. vCores, gebruikte vCores, min. geheugen GB * 1/3, geheugen GB gebruikt * 1/3) 
@@ -323,7 +323,7 @@ De prijs per vCore-eenheid is de kosten per vCore per seconde. Raadpleeg de pagi
 
 De hoeveelheid gefactureerde rekenkracht wordt blootgesteld aan de volgende metrische gegevens:
 
-- **Metrische** gegevens: app_cpu_billed (vCore-seconden)
+- **Metrische** gegevens: app_cpu_billed (vCore seconden)
 - **Definitie:** max (min. vCores, gebruikte vCores, min. geheugen GB * 1/3, geheugen GB gebruikt * 1/3)
 - **Rapportagefrequentie:** per minuut
 
@@ -335,16 +335,16 @@ Als een serverloze database is onderbroken, is de rekenrekening nul.  Als een se
 
 Voorbeelden:
 
-- Stel dat een serverloze database niet is onderbroken en geconfigureerd met maximaal 8 vCores en 1 min. vCores die overeenkomen met 3,0 GB min. geheugen.  Vervolgens is de minimale rekenrekening gebaseerd op het maximum (1 vCore, 3,0 GB * 1 vCore / 3 GB) = 1 vCore.
-- Stel dat een serverloze database niet is onderbroken en geconfigureerd met maximaal 4 vCores en 0,5 min. vCores die overeenkomen met 2,1 GB min. geheugen.  Vervolgens is de minimale rekenrekening gebaseerd op het maximum (0,5 vCores, 2,1 GB * 1 vCore / 3 GB) = 0,7 vCores.
+- Stel dat een serverloze database niet is onderbroken en geconfigureerd met maximaal 8 vCores en 1 min. vCores die overeenkomen met 3,0 GB min. geheugen.  Vervolgens wordt de minimale rekenrekening gebaseerd op het maximum (1 vCore, 3,0 GB * 1 vCore / 3 GB) = 1 vCore.
+- Stel dat een serverloze database niet is onderbroken en geconfigureerd met maximaal 4 vCores en 0,5 min. vCores die overeenkomen met 2,1 GB min. geheugen.  Vervolgens is de minimale rekenrekening gebaseerd op max (0,5 vCores, 2,1 GB * 1 vCore / 3 GB) = 0,7 vCores.
 
-De [Azure SQL Database prijscalculator](https://azure.microsoft.com/pricing/calculator/?service=sql-database) voor serverloos kan worden gebruikt om te bepalen welk minimumgeheugen kan worden geconfigureerd op basis van het aantal maximaal en min. aantal vCores dat is geconfigureerd.  Als de geconfigureerde minimale vCores groter is dan 0,5 vCores, is de minimale rekenrekening onafhankelijk van het minimale geheugen dat is geconfigureerd en alleen gebaseerd op het aantal minimale vCores dat is geconfigureerd.
+De [Azure SQL Database prijscalculator](https://azure.microsoft.com/pricing/calculator/?service=sql-database) voor serverloos kan worden gebruikt om te bepalen welk minimumgeheugen kan worden geconfigureerd op basis van het aantal maximaal en min. aantal geconfigureerde vCores.  Als de geconfigureerde minimale vCores groter is dan 0,5 vCores, is de minimale rekenrekening onafhankelijk van het minimale geheugen dat is geconfigureerd en alleen gebaseerd op het aantal minimale vCores dat is geconfigureerd.
 
 ### <a name="example-scenario"></a>Voorbeeldscenario
 
-Overweeg een serverloze database die is geconfigureerd met 1 min. vCores en maximaal 4 vCores.  Dit komt overeen met ongeveer 3 GB min. geheugen en maximaal 12 GB geheugen.  Stel dat de vertraging voor automatisch onderbreken is ingesteld op 6 uur en dat de databaseworkload actief is gedurende de eerste 2 uur van een periode van 24 uur en anders inactief is.    
+Overweeg een serverloze database die is geconfigureerd met 1 min. vCores en maximaal 4 vCores.  Dit komt overeen met ongeveer 3 GB min. geheugen en maximaal 12 GB geheugen.  Stel dat de vertraging voor automatisch onderbreken is ingesteld op 6 uur en dat de databaseworkload actief is gedurende de eerste 2 uur van een periode van 24 uur en anderszins inactief is.    
 
-In dit geval wordt de database in de eerste 8 uur gefactureerd voor reken- en opslagcapaciteit.  Hoewel de database inactief is vanaf het tweede uur, wordt deze in de volgende zes uur nog steeds gefactureerd voor rekenkracht op basis van de minimale rekenkracht die is ingericht terwijl de database online is.  Alleen opslag wordt gefactureerd gedurende de rest van de periode van 24 uur terwijl de database wordt onderbroken.
+In dit geval wordt de database in de eerste 8 uur gefactureerd voor rekenkracht en opslag.  Hoewel de database inactief is vanaf het tweede uur, wordt deze in de volgende zes uur nog steeds gefactureerd voor rekenkracht op basis van de minimale rekenkracht die is ingericht terwijl de database online is.  Alleen opslag wordt gefactureerd gedurende de rest van de periode van 24 uur terwijl de database wordt onderbroken.
 
 Om precies te zijn, wordt de rekenrekening in dit voorbeeld als volgt berekend:
 
@@ -354,9 +354,9 @@ Om precies te zijn, wordt de rekenrekening in dit voorbeeld als volgt berekend:
 |1:00-2:00|1|12|Gebruikt geheugen|12 GB * 1/3 * 3600 seconden = 14400 vCore-seconden|
 |2:00-8:00|0|0|Min. geheugen ingericht|3 GB * 1/3 * 21600 seconden = 21600 vCore-seconden|
 |8:00-24:00|0|0|Er wordt geen rekenkracht gefactureerd terwijl deze is onderbroken|0 vCore-seconden|
-|Totaal aantal vCore-seconden gefactureerd gedurende 24 uur||||50400 vCore seconden|
+|Totaal aantal vCore-seconden gefactureerd gedurende 24 uur||||50400 vCore-seconden|
 
-Stel dat de prijs van de rekeneenheid $ 0,000145/vCore/seconde is.  Vervolgens is de berekening die wordt gefactureerd voor deze periode van 24 uur het product van de prijs van de rekeneenheid en de vCore-seconden die worden gefactureerd: $0,000145/vCore/seconde * 50400 vCore-seconden ~ $ 7,31
+Stel dat de prijs van de rekeneenheid $ 0,000145/vCore/seconde is.  De berekening die voor deze periode van 24 uur wordt gefactureerd, is het product van de prijs van de rekeneenheid en de vCore-seconden die worden gefactureerd: $ 0,000145/vCore/seconde * 50400 vCore-seconden ~ $ 7,31
 
 ### <a name="azure-hybrid-benefit-and-reserved-capacity"></a>Azure Hybrid Benefit en gereserveerde capaciteit
 

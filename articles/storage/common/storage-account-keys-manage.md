@@ -1,7 +1,7 @@
 ---
 title: Toegangssleutels voor accounts beheren
 titleSuffix: Azure Storage
-description: Meer informatie over het weer geven, beheren en draaien van de toegangs sleutels van uw opslag account.
+description: Meer informatie over het weergeven, beheren en roteren van toegangssleutels voor uw opslagaccount.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,41 +9,41 @@ ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: e5ea94fea00771b64634d6c28a7879fabb195f09
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 82d272f22295a5b68d1e8de3fb5a70c45d4c14a3
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89069656"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791207"
 ---
-# <a name="manage-storage-account-access-keys"></a>Toegangs sleutels voor opslag accounts beheren
+# <a name="manage-storage-account-access-keys"></a>Toegangssleutels voor opslagaccounts beheren
 
-Wanneer u een opslag account maakt, genereert Azure 2 512-bits toegangs sleutels voor opslag accounts. Deze sleutels kunnen worden gebruikt om toegang te verlenen tot gegevens in uw opslag account via de verificatie van de gedeelde sleutel.
+Wanneer u een opslagaccount maakt, genereert Azure twee toegangssleutels voor een 512-bits opslagaccount. Deze sleutels kunnen worden gebruikt om toegang tot gegevens in uw opslagaccount te autorisatie via gedeelde sleutelautorisatie.
 
-Micro soft raadt u aan Azure Key Vault te gebruiken voor het beheren van uw toegangs sleutels en om uw sleutels regel matig te draaien en opnieuw te genereren. Met Azure Key Vault kunt u eenvoudig uw sleutels zonder onderbreking naar uw toepassingen draaien. U kunt uw sleutels ook hand matig draaien.
+Microsoft raadt u aan om Azure Key Vault te gebruiken voor het beheren van uw toegangssleutels, en dat u uw sleutels regelmatig roteert en opnieuw wilt laten regenereren. Met Azure Key Vault kunt u uw sleutels eenvoudig roteren zonder onderbreking van uw toepassingen. U kunt uw sleutels ook handmatig roteren.
 
 [!INCLUDE [storage-account-key-note-include](../../../includes/storage-account-key-note-include.md)]
 
-## <a name="view-account-access-keys"></a>Toegangs sleutels voor accounts weer geven
+## <a name="view-account-access-keys"></a>Toegangssleutels voor het account weergeven
 
-U kunt de toegangs sleutels van uw account weer geven en kopiëren met de Azure Portal, Power shell of Azure CLI. De Azure Portal biedt ook een connection string voor uw opslag account dat u kunt kopiëren.
+U kunt de toegangssleutels voor uw account weergeven en kopiëren met Azure Portal, PowerShell of Azure CLI. De Azure Portal biedt ook een connection string voor uw opslagaccount dat u kunt kopiëren.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-De toegangs sleutels of connection string van uw opslag account weer geven en kopiëren vanuit de Azure Portal:
+U kunt de toegangssleutels of gegevens van uw opslagaccount connection string van de Azure Portal:
 
-1. Navigeer naar uw opslag account in de [Azure Portal](https://portal.azure.com).
+1. Navigeer naar uw opslagaccount in [Azure Portal](https://portal.azure.com).
 1. Selecteer onder **Instellingen** de optie **Toegangssleutels**. De toegangssleutels van uw account worden weergegeven, evenals de volledige verbindingsreeks voor elke sleutel.
-1. Zoek de **sleutel** waarde onder **key1** en klik op de knop **kopiëren** om de account sleutel te kopiëren.
-1. U kunt ook de hele connection string kopiëren. Zoek de waarde van de **Verbindingsreeks** onder **key1** en klik op de knop **Kopiëren** om de verbindingsreeks te kopiëren.
+1. Zoek de **sleutelwaarde** onder **key1** en klik op de **knop Kopiëren** om de accountsleutel te kopiëren.
+1. U kunt ook het volledige connection string. Zoek de waarde van de **Verbindingsreeks** onder **key1** en klik op de knop **Kopiëren** om de verbindingsreeks te kopiëren.
 
-    :::image type="content" source="media/storage-account-keys-manage/portal-connection-string.png" alt-text="Scherm afbeelding die laat zien hoe toegangs sleutels in de Azure Portal worden weer gegeven":::
+    :::image type="content" source="media/storage-account-keys-manage/portal-connection-string.png" alt-text="Schermopname die laat zien hoe u toegangssleutels in de Azure Portal":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Roep de [Get-AzStorageAccountKey-](/powershell/module/az.Storage/Get-azStorageAccountKey) opdracht aan om de toegangs sleutels van uw account op te halen met Power shell.
+Als u de toegangssleutels voor uw account wilt ophalen met PowerShell, roept u [de opdracht Get-AzStorageAccountKey](/powershell/module/az.Storage/Get-azStorageAccountKey) aan.
 
-In het volgende voor beeld wordt de eerste sleutel opgehaald. Als u de tweede sleutel wilt ophalen, gebruikt u `Value[1]` in plaats van `Value[0]` . Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden.
+In het volgende voorbeeld wordt de eerste sleutel opgehaald. Gebruik in plaats van om de tweede sleutel `Value[1]` op te `Value[0]` halen. Vergeet niet om de waarden van de tijdelijke aanduiding tussen haakjes te vervangen door uw eigen waarden.
 
 ```powershell
 $storageAccountKey = `
@@ -54,7 +54,7 @@ $storageAccountKey = `
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de toegangs sleutels van uw account wilt weer geven met Azure CLI, roept u de opdracht [AZ Storage account Keys List](/cli/azure/storage/account/keys#az-storage-account-keys-list) aan, zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden. 
+Als u de toegangssleutels voor uw account met Azure CLI wilt noemen, roept u de [opdracht az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list) aan, zoals wordt weergegeven in het volgende voorbeeld. Vergeet niet om de waarden van de tijdelijke aanduiding tussen vierkante haken te vervangen door uw eigen waarden. 
 
 ```azurecli-interactive
 az storage account keys list \
@@ -64,43 +64,43 @@ az storage account keys list \
 
 ---
 
-U kunt een van de twee sleutels gebruiken om toegang te krijgen tot Azure Storage, maar in het algemeen is het een goed idee om de eerste sleutel te gebruiken en het gebruik van de tweede toets te reserveren wanneer u sleutels draait.
+U kunt een van de twee sleutels gebruiken om toegang te krijgen tot Azure Storage, maar in het algemeen is het een goed idee om de eerste sleutel te gebruiken en het gebruik van de tweede sleutel te reserveren voor wanneer u sleutels roteert.
 
-Als u de toegangs sleutels van een account wilt bekijken of lezen, moet de gebruiker een service beheerder zijn of moet er een Azure-rol worden toegewezen die de **micro soft. Storage/Storage accounts/listkeys ophalen/Action** bevat. Sommige ingebouwde rollen van Azure die deze actie bevatten, zijn de rol rollen van de operator **eigenaar**, **Inzender** en **opslag account** . Zie voor meer informatie over de rol van service beheerder [klassieke abonnements beheerders rollen, Azure-rollen en Azure AD-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md). Zie de sectie **opslag** in [ingebouwde Azure-rollen voor Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor meer informatie over ingebouwde rollen voor Azure Storage.
+Als u de toegangssleutels van een account wilt weergeven of lezen, moet de gebruiker een servicebeheerder zijn of moet aan een Azure-rol worden toegewezen die de **Microsoft.Storage/storageAccounts/listkeys/action** bevat. Sommige ingebouwde Azure-rollen die deze actie bevatten, zijn de rollen **Eigenaar,** **Inzender** en Servicerol Sleuteloperator voor **opslagaccounts.** Zie Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-rollen voor meer informatie over de rol [Servicebeheerder.](../../role-based-access-control/rbac-and-directory-admin-roles.md) Zie de sectie Opslag in ingebouwde Azure-rollen  voor [Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor gedetailleerde informatie over ingebouwde rollen voor Azure Storage.
 
-## <a name="use-azure-key-vault-to-manage-your-access-keys"></a>Azure Key Vault gebruiken om uw toegangs sleutels te beheren
+## <a name="use-azure-key-vault-to-manage-your-access-keys"></a>Gebruik Azure Key Vault om uw toegangssleutels te beheren
 
-Micro soft raadt u aan Azure Key Vault te gebruiken om uw toegangs sleutels te beheren en te draaien. Uw toepassing kan veilig toegang krijgen tot uw sleutels in Key Vault, zodat u ze niet kunt opslaan met de code van uw toepassing. Raadpleeg de volgende artikelen voor meer informatie over het gebruik van Key Vault voor sleutel beheer:
+Microsoft raadt u aan om Azure Key Vault toegangssleutels te beheren en te roteren. Uw toepassing heeft veilig toegang tot uw sleutels in Key Vault, zodat u kunt voorkomen dat ze worden opgeslagen met uw toepassingscode. Zie de volgende artikelen voor Key Vault informatie over het gebruik van Key Vault voor sleutelbeheer:
 
-- [Sleutels voor opslag accounts beheren met Azure Key Vault en Power shell](../../key-vault/secrets/overview-storage-keys-powershell.md)
+- [Opslagaccountsleutels beheren met Azure Key Vault en PowerShell](../../key-vault/secrets/overview-storage-keys-powershell.md)
 - [Sleutels voor opslagaccounts beheren met Azure Key Vault en de Azure CLI](../../key-vault/secrets/overview-storage-keys.md)
 
-## <a name="manually-rotate-access-keys"></a>Toegangs sleutels hand matig draaien
+## <a name="manually-rotate-access-keys"></a>Toegangssleutels handmatig roteren
 
-Micro soft raadt u aan uw toegangs sleutels regel matig te draaien om uw opslag account veilig te houden. Gebruik, indien mogelijk, Azure Key Vault om uw toegangs sleutels te beheren. Als u Key Vault niet gebruikt, moet u de sleutels hand matig draaien.
+Microsoft raadt u aan uw toegangssleutels periodiek te roteren om uw opslagaccount veilig te houden. Gebruik, indien mogelijk, Azure Key Vault om uw toegangssleutels te beheren. Als u geen gebruik Key Vault, moet u uw sleutels handmatig roteren.
 
-Er zijn twee toegangs sleutels toegewezen zodat u uw sleutels kunt draaien. Als u twee sleutels hebt, zorgt u ervoor dat uw toepassing gedurende het proces toegang tot Azure Storage houdt.
+Er worden twee toegangssleutels toegewezen, zodat u uw sleutels kunt roteren. Als u twee sleutels hebt, zorgt u ervoor dat uw toepassing tijdens Azure Storage toegangssleutels behoudt.
 
 > [!WARNING]
-> Het opnieuw genereren van de toegangs sleutels kan invloed hebben op alle toepassingen of Azure-Services die afhankelijk zijn van de sleutel van het opslag account. Clients die gebruikmaken van de account sleutel voor toegang tot het opslag account moeten worden bijgewerkt om de nieuwe sleutel te gebruiken, inclusief Media Services, Cloud, desktop-en mobiele toepassingen en Graphical User Interface toepassingen voor Azure Storage, zoals [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/).
+> Het opnieuw maken van uw toegangssleutels kan van invloed zijn op alle toepassingen of Azure-services die afhankelijk zijn van de sleutel van het opslagaccount. Clients die gebruikmaken van de accountsleutel voor toegang tot het opslagaccount, moeten worden bijgewerkt om de nieuwe sleutel te kunnen gebruiken, waaronder mediaservices, cloud-, desktop- en mobiele toepassingen en grafische gebruikersinterfacetoepassingen voor Azure Storage, [zoals Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/).
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-De toegangs sleutels van uw opslag account in de Azure Portal draaien:
+De toegangssleutels voor uw opslagaccount in de Azure Portal:
 
-1. Werk de verbindings reeksen in uw toepassings code bij om te verwijzen naar de secundaire toegangs sleutel voor het opslag account.
-1. Navigeer naar uw opslag account in de [Azure Portal](https://portal.azure.com).
+1. Werk de verbindingsreeksen in uw toepassingscode bij om te verwijzen naar de secundaire toegangssleutel voor het opslagaccount.
+1. Navigeer naar uw opslagaccount in [Azure Portal](https://portal.azure.com).
 1. Selecteer onder **Instellingen** de optie **Toegangssleutels**.
-1. Als u de primaire toegangs sleutel voor uw opslag account opnieuw wilt genereren, selecteert u de knop **opnieuw genereren** naast de primaire toegangs sleutel.
+1. Als u de primaire toegangssleutel voor uw opslagaccount opnieuw wilt maken, selecteert u de **knop Opnieuw** maken naast de primaire toegangssleutel.
 1. Werk de verbindingsreeksen in uw code bij, zodat deze verwijzen naar de nieuwe primaire toegangssleutel.
 1. Genereer de secundaire toegangssleutel op dezelfde manier opnieuw.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-De toegangs sleutels van uw opslag account met Power shell draaien:
+Toegangssleutels voor uw opslagaccount roteren met PowerShell:
 
-1. Werk de verbindings reeksen in uw toepassings code bij om te verwijzen naar de secundaire toegangs sleutel voor het opslag account.
-1. Roep de opdracht [New-AzStorageAccountKey](/powershell/module/az.storage/new-azstorageaccountkey) aan om de primaire toegangs sleutel opnieuw te genereren, zoals wordt weer gegeven in het volgende voor beeld:
+1. Werk de verbindingsreeksen in uw toepassingscode bij om te verwijzen naar de secundaire toegangssleutel voor het opslagaccount.
+1. Roep de [opdracht New-AzStorageAccountKey](/powershell/module/az.storage/new-azstorageaccountkey) aan om de primaire toegangssleutel opnieuw te maken, zoals wordt weergegeven in het volgende voorbeeld:
 
     ```powershell
     New-AzStorageAccountKey -ResourceGroupName <resource-group> `
@@ -109,14 +109,14 @@ De toegangs sleutels van uw opslag account met Power shell draaien:
     ```
 
 1. Werk de verbindingsreeksen in uw code bij, zodat deze verwijzen naar de nieuwe primaire toegangssleutel.
-1. Genereer de secundaire toegangssleutel op dezelfde manier opnieuw. Als u de secundaire sleutel opnieuw wilt genereren, gebruikt u `key2` als sleutel naam in plaats van `key1` .
+1. Genereer de secundaire toegangssleutel op dezelfde manier opnieuw. Als u de secundaire sleutel opnieuw wilt maken, gebruikt `key2` u als sleutelnaam in plaats van `key1` .
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De toegangs sleutels van uw opslag account met Azure CLI draaien:
+Toegangssleutels voor uw opslagaccount roteren met Azure CLI:
 
-1. Werk de verbindings reeksen in uw toepassings code bij om te verwijzen naar de secundaire toegangs sleutel voor het opslag account.
-1. Roep de opdracht [AZ Storage account Keys renew](/cli/azure/storage/account/keys#az-storage-account-keys-renew) uit om de primaire toegangs sleutel opnieuw te genereren, zoals wordt weer gegeven in het volgende voor beeld:
+1. Werk de verbindingsreeksen in uw toepassingscode bij om te verwijzen naar de secundaire toegangssleutel voor het opslagaccount.
+1. Roep de [opdracht az storage account keys renew](/cli/azure/storage/account/keys#az_storage_account_keys_renew) aan om de primaire toegangssleutel opnieuw te maken, zoals wordt weergegeven in het volgende voorbeeld:
 
     ```azurecli-interactive
     az storage account keys renew \
@@ -126,14 +126,14 @@ De toegangs sleutels van uw opslag account met Azure CLI draaien:
     ```
 
 1. Werk de verbindingsreeksen in uw code bij, zodat deze verwijzen naar de nieuwe primaire toegangssleutel.
-1. Genereer de secundaire toegangssleutel op dezelfde manier opnieuw. Als u de secundaire sleutel opnieuw wilt genereren, gebruikt u `key2` als sleutel naam in plaats van `key1` .
+1. Genereer de secundaire toegangssleutel op dezelfde manier opnieuw. Als u de secundaire sleutel opnieuw wilt maken, gebruikt `key2` u als sleutelnaam in plaats van `key1` .
 
 ---
 
 > [!NOTE]
-> Micro soft raadt u aan om op hetzelfde moment slechts één van de sleutels in al uw toepassingen te gebruiken. Als u Key 1 op sommige locaties en sleutel 2 in andere gebruikt, kunt u de sleutels niet draaien zonder dat de toepassing de toegang verliest.
+> Microsoft raadt u aan slechts één van de sleutels in al uw toepassingen tegelijk te gebruiken. Als u op sommige plaatsen sleutel 1 en sleutel 2 op andere plaatsen gebruikt, kunt u uw sleutels niet roteren zonder dat een toepassing de toegang verliest.
 
-Als u de toegangs sleutels van een account wilt draaien, moet de gebruiker een service beheerder zijn of moet aan een Azure-rol zijn toegewezen die de **micro soft. Storage/Storage accounts/regeneratekey/Action** bevat. Sommige ingebouwde rollen van Azure die deze actie bevatten, zijn de rol rollen van de operator **eigenaar**, **Inzender** en **opslag account** . Zie voor meer informatie over de rol van service beheerder [klassieke abonnements beheerders rollen, Azure-rollen en Azure AD-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md). Zie de sectie **opslag** in [ingebouwde Azure-rollen voor Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor meer informatie over ingebouwde rollen van Azure voor Azure Storage.
+Als u de toegangssleutels van een account wilt roteren, moet de gebruiker een servicebeheerder zijn of moet aan een Azure-rol worden toegewezen die de **Microsoft.Storage/storageAccounts/regeneratekey/action** bevat. Sommige ingebouwde Azure-rollen die deze actie bevatten, zijn de servicerollen **Eigenaar,** **Inzender** en Sleuteloperator **voor opslagaccounts.** Zie Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-rollen voor meer informatie over de rol [Servicebeheerder.](../../role-based-access-control/rbac-and-directory-admin-roles.md) Zie de sectie Opslag in ingebouwde Azure-rollen  voor Azure RBAC voor gedetailleerde informatie over [ingebouwde Azure-rollen](../../role-based-access-control/built-in-roles.md#storage)voor Azure Storage.
 
 ## <a name="next-steps"></a>Volgende stappen
 

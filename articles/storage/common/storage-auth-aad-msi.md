@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 2aa6730759a9aa1aaab3156c55bf19e82641b8ea
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: 80df7b85ec1ad9e273081f9a6a96b9a9d7ec8cd9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/20/2021
-ms.locfileid: "107739328"
+ms.locfileid: "107791189"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Toegang verlenen tot blob- en wachtrijgegevens met beheerde identiteiten voor Azure-resources
 
@@ -34,7 +34,7 @@ Voordat u beheerde identiteiten voor Azure-resources kunt gebruiken om toegang t
 - [Azure Resource Manager-sjabloon](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
 - [Azure Resource Manager-clientbibliotheken](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
-Zie Beheerde identiteiten voor Azure-resources voor meer informatie over [beheerde identiteiten.](../../active-directory/managed-identities-azure-resources/overview.md)
+Zie Beheerde identiteiten voor Azure-resources voor meer informatie [over beheerde identiteiten.](../../active-directory/managed-identities-azure-resources/overview.md)
 
 ## <a name="authenticate-with-the-azure-identity-library"></a>Verifiëren met de Azure Identity-bibliotheek
 
@@ -53,7 +53,7 @@ Wanneer een Azure AD-beveiligingsprincipaal toegang probeert te krijgen tot blob
 > [!NOTE]
 > Wanneer u een Azure Storage account maakt, krijgt u niet automatisch machtigingen voor toegang tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resourcegroep, opslagaccount of container of wachtrij.
 >
-> Voordat u uzelf een rol voor gegevenstoegang toewijst, hebt u toegang tot gegevens in uw opslagaccount via de Azure Portal, omdat de Azure Portal ook de accountsleutel kan gebruiken voor toegang tot gegevens. Zie Choose how to authorize access to blob data in the Azure Portal (Kiezen hoe u toegang [tot blobgegevens autor](../blobs/authorize-data-operations-portal.md)Azure Portal) voor meer Azure Portal.
+> Voordat u uzelf een rol voor gegevenstoegang toewijst, hebt u toegang tot gegevens in uw opslagaccount via de Azure Portal omdat de Azure Portal ook de accountsleutel kan gebruiken voor toegang tot gegevens. Zie Choose how to authorize access to blob data in the Azure Portal (Kiezen hoe u toegang [tot blobgegevens autor](../blobs/authorize-data-operations-portal.md)Azure Portal) voor meer Azure Portal.
 
 ### <a name="authenticate-the-user-in-the-development-environment"></a>De gebruiker verifiëren in de ontwikkelomgeving
 
@@ -67,11 +67,11 @@ Als uw ontwikkelomgeving geen ondersteuning biedt voor een aanmelding of aanmeld
 
 #### <a name="create-the-service-principal"></a>De service-principal maken
 
-Als u een service-principal wilt maken met Azure CLI en een Azure-rol wilt toewijzen, roept u de [opdracht az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) aan. Geef een Azure Storage rol voor gegevenstoegang op om toe te wijzen aan de nieuwe service-principal. Geef daarnaast het bereik voor de roltoewijzing op. Zie Ingebouwde Azure-rollen voor meer informatie over de ingebouwde rollen die voor Azure Storage [worden geleverd.](../../role-based-access-control/built-in-roles.md)
+Als u een service-principal wilt maken met Azure CLI en een Azure-rol wilt toewijzen, roept u de [opdracht az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) aan. Geef een Azure Storage rol voor gegevenstoegang op om toe te wijzen aan de nieuwe service-principal. Geef daarnaast het bereik voor de roltoewijzing op. Zie Ingebouwde Azure-rollen voor meer informatie over de ingebouwde rollen die voor Azure Storage [worden geleverd.](../../role-based-access-control/built-in-roles.md)
 
 Als u niet voldoende machtigingen hebt om een rol toe te wijzen aan de service-principal, moet u mogelijk de accounteigenaar of beheerder vragen om de roltoewijzing uit te voeren.
 
-In het volgende voorbeeld wordt de Azure CLI  gebruikt om een nieuwe service-principal te maken en de rol Gegevenslezer voor opslagblob toe te wijzen met accountbereik
+In het volgende voorbeeld wordt de Azure CLI  gebruikt om een nieuwe service-principal te maken en de rol Gegevenslezer voor opslagblob toe te wijzen met een accountbereik
 
 ```azurecli-interactive
 az ad sp create-for-rbac \
@@ -80,7 +80,7 @@ az ad sp create-for-rbac \
     --scopes /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>
 ```
 
-De `az ad sp create-for-rbac` opdracht retourneert een lijst met service-principal-eigenschappen in JSON-indeling. Kopieer deze waarden zodat u ze in de volgende stap kunt gebruiken om de benodigde omgevingsvariabelen te maken.
+De `az ad sp create-for-rbac` opdracht retourneert een lijst met service-principal-eigenschappen in JSON-indeling. Kopieer deze waarden zodat u ze kunt gebruiken om de benodigde omgevingsvariabelen te maken in de volgende stap.
 
 ```json
 {
@@ -114,7 +114,7 @@ Zie Identiteit maken voor [Azure-app in de portal voor meer informatie.](../../a
 
 ## <a name="net-code-example-create-a-block-blob"></a>Voorbeeld van .NET-code: Een blok-blob maken
 
-Voeg de volgende `using` instructies toe aan uw code om de Azure Identity- en Azure Storage-clientbibliotheken te gebruiken.
+Voeg de volgende instructies `using` toe aan uw code om de Azure Identity- en Azure Storage-clientbibliotheken te gebruiken.
 
 ```csharp
 using Azure;

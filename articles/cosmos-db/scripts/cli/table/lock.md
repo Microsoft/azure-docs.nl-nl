@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: sample
 ms.date: 07/29/2020
-ms.openlocfilehash: 6df5f3842ba08b04dd82910d3762472f4ff4febd
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 04f8d541fc534a60550ba77d9775b340571a504f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94566806"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107788927"
 ---
 # <a name="create-resource-lock-for-a-azure-cosmos-db-table-api-table-using-azure-cli"></a>Resourcevergrendeling maken voor een Azure Cosmos DB Table-API-tabel met behulp van Azure CLI
 [!INCLUDE[appliesto-table-api](../../../includes/appliesto-table-api.md)]
@@ -34,10 +34,10 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az lock create](/cli/azure/lock#az-lock-create) | Hiermee wordt een vergrendeling gemaakt. |
-| [az lock list](/cli/azure/lock#az-lock-list) | Hiermee worden vergrendelingsgegevens weergegeven. |
-| [az lock show](/cli/azure/lock#az-lock-show) | Hiermee worden eigenschappen van een vergrendeling weergegeven. |
-| [az lock delete](/cli/azure/lock#az-lock-delete) | Hiermee wordt een vergrendeling verwijderd. |
+| [az lock create](/cli/azure/lock#az_lock_create) | Hiermee wordt een vergrendeling gemaakt. |
+| [az lock list](/cli/azure/lock#az_lock_list) | Hiermee worden vergrendelingsgegevens weergegeven. |
+| [az lock show](/cli/azure/lock#az_lock_show) | Hiermee worden eigenschappen van een vergrendeling weergegeven. |
+| [az lock delete](/cli/azure/lock#az_lock_delete) | Hiermee wordt een vergrendeling verwijderd. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

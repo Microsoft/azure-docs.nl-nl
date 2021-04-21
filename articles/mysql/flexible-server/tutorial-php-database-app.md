@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.devlang: php
 ms.date: 9/21/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 93e605cb20d593750100ec8e340a7ad74c4dd385
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bb38b72af6e7c649c0904c41d3052b15a4c36955
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97587890"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107770053"
 ---
 # <a name="tutorial-build-a-php-laravel-and-mysql-flexible-server-preview-app-in-azure-app-service"></a>Zelfstudie: Een PHP-app (Laravel) en een MySQL Flexible Server-app (preview) bouwen in Azure App Service
 
@@ -139,7 +139,7 @@ Ga naar `http://localhost:8000` in een browser. Voeg een paar taken op de pagina
 Typ `Ctrl + C` in de terminal om PHP te stoppen.
 
 ## <a name="create-a-mysql-flexible-server-preview"></a>Een MySQL Flexible Server maken (preview)
-In deze stap maakt u een MySQL-database in [Azure Database for MySQL Flexible Server](../index.yml) die in openbare preview is. Later configureert u de PHP-toepassing om verbinding te maken met deze database. Maak vanuit de [Azure Cloud Shell](../../cloud-shell/overview.md) een server met behulp van de opdracht [`az flexible-server create`](/cli/azure/mysql/server#az-mysql-flexible-server-create).
+In deze stap maakt u een MySQL-database in [Azure Database for MySQL Flexible Server](../index.yml) die in openbare preview is. Later configureert u de PHP-toepassing om verbinding te maken met deze database. Maak vanuit de [Azure Cloud Shell](../../cloud-shell/overview.md) een server met behulp van de opdracht [`az flexible-server create`](/cli/azure/mysql/server#az_mysql_flexible_server_create).
 
 ```azurecli-interactive
 az mysql flexible-server create  --resource-group myResourceGroup --public-access <IP-Address>
@@ -280,7 +280,7 @@ In deze stap implementeert u de met MySQL verbonden PHP-toepassing naar Azure Ap
 
 FTP en lokale Git kunnen worden geïmplementeerd in een Azure-web-app met behulp van een implementatiegebruikers. Zodra u deze implementatiegebruiker hebt gemaakt, kunt u deze voor al uw Azure-implementaties gebruiken. Uw gebruikersnaam en wachtwoord voor implementatie op accountniveau verschillen van de referenties voor uw Azure-abonnement.
 
-Als u de implementatiegebruiker wilt configureren, voert u de opdracht [az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) uit in Azure Cloud Shell. Vervang _&lt;gebruikersnaam >_ en _&lt;wachtwoord >_ door de gebruikersnaam en het wachtwoord van uw implementatiegebruiker.
+Als u de implementatiegebruiker wilt configureren, voert u de opdracht [az webapp deployment user set](/cli/azure/webapp/deployment/user#az_webapp_deployment_user_set) uit in Azure Cloud Shell. Vervang _&lt;gebruikersnaam >_ en _&lt;wachtwoord >_ door de gebruikersnaam en het wachtwoord van uw implementatiegebruiker.
 
 De gebruikersnaam moet uniek zijn binnen Azure en voor lokale Git-pushes en mag het symbool @ niet bevatten.
 Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen.
@@ -293,7 +293,7 @@ De JSON-uitvoer toont het wachtwoord als null. Als u de fout 'Conflict'. Details
 
 ### <a name="create-an-app-service-plan"></a>Een App Service-plan maken
 
-Maak in de Cloud Shell een App Service-plan in de resourcegroep met de opdracht [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create). In het volgende voorbeeld wordt een App Service-plan gemaakt met de naam myAppServicePlan in de prijscategorie Gratis (--sku F1) en in een Linux-container (--is-linux).
+Maak in de Cloud Shell een App Service-plan in de resourcegroep met de opdracht [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create). In het volgende voorbeeld wordt een App Service-plan gemaakt met de naam myAppServicePlan in de prijscategorie Gratis (--sku F1) en in een Linux-container (--is-linux).
 
 az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku F1 --is-linux
 
@@ -303,7 +303,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 Maak een [web-app](../../app-service/overview.md#app-service-on-linux) in het App Service-plan myAppServicePlan.
 
-In de Cloud Shell kunt u de opdracht [az webapp create](/cli/azure/webapp#az-webapp-create) gebruiken. Vervang in het volgende voorbeeld _&lt;app-name>_ door een unieke naam (geldige tekens zijn `a-z`, `0-9` en `-`). De runtime is ingesteld op `PHP|7.0`. Voer [az webapp list-runtimes --linux](/cli/azure/webapp#az-webapp-list-runtimes) uit om alle ondersteunde runtimes te bekijken.
+In de Cloud Shell kunt u de opdracht [az webapp create](/cli/azure/webapp#az_webapp_create) gebruiken. Vervang in het volgende voorbeeld _&lt;app-name>_ door een unieke naam (geldige tekens zijn `a-z`, `0-9` en `-`). De runtime is ingesteld op `PHP|7.0`. Voer [az webapp list-runtimes --linux](/cli/azure/webapp#az_webapp_list_runtimes) uit om alle ondersteunde runtimes te bekijken.
 
 ```bash
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app-name> --runtime "PHP|7.3" --deployment-local-git
@@ -334,7 +334,7 @@ U hebt een nieuwe lege web-app gemaakt, met Git-implementatie ingeschakeld.
 
 ### <a name="configure-database-settings"></a>Database-instellingen configureren
 
-In App Service stelt u de omgevingsvariabelen in op _app-instellingen_ met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
+In App Service stelt u de omgevingsvariabelen in op _app-instellingen_ met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set).
 
 De volgende opdracht configureert de app-instellingen `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, en `DB_PASSWORD`. Vervang de tijdelijke aanduidingen _&lt;app-name>_ en _&lt;mysql-server-name>_ .
 
@@ -365,7 +365,7 @@ In het lokale terminalvenster gebruikt u `php artisan` voor het genereren van ee
 php artisan key:generate --show
 ```
 
-In de Cloud Shell stelt u de toepassingssleutel in de App Service-app in met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set). Vervang de tijdelijke aanduidingen _&lt;app-name>_ en _&lt;outputofphpartisankey:generate>_ .
+In de Cloud Shell stelt u de toepassingssleutel in de App Service-app in met behulp van de opdracht [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set). Vervang de tijdelijke aanduidingen _&lt;app-name>_ en _&lt;outputofphpartisankey:generate>_ .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings APP_KEY="<output_of_php_artisan_key:generate>" APP_DEBUG="true"

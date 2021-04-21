@@ -1,6 +1,6 @@
 ---
-title: Ontwikkel hulpprogramma's van Azure vertrouwelijk computing
-description: Hulpprogram ma's en bibliotheken gebruiken om toepassingen te ontwikkelen voor vertrouwelijke computing
+title: Ontwikkelhulpprogramma's voor Azure Confidential Computing
+description: Hulpprogramma's en bibliotheken gebruiken om toepassingen te ontwikkelen voor confidential computing
 services: virtual-machines
 author: JBCook
 ms.service: virtual-machines
@@ -8,21 +8,22 @@ ms.subservice: confidential-computing
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: JenCook
-ms.openlocfilehash: 0ba6ee92111da66a2118ba4c490b94e5bc9449e0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 571c1a4ce545976db09f46a07d963d5344c02c29
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102551382"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791009"
 ---
-# <a name="application-development-on-intel-sgx"></a>Toepassings ontwikkeling op Intel SGX 
+# <a name="application-development-on-intel-sgx"></a>Toepassingsontwikkeling op Intel SGX 
 
 
-Voor de infra structuur voor vertrouwelijke computers zijn specifieke hulpprogram ma's en software vereist. Op deze pagina worden de concepten besproken die betrekking hebben op het ontwikkelen van toepassingen voor virtuele Azure-machines die worden uitgevoerd op Intel SGX. Lees, voordat u deze pagina leest, [de introductie van virtuele machines van Intel SGX en enclaves](confidential-computing-enclaves.md). 
+Confidential Computing-infrastructuur vereist specifieke hulpprogramma's en software. Deze pagina bespreekt specifiek concepten met betrekking tot de ontwikkeling van toepassingen voor virtuele azure-machines met confidential computing die worden uitgevoerd op Intel SGX. Lees voordat u deze pagina leest [de introductie van virtuele Intel SGX-machines en enclaves](confidential-computing-enclaves.md). 
 
 Als u de kracht van enclaves en geïsoleerde omgevingen wilt gebruiken, hebt u hulpprogramma's nodig die confidential computing ondersteunen. Er zijn verschillende hulpprogramma's die ondersteuning bieden voor de ontwikkeling van enclavetoepassingen. U kunt bijvoorbeeld deze open-source frameworks gebruiken: 
 
-- [De open enclave Software Development Kit (OE SDK)](#oe-sdk)
+- [De Open Enclave Software Development Kit (OE SDK)](#oe-sdk)
+- [De EGo Software Development Kit](#ego)
 - [The Confidential Consortium Framework (CCF)](#ccf)
 
 ## <a name="overview"></a>Overzicht
@@ -49,15 +50,19 @@ Gebruik een bibliotheek die of framework dat door uw provider wordt ondersteund 
 
 De OE SDK is gebouwd als één abstractielaag op willekeurige hardware en willekeurige CSP. De OE SDK kan worden gebruikt over virtuele machines met Azure Confidential Computing heen om toepassingen op enclaves te maken en uit te voeren.
 
-## <a name="confidential-consortium-framework-ccf"></a>Vertrouwelijk consortium Framework (CCF) <a id="ccf"></a>
+## <a name="ego-software-development-kit"></a>EGo Software Development Kit <a id="ego"></a>
 
-De [CCF](https://github.com/Microsoft/CCF) is een gedistribueerd netwerk van knoop punten, elk met hun eigen enclaves. Met het vertrouwde knooppunt netwerk kunt u een gedistribueerd groot boek uitvoeren. Het groot boek biedt beveiligde, betrouw bare onderdelen voor het protocol dat kan worden gebruikt. 
+[EGo](https://ego.dev/) is een opensource-SDK waarmee u toepassingen kunt uitvoeren die zijn geschreven in de programmeertaal Go in enclaves. EGo bouwt voort op de OE SDK en wordt geleverd met een in-enclave Go-bibliotheek voor attestation en verzegeling. Veel bestaande Go-toepassingen worden zonder wijzigingen uitgevoerd op EGo.  
 
-![CCF-knoop punten](media/application-development/ccf.png)
+## <a name="confidential-consortium-framework-ccf"></a>Confidential Consortium Framework (CCF) <a id="ccf"></a>
 
-Dit open-source-framework maakt grote, verfijnde vertrouwelijkheid en consortium governance voor Block chain mogelijk. Met elk knoop punt dat gebruikmaakt van TEEs, kunt u zorgen voor beveiligde consensus en transactie verwerking.
+De [CCF](https://github.com/Microsoft/CCF) is een gedistribueerd netwerk van knooppunten die elk hun eigen enclaves uitvoeren. Met het vertrouwde knooppuntnetwerk kunt u een gedistribueerd grootboek uitvoeren. Het grootboek biedt veilige, betrouwbare onderdelen die het protocol kan gebruiken. 
+
+![CCF-knooppunten](media/application-development/ccf.png)
+
+Dit opensource-framework maakt een hoge mate van vertrouwelijkheid en consortiumgovernance voor blockchain mogelijk. Met elk knooppunt dat TEE's gebruikt, kunt u zorgen voor een veilige consensus en transactieverwerking.
 
 
 ## <a name="next-steps"></a>Volgende stappen 
-- [Een vertrouwelijke computing DCsv2-Series virtuele machine implementeren](quick-create-portal.md)
-- [Down load en installeer de OE SDK en begin met het ontwikkelen van toepassingen](https://github.com/openenclave/openenclave)
+- [Een confidential computing-DCsv2-Series virtuele machine implementeren](quick-create-portal.md)
+- [De OE SDK downloaden en installeren en beginnen met het ontwikkelen van toepassingen](https://github.com/openenclave/openenclave)

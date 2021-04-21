@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: d81b6f5367efa92c9249956faa058441edf98561
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 70bd79ef944e5918d750a130bd2e2b2c2b656bf4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92755604"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781115"
 ---
 ### <a name="create-a-user-assigned-identity"></a>Een door de gebruiker toegewezen identiteit maken
 
-Maak een identiteit met de naam *myACRTasksId* in uw abonnement met behulp van de opdracht [AZ Identity Create][az-identity-create] . U kunt dezelfde resource groep gebruiken die u eerder hebt gebruikt voor het maken van een container register of een andere.
+Maak een identiteit met de *naam myACRTasksId* in uw abonnement met behulp van [de opdracht az identity create.][az-identity-create] U kunt dezelfde resourcegroep gebruiken die u eerder hebt gebruikt om een containerregister of een ander containerregister te maken.
 
 ```azurecli
 az identity create \
@@ -25,7 +25,7 @@ az identity create \
   --name myACRTasksId
 ```
 
-Als u de door de gebruiker toegewezen identiteit in de volgende stappen wilt configureren, gebruikt u de opdracht [AZ Identity show][az-identity-show] om de resource-id, de principal-id en de client-id van de identiteit op te slaan in variabelen.
+Als u de door de gebruiker toegewezen identiteit in de volgende stappen wilt configureren, gebruikt u de opdracht [az identity show][az-identity-show] om de resource-id, principal-id en client-id van de identiteit op te slaan in variabelen.
 
 ```azurecli
 # Get resource ID of the user-assigned identity
@@ -48,5 +48,5 @@ clientID=$(az identity show \
 ```
 
 <!-- LINKS - Internal -->
-[az-identity-create]: /cli/azure/identity#az-identity-create
-[az-identity-show]: /cli/azure/identity#az-identity-show
+[az-identity-create]: /cli/azure/identity#az_identity_create
+[az-identity-show]: /cli/azure/identity#az_identity_show

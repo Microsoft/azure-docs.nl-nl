@@ -176,7 +176,7 @@
           href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
           items:
-            - name: Java Message Service (JMS) 2.0-entiteiten
+            - name: JMS-entiteiten (Java Message Service) 2.0
               href: java-message-service-20-entities.md
             - name: JMS-ontwikkelaarsaccounts (Java Message Service) guide.md
               href: jms-developer-guide.md
@@ -242,7 +242,7 @@
           href: enable-duplicate-detection.md
         - name: Partities voor een wachtrij of onderwerp inschakelen
           href: enable-partitions.md
-        - name: Automatisch doorsturen voor een wachtrij of abonnement inschakelen
+        - name: Automatisch doorsturen inschakelen voor een wachtrij of abonnement
           href: enable-auto-forward.md
         - name: Verplaatsen tussen regio's
           href: move-across-regions.md
@@ -345,7 +345,7 @@
 - name: Resources
   items:
     - name: Veelgestelde vragen
-      href: service-bus-faq.md
+      href: service-bus-faq.yml
     - name: Uw vaardigheden ontwikkelen met Microsoft Learn
       href: /learn/browse/?products=azure-service-bus
     - name: Azure-roadmap

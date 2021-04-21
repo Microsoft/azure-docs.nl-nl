@@ -1,6 +1,6 @@
 ---
-title: Fout domeinen in virtuele-machine schaal sets van Azure beheren
-description: Meer informatie over het kiezen van het juiste aantal Fd's tijdens het maken van een schaalset voor virtuele machines.
+title: Foutdomeinen beheren in virtuele-machineschaalsets van Azure
+description: Meer informatie over het kiezen van het juiste aantal FD's tijdens het maken van een virtuele-machineschaalset.
 author: mimckitt
 ms.author: mimckitt
 ms.topic: conceptual
@@ -9,23 +9,23 @@ ms.subservice: availability
 ms.date: 12/18/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 8c114d6260cf81bcc4fb256fc8a09947ab9ce1d8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 10d45662f84a354ee4b261c2e7255a57aa81ad0f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102502481"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774481"
 ---
 # <a name="choosing-the-right-number-of-fault-domains-for-virtual-machine-scale-set"></a>Het juiste aantal foutdomeinen kiezen voor een virtuele-machineschaalset
-Virtuele-machine schaal sets worden standaard gemaakt met vijf fout domeinen in azure-regio's zonder zones. Voor de regio's die ondersteuning bieden voor zonegebonden-implementatie van schaal sets voor virtuele machines en deze optie is geselecteerd, is de standaard waarde van het aantal fout domeinen 1 voor elk van de zones. FD = 1 in dit geval impliceert dat de VM-exemplaren die deel uitmaken van de schaalset, worden verdeeld over veel racks op basis van de beste inspanningen.
+Virtuele-machineschaalsets worden standaard gemaakt met vijf foutdomeinen in Azure-regio's zonder zones. Voor de regio's die zonelijke implementatie van virtuele-machineschaalsets ondersteunen en deze optie is geselecteerd, is de standaardwaarde van het aantal foutdomeinen 1 voor elk van de zones. FD =1 impliceert in dit geval dat de VM-exemplaren die tot de schaalset behoren, op basis van de beste inspanning over veel rekken worden verdeeld.
 
-U kunt ook overwegen het aantal fout domeinen met schaal sets af te stemmen met het aantal Managed Disks fout domeinen. Deze uitlijning kan helpen voor komen dat quorum verloren gaat als een volledig Managed Disks fout domein wordt uitgeschakeld. Het aantal FD kan worden ingesteld op minder dan of gelijk aan het aantal Managed Disks fout domeinen dat in elk van de regio's beschikbaar is. Raadpleeg dit [document](../virtual-machines/availability.md) voor meer informatie over het aantal Managed disks fout domeinen per regio.
+U kunt ook overwegen om het aantal foutdomeinen in de schaalset af te stemmen op het aantal Managed Disks foutdomeinen. Deze uitlijning kan voorkomen dat quorumverlies wordt voorkomen als een Managed Disks foutdomein uitvallen. Het aantal FD's kan worden ingesteld op minder dan of gelijk aan het aantal Managed Disks foutdomeinen dat beschikbaar is in elk van de regio's. Raadpleeg dit [document voor](../virtual-machines/availability.md) meer informatie over het aantal Managed Disks foutdomeinen per regio.
 
 ## <a name="rest-api"></a>REST-API
-U kunt de eigenschap instellen `properties.platformFaultDomainCount` op 1, 2 of 3 (de standaard waarde is 3 als deze niet is opgegeven). Raadpleeg [hier](/rest/api/compute/virtualmachinescalesets/createorupdate)de documentatie voor rest API.
+U kunt de eigenschap `properties.platformFaultDomainCount` instellen op 1, 2 of 3 (standaard 3 als deze niet is opgegeven). Raadpleeg de documentatie voor REST API [hier.](/rest/api/compute/virtualmachinescalesets/createorupdate)
 
 ## <a name="azure-cli"></a>Azure CLI
-U kunt de para meter instellen `--platform-fault-domain-count` op 1, 2 of 3 (de standaard waarde is 3 als deze niet is opgegeven). Raadpleeg [hier](/cli/azure/vmss#az-vmss-create)de documentatie voor Azure cli.
+U kunt de parameter `--platform-fault-domain-count` instellen op 1, 2 of 3 (standaard 3 indien niet opgegeven). Raadpleeg hier de documentatie voor Azure [CLI.](/cli/azure/vmss#az_vmss_create)
 
 ```azurecli-interactive
 az vmss create \
@@ -41,4 +41,4 @@ az vmss create \
 Het duurt enkele minuten om alle schaalsetresources en VM's te maken en te configureren.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [functies voor Beschik baarheid en redundantie](../virtual-machines/availability.md) voor Azure-omgevingen.
+- Meer informatie over [beschikbaarheids- en redundantiefuncties](../virtual-machines/availability.md) voor Azure-omgevingen.

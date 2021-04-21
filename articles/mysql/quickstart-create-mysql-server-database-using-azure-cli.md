@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/15/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 4f774351fc0eaaf32069687a1943c72b74b6308a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3dd971ff36bde02072d14c465dbafec2823b256d
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96494321"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780313"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-using-azure-cli"></a>Quickstart: Een Azure-database voor MySQL-server maken met behulp van Azure CLI
 
@@ -28,7 +28,7 @@ In deze quickstart wordt beschreven hoe u de [Azure CLI](/cli/azure/get-started-
 
  - Voor deze quickstart is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
- - Selecteer het specifieke abonnement in uw account met de opdracht [az account set](/cli/azure/account). Noteer de **id**-waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az-account-list).
+ - Selecteer het specifieke abonnement in uw account met de opdracht [az account set](/cli/azure/account). Noteer de **id**-waarde uit de uitvoer van **az login** en gebruik deze als de waarde voor het argument **abonnement** in de opdracht. Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. U kunt al uw abonnementen ophalen met de opdracht [az account list](/cli/azure/account#az_account_list).
 
    ```azurecli
    az account set --subscription <subscription id>
@@ -41,7 +41,7 @@ Maak een [Azure-resourcegroep](../azure-resource-manager/management/overview.md)
 az group create --name myresourcegroup --location westus
 ```
 
-Als u een Azure-database voor MySQL-server wilt maken, gebruikt u de opdracht [az mysql server create](/cli/azure/mysql/server#az-mysql-server-create). Een server kan meerdere databases bevatten.
+Als u een Azure-database voor MySQL-server wilt maken, gebruikt u de opdracht [az mysql server create](/cli/azure/mysql/server#az_mysql_server_create). Een server kan meerdere databases bevatten.
 
 ```azurecli
 az mysql server create --resource-group myresourcegroup --name mydemoserver --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 
@@ -60,7 +60,7 @@ sku-name|GP_Gen5_2|Voer de naam van de prijscategorie en de berekeningsconfigura
 
 >[!IMPORTANT] 
 >- De standaardversie van MySQL op uw server is 5.7. Momenteel zijn ook versie 5.6 en 8.0 beschikbaar.
->- Als u alle argumenten voor de opdracht **az mysql server create** wilt weergeven, raadpleegt u dit [referentiedocument](/cli/azure/mysql/server#az-mysql-server-create).
+>- Als u alle argumenten voor de opdracht **az mysql server create** wilt weergeven, raadpleegt u dit [referentiedocument](/cli/azure/mysql/server#az_mysql_server_create).
 >- SSL is standaard ingeschakeld op de server. Zie [SSL-connectiviteit configureren](howto-configure-ssl.md) voor meer informatie over SSL
 
 ## <a name="configure-a-server-level-firewall-rule"></a>Een serverfirewallregel configureren 
@@ -126,7 +126,7 @@ Als u deze resources niet voor een andere Quickstart of zelfstudie nodig hebt, k
 az group delete --name myresourcegroup
 ```
 
-Als u alleen de zojuist gemaakte server wilt verwijderen, kunt u de opdracht [az mysql server delete](/cli/azure/mysql/server#az-mysql-server-delete) uitvoeren.
+Als u alleen de zojuist gemaakte server wilt verwijderen, kunt u de opdracht [az mysql server delete](/cli/azure/mysql/server#az_mysql_server_delete) uitvoeren.
 
 ```azurecli-interactive
 az mysql server delete --resource-group myresourcegroup --name mydemoserver

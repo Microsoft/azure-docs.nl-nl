@@ -1,6 +1,6 @@
 ---
-title: Een schaalset maken op basis van een gegeneraliseerde installatie kopie met Azure CLI
-description: Een schaalset maken met behulp van een gegeneraliseerde installatie kopie in een galerie met gedeelde afbeeldingen met behulp van de Azure CLI.
+title: Een schaalset maken van een ge generaliseerde afbeelding met Azure CLI
+description: Maak een schaalset met behulp van een ge generaliseerde afbeelding in een Shared Image Gallery azure CLI.
 author: cynthn
 ms.service: virtual-machine-scale-sets
 ms.subservice: imaging
@@ -9,22 +9,22 @@ ms.topic: how-to
 ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: e360ae3cf0c463add9e6445a96c118d9f40ce9cb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: de50540345ac6170d229549cad736dafb04e488c
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98878033"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792359"
 ---
-# <a name="create-a-scale-set-from-a-generalized-image-with-azure-cli"></a>Een schaalset maken op basis van een gegeneraliseerde installatie kopie met Azure CLI
+# <a name="create-a-scale-set-from-a-generalized-image-with-azure-cli"></a>Een schaalset maken van een ge generaliseerde afbeelding met Azure CLI
 
-Een schaalset maken van een gegeneraliseerde installatie kopie-versie die is opgeslagen in een [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md) met behulp van de Azure cli. Zie [instanties van een schaalset maken op basis van een gespecialiseerde](instance-specialized-image-version-cli.md)afbeelding als u een schaalset wilt maken met behulp van een gespecialiseerde afbeeldings versie.
+Maak een schaalset op basis van een ge generaliseerde versie van de afbeelding die is opgeslagen in [Shared Image Gallery](../virtual-machines/shared-image-galleries.md) Azure CLI. Zie Exemplaren van schaalsets maken op basis van een gespecialiseerde afbeelding als u een schaalset wilt maken met behulp van een [gespecialiseerde versie van de -afbeelding.](instance-specialized-image-version-cli.md)
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.4.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 Vervang resourcenamen naar behoefte in dit voorbeeld. 
 
-De afbeeldings definities in een galerie weer geven met behulp van [AZ sig Image List-definitie lijst](/cli/azure/sig/image-definition#az-sig-image-definition-list) om de naam en id van de definities weer te geven.
+Gebruik az [sig image-definition list](/cli/azure/sig/image-definition#az_sig_image_definition_list) om de naam en id van de definities weer te geven in een galerie.
 
 ```azurecli-interactive 
 resourceGroup=myGalleryRG
@@ -36,11 +36,11 @@ az sig image-definition list \
    --output tsv
 ```
 
-Maak de schaalset met behulp van [`az vmss create`](/cli/azure/vmss#az-vmss-create) . 
+Maak de schaalset met [`az vmss create`](/cli/azure/vmss#az_vmss_create) behulp van . 
 
-Gebruik de id van de installatiekopiedefinitie voor `--image` om de schaalsetinstanties te maken op basis van de meest recente beschikbare versie van de installatiekopie. U kunt de schaalsetinstantie ook maken op basis van een specifieke versie door de id van de installatiekopieversie op te geven voor `--image`. Houd er rekening mee dat automatisering met behulp van een specifieke versie van de installatie kopie kan mislukken als deze specifieke installatie kopie versie niet beschikbaar is omdat deze is verwijderd of uit de regio is verwijderd. U kunt het beste de definitie-ID van de installatie kopie gebruiken voor het maken van uw nieuwe VM, tenzij een specifieke installatie kopie versie vereist is.
+Gebruik de id van de installatiekopiedefinitie voor `--image` om de schaalsetinstanties te maken op basis van de meest recente beschikbare versie van de installatiekopie. U kunt de schaalsetinstantie ook maken op basis van een specifieke versie door de id van de installatiekopieversie op te geven voor `--image`. Het gebruik van een specifieke versie van een afbeelding betekent dat automatisering kan mislukken als die specifieke versie van de afbeelding niet beschikbaar is omdat deze is verwijderd uit de regio. We raden u aan de definitie-id van de afbeelding te gebruiken voor het maken van uw nieuwe VM, tenzij een specifieke versie van de afbeelding is vereist.
 
-In dit voor beeld maken we instanties van de nieuwste versie van de *myImageDefinition* -installatie kopie.
+In dit voorbeeld maken we exemplaren van de nieuwste versie van de *myImageDefinition-afbeelding.*
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -55,12 +55,12 @@ az vmss create \
 Het duurt enkele minuten om alle schaalsetresources en VM's te maken en te configureren.
 
 ## <a name="next-steps"></a>Volgende stappen
-Met [Azure Image Builder (preview)](../virtual-machines/image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](../virtual-machines/linux/image-builder-gallery-update-image-version.md). 
+[Azure Image Builder (preview)](../virtual-machines/image-builder-overview.md) kan helpen bij het automatiseren van het maken van de versie van de afbeelding. U kunt deze zelfs gebruiken om een nieuwe versie van de afbeelding bij te werken en te maken van een [bestaande versie van de afbeelding](../virtual-machines/linux/image-builder-gallery-update-image-version.md). 
 
-U kunt ook een resource voor de galerie met gedeelde afbeeldingen maken met behulp van sjablonen. Er zijn verschillende Azure-quickstart-sjablonen beschikbaar: 
+U kunt ook een Shared Image Gallery maken met behulp van sjablonen. Er zijn verschillende Azure-quickstart-sjablonen beschikbaar: 
 
 - [Een gedeelde installatiekopiegalerie maken](https://azure.microsoft.com/resources/templates/101-sig-create/)
 - [Een installatiekopiedefinitie maken in een gedeelde installatiekopiegalerie](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
 - [Een installatiekopieversie maken in een gedeelde installatiekopiegalerie](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 
-Zie het [overzicht](../virtual-machines/shared-image-galleries.md)voor meer informatie over gedeelde afbeeldings galerieën. Als u problemen ondervindt, raadpleegt u [problemen met de galerie met gedeelde afbeeldingen oplossen](../virtual-machines/troubleshooting-shared-images.md).
+Zie overzicht voor meer informatie over galerieën met gedeelde [afbeeldingen.](../virtual-machines/shared-image-galleries.md) Zie Problemen met galerieën met gedeelde afbeeldingen oplossen als u problemen [hebt.](../virtual-machines/troubleshooting-shared-images.md)

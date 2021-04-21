@@ -1,72 +1,72 @@
 ---
 title: Resources implementeren met Azure CLI en sjabloon
-description: Gebruik Azure Resource Manager en Azure CLI om resources te implementeren in Azure. De resources worden gedefinieerd in een resource manager-sjabloon of een Bicep-bestand.
+description: Gebruik Azure Resource Manager en Azure CLI om resources te implementeren in Azure. De resources worden gedefinieerd in een Resource Manager of een Bicep-bestand.
 ms.topic: conceptual
 ms.date: 03/25/2021
-ms.openlocfilehash: b19dc6cc292306cc796f8c1d8f93b358a079d83b
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f616a40f2683268f0cc26314fcc88ecca23bdbcf
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105544431"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107782059"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Resources implementeren met ARM-sjablonen en Azure CLI
 
-In dit artikel wordt uitgelegd hoe u Azure CLI gebruikt met Azure Resource Manager sjablonen (ARM-sjablonen) of Bicep-bestanden om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u overzicht van [sjabloon implementatie](overview.md) of [Bicep overzicht](bicep-overview.md).
+In dit artikel wordt uitgelegd hoe u Azure CLI gebruikt met Azure Resource Manager-sjablonen (ARM-sjablonen) of Bicep-bestanden om uw resources in Azure te implementeren. Zie Overzicht van sjabloonimplementatie of Bicep-overzicht als [](overview.md) u niet bekend bent met de concepten van het implementeren en beheren van uw [Azure-oplossingen.](bicep-overview.md)
 
-De implementatie-opdrachten zijn gewijzigd in azure CLI-versie 2.2.0. Voor de voor beelden in dit artikel is Azure CLI-versie 2.2.0 of hoger vereist. Voor het implementeren van Bicep-bestanden hebt u [Azure CLI versie 2.20.0 of hoger](/cli/azure/install-azure-cli)nodig.
+De implementatieopdrachten zijn gewijzigd in Azure CLI versie 2.2.0. Voor de voorbeelden in dit artikel is Azure CLI versie 2.2.0 of hoger vereist. Als u Bicep-bestanden wilt implementeren, hebt u [Azure CLI versie 2.20.0 of hoger nodig.](/cli/azure/install-azure-cli)
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
-Als Azure CLI niet is geïnstalleerd, kunt u Azure Cloud Shell gebruiken. Zie [arm-sjablonen implementeren vanaf Azure Cloud shell](deploy-cloud-shell.md)voor meer informatie.
+Als u Azure CLI niet hebt geïnstalleerd, kunt u deze Azure Cloud Shell. Zie ARM-sjablonen implementeren [vanuit Azure Cloud Shell voor meer Azure Cloud Shell.](deploy-cloud-shell.md)
 
-## <a name="deployment-scope"></a>Implementatie bereik
+## <a name="deployment-scope"></a>Implementatiebereik
 
-U kunt uw implementatie richten op een resource groep, een abonnement, een beheer groep of een Tenant. Afhankelijk van het bereik van de implementatie, gebruikt u verschillende opdrachten.
+U kunt uw implementatie richten op een resourcegroep, abonnement, beheergroep of tenant. Afhankelijk van het bereik van de implementatie gebruikt u verschillende opdrachten.
 
-* Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az-deployment-group-create)om te implementeren in een **resource groep**:
+* Als u wilt implementeren in **een resourcegroep,** gebruikt [u az deployment group create](/cli/azure/deployment/group#az_deployment_group_create):
 
   ```azurecli-interactive
   az deployment group create --resource-group <resource-group-name> --template-file <path-to-template-or-bicep>
   ```
 
-* Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)om te implementeren in een **abonnement**:
+* Als u wilt implementeren in **een abonnement,** gebruikt [u az deployment sub create](/cli/azure/deployment/sub#az_deployment_sub_create):
 
   ```azurecli-interactive
   az deployment sub create --location <location> --template-file <path-to-template-or-bicep>
   ```
 
-  Zie [resource groepen en-resources op abonnements niveau maken](deploy-to-subscription.md)voor meer informatie over implementaties op abonnements niveau.
+  Zie Resourcegroepen en resources maken op abonnementsniveau voor meer informatie over implementaties [op abonnementsniveau.](deploy-to-subscription.md)
 
-* Gebruik [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create)om te implementeren in een **beheer groep**:
+* Als u wilt implementeren in **een beheergroep,** gebruikt [u az deployment mg create](/cli/azure/deployment/mg#az_deployment_mg_create):
 
   ```azurecli-interactive
   az deployment mg create --location <location> --template-file <path-to-template-or-bicep>
   ```
 
-  Zie [resources maken op het niveau van de beheer groep](deploy-to-management-group.md)voor meer informatie over implementaties op het niveau van beheer groepen.
+  Zie Resources maken op beheergroepsniveau voor meer informatie over implementaties [op beheergroepniveau.](deploy-to-management-group.md)
 
-* Gebruik [AZ Deployment Tenant Create](/cli/azure/deployment/tenant#az-deployment-tenant-create)om te implementeren naar een **Tenant**:
+* Als u wilt implementeren in **een tenant,** gebruikt [u az deployment tenant create](/cli/azure/deployment/tenant#az_deployment_tenant_create):
 
   ```azurecli-interactive
   az deployment tenant create --location <location> --template-file <path-to-template-or-bicep>
   ```
 
-  Zie [resources maken op Tenant niveau](deploy-to-tenant.md)voor meer informatie over implementaties op Tenant niveau.
+  Zie Resources maken op tenantniveau voor meer informatie over [implementaties op tenantniveau.](deploy-to-tenant.md)
 
-Voor elk bereik moet de gebruiker die de sjabloon implementeert of het Bicep-bestand de vereiste machtigingen hebben voor het maken van resources.
+Voor elk bereik moet de gebruiker die de sjabloon of het Bicep-bestand implementeert, over de vereiste machtigingen beschikken om resources te maken.
 
 ## <a name="deploy-local-template-or-bicep-file"></a>Lokale sjabloon of Bicep-bestand implementeren
 
-U kunt een sjabloon implementeren vanaf uw lokale computer of een die extern is opgeslagen. In deze sectie wordt het implementeren van een lokale sjabloon beschreven.
+U kunt een sjabloon implementeren vanaf uw lokale computer of een sjabloon die extern is opgeslagen. In deze sectie wordt beschreven hoe u een lokale sjabloon implementeert.
 
-Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
+Als u implementeert in een resourcegroep die niet bestaat, maakt u de resourcegroep. De naam van de resourcegroep kan alleen alfanumerieke tekens, punten, onderstrepingstekens, afbreekstreepingstekens en haakjes bevatten. Deze mag maximaal 90 tekens lang zijn. De naam mag niet eindigen op een punt.
 
 ```azurecli-interactive
 az group create --name ExampleGroup --location "Central US"
 ```
 
-Als u een lokaal sjabloon-of Bicep-bestand wilt implementeren, gebruikt u de `--template-file` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt.
+Als u een lokale sjabloon of Bicep-bestand wilt implementeren, gebruikt u `--template-file` de parameter in de implementatieopdracht. In het volgende voorbeeld ziet u ook hoe u een parameterwaarde in kunt stellen.
 
 ```azurecli-interactive
 az deployment group create \
@@ -76,7 +76,7 @@ az deployment group create \
   --parameters storageAccountType=Standard_GRS
 ```
 
-De implementatie kan enkele minuten duren. Wanneer het is voltooid, ziet u een bericht met het volgende resultaat:
+De implementatie kan enkele minuten duren. Wanneer dit is bereikt, ziet u een bericht met het resultaat:
 
 ```output
 "provisioningState": "Succeeded",
@@ -85,13 +85,13 @@ De implementatie kan enkele minuten duren. Wanneer het is voltooid, ziet u een b
 ## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
 
 > [!NOTE]
-> Momenteel biedt Azure CLI geen ondersteuning voor het implementeren van externe Bicep-bestanden. Gebruik [BICEP cli](./bicep-install.md#development-environment) voor het compileren van het Bicep-bestand naar een JSON-sjabloon en laad vervolgens het JSON-bestand naar de externe locatie.
+> Momenteel biedt Azure CLI geen ondersteuning voor het implementeren van externe Bicep-bestanden. Gebruik [Bicep CLI om](./bicep-install.md#development-environment) het Bicep-bestand te compileren naar een JSON-sjabloon en laad het JSON-bestand vervolgens op de externe locatie.
 
-In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
+In plaats van ARM-sjablonen op te slaan op uw lokale computer, kunt u deze het liefst opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
 
 [!INCLUDE [Deploy templates in private GitHub repo](../../../includes/resource-manager-private-github-repo-templates.md)]
 
-Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
+Als u implementeert in een resourcegroep die niet bestaat, maakt u de resourcegroep. De naam van de resourcegroep kan alleen alfanumerieke tekens, punten, onderstrepingstekens, afbreekstreepingstekens en haakjes bevatten. Deze mag maximaal 90 tekens lang zijn. De naam mag niet eindigen op een punt.
 
 ```azurecli-interactive
 az group create --name ExampleGroup --location "Central US"
@@ -107,9 +107,9 @@ az deployment group create \
   --parameters storageAccountType=Standard_GRS
 ```
 
-In het voor gaande voor beeld is een openbaar toegankelijke URI vereist voor de sjabloon, die voor de meeste scenario's werkt, omdat uw sjabloon geen gevoelige gegevens mag bevatten. Als u gevoelige gegevens (zoals een beheerders wachtwoord) moet opgeven, geeft u die waarde als een beveiligde para meter door. Als u echter de toegang tot de sjabloon wilt beheren, kunt u de [sjabloon specificaties](#deploy-template-spec)gebruiken.
+In het voorgaande voorbeeld is een openbaar toegankelijke URI vereist voor de sjabloon. Dit werkt voor de meeste scenario's omdat uw sjabloon geen gevoelige gegevens mag bevatten. Als u gevoelige gegevens moet opgeven (zoals een beheerderswachtwoord), geeft u die waarde door als een beveiligde parameter. Als u echter de toegang tot de sjabloon wilt beheren, kunt u [sjabloonspecificaties gebruiken.](#deploy-template-spec)
 
-Voor het implementeren van extern gekoppelde sjablonen met een relatief pad dat is opgeslagen in een opslag account, gebruikt `query-string` u om het SAS-token op te geven:
+Als u externe gekoppelde sjablonen met een relatief pad wilt implementeren die zijn opgeslagen in een opslagaccount, gebruikt u `query-string` om het SAS-token op te geven:
 
 ```azurecli-interactive
 az deployment group create \
@@ -119,44 +119,44 @@ az deployment group create \
   --query-string $sasToken
 ```
 
-Zie [relatief pad gebruiken voor gekoppelde sjablonen](./linked-templates.md#linked-template)voor meer informatie.
+Zie Relatief pad gebruiken voor [gekoppelde sjablonen voor meer informatie.](./linked-templates.md#linked-template)
 
 ## <a name="deployment-name"></a>Naam van implementatie
 
-Bij het implementeren van een ARM-sjabloon kunt u een naam opgeven voor de implementatie. Deze naam kan u helpen de implementatie op te halen uit de implementatie geschiedenis. Als u geen naam opgeeft voor de implementatie, wordt de naam van het sjabloon bestand gebruikt. Als u bijvoorbeeld een sjabloon implementeert `azuredeploy.json` met de naam en u geen implementatie naam opgeeft, wordt de implementatie een naam genoemd `azuredeploy` .
+Wanneer u een ARM-sjabloon implementeert, kunt u de implementatie een naam geven. Met deze naam kunt u de implementatie ophalen uit de implementatiegeschiedenis. Als u geen naam op geeft voor de implementatie, wordt de naam van het sjabloonbestand gebruikt. Als u bijvoorbeeld een sjabloon met de naam implementeert en geen implementatienaam `azuredeploy.json` opgeeft, heeft de implementatie de naam `azuredeploy` .
 
-Telkens wanneer u een implementatie uitvoert, wordt een item toegevoegd aan de implementatie geschiedenis van de resource groep met de naam van de implementatie. Als u een andere implementatie uitvoert en deze dezelfde naam geeft, wordt de vorige vermelding vervangen door de huidige implementatie. Als u de unieke vermeldingen in de implementatie geschiedenis wilt behouden, geeft u elke implementatie een unieke naam.
+Telkens wanneer u een implementatie uitgevoerd, wordt er een vermelding toegevoegd aan de implementatiegeschiedenis van de resourcegroep met de naam van de implementatie. Als u een andere implementatie hebt uitgevoerd en deze dezelfde naam geeft, wordt de eerdere vermelding vervangen door de huidige implementatie. Als u unieke vermeldingen in de implementatiegeschiedenis wilt behouden, geeft u elke implementatie een unieke naam.
 
-Als u een unieke naam wilt maken, kunt u een wille keurig getal toewijzen.
+Als u een unieke naam wilt maken, kunt u een willekeurig getal toewijzen.
 
 ```azurecli-interactive
 deploymentName='ExampleDeployment'$RANDOM
 ```
 
-U kunt ook een datum waarde toevoegen.
+Of voeg een datumwaarde toe.
 
 ```azurecli-interactive
 deploymentName='ExampleDeployment'$(date +"%d-%b-%Y")
 ```
 
-Als u gelijktijdige implementaties uitvoert naar dezelfde resource groep met dezelfde implementatie naam, wordt alleen de laatste implementatie voltooid. Implementaties met dezelfde naam die nog niet zijn voltooid, worden vervangen door de laatste implementatie. Als u bijvoorbeeld een implementatie uitvoert met de naam `newStorage` die een opslag account implementeert `storage1` en tegelijkertijd een andere implementatie uitvoert met de naam `newStorage` die een opslag account implementeert `storage2` , implementeert u slechts één opslag account. De naam van het resulterende opslag account is `storage2` .
+Als u gelijktijdige implementaties naar dezelfde resourcegroep met dezelfde implementatienaam hebt uitgevoerd, wordt alleen de laatste implementatie voltooid. Implementaties met dezelfde naam die nog niet zijn voltooid, worden vervangen door de laatste implementatie. Als u bijvoorbeeld een implementatie met de naam hebt uitgevoerd die een opslagaccount met de naam implementeert en tegelijkertijd een andere implementatie met de naam die een opslagaccount met de naam implementeert, implementeert u slechts één `newStorage` `storage1` `newStorage` `storage2` opslagaccount. Het resulterende opslagaccount heeft de naam `storage2` .
 
-Als u echter een implementatie uitvoert met de naam `newStorage` die een opslag account implementeert `storage1` en direct nadat de implementatie is voltooid, voert u `newStorage` `storage2` twee opslag accounts uit met een naam die een opslag account implementeert. Een heeft `storage1` de naam en de andere heet `storage2` . Maar u hebt slechts één vermelding in de implementatie geschiedenis.
+Als u echter een implementatie met de naam hebt uitgevoerd die een opslagaccount met de naam implementeert en onmiddellijk nadat het is voltooid, hebt u een andere implementatie met de naam die een opslagaccount met de naam implementeert, en hebt u twee `newStorage` `storage1` `newStorage` `storage2` opslagaccounts. De ene heeft `storage1` de naam en de andere heeft de naam `storage2` . Maar u hebt slechts één vermelding in de implementatiegeschiedenis.
 
-Wanneer u een unieke naam voor elke implementatie opgeeft, kunt u deze gelijktijdig zonder conflict uitvoeren. Als u een implementatie uitvoert met de naam `newStorage1` die een opslag account implementeert `storage1` en tegelijkertijd een andere implementatie uitvoert met de naam `newStorage2` die een opslag account implementeert `storage2` , hebt u twee opslag accounts en twee vermeldingen in de implementatie geschiedenis.
+Wanneer u voor elke implementatie een unieke naam opgeeft, kunt u deze gelijktijdig zonder conflicten uitvoeren. Als u een implementatie met de naam hebt uitgevoerd die een opslagaccount met de naam implementeert en tegelijkertijd een andere implementatie met de naam die een opslagaccount met de naam implementeert, hebt u twee opslagaccounts en twee vermeldingen in de `newStorage1` `storage1` `newStorage2` `storage2` implementatiegeschiedenis.
 
-Geef elke implementatie een unieke naam om conflicten met gelijktijdige implementaties te voor komen en te zorgen voor unieke vermeldingen in de implementatie geschiedenis.
+Geef elke implementatie een unieke naam om conflicten met gelijktijdige implementaties te voorkomen en unieke vermeldingen in de implementatiegeschiedenis te garanderen.
 
 ## <a name="deploy-template-spec"></a>Sjabloonspecificatie implementeren
 
 > [!NOTE]
-> Momenteel biedt Azure CLI geen ondersteuning voor het maken van sjabloon specificaties door Bicep-bestanden op te geven. U kunt echter een Bicep-bestand maken met de resource [micro soft. resources/templateSpecs](/azure/templates/microsoft.resources/templatespecs) voor het implementeren van een sjabloon specificatie. Hier volgt een [voor beeld](https://github.com/Azure/azure-docs-json-samples/blob/master/create-template-spec-using-template/azuredeploy.bicep).
+> Momenteel biedt Azure CLI geen ondersteuning voor het maken van sjabloonspecificaties door Bicep-bestanden op te geven. U kunt echter een Bicep-bestand maken met de resource [Microsoft.Resources/templateSpecs](/azure/templates/microsoft.resources/templatespecs) om een sjabloonspecificatie te implementeren. Hier is een [voorbeeld.](https://github.com/Azure/azure-docs-json-samples/blob/master/create-template-spec-using-template/azuredeploy.bicep)
 
-In plaats van een lokale of externe sjabloon te implementeren, kunt u een [sjabloon specificatie](template-specs.md)maken. De sjabloon specificatie is een resource in uw Azure-abonnement die een ARM-sjabloon bevat. Het is eenvoudig om de sjabloon veilig te delen met gebruikers in uw organisatie. U gebruikt op rollen gebaseerd toegangs beheer van Azure (Azure RBAC) om toegang te verlenen tot de sjabloon specificatie. Deze functie is momenteel beschikbaar als preview-versie.
+In plaats van een lokale of externe sjabloon te implementeren, kunt u een [sjabloonspecificatie maken.](template-specs.md) De sjabloonspecificatie is een resource in uw Azure-abonnement die een ARM-sjabloon bevat. Zo kunt u de sjabloon eenvoudig veilig delen met gebruikers in uw organisatie. U gebruikt op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) om toegang te verlenen tot de sjabloonspecificatie. Deze functie is momenteel beschikbaar als preview-versie.
 
-In de volgende voor beelden ziet u hoe u een sjabloon specificatie maakt en implementeert.
+De volgende voorbeelden laten zien hoe u een sjabloonspecificatie maakt en implementeert.
 
-Maak eerst de sjabloon specificatie door de ARM-sjabloon op te geven.
+Maak eerst de sjabloonspecificatie door de ARM-sjabloon op te geven.
 
 ```azurecli
 az ts create \
@@ -167,7 +167,7 @@ az ts create \
   --template-file "./mainTemplate.json"
 ```
 
-Vervolgens haalt u de ID op voor de sjabloon specificatie en implementeert u deze.
+Haal vervolgens de id voor de sjabloonspecificatie op en implementeer deze.
 
 ```azurecli
 id = $(az ts show --name storageSpec --resource-group templateSpecRG --version "1.0" --query "id")
@@ -177,19 +177,19 @@ az deployment group create \
   --template-spec $id
 ```
 
-Zie [Azure Resource Manager-sjabloon specificaties (preview-versie)](template-specs.md)voor meer informatie.
+Zie sjabloonspecificaties voor [Azure Resource Manager (preview) voor meer informatie.](template-specs.md)
 
-## <a name="preview-changes"></a>Preview-wijzigingen
+## <a name="preview-changes"></a>Voorbeeld van wijzigingen bekijken
 
-Voordat u uw sjabloon implementeert, kunt u een voor beeld bekijken van de wijzigingen die door de sjabloon in uw omgeving worden aangebracht. Gebruik de [bewerking What-if](template-deploy-what-if.md) om te controleren of de sjabloon de wijzigingen aanbrengt die u verwacht. Wat-als ook de sjabloon voor fouten valideert.
+Voordat u de sjabloon implementeert, kunt u een voorbeeld bekijken van de wijzigingen die de sjabloon aan uw omgeving aan zal brengen. Gebruik de [what-if-bewerking om](template-deploy-what-if.md) te controleren of de sjabloon de wijzigingen aan de hand heeft die u verwacht. Met Wat-als wordt de sjabloon ook gevalideerd op fouten.
 
 ## <a name="parameters"></a>Parameters
 
-Als u parameter waarden wilt door geven, kunt u inline-para meters of een parameter bestand gebruiken.
+Als u parameterwaarden wilt doorgeven, kunt u inlineparameters of een parameterbestand gebruiken.
 
-### <a name="inline-parameters"></a>Inline-para meters
+### <a name="inline-parameters"></a>Inlineparameters
 
-Geef de waarden op in om inline-para meters door te geven `parameters` . Als u bijvoorbeeld een teken reeks en een matrix wilt door geven aan een sjabloon in een bash-shell, gebruikt u:
+Als u inlineparameters wilt doorgeven, geeft u de waarden op in `parameters` . Als u bijvoorbeeld een tekenreeks en matrix wilt doorgeven aan een sjabloon in een Bash-shell, gebruikt u:
 
 ```azurecli-interactive
 az deployment group create \
@@ -198,9 +198,9 @@ az deployment group create \
   --parameters exampleString='inline string' exampleArray='("value1", "value2")'
 ```
 
-Als u Azure CLI gebruikt met Windows-opdracht prompt (CMD) of Power shell, geeft u de matrix de volgende notatie: `exampleArray="['value1','value2']"` .
+Als u Azure CLI gebruikt met Windows-opdrachtprompt (CMD) of PowerShell, geeft u de matrix door in de volgende indeling: `exampleArray="['value1','value2']"` .
 
-U kunt ook de inhoud van het bestand ophalen en deze inhoud als een inline-para meter opgeven.
+U kunt ook de inhoud van het bestand op halen en die inhoud opgeven als een inlineparameter.
 
 ```azurecli-interactive
 az deployment group create \
@@ -209,9 +209,9 @@ az deployment group create \
   --parameters exampleString=@stringContent.txt exampleArray=@arrayContent.json
 ```
 
-Het ophalen van een parameter waarde uit een bestand is handig wanneer u configuratie waarden moet opgeven. U kunt bijvoorbeeld [Cloud-init-waarden opgeven voor een virtuele Linux-machine](../../virtual-machines/linux/using-cloud-init.md).
+Het is handig om een parameterwaarde op te geven uit een bestand wanneer u configuratiewaarden moet opgeven. U kunt bijvoorbeeld [cloud-init-waarden voor een virtuele Linux-machine leveren.](../../virtual-machines/linux/using-cloud-init.md)
 
-De _arrayContent.jsin_ de indeling is:
+De _arrayContent.jsvoor de_ indeling is:
 
 ```json
 [
@@ -220,7 +220,7 @@ De _arrayContent.jsin_ de indeling is:
 ]
 ```
 
-Gebruik JSON als u een object wilt door geven, bijvoorbeeld om labels in te stellen. Uw sjabloon kan bijvoorbeeld een para meter bevatten zoals deze:
+Als u bijvoorbeeld een -object wilt doorgeven om tags in te stellen, gebruikt u JSON. Uw sjabloon kan bijvoorbeeld een parameter bevatten zoals deze:
 
 ```json
     "resourceTags": {
@@ -231,7 +231,7 @@ Gebruik JSON als u een object wilt door geven, bijvoorbeeld om labels in te stel
     }
 ```
 
-In dit geval kunt u een JSON-teken reeks door geven om de para meter in te stellen, zoals wordt weer gegeven in het volgende bash-script:
+In dit geval kunt u een JSON-tekenreeks doorgeven om de parameter in te stellen, zoals wordt weergegeven in het volgende Bash-script:
 
 ```bash
 tags='{"Owner":"Contoso","Cost Center":"2345-324"}'
@@ -240,15 +240,15 @@ az deployment group create --name addstorage  --resource-group myResourceGroup \
 --parameters resourceName=abcdef4556 resourceTags="$tags"
 ```
 
-Gebruik dubbele aanhalings tekens rond de JSON die u wilt door geven aan het object.
+Gebruik dubbele aanhalingstekens rond de JSON die u wilt doorgeven aan het -object.
 
-### <a name="parameter-files"></a>Parameter bestanden
+### <a name="parameter-files"></a>Parameterbestanden
 
-In plaats van parameters als inline waarden door te geven in uw script, is het wellicht eenvoudiger een JSON-bestand te gebruiken dat de parameterwaarden bevat. Het parameter bestand moet een lokaal bestand zijn. Externe parameter bestanden worden niet ondersteund met Azure CLI. Zowel de ARM-sjabloon als het Bicep-bestand gebruiken JSON-parameter bestanden.
+In plaats van parameters als inline waarden door te geven in uw script, is het wellicht eenvoudiger een JSON-bestand te gebruiken dat de parameterwaarden bevat. Het parameterbestand moet een lokaal bestand zijn. Externe parameterbestanden worden niet ondersteund met Azure CLI. Zowel de ARM-sjabloon als het Bicep-bestand gebruiken JSON-parameterbestanden.
 
 Zie [Een Resource Manager-parameterbestand maken](parameter-files.md) voor meer informatie over het parameterbestand.
 
-Als u een lokaal parameter bestand wilt door geven, gebruikt `@` u om een lokaal bestand met de naam _storage.parameters.jsop_ te geven.
+Als u een lokaal parameterbestand wilt doorgeven, gebruikt u om een lokaal bestand met de naam `@`storage.parameters.js _opgeven op_.
 
 ```azurecli-interactive
 az deployment group create \
@@ -260,7 +260,7 @@ az deployment group create \
 
 ## <a name="handle-extended-json-format"></a>Uitgebreide JSON-indeling verwerken
 
-Als u een sjabloon wilt implementeren met reeksen met meerdere regels of opmerkingen met behulp van Azure CLI met versie 2.3.0 of ouder, moet u de `--handle-extended-json-format` Schakel optie gebruiken.  Bijvoorbeeld:
+Als u een sjabloon met meerdere regelreeksen of opmerkingen wilt implementeren met behulp van Azure CLI met versie 2.3.0 of ouder, moet u de `--handle-extended-json-format` -switch gebruiken.  Bijvoorbeeld:
 
 ```json
 {
@@ -282,7 +282,7 @@ Als u een sjabloon wilt implementeren met reeksen met meerdere regels of opmerki
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Als u wilt terugkeren naar een geslaagde implementatie wanneer u een fout krijgt, raadpleegt u [herstellen bij fout naar geslaagde implementatie](rollback-on-error.md).
-* Zie [Azure Resource Manager implementatie modi](deployment-modes.md)om op te geven hoe u resources wilt afhandelen die in de resource groep aanwezig zijn, maar die niet zijn gedefinieerd in de sjabloon.
-* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor informatie over het definiëren van para meters in uw sjabloon.
-* Zie [problemen met algemene Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor tips over het oplossen van veelvoorkomende implementatie fouten.
+* Zie Terugdraaien bij fout naar geslaagde implementatie als u wilt terugdraaien naar een geslaagde implementatie wanneer er een [foutmelding wordt weergegeven.](rollback-on-error.md)
+* Zie implementatiemodi voor meer informatie over het afhandelen van resources die bestaan in de [resourcegroep,](deployment-modes.md)maar die niet zijn gedefinieerd in Azure Resource Manager sjabloon.
+* Zie Inzicht in de structuur en syntaxis van ARM-sjablonen voor meer informatie over het definiëren van [parameters in uw sjabloon.](template-syntax.md)
+* Zie Veelvoorkomende implementatiefouten in Azure oplossen met Azure Resource Manager voor tips [over het oplossen van veelvoorkomende implementatiefouten.](common-deployment-errors.md)

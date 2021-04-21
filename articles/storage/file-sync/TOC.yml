@@ -1,0 +1,268 @@
+- name: Azure File Sync documentatie
+  href: index.yml
+- name: Overzicht
+  expanded: true
+  items:
+    - name: Wat is Azure File Sync?
+      href: file-sync-introduction.md
+- name: Zelfstudies
+  items:
+    - name: Windows-bestandsservers uitbreiden met Azure File Sync
+      href: file-sync-extend-servers.md
+- name: Concepten
+  items:
+    - name: Planning voor de implementatie van Azure Files Sync
+      href: file-sync-planning.md
+    - name: Aandachtspunten voor netwerken voor hybride toegang
+      href: file-sync-networking-overview.md
+    - name: Cloudopslaglagen
+      items:
+        - name: Overzicht van cloudopslaglagen
+          href: file-sync-cloud-tiering-overview.md
+        - name: Overzicht van beleidsregels voor cloudopslaglagen
+          href: file-sync-cloud-tiering-policy.md
+        - name: Uw beleid voor cloudopslaglagen kiezen
+          href: file-sync-choose-cloud-tiering-policies.md
+        - name: Opslag in cloudlagen bewaken
+          href: file-sync-monitor-cloud-tiering.md
+    - name: Schaalbaarheids- en prestatiedoelen
+      href: ../files/storage-files-scale-targets.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Onbedoelde gegevensverwijdering voorkomen
+      href: ../files/storage-files-prevent-file-share-deletion.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Back-ups van bestandsshares
+      href: ../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Inzicht in facturering
+      href: ../files/understanding-billing.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Versleuteling
+      items:
+        - name: Versleuteling at-rest
+          href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Versleuteling at-rest van gegevens met door de klant beheerde sleutels
+          href: ../common/customer-managed-keys-overview.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Nalevingsaanbiedingen
+      href: ../common/storage-compliance-offerings.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Veelgestelde vragen
+      href: ../files/storage-files-faq.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+- name: Instructiegidsen
+  items:
+    - name: Implementeren
+      items:
+        - name: Een SMB-bestandsshare maken
+          href: ../files/storage-how-to-create-file-share.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Azure Files SYNC implementeren
+          href: file-sync-deployment-guide.md
+    - name: Netwerk
+      items:
+        - name: Azure Files Sync-netwerkeindpunten configureren
+          href: file-sync-networking-endpoints.md
+        - name: Proxy- en firewallinstellingen van File Sync configureren
+          href: file-sync-firewall-and-proxy.md
+        - name: Site-naar-site-VPN configureren
+          href: ../files/storage-files-configure-s2s-vpn.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Punt-naar-site-VPN configureren in Windows
+          href: ../files/storage-files-configure-p2s-vpn-windows.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Beheren
+      items:
+        - name: Een server registreren bij Azure Files Sync
+          href: file-sync-server-registration.md
+        - name: Een Azure Files Sync-servereindpunt toevoegen
+          href: file-sync-server-endpoint.md
+        - name: Opslag in onafhankelijke Azure-clouds beheren
+          href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Een failover van account initiëren
+          href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Gelaagde bestanden beheren
+          href: file-sync-how-to-manage-tiered-files.md
+        - name: 'Resources verplaatsen naar andere resourcegroepen, abonnementen en AAD-tenants'
+          href: file-sync-resource-move.md
+    - name: Gegevensbeveiliging
+      items:
+        - name: Voorlopig verwijderen inschakelen
+          href: ../files/storage-files-enable-soft-delete.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Wijzigen hoe gegevens worden gerepliceerd
+          href: ../common/redundancy-migration.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Gegevensredundantie beheren
+          items:
+            - name: Wijzigen hoe gegevens worden gerepliceerd
+              href: ../common/redundancy-migration.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: Maximaal beschikbare toepassingen ontwerpen
+              href: ../common/geo-redundant-design.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Herstel na noodgevallen beheren
+          items:
+            - name: De eigenschap Laatst gesynchroniseerd controleren
+              href: ../common/last-sync-time-get.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: Failover van account initiëren
+              href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Back-ups van bestandsshares
+          items:
+            - name: Portal
+              href: ../../backup/backup-afs.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: CLI
+              href: ../../backup/backup-afs-cli.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: PowerShell
+              href: ../../backup/backup-azure-afs-automation.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: REST-API
+              href: ../../backup/backup-azure-file-share-rest-api.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Bestandsshares herstellen
+          items:
+            - name: Portal
+              href: ../../backup/restore-afs.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: CLI
+              href: ../../backup/restore-afs-cli.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: PowerShell
+              href: ../../backup/restore-afs-powershell.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: REST-API
+              href: ../../backup/restore-azure-file-share-rest-api.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Bestandsshares beheren
+          items:
+            - name: Portal
+              href: ../../backup/manage-afs-backup.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: CLI
+              href: ../../backup/manage-afs-backup-cli.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: PowerShell
+              href: ../../backup/manage-afs-powershell.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: REST-API
+              href: ../../backup/manage-azure-file-share-rest-api.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Controleren
+      items:
+        - name: Azure Files bewaken
+          href: ../files/storage-files-monitoring.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Azure File Sync bewaken
+          href: file-sync-monitoring.md
+    - name: Migreren
+      items:
+        - name: Migreren naar Azure-bestandsshares
+          href: ../files/storage-files-migration-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Hybride implementatie als doel
+          items:
+            - name: Bulkgegevens migreren in Azure File Sync met Azure Data Box
+              href: file-sync-offline-data-transfer.md
+            - name: Migreren van Linux naar een hybride bestandsserver met Azure File Sync
+              href: ../files/storage-files-migration-linux-hybrid.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: Migreren van on-premises NAS naar een hybride bestandsserver met Azure File Sync
+              href: ../files/storage-files-migration-nas-hybrid.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: Migreren van een on-premises NAS naar een hybride bestandsserver met DataBox
+              href: ../files/storage-files-migration-nas-hybrid-databox.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Uit StorSimple
+          items:
+            - name: Migratiehandleiding voor StorSimple 8100 en 8600
+              href: ../files/storage-files-migration-storsimple-8000.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: Migratiehandleiding voor StorSimple 1200
+              href: ../files/storage-files-migration-storsimple-1200.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Grote bestandsshares inschakelen
+      href: ../files/storage-files-how-to-create-large-file-share.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Beveiligen
+      items:
+        - name: Versleutelingssleutels beheren voor het opslagaccount
+          items:
+            - name: Het versleutelingssleutelmodel controleren voor het account
+              href: ../common/storage-encryption-key-model-get.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: Versleuteling configureren met door de klant beheerde sleutels
+              items:
+                - name: Door de klant beheerde sleutels opslaan in een sleutelkluis
+                  href: ../common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+                - name: Door de klant beheerde sleutels opslaan in een beheerde HSM
+                  href: ../common/customer-managed-keys-configure-key-vault-hsm.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Infrastructuurversleuteling voor het account inschakelen
+          href: ../common/infrastructure-encryption-enable.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Azure Defender configureren voor bedreigingen
+          href: ../common/azure-defender-storage-configure.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Firewalls en virtuele netwerken configureren
+          href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Veilige overdracht vereisen
+          href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Transport Layer Security (TLS) beheren
+          items:
+            - name: Minimale TLS-versie voor binnenkomende aanvragen afdwingen
+              href: ../common/transport-layer-security-configure-minimum-version.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+            - name: TLS-versie voor een clienttoepassing configureren
+              href: ../common/transport-layer-security-configure-client-version.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Problemen oplossen
+      items:
+        - name: Problemen met Azure Files in Windows oplossen (SMB)
+          href: ../files/storage-troubleshoot-windows-file-connection-problems.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Problemen met de prestaties van Azure-bestandsshares oplossen
+          href: ../files/storage-troubleshooting-files-performance.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Problemen met Azure Files Sync oplossen
+          href: file-sync-troubleshoot.md
+        - name: Problemen bij het verwijderen van Azure-bestandsshares oplossen
+          href: ../files/storage-troubleshoot-cannot-delete-files-azure-file-share.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+        - name: Problemen met back-ups van bestandsshares oplossen
+          href: ../../backup/troubleshoot-azure-files.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+- name: Naslaginformatie
+  items:
+    - name: Referentie voor Azure Files
+      href: ../files/reference.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Referentie voor Azure Files bewaken
+      href: ../files/storage-files-monitoring-reference.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+    - name: Resource Manager-sjabloon
+      displayName: arm
+      href: /azure/templates/microsoft.storage/allversions
+    - name: Voorbeelden
+      href: 'https://azure.microsoft.com/documentation/samples/?service=storage&term=file'
+    - name: Azure Files en Azure NetApp Files vergelijken
+      href: ../files/storage-files-netapp-comparison.md?toc=%2fazure%2fstorage%2ffile-sync%2ftoc.json
+- name: Resources
+  items:
+    - name: Azure-updates
+      href: 'https://azure.microsoft.com/updates/?category=storage'
+    - name: Releaseopmerkingen Azure File Sync
+      href: file-sync-release-notes.md
+    - name: Azure Files in Microsoft Q&A
+      href: /answers/topics/azure-files.html
+    - name: Azure Files in Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-files'
+    - name: Prijzen voor Azure Files
+      href: 'https://azure.microsoft.com/pricing/details/storage/files/'
+    - name: Azure-prijscalculator
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Video's
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'
+    - name: NuGet-pakketten (.NET)
+      items:
+        - name: Microsoft.Azure.Storage.Common (versie 11.x)
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/'
+        - name: Azure.Storage.Common (versie 12.x - preview)
+          href: 'https://www.nuget.org/packages/Azure.Storage.Common/'
+        - name: Microsoft.Azure.Storage.File (versie 11.x)
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.File/'
+        - name: Azure.Storage.File (versie 12.x - preview)
+          href: 'https://www.nuget.org/packages/Azure.Storage.Files/'
+        - name: Azure Configuration Manager
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
+        - name: Azure Storage-bibliotheek voor gegevensverplaatsing
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/'
+        - name: Bibliotheek voor opslagresourceprovider
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/'
+    - name: Broncode
+      items:
+        - name: .NET
+          items:
+            - name: Azure Storage-clientbibliotheek
+              items:
+                - name: Versie 12.x (preview)
+                  href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage'
+                - name: Versie 11.x en lager
+                  href: 'https://github.com/Azure/azure-storage-net'
+            - name: Bibliotheek voor gegevensverplaatsing
+              href: 'https://github.com/Azure/azure-storage-net-data-movement'
+            - name: Bibliotheek voor opslagresourceprovider
+              href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.Management.Storage'
+        - name: Java
+          items:
+            - name: Azure Storage-clientbibliotheek versie 12.x (preview)
+              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage'
+            - name: Azure Storage-clientbibliotheek versie 8.x en lager
+              href: 'https://github.com/Azure/azure-storage-java'
+        - name: Node.js
+          items:
+            - name: Azure Storage-clientbibliotheek versie 12.x (preview)
+              href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage'
+            - name: Azure Storage-clientbibliotheek versie 10.x
+              href: 'https://github.com/Azure/azure-storage-node'
+        - name: Python
+          items:
+            - name: Azure Storage-clientbibliotheek versie 12.x (preview)
+              href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage'
+            - name: Azure Storage-clientbibliotheek versie 2.1
+              href: 'https://github.com/Azure/azure-storage-python'

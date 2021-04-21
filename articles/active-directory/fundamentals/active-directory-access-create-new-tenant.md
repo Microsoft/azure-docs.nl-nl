@@ -12,14 +12,15 @@ ms.date: 09/10/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31d82906625bc55cbdba21f2e356ee3f29f9d436
-ms.sourcegitcommit: 590f14d35e831a2dbb803fc12ebbd3ed2046abff
+ms.openlocfilehash: fc51c645c470f2b5b0a009eaf831db2f1957617e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107567380"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107780134"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Quickstart: Een nieuwe tenant maken in Azure Active Directory
+
 U kunt al uw administratieve taken uitvoeren met behulp van de portal van Azure Active Directory (Azure AD), met inbegrip van het maken van een nieuwe tenant voor uw organisatie. 
 
 In deze Snelstartgids leert u hoe u bij de Azure Portal en Azure Active Directory komt en hoe u een eenvoudige tenant voor uw organisatie maakt.
@@ -27,6 +28,7 @@ In deze Snelstartgids leert u hoe u bij de Azure Portal en Azure Active Director
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 
 ## <a name="create-a-new-tenant-for-your-organization"></a>Een nieuwe tenant maken voor uw organisatie
+
 Nadat u zich bij Azure Portal aanmeldt, kunt u een nieuwe tenant maken voor uw organisatie. De nieuwe tenant vertegenwoordigt uw organisatie en helpt u bij het beheren van een specifiek exemplaar van Microsoft cloudservices voor uw interne en externe gebruikers.
 
 ### <a name="to-create-a-new-tenant"></a>Een nieuwe tenant maken
@@ -61,11 +63,15 @@ De nieuwe tenant wordt gemaakt met het domein contoso.onmicrosoft.com.
 
 ## <a name="your-user-account-in-the-new-tenant"></a>Uw gebruikersaccount in de nieuwe tenant
 
-Wanneer u een nieuwe AAD-tenant maakt, wordt u de eerste gebruiker van die tenant. Als eerste gebruiker krijgt u automatisch de rol Globale [beheerder](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#global-administrator) toegewezen. Bekijk uw gebruikersaccount door naar de pagina [**Gebruikers te**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers) gaan.
+Wanneer u een nieuwe Azure AD-tenant maakt, wordt u de eerste gebruiker van die tenant. Als eerste gebruiker krijgt u automatisch de rol [Globale](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#global-administrator) beheerder toegewezen. Bekijk uw gebruikersaccount door naar de pagina [**Gebruikers te**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers) gaan.
 
 Standaard wordt u ook vermeld als de technische [contactpersoon](https://docs.microsoft.com/microsoft-365/admin/manage/change-address-contact-and-more?view=o365-worldwide#what-do-these-fields-mean) voor de tenant. Technische contactgegevens kunt u wijzigen in [**Eigenschappen**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties).
 
+> [!WARNING]
+> Zorg ervoor dat aan uw directory ten minste twee accounts met globale beheerdersbevoegdheden zijn toegewezen. Dit helpt in het geval dat één globale beheerder is vergrendeld. Zie het artikel Accounts voor noodtoegang beheren [in Azure AD voor meer informatie.](../roles/security-emergency-access.md)
+
 ## <a name="clean-up-resources"></a>Resources opschonen
+
 Als u deze app niet meer gebruikt, kunt u de tenant met de volgende stappen verwijderen:
 
 - Zorg ervoor dat u bent aangemeld bij de map die u wilt verwijderen via het filter **Map en** abonnement in de Azure Portal. Schakel indien nodig over naar de doelmap.
@@ -76,6 +82,7 @@ Als u deze app niet meer gebruikt, kunt u de tenant met de volgende stappen verw
     <kbd>![Overzichtspagina, waarop de knop Map verwijderen is gemarkeerd](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)</kbd>
 
 ## <a name="next-steps"></a>Volgende stappen
+
 - Zie [Een aangepaste domeinnaam toevoegen aan Azure Active Directory](add-custom-domain.md) voor het wijzigen of toevoegen van meer informatie over extra domeinnamen
 
 - Gebruikers toevoegen, zie [Een nieuwe gebruiker toevoegen of verwijderen](add-users-azure-active-directory.md)

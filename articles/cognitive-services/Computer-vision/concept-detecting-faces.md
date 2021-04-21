@@ -1,7 +1,7 @@
 ---
-title: Gezichts detectie-Computer Vision
+title: Gezichtsdetectie - Computer Vision
 titleSuffix: Azure Cognitive Services
-description: Leer concepten die betrekking hebben op de functie gezichts detectie van de Computer Vision-API.
+description: Leer concepten met betrekking tot de gezichtsdetectiefunctie van de Computer Vision-API.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,23 +11,23 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 3aa8f9057c3c9e3a141824a9d23e9be8d0bbe4b2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bfb352c68b910a114e13041da4e8e86529e52040
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "96532632"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778837"
 ---
-# <a name="face-detection-with-computer-vision"></a>Gezichts detectie met Computer Vision
+# <a name="face-detection-with-computer-vision"></a>Gezichtsdetectie met Computer Vision
 
-Computer Vision kunt menselijke gezichten detecteren binnen een afbeelding en de leeftijd, het geslacht en de rechthoek voor elk gedetecteerd gezicht genereren. 
+Computer Vision kunt menselijke gezichten in een afbeelding detecteren en de leeftijd, het geslacht en de rechthoek voor elk gedetecteerd gezicht genereren. 
 
 > [!NOTE]
-> Deze functie wordt ook aangeboden door de Azure [Face](../face/index.yml) -service. Bekijk dit alternatief voor gedetailleerde analyse van het gezicht, inclusief gezichts identificatie en het detecteren van detectie. 
+> Deze functie wordt ook aangeboden door de Azure [Face-service.](../face/index.yml) Zie dit alternatief voor gedetailleerdere gezichtsanalyse, waaronder gezichtsidentificatie en houdingsdetectie. 
 
-## <a name="face-detection-examples"></a>Voor beelden van gezichts detectie
+## <a name="face-detection-examples"></a>Voorbeelden van gezichtsdetectie
 
-In het volgende voor beeld wordt het JSON-antwoord gedemonstreerd dat wordt geretourneerd door Computer Vision voor een afbeelding met één menselijk gezicht.
+In het volgende voorbeeld ziet u het JSON-antwoord dat door de Computer Vision voor een afbeelding met één menselijk gezicht.
 
 ![Vision-analyse Vrouw op dak-gezicht](./Images/woman_roof_face.png)
 
@@ -54,9 +54,9 @@ In het volgende voor beeld wordt het JSON-antwoord gedemonstreerd dat wordt gere
 }
 ```
 
-In het volgende voor beeld wordt het JSON-antwoord gedemonstreerd dat is geretourneerd voor een afbeelding met meerdere menselijke gezichten.
+In het volgende voorbeeld ziet u het JSON-antwoord dat wordt geretourneerd voor een afbeelding met meerdere menselijke gezichten.
 
-![Vision Analyseer Family foto face](./Images/family_photo_face.png)
+![Vision: gezichtsfoto's van familie analyseren](./Images/family_photo_face.png)
 
 ```json
 {
@@ -113,6 +113,6 @@ In het volgende voor beeld wordt het JSON-antwoord gedemonstreerd dat is geretou
 
 ## <a name="use-the-api"></a>De API gebruiken
 
-De functie voor gezichts detectie maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Faces` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"faces"` sectie.
+De functie gezichtsdetectie maakt deel uit van [de Analyze Image-API.](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-ga/operations/56f91f2e778daf14a499f21b) U kunt deze API aanroepen via een native SDK of via REST-aanroepen. Neem `Faces` op in de **queryparameter visualFeatures.** Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de tekenreeks voor de inhoud van de `"faces"` sectie.
 
 * [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

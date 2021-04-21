@@ -3,12 +3,12 @@ title: Privé-eindpunt instellen met private link
 description: Stel een privé-eindpunt in een containerregister in en schakel toegang in via een privékoppeling in een lokaal virtueel netwerk. Toegang tot Private Link is een functie van de Premium-servicelaag.
 ms.topic: article
 ms.date: 03/31/2021
-ms.openlocfilehash: c47eb535163a1a584bc3892da61543bdf2b0f798
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: d3c7c573b0ffc08a85f5cbe5cc62d3f7c052f0af
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107481409"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781429"
 ---
 # <a name="connect-privately-to-an-azure-container-registry-using-azure-private-link"></a>Privé verbinding maken met een Azure-containerregister met behulp van Azure Private Link
 
@@ -48,9 +48,9 @@ VM_NAME=<virtual-machine-name>
 
 ### <a name="get-network-and-subnet-names"></a>Netwerk- en subnetnamen op halen
 
-Als u deze nog niet hebt, hebt u de namen van een virtueel netwerk en subnet nodig om een privékoppeling in te stellen. In dit voorbeeld gebruikt u hetzelfde subnet voor de virtuele machine en het privé-eindpunt van het register. In veel scenario's stelt u het eindpunt echter in een afzonderlijk subnet in. 
+Als u deze nog niet hebt, hebt u de namen van een virtueel netwerk en subnet nodig om een privékoppeling in te stellen. In dit voorbeeld gebruikt u hetzelfde subnet voor de virtuele machine en het privé-eindpunt van het register. In veel scenario's zou u het eindpunt echter in een afzonderlijk subnet instellen. 
 
-Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resourcegroep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld de virtuele machine *myDockerVM* noemt, is de standaardnaam van het virtuele netwerk *myDockerVMVNET,* met een subnet met de *naam myDockerVMSubnet.* Stel deze waarden in omgevingsvariabelen in door de [opdracht az network vnet list uit te][az-network-vnet-list] voeren:
+Wanneer u een virtuele machine maakt, maakt Azure standaard een virtueel netwerk in dezelfde resourcegroep. De naam van het virtuele netwerk is gebaseerd op de naam van de virtuele machine. Als u bijvoorbeeld de virtuele machine *myDockerVM* noemt, is de standaardnaam van het virtuele netwerk *myDockerVMVNET,* met een subnet met de naam *myDockerVMSubnet.* Stel deze waarden in omgevingsvariabelen in door de [opdracht az network vnet list uit te][az-network-vnet-list] voeren:
 
 ```azurecli
 NETWORK_NAME=$(az network vnet list \
@@ -81,7 +81,7 @@ az network vnet subnet update \
 
 Maak een [privé Azure DNS zone voor](../dns/private-dns-privatednszone.md) het privédomein van het Azure-containerregister. In latere stappen maakt u DNS-records voor uw registerdomein in deze DNS-zone. Zie DNS-configuratieopties [](#dns-configuration-options)verderop in dit artikel voor meer informatie.
 
-Als u een privézone wilt gebruiken om de standaard-DNS-resolutie voor uw Azure-containerregister te overschrijven, moet de zone de **naam privatelink.azurecr.io**. Voer de volgende [opdracht az network private-dns zone create][az-network-private-dns-zone-create] uit om de privézone te maken:
+Als u een privézone wilt gebruiken om de standaard DNS-resolutie voor uw Azure-containerregister te overschrijven, moet de zone de **naam privatelink.azurecr.io**. Voer de volgende [opdracht az network private-dns zone create][az-network-private-dns-zone-create] uit om de privézone te maken:
 
 ```azurecli
 az network private-dns zone create \
@@ -104,7 +104,7 @@ az network private-dns link vnet create \
 
 ### <a name="create-a-private-registry-endpoint"></a>Een privéregister-eindpunt maken
 
-In deze sectie maakt u het privé-eindpunt van het register in het virtuele netwerk. Haal eerst de resource-id van het register op:
+In deze sectie maakt u het privé-eindpunt van het register in het virtuele netwerk. Haal eerst de resource-id van uw register op:
 
 ```azurecli
 REGISTRY_ID=$(az acr show --name $REGISTRY_NAME \
@@ -113,7 +113,7 @@ REGISTRY_ID=$(az acr show --name $REGISTRY_NAME \
 
 Voer de [opdracht az network private-endpoint create][az-network-private-endpoint-create] uit om het privé-eindpunt van het register te maken.
 
-In het volgende voorbeeld wordt het eindpunt *myPrivateEndpoint en* de serviceverbinding *myConnection gemaakt.* Als u een containerregisterresource voor het eindpunt wilt opgeven, geeft u `--group-ids registry` door:
+In het volgende voorbeeld worden het eindpunt *myPrivateEndpoint en* de serviceverbinding *myConnection gemaakt.* Als u een containerregisterresource voor het eindpunt wilt opgeven, geeft u `--group-ids registry` door:
 
 ```azurecli
 az network private-endpoint create \
@@ -130,7 +130,7 @@ az network private-endpoint create \
 
 Als u DNS-records wilt configureren, moet u de IP-configuratie van het privé-eindpunt op halen. Gekoppeld aan de netwerkinterface van het privé-eindpunt in dit voorbeeld zijn twee privé-IP-adressen voor het containerregister: één voor het register zelf en één voor het gegevens-eindpunt van het register. 
 
-Voer eerst [az network private-endpoint show uit om een][az-network-private-endpoint-show] query uit te voeren op het privé-eindpunt voor de netwerkinterface-id:
+Voer eerst [az network private-endpoint show][az-network-private-endpoint-show] uit om een query uit te voeren op het privé-eindpunt voor de netwerkinterface-id:
 
 ```azurecli
 NETWORK_INTERFACE_ID=$(az network private-endpoint show \
@@ -167,7 +167,7 @@ DATA_ENDPOINT_FQDN=$(az network nic show \
 ```
 
 > [!NOTE]
-> Als uw register [geo-gerepliceerd](container-registry-geo-replication.md)is, moet u een query uitvoeren voor het extra gegevens-eindpunt voor elke registerreplica.
+> Als uw register [geo-gerepliceerd](container-registry-geo-replication.md)is, kunt u voor elke registerreplica een query uitvoeren op het extra gegevens-eindpunt.
 
 ### <a name="create-dns-records-in-the-private-zone"></a>DNS-records maken in de privézone
 
@@ -176,7 +176,7 @@ Met de volgende opdrachten maakt u DNS-records in de privézone voor het registe
 > [!NOTE]
 > Als uw register [geo-gerepliceerd](container-registry-geo-replication.md)is, maakt u aanvullende DNS-records voor het IP-adres van het gegevens-eindpunt van elke replica.
 
-Voer eerst [az network private-dns record-set a create][az-network-private-dns-record-set-a-create] uit om lege A-recordsets te maken voor het register-eindpunt en het gegevens-eindpunt:
+Voer eerst [az network private-dns record-set a create][az-network-private-dns-record-set-a-create] uit om lege A-recordsets te maken voor het register-eindpunt en gegevens-eindpunt:
 
 ```azurecli
 az network private-dns record-set a create \
@@ -208,7 +208,7 @@ az network private-dns record-set a add-record \
   --ipv4-address $DATA_ENDPOINT_PRIVATE_IP
 ```
 
-De privékoppeling is nu geconfigureerd en klaar voor gebruik.
+De private link is nu geconfigureerd en klaar voor gebruik.
 
 ## <a name="set-up-private-link---portal"></a>Private Link instellen - portal
 
@@ -216,9 +216,9 @@ Stel een privékoppeling in wanneer u een register maakt of voeg een privékoppe
 
 ### <a name="create-a-private-endpoint---new-registry"></a>Een privé-eindpunt maken - nieuw register
 
-1. Wanneer u een register maakt in de portal, selecteert u op het tabblad **Basisbeginselen** in **SKU** de optie **Premium**.
+1. Wanneer u een register maakt in de portal, selecteert u op het tabblad **Basisinformatie** in **SKU** de optie **Premium.**
 1. Selecteer het tabblad **Netwerken**.
-1. Selecteer **privé-eindpunt**+ Toevoegen **in**  >  **Netwerkverbinding.**
+1. Selecteer **in Netwerkconnectiviteit** **de optie Privé-eindpunt**  >  **+ Toevoegen.**
 1. Voer de volgende gegevens in of selecteer deze:
 
     | Instelling | Waarde |
@@ -229,12 +229,12 @@ Stel een privékoppeling in wanneer u een register maakt of voeg een privékoppe
     | Subresource |Register **selecteren**|
     | **Netwerken** | |
     | Virtueel netwerk| Selecteer het virtuele netwerk waarin uw virtuele machine is geïmplementeerd, zoals *myDockerVMVNET.* |
-    | Subnet | Selecteer een subnet, zoals *myDockerVMSubnet* waar uw virtuele machine is geïmplementeerd. |
+    | Subnet | Selecteer een subnet, zoals *myDockerVMSubnet* waar uw virtuele machine wordt geïmplementeerd. |
     |**Privé-DNS-integratie**||
     |Integreren met privé-DNS-zone |Selecteer **Ja**. |
     |Privé-DNS-zone |Selecteer *(Nieuw) privatelink.azurecr.io* |
     |||
-1. Configureer de resterende registerinstellingen en selecteer **controleren en maken.**
+1. Configureer de overige registerinstellingen en selecteer **controleren en maken.**
 
   ![Register met privé-eindpunt maken](./media/container-registry-private-link/private-link-create-portal.png)
 
@@ -309,16 +309,16 @@ az acr update --name $REGISTRY_NAME --public-network-enabled false
 
 ### <a name="disable-public-access---portal"></a>Openbare toegang uitschakelen - portal
 
-1. Navigeer in de portal naar het containerregister en selecteer **Instellingen > Netwerken.**
+1. Navigeer in de portal naar uw containerregister en selecteer **Instellingen > Netwerken.**
 1. Selecteer op **het tabblad Openbare** toegang in Openbare **netwerktoegang toestaan** de optie **Uitgeschakeld.** Selecteer vervolgens **Opslaan**.
 
 ## <a name="validate-private-link-connection"></a>Private Link-verbinding valideren
 
-Controleer of de resources in het subnet van het privé-eindpunt via een privé-IP-adres verbinding maken met uw register en de juiste integratie van de privé-DNS-zone hebben.
+Controleer of de resources in het subnet van het privé-eindpunt via een privé-IP-adres verbinding maken met uw register en de juiste privé-DNS-zone-integratie hebben.
 
 Als u de private link-verbinding wilt valideren, moet u SSH gebruiken voor de virtuele machine die u in het virtuele netwerk hebt ingesteld.
 
-Voer een hulpprogramma zoals of uit om het IP-adres van uw register op te `nslookup` zoeken via de private `dig` link. Bijvoorbeeld:
+Voer een hulpprogramma zoals of uit om het IP-adres van uw register op `nslookup` te zoeken via de private `dig` link. Bijvoorbeeld:
 
 ```bash
 dig $REGISTRY_NAME.azurecr.io
@@ -362,7 +362,7 @@ xxxx.westeurope.cloudapp.azure.com. 10  IN A 20.45.122.144
 
 ### <a name="registry-operations-over-private-link"></a>Registerbewerkingen via private link
 
-Controleer ook of u registerbewerkingen kunt uitvoeren vanaf de virtuele machine in het subnet. Maak een SSH-verbinding met uw virtuele machine en voer [az acr login uit om][az-acr-login] u aan te melden bij het register. Afhankelijk van uw VM-configuratie moet u mogelijk de volgende opdrachten vooraf laten gaan door `sudo` .
+Controleer ook of u registerbewerkingen kunt uitvoeren vanaf de virtuele machine in het subnet. Maak een SSH-verbinding met uw virtuele machine en voer [az acr login uit om][az-acr-login] u aan te melden bij uw register. Afhankelijk van uw VM-configuratie moet u mogelijk de volgende opdrachten vooraf laten gaan door `sudo` .
 
 ```bash
 az acr login --name $REGISTRY_NAME
@@ -374,11 +374,11 @@ Voer registerbewerkingen uit, zoals `docker pull` om een voorbeeldafbeelding uit
 docker pull myregistry.azurecr.io/hello-world:v1
 ``` 
 
-Docker haalt de afbeelding op naar de VM.
+Docker haalt de afbeelding naar de VM.
 
 ## <a name="manage-private-endpoint-connections"></a>Privé-eindpuntverbindingen beheren
 
-Beheer de privé-eindpuntverbindingen van een register met behulp van de Azure Portal of met behulp van opdrachten in de [opdrachtgroep az acr private-endpoint-connection.][az-acr-private-endpoint-connection] Bewerkingen omvatten het goedkeuren, verwijderen, opsnoemen, afwijzen of het tonen van details van de privé-eindpuntverbindingen van een register.
+Beheer de privé-eindpuntverbindingen van een register met behulp van de Azure Portal of met behulp van opdrachten in de [opdrachtgroep az acr private-endpoint-connection.][az-acr-private-endpoint-connection] Bewerkingen omvatten het goedkeuren, verwijderen, opsnoemen, afwijzen of tonen van details van de privé-eindpuntverbindingen van een register.
 
 Voer bijvoorbeeld de opdracht [az acr private-endpoint-connection list][az-acr-private-endpoint-connection-list] uit om de privé-eindpuntverbindingen van een register weer te geven. Bijvoorbeeld:
 
@@ -387,7 +387,7 @@ az acr private-endpoint-connection list \
   --registry-name $REGISTRY_NAME 
 ```
 
-Wanneer u met behulp van de stappen in dit artikel een verbinding met een privé-eindpunt in stelt, accepteert het register automatisch verbindingen van clients en services met Azure RBAC-machtigingen voor het register. U kunt het eindpunt zo instellen dat verbindingen handmatig moeten worden goedgekeurd. Zie Manage a Private Endpoint Connection (Een privé-eindpuntverbinding beheren) voor meer informatie over het goedkeuren en afwijzen van [privé-eindpuntverbindingen.](../private-link/manage-private-endpoint.md)
+Wanneer u met behulp van de stappen in dit artikel een privé-eindpuntverbinding in stelt, accepteert het register automatisch verbindingen van clients en services met Azure RBAC-machtigingen voor het register. U kunt het eindpunt zo instellen dat verbindingen handmatig moeten worden goedgekeurd. Zie Manage a Private Endpoint Connection (Een privé-eindpuntverbinding beheren) voor meer informatie over het goedkeuren en afwijzen van [privé-eindpuntverbindingen.](../private-link/manage-private-endpoint.md)
 
 > [!IMPORTANT]
 > Als u momenteel een privé-eindpunt uit een register verwijdert, moet u mogelijk ook de koppeling van het virtuele netwerk naar de privézone verwijderen. Als de koppeling niet is verwijderd, ziet u mogelijk een fout die vergelijkbaar is met `unresolvable host` .
@@ -396,16 +396,16 @@ Wanneer u met behulp van de stappen in dit artikel een verbinding met een privé
 
 Het privé-eindpunt in dit voorbeeld kan worden geïntegreerd met een privé-DNS-zone die is gekoppeld aan een virtueel basisnetwerk. Bij deze installatie wordt de door Azure geleverde DNS-service rechtstreeks gebruikt om de openbare FQDN van het register om te zetten in de privé-IP-adressen in het virtuele netwerk. 
 
-Private Link ondersteunt aanvullende DNS-configuratiescenario's die gebruikmaken van de privézone, inclusief met aangepaste DNS-oplossingen. U kunt bijvoorbeeld een aangepaste DNS-oplossing hebben geïmplementeerd in het virtuele netwerk of on-premises in een netwerk dat u verbindt met het virtuele netwerk met behulp van een VPN-gateway of Azure ExpressRoute. 
+Private Link ondersteunt aanvullende DNS-configuratiescenario's die gebruikmaken van de privézone, inclusief met aangepaste DNS-oplossingen. U kunt bijvoorbeeld een aangepaste DNS-oplossing hebben geïmplementeerd in het virtuele netwerk of on-premises in een netwerk dat u met het virtuele netwerk verbindt met behulp van een VPN-gateway of Azure ExpressRoute. 
 
-Als u in deze scenario's de openbare FQDN van het register wilt oplossen naar het privé-IP-adres, moet u een doorsturende server naar de Azure DNS-service (168.63.129.16) configureren. De exacte configuratieopties en stappen zijn afhankelijk van uw bestaande netwerken en DNS. Zie Azure [Private Endpoint DNS configuration (DNS-configuratie voor Azure-privé-eindpunten) voor voorbeelden.](../private-link/private-endpoint-dns.md)
+Als u de openbare FQDN van het register in deze scenario's wilt oplossen naar het privé-IP-adres, moet u een doorsturende server naar de Azure DNS-service (168.63.129.16) configureren. De exacte configuratieopties en stappen zijn afhankelijk van uw bestaande netwerken en DNS. Zie Azure [Private Endpoint DNS configuration (DNS-configuratie voor Azure-privé-eindpunten) voor voorbeelden.](../private-link/private-endpoint-dns.md)
 
 > [!IMPORTANT]
 > Als u voor hoge beschikbaarheid privé-eindpunten in verschillende regio's hebt gemaakt, raden we u aan een afzonderlijke resourcegroep in elke regio te gebruiken en het virtuele netwerk en de bijbehorende privé-DNS-zone in deze regio te plaatsen. Deze configuratie voorkomt ook onvoorspelbare DNS-resolutie die wordt veroorzaakt door het delen van dezelfde privé-DNS-zone.
 
 ### <a name="manually-configure-dns-records"></a>DNS-records handmatig configureren
 
-In sommige scenario's moet u mogelijk handmatig DNS-records configureren in een privézone in plaats van de door Azure geleverde privézone te gebruiken. Zorg ervoor dat u records maakt voor elk van de volgende eindpunten: het register-eindpunt, het gegevens-eindpunt van het register en het gegevens-eindpunt voor eventuele extra regionale replica's. Als niet alle records zijn geconfigureerd, is het register mogelijk niet bereikbaar.
+Voor sommige scenario's moet u mogelijk handmatig DNS-records configureren in een privézone in plaats van de door Azure geleverde privézone te gebruiken. Zorg ervoor dat u records maakt voor elk van de volgende eindpunten: het register-eindpunt, het gegevens-eindpunt van het register en het gegevens-eindpunt voor eventuele aanvullende regionale replica's. Als niet alle records zijn geconfigureerd, is het register mogelijk niet bereikbaar.
 
 > [!IMPORTANT]
 > Als u later een nieuwe replica toevoegt, moet u handmatig een nieuwe DNS-record toevoegen voor het gegevens-eindpunt in die regio. Als u bijvoorbeeld een replica van *myregistry* maakt op de locatie northeurope, voegt u een record toe voor `myregistry.northeurope.data.azurecr.io` .
@@ -420,7 +420,7 @@ Nadat u DNS-records hebt gemaakt, moet u ervoor zorgen dat de FQDN's van het reg
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u alle Azure-resources in dezelfde resourcegroep hebt gemaakt en deze niet meer nodig hebt, kunt u de resources eventueel verwijderen met behulp van één [az group delete-opdracht:](/cli/azure/group)
+Als u alle Azure-resources in dezelfde resourcegroep hebt gemaakt en deze niet meer nodig hebt, kunt u de resources desgewenst verwijderen met behulp van één [az group delete-opdracht:](/cli/azure/group)
 
 ```azurecli
 az group delete --name $RESOURCE_GROUP
@@ -446,28 +446,28 @@ Als u uw resources in de portal wilt ops schonen, gaat u naar de resourcegroep. 
 
 <!-- LINKS - Internal -->
 [azure-cli]: /cli/azure/install-azure-cli
-[az-acr-create]: /cli/azure/acr#az-acr-create
-[az-acr-show]: /cli/azure/acr#az-acr-show
-[az-acr-repository-show]: /cli/azure/acr/repository#az-acr-repository-show
-[az-acr-repository-list]: /cli/azure/acr/repository#az-acr-repository-list
-[az-acr-login]: /cli/azure/acr#az-acr-login
+[az-acr-create]: /cli/azure/acr#az_acr_create
+[az-acr-show]: /cli/azure/acr#az_acr_show
+[az-acr-repository-show]: /cli/azure/acr/repository#az_acr_repository_show
+[az-acr-repository-list]: /cli/azure/acr/repository#az_acr_repository_list
+[az-acr-login]: /cli/azure/acr#az_acr_login
 [az-acr-private-endpoint-connection]: /cli/azure/acr/private-endpoint-connection
-[az-acr-private-endpoint-connection-list]: /cli/azure/acr/private-endpoint-connection#az-acr-private-endpoint-connection-list
-[az-acr-private-endpoint-connection-approve]: /cli/azure/acr/private-endpoint-connection#az-acr-private-endpoint-connection-approve
-[az-acr-update]: /cli/azure/acr#az-acr-update
+[az-acr-private-endpoint-connection-list]: /cli/azure/acr/private-endpoint-connection#az_acr_private-endpoint-connection-list
+[az-acr-private-endpoint-connection-approve]: /cli/azure/acr/private-endpoint-connection#az_acr_private_endpoint_connection_approve
+[az-acr-update]: /cli/azure/acr#az_acr_update
 [az-group-create]: /cli/azure/group
-[az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
-[az-vm-create]: /cli/azure/vm#az-vm-create
-[az-network-vnet-subnet-show]: /cli/azure/network/vnet/subnet/#az-network-vnet-subnet-show
-[az-network-vnet-subnet-update]: /cli/azure/network/vnet/subnet/#az-network-vnet-subnet-update
-[az-network-vnet-list]: /cli/azure/network/vnet/#az-network-vnet-list
-[az-network-private-endpoint-create]: /cli/azure/network/private-endpoint#az-network-private-endpoint-create
-[az-network-private-endpoint-show]: /cli/azure/network/private-endpoint#az-network-private-endpoint-show
-[az-network-private-dns-zone-create]: /cli/azure/network/private-dns/zone#az-network-private-dns-zone-create
-[az-network-private-dns-link-vnet-create]: /cli/azure/network/private-dns/link/vnet#az-network-private-dns-link-vnet-create
-[az-network-private-dns-record-set-a-create]: /cli/azure/network/private-dns/record-set/a#az-network-private-dns-record-set-a-create
-[az-network-private-dns-record-set-a-add-record]: /cli/azure/network/private-dns/record-set/a#az-network-private-dns-record-set-a-add-record
-[az-network-nic-show]: /cli/azure/network/nic#az-network-nic-show
+[az-role-assignment-create]: /cli/azure/role/assignment#az_role_assignment_create
+[az-vm-create]: /cli/azure/vm#az_vm_create
+[az-network-vnet-subnet-show]: /cli/azure/network/vnet/subnet/#az_network_vnet_subnet_show
+[az-network-vnet-subnet-update]: /cli/azure/network/vnet/subnet/#az_network_vnet_subnet_update
+[az-network-vnet-list]: /cli/azure/network/vnet/#az_network_vnet_list
+[az-network-private-endpoint-create]: /cli/azure/network/private-endpoint#az_network_private_endpoint_create
+[az-network-private-endpoint-show]: /cli/azure/network/private-endpoint#az_network_private_endpoint_show
+[az-network-private-dns-zone-create]: /cli/azure/network/private-dns/zone#az_network_private_dns_zone_create
+[az-network-private-dns-link-vnet-create]: /cli/azure/network/private-dns/link/vnet#az_network_private_dns_link_vnet_create
+[az-network-private-dns-record-set-a-create]: /cli/azure/network/private-dns/record-set/a#az_network_private_dns_record_set_a_create
+[az-network-private-dns-record-set-a-add-record]: /cli/azure/network/private-dns/record-set/a#az_network_private_dns_record_set_a_add_record
+[az-network-nic-show]: /cli/azure/network/nic#az_network_nic_show
 [quickstart-portal]: container-registry-get-started-portal.md
 [quickstart-cli]: container-registry-get-started-azure-cli.md
 [azure-portal]: https://portal.azure.com

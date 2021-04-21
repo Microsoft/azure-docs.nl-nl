@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 04/19/2021
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 18c77a2b4cbf61979a2ba085640a03c209e890e7
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: e4be2e887876f85e75df254fd6c6a19003ca8a07
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107727920"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107792485"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application-using-azure-cli"></a>Quickstart: Een Traffic Manager-profiel maken voor webtoepassingen met hoge beschikbaarheid met behulp van Azure CLI
 
@@ -48,7 +48,7 @@ In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* 
 
 ## <a name="create-a-traffic-manager-profile"></a>Een Traffic Manager-profiel maken
 
-Maak met behulp van [az network traffic-manager profile create](/cli/azure/network/traffic-manager/profile#az-network-traffic-manager-profile-create) een Traffic Manager-profiel waarmee gebruikersverkeer wordt doorgestuurd op basis van eindpuntprioriteit.
+Maak met behulp van [az network traffic-manager profile create](/cli/azure/network/traffic-manager/profile#az_network_traffic_manager_profile_create) een Traffic Manager-profiel waarmee gebruikersverkeer wordt doorgestuurd op basis van eindpuntprioriteit.
 
 Vervang in het volgende voorbeeld **<profile_name>** met een unieke Traffic Manager-profielnaam.
 
@@ -71,7 +71,7 @@ az network traffic-manager profile create \
 Voor deze quickstart moeten twee exemplaren van een webtoepassing worden geïmplementeerd in twee verschillende Azure-regio's (*VS - oost* en *Europa - west*). Elk exemplaar dient als primair en failover-eindpunt voor Traffic Manager.
 
 ### <a name="create-web-app-service-plans"></a>Web-app-serviceplannen maken
-Maak web-app-serviceplannen met [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create) voor de twee exemplaren van de webtoepassing die u in twee verschillende Azure-regio's gaat implementeren.
+Maak web-app-serviceplannen met [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create) voor de twee exemplaren van de webtoepassing die u in twee verschillende Azure-regio's gaat implementeren.
 
 Vervang in het volgende voorbeeld **<appspname_eastus>** en **<appspname_westeurope>** door een unieke App Service-plannaam
 
@@ -92,7 +92,7 @@ az appservice plan create \
 ```
 
 ### <a name="create-a-web-app-in-the-app-service-plan"></a>Een web-app maken in het App Service-plan
-Maak twee exemplaren van de webtoepassing met [az webapp create](/cli/azure/webapp#az-webapp-create) in de App Service-plannen in de Azure-regio's *US - oost* en *Europa - west*.
+Maak twee exemplaren van de webtoepassing met [az webapp create](/cli/azure/webapp#az_webapp_create) in de App Service-plannen in de Azure-regio's *US - oost* en *Europa - west*.
 
 Vervang in het volgende voorbeeld **<app1name_eastus>** en **<app2name_westeurope> door een unieke app-naam en vervang** **<appspname_eastus>** en **<appspname_westeurope>** door de naam die is gebruikt om App Service-plannen in de vorige sectie te maken.
 
@@ -111,7 +111,7 @@ az webapp create \
 ```
 
 ## <a name="add-traffic-manager-endpoints"></a>Traffic Manager-eindpunten toevoegen
-Voeg de twee web-apps als volgt toe aan het Traffic Manager-profiel als Traffic Manager-eindpunten met behulp van [az network traffic-manager endpoint create](/cli/azure/network/traffic-manager/endpoint#az-network-traffic-manager-endpoint-create):
+Voeg de twee web-apps als volgt toe aan het Traffic Manager-profiel als Traffic Manager-eindpunten met behulp van [az network traffic-manager endpoint create](/cli/azure/network/traffic-manager/endpoint#az_network_traffic_manager_endpoint_create):
 
 - Bepaal de web-app-id en voeg de web-app toe die zich in de Azure-regio *VS - oost* bevindt als primair eindpunt om alle gebruikersverkeer te routeren. 
 - Bepaal de web-app-id en voeg de web-app toe die zich in de Azure-regio *Europa - west* bevindt als het failover-eindpunt. 
@@ -179,7 +179,7 @@ In het volgende voorbeeld vervangt u **<app1name_eastus>** en **<app2name_westeu
 
 ### <a name="determine-the-dns-name"></a>DNS-naam bepalen
 
-Bepaal de DNS-naam van het Traffic Manager-profiel met behulp van [az network traffic-manager profile show](/cli/azure/network/traffic-manager/profile#az-network-traffic-manager-profile-show).
+Bepaal de DNS-naam van het Traffic Manager-profiel met behulp van [az network traffic-manager profile show](/cli/azure/network/traffic-manager/profile#az_network_traffic_manager_profile_show).
 
 ```azurecli-interactive
 
@@ -197,7 +197,7 @@ Kopieer de waarde **RelativeDnsName**. De DNS-naam van uw Traffic Manager-profie
 
     > [!NOTE]
     > In dit quickstartscenario worden alle aanvragen gerouteerd naar het primaire eindpunt. Het is ingesteld op **Priority 1**.
-2. Als u een Traffic Manager-failover in actie wilt bekijken, schakelt u de primaire site uit met behulp van [az network traffic-manager endpoint update](/cli/azure/network/traffic-manager/endpoint#az-network-traffic-manager-endpoint-update).
+2. Als u een Traffic Manager-failover in actie wilt bekijken, schakelt u de primaire site uit met behulp van [az network traffic-manager endpoint update](/cli/azure/network/traffic-manager/endpoint#az_network_traffic_manager_endpoint_update).
 
    ```azurecli-interactive
 
@@ -215,7 +215,7 @@ Kopieer de waarde **RelativeDnsName**. De DNS-naam van uw Traffic Manager-profie
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Verwijder met [az group delete](/cli/azure/group#az-group-delete) de resourcegroepen, de webtoepassingen en alle gerelateerde resources als u klaar bent.
+Verwijder met [az group delete](/cli/azure/group#az_group_delete) de resourcegroepen, de webtoepassingen en alle gerelateerde resources als u klaar bent.
 
 ```azurecli-interactive
 

@@ -1,89 +1,89 @@
 ---
-title: Eigenschappen van de aanbieding van virtuele machines op Azure Marketplace configureren
-description: Meer informatie over het configureren van de eigenschappen voor de aanbieding van virtuele machines op Azure Marketplace.
+title: Eigenschappen van de aanbieding voor virtuele machines configureren op Azure Marketplace
+description: Meer informatie over het configureren van aanbiedingseigenschappen voor virtuele machines op Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: emuench
 ms.author: mingshen
 ms.date: 10/19/2020
-ms.openlocfilehash: 281553782774c31ec8cfaf614542fd739c4d3dd9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5942368ba1709127b815a35676b716955c1bee8f
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94629526"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107819084"
 ---
-# <a name="how-to-configure-virtual-machine-offer-properties"></a>Eigenschappen van de aanbieding van virtuele machines configureren
+# <a name="configure-virtual-machine-offer-properties"></a>Eigenschappen van de aanbieding voor virtuele machines configureren
 
-Op de pagina **Eigenschappen** (selecteren in het menu links in partner centrum) definieert u de categorieën die worden gebruikt voor het groeperen van de aanbieding van de virtuele machine (VM) op Azure Marketplace, uw toepassings versie en de juridische contracten die uw aanbieding ondersteunen.
+Op **de** pagina Eigenschappen (selecteer in het menu aan de linkerkant) definieert u de categorieën die worden gebruikt voor het groeperen van uw aanbieding voor virtuele machines (VM's) op Azure Marketplace, de versie van uw toepassing en de juridische contracten die uw aanbieding ondersteunen.
 
 ## <a name="select-a-category"></a>Een categorie selecteren
 
-Selecteer categorieën en subcategorieën om uw aanbieding te plaatsen in de juiste Azure Marketplace-Zoek gebieden. Zorg ervoor dat u later in de aanbieding beschrijving leest hoe uw aanbod deze categorieën ondersteunt.
+Selecteer categorieën en subcategorieën om uw aanbieding in de juiste Azure Marketplace plaatsen. Zorg ervoor dat u later in de beschrijving van de aanbieding beschrijft hoe uw aanbieding ondersteuning biedt voor deze categorieën.
 
 - Selecteer een primaire categorie.
-- Als u een tweede optionele categorie (secundair) wilt toevoegen, selecteert u de koppeling **+ Categorieën** .
-- Selecteer Maxi maal twee subcategorieën voor de primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert u **niet van toepassing**. Gebruik Ctrl + klikken om een tweede subcategorie te selecteren.
+- Als u een tweede optionele categorie (Secundair) wilt toevoegen, selecteert u de **koppeling +Categorieën.**
+- Selecteer maximaal twee subcategorieën voor de categorie Primair en/of Secundair. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert **u Niet van toepassing.** Gebruik Ctrl+klikken om een tweede subcategorie te selecteren.
 
-Bekijk de volledige lijst met categorieën en subcategorieën in [Aanbevolen procedures voor aanbiedingen](gtm-offer-listing-best-practices.md). Virtuele machine aanbiedingen worden altijd weer gegeven onder de **reken** categorie op Azure Marketplace.
+Zie de volledige lijst met categorieën en subcategorieën in [Best practices voor aanbiedingsvermeldingen.](gtm-offer-listing-best-practices.md) Aanbiedingen voor virtuele machines worden altijd weergegeven onder de **categorie Compute** op Azure Marketplace.
 
-## <a name="provide-terms-and-conditions"></a>Voor waarden opgeven
+## <a name="provide-terms-and-conditions"></a>Voorwaarden verstrekken
 
-Geef onder **juridisch** recht voor waarden op voor uw aanbieding. U hebt hiervoor twee opties:
+Geef **onder Juridisch** de voorwaarden voor uw aanbieding op. U hebt hiervoor twee opties:
 
-- [Het standaard contract gebruiken met optionele wijzigingen](#use-the-standard-contract)
-- [Gebruik uw eigen voor waarden](#use-your-own-terms-and-conditions)
+- [Het standaardcontract gebruiken met optionele wijzigingen](#use-the-standard-contract)
+- [Uw eigen voorwaarden gebruiken](#use-your-own-terms-and-conditions)
 
-Zie voor meer informatie over het standaard contract en de optionele wijzigingen het [standaard contract voor de micro soft Commercial Marketplace](standard-contract.md). U kunt het [standaard](https://go.microsoft.com/fwlink/?linkid=2041178) -PDF-bestand downloaden (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
+Zie voor meer informatie over het standaardcontract en [optionele wijzigingen Standaardcontract voor de commerciële marketplace van Microsoft.](standard-contract.md) U kunt de [Standaardcontract](https://go.microsoft.com/fwlink/?linkid=2041178) PDF downloaden (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
 
-### <a name="use-the-standard-contract"></a>Het standaard contract gebruiken
+### <a name="use-the-standard-contract"></a>Het standaardcontract gebruiken
 
-Micro soft biedt een standaard contract dat u voor uw aanbiedingen kunt gebruiken in de commerciële Marketplace om het aankoop proces voor klanten te vereenvoudigen en de juridische complexiteit voor software leveranciers te reduceren. Wanneer u uw software onder het Standard-contract aanbiedt, hoeven klanten slechts één keer te lezen en te accepteren en hoeft u geen aangepaste voor waarden te maken.
+Om het inkoopproces voor klanten te vereenvoudigen en de juridische complexiteit voor softwareleveranciers te verminderen, biedt Microsoft een standaardcontract dat u kunt gebruiken voor uw aanbiedingen in de commerciële marketplace. Wanneer u uw software onder het standaardcontract aanbiedt, hoeven klanten deze slechts één keer te lezen en te accepteren en hoeft u geen aangepaste voorwaarden te maken.
 
-1. Schakel het selectie vakje **het standaard contract voor commerciële Marketplace van micro soft gebruiken** in.
+1. Schakel het **selectievakje Use the Standaardcontract for Microsoft's commercial marketplace** in.
 
-   ![Illustreert het selectie vakje het standaard contract voor commerciële Marketplace van micro soft gebruiken.](partner-center-portal/media/use-standard-contract.png)
+   ![Illustreert het selectievakje Use the Standaardcontract for Microsoft's commercial marketplace (De Standaardcontract gebruiken voor de commerciële marketplace van Microsoft).](partner-center-portal/media/use-standard-contract.png)
 
-1. In het **bevestigings** dialoogvenster selecteert u **accepteren**. Afhankelijk van de grootte van het scherm moet u mogelijk omhoog schuiven om het te zien.
-1. Selecteer **concept opslaan** voordat u doorgaat.
+1. Selecteer **accepteren** in het dialoogvenster **Bevestiging.** Afhankelijk van de grootte van het scherm moet u mogelijk omhoog schuiven om het te zien.
+1. Selecteer **Concept opslaan voordat** u doorgaat.
 
    > [!NOTE]
-   > Nadat u een aanbieding hebt gepubliceerd met het standaard contract voor de commerciële Marketplace, kunt u uw eigen aangepaste voor waarden niet gebruiken. U kunt uw oplossing aanbieden onder het Standard-contract met optionele wijzigingen of onder uw eigen voor waarden.
+   > Nadat u een aanbieding hebt gepubliceerd met Standaardcontract voor de commerciële marketplace, kunt u uw eigen aangepaste voorwaarden niet gebruiken. Bied uw oplossing aan onder het standaardcontract met optionele wijzigingen of onder uw eigen voorwaarden.
 
-#### <a name="add-amendments-to-the-standard-contract-optional"></a>Wijzigingen aan het standaard contract toevoegen (optioneel)
+#### <a name="add-amendments-to-the-standard-contract-optional"></a>Wijzigingen toevoegen aan het standaardcontract (optioneel)
 
-Er zijn twee soorten wijzigingen beschikbaar: *universeel* en *aangepast*.
+Er zijn twee soorten wijzigingen beschikbaar: *universeel* en *aangepast.*
 
-##### <a name="add-universal-amendment-terms"></a>Universele wijzigings voorwaarden toevoegen
+##### <a name="add-universal-amendment-terms"></a>Universele wijzigingsvoorwaarden toevoegen
 
-Voer in de voor **waarden voor universele wijzigingen in het standaard contract voor de commerciële Marketplace van micro soft** de voor waarden in voor Universal-wijzigingen. U kunt een onbeperkt aantal tekens in dit vak invoeren. Deze voor waarden worden weer gegeven aan klanten in AppSource, Azure Marketplace en/of Azure Portal tijdens de detectie-en aankoop stroom.
+Voer in **het vak Universele wijzigingsvoorwaarden voor** het standaardcontract voor de commerciële marketplace van Microsoft uw universele wijzigingsvoorwaarden in. U kunt een onbeperkt aantal tekens invoeren in dit vak. Deze voorwaarden worden weergegeven voor klanten in AppSource, Azure Marketplace en/of Azure Portal tijdens de detectie- en aankoopstroom.
 
 ##### <a name="add-one-or-more-custom-amendments"></a>Een of meer aangepaste wijzigingen toevoegen
 
-1. Onder aanpassingen **aan het standaard contract voor de commerciële Marketplace van micro soft**, selecteert u de koppeling **aangepaste wijzigings termijn toevoegen (max. 10)** .
-2. Voer uw **aangepaste wijzigings voorwaarden** in het vak in.
-3. Voer de **Tenant-id** in het vak in. Alleen klanten die zijn gekoppeld aan de Tenant-Id's die u voor deze aangepaste voor waarden opgeeft, worden weer gegeven in de inkoop stroom van de aanbieding in de Azure Portal.
+1. Selecteer **onder Aangepaste wijzigingsvoorwaarden in de Standaardcontract** voor de commerciële marketplace van Microsoft de koppeling Aangepaste wijzigingstermijn toevoegen **(max. 10).**
+2. Voer uw **aangepaste aangepaste voorwaarden** in het vak in.
+3. Voer de **tenant-id** in het vak in. Alleen klanten die zijn gekoppeld aan de tenant-ID's die u voor deze aangepaste voorwaarden opgeeft, zien deze in de aankoopstroom van de aanbieding in de Azure Portal.
 
    > [!TIP]
-   > Een Tenant-ID identificeert uw klant in Azure. U kunt uw klant vragen voor deze id en ze kunnen deze vinden door naar [**https://portal.azure.com**](https://portal.azure.com)  >  **Azure Active Directory**  >  **Eigenschappen** te gaan. De waarde van de Directory-ID is de Tenant-ID (bijvoorbeeld `50c464d3-4930-494c-963c-1e951d15360e` ). U kunt ook de Tenant-ID van de organisatie zoeken met behulp van de domein naam-URL op [Wat is mijn Microsoft Azure en Office 365-Tenant-id?](https://www.whatismytenantid.com/).
+   > Een tenant-id identificeert uw klant in Azure. U kunt uw klant om deze id vragen en deze vinden door naar eigenschappen [**https://portal.azure.com**](https://portal.azure.com)  >  **Azure Active Directory**  >  **gaan.** De waarde van de map-id is de tenant-id (bijvoorbeeld `50c464d3-4930-494c-963c-1e951d15360e` ). U kunt ook de tenant-id van de organisatie van uw klant op zoeken met behulp van hun domeinnaam-URL in Wat is mijn Microsoft Azure en [Office 365-tenant-id?](https://www.whatismytenantid.com/).
 
-4. Voer desgewenst een **Beschrijving** in voor de Tenant-id. Deze beschrijving helpt u bij het identificeren van de klant die u wilt richten op de wijziging.
-5. Als u nog een Tenant-ID wilt toevoegen, selecteert u de koppeling **toevoegen van de Tenant-id van een klant (Maxi maal 10)** en herhaalt u stap 3 en 4. U kunt Maxi maal 20 Tenant-Id's toevoegen.
-6. Herhaal de stappen 1 tot en met 5 om een andere wijzigings termijn toe te voegen. U kunt Maxi maal tien aangepaste voor waarden per aanbieding opgeven.
-7. Selecteer **concept opslaan** voordat u doorgaat.
+4. Voer desgewenst een beschrijvende beschrijving **in voor** de tenant-id. Deze beschrijving helpt u bij het identificeren van de klant op wie u de wijziging wilt richten.
+5. Als u nog een tenant-id wilt toevoegen, selecteert u de koppeling Tenant-id van een klant **toevoegen (max. 10)** en herhaalt u stap 3 en 4. U kunt maximaal 20 tenant-ID's toevoegen.
+6. Herhaal stap 1 tot en met 5 om nog een wijzigingstermijn toe te voegen. U kunt maximaal tien aangepaste wijzigingsvoorwaarden per aanbieding opgeven.
+7. Selecteer **Concept opslaan voordat** u doorgaat.
 
-### <a name="use-your-own-terms-and-conditions"></a>Gebruik uw eigen voor waarden
+### <a name="use-your-own-terms-and-conditions"></a>Uw eigen voorwaarden gebruiken
 
-U kunt ervoor kiezen om uw eigen voor waarden op te geven in plaats van het standaard contract. Klanten moeten deze voor waarden accepteren voordat ze uw aanbieding kunnen proberen.
+U kunt uw eigen voorwaarden verstrekken in plaats van het standaardcontract te gebruiken. Klanten moeten deze voorwaarden accepteren voordat ze uw aanbieding kunnen proberen.
 
-1. Schakel onder **juridisch** het selectie vakje **gebruik het standaard contract voor commerciële Marketplace van micro soft** uit.
-1. Voer in het vak voor **waarden** maxi maal 10.000 tekens tekst in.
+1. Onder **Juridisch** wordt het selectievakje **Use the Standaardcontract for Microsoft's commercial marketplace** uit.
+1. Voer in **het vak Voorwaarden** maximaal 10.000 tekens tekst in.
 
    > [!NOTE]
-   > Als u een langere beschrijving nodig hebt, voert u één webadres in dat verwijst naar waar uw voor waarden kunnen worden gevonden. Het wordt weer gegeven voor klanten als een actieve koppeling.
+   > Als u een langere beschrijving nodig hebt, voert u één webadres in dat wijst naar de plaats waar uw voorwaarden kunnen worden gevonden. Deze wordt aan klanten weergegeven als een actieve koppeling.
 
-1. Selecteer **concept opslaan** voordat u doorgaat naar het volgende tabblad in het menu links Navigator, **aanbieding aanbieden**.
+1. Selecteer **Concept opslaan** voordat u verdergaat met het volgende tabblad in het menu aan de linkerkant, **Aanbiedingsvermelding.**
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,16 +9,16 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 313f7030d56a8a199c6d2d04fa0d979429d0bce1
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 29f6f01ece0536d93ca18ca54379757adc120308
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750802"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818778"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Een sleutelkluis voor Azure Disk Encryption maken en configureren
 
-Azure Disk Encryption gebruikt Azure Key Vault om sleutels en geheimen voor schijfversleuteling te beheren.  Zie [Aan de slag met Azure Key Vault](../../key-vault/general/overview.md) en [Uw sleutelkluis beveiligen](../../key-vault/general/security-overview.md) voor meer informatie over sleutelkluizen. 
+Azure Disk Encryption gebruikt Azure Key Vault om sleutels en geheimen voor schijfversleuteling te beheren.  Zie [Aan de slag met Azure Key Vault](../../key-vault/general/overview.md) en [Uw sleutelkluis beveiligen](../../key-vault/general/security-features.md) voor meer informatie over sleutelkluizen. 
 
 > [!WARNING]
 > - Als u eerder een Azure Disk Encryption met Azure AD hebt gebruikt om een VM te versleutelen, moet u deze optie blijven gebruiken om uw VM te versleutelen. Zie [Een sleutelkluis maken en configureren voor Azure Disk Encryption met Azure AD (vorige versie)](disk-encryption-key-vault-aad.md) voor meer informatie.
@@ -47,7 +47,7 @@ Hoewel de portal toegankelijk is via uw browser, is voor Azure CLI en Azure Powe
 
 ### <a name="connect-to-your-azure-account"></a>Verbinding maken met uw Azure-account
 
-Voordat u de Azure CLI of Azure PowerShell gebruikt, moet u eerst verbinding maken met uw Azure-abonnement. U doet dit door u aan te melden met [Azure CLI](/cli/azure/authenticate-azure-cli), u aan te melden met [Azure Powershell](/powershell/azure/authenticate-azureps)of uw referenties op te geven aan de Azure Portal wanneer u hierom wordt gevraagd.
+Voordat u de Azure CLI of Azure PowerShell gebruikt, moet u eerst verbinding maken met uw Azure-abonnement. U doet dit door u [aan te](/cli/azure/authenticate-azure-cli)melden met Azure CLI , u aan te melden met Azure [Powershell](/powershell/azure/authenticate-azureps)of uw referenties op te geven aan de Azure Portal wanneer u hierom wordt gevraagd.
 
 ```azurecli-interactive
 az login
@@ -64,6 +64,6 @@ Connect-AzAccount
 
 - [Azure Disk Encryption CLI-script met vereisten](https://github.com/ejarvi/ade-cli-getting-started)
 - [Azure Disk Encryption PowerShell-script met vereisten](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)
-- Meer [informatie Azure Disk Encryption scenario's op Linux-VM's](disk-encryption-linux.md)
+- Meer [informatie Azure Disk Encryption scenario's op linux-VM's](disk-encryption-linux.md)
 - Meer informatie over het [oplossen van Azure Disk Encryption](disk-encryption-troubleshooting.md)
 - De [voorbeeldscripts Azure Disk Encryption lezen](disk-encryption-sample-scripts.md)

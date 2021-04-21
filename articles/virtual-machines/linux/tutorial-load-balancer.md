@@ -1,47 +1,42 @@
 ---
-title: 'Zelfstudie: Taakverdelingen maken voor virtuele Linux-machines in Azure'
+title: "Zelfstudie: Een load balancer maken voor VM's voor hoge beschikbaarheid"
 description: In deze zelfstudie leert u hoe u Azure CLI kunt gebruiken om een load balancer te maken voor een maximaal beschikbare en veilige toepassing op drie virtuele Linux-machines
-services: virtual-machines
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
 ms.subservice: networking
-ms.assetid: ''
 ms.service: virtual-machines
 ms.collection: linux
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/13/2017
+ms.date: 04/20/2021
 ms.author: cynthn
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 433bbd51618cfb5624c8ed2c549e1793488f0e81
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 191eb1338533cf1a5f81f4d04c5dfc6fd5cc569c
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102553762"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818742"
 ---
-# <a name="tutorial-load-balance-linux-virtual-machines-in-azure-to-create-a-highly-available-application-with-the-azure-cli"></a>Zelfstudie: Taakverdelingen maken voor virtuele Linux-machines in Azure om een maximaal beschikbare toepassing te maken met Azure CLI
+# <a name="tutorial-load-balance-vms-for-high-availability"></a>Zelfstudie: Load balancer VM's voor hoge beschikbaarheid
 
 Taakverdeling zorgt voor een hogere beschikbaarheid door binnenkomende aanvragen te spreiden over meerdere virtuele machines. In deze zelfstudie leert u meer over de verschillende onderdelen van Azure Load Balancer die het verkeer verdelen en zorgen voor hoge beschikbaarheid. In deze zelfstudie leert u procedures om het volgende te doen:
 
 > [!div class="checklist"]
-> * Een Azure-load balancer maken
-> * Een load balancer-statustest maken
-> * Load balancer-verkeersregels maken
-> * Cloud-init gebruiken voor het maken van een eenvoudige Node.js-app
-> * Virtuele machines maken en koppelen aan een load balancer
-> * Een load balancer in actie zien
-> * VM's toevoegen aan en verwijderen uit een load balancer
+> * Een load balancer maken
+> * Een statustest maken
+> * Verkeersregels maken
+> * Cloud-init gebruiken om een eenvoudige app Node.js installeren
+> * Virtuele machines maken en deze koppelen aan de load balancer
+> * De load balancer in actie
+> * VM's toevoegen aan en verwijderen uit load balancer
 
 In deze zelfstudie wordt gebruikgemaakt van de CLI in de [Azure Cloud Shell](../../cloud-shell/overview.md), die voortdurend wordt bijgewerkt naar de nieuwste versie. Als u de Cloud Shell wilt openen, selecteert u **Probeer het** bovenaan een willekeurig codeblok.
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.0.30 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="azure-load-balancer-overview"></a>Overzicht van Azure Load Balancer
+
 Een Azure-load balancer is een Layer-4-load balancer (TCP, UDP) die zorgt voor hoge beschikbaarheid door inkomend verkeer te distribueren tussen correct werkende virtuele machines. Tijdens een statustest van een load balancer wordt een bepaalde poort op elke VM gecontroleerd en wordt verkeer alleen naar een werkende VM gedistribueerd.
 
 U definieert een front-end-IP-configuratie met een of meer openbare IP-adressen. Dankzij deze front-end-IP-configuratie zijn uw load balancer en toepassingen toegankelijk via internet. 

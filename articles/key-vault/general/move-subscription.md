@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 65dc9da03a6b763d419c51e53bf756550e8b56a4
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 1a1cd8c051f9e04c09ef2986805873d8e7fea54e
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107751846"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107817626"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Een Azure Key Vault verplaatsen naar een ander abonnement
 
@@ -24,7 +24,7 @@ ms.locfileid: "107751846"
 
 > [!IMPORTANT]
 > **Het verplaatsen van een sleutelkluis naar een ander abonnement veroorzaakt een belangrijke wijziging in uw omgeving.**
-> Zorg ervoor dat u de impact van deze wijziging begrijpt en volg de richtlijnen in dit artikel zorgvuldig voordat u besluit om de sleutelkluis te verplaatsen naar een nieuw abonnement.
+> Zorg ervoor dat u de impact van deze wijziging begrijpt en volg de richtlijnen in dit artikel zorgvuldig voordat u besluit om de Sleutelkluis te verplaatsen naar een nieuw abonnement.
 > Als u Managed Service Identities (MSI) gebruikt, leest u de instructies na het verplaatsen aan het einde van het document. 
 
 [Azure Key Vault](overview.md) is automatisch gekoppeld aan de [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md) tenant-id voor het abonnement waarin het is gemaakt. U vindt de tenant-id die is gekoppeld aan uw abonnement door deze handleiding [te volgen.](../../active-directory/fundamentals/active-directory-how-to-find-tenant.md) Alle vermeldingen van toegangsbeleid en roltoewijzingen zijn ook gekoppeld aan deze tenant-id.  Als u uw Azure-abonnement verplaatst van tenant A naar tenant B, zijn uw bestaande sleutelkluizen niet toegankelijk voor de service-principals (gebruikers en toepassingen) in tenant B. U kunt dit probleem oplossen door het volgende te doen:
@@ -123,5 +123,5 @@ Als u een beheerde identiteit gebruikt, moet u ook de identiteit bijwerken omdat
 - Meer informatie over [sleutels, geheimen en certificaten](about-keys-secrets-certificates.md)
 - Voor conceptuele informatie, waaronder het interpreteren van Key Vault logboeken, zie [Key Vault logboekregistratie](logging.md)
 - [Gids voor Key Vault-ontwikkelaars](../general/developers-guide.md)
-- [Uw Key Vault beveiligen](security-overview.md)
+- [Azure Key Vault beveiligingsfuncties](security-features.md)
 - [Azure Key Vault-firewalls en virtuele netwerken configureren](network-security.md)

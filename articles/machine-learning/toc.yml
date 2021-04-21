@@ -345,7 +345,7 @@
             - name: Verbinding maken met Azure-opslag (Python)
               displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore'
               href: how-to-access-data.md
-            - name: Op identiteit gebaseerde gegevenstoegang tot opslag
+            - name: Toegang tot opslaggegevens op basis van identiteit
               displayName: 'blob, access, data lake, datastore, managed identity'
               href: how-to-identity-based-data-access.md
             - name: Gegevens uit gegevensarchief ophalen (Python)
@@ -390,15 +390,12 @@
           href: how-to-migrate-from-estimators-to-scriptrunconfig.md
         - name: Training voor volgen en bewaken
           items:
-            - name: 'Uitvoeringen starten, bewaken of annuleren'
+            - name: 'Runs bijhouden, bewaken en analyseren'
               displayName: 'cancel, fail, status, child run'
-              href: how-to-manage-runs.md
-            - name: Logboeken inschakelen
-              displayName: 'troubleshoot, log, files, tracing'
-              href: how-to-track-experiments.md
-            - name: Logboeken en metrische gegevens voor runs weergeven
+              href: how-to-track-monitor-analyze-runs.md
+            - name: Metrische & logboekbestanden weergeven
               displayName: 'troubleshoot, log, files, tracing, metrics'
-              href: how-to-monitor-view-training-logs.md
+              href: how-to-log-view-metrics.md
             - name: Uitvoeringen visualiseren met TensorBoard
               displayName: 'log, monitor, metrics'
               href: how-to-monitor-tensorboard.md

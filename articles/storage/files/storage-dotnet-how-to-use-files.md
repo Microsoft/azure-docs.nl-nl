@@ -1,6 +1,6 @@
 ---
 title: Ontwikkelen voor Azure Files met .NET | Microsoft Docs
-description: Meer informatie over het ontwikkelen van .NET-toepassingen en-services die gebruikmaken van Azure Files om gegevens op te slaan.
+description: Meer informatie over het ontwikkelen van .NET-toepassingen en -services die gebruikmaken Azure Files voor het opslaan van gegevens.
 author: roygara
 ms.service: storage
 ms.devlang: dotnet
@@ -9,111 +9,111 @@ ms.date: 10/02/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e112060db4a44884d3094a939b03ff106ba72e65
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2c00f001ae3cba9420a137a42f9f696619584d50
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96492196"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107817373"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Ontwikkelen voor Azure Files met .NET
 
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
 
-Leer de basis beginselen van het ontwikkelen van .NET-toepassingen die gebruikmaken van [Azure files](storage-files-introduction.md) om gegevens op te slaan. In dit artikel wordt beschreven hoe u een eenvoudige console toepassing maakt om het volgende te doen met .NET en Azure Files:
+Leer de basisbeginselen van het ontwikkelen van .NET-toepassingen die gebruikmaken [Azure Files](storage-files-introduction.md) voor het opslaan van gegevens. In dit artikel wordt beschreven hoe u een eenvoudige consoletoepassing maakt om het volgende te doen met .NET en Azure Files:
 
-- De inhoud van een bestand ophalen.
+- Haal de inhoud van een bestand op.
 - Stel de maximale grootte of het quotum voor een bestands share in.
-- Een Shared Access Signature (SAS) voor een bestand maken.
+- Maak een Shared Access Signature (SAS) voor een bestand.
 - Een bestand kopiëren naar een ander bestand in hetzelfde opslagaccount.
 - Een bestand kopiëren naar een blob in hetzelfde opslagaccount.
-- Maak een moment opname van een bestands share.
-- Een bestand herstellen vanuit een moment opname van een share.
-- Gebruik Azure Storage metrische gegevens voor het oplossen van problemen.
+- Maak een momentopname van een bestands share.
+- Een bestand herstellen vanuit een momentopname van een share.
+- Gebruik Azure Storage metrics voor probleemoplossing.
 
-Zie [Wat is Azure files?](storage-files-introduction.md) voor meer informatie over Azure files.
+Zie Wat is Azure Files? voor meer informatie [over Azure Files?](storage-files-introduction.md)
 
 [!INCLUDE [storage-check-out-samples-dotnet](../../../includes/storage-check-out-samples-dotnet.md)]
 
 ## <a name="understanding-the-net-apis"></a>De .NET-API's
 
-Azure Files biedt twee veelzijdige methoden voor het maken van clienttoepassingen: Server Message Block (SMB) en REST. Binnen .NET hebben de- `System.IO` en- `Azure.Storage.Files.Shares` api's deze methoden abstract.
+Azure Files biedt twee veelzijdige methoden voor het maken van clienttoepassingen: Server Message Block (SMB) en REST. Binnen .NET worden deze `System.IO` benaderingen door de `Azure.Storage.Files.Shares` API's en geabstraheerd.
 
 API | Wanneer gebruikt u dit? | Opmerkingen
 ----|-------------|------
-[System.IO](/dotnet/api/system.io) | Uw toepassing: <ul><li>Moet bestanden lezen/schrijven met behulp van SMB</li><li>Wordt uitgevoerd op een apparaat met toegang tot uw Azure Files-account via poort 445</li><li>Hoeft geen beheerinstellingen van de bestandsshare te beheren</li></ul> | Bestands-I/O dat is geïmplementeerd met Azure Files over SMB, is over het algemeen hetzelfde als I/O met een netwerk bestands share of een lokaal opslag apparaat. Raadpleeg de zelf studie over de [console toepassing](/dotnet/csharp/tutorials/console-teleprompter) voor een inleiding tot een aantal functies in .net, waaronder bestands-I/O.
-[Azure. storage. files. shares](/dotnet/api/azure.storage.files.shares) | Uw toepassing: <ul><li>Geen toegang tot Azure Files met behulp van SMB op poort 445 vanwege firewall-of ISP-beperkingen</li><li>Vereist beheerfunctionaliteit, zoals de mogelijkheid tot het instellen van een quotum voor een bestandsshare of het maken van een Shared Access Signature (gedeelde-toegangshandtekening)</li></ul> | In dit artikel wordt het gebruik beschreven van `Azure.Storage.Files.Shares` voor bestands-I/O met behulp van rest in plaats van SMB en het beheer van de bestands share.
+[System.IO](/dotnet/api/system.io) | Uw toepassing: <ul><li>Moet bestanden lezen/schrijven met behulp van SMB</li><li>Wordt uitgevoerd op een apparaat met toegang tot uw Azure Files-account via poort 445</li><li>Hoeft geen beheerinstellingen van de bestandsshare te beheren</li></ul> | Bestands-I/O die met een Azure Files via SMB is geïmplementeerd, is in het algemeen hetzelfde als I/O met een netwerkbestands share of een lokaal opslagapparaat. Zie de zelfstudie Consoletoepassing voor een inleiding tot een [](/dotnet/csharp/tutorials/console-teleprompter) aantal functies in .NET, waaronder bestands-I/O.
+[Azure.Storage.Files.Shares](/dotnet/api/azure.storage.files.shares) | Uw toepassing: <ul><li>Kan geen toegang krijgen Azure Files SMB op poort 445 vanwege firewall- of ISP-beperkingen</li><li>Vereist beheerfunctionaliteit, zoals de mogelijkheid tot het instellen van een quotum voor een bestandsshare of het maken van een Shared Access Signature (gedeelde-toegangshandtekening)</li></ul> | In dit artikel wordt beschreven hoe u voor bestands-I/O gebruik kunt maken van REST in plaats van SMB en `Azure.Storage.Files.Shares` het beheer van de bestands share.
 
 ## <a name="create-the-console-application-and-obtain-the-assembly"></a>De consoletoepassing maken en de assembly verkrijgen
 
-U kunt de Azure Files-client bibliotheek in elk type .NET-app gebruiken. Deze apps zijn onder andere Azure Cloud-, Web-, desktop-en Mobile-apps. In deze hand leiding maken we een console toepassing voor eenvoud.
+U kunt de Azure Files-clientbibliotheek gebruiken in elk type .NET-app. Deze apps omvatten Azure-cloud-, web-, desktop- en mobiele apps. In deze handleiding maken we ter vereenvoudiging een consoletoepassing.
 
 Maak in Visual Studio een nieuwe Windows-consoletoepassing. In de volgende stappen ziet u hoe u een consoletoepassing maakt in Visual Studio 2019. De stappen zijn nagenoeg gelijk in andere versies van Visual Studio.
 
 1. Start Visual Studio en selecteer **Een nieuw project maken**.
-1. Kies in **een nieuw project maken de** optie **console-app (.NET Framework)** voor C# en selecteer vervolgens **volgende**.
-1. In **uw nieuwe project configureren** voert u een naam in voor de app en selecteert u **maken**.
+1. Kies **in Een nieuw project maken** de optie **Console-app (.NET Framework) voor** C# en selecteer vervolgens **Volgende.**
+1. Voer **in Uw nieuwe project configureren** een naam in voor de app en selecteer **Maken.**
 
-Voeg alle code voorbeelden in dit artikel toe aan de `Program` klasse in het bestand *Program. cs* .
+Voeg alle codevoorbeelden in dit artikel toe aan de `Program` klasse in het bestand *Program.cs.*
 
 ## <a name="use-nuget-to-install-the-required-packages"></a>NuGet gebruiken om de vereiste pakketten te installeren
 
 Raadpleeg deze pakketten in uw project:
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
-- [Azure core library voor .net](https://www.nuget.org/packages/Azure.Core/): dit pakket is de implementatie van de Azure client-pijp lijn.
-- [Azure Storage BLOB-client bibliotheek voor .net](https://www.nuget.org/packages/Azure.Storage.Blobs/): dit pakket biedt programmatische toegang tot BLOB-resources in uw opslag account.
-- [Azure Storage files-client bibliotheek voor .net](https://www.nuget.org/packages/Azure.Storage.Files.Shares/): dit pakket biedt programmatische toegang tot bestands resources in uw opslag account.
-- [Systeem Configuration Manager bibliotheek voor .net](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/): dit pakket biedt een klasse voor het opslaan en ophalen van waarden in een configuratie bestand.
+- [Azure-kernbibliotheek voor .NET:](https://www.nuget.org/packages/Azure.Core/)dit pakket is de implementatie van de Azure-clientpijplijn.
+- [Azure Storage Blob clientbibliotheek voor .NET:](https://www.nuget.org/packages/Azure.Storage.Blobs/)dit pakket biedt programmatische toegang tot blob-resources in uw opslagaccount.
+- [Azure Storage Files-clientbibliotheek voor .NET:](https://www.nuget.org/packages/Azure.Storage.Files.Shares/)dit pakket biedt programmatische toegang tot bestandsbronnen in uw opslagaccount.
+- [Systeembibliotheek Configuration Manager .NET:](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/)dit pakket biedt een klasse waarin waarden worden opgeslagen en opgehaald in een configuratiebestand.
 
 U kunt NuGet gebruiken om de pakketten te verkrijgen. Volg deze stappen:
 
-1. Klik in **Solution Explorer** met de rechter muisknop op het project en kies **NuGet-pakketten beheren**.
-1. Selecteer in **NuGet package manager** de optie **Browse**. Zoek en kies **Azure. core**, en selecteer vervolgens **installeren**.
+1. Klik **in Solution Explorer** met de rechtermuisknop op uw project en kies **NuGet-pakketten beheren.**
+1. In **NuGet Pakketbeheer** selecteert u **Bladeren.** Zoek en kies **vervolgens Azure.Core** en selecteer **installeren.**
 
-   Met deze stap installeert u het pakket en de bijbehorende afhankelijkheden.
+   Met deze stap worden het pakket en de afhankelijkheden ervan geïnstalleerd.
 
-1. Deze pakketten zoeken en installeren:
+1. Zoek en installeer deze pakketten:
 
-   - **Azure. storage. blobs**
-   - **Azure. storage. files. shares**
+   - **Azure.Storage.Blobs**
+   - **Azure.Storage.Files.Shares**
    - **System.Configuration.ConfigurationManager**
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
-- [Microsoft Azure Storage algemene bibliotheek voor .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): dit pakket biedt programmatische toegang tot algemene resources in uw opslag account.
-- [Microsoft Azure Storage BLOB-bibliotheek voor .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/): dit pakket biedt programmatische toegang tot BLOB-resources in uw opslag account.
-- [Microsoft Azure Storage bestands bibliotheek voor .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/): dit pakket biedt programmatische toegang tot bestands resources in uw opslag account.
-- [Microsoft Azure Configuration Manager bibliotheek voor .net](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/): dit pakket biedt een klasse voor het parseren van een Connection String in een configuratie bestand, ongeacht waar de toepassing wordt uitgevoerd.
+- [Microsoft Azure Storage algemene bibliotheek voor .NET:](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)dit pakket biedt programmatische toegang tot algemene resources in uw opslagaccount.
+- [Microsoft Azure Storage Blob-bibliotheek voor .NET:](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)dit pakket biedt programmatische toegang tot blob-resources in uw opslagaccount.
+- [Microsoft Azure Storage-bestandsbibliotheek voor .NET:](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/)dit pakket biedt programmatische toegang tot bestandsbronnen in uw opslagaccount.
+- [Microsoft Azure Configuration Manager voor .NET:](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/)dit pakket biedt een klasse voor het parseren van een connection string in een configuratiebestand, waar uw toepassing ook wordt uitgevoerd.
 
 U kunt NuGet gebruiken om de pakketten te verkrijgen. Volg deze stappen:
 
-1. Klik in **Solution Explorer** met de rechter muisknop op het project en kies **NuGet-pakketten beheren**.
-1. Selecteer in **NuGet package manager** de optie **Browse**. Zoek en kies **micro soft. Azure. storage. blob** en selecteer vervolgens **installeren**.
+1. Klik **in Solution Explorer** met de rechtermuisknop op uw project en kies **NuGet-pakketten beheren.**
+1. In **NuGet Pakketbeheer** selecteert u **Bladeren.** Zoek en kies **microsoft.Azure.Storage.Blob** en selecteer **vervolgens Installeren.**
 
-   Met deze stap installeert u het pakket en de bijbehorende afhankelijkheden.
-1. Deze pakketten zoeken en installeren:
+   Met deze stap worden het pakket en de afhankelijkheden ervan geïnstalleerd.
+1. Zoek en installeer deze pakketten:
 
-   - **Micro soft. Azure. storage. common**
-   - **Micro soft. Azure. storage. File**
+   - **Microsoft.Azure.Storage.Common**
+   - **Microsoft.Azure.Storage.File**
    - **Microsoft.Azure.ConfigurationManager**
 
 ---
 
-## <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>Sla de referenties van uw opslag account op in het App.config bestand
+## <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>Sla de referenties van uw opslagaccount op in het App.config bestand
 
-Sla vervolgens uw referenties op in het *App.config* -bestand van uw project. In **Solution Explorer** dubbelklikt u op `App.config` het bestand en bewerkt u dit zoals in het volgende voor beeld.
+Sla vervolgens uw referenties op in het bestand van *App.config* project. Dubbelklik **Solution Explorer** in het volgende voorbeeld en bewerk het bestand, zodat `App.config` het vergelijkbaar is met het volgende voorbeeld.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
-Vervang door `myaccount` de naam van uw opslag account en `mykey` met de sleutel van uw opslag account.
+Vervang `myaccount` door de naam van uw opslagaccount en door de sleutel van uw `mykey` opslagaccount.
 
 :::code language="xml" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/app.config" highlight="5,6,7":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
-Vervang door `myaccount` de naam van uw opslag account en `StorageAccountKeyEndingIn==` met de sleutel van uw opslag account.
+Vervang `myaccount` door de naam van uw opslagaccount en door de sleutel van uw `StorageAccountKeyEndingIn==` opslagaccount.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -131,17 +131,17 @@ Vervang door `myaccount` de naam van uw opslag account en `StorageAccountKeyEndi
 ---
 
 > [!NOTE]
-> De Azurite-opslag emulator biedt momenteel geen ondersteuning voor Azure Files. Uw connection string moet zijn gericht op een Azure-opslag account in de cloud om te werken met Azure Files.
+> De Azurite-opslagemulator biedt momenteel geen ondersteuning voor Azure Files. Uw connection string moet zich richten op een Azure-opslagaccount in de cloud om te kunnen werken met Azure Files.
 
 ## <a name="add-using-directives"></a>Using-instructies toevoegen
 
-Open in **Solution Explorer** het bestand *Program. cs* en voeg de volgende instructies toe aan het begin van het bestand.
+Open **Solution Explorer** het bestand *Program.cs* en voeg de volgende using-instructies toe aan de bovenkant van het bestand.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_UsingStatements":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 using Microsoft.Azure; // Namespace for Azure Configuration Manager
@@ -156,17 +156,17 @@ using Microsoft.Azure.Storage.File; // Namespace for Azure Files
 
 ## <a name="access-the-file-share-programmatically"></a>Via een programma toegang krijgen tot de bestandsshare
 
-Voeg in het bestand *Program. cs* de volgende code toe om via een programma toegang te krijgen tot de bestands share.
+Voeg in *het bestand Program.cs* de volgende code toe om programmatisch toegang te krijgen tot de bestands share.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
-Met de volgende methode wordt een bestands share gemaakt als deze nog niet bestaat. De methode begint met het maken van een [ShareClient](/dotnet/api/azure.storage.files.shares.shareclient) -object van een Connection String. Het voor beeld probeert vervolgens een bestand te downloaden dat u eerder hebt gemaakt. Roep deze methode vanuit aan `Main()` .
+Met de volgende methode maakt u een bestands share als deze nog niet bestaat. De methode begint met het maken van een [ShareClient-object](/dotnet/api/azure.storage.files.shares.shareclient) op connection string. Het voorbeeld probeert vervolgens een bestand te downloaden dat we eerder hebben gemaakt. Roep deze methode aan vanuit `Main()` .
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CreateShare":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
-Voeg vervolgens de volgende inhoud toe aan de `Main()` -methode, na de hierboven weer gegeven code, om de Connection String op te halen. Met deze code wordt een verwijzing opgehaald naar het bestand dat we eerder hebben gemaakt en de inhoud ervan wordt uitgevoerd.
+Voeg vervolgens de volgende inhoud toe aan de methode , na de code die hierboven wordt `Main()` weergegeven, om de volgende connection string. Met deze code wordt een verwijzing naar het bestand dat we eerder hebben gemaakt, opgeslagen en wordt de inhoud ervan uitgevoerd.
 
 ```csharp
 // Create a CloudFileClient object for credentialed access to Azure Files.
@@ -206,17 +206,17 @@ Voer de consoletoepassing uit om de uitvoer te zien.
 
 ## <a name="set-the-maximum-size-for-a-file-share"></a>De maximale grootte voor een bestandsshare instellen
 
-Vanaf versie 5. x van de Azure Files-client bibliotheek kunt u het quotum (maximum grootte) voor een bestands share instellen. U kunt ook controleren hoeveel gegevens er momenteel zijn opgeslagen in de share.
+Vanaf versie 5.x van de Azure Files-clientbibliotheek kunt u het quotum (maximale grootte) voor een bestands share instellen. U kunt ook controleren hoeveel gegevens er momenteel zijn opgeslagen in de share.
 
-Als het quotum voor een share wordt ingesteld, wordt de totale grootte beperkt van de bestanden die zijn opgeslagen op de share. Als de totale grootte van bestanden op de share het quotum overschrijdt, kunnen clients de omvang van bestaande bestanden niet verg Roten. Clients kunnen ook geen nieuwe bestanden maken, tenzij deze bestanden leeg zijn.
+Het instellen van het quotum voor een share beperkt de totale grootte van de bestanden die op de share zijn opgeslagen. Als de totale grootte van bestanden op de share het quotum overschrijdt, kunnen clients de grootte van bestaande bestanden niet verhogen. Clients kunnen ook geen nieuwe bestanden maken, tenzij deze bestanden leeg zijn.
 
 In onderstaand voorbeeld ziet u hoe u het huidige gebruik voor een share controleert en een quotum voor de share instelt.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_SetMaxShareSize":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -252,17 +252,17 @@ if (share.Exists())
 
 ### <a name="generate-a-shared-access-signature-for-a-file-or-file-share"></a>Een Shared Access Signature genereren voor een bestand of bestandsshare
 
-Vanaf versie 5. x van de Azure Files-client bibliotheek kunt u een Shared Access Signature (SAS) voor een bestands share of voor een afzonderlijk bestand genereren.
+Vanaf versie 5.x van de Azure Files-clientbibliotheek kunt u een SHARED Access Signature (SAS) genereren voor een bestands share of voor een afzonderlijk bestand.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
-Met de volgende voorbeeld methode wordt een SAS voor een bestand in de opgegeven share geretourneerd.
+De volgende voorbeeldmethode retourneert een SAS op een bestand in de opgegeven share.
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_GetFileSasUri":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
-U kunt ook een opgeslagen toegangs beleid maken op een bestands share om hand tekeningen voor gedeelde toegang te beheren. We raden u aan om een opgeslagen toegangs beleid te maken, omdat u hiermee de SAS kunt intrekken als deze wordt aangetast. In het volgende voor beeld wordt een opgeslagen toegangs beleid gemaakt op een share. In het voor beeld wordt dat beleid gebruikt om de beperkingen voor een SAS op een bestand in de share op te geven.
+U kunt ook een opgeslagen toegangsbeleid maken op een bestands share om handtekeningen voor gedeelde toegang te beheren. U wordt aangeraden een opgeslagen toegangsbeleid te maken, omdat u hiermee de SAS kunt intrekken als deze wordt aangetast. In het volgende voorbeeld wordt een opgeslagen toegangsbeleid voor een share gemaakt. In het voorbeeld wordt dat beleid gebruikt om de beperkingen op te geven voor een SAS voor een bestand in de share.
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -310,26 +310,26 @@ if (share.Exists())
 
 ---
 
-Zie [How a Shared Access Signature](../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#how-a-shared-access-signature-works)(Engelstalig) voor meer informatie over het maken en gebruiken van hand tekeningen voor gedeelde toegang.
+Zie How a shared access signature works (Hoe een shared access signature werkt) voor meer informatie over het maken en gebruiken van handtekeningen voor [gedeelde toegang.](../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#how-a-shared-access-signature-works)
 
 ## <a name="copy-files"></a>Bestanden kopiëren
 
-Vanaf versie 5. x van de Azure Files-client bibliotheek kunt u een bestand kopiëren naar een ander bestand, een bestand naar een BLOB of een BLOB naar een bestand.
+Vanaf versie 5.x van de Azure Files-clientbibliotheek kunt u een bestand kopiëren naar een ander bestand, een bestand naar een blob of een blob naar een bestand.
 
-U kunt AzCopy ook gebruiken om één bestand naar een andere te kopiëren of een BLOB naar een bestand of een andere manier te kopiëren. Raadpleeg [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
+U kunt AzCopy ook gebruiken om het ene bestand naar het andere te kopiëren of om een blob te kopiëren naar een bestand of andersom. Raadpleeg [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 > [!NOTE]
 > Als u een blob kopieert naar een bestand of een bestand naar een blob, moet u een Shared Access Signature (SAS) gebruiken om toegang tot het bronobject toe te staan, zelfs als u binnen hetzelfde opslagaccount kopieert.
 
 ### <a name="copy-a-file-to-another-file"></a>Een bestand kopiëren naar een ander bestand
 
-In het volgende voorbeeld wordt een bestand gekopieerd naar een ander bestand in dezelfde share. U kunt verificatie met behulp van [gedeelde sleutels](/rest/api/storageservices/authorize-with-shared-key) gebruiken om de kopie uit te voeren, omdat deze bewerking bestanden binnen hetzelfde opslag account kopieert.
+In het volgende voorbeeld wordt een bestand gekopieerd naar een ander bestand in dezelfde share. U kunt verificatie [met gedeelde sleutels gebruiken](/rest/api/storageservices/authorize-with-shared-key) om de kopie uit te voeren, omdat met deze bewerking bestanden binnen hetzelfde opslagaccount worden gekopieerd.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CopyFile":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -379,11 +379,11 @@ if (share.Exists())
 
 In het volgende voorbeeld wordt een bestand gemaakt en vervolgens gekopieerd naar een blob in hetzelfde opslagaccount. In het voorbeeld wordt een SAS voor het bronbestand gemaakt, die tijdens de kopieerbewerking door de service wordt gebruikt om toegang tot het bronbestand toe te staan.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CopyFileToBlob":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -435,17 +435,17 @@ Op dezelfde manier kunt u een blob naar een bestand kopiëren. Als het bronobjec
 
 ## <a name="share-snapshots"></a>Momentopnamen van shares
 
-Vanaf versie 8,5 van de Azure Files-client bibliotheek kunt u een moment opname van een share maken. U kunt ook de lijst met momentopnamen van shares weergeven, door een lijst met momentopnamen van shares bladeren en momentopnamen van shares verwijderen. Na het maken zijn moment opnamen delen alleen-lezen.
+Vanaf versie 8.5 van de Azure Files clientbibliotheek kunt u een momentopname van een share maken. U kunt ook de lijst met momentopnamen van shares weergeven, door een lijst met momentopnamen van shares bladeren en momentopnamen van shares verwijderen. Zodra momentopnamen van shares zijn gemaakt, zijn ze alleen-lezen.
 
 ### <a name="create-share-snapshots"></a>Momentopnamen van shares maken
 
 In het volgende voorbeeld wordt een momentopname van een bestandsshare gemaakt.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CreateShareSnapshot":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 storageAccount = CloudStorageAccount.Parse(ConnectionString); 
@@ -460,13 +460,13 @@ var snapshotShare = myShare.Snapshot();
 
 ### <a name="list-share-snapshots"></a>Momentopnamen van shares opvragen
 
-In het volgende voor beeld worden de moment opnamen op een share weer gegeven.
+In het volgende voorbeeld worden de momentopnamen op een share vermeld.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_ListShareSnapshots":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 var shares = fClient.ListShares(baseShareName, ShareListingDetails.All);
@@ -474,15 +474,15 @@ var shares = fClient.ListShares(baseShareName, ShareListingDetails.All);
 
 ---
 
-### <a name="list-files-and-directories-within-share-snapshots"></a>Bestanden en mappen in moment opnamen van shares weer geven
+### <a name="list-files-and-directories-within-share-snapshots"></a>Bestanden en mappen in momentopnamen van shares in een lijst bekijken
 
-In het volgende voor beeld worden bestanden en mappen in moment opnamen van shares gebladerd.
+In het volgende voorbeeld worden bestanden en mappen in momentopnamen van shares gebladerd.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_ListSnapshotContents":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTime); 
@@ -492,17 +492,17 @@ var items = rootDirectory.ListFilesAndDirectories();
 
 ---
 
-### <a name="restore-file-shares-or-files-from-share-snapshots"></a>Bestands shares of bestanden terugzetten van moment opnamen van shares
+### <a name="restore-file-shares-or-files-from-share-snapshots"></a>Bestands shares of bestanden herstellen vanuit momentopnamen van shares
 
-Door een moment opname van een bestands share te maken, kunt u afzonderlijke bestanden of de volledige bestands share herstellen.
+Door een momentopname van een bestands share te maken, kunt u afzonderlijke bestanden of de volledige bestands share herstellen.
 
-U kunt een bestand vanuit een momentopname van de bestandsshare herstellen door de momentopnamen van shares van een bestandsshare op te vragen. Vervolgens kunt u een bestand ophalen dat hoort bij een bepaalde share-moment opname. Deze versie gebruiken om het bestand direct te lezen of te herstellen.
+U kunt een bestand vanuit een momentopname van de bestandsshare herstellen door de momentopnamen van shares van een bestandsshare op te vragen. Vervolgens kunt u een bestand ophalen dat bij een bepaalde momentopname van een share hoort. Gebruik deze versie om het bestand rechtstreeks te lezen of te herstellen.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_RestoreFileFromSnapshot":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 CloudFileShare liveShare = fClient.GetShareReference(baseShareName);
@@ -533,11 +533,11 @@ fileInliveShare.StartCopyAsync(new Uri(sourceUri));
 
 In het volgende voorbeeld wordt een momentopname van een bestandsshare verwijderd.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_DeleteSnapshot":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
 ```csharp
 CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTime); mySnapshot.Delete(null, null, null);
@@ -545,28 +545,28 @@ CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTim
 
 ---
 
-## <a name="troubleshoot-azure-files-by-using-metrics"></a>Problemen met Azure Files oplossen met metrische gegevens<a name="troubleshooting-azure-files-using-metrics"></a>
+## <a name="troubleshoot-azure-files-by-using-metrics"></a>Problemen met Azure Files oplossen met behulp van metrische gegevens<a name="troubleshooting-azure-files-using-metrics"></a>
 
 Azure Opslaganalyse ondersteunt metrische gegevens voor Azure Files. Met metrische gegevens kunt u aanvragen volgen en problemen diagnosticeren.
 
-U kunt de metrische gegevens voor Azure Files inschakelen vanuit de [Azure Portal](https://portal.azure.com). U kunt metrische gegevens ook programmatisch in te scha kelen door de bewerking [set file Service Properties](/rest/api/storageservices/set-file-service-properties) aan te roepen met de rest API of een van de analogen in de Azure files-client bibliotheek.
+U kunt metrische gegevens voor Azure Files inschakelen vanuit [Azure Portal](https://portal.azure.com). U kunt metrische gegevens ook [](/rest/api/storageservices/set-file-service-properties) programmatisch inschakelen door de bewerking Eigenschappen van bestandsservice instellen aan te roepen met de REST API of een van de analogen ervan in de Azure Files-clientbibliotheek.
 
-In het volgende code voorbeeld ziet u hoe u de .NET-client bibliotheek gebruikt om metrische gegevens in te scha kelen voor Azure Files.
+In het volgende codevoorbeeld ziet u hoe u de .NET-clientbibliotheek gebruikt om metrische gegevens in te Azure Files.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="azure-net-sdk-v12"></a>[Azure \. NET SDK v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_UseMetrics":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="azure-net-sdk-v11"></a>[Azure \. NET SDK v11](#tab/dotnetv11)
 
-Voeg eerst de volgende- `using` instructies toe aan het bestand *Program. cs* , samen met de regels die u hierboven hebt toegevoegd:
+Voeg eerst de volgende instructies `using` toe aan het bestand *Program.cs,* samen met de instructies die u hierboven hebt toegevoegd:
 
 ```csharp
 using Microsoft.Azure.Storage.File.Protocol;
 using Microsoft.Azure.Storage.Shared.Protocol;
 ```
 
-Hoewel Azure-blobs, Azure-tabellen en Azure-wacht rijen gebruikmaken van het gedeelde `ServiceProperties` type in de `Microsoft.Azure.Storage.Shared.Protocol` naam ruimte, Azure files gebruikt een eigen type, het `FileServiceProperties` type in de `Microsoft.Azure.Storage.File.Protocol` naam ruimte. U moet vanuit uw code naar beide naam ruimten verwijzen om de volgende code te kunnen compileren.
+Hoewel Azure Blobs, Azure Tables en Azure Queues het gedeelde type in de naamruimte gebruiken, gebruikt Azure Files een eigen type, het type in de `ServiceProperties` `Microsoft.Azure.Storage.Shared.Protocol` `FileServiceProperties` `Microsoft.Azure.Storage.File.Protocol` naamruimte. U moet echter verwijzen naar beide naamruimten uit uw code om de volgende code te compileren.
 
 ```csharp
 // Parse your storage connection string from your application's configuration file.
@@ -611,11 +611,11 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 ---
 
-Als u problemen ondervindt, kunt u verwijzen naar [Azure files problemen oplossen in Windows](storage-troubleshoot-windows-file-connection-problems.md).
+Als u problemen ondervindt, raadpleegt u Problemen oplossen Azure Files [in Windows.](storage-troubleshoot-windows-file-connection-problems.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de volgende bronnen voor meer informatie over Azure Files:
+Zie de volgende resources Azure Files informatie over de gegevens:
 
 ### <a name="conceptual-articles-and-videos"></a>Conceptuele artikelen en video's
 

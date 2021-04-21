@@ -1,69 +1,90 @@
 ---
-title: Zone redundante hoge Beschik baarheid beheren-Azure Portal-Azure Database for MySQL flexibele server
-description: In dit artikel wordt beschreven hoe u via de Azure Portal zone redundante hoge Beschik baarheid kunt in-of uitschakelen in Azure Database for MySQL flexibele server.
+title: Zone-redundante hoge beschikbaarheid beheren - Azure Portal - Azure Database for MySQL Flexible Server
+description: In dit artikel wordt beschreven hoe u zone-redundante hoge beschikbaarheid in of uit Azure Database for MySQL flexibele server via de Azure Portal.
 author: mksuni
 ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 09/21/2020
 ms.custom: references_regions
-ms.openlocfilehash: d65b074385311e74444929ef74901e402e29ec03
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e217dcaeafd553803f5c9699ab6d7779ed755b67
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93241732"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818278"
 ---
-# <a name="manage-zone-redundant-high-availability-in-azure-database-for-mysql-flexible-server-preview"></a>Zone redundante hoge Beschik baarheid beheren in Azure Database for MySQL flexibele server (preview-versie)
+# <a name="manage-zone-redundant-high-availability-in-azure-database-for-mysql-flexible-server-preview"></a>Zone-redundante hoge beschikbaarheid beheren in Azure Database for MySQL Flexible Server (preview)
 
-In dit artikel wordt beschreven hoe u de redundante configuratie van een zone met hoge Beschik baarheid in-of uitschakelen in uw flexibele server.
+In dit artikel wordt beschreven hoe u een zone-redundante configuratie met hoge beschikbaarheid in uw flexibele server kunt in- of uitschakelen.
 
-Met de functie voor hoge Beschik baarheid wordt een fysiek gescheiden primaire en stand-by replica in verschillende zones ingericht. Zie de [documentatie over concepten met hoge Beschik baarheid](./concepts/../concepts-high-availability.md)voor meer informatie. 
-
-> [!IMPORTANT]
-> U kunt zone redundante hoge Beschik baarheid inschakelen tijdens het maken van een flexibele server.
-
-Deze pagina bevat richt lijnen voor het in-of uitschakelen van hoge Beschik baarheid. Met deze bewerking worden geen andere instellingen gewijzigd, zoals de VNET-configuratie, Firewall instellingen en de retentie van back-ups. Op dezelfde manier is het uitschakelen van hoge Beschik baarheid een online bewerking en heeft dit geen invloed op de connectiviteit en bewerkingen van uw toepassing.
+Met de functie voor hoge beschikbaarheid worden fysiek afzonderlijke primaire en stand-byreplica's in verschillende zones gemaakt. Zie de documentatie over concepten [voor hoge beschikbaarheid voor meer informatie.](./concepts/../concepts-high-availability.md) 
 
 > [!IMPORTANT]
-> Zone redundant hoge Beschik baarheid is beschikbaar in een beperkte set regio's: Zuidoost-Azië, West 2, Europa-west en VS-Oost.  
+> U kunt zone-redundante hoge beschikbaarheid alleen inschakelen tijdens het maken van flexibele servers.
 
-## <a name="enable-high-availability-during-server-creation"></a>Hoge Beschik baarheid inschakelen tijdens het maken van de server
+Deze pagina bevat richtlijnen voor het in- of uitschakelen van hoge beschikbaarheid. Deze bewerking wijzigt uw andere instellingen niet, waaronder VNET-configuratie, firewallinstellingen en back-upretentie. Op dezelfde manier is het uitschakelen van hoge beschikbaarheid een onlinebewerking en heeft dit geen invloed op de connectiviteit en bewerkingen van uw toepassing.
 
-Deze sectie bevat specifieke informatie over HA-gerelateerde velden. U kunt deze stappen volgen om hoge Beschik baarheid te implementeren tijdens het maken van uw flexibele server.
+> [!IMPORTANT]
+> Zone-redundante hoge beschikbaarheid is beschikbaar in een beperkte set regio's: Azië - zuidoost, VS - west 2, Europa - west vs - oost.  
 
-1.  Kies in het [Azure Portal](https://portal.azure.com/)flexibele server en klik op **maken**.  Zie How-to-documentatie voor het maken van een server voor meer informatie over het invullen van details zoals **abonnement**, **resource groep**, **Server naam**, **regio** en andere velden.
+## <a name="enable-high-availability-during-server-creation"></a>Hoge beschikbaarheid inschakelen tijdens het maken van de server
 
-2.  Klik op het selectie vakje voor de **zone redundant hoge Beschik baarheid** in de optie Beschik baarheid.
+Deze sectie bevat details voor velden met betrekking tot ha. U kunt deze stappen volgen om hoge beschikbaarheid te implementeren tijdens het maken van uw flexibele server.
 
-3.  Als u de standaard Compute en opslag wilt wijzigen, klikt u op  **server configureren**.
+1.  Kies in [Azure Portal](https://portal.azure.com/)flexibele server en klik op **Maken.**  Zie de documentatie voor het maken van de server voor meer informatie over het invullen van details zoals **Abonnement,** **Resourcegroep,** **Servernaam,** Regio en andere velden.
 
-4.  Als de optie hoge Beschik baarheid is ingeschakeld, is de Burstable-laag niet beschikbaar om te kiezen. U kunt kiezen voor **algemeen gebruik** of op **geheugen geoptimaliseerde** reken lagen.
+2.  Klik op het selectievakje voor **Zone-redundante hoge beschikbaarheid** in de optie Beschikbaarheid.
+
+3.  Als u de standaard reken- en opslaginstellingen wilt wijzigen, klikt u op **Server configureren.**
+
+4.  Als de optie voor hoge beschikbaarheid is ingeschakeld, kan de burstable-laag niet worden gekozen. U kunt kiezen voor **de rekenlagen** Algemeen gebruik of **Geoptimaliseerd** voor geheugen.
 
     > [!IMPORTANT]
-    > We ondersteunen alleen zone redundante hoge Beschik baarheid voor de prijs categorie ***algemeen gebruik** _ en _ *_geoptimaliseerd voor geheugen_*.
+    > We ondersteunen alleen zone-redundante hoge beschikbaarheid voor de prijscategorie ***Algemeen** gebruik _ en _ *_Geoptimaliseerd voor_* geheugen * .
 
-5.  Selecteer de **reken grootte** voor uw keuze in de vervolg keuzelijst.
+5.  Selecteer de **rekenkracht** voor uw keuze in de vervolgkeuzekeuze.
 
-6.  Selecteer **opslag grootte** in GiB met behulp van de schuif balk en selecteer de **Bewaar periode voor back-ups** tussen 7 dagen en 35 dagen.   
+6.  Selecteer **Opslaggrootte** in GiB met behulp van de sliding bar en selecteer **de** bewaarperiode voor back-ups tussen 7 dagen en 35 dagen.   
 
-## <a name="disable-high-availability"></a>Hoge Beschik baarheid uitschakelen
+## <a name="disable-high-availability"></a>Hoge beschikbaarheid uitschakelen
 
-Volg deze stappen om maximale Beschik baarheid uit te scha kelen voor uw flexibele server die al is geconfigureerd met zone redundantie.
+Volg deze stappen om hoge beschikbaarheid uit te schakelen voor uw flexibele server die al is geconfigureerd met zone-redundantie.
 
-1.  Selecteer uw bestaande Azure Database for MySQL flexibele server in de [Azure Portal](https://portal.azure.com/).
+1.  Selecteer in [Azure Portal](https://portal.azure.com/)de bestaande Azure Database for MySQL flexibele server.
 
-2.  Klik op de pagina flexibele server op het voor paneel op **hoge Beschik baarheid** om de pagina hoge Beschik baarheid te openen.
+2.  Klik op de pagina flexibele server op **Hoge beschikbaarheid in** het voorpaneel om de pagina voor hoge beschikbaarheid te openen.
 
-3.  Klik op het selectie vakje **redundante maximale Beschik baarheid van zone** om de optie uit te scha kelen en klik op **Opslaan** om de wijziging op te slaan.
+3.  Klik op het **selectievakje zone-redundante hoge beschikbaarheid** om de optie uit te schakelen en klik op **Opslaan** om de wijziging op te slaan.
 
-4.  Er wordt een bevestigings venster weer gegeven waarin u het uitschakelen van HA kunt bevestigen.
+4.  Er wordt een bevestigingsdialoogvenster weergegeven waarin u kunt bevestigen dat u de ha-ha uit kunt uitschakelen.
 
-5.  Klik op de knop **ha uitschakelen** om de maximale Beschik baarheid uit te scha kelen.
+5.  Klik **op de knop Hoge beschikbaarheid** uitschakelen om de hoge beschikbaarheid uit te schakelen.
 
-6.  Er wordt een melding weer gegeven dat het uit bedrijf nemen van de implementatie met hoge Beschik baarheid wordt uitgevoerd.
+6.  Er wordt een melding weer geven dat de implementatie met hoge beschikbaarheid buiten gebruik wordt gesteld.
+
+
+## <a name="forced-failover"></a>Geforceerd failover
+
+Volg deze stappen om failover van uw primaire naar stand-by flexibele server af te dwingen
+
+1.  Selecteer in [Azure Portal](https://portal.azure.com/)uw bestaande Azure Database for MySQL flexibele server waarvoor de functie voor hoge beschikbaarheid is ingeschakeld.
+
+2.  Klik op de pagina flexibele server op **Hoge beschikbaarheid in** het voorpaneel om de pagina voor hoge beschikbaarheid te openen.
+
+3.  Controleer de **primaire beschikbaarheidszone** en de **stand-bybeschikbaarheidszone**
+
+4.  Klik op **Geforceerd failover om** de procedure voor handmatige failover te starten. Er wordt een pop-upvenster weergegeven met informatie over de verwachte tijd van de failover, afhankelijk van de huidige werkbelasting op de primaire en de versie van het laatste controlepunt, leest u het bericht en klikt u op OK.
+ 
+5. Er wordt een melding weer geven dat de failover wordt uitgevoerd.
+
+6. Zodra de failover naar de stand-byserver is geslaagd, verschijnt er een melding.
+
+7. Controleer de nieuwe **primaire beschikbaarheidszone en** de **beschikbaarheidszone Stand-by.**
+
+![Geforceerd failoveren](media/how-to-configure-high-availability/how-to-forced-failover.png) 
 
 ## <a name="next-steps"></a>Volgende stappen
 
--   Meer informatie over [bedrijfs continuïteit](./concepts-business-continuity.md)
--   Meer informatie over [zone redundante hoge Beschik baarheid](./concepts-high-availability.md)
+-   Meer informatie over [bedrijfscontinuïteit](./concepts-business-continuity.md)
+-   Meer informatie over [zone-redundante hoge beschikbaarheid](./concepts-high-availability.md)

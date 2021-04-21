@@ -5,132 +5,132 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: how-to
-ms.date: 02/23/2021
-ms.openlocfilehash: 4db523624922d8ddcb8c1868b84927926d9ed3d5
-ms.sourcegitcommit: 5f482220a6d994c33c7920f4e4d67d2a450f7f08
+ms.date: 04/20/2021
+ms.openlocfilehash: 59c1ca67c9e93b62890512cda647ffcdf7712f9a
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107103807"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107819264"
 ---
 # <a name="share-and-receive-data-from-azure-blob-storage-and-azure-data-lake-storage"></a>Gegevens delen en ontvangen van Azure Blob Storage en Azure Data Lake Storage
 
 [!INCLUDE[appliesto-storage](includes/appliesto-storage.md)]
 
-Azure data share ondersteunt het delen op basis van moment opnamen vanuit een opslag account. In dit artikel wordt uitgelegd hoe u gegevens kunt delen en ontvangen van Azure Blob Storage, Azure Data Lake Storage Gen1 en Azure Data Lake Storage Gen2.
+Azure Data Share biedt ondersteuning voor delen op basis van momentopnamen vanuit een opslagaccount. In dit artikel wordt uitgelegd hoe u gegevens kunt delen en ontvangen van Azure Blob Storage, Azure Data Lake Storage Gen1 en Azure Data Lake Storage Gen2.
 
-De Azure-gegevens share ondersteunt het delen van bestanden, mappen en bestands systemen van Azure Data Lake gen1 en Azure Data Lake Gen2. Het biedt ook ondersteuning voor het delen van blobs, mappen en containers vanuit Azure Blob Storage. Alleen blok-blobs worden momenteel ondersteund. Gegevens die worden gedeeld vanuit deze bronnen kunnen worden ontvangen door Azure Data Lake Gen2 of Azure Blob Storage.
+Azure Data Share ondersteunt het delen van bestanden, mappen en bestandssystemen van Azure Data Lake Gen1 en Azure Data Lake Gen2. Het biedt ook ondersteuning voor het delen van blobs, mappen en containers vanuit Azure Blob Storage. U kunt blok-, toevoegen- of pagina-blobs delen en ze worden ontvangen als blok-blobs. Gegevens die vanuit deze bronnen worden gedeeld, kunnen worden ontvangen door Azure Data Lake Gen2 of Azure Blob Storage.
 
-Wanneer bestands systemen, containers of mappen worden gedeeld in delen op basis van moment opnamen, kunnen gegevens gebruikers ervoor kiezen om een volledige kopie van de share gegevens te maken. Of ze kunnen de mogelijkheid van de incrementele moment opname gebruiken om alleen nieuwe of bijgewerkte bestanden te kopiëren. De functie incrementele moment opname is gebaseerd op de tijd van de laatste wijziging van de bestanden. 
+Wanneer bestandssystemen, containers of mappen worden gedeeld in delen op basis van momentopnamen, kunnen gegevensverbruikers ervoor kiezen om een volledige kopie van de sharegegevens te maken. Of ze kunnen de mogelijkheid voor incrementele momentopnamen gebruiken om alleen nieuwe of bijgewerkte bestanden te kopiëren. De mogelijkheid voor incrementele momentopnamen is gebaseerd op het tijdstip waarop de bestanden het laatst zijn gewijzigd. 
 
-Bestaande bestanden met dezelfde naam worden overschreven tijdens een moment opname. Een bestand dat wordt verwijderd uit de bron, wordt niet verwijderd op het doel. Lege submappen op de bron worden niet naar het doel gekopieerd. 
+Bestaande bestanden met dezelfde naam worden overschreven tijdens een momentopname. Een bestand dat uit de bron wordt verwijderd, wordt niet verwijderd op het doel. Lege submappen bij de bron worden niet gekopieerd naar het doel. 
 
 ## <a name="share-data"></a>Gegevens delen
 
-Gebruik de informatie in de volgende secties om gegevens te delen met behulp van de Azure-gegevens share. 
+Gebruik de informatie in de volgende secties om gegevens te delen met behulp van Azure Data Share. 
 ### <a name="prerequisites-to-share-data"></a>Vereisten voor het delen van gegevens
 
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
-* Zoek het e-mail adres van Azure Sign-in van de ontvanger. De e-mail alias van de ontvanger werkt niet voor uw doel einden.
-* Als de bron-Azure-gegevens opslag zich in een ander Azure-abonnement bevindt dan de locatie waar u de gegevens share bron maakt, registreert u de [resource provider micro soft. DataShare](concepts-roles-permissions.md#resource-provider-registration) in het abonnement waar het Azure-gegevens archief zich bevindt. 
+* Zoek het e-mailadres voor aanmelden bij Azure van de ontvanger. De e-mailalias van de ontvanger werkt niet voor uw doeleinden.
+* Als het Azure-brongegevensopslag zich in een ander Azure-abonnement bevindt dan het abonnement waarin u de Data Share-resource maakt, registreert u de [resourceprovider Microsoft.DataShare](concepts-roles-permissions.md#resource-provider-registration) in het abonnement waarin de Azure-gegevensopslag zich bevindt. 
 
-### <a name="prerequisites-for-the-source-storage-account"></a>Vereisten voor het bron-opslag account
+### <a name="prerequisites-for-the-source-storage-account"></a>Vereisten voor het bronopslagaccount
 
-* Een Azure Storage-account. Als u nog geen account hebt, maakt u er [een](../storage/common/storage-account-create.md).
-* Machtiging voor het schrijven naar het opslag account. Schrijf machtiging bevindt zich in *micro soft. Storage/Storage accounts/write*. Het maakt deel uit van de rol Inzender.
-* Machtiging voor het toevoegen van roltoewijzing aan het opslag account. Deze machtiging bevindt zich in *micro soft. autorisatie/roltoewijzingen/schrijven*. Het maakt deel uit van de rol van eigenaar. 
+* Een Azure Storage-account. Als u nog geen account hebt, maakt [u er een.](../storage/common/storage-account-create.md)
+* Machtiging om naar het opslagaccount te schrijven. Schrijfmachtiging is *in Microsoft.Storage/storageAccounts/write.* Het maakt deel uit van de rol Inzender.
+* Machtiging voor het toevoegen van roltoewijzing aan het opslagaccount. Deze machtiging is in *Microsoft.Authorization/role assignments/write.* Deze maakt deel uit van de rol Eigenaar. 
 
 ### <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
 Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-### <a name="create-a-data-share-account"></a>Een gegevens share-account maken
+### <a name="create-a-data-share-account"></a>Een Data Share maken
 
 Maak een Azure Data Share-resource in een Azure-resourcegroep.
 
-1. Open het menu in de linkerbovenhoek van de portal en selecteer vervolgens **een resource maken** (+).
+1. Open het menu in de linkerbovenhoek van de portal en selecteer **vervolgens Een resource maken** (+).
 
 1. Zoek naar *Data Share*.
 
-1. Selecteer **gegevens share** en **Maak** deze.
+1. Selecteer **Data Share** en **Maken.**
 
-1. Geef de basis gegevens van uw Azure-gegevens share bron op: 
+1. Geef de basisgegevens van uw Azure Data Share op: 
 
      **Instelling** | **Voorgestelde waarde** | **Beschrijving van veld**
     |---|---|---|
-    | Abonnement | Uw abonnement | Selecteer een Azure-abonnement voor uw gegevens share-account.|
-    | Resourcegroep | *test-resource-group* | Gebruik een bestaande resource groep of maak een resource groep. |
+    | Abonnement | Uw abonnement | Selecteer een Azure-abonnement voor uw data share-account.|
+    | Resourcegroep | *test-resource-group* | Gebruik een bestaande resourcegroep of maak een resourcegroep. |
     | Locatie | *US - oost 2* | Geef een regio op voor uw gegevensshare-account.
-    | Naam | *datashareaccount* | Geef uw gegevens share-account een naam. |
+    | Naam | *datashareaccount* | Noem uw data share-account. |
     | | |
 
-1. Selecteer **controleren +** maken  >  **maken** om uw gegevens share-account in te richten. Het inrichten van een nieuw gegevens share account duurt doorgaans ongeveer twee minuten. 
+1. Selecteer **Beoordelen en maken om**  >  **uw** data share-account in terichten. Het inrichten van een nieuw data share-account duurt doorgaans ongeveer twee minuten. 
 
 1. Wanneer de implementatie is voltooid, selecteert u **Ga naar resource**.
 
 ### <a name="create-a-share"></a>Een share maken
 
-1. Ga naar de pagina **overzicht** van gegevens delen.
+1. Ga naar de overzichtspagina van **uw gegevens** delen.
 
-   :::image type="content" source="./media/share-receive-data.png" alt-text="Scherm opname van het overzicht van gegevens delen.":::
+   :::image type="content" source="./media/share-receive-data.png" alt-text="Schermopname van het overzicht van de gegevens delen.":::
 
 1. Selecteer **Beginnen met het delen van uw gegevens**.
 
 1. Selecteer **Maken**.   
 
-1. Geef de details op voor uw share. Geef een naam, type share, beschrijving van de share-inhoud en gebruiksvoorwaarden (optioneel) op. 
+1. Geef de details voor uw share op. Geef een naam, type share, beschrijving van de share-inhoud en gebruiksvoorwaarden (optioneel) op. 
 
-    ![Scherm opname van Details van gegevens delen.](./media/enter-share-details.png "Voer de details van de gegevens share in.") 
-
-1. Selecteer **Doorgaan**.
-
-1. Als u gegevens sets wilt toevoegen aan uw share, selecteert u **gegevens sets toevoegen**. 
-
-    ![Scherm afbeelding die laat zien hoe gegevens sets aan uw share worden toegevoegd.](./media/datasets.png "Sets.")
-
-1. Selecteer een type gegevensset om toe te voegen. De lijst met typen gegevensset is afhankelijk van of u in de vorige stap hebt gekozen voor delen op basis van moment opnamen of in-place delen. 
-
-    ![Scherm afbeelding die laat zien waar u een type gegevensset kunt selecteren.](./media/add-datasets.png "Voeg gegevens sets toe.")    
-
-1. Ga naar het object dat u wilt delen. Selecteer vervolgens **gegevens sets toevoegen**. 
-
-    ![Scherm afbeelding die laat zien hoe u een object selecteert dat u wilt delen.](./media/select-datasets.png "Selecteer gegevens sets.")    
-
-1. Voeg op het tabblad **ontvangers** het e-mail adres van uw gegevens consument toe door **ontvanger toevoegen** te selecteren. 
-
-    ![Scherm afbeelding die laat zien hoe e-mail adressen van ontvangers worden toegevoegd.](./media/add-recipient.png "Ontvangers toevoegen.") 
+    ![Schermopname met details van de gegevens delen.](./media/enter-share-details.png "Voer de details van de gegevens delen in.") 
 
 1. Selecteer **Doorgaan**.
 
-1. Als u een type snap shot share hebt geselecteerd, kunt u het momentopname schema instellen om uw gegevens bij te werken voor de gegevens verbruiker. 
+1. Als u gegevenssets wilt toevoegen aan uw share, **selecteert u Gegevenssets toevoegen.** 
 
-    ![Scherm afbeelding met de instellingen van het schema voor moment opnamen.](./media/enable-snapshots.png "Moment opnamen inschakelen.") 
+    ![Schermopname die laat zien hoe u gegevenssets toevoegt aan uw share.](./media/datasets.png "Datasets.")
+
+1. Selecteer een gegevenssettype dat u wilt toevoegen. De lijst met typen gegevenssets is afhankelijk van of u in de vorige stap delen op basis van momentopnamen of in-place delen hebt geselecteerd. 
+
+    ![Schermopname die laat zien waar u een gegevenssettype selecteert.](./media/add-datasets.png "Gegevenssets toevoegen.")    
+
+1. Ga naar het object dat u wilt delen. Selecteer vervolgens **Gegevenssets toevoegen.** 
+
+    ![Schermopname die laat zien hoe u een object selecteert dat u wilt delen.](./media/select-datasets.png "Selecteer gegevenssets.")    
+
+1. Voeg op **het tabblad Ontvangers** het e-mailadres van uw gegevens consumer toe door Ontvanger toevoegen te **selecteren.** 
+
+    ![Schermopname die laat zien hoe u e-mailadressen van ontvangers toevoegt.](./media/add-recipient.png "Voeg ontvangers toe.") 
+
+1. Selecteer **Doorgaan**.
+
+1. Als u een momentopname-sharetype hebt geselecteerd, kunt u het schema voor momentopnamen instellen om uw gegevens voor de gegevens consumer bij te werken. 
+
+    ![Schermopname met de schema-instellingen voor momentopnamen.](./media/enable-snapshots.png "Momentopnamen inschakelen.") 
 
 1. Selecteer een begintijd en een herhalingsinterval. 
 
 1. Selecteer **Doorgaan**.
 
-1. Controleer op het tabblad **controleren en maken** de inhoud, instellingen, ontvangers en synchronisatie-instellingen van uw pakket. Selecteer vervolgens **Maken**.
+1. Controleer op **het tabblad Beoordelen** en maken de inhoud, instellingen, ontvangers en synchronisatie-instellingen van het pakket. Selecteer vervolgens **Maken**.
 
 U hebt nu uw Azure-gegevens share gemaakt. De ontvanger van uw gegevens share kan uw uitnodiging accepteren. 
 
 ## <a name="receive-data"></a>Gegevens ontvangen
 
-In de volgende secties wordt beschreven hoe u gedeelde gegevens kunt ontvangen.
+In de volgende secties wordt beschreven hoe u gedeelde gegevens ontvangt.
 ### <a name="prerequisites-to-receive-data"></a>Vereisten voor het ontvangen van gegevens
-Zorg ervoor dat u beschikt over de volgende vereisten voordat u een uitnodiging voor gegevens delen accepteert: 
+Voordat u een data share-uitnodiging accepteert, moet u ervoor zorgen dat u aan de volgende vereisten hebt: 
 
-* Een Azure-abonnement. Als u geen abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/).
-* Een uitnodiging van Azure. Het onderwerp van de e-mail moet ' uitnodiging voor Azure-gegevens delen van *\<yourdataprovider\@domain.com>* ' zijn.
-* Een geregistreerde [resource provider voor micro soft. DataShare](concepts-roles-permissions.md#resource-provider-registration) in:
-    * Het Azure-abonnement waarin u een gegevens share bron maakt.
-    * Het Azure-abonnement waarin uw doel-Azure-gegevens archieven zich bevinden.
+* Een Azure-abonnement. Als u nog geen abonnement hebt, maakt u een [gratis account.](https://azure.microsoft.com/free/)
+* Een uitnodiging van Azure. Het e-mailonderwerp moet 'Azure Data Share uitnodiging van *\<yourdataprovider\@domain.com>* ' zijn.
+* Een geregistreerde [Microsoft.DataShare-resourceprovider](concepts-roles-permissions.md#resource-provider-registration) in:
+    * Het Azure-abonnement waarin u een Data Share maken.
+    * Het Azure-abonnement waarin uw Azure-doelgegevensopslag zich bevindt.
 
-### <a name="prerequisites-for-a-target-storage-account"></a>Vereisten voor een doel opslag account
+### <a name="prerequisites-for-a-target-storage-account"></a>Vereisten voor een doelopslagaccount
 
-* Een Azure Storage-account. Als u er nog geen hebt, moet u [een account maken](../storage/common/storage-account-create.md). 
-* Machtiging voor het schrijven naar het opslag account. Deze machtiging bevindt zich in *micro soft. Storage/Storage accounts/write*. Het maakt deel uit van de rol Inzender. 
-* Machtiging voor het toevoegen van roltoewijzing aan het opslag account. Deze toewijzing bevindt zich in *micro soft. autorisatie/roltoewijzingen/schrijven*. Het maakt deel uit van de rol van eigenaar.  
+* Een Azure Storage-account. Als u er nog geen hebt, maakt [u een account](../storage/common/storage-account-create.md). 
+* Machtiging om naar het opslagaccount te schrijven. Deze machtiging is in *Microsoft.Storage/storageAccounts/write.* Het maakt deel uit van de rol Inzender. 
+* Machtiging voor het toevoegen van roltoewijzing aan het opslagaccount. Deze toewijzing staat in *Microsoft.Authorization/role assignments/write.* Deze maakt deel uit van de rol Eigenaar.  
 
 ### <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -138,71 +138,71 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ### <a name="open-an-invitation"></a>Een uitnodiging openen
 
-U kunt een uitnodiging openen vanuit e-mail of rechtstreeks vanuit het Azure Portal.
+U kunt een uitnodiging openen via e-mail of rechtstreeks vanuit Azure Portal.
 
-1. Als u een uitnodiging vanuit e-mail wilt openen, controleert u uw postvak in op een uitnodiging van uw gegevens provider. De uitnodiging van Microsoft Azure heeft de titel ' uitnodiging voor Azure-gegevens delen van *\<yourdataprovider\@domain.com>* '. Selecteer **uitnodiging weer geven** om uw uitnodiging in azure te bekijken. 
+1. Als u een uitnodiging wilt openen via e-mail, controleert u uw postvak IN op een uitnodiging van uw gegevensprovider. De uitnodiging van Microsoft Azure heeft de titel 'Azure Data Share uitnodiging van *\<yourdataprovider\@domain.com>* '. Selecteer **Uitnodiging weergeven om** uw uitnodiging in Azure te bekijken. 
 
-   Zoek *uitnodigingen voor gegevens delen* om een uitnodiging te openen vanuit het Azure Portal. U ziet een lijst met uitnodigingen voor gegevens delen.
+   Als u een uitnodiging wilt openen vanuit Azure Portal, zoekt u naar *Data Share uitnodigingen*. U ziet een lijst met Data Share uitnodigingen.
 
-   ![Scherm opname van de lijst met uitnodigingen in de Azure Portal.](./media/invitations.png "Lijst met uitnodigingen.") 
+   ![Schermopname van de lijst met uitnodigingen in de Azure Portal.](./media/invitations.png "Lijst met uitnodigingen.") 
 
-1. Selecteer de share die u wilt weer geven. 
+1. Selecteer de share die u wilt weergeven. 
 
 ### <a name="accept-an-invitation"></a>Een uitnodiging accepteren
-1. Bekijk alle velden, met inbegrip van de **Gebruiksvoorwaarden**. Als u akkoord gaat met de voor waarden, schakelt u het selectie vakje in. 
+1. Bekijk alle velden, inclusief de **Gebruiksrechtovereenkomst**. Als u akkoord gaat met de voorwaarden, selecteert u het selectievakje. 
 
-   ![Scherm opname met het Gebruiksvoorwaarden gebied.](./media/terms-of-use.png "Gebruiksvoorwaarden.") 
+   ![Schermopname van het Gebruiksrechtovereenkomst gebied.](./media/terms-of-use.png "Gebruiksrechtovereenkomst.") 
 
-1. Onder **doel gegevens share account** selecteert u het abonnement en de resource groep waar u uw gegevens share gaat implementeren. Vul vervolgens de volgende velden in:
+1. Selecteer **onder Data Share doelaccount** het abonnement en de resourcegroep waar u uw Data Share. Vul vervolgens de volgende velden in:
 
-   * Selecteer in het veld **gegevens share account** de optie **nieuwe maken** als u geen gegevens share-account hebt. Als dat niet het geval is, selecteert u een bestaand gegevens share-account waarmee uw gegevens share wordt geaccepteerd. 
+   * Selecteer in **het veld Data share-account** de optie **Nieuwe** maken als u geen Data Share hebt. Anders selecteert u een bestaand Data Share account dat uw gegevens share accepteert. 
 
-   * In het veld **ontvangen share naam** , behoud de standaard waarde die de gegevens provider heeft opgegeven of geef een nieuwe naam op voor de ontvangen share. 
+   * Laat in **het veld Ontvangen sharenaam** de standaardwaarde staan die de gegevensprovider heeft opgegeven of geef een nieuwe naam op voor de ontvangen share. 
 
-1. Selecteer **accepteren en configureren**. Er wordt een share abonnement gemaakt. 
+1. Selecteer **Accepteren en configureren.** Er wordt een shareabonnement gemaakt. 
 
-   ![Scherm opname waarin wordt weer gegeven waar de configuratie opties moeten worden geaccepteerd.](./media/accept-options.png "Opties voor accepteren") 
+   ![Schermopname die laat zien waar de configuratieopties moeten worden geaccepteerd.](./media/accept-options.png "Opties voor accepteren") 
 
-    De ontvangen share wordt weer gegeven in uw gegevens share-account. 
+    De ontvangen share wordt weergegeven in uw Data Share account. 
 
-    Als u de uitnodiging niet wilt accepteren, selecteert u **afwijzen**. 
+    Als u de uitnodiging niet wilt accepteren, selecteert u **Weigeren.** 
 
 ### <a name="configure-a-received-share"></a>Een ontvangen share configureren
 Volg de stappen in deze sectie om een locatie te configureren voor het ontvangen van gegevens.
 
-1. Schakel op het tabblad **gegevens sets** het selectie vakje in naast de gegevensset waaraan u een bestemming wilt toewijzen. Selecteer **toewijzen aan doel** om een doel gegevens archief te kiezen. 
+1. Schakel op **het tabblad Gegevenssets** het selectievakje in naast de gegevensset waar u een bestemming wilt toewijzen. Selecteer **Kaart aan doel om** een doelgegevensopslag te kiezen. 
 
-   ![Scherm afbeelding die laat zien hoe u kunt toewijzen aan een doel.](./media/dataset-map-target.png "Toewijzen aan doel.") 
+   ![Schermopname die laat zien hoe u aan een doel kunt toevoegen.](./media/dataset-map-target.png "Wijs toe aan het doel.") 
 
-1. Selecteer een doel gegevens Archief voor de gegevens. Bestanden in de doel gegevens opslag die hetzelfde pad en dezelfde naam hebben als de bestanden in de ontvangen gegevens, worden overschreven. 
+1. Selecteer een doelgegevensopslag voor de gegevens. Bestanden in het doelgegevensopslag met hetzelfde pad en dezelfde naam als bestanden in de ontvangen gegevens worden overschreven. 
 
-   ![Scherm afbeelding die laat zien waar u een doel opslag account selecteert.](./media/map-target.png "Doel opslag.") 
+   ![Schermopname die laat zien waar u een doelopslagaccount kunt selecteren.](./media/map-target.png "Doelopslag.") 
 
-1. Voor het delen op basis van moment opnamen, als de gegevens provider een momentopname schema gebruikt om de gegevens regel matig bij te werken, kunt u de planning inschakelen op het tabblad **schema voor moment opnamen** . Schakel het selectie vakje in naast het schema voor de moment opname. Selecteer vervolgens **inschakelen**. Houd er rekening mee dat de eerste geplande moment opname begint binnen één minuut van de plannings tijd en volgende moment opnamen worden gestart binnen enkele seconden van de geplande tijd.
+1. Als de gegevensprovider voor delen op basis van momentopnamen een schema voor momentopnamen gebruikt om de gegevens regelmatig bij te werken, kunt u de planning inschakelen op het tabblad Schema voor **momentopnamen.** Selecteer het vakje naast het schema voor momentopnamen. Selecteer vervolgens **Inschakelen.** Houd er rekening mee dat de eerste geplande momentopname binnen één minuut na de geplande tijd start en dat volgende momentopnamen binnen enkele seconden na de geplande tijd starten.
 
-   ![Scherm afbeelding die laat zien hoe u een momentopname schema kunt inschakelen.](./media/enable-snapshot-schedule.png "Momentopname schema inschakelen.")
+   ![Schermopname die laat zien hoe u een schema voor momentopnamen kunt inschakelen.](./media/enable-snapshot-schedule.png "Schema voor momentopnamen inschakelen.")
 
 ### <a name="trigger-a-snapshot"></a>Een momentopname activeren
-De stappen in deze sectie zijn alleen van toepassing op delen op basis van moment opnamen.
+De stappen in deze sectie zijn alleen van toepassing op delen op basis van momentopnamen.
 
-1. U kunt een moment opname activeren op het tabblad **Details** . Op het tabblad, selecteert u **moment opname activeren**. U kunt ervoor kiezen om een volledige moment opname of incrementele moment opname van uw gegevens te activeren. Als u voor de eerste keer gegevens van uw gegevens provider ontvangt, selecteert u **volledig kopiëren**. Wanneer een moment opname wordt uitgevoerd, worden volgende moment opnamen niet gestart totdat de vorige is voltooid.
+1. U kunt een momentopname activeren op het **tabblad Details.** Selecteer op het tabblad **Momentopname activeren.** U kunt ervoor kiezen om een volledige momentopname of incrementele momentopname van uw gegevens te activeren. Als u voor het eerst gegevens van uw gegevensprovider ontvangt, selecteert u **Volledig kopiëren.** Wanneer een momentopname wordt uitgevoerd, worden volgende momentopnamen pas uitgevoerd wanneer de vorige is voltooid.
 
-   ![Scherm afbeelding van de selectie van de moment opname van de trigger.](./media/trigger-snapshot.png "Moment opname activeren.") 
+   ![Schermopname van de selectie Momentopname activeren.](./media/trigger-snapshot.png "Momentopname activeren.") 
 
-1. Wanneer de status van de laatste uitvoering is *geslaagd*, gaat u naar het doel gegevens archief om de ontvangen gegevens weer te geven. Selecteer **gegevens sets** en selecteer vervolgens de koppeling doelpad. 
+1. Wanneer de status van de laatste run is *geslaagd,* gaat u naar het doelgegevensopslag om de ontvangen gegevens weer te geven. Selecteer **Gegevenssets** en selecteer vervolgens de koppeling naar het doelpad. 
 
-   ![Scherm opname van de toewijzing van een consument gegevensset.](./media/consumer-datasets.png "Toewijzing van de consument DataSet.") 
+   ![Schermopname van de toewijzing van een gegevensset voor consumenten.](./media/consumer-datasets.png "Toewijzing van gegevenssets van consumenten.") 
 
 ### <a name="view-history"></a>Geschiedenis weergeven
-U kunt de geschiedenis van uw moment opnamen alleen bekijken in delen op basis van moment opnamen. Open het tabblad **geschiedenis** om de geschiedenis weer te geven. Hier ziet u de geschiedenis van alle moment opnamen die in de afgelopen 30 dagen zijn gegenereerd. 
+U kunt de geschiedenis van uw momentopnamen alleen bekijken in delen op basis van momentopnamen. Als u de geschiedenis wilt weergeven, opent u **het tabblad** Geschiedenis. Hier ziet u de geschiedenis van alle momentopnamen die in de afgelopen 30 dagen zijn gegenereerd. 
 
-## <a name="storage-snapshot-performance"></a>Prestaties van opslag momentopname
-De prestaties van de opslag momentopname worden beïnvloed door een aantal factoren naast het aantal bestanden en de grootte van de gedeelde gegevens. Het wordt altijd aanbevolen uw eigen prestatie tests uit te voeren. Hieronder ziet u enkele voor beelden van factoren die invloed hebben op de prestaties.
+## <a name="storage-snapshot-performance"></a>Prestaties van opslagmomentopnamen
+De prestaties van opslagmomentopnamen worden beïnvloed door een aantal factoren naast het aantal bestanden en de grootte van de gedeelde gegevens. Het wordt altijd aanbevolen om uw eigen prestatietests uit te voeren. Hieronder vindt u enkele voorbeeldfactoren die van invloed zijn op de prestaties.
 
-* Gelijktijdige toegang tot de bron-en doel gegevens archieven.  
-* Locatie van bron-en doel gegevens archieven. 
-* Voor incrementele moment opnamen kan het aantal bestanden in de gedeelde gegevensset van invloed zijn op de tijd die nodig is om de lijst met bestanden te vinden waarvan het tijdstip voor het laatst is gewijzigd na de laatste geslaagde moment opname. 
+* Gelijktijdige toegang tot de bron- en doelgegevensopslag.  
+* Locatie van bron- en doelgegevensopslag. 
+* Voor incrementele momentopnamen kan het aantal bestanden in de gedeelde gegevensset invloed hebben op de tijd die nodig is om de lijst met bestanden te vinden met de laatste wijzigingstijd na de laatste geslaagde momentopname. 
 
 
 ## <a name="next-steps"></a>Volgende stappen
-U hebt geleerd hoe u gegevens kunt delen en ontvangen van een opslag account met behulp van de Azure data share-service. Zie [ondersteunde gegevens archieven](supported-data-stores.md)voor meer informatie over het delen van andere gegevens bronnen.
+U hebt geleerd hoe u gegevens van een opslagaccount kunt delen en ontvangen met behulp van de Azure Data Share service. Zie Ondersteunde gegevensopslag voor meer informatie over het delen [van gegevens uit andere gegevensbronnen.](supported-data-stores.md)

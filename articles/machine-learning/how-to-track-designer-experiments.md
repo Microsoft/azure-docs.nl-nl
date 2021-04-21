@@ -1,7 +1,7 @@
 ---
-title: Metrische gegevens in de ontwerp functie vastleggen
+title: Metrische gegevens in de ontwerpfunctie logboeken
 titleSuffix: Azure Machine Learning
-description: Bewaak uw experimenten voor Azure ML Designer. Schakel logboek registratie in met de script module python uitvoeren en Bekijk de geregistreerde resultaten in de Studio.
+description: Bemonitor uw azure ML Designer-experimenten. Schakel logboekregistratie in met behulp van de module Python-script uitvoeren en bekijk de vastgelegde resultaten in de studio.
 services: machine-learning
 author: likebupt
 ms.author: keli19
@@ -11,31 +11,31 @@ ms.subservice: core
 ms.date: 01/11/2021
 ms.topic: conceptual
 ms.custom: designer
-ms.openlocfilehash: b940f5c9bd14bcec404827daaef666da802d969b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 13a3b86514428b0219aaf671260c07b4e197d2de
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "98065249"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107817291"
 ---
-# <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Logboek registratie inschakelen in Azure Machine Learning Designer-pijp lijnen
+# <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Logboekregistratie inschakelen in Azure Machine Learning designer-pijplijnen
 
 
-In dit artikel leert u hoe u logboek registratie code kunt toevoegen aan Designer-pijp lijnen. U leert ook hoe u deze logboeken kunt weer geven met behulp van de Azure Machine Learning Studio-webportal.
+In dit artikel leert u hoe u logboekcode kunt toevoegen aan designer-pijplijnen. U leert ook hoe u deze logboeken kunt weergeven met behulp Azure Machine Learning-studio webportal.
 
-Voor meer informatie over het vastleggen van metrische gegevens met behulp van de SDK-ontwerp functie raadpleegt u [Azure ml experimenten en metrische gegevens bewaken](how-to-track-experiments.md).
+Zie Azure [ML-experiment](how-to-log-view-metrics.md)uitvoeren en metrische gegevens bewaken voor meer informatie over het vastleggen van metrische gegevens met behulp van de SDK-ontwerpervaring.
 
-## <a name="enable-logging-with-execute-python-script"></a>Logboek registratie inschakelen met python-script uitvoeren
+## <a name="enable-logging-with-execute-python-script"></a>Logboekregistratie inschakelen met Python-script uitvoeren
 
-Gebruik de [script module python uitvoeren](./algorithm-module-reference/execute-python-script.md) om logboek registratie in Designer-pijp lijnen in te scha kelen. Hoewel u elke wille keurige waarde kunt registreren bij deze werk stroom, is het vooral nuttig om metrische gegevens vast te leggen in de module __Evaluate model__ om de model prestaties voor uitvoeringen bij te houden.
+Gebruik de module [Python-script uitvoeren](./algorithm-module-reference/execute-python-script.md) om logboekregistratie in designer-pijplijnen in teschakelen. Hoewel u elke waarde met deze werkstroom kunt bijhouden, is het vooral handig om metrische gegevens uit de module __Evaluate Model__ bij te houden om de modelprestaties voor uitvoeringen bij te houden.
 
-In het volgende voor beeld ziet u hoe u de gemiddelde fout van twee getrainde modellen kunt vastleggen met behulp van het model evalueren en python-script modules uitvoeren.
+In het volgende voorbeeld ziet u hoe u de gemiddelde kwadraatfout van twee getrainde modellen kunt inloggen met behulp van de modules Evaluate Model en Execute Python Script.
 
-1. Verbind een script module voor het __uitvoeren van python__ met de uitvoer van de module __Evaluate model__ .
+1. Verbind een __module Python-script__ uitvoeren met de uitvoer van de module __Evaluate Model.__
 
-    ![Python-script module voor het uitvoeren van verbinding maken om de model module te evalueren](./media/how-to-track-experiments/designer-logging-pipeline.png)
+    ![Connect Execute Python Script module to Evaluate Model module (Python-scriptmodule uitvoeren verbinden met de module Evaluate Model)](./media/how-to-log-view-metrics/designer-logging-pipeline.png)
 
-1. Plak de volgende code in de script code-editor voor __python uitvoeren__ om de gemiddelde absolute fout voor uw getrainde model te registreren. U kunt een vergelijkbaar patroon gebruiken om een andere waarde in de ontwerp functie te registreren:
+1. Plak de volgende code in de code-editor __Python-script__ uitvoeren om de gemiddelde absolute fout voor uw getrainde model in een logboek te zetten. U kunt een vergelijkbaar patroon gebruiken om een andere waarde in de ontwerpfunctie vast te maken:
 
     ```python
     # dataframe1 contains the values from Evaluate Model
@@ -59,26 +59,26 @@ In het volgende voor beeld ziet u hoe u de gemiddelde fout van twee getrainde mo
         return dataframe1,
     ```
     
-Deze code maakt gebruik van de Azure Machine Learning python SDK om waarden te registreren. Er wordt gebruikgemaakt van Run.get_context () om de context van de huidige uitvoering te verkrijgen. Vervolgens worden waarden in deze context geregistreerd met de methode Run. Parent. log (). Het gebruikt `parent` om waarden te registreren voor de bovenliggende pijplijn uitvoering in plaats van dat de module wordt uitgevoerd.
+Deze code maakt gebruik van de Azure Machine Learning Python SDK voor het logboeken van waarden. Er wordt Run.get_context() gebruikt om de context van de huidige run op te halen. Vervolgens worden waarden in die context gelogd met de methode run.parent.log(). Hiermee worden waarden bij de bovenliggende pijplijn uitgevoerd in een logboek `parent` in plaats van de module-run.
 
-Zie voor meer informatie over het gebruik van de python-SDK voor het vastleggen van waarden [logboek registratie inschakelen in training van Azure ml](how-to-track-experiments.md).
+Zie Logboekregistratie inschakelen in Azure [ML-trainings](how-to-log-view-metrics.md)uitgevoerd voor meer informatie over het gebruik van de Python SDK om waarden te registreren.
 
 ## <a name="view-logs"></a>Logboeken weergeven
 
-Nadat de uitvoering van de pijp lijn is voltooid, kunt u de *Mean_Absolute_Error* zien op de pagina experimenten.
+Nadat de pijplijn is uitgevoerd, ziet u de Mean_Absolute_Error *op* de pagina Experimenten.
 
-1. Navigeer naar het gedeelte **experimenten** .
+1. Navigeer naar **de sectie Experimenten.**
 1. Selecteer uw experiment.
-1. Selecteer de uitvoering in het experiment dat u wilt weer geven.
+1. Selecteer de run in het experiment dat u wilt weergeven.
 1. Selecteer **Metrische gegevens**.
 
-    ![Metrische uitvoerings gegevens weer geven in de Studio](./media/how-to-track-experiments/experiment-page-metrics-across-runs.png)
+    ![Metrische gegevens over uitvoeren weergeven in de studio](./media/how-to-log-view-metrics/experiment-page-metrics-across-runs.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u Logboeken in de ontwerp functie kunt gebruiken. Zie voor de volgende stappen deze gerelateerde artikelen:
+In dit artikel hebt u geleerd hoe u logboeken gebruikt in de ontwerpfunctie. Zie de volgende verwante artikelen voor de volgende stappen:
 
 
-* Meer informatie over het oplossen van problemen met Designer-pijp lijnen vindt u in [Debug & Troubleshooting ml-pijp lijnen oplossen](how-to-debug-pipelines.md#azure-machine-learning-designer).
-* Meer informatie over het gebruik van de python-SDK voor het vastleggen van metrische gegevens in de ontwikkel ervaring van de SDK raadpleegt u [logboek registratie inschakelen in azure ml-trainings uitvoeringen](how-to-track-experiments.md).
-* Meer informatie over het gebruik van [python-script uitvoeren](./algorithm-module-reference/execute-python-script.md) in de ontwerp functie.
+* Zie Fouten opsporen in ml-pijplijnen voor meer informatie over het oplossen van problemen met [designer-pijplijnen & oplossen.](how-to-debug-pipelines.md#azure-machine-learning-designer)
+* Zie Logboekregistratie inschakelen in Azure ML-trainings uitgevoerd voor meer informatie over het gebruik van de Python SDK voor het vastleggen van metrische gegevens in de [SDK-ontwerpervaring.](how-to-log-view-metrics.md)
+* Meer informatie over het gebruik [van Python-script uitvoeren](./algorithm-module-reference/execute-python-script.md) in de ontwerpfunctie.

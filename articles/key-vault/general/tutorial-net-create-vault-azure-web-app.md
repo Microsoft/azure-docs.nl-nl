@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 901f2b938512f842a5b4c34adbfc61f9379e5131
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 91467d1de3a1543736115ef7a25281733c8eb85d
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107772159"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107819210"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-in-net"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te verbinden met een Azure-web-app in .NET
 
@@ -343,4 +343,4 @@ Waar eerder 'Hallo wereld' stond, zou nu de waarde van uw geheim moeten staan.
 - [Azure Key Vault gebruiken met toepassingen geïmplementeerd op een virtuele machine in .NET](./tutorial-net-virtual-machine.md)
 - Meer informatie over [beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md)
 - Bekijk de [Gids voor ontwikkelaars](./developers-guide.md)
-- [Veilige toegang tot een sleutelkluis](./security-overview.md)
+- [Veilige toegang tot een sleutelkluis](./security-features.md)

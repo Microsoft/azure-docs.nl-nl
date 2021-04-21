@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/30/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: cdfeb2fdeefabb0d2d4af2fb63222adda5d023fb
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 37778bc096c9089e3706907fcdd6b9c816cc5fbc
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576022"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107817482"
 ---
 # <a name="tutorial-convert-ml-experiments-to-production-python-code"></a>Zelfstudie: ML-experimenten converteren naar de Python-code voor productie
 
@@ -527,5 +527,5 @@ def test_train_model():
 Nu u weet hoe u kunt converteren van een experiment naar productiecode, raadpleegt u de volgende links voor meer informatie en volgende stappen:
 
 + [MLOpsPython](https://github.com/microsoft/MLOpsPython/blob/master/docs/custom_model.md): Bouw een CI/CD-pijplijn om uw eigen model te trainen, evalueren en implementeren met behulp van Azure-pijplijnen en Azure Machine Learning
-+ [Uitvoeringen en metrische gegevens van Azure ML-experimenten bewaken](./how-to-track-experiments.md)
++ [Uitvoeringen en metrische gegevens van Azure ML-experimenten bewaken](./how-to-log-view-metrics.md)
 + [Gegevens van ML-webservice-eindpunten bewaken en verzamelen](./how-to-enable-app-insights.md)

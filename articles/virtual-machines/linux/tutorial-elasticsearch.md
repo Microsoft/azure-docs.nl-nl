@@ -1,27 +1,24 @@
 ---
 title: ElasticSearch implementeren op een virtuele ontwikkelmachine in Azure
-description: 'Zelfstudie: De Elastic Stack installeren op een virtuele ontwikkelmachine met Linux in Azure'
+description: De Elastic Stack (ELK) installeren op een linux-ontwikkel-VM in Azure
 services: virtual-machines
-documentationcenter: virtual-machines
 author: rloutlaw
 manager: justhe
-tags: azure-resource-manager
 ms.service: virtual-machines
 ms.collection: linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/11/2017
 ms.author: routlaw
-ms.openlocfilehash: b3213d7de9aee88486fa1db1388c51948fbde430
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 3ce28efa30b04a2a762c39f47dac739633eac209
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102557808"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818472"
 ---
-# <a name="install-the-elastic-stack-on-an-azure-vm"></a>De Elastic Stack installeren op een virtuele machine in Azure
+# <a name="install-the-elastic-stack-elk-on-an-azure-vm"></a>De Elastic Stack (ELK) installeren op een Azure-VM
 
 Dit artikel begeleidt u bij het implementeren van [Elasticsearch](https://www.elastic.co/products/elasticsearch), [Logstash](https://www.elastic.co/products/logstash) en [Kibana](https://www.elastic.co/products/kibana) op een Ubuntu-VM in Azure. Als u Elastic Stack in actie wilt zien, kunt u verbinding maken met Kibana en de voorbeeldlogboekgegevens gebruiken. 
 
@@ -165,7 +162,7 @@ Test Logstash in de interactieve modus om te controleren of het correct werkt:
 sudo /usr/share/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
 ```
 
-Dit is een eenvoudige logstash-[pijplijn](https://www.elastic.co/guide/en/logstash/5.6/pipeline.html) die standaardinvoer herhaalt naar de standaarduitvoer. 
+Dit is een eenvoudige Logstash-pijplijn [die](https://www.elastic.co/guide/en/logstash/5.6/pipeline.html) standaardinvoer echot naar standaarduitvoer. 
 
 ```output
 The stdin plugin is now waiting for input:

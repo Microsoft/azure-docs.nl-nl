@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 04/19/2021
 ms.author: thweiss
-ms.openlocfilehash: 209d18dfbadea89f14fd90da9a1bc57b3ccf0dfe
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: 9de41835e33d50a670a44089cb10d44cc57e92a7
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107728069"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818692"
 ---
 # <a name="configure-role-based-access-control-with-azure-active-directory-for-your-azure-cosmos-db-account-preview"></a>Op rollen gebaseerd toegangsbeheer configureren met Azure Active Directory voor uw Azure Cosmos DB account (preview)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -20,7 +20,7 @@ ms.locfileid: "107728069"
 > Azure Cosmos DB op rollen gebaseerd toegangsbeheer is momenteel in preview. Deze preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Zie Aanvullende gebruiksvoorwaarden voor Microsoft Azure [previews voor meer informatie.](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 > [!NOTE]
-> Dit artikel gaat over op rollen gebaseerd toegangsbeheer voor gegevensvlakbewerkingen in Azure Cosmos DB. Zie het artikel Op rollen [](role-based-access-control.md) gebaseerd toegangsbeheer toegepast op uw beheervlakbewerkingen als u bewerkingen op de beheervlak gebruikt.
+> Dit artikel gaat over op rollen gebaseerd toegangsbeheer voor gegevensvlakbewerkingen in Azure Cosmos DB. Zie het artikel Op rollen [](role-based-access-control.md) gebaseerd toegangsbeheer dat is toegepast op uw beheervlakbewerkingen als u bewerkingen op de beheervlak gebruikt.
 
 Azure Cosmos DB een ingebouwd op rollen gebaseerd toegangsbeheersysteem (RBAC) waarmee u het volgende kunt doen:
 
@@ -91,7 +91,7 @@ De werkelijke metagegevensaanvragen die door de actie zijn toegestaan, zijn afha
 
 | Bereik | Aanvragen die zijn toegestaan door de actie |
 |---|---|
-| Account | - De databases onder het account bekijken<br>- Voor elke database onder het account, de toegestane acties voor het databasebereik |
+| Account | - De databases onder het account bekijken<br>- Voor elke database onder het account, de toegestane acties in het databasebereik |
 | Database | - Metagegevens van de database lezen<br>- De containers onder de database in een lijst bekijken<br>- Voor elke container onder de database, de toegestane acties in het containerbereik |
 | Container | - Metagegevens van de container lezen<br>- Een lijst met fysieke partities onder de container maken<br>- Het adres van elke fysieke partitie oplossen |
 
@@ -219,7 +219,7 @@ Maak een rol met de *naam MyReadWriteRole* die alle acties bevat:
 az cosmosdb sql role definition create --account-name $accountName --resource-group $resourceGroupName --body @role-definition-rw.json
 ```
 
-Vermeld de roldefinities die u hebt gemaakt om de eigen ID's op te halen:
+Vermeld de roldefinities die u hebt gemaakt om hun ID's op te halen:
 
 ```azurecli
 az cosmosdb sql role definition list --account-name $accountName --resource-group $resourceGroupName
@@ -330,9 +330,10 @@ Als u de Azure Cosmos DB RBAC in uw toepassing wilt gebruiken, moet u de manier 
 
 De manier waarop u een `TokenCredential` instantie maakt, valt buiten het bereik van dit artikel. Er zijn veel manieren om een dergelijk exemplaar te maken, afhankelijk van het type AAD-identiteit dat u wilt gebruiken (user principal, service-principal, group enzovoort). Het belangrijkste is dat uw exemplaar moet worden opgelost met de identiteit `TokenCredential` (principal-id) aan wie u uw rollen hebt toegewezen. Hier vindt u voorbeelden van het maken van een `TokenCredential` klasse:
 
-- [in .NET](/dotnet/api/overview/azure/identity-readme#credential-classes)
-- [in Java](/java/api/overview/azure/identity-readme#credential-classes)
-- [in JavaScript](/javascript/api/overview/azure/identity-readme#credential-classes)
+- [In .NET](/dotnet/api/overview/azure/identity-readme#credential-classes)
+- [In Java](/java/api/overview/azure/identity-readme#credential-classes)
+- [In JavaScript](/javascript/api/overview/azure/identity-readme#credential-classes)
+- In REST API
 
 In de onderstaande voorbeelden wordt een service-principal met een exemplaar `ClientSecretCredential` gebruikt.
 
@@ -380,6 +381,12 @@ const client = new CosmosClient({
 });
 ```
 
+### <a name="in-rest-api"></a>In REST API
+
+De Azure Cosmos DB RBAC wordt momenteel ondersteund met de versie 2021-03-15 van REST API. Bij het maken van de [autorisatieheader](/rest/api/cosmos-db/access-control-on-cosmosdb-resources)stelt u de **typeparameter** in op **aad** en de hash-handtekening **(sig)** op het **oauth-token,** zoals wordt weergegeven in het volgende voorbeeld:
+
+`type=aad&ver=1.0&sig=<token-from-oauth>`
+
 ## <a name="auditing-data-requests"></a>Gegevensaanvragen controleren
 
 Wanneer u de Azure Cosmos DB RBAC [gebruikt,](cosmosdb-monitor-resource-logs.md) worden diagnostische logboeken uitgebreid met identiteits- en autorisatiegegevens voor elke gegevensbewerking. Hiermee kunt u gedetailleerde controles uitvoeren en de AAD-identiteit ophalen die wordt gebruikt voor elke gegevensaanvraag die naar uw Azure Cosmos DB account wordt verzonden.
@@ -394,8 +401,8 @@ Deze aanvullende informatie stroomt in de **logboekcategorie DataPlaneRequests**
 - U kunt maximaal 100 roldefinities en 2000 roltoewijzingen per Azure Cosmos DB maken.
 - U kunt alleen roldefinities toewijzen aan Azure AD-identiteiten die behoren tot dezelfde Azure AD-tenant als uw Azure Cosmos DB account.
 - Azure AD-groepsoplossing wordt momenteel niet ondersteund voor identiteiten die tot meer dan 200 groepen behoren.
-- Het Azure AD-token wordt momenteel doorgegeven als een header met elke afzonderlijke aanvraag die naar de Azure Cosmos DB-service wordt verzonden, waardoor de totale nettolading groter wordt.
-- Toegang tot uw gegevens met Azure AD via [de Azure Cosmos DB Explorer](data-explorer.md) wordt nog niet ondersteund. Als u Azure Cosmos DB Explorer, moet de gebruiker nog steeds toegang hebben tot de primaire sleutel van het account.
+- Het Azure AD-token wordt momenteel doorgegeven als een header bij elke afzonderlijke aanvraag die naar de Azure Cosmos DB-service wordt verzonden, waardoor de totale nettolading groter wordt.
+- Toegang tot uw gegevens met Azure AD via [Azure Cosmos DB Explorer](data-explorer.md) wordt nog niet ondersteund. Als u de Azure Cosmos DB Explorer moet de gebruiker nog steeds toegang hebben tot de primaire sleutel van het account.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

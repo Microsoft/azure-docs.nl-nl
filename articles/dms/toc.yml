@@ -45,7 +45,9 @@
           href: tutorial-sql-server-managed-instance-online.md
     - name: MySQL migreren
       items:
-        - name: naar Azure Database for MySQL
+        - name: om Azure Database for MySQL (offline)
+          href: tutorial-mysql-azure-mysql-offline-portal.md
+        - name: om Azure Database for MySQL (online)
           href: tutorial-mysql-azure-mysql-online.md
     - name: RDS MySQL migreren
       items:
@@ -83,10 +85,12 @@
       items:
         - name: SQL Server naar SQL Database
           href: howto-sql-server-to-azure-sql-powershell.md
-        - name: SQL Server naar SQL MI (online)
+        - name: SQL Server sql mi (online)
           href: howto-sql-server-to-azure-sql-managed-instance-powershell-online.md
-        - name: SQL Server naar SQL MI (offline)
+        - name: SQL Server sql mi (offline)
           href: howto-sql-server-to-azure-sql-managed-instance-powershell-offline.md
+        - name: MySQL naar Azure Database for MySQL (offline)
+          href: migrate-mysql-to-azure-mysql-powershell.md
     - name: SSIS-pakket opnieuw implementeren naar
       items:
         - name: Azure SQL Database
@@ -141,11 +145,11 @@
               href: known-issues-azure-sql-db-managed-instance-online.md
             - name: Azure DB voor MySQL
               href: known-issues-azure-mysql-online.md
-            - name: PostgreSQL naar Azure DB voor PostgreSQL
+            - name: PostgreSQL naar Azure DB for PostgreSQL
               href: known-issues-azure-postgresql-online.md
-            - name: Oracle naar Azure DB voor PostgreSQL
+            - name: Oracle to Azure DB for PostgreSQL
               href: known-issues-oracle-azure-postgresql-online.md
-            - name: MongoDB Azure Cosmos DB-API voor MongoDB
+            - name: MongoDB voor Azure Cosmos DB API voor MongoDB
               href: known-issues-mongo-cosmos-db.md
     - name: Video's
       items:

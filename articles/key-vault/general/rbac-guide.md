@@ -1,5 +1,5 @@
 ---
-title: Toepassingen toegang verlenen tot een Azure-sleutelkluis met behulp van Azure RBAC-| Microsoft Docs
+title: Toepassingen toegang verlenen tot een Azure-sleutelkluis met behulp van Azure RBAC | Microsoft Docs
 description: Meer informatie over het bieden van toegang tot sleutels, geheimen en certificaten met behulp van op rollen gebaseerd toegangsbeheer van Azure.
 services: key-vault
 author: msmbaldwin
@@ -9,21 +9,21 @@ ms.topic: how-to
 ms.date: 04/15/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 966f704bd47b4b238ed72579a6103bd2e4348849
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 9806327c7393c3ba1fdab09acfb5545d6026e5cf
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107772213"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818458"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control"></a>Toegang bieden tot Key Vault, certificaten en geheimen met op rollen gebaseerd toegangsbeheer van Azure
 
 > [!NOTE]
 > Key Vault resourceprovider ondersteunt twee resourcetypen: **kluizen en** **beheerde HMS's.** Toegangsbeheer dat in dit artikel wordt beschreven, is alleen van toepassing **op kluizen**. Zie Toegangsbeheer voor beheerde HSM voor meer informatie over [toegangsbeheer voor beheerde HSM.](../managed-hsm/access-control.md)
 
-Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) is een autorisatiesysteem dat is gebouwd op [Azure Resource Manager](../../azure-resource-manager/management/overview.md) dat een fijnkeurig toegangsbeheer van Azure-resources biedt.
+Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) is een autorisatiesysteem dat is gebouwd op [Azure Resource Manager](../../azure-resource-manager/management/overview.md) dat een fijner toegangsbeheer van Azure-resources biedt.
 
-Met Azure RBAC kunnen gebruikers machtigingen voor sleutels, geheimen en certificaten beheren. Het biedt één plek voor het beheren van alle machtigingen voor alle sleutelkluizen. 
+Met Azure RBAC kunnen gebruikers machtigingen voor sleutels, geheimen en certificaten beheren. Het biedt één plek voor het beheren van alle machtigingen in alle sleutelkluizen. 
 
 Het Azure RBAC-model biedt de mogelijkheid om machtigingen in te stellen op verschillende bereikniveaus: beheergroep, abonnement, resourcegroep of afzonderlijke resources.  Azure RBAC voor key vault biedt ook de mogelijkheid om afzonderlijke machtigingen te hebben voor afzonderlijke sleutels, geheimen en certificaten
 
@@ -31,7 +31,7 @@ Zie Op rollen gebaseerd toegangsbeheer [van Azure (Azure RBAC)](../../role-based
 
 ## <a name="best-practices-for-individual-keys-secrets-and-certificates"></a>Best practices voor afzonderlijke sleutels, geheimen en certificaten
 
-Het wordt aanbevolen een kluis per toepassing per omgeving te gebruiken (ontwikkeling, preproductie en productie).
+Het wordt aanbevolen om per toepassing per omgeving een kluis te gebruiken (ontwikkeling, preproductie en productie).
 
 Machtigingen voor afzonderlijke sleutels, geheimen en certificaten mogen alleen worden gebruikt voor specifieke scenario's:
 
@@ -39,18 +39,18 @@ Machtigingen voor afzonderlijke sleutels, geheimen en certificaten mogen alleen 
 
 -   Afzonderlijk geheim delen tussen meerdere toepassingen
 
-Meer informatie Azure Key Vault richtlijnen voor beheer, zie:
+Zie voor Azure Key Vault meer informatie over de richtlijnen voor beheer:
 
-- [Overzicht van Azure Key Vault-beveiliging](security-overview.md)
+- [Azure Key Vault beveiligingsfuncties](security-features.md)
 - [Azure Key Vault servicelimieten](service-limits.md)
 
 ## <a name="azure-built-in-roles-for-key-vault-data-plane-operations"></a>Ingebouwde Azure-rollen voor Key Vault gegevensvlakbewerkingen
 > [!NOTE]
-> `Key Vault Contributor` de rol is voor beheervlakbewerkingen voor het beheren van sleutelkluizen. Er wordt geen toegang tot sleutels, geheimen en certificaten toegestaan.
+> `Key Vault Contributor` de rol is voor bewerkingen op het beheervlak voor het beheren van sleutelkluizen. Er is geen toegang tot sleutels, geheimen en certificaten toegestaan.
 
 | Ingebouwde rol | Beschrijving | Id |
 | --- | --- | --- |
-| Key Vault Administrator| Alle gegevensvlakbewerkingen uitvoeren op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
+| Key Vault Administrator| Voer alle gegevensvlakbewerkingen uit op een sleutelkluis en alle objecten daarin, inclusief certificaten, sleutels en geheimen. Kan geen key vault-resources beheren of roltoewijzingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 00482a5a-887f-4fb3-b363-3b7fe8e74483 |
 | Key Vault Certificates Officer | Voer een actie uit op de certificaten van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | a4417e6f-fecd-4de8-b567-7b0420556985 |
 | Key Vault Crypto Officer | Voer een actie uit op de sleutels van een sleutelkluis, behalve machtigingen beheren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
 | Key Vault cryptoserviceversleutelingsgebruiker | Metagegevens van sleutels lezen en wrap-/unwrap-bewerkingen uitvoeren. Werkt alleen voor sleutelkluizen die gebruikmaken van het machtigingsmodel Op rollen gebaseerd toegangsbeheer van Azure. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
@@ -72,21 +72,21 @@ Als u roltoewijzingen wilt toevoegen, hebt u het volgende nodig:
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Machtigingen voor `Microsoft.Authorization/roleAssignments/write` en `Microsoft.Authorization/roleAssignments/delete`, zoals [Beheerder van gebruikerstoegang](../../role-based-access-control/built-in-roles.md#user-access-administrator) of [Eigenaar](../../role-based-access-control/built-in-roles.md#owner)
 
-### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Azure RBAC-machtigingen inschakelen op Key Vault
+### <a name="enable-azure-rbac-permissions-on-key-vault"></a>Azure RBAC-machtigingen inschakelen voor Key Vault
 
 > [!NOTE]
-> Voor het wijzigen van het machtigingsmodel is de machtiging Microsoft.Authorization/roleAssignments/write vereist, die deel uitmaakt van de rollen Eigenaar en [Gebruikerstoegangbeheerder.](../../role-based-access-control/built-in-roles.md#user-access-administrator) [](../../role-based-access-control/built-in-roles.md#owner) Klassieke abonnementsbeheerdersrollen zoals 'Servicebeheerder' en 'Medebeheerder' worden niet ondersteund.
+> Voor het wijzigen van het machtigingsmodel is de machtiging Microsoft.Authorization/roleAssignments/write vereist, die deel uitmaakt van de rollen Eigenaar en [Beheerder voor gebruikerstoegang.](../../role-based-access-control/built-in-roles.md#user-access-administrator) [](../../role-based-access-control/built-in-roles.md#owner) Klassieke abonnementsbeheerdersrollen, zoals 'Servicebeheerder' en 'Medebeheerder', worden niet ondersteund.
 
-1.  Azure RBAC-machtigingen inschakelen voor nieuwe sleutelkluis:
+1.  Azure RBAC-machtigingen inschakelen voor een nieuwe sleutelkluis:
 
     ![Azure RBAC-machtigingen inschakelen - nieuwe kluis](../media/rbac/image-1.png)
 
-2.  Azure RBAC-machtigingen inschakelen voor bestaande sleutelkluis:
+2.  Azure RBAC-machtigingen inschakelen voor een bestaande sleutelkluis:
 
     ![Azure RBAC-machtigingen inschakelen - bestaande kluis](../media/rbac/image-2.png)
 
 > [!IMPORTANT]
-> Als u het Azure RBAC-machtigingsmodel instelt, worden alle machtigingen voor toegangsbeleid ongeldig. Dit kan uitval veroorzaken wanneer er geen equivalente Azure-rollen worden toegewezen.
+> Als u het Azure RBAC-machtigingsmodel instelt, worden alle machtigingen voor toegangsbeleid ongeldig. Dit kan uitval veroorzaken wanneer er geen equivalente Azure-rollen zijn toegewezen.
 
 ### <a name="assign-role"></a>Rol toewijzen
 
@@ -110,13 +110,13 @@ New-AzRoleAssignment -RoleDefinitionName Reader -ApplicationId <applicationId> -
 ```
 ---
 
-In de Azure Portal is het scherm Azure-roltoewijzingen beschikbaar voor alle resources op het tabblad Toegangsbeheer (IAM).
+In het Azure Portal is het scherm Azure-roltoewijzingen beschikbaar voor alle resources op het tabblad Toegangsbeheer (IAM).
 
 ![Roltoewijzing - tabblad (IAM)](../media/rbac/image-3.png)
 
-### <a name="resource-group-scope-role-assignment"></a>Roltoewijzing voor het bereik van resourcegroep
+### <a name="resource-group-scope-role-assignment"></a>Roltoewijzing voor resourcegroepbereik
 
-1.  Ga naar de sleutelkluisresourcegroep.
+1.  Ga naar de sleutelkluis-resourcegroep.
     ![Roltoewijzing - resourcegroep](../media/rbac/image-4.png)
 
 2.  Klik op Toegangsbeheer (IAM) \> Roltoewijzing toevoegen \>
@@ -146,9 +146,9 @@ Bovenstaande roltoewijzing biedt de mogelijkheid om sleutelkluisobjecten in de s
 
 1. Ga naar Key Vault \> tabblad Toegangsbeheer (IAM)
 
-2. Klik op Roltoewijzing toevoegen \>
+2. Klik op Add-role assignment \> Add
 
-3. De rol Key Secrets Officer 'Key Vault Secrets Officer' maken voor de huidige gebruiker.
+3. Maak de rol Key Secrets Officer 'Key Vault Secrets Officer' voor de huidige gebruiker.
 
     ![Roltoewijzing - sleutelkluis](../media/rbac/image-6.png)
 
@@ -169,7 +169,7 @@ New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -Applicatio
 
 Nadat u de bovenstaande roltoewijzing hebt aanmaken, kunt u geheimen maken/bijwerken/verwijderen.
 
-4. Maak een nieuw geheim (Geheimen \> +Genereren/importeren) om roltoewijzing op geheim niveau te testen.
+4. Maak een nieuw geheim (Geheimen \> +Genereren/importeren) om roltoewijzing op geheimniveau te testen.
 
     ![Rol toevoegen - sleutelkluis](../media/rbac/image-7.png)
 
@@ -201,12 +201,12 @@ New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -Applicatio
 ### <a name="test-and-verify"></a>Testen en verifiëren
 
 > [!NOTE]
-> Browsers gebruiken caching en paginavernieuwing is vereist na het verwijderen van roltoewijzingen.<br>
+> Browsers gebruiken caching en het vernieuwen van pagina's is vereist na het verwijderen van roltoewijzingen.<br>
 > Enkele minuten toestaan dat roltoewijzingen worden vernieuwd
 
 1. Valideer het toevoegen van een nieuw geheim Key Vault de rol Secrets Officer op key vault-niveau.
 
-Ga naar het tabblad Toegangsbeheer (IAM) van de sleutelkluis en verwijder de roltoewijzing 'Key Vault Secrets Officer' voor deze resource.
+Ga naar het tabblad Toegangsbeheer voor sleutelkluis (IAM) en verwijder de roltoewijzing 'Key Vault Secrets Officer' voor deze resource.
 
 ![Toewijzing verwijderen - sleutelkluis](../media/rbac/image-9.png)
 
@@ -214,7 +214,7 @@ Navigeer naar het eerder gemaakte geheim. U kunt alle geheime eigenschappen zien
 
 ![Geheime weergave met toegang](../media/rbac/image-10.png)
 
-Voor het maken van een nieuw geheim \> (Geheimen +Genereren/importeren) wordt de onderstaande fout weergegeven:
+Voor het maken van een nieuw geheim \> (Geheimen +Genereren/importeren) moet de onderstaande fout worden weergegeven:
 
    ![Nieuw geheim maken](../media/rbac/image-11.png)
 
@@ -226,7 +226,7 @@ Voor het maken van een nieuw geheim \> (Geheimen +Genereren/importeren) wordt de
 
    ![Geheime weergave zonder toegang](../media/rbac/image-12.png)
 
-3. Valideer geheimen die zijn gelezen zonder de rol lezer op sleutelkluisniveau.
+3. Valideer geheimen die zijn gelezen zonder lezersrol op sleutelkluisniveau.
 
 -   Ga naar het tabblad Toegangsbeheer (IAM) van de sleutelkluisresourcegroep en verwijder de roltoewijzing Key Vault Lezer.
 
@@ -236,7 +236,7 @@ Voor het maken van een nieuw geheim \> (Geheimen +Genereren/importeren) wordt de
 
 ### <a name="creating-custom-roles"></a>Aangepaste rollen maken 
 
-[az role definition create command](/cli/azure/role/definition#az_role_definition_create)
+[opdracht az role definition create](/cli/azure/role/definition#az_role_definition_create)
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 ```azurecli
@@ -294,4 +294,4 @@ Zie voor meer informatie over het maken van aangepaste rollen:
 ## <a name="learn-more"></a>Lees meer
 
 - [Overzicht van Azure RBAC](../../role-based-access-control/overview.md)
-- [Zelfstudie aangepaste rollen](../../role-based-access-control/tutorial-custom-role-cli.md)
+- [Zelfstudie voor aangepaste rollen](../../role-based-access-control/tutorial-custom-role-cli.md)

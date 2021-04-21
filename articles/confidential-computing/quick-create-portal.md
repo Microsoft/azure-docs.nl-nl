@@ -10,12 +10,12 @@ ms.subservice: confidential-computing
 ms.workload: infrastructure
 ms.custom:
 - mode-portal
-ms.openlocfilehash: f43229570f6bab942cc57a2ea3be163d37f02f89
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 1ae6631c3f6ee71d7a09832956c7e687ceca22b6
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107536180"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107819048"
 ---
 # <a name="quickstart-deploy-an-azure-confidential-computing-vm-in-the-azure-portal"></a>Quickstart: Een VM met Azure Confidential Computing implementeren in Azure Portal
 
@@ -62,7 +62,7 @@ Als u geen Azure-abonnement hebt, [maakt u een account](https://azure.microsoft.
 
 1. Configureer de installatiekopie van het besturingssysteem die u wilt gebruiken voor de virtuele machine.
 
-    * **Installatiekopie kiezen**: Voor deze zelfstudie selecteert u Ubuntu 18.04 LTS. U kunt ook Windows Server 2019, Windows Server 2016 of een Ubuntu 16.04 LTS selecteren. Als u ervoor kiest om dit te doen, wordt u in deze zelfstudie omgeleid.
+    * **Installatiekopie kiezen**: Voor deze zelfstudie selecteert u Ubuntu 18.04 LTS. U kunt ook Windows Server 2019, Windows Server 2016 of en Ubuntu 20.04 LTS selecteren. Als u ervoor kiest om dit te doen, wordt u in deze zelfstudie omgeleid.
     
     * **De installatiekopie voor Gen 2 in-/uitschakelen**: Virtuele machines met Confidential Computing kunnen alleen worden uitgevoerd op installatiekopieën van de [2e generatie](../virtual-machines/generation-2.md). Zorg ervoor dat de installatiekopie die u selecteert een installatiekopie van Gen 2 is. Klik op het tabblad **Geavanceerd** hierboven waar u de virtuele machine configureert. Schuif omlaag totdat u de sectie met de naam VM-generatie hebt gevonden. Selecteer Gen 2 en ga vervolgens terug naar het tabblad **Basisinformatie**.
     
@@ -79,7 +79,7 @@ Als u geen Azure-abonnement hebt, [maakt u een account](https://azure.microsoft.
     ![VM's uit de DCsv2-serie](media/quick-create-portal/dcsv2-virtual-machines.png)
 
     > [!TIP]
-    > U ziet grootten **DC1s_v2**, **DC2s_v2**, **DC4s_V2** en **DC8_v2**. Dit zijn de enige VM-grootten die op dit moment Confidential Computing ondersteunen. [Meer informatie](virtual-machine-solutions.md).
+    > U ziet grootten **DC1s_v2**, **DC2s_v2**, **DC4s_V2** en **DC8_v2**. Dit zijn de enige virtuele-machinegrootten die momenteel Intel SGX Confidential Computing ondersteunen. [Meer informatie](virtual-machine-solutions.md).
 
 1. Vul de volgende informatie in:
 
@@ -166,11 +166,18 @@ wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add 
 ```
 
 #### <a name="2-install-the-intel-sgx-dcap-driver"></a>2. Het Intel SGX DCAP-stuurprogramma installeren
+In sommige versies van Ubuntu is het Intel SGX-stuurprogramma mogelijk al geïnstalleerd. Controleer het met behulp van de volgende opdracht: 
+
+```bash
+dmesg | grep -i sgx
+[  106.775199] sgx: intel_sgx: Intel SGX DCAP Driver {version}
+``` 
+Als de uitvoer leeg is, installeert u het stuurprogramma: 
 
 ```bash
 sudo apt update
 sudo apt -y install dkms
-wget https://download.01.org/intel-sgx/sgx-dcap/1.9/linux/distro/ubuntu18.04-server/sgx_linux_x64_driver_1.36.2.bin -O sgx_linux_x64_driver.bin
+wget https://download.01.org/intel-sgx/sgx-dcap/1.7/linux/distro/ubuntu18.04-server/sgx_linux_x64_driver_1.35.bin -O sgx_linux_x64_driver.bin
 chmod +x sgx_linux_x64_driver.bin
 sudo ./sgx_linux_x64_driver.bin
 ```
@@ -180,8 +187,9 @@ sudo ./sgx_linux_x64_driver.bin
 
 #### <a name="3-install-the-intel-and-open-enclave-packages-and-dependencies"></a>3. Installeer de Intel- en Open Enclave-pakketten en -afhankelijkheden
 
+
 ```bash
-sudo apt -y install clang-7 libssl-dev gdb libsgx-enclave-common libsgx-enclave-common-dev libprotobuf10 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
+sudo apt -y install clang-8 libssl-dev gdb libsgx-enclave-common libprotobuf10 libsgx-dcap-ql libsgx-dcap-ql-dev az-dcap-client open-enclave
 ```
 
 > [!NOTE] 

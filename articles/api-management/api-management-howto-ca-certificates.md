@@ -1,6 +1,6 @@
 ---
-title: Een aangepast CA-certificaat toevoegen-Azure API Management | Microsoft Docs
-description: Meer informatie over het toevoegen van een aangepast CA-certificaat in azure API Management. U kunt ook instructies voor het verwijderen van een certificaat weer geven.
+title: Een aangepast CA-certificaat toevoegen - Azure API Management | Microsoft Docs
+description: Meer informatie over het toevoegen van een aangepast CA-certificaat in Azure API Management. U kunt ook instructies zien voor het verwijderen van een certificaat.
 services: api-management
 documentationcenter: ''
 author: mikebudzynski
@@ -12,18 +12,19 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 124bc053aa2c6e59e205bb6f33a9a96190799499
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 51719f23302bfaa036f99e88fcd440d97ca3bc02
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93102034"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107817806"
 ---
-# <a name="how-to-add-a-custom-ca-certificate-in-azure-api-management"></a>Een aangepast CA-certificaat toevoegen in azure API Management
+# <a name="how-to-add-a-custom-ca-certificate-in-azure-api-management"></a>Een aangepast CA-certificaat toevoegen in Azure API Management
 
-Met Azure API Management kunnen CA-certificaten op de computer worden geïnstalleerd binnen de vertrouwde basis-en tussenliggende certificaat archieven. Deze functie moet worden gebruikt als voor uw services een aangepast CA-certificaat is vereist.
+Met Azure API Management u CA-certificaten installeren op de computer in de vertrouwde basis- en tussencertificaatopslag. Deze functionaliteit moet worden gebruikt als voor uw services een aangepast CA-certificaat is vereist.
 
-In dit artikel wordt beschreven hoe u CA-certificaten van een exemplaar van Azure API Management service beheert in de Azure Portal.
+In het artikel wordt beschreven hoe u CA-certificaten van een Azure API Management service-exemplaar in de Azure Portal.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -33,7 +34,7 @@ In dit artikel wordt beschreven hoe u CA-certificaten van een exemplaar van Azur
 
 ![CA-certificaten toevoegen](media/api-management-howto-ca-certificates/00.png)
 
-Volg de onderstaande stappen om een nieuw CA-certificaat te uploaden. Als u nog geen API Management service-exemplaar hebt gemaakt, raadpleegt u de zelf studie [een API Management service-exemplaar maken](get-started-create-service-instance.md).
+Volg de onderstaande stappen om een nieuw CA-certificaat te uploaden. Als u nog geen service API Management service-exemplaar hebt gemaakt, bekijkt u de zelfstudie Een API Management [service-exemplaar maken.](get-started-create-service-instance.md)
 
 1. Navigeer naar uw Azure API Management service-exemplaar in de Azure Portal.
 
@@ -41,22 +42,22 @@ Volg de onderstaande stappen om een nieuw CA-certificaat te uploaden. Als u nog 
 
 3. Klik op de knop **+ Toevoegen**.  
 
-    ![Scherm opname van de knop + toevoegen voor het toevoegen van een CA-certificaat.](media/api-management-howto-ca-certificates/01.png)  
+    ![Schermopname van de knop + Toevoegen voor het toevoegen van een CA-certificaat.](media/api-management-howto-ca-certificates/01.png)  
 
-4. Blader naar het certificaat en beslis het certificaat archief. Alleen de open bare sleutel is nodig, dus het wacht woord is niet vereist.
+4. Blader naar het certificaat en beslis over het certificaatopslag. Alleen de openbare sleutel is nodig, dus het wachtwoord is niet vereist.
 
-    ![Scherm afbeelding die laat zien hoe u naar het certificaat bladert.](media/api-management-howto-ca-certificates/02.png)  
+    ![Schermopname die laat zien hoe u naar het certificaat bladert.](media/api-management-howto-ca-certificates/02.png)  
 
 5. Klik op **Opslaan**. Deze bewerking kan enkele minuten duren.
 
-    ![Scherm afbeelding die laat zien hoe het certificaat moet worden opgeslagen.](media/api-management-howto-ca-certificates/03.png)  
+    ![Schermopname die laat zien hoe u het certificaat op kunt slaan.](media/api-management-howto-ca-certificates/03.png)  
 
 > [!NOTE]
-> U kunt een CA-certificaat uploaden met behulp van de `New-AzApiManagementSystemCertificate` Power shell-opdracht.
+> U kunt een CA-certificaat uploaden met behulp van de `New-AzApiManagementSystemCertificate` PowerShell-opdracht.
 
-## <a name="delete-a-client-certificate"></a><a name="step1a"> </a>Een client certificaat verwijderen
+## <a name="delete-a-client-certificate"></a><a name="step1a"> </a>Een clientcertificaat verwijderen
 
-Als u een certificaat wilt verwijderen, klikt u op context menu **...** en selecteert u **verwijderen** naast het certificaat.
+Als u een certificaat wilt verwijderen, klikt u op het contextmenu **...** en **selecteert u Verwijderen** naast het certificaat.
 
 ![CA-certificaten verwijderen](media/api-management-howto-ca-certificates/04.png)  
 

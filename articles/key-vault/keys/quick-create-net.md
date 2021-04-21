@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-csharp, devx-track-azurepowershell
-ms.openlocfilehash: 52e33660b4076f8119ddb5d77e2dbbf7ee201913
-ms.sourcegitcommit: f5448fe5b24c67e24aea769e1ab438a465dfe037
+ms.openlocfilehash: 5c1e4d64ba3359a07dddbbf89774e31815935230
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105968455"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818418"
 ---
 # <a name="quickstart-azure-key-vault-key-client-library-for-net-sdk-v4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor sleutels voor .NET (SDK v4)
 
@@ -36,7 +36,7 @@ Zie voor meer informatie over Key Vault en sleutels:
 
 ## <a name="setup"></a>Instellen
 
-Deze Snelstartgids maakt gebruik van de Azure-identiteits bibliotheek om de gebruiker te verifiëren bij Azure-Services. Ontwikkelaars kunnen ook Visual Studio of Visual Studio Code gebruiken om hun oproepen te verifiëren: zie [De client verifiëren met de Azure Identity-clientbibliotheek](/dotnet/api/overview/azure/identity-readme?#authenticate-the-client&preserve-view=true) (Engelstalig) voor meer informatie.
+In deze quickstart wordt gebruik gemaakt van de Azure Identity-bibliotheek om de gebruiker te verifiëren bij Azure Services. Ontwikkelaars kunnen ook Visual Studio of Visual Studio Code gebruiken om hun oproepen te verifiëren: zie [De client verifiëren met de Azure Identity-clientbibliotheek](/dotnet/api/overview/azure/identity-readme?#authenticate-the-client&preserve-view=true) (Engelstalig) voor meer informatie.
 
 ### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -53,7 +53,7 @@ Deze Snelstartgids maakt gebruik van de Azure-identiteits bibliotheek om de gebr
     ```
     ---
 
-    Als Azure CLI of Azure PowerShell uw standaard browser kan openen, wordt dit gedaan en wordt er een Azure-aanmeldings pagina geladen.
+    Als Azure CLI of Azure PowerShell uw standaardbrowser kan openen, gebeurt dit en wordt er een Azure-aanmeldingspagina geladen.
 
     Als dat niet het geval is, opent u een browserpagina op [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en voert u de autorisatiecode in die wordt weergegeven in uw terminal.
 
@@ -272,4 +272,4 @@ Zie de volgende artikelen voor meer informatie over Key Vault en hoe u Key Vault
 - Zie een [zelfstudie over toegang tot Key Vault vanuit een App Service-toepassing](../general/tutorial-net-create-vault-azure-web-app.md)
 - Zie een [zelfstudie over toegang tot Key Vault vanuit een virtuele machine](../general/tutorial-net-virtual-machine.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

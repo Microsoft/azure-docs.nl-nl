@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
 ms.custom: references_regions
-ms.openlocfilehash: fa800fe030005fd96dfdd7c35b886f5ae220d5b5
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 2fb14345c76a45c7ec7ddfc32765c971a8dee73e
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107799932"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107821003"
 ---
 > [!IMPORTANT]
-> Voor orders met een groot volume of in het geval **[](https://github.com/Azure/Communication/blob/master/Forms/ACS%20-%20Bulk%20Number%20Acquisition.docx)** dat uw gewenste telefoonnummer niet beschikbaar is, vult u dit formulier in en e-mailt u het per e-mail naar met een onderwerpregel die begint met gcstnmsd@microsoft.com ACS-nummeraanvraag: .
+> Voor orders met grote volumes of in het geval dat **[](https://github.com/Azure/Communication/blob/master/Forms/ACS%20-%20Bulk%20Number%20Acquisition.docx)** uw gewenste telefoonnummer niet beschikbaar is, vult u dit formulier in en e-mailt u het per e-mail naar met een onderwerpregel die begint met acstnrequest@microsoft.com ACS-nummeraanvraag:.
 

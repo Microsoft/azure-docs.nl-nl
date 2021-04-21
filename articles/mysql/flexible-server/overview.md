@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: 46b056c22a6d1c70a729f5b9558f53c685a878f0
-ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.openlocfilehash: e3259cddc3790f92f56d7f59783cd66a2502b704
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "101732850"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813322"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Azure Database for MySQL Flexible Server (preview-versie)
 
@@ -24,7 +24,7 @@ In dit artikel vindt u een overzicht van en inleiding tot kernconcepten van het 
 
 ## <a name="overview"></a>Overzicht
 
-Azure Database for MySQL Flexible Server is een volledig beheerde databaseservice die is ontworpen om nauwkeurige controle en flexibiliteit te bieden als het gaat om databasebeheerfuncties en configuratie-instellingen. Over het algemeen biedt de service meer flexibiliteit en aanpassingen van de serverconfiguratie op basis van de gebruikersvereisten. Met de flexibele-serverarchitectuur kunnen gebruikers kiezen voor hoge beschikbaarheid binnen één beschikbaarheidszone en tussen meerdere beschikbaarheidszones. Flexibele servers bieden ook betere besturingselementen voor kostenoptimalisatie, met de mogelijkheid om uw server en burstable SKU's te stoppen of te starten, wat ideaal is voor workloads die niet voortdurend volledige rekencapaciteit nodig hebben. De service ondersteunt momenteel de Community-versie van MySQL 5,7 en 8,0. De service is momenteel beschikbaar als preview-versie en verkrijgbaar in allerlei [Azure-regio's](https://azure.microsoft.com/global-infrastructure/services/).
+Azure Database for MySQL Flexible Server is een volledig beheerde databaseservice die is ontworpen om nauwkeurige controle en flexibiliteit te bieden als het gaat om databasebeheerfuncties en configuratie-instellingen. Over het algemeen biedt de service meer flexibiliteit en aanpassingen van de serverconfiguratie op basis van de gebruikersvereisten. Met de flexibele-serverarchitectuur kunnen gebruikers kiezen voor hoge beschikbaarheid binnen één beschikbaarheidszone en tussen meerdere beschikbaarheidszones. Flexibele servers bieden ook betere besturingselementen voor kostenoptimalisatie, met de mogelijkheid om uw server en burstable SKU's te stoppen of te starten, wat ideaal is voor workloads die niet voortdurend volledige rekencapaciteit nodig hebben. De service ondersteunt momenteel de communityversie van MySQL 5.7 en 8.0. De service is momenteel beschikbaar als preview-versie en verkrijgbaar in allerlei [Azure-regio's](https://azure.microsoft.com/global-infrastructure/services/).
 
 Flexibele servers zijn het best geschikt voor 
 - Ontwikkeling van toepassingen die betere controle en aanpassingen vereisen.
@@ -132,22 +132,22 @@ De service voert de communityversie van MySQL uit. Dit biedt volledige toepassin
 
 Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het wereldwijde bereik. De flexibele server voor Azure Database for MySQL is nu beschikbaar in de volgende Azure-regio's:
 
-| Region | Beschikbaarheid | Zone redundante HA | 
+| Region | Beschikbaarheid | Zone-redundante ha | 
 | --- | --- | --- |
 | Europa -west | :heavy_check_mark: | :heavy_check_mark: |
 | Europa - noord | :heavy_check_mark: | :heavy_check_mark: |
-| Verenigd Koninkrijk Zuid | :heavy_check_mark: | BxDxH | 
+| Verenigd Koninkrijk Zuid | :heavy_check_mark: | :heavy_check_mark: | 
 | VS - oost 2 | :heavy_check_mark: | :heavy_check_mark: |
 | VS - west 2 | :heavy_check_mark: | :heavy_check_mark: |
-| VS - centraal | :heavy_check_mark: | BxDxH | 
+| Central US | :heavy_check_mark: | :x: | 
 | VS - oost | :heavy_check_mark: | :heavy_check_mark: |
-| Canada - midden | :heavy_check_mark: | BxDxH | 
+| Canada - midden | :heavy_check_mark: | :x: | 
 | Azië - zuidoost | :heavy_check_mark: | :heavy_check_mark: |
-| Korea - centraal | :heavy_check_mark: | BxDxH | 
-| Japan - oost | :heavy_check_mark: | BxDxH | 
+| Korea - centraal | :heavy_check_mark: | :x: | 
+| Japan - oost | :heavy_check_mark: | :heavy_check_mark: | 
 | Australië - oost | :heavy_check_mark: | :heavy_check_mark: |
 
-We werken binnenkort met het toevoegen van nieuwe regio's.
+We werken eraan om binnenkort nieuwe regio's toe te voegen.
 
 ## <a name="contacts"></a>Contactpersonen
 Voor eventuele vragen of suggesties over de flexibele server voor Azure Database for MySQL stuurt u een e-mailbericht naar het Azure Database for MySQL-team ([@AskAzure DB for MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Dit e-mailadres is geen alias voor technische ondersteuning.

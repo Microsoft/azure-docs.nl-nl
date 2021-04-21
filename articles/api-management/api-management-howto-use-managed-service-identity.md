@@ -1,6 +1,6 @@
 ---
-title: Beheerde identiteiten gebruiken in azure API Management | Microsoft Docs
-description: Meer informatie over het maken van door het systeem toegewezen en door de gebruiker toegewezen identiteiten in API Management met behulp van de Azure Portal, Power shell en een resource manager-sjabloon.
+title: Beheerde identiteiten gebruiken in Azure API Management | Microsoft Docs
+description: Informatie over het maken van door het systeem toegewezen en door de gebruiker toegewezen identiteiten in API Management met behulp van de sjabloon Azure Portal, PowerShell en Resource Manager.
 services: api-management
 documentationcenter: ''
 author: miaojiang
@@ -11,31 +11,32 @@ ms.workload: integration
 ms.topic: article
 ms.date: 03/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 98237efae89e7d88dd23cb7e8fc9f7e9f05bca70
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 40ee196f53af040e4099fb344de5488109ce001b
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102521540"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107812242"
 ---
-# <a name="use-managed-identities-in-azure-api-management"></a>Beheerde identiteiten gebruiken in azure API Management
+# <a name="use-managed-identities-in-azure-api-management"></a>Beheerde identiteiten gebruiken in Azure API Management
 
-In dit artikel leest u hoe u een beheerde identiteit kunt maken voor een Azure API Management-exemplaar en hoe u toegang krijgt tot andere bronnen. Met een beheerde identiteit die is gegenereerd door Azure Active Directory (Azure AD) kan uw API Management-exemplaar eenvoudig en veilig toegang krijgen tot andere met Azure AD beveiligde resources, zoals Azure Key Vault. Azure beheert deze identiteit, zodat u geen geheimen hoeft in te richten of te draaien. Zie [Wat zijn beheerde identiteiten voor Azure-resources?](../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie over beheerde identiteiten.
+In dit artikel wordt beschreven hoe u een beheerde identiteit maakt voor een Azure API Management-exemplaar en hoe u toegang krijgt tot andere resources. Met een beheerde identiteit die wordt gegenereerd door Azure Active Directory (Azure AD) kan uw API Management-exemplaar eenvoudig en veilig toegang krijgen tot andere met Azure AD beveiligde resources, zoals Azure Key Vault. Azure beheert deze identiteit, zodat u geen geheimen hoeft in terichten of draaien. Zie Wat zijn beheerde identiteiten voor Azure-resources? voor meer informatie [over beheerde identiteiten.](../active-directory/managed-identities-azure-resources/overview.md)
 
-U kunt twee typen identiteiten toekennen aan een API Management-exemplaar:
+U kunt twee typen identiteiten aan een API Management verlenen:
 
-- Een door het *systeem toegewezen identiteit* is gekoppeld aan uw service en wordt verwijderd als uw service wordt verwijderd. De service kan slechts één door het systeem toegewezen identiteit hebben.
-- Een door de *gebruiker toegewezen identiteit* is een zelfstandige Azure-resource die kan worden toegewezen aan uw service. De service kan meerdere door de gebruiker toegewezen identiteiten hebben.
+- Een *door het systeem toegewezen identiteit* is gekoppeld aan uw service en wordt verwijderd als uw service wordt verwijderd. De service kan slechts één door het systeem toegewezen identiteit hebben.
+- Een *door de gebruiker toegewezen identiteit* is een zelfstandige Azure-resource die kan worden toegewezen aan uw service. De service kan meerdere door de gebruiker toegewezen identiteiten hebben.
 
 ## <a name="create-a-system-assigned-managed-identity"></a>Een door het systeem toegewezen beheerde identiteit maken
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Als u een beheerde identiteit wilt instellen in de Azure Portal, maakt u eerst een API Management-exemplaar en schakelt u vervolgens de functie in.
+Als u een beheerde identiteit wilt instellen in de Azure Portal, maakt u eerst een API Management-instantie en vervolgens wordt de functie ingeschakeld.
 
-1. Maak een API Management-exemplaar in de portal zoals u dat gewend bent. Blader ernaar in de portal.
-2. Selecteer **beheerde identiteiten**.
-3. Schakel op het tabblad **systeem toegewezen** de optie **status** in **op aan**. Selecteer **Opslaan**.
+1. Maak een API Management in de portal zoals u normaal zou doen. Blader er in de portal naar.
+2. Selecteer **Beheerde identiteiten.**
+3. Schakel op **het tabblad Systeem** toegewezen de status **in** op **Aan.** Selecteer **Opslaan**.
 
     :::image type="content" source="./media/api-management-msi/enable-system-msi.png" alt-text="Selecties voor het inschakelen van een door het systeem toegewezen beheerde identiteit" border="true":::
 
@@ -43,11 +44,11 @@ Als u een beheerde identiteit wilt instellen in de Azure Portal, maakt u eerst e
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-De volgende stappen begeleiden u bij het maken van een API Management-exemplaar en het toewijzen van een identiteit met behulp van Azure PowerShell. 
+De volgende stappen helpen u bij het maken van een API Management en het toewijzen van een identiteit met behulp van Azure PowerShell. 
 
-1. Als dat nodig is, installeert u Azure PowerShell met behulp van de instructies in de [Azure PowerShell Guide](/powershell/azure/install-az-ps). Voer vervolgens uit `Connect-AzAccount` om een verbinding te maken met Azure.
+1. Installeer indien nodig de Azure PowerShell met behulp van de instructies in de [Azure PowerShell handleiding.](/powershell/azure/install-az-ps) Voer vervolgens `Connect-AzAccount` uit om een verbinding met Azure te maken.
 
-2. Gebruik de volgende code om het exemplaar te maken. Zie voor meer voor beelden van het gebruik van Azure PowerShell met een API Management exemplaar [API Management Power shell](powershell-samples.md)-voor beelden.
+2. Gebruik de volgende code om het exemplaar te maken. Zie PowerShell Azure PowerShell voorbeelden voor API Management API Management meer voorbeelden van het gebruik van [een API Management-instantie.](powershell-samples.md)
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -57,7 +58,7 @@ De volgende stappen begeleiden u bij het maken van een API Management-exemplaar 
     New-AzApiManagement -ResourceGroupName $resourceGroupName -Name consumptionskuservice -Location $location -Sku Consumption -Organization contoso -AdminEmail contoso@contoso.com -SystemAssignedIdentity
     ```
 
-3. Een bestaand exemplaar bijwerken om de identiteit te maken:
+3. Werk een bestaand exemplaar bij om de identiteit te maken:
 
     ```azurepowershell-interactive
     # Get an API Management instance
@@ -69,7 +70,7 @@ De volgende stappen begeleiden u bij het maken van een API Management-exemplaar 
 
 ### <a name="azure-resource-manager-template"></a>Azure Resource Manager-sjabloon
 
-U kunt een API Management-exemplaar maken met een identiteit door de volgende eigenschap op te nemen in de resource definitie:
+U kunt een API Management maken met een identiteit door de volgende eigenschap op te geven in de resourcedefinitie:
 
 ```json
 "identity" : {
@@ -77,9 +78,9 @@ U kunt een API Management-exemplaar maken met een identiteit door de volgende ei
 }
 ```
 
-Met deze eigenschap wordt aan Azure aangegeven dat de identiteit voor uw API Management-exemplaar moet worden gemaakt en beheerd.
+Deze eigenschap vertelt Azure om de identiteit voor uw API Management maken en beheren.
 
-Een complete Azure Resource Manager sjabloon kan er bijvoorbeeld als volgt uitzien:
+Zo kan een volledige Azure Resource Manager er als volgt uitzien:
 
 ```json
 {
@@ -116,27 +117,27 @@ Wanneer het exemplaar wordt gemaakt, heeft het de volgende aanvullende eigenscha
 }
 ```
 
-De `tenantId` eigenschap geeft aan met welke Azure AD-Tenant de identiteit behoort. De `principalId` eigenschap is een unieke id voor de nieuwe identiteit van het exemplaar. De Service-Principal in azure AD heeft dezelfde naam die u hebt opgegeven voor uw API Management-exemplaar.
+De `tenantId` eigenschap identificeert tot welke Azure AD-tenant de identiteit behoort. De eigenschap is een unieke id voor de nieuwe identiteit `principalId` van het exemplaar. In Azure AD heeft de service-principal dezelfde naam die u aan uw API Management-exemplaar hebt gegeven.
 
 > [!NOTE]
-> Een API Management-exemplaar kan tegelijkertijd zowel aan het systeem toegewezen als door de gebruiker toegewezen identiteiten hebben. In dit geval is de `type` eigenschap `SystemAssigned,UserAssigned` .
+> Een API Management kan tegelijkertijd zowel door het systeem toegewezen als door de gebruiker toegewezen identiteiten hebben. In dit geval is `type` de eigenschap `SystemAssigned,UserAssigned` .
 
-## <a name="supported-scenarios-using-system-assigned-identity"></a>Ondersteunde scenario's waarbij systeem identiteiten worden gebruikt
+## <a name="supported-scenarios-using-system-assigned-identity"></a>Ondersteunde scenario's met door het systeem toegewezen identiteit
 
-### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault"></a>Een aangepast TLS/SSL-certificaat voor het API Management-exemplaar verkrijgen van Azure Key Vault
-U kunt de door het systeem toegewezen identiteit van een API Management exemplaar gebruiken om aangepaste TLS/SSL-certificaten op te halen die zijn opgeslagen in Azure Key Vault. U kunt deze certificaten vervolgens toewijzen aan aangepaste domeinen in het API Management-exemplaar. Houd rekening met het volgende:
+### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault"></a>Verkrijg een aangepast TLS/SSL-certificaat voor het API Management-exemplaar van Azure Key Vault
+U kunt de door het systeem toegewezen identiteit van een API Management gebruiken om aangepaste TLS/SSL-certificaten op te halen die zijn opgeslagen in Azure Key Vault. U kunt deze certificaten vervolgens toewijzen aan aangepaste domeinen in API Management-exemplaar. Houd rekening met het volgende:
 
-- Het inhouds type van het geheim moet *Application/x-pkcs12/pfx-profiel* zijn.
-- Gebruik het geheime eind punt van het Key Vault certificaat dat het geheim bevat.
+- Het inhoudstype van het geheim moet *application/x-pkcs12 zijn.*
+- Gebruik het Key Vault certificaatgeheim, dat het geheim bevat.
 
 > [!Important]
-> Als u de object versie van het certificaat niet opgeeft, ontvangt API Management automatisch de nieuwere versie van het certificaat binnen vier uur nadat het is bijgewerkt in Key Vault.
+> Als u de objectversie van het certificaat niet op geeft, krijgt API Management automatisch de nieuwere versie van het certificaat binnen vier uur nadat het is bijgewerkt in Key Vault.
 
-In het volgende voor beeld ziet u een Azure Resource Manager sjabloon die de volgende stappen bevat:
+In het volgende voorbeeld ziet u Azure Resource Manager sjabloon met de volgende stappen:
 
-1. Maak een API Management-exemplaar met een beheerde identiteit.
-2. Het toegangs beleid van een Azure Key Vault-exemplaar bijwerken en toestaan dat het API Management exemplaar geheimen van de instantie kan verkrijgen.
-3. Werk het API Management-exemplaar bij door een aangepaste domein naam in te stellen via een certificaat van de Key Vault instantie.
+1. Maak een API Management met een beheerde identiteit.
+2. Werk het toegangsbeleid van een Azure Key Vault bij en sta het API Management toe om er geheimen uit te halen.
+3. Werk het API Management bij door een aangepaste domeinnaam in te stellen via een certificaat van het Key Vault exemplaar.
 
 ```json
 {
@@ -260,36 +261,36 @@ In het volgende voor beeld ziet u een Azure Resource Manager sjabloon die de vol
 }
 ```
 
-### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Verifiëren voor de back-end met behulp van een API Management identiteit
+### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Verifiëren bij de back-end met behulp van API Management identiteit
 
-U kunt de door het systeem toegewezen identiteit gebruiken om u te verifiëren bij de back-end via het beleid voor [beheerde identiteiten](api-management-authentication-policies.md#ManagedIdentity) van de verificatie.
+U kunt de door het systeem toegewezen identiteit gebruiken om te verifiëren bij de [back-end via het beleid authentication-managed-identity.](api-management-authentication-policies.md#ManagedIdentity)
 
-### <a name="connect-to-azure-resources-behind-ip-firewall-using-system-assigned-managed-identity"></a><a name="apim-as-trusted-service"></a>Verbinding maken met Azure-resources achter IP-Firewall met door het systeem toegewezen beheerde identiteit
+### <a name="connect-to-azure-resources-behind-ip-firewall-using-system-assigned-managed-identity"></a><a name="apim-as-trusted-service"></a>Verbinding maken met Azure-resources achter IP Firewall met behulp van door het systeem toegewezen beheerde identiteit
 
 
-API Management is een vertrouwde micro soft-service voor de volgende resources. Hiermee kan de service verbinding maken met de volgende bronnen achter een firewall. Nadat de juiste Azure-rol expliciet aan de door het [systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) voor het betreffende bron exemplaar, wordt de reik wijdte van toegang voor het exemplaar overeenkomt met de Azure-rol die is toegewezen aan de beheerde identiteit.
+API Management is een vertrouwde Microsoft-service voor de volgende resources. Hierdoor kan de service verbinding maken met de volgende resources achter een firewall. Nadat de juiste Azure-rol expliciet is toegewezen aan de door het systeem toegewezen beheerde identiteit voor dat resource-exemplaar, komt het toegangsbereik voor het exemplaar overeen met de [Azure-rol](../active-directory/managed-identities-azure-resources/overview.md) die is toegewezen aan de beheerde identiteit.
 
 
 |Azure-service | Koppeling|
 |---|---|
-|Azure Storage | [Vertrouwde toegang tot Azure-opslag](../storage/common/storage-network-security.md?tabs=azure-portal#trusted-access-based-on-system-assigned-managed-identity)|
-|Azure Service Bus | [Trusted-Access-to-Azure-service-bus](../service-bus-messaging/service-bus-ip-filtering.md#trusted-microsoft-services)|
-|Azure Event Hub | [Trused-Access-to-Azure-Event-hub](../event-hubs/event-hubs-ip-filtering.md#trusted-microsoft-services)|
+|Azure Storage | [Trusted-access-to-azure-storage](../storage/common/storage-network-security.md?tabs=azure-portal#trusted-access-based-on-system-assigned-managed-identity)|
+|Azure Service Bus | [Trusted-access-to-azure-service-bus](../service-bus-messaging/service-bus-ip-filtering.md#trusted-microsoft-services)|
+|Azure Event Hub | [Trused-access-to-azure-event-hub](../event-hubs/event-hubs-ip-filtering.md#trusted-microsoft-services)|
 
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Een door de gebruiker toegewezen beheerde identiteit maken
 
 > [!NOTE]
-> U kunt een API Management-exemplaar koppelen aan Maxi maal 10 door de gebruiker toegewezen beheerde identiteiten.
+> U kunt een API Management aan maximaal 10 door de gebruiker toegewezen beheerde identiteiten koppelen.
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een API Management-exemplaar en schakelt u vervolgens de functie in.
+Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een API Management en vervolgens wordt de functie ingeschakeld.
 
-1. Maak een API Management-exemplaar in de portal zoals u dat gewend bent. Blader ernaar in de portal.
-2. Selecteer **beheerde identiteiten**.
-3. Selecteer **toevoegen** op het tabblad door de **gebruiker toegewezen** .
-4. Zoek naar de identiteit die u eerder hebt gemaakt en selecteer deze. Selecteer **Toevoegen**.
+1. Maak een API Management in de portal zoals u dat normaal zou doen. Blader er in de portal naar.
+2. Selecteer **Beheerde identiteiten.**
+3. Selecteer op **het tabblad Door** de gebruiker toegewezen de optie **Toevoegen.**
+4. Zoek de identiteit die u eerder hebt gemaakt en selecteer deze. Selecteer **Toevoegen**.
 
    :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Selecties voor het inschakelen van een door de gebruiker toegewezen beheerde identiteit" border="true":::
 
@@ -297,11 +298,11 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een API
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-De volgende stappen begeleiden u bij het maken van een API Management-exemplaar en het toewijzen van een identiteit met behulp van Azure PowerShell. 
+De volgende stappen helpen u bij het maken van een API Management en het toewijzen van een identiteit met behulp van Azure PowerShell. 
 
-1. Als dat nodig is, installeert u de Azure PowerShell met behulp van de instructies in de [Azure PowerShell Guide](/powershell/azure/install-az-ps). Voer vervolgens uit `Connect-AzAccount` om een verbinding te maken met Azure.
+1. Installeer indien nodig de Azure PowerShell aan de hand van de instructies in de [Azure PowerShell handleiding.](/powershell/azure/install-az-ps) Voer vervolgens `Connect-AzAccount` uit om een verbinding met Azure te maken.
 
-2. Gebruik de volgende code om het exemplaar te maken. Zie voor meer voor beelden van het gebruik van Azure PowerShell met een API Management exemplaar [API Management Power shell](powershell-samples.md)-voor beelden.
+2. Gebruik de volgende code om het exemplaar te maken. Zie PowerShell Azure PowerShell voorbeelden voor API Management API Management meer voorbeelden van het gebruik van [een API Management-instantie.](powershell-samples.md)
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -332,7 +333,7 @@ De volgende stappen begeleiden u bij het maken van een API Management-exemplaar 
 
 ### <a name="azure-resource-manager-template"></a>Azure Resource Manager-sjabloon
 
-U kunt een API Management-exemplaar maken met een identiteit door de volgende eigenschap op te nemen in de resource definitie:
+U kunt een API Management maken met een identiteit door de volgende eigenschap op te geven in de resourcedefinitie:
 
 ```json
 "identity": {
@@ -343,9 +344,9 @@ U kunt een API Management-exemplaar maken met een identiteit door de volgende ei
 }
 ```
 
-Als u het door de gebruiker toegewezen type toevoegt, krijgt Azure de door de gebruiker toegewezen identiteit te gebruiken die voor uw exemplaar is opgegeven.
+Door het door de gebruiker toegewezen type toe te voegen, weet Azure dat de door de gebruiker toegewezen identiteit moet worden gebruikt die is opgegeven voor uw exemplaar.
 
-Een complete Azure Resource Manager sjabloon kan er bijvoorbeeld als volgt uitzien:
+Zo kan een volledige Azure Resource Manager er als volgt uitzien:
 
 ```json
 {
@@ -378,7 +379,7 @@ Een complete Azure Resource Manager sjabloon kan er bijvoorbeeld als volgt uitzi
 }
 ```
 
-Wanneer de service wordt gemaakt, heeft deze de volgende aanvullende eigenschappen:
+Wanneer de service is gemaakt, heeft deze de volgende aanvullende eigenschappen:
 
 ```json
 "identity": {
@@ -392,47 +393,47 @@ Wanneer de service wordt gemaakt, heeft deze de volgende aanvullende eigenschapp
 }
 ```
 
-De `principalId` eigenschap is een unieke id voor de identiteit die wordt gebruikt voor Azure AD-beheer. De `clientId` eigenschap is een unieke id voor de nieuwe identiteit van de toepassing die wordt gebruikt om op te geven welke identiteit tijdens runtime-aanroepen moet worden gebruikt.
+De `principalId` eigenschap is een unieke id voor de identiteit die wordt gebruikt voor Azure AD-beheer. De eigenschap is een unieke id voor de nieuwe identiteit van de toepassing die wordt gebruikt om op te geven welke identiteit moet worden gebruikt `clientId` tijdens runtime-aanroepen.
 
 > [!NOTE]
-> Een API Management-exemplaar kan tegelijkertijd zowel aan het systeem toegewezen als door de gebruiker toegewezen identiteiten hebben. In dit geval is de `type` eigenschap `SystemAssigned,UserAssigned` .
+> Een API Management kan tegelijkertijd zowel door het systeem toegewezen als door de gebruiker toegewezen identiteiten hebben. In dit geval is `type` de eigenschap `SystemAssigned,UserAssigned` .
 
 ## <a name="supported-scenarios-using-user-assigned-managed-identity"></a>Ondersteunde scenario's met door de gebruiker toegewezen beheerde identiteit
 
-### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault-ua"></a>Een aangepast TLS/SSL-certificaat voor het API Management-exemplaar verkrijgen van Azure Key Vault
-U kunt elke door de gebruiker toegewezen identiteit gebruiken om een vertrouwens relatie tussen een API Management exemplaar en de sleutel kluis tot stand te brengen. Deze vertrouwens relatie kan vervolgens worden gebruikt om aangepaste TLS/SSL-certificaten op te halen die zijn opgeslagen in Azure Key Vault. U kunt deze certificaten vervolgens toewijzen aan aangepaste domeinen in het API Management-exemplaar. 
+### <a name="obtain-a-custom-tlsssl-certificate-for-the-api-management-instance-from-azure-key-vault"></a><a name="use-ssl-tls-certificate-from-azure-key-vault-ua"></a>Verkrijg een aangepast TLS/SSL-certificaat voor het API Management-exemplaar van Azure Key Vault
+U kunt elke door de gebruiker toegewezen identiteit gebruiken om een vertrouwensrelatie tot stand te API Management een exemplaar en KeyVault. Deze vertrouwensrelatie kan vervolgens worden gebruikt om aangepaste TLS/SSL-certificaten op te halen die zijn opgeslagen in Azure Key Vault. U kunt deze certificaten vervolgens toewijzen aan aangepaste domeinen in de API Management-instantie. 
 
 Houd rekening met het volgende:
 
-- Het inhouds type van het geheim moet *Application/x-pkcs12/pfx-profiel* zijn.
-- Gebruik het geheime eind punt van het Key Vault certificaat dat het geheim bevat.
+- Het inhoudstype van het geheim moet *application/x-pkcs12 zijn.*
+- Gebruik het Key Vault certificaatgeheim dat het geheim bevat.
 
 > [!Important]
-> Als u de object versie van het certificaat niet opgeeft, ontvangt API Management automatisch de nieuwere versie van het certificaat binnen vier uur nadat het is bijgewerkt in Key Vault.
+> Als u de objectversie van het certificaat niet op geeft, krijgt API Management automatisch de nieuwere versie van het certificaat binnen vier uur nadat het is bijgewerkt in Key Vault.
 
-Zie [API Management met op sleutel kluis gebaseerd SSL met door de gebruiker toegewezen identiteit](https://github.com/Azure/azure-quickstart-templates/blob/master/101-api-management-key-vault-create/azuredeploy.json)voor de volledige sjabloon.
+Zie voor de volledige sjabloon API Management SSL op basis [van KeyVault](https://github.com/Azure/azure-quickstart-templates/blob/master/101-api-management-key-vault-create/azuredeploy.json)met behulp van door de gebruiker toegewezen identiteit.
 
-In deze sjabloon voert u de volgende implementatie uit:
+In deze sjabloon implementeert u:
 
 * Azure API Management
-* Door Azure beheerde gebruiker toegewezen identiteit
-* Azure-sleutel kluis voor het opslaan van het SSL/TLS-certificaat
+* Door Azure beheerde door de gebruiker toegewezen identiteit
+* Azure KeyVault voor het opslaan van het SSL/TLS-certificaat
 
 Klik op de volgende knop om de implementatie automatisch uit te voeren:
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-api-management-key-vault-create%2Fazuredeploy.json)
 
-### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Verifiëren voor de back-end met behulp van een door de gebruiker toegewezen identiteit
+### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Verifiëren bij de back-end met behulp van een door de gebruiker toegewezen identiteit
 
-U kunt de door de gebruiker toegewezen identiteit gebruiken om u te verifiëren bij de back-end via het beleid voor [beheerde identiteiten](api-management-authentication-policies.md#ManagedIdentity) van de verificatie.
+U kunt de door de gebruiker toegewezen identiteit gebruiken om te verifiëren bij de back-end via het [beleid authentication-managed-identity.](api-management-authentication-policies.md#ManagedIdentity)
 
 ## <a name="remove-an-identity"></a><a name="remove"></a>Een identiteit verwijderen
 
-U kunt een door het systeem toegewezen identiteit verwijderen door de functie uit te scha kelen via de portal of de Azure Resource Manager sjabloon op dezelfde manier als waarop deze is gemaakt. Door de gebruiker toegewezen identiteiten kunnen afzonderlijk worden verwijderd. Als u alle identiteiten wilt verwijderen, stelt u het identiteits type in op `"None"` .
+U kunt een door het systeem toegewezen identiteit verwijderen door de functie via de portal of de Azure Resource Manager-sjabloon op dezelfde manier uit te Azure Resource Manager die is gemaakt. Door de gebruiker toegewezen identiteiten kunnen afzonderlijk worden verwijderd. Als u alle identiteiten wilt verwijderen, stelt u het identiteitstype in op `"None"` .
 
-Als u een door het systeem toegewezen identiteit op deze manier verwijdert, wordt deze ook uit Azure AD verwijderd. Door het systeem toegewezen identiteiten worden ook automatisch verwijderd uit Azure AD wanneer het API Management exemplaar wordt verwijderd.
+Als u een door het systeem toegewezen identiteit op deze manier verwijdert, wordt deze ook verwijderd uit Azure AD. Door het systeem toegewezen identiteiten worden ook automatisch verwijderd uit Azure AD wanneer API Management-exemplaar wordt verwijderd.
 
-Als u alle identiteiten wilt verwijderen met behulp van de sjabloon Azure Resource Manager, werkt u deze sectie bij:
+Als u alle identiteiten wilt verwijderen met behulp van Azure Resource Manager sjabloon, moet u deze sectie bijwerken:
 
 ```json
 "identity": {
@@ -441,9 +442,9 @@ Als u alle identiteiten wilt verwijderen met behulp van de sjabloon Azure Resour
 ```
 
 > [!Important]
-> Als een API Management-exemplaar is geconfigureerd met een aangepast SSL-certificaat van Key Vault en u probeert een beheerde identiteit uit te scha kelen, mislukt de aanvraag.
+> Als een API Management is geconfigureerd met een aangepast SSL-certificaat van Key Vault en u een beheerde identiteit probeert uit te schakelen, mislukt de aanvraag.
 >
-> U kunt de blok kering zelf opheffen door van een Azure Key Vault-certificaat naar een inline-gecodeerd certificaat te scha kelen en vervolgens de beheerde identiteit uit te scha kelen. Zie [Een aangepaste domeinnaam configureren](configure-custom-domain.md) voor meer informatie.
+> U kunt uzelf deblokkeren door over te schakelen van een Azure Key Vault certificaat naar een inline gecodeerd certificaat en vervolgens de beheerde identiteit uit te schakelen. Zie [Een aangepaste domeinnaam configureren](configure-custom-domain.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

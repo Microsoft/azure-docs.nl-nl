@@ -1,60 +1,60 @@
 ---
-title: Azure Monitor Application Insights java
-description: Bewaking van toepassings prestaties voor Java-toepassingen die worden uitgevoerd in een omgeving zonder dat code hoeft te worden gewijzigd. Gedistribueerde tracering en toepassings toewijzing.
+title: Azure Monitor Application Insights Java
+description: Bewaking van toepassingsprestaties voor Java-toepassingen die in elke omgeving worden uitgevoerd zonder dat code moet worden gewijzigd. Gedistribueerde tracering en toepassingskaart.
 ms.topic: conceptual
 ms.date: 03/29/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: dc6eaaec334e7373f1a673bd1513ef05b761fee6
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: 3f22e165fe4a3f86ecce8b1e307b19fae0eeac81
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106450018"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107812044"
 ---
-# <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Azure Monitor Application Insights voor de bewaking van Java-toepassingen
+# <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Java-toepassingsbewaking zonder code Azure Monitor Application Insights
 
-Bewaking van Java-toepassingen is heel eenvoudig: er zijn geen code wijzigingen, de Java-Agent kan worden ingeschakeld via slechts een paar configuratie wijzigingen.
+Toepassingsbewaking zonder Java-code gaat om eenvoud: er zijn geen codewijzigingen. De Java-agent kan worden ingeschakeld via een paar configuratiewijzigingen.
 
- De Java-agent werkt in elke omgeving en biedt u de mogelijkheid om al uw Java-toepassingen te bewaken. Met andere woorden, of u nu uw java-apps uitvoert op Vm's, on-premises, in AKS, op Windows, Linux-u de naam geeft, de Java 3,0-agent bewaakt uw app.
+ De Java-agent werkt in elke omgeving en stelt u in staat om al uw Java-toepassingen te bewaken. Met andere woorden, of u nu uw Java-apps op VM's, on-premises, in AKS, in Windows, Linux, gebruikt, de Java 3.0-agent bewaakt uw app.
 
-Het is niet meer nodig om de Application Insights Java-SDK toe te voegen aan uw toepassing, omdat de 3,0-agent automatisch aanvragen verzamelt, afhankelijkheden en logboeken zelf.
+Het toevoegen Application Insights Java SDK aan uw toepassing is niet langer vereist, omdat de 3.0-agent automatisch aanvragen, afhankelijkheden en logboeken zelf verzamelt.
 
-U kunt nog steeds aangepaste telemetrie verzenden vanuit uw toepassing. De 3,0-agent houdt deze samen met alle automatisch verzamelde telemetrie en correleert deze.
+U kunt nog steeds aangepaste telemetrie verzenden vanuit uw toepassing. De 3.0-agent houdt deze bij en correleert deze samen met alle automatisch verzamelde telemetrie.
 
-De 3,0-agent ondersteunt Java 8 en hoger.
+De 3.0-agent ondersteunt Java 8 en hoger.
 
 ## <a name="quickstart"></a>Snelstart
 
-**1. de agent downloaden**
+**1. De agent downloaden**
 
 > [!WARNING]
-> **Als u een upgrade uitvoert van 3,0 Preview**
+> **Als u een upgrade van 3.0 Preview wilt uitvoeren**
 >
-> Controleer alle [configuratie opties](./java-standalone-config.md) zorgvuldig, omdat de JSON-structuur volledig is gewijzigd, naast de naam van het bestand dat alle kleine letters bevat.
+> Controleer alle [configuratieopties](./java-standalone-config.md) zorgvuldig, omdat de JSON-structuur volledig is gewijzigd, naast de bestandsnaam zelf, die in kleine letters is gegaan.
 
-[Applicationinsights-agent-3.0.3. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.3/applicationinsights-agent-3.0.3.jar) downloaden
+Download [applicationinsights-agent-3.0.3.jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.3/applicationinsights-agent-3.0.3.jar)
 
-**2. Wijs de JVM naar de agent**
+**2. De JVM naar de agent laten wijzen**
 
-Toevoegen `-javaagent:path/to/applicationinsights-agent-3.0.3.jar` aan de JVM-argumenten van uw toepassing
+Toevoegen `-javaagent:path/to/applicationinsights-agent-3.0.3.jar` aan de JVM-args van uw toepassing
 
-Typische argumenten voor JVM zijn onder andere `-Xmx512m` en `-XX:+UseG1GC` . Als u weet waar u deze toevoegt, weet u dus al waar u dit kunt toevoegen.
+Typische JVM-args zijn `-Xmx512m` en `-XX:+UseG1GC` . Dus als u weet waar u deze toevoegt, weet u al waar u dit moet toevoegen.
 
-Raadpleeg [Tips voor het bijwerken van uw JVM-argumenten](./java-standalone-arguments.md)voor meer informatie over het configureren van de JVM-argumenten van uw toepassing.
+Zie Tips voor het bijwerken van uw JVM-args voor meer hulp bij het configureren van de [JVM-args van uw toepassing.](./java-standalone-arguments.md)
 
-**3. Wijs de agent naar uw Application Insights-resource**
+**3. De agent naar uw Application Insights wijzen**
 
-Als u nog geen Application Insights resource hebt, kunt u een nieuw item maken door de stappen in de [hand leiding](./create-new-resource.md)voor het maken van resources te volgen.
+Als u nog geen resource Application Insights, kunt u een nieuwe maken door de stappen in de handleiding voor het maken [van resources te volgen.](./create-new-resource.md)
 
-Wijs de agent naar uw Application Insights-bron, door een omgevings variabele in te stellen:
+Wijs de agent naar Application Insights resource, door een omgevingsvariabele in te stellen:
 
 ```
 APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 ```
 
-U kunt ook een configuratie bestand maken met de naam `applicationinsights.json` en dit in dezelfde map plaatsen als `applicationinsights-agent-3.0.3.jar` met de volgende inhoud:
+Of door een configuratiebestand met de naam te `applicationinsights.json` maken en dit in dezelfde map te plaatsen als , met de volgende `applicationinsights-agent-3.0.3.jar` inhoud:
 
 ```json
 {
@@ -62,52 +62,52 @@ U kunt ook een configuratie bestand maken met de naam `applicationinsights.json`
 }
 ```
 
-U kunt uw connection string vinden in uw Application Insights-resource:
+U vindt uw connection string in uw Application Insights resource:
 
-:::image type="content" source="media/java-ipa/connection-string.png" alt-text="Verbindings reeks Application Insights":::
+:::image type="content" source="media/java-ipa/connection-string.png" alt-text="Application Insights verbindingsreeks":::
 
-**4. dat is alles!**
+**4. Dat is alles.**
 
-Start nu uw toepassing en ga naar uw Application Insights-resource in de Azure Portal om uw bewakings gegevens weer te geven.
+Start nu uw toepassing en ga naar uw Application Insights resource in de Azure Portal bewakingsgegevens te bekijken.
 
 > [!NOTE]
-> Het kan enkele minuten duren voordat uw bewakings gegevens in de portal worden weer gegeven.
+> Het kan enkele minuten duren voordat uw bewakingsgegevens worden weer geven in de portal.
 
 
 ## <a name="configuration-options"></a>Configuratie-opties
 
-In het `applicationinsights.json` bestand kunt u verder configureren:
+In het `applicationinsights.json` bestand kunt u bovendien het volgende configureren:
 
-* Rolnaam van Cloud
-* Cloud rolinstantie
+* Naam van cloudrol
+* Cloudrol-exemplaar
 * Steekproeven
-* Metrische gegevens van JMX
+* Metrische JMX-gegevens
 * Aangepaste dimensies
-* Telemetrie-processors (preview-versie)
-* Automatisch verzamelde logboek registratie
-* Automatisch verzamelde metrische gegevens over micrometer (inclusief lente-metrische gegevens over het starten van de klep)
+* Telemetrieprocessors (preview)
+* Automatisch verzamelde logboekregistratie
+* Automatisch verzamelde metrische gegevens van Micrometer (inclusief Spring Boot Actuator)
 * Hartslag
 * HTTP-proxy
-* Zelf diagnostische gegevens
+* Zelfdiagnose
 
-Zie [configuratie opties](./java-standalone-config.md) voor volledige informatie.
+Zie [Configuratieopties voor](./java-standalone-config.md) meer informatie.
 
 ## <a name="auto-collected-requests-dependencies-logs-and-metrics"></a>Automatisch verzamelde aanvragen, afhankelijkheden, logboeken en metrische gegevens
 
 ### <a name="requests"></a>Aanvragen
 
-* JMS consumenten
-* Kafka consumenten
-* Netty/webstroom
+* JMS-consumenten
+* Kafka-consumenten
+* Netty/WebFhost
 * Servlets
-* Lente planning
+* Spring-planning
 
-### <a name="dependencies-with-distributed-trace-propagation"></a>Afhankelijkheden met gedistribueerde traceer doorgifte
+### <a name="dependencies-with-distributed-trace-propagation"></a>Afhankelijkheden met gedistribueerde traceer doorgeven
 
-* Apache httpclient maakt en HttpAsyncClient
+* Apache HttpClient en HttpAsyncClient
 * gRPC
-* Java. net. HttpURLConnection
-* JMS
+* java.net.HttpURLConnection
+* Jms
 * Kafka
 * Netty-client
 * OkHttp
@@ -117,51 +117,87 @@ Zie [configuratie opties](./java-standalone-config.md) voor volledige informatie
 * Cassandra
 * JDBC
 * MongoDB (async en sync)
-* Redis (sla en jedis)
+* Redis (Sla en Jedis)
 
 ### <a name="logs"></a>Logboeken
 
-* Java. util. Logging
+* java.util.logging
 * Log4j (inclusief MDC-eigenschappen)
-* SLF4J/logback (inclusief MDC-eigenschappen)
+* SLF4J/Logback (inclusief MDC-eigenschappen)
 
 ### <a name="metrics"></a>Metrische gegevens
 
-* Micrometer (met inbegrip van gegevens over de veer boot-klep)
-* Metrische gegevens van JMX
+* Micrometer (inclusief metrische Spring Boot Actuator)
+* Metrische JMX-gegevens
 
-### <a name="azure-sdks"></a>Azure-SDK's
+### <a name="azure-sdks-preview"></a>Azure SDK's (preview)
 
-* Deze functie is beschikbaar als preview-versie. Zie de [configuratie opties](./java-standalone-config.md#auto-collected-azure-sdk-telemetry) voor informatie over het inschakelen ervan.
+Zie de [configuratieopties voor het](./java-standalone-config.md#auto-collected-azure-sdk-telemetry-preview) inschakelen van deze preview-functie en het vastleggen van de telemetrie die door deze Azure SDK's wordt uitgezonden:
+
+* [App Configuration](https://docs.microsoft.com/java/api/overview/azure/data-appconfiguration-readme) 1.1.10+
+* [Cognitive Search](https://docs.microsoft.com/java/api/overview/azure/search-documents-readme) 11.3.0+
+* [Communication Chat](https://docs.microsoft.com/java/api/overview/azure/communication-chat-readme) 1.0.0+
+* [Communication Common](https://docs.microsoft.com/java/api/overview/azure/communication-common-readme) 1.0.0+
+* [Communication Identity](https://docs.microsoft.com/java/api/overview/azure/communication-identity-readme) 1.0.0+
+* [Communicatie sms](https://docs.microsoft.com/java/api/overview/azure/communication-sms-readme) 1.0.0+
+* [Cosmos DB](https://docs.microsoft.com/java/api/overview/azure/cosmos-readme) 4.13.0+
+* [Event Grid](https://docs.microsoft.com/java/api/overview/azure/messaging-eventgrid-readme) 4.0.0+
+* [Event Hubs](https://docs.microsoft.com/java/api/overview/azure/messaging-eventhubs-readme) 5.6.0+
+* [Event Hubs - Azure Blob Storage Checkpoint Store](https://docs.microsoft.com/java/api/overview/azure/messaging-eventhubs-checkpointstore-blob-readme) 1.5.1+
+* [Form Recognizer](https://docs.microsoft.com/java/api/overview/azure/ai-formrecognizer-readme) 3.0.6+
+* [Identiteit](https://docs.microsoft.com/java/api/overview/azure/identity-readme) 1.2.4+
+* [Key Vault certificaten](https://docs.microsoft.com/java/api/overview/azure/security-keyvault-certificates-readme) 4.1.6+
+* [Key Vault - Sleutels](https://docs.microsoft.com/java/api/overview/azure/security-keyvault-keys-readme) 4.2.6+
+* [Key Vault - Geheimen](https://docs.microsoft.com/java/api/overview/azure/security-keyvault-secrets-readme) 4.2.6+
+* [Service Bus](https://docs.microsoft.com/java/api/overview/azure/messaging-servicebus-readme) 7.1.0+
+* [Text Analytics](https://docs.microsoft.com/java/api/overview/azure/ai-textanalytics-readme) 5.0.4+
+
+[//]: # "de bovenstaande namen en koppelingen die zijn afgeschroot https://azure.github.io/azure-sdk/releases/latest/java.html"
+[//]: # "en versiesynchronisatie worden handmatig uitgevoerd op basis van de oudste versie in maven central die is gebouwd op azure-core 1.14.0"
+[//]: # ""
+[//]: # "var table = document.querySelector('#tg-sb-content > div > table')"
+[//]: # "var str = ''"
+[//]: # "for (var i = 1, row; row = table.rows[i]; i++) {"
+[//]: # "  var name = row.cells[0].getElementsByTagName('div')[0].textContent.trim()"
+[//]: # "  var stableRow = row.cells[1]"
+[//]: # "  var versionBadge = stableRow.querySelector('.badge')"
+[//]: # "  if (!versionBadge) {"
+[//]: # "    Blijven"
+[//]: # "  }"
+[//]: # "  var version = versionBadge.textContent.trim()"
+[//]: # "  var link = stableRow.querySelectorAll('a')[2].href"
+[//]: # "  str += '* [' + naam + '](' + koppeling + ') ' + versie"
+[//]: # "}"
+[//]: # "console.log(str)"
 
 ## <a name="send-custom-telemetry-from-your-application"></a>Aangepaste telemetrie verzenden vanuit uw toepassing
 
-Met ons doel in 3.0 + kunt u uw aangepaste telemetrie verzenden met behulp van standaard-Api's.
+Ons doel in 3.0+ is om u in staat te stellen uw aangepaste telemetrie te verzenden met behulp van standaard-API's.
 
-We ondersteunen micrometer, populaire logging frameworks en de Application Insights Java 2. x SDK tot nu toe.
-Application Insights Java 3,0 wordt de telemetrie die via deze Api's wordt verzonden automatisch vastgelegd en correleert deze met automatisch verzamelde telemetrie.
+We ondersteunen Micrometer, populaire frameworks voor logboekregistratie en de Application Insights Java 2.x SDK tot nu toe.
+Application Insights Java 3.0 legt automatisch de telemetrie vast die via deze API's wordt verzonden en correleert deze met automatisch verzamelde telemetrie.
 
 ### <a name="supported-custom-telemetry"></a>Ondersteunde aangepaste telemetrie
 
-De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u kunt inschakelen om de Java 3,0-agent aan te vullen. Om samen te vatten worden aangepaste metrische gegevens ondersteund via micrometer, aangepaste uitzonde ringen en traceringen kunnen worden ingeschakeld via logging frameworks, en elk type van de aangepaste telemetrie wordt ondersteund via de [Application Insights Java 2. x SDK](#send-custom-telemetry-using-the-2x-sdk).
+De onderstaande tabel vertegenwoordigt momenteel ondersteunde aangepaste telemetrietypen die u kunt inschakelen als aanvulling op de Java 3.0-agent. Samengevat: aangepaste metrische gegevens worden ondersteund via micrometer, aangepaste uitzonderingen en traceringen kunnen worden ingeschakeld via frameworks voor logboekregistratie en elk type aangepaste telemetrie wordt ondersteund via [de Application Insights Java 2.x SDK.](#send-custom-telemetry-using-the-2x-sdk)
 
-|                     | Micrometer | Log4j, logback, JUL | 2. x SDK |
+|                     | Micrometer | Log4j, logback, JUL | 2.x SDK |
 |---------------------|------------|---------------------|---------|
-| **Aangepaste gebeurtenissen**   |            |                     |  Ja    |
+| **Aangepaste gebeurtenissen**   |            |                     |  Yes    |
 | **Aangepaste metrische gegevens**  |  Ja       |                     |  Ja    |
-| **Afhankelijkheden**    |            |                     |  Ja    |
+| **Afhankelijkheden**    |            |                     |  Yes    |
 | **Uitzonderingen**      |            |  Ja                |  Ja    |
-| **Paginaweergaven**      |            |                     |  Ja    |
-| **Aanvragen**        |            |                     |  Ja    |
+| **Paginaweergaven**      |            |                     |  Yes    |
+| **Aanvragen**        |            |                     |  Yes    |
 | **Traceringen**          |            |  Ja                |  Ja    |
 
-Er is op dit moment geen planning voor het vrijgeven van een SDK met Application Insights 3,0.
+We zijn op dit moment niet van plan om een SDK met Application Insights 3.0 uit te brengen.
 
-Application Insights Java 3,0 wordt al geluisterd naar telemetrie die wordt verzonden naar de Application Insights Java 2. x SDK. Deze functionaliteit is een belang rijk onderdeel van het upgrade verhaal voor bestaande 2. x-gebruikers, en het vult een belang rijke tussen ruimte in onze aangepaste telemetrie-ondersteuning totdat de OpenTelemetry-API GA is.
+Application Insights Java 3.0 luistert al naar telemetrie die is verzonden naar Application Insights Java 2.x SDK. Deze functionaliteit is een belangrijk onderdeel van de upgrade voor bestaande 2.x-gebruikers en vult een belangrijke hiaat in onze ondersteuning voor aangepaste telemetrie totdat de OpenTelemetry-API beschikbaar is.
 
-### <a name="send-custom-metrics-using-micrometer"></a>Aangepaste metrische gegevens verzenden met micrometer
+### <a name="send-custom-metrics-using-micrometer"></a>Aangepaste metrische gegevens verzenden met Behulp van Micrometer
 
-Voeg micrometer toe aan uw toepassing:
+Voeg Micrometer toe aan uw toepassing:
 
 ```xml
 <dependency>
@@ -171,30 +207,30 @@ Voeg micrometer toe aan uw toepassing:
 </dependency>
 ```
 
-Gebruik het [globale REGI ster](https://micrometer.io/docs/concepts#_global_registry) van micrometer om een meter te maken:
+Gebruik het globale [micrometerregister om](https://micrometer.io/docs/concepts#_global_registry) een meter te maken:
 
 ```java
 static final Counter counter = Metrics.counter("test_counter");
 ```
 
-en gebruiken voor het vastleggen van metrische gegevens:
+en gebruiken deze om metrische gegevens vast te registreren:
 
 ```java
 counter.increment();
 ```
 
-### <a name="send-custom-traces-and-exceptions-using-your-favorite-logging-framework"></a>Aangepaste traceringen en uitzonde ringen verzenden met uw favoriete Framework voor logboek registratie
+### <a name="send-custom-traces-and-exceptions-using-your-favorite-logging-framework"></a>Aangepaste traceringen en uitzonderingen verzenden met behulp van uw favoriete framework voor logboekregistratie
 
-Log4j, logback en Java. util. logging zijn automatisch instrumenteel en logboek registratie die via deze logboek registratie raamwerken wordt uitgevoerd, wordt automatisch verzameld als traceer-en uitzonderings-telemetrie.
+Log4j, Logback en java.util.logging worden automatisch geïns instrumenteerd en logboekregistratie die via deze frameworks voor logboekregistratie wordt uitgevoerd, wordt automatisch verzameld als traceer- en uitzonderings-telemetrie.
 
-Logboek registratie wordt standaard alleen verzameld wanneer de logboek registratie wordt uitgevoerd op het niveau van de INFO of hierboven.
-Zie de [configuratie opties](./java-standalone-config.md#auto-collected-logging) voor het wijzigen van dit niveau.
+Standaard wordt logboekregistratie alleen verzameld wanneer die logboekregistratie wordt uitgevoerd op infoniveau of hoger.
+Zie de [configuratieopties](./java-standalone-config.md#auto-collected-logging) voor het wijzigen van dit niveau.
 
-Als u aangepaste dimensies aan uw logboeken wilt koppelen, kunt u [Log4j 1,2 MDC](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html), [Log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)of [Logback MDC](http://logback.qos.ch/manual/mdc.html)gebruiken, en Application Insights Java 3,0 worden deze MDC-eigenschappen automatisch vastgelegd als aangepaste dimensies op uw traceer-en uitzonderings-telemetrie.
+Als u aangepaste dimensies aan uw logboeken wilt koppelen, kunt u [Log4j 1.2 MDC,](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html) [Log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)of [Logback MDC](http://logback.qos.ch/manual/mdc.html)gebruiken. Met Application Insights Java 3.0 worden deze MDC-eigenschappen automatisch opgenomen als aangepaste dimensies voor uw traceer- en uitzonderings-telemetrie.
 
-### <a name="send-custom-telemetry-using-the-2x-sdk"></a>Aangepaste telemetrie verzenden met behulp van de 2. x SDK
+### <a name="send-custom-telemetry-using-the-2x-sdk"></a>Aangepaste telemetrie verzenden met de 2.x SDK
 
-Toevoegen `applicationinsights-core-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+Voeg toe aan uw toepassing (alle 2.x-versies worden ondersteund door Application Insights Java 3.0, maar het is de moeite waard om de nieuwste versie te gebruiken als u een `applicationinsights-core-2.6.2.jar` keuze hebt):
 
 ```xml
 <dependency>
@@ -210,7 +246,7 @@ Een TelemetryClient maken:
 static final TelemetryClient telemetryClient = new TelemetryClient();
 ```
 
-en gebruiken om aangepaste telemetrie te verzenden:
+en deze gebruiken om aangepaste telemetrie te verzenden:
 
 ##### <a name="events"></a>Gebeurtenissen
 
@@ -257,12 +293,12 @@ try {
 }
 ```
 
-### <a name="add-request-custom-dimensions-using-the-2x-sdk"></a>Aangepaste dimensies voor aanvragen toevoegen met behulp van de 2. x SDK
+### <a name="add-request-custom-dimensions-using-the-2x-sdk"></a>Aangepaste dimensies voor aanvragen toevoegen met behulp van de 2.x SDK
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.2 en hoger
+> Deze functie is alleen beschikbaar in 3.0.2 en hoger
 
-Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+Voeg toe aan uw toepassing (alle 2.x-versies worden ondersteund door Application Insights Java 3.0, maar het is de moeite waard om de nieuwste versie te gebruiken als u een `applicationinsights-web-2.6.2.jar` keuze hebt):
 
 ```xml
 <dependency>
@@ -272,7 +308,7 @@ Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versi
 </dependency>
 ```
 
-en voeg aangepaste dimensies toe in uw code:
+en voeg aangepaste dimensies toe aan uw code:
 
 ```java
 import com.microsoft.applicationinsights.web.internal.ThreadContext;
@@ -281,12 +317,12 @@ RequestTelemetry requestTelemetry = ThreadContext.getRequestTelemetryContext().g
 requestTelemetry.getProperties().put("mydimension", "myvalue");
 ```
 
-### <a name="set-the-request-telemetry-user_id-using-the-2x-sdk"></a>De user_Id van de telemetrie aanvragen instellen met behulp van de 2. x SDK
+### <a name="set-the-request-telemetry-user_id-using-the-2x-sdk"></a>Stel de telemetrie van de user_Id met behulp van de 2.x SDK
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.2 en hoger
+> Deze functie is alleen beschikbaar in 3.0.2 en hoger
 
-Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+Voeg toe aan uw toepassing (alle 2.x-versies worden ondersteund door Application Insights Java 3.0, maar het is de moeite waard om de nieuwste versie te gebruiken als u een `applicationinsights-web-2.6.2.jar` keuze hebt):
 
 ```xml
 <dependency>
@@ -305,12 +341,12 @@ RequestTelemetry requestTelemetry = ThreadContext.getRequestTelemetryContext().g
 requestTelemetry.getContext().getUser().setId("myuser");
 ```
 
-### <a name="override-the-request-telemetry-name-using-the-2x-sdk"></a>De naam van de telemetrie van de aanvraag overschrijven met behulp van de 2. x SDK
+### <a name="override-the-request-telemetry-name-using-the-2x-sdk"></a>Overschrijven van de telemetrienaam van de aanvraag met behulp van de 2.x SDK
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.2 en hoger
+> Deze functie is alleen beschikbaar in 3.0.2 en hoger
 
-Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+Voeg toe aan uw toepassing (alle 2.x-versies worden ondersteund door Application Insights Java 3.0, maar het is de moeite waard om de nieuwste versie te gebruiken als u een `applicationinsights-web-2.6.2.jar` keuze hebt):
 
 ```xml
 <dependency>
@@ -329,12 +365,12 @@ RequestTelemetry requestTelemetry = ThreadContext.getRequestTelemetryContext().g
 requestTelemetry.setName("myname");
 ```
 
-### <a name="get-the-request-telemetry-id-and-the-operation-id-using-the-2x-sdk"></a>De telemetrie-aanvraag-id en de bewerkings-id ophalen met behulp van de 2. x SDK
+### <a name="get-the-request-telemetry-id-and-the-operation-id-using-the-2x-sdk"></a>Haal de telemetrie-id van de aanvraag en de bewerkings-id op met behulp van de 2.x SDK
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.3 en hoger
+> Deze functie is alleen beschikbaar in 3.0.3 en hoger
 
-Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+Voeg toe aan uw toepassing (alle 2.x-versies worden ondersteund door Application Insights Java 3.0, maar het is de moeite waard om de nieuwste versie te gebruiken als u een `applicationinsights-web-2.6.2.jar` keuze hebt):
 
 ```xml
 <dependency>
@@ -344,7 +380,7 @@ Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versi
 </dependency>
 ```
 
-en ontvang de telemetrie-aanvraag-id en de bewerkings-id in uw code:
+en haal de telemetrie-id van de aanvraag en de bewerkings-id op in uw code:
 
 ```java
 import com.microsoft.applicationinsights.web.internal.ThreadContext;

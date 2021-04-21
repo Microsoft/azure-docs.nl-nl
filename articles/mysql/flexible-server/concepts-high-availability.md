@@ -1,104 +1,107 @@
 ---
-title: Overzicht van redundante hoge Beschik baarheid in zone met Azure Database for MySQL flexibele server
-description: Meer informatie over de concepten van redundante hoge Beschik baarheid in zones met Azure Database for MySQL flexibele server
+title: Overzicht van zone-redundante hoge beschikbaarheid met Azure Database for MySQL Flexible Server
+description: Meer informatie over de concepten van zone-redundante hoge beschikbaarheid met Azure Database for MySQL Flexible Server
 author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: 6629beacb5c3edc6fe1d21509051b915c0894479
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5b5e1491d7f76cd4cff76d0c9a1af4daa49fa483
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105109689"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107812998"
 ---
-# <a name="high-availability-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Concepten met hoge Beschik baarheid in Azure Database for MySQL flexibele server (preview-versie)
+# <a name="high-availability-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Concepten voor hoge beschikbaarheid in Azure Database for MySQL Flexible Server (preview)
 
 > [!IMPORTANT] 
 > Azure Database for MySQL - Flexible Server is momenteel beschikbaar als openbare preview.
 
-Met Azure Database for MySQL flexibele server (preview) kunt u hoge Beschik baarheid configureren met automatische failover met behulp van **zone redundante** maximale Beschik baarheid. Bij een implementatie in een zone-redundante configuratie wordt door de flexibele server automatisch een stand-byreplica in een andere beschikbaarheidszone ingericht en beheerd. Met behulp van replicatie op opslag niveau worden de gegevens **synchroon gerepliceerd** naar de stand-by-server in de secundaire zone om gegevens verlies na een failover mogelijk te maken. De failover is volledig transparant van de client toepassing en vereist geen gebruikers acties. De stand-by-server is niet beschikbaar voor lees-of schrijf bewerkingen, maar is een passieve stand-by om snelle failover mogelijk te maken. De failover-tijden variëren doorgaans van 60-120 seconden.
+Azure Database for MySQL Flexibele server (preview) kunt u hoge beschikbaarheid configureren met automatische failover met behulp **van zone-redundante** hoge beschikbaarheid. Bij een implementatie in een zone-redundante configuratie wordt door de flexibele server automatisch een stand-byreplica in een andere beschikbaarheidszone ingericht en beheerd. Met replicatie op opslagniveau worden de gegevens **synchroon** gerepliceerd naar de stand-byserver in de secundaire zone om geen gegevensverlies na een failover mogelijk te maken. De failover is volledig transparant vanuit de clienttoepassing en vereist geen gebruikersacties. De stand-byserver is niet beschikbaar voor lees- of schrijfbewerkingen, maar is een passieve stand-by om snelle failover mogelijk te maken. De failovertijden variëren doorgaans van 60 tot 120 seconden.
 
-De configuratie van de redundante hoge Beschik baarheid van een zone maakt automatische failover mogelijk tijdens geplande gebeurtenissen, zoals door de gebruiker geïnitieerde schaal reken bewerkingen, en niet-geplande gebeurtenissen, zoals onderliggende hardware-en software fouten, netwerk fouten en zelfs problemen met de beschikbaarheids zone.
+Zone-redundante configuratie voor hoge beschikbaarheid maakt automatische failover mogelijk tijdens geplande gebeurtenissen, zoals door de gebruiker geïnitieerde rekenbewerkingen, en ongeplande gebeurtenissen, zoals onderliggende hardware- en softwarefouten, netwerkfouten en zelfs beschikbaarheidszonefouten.
 
-:::image type="content" source="./media/concepts-high-availability/1-flexible-server-overview-zone-redundant-ha.png" alt-text="weer gave van zone redundante hoge Beschik baarheid":::
+:::image type="content" source="./media/concepts-high-availability/1-flexible-server-overview-zone-redundant-ha.png" alt-text="weergave van zone-redundante hoge beschikbaarheid":::
 
-## <a name="zone-redundancy-architecture"></a>Architectuur voor zone redundantie
+## <a name="zone-redundancy-architecture"></a>Architectuur voor zone-redundantie
 
-De primaire server wordt geïmplementeerd in de regio en een specifieke beschikbaarheids zone. Als de maximale Beschik baarheid is gekozen, wordt een stand-by replica server met dezelfde configuratie als die van de primaire server automatisch geïmplementeerd, inclusief Compute-laag, reken grootte, opslag grootte en netwerk configuratie. De logboek gegevens worden synchroon gerepliceerd naar de stand-by replica om ervoor te zorgen dat er geen gegevens verloren gaan in geval van fouten. Automatische back-ups, zowel moment opnamen en logboek back-ups, worden uitgevoerd vanaf de primaire database server. 
+De primaire server wordt geïmplementeerd in de regio en een specifieke beschikbaarheidszone. Wanneer de hoge beschikbaarheid wordt gekozen, wordt er automatisch een stand-byreplicaserver geïmplementeerd met dezelfde configuratie als die van de primaire server, waaronder de rekenlaag, rekengrootte, opslaggrootte en netwerkconfiguratie. De logboekgegevens worden synchroon gerepliceerd naar de stand-byreplica om ervoor te zorgen dat er geen gegevens verloren gaan in een storingssituatie. Automatische back-ups, zowel momentopnamen als logboekback-ups, worden uitgevoerd vanaf de primaire databaseserver. 
 
-De status van de HA wordt voortdurend bewaakt en gerapporteerd op de pagina overzicht.
+De status van de ha-status wordt continu gecontroleerd en gerapporteerd op de overzichtspagina.
 
-De verschillende replicatie statussen worden hieronder weer gegeven:
+Hieronder vindt u de verschillende replicatiestatussen:
 
 | **Status** | **Beschrijving** |
 | :----- | :------ |
-| <b>NotEnabled | Zone redundante HA is niet ingeschakeld |
-| <b>CreatingStandby | In het proces van het maken van een nieuwe stand-by |
-| <b>ReplicatingData | Nadat de stand-by is gemaakt, wordt deze opgeteld bij de primaire server. |
-| <b>FailingOver | Er wordt een failover van de primaire server naar de stand-bymodus uitgevoerd. |
-| <b>In orde | Zone redundante HA bevindt zich in de stationaire staat en in orde. |
-| <b>RemovingStandby | Op basis van de actie van de gebruiker wordt de stand-by replica in het proces verwijderd.| 
+| <b>NotEnabled | Zone-redundante ha is niet ingeschakeld |
+| <b>CreatingStandby | Tijdens het maken van een nieuwe stand-by |
+| <b>ReplicatingData | Nadat de stand-by is gemaakt, wordt de primaire server inhaalslag gemaakt. |
+| <b>FailingOver | De databaseserver wordt uitgevoerd van de primaire naar de stand-by. |
+| <b>In orde | Zone-redundante ha heeft een stabiele status en is in orde. |
+| <b>RemovingStandby | Op basis van de actie van de gebruiker wordt de stand-byreplica verwijderd.| 
 
 ## <a name="advantages"></a>Voordelen
 
-Hier volgen enkele voor delen voor het gebruik van de functie zone redundantie HA: 
+Hier zijn enkele voordelen voor het gebruik van zone-redundantie HA-functie: 
 
-- De stand-by replica wordt geïmplementeerd in een exacte VM-configuratie als primair, zoals vCores, opslag, netwerk instellingen (VNET, firewall), enzovoort.
-- Mogelijkheid om de stand-by replica te verwijderen door hoge Beschik baarheid uit te scha kelen.
-- Automatische back-ups zijn gebaseerd op moment opnamen, uitgevoerd vanaf de primaire database server en opgeslagen in een zone redundante opslag.
-- In het geval van een failover wordt Azure Database for MySQL flexibele server automatisch een failover naar de stand-by-replica als hoge Beschik baarheid is ingeschakeld. De instelling maximale Beschik baarheid controleert de primaire server en brengt deze weer online.
-- Clients maken altijd verbinding met de primaire database server.
-- Als er een fout is opgetreden in de data base of het knoop punt is mislukt, wordt het opnieuw opstarten geprobeerd eerst op hetzelfde knoop punt. Als dat niet lukt, wordt de automatische failover geactiveerd.
-- De mogelijkheid om de server opnieuw op te starten om alle para meters voor de statische server op te halen.
+- Stand-byreplica wordt geïmplementeerd in een exacte VM-configuratie als die van de primaire VM, zoals vCores, opslag, netwerkinstellingen (VNET, firewall), enzovoort.
+- Mogelijkheid om stand-byreplica's te verwijderen door hoge beschikbaarheid uit te zetten.
+- Automatische back-ups worden op momentopnamen gebaseerd, uitgevoerd vanaf de primaire databaseserver en opgeslagen in een zone-redundante opslag.
+- In het geval van failover wordt Azure Database for MySQL server automatisch overgeslagen naar de stand-byreplica als hoge beschikbaarheid is ingeschakeld. De installatie van hoge beschikbaarheid controleert de primaire server en brengt deze weer online.
+- Clients maken altijd verbinding met de primaire databaseserver.
+- Als er een crash- of knooppuntfout in de database is, wordt eerst geprobeerd opnieuw op te starten op hetzelfde knooppunt. Als dat mislukt, wordt de automatische failover geactiveerd.
+- Mogelijkheid om de server opnieuw op te starten om wijzigingen in statische serverparameters op te halen.
 
-## <a name="steady-state-operations"></a>Bewerkingen met stabiele status
+## <a name="steady-state-operations"></a>Bewerkingen met een stabiele status
 
-Toepassingen zijn verbonden met de primaire server met behulp van de naam van de database server. De stand-by-replica gegevens worden niet weer gegeven voor directe toegang. Door voeren en schrijven worden alleen voor de toepassing bevestigd nadat de logboek bestanden op de schijf van de primaire server en de stand-by replica synchroon worden bewaard. Als gevolg van deze extra round-trip vereiste kunnen toepassingen verhoogde latentie voor schrijf bewerkingen en door voeringen verwachten. U kunt de status van de hoge Beschik baarheid in de portal bewaken.
+Toepassingen zijn verbonden met de primaire server met behulp van de naam van de databaseserver. De stand-by replicagegevens worden niet beschikbaar gemaakt voor directe toegang. Commits en schrijfingen worden pas naar de toepassing bevestigd nadat de logboekbestanden op zowel de schijf van de primaire server als de stand-byreplica synchroon zijn opgeslagen. Vanwege deze aanvullende retourvereiste kunnen toepassingen een verhoogde latentie verwachten voor schrijf- en commits. U kunt de status van de hoge beschikbaarheid bewaken in de portal.
 
 ## <a name="failover-process"></a>Failoverproces 
-Voor bedrijfs continuïteit moet u een failover-proces hebben voor geplande en niet-geplande gebeurtenissen. 
+Voor bedrijfscontinuïteit moet u een failoverproces hebben voor geplande en ongeplande gebeurtenissen. 
 
 ### <a name="planned-events"></a>Geplande gebeurtenissen
 
-Geplande downtime-gebeurtenissen bevatten activiteiten die zijn gepland door Azure, zoals periodieke software-updates, secundaire versie-upgrades of die worden geïnitieerd door klanten, zoals schaal berekening en schaal van opslag. Al deze wijzigingen worden eerst toegepast op de stand-by replica. Gedurende die tijd blijven de toepassingen toegang tot de primaire server. Zodra de stand-by replica is bijgewerkt, worden primaire server verbindingen geleegd. er wordt een failover geactiveerd waarmee de stand-by replica als primair wordt geactiveerd en dezelfde database server naam is door de DNS-record bij te werken. Client verbindingen zijn niet meer verbonden en ze moeten opnieuw verbinding maken en kunnen de bewerkingen hervatten. Er wordt een nieuwe stand-by-server in dezelfde zone gemaakt als de oude primaire. De totale failover-tijd wordt verwacht 60-120 s. 
+Geplande downtimegebeurtenissen omvatten activiteiten die door Azure zijn gepland, zoals periodieke software-updates, kleine versie-upgrades of die worden geïnitieerd door klanten, zoals reken- en schaalbewerkingen. Al deze wijzigingen worden eerst toegepast op de stand-byreplica. Gedurende die tijd hebben de toepassingen nog steeds toegang tot de primaire server. Zodra de stand-byreplica is bijgewerkt, worden de primaire serververbindingen leeggestopt. Er wordt een failover geactiveerd waarmee de stand-byreplica wordt geactiveerd als primaire replica met dezelfde databaseservernaam door de DNS-record bij te werken. Clientverbindingen worden verbroken en ze moeten opnieuw verbinding maken en kunnen hun bewerkingen hervatten. Er wordt een nieuwe stand-byserver tot stand gebracht in dezelfde zone als de oude primaire server. De totale failovertijd is naar verwachting 60-120 s. 
 
 >[!NOTE]
-> Bij het schalen van de berekening worden de secundaire replica server, gevolgd door de primaire server, geschaald. Er is geen failover betrokken.
+> In het geval van de rekenschaalbewerking schalen schalen we de secundaire replicaserver gevolgd door de primaire server. Er is geen failover bij betrokken.
 
-### <a name="failover-process---unplanned-events"></a>Failover-proces-niet-geplande gebeurtenissen
-Ongeplande downtime van services omvatten software fouten die of infrastructuur fouten zoals compute-, netwerk-, opslag storingen of energie storingen invloed hebben op de beschik baarheid van de data base. Als de data base niet beschikbaar is, is de replicatie naar de stand-by replica ernstig en wordt de stand-by replica geactiveerd om de primaire data base te zijn. DNS is bijgewerkt en de clients maken vervolgens opnieuw verbinding met de database server en hervatten hun bewerkingen. De verwachte failover-tijd duurt 60-120 s. Afhankelijk van de activiteit op de primaire database server op het moment van de failover, zoals grote trans acties en herstel tijd, kan de failover echter langer duren.
+### <a name="failover-process---unplanned-events"></a>Failoverproces - niet-geplande gebeurtenissen
+Niet-geplande serviceuitvaltijd omvat softwarefouten die of infrastructuurfouten, zoals reken-, netwerk-, opslagfouten of stroomstoringen, van invloed zijn op de beschikbaarheid van de database. Als de database niet beschikbaar is, wordt de replicatie naar de stand-byreplica verwijderd en wordt de stand-byreplica geactiveerd om de primaire database te zijn. DNS wordt bijgewerkt en clients maken vervolgens opnieuw verbinding met de databaseserver en hervatten hun bewerkingen. De totale failovertijd duurt naar verwachting 60-120 s. Afhankelijk van de activiteit in de primaire databaseserver op het moment van de failover, zoals grote transacties en hersteltijd, kan de failover echter langer duren.
 
-## <a name="schedule-maintenance-window"></a>Onderhouds venster plannen 
+### <a name="forced-failover"></a>Geforceerd failover
+Azure Database for MySQL geforceerd failover kunt u handmatig een failover forcen, zodat u de functionaliteit kunt testen met uw toepassingsscenario's en u kunt voorbereiden in geval van uitval. Met geforceerde failover wordt de stand-byserver de primaire server door een failover te activeren waarmee de stand-byreplica wordt geactiveerd om de primaire server met dezelfde databaseservernaam te worden door de DNS-record bij te werken. De oorspronkelijke primaire server wordt opnieuw opgestart en overgeschakeld naar de stand-byreplica. Clientverbindingen worden verbroken en moeten opnieuw worden verbonden om de bewerkingen te hervatten. Afhankelijk van de huidige workload en het laatste controlepunt wordt de totale failovertijd gemeten. Over het algemeen wordt verwacht dat deze tussen de 60 en 120 ligt.
 
-Flexibele servers bieden onderhouds plannings mogelijkheden waarbij u een periode van 30 minuten kunt kiezen op een dag van uw voor keur gedurende welke het onderhouds proces van Azure werkt, zoals patches of secundaire versie-upgrades. Voor uw flexibele servers die zijn geconfigureerd met maximale Beschik baarheid, worden deze onderhouds activiteiten eerst uitgevoerd op de stand-by replica. 
+## <a name="schedule-maintenance-window"></a>Onderhoudsvenster plannen 
+
+Flexibele servers bieden de mogelijkheid om onderhoud te plannen, waarbij u een venster van 30 minuten kunt kiezen op een dag van uw voorkeur waarin het Azure-onderhoud werkt, zoals patching of kleine versie-upgrades. Voor uw flexibele servers die zijn geconfigureerd met hoge beschikbaarheid, worden deze onderhoudsactiviteiten eerst uitgevoerd op de stand-byreplica. 
 
 ## <a name="point-in-time-restore"></a>Terugzetten naar eerder tijdstip 
-Net als de flexibele server is geconfigureerd in hoge Beschik baarheid gegevens synchroon repliceert, is de stand-by-server up-to-date met de primaire. Eventuele gebruikers fouten op de primaire, zoals een onbedoelde verwijdering van een tabel of onjuiste updates, worden goed gerepliceerd naar de stand-by. Daarom kunt u geen stand-by gebruiken om dergelijke logische fouten te herstellen. Als u deze logische fouten wilt herstellen, moet u de herstel bewerking naar een bepaald tijdstip uitvoeren voordat de fout optrad. Wanneer u de data base herstelt die is geconfigureerd met hoge Beschik baarheid, wordt een nieuwe database server teruggezet als een nieuwe flexibele server met een door de gebruiker opgegeven naam. Vervolgens kunt u het object van de database server exporteren en importeren naar uw productie database server. Als u uw database server wilt klonen voor test-en ontwikkelings doeleinden of als u voor andere doel einden wilt herstellen, kunt u het meest recente herstel punt of een aangepast herstel punt kiezen. Met de herstel bewerking wordt een flexibele server met één zone gemaakt.
+Omdat flexibele servers synchroon worden geconfigureerd in hoge beschikbaarheid, worden gegevens gerepliceerd en is de stand-byserver up-to-date met de primaire server. Eventuele gebruikersfouten op de primaire computer, zoals een onbedoelde daling van een tabel of onjuiste updates, worden naar de stand-by gerepliceerd. Daarom kunt u stand-by niet gebruiken om dergelijke logische fouten te herstellen. Als u van deze logische fouten wilt herstellen, moet u herstel naar een bepaald tijdstip uitvoeren naar het tijdstip voordat de fout zich voordeed. Wanneer u de database die is geconfigureerd met hoge beschikbaarheid herstelt met behulp van de functie voor herstel naar een bepaald tijdstip van flexibele server, wordt een nieuwe databaseserver hersteld als een nieuwe flexibele server met een door de gebruiker opgegeven naam. Vervolgens kunt u het -object exporteren van de databaseserver en het importeren naar uw productiedatabaseserver. Op dezelfde manier kunt u het meest recente herstelpunt of een aangepast herstelpunt kiezen als u uw databaseserver wilt klonen voor test- en ontwikkelingsdoeleinden, of als u wilt herstellen voor andere doeleinden. Met de herstelbewerking wordt een flexibele server met één zone gemaakt.
 
-## <a name="mitigate-downtime"></a>Uitval tijd beperken 
-Wanneer u de functie voor zone redundantie HA niet gebruikt, moet u nog steeds uitval tijd voor uw toepassing kunnen beperken. Het plannen van uitval tijd van services zoals geplande patches, secundaire versie-upgrades of de door de gebruiker gestarte bewerkingen kunnen worden uitgevoerd als onderdeel van het geplande onderhouds venster. Geplande uitval tijd van de service, zoals geplande patches, secundaire versie-upgrades of de door de gebruiker gestarte bewerkingen, zoals schaal berekening, loopt uitval tijd. Als u de gevolgen van toepassingen voor door Azure geïnitieerde onderhouds taken wilt beperken, kunt u ervoor kiezen om deze te plannen op de dag van de week en de tijd die het minst van invloed op de toepassing is. 
+## <a name="mitigate-downtime"></a>Downtime beperken 
+Wanneer u de functie zone-redundantie ha niet gebruikt, moet u nog steeds in staat zijn om downtime voor uw toepassing te beperken. Serviceonderbrekingen plannen, zoals geplande patches, kleine versie-upgrades of door de gebruiker geïnitieerde bewerkingen, kunnen worden uitgevoerd als onderdeel van geplande onderhoudsvensters. Geplande serviceuitvaltijd, zoals geplande patches, kleine versie-upgrades of door de gebruiker geïnitieerde bewerkingen, zoals schaalreken, veroorzaken downtime. Als u de gevolgen van de toepassing voor door Azure geïnitieerde onderhoudstaken wilt beperken, kunt u ervoor kiezen om deze te plannen op de dag van de week en het tijdstip die de toepassing het minst beïnvloeden. 
 
-Tijdens ongeplande uitval gebeurtenissen, zoals het vastlopen van de data base of de server fout, wordt de betrokken server opnieuw opgestart binnen dezelfde zone. Als er een probleem optreedt, kunt u de Data Base op een andere zone binnen de regio herstellen als de hele zone wordt beïnvloed. 
+Tijdens niet-geplande downtimegebeurtenissen, zoals het vastlopen van de database of het mislukken van de server, wordt de betrokken server opnieuw opgestart binnen dezelfde zone. Hoewel dit zelden gebeurt, kunt u de database in een andere zone in de regio herstellen als dit van invloed is op de hele zone. 
 
-## <a name="things-to-know-with-zone-redundancy"></a>Wat u moet weten met zone redundantie 
+## <a name="things-to-know-with-zone-redundancy"></a>Wat u moet weten met zone-redundantie 
 
-Hier volgen enkele overwegingen waarmee u rekening moet houden wanneer u de maximale Beschik baarheid van zone redundantie gebruikt: 
+Hier zijn enkele overwegingen om rekening mee te houden wanneer u zone-redundantie met hoge beschikbaarheid gebruikt: 
 
-- Hoge Beschik baarheid kan **alleen** worden ingesteld tijdens een flexibele tijd voor het maken van de server.
-- Hoge Beschik baarheid wordt niet ondersteund in een breek bare Compute-laag.
-- Als gevolg van synchrone replicatie naar een andere beschikbaarheids zone, kan de primaire database server verhoogde schrijf-en doorvoer latentie ervaren.
-- De stand-by replica kan niet worden gebruikt voor alleen-lezen query's.
+- Hoge beschikbaarheid kan **alleen worden** ingesteld tijdens het maken van flexibele servers.
+- Hoge beschikbaarheid wordt niet ondersteund in een burstable rekenlaag.
+- Vanwege synchrone replicatie naar een andere beschikbaarheidszone kan de primaire databaseserver verhoogde schrijf- en commit-latentie ervaren.
+- Stand-byreplica kan niet worden gebruikt voor alleen-lezen query's.
 - Afhankelijk van de activiteit op de primaire server op het moment van de failover, kan het tot 60-120 seconden of langer duren voordat de failover is voltooid.
-- Als u de primaire database server opnieuw opstart om dynamische parameter wijzigingen op te halen, wordt de stand-by replica ook opnieuw gestart.
-- Het configureren van Lees replica's voor zone redundante servers met hoge Beschik baarheid wordt niet ondersteund.
-- Het configureren van door de klant geïnitieerde beheer taken kan niet worden geautomatiseerd tijdens het onderhouds venster.
-- Geplande gebeurtenissen, zoals schaal berekeningen en secundaire versie-upgrades, worden tegelijkertijd zowel in de primaire als in de stand-bymodus uitgevoerd. 
+- Als u de primaire databaseserver opnieuw opstart om wijzigingen in statische parameters op te halen, wordt ook de stand-byreplica opnieuw opgestart.
+- Het configureren van leesreplica's voor zone-redundante servers met hoge beschikbaarheid wordt niet ondersteund.
+- Het configureren van door de klant geïnitieerde beheertaken kan niet worden geautomatiseerd tijdens het beheerde onderhoudsvenster.
+- Geplande gebeurtenissen, zoals het schalen van rekenkracht en kleine versie-upgrades, vinden op hetzelfde moment plaats in zowel de primaire als de stand-bymodus. 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [bedrijfs continuïteit](./concepts-business-continuity.md)
-- Meer informatie over [zone redundante hoge Beschik baarheid](./concepts-high-availability.md)
+- Meer informatie over [bedrijfscontinuïteit](./concepts-business-continuity.md)
+- Meer informatie over [zone-redundante hoge beschikbaarheid](./concepts-high-availability.md)
 - Meer informatie over [back-up en herstel](./concepts-backup-restore.md)

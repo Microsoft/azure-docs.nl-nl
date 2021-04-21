@@ -300,7 +300,7 @@
             - name: Logboeken verzamelen met Application Insights
               href: troubleshoot-with-application-insights.md
               displayName: 'troubleshooting, app insights'
-            - name: Problemen met aangepast beleid oplossen
+            - name: Problemen met aangepaste beleidsregels oplossen
               href: troubleshoot-custom-policies.md
     - name: Eindpunt voor gebruikersinfo
       href: userinfo-endpoint.md
@@ -323,15 +323,18 @@
           href: partner-lexisnexis.md
         - name: Onfido
           href: partner-onfido.md
-    - name: Fraudebescherming
+    - name: Partners voor fraudebeveiliging
       items:
-        - name: Fraudebeveiliging in Microsoft Dynamics 365
-          href: partner-dynamics-365-fraud-protection.md
-          displayName: 'm365 dynamics, dynamics fraud protection, fraud, 365 protection'
         - name: Arkose Labs
           href: partner-arkose-labs.md
           displayName: 'fraud protection, fraud, Azure AD b2c, protection, B2Cprotection'
-    - name: Verouderde en on-premises apps beveiligen
+        - name: BioCatch
+          href: partner-biocatch.md
+          displayName: 'fraud protection, fraud, Azure AD b2c, protection, B2Cprotection, user behavior'
+        - name: Fraudebeveiliging in Microsoft Dynamics 365
+          href: partner-dynamics-365-fraud-protection.md
+          displayName: 'm365 dynamics, dynamics fraud protection, fraud, 365 protection'
+    - name: Toegang tot verouderde en on-premises apps beveiligen
       items:
         - name: Ping-identiteit
           href: partner-ping-identity.md

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: 75de7b122bff75ea13e3b66bb0b79452142dc36c
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 77073d21f982e82e567e517b7d9eca061cb91859
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107500087"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107812890"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-databases-in-azure-sql-database-and-sql-server"></a>Zelfstudie: SQL Data Sync instellen tussen databases in Azure SQL Database en SQL Server
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -49,9 +49,9 @@ Zie [Synchroniseren tussen databases in SQL Database](scripts/sql-data-sync-sync
 
     :::image type="content" source="./media/sql-data-sync-sql-server-configure/sync-to-other-databases.png" alt-text = "Sync to other databases, Microsoft Azure portal":::
 
-1. Op de pagina **Synchroniseren met andere databases** selecteert u **Nieuwe synchronisatiegroep**. De pagina **Nieuwe synchronisatiegroep** wordt geopend met **Synchronisatiegroep maken (stap 1)** .
+1. Op de pagina **Synchroniseren met andere databases** selecteert u **Nieuwe synchronisatiegroep**. De **pagina Nieuwe synchronisatiegroep** wordt geopend met **Synchronisatiegroep maken.**
 
-   :::image type="content" source="./media/sql-data-sync-sql-server-configure/new-sync-group-private-link.png" alt-text = "Set up new sync group with private link":::
+   :::image type="content" source="./media/sql-data-sync-sql-server-configure/create-sync-group.png" alt-text = "Set up new sync group with private link":::
 
    Wijzig de volgende instellingen op de pagina **Gegevenssynchronisatiegroep maken**:
 
@@ -70,19 +70,23 @@ Zie [Synchroniseren tussen databases in SQL Database](scripts/sql-data-sync-sync
    
 1. Als u op de pagina **Nieuwe synchronisatiegroep** **Private Link gebruiken** hebt geselecteerd, moet u de verbinding met het privé-eindpunt goedkeuren. De koppeling in het informatiebericht opent de privé-eindpuntverbindingen, waar u de verbinding kunt goedkeuren. 
 
-   :::image type="content" source="./media/sql-data-sync-sql-server-configure/approve-private-link.png" alt-text = "Approve private link":::
+   :::image type="content" source="./media/sql-data-sync-sql-server-configure/approve-private-link-update.png" alt-text = "Approve private link":::
+   
+   > [!NOTE]
+   > De privékoppelingen voor de syng-groep en de synchronisatieleden moeten afzonderlijk worden gemaakt, goedgekeurd en uitgeschakeld. 
 
 ## <a name="add-sync-members"></a>Synchronisatieleden toevoegen
 
-Nadat de nieuwe synchronisatiegroep is gemaakt en geïmplementeerd, wordt **Synchronisatieleden toevoegen (stap 2)** op de pagina **Nieuwe synchronisatiegroep** gemarkeerd.
+Nadat de nieuwe synchronisatiegroep is gemaakt en geïmplementeerd, opent u de synchronisatiegroep en opent u de **pagina Databases,** waar u synchronisatieleden selecteert.
 
-In de sectie **Hubdatabase** voert u de bestaande referenties in voor de server waarop de hubdatabase zich bevindt. Voer in deze sectie geen *nieuwe* referenties in.
-
-   :::image type="content" source="./media/sql-data-sync-sql-server-configure/steptwo.png" alt-text = "Enter existing credentials for the hub database server":::
+   :::image type="content" source="./media/sql-data-sync-sql-server-configure/add-sync-members.png" alt-text = "Select sync members":::
+   
+   > [!NOTE]
+   > Als u de gebruikersnaam en het wachtwoord wilt bijwerken of invoegen in uw hubdatabase, gaat u naar de **sectie Hubdatabase** op de **pagina Synchronisatieleden** selecteren. 
 
 ### <a name="to-add-a-database-in-azure-sql-database"></a>Een database toevoegen in Azure SQL Database
 
-In de sectie **Liddatabase** kunt u eventueel een database in Azure SQL Database aan de synchronisatiegroep toevoegen door **Azure SQL-database toevoegen** te selecteren. De pagina **Azure SQL Database configureren** wordt geopend.
+Voeg in **de sectie Synchronisatieleden** selecteren desgewenst een database in Azure SQL Database aan de synchronisatiegroep door Een Azure Database toevoegen **te selecteren.** De **pagina Azure Database configureren** wordt geopend.
   
    :::image type="content" source="./media/sql-data-sync-sql-server-configure/step-two-configure.png" alt-text = "Add a database to the sync group":::
    
@@ -163,11 +167,11 @@ In de sectie **Liddatabase** kunt u eventueel een SQL Server-database aan de syn
 
 ## <a name="configure-sync-group"></a>Synchronisatiegroep configureren
 
-Nadat de nieuwe leden van de synchronisatiegroep zijn gemaakt en geïmplementeerd, wordt **Synchronisatiegroep configureren (stap 3)** op de pagina **Nieuwe synchronisatiegroep** gemarkeerd.
+Nadat de nieuwe synchronisatiegroepsleden zijn gemaakt en geïmplementeerd, gaat u naar de sectie **Tabellen** op de **pagina Databasesynchronisatiegroep.**
 
-![Instellingen voor stap 3](./media/sql-data-sync-sql-server-configure/stepthree.png)
+![Instellingen voor stap 3](./media/sql-data-sync-sql-server-configure/configure-sync-group.png)
 
-1. Op de pagina **Tabellen** selecteert u een database in de lijst met leden van de synchronisatiegroep en selecteert u **Schema vernieuwen**.
+1. Op de pagina **Tabellen** selecteert u een database in de lijst met leden van de synchronisatiegroep en selecteert u **Schema vernieuwen**. Houd rekening met een vertraging van enkele minuten in het vernieuwingsschema. De vertraging kan enkele minuten langer zijn als u private link gebruikt.
 
 1. Selecteer in de lijst de tabellen die u wilt synchroniseren. Standaard zijn alle kolommen geselecteerd, dus schakel het selectievakje uit voor de kolommen die u niet wilt synchroniseren. Zorg ervoor dat de primaire-sleutelkolom geselecteerd blijft.
 
@@ -233,7 +237,7 @@ Nadat u een database als een *BACPAC*-bestand hebt geëxporteerd en het bestand 
 
 Zie [Veelgestelde vragen over agents](sql-data-sync-agent-overview.md#agent-faq) voor veelgestelde vragen over de clientagent.
 
-**Moet de koppeling naar het privé-eindpunt handmatig worden goedgekeurd voordat ik deze kan gaan gebruiken?**
+**Is het nodig om de koppeling handmatig goed te keuren voordat ik deze kan gaan gebruiken?**
 
 Ja, u moet het door de service beheerde privé-eindpunt handmatig goedkeuren op de pagina Verbindingen met privé-eindpunten van Azure Portal tijdens de implementatie van de synchronisatiegroep of met behulp van PowerShell.
 

@@ -1,15 +1,15 @@
 ---
 title: Service Bus wachtrijen voor niet-| Microsoft Docs
-description: Beschrijft wachtrijen voor in wachtrijen met Azure Service Bus. Service Bus wachtrijen en onderwerpabonnementen bieden een secundaire subqueue, ook wel een wachtrij voor inlopende berichten genoemd.
+description: Beschrijft wachtrijen met in wachtrijen Azure Service Bus. Service Bus wachtrijen en onderwerpabonnementen bieden een secundaire subqueue, ook wel een wachtrij voor inlopende berichten genoemd.
 ms.topic: article
 ms.date: 04/08/2021
 ms.custom: fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: cb791982b50d7afff7b74d70adfd285bb5e0a11c
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 6293a3a9a760ece137644578d8ee7dccebc63d95
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107773221"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107812368"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Overzicht van Service Bus wachtrijen voor niet-lees berichten
 
@@ -17,9 +17,9 @@ Azure Service Bus wachtrijen en onderwerpabonnementen bieden een secundaire subq
 
 In dit artikel worden wachtrijen met inlopende berichten Service Bus. Een groot deel van de discussie wordt geïllustreerd door het [voorbeeld van wachtrijen](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/DeadletterQueue) met wachtrijen voor in wachtrijen in Een wachtrij voor een impasse op GitHub.
  
-## <a name="the-dead-letter-queue"></a>De wachtrij voor in wachtrij met in wachtrij geplaatste berichten
+## <a name="the-dead-letter-queue"></a>De wachtrij voor in wachtrij voor in wachtrij geplaatste berichten
 
-Het doel van de wachtrij voor niet-bezorgde berichten is om berichten te houden die niet kunnen worden bezorgd bij een ontvanger of berichten die niet kunnen worden verwerkt. Berichten kunnen vervolgens worden verwijderd uit de DLQ en worden geïnspecteerd. Een toepassing kan, met behulp van een operator, problemen corrigeren en het bericht opnieuw indienen, het feit melden dat er een fout is opgetreden en corrigerende actie ondernemen. 
+Het doel van de wachtrij voor niet-bezorgde berichten is om berichten te houden die niet aan een ontvanger kunnen worden geleverd of berichten die niet kunnen worden verwerkt. Berichten kunnen vervolgens worden verwijderd uit de DLQ en worden geïnspecteerd. Een toepassing kan, met behulp van een operator, problemen corrigeren en het bericht opnieuw indienen, het feit melden dat er een fout is opgetreden en corrigerende actie ondernemen. 
 
 Vanuit het perspectief van een API en protocol is de DLQ voornamelijk vergelijkbaar met elke andere wachtrij, behalve dat berichten alleen kunnen worden verzonden via de dead-letter-bewerking van de bovenliggende entiteit. Bovendien wordt time-to-live niet waargenomen en kunt u een bericht van een DLQ niet in een dead-letter schrijven. De wachtrij voor niet-bezorgde berichten biedt volledige ondersteuning voor levering van peek-lock en transactionele bewerkingen.
 
@@ -56,7 +56,7 @@ Verlopen berichten worden alleen verwijderd en verplaatst naar de DLQ wanneer er
 Als u dead-lettering inschakelen voor filterevaluatie-uitzonderingen, worden eventuele fouten die optreden tijdens het uitvoeren van de SQL-filterregel van een abonnement vastgelegd in de DLQ, samen met het beledigende bericht. Gebruik deze optie niet in een productieomgeving waarin niet alle berichttypen abonnees hebben.
 
 ## <a name="application-level-dead-lettering"></a>Dead lettering op toepassingsniveau
-Naast de systeemfuncties voor dead-lettering kunnen toepassingen de DLQ gebruiken om onacceptabele berichten expliciet af te wijzen. Ze kunnen berichten bevatten die niet goed kunnen worden verwerkt vanwege een soort systeemprobleem, berichten met verkeerd vormgevormde nettoladingen of berichten die niet kunnen worden verificatie wanneer een beveiligingsschema op berichtniveau wordt gebruikt.
+Naast de systeemfuncties voor dead-lettering kunnen toepassingen de DLQ gebruiken om onacceptabele berichten expliciet af te wijzen. Ze kunnen berichten bevatten die niet goed kunnen worden verwerkt vanwege een soort systeemprobleem, berichten die verkeerd vorm geven nettoladingen bevatten of berichten die niet kunnen worden verificatie wanneer een beveiligingsschema op berichtniveau wordt gebruikt.
 
 ## <a name="dead-lettering-in-forwardto-or-sendvia-scenarios"></a>Dead-lettering in ForwardTo- of SendVia-scenario's
 Berichten worden onder de volgende voorwaarden verzonden naar de wachtrij voor in wachtrij voor niet-voltooide overdrachten:
@@ -75,8 +75,4 @@ U kunt toegang krijgen tot de wachtrij voor in wachtrijen met de volgende syntax
 
 
 ## <a name="next-steps"></a>Volgende stappen
-
-Zie de volgende artikelen Service Bus meer informatie over wachtrijen:
-
-* [Aan de slag met Service Bus-wachtrijen](service-bus-dotnet-get-started-with-queues.md)
-* [Vergelijking van Azure-wachtrijen Service Bus wachtrijen](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
+Zie [Enable dead lettering for a queue or subscription](enable-dead-letter.md) (Inschakelen van in wachtrijen of abonnementen) voor meer informatie over verschillende manieren om de instelling voor het verlopen van berichten te configureren voor het instellen van inlopende berichten. 

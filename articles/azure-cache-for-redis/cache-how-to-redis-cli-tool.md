@@ -6,12 +6,13 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: 042db51ab51e9da586f028b8aa99e66ffaa36639
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 81327bd5fc76d14d60d26bd912da8de054e5308d
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107775669"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107833954"
 ---
 # <a name="use-the-redis-command-line-tool-with-azure-cache-for-redis"></a>Gebruik het opdrachtregelprogramma Redis met Azure Cache voor Redis
 
@@ -48,7 +49,7 @@ Met Azure Cache voor Redis is standaard alleen de TLS-poort (6380) ingeschakeld.
 
     Klik met de rechtermuisknop op het taakbalkpictogram voor de stunnelserver en klik **op Logboekvenster weergeven.**
 
-    Klik in het menu stunnellogboekvenster op **Configuratie**  >  **configureren om** het huidige configuratiebestand te openen.
+    Klik in het menu stunnellogboekvenster op **Configuratie**  >  **bewerken om** het huidige configuratiebestand te openen.
 
     Voeg de volgende vermelding toe *voorredis-cli.exe* onder de **sectie Servicedefinities.** Voeg de werkelijke cachenaam in plaats van `yourcachename` in. 
 
@@ -72,7 +73,7 @@ Wanneer u stunnel gebruikt, *redis-cli.exe* en geeft u alleen uw poort *en* de t
 redis-cli.exe -p 6380 -a YourAccessKey
 ```
 
-![Schermopname die laat zien dat de verbinding met de cache is geslaagd.](media/cache-how-to-redis-cli-tool/cache-redis-cli-stunnel.png)
+![Schermopname die laat zien dat uw verbinding met de cache is geslaagd.](media/cache-how-to-redis-cli-tool/cache-redis-cli-stunnel.png)
 
 Als u een testcache  gebruikt met de onbeveiligde niet-TLS-poort, moet u uw hostnaam, poort en toegangssleutel (primaire of secundaire) uitvoeren en doorgeven om verbinding te maken met de `redis-cli.exe` testcache.   
 

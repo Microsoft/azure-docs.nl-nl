@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: Stel & Azure Key Vault certificaten weer geven met Azure CLI'
+title: 'Quickstart: Een & weergeven Azure Key Vault met Azure CLI'
 description: In deze quickstart wordt uitgelegd hoe u een certificaat instelt en ophaalt uit Azure Key Vault met behulp van de Azure CLI
 services: key-vault
 author: msmbaldwin
@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-azurecli
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 56e51d74358bcda96a6859a481e53710a6f78ec3
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: dc3abe43c2cdf4d0ee58ac9aed570a2c507b0d7f
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99072418"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815266"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-azure-cli"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van de Azure CLI
 
@@ -45,7 +45,7 @@ Typ de onderstaande opdrachten om een zelfondertekend certificaat te maken met h
 az keyvault certificate create --vault-name "<your-unique-keyvault-name>" -n ExampleCertificate -p "$(az keyvault certificate get-default-policy)"
 ```
 
-U kunt nu verwijzen naar dit certificaat dat u aan Azure Key Vault hebt toegevoegd met behulp van de bijbehorende URI. Gebruik **' https://<your-unique-sleutel kluis-name>. Vault.Azure.net/certificates/ExampleCertificate '** om de huidige versie op te halen. 
+U kunt nu verwijzen naar dit certificaat dat u aan Azure Key Vault hebt toegevoegd met behulp van de bijbehorende URI. Gebruik **https://<your-unique-keyvault-name>.vault.azure.net/certificates/ExampleCertificate'** om de huidige versie op te halen. 
 
 Een eerder opgeslagen certificaat weergeven:
 
@@ -66,4 +66,4 @@ In deze quickstart hebt u een Key Vault gemaakt en daar een certificaat in opges
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

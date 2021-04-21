@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: quickstart
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: e77493bc73bc2d6f590d9bdcf891171fbd71f74e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: cc6d9ca2621a56242d7472a088e55651f5502c9c
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99070186"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814798"
 ---
 # <a name="quickstart-create-a-key-vault-using-powershell"></a>Quickstart: een sleutelkluis maken met behulp van PowerShell
 
@@ -48,5 +48,5 @@ In deze quickstart hebt u een sleutelkluis gemaakt met behulp van Azure PowerShe
 
 - Lees een [Overzicht van Azure Key Vault](overview.md)
 - Zie de referentie voor de [Azure PowerShell Key Vault-cmdlets](/powershell/module/az.keyvault/)
-- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-overview.md)
+- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-features.md)
 

@@ -61,6 +61,8 @@
       href: extend-sentinel-across-workspaces-tenants.md
     - name: Uw gegevens normaliseren in verschillende tabellen
       href: normalization.md
+    - name: Gebruik Azure Data Explorer voor langetermijnretentie van logboeken
+      href: store-logs-in-azure-data-explorer.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
@@ -212,9 +214,9 @@
                   items:
                     - name: AI Vectra Detect
                       href: connect-ai-vectra-detect.md
-                    - name: Akamai-beveiligingsgebeurtenissen
+                    - name: Akamai Security Events
                       href: connect-akamai-security-events.md
-                    - name: Aruba ClearPass
+                    - name: ClearPass voor ClearPass
                       href: connect-aruba-clearpass.md
                     - name: Broadcom Symantec DLP
                       href: connect-broadcom-symantec-dlp.md
@@ -323,13 +325,13 @@
       items:
         - name: Overzicht van Kusto-query's
           href: /azure/data-explorer/kusto/query/
-        - name: Snelzoekverwijzing kusto-querytaal
+        - name: Snelzoek naar kusto-querytaal
           href: /azure/data-explorer/kql-quick-reference
-        - name: Azure Monitor van logboekquery's
+        - name: Azure Monitor logboekquery optimaliseren
           href: ../azure-monitor/logs/query-optimization.md
     - name: UEBA-verrijkingen
       href: ueba-enrichments.md
-    - name: Toewijzing van CEF-logboekveld
+    - name: CEF-logboekveldtoewijzing
       href: cef-name-mapping.md
 - name: Resources
   items:

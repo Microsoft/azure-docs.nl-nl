@@ -1,6 +1,6 @@
 ---
-title: Aangepaste script extensie voor Azure voor Windows
-description: Windows VM-configuratie taken automatiseren met behulp van de aangepaste script extensie
+title: Aangepaste scriptextensie van Azure voor Windows
+description: Configuratietaken voor Windows-VM's automatiseren met behulp van de aangepaste scriptextensie
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: extensions
@@ -8,27 +8,27 @@ ms.author: amjads
 author: amjads1
 ms.collection: windows
 ms.date: 08/31/2020
-ms.openlocfilehash: 13b4c4ef50ea37cabe30474d339acb19176cef97
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6341e3abbf591d0e6e0395e17ccf15ec73a3ac43
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102553898"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835448"
 ---
 # <a name="custom-script-extension-for-windows"></a>Aangepaste scriptextensie voor Windows
 
-De aangepaste script extensie downloadt en voert scripts uit op virtuele machines van Azure. Deze uitbrei ding is handig voor configuratie na de implementatie, software-installatie of andere configuratie-of beheer taken. Scripts kunnen worden gedownload uit Azure Storage of GitHub, of worden geleverd in Azure Portal tijdens de uitvoering van extensies. De aangepaste script extensie kan worden geïntegreerd met Azure Resource Manager sjablonen en kan worden uitgevoerd met behulp van de Azure CLI, Power shell, Azure Portal of de Azure virtual machine REST API.
+De aangepaste scriptextensie downloadt en voert scripts uit op virtuele Azure-machines. Deze extensie is handig voor configuratie na de implementatie, software-installatie of andere configuratie- of beheertaken. Scripts kunnen worden gedownload uit Azure Storage of GitHub, of worden geleverd in Azure Portal tijdens de uitvoering van extensies. De aangepaste scriptextensie kan worden geïntegreerd met Azure Resource Manager-sjablonen en kan worden uitgevoerd met behulp van de Azure CLI, PowerShell, Azure Portal of de Azure Virtual Machine-REST API.
 
-In dit document wordt beschreven hoe u de aangepaste script extensie gebruikt met behulp van de module Azure PowerShell, Azure Resource Manager sjablonen en Details voor probleem oplossing op Windows-systemen.
+Dit document bevat informatie over het gebruik van de aangepaste scriptextensie met behulp van de Azure PowerShell-module, Azure Resource Manager sjablonen en de stappen voor probleemoplossing op Windows-systemen.
 
 ## <a name="prerequisites"></a>Vereisten
 
 > [!NOTE]  
-> Gebruik de aangepaste script extensie niet om Update-AzVM uit te voeren met dezelfde VM als de para meter, omdat deze wordt gewacht op zichzelf.  
+> Gebruik aangepaste scriptextensie niet om Update-AzVM uit te voeren met dezelfde VM als de parameter, omdat deze op zichzelf wacht.  
 
 ### <a name="operating-system"></a>Besturingssysteem
 
-De aangepaste script extensie voor Windows wordt uitgevoerd op de extensie OSs die wordt ondersteund.
+De aangepaste scriptextensie voor Windows wordt uitgevoerd op de extensie OSs die wordt ondersteund door extensies;
 
 ### <a name="windows"></a>Windows
 
@@ -37,46 +37,46 @@ De aangepaste script extensie voor Windows wordt uitgevoerd op de extensie OSs d
 * Windows Server 2012 R2
 * Windows 10
 * Windows Server 2016
-* Windows Server 2016 core
+* Windows Server 2016 Core
 * Windows Server 2019
-* Windows Server 2019 core
+* Windows Server 2019 Core
 
-### <a name="script-location"></a>Locatie van script
+### <a name="script-location"></a>Scriptlocatie
 
-U kunt de extensie configureren voor het gebruik van uw Azure Blob Storage-referenties voor toegang tot Azure Blob-opslag. De locatie van het script kan overal bestaan, zolang de virtuele machine naar dat eind punt kan worden geleid, zoals GitHub of een interne bestands server.
+U kunt de extensie configureren om uw Azure Blob Storage-referenties te gebruiken voor toegang tot Azure Blob Storage. De scriptlocatie kan overal zijn, zolang de VM naar dat eindpunt kan worden gerouteerd, zoals GitHub of een interne bestandsserver.
 
-### <a name="internet-connectivity"></a>Internet verbinding
+### <a name="internet-connectivity"></a>Internetverbinding
 
-Als u een script extern moet downloaden, zoals van GitHub of Azure Storage, moeten er extra firewall-en netwerk beveiligings groep poorten worden geopend. Als uw script zich bijvoorbeeld in Azure Storage bevindt, kunt u toegang toestaan met de Azure NSG-service tags voor [opslag](../../virtual-network/network-security-groups-overview.md#service-tags).
+Als u een script extern moet downloaden, zoals vanuit GitHub of Azure Storage, moeten er extra firewall- en netwerkbeveiligingsgroeppoorten worden geopend. Als uw script zich bijvoorbeeld in een Azure Storage, kunt u toegang toestaan met behulp van Azure NSG-servicetags voor [opslag.](../../virtual-network/network-security-groups-overview.md#service-tags)
 
-Houd er rekening mee dat de CustomScript-extensie geen manier heeft om certificaat validatie te omzeilen. Dus als u downloadt vanaf een beveiligde locatie met voor beeld. een zelfondertekend certificaat is het mogelijk dat er fouten optreden als *' het externe certificaat is ongeldig volgens de validatie procedure '*. Controleer of het certificaat juist is geïnstalleerd in het archief *vertrouwde basis certificerings instanties* op de virtuele machine.
+Houd er rekening mee dat de CustomScript-extensie geen enkele manier heeft om certificaatvalidatie te omzeilen. Dus als u downloadt vanaf een beveiligde locatie met bijvoorbeeld als u een zelf-ondertekend certificaat hebt, kunnen er fouten optreden zoals 'Het externe certificaat is ongeldig volgens *de validatieprocedure'.* Controleer of het certificaat correct is geïnstalleerd in het Vertrouwde basiscertificeringsinstanties *op* de virtuele machine.
 
-Als uw script zich op een lokale server bevindt, moet u mogelijk nog steeds extra firewall-en netwerk beveiligings groep poorten openen.
+Als uw script zich op een lokale server bevinden, moet u mogelijk nog extra firewall- en netwerkbeveiligingsgroeppoorten openen.
 
 ### <a name="tips-and-tricks"></a>Tips en trucs
 
-* Het hoogste fout aantal voor deze uitbrei ding is het gevolg van syntaxis fouten in het script, het testen van het script wordt uitgevoerd zonder fouten, en het is ook mogelijk extra logboek registratie in het script uit te voeren, zodat u gemakkelijker kunt vinden waar het is mislukt.
-* Schrijf scripts die idempotent zijn. Dit zorgt ervoor dat als ze per ongeluk worden uitgevoerd, er geen systeem wijzigingen optreden.
+* Het hoogste foutpercentage voor deze extensie is vanwege syntaxisfouten in het script. Test de scriptuit voeren zonder fouten en plaats ook extra logboekregistratie in het script om gemakkelijker te vinden waar het is mislukt.
+* Schrijf scripts die idempotent zijn. Dit zorgt ervoor dat als ze per ongeluk opnieuw worden uitgevoerd, dit geen systeemwijzigingen veroorzaakt.
 * Zorg ervoor dat de scripts geen gebruikersinvoer nodig hebben wanneer ze worden uitgevoerd.
 * De uitvoering van het script mag 90 minuten duren. Als het langer duurt, mislukt de inrichting van de extensie.
 * Neem opnieuw opstarten niet in het script op. Deze actie veroorzaakt problemen met andere extensies die worden geïnstalleerd. Na het opnieuw opstarten wordt de extensie niet voortgezet.
-* Als u een script hebt dat ertoe leidt dat de computer opnieuw wordt opgestart en vervolgens toepassingen installeert en scripts uitvoert, kunt u het opnieuw opstarten plannen met een geplande Windows-taak of gebruikmaken van hulpprogram ma's zoals DSC, chef of Puppet-extensies.
-* Het is niet raadzaam om een script uit te voeren dat de VM-agent stopt te stoppen of bij te werken. Dit kan de uitbrei ding in een overgangs status verlaten, waardoor er een time-out optreedt.
+* Als u een script hebt dat een herstart veroorzaakt, vervolgens toepassingen installeert en scripts uit te voeren, kunt u het opnieuw opstarten plannen met behulp van een geplande Windows-taak of hulpprogramma's zoals DSC, Chef of Puppet-extensies gebruiken.
+* Het wordt afgeraden om een script uit te voeren dat een stop- of update van de VM-agent veroorzaakt. Hierdoor kan de extensie de status Overgang hebben, wat kan leiden tot een time-out.
 * De extensie voert een script slechts eenmaal uit. Wilt u dat een script bij iedere start wordt uitgevoerd, dan moet u de extensie gebruiken om een geplande Windows-taak te maken.
 * Als u wilt plannen wanneer een script wordt uitgevoerd, dan moet u de extensie gebruiken om een geplande Windows-taak te maken.
 * Wanneer het script wordt uitgevoerd, ziet u alleen de extensiestatus 'overgang maken' van de Azure-portal of CLI. Als u meer statusupdates van een actief script wilt, dan moet u uw eigen oplossing maken.
-* Aangepaste script extensie biedt geen systeem eigen ondersteuning voor proxy servers, maar u kunt wel een hulp programma voor bestands overdracht gebruiken dat proxy servers in uw script ondersteunt, zoals *invoke-WebRequest*
+* Aangepaste scriptextensie biedt geen systeemeigen ondersteuning voor proxyservers, maar u kunt een hulpprogramma voor bestandsoverdracht gebruiken dat proxyservers in uw script ondersteunt, zoals *Invoke-WebRequest*
 * Houd rekening met niet-standaard maplocaties waar uw scripts of opdrachten eventueel gebruik van maken. Pak deze situatie logisch aan.
-* Aangepaste script extensie wordt uitgevoerd onder het LocalSystem-account
-* Als u van plan bent de eigenschappen *storageAccountName* en *storageAccountKey* te gebruiken, moet u deze eigenschappen co in *protectedSettings*.
+* De aangepaste scriptextensie wordt uitgevoerd onder het localsystem-account
+* Als u van plan bent om de *eigenschappen storageAccountName* en *storageAccountKey te* gebruiken, moeten deze eigenschappen worden opgeslagen in *protectedSettings.*
 
 ## <a name="extension-schema"></a>Extensieschema
 
-De configuratie van de aangepaste script extensie bevat dingen als de script locatie en de opdracht die moet worden uitgevoerd. U kunt deze configuratie opslaan in configuratie bestanden, opgeven op de opdracht regel of in een Azure Resource Manager sjabloon opgeven.
+De configuratie van de aangepaste scriptextensie specificeert zaken als scriptlocatie en de uit te voeren opdracht. U kunt deze configuratie opslaan in configuratiebestanden, deze opgeven op de opdrachtregel of opgeven in een Azure Resource Manager sjabloon.
 
-U kunt gevoelige gegevens in een beveiligde configuratie opslaan, die zijn versleuteld en alleen worden ontsleuteld in de virtuele machine. De beveiligde configuratie is handig wanneer de uitvoering-opdracht geheimen bevat zoals een wacht woord.
+U kunt gevoelige gegevens opslaan in een beveiligde configuratie, die is versleuteld en alleen wordt ontsleuteld in de virtuele machine. De beveiligde configuratie is handig wanneer de uitvoeringsopdracht geheimen bevat, zoals een wachtwoord of een SAS-bestandsverwijzing (Shared Access Signature), die moeten worden beveiligd.
 
-Deze items moeten worden behandeld als gevoelige gegevens en worden opgegeven in de configuratie van de instellingen voor beveiligde extensies. De beveiligde instellings gegevens voor de Azure VM-extensie zijn versleuteld en worden alleen ontsleuteld op de virtuele doel machine.
+Deze items moeten worden behandeld als gevoelige gegevens en worden opgegeven in de configuratie van de instelling die is beveiligd met extensies. Instellingsgegevens met beveiligde Azure VM-extensie worden versleuteld en alleen ontsleuteld op de virtuele doelmachine.
 
 ```json
 {
@@ -97,76 +97,77 @@ Deze items moeten worden behandeld als gevoelige gegevens en worden opgegeven in
         "typeHandlerVersion": "1.10",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "fileUris": [
-                "script location"
-            ],
             "timestamp":123456789
         },
         "protectedSettings": {
             "commandToExecute": "myExecutionCommand",
             "storageAccountName": "myStorageAccountName",
             "storageAccountKey": "myStorageAccountKey",
-            "managedIdentity" : {}
+            "managedIdentity" : {},
+            "fileUris": [
+                "script location"
+            ]
         }
     }
 }
 ```
 
 > [!NOTE]
-> de eigenschap managedIdentity **mag niet** worden gebruikt in combi natie met storageAccountName-of storageAccountKey-eigenschappen
+> De eigenschap managedIdentity **mag niet worden** gebruikt in combinatie met de eigenschappen storageAccountName of storageAccountKey
 
 > [!NOTE]
-> Er kan slechts één versie van een uitbrei ding op een virtuele machine op een bepaald moment worden geïnstalleerd. Als u een aangepast script twee keer opgeeft in dezelfde resource manager-sjabloon voor dezelfde virtuele machine, mislukt de installatie.
+> Er kan slechts één versie van een extensie op een bepaald moment op een VM worden geïnstalleerd. Het opgeven van een aangepast script tweemaal in dezelfde Resource Manager-sjabloon voor dezelfde VM mislukt.
 
 > [!NOTE]
-> We kunnen dit schema gebruiken in de VirtualMachine-resource of als zelfstandige resource. De naam van de resource moet de volgende indeling hebben: "virtualMachineName/extensie naam" als deze uitbrei ding wordt gebruikt als een zelfstandige resource in de ARM-sjabloon.
+> We kunnen dit schema gebruiken in de VirtualMachine-resource of als een zelfstandige resource. De naam van de resource moet de indeling 'virtualMachineName/extensionName' hebben, als deze extensie wordt gebruikt als een zelfstandige resource in de ARM-sjabloon.
 
-### <a name="property-values"></a>Eigenschaps waarden
+### <a name="property-values"></a>Eigenschapswaarden
 
-| Name | Waarde/voor beeld | Gegevenstype |
+| Name | Waarde/voorbeeld | Gegevenstype |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Compute | tekenreeks |
 | type | CustomScriptExtension | tekenreeks |
 | typeHandlerVersion | 1,10 | int |
 | fileUris (bijvoorbeeld) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | matrix |
-| tijds tempel (bijvoorbeeld) | 123456789 | 32-bits geheel getal |
-| commandToExecute (bijvoorbeeld) | Power shell-ExecutionPolicy unrestricted-file configure-music-app.ps1 | tekenreeks |
+| tijdstempel (bijvoorbeeld) | 123456789 | 32-bits geheel getal |
+| commandToExecute (bijvoorbeeld) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | tekenreeks |
 | storageAccountName (bijvoorbeeld) | examplestorageacct | tekenreeks |
-| storageAccountKey (bijvoorbeeld) | TmJK/1N3AbAZ3q/+ hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg = = | tekenreeks |
-| managedIdentity (bijvoorbeeld) | {} of {"clientId": "31b403aa-c364-4240-a7ff-d85fb6cd7232"} of {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b"} | JSON-object |
+| storageAccountKey (bijvoorbeeld) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQffpQj8hg== | tekenreeks |
+| managedIdentity (bijvoorbeeld) | { } of { "clientId": "31b403aa-c364-4240-a7ff-d85fb6cd7232" } of { "objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b" } | json-object |
 
 >[!NOTE]
->Deze eigenschaps namen zijn hoofdletter gevoelig. Als u implementatie problemen wilt voor komen, gebruikt u de namen zoals hier wordt weer gegeven.
+>Deze eigenschapsnamen zijn casegevoelig. Gebruik de namen zoals hier wordt weergegeven om implementatieproblemen te voorkomen.
 
-#### <a name="property-value-details"></a>Details van eigenschaps waarde
+#### <a name="property-value-details"></a>Details van eigenschapswaarde
 
-* `commandToExecute`: (**vereist**, teken reeks) het ingangs punt script dat moet worden uitgevoerd. Gebruik dit veld als uw opdracht geheimen bevat zoals wacht woorden of als uw fileUris gevoelig zijn.
-* `fileUris`: (optioneel, teken reeks matrix) de Url's voor bestanden die moeten worden gedownload.
-* `timestamp` (optioneel, 32-bits geheel getal) gebruik dit veld alleen om een opnieuw uitvoeren van het script te activeren door de waarde van dit veld te wijzigen.  Een gehele waarde is acceptabel; de waarde mag alleen gelijk zijn aan die van de vorige.
-* `storageAccountName`: (optioneel, String) de naam van het opslag account. Als u opslag referenties opgeeft, `fileUris` moeten alle url's voor Azure-blobs zijn.
-* `storageAccountKey`: (optioneel, String) de toegangs sleutel van het opslag account
-* `managedIdentity`: (optioneel, JSON-object) de [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) voor het downloaden van bestand (en)
-  * `clientId`: (optioneel, String) de client-ID van de beheerde identiteit
-  * `objectId`: (optioneel, String) de object-ID van de beheerde identiteit
+* `commandToExecute`: (**vereist ,** tekenreeks) het script voor het invoerpunt dat moet worden uitgevoerd. Gebruik dit veld in plaats daarvan als uw opdracht geheimen zoals wachtwoorden bevat of als uw fileUris gevoelig zijn.
+* `fileUris`: (optioneel, tekenreeksmatrice) de URL's voor bestanden die moeten worden gedownload. Als URL's gevoelig zijn (zoals URL's met sleutels), moet dit veld worden opgegeven in protectedSettings
+* `timestamp` (optioneel, 32-bits geheel getal) gebruik dit veld alleen om een nieuwe run van het script te activeren door de waarde van dit veld te wijzigen.  Een geheel getal is acceptabel; deze mag alleen anders zijn dan de vorige waarde.
+* `storageAccountName`: (optioneel, tekenreeks) de naam van het opslagaccount. Als u opslagreferenties opgeeft, moeten `fileUris` alle URL's voor Azure Blobs zijn.
+* `storageAccountKey`: (optioneel, tekenreeks) de toegangssleutel van het opslagaccount
+* `managedIdentity`: (optioneel, json-object) de [beheerde identiteit voor](../../active-directory/managed-identities-azure-resources/overview.md) het downloaden van bestanden
+  * `clientId`: (optioneel, tekenreeks) de client-id van de beheerde identiteit
+  * `objectId`: (optioneel, tekenreeks) de object-id van de beheerde identiteit
 
-De volgende waarden kunnen worden ingesteld in de open bare of beveiligde instellingen. de uitbrei ding weigert de configuratie, waarbij de waarden hieronder worden ingesteld in de open bare en beveiligde instellingen.
+De volgende waarden kunnen worden ingesteld in openbare of beveiligde instellingen. De extensie weigert elke configuratie waarbij de onderstaande waarden zijn ingesteld in zowel openbare als beveiligde instellingen.
 
 * `commandToExecute`
+* `fileUris`
 
-Het gebruik van open bare instellingen kan handig zijn voor het opsporen van fouten, maar het wordt aanbevolen dat u beveiligde instellingen gebruikt.
+Het gebruik van openbare instellingen kan handig zijn voor het debuggen, maar het wordt aanbevolen om beveiligde instellingen te gebruiken.
 
-Open bare instellingen worden in ongecodeerde tekst verzonden naar de virtuele machine waarop het script wordt uitgevoerd.  Beveiligde instellingen worden versleuteld met een sleutel die alleen bekend is bij Azure en de virtuele machine. De instellingen worden opgeslagen naar de virtuele machine wanneer ze zijn verzonden, dat wil zeggen, als de instellingen zijn versleuteld, zijn versleuteld opgeslagen op de VM. Het certificaat dat wordt gebruikt voor het ontsleutelen van de versleutelde waarden wordt opgeslagen op de virtuele machine en wordt gebruikt voor het ontsleutelen van instellingen (indien nodig) tijdens runtime.
+Openbare instellingen worden in duidelijke tekst verzonden naar de VM waarop het script wordt uitgevoerd.  Beveiligde instellingen worden versleuteld met behulp van een sleutel die alleen bekend is bij Azure en de VM. De instellingen worden opgeslagen op de VM terwijl ze zijn verzonden, dat wil zeggen, als de instellingen zijn versleuteld, worden ze versleuteld opgeslagen op de virtueleM. Het certificaat dat wordt gebruikt om de versleutelde waarden te ontsleutelen, wordt opgeslagen op de VM en gebruikt voor het ontsleutelen van instellingen (indien nodig) tijdens runtime.
 
 ####  <a name="property-managedidentity"></a>Eigenschap: managedIdentity
 > [!NOTE]
 > Deze eigenschap **moet** alleen worden opgegeven in beveiligde instellingen.
 
-CustomScript (versie 1,10 en hoger) ondersteunt [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) voor het downloaden van bestanden van url's die zijn opgenomen in de instelling ' fileUris '. Hiermee kan CustomScript toegang krijgen tot Azure Storage persoonlijke blobs of containers zonder dat de gebruiker geheimen zoals SAS-tokens of opslag account-sleutels hoeft door te geven.
+CustomScript (versie 1.10 en [](../../active-directory/managed-identities-azure-resources/overview.md) hoger) ondersteunt beheerde identiteiten voor het downloaden van bestanden van URL's die zijn opgegeven in de instelling 'fileUris'. Het biedt CustomScript toegang tot Azure Storage persoonlijke blobs of containers zonder dat de gebruiker geheimen zoals SAS-tokens of opslagaccountsleutels moet doorgeven.
 
-Als u deze functie wilt gebruiken, moet de gebruiker een door het [systeem toegewezen](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity) of door de [gebruiker toegewezen](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-user-assigned-identity) identiteit toevoegen aan de virtuele machine of VMSS waar CustomScript naar verwachting wordt uitgevoerd en [de beheerde identiteit toegang verlenen aan de Azure storage container of BLOB](../../active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md#grant-access).
+Als u deze functie wilt [](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity) gebruiken, moet de gebruiker een door het systeem toegewezen of door de gebruiker toegewezen identiteit toevoegen aan de VM of VMSS waar CustomScript naar verwachting wordt uitgevoerd, en de beheerde identiteit toegang verlenen tot de [Azure Storage-container](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-user-assigned-identity) [of blob](../../active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md#grant-access).
 
-Als u de door het systeem toegewezen identiteit op de doel-VM-VMSS wilt gebruiken, stelt u het veld managedidentity in op een leeg JSON-object. 
+Als u de door het systeem toegewezen identiteit wilt gebruiken op de doel-VM/VMSS, stelt u het veld 'managedidentity' in op een leeg json-object. 
 
 > Voorbeeld:
 >
@@ -178,7 +179,7 @@ Als u de door het systeem toegewezen identiteit op de doel-VM-VMSS wilt gebruike
 > }
 > ```
 
-Als u de door de gebruiker toegewezen identiteit op de doel-VM-VMSS wilt gebruiken, configureert u het veld managedidentity met de client-ID of de object-ID van de beheerde identiteit.
+Als u de door de gebruiker toegewezen identiteit wilt gebruiken op de doel-VM/VMSS, configureert u het veld 'managedidentity' met de client-id of de object-id van de beheerde identiteit.
 
 > Voorbeelden:
 >
@@ -198,18 +199,18 @@ Als u de door de gebruiker toegewezen identiteit op de doel-VM-VMSS wilt gebruik
 > ```
 
 > [!NOTE]
-> de eigenschap managedIdentity **mag niet** worden gebruikt in combi natie met storageAccountName-of storageAccountKey-eigenschappen
+> De eigenschap managedIdentity **mag niet worden** gebruikt in combinatie met de eigenschappen storageAccountName of storageAccountKey
 
 ## <a name="template-deployment"></a>Sjabloonimplementatie
 
-Azure VM-extensies kunnen worden geïmplementeerd met Azure Resource Manager sjablonen. Het JSON-schema, dat in de vorige sectie wordt beschreven, kan worden gebruikt in een Azure Resource Manager sjabloon voor het uitvoeren van de aangepaste script extensie tijdens de implementatie. In de volgende voor beelden ziet u hoe u de aangepaste script extensie gebruikt:
+Azure VM-extensies kunnen worden geïmplementeerd met Azure Resource Manager sjablonen. Het JSON-schema, dat in de vorige sectie is beschreven, kan worden gebruikt in een Azure Resource Manager om de aangepaste scriptextensie uit te voeren tijdens de implementatie. De volgende voorbeelden laten zien hoe u de aangepaste scriptextensie gebruikt:
 
 * [Zelfstudie: Extensies voor virtuele machines implementeren met Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-tutorial-deploy-vm-extensions.md)
 * [Toepassing met twee lagen implementeren in Windows en Azure SQL DB](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-windows)
 
 ## <a name="powershell-deployment"></a>PowerShell-implementatie
 
-De `Set-AzVMCustomScriptExtension` opdracht kan worden gebruikt om de aangepaste script extensie toe te voegen aan een bestaande virtuele machine. Zie [set-AzVMCustomScriptExtension](/powershell/module/az.compute/set-azvmcustomscriptextension)voor meer informatie.
+De `Set-AzVMCustomScriptExtension` opdracht kan worden gebruikt om de aangepaste scriptextensie toe te voegen aan een bestaande virtuele machine. Zie [Set-AzVMCustomScriptExtension voor meer informatie.](/powershell/module/az.compute/set-azvmcustomscriptextension)
 
 ```powershell
 Set-AzVMCustomScriptExtension -ResourceGroupName <resourceGroupName> `
@@ -224,7 +225,7 @@ Set-AzVMCustomScriptExtension -ResourceGroupName <resourceGroupName> `
 
 ### <a name="using-multiple-scripts"></a>Meerdere scripts gebruiken
 
-In dit voor beeld hebt u drie scripts die worden gebruikt voor het bouwen van uw server. De **commandToExecute** roept het eerste script aan. vervolgens hebt u opties om te zien hoe de andere worden aangeroepen. U kunt bijvoorbeeld een hoofd script hebben dat de uitvoering beheert, met de juiste fout afhandeling, logboek registratie en status beheer. De scripts worden gedownload naar de lokale machine voor het uitvoeren van. U kunt bijvoorbeeld `1_Add_Tools.ps1` aanroepen `2_Add_Features.ps1` door toe te voegen  `.\2_Add_Features.ps1` aan het script en dit proces herhalen voor de andere scripts die u in definieert `$settings` .
+In dit voorbeeld hebt u drie scripts die worden gebruikt om uw server te bouwen. Met **commandToExecute wordt** het eerste script aangeroepen. Vervolgens hebt u opties voor het aanroepen van de andere scripts. U kunt bijvoorbeeld een hoofdscript hebben dat de uitvoering bepaalt, met de juiste foutafhandeling, logboekregistratie en statusbeheer. De scripts worden gedownload naar de lokale computer om ze uit te voeren. In roept u bijvoorbeeld aan door toe te voegen aan het script en herhaalt u dit proces voor de `1_Add_Tools.ps1` andere scripts die u `2_Add_Features.ps1`  `.\2_Add_Features.ps1` definieert in `$settings` .
 
 ```powershell
 $fileUri = @("https://xxxxxxx.blob.core.windows.net/buildServer1/1_Add_Tools.ps1",
@@ -249,9 +250,9 @@ Set-AzVMExtension -ResourceGroupName <resourceGroupName> `
     -ProtectedSettings $protectedSettings;
 ```
 
-### <a name="running-scripts-from-a-local-share"></a>Scripts uitvoeren vanaf een lokale share
+### <a name="running-scripts-from-a-local-share"></a>Scripts uitvoeren vanuit een lokale share
 
-In dit voor beeld wilt u mogelijk een lokale SMB-server gebruiken voor de locatie van uw script. Als u dit doet, hoeft u geen andere instellingen op te geven, met uitzonde ring van **commandToExecute**.
+In dit voorbeeld wilt u mogelijk een lokale SMB-server gebruiken voor uw scriptlocatie. Als u dit doet, hoeft u geen andere instellingen op te geven, behalve **commandToExecute.**
 
 ```powershell
 $protectedSettings = @{"commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File \\filesvr\build\serverUpdate1.ps1"};
@@ -267,43 +268,43 @@ Set-AzVMExtension -ResourceGroupName <resourceGroupName> `
 
 ```
 
-### <a name="how-to-run-custom-script-more-than-once-with-cli"></a>Aangepaste script meermaals uitvoeren met CLI
+### <a name="how-to-run-custom-script-more-than-once-with-cli"></a>Aangepaste scripts meer dan één keer uitvoeren met CLI
 
-Als u de aangepaste script extensie meer dan één keer wilt uitvoeren, kunt u deze actie alleen doen in deze omstandigheden:
+Als u de aangepaste scriptextensie meer dan één keer wilt uitvoeren, kunt u deze actie alleen uitvoeren onder de volgende voorwaarden:
 
-* De extensie **naam** parameter is hetzelfde als de vorige implementatie van de uitbrei ding.
-* Als u de configuratie anders bijwerkt, wordt de opdracht niet opnieuw uitgevoerd. U kunt een dynamische eigenschap toevoegen aan de opdracht, zoals een tijds tempel.
+* De parameter **extension name** is hetzelfde als de vorige implementatie van de extensie.
+* Werk de configuratie bij, anders wordt de opdracht niet opnieuw uitgevoerd. U kunt een dynamische eigenschap toevoegen aan de opdracht, zoals een tijdstempel.
 
-U kunt de eigenschap [updatetag](/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension.forceupdatetag) ook instellen op **True**.
+U kunt ook de eigenschap [ForceUpdateTag instellen](/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension.forceupdatetag) op **true.**
 
-### <a name="using-invoke-webrequest"></a>Invoke-WebRequest gebruiken
+### <a name="using-invoke-webrequest"></a>Met Invoke-WebRequest
 
-Als u [invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) in uw script gebruikt, moet u de para meter opgeven, `-UseBasicParsing` anders wordt de volgende fout weer gegeven bij het controleren van de gedetailleerde status:
+Als u [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) in uw script gebruikt, moet u de parameter opgeven, anders ontvangt u de volgende fout bij het controleren van `-UseBasicParsing` de gedetailleerde status:
 
 ```error
 The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
 ```
 ## <a name="virtual-machine-scale-sets"></a>Virtuele-machineschaalsets
 
-Zie [add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) voor meer informatie over het implementeren van de aangepaste script extensie voor een schaalset.
+Zie [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) voor het implementeren van de aangepaste scriptextensie op een schaalset
 
 ## <a name="classic-vms"></a>Klassieke VM's
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
-Als u de aangepaste script extensie op klassieke Vm's wilt implementeren, kunt u de Azure Portal of de klassieke Azure PowerShell-cmdlets gebruiken.
+Als u de aangepaste scriptextensie wilt implementeren op klassieke VM's, kunt u de cmdlets Azure Portal of classic Azure PowerShell gebruiken.
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Navigeer naar uw klassieke VM-resource. Selecteer **extensies** onder **instellingen**.
+Navigeer naar uw klassieke VM-resource. Selecteer **Extensies** onder **Instellingen.**
 
-Klik op **+ toevoegen** en kies **aangepaste script extensie** in de lijst met resources.
+Klik **op + Toevoegen** en kies aangepaste **scriptextensie** in de lijst met resources.
 
-Selecteer op de pagina **extensie installeren** het lokale Power shell-bestand en vul eventuele argumenten in en klik op **OK**.
+Selecteer op **de pagina Extensie** installeren het lokale PowerShell-bestand, vul eventuele argumenten in en klik op **OK.**
 
 ### <a name="powershell"></a>PowerShell
 
-U kunt de cmdlet [set-AzureVMCustomScriptExtension](/powershell/module/servicemanagement/azure.service/set-azurevmcustomscriptextension) gebruiken om de aangepaste script extensie toe te voegen aan een bestaande virtuele machine.
+Gebruik de cmdlet [Set-AzureVMCustomScriptExtension](/powershell/module/servicemanagement/azure.service/set-azurevmcustomscriptextension) om de aangepaste scriptextensie toe te voegen aan een bestaande virtuele machine.
 
 ```powershell
 # define your file URI
@@ -323,45 +324,45 @@ $vm | Update-AzureVM
 
 ### <a name="troubleshoot"></a>Problemen oplossen
 
-Gegevens over de status van uitbreidings implementaties kunnen worden opgehaald uit het Azure Portal en met behulp van de module Azure PowerShell. Voer de volgende opdracht uit om de implementatie status van extensies voor een bepaalde virtuele machine te bekijken:
+Gegevens over de status van extensie-implementaties kunnen worden opgehaald uit de Azure Portal en met behulp van de Azure PowerShell module. Voer de volgende opdracht uit om de implementatietoestand van extensies voor een bepaalde VM te bekijken:
 
 ```powershell
 Get-AzVMExtension -ResourceGroupName <resourceGroupName> -VMName <vmName> -Name myExtensionName
 ```
 
-Uitvoer van de extensie wordt vastgelegd in bestanden die zijn gevonden in de volgende map op de virtuele doel machine.
+Extensie-uitvoer wordt vastgelegd in bestanden in de volgende map op de virtuele doelmachine.
 
 ```cmd
 C:\WindowsAzure\Logs\Plugins\Microsoft.Compute.CustomScriptExtension
 ```
 
-De opgegeven bestanden worden gedownload naar de volgende map op de virtuele doel machine.
+De opgegeven bestanden worden gedownload naar de volgende map op de virtuele doelmachine.
 
 ```cmd
 C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.*\Downloads\<n>
 ```
 
-waar `<n>` is een decimaal geheel getal. Dit kan veranderen tussen de uitvoeringen van de uitbrei ding.  De `1.*` waarde komt overeen met de werkelijke, huidige `typeHandlerVersion` waarde van de extensie.  De daad werkelijke map kan bijvoorbeeld zijn `C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.8\Downloads\2` .  
+waarbij `<n>` een decimaal geheel getal is, dat kan veranderen tussen uitvoeringen van de extensie.  De `1.*` waarde komt overeen met de werkelijke, huidige waarde van de `typeHandlerVersion` extensie.  De werkelijke map kan bijvoorbeeld `C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.8\Downloads\2` zijn.  
 
-Wanneer de opdracht wordt uitgevoerd `commandToExecute` , wordt deze map door de extensie ingesteld (bijvoorbeeld `...\Downloads\2` ) als de huidige werkmap. Dit proces zorgt ervoor dat relatieve paden kunnen worden gebruikt om de bestanden te vinden die via de eigenschap zijn gedownload `fileURIs` . Zie de onderstaande tabel voor voor beelden.
+Bij het uitvoeren van `commandToExecute` de opdracht stelt de extensie deze map (bijvoorbeeld ) in als de huidige `...\Downloads\2` werkmap. Met dit proces kunnen relatieve paden worden gebruikt om de bestanden te vinden die via de eigenschap zijn `fileURIs` gedownload. Zie de onderstaande tabel voor voorbeelden.
 
-Omdat het absolute Download traject na verloop van tijd kan variëren, is het beter om te kiezen voor relatieve script-en bestands paden in de `commandToExecute` teken reeks, indien mogelijk. Bijvoorbeeld:
+Omdat het absolute downloadpad in de tijd kan variëren, is het beter om waar mogelijk te kiezen voor relatieve script-/bestandspaden in `commandToExecute` de tekenreeks. Bijvoorbeeld:
 
 ```json
 "commandToExecute": "powershell.exe . . . -File \"./scripts/myscript.ps1\""
 ```
 
-Padgegevens na het eerste URI-segment worden bewaard voor bestanden die worden gedownload via de `fileUris` Eigenschappen lijst.  Zoals in de onderstaande tabel wordt weer gegeven, worden gedownloade bestanden toegewezen in submappen voor downloaden om de structuur van de waarden weer te geven `fileUris` .  
+Padgegevens na het eerste URI-segment worden bewaard voor bestanden die zijn gedownload via de `fileUris` eigenschappenlijst.  Zoals u in de onderstaande tabel kunt zien, worden gedownloade bestanden in downloadsubmaps in kaart gebracht om de structuur van de waarden weer te `fileUris` geven.  
 
-#### <a name="examples-of-downloaded-files"></a>Voor beelden van gedownloade bestanden
+#### <a name="examples-of-downloaded-files"></a>Voorbeelden van gedownloade bestanden
 
-| URI in fileUris | Relatieve gedownloade locatie | Absolute gedownloade locatie <sup>1</sup> |
+| URI in fileUris | Relatief gedownloade locatie | Absolute gedownloade locatie <sup>1</sup> |
 | ---- | ------- |:--- |
 | `https://someAcct.blob.core.windows.net/aContainer/scripts/myscript.ps1` | `./scripts/myscript.ps1` |`C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.8\Downloads\2\scripts\myscript.ps1`  |
 | `https://someAcct.blob.core.windows.net/aContainer/topLevel.ps1` | `./topLevel.ps1` | `C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.8\Downloads\2\topLevel.ps1` |
 
-<sup>1</sup> de absolute mappaden worden gewijzigd gedurende de levens duur van de virtuele machine, maar niet binnen één uitvoering van de CustomScript-extensie.
+<sup>1</sup> De absolute mappaden veranderen gedurende de levensduur van de VM, maar niet binnen één uitvoering van de CustomScript-extensie.
 
 ### <a name="support"></a>Ondersteuning
 
-Als u op elk moment in dit artikel meer hulp nodig hebt, kunt u contact opnemen met de Azure-experts op [MSDN Azure en stack overflow forums](https://azure.microsoft.com/support/forums/). U kunt ook een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer ondersteuning verkrijgen. Lees de [Veelgestelde vragen over ondersteuning voor Microsoft Azure](https://azure.microsoft.com/support/faq/)voor meer informatie over het gebruik van Azure-ondersteuning.
+Als u op enig moment in dit artikel meer hulp nodig hebt, kunt u contact opnemen met de Azure-experts op de [MSDN Azure- en Stack Overflow forums.](https://azure.microsoft.com/support/forums/) U kunt ook een ondersteuning voor Azure indienen. Ga naar de [ondersteuning voor Azure site](https://azure.microsoft.com/support/options/) en selecteer Ondersteuning krijgen. Lees de veelgestelde vragen Microsoft Azure ondersteuning voor [meer Ondersteuning voor Azure over het gebruik van een Microsoft Azure.](https://azure.microsoft.com/support/faq/)

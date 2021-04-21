@@ -7,12 +7,12 @@ ms.service: security
 ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 01/16/2019
-ms.openlocfilehash: 91d7e0777cbdad459e4514a0216146e0d5739f6d
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: a7d87e2496158fec8ff33ab8586c845a6207f810
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750946"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816058"
 ---
 # <a name="azure-service-fabric-security-best-practices"></a>Best practices voor Azure Service Fabric-beveiliging
 Het implementeren van een toepassing in Azure is snel, eenvoudig en rendabel. Voordat u uw cloudtoepassing in productie implementeert, bekijkt u onze lijst met essentiële en aanbevolen best practices voor het implementeren van beveiligde clusters in uw toepassing.
@@ -99,7 +99,7 @@ Service Fabric beveiligt ook de resources die door toepassingen worden gebruikt.
 
 -   Een Active Directory-domeingroep of -gebruiker gebruiken: voer de service uit onder de referenties voor een Active Directory-gebruikers- of groepsaccount. Zorg ervoor dat u Active Directory on-premises in uw domein gebruikt en niet Azure Active Directory. Toegang tot andere resources in het domein die zijn verleend machtigingen met behulp van een domeingebruiker of -groep. Bijvoorbeeld resources zoals bestands shares.
 
--   Een beveiligingstoegangsbeleid toewijzen voor HTTP- en HTTPS-eindpunten: geef de eigenschap **SecurityAccessPolicy** op om een **RunAs-beleid** toe te passen op een service wanneer in het servicemanifest eindpuntbronnen met HTTP worden gedeclareerd. Poorten die zijn toegewezen aan de HTTP-eindpunten zijn correct beheerde lijsten met toegang voor het RunAs-gebruikersaccount waar de service onder wordt uitgevoerd. Wanneer het beleid niet is ingesteld, http.sys geen toegang tot de service en kunt u fouten krijgen met aanroepen van de client.
+-   Een beveiligingstoegangsbeleid toewijzen voor HTTP- en HTTPS-eindpunten: geef de eigenschap **SecurityAccessPolicy** op om een **RunAs-beleid** toe te passen op een service wanneer in het servicemanifest eindpuntbronnen met HTTP worden gedeclareerd. Poorten die zijn toegewezen aan de HTTP-eindpunten, zijn correct beheerde lijsten met toegang voor het RunAs-gebruikersaccount waar de service onder wordt uitgevoerd. Wanneer het beleid niet is ingesteld, http.sys geen toegang tot de service en kunt u fouten krijgen met aanroepen van de client.
 
 Zie Beveiligingsbeleid configureren voor uw toepassing voor meer informatie Service Fabric het gebruik van beveiligingsbeleid in [een](../../service-fabric/service-fabric-application-runas-security.md)cluster.
 
@@ -115,8 +115,8 @@ In Service Fabric worden actors geïmplementeerd in het Reliable Actors applicat
 
 Elke actor wordt gedefinieerd als een instantie van een actortype, identiek aan de manier waarop een .NET-object een exemplaar van een .NET-type is. Een actortype dat **de functionaliteit** van een rekenmachine implementeert, kan bijvoorbeeld veel actoren van dat type hebben die zijn gedistribueerd op verschillende knooppunten in een cluster. Elk van de gedistribueerde actoren wordt uniek gekenmerkt door een actor-id.
 
-[Beveiligingsconfiguraties van replicators](../../service-fabric/service-fabric-reliable-actors-kvsactorstateprovider-configuration.md) worden gebruikt om het communicatiekanaal te beveiligen dat tijdens de replicatie wordt gebruikt. Deze configuratie voorkomt dat services elkaars replicatieverkeer zien en zorgt ervoor dat gegevens met hoge beschikbare gegevens veilig zijn. Een lege beveiligingsconfiguratiesectie voorkomt standaard replicatiebeveiliging.
-Met replicatorconfiguraties configureert u de replicator die verantwoordelijk is voor het zeer betrouwbaar maken van de Actor State Provider-status.
+[Beveiligingsconfiguraties van replicators](../../service-fabric/service-fabric-reliable-actors-kvsactorstateprovider-configuration.md) worden gebruikt om het communicatiekanaal te beveiligen dat tijdens de replicatie wordt gebruikt. Deze configuratie voorkomt dat services het replicatieverkeer van elkaar zien en zorgt ervoor dat gegevens met hoge beschikbare gegevens veilig zijn. Een lege beveiligingsconfiguratiesectie voorkomt standaard replicatiebeveiliging.
+Met replicatorconfiguraties configureert u de replicator die verantwoordelijk is voor het zeer betrouwbaar maken van de status Actor State Provider.
 
 ## <a name="configure-tls-for-azure-service-fabric"></a>TLS configureren voor Azure Service Fabric
 Het serververificatieproces [verifieert](../../service-fabric/service-fabric-cluster-creation-via-arm.md) de eindpunten voor clusterbeheer bij een beheerclient. De beheerclient herkent vervolgens dat deze met het echte cluster praat. Dit certificaat biedt ook een [TLS voor](../../service-fabric/service-fabric-cluster-creation-via-arm.md) de HTTPS-beheer-API en voor Service Fabric Explorer via HTTPS.
@@ -144,7 +144,7 @@ Het HTTP-protocol is onbeveiligd en is onderhevig aan meeluisterende aanvallen. 
 Zie TLS configureren voor een toepassing in Azure voor meer informatie over het gebruik van [SSL/TLS-certificaten.](../../cloud-services/cloud-services-configure-ssl-certificate-portal.md)
 
 ## <a name="use-network-isolation-and-security-with-azure-service-fabric"></a>Netwerkisolatie en -beveiliging gebruiken met Azure Service Fabric
-Stel een beveiligd cluster met drie knooppunttypen in met behulp van Azure Resource Manager [sjabloon als](../../azure-resource-manager/templates/template-syntax.md) voorbeeld. Beheer het binnenkomende en uitgaande netwerkverkeer met behulp van de sjabloon en netwerkbeveiligingsgroepen.
+Stel een beveiligd cluster met drie knooppunttypen in met behulp van Azure Resource Manager [sjabloon](../../azure-resource-manager/templates/template-syntax.md) als voorbeeld. Beheer het binnenkomende en uitgaande netwerkverkeer met behulp van de sjabloon en netwerkbeveiligingsgroepen.
 
 De sjabloon heeft een NSG voor elk van de virtuele-machineschaalsets en wordt gebruikt om het verkeer in en uit de set te controleren. De regels zijn standaard geconfigureerd om al het verkeer toe te staan dat nodig is voor de systeemservices en de toepassingspoorten die zijn opgegeven in de sjabloon. Controleer deze regels en pas de wijzigingen aan uw behoeften aan, inclusief het toevoegen van nieuwe regels voor uw toepassingen.
 
@@ -155,12 +155,12 @@ Service Fabric gebruikt certificaten om verificatie en versleuteling te bieden v
 
 Service Fabric X.509-certificaten gebruikt om een cluster te beveiligen en toepassingsbeveiligingsfuncties te bieden. U gebruikt Azure Key Vault voor [het beheren van certificaten](../../service-fabric/service-fabric-cluster-security-update-certs-azure.md) Service Fabric clusters in Azure. De Azure-resourceprovider die de clusters maakt, haalt de certificaten op uit een sleutelkluis. De provider installeert vervolgens de certificaten op de VM's wanneer het cluster wordt geïmplementeerd in Azure.
 
-Er bestaat een certificaatrelatie [tussen Azure Key Vault](../../key-vault/general/security-overview.md), het Service Fabric cluster en de resourceprovider die gebruikmaakt van de certificaten. Wanneer het cluster is gemaakt, wordt informatie over de certificaatrelatie opgeslagen in een sleutelkluis.
+Er bestaat een certificaatrelatie [tussen Azure Key Vault](../../key-vault/general/security-features.md), het Service Fabric cluster en de resourceprovider die gebruikmaakt van de certificaten. Wanneer het cluster is gemaakt, wordt informatie over de certificaatrelatie opgeslagen in een sleutelkluis.
 
 Er zijn twee eenvoudige stappen voor het instellen van een sleutelkluis:
 1. Maak een resourcegroep specifiek voor uw sleutelkluis.
 
-    U wordt aangeraden de sleutelkluis in een eigen resourcegroep te zetten. Deze actie helpt te voorkomen dat uw sleutels en geheimen verloren gaan als andere resourcegroepen worden verwijderd, zoals opslag, compute of de groep die uw cluster bevat. De resourcegroep die uw sleutelkluis bevat, moet zich in dezelfde regio als het cluster dat deze gebruikt.
+    U wordt aangeraden de sleutelkluis in een eigen resourcegroep te zetten. Deze actie helpt te voorkomen dat uw sleutels en geheimen verloren gaan als andere resourcegroepen worden verwijderd, zoals opslag, rekenkracht of de groep die uw cluster bevat. De resourcegroep die uw sleutelkluis bevat, moet zich in dezelfde regio als het cluster dat deze gebruikt.
 
 2. Maak een sleutelkluis in de nieuwe resourcegroep.
 

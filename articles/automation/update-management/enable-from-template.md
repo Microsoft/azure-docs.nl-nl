@@ -1,33 +1,34 @@
 ---
 title: Updatebeheer inschakelen met behulp van Azure Resource Manager-sjabloon
-description: In dit artikel leest u hoe u een Azure Resource Manager sjabloon kunt gebruiken om Updatebeheer in te scha kelen.
+description: In dit artikel wordt beschreven hoe u een Azure Resource Manager gebruikt om een Updatebeheer.
 services: automation
 ms.subservice: update-management
 ms.topic: conceptual
 ms.date: 09/18/2020
-ms.openlocfilehash: 95ef52acedc9171ba86110a665d08ea97c59bfbb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 687c3d49f98fe6832d23dc1529a9761d862e0666
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100575832"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830876"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Updatebeheer inschakelen met behulp van Azure Resource Manager-sjabloon
 
-U kunt een [Azure Resource Manager sjabloon](../../azure-resource-manager/templates/template-syntax.md) gebruiken om de functie Azure Automation updatebeheer in uw resource groep in te scha kelen. Dit artikel bevat een voorbeeld sjabloon waarmee het volgende kan worden geautomatiseerd:
+U kunt een Azure Resource Manager [gebruiken om](../../azure-resource-manager/templates/template-syntax.md) de functie Azure Automation Updatebeheer in uw resourcegroep in te stellen. Dit artikel bevat een voorbeeldsjabloon die het volgende automatiseert:
 
 * Automatisch maken van een Azure Monitor Log Analytics-werkruimte.
 * Automatisch maken van een Azure Automation-account.
 * Automation-account koppelen aan de Log Analytics-werkruimte.
 * Automation-runbooks toevoegen aan het account.
-* Hiermee schakelt u de functie Updatebeheer.
+* Hiermee schakelt u Updatebeheer functie in.
 
-Met de sjabloon wordt het inschakelen van Updatebeheer op een of meer virtuele machines in azure of niet-Azure niet geautomatiseerd.
+De sjabloon automatiseert het inschakelen van Updatebeheer op een of meer Azure- of niet-Azure-VM's.
 
-Als u al een Log Analytics werk ruimte en een Automation-account hebt geïmplementeerd in een ondersteunde regio in uw abonnement, zijn deze niet gekoppeld. Met deze sjabloon maakt u de koppeling en implementeert u Updatebeheer.
+Als u al een Log Analytics-werkruimte en Automation-account hebt geïmplementeerd in een ondersteunde regio in uw abonnement, zijn deze niet gekoppeld. Met behulp van deze sjabloon wordt de koppeling gemaakt en Updatebeheer.
 
 >[!NOTE]
->Als u een ARM-sjabloon gebruikt, wordt het maken van een Uitvoeren als-account voor Automation niet ondersteund. Zie [Run as-account maken](../create-run-as-account.md)als u een uitvoeren als-account hand matig wilt maken vanuit de portal of met Power shell.
+>Als u een ARM-sjabloon gebruikt, wordt het maken van een Uitvoeren als-account voor Automation niet ondersteund. Zie Uitvoeren als-account maken als u handmatig een [](../create-run-as-account.md)Uitvoeren als-account wilt maken vanuit de portal of met PowerShell.
 
 Nadat u deze stappen hebt voltooid, moet u [diagnostische instellingen configureren](../automation-manage-send-joblogs-log-analytics.md) voor uw Automation-account om de taakstatus van de runbook en taakstromen te verzenden naar de gekoppelde Log Analytics-werkruimte.
 
@@ -40,11 +41,11 @@ De volgende tabel geeft een overzicht van de API-versie voor de resources die in
 | [Werkruimte](/azure/templates/microsoft.operationalinsights/workspaces) | workspaces | 2020-03-01-preview |
 | [Automation-account](/azure/templates/microsoft.automation/automationaccounts) | automation | 2020-01-13-preview |
 | [Services gekoppeld aan werkruimte](/azure/templates/microsoft.operationalinsights/workspaces/linkedservices) | workspaces | 2020-03-01-preview |
-| [Oplossingen](/azure/templates/microsoft.operationsmanagement/solutions) | oplossingen | 2015-11-01-preview |
+| [Oplossingen](/azure/templates/microsoft.operationsmanagement/solutions) | oplossingen | 11-01-preview van 2015 |
 
 ## <a name="before-using-the-template"></a>Voordat u de sjabloon gebruikt
 
-De JSON-sjabloon is zo geconfigureerd dat u wordt gevraagd om:
+De JSON-sjabloon is geconfigureerd om u om het volgende te vragen:
 
 * De naam van de werkruimte.
 * De regio waarin u de werkruimte wilt maken.
@@ -299,11 +300,11 @@ Als u geen ervaring hebt met Azure Automation en Azure Monitor, is het belangrij
     }
     ```
 
-2. Bewerk de sjabloon om te voldoen aan uw vereisten. Overweeg om een [Resource Manager-parameter bestand](../../azure-resource-manager/templates/parameter-files.md) te maken in plaats van para meters door te geven als inline-waarden.
+2. Bewerk de sjabloon om aan uw vereisten te voldoen. Overweeg om een [Resource Manager parameterbestand te maken](../../azure-resource-manager/templates/parameter-files.md) in plaats van parameters door te geven als inlinewaarden.
 
-3. Sla dit bestand op in een lokale map als **deployUMSolutiontemplate.jsop**.
+3. Sla dit bestand op in een lokale mapdeployUMSolutiontemplate.js **op**.
 
-4. U kunt deze sjabloon nu implementeren. U kunt Power shell of de Azure CLI gebruiken. Wanneer u wordt gevraagd om een naam voor de werk ruimte en het Automation-account, geeft u een naam op die wereld wijd uniek is voor alle Azure-abonnementen.
+4. U kunt deze sjabloon nu implementeren. U kunt PowerShell of de Azure CLI gebruiken. Wanneer u wordt gevraagd om een werkruimte en een Automation-accountnaam, geeft u een naam op die wereldwijd uniek is voor alle Azure-abonnementen.
 
     **PowerShell**
 
@@ -317,7 +318,7 @@ Als u geen ervaring hebt met Azure Automation en Azure Monitor, is het belangrij
     az deployment group create --resource-group <my-resource-group> --name <my-deployment-name> --template-file deployUMSolutiontemplate.json
     ```
 
-    De implementatie kan enkele minuten duren. Wanneer de bewerking is voltooid, ziet u een bericht dat lijkt op het volgende:
+    De implementatie kan enkele minuten duren. Wanneer dit is bereikt, ziet u een bericht dat lijkt op het volgende bericht dat het resultaat bevat:
 
     ![Voorbeeld van uitvoer als de implementatie is voltooid](media/enable-from-template/template-output.png)
 
@@ -325,7 +326,7 @@ Als u geen ervaring hebt met Azure Automation en Azure Monitor, is het belangrij
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Open in het Azure Portal het Automation-account dat u hebt gemaakt.
+2. Open in Azure Portal het Automation-account dat u hebt gemaakt.
 
 3. Selecteer **Runbooks** in het linkerdeelvenster. Op de pagina **Runbooks** worden drie zelfstudie-runbooks vermeld die zijn gemaakt met het Automation-account.
 
@@ -335,18 +336,18 @@ Als u geen ervaring hebt met Azure Automation en Azure Monitor, is het belangrij
 
     ![Automation-account gekoppeld aan de Log Analytics-werkruimte](../media/quickstart-create-automation-account-template/automation-account-linked-workspace.png)
 
-5. Selecteer in het linkerdeel venster **Update beheer**. Op de pagina **Update beheer** wordt de pagina evaluatie zonder enige informatie weer gegeven als gevolg van het inschakelen van alleen ingeschakelde computers en machines zijn niet geconfigureerd voor beheer.
+5. Selecteer Updatebeheer in het **linkerdeelvenster.** Op de **pagina Updatebeheer** wordt de evaluatiepagina weergegeven zonder enige informatie omdat deze alleen is ingeschakeld en computers niet zijn geconfigureerd voor beheer.
 
-    ![Evaluatie weergave van de functie Updatebeheer](./media/enable-from-template/update-management-assessment-view.png)
+    ![Updatebeheer functie-evaluatieweergave](./media/enable-from-template/update-management-assessment-view.png)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer u deze niet meer nodig hebt, verwijdert u de oplossing **updates** in de werk ruimte log Analytics, koppelt u het Automation-account uit de werk ruimte en verwijdert u vervolgens het Automation-account en de werk ruimte.
+Wanneer u deze niet meer nodig hebt, verwijdert u de **oplossing Updates** in de Log Analytics-werkruimte, ontkoppelt u het Automation-account van de werkruimte en verwijdert u vervolgens het Automation-account en de werkruimte.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [updates en patches voor uw virtuele machines beheren](manage-updates-for-vm.md)voor meer informatie over het gebruik van updatebeheer voor vm's.
+* Zie Updates en patches Updatebeheer voor uw VM's beheren voor meer informatie over het [gebruik van VM's.](manage-updates-for-vm.md)
 
-* Als u Updatebeheer niet meer wilt gebruiken en wilt verwijderen, raadpleegt u de instructies in de [functie updatebeheer verwijderen](remove-feature.md).
+* Zie de instructies in Functie verwijderen als Updatebeheer niet meer wilt gebruiken en [Updatebeheer verwijderen.](remove-feature.md)
 
 * Als u VM's uit Updatebeheer wilt verwijderen, raadpleegt u [VM's uit Updatebeheer verwijderen](remove-vms.md).

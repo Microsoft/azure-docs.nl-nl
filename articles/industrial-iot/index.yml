@@ -1,6 +1,6 @@
 ### YamlMime:Landing
-title: Documentatie voor Azure Industrial IoT-platform
-summary: Het Azure Industrial IoT-platform is een micro soft-Suite met modules en services die zijn geïmplementeerd in Azure.
+title: Documentatie voor Azure Industrial IoT Platform
+summary: Het Azure Industrial IoT Platform is een Microsoft-suite met modules en services die zijn geïmplementeerd in Azure.
 metadata:
   description: Meer informatie over de
   ms.service: industrial-iot
@@ -8,42 +8,40 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 3/22/2021
-  ms.openlocfilehash: 8419316a452b9258e8b54cb333aa5fe1ef87b5b9
-  ms.sourcegitcommit: ba3a4d58a17021a922f763095ddc3cf768b11336
+  ms.openlocfilehash: bced3bdbb854af75e7b521f7c5c3f2e1022a161b
+  ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/23/2021
-  ms.locfileid: "104800173"
+  ms.lasthandoff: 04/21/2021
+  ms.locfileid: "107813826"
 landingContent:
-- title: Over een Azure Industrial IoT-platform
+- title: Over Azure Industrial IoT Platform
   linkLists:
   - linkListType: overview
     links:
-    - text: Wat is industrieel IoT (IIoT)?
+    - text: Wat is Industrial IoT (IIoT)?
       url: overview-what-is-industrial-iot.md
-    - text: Wat is het industrieel IoT-platform (IIoT)?
-      url: overview-what-is-industrial-iot-platform.md
-    - text: Wat is de OPC-Uitgever?
+    - text: Wat is de OPC Publisher?
       url: overview-what-is-opc-publisher.md
-- title: Aan de slag met het industrieel IoT-platform (IIoT)
+- title: Aan de slag met het Industrial IoT Platform (IIoT)
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Het Azure Industrial IoT-platform implementeren
+    - text: Het Azure Industrial IoT Platform implementeren
       url: tutorial-deploy-industrial-iot-platform.md
     - text: De industriële IoT-onderdelen configureren
       url: tutorial-configure-industrial-iot-components.md
-    - text: Bedrijfs IoT-gegevens van Azure verzamelen in ADX
+    - text: Industriële IoT-gegevens van Azure naar ADX halen
       url: tutorial-industrial-iot-azure-data-explorer.md
     - text: Gegevens visualiseren met Time Series Insights (TSI)
       url: tutorial-visualize-data-time-series-insights.md
-- title: Werken met de OPC-Uitgever
+- title: Werken met de OPC Publisher
   linkLists:
   - linkListType: tutorial
     links:
-    - text: De OPC-Uitgever implementeren
+    - text: De OPC Publisher implementeren
       url: tutorial-publisher-deploy-opc-publisher-standalone.md
-    - text: De OPC-Uitgever configureren
+    - text: De OPC Publisher configureren
       url: tutorial-publisher-configure-opc-publisher.md
-    - text: De OPC-prestaties en het geheugen van de Publisher afstemmen
+    - text: De prestaties en het geheugen van DE OPC Publisher afstemmen
       url: tutorial-publisher-performance-memory-tuning-opc-publisher.md

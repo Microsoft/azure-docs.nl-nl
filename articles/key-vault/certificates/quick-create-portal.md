@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/24/2020
 ms.author: mbaldwin
-ms.openlocfilehash: be138a0c97e02cace45a57d8d6b32d7c9aea83b7
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: b7a3126aef94ccdef7f6c9120ddeb6f20d872ab5
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107749974"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815770"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-the-azure-portal"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van de Azure-portal
 
@@ -60,7 +60,7 @@ Als u een certificaat wilt toevoegen aan de kluis, hoeft u maar een paar extra s
     - **Methode voor het maken van certificaten**: Genereren.
     - **Naam van het certificaat**: ExampleCertificate.
     - **Onderwerp**: CN=ExampleDomain
-    - Houd voor de overige waarden de standaardwaarden aan. (Als u geen speciale instellingen opgeeft in Geavanceerd beleid, kan dit worden gebruikt als een certificaat voor client-auth.)
+    - Houd voor de overige waarden de standaardwaarden aan. (Als u niets speciaals opgeeft in Geavanceerd beleid, kunt u dit standaard gebruiken als een client-auth-certificaat.)
  4. Klik op **Create**.
 
 Zodra u het bericht ontvangt dat het certificaat met succes is gemaakt, kunt u erop klikken in de lijst. Vervolgens ziet u enkele van de eigenschappen. Als u op de huidige versie klikt, ziet u de waarde die u hebt opgegeven in de vorige stap.
@@ -88,4 +88,4 @@ In deze quickstart hebt u een Key Vault gemaakt en daar een certificaat in opges
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

@@ -1,65 +1,65 @@
 ---
-title: IoT Edge Defender-IoT-micro-agent implementeren
-description: Meer informatie over het implementeren van een Defender voor IoT-beveiligings agent op IoT Edge.
+title: Een IoT Edge implementeren
+description: Meer informatie over het implementeren van een Defender for IoT-beveiligingsagent op IoT Edge.
 ms.topic: conceptual
-ms.date: 1/30/2020
-ms.openlocfilehash: 38e2aa38ab07a4768e95d91ed0ebc866d7edf39f
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.date: 04/21/2021
+ms.openlocfilehash: 71efb0bb12d1e20f918481a086fd411d3a237e33
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104784217"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107813592"
 ---
-# <a name="deploy-a-defender-iot-micro-agent-on-your-iot-edge-device"></a>Een Defender-IoT-micro-agent op uw IoT Edge-apparaat implementeren
+# <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Een beveiligingsmodule implementeren op uw IoT Edge apparaat
 
-De module **Defender voor IOT** biedt een uitgebreide beveiligings oplossing voor uw IOT edge-apparaten.
-Met de Defender-IoT-micro agent worden onbewerkte beveiligings gegevens van uw besturings systeem en container systeem verzameld, geaggregeerd en geanalyseerd in aanbevelingen voor beveiliging en waarschuwingen.
-Zie voor meer informatie [Defender-IOT-micro agent for IOT Edge](security-edge-architecture.md).
+**De Defender for IoT-module** biedt een uitgebreide beveiligingsoplossing voor uw IoT Edge apparaten.
+De beveiligingsmodule verzamelt, aggregeert en analyseert onbewerkte beveiligingsgegevens van uw besturingssysteem en containersysteem in actiebare beveiligingsaanbevelingen en -waarschuwingen.
+Zie Beveiligingsmodule voor meer [informatie IoT Edge.](security-edge-architecture.md)
 
-In dit artikel leert u hoe u een Defender-IoT-micro-agent op uw IoT Edge-apparaat kunt implementeren.
+In dit artikel leert u hoe u een beveiligingsmodule implementeert op uw IoT Edge apparaat.
 
-## <a name="deploy-defender-iot-micro-agent"></a>Defender-IoT-micro-agent implementeren
+## <a name="deploy-security-module"></a>Beveiligingsmodule implementeren
 
-Gebruik de volgende stappen voor het implementeren van een Defender voor IoT Defender-IoT-micro-agent voor IoT Edge.
+Gebruik de volgende stappen om een Defender for IoT-beveiligingsmodule te implementeren voor IoT Edge.
 
 ### <a name="prerequisites"></a>Vereisten
 
-1. Zorg ervoor dat uw apparaat is [geregistreerd als een IOT edge-apparaat](../iot-edge/how-to-register-device.md#register-a-new-device)In uw IOT hub.
+1. Zorg ervoor IoT Hub uw apparaat is geregistreerd als een IoT Edge [apparaat](../iot-edge/how-to-register-device.md#register-a-new-device).
 
-1. Voor de module Defender voor IoT Edge moet het [gecontroleerde Framework](https://linux.die.net/man/8/auditd) op het IOT edge-apparaat zijn geïnstalleerd.
+1. Defender for IoT Edge vereist dat het [AuditD-framework](https://linux.die.net/man/8/auditd) is geïnstalleerd op IoT Edge apparaat.
 
-    - Installeer het Framework door de volgende opdracht uit te voeren op uw IoT Edge-apparaat:
+    - Installeer het framework door de volgende opdracht uit te voeren op IoT Edge apparaat:
 
     `sudo apt-get install auditd audispd-plugins`
 
-    - Controleer of controle actief is door de volgende opdracht uit te voeren:
+    - Controleer of AuditD actief is door de volgende opdracht uit te voeren:
 
     `sudo systemctl status auditd`<br>
-    - Het verwachte antwoord is: `active (running)`
+    - Verwacht antwoord is: `active (running)`
 
 ### <a name="deployment-using-azure-portal"></a>Implementatie met behulp van Azure Portal
 
-1. Open **Marketplace** vanuit het Azure Portal.
+1. Open marketplace Azure Portal de **Azure Portal.**
 
-1. Selecteer **Internet of Things**, zoek naar **Azure Security Center voor IOT** en selecteer deze.
+1. Selecteer **Internet of Things,** zoek naar **Azure Security Center naar IoT** en selecteer deze.
 
-   :::image type="content" source="media/howto/edge-onboarding-8.png" alt-text="Selecteer Defender voor IoT":::
+   :::image type="content" source="media/howto/edge-onboarding-8.png" alt-text="Selecteer Defender for IoT":::
 
-1. Selecteer **maken** om de implementatie te configureren.
+1. Selecteer **Maken om** de implementatie te configureren.
 
-1. Kies het Azure- **abonnement** van uw IOT hub en selecteer vervolgens uw **IOT hub**.<br>Selecteer **implementeren op een apparaat** om één apparaat te richten of selecteer **implementeren op schaal** om meerdere apparaten te richten en selecteer **maken**. Zie [How to deploy](../iot-edge/how-to-deploy-at-scale.md)(Engelstalig) voor meer informatie over de implementatie op schaal.
+1. Kies het **Azure-abonnement** van uw IoT Hub selecteer vervolgens uw **IoT Hub**.<br>Selecteer **Implementeren op een apparaat om** één apparaat te targeten of selecteer Op schaal **implementeren** om meerdere apparaten te targeten en selecteer **Maken.** Zie Voor meer informatie over het implementeren op schaal [How to deploy](../iot-edge/how-to-deploy-at-scale.md).
 
     >[!Note]
-    >Als u **implementeren op schaal** hebt geselecteerd, voegt u de naam van het apparaat en de details toe voordat u doorgaat met het tabblad **modules toevoegen** in de volgende instructies.
+    >Als u Implementeren op **schaal hebt geselecteerd,** voegt u de apparaatnaam en -details toe voordat u verdergaat met het tabblad **Modules** toevoegen in de volgende instructies.
 
-Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt ooien.
+Voltooi elke stap om uw implementatie IoT Edge Defender for IoT te voltooien.
 
-#### <a name="step-1-modules"></a>Stap 1: modules
+#### <a name="step-1-modules"></a>Stap 1: Modules
 
-1. Selecteer de **AzureSecurityCenterforIoT** -module.
-1. Wijzig op het tabblad **module-instellingen** de **naam** in **azureiotsecurity**.
-1. Voeg op het tabblad **omgevings variabelen** een variabele toe als dat nodig is (u kunt bijvoorbeeld het *fout opsporingsprogramma* toevoegen en instellen op een van de volgende waarden: fatale, fout, waarschuwing of ' informatie ').
-1. Voeg op het tabblad Opties voor het maken van de **container** de volgende configuratie toe:
+1. Selecteer de **module AzureSecurityCenterforIoT.**
+1. Wijzig op **het tabblad** Module-instellingen de **naam** in **azureiotsecurity**.
+1. Voeg op het tabblad **Omgevingsvariabelen** indien nodig een  variabele toe (u kunt bijvoorbeeld foutopsporingsniveau toevoegen en instellen op een van de volgende waarden: Fatal, Fout, Waarschuwing of Informatie).
+1. Voeg op **het tabblad Opties** voor container maken de volgende configuratie toe:
 
     ``` json
     {
@@ -79,15 +79,15 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
     }
     ```
 
-1. Voeg op het tabblad **dubbele instellingen** voor de module de volgende configuratie toe:
+1. Voeg op **het tabblad Module twin Settings** de volgende configuratie toe:
 
-   Module dubbele eigenschap:
+   Eigenschap Module twin:
    
    ``` json
      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
    ```
 
-   Inhoud module dubbele eigenschap: 
+   Inhoud van eigenschap module twin: 
 
    ```json
      {
@@ -95,19 +95,19 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
      }
    ```
     
-   Zie [beveiligings agenten configureren](./how-to-agent-configuration.md)voor meer informatie over het configureren van de agent.
+   Zie Beveiligingsagents configureren voor meer informatie over het [configureren van de agent.](./how-to-agent-configuration.md)
 
 1. Selecteer **Update**.
 
-#### <a name="step-2-runtime-settings"></a>Stap 2: runtime-instellingen
+#### <a name="step-2-runtime-settings"></a>Stap 2: Runtime-instellingen
 
-1. Selecteer **runtime-instellingen**.
-2. Wijzig onder **Edge hub** de **afbeelding** in **MCR.Microsoft.com/azureiotedge-hub:1.0.8.3**.
+1. Selecteer **Runtime-instellingen.**
+2. Wijzig **onder Edge Hub** de afbeelding **in** **mcr.microsoft.com/azureiotedge-hub:1.0.8.3**.
 
     >[!Note]
     > Momenteel wordt versie 1.0.8.3 of ouder ondersteund.
 
-3. Controleer of de **Create-opties** zijn ingesteld op de volgende configuratie:
+3. Controleer **of Opties** maken is ingesteld op de volgende configuratie:
 
     ``` json
     {
@@ -139,9 +139,9 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
 
 #### <a name="step-3-specify-routes"></a>Stap 3: routes opgeven
 
-1. Controleer op het tabblad **routes opgeven** of u een route (expliciet of impliciet) hebt waarmee berichten vanuit de **azureiotsecurity** -module worden doorgestuurd naar **$upstream** volgens de volgende voor beelden. Selecteer **volgende** wanneer de route is ingesteld.
+1. Zorg ervoor **dat** u op het tabblad Routes opgeven een route (expliciet of impliciet)  hebt die berichten van de **azureiotsecurity-module** doorsturen naar $upstream volgens de volgende voorbeelden. Selecteer Pas wanneer de route is gebruikt, **Volgende.**
 
-   Voorbeeld routes:
+   Voorbeeldroutes:
 
     ```Default implicit route
     "route": "FROM /messages/* INTO $upstream"
@@ -153,17 +153,17 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
 
 1. Selecteer **Next**.
 
-#### <a name="step-4-review-deployment"></a>Stap 4: de implementatie controleren
+#### <a name="step-4-review-deployment"></a>Stap 4: Implementatie controleren
 
-- Controleer uw implementatie gegevens op het tabblad **implementatie controleren** en selecteer vervolgens **maken** om de implementatie te volt ooien.
+- Controleer op **het tabblad Implementatie** controleren uw implementatiegegevens en selecteer vervolgens Maken **om** de implementatie te voltooien.
 
 ## <a name="diagnostic-steps"></a>Diagnostische stappen
 
-Als er een probleem optreedt, zijn container Logboeken de beste manier om meer te weten te komen over de status van een IoT Edge Defender-IoT-micro agent-apparaat. Gebruik de opdrachten en hulpprogramma's in deze sectie om informatie te verzamelen.
+Als u een probleem ondervindt, zijn containerlogboeken de beste manier om meer te weten te komen over de status van een IoT Edge-beveiligingsmoduleapparaat. Gebruik de opdrachten en hulpprogramma's in deze sectie om informatie te verzamelen.
 
 ### <a name="verify-the-required-containers-are-installed-and-functioning-as-expected"></a>Controleer of de vereiste containers zijn geïnstalleerd en werken zoals verwacht
 
-1. Voer de volgende opdracht uit op uw IoT Edge-apparaat:
+1. Voer de volgende opdracht uit op IoT Edge apparaat:
 
     `sudo docker ps`
 
@@ -175,18 +175,18 @@ Als er een probleem optreedt, zijn container Logboeken de beste manier om meer t
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |
    | edgeAgent | mcr.microsoft.com/azureiotedge-agent:1.0.1 |
 
-   Als de mini maal vereiste containers niet aanwezig zijn, controleert u of uw IoT Edge-implementatie manifest is afgestemd op de aanbevolen instellingen. Zie [IOT Edge module implementeren](#deployment-using-azure-portal)voor meer informatie.
+   Als de minimaal vereiste containers niet aanwezig zijn, controleert u of uw IoT Edge implementatiemanifest is afgestemd op de aanbevolen instellingen. Zie Deploy [IoT Edge module (Module IoT Edge implementeren) voor meer informatie.](#deployment-using-azure-portal)
 
-### <a name="inspect-the-module-logs-for-errors"></a>De module Logboeken controleren op fouten
+### <a name="inspect-the-module-logs-for-errors"></a>De modulelogboeken op fouten controleren
 
-1. Voer de volgende opdracht uit op uw IoT Edge-apparaat:
+1. Voer de volgende opdracht uit op IoT Edge apparaat:
 
    `sudo docker logs azureiotsecurity`
 
-1. Voor uitgebreidere logboeken voegt u de volgende omgevings variabele toe aan de implementatie van de **azureiotsecurity** -module: `logLevel=Debug` .
+1. Voeg voor uitgebreidere logboeken de volgende omgevingsvariabele toe aan de implementatie van **de azureiotsecurity-module:** `logLevel=Debug` .
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer informatie over configuratie opties gaat u naar de hand leiding voor het configureren van de module.
+Voor meer informatie over configuratieopties gaat u verder met de handleiding voor moduleconfiguratie.
 > [!div class="nextstepaction"]
-> [Hand leiding voor module configuratie](./how-to-agent-configuration.md)
+> [Handleiding voor moduleconfiguratie](./how-to-agent-configuration.md)

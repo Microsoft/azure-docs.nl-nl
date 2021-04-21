@@ -2,13 +2,13 @@
 title: 'Zelfstudie: nieuwe beleidstoewijzing met Azure-portal'
 description: In deze zelfstudie gebruikt u de Azure-portal om een Azure Policy-toewijzing te maken om niet-compatibele resources te identificeren.
 ms.topic: tutorial
-ms.date: 10/07/2020
-ms.openlocfilehash: 9a07e490525ce532f8f843b30b3b83715e65ce3c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 04/21/2021
+ms.openlocfilehash: 20cb8125a157a3ce97c88278c99f90936b449b65
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "91826602"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107831650"
 ---
 # <a name="tutorial-create-a-policy-assignment-to-identify-non-compliant-resources"></a>Zelfstudie: Een beleidstoewijzing maken om niet-conforme resources te identificeren
 
@@ -95,9 +95,9 @@ Als u de gemaakte toewijzing wilt verwijderen, volgt u deze stappen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u een beleidsdefinitie toegewezen aan een bereik en het bijbehorende nalevingsrapport geëvalueerd. De beleidsdefinitie controleert of alle resources in het bereik conform zijn en identificeert welke dit niet zijn. U bent nu klaar om uw servers met Azure Arc te controleren met Azure Monitor voor VM's.
+In deze zelfstudie hebt u een beleidsdefinitie toegewezen aan een bereik en het bijbehorende nalevingsrapport geëvalueerd. De beleidsdefinitie controleert of alle resources in het bereik conform zijn en identificeert welke dit niet zijn. U bent nu klaar om uw computer met Azure Arc servers te bewaken door [VM-inzichten in te stellen.](../../../azure-monitor/vm/vminsights-overview.md)
 
 Ga verder met de volgende zelfstudie voor meer informatie over het bewaken en weergeven van de prestaties, het uitgevoerde proces en hun afhankelijkheden vanaf uw computer:
 
 > [!div class="nextstepaction"]
-> [Azure Monitor voor VM's inschakelen](tutorial-enable-vm-insights.md)
+> [VM-inzichten inschakelen](tutorial-enable-vm-insights.md)

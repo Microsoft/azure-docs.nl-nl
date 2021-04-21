@@ -1,7 +1,7 @@
 ---
-title: 'Snelstartgids: anomalie detectie met behulp van de afwijkende detector-client bibliotheek voor afwijkings detectie van multidimensionale'
+title: 'Quickstart: Anomaliedetectie met behulp van de Anomaly Detector-clientbibliotheek voor anomaliedetectie met meerdere afwijkingen'
 titleSuffix: Azure Cognitive Services
-description: De anomalie detector multidimensionale biedt client bibliotheken voor het detecteren van afwijkingen in uw gegevens reeksen als batch-of gegevens stromen.
+description: De Anomaly Detector multivariate biedt clientbibliotheken voor het detecteren van afwijkingen in uw gegevensreeks als batch of bij het streamen van gegevens.
 services: cognitive-services
 author: mrbullwinkle
 manager: nitinme
@@ -9,17 +9,17 @@ zone_pivot_groups: anomaly-detector-quickstart-multivariate
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 04/01/2020
+ms.date: 04/21/2021
 ms.author: mbullwin
 keywords: anomaliedetectie, algoritmen
-ms.openlocfilehash: c522675f90cd716725ecaba23d5b6ce5921665a6
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: c19365719dddb01521010c742ac774762060bed9
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107316012"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830732"
 ---
-# <a name="quickstart-use-the-anomaly-detector-multivariate-client-library"></a>Snelstartgids: de Anomaliey detector multidimensionale-client bibliotheek gebruiken
+# <a name="quickstart-use-the-anomaly-detector-multivariate-client-library"></a>Quickstart: De clientbibliotheek Anomaly Detector meerdere varianten gebruiken
 
 ::: zone pivot="programming-language-csharp"
 

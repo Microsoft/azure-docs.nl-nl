@@ -1,40 +1,40 @@
 ---
-title: Gegevens locaties voor virtueel bureau blad van Windows-Azure
-description: Een kort overzicht van de locaties waar de gegevens en meta gegevens van Windows virtueel bureau blad zijn opgeslagen.
+title: Gegevenslocaties voor Windows Virtual Desktop - Azure
+description: Een kort overzicht van de locaties Windows Virtual Desktop gegevens en metagegevens worden opgeslagen.
 author: Heidilohr
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 02/17/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: a4c63cc686b08d179e20e6f3e3a7aa1efa69a5f8
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: eeba3cb579c6ef9158379403a3206f99a2cfb060
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106447077"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830624"
 ---
-# <a name="data-and-metadata-locations-for-windows-virtual-desktop"></a>Locaties van gegevens en meta gegevens voor Windows virtueel bureau blad
+# <a name="data-and-metadata-locations-for-windows-virtual-desktop"></a>Gegevens- en metagegevenslocaties voor Windows Virtual Desktop
 
 >[!IMPORTANT]
 >Deze inhoud is van toepassing op Windows Virtual Desktop met Azure Resource Manager Windows Virtual Desktop-objecten. Zie [dit artikel](./virtual-desktop-fall-2019/data-locations-2019.md) als u Windows Virtual Desktop (klassiek) zonder Azure Resource Manager-objecten gebruikt.
 
-Virtueel bureau blad van Windows is momenteel beschikbaar voor alle geografische locaties. Beheerders kunnen de locatie kiezen voor het opslaan van gebruikers gegevens wanneer ze de virtuele machines van de hostgroep en gekoppelde services, zoals bestands servers, maken. Meer informatie over Azure-geografi op de [Azure Data Center-kaart](https://azuredatacentermap.azurewebsites.net/).
+Windows Virtual Desktop is momenteel beschikbaar voor alle geografische locaties. Beheerders kunnen de locatie kiezen voor het opslaan van gebruikersgegevens wanneer ze de virtuele machines van de hostgroep en de bijbehorende services, zoals bestandsservers, maken. Meer informatie over Azure-geografische gebieden kunt u vinden op de [kaart met Azure-datacenters.](https://azuredatacentermap.azurewebsites.net/)
 
 >[!NOTE]
->Micro soft heeft geen invloed op de regio's waar u of uw gebruikers toegang hebben tot uw gebruiker en app-specifieke gegevens.
+>Microsoft controleert of beperkt de regio's waar u of uw gebruikers toegang hebben tot uw gebruikers- en app-specifieke gegevens niet.
 
 >[!IMPORTANT]
->In Windows Virtual Desktop worden globale meta gegevens opgeslagen, zoals Tenant namen, namen van hostnamen, namen van app-groepen en principal-namen van gebruikers in een Data Center. Wanneer een klant een service object maakt, moet deze een locatie voor het Service object invoeren. De locatie die ze invoeren, bepaalt waar de meta gegevens voor het object worden opgeslagen. De klant kiest een Azure-regio en de meta gegevens worden opgeslagen in de verwante geografie. Zie [Azure-geografi](https://azure.microsoft.com/global-infrastructure/geographies/)voor een lijst met alle Azure-regio's en gerelateerde geografische gebieden.
+>Windows Virtual Desktop slaat algemene metagegevensinformatie, zoals werkruimtenamen, hostgroepnamen, app-groepsnamen en user principal names, op in een datacenter. Wanneer een klant een serviceobject maakt, moet deze een locatie voor het serviceobject invoeren. De locatie die ze invoeren, bepaalt waar de metagegevens voor het object worden opgeslagen. De klant kiest een Azure-regio en de metagegevens worden opgeslagen in de gerelateerde geografie. Zie Azure-geografieën voor een lijst met alle [Azure-regio's en](https://azure.microsoft.com/global-infrastructure/geographies/)gerelateerde geografische gebieden.
 
-Momenteel wordt het opslaan van meta gegevens in de volgende geografi ondersteund:
+We ondersteunen momenteel het opslaan van metagegevens in de volgende geografische gebieden:
 
 - Verenigde Staten (VS) (algemeen beschikbaar)
-- Europa (EU) (open bare preview) 
+- Europa (EU) (openbare preview) 
 
 >[!NOTE]
-> Wanneer u een regio selecteert voor het maken van Windows Virtual Desktop service-objecten in, ziet u regio's onder zowel de Verenigde Staten als de EU. Om ervoor te zorgen dat u weet welke regio het meest geschikt is voor uw implementatie, kunt u een kijkje nemen in [onze wereld wijde Azure-infrastructuur kaart](https://azure.microsoft.com/global-infrastructure/geographies/#geographies).
+> Wanneer u een regio selecteert waarin u Windows Virtual Desktop serviceobjecten wilt maken, ziet u regio's onder de geografische regio's van de VS en de EU. Bekijk onze globale infrastructuurkaart van Azure om te zien welke regio het beste werkt voor [uw implementatie.](https://azure.microsoft.com/global-infrastructure/geographies/#geographies)
 
-De opgeslagen meta gegevens worden versleuteld op rest en geo-redundante mirrors worden binnen de geografie bewaard. Alle klant gegevens, zoals app-instellingen en gebruikers gegevens, bevinden zich op de locatie die de klant kiest en wordt niet beheerd door de service. Meer geographs worden beschikbaar naarmate de service groeit.
+De opgeslagen metagegevens worden 'at rest' versleuteld en geografisch redundante spiegels worden binnen de geografie onderhouden. Alle klantgegevens, zoals app-instellingen en gebruikersgegevens, bevinden zich op de locatie die de klant kiest en worden niet beheerd door de service. Naarmate de service groeit, komen er meer geografische gebieden beschikbaar.
 
-Meta gegevens van de service worden gerepliceerd binnen de Azure-Geografie voor nood herstel doeleinden.
+Servicemetagegevens worden voor noodhersteldoeleinden gerepliceerd binnen de Azure-geografie.

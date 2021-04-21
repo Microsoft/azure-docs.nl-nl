@@ -8,12 +8,12 @@ ms.date: 01/05/2021
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.openlocfilehash: 75cb7b6c9225e8579561f980df10da8994257133
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: ecebeb6d14a00a92ef845001cf04a59f10345e23
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107777181"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815572"
 ---
 # <a name="quickstart-azure-key-vault-key-client-library-for-java"></a>Quickstart: Azure Key Vault-clientbibliotheek voor sleutels voor Java
 Ga aan de slag met de Azure Key Vault-clientbibliotheek voor sleutels voor Java. Volg de onderstaande stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
@@ -269,6 +269,6 @@ public class App {
 In deze quickstart hebt u een sleutelkluis gemaakt, een sleutel gemaakt, opgehaald en vervolgens verwijderd. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
-- Lees het [Overzicht van de Key Vault-beveiliging](../general/security-overview.md)
+- Lees het [Overzicht van de Key Vault-beveiliging](../general/security-features.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-overview.md)
+- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-features.md)

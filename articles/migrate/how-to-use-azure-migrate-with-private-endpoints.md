@@ -6,12 +6,12 @@ ms.author: deseelam
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 04/07/2020
-ms.openlocfilehash: e4feaa8f1b30bfe31f4e645943f766b5736150b3
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.openlocfilehash: 82811c731c158d970d7ec2c2350a0cba106f6a67
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/21/2021
-ms.locfileid: "107818364"
+ms.locfileid: "107835484"
 ---
 # <a name="using-azure-migrate-with-private-endpoints"></a>Een Azure Migrate privé-eindpunten gebruiken  
 
@@ -63,7 +63,7 @@ Gebruik dit [artikel om](https://docs.microsoft.com/azure/migrate/create-manage-
 > [!Note]
 > U kunt de connectiviteitsmethode niet wijzigen in connectiviteit met privé-eindpunten voor bestaande Azure Migrate projecten.
 
-Geef in **de sectie** Geavanceerde configuratie de onderstaande gegevens op om een privé-eindpunt voor uw Azure Migrate maken.
+Geef in **de sectie** Geavanceerde configuratie de onderstaande gegevens op om een privé-eindpunt te maken voor uw Azure Migrate project.
 - Kies **privé-eindpunt** in **Connectiviteitsmethode.** 
 - Laat **in Openbare eindpunttoegang uitschakelen** de standaardinstelling Nee **staan.** Sommige hulpprogramma's voor migratie kunnen mogelijk geen gebruiksgegevens uploaden naar het Azure Migrate project als openbare netwerktoegang is uitgeschakeld. [Meer informatie.](#other-integrated-tools)
 - Selecteer **in Virtueel netwerkabonnement** het abonnement voor het virtuele netwerk van het privé-eindpunt. 
@@ -95,31 +95,48 @@ Hiermee maakt u een migratieproject en koppelt u er een privé-eindpunt aan.
 
 #### <a name="download-the-appliance-installer-file"></a>Het installatiebestand van het apparaat downloaden  
 
-> [!Note]
-> Als u problemen hebt met het downloaden van het installatiebestand van het apparaat, maakt u een ondersteuningscase.
+Azure Migrate: Detectie en evaluatie maken gebruik van een lichtgewicht Azure Migrate apparaat. Het apparaat voert serverdetectie uit en verzendt serverconfiguratie en prestatiemetagegevens naar Azure Migrate.
 
-Azure Migrate: Detectie en evaluatie maken gebruik van een lichtgewicht Azure Migrate apparaat. Het apparaat voert serverdetectie uit en verzendt serverconfiguratie- en prestatiemetagegevens naar Azure Migrate.
+Als u het apparaat wilt instellen, downloadt u het ingepakte bestand met het installatiescript uit de portal. Kopieer het ingepakte bestand op de server die het apparaat gaat hosten. Nadat u het ingepakte bestand hebt gedownload, controleert u de bestandsbeveiliging en voer u het installatiescript uit om het apparaat te implementeren. 
 
-Als u het apparaat wilt instellen, downloadt u het ingepakte bestand met het installatiescript uit de portal. Kopieer het ingepakte bestand op de server die het apparaat gaat hosten. 
+Hier zijn de downloadkoppelingen voor elk scenario met de hash-waarden:
 
-Zorg ervoor dat de server voldoet aan de [hardwarevereisten](https://docs.microsoft.com/azure/migrate/migrate-appliance) voor het gekozen scenario (VMware/Hyper-V/Fysiek of anders) en verbinding kan maken met de vereiste Azure-URL's [:](./migrate-appliance.md#public-cloud-urls-for-private-link-connectivity) openbare [clouds](./migrate-appliance.md#government-cloud-urls-for-private-link-connectivity) en overheids clouds.
+Scenario | Downloadkoppeling | Hashwaarde
+--- | --- | ---
+Hyper-V | [AzureMigrateInstaller-HyperV-Public-PrivateLink.zip](https://go.microsoft.com/fwlink/?linkid=2160557) | 17EFA01E3A7683F1CE2A08E3A9197A27D8BD2CC03C3AB5C6E00E4261A822BDB3
+Fysiek | [AzureMigrateInstaller-Physical-Public-PrivateLink.zip](https://go.microsoft.com/fwlink/?linkid=2160558) | 01028F92C2095452F2DDCB89986CDC1F177AAC58E150A5B219A69CF1B7DA3BE0
+VMware | [AzureMigrateInstaller-VMware-public-PrivateLink.zip](https://go.microsoft.com/fwlink/?linkid=2160648) | 66D3217AEC1DE51D84EC608B22BDDA605EC9C4FCTUUR06FC69FEC985886627C224
+Uitschalen van VMware | [AzureMigrateInstaller-VMware-Public-Scaleout-PrivateLink.zip](https://go.microsoft.com/fwlink/?linkid=2160811) | 42C1E8D5CF428E35E5B98E4E7465DDD08439F0FD5C319340CE3E3ADC3DC1717A6
 
-Nadat u het ingepakte bestand hebt gedownload, moet u het installatiescript uitvoeren om het apparaat te implementeren.
+#### <a name="verify-security"></a>Beveiliging controleren
+
+Controleer of het zip-bestand veilig is voordat u het implementeert.
+
+1. Open een beheerdersopdrachtvenster op de server waarop u het bestand hebt gedownload.
+2. Voer de volgende opdracht uit om de hash voor het ingepakte bestand te genereren
+
+    - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
+    - Voorbeeld van gebruik voor openbare cloud: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMware-public-PrivateLink.zip SHA256 ```
+
+3.  Controleer de meest recente versie van het apparaat door de hash-waarden uit de bovenstaande tabel te vergelijken.
+
+Zorg ervoor dat de server voldoet aan de [hardwarevereisten](https://docs.microsoft.com/azure/migrate/migrate-appliance) voor het gekozen scenario (VMware/Hyper-V/fysiek of anders) en verbinding kan maken met de vereiste Azure-URL's [:](./migrate-appliance.md#public-cloud-urls-for-private-link-connectivity) openbare clouds en overheids clouds. [](./migrate-appliance.md#government-cloud-urls-for-private-link-connectivity)
+
 
 #### <a name="run-the-script"></a>Het script uitvoeren
 
 1. Pak het zip-bestand uit naar een map op de server die als host moet fungeren voor het apparaat. 
 2. Start PowerShell op de computer met beheerdersbevoegdheden (verhoogde bevoegdheden).
 3. Wijzig de PowerShell-map in de map met de inhoud die is geëxtraheerd uit het gedownloade ingepakte bestand.
-4. Voer het script **alsAzureMigrateInstaller.ps1** uit:
+4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit:
 
-    ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1```
+    ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-VMware-public-PrivateLink> .\AzureMigrateInstaller.ps1```
    
-5. Nadat het script is uitgevoerd, wordt configuratiebeheer voor het apparaat start, zodat u het apparaat kunt configureren. Als u problemen ondervindt, bekijkt u de scriptlogboeken op C:\ProgramData\Microsoft Azure\Logs\AzureMigrateScenarioInstaller_<em>Timestamp</em>.log.
+5. Nadat het script is uitgevoerd, wordt configuratiebeheer voor het apparaat start, zodat u het apparaat kunt configureren. Als u problemen ondervindt, bekijkt u de scriptlogboeken in C:\ProgramData\Microsoft Azure\Logs\AzureMigrateScenarioInstaller_<em>Timestamp</em>.log.
 
 ### <a name="configure-the-appliance-and-start-continuous-discovery"></a>Het apparaat configureren en continue detectie starten
 
-Open een browser op een computer die verbinding kan maken met de apparaatserver en open de URL van het apparaatconfiguratiebeheer: `https://appliance name or IP address: 44368` . U kunt configuration manager ook openen vanaf het bureaublad van de apparaatserver door de snelkoppeling voor Configuration Manager te selecteren.
+Open een browser op een computer die verbinding kan maken met de server van het apparaat en open de URL van het apparaatconfiguratiebeheer: `https://appliance name or IP address: 44368` . U kunt configuration manager ook openen vanaf het bureaublad van de apparaatserver door de snelkoppeling voor Configuration Manager te selecteren.
 
 #### <a name="set-up-prerequisites"></a>Vereisten instellen
 
@@ -133,10 +150,10 @@ Open een browser op een computer die verbinding kan maken met de apparaatserver 
      - U moet Opslaan selecteren om **de** configuratie te registreren als u de details van de proxyserver of toegevoegde URL's/IP-adressen hebt bijgewerkt om de proxy te omzeilen.
      
         > [!Note]
-        > Als er tijdens de connectiviteitscontrole een foutbericht wordt weergegeven met aka.ms/*-koppeling en u niet wilt dat het apparaat via internet toegang heeft tot deze URL, moet u de service voor automatisch bijwerken op het apparaat uitschakelen door de stappen hier te [**volgen.**](https://docs.microsoft.com/azure/migrate/migrate-appliance#turn-off-auto-update) Nadat de automatische update is uitgeschakeld, wordt de aka.ms/* URL-connectiviteitscontrole overgeslagen. 
+        > Als er tijdens de connectiviteitscontrole een fout met de aka.ms/*-koppeling wordt weergegeven en u niet wilt dat het apparaat toegang heeft tot deze URL via internet, moet u de service voor automatisch bijwerken op het apparaat uitschakelen door de stappen hier te [**volgen.**](https://docs.microsoft.com/azure/migrate/migrate-appliance#turn-off-auto-update) Nadat de automatische update is uitgeschakeld, wordt de aka.ms/* URL-connectiviteitscontrole overgeslagen. 
 
    - **Tijdsynchronisatie**: de tijd op het apparaat moet zijn gesynchroniseerd met internettijd zodat detectie goed werkt.
-   - **Updates installeren**: het apparaat zorgt ervoor dat de meest recente updates zijn geïnstalleerd. Nadat de controle is voltooid, kunt u Apparaatservices weergeven selecteren om de status en versies te zien van de services die op de apparaatserver worden uitgevoerd. 
+   - **Updates installeren**: het apparaat zorgt ervoor dat de meest recente updates zijn geïnstalleerd. Nadat de controle is voltooid, kunt u Apparaatservices weergeven selecteren om **de** status en versies te zien van de services die op de apparaatserver worden uitgevoerd.
         > [!Note]
         > Als u ervoor hebt gekozen om de service voor automatische updates op het apparaat uit te schakelen, kunt u de apparaatservices handmatig bijwerken om de nieuwste versies van de services op te halen door de stappen hier [**te volgen.**](https://docs.microsoft.com/azure/migrate/migrate-appliance#manually-update-an-older-version)
    - **VDDK installeren:**( alleen nodig voor _VMware-apparaat)_ Het apparaat controleert of VMware vSphere Virtual Disk Development Kit (VDDK) is geïnstalleerd. Als dat niet het geval is, downloadt u VDDK 6.7 van VMware en extraheert u de inhoud van het gedownloade zipbestand naar de opgegeven locatie op het apparaat. Zie voor meer informatie de **installatie-instructies**.
@@ -147,7 +164,7 @@ Nadat de controle van vereisten is voltooid, volgt u deze stappen om het apparaa
 
 
 >[!Note]
-> Als u problemen met DNS-resolutie krijgt tijdens de registratie van het apparaat of  op het moment van detectie, moet u ervoor zorgen dat Azure Migrate-resources die zijn gemaakt tijdens de stap Sleutel genereren in de portal bereikbaar zijn vanaf de on-premises server die als host voor het Azure Migrate-apparaat wordt gebruikt. [Meer informatie over het controleren van de netwerkverbinding.](#troubleshoot-network-connectivity)
+> Als u dns-resolutieproblemen krijgt tijdens de registratie van het apparaat of op het  moment van detectie, moet u ervoor zorgen dat Azure Migrate-resources die zijn gemaakt tijdens de stap Sleutel genereren in de portal bereikbaar zijn vanaf de on-premises server die als host voor het Azure Migrate-apparaat wordt gehost. [Meer informatie over het controleren van de netwerkverbinding.](#troubleshoot-network-connectivity)
 
 ### <a name="assess-your-servers-for-migration-to-azure"></a>Uw servers evalueren voor migratie naar Azure
 Nadat de detectie is voltooid, evalueert u uw servers[(VMware-VM's,](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware-azure-vm) [Hyper-V-VM's,](https://docs.microsoft.com/azure/migrate/tutorial-assess-hyper-v)fysieke [servers,](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware-azure-vm) [AWS-VM's,](https://docs.microsoft.com/azure/migrate/tutorial-assess-aws) [GCP-VM's)](https://docs.microsoft.com/azure/migrate/tutorial-assess-gcp)voor migratie naar Azure-VM's of Azure VMware Solution (AVS), met behulp van het hulpprogramma Azure Migrate: Detectie en evaluatie. 
@@ -158,18 +175,18 @@ U kunt uw [on-premises machines](https://docs.microsoft.com/azure/migrate/tutori
 
 In de volgende secties worden de stappen beschreven die nodig zijn om Azure Migrate privé-eindpunten te gebruiken voor [migraties](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) met behulp van persoonlijke ExpressRoute-peering of VPN-verbindingen.  
 
-Dit artikel bevat een proof-of-concept-implementatiepad voor replicaties op basis van een agent voor het migreren van uw [VMware-VM's,](./tutorial-migrate-vmware-agent.md) [Hyper-V-VM's,](./tutorial-migrate-physical-virtual-machines.md)fysieke [servers,](./tutorial-migrate-physical-virtual-machines.md)virtuele machines die worden uitgevoerd op [AWS,](./tutorial-migrate-aws-virtual-machines.md)VM's die worden uitgevoerd op [GCP](https://docs.microsoft.com/azure/migrate/tutorial-migrate-gcp-virtual-machines)of VM's die worden uitgevoerd op een andere virtualisatieprovider met behulp van Privé-eindpunten van Azure. U kunt een vergelijkbare benadering gebruiken voor het uitvoeren van [Hyper-V-migraties](https://docs.microsoft.com/azure/migrate/tutorial-migrate-hyper-v) zonder agent met behulp van private link.
+Dit artikel bevat een proof-of-concept-implementatiepad voor replicaties op basis van een agent voor het migreren van uw [VMware-VM's,](./tutorial-migrate-vmware-agent.md) [Hyper-V-VM's,](./tutorial-migrate-physical-virtual-machines.md)fysieke [servers,](./tutorial-migrate-physical-virtual-machines.md)VM's die worden uitgevoerd op [AWS,](./tutorial-migrate-aws-virtual-machines.md)VM's die worden uitgevoerd op [GCP](https://docs.microsoft.com/azure/migrate/tutorial-migrate-gcp-virtual-machines)of VM's die worden uitgevoerd op een andere virtualisatieprovider met behulp van Azure-privé-eindpunten. U kunt een vergelijkbare benadering gebruiken voor het uitvoeren van [Hyper-V-migraties](https://docs.microsoft.com/azure/migrate/tutorial-migrate-hyper-v) zonder agent met behulp van private link.
 
 >[!Note]
 >[Voor VMware-migraties zonder agent](https://docs.microsoft.com/azure/migrate/tutorial-assess-physical) is internettoegang of connectiviteit via ExperessRoute Microsoft-peering vereist. 
 
 ### <a name="set-up-a-replication-appliance-for-migration"></a>Een replicatieapparaat instellen voor migratie 
 
-Het volgende diagram illustreert de op agent gebaseerde replicatiewerkstroom met privé-eindpunten met behulp van Azure Migrate: Hulpprogramma voor servermigratie.  
+Het volgende diagram illustreert de agentgebaseerde replicatiewerkstroom met privé-eindpunten met behulp van Azure Migrate: Hulpprogramma voor servermigratie.  
 
 ![Replicatiearchitectuur](./media/how-to-use-azure-migrate-with-private-endpoints/replication-architecture.png)
 
-Het hulpprogramma gebruikt een replicatieapparaat om uw servers naar Azure te repliceren. Gebruik dit artikel om een machine voor te bereiden [en in te stellen voor het replicatieapparaat. ](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#prepare-a-machine-for-the-replication-appliance)
+Het hulpprogramma maakt gebruik van een replicatieapparaat om uw servers naar Azure te repliceren. Gebruik dit artikel om een machine voor te bereiden [en in te stellen voor het replicatieapparaat. ](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#prepare-a-machine-for-the-replication-appliance)
 
 Nadat u het replicatieapparaat hebt ingesteld, gebruikt u de volgende instructies om de vereiste resources voor migratie te maken. 
 
@@ -179,11 +196,11 @@ Nadat u het replicatieapparaat hebt ingesteld, gebruikt u de volgende instructie
     - Hiermee maakt u een Recovery Services-kluis op de achtergrond en schakelt u een beheerde identiteit voor de kluis in. Een Recovery Services-kluis is een entiteit die de replicatiegegevens van servers bevat en wordt gebruikt om replicatiebewerkingen te activeren.  
     - Als het Azure Migrate privé-eindpuntconnectiviteit heeft, wordt er een privé-eindpunt gemaakt voor de Recovery Services-kluis. Hiermee worden vijf volledig gekwalificeerde privénamen (FQDN's) toegevoegd aan het privé-eindpunt, één voor elke microservice die is gekoppeld aan de Recovery Services-kluis.   
     - De vijf domeinnamen zijn opgemaakt in dit patroon: <br/> _{Vault-ID}-asr-pod01-{type}-. {target-geo-code}_. privatelink.siterecovery.windowsazure.com  
-    - Standaard maakt Azure Migrate automatisch een privé-DNS-zone en voegt dns-A-records toe voor de Microservices van de Recovery Services-kluis. De privé-DNS-zone wordt vervolgens gekoppeld aan het virtuele netwerk van het privé-eindpunt. Hierdoor kan het on-premises replicatieapparaat de volledig gekwalificeerde domeinnamen naar hun privé-IP-adressen oplossen.
+    - Standaard maakt Azure Migrate een privé-DNS-zone en worden DNS A-records toegevoegd voor de Microservices van de Recovery Services-kluis. De privé-DNS-zone wordt vervolgens gekoppeld aan het virtuele netwerk van het privé-eindpunt. Hierdoor kan het on-premises replicatieapparaat de volledig gekwalificeerde domeinnamen naar hun privé-IP-adressen oplossen.
 
 4. Voordat u het replicatieapparaat registreert, moet u ervoor zorgen dat de FQDN's van de private link van de kluis bereikbaar zijn vanaf de computer die als host voor het replicatieapparaat wordt gebruikt. [Meer informatie over het controleren van de netwerkverbinding.](#troubleshoot-network-connectivity) 
 
-5. Nadat u de connectiviteit hebt gecontroleerd, downloadt u het installatie- en sleutelbestand van het apparaat, het installatieproces en registreert u het apparaat bij Azure Migrate. Bekijk hier [de gedetailleerde stappen.](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#set-up-the-replication-appliance) Nadat u het replicatieapparaat hebt ingesteld, volgt u deze instructies om de [Mobility-service](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#install-the-mobility-service) te installeren op de machines die u wilt migreren. 
+5. Nadat u de connectiviteit hebt gecontroleerd, downloadt u de installatie van het apparaat en het sleutelbestand, voer het installatieproces uit en registreert u het apparaat bij Azure Migrate. Bekijk hier [de gedetailleerde stappen.](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#set-up-the-replication-appliance) Nadat u het replicatieapparaat hebt ingesteld, volgt u deze instructies om de [Mobility-service](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#install-the-mobility-service) te installeren op de machines die u wilt migreren. 
 
 ### <a name="replicate-servers-to-azure-using-azure-private-link"></a>Servers repliceren naar Azure met behulp van Azure Private Link 
 
@@ -199,19 +216,19 @@ Als u replicaties via een privékoppeling wilt inschakelen, maakt [u bovendien e
 
 De beheerde identiteit van de Recovery Services-kluis vereist machtigingen voor geverifieerde toegang tot het opslagaccount voor cache/replicatie. 
 
-Gebruik de onderstaande richtlijnen om de Recovery Services-kluis te identificeren die is gemaakt door Azure Migrate en de vereiste machtigingen te verlenen. 
+Gebruik de onderstaande richtlijnen om de Recovery Services-kluis te identificeren die is Azure Migrate en de vereiste machtigingen te verlenen. 
 
 **_De Recovery Services-kluis en de object-id van de beheerde identiteit identificeren_**
 
-U vindt de details van de Recovery Services-kluis op de eigenschappenpagina Azure Migrate: Server **Migration.** 
+U vindt de details van de Recovery Services-kluis op de eigenschappenpagina Azure Migrate: Server **migration.** 
 
-1. Ga naar de **hub Azure Migrate,** selecteer **Overzicht** op de Azure Migrate: Servermigratie.
+1. Ga naar de **Azure Migrate hub** en selecteer **Overzicht** op de Azure Migrate: Servermigratie.
 
     ![Overzichtspagina op Azure Migrate hub](./media/how-to-use-azure-migrate-with-private-endpoints/hub-overview.png)
 
-2. Selecteer Eigenschappen in het **linkerdeelvenster.** Noteer de naam van de Recovery Services-kluis en de id van de beheerde identiteit. De kluis heeft een _privé-eindpunt_ als het **connectiviteitstype** en _Overige_ als **replicatietype.** U hebt deze informatie nodig tijdens het verlenen van toegang tot de kluis.
+2. Selecteer Eigenschappen in het **linkerdeelvenster.** Noteer de naam van de Recovery Services-kluis en de id van de beheerde identiteit. De kluis heeft een _privé-eindpunt_ als het **connectiviteitstype** en _Overige_ als **replicatietype**. U hebt deze informatie nodig tijdens het verlenen van toegang tot de kluis.
       
-    ![Azure Migrate: eigenschappenpagina servermigratie](./media/how-to-use-azure-migrate-with-private-endpoints/vault-info.png)
+    ![Azure Migrate: eigenschappenpagina Servermigratie](./media/how-to-use-azure-migrate-with-private-endpoints/vault-info.png)
 
 **_De vereiste machtigingen verlenen voor toegang tot het opslagaccount_**
 
@@ -240,24 +257,24 @@ De rolmachtigingen variëren afhankelijk van het type opslagaccount.
 
     ![Op rollen gebaseerde toegang bieden](./media/how-to-use-azure-migrate-with-private-endpoints/storage-role-assignment-select-role.png)
 
-4. Naast deze machtigingen moet u ook toegang tot vertrouwde Microsoft-services toestaan. Als uw netwerktoegang is beperkt tot geselecteerde netwerken, selecteert u **Microsoft-services** toegang tot dit opslagaccount **toestaan** in de sectie Uitzonderingen op het **tabblad** Netwerken. 
+4. Naast deze machtigingen moet u ook toegang tot vertrouwde Microsoft-services toestaan. Als uw netwerktoegang is beperkt tot geselecteerde netwerken, selecteert u Vertrouwde Microsoft-services toegang tot dit **opslagaccount** toestaan in de sectie **Uitzonderingen** op het **tabblad** Netwerken. 
 
 ![Vertrouwde toegang Microsoft-services opslagaccount toestaan](./media/how-to-use-azure-migrate-with-private-endpoints/exceptions.png)
 
 
 ### <a name="create-a-private-endpoint-for-the-storage-account-optional"></a>Een privé-eindpunt maken voor het opslagaccount (optioneel)
 
-Als u ExpressRoute wilt repliceren met privé-peering, [](https://docs.microsoft.com/azure/private-link/tutorial-private-endpoint-storage-portal#create-storage-account-with-a-private-endpoint) maakt u een privé-eindpunt voor de opslagaccounts voor cache/replicatie (doelsubresource: **_blob)._** 
+Als u wilt repliceren [](https://docs.microsoft.com/azure/private-link/tutorial-private-endpoint-storage-portal#create-storage-account-with-a-private-endpoint) met behulp van ExpressRoute met privé-peering, maakt u een privé-eindpunt voor de cache-/replicatieopslagaccounts (doelsubresource: **_blob)._** 
 
 >[!Note]
 >
-> - U kunt alleen privé-eindpunten maken in een Algemeen v2-opslagaccount (GPv2). Zie Prijzen van [Azure Page Blobs](https://azure.microsoft.com/pricing/details/storage/page-blobs/) en Prijzen van Azure Private Link voor [prijsinformatie](https://azure.microsoft.com/pricing/details/private-link/)
+> - U kunt alleen privé-eindpunten maken op een Algemeen v2-opslagaccount (GPv2). Zie Prijzen van [Azure Page Blobs](https://azure.microsoft.com/pricing/details/storage/page-blobs/) en Prijzen van Azure Private Link voor [prijsinformatie](https://azure.microsoft.com/pricing/details/private-link/)
 
 Het privé-eindpunt voor het opslagaccount moet worden gemaakt in hetzelfde virtuele netwerk als het privé Azure Migrate-eindpunt van het Azure Migrate-project of een ander virtueel netwerk dat is verbonden met dit netwerk. 
 
 Selecteer **Ja** en integreer met een privé-DNS-zone. De privé-DNS-zone helpt bij het routeren van de verbindingen van het virtuele netwerk naar het opslagaccount via een privékoppeling. Als **u Ja** selecteert, wordt de DNS-zone automatisch aan het virtuele netwerk toegevoegd en worden de DNS-records toegevoegd voor de resolutie van nieuwe IP's en volledig gekwalificeerde domeinnamen die zijn gemaakt. Meer informatie over [privé-DNS-zones.](https://docs.microsoft.com/azure/dns/private-dns-overview)
 
-Als de gebruiker die het privé-eindpunt maakt ook de eigenaar van het opslagaccount is, wordt het privé-eindpunt automatisch goedgekeurd. Anders moet de eigenaar van het opslagaccount het privé-eindpunt goedkeuren voor gebruik. Als u een aangevraagde privé-eindpuntverbinding wilt goedkeuren of afwijzen, gaat u naar **Privé-eindpuntverbindingen** onder **Netwerken** op de pagina van het opslagaccount.
+Als de gebruiker die het privé-eindpunt maakt ook de eigenaar van het opslagaccount is, wordt het privé-eindpunt automatisch goedgekeurd. Anders moet de eigenaar van het opslagaccount het privé-eindpunt goedkeuren voor gebruik. Als u een aangevraagde verbinding met een privé-eindpunt wilt goedkeuren of afwijzen, gaat u naar **Privé-eindpuntverbindingen** onder **Netwerken** op de pagina van het opslagaccount.
 
 Controleer de status van de verbindingsstatus van het privé-eindpunt voordat u doorgaat. 
 
@@ -269,7 +286,7 @@ Zorg ervoor dat het on-premises replicatieapparaat netwerkverbinding heeft met h
 
 >[!Note]
 >
-> - Als het opslagaccount voor replicatie van het _Premium-type_ is, moet u voor migraties van Hyper-V-VM's naar Azure een ander opslagaccount van het type _Standard_ selecteren voor het cacheopslagaccount. In dit geval moet u privé-eindpunten maken voor zowel het replicatie- als het cacheopslagaccount.  
+> - Voor migraties van Hyper-V-VM's naar Azure moet u, als het replicatieopslagaccount van het _Premium-type_ is, een ander opslagaccount van het type _Standard_ selecteren voor het cacheopslagaccount. In dit geval moet u privé-eindpunten maken voor zowel het replicatie- als het cacheopslagaccount.  
 
 Volg vervolgens deze instructies om de [replicatie te controleren en te starten](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#replicate-machines) en [migraties uit te voeren.](https://docs.microsoft.com/azure/migrate/tutorial-migrate-physical-virtual-machines#run-a-test-migration)  
 
@@ -307,7 +324,7 @@ Een illustratief voorbeeld voor DNS-resolutie van de FQDN van de private link va
 
    ![Voorbeeld van DNS-resolutie](./media/how-to-use-azure-migrate-with-private-endpoints/dns-resolution-example.png)
 
-- Een privé-IP-adres van 10.1.0.5 wordt geretourneerd voor het opslagaccount. Dit adres behoort tot het subnet van het virtuele netwerk van het privé-eindpunt.   
+- Er wordt een privé-IP-adres van 10.1.0.5 geretourneerd voor het opslagaccount. Dit adres behoort tot het subnet van het virtuele netwerk van het privé-eindpunt.   
 
 U kunt de DNS-resolutie voor andere Azure Migrate artefacten met behulp van een vergelijkbare benadering.   
 
@@ -317,24 +334,24 @@ Als de DNS-resolutie onjuist is, volgt u deze stappen:
 - Als u door Azure geleverde DNS-servers gebruikt, raadpleegt u de onderstaande sectie voor verdere probleemoplossing.  
 
 > [!Tip]
-> U kunt de DNS-records van uw bronomgeving handmatig bijwerken door het DNS-hostsbestand op uw on-premises apparaat te bewerken met de private link-resource-FQDN's en de bijbehorende privé-IP-adressen. Deze optie wordt alleen aanbevolen voor testen. <br/>  
+> U kunt de DNS-records van uw bronomgeving handmatig bijwerken door het DNS-hosts-bestand op uw on-premises apparaat te bewerken met de private link-resource-FQDN's en de bijbehorende privé-IP-adressen. Deze optie wordt alleen aanbevolen voor testen. <br/>  
 
 
 ### <a name="validate-the-private-dns-zone"></a>De zone Privé-DNS valideren   
-Als de DNS-resolutie niet werkt zoals beschreven in de vorige sectie, is er mogelijk een probleem met uw Privé-DNS zone.  
+Als de DNS-resolutie niet werkt zoals beschreven in de vorige sectie, is er mogelijk een probleem met uw Privé-DNS Zone.  
 
 #### <a name="confirm-that-the-required-private-dns-zone-resource-exists"></a>Controleer of de vereiste Privé-DNS Zone-resource bestaat  
-Standaard maakt Azure Migrate voor elk resourcetype ook een privé-DNS-zone die overeenkomt met het subdomein 'privatelink'. De privé-DNS-zone wordt gemaakt in dezelfde Azure-resourcegroep als de resourcegroep van het privé-eindpunt. De Azure-resourcegroep moet privé-DNS-zoneresources bevatten met de volgende indeling:
+Standaard maakt Azure Migrate privé-DNS-zone die overeenkomt met het subdomein 'privatelink' voor elk resourcetype. De privé-DNS-zone wordt gemaakt in dezelfde Azure-resourcegroep als de resourcegroep van het privé-eindpunt. De Azure-resourcegroep moet privé-DNS-zoneresources bevatten met de volgende indeling:
 - privatelink.vaultcore.azure.net voor de sleutelkluis 
 - privatelink.blob.core.windows.net voor het opslagaccount
-- privatelink.siterecovery.windowsazure.com voor de Recovery Services-kluis (voor Hyper-V en replicaties op basis van een agent)
+- privatelink.siterecovery.windowsazure.com voor de Recovery Services-kluis (voor Hyper-V- en agentreplicatie)
 - privatelink.prod.migration.windowsazure.com: migreert project, evaluatieproject en detectiesite.   
 
 De privé-DNS-zone wordt automatisch gemaakt door Azure Migrate (met uitzondering van het opslagaccount voor cache/replicatie dat door de gebruiker is geselecteerd). U kunt de gekoppelde privé-DNS-zone vinden door naar de pagina privé-eindpunt te gaan en DNS-configuraties te selecteren. U ziet de privé-DNS-zone onder de sectie privé-DNS-integratie. 
 
 ![Schermopname van DNS-configuratie](./media/how-to-use-azure-migrate-with-private-endpoints/dns-configuration.png)  
 
-Als de DNS-zone niet aanwezig is (zoals hieronder wordt weergegeven), maakt u [een nieuwe Privé-DNS Zone-resource.](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal)  
+Als de DNS-zone niet aanwezig is (zoals hieronder wordt weergegeven), maakt u een [nieuwe Privé-DNS Zone-resource.](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal)  
 
 ![Een Privé-DNS maken](./media/how-to-use-azure-migrate-with-private-endpoints/create-dns-zone.png) 
 
@@ -343,15 +360,15 @@ De privé-DNS-zone moet worden gekoppeld aan het virtuele netwerk dat het privé
 
 Navigeer naar de privé-DNS-zoneresource in Azure Portal en selecteer de koppelingen naar het virtuele netwerk in het menu links. Als het goed is, ziet u dat de virtuele netwerken zijn gekoppeld.
 
-![Koppelingen voor virtuele netwerken weergeven](./media/how-to-use-azure-migrate-with-private-endpoints/virtual-network-links.png) 
+![Virtuele netwerkkoppelingen weergeven](./media/how-to-use-azure-migrate-with-private-endpoints/virtual-network-links.png) 
 
-Hier wordt een lijst met koppelingen weergegeven, elk met de naam van een virtueel netwerk in uw abonnement. Het virtuele netwerk met de privé-eindpuntresource moet hier worden vermeld. Volg anders [dit artikel om](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network) de privé-DNS-zone te koppelen aan een virtueel netwerk.    
+Hier wordt een lijst met koppelingen weergegeven, elk met de naam van een virtueel netwerk in uw abonnement. Het virtuele netwerk dat de privé-eindpuntresource bevat, moet hier worden vermeld. Volg anders [dit artikel om](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network) de privé-DNS-zone te koppelen aan een virtueel netwerk.    
 
-Zodra de privé-DNS-zone is gekoppeld aan het virtuele netwerk, zoeken DNS-aanvragen die afkomstig zijn van het virtuele netwerk naar DNS-records in de privé-DNS-zone. Dit is vereist voor de juiste adresoplossing voor het virtuele netwerk waar het privé-eindpunt is gemaakt.   
+Zodra de privé-DNS-zone is gekoppeld aan het virtuele netwerk, zoeken DNS-aanvragen die afkomstig zijn van het virtuele netwerk naar DNS-records in de privé-DNS-zone. Dit is vereist voor de juiste adresresolutie naar het virtuele netwerk waar het privé-eindpunt is gemaakt.   
 
 #### <a name="confirm-that-the-private-dns-zone-contains-the-right-a-records"></a>Controleer of de privé-DNS-zone de juiste A-records bevat 
 
-Ga naar de privé-DNS-zone die u wilt oplossen. Op de pagina Overzicht worden alle DNS-records voor die privé-DNS-zone weergegeven. Controleer of er een DNS A-record bestaat voor de resource. De waarde van de A-record (het IP-adres) moet het privé-IP-adres van de resources zijn. Als u de A-record met het verkeerde IP-adres vindt, moet u het verkeerde IP-adres verwijderen en een nieuwe toevoegen. Het is raadzaam om de hele A-record te verwijderen, een nieuwe record toe te voegen en een DNS-flush uit te laten op het on-premises bronapparaat.   
+Ga naar de privé-DNS-zone die u wilt oplossen. Op de pagina Overzicht worden alle DNS-records voor die privé-DNS-zone weergegeven. Controleer of er een DNS A-record bestaat voor de resource. De waarde van de A-record (het IP-adres) moet het privé-IP-adres van de resources zijn. Als u de A-record met het verkeerde IP-adres vindt, moet u het verkeerde IP-adres verwijderen en een nieuwe toevoegen. Het is raadzaam om de hele A-record te verwijderen en een nieuwe record toe te voegen, en een DNS-flush uit te gaan op het on-premises bronapparaat.   
 
 Een illustratief voorbeeld voor de DNS A-record van het opslagaccount in de privé-DNS-zone:
 
@@ -362,7 +379,7 @@ Een illustratief voorbeeld voor de Microservices-DNS A-records van de Recovery S
 ![DNS-records voor Recovery Services-kluis](./media/how-to-use-azure-migrate-with-private-endpoints/rsv-a-records.png)   
 
 >[!Note]
-> Wanneer u een A-record verwijdert of wijzigt, kan de computer nog steeds worden omgeboekt naar het oude IP-adres, omdat de TTL-waarde (Time To Live) mogelijk nog niet is verlopen.  
+> Wanneer u een A-record verwijdert of wijzigt, kan de computer nog steeds worden opgelost naar het oude IP-adres, omdat de TTL-waarde (Time To Live) mogelijk nog niet is verlopen.  
 
 #### <a name="other-things-that-may-affect-private-link-connectivity"></a>Andere zaken die van invloed kunnen zijn op private link-connectiviteit  
 

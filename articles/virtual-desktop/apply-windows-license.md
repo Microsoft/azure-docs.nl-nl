@@ -1,31 +1,31 @@
 ---
-title: Windows-licentie Toep assen op virtuele machines van de host-Azure
-description: Hierin wordt beschreven hoe u de Windows-licentie voor virtuele bureau blad-Vm's van Windows toepast.
-author: ChristianMontoya
+title: Een Windows-licentie toepassen op virtuele machines voor sessiehosts - Azure
+description: Beschrijft hoe u de Windows-licentie kunt toepassen op Windows Virtual Desktop-VM's.
+author: Heidilohr
 ms.topic: how-to
 ms.date: 08/14/2019
-ms.author: chrimo
-ms.openlocfilehash: 5f3749be36f5f035e49fcb862f92180e4902101f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.author: helohr
+ms.openlocfilehash: fa3c9f82e99536b07a27656e0143d6b2fcc89a44
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88010137"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107833864"
 ---
-# <a name="apply-windows-license-to-session-host-virtual-machines"></a>Windows-licentie Toep assen op virtuele machines van de sessiehost
+# <a name="apply-windows-license-to-session-host-virtual-machines"></a>Een Windows-licentie toepassen op virtuele machines voor sessiehosts
 
-Klanten die een juiste licentie hebben voor het uitvoeren van virtuele Windows-Desktop werkbelastingen, komen in aanmerking om een Windows-licentie toe te passen op de virtuele machines van de host en ze uit te voeren zonder dat hiervoor een andere licentie wordt betaald. Zie [prijzen voor Windows Virtual Desktop](https://azure.microsoft.com/pricing/details/virtual-desktop/)voor meer informatie.
+Klanten met een juiste licentie voor het uitvoeren van Windows Virtual Desktop-workloads komen in aanmerking om een Windows-licentie toe te passen op de virtuele machines van hun sessiehost en deze uit te voeren zonder te betalen voor een andere licentie. Zie prijzen voor Windows Virtual Desktop [meer informatie.](https://azure.microsoft.com/pricing/details/virtual-desktop/)
 
-## <a name="ways-to-use-your-windows-virtual-desktop-license"></a>Manieren om uw Windows Virtual Desktop-licentie te gebruiken
-Met Windows Virtual Desktop Licensing kunt u een licentie Toep assen op elke virtuele Windows-of Windows Server-machine die is geregistreerd als gastheer van een sessie in een hostgroep en gebruikers verbindingen ontvangt. Deze licentie is niet van toepassing op virtuele machines die worden uitgevoerd als bestands share servers, domein controllers, enzovoort.
+## <a name="ways-to-use-your-windows-virtual-desktop-license"></a>Manieren om uw Windows Virtual Desktop gebruiken
+Windows Virtual Desktop licentieverlening kunt u een licentie toepassen op elke virtuele Windows- of Windows Server-machine die is geregistreerd als een sessiehost in een hostgroep en gebruikersverbindingen ontvangt. Deze licentie is niet van toepassing op virtuele machines die worden uitgevoerd als bestands shareservers, domeincontrollers, en meer.
 
-Er zijn een aantal manieren om de Windows-licentie voor virtueel bureau blad te gebruiken:
-- U kunt een hostgroep en de virtuele machines van de sessiemap maken met behulp van de [Azure Marketplace-aanbieding](./create-host-pools-azure-marketplace.md). Voor virtuele machines die op deze manier zijn gemaakt, wordt automatisch de licentie toegepast.
-- U kunt een hostgroep en de virtuele machines van de sessiemap maken met behulp van de [GitHub Azure Resource Manager sjabloon](./virtual-desktop-fall-2019/create-host-pools-arm-template.md). Voor virtuele machines die op deze manier zijn gemaakt, wordt automatisch de licentie toegepast.
-- U kunt een licentie Toep assen op een bestaande virtuele machine van een host. Volg hiervoor de instructies in [een hostgroep maken met Power shell](./create-host-pools-powershell.md) om een hostgroep en gekoppelde vm's te maken en ga vervolgens terug naar dit artikel voor meer informatie over het Toep assen van de licentie.
+Er zijn een aantal manieren om de licentie Windows Virtual Desktop gebruiken:
+- U kunt een hostgroep en de virtuele machines van de sessiehost maken met behulp van [Azure Marketplace aanbieding](./create-host-pools-azure-marketplace.md). Op virtuele machines die op deze manier zijn gemaakt, wordt de licentie automatisch toegepast.
+- U kunt een hostgroep en de virtuele machines van de sessiehost maken met behulp van de [GitHub Azure Resource Manager sjabloon](./virtual-desktop-fall-2019/create-host-pools-arm-template.md). Op virtuele machines die op deze manier zijn gemaakt, wordt de licentie automatisch toegepast.
+- U kunt een licentie toepassen op een bestaande sessiehost-virtuele machine. Volg hiervoor eerst de instructies in Een hostgroep maken met PowerShell om een [hostgroep](./create-host-pools-powershell.md) en gekoppelde VM's te maken. Ga vervolgens terug naar dit artikel om te leren hoe u de licentie kunt toepassen.
 
-## <a name="apply-a-windows-license-to-a-session-host-vm"></a>Een Windows-licentie Toep assen op een Session Host-VM
-Zorg ervoor dat u [de nieuwste Azure PowerShell hebt geïnstalleerd en geconfigureerd](/powershell/azure/). Voer de volgende Power shell-cmdlet uit om de Windows-licentie toe te passen:
+## <a name="apply-a-windows-license-to-a-session-host-vm"></a>Een Windows-licentie toepassen op een sessiehost-VM
+Zorg ervoor dat u [de meest recente versie van Azure PowerShell.](/powershell/azure/) Voer de volgende PowerShell-cmdlet uit om de Windows-licentie toe te passen:
 
 ```powershell
 $vm = Get-AzVM -ResourceGroup <resourceGroupName> -Name <vmName>
@@ -33,13 +33,13 @@ $vm.LicenseType = "Windows_Client"
 Update-AzVM -ResourceGroupName <resourceGroupName> -VM $vm
 ```
 
-## <a name="verify-your-session-host-vm-is-utilizing-the-licensing-benefit"></a>Controleer of de host-VM van uw sessie gebruikmaakt van het voor deel van de licentie
-Nadat u uw virtuele machine hebt geïmplementeerd, voert u deze cmdlet uit en controleert u het licentie type:
+## <a name="verify-your-session-host-vm-is-utilizing-the-licensing-benefit"></a>Controleer of uw sessiehost-VM gebruikmaakt van het licentievoordeel
+Voer na het implementeren van uw VM deze cmdlet uit om het licentietype te controleren:
 ```powershell
 Get-AzVM -ResourceGroupName <resourceGroupName> -Name <vmName>
 ```
 
-Een host-VM met de toegepaste Windows-licentie ziet er ongeveer als volgt uit:
+Op een sessiehost-VM met de toegepaste Windows-licentie ziet u iets als dit:
 
 ```powershell
 Type                     : Microsoft.Compute/virtualMachines
@@ -47,7 +47,7 @@ Location                 : westus
 LicenseType              : Windows_Client
 ```
 
-Op Vm's zonder de toegepaste Windows-licentie ziet u ongeveer het volgende:
+VM's zonder de toegepaste Windows-licentie geven iets als het volgende weer:
 
 ```powershell
 Type                     : Microsoft.Compute/virtualMachines
@@ -55,9 +55,13 @@ Location                 : westus
 LicenseType              :
 ```
 
-Voer de volgende cmdlet uit om een lijst met alle host-Vm's te bekijken waarop de Windows-licentie in uw Azure-abonnement is toegepast:
+Voer de volgende cmdlet uit om een lijst weer te geven met alle sessiehost-VM's waarin de Windows-licentie is toegepast in uw Azure-abonnement:
 
 ```powershell
 $vms = Get-AzVM
 $vms | Where-Object {$_.LicenseType -like "Windows_Client"} | Select-Object ResourceGroupName, Name, LicenseType
 ```
+
+## <a name="requirements-for-deploying-windows-server-remote-desktop-services"></a>Vereisten voor het implementeren van Windows Server-Extern bureaublad-services
+
+Als u Windows Server 2019, 2016 of 2012 R2 als Windows Virtual Desktop-hosts in uw implementatie implementeert, moet een Extern bureaublad-services-licentieserver toegankelijk zijn vanaf deze virtuele machines. De Extern bureaublad-services-licentieserver kan zich on-premises of in Azure bevinden. Zie Activate [the Extern bureaublad-services license server (De Extern bureaublad-services-licentieserver activeren) voor meer informatie.](/windows-server/remote/remote-desktop-services/rds-activate-license-server)

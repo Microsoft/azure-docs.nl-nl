@@ -1,19 +1,20 @@
 ---
-title: Azure-cache beheren voor redis met Azure PowerShell
-description: Meer informatie over het uitvoeren van beheer taken voor Azure cache voor redis met behulp van Azure PowerShell.
+title: Uw Azure Cache voor Redis beheren met Azure PowerShell
+description: Meer informatie over het uitvoeren van beheertaken voor Azure Cache voor Redis met Azure PowerShell.
 author: yegu-ms
 ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: 88e433dbfa87d8ea483789b1fd838c62a6a481c0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: ac1456e2dc640e1076857da78cf4145b61ea69d4
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92536756"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832784"
 ---
-# <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Azure-cache beheren voor redis met Azure PowerShell
+# <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Uw Azure Cache voor Redis beheren met Azure PowerShell
 > [!div class="op_single_selector"]
 > * [PowerShell](cache-how-to-manage-redis-cache-powershell.md)
 > * [Azure-CLI](cache-manage-cli.md)
@@ -22,62 +23,62 @@ ms.locfileid: "92536756"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-In dit onderwerp wordt beschreven hoe u algemene taken uitvoert, zoals het maken, bijwerken en schalen van uw Azure-cache voor redis-exemplaren, het opnieuw genereren van toegangs sleutels en het weer geven van informatie over uw caches. Zie [Azure cache for redis-cmdlets](/powershell/module/az.rediscache)voor een volledige lijst met Azure cache voor redis Power shell-cmdlets.
+In dit onderwerp ziet u hoe u algemene taken uitvoert, zoals het maken, bijwerken en schalen van uw Azure Cache voor Redis-exemplaren, het opnieuw maken van toegangssleutels en het weergeven van informatie over uw caches. Zie voor een volledige lijst Azure Cache voor Redis PowerShell-cmdlets [Azure Cache voor Redis cmdlets.](/powershell/module/az.rediscache)
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]
 
-Zie Azure Resource Manager vs. klassieke implementatie voor meer informatie over het klassieke implementatie model [: inzicht in implementatie modellen en de status van uw resources](../azure-resource-manager/management/deployment-models.md).
+Zie Implementatiemodellen versus Azure Resource Manager klassieke implementatie: Implementatiemodellen en de status van uw resources begrijpen voor meer informatie over het [klassieke implementatiemodel.](../azure-resource-manager/management/deployment-models.md)
 
 ## <a name="prerequisites"></a>Vereisten
-Als u Azure PowerShell al hebt geïnstalleerd, moet u Azure PowerShell versie 1.0.0 of hoger hebben. U kunt controleren welke versie van Azure PowerShell u met deze opdracht hebt geïnstalleerd bij de Azure PowerShell opdracht prompt.
+Als u al een Azure PowerShell hebt geïnstalleerd, moet u Azure PowerShell versie 1.0.0 of hoger hebben. U kunt de versie van de Azure PowerShell die u met deze opdracht hebt geïnstalleerd, controleren Azure PowerShell opdrachtprompt.
 
 ```azurepowershell
     Get-Module Az | format-table version
 ```
 
-U moet zich eerst aanmelden bij Azure met deze opdracht.
+Eerst moet u zich aanmelden bij Azure met deze opdracht.
 
 ```azurepowershell
     Connect-AzAccount
 ```
 
-Geef het e-mail adres van uw Azure-account en het bijbehorende wacht woord op in het dialoog venster Microsoft Azure aanmelden.
+Geef het e-mailadres van uw Azure-account en het wachtwoord op in Microsoft Azure aanmeldingsvenster.
 
-Als u meerdere Azure-abonnementen hebt, moet u uw Azure-abonnement instellen. Voer deze opdracht uit om een lijst met uw huidige abonnementen weer te geven.
+Als u meerdere Azure-abonnementen hebt, moet u vervolgens uw Azure-abonnement instellen. Voer deze opdracht uit om een lijst met uw huidige abonnementen weer te geven.
 
 ```azurepowershell
     Get-AzSubscription | sort SubscriptionName | Select SubscriptionName
 ```
 
-Voer de volgende opdracht uit om het abonnement op te geven. In het volgende voor beeld is de naam van het abonnement `ContosoSubscription` .
+Voer de volgende opdracht uit om het abonnement op te geven. In het volgende voorbeeld is de naam van het abonnement `ContosoSubscription` .
 
 ```azurepowershell
     Select-AzSubscription -SubscriptionName ContosoSubscription
 ```
 
-Voordat u Windows Power shell met Azure Resource Manager kunt gebruiken, hebt u het volgende nodig:
+Voordat u een Windows PowerShell met Azure Resource Manager, hebt u het volgende nodig:
 
-* Windows Power shell, versie 3,0 of 4,0. Als u de versie van Windows Power shell wilt zoeken, typt u: `$PSVersionTable` en verifieert u de waarde van `PSVersion` 3,0 of 4,0. Zie [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595)om een compatibele versie te installeren.
+* Windows PowerShell versie 3.0 of 4.0. Als u de versie van Windows PowerShell, typt u: en controleert u of de waarde `$PSVersionTable` `PSVersion` van 3.0 of 4.0 is. Zie voor het installeren van een [compatibele versie Windows Management Framework 3.0.](https://www.microsoft.com/download/details.aspx?id=34595)
 
-Gebruik de cmdlet Get-Help om gedetailleerde informatie te krijgen over de cmdlets die u in deze zelf studie ziet.
+Als u gedetailleerde hulp wilt krijgen voor elke cmdlet die u in deze zelfstudie ziet, gebruikt u de cmdlet Get-Help cmdlet.
 
 ```azurepowershell
     Get-Help <cmdlet-name> -Detailed
 ```
 
-Als u bijvoorbeeld hulp voor de cmdlet wilt weer geven `New-AzRedisCache` , typt u:
+Als u bijvoorbeeld hulp wilt krijgen voor de `New-AzRedisCache` cmdlet, typt u:
 
 ```azurepowershell
     Get-Help New-AzRedisCache -Detailed
 ```
 
-### <a name="how-to-connect-to-other-clouds"></a>Verbinding maken met andere Clouds
-De Azure-omgeving is standaard `AzureCloud` , die de algemene Azure Cloud-instantie vertegenwoordigt. Als u verbinding wilt maken met een ander exemplaar, gebruikt u de `Connect-AzAccount` opdracht met de `-Environment` of- `EnvironmentName` opdracht regel optie met de gewenste omgeving of omgevings naam.
+### <a name="how-to-connect-to-other-clouds"></a>Verbinding maken met andere clouds
+De Azure-omgeving is standaard `AzureCloud` . Deze vertegenwoordigt het globale Azure-cloud-exemplaar. Als u verbinding wilt maken met een ander exemplaar, gebruikt u de opdracht met de `Connect-AzAccount` opdrachtregelschakelaar or - met de `-Environment` `EnvironmentName` gewenste omgevings- of omgevingsnaam.
 
-Voer de cmdlet uit om de lijst met beschik bare omgevingen weer te geven `Get-AzEnvironment` .
+Voer de cmdlet uit om de lijst met beschikbare `Get-AzEnvironment` omgevingen te bekijken.
 
-### <a name="to-connect-to-the-azure-government-cloud"></a>Verbinding maken met de Azure Government Cloud
-Als u verbinding wilt maken met de Azure Government Cloud, gebruikt u een van de volgende opdrachten.
+### <a name="to-connect-to-the-azure-government-cloud"></a>Verbinding maken met Azure Government Cloud
+Gebruik een van de volgende opdrachten Azure Government verbinding te maken met de Azure Government Cloud.
 
 ```azurepowershell
     Connect-AzAccount -EnvironmentName AzureUSGovernment
@@ -89,15 +90,15 @@ of
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureUSGovernment)
 ```
 
-Als u een cache in de Azure Government Cloud wilt maken, gebruikt u een van de volgende locaties.
+Als u een cache wilt maken in Azure Government Cloud, gebruikt u een van de volgende locaties.
 
 * USGov Virginia
 * USGov Iowa
 
-Zie [Microsoft Azure Government](https://azure.microsoft.com/features/gov/) en [Microsoft Azure Government ontwikkelaars handleiding](../azure-government/documentation-government-developer-guide.md)voor meer informatie over de Azure Government Cloud.
+Zie de ontwikkelaarshandleiding voor Azure Government cloud [voor Microsoft Azure Government](https://azure.microsoft.com/features/gov/) en Microsoft Azure Government informatie over [de cloud.](../azure-government/documentation-government-developer-guide.md)
 
-### <a name="to-connect-to-the-azure-china-cloud"></a>Verbinding maken met de cloud van Azure China
-Als u verbinding wilt maken met de Azure China-Cloud, gebruikt u een van de volgende opdrachten.
+### <a name="to-connect-to-the-azure-china-cloud"></a>Verbinding maken met de Azure China Cloud
+Gebruik een van de volgende opdrachten om verbinding te maken met de Azure China Cloud.
 
 ```azurepowershell
     Connect-AzAccount -EnvironmentName AzureChinaCloud
@@ -109,15 +110,15 @@ of
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureChinaCloud)
 ```
 
-Als u een cache wilt maken in de Azure China-Cloud, gebruikt u een van de volgende locaties.
+Gebruik een van de volgende locaties om een cache te maken in de Azure China Cloud.
 
 * China East
 * China - noord
 
-Zie [AzureChinaCloud voor Azure beheerd door 21vianet in China](https://www.windowsazure.cn/)voor meer informatie over de cloud van Azure China.
+Zie [AzureChinaCloud voor Azure beheerd door 21Vianet in China](https://www.windowsazure.cn/)voor meer informatie over de Azure China Cloud.
 
 ### <a name="to-connect-to-microsoft-azure-germany"></a>Verbinding maken met Microsoft Azure Duitsland
-Als u verbinding wilt maken met Microsoft Azure Duitsland, gebruikt u een van de volgende opdrachten.
+Als u verbinding wilt Microsoft Azure Duitsland, gebruikt u een van de volgende opdrachten.
 
 ```azurepowershell
     Connect-AzAccount -EnvironmentName AzureGermanCloud
@@ -129,59 +130,59 @@ of
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureGermanCloud)
 ```
 
-Als u een cache in Microsoft Azure Duitsland wilt maken, gebruikt u een van de volgende locaties.
+Als u een cache in Microsoft Azure Duitsland, gebruikt u een van de volgende locaties.
 
 * Duitsland - centraal
 * Duitsland - noordoost
 
-Zie [Microsoft Azure Duitsland](https://azure.microsoft.com/overview/clouds/germany/)voor meer informatie over Microsoft Azure Duitsland.
+Zie voor meer informatie Microsoft Azure Duitsland over [Microsoft Azure Duitsland.](https://azure.microsoft.com/overview/clouds/germany/)
 
-### <a name="properties-used-for-azure-cache-for-redis-powershell"></a>Eigenschappen die worden gebruikt voor Azure-cache voor redis Power shell
-De volgende tabel bevat eigenschappen en beschrijvingen voor veelgebruikte para meters bij het maken en beheren van uw Azure-cache voor redis-exemplaren met behulp van Azure PowerShell.
+### <a name="properties-used-for-azure-cache-for-redis-powershell"></a>Eigenschappen die worden gebruikt Azure Cache voor Redis PowerShell
+De volgende tabel bevat eigenschappen en beschrijvingen voor veelgebruikte parameters bij het maken en beheren van uw Azure Cache voor Redis met behulp van Azure PowerShell.
 
 | Parameter | Beschrijving | Standaard |
 | --- | --- | --- |
 | Name |Naam van de cache | |
 | Locatie |Locatie van de cache | |
-| ResourceGroupName |Naam van de resource groep waarin de cache moet worden gemaakt | |
-| Grootte |De grootte van de cache. Geldige waarden zijn: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250MB, 1GB, 2,5 GB, 6GB, 13GB, 26GB, 53GB |1 GB |
-| ShardCount |Het aantal Shards dat moet worden gemaakt bij het maken van een Premium-cache met clustering ingeschakeld. Geldige waarden zijn: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
+| ResourceGroupName |Resourcegroepnaam voor het maken van de cache | |
+| Grootte |De grootte van de cache. Geldige waarden zijn: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 MB, 1 GB, 2,5 GB, 6 GB, 13 GB, 26 GB, 53 GB |1 GB |
+| ShardCount |Het aantal shards dat moet worden maken bij het maken van een Premium-cache met clustering ingeschakeld. Geldige waarden zijn: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
 | SKU |Hiermee geeft u de SKU van de cache op. Geldige waarden zijn: Basic, Standard, Premium |Standard |
-| RedisConfiguration |Hiermee geeft u de redis-configuratie-instellingen. Zie de volgende tabel met [RedisConfiguration-eigenschappen](#redisconfiguration-properties) voor meer informatie over elke instelling. | |
-| EnableNonSslPort |Hiermee wordt aangegeven of de niet-SSL-poort is ingeschakeld. |Niet waar |
-| MaxMemoryPolicy |Deze para meter is afgeschaft: gebruik in plaats daarvan RedisConfiguration. | |
-| StaticIP |Bij het hosten van uw cache in een VNET, geeft u een uniek IP-adres op in het subnet voor de cache. Indien niet opgegeven, wordt er een gekozen uit het subnet. | |
-| Subnet |Wanneer u uw cache host in een VNET, geeft u de naam op van het subnet waarin de cache moet worden geïmplementeerd. | |
-| VirtualNetwork |Wanneer u uw cache in een VNET host, geeft u de resource-ID op van het VNET waarin de cache moet worden geïmplementeerd. | |
-| KeyType |Hiermee geeft u op welke toegangs sleutel opnieuw moet worden gegenereerd bij het vernieuwen van toegangs sleutels. Geldige waarden zijn: primair, secundair | |
+| RedisConfiguration |Hiermee geeft u de Redis-configuratie-instellingen op. Zie de volgende tabel met Eigenschappen van [RedisConfiguration](#redisconfiguration-properties) voor meer informatie over elke instelling. | |
+| EnableNonSslPort |Geeft aan of de niet-SSL-poort is ingeschakeld. |Niet waar |
+| MaxMemoryPolicy |Deze parameter is afgeschaft. Gebruik in plaats daarvan RedisConfiguration. | |
+| StaticIP |Bij het hosten van uw cache in een VNET, geeft een uniek IP-adres op in het subnet voor de cache. Als dit niet is opgegeven, wordt er een voor u gekozen vanuit het subnet. | |
+| Subnet |Bij het hosten van uw cache in een VNET, geeft u de naam op van het subnet waarin de cache moet worden geïmplementeerd. | |
+| VirtualNetwork |Bij het hosten van uw cache in een VNET, geeft u de resource-id op van het VNET waarin de cache moet worden geïmplementeerd. | |
+| Keytype |Hiermee geeft u op welke toegangssleutel opnieuw moet worden ge regenereren bij het vernieuwen van toegangssleutels. Geldige waarden zijn: Primair, Secundair | |
 
-### <a name="redisconfiguration-properties"></a>RedisConfiguration-eigenschappen
+### <a name="redisconfiguration-properties"></a>Eigenschappen van RedisConfiguration
 | Eigenschap | Beschrijving | Prijscategorieën |
 | --- | --- | --- |
-| RDB-back-up-ingeschakeld |Of [redis-gegevens persistentie](cache-how-to-premium-persistence.md) is ingeschakeld |Alleen Premium |
-| RDB-Storage-verbindings reeks |Het connection string naar het opslag account voor [redis-gegevens persistentie](cache-how-to-premium-persistence.md) |Alleen Premium |
-| RDB-back-up-frequentie |De back-upfrequentie voor [redis-gegevens persistentie](cache-how-to-premium-persistence.md) |Alleen Premium |
-| maxmemory-gereserveerd |Hiermee configureert u het geheugen dat is [gereserveerd](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) voor niet-cache processen |Standard en Premium |
-| maxmemory-beleid |Hiermee configureert u het [verwijderings beleid](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) voor de cache |Alle prijs Categorieën |
-| melding: gebeurtenis ruimte-gebeurtenissen |Hiermee configureert u meldingen voor de [beschik bare ruimte](cache-configure.md#keyspace-notifications-advanced-settings) |Standard en Premium |
-| hash-Max-ziplist-vermeldingen |Configureert [geheugen optimalisatie](https://redis.io/topics/memory-optimization) voor kleine statistische gegevens typen |Standard en Premium |
-| hash-Max-ziplist-value |Configureert [geheugen optimalisatie](https://redis.io/topics/memory-optimization) voor kleine statistische gegevens typen |Standard en Premium |
-| set-Max-intset-items |Configureert [geheugen optimalisatie](https://redis.io/topics/memory-optimization) voor kleine statistische gegevens typen |Standard en Premium |
-| zset-Max-ziplist-vermeldingen |Configureert [geheugen optimalisatie](https://redis.io/topics/memory-optimization) voor kleine statistische gegevens typen |Standard en Premium |
-| zset-Max-ziplist-value |Configureert [geheugen optimalisatie](https://redis.io/topics/memory-optimization) voor kleine statistische gegevens typen |Standard en Premium |
-| databases |Hiermee configureert u het aantal data bases. Deze eigenschap kan alleen worden geconfigureerd bij het maken van de cache. |Standard en Premium |
+| rdb-back-up ingeschakeld |Of [Redis-gegevens persistentie](cache-how-to-premium-persistence.md) is ingeschakeld |Alleen Premium |
+| rdb-storage-connection-string |De connection string het opslagaccount voor [Redis-gegevens persistentie](cache-how-to-premium-persistence.md) |Alleen Premium |
+| rdb-back-upfrequentie |De back-upfrequentie voor [Redis-gegevens persistentie](cache-how-to-premium-persistence.md) |Alleen Premium |
+| maxmemory-reserved |Hiermee configureert u [het geheugen dat is](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) gereserveerd voor niet-cacheprocessen |Standard en Premium |
+| maxmemory-policy |Hiermee configureert [u het beleid voor het verwijderen](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) van de cache |Alle prijslagen |
+| notify-keyspace-events |Hiermee configureert [u keyspace-meldingen](cache-configure.md#keyspace-notifications-advanced-settings) |Standard en Premium |
+| hash-max-ziplist-entries |Hiermee configureert [u geheugenoptimalisatie](https://redis.io/topics/memory-optimization) voor kleine geaggregeerde gegevenstypen |Standard en Premium |
+| hash-max-ziplist-value |Hiermee configureert [u geheugenoptimalisatie](https://redis.io/topics/memory-optimization) voor kleine geaggregeerde gegevenstypen |Standard en Premium |
+| set-max-intset-entries |Hiermee configureert [u geheugenoptimalisatie](https://redis.io/topics/memory-optimization) voor kleine geaggregeerde gegevenstypen |Standard en Premium |
+| zset-max-ziplist-entries |Hiermee configureert [u geheugenoptimalisatie](https://redis.io/topics/memory-optimization) voor kleine geaggregeerde gegevenstypen |Standard en Premium |
+| zset-max-ziplist-value |Hiermee configureert [u geheugenoptimalisatie](https://redis.io/topics/memory-optimization) voor kleine geaggregeerde gegevenstypen |Standard en Premium |
+| databases |Hiermee configureert u het aantal databases. Deze eigenschap kan alleen worden geconfigureerd bij het maken van de cache. |Standard en Premium |
 
-## <a name="to-create-an-azure-cache-for-redis"></a>Een Azure-cache maken voor redis
-Nieuwe Azure-cache voor redis-exemplaren worden gemaakt met de cmdlet [New-AzRedisCache](/powershell/module/az.rediscache/new-azrediscache) .
+## <a name="to-create-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis
+Nieuwe Azure Cache voor Redis worden gemaakt met behulp van de [cmdlet New-AzRedisCache.](/powershell/module/az.rediscache/new-azrediscache)
 
 > [!IMPORTANT]
-> De eerste keer dat u een Azure-cache maakt voor redis in een abonnement met behulp van de Azure Portal, registreert de Portal de `Microsoft.Cache` naam ruimte voor dat abonnement. Als u probeert de eerste Azure-cache voor redis in een abonnement te maken met behulp van Power shell, moet u die naam ruimte eerst registreren met de volgende opdracht. andere cmdlets, zoals `New-AzRedisCache` en `Get-AzRedisCache` mislukken.
+> De eerste keer dat u een Azure Cache voor Redis in een abonnement maakt met behulp van de Azure Portal, registreert de portal de `Microsoft.Cache` naamruimte voor dat abonnement. Als u probeert de eerste Azure Cache voor Redis in een abonnement te maken met behulp van PowerShell, moet u die naamruimte eerst registreren met de volgende opdracht; anders mislukken cmdlets zoals `New-AzRedisCache` en `Get-AzRedisCache` .
 > 
 > `Register-AzResourceProvider -ProviderNamespace "Microsoft.Cache"`
 > 
 > 
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `New-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `New-AzRedisCache` voor te bekijken.
 
 ```azurepowershell
     PS C:\> Get-Help New-AzRedisCache -detailed
@@ -257,21 +258,21 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 ```
 
-Als u een cache met standaard parameters wilt maken, voert u de volgende opdracht uit.
+Voer de volgende opdracht uit om een cache met standaardparameters te maken.
 
 ```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US"
 ```
 
-`ResourceGroupName`, `Name` en `Location` zijn vereiste para meters, maar de rest is optioneel en hebben standaard waarden. Als u de vorige opdracht uitvoert, wordt een standaard-SKU Azure-cache gemaakt voor een redis-exemplaar met de opgegeven naam, locatie en resource groep, die 1 GB groot is als de niet-SSL-poort is uitgeschakeld.
+`ResourceGroupName`, `Name` en zijn vereiste `Location` parameters, maar de rest is optioneel en heeft standaardwaarden. Met de vorige opdracht maakt u een Standard SKU Azure Cache voor Redis-exemplaar met de opgegeven naam, locatie en resourcegroep, die 1 GB groot is en de niet-SSL-poort is uitgeschakeld.
 
-Als u een Premium-cache wilt maken, geeft u een grootte van P1 (6 GB-60 GB), P2 (13 GB-130 GB), P3 (26 GB-260 GB) of P4 (53 GB-530 GB). Als u Clustering wilt inschakelen, geeft u een aantal Shard op met behulp van de `ShardCount` para meter. In het volgende voor beeld wordt een P1 Premium-cache gemaakt met 3 Shards. Een P1 Premium-cache is 6 GB groot en omdat we drie Shards hebben opgegeven, is de totale grootte 18 GB (3 x 6 GB).
+Als u een Premium-cache wilt maken, geeft u een grootte op van P1 (6 GB - 60 GB), P2 (13 GB - 130 GB), P3 (26 GB - 260 GB) of P4 (53 GB - 530 GB). Als u clustering wilt inschakelen, geeft u een shard-telling op met behulp van de `ShardCount` parameter . In het volgende voorbeeld wordt een P1 Premium-cache met 3 shards gemaakt. Een P1 Premium-cache is 6 GB groot en omdat we drie shards hebben opgegeven, is de totale grootte 18 GB (3 x 6 GB).
 
 ```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -Sku Premium -Size P1 -ShardCount 3
 ```
 
-Als u waarden voor de `RedisConfiguration` para meter wilt opgeven, moet u de waarden in `{}` als sleutel/waarde-paren `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}` . In het volgende voor beeld wordt een standaard cache van 1 GB gemaakt met `allkeys-random` maxmemory-beleid en-meldingen die zijn geconfigureerd met `KEA` . Zie voor meer informatie de [ruimte meldingen (geavanceerde instellingen)](cache-configure.md#keyspace-notifications-advanced-settings) en het [geheugen beleid](cache-configure.md#memory-policies).
+Als u waarden voor de parameter wilt opgeven, sluit u de `RedisConfiguration` waarden in als `{}` sleutel-waardeparen, zoals `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}` . In het volgende voorbeeld wordt een standaardcache van 1 GB gemaakt met `allkeys-random` maxmemory-beleid en keyspacemeldingen geconfigureerd met `KEA` . Zie [Keyspace-meldingen (geavanceerde instellingen)](cache-configure.md#keyspace-notifications-advanced-settings) en Geheugenbeleid voor [meer informatie.](cache-configure.md#memory-policies)
 
 ```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}
@@ -279,19 +280,19 @@ Als u waarden voor de `RedisConfiguration` para meter wilt opgeven, moet u de wa
 
 <a name="databases"></a>
 
-## <a name="to-configure-the-databases-setting-during-cache-creation"></a>De instellingen van de data base configureren tijdens het maken van de cache
-De `databases` instelling kan alleen worden geconfigureerd tijdens het maken van de cache. In het volgende voor beeld wordt een Premium P3 (26 GB) cache met 48-data bases gemaakt met behulp van de cmdlet [New-AzRedisCache](/powershell/module/az.rediscache/New-azRedisCache) .
+## <a name="to-configure-the-databases-setting-during-cache-creation"></a>De instelling voor databases configureren tijdens het maken van de cache
+De `databases` instelling kan alleen worden geconfigureerd tijdens het maken van de cache. In het volgende voorbeeld wordt een Premium P3-cache (26 GB) met 48 databases gemaakt met behulp van de cmdlet [New-AzRedisCache.](/powershell/module/az.rediscache/New-azRedisCache)
 
 ```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -Sku Premium -Size P3 -RedisConfiguration @{"databases" = "48"}
 ```
 
-Zie voor meer informatie over de `databases` eigenschap [standaard Azure-cache voor redis-server configuratie](cache-configure.md#default-redis-server-configuration). Voor meer informatie over het maken van een cache met behulp van de cmdlet [New-AzRedisCache](/powershell/module/az.rediscache/new-azrediscache) raadpleegt u de sectie voor het maken van een Azure-cache voor redis.
+Zie Default Azure Cache voor Redis server configuration (Standaardconfiguratie van `databases` [Azure Cache voor Redis-server) voor meer informatie](cache-configure.md#default-redis-server-configuration)over de eigenschap . Zie de vorige sectie Een cache maken met de cmdlet [New-AzRedisCache](/powershell/module/az.rediscache/new-azrediscache) voor meer informatie over het maken van Azure Cache voor Redis cache.
 
-## <a name="to-update-an-azure-cache-for-redis"></a>Een Azure-cache bijwerken voor redis
-Azure cache voor redis-exemplaren wordt bijgewerkt met de cmdlet [set-AzRedisCache](/powershell/module/az.rediscache/Set-azRedisCache) .
+## <a name="to-update-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis
+Azure Cache voor Redis-exemplaren worden bijgewerkt met behulp van de cmdlet [Set-AzRedisCache.](/powershell/module/az.rediscache/Set-azRedisCache)
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Set-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Set-AzRedisCache` voor te zien.
 
 ```azurepowershell
     PS C:\> Get-Help Set-AzRedisCache -detailed
@@ -347,9 +348,9 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 ```
 
-De `Set-AzRedisCache` cmdlet kan worden gebruikt voor het bijwerken van eigenschappen zoals `Size` ,, `Sku` `EnableNonSslPort` en de `RedisConfiguration` waarden. 
+De `Set-AzRedisCache` cmdlet kan worden gebruikt om eigenschappen zoals `Size` , , en de waarden bij te `Sku` `EnableNonSslPort` `RedisConfiguration` werken. 
 
-Met de volgende opdracht wordt het maxmemory-beleid voor de Azure-cache bijgewerkt voor redis met de naam myCache.
+Met de volgende opdracht wordt het maxmemory-beleid bijgewerkt voor de Azure Cache voor Redis met de naam myCache.
 
 ```azurepowershell
     Set-AzRedisCache -ResourceGroupName "myGroup" -Name "myCache" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random"}
@@ -357,30 +358,30 @@ Met de volgende opdracht wordt het maxmemory-beleid voor de Azure-cache bijgewer
 
 <a name="scale"></a>
 
-## <a name="to-scale-an-azure-cache-for-redis"></a>Een Azure-cache schalen voor redis
-`Set-AzRedisCache` kan worden gebruikt voor het schalen van een Azure-cache voor redis-instantie wanneer de `Size` , `Sku` of- `ShardCount` eigenschappen worden gewijzigd. 
+## <a name="to-scale-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis
+`Set-AzRedisCache` kan worden gebruikt om een Azure Cache voor Redis te schalen wanneer `Size` de eigenschappen , of worden `Sku` `ShardCount` gewijzigd. 
 
 > [!NOTE]
-> Voor het schalen van een cache met behulp van Power shell gelden dezelfde limieten en richt lijnen als voor het schalen van een cache van de Azure Portal. U kunt schalen naar een andere prijs categorie met de volgende beperkingen.
+> Voor het schalen van een cache met Behulp van PowerShell gelden dezelfde limieten en richtlijnen als voor het schalen van een cache vanuit de Azure Portal. U kunt schalen naar een andere prijscategorie met de volgende beperkingen.
 > 
-> * U kunt niet schalen van een hogere prijs categorie naar een lagere prijs categorie.
-> * U kunt de schaal van een **Premium** -cache niet verlagen naar een **Standard** -of een **Basic** -cache.
-> * U kunt niet omlaag schalen vanuit een **standaard** cache naar een **Basic** -cache.
-> * U kunt schalen van een **basis** cache naar een **standaard** cache, maar u kunt de grootte niet tegelijkertijd wijzigen. Als u een andere grootte nodig hebt, kunt u een volgende schaal bewerking uitvoeren voor de gewenste grootte.
-> * U kunt niet rechtstreeks schalen van een **Basic** -cache naar een **Premium** -cache. U moet van **Basic** naar **Standard** schalen in één schaal bewerking en vervolgens van **standaard** naar **Premium** bij een volgende schaal bewerking.
-> * U kunt niet van een grotere grootte schalen naar de grootte van de **C0 (250 MB)** .
+> * U kunt niet schalen van een hogere prijscategorie naar een lagere prijscategorie.
+> * U kunt niet van een **Premium-cache** omlaag schalen naar een **Standard-** of **Basic-cache.**
+> * U kunt niet van een **Standard-cache** omlaag schalen naar een **Basic-cache.**
+> * U kunt schalen van **een Basic-cache** naar een **Standard-cache,** maar u kunt de grootte niet tegelijkertijd wijzigen. Als u een andere grootte nodig hebt, kunt u een volgende schaalbewerking naar de gewenste grootte uitvoeren.
+> * U kunt een **Basic-cache** niet rechtstreeks naar een **Premium-cache schalen.** U moet in één schaalbewerking van **Basic** naar **Standard** schalen en vervolgens van **Standard** naar **Premium** in een volgende schaalbewerking.
+> * U kunt niet van een grotere grootte naar de **C0-grootte (250 MB) schalen.**
 > 
-> Zie [Azure-cache schalen voor redis](cache-how-to-scale.md)voor meer informatie.
+> Zie How [to Scale Azure Cache voor Redis voor meer Azure Cache voor Redis.](cache-how-to-scale.md)
 > 
 > 
 
-In het volgende voor beeld ziet u hoe u een cache kunt schalen met de naam `myCache` in een cache van 2,5 GB. Houd er rekening mee dat deze opdracht voor zowel een basis-als een standaard cache werkt.
+In het volgende voorbeeld ziet u hoe u een cache met de naam kunt `myCache` schalen naar een cache van 2,5 GB. Houd er rekening mee dat deze opdracht werkt voor zowel een Basic- als een Standard-cache.
 
 ```azurepowershell
     Set-AzRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
 ```
 
-Nadat deze opdracht is gegeven, wordt de status van de cache geretourneerd (vergelijkbaar met aanroepen `Get-AzRedisCache` ). Houd er rekening mee dat `ProvisioningState` `Scaling` .
+Nadat deze opdracht is uitgegeven, wordt de status van de cache geretourneerd (vergelijkbaar met het aanroepen `Get-AzRedisCache` van ). Houd er rekening mee `ProvisioningState` dat de `Scaling` is.
 
 ```azurepowershell
     PS C:\> Set-AzRedisCache -Name myCache -ResourceGroupName myGroup -Size 2.5GB
@@ -411,16 +412,16 @@ Nadat deze opdracht is gegeven, wordt de status van de cache geretourneerd (verg
     ShardCount         :
 ```
 
-Wanneer de schaal bewerking is voltooid, worden de `ProvisioningState` wijzigingen in `Succeeded` . Als u een volgende schaal bewerking wilt uitvoeren, zoals het wijzigen van de standaard waarde in Standard en u de grootte wilt wijzigen, moet u wachten tot de vorige bewerking is voltooid of wordt er een fout bericht weer gegeven dat vergelijkbaar is met het volgende.
+Wanneer de schaalbewerking is voltooid, verandert `ProvisioningState` de in `Succeeded` . Als u een volgende schaalbewerking wilt uitvoeren, zoals het wijzigen van Basic in Standard en vervolgens het wijzigen van de grootte, moet u wachten tot de vorige bewerking is voltooid of er wordt een fout weergegeven die er ongeveer als volgt uit ziet.
 
 ```azurepowershell
     Set-AzRedisCache : Conflict: The resource '...' is not in a stable state, and is currently unable to accept the update request.
 ```
 
-## <a name="to-get-information-about-an-azure-cache-for-redis"></a>Informatie over een Azure-cache voor redis ophalen
-U kunt informatie over een cache ophalen met behulp van de cmdlet [Get-AzRedisCache](/powershell/module/az.rediscache/get-azrediscache) .
+## <a name="to-get-information-about-an-azure-cache-for-redis"></a>Informatie over een Azure Cache voor Redis
+U kunt informatie over een cache ophalen met behulp van [de cmdlet Get-AzRedisCache.](/powershell/module/az.rediscache/get-azrediscache)
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Get-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Get-AzRedisCache` voor te bekijken.
 
 ```azurepowershell
     PS C:\> Get-Help Get-AzRedisCache -detailed
@@ -461,19 +462,19 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 ```
 
-Om informatie over alle caches in het huidige abonnement te retour neren `Get-AzRedisCache` zonder para meters.
+Als u informatie wilt retourneren over alle caches in het huidige abonnement, moet u `Get-AzRedisCache` uitvoeren zonder parameters.
 
 ```azurepowershell
     Get-AzRedisCache
 ```
 
-Om informatie over alle caches in een specifieke resource groep te retour neren, voert u uit `Get-AzRedisCache` met de `ResourceGroupName` para meter.
+Voer uit met de parameter om informatie over alle caches in een specifieke resourcegroep `Get-AzRedisCache` te `ResourceGroupName` retourneren.
 
 ```azurepowershell
     Get-AzRedisCache -ResourceGroupName myGroup
 ```
 
-Om informatie over een specifieke cache te retour neren, voert u uit `Get-AzRedisCache` met de `Name` para meter met de naam van de cache en de `ResourceGroupName` para meter met de resource groep die die cache bevat.
+Als u informatie over een specifieke cache wilt retourneren, moet u uitvoeren met de parameter die de naam van de cache bevat en de parameter met de `Get-AzRedisCache` `Name` `ResourceGroupName` resourcegroep die die cache bevat.
 
 ```azurepowershell
     PS C:\> Get-AzRedisCache -Name myCache -ResourceGroupName myGroup
@@ -501,10 +502,10 @@ Om informatie over een specifieke cache te retour neren, voert u uit `Get-AzRedi
     ShardCount         :
 ```
 
-## <a name="to-retrieve-the-access-keys-for-an-azure-cache-for-redis"></a>De toegangs sleutels voor een Azure-cache ophalen voor redis
-Als u de toegangs sleutels voor uw cache wilt ophalen, kunt u de cmdlet [Get-AzRedisCacheKey](/powershell/module/az.rediscache/Get-azRedisCacheKey) gebruiken.
+## <a name="to-retrieve-the-access-keys-for-an-azure-cache-for-redis"></a>De toegangssleutels voor een Azure Cache voor Redis
+Als u de toegangssleutels voor uw cache wilt ophalen, kunt u de cmdlet [Get-AzRedisCacheKey](/powershell/module/az.rediscache/Get-azRedisCacheKey) gebruiken.
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Get-AzRedisCacheKey` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Get-AzRedisCacheKey` voor te bekijken.
 
 ```azurepowershell
     PS C:\> Get-Help Get-AzRedisCacheKey -detailed
@@ -536,7 +537,7 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 ```
 
-Als u de sleutels voor uw cache wilt ophalen, roept u de `Get-AzRedisCacheKey` cmdlet aan en geeft u de naam van de cache door in de naam van de resource groep die de cache bevat.
+Als u de sleutels voor uw cache wilt ophalen, roept u de cmdlet aan en gebruikt u de naam van uw cache om de naam door te geven van de `Get-AzRedisCacheKey` resourcegroep die de cache bevat.
 
 ```azurepowershell
     PS C:\> Get-AzRedisCacheKey -Name myCache -ResourceGroupName myGroup
@@ -545,10 +546,10 @@ Als u de sleutels voor uw cache wilt ophalen, roept u de `Get-AzRedisCacheKey` c
     SecondaryKey : ABhfB757JgjIgt785JgKH9865eifmekfnn649303JKL=
 ```
 
-## <a name="to-regenerate-access-keys-for-your-azure-cache-for-redis"></a>Toegangs sleutels voor uw Azure-cache opnieuw genereren voor redis
-Als u de toegangs sleutels voor uw cache opnieuw wilt genereren, kunt u de cmdlet [New-AzRedisCacheKey](/powershell/module/az.rediscache/New-azRedisCacheKey) gebruiken.
+## <a name="to-regenerate-access-keys-for-your-azure-cache-for-redis"></a>Toegangssleutels voor uw Azure Cache voor Redis
+Als u de toegangssleutels voor uw cache opnieuw wilt maken, kunt u de cmdlet [New-AzRedisCacheKey](/powershell/module/az.rediscache/New-azRedisCacheKey) gebruiken.
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `New-AzRedisCacheKey` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `New-AzRedisCacheKey` voor te bekijken.
 
 ```azurepowershell
     PS C:\> Get-Help New-AzRedisCacheKey -detailed
@@ -585,7 +586,7 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 ```
 
-Als u de primaire of secundaire sleutel voor uw cache opnieuw wilt genereren, roept u de `New-AzRedisCacheKey` cmdlet aan en geeft u de naam en de resource groep op, en geeft u `Primary` of `Secondary` voor de `KeyType` para meter op. In het volgende voor beeld wordt de secundaire toegangs sleutel voor een cache opnieuw gegenereerd.
+Als u de primaire of secundaire sleutel voor uw cache opnieuw wilt maken, roept u de cmdlet aan en geeft u de naam en resourcegroep door en geeft u of op `New-AzRedisCacheKey` `Primary` voor de parameter `Secondary` `KeyType` . In het volgende voorbeeld wordt de secundaire toegangssleutel voor een cache opnieuw ge regenereerd.
 
 ```azurepowershell
     PS C:\> New-AzRedisCacheKey -Name myCache -ResourceGroupName myGroup -KeyType Secondary
@@ -599,10 +600,10 @@ Als u de primaire of secundaire sleutel voor uw cache opnieuw wilt genereren, ro
     SecondaryKey : c53hj3kh4jhHjPJk8l0jji785JgKH9865eifmekfnn6=
 ```
 
-## <a name="to-delete-an-azure-cache-for-redis"></a>Een Azure-cache voor redis verwijderen
-Als u een Azure-cache voor redis wilt verwijderen, gebruikt u de cmdlet [Remove-AzRedisCache](/powershell/module/az.rediscache/remove-azrediscache) .
+## <a name="to-delete-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis
+Als u een Azure Cache voor Redis, gebruikt u de cmdlet [Remove-AzRedisCache.](/powershell/module/az.rediscache/remove-azrediscache)
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Remove-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Remove-AzRedisCache` voor te zien.
 
 ```azurepowershell
     PS C:\> Get-Help Remove-AzRedisCache -detailed
@@ -640,7 +641,7 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 ```
 
-In het volgende voor beeld wordt de naam van de cache `myCache` verwijderd.
+In het volgende voorbeeld wordt de cache met de `myCache` naam verwijderd.
 
 ```azurepowershell
     PS C:\> Remove-AzRedisCache -Name myCache -ResourceGroupName myGroup
@@ -651,15 +652,15 @@ In het volgende voor beeld wordt de naam van de cache `myCache` verwijderd.
 ```
 
 
-## <a name="to-import-an-azure-cache-for-redis"></a>Een Azure-cache voor redis importeren
-U kunt gegevens importeren in een Azure-cache voor redis-exemplaar met behulp van de- `Import-AzRedisCache` cmdlet.
+## <a name="to-import-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis
+U kunt gegevens importeren in een Azure Cache voor Redis met behulp van de `Import-AzRedisCache` cmdlet .
 
 > [!IMPORTANT]
-> Import/export is alleen beschikbaar voor [Premium-laag](cache-overview.md#service-tiers) caches. Zie [gegevens importeren en exporteren in azure-cache voor redis](cache-how-to-import-export-data.md)voor meer informatie over importeren/exporteren.
+> Importeren/exporteren is alleen beschikbaar voor [Premium-caches.](cache-overview.md#service-tiers) Zie Gegevens importeren en exporteren in Azure Cache voor Redis voor [meer informatie Azure Cache voor Redis.](cache-how-to-import-export-data.md)
 > 
 > 
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Import-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Import-AzRedisCache` voor te zien.
 
 ```azurepowershell
     PS C:\> Get-Help Import-AzRedisCache -detailed
@@ -709,21 +710,21 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
 ```
 
 
-Met de volgende opdracht worden gegevens uit de blob die is opgegeven door de SAS-URI in azure cache voor redis geïmporteerd.
+Met de volgende opdracht importeert u gegevens uit de blob die is opgegeven door de SAS-URI naar Azure Cache voor Redis.
 
 ```azurepowershell
     PS C:\>Import-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -Files @("https://mystorageaccount.blob.core.windows.net/mycontainername/blobname?sv=2015-04-05&sr=b&sig=caIwutG2uDa0NZ8mjdNJdgOY8%2F8mhwRuGNdICU%2B0pI4%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwd") -Force
 ```
 
-## <a name="to-export-an-azure-cache-for-redis"></a>Een Azure-cache exporteren voor redis
-U kunt gegevens exporteren vanuit een Azure-cache voor een redis-exemplaar met behulp van de- `Export-AzRedisCache` cmdlet.
+## <a name="to-export-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis
+U kunt gegevens uit een Azure Cache voor Redis exporteren met behulp van `Export-AzRedisCache` de cmdlet .
 
 > [!IMPORTANT]
-> Import/export is alleen beschikbaar voor [Premium-laag](cache-overview.md#service-tiers) caches. Zie [gegevens importeren en exporteren in azure-cache voor redis](cache-how-to-import-export-data.md)voor meer informatie over importeren/exporteren.
+> Importeren/exporteren is alleen beschikbaar voor [Premium-caches.](cache-overview.md#service-tiers) Zie Gegevens importeren en exporteren in Azure Cache voor Redis voor [meer informatie Azure Cache voor Redis.](cache-how-to-import-export-data.md)
 > 
 > 
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Export-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Export-AzRedisCache` voor te zien.
 
 ```azurepowershell
     PS C:\> Get-Help Export-AzRedisCache -detailed
@@ -772,7 +773,7 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
 ```
 
 
-Met de volgende opdracht worden gegevens uit een Azure-cache voor redis-exemplaar geëxporteerd naar de container die is opgegeven door de SAS-URI.
+Met de volgende opdracht exporteert u gegevens van een Azure Cache voor Redis naar de container die is opgegeven door de SAS-URI.
 
 ```azurepowershell
     PS C:\>Export-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -Prefix "blobprefix"
@@ -780,15 +781,15 @@ Met de volgende opdracht worden gegevens uit een Azure-cache voor redis-exemplaa
     pvETY4kqlPI8JCNa8ATmaw%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwdl"
 ```
 
-## <a name="to-reboot-an-azure-cache-for-redis"></a>Een Azure-cache opnieuw opstarten voor redis
-U kunt uw Azure-cache opnieuw opstarten voor redis-exemplaar met behulp van de- `Reset-AzRedisCache` cmdlet.
+## <a name="to-reboot-an-azure-cache-for-redis"></a>Een apparaat opnieuw Azure Cache voor Redis
+U kunt uw exemplaar Azure Cache voor Redis opnieuw opstarten met behulp van `Reset-AzRedisCache` de cmdlet .
 
 > [!IMPORTANT]
-> Opnieuw opstarten is alleen beschikbaar voor [Premium-laag](cache-overview.md#service-tiers) caches. Zie [cache Administration-reboot (](cache-administration.md#reboot)Engelstalig) voor meer informatie over het opnieuw opstarten van de cache.
+> Opnieuw opstarten is alleen beschikbaar voor [Premium-caches.](cache-overview.md#service-tiers) Zie Cachebeheer - opnieuw opstarten voor meer informatie over het opnieuw opstarten van [uw cache.](cache-administration.md#reboot)
 > 
 > 
 
-Voer de volgende opdracht uit om een lijst met beschik bare para meters en beschrijvingen ervan weer te geven voor `Reset-AzRedisCache` .
+Voer de volgende opdracht uit om een lijst met beschikbare parameters en de bijbehorende beschrijvingen `Reset-AzRedisCache` voor te bekijken.
 
 ```azurepowershell
     PS C:\> Get-Help Reset-AzRedisCache -detailed
@@ -837,7 +838,7 @@ Voer de volgende opdracht uit om een lijst met beschik bare para meters en besch
 ```
 
 
-Met de volgende opdracht worden beide knoop punten van de opgegeven cache opnieuw opgestart.
+Met de volgende opdracht worden beide knooppunten van de opgegeven cache opnieuw opgestart.
 
 ```azurepowershell
     PS C:\>Reset-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -RebootType "AllNodes"
@@ -846,11 +847,11 @@ Met de volgende opdracht worden beide knoop punten van de opgegeven cache opnieu
 
 
 ## <a name="next-steps"></a>Volgende stappen
-Raadpleeg de volgende bronnen voor meer informatie over het gebruik van Windows Power shell met Azure:
+Zie de volgende resources voor Windows PowerShell over het gebruik van azure:
 
-* [Documentatie voor Azure cache for redis-cmdlets op MSDN](/powershell/module/az.rediscache)
-* [Azure Resource Manager-cmdlets](/powershell/module/): meer informatie over het gebruik van de cmdlets in de module Azure Resource Manager.
-* [Resource groepen gebruiken om uw Azure-resources te beheren](../azure-resource-manager/templates/deploy-portal.md): informatie over het maken en beheren van resource groepen in de Azure Portal.
-* [Azure-blog](https://azure.microsoft.com/blog/): meer informatie over nieuwe functies in Azure.
-* [Windows Power shell-blog](https://devblogs.microsoft.com/powershell/): meer informatie over nieuwe functies in Windows Power shell.
-* ["Hey, Scripting Guy!" Blog](https://devblogs.microsoft.com/scripting/tag/hey-scripting-guy/): krijg praktische tips en trucs van de Windows Power shell-community.
+* [Azure Cache voor Redis cmdlet-documentatie op MSDN](/powershell/module/az.rediscache)
+* [Azure Resource Manager Cmdlets:](/powershell/module/)leer hoe u de cmdlets in de module Azure Resource Manager gebruiken.
+* [Resourcegroepen gebruiken voor het beheren van uw Azure-resources:](../azure-resource-manager/templates/deploy-portal.md)informatie over het maken en beheren van resourcegroepen in de Azure Portal.
+* [Azure-blog:](https://azure.microsoft.com/blog/)meer informatie over nieuwe functies in Azure.
+* [Windows PowerShell blog:](https://devblogs.microsoft.com/powershell/)meer informatie over nieuwe functies in Windows PowerShell.
+* ["Hey, Scripting Guy!" Blog:](https://devblogs.microsoft.com/scripting/tag/hey-scripting-guy/)ontvang echte tips en trucs van de Windows PowerShell community.

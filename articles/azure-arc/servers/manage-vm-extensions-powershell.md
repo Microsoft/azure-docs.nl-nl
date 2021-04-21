@@ -3,25 +3,26 @@ title: VM-extensie inschakelen met Azure PowerShell
 description: In dit artikel wordt beschreven hoe u extensies van virtuele machines implementeert op Azure Arc servers die worden uitgevoerd in hybride cloudomgevingen met behulp van Azure PowerShell.
 ms.date: 04/13/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0cb854c9745e8bd7eef35c6f6467c284a6327349
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: d5723655b61040c7ddf99e5f11488fff379d96a0
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107388581"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832874"
 ---
 # <a name="enable-azure-vm-extensions-using-azure-powershell"></a>Azure VM-extensies inschakelen met Azure PowerShell
 
-In dit artikel wordt beschreven hoe u Azure VM-extensies, ondersteund door Azure Arc-servers, implementeert en verwijdert op een linux- of Windows-hybride machine met behulp van Azure PowerShell.
+In dit artikel wordt beschreven hoe u Azure VM-extensies, ondersteund door Azure Arc-servers, implementeert en verwijdert op een hybride Linux- of Windows-machine met behulp van Azure PowerShell.
 
 > [!NOTE]
-> Azure Arc-servers biedt geen ondersteuning voor het implementeren en beheren van VM-extensies op virtuele Azure-machines. Zie het volgende artikel overzicht van VM-extensies voor [Azure-VM's.](../../virtual-machines/extensions/overview.md)
+> Azure Arc-servers bieden geen ondersteuning voor het implementeren en beheren van VM-extensies op virtuele Azure-machines. Zie het volgende artikel over VM-extensies voor [Azure-VM's.](../../virtual-machines/extensions/overview.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een computer met Azure PowerShell. Zie Install and configure Azure PowerShell [voor instructies.](/powershell/azure/)
+- Een computer met Azure PowerShell. Zie Install [and configure Azure PowerShell voor instructies.](/powershell/azure/)
 
-Voordat u Azure PowerShell voor het beheren van VM-extensies op uw hybride server die wordt beheerd door Servers met Arc, moet u de `Az.ConnectedMachine` module installeren. Voer de volgende opdracht uit op uw Arc-server:
+Voordat u Azure PowerShell voor het beheren van VM-extensies op uw hybride server die wordt beheerd door Arc-servers, moet u de `Az.ConnectedMachine` module installeren. Voer de volgende opdracht uit op uw Arc-server:
 
 `Install-Module -Name Az.ConnectedMachine`.
 
@@ -41,7 +42,7 @@ PS C:\> $protectedSetting = @{ "workspaceKey" = "workspaceKey" }
 PS C:\> New-AzConnectedMachineExtension -Name OMSLinuxAgent -ResourceGroupName "myResourceGroup" -MachineName "myMachine" -Location "eastus" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -TypeHandlerVersion "1.10" -Settings $Setting -ProtectedSetting $protectedSetting -ExtensionType "OmsAgentForLinux"
 ```
 
-Als u de Log Analytics VM-extensie wilt inschakelen op een Windows-server met Arc, wijzigt u de waarde voor `-ExtensionType` de parameter in in het vorige `"MicrosoftMonitoringAgent"` voorbeeld.
+Als u de Log Analytics VM-extensie wilt inschakelen op een Windows-server met Arc, wijzigt u de waarde voor de `-ExtensionType` parameter in in het vorige `"MicrosoftMonitoringAgent"` voorbeeld.
 
 In het volgende voorbeeld wordt de aangepaste scriptextensie ingeschakeld op een Arc-server:
 
@@ -53,9 +54,9 @@ PS C:\> New-AzConnectedMachineExtension -Name custom -ResourceGroupName myResour
 ### <a name="key-vault-vm-extension-preview"></a>Key Vault VM-extensie (preview)
 
 > [!WARNING]
-> PowerShell-clients voegen vaak toe aan in de settings.jswaardoor de `\` akvvm_service mislukt met een `"` fout: `[CertificateManagementConfiguration] Failed to parse the configuration settings with:not an object.`
+> PowerShell-clients voegen vaak toe aan in de settings.jswaardoor akvvm_service `\` `"` foutmelding krijgt: `[CertificateManagementConfiguration] Failed to parse the configuration settings with:not an object.`
 
-In het volgende voorbeeld wordt de Key Vault VM-extensie (preview) ingeschakeld op een Arc-server:
+In het volgende voorbeeld wordt de VM Key Vault extensie (preview) ingeschakeld op een server met Arc:
 
 ```powershell
 # Build settings
@@ -83,7 +84,7 @@ In het volgende voorbeeld wordt de Key Vault VM-extensie (preview) ingeschakeld 
 
 ## <a name="list-extensions-installed"></a>Lijst met geïnstalleerde extensies
 
-Gebruik [Get-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/get-azconnectedmachineextension) met de parameters en om een lijst met de VM-extensies op uw `-MachineName` Arc-server op te `-ResourceGroupName` halen.
+Gebruik [Get-AzConnectedMachineExtension](/powershell/module/az.connectedmachine/get-azconnectedmachineextension) met de parameters en om een lijst met de VM-extensies op uw Arc-server op `-MachineName` te `-ResourceGroupName` halen.
 
 Voorbeeld:
 
@@ -107,6 +108,6 @@ Remove-AzConnectedMachineExtension -MachineName myMachineName -ResourceGroupName
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- U kunt VM-extensies implementeren, beheren en verwijderen met behulp van de [Azure CLI](manage-vm-extensions-cli.md)vanuit de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen.](manage-vm-extensions-template.md)
+- U kunt VM-extensies implementeren, beheren en verwijderen met behulp van [de Azure CLI](manage-vm-extensions-cli.md)vanuit de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen.](manage-vm-extensions-template.md)
 
 - Informatie over probleemoplossing vindt u in de handleiding Problemen met [VM-extensies oplossen.](troubleshoot-vm-extensions.md)

@@ -1,43 +1,44 @@
 ---
-title: Runbooks in Azure Automation beheren
-description: In dit artikel leest u hoe u runbooks beheert in Azure Automation.
+title: Runbooks beheren in Azure Automation
+description: In dit artikel wordt beschreven hoe u runbooks in Azure Automation.
 services: automation
 ms.subservice: process-automation
 ms.date: 02/24/2021
 ms.topic: conceptual
-ms.openlocfilehash: 7eb576a3d084630ebe6020b57814f12687dc9bd9
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: a172189d8b52a80fc50e7d8c882859f7855aeca8
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168617"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107830084"
 ---
-# <a name="manage-runbooks-in-azure-automation"></a>Runbooks in Azure Automation beheren
+# <a name="manage-runbooks-in-azure-automation"></a>Runbooks beheren in Azure Automation
 
-U kunt een runbook toevoegen aan Azure Automation door ofwel een nieuwe te maken of een bestaande te importeren uit een bestand of de [runbook-galerie](automation-runbook-gallery.md). Dit artikel bevat informatie over het beheren van een runbook dat is geïmporteerd uit een bestand. U kunt alle details van de toegang tot de Community-runbooks en-modules in [Runbook en module galerieën voor Azure Automation](automation-runbook-gallery.md)vinden.
+U kunt een runbook toevoegen aan Azure Automation door een nieuw runbook te maken of een bestaand runbook uit een bestand of de [Runbook Gallery te importeren.](automation-runbook-gallery.md) Dit artikel bevat informatie over het beheren van een runbook dat is geïmporteerd uit een bestand. U vindt alle details over het openen van community-runbooks en -modules in [Runbook-](automation-runbook-gallery.md)en modulegalerieën voor Azure Automation.
 
 ## <a name="create-a-runbook"></a>Een runbook maken
 
-Een nieuw runbook maken in Azure Automation met behulp van de Azure Portal of Windows Power shell. Zodra het runbook is gemaakt, kunt u het bewerken met behulp van informatie in:
+Maak een nieuw runbook in Azure Automation met behulp van Azure Portal of Windows PowerShell. Zodra het runbook is gemaakt, kunt u het bewerken met behulp van informatie in:
 
-* [Tekst runbook bewerken in Azure Automation](automation-edit-textual-runbook.md)
-* [Meer informatie over belang rijke Windows Power shell-werk stroom concepten voor Automation-runbooks](automation-powershell-workflow.md)
+* [Tekstrunbook bewerken in Azure Automation](automation-edit-textual-runbook.md)
+* [Meer informatie over Windows PowerShell workflowconcepten voor Automation-runbooks](automation-powershell-workflow.md)
 * [Python 2-pakketten beheren in Azure Automation](python-packages.md)
-* [Python 3-pakketten (preview) in Azure Automation beheren](python-3-packages.md)
+* [Python 3-pakketten beheren (preview) in Azure Automation](python-3-packages.md)
 
 ### <a name="create-a-runbook-in-the-azure-portal"></a>Een runbook maken in de Azure Portal
 
 1. Open uw Automation-account in Azure Portal.
-2. Selecteer in de hub **Runbooks** onder **proces automatisering** om de lijst met Runbooks te openen.
-3. Klik op **een Runbook maken**.
-4. Voer een naam in voor het runbook en selecteer het bijbehorende [type](automation-runbook-types.md). De naam van het runbook moet beginnen met een letter en mag letters, cijfers, onderstrepings tekens en streepjes bevatten.
-5. Klik op **maken** om het runbook te maken en de editor te openen.
+2. Selecteer in de hub **Runbooks onder** **Procesautomatisering om** de lijst met runbooks te openen.
+3. Klik **op Een runbook maken.**
+4. Voer een naam in voor het runbook en selecteer het [type](automation-runbook-types.md). De runbooknaam moet beginnen met een letter en kan letters, cijfers, onderstrepingstekens en streepjes bevatten.
+5. Klik **op Maken** om het runbook te maken en de editor te openen.
 
-### <a name="create-a-runbook-with-powershell"></a>Een runbook maken met Power shell
+### <a name="create-a-runbook-with-powershell"></a>Een runbook maken met PowerShell
 
-Gebruik de cmdlet [New-AzAutomationRunbook](/powershell/module/az.automation/new-azautomationrunbook) om een leeg runbook te maken. Gebruik de `Type` para meter om een van de typen runbook op te geven die zijn gedefinieerd voor `New-AzAutomationRunbook` .
+Gebruik de [cmdlet New-AzAutomationRunbook](/powershell/module/az.automation/new-azautomationrunbook) om een leeg runbook te maken. Gebruik de `Type` parameter om een van de runbooktypen op te geven die zijn gedefinieerd voor `New-AzAutomationRunbook` .
 
-In het volgende voor beeld ziet u hoe u een nieuw leeg runbook maakt.
+In het volgende voorbeeld ziet u hoe u een nieuw leeg runbook maakt.
 
 ```azurepowershell-interactive
 $params = @{
@@ -51,40 +52,40 @@ New-AzAutomationRunbook @params
 
 ## <a name="import-a-runbook"></a>Een runbook importeren
 
-U kunt een Power shell-of Power shell workflow-script (**. ps1**), een grafisch runbook (**. graphrunbook**) of een python 2-of python 3-script (**. py**) importeren om uw eigen runbook te maken. U moet het [type runbook](automation-runbook-types.md) opgeven dat tijdens het importeren wordt gemaakt, waarbij rekening wordt gehouden met de volgende overwegingen.
+U kunt een PowerShell- of PowerShell Workflow(.ps1)-script, een grafisch runbook **(.graphrunbook)** of een Python 2- of Python 3-script **(.py)** importeren om uw eigen runbook te maken. U moet het [type runbook opgeven](automation-runbook-types.md) dat tijdens het importeren wordt gemaakt, waarbij u rekening houdt met de volgende overwegingen.
 
-* U kunt een **. ps1** -bestand importeren dat geen werk stroom bevat in een [Power shell-Runbook](automation-runbook-types.md#powershell-runbooks) of een [Power shell workflow-runbook](automation-runbook-types.md#powershell-workflow-runbooks). Als u deze importeert in een Power shell workflow-runbook, wordt dit geconverteerd naar een werk stroom. In dit geval worden opmerkingen in het runbook opgenomen om de aangebrachte wijzigingen te beschrijven.
+* U kunt een **PS1-bestand dat** geen werkstroom bevat, importeren in een [PowerShell-runbook](automation-runbook-types.md#powershell-runbooks) of een [PowerShell Workflow-runbook.](automation-runbook-types.md#powershell-workflow-runbooks) Als u het in een PowerShell Workflow-runbook importeert, wordt het geconverteerd naar een werkstroom. In dit geval worden opmerkingen opgenomen in het runbook om de aangebrachte wijzigingen te beschrijven.
 
-* U kunt alleen een **. ps1** -bestand met een Power shell-werk stroom importeren in een [Power shell workflow-runbook](automation-runbook-types.md#powershell-workflow-runbooks). Als het bestand meerdere Power shell-werk stromen bevat, mislukt het importeren. U moet elke werk stroom opslaan in een eigen bestand en deze afzonderlijk importeren.
+* U kunt alleen een **PS1-bestand met** een PowerShell Workflow importeren in een [PowerShell Workflow-runbook](automation-runbook-types.md#powershell-workflow-runbooks). Als het bestand meerdere PowerShell-werkstromen bevat, mislukt het importeren. U moet elke werkstroom opslaan in een eigen bestand en elke werkstroom afzonderlijk importeren.
 
-* Importeer geen **. ps1** -bestand met een Power shell-werk stroom in een [Power shell-runbook](automation-runbook-types.md#powershell-runbooks), omdat het niet door de Power shell-script engine kan worden herkend.
+* Importeer geen **.ps1-bestand** met een PowerShell Workflow in een [PowerShell-runbook,](automation-runbook-types.md#powershell-runbooks)omdat de PowerShell-scripten engine dit niet kan herkennen.
 
-* Importeer alleen een **. graphrunbook** -bestand in een nieuw [grafisch runbook](automation-runbook-types.md#graphical-runbooks).
+* Importeer alleen **een .graphrunbook-bestand** in een nieuw [grafisch runbook](automation-runbook-types.md#graphical-runbooks).
 
-### <a name="import-a-runbook-from-the-azure-portal"></a>Een runbook importeren vanuit de Azure Portal
+### <a name="import-a-runbook-from-the-azure-portal"></a>Een runbook importeren uit de Azure Portal
 
-U kunt de volgende procedure gebruiken om een script bestand te importeren in Azure Automation.
+U kunt de volgende procedure gebruiken om een scriptbestand te importeren in Azure Automation.
 
 > [!NOTE]
-> U kunt een **. ps1** -bestand alleen importeren in een Power shell workflow-runbook met behulp van de portal.
+> U kunt alleen een **PS1-bestand importeren** in een PowerShell Workflow-runbook via de portal.
 
 1. Open uw Automation-account in Azure Portal.
 2. Selecteer **Runbooks** onder **Procesautomatisering** om de lijst van runbooks te openen.
-3. Klik op **een Runbook importeren**.
-4. Klik op **Runbook-bestand** en selecteer het bestand dat u wilt importeren.
-5. Als het veld **naam** is ingeschakeld, kunt u de naam van het runbook wijzigen. De naam moet beginnen met een letter en mag letters, cijfers, onderstrepings tekens en streepjes bevatten.
-6. Het [runbook-type](automation-runbook-types.md) wordt automatisch geselecteerd, maar u kunt het type wijzigen nadat u de toepasselijke beperkingen in het account hebt genomen.
-7. Klik op **Create**. Het nieuwe runbook wordt weer gegeven in de lijst met runbooks voor het Automation-account.
-8. U moet [het runbook publiceren](#publish-a-runbook) voordat u het kunt uitvoeren.
+3. Klik **op Een runbook importeren.**
+4. Klik **op Runbookbestand** en selecteer het bestand dat u wilt importeren.
+5. Als het **veld Naam** is ingeschakeld, kunt u de naam van het runbook wijzigen. De naam moet beginnen met een letter en mag letters, cijfers, onderstrepingstekens en streepjes bevatten.
+6. Het [runbooktype](automation-runbook-types.md) wordt automatisch geselecteerd, maar u kunt het type wijzigen nadat u rekening hebt gehouden met de toepasselijke beperkingen.
+7. Klik op **Create**. Het nieuwe runbook wordt weergegeven in de lijst met runbooks voor het Automation-account.
+8. U moet [het runbook publiceren voordat](#publish-a-runbook) u het kunt uitvoeren.
 
 > [!NOTE]
-> Nadat u een grafisch runbook hebt geïmporteerd, kunt u het naar een ander type converteren. U kunt een grafisch runbook echter niet converteren naar een tekst runbook.
+> Nadat u een grafisch runbook hebt geïmporteerd, kunt u dit converteren naar een ander type. U kunt een grafisch runbook echter niet converteren naar een tekstueel runbook.
 
-### <a name="import-a-runbook-with-windows-powershell"></a>Een runbook importeren met Windows Power shell
+### <a name="import-a-runbook-with-windows-powershell"></a>Een runbook importeren met Windows PowerShell
 
-Gebruik de cmdlet [import-AzAutomationRunbook](/powershell/module/az.automation/import-azautomationrunbook) om een script bestand te importeren als een concept-runbook. Als het runbook al bestaat, mislukt het importeren tenzij u de `Force` para meter met de cmdlet gebruikt.
+Gebruik de cmdlet [Import-AzAutomationRunbook](/powershell/module/az.automation/import-azautomationrunbook) om een scriptbestand als conceptrunbook te importeren. Als het runbook al bestaat, mislukt het importeren, tenzij u de `Force` parameter met de cmdlet gebruikt.
 
-In het volgende voor beeld ziet u hoe u een script bestand importeert in een runbook.
+In het volgende voorbeeld ziet u hoe u een scriptbestand in een runbook importeert.
 
 ```azurepowershell-interactive
 $params = @{
@@ -99,7 +100,7 @@ Import-AzAutomationRunbook @params
 
 ## <a name="handle-resources"></a>Resources verwerken
 
-Als uw runbook een [resource](automation-runbook-execution.md#resources)maakt, moet u controleren of de resource al bestaat voordat u deze probeert te maken. Hier volgt een voor beeld van een basis.
+Als uw runbook een [resource maakt,](automation-runbook-execution.md#resources)moet het script controleren of de resource al bestaat voordat u deze probeert te maken. Hier is een eenvoudig voorbeeld.
 
 ```powershell
 $vmName = 'WindowsVM1'
@@ -115,9 +116,9 @@ if (-not $vmExists) {
 }
 ```
 
-## <a name="retrieve-details-from-activity-log"></a>Details ophalen uit het activiteiten logboek
+## <a name="retrieve-details-from-activity-log"></a>Details ophalen uit activiteitenlogboek
 
-U kunt de details van het runbook ophalen, zoals de persoon of het account waarmee een runbook is gestart, vanuit het [activiteiten logboek](automation-runbook-execution.md#activity-logging) voor het Automation-account. Het volgende Power shell-voor beeld bevat de laatste gebruiker om het opgegeven runbook uit te voeren.
+U kunt runbookgegevens, zoals de persoon of het account die een runbook heeft gestart, ophalen uit het activiteitenlogboek [voor](automation-runbook-execution.md#activity-logging) het Automation-account. Het volgende PowerShell-voorbeeld bevat de laatste gebruiker die het opgegeven runbook heeft uitgevoerd.
 
 ```powershell-interactive
 $SubID = '00000000-0000-0000-0000-000000000000'
@@ -155,13 +156,13 @@ $JobInfo.GetEnumerator() | Sort-Object Key -Descending | Select-Object -First 1
 
 ## <a name="track-progress"></a>Voortgang bijhouden
 
-Het is een goed idee om uw runbooks te maken die kunnen worden gemigreerd, met logica die opnieuw kan worden gebruikt en eenvoudig opnieuw kan worden gestart. Het bijhouden van de voortgang in een runbook zorgt ervoor dat de runbook-logica correct wordt uitgevoerd als er problemen zijn.
+Het is een goed idee om uw runbooks modulair van aard te maken, met logica die eenvoudig opnieuw kan worden gebruikt en opnieuw kan worden gestart. Het bijhouden van de voortgang in een runbook zorgt ervoor dat de runbooklogica correct wordt uitgevoerd als er problemen zijn.
 
-U kunt de voortgang van een runbook volgen met behulp van een externe bron, zoals een opslag account, een Data Base of gedeelde bestanden. Maak logica in uw runbook om eerst de status van de laatste uitgevoerde actie te controleren. Op basis van de resultaten van de controle kan de logica specifieke taken in het runbook overs Laan of voortzetten.
+U kunt de voortgang van een runbook volgen met behulp van een externe bron, zoals een opslagaccount, een database of gedeelde bestanden. Maak logica in uw runbook om eerst de status van de laatst ondernomen actie te controleren. Op basis van de resultaten van de controle kan de logica specifieke taken in het runbook overslaan of doorgaan.
 
-## <a name="prevent-concurrent-jobs"></a>Gelijktijdige taken voor komen
+## <a name="prevent-concurrent-jobs"></a>Gelijktijdige taken voorkomen
 
-Sommige runbooks gedragen zich niet alleen als ze in meerdere taken tegelijk worden uitgevoerd. In dit geval is het belang rijk dat een runbook logica implementeert om te bepalen of er al een actieve taak is. Hier volgt een voor beeld van een basis.
+Sommige runbooks gedragen zich vreemd als ze op meerdere taken tegelijk worden uitgevoerd. In dit geval is het belangrijk dat een runbook logica implementeert om te bepalen of er al een taak wordt uitgevoerd. Hier is een eenvoudig voorbeeld.
 
 ```powershell
 # Authenticate to Azure
@@ -193,18 +194,18 @@ if (($jobs.Status -contains 'Running' -and $runningCount -gt 1 ) -or ($jobs.Stat
 }
 ```
 
-## <a name="handle-transient-errors-in-a-time-dependent-script"></a>Tijdelijke fouten verwerken in een script dat afhankelijk is van tijd
+## <a name="handle-transient-errors-in-a-time-dependent-script"></a>Tijdelijke fouten in een tijdafhankelijk script verwerken
 
-Uw runbooks moeten robuust en geschikt zijn voor het afhandelen van [fouten](automation-runbook-execution.md#errors), met inbegrip van tijdelijke fouten die ertoe kunnen leiden dat ze opnieuw worden opgestart of mislukken. Als een runbook is mislukt, Azure Automation opnieuw proberen.
+Uw runbooks moeten robuust zijn en fouten kunnen [verwerken,](automation-runbook-execution.md#errors)inclusief tijdelijke fouten die ervoor kunnen zorgen dat ze opnieuw worden opgestart of mislukken. Als een runbook uitvalt, Azure Automation het opnieuw proberen.
 
-Als uw runbook normaal gesp roken binnen een tijds beperking wordt uitgevoerd, laat u het script de logica implementeren om de uitvoerings tijd te controleren. Met deze controle wordt de uitvoering van bewerkingen, zoals opstarten, afsluiten of uitschalen, alleen tijdens bepaalde tijden gegarandeerd.
+Als uw runbook normaal gesproken binnen een tijdsbeperking wordt uitgevoerd, laat u het script logica implementeren om de uitvoeringstijd te controleren. Deze controle zorgt ervoor dat bewerkingen zoals opstarten, afsluiten of uitschalen alleen op specifieke tijdstippen worden uitgevoerd.
 
 > [!NOTE]
-> De lokale tijd op het Azure sandbox-proces is ingesteld op UTC. Berekeningen voor de datum en tijd in uw runbooks moeten in overweging worden genomen.
+> De lokale tijd in het Azure-sandboxproces is ingesteld op UTC. Berekeningen voor datum en tijd in uw runbooks moeten rekening houden met dit feit.
 
 ## <a name="work-with-multiple-subscriptions"></a>Met meerdere abonnementen werken
 
-Uw runbook moet kunnen werken met [abonnementen](automation-runbook-execution.md#subscriptions). Als u bijvoorbeeld meerdere abonnementen wilt verwerken, gebruikt het runbook de cmdlet [Disable-AzContextAutosave](/powershell/module/Az.Accounts/Disable-AzContextAutosave) . Met deze cmdlet zorgt u ervoor dat de verificatie context niet wordt opgehaald uit een ander runbook dat wordt uitgevoerd in dezelfde sandbox. Het runbook gebruikt ook de `Get-AzContext` cmdlet om de context van de huidige sessie op te halen en deze toe te wijzen aan de variabele `$AzureContext` .
+Uw runbook moet kunnen werken met [abonnementen](automation-runbook-execution.md#subscriptions). Als u bijvoorbeeld meerdere abonnementen wilt verwerken, gebruikt het runbook de cmdlet [Disable-AzContextAutosave.](/powershell/module/Az.Accounts/Disable-AzContextAutosave) Deze cmdlet zorgt ervoor dat de verificatiecontext niet wordt opgehaald uit een ander runbook dat in dezelfde sandbox wordt uitgevoerd. Het runbook gebruikt ook de cmdlet om de context van de huidige sessie op te halen `Get-AzContext` en toe te wijzen aan de variabele `$AzureContext` .
 
 ```powershell
 Disable-AzContextAutosave -Scope Process
@@ -234,42 +235,42 @@ Start-AzAutomationRunbook @startParams
 ## <a name="work-with-a-custom-script"></a>Werken met een aangepast script
 
 > [!NOTE]
-> U kunt doorgaans geen aangepaste scripts en runbooks uitvoeren op de host waarop een Log Analytics-agent is geïnstalleerd.
+> Normaal gesproken kunt u geen aangepaste scripts en runbooks uitvoeren op de host met een Log Analytics-agent geïnstalleerd.
 
 Een aangepast script gebruiken:
 
-1. Een Automation-account maken en een [rol voor Inzender](automation-role-based-access-control.md)verkrijgen.
-2. [Koppel het account aan de Azure-werk ruimte](../security-center/security-center-enable-data-collection.md).
-3. Schakel [Hybrid Runbook worker](automation-hybrid-runbook-worker.md), [updatebeheer](./update-management/overview.md)of een andere functie voor automatisering in. 
-4. Als u op een Linux-computer beschikt over hoge machtigingen. Meld u aan om [handtekening controles uit te scha kelen](automation-linux-hrw-install.md#turn-off-signature-validation).
+1. Maak een Automation-account en verkrijg de [rol Inzender.](automation-role-based-access-control.md)
+2. [Koppel het account aan de Azure-werkruimte](../security-center/security-center-enable-data-collection.md).
+3. Schakel [Hybrid Runbook Worker,](automation-hybrid-runbook-worker.md) [Updatebeheer](./update-management/overview.md)of een andere Automation-functie in. 
+4. Als u een Linux-computer gebruikt, hebt u hoge machtigingen nodig. Meld u aan om [handtekeningcontroles uit te schakelen.](automation-linux-hrw-install.md#turn-off-signature-validation)
 
 ## <a name="test-a-runbook"></a>Een runbook testen
 
-Wanneer u een runbook test, wordt de [concept versie](#publish-a-runbook) uitgevoerd en de acties die worden uitgevoerd, worden voltooid. Er is geen taak geschiedenis gemaakt, maar de [uitvoer](automation-runbook-output-and-messages.md#use-the-output-stream) -en [waarschuwings-en fout](automation-runbook-output-and-messages.md#working-with-message-streams) stromen worden weer gegeven in het deel venster test uitvoer. Berichten naar de [uitgebreide stroom](automation-runbook-output-and-messages.md#write-output-to-verbose-stream) worden alleen weer gegeven in het deel venster uitvoer als de variabele [VerbosePreference](automation-runbook-output-and-messages.md#work-with-preference-variables) is ingesteld op `Continue` .
+Wanneer u een runbook test, wordt [de Concept-versie](#publish-a-runbook) uitgevoerd en alle acties die worden uitgevoerd, worden voltooid. Er wordt geen taakgeschiedenis gemaakt, maar de [uitvoer-](automation-runbook-output-and-messages.md#use-the-output-stream) en waarschuwings- en [foutstromen](automation-runbook-output-and-messages.md#working-with-message-streams) worden weergegeven in het deelvenster Testuitvoer. Berichten naar [de uitgebreide stroom worden](automation-runbook-output-and-messages.md#write-output-to-verbose-stream) alleen weergegeven in het deelvenster Uitvoer als de variabele [VerbosePreference](automation-runbook-output-and-messages.md#work-with-preference-variables) is ingesteld op `Continue` .
 
-Hoewel de concept versie wordt uitgevoerd, wordt het runbook nog steeds normaal uitgevoerd en worden alle acties uitgevoerd voor resources in de omgeving. Daarom moet u runbooks alleen testen op niet-productie resources.
+Hoewel de conceptversie wordt uitgevoerd, wordt het runbook nog steeds normaal uitgevoerd en worden er acties uitgevoerd op resources in de omgeving. Daarom moet u runbooks alleen testen op niet-productiebronnen.
 
-De procedure voor het testen [van elk type runbook](automation-runbook-types.md) is hetzelfde. Er is geen verschil in het testen tussen de tekst editor en de grafische editor in de Azure Portal.
+De procedure voor het testen [van elk type runbook](automation-runbook-types.md) is hetzelfde. Er is geen verschil in het testen tussen de teksteditor en de grafische editor in de Azure Portal.
 
-1. Open de concept versie van het runbook in de [tekst editor](automation-edit-textual-runbook.md) of de [grafische editor](automation-graphical-authoring-intro.md).
-1. Klik op **testen** om de pagina test te openen.
-1. Als het runbook para meters heeft, worden deze weer gegeven in het linkerdeel venster, waar u waarden kunt opgeven die moeten worden gebruikt voor de test.
-1. Als u de test wilt uitvoeren op een [Hybrid Runbook worker](automation-hybrid-runbook-worker.md), wijzigt u de instellingen voor het **uitvoeren** van de **Hybrid worker** en selecteert u de naam van de doel groep.  Als dat niet het geval is, moet u de test in de Cloud uitvoeren met de standaard **Azure** .
+1. Open de Concept-versie van het runbook in de [teksteditor](automation-edit-textual-runbook.md) of de [grafische editor](automation-graphical-authoring-intro.md).
+1. Klik **op Testen** om de pagina Testen te openen.
+1. Als het runbook parameters bevat, worden deze weergegeven in het linkerdeelvenster, waar u waarden kunt opgeven die voor de test moeten worden gebruikt.
+1. Als u de test wilt uitvoeren op een  [Hybrid Runbook Worker,](automation-hybrid-runbook-worker.md)wijzigt u Instellingen uitvoeren in **Hybrid Worker** selecteert u de naam van de doelgroep.  Laat anders de azure-standaardwaarde **staan om** de test uit te voeren in de cloud.
 1. Klik op **Start** om de test te starten.
-1. U kunt de knoppen onder het deel venster uitvoer gebruiken om een [Power shell-werk stroom](automation-runbook-types.md#powershell-workflow-runbooks) of [grafisch](automation-runbook-types.md#graphical-runbooks) runbook te stoppen of te onderbreken tijdens het testen. Wanneer u het runbook onderbreekt, wordt de huidige activiteit voltooid voordat het runbook wordt onderbroken. Als het runbook is onderbroken, kunt u het stoppen of opnieuw starten.
-1. Controleer de uitvoer van het runbook in het deel venster uitvoer.
+1. U kunt de knoppen onder het deelvenster Uitvoer gebruiken om een [PowerShell-werkstroom](automation-runbook-types.md#powershell-workflow-runbooks) of grafisch [runbook](automation-runbook-types.md#graphical-runbooks) te stoppen of op te schorten terwijl het wordt getest. Wanneer u het runbook onderbreekt, wordt de huidige activiteit voltooid voordat het runbook wordt onderbroken. Als het runbook is onderbroken, kunt u het stoppen of opnieuw starten.
+1. Inspecteer de uitvoer van het runbook in het deelvenster Uitvoer.
 
 ## <a name="publish-a-runbook"></a>Een runbook publiceren
 
-Wanneer u een nieuw runbook maakt of importeert, moet u het publiceren voordat u het kunt uitvoeren. Elk runbook in Azure Automation heeft een concept versie en een gepubliceerde versie. Alleen de gepubliceerde versie is beschikbaar om te worden uitgevoerd en alleen de conceptversie kan worden bewerkt. De gepubliceerde versie wordt niet beïnvloed door wijzigingen in de conceptversie. Wanneer de concept versie beschikbaar moet worden gemaakt, publiceert u deze en wordt de huidige gepubliceerde versie overschreven met de concept versie.
+Wanneer u een nieuw runbook maakt of importeert, moet u het publiceren voordat u het kunt uitvoeren. Elk runbook in Azure Automation heeft een conceptversie en een gepubliceerde versie. Alleen de gepubliceerde versie is beschikbaar om te worden uitgevoerd en alleen de conceptversie kan worden bewerkt. De gepubliceerde versie wordt niet beïnvloed door wijzigingen in de conceptversie. Wanneer de conceptversie beschikbaar moet worden gesteld, publiceert u deze en overschrijft u de huidige gepubliceerde versie met de conceptversie.
 
 ### <a name="publish-a-runbook-in-the-azure-portal"></a>Een runbook publiceren in de Azure Portal
 
 1. Open het runbook in de Azure Portal.
 2. Klik op **Bewerken**.
-3. Klik op **publiceren** en vervolgens op **Ja** in antwoord op het verificatie bericht.
+3. Klik **op Publiceren** en vervolgens op **Ja** als reactie op het verificatiebericht.
 
-### <a name="publish-a-runbook-using-powershell"></a>Een runbook publiceren met Power shell
+### <a name="publish-a-runbook-using-powershell"></a>Een runbook publiceren met PowerShell
 
 Gebruik de cmdlet [Publish-AzAutomationRunbook](/powershell/module/Az.Automation/Publish-AzAutomationRunbook) om uw runbook te publiceren. 
 
@@ -288,44 +289,44 @@ Publish-AzAutomationRunbook @publishParams
 
 ## <a name="schedule-a-runbook-in-the-azure-portal"></a>Een runbook inplannen in Azure Portal
 
-Als uw runbook is gepubliceerd, kunt u het voor de bewerking plannen:
+Wanneer uw runbook is gepubliceerd, kunt u dit plannen voor bewerking:
 
 1. Open het runbook in de Azure Portal.
-2. Selecteer **schema's** onder **resources**.
-3. Selecteer **een schema toevoegen**.
-4. Selecteer **een planning aan uw Runbook koppelen** in het deel venster Runbook plannen.
-5. Kies **een nieuw schema maken** in het deel venster planning.
-6. Voer een naam, beschrijving en andere para meters in het deel venster nieuwe planning in.
-7. Wanneer de planning is gemaakt, markeert u deze en klikt u op **OK**. Deze moet nu zijn gekoppeld aan uw runbook.
-8. Zoek een e-mail in uw postvak om u te informeren over de status van het runbook.
+2. Selecteer **Schema's** onder **Resources.**
+3. Selecteer **Een schema toevoegen.**
+4. Selecteer in het deelvenster Runbook plannen de optie **Een planning aan uw runbook koppelen.**
+5. Kies **Een nieuw schema maken** in het deelvenster Planning.
+6. Voer een naam, beschrijving en andere parameters in het deelvenster Nieuw schema in.
+7. Zodra de planning is gemaakt, markeert u deze en klikt u op **OK.** Deze moet nu worden gekoppeld aan uw runbook.
+8. Zoek een e-mailbericht in uw postvak om u op de hoogte te stellen van de status van het runbook.
 
-## <a name="obtain-job-statuses"></a>Taak statussen ophalen
+## <a name="obtain-job-statuses"></a>Taakstatussen verkrijgen
 
-### <a name="view-statuses-in-the-azure-portal"></a>Statussen weer geven in de Azure Portal
+### <a name="view-statuses-in-the-azure-portal"></a>Statussen in de Azure Portal
 
-Details over de verwerking van taken in Azure Automation zijn in [taken](automation-runbook-execution.md#jobs)opgenomen. Wanneer u klaar bent om uw runbook-taken weer te geven, gebruikt u Azure Portal en opent u uw Automation-account. Aan de rechter kant ziet u een overzicht van alle runbook-taken in **taak statistieken**.
+Details van de taakafhandeling in Azure Automation worden gegeven in [Taken](automation-runbook-execution.md#jobs). Wanneer u klaar bent om uw runbooktaken te zien, gebruikt u Azure Portal en hebt u toegang tot uw Automation-account. Aan de rechterkant ziet u een samenvatting van alle runbooktaken in **Taakstatistieken.**
 
-![Taak statistieken tegel](./media/manage-runbooks/automation-account-job-status-summary.png)
+![Tegel Taakstatistieken](./media/manage-runbooks/automation-account-job-status-summary.png)
 
-In de samen vatting wordt een telling en grafische weer gave van de taak status weer gegeven voor elke uitgevoerde taak.
+In de samenvatting ziet u een telling en grafische weergave van de taakstatus voor elke uitgevoerde taak.
 
-Als u op de tegel klikt, wordt de pagina taken weer gegeven, die een overzicht bevat van alle uitgevoerde taken. Op deze pagina worden de status, de runbook-naam, de start tijd en de voltooiings tijd voor elke taak weer gegeven.
+Als u op de tegel klikt, wordt de pagina Taken weergegeven, met een overzicht van alle taken die worden uitgevoerd. Op deze pagina worden de status, de naam van het runbook, de begintijd en de voltooiingstijd voor elke taak weergegeven.
 
-:::image type="content" source="./media/manage-runbooks/automation-account-jobs-status-blade.png" alt-text="Scherm afbeelding van de pagina taken.":::
+:::image type="content" source="./media/manage-runbooks/automation-account-jobs-status-blade.png" alt-text="Schermopname van de pagina Taken.":::
 
-U kunt de lijst met taken filteren door **taken filteren** te selecteren. Filter op een specifiek runbook, de taak status of een keuze in de vervolg keuzelijst en geef het tijds bereik voor de zoek opdracht op.
+U kunt de lijst met taken filteren door **Taken filteren te selecteren.** Filter op een specifiek runbook, taakstatus of een keuze uit de vervolgkeuzelijst en geef het tijdsbereik voor de zoekopdracht op.
 
-![Taak status filteren](./media/manage-runbooks/automation-account-jobs-filter.png)
+![Taakstatus filteren](./media/manage-runbooks/automation-account-jobs-filter.png)
 
-U kunt ook samenvattings Details van taken weer geven voor een specifiek runbook door dat runbook te selecteren op de pagina Runbooks in uw Automation-account en vervolgens **taken** te selecteren. Deze actie geeft de pagina taken weer. Hier kunt u klikken op een taak record om de details en de uitvoer weer te geven.
+U kunt ook de details van het taakoverzicht voor een specifiek runbook weergeven door dat runbook te selecteren op de pagina Runbooks in uw Automation-account en vervolgens **Taken te selecteren.** Met deze actie wordt de pagina Taken weergegeven. Hier kunt u op een taakrecord klikken om de details en uitvoer ervan weer te geven.
 
-:::image type="content" source="./media/manage-runbooks/automation-runbook-job-summary-blade.png" alt-text="Scherm afbeelding van de pagina taken met de knop fouten gemarkeerd.":::
+:::image type="content" source="./media/manage-runbooks/automation-runbook-job-summary-blade.png" alt-text="Schermopname van de pagina Taken met de knop Fouten gemarkeerd.":::
 
-### <a name="retrieve-job-statuses-using-powershell"></a>Taak statussen ophalen met behulp van Power shell
+### <a name="retrieve-job-statuses-using-powershell"></a>Taakstatussen ophalen met Behulp van PowerShell
 
-Gebruik de cmdlet [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob) om de taken op te halen die voor een runbook zijn gemaakt en de details van een bepaalde taak. Als u een runbook start met `Start-AzAutomationRunbook` , wordt de resulterende taak geretourneerd. Gebruik [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput) om taak uitvoer op te halen.
+Gebruik de cmdlet [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob) om de taken op te halen die zijn gemaakt voor een runbook en de details van een bepaalde taak. Als u een runbook start met `Start-AzAutomationRunbook` behulp van , wordt de resulterende taak retourneert. Gebruik [Get-AzAutomationJobOutput om taakuitvoer](/powershell/module/Az.Automation/Get-AzAutomationJobOutput) op te halen.
 
-In het volgende voor beeld wordt de laatste taak voor een voor beeld-runbook opgehaald en worden de status, de opgegeven waarden voor de runbook-para meters en de taak uitvoer weer gegeven.
+In het volgende voorbeeld wordt de laatste taak voor een voorbeeldrunbook opgenomen en worden de status, de opgegeven waarden voor de runbookparameters en de taakuitvoer weergegeven.
 
 ```azurepowershell-interactive
 $getJobParams = @{
@@ -345,7 +346,7 @@ $getOutputParams = @{
 Get-AzAutomationJobOutput @getOutputParams
 ```
 
-In het volgende voor beeld wordt de uitvoer voor een specifieke taak opgehaald en wordt elke record geretourneerd. Als er een [uitzonde ring](automation-runbook-execution.md#exceptions) is voor een van de records, schrijft het script de uitzonde ring in plaats van de waarde. Dit gedrag is nuttig omdat uitzonde ringen aanvullende informatie kunnen bieden die mogelijk niet normaal in de uitvoer wordt geregistreerd.
+In het volgende voorbeeld wordt de uitvoer voor een specifieke taak opgehaald en wordt elke record opgehaald. Als er een uitzondering is [voor een](automation-runbook-execution.md#exceptions) van de records, schrijft het script de uitzondering in plaats van de waarde . Dit gedrag is handig omdat uitzonderingen aanvullende informatie kunnen bieden die mogelijk niet normaal wordt geregistreerd tijdens de uitvoer.
 
 ```azurepowershell-interactive
 $params = @{
@@ -373,6 +374,6 @@ foreach ($item in $output) {
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [runbook-uitvoering in azure Automation](automation-runbook-execution.md)voor meer informatie over het beheren van runbook.
-* Zie [tekst Runbooks bewerken in azure Automation](automation-edit-textual-runbook.md)om een Power shell-runbook voor te bereiden.
-* Zie problemen met [Runbook oplossen](troubleshoot/runbooks.md)voor informatie over het oplossen van problemen met het uitvoeren van een runbook.
+* Zie Runbookuitvoering in Azure Automation voor meer [informatie over runbookbeheer.](automation-runbook-execution.md)
+* Zie Tekstuele runbooks bewerken in Azure Automation om een [PowerShell-runbook voor te Azure Automation.](automation-edit-textual-runbook.md)
+* Zie Problemen met runbook oplossen voor het oplossen van problemen met [runbookuitvoering.](troubleshoot/runbooks.md)

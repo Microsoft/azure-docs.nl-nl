@@ -1,6 +1,6 @@
 ---
 title: Kenmerken van een beheerde sleutel maken en ophalen in Azure Key Vault - Azure PowerShell
-description: Quickstart waarin wordt getoond hoe u een beheerde sleutel kunt instellen en ophalen uit Azure Key Vault met Azure PowerShell
+description: Snelstart waarin wordt getoond hoe u een beheerde sleutel in uw Azure Key Vault en Azure PowerShell
 services: key-vault
 author: msmbaldwin
 ms.author: mbaldwin
@@ -12,12 +12,12 @@ tags:
 - azure-resource-manager
 ms.custom:
 - mode-api
-ms.openlocfilehash: ba1cd8d6b1410be30eefe9dca9675daaf6c16256
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: aa984a8f3899db72ead878e2c4381ea6a080e32d
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107534662"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815428"
 ---
 # <a name="quickstart-set-and-retrieve-a-managed-key-from-azure-key-vault-using-powershell"></a>Quickstart: Een beheerde sleutel instellen en ophalen uit Azure Key Vault powershell
 
@@ -48,7 +48,7 @@ To create a managed HSM, you will need your Azure Active Directory principal ID.
 Get-AzADUser -UserPrincipalName "<your@email.address>"
 ```
 
-Uw principal-id wordt geretourneerd in de indeling xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
+De principal-id wordt geretourneerd in de indeling xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
 
 ## <a name="create-a-managed-hsm"></a>Een beheerde HSM maken
 
@@ -61,16 +61,16 @@ Gebruik de Azure PowerShell [cmdlet New-AzKeyVaultManagedHsm](/powershell/module
 
 - Naam van resourcegroep: **myResourceGroup**.
 - De locatie: **EastUS**.
-- Uw principal-id: geef Azure Active Directory principal-id die u in de laatste sectie hebt verkregen door aan de parameter 'Administrator'. 
+- Uw principal-id: geef de principal Azure Active Directory-id die u in de laatste sectie hebt verkregen, door aan de parameter 'Administrator'. 
 
 ```azurepowershell-interactive
 New-AzKeyVaultManagedHsm -Name "<your-unique-managed-hsm-name>" -ResourceGroupName "myResourceGroup" -Location "West US" -Administrator "<your-principal-ID>"
 ```
 
-De uitvoer van deze cmdlet toont de eigenschappen van de zojuist gemaakte beheerde HSM. Let op de onderstaande twee eigenschappen:
+De uitvoer van deze cmdlet toont eigenschappen van de zojuist gemaakte beheerde HSM. Let op de onderstaande twee eigenschappen:
 
-- **Naam van beheerde HSM:** de naam die u hebt opgegeven voor de bovenstaande parameter --name.
-- **Kluis-URI:** in het voorbeeld is dit https:// &lt; uw-unieke beheerde-hsm-name &gt; .vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
+- **Naam van beheerde HSM:** de naam die u hebt opgegeven voor de parameter --name hierboven.
+- **Kluis-URI:** in het voorbeeld is https:// &lt; uw-unieke-beheerde-hsm-naam &gt; .vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
 
 Vanaf dit punt is uw Azure-account nu als enige gemachtigd om bewerkingen op deze nieuwe kluis uit te voeren.
 
@@ -84,7 +84,7 @@ Om uw HSM te activeren, hebt u het volgende nodig:
 
 Als u de HSM wilt activeren, stuurt u ten minste 3 (maximaal 10) openbare RSA-sleutels naar de HSM. De HSM versleutelt het beveiligingsdomein met deze sleutels en stuurt het terug. Als het downloaden van dit beveiligingsdomein voltooid is, is uw HSM klaar voor gebruik. U moet ook een quorum opgeven. Dit is het minimale aantal persoonlijke sleutels dat vereist is voor het ontsleutelen van het beveiligingsdomein.
 
-In het onderstaande voorbeeld ziet u hoe u kunt gebruiken (hier beschikbaar voor Windows ) om `openssl` 3 zelfonder tekende certificaten te genereren. [](https://slproweb.com/products/Win32OpenSSL.html)
+In het onderstaande voorbeeld ziet u hoe u (hier beschikbaar voor Windows) kunt gebruiken om `openssl` 3 zelfonderschreven certificaten te genereren. [](https://slproweb.com/products/Win32OpenSSL.html)
 
 ```console
 openssl req -newkey rsa:2048 -nodes -keyout cert_0.key -x509 -days 365 -out cert_0.cer
@@ -95,7 +95,7 @@ openssl req -newkey rsa:2048 -nodes -keyout cert_2.key -x509 -days 365 -out cert
 > [!IMPORTANT]
 > Maak de RSA-sleutelparen en het beveiligingsdomeinbestand dat in deze stap is gegenereerd en sla ze op een veilige manier op.
 
-Gebruik de Azure PowerShell [cmdlet Export-AzKeyVaultSecurityDomain](/powershell/module/az.keyvault/export-azkeyvaultsecuritydomain) om het beveiligingsdomein te downloaden en uw beheerde HSM te activeren. In het onderstaande voorbeeld wordt gebruikgemaakt van 3 RSA-sleutelparen (alleen openbare sleutels zijn vereist voor deze opdracht) en wordt het quorum ingesteld op 2.
+Gebruik de cmdlet [Azure PowerShell Export-AzKeyVaultSecurityDomain](/powershell/module/az.keyvault/export-azkeyvaultsecuritydomain) om het beveiligingsdomein te downloaden en uw beheerde HSM te activeren. In het onderstaande voorbeeld wordt gebruikgemaakt van 3 RSA-sleutelparen (alleen openbare sleutels zijn vereist voor deze opdracht) en wordt het quorum ingesteld op 2.
 
 ```azurepowershell-interactive
 Export-AzKeyVaultSecurityDomain -Name "<your-unique-managed-hsm-name>" -Certificates "cert_0.cer", "cert_1.cer", "cert_2.cer" -OutputPath "MHSMsd.ps.json" -Quorum 2
@@ -115,4 +115,4 @@ In deze quickstart hebt u een Key Vault gemaakt en daar een certificaat in opges
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Zie de referentie voor de [Azure PowerShell Key Vault-cmdlets](/powershell/module/az.keyvault/)
-- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-features.md)

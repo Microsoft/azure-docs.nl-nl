@@ -1,624 +1,624 @@
 ---
-title: Defender voor IoT-installatie
-description: Meer informatie over het installeren van een sensor en de on-premises beheer console voor Azure Defender voor IoT.
-ms.date: 12/2/2020
+title: Defender for IoT-installatie
+description: Meer informatie over het installeren van een sensor en de on-premises beheerconsole voor Azure Defender for IoT.
+ms.date: 4/20/2021
 ms.topic: how-to
-ms.openlocfilehash: 5bdb292750ea041be68a22519583511f58b3b517
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e8366a3408e64d95e6c4d50e3ddef84309b4e8e5
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104782245"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107829696"
 ---
-# <a name="defender-for-iot-installation"></a>Defender voor IoT-installatie
+# <a name="defender-for-iot-installation"></a>Defender for IoT-installatie
 
-In dit artikel wordt beschreven hoe u de volgende elementen van Azure Defender voor IoT installeert:
+In dit artikel wordt beschreven hoe u de volgende elementen van Azure Defender for IoT:
 
-- **Sensor**: Defender voor IOT Sens oren verzamelt ICS-netwerk verkeer met behulp van passieve bewaking (zonder agent). Passieve en niet-storende Sens oren hebben geen invloed op de netwerken en apparaten van het OT en IoT. De sensor maakt verbinding met een SPANNe-poort of netwerk Tik en begint direct met het controleren van uw netwerk. Detecties worden weer gegeven in de sensor console. Daar kunt u ze weer geven, onderzoeken en analyseren in een netwerk kaart, inventaris van apparaten en een uitgebreid scala aan rapporten. Voor beelden zijn rapporten over risico analyse, query's voor gegevens analyse en aanvals vectoren. Meer informatie over sensor mogelijkheden vindt u in de [Defender voor IOT-sensor gebruikers handleiding (direct downloaden)](./getting-started.md).
+- **Sensor:** Defender for IoT-sensoren verzamelen ICS-netwerkverkeer met behulp van passieve bewaking (zonder agent). Passieve en niet-rusieve sensoren hebben geen invloed op OT- en IoT-netwerken en -apparaten. De sensor maakt verbinding met een SPAN-poort of netwerk-TAP en begint onmiddellijk met het bewaken van uw netwerk. Detecties worden weergegeven in de sensorconsole. Daar kunt u ze bekijken, onderzoeken en analyseren in een netwerkkaart, apparaatinventaris en een uitgebreid scala aan rapporten. Voorbeelden hiervan zijn rapporten voor risicoanalyse, gegevensanalysequery's en aanvalsvectoren. Lees meer over sensormogelijkheden in de [gebruikershandleiding voor Defender for IoT-sensoren (direct downloaden).](./getting-started.md)
 
-- **On-premises beheer console**: met behulp van de on-premises beheer console kunt u Apparaatbeheer, risico beheer en het beheer van beveiligings problemen uitvoeren. U kunt dit ook gebruiken om de bewaking van bedreigingen en reactie op incidenten in uw onderneming uit te voeren. Het biedt een uniforme weer gave van alle netwerk apparaten, de belangrijkste IoT en de risico indicatoren en waarschuwingen die zijn gedetecteerd in faciliteiten waar Sens oren worden geïmplementeerd. Gebruik de on-premises beheer console om Sens oren in gapped netwerken weer te geven en te beheren.
+- **On-premises beheerconsole:** met de on-premises beheerconsole kunt u apparaatbeheer, risicobeheer en vulnerability management. U kunt deze ook gebruiken om bedreigingsbewaking en incidentrespons uit te voeren binnen uw onderneming. Het biedt een uniforme weergave van alle netwerkapparaten, belangrijke IoT- en OT-risico-indicatoren en -waarschuwingen die zijn gedetecteerd in faciliteiten waar sensoren worden geïmplementeerd. Gebruik de on-premises beheerconsole om sensoren in netwerken met een air-gapped netwerk weer te geven en te beheren.
 
-In dit artikel komen de volgende installatie gegevens aan bod:
+In dit artikel worden de volgende installatiegegevens beschreven:
 
   - **Hardware:** Details van het fysieke apparaat van Dell en HPE.
 
-  - **Software:** Sensor-en on-premises beheer console-installatie van software.
+  - **Software:** Installatie van sensor- en on-premises beheerconsolesoftware.
 
   - **Virtuele apparaten:** Details van de virtuele machine en software-installatie.
 
-Na de installatie verbindt u uw sensor met uw netwerk.
+Na de installatie verbindt u de sensor met uw netwerk.
 
-## <a name="about-defender-for-iot-appliances"></a>Over Defender voor IoT-apparaten 
+## <a name="about-defender-for-iot-appliances"></a>Over Defender for IoT-apparaten 
 
-De volgende secties bevatten informatie over Defender voor IoT-sensor toestellen en het apparaat voor de on-premises beheer console van Defender voor IoT.
+De volgende secties bevatten informatie over Defender for IoT-sensorapparaten en het apparaat voor de on-premises beheerconsole van Defender for IoT.
 
 ### <a name="physical-appliances"></a>Fysieke apparaten
 
-De Defender voor IoT-toestel sensor maakt verbinding met een SPANNe-poort of netwerk-Tik en begint onmiddellijk met het verzamelen van ICS-netwerk verkeer met behulp van passieve bewaking (zonder agent). Dit proces heeft geen invloed op de netwerken en apparaten, omdat het niet in het gegevenspad is geplaatst en niet actief is.
+De Defender for IoT-apparaatsensor maakt verbinding met een SPAN-poort of netwerk-TAP en begint onmiddellijk met het verzamelen van ICS-netwerkverkeer met behulp van passieve (agentloze) bewaking. Dit proces heeft geen invloed op OT-netwerken en apparaten, omdat het niet in het gegevenspad wordt geplaatst en ot-apparaten niet actief worden gescand.
 
-De volgende rack koppel apparaten zijn beschikbaar:
+De volgende rack-bevestigingsapparaten zijn beschikbaar:
 
-| **Implementatie type** | **Bedrijf** | **Enterprise** | **SMB** | **Lijn** |
+| **Implementatietype** | **Bedrijf** | **Enterprise** | **SMB** | **Lijn** |
 |--|--|--|--|--|
 | **Model** | HPE ProLiant DL360 | Dell PowerEdge R340 XL | HPE ProLiant DL20 | HPE ProLiant DL20 |
-| **Bewakings poorten** | Maxi maal 15 RJ45 of 8 OPT | Maxi maal 9 RJ45 of 6 OPT | Maxi maal 8 RJ45 of 6 OPT | 4 RJ45 |
-| **Maximale band breedte\*** | 3 GB/sec. | 1 GB/sec. | 1 GB/sec. | 100 MB/sec. |
-| **Maxi maal aantal beveiligde apparaten** | 30.000 | 10.000 | 15.000 | 1000 |
+| **Poorten bewaken** | maximaal 15 RJ45 of 8 OPT | maximaal 9 RJ45 of 6 OPT | maximaal 8 RJ45 of 6 OPT | 4 RJ45 |
+| **Maximale bandbreedte\*** | 3 Gb per seconde | 1 Gb per seconde | 1 Gb per seconde | 100 MB per seconde |
+| **Maximaal aantal beveiligde apparaten** | 30,000 | 10.000 | 15.000 | 1000 |
 
-* De maximale capaciteit van de band breedte kan variëren, afhankelijk van de protocol distributie.
+*De maximale bandbreedtecapaciteit kan variëren, afhankelijk van de protocoldistributie.
 
 ### <a name="virtual-appliances"></a>Virtuele apparaten
 
 De volgende virtuele apparaten zijn beschikbaar:
 
-| **Implementatie type** | **Enterprise** | **SMB** | **Lijn** |
+| **Implementatietype** | **Enterprise** | **SMB** | **Lijn** |
 |--|--|--|--|
-| **Beschrijving** | Virtueel apparaat voor bedrijfs implementaties | Virtuele apparaten voor SMB-implementaties | Virtueel apparaat voor regel implementaties |
-| **Maximale band breedte\*** | 150 MB/sec. | 15 MB/sec. | 3 MB/sec. |
-| **Maxi maal aantal beveiligde apparaten** | 3000 | 300 | 100 |
-| **Implementatie type** | Enterprise | SMB | Lijn |
-| **Beschrijving** | Virtueel apparaat voor bedrijfs implementaties | Virtuele apparaten voor SMB-implementaties | Virtueel apparaat voor regel implementaties |
+| **Beschrijving** | Virtueel apparaat voor bedrijfsimplementaties | Virtueel apparaat voor SMB-implementaties | Virtueel apparaat voor regelimplementaties |
+| **Maximale bandbreedte\*** | 150 MB per seconde | 15 MB per seconde | 3 MB/sec |
+| **Maximaal aantal beveiligde apparaten** | 3000 | 300 | 100 |
+| **Implementatietype** | Enterprise | SMB | Lijn |
+| **Beschrijving** | Virtueel apparaat voor bedrijfsimplementaties | Virtueel apparaat voor SMB-implementaties | Virtueel apparaat voor regelimplementaties |
 
-* De maximale capaciteit van de band breedte kan variëren, afhankelijk van de protocol distributie.
+*De maximale bandbreedtecapaciteit kan variëren, afhankelijk van de protocoldistributie.
 
-### <a name="hardware-specifications-for-the-on-premises-management-console"></a>Hardwarespecificaties voor de on-premises beheer console
+### <a name="hardware-specifications-for-the-on-premises-management-console"></a>Hardwarespecificaties voor de on-premises beheerconsole
 
  | Item | Beschrijving |
  |----|--|
- **Beschrijving** | In een architectuur met meerdere lagen biedt de on-premises beheer console inzicht in en controle over geografisch gedistribueerde sites. Het wordt geïntegreerd met SOC Security-stacks, waaronder Siem's, ticketing Systems, de volgende generatie firewalls, beveiligde RAS-platformen en de Defender voor IoT ICS-sandbox voor externe toegang. |
- **Implementatie type** | Enterprise |
- **Type apparaat**  | Dell R340, VM |
- **Aantal beheerde Sens oren** | Onbeperkt |
+ **Beschrijving** | In een architectuur met meerdere gebieden biedt de on-premises beheerconsole zichtbaarheid en controle over geografisch verspreide sites. Het kan worden geïntegreerd met SOC-beveiligingsstacks, waaronder SIEM's, ticketsystemen, firewalls van de volgende generatie, beveiligde platforms voor externe toegang en de Sandbox voor ICS-malware van Defender for IoT. |
+ **Implementatietype** | Enterprise |
+ **Apparaattype**  | Dell R340, VM |
+ **Aantal beheerde sensoren** | Onbeperkt |
 
 ## <a name="prepare-for-the-installation"></a>Voorbereiden op de installatie
 
-### <a name="access-the-iso-installation-image"></a>Toegang tot de ISO-installatie kopie
+### <a name="access-the-iso-installation-image"></a>Toegang tot de ISO-installatieafbeelding
 
-De installatie kopie is toegankelijk vanuit de Defender voor IoT-Portal.
+De installatieafbeelding is toegankelijk vanuit de Defender for IoT-portal.
 
 Voor toegang tot het bestand:
 
-1. Meld u aan bij uw Defender voor IoT-account.
+1. Meld u aan bij uw Defender for IoT-account.
 
-1. Ga naar de pagina **netwerk sensor** of **on-premises beheer console** en selecteer een versie die u wilt downloaden.
+1. Ga naar de **pagina Netwerksensor** **of On-premises beheerconsole** en selecteer een versie die u wilt downloaden.
 
-### <a name="install-from-dvd"></a>Installeren vanaf DVD
+### <a name="install-from-dvd"></a>Installeren vanaf dvd
 
-Zorg ervoor dat u voor de installatie het volgende hebt:
+Controleer vóór de installatie of u het volgende hebt:
 
-- Een draagbaar DVD-station met de USB-connector.
+- Een draagbaar dvd-station met de USB-connector.
 
-- Een ISO-installatie kopie.
+- Een installatieafbeelding van het ISO-installatieprogramma.
 
 Installeren:
 
-1. Brand de installatie kopie op een DVD of bereid een schijf voor op een sleutel. Sluit een draagbaar DVD-station aan op uw computer, klik met de rechter muisknop op de ISO-installatie kopie en selecteer **naar schijf branden**.
+1. Brand de afbeelding op een dvd of bereid een schijf voor op een sleutel. Sluit een draagbaar dvd-station aan op uw computer, klik met de rechtermuisknop op de ISO-afbeelding en selecteer **Op schijf branden.**
 
-1. Verbind de DVD of schijf met een sleutel en configureer het apparaat om op te starten vanaf een DVD of schijf in een sleutel.
+1. Sluit de dvd of schijf op een sleutel aan en configureer het apparaat zo dat het opstart vanaf een dvd of schijf op een sleutel.
 
 ### <a name="install-from-disk-on-a-key"></a>Installeren vanaf schijf op een sleutel
 
-Zorg ervoor dat u voor de installatie het volgende hebt:
+Controleer vóór de installatie of u het volgende hebt:
 
-  - Rufus is geïnstalleerd.
+  - Rufus geïnstalleerd.
   
-  - Een schijf met een sleutel met USB-versie 3,0 en hoger. De minimale grootte is 4 GB.
+  - Een schijf op sleutel met USB-versie 3.0 en hoger. De minimale grootte is 4 GB.
 
-  - Een ISO-installatie kopie bestand.
+  - Een ISO-installatiebestand voor installatieprogramma's.
 
 De schijf op een sleutel wordt in dit proces gewist.
 
 Een schijf voorbereiden op een sleutel:
 
-1. Voer Rufus uit en selecteer **sensor ISO**.
+1. Voer Rufus uit en selecteer **SENSOR ISO**.
 
-1. Verbind de schijf met een sleutel met het voor paneel.
+1. Verbind de schijf op een sleutel met het voorpaneel.
 
-1. Stel het BIOS van de server in op opstarten vanaf de USB.
+1. Stel het BIOS van de server in om op te starten vanaf de USB.
 
 ## <a name="dell-poweredger340xl-installation"></a>Dell PowerEdgeR340XL-installatie
 
 Voordat u de software op het Dell-apparaat installeert, moet u de BIOS-configuratie van het apparaat aanpassen:
 
-  - Het [Dell PowerEdge R340-voor paneel](#dell-poweredge-r340-front-panel) en [het Dell PowerEdge R340-scherm](#dell-poweredge-r340-back-panel) bevat de beschrijving van de voor-en achterkant-panels, samen met de informatie die vereist is voor de installatie, zoals Stuur Programma's en poorten.
+  - [Dell PowerEdge R340 Front Panel](#dell-poweredge-r340-front-panel) en [Dell PowerEdge R340 Back Panel](#dell-poweredge-r340-back-panel) bevat de beschrijving van de voor- en achterpaneel, samen met de informatie die nodig is voor installatie, zoals stuurprogramma's en poorten.
 
-  - De [BIOS-configuratie van Dell](#dell-bios-configuration) biedt informatie over het maken van verbinding met de Dell-interface voor het Apparaatbeheer van apparaten en het configureren van het BIOS.
+  - [Dell BIOS Configuration biedt](#dell-bios-configuration) informatie over het maken van verbinding met de dell-interface voor apparaatbeheer en het configureren van het BIOS.
 
-  - [Software-installatie (Dell R340)](#software-installation-dell-r340) beschrijft de procedure die vereist is voor het installeren van de Defender voor IOT-sensor software.
+  - [Software-installatie (Dell R340) beschrijft](#software-installation-dell-r340) de procedure die nodig is om de Defender for IoT-sensorsoftware te installeren.
 
 ### <a name="dell-poweredge-r340xl-requirements"></a>Dell PowerEdge R340XL-vereisten 
 
-Voor de installatie van het Dell PowerEdge R340XL-apparaat hebt u het volgende nodig:
+Als u het Dell PowerEdge R340XL-apparaat wilt installeren, hebt u het volgende nodig:
 
-- Enter prise-licentie voor de Dell Remote Access Controller (iDrac)
+- Enterprise-licentie voor Dell Remote Access Controller (iDrac)
 
 - BIOS-configuratie-XML
 
-- Server firmware versies:
+- Versies van serverfirmware:
 
   - BIOS-versie 2.1.6
 
-  - iDrac-versie 3.23.23.23
+  - iDrac versie 3.23.23.23
 
-### <a name="dell-poweredge-r340-front-panel"></a>Dell PowerEdge R340-voor paneel
+### <a name="dell-poweredge-r340-front-panel"></a>Dell PowerEdge R340-frontpaneel
 
-:::image type="content" source="media/tutorial-install-components/view-of-dell-poweredge-r340-front-panel.jpg" alt-text="Dell PowerEdge R340-voor paneel.":::
+:::image type="content" source="media/tutorial-install-components/view-of-dell-poweredge-r340-front-panel.jpg" alt-text="Dell PowerEdge R340 voorpaneel.":::
 
- 1. Control Panel links 
+ 1. Linker configuratiescherm 
  1. Optisch station (optioneel) 
- 1. Rechts van het configuratie scherm 
- 1. Gegevens label 
+ 1. Rechter configuratiescherm 
+ 1. Informatietag 
  1. Aandrijfeenheden  
 
-### <a name="dell-poweredge-r340-back-panel"></a>Dell PowerEdge R340-panel
+### <a name="dell-poweredge-r340-back-panel"></a>Dell PowerEdge R340-backpaneel
 
-:::image type="content" source="media/tutorial-install-components/view-of-dell-poweredge-r340-back-panel.jpg" alt-text="Dell PowerEdge R340-back-uppaneel.":::
+:::image type="content" source="media/tutorial-install-components/view-of-dell-poweredge-r340-back-panel.jpg" alt-text="Dell PowerEdge R340-backpaneel.":::
 
 1. Seriële poort 
-1. NIC-poort (GB 1) 
-1. NIC-poort (GB 1) 
-1. PCIe voor halve hoogte 
-1. Sleuf voor PCIe-uitbreidings kaart op volledige hoogte 
-1. Voedings eenheid 1 
-1. Voedings eenheid 2 
-1. Systeem identificatie 
-1. Knop voor kabel poort van systeem status indicator (CMA) 
-1. USB 3,0-poort (2) 
-1. iDRAC9 toegewezen netwerk poort 
+1. NIC-poort (Gb 1) 
+1. NIC-poort (Gb 1) 
+1. PCIe met halve hoogte 
+1. PcIe-uitbreidingskaartsleuf in volledige hoogte 
+1. Voedingseenheid 1 
+1. Voedingseenheid 2 
+1. Systeemidentificatie 
+1. CMA-knop (System Status Indicator Cable Port) 
+1. USB 3.0-poort (2) 
+1. Toegewezen iDRAC9-netwerkpoort 
 1. VGA-poort 
 
-### <a name="dell-bios-configuration"></a>BIOS-configuratie van Dell
+### <a name="dell-bios-configuration"></a>Dell BIOS-configuratie
 
-Dell BIOS-configuratie is vereist om het Dell-apparaat aan te passen om met de software te werken.
+Dell BIOS-configuratie is vereist om het Dell-apparaat aan te passen voor gebruik met de software.
 
-De BIOS-configuratie wordt uitgevoerd via een vooraf gedefinieerde configuratie. Het bestand is toegankelijk vanuit het [Help Center](https://help.cyberx-labs.com/).
+De BIOS-configuratie wordt uitgevoerd via een vooraf gedefinieerde configuratie. Het bestand is toegankelijk vanuit het [Helpcentrum.](https://help.cyberx-labs.com/)
 
-Importeer het configuratie bestand naar het Dell-apparaat. Voordat u het configuratie bestand gebruikt, moet u de communicatie tussen het apparaat van Dell en de beheer computer tot stand brengen.
+Importeer het configuratiebestand naar het Dell-apparaat. Voordat u het configuratiebestand gebruikt, moet u de communicatie tussen het Dell-apparaat en de beheercomputer tot stand brengen.
 
-Het Dell-apparaat wordt beheerd door een geïntegreerde iDRAC met een levenscyclus controller (LC). De krediet brief is inge sloten in elke Dell PowerEdge-server en biedt functionaliteit waarmee u uw Dell PowerEdge-apparaten kunt implementeren, bijwerken, bewaken en onderhouden.
+Het Dell-apparaat wordt beheerd door een geïntegreerde iDRAC met levenscycluscontroller (LC). De LC is ingesloten in elke Dell PowerEdge-server en biedt functionaliteit waarmee u uw Dell PowerEdge-apparaten kunt implementeren, bijwerken, bewaken en onderhouden.
 
-Om de communicatie tussen het apparaat van Dell en de beheer computer tot stand te brengen, moet u het IP-adres van de iDRAC en het IP-adres van de beheer computer definiëren op hetzelfde subnet.
+Als u de communicatie tussen het Dell-apparaat en de beheercomputer tot stand wilt brengen, moet u het IP-adres van iDRAC en het IP-adres van de beheercomputer op hetzelfde subnet definiëren.
 
 Wanneer de verbinding tot stand is gebracht, kan het BIOS worden geconfigureerd.
 
-Dell-BIOS configureren:
+Dell BIOS configureren:
 
 1. [Het IP-adres van iDRAC configureren](#configure-idrac-ip-address)
 
-1. [Het BIOS-configuratie bestand importeren](#import-the-bios-configuration-file)
+1. [Het BIOS-configuratiebestand importeren](#import-the-bios-configuration-file)
 
 #### <a name="configure-idrac-ip-address"></a>IP-adres van iDRAC configureren
 
-1. Schakel de sensor in.
+1. Licht de sensor in.
 
-1. Als het besturings systeem al is geïnstalleerd, selecteert u de toets F2 om de BIOS-configuratie in te voeren.
+1. Als het besturingssysteem al is geïnstalleerd, selecteert u de toets F2 om de BIOS-configuratie in te voeren.
 
-1. Selecteer **iDRAC-instellingen**.
+1. Selecteer **iDRAC-instellingen.**
 
-1. Selecteer **netwerk**.
+1. Selecteer **Netwerk.**
 
    > [!NOTE]
-   > Tijdens de installatie moet u het standaard iDRAC-IP-adres en-wacht woord configureren dat wordt vermeld in de volgende stappen. Na de installatie wijzigt u deze definities.
+   > Tijdens de installatie moet u het standaard-IP-adres en wachtwoord voor iDRAC configureren dat in de volgende stappen wordt vermeld. Na de installatie wijzigt u deze definities.
 
-1. Wijzig het statische IPv4-adres in **10.100.100.250**.
+1. Wijzig het statische IPv4-adres **in 10.100.100.250.**
 
-1. Wijzig het statische subnetmasker in **255.255.255.0**.
+1. Wijzig het statische subnetmasker **in 255.255.255.0.**
 
-   :::image type="content" source="media/tutorial-install-components/idrac-network-settings-screen-v2.png" alt-text="Scherm opname van het statische subnetmasker.":::
+   :::image type="content" source="media/tutorial-install-components/idrac-network-settings-screen-v2.png" alt-text="Schermopname van het statische subnetmasker.":::
 
-1. Selecteer **vorige**  >  **volt ooien**.
+1. Selecteer **Terug**  >  **Voltooien.**
 
-#### <a name="import-the-bios-configuration-file"></a>Het BIOS-configuratie bestand importeren
+#### <a name="import-the-bios-configuration-file"></a>Het BIOS-configuratiebestand importeren
 
-In dit artikel wordt beschreven hoe u het BIOS configureert met behulp van het configuratie bestand.
+In dit artikel wordt beschreven hoe u het BIOS configureert met behulp van het configuratiebestand.
 
-1. Sluit een PC met een statisch vooraf geconfigureerd IP-adres **10.100.100.200** toe aan de **iDRAC** -poort.
+1. Sluit een pc met een statisch vooraf geconfigureerd IP-adres **10.100.100.200** aan op de **iDRAC-poort.**
 
-   :::image type="content" source="media/tutorial-install-components/idrac-port.png" alt-text="Scherm afbeelding van de vooraf geconfigureerde IP-adres poort.":::
+   :::image type="content" source="media/tutorial-install-components/idrac-port.png" alt-text="Schermopname van de vooraf geconfigureerde IP-adrespoort.":::
 
-1. Open een browser en voer **10.100.100.250** in om verbinding te maken met de iDRAC-web-interface.
+1. Open een browser en voer **10.100.100.250** in om verbinding te maken met de iDRAC-webinterface.
 
-1. Meld u aan met de standaard beheerders bevoegdheden van Dell:
+1. Meld u aan met de standaardbeheerdersbevoegdheden van Dell:
 
-   - Gebruikers naam: **root**
+   - Gebruikersnaam: **hoofdmap**
 
-   - Wacht woord: **Calvin**
+   - Wachtwoord: **password:**
 
 1. De referenties van het apparaat zijn:
 
-   - Gebruikers naam: **xxx**
+   - Gebruikersnaam: **XXX**
 
-   - Wacht woord: **xxx**
+   - Wachtwoord: **XXX**
 
-     De bewerking van het import Server profiel wordt gestart.
+     De importserverprofielbewerking wordt gestart.
 
      > [!NOTE]
-     > Voordat u het bestand importeert, moet u het volgende controleren:
+     > Voordat u het bestand importeert, moet u het volgende doen:
      > - U bent de enige gebruiker die momenteel is verbonden met iDRAC.
-     > - Het systeem bevindt zich niet in het BIOS-menu.
+     > - Het systeem staat niet in het BIOS-menu.
 
-1. Ga naar **configuratie**  >  **Server configuratie profiel**. Stel de volgende para meters in:
+1. Ga naar  >  **Configuratieserverconfiguratieprofiel**. Stel de volgende parameters in:
 
-   :::image type="content" source="media/tutorial-install-components/configuration-screen.png" alt-text="Scherm opname van de configuratie van het Server profiel.":::
+   :::image type="content" source="media/tutorial-install-components/configuration-screen.png" alt-text="Schermopname van de configuratie van uw serverprofiel.":::
 
    | Parameter | Configuratie |
    |--|--|
-   | Locatie type | Selecteer **lokaal**. |
-   | Bestandspad | Selecteer **bestand kiezen** en voeg het XML-configuratie bestand toe. |
-   | Onderdelen importeren | Selecteer **BIOS, NIC, RAID**. |
-   | Maximale wacht tijd | Selecteer **20 minuten**. |
+   | Locatietype | Selecteer **Lokaal.** |
+   | Bestandspad | Selecteer **Bestand kiezen en** voeg het XML-configuratiebestand toe. |
+   | Onderdelen importeren | Selecteer **BIOS, NIC, RAID.** |
+   | Maximale wachttijd | Selecteer **20 minuten.** |
 
 1. Selecteer **Importeren**.
 
-1. Als u het proces wilt bewaken, gaat u naar de wachtrij voor **onderhouds**  >  **taken**.
+1. Als u het proces wilt controleren, gaat u naar  >  **Onderhoudswachtrij voor de taak**.
 
-   :::image type="content" source="media/tutorial-install-components/view-the-job-queue.png" alt-text="Scherm opname van de taak wachtrij.":::
+   :::image type="content" source="media/tutorial-install-components/view-the-job-queue.png" alt-text="Schermopname van taakwachtrij.":::
 
-#### <a name="manually-configuring-bios"></a>BIOS hand matig configureren 
+#### <a name="manually-configuring-bios"></a>BIOS handmatig configureren 
 
-U moet het toestel-BIOS hand matig configureren als:
+U moet het BIOS-apparaat handmatig configureren als:
 
-- U hebt uw apparaat niet gekocht met een pijl.
+- U hebt uw apparaat niet gekocht via Pijl.
 
-- U hebt een apparaat, maar u hebt geen toegang tot het XML-configuratie bestand.
+- U hebt een apparaat, maar u hebt geen toegang tot het XML-configuratiebestand.
 
-Nadat u het BIOS hebt geopend, gaat u naar **Apparaatinstellingen**.
+Nadat u toegang hebt tot het BIOS, gaat u naar **Apparaatinstellingen.**
 
-Hand matig configureren:
+Handmatig configureren:
 
-1. Open het toestel-BIOS rechtstreeks via een toetsen bord en scherm, of gebruik iDRAC.
+1. U kunt het BIOS-apparaat rechtstreeks openen met behulp van een toetsenbord en scherm of iDRAC gebruiken.
 
-   - Als het apparaat geen Defender voor IoT-apparaat is, opent u een browser en gaat u naar het IP-adres dat eerder is geconfigureerd. Meld u aan met de standaard beheerders bevoegdheden van Dell. Gebruik het **toegangs punt** voor de gebruikers naam en het **Calvin** voor het wacht woord.
+   - Als het apparaat geen Defender for IoT-apparaat is, opent u een browser en gaat u naar het IP-adres dat eerder is geconfigureerd. Meld u aan met de standaardbeheerdersbevoegdheden van Dell. Gebruik **de hoofdmap** voor de gebruikersnaam **en het** wachtwoord.
 
-   - Als het apparaat een Defender voor IoT-apparaat is, meldt u zich aan met **xxx** voor de gebruikers naam en **xxx** voor het wacht woord.
+   - Als het apparaat een Defender for IoT-apparaat is, moet u zich aanmelden met **xxx** als gebruikersnaam en **XXX** voor het wachtwoord.
 
-1. Nadat u het BIOS hebt geopend, gaat u naar **Apparaatinstellingen**.
+1. Nadat u toegang hebt tot het BIOS, gaat u naar **Apparaatinstellingen.**
 
-1. Kies de door RAID beheerde configuratie door **geïntegreerde RAID-controller 1 te selecteren: Dell PERC \<PERC H330 Adapter\> Configuration Utility**.
+1. Kies de raid-gecontroleerde configuratie door **Geïntegreerde RAID-controller 1: Dell PERC \<PERC H330 Adapter\> Configuration Utility te selecteren.**
 
-1. Selecteer **configuratie beheer**.
+1. Selecteer **Configuratiebeheer.**
 
-1. Selecteer **virtuele schijf maken**.
+1. Selecteer **Virtuele schijf maken.**
 
-1. Selecteer in het veld **RAID-niveau selecteren** de optie **RAID5**. Voer in het veld **naam van virtuele schijf** het **toegangs punt** in en selecteer **fysieke schijven**.
+1. Selecteer raid5 in het veld **RAID-niveau** **selecteren.** Voer in **het veld Naam van virtuele** schijf ROOT **in** en selecteer **Fysieke schijven.**
 
-1. Selecteer **Alles controleren** en selecteer vervolgens **wijzigingen Toep assen**
-
-1. Selecteer **OK**.
-
-1. Schuif omlaag en selecteer **virtuele schijf maken**.
-
-1. Schakel het selectie vakje **bevestigen** in en selecteer **Ja**.
+1. Selecteer **Alles controleren** en selecteer vervolgens Wijzigingen **toepassen**
 
 1. Selecteer **OK**.
 
-1. Ga terug naar het hoofd scherm en selecteer **systeem-BIOS**.
+1. Schuif omlaag en selecteer **Virtuele schijf maken.**
 
-1. Selecteer **opstart instellingen**.
+1. Schakel het **selectievakje Bevestigen** in en selecteer **Ja.**
 
-1. Selecteer voor de optie voor de **opstart modus** **BIOS**.
+1. Selecteer **OK**.
 
-1. Selecteer **vorige** en selecteer vervolgens **volt ooien** om de BIOS-instellingen af te sluiten.
+1. Ga terug naar het hoofdscherm en selecteer **Systeem-BIOS.**
+
+1. Selecteer **Opstartinstellingen.**
+
+1. Selecteer BIOS **voor de** optie **Opstartmodus.**
+
+1. Selecteer **Terug** en selecteer vervolgens **Voltooien om** de BIOS-instellingen af te sluiten.
 
 ### <a name="software-installation-dell-r340"></a>Software-installatie (Dell R340)
 
-Het installatie proces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
+Het installatieproces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
 
 Installeren:
 
-1. Controleer of het versie medium op een van de volgende manieren is gekoppeld aan het apparaat:
+1. Controleer op een van de volgende manieren of de versiemedia aan het apparaat zijn bevestigd:
 
-   - Verbind de externe CD of schijf met een sleutel met de release.
+   - Verbind de externe cd of schijf op een sleutel met de release.
 
-   - Koppel de ISO-installatie kopie met behulp van iDRAC. Nadat u zich hebt aangemeld bij iDRAC, selecteert u de virtuele console en selecteert u vervolgens **virtuele media**.
+   - De ISO-afbeelding met behulp van iDRAC. Nadat u zich bij iDRAC heeft aanmelden, selecteert u de virtuele console en selecteert u **vervolgens Virtuele media.**
 
-1. Selecteer in de sectie **cd/dvd toewijzen** de optie **bestand kiezen**.
+1. Selecteer in **de sectie Cd/dvd-kaart** de **optie Bestand kiezen.**
 
-1. Kies het versie ISO-installatie kopie bestand voor deze versie in het dialoog venster dat wordt geopend.
+1. Kies het ISO-versie-afbeeldingsbestand voor deze versie in het dialoogvenster dat wordt geopend.
 
-1. Selecteer de knop **apparaat toewijzen** .
+1. Selecteer de **knop Apparaat in kaart** brengen.
 
-   :::image type="content" source="media/tutorial-install-components/mapped-device-on-virtual-media-screen-v2.png" alt-text="Scherm opname van een toegewezen apparaat.":::
+   :::image type="content" source="media/tutorial-install-components/mapped-device-on-virtual-media-screen-v2.png" alt-text="Schermopname van een apparaat dat is gebruikt.":::
 
-1. Het medium is gekoppeld. Selecteer **Sluiten**.
+1. Het medium is bevestigd. Selecteer **Sluiten**.
 
-1. Start het apparaat. Wanneer u iDRAC gebruikt, kunt u de servers opnieuw opstarten door de knop voor het **besturings element consul** te selecteren. Selecteer vervolgens op de **toetsenbord macro's** de knop **Toep assen** , waarmee de toetsen combinatie CTRL + ALT + DELETE wordt gestart.
+1. Start het apparaat. Wanneer u iDRAC gebruikt, kunt u de servers opnieuw opstarten door de knop Voor beheer **van Dep te** selecteren. Selecteer vervolgens op de **toetsenbordma macro's** de knop **Toepassen,** waarmee de reeks Ctrl+Alt+Delete wordt start.
 
-1. Selecteer **Engels**.
+1. Selecteer **Engels.**
 
-1. Selecteer **sensor-release- \<version\> Enter prise**.
+1. Selecteer **SENSOR-RELEASE- \<version\> Enterprise**.
 
-   :::image type="content" source="media/tutorial-install-components/sensor-version-select-screen-v2.png" alt-text="Scherm afbeelding waarin de versie selectie wordt weer gegeven.":::   
+   :::image type="content" source="media/tutorial-install-components/sensor-version-select-screen-v2.png" alt-text="Selecteer uw sensorversie en bedrijfstype.":::   
 
-1. Definieer het profiel van het apparaat en de netwerk eigenschappen:
+1. Definieer het apparaatprofiel en de netwerkeigenschappen:
 
-   :::image type="content" source="media/tutorial-install-components/appliance-profile-screen-v2.png" alt-text="Scherm opname van het profiel van het apparaat.":::   
+   :::image type="content" source="media/tutorial-install-components/appliance-profile-screen-v2.png" alt-text="Schermopname van het apparaatprofiel en de netwerkeigenschappen.":::   
 
    | Parameter | Configuratie |
    |--|--|
-   | **Hardwareprofiel** | **gehele** |
-   | **Beheer interface** | **eno1** |
-   | **Netwerk parameters (door de klant opgegeven)** | - |
-   |**IP-adres van beheer netwerk:** | - |
-   | **subnetmasker:** | - |
-   | **hostnaam van apparaat:** | - |
-   | **DNS** | - |
-   | **IP-adres van standaard gateway:** | - |
-   | **invoer interfaces:** |  Het systeem genereert de lijst met invoer interfaces voor u. Kopieer alle items die in de lijst worden weer gegeven met een komma als scheidings teken om de invoer interfaces te spie gelen. U hoeft de bridge-interface niet te configureren. Deze optie wordt alleen gebruikt voor speciale use-cases. |
+   | **Hardwareprofiel** | **Enterprise** |
+   | **Beheerinterface** | **eno1** |
+   | **Netwerkparameters (geleverd door de klant)** | - |
+   |**IP-adres van beheernetwerk:** | - |
+   | **Subnetmasker:** | - |
+   | **hostnaam apparaat:** | - |
+   | **Dns:** | - |
+   | **STANDAARD IP-adres van gateway:** | - |
+   | **invoerinterfaces:** |  Het systeem genereert de lijst met invoerinterfaces voor u. Als u de invoerinterfaces wilt spiegelen, kopieert u alle items in de lijst met een kommascheidingsteken. U hoeft de bruginterface niet te configureren. Deze optie wordt alleen gebruikt voor speciale gebruiksgevallen. |
 
-1. Na ongeveer 10 minuten worden de twee sets met referenties weer gegeven. Een is voor een **cyberx** -gebruiker en één voor een **ondersteunings** gebruiker.  
+1. Na ongeveer 10 minuten worden de twee sets referenties weergegeven. De ene is voor **een CyberX-gebruiker** en een voor een **ondersteuningsgebruiker.**  
 
-1. Sla de apparaat-ID en wacht woorden op. U hebt deze referenties nodig om toegang te krijgen tot het platform wanneer u het voor het eerst gebruikt.
+1. Sla de apparaat-id en wachtwoorden op. U hebt deze referenties nodig voor toegang tot het platform wanneer u het voor het eerst gebruikt.
 
-1. Selecteer **Enter** om door te gaan.
+1. Selecteer **Enter om** door te gaan.
 
-## <a name="hpe-proliant-dl20-installation"></a>Installatie van HPE ProLiant DL20
+## <a name="hpe-proliant-dl20-installation"></a>HPE ProLiant DL20-installatie
 
-In dit artikel wordt het installatie proces voor de HPE ProLiant DL20 beschreven. Dit omvat de volgende stappen:
+In dit artikel wordt het HPE ProLiant DL20-installatieproces beschreven, dat de volgende stappen bevat:
 
-  - Schakel externe toegang in en werk het standaard beheerders wachtwoord bij.
-  - BIOS-en RAID-instellingen configureren.
-  - De software installeren.
+  - Externe toegang inschakelen en het standaardbeheerderswachtwoord bijwerken.
+  - BIOS- en RAID-instellingen configureren.
+  - Installeer de software.
 
 ### <a name="about-the-installation"></a>Over de installatie
 
-  - Enter prise-en SMB-apparaten kunnen worden geïnstalleerd. Het installatie proces is identiek voor beide typen apparaten, met uitzonde ring van de matrix configuratie.
-  - Er wordt een standaard gebruiker met beheerders rechten gegeven. U wordt aangeraden het wacht woord tijdens het netwerk configuratie proces te wijzigen.
-  - Tijdens het netwerk configuratie proces configureert u de iLO-poort op netwerk poort 1.
-  - Het installatie proces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
+  - Enterprise- en SMB-apparaten kunnen worden geïnstalleerd. Het installatieproces is identiek voor beide typen apparaten, met uitzondering van de matrixconfiguratie.
+  - Er wordt een standaardgebruiker met beheerdersrechten opgegeven. U wordt aangeraden het wachtwoord te wijzigen tijdens het netwerkconfiguratieproces.
+  - Tijdens het netwerkconfiguratieproces configureert u de iLO-poort op netwerkpoort 1.
+  - Het installatieproces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
 
-### <a name="hpe-proliant-dl20-front-panel"></a>HPE ProLiant DL20 voor paneel
+### <a name="hpe-proliant-dl20-front-panel"></a>HPE ProLiant DL20-frontpaneel
 
-:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl20-front-panel-v2.png" alt-text="HPE ProLiant DL20 voor paneel.":::
+:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl20-front-panel-v2.png" alt-text="HPE ProLiant DL20-frontpaneel.":::
 
-### <a name="hpe-proliant-dl20-back-panel"></a>HPE ProLiant DL20 back-paneel
+### <a name="hpe-proliant-dl20-back-panel"></a>HPE ProLiant DL20-backpaneel
 
-:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl20-back-panel-v2.png" alt-text="Het scherm terug van de HPE ProLiant DL20.":::
+:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl20-back-panel-v2.png" alt-text="Het achterpaneel van de HPE ProLiant DL20.":::
 
-### <a name="enable-remote-access-and-update-the-password"></a>Externe toegang inschakelen en het wacht woord bijwerken
+### <a name="enable-remote-access-and-update-the-password"></a>Externe toegang inschakelen en wachtwoord bijwerken
 
-Gebruik de volgende procedure om netwerk opties in te stellen en het standaard wachtwoord bij te werken.
+Gebruik de volgende procedure om netwerkopties in te stellen en het standaardwachtwoord bij te werken.
 
-Om het wacht woord in te scha kelen en bij te werken:
+Het wachtwoord inschakelen en bijwerken:
 
-1. Sluit een scherm en een toetsen bord aan op het HP-apparaat, schakel het apparaat in en druk op **F9**.
+1. Sluit een scherm en toetsenbord aan op het HP-apparaat, schakel het apparaat in en druk **op F9.**
 
-    :::image type="content" source="media/tutorial-install-components/hpe-proliant-screen-v2.png" alt-text="Scherm afbeelding van het HPE ProLiant-venster.":::
+    :::image type="content" source="media/tutorial-install-components/hpe-proliant-screen-v2.png" alt-text="Schermopname van het venster HPE ProLiant.":::
 
-1. Ga naar **systeem hulpprogramma's** systeem  >  **configuratie**  >  **ILO 5 configuratie hulpprogramma**  >  **netwerk opties**.
+1. Ga naar **System Utilities**  >  **System Configuration**  >  **iLO 5 Configuration Utility** Network  >  **Options**.
 
-    :::image type="content" source="media/tutorial-install-components/system-configuration-window-v2.png" alt-text="Scherm opname van het venster systeem configuratie.":::
+    :::image type="content" source="media/tutorial-install-components/system-configuration-window-v2.png" alt-text="Schermopname van het venster Systeemconfiguratie.":::
 
-    1.  Selecteer **gedeelde netwerk poort-Lom** in het veld **netwerk interface adapter** .
+    1.  Selecteer **Gedeelde netwerkpoort-LOM in** het veld **Netwerkinterfaceadapter.**
     
     1.  Schakel DHCP uit.
     
-    1.  Voer het IP-adres, het subnetmasker en het IP-adres van de gateway in.
+    1.  Voer het IP-adres, subnetmasker en gateway-IP-adres in.
 
-1. Selecteer **F10: opslaan**.
+1. Selecteer **F10: Opslaan.**
 
-1. Selecteer **ESC** om terug te gaan naar het **configuratie hulpprogramma ILO 5** en selecteer vervolgens **gebruikers beheer**.
+1. Selecteer **Esc** om terug te gaan naar het **iLO 5-configuratieprogramma** en selecteer vervolgens **Gebruikersbeheer.**
 
-1. Selecteer **gebruiker bewerken/verwijderen**. De beheerder is de enige standaard gebruiker die is gedefinieerd. 
+1. Selecteer **Gebruiker bewerken/verwijderen.** De beheerder is de enige standaardgebruiker die is gedefinieerd. 
 
-1. Wijzig het standaard wachtwoord en selecteer **F10: opslaan**.
+1. Wijzig het standaardwachtwoord en selecteer **F10: Opslaan.**
 
-### <a name="configure-the-hpe-bios"></a>Het HPE-BIOS configureren
+### <a name="configure-the-hpe-bios"></a>HpE BIOS configureren
 
-In de volgende procedure wordt beschreven hoe u het HPE-BIOS voor de Enter prise-en SMB-apparaten kunt configureren.
+In de volgende procedure wordt beschreven hoe u het HPE BIOS configureert voor de onderneming en SMB-apparaten.
 
-Het HPE-BIOS configureren:
+Het HPE BIOS configureren:
 
-1. Selecteer systeem **hulpprogramma's**  >  **systeem configuratie**  >  **BIOS/platform configuratie (RBSU)**.
+1. Selecteer **System Utilities**  >  **System Configuration**  >  **BIOS/Platform Configuration (RBSU)**.
 
-1. Selecteer **opstart opties** in het formulier **BIOS/platform Configuration (RBSU)** .
+1. Selecteer in **het formulier BIOS/Platform Configuration (RBSU)** de optie **Opstartopties.**
 
-1. Wijzig de **opstart modus** in **verouderde BIOS-modus** en selecteer vervolgens **F10: opslaan**.
+1. Wijzig **de opstartmodus** **in verouderde BIOS-modus** en selecteer **F10: Opslaan.**
 
-1. Selecteer **ESC** twee keer om het formulier **systeem configuratie** te sluiten.
+1. Selecteer **tweemaal Esc** om het formulier **Systeemconfiguratie te** sluiten.
 
-#### <a name="for-the-enterprise-appliance"></a>Voor het bedrijfs apparaat
+#### <a name="for-the-enterprise-appliance"></a>Voor het bedrijfsapparaat
 
-1. Selecteer **Inge sloten RAID 1: HPE Smart Array P408i-a SR gen 10**  >  **matrix configuratie**  >  **Create array**.
+1. Selecteer **Embedded RAID 1: HPE Smart Array P408i-a SR Gen 10**  >  **Array Configuration** Create  >  **Array**.
 
-1. Selecteer in het formulier **matrix maken** de optie alle opties. Er zijn drie opties beschikbaar voor het **bedrijfs** apparaat.
+1. Selecteer in **het formulier Matrix** maken alle opties. Er zijn drie opties beschikbaar voor het **Enterprise-apparaat.**
 
 #### <a name="for-the-smb-appliance"></a>Voor het SMB-apparaat
 
-1. Selecteer **Inge sloten RAID 1: HPE Smart Array P208i-a SR gen 10**  >  **matrix configuratie**  >  **Create array**.
+1. Selecteer **Embedded RAID 1: HPE Smart Array P208i-a SR Gen 10**  >  **Array Configuration** Create  >  **Array**.
 
-1. Selecteer **door gaan naar volgende formulier**.
+1. Selecteer **Doorgaan naar volgende formulier**.
 
-1. Stel in het formulier **RAID-niveau instellen** het niveau in op **RAID 5** voor Enter prise-implementaties en **RAID 1** voor SMB-implementaties.
+1. Stel in **het formulier RAID-niveau** instellen het niveau in op **RAID 5** voor bedrijfsimplementaties en **RAID 1** voor SMB-implementaties.
 
-1. Selecteer **door gaan naar volgende formulier**.
+1. Selecteer **Doorgaan naar volgende formulier**.
 
-1. Voer in het **Label formulier logisch station** de **logische schijf 1** in.
+1. Voer in **het formulier Logical Drive Label** Logical Drive **1 in.**
 
-1. Selecteer **wijzigingen verzenden**.
+1. Selecteer **Wijzigingen verzenden.**
 
-1. Selecteer in het **Verzend** formulier **terug naar het hoofd menu**.
+1. Selecteer in **het formulier** Verzenden de optie Terug **naar hoofdmenu.**
 
-1. Selecteer **F10: opslaan** en druk twee keer op **ESC** .
+1. Selecteer **F10: Opslaan en** druk vervolgens twee keer op **Esc.**
 
-1. Selecteer in het venster **systeem Hulpprogramma's** **eenmalig opstart menu**.
+1. Selecteer in **het venster Systeemprogramma's** de optie **One-Time Boot Menu**.
 
-1. Selecteer in het formulier voor **eenmalig opstarten** **verouderde BIOS-One-Time opstart menu**.
+1. Selecteer in **het formulier Menu Voor een** keer opstarten de optie Verouderd BIOS One-Time **opstartmenu**.
 
-1. Het Windows-venster **voor opstarten in verouderde** en **opstart** apparaten wordt weer gegeven. Kies een optie voor het overschrijven van de opstart opties; bijvoorbeeld naar een CD-ROM, USB, HDD of UEFI-shell.
+1. De **vensters Opstarten in Verouderd** en **Overschrijven van opstarten worden** weergegeven. Kies een optie voor het overschrijven van opstarten; bijvoorbeeld naar een cd-rom-, USB-, HDD- of UEFI-shell.
 
-    :::image type="content" source="media/tutorial-install-components/boot-override-window-one-v2.png" alt-text="Scherm afbeelding met het eerste opstart onderdrukkings venster.":::
+    :::image type="content" source="media/tutorial-install-components/boot-override-window-one-v2.png" alt-text="Schermopname van het eerste venster overschrijven van opstarten.":::
 
-    :::image type="content" source="media/tutorial-install-components/boot-override-window-two-v2.png" alt-text="Scherm opname van het tweede venster voor het overschrijven van de opstart procedure.":::
+    :::image type="content" source="media/tutorial-install-components/boot-override-window-two-v2.png" alt-text="Schermopname van het tweede venster Overschrijven van opstarten.":::
 ### <a name="software-installation-hpe-proliant-dl20-appliance"></a>Software-installatie (HPE ProLiant DL20-apparaat)
 
-Het installatie proces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
+Het installatieproces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
 
 De software installeren:
 
-1. Sluit het scherm en het toetsen bord aan op het apparaat en maak vervolgens verbinding met de CLI.
+1. Sluit het scherm en toetsenbord aan op het apparaat en maak vervolgens verbinding met de CLI.
 
-1. Sluit een externe CD of schijf aan op de sleutel met de ISO-installatie kopie die u hebt gedownload van de pagina **updates** in de Defender voor IOT-Portal.
+1. Verbind een externe cd of schijf op de sleutel met de ISO-afbeelding die u hebt gedownload van de **pagina Updates** in de Defender for IoT-portal.
 
 1. Start het apparaat.
 
-1. Selecteer **Engels**.
+1. Selecteer **Engels.**
 
-    :::image type="content" source="media/tutorial-install-components/select-english-screen.png" alt-text="De selectie van het Engels in het CLI-venster.":::
+    :::image type="content" source="media/tutorial-install-components/select-english-screen.png" alt-text="Selectie van Engels in het CLI-venster.":::
 
-1. Selecteer **sensor-release- <version> Enter prise**.
+1. Selecteer **SENSOR-RELEASE- <version> Enterprise**.
 
-    :::image type="content" source="media/tutorial-install-components/sensor-version-select-screen-v2.png" alt-text="Scherm opname van het scherm voor het selecteren van een versie.":::
+    :::image type="content" source="media/tutorial-install-components/sensor-version-select-screen-v2.png" alt-text="Schermopname van het scherm voor het selecteren van een versie.":::
 
-1. Definieer in de installatie wizard het profiel van het apparaat en de netwerk eigenschappen:
+1. Definieer in de installatiewizard het hardwareprofiel en de netwerkeigenschappen:
 
-    :::image type="content" source="media/tutorial-install-components/installation-wizard-screen-v2.png" alt-text="Scherm opname van de installatie wizard.":::
+    :::image type="content" source="media/tutorial-install-components/installation-wizard-screen-v2.png" alt-text="Schermopname van de installatiewizard.":::
 
     | Parameter | Configuratie |
     | ----------| ------------- |
-    | **Hardwareprofiel** | Selecteer **Enter prise** of **Office** voor SMB-implementaties. |
-    | **Beheer interface** | **eno2** |
-    | **Standaard netwerk parameters (meestal de para meters worden opgegeven door de klant)** | **IP-adres van beheer netwerk:** <br/> <br/>**hostnaam van apparaat:** <br/>**DNS** <br/>**het IP-adres van de standaard gateway:**|
-    | **invoer interfaces:** | Het systeem genereert de lijst met invoer interfaces voor u.<br/><br/>Kopieer alle items die in de lijst worden weer gegeven met een komma als scheidings teken: **eno5, eno3, eno1, eno6, eno4** om de invoer interfaces te spie gelen.<br/><br/>**Voor HPE DL20: geen lijst met eno1, enp1s0f4u4 (iLo-interfaces)**<br/><br/>**Bridge**: de bridge-interface hoeft niet te worden geconfigureerd. Deze optie wordt alleen gebruikt voor speciale use-cases. Druk op **Enter** om verder te gaan. |
+    | **Hardwareprofiel** | Selecteer **Enterprise-** of **Office** for SMB-implementaties. |
+    | **Beheerinterface** | **eno2** |
+    | **Standaardnetwerkparameters (meestal worden de parameters geleverd door de klant)** | **IP-adres van beheernetwerk:** <br/> <br/>**hostnaam apparaat:** <br/>**Dns:** <br/>**het IP-adres van de standaardgateway:**|
+    | **invoerinterfaces:** | Het systeem genereert de lijst met invoerinterfaces voor u.<br/><br/>Als u de invoerinterfaces wilt spiegelen, kopieert u alle items in de lijst met een kommascheidingsteken: **eno5, eno3, eno1, eno6, eno4**<br/><br/>**Voor HPE DL20: vermeld eno1, enp1s0f4u4 (iLo-interfaces) niet**<br/><br/>**BRIDGE:** u hoeft de bruginterface niet te configureren. Deze optie wordt alleen gebruikt voor speciale gebruiksgevallen. Druk op **Enter** om verder te gaan. |
 
-1. Na ongeveer 10 minuten worden de twee sets met referenties weer gegeven. Een is voor een **cyberx** -gebruiker en één voor een **ondersteunings** gebruiker.
+1. Na ongeveer tien minuten worden de twee sets referenties weergegeven. De ene is **voor een CyberX-gebruiker** en één voor een **ondersteuningsgebruiker.**
 
-1. Sla de ID en wacht woorden van het apparaat op. U hebt de referenties nodig voor de eerste keer toegang tot het platform.
+1. Sla de id en wachtwoorden van het apparaat op. U hebt de referenties nodig voor de eerste keer toegang tot het platform.
 
-1. Selecteer **Enter** om door te gaan.
+1. Selecteer **Enter om** door te gaan.
 
-## <a name="hpe-proliant-dl360-installation"></a>Installatie van HPE ProLiant DL360
+## <a name="hpe-proliant-dl360-installation"></a>HPE ProLiant DL360-installatie
 
-  - Er wordt een standaard gebruiker met beheerders rechten gegeven. U wordt aangeraden het wacht woord tijdens de netwerk configuratie te wijzigen.
+  - Er wordt een standaardgebruiker met beheerdersrechten opgegeven. U wordt aangeraden het wachtwoord te wijzigen tijdens de netwerkconfiguratie.
 
-  - Tijdens de netwerk configuratie configureert u de iLO-poort.
+  - Tijdens de netwerkconfiguratie configureert u de iLO-poort.
 
-  - Het installatie proces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
+  - Het installatieproces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
 
-### <a name="hpe-proliant-dl360-front-panel"></a>HPE ProLiant DL360 voor paneel
+### <a name="hpe-proliant-dl360-front-panel"></a>HPE ProLiant DL360-voorpaneel
 
-:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl360-front-panel.png" alt-text="HPE ProLiant DL360 voor paneel.":::
+:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl360-front-panel.png" alt-text="HPE ProLiant DL360-voorpaneel.":::
 
-### <a name="hpe-proliant-dl360-back-panel"></a>HPE ProLiant DL360 back-paneel
+### <a name="hpe-proliant-dl360-back-panel"></a>HPE ProLiant DL360-backpaneel
 
-:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl360-back-panel.png" alt-text="HPE ProLiant DL360 back panel.":::
+:::image type="content" source="media/tutorial-install-components/hpe-proliant-dl360-back-panel.png" alt-text="HPE ProLiant DL360-backpaneel.":::
 
-### <a name="enable-remote-access-and-update-the-password"></a>Externe toegang inschakelen en het wacht woord bijwerken
+### <a name="enable-remote-access-and-update-the-password"></a>Externe toegang inschakelen en wachtwoord bijwerken
 
-Raadpleeg de voor gaande secties voor de installatie van HPE ProLiant DL20:
+Raadpleeg de voorgaande secties voor hpe ProLiant DL20-installatie:
 
-  - "Externe toegang inschakelen en het wacht woord bijwerken"
+  - 'Externe toegang inschakelen en wachtwoord bijwerken'
 
-  - "Het HPE-BIOS configureren"
+  - 'Het HPE BIOS configureren'
 
-De bedrijfs configuratie is identiek.
+De bedrijfsconfiguratie is identiek.
 
 > [!Note]
-> Controleer in de matrix vorm of u alle opties selecteert.
+> Controleer in het matrixformulier of u alle opties selecteert.
 
-### <a name="ilo-remote-installation-from-a-virtual-drive"></a>externe installatie van iLO (vanaf een virtueel station)
+### <a name="ilo-remote-installation-from-a-virtual-drive"></a>Externe iLO-installatie (vanaf een virtueel station)
 
-In deze procedure wordt de iLO-installatie van een virtuele schijf beschreven.
+In deze procedure wordt de iLO-installatie vanaf een virtueel station beschreven.
 
 Installeren:
 
-1. Meld u aan bij de iLO-console en klik vervolgens met de rechter muisknop op het scherm servers.
+1. Meld u aan bij de iLO-console en klik vervolgens met de rechtermuisknop op het scherm van de servers.
 
-1. Selecteer de **HTML5-console**.
+1. Selecteer **HTML5 Console.**
 
-1. Selecteer in de-console het CD-pictogram en kies de CD/DVD-optie.
+1. Selecteer in de console het cd-pictogram en kies de optie CD/DVD.
 
-1. Selecteer **lokaal ISO-bestand**.
+1. Selecteer **Lokaal ISO-bestand.**
 
-1. Kies in het dialoog venster het relevante ISO-bestand.
+1. Kies in het dialoogvenster het relevante ISO-bestand.
 
-1. Ga naar het pictogram links, selecteer **inschakelen** en selecteer **opnieuw instellen**.
+1. Ga naar het linkerpictogram, selecteer **Power** en selecteer **Opnieuw instellen.**
 
-1. Het apparaat wordt opnieuw opgestart en het sensor installatie proces wordt uitgevoerd.
+1. Het apparaat wordt opnieuw opgestart en het installatieproces van de sensor wordt uitgevoerd.
 
 ### <a name="software-installation-hpe-dl360"></a>Software-installatie (HPE DL360)
 
-Het installatie proces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
+Het installatieproces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart.
 
 Installeren:
 
-1. Sluit het scherm en het toetsen bord aan op het apparaat en maak vervolgens verbinding met de CLI.
+1. Sluit het scherm en toetsenbord aan op het apparaat en maak vervolgens verbinding met de CLI.
 
-1. Sluit een externe CD of schijf aan op een sleutel met de ISO-installatie kopie die u hebt gedownload van de pagina **updates** in de Defender voor IOT-Portal.
+1. Verbind een externe cd of schijf op een sleutel met de ISO-afbeelding die u hebt gedownload van de **pagina Updates** in de Defender for IoT-portal.
 
 1. Start het apparaat.
 
-1. Selecteer **Engels**.
+1. Selecteer **Engels.**
 
-1. Selecteer **sensor-release- <version> Enter prise**.
+1. Selecteer **SENSOR-RELEASE- <version> Enterprise**.
 
-    :::image type="content" source="media/tutorial-install-components/sensor-version-select-screen-v2.png" alt-text="Scherm afbeelding waarin de versie wordt geselecteerd.":::
+    :::image type="content" source="media/tutorial-install-components/sensor-version-select-screen-v2.png" alt-text="Schermopname van het selecteren van de versie.":::
 
-1. Definieer in de installatie wizard het profiel van het apparaat en de netwerk eigenschappen.
+1. Definieer in de installatiewizard het apparaatprofiel en de netwerkeigenschappen.
 
-    :::image type="content" source="media/tutorial-install-components/installation-wizard-screen-v2.png" alt-text="Scherm opname van de installatie wizard.":::
+    :::image type="content" source="media/tutorial-install-components/installation-wizard-screen-v2.png" alt-text="Schermopname van de installatiewizard.":::
 
     | Parameter | Configuratie |
     | ----------| ------------- |
-    | **Hardwareprofiel** | Selecteer **zakelijk**. |
-    | **Beheer interface** | **eno2** |
-    | **Standaard netwerk parameters (opgegeven door de klant)** | **IP-adres van beheer netwerk:** <br/>**subnetmasker:** <br/>**hostnaam van apparaat:** <br/>**DNS** <br/>**het IP-adres van de standaard gateway:**|
-    | **invoer interfaces:**  | Het systeem genereert een lijst met invoer interfaces voor u.<br/><br/>Kopieer alle items die in de lijst worden weer gegeven met een komma als scheidings teken om de invoer interfaces te spie gelen.<br/><br/> U hoeft de bridge-interface niet te configureren. Deze optie wordt alleen gebruikt voor speciale use-cases. |
+    | **Hardwareprofiel** | Selecteer **bedrijfsgegevens.** |
+    | **Beheerinterface** | **eno2** |
+    | **Standaardnetwerkparameters (geleverd door de klant)** | **IP-adres van beheernetwerk:** <br/>**Subnetmasker:** <br/>**hostnaam apparaat:** <br/>**Dns:** <br/>**het standaard-IP-adres van de gateway:**|
+    | **invoerinterfaces:**  | Het systeem genereert een lijst met invoerinterfaces voor u.<br/><br/>Als u de invoerinterfaces wilt spiegelen, kopieert u alle items in de lijst met een kommascheidingsteken.<br/><br/> U hoeft de bruginterface niet te configureren. Deze optie wordt alleen gebruikt voor speciale gebruiksgevallen. |
 
-1. Na ongeveer 10 minuten worden de twee sets met referenties weer gegeven. Een is voor een **cyberx** -gebruiker en één voor een **ondersteunings** gebruiker.
+1. Na ongeveer 10 minuten worden de twee sets referenties weergegeven. Een is voor een **CyberX-gebruiker** en één voor een **ondersteuningsgebruiker.**
 
-1. Sla de ID en wacht woorden van het apparaat op. U hebt deze referenties nodig voor de eerste keer toegang tot het platform.
+1. Sla de id en wachtwoorden van het apparaat op. U hebt deze referenties nodig voor de eerste keer toegang tot het platform.
 
-1. Selecteer **Enter** om door te gaan.
+1. Selecteer **Enter om** door te gaan.
 
-## <a name="sensor-installation-for-the-virtual-appliance"></a>Sensor installatie voor het virtuele apparaat
+## <a name="sensor-installation-for-the-virtual-appliance"></a>Sensorinstallatie voor het virtuele apparaat
 
-U kunt de virtuele machine voor de Defender voor IoT-sensor implementeren in de volgende architecturen:
+U kunt de virtuele machine voor de Defender for IoT-sensor implementeren in de volgende architecturen:
 
 
 | Architectuur | Specificaties | Gebruik | Opmerkingen |
 |---|---|---|---|
-| **Enterprise** | CPU: 8<br/>Geheugen: 32G RAM<br/>HDD: 1800 GB | Productie omgeving | Standaard en meest voorkomende |
-| **Kleine ondernemingen** | CPU: 4 <br/>Geheugen: 8G RAM<br/>HDD: 500 GB | Test-of kleine productie omgevingen | -  |
-| **Office** | CPU: 4<br/>Geheugen: 8G RAM<br/>HDD: 100 GB | Kleine test omgevingen | -  |
+| **Enterprise** | CPU: 8<br/>Geheugen: 32G RAM<br/>HDD: 1800 GB | Productieomgeving | Standaard en meest voorkomende |
+| **Kleine ondernemingen** | CPU: 4 <br/>Geheugen: 8G RAM<br/>HDD: 500 GB | Testomgevingen of kleine productieomgevingen | -  |
+| **Office** | CPU: 4<br/>Geheugen: 8G RAM<br/>HDD: 100 GB | Kleine testomgevingen | -  |
 
 ### <a name="prerequisites"></a>Vereisten
 
-De on-premises beheer console ondersteunt zowel VMware-als Hyper-V-implementatie opties. Voordat u met de installatie begint, controleert u of u de volgende items hebt:
+De on-premises beheerconsole ondersteunt zowel VMware- als Hyper-V-implementatieopties. Voordat u met de installatie begint, moet u ervoor zorgen dat u de volgende items hebt:
 
-  - VMware (ESXi 5,5 of hoger) of Hyper-V-Hyper Visor (Windows 10 Pro of ENTER prise) geïnstalleerd en operationeel
+  - VMware (ESXi 5.5 of hoger) of Hyper-V-hypervisor (Windows 10 Pro of Enterprise) geïnstalleerd en operationeel
 
-  - Beschik bare hardwarebronnen voor de virtuele machine
+  - Beschikbare hardwarebronnen voor de virtuele machine
 
-  - ISO-installatie bestand voor de Azure Defender voor IoT-sensor
+  - ISO-installatiebestand voor de Azure Defender for IoT sensor
 
-Controleer of de Hyper Visor wordt uitgevoerd.
+Zorg ervoor dat de hypervisor wordt uitgevoerd.
 
-### <a name="create-the-virtual-machine-esxi"></a>De virtuele machine maken (ESXi)
+### <a name="create-the-virtual-machine-esxi"></a>De virtuele machine (ESXi) maken
 
-1. Meld u aan bij de ESXi, kies de relevante **gegevens opslag** en selecteer **browser data store**.
+1. Meld u aan bij de ESXi, kies de relevante **gegevensstore** en selecteer **Datastore Browser.**
 
-1. **Upload** de installatie kopie en selecteer **sluiten**.
+1. **Upload** de afbeelding en selecteer **Sluiten.**
 
-1. Ga naar **virtual machines** en selecteer **VM maken/registreren**.
+1. Ga naar **Virtual Machines** en selecteer vervolgens **VM maken/registreren.**
 
-1. Selecteer **nieuwe virtuele machine maken** en selecteer **volgende**.
+1. Selecteer **Nieuwe virtuele machine maken** en selecteer vervolgens **Volgende.**
 
-1. Voeg de naam van een sensor toe en kies:
+1. Voeg een sensornaam toe en kies:
 
-   - Compatibiliteit: **&lt; meest recente ESXi &gt; -versie**
+   - Compatibiliteit: nieuwste **&lt; ESXi-versie &gt;**
 
-   - Gast besturingssysteem familie: **Linux**
+   - Gast os-familie: **Linux**
 
-   - Versie van gast besturingssysteem: **Ubuntu Linux (64-bits)**
+   - Versie van **gast-besturingssysteem: Ubuntu Linux (64-bits)**
 
 1. Selecteer **Next**.
 
-1. Kies de relevante gegevens opslag en selecteer **volgende**.
+1. Kies het relevante gegevensstore en selecteer **Volgende.**
 
-1. Wijzig de para meters van de virtuele hardware volgens de vereiste architectuur.
+1. Wijzig de parameters voor virtuele hardware op basis van de vereiste architectuur.
 
-1. Selecteer **ISO-bestand Data Store** voor **cd/dvd-station 1** en kies het ISO-bestand dat u eerder hebt geüpload.
+1. Voor **CD/DVD Drive 1 selecteert** u **DATAstore ISO-bestand** en kiest u het ISO-bestand dat u eerder hebt geüpload.
 
 1. Selecteer **Volgende** > **voltooien**.
 
@@ -628,160 +628,265 @@ In deze procedure wordt beschreven hoe u een virtuele machine maakt met behulp v
 
 Een virtuele machine maken:
 
-1. Maak een virtuele schijf in Hyper-V-beheer.
+1. Maak een virtuele schijf in Hyper-V-manager.
 
-1. Selecteer **Format = VHDX**.
+1. Selecteer **format = VHDX**.
 
-1. Selecteer **type = dynamisch uitbreiden**.
+1. Selecteer **type = Dynamisch uitbreiden.**
 
-1. Geef de naam en de locatie voor de VHD op.
+1. Voer de naam en locatie voor de VHD in.
 
 1. Voer de vereiste grootte in (volgens de architectuur).   
 
-1. Controleer de samen vatting en selecteer **volt ooien**.
+1. Controleer de samenvatting en selecteer **Voltooien.**
 
-1. Maak een nieuwe virtuele machine in het menu **acties** .
+1. Maak in **het** menu Acties een nieuwe virtuele machine.
 
 1. Voer een naam in voor de virtuele machine.
 
-1. Selecteer **generatie**  >  **1** opgeven.
+1. Selecteer **Generatie**  >  **1 opgeven.**
 
-1. Geef de geheugen toewijzing op (volgens de architectuur) en schakel het selectie vakje voor dynamisch geheugen in.
+1. Geef de geheugentoewijzing op (volgens de architectuur) en schakel het selectievakje voor dynamisch geheugen in.
 
-1. Configureer de netwerk adapter op basis van de netwerk topologie van uw server.
+1. Configureer de netwerkadapter op basis van de servernetwerktopologie.
 
-1. Verbind de VHDX die eerder is gemaakt met de virtuele machine.
+1. Verbind de VHDX die u eerder hebt gemaakt met de virtuele machine.
 
-1. Controleer de samen vatting en selecteer **volt ooien**.
+1. Controleer de samenvatting en selecteer **Voltooien.**
 
-1. Klik met de rechter muisknop op de nieuwe virtuele machine en selecteer **instellingen**.
+1. Klik met de rechtermuisknop op de nieuwe virtuele machine en selecteer **Instellingen.**
 
-1. Selecteer **Hardware toevoegen** en voeg een nieuwe netwerk adapter toe.
+1. Selecteer **Hardware toevoegen** en voeg een nieuwe netwerkadapter toe.
 
-1. Selecteer de virtuele switch die verbinding maakt met het netwerk van het sensor beheer.
+1. Selecteer de virtuele switch die verbinding maakt met het sensorbeheernetwerk.
 
-1. CPU-Resources toewijzen (op basis van de architectuur).
+1. WIJS CPU-resources toe (op basis van de architectuur).
 
-1. De ISO-installatie kopie van de beheer console verbinden met een virtueel DVD-station.
+1. Verbind de ISO-afbeelding van de beheerconsole met een virtueel dvd-station.
 
 1. Start de virtuele machine.
 
-2. Selecteer in het menu **acties** de optie **verbinding maken** om door te gaan met de installatie van de software.
+2. Selecteer in **het** menu Acties de optie **Verbinding maken om** door te gaan met de software-installatie.
 
 ### <a name="software-installation-esxi-and-hyper-v"></a>Software-installatie (ESXi en Hyper-V)
 
-In deze sectie wordt de installatie van de ESXi-en Hyper-V-software beschreven.
+In deze sectie wordt de ESXi- en Hyper-V-software-installatie beschreven.
 
 Installeren:
 
 1. Open de console van de virtuele machine.
 
-1. De VM wordt gestart vanaf de ISO-installatie kopie en het scherm taal selectie wordt weer gegeven. Selecteer **Engels**.
+1. De VM start vanuit de ISO-afbeelding en het scherm voor taalselectie wordt weergegeven. Selecteer **Engels.**
 
 1. Selecteer de vereiste architectuur.
 
-1. Definieer het profiel van het apparaat en de netwerk eigenschappen:
+1. Definieer het apparaatprofiel en de netwerkeigenschappen:
 
     | Parameter | Configuratie |
     | ----------| ------------- |
     | **Hardwareprofiel** | &lt;vereiste architectuur&gt; |
-    | **Beheer interface** | **ens192** |
-    | **Netwerk parameters (door de klant opgegeven)** | **IP-adres van beheer netwerk:** <br/>**subnetmasker:** <br/>**hostnaam van apparaat:** <br/>**DNS** <br/>**standaard gateway:** <br/>**invoer interfaces:**|
-    | **brug interfaces:** | Het is niet nodig om de bridge-interface te configureren. Deze optie geldt alleen voor speciale use cases. |
+    | **Beheerinterface** | **ens192** |
+    | **Netwerkparameters (geleverd door de klant)** | **IP-adres van beheernetwerk:** <br/>**Subnetmasker:** <br/>**hostnaam apparaat:** <br/>**Dns:** <br/>**Standaardgateway:** <br/>**invoerinterfaces:**|
+    | **bruginterfaces:** | U hoeft de bruginterface niet te configureren. Deze optie is alleen voor speciale gebruiksgevallen. |
 
-1. Voer **Y** in om de instellingen te accepteren.
+1. Voer **Y in** om de instellingen te accepteren.
 
-1. Aanmeldings referenties worden automatisch gegenereerd en weer gegeven. Kopieer de gebruikers naam en het wacht woord op een veilige plaats, omdat deze zijn vereist voor aanmelding en beheer.
+1. Aanmeldingsreferenties worden automatisch gegenereerd en weergegeven. Kopieer de gebruikersnaam en het wachtwoord op een veilige plaats, omdat deze vereist zijn voor aanmelden en beheer.
 
-      - **Ondersteuning**: de gebruiker met beheerders rechten voor gebruikers beheer.
+      - **Ondersteuning:** de gebruiker met beheerders beheerdersaccounts voor gebruikersbeheer.
 
-      - **Cyberx**: het equivalent van de hoofdmap voor toegang tot het apparaat.
+      - **CyberX:** het equivalent van root voor toegang tot het apparaat.
 
 1. Het apparaat wordt opnieuw opgestart.
 
-1. Toegang tot de beheer console via het eerder geconfigureerde IP-adres: `https://ip_address` .
+1. Toegang tot de beheerconsole via het IP-adres dat eerder is geconfigureerd: `https://ip_address` .
 
-    :::image type="content" source="media/tutorial-install-components/defender-for-iot-sign-in-screen.png" alt-text="Scherm opname van de toegang tot de beheer console.":::
+    :::image type="content" source="media/tutorial-install-components/defender-for-iot-sign-in-screen.png" alt-text="Schermopname van toegang tot de beheerconsole.":::
 
-## <a name="virtual-appliance-on-premises-management-console-installation"></a>Virtueel apparaat: on-premises beheer console-installatie
+## <a name="on-premises-management-console-installation"></a>Installatie van on-premises beheerconsole
 
-De on-premises beheer console-VM ondersteunt de volgende architecturen:
+Voordat u de software op het apparaat installeert, moet u de BIOS-configuratie van het apparaat aanpassen:
+
+### <a name="bios-configuration"></a>BIOS-configuratie
+
+Het BIOS voor uw apparaat configureren:
+
+1. [Externe toegang inschakelen en het wachtwoord bijwerken.](#enable-remote-access-and-update-the-password)
+
+1. [Configureer het BIOS.](#configure-the-hpe-bios)
+
+### <a name="software-installation"></a>Software-installatie
+
+Het installatieproces duurt ongeveer 20 minuten. Na de installatie wordt het systeem meerdere keren opnieuw opgestart. 
+
+Tijdens het installatieproces kunt u een secundaire NIC toevoegen. Als u ervoor kiest om de secundaire NIC niet te installeren tijdens de installatie, kunt u op een later tijdstip een secundaire [NIC](#add-a-secondary-nic) toevoegen. 
+
+De software installeren:
+
+1. Selecteer de gewenste taal voor het installatieproces.
+
+   :::image type="content" source="media/tutorial-install-components/on-prem-language-select.png" alt-text="Selecteer de gewenste taal voor het installatieproces.":::     
+
+1. Selecteer **MANAGEMENT-RELEASE- \<version\> \<deployment type\>**.
+
+   :::image type="content" source="media/tutorial-install-components/on-prem-install-screen.png" alt-text="Selecteer uw versie.":::   
+
+1. Definieer in de installatiewizard de netwerkeigenschappen:
+
+   :::image type="content" source="media/tutorial-install-components/on-prem-first-steps-install.png" alt-text="Schermopname van het apparaatprofiel.":::   
+
+   | Parameter | Configuratie |
+   |--|--|
+   | **beheernetwerkinterface configureren** | Voor Dell: **eth0, eth1** <br /> Voor HP: **enu1, enu2** <br /> of <br />**mogelijke waarde** |
+   | **IP-adres van beheernetwerk configureren:** | **IP-adres dat is opgegeven door de klant** |
+   | **subnetmasker configureren:** | **IP-adres dat is opgegeven door de klant** |
+   | **DNS configureren:** | **IP-adres dat is opgegeven door de klant** |
+   | **standaard-IP-adres van gateway configureren:** | **IP-adres dat is opgegeven door de klant** |
+   
+1. **(Optioneel)** Als u een secundaire netwerkinterfacekaart (NIC) wilt installeren, definieert u het volgende apparaatprofiel en de netwerkeigenschappen:
+
+    :::image type="content" source="media/tutorial-install-components/on-prem-secondary-nic-install.png" alt-text="Schermopname van de vragen over de installatie van de secundaire NIC.":::
+
+   | Parameter | Configuratie |
+   |--|--|
+   | **sensorbewakingsinterface configureren (optioneel):** | **eth1** of **mogelijke waarde** |
+   | **een IP-adres configureren voor de interface voor sensorbewaking:** | **IP-adres dat door de klant is opgegeven** |
+   | **een subnetmasker configureren voor de interface voor sensorbewaking:** | **IP-adres dat door de klant is opgegeven** |
+
+1. Accepteer de settlings en ga door door te `Y` typen. 
+
+1. Na ongeveer 10 minuten worden de twee sets referenties weergegeven. De ene is voor **een CyberX-gebruiker** en één voor een **ondersteuningsgebruiker.**
+
+   :::image type="content" source="media/tutorial-install-components/credentials-screen.png" alt-text="Kopieer deze referenties omdat ze niet opnieuw worden weergegeven.":::  
+
+   Sla de gebruikersnamen en wachtwoorden op. U hebt deze referenties nodig voor toegang tot het platform wanneer u het voor het eerst gebruikt.
+
+1. Selecteer **Enter om** door te gaan.
+
+Zie Uw poort zoeken voor meer informatie over het vinden van de fysieke poort [op uw apparaat.](#find-your-port)
+
+### <a name="add-a-secondary-nic"></a>Een secundaire NIC toevoegen
+
+U kunt de beveiliging van uw on-premises beheerconsole verbeteren door een secundaire NIC toe te voegen. Door een secundaire NIC toe te voegen, hebt u er een toegewezen voor uw gebruikers en de andere biedt ondersteuning voor de configuratie van een gateway voor gerouteerd netwerken. De tweede NIC is toegewezen aan alle gekoppelde sensoren binnen een IP-adresbereik.
+
+Voor beide NIC's is de gebruikersinterface (UI) ingeschakeld. Als routering niet nodig is, zijn alle functies die worden ondersteund door de gebruikersinterface beschikbaar op de secundaire NIC. Hoge beschikbaarheid wordt uitgevoerd op de secundaire NIC.
+
+Als u ervoor kiest geen secundaire NIC te implementeren, zijn alle functies beschikbaar via de primaire NIC. 
+
+Als u uw on-premises beheerconsole al hebt geconfigureerd en u een secundaire NIC wilt toevoegen aan uw on-premises beheerconsole, gebruikt u de volgende stappen:
+
+1. Gebruik de opdracht voor het opnieuw configureren van het netwerk:
+
+    ```bash
+    sudo cyberx-management-network-reconfigure
+    ```
+
+1. Voer de volgende antwoorden in op de volgende vragen:
+
+    :::image type="content" source="media/tutorial-install-components/network-reconfig-command.png" alt-text="Voer de volgende antwoorden in om uw apparaat te configureren.":::
+
+    | Parameters | Antwoord om in te voeren |
+    |--|--|
+    | **IP-adres van beheernetwerk** | `N` |
+    | **Subnetmasker** | `N` |
+    | **DNS** | `N` |
+    | **STANDAARD-IP-adres van gateway** | `N` |
+    | **Interface voor sensorbewaking (optioneel). Dit is van toepassing wanneer sensoren zich in een ander netwerksegment hebben. Zie de installatie-instructies voor meer informatie.**| `Y`, **selecteert u een mogelijke waarde** |
+    | **Een IP-adres voor de sensorbewakingsinterface (toegankelijk voor de sensoren)** | `Y`, **IP-adres dat door de klant wordt geleverd**|
+    | **Een subnetmasker voor de sensorbewakingsinterface (toegankelijk voor de sensoren)** | `Y`, **IP-adres dat door de klant wordt geleverd** |
+    | **Hostnaam** | **geleverd door de klant** |
+
+1. Controleer alle opties en voer in om `Y` de wijzigingen te accepteren. Het systeem wordt opnieuw opgestart.
+
+### <a name="find-your-port"></a>Uw poort zoeken
+
+Als u problemen hebt met het vinden van de fysieke poort op uw apparaat, kunt u de volgende opdracht gebruiken om:
+
+```bash
+sudo ethtool -p <port value> <time-in-seconds>
+```
+
+Met deze opdracht wordt het licht op de poort voor de opgegeven periode laten knipperen. Als u bijvoorbeeld int, wordt poort eno1 2 minuten geflitst, zodat u de poort op de achterkant van `sudo ethtool -p eno1 120` uw apparaat kunt vinden. 
+
+## <a name="virtual-appliance-on-premises-management-console-installation"></a>Virtueel apparaat: Installatie van on-premises beheerconsole
+
+De on-premises beheerconsole-VM ondersteunt de volgende architecturen:
 
 | Architectuur | Specificaties | Gebruik | 
 |--|--|--|
-| Enterprise <br/>(Standaard en meest gebruikelijk) | CPU: 8 <br/>Geheugen: 32G RAM<br/> HDD: 1,8 TB | Grote productie omgevingen | 
-| Enterprise | CPU: 4 <br/> Geheugen: 8G RAM<br/> HDD: 500 GB | Grote productie omgevingen |
-| Enterprise | CPU: 4 <br/>Geheugen: 8G RAM <br/> HDD: 100 GB | Kleine test omgevingen | 
+| Enterprise <br/>(Standaard en meest voorkomende) | CPU: 8 <br/>Geheugen: 32G RAM<br/> HDD: 1,8 TB | Grote productieomgevingen | 
+| Enterprise | CPU: 4 <br/> Geheugen: 8G RAM<br/> HDD: 500 GB | Grote productieomgevingen |
+| Enterprise | CPU: 4 <br/>Geheugen: 8G RAM <br/> HDD: 100 GB | Kleine testomgevingen | 
    
 ### <a name="prerequisites"></a>Vereisten
 
-De on-premises beheer console ondersteunt zowel VMware-als Hyper-V-implementatie opties. Controleer het volgende voordat u met de installatie begint:
+De on-premises beheerconsole ondersteunt zowel VMware- als Hyper-V-implementatieopties. Controleer het volgende voordat u met de installatie begint:
 
-- VMware (ESXi 5,5 of hoger) of Hyper-V-Hyper Visor (Windows 10 Pro of ENTER prise) is geïnstalleerd en operationeel.
+- VMware (ESXi 5.5 of hoger) of Hyper-V-hypervisor (Windows 10 Pro of Enterprise) is geïnstalleerd en operationeel.
 
 - De hardwarebronnen zijn beschikbaar voor de virtuele machine.
 
-- U hebt het ISO-installatie bestand voor de on-premises beheer console.
+- U hebt het ISO-installatiebestand voor de on-premises beheerconsole.
     
-- De Hyper Visor wordt uitgevoerd.
+- De hypervisor wordt uitgevoerd.
 
-### <a name="create-the-virtual-machine-esxi"></a>De virtuele machine maken (ESXi)
+### <a name="create-the-virtual-machine-esxi"></a>De virtuele machine (ESXi) maken
 
 Een virtuele machine maken (ESXi):
 
-1. Meld u aan bij de ESXi, kies de relevante **gegevens opslag** en selecteer **browser data store**.
+1. Meld u aan bij de ESXi, kies de relevante **gegevensstore** en selecteer **Datastore Browser.**
 
-1. Upload de installatie kopie en selecteer **sluiten**.
+1. Upload de afbeelding en selecteer **Sluiten.**
 
-1. Ga naar **virtual machines**.
+1. Ga naar **Virtual Machines**.
 
-1. Selecteer **virtuele machine maken/registreren**.
+1. Selecteer **VM maken/registreren.**
 
-1. Selecteer **nieuwe virtuele machine maken** en selecteer **volgende**.
+1. Selecteer **Nieuwe virtuele machine maken en** selecteer **Volgende.**
 
-1. Voeg de naam van een sensor toe en kies:
+1. Voeg een sensornaam toe en kies:
 
-   - Tussen \<latest ESXi version>
+   - Compatibiliteit: \<latest ESXi version>
 
-   - Gast besturingssysteem familie: Linux
+   - Gast os-familie: Linux
 
-   - Versie van gast besturingssysteem: Ubuntu Linux (64-bits)
+   - Versie van gast-besturingssysteem: Ubuntu Linux (64-bits)
 
 1. Selecteer **Next**.
 
-1. Kies relevante gegevens opslag en selecteer **volgende**.
+1. Kies relevante gegevensstore en selecteer **Volgende.**
 
-1. Wijzig de para meters van de virtuele hardware volgens de vereiste architectuur.
+1. Wijzig de parameters voor virtuele hardware op basis van de vereiste architectuur.
 
-1. Selecteer **ISO-bestand Data Store** voor **cd/dvd-station 1** en kies het ISO-bestand dat u eerder hebt geüpload.
+1. Voor **CD/DVD Drive 1 selecteert** u **DATAstore ISO-bestand** en kiest u het ISO-bestand dat u eerder hebt geüpload.
 
 1. Selecteer **Volgende** > **voltooien**.
 
 ### <a name="create-the-virtual-machine-hyper-v"></a>De virtuele machine maken (Hyper-V)
 
-Een virtuele machine maken met behulp van Hyper-V:
+Een virtuele machine maken met hyper-V:
 
-1. Maak een virtuele schijf in Hyper-V-beheer.
+1. Maak een virtuele schijf in Hyper-V-manager.
 
-1. Selecteer de format **VHDX**.
-
-1. Selecteer **Next**.
-
-1. Selecteer **dynamisch uitbreiden** van type.
+1. Selecteer de indeling **VHDX.**
 
 1. Selecteer **Next**.
 
-1. Geef de naam en de locatie voor de VHD op.
+1. Selecteer het type **Dynamisch uitbreiden.**
 
 1. Selecteer **Next**.
 
-1. Voer de vereiste grootte in (volgens de architectuur).
+1. Voer de naam en locatie voor de VHD in.
 
 1. Selecteer **Next**.
 
-1. Controleer de samen vatting en selecteer **volt ooien**.
+1. Voer de vereiste grootte in (op basis van de architectuur).
 
-1. Maak een nieuwe virtuele machine in het menu **acties** .
+1. Selecteer **Next**.
+
+1. Controleer de samenvatting en selecteer **Voltooien.**
+
+1. Maak in **het** menu Acties een nieuwe virtuele machine.
 
 1. Selecteer **Next**.
 
@@ -789,290 +894,273 @@ Een virtuele machine maken met behulp van Hyper-V:
 
 1. Selecteer **Next**.
 
-1. Selecteer **generatie** en stel deze in op **generatie 1**.
+1. Selecteer **Generatie** en stel deze in **op Generatie 1.**
 
 1. Selecteer **Next**.
 
-1. Geef de geheugen toewijzing op (volgens de architectuur) en schakel het selectie vakje voor dynamisch geheugen in.
+1. Geef de geheugentoewijzing op (volgens de architectuur) en schakel het selectievakje voor dynamisch geheugen in.
 
 1. Selecteer **Next**.
 
-1. Configureer de netwerk adapter op basis van de netwerk topologie van uw server.
+1. Configureer de netwerkadapter op basis van de servernetwerktopologie.
 
 1. Selecteer **Next**.
 
-1. Verbind de VHDX die eerder is gemaakt met de virtuele machine.
+1. Verbind de VHDX die u eerder hebt gemaakt met de virtuele machine.
 
 1. Selecteer **Next**.
 
-1. Controleer de samen vatting en selecteer **volt ooien**.
+1. Controleer de samenvatting en selecteer **Voltooien.**
 
-1. Klik met de rechter muisknop op de nieuwe virtuele machine en selecteer **instellingen**.
+1. Klik met de rechtermuisknop op de nieuwe virtuele machine en selecteer **Instellingen.**
 
-1. Selecteer **Hardware toevoegen** en voeg een nieuwe adapter toe voor de **netwerk adapter**.
+1. Selecteer **Hardware toevoegen** en voeg een nieuwe adapter toe voor **netwerkadapter**.
 
-1. Voor **virtuele switch** selecteert u de switch die verbinding maakt met het netwerk van het sensor beheer.
+1. Bij **Virtuele switch selecteert** u de switch die verbinding maakt met het sensorbeheernetwerk.
 
-1. CPU-Resources toewijzen (op basis van de architectuur).
+1. WIJS CPU-resources toe (op basis van de architectuur).
 
-1. De ISO-installatie kopie van de beheer console verbinden met een virtueel DVD-station.
+1. Verbind de ISO-afbeelding van de beheerconsole met een virtueel dvd-station.
 
 1. Start de virtuele machine.
 
-1. Selecteer in het menu **acties** de optie **verbinding maken** om door te gaan met de installatie van de software.
+1. Selecteer in **het** menu Acties de optie **Verbinding maken om** door te gaan met de software-installatie.
 
 ### <a name="software-installation-esxi-and-hyper-v"></a>Software-installatie (ESXi en Hyper-V)
 
-Als u de virtuele machine start, wordt het installatie proces gestart vanuit de ISO-installatie kopie. U kunt de beveiliging verbeteren door een tweede netwerk interface te maken op uw on-premises beheer console. Een netwerk interface is toegewezen voor uw gebruikers en kan de configuratie van een gateway voor gerouteerde netwerken ondersteunen. De tweede netwerk interface is toegewezen aan alle gekoppelde Sens oren binnen een IP-adres bereik.
-
-Voor beide netwerk interfaces is de gebruikers interface (UI) ingeschakeld, en alle functies die worden ondersteund door de gebruikers interface, zijn beschikbaar op de secundaire netwerk interface wanneer route ring niet nodig is. Hoge Beschik baarheid wordt uitgevoerd op de secundaire netwerk interface.
-
-Als u ervoor kiest geen secundaire netwerk interface te implementeren, zijn alle functies beschikbaar via de primaire netwerk interface. 
+Als u de virtuele machine start, start u het installatieproces vanuit de ISO-installatie.
 
 De software installeren:
 
-1. Selecteer **Engels**.
+1. Selecteer **Engels.**
 
 1. Selecteer de vereiste architectuur voor uw implementatie.
 
-1. Definieer de netwerk interface voor het sensor Management-netwerk: Interface, IP, subnet, DNS-server en standaard gateway.
+1. Definieer de netwerkinterface voor het sensorbeheernetwerk: interface, IP, subnet, DNS-server en standaardgateway.
 
-1. Beschrijving Voeg een tweede netwerk interface toe aan uw on-premises beheer console.
+1. Aanmeldingsreferenties worden automatisch gegenereerd. Sla de gebruikersnaam en wachtwoorden op. U hebt deze referenties nodig voor toegang tot het platform wanneer u het voor het eerst gebruikt.
 
-    1. `Please type sensor monitoring interface (Optional. Applicable when sensors are on a different network segment. For more information see the Installation instructions): <name of interface>`
-    
-    1. `Please type an IP address for the sensor monitoring interface (accessible by the sensors): <ip address>`
-    
-    1. `Please type a subnet mask for the sensor monitoring interface (accessible by the sensors): <subnet>`
+   Het apparaat wordt vervolgens opnieuw opgestart.
 
-1. Aanmeldings referenties worden automatisch gegenereerd en weer gegeven. Bewaar deze referenties op een veilige plaats, omdat deze zijn vereist voor aanmelding en beheer.
+1. Toegang tot de beheerconsole via het IP-adres dat eerder is geconfigureerd: `<https://ip_address>` .
 
-    | Gebruikersnaam | Description |
-    |--|--|
-    | Ondersteuning | De gebruiker met beheerders rechten voor gebruikers beheer. |
-    | Cyber-x | Het equivalent van de hoofdmap voor toegang tot het apparaat. |
+    :::image type="content" source="media/tutorial-install-components/defender-for-iot-management-console-sign-in-screen.png" alt-text="Schermopname van het aanmeldingsscherm van de beheerconsole.":::
 
-1. Het apparaat wordt opnieuw opgestart.
+## <a name="post-installation-validation"></a>Validatie na installatie
 
-1. Toegang tot de beheer console via het eerder geconfigureerde IP-adres: `<https://ip_address>` .
+Als u de installatie van een fysiek apparaat wilt valideren, moet u veel tests uitvoeren. Hetzelfde validatieproces is van toepassing op alle typen apparaten.
 
-    :::image type="content" source="media/tutorial-install-components/defender-for-iot-management-console-sign-in-screen.png" alt-text="Scherm opname van het aanmeldings scherm van de beheer console.":::
-
-## <a name="post-installation-validation"></a>Validatie na de installatie
-
-Als u de installatie van een fysiek apparaat wilt valideren, moet u veel tests uitvoeren. Hetzelfde validatie proces is van toepassing op alle typen apparaten.
-
-Voer de validatie uit door de GUI of de CLI te gebruiken. De validatie is beschikbaar voor de gebruikers **ondersteuning** en de gebruiker **cyberx**.
+Voer de validatie uit met behulp van de GUI of de CLI. De validatie is beschikbaar voor **de** gebruikersondersteuning en de gebruiker **CyberX.**
 
 Validatie na de installatie moet de volgende tests bevatten:
 
-  - **Sanity test**: Controleer of het systeem actief is.
+  - **Sanity test:** controleer of het systeem wordt uitgevoerd.
 
-  - **Versie**: Controleer of de versie juist is.
+  - **Versie:** controleer of de versie juist is.
 
-  - **ifconfig**: Controleer of alle invoer interfaces die tijdens het installatie proces zijn geconfigureerd, worden uitgevoerd.
+  - **ifconfig:** controleer of alle invoerinterfaces worden uitgevoerd die tijdens het installatieproces zijn geconfigureerd.
 
-### <a name="checking-system-health-by-using-the-gui"></a>De systeem status controleren met de gebruikers interface
+### <a name="checking-system-health-by-using-the-gui"></a>Systeemtoestand controleren met behulp van de GEBRUIKERSINTERFACE
 
-:::image type="content" source="media/tutorial-install-components/system-health-check-screen.png" alt-text="Scherm opname waarin de systeem status controle wordt weer gegeven.":::
+:::image type="content" source="media/tutorial-install-components/system-health-check-screen.png" alt-text="Schermopname van de statuscontrole van het systeem.":::
 
 #### <a name="sanity"></a>Sanity
 
-- **Apparaat**: voert de controle van het toestel Sanity uit. U kunt dezelfde controle uitvoeren met de CLI-opdracht `system-sanity` .
+- **Apparaat:** voert de controle op de werking van het apparaat uit. U kunt dezelfde controle uitvoeren met behulp van de CLI-opdracht `system-sanity` .
 
-- **Versie**: hier wordt de versie van het apparaat weer gegeven.
+- **Versie:** hier wordt de versie van het apparaat weergegeven.
 
-- **Netwerk eigenschappen**: hier worden de para meters van de sensor netwerk weer gegeven.
+- **Netwerkeigenschappen:** geeft de netwerkparameters van de sensor weer.
 
 #### <a name="redis"></a>Redis
 
-- **Geheugen**: geeft de totale afbeelding van het geheugen gebruik, zoals hoeveel geheugen er is gebruikt en hoeveel er nog steeds beschikbaar is.
+- **Geheugen:** geeft een algemeen beeld van het geheugengebruik, zoals hoeveel geheugen is gebruikt en hoeveel er is gebleven.
 
-- **Langste sleutel**: geeft de langste sleutels weer die een uitgebreid geheugen gebruik kunnen veroorzaken.
+- **Langste sleutel:** geeft de langste sleutels weer die een uitgebreid geheugengebruik kunnen veroorzaken.
 
 #### <a name="system"></a>Systeem
 
-- **Kern logboek**: bevat de laatste 500 rijen van het kern logboek, zodat u de recente logboek rijen kunt weer geven zonder het hele systeem logboek te exporteren.
+- **Kernlogboek:** bevat de laatste 500 rijen van het kernlogboek, zodat u de recente logboekrijen kunt weergeven zonder het hele systeemlogboek te exporteren.
 
-- **Taak beheer**: Hiermee worden de taken die in de tabel met processen worden weer gegeven, vertaald naar de volgende lagen: 
+- **Taakbeheer:** vertaalt de taken die worden weergegeven in de tabel met processen naar de volgende lagen: 
   
-  - Permanente laag (redis) 
-  - Cash Layer (SQL)
+  - Permanente laag (Redis) 
+  - Cash layer (SQL)
 
-- **Netwerk statistieken**: geeft uw netwerk statistieken weer.
+- **Netwerkstatistieken:** geeft uw netwerkstatistieken weer.
 
-- **Boven**: toont de tabel met processen. Het is een Linux-opdracht die een dynamische realtime-weer gave van het actieve systeem biedt.
+- **TOP:** Toont de tabel met processen. Het is een Linux-opdracht die een dynamische realtime weergave van het lopende systeem biedt.
 
-- **Controle van het back-upgeheugen**: geeft de status van het back-upgeheugen, waarbij het volgende wordt gecontroleerd:
+- **Back-upgeheugencontrole:** geeft de status van het back-upgeheugen weer en controleert het volgende:
   - De locatie van de back-upmap 
   - De grootte van de back-upmap
   - De beperkingen van de back-upmap
   - Wanneer de laatste back-up is gemaakt
-  - Hoeveel ruimte er beschikbaar is voor de extra back-upbestanden
+  - Hoeveel ruimte er is voor de extra back-upbestanden
 
-- **ifconfig**: hier worden de para meters voor de fysieke interfaces van het apparaat weer gegeven.
+- **ifconfig:** geeft de parameters weer voor de fysieke interfaces van het apparaat.
 
-- **Cyberx nloaden**: geeft het netwerk verkeer en de band breedte weer met behulp van de zes seconden testen.
+- **CyberX-nload:** geeft netwerkverkeer en bandbreedte weer met behulp van de tests van zes seconden.
 
-- **Fouten in de kern, log**: geeft fouten weer in het logboek bestand van de kern.
+- **Fouten van Core, logboek:** geeft fouten weer uit het kernlogboekbestand.
 
-Voor toegang tot het hulp programma:
+Voor toegang tot het hulpprogramma:
 
-1. Meld u aan bij de sensor met de referenties van de **ondersteunings** gebruiker.
+1. Meld u aan bij de sensor met de referenties **van** de ondersteuningsgebruiker.
 
-1. Selecteer **systeem statistieken** in het venster **systeem instellingen** .
+1. Selecteer **Systeemstatistieken** in het **venster Systeeminstellingen.**
 
     :::image type="icon" source="media/tutorial-install-components/system-statistics-icon.png" border="false":::
 
-### <a name="checking-system-health-by-using-the-cli"></a>De systeem status controleren met behulp van de CLI
+### <a name="checking-system-health-by-using-the-cli"></a>Systeemtoestand controleren met behulp van de CLI
 
 **Test 1: Sanity**
 
 Controleer of het systeem actief is:
 
-1. Maak verbinding met de CLI met de Linux-Terminal (bijvoorbeeld PuTTy) en de gebruikers **ondersteuning**.
+1. Maak verbinding met de CLI via de Linux-terminal (bijvoorbeeld PuTTY) en de gebruiker **Support**.
 
 1. Voer `system sanity` in.
 
-1. Controleer of alle services groen zijn (uitgevoerd).
+1. Controleer of alle services groen zijn (actief).
 
-    :::image type="content" source="media/tutorial-install-components/support-screen.png" alt-text="Scherm opname waarin actieve services worden weer gegeven.":::
+    :::image type="content" source="media/tutorial-install-components/support-screen.png" alt-text="Schermopname van het uitvoeren van services.":::
 
-1. Controleer of het **systeem actief is. (Prod)** wordt onderaan weer gegeven.
+1. Controleer of **het systeem UP! is. (prod)** wordt onderaan weergegeven.
 
-**Test 2: versie controle**
+**Test 2: Versiecontrole**
 
 Controleer of de juiste versie wordt gebruikt:
 
-1. Maak verbinding met de CLI met de Linux-Terminal (bijvoorbeeld PuTTy) en de gebruikers **ondersteuning**.
+1. Maak verbinding met de CLI via de Linux-terminal (bijvoorbeeld PuTTY) en de gebruiker **Support**.
 
 1. Voer `system version` in.
 
-1. Controleer of de juiste versie wordt weer gegeven.
+1. Controleer of de juiste versie wordt weergegeven.
 
-**Test 3: netwerk validatie**
+**Test 3: Netwerkvalidatie**
 
-Controleer of alle invoer interfaces die tijdens het installatie proces zijn geconfigureerd, worden uitgevoerd:
+Controleer of alle invoerinterfaces die tijdens het installatieproces zijn geconfigureerd, worden uitgevoerd:
 
-1. Maak verbinding met de CLI met de Linux-Terminal (bijvoorbeeld PuTTy) en de gebruikers **ondersteuning**.
+1. Maak verbinding met de CLI via de Linux-terminal (bijvoorbeeld PuTTY) en de **gebruikersondersteuning**.
 
-1. Voer in `network list` (het equivalent van de Linux `ifconfig` -opdracht).
+1. Voer `network list` in (het equivalent van de Linux-opdracht `ifconfig` ).
 
-1. Controleer of de vereiste invoer interfaces worden weer gegeven. Als er bijvoorbeeld twee Quad koper Nic's zijn geïnstalleerd, moeten er 10 interfaces in de lijst staan.
+1. Controleer of de vereiste invoerinterfaces worden weergegeven. Als er bijvoorbeeld twee koperen quad-NIC's zijn geïnstalleerd, moeten er 10 interfaces in de lijst staan.
 
-    :::image type="content" source="media/tutorial-install-components/interface-list-screen.png" alt-text="Scherm opname van de lijst met interfaces.":::
+    :::image type="content" source="media/tutorial-install-components/interface-list-screen.png" alt-text="Schermopname van de lijst met interfaces.":::
 
-**Test 4: beheer toegang tot de gebruikers interface**
+**Test 4: Beheertoegang tot de gebruikersinterface**
 
-Controleer of u toegang hebt tot de Web-GUI van de console:
+Controleer of u toegang hebt tot de web-GUI van de console:
 
-1. Verbind een laptop met een Ethernet-kabel met de beheer poort (**Gb1**).
+1. Sluit een laptop met een Ethernet-kabel aan op de beheerpoort **(Gb1).**
 
-1. Definieer het NIC-adres van de laptop in hetzelfde bereik als het apparaat.
+1. Definieer het NIC-adres van de laptop dat zich binnen hetzelfde bereik bevindt als het apparaat.
 
-    :::image type="content" source="media/tutorial-install-components/access-to-ui.png" alt-text="Scherm opname van de beheer toegang tot de gebruikers interface.":::
+    :::image type="content" source="media/tutorial-install-components/access-to-ui.png" alt-text="Schermopname van beheertoegang tot de gebruikersinterface.":::
 
-1. Ping het IP-adres van het apparaat van de laptop om de connectiviteit te controleren (standaard: 10.100.10.1).
+1. Ping het IP-adres van het apparaat vanaf de laptop om de connectiviteit te controleren (standaard: 10.100.10.1).
 
 1. Open de Chrome-browser op de laptop en voer het IP-adres van het apparaat in.
 
-1. Selecteer in het venster **uw verbinding is niet privé** de optie **Geavanceerd** en door gaan.
+1. Selecteer in **het venster Uw verbinding is geen privé** de optie **Geavanceerd** en ga door.
 
-1. De test is geslaagd wanneer het aanmeldings scherm van Defender voor IoT wordt weer gegeven.
+1. De test is geslaagd wanneer het aanmeldingsscherm van Defender for IoT wordt weergegeven.
 
-   :::image type="content" source="media/tutorial-install-components/defender-for-iot-sign-in-screen.png" alt-text="Scherm opname van de toegang tot de beheer console.":::
+   :::image type="content" source="media/tutorial-install-components/defender-for-iot-sign-in-screen.png" alt-text="Schermopname van de toegang tot de beheerconsole.":::
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 ### <a name="you-cant-connect-by-using-a-web-interface"></a>U kunt geen verbinding maken met behulp van een webinterface
 
-1. Controleer of de computer waarmee u verbinding probeert te maken, zich op hetzelfde netwerk bevindt als het apparaat.
+1. Controleer of de computer die u probeert te verbinden zich in hetzelfde netwerk bevindt als het apparaat.
 
-1. Controleer of het GUI-netwerk is verbonden met de beheer poort.
+1. Controleer of het GUI-netwerk is verbonden met de beheerpoort.
 
 1. Ping het IP-adres van het apparaat. Als er geen ping is:
 
-   1. Een monitor en een toetsen bord aansluiten op het apparaat.
+   1. Sluit een monitor en een toetsenbord aan op het apparaat.
 
-   1. Gebruik de **ondersteunings** gebruiker en het wacht woord om u aan te melden.
+   1. Gebruik de **gebruiker en** het wachtwoord voor ondersteuning om u aan te melden.
 
-   1. Gebruik de opdracht `network list` om het huidige IP-adres weer te geven.
+   1. Gebruik de opdracht om `network list` het huidige IP-adres weer te geven.
 
-      :::image type="content" source="media/tutorial-install-components/network-list.png" alt-text="Scherm opname van de lijst met netwerken.":::
+      :::image type="content" source="media/tutorial-install-components/network-list.png" alt-text="Schermopname van de netwerklijst.":::
 
-1. Als de netwerk parameters onjuist zijn geconfigureerd, gebruikt u de volgende procedure om ze te wijzigen:
+1. Als de netwerkparameters onjuist zijn geconfigureerd, gebruikt u de volgende procedure om deze te wijzigen:
 
    1. Gebruik de opdracht `network edit-settings` .
 
-   1. Selecteer **Y** als u het IP-adres van het beheer netwerk wilt wijzigen.
+   1. Als u het IP-adres van het beheernetwerk wilt wijzigen, **selecteert u Y**.
 
-   1. Selecteer **Y** om het subnetmasker te wijzigen.
+   1. Als u het subnetmasker wilt wijzigen, selecteert **u Y**.
 
-   1. Selecteer **Y** om de DNS te wijzigen.
+   1. Als u de DNS wilt wijzigen, selecteert **u Y**.
 
-   1. Als u het standaard gateway-IP-adres wilt wijzigen, selecteert u **Y**.
+   1. Als u het standaard-IP-adres van de gateway wilt wijzigen, **selecteert u Y**.
 
-   1. Voor de wijziging in de invoer interface (alleen sensor), selecteert u **N**.
+   1. Selecteer **N** voor de wijziging van de invoerinterface (alleen sensor).
 
-   1. Selecteer **Y** om de instellingen toe te passen.
+   1. Selecteer Y om de instellingen **toe te passen.**
 
-1. Na opnieuw opstarten maakt u verbinding met de referenties van de ondersteunings gebruiker en gebruikt `network list` u de opdracht om te controleren of de para meters zijn gewijzigd.
+1. Maak na het opnieuw opstarten verbinding met de referenties van de ondersteuningsgebruiker en gebruik de `network list` opdracht om te controleren of de parameters zijn gewijzigd.
 
-1. Probeer opnieuw te pingen en maak verbinding met de gebruikers interface.
+1. Probeer opnieuw te pingen en verbinding te maken vanuit de gebruikersinterface.
 
 ### <a name="the-appliance-isnt-responding"></a>Het apparaat reageert niet
 
-1. Sluit een monitor en toetsen bord aan op het apparaat of gebruik PuTTy om extern verbinding te maken met de CLI.
+1. Sluit een monitor en toetsenbord aan op het apparaat of gebruik PuTTY om extern verbinding te maken met de CLI.
 
-1. Gebruik de referenties van de **ondersteunings** gebruiker om u aan te melden.
+1. Gebruik de **referenties van** de ondersteuningsgebruiker om u aan te melden.
 
 1. Gebruik de `system sanity` opdracht en controleer of alle processen worden uitgevoerd.
 
-    :::image type="content" source="media/tutorial-install-components/system-sanity-screen.png" alt-text="Scherm opname van de opdracht systeem Sanity.":::
+    :::image type="content" source="media/tutorial-install-components/system-sanity-screen.png" alt-text="Schermopname van de opdracht voor systeem sanity.":::
 
-Neem contact op met [Microsoft ondersteuning](https://support.microsoft.com/en-us/supportforbusiness/productselection?sapId=82c88f35-1b8e-f274-ec11-c6efdd6dd099)voor eventuele andere problemen.
+Voor andere problemen kunt u contact opnemen [met Microsoft-ondersteuning.](https://support.microsoft.com/en-us/supportforbusiness/productselection?sapId=82c88f35-1b8e-f274-ec11-c6efdd6dd099)
 
-## <a name="appendix-a-mirroring-port-on-vswitch-esxi"></a>Bijlage A: poort spie gelen op vSwitch (ESXi)
+## <a name="appendix-a-mirroring-port-on-vswitch-esxi"></a>Bijlage A: Poort spiegelen op vSwitch (ESXi)
 
-### <a name="configure-a-span-port-on-an-existing-vswitch"></a>Een bereik poort configureren voor een bestaande vSwitch
+### <a name="configure-a-span-port-on-an-existing-vswitch"></a>Een SPAN-poort configureren op een bestaande vSwitch
 
-Een vSwitch heeft geen mogelijkheden voor spie gelen, maar u kunt een tijdelijke oplossing gebruiken voor het implementeren van een bereik poort.
+Een vSwitch heeft geen mogelijkheden voor spiegelen, maar u kunt een tijdelijke oplossing gebruiken om een SPAN-poort te implementeren.
 
-Een bereik poort configureren:
+Een SPAN-poort configureren:
 
-1. Eigenschappen van vSwitch openen.
+1. Open eigenschappen van vSwitch.
 
 1. Selecteer **Toevoegen**.
 
-1. Selecteer **virtuele machine**  >  **volgende**.
+1. Selecteer **Volgende virtuele**  >  **machine.**
 
-1. Voeg een netwerk label **bereik netwerk** toe, selecteer **VLAN-id**  >  **all** en selecteer vervolgens **volgende**.
+1. Voeg een netwerklabel **SPAN Network in,** **selecteer VLAN ID**  >  **All** en selecteer **vervolgens Volgende.**
 
 1. Selecteer **Finish**.
 
-1. Selecteer **span Network** > **Edit*.
+1. Selecteer **SPAN Network** > **Edit.*
 
-1. Selecteer **beveiliging** en controleer of het beleid voor de **ongeordende modus** is ingesteld op de modus **accepteren** .
+1. Selecteer **Beveiliging** en controleer of het **beleid Promiscuous Mode** is ingesteld op De **modus** Accepteren.
 
-1. Selecteer **OK** en selecteer vervolgens **sluiten** om de vSwitch-eigenschappen te sluiten.
+1. Selecteer **OK** en selecteer vervolgens **Sluiten om** de eigenschappen van de vSwitch te sluiten.
 
-1. Open de **XSense-VM** -eigenschappen.
+1. Open de **eigenschappen van de XSense-VM.**
 
-1. Selecteer voor **netwerk adapter 2** het **bereik** netwerk.
+1. Selecteer **voor Netwerkadapter 2** het **SPAN-netwerk.**
 
 1. Selecteer **OK**.
 
-1. Maak verbinding met de sensor en controleer of mirroring werkt.
+1. Maak verbinding met de sensor en controleer of spiegelen werkt.
 
-## <a name="appendix-b-access-sensors-from-the-on-premises-management-console"></a>Bijlage B: Sens oren openen vanuit de on-premises beheer console
+## <a name="appendix-b-access-sensors-from-the-on-premises-management-console"></a>Bijlage B: Toegangssensoren vanuit de on-premises beheerconsole
 
-U kunt de systeem beveiliging verbeteren door directe gebruikers toegang tot de sensor te voor komen. Gebruik in plaats daarvan proxy tunneling om gebruikers toegang te geven tot de sensor vanuit de on-premises beheer console met één firewall regel. Deze techniek beperkt de mogelijkheid van ongeoorloofde toegang tot de netwerk omgeving buiten de sensor. De gebruikers ervaring bij het aanmelden bij de sensor blijft hetzelfde.
+U kunt de systeembeveiliging verbeteren door directe gebruikerstoegang tot de sensor te voorkomen. Gebruik in plaats daarvan proxytunneling om gebruikers toegang te geven tot de sensor vanuit de on-premises beheerconsole met één firewallregel. Deze techniek beperkt de mogelijkheid van onbevoegde toegang tot de netwerkomgeving buiten de sensor. De ervaring van de gebruiker bij het aanmelden bij de sensor blijft hetzelfde.
 
-:::image type="content" source="media/tutorial-install-components/sensor-system-graph.png" alt-text="Scherm opname van de toegang tot de sensor.":::
+:::image type="content" source="media/tutorial-install-components/sensor-system-graph.png" alt-text="Schermopname van de toegang tot de sensor.":::
 
 Tunneling inschakelen:
 
-1. Meld u aan bij de CLI van de on-premises beheer console met **cyberx** of **ondersteunings** gebruikers referenties.
+1. Meld u aan bij de CLI van de  on-premises beheerconsole met **cyberx-** of ondersteuningsgebruikersreferenties.
 
 1. Voer `sudo cyberx-management-tunnel-enable` in.
 

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6e595f7ff313ff85a12209e8c124b9aa376b20b6
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: d30ab051e58573daefd16f178feb4fc94f2ec83f
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107739736"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835466"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Zelfstudie: Azure Remote Rendering en modelopslag beveiligen
 
@@ -188,7 +188,7 @@ We hebben nog een 'wachtwoord', AccountKey (accountsleutel), dat uit de lokale t
 
 Met AAD-verificatie kunt u bepalen welke personen of groepen op een meer bewaakte manier gebruikmaken van ARR. ARR bevat ingebouwde ondersteuning voor het accepteren van [toegangstokens](../../../../active-directory/develop/access-tokens.md) in plaats van een accountsleutel te gebruiken. U kunt toegangstokens beschouwen als een tijdgebonden, gebruikersspecifieke sleutel, waarmee alleen bepaalde onderdelen van de specifieke resource worden ontgrendeld waarvoor deze zijn aangevraagd.
 
-Het **script RemoteRenderingCoordinator** heeft een gemachtigde met de naam **ARRCredentialGetter,** die een methode bevat die een **SessionConfiguration-object** retourneert, dat wordt gebruikt om het beheer van externe sessies te configureren. We kunnen een andere methode toewijzen aan **ARRCredentialGetter,** zodat we een Azure-aanmeldingsstroom kunnen gebruiken om een **SessionConfiguration-object** te genereren dat een Azure Access Token bevat. Dit toegangstoken is uniek voor de gebruiker die zich aanmeldt.
+Het script **RemoteRenderingCoordinator** heeft een gemachtigde met de naam **ARRCredentialGetter,** die een methode bevat die een **SessionConfiguration-object** retourneert, dat wordt gebruikt om het beheer van externe sessies te configureren. We kunnen een andere methode toewijzen aan **ARRCredentialGetter,** zodat we een Azure-aanmeldingsstroom kunnen gebruiken om een **SessionConfiguration-object** te genereren dat een Azure-toegangs token bevat. Dit toegangstoken is uniek voor de gebruiker die zich aanmeldt.
 
 1. Volg de [Instructies: Verificatie configureren - Verificatie voor geïmplementeerde toepassingen](../../../how-tos/authentication.md#authentication-for-deployed-applications). Volg de specifieke instructies in de documentatie voor Azure Spatial Anchors voor [gebruikersverificatie van Azure AD](../../../../spatial-anchors/concepts/authentication.md?tabs=csharp#azure-ad-user-authentication). Dit omvat het registreren van een nieuwe Azure Active Directory-toepassing en het configureren van toegang tot uw ARR-exemplaar.
 1. Nadat u de nieuwe AAD-toepassing hebt geconfigureerd, controleert u of uw AAD-toepassing eruitziet zoals in de volgende afbeeldingen:
@@ -204,7 +204,7 @@ Het **script RemoteRenderingCoordinator** heeft een gemachtigde met de naam **AR
     >[!NOTE]
     > Een rol van *Eigenaar* is niet voldoende om sessies te kunnen beheren via de clienttoepassing. Aan elke gebruiker die u de mogelijkheid wilt geven om sessies te beheren, moet u de rol van **Remote Rendering-client** toewijzen. Aan elke gebruiker die u de mogelijkheid wilt geven om sessies te beheren en modellen te converteren, moet u de rol van **Remote Rendering-beheerder** toewijzen.
 
-Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te maken met de AAR-service. We doen dit door een exemplaar van **BaseARRAuthentication** te implementeren, waarmee een nieuw **SessionConfiguration-object wordt** retourneren. In dit geval worden de accountgegevens geconfigureerd met het Azure-toegangstoken.
+Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te maken met de AAR-service. Dit doen we door een exemplaar van **BaseARRAuthentication te** implementeren, waarmee een nieuw **SessionConfiguration-object wordt** retourneren. In dit geval worden de accountgegevens geconfigureerd met het Azure-toegangstoken.
 
 1. Maak een nieuw script met de naam **AADAuthentication** en vervang de code door het volgende:
 
@@ -397,7 +397,7 @@ Als AAD-verificatie actief is, moet u zich telkens wanneer u de toepassing start
     * De **Azure-tenant-id** is de *directory-id (tenant-id)* die te vinden is in de registratie van uw AAD-app (zie de onderstaande afbeelding).
     * **Azure Remote Rendering domein** is hetzelfde domein dat u hebt gebruikt in het Remote Rendering-domein van **RemoteRenderingCoordinator.**
     * De **account-id van Azure Remote Rendering** is de **account-id** die u hebt gebruikt voor **RemoteRenderingCoordinator**.
-    * **Azure Remote Rendering accountdomein** is hetzelfde **accountdomein** dat u hebt gebruikt in **remoteRenderingCoordinator.**
+    * **Azure Remote Rendering accountdomein** is hetzelfde **accountdomein** dat u in **RemoteRenderingCoordinator hebt gebruikt.**
 
     ![Schermopname waarin de Application (client) ID en Directory (tenant) ID zijn gemarkeerd.](./media/app-overview-data.png)
 
@@ -405,8 +405,10 @@ Als AAD-verificatie actief is, moet u zich telkens wanneer u de toepassing start
     Omdat het onderdeel **AADAuthentication** een weergavecontroller heeft, wordt het automatisch gekoppeld om een prompt weer te geven na het scherm voor het sessieverificatiemodel.
 1. Volg de instructies in het scherm rechts van **AppMenu**.
     U krijgt iets te zien zoals dit: ![Afbeelding met het instructiepaneel dat rechts van het AppMenu wordt weergegeven.](./media/device-flow-instructions.png)
-    Nadat u de opgegeven code op uw secundaire apparaat (of browser op hetzelfde apparaat) hebt ingevoerd en u zich hebt aangemeld met behulp van uw referenties, wordt een toegangstoken geretourneerd naar de aanvragende toepassing, in dit geval de Unity-editor.
-1. Hierna moet alles in de toepassing verder normaal worden uitgevoerd. Controleer de Unity-console op fouten als u de fasen niet op de verwachte wijze doorloopt.
+    
+    Nadat u de opgegeven code op uw secundaire apparaat (of browser op hetzelfde apparaat) hebt opgegeven en u zich hebt aanmelden met uw referenties, wordt een toegangs token geretourneerd naar de aanvragende toepassing, in dit geval de Unity Editor.
+
+Hierna moet alles in de toepassing verder normaal worden uitgevoerd. Controleer de Unity-console op fouten als u de fasen niet op de verwachte wijze doorloopt.
 
 ## <a name="build-to-device"></a>Bouwen naar apparaat
 

@@ -3,12 +3,12 @@ title: Werken met Defender for IoT-API's
 description: Gebruik een externe REST API om toegang te krijgen tot de gegevens die zijn ontdekt door sensoren en beheerconsoles en acties uit te voeren met die gegevens.
 ms.date: 12/14/2020
 ms.topic: reference
-ms.openlocfilehash: e7833a20d4f708ecb5b80394fae2c56fc07c9489
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 0e3659d8d5e6829651012dae02ca74c5ecacaf0c
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107752728"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107829958"
 ---
 # <a name="defender-for-iot-sensor-and-management-console-apis"></a>Defender for IoT sensor and management console API's (API's voor Defender for IoT-sensor en -beheerconsole)
 
@@ -82,11 +82,11 @@ Gebruik deze API om een lijst aan te vragen met alle apparaten die door een Defe
 
 **Toevoegen**
 
-Vraagt een lijst aan met alle apparaten die door de Defender for IoT-sensor zijn gedetecteerd.
+Vraagt een lijst op met alle apparaten die door de Defender for IoT-sensor zijn gedetecteerd.
 
 #### <a name="query-parameters"></a>Queryparameters
 
-- **geautoriseerd:** om alleen geautoriseerde en niet-geautoriseerde apparaten te filteren.
+- **geautoriseerd:** als u alleen geautoriseerde en niet-geautoriseerde apparaten wilt filteren.
 
   **Voorbeelden:**
 
@@ -109,7 +109,7 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 | **id** | Numeriek | No | - |
 | **ipAddresses** | JSON-matrix | Yes | IP-adressen (kan meer dan één adres zijn in het geval van internetadressen of een apparaat met dubbele NIC's) |
 | **name** | Tekenreeks | No | - |
-| **type** | Tekenreeks | No | Onbekend, Engineering Station, LP, HMI, Ombouwen, Domeincontroller, DB-server, draadloos toegangspunt, Router, Switch, Server, Werkstation, IP-camera, Printer, Firewall, Terminal station, VPN Gateway, Internet of Multicast en broadcast |
+| **type** | Tekenreeks | No | Onbekend, Engineering Station, LP, HMI, Uiting, Domeincontroller, DB-server, draadloos toegangspunt, Router, Switch, Server, Werkstation, IP-camera, Printer, Firewall, Terminal station, VPN Gateway, Internet of Multicast en Broadcast |
 | **macAddresses** | JSON-matrix | Yes | MAC-adressen (kan meer dan één adres zijn in het geval van een apparaat met dubbele NIC's) |
 | **operatingSystem** | Tekenreeks | Ja | - |
 | **engineeringStation** | Booleaans | No | Waar of onwaar |
@@ -277,7 +277,7 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/devices | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https: <span> ://127 <span> .0.0.1/api/v1/devices?authorized=true |
+| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/devices | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https: <span> /127 <span> .0.0.1/api/v1/devices?authorized=true |
 
 ### <a name="retrieve-device-connection-information---apiv1devicesconnections"></a>Apparaatverbindingsgegevens ophalen - /api/v1/devices/connections
 
@@ -313,7 +313,7 @@ Als u de queryparameters niet in stelt, worden alle apparaatverbindingen geretou
 
   `/api/v1/devices/2/connections?discoveredBefore=<epoch>`
 
-- **discoveredAfter:** filter alleen verbindingen die zijn gedetecteerd na een specifieke tijd (in milliseconden, UTC).
+- **discoveredAfter:** Filter alleen verbindingen die zijn gedetecteerd na een specifieke tijd (in milliseconden, UTC).
 
   **Voorbeeld**:
 
@@ -333,9 +333,9 @@ Matrix van JSON-objecten die apparaatverbindingen vertegenwoordigen.
 |--|--|--|--|
 | **firstDeviceId** | Numeriek | No | - |
 | **secondDeviceId** | Numeriek | No | - |
-| **lastSeen** | Numeriek | No | Epoch (UTC) |
-| **Ontdekt** | Numeriek | No | Epoch (UTC) |
-| **Poorten** | Nummer matrix | No | - |
+| **lastSeen** | Numeriek | No | Epoche (UTC) |
+| **Ontdekt** | Numeriek | No | Epoche (UTC) |
+| **Poorten** | Getal matrix | No | - |
 | **Protocollen** | JSON-matrix | No | Protocolveld |
 
 #### <a name="protocol-field"></a>Protocolveld
@@ -463,7 +463,7 @@ Gebruik deze API om een lijst aan te vragen met alle bekende CVE's die zijn ontd
 
 #### <a name="query-parameters"></a>Queryparameters
 
-Deze API biedt standaard een lijst met alle IP-adressen van apparaten met CVE's, maximaal 100 cve's met de hoogste score voor elk IP-adres.
+Standaard biedt deze API een lijst met alle IP-adressen van het apparaat met CVE's, maximaal 100 cve's met de hoogste score voor elk IP-adres.
 
 **Voorbeeld**:
 
@@ -475,7 +475,7 @@ Deze API biedt standaard een lijst met alle IP-adressen van apparaten met CVE's,
 
   `/api/v1/devices/<ipAddress>/cves`
 
-- **top:** hoeveel CVE's met de hoogste score moeten worden opgehaald voor elk IP-adres van het apparaat.
+- **top:** hoeveel CVE's met de hoogste score moeten worden opgehaald voor het IP-adres van elk apparaat.
 
   **Voorbeeld**:
 
@@ -565,12 +565,12 @@ Matrix van JSON-objecten die CVE's vertegenwoordigen die zijn geïdentificeerd o
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/devices/cves | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/api/v1/devices/cves |
-| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/devices/ <deviceIpAddress> /cves?top= | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/api/v1/devices/10.10.10.15/cves?top=50 |
+| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/devices/cves | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/api/v1/devices/cves |
+| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/devices/ <deviceIpAddress> /cves?top= | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/api/v1/devices/10.10.10.15/cves?top=50 |
 
 ### <a name="retrieve-alert-information---apiv1alerts"></a>Waarschuwingsinformatie ophalen - /api/v1/alerts
 
-Gebruik deze API om een lijst op te vragen met alle waarschuwingen die de Defender for IoT-sensor heeft gedetecteerd.
+Gebruik deze API om een lijst aan te vragen met alle waarschuwingen die de Defender for IoT-sensor heeft gedetecteerd.
 
 #### <a name="method"></a>Methode
 
@@ -578,7 +578,7 @@ Gebruik deze API om een lijst op te vragen met alle waarschuwingen die de Defend
 
 #### <a name="query-parameters"></a>Queryparameters
 
-- **state:** om alleen verwerkte of niet-verwerkte waarschuwingen te filteren.
+- **state:** als u alleen verwerkte of niet-verwerkte waarschuwingen wilt filteren.
 
   **Voorbeeld**:
 
@@ -615,23 +615,23 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
 | **Id** | Numeriek | No | - |
-| **time** | Numeriek | No | Epoch (UTC) |
+| **time** | Numeriek | No | Epoche (UTC) |
 | **title** | Tekenreeks | No | - |
 | **Bericht** | Tekenreeks | No | - |
-| **Ernst** | Tekenreeks | No | Waarschuwing, Secundair, Belangrijk of Kritiek |
+| **Ernst** | Tekenreeks | No | Waarschuwing, Secundair, Hoofd- of Kritiek |
 | **Engine** | Tekenreeks | No | Protocolschending, beleidsschending, malware, anomalie of operationeel |
 | **sourceDevice** | Numeriek | Yes | Apparaat-ID |
 | **destinationDevice** | Numeriek | Yes | Apparaat-ID |
-| **sourceDeviceAddress** | Numeriek | Yes | IP, MAC, Null |
-| **destinationDeviceAddress** | Numeriek | Yes | IP, MAC, Null |
-| **herstelStappen** | Tekenreeks | Ja | Herstelstappen beschreven in waarschuwing |
+| **sourceDeviceAddress** | Numeriek | Yes | IP, MAC |
+| **destinationDeviceAddress** | Numeriek | Yes | IP, MAC |
+| **remediationSteps** | Tekenreeks | Ja | Herstelstappen beschreven in waarschuwing |
 | **additionalInformation** | Aanvullende informatieobject | Yes | - |
 
 Houd er rekening mee dat /api/v2/ nodig is voor de volgende informatie:
 
 - sourceDeviceAddress 
 - destinationDeviceAddress
-- herstelStappen
+- remediationSteps
 
 #### <a name="additional-information-fields"></a>Aanvullende informatievelden
 
@@ -708,7 +708,7 @@ Houd er rekening mee dat /api/v2/ nodig is voor de volgende informatie:
 > [!div class="mx-tdBreakAll"]
 > | Type | API's | Voorbeeld |
 > |--|--|--|
-> | GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<IP_ADDRESS>/api/v1/alerts?state=&fromTime=&toTime=&type=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" 'https:/ <span> /127.0.0.1/api/v1/alerts?state=unhandled&fromTime=1594550986000&toTime=1594550986001&type=disconnections' |
+> | GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<IP_ADDRESS>/api/v1/alerts?state=&fromTime=&toTime=&type=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" 'https:/ <span> /127.0.0.1/api/v1/alerts?state=unhandled&fromTime=1594550986000&toTime=1594550986001&type=disconnections' |
 
 ### <a name="retrieve-timeline-events---apiv1events"></a>Tijdlijngebeurtenissen ophalen - /api/v1/events
 
@@ -726,7 +726,7 @@ Gebruik deze API om een lijst aan te vragen met gebeurtenissen die worden gerapp
 
   `/api/v1/events?minutesTimeFrame=20`
 
-- **type:** om de lijst met gebeurtenissen te filteren op een specifiek type.
+- **type**: als u de lijst met gebeurtenissen wilt filteren op een specifiek type.
 
   **Voorbeelden:**
 
@@ -746,7 +746,7 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|--|
-| **Tijdstempel** | Numeriek | No | Epoch (UTC) |
+| **Tijdstempel** | Numeriek | No | Epoche (UTC) |
 | **title** | Tekenreeks | No | - |
 | **Ernst** | Tekenreeks | No | INFO, KENNISGEVING OF WAARSCHUWING |
 | **Eigenaar** | Tekenreeks | Ja | Als de gebeurtenis handmatig is gemaakt, bevat dit veld de gebruikersnaam die de gebeurtenis heeft gemaakt |
@@ -833,7 +833,7 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 
 ### <a name="retrieve-vulnerability-information---apiv1reportsvulnerabilitiesdevices"></a>Informatie over beveiligingsproblemen ophalen - /api/v1/reports/vulnerabilities/devices
 
-Gebruik deze API om evaluatieresultaten voor beveiligingsleed op te vragen voor elk apparaat.
+Gebruik deze API om evaluatieresultaten voor beveiligingsleed aan te vragen voor elk apparaat.
 
 #### <a name="method"></a>Methode
 
@@ -1140,7 +1140,7 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel kan null
 | **macAddress** | Tekenreeks | MAC-adres |
 | **Leverancier** | Tekenreeks | Naam van leverancier |
 | **ipAddress** | Tekenreeks | IP-adres of N.t.t. |
-| **name** | Tekenreeks | Apparaatnaam, of N.t.t. |
+| **name** | Tekenreeks | Apparaatnaam of N.t.t. |
 | **Draadloze** | Tekenreeks | Nee, Verdacht of Ja |
 
 **connectionsBetweenSubnets**
@@ -1154,7 +1154,7 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel kan null
 
 | Veldnaam | Type | Lijst met waarden |
 | ---------- | ---- | -------------- |
-| **detectionTime** | Numeriek | Epoche (UTC) |
+| **detectionTime** | Numeriek | Epoch (UTC) |
 | **alertMessage** | Tekenreeks | - |
 | **beschrijving** | Tekenreeks | - |
 | **Apparaten** | JSON-matrix | Apparaatnamen | 
@@ -1334,7 +1334,7 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel kan null
 
 ### <a name="retrieve-operational-vulnerabilities---apiv1reportsvulnerabilitiesoperational"></a>Operationele beveiligingsproblemen ophalen - /api/v1/reports/vulnerabilities/operational
 
-Gebruik deze API om resultaten van een algemene evaluatie van beveiligingsleed op te vragen. Deze evaluatie biedt inzicht in de operationele status van uw netwerk. Het is gebaseerd op algemene netwerk- en systeemgegevens en niet op een specifieke apparaatevaluatie.
+Gebruik deze API om resultaten van een algemene evaluatie van beveiligingsleed aan te vragen. Deze evaluatie biedt inzicht in de operationele status van uw netwerk. Het is gebaseerd op algemene netwerk- en systeemgegevens en niet op een specifieke apparaatevaluatie.
 
 #### <a name="method"></a>Methode
 
@@ -1361,7 +1361,7 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel bevat ee
 | **Poort** | Numeriek | - |
 | **Vervoer** | Tekenreeks | TCP of UDP |
 | **backupMaximalInterval** | Tekenreeks | - |
-| **lastSeenBackup** | Numeriek | Epoche (UTC) |
+| **lastSeenBackup** | Numeriek | Epoch (UTC) |
 
 **ipNetworks**
 
@@ -1378,14 +1378,14 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel bevat ee
 | **protocol** | Tekenreeks | - |
 | **Adressen** | JSON-matrix | IP-adressen |
 | **Alert** | Tekenreeks | - |
-| **reportTime** | Numeriek | Epoche (UTC) |
+| **reportTime** | Numeriek | Epoch (UTC) |
 
 **protocolDataVolumes**
 
 | Veldnaam | Type | Lijst met waarden |
 |--|--|--|
 | protocol | Tekenreeks | - |
-| volume | Tekenreeks | "volume number MB" |
+| volume | Tekenreeks | "volumenummer MB" |
 
 **Onderbrekingen**
 
@@ -1393,8 +1393,8 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel bevat ee
 |--|--|--|
 | **assetAddress** | Tekenreeks | IP-adres |
 | **assetName** | Tekenreeks | - |
-| **lastDetectionTime** | Numeriek | Epoche (UTC) |
-| **backToNormalTime** | Numeriek | Epoch (UTC) |     
+| **lastDetectionTime** | Numeriek | Epoch (UTC) |
+| **backToNormalTime** | Numeriek | Epoche (UTC) |     
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -1527,13 +1527,13 @@ JSON-object dat geëvalueerde resultaten vertegenwoordigt. Elke sleutel bevat ee
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/reports/vulnerabilities/operational | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/api/v1/reports/vulnerabilities/operational |
+| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/api/v1/reports/vulnerabilities/operational | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/api/v1/reports/vulnerabilities/operational |
 
 ### <a name="validate-user-credentials---apiexternalauthenticationvalidation"></a>Gebruikersreferenties valideren - /api/external/authentication/validation
 
 Gebruik deze API om de gebruikersnaam en het wachtwoord van Defender for IoT te valideren. Alle Defender for IoT-gebruikersrollen kunnen met de API werken.
 
-U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
+U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
 
 #### <a name="method"></a>Methode
 
@@ -1598,7 +1598,7 @@ response:
 
 ### <a name="change-password---externalauthenticationset_password"></a>Wachtwoord wijzigen - /external/authentication/set_password
 
-Gebruik deze API om gebruikers hun eigen wachtwoorden te laten wijzigen. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
+Gebruik deze API om gebruikers hun eigen wachtwoorden te laten wijzigen. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
 
 #### <a name="method"></a>Methode
 
@@ -1633,11 +1633,11 @@ request:
 
 Berichtreeks met de details van de bewerkingsstatus:
 
-- **Geslaagd – msg:** wachtwoord is vervangen
+- **Geslaagd – msg:** het wachtwoord is vervangen
 
-- **Fout : fout:** Fout bij gebruikersverificatie
+- **Fout – fout:** Fout bij gebruikersverificatie
 
-- **Fout : wachtwoord** komt niet overeen met beveiligingsbeleid
+- **Fout – fout:** het wachtwoord komt niet overeen met het beveiligingsbeleid
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -1668,11 +1668,11 @@ response:
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| POST | curl -k -d {"username": "<USER_NAME>","password": "<CURRENT_PASSWORD>","new_password": "<NEW_PASSWORD>"}' -H 'Content-Type: application/json' https://<IP_ADDRESS>/api/external/authentication/set_password | curl -k -d {"username": "myUser","password": " 1234@abcd ","new_password": " abcd@1234 "}' -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/api/external/authentication/set_password |
+| POST | curl -k -d {"username": "<USER_NAME>","password": "<CURRENT_PASSWORD>","new_password": "<NEW_PASSWORD>"}' -H 'Content-Type: application/json' https://<IP_ADDRESS>/api/external/authentication/set_password | curl -k -d {"username": "myUser","password": 1234@abcd ","new_password": " abcd@1234 "}" -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/api/external/authentication/set_password |
 
-### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Bijwerken van gebruikerswachtwoord door systeembeheerder - /external/authentication/set_password_by_admin
+### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Gebruikerswachtwoord bijwerken door systeembeheerder - /external/authentication/set_password_by_admin
 
-Gebruik deze API om systeembeheerders wachtwoorden te laten wijzigen voor opgegeven gebruikers. Defender for IoT-beheerdersgebruikersrollen kunnen werken met de API. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
+Gebruik deze API om systeembeheerders wachtwoorden te laten wijzigen voor opgegeven gebruikers. Gebruikersrollen van Defender for IoT-beheerders kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
 
 #### <a name="method"></a>Methode
 
@@ -1706,13 +1706,13 @@ request:
 
 Berichtreeks met de details van de bewerkingsstatus:
 
-- **Geslaagd – msg:** wachtwoord is vervangen
+- **Geslaagd – msg:** het wachtwoord is vervangen
 
-- **Fout : fout:** Fout bij gebruikersverificatie
+- **Fout – fout:** Fout bij gebruikersverificatie
 
-- **Fout – fout:** De gebruiker bestaat niet
+- **Fout : de** gebruiker bestaat niet
 
-- **Fout – fout:** het wachtwoord komt niet overeen met het beveiligingsbeleid
+- **Fout : wachtwoord** komt niet overeen met beveiligingsbeleid
 
 - **Fout : de** gebruiker heeft niet de machtigingen om het wachtwoord te wijzigen
 
@@ -1749,9 +1749,9 @@ response:
 > [!div class="mx-tdBreakAll"]
 > | Type | API's | Voorbeeld |
 > |--|--|--|
-> | POST | curl -k -d {"admin_username":"<ADMIN_USERNAME>","admin_password":"<ADMIN_PASSWORD>","username": "<USER_NAME>","new_password": "<NEW_PASSWORD>"}" -H 'Content-Type: application/json' https://<IP_ADDRESS>/api/external/authentication/set_password_by_admin | curl -k -d '{"admin_user":"adminUser","admin_password": " 1234@abcd ","username": "myUser", "new_password": abcd@1234 "}' -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/api/external/authentication/set_password_by_admin |
+> | POST | curl -k -d {"admin_username":"<ADMIN_USERNAME>","admin_password":"<ADMIN_PASSWORD>","username": "<USER_NAME>","new_password": "<NEW_PASSWORD>"}" -H 'Content-Type: application/json' https://<IP_ADDRESS>/api/external/authentication/set_password_by_admin | curl -k -d '{"admin_user":"adminUser","admin_password": " 1234@abcd ","username": "myUser","new_password": " abcd@1234 "}' -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/api/external/authentication/set_password_by_admin |
 
-## <a name="on-premises-management-console-api-specifications"></a>API-specificaties voor de on-premises beheerconsole ##
+## <a name="on-premises-management-console-api-specifications"></a>API-specificaties voor on-premises beheerconsole ##
 
 In deze sectie worden de API's van de on-premises beheerconsole beschreven voor:
 - Waarschuwingsuitsluitingen
@@ -1760,7 +1760,7 @@ In deze sectie worden de API's van de on-premises beheerconsole beschreven voor:
 
 ### <a name="alert-exclusions"></a>Waarschuwingsuitsluitingen ###
 
-Voorwaarden definiëren waaronder waarschuwingen niet worden verzonden. Definieer bijvoorbeeld stop- en begintijden, apparaten of subnetten die moeten worden uitgesloten bij het activeren van waarschuwingen of Defender for IoT-engines die moeten worden uitgesloten. Tijdens een onderhoudsvenster wilt u bijvoorbeeld de levering van alle waarschuwingen stoppen, met uitzondering van malwarewaarschuwingen op kritieke apparaten. De items die u hier definieert, worden in het venster **Waarschuwingsuitsluitingen** van de on-premises beheerconsole weergegeven als alleen-lezen uitsluitingsregels.
+Voorwaarden definiëren waaronder waarschuwingen niet worden verzonden. Definieer bijvoorbeeld stop- en begintijden voor updates, apparaten of subnetten die moeten worden uitgesloten bij het activeren van waarschuwingen of Defender for IoT-engines die moeten worden uitgesloten. Tijdens een onderhoudsvenster wilt u bijvoorbeeld de levering van alle waarschuwingen stoppen, met uitzondering van malwarewaarschuwingen op kritieke apparaten. De items die u hier definieert, worden in het venster **Waarschuwingsuitsluitingen** van de on-premises beheerconsole weergegeven als alleen-lezen uitsluitingsregels.
 
 #### <a name="externalv1maintenancewindow"></a>/external/v1/maintenanceWindow
 
@@ -1779,15 +1779,15 @@ Voorwaarden definiëren waaronder waarschuwingen niet worden verzonden. Definiee
 
 #### <a name="change-password---externalauthenticationset_password"></a>Wachtwoord wijzigen - /external/authentication/set_password 
 
-Gebruik deze API om gebruikers hun eigen wachtwoorden te laten wijzigen. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
+Gebruik deze API om gebruikers hun eigen wachtwoorden te laten wijzigen. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
 
 #### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Gebruikerswachtwoord bijwerken door systeembeheerder - /external/authentication/set_password_by_admin 
 
-Gebruik deze API om systeembeheerders wachtwoorden voor specifieke gebruikers te laten wijzigen. Defender for IoT-beheerdersrollen kunnen werken met de API. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
+Gebruik deze API om systeembeheerders wachtwoorden te laten wijzigen voor specifieke gebruikers. Defender for IoT-beheerdersrollen kunnen werken met de API. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
 
 ### <a name="retrieve-device-information---externalv1devices"></a>Apparaatgegevens ophalen - /external/v1/devices ###
 
-Deze API vraagt een lijst op met alle apparaten die zijn gedetecteerd door Defender for IoT-sensoren die zijn verbonden met een on-premises beheerconsole.
+Deze API vraagt een lijst aan met alle apparaten die zijn gedetecteerd door Defender for IoT-sensoren die zijn verbonden met een on-premises beheerconsole.
 
 #### <a name="method"></a>Methode
 
@@ -1803,15 +1803,15 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 #### <a name="query-parameters"></a>Queryparameters
 
-- **geautoriseerd:** als u alleen geautoriseerde en niet-geautoriseerde apparaten wilt filteren.
+- **geautoriseerd:** om alleen geautoriseerde en niet-geautoriseerde apparaten te filteren.
 
-- **siteId:** als u alleen apparaten wilt filteren die betrekking hebben op specifieke sites.
+- **siteId:** om alleen apparaten te filteren die betrekking hebben op specifieke sites.
 
-- **zoneId:** alleen apparaten filteren die betrekking hebben op specifieke zones. [1](#1)
+- **zoneId:** als u alleen apparaten wilt filteren die betrekking hebben op specifieke zones. [1](#1)
 
-- **sensorId:** om alleen apparaten te filteren die zijn gedetecteerd door specifieke sensoren. [1](#1)
+- **sensorId:** als u alleen apparaten wilt filteren die zijn gedetecteerd door specifieke sensoren. [1](#1)
 
-###### <a name="you-might-not-have-the-site-and-zone-id-if-this-is-the-case-query-all-devices-to-retrieve-the-site-and-zone-id"></a><a id="1">1</a> *Mogelijk hebt u de site- en zone-id niet. Als dit het geval is, moet u een query uitvoeren op alle apparaten om de site- en zone-id op te halen.*
+###### <a name="you-might-not-have-the-site-and-zone-id-if-this-is-the-case-query-all-devices-to-retrieve-the-site-and-zone-id"></a><a id="1">1</a> *U hebt mogelijk niet de site- en zone-id. Als dit het geval is, moet u een query uitvoeren op alle apparaten om de site- en zone-id op te halen.*
 
 #### <a name="query-parameters-example"></a>Voorbeeld van queryparameters
 
@@ -1834,7 +1834,7 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 | **siteId** | Numeriek | Yes | - |
 | **ipAddresses** | JSON-matrix | Yes | IP-adressen (kan meer dan één adres zijn in het geval van internetadressen of een apparaat met dubbele NIC's) |
 | **name** | Tekenreeks | No | - |
-| **type** | Tekenreeks | No | Onbekend, Engineering Station, LP, HMI, Kunnen, Domeincontroller, DB-server, draadloos toegangspunt, Router, Switch, Server, Werkstation, IP-camera, Printer, Firewall, Terminal station, VPN Gateway, Internet of Multicast en Broadcast |
+| **type** | Tekenreeks | No | Onbekend, Engineering Station, LP, HMI, Ombouwen, Domeincontroller, DB-server, draadloos toegangspunt, Router, Switch, Server, Werkstation, IP-camera, Printer, Firewall, Terminal station, VPN Gateway, Internet of Multicast en broadcast |
 | **macAddresses** | JSON-matrix | Yes | MAC-adressen (kan meer dan één adres zijn in het geval van een apparaat met dubbele NIC's) |
 | **operatingSystem** | Tekenreeks | Ja | - |
 | **engineeringStation** | Booleaans | No | Waar of onwaar |
@@ -2008,7 +2008,7 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<>IP_ADDRESS>/external/v1/devices?siteId=&zoneId=&sensorId=&authorized=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" 'https:/ <span> /127.0.0.1/external/v1/devices?siteId=1&zoneId=2&sensorId=5&authorized=true' |
+| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<>IP_ADDRESS>/external/v1/devices?siteId=&zoneId=&sensorId=&authorized=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" 'https:/ <span> /127.0.0.1/external/v1/devices?siteId=1&zoneId=2&sensorId=5&authorized=true' |
 
 ### <a name="retrieve-alert-information---externalv1alerts"></a>Waarschuwingsinformatie ophalen - /external/v1/alerts
 
@@ -2020,7 +2020,7 @@ Gebruik deze API om alle of gefilterde waarschuwingen op te halen uit een on-pre
 
 #### <a name="query-parameters"></a>Queryparameters
 
-- **state:** om alleen verwerkte en niet-verwerkte waarschuwingen te filteren.
+- **state:** als u alleen verwerkte en niet-verwerkte waarschuwingen wilt filteren.
 
   **Voorbeeld**:
 
@@ -2042,33 +2042,33 @@ Gebruik deze API om alle of gefilterde waarschuwingen op te halen uit een on-pre
 - **zoneId:** de zone waarop de waarschuwing is ontdekt.
 - **sensor:** de sensor waarop de waarschuwing is ontdekt.
 
-*Mogelijk hebt u niet de site- en zone-id. Als dit het geval is, moet u een query uitvoeren op alle apparaten om de site- en zone-id op te halen.*
+*Mogelijk hebt u de site- en zone-id niet. Als dit het geval is, moet u een query uitvoeren op alle apparaten om de site- en zone-id op te halen.*
 
 #### <a name="alert-fields"></a>Waarschuwingsvelden 
 
 | Naam | Type | Null-waarde toegestaan | Lijst met waarden |
 |--|--|--|--|
 | **Id** | Numeriek | No | - |
-| **time** | Numeriek | No | Epoche (UTC) |
+| **time** | Numeriek | No | Epoch (UTC) |
 | **title** | Tekenreeks | No | - |
 | **Bericht** | Tekenreeks | No | - |
-| **Ernst** | Tekenreeks | No | Waarschuwing, Secundair, Hoofd- of Kritiek |
+| **Ernst** | Tekenreeks | No | Waarschuwing, Secundair, Belangrijk of Kritiek |
 | **Engine** | Tekenreeks | No | Protocolschending, beleidsschending, malware, anomalie of operationeel |
 | **sourceDevice** | Numeriek | Yes | Apparaat-ID |
 | **destinationDevice** | Numeriek | Yes | Apparaat-ID |
-| **sourceDeviceAddress** | Numeriek | Yes | IP, MAC, Null |
-| **destinationDeviceAddress** | Numeriek | Yes | IP, MAC, Null |
-| **herstelStappen** | Tekenreeks | Ja | Herstelstappen die worden weergegeven in de waarschuwing|
-| **sensorName** | Tekenreeks | Ja | Naam van de sensor die door de gebruiker in de console is gedefinieerd|
-|**Zonenaam** | Tekenreeks | Ja | Naam van de zone die is gekoppeld aan de sensor in de console|
-| **siteName** | Tekenreeks | Ja | Naam van de site die is gekoppeld aan de sensor in de console |
+| **sourceDeviceAddress** | Numeriek | Yes | IP, MAC |
+| **destinationDeviceAddress** | Numeriek | Yes | IP, MAC |
+| **remediationSteps** | Tekenreeks | Ja | Herstelstappen die worden weergegeven in de waarschuwing|
+| **sensorName** | Tekenreeks | Ja | Naam van de sensor die is gedefinieerd door de gebruiker |
+|**Zonenaam** | Tekenreeks | Ja | Naam van de zone die is gekoppeld aan de sensor|
+| **siteName** | Tekenreeks | Ja | Naam van de site die aan de sensor is gekoppeld |
 | **additionalInformation** | Aanvullende informatieobject | Yes | - |
 
 Houd er rekening mee dat /api/v2/ nodig is voor de volgende informatie:
 
 - sourceDeviceAddress 
 - destinationDeviceAddress
-- remediationSteps
+- herstelStappen
 - sensorName
 - Zonenaam
 - siteName
@@ -2183,7 +2183,7 @@ Houd er rekening mee dat /api/v2/ nodig is voor de volgende informatie:
 > [!div class="mx-tdBreakAll"]
 > | Type | API's | Voorbeeld |
 > |--|--|--|
-> | GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<>IP_ADDRESS>/external/v1/alerts?state=&zoneId=&fromTime=&toTime=&siteId=&sensor=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" 'https:/ <span> /127.0.0.1/external/v1/alerts ?state=unhandled&zoneId=1&fromTime=0&toTime=159455177000&siteId=1&sensor=1' |
+> | GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<>IP_ADDRESS>/external/v1/alerts?state=&zoneId=&fromTime=&toTime=&siteId=&sensor=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" 'https:/ <span> /127.0.0.1/external/v1/alerts ?state=unhandled&zoneId=1&fromTime=0&toTime=1594551777000&siteId=1&sensor=1' |
 
 ### <a name="qradar-alerts"></a>QRadar-waarschuwingen
 
@@ -2249,7 +2249,7 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 | Naam | Type | Null-waarde toegestaan | Description |
 |--|--|--|--|
-| **inhoud/fout** | Tekenreeks | No | Als de aanvraag is geslaagd, wordt de eigenschap content weergegeven. Anders wordt de eigenschap fout weergegeven. |
+| **inhoud/fout** | Tekenreeks | No | Als de aanvraag is geslaagd, wordt de eigenschap inhoud weergegeven. Anders wordt de eigenschap fout weergegeven. |
 
 #### <a name="possible-content-values"></a>Mogelijke inhoudswaarden
 
@@ -2257,9 +2257,9 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 |--|--|--|
 | 200 | De aanvraag voor het bijwerken van waarschuwingen is voltooid. | De updateaanvraag is voltooid. Geen opmerkingen. |
 | 200 | Waarschuwing is al verwerkt (**handle**). | De waarschuwing is al verwerkt toen een handle-aanvraag voor de waarschuwing werd ontvangen.<br />De waarschuwing blijft **verwerkt.** |
-| 200 | Waarschuwing is al verwerkt en geleerd (**handleAndLearn**). | De waarschuwing is al verwerkt en er is geleerd wanneer een aanvraag voor **het afhandelen vanAndLearn** is ontvangen.<br />De waarschuwing blijft in de **status handledAndLearn.** |
-| 200 | Waarschuwing is al verwerkt **(verwerkt).**<br />Handle and learn **(handleAndLearn)** is uitgevoerd op de waarschuwing. | De waarschuwing is al verwerkt toen een aanvraag voor **het afhandelen vanAndLearn** werd ontvangen.<br />De waarschuwing wordt **handleAndLearn.** |
-| 200 | Waarschuwing is al verwerkt en geleerd (**handleAndLearn**). Aanvraag voor verwerken genegeerd. | De waarschuwing is al **verwerktAndLearn toen** een aanvraag voor het afhandelen van de waarschuwing werd ontvangen. De waarschuwing blijft **handleAndLearn.** |
+| 200 | Waarschuwing is al verwerkt en geleerd (**handleAndLearn**). | De waarschuwing is al verwerkt en heeft geleerd wanneer een aanvraag voor **handleAndLearn** is ontvangen.<br />De waarschuwing blijft in de **status handledAndLearn.** |
+| 200 | Waarschuwing is al verwerkt **(verwerkt).**<br />Handle and learn (**handleAndLearn**) is uitgevoerd op de waarschuwing. | De waarschuwing is al verwerkt toen een aanvraag voor **handleAndLearn** werd ontvangen.<br />De waarschuwing wordt **handleAndLearn.** |
+| 200 | Waarschuwing is al verwerkt en geleerd (**handleAndLearn**). Aanvraag voor verwerken genegeerd. | De waarschuwing was al **handleAndLearn toen** er een aanvraag voor het afhandelen van de waarschuwing werd ontvangen. De waarschuwing blijft **handleAndLearn.** |
 | 500 | Ongeldige actie. | De verzonden actie is geen geldige actie om uit te voeren op de waarschuwing. |
 | 500 | Er is een onverwachte fout opgetreden. | Er is een onverwachte fout opgetreden. Neem contact op met technische ondersteuning om het probleem op te lossen. |
 | 500 | Kan aanvraag niet uitvoeren omdat er geen waarschuwing is gevonden voor deze UUID. | De opgegeven waarschuwings-UUID is niet gevonden in het systeem. |
@@ -2286,13 +2286,13 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| PUT | curl -k -X PUT -d '{"action": <ACTION> "}' -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/external/v1/alerts/<UUID> | curl -k -X PUT -d '{"action": "handle"}' -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/external/v1/alerts/1-1594550943000 |
+| PUT | curl -k -X PUT -d '{'action': <ACTION> "}' -H "Autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/external/v1/alerts/<UUID> | curl -k -X PUT -d {"action": "handle"}' -H "Authorization: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/external/v1/alerts/1-1594550943000 |
 
 ### <a name="alert-exclusions-maintenance-window---externalv1maintenancewindow"></a>Waarschuwingsuitsluitingen (onderhoudsvenster) - /external/v1/maintenanceWindow
 
-Voorwaarden definiëren waaronder waarschuwingen niet worden verzonden. Definieer bijvoorbeeld stop- en begintijden van updates, apparaten of subnetten die moeten worden uitgesloten bij het activeren van waarschuwingen of Defender for IoT-engines die moeten worden uitgesloten. Tijdens een onderhoudsvenster wilt u bijvoorbeeld de levering van waarschuwingen van alle waarschuwingen stoppen, met uitzondering van malwarewaarschuwingen op kritieke apparaten.
+Voorwaarden definiëren waaronder waarschuwingen niet worden verzonden. Definieer bijvoorbeeld stop- en begintijden, apparaten of subnetten die moeten worden uitgesloten bij het activeren van waarschuwingen of Defender for IoT-engines die moeten worden uitgesloten. Tijdens een onderhoudsvenster wilt u bijvoorbeeld de levering van waarschuwingen van alle waarschuwingen stoppen, met uitzondering van malwarewaarschuwingen op kritieke apparaten.
 
-De API's die u hier definieert, worden in het venster Waarschuwingsuitsluitingen van de on-premises beheerconsole weergegeven als een **uitsluitingsregel** voor alleen-lezen.
+De API's die u hier definieert, worden in het venster Waarschuwingsuitsluitingen van de on-premises beheerconsole weergegeven als een alleen-lezen **uitsluitingsregel.**
 
 :::image type="content" source="media/references-work-with-defender-for-iot-apis/alert-exclusion-window.png" alt-text="Het venster Uitsluitingen van waarschuwingen, met een lijst met alle uitsluitingsregels. ":::
 
@@ -2302,9 +2302,9 @@ De API's die u hier definieert, worden in het venster Waarschuwingsuitsluitingen
 
 - **ticketId:** definieert de id van het onderhoudsticket in de systemen van de gebruiker.
 
-- **ttl:** hiermee definieert u de TTL (Time to Live). Dit is de duur van het onderhoudsvenster in minuten. Na de periode die deze parameter definieert, begint het systeem automatisch met het verzenden van waarschuwingen.
+- **ttl:** definieert de TTL (time to live), wat de duur van het onderhoudsvenster in minuten is. Na de periode die deze parameter definieert, begint het systeem automatisch met het verzenden van waarschuwingen.
 
-- **engines:** definieert van welke beveiligingsen engine waarschuwingen moet onderdrukken tijdens het onderhoudsproces:
+- **engines:** definieert van welke beveiligingsent engine waarschuwingen moet onderdrukken tijdens het onderhoudsproces:
 
    - Anomalie
 
@@ -2316,7 +2316,7 @@ De API's die u hier definieert, worden in het venster Waarschuwingsuitsluitingen
 
    - PROTOCOL_VIOLATION
 
-- **sensorIds:** hiermee definieert u op welke Defender for IoT-sensor waarschuwingen moeten worden onderdrukt tijdens het onderhoudsproces. Het is dezelfde id die is opgehaald uit /api/v1/appliances (GET).
+- **sensorIds:** hiermee definieert u op welke Defender for IoT-sensor waarschuwingen tijdens het onderhoudsproces moeten worden onderdrukt. Het is dezelfde id die is opgehaald uit /api/v1/appliances (GET).
 
 - **subnetten: definieert** van welk subnet waarschuwingen moeten worden onderdrukt tijdens het onderhoudsproces. Het subnet wordt verzonden in de volgende indeling: 192.168.0.0/16.
 
@@ -2324,9 +2324,9 @@ De API's die u hier definieert, worden in het venster Waarschuwingsuitsluitingen
 
 - **201 (gemaakt)**: de actie is voltooid.
 
-- **400 (Slechte aanvraag)**: Wordt weergegeven in de volgende gevallen:
+- **400 (slechte aanvraag)**: Wordt weergegeven in de volgende gevallen:
 
-   - De **parameter ttl** is niet numeriek of niet positief.
+   - De **ttl** parameter is niet numeriek of niet positief.
 
    - De **parameter subnetten** is gedefinieerd met een verkeerde indeling.
 
@@ -2336,16 +2336,16 @@ De API's die u hier definieert, worden in het venster Waarschuwingsuitsluitingen
 
 - **404 (Niet gevonden)**: Een van de sensoren bestaat niet.
 
-- **409 (Conflict)**: De ticket-id is gekoppeld aan een ander geopend onderhoudsvenster.
+- **409 (conflict)**: De ticket-id is gekoppeld aan een ander geopend onderhoudsvenster.
 
-- **500 (interne serverfout)**: een andere onverwachte fout.
+- **500 (interne serverfout)**: elke andere onverwachte fout.
 
 > [!NOTE]
 > Zorg ervoor dat de ticket-id niet is gekoppeld aan een bestaand geopend venster. De volgende uitsluitingsregel wordt gegenereerd: Maintenance-{token name}-{ticket ID}.
 
 #### <a name="method---put"></a>Methode - PUT
 
-Hiermee kunt u de duur van het onderhoudsvenster bijwerken nadat u het onderhoudsproces hebt starten door de **TTL-parameter te** wijzigen. De nieuwe duurdefinitie overschrijven de vorige.
+Hiermee kunt u de duur van het onderhoudsvenster bijwerken nadat u het onderhoudsproces hebt starten door de **parameter ttl te** wijzigen. De nieuwe duurdefinitie overschrijven de vorige.
 
 Deze methode is handig als u een langere duur wilt instellen dan de momenteel geconfigureerde duur.
 
@@ -2359,17 +2359,17 @@ Deze methode is handig als u een langere duur wilt instellen dan de momenteel ge
 
 - **200 (OK)**: de actie is voltooid.
 
-- **400 (slechte aanvraag)**: Wordt weergegeven in de volgende gevallen:
+- **400 (slechte aanvraag)**: wordt weergegeven in de volgende gevallen:
 
-   - De **ttl** parameter is niet numeriek of niet positief.
+   - De **parameter ttl** is niet numeriek of niet positief.
 
    - De **parameter ticketId** ontbreekt.
 
-   - De **ttl** parameter ontbreekt.
+   - De **parameter ttl** ontbreekt.
 
 - **404 (Niet gevonden)**: De ticket-id is niet gekoppeld aan een geopend onderhoudsvenster.
 
-- **500 (interne serverfout)**: elke andere onverwachte fout.
+- **500 (interne serverfout)**: een andere onverwachte fout.
 
 > [!NOTE]
 > Zorg ervoor dat de ticket-id is gekoppeld aan een bestaand geopend venster.
@@ -2386,11 +2386,11 @@ Sluit een bestaand onderhoudsvenster.
 
 - **200 (OK)**: de actie is voltooid.
 
-- **400 (slechte aanvraag)**: De parameter **ticketId** ontbreekt.
+- **400 (Bad Request)**: De parameter **ticketId** ontbreekt.
 
 - **404 (Niet gevonden)**: De ticket-id is niet gekoppeld aan een geopend onderhoudsvenster.
 
-- **500 (interne serverfout)**: een andere onverwachte fout.
+- **500 (interne serverfout)**: elke andere onverwachte fout.
 
 > [!NOTE]
 > Zorg ervoor dat de ticket-id is gekoppeld aan een bestaand geopend venster.
@@ -2417,7 +2417,7 @@ Haal een logboek op van alle openstaande, gesloten en bijwerkacties die tijdens 
 
 - **204 (geen inhoud)**: er zijn geen gegevens om weer te geven.
 
-- **500 (interne serverfout)**: een andere onverwachte fout.
+- **500 (interne serverfout)**: elke andere onverwachte fout.
 
 #### <a name="response-type"></a>Antwoordtype
 
@@ -2438,20 +2438,20 @@ Matrix van JSON-objecten die onderhoudsvensterbewerkingen vertegenwoordigen.
 | **sensorIds** | Matrix van tekenreeks | - | ja |
 | **Subnetten** | Matrix van tekenreeks | - | ja |
 | **ttl** | Numeriek | - | ja |
-| **operationType** | Tekenreeks | Waarden zijn 'OPEN', 'UPDATE' en 'CLOSE' | nee |
+| **operationType** | Tekenreeks | De waarden zijn 'OPEN', 'UPDATE' en 'CLOSE' | nee |
 
 #### <a name="curl-command"></a>Curl-opdracht
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| POST | curl -k -X POST -d '{"ticketId": "<TICKET_ID>",ttl": <TIME_TO_LIVE>,"engines": [<ENGINE1, ENGINE2... ENGINEn>],"sensorIds": [<SENSOR_ID1, SENSOR_ID2... SENSOR_IDn>],"subnetten": [<SUBNET1, SUBNET2...... SUBNETn>]}' -H "Autorisatie: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow | curl -k -X POST -d '{"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf","ttl": "20","engines": ["ANOMALY"],"sensorIds": ["5","23"],"subnetten": ["10.0.0.3"]}' -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow |
-| PUT | curl -k -X PUT -d '{"ticketId": "<TICKET_ID>",ttl": "<TIME_TO_LIVE>"}' -H "Autorisatie: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow | curl -k -X PUT -d '{"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf","ttl": "20"}' -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow |
-| DELETE | curl -k -X DELETE -d '{"ticketId": "<TICKET_ID>"}' -H "Autorisatie: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow | curl -k -X DELETE -d '{"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf"}' -H "Autorisatie : 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow |
-| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<IP_ADDRESS>/external/v1/maintenanceWindow?fromDate=&toDate=&ticketId =&tokenName=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" 'https:/ <span> /127.0.0.1/external/v1/maintenanceWindow?fromDate=2020-0 1-01&toDate=2020-07-14&ticketId=a5fe99c-d914-4bda-9332-307384fe40bf&tokenName=a' |
+| POST | curl -k -X POST -d {"ticketId": "<TICKET_ID>",ttl": <TIME_TO_LIVE>,"engines": [<ENGINE1, ENGINE2... ENGINEn>],"sensorIds": [<SENSOR_ID1, SENSOR_ID2... SENSOR_IDn>],"subnetten": [<SUBNET1, SUBNET2...... SUBNETn>]}' -H "Autorisatie: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow | curl -k -X POST -d {"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf","ttl": "20","engines": ["ANOMALY"],"sensorIds": ["5","3"],"subnetten": ["10.0.0.3"]}' -H "Autorisatie: 1234b734a9244d54ab8d40aeddcabcd" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow |
+| PUT | curl -k -X PUT -d '{"ticketId": "<TICKET_ID>",ttl": "<TIME_TO_LIVE>"}' -H "Autorisatie: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow | curl -k -X PUT -d {"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf","ttl": "20"}'-H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow |
+| DELETE | curl -k -X DELETE -d '{"ticketId": "<TICKET_ID>"}' -H "Autorisatie: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow | curl -k -X DELETE -d '{"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf"}' -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/external/v1/maintenanceWindow |
+| GET | curl -k -H "Autorisatie: <AUTH_TOKEN>" 'https://<IP_ADDRESS>/external/v1/maintenanceWindow?fromDate=&toDate=&ticketId=&tokenName=' | curl -k -H "Autorisatie: 1234b734a9244d54ab8d40aedddcabcd" 'https:/ <span> /127.0.0.1/external/v1/maintenanceWindow?fromDate=2020-0 1-01&toDate=2020-07-14&ticketId=a5fe99c-d914-4bda-9332-307384fe40bf&tokenName=a' |
 
 ### <a name="authenticate-user-credentials---externalauthenticationvalidation"></a>Gebruikersreferenties verifiëren - /external/authentication/validation
 
-Gebruik deze API om gebruikersreferenties te valideren. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
+Gebruik deze API om gebruikersreferenties te valideren. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
 
 #### <a name="method"></a>Methode
 
@@ -2485,7 +2485,7 @@ Berichtreeks met de details van de bewerkingsstatus:
 
 - **Geslaagd – msg:** verificatie is geslaagd
 
-- **Fout – fout:** Validatie van referenties is mislukt
+- **Fout : Validatie** van referenties is mislukt
 
 #### <a name="device-fields"></a>Apparaatvelden
 
@@ -2510,11 +2510,11 @@ response:
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| POST | curl -k -d {"username":"<USER_NAME>","password":"PASSWORD"}' 'https://<IP_ADDRESS>/external/authentication/validation' | curl -k -d '{"username":"myUser","password":" 1234@abcd "}' 'https:/ <span> /127.0.0.1/external/authentication/validation' |
+| POST | curl -k -d '{"username":"<USER_NAME>","password":"PASSWORD"}' 'https://<IP_ADDRESS>/external/authentication/validation' | curl -k -d '{"username":"myUser","password":" 1234@abcd "}' 'https:/ <span> /127.0.0.1/external/authentication/validation' |
 
 ### <a name="change-password---externalauthenticationset_password"></a>Wachtwoord wijzigen - /external/authentication/set_password
 
-Gebruik deze API om gebruikers hun eigen wachtwoorden te laten wijzigen. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
+Gebruik deze API om gebruikers hun eigen wachtwoorden te laten wijzigen. Alle Defender for IoT-gebruikersrollen kunnen met de API werken. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
 
 #### <a name="method"></a>Methode
 
@@ -2549,11 +2549,11 @@ request:
 
 Berichtreeks met de details van de bewerkingsstatus:
 
-- **Geslaagd – msg:** het wachtwoord is vervangen
+- **Geslaagd – msg:** wachtwoord is vervangen
 
-- **Fout : fout:** Fout bij gebruikersverificatie
+- **Fout – fout:** Fout bij gebruikersverificatie
 
-- **Fout : wachtwoord** komt niet overeen met beveiligingsbeleid
+- **Fout – fout:** het wachtwoord komt niet overeen met het beveiligingsbeleid
 
 #### <a name="response-example"></a>Voorbeeld van antwoord
 
@@ -2584,11 +2584,11 @@ response:
 
 | Type | API's | Voorbeeld |
 |--|--|--|
-| POST | curl -k -d '{"username": "<USER_NAME>","password": "<CURRENT_PASSWORD>","new_password": "<NEW_PASSWORD>"}' -H 'Content-Type: application/json' https://<IP_ADDRESS>/external/authentication/set_password | curl -k -d {"username": "myUser","password": 1234@abcd ","new_password": " abcd@1234 "}' -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/external/authentication/set_password |
+| POST | curl -k -d {"username": "<USER_NAME>","password": "<CURRENT_PASSWORD>","new_password": "<NEW_PASSWORD>"}' -H 'Content-Type: application/json' https://<IP_ADDRESS>/external/authentication/set_password | curl -k -d {"username": "myUser","password": 1234@abcd ","new_password": " abcd@1234 "}" -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/external/authentication/set_password |
 
-### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Bijwerken van gebruikerswachtwoord door systeembeheerder - /external/authentication/set_password_by_admin
+### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Gebruikerswachtwoord bijwerken door systeembeheerder - /external/authentication/set_password_by_admin
 
-Gebruik deze API om systeembeheerders wachtwoorden te laten wijzigen voor opgegeven gebruikers. Defender for IoT-beheerdersrollen kunnen werken met de API. U hebt geen Defender for IoT-toegangtoken nodig om deze API te gebruiken.
+Gebruik deze API om systeembeheerders wachtwoorden te laten wijzigen voor opgegeven gebruikers. Defender for IoT-beheerdersrollen kunnen werken met de API. U hebt geen Defender for IoT-toegangtoken nodig om deze API te kunnen gebruiken.
 
 #### <a name="method"></a>Methode
 
@@ -2622,13 +2622,13 @@ request:
 
 Berichtreeks met de details van de bewerkingsstatus:
 
-- **Geslaagd – msg:** wachtwoord is vervangen
+- **Geslaagd – msg:** het wachtwoord is vervangen
 
-- **Fout : fout:** Fout bij gebruikersverificatie
+- **Fout – fout:** Fout bij gebruikersverificatie
 
-- **Fout : de** gebruiker bestaat niet
+- **Fout – fout:** De gebruiker bestaat niet
 
-- **Fout : wachtwoord** komt niet overeen met beveiligingsbeleid
+- **Fout – fout:** het wachtwoord komt niet overeen met het beveiligingsbeleid
 
 - **Fout : de** gebruiker heeft niet de machtigingen om het wachtwoord te wijzigen
 
@@ -2665,7 +2665,7 @@ response:
 > [!div class="mx-tdBreakAll"]
 > | Type | API's | Voorbeeld |
 > |--|--|--|
-> | POST | curl -k -d {"admin_username":"<ADMIN_USERNAME>","admin_password":"<ADMIN_PASSWORD>","username": "<USER_NAME>","new_password": "<NEW_PASSWORD>"}" -H 'Content-Type: application/json' https://<IP_ADDRESS>/external/authentication/set_password_by_admin | curl -k -d '{"admin_user":"adminUser","admin_password": " 1234@abcd ","username": "myUser","new_password": abcd@1234 "}' -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/external/authentication/set_password_by_admin |
+> | POST | curl -k -d {"admin_username":"<ADMIN_USERNAME>","admin_password":"<ADMIN_PASSWORD>","username": "<USER_NAME>","new_password": "<NEW_PASSWORD>"}" -H 'Content-Type: application/json' https://<IP_ADDRESS>/external/authentication/set_password_by_admin | curl -k -d '{"admin_user":"adminUser","admin_password": " 1234@abcd ","username": "myUser","new_password": " abcd@1234 "}' -H 'Content-Type: application/json' https:/ <span> /127.0.0.1/external/authentication/set_password_by_admin |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -3,12 +3,13 @@ title: VM-extensie inschakelen met behulp Azure Resource Manager sjabloon
 description: In dit artikel wordt beschreven hoe u extensies van virtuele machines implementeert op Azure Arc servers die worden uitgevoerd in hybride cloudomgevingen met behulp van een Azure Resource Manager sjabloon.
 ms.date: 04/13/2021
 ms.topic: conceptual
-ms.openlocfilehash: 095f95192a2054d34e438d8683ac9c2e20a824f1
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: d32be184a7e5bb713aee83cd3023f271299d3872
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389635"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832856"
 ---
 # <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Azure VM-extensies inschakelen met behulp van een ARM-sjabloon
 
@@ -296,7 +297,7 @@ De configuratie van de aangepaste scriptextensie specificeert zaken als scriptlo
 
 ## <a name="deploy-the-dependency-agent-extension"></a>De afhankelijkheidsagentextensie implementeren
 
-Als u de extensie Azure Monitor Dependency Agent wilt gebruiken, wordt het volgende voorbeeld gegeven om uit te voeren op Windows en Linux. Als u niet bekend bent met de afhankelijkheidsagent, zie [Overzicht van Azure Monitor agents.](../../azure-monitor/agents/agents-overview.md#dependency-agent)
+Als u de extensie Azure Monitor Dependency Agent wilt gebruiken, wordt het volgende voorbeeld gegeven om te worden uitgevoerd in Windows en Linux. Als u niet bekend bent met de afhankelijkheidsagent, zie [Overzicht van Azure Monitor agents.](../../azure-monitor/agents/agents-overview.md#dependency-agent)
 
 ### <a name="template-file-for-linux"></a>Sjabloonbestand voor Linux
 
@@ -382,7 +383,7 @@ Sla het sjabloonbestand op schijf op. Vervolgens kunt u de extensie implementere
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\DependencyAgent.json"
 ```
 
-## <a name="deploy-azure-key-vault-vm-extension-preview"></a>VM Azure Key Vault-extensie implementeren (preview)
+## <a name="deploy-azure-key-vault-vm-extension-preview"></a>Een Azure Key Vault VM-extensie implementeren (preview)
 
 De volgende JSON toont het schema voor de Key Vault VM-extensie (preview). Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen worden beschouwd als openbare informatie. Voor de extensie is een lijst met bewaakte certificaten, pollingfrequentie en het doelcertificaatopslag vereist. Met name:
 

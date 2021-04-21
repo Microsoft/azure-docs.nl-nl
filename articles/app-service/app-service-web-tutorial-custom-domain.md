@@ -6,17 +6,17 @@ ms.assetid: dc446e0e-0958-48ea-8d99-441d2b947a7c
 ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/25/2020
-ms.custom: mvc, seodec18
+ms.custom: mvc, seodec18, devx-track-azurepowershell
 adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./app-service-web-tutorial-custom-domain-uiex
-ms.openlocfilehash: 216c96579944661ecf248e4e8676ac45021c53e6
-ms.sourcegitcommit: af6eba1485e6fd99eed39e507896472fa930df4d
+ms.openlocfilehash: 8e310cb0507146eb53c7b55c2aaed492baa79521
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/04/2021
-ms.locfileid: "106293954"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107833238"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Zelfstudie: Een bestaande aangepaste DNS-naam toewijzen aan Azure App Service
 
@@ -52,7 +52,7 @@ Om een aangepaste DNS-naam toe te wijzen aan een web-app, moet het [App Service-
 [!INCLUDE [app-service-dev-test-note](../../includes/app-service-dev-test-note.md)]
 
   > [!NOTE]
-  > Als u een aangepast domein aan uw web-app verwijdert of toevoegt, wordt de site opnieuw opgestart.
+  > Als u een aangepast domein verwijdert of toevoegt aan uw web-app, wordt uw site opnieuw opgestart.
 ### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
 Open [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account.
@@ -79,7 +79,7 @@ U ziet de beheerpagina van de App Service-app.
 
 1. De huidige laag van de app wordt gemarkeerd door een blauwe rand. Controleer of de app zich niet in de **F1**-categorie bevindt. Aangepaste DNS wordt niet ondersteund in de **F1**-categorie.
 
-   ![Scherm opname waarin de aanbevolen prijs categorieën worden weer gegeven.](./media/app-service-web-tutorial-custom-domain/check-pricing-tier.png)
+   ![Schermopname van de aanbevolen prijscategorie.](./media/app-service-web-tutorial-custom-domain/check-pricing-tier.png)
 
 1. Als het App Service-plan zich niet in de **F1**-categorie bevindt, sluit u de pagina **Omhoog schalen** en gaat u door met [Een CNAME-record toewijzen](#map-a-cname-record).
 
@@ -146,7 +146,7 @@ Nadat u de CNAME en TXT-records hebt toegevoegd, lijkt de pagina met DNS-records
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
 
-    ![Scherm opname van het menu voor aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
+    ![Schermopname van het menu Aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
 
 1. Voeg op de pagina **Aangepaste domeinen** van de app de volledig gekwalificeerde aangepaste DNS-naam (`www.contoso.com`) toe aan de lijst.
 
@@ -187,7 +187,7 @@ Als u een A-record wilt toewijzen, heeft u het externe IP-adres van de app nodig
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
 
-   ![Scherm opname van het menu voor aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
+   ![Schermopname van het menu Aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
 
 1. Op de pagina **Aangepaste domeinen** kopieert u het IP-adres van de app.
 
@@ -279,7 +279,7 @@ U kunt nu elk subdomein dat overeenkomt met de jokerteken-naam aan de app toevoe
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
 
-    ![Scherm opname van het menu voor aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
+    ![Schermopname van het menu Aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
 
 1. Selecteer **Aangepast domein toevoegen**.
 
@@ -310,7 +310,7 @@ Blader naar de DNS-namen die u eerder hebt geconfigureerd (bijvoorbeeld `contoso
 
 ## <a name="resolve-404-not-found"></a>404-fout 'Niet gevonden' oplossen
 
-Als u een fout bericht over HTTP 404 (niet gevonden) ontvangt wanneer u naar de URL van uw aangepaste domein bladert, controleert u of uw domein wordt omgezet in het IP-adres van uw app met behulp van <a href="https://www.nslookup.io/" target="_blank">nslookup.io</a>. Als dat niet het geval is, controleert u of de A-en CNAME-records correct zijn geconfigureerd met dezelfde-site. Als het IP-adres op de juiste wijze wordt opgelost, maar u nog steeds een 404 krijgt, kan uw browser het oude IP-adressen van uw domein in de cache opslaan. Maak de cache leeg en test DNS-omzetting opnieuw. Op een Windows-computer, leegt u de cache met `ipconfig /flushdns`.
+Als u een HTTP 404-fout (niet gevonden) ontvangt wanneer u naar de URL van uw aangepaste domein bladert, controleert u of uw domein wordt opgelost naar het IP-adres van uw app met behulp <a href="https://www.nslookup.io/" target="_blank">van nslookup.io</a>. Zo niet, controleer dan of de A- en CNAME-records correct zijn geconfigureerd met behulp van dezelfde site. Als het IP-adres correct wordt opgelost, maar u nog steeds een 404-fout krijgt, heeft uw browser mogelijk het oude IP-adres van uw domein in de cache opgeslagen. Maak de cache leeg en test DNS-omzetting opnieuw. Op een Windows-computer, leegt u de cache met `ipconfig /flushdns`.
 
 ## <a name="migrate-an-active-domain"></a>Een actief domein migreren
 
@@ -322,10 +322,10 @@ Zie voor het zonder downtime migreren van een live site en de DNS-domeinnaam naa
 
 Standaard stuurt App Service webaanvragen naar de hoofdmap van uw app-code. Bepaalde web-frameworks starten echter niet in de hoofdmap. Bijvoorbeeld: [Laravel](https://laravel.com/) start in de submap `public`. Om door te gaan met het DNS-voorbeeld `contoso.com`, is een dergelijke app toegankelijk op `http://contoso.com/public`, maar u moet in plaats daarvan eigenlijk `http://contoso.com` naar de map `public` sturen. Deze stap heeft geen betrekking op DNS-omzetting, maar gaat over het aanpassen van de virtuele map.
 
-Als u een virtuele map voor Windows-Apps wilt aanpassen, selecteert u **Toepassings instellingen** in het linkerdeel venster van de web-app-pagina. 
+Als u een virtuele map voor Windows-apps wilt aanpassen, selecteert u **Toepassingsinstellingen** in het linkerdeelvenster van de web-app-pagina. 
 
 > [!NOTE]
-> Linux-apps beschikken niet over deze pagina. Als u de hoofdmap van de site voor Linux-Apps wilt wijzigen, raadpleegt u de taalspecifieke configuratie handleidingen (bijvoorbeeld[php](configure-language-php.md?pivots=platform-linux#change-site-root)).
+> Linux-apps hebben deze pagina niet. Zie de taalspecifieke configuratiehandleidingen[(bijvoorbeeld PHP)](configure-language-php.md?pivots=platform-linux#change-site-root)als u de hoofdmap van de site voor Linux-apps wilt wijzigen.
 
 Aan de onderkant van de pagina verwijst de virtuele hoofdmap `/` standaard naar `site\wwwroot`. Dit is de hoofdmap van uw app-code. Wijzig deze om in plaats daarvan bijvoorbeeld te verwijzen naar de `site\wwwroot\public` en sla de wijzigingen op.
 

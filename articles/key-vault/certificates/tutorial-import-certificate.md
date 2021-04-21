@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.custom: mvc, devx-track-azurecli
 ms.date: 04/16/2020
 ms.author: sebansal
-ms.openlocfilehash: 67531c1c5d37b02f9107dfc487c10b2fcac734d8
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: aebb0fa5da4cef655acc424c5ac90b628a4ba3af
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107791963"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107814438"
 ---
 # <a name="tutorial-import-a-certificate-in-azure-key-vault"></a>Zelfstudie: Een certificaat importeren met behulp van Azure Key Vault
 
@@ -153,4 +153,4 @@ In deze zelfstudie hebt u een Key Vault gemaakt en daar een certificaat in geïm
 
 - Lees meer over [Certificaten maken beheren in Azure Key Vault](./create-certificate-scenarios.md)
 - Voorbeelden van [Het importeren van certificaten met behulp van REST-API's](/rest/api/keyvault/importcertificate/importcertificate)
-- Bekijk het [Overzicht van de Key Vault-beveiliging](../general/security-overview.md)
+- Bekijk het [Overzicht van de Key Vault-beveiliging](../general/security-features.md)

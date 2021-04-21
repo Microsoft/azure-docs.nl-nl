@@ -7,29 +7,28 @@ ms.author: anvar
 ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: cca4612d3b22296209b4adfc6be97cbe95477aa3
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 3f49c0acc99f82cc2986ca896d40b3998cf47c5c
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104786665"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107834998"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Nieuwe functies in Azure Migrate
 
 [Azure Migrate](migrate-services-overview.md) helpt u bij het detecteren, evalueren en migreren van on-premises servers, apps en gegevens naar de Microsoft Azure-cloud. In dit artikel vindt u een overzicht van nieuwe releases en functies in Azure Migrate.
 
 ## <a name="update-march-2021"></a>Update (maart 2021)
-- Ondersteuning voor het bieden van meerdere Server referenties op Azure Migrate apparaat om geïnstalleerde toepassingen (software-inventarisatie), afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases in uw VMware-omgeving te detecteren. [Meer informatie](tutorial-discover-vmware.md#provide-server-credentials)
-- Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md) Raadpleeg de zelf studies voor [detectie](tutorial-discover-vmware.md) en [beoordelingen](tutorial-assess-sql.md) om aan de slag te gaan.
-- VMware-migratie zonder agent ondersteunt nu gelijktijdige replicatie van 500 Vm's per vCenter.
-- In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent.
+- Ondersteuning voor het leveren van meerdere serverreferenties op Azure Migrate-apparaat voor het ontdekken van geïnstalleerde toepassingen (software-inventaris), afhankelijkheidsanalyse zonder agent en het ontdekken van SQL Server exemplaren en databases in uw VMware-omgeving. [Meer informatie](tutorial-discover-vmware.md#provide-server-credentials)
+- Detectie en evaluatie van SQL Server en databases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md) Raadpleeg de [zelfstudies over detectie](tutorial-discover-vmware.md) en [evaluatie](tutorial-assess-sql.md) om aan de slag te gaan.
+- VMware-migratie zonder agent ondersteunt nu gelijktijdige replicatie van 500 VM's per vCenter.
 
 ## <a name="update-january-2021"></a>Update (januari 2021)
--  Azure Migrate: met het hulp programma voor server migratie kunt u nu virtuele VMware-machines, fysieke servers en virtuele machines migreren van andere Clouds naar Azure virtual machines met schijven die zijn versleuteld met versleuteling aan de server zijde met door de klant beheerde sleutels (CMK).
+-  Azure Migrate: Met het hulpprogramma Server Migration kunt u nu virtuele VMware-machines, fysieke servers en virtuele machines migreren van andere clouds naar virtuele Azure-machines met schijven die zijn versleuteld met versleuteling aan de serverzijde met door de klant beheerde sleutels (CMK).
 
 ## <a name="update-december-2020"></a>Update (december 2020)
-- In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent.
-- Migratie van VMware-VM's naar virtuele Azure-machines met schijven die zijn versleuteld met behulp van versleuteling aan de serverzijde (SSE) met door de klant beheerde sleutels (CMK), met behulp van Azure Migrate-servermigratie (replicatie zonder agent), is nu beschikbaar in de Azure-portal.
+- In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent. (Windows Server 2008 R2 en hoger)
+- Migratie van VMware-VM's naar virtuele Azure-machines met schijven die zijn versleuteld met serverversleuteling (SSE) met door de klant beheerde sleutels (CMK), met behulp van Azure Migrate Server Migration (replicatie zonder agent) is nu beschikbaar via Azure Portal.
 
 ## <a name="update-september-2020"></a>Update (september 2020)
 - Servers migreren naar Beschikbaarheidszones wordt nu ondersteund.
@@ -90,7 +89,7 @@ Er zijn een aantal nieuwe functies toegevoegd aan Azure Migrate:
 
 Er zijn nieuwe hulpprogramma's voor evaluatie en migratie toegevoegd aan Azure Migrate:
 
-- **RackWare**: biedt Cloud migratie.
+- **RackWare:** biedt cloudmigratie.
 - **Movere**: biedt evaluatie.
 
 [Meer informatie](migrate-services-overview.md) over het gebruik van hulpprogramma's en ISV-aanbiedingen voor evaluatie en migratie in Azure Migrate.

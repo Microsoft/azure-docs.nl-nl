@@ -3,12 +3,12 @@ title: VM-extensiebeheer met Azure Arc ingeschakelde servers
 description: Azure Arc-servers kunnen de implementatie van extensies van virtuele machines beheren die na de implementatie configuratie- en automatiseringstaken bieden met niet-Azure-VM's.
 ms.date: 04/13/2021
 ms.topic: conceptual
-ms.openlocfilehash: 67f1b5b3db6ef446342e8381d54d487af1f3426a
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: e28cd7753fc85f2e40385c65392fea73502aa05b
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389788"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107832838"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Extensiebeheer voor virtuele machines met servers met Azure Arc
 
@@ -30,7 +30,7 @@ Azure Arc VM-extensieondersteuning voor servers biedt de volgende belangrijke vo
 
 - Verzamel logboekgegevens voor analyse met [logboeken in Azure Monitor](../../azure-monitor/logs/data-platform-logs.md) door de VM-extensie van de Log Analytics-agent in te stellen. Dit is handig voor het uitvoeren van complexe analyses voor gegevens uit verschillende soorten bronnen.
 
-- Met [Azure Monitor voor VM's](../../azure-monitor/vm/vminsights-overview.md)analyseert de prestaties van uw Windows- en Linux-VM's en bewaakt u hun processen en afhankelijkheden van andere resources en externe processen. Dit wordt bereikt door zowel de Log Analytics-agent als de VM-extensies van de afhankelijkheidsagent in te stellen.
+- Met [VM-inzichten](../../azure-monitor/vm/vminsights-overview.md)worden de prestaties van uw Windows- en Linux-VM's geanalyseerd en worden hun processen en afhankelijkheden van andere resources en externe processen bewaakt. Dit wordt bereikt door zowel de Log Analytics-agent als de VM-extensies van de afhankelijkheidsagent in te stellen.
 
 - Download en voer scripts uit op hybride verbonden machines met behulp van de aangepaste scriptextensie. Deze extensie is handig voor configuratie na de implementatie, software-installatie of andere configuratie- of beheertaken.
 
@@ -53,7 +53,7 @@ Zie Agent overview (Agentoverzicht) voor meer informatie over het Azure Connecte
 
 |Toestelnummer |Publisher |Type |Aanvullende informatie |
 |----------|----------|-----|-----------------------|
-|Azure Defender scanner voor beveiligingsle beveiligingsleeds |Qualys |WindowsAgent.AzureSecurityCenter |[Azure Defender geïntegreerde oplossing voor evaluatie van beveiligingsleedsleed voor Azure- en hybride machines](../../security-center/deploy-vulnerability-assessment-vm.md)|
+|Azure Defender scanner voor beveiligingsle beveiligingsleed |Qualys |WindowsAgent.AzureSecurityCenter |[Azure Defender geïntegreerde oplossing voor evaluatie van beveiligingsleedsleed voor Azure- en hybride machines](../../security-center/deploy-vulnerability-assessment-vm.md)|
 |Aangepaste scriptextensie |Microsoft.Compute | CustomScriptExtension |[Aangepaste scriptextensie voor Windows](../../virtual-machines/extensions/custom-script-windows.md)|
 |Log Analytics-agent |Microsoft.EnterpriseCloud.Monitoring |MicrosoftMonitoringAgent |[Log Analytics VM-extensie voor Windows](../../virtual-machines/extensions/oms-windows.md)|
 |Azure Monitor voor VM's (inzichten) |Microsoft.Azure.Monitoring.DependencyAgent |DependencyAgentWindows | [Extensie van afhankelijkheidsagent voor virtuele machines voor Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
@@ -104,16 +104,16 @@ Voordat u de extensie implementeert, moet u het volgende voltooien:
 
 1. [Maak een kluis en certificaat](../../key-vault/certificates/quick-create-portal.md) (zelf-ondertekend of importeren).
 
-2. Verleen de Azure Arc ingeschakelde server toegang tot het certificaatgeheim. Als u de [RBAC-preview](../../key-vault/general/rbac-guide.md)gebruikt, zoekt u de naam van de Azure Arc-resource en wijst u de **rol Key Vault Secrets User (preview)** toe. Als u een toegangsbeleid [Key Vault,](../../key-vault/general/assign-access-policy-portal.md)wijst u secret **get-machtigingen** toe aan de door Azure Arc van de resource toegewezen systeemidentiteit.
+2. Verleen de Azure Arc ingeschakelde server toegang tot het certificaatgeheim. Als u de [RBAC-preview](../../key-vault/general/rbac-guide.md)gebruikt, zoekt u de naam van de Azure Arc-resource en wijst u de **rol Key Vault Secrets User (preview)** toe. Als u toegangsbeleid voor [Key Vault](../../key-vault/general/assign-access-policy-portal.md)gebruikt, wijst u machtigingen voor Secret **Get** toe aan de door Azure Arc van de resource toegewezen systeemidentiteit.
 
 ### <a name="connected-machine-agent"></a>Connected Machine-agent
 
 Controleer of uw computer overeenkomt met [de ondersteunde versies](agent-overview.md#supported-operating-systems) van het Windows- en Linux-besturingssysteem voor de Azure Connected Machine agent.
 
-De minimale versie van de Connected Machine-agent die wordt ondersteund met deze functie in Windows en Linux is de versie 1.0.
+De minimale versie van de Connected Machine-agent die wordt ondersteund met deze functie in Windows en Linux is versie 1.0.
 
-Zie Upgrade agent (Agent bijwerken) als u uw computer wilt upgraden naar de versie van de vereiste [agent.](manage-agent.md#upgrading-agent)
+Zie Upgrade agent (Agent bijwerken) als u uw computer wilt upgraden naar de vereiste [versie van de agent.](manage-agent.md#upgrading-agent)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt VM-extensies implementeren, beheren en verwijderen met behulp van [de Azure CLI](manage-vm-extensions-cli.md), [Azure PowerShell](manage-vm-extensions-powershell.md), vanuit de [Azure Portal](manage-vm-extensions-portal.md)of Azure Resource Manager [sjablonen.](manage-vm-extensions-template.md)
+U kunt VM-extensies implementeren, beheren en verwijderen met behulp van [de Azure CLI](manage-vm-extensions-cli.md), [Azure PowerShell](manage-vm-extensions-powershell.md), uit de [Azure Portal](manage-vm-extensions-portal.md)of [Azure Resource Manager sjablonen.](manage-vm-extensions-template.md)

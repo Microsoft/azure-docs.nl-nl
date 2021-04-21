@@ -7,18 +7,18 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: f38911b1fffb083902ba67e262141b6780a43ada
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.openlocfilehash: 7187563824fd7e371d6352510b9ab71c920fc1ef
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/21/2021
-ms.locfileid: "107817842"
+ms.locfileid: "107835106"
 ---
 # <a name="part-one-enable-ad-ds-authentication-for-your-azure-file-shares"></a>Deel 1: verificatie AD DS azure-bestands shares inschakelen 
 
 Voordat u verificatie Active Directory Domain Services (AD DS) inschakelen, moet u het [](storage-files-identity-auth-active-directory-enable.md) overzichtsartikel lezen om inzicht te krijgen in de ondersteunde scenario's en vereisten.
 
-In dit artikel wordt het proces beschreven dat is vereist Active Directory Domain Services verificatie (AD DS) in uw opslagaccount in te schakelen. Nadat u de functie hebt inschakelen, moet u uw opslagaccount en uw AD DS configureren om AD DS te gebruiken voor de authenticatie bij uw Azure-bestands share. Als u AD DS via SMB wilt inschakelen voor Azure-bestands shares, moet u uw opslagaccount registreren bij AD DS en vervolgens de vereiste domeineigenschappen instellen voor het opslagaccount.
+In dit artikel wordt het proces beschreven dat is vereist Active Directory Domain Services verificatie (AD DS) voor uw opslagaccount. Nadat u de functie hebt inschakelen, moet u uw opslagaccount en uw AD DS configureren om AD DS te gebruiken voor de authenticatie bij uw Azure-bestands share. Als u AD DS via SMB wilt inschakelen voor Azure-bestands shares, moet u uw opslagaccount registreren bij AD DS en vervolgens de vereiste domeineigenschappen instellen voor het opslagaccount.
 
 Als u uw opslagaccount wilt registreren bij AD DS, maakt u een account dat het in uw AD DS. U kunt dit proces zien alsof het lijkt op het maken van een account dat een on-premises Windows-bestandsserver in uw AD DS. Wanneer de functie is ingeschakeld voor het opslagaccount, is deze van toepassing op alle nieuwe en bestaande bestands shares in het account.
 
@@ -41,7 +41,7 @@ Het AD DS dat door de cmdlet is gemaakt, vertegenwoordigt het opslagaccount. Als
 Vervang de waarden van de tijdelijke aanduiding door uw eigen waarden in de onderstaande parameters voordat u deze in PowerShell gaat uitvoeren.
 > [!IMPORTANT]
 > De cmdlet voor domeindeelvoeging maakt een AD-account dat het opslagaccount (bestands share) in AD vertegenwoordigt. U kunt ervoor kiezen om u te registreren als een computeraccount of servicelogoaccount. Zie [Veelgestelde vragen](./storage-files-faq.md#security-authentication-and-access-control) voor meer informatie. Voor computeraccounts is er een standaardverlooptijd voor wachtwoorden ingesteld in AD op 30 dagen. Op dezelfde manier kan voor het aanmeldingsaccount van de service een standaardverlooptijd voor het wachtwoord zijn ingesteld voor het AD-domein of de organisatie-eenheid (OE).
-> Voor beide accounttypen raden we u aan de vervaldatum van het [](storage-files-identity-ad-ds-update-password.md) wachtwoord die is geconfigureerd in uw AD-omgeving te controleren en het wachtwoord van uw opslagaccount-id van het AD-account bij te werken vóór de maximale wachtwoordleeftijd. U kunt overwegen om [een nieuwe organisatie-eenheid (OE)](/powershell/module/addsadministration/new-adorganizationalunit) van AD te maken en het verloopbeleid voor wachtwoorden voor [computeraccounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)) of servicelogoaccounts dienovereenkomstig uit te stellen. 
+> Voor beide accounttypen raden we u aan de vervaldatum van het [](storage-files-identity-ad-ds-update-password.md) wachtwoord te controleren die is geconfigureerd in uw AD-omgeving en het wachtwoord van uw opslagaccount-id van het AD-account bij te werken vóór de maximale wachtwoordleeftijd. U kunt overwegen om [een nieuwe organisatie-eenheid (OE)](/powershell/module/addsadministration/new-adorganizationalunit) voor AD te maken en het verloopbeleid voor wachtwoorden voor [computeraccounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)) of servicelogoaccounts dienovereenkomstig uit te stellen. 
 
 ```PowerShell
 # Change the execution policy to unblock importing AzFilesHybrid.psm1 module
@@ -59,7 +59,7 @@ Import-Module -Name AzFilesHybrid
 # for more information.
 Connect-AzAccount
 
-# Define parameters
+# Define parameters, $StorageAccountName currently has a maximum limit of 15 characters
 $SubscriptionId = "<your-subscription-id-here>"
 $ResourceGroupName = "<resource-group-name-here>"
 $StorageAccountName = "<storage-account-name-here>"

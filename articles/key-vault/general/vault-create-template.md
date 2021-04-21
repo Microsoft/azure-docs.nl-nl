@@ -1,6 +1,6 @@
 ---
 title: Een Azure-sleutelkluis en een toegangsbeleid voor de kluis maken met behulp van een ARM-sjabloon
-description: In dit artikel wordt beschreven hoe u Azure-sleutelkluizen en toegangsbeleid voor de kluis maakt met behulp van een Azure Resource Manager sjabloon.
+description: In dit artikel wordt beschreven hoe u Azure-sleutelkluizen en toegangsbeleid voor kluizen maakt met behulp van een Azure Resource Manager sjabloon.
 services: key-vault
 author: msmbaldwin
 tags: azure-resource-manager
@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 3/14/2021
 ms.author: mbaldwin
-ms.openlocfilehash: e70906cbf26c899744bfbe137da4ce9cfa651b20
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: d157419614ee3a3f89036177e962e5b7fc4466b2
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107753142"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815027"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Een Azure-sleutelkluis en toegangsbeleid voor de kluis maken met behulp van een Resource Manager sjabloon
 
@@ -174,7 +174,7 @@ Meer informatie over sjablonen Key Vault vindt u hier: [Key Vault Resource Manag
 
 ## <a name="deploy-the-templates"></a>De sjablonen implementeren
 
-U kunt de Azure Portal gebruiken om de voorgaande sjablonen te implementeren met behulp van de optie Uw eigen sjabloon **bouwen in editor,** zoals hier wordt beschreven: Resources implementeren op basis van [een aangepaste sjabloon.](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template)
+U kunt de Azure Portal gebruiken om de voorgaande sjablonen te implementeren met behulp van de optie Uw eigen sjabloon **bouwen in editor,** zoals hier wordt beschreven: Resources implementeren op basis van een [aangepaste sjabloon.](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template)
 
 U kunt de voorgaande sjablonen ook opslaan in bestanden en de volgende opdrachten gebruiken:  [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [az deployment group create](/cli/azure/deployment/group#az_deployment_group_create):
 
@@ -213,10 +213,10 @@ Write-Host "Press [ENTER] to continue..."
 
 - Lees een [overzicht van Azure Key Vault](../general/overview.md).
 - Meer informatie over [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
-- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-overview.md)
+- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-features.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Veilige toegang tot een sleutelkluis](security-overview.md)
+- [Veilige toegang tot een sleutelkluis](security-features.md)
 - [Verifiëren bij een sleutelkluis](authentication.md)
 - [Azure Key Vault ontwikkelaarshandleiding](developers-guide.md)

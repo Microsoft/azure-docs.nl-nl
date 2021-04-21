@@ -81,11 +81,13 @@ additionalContent:
       items:
         - title: On-premises bestandsshares uitbreiden in de cloud
           links:
-            - url: ./files/storage-sync-files-planning.md
+            - url: ./file-sync/file-sync-introduction.md
+              text: Meer informatie over Azure File Sync
+            - url: ./file-sync/file-sync-planning.md
               text: Azure-bestandsshares synchroniseren met Windows-bestandsserver (Azure FileSync)
-            - url: ./files/storage-sync-files-deployment-guide.md
+            - url: ./file-sync/file-sync-deployment-guide.md
               text: Azure Files SYNC implementeren
-            - url: ./files/index.yml
+            - url: ./file-sync/index.yml
               text: Meer informatie >
         - title: Online gegevensoverdracht (on-premises naar Azure)
           links:

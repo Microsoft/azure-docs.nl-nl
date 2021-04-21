@@ -1,356 +1,356 @@
 ---
 title: Bedrijfscontinuïteit en herstel na noodgevallen
-description: Ontwerp uw strategie om gegevens te beveiligen, snel te herstellen van storende gebeurtenissen, resources te herstellen die vereist zijn voor kritieke bedrijfs functies en bedrijfs continuïteit voor Azure Logic Apps te hand haven
+description: Ontwerp uw strategie om gegevens te beschermen, snel te herstellen van verstorende gebeurtenissen, resources te herstellen die nodig zijn voor kritieke bedrijfsfuncties en bedrijfscontinuïteit te waarborgen voor Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
-ms.date: 03/31/2020
-ms.openlocfilehash: 0a36cb468ebcb77c0614bffd0afc392df3655c20
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.date: 03/24/2021
+ms.openlocfilehash: f974a99c59b19b5df7bf6ffcc66c2dc133743f0a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "89658206"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107790535"
 ---
-# <a name="business-continuity-and-disaster-recovery-for-azure-logic-apps"></a>Bedrijfs continuïteit en herstel na nood gevallen voor Azure Logic Apps
+# <a name="business-continuity-and-disaster-recovery-for-azure-logic-apps"></a>Bedrijfscontinuïteit en herstel na nood Azure Logic Apps
 
-Zorg ervoor dat u een oplossing voor [ *herstel na nood*](https://en.wikipedia.org/wiki/Disaster_recovery) geval hebt, zodat u gegevens kunt beveiligen, snel de resources die essentiële bedrijfs functies ondersteunen en bewerkingen die worden uitgevoerd voor het onderhouden van [ *bedrijfs continuïteit* (BC)](https://en.wikipedia.org/wiki/Business_continuity_planning), om de gevolgen en gevolgen te verminderen die onvoorspelbare gebeurtenissen op uw bedrijf en klanten hebben. Onderbrekingen kunnen bijvoorbeeld uitval bevatten, verlies in onderliggende infra structuur of onderdelen, zoals opslag-, netwerk-of reken bronnen, onherstelbare toepassings fouten of zelfs een volledig Data Center-verlies. Als u een oplossing voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt maken, kan uw bedrijf of organisatie sneller reageren op onderbrekingen, gepland of niet-gepland, en kan de downtime voor uw klanten worden verminderd.
+Om de impact en effecten van onvoorspelbare gebeurtenissen op uw bedrijf en klanten te verminderen, moet u ervoor zorgen dat u een noodhersteloplossing [  (DR)](https://en.wikipedia.org/wiki/Disaster_recovery) hebt, zodat u gegevens kunt beveiligen, snel de resources kunt herstellen die essentiële bedrijfsfuncties ondersteunen, en ervoor kunt zorgen dat bewerkingen worden uitgevoerd om bedrijfscontinuïteit [  (BC)](https://en.wikipedia.org/wiki/Business_continuity_planning)te behouden. Onderbrekingen kunnen bijvoorbeeld storingen, verliezen in de onderliggende infrastructuur of onderdelen, zoals opslag, netwerk of rekenresources, onherkenbare toepassingsfouten of zelfs een volledig datacentrumverlies omvatten. Door een BCDR-oplossing (Business Continuity and Disaster Recovery) gereed te hebben, kan uw onderneming of organisatie sneller reageren op onderbrekingen, gepland of ongepland, en downtime voor uw klanten verminderen.
 
-Dit artikel bevat BCDR-richt lijnen en-strategieën die u kunt Toep assen wanneer u geautomatiseerde werk stromen bouwt met behulp van [Azure Logic apps](../logic-apps/logic-apps-overview.md). Met werk stromen voor logische apps kunt u eenvoudig gegevens integreren en organiseren tussen apps, Cloud Services en on-premises systemen door te verminderen hoeveel code u moet schrijven. Wanneer u van plan bent BCDR te gebruiken, moet u ervoor zorgen dat u niet alleen uw logische apps beschouwt, maar ook deze Azure-resources die u gebruikt met uw Logic apps:
+Dit artikel bevat BCDR-richtlijnen en strategieën die u kunt toepassen wanneer u geautomatiseerde werkstromen bouwt met behulp van [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Met werkstromen voor logische apps kunt u gegevens gemakkelijker integreren en beheren tussen apps, cloudservices en on-premises systemen door de code die u moet schrijven te verminderen. Wanneer u bcdr van plan bent, moet u niet alleen rekening houden met uw logische apps, maar ook met deze Azure-resources die u met uw logische apps gebruikt:
 
-* [Verbindingen](../connectors/apis-list.md) die u maakt vanuit logische apps naar andere apps, services en systemen. Zie [verbindingen met resources](#resource-connections) verderop in dit onderwerp voor meer informatie.
+* [Verbindingen die](../connectors/apis-list.md) u maakt van logische apps naar andere apps, services en systemen. Zie Verbindingen met resources verder in dit [onderwerp](#resource-connections) voor meer informatie.
 
-* [On-premises gegevens gateways](../logic-apps/logic-apps-gateway-connection.md) die Azure-resources zijn die u maakt en gebruikt in uw Logic apps om toegang te krijgen tot gegevens in on-premises systemen. Elke gateway bron vertegenwoordigt een afzonderlijke [installatie van de gegevens gateway](../logic-apps/logic-apps-gateway-install.md) op een lokale computer. Zie [on-premises gegevens gateways](#on-premises-data-gateways) verderop in dit onderwerp voor meer informatie.
+* [On-premises gegevensgateways zijn](../logic-apps/logic-apps-gateway-connection.md) Azure-resources die u in uw logische apps maakt en gebruikt voor toegang tot gegevens in on-premises systemen. Elke gatewayresource vertegenwoordigt een afzonderlijke [installatie van een gegevensgateway](../logic-apps/logic-apps-gateway-install.md) op een lokale computer. Zie [On-premises gegevensgateways](#on-premises-data-gateways) verder op dit onderwerp voor meer informatie.
 
-* [Integratie accounts](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) waar u de artefacten definieert en opslaat die door Logic apps worden gebruikt voor [Business-to-Business (B2B)-integratie](../logic-apps/logic-apps-enterprise-integration-overview.md) scenario's. U kunt bijvoorbeeld [een nood herstel voor meerdere regio's instellen voor integratie accounts](../logic-apps/logic-apps-enterprise-integration-b2b-business-continuity.md).
+* [Integratieaccounts](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) waarin u de artefacten definieert en opgeslagen die logische apps gebruiken voor [B2B-integratiescenario's (Business-to-Business).](../logic-apps/logic-apps-enterprise-integration-overview.md) U kunt bijvoorbeeld herstel na [noodherstel tussen regio's instellen voor integratieaccounts.](../logic-apps/logic-apps-enterprise-integration-b2b-business-continuity.md)
 
-* [Integratie service omgevingen (ISEs)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) waar u logische apps maakt die worden uitgevoerd in een geïsoleerd Logic apps runtime-exemplaar binnen een virtueel Azure-netwerk. Deze Logic apps kunnen vervolgens toegang krijgen tot bronnen die worden beveiligd achter een firewall in dat virtuele netwerk.
+* [Integratieserviceomgevingen (ISE's)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) waarin u logische apps maakt die worden uitgevoerd in een geïsoleerd Logic Apps runtime-exemplaar binnen een virtueel Azure-netwerk. Deze logische apps hebben vervolgens toegang tot resources die worden beveiligd achter een firewall in dat virtuele netwerk.
 
 <a name="primary-secondary-locations"></a>
 
 ## <a name="primary-and-secondary-locations"></a>Primaire en secundaire locaties
 
-Elke logische app moet de locatie opgeven die u wilt gebruiken voor de implementatie. Deze locatie is een open bare regio in wereld wijde multi tenant Azure, zoals ' vs-West ', of een ISE-integratie service omgeving die u eerder hebt gemaakt en geïmplementeerd in een virtueel Azure-netwerk. Het uitvoeren van Logic apps in een ISE is vergelijkbaar met het uitvoeren van Logic apps in een wereld wijde Azure-regio. Dit betekent dat uw strategie voor herstel na nood gevallen kan worden toegepast op beide scenario's. ISEs hebben echter andere overwegingen, zoals het configureren van toegang tot bronnen die alleen beschikbaar zijn voor ISEs.
+Elke logische app moet de locatie opgeven die u wilt gebruiken voor implementatie. Deze locatie is een openbare regio in azure met meerdere tenants wereldwijd, zoals 'VS - west', of een ISE (Integration Service Environment) die u eerder hebt gemaakt en geïmplementeerd in een virtueel Azure-netwerk. Het uitvoeren van logische apps in een ISE is vergelijkbaar met het uitvoeren van logische apps in een wereldwijde Azure-regio, wat betekent dat uw strategie voor herstel na nood gevallen van toepassing kan zijn op beide scenario's. ISE's hebben echter andere overwegingen, zoals het configureren van toegang tot resources die alleen beschikbaar zijn voor ISE's.
 
 > [!NOTE]
-> Als uw logische app ook werkt met B2B-artefacten, zoals handels partners, overeenkomsten, schema's, kaarten en certificaten, die zijn opgeslagen in een integratie account, moeten zowel het integratie account als de Logic apps dezelfde locatie opgeven.
+> Als uw logische app ook werkt met B2B-artefacten, zoals handelspartners, overeenkomsten, schema's, kaarten en certificaten, die zijn opgeslagen in een integratieaccount, moeten uw integratieaccount en logische apps dezelfde locatie opgeven.
 
-Deze strategie voor herstel na nood gevallen is gericht op het instellen van uw primaire logische app voor [*failover*](https://en.wikipedia.org/wiki/Failover) naar een stand-by-of back-uplogische app op een alternatieve locatie waar Azure Logic apps ook beschikbaar is. Op die manier kunt u, als de primaire verliezen, onderbrekingen of storingen lijden, de secundaire op het werk uitvoeren. Deze strategie vereist dat uw secundaire logische app en afhankelijke bronnen al zijn geïmplementeerd en gereed zijn op de alternatieve locatie.
+Deze strategie voor herstel na noodherstel is gericht op het instellen van uw primaire logische app voor [*failover*](https://en.wikipedia.org/wiki/Failover) naar een stand-by- of back-uplogica-app op een alternatieve locatie waar Azure Logic Apps ook beschikbaar is. Op die manier kan de secundaire taak worden voortgezet als de primaire te maken heeft met verliezen, onderbrekingen of fouten. Voor deze strategie moeten uw secundaire logische app en afhankelijke resources al zijn geïmplementeerd en gereed zijn op de alternatieve locatie.
 
-Als u goede DevOps-procedures volgt, gebruikt u [Azure Resource Manager sjablonen](../azure-resource-manager/management/overview.md) al om uw Logic apps en hun afhankelijke resources te definiëren en implementeren. Resource Manager-sjablonen bieden u de mogelijkheid om één implementatie definitie te gebruiken en vervolgens parameter bestanden te gebruiken om de configuratie waarden te bieden die voor elke implementatie bestemming moeten worden gebruikt. Deze mogelijkheid betekent dat u dezelfde logische app kunt implementeren in verschillende omgevingen, zoals ontwikkeling, testen en productie. U kunt ook dezelfde logische app implementeren in verschillende Azure-regio's of ISEs, die ondersteuning biedt voor nood herstel strategieën die gebruikmaken van [gekoppelde regio's](../best-practices-availability-paired-regions.md).
+Als u goede DevOps-procedures volgt, gebruikt u al [Azure Resource Manager](../azure-resource-manager/management/overview.md) sjablonen om uw logische apps en hun afhankelijke resources te definiëren en te implementeren. Resource Manager sjablonen bieden u de mogelijkheid om één implementatiedefinitie te gebruiken en vervolgens parameterbestanden te gebruiken om de configuratiewaarden op te geven die voor elke implementatiebestemming moeten worden gebruikt. Deze mogelijkheid betekent dat u dezelfde logische app kunt implementeren in verschillende omgevingen, bijvoorbeeld ontwikkeling, testen en productie. U kunt dezelfde logische app ook implementeren in verschillende Azure-regio's of ISE's, die strategieën voor herstel na noodherstel ondersteunen die gebruikmaken van [gekoppelde regio's.](../best-practices-availability-paired-regions.md)
 
-Voor de failover-strategie moeten uw logische apps en locaties voldoen aan deze vereisten:
+Voor de failoverstrategie moeten uw logische apps en locaties voldoen aan deze vereisten:
 
-* Het exemplaar van de secundaire logische app heeft toegang tot dezelfde apps, services en systemen als het primaire exemplaar van de logische app.
+* Het secundaire exemplaar van de logische app heeft toegang tot dezelfde apps, services en systemen als het primaire exemplaar van de logische app.
 
-* Beide logische app-exemplaren hebben hetzelfde type host. Beide exemplaren worden dus geïmplementeerd in regio's in wereld wijde multi tenant-Azure, of beide exemplaren worden geïmplementeerd op ISEs, waardoor uw Logic apps rechtstreeks toegang hebben tot resources in een virtueel Azure-netwerk. Zie voor aanbevolen procedures en meer informatie over gekoppelde regio's voor BCDR [bedrijfs continuïteit en herstel na nood gevallen (BCDR): gekoppelde Azure-regio's](../best-practices-availability-paired-regions.md).
+* Beide exemplaren van logische apps hebben hetzelfde hosttype. Beide exemplaren worden dus geïmplementeerd in regio's in azure met meerdere tenants wereldwijd, of beide exemplaren worden geïmplementeerd in ISE's, waardoor uw logische apps rechtstreeks toegang hebben tot resources in een virtueel Azure-netwerk. Zie Bedrijfscontinuïteit en herstel na noodherstel [(BCDR): gekoppelde](../best-practices-availability-paired-regions.md)Azure-regio's voor best practices en meer informatie over gekoppelde regio's voor BCDR.
 
-  Zowel de primaire als de secundaire locatie moeten bijvoorbeeld ISEs zijn wanneer de primaire logische app wordt uitgevoerd in een ISE en gebruikmaakt van [connectors met ISE-versie](../connectors/apis-list.md#ise-connectors), http-acties voor het aanroepen van resources in het virtuele Azure-netwerk, of beide. In dit scenario moet uw secundaire logische app ook een vergelijk bare instelling hebben op de secundaire locatie als de primaire logische app.
+  De primaire en secundaire locaties moeten bijvoorbeeld ISE's zijn wanneer de primaire logische app wordt uitgevoerd in een ISE en connectors met [ISE-versies, HTTP-acties](../connectors/managed.md#ise-connectors)om resources aan te roepen in het virtuele Azure-netwerk of beide. In dit scenario moet uw secundaire logische app ook een vergelijkbare installatie hebben op de secundaire locatie als de primaire logische app.
 
   > [!NOTE]
-  > Voor meer geavanceerde scenario's kunt u zowel multi tenant Azure als een ISE combi neren als locaties. Zorg er echter voor dat u rekening houdt met de [verschillen tussen hoe Logic apps worden uitgevoerd in een ISE versus multi tenant Azure](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#difference).
+  > Voor geavanceerdere scenario's kunt u zowel Azure met meerdere tenants als een ISE als locaties combineren. Zorg er echter voor dat u rekening moet houden met de verschillen tussen de manier waarop logische apps worden uitgevoerd in een ISE en [azure met meerdere tenants.](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#difference)
 
-* Als u ISEs gebruikt, [moet u ervoor zorgen dat ze zijn geschaald of voldoende capaciteit hebben](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) om de belasting te kunnen afhandelen.
+* Als u ISE's gebruikt, moet u ervoor zorgen dat deze zijn uitschalen of voldoende capaciteit [hebben om](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) de belasting te verwerken.
 
-#### <a name="example-multi-tenant-azure"></a>Voor beeld: multi tenant Azure
+#### <a name="example-multi-tenant-azure"></a>Voorbeeld: Azure met meerdere tenants
 
-In dit voor beeld worden de primaire en secundaire logische app-exemplaren weer gegeven die zijn geïmplementeerd in afzonderlijke regio's in de wereld wijde multi tenant Azure voor dit scenario. Een enkele [Resource Manager-sjabloon](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md) definieert zowel logische app-exemplaren als de afhankelijke resources die vereist zijn voor deze Logic apps. Afzonderlijke parameter bestanden Geef de configuratie waarden op die voor elke implementatie locatie moeten worden gebruikt:
+In dit voorbeeld ziet u primaire en secundaire instanties van logische apps, die voor dit scenario worden geïmplementeerd in afzonderlijke regio's in de globale Azure met meerdere tenants. Met één [Resource Manager definieert](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md) u zowel exemplaren van logische apps als de afhankelijke resources die vereist zijn voor deze logische apps. Afzonderlijke parameterbestanden geven de configuratiewaarden op die moeten worden gebruikt voor elke implementatielocatie:
 
-![Primaire en secundaire logische app-exemplaren op afzonderlijke locaties](./media/business-continuity-disaster-recovery-guidance/primary-secondary-locations.png)
+![Primaire en secundaire instanties van logische apps op afzonderlijke locaties](./media/business-continuity-disaster-recovery-guidance/primary-secondary-locations.png)
 
-#### <a name="example-integration-service-environment"></a>Voor beeld: integratie service omgeving
+#### <a name="example-integration-service-environment"></a>Voorbeeld: Integratieserviceomgeving
 
-In dit voor beeld worden de vorige instanties van de primaire en secundaire logische app weer gegeven, maar geïmplementeerd in afzonderlijke ISEs. Een enkele Resource Manager-sjabloon definieert zowel logische app-exemplaren, de afhankelijke resources die zijn vereist voor deze Logic apps en de ISEs als de implementatie locaties. Met afzonderlijke parameter bestanden worden de configuratie waarden gedefinieerd die voor de implementatie op elke locatie moeten worden gebruikt:
+In dit voorbeeld ziet u de vorige primaire en secundaire instanties van logische apps, maar geïmplementeerd op afzonderlijke ISE's. Met één Resource Manager definieert u zowel exemplaren van logische apps, de afhankelijke resources die vereist zijn voor deze logische apps als de implementatielocaties, als de ISE's. Afzonderlijke parameterbestanden definiëren de configuratiewaarden die moeten worden gebruikt voor implementatie op elke locatie:
 
-![Primaire en secundaire Logic apps op verschillende locaties](./media/business-continuity-disaster-recovery-guidance/primary-secondary-locations-ise.png)
+![Primaire en secundaire logische apps op verschillende locaties](./media/business-continuity-disaster-recovery-guidance/primary-secondary-locations-ise.png)
 
 <a name="resource-connections"></a>
 
-## <a name="connections-to-resources"></a>Verbindingen met bronnen
+## <a name="connections-to-resources"></a>Verbindingen met resources
 
-Azure Logic Apps biedt [ingebouwde triggers en acties plus honderden beheerde connectors](../connectors/apis-list.md) die uw logische app kan gebruiken om te werken met andere apps, services, systemen en andere resources, zoals Azure Storage accounts, SQL server data bases, werk-of school-e-mail accounts, enzovoort. Als uw logische app toegang moet hebben tot deze bronnen, maakt u verbindingen die de toegang tot deze bronnen verifiëren. Elke verbinding is een afzonderlijke Azure-resource die bestaat op een specifieke locatie en niet kan worden gebruikt door resources op andere locaties.
+Azure Logic Apps biedt ingebouwde triggers en acties, plus honderden beheerde connectors die uw logische app kan gebruiken om te werken met andere apps, services, systemen en andere resources, zoals Azure Storage-accounts, SQL Server-databases, [e-mailaccounts](../connectors/apis-list.md) voor werk of school, en meer. Als uw logische app toegang tot deze resources nodig heeft, maakt u verbindingen die toegang tot deze resources verifiëren. Elke verbinding is een afzonderlijke Azure-resource die zich op een specifieke locatie bevindt en niet kan worden gebruikt door resources op andere locaties.
 
-Voor de strategie voor herstel na nood gevallen moet u rekening houden met de locaties waar afhankelijke resources zich bevinden ten opzichte van uw logische app-exemplaren:
+Houd voor uw strategie voor herstel na noodherstel rekening met de locaties waar afhankelijke resources bestaan ten opzichte van uw logische app-instanties:
 
-* Uw primaire exemplaar en afhankelijke resources bevinden zich op verschillende locaties. In dit geval kan uw secundaire exemplaar verbinding maken met dezelfde afhankelijke resources of eind punten. U moet echter wel specifieke verbindingen maken voor uw secundaire exemplaar. Op die manier, als uw primaire locatie niet beschikbaar is, worden de verbindingen van uw secundaire niet beïnvloed.
+* Uw primaire exemplaar en afhankelijke resources bevinden zich op verschillende locaties. In dit geval kan uw secundaire exemplaar verbinding maken met dezelfde afhankelijke resources of eindpunten. U moet echter verbindingen maken die specifiek zijn voor uw secundaire exemplaar. Op die manier worden de verbindingen van uw secundaire niet meer beïnvloed als uw primaire locatie niet meer beschikbaar is.
 
-  Stel bijvoorbeeld dat uw primaire logische app verbinding maakt met een externe service, zoals Sales Force. Normaal gesp roken zijn de beschik baarheid en locatie van de externe service onafhankelijk van de beschik baarheid van uw logische app. In dit geval kan de secundaire instantie verbinding maken met dezelfde service, maar moet hij een eigen verbinding hebben.
+  Stel bijvoorbeeld dat uw primaire logische app verbinding maakt met een externe service, zoals Salesforce. Meestal zijn de beschikbaarheid en locatie van de externe service onafhankelijk van de beschikbaarheid van uw logische app. In dit geval kan uw secundaire exemplaar verbinding maken met dezelfde service, maar moet deze een eigen verbinding hebben.
 
-* Zowel uw primaire exemplaar als afhankelijke resources bevinden zich op dezelfde locatie. In dit geval moeten afhankelijke resources back-ups of gerepliceerde versies op een andere locatie hebben, zodat uw secundaire instantie nog steeds toegang heeft tot die bronnen.
+* Zowel uw primaire exemplaar als afhankelijke resources bevinden zich op dezelfde locatie. In dit geval moeten afhankelijke resources back-ups of gerepliceerde versies op een andere locatie hebben, zodat uw secundaire exemplaar nog steeds toegang heeft tot deze resources.
 
-  Stel bijvoorbeeld dat uw primaire logische app verbinding maakt met een service die zich op dezelfde locatie of regio bevinden, bijvoorbeeld Azure SQL Database. Als deze hele regio niet meer beschikbaar is, is de Azure SQL Database-Service in die regio waarschijnlijk ook niet beschikbaar. In dit geval wilt u dat uw secundaire instantie een gerepliceerde of back-updatabase gebruikt, samen met een afzonderlijke verbinding naar die data base.
+  Stel bijvoorbeeld dat uw primaire logische app verbinding maakt met een service die zich op dezelfde locatie of regio bevindt, bijvoorbeeld Azure SQL Database. Als deze hele regio niet meer beschikbaar is, is Azure SQL Database service in die regio waarschijnlijk ook niet beschikbaar. In dit geval wilt u dat uw secundaire exemplaar een gerepliceerde of back-updatabase gebruikt, samen met een afzonderlijke verbinding met die database.
 
 <a name="on-premises-data-gateways"></a>
 
 ## <a name="on-premises-data-gateways"></a>On-premises gegevensgateways
 
-Als uw logische app wordt uitgevoerd in een multi tenant Azure en toegang moet hebben tot on-premises resources, zoals SQL Server data bases, moet u de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-install.md) installeren op een lokale computer. U kunt vervolgens een gegevens gateway bron maken in de Azure Portal zodat uw logische app de gateway kan gebruiken bij het maken van een verbinding met de bron.
+Als uw logische app wordt uitgevoerd in Azure met meerdere tenants en toegang nodig heeft tot on-premises resources, zoals SQL Server-databases, moet u de [on-premises](../logic-apps/logic-apps-gateway-install.md) gegevensgateway op een lokale computer installeren. Vervolgens kunt u een gegevensgatewayresource maken in de Azure Portal zodat uw logische app de gateway kan gebruiken wanneer u een verbinding met de resource maakt.
 
-De gegevens gateway resource is gekoppeld aan een locatie of Azure-regio, net als bij de logische app-resource. Zorg er in uw strategie voor herstel na nood gevallen voor dat de gegevens gateway beschikbaar blijft voor de logische app die u wilt gebruiken. U kunt [hoge Beschik baarheid voor uw gateway inschakelen](../logic-apps/logic-apps-gateway-install.md#high-availability) wanneer u meerdere gateway-installaties hebt.
+De gegevensgatewayresource is gekoppeld aan een locatie of Azure-regio, net als uw logische app-resource. Zorg er in uw strategie voor herstel na noodherstel voor dat de gegevensgateway beschikbaar blijft voor gebruik door uw logische app. U kunt [hoge beschikbaarheid voor uw gateway inschakelen](../logic-apps/logic-apps-gateway-install.md#high-availability) wanneer u meerdere gatewayinstallaties hebt.
 
 > [!NOTE]
-> Als uw logische app wordt uitgevoerd in een integratie service omgeving (ISE) en alleen connectors met ISE-versie gebruikt voor on-premises gegevens bronnen, hebt u de gegevens gateway niet nodig, omdat ISE-connectors rechtstreeks toegang bieden tot de on-premises resource.
+> Als uw logische app wordt uitgevoerd in een ISE (Integration Service Environment) en alleen connectors met ISE-versie gebruikt voor on-premises gegevensbronnen, hebt u de gegevensgateway niet nodig omdat ISE-connectors directe toegang bieden tot de on-premises resource.
 >
-> Als er geen connector met ISE-versie beschikbaar is voor de on-premises resource die u wilt, kunt u met uw logische app nog steeds verbinding maken met behulp van een niet-ISE-connector, die wordt uitgevoerd in de globale multi-tenant Azure, niet op uw ISE. Voor deze verbinding is echter de on-premises gegevens gateway vereist.
+> Als er geen connector met ISE-versie beschikbaar is voor de on-premises resource die u wilt, kan uw logische app nog steeds de verbinding maken met behulp van een niet-ISE-connector, die wordt uitgevoerd in de globale Azure met meerdere tenants, niet uw ISE. Voor deze verbinding is echter de on-premises gegevensgateway vereist.
 
 <a name="roles"></a>
 
-## <a name="active-active-versus-active-passive-roles"></a>Actief-actief versus actief/passieve rollen
+## <a name="active-active-versus-active-passive-roles"></a>Actief-actief versus actief-passief-rollen
 
-U kunt uw primaire en secundaire locaties instellen, zodat de logische app-exemplaren op deze locaties deze rollen kunnen afspelen:
+U kunt uw primaire en secundaire locaties zo instellen dat de instanties van uw logische app op deze locaties de volgende rollen kunnen spelen:
 
-| Primaire-secundaire rol | Description |
+| Primaire en secundaire rol | Description |
 |------------------------|-------------|
-| *Actief-actief* | De primaire en secundaire logische app-exemplaren op beide locaties voeren aanvragen actief uit met behulp van de volgende patronen: <p><p>- *Taak verdeling*: u kunt beide exemplaren Luis teren naar een eind punt en zo nodig taak verdeling voor elk exemplaar naar behoefte hebben. <p>- *Concurrerende consumenten*: u kunt beide instanties als concurrerende consumenten fungeren, zodat de instanties concurreren voor berichten uit een wachtrij. Als één exemplaar mislukt, neemt de andere instantie de werk belasting over. |
-| *Actief-passief* | Het primaire exemplaar van de logische app verwerkt de hele werk belasting actief, terwijl het secundaire exemplaar passief is (uitgeschakeld of inactief). De secundaire wacht tijd op een signaal dat de primaire niet beschikbaar is of niet werkt vanwege onderbrekingen of fouten en de werk belasting als het actieve exemplaar neemt. |
-| Neren | Sommige Logic apps spelen een actief/actief-rol, terwijl andere logische apps een actief-passieve rol spelen. |
+| *Actief-actief* | De primaire en secundaire instanties van logische apps op beide locaties verwerken aanvragen actief door een van deze patronen te volgen: <p><p>- *Load balancer:* u kunt beide exemplaren naar een eindpunt laten luisteren en zo nodig verkeer naar elk exemplaar laten balanceren. <p>- *Concurrerende consumenten:* u kunt beide exemplaren laten fungeren als concurrerende consumenten, zodat de exemplaren concurreren om berichten uit een wachtrij. Als het ene exemplaar uitvalt, neemt het andere exemplaar de workload over. |
+| *Actief-passief* | Het primaire exemplaar van de logische app verwerkt actief de volledige workload, terwijl het secundaire exemplaar passief is (uitgeschakeld of inactief). De secundaire wacht op een signaal dat de primaire niet beschikbaar is of niet werkt vanwege een onderbreking of storing en neemt de workload over als het actieve exemplaar. |
+| Combinatie | Sommige logische apps spelen een actief-actief-rol, terwijl andere logische apps een actief-passief-rol spelen. |
 |||
 
 <a name="active-active-examples"></a>
 
-### <a name="active-active-examples"></a>Active-Active-voor beelden
+### <a name="active-active-examples"></a>Actief-actief-voorbeelden
 
-In deze voor beelden ziet u de Active-Active Setup waarbij de logische app-exemplaren actief aanvragen of berichten verwerken. Een ander systeem of service distribueert de aanvragen of berichten tussen instanties, bijvoorbeeld een van de volgende opties:
+Deze voorbeelden tonen de actief-actief-installatie waarbij beide exemplaren van logische apps actief aanvragen of berichten verwerken. Een ander systeem of een andere service distribueert de aanvragen of berichten tussen exemplaren, bijvoorbeeld een van deze opties:
 
-* Een ' fysieke ' load balancer, zoals een apparaat dat verkeer routeert
+* Een 'fysieke' load balancer, zoals hardware die verkeer routeert
 
-* Een ' zacht ' load balancer, zoals [Azure Load Balancer](../load-balancer/load-balancer-overview.md) of [Azure API Management](../api-management/api-management-key-concepts.md). Met API Management kunt u beleid opgeven dat bepaalt hoe inkomend verkeer wordt verdeeld. U kunt ook een service gebruiken die het bijhouden van status ondersteunt, bijvoorbeeld [Azure service bus](../service-bus-messaging/service-bus-messaging-overview.md).
+* Een 'zachte' load balancer zoals [Azure Load Balancer](../load-balancer/load-balancer-overview.md) of [Azure API Management.](../api-management/api-management-key-concepts.md) Met API Management kunt u beleidsregels opgeven die bepalen hoe binnenkomende verkeer moet worden geseed. U kunt ook een service gebruiken die ondersteuning biedt voor het bijhouden van statussen, bijvoorbeeld [Azure Service Bus.](../service-bus-messaging/service-bus-messaging-overview.md)
 
-  Hoewel in dit voor beeld voornamelijk Azure Load Balancer wordt weer gegeven, kunt u de optie gebruiken die het beste past bij de behoeften van uw scenario:
+  Hoewel dit voorbeeld voornamelijk een Azure Load Balancer laat zien, kunt u de optie gebruiken die het beste past bij de behoeften van uw scenario:
 
-  ![' Actief-actief ' Setup die gebruikmaakt van een load balancer of stateful service](./media/business-continuity-disaster-recovery-guidance/active-active-setup-load-balancer.png)
+  !['Actief-actief'-installatie die gebruikmaakt van een load balancer of stateful service](./media/business-continuity-disaster-recovery-guidance/active-active-setup-load-balancer.png)
 
-* Elk logisch app-exemplaar fungeert als een consumer en beide instanties concurreren voor berichten van een wachtrij:
+* Elk exemplaar van een logische app fungeert als een consument en beide exemplaren concurreren om berichten uit een wachtrij:
 
-  ![' Actief-actief ' Setup die gebruikmaakt van ' concurrerende gebruikers '](./media/business-continuity-disaster-recovery-guidance/active-active-competing-consumers-pattern.png)
+  !['Actief-actief'-installatie die gebruikmaakt van 'concurrerende consumenten'](./media/business-continuity-disaster-recovery-guidance/active-active-competing-consumers-pattern.png)
 
 <a name="active-passive-examples"></a>
 
-### <a name="active-passive-examples"></a>Voor beelden van actief/passief
+### <a name="active-passive-examples"></a>Voorbeelden van actief-passief
 
-In dit voor beeld ziet u de Active-passieve installatie waarbij het primaire exemplaar van de logische app actief is op één locatie, terwijl het secundaire exemplaar inactief is op een andere locatie. Als de primaire storing een onderbreking of storing ondervindt, kunt u een-operator gebruiken om een script uit te voeren dat de secundaire activeert om de werk belasting te ondernemen.
+In dit voorbeeld ziet u de actief-passieve installatie waarbij het primaire exemplaar van de logische app op de ene locatie actief is, terwijl het secundaire exemplaar inactief blijft op een andere locatie. Als de primaire een onderbreking of fout ervaart, kunt u een operator een script laten uitvoeren dat de secundaire activeert om de workload op te nemen.
 
-![' Actief-passief ' Setup die gebruikmaakt van ' concurrerende gebruikers '](./media/business-continuity-disaster-recovery-guidance/active-passive-setup.png)
+!['Actief-passief'-installatie die gebruikmaakt van 'concurrerende consumenten'](./media/business-continuity-disaster-recovery-guidance/active-passive-setup.png)
 
 <a name="active-active-active-passive-examples"></a>
 
-### <a name="combination-with-active-active-and-active-passive"></a>Combi natie met actief-actief en actief-passief
+### <a name="combination-with-active-active-and-active-passive"></a>Combinatie met actief-actief en actief-passief
 
-In dit voor beeld ziet u een gecombineerde installatie waarbij de primaire locatie zowel actieve logische app-exemplaren heeft, terwijl de secundaire locatie actieve-passieve Logic app-exemplaren heeft. Als de primaire locatie een onderbreking of storing ondervindt, kan de actieve logische app op de secundaire locatie, die al een gedeeltelijke werk belasting verwerkt, de hele werk belasting overnemen.
+In dit voorbeeld ziet u een gecombineerde installatie waarbij de primaire locatie beide actieve exemplaren van logische apps heeft, terwijl de secundaire locatie actief-passieve logische app-exemplaren heeft. Als de primaire locatie een onderbreking of fout ervaart, kan de actieve logische app op de secundaire locatie, die al een gedeeltelijke werkbelasting afhandelt, de volledige workload overnemen.
 
-* Op de primaire locatie luistert een actieve logische app naar een Azure Service Bus wachtrij voor berichten, terwijl een andere actieve logische app controleert op e-mails met behulp van een Office 365 Outlook polling-trigger.
+* Op de primaire locatie luistert een actieve logische app naar een Azure Service Bus-wachtrij voor berichten, terwijl een andere actieve logische app controleert op e-mailberichten met behulp van een Office 365 Outlook-pollingtrigger.
 
-* Op de secundaire locatie werkt een actieve logische app met de logische app op de primaire locatie door te Luis teren en te concurreren met berichten uit dezelfde Service Bus wachtrij. Ondertussen wacht een passieve inactieve logische app op stand-by om te controleren op e-mail berichten wanneer de primaire locatie niet beschikbaar is, maar is *uitgeschakeld* om e-mail berichten niet opnieuw te lezen.
+* Op de secundaire locatie werkt een actieve logische app met de logische app op de primaire locatie door te luisteren naar berichten uit dezelfde Service Bus wachtrij. Ondertussen wacht een passieve inactieve logische app op stand-by om te controleren op e-mailberichten wanneer de primaire locatie niet meer beschikbaar *is,* maar is uitgeschakeld om te voorkomen dat e-mailberichten opnieuw worden gelezen.
 
-![De combi natie actief-passief en actief-passief waarbij gebruik wordt gemaakt van terugkeer triggers](./media/business-continuity-disaster-recovery-guidance/combo-active-active-active-passive-setup.png)
+![Combinatie 'Actief-passief' en 'actief-passief' die gebruikmaakt van terugkeertriggers](./media/business-continuity-disaster-recovery-guidance/combo-active-active-active-passive-setup.png)
 
 <a name="state-history"></a>
 
-## <a name="logic-app-state-and-history"></a>Status en geschiedenis van de logische app
+## <a name="logic-app-state-and-history"></a>Status en geschiedenis van logische app
 
-Wanneer uw logische app wordt geactiveerd en wordt gestart, wordt de status van de app opgeslagen op dezelfde locatie waar de app is gestart en niet kan worden overgezet naar een andere locatie. Als er een storing of onderbreking optreedt, worden alle werk stroom exemplaren in uitvoering afgebroken. Wanneer u een primaire en secundaire locatie hebt ingesteld, worden nieuwe werk stroom exemplaren gestart op de secundaire locatie.
+Wanneer uw logische app wordt geactiveerd en wordt uitgevoerd, wordt de status van de app opgeslagen op dezelfde locatie waar de app is gestart en kan deze niet worden overdraagbaar naar een andere locatie. Als er een fout of onderbreking is, worden alle werkstroomprocessen die worden uitgevoerd, stopgezet. Wanneer u een primaire en secundaire locatie hebt ingesteld, worden nieuwe werkstroom-exemplaren op de secundaire locatie uitgevoerd.
 
 <a name="reduce-abandoned-in-progress"></a>
 
-### <a name="reduce-abandoned-in-progress-instances"></a>Afgebroken instanties met verloop bewerkingen verminderen
+### <a name="reduce-abandoned-in-progress-instances"></a>Verlaten exemplaren die worden uitgevoerd verminderen
 
-Als u het aantal afgebroken werk stroom exemplaren wilt minimaliseren, kunt u kiezen uit verschillende bericht patronen die u kunt implementeren, bijvoorbeeld:
+Als u het aantal verlaten werkstroomprocessen wilt minimaliseren, kunt u kiezen uit verschillende berichtpatronen die u kunt implementeren, bijvoorbeeld:
 
-* [Patroon vaste circulatie lijst](/biztalk/esb-toolkit/message-routing-patterns#routing-slip)
+* [Probleem met routeringspatroon opgelost](/biztalk/esb-toolkit/message-routing-patterns#routing-slip)
 
-  Dit ondernemings bericht patroon waarmee een bedrijfs proces in kleinere fasen wordt gesplitst. Voor elke fase stelt u een logische app in waarmee de werk belasting voor die fase wordt afgehandeld. Om met elkaar te communiceren, gebruiken uw Logic apps een asynchroon berichten protocol, zoals Azure Service Bus wacht rijen of onderwerpen. Wanneer u een proces in kleinere stadia verdeelt, verkleint u het aantal bedrijfs processen dat kan vastlopen op een mislukt logische app-exemplaar. Zie [Enter prise Integration Patterns-Routing Slip (](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RoutingTable.html)Engelstalig) voor meer algemene informatie over dit patroon.
+  Dit bedrijfsberichtpatroon dat een bedrijfsproces splitst in kleinere fasen. Voor elke fase stelt u een logische app in die de workload voor die fase verwerkt. Om met elkaar te communiceren, gebruiken uw logische apps een asynchrone berichtenprotocol zoals Azure Service Bus wachtrijen of onderwerpen. Wanneer u een proces in kleinere fasen opsplitst, vermindert u het aantal bedrijfsprocessen dat kan vast komen te zitten in een mislukt exemplaar van een logische app. Zie Enterprise integration [patterns - Routinglip (Enterprise-integratiepatronen - Routeringsslip) voor](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RoutingTable.html)meer algemene informatie over dit patroon.
 
-  In dit voor beeld ziet u een patroon circulatie lijst waarbij elke logische app een fase vertegenwoordigt en een Service Bus wachtrij gebruikt om te communiceren met de volgende logische app in het proces.
+  In dit voorbeeld ziet u een routeringspatroon waarbij elke logische app een fase vertegenwoordigt en een Service Bus wachtrij gebruikt om te communiceren met de volgende logische app in het proces.
 
-  ![Een bedrijfs proces splitsen in fasen die worden vertegenwoordigd door Logic apps, die met elkaar communiceren met behulp van Azure Service Bus wachtrijen](./media/business-continuity-disaster-recovery-guidance/fixed-routing-slip-pattern.png)
+  ![Een bedrijfsproces splitsen in fasen die worden vertegenwoordigd door logische apps, die met elkaar communiceren met behulp van Azure Service Bus wachtrijen](./media/business-continuity-disaster-recovery-guidance/fixed-routing-slip-pattern.png)
 
-  Als zowel de primaire als de secundaire Logic-app-exemplaren hetzelfde circulatie lijst patroon op hun locaties volgen, kunt u het [patroon voor concurrerende gebruikers](/azure/architecture/patterns/competing-consumers) implementeren door [actief-actief rollen](#roles) voor die instanties in te stellen.
+  Als zowel primaire als secundaire instanties van logische apps op hun [](/azure/architecture/patterns/competing-consumers) locaties hetzelfde routeringspatroon volgen, kunt u het concurrerende consumentenpatroon implementeren door [actief-actief-rollen](#roles) in te stellen voor deze instanties.
 
-* [Patroon van proces beheerder (Broker)](https://www.enterpriseintegrationpatterns.com/patterns/messaging/ProcessManager.html)
+* [Procesbeheerpatroon (broker)](https://www.enterpriseintegrationpatterns.com/patterns/messaging/ProcessManager.html)
 
-* [Kort weer geven/vergren delen zonder time-outpatroon](https://social.technet.microsoft.com/wiki/contents/articles/50022.azure-service-bus-how-to-peek-lock-a-message-from-queue-using-azure-logic-apps.aspx)
+* [Peek-lock zonder time-outpatroon](https://social.technet.microsoft.com/wiki/contents/articles/50022.azure-service-bus-how-to-peek-lock-a-message-from-queue-using-azure-logic-apps.aspx)
 
 <a name="access-trigger-runs-history"></a>
 
-### <a name="access-to-trigger-and-runs-history"></a>Toegang tot trigger-en uitvoerings geschiedenis
+### <a name="access-to-trigger-and-runs-history"></a>Toegang tot trigger- en runs-geschiedenis
 
-Als u meer informatie wilt over de afgelopen werk stroom uitvoeringen van de logische app, kunt u de trigger en uitvoeringen van de app bekijken. De geschiedenis uitvoerings geschiedenis van een logische app wordt opgeslagen op dezelfde locatie of regio waar de logische app werd uitgevoerd, wat betekent dat u deze geschiedenis niet kunt migreren naar een andere locatie. Als er een failover van uw primaire instantie naar een secundair exemplaar wordt uitgevoerd, kunt u alleen toegang krijgen tot de trigger van elk exemplaar en wordt de geschiedenis van de betreffende locaties waar die instanties zijn uitgevoerd. U kunt echter neutraal informatie over de geschiedenis van uw logische app ophalen door uw Logic apps in te stellen voor het verzenden van diagnostische gebeurtenissen naar een Azure Log Analytics-werk ruimte. U kunt vervolgens de status en geschiedenis controleren over Logic apps die op meerdere locaties worden uitgevoerd.
+Als u meer informatie wilt over de eerdere werkstroomuitvoeringen van uw logische app, kunt u de trigger- en uitvoeringsgeschiedenis van de app bekijken. De uitvoeringsgeschiedenis van een logische app wordt opgeslagen op dezelfde locatie of regio waar die logische app werd uitgevoerd. Dit betekent dat u deze geschiedenis niet naar een andere locatie kunt migreren. Als uw primaire exemplaar een fout maakt naar een secundair exemplaar, hebt u alleen toegang tot de trigger van elk exemplaar en de geschiedenis van de runs op de respectieve locaties waar deze exemplaren zijn uitgevoerd. U kunt echter locatieagnostische informatie krijgen over de geschiedenis van uw logische app door uw logische apps in te stellen voor het verzenden van diagnostische gebeurtenissen naar een Azure Log Analytics-werkruimte. Vervolgens kunt u de status en geschiedenis bekijken van logische apps die op meerdere locaties worden uitgevoerd.
 
 <a name="trigger-types-guidance"></a>
 
-## <a name="trigger-type-guidance"></a>Hulp voor trigger type
+## <a name="trigger-type-guidance"></a>Richtlijnen voor triggertype
 
-Het trigger type dat u in uw Logic apps gebruikt, bepaalt uw opties voor het instellen van logische apps op verschillende locaties in uw strategie voor herstel na nood gevallen. Dit zijn de beschik bare trigger typen die u kunt gebruiken in Logic apps:
+Het triggertype dat u in uw logische apps gebruikt, bepaalt uw opties voor het instellen van logische apps op verschillende locaties in uw strategie voor herstel na noodherstel. Dit zijn de beschikbare triggertypen die u kunt gebruiken in logische apps:
 
-* [Trigger voor terugkeer patroon](#recurrence-trigger)
-* [Polling trigger](#polling-trigger)
-* [Trigger voor aanvragen](#request-trigger)
-* [Webhook-trigger](#webhook-trigger)
+* [Trigger terugkeerpatroon](#recurrence-trigger)
+* [Poll-trigger](#polling-trigger)
+* [Aanvraagtrigger](#request-trigger)
+* [Webhooktrigger](#webhook-trigger)
 
 <a name="recurrence-trigger"></a>
 
-### <a name="recurrence-trigger"></a>Trigger voor terugkeer patroon
+### <a name="recurrence-trigger"></a>Trigger terugkeerpatroon
 
-De **terugkeer patroon** trigger is onafhankelijk van een specifieke service of elk eind punt, en wordt alleen geactiveerd op basis van een opgegeven schema en geen andere criteria, bijvoorbeeld:
+De **trigger Terugkeerpatroon** is onafhankelijk van een specifieke service of eindpunt en wordt alleen op basis van een opgegeven planning en geen andere criteria, bijvoorbeeld:
 
-* Een vaste frequentie en een interval, bijvoorbeeld elke 10 minuten
-* Een meer geavanceerde planning, zoals de laatste maandag van elke maand om 5:00 uur
+* Een vaste frequentie en interval, zoals elke 10 minuten
+* Een geavanceerdere planning, zoals de laatste maandag van elke maand om 17:00 uur
 
-Wanneer uw logische app begint met een terugkeer patroon trigger, moet u uw primaire en secundaire logische app-exemplaren instellen met de [actieve passieve rollen](#roles). Als u de *beoogde herstel tijd* (RTO), die verwijst naar de doel duur voor het herstellen van een bedrijfs proces na een onderbreking of nood geval, wilt beperken, kunt u uw logische app-instanties instellen met een combi natie van [actief/passieve rollen](#roles) en [passieve actieve rollen](#roles). In deze installatie splitst u de planning op verschillende locaties.
+Wanneer uw logische app begint met een terugkeerpatroontrigger, moet u uw primaire en secundaire instanties van logische apps instellen met de [actief-passieve rollen](#roles). Als u  de beoogde hersteltijd (RTO) wilt verminderen, die verwijst naar de doelduur voor het herstellen van een bedrijfsproces na een onderbreking of nood, kunt u uw instanties van logische apps instellen met een combinatie van [actief-passief-rollen](#roles) en [passief-actieve rollen.](#roles) In deze installatie splitst u de planning over verschillende locaties.
 
-Stel bijvoorbeeld dat u een logische app hebt die om de 10 minuten moet worden uitgevoerd. U kunt uw logische apps en locaties zo instellen dat als de primaire locatie niet beschikbaar is, de secundaire locatie het werk kan overnemen:
+Stel bijvoorbeeld dat u een logische app hebt die elke 10 minuten moet worden uitgevoerd. U kunt uw logische apps en locaties zo instellen dat als de primaire locatie niet meer beschikbaar is, de secundaire locatie het werk kan overnemen:
 
-![De combi natie actief-passief en passief actief waarbij gebruik wordt gemaakt van terugkeer triggers](./media/business-continuity-disaster-recovery-guidance/combo-active-passive-passive-active-setup.png)
+![Combinatie 'Actief-passief' en 'passief-actief' die gebruikmaakt van terugkeertriggers](./media/business-continuity-disaster-recovery-guidance/combo-active-passive-passive-active-setup.png)
 
-* Stel op de primaire locatie actieve, [passieve rollen](#roles) in voor deze Logic apps:
+* Stel op de primaire locatie [actief-passief-rollen in](#roles) voor deze logische apps:
 
-  * Voor de *actieve* logica-app stelt u de terugkeer patroon trigger in op begin van het uur en herhaalt u elke 20 minuten, bijvoorbeeld 9:00 am, 9:20 uur, enzovoort.
+  * Voor  de actieve logische app stelt u de trigger Terugkeerpatroon in om boven aan het uur te starten en elke 20 minuten te herhalen, bijvoorbeeld om 9:00 uur, 9:20 uur, bijvoorbeeld.
 
-  * Voor de *passieve* , gehandicapte logische app stelt u de terugkeer patroon trigger in op hetzelfde schema, maar begint u 10 minuten na het hele uur en herhaalt u elke 20 minuten, bijvoorbeeld 9:10 am, 9:30 uur, enzovoort.
+  * Voor  de passieve uitgeschakelde logische app stelt u de trigger Terugkeerpatroon in op hetzelfde schema, maar begint u om 10 minuten na het uur en herhaalt u deze om de 20 minuten, bijvoorbeeld om 9:10 uur, 9:30 uur, bijvoorbeeld.
 
-* Stel op de secundaire locatie [passieve actief](#roles) in voor deze Logic apps:
+* Stel op de secundaire locatie [passief-actief in](#roles) voor deze logische apps:
 
-  * Voor de *passieve* , gehandicapte logische app stelt u de terugkeer patroon trigger in op dezelfde planning als de actieve logische app op de primaire locatie, die zich boven aan het uur bevindt en elke 20 minuten herhaalt, bijvoorbeeld 9:00 am, 9:10 am, enzovoort.
+  * Stel  voor de passieve, uitgeschakelde logische app de trigger Terugkeerpatroon in op hetzelfde schema als de actieve logische app op de primaire locatie, die zich boven aan het uur bevindt en herhaal deze om de 20 minuten, bijvoorbeeld om 9:00 uur, 9:10 uur, en meer.
 
-  * Voor de *actieve* logica-app stelt u de terugkeer patroon trigger in op dezelfde planning als de passieve logische app op de primaire locatie, die begint om 10 minuten na het uur en elke 20 minuten herhalen, bijvoorbeeld 9:10 uur, 9:20 uur, enzovoort.
+  * Voor  de actieve logische app stelt u de trigger Terugkeerpatroon in op hetzelfde schema als de passieve logische app op de primaire locatie. Dit is om te beginnen bij 10 minuten na het uur en elke 20 minuten te herhalen, bijvoorbeeld om 9:10 uur, 9:20 uur, bijvoorbeeld.
 
-Als er nu een storende gebeurtenis op de primaire locatie plaatsvindt, activeert u de passieve logische app op de alternatieve locatie. Op die manier wordt bij het zoeken naar de uitval tijd het aantal gemiste terugkeer patronen tijdens die vertraging beperkt.
+Als er nu een verstorende gebeurtenis op de primaire locatie gebeurt, activeert u de passieve logische app op de alternatieve locatie. Als het vinden van de fout tijd kost, beperkt deze instelling het aantal gemiste terugkeerpatroon tijdens die vertraging.
 
 <a name="polling-trigger"></a>
 
-### <a name="polling-trigger"></a>Polling trigger
+### <a name="polling-trigger"></a>Poll-trigger
 
-Om regel matig te controleren of nieuwe gegevens voor verwerking beschikbaar zijn vanuit een specifieke service of eind punt, kan uw logische app een *polling* trigger gebruiken die herhaaldelijk de service of het eind punt aanroept op basis van een vast terugkeer patroon schema. De gegevens die de service of het eind punt biedt, kunnen een van de volgende typen hebben:
+Als u regelmatig wilt controleren of nieuwe gegevens voor verwerking beschikbaar zijn via een specifieke service of een specifiek eindpunt, kan uw logische app een *poll-trigger* gebruiken die de service of het eindpunt herhaaldelijk aanroept op basis van een vast terugkeerschema. De gegevens die de service of het eindpunt biedt, kunnen een van de volgende typen hebben:
 
-* Statische gegevens, waarmee gegevens worden beschreven die altijd beschikbaar zijn voor lezen
-* Vluchtige gegevens, waarmee gegevens worden beschreven die niet meer beschikbaar zijn na het lezen
+* Statische gegevens, waarin gegevens worden beschreven die altijd beschikbaar zijn om te lezen
+* Vluchtige gegevens, waarin gegevens worden beschreven die na het lezen niet meer beschikbaar zijn
 
-Om te voor komen dat dezelfde gegevens herhaaldelijk worden gelezen, moet uw logische app weten welke gegevens eerder werden gelezen door de status aan de client zijde of op de server, service of systeem zijde te bewaren.
+Om te voorkomen dat dezelfde gegevens herhaaldelijk worden gelezen, moet uw logische app onthouden welke gegevens eerder zijn gelezen door de status te onderhouden aan de clientzijde of aan de server-, service- of systeemzijde.
 
-* Logic apps die samen werken met de status van de client-side gebruiken triggers die de status kunnen behouden.
+* Logische apps die met de status aan de clientzijde werken, gebruiken triggers die de status kunnen behouden.
 
-  Een trigger die een nieuw bericht van een postvak in leest, vereist bijvoorbeeld dat de trigger het laatst gelezen bericht kan onthouden. Op die manier start de trigger de logische app alleen wanneer het volgende ongelezen bericht binnenkomt.
+  Een trigger die bijvoorbeeld een nieuw bericht uit een postvak IN voor e-mail leest, vereist dat de trigger het laatst gelezen bericht kan onthouden. Op die manier start de trigger de logische app alleen wanneer het volgende ongelezen bericht binnenkomt.
 
-* Logic apps die samen werken met de status van de server, de service of het systeem, maken gebruik van eigenschaps waarden of-instellingen die zich op de server, service of systeem zijde bevinden.
+* Logische apps die met de status van de server, de service of het systeem werken, gebruiken eigenschapswaarden of -instellingen die zich aan de server-, service- of systeemzijde hebben.
 
-  Een op query's gebaseerde trigger die een rij uit een Data Base leest, vereist bijvoorbeeld dat de rij een `isRead` kolom bevat die is ingesteld op `FALSE` . Telkens wanneer de trigger een rij leest, wordt die rij door de logische app bijgewerkt door de `isRead` kolom te wijzigen van `FALSE` in `TRUE` .
+  Een trigger op basis van een query die bijvoorbeeld een rij uit een database leest, vereist dat de rij een kolom bevat die `isRead` is ingesteld op `FALSE` . Telkens als de trigger een rij leest, werkt de logische app die rij bij door de kolom te `isRead` wijzigen van `FALSE` in `TRUE` .
 
-  Deze aanpak op de server werkt op dezelfde manier als Service Bus-wacht rijen of-onderwerpen die een wachtrij semantiek hebben waarbij een trigger een bericht kan lezen en vergren delen terwijl het bericht door de logische app wordt verwerkt. Wanneer de logische app is verwerkt, verwijdert de trigger het bericht uit de wachtrij of het onderwerp.
+  Deze methode aan de serverzijde werkt op dezelfde manier voor Service Bus wachtrijen of onderwerpen met semantiek voor wachtrijen waarbij een trigger een bericht kan lezen en vergrendelen terwijl het bericht door de logische app wordt verwerkt. Wanneer de logische app klaar is met verwerken, verwijdert de trigger het bericht uit de wachtrij of het onderwerp.
 
-Wanneer u de primaire en secundaire exemplaren van de logische app instelt, moet u bij het maken van een nood herstel perspectief ervoor zorgen dat u rekening houdt met deze gedragingen op basis van het feit of uw logische app de status van de client aan de zijde of aan de server zijde volgt:
+Wanneer u de primaire en secundaire exemplaren van uw logische app in het perspectief van herstel na noodherstel in stelt, moet u rekening houden met dit gedrag op basis van het feit of uw logische app de status bij houdt aan de clientzijde of aan de serverzijde:
 
-* Voor een logische app die werkt met de status van de client-side, zorgt u ervoor dat het bericht niet meer dan één keer in uw logische app wordt gelezen. Op elk gewenst moment kan slechts één locatie een actieve logische app-instantie hebben. Zorg ervoor dat het logische app-exemplaar op de alternatieve locatie inactief is of is uitgeschakeld totdat de primaire instantie een failover naar de alternatieve locatie uitvoert.
+* Voor een logische app die met de status aan de clientzijde werkt, moet u ervoor zorgen dat uw logische app niet meer dan één keer hetzelfde bericht leest. Slechts één locatie kan op een bepaald moment een actief exemplaar van een logische app hebben. Zorg ervoor dat het exemplaar van de logische app op de alternatieve locatie inactief of uitgeschakeld is totdat de primaire instantie een uitvalt naar de alternatieve locatie.
 
-  Bijvoorbeeld: de trigger Office 365 Outlook onderhoudt de status van client-side en houdt de tijds tempel bij voor de meest recent gelezen e-mail om te voor komen dat er een duplicaat wordt gelezen.
+  De Outlook-trigger van Office 365 onderhoudt bijvoorbeeld de status aan de clientzijde en houdt de tijdstempel bij voor de meest recent gelezen e-mail om te voorkomen dat een duplicaat wordt gelezen.
 
-* Voor een logische app die werkt met de status aan de server zijde, kunt u uw logische app-exemplaren zo instellen dat deze [actief-actief zijn](#roles) , waar ze werken als concurrerende gebruikers of [actieve passieve rollen](#roles) waarbij de alternatieve instantie wacht totdat de primaire instantie een failover naar de alternatieve locatie kan uitvoeren.
+* Voor een logische app die met de status aan de serverzijde werkt, kunt u uw exemplaren van logische apps zo instellen dat ze [actief-actief-rollen](#roles) spelen waarbij ze als concurrerende consumenten werken of als [actief-passief-rollen](#roles) waarbij het alternatieve exemplaar wacht tot de primaire instantie een uitvalt naar de alternatieve locatie.
 
-  Als u bijvoorbeeld een bericht wachtrij leest, zoals een Azure Service Bus wachtrij, wordt de status aan server zijde gebruikt, omdat de Queuing-service vergrendelde berichten bijhoudt om te voor komen dat andere clients dezelfde berichten lezen.
+  Het lezen vanuit een berichtenwachtrij, zoals een Azure Service Bus-wachtrij, maakt bijvoorbeeld gebruik van de status aan de serverzijde, omdat de wachtrijservice berichten vergrendeld houdt om te voorkomen dat andere clients dezelfde berichten kunnen lezen.
 
   > [!NOTE]
-  > Als uw logische app berichten in een specifieke volg orde moet lezen, bijvoorbeeld van een Service Bus wachtrij, kunt u het concurrerende consumenten patroon gebruiken, maar alleen in combi natie met Service Bus-sessies, ook wel bekend als het [ *sequentiële verwerkings* patroon](/azure/architecture/patterns/sequential-convoy). Anders moet u de logische app-exemplaren instellen met de actieve passieve rollen.
+  > Als uw logische app berichten in een specifieke volgorde moet lezen, bijvoorbeeld vanuit een Service Bus-wachtrij, kunt u het concurrerende consumentenpatroon gebruiken, maar alleen in combinatie met Service Bus-sessies, ook wel bekend als het [ *sequentiële*](/azure/architecture/patterns/sequential-convoy)patroon . Anders moet u de exemplaren van uw logische app instellen met de actief-passieve rollen.
 
 <a name="request-trigger"></a>
 
-### <a name="request-trigger"></a>Trigger voor aanvragen
+### <a name="request-trigger"></a>Aanvraagtrigger
 
-Met de **aanvraag** trigger kan uw logische app aanroepen van andere apps, services en systemen, en wordt doorgaans gebruikt om deze mogelijkheden te bieden:
+De **aanvraagtrigger** maakt uw logische app aanroepbaar vanuit andere apps, services en systemen en wordt doorgaans gebruikt om deze mogelijkheden te bieden:
 
 * Een directe REST API voor uw logische app die anderen kunnen aanroepen
 
-  Gebruik bijvoorbeeld de trigger voor aanvragen om uw logische app te starten, zodat andere logische apps de trigger kunnen aanroepen met behulp van de actie **werk stroom aanroepen-Logic apps** .
+  Gebruik bijvoorbeeld de trigger Aanvraag om uw logische app te starten, zodat andere logische apps de trigger kunnen aanroepen met behulp van de actie Werkstroom aanroepen **- Logic Apps** roepen.
 
-* Een [webhook](#webhook-trigger) of call back-mechanisme voor uw logische app
+* Een [webhook- of](#webhook-trigger) callback-mechanisme voor uw logische app
 
-* Een manier waarop u gebruikers bewerkingen of routines hand matig kunt uitvoeren om uw logische app aan te roepen, bijvoorbeeld door gebruik te maken van een Power shell-script waarmee een specifieke taak wordt uitgevoerd
+* Een manier waarop u handmatig gebruikersbewerkingen of routines kunt uitvoeren om uw logische app aan te roepen, bijvoorbeeld door een PowerShell-script te gebruiken waarmee een specifieke taak wordt uitgevoerd
 
-Vanuit een nood herstel perspectief is de aanvraag trigger een passieve ontvanger, omdat de logische app geen werk doet en wacht totdat een andere service of systeem de trigger expliciet aanroept. Als passief eind punt kunt u uw primaire en secundaire instanties op de volgende manieren instellen:
+Vanuit het perspectief van herstel na noodherstel is de aanvraagtrigger een passieve ontvanger omdat de logische app geen werk doet en wacht tot een andere service of systeem de trigger expliciet aanroept. Als passief eindpunt kunt u uw primaire en secundaire exemplaren op de volgende manieren instellen:
 
-* [Actief-actief](#roles): beide exemplaren verwerken aanvragen of aanroepen. De aanroeper of router is in balans of verdeelt verkeer tussen deze instanties.
+* [Actief-actief:](#roles)beide exemplaren verwerken actief aanvragen of aanroepen. De aanroeper of router verdeelt het verkeer over deze exemplaren.
 
-* [Actief-passief](#roles): alleen het primaire exemplaar is actief en verwerkt alle werk, terwijl het secundaire exemplaar wacht totdat de primaire storing optreedt of de fout optreedt. De aanroeper of router bepaalt wanneer het secundaire exemplaar moet worden aangeroepen.
+* [Actief-passief:](#roles)alleen de primaire instantie is actief en verwerkt al het werk, terwijl de secundaire instantie wacht tot de primaire onderbreking of fout is. De aanroeper of router bepaalt wanneer het secundaire exemplaar moet worden aanroepen.
 
-Als een aanbevolen architectuur kunt u Azure API Management gebruiken als proxy voor de Logic apps die gebruikmaken van aanvraag triggers. API Management biedt [ingebouwde Kruis-regionale tolerantie en de mogelijkheid om verkeer te routeren over meerdere eind punten](../api-management/api-management-howto-deploy-multi-region.md).
+Als een aanbevolen architectuur kunt u Azure API Management als proxy voor de logische apps die gebruikmaken van aanvraagtriggers. API Management biedt [ingebouwde cross-regional tolerantie](../api-management/api-management-howto-deploy-multi-region.md)en de mogelijkheid om verkeer om te brengen naar meerdere eindpunten.
 
 <a name="webhook-trigger"></a>
 
-### <a name="webhook-trigger"></a>Webhook-trigger
+### <a name="webhook-trigger"></a>Webhooktrigger
 
-Een *webhook* -trigger biedt de mogelijkheid om uw logische app te abonneren op een service door een *call back-URL* naar die service door te geven. Uw logische app kan vervolgens Luis teren en wachten tot een specifieke gebeurtenis plaatsvindt op dat service-eind punt. Wanneer de gebeurtenis plaatsvindt, roept de service de webhook-trigger aan met behulp van de call back-URL, waarna de logische app wordt uitgevoerd. Wanneer deze functie is ingeschakeld, wordt de webhook geactiveerd op de service. Wanneer dit is uitgeschakeld, wordt de trigger afgemeld bij de service.
+Een *webhooktrigger* biedt uw logische app de mogelijkheid om zich te abonneren op een service door een *callback-URL door* te geven aan die service. Uw logische app kan vervolgens luisteren en wachten op een specifieke gebeurtenis op dat service-eindpunt. Wanneer de gebeurtenis zich voordeed, roept de service de webhooktrigger aan met behulp van de callback-URL, waarmee vervolgens de logische app wordt uitgevoerd. Wanneer deze functie is ingeschakeld, abonneert de webhooktrigger zich op de service. Als deze is uitgeschakeld, wordt de trigger afgemeld voor de service.
 
-Stel vanuit een perspectief voor nood herstel primaire en secundaire exemplaren in die gebruikmaken van webhook-triggers om actieve passieve rollen af te spelen, omdat er slechts één instantie gebeurtenissen of berichten van het geabonneerde eind punt moet ontvangen.
+Stel vanuit het perspectief van herstel na noodherstel primaire en secundaire exemplaren in die gebruikmaken van webhooktriggers om actief-passief-rollen uit te spelen, omdat slechts één exemplaar gebeurtenissen of berichten van het geabonneerde eindpunt mag ontvangen.
 
-## <a name="assess-primary-instance-health"></a>Status van primair exemplaar evalueren
+## <a name="assess-primary-instance-health"></a>De status van het primaire exemplaar beoordelen
 
-De strategie voor herstel na nood gevallen werkt alleen als uw oplossing manieren heeft om deze taken uit te voeren:
+Uw strategie voor herstel na noodherstel werkt alleen als uw oplossing manieren heeft om deze taken uit te voeren:
 
-* [De beschik baarheid van het primaire exemplaar controleren](#check-primary-availability)
-* [De status van het primaire exemplaar controleren](#monitor-primary-health)
+* [De beschikbaarheid van het primaire exemplaar controleren](#check-primary-availability)
+* [De status van het primaire exemplaar bewaken](#monitor-primary-health)
 * [Het secundaire exemplaar activeren](#activate-secondary)
 
-In deze sectie wordt één oplossing beschreven die u kunt gebruiken of als basis voor uw eigen ontwerp. Hier volgt een visueel overzicht van een hoog niveau voor deze oplossing:
+In deze sectie wordt één oplossing beschreven die u direct kunt gebruiken of als basis voor uw eigen ontwerp. Hier is een visueel overzicht op hoog niveau voor deze oplossing:
 
-![Een watchdog Logic-app maken die een logische app voor status controle op de primaire locatie bewaakt](./media/business-continuity-disaster-recovery-guidance/check-location-health-watchdog.png)
+![Een logische watchdog-app maken waarmee een logische app voor statuscontrole op de primaire locatie wordt bewaakt](./media/business-continuity-disaster-recovery-guidance/check-location-health-watchdog.png)
 
 <a name="check-primary-availability"></a>
 
-### <a name="check-primary-instance-availability"></a>Beschik baarheid van primair exemplaar controleren
+### <a name="check-primary-instance-availability"></a>Beschikbaarheid van primaire exemplaren controleren
 
-Als u wilt bepalen of het primaire exemplaar beschikbaar is, wordt uitgevoerd en dat kan worden gebruikt, kunt u een logische app voor status controle maken die zich op dezelfde locatie bevindt als het primaire exemplaar. Vervolgens kunt u deze app voor de status controle aanroepen vanaf een alternatieve locatie. Als de status controle-app reageert, is de onderliggende infra structuur voor de Azure Logic Apps-service in die regio beschikbaar en werkt deze. Als de status controle-app niet reageert, kunt u aannemen dat de locatie niet meer in orde is.
+Als u wilt bepalen of het primaire exemplaar beschikbaar is, wordt uitgevoerd en werkt, kunt u een logische app voor statuscontrole maken die zich op dezelfde locatie bevindt als het primaire exemplaar. Vervolgens kunt u deze statuscontrole-app aanroepen vanaf een alternatieve locatie. Als de statuscontrole-app reageert, is de onderliggende infrastructuur voor de Azure Logic Apps-service in die regio beschikbaar en werkt deze. Als de statuscontrole-app niet reageert, kunt u ervan uitgaan dat de locatie niet meer in orde is.
 
-Voor deze taak maakt u een basis logische app voor het controleren van de status die deze taken uitvoert:
+Voor deze taak maakt u een eenvoudige logische app voor statuscontrole waarmee deze taken worden uitgevoerd:
 
-1. Ontvangt een aanroep van de watchdog-app met behulp van de aanvraag trigger.
+1. Ontvangt een aanroep van de watchdog-app met behulp van de aanvraagtrigger.
 
-1. Reageer op een status die aangeeft of de gecontroleerde logische app nog steeds werkt met behulp van de reactie actie.
+1. Reageer met een status die aangeeft of de gecontroleerd logische app nog steeds werkt met behulp van de actie Antwoord.
 
    > [!IMPORTANT]
-   > De logische app voor status controle moet een reactie actie gebruiken zodat de app synchroon en niet asynchroon reageert.
+   > De logische app voor statuscontrole moet een actie Antwoord gebruiken, zodat de app synchroon reageert, niet asynchroon.
 
-1. U kunt er ook voor kiezen om verder te bepalen of de primaire locatie in orde is, of u de status van andere services die communiceren met de doel logische app op deze locatie. Vouw alleen de logische app voor status controle uit om de status voor deze andere services te beoordelen.
+1. Als u verder wilt bepalen of de primaire locatie in orde is, kunt u desgewenst rekening houden met de status van andere services die communiceren met de doellogica-app op deze locatie. Vouw de logische app voor statuscontrole uit om ook de status van deze andere services te beoordelen.
 
 <a name="monitor-primary-health"></a>
 
-### <a name="create-a-watchdog-logic-app"></a>Een watchdog Logic-app maken
+### <a name="create-a-watchdog-logic-app"></a>Een logische watchdog-app maken
 
-Als u de status van het primaire exemplaar wilt controleren en de logische app voor status controle aanroept, maakt u een ' watchdog ' logische app op een *alternatieve locatie*. U kunt bijvoorbeeld de watchdog Logic-app instellen, zodat als het aanroepen van de logica voor de status controle mislukt, de watchdog een waarschuwing kan verzenden naar uw Operations-team zodat deze de fout kan onderzoeken en waarom het primaire exemplaar niet reageert.
+Als u de status van het primaire exemplaar wilt bewaken en de logische app voor statuscontrole wilt aanroepen, maakt u een logische watchdog-app op een *alternatieve locatie.* U kunt bijvoorbeeld de logische watchdog-app zo instellen dat als het aanroepen van de statuscontrolelogica mislukt, de watchdog een waarschuwing kan verzenden naar uw operationele team, zodat deze de fout kan onderzoeken en waarom het primaire exemplaar niet reageert.
 
 > [!IMPORTANT]
-> Zorg ervoor dat uw watchdog Logic app zich op een locatie bevindt *die verschilt van de primaire locatie*. Als de Logic Apps-service op de primaire locatie problemen ondervindt, kan uw watchdog-logische app mogelijk niet worden uitgevoerd.
+> Zorg ervoor dat uw logische watchdog-app zich op een andere locatie bevindt *dan de primaire locatie*. Als de Logic Apps-service op de primaire locatie problemen ervaart, wordt uw logische watchdog-app mogelijk niet uitgevoerd.
 
-Voor deze taak maakt u op de secundaire locatie een watchdog Logic-app waarmee u de volgende taken uitvoert:
+Voor deze taak maakt u op de secundaire locatie een logische watchdog-app waarmee deze taken worden uitgevoerd:
 
-1. Voer uit op basis van een vast of gepland terugkeer patroon met behulp van de terugkeer patroon trigger.
+1. Wordt uitgevoerd op basis van een vast of gepland terugkeerpatroon met behulp van de trigger Terugkeerpatroon.
 
-   U kunt het terugkeer patroon instellen op een waarde die lager is dan het tolerantie niveau voor uw beoogde herstel tijd (RTO).
+   U kunt het terugkeerpatroon instellen op een waarde die lager is dan het tolerantieniveau voor uw RTO (Recovery Time Objective).
 
-1. Roep de logische app voor status controle op de primaire locatie aan met behulp van de HTTP-actie, bijvoorbeeld:
+1. Roep de logische app voor statuscontrole aan op de primaire locatie met behulp van de HTTP-actie, bijvoorbeeld:
 
 <a name="activate-secondary"></a>
 
-### <a name="activate-your-secondary-instance"></a>Activeer uw secundaire exemplaar
+### <a name="activate-your-secondary-instance"></a>Uw secundaire exemplaar activeren
 
-Als u de secundaire instantie automatisch wilt activeren, kunt u een logische app maken die de beheer-API aanroept, zoals de [Azure Resource Manager connector](/connectors/arm/) om de juiste Logic apps te activeren op de secundaire locatie. U kunt uw watchdog-app uitbreiden om deze activerings logische app aan te roepen nadat een bepaald aantal fouten is opgetreden.
+Als u het secundaire exemplaar automatisch wilt activeren, kunt u een logische app maken die de beheer-API aanroept, zoals de [Azure Resource Manager-connector,](/connectors/arm/) om de juiste logische apps op de secundaire locatie te activeren. U kunt uw watchdog-app uitbreiden om deze logische activerings-app aan te roepen nadat een bepaald aantal fouten zich voordeed.
 
 <a name="collect-diagnostic-data"></a>
 
 ## <a name="collect-diagnostic-data"></a>Diagnostische gegevens verzamelen
 
-U kunt logboek registratie instellen voor uw logische app-uitvoeringen en de resulterende diagnostische gegevens verzenden naar Services als Azure Storage, Azure Event Hubs en Azure Log Analytics voor verdere verwerking en verwerking.
+U kunt logboekregistratie instellen voor uw logische app-runs en de resulterende diagnostische gegevens verzenden naar services zoals Azure Storage, Azure Event Hubs en Azure Log Analytics voor verdere verwerking en verwerking.
 
-* Als u deze gegevens wilt gebruiken met Azure Log Analytics, kunt u de gegevens beschikbaar maken voor zowel de primaire als de secundaire locatie door de **Diagnostische instellingen** van uw logische app in te stellen en de gegevens naar meerdere log Analytics-werk ruimten te verzenden. Zie [Azure monitor-logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic apps](../logic-apps/monitor-logic-apps-log-analytics.md)voor meer informatie.
+* Als u deze gegevens wilt gebruiken met Azure Log Analytics, kunt u de gegevens beschikbaar maken  voor zowel de primaire als de secundaire locatie door de diagnostische instellingen van uw logische app in te stellen en de gegevens naar meerdere Log Analytics-werkruimten te verzenden. Zie Set up Azure Monitor logs and collect diagnostics data for Azure Logic Apps (Logboeken instellen en diagnostische gegevens verzamelen voor [Azure Logic Apps) voor meer Azure Logic Apps.](../logic-apps/monitor-logic-apps-log-analytics.md)
 
-* Als u de gegevens naar Azure Storage of Azure Event Hubs wilt verzenden, kunt u de gegevens beschikbaar maken voor zowel de primaire als de secundaire locatie door geografische redundantie in te stellen. Raadpleeg deze artikelen voor meer informatie:<p>
+* Als u de gegevens naar Azure Storage of Azure Event Hubs wilt verzenden, kunt u de gegevens beschikbaar maken voor zowel de primaire als de secundaire locatie door geo-redundantie in te stellen. Raadpleeg deze artikelen voor meer informatie:<p>
 
-  * [Azure Blob Storage herstel na nood gevallen en failover van account](../storage/common/storage-disaster-recovery-guidance.md)
-  * [Azure Event Hubs geo-nood herstel](../event-hubs/event-hubs-geo-dr.md)
+  * [Azure Blob Storage en failover van account herstellen](../storage/common/storage-disaster-recovery-guidance.md)
+  * [Azure Event Hubs geo-noodherstel](../event-hubs/event-hubs-geo-dr.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Overzicht van tolerantie voor Azure](/azure/architecture/framework/resiliency/overview)
 * [Controlelijst voor tolerantie voor specifieke Azure-services](/azure/architecture/checklist/resiliency-per-service)
-* [Gegevens beheer voor tolerantie in azure](/azure/architecture/framework/resiliency/data-management)
-* [Back-ups en herstel na nood gevallen voor Azure-toepassingen](/azure/architecture/framework/resiliency/backup-and-recovery)
+* [Gegevensbeheer voor tolerantie in Azure](/azure/architecture/framework/resiliency/data-management)
+* [Back-up en herstel na noodherstel voor Azure-toepassingen](/azure/architecture/framework/resiliency/backup-and-recovery)
 * [Herstel na een serviceonderbreking in de gehele regio](/azure/architecture/resiliency/recovery-loss-azure-region)
-* [Micro soft Service Level Agreements (Sla's) voor Azure-Services](https://azure.microsoft.com/support/legal/sla/)
+* [Microsoft Service Level Agreements (SLA's) voor Azure-services](https://azure.microsoft.com/support/legal/sla/)

@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 01/07/2021
 ms.author: kumud
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 18e380345ef0caab52e9b1c537bada73e36d8b48
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 701df4353e8d2e36baf0496bd6944c4a95395414
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106063301"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107763251"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-cli"></a>Quickstart: Diagnose uitvoeren voor een probleem met netwerkverkeersfilters op een virtuele machine - Azure CLI
 
@@ -62,7 +62,7 @@ Als u de netwerkcommunicatie met Network Watcher wilt testen, moet u eerst een n
 
 ### <a name="enable-network-watcher"></a>Netwerk-watcher inschakelen
 
-Als u al een netwerk-watcher hebt ingeschakeld in de regio VS - oost, gaat u verder met [IP-stroomverificatie gebruiken](#use-ip-flow-verify). Gebruik de opdracht [az network watcher configure](/cli/azure/network/watcher#az-network-watcher-configure) om een netwerk-watcher te maken in de regio VS Oost:
+Als u al een netwerk-watcher hebt ingeschakeld in de regio VS - oost, gaat u verder met [IP-stroomverificatie gebruiken](#use-ip-flow-verify). Gebruik de opdracht [az network watcher configure](/cli/azure/network/watcher#az_network_watcher_configure) om een netwerk-watcher te maken in de regio VS Oost:
 
 ```azurecli-interactive
 az network watcher configure \
@@ -73,7 +73,7 @@ az network watcher configure \
 
 ### <a name="use-ip-flow-verify"></a>IP-stroomverificatie gebruiken
 
-Als u een VM maakt, wordt netwerkverkeer van en naar de VM standaard toegestaan en geweigerd in Azure. U kunt de standaardinstellingen in Azure later negeren en extra typen verkeer toestaan en weigeren. Gebruik de opdracht [az network watcher test-ip-flow](/cli/azure/network/watcher#az-network-watcher-test-ip-flow) om te testen of verkeer naar verschillende bestemmingen en vanaf een bron-IP-adres is toegestaan of wordt geweigerd.
+Als u een VM maakt, wordt netwerkverkeer van en naar de VM standaard toegestaan en geweigerd in Azure. U kunt de standaardinstellingen in Azure later negeren en extra typen verkeer toestaan en weigeren. Gebruik de opdracht [az network watcher test-ip-flow](/cli/azure/network/watcher#az_network_watcher_test_ip_flow) om te testen of verkeer naar verschillende bestemmingen en vanaf een bron-IP-adres is toegestaan of wordt geweigerd.
 
 Uitgaande communicatie van de VM naar een van de IP-adressen testen voor www.bing.com:
 
@@ -125,7 +125,7 @@ Uit het resultaat blijkt dat toegang wordt geweigerd vanwege een beveiligingsreg
 
 ## <a name="view-details-of-a-security-rule"></a>Details van een beveiligingsregel weergeven
 
-Als u wilt vaststellen waarom communicatie is toegestaan of wordt geblokkeerd op basis van de regels in [IP-stroomverificatie gebruiken](#use-ip-flow-verify), bekijkt u de effectieve beveiligingsregels voor de netwerkinterface via de opdracht [az network nic list-effective-nsg](/cli/azure/network/nic#az-network-nic-list-effective-nsg):
+Als u wilt vaststellen waarom communicatie is toegestaan of wordt geblokkeerd op basis van de regels in [IP-stroomverificatie gebruiken](#use-ip-flow-verify), bekijkt u de effectieve beveiligingsregels voor de netwerkinterface via de opdracht [az network nic list-effective-nsg](/cli/azure/network/nic#az_network_nic_list_effective_nsg):
 
 ```azurecli-interactive
 az network nic list-effective-nsg \

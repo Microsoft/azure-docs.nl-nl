@@ -9,12 +9,12 @@ ms.subservice: nat
 ms.topic: tutorial
 ms.date: 03/10/2021
 ms.custom: template-tutorial, devx-track-azurecli
-ms.openlocfilehash: d312702f441cfe2ad94e347cadcdfc88d4cc2a72
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 60436b8d4a0f338f4ece59ad4cd11c14c9e4c352
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479318"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107762637"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-the-azure-cli"></a>Zelfstudie: Een NAT-gateway maken met de Azure CLI
 
@@ -92,7 +92,7 @@ Maak een virtueel netwerk met de **naam myVnet** met een subnet met de naam **my
 
 Maak een Azure Bastion met de **naam myBastionHost voor** toegang tot de virtuele machine. 
 
-Gebruik [az network vnet subnet create om](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) een nieuw subnet Azure Bastion maken.
+Gebruik [az network vnet subnet create om](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create) een nieuw subnet Azure Bastion maken.
 
 ```azurecli-interactive
 az network vnet subnet create \
@@ -111,7 +111,7 @@ az network public-ip create \
     --sku Standard
 ```
 
-Gebruik [az network bastion create om](/cli/azure/network/bastion#az-network-bastion-create) de bastionhost te maken. 
+Gebruik [az network bastion create om](/cli/azure/network/bastion#az_network_bastion_create) de bastionhost te maken. 
 
 ```azurecli-interactive
 az network bastion create \
@@ -141,7 +141,7 @@ Al het uitgaande verkeer naar Internetdoelen maakt nu gebruik van de NAT-gateway
 
 In deze sectie maakt u een virtuele machine om de NAT-gateway te testen om het openbare IP-adres van de uitgaande verbinding te verifiëren.
 
-Maak de virtuele machine met [az vm create](/cli/azure/vm#az-vm-create).
+Maak de virtuele machine met [az vm create](/cli/azure/vm#az_vm_create).
 
 ```azurecli-interactive
 az vm create \

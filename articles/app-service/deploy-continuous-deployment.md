@@ -1,125 +1,125 @@
 ---
 title: Continue implementatie inschakelen
-description: Meer informatie over het inschakelen van CI/CD-Azure App Service van GitHub, BitBucket, Azure opslag plaatsen of een andere opslag plaatsen. Selecteer de build-pijp lijn die aan uw behoeften voldoet.
+description: Meer informatie over het inschakelen van CI/CD Azure App Service vanuit GitHub, BitBucket, Azure-opslagplaatsen of andere opslagplaatsen. Selecteer de build-pijplijn die aan uw behoeften voldoet.
 ms.assetid: 6adb5c84-6cf3-424e-a336-c554f23b4000
 ms.topic: article
 ms.date: 03/12/2021
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 52f0db739cff9614dc4e9f5ef71d582e926fc65a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 633d62fc69c516b482d5749a07052337dc71f567
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103470265"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789479"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Continue implementatie naar Azure App Service
 
-[Azure app service](overview.md) maakt continue implementatie mogelijk van [github](https://help.github.com/articles/create-a-repo)-, [BitBucket](https://confluence.atlassian.com/get-started-with-bitbucket/create-a-repository-861178559.html)-en [Azure opslag plaatsen](/azure/devops/repos/git/creatingrepo) -opslag plaatsen door de nieuwste updates op te halen.
+[Azure App Service](overview.md) maakt continue implementatie vanuit [GitHub-](https://help.github.com/articles/create-a-repo), [BitBucket-](https://confluence.atlassian.com/get-started-with-bitbucket/create-a-repository-861178559.html)en [Azure-opslagplaatsen](/azure/devops/repos/git/creatingrepo) mogelijk door de meest recente updates binnen te halen.
 
 > [!NOTE]
-> De pagina **Development Center (klassiek)** in de Azure Portal, die de oude implementatie-ervaring is, wordt in maart 2021 afgeschaft. Deze wijziging is niet van invloed op bestaande implementatie-instellingen in uw app en u kunt de implementatie van apps blijven beheren op de pagina **implementatie centrum** .
+> De **pagina Development Center (klassiek)** in de Azure Portal, de oude implementatie-ervaring, wordt in maart 2021 afgeschaft. Deze wijziging heeft geen invloed op bestaande implementatie-instellingen in uw app en u kunt app-implementatie blijven beheren op de **pagina Implementatiecentrum.**
 
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
-## <a name="configure-deployment-source"></a>Implementatie bron configureren
+## <a name="configure-deployment-source"></a>Implementatiebron configureren
 
-1. Navigeer in het [Azure Portal](https://portal.azure.com)naar de beheer pagina voor uw app service-app.
+1. [Navigeer in Azure Portal](https://portal.azure.com)naar de beheerpagina voor uw App Service app.
 
-1. Klik in het menu links op instellingen voor het **implementatie centrum**  >  . 
+1. Klik in het linkermenu op **Instellingen voor**  >  **implementatiecentrum.** 
 
-1. Selecteer in **bron** een van de opties voor CI/cd.
+1. Selecteer **in Bron** een van de CI/CD-opties.
 
-    ![Laat zien hoe u implementatie bron kiest in implementatie centrum voor Azure App Service](media/app-service-continuous-deployment/choose-source.png)
+    ![Laat zien hoe u implementatiebron kiest in Deployment Center voor Azure App Service](media/app-service-continuous-deployment/choose-source.png)
 
 Kies het tabblad dat overeenkomt met uw selectie voor de stappen.
 
 # <a name="github"></a>[GitHub](#tab/github)
 
-4. [Github-acties](#how-the-github-actions-build-provider-works) is de standaard provider voor builds. Als u deze wilt wijzigen, klikt u op **Change provider**  >  **app service build service** (kudu) > **OK**.
+4. [GitHub Actions](#how-the-github-actions-build-provider-works) is de standaard build-provider. Als u dit wilt wijzigen, klikt u **op Provider** wijzigen App Service  >  **Build Service** (Kudu) > **OK.**
 
     > [!NOTE]
-    > Als u Azure-pijp lijnen wilt gebruiken als de build-provider voor uw App Service-app, moet u deze niet configureren in App Service. Configureer in plaats daarvan de CI/CD rechtstreeks vanuit Azure-pijp lijnen. Met de optie voor **Azure-pijp lijnen** wordt u alleen naar de juiste richting verwezen.
+    > Als u Azure Pipelines wilt gebruiken als de buildprovider voor uw App Service app, moet u deze niet configureren in App Service. In plaats daarvan configureert u CI/CD rechtstreeks vanuit Azure Pipelines. De **optie Azure Pipelines** wijst u in de juiste richting.
 
-1. Als u voor de eerste keer implementeert vanaf GitHub, klikt u op **autoriseren** en volgt u de autorisatie prompts. Als u wilt implementeren vanuit de opslag plaats van een andere gebruiker, klikt u op **account wijzigen**.
+1. Als u voor het eerst implementeert vanuit GitHub, klikt u op **Autorisatie** en volgt u de autorisatieprompts. Als u wilt implementeren vanuit een andere gebruikersopslagplaats, klikt u op **Account wijzigen.**
 
-1. Wanneer u uw Azure-account met GitHub hebt geautoriseerd, selecteert u de **organisatie**, de **opslag plaats** en de **vertakking** voor het configureren van CI/cd voor.
+1. Nadat u uw Azure-account bij GitHub hebt geautoriseerd, selecteert u de **Organisatie,** **Opslagplaats** en **Vertakking** om CI/CD voor te configureren.
 
-1. Wanneer GitHub acties de gekozen build-provider is, kunt u het gewenste werk stroom bestand selecteren met de vervolg keuzelijst **runtime stack** en **versie** . Azure voert dit werk stroom bestand door in de geselecteerde GitHub-opslag plaats voor het afhandelen van het maken en implementeren van taken. Klik op **voor beeld van bestand** om het bestand te bekijken voordat u de wijzigingen opslaat.
+1. Wanneer GitHub Actions de gekozen buildprovider is, kunt u het werkstroombestand selecteren dat u wilt gebruiken in de vervolgkeuzekeuzes **Runtimestack** **en** Versie. Azure legt dit werkstroombestand vast in de geselecteerde GitHub-opslagplaats om build- en implementatietaken te verwerken. Als u het bestand wilt zien voordat u de wijzigingen opgeslagen, klikt u op **Voorbeeldbestand**.
 
     > [!NOTE]
-    > App Service detecteert de [taal stack-instelling](configure-common.md#configure-language-stack-settings) van uw app en selecteert de meest geschikte werk stroom sjabloon. Als u een andere sjabloon kiest, kan deze een app implementeren die niet goed wordt uitgevoerd. Zie [How the github actions build provider Works](#how-the-github-actions-build-provider-works)(Engelstalig) voor meer informatie.
+    > App Service detecteert de [taalstackinstelling](configure-common.md#configure-language-stack-settings) van uw app en selecteert de meest geschikte werkstroomsjabloon. Als u een andere sjabloon kiest, wordt er mogelijk een app geïmplementeerd die niet goed wordt uitgevoerd. Zie How [the GitHub Actions build provider works (Hoe GitHub Actions build-provider werkt) voor meer informatie.](#how-the-github-actions-build-provider-works)
 
 1. Klik op **Opslaan**.
    
-    Nieuwe door voeringen in de geselecteerde opslag plaats en vertakking worden nu doorlopend geïmplementeerd in uw App Service-app. U kunt de door voeringen en implementaties volgen op het tabblad **Logboeken** .
+    Nieuwe commits in de geselecteerde opslagplaats en vertakking worden nu continu geïmplementeerd in uw App Service app. U kunt de door commits en implementaties volgen op het **tabblad Logboeken.**
 
 # <a name="bitbucket"></a>[BitBucket](#tab/bitbucket)
 
-De BitBucket-integratie maakt gebruik van de App Service Build Services (kudu) voor het bouwen van Automation.
+De BitBucket-integratie maakt gebruik van de App Service Build Services (Kudu) voor buildautomatisering.
 
-4. Als u voor de eerste keer implementeert vanaf BitBucket, klikt u op **autoriseren** en volgt u de autorisatie prompts. Als u wilt implementeren vanuit de opslag plaats van een andere gebruiker, klikt u op **account wijzigen**.
+4. Als u voor het eerst implementeert vanuit BitBucket, klikt u op **Autorisatie** en volgt u de autorisatieprompts. Als u wilt implementeren vanuit een andere gebruikersopslagplaats, klikt u op **Account wijzigen.**
 
-1. Selecteer voor bitbucket het bitbucket- **team**, de **opslag plaats** en de **vertakking** die u continu wilt implementeren.
+1. Voor Bitbucket selecteert u het Bitbucket-team, **de** opslagplaats en de **vertakking** die u continu wilt implementeren. 
 
 1. Klik op **Opslaan**.
    
-    Nieuwe door voeringen in de geselecteerde opslag plaats en vertakking worden nu doorlopend geïmplementeerd in uw App Service-app. U kunt de door voeringen en implementaties volgen op het tabblad **Logboeken** .
+    Nieuwe commits in de geselecteerde opslagplaats en vertakking worden nu continu geïmplementeerd in uw App Service app. U kunt de door commits en implementaties volgen op het **tabblad Logboeken.**
    
 # <a name="local-git"></a>[Lokale Git](#tab/local)
 
-Zie [lokale Git-implementatie naar Azure app service](deploy-local-git.md).
+Zie [Local Git deployment to Azure App Service](deploy-local-git.md).
 
 # <a name="azure-repos"></a>[Azure-opslagplaatsen](#tab/repos)
 
 > [!NOTE]
-> Azure opslag plaatsen als implementatie bron is ondersteuning voor Windows-apps.
+> Azure-repos als implementatiebron biedt ondersteuning voor Windows-apps.
 >
 
-4. App Service build-service (kudu) is de standaard provider voor build.
+4. App Service Build Service (Kudu) is de standaard buildprovider.
 
     > [!NOTE]
-    > Als u Azure-pijp lijnen wilt gebruiken als de build-provider voor uw App Service-app, moet u deze niet configureren in App Service. Configureer in plaats daarvan de CI/CD rechtstreeks vanuit Azure-pijp lijnen. Met de optie voor **Azure-pijp lijnen** wordt u alleen naar de juiste richting verwezen.
+    > Als u Azure Pipelines wilt gebruiken als de buildprovider voor uw App Service app, moet u deze niet configureren in App Service. In plaats daarvan configureert u CI/CD rechtstreeks vanuit Azure Pipelines. De **optie Azure Pipelines** wijst u in de juiste richting.
 
-1. Selecteer de **Azure DevOps-organisatie**, het **project**, de **opslag plaats** en de **vertakking** die u continu wilt implementeren. 
+1. Selecteer de **Azure DevOps-organisatie,** **Project,** **Opslagplaats** en **Vertakking** die u continu wilt implementeren. 
 
-    Als uw DevOps-organisatie niet wordt weer gegeven, is deze nog niet gekoppeld aan uw Azure-abonnement. Zie [een Azure-service verbinding maken](/azure/devops/pipelines/library/connect-to-azure)voor meer informatie.
+    Als uw DevOps-organisatie niet wordt vermeld, is deze nog niet gekoppeld aan uw Azure-abonnement. Zie Een [Azure-serviceverbinding](/azure/devops/pipelines/library/connect-to-azure)maken voor meer informatie.
 
 -----
 
 ## <a name="disable-continuous-deployment"></a>Continue implementatie uitschakelen
 
-1. Navigeer in het [Azure Portal](https://portal.azure.com)naar de beheer pagina voor uw app service-app.
+1. [Navigeer in Azure Portal](https://portal.azure.com)naar de beheerpagina voor uw App Service app.
 
-1. Klik in het linkermenu op instellingen van het **implementatie centrum** om de  >    >  **verbinding te verbreken**. 
+1. Klik in het menu links op **Instellingen voor implementatiecentrum**  >  **Verbreking** van  >  **verbinding.** 
 
-    ![Laat zien hoe u de synchronisatie van uw Cloud mappen verbreekt met uw App Service-app in de Azure Portal.](media/app-service-continuous-deployment/disable.png)
+    ![Laat zien hoe u de synchronisatie van uw cloudmap met uw App Service-app in de Azure Portal.](media/app-service-continuous-deployment/disable.png)
 
-1. Het werk stroom bestand met GitHub-acties blijft standaard behouden in uw opslag plaats, maar de implementatie blijft geactiveerd voor uw app. Selecteer **werk stroom bestand verwijderen** om het uit de opslag plaats te verwijderen.
+1. Standaard blijft het GitHub Actions werkstroombestand behouden in uw opslagplaats, maar blijft de implementatie naar uw app worden geactiveerd. Als u het wilt verwijderen uit uw opslagplaats, selecteert **u Werkstroombestand verwijderen.**
 
 1. Klik op **OK**.
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
-## <a name="how-the-github-actions-build-provider-works"></a>Hoe de GitHub acties bouwen provider werkt
+## <a name="how-the-github-actions-build-provider-works"></a>Hoe de GitHub Actions buildprovider werkt
 
-De GitHub-service voor het maken van acties is een optie voor [CI/cd van github](#configure-deployment-source)en voert het volgende uit om CI/cd in te stellen:
+De GitHub Actions buildprovider is een optie voor [CI/CD van GitHub](#configure-deployment-source)en doet het volgende om CI/CD in te stellen:
 
-- Hiermee wordt een GitHub-werk stroom bestand in uw GitHub-opslag plaats gedeponeerd om taken voor het maken en implementeren van App Service te verwerken.
-- Hiermee voegt u het publicatie profiel voor uw app als een GitHub-geheim toe. Het werk stroom bestand gebruikt dit geheim om te verifiëren met App Service.
-- Hiermee wordt informatie vastgelegd uit de [werk stroom uitvoer logboeken](https://docs.github.com/actions/managing-workflow-runs/using-workflow-run-logs) en wordt deze weer gegeven op het tabblad **Logboeken** in het **implementatie centrum** van uw app.
+- Zet een werkstroombestand GitHub Actions in uw GitHub-opslagplaats om build- en implementatietaken naar uw App Service.
+- Voegt het publicatieprofiel voor uw app toe als een GitHub-geheim. Het werkstroombestand gebruikt dit geheim om te verifiëren met App Service.
+- Legt informatie vast uit de [werkstroomrunlogboeken](https://docs.github.com/actions/managing-workflow-runs/using-workflow-run-logs) en geeft deze weer op **het tabblad Logboeken** in het **Implementatiecentrum van uw app.**
 
-U kunt de GitHub-service voor het maken van acties op de volgende manieren aanpassen:
+U kunt de GitHub Actions build-provider op de volgende manieren aanpassen:
 
-- Pas het werk stroom bestand aan nadat dit is gegenereerd in uw GitHub-opslag plaats. Zie [werk stroom syntaxis voor github-acties](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions)voor meer informatie. Zorg er gewoon voor dat de werk stroom wordt geïmplementeerd op App Service met de actie [Azure/webapps-Deploy](https://github.com/Azure/webapps-deploy) .
-- Als de geselecteerde vertakking is beveiligd, kunt u nog steeds een voor beeld van het werk stroom bestand weer geven zonder de configuratie op te slaan en vervolgens hand matig toevoegen aan de opslag plaats. Met deze methode beschikt u niet over de integratie van het logboek met de Azure Portal.
-- In plaats van een publicatie profiel implementeert u met behulp van een [Service-Principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) in azure Active Directory.
+- Pas het werkstroombestand aan nadat het is gegenereerd in uw GitHub-opslagplaats. Zie Werkstroomsyntaxis [voor meer GitHub Actions.](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions) Zorg ervoor dat de werkstroom wordt geïmplementeerd in App Service met de [actie azure/webapps-deploy.](https://github.com/Azure/webapps-deploy)
+- Als de geselecteerde vertakking is beveiligd, kunt u nog steeds een voorbeeld van het werkstroombestand bekijken zonder de configuratie op te slaan. Voeg het vervolgens handmatig toe aan uw opslagplaats. Deze methode geeft u geen logboekintegratie met de Azure Portal.
+- Implementeer in plaats van een publicatieprofiel met behulp van [een service-principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) in Azure Active Directory.
 
-#### <a name="authenticate-with-a-service-principal"></a>Verifiëren met een Service-Principal
+#### <a name="authenticate-with-a-service-principal"></a>Verifiëren met een service-principal
 
-Deze optionele configuratie vervangt de standaard verificatie met publicatie profielen in het gegenereerde werk stroom bestand.
+Deze optionele configuratie vervangt de standaardverificatie door publicatieprofielen in het gegenereerde werkstroombestand.
 
-1. Genereer een service-principal met de opdracht [AZ AD SP create-for-RBAC](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure cli](/cli/azure/). Vervang in het volgende voor beeld *\<subscription-id>* , *\<group-name>* en door *\<app-name>* uw eigen waarden:
+1. Genereer een service-principal met de [opdracht az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) in de Azure [CLI.](/cli/azure/) Vervang in het volgende voorbeeld *\<subscription-id>* , en door uw eigen *\<group-name>* *\<app-name>* waarden:
 
     ```azurecli-interactive
     az ad sp create-for-rbac --name "myAppDeployAuth" --role contributor \
@@ -128,15 +128,15 @@ Deze optionele configuratie vervangt de standaard verificatie met publicatie pro
     ```
     
     > [!IMPORTANT]
-    > Verleen de minimale vereiste toegang voor de service-principal voor beveiliging. Het bereik in het vorige voor beeld is beperkt tot de specifieke App Service-app en niet de hele resource groep.
+    > Voor beveiliging verleent u de minimaal vereiste toegang tot de service-principal. Het bereik in het vorige voorbeeld is beperkt tot de specifieke App Service app en niet de hele resourcegroep.
     
-1. Sla de volledige JSON-uitvoer op voor de volgende stap, inclusief het hoogste niveau `{}` .
+1. Sla de volledige JSON-uitvoer op voor de volgende stap, met inbegrip van het hoogste `{}` niveau.
 
-1. In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
+1. Blader [in GitHub](https://github.com/)door uw opslagplaats, selecteer **Instellingen > Geheimen > Een nieuw geheim toevoegen.**
 
 1. Plak de volledige JSON-uitvoer van de Azure CLI-opdracht in het waardeveld van het geheim. Geef het geheim een naam zoals `AZURE_CREDENTIALS` .
 
-1. In het werk stroom bestand dat is gegenereerd door het **implementatie centrum**, wijzigt u de `azure/webapps-deploy` stap met code zoals in het volgende voor beeld (dat is gewijzigd vanuit een Node.js werk stroom bestand):
+1. Wijzig in het werkstroombestand dat wordt gegenereerd door het **Implementatiecentrum** de stap met code zoals in het volgende voorbeeld (gewijzigd op basis van `azure/webapps-deploy` een Node.js werkstroombestand):
 
     ```yaml
     - name: Sign in to Azure 
@@ -156,13 +156,13 @@ Deze optionele configuratie vervangt de standaard verificatie met publicatie pro
         az logout
     ```
     
-## <a name="deploy-from-other-repositories"></a>Implementeren vanuit andere opslag plaatsen
+## <a name="deploy-from-other-repositories"></a>Implementeren vanuit andere opslagplaatsen
 
-Voor Windows-apps kunt u een continue implementatie hand matig configureren vanuit een Git-of mercurial-opslag plaats in de cloud die niet rechtstreeks wordt ondersteund door de portal, zoals [GitLab](https://gitlab.com/). U doet dit door externe Git te kiezen in de vervolg keuzelijst **bron** . Zie [continue implementatie instellen met behulp van hand matige stappen](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps)voor meer informatie.
+Voor Windows-apps kunt u handmatig continue implementatie configureren vanuit een Git- of Mercurial-opslagplaats in de cloud die niet rechtstreeks door de portal wordt [ondersteund, zoals GitLab.](https://gitlab.com/) U doet dit door Externe Git te kiezen in de **vervolgkeuzegids** Bron. Zie Continue implementatie instellen met [behulp van handmatige stappen voor meer informatie.](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps)
 
 ## <a name="more-resources"></a>Meer bronnen
 
-* [Implementeren van Azure-pijp lijnen naar Azure-app Services](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps)
-* [Veelvoorkomende problemen met doorlopende implementatie onderzoeken](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
+* [Implementeren vanuit Azure Pipelines naar Azure-app Services](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps)
+* [Veelvoorkomende problemen met continue implementatie onderzoeken](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
 * [Azure PowerShell gebruiken](/powershell/azure/)
 * [Project Kudu](https://github.com/projectkudu/kudu/wiki)

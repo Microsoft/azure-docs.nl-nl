@@ -5,12 +5,12 @@ author: MSEvanhi
 ms.topic: tutorial
 ms.date: 06/24/2020
 ms.author: evanhi
-ms.openlocfilehash: 23ae69f49d37a210dd9fa1bfeedeca6c1b461e20
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 721fe31f514cb948c93dc2a779a92ef3b2775ef9
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94888858"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779233"
 ---
 # <a name="quickstart-create-a-custom-provider-and-deploy-custom-resources"></a>Quickstart: Een aangepaste provider maken en aangepaste resources implementeren
 
@@ -27,7 +27,7 @@ Bereid uw omgeving voor op Azure CLI.
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-Azure CLI-voorbeelden gebruiken `az rest` voor `REST`-aanvragen. Ga voor meer informatie naar [az rest](/cli/azure/reference-index#az-rest).
+Azure CLI-voorbeelden gebruiken `az rest` voor `REST`-aanvragen. Ga voor meer informatie naar [az rest](/cli/azure/reference-index#az_rest).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -52,7 +52,7 @@ Gebruik Azure CLI, PowerShell of de Azure-portal als u de aangepaste provider wi
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-In dit voorbeeld wordt u gevraagd om een resourcegroep, locatie en naam van de functie-app van de provider in te voeren. De namen worden opgeslagen in variabelen die worden gebruikt in andere opdrachten. Met de opdrachten [az group create](/cli/azure/group#az-group-create) en [az deployment group create](/cli/azure/deployment/group#az-deployment-group-create) implementeert u de resources.
+In dit voorbeeld wordt u gevraagd om een resourcegroep, locatie en naam van de functie-app van de provider in te voeren. De namen worden opgeslagen in variabelen die worden gebruikt in andere opdrachten. Met de opdrachten [az group create](/cli/azure/group#az_group_create) en [az deployment group create](/cli/azure/deployment/group#az_deployment_group_create) implementeert u de resources.
 
 ```azurecli-interactive
 read -p "Enter a resource group name:" rgName &&

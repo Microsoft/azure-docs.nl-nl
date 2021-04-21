@@ -4,18 +4,18 @@ description: Meer informatie over het gebruik van beheerde identiteiten in Azure
 services: container-service
 ms.topic: article
 ms.date: 12/16/2020
-ms.openlocfilehash: 58813504c5de057e06433b2e955931b37560d825
-ms.sourcegitcommit: 950e98d5b3e9984b884673e59e0d2c9aaeabb5bb
+ms.openlocfilehash: 59da03985f0bc9248fdb498d7b0222158029e0d8
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2021
-ms.locfileid: "107600655"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107777667"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in Azure Kubernetes Service
 
-Momenteel is voor een Azure Kubernetes Service-cluster (AKS) (met name de Kubernetes-cloudprovider) een identiteit vereist voor het maken van extra resources, zoals load balancers en beheerde schijven in Azure. Deze identiteit kan een *beheerde* identiteit of een *service-principal zijn.* Als u een [service-principal gebruikt,](kubernetes-service-principal.md)moet u ervoor zorgen dat er een wordt gemaakt of dat AKS er namens u een maakt. Als u een beheerde identiteit gebruikt, wordt deze automatisch voor u gemaakt door AKS. Clusters die service-principals gebruiken, bereiken uiteindelijk een status waarin de service-principal moet worden vernieuwd om het cluster te laten werken. Het beheren van service-principals voegt complexiteit toe. Daarom is het eenvoudiger om beheerde identiteiten te gebruiken. Dezelfde machtigingsvereisten gelden voor zowel service-principals als beheerde identiteiten.
+Momenteel is voor een Azure Kubernetes Service -cluster (AKS) (met name de Kubernetes-cloudprovider) een identiteit vereist voor het maken van extra resources, zoals load balancers en beheerde schijven in Azure. Deze identiteit kan een *beheerde* identiteit of een *service-principal zijn.* Als u een [service-principal gebruikt,](kubernetes-service-principal.md)moet u een service-principal verstrekken of moet AKS er namens u een maken. Als u een beheerde identiteit gebruikt, wordt deze automatisch voor u gemaakt door AKS. Clusters die gebruikmaken van service-principals bereiken uiteindelijk een status waarin de service-principal moet worden vernieuwd om het cluster te laten werken. Het beheren van service-principals voegt complexiteit toe. Daarom is het eenvoudiger om beheerde identiteiten te gebruiken. Dezelfde machtigingsvereisten gelden voor zowel service-principals als beheerde identiteiten.
 
-*Beheerde identiteiten* zijn in feite een wrapper rond service-principals en maken het beheer eenvoudiger. Roulatie van referenties voor MI vindt automatisch elke 46 dagen plaats volgens Azure Active Directory standaardinstelling. AKS maakt gebruik van door het systeem toegewezen en door de gebruiker toegewezen beheerde identiteitstypen. Deze identiteiten zijn momenteel onveranderbaar. Lees meer over beheerde [identiteiten voor Azure-resources voor meer informatie.](../active-directory/managed-identities-azure-resources/overview.md)
+*Beheerde identiteiten* zijn in feite een wrapper rond service-principals en maken het beheer eenvoudiger. Referentierotatie voor MI vindt automatisch elke 46 dagen plaats volgens Azure Active Directory standaard. AKS maakt gebruik van door het systeem toegewezen en door de gebruiker toegewezen beheerde identiteitstypen. Deze identiteiten zijn momenteel onveranderbaar. Lees meer over beheerde [identiteiten voor Azure-resources voor meer informatie.](../active-directory/managed-identities-azure-resources/overview.md)
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -26,8 +26,8 @@ U moet de volgende resource hebben geïnstalleerd:
 ## <a name="limitations"></a>Beperkingen
 
 * Tenants verplaatsen/migreren van clusters met beheerde identiteit wordt niet ondersteund.
-* Als het cluster is ingeschakeld, wijzigen Node-Managed Identity(NMI)-pods de iptables van de knooppunten om aanroepen naar het `aad-pod-identity` Azure Instance Metadata-eindpunt te onderscheppen. Deze configuratie betekent dat elke aanvraag bij het eindpunt voor metagegevens wordt onderschept door NMI, zelfs als de pod geen `aad-pod-identity` gebruikt. AzurePodIdentityException CRD kan worden geconfigureerd om te informeren dat aanvragen naar het eindpunt voor metagegevens die afkomstig zijn van een pod die overeenkomt met labels die zijn gedefinieerd in CRD, geproxied moeten worden zonder verwerking `aad-pod-identity` in NMI. De systeempods met `kubernetes.azure.com/managedby: aks` een label in de _naamruimte kube-system_ moeten worden uitgesloten door de `aad-pod-identity` CRD AzurePodIdentityException te configureren. Zie [Aad-pod-identity uitschakelen](https://azure.github.io/aad-pod-identity/docs/configure/application_exception)voor een specifieke pod of toepassing voor meer informatie.
-  Als u een uitzondering wilt configureren, installeert [u de YAML met de microfoon-uitzondering](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
+* Als het cluster is ingeschakeld, wijzigen Node-Managed Identity-pods (NMI) de iptables van de knooppunten om aanroepen naar het `aad-pod-identity` Azure Instance Metadata-eindpunt te onderscheppen. Deze configuratie betekent dat elke aanvraag bij het eindpunt voor metagegevens wordt onderschept door NMI, zelfs als de pod geen `aad-pod-identity` gebruikt. AzurePodIdentityException CRD kan worden geconfigureerd om te informeren dat aanvragen naar het eindpunt metagegevens afkomstig van een pod die overeenkomt met labels die zijn gedefinieerd in CRD moeten worden geproxied zonder verwerking `aad-pod-identity` in NMI. De systeempods met `kubernetes.azure.com/managedby: aks` een label in de _kube-system-naamruimte_ moeten worden uitgesloten in door de `aad-pod-identity` CRD AzurePodIdentityException te configureren. Zie [Aad-pod-identity](https://azure.github.io/aad-pod-identity/docs/configure/application_exception)uitschakelen voor een specifieke pod of toepassing voor meer informatie.
+  Als u een uitzondering wilt configureren, installeert [u de YAML mic-exception](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
 
 ## <a name="summary-of-managed-identities"></a>Samenvatting van beheerde identiteiten
 
@@ -35,7 +35,7 @@ AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde servic
 
 | Identiteit                       | Name    | Gebruiksvoorbeeld | Standaardmachtigingen | Bring Your Own Identity
 |----------------------------|-----------|----------|
-| Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-onderdelen van het besturingsvlak voor het beheren van clusterresources, waaronder load balancers voor binnendijen en door AKS beheerde openbare IP's, en bewerkingen voor automatische schaalverschalen van clusters | Rol inzender voor knooppuntresourcegroep | Ondersteund
+| Besturingsvlak | niet zichtbaar | Wordt gebruikt door onderdelen van het AKS-besturingsvlak voor het beheren van clusterresources, waaronder load balancers voor ingress en door AKS beheerde openbare IP's en automatische schaalbewerkingen voor clusters | Rol inzender voor knooppuntresourcegroep | Ondersteund
 | Kubelet | AKS-clusternaam-agentpool | Verificatie met Azure Container Registry (ACR) | NA (voor kubernetes v1.15+) | Momenteel niet ondersteund
 | Add-on | AzureNPM | Er is geen identiteit vereist | NA | No
 | Add-on | AzureCNI-netwerkbewaking | Er is geen identiteit vereist | NA | No
@@ -43,9 +43,9 @@ AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde servic
 | Add-on | azure-policy | Er is geen identiteit vereist | NA | No
 | Add-on | Calico | Er is geen identiteit vereist | NA | No
 | Add-on | Dashboard | Er is geen identiteit vereist | NA | No
-| Add-on | HTTPApplicationRouting | De vereiste netwerkbronnen beheren | Lezersrol voor knooppuntresourcegroep, inzendersrol voor DNS-zone | No
-| Add-on | Toepassingsgateway voor toegangspoort | De vereiste netwerkbronnen beheren| De rol Inzender voor de knooppuntresourcegroep | No
-| Add-on | omsagent | Wordt gebruikt voor het verzenden van metrische AKS-gegevens naar Azure Monitor | De rol Uitgever van metrische gegevens bewaken | No
+| Add-on | HTTPApplicationRouting | Beheert de vereiste netwerkbronnen | Lezersrol voor knooppuntresourcegroep, inzendersrol voor DNS-zone | No
+| Add-on | Toepassingsgateway voor toegangspoort | Beheert de vereiste netwerkbronnen| De rol Inzender voor de knooppuntresourcegroep | No
+| Add-on | omsagent | Wordt gebruikt om metrische AKS-gegevens naar de Azure Monitor | De rol Uitgever van metrische gegevens bewaken | No
 | Add-on | Virtual-Node (ACIConnector) | Beheert de vereiste netwerkbronnen voor Azure Container Instances (ACI) | De rol Inzender voor de knooppuntresourcegroep | No
 | OSS-project | aad-pod-identity | Hiermee kunnen toepassingen veilig toegang krijgen tot cloudbronnen met Azure Active Directory (AAD) | NA | Stappen voor het verlenen van machtigingen op https://github.com/Azure/aad-pod-identity#role-assignment .
 
@@ -66,7 +66,7 @@ Maak vervolgens een AKS-cluster:
 az aks create -g myResourceGroup -n myManagedCluster --enable-managed-identity
 ```
 
-Zodra het cluster is gemaakt, kunt u de workloads van uw toepassing implementeren in het nieuwe cluster en daarmee werken, net zoals u hebt gedaan met AKS-clusters op basis van service-principals.
+Zodra het cluster is gemaakt, kunt u de werkbelastingen van uw toepassing implementeren in het nieuwe cluster en er op dezelfde manier mee werken als met AKS-clusters op basis van service-principals.
 
 Haal ten slotte referenties op voor toegang tot het cluster:
 
@@ -193,7 +193,7 @@ az aks create \
     --assign-identity <identity-id> \
 ```
 
-Het maken van een cluster met uw eigen beheerde identiteiten bevat deze profielgegevens voor userAssignedIdentities:
+Een geslaagde cluster maken met behulp van uw eigen beheerde identiteiten bevat deze profielgegevens voor userAssignedIdentities:
 
 ```output
  "identity": {
@@ -214,5 +214,5 @@ Het maken van een cluster met uw eigen beheerde identiteiten bevat deze profielg
 
 <!-- LINKS - external -->
 [aks-arm-template]: /azure/templates/microsoft.containerservice/managedclusters
-[az-identity-create]: /cli/azure/identity#az-identity-create
-[az-identity-list]: /cli/azure/identity#az-identity-list
+[az-identity-create]: /cli/azure/identity#az_identity_create
+[az-identity-list]: /cli/azure/identity#az_identity_list

@@ -1,53 +1,53 @@
 ---
-title: Multi-VM-omgevingen en PaaS-resources maken met sjablonen
-description: Meer informatie over het maken van omgevingen met meerdere VM'S en PaaS resources in Azure DevTest Labs vanuit een Azure Resource Manager sjabloon
+title: Omgevingen met meerdere VM's en PaaS-resources maken met sjablonen
+description: Meer informatie over het maken van multi-VM-omgevingen en PaaS-resources in Azure DevTest Labs van een Azure Resource Manager sjabloon
 ms.topic: article
 ms.date: 08/12/2020
-ms.openlocfilehash: 97659d4ab95fdbe75460161d0ceed71a1cb5cf82
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f285acffe642a85fa27792ee51ea67a57f6d35a5
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88182405"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107790109"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Multi-VM-omgevingen en PaaS-resources maken met Azure Resource Manager-sjablonen
 
-Met Azure DevTest Labs omgevingen kunnen gebruikers eenvoudig complexe infra structuren implementeren op een consistente manier binnen de verfijning van het lab. U kunt [Azure Resource Manager sjablonen](../azure-resource-manager/templates/template-syntax.md) gebruiken om omgevingen te maken met sets resources in DevTest Labs. Deze omgevingen kunnen alle Azure-resources bevatten die resource manager-sjablonen kunnen maken.
+Azure DevTest Labs omgevingen kunnen gebruikers eenvoudig complexe infrastructuren op een consistente manier implementeren binnen de omgevingen van het lab. U kunt de [Azure Resource Manager gebruiken om](../azure-resource-manager/templates/template-syntax.md) omgevingen te maken met sets resources in DevTest Labs. Deze omgevingen kunnen alle Azure-resources bevatten die Resource Manager sjablonen kunnen maken.
 
-U kunt eenvoudig [één virtuele machine (VM) tegelijk](devtest-lab-add-vm.md) aan een Lab toevoegen met behulp van de [Azure Portal](https://portal.azure.com). Scenario's zoals multi-tier web-apps of een share point-Farm hebben echter een mechanisme nodig om meerdere Vm's in één stap te maken. Met behulp van Azure Resource Manager sjablonen kunt u de infra structuur en configuratie van uw Azure-oplossing definiëren en herhaaldelijk meerdere Vm's implementeren met een consistente status.
+U kunt eenvoudig [één virtuele machine (VM)](devtest-lab-add-vm.md) tegelijk toevoegen aan een lab met behulp van [Azure Portal](https://portal.azure.com). Scenario's zoals web-apps met meerdere lagen of een SharePoint-farm hebben echter een mechanisme nodig om meerdere VM's in één stap te maken. Met behulp Azure Resource Manager sjablonen kunt u de infrastructuur en configuratie van uw Azure-oplossing definiëren en meerdere VM's herhaaldelijk in een consistente status implementeren.
 
-Azure Resource Manager sjablonen bieden ook de volgende voor delen:
+Azure Resource Manager-sjablonen bieden ook de volgende voordelen:
 
-- Azure Resource Manager sjablonen worden direct vanuit uw GitHub of Azure opslag plaatsen resource control-opslag plaats geladen.
-- Uw gebruikers kunnen een omgeving maken door een geconfigureerde Azure Resource Manager-sjabloon uit de Azure Portal te kiezen, net als bij andere typen [VM](devtest-lab-comparing-vm-base-image-types.md)-basis.
-- U kunt zowel Azure PaaS-resources inrichten als IaaS Vm's in een omgeving vanuit een Azure Resource Manager sjabloon.
-- U kunt de kosten van omgevingen in het lab volgen, naast de afzonderlijke Vm's die door andere soorten bases zijn gemaakt. PaaS-resources worden gemaakt en worden weer gegeven in het bijhouden van kosten. Automatisch afsluiten van VM'S is echter niet van toepassing op PaaS-resources.
+- Azure Resource Manager sjablonen worden rechtstreeks vanuit uw GitHub- of Azure Repos-opslagplaats voor broncodebeheer geladen.
+- Uw gebruikers kunnen een omgeving maken door een geconfigureerde Azure Resource Manager sjabloon te kiezen uit de Azure Portal, net als bij andere typen [VM-basissen.](devtest-lab-comparing-vm-base-image-types.md)
+- U kunt Azure PaaS-resources en IaaS-VM's inrichten in een omgeving op basis van Azure Resource Manager sjabloon.
+- U kunt de kosten van omgevingen in het lab bijhouden, naast afzonderlijke VM's die zijn gemaakt door andere typen basissen. PaaS-resources worden gemaakt en worden weergegeven in het bijhouden van kosten. Automatisch afsluiten van VM's is echter niet van toepassing op PaaS-resources.
 
-Zie [voor delen van het gebruik van Resource Manager-sjablonen](../azure-resource-manager/management/overview.md#the-benefits-of-using-resource-manager)voor meer informatie over de voor delen van het gebruik van Resource Manager-sjablonen voor het implementeren, bijwerken of verwijderen van veel lab-resources in één bewerking.
+Zie Voordelen van het gebruik van Resource Manager-sjablonen voor meer informatie over de voordelen van het gebruik van Resource Manager-sjablonen voor het implementeren, bijwerken of verwijderen van veel labresources in [één](../azure-resource-manager/management/overview.md#the-benefits-of-using-resource-manager)bewerking.
 
 > [!NOTE]
-> Wanneer u een resource manager-sjabloon gebruikt als basis voor het maken van Lab-Vm's, zijn er enkele verschillen tussen het maken van meerdere Vm's of één virtuele machine. Zie [de Azure Resource Manager-sjabloon van een virtuele machine gebruiken](devtest-lab-use-resource-manager-template.md)voor meer informatie.
+> Wanneer u een Resource Manager als basis gebruikt om lab-VM's te maken, zijn er enkele verschillen tussen het maken van meerdere VM's of één VM. Zie Use [a virtual machine's Azure Resource Manager template (Een virtuele machine gebruiken) Azure Resource Manager meer informatie.](devtest-lab-use-resource-manager-template.md)
 >
 
-## <a name="use-devtest-labs-public-environments"></a>Open bare omgevingen van DevTest Labs gebruiken
-Azure DevTest Labs heeft een [open bare opslag plaats van Azure Resource Manager sjablonen](https://github.com/Azure/azure-devtestlab/tree/master/Environments) die u kunt gebruiken om omgevingen te maken zonder zelf verbinding te hoeven maken met een externe github-bron. Deze open bare opslag plaats is vergelijkbaar met de open bare opslag plaats van artefacten die beschikbaar zijn in de Azure Portal voor elk lab dat u maakt. Met de opslag plaats omgeving kunt u snel aan de slag met vooraf gemaakte omgevings sjablonen met enkele invoer parameters. Deze sjablonen bieden u de mogelijkheid om aan de slag te gaan met PaaS-resources binnen Labs.
+## <a name="use-devtest-labs-public-environments"></a>Openbare DevTest Labs-omgevingen gebruiken
+Azure DevTest Labs heeft een [](https://github.com/Azure/azure-devtestlab/tree/master/Environments) openbare opslagplaats met Azure Resource Manager-sjablonen die u kunt gebruiken om omgevingen te maken zonder zelf verbinding te moeten maken met een externe GitHub-bron. Deze openbare opslagplaats is vergelijkbaar met de openbare opslagplaats met artefacten die beschikbaar zijn in de Azure Portal voor elk lab dat u maakt. Met de opslagplaats voor de omgeving kunt u snel aan de slag met vooraf geschreven omgevingssjablonen met enkele invoerparameters. Deze sjablonen bieden u een soepele aan de slag-ervaring voor PaaS-resources binnen labs.
 
-In de open bare opslag plaats hebben het DevTest Labs-team en andere veelgebruikte sjablonen gemaakt en gedeeld, zoals Azure Web Apps, Service Fabric cluster en een ontwikkel-Farm van share point. U kunt deze sjablonen rechtstreeks gebruiken of aanpassen aan uw behoeften. Zie [open bare omgevingen in DevTest Labs configureren en gebruiken](devtest-lab-configure-use-public-environments.md)voor meer informatie. Nadat u uw eigen sjablonen hebt gemaakt, kunt u deze opslaan in deze opslag plaats om ze met anderen te delen of uw eigen Git-opslag plaats in te stellen.
+In de openbare opslagplaats hebben het DevTest Labs-team en anderen veelgebruikte sjablonen gemaakt en gedeeld, zoals Azure Web Apps, Service Fabric Cluster en een SharePoint Farm-ontwikkelomgeving. U kunt deze sjablonen rechtstreeks gebruiken of aanpassen aan uw behoeften. Zie Openbare omgevingen configureren en [gebruiken in DevTest Labs](devtest-lab-configure-use-public-environments.md)voor meer informatie. Nadat u uw eigen sjablonen hebt gemaakt, kunt u deze opslaan in deze opslagplaats om ze met anderen te delen of uw eigen Git-opslagplaats instellen.
 
 <a name="configure-your-own-template-repositories"></a>
-## <a name="create-your-own-template-repositories"></a>Uw eigen sjabloon opslagplaatsen maken
+## <a name="create-your-own-template-repositories"></a>Uw eigen sjabloon-opslagplaatsen maken
 
-Als een van de best practices met infrastructuur codes en configuratie-as-code, moet u omgevings sjablonen beheren in broncode beheer. Azure DevTest Labs volgt deze procedure en laadt alle Azure Resource Manager sjablonen rechtstreeks vanuit uw GitHub-of Azure opslag plaatsen-opslag plaatsen. Als gevolg hiervan kunt u Resource Manager-sjablonen gebruiken in de volledige release cyclus, van de test omgeving naar de productie omgeving.
+Als een van de best practices met infrastructure-as-code en configuration-as-code moet u omgevingssjablonen beheren in broncodebeheer. Azure DevTest Labs volgt deze praktijk en laadt alle sjablonen Azure Resource Manager rechtstreeks vanuit uw GitHub- of Azure-opslagplaatsen. Als gevolg hiervan kunt u de sjablonen Resource Manager hele releasecyclus gebruiken, van de testomgeving tot de productieomgeving.
 
-Er zijn verschillende regels die moeten worden gevolgd om uw Azure Resource Manager sjablonen in een opslag plaats in te delen:
+Er zijn verschillende regels die u moet volgen om uw sjablonen Azure Resource Manager ordenen in een opslagplaats:
 
-- U moet de naam van het hoofd sjabloon bestand *azuredeploy.jsop*.
+- U moet de naam van het hoofdsjabloonbestand *azuredeploy.jsop*.
 
-- Als u parameter waarden wilt gebruiken die zijn gedefinieerd in een parameter bestand, moet het parameter bestand de naam *azuredeploy.parameters.jsaan* hebben.
+- Als u parameterwaarden wilt gebruiken die zijn gedefinieerd in een parameterbestand, moet het parameterbestand de *naamazuredeploy.parameters.jsop*.
 
-  U kunt de para meters gebruiken `_artifactsLocation` en `_artifactsLocationSasToken` de parametersLink URI-waarde maken, zodat DevTest Labs automatisch geneste sjablonen kan beheren. Zie [geneste Azure Resource Manager sjablonen implementeren voor test omgevingen](deploy-nested-template-environments.md)voor meer informatie.
+  U kunt de parameters en `_artifactsLocation` gebruiken om de parameters te `_artifactsLocationSasToken` makenLink-URI-waarde, zodat DevTest Labs automatisch geneste sjablonen kan beheren. Zie Deploy [nested Azure Resource Manager templates for testing environments (Geneste Azure Resource Manager implementeren voor testomgevingen) voor meer informatie.](deploy-nested-template-environments.md)
 
-- U kunt meta gegevens opgeven om de weergave naam en beschrijving van de sjabloon op te geven in een bestand met de naam *metadata.jsop*, als volgt:
+- U kunt metagegevens definiëren om de weergavenaam en beschrijving van de sjabloon op te geven in een bestand met de *metadata.jsop*, als volgt:
 
   ```json
   {
@@ -56,113 +56,113 @@ Er zijn verschillende regels die moeten worden gevolgd om uw Azure Resource Mana
   }
   ```
 
-![Key Azure Resource Manager sjabloon bestanden](./media/devtest-lab-create-environment-from-arm/master-template.png)
+![Sleutel-Azure Resource Manager sjabloonbestanden](./media/devtest-lab-create-environment-from-arm/master-template.png)
 
-## <a name="add-template-repositories-to-the-lab"></a>Sjabloon opslagplaatsen aan het lab toevoegen
+## <a name="add-template-repositories-to-the-lab"></a>Sjabloon-opslagplaatsen toevoegen aan het lab
 
-Nadat u de opslag plaats hebt gemaakt en geconfigureerd, kunt u deze toevoegen aan uw Lab met behulp van de Azure Portal:
+Nadat u uw opslagplaats hebt gemaakt en geconfigureerd, kunt u deze toevoegen aan uw lab met behulp van Azure Portal:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
-1. Selecteer in de lijst met Labs het gewenste Lab.
-1. Selecteer **configuratie en beleid** in het deel venster **overzicht** van de test omgeving.
+1. Selecteer **Alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer in de lijst met labs het lab dat u wilt.
+1. Selecteer configuratie en beleidsregels in **het** deelvenster Overzicht **van het lab.**
 
    ![Configuratie en beleid](./media/devtest-lab-create-environment-from-arm/configuration-and-policies-menu.png)
 
-1. Selecteer in de lijst **configuratie-en beleids** instellingen de optie **opslag** plaatsen. De opslag plaats-opslag plaats voor **open bare artefacten** wordt automatisch gegenereerd voor alle Labs en maakt verbinding met de [open bare github-opslag plaats van DevTest Labs](https://github.com/Azure/azure-devtestlab).
+1. Selecteer **opslagplaatsen in** de lijst Instellingen voor configuratie **en beleid.** De **opslagplaats voor openbare artefacten** wordt automatisch gegenereerd voor alle labs en maakt verbinding met de openbare [GitHub-opslagplaats DevTest Labs.](https://github.com/Azure/azure-devtestlab)
 
-1. Selecteer **toevoegen** om uw Azure Resource Manager-sjabloon opslagplaats toe te voegen.
+1. Selecteer Toevoegen om Azure Resource Manager sjabloonopslagplaats toe **te voegen.**
 
-   ![Open bare opslag plaats](./media/devtest-lab-create-environment-from-arm/public-repo.png)
+   ![Openbare repo](./media/devtest-lab-create-environment-from-arm/public-repo.png)
 
-1. Voer in het deel venster **opslag** plaatsen de volgende gegevens in:
+1. Voer in **het deelvenster Opslagplaatsen** de volgende gegevens in:
 
-   - **Naam**: Voer een naam in voor de opslag plaats die in het lab moet worden gebruikt.
-   - **Git-kloon-URL**: Voer de Git https-kloon-URL in van github of Azure opslag plaatsen.
-   - **Vertakking** (optioneel): Voer de naam van de vertakking in om toegang te krijgen tot uw Azure Resource Manager sjabloon definities.
-   - **Persoonlijk toegangs token**: Voer het persoonlijke toegangs token in dat wordt gebruikt voor een veilige toegang tot uw opslag plaats.
-     - Als u uw token wilt ophalen uit Azure opslag plaatsen, selecteert u onder uw profiel de optie **gebruikers instellingen**  >    >  **persoonlijke toegangs tokens**.
-     - Als u uw token wilt ophalen uit github, selecteert u onder uw profiel **instellingen** voor  >  **ontwikkelaars instellingen**  >  **persoonlijke toegangs tokens**.
-   - **Mappaden**: Voer het mappad in dat relatief is ten opzichte van uw Git-kloon-URI voor uw artefact definities of uw Azure Resource Manager sjabloon definities.
+   - **Naam:** voer een naam in voor de opslagplaats die u in het lab wilt gebruiken.
+   - **Git-kloon-URL:** voer de Git HTTPS-kloon-URL uit GitHub of Azure Repos in.
+   - **Vertakking** (optioneel): voer de naam van de vertakking in voor toegang tot Azure Resource Manager sjabloondefinities.
+   - **Persoonlijk toegang token:** voer het persoonlijke toegang token in dat wordt gebruikt voor veilige toegang tot uw opslagplaats.
+     - Als u uw token wilt op halen uit Azure Repos, selecteert u onder uw profiel **Gebruikersinstellingen**  >  **Beveiliging**  >  **Persoonlijke toegangstokens.**
+     - Als u uw token wilt op halen uit GitHub, selecteert u onder uw profiel Instellingen **Persoonlijke** toegangstokens voor instellingen  >    >  **voor ontwikkelaarsinstellingen.**
+   - **Mappaden:** voer het mappad in dat relatief is ten opzichte van uw Git-kloon-URI voor uw artefactdefinities of uw Azure Resource Manager sjabloondefinities.
 
 1. Selecteer **Opslaan**.
 
-   ![Nieuwe opslag plaats toevoegen](./media/devtest-lab-create-environment-from-arm/repo-values.png)
+   ![Nieuwe opslagplaats toevoegen](./media/devtest-lab-create-environment-from-arm/repo-values.png)
 
-Zodra u een Azure Resource Manager sjabloon aan het Lab hebt toegevoegd, kunnen uw Lab-gebruikers omgevingen maken met behulp van de sjabloon.
+Zodra u een Azure Resource Manager aan het lab toevoegt, kunnen uw labgebruikers omgevingen maken met behulp van de sjabloon.
 
-## <a name="configure-access-rights-for-lab-users"></a>Toegangs rechten voor Lab-gebruikers configureren
+## <a name="configure-access-rights-for-lab-users"></a>Toegangsrechten configureren voor labgebruikers
 
-Lab-gebruikers hebben standaard **lezers** rollen, zodat ze de resources in een omgevings resource groep niet kunnen wijzigen. Ze kunnen bijvoorbeeld hun resources niet stoppen of starten.
+Labgebruikers hebben **standaard de** rol Lezer, zodat ze de resources in een omgevingsresourcegroep niet kunnen wijzigen. Ze kunnen hun resources bijvoorbeeld niet stoppen of starten.
 
-Ga als volgt te werk om uw Lab-gebruikers de rol **Inzender** te geven, zodat ze de resources in hun omgevingen kunnen bewerken:
+Volg deze stappen om uw labgebruikers de rol **Inzender** te geven zodat ze de resources in hun omgevingen kunnen bewerken:
 
-1. Selecteer in het [Azure Portal](https://portal.azure.com), in het deel venster **overzicht** van uw Lab, **configuratie en beleid** en selecteer vervolgens **Lab-instellingen**.
+1. Selecteer in [Azure Portal](https://portal.azure.com)in het deelvenster  Overzicht van uw lab de optie **Configuratie** en beleidsregels en selecteer **vervolgens Labinstellingen.**
 
-1. Selecteer in het deel venster **Lab-instellingen** de optie **Inzender** en selecteer vervolgens **Opslaan** om schrijf machtigingen toe te kennen aan gebruikers van het lab.
+1. Selecteer in **het deelvenster Labinstellingen** de optie **Inzender** en selecteer vervolgens **Opslaan om** labgebruikers schrijfmachtigingen te verlenen.
 
-   ![Gebruikers toegangs rechten voor lab configureren](./media/devtest-lab-create-environment-from-arm/config-access-rights.png)
+   ![Toegangsrechten voor labgebruikers configureren](./media/devtest-lab-create-environment-from-arm/config-access-rights.png)
 
-In de volgende sectie wordt beschreven hoe u omgevingen maakt op basis van een Azure Resource Manager sjabloon.
+In de volgende sectie worden omgevingen gemaakt op basis van Azure Resource Manager sjabloon.
 
-## <a name="create-environments-from-templates-in-the-azure-portal"></a>Omgevingen maken op basis van sjablonen in de Azure Portal
+## <a name="create-environments-from-templates-in-the-azure-portal"></a>Omgevingen maken op basis van sjablonen in Azure Portal
 
-Zodra u een Azure Resource Manager sjabloon aan het Lab hebt toegevoegd, kunnen uw Lab-gebruikers in de Azure Portal omgevingen maken door de volgende stappen uit te voeren:
+Wanneer u een sjabloon Azure Resource Manager lab toevoegt, kunnen uw labgebruikers omgevingen maken in de Azure Portal door de volgende stappen uit te voeren:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **Alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 
-1. Selecteer in de lijst met Labs het gewenste Lab.
+1. Selecteer in de lijst met labs het lab dat u wilt.
 
-1. Selecteer op de pagina Lab de optie **toevoegen**.
+1. Selecteer toevoegen op de pagina van **het** lab.
 
-1. In het deel venster **een basis kiezen** worden de basis installatie kopieën weer gegeven die u kunt gebruiken, met de Azure Resource Manager sjablonen die als eerste worden weer gegeven. Selecteer de gewenste Azure Resource Manager sjabloon.
+1. In **het deelvenster Een basis kiezen** worden de basisafbeeldingen weergegeven die u kunt gebruiken, Azure Resource Manager eerst worden weergegeven. Selecteer de Azure Resource Manager sjabloon die u wilt gebruiken.
 
    ![Een basis kiezen](./media/devtest-lab-create-environment-from-arm/choose-a-base.png)
 
-1. Voer in het deel venster **toevoegen** een waarde in voor de **omgevings naam** die moet worden weer gegeven voor omgevings gebruikers.
+1. Voer in **het deelvenster** Toevoegen de waarde **Omgevingsnaam** in die moet worden weergegeven voor omgevingsgebruikers.
 
-   De sjabloon Azure Resource Manager definieert de rest van de invoer velden. Als de sjabloon *azuredeploy.parameter.jsin* het bestand standaard waarden definieert, worden deze waarden weer gegeven in de invoer velden.
+   De Azure Resource Manager definieert de rest van de invoervelden. Als de sjabloon *azuredeploy.parameter.jsbestand standaardwaarden* definieert, worden deze waarden weergegeven in de invoervelden.
 
-   Voor para meters van het type *beveiligde teken reeks* kunt u geheimen van uw Azure Key Vault gebruiken. Zie [geheimen opslaan in azure Key Vault](devtest-lab-store-secrets-in-key-vault.md)voor meer informatie over het opslaan van geheimen in een sleutel kluis en het gebruik ervan bij het maken van Lab-resources.  
+   Voor parameters van het type *beveiligde tekenreeks* kunt u geheimen uit uw Azure Key Vault. Zie Geheimen opslaan Azure Key Vault in een sleutelkluis voor meer informatie over het opslaan van geheimen in een sleutelkluis en het gebruik ervan bij het maken van [labbronnen.](devtest-lab-store-secrets-in-key-vault.md)  
 
-   ![Deel venster toevoegen](./media/devtest-lab-create-environment-from-arm/add.png)
+   ![Deelvenster Toevoegen](./media/devtest-lab-create-environment-from-arm/add.png)
 
    > [!NOTE]
-   > De volgende parameter waarden worden niet weer gegeven in de invoer velden, zelfs niet als de sjabloon deze opgeeft. In plaats daarvan worden in het formulier lege invoer velden weer gegeven waarin Lab-gebruikers waarden moeten invoeren bij het maken van de omgeving.
+   > De volgende parameterwaarden worden niet weergegeven in de invoervelden, zelfs niet als deze door de sjabloon worden opgegeven. In plaats daarvan toont het formulier lege invoervelden waar labgebruikers waarden moeten invoeren bij het maken van de omgeving.
    >
-   > - GEN-UNIEKE
+   > - GEN-UNIQUE
    > - GEN-UNIQUE-[N]
    > - GEN-SSH-PUB-KEY
-   > - GEN-WACHT WOORD
+   > - GEN-PASSWORD
 
-1. Selecteer **toevoegen** om de omgeving te maken.
+1. Selecteer **Toevoegen om** de omgeving te maken.
 
-   De omgeving wordt onmiddellijk ingericht, met de status weer gegeven in de lijst **mijn virtuele machines** . Het Lab maakt automatisch een nieuwe resource groep om alle resources in te richten die in de Azure Resource Manager sjabloon zijn gedefinieerd.
+   De omgeving begint onmiddellijk met inrichten, met de status die wordt weergegeven in de lijst **Mijn virtuele machines.** Het lab maakt automatisch een nieuwe resourcegroep voor het inrichten van alle resources die zijn gedefinieerd in Azure Resource Manager sjabloon.
 
-1. Nadat de omgeving is gemaakt, selecteert u de omgeving in de lijst **mijn virtuele machines** om het deel venster Resource groep te openen en gaat u naar alle resources die de omgeving heeft ingericht.
+1. Zodra de omgeving is gemaakt, selecteert u de omgeving in de lijst Mijn virtuele **machines** om het deelvenster Resourcegroep te openen en door alle resources te bladeren die de omgeving heeft ingericht.
 
-   ![Omgevings resources](./media/devtest-lab-create-environment-from-arm/all-environment-resources.png)
+   ![Omgevingsbronnen](./media/devtest-lab-create-environment-from-arm/all-environment-resources.png)
 
-   U kunt ook de omgeving uitbreiden om alleen de lijst met Vm's weer te geven die de omgeving heeft ingericht.
+   U kunt de omgeving ook uitbreiden om alleen de lijst met VM's weer te geven die de omgeving heeft ingericht.
 
-   ![Lijst met virtuele machines](./media/devtest-lab-create-environment-from-arm/my-vm-list.png)
+   ![Lijst met mijn virtuele machines](./media/devtest-lab-create-environment-from-arm/my-vm-list.png)
 
-1. Selecteer een van de omgevingen om de beschik bare acties weer te geven, zoals het Toep assen van artefacten, het koppelen van gegevens schijven, het wijzigen van de tijd voor automatisch afsluiten en nog veel meer.
+1. Selecteer een van de omgevingen om de beschikbare acties weer te geven, zoals het toepassen van artefacten, het koppelen van gegevensschijven, het wijzigen van de tijd voor automatisch afsluiten, en meer.
 
-   ![Omgevings acties](./media/devtest-lab-create-environment-from-arm/environment-actions.png)
+   ![Omgevingsacties](./media/devtest-lab-create-environment-from-arm/environment-actions.png)
 
 <a name="automate-deployment-of-environments"></a>
-## <a name="automate-environment-creation-with-powershell"></a>Omgeving maken automatiseren met Power shell
+## <a name="automate-environment-creation-with-powershell"></a>Het maken van een omgeving automatiseren met PowerShell
 
-Het is handig om de Azure Portal te gebruiken om één omgeving aan een Lab toe te voegen, maar wanneer een ontwikkel-of test scenario meerdere omgevingen moet maken, is geautomatiseerde implementatie een betere ervaring.
+Het is haalbaar om de Azure Portal te gebruiken om één omgeving aan een lab toe te voegen, maar wanneer een ontwikkelings- of testscenario meerdere omgevingen moet maken, is geautomatiseerde implementatie een betere ervaring.
 
-Voordat u doorgaat, moet u ervoor zorgen dat u een Azure Resource Manager-sjabloon hebt waarmee de te maken resources worden gedefinieerd. [Voeg de sjabloon in een Git-opslag plaats toe en configureer](#configure-your-own-template-repositories)deze en [Voeg de opslag plaats toe aan het lab](#add-template-repositories-to-the-lab).
+Voordat u doorgaat, moet u ervoor zorgen dat u een sjabloon Azure Resource Manager die de resources definieert die moeten worden gemaakt. [Voeg de sjabloon toe en configureer deze in een Git-opslagplaats](#configure-your-own-template-repositories)en [voeg de opslagplaats toe aan het lab](#add-template-repositories-to-the-lab).
 
-Met het volgende voorbeeld script maakt u een omgeving in uw Lab. De opmerkingen helpen u het script beter te begrijpen.
+Met het volgende voorbeeldscript maakt u een omgeving in uw lab. De opmerkingen helpen u het script beter te begrijpen.
 
-1. Sla het volgende Power shell-voorbeeld script op uw harde schijf op als *deployenv.ps1*.
+1. Sla het volgende PowerShell-voorbeeldscript op uw harde schijf op *alsdeployenv.ps1*.
 
    [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -255,34 +255,34 @@ Met het volgende voorbeeld script maakt u een omgeving in uw Lab. De opmerkingen
    Write-Output "Environment $EnvironmentName completed."
    ```
 
-1. Voer het script als volgt uit, waarbij u uw specifieke waarden gebruikt voor SubscriptionId, LabName, ResourceGroupName, opslagplaats, templatenaam (map in de Git opslag plaats) en omgevings namen.
+1. Voer het script als volgt uit met behulp van uw specifieke waarden voor SubscriptionId, LabName, ResourceGroupName, RepositoryName, TemplateName (map in de Git-opslagplaats) en EnvironmentName.
 
    ```powershell
    ./deployenv.ps1 -SubscriptionId "000000000-0000-0000-0000-0000000000000" -LabName "mydevtestlab" -ResourceGroupName "mydevtestlabRG000000" -RepositoryName "myRepository" -TemplateName "My Environment template name" -EnvironmentName "myGroupEnv"
    ```
 
-U kunt ook Azure CLI gebruiken om resources te implementeren met Resource Manager-sjablonen. Zie [Resources implementeren met Resource Manager-sjablonen en Azure CLI](../azure-resource-manager/templates/deploy-cli.md) voor meer informatie.
+U kunt Azure CLI ook gebruiken om resources te implementeren met Resource Manager sjablonen. Zie [Resources implementeren met Resource Manager-sjablonen en Azure CLI](../azure-resource-manager/templates/deploy-cli.md) voor meer informatie.
 
 > [!NOTE]
-> Alleen een gebruiker met machtigingen voor een Lab-eigenaar kan Vm's maken op basis van een resource manager-sjabloon met behulp van Azure PowerShell. Als u het maken van een virtuele machine wilt automatiseren met een resource manager-sjabloon en u alleen gebruikers machtigingen hebt, kunt u de CLI-opdracht [AZ Lab VM Create](/cli/azure/lab/vm#az-lab-vm-create)gebruiken.
+> Alleen een gebruiker met eigenaarsmachtigingen voor een lab kan virtuele Resource Manager maken met behulp van Azure PowerShell. Als u het maken van VM's wilt automatiseren met behulp van een Resource Manager-sjabloon en u alleen gebruikersmachtigingen hebt, kunt u de CLI-opdracht [az lab vm create gebruiken.](/cli/azure/lab/vm#az_lab_vm_create)
 
-## <a name="resource-manager-template-limitations-in-devtest-labs"></a>Beperkingen van Resource Manager-sjablonen in DevTest Labs
+## <a name="resource-manager-template-limitations-in-devtest-labs"></a>Resource Manager sjabloonbeperkingen in DevTest Labs
 
-Houd rekening met deze beperkingen bij het gebruik van Resource Manager-sjablonen in DevTest Labs:
+Houd rekening met deze beperkingen bij het gebruik Resource Manager in DevTest Labs:
 
-- U kunt geen formules of aangepaste installatie kopieën maken van Lab-Vm's die zijn gemaakt op basis van een resource manager-sjabloon.
+- U kunt geen formules of aangepaste afbeeldingen maken van lab-VM's die zijn gemaakt op basis van een Resource Manager sjabloon.
 
-- De meeste beleids regels worden niet geëvalueerd wanneer u Resource Manager-sjablonen implementeert.
+- De meeste beleidsregels worden niet geëvalueerd wanneer u sjablonen Resource Manager implementeren.
 
-Zo kunt u bijvoorbeeld een Lab-beleid hebben dat een gebruiker slechts vijf Vm's kan maken. Een gebruiker kan echter een resource manager-sjabloon implementeren waarmee tien tallen virtuele machines worden gemaakt. Beleids regels die niet worden geëvalueerd, zijn onder andere:
+U kunt bijvoorbeeld een labbeleid hebben dat een gebruiker slechts vijf VM's kan maken. Een gebruiker kan echter een sjabloon Resource Manager om tientallen VM's te maken. Beleidsregels die niet worden geëvalueerd, zijn onder andere:
 
-  - Aantal Vm's per gebruiker
+  - Aantal VM's per gebruiker
 
-  - Aantal Premium Vm's per Lab-gebruiker
+  - Aantal premium-VM's per labgebruiker
 
-  - Aantal Premium-schijven per Lab-gebruiker
+  - Aantal Premium-schijven per labgebruiker
 
 ## <a name="next-steps"></a>Volgende stappen
-- Wanneer u een virtuele machine hebt gemaakt, kunt u verbinding maken met de virtuele machine door **verbinding maken** te selecteren in het deel venster beheer van de virtuele machine.
-- Bekijk en beheer resources in een omgeving door de omgeving te selecteren in de lijst **mijn virtuele machines** in uw Lab.
-- Verken de [Azure Resource Manager sjablonen vanuit de Azure Quick Start-sjabloon galerie](https://github.com/Azure/azure-quickstart-templates).
+- Zodra u een VM hebt gemaakt, kunt u verbinding maken met de VM door Verbinding maken te selecteren **in** het beheervenster van de VM.
+- U kunt resources in een omgeving weergeven en beheren door de omgeving te selecteren in de lijst **Mijn virtuele machines** in uw lab.
+- Verken de [Azure Resource Manager-sjablonen uit de galerie met Azure-quickstartsjablonen.](https://github.com/Azure/azure-quickstart-templates)

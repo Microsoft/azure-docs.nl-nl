@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, responsible-ml
-ms.openlocfilehash: 2d60c6dbedb24847b95ce268bedafcb073421319
-ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
+ms.openlocfilehash: d79458cfc76adcfd35a6b8dee40c0c45786abc28
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107576513"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107763285"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Het interpreteerbaarheidspakket gebruiken om ML-modellen uit & voorspellingen in Python (preview)
 
@@ -34,8 +34,9 @@ In deze handleiding leert u hoe u het interpreteerbaarheidspakket van de Azure M
 * Implementeer een score-uitleg naast uw model om uitleg te observeren tijdens de deferencing.
 
 
-
 Zie Model [interpretability in](how-to-machine-learning-interpretability.md) Azure Machine Learning en sample notebooks voor meer informatie over de ondersteunde interpreteerbaarheidstechnieken en machine learning [modellen.](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model)
+
+Zie [Interpretability: model explanations for automated machine learning models (preview) (Interpretability: model explanations for automated machine learning models (preview) (Interpretability: model explanations for automated machine learning models (preview) (Interpretability: model explanations for automated machine learning models (preview) (Uitleg](how-to-machine-learning-interpretability-automl.md)van het model voor geautomatiseerde machine learning modellen (preview) voor instructies over het inschakelen van interpreteerbaarheid voor modellen die zijn getraind met geautomatiseerde machine learning. 
 
 ## <a name="generate-feature-importance-value-on-your-personal-machine"></a>Waarde voor functie-belang genereren op uw persoonlijke computer 
 In het volgende voorbeeld ziet u hoe u het interpreteerbaarheidspakket op uw persoonlijke computer gebruikt zonder contact op te nemen met Azure-services.
@@ -66,12 +67,12 @@ In het volgende voorbeeld ziet u hoe u het interpreteerbaarheidspakket op uw per
     ```
 
 3. Roep de uitleg lokaal aan.
-   * Als u een uitlegobject wilt initialiseren, geeft u uw model en enkele trainingsgegevens door aan de constructor van de uitleg.
+   * Als u een uitlegobject wilt initialiseren, geeft u uw model en wat trainingsgegevens door aan de constructor van de uitleg.
    * Als u uw uitleg en visualisaties meer informatief wilt maken, kunt u ervoor kiezen om functienamen en uitvoerklassenamen door te geven bij classificatie.
 
    De volgende codeblokken laten zien hoe u een uitlegobject maakt met `TabularExplainer` `MimicExplainer` , en `PFIExplainer` lokaal.
    * `TabularExplainer` roept een van de drie SHAP-uitlegders aan onder ( `TreeExplainer` `DeepExplainer` , of `KernelExplainer` ).
-   * `TabularExplainer` selecteert automatisch de meest geschikte voor uw use-case, maar u kunt elk van de drie onderliggende uitlegders rechtstreeks aanroepen.
+   * `TabularExplainer` selecteert automatisch de meest geschikte voor uw use-case, maar u kunt elk van de drie onderliggende uitlegs rechtstreeks aanroepen.
 
     ```python
     from interpret.ext.blackbox import TabularExplainer
@@ -120,9 +121,9 @@ In het volgende voorbeeld ziet u hoe u het interpreteerbaarheidspakket op uw per
                              classes=classes)
     ```
 
-### <a name="explain-the-entire-model-behavior-global-explanation"></a>Het volledige modelgedrag uitleggen (globale uitleg) 
+### <a name="explain-the-entire-model-behavior-global-explanation"></a>Het hele modelgedrag uitleggen (globale uitleg) 
 
-Raadpleeg het volgende voorbeeld om u te helpen bij het verzamelen van de waarden voor het belang van de statistische (globale) functie.
+Raadpleeg het volgende voorbeeld om u te helpen bij het verzamelen van (algemene) functie-belangwaarden.
 
 ```python
 
@@ -271,7 +272,7 @@ In het volgende voorbeeld ziet u hoe u de klasse kunt `ExplanationClient` gebrui
     #client.upload_model_explanation(global_explanation, top_k=2, comment='global explanation: Only top 2 features')
     ```
 
-1. Stel een Azure Machine Learning Compute in als uw rekendoel en verzend uw trainingsrun. Zie Create and manage Azure Machine Learning compute clusters (Clusters voor [rekenclusters maken en beheren)](how-to-create-attach-compute-cluster.md) voor instructies. Mogelijk vindt u de [voorbeeldnotenotes ook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) nuttig.
+1. Stel een rekendoel Azure Machine Learning rekendoel in en verzend de trainingsrun. Zie Create and manage Azure Machine Learning compute clusters (Een [rekenclusters maken](how-to-create-attach-compute-cluster.md) en beheren) voor instructies. Mogelijk vindt u de [voorbeeldnotenotes ook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) nuttig.
 
 1. Download de uitleg in uw lokale Jupyter Notebook.
 
@@ -294,7 +295,7 @@ In het volgende voorbeeld ziet u hoe u de klasse kunt `ExplanationClient` gebrui
 
 ## <a name="visualizations"></a>Visualisaties
 
-Nadat u de uitleg in uw lokale Jupyter Notebook, kunt u de visualisaties in het uitlegdashboard gebruiken om uw model te begrijpen en te interpreteren. Gebruik de volgende code om de widget uitlegdashboard in uw Jupyter Notebook laden:
+Nadat u de uitleg in uw lokale Jupyter Notebook, kunt u de visualisaties in het uitlegdashboard gebruiken om uw model te begrijpen en te interpreteren. Gebruik de volgende code om de dashboardwidget Jupyter Notebook uitleg te laden:
 
 ```python
 from interpret_community.widget import ExplanationDashboard
@@ -302,18 +303,18 @@ from interpret_community.widget import ExplanationDashboard
 ExplanationDashboard(global_explanation, model, datasetX=x_test)
 ```
 
-De visualisaties ondersteunen uitleg over zowel ontworpen als onbewerkte functies. Onbewerkte uitleg is gebaseerd op de functies van de oorspronkelijke gegevensset en de ontworpen uitleg is gebaseerd op de functies van de gegevensset feature engineering toegepast.
+De visualisaties ondersteunen uitleg over zowel ontworpen als onbewerkte functies. Onbewerkte uitleg is gebaseerd op de functies van de oorspronkelijke gegevensset en de gedetailleerde uitleg is gebaseerd op de functies van de gegevensset feature engineering toegepast.
 
 Wanneer u probeert een model te interpreteren met betrekking tot de oorspronkelijke gegevensset, is het raadzaam om onbewerkte uitleg te gebruiken, omdat elk functie-belang overeenkomt met een kolom uit de oorspronkelijke gegevensset. Een scenario waarin een ontworpen uitleg nuttig kan zijn, is bij het onderzoeken van de impact van afzonderlijke categorieën van een categorische functie. Als een one-hot-codering wordt toegepast op een categorische functie, bevat de resulterende engineered uitleg een andere belangwaarde per categorie, één per one-hot-engineered functie. Dit kan handig zijn bij het beperken van welk deel van de gegevensset het meest informatief is voor het model.
 
 > [!NOTE]
-> Berekende en onbewerkte uitleg wordt opeenvolgend berekend. Eerst wordt er een gedetailleerde uitleg gemaakt op basis van het model en de featurization-pijplijn. Vervolgens wordt de onbewerkte uitleg gemaakt op basis van die gemanipuleerde uitleg door het belang te aggregeren van ontworpen functies die afkomstig zijn van dezelfde onbewerkte functie.
+> Berekende en onbewerkte uitleg wordt opeenvolgend berekend. Eerst wordt er een gemanipuleerde uitleg gemaakt op basis van het model en de featurization-pijplijn. Vervolgens wordt de onbewerkte uitleg gemaakt op basis van die gemanipuleerde uitleg door het belang te aggregeren van ontworpen functies die afkomstig zijn van dezelfde onbewerkte functie.
 
 ### <a name="create-edit-and-view-dataset-cohorts"></a>Cohorten van gegevenssets maken, bewerken en weergeven
 
-Op het bovenste lint worden de algemene statistieken van uw model en gegevens weergegeven. U kunt uw gegevens segmenteren en analyseren in gegevenssetcohorten of subgroepen om de prestaties van uw model en de uitleg over deze gedefinieerde subgroepen te onderzoeken of te vergelijken. Door uw gegevenssetstatistieken en uitleg over deze subgroepen te vergelijken, kunt u een idee krijgen van de reden waarom er in de ene groep fouten optreden ten opzichte van de andere.
+Op het bovenste lint ziet u de algemene statistieken voor uw model en gegevens. U kunt uw gegevens in cohorten van gegevenssets of subgroepen segmenteren en analyseren om de prestaties en uitleg van uw model in deze gedefinieerde subgroepen te onderzoeken of te vergelijken. Door uw gegevenssetstatistieken en uitleg over deze subgroepen te vergelijken, kunt u een idee krijgen van de reden waarom er in de ene groep fouten optreden ten opzichte van de andere.
 
-[![Cohorten van gegevenssets maken, bewerken en weergeven](./media/how-to-machine-learning-interpretability-aml/dataset-cohorts.gif)](./media/how-to-machine-learning-interpretability-aml/dataset-cohorts.gif#lightbox)
+[![Cohorten voor gegevenssets maken, bewerken en weergeven](./media/how-to-machine-learning-interpretability-aml/dataset-cohorts.gif)](./media/how-to-machine-learning-interpretability-aml/dataset-cohorts.gif#lightbox)
 
 ### <a name="understand-entire-model-behavior-global-explanation"></a>Volledig modelgedrag begrijpen (globale uitleg) 
 
@@ -325,24 +326,24 @@ Evalueer de prestaties van uw model door de distributie van uw voorspellingswaar
 [![Tabblad Modelprestaties in de visualisatie van de uitleg](./media/how-to-machine-learning-interpretability-aml/model-performance.gif)](./media/how-to-machine-learning-interpretability-aml/model-performance.gif#lightbox)
 
 #### <a name="dataset-explorer"></a>Gegevenssetverkenner
-Verken uw gegevenssetstatistieken door verschillende filters te selecteren op de X-, Y- en kleurassen om uw gegevens over verschillende dimensies te segmenteren. Maak gegevenssetcohorten hierboven om gegevenssetstatistieken te analyseren met filters zoals voorspeld resultaat, functies van gegevenssets en foutgroepen. Gebruik het tandwielpictogram in de rechterbovenhoek van de grafiek om grafiektypen te wijzigen.
+Verken uw gegevenssetstatistieken door verschillende filters op de X-, Y- en kleurassen te selecteren om uw gegevens over verschillende dimensies te segmenteren. Maak gegevenssetcohorten hierboven om gegevenssetstatistieken te analyseren met filters zoals voorspeld resultaat, functies van gegevenssets en foutgroepen. Gebruik het tandwielpictogram in de rechterbovenhoek van de grafiek om grafiektypen te wijzigen.
 
 [![Tabblad Gegevenssetverkenner in de visualisatie van de uitleg](./media/how-to-machine-learning-interpretability-aml/dataset-explorer.gif)](./media/how-to-machine-learning-interpretability-aml/dataset-explorer.gif#lightbox)
 
 #### <a name="aggregate-feature-importance"></a>Functie-belang aggregeren
 Verken de belangrijkste functies die van invloed zijn op uw algemene modelvoorspellingen (ook wel globale uitleg genoemd). Gebruik de schuifregelaar om waarden voor aflopend functie-belang weer te geven. Selecteer maximaal drie cohorten om de waarden voor functie-belang naast elkaar te bekijken. Klik op een van de functiebalken in de grafiek om te zien hoe waarden van de geselecteerde functie invloed hebben op de modelvoorspelling in de onderstaande afhankelijkheidsgrafiek.
 
-[![Tabblad Aggregatiefunctie-belang in de visualisatie van de uitleg](./media/how-to-machine-learning-interpretability-aml/aggregate-feature-importance.gif)](./media/how-to-machine-learning-interpretability-aml/aggregate-feature-importance.gif#lightbox)
+[![Tabblad Belang van aggregatiefunctie in de uitlegvisualisatie](./media/how-to-machine-learning-interpretability-aml/aggregate-feature-importance.gif)](./media/how-to-machine-learning-interpretability-aml/aggregate-feature-importance.gif#lightbox)
 
 ### <a name="understand-individual-predictions-local-explanation"></a>Inzicht in afzonderlijke voorspellingen (lokale uitleg) 
 
-Op het vierde tabblad van het tabblad Uitleg kunt u inzoomen op een afzonderlijk gegevenspunt en hun afzonderlijke functie-belang. U kunt de plot voor het belang van afzonderlijke functies voor elk gegevenspunt laden door te klikken op een van de afzonderlijke gegevenspunten in het hoofdspreidingsdiagram of door een specifiek gegevenspunt te selecteren in de wizard van het deelvenster aan de rechterkant.
+Op het vierde tabblad van het tabblad Uitleg kunt u inzoomen op een afzonderlijk gegevenspunt en hun afzonderlijke functie-belang. U kunt de plot voor het belang van afzonderlijke functies voor elk gegevenspunt laden door te klikken op een van de afzonderlijke gegevenspunten in het hoofdspreidingsdiagram of door een specifiek gegevenspunt te selecteren in de wizard deelvenster aan de rechterkant.
 
 |Plotten|Description|
 |----|-----------|
 |Belang van afzonderlijke functies|Toont de belangrijkste top-k-functies voor een afzonderlijke voorspelling. Helpt het lokale gedrag van het onderliggende model op een specifiek gegevenspunt te illustreren.|
 |What-If analyse|Hiermee kunt u wijzigingen in functiewaarden van het geselecteerde echte gegevenspunt aanbrengen en resulterende wijzigingen in de voorspellingswaarde observeren door een hypothetisch gegevenspunt met de nieuwe functiewaarden te genereren.|
-|Afzonderlijke voorwaardelijke verwachting (ICE)|Hiermee kunnen functiewaardewijzigingen van een minimumwaarde in een maximumwaarde worden gewijzigd. Helpt te illustreren hoe de voorspelling van het gegevenspunt verandert wanneer een functie verandert.|
+|Afzonderlijke voorwaardelijke verwachting (ICE)|Hiermee kunnen functiewaardewijzigingen van een minimumwaarde in een maximumwaarde worden gewijzigd. Helpt te illustreren hoe de voorspelling van het gegevenspunt verandert wanneer een functie wordt gewijzigd.|
 
 [![Het belang van afzonderlijke functies en het what-if-tabblad in het uitlegdashboard](./media/how-to-machine-learning-interpretability-aml/individual-tab.gif)](./media/how-to-machine-learning-interpretability-aml/individual-tab.gif#lightbox)
 
@@ -351,14 +352,14 @@ Op het vierde tabblad van het tabblad Uitleg kunt u inzoomen op een afzonderlijk
 
 ### <a name="visualization-in-azure-machine-learning-studio"></a>Visualisatie in Azure Machine Learning-studio
 
-Als u de stappen voor externe [interpreteerbaarheid](how-to-machine-learning-interpretability-aml.md#generate-feature-importance-values-via-remote-runs) voltooit (door gegenereerde uitleg te uploaden naar Azure Machine Learning Run History), kunt u de visualisaties bekijken op het [uitlegdashboard](https://ml.azure.com)in Azure Machine Learning-studio . Dit dashboard is een eenvoudigere versie van de dashboardwidget die wordt gegenereerd in uw Jupyter-notebook. What-If het genereren van gegevenspunten en ICE-plots zijn uitgeschakeld omdat er geen actieve rekenkracht is in Azure Machine Learning-studio die hun realtime berekeningen kunnen uitvoeren.
+Als u de stappen voor externe [interpreteerbaarheid](how-to-machine-learning-interpretability-aml.md#generate-feature-importance-values-via-remote-runs) voltooit (door gegenereerde uitleg te uploaden naar Azure Machine Learning Run History), kunt u de visualisaties bekijken op het [uitlegdashboard](https://ml.azure.com)in Azure Machine Learning-studio . Dit dashboard is een eenvoudigere versie van de dashboardwidget die wordt gegenereerd in uw Jupyter-notebook. What-If het genereren van gegevenspunten en ICE-plots zijn uitgeschakeld omdat er geen actieve compute in Azure Machine Learning-studio die hun realtime berekeningen kunnen uitvoeren.
 
 Als de gegevensset, globale en lokale uitleg beschikbaar zijn, worden alle tabbladen ingevuld. Als er alleen een globale uitleg beschikbaar is, wordt het tabblad Belang van afzonderlijke functies uitgeschakeld.
 
 Volg een van deze paden voor toegang tot het uitlegdashboard in Azure Machine Learning-studio:
 
 * **Deelvenster Experimenten** (preview)
-  1. Selecteer **Experimenten** in het linkerdeelvenster voor een lijst met experimenten die u hebt uitgevoerd op Azure Machine Learning.
+  1. Selecteer **Experimenten** in het linkerdeelvenster om een lijst met experimenten weer te geven die u hebt uitgevoerd op Azure Machine Learning.
   1. Selecteer een bepaald experiment om alle runs in dat experiment te bekijken.
   1. Selecteer een run en vervolgens het tabblad **Uitleg** naar het dashboard voor uitlegvisualisatie.
 
@@ -428,9 +429,9 @@ U kunt de uitleg samen met het oorspronkelijke model implementeren en dit gebrui
    print(preds)
    ```
 
-1. Implementeer de afbeelding in een rekendoel door de volgende stappen uit te voeren:
+1. Implementeer de afbeelding op een rekendoel door de volgende stappen uit te voeren:
 
-   1. Registreer zo nodig uw oorspronkelijke voorspellingsmodel door de stappen in [Modellen implementeren met Azure Machine Learning.](./how-to-deploy-and-where.md)
+   1. Registreer zo nodig uw oorspronkelijke voorspellingsmodel door de stappen te volgen in [Modellen implementeren met Azure Machine Learning.](./how-to-deploy-and-where.md)
 
    1. Maak een scoring-bestand.
 
@@ -561,11 +562,11 @@ U kunt de uitleg samen met het oorspronkelijke model implementeren en dit gebrui
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-* **Sparse gegevens worden niet ondersteund:** het dashboard met modeluitbreeding wordt aanzienlijk beperkt/vertraagd met een groot aantal functies. Daarom bieden we momenteel geen ondersteuning voor sparse gegevensindeling. Daarnaast ontstaan er algemene geheugenproblemen met grote gegevenssets en een groot aantal functies. 
+* **Sparse gegevens worden niet ondersteund:** het dashboard voor modeluitbreeding wordt aanzienlijk beperkt/vertraagd met een groot aantal functies. Daarom bieden we momenteel geen ondersteuning voor sparse gegevensindeling. Daarnaast ontstaan er algemene geheugenproblemen met grote gegevenssets en een groot aantal functies. 
 
 * Prognosemodellen worden niet ondersteund met **modeluit** leggen: Interpretability, best model explanation, is not available for AutoML forecasting experiments that recommend the following algorithms as the best model: TCNForecaster, AutoArima, ExponentialSmoothing, Average, Naive, Seasonal Average, and Seasonal Naive. AutoML-prognoses hebben regressiemodellen die uitleg ondersteunen. In het uitlegdashboard wordt het tabblad Belang van afzonderlijke functies echter niet ondersteund voor prognoses vanwege de complexiteit van hun gegevenspijplijnen.
 
-* **Lokale uitleg voor** gegevensindex: het uitlegdashboard biedt geen ondersteuning voor het in verband brengen van waarden van lokale belang aan een rij-id uit de oorspronkelijke validatiegegevensset als die gegevensset groter is dan 5000 gegevenspunten, omdat het dashboard willekeurig een downsamp van de gegevens bevat. Het dashboard toont echter onbewerkte functiewaarden voor gegevenssets voor elk gegevenspunt dat wordt doorgegeven aan het dashboard op het tabblad Belang van afzonderlijke functies. Gebruikers kunnen lokale belang terug aan de oorspronkelijke gegevensset koppelen door de onbewerkte functiewaarden van de gegevensset aan te passen. Als de grootte van de validatieset kleiner is dan 5000 voorbeelden, komt de functie in AzureML Studio overeen met de `index` index in de validatieset.
+* **Lokale uitleg voor** gegevensindex: het uitlegdashboard biedt geen ondersteuning voor het in verband brengen van waarden van lokaal belang met een rij-id uit de oorspronkelijke validatiegegevensset als die gegevensset groter is dan 5000 gegevenspunten, omdat het dashboard willekeurig een downsamp van de gegevens bevat. Het dashboard toont echter onbewerkte functiewaarden voor gegevenssets voor elk gegevenspunt dat wordt doorgegeven aan het dashboard op het tabblad Belang van afzonderlijke functies. Gebruikers kunnen lokale belang terug aan de oorspronkelijke gegevensset koppelen door de onbewerkte functiewaarden van de gegevensset aan te passen. Als de grootte van de validatieset minder dan 5000 voorbeelden is, komt de functie in AzureML Studio overeen met de `index` index in de validatieset.
 
 * **Wat-als-/ICE-plots** worden niet ondersteund in Studio: What-If- en ICE-plots (Individual Conditional Expectation) worden niet ondersteund in Azure Machine Learning-studio onder het tabblad Uitleg, omdat voor de geüploade uitleg een actieve berekening nodig is om voorspellingen en waarschijnlijkheden van verstoorde functies opnieuw te berekenen. Het wordt momenteel ondersteund in Jupyter-notebooks wanneer het wordt uitgevoerd als een widget met behulp van de SDK.
 

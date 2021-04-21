@@ -1,41 +1,41 @@
 ---
-title: Statisch IP-adres voor container groep
-description: Een container groep maken in een virtueel netwerk en een Azure Application gateway gebruiken om een statisch frontend-IP-adres beschikbaar te stellen voor een web-app met container
+title: Statisch IP-adres voor containergroep
+description: Maak een containergroep in een virtueel netwerk en gebruik een Azure-toepassingsgateway om een statisch front-end-IP-adres beschikbaar te maken voor een in een container geplaatste web-app
 ms.topic: article
 ms.date: 03/16/2020
-ms.openlocfilehash: 0131780fdb04a71837d5ae9bf5498bf2bd499f8a
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: de9e06b457a9ea5485fe268bd2b7cf206f0a6c0e
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98035050"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107790937"
 ---
-# <a name="expose-a-static-ip-address-for-a-container-group"></a>Een statisch IP-adres voor een container groep beschikbaar maken
+# <a name="expose-a-static-ip-address-for-a-container-group"></a>Een statisch IP-adres voor een containergroep blootstellen
 
-In dit artikel wordt één manier getoond om een statisch, openbaar IP-adres voor een [container groep](container-instances-container-groups.md) beschikbaar te maken met behulp van een Azure [Application Gateway](../application-gateway/overview.md). Volg deze stappen als u een statisch toegangs punt nodig hebt voor een extern gerichte container-app die wordt uitgevoerd in Azure Container Instances. 
+In dit artikel wordt één manier beschreven om een statisch, openbaar IP-adres voor een [containergroep](container-instances-container-groups.md) beschikbaar te maken met behulp van een [Azure-toepassingsgateway.](../application-gateway/overview.md) Volg deze stappen wanneer u een statisch toegangspunt nodig hebt voor een extern gerichte container-app die wordt uitgevoerd in Azure Container Instances. 
 
 In dit artikel gebruikt u de Azure CLI om de resources voor dit scenario te maken:
 
 * Een virtueel Azure-netwerk
-* Een container groep die [in het virtuele netwerk](container-instances-vnet.md) is geïmplementeerd en die als host fungeert voor een kleine web-app
-* Een toepassings gateway met een openbaar front-end-IP-adres, een listener voor het hosten van een website op de gateway en een route naar de back-end-container groep
+* Een containergroep die is geïmplementeerd [in het virtuele netwerk dat](container-instances-vnet.md) als host voor een kleine web-app wordt gebruikt
+* Een toepassingsgateway met een openbaar front-end-IP-adres, een listener voor het hosten van een website op de gateway en een route naar de back-endcontainergroep
 
-Zolang de Application Gateway wordt uitgevoerd en de container groep een stabiel privé IP-adres in het overgedragen subnet van het netwerk beschikbaar maakt, is de container groep toegankelijk op dit open bare IP-adres.
+Zolang de toepassingsgateway wordt uitgevoerd en de containergroep een stabiel privé-IP-adres beschikbaar maakt in het gedelegeerde subnet van het netwerk, is de containergroep toegankelijk op dit openbare IP-adres.
 
 > [!NOTE]
-> Azure-kosten voor een toepassings gateway op basis van de hoeveelheid tijd die de gateway is ingericht en beschikbaar, evenals de hoeveelheid gegevens die wordt verwerkt. Zie [prijzen](https://azure.microsoft.com/pricing/details/application-gateway/).
+> Azure brengt kosten in rekening voor een toepassingsgateway op basis van de hoeveelheid tijd die de gateway is ingericht en beschikbaar is, evenals de hoeveelheid gegevens die wordt verwerkt. Zie [prijzen.](https://azure.microsoft.com/pricing/details/application-gateway/)
 
 ## <a name="create-virtual-network"></a>Virtueel netwerk maken
 
-In de meeste gevallen hebt u mogelijk al een virtueel Azure-netwerk. Als u er nog geen hebt, kunt u er een maken zoals wordt weer gegeven met de volgende voorbeeld opdrachten. Het virtuele netwerk heeft afzonderlijke subnetten nodig voor de toepassings gateway en de container groep.
+In veel gevallen hebt u mogelijk al een virtueel Azure-netwerk. Als u er nog geen hebt, maakt u er een zoals wordt weergegeven met de volgende voorbeeldopdrachten. Het virtuele netwerk heeft afzonderlijke subnetten nodig voor de toepassingsgateway en de containergroep.
 
-Als u een Azure-resource groep nodig hebt, moet u er een maken. Bijvoorbeeld:
+Als u er een nodig hebt, maakt u een Azure-resourcegroep. Bijvoorbeeld:
 
 ```azureci
 az group create --name myResourceGroup --location eastus
 ```
 
-Maak een virtueel netwerk met de opdracht [AZ Network vnet Create][az-network-vnet-create] . Met deze opdracht maakt u het *myAGSubnet* -subnet in het netwerk.
+Maak een virtueel netwerk met de [opdracht az network vnet create.][az-network-vnet-create] Met deze opdracht maakt u *het subnet myAGSubnet* in het netwerk.
 
 ```azurecli
 az network vnet create \
@@ -47,7 +47,7 @@ az network vnet create \
   --subnet-prefix 10.0.1.0/24
 ```
 
-Gebruik de opdracht [AZ Network vnet subnet Create][az-network-vnet-subnet-create] om een subnet te maken voor de back-end-container groep. Hier ziet u de naam *myACISubnet*.
+Gebruik de [opdracht az network vnet subnet create][az-network-vnet-subnet-create] om een subnet voor de back-endcontainergroep te maken. Hier heeft deze de *naam my CAPACITIESubnet.*
 
 ```azurecli
 az network vnet subnet create \
@@ -57,7 +57,7 @@ az network vnet subnet create \
   --address-prefix 10.0.2.0/24
 ```
 
-Gebruik de opdracht [AZ Network Public-IP Create][az-network-public-ip-create] om een statische open bare IP-resource te maken. In een latere stap wordt dit adres geconfigureerd als de front-end van de toepassings gateway.
+Gebruik de [opdracht az network public-ip create om][az-network-public-ip-create] een statische openbare IP-resource te maken. In een latere stap wordt dit adres geconfigureerd als de front-end van de toepassingsgateway.
 
 ```azurecli
 az network public-ip create \
@@ -69,9 +69,9 @@ az network public-ip create \
 
 ## <a name="create-container-group"></a>Containergroep maken
 
-Voer de volgende [AZ-container Create][az-container-create] uit om een container groep te maken in het virtuele netwerk dat u in de vorige stap hebt geconfigureerd. 
+Voer de volgende [az container create uit om][az-container-create] een containergroep te maken in het virtuele netwerk dat u in de vorige stap hebt geconfigureerd. 
 
-De groep wordt geïmplementeerd in het *myACISubnet* -subnet en bevat één exemplaar met de naam *appcontainer* die de `aci-helloworld` installatie kopie ophaalt. Zoals in andere artikelen in de documentatie wordt weer gegeven, verpakt deze afbeelding een kleine web-app die is geschreven in Node.js die een statische HTML-pagina vormt. 
+De groep wordt geïmplementeerd in het *subnet my CAPACITIESubnet* en bevat één exemplaar met de naam *appcontainer* dat de afbeelding `aci-helloworld` oppikt. Zoals u in andere artikelen in de documentatie kunt zien, verpakt deze afbeelding een kleine web-app die is geschreven in Node.js een statische HTML-pagina. 
 
 ```azurecli
 az container create \
@@ -82,7 +82,7 @@ az container create \
   --subnet myACISubnet
 ```
 
-Wanneer de implementatie is voltooid, wordt aan de container groep een privé-IP-adres in het virtuele netwerk toegewezen. Voer bijvoorbeeld de volgende opdracht [AZ container show][az-container-show] uit om het IP-adres van de groep op te halen:
+Wanneer de containergroep is geïmplementeerd, wordt een privé-IP-adres toegewezen in het virtuele netwerk. Voer bijvoorbeeld de volgende opdracht [az container show][az-container-show] uit om het IP-adres van de groep op te halen:
 
 ```azurecli
 az container show \
@@ -92,7 +92,7 @@ az container show \
 
 De uitvoer is vergelijkbaar met: `10.0.2.4`.
 
-Voor gebruik in een latere stap slaat u het IP-adres op in een omgevings variabele:
+Sla voor gebruik in een latere stap het IP-adres op in een omgevingsvariabele:
 
 ```azurecli
 ACI_IP=$(az container show \
@@ -102,11 +102,11 @@ ACI_IP=$(az container show \
 ```
 
 > [!IMPORTANT]
-> Als de container groep is gestopt, gestart of opnieuw wordt gestart, is het privé-IP-adres van de container groep onderhevig aan wijzigingen. Als dit het geval is, moet u de configuratie van de toepassings gateway bijwerken.
+> Als de containergroep is gestopt, gestart of opnieuw is opgestart, kan het privé-IP-adres van de containergroep worden gewijzigd. Als dit gebeurt, moet u de configuratie van de toepassingsgateway bijwerken.
 
 ## <a name="create-application-gateway"></a>Een toepassingsgateway maken
 
-Maak een toepassings gateway in het virtuele netwerk volgens de stappen in de [Snelstartgids voor Application Gateway](../application-gateway/quick-create-cli.md). De volgende [AZ Network Application-Gateway Create][az-network-application-gateway-create] opdracht maakt een gateway met een openbaar frontend-IP-adres en een route naar de back-end-container groep. Raadpleeg de [Application Gateway-documentatie](../application-gateway/index.yml) voor meer informatie over de gateway-instellingen.
+Maak een toepassingsgateway in het virtuele netwerk door de stappen in de quickstart voor [de toepassingsgateway te volgen.](../application-gateway/quick-create-cli.md) Met de [volgende opdracht az network application-gateway create][az-network-application-gateway-create] maakt u een gateway met een openbaar front-end-IP-adres en een route naar de back-endcontainergroep. Zie de [Application Gateway voor](../application-gateway/index.yml) meer informatie over de gatewayinstellingen.
 
 ```azurecli
 az network application-gateway create \
@@ -123,13 +123,13 @@ az network application-gateway create \
 ```
 
 
-Het kan tot vijf tien minuten duren voordat Azure de toepassings gateway maakt. 
+Het kan tot 15 minuten duren voordat Azure de toepassingsgateway heeft maken. 
 
 ## <a name="test-public-ip-address"></a>Openbaar IP-adres testen
   
-Nu kunt u de toegang tot de web-app die wordt uitgevoerd in de container groep achter de toepassings gateway testen.
+U kunt nu de toegang testen tot de web-app die wordt uitgevoerd in de containergroep achter de toepassingsgateway.
 
-Voer de opdracht [AZ Network public-ip show][az-network-public-ip-show] uit om het open bare frontend-IP-adres van de gateway op te halen:
+Voer de [opdracht az network public-ip show][az-network-public-ip-show] uit om het openbare IP-adres van de front-end van de gateway op te halen:
 
 ```azurecli
 az network public-ip show \
@@ -139,22 +139,22 @@ az network public-ip show \
 --output tsv
 ```
 
-Output is een openbaar IP-adres, vergelijkbaar met: `52.142.18.133` .
+Uitvoer is een openbaar IP-adres, vergelijkbaar met: `52.142.18.133` .
 
-Als u de actieve web-app wilt weer geven wanneer deze is geconfigureerd, gaat u naar het open bare IP-adres van de gateway in uw browser. Geslaagde toegang is vergelijkbaar met:
+Als u de web-app wilt weergeven wanneer deze is geconfigureerd, gaat u naar het openbare IP-adres van de gateway in uw browser. Geslaagde toegang is vergelijkbaar met:
 
 ![Schermafbeelding van browser met toepassing die wordt uitgevoerd in een exemplaar van een Azure-container](./media/container-instances-application-gateway/aci-app-app-gateway.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Bekijk een [Quick](https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress-vnet) start-sjabloon voor het maken van een container groep met een WordPress-container exemplaar als back-endserver achter een toepassings gateway.
-* U kunt ook een toepassings gateway configureren met een certificaat voor SSL-beëindiging. Zie het [overzicht](../application-gateway/ssl-overview.md) en de [zelf studie](../application-gateway/create-ssl-portal.md).
-* Afhankelijk van uw scenario kunt u gebruikmaken van andere Azure-oplossingen voor taak verdeling met Azure Container Instances. Gebruik bijvoorbeeld [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md) om het verkeer over meerdere container instanties en meerdere regio's te distribueren. Zie dit [blog bericht](https://aaronmsft.com/posts/azure-container-instances/).
+* Zie een [quickstart-sjabloon voor](https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress-vnet) het maken van een containergroep met een WordPress-containerin instance als een back-endserver achter een toepassingsgateway.
+* U kunt ook een toepassingsgateway configureren met een certificaat voor SSL-beëindiging. Zie het [overzicht en](../application-gateway/ssl-overview.md) de [zelfstudie](../application-gateway/create-ssl-portal.md).
+* Afhankelijk van uw scenario kunt u andere Azure-taakverdelingsoplossingen gebruiken met Azure Container Instances. Gebruik bijvoorbeeld [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md) om verkeer te verdelen over meerdere container-exemplaren en over meerdere regio's. Zie dit [blogbericht](https://aaronmsft.com/posts/azure-container-instances/).
 
-[az-network-vnet-create]:  /cli/azure/network/vnet#az-network-vnet-create
-[az-network-vnet-subnet-create]: /cli/azure/network/vnet/subnet#az-network-vnet-subnet-create
-[az-network-public-ip-create]: /cli/azure/network/public-ip#az-network-public-ip-create
-[az-network-public-ip-show]: /cli/azure/network/public-ip#az-network-public-ip-show
-[az-network-application-gateway-create]: /cli/azure/network/application-gateway#az-network-application-gateway-create
-[az-container-create]: /cli/azure/container#az-container-create
-[az-container-show]: /cli/azure/container#az-container-show
+[az-network-vnet-create]:  /cli/azure/network/vnet#az_network_vnet_create
+[az-network-vnet-subnet-create]: /cli/azure/network/vnet/subnet#az_network_vnet_subnet_create
+[az-network-public-ip-create]: /cli/azure/network/public-ip#az_network_public_ip_create
+[az-network-public-ip-show]: /cli/azure/network/public-ip#az_network_public_ip_show
+[az-network-application-gateway-create]: /cli/azure/network/application-gateway#az_network-application-gateway-create
+[az-container-create]: /cli/azure/container#az_container_create
+[az-container-show]: /cli/azure/container#az_container_show

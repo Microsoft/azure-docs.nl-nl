@@ -1,6 +1,6 @@
 ---
 title: Streaming-eindpunten beheren
-description: In dit artikel wordt beschreven hoe u streaming-eind punten beheert met Azure Media Services v3.
+description: In dit artikel wordt beschreven hoe u streaming-eindpunten beheert met Azure Media Services v3.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -15,30 +15,30 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 5ad7ef447e1b8e5ac141e4feb65f1b8361b2a646
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 2b442edc537ec64b12df215a18ab017ee47becff
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106281934"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791729"
 ---
-# <a name="manage-streaming-endpoints-with--media-services-v3"></a>Streaming-eind punten beheren met Media Services v3
+# <a name="manage-streaming-endpoints-with--media-services-v3"></a>Streaming-eindpunten beheren met Media Services v3
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Wanneer uw Media Services-account is gemaakt, wordt er een **standaard** [streaming-eind punt](stream-streaming-endpoint-concept.md) aan uw account toegevoegd met de status **gestopt** . Als u de inhoud wilt streamen en gebruik wilt maken van [dynamische pakketten](encode-dynamic-packaging-concept.md) en [dynamische versleuteling](drm-content-protection-concept.md), moet het streaming-eind punt van waar u inhoud wilt streamen, de status **wordt uitgevoerd** hebben.
+Wanneer uw Media Services wordt gemaakt, wordt er een [standaardstreaming-eindpunt](stream-streaming-endpoint-concept.md) met de status Gestopt toegevoegd aan **uw** account.  Als u inhoud wilt streamen [](encode-dynamic-packaging-concept.md) en gebruik wilt maken van dynamische verpakking en dynamische versleuteling, [](drm-content-protection-concept.md)moet het streaming-eindpunt van waar u inhoud wilt streamen de status **Wordt** uitgevoerd hebben.
 
-In dit artikel wordt beschreven hoe u de [Start](/rest/api/media/streamingendpoints/start) -opdracht uitvoert op het streaming-eind punt met behulp van verschillende technologieën. 
+In dit artikel wordt beschreven hoe u de [startopdracht](/rest/api/media/streamingendpoints/start) uitvoert op uw streaming-eindpunt met behulp van verschillende technologieën. 
  
 > [!NOTE]
-> Er worden alleen kosten in rekening gebracht wanneer het streaming-eind punt wordt uitgevoerd.
+> U wordt alleen gefactureerd wanneer uw streaming-eindpunt wordt uitgevoerd.
     
 ## <a name="prerequisites"></a>Vereisten
 
 Bekijk: 
 
 * [Media Services-concepts](concepts-overview.md)
-* [Concept van streaming-eind punt](stream-streaming-endpoint-concept.md)
+* [Concept streaming-eindpunt](stream-streaming-endpoint-concept.md)
 * [Dynamische verpakking](encode-dynamic-packaging-concept.md)
 
 ## <a name="use-rest"></a>REST gebruiken
@@ -49,18 +49,18 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Zie voor meer informatie: 
 
-* De documentatie voor [een StreamingEndpoint](/rest/api/media/streamingendpoints/start) -referentie starten.
-* Het starten van een streaming-eind punt is een asynchrone bewerking. 
+* De [start een StreamingEndpoint-referentiedocumentatie.](/rest/api/media/streamingendpoints/start)
+* Het starten van een streaming-eindpunt is een asynchrone bewerking. 
 
-    Zie [langlopende bewerkingen](media-services-apis-overview.md)voor meer informatie over het controleren van langlopende bewerkingen.
-* Deze [postman-verzameling](https://github.com/Azure-Samples/media-services-v3-rest-postman/blob/master/Postman/Media%20Services%20v3.postman_collection.json) bevat voor beelden van meerdere rest-bewerkingen, met inbegrip van het starten van een streaming-eind punt.
+    Zie Langlopende bewerkingen voor meer informatie over het bewaken [van langlopende bewerkingen.](media-services-apis-overview.md)
+* Deze [Postman-verzameling](https://github.com/Azure-Samples/media-services-v3-rest-postman/blob/master/Postman/Media%20Services%20v3.postman_collection.json) bevat voorbeelden van meerdere REST-bewerkingen, waaronder het starten van een streaming-eindpunt.
 
 ## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken 
  
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-1. Ga naar uw Azure Media Services-account.
-1. Selecteer in het linkerdeel venster  **streaming-eind punten**.
-1. Selecteer het streaming-eind punt dat u wilt starten en selecteer vervolgens **starten**.
+1. Ga naar uw Azure Media Services account.
+1. Selecteer streaming-eindpunten **in het linkerdeelvenster.**
+1. Selecteer het streaming-eindpunt dat u wilt starten en selecteer vervolgens **Starten.**
 
 ## <a name="use-the-azure-cli"></a>Azure CLI gebruiken
 
@@ -73,7 +73,7 @@ az ams streaming-endpoint start [--account-name]
                                 [--subscription]
 ```
 
-Zie [AZ AMS streaming-endpoint start](/cli/azure/ams/streaming-endpoint#az-ams-streaming-endpoint-start)voor meer informatie.
+Zie az [ams streaming-endpoint start voor meer informatie.](/cli/azure/ams/streaming-endpoint#az_ams_streaming_endpointstart)
 
 ## <a name="use-sdks"></a>SDK's gebruiken
 
@@ -87,7 +87,7 @@ if (streamingEndpoint.resourceState() != StreamingEndpointResourceState.RUNNING)
 }
 ```
 
-Bekijk het volledige voor [beeld van Java-code](https://github.com/Azure-Samples/media-services-v3-java/blob/master/DynamicPackagingVODContent/StreamHLSAndDASH/src/main/java/sample/StreamHLSAndDASH.java#L128).
+Bekijk het volledige [Java-codevoorbeeld](https://github.com/Azure-Samples/media-services-v3-java/blob/master/DynamicPackagingVODContent/StreamHLSAndDASH/src/main/java/sample/StreamHLSAndDASH.java#L128).
 
 ### <a name="net"></a>.NET
 
@@ -102,11 +102,11 @@ if (streamingEndpoint != null)
     }
 ```
 
-Bekijk het volledige voor [beeld van .net-code](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/main/Streaming/StreamHLSAndDASH/Program.cs#L112).
+Bekijk het volledige [.NET-codevoorbeeld.](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/main/Streaming/StreamHLSAndDASH/Program.cs#L112)
 
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Media Services v3 OpenAPI-specificatie (Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01)
-* [Streaming-eindpunt bewerkingen](/rest/api/media/streamingendpoints)
+* [Media Services v3 OpenAPI Specification (Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01)
+* [Streaming-eindpuntbewerkingen](/rest/api/media/streamingendpoints)

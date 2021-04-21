@@ -1,23 +1,23 @@
 ---
-title: Een aangepaste NGINX-controller voor ingress gebruiken en HTTPS configureren
+title: Een aangepaste NGINX-controller voor verkeer gebruiken en HTTPS configureren
 services: azure-dev-spaces
 ms.date: 12/10/2019
 ms.topic: conceptual
-description: Meer informatie over het configureren van Azure Dev Spaces voor het gebruik van een aangepaste NGINX-controller voor ingress en het configureren van HTTPS met behulp van die ingress-controller
+description: Meer informatie over het configureren van Azure Dev Spaces voor het gebruik van een aangepaste NGINX-controller voor ingress en het configureren van HTTPS met die controller voor ingress
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, servicemesh, servicemeshroutering, kubectl, k8s
 ms.custom: devx-track-js
-ms.openlocfilehash: a0c8fa453115936b61b2cdae299e07ae10356ed3
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: b07d66e0031b907811c4ec251987aa020542b05a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107378768"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107777505"
 ---
-# <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Een aangepaste NGINX-controller voor ingress gebruiken en HTTPS configureren
+# <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Een aangepaste NGINX-controller voor verkeer gebruiken en HTTPS configureren
 
 [!INCLUDE [Azure Dev Spaces deprecation](../../../includes/dev-spaces-deprecation.md)]
 
-In dit artikel wordt beschreven hoe u Azure Dev Spaces configureert voor het gebruik van een aangepaste NGINX-controller voor ingressen. In dit artikel wordt ook beschreven hoe u die aangepaste controller voor ingress configureert voor het gebruik van HTTPS.
+In dit artikel wordt beschreven hoe u Azure Dev Spaces configureert voor het gebruik van een aangepaste NGINX-controller voor ingress. In dit artikel wordt ook beschreven hoe u die aangepaste controller voor verkeer configureert voor het gebruik van HTTPS.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u Azure Dev Spaces configureert voor het geb
 * [Helm 3 geïnstalleerd.][helm-installed]
 * [Een aangepast domein met][custom-domain] een [DNS-zone.][dns-zone]  In dit artikel wordt ervan uitgenomen dat het aangepaste domein en de DNS-zone zich in dezelfde resourcegroep als uw AKS-cluster bevindt, maar het is mogelijk om een aangepast domein en een DNS-zone in een andere resourcegroep te gebruiken.
 
-## <a name="configure-a-custom-nginx-ingress-controller"></a>Een aangepaste NGINX-controller voor binnengressen configureren
+## <a name="configure-a-custom-nginx-ingress-controller"></a>Een aangepaste NGINX-controller voor ingress configureren
 
 Maak verbinding met uw cluster met behulp van [kubectl][kubectl], de Kubernetes-opdrachtregelclient. Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
 
@@ -44,13 +44,13 @@ NAME                                STATUS   ROLES   AGE    VERSION
 aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.14.1
 ```
 
-Voeg de [officiële stabiele Helm-opslagplaats][helm-stable-repo]toe, die de Helm-grafiek voor de NGINX-ingresscontroller bevat.
+Voeg de [officiële stabiele Helm-opslagplaats toe,][helm-stable-repo]die de Helm-grafiek voor de NGINX-controller voor ingress bevat.
 
 ```console
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 ```
 
-Maak een Kubernetes-naamruimte voor de NGINX-controller voorgressen en installeer deze met behulp van `helm` .
+Maak een Kubernetes-naamruimte voor de NGINX-controller voorgress en installeer deze met `helm` .
 
 ```console
 kubectl create ns nginx
@@ -58,13 +58,13 @@ helm install nginx stable/nginx-ingress --namespace nginx --version 1.27.0
 ```
 
 > [!NOTE]
-> In het bovenstaande voorbeeld wordt een openbaar eindpunt gemaakt voor uw controller voor ingressen. Als u in plaats daarvan een privé-eindpunt moet gebruiken voor uw controller voor binnendringen, voegt u de *--set controller.service.annotations toe. service \\ .beta \\ .kubernetes \\ .io/azure-load-balancer-internal"=true* parameter to the *Helm install* command. Bijvoorbeeld:
+> In het bovenstaande voorbeeld wordt een openbaar eindpunt gemaakt voor uw controller voor binnendingsingressen. Als u in plaats daarvan een privé-eindpunt wilt gebruiken voor uw controller voor ingress, voegt u de *--set controller.service.annotations toe. service \\ .beta \\ .kubernetes \\ .io/azure-load-balancer-internal"=true* parameter to the *Helm install* command. Bijvoorbeeld:
 > ```console
 > helm install nginx stable/nginx-ingress --namespace nginx --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-internal"=true --version 1.27.0
 > ```
 > Dit privé-eindpunt wordt zichtbaar in het virtuele netwerk waar uw AKS-cluster is geïmplementeerd.
 
-Haal het IP-adres van de NGINX-controllerservice voor ingress op met [behulp van kubectl get.][kubectl-get]
+Haal het IP-adres van de NGINX-controllerservice voor ingress op met [behulp van kubectl get][kubectl-get].
 
 ```console
 kubectl get svc -n nginx --watch
@@ -132,7 +132,7 @@ Maak de *dev-ruimte* met uw voorbeeldtoepassing met behulp van `azds space selec
 azds space select -n dev -y
 ```
 
-Implementeer de voorbeeldtoepassing met `helm install` behulp van .
+Implementeer de voorbeeldtoepassing met behulp van `helm install` .
 
 ```console
 helm install bikesharingsampleapp . --dependency-update --namespace dev --atomic
@@ -155,7 +155,7 @@ http://dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/  Available
 http://dev.gateway.nginx.MY_CUSTOM_DOMAIN/         Available
 ```
 
-Navigeer *naar de bikesharingweb-service* door de openbare URL te openen met de `azds list-uris` opdracht . In het bovenstaande voorbeeld is de openbare URL voor *de bikesharingweb-service* `http://dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/` .
+Navigeer *naar de bikesharingweb-service* door de openbare URL te openen met de `azds list-uris` opdracht . In het bovenstaande voorbeeld is de openbare URL voor de *bikesharingweb-service* `http://dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/` .
 
 > [!NOTE]
 > Als u een foutpagina ziet in plaats van de  *bikesharingweb-service,* controleert u of u zowel de *kubernetes.io/ingress.class-aantekening* als de host in het bestand *values.yaml hebt* bijgewerkt.
@@ -249,7 +249,7 @@ gateway:
       secretName: dev-gateway-secret
 ```
 
-Upgrade de voorbeeldtoepassing met `helm` behulp van :
+Upgrade de voorbeeldtoepassing met behulp van `helm` :
 
 ```console
 helm upgrade bikesharingsampleapp . --namespace dev --atomic
@@ -326,8 +326,8 @@ Meer informatie over hoe Azure Dev Spaces werkt.
 
 
 [az-cli]: /cli/azure/install-azure-cli
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
-[az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/a#az-network-dns-record-set-a-add-record
+[az-aks-get-credentials]: /cli/azure/aks#az_aks_get_credentials
+[az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/a#az_network_dns_record_set_a_add_record
 [custom-domain]: ../../app-service/manage-custom-dns-buy-domain.md#buy-an-app-service-domain
 [dns-zone]: ../../dns/dns-getstarted-cli.md
 [azds-yaml]: https://github.com/Azure/dev-spaces/blob/master/samples/BikeSharingApp/BikeSharingWeb/azds.yaml

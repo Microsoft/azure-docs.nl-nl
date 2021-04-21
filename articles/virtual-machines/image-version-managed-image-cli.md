@@ -1,6 +1,6 @@
 ---
-title: Een beheerde installatie kopie klonen naar een installatie kopie versie met behulp van de Azure CLI
-description: Meer informatie over het klonen van een beheerde installatie kopie naar een installatie kopie versie in een galerie met gedeelde afbeeldingen met behulp van de Azure CLI.
+title: Een beheerde afbeelding klonen naar een versie van een afbeelding met de Azure CLI
+description: Meer informatie over het klonen van een beheerde afbeelding naar een versie van een Shared Image Gallery met behulp van de Azure CLI.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: shared-image-gallery
@@ -10,42 +10,42 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cae82072785838d410453b2eb83685905b0ba04e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1d0644b9ec9009fe5d1db7701834cb9788f86ab0
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102553779"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107790163"
 ---
-# <a name="clone-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Een beheerde installatie kopie klonen naar een installatie kopie versie met behulp van de Azure CLI
-Als u een bestaande beheerde installatie kopie hebt die u in een galerie met gedeelde afbeeldingen wilt klonen, kunt u rechtstreeks vanuit de beheerde installatie kopie een installatie kopie van een gedeelde installatie kopie maken. Wanneer u de nieuwe installatie kopie hebt getest, kunt u de door de bron beheerde installatie kopie verwijderen. U kunt ook migreren van een beheerde installatie kopie naar een galerie met gedeelde afbeeldingen met behulp van [Power shell](image-version-managed-image-powershell.md).
+# <a name="clone-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Een beheerde afbeelding klonen naar een versie van een afbeelding met behulp van de Azure CLI
+Als u een bestaande beheerde afbeelding hebt die u wilt klonen in een Shared Image Gallery, kunt u een Shared Image Gallery rechtstreeks vanuit de beheerde afbeelding maken. Nadat u de nieuwe afbeelding hebt getest, kunt u de door de bron beheerde afbeelding verwijderen. U kunt ook migreren van een beheerde afbeelding naar een Shared Image Gallery met [behulp van PowerShell.](image-version-managed-image-powershell.md)
 
-Afbeeldingen in een afbeeldings galerie hebben twee onderdelen, die we in dit voor beeld gaan maken:
-- Een **definitie van een installatie kopie** bevat informatie over de installatie kopie en vereisten voor het gebruik ervan. Dit omvat of de installatie kopie Windows of Linux, gespecialiseerde of gegeneraliseerde, release opmerkingen en minimale en maximale geheugen vereisten zijn. Het is een definitie van een type installatiekopie. 
-- Een **installatie kopie versie** is wat wordt gebruikt om een virtuele machine te maken wanneer u een galerie met gedeelde afbeeldingen gebruikt. U kunt net zo veel versies van een installatiekopie voor uw omgeving gebruiken als u nodig hebt. Wanneer u een virtuele machine maakt, wordt de versie van de installatie kopie gebruikt voor het maken van nieuwe schijven voor de virtuele machine. Versies van installatiekopieën kunnen meerdere keren worden gebruikt.
+Afbeeldingen in een galerie met afbeeldingen hebben twee onderdelen, die we in dit voorbeeld gaan maken:
+- Een **definitie van een** afbeelding bevat informatie over de afbeelding en de vereisten voor het gebruik ervan. Dit omvat of de afbeelding Windows of Linux is, gespecialiseerd of ge generaliseerd, releasenotities en minimale en maximale geheugenvereisten. Het is een definitie van een type installatiekopie. 
+- Een **versie van een** afbeelding wordt gebruikt om een VM te maken wanneer u een Shared Image Gallery. U kunt net zo veel versies van een installatiekopie voor uw omgeving gebruiken als u nodig hebt. Wanneer u een VM maakt, wordt de versie van de afbeelding gebruikt om nieuwe schijven voor de VM te maken. Versies van installatiekopieën kunnen meerdere keren worden gebruikt.
 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Als u dit artikel wilt volt ooien, moet u beschikken over een bestaande [Galerie met gedeelde installatie kopieën](shared-images-cli.md). 
+Als u dit artikel wilt voltooien, moet u een bestaande [Shared Image Gallery.](shared-images-cli.md) 
 
-Om het voor beeld in dit artikel te volt ooien, moet u een bestaande beheerde installatie kopie van een gegeneraliseerde virtuele machine hebben. Zie [een beheerde installatie kopie vastleggen](./linux/capture-image.md)voor meer informatie. Als de beheerde installatie kopie een gegevens schijf bevat, kan de grootte van de gegevens schijf niet groter zijn dan 1 TB.
+Als u het voorbeeld in dit artikel wilt voltooien, moet u een bestaande beheerde afbeelding van een ge generaliseerde VM hebben. Zie Een beheerde afbeelding [vastleggen voor meer informatie.](./linux/capture-image.md) Als de beheerde afbeelding een gegevensschijf bevat, mag de grootte van de gegevensschijf niet groter zijn dan 1 TB.
 
-Wanneer u dit artikel doorwerkt, moet u de namen van de resource groep en de VM vervangen, indien nodig.
+Wanneer u dit artikel door werkt, vervangt u waar nodig de namen van de resourcegroep en de VM.
 
 
 
 ## <a name="create-an-image-definition"></a>Een definitie voor de installatiekopie maken
 
-Omdat beheerde installatie kopieën altijd gegeneraliseerde installatie kopieën zijn, maakt u een definitie van een installatie kopie met behulp `--os-state generalized` van een gegeneraliseerde installatie kopie.
+Omdat beheerde afbeeldingen altijd ge generaliseerde afbeeldingen zijn, maakt u een definitie van een afbeelding met `--os-state generalized` voor een ge generaliseerde afbeelding.
 
 Namen van installatiekopiedefinities kunnen bestaan uit hoofdletters, kleine letters, cijfers, streepjes en punten. 
 
 Zie [Installatiekopiedefinities](./shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
-Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
+Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az_sig_image_definition_create).
 
-In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition* en is voor een [gegeneraliseerde](./shared-image-galleries.md#generalized-and-specialized-images) installatie kopie van Linux-besturings systeem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
+In dit voorbeeld heet de definitie van de afbeelding *myImageDefinition* en is deze voor een ge generaliseerde [](./shared-image-galleries.md#generalized-and-specialized-images) Linux-besturingssysteemafbeelding. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
 
 ```azurecli-interactive 
 resourceGroup=myGalleryRG
@@ -65,7 +65,7 @@ az sig image-definition create \
 
 ## <a name="create-the-image-version"></a>De installatiekopieversie maken
 
-Maak een versie met behulp van [AZ Image Gallery Create-Image galerie-version](/cli/azure/sig/image-version#az-sig-image-version-create). U moet de ID van de beheerde installatie kopie door geven om te gebruiken als basis voor het maken van de installatie kopie versie. U kunt [AZ Image List](/cli/azure/image?view#az-image-list) gebruiken om de id's van uw installatie kopieën op te halen. 
+Maak versies met [az image gallery create-image-version](/cli/azure/sig/image-version#az_sig_image_version_create). U moet de id van de beheerde afbeelding doorgeven om te gebruiken als basislijn voor het maken van de versie van de afbeelding. U kunt [az image list gebruiken om](/cli/azure/image?view#az_image_list) de ID's voor uw afbeeldingen op te halen. 
 
 ```azurecli-interactive
 az image list --query "[].[name, id]" -o tsv
@@ -73,9 +73,9 @@ az image list --query "[].[name, id]" -o tsv
 
 Toegestane tekens voor een installatiekopieversie zijn cijfers en punten. Cijfers moeten binnen het bereik van een 32-bits geheel getal zijn. Indeling: *MajorVersion*.*MinorVersion*.*Patch*.
 
-In dit voor beeld is de versie van onze installatie kopie *1.0.0* en we gaan 1 replica maken in de regio *Zuid-Centraal VS* en 1 replica in de regio *VS-Oost 2* met zone-redundante opslag. Houd er rekening mee dat u bij het kiezen van doel regio's voor replicatie ook de *bron* regio moet toevoegen als doel voor replicatie.
+In dit voorbeeld is de versie van de afbeelding *1.0.0* en gaan we 1 replica maken in de regio *VS* - zuid-centraal en 1 replica in de regio VS - oost *2* met zone-redundante opslag. Wanneer u doelregio's voor replicatie kiest, moet u ook de *bronregio* als replicatiedoel opnemen.
 
-Geef de ID van de beheerde installatie kopie op in de `--managed-image` para meter.
+Geef de id van de beheerde afbeelding door in de `--managed-image` parameter .
 
 
 ```azurecli-interactive 
@@ -93,11 +93,11 @@ az sig image-version create \
 > [!NOTE]
 > U moet wachten tot de installatiekopieversie volledig is gebouwd en gerepliceerd voordat u dezelfde beheerde installatiekopie kunt gebruiken om een andere versie van de installatiekopie te maken.
 >
-> U kunt ook al uw afbeeldings versie replica's opslaan in [zone redundante opslag](../storage/common/storage-redundancy.md) door toe te voegen `--storage-account-type standard_zrs` Wanneer u de versie van de installatie kopie maakt.
+> U kunt ook al uw replica's van de versie van de afbeelding opslaan in [Zone-redundante](../storage/common/storage-redundancy.md) opslag door toe te voegen `--storage-account-type standard_zrs` wanneer u de versie van de afbeelding maakt.
 >
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Maak een virtuele machine op basis van een [gegeneraliseerde installatie kopie versie](vm-generalized-image-version-cli.md).
+Maak een VM van een [ge generaliseerde versie van de -afbeelding.](vm-generalized-image-version-cli.md)
 
-Zie voor meer informatie over het verstrekken van informatie over het aankoop plan [Azure Marketplace-informatie over het aankoop plan bij het maken van installatie kopieën](marketplace-images.md).
+Zie Informatie over het aankoopplan leveren bij het maken van afbeeldingen voor Azure Marketplace informatie over het leveren van informatie over het [aankoopplan.](marketplace-images.md)

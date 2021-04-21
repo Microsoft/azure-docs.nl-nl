@@ -10,12 +10,12 @@ ms.date: 04/19/2021
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: cb5caeb7f75834a317b222392c6e827185cfac00
-ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
+ms.openlocfilehash: 8c0158ea4e93b4bbefa7b41b5a280fa804ede35f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107714344"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107791279"
 ---
 # <a name="create-a-storage-account"></a>Een opslagaccount maken
 
@@ -90,7 +90,7 @@ Connect-AzAccount
 
 Meld u Azure Cloud Shell aan bij de Azure Portal om de [Azure Portal.](https://portal.azure.com)
 
-Voer de opdracht [az login](/cli/azure/reference-index#az-login) uit om u aan te melden bij de lokale installatie van de CLI:
+Voer de opdracht [az login](/cli/azure/reference-index#az_login) uit om u aan te melden bij de lokale installatie van de CLI:
 
 ```azurecli-interactive
 az login
@@ -110,46 +110,46 @@ Elke Resource Manager resource, inclusief een Azure-opslagaccount, moet deel uit
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Als u een Azure-opslagaccount wilt maken met Azure Portal, volgt u deze stappen:
+Volg deze stappen om een Azure-Azure Portal te maken met de Azure Portal:
 
 1. Selecteer opslagaccounts in het menu aan de **linkerkant van** de portal om een lijst met uw opslagaccounts weer te geven.
-1. Selecteer op **de pagina Opslagaccounts** de **optie Nieuw.**
+1. Selecteer op **de pagina** Opslagaccounts de optie **Nieuw.**
 
-Opties voor uw nieuwe opslagaccount zijn ingedeeld in tabbladen op **de pagina Een opslagaccount** maken. In de volgende secties worden alle tabbladen en de opties beschreven.
+Opties voor uw nieuwe opslagaccount zijn ingedeeld in tabbladen op **de pagina Een opslagaccount** maken. In de volgende secties worden de tabbladen en de opties beschreven.
 
 ### <a name="basics-tab"></a>Tabblad Basisbeginselen
 
-Geef op **het** tabblad Basisinformatie de essentiële informatie op voor uw opslagaccount. Nadat u  het tabblad Basisbeginselen hebt voltooid, kunt u ervoor kiezen om uw nieuwe opslagaccount verder aan te passen door opties in te stellen op de andere tabbladen. U kunt ook **Controleren en** maken selecteren om de standaardopties te accepteren en door te gaan met het valideren en maken van het account.
+Geef op **het** tabblad Basisinformatie de essentiële informatie voor uw opslagaccount op. Nadat u  het tabblad Basisbeginselen hebt voltooid, kunt u ervoor kiezen om uw nieuwe opslagaccount verder aan te passen door opties in te stellen op de andere tabbladen. U kunt ook **Controleren en** maken selecteren om de standaardopties te accepteren en door te gaan met het valideren en maken van het account.
 
 In de volgende tabel worden de velden op het tabblad **Basisinformatie** beschreven.
 
 | Sectie | Veld | Vereist of optioneel | Description |
 |--|--|--|--|
 | Projectgegevens | Abonnement | Vereist | Selecteer het abonnement voor het nieuwe opslagaccount. |
-| Projectgegevens | Resourcegroep | Vereist | Maak een nieuwe resourcegroep voor dit opslagaccount of selecteer een bestaande. Zie Resourcegroepen [voor meer informatie.](../../azure-resource-manager/management/overview.md#resource-groups) |
+| Projectgegevens | Resourcegroep | Vereist | Maak een nieuwe resourcegroep voor dit opslagaccount of selecteer een bestaande resourcegroep. Zie Resourcegroepen [voor meer informatie.](../../azure-resource-manager/management/overview.md#resource-groups) |
 | Exemplaardetails | Naam van het opslagaccount | Vereist | Kies een unieke naam voor uw opslagaccount. Namen van opslagaccounts moeten tussen 3 en 24 tekens lang zijn en mogen alleen cijfers en kleine letters bevatten. |
 | Exemplaardetails | Region | Vereist | Selecteer de juiste regio voor uw opslagaccount. Zie Regio's en Beschikbaarheidszones [in Azure voor meer informatie.](../../availability-zones/az-overview.md)<br /><br />Niet alle regio's worden ondersteund voor alle typen opslagaccounts of redundantieconfiguraties. Zie [Redundantie in Azure Storage](storage-redundancy.md) voor meer informatie.<br /><br />De keuze van de regio kan gevolgen hebben voor de facturering. Zie Facturering voor [opslagaccounts voor meer informatie.](storage-account-overview.md#storage-account-billing) |
-| Exemplaardetails | Prestaties | Vereist | Selecteer **Standaardprestaties** voor algemeen v2-opslagaccounts (standaard). Dit type account wordt aanbevolen door Microsoft voor de meeste scenario's. Zie Typen opslagaccounts [voor meer informatie.](storage-account-overview.md#types-of-storage-accounts)<br /><br />Selecteer **Premium voor** scenario's die een lage latentie vereisen. Nadat u **Premium hebt** geselecteerd, selecteert u het type Premium Storage-account dat u wilt maken. De volgende typen Premium Storage-accounts zijn beschikbaar: <ul><li>[Blok-blobs](../blobs/storage-blob-performance-tiers.md)</li><li>[Bestandsshares](../files/storage-files-planning.md#management-concepts)</li><li>[Pagina-blobs](../blobs/storage-blob-pageblob-overview.md)</li></ul> |
-| Exemplaardetails | Redundantie | Vereist | Selecteer de gewenste redundantieconfiguratie. Niet alle redundantieopties zijn beschikbaar voor alle typen opslagaccounts in alle regio's. Zie redundantie voor meer informatie over [redundantieconfiguraties Azure Storage redundantie.](storage-redundancy.md)<br /><br />Als u een geografisch redundante configuratie (GRS of GZRS) selecteert, worden uw gegevens gerepliceerd naar een datacenter in een andere regio. Voor leestoegang tot gegevens in de secundaire regio selecteert u Leestoegang tot gegevens beschikbaar maken in het geval van **regionale onbeschikbaarheid.** |
+| Exemplaardetails | Prestaties | Vereist | Selecteer **Standaardprestaties** voor algemeen v2-opslagaccounts (standaard). Dit type account wordt aanbevolen door Microsoft voor de meeste scenario's. Zie Typen [opslagaccounts voor meer informatie.](storage-account-overview.md#types-of-storage-accounts)<br /><br />Selecteer **Premium voor** scenario's die een lage latentie vereisen. Nadat u **Premium hebt** geselecteerd, selecteert u het type Premium Storage-account dat u wilt maken. De volgende typen Premium Storage-accounts zijn beschikbaar: <ul><li>[Blok-blobs](../blobs/storage-blob-performance-tiers.md)</li><li>[Bestandsshares](../files/storage-files-planning.md#management-concepts)</li><li>[Pagina-blobs](../blobs/storage-blob-pageblob-overview.md)</li></ul> |
+| Exemplaardetails | Redundantie | Vereist | Selecteer de gewenste redundantieconfiguratie. Niet alle redundantieopties zijn beschikbaar voor alle typen opslagaccounts in alle regio's. Zie redundantie voor meer informatie [Azure Storage redundantie.](storage-redundancy.md)<br /><br />Als u een geografisch redundante configuratie (GRS of GZRS) selecteert, worden uw gegevens gerepliceerd naar een datacenter in een andere regio. Voor leestoegang tot gegevens in de secundaire regio selecteert u Leestoegang tot gegevens beschikbaar maken in het geval van **regionale niet-beschikbaarheid.** |
 
 In de volgende afbeelding ziet u een standaardconfiguratie voor een nieuw opslagaccount.
 
-:::image type="content" source="media/storage-account-create/create-account-basics-tab.png" alt-text="Schermopname van een standaardconfiguratie voor een nieuw opslagaccount - tabblad Basisinformatie":::
+:::image type="content" source="media/storage-account-create/create-account-basics-tab.png" alt-text="Schermopname van een standaardconfiguratie voor een nieuw opslagaccount - tabblad Basisbeginselen":::
 
 ### <a name="advanced-tab"></a>Tabblad Geavanceerd
 
-Op het **tabblad** Geavanceerd kunt u aanvullende opties configureren en de standaardinstellingen voor uw nieuwe opslagaccount wijzigen. Sommige van deze opties kunnen ook worden geconfigureerd nadat het opslagaccount is gemaakt, terwijl andere moeten worden geconfigureerd op het moment dat het wordt gemaakt.
+Op het **tabblad Geavanceerd** kunt u aanvullende opties configureren en de standaardinstellingen voor uw nieuwe opslagaccount wijzigen. Sommige van deze opties kunnen ook worden geconfigureerd nadat het opslagaccount is gemaakt, terwijl andere moeten worden geconfigureerd op het moment dat het wordt gemaakt.
 
-In de volgende tabel worden de velden op het **tabblad Geavanceerd** beschreven.
+In de volgende tabel worden de velden op het tabblad **Geavanceerd** beschreven.
 
 | Sectie | Veld | Vereist of optioneel | Description |
 |--|--|--|--|
-| Beveiliging | Beveiligde overdracht inschakelen | Optioneel | Schakel beveiligde overdracht in om te vereisen dat binnenkomende aanvragen naar dit opslagaccount alleen worden gedaan via HTTPS (standaard). Aanbevolen voor optimale beveiliging. Zie Require [secure transfer to ensure secure connections (Veilige overdracht vereisen om beveiligde verbindingen te garanderen) voor meer informatie.](storage-require-secure-transfer.md) |
-| Beveiliging | Infrastructuurversleuteling inschakelen | Optioneel | Infrastructuurversleuteling is standaard niet ingeschakeld. Schakel infrastructuurversleuteling in om uw gegevens te versleutelen op zowel serviceniveau als infrastructuurniveau. Zie Een opslagaccount maken met infrastructuurversleuteling ingeschakeld [voor dubbele versleuteling van gegevens voor meer informatie.](infrastructure-encryption-enable.md) |
-| Beveiliging | Openbare blobtoegang inschakelen | Optioneel | Wanneer deze instelling is ingeschakeld, kan een gebruiker met de juiste machtigingen anonieme openbare toegang tot een container in het opslagaccount inschakelen (standaard). Als u deze instelling uit uitschakelen, wordt alle anonieme openbare toegang tot het opslagaccount voorkomen. Zie Anonieme openbare leestoegang tot containers en [blobs voorkomen voor meer informatie.](../blobs/anonymous-read-access-prevent.md)<br> <br> Het inschakelen van openbare toegang tot blobs maakt blobgegevens niet beschikbaar voor openbare toegang, tenzij de gebruiker de extra stap neemt om de instelling voor openbare toegang van de container expliciet te configureren. |
-| Beveiliging | Toegang tot opslagaccountsleutels inschakelen (preview) | Optioneel | Wanneer deze instelling is ingeschakeld, kunnen clients aanvragen naar het opslagaccount autor toestemming geven met behulp van de toegangssleutels voor het account of een Azure Active Directory-account (Azure AD) (standaard). Het uitschakelen van deze instelling voorkomt autorisatie met de toegangssleutels van het account. Zie Autorisatie van gedeelde sleutels voorkomen voor een [Azure Storage-account (preview) voor meer informatie.](shared-key-authorization-prevent.md) |
-| Beveiliging | Minimale TLS-versie | Vereist | Selecteer de minimale versie van Transport Layer Security (TLS) voor binnenkomende aanvragen naar het opslagaccount. De standaardwaarde is TLS-versie 1.2. Als deze waarde is ingesteld op de standaardwaarde, worden binnenkomende aanvragen die worden gedaan met TLS 1.0 of TLS 1.1 geweigerd. Zie Enforce a minimum required version of Transport Layer Security (TLS) for requests to a storage account (Een minimaal vereiste versie van [TLS (TLS) afdwingen voor aanvragen voor een opslagaccount voor meer informatie.](transport-layer-security-configure-minimum-version.md) |
-| Data Lake Storage Gen2 | Hiërarchische naamruimte inschakelen | Optioneel | Als u dit opslagaccount wilt gebruiken voor Azure Data Lake Storage Gen2 workloads, configureert u een hiërarchische naamruimte. Zie Introduction [to Azure Data Lake Storage Gen2 (Inleiding tot](../blobs/data-lake-storage-introduction.md)Azure Data Lake Storage Gen2. |
+| Beveiliging | Beveiligde overdracht inschakelen | Optioneel | Schakel beveiligde overdracht in om te vereisen dat binnenkomende aanvragen naar dit opslagaccount alleen via HTTPS worden gedaan (standaard). Aanbevolen voor optimale beveiliging. Zie Require [secure transfer to ensure secure connections (Veilige overdracht vereisen om beveiligde verbindingen te garanderen) voor meer informatie.](storage-require-secure-transfer.md) |
+| Beveiliging | Infrastructuurversleuteling inschakelen | Optioneel | Infrastructuurversleuteling is standaard niet ingeschakeld. Schakel infrastructuurversleuteling in om uw gegevens te versleutelen op zowel serviceniveau als infrastructuurniveau. Zie Een opslagaccount maken met infrastructuurversleuteling ingeschakeld voor [dubbele versleuteling van gegevens voor meer informatie.](infrastructure-encryption-enable.md) |
+| Beveiliging | Openbare blobtoegang inschakelen | Optioneel | Wanneer deze instelling is ingeschakeld, kan een gebruiker met de juiste machtigingen anonieme openbare toegang tot een container in het opslagaccount inschakelen (standaard). Door deze instelling uit te stellen, wordt alle anonieme openbare toegang tot het opslagaccount voorkomen. Zie Anonieme openbare leestoegang tot containers en blobs voorkomen voor [meer informatie.](../blobs/anonymous-read-access-prevent.md)<br> <br> Het inschakelen van openbare toegang tot blobs maakt blobgegevens niet beschikbaar voor openbare toegang, tenzij de gebruiker de extra stap neemt om de instelling voor openbare toegang van de container expliciet te configureren. |
+| Beveiliging | Toegang tot opslagaccountsleutels inschakelen (preview) | Optioneel | Wanneer deze instelling is ingeschakeld, kunnen clients aanvragen voor het opslagaccount autorschakelen met behulp van de toegangssleutels voor het account of een Azure Active Directory(Azure AD)-account (standaard). Het uitschakelen van deze instelling voorkomt autorisatie met de toegangssleutels voor het account. Zie Autorisatie van gedeelde sleutels voorkomen voor een [Azure Storage-account (preview)](shared-key-authorization-prevent.md)voor meer informatie. |
+| Beveiliging | Minimale TLS-versie | Vereist | Selecteer de minimale versie van Transport Layer Security (TLS) voor binnenkomende aanvragen naar het opslagaccount. De standaardwaarde is TLS-versie 1.2. Als deze waarde is ingesteld op de standaardwaarde, worden binnenkomende aanvragen die worden gedaan met TLS 1.0 of TLS 1.1, geweigerd. Zie Enforce a minimum required version of Transport Layer Security (TLS) for requests to a storage account (Een minimaal vereiste versie van [Transport Layer Security (TLS) afdwingen voor aanvragen naar een opslagaccount voor meer informatie.](transport-layer-security-configure-minimum-version.md) |
+| Data Lake Storage Gen2 | Hiërarchische naamruimte inschakelen | Optioneel | Als u dit opslagaccount wilt gebruiken voor Azure Data Lake Storage Gen2 workloads, configureert u een hiërarchische naamruimte. Zie Inleiding tot Azure Data Lake Storage Gen2 voor [meer informatie.](../blobs/data-lake-storage-introduction.md) |
 | Blob Storage | Netwerkbestands share (NFS) v3 inschakelen (preview) | Optioneel | NFS v3 biedt linux-bestandssysteemcompatibiliteit op de schaal van objectopslag, zodat Linux-clients een container in Blob Storage kunnen mounten vanaf een virtuele Azure-machine (VM) of een on-premises computer. Zie Network [File System (NFS) 3.0 protocol support in Azure Blob Storage (preview) (Ondersteuning voor network file system (NFS) 3.0-protocol in Azure Blob Storage (preview) voor meer informatie.](../blobs/network-file-system-protocol-support.md) |
 | Blob Storage | Toegangslaag | Vereist | Met blob-toegangslagen kunt u blobgegevens op de meest rendabele manier opslaan op basis van gebruik. Selecteer de hot-laag (standaard) voor veelgebruikte gegevens. Selecteer de cool-laag voor gegevens die niet regelmatig worden gebruikt. Zie Toegangslagen voor [Azure Blob Storage- hot, cool en archiveren voor meer informatie.](../blobs/storage-blob-storage-tiers.md) |
 | Azure Files | Grote bestandsshares inschakelen | Optioneel | Alleen beschikbaar voor Premium Storage-accounts voor bestands shares. Zie Standaardbestands shares inschakelen voor een [bereik van maximaal 100 TiB voor meer informatie.](../files/storage-files-planning.md#enable-standard-file-shares-to-span-up-to-100-tib) |
@@ -164,22 +164,22 @@ In de volgende tabel worden de velden op het **tabblad Netwerken** beschreven.
 | Sectie | Veld | Vereist of optioneel | Description |
 |--|--|--|--|
 | Netwerkverbinding | Verbindingsmethode | Vereist | Binnenkomend netwerkverkeer wordt standaard doorgeleid naar het openbare eindpunt voor uw opslagaccount. U kunt opgeven dat verkeer moet worden gerouteerd naar het openbare eindpunt via een virtueel Azure-netwerk. U kunt ook privé-eindpunten configureren voor uw opslagaccount. Zie Use [private endpoints for Azure Storage (Privé-eindpunten gebruiken voor Azure Storage).](storage-private-endpoints.md) |
-| Netwerkroutering | Routeringsvoorkeur | Vereist | De voorkeur voor netwerkroutering geeft aan hoe netwerkverkeer wordt gerouteerd naar het openbare eindpunt van uw opslagaccount van clients via internet. Een nieuw opslagaccount maakt standaard gebruik van Microsoft-netwerkroutering. U kunt er ook voor kiezen om netwerkverkeer via de POP te leiden die het dichtst bij het opslagaccount ligt, waardoor de netwerkkosten kunnen worden verlaagd. Zie Network routing [preference for Azure Storage (Netwerkrouteringsvoorkeur voor Azure Storage.](network-routing-preference.md) |
+| Netwerkroutering | Routeringsvoorkeur | Vereist | De voorkeur voor netwerkroutering geeft aan hoe netwerkverkeer wordt gerouteerd naar het openbare eindpunt van uw opslagaccount van clients via internet. Een nieuw opslagaccount maakt standaard gebruik van Microsoft-netwerkroutering. U kunt er ook voor kiezen om netwerkverkeer via de POP te leiden die het dichtst bij het opslagaccount ligt, waardoor de netwerkkosten kunnen worden verlaagd. Zie Netwerkrouteringsvoorkeur [voor](network-routing-preference.md)Azure Storage. |
 
 ### <a name="data-protection-tab"></a>Tabblad Gegevensbescherming
 
-Op het **tabblad Gegevensbeveiliging** kunt u opties voor gegevensbeveiliging configureren voor blobgegevens in uw nieuwe opslagaccount.  Deze opties kunnen ook worden geconfigureerd nadat het opslagaccount is gemaakt. Zie Overzicht van gegevensbescherming voor een overzicht Azure Storage opties [voor gegevensbeveiliging in uw account.](../blobs/data-protection-overview.md)
+Op het **tabblad Gegevensbeveiliging** kunt u opties voor gegevensbeveiliging configureren voor blobgegevens in uw nieuwe opslagaccount.  Deze opties kunnen ook worden geconfigureerd nadat het opslagaccount is gemaakt. Zie Overzicht van gegevensbescherming voor een Azure Storage van [gegevensbeveiliging.](../blobs/data-protection-overview.md)
 
 In de volgende tabel worden de velden op het tabblad **Gegevensbeveiliging** beschreven.
 
 | Sectie | Veld | Vereist of optioneel | Description |
 |--|--|--|--|
-| Herstel | Herstel naar een bepaald tijdstip inschakelen voor containers | Optioneel | Herstel naar een bepaald tijdstip biedt bescherming tegen onbedoelde verwijdering of beschadiging doordat u blok-blobgegevens naar een eerdere status kunt herstellen. Zie Herstel naar een bepaald [tijdstip voor blok-blobs voor meer informatie.](../blobs/point-in-time-restore-overview.md)<br /><br />Als u herstel naar een bepaald tijdstip inschakelen, kunt u ook blobversies, blobs voor het verwijderen van blobs en de blob-wijzigingsfeed inschakelen. Deze vereiste functies kunnen een kostenimpact hebben. Zie Prijzen en facturering [voor](../blobs/point-in-time-restore-overview.md#pricing-and-billing) herstel naar een bepaald tijdstip voor meer informatie. |
-| Herstel | Voorlopig verwijderen inschakelen voor blobs | Optioneel | Met de optie Voor het verwijderen van blobs wordt een afzonderlijke blob, momentopname of versie beschermd tegen onbedoeld verwijderen of overschrijven door de verwijderde gegevens in het systeem gedurende een opgegeven bewaarperiode te behouden. Tijdens de retentieperiode kunt u een object dat is verwijderd herstellen naar de status op het moment dat het werd verwijderd. Zie Voor meer informatie Soft delete for blobs (Soft [delete voor blobs).](../blobs/soft-delete-blob-overview.md)<br /><br />Microsoft raadt aan om voor uw opslagaccounts blobs in te stellen en een minimale bewaarperiode van zeven dagen in te stellen. |
+| Herstel | Herstel naar een bepaald tijdstip inschakelen voor containers | Optioneel | Herstel naar een bepaald tijdstip biedt bescherming tegen onbedoelde verwijdering of beschadiging doordat u blok-blobgegevens naar een eerdere status kunt herstellen. Zie Herstel naar een bepaald tijdstip voor [blok-blobs voor meer informatie.](../blobs/point-in-time-restore-overview.md)<br /><br />Als u herstel naar een bepaald tijdstip inschakelen, kunt u ook blobversies, blobs voor het verwijderen van blobs en de blob-wijzigingsfeed inschakelen. Deze vereiste functies kunnen een kostenimpact hebben. Zie Prijzen en facturering [voor](../blobs/point-in-time-restore-overview.md#pricing-and-billing) herstel naar een bepaald tijdstip voor meer informatie. |
+| Herstel | Voorlopig verwijderen inschakelen voor blobs | Optioneel | Met de optie Voor het verwijderen van blobs wordt een afzonderlijke blob, momentopname of versie beschermd tegen onbedoeld verwijderen of overschrijven door de verwijderde gegevens in het systeem gedurende een opgegeven retentieperiode te bewaren. Tijdens de retentieperiode kunt u een object dat is verwijderd, herstellen naar de status op het moment dat het werd verwijderd. Zie Voor meer informatie Soft delete for blobs (Soft [delete voor blobs).](../blobs/soft-delete-blob-overview.md)<br /><br />Microsoft raadt u aan om de blob voor het verwijderen van blobs in te stellen voor uw opslagaccounts en een minimale bewaarperiode van zeven dagen in te stellen. |
 | Herstel | Soft Delete inschakelen voor containers (preview) | Optioneel | Met de container voor het verwijderen van containers worden een container en de inhoud beschermd tegen onbedoeld verwijderen door de verwijderde gegevens in het systeem te onderhouden voor een opgegeven bewaarperiode. Tijdens de retentieperiode kunt u een container die is verwijderd, herstellen naar de status op het moment dat deze werd verwijderd. Zie Voor meer informatie Soft [delete for containers (preview) (Zacht verwijderen voor containers (preview) ).](../blobs/soft-delete-container-overview.md)<br /><br />Microsoft raadt u aan om voor uw opslagaccounts de mogelijkheid te gebruiken voor het inschakelen van de tijdelijke opslagaccounts en een minimale bewaarperiode van zeven dagen in te stellen. |
 | Herstel | Soft Delete inschakelen voor bestands shares | Optioneel | Door de verwijderde gegevens in het systeem te bewaren voor een opgegeven bewaarperiode, beschermt u een bestands share en de inhoud ervan tegen onbedoeld verwijderen. Tijdens de bewaarperiode kunt u een zacht verwijderde bestands share herstellen naar de status op het moment dat deze werd verwijderd. Zie Onopzettelijk verwijderen van [Azure-bestands shares voorkomen voor meer informatie.](../files/storage-files-prevent-file-share-deletion.md)<br /><br />Microsoft raadt aan om voor alle werkbelastingen een zachte Azure Files in te stellen en een minimale bewaarperiode van zeven dagen in te stellen. |
 | Tracering | Versieversies voor blobs inschakelen | Optioneel | Bij blobversies wordt de status van een blob in een eerdere versie automatisch opgeslagen wanneer de blob wordt overschreven. Zie [Blobversies voor meer informatie.](../blobs/versioning-overview.md)<br /><br />Microsoft raadt aan blobversies in te stellen voor optimale gegevensbeveiliging voor het opslagaccount. |
-| Tracering | Blob-wijzigingsfeed inschakelen | Optioneel | De blob-wijzigingenfeed bevat transactielogboeken van alle wijzigingen in alle blobs in uw opslagaccount, evenals de metagegevens. Zie Ondersteuning voor de [wijzigingsfeed in](../blobs/storage-blob-change-feed.md)Azure Blob Storage . |
+| Tracering | Blob-wijzigingsfeed inschakelen | Optioneel | De blob-wijzigingenfeed bevat transactielogboeken van alle wijzigingen in alle blobs in uw opslagaccount, evenals de metagegevens. Zie Ondersteuning voor de [wijzigingsfeed in](../blobs/storage-blob-change-feed.md)Azure Blob Storage. |
 
 ### <a name="tags-tab"></a>Tabblad Tags
 
@@ -219,7 +219,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 
 Als u een hiërarchische naamruimte wilt inschakelen voor het opslagaccount om [Azure Data Lake Storage,](https://azure.microsoft.com/services/storage/data-lake-storage/)neemt u de parameter op voor de aanroep van de `-EnableHierarchicalNamespace $True` opdracht **New-AzStorageAccount.**
 
-In de volgende tabel ziet u welke waarden moeten worden gebruikt voor de parameters en om een bepaald type opslagaccount met `-SkuName` `-Kind` de gewenste redundantieconfiguratie te maken.
+In de volgende tabel ziet u welke waarden moeten worden gebruikt voor de parameters en voor het maken van een bepaald `-SkuName` `-Kind` type opslagaccount met de gewenste redundantieconfiguratie.
 
 | Type opslagaccount | Ondersteunde redundantieconfiguraties | Waarde voor de parameter -Kind | Mogelijke waarden voor de parameter -SkuName | Ondersteunt hiërarchische naamruimte |
 |--|--|--|--|--|
@@ -274,7 +274,7 @@ In de volgende tabel ziet u welke waarden moeten worden gebruikt voor de paramet
 
 # <a name="template"></a>[Sjabloon](#tab/template)
 
-U kunt een Azure PowerShell of Azure CLI gebruiken om een Resource Manager te implementeren om een opslagaccount te maken. De sjabloon die in dit artikel wordt gebruikt, is afkomstig [uit Azure Resource Manager quickstartsjablonen.](https://azure.microsoft.com/resources/templates/101-storage-account-create/) Als u de scripts wilt uitvoeren, **selecteert u Proberen om** de Azure Cloud Shell. Plak het script door met de rechtermuisknop op de shell te klikken en **Plakken** te selecteren.
+U kunt een Azure PowerShell Azure CLI gebruiken om een Resource Manager te implementeren om een opslagaccount te maken. De sjabloon die in dit artikel wordt gebruikt, is afkomstig [uit Azure Resource Manager quickstartsjablonen.](https://azure.microsoft.com/resources/templates/101-storage-account-create/) Als u de scripts wilt uitvoeren, **selecteert u Proberen om** de Azure Cloud Shell. Plak het script door met de rechtermuisknop op de shell te klikken en **Plakken** te selecteren.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -323,7 +323,7 @@ Remove-AzStorageAccount -Name <storage-account> -ResourceGroupName <resource-gro
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u het opslagaccount wilt verwijderen, gebruikt u [de opdracht az storage account delete:](/cli/azure/storage/account#az-storage-account-delete)
+Als u het opslagaccount wilt verwijderen, gebruikt u [de opdracht az storage account delete:](/cli/azure/storage/account#az_storage_account_delete)
 
 ```azurecli-interactive
 az storage account delete --name <storage-account> --resource-group <resource-group>

@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 04/15/2020
-ms.openlocfilehash: 32c331b10fcc73b5449588595370f8f69ef9893c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 140709a0ddb548c126ceca208fdeef2db77616bf
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104872044"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107761795"
 ---
 # <a name="tutorial-create-an-end-to-end-data-pipeline-to-derive-sales-insights-in-azure-hdinsight"></a>Zelfstudie: Een end-to-end gegevenspijplijn maken om verkoopinzichten in Azure HDInsight af te leiden
 
@@ -90,7 +90,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     ./scripts/resources.sh $resourceGroup LOCATION
     ```
 
-    Als u niet zeker weet welke regio u moet opgeven, kunt u een lijst met ondersteunde regio's voor uw abonnement ophalen met de opdracht [az account list-locations](/cli/azure/account#az-account-list-locations).
+    Als u niet zeker weet welke regio u moet opgeven, kunt u een lijst met ondersteunde regio's voor uw abonnement ophalen met de opdracht [az account list-locations](/cli/azure/account#az_account_list_locations).
 
     Met deze opdracht worden de volgende resources geïmplementeerd:
 

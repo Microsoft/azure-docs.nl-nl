@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: sample
 ms.date: 09/23/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9367c1b4d82e984b2b4200768a3f83f9245c7f0f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4502cb26b4aeedff4223aaf5a592581aee36a0e6
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98946885"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107775097"
 ---
 # <a name="azure-hdinsight-azure-cli-samples"></a>Azure HDInsight: Azure CLI-voorbeelden
 
@@ -29,7 +29,7 @@ In dit artikel vindt u voorbeelden van scripts voor algemene taken. Werk voor el
 
 ## <a name="az-login"></a>az login
 
-[Aanmelden bij Azure](/cli/azure/reference-index#az-login).
+[Aanmelden bij Azure](/cli/azure/reference-index#az_login).
 
 ```azurecli
 az login
@@ -40,7 +40,7 @@ az login
 
 ## <a name="az-hdinsight-create"></a>az hdinsight create
 
-[Een nieuw cluster maken](/cli/azure/hdinsight#az-hdinsight-create).
+[Een nieuw cluster maken](/cli/azure/hdinsight#az_hdinsight_create).
 
 ### <a name="create-a-cluster-with-an-existing-storage-account"></a>Een cluster maken met een bestaand opslagaccount
 
@@ -173,7 +173,7 @@ az hdinsight create \
 
 ## <a name="az-hdinsight-application-create"></a>az hdinsight application create
 
-[Een toepassing maken voor een HDInsight-cluster](/cli/azure/hdinsight/application#az-hdinsight-application-create).
+[Een toepassing maken voor een HDInsight-cluster](/cli/azure/hdinsight/application#az_hdinsight_application_create).
 
 ### <a name="create-an-application-with-a-script-uri"></a>Een toepassing maken met een script-URI
 
@@ -240,7 +240,7 @@ az hdinsight application create \
 
 ## <a name="az-hdinsight-script-action-execute"></a>az hdinsight script-action execute
 
-[Scriptacties uitvoeren op het opgegeven HDInsight-cluster](/cli/azure/hdinsight/script-action#az-hdinsight-script-action-execute).
+[Scriptacties uitvoeren op het opgegeven HDInsight-cluster](/cli/azure/hdinsight/script-action#az_hdinsight_script_action_execute).
 
 ### <a name="execute-a-script-action-and-persist-on-success"></a>Een scriptactie uitvoeren en deze persistent maken bij succesvol uitvoeren
 

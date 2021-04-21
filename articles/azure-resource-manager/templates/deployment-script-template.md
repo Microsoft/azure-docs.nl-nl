@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 04/15/2021
 ms.author: jgao
-ms.openlocfilehash: d35deb978b3b60b73ac393b241471cb528817d35
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: c39b332e9ee62a8502d5e2fdf155819194a30e34
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107536962"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107762187"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatiescripts gebruiken in ARM-sjablonen
 
@@ -141,18 +141,18 @@ Details van eigenschapswaarde:
 - `forceUpdateTag`: Als u deze waarde tussen sjabloonimplementaties verandert, wordt het implementatiescript opnieuw uitgevoerd. Als u de `newGuid()` functies of `utcNow()` gebruikt, kunnen beide functies alleen worden gebruikt in de standaardwaarde voor een parameter. Zie [Script meerdere keren uitvoeren](#run-script-more-than-once) voor meer informatie.
 - `containerSettings`: Geef de instellingen op voor het aanpassen van Azure Container Instance. Voor het implementatiescript is een nieuwe Azure Container Instance vereist. U kunt geen bestaande Azure Container Instance opgeven. U kunt de naam van de containergroep echter aanpassen met behulp van `containerGroupName` . Als dit niet wordt opgegeven, wordt de groepsnaam automatisch gegenereerd.
 - `storageAccountSettings`: Geef de instellingen op voor het gebruik van een bestaand opslagaccount. Als niet is opgegeven, wordt er automatisch `storageAccountName` een opslagaccount gemaakt. Zie [Een bestaand opslagaccount gebruiken.](#use-existing-storage-account)
-- `azPowerShellVersion`/`azCliVersion`: Geef de moduleversie op die moet worden gebruikt. Bekijk een lijst met [ondersteunde Azure PowerShell versies](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list). Bekijk een lijst met [ondersteunde Versies van Azure CLI.](https://mcr.microsoft.com/v2/azure-cli/tags/list)
+- `azPowerShellVersion`/`azCliVersion`: Geef de moduleversie op die moet worden gebruikt. Bekijk een lijst met [ondersteunde Azure PowerShell versies](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list). Bekijk een lijst met [ondersteunde Azure CLI-versies.](https://mcr.microsoft.com/v2/azure-cli/tags/list)
 
   >[!IMPORTANT]
-  > Het implementatiescript maakt gebruik van de beschikbare CLI-installatie Microsoft Container Registry (MCR). Het duurt ongeveer een maand om een CLI-installatier te certificeren voor het implementatiescript. Gebruik niet de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie Opmerkingen bij de Release van Azure CLI voor meer informatie over de [releasedatums voor de afbeeldingen.](/cli/azure/release-notes-azure-cli) Als er een niet-ondersteunde versie wordt gebruikt, worden in het foutbericht de ondersteunde versies vermeld.
+  > Implementatiescript maakt gebruik van de beschikbare CLI-installatie Microsoft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatier te certificeren voor het implementatiescript. Gebruik niet de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie Opmerkingen bij de release van Azure CLI voor de releasedatums voor [de afbeeldingen.](/cli/azure/release-notes-azure-cli) Als er een niet-ondersteunde versie wordt gebruikt, worden in het foutbericht de ondersteunde versies vermeld.
 
 - `arguments`: Geef de parameterwaarden op. De waarden worden gescheiden door een spatie.
 
-  Implementatiescripts splitsen de argumenten op in een matrix met tekenreeksen door de systeemoproep [CommandLineToArgvW aan te ](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) roepen. Deze stap is nodig omdat de [](/rest/api/container-instances/containergroups/createorupdate#containerexec) argumenten als een opdracht-eigenschap worden doorgegeven aan Azure Container Instance en de opdracht-eigenschap een matrix met tekenreeksen is.
+  Implementatiescripts splitst de argumenten in een matrix van tekenreeksen door de [systeemoproep CommandLineToArgvW aan te ](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) roepen. Deze stap is nodig omdat de [](/rest/api/container-instances/containergroups/createorupdate#containerexec) argumenten als een opdracht-eigenschap worden doorgegeven aan Azure Container Instance en de opdracht-eigenschap een matrix met tekenreeksen is.
 
-  Als de argumenten escape-tekens bevatten, gebruikt [u JsonEscaper om](https://www.jsonescaper.com/) de tekens te double-escapen. Plak de oorspronkelijke escape-tekenreeks in het hulpprogramma en selecteer **escape.**  Met het hulpprogramma wordt een dubbele escape-tekenreeks uitgevoerd. In de vorige voorbeeldsjabloon is het argument `-name \"John Dole\"` bijvoorbeeld . De tekenreeks met escape-tekenreeks is `-name \\\"John Dole\\\"` .
+  Als de argumenten escape-tekens bevatten, gebruikt [u JsonEscaper om](https://www.jsonescaper.com/) de tekens te double-escapen. Plak de oorspronkelijke escape-tekenreeks in het hulpprogramma en selecteer escape **.**  Met het hulpprogramma wordt een dubbele escape-tekenreeks uitgevoerd. In de vorige voorbeeldsjabloon is het argument bijvoorbeeld `-name \"John Dole\"` . De escape-tekenreeks is `-name \\\"John Dole\\\"` .
 
-  Als u een ARM-sjabloonparameter van het type object als argument wilt doorgeven, converteert u het object naar een tekenreeks met behulp van de functie [string()](./template-functions-string.md#string) en gebruikt u vervolgens de functie [replace()](./template-functions-string.md#replace) om een te vervangen `\"` in `\\\"` . Bijvoorbeeld:
+  Als u een ARM-sjabloonparameter van het type-object als argument wilt doorgeven, converteert u het object naar een tekenreeks met behulp van de functie [string()](./template-functions-string.md#string) en gebruikt u vervolgens de functie [replace()](./template-functions-string.md#replace) om een te vervangen `\"` in `\\\"` . Bijvoorbeeld:
 
   ```json
   replace(string(parameters('tables')), '\"', '\\\"')
@@ -163,10 +163,10 @@ Details van eigenschapswaarde:
 - `environmentVariables`: Geef de omgevingsvariabelen op die moeten worden door geven aan het script. Zie Implementatiescripts ontwikkelen [voor meer informatie.](#develop-deployment-scripts)
 - `scriptContent`: Geef de scriptinhoud op. Als u een extern script wilt uitvoeren, gebruikt u in plaats daarvan `primaryScriptUri`. Zie Use [inline script (Inlinescript gebruiken)](#use-inline-scripts) en [Use external script (Extern script gebruiken) voor voorbeelden.](#use-external-scripts)
 - `primaryScriptUri`: Geef een openbaar toegankelijke URL op naar het primaire implementatiescript met ondersteunde bestandsextensies. Zie Externe scripts gebruiken [voor meer informatie.](#use-external-scripts)
-- `supportingScriptUris`: Geef een matrix met openbaar toegankelijke URL's op voor ondersteunende bestanden die worden aangeroepen in `scriptContent` of `primaryScriptUri` . Zie Externe scripts gebruiken [voor meer informatie.](#use-external-scripts)
+- `supportingScriptUris`: Geef een matrix van openbaar toegankelijke URL's op voor ondersteunende bestanden die worden aangeroepen in `scriptContent` of `primaryScriptUri` . Zie Externe scripts gebruiken [voor meer informatie.](#use-external-scripts)
 - `timeout`: Geef de maximale toegestane uitvoeringstijd voor het script op, opgegeven in de [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Standaardwaarde is **P1D**.
-- `cleanupPreference`. Geef de voorkeur op voor het opsschoonen van implementatieresources wanneer de uitvoering van het script een terminale status krijgt. De standaardinstelling is **Altijd,** wat betekent dat u de resources moet verwijderen ondanks de terminal status (Geslaagd, Mislukt, Geannuleerd). Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
-- `retentionInterval`: Geef het interval op waarvoor de service de resources van het implementatiescript behoudt nadat de uitvoering van het implementatiescript een terminaltoestand heeft bereikt. De resources van het implementatiescript worden verwijderd wanneer deze duur is verlopen. De duur is gebaseerd op het [ISO 8601-patroon](https://en.wikipedia.org/wiki/ISO_8601). De retentieperiode ligt tussen 1 en 26 uur (PT26H). Deze eigenschap wordt gebruikt wanneer `cleanupPreference` is ingesteld op **OnExpiration**. Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
+- `cleanupPreference`. Geef de voorkeur op voor het opsruimen van implementatieresources wanneer de uitvoering van het script een terminale status krijgt. De standaardinstelling is **Altijd,** wat betekent dat de resources moeten worden verwijderd ondanks de terminale status (Geslaagd, Mislukt, Geannuleerd). Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
+- `retentionInterval`: Geef het interval op waarvoor de service de resources van het implementatiescript behoudt nadat de uitvoering van het implementatiescript een terminaltoestand heeft bereikt. De resources van het implementatiescript worden verwijderd wanneer deze duur is verlopen. Duur is gebaseerd op het [ISO 8601-patroon](https://en.wikipedia.org/wiki/ISO_8601). De retentieperiode ligt tussen 1 en 26 uur (PT26H). Deze eigenschap wordt gebruikt wanneer `cleanupPreference` is ingesteld op **OnExpiration**. Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
 
 ### <a name="additional-samples"></a>Aanvullende voorbeelden
 
@@ -252,7 +252,7 @@ reference('<ResourceName>').outputs.text
 
 Anders dan bij het PowerShell-implementatiescript biedt DE CLI/bash-ondersteuning geen algemene variabele om scriptuitvoer op te slaan. In plaats daarvan is er een omgevingsvariabele met de naam waarin de locatie wordt opgeslagen waar het scriptuitvoerbestand zich `AZ_SCRIPTS_OUTPUT_PATH` bevindt. Als een implementatiescript wordt uitgevoerd vanuit een Resource Manager sjabloon, wordt deze omgevingsvariabele automatisch voor u ingesteld door de Bash-shell. De waarde van `AZ_SCRIPTS_OUTPUT_PATH` is */mnt/azscripts/azscriptoutput/scriptoutputs.jsop*.
 
-Implementatiescriptuitvoer moet worden opgeslagen op de locatie en de uitvoer moet `AZ_SCRIPTS_OUTPUT_PATH` een geldig JSON-tekenreeksobject zijn. De inhoud van het bestand moet worden opgeslagen als een sleutel-waardepaar. Een matrix met tekenreeksen wordt bijvoorbeeld opgeslagen als `{ "MyResult": [ "foo", "bar"] }` .  Het opslaan van alleen de matrixresultaten, `[ "foo", "bar" ]` bijvoorbeeld , is ongeldig.
+Implementatiescriptuitvoer moet op de locatie worden opgeslagen en de uitvoer moet een geldig `AZ_SCRIPTS_OUTPUT_PATH` JSON-tekenreeksobject zijn. De inhoud van het bestand moet worden opgeslagen als een sleutel-waardepaar. Een matrix met tekenreeksen wordt bijvoorbeeld opgeslagen als `{ "MyResult": [ "foo", "bar"] }` .  Het opslaan van alleen de matrixresultaten, `[ "foo", "bar" ]` bijvoorbeeld , is ongeldig.
 
 :::code language="json" source="~/resourcemanager-templates/deployment-script/deploymentscript-basic-cli.json" range="1-44" highlight="32":::
 
@@ -275,7 +275,7 @@ Er zijn een opslagaccount en een container-exemplaar nodig om scripts uit te voe
     | Standard_RAGZRS | StorageV2          |
     | Standard_ZRS    | StorageV2          |
 
-    Deze combinaties ondersteunen bestands shares. Zie Een Azure-bestands [share maken en](../../storage/files/storage-how-to-create-file-share.md) Typen [opslagaccounts voor meer informatie.](../../storage/common/storage-account-overview.md)
+    Deze combinaties ondersteunen bestands shares. Zie Een Azure-bestands share maken [en](../../storage/files/storage-how-to-create-file-share.md) [Typen opslagaccounts voor meer informatie.](../../storage/common/storage-account-overview.md)
 
 - Firewallregels voor opslagaccounts worden nog niet ondersteund. Raadpleeg [Firewalls en virtuele netwerken voor Azure Storage configureren](../../storage/common/storage-network-security.md) voor meer informatie.
 - De implementatie-principal moet machtigingen hebben voor het beheren van het opslagaccount, waaronder het lezen, maken en verwijderen van bestands shares.
@@ -309,7 +309,7 @@ Wanneer een bestaand opslagaccount wordt gebruikt, maakt de scriptservice een be
 
 U kunt bepalen hoe PowerShell reageert op niet-beëindigingsfouten met behulp van `$ErrorActionPreference` de variabele in uw implementatiescript. Als de variabele niet is ingesteld in uw implementatiescript, gebruikt de scriptservice de standaardwaarde **Doorgaan.**
 
-De scriptservice stelt de inrichtingstoestand van de resource in **op** Mislukt wanneer er een fout wordt aangetroffen in het script, ondanks de instelling van `$ErrorActionPreference` .
+De scriptservice stelt de inrichtingstoestand van de resource **in** op Mislukt wanneer er een fout wordt aangetroffen in het script, ondanks de instelling van `$ErrorActionPreference` .
 
 ### <a name="use-environment-variables"></a>Omgevingsvariabelen gebruiken
 
@@ -325,8 +325,8 @@ Het implementatiescript maakt gebruik van deze omgevingsvariabelen:
 |AZ_SCRIPTS_PATH_USER_SCRIPT_FILE_NAME|Azure PowerShell: userscript.ps1; Azure CLI: userscript.sh|J|
 |AZ_SCRIPTS_PATH_PRIMARY_SCRIPT_URI_FILE_NAME|primaryscripturi.config|J|
 |AZ_SCRIPTS_PATH_SUPPORTING_SCRIPT_URI_FILE_NAME|supportingscripturi.config|J|
-|AZ_SCRIPTS_PATH_SCRIPT_OUTPUT_FILE_NAME|scriptoutputs.jsop|J|
-|AZ_SCRIPTS_PATH_EXECUTION_RESULTS_FILE_NAME|executionresult.jsop|J|
+|AZ_SCRIPTS_PATH_SCRIPT_OUTPUT_FILE_NAME|scriptoutputs.jsaan|J|
+|AZ_SCRIPTS_PATH_EXECUTION_RESULTS_FILE_NAME|executionresult.jsaan|J|
 |AZ_SCRIPTS_USER_ASSIGNED_IDENTITY|/subscriptions/|N|
 
 Zie Werken met uitvoer van `AZ_SCRIPTS_OUTPUT_PATH` [CLI-script](#work-with-outputs-from-cli-script)voor meer informatie over het gebruik van .
@@ -335,15 +335,15 @@ Zie Werken met uitvoer van `AZ_SCRIPTS_OUTPUT_PATH` [CLI-script](#work-with-outp
 
 Door omgevingsvariabelen (EnvironmentVariable) in te stellen in uw container-exemplaren, kunt u dynamische configuratie bieden van de toepassing of het script dat door de container wordt uitgevoerd. Het implementatiescript verwerkt niet-beveiligde en beveiligde omgevingsvariabelen op dezelfde manier als Azure Container Instance. Zie Omgevingsvariabelen [instellen in container-exemplaren voor meer informatie.](../../container-instances/container-instances-environment-variables.md#secure-values) Zie Voorbeeldsjablonen voor [een voorbeeld.](#sample-templates)
 
-De maximaal toegestane grootte voor omgevingsvariabelen is 64 kB.
+De maximale toegestane grootte voor omgevingsvariabelen is 64 kB.
 
 ## <a name="monitor-and-troubleshoot-deployment-scripts"></a>Implementatiescripts bewaken en problemen oplossen
 
-De scriptservice maakt een [opslagaccount](../../storage/common/storage-account-overview.md) (tenzij u een bestaand opslagaccount opgeeft) en een [container-exemplaar](../../container-instances/container-instances-overview.md) voor het uitvoeren van scripts. Als deze resources automatisch door de scriptservice worden gemaakt, hebben beide resources het `azscripts` achtervoegsel in de resourcenamen.
+De scriptservice maakt een [opslagaccount](../../storage/common/storage-account-overview.md) (tenzij u een bestaand opslagaccount opgeeft) en een [container-exemplaar voor](../../container-instances/container-instances-overview.md) het uitvoeren van scripts. Als deze resources automatisch door de scriptservice worden gemaakt, hebben beide resources het `azscripts` achtervoegsel in de resourcenamen.
 
 ![Resource Manager resourcenamen voor sjabloonimplementatiescripts](./media/deployment-script-template/resource-manager-template-deployment-script-resources.png)
 
-Het gebruikersscript, de uitvoerresultaten en het stdout-bestand worden opgeslagen in de bestands shares van het opslagaccount. Er is een map met de naam `azscripts` . In de map staan nog twee mappen voor de invoer en de uitvoerbestanden: `azscriptinput` en `azscriptoutput` .
+Het gebruikersscript, de uitvoeringsresultaten en het stdout-bestand worden opgeslagen in de bestands shares van het opslagaccount. Er is een map met de naam `azscripts` . In de map staan nog twee mappen voor de invoer en de uitvoerbestanden: `azscriptinput` en `azscriptoutput` .
 
 De output-map bevat een _executionresult.json_ en het uitvoerbestand van het script. U ziet het foutbericht over de uitvoering van het script in _executionresult.jsop_. Het uitvoerbestand wordt alleen gemaakt wanneer het script is uitgevoerd. De input-map bevat een scriptbestand voor het PowerShell-systeem en de scriptbestanden voor de gebruikersimplementatie. U kunt het scriptbestand voor de gebruikersimplementatie vervangen door een herzien script en het implementatiescript opnieuw uitvoeren vanuit de Azure-containerin instance.
 
@@ -351,11 +351,11 @@ De output-map bevat een _executionresult.json_ en het uitvoerbestand van het scr
 
 Nadat u een implementatiescriptresource hebt geïmplementeerd, wordt de resource vermeld onder de resourcegroep in de Azure Portal. In de volgende schermopname ziet u **de pagina** Overzicht van een implementatiescriptresource:
 
-![Resource Manager portaloverzicht voor sjabloonimplementatiescripts](./media/deployment-script-template/resource-manager-deployment-script-portal.png)
+![Resource Manager portal voor sjabloonimplementatiescripts](./media/deployment-script-template/resource-manager-deployment-script-portal.png)
 
-Op de overzichtspagina wordt belangrijke informatie over de resource weergegeven, zoals Inrichtingstoestand, **Opslagaccount,** **Container-instantie** en **Logboeken.**
+Op de overzichtspagina wordt belangrijke informatie over de resource weergegeven, zoals Inrichtingstoestand, **Opslagaccount,** **Container-exemplaar** en **Logboeken.**
 
-In het menu links kunt u de inhoud van het implementatiescript, de argumenten die zijn doorgegeven aan het script en de uitvoer bekijken. U kunt ook een sjabloon voor het implementatiescript exporteren, inclusief het implementatiescript.
+In het linkermenu kunt u de inhoud van het implementatiescript, de argumenten die aan het script zijn doorgegeven en de uitvoer bekijken. U kunt ook een sjabloon voor het implementatiescript exporteren, inclusief het implementatiescript.
 
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
@@ -395,12 +395,12 @@ Timeout             : PT1H
 
 ### <a name="use-azure-cli"></a>Azure CLI gebruiken
 
-Met Behulp van Azure CLI kunt u implementatiescripts beheren op abonnements- of resourcegroepbereik:
+Met behulp van Azure CLI kunt u implementatiescripts beheren op abonnements- of resourcegroepbereik:
 
-- [az deployment-scripts delete:](/cli/azure/deployment-scripts#az-deployment-scripts-delete)Een implementatiescript verwijderen.
-- [az deployment-scripts list:](/cli/azure/deployment-scripts#az-deployment-scripts-list)Alle implementatiescripts opsnooien.
-- [az deployment-scripts show:](/cli/azure/deployment-scripts#az-deployment-scripts-show)Een implementatiescript ophalen.
-- [az deployment-scripts show-log:](/cli/azure/deployment-scripts#az-deployment-scripts-show-log)Implementatiescriptlogboeken tonen.
+- [az deployment-scripts delete:](/cli/azure/deployment-scripts#az_deployment_scripts_delete)Verwijder een implementatiescript.
+- [az deployment-scripts list:](/cli/azure/deployment-scripts#az_deployment_scripts_list)een lijst met alle implementatiescripts.
+- [az deployment-scripts show](/cli/azure/deployment-scripts#az_deployment_scripts_show): Een implementatiescript ophalen.
+- [az deployment-scripts show-log:](/cli/azure/deployment-scripts#az_deployment_scripts_show_log)Logboeken voor implementatiescripts tonen.
 
 De uitvoer van de lijstopdracht is vergelijkbaar met:
 
@@ -464,7 +464,7 @@ De uitvoer van de lijstopdracht is vergelijkbaar met:
 
 ### <a name="use-rest-api"></a>REST API gebruiken
 
-U kunt de implementatiegegevens van de implementatie van implementatiescripts op het niveau van de resourcegroep en het abonnement verkrijgen met behulp van REST API:
+U kunt de implementatiegegevens van de implementatie van implementatiescripts op het niveau van de resourcegroep en het abonnement op basis van de volgende REST API:
 
 ```rest
 /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>?api-version=2020-10-01
@@ -533,7 +533,7 @@ De uitvoer is vergelijkbaar met:
 
 ```
 
-De volgende REST API retourneert het logboek:
+Het volgende REST API retourneert het logboek:
 
 ```rest
 /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>/logs?api-version=2020-10-01
@@ -541,20 +541,20 @@ De volgende REST API retourneert het logboek:
 
 Het werkt alleen voordat de resources van het implementatiescript worden verwijderd.
 
-Als u de deploymentScripts-resource in de portal wilt zien, selecteert **u Verborgen typen tonen:**
+Als u de deploymentScripts-resource in de portal wilt zien, **selecteert u Verborgen typen tonen:**
 
-![Resource Manager implementatiescript voor sjablonen, verborgen typen tonen, portal](./media/deployment-script-template/resource-manager-deployment-script-portal-show-hidden-types.png)
+![Resource Manager voor sjabloonimplementatie, verborgen typen tonen, portal](./media/deployment-script-template/resource-manager-deployment-script-portal-show-hidden-types.png)
 
 ## <a name="clean-up-deployment-script-resources"></a>Resources voor implementatiescripts ops schonen
 
-Er zijn een opslagaccount en een container-instantie nodig om scripts uit te voeren en problemen op te lossen. U hebt de opties om een bestaand opslagaccount op te geven, anders wordt er automatisch een opslagaccount samen met een container-instantie gemaakt door de scriptservice. De twee automatisch gemaakte resources worden door de scriptservice verwijderd wanneer de uitvoering van het implementatiescript een terminale status krijgt. U wordt gefactureerd voor de resources totdat de resources zijn verwijderd. Zie prijzen en Container Instances voor [Azure Storage informatie](https://azure.microsoft.com/pricing/details/container-instances/) over [de prijs.](https://azure.microsoft.com/pricing/details/storage/)
+Er zijn een opslagaccount en een container-exemplaar nodig om scripts uit te voeren en problemen op te lossen. U hebt de opties om een bestaand opslagaccount op te geven, anders wordt er automatisch een opslagaccount samen met een container-exemplaar gemaakt door de scriptservice. De twee automatisch gemaakte resources worden door de scriptservice verwijderd wanneer de uitvoering van het implementatiescript een terminale status krijgt. U wordt gefactureerd voor de resources totdat de resources zijn verwijderd. Zie prijzen en Container Instances prijzen [voor](https://azure.microsoft.com/pricing/details/container-instances/) Azure Storage [prijsinformatie.](https://azure.microsoft.com/pricing/details/storage/)
 
 De levenscyclus van deze resources wordt bepaald door de volgende eigenschappen in de sjabloon:
 
-- `cleanupPreference`: De voorkeur voor het ops schonen wanneer de uitvoering van het script een terminale status krijgt. De ondersteunde waarden zijn:
+- `cleanupPreference`: Schoon de voorkeur op wanneer de uitvoering van het script een terminale status krijgt. De ondersteunde waarden zijn:
 
-  - **Altijd:** verwijder de automatisch gemaakte resources zodra de scriptuitvoering een terminale status heeft. Als er een bestaand opslagaccount wordt gebruikt, verwijdert de scriptservice de bestands share die in het opslagaccount is gemaakt. Omdat de resource nog steeds aanwezig kan zijn nadat de resources zijn opgeschoond, worden de resultaten van de scriptuitvoering door de scriptservice persistent gemaakt, bijvoorbeeld stdout, uitvoer en retourwaarde voordat de resources worden `deploymentScripts` verwijderd.
-  - **OnSuccess:** verwijder de automatisch gemaakte resources alleen wanneer de uitvoering van het script is geslaagd. Als een bestaand opslagaccount wordt gebruikt, verwijdert de scriptservice de bestands share alleen wanneer het uitvoeren van het script is geslaagd. U hebt nog steeds toegang tot de resources om de foutopsporingsinformatie te vinden.
+  - **Altijd:** verwijder de automatisch gemaakte resources zodra de uitvoering van het script een terminale status heeft. Als er een bestaand opslagaccount wordt gebruikt, verwijdert de scriptservice de bestands share die in het opslagaccount is gemaakt. Omdat de resource nog steeds aanwezig kan zijn nadat de resources zijn opgeschoond, worden de resultaten van de scriptuitvoering door de scriptservice persistent gemaakt, bijvoorbeeld stdout, uitvoer en retourwaarde voordat de resources worden `deploymentScripts` verwijderd.
+  - **OnSuccess:** verwijder de automatisch gemaakte resources alleen wanneer de uitvoering van het script is geslaagd. Als er een bestaand opslagaccount wordt gebruikt, verwijdert de scriptservice de bestands share alleen als de uitvoering van het script is geslaagd. U hebt nog steeds toegang tot de resources om de foutopsporingsinformatie te vinden.
   - **OnExpiration:** verwijder de automatisch gemaakte resources alleen wanneer de `retentionInterval` instelling is verlopen. Als er een bestaand opslagaccount wordt gebruikt, verwijdert de scriptservice de bestands share, maar behoudt het opslagaccount.
 
 - `retentionInterval`: Geef het tijdsinterval op dat een scriptresource wordt bewaard en waarna deze verloopt en wordt verwijderd.
@@ -562,25 +562,25 @@ De levenscyclus van deze resources wordt bepaald door de volgende eigenschappen 
 > [!NOTE]
 > Het wordt afgeraden om het opslagaccount en de container-instantie te gebruiken die door de scriptservice worden gegenereerd voor andere doeleinden. De twee resources kunnen worden verwijderd, afhankelijk van de levenscyclus van het script.
 
-De container-instantie en het opslagaccount worden verwijderd volgens de `cleanupPreference` . Als het script echter mislukt en niet is ingesteld op Altijd, blijft de container tijdens het implementatieproces automatisch `cleanupPreference` één uur actief.  U kunt dit uur gebruiken om problemen met het script op te lossen. Als u de container actief wilt houden na geslaagde implementaties, voegt u een slaapstandstap toe aan uw script. Voeg bijvoorbeeld [Start-Sleep toe](/powershell/module/microsoft.powershell.utility/start-sleep) aan het einde van uw script. Als u de slaapstandstap niet toevoegt, wordt de container ingesteld op een terminaltoestand en is deze niet toegankelijk, zelfs niet als deze nog niet is verwijderd.
+De container-instantie en het opslagaccount worden verwijderd volgens `cleanupPreference` de . Als het script echter mislukt en niet is ingesteld op Altijd, blijft de container tijdens het implementatieproces `cleanupPreference` automatisch één uur actief.  U kunt dit uur gebruiken om problemen met het script op te lossen. Als u de container actief wilt houden na geslaagde implementaties, voegt u een slaapstandstap toe aan uw script. Voeg bijvoorbeeld [Start-Sleep toe](/powershell/module/microsoft.powershell.utility/start-sleep) aan het einde van uw script. Als u de slaapstandstap niet toevoegt, wordt de container ingesteld op een terminaltoestand en is deze niet toegankelijk, zelfs niet als deze nog niet is verwijderd.
 
 ## <a name="run-script-more-than-once"></a>Script meer dan één keer uitvoeren
 
-Het uitvoeren van implementatiescripts is een idempotente bewerking. Als geen van de `deploymentScripts` resource-eigenschappen (inclusief het inline script) wordt gewijzigd, wordt het script niet uitgevoerd wanneer u de sjabloon opnieuw wilt uitvoeren. De implementatiescriptservice vergelijkt de resourcenamen in de sjabloon met de bestaande resources in dezelfde resourcegroep. Er zijn twee opties als u hetzelfde implementatiescript meerdere keren wilt uitvoeren:
+Het uitvoeren van implementatiescripts is een idempotente bewerking. Als geen van de `deploymentScripts` resource-eigenschappen (inclusief het inlinescript) wordt gewijzigd, wordt het script niet uitgevoerd wanneer u de sjabloon opnieuw wilt uitvoeren. De implementatiescriptservice vergelijkt de resourcenamen in de sjabloon met de bestaande resources in dezelfde resourcegroep. Er zijn twee opties als u hetzelfde implementatiescript meerdere keren wilt uitvoeren:
 
 - Wijzig de naam van uw `deploymentScripts` resource. Gebruik bijvoorbeeld de [sjabloonfunctie utcNow](./template-functions-date.md#utcnow) als de resourcenaam of als onderdeel van de resourcenaam. Als u de resourcenaam verandert, wordt er een nieuwe `deploymentScripts` resource gemaakt. Het is goed voor het bewaren van een geschiedenis van scriptuitvoering.
 
     > [!NOTE]
     > De `utcNow` functie kan alleen worden gebruikt in de standaardwaarde voor een parameter.
 
-- Geef een andere waarde op in de `forceUpdateTag` sjabloon-eigenschap. Gebruik bijvoorbeeld als `utcNow` waarde.
+- Geef een andere waarde op in de `forceUpdateTag` sjabloon-eigenschap. Gebruik bijvoorbeeld `utcNow` als de waarde .
 
 > [!NOTE]
 > Schrijf de implementatiescripts die idempotent zijn. Dit zorgt ervoor dat als ze per ongeluk opnieuw worden uitgevoerd, dit geen systeemwijzigingen veroorzaakt. Als het implementatiescript bijvoorbeeld wordt gebruikt om een Azure-resource te maken, controleert u of de resource niet bestaat voordat u deze maakt, zodat het script slaagt of u de resource niet opnieuw maakt.
 
 ## <a name="configure-development-environment"></a>De ontwikkelomgeving configureren
 
-U kunt een vooraf geconfigureerde containerafbeelding gebruiken als ontwikkelomgeving voor implementatiescripts. Zie Configure development [environment for deployment scripts in templates (Ontwikkelomgeving configureren voor implementatiescripts in sjablonen) voor meer informatie.](./deployment-script-template-configure-dev.md)
+U kunt een vooraf geconfigureerde containerafbeelding gebruiken als ontwikkelomgeving voor implementatiescripts. Zie Ontwikkelomgeving configureren voor [implementatiescripts in sjablonen voor meer informatie.](./deployment-script-template-configure-dev.md)
 
 Nadat het script is getest, kunt u het gebruiken als een implementatiescript in uw sjablonen.
 
@@ -589,35 +589,35 @@ Nadat het script is getest, kunt u het gebruiken als een implementatiescript in 
 | Foutcode | Beschrijving |
 |------------|-------------|
 | DeploymentScriptInvalidOperation | De resourcedefinitie van het implementatiescript in de sjabloon bevat ongeldige eigenschapsnamen. |
-| DeploymentScriptResourceConflict | Kan een implementatiescriptresource die niet-terminal is, niet verwijderen en de uitvoering niet langer is dan 1 uur. Of kan hetzelfde implementatiescript niet opnieuw uitvoeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resourcegroepnaam en resourcenaam), maar tegelijkertijd met verschillende inhoud van de scripttekst. |
+| DeploymentScriptResourceConflict | Kan een implementatiescriptresource die niet-terminal is, niet verwijderen en de uitvoering niet langer is dan 1 uur. U kunt hetzelfde implementatiescript ook niet opnieuw uitvoeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resourcegroepnaam en resourcenaam), maar tegelijkertijd andere inhoud van de scripttekst. |
 | DeploymentScriptOperationFailed | De implementatiescriptbewerking is intern mislukt. Neem contact op met Microsoft Ondersteuning. |
 | DeploymentScriptStorageAccountAccessKeyNotSpecified | De toegangssleutel is niet opgegeven voor het bestaande opslagaccount.|
-| DeploymentScriptContainerGroupContainsInvalidContainers | Een containergroep die door de implementatiescriptservice is gemaakt, is extern gewijzigd en er zijn ongeldige containers toegevoegd. |
-| DeploymentScriptContainerGroupInNonterminalState | Twee of meer implementatiescriptresources gebruiken dezelfde naam voor de Azure Container Instance in dezelfde resourcegroep en een van deze resources heeft de uitvoering nog niet voltooid. |
+| DeploymentScriptContainerGroupContainsInvalidContainers | Een containergroep die is gemaakt door de implementatiescriptservice, is extern gewijzigd en er zijn ongeldige containers toegevoegd. |
+| DeploymentScriptContainerGroupInNonterminalState | Twee of meer implementatiescriptresources gebruiken dezelfde naam voor de Azure-containerin instance in dezelfde resourcegroep en een van deze resources heeft de uitvoering nog niet voltooid. |
 | DeploymentScriptStorageAccountInvalidKind | Het bestaande opslagaccount van het type BlobBlobStorage of BlobStorage biedt geen ondersteuning voor bestands shares en kan niet worden gebruikt. |
-| DeploymentScriptStorageAccountInvalidKindAndSku | Het bestaande opslagaccount biedt geen ondersteuning voor bestands shares. Zie Bestaand opslagaccount gebruiken voor een lijst met [ondersteunde opslagaccounts.](#use-existing-storage-account) |
+| DeploymentScriptStorageAccountInvalidKindAndSku | Het bestaande opslagaccount biedt geen ondersteuning voor bestands shares. Zie Bestaande opslagaccount gebruiken voor een lijst met [ondersteunde opslagaccounts.](#use-existing-storage-account) |
 | DeploymentScriptStorageAccountNotFound | Het opslagaccount bestaat niet of is verwijderd door een extern proces of hulpprogramma. |
 | DeploymentScriptStorageAccountWithServiceEndpointEnabled | Het opgegeven opslagaccount heeft een service-eindpunt. Een opslagaccount met een service-eindpunt wordt niet ondersteund. |
-| DeploymentScriptStorageAccountInvalidAccessKey | Ongeldige toegangssleutel opgegeven voor het bestaande opslagaccount. |
-| DeploymentScriptStorageAccountInvalidAccessKeyFormat | Ongeldige indeling van opslagaccountsleutel. Zie [Toegangssleutels voor opslagaccounts beheren.](../../storage/common/storage-account-keys-manage.md) |
+| DeploymentScriptStorageAccountInvalidAccessKey | Ongeldige toegangssleutel die is opgegeven voor het bestaande opslagaccount. |
+| DeploymentScriptStorageAccountInvalidAccessKeyFormat | Ongeldige sleutelindeling voor opslagaccount. Zie [Toegangssleutels voor opslagaccounts beheren.](../../storage/common/storage-account-keys-manage.md) |
 | DeploymentScriptExceededMaxAllowedTime | De uitvoeringstijd van het implementatiescript heeft de time-outwaarde overschreden die is opgegeven in de resourcedefinitie van het implementatiescript. |
 | DeploymentScriptInvalidOutputs | De uitvoer van het implementatiescript is geen geldig JSON-object. |
-| DeploymentScriptContainerInstancesServiceLoginFailure | De door de gebruiker toegewezen beheerde identiteit kon zich na tien pogingen met een interval van 1 minuut niet aanmelden. |
-| DeploymentScriptContainerGroupNotFound | Een containergroep die is gemaakt door de implementatiescriptservice, is verwijderd door een extern hulpprogramma of proces. |
+| DeploymentScriptContainerInstancesServiceLoginFailure | De door de gebruiker toegewezen beheerde identiteit kon zich na 10 pogingen met een interval van 1 minuut niet aanmelden. |
+| DeploymentScriptContainerGroupNotFound | Een containergroep die is gemaakt door de implementatiescriptservice is verwijderd door een extern hulpprogramma of proces. |
 | DeploymentScriptDownloadFailure | Downloaden van een ondersteunend script is mislukt. Zie [Ondersteunend script gebruiken.](#use-supporting-scripts)|
 | DeploymentScriptError | Het gebruikersscript heeft een fout veroorzaakt. |
-| DeploymentScriptBootstrapScriptExecutionFailed | Het bootstrapscript heeft een fout veroorzaakt. Bootstrapscript is het systeemscript dat de uitvoering van het implementatiescript ins orchestrateert. |
-| DeploymentScriptExecutionFailed | Onbekende fout tijdens de uitvoering van het implementatiescript. |
+| DeploymentScriptBootstrapScriptExecutionFailed | Het bootstrapscript heeft een fout veroorzaakt. Bootstrap-script is het systeemscript dat de uitvoering van het implementatiescript ins orchestrateert. |
+| DeploymentScriptExecutionFailed | Onbekende fout tijdens het uitvoeren van het implementatiescript. |
 | DeploymentScriptContainerInstancesServiceUnavailable | Bij het maken van de Azure Container Instance (ACI) heeft ACI een foutmelding over service niet beschikbaar gemaakt. |
 | DeploymentScriptContainerGroupInNonterminalState | Bij het maken van de Azure Container Instance (ACI) gebruikt een ander implementatiescript dezelfde ACI-naam in hetzelfde bereik (hetzelfde abonnement, dezelfde resourcegroepnaam en resourcenaam). |
 | DeploymentScriptContainerGroupNameInvalid | De opgegeven azure container instance name (ACI) voldoet niet aan de ACI-vereisten. Zie [Veelvoorkomende problemen oplossen in Azure Container Instances](../../container-instances/container-instances-troubleshooting.md#issues-during-container-group-deployment).|
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u implementatiescripts gebruikt. Ga als volgende te werk om een zelfstudie over een implementatiescript te volgen:
+In dit artikel hebt u geleerd hoe u implementatiescripts gebruikt. Ga als volgende te werk om een zelfstudie over implementatiescripts te doorloopen:
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: Implementatiescripts gebruiken in Azure Resource Manager sjablonen](./template-tutorial-deployment-script.md)
+> [Zelfstudie: Implementatiescripts in Azure Resource Manager gebruiken](./template-tutorial-deployment-script.md)
 
 > [!div class="nextstepaction"]
 > [Learn-module: ARM-sjablonen uitbreiden met behulp van implementatiescripts](/learn/modules/extend-resource-manager-template-deployment-scripts/)

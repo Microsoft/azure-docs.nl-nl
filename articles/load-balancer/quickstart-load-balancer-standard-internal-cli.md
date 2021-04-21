@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 12/19/2020
 ms.author: allensu
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 66b3db9a7aec45a2a0881379db6f7ef51950b5c5
-ms.sourcegitcommit: dddd1596fa368f68861856849fbbbb9ea55cb4c7
+ms.openlocfilehash: 2db30024b26352bcc038d606bcdc760b6350d413
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107364308"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107788831"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-by-using-the-azure-cli"></a>Quickstart: Een intern load balancer met behulp van de Azure CLI
 
@@ -60,7 +60,7 @@ Voordat u VM's en uw load balancer implementeert, moet u de ondersteunende virtu
 
 #### <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
-Maak een virtueel netwerk met [az network vnet create.](/cli/azure/network/vnet#az-network-vnet-create) Geef het volgende op:
+Maak een virtueel netwerk met [az network vnet create.](/cli/azure/network/vnet#az_network_vnet_create) Geef het volgende op:
 
 * Met de **naam myVNet**
 * Adres **voorvoegsel van 10.1.0.0/16**
@@ -81,7 +81,7 @@ Maak een virtueel netwerk met [az network vnet create.](/cli/azure/network/vnet#
 
 #### <a name="create-a-public-ip-address"></a>Een openbaar IP-adres maken
 
-Gebruik [az network public-ip create om](/cli/azure/network/public-ip#az-network-public-ip-create) een openbaar IP-adres te maken voor de Azure Bastion host. Geef het volgende op:
+Gebruik [az network public-ip create om](/cli/azure/network/public-ip#az_network_public_ip_create) een openbaar IP-adres te maken voor de Azure Bastion host. Geef het volgende op:
 
 * Maak een standaard zone-redundant openbaar IP-adres met de **naam myBastionIP**
 * In **CreateIntLBQS-rg**
@@ -94,10 +94,10 @@ az network public-ip create \
 ```
 #### <a name="create-an-azure-bastion-subnet"></a>Een Azure Bastion maken
 
-Gebruik [az network vnet subnet create om](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) een subnet te maken. Geef het volgende op:
+Gebruik [az network vnet subnet create om](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create) een subnet te maken. Geef het volgende op:
 
 * Met **de naam AzureBastionSubnet**
-* Adres **voorvoegsel van 10.1.1.0/24**
+* Adres voorvoegsel **van 10.1.1.0/24**
 * In virtueel netwerk **myVNet**
 * In resourcegroep **CreateIntLBQS-rg**
 
@@ -111,7 +111,7 @@ az network vnet subnet create \
 
 #### <a name="create-an-azure-bastion-host"></a>Een Azure Bastion-host maken
 
-Gebruik [az network bastion create om](/cli/azure/network/bastion#az-network-bastion-create) een host te maken. Geef het volgende op:
+Gebruik [az network bastion create om](/cli/azure/network/bastion#az_network_bastion_create) een host te maken. Geef het volgende op:
 
 * met de naam **myBastionHost**.
 * In **CreateIntLBQS-rg**
@@ -132,7 +132,7 @@ De Azure Bastion kan een paar minuten nodig hebben om te implementeren.
 
 #### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Voor een standaard load balancer moet u ervoor zorgen dat uw VM's netwerkinterfaces hebben die deel uitmaken van een netwerkbeveiligingsgroep. Maak een netwerkbeveiligingsgroep met [az network nsg create.](/cli/azure/network/nsg#az-network-nsg-create) Geef het volgende op:
+Zorg er voor load balancer dat uw VM's netwerkinterfaces hebben die deel uitmaken van een netwerkbeveiligingsgroep. Maak een netwerkbeveiligingsgroep met [az network nsg create.](/cli/azure/network/nsg#az_network_nsg_create) Geef het volgende op:
 
 * Met de **naam myNSG**
 * In resourcegroep **CreateIntLBQS-rg**
@@ -145,7 +145,7 @@ Voor een standaard load balancer moet u ervoor zorgen dat uw VM's netwerkinterfa
 
 #### <a name="create-a-network-security-group-rule"></a>Regel voor netwerkbeveiligingsgroep maken
 
-Maak een netwerkbeveiligingsgroepsregel met [az network nsg rule create.](/cli/azure/network/nsg/rule#az-network-nsg-rule-create) Geef het volgende op:
+Maak een netwerkbeveiligingsgroepsregel met [az network nsg rule create.](/cli/azure/network/nsg/rule#az_network_nsg_rule_create) Geef het volgende op:
 
 * Met de **naam myNSGRuleHTTP**
 * In de netwerkbeveiligingsgroep die u in de vorige stap hebt gemaakt, **myNSG**
@@ -182,7 +182,7 @@ In deze sectie maakt u:
 
 #### <a name="create-network-interfaces-for-the-virtual-machines"></a>Netwerkinterfaces maken voor de virtuele machines
 
-Maak drie netwerkinterfaces [met az network nic create](/cli/azure/network/nic#az-network-nic-create). Geef het volgende op:
+Maak drie netwerkinterfaces [met az network nic create](/cli/azure/network/nic#az_network_nic_create). Geef het volgende op:
 
 * **MyNicVM1,** **myNicVM2** en **myNicVM3 genoemd**
 * In resourcegroep **CreateIntLBIRS-rg**
@@ -205,7 +205,7 @@ Maak drie netwerkinterfaces [met az network nic create](/cli/azure/network/nic#a
 
 #### <a name="create-the-virtual-machines"></a>De virtuele machines maken
 
-Maak de virtuele machines met [az vm create](/cli/azure/vm#az-vm-create). Geef het volgende op:
+Maak de virtuele machines met [az vm create](/cli/azure/vm#az_vm_create). Geef het volgende op:
 
 * **MyVM1,** **myVM2** en **myVM3 genoemd**
 * In resourcegroep **CreateIntLBIRS-rg**
@@ -230,18 +230,21 @@ Maak de virtuele machines met [az vm create](/cli/azure/vm#az-vm-create). Geef h
 
 Het kan enkele minuten duren voordat de VM's zijn geïmplementeerd.
 
+[!INCLUDE [ephemeral-ip-note.md](../../includes/ephemeral-ip-note.md)]
+
+
 ### <a name="create-the-load-balancer"></a>Load balancer maken
 
 In deze sectie wordt beschreven hoe u de volgende onderdelen van de load balancer kunt maken en configureren:
 
 * Een IP-adresgroep die het binnenkomende netwerkverkeer op de load balancer.
-* Een tweede IP-adresgroep, waar de eerste groep het netwerkverkeer met load balanced verzendt.
+* Een tweede IP-adresgroep, waarbij de eerste groep het netwerkverkeer met load balanced verzendt.
 * Een statustest die de status van de VM-exemplaren bepaalt.
 * Een load balancer-regel die bepaalt hoe het verkeer over de VM's wordt verdeeld.
 
 #### <a name="create-the-load-balancer-resource"></a>De load balancer-resource maken
 
-Maak een openbare load balancer met [az network lb create.](/cli/azure/network/lb#az-network-lb-create) Geef het volgende op:
+Maak een openbare load balancer met [az network lb create](/cli/azure/network/lb#az_network_lb_create). Geef het volgende op:
 
 * Met de naam **myLoadBalancer**
 * Een pool met de **naam myFrontEnd**
@@ -264,7 +267,7 @@ Maak een openbare load balancer met [az network lb create.](/cli/azure/network/l
 
 Met een statustest worden alle VM-instanties gecontroleerd om na te gaan of ze netwerkverkeer kunnen verzenden. Een virtuele machine met een mislukte test wordt verwijderd uit de load balancer. De virtuele machine wordt weer toegevoegd aan de load balancer wanneer de fout is opgelost.
 
-Maak een statustest met [az network lb probe create.](/cli/azure/network/lb/probe#az-network-lb-probe-create) Geef het volgende op:
+Maak een statustest met [az network lb probe create.](/cli/azure/network/lb/probe#az_network_lb_probe_create) Geef het volgende op:
 
 * Controleert de status van de virtuele machines
 * Met **de naam myHealthProbe**
@@ -288,7 +291,7 @@ Met een load balancer-regel wordt het volgende gedefinieerd:
 * De IP-adresgroep voor het ontvangen van het verkeer.
 * De vereiste bron- en doelpoort. 
 
-Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) om een load balancer-regel te maken. Geef het volgende op:
+Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az_network_lb_rule_create) om een load balancer-regel te maken. Geef het volgende op:
 
 * Naam: **myHTTPRule**
 * Luisteren op **poort 80** in de pool **myFrontEnd**
@@ -315,7 +318,7 @@ Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rul
 
 #### <a name="add-vms-to-the-load-balancer-pool"></a>VM's toevoegen aan de load balancer groep
 
-Voeg de virtuele machines toe aan de back-endpool [met az network nic ip-config address-pool add.](/cli/azure/network/nic/ip-config/address-pool#az-network-nic-ip-config-address-pool-add) Geef het volgende op:
+Voeg de virtuele machines toe aan de back-endpool [met az network nic ip-config address-pool add.](/cli/azure/network/nic/ip-config/address-pool#az_network_nic_ip_config_address_pool_add) Geef het volgende op:
 
 * In adresgroep **myBackEndPool**
 * In resourcegroep **CreateIntLBQS-rg**
@@ -351,7 +354,7 @@ Voordat u VM's en uw load balancer implementeert, moet u de ondersteunende virtu
 
 #### <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
-Maak een virtueel netwerk met [az network vnet create.](/cli/azure/network/vnet#az-network-vnet-createt) Geef het volgende op:
+Maak een virtueel netwerk met [az network vnet create.](/cli/azure/network/vnet#az_network_vnet_createt) Geef het volgende op:
 
 * Met de **naam myVNet**
 * Adres **voorvoegsel van 10.1.0.0/16**
@@ -372,7 +375,7 @@ Maak een virtueel netwerk met [az network vnet create.](/cli/azure/network/vnet#
 
 #### <a name="create-a-public-ip-address"></a>Een openbaar IP-adres maken
 
-Gebruik [az network public-ip create om](/cli/azure/network/public-ip#az-network-public-ip-create) een openbaar IP-adres te maken voor de Azure Bastion host. Geef het volgende op:
+Gebruik [az network public-ip create om](/cli/azure/network/public-ip#az_network_public_ip_create) een openbaar IP-adres te maken voor de Azure Bastion host. Geef het volgende op:
 
 * Maak een standaard zone-redundant openbaar IP-adres met de **naam myBastionIP**
 * In **CreateIntLBQS-rg**
@@ -385,10 +388,10 @@ az network public-ip create \
 ```
 #### <a name="create-an-azure-bastion-subnet"></a>Een Azure Bastion maken
 
-Gebruik [az network vnet subnet create om](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) een subnet te maken. Geef het volgende op:
+Gebruik [az network vnet subnet create om](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create) een subnet te maken. Geef het volgende op:
 
 * Met **de naam AzureBastionSubnet**
-* Adres **voorvoegsel van 10.1.1.0/24**
+* Adres voorvoegsel **van 10.1.1.0/24**
 * In virtueel netwerk **myVNet**
 * In resourcegroep **CreateIntLBIRS-rg**
 
@@ -402,7 +405,7 @@ az network vnet subnet create \
 
 #### <a name="create-an-azure-bastion-host"></a>Een Azure Bastion-host maken
 
-Gebruik [az network bastion create om](/cli/azure/network/bastion#az-network-bastion-create) een host te maken. Geef het volgende op:
+Gebruik [az network bastion create om](/cli/azure/network/bastion#az_network_bastion_create) een host te maken. Geef het volgende op:
 
 * met de naam **myBastionHost**.
 * In **CreateIntLBQS-rg**
@@ -423,7 +426,7 @@ De Azure Bastion kan een paar minuten nodig hebben om te implementeren.
 
 #### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Zorg er voor load balancer dat uw VM's netwerkinterfaces hebben die deel uitmaken van een netwerkbeveiligingsgroep. Maak een netwerkbeveiligingsgroep met [az network nsg create.](/cli/azure/network/nsg#az-network-nsg-create) Geef het volgende op:
+Voor een standaard load balancer moet u ervoor zorgen dat uw VM's netwerkinterfaces hebben die deel uitmaken van een netwerkbeveiligingsgroep. Maak een netwerkbeveiligingsgroep met [az network nsg create.](/cli/azure/network/nsg#az_network_nsg_create) Geef het volgende op:
 
 * Met de **naam myNSG**
 * In resourcegroep **CreateIntLBQS-rg**
@@ -436,7 +439,7 @@ Zorg er voor load balancer dat uw VM's netwerkinterfaces hebben die deel uitmake
 
 #### <a name="create-a-network-security-group-rule"></a>Regel voor netwerkbeveiligingsgroep maken
 
-Maak een netwerkbeveiligingsgroepsregel met [az network nsg rule create.](/cli/azure/network/nsg/rule#az-network-nsg-rule-create) Geef het volgende op:
+Maak een netwerkbeveiligingsgroepsregel met [az network nsg rule create.](/cli/azure/network/nsg/rule#az_network_nsg_rule_create) Geef het volgende op:
 
 * Met de **naam myNSGRuleHTTP**
 * In de netwerkbeveiligingsgroep die u in de vorige stap hebt gemaakt, **myNSG**
@@ -474,9 +477,9 @@ In deze sectie maakt u:
 
 #### <a name="create-network-interfaces-for-the-virtual-machines"></a>Netwerkinterfaces maken voor de virtuele machines
 
-Maak drie netwerkinterfaces [met az network nic create.](/cli/azure/network/nic#az-network-nic-create) Geef het volgende op:
+Maak drie netwerkinterfaces [met az network nic create.](/cli/azure/network/nic#az_network_nic_create) Geef het volgende op:
 
-* Met **de namen myNicVM1,** **myNicVM2** en **myNicVM3**
+* **MyNicVM1,** **myNicVM2** en **myNicVM3 genoemd**
 * In resourcegroep **CreateIntLBIRS-rg**
 * In virtueel netwerk **myVNet**
 * In subnet **myBackendSubnet**
@@ -497,7 +500,7 @@ Maak drie netwerkinterfaces [met az network nic create.](/cli/azure/network/nic#
 
 #### <a name="create-the-availability-set-for-the-virtual-machines"></a>De beschikbaarheidsset voor de virtuele machines maken
 
-Maak de beschikbaarheidsset [met az vm availability-set create.](/cli/azure/vm/availability-set#az-vm-availability-set-create) Geef het volgende op:
+Maak de beschikbaarheidsset [met az vm availability-set create.](/cli/azure/vm/availability-set#az_vm_availability_set_create) Geef het volgende op:
 
 * Met **de naam myAvailabilitySet**
 * In resourcegroep **CreateIntLBIRS-rg**
@@ -513,7 +516,7 @@ Maak de beschikbaarheidsset [met az vm availability-set create.](/cli/azure/vm/a
 
 #### <a name="create-the-virtual-machines"></a>De virtuele machines maken
 
-Maak de virtuele machines met [az vm create](/cli/azure/vm#az-vm-create). Geef het volgende op:
+Maak de virtuele machines met [az vm create](/cli/azure/vm#az_vm_create). Geef het volgende op:
 
 * **MyVM1,** **myVM2** en **myVM3 genoemd**
 * In resourcegroep **CreateIntLBIRS-rg**
@@ -538,18 +541,21 @@ Maak de virtuele machines met [az vm create](/cli/azure/vm#az-vm-create). Geef h
 ```
 Het kan enkele minuten duren voordat de VM's zijn geïmplementeerd.
 
+[!INCLUDE [ephemeral-ip-note.md](../../includes/ephemeral-ip-note.md)]
+
+
 ### <a name="create-the-load-balancer"></a>Load balancer maken
 
 In deze sectie wordt beschreven hoe u de volgende onderdelen van de load balancer kunt maken en configureren:
 
 * Een IP-adresgroep die het binnenkomende netwerkverkeer op de load balancer.
-* Een tweede IP-adresgroep, waar de eerste groep het netwerkverkeer met load balanced verzendt.
+* Een tweede IP-adresgroep, waarbij de eerste groep het netwerkverkeer met load balanced verzendt.
 * Een statustest die de status van de VM-exemplaren bepaalt.
 * Een load balancer-regel die bepaalt hoe het verkeer over de VM's wordt verdeeld.
 
 #### <a name="create-the-load-balancer-resource"></a>De load balancer-resource maken
 
-Maak een openbare load balancer met [az network lb create.](/cli/azure/network/lb#az-network-lb-create) Geef het volgende op:
+Maak een openbare load balancer met [az network lb create](/cli/azure/network/lb#az_network_lb_create). Geef het volgende op:
 
 * Met de naam **myLoadBalancer**
 * Een pool met de **naam myFrontEnd**
@@ -572,7 +578,7 @@ Maak een openbare load balancer met [az network lb create.](/cli/azure/network/l
 
 Met een statustest worden alle VM-instanties gecontroleerd om na te gaan of ze netwerkverkeer kunnen verzenden. Een virtuele machine met een mislukte test wordt verwijderd uit de load balancer. De virtuele machine wordt weer toegevoegd aan de load balancer wanneer de fout is opgelost.
 
-Maak een statustest met [az network lb probe create.](/cli/azure/network/lb/probe#az-network-lb-probe-create) Geef het volgende op:
+Maak een statustest met [az network lb probe create.](/cli/azure/network/lb/probe#az_network_lb_probe_create) Geef het volgende op:
 
 * Controleert de status van de virtuele machines
 * Met **de naam myHealthProbe**
@@ -596,7 +602,7 @@ Met een load balancer-regel wordt het volgende gedefinieerd:
 * De IP-adresgroep voor het ontvangen van het verkeer.
 * De vereiste bron- en doelpoort. 
 
-Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) om een load balancer-regel te maken. Geef het volgende op:
+Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az_network_lb_rule_create) om een load balancer-regel te maken. Geef het volgende op:
 
 * Naam: **myHTTPRule**
 * Luisteren op **poort 80** in de pool **myFrontEnd**
@@ -620,7 +626,7 @@ Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rul
 ```
 #### <a name="add-vms-to-the-load-balancer-pool"></a>VM's toevoegen aan de load balancer groep
 
-Voeg de virtuele machines toe aan de back-endpool [met az network nic ip-config address-pool add.](/cli/azure/network/nic/ip-config/address-pool#az-network-nic-ip-config-address-pool-add) Geef het volgende op:
+Voeg de virtuele machines toe aan de back-endpool [met az network nic ip-config address-pool add.](/cli/azure/network/nic/ip-config/address-pool#az_network_nic_ip_config_address_pool_add) Geef het volgende op:
 
 * In adresgroep **myBackEndPool**
 * In resourcegroep **CreateIntLBQS-rg**
@@ -643,7 +649,7 @@ Voeg de virtuele machines toe aan de back-endpool [met az network nic ip-config 
 ---
 ## <a name="test-the-load-balancer"></a>Load balancer testen
 
-Maak de netwerkinterface [met az network nic create](/cli/azure/network/nic#az-network-nic-create). Geef het volgende op:
+Maak de netwerkinterface [met az network nic create](/cli/azure/network/nic#az_network_nic_create). Geef het volgende op:
 
 * Met de **naam myNicTestVM**
 * In resourcegroep **CreateIntLBIRS-rg**
@@ -659,12 +665,12 @@ Maak de netwerkinterface [met az network nic create](/cli/azure/network/nic#az-n
     --subnet myBackEndSubnet \
     --network-security-group myNSG
 ```
-Maak de virtuele machine met [az vm create](/cli/azure/vm#az-vm-create). Geef het volgende op:
+Maak de virtuele machine met [az vm create](/cli/azure/vm#az_vm_create). Geef het volgende op:
 
 * Met de **naam myTestVM**
 * In resourcegroep **CreateIntLBIRS-rg**
 * Gekoppeld aan de netwerkinterface **myNicTestVM**
-* **Virtuele-machine-afbeelding Win2019Datacenter**
+* Virtuele-machine-afbeelding **Win2019Datacenter**
 
 ```azurecli-interactive
   az vm create \
@@ -706,11 +712,11 @@ Gebruik [az vm extension set](/cli/azure/vm/extension#az_vm_extension_set) om II
 
 4. Selecteer in het menu aan de linkerkant **Alle services**  >  **Alle resources.** Selecteer in de lijst met resources in de resourcegroep **CreateIntLBIRS-rg** de optie **myTestVM.**
 
-5. Selecteer op **de** pagina Overzicht de optie **Verbinding maken**  >  **met Bastion.**
+5. Selecteer op **de pagina** Overzicht de optie **Verbinding maken** met  >  **Bastion**.
 
-6. Voer de gebruikersnaam en het wachtwoord in die u hebt ingevoerd bij het maken van de VM.
+6. Voer de gebruikersnaam en het wachtwoord in die u hebt ingevoerd tijdens het maken van de VM.
 
-7. Open **op myTestVM** **Internet Explorer**.
+7. Open **op myTestVM** **de Internet Explorer**.
 
 8. Voer het IP-adres uit de vorige stap in in de adresbalk van de browser. De standaardpagina van de IIS-webserver wordt weergegeven in de browser.
 
@@ -720,7 +726,7 @@ Als u de load balancer verkeer wilt verdelen over alle drie de VM's, kunt u de s
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer uw resources niet meer nodig zijn, gebruikt u de [opdracht az group delete](/cli/azure/group#az-group-delete) om de resourcegroep, load balancer en alle gerelateerde resources te verwijderen.
+Wanneer uw resources niet meer nodig zijn, gebruikt u de [opdracht az group delete](/cli/azure/group#az_group_delete) om de resourcegroep, load balancer en alle gerelateerde resources te verwijderen.
 
 ```azurecli-interactive
   az group delete \

@@ -1,235 +1,235 @@
 ---
-title: Implementatie sleuven Azure Functions
-description: Meer informatie over het maken en gebruiken van implementatie sleuven met Azure Functions
+title: Azure Functions implementatiesleuven
+description: Meer informatie over het maken en gebruiken van implementatiesleuven met Azure Functions
 author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: 73282145abd8bfe804b47fda3bf5f12dc691ff3a
-ms.sourcegitcommit: b0557848d0ad9b74bf293217862525d08fe0fc1d
+ms.openlocfilehash: 5f003b68283217f7877dc650ae4f07ddc5a31012
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106551353"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789335"
 ---
-# <a name="azure-functions-deployment-slots"></a>Implementatie sleuven Azure Functions
+# <a name="azure-functions-deployment-slots"></a>Azure Functions implementatiesleuven
 
-Met Azure Functions implementatie sleuven kan uw functie-app verschillende instanties met de naam ' sleuven ' uitvoeren. Sleuven zijn verschillende omgevingen die worden weer gegeven via een openbaar beschikbaar eind punt. Een app-exemplaar wordt altijd toegewezen aan de productie sleuf en u kunt instanties die zijn toegewezen aan een sleuf op aanvraag, vervangen. Functie-apps die onder het service plan apps worden uitgevoerd, kunnen meerdere sleuven hebben, terwijl het verbruiks abonnement slechts één sleuf is toegestaan.
+Azure Functions implementatiesleuven kunt u uw functie-app verschillende exemplaren met de naam 'sleuven' laten uitvoeren. Sleuven zijn verschillende omgevingen die beschikbaar zijn via een openbaar beschikbaar eindpunt. Er wordt altijd één app-exemplaar toegewezen aan de productiesleuf en u kunt instanties die zijn toegewezen aan een sleuf op aanvraag wisselen. Functie-apps die worden uitgevoerd onder het App Service-plan kunnen meerdere sleuven hebben, terwijl onder het verbruiksplan slechts één sleuf is toegestaan.
 
-Hieronder ziet u hoe de functies worden beïnvloed door de wisselende sleuven:
+Hieronder wordt weergegeven hoe functies worden beïnvloed door het wisselen van sleuven:
 
-- Het omleiden van verkeer is naadloos; Er worden geen aanvragen verwijderd vanwege een wissel.
-- Als tijdens een swap een functie wordt uitgevoerd, wordt de uitvoering voortgezet en worden de volgende triggers doorgestuurd naar het geswapde app-exemplaar.
+- Verkeersomleiding is naadloos; er worden geen aanvragen vanwege een wissel ingetrokken.
+- Als een functie wordt uitgevoerd tijdens een wissel, wordt de uitvoering voortgezet en worden de volgende triggers doorgeleid naar het gewisselde app-exemplaar.
 
 ## <a name="why-use-slots"></a>Waarom sleuven gebruiken?
 
-Er zijn een aantal voor delen voor het gebruik van implementatie sites. In de volgende scenario's worden veelvoorkomende toepassingen voor sleuven beschreven:
+Het gebruik van implementatiesleuven biedt een aantal voordelen. In de volgende scenario's worden veelvoorkomende toepassingen voor sleuven beschreven:
 
-- **Verschillende omgevingen voor verschillende doel einden**: het gebruik van verschillende sleuven biedt u de mogelijkheid om app-exemplaren te onderscheiden voordat u naar de productie-of staging-sleuf overgaat.
-- Voor bereiding: als u in plaats van rechtstreeks naar productie een sleuf implementeert, kan de app worden **opgewarmd** voordat u live gaat. Daarnaast vermindert het gebruik van sleuven de latentie voor HTTP-geactiveerde workloads. Instanties worden vóór de implementatie opwarmd, waardoor het koud starten voor nieuwe geïmplementeerde functies wordt verminderd.
-- **Eenvoudige terugvals**: na een swap met productie heeft de sleuf met een eerder gefaseerde app nu de vorige productie-app. Als de wijzigingen die zijn gewisseld naar de productie sleuf, niet naar verwachting zijn, kunt u de wisseling onmiddellijk omkeren om de laatste bekende juiste instantie terug te halen.
+- **Verschillende omgevingen voor verschillende doeleinden:** Als u verschillende sleuven gebruikt, hebt u de mogelijkheid om onderscheid te maken tussen app-exemplaren voordat u overwisselt naar productie of een staging-sleuf.
+- **Voorverwarmen:** als u implementeert in een sleuf in plaats van rechtstreeks naar productie, kan de app worden opgewarmd voordat deze live gaat. Daarnaast vermindert het gebruik van sleuven de latentie voor door HTTP geactiveerde workloads. Instanties worden opgewarmd vóór de implementatie, waardoor de koude start voor nieuw geïmplementeerde functies wordt beperkt.
+- **Eenvoudige terugval: Na** een wissel met productie heeft de sleuf met een eerder gefaseerd app nu de vorige productie-app. Als de wijzigingen die in de productiesleuf zijn gewisseld niet zijn zoals verwacht, kunt u de wisseling onmiddellijk omkeren om uw 'laatst bekende goede exemplaar' terug te krijgen.
 
-## <a name="swap-operations"></a>Swap bewerkingen
+## <a name="swap-operations"></a>Wisselbewerkingen
 
-Tijdens een swap wordt één sleuf beschouwd als de bron en het andere doel. De bron sleuf heeft het exemplaar van de toepassing die wordt toegepast op de doel site. De volgende stappen zorgen ervoor dat de doel sleuf geen downtime ondervindt tijdens een wissel:
+Tijdens een wissel wordt één sleuf beschouwd als de bron en de andere als doel. De bronsleuf heeft het exemplaar van de toepassing dat wordt toegepast op de doelsleuf. De volgende stappen zorgen ervoor dat de doelsleuf geen downtime ervaart tijdens een wisseling:
 
-1. **Instellingen Toep assen:** Instellingen van de doel sleuf worden toegepast op alle exemplaren van de bron sleuf. De productie-instellingen worden bijvoorbeeld toegepast op het staging-exemplaar. De toegepaste instellingen zijn onder andere de volgende categorieën:
-    - [Sleuf-specifieke app-](#manage-settings) instellingen en verbindings reeksen (indien van toepassing)
-    - Instellingen voor [continue implementatie](../app-service/deploy-continuous-deployment.md) (indien ingeschakeld)
-    - [Verificatie](../app-service/overview-authentication-authorization.md) -instellingen app service (indien ingeschakeld)
+1. **Instellingen toepassen:** Instellingen van de doelsleuf worden toegepast op alle exemplaren van de bronsleuf. De productie-instellingen worden bijvoorbeeld toegepast op het faserings-exemplaar. De toegepaste instellingen omvatten de volgende categorieën:
+    - [Sitespecifieke app-instellingen](#manage-settings) en verbindingsreeksen (indien van toepassing)
+    - [Instellingen voor continue](../app-service/deploy-continuous-deployment.md) implementatie (indien ingeschakeld)
+    - [App Service (indien](../app-service/overview-authentication-authorization.md) ingeschakeld)
 
-1. **Wachten op opnieuw opstarten en beschik baarheid:** De wissel wordt gewacht op elke instantie in de bron sleuf om de computer opnieuw op te starten en voor aanvragen beschikbaar te stellen. Als een exemplaar niet opnieuw wordt opgestart, worden alle wijzigingen in de bron sleuf door de wissel bewerking hersteld en wordt de bewerking gestopt.
+1. **Wacht op opnieuw opstarten en beschikbaarheid:** De wissel wacht tot elk exemplaar in de bronsleuf de herstart heeft voltooid en beschikbaar is voor aanvragen. Als een exemplaar niet opnieuw kan worden opgestart, worden alle wijzigingen in de bronsleuf terugdraaid en wordt de bewerking gestopt.
 
-1. **Route ring bijwerken:** Als alle exemplaren op de bron sleuf zijn opgewarmd, wordt de wisseling door de twee sleuven voltooid door middel van routerings regels te scha kelen. Na deze stap heeft de doel sleuf (bijvoorbeeld het productie gebied) de app die eerder is opgewarmd in de bron sleuf.
+1. **Routering bijwerken:** Als alle exemplaren op de bronsleuf zijn opgewarmd, worden de twee sleuven voltooid door van routeringsregels te wisselen. Na deze stap heeft de doelsleuf (bijvoorbeeld de productiesleuf) de app die eerder is opgewarmd in de bronsleuf.
 
-1. **Herhaal bewerking:** Nu de bron sleuf de preswap-app eerder in de doel sleuf heeft, voltooit u dezelfde bewerking door alle instellingen toe te passen en de instanties voor de bron sleuf opnieuw te starten.
+1. **Herhaal bewerking:** Nu de bronsleuf de app vooraf heeft gewisseld in de doelsleuf, voltooit u dezelfde bewerking door alle instellingen toe te passen en de exemplaren voor de bronsleuf opnieuw op te starten.
 
 Houd rekening met de volgende belangrijke punten:
 
-- Op een wille keurig punt van de wissel bewerking wordt de initialisatie van de verwisselde apps uitgevoerd op de bron site. De doel sleuf blijft online terwijl de bron sleuf is voor bereid, of de wisseling slaagt of mislukt.
+- Op elk moment van de wisselbewerking vindt de initialisatie van de gewisselde apps plaats op de bronsleuf. De doelsleuf blijft online terwijl de bronsleuf wordt voorbereid, ongeacht of de wissel slaagt of mislukt.
 
-- Als u een faserings sleuf wilt vervangen door de productie sleuf, moet u ervoor zorgen dat de productie sleuf *altijd* de doel sleuf is. Op deze manier heeft de swap bewerking geen invloed op uw productie-app.
+- Als u een staging-slot wilt wisselen met de productiesleuf, moet u ervoor zorgen dat de productiesleuf *altijd de* doelsleuf is. Op deze manier heeft de wisselbewerking geen invloed op uw productie-app.
 
-- Instellingen die betrekking hebben op gebeurtenis bronnen en bindingen, moeten worden geconfigureerd als [implementatie site-instellingen](#manage-settings) *voordat u een wissel start*. Als u deze voor het eerst markeert, zorgt u ervoor dat gebeurtenissen en uitvoer naar de juiste instantie worden gestuurd.
+- Instellingen met betrekking tot gebeurtenisbronnen en [](#manage-settings) bindingen moeten worden geconfigureerd als instellingen voor implementatiesleuf *voordat u een wissel start.* Door ze van tevoren als 'plakkerig' te markeren, zorgt u ervoor dat gebeurtenissen en uitvoer naar de juiste instantie worden omgeleid.
 
 ## <a name="manage-settings"></a>Instellingen beheren
 
-Sommige configuratie-instellingen zijn specifiek voor een bepaalde sleuf. De volgende lijst geeft een overzicht van de instellingen die veranderen wanneer u sleuven verwisselt en die hetzelfde blijven.
+Sommige configuratie-instellingen zijn site-specifiek. Hieronder ziet u welke instellingen worden gewijzigd wanneer u van site wisselt en welke hetzelfde blijven.
 
-**Instellingen voor een specifieke sleuf**:
+**Sitespecifieke instellingen:**
 
-* Eind punten publiceren
+* Eindpunten publiceren
 * Aangepaste domeinnamen
-* Niet-open bare certificaten en TLS/SSL-instellingen
-* Schaal instellingen
-* Webjobs-planners
+* Niet-openbare certificaten en TLS/SSL-instellingen
+* Schaalinstellingen
+* WebJobs-schedulers
 * IP-beperkingen
 * AlwaysOn
 * Diagnostische instellingen
 * CORS (Cross-Origin Resource Sharing, cross-origin-resource delen)
 
-**Niet-sleuf-specifieke instellingen**:
+**Niet-sitespecifieke instellingen:**
 
-* Algemene instellingen, zoals Framework versie, 32/64 bits, Web Sockets
-* App-instellingen (kan worden geconfigureerd om naar een sleuf te worden gestickt)
-* Verbindings reeksen (kan zodanig worden geconfigureerd dat ze naar een sleuf worden gestickt)
-* Handlertoewijzing
+* Algemene instellingen, zoals frameworkversie, 32/64-bits websockers
+* App-instellingen (kunnen zo worden geconfigureerd dat deze zich aan een site houden)
+* Verbindingsreeksen (kunnen worden geconfigureerd om aan een sleuf te blijven)
+* Handlertoewijzingen
 * Openbare certificaten
-* Inhoud van webjobs
+* WebJobs-inhoud
 * Hybride verbindingen *
-* Integratie van virtueel netwerk *
-* Service-eind punten *
+* Integratie van virtuele netwerken *
+* Service-eindpunten *
 * Azure Content Delivery Network *
 
-Functies die zijn gemarkeerd met een sterretje (*) zijn gepland om ongewisseld te worden. 
+Functies die zijn gemarkeerd met een asterisk (*) zijn gepland om te worden losgeappt. 
 
 > [!NOTE]
-> Bepaalde app-instellingen die van toepassing zijn op niet-Verwissel bare instellingen, worden ook niet omgewisseld. Omdat de diagnostische instellingen bijvoorbeeld niet worden gewisseld, worden gerelateerde app-instellingen, zoals `WEBSITE_HTTPLOGGING_RETENTION_DAYS` en `DIAGNOSTICS_AZUREBLOBRETENTIONDAYS` ook niet omgewisseld, zelfs niet weer gegeven als sleuf instellingen.
+> Bepaalde app-instellingen die van toepassing zijn op niet-app-instellingen, worden ook niet gewisseld. Omdat diagnostische instellingen bijvoorbeeld niet worden gewisseld, worden gerelateerde app-instellingen zoals en ook niet gewisseld, zelfs niet als `WEBSITE_HTTPLOGGING_RETENTION_DAYS` `DIAGNOSTICS_AZUREBLOBRETENTIONDAYS` site-instellingen.
 >
 
 ### <a name="create-a-deployment-setting"></a>Een implementatie-instelling maken
 
-U kunt instellingen markeren als een implementatie-instelling, waardoor het ' Plak ' is. Een plak instelling wordt niet verwisseld met het app-exemplaar.
+U kunt instellingen markeren als een implementatie-instelling, waardoor deze 'sticky' is. Een sticky-instelling wordt niet gewisseld met het app-exemplaar.
 
-Als u een implementatie-instelling in één sleuf maakt, moet u ervoor zorgen dat u dezelfde instelling maakt met een unieke waarde in een andere sleuf die betrokken is bij een wissel. Op die manier blijft de naam van de instelling consistent tussen sleuven, terwijl de waarde van een instelling niet verandert. Deze naam consistentie zorgt ervoor dat uw code geen toegang probeert te krijgen tot een instelling die in een sleuf is gedefinieerd, maar niet een andere.
+Als u een implementatie-instelling in één sleuf maakt, moet u dezelfde instelling maken met een unieke waarde in een andere sleuf die betrokken is bij een wisseling. Op deze manier blijven de instellingsnamen consistent tussen sleuven, hoewel de waarde van een instelling niet verandert. Deze naamconsistentie zorgt ervoor dat uw code geen toegang probeert te krijgen tot een instelling die is gedefinieerd in de ene sleuf, maar niet in een andere.
 
 Gebruik de volgende stappen om een implementatie-instelling te maken:
 
-1. Navigeer naar **implementatie sleuven** in de functie-app en selecteer vervolgens de naam van de sleuf.
+1. **Navigeer naar Implementatiesleuven** in de functie-app en selecteer vervolgens de naam van de site.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek sleuven in de Azure Portal." border="true":::
 
-1. Selecteer **configuratie** en selecteer vervolgens de naam van de instelling die u met de huidige sleuf wilt houden.
+1. Selecteer **Configuratie** en selecteer vervolgens de naam van de instelling die u bij de huidige sleuf wilt houden.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Configureer de toepassings instelling voor een sleuf in het Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Configureer de toepassingsinstelling voor een sleuf in Azure Portal." border="true":::
 
-1. Selecteer **implementatie site-instelling** en selecteer vervolgens **OK**.
+1. Selecteer **Implementatiesleufinstelling** en selecteer vervolgens **OK.**
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Configureer de implementatie site-instelling." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Configureer de implementatiesleufinstelling." border="true":::
 
-1. Zodra de sectie is ingesteld op verdwijnt, selecteert u **Opslaan** om de wijzigingen te bewaren
+1. Zodra de instellingssectie is verdwenen, selecteert **u Opslaan** om de wijzigingen te behouden
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Sla de implementatie site-instelling op." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Sla de instelling van de implementatiesleuf op." border="true":::
 
 ## <a name="deployment"></a>Implementatie
 
-Sleuven zijn leeg wanneer u een sleuf maakt. U kunt een van de [ondersteunde implementatie technologieën](./functions-deployment-technologies.md) gebruiken om uw toepassing in een sleuf te implementeren.
+Sleuven zijn leeg wanneer u een sleuf maakt. U kunt een van de [ondersteunde implementatietechnologieën gebruiken om](./functions-deployment-technologies.md) uw toepassing in een sleuf te implementeren.
 
 ## <a name="scaling"></a>Schalen
 
-Alle sleuven worden geschaald naar hetzelfde aantal werk rollen als de productie site.
+Alle sleuven worden geschaald naar hetzelfde aantal werksters als de productiesleuf.
 
-- Voor verbruiks abonnementen wordt de sleuf geschaald als de functie-app wordt geschaald.
-- Voor App Service plannen wordt de app geschaald naar een vast aantal werk rollen. Sleuven worden uitgevoerd op hetzelfde aantal werk rollen als het app-plan.
+- Voor Verbruiksplannen wordt de sleuf geschaald terwijl de functie-app wordt geschaald.
+- Voor App Service-abonnementen wordt de app geschaald naar een vast aantal werknemers. Sleuven worden uitgevoerd op hetzelfde aantal werksters als het app-plan.
 
 ## <a name="add-a-slot"></a>Een sleuf toevoegen
 
-U kunt een sleuf toevoegen via de [cli](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-create) of via de portal. De volgende stappen laten zien hoe u een nieuwe sleuf maakt in de portal:
+U kunt een site toevoegen via de [CLI](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_create) of via de portal. In de volgende stappen wordt gedemonstreerd hoe u een nieuwe site maakt in de portal:
 
 1. Navigeer naar uw functie-app.
 
-1. Selecteer **implementatie sleuven** en selecteer vervolgens **+ sleuf toevoegen**.
+1. Selecteer **Implementatiesleuven** en selecteer vervolgens **+ Sleuf toevoegen.**
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Azure Functions implementatie site toevoegen." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Voeg Azure Functions implementatiesleuf toe." border="true":::
 
-1. Typ de naam van de sleuf en selecteer **toevoegen**.
+1. Typ de naam van de sleuf en selecteer **Toevoegen.**
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Noem de Azure Functions implementatie sleuf." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Noem de Azure Functions implementatiesleuf." border="true":::
 
-## <a name="swap-slots"></a>Wisselings sleuven
+## <a name="swap-slots"></a>Wisselsleuven
 
-U kunt sleuven wisselen via de [cli](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-swap) of via de portal. De volgende stappen laten zien hoe u sleuven in de portal kunt wisselen:
+U kunt sleuven wisselen via de [CLI](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_swap) of via de portal. In de volgende stappen wordt gedemonstreerd hoe u sleuven verwisselt in de portal:
 
 1. Navigeer naar de functie-app.
-1. Selecteer **implementatie sleuven** en selecteer vervolgens **wisselen**.
+1. Selecteer **Implementatiesleuven** en selecteer vervolgens **Wisselen.**
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Scherm opname van de pagina implementatie site waarop de actie ' sleuf toevoegen ' is geselecteerd." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Schermopname van de pagina Implementatiesleuf met de actie Site toevoegen geselecteerd." border="true":::
 
-1. Controleer de configuratie-instellingen voor de wisseling en selecteer **wisselen**
+1. Controleer de configuratie-instellingen voor uw wissel en selecteer **Wisselen**
     
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="De implementatie site wisselen." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="De implementatiesleuf wisselen." border="true":::
 
-De bewerking kan even duren wanneer de wissel bewerking wordt uitgevoerd.
+De bewerking kan even duren terwijl de wisselbewerking wordt uitgevoerd.
 
-## <a name="roll-back-a-swap"></a>Een swap terugdraaien
+## <a name="roll-back-a-swap"></a>Een wissel terugdraaien
 
-Als een wissel resulteert in een fout of als u simpelweg een wissel wilt herstellen, kunt u teruggaan naar de begin status. Als u wilt terugkeren naar de voorgewisselde status, voert u een andere swap uit om de wisseling om te keren.
+Als een wissel resulteert in een fout of als u een wisseling gewoon ongedaan wilt maken, kunt u terugdraaien naar de begintoestand. Als u wilt terugkeren naar de vooraf gewisselde status, moet u nog een wisseling doen om de wisseling om te draaien.
 
 ## <a name="remove-a-slot"></a>Een sleuf verwijderen
 
-U kunt een sleuf verwijderen via de [cli](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-delete) of via de portal. De volgende stappen laten zien hoe u een sleuf in de portal kunt verwijderen:
+U kunt een site verwijderen via de [CLI](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_delete) of via de portal. In de volgende stappen wordt gedemonstreerd hoe u een site in de portal verwijdert:
 
-1. Navigeer naar **implementatie sleuven** in de functie-app en selecteer vervolgens de naam van de sleuf.
+1. **Navigeer naar Implementatiesleuven** in de functie-app en selecteer vervolgens de naam van de site.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek sleuven in de Azure Portal." border="true":::
 
 1. Selecteer **Verwijderen**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Scherm opname waarin de pagina overzicht wordt weer gegeven waarop de actie verwijderen is geselecteerd." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Schermopname van de pagina Overzicht met de actie Verwijderen geselecteerd." border="true":::
 
-1. Typ de naam van de implementatie site die u wilt verwijderen en selecteer vervolgens **verwijderen**.
+1. Typ de naam van de implementatiesleuf die u wilt verwijderen en selecteer **vervolgens Verwijderen.**
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Verwijder de implementatie site in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Verwijder de implementatiesleuf in de Azure Portal." border="true":::
 
-1. Sluit het bevestigings venster voor verwijdering.
+1. Sluit het bevestigingsvenster voor verwijderen.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Bevestiging implementatie sleuf verwijderen." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Bevestiging van verwijderen van implementatiesleuf." border="true":::
 
-## <a name="automate-slot-management"></a>Sleuf beheer automatiseren
+## <a name="automate-slot-management"></a>Sleufbeheer automatiseren
 
-Met de [Azure cli](/cli/azure/functionapp/deployment/slot)kunt u de volgende acties voor een sleuf automatiseren:
+Met de [Azure CLI](/cli/azure/functionapp/deployment/slot)kunt u de volgende acties voor een sleuf automatiseren:
 
-- [creëren](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-create)
-- [verwijderen](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-delete)
-- [list](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-list)
-- [ruil](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-swap)
-- [automatisch wisselen](/cli/azure/functionapp/deployment/slot#az-functionapp-deployment-slot-auto-swap)
+- [Maken](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_create)
+- [verwijderen](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_delete)
+- [list](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_list)
+- [Swap](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_swap)
+- [automatisch wisselen](/cli/azure/functionapp/deployment/slot#az_functionapp_deployment_slot_auto_swap)
 
-## <a name="change-app-service-plan"></a>App Service plan wijzigen
+## <a name="change-app-service-plan"></a>Een App Service wijzigen
 
-Met een functie-app die wordt uitgevoerd onder een App Service-abonnement, kunt u het onderliggende App Service plan voor een sleuf wijzigen.
+Met een functie-app die wordt uitgevoerd onder een App Service-abonnement, kunt u de onderliggende App Service voor een sleuf wijzigen.
 
 > [!NOTE]
-> U kunt het App Service plan van een sleuf onder het verbruiks abonnement niet wijzigen.
+> U kunt het abonnement van een sleuf niet App Service onder het verbruiksplan.
 
-Gebruik de volgende stappen om het App Service plan van een sleuf te wijzigen:
+Gebruik de volgende stappen om het abonnement van een sleuf App Service wijzigen:
 
-1. Navigeer naar **implementatie sleuven** in de functie-app en selecteer vervolgens de naam van de sleuf.
+1. **Navigeer naar Implementatiesleuven** in de functie-app en selecteer vervolgens de naam van de site.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek sleuven in de Azure Portal." border="true":::
 
-1. Selecteer onder **app service plan** **wijzigen app service plan**.
+1. Selecteer **App Service abonnement** wijzigen **App Service abonnement.**
 
-1. Selecteer het abonnement dat u wilt bijwerken of maak een nieuw abonnement.
+1. Selecteer het abonnement waar u een upgrade naar wilt uitvoeren of maak een nieuw plan.
 
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Wijzig het App Service plan in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Wijzig het App Service abonnement in de Azure Portal." border="true":::
 
 1. Selecteer **OK**.
 
 ## <a name="limitations"></a>Beperkingen
 
-Azure Functions implementatie sleuven hebben de volgende beperkingen:
+Azure Functions implementatiesleuven hebben de volgende beperkingen:
 
-- Het aantal beschik bare sleuven voor een app is afhankelijk van het plan. Het verbruiks abonnement is slechts één implementatie sleuf toegestaan. Er zijn extra sleuven beschikbaar voor apps die worden uitgevoerd onder het App Service-abonnement.
-- Als u een sleuf verwisselt, worden sleutels voor apps waarvan de `AzureWebJobsSecretStorageType` app-instelling gelijk is aan ingesteld `files` .
-- Sleuven zijn niet beschikbaar voor het verbruiks abonnement voor Linux.
+- Het aantal beschikbare sleuven voor een app is afhankelijk van het plan. Voor het verbruiksplan is slechts één implementatiesleuf toegestaan. Er zijn extra sleuven beschikbaar voor apps die worden uitgevoerd onder App Service abonnement.
+- Als u een sleuf verwisselt, worden sleutels opnieuw ingesteld voor apps met `AzureWebJobsSecretStorageType` een app-instelling die gelijk is aan `files` .
+- Er zijn geen sleuven beschikbaar voor het Linux-verbruik abonnement.
 
-## <a name="support-levels"></a>Ondersteunings niveaus
+## <a name="support-levels"></a>Ondersteuningsniveaus
 
-Er zijn twee ondersteunings niveaus voor implementatie sites:
+Er zijn twee ondersteuningsniveaus voor implementatiesleuven:
 
-- **Algemene Beschik baarheid (ga)**: volledig ondersteund en goedgekeurd voor productie gebruik.
-- **Preview**: nog niet ondersteund, maar er wordt naar verwachting de Ga-status in de toekomst bereikt.
+- **Algemene beschikbaarheid (GA)**: volledig ondersteund en goedgekeurd voor productiegebruik.
+- **Preview:** Wordt nog niet ondersteund, maar wordt in de toekomst verwacht de status Ga te bereiken.
 
-| Besturings systeem/hosting abonnement           | Ondersteunings niveau     |
+| Os/Hosting-abonnement           | Ondersteuningsniveau     |
 | ------------------------- | -------------------- |
 | Windows-verbruik       | Algemene beschikbaarheid |
 | Windows Premium           | Algemene beschikbaarheid  |
-| Windows toegewezen         | Algemene beschikbaarheid |
+| Windows Dedicated         | Algemene beschikbaarheid |
 | Linux-verbruik         | Preview          |
 | Linux Premium             | Algemene beschikbaarheid  |
-| Speciaal voor Linux           | Algemene beschikbaarheid |
+| Linux Dedicated           | Algemene beschikbaarheid |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Implementatie technologieën in Azure Functions](./functions-deployment-technologies.md)
+- [Implementatietechnologieën in Azure Functions](./functions-deployment-technologies.md)

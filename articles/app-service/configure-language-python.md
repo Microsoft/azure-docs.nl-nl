@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 03/16/2021
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 844846afa438a2d3425ecf6392b50f0411d8c03e
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: e698061122fcc8ff8019907b5fdeba5b2df58407
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107308996"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779341"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -27,7 +27,7 @@ U kunt de [Azure-portal](https://portal.azure.com) of de Azure CLI gebruiken voo
 - **Azure CLI**: u hebt twee opties.
 
     - Voer opdrachten uit in de [Azure Cloud Shell](../cloud-shell/overview.md).
-    - Voer opdrachten lokaal uit door de nieuwste versie van de [Azure CLI](/cli/azure/install-azure-cli) te installeren en u vervolgens aan te melden bij Azure met [az login](/cli/azure/reference-index#az-login).
+    - Voer opdrachten lokaal uit door de nieuwste versie van de [Azure CLI](/cli/azure/install-azure-cli) te installeren en u vervolgens aan te melden bij Azure met [az login](/cli/azure/reference-index#az_login).
     
 > [!NOTE]
 > Linux is momenteel de aanbevolen optie voor het uitvoeren van Python-apps in App Service. Zie [Python in de Windows-versie van App Service](/visualstudio/python/managing-python-on-azure-app-service) voor informatie over de Windows-optie.
@@ -67,13 +67,13 @@ U kunt een niet-ondersteunde versie van Python uitvoeren door in plaats daarvan 
 
 Oryx, het buildsysteem van App Service, voert de volgende stappen uit wanneer u de app implementeert met Git of zip-pakketten:
 
-1. Voer een aangepast pre-buildscript uit als dit wordt opgegeven via de instelling `PRE_BUILD_COMMAND`. (Het script kan zichzelf andere python-en Node.js-scripts, PIP-en NPM-opdrachten en op knoop punten gebaseerde hulpprogram ma's zoals garens uitvoeren, bijvoorbeeld `yarn install` en `yarn build` .)
+1. Voer een aangepast pre-buildscript uit als dit wordt opgegeven via de instelling `PRE_BUILD_COMMAND`. (Het script kan zelf andere Python- en Node.js-scripts, pip- en npm-opdrachten en hulpprogramma's op basis van Knooppunt uitvoeren, zoals yarn, `yarn install` en `yarn build` .)
 
 1. Voer `pip install -r requirements.txt` uit. Het bestand *requirements.txt* moet aanwezig zijn in de hoofdmap van het project. Anders wordt de volgende fout gerapporteerd door het buildproces: Kan setup.py of requirements.txt niet vinden; PIP-installatie wordt niet uitgevoerd.
 
 1. Als *manage.py* wordt aangetroffen in de hoofdmap van de opslagplaats (wat aangeeft dat het een Django-app is), voert u *manage.py collectstatic* uit. Als de instelling `DISABLE_COLLECTSTATIC` echter `true` is, wordt deze stap overgeslagen.
 
-1. Voer een aangepast post-buildscript uit als dit wordt opgegeven via de instelling `POST_BUILD_COMMAND`. (Nogmaals kan het script andere python-en Node.js-scripts, PIP-en NPM-opdrachten en op knoop punten gebaseerde hulp middelen uitvoeren.)
+1. Voer een aangepast post-buildscript uit als dit wordt opgegeven via de instelling `POST_BUILD_COMMAND`. (Het script kan ook andere Python- en Node.js-scripts, pip- en npm-opdrachten en hulpprogramma's op basis van Node uitvoeren.)
 
 De instellingen `PRE_BUILD_COMMAND`, `POST_BUILD_COMMAND` en `DISABLE_COLLECTSTATIC` zijn standaard leeg. 
 
@@ -129,44 +129,44 @@ In de volgende tabel vindt u een beschrijving van de relevante productie-instell
 
 | Django-instelling | Instructies voor Azure |
 | --- | --- |
-| `SECRET_KEY` | Sla de waarde op in een App Service-instelling, zoals wordt beschreven op [App-instellingen openen als omgevingsvariabelen](#access-app-settings-as-environment-variables). U kunt [de waarde ook opslaan als een ' geheim ' in azure Key Vault](../key-vault/secrets/quick-create-python.md). |
+| `SECRET_KEY` | Sla de waarde op in een App Service-instelling, zoals wordt beschreven op [App-instellingen openen als omgevingsvariabelen](#access-app-settings-as-environment-variables). U kunt de [waarde ook opslaan als een 'geheim' in Azure Key Vault.](../key-vault/secrets/quick-create-python.md) |
 | `DEBUG` | Maak een `DEBUG`-instelling op App Service met de waarde 0 (false) en laad de waarde als een omgevingsvariabele. Maak in uw ontwikkelomgeving een `DEBUG`-omgevingsvariabele met de waarde 1 (niet waar). |
 | `ALLOWED_HOSTS` | In een productieomgeving is voor Django vereist dat u de URL van de app opneemt in de `ALLOWED_HOSTS`-matrix van *settings.py*. U kunt deze URL tijdens runtime ophalen met de code, `os.environ['WEBSITE_HOSTNAME']`. App Service stelt de omgevingsvariabele `WEBSITE_HOSTNAME` automatisch in op de URL van de app. |
 | `DATABASES` | Definieer instellingen in App Service voor de databaseverbinding en laad deze als omgevingsvariabelen om de woordenlijst [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES) in te vullen. U kunt de waarden (met name de gebruikersnaam en het wachtwoord) ook opslaan als [Azure Key Vault-geheimen](../key-vault/secrets/quick-create-python.md). |
 
-## <a name="serve-static-files-for-django-apps"></a>Statische bestanden voor Django-apps verwerken
+## <a name="serve-static-files-for-django-apps"></a>Statische bestanden voor Django-apps gebruiken
 
-Als uw Django-web-app statische front-end-bestanden bevat, volgt u eerst de instructies voor het [beheren van statische bestanden](https://docs.djangoproject.com/en/3.1/howto/static-files/) in de Django-documentatie.
+Als uw Django-web-app statische front-endbestanden bevat, volgt u eerst de instructies [in](https://docs.djangoproject.com/en/3.1/howto/static-files/) Statische bestanden beheren in de Django-documentatie.
 
-Voor App Service maakt u de volgende wijzigingen:
+Voor App Service moet u de volgende wijzigingen aanbrengen:
 
-1. Overweeg het gebruik van omgevings variabelen (voor lokale ontwikkeling) en app-instellingen (bij het implementeren naar de Cloud) om de Django en variabelen dynamisch in te stellen `STATIC_URL` `STATIC_ROOT` . Bijvoorbeeld:    
+1. Overweeg het gebruik van omgevingsvariabelen (voor lokale ontwikkeling) en App-instellingen (bij implementatie in de cloud) om de Django- en variabelen dynamisch `STATIC_URL` `STATIC_ROOT` in te stellen. Bijvoorbeeld:    
 
     ```python
     STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")
     STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", "./static/")    
     ```
 
-    `DJANGO_STATIC_URL` en `DJANGO_STATIC_ROOT` kan indien nodig worden gewijzigd voor uw lokale en Cloud omgevingen. Als het bouw proces voor uw statische bestanden bijvoorbeeld wordt geplaatst in een map met de naam `django-static` , kunt u instellen `DJANGO_STATIC_URL` om te `/django-static/` voor komen dat de standaard instelling wordt gebruikt.
+    `DJANGO_STATIC_URL` en `DJANGO_STATIC_ROOT` kunnen indien nodig worden gewijzigd voor uw lokale en cloudomgevingen. Als het buildproces voor uw statische bestanden deze bijvoorbeeld in een map met de naam plaatst, kunt u instellen op om te voorkomen dat `django-static` `DJANGO_STATIC_URL` de `/django-static/` standaardinstelling wordt gebruikt.
 
-1. Als u een pre-build-script hebt waarmee statische bestanden worden gegenereerd in een andere map, neemt u die map op in de Django- `STATICFILES_DIRS` variabele, zodat deze door het proces van Django worden `collectstatic` gevonden. Als u bijvoorbeeld `yarn build` in de front-end-map uitvoert en garen een `build/static` map met statische bestanden genereert, voegt u die map als volgt toe:
+1. Als u een pre-build-script hebt dat statische bestanden genereert in een andere map, moet u die map opnemen in de Django-variabele, zodat deze door het proces van `STATICFILES_DIRS` Django `collectstatic` worden gevonden. Als u bijvoorbeeld in uw front-endmap runt en yarn een map met statische bestanden genereert, moet u die map als `yarn build` `build/static` volgt opnemen:
 
     ```python
     FRONTEND_DIR = "path-to-frontend-folder" 
     STATICFILES_DIRS = [os.path.join(FRONTEND_DIR, 'build', 'static')]    
     ```
 
-    Hier kunt `FRONTEND_DIR` u een pad maken naar waar een hulp programma zoals garens wordt uitgevoerd. U kunt de gewenste omgevings variabele en app-instelling opnieuw gebruiken.
+    Hier, `FRONTEND_DIR` , om een pad te bouwen naar waar een buildhulpprogramma zoals yarn wordt uitgevoerd. U kunt opnieuw een omgevingsvariabele en app-instelling naar wens gebruiken.
 
-1. Voeg `whitenoise` uw *requirements.txt* -bestand toe. [Whitenoise](http://whitenoise.evans.io/en/stable/) (whitenoise.Evans.io) is een python-pakket waarmee u eenvoudig een productie-Django-app kunt gebruiken voor de eigen statische bestanden. Whitenoise is specifiek bedoeld voor de bestanden die worden gevonden in de map die is opgegeven door de `STATIC_ROOT` variabele django.
+1. Voeg `whitenoise` toe aan *requirements.txt* bestand. [Whitenoise](http://whitenoise.evans.io/en/stable/) (whitenoise.evans.io) is een Python-pakket waarmee een productie-Django-app eenvoudig de eigen statische bestanden kan bedienen. Whitenoise dient specifiek voor de bestanden die zijn gevonden in de map die is opgegeven door de `STATIC_ROOT` Django-variabele.
 
-1. Voeg in uw *Settings.py* -bestand de volgende regel toe voor Whitenoise:
+1. Voeg in *settings.py* bestand de volgende regel toe voor Whitenoise:
 
     ```python
     STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
     ```
 
-1. Wijzig ook de `MIDDLEWARE` lijsten en en `INSTALLED_APPS` Geef Whitenoise op:
+1. Wijzig ook de `MIDDLEWARE` lijsten en `INSTALLED_APPS` om Whitenoise op te nemen:
 
     ```python
     MIDDLEWARE = [
@@ -199,7 +199,7 @@ Deze container heeft de volgende kenmerken:
 
 - App Service definieert automatisch een omgevingsvariabele met de naam `WEBSITE_HOSTNAME` met de URL van de web-app, bijvoorbeeld `msdocs-hello-world.azurewebsites.net`. App Service definieert ook `WEBSITE_SITE_NAME` met de naam van uw app, zoals `msdocs-hello-world`. 
    
-- NPM en Node.js zijn geïnstalleerd in de container, zodat u op knoop punten gebaseerde build-hulpprogram ma's kunt uitvoeren, zoals garens.
+- npm en Node.js zijn geïnstalleerd in de container, zodat u op Knooppunt gebaseerde bouwhulpprogramma's, zoals yarn, kunt uitvoeren.
 
 ## <a name="container-startup-process"></a>Opstartproces met container
 
@@ -373,7 +373,7 @@ In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen
 - [De app wordt niet weergegeven - bericht 'Service niet beschikbaar'](#service-unavailable)
 - [Kan setup.py of requirements.txt niet vinden](#could-not-find-setuppy-or-requirementstxt)
 - [ModuleNotFoundError bij opstarten](#modulenotfounderror-when-app-starts)
-- [De data base is vergrendeld](#database-is-locked)
+- [Database is vergrendeld](#database-is-locked)
 - [Wachtwoorden worden niet weergegeven in SSH-sessies wanneer deze worden getypt](#other-issues)
 - [Opdrachten in de SSH-sessie worden afgekapt weergegeven](#other-issues)
 - [Statische assets worden niet weergegeven in een Django-app](#other-issues)
@@ -409,15 +409,15 @@ In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen
 
 #### <a name="modulenotfounderror-when-app-starts"></a>ModuleNotFoundError wanneer de app wordt gestart
 
-Als er een fout melding wordt weer geven `ModuleNotFoundError: No module named 'example'` , betekent dit dat python een of meer van de modules niet kan vinden toen de toepassing werd gestart. Dit gebeurt meestal wanneer u uw virtuele omgeving met uw code implementeert. Virtuele omgevingen zijn niet draagbaar, zodat een virtuele omgeving niet met de code van uw toepassing kan worden geïmplementeerd. In plaats daarvan kunt u Oryx een virtuele omgeving maken en uw pakketten op de web-app installeren door een app-instelling te maken `SCM_DO_BUILD_DURING_DEPLOYMENT` en in te stellen op `1` . Dit dwingt Oryx uw pakketten te installeren wanneer u deze implementeert in App Service. Raadpleeg [dit artikel over de draag baarheid van de virtuele omgeving](https://azure.github.io/AppService/2020/12/11/cicd-for-python-apps.html)voor meer informatie.
+Als u een fout zoals ziet, betekent dit dat Python een of meer van uw modules niet kon vinden toen `ModuleNotFoundError: No module named 'example'` de toepassing werd gestart. Dit gebeurt meestal als u uw virtuele omgeving met uw code implementeert. Virtuele omgevingen zijn niet overdraagbaar, dus een virtuele omgeving moet niet worden geïmplementeerd met uw toepassingscode. In plaats daarvan kunt u Oryx een virtuele omgeving laten maken en uw pakketten installeren in de web-app door een app-instelling te maken, , en deze `SCM_DO_BUILD_DURING_DEPLOYMENT` in te stellen op `1` . Hierdoor wordt oryx gedwongen om uw pakketten te installeren wanneer u implementeert in App Service. Zie dit artikel over overdraagbaarheid [van virtuele omgevingen voor meer informatie.](https://azure.github.io/AppService/2020/12/11/cicd-for-python-apps.html)
 
-### <a name="database-is-locked"></a>De data base is vergrendeld
+### <a name="database-is-locked"></a>Database is vergrendeld
 
-Wanneer u probeert database migraties uit te voeren met een Django-app, ziet u mogelijk ' sqlite3. OperationalError: Data Base is vergrendeld. De fout geeft aan dat uw toepassing gebruikmaakt van een SQLite-data base waarvoor Django standaard is geconfigureerd, in plaats van een Cloud database zoals PostgreSQL voor Azure te gebruiken.
+Wanneer u databasemigraties probeert uit te voeren met een Django-app, ziet u mogelijk 'sqlite3'. OperationalError: database is vergrendeld. De fout geeft aan dat uw toepassing gebruik maakt van een SQLite-database waarvoor Django standaard is geconfigureerd, in plaats van een clouddatabase zoals PostgreSQL for Azure te gebruiken.
 
-Controleer de `DATABASES` variabele in het *Settings.py* -bestand van de app om er zeker van te zijn dat uw app gebruikmaakt van een Cloud database in plaats van sqlite.
+Controleer de variabele in het settings.py van de app om ervoor te zorgen dat uw app een clouddatabase gebruikt in plaats `DATABASES` van SQLite. 
 
-Als u deze fout ondervindt met het voor beeld in de [zelf studie: een Django-web-app implementeren met postgresql](tutorial-python-postgresql-app.md), Controleer of u de stappen in [omgevings variabelen configureren hebt uitgevoerd om verbinding te maken met de data base](tutorial-python-postgresql-app.md#42-configure-environment-variables-to-connect-the-database).
+Als u deze fout tegenkomt in het voorbeeld in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL,](tutorial-python-postgresql-app.md)controleert u of u de stappen in [Omgevingsvariabelen](tutorial-python-postgresql-app.md#42-configure-environment-variables-to-connect-the-database)configureren hebt uitgevoerd om verbinding te maken met de database .
 
 #### <a name="other-issues"></a>Overige problemen
 

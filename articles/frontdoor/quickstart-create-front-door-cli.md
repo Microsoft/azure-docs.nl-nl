@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/19/2021
 ms.author: duau
-ms.openlocfilehash: f697606e195f102d2bfb5535c92e5c78eb44cdbe
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: 99204a2d4c3a2455f0916878fb09a348dc79ac7a
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107727204"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107778751"
 ---
 # <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application-using-azure-cli"></a>Quickstart: Een Front Door maken voor een wereldwijde webtoepassing met hoge beschikbaarheid met Azure CLI
 
@@ -47,7 +47,7 @@ In Azure kunt u verwante resources toewijzen aan een resourcegroep. U kunt een b
 
 Voor deze quickstart hebt u twee resourcegroepen nodig. Een in *VS - centraal* en de tweede in *VS - zuid-centraal*.
 
-Maak een resourcegroep maken met [az group create](/cli/azure/group#az-group-create):
+Maak een resourcegroep maken met [az group create](/cli/azure/group#az_group_create):
 
 ```azurecli-interactive
 az group create \
@@ -67,7 +67,7 @@ Als u nog geen web-app hebt, voert u het volgende script uit om twee voorbeelden
 
 ### <a name="create-app-service-plans"></a>App Service-abonnementen maken
 
-Voordat u de web-apps kunt maken, hebt u twee App Service-abonnementen nodig, één in *VS -* centraal en de tweede in VS *- oost.*
+Voordat u de web-apps kunt maken, hebt u twee App Service-plannen nodig, één in VS *-* centraal en de tweede in *VS - oost.*
 
 Maak App Service-abonnementen met de opdracht [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create&preserve-view=true):
 

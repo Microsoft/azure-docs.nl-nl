@@ -1,5 +1,5 @@
 ---
-title: Een Azure Image Builder-sjabloon maken (preview)
+title: Een Azure Image Builder maken (preview)
 description: Meer informatie over het maken van een sjabloon voor gebruik met Azure Image Builder.
 author: danielsollondon
 ms.author: danis
@@ -9,18 +9,18 @@ ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
 ms.reviewer: cynthn
-ms.openlocfilehash: aaaabe758b036335062907c8e5549ae876c63997
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 77460d1675b806e04c72e5f46da0ec4274d99d41
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104594730"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107762529"
 ---
-# <a name="preview-create-an-azure-image-builder-template"></a>Voor beeld: een Azure Image Builder-sjabloon maken 
+# <a name="preview-create-an-azure-image-builder-template"></a>Preview: Een Azure Image Builder maken 
 
-Azure Image Builder gebruikt een. JSON-bestand om informatie door te geven aan de Image Builder-service. In dit artikel gaan we verder met de secties van het JSON-bestand, zodat u uw eigen kunt bouwen. Zie de [Azure Image Builder github](https://github.com/Azure/azvmimagebuilder/tree/main/quickquickstarts)voor meer voor beelden van de volledige json-bestanden.
+Azure Image Builder gebruikt een JSON-bestand om informatie door te geven aan de Image Builder service. In dit artikel gaan we de secties van het json-bestand bekijken, zodat u uw eigen bestand kunt bouwen. Zie Azure Image Builder GitHub voor voorbeelden van [volledige .json-bestanden.](https://github.com/Azure/azvmimagebuilder/tree/main/quickquickstarts)
 
-Dit is de basis indeling van de sjabloon:
+Dit is de basissjabloonindeling:
 
 ```json
  { 
@@ -54,7 +54,7 @@ Dit is de basis indeling van de sjabloon:
 
 ## <a name="type-and-api-version"></a>Type en API-versie
 
-Het `type` is het resource type, dat moet zijn `"Microsoft.VirtualMachineImages/imageTemplates"` . De `apiVersion` wordt na verloop van tijd gewijzigd wanneer de API wordt gewijzigd, maar moet `"2020-02-14"` voor preview zijn.
+De `type` is het resourcetype, dat moet `"Microsoft.VirtualMachineImages/imageTemplates"` zijn. De `apiVersion` wordt na een periode gewijzigd als de API wordt gewijzigd, maar moet als `"2020-02-14"` preview-versie worden gebruikt.
 
 ```json
     "type": "Microsoft.VirtualMachineImages/imageTemplates",
@@ -63,7 +63,7 @@ Het `type` is het resource type, dat moet zijn `"Microsoft.VirtualMachineImages/
 
 ## <a name="location"></a>Locatie
 
-De locatie is de regio waar de aangepaste installatie kopie wordt gemaakt. Voor de preview-versie van Image Builder worden de volgende regio's ondersteund:
+De locatie is de regio waar de aangepaste afbeelding wordt gemaakt. Voor de Image Builder preview worden de volgende regio's ondersteund:
 
 - VS - oost
 - VS - oost 2
@@ -78,7 +78,7 @@ De locatie is de regio waar de aangepaste installatie kopie wordt gemaakt. Voor 
     "location": "<region>",
 ```
 ## <a name="vmprofile"></a>vmProfile
-Standaard wordt met de opbouw functie voor installatie kopieën een VM voor het bouwen van een Standard_D1_v2 gebruikt. u kunt dit bijvoorbeeld negeren als u een installatie kopie voor een GPU-VM wilt aanpassen, moet u een GPU VM-grootte hebben. Dit is optioneel.
+Standaard gebruikt Image Builder een 'Standard_D1_v2'-build-VM. U kunt dit bijvoorbeeld overschrijven. Als u bijvoorbeeld een afbeelding voor een GPU-VM wilt aanpassen, hebt u een GPU-VM-grootte nodig. Dit is optioneel.
 
 ```json
  {
@@ -88,7 +88,7 @@ Standaard wordt met de opbouw functie voor installatie kopieën een VM voor het 
 
 ## <a name="osdisksizegb"></a>osDiskSizeGB
 
-Standaard wordt de grootte van de installatie kopie niet door de opbouw functie voor installatie kopieën gewijzigd, wordt de grootte van de bron afbeelding gebruikt. U kunt **alleen** de grootte van de besturingssysteem schijf (Win en Linux) verg Roten, dit is optioneel en de waarde 0 betekent dat de grootte van de bron afbeelding gelijk blijft. U kunt de grootte van de besturingssysteem schijf niet verkleinen tot deze kleiner is dan de grootte van de bron installatie kopie.
+Standaard wordt Image Builder grootte van de afbeelding niet gewijzigd, maar wordt de grootte van de bronafbeelding gebruikt. U kunt **alleen de** grootte van de besturingssysteemschijf vergroten (Win en Linux). Dit is optioneel en een waarde van 0 betekent dat de grootte van de bronafbeelding gelijk blijft. U kunt de grootte van de besturingssysteemschijf niet verkleinen tot kleiner dan de grootte van de bronafbeelding.
 
 ```json
  {
@@ -97,7 +97,7 @@ Standaard wordt de grootte van de installatie kopie niet door de opbouw functie 
 ```
 
 ## <a name="vnetconfig"></a>vnetConfig
-Als u geen VNET-eigenschappen opgeeft, maakt de opbouw functie voor installatie kopieën een eigen VNET, openbaar IP-adres en NSG. Het open bare IP-adres wordt gebruikt om te communiceren met de build-VM, maar als u niet wilt dat een openbaar IP-adres of de opbouw functie voor installatie kopieën toegang heeft tot uw bestaande VNET-resources, zoals configuratie servers (DSC, chef, puppet, Ansible), bestands shares enzovoort, kunt u een VNET opgeven. Raadpleeg de [documentatie bij netwerken](image-builder-networking.md)voor meer informatie. Dit is optioneel.
+Als u geen VNET-eigenschappen opgeeft, maakt Image Builder een eigen VNET, openbaar IP-adres en NSG. Het openbare IP-adres wordt gebruikt om de service te laten communiceren met de build-VM. Als u echter geen openbaar IP-adres wilt of als u wilt dat Image Builder toegang hebben tot uw bestaande VNET-resources, zoals configuratieservers (DSC, Chef, Puppet, Ansible), bestands shares enzovoort, kunt u een VNET opgeven. Bekijk de netwerkdocumentatie [voor meer informatie.](image-builder-networking.md)Dit is optioneel.
 
 ```json
     "vnetConfig": {
@@ -117,11 +117,11 @@ Deze optionele sectie kan worden gebruikt om ervoor te zorgen dat afhankelijkhed
     "dependsOn": [],
 ```
 
-Zie [resource afhankelijkheden definiëren](../../azure-resource-manager/templates/define-resource-dependency.md#dependson)voor meer informatie.
+Zie Resourceafhankelijkheden definiëren [voor meer informatie.](../../azure-resource-manager/templates/define-resource-dependency.md#dependson)
 
 ## <a name="identity"></a>Identiteit
 
-Vereist: voor de opbouw functie voor installatie kopieën die machtigingen voor lezen/schrijven moeten hebben, leest u in scripts van Azure Storage u moet een Azure User-Assigned-identiteit maken die machtigingen heeft voor de afzonderlijke resources. Raadpleeg de [documentatie](image-builder-user-assigned-identity.md)voor meer informatie over de werking van de opbouw functie voor installatie kopieën en de relevante stappen.
+Vereist: als Image Builder machtigingen hebt voor het lezen/schrijven van afbeeldingen, moet u in scripts van Azure Storage een Azure User-Assigned-identiteit maken die machtigingen heeft voor de afzonderlijke resources. Raadpleeg de documentatie Image Builder meer informatie over hoe Image Builder machtigingen werken en relevante [stappen.](image-builder-user-assigned-identity.md)
 
 
 ```json
@@ -134,28 +134,28 @@ Vereist: voor de opbouw functie voor installatie kopieën die machtigingen voor 
 ```
 
 
-Ondersteuning voor Image Builder voor een User-Assigned identiteit:
+Image Builder ondersteuning voor een User-Assigned identiteit:
 * Ondersteunt slechts één identiteit
-* Biedt geen ondersteuning voor aangepaste domein namen
+* Biedt geen ondersteuning voor aangepaste domeinnamen
 
-Zie [Wat is beheerde identiteiten voor Azure-resources?](../../active-directory/managed-identities-azure-resources/overview.md)voor meer informatie.
-Voor meer informatie over het implementeren van deze functie raadpleegt u [beheerde identiteiten voor Azure-resources configureren op een virtuele Azure-machine met behulp van Azure cli](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity).
+Zie Wat zijn beheerde [identiteiten voor Azure-resources? voor meer informatie.](../../active-directory/managed-identities-azure-resources/overview.md)
+Zie Beheerde identiteiten configureren voor Azure-resources op een [Azure-VM](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity)met behulp van Azure CLI voor meer informatie over het implementeren van deze functie.
 
-## <a name="properties-source"></a>Eigenschappen: Bron
+## <a name="properties-source"></a>Eigenschappen: bron
 
-De `source` sectie bevat informatie over de bron installatie kopie die wordt gebruikt door de opbouw functie voor afbeeldingen. De opbouw functie voor installatie kopieën ondersteunt momenteel alleen systeem eigen ondersteuning voor het maken van Hyper-V-generatie (gen1) 1 installatie kopieën in de Azure Shared Image Gallery (SIG) of een beheerde installatie kopie. Als u Gen2-installatie kopieën wilt maken, moet u een Gen2-bron installatie kopie gebruiken en distribueren naar VHD. Daarna moet u een beheerde installatie kopie maken van de VHD en deze in de SIG injecteren als een Gen2-installatie kopie.
+De `source` sectie bevat informatie over de bronafbeelding die wordt gebruikt door Image Builder. Image Builder biedt momenteel alleen standaard ondersteuning voor het maken van Hyper-V-generatie (Gen1) 1-afbeeldingen naar de Azure Shared Image Gallery (SIG) of beheerde afbeelding. Als u Gen2-afbeeldingen wilt maken, moet u een Gen2-bron-afbeelding gebruiken en distribueren naar VHD. Daarna moet u een beheerde afbeelding maken van de VHD en deze in de SIG injecteren als een Gen2-afbeelding.
 
-Voor de API is een source type vereist dat de bron voor de build van de installatie kopie definieert. momenteel zijn er drie typen:
-- PlatformImage: er is aangegeven dat de bron afbeelding een Marketplace-installatie kopie is.
-- ManagedImage: gebruik dit wanneer u vanaf een normale beheerde installatie kopie begint.
-- SharedImageVersion: dit wordt gebruikt wanneer u een installatie kopie versie in een galerie met gedeelde afbeeldingen als de bron gebruikt.
+De API vereist een 'SourceType' dat de bron definieert voor de build van de afbeelding. Er zijn momenteel drie typen:
+- PlatformImage: aangegeven dat de bronafbeelding een Marketplace-afbeelding is.
+- ManagedImage: gebruik deze als u begint met een reguliere beheerde afbeelding.
+- SharedImageVersion: dit wordt gebruikt wanneer u een versie van een afbeelding in een Shared Image Gallery als bron gebruikt.
 
 
 > [!NOTE]
-> Wanneer u bestaande Windows-aangepaste installatie kopieën gebruikt, kunt u de Sysprep-opdracht Maxi maal acht keer uitvoeren op één Windows-installatie kopie. Raadpleeg de documentatie van [Sysprep](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) voor meer informatie.
+> Wanneer u bestaande aangepaste Windows-afbeeldingen gebruikt, kunt u de Sysprep-opdracht maximaal acht keer uitvoeren op één Windows-afbeelding. Zie de [sysprep-documentatie](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) voor meer informatie.
 
 ### <a name="platformimage-source"></a>PlatformImage-bron 
-Azure Image Builder biedt ondersteuning voor Windows Server-en client-en Linux Azure Marketplace-installatie kopieën. Zie [hier](../image-builder-overview.md#os-support) voor de volledige lijst. 
+Azure Image Builder biedt ondersteuning voor Windows Server- en client- en Linux Azure Marketplace-afbeeldingen. Kijk hier [voor](../image-builder-overview.md#os-support) de volledige lijst. 
 
 ```json
         "source": {
@@ -168,16 +168,16 @@ Azure Image Builder biedt ondersteuning voor Windows Server-en client-en Linux A
 ```
 
 
-De eigenschappen die hier worden gebruikt voor het maken van VM'S met behulp van AZ CLI, voert u de onderstaande stappen uit om de eigenschappen op te halen: 
+De eigenschappen hier zijn dezelfde die worden gebruikt om VM's te maken en voer met az cli de onderstaande uit om de eigenschappen op te halen: 
  
 ```azurecli-interactive
 az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all 
 ```
 
-U kunt ' meest recent ' gebruiken in de versie, de versie wordt geëvalueerd wanneer de installatie kopie wordt gemaakt, niet wanneer de sjabloon wordt verzonden. Als u deze functie gebruikt met het doel van de gedeelde installatie kopie galerie, kunt u voor komen dat de sjabloon opnieuw wordt verzonden en de installatie kopie met intervallen opnieuw uitvoeren, zodat uw installatie kopieën opnieuw worden gemaakt uit de meest recente installatie kopieën.
+U kunt 'nieuwste' gebruiken in de versie. De versie wordt geëvalueerd wanneer de build van de afbeelding plaatsvindt, niet wanneer de sjabloon wordt verzonden. Als u deze functionaliteit gebruikt met de Shared Image Gallery-bestemming, kunt u voorkomen dat u de sjabloon opnieuw moet inzenden en de build van de afbeelding met intervallen opnieuw uitvoeren, zodat uw afbeeldingen opnieuw worden gemaakt op basis van de meest recente afbeeldingen.
 
-#### <a name="support-for-market-place-plan-information"></a>Ondersteuning voor informatie over het marktplaats plan
-U kunt ook plan gegevens opgeven, bijvoorbeeld:
+#### <a name="support-for-market-place-plan-information"></a>Ondersteuning voor informatie over het Market Place-plan
+U kunt ook plangegevens opgeven, bijvoorbeeld:
 ```json
     "source": {
         "type": "PlatformImage",
@@ -193,10 +193,10 @@ U kunt ook plan gegevens opgeven, bijvoorbeeld:
 ```
 ### <a name="managedimage-source"></a>ManagedImage-bron
 
-Hiermee stelt u de bron installatie kopie als een bestaande beheerde installatie kopie van een gegeneraliseerde VHD of virtuele machine.
+Hiermee stelt u de bronafbeelding in als een bestaande beheerde afbeelding van een ge generaliseerde VHD of VM.
 
 > [!NOTE]
-> De door de bron beheerde installatie kopie moet van een ondersteund besturings systeem zijn en de installatie kopie moet dezelfde regio hebben als uw Azure Image Builder-sjabloon. 
+> De door de bron beheerde afbeelding moet van een ondersteund besturingssysteem zijn en de afbeelding moet dezelfde regio hebben als uw Azure Image Builder sjabloon. 
 
 ```json
         "source": { 
@@ -205,14 +205,14 @@ Hiermee stelt u de bron installatie kopie als een bestaande beheerde installatie
         }
 ```
 
-De `imageId` moet de ResourceID van de beheerde installatie kopie zijn. Gebruiken `az image list` om de beschik bare installatie kopieën weer te geven.
+De `imageId` moet de ResourceId van de beheerde afbeelding zijn. Gebruik om `az image list` beschikbare afbeeldingen weer te geven.
 
 
 ### <a name="sharedimageversion-source"></a>SharedImageVersion-bron
-Hiermee stelt u de bron afbeelding een versie van een bestaande installatie kopie in een galerie met gedeelde afbeeldingen.
+Hiermee stelt u de bronafbeelding een bestaande versie van de afbeelding in een Shared Image Gallery.
 
 > [!NOTE]
-> De door de bron beheerde installatie kopie moet van een ondersteund besturings systeem zijn en de installatie kopie moet dezelfde regio hebben als uw Azure Image Builder-sjabloon. als dat niet het geval is, repliceert u de installatie kopie versie naar de sjabloon regio voor installatie kopie Builder.
+> De door de bron beheerde afbeelding moet van een ondersteund besturingssysteem zijn en de afbeelding moet dezelfde regio hebben als uw Azure Image Builder-sjabloon. Als dat niet het zo is, repliceert u de versie van de afbeelding naar de regio Image Builder Sjabloon.
 
 
 ```json
@@ -222,34 +222,34 @@ Hiermee stelt u de bron afbeelding een versie van een bestaande installatie kopi
    } 
 ```
 
-De `imageVersionId` moet de ResourceID van de versie van de installatie kopie zijn. Gebruik [AZ sig installatie kopie](/cli/azure/sig/image-version#az-sig-image-version-list) van de lijst met installatie kopieën om versie-versies weer te geven.
+De `imageVersionId` moet de ResourceId van de versie van de afbeelding zijn. Gebruik [az sig image-version list om](/cli/azure/sig/image-version#az_sig_image_version_list) de versies van de afbeeldingen weer te geven.
 
 
 ## <a name="properties-buildtimeoutinminutes"></a>Eigenschappen: buildTimeoutInMinutes
 
-Standaard wordt de opbouw functie voor installatie kopieën gedurende 240 minuten uitgevoerd. Daarna wordt de time-out en stopt, ongeacht of de installatie kopie is gemaakt. Als de time-out wordt weer gegeven, ziet u een fout die vergelijkbaar is met de volgende:
+Standaard wordt de Image Builder 240 minuten uitgevoerd. Daarna wordt er een time-out gemaakt en wordt gestopt, ongeacht of het bouwen van de afbeelding is voltooid. Als de time-out is geraakt, ziet u een fout die vergelijkbaar is met deze:
 
 ```text
 [ERROR] Failed while waiting for packerizer: Timeout waiting for microservice to
 [ERROR] complete: 'context deadline exceeded'
 ```
 
-Als u geen buildTimeoutInMinutes-waarde opgeeft of als u deze instelt op 0, wordt de standaard waarde gebruikt. U kunt de waarde verg Roten of verkleinen, tot het maximum van 960mins (16hrs). Voor Windows raden we u aan dit 60 minuten niet in te stellen. Als u merkt dat u de time-out hebt, raadpleegt u de [Logboeken](image-builder-troubleshoot.md#customization-log)om te zien of de stap voor aanpassing wacht op een soort gebruikers invoer. 
+Als u geen buildTimeoutInMinutes-waarde opgeeft of op 0 in stelt, wordt de standaardwaarde gebruikt. U kunt de waarde verhogen of verlagen, tot het maximum van 960 minuten (16 uur). Voor Windows wordt u aangeraden dit niet lager dan 60 minuten in te stellen. Als u de time-out hebt, bekijkt u de logboeken [om](image-builder-troubleshoot.md#customization-log)te zien of de aanpassingsstap wacht op iets als gebruikersinvoer. 
 
-Als u vindt dat er meer tijd nodig is voor het volt ooien van aanpassingen, stelt u deze in op wat u denkt dat u nodig hebt, met een beetje extra overhead. Stel deze echter niet te hoog in omdat u mogelijk moet wachten op time-out voordat u een fout ziet. 
+Als u meer tijd nodig hebt om aanpassingen te voltooien, stelt u dit in op wat u denkt dat u nodig hebt, met wat overhead. Stel deze echter niet te hoog in omdat u mogelijk moet wachten tot er een time-out is opgetreden voordat er een fout wordt weergegeven. 
 
 
 ## <a name="properties-customize"></a>Eigenschappen: aanpassen
 
-De opbouw functie voor installatie kopieën ondersteunt meerdere ' Customizers '. Customizers zijn functies die worden gebruikt voor het aanpassen van uw installatie kopie, zoals het uitvoeren van scripts of het opnieuw opstarten van servers. 
+Image Builder ondersteunt meerdere 'aanpasbare gebruikers'. Aanpasfuncties zijn functies die worden gebruikt om uw afbeelding aan te passen, zoals het uitvoeren van scripts of het opnieuw opstarten van servers. 
 
 Bij gebruik van `customize` : 
-- U kunt meerdere aanpassingen gebruiken, maar ze moeten uniek zijn `name` .
-- Aanpassingen worden uitgevoerd in de volg orde die is opgegeven in de sjabloon.
-- Als een aanpassings functie mislukt, mislukt het hele aanpassings onderdeel en wordt er een fout melding weer gegeven.
-- U wordt aangeraden het script grondig te testen voordat u het in een sjabloon kunt gebruiken. Fout opsporing van het script op uw eigen VM is eenvoudiger.
+- U kunt meerdere aanpaslers gebruiken, maar ze moeten een unieke `name` hebben.
+- Aanpasers worden uitgevoerd in de volgorde die is opgegeven in de sjabloon.
+- Als één aanpassing mislukt, mislukt het hele aanpassingsonderdeel en wordt er een foutmelding weergegeven.
+- U wordt ten zeerste aangeraden het script grondig te testen voordat u het in een sjabloon gebruikt. Het is eenvoudiger om het script op uw eigen VM te debuggen.
 - Plaats geen gevoelige gegevens in de scripts. 
-- De script locaties moeten openbaar toegankelijk zijn, tenzij u [MSI](./image-builder-user-assigned-identity.md)gebruikt.
+- De scriptlocaties moeten openbaar toegankelijk zijn, tenzij u [MSI gebruikt.](./image-builder-user-assigned-identity.md)
 
 ```json
         "customize": [
@@ -271,14 +271,14 @@ Bij gebruik van `customize` :
 ```     
 
  
-De sectie Customize is een matrix. De opbouw functie voor installatie kopieën van Azure wordt door de aanpassings functies in sequentiële volg orde uitgevoerd. Als er een fout optreedt in een aanpassings proces, mislukt het buildproces. 
+De sectie Aanpassen is een matrix. Azure Image Builder worden in sequentiële volgorde door de aanwijzers uitgevoerd. Elke fout in een aanwijzer mislukt het buildproces. 
 
 > [!NOTE]
-> Inline-opdrachten kunnen worden weer gegeven in de definitie van de afbeeldings sjabloon en door Microsoft Ondersteuning bij het helpen bij een ondersteunings aanvraag. Als u gevoelige informatie hebt, moet deze worden verplaatst naar scripts in Azure Storage, waar toegang vereist is.
+> Inline-opdrachten kunnen worden bekeken in de definitie van de afbeeldingssjabloon en door Microsoft-ondersteuning hulp bij een ondersteuningscase. Als u gevoelige informatie hebt, moet deze worden verplaatst naar scripts in Azure Storage, waar toegang verificatie vereist.
  
-### <a name="shell-customizer"></a>Shell-aanpassing
+### <a name="shell-customizer"></a>Shell-aanwijzer
 
-Shell-aanpassing ondersteunt het uitvoeren van shell scripts. deze moeten openbaar toegankelijk zijn voor de IB om ze te openen.
+De shell-aanwijzer ondersteunt het uitvoeren van shellscripts. Deze moeten openbaar toegankelijk zijn voor de IB om er toegang toe te krijgen.
 
 ```json
     "customize": [ 
@@ -298,22 +298,22 @@ Shell-aanpassing ondersteunt het uitvoeren van shell scripts. deze moeten openba
     ], 
 ```
 
-Ondersteuning voor besturings systeem: Linux 
+Ondersteuning voor het besturingssysteem: Linux 
  
 Eigenschappen aanpassen:
 
-- **type** – shell 
-- **naam** -naam voor het bijhouden van de aanpassing 
-- **scriptUri** -URI naar de locatie van het bestand 
-- **inline** -matrix van shell opdrachten, gescheiden door komma's.
-- **sha256Checksum** -waarde van de sha256-controlesom van het bestand, u genereert dit lokaal en vervolgens wordt de opbouw functie voor installatie kopieën gecontroleerd en gevalideerd.
-    * De sha256Checksum genereren met behulp van een Terminal op Mac/Linux-uitvoering: `sha256sum <fileName>`
+- **type** – Shell 
+- **name:** naam voor het bijhouden van de aanpassing 
+- **scriptUri:** URI naar de locatie van het bestand 
+- **inline:** matrix van shell-opdrachten, gescheiden door komma's.
+- **sha256Checksum:** waarde van sha256 checksum van het bestand, genereert u dit lokaal en vervolgens Image Builder controlesum en valideren.
+    * Voer de volgende stappen uit om de sha256Checksum te genereren met behulp van een terminal op Mac/Linux: `sha256sum <fileName>`
 
 > [!NOTE]
-> Inline-opdrachten worden opgeslagen als onderdeel van de definitie van de afbeeldings sjabloon, maar u kunt deze zien wanneer u de definitie van de installatie kopie dumpen. deze zijn ook zichtbaar voor Microsoft Ondersteuning in het geval van een ondersteunings aanvraag voor het oplossen van problemen. Als u gevoelige opdrachten of waarden hebt, wordt het ten zeerste aangeraden deze naar scripts te verplaatsen en een gebruikers-id te gebruiken voor het verifiëren van Azure Storage.
+> Inline-opdrachten worden opgeslagen als onderdeel van de definitie van de sjabloon voor afbeeldingen. U kunt deze zien wanneer u de definitie van de afbeelding dumpt. Deze zijn ook zichtbaar voor Microsoft-ondersteuning in het geval van een ondersteuningscase voor het oplossen van problemen. Als u gevoelige opdrachten of waarden hebt, wordt het sterk aanbevolen dat deze worden verplaatst naar scripts en een gebruikersidentiteit gebruiken om te verifiëren Azure Storage.
 
-#### <a name="super-user-privileges"></a>Super gebruikers privileges
-Om opdrachten uit te voeren met super gebruikers bevoegdheden, moeten ze worden voorafgegaan door `sudo` , kunt u deze toevoegen aan scripts of de inline-opdrachten gebruiken, bijvoorbeeld:
+#### <a name="super-user-privileges"></a>Supergebruikersbevoegdheden
+Voor opdrachten die moeten worden uitgevoerd met supergebruikersbevoegdheden, moeten ze worden vooraf laten gaan door . U kunt deze toevoegen aan scripts of inline opdrachten `sudo` gebruiken, bijvoorbeeld:
 ```json
                 "type": "Shell",
                 "name": "setupBuildPath",
@@ -321,7 +321,7 @@ Om opdrachten uit te voeren met super gebruikers bevoegdheden, moeten ze worden 
                     "sudo mkdir /buildArtifacts",
                     "sudo cp /tmp/index.html /buildArtifacts/index.html"
 ```
-Voor beeld van een script met sudo dat u kunt raadplegen met behulp van scriptUri:
+Voorbeeld van een script met sudo waarnaar u kunt verwijzen met behulp van scriptUri:
 ```bash
 #!/bin/bash -e
 
@@ -332,8 +332,8 @@ echo "Telemetry: running sudo 'as-is' in a script"
 sudo touch /myfiles/somethingElevated.txt
 ```
 
-### <a name="windows-restart-customizer"></a>Aanpassings venster voor Windows opnieuw starten 
-Met de aanpassings functie voor opnieuw opstarten kunt u een Windows-VM opnieuw opstarten en wachten totdat deze weer online is. Hierdoor kunt u software installeren waarvoor opnieuw moet worden opgestart.  
+### <a name="windows-restart-customizer"></a>Windows-aanwijzer voor opnieuw opstarten 
+Met de aanwijzer Voor opnieuw opstarten kunt u een Windows-VM opnieuw opstarten en wachten tot deze weer online is. Hierdoor kunt u software installeren die opnieuw moet worden opgestart.  
 
 ```json 
      "customize": [ 
@@ -348,19 +348,19 @@ Met de aanpassings functie voor opnieuw opstarten kunt u een Windows-VM opnieuw 
         ],
 ```
 
-BESTURINGSSYSTEEM ondersteuning: Windows
+Ondersteuning voor besturingssysteem: Windows
  
 Eigenschappen aanpassen:
-- **Type**: WindowsRestart
-- **restartCommand** : opdracht voor het uitvoeren van de herstart (optioneel). De standaardwaarde is `'shutdown /r /f /t 0 /c \"packer restart\"'`.
-- **restartCheckCommand** – opdracht om te controleren of opnieuw opstarten is geslaagd (optioneel). 
-- **restartTimeout** : de time-out voor opnieuw opstarten is opgegeven als een teken reeks van grootte en eenheid. Bijvoorbeeld `5m` (5 minuten) of `2h` (2 uur). De standaard waarde is: ' 5 min. '
+- **Type:** WindowsRestart
+- **restartCommand : opdracht** om het opnieuw opstarten uit te voeren (optioneel). De standaardwaarde is `'shutdown /r /f /t 0 /c \"packer restart\"'`.
+- **restartCheckCommand** : opdracht om te controleren of opnieuw opstarten is geslaagd (optioneel). 
+- **restartTimeout:** time-out voor opnieuw opstarten opgegeven als een tekenreeks van magnitude en eenheid. Bijvoorbeeld `5m` (5 minuten) of `2h` (2 uur). De standaardwaarde is: '5m'
 
 ### <a name="linux-restart"></a>Linux opnieuw opstarten  
-Er is geen Linux-aanpassings programma nodig. Als u echter Stuur Programma's installeert of onderdelen die opnieuw moeten worden opgestart, kunt u deze installeren en een herstart aanroepen met de shell-aanpassings programma. er is een 20min SSH-time-out voor de build-VM.
+Er is geen linux-aanwijzer voor opnieuw opstarten, maar als u stuurprogramma's of onderdelen installeert waarvoor opnieuw opstarten is vereist, kunt u deze installeren en opnieuw opstarten aanroepen met behulp van de Shell-aanwijzer. Er is een SSH-time-out van 20 minuten voor de build-VM.
 
-### <a name="powershell-customizer"></a>Power shell-aanpassing 
-Shell Customize ondersteunt het uitvoeren van Power shell-scripts en de inline-opdracht, maar de scripts moeten openbaar toegankelijk zijn voor de IB om ze te openen.
+### <a name="powershell-customizer"></a>PowerShell-aanwijzer 
+De shell-aanwijzer ondersteunt het uitvoeren van PowerShell-scripts en inline-opdrachten. De scripts moeten openbaar toegankelijk zijn voor de IB om er toegang toe te krijgen.
 
 ```json 
      "customize": [
@@ -381,22 +381,22 @@ Shell Customize ondersteunt het uitvoeren van Power shell-scripts en de inline-o
     ], 
 ```
 
-BESTURINGSSYSTEEM ondersteuning: Windows en Linux
+Besturingssysteemondersteuning: Windows en Linux
 
 Eigenschappen aanpassen:
 
-- **type** – Power shell.
-- **scriptUri** -URI naar de locatie van het Power shell-script bestand. 
-- **inline** : inline-opdrachten die moeten worden uitgevoerd, gescheiden door komma's.
-- **validExitCodes** – optioneel, geldige codes die kunnen worden geretourneerd door de script/inline opdracht, waardoor het mislukken van de script/inline-opdracht wordt voor komen.
-- **runElevated** : optioneel, Booleaans, ondersteuning voor het uitvoeren van opdrachten en scripts met verhoogde machtigingen.
-- **sha256Checksum** -waarde van de sha256-controlesom van het bestand, u genereert dit lokaal en vervolgens wordt de opbouw functie voor installatie kopieën gecontroleerd en gevalideerd.
-    * De sha256Checksum genereren met behulp van een Power shell op Windows [Get-hash](/powershell/module/microsoft.powershell.utility/get-filehash)
+- **type** : PowerShell.
+- **scriptUri:** URI naar de locatie van het PowerShell-scriptbestand. 
+- **inline:** inlineopdrachten die moeten worden uitgevoerd, gescheiden door komma's.
+- **validExitCodes:** optionele, geldige codes die kunnen worden geretourneerd door de script-/inline-opdracht. Hierdoor wordt gemeld dat de script-/inline-opdracht mislukt.
+- **runElevated: optioneel,** booleaanse, ondersteuning voor het uitvoeren van opdrachten en scripts met verhoogde machtigingen.
+- **sha256Checksum:** de waarde van sha256-controlesum van het bestand. U genereert deze lokaal en vervolgens Image Builder controlesum en validatie.
+    * De sha256Checksum genereren met behulp van een PowerShell op Windows [Get-Hash](/powershell/module/microsoft.powershell.utility/get-filehash)
 
 
-### <a name="file-customizer"></a>Bestands aanpassing
+### <a name="file-customizer"></a>Bestands aanpassen
 
-Met de file Customizer kunt u met Image Builder een bestand downloaden van een GitHub of Azure-opslag. Als u een pijp lijn voor het bouwen van een installatie kopie hebt die afhankelijk is van het bouwen van artefacten, kunt u de bestands aanpassings functie zo instellen dat deze wordt gedownload via de build-share en de artefacten verplaatsen naar de installatie kopie.  
+Met de file customizer kan Image Builder een bestand downloaden uit een GitHub- of Azure-opslag. Als u een build-pijplijn voor de build van een afbeelding hebt die afhankelijk is van build-artefacten, kunt u de bestands aanpassen instellen om te downloaden van de build-share en de artefacten naar de afbeelding verplaatsen.  
 
 ```json
      "customize": [ 
@@ -410,29 +410,29 @@ Met de file Customizer kunt u met Image Builder een bestand downloaden van een G
      ]
 ```
 
-Ondersteuning voor besturings systeem: Linux en Windows 
+Besturingssysteemondersteuning: Linux en Windows 
 
-Eigenschappen van bestands aanpassing:
+Eigenschappen van bestands aanpassen:
 
-- **sourceUri** : een toegankelijk eind punt dat kan worden github of Azure Storage. U kunt slechts één bestand downloaden, niet een volledige map. Als u een map wilt downloaden, gebruikt u een gecomprimeerd bestand en comprimeert u het met de shell-of Power shell-aanpassingen. 
-
-> [!NOTE]
-> Als de sourceUri een Azure Storage-account is, ongeacht of de blob is gemarkeerd als openbaar, moet u de beheerde gebruikers identiteits machtigingen verlenen om toegang te krijgen tot de blob. Raadpleeg dit [voor beeld](./image-builder-user-assigned-identity.md#create-a-resource-group) om de machtigingen voor opslag in te stellen.
-
-- **doel** : dit is het volledige doelpad en de bestands naam. Elk pad en submappen waarnaar wordt verwezen moeten bestaan, de shell-of Power shell-aanpassingen gebruiken om deze vooraf in te stellen. U kunt de script Customizers gebruiken om het pad te maken. 
-
-Dit wordt ondersteund door Windows-mappen en Linux-paden, maar er zijn enkele verschillen: 
-- Linux-besturings systeem: de alleen de opbouw functie van het pad naar de afbeelding kan schrijven naar/tmp.
-- Windows: geen pad beperken, maar het pad moet bestaan.
- 
- 
-Als er een fout optreedt bij het downloaden van het bestand of in een opgegeven map worden geplaatst, mislukt de stap voor het aanpassen en wordt deze weer gegeven in de aanpassings. log.
+- **sourceUri:** een toegankelijk opslag-eindpunt. Dit kan GitHub- of Azure-opslag zijn. U kunt slechts één bestand downloaden, niet een volledige map. Als u een map wilt downloaden, gebruikt u een gecomprimeerd bestand en decomprimeert u het met behulp van de Shell- of PowerShell-aanpasders. 
 
 > [!NOTE]
-> De bestands aanpassing is alleen geschikt voor kleine bestands downloads, < 20 MB. Voor grotere bestands downloads kunt u een script of inline opdracht gebruiken, de code gebruiken om bestanden te downloaden, zoals Linux `wget` of `curl` Windows, `Invoke-WebRequest` .
+> Als de sourceUri een Azure Storage-account is, ongeacht of de blob als openbaar is gemarkeerd, moet u de beheerde gebruikersidentiteit machtigingen verlenen om toegang tot de blob te lezen. Raadpleeg dit voorbeeld [om](./image-builder-user-assigned-identity.md#create-a-resource-group) de opslagmachtigingen in te stellen.
 
-### <a name="windows-update-customizer"></a>Windows Update aanpassing
-Deze aanpassings is gebaseerd op de [community Windows Update inrichting](https://packer.io/docs/provisioners/community-supported.html) voor de verpakker, een open-source project dat wordt beheerd door de Packer-community. Micro soft test en valideert de inrichtings functie met de service voor installatie kopie maken, en ondersteunt problemen met onderzoeken, en werkt om problemen op te lossen, maar het open-source project wordt niet officieel ondersteund door micro soft. Raadpleeg de project opslagplaats voor gedetailleerde documentatie over en hulp bij de Windows Update-inrichting.
+- **destination:** dit is het volledige doelpad en de bestandsnaam. Elk pad en de subdirectorieën waarnaar wordt verwezen, moeten bestaan. Gebruik de Shell- of PowerShell-aanpasmogelijkheden om deze vooraf in te stellen. U kunt de script customizers gebruiken om het pad te maken. 
+
+Dit wordt ondersteund door Windows-directories en Linux-paden, maar er zijn enkele verschillen: 
+- Linux-besturingssysteem: het enige pad waar Image Builder naar kan schrijven, is /tmp.
+- Windows: geen padbeperking, maar het pad moet bestaan.
+ 
+ 
+Als er een fout is opgetreden bij het downloaden van het bestand of het bestand in een opgegeven map te zetten, mislukt de stap aanpassen en wordt dit weergegeven in het bestand customization.log.
+
+> [!NOTE]
+> De bestands aanpassen is alleen geschikt voor kleine bestanddownloads, < 20 MB. Voor grotere bestanddownloads gebruikt u een script of inline opdracht, de code gebruiken om bestanden te downloaden, zoals Linux `wget` of `curl` , Windows, `Invoke-WebRequest` .
+
+### <a name="windows-update-customizer"></a>Windows Update-aanwijzer
+Deze aanwijzer is gebaseerd op de [community Windows Update Provisioner](https://packer.io/docs/provisioners/community-supported.html) for Packer. Dit is een open source-project dat wordt beheerd door de Packer-community. Microsoft test en valideert de inrichting met de Image Builder-service en ondersteunt het onderzoeken van problemen met de service en werkt aan het oplossen van problemen, maar het open source-project wordt niet officieel ondersteund door Microsoft. Zie de projectopslagplaats voor gedetailleerde documentatie over en hulp Windows Update inrichtingsmanager.
 
 ```json
      "customize": [
@@ -450,22 +450,22 @@ OS support: Windows
 ```
 
 Eigenschappen aanpassen:
-- **type**  – windowsupdate.
-- **searchCriteria** -optioneel, definieert welk type updates wordt geïnstalleerd (aanbevolen, belang rijk enz.), BrowseOnly = 0 en IsInstalled = 0 (aanbevolen) is de standaard instelling.
-- **filters** : optioneel, Hiermee kunt u een filter opgeven om updates op te nemen of uit te sluiten.
-- **updateLimit** – optioneel, definieert het aantal updates dat kan worden geïnstalleerd, standaard 1000.
+- **type:**  WindowsUpdate.
+- **searchCriteria:** optioneel, definieert welk type updates zijn geïnstalleerd (Aanbevolen, Belangrijk enzovoort), BrowseOnly=0 en IsInstalled=0 (aanbevolen) de standaardinstelling is.
+- **filters** : optioneel: hiermee kunt u een filter opgeven om updates op te nemen of uit te sluiten.
+- **updateLimit:** optioneel, definieert hoeveel updates er kunnen worden geïnstalleerd, standaard 1000.
  
 > [!NOTE]
-> De Windows Update-aanpassings bewerking kan mislukken als er openstaande Windows-startingen of toepassings installaties nog steeds worden uitgevoerd. deze fout kan meestal worden weer geven in de aanpassingen. log, `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` . Wij adviseren u ten zeerste aan het toevoegen van Windows opnieuw op te starten en/of toepassingen voldoende tijd te geven voor het volt ooien van de installatie met behulp van de [slaap](/powershell/module/microsoft.powershell.utility/start-sleep) -of wait-opdrachten in de inline-opdrachten of-scripts voordat u Windows Update uitvoert.
+> De Windows Update kan mislukken als er openstaande Windows-herstarts of toepassingsinstallaties actief zijn. Normaal gesproken wordt deze fout meestal weergegeven in customization.log, `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` . We raden u ten zeerste aan om Windows Opnieuw opstarten toe [](/powershell/module/microsoft.powershell.utility/start-sleep) te voegen en/of toepassingen voldoende tijd te geven om hun installaties te voltooien met behulp van slaapstand- of wachtopdrachten in de inlineopdrachten of scripts voordat u de Windows Update.
 
 ### <a name="generalize"></a>Generaliseren 
-Azure Image Builder voert standaard ook de code ' provisioning ' uit aan het einde van elke aanpassings fase van de installatie kopie tot ' generalize ' in de installatie kopie. Generalize is een proces waarbij de installatie kopie wordt ingesteld zodat deze opnieuw kan worden gebruikt om meerdere virtuele machines te maken. Voor virtuele Windows-machines maakt Azure Image Builder gebruik van Sysprep. Voor Linux voert Azure Image Builder ' waagent-deprovision ' uit. 
+Standaard wordt in Azure Image Builder 'deprovision'-code uitgevoerd aan het einde van elke fase voor het aanpassen van de afbeelding, om de afbeelding te generaliseren. Generaliseren is een proces waarbij de afbeelding wordt ingesteld, zodat deze opnieuw kan worden gebruikt om meerdere VM's te maken. Voor Windows-VM's maakt Azure Image Builder gebruik van Sysprep. Voor Linux voert Azure Image Builder 'waagent -deprovision' uit. 
 
-De opdrachten Image Builder-gebruikers om te generaliseren zijn mogelijk niet geschikt voor elke situatie. Daarom kunt u met Azure Image Builder deze opdracht aanpassen, als dat nodig is. 
+De opdrachten Image Builder gebruikers kunnen generaliseren, zijn mogelijk niet geschikt voor elke situatie, dus met Azure Image Builder kunt u deze opdracht zo nodig aanpassen. 
 
-Als u bestaande aanpassingen migreert en u verschillende Sysprep/waagent-opdrachten gebruikt, kunt u de algemene opdrachten van de opbouw functie voor afbeeldingen gebruiken en als het maken van de virtuele machine mislukt, gebruikt u uw eigen Sysprep-of waagent-opdrachten.
+Als u bestaande aanpassing migreert en u verschillende Sysprep-/waagent-opdrachten gebruikt, kunt u de algemene Image Builder-opdrachten gebruiken. Als het maken van de VM mislukt, gebruikt u uw eigen Sysprep- of waagent-opdrachten.
 
-Als de opbouw functie van Azure image een Windows-aangepaste installatie kopie maakt en u hiervan een VM maakt, kunt u er vervolgens voor zorgen dat de VM wordt gemaakt of mislukt, moet u de Windows Server Sysprep-documentatie raadplegen of een ondersteunings aanvraag met het ondersteunings team van Windows Server Sysprep gebruiken, die problemen kan oplossen met het juiste gebruik van Sysprep.
+Als Azure Image Builder een aangepaste Windows-afbeelding maakt en u er een VM van maakt en er vervolgens achter komt dat het maken van de VM mislukt of niet is voltooid, moet u de Windows Server Sysprep-documentatie bekijken of een ondersteuningsaanvraag indienen bij het klantondersteuningsteam van Windows Server Sysprep, dat problemen kan oplossen en advies kan geven over het juiste Sysprep-gebruik.
 
 
 #### <a name="default-sysprep-command"></a>Standaard Sysprep-opdracht
@@ -489,34 +489,34 @@ while($true) {
 }
 Write-Output '>>> Sysprep complete ...'
 ```
-#### <a name="default-linux-deprovision-command"></a>Standaard opdracht voor het ongedaan maken van Linux
+#### <a name="default-linux-deprovision-command"></a>Standaardopdracht voor het deprovision van Linux
 
 ```bash
 /usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync
 ```
 
 #### <a name="overriding-the-commands"></a>De opdrachten overschrijven
-Als u de opdrachten wilt onderdrukken, gebruikt u de Power shell-of shell-script inrichtingen om de opdracht bestanden met de exacte bestands naam te maken en deze in de juiste directory's te plaatsen:
+Als u de opdrachten wilt overschrijven, gebruikt u de PowerShell- of Shell-scriptinrichten om de opdrachtbestanden met de exacte bestandsnaam te maken en deze in de juiste mappen te zetten:
 
 * Windows: c:\DeprovisioningScript.ps1
-* Linux:/tmp/DeprovisioningScript.sh
+* Linux: /tmp/DeprovisioningScript.sh
 
-Met de opbouw functie voor installatie kopieën worden deze opdrachten gelezen, die worden wegge schreven naar de AIB-logboeken Customization. log. Zie [probleem oplossing](image-builder-troubleshoot.md#customization-log) voor het verzamelen van Logboeken.
+Image Builder deze opdrachten leest, worden deze weggeschreven naar de AIB-logboeken, 'customization.log'. Zie [Probleemoplossing voor](image-builder-troubleshoot.md#customization-log) het verzamelen van logboeken.
  
 ## <a name="properties-distribute"></a>Eigenschappen: distribueren
 
-Azure Image Builder ondersteunt drie distributie doelen: 
+Azure Image Builder ondersteunt drie distributiedoelen: 
 
-- **managedImage** -beheerde installatie kopie.
-- Galerie met **sharedImage** -gedeelde afbeeldingen.
-- **VHD** -VHD in een opslag account.
+- **managedImage** : beheerde afbeelding.
+- **sharedImage:** Shared Image Gallery.
+- **VHD:** VHD in een opslagaccount.
 
-U kunt een installatie kopie distribueren naar beide doel typen in dezelfde configuratie.
+U kunt een afbeelding distribueren naar beide doeltypen in dezelfde configuratie.
 
 > [!NOTE]
-> De standaard AIB Sysprep-opdracht bevat niet '/mode: VM ', maar dit is mogelijk vereist bij het maken van installatie kopieën waarop de hyper-v-rol is geïnstalleerd. Als u dit opdracht argument moet toevoegen, moet u de Sysprep-opdracht onderdrukken.
+> De standaardopdracht AIB sysprep bevat geen '/mode:vm', maar dit is mogelijk vereist bij het maken van afbeeldingen waarop de HyperV-rol is geïnstalleerd. Als u dit opdrachtargument wilt toevoegen, moet u de sysprep-opdracht overschrijven.
 
-Omdat er meer dan één doel kan zijn om naar te distribueren, houdt Image Builder een status bij voor elk distributie doel dat toegankelijk is door query's uit te stellen op de `runOutputName` .  Het `runOutputName` is een-object waarmee u een query kunt uitvoeren op distributie voor informatie over die distributie. U kunt bijvoorbeeld een query uitvoeren op de locatie van de VHD, of regio's waarnaar de versie van de installatie kopie is gerepliceerd, of de versie van de SIG-installatie kopie is gemaakt. Dit is een eigenschap van elke distributie doel. De `runOutputName` moet uniek zijn voor elk distributie doel. Hier volgt een voor beeld van het uitvoeren van een query op de distributie van een gedeelde installatie kopie galerie:
+Omdat u meer dan één doel kunt hebben om naar te distribueren, houdt Image Builder een status bij voor elk distributiedoel dat toegankelijk is door een query uit te voeren op de `runOutputName` .  De `runOutputName` is een object dat u na distributie kunt opvragen voor informatie over die distributie. U kunt bijvoorbeeld een query uitvoeren op de locatie van de VHD of in regio's waar de versie van de afbeelding is gerepliceerd, of de SIG-versie van de afbeelding die is gemaakt. Dit is een eigenschap van elk distributiedoel. De `runOutputName` moet uniek zijn voor elk distributiedoel. Hier is een voorbeeld: hiermee wordt een query uitgevoerd op Shared Image Gallery distributie:
 
 ```bash
 subscriptionID=<subcriptionID>
@@ -551,7 +551,7 @@ Uitvoer:
 
 ### <a name="distribute-managedimage"></a>Distribueren: managedImage
 
-De uitvoer van de installatie kopie is een beheerde afbeeldings bron.
+De uitvoer van de afbeelding is een beheerde afbeeldingsresource.
 
 ```json
 {
@@ -568,26 +568,26 @@ De uitvoer van de installatie kopie is een beheerde afbeeldings bron.
  
 Eigenschappen distribueren:
 - **type** – managedImage 
-- **imageId** : de resource-id van de doel afbeelding, de verwachte indeling:/Subscriptions/ \<subscriptionId> /resourceGroups/ \<destinationResourceGroupName> /providers/Microsoft.Compute/images/\<imageName>
-- **locatie** : locatie van de beheerde installatie kopie.  
-- **runOutputName** : een unieke naam voor het identificeren van de distributie.  
-- **artifactTags** -optionele door de gebruiker opgegeven sleutel waarde-paar tags.
+- **imageId:** resource-id van de doelafbeelding, verwachte indeling: /subscriptions/ \<subscriptionId> /resourceGroups/ \<destinationResourceGroupName> /providers/Microsoft.Compute/images/\<imageName>
+- **locatie:** de locatie van de beheerde afbeelding.  
+- **runOutputName:** unieke naam voor het identificeren van de distributie.  
+- **artifactTags: optionele** tags voor sleutel-waardeparen die door de gebruiker zijn opgegeven.
  
  
 > [!NOTE]
-> De doel resource groep moet bestaan.
-> Als u wilt dat de afbeelding wordt gedistribueerd naar een andere regio, neemt de implementatie tijd toe. 
+> De doelresourcegroep moet bestaan.
+> Als u wilt dat de installatie afbeelding wordt gedistribueerd naar een andere regio, wordt de implementatietijd vergroot. 
 
 ### <a name="distribute-sharedimage"></a>Distribueren: sharedImage 
-De galerie met gedeelde Azure-installatie kopieën is een nieuwe service voor het beheer van installatie kopieën waarmee u de installatie kopie regio kunt beheren, versie beheer en delen van aangepaste installatie kopieën. Azure Image Builder ondersteunt de distributie met deze service, zodat u installatie kopieën kunt distribueren naar regio's die worden ondersteund door de galerie met gedeelde afbeeldingen. 
+De Azure Shared Image Gallery is een nieuwe service voor het beheer van afbeeldingen waarmee u replicatie van de afbeeldingsregio, versiebeheer en het delen van aangepaste afbeeldingen kunt beheren. Azure Image Builder distributie met deze service, zodat u afbeeldingen kunt distribueren naar regio's die worden ondersteund door galerieën met gedeelde afbeeldingen. 
  
-Een galerie met gedeelde afbeeldingen bestaat uit: 
+Een Shared Image Gallery bestaat uit: 
  
-- Galerie-container voor meerdere gedeelde installatie kopieën. Een galerie wordt in één regio geïmplementeerd.
-- Afbeeldings definities: een conceptuele groepering voor installatie kopieën. 
-- Installatie kopie versies: dit is een afbeeldings type dat wordt gebruikt voor het implementeren van een virtuele machine of schaalset. Installatie kopie versies kunnen worden gerepliceerd naar andere regio's waar Vm's moeten worden geïmplementeerd.
+- Galerie: container voor meerdere gedeelde afbeeldingen. Een galerie wordt geïmplementeerd in één regio.
+- Definities van afbeeldingen: een conceptuele groepering voor afbeeldingen. 
+- Versies van de afbeelding: dit is een type afbeelding dat wordt gebruikt voor het implementeren van een VM of schaalset. Versies van de afbeelding kunnen worden gerepliceerd naar andere regio's waar VM's moeten worden geïmplementeerd.
  
-Voordat u naar de galerie met installatie kopieën kunt distribueren, moet u een galerie en een definitie van een installatie kopie maken. Zie [gedeelde installatie kopieën](../shared-images-cli.md). 
+Voordat u naar de galerie met afbeeldingen kunt distribueren, moet u een galerie en een definitie van een afbeelding maken. [Zie Gedeelde afbeeldingen.](../shared-images-cli.md) 
 
 ```json
 {
@@ -605,28 +605,28 @@ Voordat u naar de galerie met installatie kopieën kunt distribueren, moet u een
 }
 ``` 
 
-Eigenschappen voor gedeelde afbeeldings galerieën distribueren:
+Eigenschappen distribueren voor galerieën met gedeelde afbeeldingen:
 
-- **type** -sharedImage  
-- **galleryImageId** : id van de galerie met gedeelde afbeeldingen kan in twee indelingen worden opgegeven:
-    * Automatisch versie beheer: met de opbouw functie voor installatie kopieën wordt een monoton versie nummer voor u gegenereerd. Dit is handig als u wilt dat de installatie kopieën van dezelfde sjabloon opnieuw worden samengesteld: de volgende indeling: `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<sharedImageGalleryName>/images/<imageGalleryName>` .
-    * Expliciete versie beheer: u kunt het versie nummer door geven dat door de opbouw functie voor installatie kopieën moet worden gebruikt. De indeling is: `/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>/versions/<version e.g. 1.1.1>`
+- **type** - sharedImage  
+- **galleryImageId:** id van de galerie met gedeelde afbeeldingen. Dit kan in twee indelingen worden opgegeven:
+    * Automatisch versien: Image Builder genereert een monotone versienummer voor u. Dit is handig voor wanneer u afbeeldingen opnieuw wilt bouwen op basis van dezelfde sjabloon: de indeling is: `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<sharedImageGalleryName>/images/<imageGalleryName>` .
+    * Expliciet versiegebruik: u kunt het versienummer doorgeven dat u door Image Builder wilt laten gebruiken. De indeling is: `/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>/versions/<version e.g. 1.1.1>`
 
-- **runOutputName** : een unieke naam voor het identificeren van de distributie.  
-- **artifactTags** -optionele door de gebruiker opgegeven sleutel waarde-paar tags.
-- **replicationRegions** : matrix van regio's voor replicatie. Een van de regio's moet de regio zijn waarin de galerie wordt geïmplementeerd. Het toevoegen van regio's resulteert in een toename van de bouw tijd, omdat de build niet kan worden voltooid totdat de replicatie is voltooid.
-- **excludeFromLatest** (optioneel) Hiermee kunt u de versie van de installatie kopie die u maakt, markeren als de meest recente versie in de definitie van de SIG. de standaard waarde is ' false '.
-- **storageAccountType** (optioneel) AIB ondersteunt het opgeven van deze typen opslag voor de installatie kopie versie die moet worden gemaakt:
-    * "Standard_LRS"
-    * "Standard_ZRS"
+- **runOutputName:** unieke naam voor het identificeren van de distributie.  
+- **artifactTags: optionele** tags voor sleutel-waardeparen die door de gebruiker zijn opgegeven.
+- **replicationRegions:** matrix met regio's voor replicatie. Een van de regio's moet de regio zijn waarin de galerie wordt geïmplementeerd. Het toevoegen van regio's betekent een toename van de buildtijd, omdat de build pas wordt voltooid als de replicatie is voltooid.
+- **excludeFromLatest** (optioneel) Hiermee kunt u markeren dat de versie van de afbeelding die u maakt, niet wordt gebruikt als de nieuwste versie in de SIG-definitie. De standaardwaarde is 'false'.
+- **storageAccountType** (optioneel) AIB ondersteunt het opgeven van deze typen opslag voor de versie van de afbeelding die moet worden gemaakt:
+    * 'Standard_LRS'
+    * 'Standard_ZRS'
 
 
 > [!NOTE]
-> Als de afbeeldings sjabloon en waarnaar wordt verwezen `image definition` , zich niet op dezelfde locatie bevinden, wordt er meer tijd voor het maken van installatie kopieën weer geven. De opbouw functie voor installatie kopieën heeft momenteel geen `location` para meter voor de bron van de afbeeldings versie `image definition` . Als de definitie van een installatie kopie zich bijvoorbeeld in westus bevindt en u wilt dat de versie van de installatie kopie wordt gerepliceerd naar oostus, wordt een BLOB gekopieerd naar westus, hiervan wordt een afbeeldings versie bron in westus gemaakt en vervolgens gerepliceerd naar oostus. Zorg ervoor dat de `image definition` sjabloon en de installatie kopie zich op dezelfde locatie bevinden om de extra replicatie tijd te voor komen.
+> Als de sjabloon voor de afbeelding en waarnaar wordt verwezen zich niet op dezelfde locatie bevinden, ziet u extra tijd `image definition` om afbeeldingen te maken. Image Builder momenteel geen parameter voor de versieresource van de afbeelding heeft, nemen `location` we deze over van de bovenliggende `image definition` . Als een definitie van een afbeelding bijvoorbeeld westus is en u wilt dat de versie van de afbeelding wordt gerepliceerd naar eastus, wordt er een blob gekopieerd naar westus. Hier wordt een resource voor de versie van de afbeelding gemaakt in westus en vervolgens gerepliceerd naar eastus. Om de extra replicatietijd te voorkomen, moet u ervoor zorgen dat de sjabloon en de afbeelding `image definition` zich op dezelfde locatie bevinden.
 
 
 ### <a name="distribute-vhd"></a>Distribueren: VHD  
-U kunt naar een VHD uitvoeren. U kunt de VHD vervolgens kopiëren en gebruiken om te publiceren naar Azure MarketPlace of gebruiken met Azure Stack.  
+U kunt uitvoer naar een VHD. Vervolgens kunt u de VHD kopiëren en deze gebruiken om te publiceren naar Azure MarketPlace of gebruiken met Azure Stack.  
 
 ```json
 { 
@@ -639,15 +639,15 @@ U kunt naar een VHD uitvoeren. U kunt de VHD vervolgens kopiëren en gebruiken o
 }
 ```
  
-BESTURINGSSYSTEEM ondersteuning: Windows en Linux
+Ondersteuning voor het besturingssysteem: Windows en Linux
 
-VHD-para meters distribueren:
+VHD-parameters distribueren:
 
-- **type** -VHD.
-- **runOutputName** : een unieke naam voor het identificeren van de distributie.  
-- **Tags** -optioneel door de gebruiker opgegeven sleutel waarde-paar tags.
+- **type** - VHD.
+- **runOutputName:** unieke naam voor het identificeren van de distributie.  
+- **tags:** optionele door de gebruiker opgegeven sleutelwaardepaartags.
  
-De gebruiker kan met Azure Image Builder geen locatie opgeven voor het opslag account, maar u kunt wel een query uitvoeren op de status van de `runOutputs` om de locatie op te halen.  
+Azure Image Builder niet toestaan dat de gebruiker een opslagaccountlocatie opgeeft, maar u kunt de status van de opvragen om `runOutputs` de locatie op te halen.  
 
 ```azurecli-interactive
 az resource show \
@@ -655,12 +655,12 @@ az resource show \
 ```
 
 > [!NOTE]
-> Zodra de VHD is gemaakt, kopieert u deze naar een andere locatie, zo snel mogelijk. De VHD wordt opgeslagen in een opslag account in de tijdelijke resource groep die is gemaakt wanneer de installatie kopie sjabloon wordt verzonden naar de Azure Image Builder-service. Als u de afbeeldings sjabloon verwijdert, gaat de VHD verloren. 
+> Zodra de VHD is gemaakt, kopieert u deze zo snel mogelijk naar een andere locatie. De VHD wordt opgeslagen in een opslagaccount in de tijdelijke resourcegroep die is gemaakt wanneer de afbeeldingssjabloon wordt verzonden naar de Azure Image Builder service. Als u de afbeeldingssjabloon verwijdert, verliest u de VHD. 
 
-## <a name="image-template-operations"></a>Bewerkingen voor installatie kopie sjablonen
+## <a name="image-template-operations"></a>Sjabloonbewerkingen voor afbeeldingen
 
-### <a name="starting-an-image-build"></a>Genereren van een installatie kopie starten
-Als u een build wilt starten, moet u uitvoeren op de bron van de afbeeldings sjabloon, voor beelden van `run` opdrachten:
+### <a name="starting-an-image-build"></a>Een build van een afbeelding starten
+Als u een build wilt starten, moet u 'Uitvoeren' aanroepen op de resource Afbeeldingssjabloon, voorbeelden van `run` opdrachten:
 
 ```PowerShell
 Invoke-AzResourceAction -ResourceName $imageTemplateName -ResourceGroupName $imageResourceGroup -ResourceType Microsoft.VirtualMachineImages/imageTemplates -ApiVersion "2020-02-14" -Action Run -Force
@@ -675,13 +675,13 @@ az resource invoke-action \
      --action Run 
 ```
 
-### <a name="cancelling-an-image-build"></a>Genereren van een installatie kopie annuleren
-Als u een installatie kopie-build uitvoert waarvan u denkt dat ze onjuist zijn, wordt gewacht op invoer van de gebruiker of dat u het probleem nooit kunt volt ooien. vervolgens annuleert u de build.
+### <a name="cancelling-an-image-build"></a>Een build van een afbeelding annuleren
+Als u een build van een afbeelding die u denkt dat onjuist is, wacht op invoer van de gebruiker of u denkt dat het nooit wordt voltooid, kunt u de build annuleren.
 
-De build kan op elk gewenst moment worden geannuleerd. Als de distributie fase is gestart, kunt u nog steeds annuleren, maar u moet alle installatie kopieën opschonen die mogelijk niet zijn voltooid. De Annuleer opdracht wacht niet op Annuleren om te volt ooien. Controleer of de `lastrunstatus.runstate` voortgang is geannuleerd met behulp van deze status [opdrachten](image-builder-troubleshoot.md#customization-log).
+De build kan op elk moment worden geannuleerd. Als de distributiefase is gestart, kunt u nog steeds annuleren, maar u moet alle afbeeldingen ops schonen die mogelijk niet zijn voltooid. Met de opdracht annuleren wordt niet gewacht tot de annulering is voltooid. Controleer of de voortgang wordt geannuleerd met behulp `lastrunstatus.runstate` van deze [statusopdrachten](image-builder-troubleshoot.md#customization-log).
 
 
-Voor beelden van `cancel` opdrachten:
+Voorbeelden van `cancel` opdrachten:
 
 ```powerShell
 Invoke-AzResourceAction -ResourceName $imageTemplateName -ResourceGroupName $imageResourceGroup -ResourceType Microsoft.VirtualMachineImages/imageTemplates -ApiVersion "2020-02-14" -Action Cancel -Force
@@ -697,4 +697,4 @@ az resource invoke-action \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Er zijn voor beelden van json-bestanden voor verschillende scenario's in de [Azure Image Builder-github](https://github.com/azure/azvmimagebuilder).
+Er zijn .json-voorbeeldbestanden voor verschillende scenario's in [azure Image Builder GitHub.](https://github.com/azure/azvmimagebuilder)

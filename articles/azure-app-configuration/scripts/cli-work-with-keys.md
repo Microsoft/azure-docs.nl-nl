@@ -10,12 +10,12 @@ ms.topic: sample
 ms.date: 02/19/2020
 ms.author: alkemper
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 54ad9f389070e1d5d280517a2f6c41e9a0f8f33e
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: bc329feffbf22d63774ab0f3779d62d3ccf53adb
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96929987"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774109"
 ---
 # <a name="work-with-key-values-in-an-azure-app-configuration-store"></a>Werken met sleutelwaarden in een Azure-app-configuratiearchief
 
@@ -83,9 +83,9 @@ Deze tabel bevat de opdrachten die worden gebruikt in het voorbeeldscript.
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az appconfig kv set](/cli/azure/appconfig/kv#az-appconfig-kv-set) | Een sleutel-waardepaar maken of bijwerken. |
-| [az appconfig kv list](/cli/azure/appconfig/kv#az-appconfig-kv-list) | De sleutel-waardeparen weergeven die zijn opgenomen in een App Configuration-archief. |
-| [az appconfig kv delete](/cli/azure/appconfig/kv#az-appconfig-kv-delete) | Een sleutel-waardepaar verwijderen. |
+| [az appconfig kv set](/cli/azure/appconfig/kv#az_appconfig_kv_set) | Een sleutel-waardepaar maken of bijwerken. |
+| [az appconfig kv list](/cli/azure/appconfig/kv#az_appconfig_kv_list) | De sleutel-waardeparen weergeven die zijn opgenomen in een App Configuration-archief. |
+| [az appconfig kv delete](/cli/azure/appconfig/kv#az_appconfig_kv_delete) | Een sleutel-waardepaar verwijderen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

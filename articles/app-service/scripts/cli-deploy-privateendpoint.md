@@ -9,12 +9,12 @@ ms.date: 07/06/2020
 ms.author: ericg
 ms.service: app-service
 ms.workload: web
-ms.openlocfilehash: acebc75b579b13ebb2cfad0e18057245781165ad
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 3c8d0927c3fb74c52e54ceb5ff8ba5c0361c4f46
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102175274"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107787826"
 ---
 # <a name="create-an-app-service-app-and-deploy-private-endpoint-using-azure-cli"></a>Een App Service-app maken en een privé-eindpunt implementeren met behulp van Azure CLI
 
@@ -37,7 +37,7 @@ az group create --name myResourceGroup --location francecentral
 ## <a name="create-an-app-service-plan"></a>Een App Service-plan maken
 
 U moet een App Service-plan maken om uw web-app te hosten.
-Maak een App Service-plan met de opdracht [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create).
+Maak een App Service-plan met de opdracht [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create).
 In dit voorbeeld wordt een App Service-plan met de naam *myAppServicePlan* gemaakt op de locatie *francecentral* met de SKU *P1V2* en slechts één werkrol: 
 
 ```azurecli-interactive
@@ -52,7 +52,7 @@ az appservice plan create \
 ## <a name="create-a-web-app"></a>Een web-app maken
 
 Nu u een App Service-plan hebt, kunt u een web-app implementeren.
-Een web-app maken met [AZ appservice plan Create] (/CLI/Azure/webapp # AZ-webapp-Create.
+Maak een web-app met [az appservice plan create](/cli/azure/webapp#az_webapp_create.
 In dit voorbeeld wordt een web-app met de naam *mySiteName* gemaakt in het plan met de naam *myAppServicePlan*
 
 ```azurecli-interactive
@@ -78,7 +78,7 @@ az network vnet create \
 
 ## <a name="configure-the-subnet"></a>Het subnet configureren 
 
-U moet het subnet bijwerken om netwerkbeleid voor privé-eindpunten uit te schakelen. Update een subnet-configuratie met de naam *mySubnet* met [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update):
+U moet het subnet bijwerken om netwerkbeleid voor privé-eindpunten uit te schakelen. Update een subnet-configuratie met de naam *mySubnet* met [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet#az_network_vnet_subnet_update):
 
 ```azurecli-interactive
 az network vnet subnet update \

@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 02/11/2021
 ms.reviewer: byvinyal
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: ec48ec32250e271eff9e40535689f83dd9d3b60c
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: b77a26f61e1168846156de990806bbed2f7c41e3
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107483630"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107789533"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Implementatiereferenties configureren voor Azure App Service
 Voor het beveiligen van app-implementatie vanaf een lokale computer [ondersteunt Azure App Service](./overview.md) twee typen referenties voor lokale [Git-implementatie](deploy-local-git.md) en [FTP/S-implementatie.](deploy-ftp.md) Deze referenties zijn niet hetzelfde als de referenties van uw Azure-abonnement.
@@ -24,9 +24,9 @@ Voor het beveiligen van app-implementatie vanaf een lokale computer [ondersteunt
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
-Voer de [opdracht az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) uit. Vervang \<username> en \<password> door de gebruikersnaam en het wachtwoord van de gebruiker van de implementatie. 
+Voer de [opdracht az webapp deployment user set](/cli/azure/webapp/deployment/user#az_webapp_deployment_user_set) uit. Vervang \<username> en \<password> door de gebruikersnaam en het wachtwoord van de gebruiker van de implementatie. 
 
-- De gebruikersnaam moet uniek zijn binnen Azure en mag voor lokale Git-pushes niet het symbool â€ ̃@â€™ bevatten. 
+- De gebruikersnaam moet uniek zijn binnen Azure en voor lokale Git-pushes en mag het symbool @ niet bevatten. 
 - Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen. 
 
 ```azurecli-interactive
@@ -58,7 +58,7 @@ Zodra u uw implementatiereferenties hebt ingesteld, kunt u de gebruikersnaam van
 Als De Git-implementatie is geconfigureerd, wordt op de pagina een **Gebruikersnaam voor Git/implementatie weergegeven;** anders een **FTP-/implementatie-gebruikersnaam**.
 
 > [!NOTE]
-> Azure geeft uw implementatiewachtwoord voor het gebruikersbereik niet weer. Als u het wachtwoord bent vergeten, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
+> In Azure wordt uw implementatiewachtwoord voor het gebruikersbereik niet weer geven. Als u het wachtwoord bent vergeten, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
 >
 > 
 
@@ -70,7 +70,7 @@ Voor de authenticatie bij een FTP/FTPS-eindpunt met referenties voor het gebruik
 
 Omdat referenties voor het gebruikersbereik zijn gekoppeld aan de gebruiker en niet aan een specifieke resource, moet de gebruikersnaam deze indeling hebben om de aanmeldingsactie naar het juiste app-eindpunt te leiden.
 
-## <a name="get-application-scope-credentials"></a><a name="appscope"></a>Referenties voor het toepassingsbereik op te halen
+## <a name="get-application-scope-credentials"></a><a name="appscope"></a>Referenties voor toepassingsbereik op halen
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/cli)
 
@@ -100,7 +100,7 @@ Get-AzWebAppPublishingProfile -ResourceGroupName <group-name> -Name <app-name>
 
     ![Laat zien hoe u het FTP-dashboard kunt selecteren in het implementatiecentrum in Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-2. Selecteer in **de sectie** Toepassingsbereik de **koppeling Kopiëren** om de gebruikersnaam of het wachtwoord te kopiëren.
+2. Selecteer in **de sectie Toepassingsbereik** de **koppeling Kopiëren** om de gebruikersnaam of het wachtwoord te kopiëren.
 
 -----
 
@@ -144,7 +144,7 @@ Voer de volgende CLI-opdracht uit om FTP-toegang tot de site uit te schakelen. V
 az resource update --resource-group <resource-group> --name ftp --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Als u wilt controleren of FTP-toegang is geblokkeerd, kunt u proberen te verifiëren met behulp van een FTP-client zoals FileZilla. Als u de publicatiereferenties wilt ophalen, gaat u naar de overzichtsblade van uw site en klikt u op Publicatieprofiel downloaden. Gebruik de fileâ € ™ FTP hostnaam, gebruikersnaam en wachtwoord voor verificatie, en u krijgt een 401 foutbericht, waarmee wordt aangegeven dat u niet bent geautoriseerd.
+Als u wilt controleren of FTP-toegang is geblokkeerd, kunt u proberen te verifiëren met behulp van een FTP-client zoals FileZilla. Als u de publicatiereferenties wilt ophalen, gaat u naar de overzichtsblade van uw site en klikt u op Publicatieprofiel downloaden. Gebruik de FTP-hostnaam, gebruikersnaam en het wachtwoord van het bestand om te verifiëren. U krijgt een 401-foutbericht dat aangeeft dat u niet bent geautoriseerd.
 
 ### <a name="webdeploy-and-scm"></a>WebDeploy en SCM
 

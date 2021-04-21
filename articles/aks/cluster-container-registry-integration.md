@@ -1,38 +1,38 @@
 ---
-title: Azure Container Registry integreren met de Azure Kubernetes-service
-description: Meer informatie over het integreren van Azure Kubernetes service (AKS) met Azure Container Registry (ACR)
+title: Integratie Azure Container Registry met Azure Kubernetes Service
+description: Meer informatie over het integreren Azure Kubernetes Service (AKS) met Azure Container Registry (ACR)
 services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 01/08/2021
-ms.openlocfilehash: 19ece696dabc81e643e8a904d506d22e40eaa099
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ab8065a14aac9e798bfe7d632aa5b33c44706190
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102499149"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107775824"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Verifiëren bij Azure Container Registry vanuit Azure Kubernetes Service
 
-Wanneer u Azure Container Registry (ACR) met Azure Kubernetes service (AKS) gebruikt, moet er een verificatie mechanisme tot stand worden gebracht. Deze bewerking wordt geïmplementeerd als onderdeel van de CLI-en Portal-ervaring door de vereiste machtigingen te verlenen aan uw ACR. In dit artikel vindt u voor beelden voor het configureren van verificatie tussen deze twee Azure-Services. 
+Wanneer u ACR (Azure Container Registry) met Azure Kubernetes Service (AKS) gebruikt, moet er een verificatiemechanisme tot stand worden gebracht. Deze bewerking wordt geïmplementeerd als onderdeel van de CLI- en portalervaring door de vereiste machtigingen te verlenen aan uw ACR. Dit artikel bevat voorbeelden voor het configureren van verificatie tussen deze twee Azure-services. 
 
-U kunt de AKS instellen op ACR-integratie in enkele eenvoudige opdrachten met de Azure CLI. Deze integratie wijst de AcrPull-rol toe aan de beheerde identiteit die is gekoppeld aan het AKS-cluster.
+U kunt de integratie van AKS naar ACR instellen in een paar eenvoudige opdrachten met de Azure CLI. Met deze integratie wordt de rol AcrPull toegewezen aan de beheerde identiteit die is gekoppeld aan het AKS-cluster.
 
 > [!NOTE]
-> Dit artikel behandelt automatische verificatie tussen AKS en ACR. Als u een installatie kopie moet ophalen uit een persoonlijk extern REGI ster, gebruikt u een [installatie kopie pull Secret][Image Pull Secret].
+> In dit artikel wordt automatische verificatie tussen AKS en ACR beschreven. Als u een afbeelding uit een persoonlijk extern register wilt halen, gebruikt u een [pull-geheim][Image Pull Secret]voor de afbeelding.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Voor de volgende voor beelden is vereist:
+Voor deze voorbeelden is het volgende vereist:
 
-* De rol van **eigenaar** of **Azure-account beheerder** voor het **Azure-abonnement**
-* Azure CLI-versie 2.7.0 of hoger
+* **De** rol van **eigenaar of Azure-accountbeheerder** voor het **Azure-abonnement**
+* Azure CLI versie 2.7.0 of hoger
 
-Om te voor komen dat een **eigenaar** of een rol beheerder voor een **Azure-account** nodig is, kunt u een beheerde identiteit hand matig configureren of een bestaande beheerde identiteit gebruiken om ACR van AKS te verifiëren. Zie [een door Azure beheerde identiteit gebruiken om te verifiëren bij een Azure container Registry](../container-registry/container-registry-authentication-managed-identity.md)voor meer informatie.
+Om te voorkomen  dat u de rol van eigenaar of **Azure-accountbeheerder** nodig hebt, kunt u handmatig een beheerde identiteit configureren of een bestaande beheerde identiteit gebruiken om ACR te verifiëren bij AKS. Zie Use [an Azure managed identity to authenticate to an Azure container registry (Een beheerde Azure-identiteit gebruiken om te verifiëren bij een Azure-containerregister) voor meer informatie.](../container-registry/container-registry-authentication-managed-identity.md)
 
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Een nieuw AKS-cluster maken met ACR-integratie
 
-U kunt AKS-en ACR-integratie instellen tijdens het maken van de eerste keer dat u uw AKS-cluster maakt.  Als u een AKS-cluster wilt toestaan om te communiceren met ACR, wordt een Azure Active Directory **beheerde identiteit** gebruikt. Met de volgende CLI-opdracht kunt u een bestaande ACR in uw abonnement autoriseren en de juiste **ACRPull** -rol configureren voor de beheerde identiteit. Geef hieronder geldige waarden voor de para meters op.
+U kunt AKS- en ACR-integratie instellen tijdens het maken van uw AKS-cluster.  Om een AKS-cluster te laten communiceren met ACR, wordt Azure Active Directory **beheerde** identiteit gebruikt. Met de volgende CLI-opdracht kunt u een bestaande ACR in uw abonnement autoreren en de juiste **ACRPull-rol** configureren voor de beheerde identiteit. U kunt hieronder geldige waarden opgeven voor uw parameters.
 
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique
@@ -45,34 +45,34 @@ az acr create -n $MYACR -g myContainerRegistryResourceGroup --sku basic
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr $MYACR
 ```
 
-U kunt ook de naam van de ACR met een ACR-Resource-ID opgeven, die de volgende indeling heeft:
+U kunt ook de ACR-naam opgeven met behulp van een ACR-resource-id, die de volgende indeling heeft:
 
 `/subscriptions/\<subscription-id\>/resourceGroups/\<resource-group-name\>/providers/Microsoft.ContainerRegistry/registries/\<name\>`
 
 > [!NOTE]
-> Als u een ACR gebruikt dat zich in een ander abonnement van uw AKS-cluster bevindt, gebruikt u de resource-ID ACR wanneer u een AKS-cluster koppelt of ontkoppelt.
+> Als u een ACR gebruikt die zich in een ander abonnement van uw AKS-cluster bevindt, gebruikt u de ACR-resource-id bij het koppelen of loskoppelen van een AKS-cluster.
 
 ```azurecli
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr /subscriptions/<subscription-id>/resourceGroups/myContainerRegistryResourceGroup/providers/Microsoft.ContainerRegistry/registries/myContainerRegistry
 ```
 
-Het kan enkele minuten duren voordat deze stap is voltooid.
+Deze stap kan enkele minuten duren.
 
 ## <a name="configure-acr-integration-for-existing-aks-clusters"></a>ACR-integratie configureren voor bestaande AKS-clusters
 
-Integreer een bestaande ACR met bestaande AKS-clusters door geldige waarden op te geven voor de **ACR-naam** of **ACR-resource-id** zoals hieronder wordt beschreven.
+Integreer een bestaande ACR met bestaande AKS-clusters door geldige waarden op te geven voor **acr-name** of **acr-resource-id,** zoals hieronder wordt weergegeven.
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-name>
 ```
 
-of
+Of
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 ```
 
-U kunt ook de integratie tussen een ACR en een AKS-cluster verwijderen met het volgende
+U kunt de integratie tussen een ACR en een AKS-cluster ook verwijderen met het volgende:
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-name>
@@ -86,24 +86,24 @@ az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
 
 ## <a name="working-with-acr--aks"></a>Werken met ACR & AKS
 
-### <a name="import-an-image-into-your-acr"></a>Een installatie kopie importeren in uw ACR
+### <a name="import-an-image-into-your-acr"></a>Een afbeelding importeren in uw ACR
 
-Importeer een installatie kopie van docker hub in uw ACR door het volgende uit te voeren:
+Importeer een -afbeelding vanuit docker hub in uw ACR door het volgende uit te doen:
 
 
 ```azurecli
 az acr import  -n <acr-name> --source docker.io/library/nginx:latest --image nginx:v1
 ```
 
-### <a name="deploy-the-sample-image-from-acr-to-aks"></a>Implementeer de voorbeeld installatie kopie van ACR naar AKS
+### <a name="deploy-the-sample-image-from-acr-to-aks"></a>De voorbeeldafbeelding van ACR implementeren in AKS
 
-Zorg ervoor dat u over de juiste AKS-referenties beschikt
+Zorg ervoor dat u de juiste AKS-referenties hebt
 
 ```azurecli
 az aks get-credentials -g myResourceGroup -n myAKSCluster
 ```
 
-Maak een bestand met de naam **ACR-nginx. yaml** dat het volgende bevat. Vervang de resource naam van het REGI ster door de **ACR-naam**. Voor beeld: *myContainerRegistry*.
+Maak een bestand met de **naam acr-nginx.yaml** dat het volgende bevat. Vervang de resourcenaam van het register door **acr-name**. Voorbeeld: *myContainerRegistry.*
 
 ```yaml
 apiVersion: apps/v1
@@ -135,13 +135,13 @@ Voer vervolgens deze implementatie uit in uw AKS-cluster:
 kubectl apply -f acr-nginx.yaml
 ```
 
-U kunt de implementatie controleren door uit te voeren:
+U kunt de implementatie controleren door het volgende uit te uitvoeren:
 
 ```console
 kubectl get pods
 ```
 
-U moet een van de twee meest uitgevoerde peulen hebben.
+Als het goed is, hebt u twee pods die worden uitgevoerd.
 
 ```output
 NAME                                 READY   STATUS    RESTARTS   AGE
@@ -150,10 +150,10 @@ nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s
 ```
 
 ### <a name="troubleshooting"></a>Problemen oplossen
-* Voer de opdracht [AZ AKS check-ACR](/cli/azure/aks#az_aks_check_acr) uit om te controleren of het REGI ster toegankelijk is vanuit het AKS-cluster.
-* Meer informatie over [Diagnostische gegevens over ACR](../container-registry/container-registry-diagnostics-audit-logs.md)
-* Meer informatie over de [status van ACR](../container-registry/container-registry-check-health.md)
+* Voer de [opdracht az aks check-acr](/cli/azure/aks#az_aks_check_acr) uit om te controleren of het register toegankelijk is vanuit het AKS-cluster.
+* Meer informatie over [ACR Diagnostics](../container-registry/container-registry-diagnostics-audit-logs.md)
+* Meer informatie over [ACR Health](../container-registry/container-registry-check-health.md)
 
 <!-- LINKS - external -->
-[AKS AKS CLI]: /cli/azure/aks#az-aks-create
+[AKS AKS CLI]: /cli/azure/aks#az_aks_create
 [Image Pull secret]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/

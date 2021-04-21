@@ -1,58 +1,59 @@
 ---
-title: Azure Analysis Services-taken automatiseren met Service-principals | Microsoft Docs
-description: Meer informatie over het maken van een service-principal voor het automatiseren van Azure Analysis Services beheer taken.
+title: Automatiseer Azure Analysis Services taken met service-principals | Microsoft Docs
+description: Meer informatie over het maken van een service-principal voor het automatiseren Azure Analysis Services beheertaken.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b04b9ababfe0e4c2a60d14044b9d3ee120837dc5
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 04bc6ecd6e0a32e9234d07e995a7e012b17e3bbe
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "96491040"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107769153"
 ---
 # <a name="automation-with-service-principals"></a>Automatisering met service-principals
 
-Service-principals zijn een Azure Active Directory-toepassingsresource die u in uw tenant maakt om onbeheerde bewerkingen op resource- en serviceniveau uit te voeren. Ze zijn een uniek type *gebruikers identiteit* met een toepassings-id en wacht woord of certificaat. Een service-principal heeft alleen de machtigingen die nodig zijn om taken uit te voeren die zijn gedefinieerd door de rollen en machtigingen waarvoor deze is toegewezen. 
+Service-principals zijn een Azure Active Directory-toepassingsresource die u in uw tenant maakt om onbeheerde bewerkingen op resource- en serviceniveau uit te voeren. Ze zijn een uniek type *gebruikers-id met* een toepassings-id en wachtwoord of certificaat. Een service-principal heeft alleen de machtigingen die nodig zijn om taken uit te voeren die zijn gedefinieerd door de rollen en machtigingen waaraan deze is toegewezen. 
 
-In Analysis Services worden service-principals gebruikt met Azure Automation, de Power Shell-modus voor installatie zonder toezicht, aangepaste client toepassingen en web-apps voor het automatiseren van algemene taken. Bijvoorbeeld: servers inrichten, modellen implementeren, gegevens vernieuwen, omhoog/omlaag schalen en onderbreken/hervatten kunnen allemaal worden geautomatiseerd met Service-principals. Machtigingen worden toegewezen aan service-principals via het lidmaatschap van de rol, net als bij gewone UPN-accounts voor Azure AD.
+In Analysis Services worden service-principals gebruikt met Azure Automation, powershell-modus zonder toezicht, aangepaste clienttoepassingen en web-apps om algemene taken te automatiseren. Het inrichten van servers, het implementeren van modellen, het vernieuwen van gegevens, omhoog/omlaag schalen en onderbreken/hervatten kunnen bijvoorbeeld allemaal worden geautomatiseerd met behulp van service-principals. Machtigingen worden toegewezen aan service-principals via rollidmaatschap, net als gewone Azure AD UPN-accounts.
 
-Analysis Services biedt ook ondersteuning voor bewerkingen die worden uitgevoerd door beheerde identiteiten met Service-principals. Zie [beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) en Azure- [Services die ondersteuning bieden voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services)voor meer informatie.    
+Analysis Services ondersteunt ook bewerkingen die worden uitgevoerd door beheerde identiteiten met behulp van service-principals. Zie Beheerde identiteiten [voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) en Azure-services die ondersteuning bieden voor [Azure AD-verificatie voor meer informatie.](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services)    
 
 ## <a name="create-service-principals"></a>Service-principals maken
  
-Service-principals kunnen worden gemaakt in de Azure Portal of met behulp van Power shell. Raadpleeg voor meer informatie:
+Service-principals kunnen worden gemaakt in de Azure Portal of met behulp van PowerShell. Raadpleeg voor meer informatie:
 
 [Service-principal maken - Azure Portal](../active-directory/develop/howto-create-service-principal-portal.md)   
 [Service-principal maken - PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
-## <a name="store-credential-and-certificate-assets-in-azure-automation"></a>Referentie-en certificaat assets opslaan in Azure Automation
+## <a name="store-credential-and-certificate-assets-in-azure-automation"></a>Referenties en certificaatactiva opslaan in Azure Automation
 
-Referenties van de Service-Principal en certificaten kunnen veilig worden opgeslagen in Azure Automation voor runbook-bewerkingen. Raadpleeg voor meer informatie:
+Referenties en certificaten van de service-principal kunnen veilig worden opgeslagen in Azure Automation runbookbewerkingen. Raadpleeg voor meer informatie:
 
 [Referentie-assets in Azure Automation](../automation/shared-resources/credentials.md)   
 [Verbindingsassets in Azure Automation](../automation/shared-resources/certificates.md)
 
-## <a name="add-service-principals-to-server-admin-role"></a>Service-principals toevoegen aan de server beheerdersrol
+## <a name="add-service-principals-to-server-admin-role"></a>Service-principals toevoegen aan serverbeheerdersrol
 
-Voordat u een service-principal voor Analysis Services server beheer bewerkingen kunt gebruiken, moet u deze toevoegen aan de rol Server Administrators. Service-principals moeten rechtstreeks aan de rol Server beheerder worden toegevoegd. Het toevoegen van een service-principal aan een beveiligings groep en het toevoegen van die beveiligings groep aan de rol Server beheerder wordt niet ondersteund. Zie [een Service-Principal toevoegen aan de rol Server beheerder](analysis-services-addservprinc-admins.md)voor meer informatie.
+Voordat u een service-principal kunt gebruiken Analysis Services serverbeheerbewerkingen, moet u deze toevoegen aan de rol serverbeheerders. Service-principals moeten rechtstreeks worden toegevoegd aan de serverbeheerdersrol. Het toevoegen van een service-principal aan een beveiligingsgroep en vervolgens het toevoegen van die beveiligingsgroep aan de serverbeheerdersrol wordt niet ondersteund. Zie Een service-principal toevoegen aan de [serverbeheerdersrol voor meer informatie.](analysis-services-addservprinc-admins.md)
 
-## <a name="service-principals-in-connection-strings"></a>Service-principals in verbindings reeksen
+## <a name="service-principals-in-connection-strings"></a>Service-principals in verbindingsreeksen
 
-De Service-Principal-appID en het wacht woord of-certificaat kunnen worden gebruikt in verbindings reeksen die veel hetzelfde zijn als een UPN.
+AppID en wachtwoord of certificaat van de service-principal kunnen in verbindingsreeksen worden gebruikt die vrijwel hetzelfde zijn als een UPN.
 
 ### <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-#### <a name="using-azanalysisservices-module"></a><a name="azmodule"></a>De module AZ. AnalysisServices gebruiken
+#### <a name="using-azanalysisservices-module"></a><a name="azmodule"></a>Module Az.AnalysisServices gebruiken
 
-Gebruik cmdlet als u een Service-Principal gebruikt voor resource beheer bewerkingen met de module [AZ. AnalysisServices](/powershell/module/az.analysisservices) `Connect-AzAccount` . 
+Wanneer u een service-principal gebruikt voor resourcebeheerbewerkingen met de module [Az.AnalysisServices,](/powershell/module/az.analysisservices)  gebruikt `Connect-AzAccount` u de cmdlet . 
 
-In het volgende voor beeld worden appID en een wacht woord gebruikt voor het uitvoeren van beheer bewerkingen voor synchronisatie met alleen-lezen replica's en omhoog/omlaag schalen:
+In het volgende voorbeeld worden appID en een wachtwoord gebruikt om besturingsvlakbewerkingen uit te voeren voor synchronisatie met alleen-lezen replica's en omhoog/uit te schalen:
 
 ```powershell
 Param (
@@ -75,7 +76,7 @@ Set-AzAnalysisServicesServer -Name "testsvr" -ResourceGroupName "testRG" -Sku "S
 
 #### <a name="using-sqlserver-module"></a>De module SQLServer gebruiken
 
-In het volgende voor beeld worden appID en een wacht woord gebruikt voor het uitvoeren van een vernieuwings bewerking van een model database:
+In het volgende voorbeeld worden appID en een wachtwoord gebruikt om een bewerking voor het vernieuwen van een modeldatabase uit te voeren:
 
 ```powershell
 Param (
@@ -112,5 +113,5 @@ db.Model.SaveChanges();
 [Aanmelden met Azure PowerShell](/powershell/azure/authenticate-azureps)   
 [Vernieuwen met Logic Apps](analysis-services-refresh-logic-app.md)  
 [Vernieuwen met Azure Automation](analysis-services-refresh-azure-automation.md)  
-[Een Service-Principal toevoegen aan de rol Server beheerder](analysis-services-addservprinc-admins.md)  
-[Power BI Premium werkruimte-en gegevensset taken automatiseren met Service-principals](/power-bi/admin/service-premium-service-principal)
+[Een service-principal toevoegen aan de serverbeheerdersrol](analysis-services-addservprinc-admins.md)  
+[Taken Power BI Premium werkruimten en gegevenssets automatiseren met service-principals](/power-bi/admin/service-premium-service-principal)

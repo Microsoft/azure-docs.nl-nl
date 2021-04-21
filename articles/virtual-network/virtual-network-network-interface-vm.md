@@ -1,6 +1,6 @@
 ---
-title: Netwerk interfaces toevoegen aan of verwijderen uit Azure Vm's
-description: Meer informatie over het toevoegen van netwerk interfaces aan of het verwijderen van netwerk interfaces van virtuele machines.
+title: Netwerkinterfaces toevoegen aan of verwijderen uit Azure-VM's
+description: Meer informatie over het toevoegen van netwerkinterfaces aan of het verwijderen van netwerkinterfaces van virtuele machines.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -15,150 +15,152 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: 43d3da49688a7daeb3ea4e0c1c3dba505dcd3b59
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 847f8dbd2d8f4064f12333348a4f03e5c5fcc611
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102508330"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107774247"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Netwerkinterfaces toevoegen aan of verwijderen van netwerkinterfaces van virtuele machines
 
-Meer informatie over het toevoegen van een bestaande netwerk interface bij het maken van een virtuele Azure-machine (VM). Meer informatie over het toevoegen of verwijderen van netwerk interfaces van een bestaande virtuele machine met de status gestopt (toewijzing ongedaan gemaakt). Met een netwerk interface kan een virtuele machine van Azure communiceren met internet-, Azure-en on-premises resources. Een virtuele machine heeft een of meer netwerk interfaces. 
+Meer informatie over het toevoegen van een bestaande netwerkinterface wanneer u een virtuele Azure-machine (VM) maakt. Leer ook hoe u netwerkinterfaces toevoegt aan of verwijdert uit een bestaande VM met de status Gestopt (toewijzing is verwijderd). Met een netwerkinterface kan een azure-VM communiceren met internet-, Azure- en on-premises resources. Een VM heeft een of meer netwerkinterfaces. 
 
-Zie [IP-adressen van netwerk interfaces beheren](virtual-network-network-interface-addresses.md)als u IP-adressen voor een netwerk interface wilt toevoegen, wijzigen of verwijderen. Zie [netwerk interfaces beheren](virtual-network-network-interface.md)als u netwerk interfaces wilt maken, wijzigen of verwijderen.
+Zie IP-adressen van de netwerkinterface beheren als u IP-adressen voor een netwerkinterface wilt toevoegen, [wijzigen of verwijderen.](virtual-network-network-interface-addresses.md) Zie Netwerkinterfaces beheren voor het maken, wijzigen of verwijderen [van netwerkinterfaces.](virtual-network-network-interface.md)
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Als u er nog geen hebt, stelt u een Azure-account in met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) Voer een van de volgende taken uit voordat u de rest van dit artikel start:
+Als u nog geen account hebt, stelt u een Azure-account in met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) Voltooi een van deze taken voordat u aan de rest van dit artikel begint:
 
-- **Portal gebruikers**: Meld u aan bij de [Azure Portal](https://portal.azure.com) met uw Azure-account.
+- **Portalgebruikers:** meld u aan bij [de Azure Portal](https://portal.azure.com) met uw Azure-account.
 
-- **Power shell-gebruikers**: Voer de opdrachten uit in de [Azure Cloud shell](https://shell.azure.com/powershell)of voer Power shell uit vanaf uw computer. Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit artikel kunt uitvoeren. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Zoek de vervolg keuzelijst **omgeving selecteren** op het tabblad Azure Cloud shell browser en kies vervolgens **Power shell** als deze optie nog niet is geselecteerd.
+- **PowerShell-gebruikers:** voer de opdrachten uit in [de Azure Cloud Shell](https://shell.azure.com/powershell)of voer PowerShell uit vanaf uw computer. Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit artikel kunt uitvoeren. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Zoek op Azure Cloud Shell browsertabblad  de vervolgkeuzelijst Omgeving selecteren en kies **vervolgens PowerShell** als dit nog niet is geselecteerd.
 
-    Als u Power shell lokaal uitvoert, gebruikt u Azure PowerShell module versie 1.0.0 of hoger. Voer `Get-Module -ListAvailable Az.Network` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Voer `Connect-AzAccount` uit om een verbinding op te zetten met Azure.
+    Als u PowerShell lokaal gebruikt, gebruikt u Azure PowerShell moduleversie 1.0.0 of hoger. Voer `Get-Module -ListAvailable Az.Network` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Voer `Connect-AzAccount` uit om een verbinding op te zetten met Azure.
 
-- **Azure-opdracht regel interface (CLI)-gebruikers**: Voer de opdrachten uit in de [Azure Cloud shell](https://shell.azure.com/bash)of voer de CLI uit vanaf uw computer. Gebruik Azure CLI versie 2.0.26 of hoger als u de Azure CLI lokaal uitvoert. Voer `az --version` uit om te kijken welke versie is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren. Voer `az login` uit om een verbinding op te zetten met Azure.
+- **Azure CLI-gebruikers (opdrachtregelinterface)**: voer de opdrachten uit in de [Azure Cloud Shell](https://shell.azure.com/bash)of voer de CLI uit vanaf uw computer. Gebruik Azure CLI versie 2.0.26 of hoger als u de Azure CLI lokaal gebruikt. Voer `az --version` uit om te kijken welke versie is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren. Voer `az login` uit om een verbinding op te zetten met Azure.
 
-## <a name="add-existing-network-interfaces-to-a-new-vm"></a>Bestaande netwerk interfaces toevoegen aan een nieuwe virtuele machine
+## <a name="add-existing-network-interfaces-to-a-new-vm"></a>Bestaande netwerkinterfaces toevoegen aan een nieuwe VM
 
-Wanneer u via de portal een virtuele machine maakt, maakt de portal een netwerk interface met de standaard instellingen en koppelt de netwerk interface voor u aan de VM. U kunt de portal niet gebruiken om bestaande netwerk interfaces toe te voegen aan een nieuwe virtuele machine of om een virtuele machine met meerdere netwerk interfaces te maken. U kunt beide doen met behulp van de CLI of Power shell. Zorg ervoor dat u vertrouwd bent met de [beperkingen](#constraints). Als u een virtuele machine met meerdere netwerk interfaces maakt, moet u ook het besturings systeem configureren om ze goed te gebruiken nadat u de virtuele machine hebt gemaakt. Meer informatie over het configureren van [Linux](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) of [Windows](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) voor meerdere netwerk interfaces.
+Wanneer u via de portal een virtuele machine maakt, maakt de portal een netwerkinterface met standaardinstellingen en koppelt de netwerkinterface voor u aan de virtuele machine. U kunt de portal niet gebruiken om bestaande netwerkinterfaces toe te voegen aan een nieuwe VM of om een VM met meerdere netwerkinterfaces te maken. U kunt beide doen met behulp van de CLI of PowerShell. Zorg ervoor dat u vertrouwd bent met [de beperkingen](#constraints). Als u een VM met meerdere netwerkinterfaces maakt, moet u het besturingssysteem ook zo configureren dat deze correct worden gebruikt nadat u de VM hebt gemaakt. Meer informatie over het [configureren van Linux](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) of [Windows](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) voor meerdere netwerkinterfaces.
 
 ### <a name="commands"></a>Opdracht
 
-Voordat u de virtuele machine maakt, [maakt u een netwerk interface](virtual-network-network-interface.md#create-a-network-interface).
+Voordat u de VM maakt, [maakt u een netwerkinterface](virtual-network-network-interface.md#create-a-network-interface).
 
 |Hulpprogramma|Opdracht|
 |---|---|
-|CLI|[az network nic create](/cli/azure/network/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-network-nic-create)|
+|CLI|[az network nic create](/cli/azure/network/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az_network_nic_create)|
 |PowerShell|[New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
-## <a name="add-a-network-interface-to-an-existing-vm"></a>Een netwerk interface toevoegen aan een bestaande virtuele machine
+## <a name="add-a-network-interface-to-an-existing-vm"></a>Een netwerkinterface toevoegen aan een bestaande VM
 
-Een netwerk interface toevoegen aan de virtuele machine:
+Een netwerkinterface toevoegen aan uw virtuele machine:
 
-1. Ga naar de [Azure Portal](https://portal.azure.com) om een bestaande virtuele machine te vinden. Zoek en selecteer **virtuele machines**.
+1. Ga naar de [Azure Portal](https://portal.azure.com) een bestaande virtuele machine te zoeken. Zoek en selecteer **virtuele machines**.
 
-2. Selecteer de naam van uw VM. De virtuele machine moet ondersteuning bieden voor het aantal netwerk interfaces dat u wilt toevoegen. Als u wilt weten hoeveel netwerk interfaces elke VM-grootte ondersteunt, raadpleegt u de grootten in azure voor [Linux vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+2. Selecteer de naam van uw VM. De VM moet het aantal netwerkinterfaces ondersteunen dat u wilt toevoegen. Zie de grootten in Azure voor [Linux-VM's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-VM's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het aantal netwerkinterfaces dat door elke VM-grootte wordt ondersteund.
 
-3. Selecteer in de opdracht balk van de virtuele machine **stoppen** en klik vervolgens op **OK** in het bevestigings venster. Wacht tot de **status** van de VM is gewijzigd in **gestopt (toewijzing opgeheven)**.
+3. Selecteer in de VM-opdrachtbalk **Stoppen** en vervolgens **OK** in het bevestigingsdialoogvenster. Wacht vervolgens tot de **status van** de VM is gewijzigd in **Gestopt (toewijzing is niet toegewezen).**
 
-4. Kies in de menu balk van de **VM netwerk**  >  **Interface netwerk verbinding**. Kies vervolgens in **bestaande netwerk interface koppelen** de netwerk interface die u wilt toevoegen en selecteer **OK**.
+4. Kies netwerkverbinding netwerkinterface in **de** menubalk van  >  **de** VM. Kies vervolgens in **Bestaande netwerkinterface koppelen** de netwerkinterface die u wilt koppelen en selecteer **OK.**
 
     >[!NOTE]
-    >Voor de netwerk interface die u selecteert, kan geen versneld netwerk zijn ingeschakeld, er kan geen IPv6-adres aan worden toegewezen en het moet zich in hetzelfde virtuele netwerk bevinden als de netwerk interface die momenteel aan de virtuele machine is gekoppeld.
+    >De netwerkinterface die u selecteert, kan niet worden versneld netwerken ingeschakeld, er kan geen IPv6-adres aan worden toegewezen en moet aanwezig zijn in hetzelfde virtuele netwerk als de netwerkinterface die momenteel is gekoppeld aan de virtuele machine.
 
-    Als u geen bestaande netwerk interface hebt, moet u er eerst een maken. Hiertoe selecteert u **netwerk interface maken**. Zie [een netwerk interface maken](virtual-network-network-interface.md#create-a-network-interface)voor meer informatie over het maken van een netwerk interface. Zie voor meer informatie over aanvullende beperkingen bij het toevoegen van netwerk interfaces aan virtuele machines de [beperkingen](#constraints).
+    Als u geen bestaande netwerkinterface hebt, moet u er eerst een maken. Selecteer netwerkinterface maken **om dit te doen.** Zie Een netwerkinterface maken voor meer informatie over het maken [van een netwerkinterface.](virtual-network-network-interface.md#create-a-network-interface) Zie Beperkingen voor meer informatie over aanvullende beperkingen bij het toevoegen van netwerkinterfaces [aan virtuele machines.](#constraints)
 
-5. Kies in de menu balk van de VM **overzicht**  >  **Start** om de virtuele machine opnieuw op te starten.
+5. Kies in de menubalk van de virtuele machine **Overzicht**  >  **Starten om** de virtuele machine opnieuw op te starten.
 
-Nu kunt u het VM-besturings systeem configureren om meerdere netwerk interfaces op de juiste manier te gebruiken. Meer informatie over het configureren van [Linux](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) of [Windows](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) voor meerdere netwerk interfaces.
+U kunt nu het besturingssysteem van de VM configureren om meerdere netwerkinterfaces correct te gebruiken. Meer informatie over het [configureren van Linux](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) of [Windows](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) voor meerdere netwerkinterfaces.
 
 ### <a name="commands"></a>Opdracht
 
 |Hulpprogramma|Opdracht|
 |---|---|
-|CLI|[AZ VM NIC add](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-add) (naslag); [gedetailleerde stappen](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
-|PowerShell|[Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (verwijzing); [gedetailleerde stappen](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
+|CLI|[az vm nic add](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_nic_add) (reference); [gedetailleerde stappen](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
+|PowerShell|[Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (referentie); [gedetailleerde stappen](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
 
 ## <a name="view-network-interfaces-for-a-vm"></a>Netwerkinterfaces voor een virtuele machine weergeven
 
-U kunt de netwerk interfaces die momenteel zijn gekoppeld aan een virtuele machine weer geven voor meer informatie over de configuratie van elke netwerk interface en de IP-adressen die zijn toegewezen aan elke netwerk interface. 
+U kunt de netwerkinterfaces bekijken die momenteel zijn gekoppeld aan een VM voor meer informatie over de configuratie van elke netwerkinterface en de IP-adressen die zijn toegewezen aan elke netwerkinterface. 
 
-1. Ga naar de [Azure Portal](https://portal.azure.com) om een bestaande virtuele machine te vinden. Zoek en selecteer **virtuele machines**.
+1. Ga naar de [Azure Portal](https://portal.azure.com) een bestaande virtuele machine te zoeken. Zoek en selecteer **virtuele machines**.
 
     >[!NOTE]
-    >Meld u aan met een account dat is toegewezen aan de rol eigenaar, bijdrager of netwerk bijdrager voor uw abonnement. Zie [ingebouwde rollen voor op rollen gebaseerd toegangs beheer voor Azure voor](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)meer informatie over het toewijzen van rollen aan accounts.
+    >Meld u aan met een account aan welke de rol Eigenaar, Inzender of Netwerkbijdrager is toegewezen voor uw abonnement. Zie Ingebouwde rollen voor op rollen gebaseerd toegangsbeheer van Azure voor meer informatie over het toewijzen van [rollen aan accounts.](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)
 
-2. Selecteer de naam van de virtuele machine waarvoor u gekoppelde netwerk interfaces wilt weer geven.
+2. Selecteer de naam van de VM waarvoor u gekoppelde netwerkinterfaces wilt weergeven.
 
-3. Selecteer in de menu balk van de VM de optie **netwerken**.
+3. Selecteer netwerken in de menubalk **van** de VM.
 
-Zie [netwerk interfaces beheren](virtual-network-network-interface.md)voor meer informatie over de instellingen van de netwerk interface en hoe u deze kunt wijzigen. Zie [IP-adressen van netwerk interfaces beheren](virtual-network-network-interface-addresses.md)voor meer informatie over het toevoegen, wijzigen of verwijderen van IP-adressen die zijn toegewezen aan een netwerk interface.
+Zie Netwerkinterfaces beheren voor meer informatie over netwerkinterface-instellingen en hoe u [deze kunt wijzigen.](virtual-network-network-interface.md) Zie IP-adressen van de netwerkinterface beheren voor meer informatie over het toevoegen, wijzigen of verwijderen van IP-adressen die zijn toegewezen aan een [netwerkinterface.](virtual-network-network-interface-addresses.md)
 
 ### <a name="commands"></a>Opdracht
 
 |Hulpprogramma|Opdracht|
 |---|---|
-|CLI|[AZ VM NIC-lijst](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-list)|
+|CLI|[az vm nic list](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_nic_list)|
 |PowerShell|[Get-AzVM](/powershell/module/az.compute/get-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
-## <a name="remove-a-network-interface-from-a-vm"></a>Een netwerk interface verwijderen van een virtuele machine
+## <a name="remove-a-network-interface-from-a-vm"></a>Een netwerkinterface van een VM verwijderen
 
-1. Ga naar de [Azure Portal](https://portal.azure.com) om een bestaande virtuele machine te vinden. Zoek en selecteer **virtuele machines**.
+1. Ga naar de [Azure Portal](https://portal.azure.com) een bestaande virtuele machine te zoeken. Zoek en selecteer **virtuele machines**.
 
-2. Selecteer de naam van de virtuele machine waarvoor u gekoppelde netwerk interfaces wilt weer geven.
+2. Selecteer de naam van de VM waarvoor u gekoppelde netwerkinterfaces wilt weergeven.
 
-3. Kies **stoppen** in de werk balk van de VM.
+3. Kies stoppen op de werkbalk van de **VM.**
 
-4. Wacht totdat de **status** van de VM is gewijzigd in **gestopt (toewijzing opgeheven)**.
+4. Wacht totdat de **status van** de VM is gewijzigd in **Gestopt (toewijzing is niet toegewezen).**
 
-5. Kies in de menu balk van de virtuele machine de netwerk interface netwerk **verbinding**  >  **verbreken**.
+5. Kies in de menubalk van de VM  >  **netwerkenNetwerkinterface loskoppelen.**
 
-6. Selecteer in het dialoog venster **netwerk interface ontkoppelen** de netwerk interface die u wilt loskoppelen. Selecteer vervolgens **OK**.
+6. Selecteer in **het dialoogvenster Netwerkinterface** loskoppelen de netwerkinterface die u wilt loskoppelen. Selecteer vervolgens **OK**.
 
     >[!NOTE]
-    >Als er slechts één netwerk interface wordt weer gegeven, kunt u deze niet loskoppelen omdat er altijd ten minste één netwerk interface aan een virtuele machine is gekoppeld.
+    >Als er slechts één netwerkinterface wordt vermeld, kunt u deze niet loskoppelen, omdat er altijd ten minste één netwerkinterface aan een virtuele machine moet zijn gekoppeld.
 
 ### <a name="commands"></a>Opdracht
 
 |Hulpprogramma|Opdracht|
 |---|---|
-|CLI|[AZ VM NIC Remove](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-remove) (naslag); [gedetailleerde stappen](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
-|PowerShell|[Remove-AzVMNetworkInterface](/powershell/module/az.compute/remove-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (verwijzing); [gedetailleerde stappen](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
+|CLI|[az vm nic remove](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_nic_remove) (reference); [gedetailleerde stappen](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
+|PowerShell|[Remove-AzVMNetworkInterface](/powershell/module/az.compute/remove-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (referentie); [gedetailleerde stappen](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
 
 ## <a name="constraints"></a>Beperkingen
 
-- Aan een virtuele machine moet ten minste één netwerk interface zijn gekoppeld.
+- Aan een VM moet ten minste één netwerkinterface zijn gekoppeld.
 
-- Een VM kan slechts net zoveel netwerk interfaces als de VM-grootte worden gekoppeld. Zie de grootten in azure voor [Linux vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het aantal netwerk interfaces dat elke VM-grootte ondersteunt. Alle grootten ondersteunen ten minste twee netwerk interfaces.
+- Aan een VM kunnen alleen net zoveel netwerkinterfaces zijn gekoppeld als de VM-grootte ondersteunt. Zie de grootten in Azure voor [Linux-VM's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-VM's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het aantal netwerkinterfaces dat door elke VM-grootte wordt ondersteund. Alle grootten ondersteunen ten minste twee netwerkinterfaces.
 
-- De netwerk interfaces die u aan een virtuele machine toevoegt, kunnen momenteel niet aan een andere virtuele machine worden gekoppeld. Zie [een netwerk interface maken](virtual-network-network-interface.md#create-a-network-interface)voor meer informatie over het maken van netwerk interfaces.
+- De netwerkinterfaces die u aan een VM toevoegt, kunnen momenteel niet worden gekoppeld aan een andere VM. Zie Een netwerkinterface maken voor meer informatie over het maken [van netwerkinterfaces.](virtual-network-network-interface.md#create-a-network-interface)
 
-- In het verleden kon u netwerk interfaces alleen toevoegen aan Vm's die ondersteuning voor meerdere netwerk interfaces hebben en zijn gemaakt met ten minste twee netwerk interfaces. U kunt geen netwerk interface toevoegen aan een virtuele machine die is gemaakt met één netwerk interface, zelfs als de VM-grootte meer dan een netwerk interface ondersteunt. U kunt echter alleen netwerk interfaces van een virtuele machine met ten minste drie netwerk interfaces verwijderen, omdat Vm's die zijn gemaakt met ten minste twee netwerk interfaces, altijd ten minste twee netwerk interfaces hadden. Deze beperkingen zijn niet meer van toepassing. U kunt nu een virtuele machine maken met een wille keurig aantal netwerk interfaces (Maxi maal het aantal dat wordt ondersteund door de VM-grootte).
+- In het verleden kon u alleen netwerkinterfaces toevoegen aan VM's die meerdere netwerkinterfaces ondersteunden en die zijn gemaakt met ten minste twee netwerkinterfaces. U kunt geen netwerkinterface toevoegen aan een VM die is gemaakt met één netwerkinterface, zelfs niet als de VM-grootte meer dan één netwerkinterface ondersteunt. U kunt daarentegen alleen netwerkinterfaces verwijderen van een VM met ten minste drie netwerkinterfaces, omdat VM's die zijn gemaakt met ten minste twee netwerkinterfaces altijd ten minste twee netwerkinterfaces moesten hebben. Deze beperkingen zijn niet meer van toepassing. U kunt nu een VM maken met een groot aantal netwerkinterfaces (tot het aantal dat wordt ondersteund door de VM-grootte).
 
-- De eerste netwerk interface die aan een virtuele machine is gekoppeld, is standaard de *primaire* netwerk interface. Alle andere netwerk interfaces in de VM zijn *secundaire* netwerk interfaces.
+- Standaard is de eerste netwerkinterface die is gekoppeld aan een VM de *primaire* netwerkinterface. Alle andere netwerkinterfaces in de VM zijn *secundaire* netwerkinterfaces.
 
-- U kunt bepalen met welke netwerk interface u uitgaand verkeer verzendt. Een virtuele machine verzendt standaard echter al het uitgaande verkeer naar het IP-adres dat is toegewezen aan de primaire IP-configuratie van de primaire netwerk interface.
+- U kunt bepalen naar welke netwerkinterface u uitgaand verkeer verzendt. Een VM verzendt echter standaard al het uitgaande verkeer naar het IP-adres dat is toegewezen aan de primaire IP-configuratie van de primaire netwerkinterface.
 
-- In het verleden moesten alle virtuele machines in dezelfde beschikbaarheidsset een enkele of meerdere netwerk interfaces hebben. Vm's met een wille keurig aantal netwerk interfaces kunnen nu in dezelfde beschikbaarheidsset bestaan, tot het aantal dat wordt ondersteund door de VM-grootte. U kunt alleen een virtuele machine toevoegen aan een beschikbaarheidsset wanneer deze wordt gemaakt. Zie [de beschik baarheid van vm's in azure beheren](../virtual-machines/availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over beschikbaarheids sets.
+- In het verleden moesten alle VM's binnen dezelfde beschikbaarheidsset één of meerdere netwerkinterfaces hebben. VM's met een groot aantal netwerkinterfaces kunnen nu bestaan in dezelfde beschikbaarheidsset, tot het aantal dat wordt ondersteund door de VM-grootte. U kunt alleen een VM toevoegen aan een beschikbaarheidsset wanneer deze wordt gemaakt. Zie De beschikbaarheid van VM's beheren in Azure voor meer [informatie over beschikbaarheidssets.](../virtual-machines/availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 
-- U kunt netwerk interfaces in dezelfde virtuele machine verbinden met verschillende subnetten binnen een virtueel netwerk. De netwerk interfaces moeten echter allemaal zijn verbonden met hetzelfde virtuele netwerk.
+- U kunt netwerkinterfaces in dezelfde VM verbinden met verschillende subnetten binnen een virtueel netwerk. De netwerkinterfaces moeten echter allemaal zijn verbonden met hetzelfde virtuele netwerk.
 
-- U kunt elk IP-adres voor elke IP-configuratie van een primaire of secundaire netwerk interface toevoegen aan een Azure Load Balancer back-end-pool. In het verleden kon alleen het primaire IP-adres voor de primaire netwerk interface worden toegevoegd aan een back-end-pool. Zie [IP-adressen toevoegen, wijzigen of verwijderen](virtual-network-network-interface-addresses.md)voor meer informatie over IP-adressen en configuraties.
+- U kunt elk IP-adres voor elke IP-configuratie van een primaire of secundaire netwerkinterface toevoegen aan Azure Load Balancer back-endpool. In het verleden kon alleen het primaire IP-adres voor de primaire netwerkinterface worden toegevoegd aan een back-endpool. Zie IP-adressen toevoegen, wijzigen of verwijderen voor meer informatie over [IP-adressen en configuraties.](virtual-network-network-interface-addresses.md)
 
-- Als u een virtuele machine verwijdert, worden de gekoppelde netwerk interfaces niet verwijderd. Wanneer u een virtuele machine verwijdert, worden de netwerk interfaces losgekoppeld van de virtuele machine. U kunt deze netwerk interfaces toevoegen aan verschillende Vm's of verwijderen.
+- Als u een VM verwijdert, worden de netwerkinterfaces die eraan zijn gekoppeld, niet verwijderd. Wanneer u een VM verwijdert, worden de netwerkinterfaces losgekoppeld van de VM. U kunt deze netwerkinterfaces toevoegen aan verschillende VM's of deze verwijderen.
 
-- Het bereiken van de optimale prestaties die worden gedocumenteerd, vereist versneld netwerken. In sommige gevallen moet u versneld netwerken expliciet inschakelen voor virtuele [Windows](create-vm-accelerated-networking-powershell.md) -of [Linux](create-vm-accelerated-networking-cli.md) -machines.
+- Voor het bereiken van de optimale gedocumenteerde prestaties is versneld netwerken vereist. In sommige gevallen moet u versneld netwerken expliciet inschakelen voor [virtuele Windows-](create-vm-accelerated-networking-powershell.md) of [Linux-machines.](create-vm-accelerated-networking-cli.md)
+
+[!INCLUDE [ephemeral-ip-note.md](../../includes/ephemeral-ip-note.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u een virtuele machine met meerdere netwerk interfaces of IP-adressen wilt maken, raadpleegt u:
+Zie voor het maken van een VM met meerdere netwerkinterfaces of IP-adressen:
 
 |Taak|Hulpprogramma|
 |---|---|
-|Een virtuele machine met meerdere NIC's maken|[Cli](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Power shell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
-|Eén NIC-VM met meerdere IPv4-adressen maken|[Cli](virtual-network-multiple-ip-addresses-cli.md), [Power shell](virtual-network-multiple-ip-addresses-powershell.md)|
-|Een enkele NIC-VM maken met een privé-IPv6-adres (achter een Azure Load Balancer)|[Cli](../load-balancer/load-balancer-ipv6-internet-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [power shell](../load-balancer/load-balancer-ipv6-internet-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Azure Resource Manager-sjabloon](../load-balancer/load-balancer-ipv6-internet-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+|Een virtuele machine met meerdere NIC's maken|[CLI,](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json) [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+|Een enkele NIC-VM met meerdere IPv4-adressen maken|[CLI,](virtual-network-multiple-ip-addresses-cli.md) [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)|
+|Maak één NIC-VM met een privé-IPv6-adres (achter een Azure Load Balancer)|[CLI,](../load-balancer/load-balancer-ipv6-internet-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json) [PowerShell](../load-balancer/load-balancer-ipv6-internet-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json)en [Azure Resource Manager sjabloon](../load-balancer/load-balancer-ipv6-internet-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|

@@ -1,41 +1,42 @@
 ---
-title: Op hosts gebaseerde versleuteling inschakelen op de Azure Kubernetes-service (AKS)
-description: Meer informatie over het configureren van een op een host gebaseerde versleuteling in een Azure Kubernetes service (AKS)-cluster
+title: Hostgebaseerde versleuteling inschakelen op Azure Kubernetes Service (AKS)
+description: Meer informatie over het configureren van een versleuteling op basis van een host in Azure Kubernetes Service AKS-cluster (AKS)
 services: container-service
 ms.topic: article
 ms.date: 03/03/2021
-ms.openlocfilehash: 6942a3d445892faf0ea0570561eb06019e841e23
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7eb3215aeb1f7c6508092d18fbebd90f852efe63
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106443188"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107772915"
 ---
-# <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Versleuteling op basis van een host op de Azure Kubernetes-service (AKS) (preview)
+# <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Hostgebaseerde versleuteling op Azure Kubernetes Service (AKS) (preview)
 
-Met versleuteling op basis van een host worden de gegevens die zijn opgeslagen op de VM-host van de virtuele machines van uw AKS-agent, versleuteld op rest en stromen die zijn versleuteld met de opslag service. Dit betekent dat de tijdelijke schijven in rust worden versleuteld met sleutels die door het platform worden beheerd. De cache van het besturings systeem en de gegevens schijven is versleuteld met door het platform beheerde sleutels of door de klant beheerde sleutels, afhankelijk van het versleutelings type dat op die schijven is ingesteld. Wanneer u AKS gebruikt, worden besturings systeem-en gegevens schijven standaard versleuteld met door het platform beheerde sleutels, wat inhoudt dat de caches voor deze schijven ook standaard versleuteld zijn met door het platform beheerde sleutels.  U kunt uw eigen beheerde sleutels opgeven na [het maken van uw eigen sleutels (BYOK) met Azure-schijven in de Azure Kubernetes-service](azure-disk-customer-managed-keys.md). De cache voor deze schijven wordt vervolgens ook versleuteld met behulp van de sleutel die u in deze stap opgeeft.
+Met versleuteling op basis van een host worden de gegevens die zijn opgeslagen op de VM-host van de VM-knooppunten van uw AKS-agentknooppunten in rust versleuteld en worden ze versleuteld naar de Storage-service verzonden. Dit betekent dat de tijdelijke schijven at-rest worden versleuteld met door het platform beheerde sleutels. De cache van besturingssysteem- en gegevensschijven wordt in rust versleuteld met door het platform beheerde sleutels of door de klant beheerde sleutels, afhankelijk van het versleutelingstype dat op deze schijven is ingesteld. Wanneer u AKS gebruikt, worden besturingssysteem- en gegevensschijven standaard in rust versleuteld met door het platform beheerde sleutels. Dit betekent dat de caches voor deze schijven standaard ook at-rest worden versleuteld met door het platform beheerde sleutels.  U kunt uw eigen beheerde sleutels opgeven aan de hand [van BYOK (Bring Your Own Keys) met Azure-schijven in Azure Kubernetes Service](azure-disk-customer-managed-keys.md). De cache voor deze schijven wordt vervolgens ook versleuteld met behulp van de sleutel die u in deze stap opgeeft.
 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Deze functie kan alleen worden ingesteld tijdens het maken van het cluster of het maken van een knooppunt groep.
+Deze functie kan alleen worden ingesteld tijdens het maken van het cluster of het maken van een knooppuntgroep.
 
 > [!NOTE]
-> Versleuteling op basis van een host is beschikbaar in [Azure-regio's][supported-regions] die ondersteuning bieden voor versleuteling aan de server zijde van Azure Managed disks en alleen met specifieke [ondersteunde VM-grootten][supported-sizes].
+> Hostversleuteling is [][supported-regions] beschikbaar in Azure-regio's die ondersteuning bieden voor versleuteling aan de serverzijde van beheerde Azure-schijven en alleen met specifieke [ondersteunde VM-grootten.][supported-sizes]
 
 ### <a name="prerequisites"></a>Vereisten
 
-- Zorg ervoor dat u de `aks-preview` cli-uitbrei ding v 0.4.73 of een hogere versie hebt geïnstalleerd.
-- Zorg ervoor dat u de `EnableEncryptionAtHostPreview` functie vlag onder `Microsoft.ContainerService` ingeschakeld hebt.
+- Zorg ervoor dat de `aks-preview` CLI-extensie v0.4.73 of hoger is geïnstalleerd.
+- Zorg ervoor dat de `EnableEncryptionAtHostPreview` functievlag `Microsoft.ContainerService` is ingeschakeld.
 
-U moet de functie voor uw abonnement inschakelen voordat u de eigenschap EncryptionAtHost voor uw Azure Kubernetes service-cluster gebruikt. Volg de onderstaande stappen om de functie in te scha kelen voor uw abonnement:
+U moet de functie voor uw abonnement inschakelen voordat u de eigenschap EncryptionAtHost gebruikt voor uw Azure Kubernetes Service cluster. Volg de onderstaande stappen om de functie voor uw abonnement in te stellen:
 
 1. Voer de volgende opdracht uit om de functie voor uw abonnement te registreren
 
 ```azurecli-interactive
 Register-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace "Microsoft.Compute"
 ```
-2. Controleer of de registratie status is geregistreerd (een paar minuten duurt) met behulp van de onderstaande opdracht voordat u de functie uitprobeert.
+2. Controleer of de registratie status Geregistreerd is (duurt enkele minuten) met behulp van de onderstaande opdracht voordat u de functie uitproprompt.
 
 ```azurecli-interactive
 Get-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace "Microsoft.Compute"
@@ -43,7 +44,7 @@ Get-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace "Micros
 
 ### <a name="install-aks-preview-cli-extension"></a>De CLI-extensie aks-preview installeren
 
-Als u een AKS-cluster wilt maken dat is gebaseerd op een host-gebaseerde versleuteling, hebt u de meest recente *AKS-preview cli-* extensie nodig. Installeer de Azure CLI *-extensie AKS-preview* met behulp van de opdracht [AZ extension add][az-extension-add] of Controleer of er beschik bare updates zijn met behulp van de opdracht [AZ extension update][az-extension-update] :
+Als u een AKS-cluster wilt maken dat op host gebaseerde versleuteling gebruikt, hebt u de nieuwste *CLI-extensie aks-preview* nodig. Installeer de *Azure CLI-extensie aks-preview* met de opdracht [az extension add][az-extension-add] of controleer op beschikbare updates met de opdracht az extension [update:][az-extension-update]
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -55,44 +56,44 @@ az extension update --name aks-preview
 
 ### <a name="limitations"></a>Beperkingen
 
-- Kan alleen worden ingeschakeld voor nieuwe knooppunt groepen.
-- Kan alleen worden ingeschakeld in [Azure-regio's][supported-regions] die ondersteuning bieden voor versleuteling aan de server zijde van Azure Managed disks en alleen met specifieke [ondersteunde VM-grootten][supported-sizes].
-- Vereist een AKS-cluster en-knooppunt groep op basis van Virtual Machine Scale Sets (VMSS) als *type VM-set*.
+- Kan alleen worden ingeschakeld voor nieuwe knooppuntgroepen.
+- Kan alleen worden [][supported-regions] ingeschakeld in Azure-regio's die ondersteuning bieden voor versleuteling aan de serverzijde van beheerde Azure-schijven en alleen met specifieke [ondersteunde VM-grootten.][supported-sizes]
+- Vereist een AKS-cluster en knooppuntgroep op basis van Virtual Machine Scale Sets (VMSS) als *VM-settype.*
 
-## <a name="use-host-based-encryption-on-new-clusters-preview"></a>Op hosts gebaseerde versleuteling gebruiken voor nieuwe clusters (preview-versie)
+## <a name="use-host-based-encryption-on-new-clusters-preview"></a>Op host gebaseerde versleuteling gebruiken op nieuwe clusters (preview)
 
-Configureer de cluster agent-knoop punten voor het gebruik van versleuteling op basis van een host wanneer het cluster wordt gemaakt. 
+Configureer de clusteragentknooppunten voor het gebruik van hostversleuteling wanneer het cluster wordt gemaakt. 
 
 ```azurecli-interactive
 az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --enable-encryption-at-host
 ```
 
-Als u clusters wilt maken zonder versleuteling op basis van een host, kunt u dit doen door de para meter weg te laten `--enable-encryption-at-host` .
+Als u clusters wilt maken zonder versleuteling op basis van een host, kunt u dit doen door de parameter weg te `--enable-encryption-at-host` laten.
 
-## <a name="use-host-based-encryption-on-existing-clusters-preview"></a>Op hosts gebaseerde versleuteling op bestaande clusters gebruiken (preview-versie)
+## <a name="use-host-based-encryption-on-existing-clusters-preview"></a>Op host gebaseerde versleuteling gebruiken voor bestaande clusters (preview)
 
-U kunt op een host gebaseerde versleuteling op bestaande clusters inschakelen door een nieuwe knooppunt groep toe te voegen aan uw cluster. Configureer een nieuwe knooppunt groep om versleuteling op basis van een host te gebruiken met behulp van de `--enable-encryption-at-host` para meter.
+U kunt hostgebaseerde versleuteling inschakelen voor bestaande clusters door een nieuwe knooppuntgroep toe te voegen aan uw cluster. Configureer een nieuwe knooppuntgroep voor het gebruik van versleuteling op basis van een host met behulp van de `--enable-encryption-at-host` parameter .
 
 ```azurecli
 az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --enable-encryption-at-host
 ```
 
-Als u nieuwe knooppunt groepen wilt maken zonder de op de host gebaseerde versleutelings functie, kunt u dit doen door de para meter weg te laten `--enable-encryption-at-host` .
+Als u nieuwe knooppuntgroepen wilt maken zonder de functie voor hostversleuteling, kunt u dit doen door de parameter weg te `--enable-encryption-at-host` laten.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Lees de [Aanbevolen procedures voor AKS-cluster beveiliging][best-practices-security] meer informatie over [op hosts gebaseerde versleuteling](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
+Bekijk [de best practices voor AKS-clusterbeveiliging][best-practices-security] Meer informatie over [versleuteling op basis van een host.](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 
 
 <!-- LINKS - external -->
 
 <!-- LINKS - internal -->
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
 [best-practices-security]: ./operator-best-practices-cluster-security.md
 [supported-regions]: ../virtual-machines/disk-encryption.md#supported-regions
 [supported-sizes]: ../virtual-machines/disk-encryption.md#supported-vm-sizes
 [azure-cli-install]: /cli/azure/install-azure-cli
-[az-feature-register]: /cli/azure/feature#az-feature-register
-[az-feature-list]: /cli/azure/feature#az-feature-list
-[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-feature-register]: /cli/azure/feature#az_feature_register
+[az-feature-list]: /cli/azure/feature#az_feature_list
+[az-provider-register]: /cli/azure/provider#az_provider_register

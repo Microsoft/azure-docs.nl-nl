@@ -4,12 +4,12 @@ description: Dit voorbeeldscript laat zien hoe u een toepassing kunt toevoegen v
 ms.topic: sample
 ms.date: 01/29/2018
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 414a401168b1b378ed33f4904607243de0267d22
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 06afb59a76e763c25e943c3be1531372a6bd2aa1
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94565803"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765260"
 ---
 # <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>CLI-voorbeeld: Een toepassing toevoegen aan een Azure Batch-account
 
@@ -38,14 +38,14 @@ Elke opdracht in de tabel is een koppeling naar opdracht-specifieke documentatie
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Hiermee maakt u een opslagaccount. |
-| [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Hiermee wordt de Batch-account gemaakt. |
-| [az batch account login](/cli/azure/batch/account#az-batch-account-login) | Hiermee wordt authenticatie uitgevoerd met het opgegeven Batch-account voor verdere interactie met de CLI.  |
-| [az batch application create](/cli/azure/batch/application#az-batch-application-create) | Hiermee wordt een toepassing gemaakt.  |
-| [az batch application package create](/cli/azure/batch/application/package#az-batch-application-package-create) | Hiermee voegt u een toepassingspakket toe aan de opgegeven toepassing.  |
-| [az batch application set](/cli/azure/batch/application#az-batch-application-set) | Hiermee worden de eigenschappen van een toepassing bijgewerkt.  |
-| [az group delete](/cli/azure/group#az-group-delete) | Hiermee verwijdert u een resourcegroep met inbegrip van alle geneste resources. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az storage account create](/cli/azure/storage/account#az_storage_account_create) | Hiermee maakt u een opslagaccount. |
+| [az batch account create](/cli/azure/batch/account#az_batch_account_create) | Hiermee wordt de Batch-account gemaakt. |
+| [az batch account login](/cli/azure/batch/account#az_batch_account_login) | Hiermee wordt authenticatie uitgevoerd met het opgegeven Batch-account voor verdere interactie met de CLI.  |
+| [az batch application create](/cli/azure/batch/application#az_batch-application-create) | Hiermee wordt een toepassing gemaakt.  |
+| [az batch application package create](/cli/azure/batch/application/package#az_batch-application-package-create) | Hiermee voegt u een toepassingspakket toe aan de opgegeven toepassing.  |
+| [az batch application set](/cli/azure/batch/application#az_batch-application-set) | Hiermee worden de eigenschappen van een toepassing bijgewerkt.  |
+| [az group delete](/cli/azure/group#az_group_delete) | Hiermee verwijdert u een resourcegroep met inbegrip van alle geneste resources. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

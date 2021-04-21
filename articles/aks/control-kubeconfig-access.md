@@ -1,59 +1,59 @@
 ---
-title: Beperk de toegang tot kubeconfig in azure Kubernetes service (AKS)
-description: Meer informatie over het beheren van de toegang tot het Kubernetes-configuratie bestand (kubeconfig) voor cluster beheerders en cluster gebruikers
+title: Toegang tot kubeconfig beperken in Azure Kubernetes Service (AKS)
+description: Meer informatie over het beheer van de toegang tot het Kubernetes-configuratiebestand (kubeconfig) voor clusterbeheerders en clustergebruikers
 services: container-service
 ms.topic: article
 ms.date: 05/06/2020
-ms.openlocfilehash: 77b9988557106ef460d3b222ef85eb29e08f31c8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 279ca9800d7d721cc2e77d269cb577d8bd166d41
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97693989"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107765553"
 ---
-# <a name="use-azure-role-based-access-control-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Gebruik Azure op rollen gebaseerd toegangs beheer voor het definiëren van toegang tot het Kubernetes-configuratie bestand in azure Kubernetes service (AKS)
+# <a name="use-azure-role-based-access-control-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Op rollen gebaseerd toegangsbeheer van Azure gebruiken om toegang tot het Kubernetes-configuratiebestand in Azure Kubernetes Service (AKS) te definiëren
 
-U kunt met het hulp programma communiceren met Kubernetes-clusters `kubectl` . De Azure CLI biedt een eenvoudige manier om de toegangs referenties en configuratie gegevens op te halen om verbinding te maken met uw AKS-clusters met behulp van `kubectl` . Als u wilt beperken wie de gegevens van de Kubernetes-configuratie (*kubeconfig*) kan ophalen en de machtigingen die ze hebben, wilt beperken, kunt u gebruikmaken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
+U kunt communiceren met Kubernetes-clusters met behulp van het `kubectl` hulpprogramma . De Azure CLI biedt een eenvoudige manier om de toegangsreferenties en configuratiegegevens op te halen om verbinding te maken met uw AKS-clusters met behulp van `kubectl` . Als u wilt beperken wie die Kubernetes-configuratiegegevens *(kubeconfig)* kan ontvangen en de machtigingen die ze vervolgens hebben, wilt beperken, kunt u op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) gebruiken.
 
-In dit artikel wordt beschreven hoe u Azure-rollen toewijst die de configuratie gegevens voor een AKS-cluster kunnen beperken.
+In dit artikel wordt beschreven hoe u Azure-rollen toewijst die beperken wie de configuratiegegevens voor een AKS-cluster kan krijgen.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
+In dit artikel wordt ervan uitgenomen dat u een bestaand AKS-cluster hebt. Als u een AKS-cluster nodig hebt, bekijkt u de AKS-quickstart met behulp van [de Azure CLI][aks-quickstart-cli] of met behulp van de [Azure Portal][aks-quickstart-portal].
 
-Voor dit artikel moet u ook de Azure CLI-versie 2.0.65 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Voor dit artikel moet u ook Azure CLI versie 2.0.65 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
-## <a name="available-cluster-roles-permissions"></a>Beschik bare machtigingen voor cluster rollen
+## <a name="available-cluster-roles-permissions"></a>Beschikbare machtigingen voor clusterrollen
 
-Wanneer u met het hulp programma met een AKS-cluster communiceert `kubectl` , wordt er een configuratie bestand gebruikt waarmee de verbindings gegevens van de cluster worden gedefinieerd. Dit configuratie bestand wordt doorgaans opgeslagen in *~/.Kube/config*. Er kunnen meerdere clusters worden gedefinieerd in dit *kubeconfig* -bestand. U schakelt tussen clusters met behulp van de opdracht [kubectl config use-context][kubectl-config-use-context] .
+Wanneer u met een AKS-cluster communiceert met behulp van het hulpprogramma , wordt een configuratiebestand gebruikt waarmee informatie over de `kubectl` clusterverbinding wordt bepaald. Dit configuratiebestand wordt doorgaans opgeslagen in *~/.kube/config.* In dit *kubeconfig-bestand* kunnen meerdere clusters worden gedefinieerd. U schakelt tussen clusters met behulp van de [opdracht kubectl config use-context.][kubectl-config-use-context]
 
-Met de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] kunt u de toegangs referenties voor een AKS-cluster ophalen en deze samen voegen in het *kubeconfig* -bestand. U kunt Azure RBAC (op rollen gebaseerd toegangs beheer) gebruiken om de toegang tot deze referenties te beheren. Met deze Azure-rollen kunt u bepalen wie het *kubeconfig* -bestand kan ophalen en welke machtigingen ze vervolgens hebben in het cluster.
+Met [de opdracht az aks get-credentials][az-aks-get-credentials] kunt u de toegangsreferenties voor een AKS-cluster op halen en deze samenvoegen in het *kubeconfig-bestand.* U kunt op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) gebruiken om de toegang tot deze referenties te controleren. Met deze Azure-rollen kunt u definiëren wie het *kubeconfig-bestand* kan ophalen en welke machtigingen ze vervolgens binnen het cluster hebben.
 
 De twee ingebouwde rollen zijn:
 
-* **Rol van Cluster beheerder voor Azure Kubernetes-service**  
-  * Hiermee hebt u toegang tot *micro soft. container service/managedClusters/listClusterAdminCredential/Action* API call. Deze API-aanroep [vermeldt de cluster beheerders referenties][api-cluster-admin].
-  * Down load *kubeconfig* voor de *clusterAdmin* -rol.
-* **Gebruikersrol Azure Kubernetes service-cluster**
-  * Hiermee hebt u toegang tot *micro soft. container service/managedClusters/listClusterUserCredential/Action* API call. Deze API-aanroep [vermeldt de gebruikers referenties van het cluster][api-cluster-user].
-  * Downloadt *kubeconfig* voor de *clusterUser* -rol.
+* **Azure Kubernetes Service clusterbeheerdersrol**  
+  * Hiermee krijgt u toegang tot de API-aanroep *Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action.* Met deze [API-aanroep worden de beheerdersreferenties van het cluster vermeld.][api-cluster-admin]
+  * Hiermee *downloadt u kubeconfig* voor de *rol clusterAdmin.*
+* **Azure Kubernetes Service clustergebruikersrol**
+  * Hiermee staat u toegang *tot de API-aanroep Microsoft.ContainerService/managedClusters/listClusterUserCredential/action* toe. Met deze [API-aanroep worden de gebruikersreferenties van het cluster vermeld.][api-cluster-user]
+  * Downloadt *kubeconfig* voor *clusterUser* role.
 
-Deze Azure-rollen kunnen worden toegepast op een Azure Active Directory (AD) gebruiker of groep.
+Deze Azure-rollen kunnen worden toegepast op een Azure Active Directory (AD)-gebruiker of -groep.
 
 > [!NOTE]
-> Voor clusters die gebruikmaken van Azure AD, hebben gebruikers met de rol *clusterUser* een leeg *kubeconfig* -bestand waarin wordt gevraagd om zich aan te melden. Wanneer gebruikers eenmaal zijn aangemeld, hebben ze toegang tot de gebruikers-of groeps instellingen van Azure AD. Gebruikers met de rol *clusterAdmin* hebben beheerders toegang.
+> Op clusters die gebruikmaken van Azure AD hebben gebruikers met de *rol clusterUser* een leeg *kubeconfig-bestand* dat om een aanmeldprompt vraagt. Nadat gebruikers zijn aangemeld, hebben ze toegang op basis van hun Azure AD-gebruikers- of -groepsinstellingen. Gebruikers met de *rol clusterAdmin* hebben beheerderstoegang.
 >
-> Clusters die niet gebruikmaken van Azure AD, maken alleen gebruik van de functie *clusterAdmin* .
+> Clusters die niet gebruikmaken van Azure AD, gebruiken alleen de *rol clusterAdmin.*
 
-## <a name="assign-role-permissions-to-a-user-or-group"></a>Rollen machtigingen toewijzen aan een gebruiker of groep
+## <a name="assign-role-permissions-to-a-user-or-group"></a>Rolmachtigingen toewijzen aan een gebruiker of groep
 
-Als u een van de beschik bare rollen wilt toewijzen, moet u de resource-ID van het AKS-cluster en de ID van de Azure AD-gebruikers account of-groep ophalen. De volgende voorbeeld opdrachten:
+Als u een van de beschikbare rollen wilt toewijzen, moet u de resource-id van het AKS-cluster en de id van het Azure AD-gebruikersaccount of -groep verkrijgen. De volgende voorbeeldopdrachten:
 
-* Haal de cluster bron-ID op met behulp van de opdracht [AZ AKS show][az-aks-show] voor het cluster met de naam *myAKSCluster* in de resource groep *myResourceGroup* . Geef uw eigen cluster en de naam van de resource groep op, indien nodig.
-* Gebruik de opdracht [AZ account show][az-account-show] en [AZ AD User show][az-ad-user-show] om uw gebruikers-id op te halen.
-* Wijs tot slot een rol toe met behulp van de opdracht [AZ Role Assignment Create][az-role-assignment-create] .
+* Haal de clusterresource-id op met behulp van [de opdracht az aks show][az-aks-show] voor het cluster met de naam *myAKSCluster* in de resourcegroep *myResourceGroup.* Geef waar nodig de naam van uw eigen cluster en resourcegroep op.
+* Gebruik de [opdrachten az account show en][az-account-show] az ad user show [om][az-ad-user-show] uw gebruikers-id op te halen.
+* Wijs ten slotte een rol toe met behulp [van de opdracht az role assignment create.][az-role-assignment-create]
 
-In het volgende voor beeld wordt de *rol Azure Kubernetes service cluster admin* toegewezen aan een afzonderlijke gebruikers account:
+In het volgende voorbeeld wordt de *Azure Kubernetes Service clusterbeheerdersrol toegewezen* aan een afzonderlijk gebruikersaccount:
 
 ```azurecli-interactive
 # Get the resource ID of your AKS cluster
@@ -71,7 +71,7 @@ az role assignment create \
 ```
 
 > [!IMPORTANT]
-> In sommige gevallen wijkt de *User.name* in het account af van de *userPrincipalName*, zoals met Azure AD-gast gebruikers:
+> In sommige gevallen is *de user.name* in het account anders dan de *userPrincipalName,* zoals bij Gastgebruikers van Azure AD:
 >
 > ```output
 > $ az account show --query user.name -o tsv
@@ -80,18 +80,18 @@ az role assignment create \
 > user_contoso.com#EXT#@contoso.onmicrosoft.com
 > ```
 >
-> In dit geval stelt u de waarde van *ACCOUNT_UPN* in op de *userPrincipalName* van de Azure AD-gebruiker. Als uw account bijvoorbeeld *User.name* is, is *gebruikers \@ contoso.com*:
+> In dit geval stelt u de waarde van *ACCOUNT_UPN* in op *de userPrincipalName* van de Azure AD-gebruiker. Als uw *account* bijvoorbeeld user.name gebruiker *is, contoso.com \@*:
 > 
 > ```azurecli-interactive
 > ACCOUNT_UPN=$(az ad user list --query "[?contains(otherMails,'user@contoso.com')].{UPN:userPrincipalName}" -o tsv)
 > ```
 
 > [!TIP]
-> Als u machtigingen wilt toewijzen aan een Azure AD-groep, werkt u de `--assignee` para meter die wordt weer gegeven in het vorige voor beeld bij met de object-id voor de *groep* in plaats van een *gebruiker*. Als u de object-ID voor een groep wilt ophalen, gebruikt u de opdracht [AZ Ad Group show][az-ad-group-show] . In het volgende voor beeld wordt de object-ID van de Azure AD-groep met de naam *appdev* opgehaald: `az ad group show --group appdev --query objectId -o tsv`
+> Als u machtigingen wilt toewijzen aan een Azure AD-groep, moet u de parameter uit het vorige voorbeeld bijwerken met de object-id voor de groep in plaats van `--assignee` een *gebruiker*.  Gebruik de opdracht [az ad group show][az-ad-group-show] om de object-id voor een groep op te halen. In het volgende voorbeeld wordt de object-id voor de Azure AD-groep met de *naam appdev opgeslagen:*`az ad group show --group appdev --query objectId -o tsv`
 
-U kunt de voor gaande toewijzing wijzigen naar de *gebruikersrol cluster* als dat nodig is.
+U kunt de vorige  toewijzing naar behoefte wijzigen in de clustergebruikersrol.
 
-In de volgende voorbeeld uitvoer ziet u dat de roltoewijzing is gemaakt:
+In de volgende voorbeelduitvoer ziet u dat de roltoewijzing is gemaakt:
 
 ```
 {
@@ -106,15 +106,15 @@ In de volgende voorbeeld uitvoer ziet u dat de roltoewijzing is gemaakt:
 }
 ```
 
-## <a name="get-and-verify-the-configuration-information"></a>De configuratie gegevens ophalen en verifiëren
+## <a name="get-and-verify-the-configuration-information"></a>De configuratiegegevens op halen en controleren
 
-Als u Azure-rollen hebt toegewezen, gebruikt u de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] om de *kubeconfig* -definitie voor uw AKS-cluster op te halen. In het volgende voor beeld worden de referenties van de *beheerder* opgehaald, die goed werken als de gebruiker de *rol cluster beheerder* heeft gekregen:
+Als Azure-rollen zijn toegewezen, gebruikt u de opdracht [az aks get-credentials][az-aks-get-credentials] om de *kubeconfig-definitie* voor uw AKS-cluster op te halen. In het volgende voorbeeld worden *de referenties --admin* opgeslagen, die correct werken als aan de gebruiker de *rol Clusterbeheerder is verleend:*
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --admin
 ```
 
-U kunt vervolgens de [kubectl-configuratie weergave][kubectl-config-view] opdracht gebruiken om te controleren of de *context* van het cluster laat zien dat de informatie over de beheer configuratie is toegepast:
+U kunt vervolgens de [opdracht kubectl config view][kubectl-config-view] gebruiken om te controleren of de *context* voor het cluster laat zien dat de configuratiegegevens van de beheerder zijn toegepast:
 
 ```
 $ kubectl config view
@@ -143,7 +143,7 @@ users:
 
 ## <a name="remove-role-permissions"></a>Rolmachtigingen verwijderen
 
-Als u roltoewijzingen wilt verwijderen, gebruikt u de opdracht [AZ Role Assignment delete][az-role-assignment-delete] . Geef de account-ID en de cluster bron-ID op, zoals deze in de vorige opdrachten zijn verkregen. Als u de rol hebt toegewezen aan een groep in plaats van een gebruiker, geeft u de juiste groeps object-ID op in plaats van account object-ID voor de `--assignee` para meter:
+Als u roltoewijzingen wilt verwijderen, gebruikt [u de opdracht az role assignment delete.][az-role-assignment-delete] Geef de account-id en clusterresource-id op, zoals verkregen in de vorige opdrachten. Als u de rol hebt toegewezen aan een groep in plaats van een gebruiker, geeft u de juiste groepsobject-id op in plaats van accountobject-id voor de `--assignee` parameter:
 
 ```azurecli-interactive
 az role assignment delete --assignee $ACCOUNT_ID --scope $AKS_CLUSTER
@@ -151,7 +151,7 @@ az role assignment delete --assignee $ACCOUNT_ID --scope $AKS_CLUSTER
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor een betere beveiliging van de toegang tot AKS-clusters, [integreert u Azure Active Directory-verificatie][aad-integration].
+Voor verbeterde beveiliging bij toegang tot AKS-clusters integreert [u Azure Active Directory verificatie][aad-integration].
 
 <!-- LINKS - external -->
 [kubectl-config-use-context]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#config
@@ -161,14 +161,14 @@ Voor een betere beveiliging van de toegang tot AKS-clusters, [integreert u Azure
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [azure-cli-install]: /cli/azure/install-azure-cli
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[az-aks-get-credentials]: /cli/azure/aks#az_aks_get_credentials
 [azure-rbac]: ../role-based-access-control/overview.md
 [api-cluster-admin]: /rest/api/aks/managedclusters/listclusteradmincredentials
 [api-cluster-user]: /rest/api/aks/managedclusters/listclusterusercredentials
-[az-aks-show]: /cli/azure/aks#az-aks-show
-[az-account-show]: /cli/azure/account#az-account-show
-[az-ad-user-show]: /cli/azure/ad/user#az-ad-user-show
-[az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
-[az-role-assignment-delete]: /cli/azure/role/assignment#az-role-assignment-delete
+[az-aks-show]: /cli/azure/aks#az_aks_show
+[az-account-show]: /cli/azure/account#az_account_show
+[az-ad-user-show]: /cli/azure/ad/user#az_ad_user_show
+[az-role-assignment-create]: /cli/azure/role/assignment#az_role_assignment_create
+[az-role-assignment-delete]: /cli/azure/role/assignment#az_role_assignment_delete
 [aad-integration]: ./azure-ad-integration-cli.md
-[az-ad-group-show]: /cli/azure/ad/group#az-ad-group-show
+[az-ad-group-show]: /cli/azure/ad/group#az_ad_group_show

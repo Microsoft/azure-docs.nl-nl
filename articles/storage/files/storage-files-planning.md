@@ -1,6 +1,6 @@
 ---
 title: Planning voor een Azure Files implementatie | Microsoft Docs
-description: Inzicht in het plannen van Azure Files implementatie. U kunt een Azure-bestands share direct aan een account toevoegen of de Azure-bestands share on-premises in de cache opslaan met Azure File Sync.
+description: Meer inzicht in het plannen van Azure Files implementatie. U kunt een Azure-bestands share direct aan een account toevoegen of de Azure-bestands share on-premises in de cache opslaan met Azure File Sync.
 author: roygara
 ms.service: storage
 ms.topic: conceptual
@@ -8,21 +8,21 @@ ms.date: 03/23/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 2cb3bee770653173f1a40b209c27d2dc92c7df11
-ms.sourcegitcommit: 79c9c95e8a267abc677c8f3272cb9d7f9673a3d7
+ms.openlocfilehash: be7e5b1f9721cc65c2f9b371becf8b4c82fb37b4
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107718031"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107759758"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure Files](storage-files-introduction.md) kunnen op twee belangrijke manieren worden geïmplementeerd: door de serverloze Azure-bestands shares rechtstreeks te mounten of door Azure-bestands shares on-premises op te Azure File Sync. Met welke implementatieoptie u kiest, wijzigt u de zaken die u moet overwegen bij het plannen van uw implementatie. 
 
-- **Directe** bevestiging van een Azure-bestands share: omdat Azure Files toegang biedt tot Server Message Block (SMB) of Network File System (NFS), kunt u Azure-bestands shares on-premises of in de cloud aan elkaar toevoegen met behulp van de standaard-SMB- of NFS-clients die beschikbaar zijn in uw besturingssysteem. Omdat Azure-bestands shares serverloos zijn, is voor implementatie voor productiescenario's geen beheer van een bestandsserver of NAS-apparaat vereist. Dit betekent dat u geen softwarepatches hoeft toe te passen of fysieke schijven hoeft te verwisselen. 
+- **Directe** bevestiging van een Azure-bestands share: omdat Azure Files toegang biedt tot Server Message Block (SMB) of Network File System (NFS), kunt u Azure-bestands shares on-premises of in de cloud met behulp van de standaard SMB- of NFS-clients die beschikbaar zijn in uw besturingssysteem. Omdat Azure-bestands shares serverloos zijn, is voor implementatie voor productiescenario's geen beheer van een bestandsserver of NAS-apparaat vereist. Dit betekent dat u geen softwarepatches hoeft toe te passen of fysieke schijven hoeft te verwisselen. 
 
 - **Azure-bestands share on-premises** cachen met Azure File Sync: met Azure File Sync kunt u de bestands shares van uw organisatie centraliseren in Azure Files, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises bestandsserver be behouden. Azure File Sync transformeert een on-premises (of cloud) Windows Server naar een snelle cache van uw Azure SMB-bestands share. 
 
-In dit artikel worden met name overwegingen voor de implementatie van een Azure-bestands share beschreven die rechtstreeks door een on-premises client of cloudclient moeten worden bevestigd. Zie Planning for an Azure File Sync deployment (Planning voor een Azure File Sync [implementatie) als u](storage-sync-files-planning.md)een Azure File Sync wilt plannen.
+In dit artikel worden met name overwegingen voor implementaties beschreven voor het implementeren van een Azure-bestands share die rechtstreeks door een on-premises client of cloudclient kan worden bevestigd. Zie Planning for an Azure File Sync deployment (Planning voor een Azure File Sync [implementatie) als u](../file-sync/file-sync-planning.md)een Azure File Sync wilt plannen.
 
 ## <a name="available-protocols"></a>Beschikbare protocollen
 
@@ -46,14 +46,14 @@ Wanneer u Azure-bestands shares implementeert in opslagaccounts, raden we het vo
 Voor toegang tot een Azure-bestands share moet de gebruiker van de bestands share worden geverifieerd en zijn autorisatie hebben voor toegang tot de share. Dit wordt gedaan op basis van de identiteit van de gebruiker die toegang heeft tot de bestands share. Azure Files kan worden geïntegreerd met drie hoofdidentiteitsproviders:
 - **On-premises Active Directory Domain Services (AD DS of on-premises AD DS)**: Azure-opslagaccounts kunnen net als een Windows Server-bestandsserver of NAS-apparaat lid worden van een domein dat eigendom is van de klant, Active Directory Domain Services. U kunt een domeincontroller on-premises, in een Azure-VM of zelfs als een VM in een andere cloudprovider implementeren; Azure Files is onafhankelijk van waar uw domeincontroller wordt gehost. Zodra een opslagaccount lid is van een domein, kan de eindgebruiker een bestands share aan het gebruikersaccount toevoegen dat hij/zij heeft aangemeld bij zijn pc. Verificatie op basis van AD maakt gebruik van het Kerberos-verificatieprotocol.
 - **Azure Active Directory Domain Services (Azure AD DS)**: Azure AD DS biedt een door Microsoft beheerde domeincontroller die kan worden gebruikt voor Azure-resources. Domein dat uw opslagaccount aan Azure AD DS biedt vergelijkbare voordelen als domein toevoegen aan een Active Directory die eigendom is van de klant. Deze implementatieoptie is het handigst voor lift-and-shift-scenario's voor toepassingen waarvoor AD-machtigingen zijn vereist. Omdat Azure AD DS ad-verificatie biedt, maakt deze optie ook gebruik van het Kerberos-verificatieprotocol.
-- **Azure-opslagaccountsleutel:** Azure-bestands shares kunnen ook worden bevestigd met een Azure-opslagaccountsleutel. Als u een bestands share op deze manier wilt toevoegen, wordt de naam van het opslagaccount gebruikt als de gebruikersnaam en wordt de sleutel van het opslagaccount gebruikt als wachtwoord. Het gebruik van de sleutel van het opslagaccount om de Azure-bestands share te mounten is in de meeste plaats een beheerdersbewerking, omdat de aan de share geplaatste bestands share volledige machtigingen heeft voor alle bestanden en mappen op de share, zelfs als deze ACL's hebben. Wanneer u de sleutel van het opslagaccount gebruikt om te worden bevestigd via SMB, wordt het NTLMv2-verificatieprotocol gebruikt.
+- **Azure-opslagaccountsleutel:** Azure-bestands shares kunnen ook worden bevestigd met een Azure-opslagaccountsleutel. Als u een bestands share op deze manier wilt toevoegen, wordt de naam van het opslagaccount gebruikt als de gebruikersnaam en wordt de sleutel van het opslagaccount gebruikt als wachtwoord. Het gebruik van de sleutel van het opslagaccount voor het toevoegen van de Azure-bestands share is in de meeste plaats een beheerdersbewerking, omdat de bestands share volledige machtigingen heeft voor alle bestanden en mappen op de share, zelfs als deze ACL's hebben. Wanneer u de sleutel van het opslagaccount gebruikt om te worden bevestigd via SMB, wordt het NTLMv2-verificatieprotocol gebruikt.
 
 Voor klanten die migreren van on-premises bestandsservers of voor het maken van nieuwe bestands shares in Azure Files bedoeld om zich te gedragen als Windows-bestandsservers of NAS-apparaten, is domein dat uw opslagaccount lid maakt van **Active Directory van** de klant de aanbevolen optie. Zie Active Directory-overzicht voor meer informatie over het toevoegen van uw opslagaccount aan een Active Directory van de klant [Azure Files active directory.](storage-files-active-directory-overview.md)
 
 Als u van plan bent om de sleutel van het opslagaccount te gebruiken voor toegang tot uw Azure-bestands shares, raden we u aan service-eindpunten te gebruiken, zoals beschreven in de [sectie](#networking) Netwerken.
 
 ## <a name="networking"></a>Netwerken
-Azure-bestands shares zijn overal toegankelijk via het openbare eindpunt van het opslagaccount. Dit betekent dat geverifieerde aanvragen, zoals aanvragen die zijn geautoriseerd door de aanmeldingsidentiteit van een gebruiker, veilig kunnen zijn van binnen of buiten Azure. In veel klantomgevingen kan een initiële koppeling van de Azure-bestandsshare op uw on-premises werkstation mislukken, zelfs als het wel lukt om Azure-VM's te koppelen. De reden hiervoor is dat veel organisaties en internetproviders (ISP's) de poort blokkeren die door SMB wordt gebruikt voor communicatie: poort 445. Ga naar [TechNet](https://social.technet.microsoft.com/wiki/contents/articles/32346.azure-summary-of-isps-that-allow-disallow-access-from-port-445.aspx) voor een overzicht van welke internetproviders toegang via poort 445 toestaan en welke niet.
+Azure-bestands shares zijn vanaf elke locatie toegankelijk via het openbare eindpunt van het opslagaccount. Dit betekent dat geverifieerde aanvragen, zoals aanvragen die zijn geautoriseerd door de aanmeldingsidentiteit van een gebruiker, veilig kunnen zijn van binnen of buiten Azure. In veel klantomgevingen kan een initiële koppeling van de Azure-bestandsshare op uw on-premises werkstation mislukken, zelfs als het wel lukt om Azure-VM's te koppelen. De reden hiervoor is dat veel organisaties en internetproviders (ISP's) de poort blokkeren die door SMB wordt gebruikt voor communicatie: poort 445. Ga naar [TechNet](https://social.technet.microsoft.com/wiki/contents/articles/32346.azure-summary-of-isps-that-allow-disallow-access-from-port-445.aspx) voor een overzicht van welke internetproviders toegang via poort 445 toestaan en welke niet.
 
 Als u de toegang tot uw Azure-bestands share wilt deblokkeren, hebt u twee hoofdopties:
 
@@ -70,7 +70,7 @@ Hoewel het vanuit technisch oogpunt aanzienlijk eenvoudiger is om uw Azure-besta
 Als u de netwerken wilt plannen die zijn gekoppeld aan het implementeren van een Azure-bestands share, Azure Files [aandachtspunten voor netwerken.](storage-files-networking-overview.md)
 
 ## <a name="encryption"></a>Versleuteling
-Azure Files ondersteunt twee verschillende soorten versleuteling: versleuteling 'in transit', die betrekking heeft op de versleuteling die wordt gebruikt bij het mounteren/openen van de Azure-bestands share, en versleuteling-at-rest, die betrekking heeft op de manier waarop de gegevens worden versleuteld wanneer ze op schijf worden opgeslagen. 
+Azure Files ondersteunt twee verschillende soorten versleuteling: versleuteling in transit, die betrekking heeft op de versleuteling die wordt gebruikt bij het toevoegen/openen van de Azure-bestands share, en versleuteling in rust, die betrekking heeft op hoe de gegevens worden versleuteld wanneer deze op schijf worden opgeslagen. 
 
 ### <a name="encryption-in-transit"></a>Versleuteling tijdens overdracht
 
@@ -89,34 +89,34 @@ Zie [Veilige overdracht vereisen in Azure Storage](../common/storage-require-sec
 [!INCLUDE [storage-files-encryption-at-rest](../../../includes/storage-files-encryption-at-rest.md)]
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
-Azure Files een aanpak met meerdere lagen om ervoor te zorgen dat er een back-up van uw gegevens wordt gemaakt, herstelbaar is en wordt beschermd tegen beveiligingsrisico's.
+Azure Files een aanpak met meerdere lagen om ervoor te zorgen dat er een back-up van uw gegevens wordt gemaakt, herstelbaar en beschermd tegen beveiligingsrisico's.
 
 ### <a name="soft-delete"></a>Voorlopig verwijderen
 Soft Delete voor bestands shares (preview) is een instelling op opslagaccountniveau waarmee u de bestands share kunt herstellen wanneer deze per ongeluk wordt verwijderd. Wanneer een bestands share wordt verwijderd, wordt deze overgeslagen naar een voorlopig verwijderde status in plaats van permanent te worden gewist. U kunt configureren hoe lang tijdelijke verwijderde gegevens kunnen worden hersteld voordat ze permanent worden verwijderd en de share op elk gewenst moment verwijderen tijdens deze bewaarperiode. 
 
-We raden u aan om voor de meeste bestands shares de knop Voor het verwijderen van bestanden in te laten. Als u een werkstroom hebt waarin het verwijderen van een share gebruikelijk en verwacht is, kunt u besluiten een korte retentieperiode in te stellen of helemaal geen zachte verwijdering in te stellen.
+We raden u aan om voor de meeste bestands shares de knop Voor het verwijderen van bestanden in te- of uitschakelen. Als u een werkstroom hebt waarin het verwijderen van een share gebruikelijk en verwacht is, kunt u besluiten een korte retentieperiode in te stellen of helemaal geen zachte verwijdering in te stellen.
 
 Zie Onopzettelijk verwijderen van gegevens voorkomen [voor meer informatie over het verwijderen van gegevens.](./storage-files-prevent-file-share-deletion.md)
 
 ### <a name="backup"></a>Backup
-U kunt een back-up maken van uw Azure-bestands share via [share-momentopnamen.](./storage-snapshots-files.md)Dit zijn alleen-lezen, point-in-time kopieën van uw share. Momentopnamen zijn incrementeel, wat betekent dat ze alleen zoveel gegevens bevatten als sinds de vorige momentopname is gewijzigd. U kunt maximaal 200 momentopnamen per bestands share hebben en deze maximaal tien jaar bewaren. U kunt deze momentopnamen handmatig maken in de Azure Portal, via PowerShell of via de opdrachtregelinterface (CLI), of u kunt [Azure Backup.](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) Momentopnamen worden opgeslagen in uw bestands share, wat betekent dat als u uw bestands share verwijdert, uw momentopnamen ook worden verwijderd. Als u de back-ups van momentopnamen wilt beveiligen tegen onbedoeld verwijderen, moet u ervoor zorgen dat het verwijderen van de momentopname is ingeschakeld voor uw share.
+U kunt een back-up maken van uw Azure-bestands share via [momentopnamen](./storage-snapshots-files.md)van de share. Dit zijn alleen-lezen, point-in-time kopieën van uw share. Momentopnamen zijn incrementeel, wat betekent dat ze alleen zoveel gegevens bevatten als sinds de vorige momentopname is gewijzigd. U kunt maximaal 200 momentopnamen per bestands share hebben en deze maximaal tien jaar bewaren. U kunt deze momentopnamen handmatig maken in de Azure Portal, via PowerShell of via de opdrachtregelinterface (CLI), of u kunt [Azure Backup.](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) Momentopnamen worden opgeslagen in uw bestands share, wat betekent dat als u uw bestands share verwijdert, uw momentopnamen ook worden verwijderd. Als u de back-ups van momentopnamen wilt beveiligen tegen onbedoeld verwijderen, moet u ervoor zorgen dat de functie voor het verwijderen van de momentopname is ingeschakeld voor uw share.
 
-[Azure Backup voor Azure-bestands shares](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) worden de planning en retentie van momentopnamen verwerkt. De mogelijkheden van zijn vader-vader-zoon (GFS) betekenen dat u dagelijkse, wekelijkse, maandelijkse en jaarlijkse momentopnamen kunt maken, elk met hun eigen afzonderlijke retentieperiode. Azure Backup ook de inschakelen van de functie voor soft delete in en wordt een verwijdervergrendeling voor een opslagaccount ingeschakeld zodra een bestandsdeling in het account is geconfigureerd voor back-up. Ten laatste biedt Azure Backup bepaalde mogelijkheden voor sleutelbewaking en waarschuwingen waarmee klanten een geconsolideerde weergave van hun back-up kunnen hebben.
+[Azure Backup voor Azure-bestands shares](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) worden de planning en retentie van momentopnamen verwerkt. De mogelijkheden van zijn vader-vader-zoon (GFS) betekenen dat u dagelijkse, wekelijkse, maandelijkse en jaarlijkse momentopnamen kunt maken, elk met hun eigen afzonderlijke retentieperiode. Azure Backup ook de inschakelen van de functie voor zacht verwijderen in en wordt een verwijdervergrendeling voor een opslagaccount gebruikt zodra een bestands share in het account is geconfigureerd voor back-up. Ten laatste biedt Azure Backup bepaalde belangrijke bewakings- en waarschuwingsmogelijkheden waarmee klanten een geconsolideerde weergave van hun back-upmogelijkheden kunnen krijgen.
 
-U kunt herstel op item- en shareniveau in de Azure Portal met behulp Azure Backup. U hoeft alleen maar het herstelpunt (een bepaalde momentopname), het betreffende bestand of de betreffende map te kiezen, indien relevant, en vervolgens de locatie (oorspronkelijk of alternatief) waar u naar wilt herstellen. De back-upservice verwerkt het kopiëren van de momentopnamegegevens en toont de voortgang van het herstellen in de portal.
+U kunt herstel op item- en shareniveau in de Azure Portal met behulp Azure Backup. U hoeft alleen maar het herstelpunt (een bepaalde momentopname), het betreffende bestand of de betreffende map, indien relevant, te kiezen en vervolgens de locatie (oorspronkelijk of alternatief) waar u naar wilt herstellen. De back-upservice verwerkt het kopiëren van de momentopnamegegevens en toont de voortgang van uw herstel in de portal.
 
-Zie Over back-ups van Azure-bestands delen voor meer informatie over [back-ups.](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
+Zie Over back-ups van Azure-bestands share voor meer informatie over [back-ups.](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
 
 ### <a name="azure-defender-for-azure-files"></a>Azure Defender voor Azure Files 
-Azure Defender for Azure Storage (voorheen Advanced Threat Protection voor Azure Storage) biedt een extra laag beveiligingsinformatie die waarschuwingen biedt wanneer afwijkende activiteiten in uw opslagaccount worden gedetecteerd, bijvoorbeeld ongebruikelijke toegangspogingen. Er wordt ook een malware-hashreputatieanalyse uitgevoerd en er wordt een waarschuwing over bekende malware gegenereerd. U kunt een Azure Defender op abonnements- of opslagaccountniveau configureren via Azure Security Center. 
+Azure Defender for Azure Storage (voorheen Advanced Threat Protection voor Azure Storage) biedt een extra laag beveiligingsinformatie die waarschuwingen biedt wanneer afwijkende activiteiten in uw opslagaccount worden gedetecteerd, bijvoorbeeld ongebruikelijke toegangspogingen. Er wordt ook een malware-hashreputatieanalyse uitgevoerd en er wordt een waarschuwing over bekende malware gegenereerd. U kunt de Azure Defender configureren op abonnements- of opslagaccountniveau via Azure Security Center. 
 
-Zie Inleiding tot Azure Defender [voor Storage voor meer informatie.](../../security-center/defender-for-storage-introduction.md)
+Zie Inleiding tot Azure Defender [for Storage voor meer informatie.](../../security-center/defender-for-storage-introduction.md)
 
 ## <a name="storage-tiers"></a>Opslaglagen
 [!INCLUDE [storage-files-tiers-overview](../../../includes/storage-files-tiers-overview.md)]
 
-### <a name="enable-standard-file-shares-to-span-up-to-100-tib"></a>Standaardbestands shares inschakelen voor een bereik van maximaal 100 TiB
-Standaard kunnen standaardbestands shares maximaal 5 TiB bespannen, maar u kunt de sharelimiet verhogen naar 100 TiB. Zie Enable and create large file shares (Grote bestands shares inschakelen en maken) voor meer informatie over het [verhogen van de sharelimiet.](storage-files-how-to-create-large-file-share.md)
+### <a name="enable-standard-file-shares-to-span-up-to-100-tib"></a>Standaardbestands shares maximaal 100 TiB inschakelen
+Standaard kunnen standaardbestands shares maximaal 5 TiB bespannen, maar u kunt de sharelimiet verhogen naar 100 TiB. Zie Grote bestands shares inschakelen en maken voor meer informatie over het [verhogen van uw sharelimiet.](storage-files-how-to-create-large-file-share.md)
 
 
 #### <a name="limitations"></a>Beperkingen
@@ -128,10 +128,10 @@ Standaard kunnen standaardbestands shares maximaal 5 TiB bespannen, maar u kunt 
 ## <a name="migration"></a>Migratie
 In veel gevallen maakt u geen nieuwe netbestands share voor uw organisatie, maar migreert u in plaats daarvan een bestaande bestands share van een on-premises bestandsserver of NAS-apparaat naar Azure Files. Het kiezen van de juiste migratiestrategie en het juiste hulpprogramma voor uw scenario is belangrijk voor het slagen van uw migratie. 
 
-Het [overzichtsartikel over migratie](storage-files-migration-overview.md) bevat kort de basisbeginselen en bevat een tabel die u naar migratiehandleidingen leidt die waarschijnlijk betrekking hebben op uw scenario.
+Het [artikel Over migratieoverzicht bevat](storage-files-migration-overview.md) kort de basisbeginselen en bevat een tabel die u naar migratiehandleidingen leidt die waarschijnlijk betrekking hebben op uw scenario.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Planning voor een Azure File Sync implementatie](storage-sync-files-planning.md)
-* [Implementatie Azure Files](./storage-how-to-create-file-share.md)
-* [Implementatie van Azure File Sync](storage-sync-files-deployment-guide.md)
-* [Raadpleeg het artikel Over migratieoverzicht om de migratiehandleiding voor uw scenario te vinden](storage-files-migration-overview.md)
+* [Planning voor een Azure File Sync implementatie](../file-sync/file-sync-planning.md)
+* [Een Azure Files](./storage-how-to-create-file-share.md)
+* [Een Azure File Sync](../file-sync/file-sync-deployment-guide.md)
+* [Raadpleeg het overzichtsartikel over migratie om de migratiehandleiding voor uw scenario te vinden](storage-files-migration-overview.md)

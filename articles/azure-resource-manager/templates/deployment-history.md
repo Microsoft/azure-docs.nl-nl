@@ -1,59 +1,59 @@
 ---
-title: Implementatie geschiedenis
-description: Hierin wordt beschreven hoe u Azure Resource Manager implementatie bewerkingen kunt weer geven met de portal, Power shell, Azure CLI en REST API.
+title: Implementatiegeschiedenis
+description: Beschrijft hoe u Azure Resource Manager implementaties kunt weergeven met de portal, PowerShell, Azure CLI en REST API.
 tags: top-support-issue
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 898af2365dfbb0f61b6b87e7532c9256269d799a
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e7ed2096a696efdc9a2654a8fd0c294c82cbd4f7
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105732768"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107781861"
 ---
-# <a name="view-deployment-history-with-azure-resource-manager"></a>Implementatie geschiedenis met Azure Resource Manager weer geven
+# <a name="view-deployment-history-with-azure-resource-manager"></a>Implementatiegeschiedenis weergeven met Azure Resource Manager
 
-Met Azure Resource Manager kunt u de implementatie geschiedenis weer geven. U kunt specifieke bewerkingen in eerdere implementaties onderzoeken en zien welke resources zijn geïmplementeerd. Deze geschiedenis bevat informatie over fouten.
+Azure Resource Manager kunt u uw implementatiegeschiedenis bekijken. U kunt specifieke bewerkingen in eerdere implementaties onderzoeken en zien welke resources zijn geïmplementeerd. Deze geschiedenis bevat informatie over eventuele fouten.
 
-De implementatie geschiedenis voor een resource groep is beperkt tot 800 implementaties. In de buurt van de limiet worden implementaties automatisch uit de geschiedenis verwijderd. Raadpleeg [Automatic deletions from deployment history](deployment-history-deletions.md) (Automatische verwijderingen uit de implementatiegeschiedenis) voor meer informatie.
+De implementatiegeschiedenis voor een resourcegroep is beperkt tot 800 implementaties. Wanneer u de limiet nadert, worden implementaties automatisch uit de geschiedenis verwijderd. Raadpleeg [Automatic deletions from deployment history](deployment-history-deletions.md) (Automatische verwijderingen uit de implementatiegeschiedenis) voor meer informatie.
 
-Zie [algemene fouten oplossen bij het implementeren van resources in azure met Azure Resource Manager](common-deployment-errors.md)voor hulp bij het oplossen van bepaalde implementatie fouten.
+Zie Veelvoorkomende fouten bij het implementeren van resources in Azure oplossen met Azure Resource Manager voor hulp bij [het oplossen Azure Resource Manager.](common-deployment-errors.md)
 
-## <a name="get-deployments-and-correlation-id"></a>Implementaties en correlatie-ID ophalen
+## <a name="get-deployments-and-correlation-id"></a>Implementaties en correlatie-id's op halen
 
-U kunt details over een implementatie bekijken via de Azure Portal, Power shell, Azure CLI of REST API. Elke implementatie heeft een correlatie-ID, die wordt gebruikt voor het bijhouden van gerelateerde gebeurtenissen. Als u [een ondersteunings aanvraag voor Azure maakt](../../azure-portal/supportability/how-to-create-azure-support-request.md), wordt u mogelijk gevraagd om de correlatie-id. Ondersteuning gebruikt de correlatie-ID om de bewerkingen voor de mislukte implementatie te identificeren.
+U kunt details over een implementatie bekijken via Azure Portal, PowerShell, Azure CLI of REST API. Elke implementatie heeft een correlatie-id, die wordt gebruikt om gerelateerde gebeurtenissen bij te houden. Als u [een aanvraag ondersteuning voor Azure,](../../azure-portal/supportability/how-to-create-azure-support-request.md)kan ondersteuning u vragen om de correlatie-id. Ondersteuning gebruikt de correlatie-id om de bewerkingen voor de mislukte implementatie te identificeren.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Selecteer de resource groep die u wilt bekijken.
+1. Selecteer de resourcegroep die u wilt onderzoeken.
 
-1. Selecteer de koppeling onder **implementaties**.
+1. Selecteer de koppeling onder **Implementaties.**
 
-   ![Implementatie geschiedenis selecteren](./media/deployment-history/select-deployment-history.png)
+   ![Implementatiegeschiedenis selecteren](./media/deployment-history/select-deployment-history.png)
 
-1. Selecteer een van de implementaties in de implementatie geschiedenis.
+1. Selecteer een van de implementaties uit de implementatiegeschiedenis.
 
    ![Selecteer de implementatie](./media/deployment-history/select-details.png)
 
-1. Er wordt een samen vatting van de implementatie weer gegeven, met inbegrip van de correlatie-ID.
+1. Er wordt een samenvatting van de implementatie weergegeven, met inbegrip van de correlatie-id.
 
     ![Implementatieoverzicht](./media/deployment-history/show-correlation-id.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u alle implementaties voor een resource groep wilt weer geven, gebruikt u de opdracht [Get-AzResourceGroupDeployment](/powershell/module/az.resources/Get-AzResourceGroupDeployment) .
+Gebruik de opdracht [Get-AzResourceGroupDeployment](/powershell/module/az.resources/Get-AzResourceGroupDeployment) om alle implementaties voor een resourcegroep weer te geven.
 
 ```azurepowershell-interactive
 Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
 ```
 
-Als u een specifieke implementatie van een resource groep wilt ophalen, voegt u de para meter voor de **implementatienaam** toe.
+Voeg de parameter DeploymentName toe om een specifieke implementatie van een **resourcegroep op te** halen.
 
 ```azurepowershell-interactive
 Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment
 ```
 
-Als u de correlatie-ID wilt ophalen, gebruikt u:
+Gebruik het volgende om de correlatie-id op te halen:
 
 ```azurepowershell-interactive
 (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName ExampleDeployment).CorrelationId
@@ -61,19 +61,19 @@ Als u de correlatie-ID wilt ophalen, gebruikt u:
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de implementatie van een resource groep wilt weer geven, gebruikt u de [lijst AZ Deployment Group](/cli/azure/group/deployment#az-deployment-group-list).
+Gebruik az deployment group list om de implementatie voor een resourcegroep [weer te maken.](/cli/azure/group/deployment#az_deployment_group_list)
 
 ```azurecli-interactive
 az deployment group list --resource-group ExampleGroup
 ```
 
-Als u een specifieke implementatie wilt ophalen, gebruikt u de [AZ-implementatie groep weer geven](/cli/azure/group/deployment#az-deployment-group-show).
+Gebruik de az deployment group show om een specifieke implementatie [op te halen.](/cli/azure/group/deployment#az_deployment_group_show)
 
 ```azurecli-interactive
 az deployment group show --resource-group ExampleGroup --name ExampleDeployment
 ```
 
-Als u de correlatie-ID wilt ophalen, gebruikt u:
+Gebruik het volgende om de correlatie-id op te halen:
 
 ```azurecli-interactive
 az deployment group show --resource-group ExampleGroup --name ExampleDeployment --query properties.correlationId
@@ -81,19 +81,19 @@ az deployment group show --resource-group ExampleGroup --name ExampleDeployment 
 
 # <a name="http"></a>[HTTP](#tab/http)
 
-Als u de implementaties voor een resource groep wilt weer geven, gebruikt u de volgende bewerking. Zie  [implementaties-lijst op resource groep](/rest/api/resources/resources/deployments/listbyresourcegroup)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
+Gebruik de volgende bewerking om de implementaties voor een resourcegroep weer te maken. Zie  [Deployments - List By Resource Group (Implementaties -](/rest/api/resources/deployments/listbyresourcegroup)Lijst op resourcegroep) voor het meest recente API-versienummer dat u in de aanvraag kunt gebruiken.
 
 ```
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/?api-version={api-version}
 ```
 
-Om een specifieke implementatie te verkrijgen. Gebruik de volgende bewerking. Zie [implementaties-ophalen](/rest/api/resources/resources/deployments/get)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
+Om een specifieke implementatie te krijgen. gebruik de volgende bewerking. Zie Implementaties - Get voor het meest recente API-versienummer dat u in de aanvraag [kunt gebruiken.](/rest/api/resources/deployments/get)
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
 ```
 
-Het antwoord bevat de correlatie-ID.
+Het antwoord bevat de correlatie-id.
 
 ```json
 {
@@ -111,35 +111,35 @@ Het antwoord bevat de correlatie-ID.
 
 ---
 
-## <a name="get-deployment-operations-and-error-message"></a>Implementatie bewerkingen en fout berichten ophalen
+## <a name="get-deployment-operations-and-error-message"></a>Implementatiebewerkingen en foutbericht ontvangen
 
-Elke implementatie kan meerdere bewerkingen bevatten. Raadpleeg de implementatie bewerkingen voor meer informatie over een implementatie. Wanneer een implementatie mislukt, bevatten de implementatie bewerkingen een fout bericht.
+Elke implementatie kan meerdere bewerkingen bevatten. Bekijk de implementatiebewerkingen voor meer informatie over een implementatie. Wanneer een implementatie mislukt, bevatten de implementatiebewerkingen een foutbericht.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Selecteer op de samen vatting van een implementatie **bewerkings gegevens**.
+1. Selecteer bewerkingsdetails in de samenvatting **voor een implementatie.**
 
-    ![Details van bewerking selecteren](./media/deployment-history/get-operation-details.png)
+    ![Bewerkingsdetails selecteren](./media/deployment-history/get-operation-details.png)
 
-1. U ziet de Details voor die stap van de implementatie. Als er een fout optreedt, bevatten de details het fout bericht.
+1. U ziet de details voor die stap van de implementatie. Wanneer er een fout optreedt, bevatten de details het foutbericht.
 
-    ![Bewerkings details weer geven](./media/deployment-history/see-operation-details.png)
+    ![Bewerkingsdetails tonen](./media/deployment-history/see-operation-details.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Als u de implementatie bewerkingen voor implementatie naar een resource groep wilt weer geven, gebruikt u de opdracht [Get-AzResourceGroupDeploymentOperation](/powershell/module/az.resources/get-azdeploymentoperation) .
+Als u de implementatiebewerkingen voor implementatie naar een resourcegroep wilt weergeven, gebruikt u de opdracht [Get-AzResourceGroupDeploymentOperation.](/powershell/module/az.resources/get-azdeploymentoperation)
 
 ```azurepowershell-interactive
 Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy
 ```
 
-Voor het weer geven van mislukte bewerkingen, filter bewerkingen met de status **mislukt** .
+Als u mislukte bewerkingen wilt weergeven, filtert u bewerkingen met **de status** Mislukt.
 
 ```azurepowershell-interactive
 (Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy).Properties | Where-Object ProvisioningState -eq Failed
 ```
 
-Als u het status bericht van mislukte bewerkingen wilt ophalen, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om het statusbericht van mislukte bewerkingen op te halen:
 
 ```azurepowershell-interactive
 ((Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName ExampleDeploy ).Properties | Where-Object ProvisioningState -eq Failed).StatusMessage.error
@@ -147,19 +147,19 @@ Als u het status bericht van mislukte bewerkingen wilt ophalen, gebruikt u de vo
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de implementatie bewerkingen voor implementatie naar een resource groep wilt weer geven, gebruikt u de opdracht [AZ Deployment Operations Group List](/cli/azure/deployment/operation/group#az-deployment-operation-group-list) . U moet beschikken over Azure CLI 2.6.0 of hoger.
+Als u de implementatiebewerkingen voor implementatie naar een resourcegroep wilt weergeven, gebruikt u [de opdracht az deployment operation group list.](/cli/azure/deployment/operation/group#az_deployment-operation-group-list) U moet Azure CLI 2.6.0 of hoger hebben.
 
 ```azurecli-interactive
 az deployment operation group list --resource-group ExampleGroup --name ExampleDeployment
 ```
 
-Voor het weer geven van mislukte bewerkingen, filter bewerkingen met de status **mislukt** .
+Als u mislukte bewerkingen wilt weergeven, filtert u bewerkingen met **de status** Mislukt.
 
 ```azurecli-interactive
 az deployment operation group list --resource-group ExampleGroup --name ExampleDeploy --query "[?properties.provisioningState=='Failed']"
 ```
 
-Als u het status bericht van mislukte bewerkingen wilt ophalen, gebruikt u de volgende opdracht:
+Gebruik de volgende opdracht om het statusbericht van mislukte bewerkingen op te halen:
 
 ```azurecli-interactive
 az deployment operation group list --resource-group ExampleGroup --name ExampleDeploy --query "[?properties.provisioningState=='Failed'].properties.statusMessage.error"
@@ -167,13 +167,13 @@ az deployment operation group list --resource-group ExampleGroup --name ExampleD
 
 # <a name="http"></a>[HTTP](#tab/http)
 
-Gebruik de volgende bewerking om implementatie bewerkingen te verkrijgen. Zie [implementatie bewerkingen-lijst](/rest/api/resources/resources/deploymentoperations/list)voor het meest recente API-versie nummer voor gebruik in de aanvraag.
+Gebruik de volgende bewerking om implementatiebewerkingen op te halen. Zie Deployment Operations - List (Implementatiebewerkingen - Lijst) voor het meest recente API-versienummer dat u in de aanvraag [kunt gebruiken.](/rest/api/resources/deploymentoperations/list)
 
 ```
 GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
 ```
 
-Het antwoord bevat een fout bericht.
+Het antwoord bevat een foutbericht.
 
 ```json
 {
@@ -211,7 +211,6 @@ Het antwoord bevat een fout bericht.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [algemene fouten oplossen bij het implementeren van resources in azure met Azure Resource Manager](common-deployment-errors.md)voor hulp bij het oplossen van bepaalde implementatie fouten.
-* Zie [automatische verwijderingen uit de implementatie geschiedenis](deployment-history-deletions.md)voor meer informatie over hoe implementaties in de geschiedenis worden beheerd.
-* Zie [een resource groep implementeren met Azure Resource Manager sjabloon](deploy-powershell.md)om uw implementatie te valideren voordat u deze uitvoert.
-
+* Zie Veelvoorkomende fouten bij het implementeren van resources in Azure oplossen met Azure Resource Manager voor hulp bij [het oplossen Azure Resource Manager.](common-deployment-errors.md)
+* Zie Automatische verwijderingen uit de implementatiegeschiedenis voor meer informatie over hoe implementaties worden beheerd in [de geschiedenis.](deployment-history-deletions.md)
+* Zie Deploy a resource group with Azure Resource Manager template (Een resourcegroep implementeren met een Azure Resource Manager [implementatie).](deploy-powershell.md)

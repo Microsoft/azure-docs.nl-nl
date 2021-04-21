@@ -1,97 +1,97 @@
 ---
-title: Programmatisch Azure-Dash boards maken
-description: Gebruik een dash board in de Azure Portal als sjabloon om programmatisch Azure-Dash boards te maken. Bevat een JSON-verwijzing.
+title: Programmatisch Azure-dashboards maken
+description: Gebruik een dashboard in de Azure Portal als een sjabloon om op programmatische wijze Azure-dashboards te maken. Bevat JSON-verwijzing.
 ms.topic: how-to
 ms.date: 12/4/2020
-ms.openlocfilehash: bd56dc1c729c5aa7a77e79aa3af3366166fdcfea
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 416eeb772e347b28fcb4a4dcc93c746562ea3571
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "101095167"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107767055"
 ---
-# <a name="programmatically-create-azure-dashboards"></a>Programmatisch Azure-Dash boards maken
+# <a name="programmatically-create-azure-dashboards"></a>Programmatisch Azure-dashboards maken
 
-Dit artikel begeleidt u stapsgewijs door het proces van het programmatisch maken en publiceren van Azure-Dash boards. In het volgende voor beeld wordt in het document verwezen naar het dash board.
+Dit artikel helpt u bij het programmatisch maken en publiceren van Azure-dashboards. In het hele document wordt verwezen naar het dashboard dat hieronder wordt weergegeven.
 
 ![voorbeelddashboard](./media/azure-portal-dashboards-create-programmatically/sample-dashboard.png)
 
 ## <a name="overview"></a>Overzicht
 
-Gedeelde Dash boards in de [Azure Portal](https://portal.azure.com) zijn [bronnen](../azure-resource-manager/management/overview.md) net als virtuele machines en opslag accounts. U kunt bronnen programmatisch beheren met behulp van de [Azure Resource Manager rest api's](/rest/api/), de [Azure CLI](/cli/azure)en de [Azure PowerShell-opdrachten](/powershell/azure/get-started-azureps).
+Gedeelde dashboards in de [Azure Portal](https://portal.azure.com) zijn [resources,](../azure-resource-manager/management/overview.md) net als virtuele machines en opslagaccounts. U kunt resources programmatisch beheren met behulp van de [Azure Resource Manager REST API's,](/rest/api/) [de Azure CLI](/cli/azure)en Azure PowerShell [opdrachten](/powershell/azure/get-started-azureps).
 
-Veel functies bouwen op deze Api's om het bronnen beheer eenvoudiger te maken. Elk van deze Api's en hulpprogram ma's biedt manieren om resources te maken, weer te geven, op te halen, te wijzigen en te verwijderen. Omdat Dash boards resources zijn, kunt u uw favoriete API of het hulp programma kiezen die u wilt gebruiken.
+Veel functies zijn gebaseerd op deze API's om resourcebeheer eenvoudiger te maken. Elk van deze API's en hulpprogramma's biedt manieren om resources te maken, weer te geven, op te halen, te wijzigen en te verwijderen. Omdat dashboards resources zijn, kunt u uw favoriete API of hulpprogramma kiezen om te gebruiken.
 
-Welke hulpprogram ma's u gebruikt om een dash board programmatisch te maken, bouwt u een JSON-weer gave van uw dashboard object. Dit object bevat informatie over de tegels op het dash board. Dit omvat maten, posities, resources waaraan ze zijn gebonden en eventuele aanpassingen van de gebruiker.
+Welke hulpprogramma's u ook gebruikt om een dashboard programmatisch te maken, u maakt een JSON-weergave van uw dashboardobject. Dit object bevat informatie over de tegels op het dashboard. Het bevat grootten, posities, resources waar ze aan zijn gebonden en eventuele aanpassingen van gebruikers.
 
-De meest praktische manier om dit JSON-document samen te stellen is door gebruik te maken van de Azure Portal. U kunt tegels interactief toevoegen en positioneren. Vervolgens exporteert u de JSON en maakt u een sjabloon van het resultaat voor later gebruik in scripts, Program ma's en implementatie hulpprogramma's.
+De meest praktische manier om dit JSON-document op te bouwen, is met de Azure Portal. U kunt uw tegels interactief toevoegen en plaatsen. Exporteert vervolgens de JSON en maakt een sjabloon op basis van het resultaat voor later gebruik in scripts, programma's en implementatiehulpprogramma's.
 
 ## <a name="create-a-dashboard"></a>Een dashboard maken
 
-Als u een dash board wilt maken, selecteert u **dash board** in het menu [Azure Portal](https://portal.azure.com) en selecteert u vervolgens **Nieuw dash board**.
+Als u een dashboard wilt maken, **selecteert** u Dashboard in [Azure Portal](https://portal.azure.com) menu en selecteert u **vervolgens Nieuw dashboard.**
 
-![nieuwe dashboard opdracht](./media/azure-portal-dashboards-create-programmatically/new-dashboard-command.png)
+![opdracht nieuw dashboard](./media/azure-portal-dashboards-create-programmatically/new-dashboard-command.png)
 
-Gebruik de tegel galerie om tegels te zoeken en toe te voegen. Tegels worden toegevoegd door ze te slepen en neer te zetten. Sommige tegels ondersteunen het wijzigen van de grootte met behulp van een sleep greep.
+Gebruik de tegelgalerie om tegels te zoeken en toe te voegen. Tegels worden toegevoegd door ze te slepen en te verwijderen. Sommige tegels ondersteunen het formaat van tegels met behulp van een sleepgrepen.
 
 ![greep slepen om grootte te wijzigen](./media/azure-portal-dashboards-create-programmatically/drag-handle.png)
 
-Anderen hebben vaste groottes die u kunt kiezen in het context menu.
+Andere hebben vaste grootten om uit te kiezen in hun contextmenu.
 
-![context menu met grootten om grootte te wijzigen](./media/azure-portal-dashboards-create-programmatically/sizes-context-menu.png)
+![contextmenu grootten om grootte te wijzigen](./media/azure-portal-dashboards-create-programmatically/sizes-context-menu.png)
 
-## <a name="share-the-dashboard"></a>Het dash board delen
+## <a name="share-the-dashboard"></a>Het dashboard delen
 
-Nadat u het dash board hebt geconfigureerd, is de volgende stap het publiceren van het dash board met behulp van de opdracht **delen** .
+Nadat u het dashboard hebt geconfigureerd, bestaat de volgende stap uit het publiceren van het dashboard met behulp van de **opdracht** Delen.
 
-![een dash board delen](./media/azure-portal-dashboards-create-programmatically/share-command.png)
+![een dashboard delen](./media/azure-portal-dashboards-create-programmatically/share-command.png)
 
-Als u **delen** selecteert, wordt u gevraagd welk abonnement en welke resource groep u wilt publiceren. U moet schrijf toegang hebben tot het abonnement en de resource groep die u kiest. Zie [Azure-rollen toewijzen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md)voor meer informatie.
+Als **u Delen** selecteert, wordt u gevraagd naar welk abonnement en welke resourcegroep u wilt publiceren. U moet schrijftoegang hebben tot het abonnement en de resourcegroep die u kiest. Zie Azure-rollen toewijzen met [behulp van de Azure Portal.](../role-based-access-control/role-assignments-portal.md)
 
 ![wijzigingen aanbrengen in delen en toegang](./media/azure-portal-dashboards-create-programmatically/sharing-and-access.png)
 
-## <a name="fetch-the-json-representation-of-the-dashboard"></a>De JSON-weer gave van het dash board ophalen
+## <a name="fetch-the-json-representation-of-the-dashboard"></a>De JSON-weergave van het dashboard ophalen
 
-Het publiceren duurt slechts enkele seconden. Wanneer u klaar bent, is de volgende stap het ophalen van de JSON met behulp van de **Download** opdracht.
+Het publiceren duurt slechts enkele seconden. Wanneer dit is gebeurd, is de volgende stap het ophalen van de JSON met behulp van de **opdracht** Downloaden.
 
-![JSON-weer gave downloaden](./media/azure-portal-dashboards-create-programmatically/download-command.png)
+![JSON-weergave downloaden](./media/azure-portal-dashboards-create-programmatically/download-command.png)
 
 ## <a name="create-a-template-from-the-json"></a>Een sjabloon maken op basis van de JSON
 
-De volgende stap is het maken van een sjabloon op basis van deze JSON. Gebruik deze sjabloon via een programma met de juiste resource management-Api's, opdracht regel Programma's of binnen de portal.
+De volgende stap is het maken van een sjabloon op basis van deze JSON. Gebruik deze sjabloon programmatisch met de juiste API's voor resourcebeheer, opdrachtregelprogramma's of binnen de portal.
 
-U hoeft niet volledig inzicht te krijgen in de JSON-structuur van het dash board om een sjabloon te maken. In de meeste gevallen wilt u de structuur en configuratie van elke tegel behouden. Vervolgens para meters de set met Azure-resources waarnaar de tegels verwijzen. Bekijk het geëxporteerde JSON-dash board en Zoek alle exemplaren van Azure-resource-Id's. Het dash board voor beeld bevat meerdere tegels die allemaal op één virtuele Azure-machine staan. Dit komt doordat in het dash board alleen naar deze afzonderlijke resource wordt gezocht. Als u de voor beeld-JSON doorzoekt, die aan het einde van het document is opgenomen, kunt u voor '/Subscriptions ' verschillende exemplaren van deze ID vinden.
+U hoeft de JSON-structuur van het dashboard niet volledig te begrijpen om een sjabloon te maken. In de meeste gevallen wilt u de structuur en configuratie van elke tegel behouden. Gebruik vervolgens parameters voor de set Azure-resources waar de tegels naar wijzen. Bekijk uw geëxporteerde JSON-dashboard en zoek alle exemplaren van Azure-resource-ID's. Ons voorbeelddashboard heeft meerdere tegels die allemaal op één virtuele Azure-machine wijzen. Dat komt doordat ons dashboard alleen naar deze ene resource kijkt. Als u de voorbeeld-JSON, die aan het einde van het document is opgenomen, zoekt naar '/subscriptions', vindt u verschillende exemplaren van deze id.
 
 `/subscriptions/6531c8c8-df32-4254-d717-b6e983273e5d/resourceGroups/contoso/providers/Microsoft.Compute/virtualMachines/myVM1`
 
-Als u dit dash board voor elke virtuele machine in de toekomst wilt publiceren, moet u elk exemplaar van deze teken reeks in de JSON para meters.
+Als u dit dashboard in de toekomst wilt publiceren voor een virtuele machine, moet u een parameter opgeven voor elk exemplaar van deze tekenreeks in de JSON.
 
-Er zijn twee benaderingen voor Api's die resources maken in Azure:
+Er zijn twee benaderingen voor API's die resources maken in Azure:
 
-* Met verplichte Api's maakt u één resource per keer. Zie [resources](/rest/api/resources/resources)voor meer informatie.
-* Een implementatie systeem op basis van een sjabloon dat meerdere, afhankelijke resources maakt met één API-aanroep. Zie  [resources implementeren met Resource Manager-sjablonen en Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md)voor meer informatie.
+* Imperatieve API's maken één resource tegelijk. Zie Resources voor [meer informatie.](/rest/api/resources/resources)
+* Een implementatiesysteem op basis van sjablonen dat meerdere, afhankelijke resources maakt met één API-aanroep. Zie Deploy [resources with Resource Manager templates and Azure PowerShell (Resources implementeren met sjablonen en Azure PowerShell) voor meer Azure PowerShell.](../azure-resource-manager/templates/deploy-powershell.md)
 
-Implementatie op basis van een sjabloon ondersteunt parameterisering en sjabloon. We gebruiken deze benadering in dit artikel.
+Implementatie op basis van sjablonen ondersteunt parameterisering en sjablonen. We gebruiken deze benadering in dit artikel.
 
-## <a name="programmatically-create-a-dashboard-from-your-template-using-a-template-deployment"></a>Programmatisch een dash board maken op basis van uw sjabloon met behulp van een sjabloon implementatie
+## <a name="programmatically-create-a-dashboard-from-your-template-using-a-template-deployment"></a>Programmatisch een dashboard maken op basis van uw sjabloon met behulp van een sjabloonimplementatie
 
-Azure biedt de mogelijkheid om de implementatie van meerdere resources te organiseren. U maakt een implementatie sjabloon waarmee de set resources wordt ingedrukt die moeten worden geïmplementeerd en de relaties ertussen.  De JSON-indeling van elke resource is hetzelfde als wanneer u ze één voor één maakt. Het verschil is dat in de sjabloon taal enkele concepten worden toegevoegd, zoals variabelen, para meters, basis functies en nog veel meer. Deze uitgebreide syntaxis wordt alleen ondersteund in de context van een sjabloon implementatie. Deze functie werkt niet als deze wordt gebruikt met de verplichte Api's die eerder zijn besproken. Zie [inzicht krijgen in de structuur en de syntaxis van Azure Resource Manager-sjablonen](../azure-resource-manager/templates/template-syntax.md)voor meer informatie.
+Azure biedt de mogelijkheid om de implementatie van meerdere resources te beheren. U maakt een implementatiesjabloon die de set resources uitdrukken die moeten worden geïmplementeerd en de relaties ertussen.  De JSON-indeling van elke resource is hetzelfde als wanneer u ze één voor één maakt. Het verschil is dat de sjabloontaal een aantal concepten toevoegt, zoals variabelen, parameters, basisfuncties en meer. Deze uitgebreide syntaxis wordt alleen ondersteund in de context van een sjabloonimplementatie. Het werkt niet als het wordt gebruikt met de imperatieve API's die eerder zijn besproken. Zie Understand the structure and syntax of Azure Resource Manager templates (Inzicht in de structuur en [syntaxis van Azure Resource Manager sjablonen) voor meer informatie.](../azure-resource-manager/templates/template-syntax.md)
 
-Parameterisering moet worden uitgevoerd met de parameter syntaxis van de sjabloon.  U vervangt alle exemplaren van de resource-ID die u eerder hebt gevonden, zoals hier wordt weer gegeven.
+Parameterisering moet worden uitgevoerd met behulp van de parametersyntaxis van de sjabloon.  U vervangt alle exemplaren van de resource-id die we eerder hebben gevonden, zoals hier wordt weergegeven.
 
-Voor beeld van JSON-eigenschap met in code vastgelegde resource-ID:
+Voorbeeld van een JSON-eigenschap met in code gecodeerde resource-id:
 
 ```json
 id: "/subscriptions/6531c8c8-df32-4254-d717-b6e983273e5d/resourceGroups/contoso/providers/Microsoft.Compute/virtualMachines/myVM1"
 ```
 
-Voor beeld van JSON-eigenschap geconverteerd naar een geparametriseerde versie op basis van sjabloon parameters
+Voorbeeld van een JSON-eigenschap die is geconverteerd naar een geparameteriseerde versie op basis van sjabloonparameters
 
 ```json
 id: "[resourceId(parameters('virtualMachineResourceGroup'), 'Microsoft.Compute/virtualMachines', parameters('virtualMachineName'))]"
 ```
 
-U moet de vereiste meta gegevens van de sjabloon en de para meters boven aan de JSON-sjabloon als volgt declareren:
+Declareer de vereiste metagegevens van de sjabloon en de parameters bovenaan de JSON-sjabloon als de volgende:
 
 ```json
 
@@ -113,18 +113,18 @@ U moet de vereiste meta gegevens van de sjabloon en de para meters boven aan de 
 
     ... rest of template omitted ...
 ```
-Nadat u uw sjabloon hebt geconfigureerd, implementeert u deze met een van de volgende methoden:
+Zodra u de sjabloon hebt geconfigureerd, implementeert u deze met een van de volgende methoden:
 
 * [REST-API's](/rest/api/resources/deployments)
 * [PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
-* [Azure-CLI](/cli/azure/group/deployment#az-group-deployment-create)
-* [De pagina implementatie van Azure Portal sjabloon](https://portal.azure.com/#create/Microsoft.Template)
+* [Azure-CLI](/cli/azure/group/deployment#az_group_deployment_create)
+* [De pagina Azure Portal sjabloonimplementatie](https://portal.azure.com/#create/Microsoft.Template)
 
-Vervolgens ziet u twee versies van de JSON van het voor beeld-dash board. De eerste is de versie die is geëxporteerd uit de portal die al is gebonden aan een resource. De tweede is de sjabloon versie die programmatisch kan worden gebonden aan een virtuele machine en met Azure Resource Manager kan worden geïmplementeerd.
+Vervolgens ziet u twee versies van ons voorbeelddashboard JSON. De eerste is de versie die we hebben geëxporteerd vanuit de portal die al aan een resource was gebonden. De tweede is de sjabloonversie die programmatisch kan worden gebonden aan elke virtuele machine en kan worden geïmplementeerd met behulp van Azure Resource Manager.
 
-### <a name="json-representation-of-our-example-dashboard-before-templating"></a>JSON-weer gave van het voorbeeld dashboard vóór sjabloon
+### <a name="json-representation-of-our-example-dashboard-before-templating"></a>JSON-weergave van ons voorbeelddashboard vóór templating
 
-Dit voor beeld laat zien wat u kunt verwachten als u dit artikel hebt gevolgd. De instructies exporteren de JSON-weer gave van een dash board dat al is geïmplementeerd. De in code vastgelegde resource-id's laten zien dat dit dash board naar een specifieke virtuele machine van Azure verwijst.
+In dit voorbeeld ziet u wat u kunt verwachten als u dit artikel hebt gevolgd. Met de instructies is de JSON-weergave geëxporteerd van een dashboard dat al is geïmplementeerd. De in code gecodeerde resource-id's geven aan dat dit dashboard verwijst naar een specifieke virtuele Azure-machine.
 
 ```json
 
@@ -376,11 +376,11 @@ Dit voor beeld laat zien wat u kunt verwachten als u dit artikel hebt gevolgd. D
 
 ```
 
-### <a name="template-representation-of-our-example-dashboard"></a>Sjabloon weergave van het dash board van ons voor beeld
+### <a name="template-representation-of-our-example-dashboard"></a>Sjabloonweergave van ons voorbeelddashboard
 
-In de sjabloon versie van het dash board zijn drie para meters met de naam `virtualMachineName` , `virtualMachineResourceGroup` en gedefinieerd `dashboardName` .  Met de para meters kunt u dit dash board op een andere virtuele Azure-machine laten wijzen elke keer dat u implementeert. Dit dash board kan via een programma worden geconfigureerd en geïmplementeerd om te verwijzen naar elke virtuele machine van Azure. Als u deze functie wilt testen, kopieert u de volgende sjabloon en plakt u deze in de [pagina implementatie van Azure Portal sjabloon](https://portal.azure.com/#create/Microsoft.Template).
+De sjabloonversie van het dashboard heeft drie parameters gedefinieerd met de `virtualMachineName` naam `virtualMachineResourceGroup` , en `dashboardName` .  Met de parameters kunt u dit dashboard telkens wanneer u implementeert naar een andere virtuele Azure-machine laten wijzen. Dit dashboard kan programmatisch worden geconfigureerd en geïmplementeerd om te wijzen naar elke virtuele Azure-machine. Als u deze functie wilt testen, kopieert u de volgende sjabloon en plakt u deze in [de pagina Azure Portal sjabloonimplementatie.](https://portal.azure.com/#create/Microsoft.Template)
 
-In dit voor beeld wordt een dash board op zichzelf geïmplementeerd, maar met de sjabloon taal kunt u meerdere resources implementeren en een of meer Dash boards naast elkaar bundelen.
+In dit voorbeeld wordt een dashboard zelf geïmplementeerd, maar met de sjabloontaal kunt u meerdere resources implementeren en een of meer dashboards tegelijk bundelen.
 
 ```json
 {
@@ -648,17 +648,17 @@ In dit voor beeld wordt een dash board op zichzelf geïmplementeerd, maar met de
 }
 ```
 
-Nu u een voor beeld hebt gezien van het gebruik van een geparametriseerde sjabloon voor het implementeren van een dash board, kunt u proberen de sjabloon te implementeren met behulp van de [Azure Resource Manager rest-api's](/rest/api/), de [Azure CLI](/cli/azure)of de [Azure PowerShell-opdrachten](/powershell/azure/get-started-azureps).
+Nu u een voorbeeld hebt gezien van het gebruik van een geparameteriseerde sjabloon voor het implementeren van een dashboard, kunt u proberen de sjabloon te implementeren met behulp van [de Azure Resource Manager REST](/rest/api/)API's, de Azure [CLI](/cli/azure)of [Azure PowerShell opdrachten](/powershell/azure/get-started-azureps).
 
-## <a name="programmatically-create-a-dashboard-by-using-azure-cli"></a>Programmatisch een dash board maken met behulp van Azure CLI
+## <a name="programmatically-create-a-dashboard-by-using-azure-cli"></a>Programmatisch een dashboard maken met behulp van Azure CLI
 
 Bereid uw omgeving voor op Azure CLI.
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- In deze voor beelden wordt het volgende dash board gebruikt: [portal-dashboard-template-testvm.jsop](https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-portal/portal-dashboard-template-testvm.json). Vervang de inhoud tussen vier Kante haken door uw waarden.
+- In deze voorbeelden wordt het volgende dashboard gebruikt: [portal-dashboard-template-testvm.jsop](https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-portal/portal-dashboard-template-testvm.json). Vervang inhoud tussen vierkante haken door uw waarden.
 
-Voer de opdracht [AZ Portal dash board Create](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_create) uit om een dash board te maken:
+Voer de [opdracht az portal dashboard create](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_create) uit om een dashboard te maken:
 
 ```azurecli
 az portal dashboard create --resource-group myResourceGroup --name 'Simple VM Dashboard' \
@@ -672,7 +672,7 @@ az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Da
 --input-path portal-dashboard-template-testvm.json --location centralus
 ```
 
-Bekijk de details van een dash board door de opdracht [AZ Portal dash board show](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_show) uit te voeren:
+Bekijk de details van een dashboard door de opdracht [az portal dashboard show uit te](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_show) voeren:
 
 ```azurecli
 az portal dashboard show --resource-group myResourceGroup --name 'Simple VM Dashboard'
@@ -692,6 +692,6 @@ az portal dashboard list --resource-group myResourceGroup
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Azure Portal instellingen en voor keuren beheren](set-preferences.md)voor meer informatie over Desk tops.
+Zie Manage Azure Portal settings and preferences (Instellingen en voorkeuren beheren) [voor meer informatie over desktops.](set-preferences.md)
 
 Zie [az portal dash board](/cli/azure/ext/portal/portal/dashboard) voor meer informatie over Azure CLI-ondersteuning voor dashboards.

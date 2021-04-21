@@ -1,47 +1,47 @@
 ---
-title: Permanente volume claims versleutelen met een door de klant beheerde sleutel (CMK) op Azure Red Hat open Shift (ARO)
-description: Uw eigen sleutel (BYOK)/door de klant beheerde sleutel (CMK) implementeren instructies voor Azure Red Hat open Shift
+title: Permanente volumeclaims versleutelen met een door de klant beheerde sleutel (CMK) op Azure Red Hat OpenShift (ARO)
+description: ByOK (Bring Your Own Key) / DOOR de klant beheerde sleutel (CMK) implementeren instructies voor Azure Red Hat OpenShift
 ms.topic: article
 ms.date: 02/24/2021
 author: stuartatmicrosoft
 ms.author: stkirk
 ms.service: azure-redhat-openshift
-keywords: Encryption, byok, Aro, CMK, open Shift, Red Hat
-ms.openlocfilehash: cf028456cc8971678373d36214885c3f79df8e82
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+keywords: versleuteling, byok, aro, cmk, openshift, red hat
+ms.openlocfilehash: f6c80bab6f821dc7c85352bf57ebe255ae712d43
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105047062"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107783517"
 ---
-# <a name="encrypt-persistent-volume-claims-with-a-customer-managed-key-cmk-on-azure-red-hat-openshift-aro-preview"></a>Permanente volume claims versleutelen met een door de klant beheerde sleutel (CMK) op Azure Red Hat open Shift (ARO) (preview)
+# <a name="encrypt-persistent-volume-claims-with-a-customer-managed-key-cmk-on-azure-red-hat-openshift-aro-preview"></a>Permanente volumeclaims versleutelen met een door de klant beheerde sleutel (CMK) op Azure Red Hat OpenShift (ARO) (preview)
 
-Azure Storage gebruikt SSE (server side Encryption) om uw gegevens automatisch te [versleutelen](../storage/common/storage-service-encryption.md) wanneer deze in de cloud worden bewaard. Standaard worden gegevens versleuteld met door micro soft-platform beheerde sleutels. Voor extra controle over versleutelings sleutels kunt u uw eigen door de klant beheerde sleutels opgeven voor het versleutelen van gegevens in uw Azure Red Hat open Shift-clusters.
+Azure Storage versleuteling aan de serverzijde (SSE) gebruikt om uw gegevens automatisch te versleutelen wanneer deze naar de cloud worden opgeslagen. [](../storage/common/storage-service-encryption.md) Gegevens worden standaard versleuteld met door het Microsoft-platform beheerde sleutels. Voor extra controle over versleutelingssleutels kunt u uw eigen door de klant beheerde sleutels leveren voor het versleutelen van gegevens in Azure Red Hat OpenShift clusters.
 
 > [!NOTE]
-> In deze fase is ondersteuning alleen beschikbaar voor het versleutelen van ARO permanente volumes met door de klant beheerde sleutels. Deze functie is momenteel niet beschikbaar voor de schijven van het hoofd-of worker-besturings systeem.
+> In deze fase bestaat er alleen ondersteuning voor het versleutelen van permanente ARO-volumes met door de klant beheerde sleutels. Deze functie is momenteel niet beschikbaar voor besturingssysteemschijven van hoofd- of werk knooppunt.
 
 > [!IMPORTANT]
-> ARO preview-functies zijn beschikbaar op self-service. Previews worden als ' as is ' en ' als beschikbaar ' gegeven en zijn uitgesloten van de service level agreements en de beperkte garantie. ARO-previews worden gedeeltelijk gedekt door de klant ondersteuning. Daarom zijn deze functies niet bedoeld voor productie gebruik.
+> Preview-functies van ARO zijn beschikbaar via selfservice en opt-in. Previews worden aangeboden 'as is' en 'as available', en ze worden uitgesloten van de serviceovereenkomsten en beperkte garantie. ARO-previews worden gedeeltelijk gedekt door klantondersteuning op basis van best effort. Daarom zijn deze functies niet bedoeld voor productiegebruik.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 In dit artikel wordt ervan uitgegaan dat:
 
-* U hebt een reeds bestaand ARO-cluster met openshift versie 4,4 (of hoger).
+* U hebt een bestaand ARO-cluster op OpenShift versie 4.4 (of hoger).
 
-* U hebt het opdracht regel programma **OC** open Shift, base64 (onderdeel van coreutils) en de **AZ** Azure cli geïnstalleerd.
+* U hebt het **opdrachtregelprogramma oc** OpenShift, base64 (onderdeel van coreutils) en **az** Azure CLI geïnstalleerd.
 
-* U bent aangemeld bij uw ARO-cluster met behulp van **OC** als globale cluster-beheerder gebruiker (kubeadmin).
+* U bent aangemeld bij uw ARO-cluster met **oc** als globale clusterbeheerder (kubeadmin).
 
-* U bent aangemeld bij de Azure CLI met **AZ** met een account dat is gemachtigd om ' Inzender ' toegang toe te kennen in hetzelfde abonnement als het Aro-cluster.
+* U bent aangemeld bij de Azure CLI met **az** met een account dat is gemachtigd om 'Inzender'-toegang te verlenen in hetzelfde abonnement als het ARO-cluster.
 
 ## <a name="limitations"></a>Beperkingen
 
-* Beschik baarheid voor door de klant beheerde sleutel versleuteling is specifiek voor een regio. Als u de status van een specifieke Azure-regio wilt bekijken, controleert u [Azure-regio's][supported-regions].
-* Als u ultra disks wilt gebruiken, moet u deze eerst inschakelen in uw abonnement voordat u aan de slag gaat.
+* Beschikbaarheid voor door de klant beheerde sleutelversleuteling is regios specifiek. Als u de status voor een specifieke Azure-regio wilt bekijken, raadpleegt u [Azure-regio's.][supported-regions]
+* Als u een Ultra Disks, moet u deze eerst inschakelen voor uw abonnement voordat u aan de slag gaat.
 
-## <a name="declare-cluster--encryption-variables"></a>Versleutelings variabelen voor cluster & declareren
-U moet de onderstaande variabelen zo configureren dat ze geschikt zijn voor u het ARO-cluster waarin u door de klant beheerde versleutelings sleutels wilt inschakelen:
+## <a name="declare-cluster--encryption-variables"></a>Clusterversleutelingsvariabelen & declareer
+U moet de onderstaande variabelen zo configureren dat deze geschikt zijn voor het ARO-cluster waarin u door de klant beheerde versleutelingssleutels wilt inschakelen:
 ```
 aroCluster="mycluster"             # The name of the ARO cluster that you wish to enable CMK on. This may be obtained from **az aro list -o table**
 buildRG="mycluster-rg"             # The name of the resource group used when you initially built the ARO cluster. This may be obtained from **az aro list -o table**
@@ -50,15 +50,15 @@ vaultName="aro-keyvault-1"         # Your Azure Key Vault name. This must be uni
 vaultKeyName="myCustomAROKey"      # The name of the key to be used within your Azure Key Vault. This is the name of the key, not the actual value of the key that you will rotate.
 ```
 
-## <a name="obtain-your-subscription-id"></a>Uw abonnements-ID verkrijgen
-Uw Azure-abonnements-ID wordt meerdere keren gebruikt in de configuratie van CMK. Vraag de app aan en sla deze op als een variabele:
+## <a name="obtain-your-subscription-id"></a>Uw abonnements-id verkrijgen
+Uw Azure-abonnements-id wordt meerdere keren gebruikt in de configuratie van de CMK. Verkrijg deze en sla deze op als een variabele:
 ```azurecli-interactive
 # Obtain your Azure Subscription ID and store it in a variable
 subId="$(az account list -o tsv | grep True | awk '{print $3}')"
 ```
 
-## <a name="create-an-azure-key-vault-instance"></a>Een Azure Key Vault-exemplaar maken
-Een Azure Key Vault-exemplaar moet worden gebruikt om uw sleutels op te slaan. Maak een nieuwe Key Vault met de functie voor leegmaken van beveiliging ingeschakeld. Maak vervolgens een nieuwe sleutel in de kluis om uw eigen aangepaste sleutel op te slaan:
+## <a name="create-an-azure-key-vault-instance"></a>Een Azure Key Vault maken
+Een Azure Key Vault moet worden gebruikt om uw sleutels op te slaan. Maak een nieuw Key Vault met opstingsbeveiliging ingeschakeld. Maak vervolgens een nieuwe sleutel in de kluis om uw eigen aangepaste sleutel op te slaan:
 
 ```azurecli-interactive
 # Create an Azure Key Vault resource in a supported Azure region
@@ -68,9 +68,9 @@ az keyvault create -n $vaultName -g $buildRG --enable-purge-protection true -o t
 az keyvault key create --vault-name $vaultName --name $vaultKeyName --protection software -o jsonc
 ```
 
-## <a name="create-an-azure-disk-encryption-set"></a>Een Azure Disk Encryption set maken
+## <a name="create-an-azure-disk-encryption-set"></a>Een Azure Disk Encryption-set maken
 
-De set Azure Disk Encryption wordt gebruikt als het referentie punt voor schijven in ARO. Deze is verbonden met de Azure Key Vault die we in de vorige stap hebben gemaakt en haalt door de klant beheerde sleutels vanaf die locatie.
+De Azure Disk Encryption set wordt gebruikt als referentiepunt voor schijven in ARO. Deze is verbonden met de Azure Key Vault die we in de vorige stap hebben gemaakt en haalt door de klant beheerde sleutels op van die locatie.
 
 ```azurecli-interactive
 # Retrieve the Key Vault Id and store it in a variable
@@ -83,8 +83,8 @@ keyVaultKeyUrl="$(az keyvault key show --vault-name $vaultName --name $vaultKeyN
 az disk-encryption-set create -n $desName -g $buildRG --source-vault $keyVaultId --key-url $keyVaultKeyUrl -o table
 ```
 
-## <a name="grant-the-disk-encryption-set-access-to-key-vault"></a>De schijf versleuteling toegang geven tot Key Vault
-Gebruik de schijf versleutelingset die u in de voor gaande stappen hebt gemaakt en verleen de schijf versleuteling toegang tot Azure Key Vault:
+## <a name="grant-the-disk-encryption-set-access-to-key-vault"></a>De schijfversleutelingsset toegang verlenen tot Key Vault
+Gebruik de schijfversleutelingsset die we in de vorige stappen hebben gemaakt en verleen de schijfversleutelingsset toegang tot Azure Key Vault:
 
 ```azurecli-interactive
 # First, find the disk encryption set's Azure Application ID value.
@@ -97,8 +97,8 @@ az keyvault set-policy -n $vaultName -g $buildRG --object-id $desIdentity --key-
 az role assignment create --assignee $desIdentity --role Reader --scope $keyVaultId -o jsonc
 ```
 
-### <a name="obtain-other-ids-required-for-role-assignments"></a>Andere Id's verkrijgen die nodig zijn voor roltoewijzingen
-We moeten het ARO-cluster toestaan om de schijf versleuteling te gebruiken voor het versleutelen van de permanente volume claims (Pvc's) in het ARO-cluster. Hiervoor gaan we een nieuwe Managed Service Identity (MSI) maken. We stellen ook andere machtigingen in voor de ARO MSI en voor de ingestelde schijf versleuteling.
+### <a name="obtain-other-ids-required-for-role-assignments"></a>Andere vereiste ID's voor roltoewijzingen verkrijgen
+We moeten toestaan dat het ARO-cluster de schijfversleutelingsset gebruikt om de permanente volumeclaims (PVC's) in het ARO-cluster te versleutelen. Hiervoor maken we een nieuwe Managed Service Identity (MSI). We stellen ook andere machtigingen in voor de ARO MSI en voor de schijfversleutelingsset.
 
 ```azurecli-interactive
 # First, get the Azure Application ID of the service principal used in the ARO cluster.
@@ -120,8 +120,8 @@ aroMSIAppId="$(az identity show -n $msiName -g $buildRG -o tsv --query [clientId
 buildRGResourceId="$(az group show -n $buildRG -o tsv --query [id])"
 ```
 
-### <a name="implement-other-role-assignments-required-for-cmk-encryption"></a>Implementeer andere roltoewijzingen die vereist zijn voor CMK-versleuteling
-Pas de vereiste roltoewijzingen toe met behulp van de variabelen die in de vorige stap zijn verkregen:
+### <a name="implement-other-role-assignments-required-for-cmk-encryption"></a>Andere roltoewijzingen implementeren die vereist zijn voor CMK-versleuteling
+Pas de vereiste roltoewijzingen toe met behulp van de variabelen die u in de vorige stap hebt verkregen:
 
 ```azurecli-interactive
 # Ensure the Azure Disk Encryption Set can read the contents of the Azure Key Vault.
@@ -134,8 +134,8 @@ az role assignment create --assignee $aroMSIAppId --role Reader --scope $buildRG
 az role assignment create --assignee $aroSPObjId --role Contributor --scope $buildRGResourceId -o jsonc
 ```
 
-## <a name="create-a-k8s-storage-class-for-encrypted-premium--ultra-disks"></a>Een K8S-opslag klasse maken voor een versleutelde Premium-& Ultra schijven
-Genereer opslag klassen die moeten worden gebruikt voor CMK voor Premium_LRS en UltraSSD_LRS schijven:
+## <a name="create-a-k8s-storage-class-for-encrypted-premium--ultra-disks"></a>Een k8s-opslagklasse maken voor versleutelde Premium & Ultra-schijven
+Genereer opslagklassen die moeten worden gebruikt voor CMK voor Premium_LRS en UltraSSD_LRS schijven:
 
 ```azurecli-interactive
 # Premium Disks
@@ -176,7 +176,7 @@ volumeBindingMode: WaitForFirstConsumer
 EOF
 ```
 
-Voer vervolgens deze implementatie uit in uw ARO-cluster om de opslag klassen configuratie toe te passen:
+Voer vervolgens deze implementatie uit in uw ARO-cluster om de configuratie van de opslagklasse toe te passen:
 
 ```azurecli-interactive
 # Update cluster with the new storage classes
@@ -185,7 +185,7 @@ oc apply -f managed-ultra-encrypted-cmk.yaml
 ```
 
 ## <a name="test-encryption-with-customer-managed-keys-optional"></a>Versleuteling testen met door de klant beheerde sleutels (optioneel)
-Om te controleren of uw cluster gebruikmaakt van een door de klant beheerde sleutel voor PVC-versleuteling, wordt er een claim voor permanente volumes gemaakt met behulp van de nieuwe opslag klasse. In het onderstaande code fragment maakt u een pod en koppelt u een permanente volume claim met behulp van Premium-schijven.
+Als u wilt controleren of uw cluster een door de klant beheerde sleutel gebruikt voor DEB-versleuteling, maken we een permanente volumeclaim met behulp van de nieuwe opslagklasse. Met het onderstaande codefragment wordt een pod gemaakt en wordt een permanente volumeclaim met behulp van Premium-schijven aan een pod bevestigd.
 ```
 # Create a pod which uses a persistent volume claim referencing the new storage class
 cat > test-pvc.yaml<< EOF
@@ -225,8 +225,8 @@ spec:
         claimName: mypod-with-cmk-encryption-pvc
 EOF
 ```
-### <a name="apply-the-test-pod-configuration-file-optional"></a>Het configuratie bestand van de test pod Toep assen (optioneel)
-Voer de onderstaande opdrachten uit om de configuratie van de test pod toe te passen en de UID van de nieuwe claim permanente volume te retour neren. De UID wordt gebruikt om te controleren of de schijf is versleuteld met behulp van CMK.
+### <a name="apply-the-test-pod-configuration-file-optional"></a>Het configuratiebestand voor de testpod toepassen (optioneel)
+Voer de onderstaande opdrachten uit om de podconfiguratie van de test toe te passen en de UID van de nieuwe permanente volumeclaim te retourneren. De UID wordt gebruikt om te controleren of de schijf is versleuteld met cmk.
 ```azurecli-interactive
 # Apply the test pod configuration file and set the PVC UID as a variable to query in Azure later.
 pvcUid="$(oc apply -f test-pvc.yaml -o jsonpath='{.items[0].metadata.uid}')"
@@ -235,10 +235,10 @@ pvcUid="$(oc apply -f test-pvc.yaml -o jsonpath='{.items[0].metadata.uid}')"
 pvName="$(oc get pv pvc-$pvcUid -o jsonpath='{.spec.azureDisk.diskName}')"
 ```
 > [!NOTE]
-> Soms kan er sprake zijn van een lichte vertraging bij het Toep assen van roltoewijzingen binnen Azure Active Directory. Afhankelijk van de snelheid waarmee deze instructies worden uitgevoerd, kan de opdracht ' bepalen van de volledige Azure-schijf naam ' mogelijk niet worden uitgevoerd. Als dit het geval is, raadpleegt u de uitvoer van **OC PVC mypod-with-CMK-Encryption-PVC** om te controleren of de schijf is ingericht. Als de doorgifte van de roltoewijzing niet is voltooid, moet u mogelijk de pod & PVC-YAML *verwijderen* en opnieuw *Toep assen* .
+> Soms kan er een kleine vertraging zijn bij het toepassen van roltoewijzingen binnen Azure Active Directory. Afhankelijk van de snelheid waarmee deze instructies worden uitgevoerd, is het mogelijk dat de opdracht 'De volledige naam van de Azure-schijf bepalen' niet slaagt. Als dit het geval is, bekijkt u de uitvoer van **oc describe pvc mypod-with-cmk-encryption-pvc** om te controleren of de schijf is ingericht. Als de doorgave van de roltoewijzing niet is voltooid, moet u mogelijk de *POD-&* YAML verwijderen en opnieuw toepassen. 
 
-### <a name="verify-pvc-disk-is-configured-with-encryptionatrestwithcustomerkey-optional"></a>Controleren of de PVC-schijf is geconfigureerd met ' EncryptionAtRestWithCustomerKey ' (optioneel)
-De pod moet een permanente volume claim maken die verwijst naar de CMK-opslag klasse. Als u de volgende opdracht uitvoert, wordt gecontroleerd of het PVC naar verwachting is geïmplementeerd:
+### <a name="verify-pvc-disk-is-configured-with-encryptionatrestwithcustomerkey-optional"></a>Controleer of DERM-schijf is geconfigureerd met EncryptionAtRestWithCustomerKey (optioneel)
+De Pod moet een permanente volumeclaim maken die verwijst naar de CMK-opslagklasse. Door de volgende opdracht uit te voeren, wordt gevalideerd of de PVC is geïmplementeerd zoals verwacht:
 ```azurecli-interactive
 # Describe the OpenShift cluster-wide persistent volume claims
 oc describe pvc
@@ -250,8 +250,8 @@ az disk show -n $pvName -g $buildRG -o json --query [encryption]
 <!-- LINKS - external -->
 
 <!-- LINKS - internal -->
-[az-extension-add]: /cli/azure/extension#az-extension-add
-[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-extension-add]: /cli/azure/extension#az_extension_add
+[az-extension-update]: /cli/azure/extension#az_extension_update
 [best-practices-security]: ../aks/operator-best-practices-cluster-security.md
 [byok-azure-portal]: ../storage/common/customer-managed-keys-configure-key-vault.md
 [customer-managed-keys]: ../virtual-machines/disk-encryption.md#customer-managed-keys

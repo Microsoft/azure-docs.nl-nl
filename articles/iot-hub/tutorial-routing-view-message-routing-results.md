@@ -1,6 +1,6 @@
 ---
-title: Zelf studie-Azure IoT Hub-bericht routering resultaten weer geven (.NET) | Microsoft Docs
-description: Zelf studie-nadat u alle resources hebt ingesteld met behulp van deel 1 van de zelf studie, voegt u de mogelijkheid toe om berichten te routeren naar Azure Stream Analytics en de resultaten in Power BI weer te geven.
+title: 'Zelfstudie: resultaten Azure IoT Hub berichtroutering (.NET) weergeven | Microsoft Docs'
+description: 'Zelfstudie: nadat u alle resources hebt instellen met behulp van deel 1 van de zelfstudie, voegt u de mogelijkheid toe om berichten naar Azure Stream Analytics te sturen en de resultaten in de Power BI.'
 author: robinsh
 manager: philmea
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2018
 ms.author: robinsh
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: f441a1cf97c069c4755b436bbb8cb9268b469eb3
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 7d6b5f02a752e7bbdc1d4da83b60b1a86aba5626
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102199744"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107775021"
 ---
 # <a name="tutorial-part-2---view-the-routed-messages"></a>Zelfstudie: Deel 2: de gerouteerde berichten weergeven
 
@@ -48,7 +48,7 @@ De Service Bus-wachtrij moet worden gebruikt voor het ontvangen van berichten di
 
    **Locatie**: gebruik uw locatie. In deze zelfstudie wordt gebruikgemaakt van **VS - west**.
 
-   **Log Analytics inschakelen**: deze wissel knop moet worden uitgeschakeld.
+   **Log Analytics inschakelen:** deze schakelknop moet worden uitgeschakeld.
 
    ![Het scherm Logische app maken](./media/tutorial-routing-view-message-routing-results/create-logic-app.png)
 
@@ -152,7 +152,7 @@ Als u de gegevens in een Power BI-visualisatie wilt zien, stelt u eerst een Stre
 
    **Tabelnaam**: de naam van de tabel die moet worden gebruikt in Power BI. In deze zelfstudie wordt gebruikgemaakt van **contosotable**.
 
-  **Verificatie modus**: Selecteer de modus die u wilt gebruiken.
+  **Verificatiemodus:** selecteer de modus die u wilt gebruiken.
 
    Accepteer de standaardwaarden voor de rest van de velden.
 
@@ -282,7 +282,7 @@ Meld u aan bij uw [Power BI](https://powerbi.microsoft.com/)-account. Ga naar uw
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Resources opschonen met de Azure-CLI
 
-U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az-group-delete). `$resourceGroup` is aan het begin van deze zelfstudie ingesteld op **ContosoResources**.
+U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az_group_delete). `$resourceGroup` is aan het begin van deze zelfstudie ingesteld op **ContosoResources**.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

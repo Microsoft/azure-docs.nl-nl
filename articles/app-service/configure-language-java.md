@@ -11,18 +11,18 @@ ms.reviewer: cephalin
 ms.custom: seodec18, devx-track-java, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
 adobe-target: true
-ms.openlocfilehash: 1caa8b680b6bc3df20ad31e581d336195308a2dc
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: cbf530b31797c2c72496548b3ed8f2928378ce9f
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726318"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107779485"
 ---
 # <a name="configure-a-java-app-for-azure-app-service"></a>Een Java-app voor Azure App Service configureren
 
 Azure App Service kunnen Java-ontwikkelaars snel hun Java SE-, Tomcat- en JBoss EAP-webtoepassingen bouwen, implementeren en schalen in een volledig beheerde service. Toepassingen implementeren met Maven-invoegtoepassingen, vanaf de opdrachtregel of in editors zoals IntelliJ, Eclipse of Visual Studio Code.
 
-Deze handleiding bevat belangrijke concepten en instructies voor Java-ontwikkelaars die App Service. Als u deze nog nooit Azure App Service, moet u eerst de [Java-quickstart](quickstart-java.md) doorlezen. Algemene vragen over het gebruik App Service die niet specifiek zijn voor Java-ontwikkeling, worden beantwoord in [de veelgestelde App Service.](faq-configuration-and-management.md)
+Deze handleiding bevat belangrijke concepten en instructies voor Java-ontwikkelaars die App Service. Als u deze nog nooit Azure App Service, moet u eerst de [Java-quickstart](quickstart-java.md) lezen. Algemene vragen over het gebruik App Service die niet specifiek zijn voor Java-ontwikkeling, worden beantwoord in [de veelgestelde App Service.](faq-configuration-and-management.md)
 
 ## <a name="deploying-your-app"></a>Uw app implementeren
 
@@ -138,28 +138,28 @@ jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 
 #### <a name="analyze-jfr-files"></a>Bestanden `.jfr` analyseren
 
-Gebruik [FTPS om](deploy-ftp.md) uw JFR-bestand te downloaden naar uw lokale computer. Als u het JFR-bestand wilt analyseren, downloadt en installeert [u Zulu Mission Control.](https://www.azul.com/products/zulu-mission-control/) Zie de [Azul-documentatie](https://docs.azul.com/zmc/) en de installatie-instructies voor instructies over Zulu Mission [Control.](/java/azure/jdk/java-jdk-flight-recorder-and-mission-control)
+Gebruik [FTPS om](deploy-ftp.md) uw JFR-bestand te downloaden naar uw lokale computer. Als u het JFR-bestand wilt analyseren, downloadt en installeert [u Zulu Mission Control](https://www.azul.com/products/zulu-mission-control/). Zie de [Azul-documentatie](https://docs.azul.com/zmc/) en de installatie-instructies voor instructies voor Zulu Mission [Control.](/java/azure/jdk/java-jdk-flight-recorder-and-mission-control)
 
 ### <a name="app-logging"></a>App-logboekregistratie
 
 ::: zone pivot="platform-windows"
 
-Schakel [](troubleshoot-diagnostic-logs.md#enable-application-logging-windows) toepassingslogregistratie in via de Azure Portal of [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config) om App Service te configureren voor het schrijven van de standaard console-uitvoer van uw toepassing en standaard consolefoutstromen naar het lokale bestandssysteem of Azure Blob Storage. Logboekregistratie bij de lokale App Service bestandssysteem exemplaar is uitgeschakeld 12 uur nadat deze is geconfigureerd. Als u een langere retentie nodig hebt, configureert u de toepassing om uitvoer naar een Blob Storage-container te schrijven. De logboeken van uw Java- en Tomcat-app vindt u in de *map /home/LogFiles/Application/.*
+Schakel [](troubleshoot-diagnostic-logs.md#enable-application-logging-windows) logboekregistratie van toepassingen via de Azure Portal of [Azure CLI](/cli/azure/webapp/log#az_webapp_log_config) in om App Service te configureren voor het schrijven van de standaard console-uitvoer van uw toepassing en standaard consolefoutstromen naar het lokale bestandssysteem of Azure Blob Storage. Logboekregistratie naar de lokale App Service bestandssysteem exemplaar is uitgeschakeld 12 uur nadat deze is geconfigureerd. Als u een langere bewaarperiode nodig hebt, configureert u de toepassing om uitvoer naar een Blob Storage-container te schrijven. De logboeken van uw Java- en Tomcat-app vindt u in de *map /home/LogFiles/Application/.*
 
 ::: zone-end
 ::: zone pivot="platform-linux"
 
-Schakel [](troubleshoot-diagnostic-logs.md#enable-application-logging-linuxcontainer) toepassingslogregistratie in via de Azure Portal of [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config) om App Service te configureren voor het schrijven van de standaard console-uitvoer van uw toepassing en standaard consolefoutstromen naar het lokale bestandssysteem of Azure Blob Storage. Als u een langere retentie nodig hebt, configureert u de toepassing om uitvoer naar een Blob Storage-container te schrijven. De logboeken van uw Java- en Tomcat-app vindt u in de *map /home/LogFiles/Application/.*
+Schakel [](troubleshoot-diagnostic-logs.md#enable-application-logging-linuxcontainer) logboekregistratie van toepassingen via de Azure Portal of [Azure CLI](/cli/azure/webapp/log#az_webapp_log_config) in om App Service te configureren voor het schrijven van de standaard console-uitvoer van uw toepassing en standaard consolefoutstromen naar het lokale bestandssysteem of Azure Blob Storage. Als u een langere bewaarperiode nodig hebt, configureert u de toepassing om uitvoer naar een Blob Storage-container te schrijven. De logboeken van uw Java- en Tomcat-app vindt u in de *map /home/LogFiles/Application/.*
 
 Azure Blob Storage logboekregistratie voor linux-App Services kunnen alleen worden geconfigureerd met behulp [van Azure Monitor (preview)](./troubleshoot-diagnostic-logs.md#send-logs-to-azure-monitor-preview) 
 
 ::: zone-end
 
-Als uw toepassing [gebruikmaakt van Logback](https://logback.qos.ch/) of [Log4j](https://logging.apache.org/log4j) voor tracering, kunt u deze traceringen doorsturen naar Azure-toepassing Insights met behulp van de configuratie-instructies voor het logboekregistratiekader in Explore [Java trace logs in Application Insights](../azure-monitor/app/java-trace-logs.md).
+Als uw toepassing [gebruikmaakt van Logback](https://logback.qos.ch/) of [Log4j](https://logging.apache.org/log4j) voor tracering, kunt u deze traceringen doorsturen naar Azure-toepassing Insights met behulp van de configuratie-instructies voor het logboekregistratie-framework in Logboeken voor Java-tracering [verkennen in Application Insights](../azure-monitor/app/java-trace-logs.md).
 
 ## <a name="customization-and-tuning"></a>Aanpassen en afstemmen
 
-Azure App Service linux biedt ondersteuning voor out-of-the-box afstemming en aanpassing via Azure Portal cli. Lees de volgende artikelen voor niet-Java-specifieke web-app-configuratie:
+Azure App Service linux biedt ondersteuning voor out-of-the-box afstemming en aanpassing via de Azure Portal en CLI. Lees de volgende artikelen voor niet-Java-specifieke web-app-configuratie:
 
 - [App-instellingen configureren](configure-common.md#configure-app-settings)
 - [Een aangepast domein instellen](app-service-web-tutorial-custom-domain.md)
@@ -170,11 +170,11 @@ Azure App Service linux biedt ondersteuning voor out-of-the-box afstemming en aa
 
 ### <a name="set-java-runtime-options"></a>Opties voor Java-runtime instellen
 
-Als u toegewezen geheugen of andere opties voor JVM-runtime wilt instellen, maakt u een [app-instelling](configure-common.md#configure-app-settings) met `JAVA_OPTS` de naam met de opties . App Service deze instelling door als een omgevingsvariabele aan de Java-runtime wanneer deze wordt gestart.
+Als u toegewezen geheugen of andere opties voor JVM-runtime wilt instellen, maakt u een [app-instelling](configure-common.md#configure-app-settings) met de `JAVA_OPTS` naam met de opties. App Service deze instelling door als een omgevingsvariabele aan de Java-runtime wanneer deze wordt gestart.
 
 Maak in Azure Portal **onder** Toepassingsinstellingen voor de web-app een nieuwe app-instelling met de naam die de aanvullende instellingen `JAVA_OPTS` bevat, zoals `-Xms512m -Xmx1204m` .
 
-Als u de app-instelling vanuit de Maven-invoegvoegcode wilt configureren, voegt u instellings-/waardetags toe in de sectie Azure-invoegvoegcode. In het volgende voorbeeld wordt een specifieke minimale en maximale Java-heapgrootte bepaald:
+Als u de app-instelling wilt configureren vanuit de Maven-invoegvoegcode, voegt u instellings-/waardetags toe in de sectie Azure-invoegvoeging. In het volgende voorbeeld wordt een specifieke minimale en maximale Java-heapgrootte bepaald:
 
 ```xml
 <appSettings>
@@ -191,13 +191,13 @@ Ontwikkelaars die één toepassing uitvoeren met één implementatiesleuf in hun
 - B2- en S2-exemplaren: `-Xms3072m -Xmx3072m`
 - B3- en S3-exemplaren: `-Xms6144m -Xmx6144m`
 
-Wanneer u de heap-instellingen van de toepassing afstemt, controleert u App Service van uw abonnement en houdt u rekening met meerdere toepassingen en implementatiesleuf om de optimale toewijzing van geheugen te vinden.
+Wanneer u de heap-instellingen van de toepassing afstemt, controleert u de details van uw App Service en houdt u rekening met meerdere toepassingen en implementatiesleuf om de optimale toewijzing van geheugen te vinden.
 
 ### <a name="turn-on-web-sockets"></a>Websockockers in-
 
 Schakel ondersteuning voor websockers in de Azure Portal in de **toepassingsinstellingen** voor de toepassing. U moet de toepassing opnieuw starten om de instelling van kracht te laten worden.
 
-Schakel ondersteuning voor websocking in met behulp van de Azure CLI met de volgende opdracht:
+Schakel websockeondersteuning in met behulp van de Azure CLI met de volgende opdracht:
 
 ```azurecli-interactive
 az webapp config set --name <app-name> --resource-group <resource-group-name> --web-sockets-enabled true
@@ -214,7 +214,7 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 Maak in Azure Portal onder **Toepassingsinstellingen** voor de web-app een nieuwe app-instelling met de `JAVA_OPTS` naam met de waarde `-Dfile.encoding=UTF-8` .
 
-U kunt de app-instelling ook configureren met behulp van de App Service Maven-invoegvoegapp. Voeg de naam en waardetags van de instelling toe in de configuratie van de invoegvoegcode:
+U kunt de app-instelling ook configureren met behulp van App Service Maven-invoegvoeging. Voeg de naam- en waardetags van de instelling toe in de configuratie van de invoegvoegcode:
 
 ```xml
 <appSettings>
@@ -227,29 +227,29 @@ U kunt de app-instelling ook configureren met behulp van de App Service Maven-in
 
 ### <a name="pre-compile-jsp-files"></a>JSP-bestanden vooraf compileren
 
-Als u de prestaties van Tomcat-toepassingen wilt verbeteren, kunt u uw JSP-bestanden compileren voordat u implementeert in App Service. U kunt de [Maven-invoeg-app van](https://sling.apache.org/components/jspc-maven-plugin/plugin-info.html) Apache Sling gebruiken of dit [Ant-buildbestand gebruiken.](https://tomcat.apache.org/tomcat-9.0-doc/jasper-howto.html#Web_Application_Compilation)
+Als u de prestaties van Tomcat-toepassingen wilt verbeteren, kunt u uw JSP-bestanden compileren voordat u implementeert in App Service. U kunt de [Maven-invoeggebruik maken](https://sling.apache.org/components/jspc-maven-plugin/plugin-info.html) die wordt geleverd door Apache Sling of met dit [Ant-buildbestand.](https://tomcat.apache.org/tomcat-9.0-doc/jasper-howto.html#Web_Application_Compilation)
 
 ## <a name="secure-applications"></a>Toepassingen beveiligen
 
-Java-toepassingen die worden uitgevoerd in App Service hebben dezelfde set [met best practices voor beveiliging](../security/fundamentals/paas-applications-using-app-services.md) als andere toepassingen.
+Java-toepassingen die worden uitgevoerd in App Service hebben dezelfde set [best practices](../security/fundamentals/paas-applications-using-app-services.md) voor beveiliging als andere toepassingen.
 
-### <a name="authenticate-users-easy-auth"></a>Gebruikers verifiëren (eenvoudige verificatie)
+### <a name="authenticate-users-easy-auth"></a>Gebruikers verifiëren (Easy Auth)
 
-Stel app-verificatie in de Azure Portal met de **optie Verificatie en autorisatie.** Hier kunt u verificatie inschakelen met behulp van Azure Active Directory of sociale aanmeldingen zoals Facebook, Google of GitHub. Azure Portal configuratie werkt alleen wanneer u één verificatieprovider configureert. Zie Configure your [App Service app to use Azure Active Directory login (Uw app](configure-authentication-provider-aad.md) configureren voor het gebruik van Azure Active Directory-aanmelding) en de gerelateerde artikelen voor andere id-providers voor meer informatie. Als u meerdere aanmeldingsproviders wilt inschakelen, volgt u de instructies in het artikel [App Service verificatie](app-service-authentication-how-to.md) aanpassen.
+Stel app-verificatie in de Azure Portal met de **optie Verificatie en autorisatie.** Hier kunt u verificatie inschakelen met behulp van Azure Active Directory of sociale aanmeldingen, zoals Facebook, Google of GitHub. Azure Portal configuratie werkt alleen wanneer u één verificatieprovider configureert. Zie Configure your [App Service app to use Azure Active Directory login](configure-authentication-provider-aad.md) (Uw app configureren Azure Active Directory en de gerelateerde artikelen voor andere id-providers) voor meer informatie. Als u meerdere aanmeldingsproviders wilt inschakelen, volgt u de instructies in het artikel [App Service verificatie](app-service-authentication-how-to.md) aanpassen.
 
 #### <a name="java-se"></a>Java SE
 
-Spring Boot-ontwikkelaars kunnen de [Azure Active Directory Spring Boot gebruiken](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory) om toepassingen te beveiligen met behulp van bekende Spring Security-aantekeningen en API's. Zorg ervoor dat u de maximale headergrootte in het *bestand application.properties verhoogt.* We raden een waarde aan van `16384` .
+Spring Boot kunnen ontwikkelaars de Azure Active Directory Spring Boot [gebruiken](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory) om toepassingen te beveiligen met behulp van bekende Spring Security-aantekeningen en API's. Zorg ervoor dat u de maximale headergrootte in het *bestand application.properties* verhoogt. We raden een waarde aan van `16384` .
 
 #### <a name="tomcat"></a>Tomcat
 
-Uw Tomcat-toepassing heeft rechtstreeks vanuit de servlet toegang tot de claims van de gebruiker door het Principal-object te casten naar een Map-object. Met het object Kaart wordt elk claimtype aan een verzameling claims voor dat type toe te voegen. In de onderstaande code `request` is een exemplaar van `HttpServletRequest` .
+Uw Tomcat-toepassing heeft rechtstreeks vanuit de servlet toegang tot de claims van de gebruiker door het principal-object naar een kaartobject te casten. Met het object Kaart wordt elk claimtype aan een verzameling claims voor dat type toegevoegd. In de onderstaande code `request` is een exemplaar van `HttpServletRequest` .
 
 ```java
 Map<String, Collection<String>> map = (Map<String, Collection<String>>) request.getUserPrincipal();
 ```
 
-U kunt nu het `Map` object voor een specifieke claim inspecteren. Het volgende codefragment doormaakt bijvoorbeeld alle claimtypen en drukt de inhoud van elke verzameling af.
+U kunt nu het `Map` -object voor een specifieke claim inspecteren. Het volgende codefragment doorsleert bijvoorbeeld alle claimtypen en drukt de inhoud van elke verzameling af.
 
 ```java
 for (Object key : map.keySet()) {
@@ -263,7 +263,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Gebruik het pad om gebruikers af te `/.auth/ext/logout` melden. Als u andere acties wilt uitvoeren, raadpleegt u de documentatie over [App Service verificatie en autorisatiegebruik.](./app-service-authentication-how-to.md) Er is ook officiële documentatie over de Tomcat [HttpServletRequest-interface](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) en de methoden ervan. De volgende servlet-methoden worden ook gesereerd op basis van uw App Service configuratie:
+Gebruik het pad om gebruikers af te `/.auth/ext/logout` melden. Als u andere acties wilt uitvoeren, raadpleegt u de documentatie over [App Service gebruik van verificatie en autorisatie.](./app-service-authentication-how-to.md) Er is ook officiële documentatie over de Tomcat [HttpServletRequest-interface](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) en de methoden ervan. De volgende servlet-methoden worden ook geseed op basis van uw App Service configuratie:
 
 ```java
 public boolean isSecure()
@@ -283,17 +283,17 @@ Volg de instructies in Een aangepaste DNS-naam beveiligen met een [SSL-binding i
 
 [Azure KeyVault biedt](../key-vault/general/overview.md) gecentraliseerd geheimbeheer met toegangsbeleid en controlegeschiedenis. U kunt geheimen (zoals wachtwoorden of verbindingsreeksen) opslaan in KeyVault en deze geheimen openen in uw toepassing via omgevingsvariabelen.
 
-Volg eerst de instructies voor het [verlenen](app-service-key-vault-references.md#granting-your-app-access-to-key-vault) van toegang tot Key Vault en het maken van een KeyVault-verwijzing naar uw [geheim in een toepassingsinstelling.](app-service-key-vault-references.md#reference-syntax) U kunt controleren of de verwijzing naar het geheim wordt opgelost door de omgevingsvariabele af te drukken terwijl u op afstand toegang hebt tot App Service terminal.
+Volg eerst de instructies voor [het](app-service-key-vault-references.md#granting-your-app-access-to-key-vault) verlenen van toegang tot Key Vault en het maken van een KeyVault-verwijzing naar uw [geheim in een toepassingsinstelling](app-service-key-vault-references.md#reference-syntax). U kunt controleren of de verwijzing naar het geheim wordt opgelost door de omgevingsvariabele af te drukken terwijl u op afstand toegang hebt tot App Service terminal.
 
 Als u deze geheimen wilt injecteren in uw Spring- of Tomcat-configuratiebestand, gebruikt u de syntaxis voor het injecteren van omgevingsvariabelen ( `${MY_ENV_VAR}` ). Raadpleeg deze documentatie over externe [configuraties voor Spring-configuratiebestanden.](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
 
 ::: zone pivot="platform-linux"
 
-### <a name="use-the-java-key-store"></a>Het Java-sleutelopslag gebruiken
+### <a name="use-the-java-key-store"></a>Java Key Store gebruiken
 
-Standaard worden openbare of persoonlijke certificaten die zijn geüpload [naar App Service Linux](configure-ssl-certificate.md) geladen in de respectieve Java Key Stores wanneer de container wordt gestart. Nadat u uw certificaat hebt geüpload, moet u de App Service opnieuw opstarten om het in het Java Key Store te laden. Openbare certificaten worden geladen in het sleutelopslag op `$JAVA_HOME/jre/lib/security/cacerts` en persoonlijke certificaten worden opgeslagen in `$JAVA_HOME/lib/security/client.jks` .
+Standaard worden openbare of persoonlijke certificaten die zijn geüpload [naar App Service Linux,](configure-ssl-certificate.md) geladen in de respectieve Java-sleutelopslag wanneer de container wordt gestart. Nadat u het certificaat hebt geüpload, moet u de App Service opnieuw starten om het in het Java-sleutelopslag te laden. Openbare certificaten worden geladen in het sleutelopslag op `$JAVA_HOME/jre/lib/security/cacerts` en persoonlijke certificaten worden opgeslagen in `$JAVA_HOME/lib/security/client.jks` .
 
-Er kan aanvullende configuratie nodig zijn voor het versleutelen van uw JDBC-verbinding met certificaten in het Java Key Store. Raadpleeg de documentatie voor het JDBC-stuurprogramma dat u hebt gekozen.
+Er is mogelijk aanvullende configuratie nodig voor het versleutelen van uw JDBC-verbinding met certificaten in het Java-sleutelopslag. Raadpleeg de documentatie voor het JDBC-stuurprogramma dat u hebt gekozen.
 
 - [PostgreSQL](https://jdbc.postgresql.org/documentation/head/ssl-client.html)
 - [SQL Server](/sql/connect/jdbc/connecting-with-ssl-encryption)
@@ -372,7 +372,7 @@ In deze sectie ziet u hoe u Java-toepassingen die zijn geïmplementeerd op Azure
 4. Upload de Java-agentbestanden naar een map onder */home/site/wwwroot/apm*. De bestanden voor uw agent moeten zich in */home/site/wwwroot/apm/appdynamics (*
 5. Blader in Azure Portal naar uw toepassing in App Service en maak een nieuwe toepassingsinstelling.
 
-   - Maak **voor Java SE-apps** een omgevingsvariabele met de naam `JAVA_OPTS` met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
+   - Maak **voor Java SE-apps** een omgevingsvariabele met de `JAVA_OPTS` naam met de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
    - Maak **voor Tomcat-apps** een omgevingsvariabele met de `CATALINA_OPTS` naam en de waarde waar uw App Service `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>` `<app-name>` is.
 
 ::: zone-end
@@ -623,7 +623,7 @@ Hieronder vindt u een voorbeeld van een xsl-bestand. In het xsl-voorbeeldbestand
 
 Plaats ten slotte de stuurprogramma-JAR's in het Tomcat-klassepad en start de App Service.
 
-1. Zorg ervoor dat de JDBC-stuurprogrammabestanden beschikbaar zijn voor de Tomcat-klasseloader door ze in de map */home/tomcat/lib te* plaatsen. (Maak deze map als deze nog niet bestaat.) Voer de volgende stappen uit om deze bestanden App Service uw exemplaar te uploaden:
+1. Zorg ervoor dat de JDBC-stuurprogrammabestanden beschikbaar zijn voor de Tomcat-klasseloader door ze in de map */home/tomcat/lib te* plaatsen. (Maak deze map als deze nog niet bestaat.) Als u deze bestanden wilt uploaden naar App Service-exemplaar, moet u de volgende stappen uitvoeren:
 
     1. Installeer in [Cloud Shell](https://shell.azure.com)de web-app-extensie:
 
@@ -704,7 +704,7 @@ JBoss EAP is alleen beschikbaar in de hardwareopties Premium en Isolated. Klante
 
 ### <a name="jdk-versions-and-maintenance"></a>JDK-versies en -onderhoud
 
-De ondersteunde Java Development Kit (JDK) van Azure wordt [geleverd](https://www.azul.com/downloads/azure-only/zulu/) via [Azul Systems](https://www.azul.com/). Azul Zulu Enterprise-builds van OpenJDK zijn een gratis, multiplatform- en productieklaar distributie van de OpenJDK voor Azure en Azure Stack met ondersteuning van Microsoft en Azul Systems. Ze bevatten alle onderdelen voor het maken en uitvoeren van Java SE-toepassingen. U kunt de JDK installeren vanuit [Java JDK-installatie.](/azure/developer/java/fundamentals/java-jdk-long-term-support)
+De ondersteunde Java Development Kit (JDK) van Azure wordt [geleverd](https://www.azul.com/downloads/azure-only/zulu/) via [Azul Systems](https://www.azul.com/). Azul Zulu Enterprise-builds van OpenJDK zijn een gratis, multiplatform- en productieklaar distributie van de OpenJDK voor Azure en Azure Stack wordt door Microsoft en Azul Systems. Ze bevatten alle onderdelen voor het maken en uitvoeren van Java SE-toepassingen. U kunt de JDK installeren vanuit [Java JDK-installatie.](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 
 Belangrijke versie-updates worden geleverd via nieuwe runtimeopties in Azure App Service. Klanten werken bij naar deze nieuwere versies van Java door hun App Service-implementatie te configureren en zijn verantwoordelijk voor het testen en ervoor zorgen dat de grote update aan hun behoeften voldoet.
 

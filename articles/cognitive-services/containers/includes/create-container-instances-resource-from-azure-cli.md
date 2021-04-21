@@ -1,7 +1,7 @@
 ---
 title: Ondersteuning voor containers
 titleSuffix: Azure Cognitive Services
-description: Meer informatie over het maken van een Azure container Instance-bron vanuit de Azure CLI.
+description: Meer informatie over het maken van een Azure-containerresource vanuit de Azure CLI.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 87007d3df3fe44ab04a330b09b8e495ec4b47e54
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 32b00e031e3cf865093c267084117a8704b6e272
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "97866088"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107800099"
 ---
-## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Een Azure container Instance-bron maken vanuit de Azure CLI
+## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Een Azure Container Instance-resource maken vanuit de Azure CLI
 
-In de onderstaande YAML wordt de resource van het Azure-container exemplaar gedefinieerd. Kopieer de inhoud en plak deze in een nieuw bestand met de naam `my-aci.yaml` en vervang de waarden voor de opmerkingen door uw eigen. Raadpleeg de indeling van de [sjabloon][template-format] voor geldige YAML. Raadpleeg de [container opslagplaatsen en installatie kopieën][repositories-and-images] voor de beschik bare afbeeldings namen en de bijbehorende opslag plaats. Zie [yaml Reference: Azure container instances][aci-yaml-ref]voor meer informatie over de yaml-verwijzing voor container exemplaren.
+De yaml hieronder definieert de Azure Container Instance-resource. Kopieer en plak de inhoud in een nieuw bestand met de naam en `my-aci.yaml` vervang de opmerkingen door uw eigen waarden. Raadpleeg de [sjabloonindeling voor][template-format] geldige YAML. Raadpleeg de [containeropslagplaats en -afbeeldingen voor][repositories-and-images] de beschikbare namen van de afbeeldingen en de bijbehorende opslagplaats. Zie YAML-verwijzing: Azure Container Instances voor meer informatie over de [YAML-verwijzing voor container Azure Container Instances.][aci-yaml-ref]
 
 ```YAML
 apiVersion: 2018-10-01
@@ -64,20 +64,20 @@ type: Microsoft.ContainerInstance/containerGroups
 ```
 
 > [!NOTE]
-> Niet alle locaties hebben dezelfde Beschik baarheid van de CPU en het geheugen. Raadpleeg de tabel [locatie en resources][location-to-resource] voor de lijst met beschik bare resources voor containers per locatie en besturings systeem.
+> Niet alle locaties hebben dezelfde CPU- en geheugenbeschikbaarheid. Raadpleeg de tabel [locatie en resources][location-to-resource] voor de lijst met beschikbare resources voor containers per locatie en besturingssysteem.
 
-We vertrouwen op het YAML-bestand dat we voor de [`az container create`][azure-container-create] opdracht hebben gemaakt. Voer vanuit de Azure CLI de opdracht uit, waarbij u de kunt `az container create` vervangen `<resource-group>` door uw eigen. Voor het beveiligen van waarden binnen een implementatie van een YAML raadpleegt u ook [beveiligde waarden][secure-values].
+We vertrouwen op het YAML-bestand dat we voor de opdracht hebben [`az container create`][azure-container-create] gemaakt. Voer vanuit de Azure CLI de opdracht `az container create` uit en vervang de door uw eigen `<resource-group>` opdracht. Voor het beveiligen van waarden binnen een YAML-implementatie raadpleegt u [bovendien beveiligde waarden][secure-values].
 
 ```azurecli
 az container create -g <resource-group> -f my-aci.yaml
 ```
 
-De uitvoer van de opdracht is `Running...` als geldig, nadat de uitvoer is gewijzigd in een JSON-teken reeks die de zojuist gemaakte ACI-resource vertegenwoordigt. De container installatie kopie is meer dan waarschijnlijk niet beschikbaar voor een tijdje, maar de resource wordt nu geïmplementeerd.
+De uitvoer van de opdracht is indien geldig. Na enige tijd wordt de uitvoer gewijzigd in een JSON-tekenreeks die de zojuist gemaakte `Running...` ACI-resource vertegenwoordigt. De containerafbeelding is waarschijnlijk een tijdje niet beschikbaar, maar de resource is nu geïmplementeerd.
 
 > [!TIP]
-> Let op de locatie van de open bare preview-versie van Azure cognitieve Services, aangezien de YAML moet worden aangepast aan de plaats waar ze overeenkomen.
+> Let goed op de locaties van de openbare preview-versie van Azure Cognitive Service-aanbiedingen, omdat de YAML dienovereenkomstig moet worden aangepast om aan de locatie te komen.
 
-[azure-container-create]: /cli/azure/container#az-container-create
+[azure-container-create]: /cli/azure/container#az_container_create
 [template-format]: /azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups#template-format
 [aci-yaml-ref]: ../../../container-instances/container-instances-reference-yaml.md
 [repositories-and-images]: ../container-image-tags.md

@@ -6,12 +6,12 @@ ms.topic: include
 ms.date: 03/10/2020
 ms.author: sstein
 ms.reviewer: vanto
-ms.openlocfilehash: c7bd942b427bdbd2d8184f712f97dd2a0a57fa90
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0568860c387aa1239ec56005e404606272ae8275
+ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "102178066"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107800330"
 ---
 In deze stap maakt u een [logische SQL-server](../database/logical-servers.md) en een [individuele database](../database/single-database-overview.md) waarin AdventureWorksLT-voorbeeldgegevens worden gebruikt. U kunt de database maken met behulp van menu's en schermen in de Azure-portal, of met behulp van een Azure CLI- of PowerShell-script in Azure Cloud Shell.
 
@@ -69,8 +69,8 @@ Een resourcegroep, server en afzonderlijke database maken in de Azure-portal:
    Zie [Azure-services en -resources toegang verlenen tot deze server](../database/network-access-controls-overview.md) en [Een privé-eindpunt toevoegen](../database/private-endpoint-overview.md) voor meer informatie over firewallinstellingen.
 
 1. Selecteer op het tabblad **Aanvullende instellingen**, in de sectie **Gegevensbron**, voor **Bestaande gegevens gebruiken**, de optie **Voorbeeld**.
-1. Schakel desgewenst [Azure Defender voor SQL](../database/azure-defender-for-sql.md)in.
-1. U kunt het [onderhouds venster](../database/maintenance-window.md) zo instellen dat gepland onderhoud op het beste moment wordt uitgevoerd voor uw data base.
+1. Schakel optioneel de [Azure Defender in voor SQL](../database/azure-defender-for-sql.md).
+1. U kunt eventueel het [onderhoudsvenster zo instellen](../database/maintenance-window.md) dat gepland onderhoud wordt uitgevoerd op het beste moment voor uw database.
 1. Selecteer **Controleren en maken** onderaan de pagina.
 
    ![Tabblad Aanvullende instellingen](./media/sql-database-create-single-database/additional-settings.png)
@@ -151,11 +151,11 @@ De voorgaande code maakt gebruik van de volgende Azure CLI-opdrachten:
 
 | Opdracht | Beschrijving |
 |---|---|
-| [az account set](/cli/azure/account#az-account-set) | Hiermee stelt u een abonnement in als het huidige actieve abonnement. |
-| [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Hiermee maakt u een server die als host fungeert voor databases en elastische pools. |
-| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-create) | Hiermee maakt u een firewallregel op serverniveau. |
-| [az sql db create](/cli/azure/sql/db#az-sql-db-create) | Hiermee maakt u een database. |
+| [az account set](/cli/azure/account#az_account_set) | Hiermee stelt u een abonnement in als het huidige actieve abonnement. |
+| [az group create](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az sql server create](/cli/azure/sql/server#az_sql_server_create) | Hiermee maakt u een server die als host fungeert voor databases en elastische pools. |
+| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule##az_sql_server_firewall_rule_create) | Hiermee maakt u een firewallregel op serverniveau. |
+| [az sql db create](/cli/azure/sql/db#az_sql_db_create) | Hiermee maakt u een database. |
 
 Zie [Azure CLI-voorbeelden](../database/az-cli-script-samples-content-guide.md) voor meer Azure CLI-voorbeelden in Azure SQL Database.
 

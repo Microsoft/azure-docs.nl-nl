@@ -48,10 +48,10 @@
     - name: Beveiliging
       items:
         - name: Beveiligingsfuncties
-          href: security-overview.md
+          href: security-features.md
         - name: Basisprincipes van Key Vault-verificatie
           href: authentication-fundamentals.md
-        - name: Beveiligingswerelden en geografieën
+        - name: Beveiligingswerelden en -geografieën
           href: overview-security-worlds.md
         - name: Netwerkbeveiliging
           href: network-security.md

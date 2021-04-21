@@ -8,12 +8,12 @@ ms.date: 12/18/2020
 ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
-ms.openlocfilehash: c064a35ac6136d728f75b65379c543149cc8189d
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 47b15c857f6f0c8c4d8f377ee4ecdcca74e88e0f
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107750028"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107818569"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-java-certificates"></a>Quickstart: Azure Key Vault-clientbibliotheek met certificaten voor Java (certificaten)
 Aan de slag met de Azure Key Vault-clientbibliotheek met certificaten voor Java. Volg de onderstaande stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
@@ -272,4 +272,4 @@ In deze quickstart hebt u een sleutelkluis gemaakt, een certificaat gemaakt, opg
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-overview.md)
+- Instructies voor [veilige toegang tot een sleutelkluis](../general/security-features.md)

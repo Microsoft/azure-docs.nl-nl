@@ -3,48 +3,48 @@ title: Uw eigen sleutel configureren voor het versleutelen Azure Service Bus dat
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen Azure Service Bus gegevens rest.
 ms.topic: conceptual
 ms.date: 02/10/2021
-ms.openlocfilehash: 88de4ccc2c6997622540664dc15b21f052df622a
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: de716b9f14191ba057c83a060104e64937c4192a
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107788583"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107816004"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-service-bus-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels configureren voor het versleutelen Azure Service Bus data-at-rest met behulp van de Azure Portal
-Azure Service Bus Premium biedt versleuteling van data-at-rest met Azure Storage Service Encryption (Azure SSE). Service Bus Premium gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage worden versleuteld met door Microsoft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel aangeduid als Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door Microsoft beheerde sleutel, maar wordt de door Microsoft beheerde sleutel bovendien versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels die worden gebruikt voor het versleutelen van door Microsoft beheerde sleutels maken, draaien, uitschakelen en intrekken. Het inschakelen van de BYOK-functie is een een keer instellen van uw naamruimte.
+Azure Service Bus Premium biedt versleuteling van data-at-rest met Azure Storage Service Encryption (Azure SSE). Service Bus Premium gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage worden versleuteld met door Microsoft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel aangeduid als Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door Microsoft beheerde sleutel, maar wordt de door Microsoft beheerde sleutel bovendien versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang maken, draaien, uitschakelen en intrekken tot door de klant beheerde sleutels die worden gebruikt voor het versleutelen van door Microsoft beheerde sleutels. Het inschakelen van de BYOK-functie is een een keer instellen in uw naamruimte.
 
 Er zijn enkele waarschuwingen voor de door de klant beheerde sleutel voor versleuteling aan de servicezijde. 
-- Deze functie wordt ondersteund door [Azure Service Bus Premium-laag.](service-bus-premium-messaging.md) De functie kan niet worden ingeschakeld voor Service Bus standard-laag.
+- Deze functie wordt ondersteund door [Azure Service Bus Premium-laag.](service-bus-premium-messaging.md) Deze kan niet worden ingeschakeld voor standard-Service Bus-naamruimten.
 - De versleuteling kan alleen worden ingeschakeld voor nieuwe of lege naamruimten. Als de naamruimte wachtrijen of onderwerpen bevat, mislukt de versleutelingsbewerking.
 
-U kunt uw Azure Key Vault gebruiken om uw sleutels te beheren en uw sleutelgebruik te controleren. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
+U kunt deze Azure Key Vault sleutels te beheren en uw sleutelgebruik te controleren. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
 
-In dit artikel wordt beschreven hoe u een sleutelkluis configureert met door de klant beheerde sleutels met behulp van de Azure Portal. Zie Voor meer informatie over het maken van een sleutelkluis met behulp van de [Azure Portal, Quickstart: Een](../key-vault/general/quick-create-portal.md)Azure Key Vault maken met behulp van Azure Portal .
+In dit artikel wordt beschreven hoe u een sleutelkluis configureert met door de klant beheerde sleutels met behulp van de Azure Portal. Zie Quickstart: Een Azure Key Vault maken met behulp van de Azure Portal voor meer informatie over het maken van een [sleutelkluis Azure Portal.](../key-vault/general/quick-create-portal.md)
 
 > [!IMPORTANT]
-> Als u door de klant beheerde sleutels Azure Service Bus vereist dat voor de sleutelkluis twee vereiste eigenschappen zijn geconfigureerd. Dit zijn:  **Soft Delete** **en Do Not Purge**. Deze eigenschappen zijn standaard ingeschakeld wanneer u een nieuwe sleutelkluis maakt in de Azure Portal. Als u deze eigenschappen echter moet inschakelen voor een bestaande sleutelkluis, moet u PowerShell of Azure CLI gebruiken.
+> Als u door de klant beheerde sleutels Azure Service Bus, moet voor de sleutelkluis twee vereiste eigenschappen zijn geconfigureerd. Dit zijn:  **Soft Delete** **en Do Not Purge**. Deze eigenschappen zijn standaard ingeschakeld wanneer u een nieuwe sleutelkluis in de Azure Portal. Als u deze eigenschappen echter wilt inschakelen voor een bestaande sleutelkluis, moet u PowerShell of Azure CLI gebruiken.
 
 ## <a name="enable-customer-managed-keys"></a>Door de klant beheerde sleutels inschakelen
 Als u door de klant beheerde sleutels in de Azure Portal, volgt u deze stappen:
 
 1. Navigeer naar Service Bus Premium-naamruimte.
 2. Selecteer op **de** pagina Instellingen van Service Bus naamruimte de optie **Versleuteling.**
-3. Selecteer de versleuteling van door de klant **beheerde sleutels at-rest,** zoals wordt weergegeven in de volgende afbeelding.
+3. Selecteer **versleuteling at rest door de klant beheerde sleutel,** zoals wordt weergegeven in de volgende afbeelding.
 
     ![Door de klant beheerde sleutel inschakelen](./media/configure-customer-managed-key/enable-customer-managed-key.png)
 
 
 ## <a name="set-up-a-key-vault-with-keys"></a>Een sleutelkluis met sleutels instellen
 
-Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de klant beheerde sleutel koppelen aan Azure Service Bus naamruimte. Service Bus ondersteunt alleen Azure Key Vault. Als u de optie **Versleuteling met door** de klant beheerde sleutel in de vorige sectie inschakelen, moet u de sleutel importeren in Azure Key Vault. Voor de sleutels moet ook **De sleutel zijn** ingesteld op Soft Delete en Do Not **Purge.** Deze instellingen kunnen worden geconfigureerd met [Behulp van PowerShell](../key-vault/general/key-vault-recovery.md) of [CLI.](../key-vault/general/key-vault-recovery.md)
+Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de klant beheerde sleutel koppelen aan Azure Service Bus naamruimte. Service Bus ondersteunt alleen Azure Key Vault. Als u de optie **Versleuteling met door** de klant beheerde sleutel in de vorige sectie inschakelen, moet u de sleutel importeren in Azure Key Vault. Daarnaast moeten voor de sleutels **De sleutel zijn** geconfigureerd voor Soft Delete en Do Not **Purge.** Deze instellingen kunnen worden geconfigureerd met Behulp van [PowerShell](../key-vault/general/key-vault-recovery.md) of [CLI.](../key-vault/general/key-vault-recovery.md)
 
-1. Volg de snelstart om een nieuwe sleutelkluis Azure Key Vault [maken.](../key-vault/general/overview.md) Zie Over sleutels, geheimen en certificaten voor meer informatie over het importeren [van bestaande sleutels.](../key-vault/general/about-keys-secrets-certificates.md)
-1. Gebruik de opdracht [az keyvault create](/cli/azure/keyvault#az_keyvault_create) om zowel de beveiliging voor het verwijderen als het opsluizen van een kluis in te zetten.
+1. Als u een nieuwe sleutelkluis wilt maken, volgt u de Azure Key Vault [Quickstart.](../key-vault/general/overview.md) Zie Over sleutels, geheimen en certificaten voor meer informatie over het importeren [van bestaande sleutels.](../key-vault/general/about-keys-secrets-certificates.md)
+1. Gebruik de opdracht [az keyvault create](/cli/azure/keyvault#az_keyvault_create) om bij het maken van een kluis zowel de beveiliging voor het verwijderen als het opsluizen van de kluis in te voeren.
 
     ```azurecli-interactive
     az keyvault create --name contoso-SB-BYOK-keyvault --resource-group ContosoRG --location westus --enable-soft-delete true --enable-purge-protection true
     ```    
-1. Gebruik de opdracht [az keyvault update](/cli/azure/keyvault#az_keyvault_update) om beveiliging tegen opsluizen toe te voegen aan een bestaande kluis (waar al een soft delete is ingeschakeld).
+1. Gebruik de opdracht [az keyvault update](/cli/azure/keyvault#az_keyvault_update) om beveiliging tegen opsluizen toe te voegen aan een bestaande kluis (die al is ingeschakeld voor soft delete).
 
     ```azurecli-interactive
     az keyvault update --name contoso-SB-BYOK-keyvault --resource-group ContosoRG --enable-purge-protection true
@@ -62,26 +62,26 @@ Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de kla
 
         ![Sleutel selecteren in sleutelkluis](./media/configure-customer-managed-key/select-key-from-key-vault.png)
         > [!NOTE]
-        > Voor redundantie kunt u maximaal drie sleutels toevoegen. Als een van de sleutels is verlopen of niet toegankelijk is, worden de andere sleutels gebruikt voor versleuteling.
+        > Voor redundantie kunt u maximaal 3 sleutels toevoegen. Als een van de sleutels is verlopen of niet toegankelijk is, worden de andere sleutels gebruikt voor versleuteling.
         
     1. Vul de details voor de sleutel in en klik op **Selecteren.** Hiermee wordt de versleuteling van de door Microsoft beheerde sleutel met uw sleutel (door de klant beheerde sleutel) ingeschakeld. 
 
 
     > [!IMPORTANT]
-    > Als u een door de klant beheerde sleutel wilt gebruiken samen met geo-herstel na noodherstel, raadpleegt u deze sectie. 
+    > Als u de door de klant beheerde sleutel wilt gebruiken samen met geo-noodherstel, raadpleegt u deze sectie. 
     >
-    > Als u versleuteling van door Microsoft beheerde sleutels wilt inschakelen met een door de klant beheerde sleutel, wordt er een toegangsbeleid ingesteld voor de beheerde identiteit van de Service Bus op de opgegeven Azure KeyVault. [](../key-vault/general/security-overview.md) Dit zorgt voor gecontroleerde toegang tot de Azure KeyVault vanuit Azure Service Bus naamruimte.
+    > Als u versleuteling van door Microsoft beheerde sleutels wilt inschakelen met een door de klant beheerde sleutel, wordt een toegangsbeleid ingesteld voor de beheerde identiteit van de Service Bus op de opgegeven Azure KeyVault. [](../key-vault/general/security-features.md) Dit zorgt voor beheerde toegang tot de Azure KeyVault vanuit Azure Service Bus naamruimte.
     >
     > Als gevolg van deze:
     > 
-    >   * Als [geo-herstel na noodherstel](service-bus-geo-dr.md) al is ingeschakeld voor de Service Bus-naamruimte en u op zoek bent naar het inschakelen van door de klant beheerde sleutel, 
+    >   * Als [geo-noodherstel](service-bus-geo-dr.md) al is ingeschakeld voor de Service Bus-naamruimte en u op zoek bent naar door de klant beheerde sleutel, dan 
     >     * De koppeling breken
     >     * [Stel het toegangsbeleid voor](../key-vault/general/assign-access-policy-portal.md) de beheerde identiteit in voor de primaire en secundaire naamruimten voor de sleutelkluis.
     >     * Stel versleuteling in voor de primaire naamruimte.
     >     * Koppel de primaire en secundaire naamruimten opnieuw.
     > 
-    >   * Als u Geo-DR wilt inschakelen voor een Service Bus naamruimte waarin de door de klant beheerde sleutel al is ingesteld,
-    >     * [Stel het toegangsbeleid voor de](../key-vault/general/assign-access-policy-portal.md) beheerde identiteit in voor de secundaire naamruimte voor de sleutelkluis.
+    >   * Als u Geo-DR wilt inschakelen voor een Service Bus waar de door de klant beheerde sleutel al is ingesteld, dan -
+    >     * [Stel het toegangsbeleid in voor](../key-vault/general/assign-access-policy-portal.md) de beheerde identiteit voor de secundaire naamruimte voor de sleutelkluis.
     >     * Koppel de primaire en secundaire naamruimten.
 
 
@@ -91,7 +91,7 @@ U kunt uw sleutel roteren in de sleutelkluis met behulp van het roulatiemechanis
 
 ## <a name="revoke-access-to-keys"></a>Toegang tot sleutels intrekken
 
-Als u de toegang tot de versleutelingssleutels inroept, worden de gegevens niet op Service Bus. De gegevens zijn echter niet toegankelijk vanuit de Service Bus naamruimte. U kunt de versleutelingssleutel intrekken via toegangsbeleid of door de sleutel te verwijderen. Meer informatie over toegangsbeleid en het beveiligen van uw sleutelkluis van [Beveiligde toegang tot een sleutelkluis.](../key-vault/general/security-overview.md)
+Als u de toegang tot de versleutelingssleutels inroept, worden de gegevens niet op Service Bus. De gegevens zijn echter niet toegankelijk vanuit de Service Bus naamruimte. U kunt de versleutelingssleutel intrekken via toegangsbeleid of door de sleutel te verwijderen. Meer informatie over toegangsbeleid en het beveiligen van uw sleutelkluis van [Beveiligde toegang tot een sleutelkluis.](../key-vault/general/security-features.md)
 
 Zodra de versleutelingssleutel is ingetrokken, Service Bus de service in de versleutelde naamruimte niet meer werkt. Als de toegang tot de sleutel is ingeschakeld of de verwijderde sleutel wordt hersteld, kiest de Service Bus-service de sleutel zodat u toegang hebt tot de gegevens uit de versleutelde Service Bus-naamruimte.
 
@@ -165,12 +165,12 @@ In deze sectie ziet u hoe u een Azure Service Bus met beheerde service-identitei
        }
     }
     ```
-2. Maak een sjabloonparameterbestand met de **naamCreateServiceBusPremiumNamespaceParams.jsop**. 
+2. Maak een sjabloonparameterbestand met de **naamCreateServiceBusPremiumNamespaceParams.jsmaken op**. 
 
     > [!NOTE]
     > Vervang de volgende waarden: 
     > - `<ServiceBusNamespaceName>` - Naam van uw Service Bus naamruimte
-    > - `<Location>` - Locatie van uw Service Bus-naamruimte
+    > - `<Location>` - Locatie van uw Service Bus naamruimte
 
     ```json
     {
@@ -204,7 +204,7 @@ In deze sectie ziet u hoe u een Azure Service Bus met beheerde service-identitei
     
     (OF)
     
-    Voer de volgende opdracht uit om een bestaande **sleutelkluis bij te werken.** Geef waarden op voor resourcegroep- en sleutelkluisnamen voordat u de opdracht gaat uitvoeren. 
+    Voer de volgende opdracht uit om een bestaande **sleutelkluis bij te werken.** Geef waarden op voor de namen van de resourcegroep en sleutelkluis voordat u de opdracht gaat uitvoeren. 
     
     ```powershell
     ($updatedKeyVault = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -ResourceGroupName {RGName} -VaultName {keyVaultName}).ResourceId).Properties| Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"-Force | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true" -Force
@@ -217,7 +217,7 @@ In deze sectie ziet u hoe u een Azure Service Bus met beheerde service-identitei
     Set-AzureRmKeyVaultAccessPolicy -VaultName {keyVaultName} -ResourceGroupName {RGName} -ObjectId $identity.PrincipalId -PermissionsToKeys get,wrapKey,unwrapKey,list
     ```
 
-### <a name="encrypt-data-in-service-bus-namespace-with-customer-managed-key-from-key-vault"></a>Gegevens in Service Bus-naamruimte versleutelen met door de klant beheerde sleutel uit key vault
+### <a name="encrypt-data-in-service-bus-namespace-with-customer-managed-key-from-key-vault"></a>Gegevens versleutelen in Service Bus-naamruimte met door de klant beheerde sleutel uit key vault
 U hebt tot nu toe de volgende stappen uitgevoerd: 
 
 1. U hebt een Premium-naamruimte gemaakt met een beheerde identiteit.
@@ -225,7 +225,7 @@ U hebt tot nu toe de volgende stappen uitgevoerd:
 
 In deze stap gaat u de naamruimte Service Bus sleutelkluis bijwerken met informatie over de sleutelkluis. 
 
-1. Maak een JSON-bestand **metUpdateServiceBusNamespaceWithEncryption.jsmet** de volgende inhoud: 
+1. Maak een JSON-bestand **UpdateServiceBusNamespaceWithEncryption.jsmet** de volgende inhoud: 
 
     ```json
     {
@@ -292,7 +292,7 @@ In deze stap gaat u de naamruimte Service Bus sleutelkluis bijwerken met informa
 
     > [!NOTE]
     > Vervang de volgende waarden: 
-    > - `<ServiceBusNamespaceName>` - Naam van uw Service Bus naamruimte
+    > - `<ServiceBusNamespaceName>` - Naam van uw Service Bus-naamruimte
     > - `<Location>` - Locatie van uw Service Bus-naamruimte
     > - `<KeyVaultName>` - Naam van uw sleutelkluis
     > - `<KeyName>` - Naam van de sleutel in de sleutelkluis  

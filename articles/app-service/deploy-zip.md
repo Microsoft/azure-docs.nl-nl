@@ -4,13 +4,13 @@ description: Meer informatie over het implementeren van uw app Azure App Service
 ms.topic: article
 ms.date: 08/12/2019
 ms.reviewer: sisirap
-ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: fe906a63a681515d401d005bf3357a4e7218ae66
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.custom: seodec18, devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 9f59576ea66b72a492e1e6c665a51258861842dd
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107771421"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107833012"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Uw app implementeren in Azure App Service met een ZIP- of WAR-bestand
 
@@ -44,7 +44,7 @@ Het bovenstaande eindpunt werkt op dit moment niet App Services Linux-systemen. 
 
 ## <a name="deploy-zip-file-with-azure-cli"></a>ZIP-bestand implementeren met Azure CLI
 
-Implementeer het geüploade ZIP-bestand in uw web-app met behulp van de [opdracht az webapp deployment source config-zip.](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config_zip)  
+Implementeer het geüploade ZIP-bestand naar uw web-app met behulp van [de opdracht az webapp deployment source config-zip.](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config_zip)  
 
 In het volgende voorbeeld wordt het ZIP-bestand geïmplementeerd dat u hebt geüpload. Wanneer u een lokale installatie van Azure CLI gebruikt, geeft u het pad op naar uw lokale ZIP-bestand voor `--src` .
 
@@ -70,7 +70,7 @@ Als u een WAR-bestand wilt implementeren App Service, verzendt u een POST-aanvra
 
 Gebruik altijd `/api/wardeploy` bij het implementeren van WAR-bestanden. Met deze API wordt uw WAR-bestand uitgebreid en op het gedeelde bestandsstation opgeslagen. het gebruik van andere implementatie-API's kan leiden tot inconsistent gedrag. 
 
-Voor de HTTP BASIC-verificatie hebt u de referenties voor App Service implementatie nodig. Zie Referenties op gebruikersniveau instellen en opnieuw instellen voor meer informatie over het instellen van [uw implementatiereferenties.](deploy-configure-credentials.md#userscope)
+Voor de HTTP BASIC-verificatie hebt u uw App Service implementatiereferenties nodig. Zie Referenties op gebruikersniveau instellen en opnieuw instellen voor informatie over het instellen van [uw implementatiereferenties.](deploy-configure-credentials.md#userscope)
 
 ### <a name="with-curl"></a>Met cURL
 
@@ -82,7 +82,7 @@ curl -X POST -u <username> --data-binary @"<war-file-path>" https://<app-name>.s
 
 ### <a name="with-powershell"></a>Met PowerShell
 
-In het volgende voorbeeld wordt [Publish-AzWebapp gebruikt om het](/powershell/module/az.websites/publish-azwebapp) .war-bestand te uploaden. Vervang de tijdelijke aanduidingen `<group-name>` `<app-name>` , en `<war-file-path>` .
+In het volgende voorbeeld wordt [Publish-AzWebapp gebruikt om het](/powershell/module/az.websites/publish-azwebapp) WAR-bestand te uploaden. Vervang de tijdelijke aanduidingen `<group-name>` `<app-name>` , en `<war-file-path>` .
 
 ```powershell
 Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <war-file-path>
@@ -92,9 +92,9 @@ Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer geavanceerde implementatiescenario's kunt u [proberen om in Azure te implementeren met Git](deploy-local-git.md). Met git-implementatie in Azure kunt u versiebeheer, pakketherstel, MSBuild en meer gebruiken.
+Voor meer geavanceerde implementatiescenario's kunt [u proberen te implementeren in Azure met Git](deploy-local-git.md). Implementatie op basis van Git in Azure maakt versiebeheer, pakketherstel, MSBuild en meer mogelijk.
 
 ## <a name="more-resources"></a>Meer bronnen
 
-* [Kudu: Implementeren vanuit een zip-bestand](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file)
+* [Kudu: Implementeren vanuit een ZIP-bestand](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file)
 * [Azure App Service implementatiereferenties](deploy-ftp.md)

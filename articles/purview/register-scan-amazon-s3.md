@@ -1,457 +1,457 @@
 ---
 title: Amazon S3-buckets scannen
-description: In deze hand leiding vindt u informatie over het scannen van Amazon S3-buckets.
+description: In deze handleiding wordt beschreven hoe u Amazon S3-buckets scant.
 author: batamig
 ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 04/07/2021
+ms.date: 04/21/2021
 ms.custom: references_regions
-ms.openlocfilehash: a0559028192b0a99aeffd45a3b2896f9c9d159be
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.openlocfilehash: 75a7cba1e47509e3186ab519d0d8ca82dd315373
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107310190"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107815518"
 ---
-# <a name="azure-purview-connector-for-amazon-s3"></a>Azure controle sfeer liggen-connector voor Amazon S3
+# <a name="azure-purview-connector-for-amazon-s3"></a>Azure Purview-connector voor Amazon S3
 
-Deze hand leiding bevat uitleg over het gebruik van Azure controle sfeer liggen voor het scannen van uw ongestructureerde gegevens die momenteel zijn opgeslagen in de standaard buckets van Amazon S3 en detecteert welke soorten gevoelige informatie in uw gegevens voor komt. In deze hand leiding wordt ook beschreven hoe u de Amazon S3-buckets kunt identificeren waarbij de gegevens op dit moment worden opgeslagen voor eenvoudige informatie bescherming en gegevens naleving.
+Deze handleiding bevat een uitleg over het gebruik van Azure Purview om uw ongestructureerde gegevens te scannen die momenteel zijn opgeslagen in standaard-buckets van Amazon S3 en om te ontdekken welke typen gevoelige informatie er in uw gegevens bestaan. In deze handleiding wordt ook beschreven hoe u de Amazon S3-buckets identificeert waarin de gegevens momenteel zijn opgeslagen voor eenvoudige gegevensbeveiliging en gegevens compliance.
 
-Voor deze service gebruikt u controle sfeer liggen om een Microsoft-account te bieden met beveiligde toegang tot AWS, waarbij de controle sfeer liggen-scanner wordt uitgevoerd. De controle sfeer liggen-scanner gebruikt deze toegang tot uw Amazon S3-buckets om uw gegevens te lezen en vervolgens rapporteert de scan resultaten, met inbegrip van de meta gegevens en de classificatie, terug naar Azure. Gebruik de controle sfeer liggen-classificatie en label rapporten om de resultaten van uw gegevens scan te analyseren en te controleren.
+Voor deze service gebruikt u Purview om een Microsoft-account met beveiligde toegang tot AWS, waar de Purview-scanner wordt uitgevoerd. De Purview-scanner gebruikt deze toegang tot uw Amazon S3-buckets om uw gegevens te lezen en rapporteert vervolgens de scanresultaten, inclusief alleen de metagegevens en classificatie, terug naar Azure. Gebruik de purview-classificatie en het labelen van rapporten om de resultaten van uw gegevensscan te analyseren en te controleren.
 
-In deze hand leiding vindt u informatie over het toevoegen van Amazon S3-buckets als controle sfeer liggen-resources en het maken van een scan voor uw Amazon S3-gegevens.
+In deze handleiding leert u hoe u Amazon S3-buckets als Purview-resources toevoegt en een scan maakt voor uw Amazon S3-gegevens.
 
-## <a name="purview-scope-for-amazon-s3"></a>Controle sfeer liggen-bereik voor Amazon S3
+## <a name="purview-scope-for-amazon-s3"></a>Bereik van de purview voor Amazon S3
 
-Het volgende bereik is specifiek voor het registreren en scannen van Amazon S3-buckets als controle sfeer liggen-gegevens bronnen.
+Het volgende bereik is specifiek voor het registreren en scannen van Amazon S3-buckets als Purview-gegevensbronnen.
 
 |Bereik  |Beschrijving  |
 |---------|---------|
-|**Gegevenslimieten**     |    De controle sfeer liggen-scanner service biedt momenteel ondersteuning voor het scannen van Amazon S3-buckets voor Maxi maal 100 GB aan gegevens per Tenant.     |
-|**Bestands typen**     | De controle sfeer liggen-scanner service ondersteunt momenteel de volgende bestands typen: <br><br>. AVRO,. CSV,. doc,. DOCM,. docx,. dot,. json,. ODP,. ODS,. ODT,. Orc,. Parquet,. PDF,. pot,. PPS,. PPSX,. ppt,. PPTM,. PPTX,. PSV,. SSV,. tsv,. txt,. XLC,. xls,. xlsb,. xlsm,. xlsx,. xlt,. XML        |
-|**Regio's**     | De controle sfeer liggen-connector voor de Amazon S3-service wordt momenteel alleen geïmplementeerd in de regio's **AWS VS-Oost (Ohio)** en **Europa (Frankfurt)** . <br><br>Zie [opslag-en scan regio's](#storage-and-scanning-regions)voor meer informatie.   |
+|**Gegevenslimieten**     |    De Purview-scannerservice ondersteunt momenteel het scannen van Amazon S3-buckets voor maximaal 100 GB aan gegevens per tenant.     |
+|**Bestandstypen**     | De Purview-scannerservice ondersteunt momenteel de volgende bestandstypen: <br><br>.avro, .csv, .doc, .docm, .docx, .dot, .json, .odp, .ods, .odt, .orc, .parquet, .pdf, .pot, .pps, .ppsx, .ppt, .pptm, .pptx, .psv, .ssv, .tsv, .txt, .xlc, .xls, .xlsb, .xlsm, .xlsx, .xlt, .xlt, .xml        |
+|**Regio's**     | De Purview-connector voor de Amazon S3-service is momenteel alleen geïmplementeerd in de regio's AWS US - oost **(Ohio)** en **Europa (Region).** <br><br>Zie Opslag- en [scanregio's voor meer informatie.](#storage-and-scanning-regions)   |
 |     |         |
 
-Voor meer informatie raadpleegt u de gedocumenteerde controle sfeer liggen-limieten op:
+Zie voor meer informatie de gedocumenteerde limieten voor purview op:
 
-- [Quota's voor resources beheren en verg Roten met Azure controle sfeer liggen](how-to-manage-quotas.md)
-- [Ondersteunde gegevens bronnen en bestands typen in azure controle sfeer liggen](sources-and-scans.md)
-- [Privé-eind punten gebruiken voor uw controle sfeer liggen-account](catalog-private-link.md)
-### <a name="storage-and-scanning-regions"></a>Opslag-en scan regio's
+- [Quota voor resources beheren en verhogen met Azure Purview](how-to-manage-quotas.md)
+- [Ondersteunde gegevensbronnen en bestandstypen in Azure Purview](sources-and-scans.md)
+- [Privé-eindpunten gebruiken voor uw Purview-account](catalog-private-link.md)
+### <a name="storage-and-scanning-regions"></a>Opslag- en scanregio's
 
-De volgende tabel bevat de regio's waar u gegevens opslaat in de regio waar deze zouden worden gescand door Azure controle sfeer liggen.
+In de volgende tabel worden de regio's waar uw gegevens worden opgeslagen, weergegeven in de regio waar deze worden gescand door Azure Purview.
 
 > [!IMPORTANT]
-> Klanten worden in rekening gebracht voor alle gerelateerde kosten voor gegevens overdracht op basis van de regio van hun Bucket.
+> Klanten worden in rekening gebracht voor alle gerelateerde kosten voor gegevensoverdracht, afhankelijk van de regio van hun bucket.
 >
 
-| Opslag regio | Scan regio |
+| Opslagregio | Scanregio |
 | ------------------------------- | ------------------------------------- |
-| VS Oost (Ohio)                  | VS Oost (Ohio)                        |
-| VS Oost (N. Virginia           | VS Oost (Ohio) of VS Oost (N. Virginia                       |
-| VS West (N. Californië         | VS Oost (Ohio)                        |
-| US - west (Oregon)                | VS Oost (Ohio)                        |
-| Afrika (Kaap stad)              | Europa (Frankfurt)                    |
-| Azië en Stille Oceaan (Hongkong)        | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
-| Azië en Stille Oceaan (Mumbai)           | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
-| Azië en Stille Oceaan (Osaka-lokaal)      | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
-| Azië en Stille Oceaan (Seoul)            | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
-| Azië en Stille Oceaan (Singapore)        | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                   |
-| Azië en Stille Oceaan (Sydney)           | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                  |
-| Azië en Stille Oceaan (Tokio)            | Europa (Frankfurt) of Azië en Stille Oceaan (Sydney)                 |
-| Canada (centraal)                | VS Oost (Ohio)                        |
-| China (Peking)                 | Niet ondersteund                    |
+| US - oost (Ohio)                  | US - oost (Ohio)                        |
+| US - oost (N. Virginia)           | US - oost (N. Virginia)                       |
+| US - west (N. Californië)         | US - oost (Ohio)                        |
+| US - west (Oregon)                | US - oost (Ohio)                        |
+| Afrika (Cape Town)              | Europa (Parijs)                    |
+| Azië en Stille Oceaan (Hongkong)        | Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Mumbai)           | Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Osaka-Local)      | Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Azië en Stille Oceaan)            | Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Singapore)        | Azië en Stille Oceaan (Sydney)                   |
+| Azië en Stille Oceaan (Sydney)           | Azië en Stille Oceaan (Sydney)                  |
+| Azië en Stille Oceaan (Tokio)            | Azië en Stille Oceaan (Sydney)                 |
+| Canada (centraal)                | US - oost (Ohio)                        |
+| China (China) (China)                 | Niet ondersteund                    |
 | China (Ningxia)                 | Niet ondersteund                   |
-| Europa (Frankfurt)              | Europa (Frankfurt)                    |
-| Europa (Ierland)                | Europa (Frankfurt) of Europa (Ierland)                   |
-| Europa (Londen)                 | Europa (Frankfurt) of Europa (Ierland)                   |
-| Europa (Milaan)                  | Europa (Frankfurt)                    |
-| Europa (Parijs)                  | Europa (Frankfurt)                    |
-| Europa (Stockholm)              | Europa (Frankfurt)                    |
-| Midden-Oosten (Bahrein)           | Europa (Frankfurt)                    |
-| Zuid-Amerika (Sao Paulo)       | VS Oost (Ohio)                        |
+| Europa (Parijs)              | Europa (Parijs)                    |
+| Europa (Ierland)                | Europa (Ierland)                   |
+| Europa (Londen)                 | Europa (Ierland)                   |
+| Europa (Europe)                  | Europa (Parijs)                    |
+| Europa (Parijs)                  | Europa (Parijs)                    |
+| Europa (Maand)              | Europa (Parijs)                    |
+| Midden-Oosten (Midden-Oosten)           | Europa (Parijs)                    |
+| Zuid-Amerika (Sño Paulo)       | US - oost (Ohio)                        |
 | | |
 
 ## <a name="prerequisites"></a>Vereisten
 
-Zorg ervoor dat u de volgende vereisten hebt uitgevoerd voordat u uw Amazon S3-buckets als controle sfeer liggen-gegevens bronnen toevoegt en uw S3-gegevens scant.
+Zorg ervoor dat u de volgende vereisten hebt uitgevoerd voordat u uw Amazon S3-buckets toevoegt als Gegevensbronnen opsviewen en uw S3-gegevens scant.
 
 > [!div class="checklist"]
-> * U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn.
-> * [Een controle sfeer liggen-account maken](#create-a-purview-account) als u er nog geen hebt
-> * [Een controle sfeer liggen-referentie maken voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan)
-> * [Een nieuwe AWS-rol maken voor gebruik met controle sfeer liggen](#create-a-new-aws-role-for-purview)
-> * Het [scannen van versleutelde Amazon S3-buckets configureren](#configure-scanning-for-encrypted-amazon-s3-buckets), indien van toepassing
-> * Wanneer u uw buckets als controle sfeer liggen-resources toevoegt, hebt u de waarden van uw [AWS Arn](#retrieve-your-new-role-arn), [Bucket naam](#retrieve-your-amazon-s3-bucket-name)en soms uw [AWS-account-id](#locate-your-aws-account-id)nodig.
+> * U moet een Azure Purview-gegevensbronbeheerder zijn.
+> * [Maak een Purview-account](#create-a-purview-account) als u er nog geen hebt
+> * [Een Purview-referentie maken voor uw AWS-bucketscan](#create-a-purview-credential-for-your-aws-bucket-scan)
+> * [Een nieuwe AWS-rol maken voor gebruik met Purview](#create-a-new-aws-role-for-purview)
+> * [Scannen configureren voor versleutelde Amazon S3-buckets,](#configure-scanning-for-encrypted-amazon-s3-buckets)indien relevant
+> * Wanneer u uw buckets toevoegt als Resources opsviewen, hebt u de waarden van uw [AWS ARN,](#retrieve-your-new-role-arn) [bucketnaam](#retrieve-your-amazon-s3-bucket-name)en soms uw [AWS-account-id nodig.](#locate-your-aws-account-id)
 
-### <a name="create-a-purview-account"></a>Een controle sfeer liggen-account maken
+### <a name="create-a-purview-account"></a>Een Purview-account maken
 
-- **Als u al een controle sfeer liggen-account hebt,** kunt u door gaan met de configuraties die vereist zijn voor de ondersteuning van AWS S3. Begin met het [maken van een controle sfeer liggen-referentie voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan).
+- **Als u al een Purview-account hebt,** kunt u doorgaan met de configuraties die vereist zijn voor AWS S3-ondersteuning. Begin met Create a Purview credential for your AWS bucket scan ( Een [Purview-referentie maken voor uw AWS-bucketscan).](#create-a-purview-credential-for-your-aws-bucket-scan)
 
-- **Als u een controle sfeer liggen-account moet maken, volgt u** de instructies in [een Azure controle sfeer liggen-account exemplaar maken](create-catalog-portal.md). Nadat u uw account hebt gemaakt, keert u terug om de configuratie te volt ooien en gaat u controle sfeer liggen connector gebruiken voor Amazon S3.
+- **Als u een Purview-account moet maken, volgt** u de instructies in [Een Azure Purview-accountinstructies maken.](create-catalog-portal.md) Nadat u uw account hebt gemaakt, keert u hier terug om de configuratie te voltooien en begint u met het gebruik van de Purview-connector voor Amazon S3.
 
-### <a name="create-a-purview-credential-for-your-aws-bucket-scan"></a>Een controle sfeer liggen-referentie maken voor uw AWS Bucket-scan
+### <a name="create-a-purview-credential-for-your-aws-bucket-scan"></a>Een Purview-referentie maken voor uw AWS-bucketscan
 
-In deze procedure wordt beschreven hoe u een nieuwe controle sfeer liggen-referentie maakt die u kunt gebruiken bij het scannen van uw AWS-buckets.
+In deze procedure wordt beschreven hoe u een nieuwe Purview-referentie maakt om te gebruiken bij het scannen van uw AWS-buckets.
 
 > [!TIP]
-> U kunt ook in het midden van het proces een nieuwe referentie maken en [de scan configureren](#create-a-scan-for-one-or-more-amazon-s3-buckets). In dat geval selecteert u in het veld **referentie** de optie **Nieuw**.
+> U kunt ook een nieuwe referentie maken tijdens het configureren [van de scan.](#create-a-scan-for-one-or-more-amazon-s3-buckets) In dat geval selecteert u in **het veld Referentie** de optie **Nieuw.**
 >
 
-1. Ga in controle sfeer liggen naar het **Management Center** en selecteer onder **beveiliging en toegang** de optie **referenties**.
+1. Navigeer in Purview naar **het Beheercentrum** en selecteer onder **Beveiliging en toegang** de optie **Referenties.**
 
-1. Selecteer **Nieuw** en gebruik in het deel venster **nieuwe referentie** aan de rechter kant de volgende velden om uw controle sfeer liggen-referentie te maken:
+1. Selecteer **Nieuw** en gebruik in het **deelvenster** Nieuwe referentie dat aan de rechterkant wordt weergegeven de volgende velden om uw purview-referentie te maken:
 
     |Veld |Beschrijving  |
     |---------|---------|
-    |**Naam**     |Voer een beschrijvende naam in voor deze referentie of gebruik de standaard waarde.        |
+    |**Naam**     |Voer een betekenisvolle naam in voor deze referentie of gebruik de standaardwaarde.        |
     |**Beschrijving**     |Voer een optionele beschrijving in voor deze referentie, zoals `Used to scan the tutorial S3 buckets`         |
-    |**Verificatiemethode**     |Selecteer **Role Arn**, omdat u een rol Arn gebruikt om toegang te krijgen tot uw Bucket.         |
-    |**Microsoft-account-ID**     |Klik om deze waarde naar het klem bord te kopiëren. Gebruik deze waarde als de **Microsoft-account-id** bij het [maken van uw rol ARN in AWS](#create-a-new-aws-role-for-purview).           |
-    |**Externe ID**     |Klik om deze waarde naar het klem bord te kopiëren. Gebruik deze waarde als de **externe ID** bij [het maken van uw rol ARN in AWS.](#create-a-new-aws-role-for-purview)        |
-    |**ARN rol**     | Wanneer u [uw Amazon iam-rol hebt gemaakt](#create-a-new-aws-role-for-purview), navigeert u naar uw rol in het IAM-gebied, kopieert u de waarde van de **rol Arn** en voert u deze hier in. Bijvoorbeeld: `arn:aws:iam::284759281674:role/S3Role`. <br><br>Zie [uw nieuwe rol Arn ophalen](#retrieve-your-new-role-arn)voor meer informatie. |
+    |**Verificatiemethode**     |Selecteer **Role ARN,** omdat u een rol-ARN gebruikt om toegang te krijgen tot uw bucket.         |
+    |**Microsoft-account-id**     |Klik om deze waarde naar het klembord te kopiëren. Gebruik deze waarde als de Microsoft-account **id bij** het maken van uw Role ARN [in AWS](#create-a-new-aws-role-for-purview).           |
+    |**Externe id**     |Klik om deze waarde naar het klembord te kopiëren. Gebruik deze waarde als de externe **id bij het** maken van uw Role ARN in [AWS.](#create-a-new-aws-role-for-purview)        |
+    |**Role ARN**     | Nadat u uw [Amazon IAM-rol](#create-a-new-aws-role-for-purview)hebt gemaakt, gaat u naar uw rol in het gebied IAM, kopieert u de waarde role **ARN** en voert u deze hier in. Bijvoorbeeld: `arn:aws:iam::284759281674:role/S3Role`. <br><br>Zie Retrieve [your new Role ARN (Uw nieuwe role ARN ophalen) voor meer informatie.](#retrieve-your-new-role-arn) |
     | | |
 
-    Selecteer **maken** als u klaar bent om de referentie te maken.
+    Selecteer **Maken** wanneer u klaar bent met het maken van de referentie.
 
-1. Kopieer en plak de **Microsoft-account-id** en de **externe ID-** waarden die u wilt gebruiken bij het [maken van een nieuwe AWS-functie voor controle sfeer liggen](#create-a-new-aws-role-for-purview), de volgende stap, als u dit nog niet hebt gedaan.
+1. Als u dat nog niet hebt gedaan, kopieert en plakt u de waarden **Microsoft-account ID** en **External ID** voor gebruik bij het maken van een nieuwe AWS-rol voor [Purview.](#create-a-new-aws-role-for-purview)Dit is de volgende stap.
 
-Zie [referenties voor bron verificatie in azure controle sfeer liggen](manage-credentials.md)voor meer informatie over controle sfeer liggen-referenties.
+Zie Credentials for source authentication in Azure Purview (Referenties voor bronverificatie in Azure Purview) voor meer informatie [over purview-referenties.](manage-credentials.md)
 
-### <a name="create-a-new-aws-role-for-purview"></a>Een nieuwe AWS-rol maken voor controle sfeer liggen
+### <a name="create-a-new-aws-role-for-purview"></a>Een nieuwe AWS-rol maken voor Purview
 
-Voor deze procedure moet u de waarden voor uw Azure-account-ID en externe ID opgeven bij het maken van uw AWS-rol.
+Voor deze procedure moet u de waarden voor uw Azure-account-id en externe id invoeren bij het maken van uw AWS-rol.
 
-Als u deze waarden niet hebt, zoekt u ze eerst in uw [controle sfeer liggen-referentie](#create-a-purview-credential-for-your-aws-bucket-scan).
+Als u deze waarden niet hebt, zoekt u deze eerst in uw [Purview-referentie](#create-a-purview-credential-for-your-aws-bucket-scan).
 
-**Uw micro soft-account-id en externe ID zoeken**:
+**Uw Microsoft-account-id en externe id zoeken:**
 
-1. Navigeer in controle sfeer liggen naar de   >  **beveiligings-en toegangs**  >  **referenties** van het Management Center.
+1. Navigeer in Purview naar **De beveiliging van het beheercentrum** en krijg toegang  >    >  **tot Referenties**.
 
-1. Selecteer de referentie die u hebt [gemaakt voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan)en selecteer vervolgens **bewerken** in de werk balk.
+1. Selecteer de referentie die u hebt [gemaakt voor uw AWS-bucketscan](#create-a-purview-credential-for-your-aws-bucket-scan)en selecteer bewerken op de **werkbalk.**
 
-1. In het deel venster **referentie bewerken** dat aan de rechter kant wordt weer gegeven, kopieert u de **Microsoft-account-id** en de **externe ID-** waarden naar een afzonderlijk bestand, of laat u ze in het relevante veld plakken in AWS.
+1. In het **deelvenster** Referentie bewerken dat aan de rechterkant wordt  weergegeven, kopieert u de **waarden van Microsoft-account ID** en Externe id naar een afzonderlijk bestand of hebt u deze bij de hand om ze in het relevante veld in AWS te kopiëren.
 
     Bijvoorbeeld:
 
-    [![Zoek uw Microsoft-account-id en externe ID-waarden. ](./media/register-scan-amazon-s3/locate-account-id-external-id.png)](./media/register-scan-amazon-s3/locate-account-id-external-id.png#lightbox)
+    [![Zoek de waarden Microsoft-account id en externe id. ](./media/register-scan-amazon-s3/locate-account-id-external-id.png)](./media/register-scan-amazon-s3/locate-account-id-external-id.png#lightbox)
 
 
-**Uw AWS-rol maken voor controle sfeer liggen**:
+**Uw AWS-rol voor Purview maken:**
 
-1.  Open uw **Amazon Web Services** -console en selecteer onder **beveiliging, identiteit en naleving** de optie **iam**.
+1.  Open uw **Amazon Web Services console** en selecteer IAM onder **Beveiliging, Identiteit en** **Naleving.**
 
-1. Selecteer **rollen** en vervolgens **rol maken**.
+1. Selecteer **Rollen** en vervolgens **Rol maken.**
 
-1. Selecteer **een ander AWS-account** en voer de volgende waarden in:
+1. Selecteer **Een ander AWS-account** en voer de volgende waarden in:
 
     |Veld  |Description  |
     |---------|---------|
-    |**Account-id**     |    Voer uw micro soft-account-ID in. Bijvoorbeeld: `615019938638`     |
-    |**Externe ID**     |   Onder Opties selecteert u **externe ID vereisen...** en voert u vervolgens uw externe ID in het desbetreffende veld in. <br>Bijvoorbeeld: `e7e2b8a3-0a9f-414f-a065-afaf4ac6d994`     |
+    |**Account-id**     |    Voer uw Microsoft-account-id in. Bijvoorbeeld: `615019938638`     |
+    |**Externe id**     |   Selecteer onder Opties **de optie Externe id vereisen...** en voer vervolgens uw externe id in het aangewezen veld in. <br>Bijvoorbeeld: `e7e2b8a3-0a9f-414f-a065-afaf4ac6d994`     |
     | | |
 
     Bijvoorbeeld:
 
-    ![Voeg de ID van het micro soft-account toe aan uw AWS-account.](./media/register-scan-amazon-s3/aws-create-role-amazon-s3.png)
+    ![Voeg de Microsoft-account-id toe aan uw AWS-account.](./media/register-scan-amazon-s3/aws-create-role-amazon-s3.png)
 
-1. In het gebied **rol maken > machtigingen beleid koppelen** , filtert u de machtigingen die worden weer gegeven voor **S3**. Selecteer **AmazonS3ReadOnlyAccess** en selecteer vervolgens **volgende: Tags**.
+1. Filter in **het gebied > machtigingenbeleid** voor koppelen de machtigingen die worden weergegeven op **S3.** Selecteer **AmazonS3ReadOnlyAccess** en selecteer vervolgens **Volgende: Tags.**
 
-    ![Selecteer het ReadOnlyAccess-beleid voor de nieuwe rol Amazon S3-scan.](./media/register-scan-amazon-s3/aws-permission-role-amazon-s3.png)
+    ![Selecteer het readOnlyAccess-beleid voor de nieuwe Amazon S3-scanrol.](./media/register-scan-amazon-s3/aws-permission-role-amazon-s3.png)
 
     > [!IMPORTANT]
-    > Het **AmazonS3ReadOnlyAccess** -beleid biedt minimale machtigingen die zijn vereist voor het scannen van uw S3-buckets en kan ook andere machtigingen bevatten.
+    > Het **AmazonS3ReadOnlyAccess-beleid** biedt minimale machtigingen die vereist zijn voor het scannen van uw S3-buckets en kan ook andere machtigingen bevatten.
     >
-    >Als u alleen de mini maal vereiste machtigingen voor het scannen van uw buckets wilt Toep assen, maakt u een nieuw beleid met de machtigingen die zijn vermeld in de [minimale machtigingen voor uw AWS-beleid](#minimum-permissions-for-your-aws-policy), afhankelijk van of u één Bucket of alle buckets in uw account wilt scannen. 
+    >Als u alleen de minimale machtigingen wilt toepassen die vereist zijn voor het scannen van uw buckets, maakt u een nieuw beleid met de machtigingen die worden vermeld in Minimale machtigingen voor uw [AWS-beleid,](#minimum-permissions-for-your-aws-policy)afhankelijk van of u één bucket of alle buckets in uw account wilt scannen. 
     >
-    >Pas het nieuwe beleid toe op de rol in plaats van **AmazonS3ReadOnlyAccess.**
+    >Pas uw nieuwe beleid toe op de rol in plaats **van AmazonS3ReadOnlyAccess.**
 
-1. In het gebied **labels toevoegen (optioneel)** kunt u desgewenst een zinvolle tag maken voor deze nieuwe rol. Met handige Tags kunt u de toegang indelen, bijhouden en beheren voor elke rol die u maakt.
+1. In het **gebied Tags toevoegen (optioneel)** kunt u desgewenst een betekenisvolle tag voor deze nieuwe rol maken. Met handige tags kunt u de toegang organiseren, bijhouden en controleren voor elke rol die u maakt.
 
-    Voer indien nodig een nieuwe sleutel en waarde voor de tag in. Als u klaar bent, of als u deze stap wilt overs Laan, selecteert u **volgende: controleren** om de functie gegevens te controleren en de functie maken te volt ooien.
+    Voer waar nodig een nieuwe sleutel en waarde voor uw tag in. Wanneer u klaar bent of als u deze stap wilt overslaan, selecteert u **Volgende: Controleren** om de roldetails te controleren en het maken van de rol te voltooien.
 
-    ![Voeg een zinvolle tag toe om de toegang voor uw nieuwe rol in te delen, bij te houden of te beheren.](./media/register-scan-amazon-s3/add-tag-new-role.png)
+    ![Voeg een zinvolle tag toe om de toegang voor uw nieuwe rol te organiseren, bij te houden of te controleren.](./media/register-scan-amazon-s3/add-tag-new-role.png)
 
-1. Ga als volgt te werk in het **beoordelings** gebied:
+1. Ga als **volgt te** werk in het gebied Beoordeling:
 
-    - Voer in het veld **rolnaam** een duidelijke naam in voor uw rol
-    - Voer in het vak **Beschrijving van rol** een optionele beschrijving in om het doel van de functie te identificeren
-    - Controleer in de sectie **beleid** of het juiste beleid (**AmazonS3ReadOnlyAccess**) aan de rol is gekoppeld.
+    - Voer in **het veld Rolnaam** een betekenisvolle naam in voor uw rol
+    - Voer in **het vak Beschrijving** van rol een optionele beschrijving in om het doel van de rol te identificeren
+    - Controleer in **de** sectie Beleidsregels of het juiste beleid (**AmazonS3ReadOnlyAccess)** is gekoppeld aan de rol.
 
-    Selecteer vervolgens **rol maken** om het proces te volt ooien.
+    Selecteer vervolgens **Rol maken om** het proces te voltooien.
 
     Bijvoorbeeld:
 
     ![Bekijk de details voordat u uw rol maakt.](./media/register-scan-amazon-s3/review-role.png)
 
 
-### <a name="configure-scanning-for-encrypted-amazon-s3-buckets"></a>Scans voor versleutelde Amazon S3-buckets configureren
+### <a name="configure-scanning-for-encrypted-amazon-s3-buckets"></a>Scannen voor versleutelde Amazon S3-buckets configureren
 
-AWS buckets ondersteunen meerdere versleutelings typen. Voor buckets die gebruikmaken van **AWS-KMS-** code ring is speciale configuratie vereist om het scannen mogelijk te maken.
+AWS-buckets ondersteunen meerdere versleutelingstypen. Voor buckets die gebruikmaken van **AWS-KMS-versleuteling,** is speciale configuratie vereist om scannen mogelijk te maken.
 
 > [!NOTE]
-> Voor buckets die geen versleuteling, AES-256 of AWS-KMS S3-versleuteling gebruiken, kunt u deze sectie overs Laan en door gaan met [het ophalen van de naam van uw Amazon S3-Bucket](#retrieve-your-amazon-s3-bucket-name).
+> Voor buckets die geen versleuteling gebruiken, AES-256- of AWS-KMS S3-versleuteling, slaat u deze sectie over en gaat u verder met De naam van uw [Amazon S3-bucket ophalen.](#retrieve-your-amazon-s3-bucket-name)
 >
 
-**Controleren welk type versleuteling wordt gebruikt in uw Amazon S3-buckets:**
+**Het type versleuteling controleren dat wordt gebruikt in uw Amazon S3-buckets:**
 
-1. Ga in AWS naar **Storage**  >  **S3** > en selecteer **buckets** in het menu aan de linkerkant.
+1. Navigeer in AWS naar **Storage**  >  **S3** > selecteer **Buckets** in het menu aan de linkerkant.
 
-    ![Selecteer het tabblad Amazon S3-buckets.](./media/register-scan-amazon-s3/check-encryption-type-buckets.png)
+    ![Selecteer het tabblad Amazon S3 Buckets.](./media/register-scan-amazon-s3/check-encryption-type-buckets.png)
 
-1. Selecteer de Bucket die u wilt controleren. Selecteer op de pagina Details van Bucket het tabblad **Eigenschappen** en schuif omlaag naar het gebied **standaard versleuteling** .
+1. Selecteer de bucket die u wilt controleren. Selecteer op de pagina met details van de bucket het **tabblad Eigenschappen** en schuif omlaag naar het **gebied Standaardversleuteling.**
 
-    - Als de Bucket die u hebt geselecteerd voor een wille keurige, maar **AWS-KMS-** code ring is geconfigureerd, bijvoorbeeld als de standaard versleuteling voor uw Bucket is **uitgeschakeld**, slaat u de rest van deze procedure over en gaat u verder met [de naam van uw Amazon S3-Bucket](#retrieve-your-amazon-s3-bucket-name)
+    - Als de bucket die u hebt geselecteerd, is geconfigureerd voor alles behalve **AWS-KMS-versleuteling,** inclusief als de standaardversleuteling voor uw bucket **Uitgeschakeld** is, slaat u de rest van deze procedure over en gaat u verder met De naam van uw [Amazon S3-bucket ophalen.](#retrieve-your-amazon-s3-bucket-name)
 
-    - Als de Bucket die u hebt geselecteerd, is geconfigureerd voor **AWS-KMS-** versleuteling, gaat u verder met de onderstaande stappen om een nieuw beleid toe te voegen waarmee u een Bucket kunt scannen met aangepaste **AWS-KMS-** code ring.
+    - Als de bucket die u hebt geselecteerd is geconfigureerd voor **AWS-KMS-versleuteling,** gaat u verder zoals hieronder wordt beschreven om een nieuw beleid toe te voegen waarmee een bucket met aangepaste **AWS-KMS-versleuteling kan worden** gescand.
 
     Bijvoorbeeld:
 
-    ![Een Amazon S3-Bucket weer geven die is geconfigureerd met AWS-KMS-code ring](./media/register-scan-amazon-s3/default-encryption-buckets.png)
+    ![Een Amazon S3-bucket weergeven die is geconfigureerd met AWS-KMS-versleuteling](./media/register-scan-amazon-s3/default-encryption-buckets.png)
 
-**Een nieuw beleid toevoegen om een Bucket met aangepaste AWS-KMS-code ring te kunnen scannen:**
+**Een nieuw beleid toevoegen om het scannen van een bucket met aangepaste AWS-KMS-versleuteling toe te staan:**
 
-1. Navigeer in AWS naar **Services**  >   **iam**  >   -**beleid** en selecteer **beleid maken**.
+1. Navigeer in AWS naar **Services**  >   **IAM-beleid**  >   en selecteer **Beleid maken.**
 
-1. Definieer uw beleid op het tabblad **beleid maken** van de  >  **Visual Editor** met de volgende waarden:
+1. Definieer **uw beleid op** het tabblad Visual-editor voor beleid maken met de volgende  >   waarden:
 
     |Veld  |Description  |
     |---------|---------|
-    |**Service**     |  Voer **KMS** in en selecteer deze.       |
-    |**Acties**     | Onder **toegangs niveau**, selecteer **schrijven** om de sectie **schrijven** uit te vouwen.<br>Als u hebt uitgebreid, selecteert u alleen de optie **ontsleutelen** .        |
-    |**Bronnen**     |Selecteer een specifieke resource of **alle resources**.         |
+    |**Service**     |  Voer **KMS in en selecteer deze.**       |
+    |**Acties**     | Selecteer **onder Toegangsniveau** de optie **Schrijven om** de sectie Schrijven uit **te** vouwen.<br>Nadat u het bestand uitvloog, selecteert u **alleen de optie Ontsleutelen.**        |
+    |**Bronnen**     |Selecteer een specifieke resource of **Alle resources.**         |
     | | |
 
-    Wanneer u klaar bent, selecteert u **beleid controleren** om door te gaan.
+    Wanneer u klaar bent, selecteert u **Controlebeleid om** door te gaan.
 
-    ![Een beleid maken voor het scannen van een Bucket met AWS-KMS-code ring.](./media/register-scan-amazon-s3/create-policy-kms.png)
+    ![Maak een beleid voor het scannen van een bucket met AWS-KMS-versleuteling.](./media/register-scan-amazon-s3/create-policy-kms.png)
 
-1. Voer op de pagina **beleid controleren** een beschrijvende naam in voor uw beleid en een optionele beschrijving en selecteer vervolgens **beleid maken**.
+1. Voer op **de pagina** Beleid controleren een beschrijvende naam voor uw beleid en een optionele beschrijving in en selecteer vervolgens **Beleid maken.**
 
-    Het zojuist gemaakte beleid wordt toegevoegd aan uw lijst met beleids regels.
+    Het zojuist gemaakte beleid wordt toegevoegd aan uw lijst met beleidsregels.
 
-1. Koppel uw nieuwe beleid aan de rol die u hebt toegevoegd voor het scannen.
+1. Koppel uw nieuwe beleid aan de rol die u hebt toegevoegd voor scannen.
 
-    1. Ga terug naar de pagina **iam**  >  -**rollen** en selecteer de rol die u [eerder](#create-a-new-aws-role-for-purview)hebt toegevoegd.
+    1. Ga terug naar de **pagina IAM-rollen**  >   en selecteer de rol die u eerder [hebt toegevoegd.](#create-a-new-aws-role-for-purview)
 
-    1. Selecteer **beleid koppelen** op het tabblad **machtigingen** .
+    1. Selecteer op **het tabblad Machtigingen** de optie **Beleid koppelen.**
 
-        ![Selecteer beleid koppelen op het tabblad Machtigingen van uw rol.](./media/register-scan-amazon-s3/iam-attach-policies.png)
+        ![Selecteer op het tabblad Machtigingen van uw rol de optie Beleid koppelen.](./media/register-scan-amazon-s3/iam-attach-policies.png)
 
-    1. Op de pagina **machtigingen koppelen** zoekt en selecteert u het nieuwe beleid dat u hierboven hebt gemaakt. Selecteer **beleid koppelen** om uw beleid aan de rol toe te voegen.
+    1. Zoek en **selecteer op de** pagina Machtigingen koppelen het nieuwe beleid dat u hierboven hebt gemaakt. Selecteer **Beleid koppelen om** uw beleid aan de rol te koppelen.
 
-        De **overzichts** pagina wordt bijgewerkt, waarbij uw nieuwe beleid aan uw rol is gekoppeld.
+        De **pagina** Samenvatting wordt bijgewerkt, met uw nieuwe beleid gekoppeld aan uw rol.
 
-        ![Bekijk een bijgewerkte overzichts pagina met het nieuwe beleid dat aan uw rol is gekoppeld.](./media/register-scan-amazon-s3/attach-policy-role.png)
+        ![Bekijk een bijgewerkte overzichtspagina met het nieuwe beleid dat is gekoppeld aan uw rol.](./media/register-scan-amazon-s3/attach-policy-role.png)
 
-### <a name="retrieve-your-new-role-arn"></a>De nieuwe functie ARN ophalen
+### <a name="retrieve-your-new-role-arn"></a>Uw nieuwe Role ARN ophalen
 
-U moet de ARN van uw AWS-functie vastleggen en deze naar controle sfeer liggen kopiëren bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-one-or-more-amazon-s3-buckets).
+U moet uw AWS Role ARN opnemen en deze kopiëren naar Purview wanneer u een scan voor uw [Amazon S3-bucket maakt.](#create-a-scan-for-one-or-more-amazon-s3-buckets)
 
-**Uw rol ophalen ARN:**
+**Uw rol ARN ophalen:**
 
-1. Zoek en selecteer in het gebied rollen voor AWS **Identity and Access Management (IAM)**  >   de nieuwe rol die u hebt [gemaakt voor controle sfeer liggen](#create-a-purview-credential-for-your-aws-bucket-scan).
+1. Zoek en selecteer in het gebied **AWS Identity and Access Management (IAM)** Roles de nieuwe rol die u hebt gemaakt  >   [voor Purview](#create-a-purview-credential-for-your-aws-bucket-scan).
 
-1. Selecteer op de pagina **overzicht** van de functie de knop **kopiëren naar klem bord** rechts van de waarde van de **rol Arn** .
+1. Selecteer op de pagina Samenvatting **van** de rol de knop Kopiëren naar **klembord** rechts van de **waarde Role ARN.**
 
-    ![Kopieer de waarde van de rol ARN naar het klem bord.](./media/register-scan-amazon-s3/aws-copy-role-purview.png)
+    ![Kopieer de waarde van role ARN naar het klembord.](./media/register-scan-amazon-s3/aws-copy-role-purview.png)
 
-1. Plak deze waarde op een veilige locatie, die u kunt gebruiken bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-one-or-more-amazon-s3-buckets).
+1. Plak deze waarde op een veilige locatie, klaar voor gebruik bij het maken van [een scan voor uw Amazon S3-bucket.](#create-a-scan-for-one-or-more-amazon-s3-buckets)
 
-### <a name="retrieve-your-amazon-s3-bucket-name"></a>De naam van de Amazon S3-Bucket ophalen
+### <a name="retrieve-your-amazon-s3-bucket-name"></a>De naam van uw Amazon S3-bucket ophalen
 
-U hebt de naam van uw Amazon S3-Bucket nodig om deze naar controle sfeer liggen te kopiëren bij het [maken van een scan voor uw Amazon S3-Bucket](#create-a-scan-for-one-or-more-amazon-s3-buckets)
+U hebt de naam van uw Amazon S3-bucket nodig om deze naar Purview te kopiëren wanneer u een scan voor [uw Amazon S3-bucket maakt](#create-a-scan-for-one-or-more-amazon-s3-buckets)
 
-**De Bucket-naam ophalen:**
+**De naam van uw bucket ophalen:**
 
-1. Ga in AWS naar **Storage**  >  **S3** > en selecteer **buckets** in het menu aan de linkerkant.
+1. Navigeer in AWS naar **Storage**  >  **S3** > selecteer **Buckets** in het menu aan de linkerkant.
 
     ![Bekijk het tabblad Amazon S3-buckets.](./media/register-scan-amazon-s3/check-encryption-type-buckets.png)
 
-1. Zoek en selecteer de Bucket om de pagina Details van de Bucket weer te geven en kopieer de Bucket naam vervolgens naar het klem bord.
+1. Zoek en selecteer uw bucket om de pagina met bucketdetails weer te geven en kopieer vervolgens de bucketnaam naar het klembord.
 
     Bijvoorbeeld:
 
-    ![De URL van de S3 Bucket ophalen en kopiëren.](./media/register-scan-amazon-s3/retrieve-bucket-url-amazon.png)
+    ![Haal de URL van de S3-bucket op en kopieer deze.](./media/register-scan-amazon-s3/retrieve-bucket-url-amazon.png)
 
-    Plak de Bucket naam in een beveiligd bestand en voeg er een `s3://` voor voegsel aan toe om de waarde te maken die u moet invoeren bij het configureren van de Bucket als een controle sfeer liggen-resource.
+    Plak de naam van uw bucket in een beveiligd bestand en voeg er een voorvoegsel aan toe om de waarde te maken die u moet invoeren bij het configureren van uw bucket als een `s3://` Purview-resource.
 
     Bijvoorbeeld: `s3://purview-tutorial-bucket`
 
 > [!NOTE]
-> Alleen het hoofd niveau van de Bucket wordt ondersteund als een controle sfeer liggen-gegevens bron. De volgende URL, die bijvoorbeeld een submap bevat, wordt *niet* ondersteund: `s3://purview-tutorial-bucket/view-data`
+> Alleen het hoofdniveau van uw bucket wordt ondersteund als een gegevensbron voor het opsmmeren van gegevens. De volgende URL, die een submap bevat, wordt *bijvoorbeeld niet* ondersteund: `s3://purview-tutorial-bucket/view-data`
 >
 
-### <a name="locate-your-aws-account-id"></a>Zoek uw AWS-account-ID
+### <a name="locate-your-aws-account-id"></a>Zoek uw AWS-account-id
 
-U hebt uw AWS-account-ID nodig om uw AWS-account te registreren als een controle sfeer liggen-gegevens bron, samen met alle buckets.
+U hebt uw AWS-account-id nodig om uw AWS-account te registreren als een Purview-gegevensbron, samen met alle buckets.
 
-Uw AWS-account-ID is de ID die u gebruikt om u aan te melden bij de AWS-console. U kunt deze ook vinden zodra u bent aangemeld bij het IAM-dash board, aan de linkerkant onder de navigatie opties en bovenaan, als het numerieke deel van uw aanmeldings-URL:
+Uw AWS-account-id is de id die u gebruikt om u aan te melden bij de AWS-console. U kunt deze ook vinden wanneer u bent aangemeld op het IAM-dashboard, links onder de navigatieopties en bovenaan als het numerieke onderdeel van uw aanmeldings-URL:
 
 Bijvoorbeeld:
 
-![Haal de AWS-account-ID op.](./media/register-scan-amazon-s3/aws-locate-account-id.png)
+![Haal uw AWS-account-id op.](./media/register-scan-amazon-s3/aws-locate-account-id.png)
 
 
-## <a name="add-a-single-amazon-s3-bucket-as-a-purview-resource"></a>Eén Amazon S3-Bucket toevoegen als een controle sfeer liggen-resource
+## <a name="add-a-single-amazon-s3-bucket-as-a-purview-resource"></a>Eén Amazon S3-bucket toevoegen als een Purview-resource
 
-Gebruik deze procedure als u slechts één S3-Bucket hebt die u wilt registreren bij controle sfeer liggen als gegevens bron, of als u meerdere buckets hebt in uw AWS-account, maar niet al deze wilt registreren bij controle sfeer liggen.
+Gebruik deze procedure als u slechts één S3-bucket hebt die u wilt registreren bij Purview als gegevensbron, of als u meerdere buckets in uw AWS-account hebt, maar deze niet allemaal wilt registreren bij Purview.
 
-**De Bucket toevoegen**: 
+**Uw bucket toevoegen:** 
 
-1. Start de controle sfeer liggen-Portal met de speciale controle sfeer liggen-connector voor de Amazon S3-URL. Deze URL is door gegeven aan het team van de Amazon S3 controle sfeer liggen-connector.
+1. Start de Purview-portal met behulp van de speciale Purview-connector voor Amazon S3 URL. Deze URL is aan u verstrekt door het productbeheerteam van amazon S3 Purview Connector.
 
-    ![Start de controle sfeer liggen-Portal.](./media/register-scan-amazon-s3/purview-portal-amazon-s3.png)
+    ![Start de Purview-portal.](./media/register-scan-amazon-s3/purview-portal-amazon-s3.png)
 
-1. Ga naar de pagina Azure controle sfeer liggen **Sources** en selecteer registreren pictogram **registreren** ![ .](./media/register-scan-amazon-s3/register-button.png) > **Amazon S3**  >  **Door gaan**.
+1. Navigeer naar de pagina Azure Purview **Sources** en selecteer  ![ registerpictogram.](./media/register-scan-amazon-s3/register-button.png) > **Amazon S3**  >  **Ga door.**
 
-    ![Voeg een Amazon AWS-Bucket toe als een controle sfeer liggen-gegevens bron.](./media/register-scan-amazon-s3/add-s3-datasource-to-purview.png)
+    ![Voeg een Amazon AWS-bucket toe als een Purview-gegevensbron.](./media/register-scan-amazon-s3/add-s3-datasource-to-purview.png)
 
     > [!TIP]
-    > Als u meerdere [verzamelingen](manage-data-sources.md#manage-collections) hebt en uw Amazon S3 wilt toevoegen aan een specifieke verzameling, selecteert u in de rechter bovenhoek de **kaart weergave** en selecteert u vervolgens het pictogram **registreren** registreren ![ .](./media/register-scan-amazon-s3/register-button.png) in uw verzameling.
+    > Als u meerdere [verzamelingen hebt](manage-data-sources.md#manage-collections) en uw Amazon S3  wilt toevoegen aan een specifieke verzameling, selecteert u de kaartweergave rechtsboven en selecteert u vervolgens het **pictogram** ![ Registreren registreren.](./media/register-scan-amazon-s3/register-button.png) in uw verzameling.
     >
 
-1. In het deel venster **register bronnen (Amazon S3)** dat wordt geopend, voert u de volgende gegevens in:
+1. Voer in **het deelvenster Bronnen registreren (Amazon S3)** dat wordt geopend de volgende gegevens in:
 
     |Veld  |Beschrijving  |
     |---------|---------|
-    |**Naam**     |Voer een beschrijvende naam in of gebruik de standaard waarde.         |
-    |**Bucket-URL**     | Voer de URL van uw AWS Bucket in met behulp van de volgende syntaxis:   `s3://<bucketName>`     <br><br>**Opmerking**: Zorg ervoor dat u alleen het hoofd niveau van de Bucket, zonder submappen, gebruikt. Zie [de naam van uw Amazon S3-Bucket ophalen](#retrieve-your-amazon-s3-bucket-name)voor meer informatie. |
-    |**Een verzameling selecteren** |Als u hebt opgegeven dat u een gegevens bron wilt registreren in een verzameling, wordt die verzameling al vermeld. <br><br>Selecteer een andere verzameling als dat nodig **is, geen om geen** verzameling toe te wijzen of **Nieuw** om nu een nieuwe verzameling te maken. <br><br>Zie voor meer informatie over controle sfeer liggen-verzamelingen [gegevens bronnen beheren in azure controle sfeer liggen](manage-data-sources.md#manage-collections).|
+    |**Naam**     |Voer een betekenisvolle naam in of gebruik de standaardwaarde.         |
+    |**Bucket-URL**     | Voer de URL van uw AWS-bucket in met behulp van de volgende syntaxis:   `s3://<bucketName>`     <br><br>**Opmerking:** zorg ervoor dat u alleen het hoofdniveau van uw bucket gebruikt, zonder submappen. Zie Uw [Amazon S3-bucketnaam](#retrieve-your-amazon-s3-bucket-name)ophalen voor meer informatie. |
+    |**Een verzameling selecteren** |Als u ervoor hebt gekozen om een gegevensbron te registreren vanuit een verzameling, wordt die verzameling al vermeld. <br><br>Selecteer zo nodig een andere verzameling, **Geen om** geen verzameling toe te wijzen of **Nieuw om** nu een nieuwe verzameling te maken. <br><br>Zie Gegevensbronnen beheren in Azure Purview voor meer informatie over [Purview-verzamelingen.](manage-data-sources.md#manage-collections)|
     | | |
 
-    Wanneer u klaar bent, selecteert u **volt ooien** om de registratie te volt ooien.
+    Wanneer u klaar bent, selecteert u **Voltooien om** de registratie te voltooien.
 
-Ga door met [het maken van een scan voor een of meer Amazon S3-buckets.](#create-a-scan-for-one-or-more-amazon-s3-buckets)
+Ga door [met Een scan maken voor een of meer Amazon S3-buckets.](#create-a-scan-for-one-or-more-amazon-s3-buckets).
 
-## <a name="add-an-amazon-account-as-a-purview-resource"></a>Een Amazon-account toevoegen als een controle sfeer liggen-resource
+## <a name="add-an-amazon-account-as-a-purview-resource"></a>Een Amazon-account toevoegen als een Purview-resource
 
-Gebruik deze procedure als u meerdere S3-buckets hebt in uw Amazon-account en u deze allemaal als controle sfeer liggen-gegevens bronnen wilt registreren.
+Gebruik deze procedure als u meerdere S3-buckets in uw Amazon-account hebt en u ze allemaal wilt registreren als Gegevensbronnen opsmaken.
 
-Bij [het configureren van de scan](#create-a-scan-for-one-or-more-amazon-s3-buckets)kunt u de specifieke buckets selecteren die u wilt scannen als u deze niet allemaal tegelijk wilt scannen.
+Wanneer [u de scan configureert,](#create-a-scan-for-one-or-more-amazon-s3-buckets)kunt u de specifieke buckets selecteren die u wilt scannen, als u niet alle buckets samen wilt scannen.
 
-**Uw Amazon-account toevoegen**:
-1. Start de controle sfeer liggen-Portal met de speciale controle sfeer liggen-connector voor de Amazon S3-URL. Deze URL is door gegeven aan het team van de Amazon S3 controle sfeer liggen-connector.
+**Uw Amazon-account toevoegen:**
+1. Start de Purview-portal met behulp van de speciale Purview-connector voor Amazon S3 URL. Deze URL is verstrekt door het productbeheerteam van amazon S3 Purview Connector.
 
-    ![Connector starten voor Amazon S3 dedicated controle sfeer liggen-Portal](./media/register-scan-amazon-s3/purview-portal-amazon-s3.png)
+    ![Connector starten voor speciale Amazon S3 Purview-portal](./media/register-scan-amazon-s3/purview-portal-amazon-s3.png)
 
-1. Ga naar de pagina Azure controle sfeer liggen **Sources** en selecteer registreren pictogram **registreren** ![ .](./media/register-scan-amazon-s3/register-button.png) > **Amazon-accounts**  >  **Door gaan**.
+1. Navigeer naar de pagina Azure Purview **Sources** en selecteer  ![ registerpictogram.](./media/register-scan-amazon-s3/register-button.png) > **Amazon-accounts**  >  **Ga door.**
 
-    ![Voeg een Amazon-account toe als een controle sfeer liggen-gegevens bron.](./media/register-scan-amazon-s3/add-s3-account-to-purview.png)
+    ![Voeg een Amazon-account toe als een Purview-gegevensbron.](./media/register-scan-amazon-s3/add-s3-account-to-purview.png)
 
     > [!TIP]
-    > Als u meerdere [verzamelingen](manage-data-sources.md#manage-collections) hebt en uw Amazon S3 wilt toevoegen aan een specifieke verzameling, selecteert u in de rechter bovenhoek de **kaart weergave** en selecteert u vervolgens het pictogram **registreren** registreren ![ .](./media/register-scan-amazon-s3/register-button.png) in uw verzameling.
+    > Als u meerdere verzamelingen [hebt](manage-data-sources.md#manage-collections) en uw Amazon S3  wilt toevoegen aan een specifieke verzameling, selecteert u de weergave Kaart rechtsboven en selecteert u vervolgens het **pictogram** ![ Registreren registreren.](./media/register-scan-amazon-s3/register-button.png) in uw verzameling.
     >
 
-1. In het deel venster **register bronnen (Amazon S3)** dat wordt geopend, voert u de volgende gegevens in:
+1. Voer in **het deelvenster Bronnen registreren (Amazon S3)** dat wordt geopend de volgende gegevens in:
 
     |Veld  |Beschrijving  |
     |---------|---------|
-    |**Naam**     |Voer een beschrijvende naam in of gebruik de standaard waarde.         |
-    |**AWS-account-ID**     | Voer uw AWS-account-ID in. Zie [uw AWS-account-ID zoeken](#locate-your-aws-account-id) voor meer informatie.|
-    |**Een verzameling selecteren** |Als u hebt opgegeven dat u een gegevens bron wilt registreren in een verzameling, wordt die verzameling al vermeld. <br><br>Selecteer een andere verzameling als dat nodig **is, geen om geen** verzameling toe te wijzen of **Nieuw** om nu een nieuwe verzameling te maken. <br><br>Zie voor meer informatie over controle sfeer liggen-verzamelingen [gegevens bronnen beheren in azure controle sfeer liggen](manage-data-sources.md#manage-collections).|
+    |**Naam**     |Voer een betekenisvolle naam in of gebruik de standaardwaarde.         |
+    |**AWS-account-id**     | Voer uw AWS-account-id in. Zie Uw [AWS-account-id zoeken voor meer informatie](#locate-your-aws-account-id)|
+    |**Een verzameling selecteren** |Als u ervoor hebt gekozen om een gegevensbron te registreren vanuit een verzameling, wordt die verzameling al vermeld. <br><br>Selecteer een andere verzameling als dat nodig is, **Geen** om geen verzameling toe te wijzen of **Nieuw om** nu een nieuwe verzameling te maken. <br><br>Zie Gegevensbronnen beheren in Azure Purview voor meer informatie over [Purview-verzamelingen.](manage-data-sources.md#manage-collections)|
     | | |
 
-    Wanneer u klaar bent, selecteert u **volt ooien** om de registratie te volt ooien.
+    Wanneer u klaar bent, selecteert u **Voltooien om** de registratie te voltooien.
 
-Ga door met [het maken van een scan voor een of meer Amazon S3-buckets](#create-a-scan-for-one-or-more-amazon-s3-buckets).
+Ga door [met Een scan maken voor een of meer Amazon S3-buckets.](#create-a-scan-for-one-or-more-amazon-s3-buckets)
 
 ## <a name="create-a-scan-for-one-or-more-amazon-s3-buckets"></a>Een scan maken voor een of meer Amazon S3-buckets
 
-Wanneer u uw buckets hebt toegevoegd als controle sfeer liggen-gegevens bronnen, kunt u een scan configureren om op geplande intervallen of onmiddellijk te worden uitgevoerd.
+Nadat u uw buckets hebt toegevoegd als Gegevensbronnen opsviewen, kunt u een scan configureren om te worden uitgevoerd met geplande intervallen of onmiddellijk.
 
-1. Ga naar het gebied Azure controle sfeer liggen **Sources** en voer een van de volgende handelingen uit:
+1. Navigeer naar het gebied Azure Purview **Sources** en doe het volgende:
 
-    - Selecteer in de **kaart weergave** **nieuwe** scan pictogram nieuwe scan ![ .](./media/register-scan-amazon-s3/new-scan-button.png) in het vak gegevens bron.
-    - Beweeg de muis aanwijzer in de **lijst weergave** over de rij voor de gegevens bron en selecteer **nieuw pictogram scan** ![ Nieuw scannen. ](./media/register-scan-amazon-s3/new-scan-button.png) ..
+    - Selecteer in **de kaartweergave** Nieuw **scanpictogram** ![ Nieuwe scan.](./media/register-scan-amazon-s3/new-scan-button.png) in uw gegevensbronvak.
+    - Beweeg in **de lijstweergave** de muisaanwijzer over de rij voor uw gegevensbron en selecteer **Nieuwe scan** Pictogram ![ Nieuwe scan. ](./media/register-scan-amazon-s3/new-scan-button.png) .
 
-1. In het deel venster **scannen...** dat aan de rechter kant wordt geopend, definieert u de volgende velden en selecteert u **door gaan**:
+1. **Definieer in** het deelvenster Scannen... dat aan de rechterkant wordt geopend de volgende velden en selecteer vervolgens **Doorgaan:**
 
     |Veld  |Beschrijving  |
     |---------|---------|
-    |**Naam**     |  Voer een beschrijvende naam in voor de scan of gebruik de standaard waarde.       |
-    |**Type** |Wordt alleen weer gegeven als u uw AWS-account hebt toegevoegd, waarbij alle buckets zijn opgenomen. <br><br>De huidige opties omvatten alleen **alle**  >  **Amazon S3**. Blijf op de hoogte als u meer opties wilt selecteren om de ondersteunings matrix van controle sfeer liggen uit te vouwen. |
-    |**Referentie**     |  Selecteer een controle sfeer liggen-referentie met uw rol ARN. <br><br>**Tip**: als u op dit moment een nieuwe referentie wilt maken, selecteert u **Nieuw**. Zie [een controle sfeer liggen-referentie maken voor uw AWS Bucket-scan](#create-a-purview-credential-for-your-aws-bucket-scan)voor meer informatie.     |
-    | **Amazon S3**    |   Wordt alleen weer gegeven als u uw AWS-account hebt toegevoegd, waarbij alle buckets zijn opgenomen. <br><br>Selecteer een of meer buckets die u wilt scannen of **Selecteer alles** om alle buckets in uw account te scannen.      |
+    |**Naam**     |  Voer een betekenisvolle naam in voor de scan of gebruik de standaardnaam.       |
+    |**Type** |Wordt alleen weergegeven als u uw AWS-account hebt toegevoegd, inclusief alle buckets. <br><br>De huidige opties omvatten alleen **Alle**  >  **Amazon S3.** Blijf op de hoogte voor meer opties om te selecteren wanneer de ondersteuningsmatrix van Purview wordt uitgebreid. |
+    |**Referentie**     |  Selecteer een Purview-referentie met uw rol ARN. <br><br>**Tip:** als u op dit moment een nieuwe referentie wilt maken, selecteert u **Nieuw.** Zie Create [a Purview credential for your AWS bucket scan (Een purview-referentie maken voor uw AWS-bucketscan) voor meer informatie.](#create-a-purview-credential-for-your-aws-bucket-scan)     |
+    | **Amazon S3**    |   Wordt alleen weergegeven als u uw AWS-account hebt toegevoegd, inclusief alle buckets. <br><br>Selecteer een of meer buckets om te scannen of Alles **selecteren om** alle buckets in uw account te scannen.      |
     | | |
 
-    Controle sfeer liggen controleert automatisch of de ARN van de rol geldig is en of de buckets en objecten binnen de buckets toegankelijk zijn. vervolgens wordt het proces voortgezet als de verbinding slaagt.
+    Purview controleert automatisch of de rol-ARN geldig is, of de buckets en objecten binnen de buckets toegankelijk zijn en gaat door als de verbinding slaagt.
 
     > [!TIP]
-    > Als u andere waarden wilt opgeven en de verbinding zelf wilt testen voordat u doorgaat, selecteert u **verbinding testen** onder aan de rechter kant voordat u **door gaan** selecteert.
+    > Als u verschillende waarden wilt invoeren en de verbinding zelf wilt testen voordat u doorgaat, selecteert u **Verbinding** testen rechtsonder voordat u **Doorgaan selecteert.**
     >
 
-1. Selecteer in het deel venster **een regel voor de scanset selecteren** de standaard regelset **AmazonS3** of selecteer een **nieuwe set scan Rule** om een nieuwe aangepaste regelset te maken. Wanneer u de regelset hebt geselecteerd, selecteert u **door gaan**.
+1. Selecteer in **het deelvenster Een scanregelset** selecteren de standaardregelset **AmazonS3** of selecteer Nieuwe **scanregelset** om een nieuwe aangepaste regelset te maken. Zodra u de regelset hebt geselecteerd, selecteert u **Doorgaan.**
 
-    Als u een nieuwe set met aangepaste scan regels wilt maken, gebruikt u de wizard om de volgende instellingen te definiëren:
+    Als u een nieuwe aangepaste scanregelset wilt maken, gebruikt u de wizard om de volgende instellingen te definiëren:
 
     |Deelvenster  |Description  |
     |---------|---------|
-    |**Nieuwe regelset voor scan** /<br>**Beschrijving van de scan regel**    |   Voer een duidelijke naam en een optionele beschrijving in voor de regelset      |
-    |**Bestands typen selecteren**     | Selecteer alle bestands typen die u in de scan wilt gebruiken en selecteer vervolgens **door gaan**.<br><br>Als u een nieuw bestands type wilt toevoegen, selecteert u **Nieuw bestands type** en definieert u het volgende: <br>-De bestands extensie die u wilt toevoegen <br>-Een optionele beschrijving  <br>-Of de bestands inhoud een aangepast scheidings teken of een systeem bestands type is. Voer vervolgens uw aangepaste scheidings teken in of selecteer het type van het systeem bestand. <br><br>Selecteer **maken** om uw aangepaste bestands type te maken.     |
-    |**Classificatie regels selecteren**     |   Navigeer naar en selecteer de classificatie regels die u wilt uitvoeren op uw gegevensset.      |
+    |**Nieuwe regelset voor scannen** /<br>**Beschrijving van scanregel**    |   Voer een beschrijvende naam en een optionele beschrijving in voor uw regelset      |
+    |**Bestandstypen selecteren**     | Selecteer alle bestandstypen die u wilt opnemen in de scan en selecteer vervolgens **Doorgaan.**<br><br>Als u een nieuw bestandstype wilt toevoegen, selecteert **u Nieuw bestandstype** en definieert u het volgende: <br>- De bestandsextensie die u wilt toevoegen <br>- Een optionele beschrijving  <br>- Of de inhoud van het bestand een aangepast scheidingsteken heeft of een systeembestandstype is. Voer vervolgens uw aangepaste scheidingsteken in of selecteer uw systeembestandstype. <br><br>Selecteer **Maken om** uw aangepaste bestandstype te maken.     |
+    |**Classificatieregels selecteren**     |   Navigeer naar en selecteer de classificatieregels die u wilt uitvoeren op uw gegevensset.      |
     |     |         |
 
-    Selecteer **maken** wanneer u klaar bent om de regelset te maken.
+    Selecteer **Maken** wanneer u klaar bent om de regelset te maken.
 
-1. Selecteer een van de volgende opties in het deel venster **een scan trigger instellen** en selecteer vervolgens **door gaan**:
+1. Selecteer in **het deelvenster Een scantrigger** instellen een van de volgende opties en selecteer vervolgens **Doorgaan:**
 
-    - **Terugkerend** voor het configureren van een schema voor een terugkerende scan
+    - **Terugkerend** om een planning voor een terugkerende scan te configureren
     - **Eenmaal** om een scan te configureren die onmiddellijk wordt gestart
 
-1. Controleer in het deel venster **Scan controleren** of de scan gegevens juist zijn en selecteer vervolgens **Opslaan** of **opslaan en uitvoeren** als u **één keer** hebt geselecteerd in het vorige deel venster.
+1. Controleer in het **deelvenster Uw scan** controleren uw scandetails om  te  controleren of ze juist zijn. Selecteer vervolgens Opslaan of Opslaan en uitvoeren als u Eenmaal **hebt** geselecteerd in het vorige deelvenster.
 
     > [!NOTE]
-    > Na het starten kan het tot 24 uur duren voordat de scan is voltooid. U kunt uw **inzicht rapporten** bekijken en de catalogus 24 uur na het starten van elke scan doorzoeken.
+    > Zodra het scannen is gestart, kan het tot 24 uur duren voordat het scannen is voltooid. U kunt uw Inzichtrapporten  bekijken en 24 uur nadat u de scan hebt gestart, in de catalogus zoeken.
     >
 
-Zie voor meer informatie [verkennen controle sfeer liggen scan resultaten](#explore-purview-scanning-results).
+Zie Scanresultaten van [Purview verkennen voor meer informatie.](#explore-purview-scanning-results)
 
-## <a name="explore-purview-scanning-results"></a>Scan resultaten van controle sfeer liggen verkennen
+## <a name="explore-purview-scanning-results"></a>Scanresultaten van Purview verkennen
 
-Zodra een controle sfeer liggen-scan is voltooid op uw Amazon S3-buckets, zoomt u in het gebied controle sfeer liggen- **bronnen** om de scan geschiedenis weer te geven.
+Zodra een Scan op beeld is voltooid voor uw Amazon S3-buckets, zoomt u in op het gebied Purview **Sources** om de scangeschiedenis te bekijken.
 
-Selecteer een gegevens bron om de details ervan weer te geven en selecteer vervolgens het tabblad **scans** om actieve of voltooide scans weer te geven.
-Als u een AWS-account met meerdere buckets hebt toegevoegd, wordt de scan geschiedenis voor elke Bucket onder het account weer gegeven.
+Selecteer een gegevensbron om de details ervan weer te geven en selecteer vervolgens het **tabblad Scans** om alle scans weer te geven die momenteel worden uitgevoerd of voltooid.
+Als u een AWS-account met meerdere buckets hebt toegevoegd, wordt de scangeschiedenis voor elke bucket weergegeven onder het account.
 
 Bijvoorbeeld:
 
-![De AWS S3-Bucket scans weer geven onder uw AWS-account bron.](./media/register-scan-amazon-s3/account-scan-history.png)
+![De AWS S3-bucketscans onder de bron van uw AWS-account tonen.](./media/register-scan-amazon-s3/account-scan-history.png)
 
-Gebruik de andere gebieden van controle sfeer liggen om informatie te krijgen over de inhoud van uw gegevens, inclusief uw Amazon S3-buckets:
+Gebruik de andere gebieden van Purview voor meer informatie over de inhoud in uw gegevensruimte, waaronder uw Amazon S3-buckets:
 
-- **Zoek in de controle sfeer liggen Data Catalog** en filter op een specifieke Bucket. Bijvoorbeeld:
+- **Zoek de gegevenscatalogus Purview en** filter op een specifieke bucket. Bijvoorbeeld:
 
     ![Zoek in de catalogus naar AWS S3-assets.](./media/register-scan-amazon-s3/search-catalog-screen-aws.png)
 
-- **Bekijk inzicht rapporten** om statistieken weer te geven voor de classificatie, gevoeligheids labels, bestands typen en meer informatie over uw inhoud.
+- **Bekijk Inzichtrapporten om** statistieken weer te geven voor de classificatie, gevoeligheidslabels, bestandstypen en meer informatie over uw inhoud.
 
-    Alle controle sfeer liggen Insight-rapporten bevatten de Amazon S3-scan resultaten, samen met de rest van de resultaten van uw Azure-gegevens bronnen. Als dat relevant is, is er een extra **Amazon S3** -Asset type toegevoegd aan de rapport filterings opties.
+    Alle Purview Insight-rapporten bevatten de Amazon S3-scanresultaten, samen met de rest van de resultaten van uw Azure-gegevensbronnen. Indien relevant is er een extra **Amazon S3-assettype** toegevoegd aan de filteropties voor het rapport.
 
-    Zie [inzichten begrijpen in azure controle sfeer liggen](concept-insights.md)voor meer informatie.
+    Zie Inzicht in [Azure Purview](concept-insights.md)begrijpen voor meer informatie.
 
 ## <a name="minimum-permissions-for-your-aws-policy"></a>Minimale machtigingen voor uw AWS-beleid
 
-De standaard procedure voor het [maken van een AWS-rol voor controle sfeer liggen](#create-a-new-aws-role-for-purview) die moet worden gebruikt bij het scannen van uw S3-buckets, maakt gebruik van het **AmazonS3ReadOnlyAccess** -beleid.
+De standaardprocedure voor het maken van een [AWS-rol](#create-a-new-aws-role-for-purview) voor Purview die moet worden gebruikt bij het scannen van uw S3-buckets, maakt gebruik van het **beleid AmazonS3ReadOnlyAccess.**
 
-Het **AmazonS3ReadOnlyAccess** -beleid biedt minimale machtigingen die zijn vereist voor het scannen van uw S3-buckets en kan ook andere machtigingen bevatten.
+Het **AmazonS3ReadOnlyAccess-beleid** biedt minimale machtigingen die vereist zijn voor het scannen van uw S3-buckets en kan ook andere machtigingen bevatten.
 
-Als u alleen de mini maal vereiste machtigingen voor het scannen van uw buckets wilt Toep assen, maakt u een nieuw beleid met de machtigingen die in de volgende secties worden weer gegeven, afhankelijk van of u één Bucket of alle buckets in uw account wilt scannen.
+Als u alleen de minimale machtigingen wilt toepassen die nodig zijn voor het scannen van uw buckets, maakt u een nieuw beleid met de machtigingen die in de volgende secties worden vermeld, afhankelijk van of u één bucket of alle buckets in uw account wilt scannen.
 
-Pas het nieuwe beleid toe op de rol in plaats van **AmazonS3ReadOnlyAccess.**
+Pas uw nieuwe beleid toe op de rol in plaats **van AmazonS3ReadOnlyAccess.**
 
 ### <a name="individual-buckets"></a>Afzonderlijke buckets
 
-Bij het scannen van afzonderlijke S3-buckets, zijn de minimale AWS-machtigingen als volgt:
+Bij het scannen van afzonderlijke S3-buckets zijn de minimale AWS-machtigingen:
 
 - `GetBucketLocation`
 - `GetBucketPublicAccessBlock`
 - `GetObject`
 - `ListBucket`
 
-Zorg ervoor dat u uw resource definieert met de naam van de specifieke Bucket. Bijvoorbeeld:
+Zorg ervoor dat u uw resource definieert met de naam van de specifieke bucket. Bijvoorbeeld:
 
 ```json
 {
@@ -480,7 +480,7 @@ Zorg ervoor dat u uw resource definieert met de naam van de specifieke Bucket. B
 
 ### <a name="all-buckets-in-your-account"></a>Alle buckets in uw account
 
-Bij het scannen van alle buckets in uw AWS-account, zijn de minimale AWS-machtigingen als volgt:
+Bij het scannen van alle buckets in uw AWS-account zijn de minimale AWS-machtigingen:
 
 - `GetBucketLocation`
 - `GetBucketPublicAccessBlock`
@@ -488,7 +488,7 @@ Bij het scannen van alle buckets in uw AWS-account, zijn de minimale AWS-machtig
 - `ListAllMyBuckets`
 - `ListBucket`.
 
-Zorg ervoor dat u uw resource met een Joker teken definieert. Bijvoorbeeld:
+Zorg ervoor dat u uw resource met een jokerteken definieert. Bijvoorbeeld:
 
 ```json
 {
@@ -518,7 +518,7 @@ Zorg ervoor dat u uw resource met een Joker teken definieert. Bijvoorbeeld:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over Azure controle sfeer liggen Insight-rapporten:
+Meer informatie over Azure Purview Insight-rapporten:
 
 > [!div class="nextstepaction"]
 > [Inzichten in Azure Purview begrijpen](concept-insights.md)

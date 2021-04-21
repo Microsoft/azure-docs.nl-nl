@@ -31,7 +31,7 @@
         - name: Defender for IoT-microagent installeren (preview)
           displayName: 'package, authentication, methods, certificate, authenticate, version'
           href: quickstart-standalone-agent-binary-installation.md
-        - name: Een Defender IoT-modulemodule van een microagent maken (preview)
+        - name: Een Defender IoT-microagentmodule-dubbel maken (preview)
           href: quickstart-create-micro-agent-module-twin.md
         - name: De Defender for IoT-microagent bouwen op basis van broncode (preview)
           displayName: 'baseline, configuration, customize, distribution'
@@ -46,7 +46,7 @@
             - name: Overzicht van beveiligingsagent
               displayName: 'platforms, C, C#, agent,'
               href: security-agent-architecture.md
-            - name: Een azureiotsecurity-module dubbel maken
+            - name: Een azureiotsecurity-module-dubbel maken
               displayName: 'module twin, security module'
               href: quickstart-create-security-twin.md
 - name: Concepten
@@ -68,7 +68,7 @@
           href: concept-security-agent-authentication.md
         - name: Beveiligingsstatus - CIS-benchmark
           href: concept-security-posture.md
-        - name: Aggregatie van gebeurtenissen (preview)
+        - name: Gebeurtenisaggregatie (preview)
           displayName: 'process events, network connection'
           href: concept-event-aggregation.md
         - name: Ingebouwde waarschuwingen voor IoT Hub
@@ -103,7 +103,7 @@
               href: agent-based-security-alerts.md
             - name: Aangepaste beveiligingswaarschuwingen op basis van een agent
               href: agent-based-security-custom-alerts.md
-            - name: Aanbevelingen op basis van agent
+            - name: Aanbevelingen op basis van een agent
               href: agent-based-recommendations.md
 - name: Instructiegidsen
   items:
@@ -156,7 +156,7 @@
               href: how-to-define-global-user-access-control.md
               displayName: 'business unit, site, region, user'
         - name: Controleren welk verkeer wordt bewaakt
-          displayName: 'Windows, Learning, Smart IT Learning, DNS, DHCP, engines, subnets'
+          displayName: 'Windows, Learning, Smart IT Learning, DNS, DHCP, engines, subnets,  WMI, active, probing, scanning, switch'
           href: how-to-control-what-traffic-is-monitored.md
         - name: Sensoren beheren van de on-premises beheerconsole
           displayName: 'disconnect, connect, activation file, sensor backup'
@@ -185,7 +185,7 @@
           displayName: 'connections, Purdue, zoom, delete device'
         - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
           items:
-            - name: Inzicht in sensorwaarschuwingen
+            - name: Sensorwaarschuwingen begrijpen
               href: how-to-work-with-alerts-on-your-sensor.md
             - name: Waarschuwingen filteren en beheren op de pagina Waarschuwingen
               href: how-to-view-alerts.md
@@ -217,7 +217,7 @@
             - name: Risicoanalyserapporten maken
               href: how-to-create-risk-assessment-reports.md
               displayName: 'vulnerability, security score, score, CVE'
-            - name: Rapporten voor aanvalsvectoren maken
+            - name: Aanvalsvectorrapporten maken
               href: how-to-create-attack-vector-reports.md
               displayName: 'Attack surface, prediction,simulation'
             - name: Rapporten voor gegevensmining maken
@@ -277,7 +277,7 @@
           items:
             - name: Werken met Defender-IoT-micro-agent voor Azure RTOS
               href: how-to-azure-rtos-security-module.md
-            - name: Meer inzicht in de Defender-IoT-micro-agent voor Azure RTOS
+            - name: Inzicht in de Defender-IoT-micro-agent voor Azure RTOS
               href: concept-rtos-security-module.md
             - name: Defender-IoT-micro-agent voor Azure RTOS waarschuwingen en aanbevelingen
               href: concept-rtos-security-alerts-recommendations.md

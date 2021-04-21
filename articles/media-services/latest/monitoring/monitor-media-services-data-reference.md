@@ -1,6 +1,6 @@
 ---
-title: Media Services gegevens referentie bewaken
-description: Belang rijk referentie materiaal dat nodig is wanneer u Media Services bewaakt
+title: Naslaginformatie Media Services bewakingsgegevens
+description: Belangrijk referentiemateriaal dat nodig is bij het bewaken van Media Services
 author: IngridAtMicrosoft
 ms.author: inhenkel
 manager: femila
@@ -8,97 +8,68 @@ ms.topic: reference
 ms.service: media-services
 ms.custom: subject-monitoring
 ms.date: 03/17/2021
-ms.openlocfilehash: 8908fd1acc64fb180121ac0b6a4dc38ce5a02572
-ms.sourcegitcommit: 9f4510cb67e566d8dad9a7908fd8b58ade9da3b7
+ms.openlocfilehash: 4e4c65966ec8a6a5b47d5f68596f6d2d496fda17
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106121163"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835502"
 ---
-# <a name="monitoring-media-services-data-reference"></a>Media Services gegevens referentie bewaken
+# <a name="monitoring-media-services-data-reference"></a>Naslaginformatie Media Services bewakingsgegevens
 
-In dit artikel worden de gegevens behandeld die nuttig zijn voor het bewaken van Media Services. Raadpleeg voor meer informatie over alle platform metrieken die worden ondersteund in Azure Monitor [ondersteunde metrische gegevens met Azure monitor](../../../azure-monitor/essentials/metrics-supported.md).
+In dit artikel worden de gegevens beschreven die nuttig zijn voor het controleren Media Services. Voor meer informatie over alle platformmetrieken die worden ondersteund in Azure Monitor, bekijkt u [Ondersteunde metrische gegevens met Azure Monitor.](../../../azure-monitor/essentials/metrics-supported.md)
 
 ## <a name="media-services-metrics"></a>Media Services metrische gegevens
 
-Metrische gegevens worden op gezette tijden verzameld, ongeacht of de waarde wordt gewijzigd. Ze zijn handig voor waarschuwingen omdat ze regel matig kunnen worden bemonsterd en een waarschuwing snel kan worden geactiveerd met relatief eenvoudige logica.
+Metrische gegevens worden regelmatig verzameld, ongeacht of de waarde verandert. Ze zijn handig voor waarschuwingen, omdat er vaak steekproefs kunnen worden genomen en een waarschuwing snel kan worden gemaakt met relatief eenvoudige logica.
 
-Media Services biedt ondersteuning voor het bewaken van metrische gegevens voor de volgende resources:
 
-* Account
-* Streaming-eindpunt
+Media Services ondersteunt het bewaken van metrische gegevens voor de volgende resources:
 
-### <a name="account"></a>Account
+|Type metrische gegevens | Resourceprovider/type naamruimte<br/> en koppeling naar afzonderlijke metrische gegevens |
+|-------|-----|
+| Media Services algemeen | [Algemeen](/azure/azure-monitor/essentials/metrics-supported#microsoftmediamediaservices) |
+| Livegebeurtenissen | [Microsoft.Media/mediaservices/liveEvents](/azure/azure-monitor/essentials/metrics-supported#microsoftmediamediaservicesliveevents) 
+| Streaming-eindpunten | [Microsoft.Media/mediaservices/streamingEndpoints,](/azure/azure-monitor/essentials/metrics-supported#microsoftmediamediaservicesstreamingendpoints)die relevant zijn voor de [streaming-eindpunten REST API](/rest/api/media/streamingendpoints). 
 
-U kunt de metrische gegevens van het volgende account bewaken.
 
-|Naam van metrische gegevens|Weergavenaam|Description|
-|---|---|---|
-|AssetCount|Aantal assets|Assets in uw account.|
-|AssetQuota|Activa quotum|Activa quota in uw account.|
-|AssetQuotaUsedPercentage|Percentage gebruikt voor het activa quotum|Het percentage van het activa quotum dat al wordt gebruikt.|
-|ContentKeyPolicyCount|Aantal beleids regels voor inhouds sleutels|Beleids regels voor inhouds sleutels in uw account.|
-|ContentKeyPolicyQuota|Quotum voor inhouds sleutel beleid|Quota voor beleids regels voor inhouds sleutels in uw account.|
-|ContentKeyPolicyQuotaUsedPercentage|Percentage gebruikt quotum voor inhouds sleutel beleid|Het percentage van het quotum voor het inhouds sleutel beleid wordt al gebruikt.|
-|StreamingPolicyCount|Aantal stroomsgewijze beleids regels|Stroomsgewijze beleids regels in uw account.|
-|StreamingPolicyQuota|Quota voor streaming-beleid|Het quotum voor het streamen van beleid in uw account.|
-|StreamingPolicyQuotaUsedPercentage|Percentage gebruikt quotum voor het streaming-beleid|Het percentage van het quotum voor het streaming-beleid wordt al gebruikt.|
+U moet ook [accountquota en -limieten bekijken.](../limits-quotas-constraints-reference.md)
 
-U moet ook [rekening quota's en limieten](../limits-quotas-constraints-reference.md)bekijken.
-
-### <a name="streaming-endpoint"></a>Streaming-eindpunt
-
-De volgende Media Services gegevens [stromen voor streaming-eind punten](/rest/api/media/streamingendpoints) worden ondersteund:
-
-|Naam van metrische gegevens|Weergavenaam|Description|
-|---|---|---|
-|Aanvragen|Aanvragen|Geeft het totale aantal HTTP-aanvragen dat door het streaming-eind punt wordt geleverd.|
-|Uitgaand verkeer|Uitgaand verkeer|Totaal aantal uitgaande bytes per minuut per streaming-eind punt.|
-|SuccessE2ELatency|Geslaagde end-to-end-latentie|Tijds duur vanaf het moment waarop het streaming-eind punt de aanvraag bij het verzenden van de laatste byte van het antwoord heeft ontvangen.|
-|CPU-gebruik| | CPU-gebruik voor Premium streaming-eind punten. Deze gegevens zijn niet beschikbaar voor standaard streaming-eind punten. |
-|Uitgangs band breedte | | Uitgangs band breedte in bits per seconde.|
 
 ## <a name="metric-dimensions"></a>Metrische dimensies
 
-Zie [multidimensionale metrische](../../../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics)gegevens voor meer informatie over de metrieke dimensies.
+Zie Multidimensionale metrische gegevens voor meer informatie over wat [metrische dimensies zijn.](../../../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics)
 
 <!--**PLACEHOLDER** for dimensions table.-->
+OutputFormat, HttpStatusCode, ErrorCode, TrackName
 
 ## <a name="resource-logs"></a>Resourcelogboeken
 
-## <a name="media-services-diagnostic-logs"></a>Diagnostische logboeken Media Services
+## <a name="media-services-resource-logs"></a>Media Services resourcelogboeken maken
 
-Diagnostische logboeken bieden uitgebreide en frequente gegevens over de werking van een Azure-resource. Zie [logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
+Resourcelogboeken bieden uitgebreide en regelmatige gegevens over de werking van een Azure-resource. Zie Logboekgegevens van uw [Azure-resources verzamelen en](../../../azure-monitor/essentials/platform-logs-overview.md)gebruiken voor meer informatie.
 
-Media Services ondersteunt de volgende Diagnostische logboeken:
-
-* Levering van sleutels
-
-### <a name="key-delivery"></a>Levering van sleutels
-
-|Naam|Beschrijving|
-|---|---|
-|Aanvraag voor key delivery service|Logboeken die de informatie over de sleutel leverings service aanvragen weer geven. Zie [schema's](monitor-media-services-data-reference.md)voor meer informatie.|
+Media Services ondersteunt de volgende resourcelogboeken: [Microsoft.Media/mediaservices](/azure/azure-monitor/essentials/resource-logs-categories#microsoftmediamediaservices)
 
 ## <a name="schemas"></a>Schema 's
 
-Zie [ondersteunde services, schema's en categorieën voor Diagnostische logboeken van Azure](../../../azure-monitor/essentials/resource-logs-schema.md)voor een gedetailleerde beschrijving van het schema voor Diagnostische logboeken op het hoogste niveau.
+Zie Ondersteunde services, schema's en categorieën voor Diagnostische logboeken van Azure voor een gedetailleerde beschrijving van het schema voor diagnostische [logboeken op het hoogste niveau.](../../../azure-monitor/essentials/resource-logs-schema.md)
 
-## <a name="key-delivery-log-schema-properties"></a>Eigenschappen van schema voor sleutel leverings logboek
+## <a name="key-delivery-log-schema-properties"></a>Schema-eigenschappen voor sleutelleveringslogboek
 
-Deze eigenschappen zijn specifiek voor het schema van het sleutel leverings logboek.
+Deze eigenschappen zijn specifiek voor het schema van het sleutelleveringslogboek.
 
 |Naam|Beschrijving|
 |---|---|
-|keyId|De ID van de aangevraagde sleutel.|
-|keyType|Dit kan een van de volgende waarden zijn: ' Clear ' (geen versleuteling), ' FairPlay ', ' PlayReady ' of ' Widevine '.|
+|keyId|De id van de aangevraagde sleutel.|
+|Keytype|Dit kan een van de volgende waarden zijn: 'Clear' (geen versleuteling), 'FairPlay', 'PlayReady' of 'Widevine'.|
 |policyName|De Azure Resource Manager naam van het beleid.|
-|Type|Het token type.|
-|statusMessage|Het status bericht.|
+|tokenType|Het tokentype.|
+|statusMessage|Het statusbericht.|
 
 ### <a name="example"></a>Voorbeeld
 
-Eigenschappen van het schema voor de sleutel afleverings aanvragen.
+Eigenschappen van het schema voor sleutelleveringsaanvragen.
 
 ```json
 {

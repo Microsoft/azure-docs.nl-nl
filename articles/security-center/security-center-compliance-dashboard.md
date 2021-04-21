@@ -1,24 +1,18 @@
 ---
 title: 'Zelfstudie: Controles op naleving van regelgeving - Azure Security Center'
 description: 'Zelfstudie: Meer informatie over het verbeteren van de naleving van uw regelgeving met behulp van Azure Security Center.'
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
-ms.assetid: 5f50c4dc-ea42-418d-9ea8-158ffeb93706
 ms.service: security-center
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/10/2021
+ms.date: 04/21/2021
 ms.author: memildin
-ms.openlocfilehash: 284a7f532ed918397fe1cfcf3458bbc6fb0bdd32
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: c8ac9079321e47a1e6d9b8689be46bf55bdd4243
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107739004"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107834607"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Zelfstudie: Uw regelnaleving verbeteren
 
@@ -71,7 +65,7 @@ Gebruik het dashboard voor naleving van regelgeving om uw aandacht te richten op
 
 ## <a name="improve-your-compliance-posture"></a>De nalevingspostuur verbeteren
 
-Met behulp van de informatie in het dashboard voor naleving van regelgeving kunt u uw nalevingsstatus verbeteren door aanbevelingen rechtstreeks in het dashboard op te lossen.
+Verbeter met behulp van de informatie in het dashboard voor naleving van regelgeving uw nalevingsstatus door aanbevelingen rechtstreeks in het dashboard op te lossen.
 
 1.  Selecteer een van de mislukte evaluaties die in het dashboard worden weergegeven om de details voor die aanbeveling weer te geven. Elke aanbeveling bevat een reeks herstelstappen om het probleem op te lossen.
 
@@ -135,14 +129,15 @@ U kunt bijvoorbeeld een e-Security Center een specifieke gebruiker e-mailen wann
 - [Hoe kan ik een rapport met nalevingsgegevens downloaden in een andere indeling dan PDF?](#how-can-i-download-a-report-with-compliance-data-in-a-format-other-than-pdf)
 - [Hoe kan ik uitzonderingen maken voor sommige beleidsregels in het dashboard voor naleving van regelgeving?](#how-can-i-create-exceptions-for-some-of-the-policies-in-the-regulatory-compliance-dashboard)
 - [Welke Azure Defender of licenties heb ik nodig om het dashboard voor naleving van regelgeving te gebruiken?](#what-azure-defender-plans-or-licenses-do-i-need-to-use-the-regulatory-compliance-dashboard)
+- [Hoe kan ik welke benchmark of standaard moet worden gebruikt?](#how-do-i-know-which-benchmark-or-standard-to-use)
 
 ### <a name="what-standards-are-supported-in-the-compliance-dashboard"></a>Welke standaarden worden ondersteund in het nalevingsdashboard?
 Standaard wordt in het dashboard voor naleving van regelgeving de Azure Security-benchmark weergegeven. De Azure Security-benchmark is de door Microsoft opgestelde, azure-specifieke richtlijnen voor beveiliging en best practices voor naleving op basis van algemene nalevingskaders. Meer informatie in de [inleiding tot Azure Security Benchmark.](../security/benchmarks/introduction.md)
 
 Als u de naleving van een andere standaard wilt bijhouden, moet u deze expliciet toevoegen aan uw dashboard.
  
-U kunt standaarden toevoegen zoals Azure CIS 1.1.0 (nieuw), NIST SP 800-53 R4, NIST SP 800-171 R2, SWIFT CSP CSCF-v2020, UK Official and UK NHS, HIPAA HITRUST, Canada Federal PBMM, ISO 27001, SOC2-TSP en PCI-DSS 3.2.1.  
- 
+U kunt andere standaarden toevoegen, zoals Azure CIS 1.3.0, NIST SP 800-53, NIST SP 800-171, SWIFT CSP CSCF-v2020, UK Official en UK NHS, HIPAA, Canada Federal PBMM, ISO 27001, SOC2-TSP en PCI-DSS 3.2.1.  
+
 Er worden meer standaarden toegevoegd aan het dashboard en opgenomen in de informatie over De set standaarden [aanpassen in uw dashboard voor naleving van regelgeving.](update-regulatory-compliance-packages.md)
 
 ### <a name="why-do-some-controls-appear-grayed-out"></a>Waarom worden sommige besturingselementen grijs weergegeven?
@@ -171,7 +166,7 @@ Als u het dashboard voor naleving van regelgeving wilt gebruiken, Azure Security
 
 
 ### <a name="how-can-i-view-a-report-of-passing-and-failing-controls-per-standard-in-my-dashboard"></a>Hoe kan ik een rapport weergeven over het doorgeven van en mislukken van besturingselementen per standaard in mijn dashboard?
-Op het hoofddashboard ziet u een rapport van het doorgeven en mislukken van besturingselementen voor (1) de 'top 4' laagste nalevingsstandaarden in het dashboard. Selecteer (2) **Alle *x*** weergeven (waarbij x het aantal standaarden is dat u volgt) om alle statussen van het doorgeven/mislukken van besturingselementen weer te geven. In een contextvlak wordt de nalevingsstatus voor elk van uw bij te houden standaarden weergegeven.
+Op het hoofddashboard ziet u een rapport van het doorgeven en mislukken van besturingselementen voor (1) de 'top 4' laagste nalevingsstandaarden in het dashboard. Selecteer (2) **Alle *x*** weergeven (waarbij x het aantal standaarden is dat u volgt) om alle statussen van het doorgeven/mislukken van besturingselementen weer te geven. Een contextvlak toont de nalevingsstatus voor elk van uw bij te houden standaarden.
 
 :::image type="content" source="media/security-center-compliance-dashboard/summaries-of-compliance-standards.png" alt-text="Samenvattingssectie van het dashboard voor naleving van regelgeving":::
 
@@ -180,7 +175,7 @@ Op het hoofddashboard ziet u een rapport van het doorgeven en mislukken van best
 Wanneer u Rapport **downloaden selecteert,** selecteert u de standaard en de indeling (PDF of CSV). Het resulterende rapport geeft de huidige set abonnementen weer die u hebt geselecteerd in het filter van de portal.
 
 - Het PDF-rapport bevat een samenvattingsstatus voor de standaard die u hebt geselecteerd
-- Het CSV-rapport biedt gedetailleerde resultaten per resource, omdat het betrekking heeft op beleidsregels die zijn gekoppeld aan elk besturingselement
+- Het CSV-rapport bevat gedetailleerde resultaten per resource, omdat het betrekking heeft op beleidsregels die zijn gekoppeld aan elk besturingselement
 
 Er is momenteel geen ondersteuning voor het downloaden van een rapport voor een aangepast beleid; alleen voor de opgegeven regelgevingsstandaarden.
 
@@ -195,7 +190,12 @@ Voor andere beleidsregels kunt u een uitzondering rechtstreeks in het beleid zel
 Als u een van de Azure Defender-pakketten hebt ingeschakeld voor een van uw Azure-resourcetypen, hebt u toegang tot het Dashboard voor naleving van regelgeving, met alle gegevens ervan, in Security Center.
 
 
+### <a name="how-do-i-know-which-benchmark-or-standard-to-use"></a>Hoe kan ik welke benchmark of standaard moet worden gebruikt?
+[Azure Security Benchmark](https://docs.microsoft.com/security/benchmark/azure/introduction) (ASB) is de canonieke reeks beveiligingsaanbevelingen en best practices die door Microsoft zijn gedefinieerd, afgestemd op algemene frameworks voor nalevingscontrole, waaronder [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/benchmark/azure/) en [NIST SP 800-53.](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final) ASB is een zeer uitgebreide benchmark en is ontworpen om de meest recente beveiligingsmogelijkheden van een breed scala aan Azure-services aan te bevelen. We raden ASB aan klanten die hun beveiligingsstatus willen maximaliseren en de mogelijkheid hebben om hun nalevingsstatus af te stemmen op industriestandaarden.
 
+De [CIS-benchmark](https://www.cisecurity.org/benchmark/azure/) is geschreven door een onafhankelijke entiteit , Center for Internet Security (CIS) en bevat aanbevelingen voor een subset van Azure-kernservices. We werken samen met CIS om ervoor te zorgen dat hun aanbevelingen up-to-date zijn met de nieuwste verbeteringen in Azure, maar ze raken soms achterop en raken verouderd. Niettemin willen sommige klanten deze doelstelling, evaluatie van derden van CIS, gebruiken als hun eerste en primaire beveiligingsbasislijn.
+
+Omdat we de Azure Security Benchmark hebben uitgebracht, hebben veel klanten ervoor gekozen om deze te migreren als vervanging voor CIS-benchmarks.
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -210,5 +210,5 @@ Het dashboard voor naleving van regelgeving kan het nalevingsproces aanzienlijk 
 
 Zie deze gerelateerde pagina's voor meer informatie:
 
-- [De set standaarden aanpassen in uw dashboard voor naleving van](update-regulatory-compliance-packages.md) regelgeving: leer hoe u kunt selecteren welke standaarden worden weergegeven in uw dashboard voor naleving van regelgeving. 
-- [Beveiligingsaanbevelingen beheren in Azure Security Center:](security-center-recommendations.md) informatie over het gebruik van aanbevelingen in Security Center om uw Azure-resources te beveiligen.
+- [De set standaarden aanpassen in uw](update-regulatory-compliance-packages.md) dashboard voor naleving van regelgeving: leer hoe u kunt selecteren welke standaarden worden weergegeven in uw dashboard voor naleving van regelgeving. 
+- [Beveiligingsaanbevelingen beheren in Azure Security Center:](security-center-recommendations.md) meer informatie over het gebruik van aanbevelingen in Security Center om uw Azure-resources te beveiligen.

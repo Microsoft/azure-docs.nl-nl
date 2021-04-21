@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 09/14/2020
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: 7e14dbf5aab68f5ea2d96274606306378feedad2
-ms.sourcegitcommit: 56b0c7923d67f96da21653b4bb37d943c36a81d6
+ms.openlocfilehash: a6d98f827c39f973714441e308dcc4f2bd061c9b
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/06/2021
-ms.locfileid: "106445988"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835574"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Wat is Windows Virtual Desktop?
 
@@ -91,7 +91,7 @@ De virtuele Azure-machines die u maakt voor Windows Virtual Desktop moeten:
 >[!NOTE]
 >Als u een Azure-abonnement nodig heeft, dan kunt u [zich registreren voor een gratis proefversie van een maand](https://azure.microsoft.com/free/). Als u de gratis proefversie van Azure gebruikt, moet u Azure AD Domain Services gebruiken om uw Windows Server Active Directory gesynchroniseerd te houden met Azure Active Directory.
 
-Zie onze [Lijst met veilige URL's](safe-url-list.md) voor een lijst van URL's die u dient te deblokkeren opdat uw Windows Virtual Desktop-implementatie naar behoren kan werken.
+Zie onze Lijst met vereiste URL's voor een lijst met URL's die u moet deblokkeren Windows Virtual Desktop uw implementatie werkt zoals [bedoeld.](safe-url-list.md)
 
 Windows Virtual Desktop bestaat uit de Windows-desktops en -apps die u levert aan gebruikers en de beheersoplossing, die door Microsoft als een service wordt gehost in Azure. Desktops en apps kunnen worden geïmplementeerd op virtuele machines in elke Azure-regio. De beheersoplossing en gegevens voor deze VM's bevinden zich dan in de Verenigde Staten. Dit kan als gevolg hebben dat er gegevens worden overgedragen naar de Verenigde Staten.
 
@@ -124,13 +124,13 @@ Zie de [Lijst met veilige URL's](safe-url-list.md) voor meer informatie over URL
 Windows Virtual Desktop biedt ondersteuning voor de volgende installatiekopieën van x64-besturingssystemen:
 
 * Windows 10 Enterprise voor meerdere sessies, versie 1809 of hoger
-* Windows 10 Enter prise, versie 1809 of hoger (alleen Semi-Annual-kanaal)
+* Windows 10 Enterprise versie 1809 of hoger (alleen Semi-Annual-kanaal)
 * Windows 7 Enterprise
 * Windows Server 2019
 * Windows Server 2016
 * Windows Server 2012 R2
 
-Windows Virtual Desktop biedt geen ondersteuning voor x86-(32-bits), Windows 10 Enter prise N-, Windows 10 Pro-of Windows 10 Enter prise-besturings systeem installatie kopieën. Windows 7 biedt ook geen ondersteuning voor VHD- of VHDX-gebaseerde profieloplossingen die gehost worden op beheerde Azure Storage omwille van een beperking van de sectorgrootte.
+Windows Virtual Desktop biedt geen ondersteuning voor x86(32-bits), Windows 10 Enterprise N, Windows 10 Pro of Windows 10 Enterprise INSTALLATIE VAN HET KN-besturingssysteem. Windows 7 biedt ook geen ondersteuning voor VHD- of VHDX-gebaseerde profieloplossingen die gehost worden op beheerde Azure Storage omwille van een beperking van de sectorgrootte.
 
 De beschikbare opties voor automatisering en implementatie zijn afhankelijk van het besturingssysteem en de versie die u kiest, zoals te zien is in de volgende tabel:
 

@@ -1,31 +1,31 @@
 ---
-title: Geografische Beschik baarheid en valuta ondersteuning voor micro soft Commercial Marketplace
-description: De geografische Beschik baarheid en valuta ondersteuning voor trans acties in de commerciële Marketplace
+title: Geografische beschikbaarheid en valutaondersteuning voor de commerciële marketplace van Microsoft
+description: De geografische beschikbaarheid en valutaondersteuning voor transacties in de commerciële marketplace
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 author: keferna
 ms.author: keferna
 ms.date: 03/08/2021
-ms.openlocfilehash: e583d39e2eed1b08dfeb17cafc1e12c583176d7b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4833a5779b9c9d5edcbbe70045f2ba2ca2d72ebe
+ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103493030"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107812530"
 ---
-# <a name="geographic-availability-and-currency-support-for-the-commercial-marketplace"></a>Geografische Beschik baarheid en valuta ondersteuning voor de commerciële Marketplace
+# <a name="geographic-availability-and-currency-support-for-the-commercial-marketplace"></a>Geografische beschikbaarheid en valutaondersteuning voor de commerciële marketplace
 
 ## <a name="supported-geographic-locations"></a>Ondersteunde geografische locaties
 
-Commerciële Marketplace-aanbiedingen kunnen worden aangeschaft in 141-geografi zoals gedefinieerd door het factuur adres van de klant en trans acties kunnen worden uitgevoerd in 17 valuta's. De volgende tabel geeft een lijst van elke ondersteunde geografische locatie, de bijbehorende [ISO 3166 2-digits-code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)en de toegewezen valuta.
+Aanbiedingen op de commerciële marketplace kunnen worden aangeschaft in 141 geografische gebieden, zoals gedefinieerd door het factureringsadres van de klant, en transacties kunnen in 17 valuta's worden voltooid. De volgende tabel bevat elke ondersteunde geografische locatie, de [iso 3166 alfacode](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)van twee cijfers en de toegewezen valuta.
 
-Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind klant, zodat deze in dezelfde valuta kan worden gefactureerd. Raadpleeg [deze veelgestelde vragen](https://partner.microsoft.com/resources/detail/eu-efta-change-of-partner-billing-currency-faq-pdf)voor meer informatie.
+Een CSP kan een aanbieding in Partner Center in de valuta van de eindklant, zodat ze deze in dezelfde valuta kunnen facturen. Raadpleeg deze veelgestelde vragen voor [meer informatie.](https://partner.microsoft.com/resources/detail/eu-efta-change-of-partner-billing-currency-faq-pdf)
 
-|   Naam van land/regio               |   ISO-2   |   Valuta</br>(Alle aanbiedings typen)  |    Valuta</br>(Alleen aanbiedingen voor Consulting-Service)    |
+|   Naam land/regio               |   ISO-2   |   Valuta</br>(Alle aanbiedingstypen)  |    Valuta</br>(Adviesservice biedt alleen)    |
 |-------------------------------------|-----------|--------------|---------------------------------------------|
 | Afghanistan                         | AF        | USD          | AFN, EUR, USD |
-| Albanië                             | AL        | USD          | ALLE, EUR, USD |
+| Albanië                             | AL        | USD          | ALL, EUR, USD |
 | Algerije                             | DZ        | USD          | DZD, EUR, USD |
 | Andorra                             | AD        | EUR          | EUR, USD |
 | Angola                              | AO        | USD          | AOA, EUR, USD |
@@ -34,13 +34,13 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Australië                           | AU        | AUD          | AUD, EUR, USD |
 | Oostenrijk                             | AT        | EUR          | EUR, USD  |
 | Azerbeidzjan                          | AZ        | USD          | AZN, EUR, USD |
-| Bahrein                             | BH        | USD          | BHD, EUR, USD |
+| Bahrein                             | BH        | USD          | HADOD, EUR, USD |
 | Bangladesh                          | BD        | USD          | BDT, EUR, USD |
 | Barbados                            | BB        | USD          | BBD, EUR, USD |
 | Belarus                             | BY        | USD          | BYN, EUR, USD |
 | België                             | BE        | EUR          | EUR, USD  |
 | Belize                              | BZ        | USD          | BZD, EUR, USD |
-| Bermuda                             | BM        | USD          | BMC, EUR, USD |
+| Bermuda                             | Bm        | USD          | BMD, EUR, USD |
 | Bolivia                             | BO        | USD          | BOB, EUR, USD |
 | Bosnië en Herzegovina              | BA        | USD          | BAM, EUR, USD |
 | Botswana                            | BW        | USD          | BWP, EUR, USD |
@@ -53,13 +53,13 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Kaaimaneilanden                      | KY        | USD          | EUR, KYD, USD |
 | Chili                               | CL        | USD          | CLP, EUR, USD |
 | China\**                            | CN        | N.v.t.          | N.v.t. |
-| Colombia                            | CO        | USD          | COP, EUR, USD |
+| Colombia                            | CO        | USD          | AGENT, EUR, USD |
 | Costa Rica                          | CR        | USD          | CRC, EUR, USD |
 | Cote d'Ivoire                       | CI        | USD          | EUR, USD, XOF |
 | Kroatië                             | HR        | EUR          | EUR, HRK, USD |
-| Curaçao                             | WAARNAAR        | USD          | ANG, EUR, USD |
+| Curaçao                             | Cw        | USD          | ANG, EUR, USD |
 | Cyprus                              | CY        | EUR          | EUR, USD  |
-| Czechia                             | CZ        | EUR          | CZK, EUR, USD |
+| Tsjechië                             | CZ        | EUR          | EDK, EUR, USD |
 | Denemarken                             | DK        | DKK          | DKK, EUR, USD |
 | Dominicaanse Republiek                  | DO        | USD          | DOP, EUR, USD |
 | Ecuador                             | EC        | USD          | EUR, USD |
@@ -67,11 +67,11 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | El Salvador                         | SV        | USD          | EUR, USD |
 | Estland                             | EE        | EUR          | EUR, USD |
 | Ethiopië                            | ET        | USD          | ETB, EUR, USD |
-| Faröer                       | FO        | DKK          | DKK, EUR, USD |
+| Faröer                       | Fo        | DKK          | DKK, EUR, USD |
 | Fiji                                | FJ        | AUD          | AUD, EUR, FJD, USD |
 | Finland                             | FI        | EUR          | EUR, USD |
 | Frankrijk                              | FR        | EUR          | EUR, USD |
-| Georgië                             | GE        | USD          | EUR, GEL, USD |
+| Georgië                             | GE        | USD          | €100,000, USD |
 | Duitsland                             | DE        | EUR          | EUR, USD |
 | Ghana                               | GH        | USD          | EUR, GHS, USD |
 | Griekenland                              | GR        | EUR          | EUR, USD |
@@ -79,8 +79,8 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Honduras                            | HN        | USD          | EUR, HNL, USD |
 | Hongkong SAR                       | HK        | USD          | EUR, HKD, USD |
 | Hongarije                             | HU        | EUR          | EUR, HUF, USD |
-| IJsland                             | IS        | EUR          | EUR, SCHIJFTOEWIJZING, USD |
-| India                               | IN        | INR          | EUR, KOST, USD |
+| IJsland                             | IS        | EUR          | EUR, ISK, USD |
+| India                               | IN        | INR          | EUR, INR, USD |
 | Indonesië                           | Id        | USD          | EUR, IDR, USD |
 | Irak                                | IQ        | USD          | EUR, IQD, USD |
 | Ierland                             | IE        | EUR          | EUR, USD  |
@@ -91,7 +91,7 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Jordanië                              | JO        | USD          | EUR, JOD, USD |
 | Kazachstan                          | KZ        | USD          | EUR, KZT, USD |
 | Kenia                               | KE        | USD          | EUR, KES, USD |
-| Korea (Zuid)                       | KR        | KRW          | EUR, VERLOOPT, USD |
+| Korea (zuid)                       | KR        | KRW          | EUR, KRW, USD |
 | Koeweit                              | KW        | USD          | EUR, KWD, USD |
 | Kirgistan                          | KG        | USD          | EUR, KGS, USD |
 | Letland                              | LV        | EUR          | EUR, USD |
@@ -103,13 +103,13 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Macau SAR                           | MO        | USD          | EUR, MOP, USD |
 | Maleisië                            | MY        | USD          | EUR, MYR, USD |
 | Malta                               | MT        | EUR          | EUR, USD |
-| Mauritius                           | MU        | USD          | EUR, MUR, USD |
+| Mauritius                           | Mu        | USD          | EUR, MUR, USD |
 | Mexico                              | MX        | USD          | EUR, MXN, USD |
 | Moldavië                             | MD        | USD          | EUR, MDL, USD |
 | Monaco                              | MC        | EUR          | EUR, USD |
 | Mongolië                            | MN        | USD          | EUR, MNT, USD |
 | Montenegro                          | ME        | USD          | EUR, USD |
-| Marokko                             | MA        | USD          | EUR, MAD, USD |
+| Marokko                             | MA        | USD          | EUR, GEK, USD |
 | Namibië                             | NA        | USD          | EUR, NAD, USD, ZAR |
 | Nepal                               | NP        | USD          | EUR, NPR, USD |
 | Nederland                         | NL        | EUR          | EUR, USD |
@@ -129,7 +129,7 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Portugal                            | PT        | EUR          | EUR, USD |
 | Puerto Rico                         | PR        | USD          | EUR, USD |
 | Qatar                               | QA        | USD          | EUR, QAR, USD |
-| Roemenië                             | RO        | EUR          | EUR, LOEK, USD |
+| Roemenië                             | RO        | EUR          | EUR, RON, USD |
 | Rusland                              | RU        | RUB          | EUR, RUB, USD |
 | Rwanda                              | RW        | USD          | EUR, RWF, USD |
 | Saint Kitts en Nevis               | KN        | USD          | EUR, USD, XCD |
@@ -141,11 +141,11 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Slovenië                            | SI        | EUR          | EUR, USD |
 | Zuid-Afrika                        | ZA        | USD          | EUR, USD, ZAR |
 | Spanje                               | ES        | EUR          | EUR, USD |
-| Sri Lanka                           | LK        | USD          | EUR, LKR, USD |
+| Sri Lanka                           | LK        | USD          | EUR, HADR, USD |
 | Zweden                              | SE        | SEK          | EUR, SEK, USD  |
 | Zwitserland                         | CH        | CHF          | CHF, EUR, USD |
 | Taiwan                              | TW        | TWD          | EUR, TWD, USD |
-| Tadzjikistan                          | TJ        | USD          | EUR, TJS, USD |
+| Tadzjikistan                          | Tj        | USD          | EUR, TJS, USD |
 | Tanzania                            | TZ        | USD          | EUR, TZS, USD |
 | Thailand                            | TH        | USD          | EUR, THB, USD |
 | Trinidad en Tobago                 | TT        | USD          | EUR, TTD, USD |
@@ -153,57 +153,57 @@ Een CSP kan een aanbieding in het partner centrum kopen in de valuta van de eind
 | Turkije                              | TR        | USD          | EUR, TRY, USD |
 | Turkmenistan                        | TM        | USD          | EUR, TMT, USD |
 | Oeganda                              | UG        | USD          | EUR, UGX, USD |
-| Oekraïne                             | UA        | USD          | EUR, RUB, UAH, USD |
+| Oekraïne                             | UA        | USD          | EUR, KOSTEN, UAH, USD |
 | Verenigde Arabische Emiraten                | AE        | USD          | AED, EUR, USD |
 | Verenigd Koninkrijk                      | GB        | GBP          | EUR, GBP, USD |
 | Verenigde Staten                       | VS        | USD          | EUR, USD |
-| Amerikaanse Maagden eilanden                 | VI        | USD          | EUR, USD|
+| Amerikaanse Amerikaanse Maagdeneilanden                 | VI        | USD          | EUR, USD|
 | Uruguay                             | UY        | USD          | EUR, USD, UYU |
 | Oezbekistan                          | UZ        | USD          | EUR, USD, UZS |
-| Vaticaan stad (Heilige stoel)             | VA        | EUR          | EUR, USD |
+| Stad Van Den( See)             | VA        | EUR          | EUR, USD |
 | Venezuela                           | VE        | USD          | EUR, USD, VES |
 | Vietnam                             | VN        | USD          | EUR, USD, VND |
-| Jemen                               | TEZAM        | USD          | EUR, USD, YER |
+| Jemen                               | Gij        | USD          | EUR, USD, YER |
 | Zambia                              | ZM        | USD          | EUR, USD, ZMW |
 | Zimbabwe                            | ZW        | USD          | EUR, USD|
 |   |   |   |
 
-\* Voor klanten in Brazilië maakt de commerciële Marketplace via Cloud Solution Providers (CSP) gebruik van USD.
+\* Voor klanten in Brazilië maakt de commerciële marketplace via Cloud Solution Providers (CSP) gebruik van USD.
 
-\** Alleen vrije en BYOL VM-installatie kopieën.
+\** Alleen gratis en BYOL-VM-afbeeldingen.
 
-## <a name="how-we-convert-currency"></a>Hoe we valuta converteren
+## <a name="how-we-convert-currency"></a>Valuta converteren
 
-Voor alle betaalde aanbiedings typen hebt u de mogelijkheid om prijzen in USD in te voeren of prijzen in de lokale valuta te uploaden. Prijzen die zijn ingevoerd in USD worden automatisch geconverteerd naar een lokale valuta wanneer de pagina wordt opgeslagen. Het tarieven partner centrum gebruikt worden dagelijks bijgewerkt. U kunt de prijzen exporteren en de geconverteerde equivalenten controleren.
+Voor alle betaalde aanbiedingstypen kunt u prijzen invoeren in USD of prijzen uploaden in lokale valuta. Prijzen die in USD zijn ingevoerd, worden automatisch geconverteerd naar lokale valuta wanneer de pagina wordt opgeslagen. De tarieven Partner Center worden dagelijks bijgewerkt. U kunt de prijzen exporteren en de geconverteerde equivalenten controleren.
 
-Als u de prijs wilt aanpassen voordat u publiceert, exporteert u het werk blad prijzen, wijzigt u het en uploadt u het met de wijzigingen.
-
-> [!NOTE]
-> Nadat een prijs voor een markt in uw abonnement is gepubliceerd, kan deze niet meer worden gewijzigd. Om ervoor te zorgen dat de prijzen goed zijn voordat u ze publiceert, exporteert u het werk blad prijzen en bekijkt u de prijzen op elke markt.
-
-De prijs van een aanbieding wordt altijd weer gegeven aan klanten in hun lokale valuta. De prijs die u in Partner Center selecteert, wordt omgezet in de lokale valuta van klanten, op basis van de wissel koers op het moment dat u de prijs hebt opgeslagen in het partner centrum. De prijs die wordt weer gegeven voor klanten in de online winkels, wordt niet gewijzigd, tenzij u uw aanbieding opnieuw publiceert.
-
-Micro soft ontvangt betalingen van klanten in hun lokale valuta en betaalt u in de valuta die u hebt geselecteerd in het partner centrum. Micro soft converteert de lokale valuta van de klant met de wissel koers van de dag van de aankoop.
+Als u een prijs wilt aanpassen voordat u publiceert, exporteert u het prijzenblad, wijzigt u deze en uploadt u deze met wijzigingen.
 
 > [!NOTE]
-> Micro soft converteert prijzen voor aanbiedingen met behulp van de wissel koersen van micro soft.
+> Nadat een prijs voor een markt in uw abonnement is gepubliceerd, kan deze niet meer worden gewijzigd. Om ervoor te zorgen dat de prijzen direct zijn voordat u ze publiceert, exporteert u het prijzenblad en controleert u de prijzen in elke markt.
 
-[![De valuta conversie stroom.](media/marketplace-geo-availability-currencies/currency-exchange-flow.png)](media/marketplace-geo-availability-currencies/currency-exchange-flow.png#lightbox)
+De prijs van een aanbieding wordt altijd weergegeven aan klanten in hun lokale valuta. De prijs die u selecteert in Partner Center wordt geconverteerd naar de lokale valuta van klanten op basis van de wisselkoers op het moment dat u de prijs in de Partner Center. De prijs die wordt weergegeven aan klanten in de online winkels verandert niet, tenzij u uw aanbieding opnieuw hebt gepubliceerd.
 
-## <a name="retrieving-currency-information-by-api"></a>De valuta gegevens worden opgehaald door de API
+Microsoft ontvangt betalingen van klanten in hun lokale valuta en betaalt u in de valuta die u hebt geselecteerd in Partner Center. Microsoft converteert de lokale valuta van de klant met behulp van de wisselkoers van de dag van aankoop.
 
-Individuele prijzen (afhankelijk van hoe ze zijn ingesteld, kunnen worden beïnvloed door de wissel koersen op de dag waarop ze werden opgeslagen) kunnen worden opgehaald met behulp van een API; kan geen valuta gegevens.
+> [!NOTE]
+> Microsoft converteert de prijzen van de aanbieding met behulp van de wisselkoersen van Microsoft Voor financiën.
 
-Raadpleeg de volgende artikelen voor meer informatie over het invoeren van prijzen voor specifieke aanbiedings typen:
+[![De stroom voor valutaconversie.](media/marketplace-geo-availability-currencies/currency-exchange-flow.png)](media/marketplace-geo-availability-currencies/currency-exchange-flow.png#lightbox)
+
+## <a name="retrieving-currency-information-by-api"></a>Valutagegevens ophalen per API
+
+Afzonderlijke prijzen (die, afhankelijk van hoe ze zijn ingesteld, mogelijk zijn beïnvloed door de wisselkoersen op de dag dat ze zijn opgeslagen) kunnen worden opgehaald met behulp van een API; valutagegevens kunnen dat niet.
+
+Raadpleeg de volgende artikelen voor meer informatie over het invoeren van prijzen voor specifieke aanbiedingstypen:
 
 - [Een Azure-toepassingsaanbieding maken](create-new-azure-apps-offer.md)
-- [Een Azure-container aanbieding maken](./create-azure-container-offer.md)
+- [Een Azure-containeraanbieding maken](./create-azure-container-offer.md)
 - [Een Azure Virtual Machine-aanbieding maken](azure-vm-create.md)
 - [Een adviesservice-aanbieding maken](./create-consulting-service-offer.md)
-- [Een Dynamics 365 for Customer Engagement- en PowerApps-aanbieding maken](partner-center-portal/create-new-customer-engagement-offer.md)
+- [Een Dynamics 365 for Customer Engagement-aanbieding & Power Apps maken](dynamics-365-customer-engage-offer-setup.md)
 - [Een Dynamics 365 for Operations-aanbieding maken](partner-center-portal/create-new-operations-offer.md)
 - [Een Dynamics 365 Business Central-aanbieding maken](partner-center-portal/create-new-business-central-offer.md)
 - [Aanbieding voor IoT Edge-module maken](partner-center-portal/azure-iot-edge-module-creation.md)
 - [Een aanbieding voor beheerde service maken](./plan-managed-service-offer.md)
-- [Een Power BI-app maken](partner-center-portal/create-power-bi-app-offer.md)
+- [Een app Power BI maken](partner-center-portal/create-power-bi-app-offer.md)
 - [Een SaaS-aanbieding maken](./create-new-saas-offer.md)

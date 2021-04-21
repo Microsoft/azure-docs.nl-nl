@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 04/13/2021
 ms.author: helohr
 manager: femila
-ms.openlocfilehash: d1ca4a843c6731cde7ed70d65fc230a21ef6e7c4
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 43a8cb00804927784982999db13ee193c34f55ca
+ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107389431"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107835376"
 ---
 # <a name="create-powershell-scripts-for-msix-app-attach"></a>PowerShell-scripts voor MSIX-app koppelen
 
@@ -24,7 +24,7 @@ U moet certificaten installeren op alle sessiehosts in de hostgroep die als host
 Als uw app gebruikmaakt van een certificaat dat niet openbaar wordt vertrouwd of zelf is ondertekend, kunt u het als volgende installeren:
 
 1. Klik met de rechtermuisknop op het pakket en selecteer **Eigenschappen.**
-2. Selecteer in het venster dat wordt weergegeven het **tabblad Digitale** handtekeningen. Er mag slechts één item in de lijst op het tabblad staan, zoals wordt weergegeven in de volgende afbeelding. Selecteer dat item om het item te markeren en selecteer vervolgens **Details**.
+2. Selecteer in het venster dat wordt weergegeven het **tabblad Digitale** handtekeningen. Er mag slechts één item in de lijst op het tabblad staan. Selecteer dat item om het item te markeren en selecteer vervolgens **Details**.
 3. Wanneer het venster met details van de digitale handtekening wordt weergegeven, selecteert u het tabblad **Algemeen** en selecteert u **vervolgens Certificaat weergeven** en **selecteert u vervolgens Certificaat installeren.**
 4. Wanneer het installatieprogramma wordt geopend, **selecteert u lokale computer** als uw opslaglocatie en selecteert u **vervolgens Volgende.**
 5. Als het installatieprogramma u vraagt of u wilt toestaan dat de app wijzigingen aan uw apparaat aan kan brengen, selecteert u **Ja.**
@@ -71,9 +71,9 @@ Voordat u de PowerShell-scripts bij te werken, moet u ervoor zorgen dat u de vol
 
     Bijvoorbeeld `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
 
-5.  Open een opdrachtprompt en voer **mountvol in.** Met deze opdracht wordt een lijst met volumes en hun GUID's weergegeven. Kopieer de GUID van het volume waar de stationletter overeenkomt met het station waar u de VHD aan hebt bevestigd in stap 2.
+5.  Open een opdrachtprompt en voer **mountvol in.** Met deze opdracht wordt een lijst met volumes en hun GUID's weergegeven. Kopieer de GUID van het volume waar de stationletter overeenkomt met het station waarop u de VHD in stap 2 hebt bevestigd.
 
-    In dit voorbeeld van uitvoer voor de mountvol opdracht, als u uw VHD aan station C hebt bevestigd, moet u de bovenstaande waarde `C:\` kopiëren:
+    In dit voorbeeld van de uitvoer voor de mountvol opdracht, als u uw VHD aan station C hebt bevestigd, moet u de bovenstaande waarde `C:\` kopiëren:
 
     ```cmd
     Possible values for VolumeName along with current mount points are:
@@ -213,7 +213,7 @@ Elk van deze automatische scripts voert één fase van de app-koppelingsscripts 
 
 ## <a name="use-packages-offline"></a>Pakketten offline gebruiken
 
-Als u pakketten gebruikt van de [Microsoft Store voor Bedrijven of](https://businessstore.microsoft.com/) de [Microsoft Store voor Onderwijs](https://educationstore.microsoft.com/) in uw netwerk of op apparaten die niet zijn verbonden met internet, moet u de pakketlicenties van de Microsoft Store downloaden en installeren op uw apparaat om de app met succes uit te voeren. Als uw apparaat online is en verbinding kan maken met de Microsoft Store voor Bedrijven, moeten de vereiste licenties automatisch worden gedownload, maar als u offline bent, moet u de licenties handmatig instellen.
+Als u pakketten gebruikt van de [Microsoft Store voor Bedrijven of](https://businessstore.microsoft.com/) de [Microsoft Store voor Onderwijs](https://educationstore.microsoft.com/) in uw netwerk of op apparaten die niet zijn verbonden met internet, moet u de pakketlicenties van de Microsoft Store downloaden en installeren op uw apparaat om de app met succes uit te voeren. Als uw apparaat online is en verbinding kan maken met de Microsoft Store voor Bedrijven, moeten de vereiste licenties automatisch worden gedownload. Als u offline bent, moet u de licenties handmatig instellen.
 
 Als u de licentiebestanden wilt installeren, moet u een PowerShell-script gebruiken dat de klasse MDM_EnterpriseModernAppManagement_StoreLicenses02_01 aanroept in de WMI Bridge-provider.
 

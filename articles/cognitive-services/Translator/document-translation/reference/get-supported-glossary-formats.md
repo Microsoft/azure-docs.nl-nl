@@ -1,5 +1,5 @@
 ---
-title: Methode voor ondersteunde woordenlijstindelingen krijgen
+title: Methode ondersteunde woordenlijstindelingen op halen
 titleSuffix: Azure Cognitive Services
 description: De methode get supported glossary formats retourneert de lijst met ondersteunde woordenlijstindelingen.
 services: cognitive-services
@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/25/2021
+ms.date: 04/21/2021
 ms.author: v-jansk
-ms.openlocfilehash: b2419c9d1fe32390afcd81b77d1cf32900b9fe8a
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.openlocfilehash: ea22e6a3afe8ee90cb7b59d1aca0a37fc4fa03d6
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107836169"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864915"
 ---
 # <a name="get-supported-glossary-formats"></a>Ondersteunde woordenlijstindelingen krijgen
 
-Met de methode Ondersteunde woordenlijstindelingen opmaken wordt een lijst met ondersteunde woordenlijstindelingen die worden ondersteund door de Service voor documentvertaling, weergegeven. De lijst bevat de gebruikte algemene bestandsextensie.
+De methode Ondersteunde woordenlijstindelingen krijgen retourneert een lijst met ondersteunde woordenlijstindelingen die worden ondersteund door de documentvertalingsservice. De lijst bevat de gebruikte algemene bestandsextensie.
 
 ## <a name="request-url"></a>Aanvraag-URL
 
@@ -33,7 +33,7 @@ Meer informatie over het vinden [van uw aangepaste domeinnaam](../get-started-wi
 > [!IMPORTANT]
 >
 > * **Voor alle API-aanvragen voor de documentvertalingsservice is een aangepast domein-eindpunt vereist.**
-> * U kunt het eindpunt op de pagina sleutels  en eindpunten van uw Azure Portal-resource, noch het globale translator-eindpunt, , gebruiken om HTTP-aanvragen te maken voor `api.cognitive.microsofttranslator.com` documentvertaling.
+> * U kunt het eindpunt op de pagina sleutels  en eindpunt van uw Azure Portal-resource, noch het globale translator-eindpunt, , gebruiken om HTTP-aanvragen voor documentvertaling `api.cognitive.microsofttranslator.com` te maken.
 
 ## <a name="request-headers"></a>Aanvraagheaders
 
@@ -56,11 +56,11 @@ Hier volgen de mogelijke HTTP-statuscodes die een aanvraag retourneert.
 
 ## <a name="get-supported-glossary-formats-response"></a>Antwoord van ondersteunde woordenlijstindelingen
 
-Basistype voor lijst retourneren in de API Ondersteunde woordenlijstindelingen krijgen.
+Basistype voor lijst retourneert in de API Ondersteunde woordenlijstindelingen krijgen.
 
 ### <a name="successful-get-supported-glossary-formats-response"></a>Geslaagd antwoord op ondersteunde woordenlijstindelingen
 
-Basistype voor lijst retourneert in de API Ondersteunde woordenlijstindelingen krijgen.
+Basistype voor lijst retourneren in de API Ondersteunde woordenlijstindelingen krijgen.
 
 |Statuscode|Description|
 |--- |--- |
@@ -74,13 +74,13 @@ Basistype voor lijst retourneert in de API Ondersteunde woordenlijstindelingen k
 |--- |--- |--- |
 |code|tekenreeks|Enums met foutcodes op hoog niveau. Mogelijke waarden:<br/><ul><li>InternalServerError</li><li>InvalidArgument</li><li>InvalidRequest</li><li>RequestRateTooHigh</li><li>ResourceNotFound</li><li>ServiceUnavailable</li><li>Niet geautoriseerd</li></ul>|
 |message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
-|innerError|InnerErrorV2|Nieuwe interne foutindeling, die voldoet aan Cognitive Services API-richtlijnen. Het bevat vereiste eigenschappen: ErrorCode, message en optional properties target, details(sleutelwaardepaar), interne fout (dit kan worden genest).|
-|innerError.code|tekenreeks|Haalt een codefoutreeks op.|
+|innerError|InnerErrorV2|Nieuwe interne foutindeling, die voldoet aan Cognitive Services API-richtlijnen. Het bevat de vereiste eigenschappen ErrorCode, bericht en optionele eigenschappen doel, details(sleutel-waardepaar), interne fout (dit kan worden genest).|
+|innerError.code|tekenreeks|Haalt de codefoutreeks op.|
 |innerError.message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
 
 ## <a name="examples"></a>Voorbeelden
 
-### <a name="example-successful-response"></a>Voorbeeld van geslaagd antwoord
+### <a name="example-successful-response"></a>Voorbeeld van een geslaagd antwoord
 
 Hier volgt een voorbeeld van een geslaagd antwoord.
 
@@ -117,7 +117,7 @@ Hier volgt een voorbeeld van een geslaagd antwoord.
 ```
 
 ### <a name="example-error-response"></a>Voorbeeld van een foutbericht
-hier volgt een voorbeeld van een foutbericht. Het schema voor andere foutcodes is hetzelfde.
+het volgende is een voorbeeld van een foutbericht. Het schema voor andere foutcodes is hetzelfde.
 
 Statuscode: 500
 

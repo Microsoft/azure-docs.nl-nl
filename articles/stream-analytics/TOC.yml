@@ -322,7 +322,7 @@
           href: stream-analytics-machine-learning-integration-tutorial.md
         - name: Afwijkingsdetectie
           href: stream-analytics-machine-learning-anomaly-detection.md
-        - name: ML REST-Api's gebruiken
+        - name: ML REST API's gebruiken
           href: stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md
     - name: Fouten opsporen met behulp van een taakdiagram
       href: stream-analytics-job-diagram-with-metrics.md
@@ -677,7 +677,7 @@
     - name: Resource Manager-sjabloon
       href: /azure/templates/microsoft.streamanalytics/allversions
     - name: Azure CLI
-      href: /cli/azure/ext/stream-analytics/stream-analytics
+      href: /cli/azure/stream-analytics
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md

@@ -7,12 +7,12 @@ ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: e42f85bb79dcb1bfe14cacbbfda3576888b841c9
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 315b505e9de853fbe4663eacdfe929149dbaa458
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107481325"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873141"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-from-the-azure-portal-preview"></a>Quickstart: Een Azure Managed Instance voor Apache Cassandra-cluster maken op Azure Portal (preview)
  
@@ -43,8 +43,8 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 1. Voer in **het deelvenster Beheerd exemplaar maken voor Apache Cassandra** de volgende gegevens in:
 
-   * **Abonnement:** selecteer uw Azure-abonnement in de vervolgkeuzekeuze.
-   * **Resourcegroep:** geef op of u een nieuwe resourcegroep wilt maken of een bestaande wilt gebruiken. Een resourcegroep is een container met gerelateerde resources voor een Azure-oplossing. Zie het artikel [Overzicht van Azure-resourcegroep voor](../azure-resource-manager/management/overview.md) meer informatie.
+   * **Abonnement:** selecteer uw Azure-abonnement in de vervolgkeuzeop.
+   * **Resourcegroep:** geef op of u een nieuwe resourcegroep wilt maken of een bestaande wilt gebruiken. Een resourcegroep is een container met gerelateerde resources voor een Azure-oplossing. Zie het artikel Overzicht [van Azure-resourcegroep voor](../azure-resource-manager/management/overview.md) meer informatie.
    * **Clusternaam:** voer een naam in voor uw cluster.
    * **Locatie:** de locatie waar uw cluster wordt geïmplementeerd.
    * **SKU:** het type SKU voor uw cluster.
@@ -53,13 +53,13 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
    * **Cassandra-beheerderswachtwoord bevestigen:** uw wachtwoord opnieuw invoeren.
 
     > [!NOTE]
-    > Tijdens de openbare preview kunt u het beheerde exemplaarcluster maken in de regio's VS - oost, VS - west 2, VS - west 2, VS - centraal, VS - zuid-centraal, *Europa - noord, Europa - west, Zuid-Azië - oost* en Australië - oost.
+    > Tijdens de openbare preview kunt u het beheerde exemplaarcluster maken in de regio's VS - oost, VS - west, VS - oost 2, VS - west 2, VS - centraal, VS - zuid-centraal, *Europa - noord, Europa - west, Zuid-Azië - oost* en Australië - oost.
 
-   :::image type="content" source="./media/create-cluster-portal/create-cluster-page.png" alt-text="Vul het formulier cluster maken in." lightbox="./media/create-cluster-portal/create-cluster-page.png" border="true":::
+   :::image type="content" source="./media/create-cluster-portal/create-cluster-page.png" alt-text="Vul het formulier Cluster maken in." lightbox="./media/create-cluster-portal/create-cluster-page.png" border="true":::
 
 1. Selecteer vervolgens het **tabblad** Netwerken.
 
-1. Kies in **het** deelvenster Netwerken de **Virtual Network** en **subnet**. U kunt een bestaande Virtual Network of een nieuwe maken.
+1. Kies in **het** deelvenster Netwerken de **Virtual Network** naam en **subnet**. U kunt een bestaande Virtual Network of een nieuwe maken.
 
    :::image type="content" source="./media/create-cluster-portal/networking.png" alt-text="Netwerkdetails configureren." lightbox="./media/create-cluster-portal/networking.png" border="true":::
 
@@ -72,7 +72,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     > - Azure Active Directory
     > - Azure-beveiliging
 
-1. Als u in de laatste stap een nieuw VNet hebt gemaakt, gaat u verder met stap 8. Als u een bestaand VNet hebt geselecteerd voordat u uw cluster maakt, moet u een aantal speciale machtigingen toepassen op Virtual Network en het subnet. U doet dit door de opdracht te gebruiken, , en te `az role assignment create` vervangen door de juiste `<subscription ID>` `<resource group name>` `<VNet name>` waarden:
+1. Als u in de laatste stap een nieuw VNet hebt gemaakt, gaat u verder met stap 8. Als u een bestaand VNet hebt geselecteerd voordat u uw cluster maakt, moet u een aantal speciale machtigingen toepassen op de Virtual Network en het subnet. Gebruik om dit te doen de opdracht , en te `az role assignment create` vervangen door de juiste `<subscription ID>` `<resource group name>` `<VNet name>` waarden:
 
    ```azurecli-interactive
    az role assignment create --assignee a232010e-820c-4083-83bb-3ace5fc29d0b --role 4d97b98b-1d4f-4787-a291-c67834d212e7 --scope /subscriptions/<subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.Network/virtualNetworks/<VNet name>
@@ -93,14 +93,14 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
    :::image type="content" source="./media/create-cluster-portal/managed-instance.png" alt-text="Overzichtspagina nadat het cluster is gemaakt." lightbox="./media/create-cluster-portal/managed-instance.png" border="true":::
 
-1. Als u door de clusterknooppunten wilt bladeren, gaat u naar het  deelvenster Virtual Network u hebt gebruikt om het cluster te maken en opent u het deelvenster Overzicht om ze weer te geven:
+1. Als u door de clusterknooppunten wilt bladeren, gaat u naar Virtual Network  deelvenster dat u hebt gebruikt om het cluster te maken en opent u het deelvenster Overzicht om ze weer te geven:
 
    :::image type="content" source="./media/create-cluster-portal/resources.png" alt-text="Bekijk de clusterbronnen." lightbox="./media/create-cluster-portal/resources.png" border="true":::
 
 
 ## <a name="connecting-to-your-cluster"></a>Verbinding maken met uw cluster
 
-Azure Managed Instance voor Apache Cassandra maakt geen knooppunten met openbare IP-adressen, dus als u verbinding wilt maken met uw zojuist gemaakte Cassandra-cluster, moet u een andere resource binnen het VNet maken. Dit kan een toepassing zijn of een virtuele machine met het opensource-queryhulpprogramma [CQLSH van](https://cassandra.apache.org/doc/latest/tools/cqlsh.html) Apache geïnstalleerd. U kunt een sjabloon [gebruiken om](https://azure.microsoft.com/resources/templates/101-vm-simple-linux/) een virtuele Ubuntu-machine te implementeren. Gebruik SSH om verbinding te maken met de computer en installeer CQLSH met behulp van de onderstaande opdrachten:
+Azure Managed Instance voor Apache Cassandra maakt geen knooppunten met openbare IP-adressen. Als u verbinding wilt maken met uw zojuist gemaakte Cassandra-cluster, moet u dus een andere resource in het VNet maken. Dit kan een toepassing zijn of een virtuele machine met het opensource-queryhulpprogramma [CQLSH van](https://cassandra.apache.org/doc/latest/tools/cqlsh.html) Apache geïnstalleerd. U kunt een sjabloon [gebruiken om](https://azure.microsoft.com/resources/templates/101-vm-simple-linux/) een virtuele Ubuntu-machine te implementeren. Gebruik SSH om verbinding te maken met de computer en installeer CQLSH met behulp van de onderstaande opdrachten:
 
 ```bash
 # Install default-jre and default-jdk
@@ -133,7 +133,7 @@ Als er een fout wordt weergegeven bij het toepassen van machtigingen op uw Virtu
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u dit beheerde exemplaarcluster niet meer gaat gebruiken, verwijdert u het met de volgende stappen:
+Als u dit beheerde exemplaarcluster verder niet gaat gebruiken, verwijdert u het cluster met de volgende stappen:
 
 1. Selecteer resourcegroepen in Azure Portal menu aan **de linkerkant.**
 1. Selecteer de resourcegroep die u eerder voor deze quickstart hebt gemaakt uit de lijst.
@@ -145,4 +145,4 @@ Als u dit beheerde exemplaarcluster niet meer gaat gebruiken, verwijdert u het m
 In deze quickstart hebt u geleerd hoe u een Azure Managed Instance voor Apache Cassandra-cluster maakt met behulp van Azure Portal. U kunt nu aan de slag met het cluster:
 
 > [!div class="nextstepaction"]
-> [Een beheerd Apache Spark implementeren met Azure Databricks](deploy-cluster-databricks.md)
+> [Een beheerd Apache Spark cluster implementeren met Azure Databricks](deploy-cluster-databricks.md)

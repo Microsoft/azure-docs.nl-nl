@@ -1,109 +1,109 @@
 ---
-title: GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
-description: Meer informatie over het instellen van GitHub Enter prise server op uw Azure VMware-oplossing privécloud.
+title: GitHub Enterprise Server instellen in uw Azure VMware Solution privécloud
+description: Meer informatie over het instellen van GitHub Enterprise Server op uw Azure VMware Solution privécloud.
 ms.topic: how-to
 ms.date: 02/11/2021
-ms.openlocfilehash: 59a76c3976f6fcda88423b7b78344f2abed1ea84
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0ff7ab87d7401cd3faaecf149fb1b07be3f8db42
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100382018"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862935"
 ---
-# <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
+# <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>GitHub Enterprise Server instellen in uw Azure VMware Solution privécloud
 
-In dit artikel worden de stappen beschreven voor het instellen van GitHub Enter prise server, de ' on-premises ' versie van [github.com](https://github.com/), op uw persoonlijke cloud van Azure VMware-oplossing. Het scenario dat wij bieden, is een GitHub Enter prise Server-exemplaar dat tot 3.000 ontwikkel aars kan voorzien van Maxi maal 25 taken per minuut op GitHub-acties. Het bevat de instellingen van (op het moment van schrijven) *Preview* -functies, zoals github-acties. Als u de installatie voor uw specifieke behoeften wilt aanpassen, raadpleegt u de vereisten die worden vermeld in [github Enter prise server installeren op VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations).
+In dit artikel doorlopen we de stappen voor het instellen van GitHub Enterprise Server, de 'on-premises' versie van [GitHub.com](https://github.com/), op uw Azure VMware Solution privécloud. Het scenario dat we behandelen, is een GitHub Enterprise Server-exemplaar dat maximaal 3000 ontwikkelaars kan bedienen met maximaal 25 taken per minuut op GitHub Actions. Het bevat de installatie van (op het moment van schrijven) *preview-functies,* zoals GitHub Actions. Als u de installatie wilt aanpassen aan uw specifieke behoeften, bekijkt u de vereisten die worden vermeld in [GitHub Enterprise Server installeren op VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations).
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-GitHub Enter prise server vereist een geldige licentie sleutel. U kunt zich aanmelden voor een [proef licentie](https://enterprise.github.com/trial). Als u de mogelijkheden van GitHub Enter prise server wilt uitbreiden via een integratie, kunt u in aanmerking komen voor een gratis licentie voor de ontwikkel aars van vijf seat. Gelden voor deze licentie via [het partner programma van github](https://partner.github.com/).
+GitHub Enterprise Server vereist een geldige licentiesleutel. U kunt zich aanmelden voor een [proeflicentie](https://enterprise.github.com/trial). Als u de mogelijkheden van GitHub Enterprise Server via een integratie wilt uitbreiden, komt u mogelijk in aanmerking voor een gratis ontwikkelaarslicentie met vijf plaatsen. Vraag deze licentie aan via [het Partnerprogramma van GitHub.](https://partner.github.com/)
 
-## <a name="installing-github-enterprise-server-on-vmware"></a>GitHub Enter prise server installeren op VMware
+## <a name="installing-github-enterprise-server-on-vmware"></a>GitHub Enterprise Server installeren op VMware
 
-Down load [de huidige versie van github Enter prise server](https://enterprise.github.com/releases/2.19.0/download) voor VMware ESXi/VSPHERE (eicellen) en [Implementeer de eicellen-sjabloon](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html) die u hebt gedownload.
+Download [de huidige versie van GitHub Enterprise Server](https://enterprise.github.com/releases/2.19.0/download) voor VMware ESXi/vSphere (OVA) en implementeer de [OVA-sjabloon die](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html) u hebt gedownload.
 
-:::image type="content" source="media/github-enterprise-server/github-options.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::  
+:::image type="content" source="media/github-enterprise-server/github-options.png" alt-text="Kies ervoor om GitHub on-premises of in de cloud uit te voeren.":::  
 
-:::image type="content" source="media/github-enterprise-server/deploy-ova-template.png" alt-text="De eicellen-sjabloon implementeren.":::  
+:::image type="content" source="media/github-enterprise-server/deploy-ova-template.png" alt-text="Implementeer de OVA-sjabloon.":::  
 
-Geef een herken bare naam op voor de nieuwe virtuele machine, zoals GitHubEnterpriseServer. U hoeft de release details niet op te geven in de naam van de virtuele machine, aangezien deze details verouderd worden wanneer het exemplaar wordt geüpgraded. Selecteer alle standaard waarden voor nu (deze gegevens worden binnenkort gewijzigd) en wacht totdat de eicellen zijn geïmporteerd.
+Geef een herkenbare naam op voor uw nieuwe virtuele machine, zoals GitHubEnterpriseServer. U hoeft de releasedetails niet op te nemen in de naam van de VM, omdat deze gegevens verouderd raken wanneer het exemplaar wordt bijgewerkt. Selecteer alle standaardwaarden voor nu (we gaan deze details binnenkort bewerken) en wacht tot de OVA is geïmporteerd.
 
-Nadat de configuratie is geïmporteerd, [past u de hardwareconfiguratie](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#creating-the-github-enterprise-server-instance) aan op basis van uw behoeften. In het voorbeeld scenario hebt u de volgende configuratie nodig.
+Pas na het [importeren de hardwareconfiguratie aan](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#creating-the-github-enterprise-server-instance) op basis van uw behoeften. In ons voorbeeldscenario hebben we de volgende configuratie nodig.
 
-| Resource | Standaard instellingen | Standaard instellen + ' bèta functies ' (acties) |
+| Resource | Standaardinstallatie | Standaard instellen + Bètafuncties (acties) |
 | --- | --- | --- |
 | vCPUs | 4 | 8 |
 | Geheugen | 32 GB | 61 GB |
 | Gekoppelde opslag | 250 GB | 300 GB |
-| Hoofd opslag | 200 GB | 200 GB |
+| Hoofdopslag | 200 GB | 200 GB |
 
-Uw behoeften kunnen echter verschillen. Raadpleeg de richt lijnen over hardwareproblemen in [github Enter prise server installeren op VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations)voor meer informatie. Zie ook [CPU of geheugen resources toevoegen voor VMware](https://docs.github.com/en/enterprise/admin/enterprise-management/increasing-cpu-or-memory-resources#adding-cpu-or-memory-resources-for-vmware) om de hardwareconfiguratie aan te passen op basis van uw situatie.
+Uw behoeften kunnen echter variëren. Raadpleeg de richtlijnen voor hardwareoverwegingen in GitHub Enterprise Server installeren [op VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations). Zie ook [Cpu- of geheugenbronnen toevoegen voor VMware om](https://docs.github.com/en/enterprise/admin/enterprise-management/increasing-cpu-or-memory-resources#adding-cpu-or-memory-resources-for-vmware) de hardwareconfiguratie aan te passen op basis van uw situatie.
 
-## <a name="configuring-the-github-enterprise-server-instance"></a>Het GitHub Enter prise Server-exemplaar configureren
+## <a name="configuring-the-github-enterprise-server-instance"></a>Het GitHub Enterprise Server-exemplaar configureren
 
-:::image type="content" source="media/github-enterprise-server/install-github-enterprise.png" alt-text="Installeer GitHub Enter prise.":::  
+:::image type="content" source="media/github-enterprise-server/install-github-enterprise.png" alt-text="Installeer GitHub Enterprise.":::  
 
-Nadat de zojuist ingerichte virtuele machine (VM) is ingeschakeld, configureert u [deze via uw browser](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#configuring-the-github-enterprise-server-instance). U moet uw licentie bestand uploaden en een wacht woord voor de beheer console instellen. Zorg ervoor dat u dit wacht woord ergens anders schrijft.
+Nadat de zojuist inrichtende virtuele machine (VM) is ingeschakeld, configureert [u deze via uw browser](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#configuring-the-github-enterprise-server-instance). U moet uw licentiebestand uploaden en een wachtwoord voor de beheerconsole instellen. Schrijf dit wachtwoord op een veilige plaats op.
 
-:::image type="content" source="media/github-enterprise-server/ssh-access.png" alt-text="Open de beheer shell via SSH.":::    
+:::image type="content" source="media/github-enterprise-server/ssh-access.png" alt-text="Toegang tot de beheershell via SSH.":::    
 
-We raden u aan om ten minste de volgende stappen uit te voeren:
+We raden u aan ten minste de volgende stappen uit te voeren:
 
-1. Upload een open bare SSH-sleutel naar de beheer console, zodat u [via SSH toegang kunt krijgen tot de beheer shell](https://docs.github.com/en/enterprise/admin/configuration/accessing-the-administrative-shell-ssh). 
+1. Upload een openbare SSH-sleutel naar de beheerconsole, zodat u via SSH toegang hebt [tot de beheershell.](https://docs.github.com/en/enterprise/admin/configuration/accessing-the-administrative-shell-ssh) 
 
-2. [CONFIGUREER TLS op uw exemplaar](https://docs.github.com/en/enterprise/admin/configuration/configuring-tls) zodat u een certificaat kunt gebruiken dat is ondertekend door een vertrouwde certificerings instantie.
+2. [Configureer TLS op uw exemplaar](https://docs.github.com/en/enterprise/admin/configuration/configuring-tls) zodat u een certificaat kunt gebruiken dat is ondertekend door een vertrouwde certificeringsinstantie.
 
 :::image type="content" source="media/github-enterprise-server/configuring-your-instance.png" alt-text="Uw exemplaar configureren.":::
 
-Pas uw instellingen toe.  Terwijl het exemplaar opnieuw wordt gestart, kunt u door gaan met de volgende stap en **Blob Storage configureren voor github-acties**.
+Pas uw instellingen toe.  Terwijl het exemplaar opnieuw wordt opgestart, kunt u doorgaan met de volgende stap: Blob Storage **configureren GitHub Actions**.
 
-:::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Maak uw beheerders account.":::
+:::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Maak uw beheerdersaccount.":::
 
-Nadat het exemplaar opnieuw is opgestart, kunt u een nieuw beheerders account maken op het exemplaar. Zorg er ook voor dat u het wacht woord van deze gebruiker noteert.
+Nadat het exemplaar opnieuw is opgestart, kunt u een nieuw beheerdersaccount maken voor het exemplaar. Noteer ook het wachtwoord van deze gebruiker.
 
-### <a name="other-configuration-steps"></a>Andere configuratie stappen
+### <a name="other-configuration-steps"></a>Andere configuratiestappen
 
-Als u uw exemplaar wilt beveiligen voor gebruik in de productie omgeving, kunt u het beste de volgende optionele installatie stappen uitvoeren:
+Als u uw exemplaar wilt harden voor productiegebruik, worden de volgende optionele installatiestappen aanbevolen:
 
-1. [Hoge Beschik baarheid](https://help.github.com/enterprise/admin/guides/installation/configuring-github-enterprise-for-high-availability/) voor beveiliging configureren voor:
+1. Configureer [hoge beschikbaarheid](https://help.github.com/enterprise/admin/guides/installation/configuring-github-enterprise-for-high-availability/) voor beveiliging tegen:
 
-    - Software crashes (OS-of toepassings niveau)
-    - Hardwarestoringen (opslag, CPU, RAM, enzovoort)
-    - Storingen in virtualisatie hostsysteem
+    - Software-crashes (niveau van besturingssysteem of toepassing)
+    - Hardwarefouten (opslag, CPU, RAM, e.d.)
+    - Virtualisatiehostsysteemfouten
     - Logisch of fysiek ernstig netwerk
 
-2. [](https://docs.github.com/en/enterprise/admin/configuration/configuring-backups-on-your-appliance) [Back-ups configureren-hulpprogram ma's](https://github.com/github/backup-utils), voorzien in versie-moment opnamen voor herstel na nood gevallen, gehost in Beschik baarheid die gescheiden is van het primaire exemplaar.
-3. De [isolatie van subdomeinen instellen](https://docs.github.com/en/enterprise/admin/configuration/enabling-subdomain-isolation)met behulp van een geldig TLS-certificaat om cross-site scripting en andere gerelateerde beveiligings problemen te beperken.
+2. [Configureer](https://docs.github.com/en/enterprise/admin/configuration/configuring-backups-on-your-appliance) [back-upprogramma's](https://github.com/github/backup-utils)en voorziet in versie-momentopnamen voor herstel na noodgevallen, gehost in beschikbaarheid die gescheiden is van het primaire exemplaar.
+3. [Stel subdomeinisolatie in,](https://docs.github.com/en/enterprise/admin/configuration/enabling-subdomain-isolation)met behulp van een geldig TLS-certificaat, om het uitvoeren van scripts op meerdere plaatsen en andere gerelateerde beveiligingsproblemen te beperken.
 
-## <a name="configuring-blob-storage-for-github-actions"></a>Blob Storage configureren voor GitHub-acties
-
-> [!NOTE]
-> GitHub-acties zijn [momenteel beschikbaar als beperkte bèta op github Enter prise Server versie 2,22](https://docs.github.com/en/enterprise/admin/github-actions).
-
-Externe Blob-opslag is nodig voor het inschakelen van GitHub-acties op GitHub Enter prise server (momenteel beschikbaar als een ' bèta-functie). Deze externe Blob-opslag wordt gebruikt door acties om artefacten en logboeken op te slaan. Acties op GitHub Enter prise server [ondersteunen Azure Blob Storage als een opslag provider](https://docs.github.com/en/enterprise/admin/github-actions/enabling-github-actions-and-configuring-storage#about-external-storage-requirements) (en andere). Daarom richten we een nieuw Azure-opslag account in met het [type opslag account](../storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-storage-accounts) van BlobStorage:
-
-:::image type="content" source="media/github-enterprise-server/storage-account.png" alt-text="Blob Storage-account van Azure inrichten.":::
-
-Nadat de implementatie van de nieuwe BlobStorage-resource is voltooid, kopieert u de connection string (beschikbaar onder toegangs sleutels) en noteert u deze. Deze teken reeks is binnenkort vereist.
-
-## <a name="setting-up-the-github-actions-runner"></a>De acties voor het uitvoeren van GitHub instellen
+## <a name="configuring-blob-storage-for-github-actions"></a>Blob-opslag configureren voor GitHub Actions
 
 > [!NOTE]
-> GitHub-acties zijn [momenteel beschikbaar als beperkte bèta op github Enter prise Server versie 2,22](https://docs.github.com/en/enterprise/admin/github-actions).
+> GitHub Actions is [momenteel beschikbaar als een beperkte bètaversie op GitHub Enterprise Server release 2.22.](https://docs.github.com/en/enterprise/admin/github-actions)
 
-Op dit moment moet er een exemplaar van GitHub Enter prise server worden uitgevoerd, waarbij een beheerders account is gemaakt. U moet ook externe Blob Storage hebben die GitHub-acties voor persistentie gebruiken.
+Externe blobopslag is nodig om de GitHub Actions github enterprise-server (momenteel beschikbaar als bètafunctie). Deze externe blobopslag wordt door Actions gebruikt om artefacten en logboeken op te slaan. Acties op GitHub Enterprise Server [ondersteunen Azure Blob Storage als een opslagprovider](https://docs.github.com/en/enterprise/admin/github-actions/enabling-github-actions-and-configuring-storage#about-external-storage-requirements) (en enkele andere). Daarom gaan we een nieuw Azure-opslagaccount inrichten met het [opslagaccounttype](../storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-storage-accounts) BlobStorage:
 
-We gaan nu ergens maken voor het uitvoeren van GitHub-acties. de Azure VMware-oplossing wordt opnieuw gebruikt.
+:::image type="content" source="media/github-enterprise-server/storage-account.png" alt-text="Een Azure Blob Storage account inrichten.":::
 
-Eerst gaan we een nieuwe VM op het cluster inrichten. We baseren onze VM op [een recente release van Ubuntu Server](http://releases.ubuntu.com/20.04.1/).
+Zodra de implementatie van de nieuwe BlobStorage-resource is voltooid, kopieert en noteer de connection string (beschikbaar onder Toegangssleutels). We hebben deze tekenreeks zo nodig.
 
-:::image type="content" source="media/github-enterprise-server/provision-new-vm.png" alt-text="Richt een nieuwe VM in.":::
+## <a name="setting-up-the-github-actions-runner"></a>De GitHub Actions instellen
 
-:::image type="content" source="media/github-enterprise-server/provision-new-vm-2.png" alt-text="Richt u op een nieuwe VM-stap 2.":::
+> [!NOTE]
+> GitHub Actions is [momenteel beschikbaar als een beperkte bètaversie op GitHub Enterprise Server versie 2.22.](https://docs.github.com/en/enterprise/admin/github-actions)
 
-Zodra de VM is gemaakt, kunt u deze inschakelen via SSH en er verbinding mee maken.
+Op dit moment moet u een exemplaar van GitHub Enterprise Server uitvoeren, met een beheerdersaccount gemaakt. U moet ook externe blobopslag hebben die GitHub Actions gebruikt voor persistentie.
 
-Installeer vervolgens de toepassing voor het uitvoeren van [acties](https://github.com/actions/runner) , waarmee een taak wordt uitgevoerd vanuit een werk stroom met github-acties. Identificeer en down load de meest recente Linux x64-versie van de acties loper, hetzij via [de pagina releases](https://github.com/actions/runner/releases) of door het volgende snelle script uit te voeren. Dit script vereist dat krul en [JQ](https://stedolan.github.io/jq/) aanwezig zijn op uw virtuele machine.
+We gaan nu ergens een nieuwe GitHub Actions om uit te voeren; opnieuw gebruiken we Azure VMware Solution.
+
+Eerst gaan we een nieuwe VM inrichten in het cluster. We baseren onze VM op [een recente versie van Ubuntu Server](http://releases.ubuntu.com/20.04.1/).
+
+:::image type="content" source="media/github-enterprise-server/provision-new-vm.png" alt-text="Een nieuwe VM inrichten.":::
+
+:::image type="content" source="media/github-enterprise-server/provision-new-vm-2.png" alt-text="Een nieuwe VM inrichten stap 2.":::
+
+Zodra de VM is gemaakt, kunt u deze in- en aansluiten via SSH.
+
+Installeer vervolgens de [actions runner-toepassing,](https://github.com/actions/runner) waarmee een taak wordt uitgevoerd vanuit GitHub Actions werkstroom. Identificeer en download de meest recente Linux x64-release van de Actions-runner, via de [releasepagina](https://github.com/actions/runner/releases) of door het volgende snelle script uit te voeren. Voor dit script moeten zowel curl als [jq](https://stedolan.github.io/jq/) aanwezig zijn op uw VM.
 
 `LATEST\_RELEASE\_ASSET\_URL=$( curl https://api.github.com/repos/actions/runner/releases/latest | \`
 
@@ -115,18 +115,18 @@ Installeer vervolgens de toepassing voor het uitvoeren van [acties](https://gith
 
 `curl -OL $DOWNLOAD\_URL`
 
-Nu moet u een bestand lokaal op uw virtuele machine hebben, acties uitvoeren-Linux-arm64- \* . tar. gz. Deze tarball lokaal extra heren:
+U hebt nu een lokaal bestand op uw VM, actions-runner-linux-arm64- \* .tar.gz. Extraheerde deze tarball lokaal:
 
 `tar xzf actions-runner-linux-arm64-\*.tar.gz`
 
-Met deze extractie worden een aantal bestanden lokaal uitgepakt, inclusief een `config.sh` en `run.sh` -script, die we binnenkort teruggaan.
+Met deze extractie worden een aantal bestanden lokaal uitgepakt, waaronder een script en. Hier komen we later `config.sh` `run.sh` op terug.
 
-## <a name="enabling-github-actions"></a>GitHub-acties inschakelen
+## <a name="enabling-github-actions"></a>Het inschakelen GitHub Actions
 
 > [!NOTE]
-> GitHub-acties zijn [momenteel beschikbaar als beperkte bèta op github Enter prise Server versie 2,22](https://docs.github.com/en/enterprise/admin/github-actions).
+> GitHub Actions is [momenteel beschikbaar als een beperkte bètaversie op GitHub Enterprise Server versie 2.22.](https://docs.github.com/en/enterprise/admin/github-actions)
 
-Bijna klaar. Laten we GitHub-acties configureren en inschakelen op het GitHub Enter prise Server-exemplaar. U moet toegang hebben [tot de beheer shell van de GitHub Enter prise Server-instantie via SSH](https://docs.github.com/en/enterprise/admin/configuration/accessing-the-administrative-shell-ssh)en vervolgens de volgende opdrachten uitvoeren:
+Bijna! Laten we deze configureren en inschakelen GitHub Actions het GitHub Enterprise Server-exemplaar. We moeten toegang krijgen tot de beheershell van het [GitHub Enterprise Server-exemplaar via SSH](https://docs.github.com/en/enterprise/admin/configuration/accessing-the-administrative-shell-ssh)en vervolgens de volgende opdrachten uitvoeren:
 
 `# set an environment variable containing your Blob storage connection string`
 
@@ -152,83 +152,83 @@ Bijna klaar. Laten we GitHub-acties configureren en inschakelen op het GitHub En
 
 `ghe-config-apply`
 
-Volgende uitvoering:
+Volgende keer uitvoeren:
 
 `ghe-actions-check -s blob`
 
-U ziet de uitvoer: "Blob Storage is in orde".
+U ziet uitvoer: 'Blob Storage is in orde'.
 
-Nu de GitHub-acties zijn geconfigureerd, schakelt u deze voor uw gebruikers in. Meld u aan bij uw GitHub Enter prise Server-exemplaar als beheerder en selecteer het ![ pictogram raket.](media/github-enterprise-server/rocket-icon.png) in de rechter bovenhoek van elke pagina. In de zijbalk links selecteert u **Enter prise Overview**, vervolgens **beleids regels**, **acties** en selecteert u de optie om **acties voor alle organisaties in te scha kelen**.
+Nu GitHub Actions geconfigureerd, kunt u dit inschakelen voor uw gebruikers. Meld u als beheerder aan bij uw GitHub Enterprise Server-exemplaar en selecteer het ![ pictogram Raket.](media/github-enterprise-server/rocket-icon.png) in de rechterbovenhoek van een pagina. Selecteer in de linkerzijbalk **Bedrijfsoverzicht,** vervolgens **Beleid**, **Acties** en selecteer de optie om Acties voor alle organisaties in **teschakelen.**
 
-Configureer vervolgens uw loper van het tabblad **zelf-hostende lopers** . Selecteer **nieuwe toevoegen** en vervolgens **nieuwe loper** in de vervolg keuzelijst.
+Configureer vervolgens uw runner op het **tabblad Zelf-hostende hardlopers.** Selecteer **Nieuwe toevoegen** en vervolgens Nieuwe **runner** in de vervolgkeuzekeuze.
 
-Op de volgende pagina ziet u een reeks opdrachten die moeten worden uitgevoerd. u hoeft alleen de opdracht te kopiëren om de loper te **configureren** , bijvoorbeeld:
+Op de volgende pagina ziet u een set opdrachten die moeten worden uitgevoerd.  We hoeven alleen de opdracht te kopiëren om de runner te configureren, bijvoorbeeld:
 
 `./config.sh --url https://10.1.1.26/enterprises/octo-org --token AAAAAA5RHF34QLYBDCHWLJC7L73MA`
 
-Kopieer de `config.sh` opdracht en plak deze in een sessie van uw acties loper (eerder gemaakt).
+Kopieer de `config.sh` opdracht en plak deze in een sessie op uw Actions Runner (eerder gemaakt).
 
-:::image type="content" source="media/github-enterprise-server/actions-runner.png" alt-text="Acties uitvoeren.":::
+:::image type="content" source="media/github-enterprise-server/actions-runner.png" alt-text="Runner van acties.":::
 
-Gebruik de opdracht run.sh om de loper *uit te voeren* :
+Gebruik de run.sh om de *runner uit* te voeren:
 
-:::image type="content" source="media/github-enterprise-server/run-runner.png" alt-text="Voer de loper uit.":::
+:::image type="content" source="media/github-enterprise-server/run-runner.png" alt-text="Voer de runner uit.":::
 
-Als u deze loper beschikbaar wilt maken voor organisaties in uw onderneming, bewerkt u de toegang tot de organisatie:
+Als u deze runner beschikbaar wilt maken voor organisaties in uw onderneming, bewerkt u de toegang tot de organisatie:
 
-:::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Toegang voor lopers bewerken.":::
+:::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Toegang tot runner bewerken.":::
 
-Hier maken we het beschikbaar voor alle organisaties, maar u kunt de toegang beperken tot een subset van organisaties, zelfs voor specifieke opslag plaatsen.
+Hier maken we het beschikbaar voor alle organisaties, maar u kunt de toegang beperken tot een subset van organisaties en zelfs tot specifieke opslagplaatsen.
 
-## <a name="optional-configuring-github-connect"></a>Beschrijving GitHub Connect configureren
+## <a name="optional-configuring-github-connect"></a>(Optioneel) GitHub Connect configureren
 
-Hoewel deze stap optioneel is, wordt het aanbevolen als u open-source acties wilt gebruiken die beschikbaar zijn op GitHub.com. Zo kunt u het werk van anderen bouwen door te verwijzen naar deze herbruikbare acties in uw werk stromen.
+Hoewel deze stap optioneel is, raden we deze aan als u van plan bent opensource-acties te gebruiken die beschikbaar zijn op GitHub.com. Hiermee kunt u voortbouwen op het werk van anderen door te verwijzen naar deze herbruikbare acties in uw werkstromen.
 
-Als u GitHub Connect wilt inschakelen, volgt u de stappen in [automatische toegang tot github.com-acties inschakelen met behulp van github Connect](https://docs.github.com/en/enterprise/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect).
+Als u GitHub Connect wilt inschakelen, volgt u de stappen in Automatische toegang tot GitHub.com [met behulp van GitHub Connect.](https://docs.github.com/en/enterprise/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect)
 
-Zodra GitHub Connect is ingeschakeld, selecteert u de optie **Server voor het gebruik van acties van github.com in werk stroom uitvoeringen** .
+Zodra GitHub Connect is ingeschakeld, selecteert u de optie Server om acties van GitHub.com **in workflow runs te** gebruiken.
 
-:::image type="content" source="media/github-enterprise-server/enable-using-actions.png" alt-text="Inschakelen met behulp van acties vanuit GitHub.com in werk stroom uitvoeringen.":::
+:::image type="content" source="media/github-enterprise-server/enable-using-actions.png" alt-text="Inschakelen met behulp van acties GitHub.com in werkstroom wordt uitgevoerd.":::
 
-## <a name="setting-up-and-running-your-first-workflow"></a>Uw eerste werk stroom instellen en uitvoeren
+## <a name="setting-up-and-running-your-first-workflow"></a>Uw eerste werkstroom instellen en uitvoeren
 
-Nu het maken van acties en GitHub-verbinding is ingesteld, gaan we al deze werkzaamheden voor een goed gebruik. Hier volgt een voor beeld van een werk stroom die verwijst naar de uitstekende [octokit/Request-Action](https://github.com/octokit/request-action), waardoor het ' script ' github via interacties kan worden uitgevoerd met behulp van de GITHUB-API, mogelijk gemaakt door github-acties.
+Nu Actions en GitHub Connect zijn ingesteld, gaan we al dit werk goed gebruiken. Hier is een voorbeeldwerkstroom die verwijst naar de uitstekende [octokit/request-action,](https://github.com/octokit/request-action)zodat we GitHub kunnen 'scripten' via interacties met behulp van de GitHub-API, powered by GitHub Actions.
 
-In deze basis werk stroom gebruiken we `octokit/request-action` voor het openen van een probleem op github met behulp van de API.
+In deze basiswerkstroom gebruiken we om een probleem op GitHub te openen `octokit/request-action` met behulp van de API.
 
-:::image type="content" source="media/github-enterprise-server/workflow-example.png" alt-text="Voorbeeld werk stroom.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example.png" alt-text="Voorbeeldwerkstroom.":::
 
 >[!NOTE]
->GitHub.com fungeert als host voor de actie, maar wanneer deze wordt uitgevoerd op GitHub Enter prise-server, wordt *automatisch* de GitHub Enter prise Server-API gebruikt.
+>GitHub.com host de actie, maar wanneer deze wordt uitgevoerd  op GitHub Enterprise Server, wordt automatisch de GitHub Enterprise Server-API gebruikt.
 
-Als u ervoor hebt gekozen om GitHub Connect niet in te scha kelen, kunt u de volgende alternatieve werk stroom gebruiken.
+Als u ervoor hebt gekozen om GitHub Connect niet in teschakelen, kunt u de volgende alternatieve werkstroom gebruiken.
 
-:::image type="content" source="media/github-enterprise-server/workflow-example-2.png" alt-text="Alternatieve voorbeeld werk stroom.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example-2.png" alt-text="Alternatieve voorbeeldwerkstroom.":::
 
-Navigeer naar een opslag plaats in uw exemplaar en voeg de bovenstaande werk stroom toe als: `.github/workflows/hello-world.yml`
+Navigeer naar een repo op uw exemplaar en voeg de bovenstaande werkstroom toe als: `.github/workflows/hello-world.yml`
 
-:::image type="content" source="media/github-enterprise-server/workflow-example-3.png" alt-text="Een andere voorbeeld werk stroom.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example-3.png" alt-text="Een andere voorbeeldwerkstroom.":::
 
-Wacht tot de werk stroom is uitgevoerd op het tabblad **acties** van uw opslag plaats.
+Wacht op **het** tabblad Acties voor uw repo tot de werkstroom is uitgevoerd.
 
-:::image type="content" source="media/github-enterprise-server/executed-example-workflow.png" alt-text="De voorbeeld werk stroom is uitgevoerd.":::
+:::image type="content" source="media/github-enterprise-server/executed-example-workflow.png" alt-text="Voorbeeldwerkstroom uitgevoerd.":::
 
-U kunt ook bekijken dat het wordt verwerkt door de loper.
+U kunt ook zien hoe het wordt verwerkt door de runner.
 
-:::image type="content" source="media/github-enterprise-server/workflow-processed-by-runner.png" alt-text="Werk stroom verwerkt door loper.":::
+:::image type="content" source="media/github-enterprise-server/workflow-processed-by-runner.png" alt-text="Werkstroom verwerkt door runner.":::
 
-Als alles goed is uitgevoerd, ziet u een nieuw probleem in uw opslag plaats, getiteld "Hallo wereld".
+Als alles goed is uitgevoerd, ziet u een nieuw probleem in uw repo met de naam 'Hallo wereld'.
 
-:::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Voor beeld in opslag plaats.":::
+:::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Voorbeeld in de repo.":::
 
-Gefeliciteerd U hebt zojuist uw eerste werk stroom voor acties voltooid op GitHub Enter prise server, die wordt uitgevoerd op uw persoonlijke cloud van Azure VMware-oplossing.
+Gefeliciteerd U hebt zojuist uw eerste actions-werkstroom op GitHub Enterprise Server voltooid, die wordt uitgevoerd in Azure VMware Solution privécloud.
 
-In dit artikel hebben we een nieuw exemplaar van GitHub Enter prise server ingesteld, het zelf-hostende equivalent van GitHub.com, bovenop uw persoonlijke cloud van Azure VMware-oplossingen. Dit exemplaar bevat ondersteuning voor GitHub-acties en maakt gebruik van Azure Blob Storage voor persistentie van Logboeken en artefacten. Maar we gaan gewoon het Opper vlak van wat u kunt doen met GitHub-acties. Bekijk de lijst met acties op [Marketplace van github](https://github.com/marketplace)of [Maak een eigen](https://docs.github.com/en/actions/creating-actions)actie.
+In dit artikel hebben we een nieuw exemplaar van GitHub Enterprise Server, het zelf-hostende equivalent van GitHub.com, ingesteld op uw Azure VMware Solution privécloud. Dit exemplaar biedt ondersteuning voor GitHub Actions en gebruikt Azure Blob Storage voor persistentie van logboeken en artefacten. Maar we maken alleen een scratch van wat u met uw GitHub Actions. Bekijk de lijst met acties op [de Marketplace van GitHub](https://github.com/marketplace)of [maak uw eigen](https://docs.github.com/en/actions/creating-actions).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u de installatie van GitHub Enter prise server hebt gedekt op uw Azure VMware-oplossing, kunt u het volgende weten: 
+Nu u het instellen van GitHub Enterprise Server in uw Azure VMware Solution privécloud hebt behandeld, wilt u mogelijk meer informatie over: 
 
-- [Aan de slag met github-acties](https://docs.github.com/en/actions).
-- Deel [nemen aan het bèta programma](https://resources.github.com/beta-signup/).
-- [Beheer van github Enter prise server](https://githubtraining.github.io/admin-training/#/00_getting_started).
+- [Aan de slag met GitHub Actions](https://docs.github.com/en/actions)
+- [Deelnemen aan het bètaprogramma](https://resources.github.com/beta-signup/)
+- [Beheer van GitHub Enterprise Server](https://githubtraining.github.io/admin-training/#/00_getting_started)

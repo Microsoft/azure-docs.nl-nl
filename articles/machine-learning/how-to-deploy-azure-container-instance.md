@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
-ms.openlocfilehash: 1eaf58f4f951547e6e4e461803e79844f99e630a
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 845a146d9e3f920f3313a80f1bb8c845cb781f37
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107501736"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875535"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Een model implementeren op Azure Container Instances
 
@@ -55,11 +55,11 @@ Zie het artikel Quota and region [availability](../container-instances/container
 * Wanneer u Azure Container Instances in een virtueel netwerk gebruikt, moet het virtuele netwerk zich in dezelfde resourcegroep als uw Azure Machine Learning werkruimte.
 * Wanneer u Azure Container Instances in het virtuele netwerk gebruikt, kan de Azure Container Registry (ACR) voor uw werkruimte zich niet ook in het virtuele netwerk.
 
-Zie De [deferencing beveiligen](how-to-secure-inferencing-vnet.md#enable-azure-container-instances-aci)met virtuele netwerken voor meer informatie.
+Zie De [deferencing](how-to-secure-inferencing-vnet.md#enable-azure-container-instances-aci)beveiligen met virtuele netwerken voor meer informatie.
 
 ## <a name="deploy-to-aci"></a>Implementeren naar ACI
 
-Als u een model wilt implementeren Azure Container Instances, maakt u een __implementatieconfiguratie__ die de benodigde rekenbronnen beschrijft. Bijvoorbeeld het aantal kernen en het geheugen. U hebt ook een __deferentieconfiguratie nodig,__ die de omgeving beschrijft die nodig is om het model en de webservice te hosten. Zie How and where to deploy models (Modellen implementeren) voor meer informatie over het maken van de [deference-configuratie.](how-to-deploy-and-where.md)
+Als u een model wilt implementeren Azure Container Instances, maakt u een __implementatieconfiguratie__ die de benodigde rekenbronnen beschrijft. Bijvoorbeeld het aantal kernen en het geheugen. U hebt ook een __deferentieconfiguratie nodig,__ die de omgeving beschrijft die nodig is om het model en de webservice te hosten. Zie Modellen implementeren voor meer informatie over het maken van de [deference-configuratie.](how-to-deploy-and-where.md)
 
 > [!NOTE]
 > * ACI is alleen geschikt voor kleine modellen van minder dan 1 GB. 
@@ -94,7 +94,7 @@ az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploy
 
 [!INCLUDE [deploymentconfig](../../includes/machine-learning-service-aci-deploy-config.md)]
 
-Zie de naslaginformatie over [az ml model deploy voor meer](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy) informatie. 
+Zie de naslaginformatie over [az ml model deploy voor meer](/cli/azure/ml/model#az_ml_model_deploy) informatie. 
 
 ## <a name="using-vs-code"></a>VS Code gebruiken
 

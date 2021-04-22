@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 02/09/2021
-ms.openlocfilehash: 0ea4e3ae0113608203dad63f636ae4adb4eeff9b
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: 5e13c97427736d60f300d2d7b502c6f3e15fb481
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107737510"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861441"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een Azure Private Link configureren voor Azure Machine Learning werkruimte
 
@@ -25,7 +25,7 @@ In dit document leert u hoe u Azure Private Link gebruikt met uw Azure Machine L
 Azure Private Link kunt u verbinding maken met uw werkruimte met behulp van een privé-eindpunt. Het privé-eindpunt is een set privé-IP-adressen binnen uw virtuele netwerk. Vervolgens kunt u de toegang tot uw werkruimte beperken tot alleen de privé-IP-adressen. Private Link helpt het risico op gegevens exfiltratie te verminderen. Zie het artikel Azure Private Link meer informatie over [privé Azure Private Link](../private-link/private-link-overview.md) eindpunten.
 
 > [!IMPORTANT]
-> Azure Private Link heeft geen invloed op het Azure-besturingsvlak (beheerbewerkingen), zoals het verwijderen van de werkruimte of het beheren van rekenbronnen. Bijvoorbeeld het maken, bijwerken of verwijderen van een rekendoel. Deze bewerkingen worden op de gebruikelijke manier via het openbare internet uitgevoerd. Gegevensvlakbewerkingen, zoals het gebruik Azure Machine Learning-studio, API's (inclusief gepubliceerde pijplijnen) of de SDK gebruiken het privé-eindpunt.
+> Azure Private Link heeft geen invloed op het Azure-besturingsvlak (beheerbewerkingen), zoals het verwijderen van de werkruimte of het beheren van rekenbronnen. Bijvoorbeeld het maken, bijwerken of verwijderen van een rekendoel. Deze bewerkingen worden normaal via het openbare internet uitgevoerd. Gegevensvlakbewerkingen, zoals het gebruik Azure Machine Learning-studio, API's (inclusief gepubliceerde pijplijnen) of de SDK gebruiken het privé-eindpunt.
 >
 > Als u Mozilla Firefox gebruikt, kunt u problemen ondervinden bij het openen van het privé-eindpunt voor uw werkruimte. Dit probleem kan te maken hebben met DNS via HTTPS in Mozilla. We raden u aan Microsoft Edge of Google Chrome als tijdelijke oplossing te gebruiken.
 
@@ -66,7 +66,7 @@ ws = Workspace.create(name='myworkspace',
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [create.](/cli/azure/ext/azure-cli-ml/ml/workspace#ext_azure_cli_ml_az_ml_workspace_create) De volgende parameters voor deze opdracht kunnen worden gebruikt om een werkruimte met een particulier netwerk te maken, maar hiervoor is een bestaand virtueel netwerk vereist:
+De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [create.](/cli/azure/ml/workspace#az_ml_workspace_create) De volgende parameters voor deze opdracht kunnen worden gebruikt om een werkruimte met een particulier netwerk te maken, maar hiervoor is een bestaand virtueel netwerk vereist:
 
 * `--pe-name`: de naam van het privé-eindpunt dat wordt gemaakt.
 * `--pe-auto-approval`: Of privé-eindpuntverbindingen met de werkruimte automatisch moeten worden goedgekeurd.
@@ -116,7 +116,7 @@ Zie [PrivateEndpointConfig](/python/api/azureml-core/azureml.core.privateendpoin
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [private-endpoint add.](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add)
+De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [private-endpoint add.](/cli/azure/ml/workspace/private-endpoint#az_ml_workspace_private_endpoint_add)
 
 ```azurecli
 az ml workspace private-endpoint add -w myworkspace  --pe-name myprivateendpoint --pe-auto-approval true --pe-vnet-name myvnet
@@ -126,7 +126,7 @@ az ml workspace private-endpoint add -w myworkspace  --pe-name myprivateendpoint
 
 Selecteer in Azure Machine Learning werkruimte in de portal __privé-eindpuntverbindingen__ en selecteer __vervolgens + Privé-eindpunt.__ Gebruik de velden om een nieuw privé-eindpunt te maken.
 
-* Wanneer u Regio __selecteert,__ selecteert u dezelfde regio als uw virtuele netwerk. 
+* Wanneer u regio __selecteert,__ selecteert u dezelfde regio als uw virtuele netwerk. 
 * Wanneer u __Resourcetype selecteert,__ gebruikt __u Microsoft.MachineLearningServices/workspaces.__ 
 * Stel resource __in__ op de naam van uw werkruimte.
 
@@ -153,7 +153,7 @@ ws.delete_private_endpoint_connection(private_endpoint_connection_name=connectio
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [private-endpoint delete.](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete)
+De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [private-endpoint delete.](/cli/azure/ml/workspace/private-endpoint#az_ml_workspace_private_endpoint_delete)
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -175,7 +175,7 @@ Zie de documentatie over Virtual Machines [azure-Virtual Machines voor meer info
 In sommige gevallen wilt u misschien toestaan dat iemand verbinding maakt met uw beveiligde werkruimte via een openbaar eindpunt, in plaats van via het VNet. Nadat u een werkruimte met een privé-eindpunt hebt geconfigureerd, kunt u desgewenst openbare toegang tot de werkruimte inschakelen. Hierdoor wordt het privé-eindpunt niet verwijderd. Alle communicatie tussen onderdelen achter het VNet is nog steeds beveiligd. Hiermee is alleen openbare toegang tot de werkruimte mogelijk, naast de privétoegang via het VNet.
 
 > [!WARNING]
-> Wanneer u verbinding maakt via het openbare eindpunt, hebben sommige functies van Studio geen toegang tot uw gegevens. Dit probleem doet zich voor wanneer de gegevens worden opgeslagen op een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage account. Houd er ook rekening mee dat de jupyter-/JupyterLab-/RStudio-functionaliteit van het rekencluster en het uitvoeren van notebooks niet werken.
+> Wanneer u verbinding maakt via het openbare eindpunt, hebben sommige functies van Studio geen toegang tot uw gegevens. Dit probleem doet zich voor wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage account. Houd er ook rekening mee dat de jupyter-/JupyterLab-/RStudio-functionaliteit van het rekencluster en het uitvoeren van notebooks niet werken.
 
 Als u openbare toegang tot een werkruimte met Private Link wilt inschakelen, gebruikt u de volgende stappen:
 
@@ -192,7 +192,7 @@ ws.update(allow_public_access_when_behind_vnet=True)
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [update.](/cli/azure/ext/azure-cli-ml/ml/workspace#ext_azure_cli_ml_az_ml_workspace_update) Als u openbare toegang tot de werkruimte wilt inschakelen, voegt u de parameter `--allow-public-access true` toe.
+De [Azure CLI-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht az ml workspace [update.](/cli/azure/ml/workspace#az_ml_workspace_update) Als u openbare toegang tot de werkruimte wilt inschakelen, voegt u de parameter `--allow-public-access true` toe.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

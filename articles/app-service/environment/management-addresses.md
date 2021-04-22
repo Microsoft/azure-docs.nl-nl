@@ -1,26 +1,26 @@
 ---
 title: Beheeradressen
-description: Zoek de beheeradressen die worden gebruikt om een App Service Environment. Ze geconfigureerd in een routetabel om asymmetrische routeringsproblemen te voorkomen.
+description: Zoek de beheeradressen die worden gebruikt om een App Service Environment. Ze zijn geconfigureerd in een routetabel om asymmetrische routeringsproblemen te voorkomen.
 author: ccompy
 ms.assetid: a7738a24-89ef-43d3-bff1-77f43d5a3952
 ms.topic: article
 ms.date: 03/22/2021
 ms.author: ccompy
 ms.custom: seodec18, references_regions, devx-track-azurecli
-ms.openlocfilehash: aaaa190935da8c016c43832712f553a116332974
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 796ee38140e72a56f1f22b0594dd904a43ac53c0
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107482565"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107865221"
 ---
 # <a name="app-service-environment-management-addresses"></a>App Service Environment-beheeradressen
 
-De App Service Environment (ASE) is een implementatie met één tenant van de Azure App Service die wordt uitgevoerd in uw Azure Virtual Network (VNet).  Hoewel de ASE wel wordt uitgevoerd in uw VNet, moet deze nog steeds toegankelijk zijn vanaf een aantal toegewezen IP-adressen die worden gebruikt door de Azure App Service om de service te beheren.  In het geval van een AS-omgeving passeert het beheerverkeer het door de gebruiker beheerde netwerk. Als dit verkeer wordt geblokkeerd of verkeerd wordt omgeleid, wordt de ASE geblokkeerd. Lees Netwerkoverwegingen en de App Service Environment voor meer informatie [over de ASE-App Service Environment.][networking] Voor algemene informatie over de ASE kunt u beginnen met [Inleiding tot de App Service Environment.][intro]
+De App Service Environment (ASE) is een implementatie met één tenant van de Azure App Service die wordt uitgevoerd in uw Azure Virtual Network (VNet).  Hoewel de ASE wel wordt uitgevoerd in uw VNet, moet deze nog steeds toegankelijk zijn vanaf een aantal toegewezen IP-adressen die worden gebruikt door de Azure App Service om de service te beheren.  In het geval van een AS-omgeving passeert het beheerverkeer het door de gebruiker beheerde netwerk. Als dit verkeer wordt geblokkeerd of verkeerd wordt omgeleid, wordt de ASE geblokkeerd. Lees Netwerkoverwegingen en de App Service Environment voor meer informatie over de [ASE-App Service Environment.][networking] Voor algemene informatie over de ASE kunt u beginnen met [Inleiding tot de App Service Environment][intro].
 
-Alle ASE's hebben een openbaar VIP waarmee beheerverkeer binnenkomt. Het binnenkomende beheerverkeer van deze adressen komt binnen van naar de poorten 454 en 455 op het openbare VIP van uw ASE. Dit document bevat de App Service bronadressen voor beheerverkeer naar de ASE. Deze adressen zijn ook in de IP-servicetag met de naam AppServiceManagement.
+Alle ASE's hebben een openbaar VIP waarmee beheerverkeer binnenkomt. Het binnenkomende beheerverkeer van deze adressen komt van binnen naar de poorten 454 en 455 op het openbare VIP van uw ASE. Dit document bevat de App Service bronadressen voor beheerverkeer naar de ASE. Deze adressen zijn ook in de IP-servicetag AppServiceManagement.
 
-De onderstaande adressen kunnen worden geconfigureerd in een routetabel om asymmetrische routeringsproblemen met het beheerverkeer te voorkomen. Routes reageren op verkeer op IP-niveau en zijn niet op de hoogte van de richting van het verkeer of maken deel uit van een TCP-antwoordbericht. Als het antwoordadres voor een TCP-aanvraag verschilt van het adres waar deze naar is verzonden, is er een probleem met asymmetrische routering. Om problemen met asymmetrische routering met uw ASE-beheerverkeer te voorkomen, moet u ervoor zorgen dat antwoorden worden teruggestuurd vanaf hetzelfde adres waar ze naar zijn verzonden. Lees Configure [your ASE with forced tunneling][forcedtunnel] (Uw ASE configureren met geforceerd tunnelen) voor meer informatie over het configureren van uw ASE voor gebruik in een omgeving waarin uitgaand verkeer on-premises wordt verzonden.
+De onderstaande adressen kunnen worden geconfigureerd in een routetabel om asymmetrische routeringsproblemen met het beheerverkeer te voorkomen. Routes reageren op verkeer op IP-niveau en zijn niet op de hoogte van de verkeersrichting of dat het verkeer deel uitmaakt van een TCP-antwoordbericht. Als het antwoordadres voor een TCP-aanvraag verschilt van het adres waar deze naar is verzonden, hebt u een asymmetrisch routeringsprobleem. Om asymmetrische routeringsproblemen met uw ASE-beheerverkeer te voorkomen, moet u ervoor zorgen dat antwoorden worden teruggestuurd vanaf hetzelfde adres waar ze naar zijn verzonden. Lees Configure [your ASE with forced tunneling][forcedtunnel] (Uw ASE configureren met geforceerd tunnelen) voor meer informatie over het configureren van uw ASE voor gebruik in een omgeving waar uitgaand verkeer on-premises wordt verzonden.
 
 ## <a name="list-of-management-addresses"></a>Lijst met beheeradressen ##
 

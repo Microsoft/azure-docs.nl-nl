@@ -7,19 +7,19 @@ manager: femila
 ms.topic: reference
 ms.service: media-services
 ms.custom: subject-monitoring
-ms.date: 03/17/2021
-ms.openlocfilehash: 4e4c65966ec8a6a5b47d5f68596f6d2d496fda17
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.date: 04/21/2021
+ms.openlocfilehash: 3fd7b8013ec67d718f308ccd1b72a6f90012e02e
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107835502"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873051"
 ---
 # <a name="monitoring-media-services-data-reference"></a>Naslaginformatie Media Services bewakingsgegevens
 
 In dit artikel worden de gegevens beschreven die nuttig zijn voor het controleren Media Services. Voor meer informatie over alle platformmetrieken die worden ondersteund in Azure Monitor, bekijkt u [Ondersteunde metrische gegevens met Azure Monitor.](../../../azure-monitor/essentials/metrics-supported.md)
 
-## <a name="media-services-metrics"></a>Media Services metrische gegevens
+## <a name="metrics"></a>Metrische gegevens
 
 Metrische gegevens worden regelmatig verzameld, ongeacht of de waarde verandert. Ze zijn handig voor waarschuwingen, omdat er vaak steekproefs kunnen worden genomen en een waarschuwing snel kan worden gemaakt met relatief eenvoudige logica.
 
@@ -40,12 +40,13 @@ U moet ook [accountquota en -limieten bekijken.](../limits-quotas-constraints-re
 
 Zie Multidimensionale metrische gegevens voor meer informatie over wat [metrische dimensies zijn.](../../../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics)
 
-<!--**PLACEHOLDER** for dimensions table.-->
-OutputFormat, HttpStatusCode, ErrorCode, TrackName
+Media Services heeft de volgende metrische dimensies.  Ze zijn zelfplanlijk op basis van de metrische gegevens die ze ondersteunen.  Zie de [bovenstaande koppelingen voor](#metrics) metrische gegevens voor meer informatie.   
+- OutputFormat
+- HttpStatusCode 
+- ErrorCode 
+- TrackName 
 
 ## <a name="resource-logs"></a>Resourcelogboeken
-
-## <a name="media-services-resource-logs"></a>Media Services resourcelogboeken maken
 
 Resourcelogboeken bieden uitgebreide en regelmatige gegevens over de werking van een Azure-resource. Zie Logboekgegevens van uw [Azure-resources verzamelen en](../../../azure-monitor/essentials/platform-logs-overview.md)gebruiken voor meer informatie.
 

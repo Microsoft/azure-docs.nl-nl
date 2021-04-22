@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 - devx-track-csharp
-ms.openlocfilehash: 099b7f4e812e92503c7ed8e3eb733f2e49ccd8b9
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 96a9f7c50f3e30d86497c7a612ddda248db3f703
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107768067"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107865689"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-logs-with-an-iot-hub"></a>Zelfstudie: Metrische gegevens en logboeken instellen en gebruiken met een IoT-hub
 
@@ -44,7 +44,7 @@ In deze zelfstudie voert u de volgende taken uit:
 
 - Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-- .NET Core SDK 2.1 of hoger moet zijn geïnstalleerd op uw ontwikkelcomputer. U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://www.microsoft.com/net/download/all).
+- .NET Core SDK 2.1 of hoger moet zijn geïnstalleerd op uw ontwikkelcomputer. U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://dotnet.microsoft.com/download).
 
   Gebruik de volgende opdracht om de huidige versie van C# op uw ontwikkelcomputer te controleren:
 

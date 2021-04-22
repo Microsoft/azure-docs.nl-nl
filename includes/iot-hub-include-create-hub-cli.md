@@ -6,15 +6,15 @@ ms.author: timlt
 ms.service: iot-develop
 ms.topic: include
 ms.date: 01/14/2021
-ms.openlocfilehash: be51d4db6c98b63fcb1c9c60df045b494536d78f
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 4999bd93f338ca7b34b141b88e06e4a769a4aaa1
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107766515"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876421"
 ---
 In de volgende secties stelt u een terminal in en gebruikt u Azure CLI om een IoT-hub te maken. Als u een terminal met Azure CLI-opdrachten wilt configureren, kunt u de browsergebaseerde Azure Cloud Shell of een lokale terminal gebruiken.
-* Als u Cloud Shell wilt gebruiken, gaat u naar de volgende sectie: [Start de Cloud Shell](#launch-the-cloud-shell). 
+* Als u Cloud Shell wilt gebruiken, gaat u naar de volgende [sectie: Start de Cloud Shell](#launch-the-cloud-shell). 
 * Als u een lokale terminal wilt gebruiken, slaat u de volgende sectie over en gaat u naar [Een lokale terminal openen.](#open-a-local-terminal)
 
 ## <a name="launch-the-cloud-shell"></a>De Cloud Shell starten
@@ -60,10 +60,10 @@ Als u ervoor hebt gekozen om een lokale terminal te gebruiken in plaats Cloud Sh
 1. Ga naar de volgende sectie: [Installeer de Azure IoT-extensie](#install-the-azure-iot-extension). 
 
 ## <a name="install-the-azure-iot-extension"></a>De Azure IoT-extensie installeren
-In deze sectie installeert u de Microsoft Azure IoT-extensie voor Azure CLI naar uw CLI-shell. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
+In deze sectie installeert u de IoT Microsoft Azure extensie voor Azure CLI in uw CLI-shell. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
 
 > [!IMPORTANT]
-> De terminalopdrachten in de rest van deze quickstart werken hetzelfde in Cloud Shell of een lokale terminal. Als u een opdracht wilt uitvoeren, **selecteert u** Kopiëren om een codeblok in deze quickstart te kopiëren. Plak deze vervolgens in uw CLI-shell en voer deze uit.
+> De terminalopdrachten in de rest van deze quickstart werken hetzelfde in Cloud Shell of een lokale terminal. Als u een opdracht wilt uitvoeren, **selecteert u** Kopiëren om een codeblok in deze quickstart te kopiëren. Plak deze vervolgens in de CLI-shell en voer deze uit.
 
 Voer de [opdracht az extension add](/cli/azure/extension#az_extension_add) uit. 
 
@@ -97,17 +97,17 @@ Een IoT-hub en een resourcegroep maken:
 In deze sectie maakt u een gesimuleerd IoT-apparaat dat is verbonden met uw IoT-hub. 
 
 Een gesimuleerd apparaat maken:
-1. Voer de [opdracht az iot hub device-identity create](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create) uit in uw CLI-shell. Hiermee maakt u de id van het gesimuleerde apparaat. 
+1. Voer de [opdracht az iot hub device-identity create](/cli/azure/iot/hub/device-identity#az_iot_hub_device_identity_create) uit in uw CLI-shell. Hiermee maakt u de id van het gesimuleerde apparaat. 
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
-    *myDevice*. U kunt deze naam rechtstreeks gebruiken voor de gesimuleerde apparaat-id in de rest van dit artikel. U kunt ook een andere naam gebruiken. 
+    *myDevice*. U kunt deze naam rechtstreeks gebruiken voor de id van het gesimuleerde apparaat in de rest van dit artikel. U kunt ook een andere naam gebruiken. 
 
     ```azurecli
     az iot hub device-identity create --device-id myDevice --hub-name {YourIoTHubName} 
     ```
 
-1.  Voer de [opdracht az iot hub device-identity connection-string show](/cli/azure/ext/azure-iot/iot/hub/device-identity/connection-string#ext_azure_iot_az_iot_hub_device_identity_connection_string_show) uit. 
+1.  Voer de [opdracht az iot hub device-identity connection-string show](/cli/azure/iot/hub/device-identity/connection-string#az_iot_hub_device_identity_connection_string_show) uit. 
 
     ```azurecli
     az iot hub device-identity connection-string show --device-id myDevice --hub-name {YourIoTHubName}

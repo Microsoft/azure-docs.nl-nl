@@ -62,7 +62,7 @@
           href: hana-concept-preparation.md
         - name: Procedure bij failover van het noodherstel
           href: hana-failover-procedure.md
-        - name: Hoge ha-instantie voor SAP op RHEL
+        - name: Hoge hoge werkstroom voor SAP op RHEL
           href: large-instance-high-availability-rhel.md
     - name: Probleemoplossing en bewaking
       items:
@@ -142,7 +142,7 @@
           href: ../../../backup/sap-hana-faq-backup-azure-vm.yml
         - name: Problemen met back-ups SAP HANA databases in Azure oplossen
           href: ../../../backup/backup-azure-sap-hana-database-troubleshoot.md
-        - name: 'Zelfstudie: Back-up maken SAP HANA databases in een Azure-VM'
+        - name: 'Zelfstudie: back-SAP HANA databases in een Azure-VM'
           href: ../../../backup/tutorial-backup-sap-hana-db.md
 - name: 'SAP NetWeaver, S/4HANA en Business One in Azure Virtual Machines'
   items:
@@ -332,7 +332,7 @@
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/ext/sap-hana/hanainstance
+      href: /cli/azure/hanainstance
     - name: Azure PowerShell
       href: /powershell/module/az.hanaonazure/#sap-hana-on-azure
 - name: Resources

@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Azure IoT Hub C#-snelstart voor SSH en RDP'
+title: 'Quickstart: Azure IoT Hub C#-snelstart voor apparaatstreams maken voor SSH en RDP'
 description: In deze quickstart voert u twee C#-voorbeeldtoepassingen uit waarmee SSH- en RDP-scenario's via een IoT Hub-apparaatstream mogelijk zijn.
 author: robinsh
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: references_regions, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 3bca2701b708bfb957dce1c954f43f60f55b7dae
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 5bd33a2da6b2f1ae775f088950f14ac4df465fbf
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479938"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107863943"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Snelstart: Schakel SSH en RDP in via een IoT Hub-apparaatstream, met behulp van een C#-proxy-toepassing (preview)
 
@@ -37,7 +37,7 @@ In dit artikel wordt eerst de installatie van SSH beschreven (met behulp van poo
 
 * De twee voorbeeldtoepassingen die u uitvoert in deze quickstart, zijn geschreven in C#. Op de ontwikkelcomputer moet .NET Core SDK 2.1.0 of hoger zijn geïnstalleerd.
 
-    U kunt de [.NET Core SDK voor meerdere platforms downloaden van .NET](https://www.microsoft.com/net/download/all).
+    U kunt de [.NET Core SDK voor meerdere platforms downloaden van .NET](https://dotnet.microsoft.com/download).
 
     Controleer de huidige versie van C# op de ontwikkelcomputer met behulp van de volgende opdracht:
 

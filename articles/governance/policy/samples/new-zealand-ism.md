@@ -1,15 +1,15 @@
 ---
 title: Details van naleving van regelgeving voor nieuw-Zeelandse ISM's beperkt
 description: Details van het ingebouwde initiatief voor naleving van beperkte regelgeving voor nieuw-Zeelandse ISM. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: adcf818cc6a91f04d5a1ff3f772a1a8d6371aa30
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 45e3093dfeea2622a95692af60faa70ff07c2a91
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107506207"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864339"
 ---
 # <a name="details-of-the-new-zealand-ism-restricted-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van beperkte regelgeving voor nieuw-Zeelandse ISM
 
@@ -81,7 +81,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ### <a name="1458-web-applications"></a>14.5.8 Webtoepassingen
 
-**Id**: Eigendom van NZISM Security Benchmark SS-8: Klant
+**Id:** Eigendom van NZISM Security Benchmark SS-8: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -111,7 +111,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 |[Service Fabric-clusters mogen alleen gebruikmaken van Azure Active Directory voor clientverificatie](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb54ed75b-3e1a-44ac-a333-05ba39b99ff0) |Exclusief gebruik van clientverificatie via Azure Active Directory in Service Fabric controleren |Controleren, Weigeren, Uitgeschakeld |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Fabric/ServiceFabric_AuditADAuth_Audit.json) |
 |[Er moet meer dan één eigenaar zijn toegewezen aan uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F09024ccc-0c5f-475e-9457-b7c0d9ed487b) |Het is raadzaam meer dan één abonnementseigenaar toe te wijzen voor toegangsredundantie voor beheerders. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_DesignateMoreThanOneOwner_Audit.json) |
 
-### <a name="16135-methods-for-system-user-identification-and-authentication"></a>16.1.35 Methoden voor de identificatie en verificatie van systeemgebruikers
+### <a name="16135-methods-for-system-user-identification-and-authentication"></a>16.1.35 Methoden voor systeemgebruikersidentificatie en -verificatie
 
 **Id:** NZISM Security Benchmark AC-3 **Eigendom:** Klant
 
@@ -142,7 +142,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ### <a name="1625-protecting-compartmented-information-on-systems"></a>16.2.5 Informatie in ruimten op systemen beveiligen
 
-**Id:** Eigendom van NZISM Security Benchmark AC-7: Klant
+**Id:** NZISM Security Benchmark AC-7 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -153,19 +153,19 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ### <a name="1635-use-of-privileged-accounts"></a>16.3.5 Gebruik van bevoegde accounts
 
-**Id:** Eigendom van NZISM Security Benchmark AC-9: Klant
+**Id:** NZISM Security Benchmark AC-9 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Windows-machines controleren waarop opgegeven leden van de groep Beheerders ontbreken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F30f71ea1-ac77-4f26-9fc5-2d926bbd4ba7) |Hiertoe moeten vereiste onderdelen worden geïmplementeerd in het bereik van de beleidstoewijzing. Zie [https://aka.ms/gcpol](https://aka.ms/gcpol) voor meer informatie. Machines voldoen niet als de lokale groep Beheerders niet één of meer leden bevat die worden vermeld in de beleidsparameter. |auditIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembersToInclude_AINE.json) |
 |[Windows-machines controleren met extra accounts in de groep Administrators](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3d2a3320-2a72-4c67-ac5f-caa40fbee2b2) |Hiertoe moeten vereiste onderdelen worden geïmplementeerd in het bereik van de beleidstoewijzing. Zie [https://aka.ms/gcpol](https://aka.ms/gcpol) voor meer informatie. Machines voldoen niet als de lokale groep Beheerders leden bevat die niet worden vermeld in de beleidsparameter. |auditIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembers_AINE.json) |
 |[Windows-machines controleren die opgegeven leden van de groep Beheerders bevatten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F69bf4abd-ca1e-4cf6-8b5a-762d42e61d4f) |Hiertoe moeten vereiste onderdelen worden geïmplementeerd in het bereik van de beleidstoewijzing. Zie [https://aka.ms/gcpol](https://aka.ms/gcpol) voor meer informatie. Machines voldoen niet als de lokale groep Beheerders één of meer leden bevat die worden vermeld in de beleidsparameter. |auditIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembersToExclude_AINE.json) |
-|[Implementeren: afhankelijkheidsagent configureren die moet worden ingeschakeld op virtuele Windows-machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c210e94-a481-4beb-95fa-1571b434fb04) |Implementeer afhankelijkheidsagent voor virtuele Windows-machines als de installatielijst van de virtuele machine in de gedefinieerde lijst staat en de agent niet is geïnstalleerd. |DeployIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DependencyAgentExtension_Windows_VM_Deploy.json) |
+|[Implementeren: afhankelijkheidsagent configureren die moet worden ingeschakeld op virtuele Windows-machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c210e94-a481-4beb-95fa-1571b434fb04) |Implementeer Afhankelijkheidsagent voor virtuele Windows-machines als de installatielijst van de virtuele machine in de gedefinieerde lijst staat en de agent niet is geïnstalleerd. |DeployIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DependencyAgentExtension_Windows_VM_Deploy.json) |
 |[De Windows-extensie voor gastconfiguratie implementeren om toewijzingen van gastconfiguratie in te schakelen op Windows-VM's](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F385f5831-96d4-41db-9a3c-cd3af78aaae6) |Met dit beleid wordt de Windows-extensie voor gastconfiguratie geïmplementeerd op in Azure gehoste virtuele Windows-machines die worden ondersteund met gastconfiguratie. De Windows-extensie voor gastconfiguratie is een vereiste voor alle toewijzingen van Windows-gastconfiguratie, en moet worden geïmplementeerd op machines vóór het gebruik van beleidsdefinities voor Windows-gastconfiguratie. Ga naar [https://aka.ms/gcpol](https://aka.ms/gcpol) voor meer informatie over gastconfiguratie. |deployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_DeployExtensionWindows_Prerequisite.json) |
 
 ### <a name="1666-maintaining-system-management-logs"></a>16.6.6 Systeembeheerlogboeken onderhouden
 
-**Id:** Eigendom van NZISM Security Benchmark AC-13: Klant
+**Id:** NZISM Security Benchmark AC-13 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -173,7 +173,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ### <a name="1667-content-of-system-management-logs"></a>16.6.7 Inhoud van systeembeheerlogboeken
 
-**Id:** Eigendom van NZISM Security Benchmark AC-14: Klant
+**Id:** NZISM Security Benchmark AC-14 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -190,9 +190,9 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 |---|---|---|---|
 |[Het activiteitenlogboek moet ten minste één jaar worden bewaard](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb02aacc0-b073-424e-8298-42b22829ee0a) |Met dit beleid wordt het activiteitenlogboek gecontroleerd als de bewaarperiode niet is ingesteld op 365 dagen of permanent (bewaarperiode ingesteld op 0). |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLogRetention_365orGreater.json) |
 
-### <a name="16734-system-architecture-and-security-controls"></a>16.7.34 Systeemarchitectuur en beveiligingsmaatregelen
+### <a name="16734-system-architecture-and-security-controls"></a>16.7.34 System Architecture and Security Controls
 
-**Id:** Eigendom van NZISM Security Benchmark AC-17: Klant
+**Id:** NZISM Security Benchmark AC-17 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -204,7 +204,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ### <a name="17146-reducing-storage-and-physical-transfer-requirements"></a>17.1.46 Vereisten voor opslag en fysieke overdracht verminderen
 
-**Id:** Eigendom van NZISM Security Benchmark CR-2: Klant
+**Id:** NZISM Security Benchmark CR-2 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -212,7 +212,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ### <a name="17416-using-tls"></a>17.4.16 Met TLS
 
-**Id:** NZISM Security Benchmark CR-6 **Eigendom:** Klant
+**Id:** Eigendom van NZISM Security Benchmark CR-6: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -220,32 +220,32 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 |[De nieuwste TLS-versie moet worden gebruikt in uw API-app](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F8cb6aa8b-9e41-4f4e-aa25-089a7ac2581e) |Een upgrade uitvoeren uit naar de meest recente TLS-versie |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_RequireLatestTls_ApiApp_Audit.json) |
 |[De nieuwste TLS-versie moet worden gebruikt in uw Function-app](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff9d614c5-c173-4d56-95a7-b4437057d193) |Een upgrade uitvoeren uit naar de meest recente TLS-versie |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_RequireLatestTls_FunctionApp_Audit.json) |
 |[De nieuwste TLS-versie moet worden gebruikt in uw web-app](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff0e6e85b-9b9f-4a4b-b67b-f730d42f1b0b) |Een upgrade uitvoeren uit naar de meest recente TLS-versie |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_RequireLatestTls_WebApp_Audit.json) |
-|[Windows-webservers moeten worden geconfigureerd voor het gebruik van beveiligde communicatieprotocollen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5752e6d6-1206-46d8-8ab1-ecc2f71a8112) |Ter bescherming van de privacy van informatie die via internet wordt gecommuniceerd, moeten uw webservers gebruikmaken van de nieuwste versie van het industriestandaard cryptografieprotocol, Transport Layer Security (TLS). TLS beveiligt communicatie via een netwerk met behulp van beveiligingscertificaten om een verbinding tussen computers te versleutelen. TLS 1.3 is sneller en veiliger dan de eerdere versies: TLS 1.0-1.2 en SSL 2-3, die allemaal worden beschouwd als verouderde protocollen. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecureWebProtocol_AINE.json) |
+|[Windows-webservers moeten worden geconfigureerd voor het gebruik van beveiligde communicatieprotocollen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5752e6d6-1206-46d8-8ab1-ecc2f71a8112) |Ter bescherming van de privacy van informatie die via internet wordt gecommuniceerd, moeten uw webservers gebruikmaken van de nieuwste versie van het cryptografische protocol volgens de industriestandaard, Transport Layer Security (TLS). TLS beveiligt communicatie via een netwerk met behulp van beveiligingscertificaten om een verbinding tussen computers te versleutelen. |AuditIfNotExists, uitgeschakeld |[2.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecureWebProtocol_AINE.json) |
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
 ### <a name="18113-limiting-network-access"></a>18.1.13 Netwerktoegang beperken
 
-**Id:** NZISM Security Benchmark NS-2 **Eigendom:** Klant
+**Id:** Eigendom van NZISM Security Benchmark NS-2: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Aanbevelingen voor Adaptieve netwerkbeveiliging moeten worden toegepast op virtuele machines die op internet zijn gericht](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F08e6af2d-db70-460a-bfe9-d5bd474ba9d6) |Azure Security Center analyseert de verkeerspatronen van virtuele machines die vanaf het internet toegankelijk zijn, en formuleert aanbevelingen voor regels voor de netwerkbeveiligingsgroep die de kans op aanvallen beperken |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveNetworkHardenings_Audit.json) |
 |[Op internet gerichte virtuele machines moeten worden beveiligd met netwerkbeveiligingsgroepen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff6de0be7-9a8a-4b8a-b349-43cf02d22f7c) |Bescherm uw virtuele machines tegen mogelijke bedreigingen door de toegang tot de VM te beperken met een netwerkbeveiligingsgroep (Network Security Group/NSG). U vindt meer informatie over het beheren van verkeer met NSG's op [https://aka.ms/nsg-doc](https://aka.ms/nsg-doc) |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_NetworkSecurityGroupsOnInternetFacingVirtualMachines_Audit.json) |
 |[Openbare toegang tot een opslagaccount moet niet worden toegestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4fa4b6c0-31ca-4c0d-b10d-24b96f62a751) |Anonieme openbare leestoegang tot containers en blobs in Azure Storage is een handige manier om gegevens te delen, maar kan ook beveiligingsrisico's opleveren. Om schendingen van gegevens door ongewenste anonieme toegang te voorkomen, wordt aangeraden openbare toegang tot een opslagaccount te verhinderen, tenzij dit vereist is voor uw scenario. |controleren, weigeren, uitgeschakeld |[2.0.1-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/ASC_Storage_DisallowPublicBlobAccess_Audit.json) |
-|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet- of on-premises clients toe te staan, kan toegang worden verleend aan verkeer van specifieke virtuele Azure-netwerken of aan IP-adresbereiken van openbaar internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
+|[Netwerktoegang tot opslagaccounts moet zijn beperkt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F34c877ad-507e-4c82-993e-3452a6e0ad3c) |Netwerktoegang tot opslagaccounts moet worden beperkt. Configureer netwerkregels zo dat alleen toepassingen van toegestane netwerken toegang hebben tot het opslagaccount. Om verbindingen van specifieke internet- of on-premises clients toe te staan, kan toegang worden verleend tot verkeer van specifieke virtuele Azure-netwerken of tot ip-adresbereiken voor openbaar internet |Controleren, Weigeren, Uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_NetworkAcls_Audit.json) |
 
 ### <a name="18319-content-of-a-denial-of-service-dos-response-plan"></a>18.3.19 Content of a Denial of Service (DoS) response plan
 
-**Id:** NZISM Security Benchmark NS-5 **Eigendom:** Klant
+**Id:** Eigendom van NZISM Security Benchmark NS-5: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Azure DDoS-beveiligingsstandaard moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa7aca53f-2ed4-4466-a25e-0b45ade68efd) |De standaard-DDoS-beveiliging moet zijn ingeschakeld voor alle virtuele netwerken met een subnet dat deel uitmaakt van een toepassingsgateway met een openbaar IP-adres. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableDDoSProtection_Audit.json) |
 
-### <a name="18410-malicious-code-counter-measures"></a>18.4.10 Schadelijke codemeters
+### <a name="18410-malicious-code-counter-measures"></a>18.4.10 Tellers van schadelijke code
 
-**Id:** NZISM Security Benchmark NS-7 **Eigendom:** Klant
+**Id:** Eigendom van NZISM Security Benchmark NS-7: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -257,13 +257,13 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 
 ## <a name="data-management"></a>Gegevensbeheer
 
-### <a name="20310-antivirus-scans"></a>20.3.10 Antivirusscans
+### <a name="20310-antivirus-scans"></a>20.3.10 Antivirus-scans
 
 **Id:** NZISM Security Benchmark DM-4 **Eigendom:** Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Implementeren: afhankelijkheidsagent configureren die moet worden ingeschakeld op virtuele-machineschaalsets van Windows](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3be22e3b-d919-47aa-805e-8985dbeb0ad9) |Implementeer Afhankelijkheidsagent voor virtuele-machineschaalsets van Windows als de installatielijst van de virtuele machine in de gedefinieerde lijst staat en de agent niet is geïnstalleerd. Als uw schaalset upgradePolicy is ingesteld op Handmatig, moet u de extensie toepassen op alle virtuele machines in de set door ze bij te werken. |DeployIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DependencyAgentExtension_Windows_VMSS_Deploy.json) |
+|[Implementeren: afhankelijkheidsagent configureren voor inschakelen op virtuele-machineschaalsets van Windows](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3be22e3b-d919-47aa-805e-8985dbeb0ad9) |Implementeer afhankelijkheidsagent voor virtuele-machineschaalsets van Windows als de installatielijst van de virtuele machine in de gedefinieerde lijst staat en de agent niet is geïnstalleerd. Als uw schaalset upgradePolicy is ingesteld op Handmatig, moet u de extensie toepassen op alle virtuele machines in de set door ze bij te werken. |DeployIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DependencyAgentExtension_Windows_VMSS_Deploy.json) |
 |[Oplossing voor eindpuntbeveiliging moet worden geïnstalleerd op virtuele-machineschaalsets](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F26a828e1-e88f-464e-bbb3-c134a282b9de) |Controleer op de aanwezigheid en status van een oplossing voor eindpuntbeveiliging op virtuele-machineschaalsets, waarmee de schaalsets worden beschermd tegen bedreigingen en beveiligingsproblemen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssMissingEndpointProtection_Audit.json) |
 |[Ontbrekende eindpuntbeveiliging bewaken in Azure Security Center](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Faf6cd1bd-1635-48cb-bde7-5b15693900b9) |Servers zonder geïnstalleerde agent voor eindpuntbeveiliging worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_MissingEndpointProtection_Audit.json) |
 |[Windows Defender Exploit Guard moet zijn ingeschakeld op uw computers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbed48b13-6647-468e-aa2f-1af1d3f4dd40) |Windows Defender Exploit Guard maakt gebruik van Azure Policy gastconfiguratieagent. Exploit Guard bestaat uit vier onderdelen die zijn ontworpen om apparaten te vergrendelen tegen diverse aanvalsvectoren en blokkeergedrag die in malware-aanvallen worden gebruikt en die bedrijven de mogelijkheid bieden om een goede balans te vinden tussen hun vereisten op het gebied van beveiligingsrisico's en productiviteit (alleen Windows). |AuditIfNotExists, uitgeschakeld |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsDefenderExploitGuard_AINE.json) |
@@ -282,13 +282,13 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het blauwdruk
 |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |Inschakeling van alleen verbindingen via SSL met Azure Cache voor Redis controleren. Het gebruik van beveiligde verbindingen zorgt voor verificatie tussen de server en de service en beveiligt gegevens tijdens de overdracht tegen netwerklaagaanvallen, zoals man-in-the-middle, meeluisteren en sessie-hijacking |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 |[Beveiligde overdracht naar opslagaccounts moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F404c3081-a854-4457-ae30-26a93ef643f9) |Controleer de vereiste van beveiligde overdracht in uw opslagaccount. Beveiligde overdracht is een optie die afdwingt dat uw opslagaccount alleen aanvragen van beveiligde verbindingen (HTTPS) accepteert. Het gebruik van HTTPS zorgt voor verificatie tussen de server en de service en beveiligt gegevens tijdens de overdracht tegen netwerklaagaanvallen, zoals man-in-the-middle, meeluisteren en sessie-hijacking |Controleren, Weigeren, Uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_AuditForHTTPSEnabled_Audit.json) |
 |[Transparent Data Encryption in SQL-databases moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F17k78e20-9358-41c9-923c-fb736d382a12) |Transparante gegevensversleuteling moet zijn ingeschakeld om data-at-rest te beveiligen en te voldoen aan de nalevingsvereisten |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlDBEncryption_Audit.json) |
-|[Windows-webservers moeten worden geconfigureerd voor het gebruik van beveiligde communicatieprotocollen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5752e6d6-1206-46d8-8ab1-ecc2f71a8112) |Ter bescherming van de privacy van informatie die via internet wordt gecommuniceerd, moeten uw webservers gebruikmaken van de nieuwste versie van het cryptografische protocol volgens de industriestandaard, Transport Layer Security (TLS). TLS beveiligt communicatie via een netwerk met behulp van beveiligingscertificaten om een verbinding tussen computers te versleutelen. TLS 1.3 is sneller en veiliger dan de eerdere versies: TLS 1.0-1.2 en SSL 2-3, die allemaal als verouderde protocollen worden beschouwd. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecureWebProtocol_AINE.json) |
+|[Windows-webservers moeten worden geconfigureerd voor het gebruik van beveiligde communicatieprotocollen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5752e6d6-1206-46d8-8ab1-ecc2f71a8112) |Ter bescherming van de privacy van informatie die via internet wordt gecommuniceerd, moeten uw webservers gebruikmaken van de nieuwste versie van het industriestandaard cryptografieprotocol, Transport Layer Security (TLS). TLS beveiligt communicatie via een netwerk met behulp van beveiligingscertificaten om een verbinding tussen computers te versleutelen. |AuditIfNotExists, uitgeschakeld |[2.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecureWebProtocol_AINE.json) |
 
 ## <a name="enterprise-systems-security"></a>Beveiliging van bedrijfssystemen
 
-### <a name="22126-backup-recovery-archiving-and-data-remanence"></a>22.1.26 Backup, Recovery Archiveving en Data Remanence
+### <a name="22126-backup-recovery-archiving-and-data-remanence"></a>22.1.26 Back-up, herstelarchivering en gegevensherstel
 
-**Id:** Eigendom van NZISM Security Benchmark ESS-3: Klant
+**Id**: Eigendom van NZISM Security Benchmark ESS-3: Klant
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|

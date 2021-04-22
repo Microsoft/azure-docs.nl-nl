@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure App Configuration
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure App Configuration. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: reference
 author: AlexandraKemperMS
 ms.author: alkemper
 ms.service: azure-app-configuration
 ms.custom: subject-policy-reference
-ms.openlocfilehash: abae4cbe8355b4cc01da9c2c71dfba2f68a50196
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: dc2fb4659cc7dce742937ccdc7d53be4c6dce046
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107497338"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874821"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-app-configuration"></a>Ingebouwde Azure Policy-definities voor Azure App Configuration
 

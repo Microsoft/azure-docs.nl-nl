@@ -11,12 +11,12 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/06/2019
-ms.openlocfilehash: a34fd5480ae47678f250dbf888005c396ba32f38
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 843db24707b8c826fe48e9d50aa7ec5bc135399f
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107792143"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107863601"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-monitor-it-with-the-azure-cli"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en deze bewaken met de Azure CLI
 
@@ -94,7 +94,7 @@ In deze sectie gebruikt u de Azure CLI voor het maken van een resourcegroep en e
 In deze sectie maakt u een gesimuleerd apparaat in de eerste CLI-sessie. Het gesimuleerde apparaat verzendt telemetrie van het apparaat naar uw IoT-hub. In de tweede CLI-sessie bewaakt u gebeurtenissen en telemetrie en verzendt u een bericht van de cloud naar het gesimuleerde apparaat.
 
 Zo maakt en start u een gesimuleerd apparaat:
-1. Voer de opdracht [az iot hub device-identity create](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create) uit in de eerste CLI-sessie. Hiermee maakt u de id van het gesimuleerde apparaat. 
+1. Voer de opdracht [az iot hub device-identity create](/cli/azure/iot/hub/device-identity#az_iot_hub_device_identity_create) uit in de eerste CLI-sessie. Hiermee maakt u de id van het gesimuleerde apparaat. 
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -104,7 +104,7 @@ Zo maakt en start u een gesimuleerd apparaat:
     az iot hub device-identity create --device-id simDevice --hub-name {YourIoTHubName} 
     ```
 
-1. Voer de opdracht [az iot device simulate](/cli/azure/ext/azure-iot/iot/device#ext-azure-iot-az-iot-device-simulate) uit in de eerste CLI-sessie.  Hiermee start u het gesimuleerde apparaat. Het apparaat verzendt telemetrie naar uw IoT-hub en ontvangt berichten van de hub.  
+1. Voer de opdracht [az iot device simulate](/cli/azure/iot/device#az_iot_device_simulate) uit in de eerste CLI-sessie.  Hiermee start u het gesimuleerde apparaat. Het apparaat verzendt telemetrie naar uw IoT-hub en ontvangt berichten van de hub.  
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -113,7 +113,7 @@ Zo maakt en start u een gesimuleerd apparaat:
     ```
 
 Zo bewaakt u een apparaat:
-1. Voer in de tweede CLI-sessie de opdracht [az iot hub monitor-events](/cli/azure/ext/azure-iot/iot/hub#ext-azure-iot-az-iot-hub-monitor-events) uit. Hiermee start u het bewaken van het gesimuleerde apparaat. De uitvoer toont telemetrie die het gesimuleerde apparaat naar de IoT-hub verzendt.
+1. Voer in de tweede CLI-sessie de opdracht [az iot hub monitor-events](/cli/azure/iot/hub#az_iot_hub_monitor_events) uit. Hiermee start u het bewaken van het gesimuleerde apparaat. De uitvoer toont telemetrie die het gesimuleerde apparaat naar de IoT-hub verzendt.
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -136,7 +136,7 @@ In deze sectie gebruikt u de tweede CLI-sessie om een bericht te verzenden naar 
     az iot device simulate -d simDevice -n {YourIoTHubName}
     ```
 
-1. Voer in de tweede CLI-sessie de opdracht [az iot device c2d-message send](/cli/azure/ext/azure-iot/iot/device/c2d-message#ext-azure-iot-az-iot-device-c2d-message-send) uit. Hiermee verzendt u vanuit uw IoT-hub een cloud-naar-apparaat-bericht naar het gesimuleerde apparaat. Het bericht bevat een tekenreeks en twee sleutel-waardeparen.  
+1. Voer in de tweede CLI-sessie de opdracht [az iot device c2d-message send](/cli/azure/iot/device/c2d-message#az_iot_device_c2d-message-send) uit. Hiermee verzendt u vanuit uw IoT-hub een cloud-naar-apparaat-bericht naar het gesimuleerde apparaat. Het bericht bevat een tekenreeks en twee sleutel-waardeparen.  
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 

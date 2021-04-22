@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: 58dccf56cd493782a422b0ddf0386e31d4d87daf
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: bb8f2d77c04e01c47318042337db819ac2f36d46
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107765985"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107863169"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Quickstart: een Azure Stream Analytics-taak maken via de Azure CLI
 
@@ -59,7 +59,7 @@ Het volgende codeblok van de Azure CLI bestaat uit opdrachten waarmee de invoerg
     az iot hub device-identity create --hub-name "MyASAIoTHub" --device-id "MyASAIoTDevice"
     ```
 
-3. Vraag de verbindingsreeks van het apparaat op met de opdracht [az iot hub device-identity show-connection-string](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-show-connection-string). Kopieer de volledige verbindingsreeks en bewaar deze totdat u de Raspberry Pi-simulator gaat maken.
+3. Vraag de verbindingsreeks van het apparaat op met de opdracht [az iot hub device-identity show-connection-string](/cli/azure/iot/hub/device-identity#az_iot_hub_device_identity_show_connection_string). Kopieer de volledige verbindingsreeks en bewaar deze totdat u de Raspberry Pi-simulator gaat maken.
 
     ```azurecli
     az iot hub device-identity show-connection-string --hub-name "MyASAIoTHub" --device-id "MyASAIoTDevice" --output table
@@ -108,7 +108,7 @@ Met de volgende Azure CLI-codeblokken wordt een blob-opslagaccount gemaakt dat w
 
 Met de volgende Azure CLI-codeblokken wordt een Stream Analytics-taak gemaakt. Bekijk de secties om de code te begrijpen
 
-1. Maak een Stream Analytics-taak met de opdracht [az stream-analytics job create](/cli/azure/ext/stream-analytics/stream-analytics/job#ext-stream-analytics-az-stream-analytics-job-create).
+1. Maak een Stream Analytics-taak met de opdracht [az stream-analytics job create](/cli/azure/stream-analytics/job#az_stream_analytics_job_create).
 
 ```azurecli
 az stream-analytics job create \
@@ -124,7 +124,7 @@ az stream-analytics job create \
 
 ## <a name="configure-input-to-the-job"></a>Invoer voor de taak configureren
 
-Voeg invoer aan uw taak toe met behulp van de cmdlet [az stream-analytics input](/cli/azure/ext/stream-analytics/stream-analytics/input#ext-stream-analytics-az-stream-analytics-input-create). Deze cmdlet gebruikt de taaknaam, taakinvoernaam, resourcegroepnaam en de taakinvoerdefinitie als parameters. De taakinvoerdefinitie is een JSON-bestand dat de eigenschappen bevat die nodig zijn om de invoer van de taak te configureren. In dit voorbeeld maakt u een IoT Hub als invoer.
+Voeg invoer aan uw taak toe met behulp van de cmdlet [az stream-analytics input](/cli/azure/stream-analytics/input#az_stream_analytics_input_create). Deze cmdlet gebruikt de taaknaam, taakinvoernaam, resourcegroepnaam en de taakinvoerdefinitie als parameters. De taakinvoerdefinitie is een JSON-bestand dat de eigenschappen bevat die nodig zijn om de invoer van de taak te configureren. In dit voorbeeld maakt u een IoT Hub als invoer.
 
 Maak op uw lokale machine een bestand met de naam `datasource.json` en voeg er de volgende JSON-gegevens aan toe. Vervang de waarde voor `sharedAccessPolicyKey` door het gedeelte `SharedAccessKey` uit de IoT Hub-verbindingsreeks die u in een eerdere sectie hebt opgeslagen.
 
@@ -166,7 +166,7 @@ az stream-analytics input create \
 
 ## <a name="configure-output-to-the-job"></a>Uitvoer voor de taak configureren
 
-Voeg uitvoer aan uw taak toe met behulp van de cmdlet [az stream-analytics output create](/cli/azure/ext/stream-analytics/stream-analytics/output#ext-stream-analytics-az-stream-analytics-output-create). Deze cmdlet gebruikt de taaknaam, taakuitvoernaam, resourcegroepnaam en de taakuitvoerdefinitie als parameters. De taakuitvoerdefinitie is een JSON-bestand dat de eigenschappen bevat die nodig zijn om de uitvoer van de taak te configureren. In dit voorbeeld wordt blobopslag als uitvoer gebruikt.
+Voeg uitvoer aan uw taak toe met behulp van de cmdlet [az stream-analytics output create](/cli/azure/stream-analytics/output#az_stream_analytics_output_create). Deze cmdlet gebruikt de taaknaam, taakuitvoernaam, resourcegroepnaam en de taakuitvoerdefinitie als parameters. De taakuitvoerdefinitie is een JSON-bestand dat de eigenschappen bevat die nodig zijn om de uitvoer van de taak te configureren. In dit voorbeeld wordt blobopslag als uitvoer gebruikt.
 
 Maak op uw lokale machine een bestand met de naam `datasink.json` en voeg er de volgende JSON-gegevens aan toe. Let erop dat u de waarde voor `accountKey` vervangt door de toegangssleutel van uw opslagaccount. Deze is opgeslagen in de waarde $storageAccountKey.
 
@@ -201,7 +201,7 @@ az stream-analytics output create \
 
 ## <a name="define-the-transformation-query"></a>De transformatiequery definiëren
 
-Voeg een transformatie aan uw taak toe met behulp van de cmdlet [az stream-analytics transformation create](/cli/azure/ext/stream-analytics/stream-analytics/transformation#ext-stream-analytics-az-stream-analytics-transformation-create). Deze cmdlet gebruikt de taaknaam, taaktransformatienaam, resourcegroepnaam en de taaktransformatiedefinitie als parameters. 
+Voeg een transformatie aan uw taak toe met behulp van de cmdlet [az stream-analytics transformation create](/cli/azure/stream-analytics/transformation#az_stream_analytics_transformation_create). Deze cmdlet gebruikt de taaknaam, taaktransformatienaam, resourcegroepnaam en de taaktransformatiedefinitie als parameters. 
 
 Voer de cmdlet `az stream-analytics transformation create` uit.
 
@@ -225,7 +225,7 @@ az stream-analytics transformation create \
 
 ## <a name="start-the-stream-analytics-job-and-check-the-output"></a>De Stream Analytics-taak starten en uitvoer controleren
 
-Start de taak met behulp van de cmdlet [az stream-analytics job start](/cli/azure/ext/stream-analytics/stream-analytics/job#ext-stream-analytics-az-stream-analytics-job-start). Deze cmdlet gebruikt de taaknaam, resourcegroepnaam, uitvoerstartmodus en begintijd als parameters. `OutputStartMode` accepteert waarden van `JobStartTime`, `CustomTime` of `LastOutputEventTime`.
+Start de taak met behulp van de cmdlet [az stream-analytics job start](/cli/azure/stream-analytics/job#az_stream_analytics_job_start). Deze cmdlet gebruikt de taaknaam, resourcegroepnaam, uitvoerstartmodus en begintijd als parameters. `OutputStartMode` accepteert waarden van `JobStartTime`, `CustomTime` of `LastOutputEventTime`.
 
 Nadat u de volgende cmdlet hebt uitgevoerd, retourneert deze `True` als uitvoer als de taak wordt gestart. In de opslagcontainer wordt een uitvoermap met de getransformeerde gegevens gemaakt.
 

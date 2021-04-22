@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 10/15/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: d347be4e6727cdda659620befe20824678160020
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: af870b3be9c2ab7022a05c9cf9e3a662c5850214
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107792431"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875067"
 ---
 # <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli"></a>OS en gekoppelde gegevensschijven versleutelen in een virtuele-machineschaalset met Azure CLI
 
@@ -61,7 +61,7 @@ Het duurt enkele minuten om alle schaalsetresources en VM's te maken en te confi
 
 Azure Key Vault kan sleutels, geheimen of wachtwoorden opslaan waarmee u deze veilig kunt implementeren in uw toepassingen en services. Cryptografische sleutels worden opgeslagen in Azure Key Vault met behulp van softwarebeveiliging, of u kunt uw sleutels in Hardware Security Modules (HMS's), die zijn gecertificeerd voor FIPS 140-2 level 2-standaarden, importeren of genereren. Deze cryptografische sleutels worden gebruikt voor het versleutelen en ontsleutelen van virtuele schijven die zijn gekoppeld aan uw VM. U behoudt de controle over deze cryptografische sleutels en kunt het gebruik controleren.
 
-Definieer uw eigen unieke *keyvault_name*. Maak vervolgens een sleutelkluis met [az sleutelkluis maken](/cli/azure/keyvault#ext-keyvault-preview-az-keyvault-create) in hetzelfde abonnement en dezelfde regio als de schaalset en stel het toegangsbeleid *--ingeschakeld-voor-schijfversleuteling* in.
+Definieer uw eigen unieke *keyvault_name*. Maak vervolgens een sleutelkluis met [az sleutelkluis maken](/cli/azure/keyvault#az_keyvault_create) in hetzelfde abonnement en dezelfde regio als de schaalset en stel het toegangsbeleid *--ingeschakeld-voor-schijfversleuteling* in.
 
 ```azurecli-interactive
 # Provide your own unique Key Vault name
@@ -75,7 +75,7 @@ az keyvault create --resource-group myResourceGroup --name $keyvault_name --enab
 
 Deze stap is alleen vereist als u een bestaande sleutelkluis hebt die u wilt gebruiken met schijfversleuteling. Sla deze stap over als u in de vorige sectie een sleutelkluis hebt gemaakt.
 
-Definieer uw eigen unieke *keyvault_name*. Update vervolgens uw sleutelklus met [az sleutelkluis updaten](/cli/azure/keyvault#ext-keyvault-preview-az-keyvault-update) en stel het toegangsbeleid *--enabled-for-disk-encryption* in.
+Definieer uw eigen unieke *keyvault_name*. Update vervolgens uw sleutelklus met [az sleutelkluis updaten](/cli/azure/keyvault#az_keyvault_update) en stel het toegangsbeleid *--enabled-for-disk-encryption* in.
 
 ```azurecli-interactive
 # Provide your own unique Key Vault name
@@ -87,7 +87,7 @@ az keyvault update --name $keyvault_name --enabled-for-disk-encryption
 
 ## <a name="enable-encryption"></a>Versleuteling inschakelen
 
-Als u VM-exemplaren in een schaalset wilt versleutelen, moet u eerst bepaalde informatie over de Resource-ID van de sleutelkluis ophalen met [az keyvault show](/cli/azure/keyvault#ext-keyvault-preview-az-keyvault-show). Deze variabelen worden gebruikt om het versleutelingsproces vervolgens te starten met [az vmss encryption enable](/cli/azure/vmss/encryption#az_vmss_encryption_enable):
+Als u VM-exemplaren in een schaalset wilt versleutelen, moet u eerst bepaalde informatie over de Resource-ID van de sleutelkluis ophalen met [az keyvault show](/cli/azure/keyvault#az_keyvault_show). Deze variabelen worden gebruikt om het versleutelingsproces vervolgens te starten met [az vmss encryption enable](/cli/azure/vmss/encryption#az_vmss_encryption_enable):
 
 ```azurecli-interactive
 # Get the resource ID of the Key Vault

@@ -1,77 +1,75 @@
 ---
-title: Latentie beperken bij het gebruik van de face-service
+title: Latentie beperken bij het gebruik van de Face-service
 titleSuffix: Azure Cognitive Services
-description: Meer informatie over het beperken van de latentie bij het gebruik van de face-service.
+description: Meer informatie over het beperken van latentie bij het gebruik van de Face-service.
 services: cognitive-services
-author: v-jaswel
 manager: chrhoder
 ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 1/5/2021
-ms.author: v-jawe
-ms.openlocfilehash: 412105e3262a3baf8780bd3bd1082508967ea486
-ms.sourcegitcommit: 6ed3928efe4734513bad388737dd6d27c4c602fd
+ms.openlocfilehash: a306883573387a2a5c20a53c7015c6dbd3eddf65
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107012581"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878664"
 ---
-# <a name="how-to-mitigate-latency-when-using-the-face-service"></a>Procedure: latentie beperken bij het gebruik van de face-service
+# <a name="how-to-mitigate-latency-when-using-the-face-service"></a>Hoe: latentie beperken bij het gebruik van de Face-service
 
-Er kan een latentie optreden bij het gebruik van de service face. Latentie verwijst naar een wille keurige vertraging die optreedt bij communicatie via een netwerk. Over het algemeen zijn mogelijke oorzaken van latentie:
-- De fysieke afstand van elk pakket moet worden getransporteerd van de bron naar het doel.
-- Problemen met het verzend medium.
-- Fouten in routers of switches langs het transmissie traject.
-- De tijd die nodig is voor antivirus toepassingen, firewalls en andere beveiligings mechanismen voor het inspecteren van pakketten.
-- Storingen in client-of server toepassingen.
+Er kan latentie zijn bij het gebruik van de Face-service. Latentie verwijst naar elk soort vertraging dat optreedt bij de communicatie via een netwerk. Over het algemeen zijn dit mogelijke oorzaken van latentie:
+- De fysieke afstand die elk pakket moet afleggen van de bron naar de bestemming.
+- Problemen met het overdrachtsmedium.
+- Fouten in routers of switches langs het overdrachtspad.
+- De tijd die antivirustoepassingen, firewalls en andere beveiligingsmechanismen nodig hebben om pakketten te inspecteren.
+- Defecten in client- of servertoepassingen.
 
-In dit onderwerp vindt u informatie over mogelijke oorzaken van een latentie die specifiek is voor het gebruik van de Azure-Cognitive Services en hoe u deze oorzaken kunt verhelpen.
+In dit onderwerp worden mogelijke oorzaken van latentie besproken die specifiek zijn voor het gebruik van Azure Cognitive Services en hoe u deze oorzaken kunt verhelpen.
 
 > [!NOTE]
-> Azure Cognitive Services bieden geen enkele Service Level Agreement (SLA) over latentie.
+> Azure Cognitive Services bieden geen Service Level Agreement (SLA) met betrekking tot latentie.
 
-## <a name="possible-causes-of-latency"></a>Mogelijke oorzaken van een latentie
+## <a name="possible-causes-of-latency"></a>Mogelijke oorzaken van latentie
 
-### <a name="slow-connection-between-the-cognitive-service-and-a-remote-url"></a>Trage verbinding tussen de cognitieve service en een externe URL
+### <a name="slow-connection-between-the-cognitive-service-and-a-remote-url"></a>Trage verbinding tussen de Cognitive Service en een externe URL
 
-Sommige Azure-Cognitive Services bieden methoden die gegevens ophalen van een externe URL die u opgeeft. Wanneer u bijvoorbeeld de [methode DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithUrlAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de face-service aanroept, kunt u de URL opgeven van een installatie kopie waarin de service probeert gezichten te detecteren.
+Sommige Azure Cognitive Services bieden methoden voor het verkrijgen van gegevens van een externe URL die u op verstrekt. Wanneer u bijvoorbeeld de methode [DetectWithUrlAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithUrlAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de Face-service aanroept, kunt u de URL opgeven van een afbeelding waarin de service gezichten probeert te detecteren.
 
 ```csharp
 var faces = await client.Face.DetectWithUrlAsync("https://www.biography.com/.image/t_share/MTQ1MzAyNzYzOTgxNTE0NTEz/john-f-kennedy---mini-biography.jpg");
 ```
 
-De face-service moet vervolgens de installatie kopie downloaden van de externe server. Als de verbinding van de face-service met de externe server traag is, heeft dit invloed op de reactie tijd van de detectie methode.
+De Face-service moet de afbeelding vervolgens downloaden van de externe server. Als de verbinding van de Face-service naar de externe server traag is, heeft dit invloed op de reactietijd van de Detect-methode.
 
-Als u dit wilt verhelpen, kunt u overwegen om [de installatie kopie op te slaan in azure Premium Blob Storage](../../../storage/blobs/storage-upload-process-images.md?tabs=dotnet). Bijvoorbeeld:
+U kunt dit verhelpen door de [afbeelding op te slaan in Azure Premium Blob Storage](../../../storage/blobs/storage-upload-process-images.md?tabs=dotnet). Bijvoorbeeld:
 
 ``` csharp
 var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
 ```
 
-### <a name="large-upload-size"></a>Grote upload grootte
+### <a name="large-upload-size"></a>Grote uploadgrootte
 
-Sommige Azure-Cognitive Services bieden methoden die gegevens ophalen uit een bestand dat u uploadt. Wanneer u bijvoorbeeld de [methode DetectWithStreamAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithStreamAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_IO_Stream_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de face-service aanroept, kunt u een installatie kopie uploaden waarin de service wordt getracht gezichten te detecteren.
+Sommige Azure Cognitive Services bieden methoden voor het verkrijgen van gegevens uit een bestand dat u uploadt. Wanneer u bijvoorbeeld de methode [DetectWithStreamAsync](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithStreamAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_IO_Stream_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) van de Face-service aanroept, kunt u een afbeelding uploaden waarin de service gezichten probeert te detecteren.
 
 ```csharp
 using FileStream fs = File.OpenRead(@"C:\images\face.jpg");
 System.Collections.Generic.IList<DetectedFace> faces = await client.Face.DetectWithStreamAsync(fs, detectionModel: DetectionModel.Detection02);
 ```
 
-Als het te uploaden bestand groot is, is dat van invloed op de reactie tijd van de `DetectWithStreamAsync` methode, om de volgende redenen:
-- Het duurt langer om het bestand te uploaden.
-- Het duurt langer voordat de service het bestand verwerkt, in verhouding tot de bestands grootte.
+Als het bestand dat moet worden geüpload groot is, is dit om de volgende redenen van invloed op de reactietijd `DetectWithStreamAsync` van de methode:
+- Het uploaden van het bestand duurt langer.
+- Het duurt langer voor de service het bestand verwerkt, in verhouding tot de bestandsgrootte.
 
-Oplossingen
-- Overweeg [de installatie kopie op te slaan in azure Premium Blob Storage](../../../storage/blobs/storage-upload-process-images.md?tabs=dotnet). Bijvoorbeeld:
+Oplossingen:
+- U [kunt de afbeelding opslaan in Azure Premium Blob Storage](../../../storage/blobs/storage-upload-process-images.md?tabs=dotnet). Bijvoorbeeld:
 ``` csharp
 var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
 ```
 - Overweeg een kleiner bestand te uploaden.
-    - Zie de richt lijnen met betrekking tot [invoer gegevens voor gezichts detectie](../concepts/face-detection.md#input-data) en [invoer gegevens voor gezichts herkenning](../concepts/face-recognition.md#input-data).
-    - Bij gezichts detectie, wanneer detectie model wordt gebruikt `DetectionModel.Detection01` , wordt de verwerkings snelheid verhoogd wanneer de grootte van het afbeeldings bestand wordt gereduceerd. Wanneer u detectie model gebruikt `DetectionModel.Detection02` , wordt de verwerkings snelheid van de afbeeldings bestands grootte alleen verhoogd als het afbeeldings bestand kleiner is dan 1920.
-    - Voor gezichts herkenning is het verminderen van de face-grootte naar 200x200 pixels niet van invloed op de nauw keurigheid van het herkennings model.
-    - De prestaties van de- `DetectWithUrlAsync` en- `DetectWithStreamAsync` methoden zijn ook afhankelijk van het aantal gezichten dat zich in een afbeelding bevindt. De face-service kan tot 100 gezichten retour neren voor een installatie kopie. Gezichten worden gerangschikt op basis van de grootte van het gezichts kader van groot naar klein.
-    - Als u meerdere service methoden moet aanroepen, kunt u overwegen deze parallel aan te roepen als uw toepassings ontwerp dit toestaat. Als u bijvoorbeeld gezichten in twee afbeeldingen moet detecteren om een gezichts vergelijking uit te voeren:
+    - Zie de richtlijnen met betrekking [tot invoergegevens voor gezichtsdetectie](../concepts/face-detection.md#input-data) en [invoergegevens voor gezichtsherkenning.](../concepts/face-recognition.md#input-data)
+    - Bij gezichtsdetectie verhoogt het verkleinen van de afbeeldingsbestandsgrootte bij het gebruik `DetectionModel.Detection01` van het detectiemodel de verwerkingssnelheid. Wanneer u het detectiemodel gebruikt, verhoogt het verkleinen van de bestandsgrootte van de afbeelding alleen de verwerkingssnelheid als het afbeeldingsbestand `DetectionModel.Detection02` kleiner is dan 1920x1080.
+    - Voor gezichtsherkenning heeft het verkleinen van de gezichtsgrootte tot 200x200 pixels geen invloed op de nauwkeurigheid van het herkenningsmodel.
+    - De prestaties van de `DetectWithUrlAsync` methoden en zijn ook afhankelijk van het aantal gezichten in een `DetectWithStreamAsync` afbeelding. De Face-service kan maximaal 100 gezichten retourneren voor een afbeelding. Gezichten worden gerangschikt op rechthoekgrootte van groot naar klein.
+    - Als u meerdere servicemethoden wilt aanroepen, kunt u deze parallel aanroepen als uw toepassingsontwerp dit toestaat. Als u bijvoorbeeld gezichten in twee afbeeldingen moet detecteren om een gezichtsvergelijking uit te voeren:
 ```csharp
 var faces_1 = client.Face.DetectWithUrlAsync("https://www.biography.com/.image/t_share/MTQ1MzAyNzYzOTgxNTE0NTEz/john-f-kennedy---mini-biography.jpg");
 var faces_2 = client.Face.DetectWithUrlAsync("https://www.biography.com/.image/t_share/MTQ1NDY3OTIxMzExNzM3NjE3/john-f-kennedy---debating-richard-nixon.jpg");
@@ -79,23 +77,23 @@ Task.WaitAll (new Task<IList<DetectedFace>>[] { faces_1, faces_2 });
 IEnumerable<DetectedFace> results = faces_1.Result.Concat (faces_2.Result);
 ```
 
-### <a name="slow-connection-between-your-compute-resource-and-the-face-service"></a>Trage verbinding tussen uw reken resource en de face-service
+### <a name="slow-connection-between-your-compute-resource-and-the-face-service"></a>Trage verbinding tussen uw rekenresource en de Face-service
 
-Als uw computer een trage verbinding heeft met de face-service, is dit van invloed op de reactie tijd van service methoden.
+Als uw computer een trage verbinding met de Face-service heeft, is dit van invloed op de reactietijd van servicemethoden.
 
-Oplossingen
-- Wanneer u uw gezichts abonnement maakt, moet u ervoor zorgen dat u de regio kiest die het dichtst bij de host ligt waar uw toepassing wordt gehost.
-- Als u meerdere service methoden moet aanroepen, kunt u overwegen deze parallel aan te roepen als uw toepassings ontwerp dit toestaat. Zie de vorige sectie voor een voor beeld.
-- Als langere latenties van invloed zijn op de gebruikers ervaring, kiest u een drempel waarde voor time-out (bijvoorbeeld maximum 5s) voordat u de API-aanroep opnieuw probeert uit te voeren.
+Oplossingen:
+- Wanneer u uw Face-abonnement maakt, moet u ervoor zorgen dat u de regio kiest die het dichtst bij uw toepassing ligt.
+- Als u meerdere servicemethoden wilt aanroepen, kunt u deze parallel aanroepen als uw toepassingsontwerp dit toestaat. Zie de vorige sectie voor een voorbeeld.
+- Als langere latentie van invloed is op de gebruikerservaring, kiest u een time-outdrempel (bijvoorbeeld maximaal 5s) voordat u de API-aanroep opnieuw gaat proberen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding hebt u geleerd hoe u de latentie kunt beperken wanneer u de face-service gebruikt. Vervolgens leert u hoe u kunt opschalen van bestaande PersonGroup-en FaceList-objecten naar respectievelijk LargePersonGroup-en LargeFaceList-objecten.
+In deze handleiding hebt u geleerd hoe u de latentie kunt beperken bij het gebruik van de Face-service. Hierna leert u hoe u kunt opschalen van bestaande PersonGroup- en FaceList-objecten naar respectievelijk LargePersonGroup- en LargeFaceList-objecten.
 
 > [!div class="nextstepaction"]
 > [Voorbeeld: De functie Grootschalig gebruiken](how-to-use-large-scale.md)
 
 ## <a name="related-topics"></a>Verwante onderwerpen
 
-- [Referentie documentatie (REST)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
-- [Referentie documentatie (.NET SDK)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)
+- [Referentiedocumentatie (REST)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+- [Referentiedocumentatie (.NET SDK)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)

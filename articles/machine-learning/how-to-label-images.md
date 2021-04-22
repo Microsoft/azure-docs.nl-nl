@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: 5ba399418d8f93204b168c1058be20ffc775ef70
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 8f1d648c38760865752c87624dfcb112933650c7
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096963"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872619"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Tags toevoegen aan afbeeldingen in een labelproject 
 
@@ -71,14 +71,9 @@ Mogelijk worden machine learning-algoritmen geactiveerd. Als deze algoritmen in 
 
 * Later ziet u wellicht **taken die vooraf al van een label zijn voorzien** naast de projectnaam.  Afbeeldingen worden dan weergegeven met een voorgesteld label dat afkomstig is van een machine learning-classificeringsmodel. Geen enkel machine learning-model biedt 100% nauwkeurigheid. Hoewel we alleen afbeeldingen gebruiken waarvoor het model betrouwbaar is, is het nog wel mogelijk dat deze afbeeldingen onjuist vooraf zijn gelabeld.  Wanneer u deze labels ziet, herstelt u onjuiste labels voordat u de pagina verzendt.  
 
-* Voor object-id-modellen ziet u mogelijk selectie vakjes en labels die al aanwezig zijn.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt.
+* Voor objectidentificatiemodellen ziet u mogelijk begrenzen en labels die al aanwezig zijn.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt.
 
-* Voor segmentatie modellen ziet u mogelijk al veelhoeken en labels.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt. 
-
-    > [!IMPORTANT]
-    > De functies die worden vermeld met (preview) zijn beschikbaar als open bare preview.   
-    > De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
+* Voor segmentatiemodellen ziet u mogelijk al veelhoeken en labels.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt. 
 
 Met name in de beginfase van een labelproject is het mogelijk dat het machine learning-model alleen voldoende nauwkeurig is om slechts een kleine subset met afbeeldingen vooraf te labelen. Zodra deze afbeeldingen zijn gelabeld, keert het labelproject terug naar handmatige labels om meer gegevens te verzamelen voor de volgende ronde van de modeltraining. Na verloop van tijd wordt het model betrouwbaarder voor een hogere verhouding afbeeldingen. Dit leidt later in het project tot meer vooraf gelabelde taken.
 

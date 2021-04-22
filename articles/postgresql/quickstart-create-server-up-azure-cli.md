@@ -8,19 +8,19 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 28007b4e17bd698e4aaa2bddbf0c8f9ffaaa8351
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: f0f0dc56dcaad73ff945d319cf98dc30483ee07e
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105606450"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875085"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Quickstart: Een Azure CLI-opdracht, az postgres up (preview), gebruiken om een Azure Database for PostgreSQL te maken - Eén server
 
 > [!IMPORTANT]
-> De Azure CLI-opdracht [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up) is momenteel beschikbaar als preview-versie.
+> De Azure CLI-opdracht [az postgres up](/cli/azure/postgres#az_postgres_up) is momenteel beschikbaar als preview-versie.
 
-Azure Database voor PostgreSQL is een beheerde service waarmee u PostgreSQL-databases met hoge beschikbaarheid in de cloud kunt uitvoeren, beheren en schalen. De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf de opdrachtregel of in scripts. In deze quickstart ontdekt u hoe u de opdracht [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up) gebruikt om een Azure Database for PostgreSQL-server te maken met behulp van de Azure CLI. Naast het maken van de server worden met de opdracht `az postgres up` ook een voorbeelddatabase en een hoofdgebruiker in die database gemaakt, de firewall geopend voor Azure-services en standaardfirewallregels voor de clientcomputer gemaakt. Met deze standaardregels kunt u het ontwikkelingsproces versnellen.
+Azure Database voor PostgreSQL is een beheerde service waarmee u PostgreSQL-databases met hoge beschikbaarheid in de cloud kunt uitvoeren, beheren en schalen. De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf de opdrachtregel of in scripts. In deze quickstart ontdekt u hoe u de opdracht [az postgres up](/cli/azure/postgres#az_postgres_up) gebruikt om een Azure Database for PostgreSQL-server te maken met behulp van de Azure CLI. Naast het maken van de server worden met de opdracht `az postgres up` ook een voorbeelddatabase en een hoofdgebruiker in die database gemaakt, de firewall geopend voor Azure-services en standaardfirewallregels voor de clientcomputer gemaakt. Met deze standaardregels kunt u het ontwikkelingsproces versnellen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,7 +42,7 @@ az account set --subscription <subscription id>
 
 ## <a name="create-an-azure-database-for-postgresql-server"></a>Een Azure-database voor PostgreSQL-server maken
 
-Als u de opdrachten wilt gebruiken, installeert u de extensie [db-up](/cli/azure/ext/db-up). Als een fout wordt geretourneerd, moet u controleren of de nieuwste versie van de Azure CLI is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli).
+Als u de opdrachten wilt gebruiken, installeert u de extensie [db-up](/cli/azure/). Als een fout wordt geretourneerd, moet u controleren of de nieuwste versie van de Azure CLI is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli).
 
 ```azurecli
 az extension add --name db-up
@@ -71,7 +71,7 @@ admin-user | Door het systeem gegenereerd | De gebruikersnaam voor de beheerder.
 admin-password | Door het systeem gegenereerd | Het wachtwoord van het beheerdersaccount.
 
 > [!NOTE]
-> Zie de [Azure CLI-documentatie](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up) voor meer informatie over de opdracht `az postgres up` en de aanvullende parameters.
+> Zie de [Azure CLI-documentatie](/cli/azure/postgres#az_postgres_up) voor meer informatie over de opdracht `az postgres up` en de aanvullende parameters.
 
 Zodra uw server is gemaakt, zijn de volgende instellingen beschikbaar:
 
@@ -87,7 +87,7 @@ Zodra uw server is gemaakt, zijn de volgende instellingen beschikbaar:
 
 Nadat de opdracht `az postgres up` is voltooid, wordt een lijst met verbindingstekenreeksen voor populaire programmeertalen geretourneerd. Deze verbindingstekenreeksen worden vooraf geconfigureerd met de specifieke kenmerken van uw zojuist gemaakte Azure Database for PostgreSQL-server.
 
-U kunt de opdracht [az postgres show-connection-string](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-show-connection-string) gebruiken om deze verbindingstekenreeksen opnieuw te vermelden.
+U kunt de opdracht [az postgres show-connection-string](/cli/azure/postgres#az_postgres_show_connection_string) gebruiken om deze verbindingstekenreeksen opnieuw te vermelden.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -97,7 +97,7 @@ Verwijder alle resources die u hebt gemaakt in de quickstart met behulp van de v
 az postgres down --delete-group
 ```
 
-Als u alleen de zojuist gemaakte server wilt verwijderen, kunt u de opdracht [az postgres down](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-down) uitvoeren.
+Als u alleen de zojuist gemaakte server wilt verwijderen, kunt u de opdracht [az postgres down](/cli/azure/postgres#az_postgres_down) uitvoeren.
 
 ```azurecli
 az postgres down

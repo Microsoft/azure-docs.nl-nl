@@ -1,57 +1,59 @@
 ---
-title: Nalevings gegevens voor beleid ophalen
-description: Azure Policy evaluaties en effecten bepalen de naleving. Meer informatie over hoe u de compatibiliteits Details van uw Azure-resources kunt ophalen.
-ms.date: 03/16/2021
+title: Nalevingsgegevens voor beleid op halen
+description: Azure Policy evaluaties en effecten bepalen de naleving. Meer informatie over hoe u de nalevingsdetails van uw Azure-resources op kunt halen.
+ms.date: 04/19/2021
 ms.topic: how-to
-ms.openlocfilehash: cdd23d685750fb8a5d3803f4b6030e7e67bbddce
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: e1a9a7fcbbcbd7f490b2f665b40c7ed922ec61ee
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104598538"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864591"
 ---
-# <a name="get-compliance-data-of-azure-resources"></a>Compatibiliteits gegevens van Azure-resources ophalen
+# <a name="get-compliance-data-of-azure-resources"></a>Nalevingsgegevens van Azure-resources op halen
 
-Een van de grootste voor delen van Azure Policy is het inzicht en de bedienings elementen biedt meer informatie over resources in een abonnement of [beheer groep](../../management-groups/overview.md) abonnementen. Dit besturings element kan op veel verschillende manieren worden gebruikt, zoals het voor komen van het maken van resources op de verkeerde locatie, het afdwingen van algemeen en consistent gebruik van tags of het controleren van bestaande resources op de juiste configuraties en instellingen. In alle gevallen worden gegevens gegenereerd door Azure Policy zodat u de compatibiliteits status van uw omgeving kunt begrijpen.
+Een van de grootste voordelen van Azure Policy is het inzicht en de besturingselementen die het biedt over resources in een abonnement of [beheergroep](../../management-groups/overview.md) van abonnementen. Dit besturingselement kan op veel verschillende manieren worden uitgevoerd, zoals voorkomen dat resources op de verkeerde locatie worden gemaakt, gemeenschappelijke en consistente taggebruik afdwingen of bestaande resources controleren voor de juiste configuraties en instellingen. In alle gevallen worden gegevens gegenereerd door Azure Policy zodat u inzicht hebt in de nalevingstoestand van uw omgeving.
 
-Er zijn verschillende manieren om toegang te krijgen tot de nalevings gegevens die zijn gegenereerd door de toewijzingen van uw beleid en initiatief:
+Er zijn verschillende manieren om toegang te krijgen tot de nalevingsinformatie die wordt gegenereerd door uw beleid en initiatieftoewijzingen:
 
-- De [Azure Portal](#portal) gebruiken
-- Via script [opdracht regel](#command-line)
+- De [Azure Portal](#portal)
+- Via [opdrachtregelscripts](#command-line)
 
-Voordat u de methoden voor het rapporteren van naleving bekijkt, kijken we naar wanneer de compatibiliteits informatie wordt bijgewerkt en de frequentie en gebeurtenissen die een evaluatie cyclus activeren.
+Voordat we kijken naar de methoden om te rapporteren over naleving, kijken we wanneer compatibiliteitsinformatie wordt bijgewerkt en wat de frequentie en gebeurtenissen zijn die een evaluatiecyclus activeren.
 
 > [!WARNING]
-> Als de nalevings status wordt gerapporteerd als **niet geregistreerd**, controleert u of de resource provider **micro soft. PolicyInsights** is geregistreerd en of de gebruiker beschikt over de juiste machtigingen voor Azure op rollen gebaseerde toegangs beheer (Azure RBAC), zoals beschreven in [azure RBAC-machtigingen in azure Policy](../overview.md#azure-rbac-permissions-in-azure-policy).
+> Als de nalevingsstaat wordt gerapporteerd als Niet **geregistreerd,** controleert u of de **resourceprovider Microsoft.PolicyInsights** is geregistreerd en of de gebruiker over de juiste Azure RBAC-machtigingen (op rollen gebaseerd toegangsbeheer) beschikt, zoals beschreven [in Azure RBAC-machtigingen in Azure Policy](../overview.md#azure-rbac-permissions-in-azure-policy).
 
-## <a name="evaluation-triggers"></a>Evaluatie triggers
+## <a name="evaluation-triggers"></a>Evaluatietriggers
 
-De resultaten van een voltooide evaluatie cyclus zijn beschikbaar in de `Microsoft.PolicyInsights` resource provider via `PolicyStates` en- `PolicyEvents` bewerkingen. Zie [Azure Policy Insights](/rest/api/policy/)voor meer informatie over de bewerkingen van de Azure Policy Insights-rest API.
+De resultaten van een voltooide evaluatiecyclus zijn beschikbaar in de `Microsoft.PolicyInsights` resourceprovider via `PolicyStates` - en `PolicyEvents` -bewerkingen. Zie Inzichten voor meer informatie over de bewerkingen Azure Policy Insights REST API [Azure Policy.](/rest/api/policy/)
 
-De evaluaties van toegewezen beleid en initiatieven worden uitgevoerd als gevolg van verschillende gebeurtenissen:
+Evaluaties van toegewezen beleidsregels en initiatieven vinden plaats als gevolg van verschillende gebeurtenissen:
 
-- Een beleid of initiatief wordt voor het eerst toegewezen aan een bereik. Het duurt ongeveer 30 minuten voordat de toewijzing wordt toegepast op het gedefinieerde bereik. Zodra deze is toegepast, begint de evaluatie cyclus voor bronnen binnen die scope op basis van het zojuist toegewezen beleid of initiatief, en afhankelijk van de effecten die worden gebruikt door het beleid of initiatief, worden bronnen gemarkeerd als compatibel, niet-compatibel of uitgezonderd. Een groot beleid of initiatief dat is geëvalueerd op basis van een groot bereik van resources kan enige tijd duren. Als zodanig is er geen vooraf gedefinieerde verwachting van wanneer de evaluatie cyclus is voltooid. Zodra het proces is voltooid, zijn bijgewerkte resultaten van de naleving beschikbaar in de portal en Sdk's.
+- Een beleid of initiatief wordt voor het eerst toegewezen aan een bereik. Het duurt ongeveer 30 minuten voordat de toewijzing is toegepast op het gedefinieerde bereik. Zodra de evaluatiecyclus is toegepast, begint de evaluatiecyclus voor resources binnen dat bereik op basis van het nieuw toegewezen beleid of initiatief. Afhankelijk van de effecten die door het beleid of initiatief worden gebruikt, worden resources gemarkeerd als compatibel, niet-compatibel of uitgesloten. Een groot beleid of initiatief dat wordt geëvalueerd op basis van een groot aantal resources kan tijd in nemen. Daarom is er geen vooraf gedefinieerde verwachting van wanneer de evaluatiecyclus is voltooid. Zodra dit is voltooid, zijn bijgewerkte nalevingsresultaten beschikbaar in de portal en SDK's.
 
-- Een beleid of initiatief dat al is toegewezen aan een bereik, wordt bijgewerkt. De evaluatie cyclus en de timing voor dit scenario zijn hetzelfde als voor een nieuwe toewijzing aan een bereik.
+- Een beleid of initiatief dat al is toegewezen aan een bereik, wordt bijgewerkt. De evaluatiecyclus en timing voor dit scenario zijn hetzelfde als voor een nieuwe toewijzing aan een bereik.
 
-- Een resource wordt geïmplementeerd of bijgewerkt binnen een bereik met een toewijzing via Azure Resource Manager, REST API of een ondersteunde SDK. In dit scenario wordt de effect gebeurtenis (toevoegen, controleren, weigeren, implementeren) en compatibele status informatie voor de afzonderlijke resource beschikbaar in de portal en de Sdk's ongeveer 15 minuten later. Deze gebeurtenis veroorzaakt geen evaluatie van andere resources.
+- Een resource wordt geïmplementeerd of bijgewerkt binnen een bereik met een toewijzing via Azure Resource Manager, REST API of een ondersteunde SDK. In dit scenario komen de effectgebeurtenis (append, audit, deny, deploy) en compatibele statusinformatie voor de afzonderlijke resource beschikbaar in de portal en SDK's ongeveer 15 minuten later. Deze gebeurtenis veroorzaakt geen evaluatie van andere resources.
 
-- Er wordt een [beleids uitsluiting](../concepts/exemption-structure.md) gemaakt, bijgewerkt of verwijderd. In dit scenario wordt de bijbehorende toewijzing geëvalueerd voor het gedefinieerde uitsluitings bereik.
+- Een abonnement (resourcetype ) wordt gemaakt of verplaatst binnen een hiërarchie van beheergroep met een toegewezen beleidsdefinitie die is gericht `Microsoft.Resource/subscriptions` op het resourcetype van het abonnement. [](../../management-groups/overview.md) De evaluatie van de ondersteunde effecten van het abonnement (audit, auditIfNotExist, deployIfNotExists, modify), logboekregistratie en herstelacties duurt ongeveer 30 minuten.
 
-- Evaluatie cyclus voor standaard compatibiliteit. Eenmaal per 24 uur worden toewijzingen automatisch opnieuw geëvalueerd. Een groot beleid of initiatief van veel resources kan enige tijd in beslag nemen, dus er is geen vooraf gedefinieerde verwachting wanneer de evaluatie cyclus is voltooid. Zodra het proces is voltooid, zijn bijgewerkte resultaten van de naleving beschikbaar in de portal en Sdk's.
+- Er [wordt een](../concepts/exemption-structure.md) beleidsvrijstelling gemaakt, bijgewerkt of verwijderd. In dit scenario wordt de bijbehorende toewijzing geëvalueerd voor het gedefinieerde uitzonderingsbereik.
 
-- De provider van de [gast configuratie](../concepts/guest-configuration.md) resource is bijgewerkt met compatibiliteits Details door een beheerde resource.
+- Standaardevaluatiecyclus voor naleving. Elke 24 uur worden toewijzingen automatisch opnieuw geëvalueerd. Een groot beleid of initiatief van veel resources kan tijd in beslag nemen, dus er is geen vooraf gedefinieerde verwachting van wanneer de evaluatiecyclus is voltooid. Zodra dit is voltooid, zijn bijgewerkte nalevingsresultaten beschikbaar in de portal en SDK's.
+
+- De [resourceprovider voor](../concepts/guest-configuration.md) gastconfiguratie wordt bijgewerkt met nalevingsgegevens door een beheerde resource.
 
 - Scan op aanvraag
 
 ### <a name="on-demand-evaluation-scan"></a>Evaluatiescan op aanvraag
 
-Een evaluatie scan voor een abonnement of een resource groep kan worden gestart met Azure CLI, Azure PowerShell, een aanroep van de REST API of met behulp van de [Azure Policy compatibiliteits scan github actie](https://github.com/marketplace/actions/azure-policy-compliance-scan).
+Een evaluatiescan voor een abonnement of resourcegroep kan worden gestart met Azure CLI, Azure PowerShell, een aanroep van de REST API of met behulp van de [GitHub-actie Azure Policy Compliance Scan.](https://github.com/marketplace/actions/azure-policy-compliance-scan)
 Deze scan is een asynchroon proces.
 
-#### <a name="on-demand-evaluation-scan---github-action"></a>Evaluatie scan op aanvraag-GitHub-actie
+#### <a name="on-demand-evaluation-scan---github-action"></a>Evaluatiescan op aanvraag - GitHub Action
 
-Gebruik de [Azure Policy compatibiliteits scan actie](https://github.com/marketplace/actions/azure-policy-compliance-scan) om een evaluatie scan op aanvraag te activeren vanuit uw [github-werk stroom](https://docs.github.com/actions/configuring-and-managing-workflows/configuring-a-workflow#about-workflows) op een of meer resources, resource groepen of abonnementen, en Gate the workflow op basis van de compatibiliteits status van bronnen. U kunt de werk stroom ook zo configureren dat deze op een gepland tijdstip wordt uitgevoerd, zodat u de meest recente nalevings status op een geschikt tijdstip krijgt. Deze GitHub actie kan optioneel een rapport genereren over de nalevings status van gescande resources voor verdere analyse of voor archivering.
+Gebruik de [Azure Policy Compliance Scan-actie](https://github.com/marketplace/actions/azure-policy-compliance-scan) om een evaluatiescan op aanvraag te activeren vanuit uw [GitHub-werkstroom](https://docs.github.com/actions/configuring-and-managing-workflows/configuring-a-workflow#about-workflows) op een of meer resources, resourcegroepen of abonnementen, en de werkstroom te gateen op basis van de nalevingsstatus van resources. U kunt de werkstroom ook zo configureren dat deze op een gepland tijdstip wordt uitgevoerd, zodat u de meest recente nalevingsstatus op een handig moment krijgt. Optioneel kan met deze GitHub-actie een rapport worden gegenereerd over de nalevingstoestand van gescande resources voor verdere analyse of voor archivering.
 
 In het volgende voorbeeld wordt een nalevingsscan voor een abonnement uitgevoerd. 
 
@@ -76,39 +78,39 @@ jobs:
           /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
-Voor meer informatie en voor beelden van werk stromen raadpleegt u de [github-actie voor Azure Policy nalevings scan opslag plaats](https://github.com/Azure/policy-compliance-scan).
+Zie de GitHub Action for Azure Policy Compliance Scan-opslagplaats voor meer informatie [en voorbeelden van werkstromen.](https://github.com/Azure/policy-compliance-scan)
 
-#### <a name="on-demand-evaluation-scan---azure-cli"></a>Evaluatie scan op aanvraag-Azure CLI
+#### <a name="on-demand-evaluation-scan---azure-cli"></a>Evaluatiescan op aanvraag - Azure CLI
 
-De compatibiliteits scan wordt gestart met de opdracht [AZ policy state trigger-scan](/cli/azure/policy/state#az_policy_state_trigger_scan) .
+De nalevingsscan wordt gestart met [de opdracht az policy state trigger-scan.](/cli/azure/policy/state#az_policy_state_trigger_scan)
 
-`az policy state trigger-scan`Hiermee wordt standaard een evaluatie gestart voor alle resources in het huidige abonnement. Als u een evaluatie voor een specifieke resource groep wilt starten, gebruikt u de para meter voor de **resource groep** . In het volgende voor beeld wordt een nalevings scan gestart in het huidige abonnement voor de resource groep _MyRG_ :
+Standaard wordt `az policy state trigger-scan` een evaluatie gestart voor alle resources in het huidige abonnement. Als u een evaluatie wilt starten voor een specifieke resourcegroep, gebruikt u **de parameter resourcegroep.** In het volgende voorbeeld wordt een nalevingsscan gestart in het huidige abonnement voor de _resourcegroep MyRG:_
 
 ```azurecli-interactive
 az policy state trigger-scan --resource-group "MyRG"
 ```
 
-U kunt ervoor kiezen om niet te wachten tot het asynchrone proces is voltooid voordat u doorgaat met de para meter **no-wait** .
+U kunt ervoor kiezen niet te wachten tot het asynchrone proces is voltooid voordat u doorgaat met de parameter **no-wait.**
 
-#### <a name="on-demand-evaluation-scan---azure-powershell"></a>Evaluatie scan op aanvraag-Azure PowerShell
+#### <a name="on-demand-evaluation-scan---azure-powershell"></a>Evaluatiescan op aanvraag - Azure PowerShell
 
-De compatibiliteits scan wordt gestart met de cmdlet [Start-AzPolicyComplianceScan](/powershell/module/az.policyinsights/start-azpolicycompliancescan) .
+De nalevingsscan wordt gestart met de cmdlet [Start-AzPolicyComplianceScan.](/powershell/module/az.policyinsights/start-azpolicycompliancescan)
 
-`Start-AzPolicyComplianceScan`Hiermee wordt standaard een evaluatie gestart voor alle resources in het huidige abonnement. Als u een evaluatie voor een specifieke resource groep wilt starten, gebruikt u de para meter **ResourceGroupName** . In het volgende voor beeld wordt een nalevings scan gestart in het huidige abonnement voor de resource groep _MyRG_ :
+Start standaard `Start-AzPolicyComplianceScan` een evaluatie voor alle resources in het huidige abonnement. Als u een evaluatie wilt starten voor een specifieke resourcegroep, gebruikt u de parameter **ResourceGroupName.** In het volgende voorbeeld wordt een nalevingsscan gestart in het huidige abonnement voor de _resourcegroep MyRG:_
 
 ```azurepowershell-interactive
 Start-AzPolicyComplianceScan -ResourceGroupName 'MyRG'
 ```
 
-U kunt ervoor zorgen dat Power shell wacht totdat de asynchrone aanroep is voltooid voordat de resultaten uitvoer wordt opgegeven of dat deze op de achtergrond als een [taak](/powershell/module/microsoft.powershell.core/about/about_jobs)wordt uitgevoerd. Als u een Power shell-taak wilt gebruiken om de compatibiliteits scan op de achtergrond uit te voeren, gebruikt u de para meter **AsJob** en stelt u de waarde in op een object, zoals `$job` in dit voor beeld:
+U kunt PowerShell laten wachten tot de asynchrone aanroep is voltooid voordat de resultaten worden uitgevoerd of deze op de achtergrond laten uitvoeren als [taak](/powershell/module/microsoft.powershell.core/about/about_jobs). Als u een PowerShell-taak wilt gebruiken om de nalevingsscan op de achtergrond uit te voeren, gebruikt u de parameter **AsJob** en stelt u de waarde in op een -object, zoals `$job` in dit voorbeeld:
 
 ```azurepowershell-interactive
 $job = Start-AzPolicyComplianceScan -AsJob
 ```
 
-U kunt de status van de taak controleren door op het object te controleren `$job` . De taak is van het type `Microsoft.Azure.Commands.Common.AzureLongRunningJob` . Gebruiken `Get-Member` op het `$job` object om beschik bare eigenschappen en methoden weer te geven.
+U kunt de status van de taak controleren door het object te `$job` controleren. De taak is van het type `Microsoft.Azure.Commands.Common.AzureLongRunningJob` . Gebruik `Get-Member` op het `$job` -object om beschikbare eigenschappen en methoden te zien.
 
-Terwijl de compatibiliteits scan wordt uitgevoerd, controleert het `$job` object resultaten als volgt:
+Terwijl de nalevingsscan wordt uitgevoerd, levert het `$job` controleren van het object resultaten op zoals deze:
 
 ```azurepowershell-interactive
 $job
@@ -118,18 +120,18 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 2      Long Running O… AzureLongRunni… Running       True            localhost            Start-AzPolicyCompliance…
 ```
 
-Wanneer de compatibiliteits scan is voltooid, verandert de **status** eigenschap in _voltooid_.
+Wanneer de nalevingsscan is voltooid, verandert de **eigenschap Status** in _Voltooid._
 
-#### <a name="on-demand-evaluation-scan---rest"></a>Evaluatie scan op aanvraag-REST
+#### <a name="on-demand-evaluation-scan---rest"></a>Evaluatiescan op aanvraag - REST
 
-Als asynchroon proces wordt het REST-eind punt voor het starten van de scan niet gewacht totdat de scan is voltooid. In plaats daarvan biedt het een URI om de status van de aangevraagde evaluatie op te vragen.
+Als een asynchroon proces wacht het REST-eindpunt om de scan te starten niet totdat de scan is voltooid om te reageren. In plaats daarvan biedt het een URI om de status van de aangevraagde evaluatie op te vragen.
 
 In elke REST API-URI zijn er verschillende variabelen die worden gebruikt en die u moet vervangen door uw eigen waarden:
 
-- `{YourRG}` -Vervang door de naam van de resource groep
+- `{YourRG}` - Vervang door de naam van uw resourcegroep
 - Vervang `{subscriptionId}` door uw abonnements-ID
 
-De scan ondersteunt de evaluatie van resources in een abonnement of in een resource groep. Start een scan op bereik met een REST API opdracht **post** met de volgende URI-structuren:
+De scan ondersteunt de evaluatie van resources in een abonnement of in een resourcegroep. Start een scan op bereik met een REST API **POST-opdracht** met behulp van de volgende URI-structuren:
 
 - Abonnement
 
@@ -143,13 +145,13 @@ De scan ondersteunt de evaluatie van resources in een abonnement of in een resou
   POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{YourRG}/providers/Microsoft.PolicyInsights/policyStates/latest/triggerEvaluation?api-version=2019-10-01
   ```
 
-De aanroep retourneert een **geaccepteerde** status van 202. Opgenomen in de antwoord header is een **locatie** -eigenschap met de volgende indeling:
+De aanroep retourneert **de status 202 Geaccepteerd.** Opgenomen in de antwoordheader is een **eigenschap Location** met de volgende indeling:
 
 ```http
 https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/asyncOperationResults/{ResourceContainerGUID}?api-version=2019-10-01
 ```
 
-`{ResourceContainerGUID}` statisch gegenereerd voor het aangevraagde bereik. Als voor een scope al een scan op aanvraag wordt uitgevoerd, wordt er geen nieuwe scan gestart. In plaats daarvan wordt de nieuwe aanvraag dezelfde `{ResourceContainerGUID}` **locatie** -URI gegeven als status. Een REST API **Get** -opdracht naar de **locatie** -URI retourneert een **202 geaccepteerd** tijdens de evaluatie. Wanneer de evaluatie scan is voltooid, wordt de status **200 OK** geretourneerd. De hoofd tekst van een voltooide scan is een JSON-antwoord met de status:
+`{ResourceContainerGUID}` wordt statisch gegenereerd voor het aangevraagde bereik. Als in een bereik al een scan op aanvraag wordt uitgevoerd, wordt er geen nieuwe scan gestart. In plaats daarvan krijgt de nieuwe aanvraag dezelfde `{ResourceContainerGUID}` **locatie-URI** voor de status. Een REST API **GET-opdracht** voor de **locatie-URI** retourneert een **202 Geaccepteerd** terwijl de evaluatie wordt lopende. Wanneer de evaluatiescan is voltooid, wordt de status **200 OK retourneert.** De body van een voltooide scan is een JSON-antwoord met de status:
 
 ```json
 {
@@ -157,14 +159,14 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 }
 ```
 
-#### <a name="on-demand-evaluation-scan---visual-studio-code"></a>Evaluatie scan op aanvraag-Visual Studio code
+#### <a name="on-demand-evaluation-scan---visual-studio-code"></a>Evaluatiescan op aanvraag: Visual Studio Code
 
-Met de extensie Azure Policy voor Visual Studio code kan een evaluatie scan voor een specifieke resource worden uitgevoerd. Deze scan is een synchroon proces, in tegens telling tot de Azure PowerShell-en REST-methoden.
-Zie [evaluatie op aanvraag met de VS code-extensie](./extension-for-vscode.md#on-demand-evaluation-scan)voor meer informatie en stappen.
+Met Azure Policy-extensie voor Visual Studio code kan een evaluatiescan voor een specifieke resource worden uitgevoerd. Deze scan is een synchroon proces, in tegenstelling tot de Azure PowerShell en REST-methoden.
+Zie Evaluatie op aanvraag met de [VS Code-extensie](./extension-for-vscode.md#on-demand-evaluation-scan)voor meer informatie en stappen.
 
 ## <a name="how-compliance-works"></a>Hoe naleving werkt
 
-In een toewijzing is een resource **niet-compatibel** als deze niet voldoet aan het beleid of initiatief regels en niet wordt _uitgesloten_. In de volgende tabel ziet u hoe verschillende beleids effecten werken met de evaluatie van de voor waarde voor de resulterende nalevings status:
+In een toewijzing is een resource **Niet-compatibel** als deze geen beleidsregels of initiatiefregels volgt en niet wordt _uitgesloten._ In de volgende tabel ziet u hoe verschillende beleidseffecten werken met de evaluatie van voorwaarden voor de resulterende nalevingstoestand:
 
 | Resourcestatus | Effect | Beleidsevaluatie | Nalevingsstatus |
 | --- | --- | --- | --- |
@@ -176,80 +178,80 @@ In een toewijzing is een resource **niet-compatibel** als deze niet voldoet aan 
 > [!NOTE]
 > Voor de effecten DeployIfNotExist en AuditIfNotExist moet de IF-instructie TRUE en de bestaansvoorwaarde FALSE zijn om niet-compatibel te zijn. Indien TRUE, activeert de IF-voorwaarde de evaluatie van de bestaansvoorwaarde voor de gerelateerde resources.
 
-Stel dat u een resource groep hebt – ContsoRG, waarbij sommige opslag accounts (rood gemarkeerd) worden weer gegeven in open bare netwerken.
+Stel dat u een resourcegroep hebt: ContsoRG, met een aantal opslagaccounts (rood gemarkeerd) die worden blootgesteld aan openbare netwerken.
 
-:::image type="complex" source="../media/getting-compliance-data/resource-group01.png" alt-text="Diagram van opslag accounts die worden blootgesteld aan open bare netwerken in de resource groep contoso R G." border="false":::
-   Diagram met afbeeldingen voor vijf opslag accounts in de resource groep contoso R G.  Opslag accounts 1 en 3 zijn blauw, terwijl opslag accounts twee, vier en vijf rood zijn.
+:::image type="complex" source="../media/getting-compliance-data/resource-group01.png" alt-text="Diagram van opslagaccounts die zijn blootgesteld aan openbare netwerken in de resourcegroep Contoso R G." border="false":::
+   Diagram met afbeeldingen voor vijf opslagaccounts in de resourcegroep Contoso R G.  Opslagaccounts één en drie zijn blauw, terwijl opslagaccounts twee, vier en vijf rood zijn.
 :::image-end:::
 
-In dit voor beeld moet u zich op het hoede zijn voor beveiligings Risico's. Nu u een beleids toewijzing hebt gemaakt, wordt deze geëvalueerd voor alle opgenomen en niet-uitgesloten opslag accounts in de resource groep ContosoRG. De drie niet-compatibele opslag accounts worden gecontroleerd, waardoor de status ervan wordt gewijzigd in **niet-compatibel.**
+In dit voorbeeld moet u op uw hoede zijn voor beveiligingsrisico's. Nu u een beleidstoewijzing hebt gemaakt, wordt deze geëvalueerd voor alle opgenomen en niet-uitgesloten opslagaccounts in de resourcegroep ContosoRG. De drie niet-compatibele opslagaccounts worden gecontroleerd, waardoor de staten worden veranderd in **Niet-compatibel.**
 
-:::image type="complex" source="../media/getting-compliance-data/resource-group03.png" alt-text="Diagram van naleving van het opslag account in de resource groep contoso R G." border="false":::
-   Diagram met afbeeldingen voor vijf opslag accounts in de resource groep contoso R G. Opslag accounts die zich in één en drie bevinden, hebben nu een groen vinkje, terwijl voor opslag accounts twee, vier en vijf nu rode waarschuwings tekens onder zijn.
+:::image type="complex" source="../media/getting-compliance-data/resource-group03.png" alt-text="Diagram van de naleving van opslagaccounts in de resourcegroep Contoso R G." border="false":::
+   Diagram met afbeeldingen voor vijf opslagaccounts in de resourcegroep Contoso R G. Opslagaccounts één en drie hebben nu groene vinkjes eronder, terwijl opslagaccounts twee, vier en vijf nu rode waarschuwingssignalen eronder hebben.
 :::image-end:::
 
-Naast het **conform** -en **niet-nalevings** beleid en de bronnen gelden vier andere statussen:
+Naast **Compatibel** en **Niet-compatibel** hebben beleidsregels en resources vier andere staten:
 
-- **Uitgezonderd**: de resource bevindt zich binnen het bereik van een toewijzing, maar heeft een [gedefinieerde uitzonde ring](../concepts/exemption-structure.md).
-- **Conflicterende**: er zijn twee of meer beleids definities met conflicterende regels. Bijvoorbeeld, twee definities voegen dezelfde tag toe met verschillende waarden.
-- **Niet gestart**: de evaluatie cyclus is niet gestart voor het beleid of de resource.
-- **Niet geregistreerd**: de Azure Policy resource provider is niet geregistreerd of het account dat is aangemeld, heeft geen machtiging voor het lezen van de compatibiliteits gegevens.
+- **Uitzondering:** de resource valt binnen het bereik van een toewijzing, maar heeft een [gedefinieerde uitzondering](../concepts/exemption-structure.md).
+- **Conflicterend:** er bestaan twee of meer beleidsdefinities met conflicterende regels. Twee definities toevoegen bijvoorbeeld dezelfde tag met verschillende waarden.
+- **Niet gestart:** de evaluatiecyclus is niet gestart voor het beleid of de resource.
+- **Niet geregistreerd:** de Azure Policy resourceprovider niet is geregistreerd of het account dat is aangemeld, heeft geen machtiging om nalevingsgegevens te lezen.
 
-Azure Policy maakt gebruik van de velden **type**, **naam** of **kind** in de definitie om te bepalen of een resource een overeenkomst is. Wanneer de bron overeenkomt, wordt deze beschouwd als toepasselijk en heeft deze de status **compatibel**, **niet-compatibel** of **uitgezonderd**. Als een van beide **typen**, namen **of typen** de enige eigenschap in de definitie is, worden alle opgenomen en niet-vrijgestelde resources beschouwd als toepasselijk en geëvalueerd. 
+Azure Policy gebruikt het **type**, **naam** of **soort** velden in de definitie om te bepalen of een resource een overeenkomst is. Wanneer de resource overeenkomt, wordt deze als van toepassing beschouwd en heeft deze de status **Compatibel,** **Niet-compatibel** of **Vrijgesteld.** Als een **van de typen**, **name** of **kind** de enige eigenschap in de definitie is, worden alle opgenomen en niet-uitgesloten resources als van toepassing beschouwd en worden ze geëvalueerd.
 
-Het nalevings percentage wordt bepaald door het verdelen van de **compatibele** en **vrijgestelde** resources op basis van het _totale aantal resources_. _Het totale aantal resources_ wordt gedefinieerd als de som van de **compatibele**, **niet-compatibele**, **uitgesloten** en **conflicterende** resources. De algemene compatibiliteits aantallen zijn de som van afzonderlijke resources die in **overeenstemming** zijn met of worden **uitgesloten** van de som van alle afzonderlijke resources. In de onderstaande afbeelding zijn er 20 afzonderlijke resources die van toepassing zijn en slechts één **niet-compatibel** is.
-De algemene bron compatibiliteit is 95% (19 van 20).
+Het nalevingspercentage wordt bepaald door **compatibele** en uitgesloten resources **te** delen door het totale _aantal resources._ _Het totale aantal resources_ wordt gedefinieerd als de som van de **compatibele**, **niet-compatibele,** **vrijgestelde** en **conflicterende** resources. De algemene nalevingsnummers zijn de  som van afzonderlijke resources die compatibel of vrijgesteld zijn **gedeeld** door de som van alle afzonderlijke resources. In de onderstaande afbeelding zijn 20 verschillende resources van toepassing en slechts één is **Niet-compatibel.**
+De algehele resource-naleving is 95% (19 van de 20).
 
-:::image type="content" source="../media/getting-compliance-data/simple-compliance.png" alt-text="Scherm opname van Details van beleids naleving van de pagina naleving." border="false":::
+:::image type="content" source="../media/getting-compliance-data/simple-compliance.png" alt-text="Schermopname van nalevingsdetails van het beleid op de pagina Naleving." border="false":::
 
 > [!NOTE]
-> Naleving van regelgeving in Azure Policy is een preview-functie. Nalevings eigenschappen van de SDK en pagina's in de portal zijn anders voor ingeschakelde initiatieven. Zie [naleving van regelgeving](../concepts/regulatory-compliance.md) voor meer informatie
+> Naleving van regelgeving in Azure Policy is een preview-functie. Nalevingseigenschappen van SDK en pagina's in de portal verschillen voor ingeschakelde initiatieven. Zie Naleving van regelgeving voor [meer informatie](../concepts/regulatory-compliance.md)
 
 ## <a name="portal"></a>Portal
 
-De Azure Portal demonstreert een grafische ervaring voor het visualiseren en het leren van de status van naleving in uw omgeving. Op de pagina **beleid** bevat de optie **overzicht** Details over de beschik bare bereiken over de naleving van beide beleids regels en initiatieven. Samen met de compatibiliteits status en het aantal per toewijzing bevat het een diagram met de compatibiliteit van de afgelopen zeven dagen. De pagina **naleving** bevat veel dezelfde informatie (met uitzonde ring van de grafiek), maar biedt extra filters en sorteer opties.
+De Azure Portal laat een grafische ervaring zien van het visualiseren en begrijpen van de status van naleving in uw omgeving. Op de **pagina Beleid** bevat de **optie** Overzicht details over de beschikbare scopes over de naleving van zowel beleidsregels als initiatieven. Samen met de nalevingstoestand en het aantal per toewijzing bevat deze een grafiek met de naleving gedurende de afgelopen zeven dagen. De **pagina** Naleving bevat veel van deze informatie (met uitzondering van de grafiek), maar biedt aanvullende filter- en sorteeropties.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-page.png" alt-text="Scherm afbeelding van de nalevings pagina, filter opties en Details." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-page.png" alt-text="Schermopname van de pagina Naleving, filteropties en details." border="false":::
 
-Omdat een beleid of initiatief kan worden toegewezen aan verschillende bereiken, bevat de tabel het bereik voor elke toewijzing en het type definitie dat is toegewezen. Er worden ook het aantal niet-compatibele resources en niet-compatibele beleids regels voor elke toewijzing gegeven. Het selecteren van een beleid of initiatief in de tabel biedt een diep gaande blik op de naleving van de desbetreffende toewijzing.
+Aangezien een beleid of initiatief kan worden toegewezen aan verschillende scopes, bevat de tabel het bereik voor elke toewijzing en het type definitie dat is toegewezen. Ook wordt het aantal niet-compatibele resources en niet-compatibele beleidsregels voor elke toewijzing opgegeven. Als u een beleid of initiatief selecteert in de tabel, krijgt u meer inzicht in de naleving van die specifieke toewijzing.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-details.png" alt-text="Scherm opname van de pagina nalevings Details, inclusief aantallen en Details van resource-compatibel." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-details.png" alt-text="Schermopname van de pagina Details van naleving, met inbegrip van tellingen en gegevens over resourceconforme naleving." border="false":::
 
-De lijst met resources op het tabblad **resource compatibiliteit** bevat de evaluatie status van bestaande resources voor de huidige toewijzing. Het tabblad wordt standaard ingesteld op **niet-compatibel**, maar kan worden gefilterd.
-Gebeurtenissen (toevoegen, controleren, weigeren, implementeren, wijzigen) die zijn geactiveerd door de aanvraag om een resource te maken, worden weer gegeven op het tabblad **gebeurtenissen** .
+De lijst met resources op het tabblad **Resource-naleving** toont de evaluatiestatus van bestaande resources voor de huidige toewijzing. Het tabblad wordt standaard ingesteld **op Niet-compatibel,** maar kan worden gefilterd.
+Gebeurtenissen (append, audit, deny, deploy, modify) die worden geactiveerd door de aanvraag om een resource te maken, worden weergegeven op het **tabblad** Gebeurtenissen.
 
 > [!NOTE]
-> Voor een AKS-engine beleid is de weer gegeven resource de resource groep.
+> Voor een AKS Engine-beleid is de weergegeven resource de resourcegroep.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-events.png" alt-text="Scherm afbeelding van het tabblad gebeurtenissen op de pagina nalevings Details." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-events.png" alt-text="Schermopname van het tabblad Gebeurtenissen op de pagina Details van naleving." border="false":::
 
-<a name="component-compliance"></a> Voor resources van de [resource provider modus](../concepts/definition-structure.md#resource-provider-modes) selecteert u op het tabblad **resource naleving** de resource, klikt u met de rechter muisknop op de rij en selecteert u **compatibiliteits details weer geven** de details van de onderdeel naleving. Deze pagina bevat ook tabbladen voor een overzicht van de beleids regels die zijn toegewezen aan deze resource, gebeurtenissen, onderdeel gebeurtenissen en wijzigings geschiedenis.
+<a name="component-compliance"></a>Als [u resources in de](../concepts/definition-structure.md#resource-provider-modes) resourceprovidermodus selecteert op het tabblad **Resource-naleving,** de resource selecteert of met de rechtermuisknop op de rij klikt en Nalevingsdetails weergeven selecteert, worden de details van de naleving van het onderdeel geopend.  Deze pagina biedt ook tabbladen om de beleidsregels weer te geven die zijn toegewezen aan deze resource, gebeurtenissen, onderdeelgebeurtenissen en wijzigingsgeschiedenis.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Scherm afbeelding van het tabblad Compatibiliteit van onderdelen en Details van naleving voor een toewijzing van de resource provider modus." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Schermopname van het tabblad Component compliance en nalevingsdetails voor een toewijzing van de resourceprovidermodus." border="false":::
 
-Klik op de pagina Resource naleving met de rechter muisknop op de rij van de gebeurtenis waarvoor u meer informatie wilt verzamelen en selecteer **activiteiten logboeken weer geven**. De pagina activiteiten logboek wordt geopend en wordt vooraf gefilterd op de zoek opdracht met Details voor de toewijzing en de gebeurtenissen. Het activiteiten logboek bevat aanvullende context en informatie over deze gebeurtenissen.
+Klik op de pagina voor resource-naleving met de rechtermuisknop op de rij van de gebeurtenis waar u meer informatie over wilt verzamelen en selecteer **Activiteitenlogboeken tonen.** De pagina activiteitenlogboek wordt geopend en is vooraf gefilterd op de zoekopdracht met details voor de toewijzing en de gebeurtenissen. Het activiteitenlogboek bevat aanvullende context en informatie over deze gebeurtenissen.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-activitylog.png" alt-text="Scherm opname van het activiteiten logboek voor de Azure Policy activiteiten en evaluaties." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-activitylog.png" alt-text="Schermopname van het activiteitenlogboek voor Azure Policy activiteiten en evaluaties." border="false":::
 
-### <a name="understand-non-compliance"></a>Meer informatie over niet-naleving
+### <a name="understand-non-compliance"></a>Niet-naleving begrijpen
 
-Wanneer een resource als **niet-compatibel** wordt beschouwd, zijn er veel mogelijke redenen. Zie [niet-naleving bepalen](./determine-non-compliance.md)om de reden vast te stellen waarom een resource **niet-compatibel** is of om de wijziging te vinden.
+Wanneer wordt vastgesteld dat een resource **niet-compatibel is,** zijn er veel mogelijke redenen. Zie Niet-naleving bepalen om te bepalen waarom een resource niet **compatibel** is of om de verantwoordelijke wijziging [te vinden.](./determine-non-compliance.md)
 
 ## <a name="command-line"></a>Opdrachtregel
 
-Dezelfde informatie die beschikbaar is in de portal kan worden opgehaald met de REST API (inclusief [ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell en Azure cli. Zie de [Azure Policy](/rest/api/policy/) -Naslag informatie voor volledige details over de rest API. De REST API-referentie pagina's hebben een groene ' Try-' knop voor elke bewerking waarmee u deze in de browser kunt uitproberen.
+Dezelfde informatie die beschikbaar is in de portal, kan worden opgehaald met de REST API (inclusief [met ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell en Azure CLI. Zie de naslaginformatie voor REST API informatie over [de](/rest/api/policy/) Azure Policy informatie. De REST API referentiepagina's hebben een groene knop Proberen bij elke bewerking waarmee u deze direct in de browser kunt proberen.
 
-Gebruik ARMClient of een soortgelijk hulp programma voor het afhandelen van verificatie voor Azure voor de REST API-voor beelden.
+Gebruik ARMClient of een vergelijkbaar hulpprogramma voor het afhandelen van verificatie bij Azure voor de REST API voorbeelden.
 
 ### <a name="summarize-results"></a>Resultaten samenvatten
 
-Met de REST API kan samen vatting worden uitgevoerd door container, definitie of toewijzing. Hier volgt een voor beeld van een samen vatting op het abonnements niveau met behulp van Azure Policy Insight- [samen vatting voor het abonnement](/rest/api/policy/policystates/summarizeforsubscription):
+Met de REST API kunnen samenvattingen worden uitgevoerd door container, definitie of toewijzing. Hier volgt een voorbeeld van een samenvatting op abonnementsniveau met behulp van Azure Policy Insights [Summarize for Subscription](/rest/api/policy/policystates/summarizeforsubscription):
 
 ```http
 POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/summarize?api-version=2019-10-01
 ```
 
-De uitvoer geeft een samen vatting van het abonnement. In de voorbeeld uitvoer hieronder vindt u een overzicht van de naleving onder **waarde. results. nonCompliantResources** en **Value. results. nonCompliantPolicies**. Deze aanvraag bevat meer informatie, waaronder elke toewijzing die de niet-compatibele getallen en de definitie-informatie voor elke toewijzing heeft opgeleverd. Elk beleids object in de hiërarchie bevat een **queryResultsUri** die kan worden gebruikt om aanvullende details op dat niveau op te halen.
+De uitvoer geeft een overzicht van het abonnement. In de onderstaande voorbeelduitvoer vindt u de samengevatte naleving onder **value.results.nonCompliantResources** en **value.results.nonCompliantPolicies.** Deze aanvraag bevat meer informatie, waaronder elke toewijzing die de niet-compatibele nummers en de definitie-informatie voor elke toewijzing bevat. Elk beleidsobject in de hiërarchie biedt een **queryResultsUri** die kan worden gebruikt om aanvullende details op dat niveau te krijgen.
 
 ```json
 {
@@ -285,15 +287,15 @@ De uitvoer geeft een samen vatting van het abonnement. In de voorbeeld uitvoer h
 }
 ```
 
-### <a name="query-for-resources"></a>Query voor resources
+### <a name="query-for-resources"></a>Query's uitvoeren op resources
 
-In het bovenstaande voor beeld bevat **Value. policyAssignments. policyDefinitions. results. queryResultsUri** een voor beeld-URI voor alle niet-compatibele resources voor een specifieke beleids definitie. Op de **$filter** waarde is ComplianceState gelijk aan ' niet-compatibel ', PolicyAssignmentId is opgegeven voor de beleids definitie en vervolgens de PolicyDefinitionId zelf. De reden voor het opnemen van de PolicyAssignmentId in het filter is omdat de PolicyDefinitionId kan bestaan in verschillende beleids-of initiatief toewijzingen met verschillende bereiken. Door zowel de PolicyAssignmentId als de PolicyDefinitionId op te geven, kunnen we expliciet worden gebruikt in de resultaten die we zoeken. Voorheen werd voor PolicyStates de laatste **versie** gebruikt, waarbij automatisch een **van** - **en-** tijd venster van de laatste 24 uur wordt ingesteld.
+In het bovenstaande voorbeeld biedt **value.policyAssignments.policyDefinitions.results.queryResultsUri** een voorbeeld-URI voor alle niet-compatibele resources voor een specifieke beleidsdefinitie. Als u naar de **$filter-waarde** kijkt, is ComplianceState gelijk (eq) aan 'NonCompliant', PolicyAssignmentId opgegeven voor de beleidsdefinitie en vervolgens de PolicyDefinitionId zelf. De reden voor het op te nemen van de PolicyAssignmentId in het filter is dat de PolicyDefinitionId kan bestaan in verschillende beleids- of initiatieftoewijzingen met verschillende scopes. Door zowel de PolicyAssignmentId als de PolicyDefinitionId op te geven, kunnen we expliciet zijn in de resultaten die we zoeken. Voorheen hebben we voor PolicyStates **de** meest  recente gebruikt, waarmee automatisch een van **en** naar het tijdvenster van de afgelopen 24 uur wordt gemaakt.
 
 ```http
 https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=ComplianceState eq 'NonCompliant' and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77' and PolicyDefinitionId eq '/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62'
 ```
 
-Het onderstaande voor beeld antwoord is afgekapt tot één niet-conforme resource voor de boog. Het gedetailleerde antwoord heeft verschillende gegevens over de resource, het beleid of het initiatief en de toewijzing. U ziet dat u ook kunt zien welke toewijzings parameters zijn door gegeven aan de beleids definitie.
+Het onderstaande voorbeeld is voor de beknoptheid ingekort tot één niet-compatibele resource. Het gedetailleerde antwoord heeft verschillende soorten gegevens over de resource, het beleid of initiatief en de toewijzing. U ziet dat u ook kunt zien welke toewijzingsparameters zijn doorgegeven aan de beleidsdefinitie.
 
 ```json
 {
@@ -333,7 +335,7 @@ Het onderstaande voor beeld antwoord is afgekapt tot één niet-conforme resourc
 
 ### <a name="view-events"></a>Gebeurtenissen weergeven
 
-Wanneer een resource wordt gemaakt of bijgewerkt, wordt een resultaat van een beleids evaluatie gegenereerd. Resultaten worden _beleids gebeurtenissen_ genoemd. Gebruik de volgende URI om recente beleids gebeurtenissen weer te geven die zijn gekoppeld aan het abonnement.
+Wanneer een resource wordt gemaakt of bijgewerkt, wordt er een beleidsevaluatieresultaat gegenereerd. Resultaten worden _beleidsgebeurtenissen genoemd._ Gebruik de volgende URI om recente beleidsgebeurtenissen weer te geven die zijn gekoppeld aan het abonnement.
 
 ```http
 https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyEvents/default/queryResults?api-version=2019-10-01
@@ -353,19 +355,19 @@ De resultaten zien er ongeveer als volgt uit:
 }
 ```
 
-Zie voor meer informatie over het uitvoeren van query's op beleids gebeurtenissen het artikel over [Azure Policy Events](/rest/api/policy/policyevents) .
+Zie voor meer informatie over het uitvoeren van query's op beleidsgebeurtenissen [Azure Policy naslaginformatie over](/rest/api/policy/policyevents) gebeurtenissen.
 
 ### <a name="azure-cli"></a>Azure CLI
 
-De [Azure cli](/cli/azure/what-is-azure-cli) -opdracht groep voor Azure policy omvat de meeste bewerkingen die beschikbaar zijn in REST of Azure PowerShell. Zie [overzicht van Azure cli-Azure Policy](/cli/azure/policy)voor een volledige lijst met beschik bare opdrachten.
+De [Azure CLI-opdrachtgroep](/cli/azure/what-is-azure-cli) voor Azure Policy de meeste bewerkingen die beschikbaar zijn in REST of Azure PowerShell. Zie Azure CLI - Azure Policy Overview voor een volledige [lijst met beschikbare opdrachten.](/cli/azure/policy)
 
-Voor beeld: ophalen van de status samenvatting voor het bovenste toegewezen beleid met het hoogste aantal niet-compatibele resources.
+Voorbeeld: De statussamenvatting voor het meest toegewezen beleid met het hoogste aantal niet-compatibele resources.
 
 ```azurecli-interactive
 az policy state summarize --top 1
 ```
 
-Het bovenste gedeelte van het antwoord ziet er als volgt uit:
+Het bovenste gedeelte van het antwoord ziet eruit als in dit voorbeeld:
 
 ```json
 {
@@ -406,7 +408,7 @@ Het bovenste gedeelte van het antwoord ziet er als volgt uit:
     ...
 ```
 
-Voor beeld: ophalen van de status record voor de meest recent geëvalueerde resource (standaard ingesteld op tijds tempel in aflopende volg orde).
+Voorbeeld: De statusrecord voor de laatst geëvalueerde resource op te vragen (standaard is dit een tijdstempel in aflopende volgorde).
 
 ```azurecli-interactive
 az policy state list --top 1
@@ -455,7 +457,7 @@ az policy state list --top 1
 ]
 ```
 
-Voor beeld: de Details ophalen voor alle niet-compatibele virtuele netwerk resources.
+Voorbeeld: De details voor alle niet-compatibele virtuele netwerkbronnen op te geven.
 
 ```azurecli-interactive
 az policy state list --filter "ResourceType eq 'Microsoft.Network/virtualNetworks'"
@@ -504,7 +506,7 @@ az policy state list --filter "ResourceType eq 'Microsoft.Network/virtualNetwork
 ]
 ```
 
-Voor beeld: het ophalen van gebeurtenissen die betrekking hebben op niet-compatibele virtuele netwerk bronnen die zijn opgetreden na een specifieke datum.
+Voorbeeld: Gebeurtenissen met betrekking tot niet-compatibele virtuele netwerkresources die zijn opgetreden na een specifieke datum op te vragen.
 
 ```azurecli-interactive
 az policy state list --filter "ResourceType eq 'Microsoft.Network/virtualNetworks'" --from '2020-07-14T00:00:00Z'
@@ -555,7 +557,7 @@ az policy state list --filter "ResourceType eq 'Microsoft.Network/virtualNetwork
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-De module Azure PowerShell voor Azure Policy is beschikbaar op de PowerShell Gallery als [AZ. PolicyInsights](https://www.powershellgallery.com/packages/Az.PolicyInsights). Met PowerShellGet kunt u de module installeren met `Install-Module -Name Az.PolicyInsights` (zorg ervoor dat u de nieuwste [Azure PowerShell](/powershell/azure/install-az-ps) hebt geïnstalleerd):
+De Azure PowerShell-module voor Azure Policy is beschikbaar op de PowerShell Gallery [als Az.PolicyInsights.](https://www.powershellgallery.com/packages/Az.PolicyInsights) Met Behulp van PowerShellGet kunt u de module installeren met behulp van (zorg ervoor dat u de nieuwste versie `Install-Module -Name Az.PolicyInsights` [Azure PowerShell](/powershell/azure/install-az-ps) geïnstalleerd):
 
 ```azurepowershell-interactive
 # Install from PowerShell Gallery via PowerShellGet
@@ -568,7 +570,7 @@ Import-Module Az.PolicyInsights
 Connect-AzAccount
 ```
 
-De module heeft de volgende cmdlets:
+De module bevat de volgende cmdlets:
 
 - `Get-AzPolicyStateSummary`
 - `Get-AzPolicyState`
@@ -578,7 +580,7 @@ De module heeft de volgende cmdlets:
 - `Start-AzPolicyRemediation`
 - `Stop-AzPolicyRemediation`
 
-Voor beeld: ophalen van de status samenvatting voor het bovenste toegewezen beleid met het hoogste aantal niet-compatibele resources.
+Voorbeeld: De statussamenvatting voor het meest toegewezen beleid met het hoogste aantal niet-compatibele resources.
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyStateSummary -Top 1
@@ -589,7 +591,7 @@ PolicyAssignments     : {/subscriptions/{subscriptionId}/resourcegroups/RG-Tags/
                         oft.authorization/policyassignments/37ce239ae4304622914f0c77}
 ```
 
-Voor beeld: ophalen van de status record voor de meest recent geëvalueerde resource (standaard ingesteld op tijds tempel in aflopende volg orde).
+Voorbeeld: de statusrecord voor de laatst geëvalueerde resource op te vragen (standaard is dit op tijdstempel in aflopende volgorde).
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyState -Top 1
@@ -615,7 +617,7 @@ PolicyDefinitionAction     : deny
 PolicyDefinitionCategory   : tbd
 ```
 
-Voor beeld: de Details ophalen voor alle niet-compatibele virtuele netwerk resources.
+Voorbeeld: De details voor alle niet-compatibele virtuele netwerkbronnen op te geven.
 
 ```azurepowershell-interactive
 PS> Get-AzPolicyState -Filter "ResourceType eq '/Microsoft.Network/virtualNetworks'"
@@ -641,14 +643,14 @@ PolicyDefinitionAction     : deny
 PolicyDefinitionCategory   : tbd
 ```
 
-Voor beeld: het ophalen van gebeurtenissen met betrekking tot niet-compatibele virtuele netwerk bronnen die zijn opgetreden na een specifieke datum, het converteren naar een CSV-object en het exporteren naar een bestand.
+Voorbeeld: Gebeurtenissen met betrekking tot niet-compatibele virtuele netwerkresources die zich hebben voorgedaan na een specifieke datum, converteren naar een CSV-object en exporteren naar een bestand.
 
 ```azurepowershell-interactive
 $policyEvents = Get-AzPolicyEvent -Filter "ResourceType eq '/Microsoft.Network/virtualNetworks'" -From '2020-09-19'
 $policyEvents | ConvertTo-Csv | Out-File 'C:\temp\policyEvents.csv'
 ```
 
-De uitvoer van het `$policyEvents` object ziet eruit als in de volgende uitvoer:
+De uitvoer van het `$policyEvents` object ziet eruit als de volgende uitvoer:
 
 ```output
 Timestamp                  : 9/19/2020 5:18:53 AM
@@ -674,7 +676,7 @@ TenantId                   : {tenantId}
 PrincipalOid               : {principalOid}
 ```
 
-Het veld **PrincipalOid** kan worden gebruikt om een specifieke gebruiker te verkrijgen met de cmdlet Azure PowerShell `Get-AzADUser` . Vervang **{principalOid}** door de reactie die u uit het vorige voor beeld hebt ontvangen.
+Het **veld PrincipalOid** kan worden gebruikt om een specifieke gebruiker op te halen met Azure PowerShell cmdlet `Get-AzADUser` . Vervang **{principalOid} door** het antwoord dat u uit het vorige voorbeeld krijgt.
 
 ```azurepowershell-interactive
 PS> (Get-AzADUser -ObjectId {principalOid}).DisplayName
@@ -683,15 +685,15 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Azure Monitor-logboeken
 
-Als u een [log Analytics-werk ruimte](../../../azure-monitor/logs/log-query-overview.md) hebt met `AzureActivity` van de [analyse van activiteitenlogboek oplossing](../../../azure-monitor/essentials/activity-log.md) die aan uw abonnement is gekoppeld, kunt u de resultaten van de niet-naleving van de evaluatie van nieuwe en bijgewerkte resources ook weer geven met behulp van eenvoudige Kusto-query's en de `AzureActivity` tabel. Met details in Azure Monitor-logboeken kunnen waarschuwingen worden geconfigureerd om niet-naleving te controleren.
+Als u een [Log Analytics-werkruimte](../../../azure-monitor/logs/log-query-overview.md) hebt met van de Analyse van activiteitenlogboek-oplossing die is gekoppeld aan uw abonnement, kunt u ook niet-nalevingsresultaten van de evaluatie van nieuwe en bijgewerkte resources bekijken met behulp van eenvoudige `AzureActivity` Kusto-query's en de [](../../../azure-monitor/essentials/activity-log.md) `AzureActivity` tabel. Met details in Azure Monitor logboeken kunnen waarschuwingen worden geconfigureerd om te controleren op niet-naleving.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-loganalytics.png" alt-text="Scherm opname van Azure Monitor logboeken met Azure Policy acties in de tabel AzureActivity." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-loganalytics.png" alt-text="Schermopname van Azure Monitor logboeken met Azure Policy acties in de tabel AzureActivity." border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Bekijk voor beelden op [Azure Policy voor beelden](../samples/index.md).
+- Bekijk voorbeelden op [Azure Policy voorbeelden.](../samples/index.md)
 - Lees over de [structuur van Azure Policy-definities](../concepts/definition-structure.md).
 - Lees [Informatie over de effecten van het beleid](../concepts/effects.md).
-- Meer informatie over het [programmatisch maken van beleids regels](programmatically-create.md).
+- Begrijpen hoe u [programmatisch beleid kunt maken.](programmatically-create.md)
 - Ontdek hoe u [niet-compatibele resources kunt herstellen](remediate-resources.md).
-- Bekijk wat een beheer groep is met [het organiseren van uw resources met Azure-beheer groepen](../../management-groups/overview.md).
+- Bekijk wat een beheergroep is met [Uw resources organiseren met Azure-beheergroepen.](../../management-groups/overview.md)

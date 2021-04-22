@@ -1,18 +1,18 @@
 ---
 title: Azure Policy controles voor naleving van regelgeving voor Azure Machine Learning
 description: Een Azure Policy beschikbare besturingselementen voor naleving van regelgeving voor Azure Machine Learning. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: sample
 author: BlackMist
 ms.author: larryfr
 ms.service: machine-learning
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 0a4b301c34d15eb02f2822828bd2a16bb50c3225
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 0c6b81169c7e6ba8c721171f899668c0a0779718
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107500823"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107877750"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-machine-learning"></a>Azure Policy controles voor naleving van regelgeving voor Azure Machine Learning
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 10ab1c487095fe1587a3c665d8a06e0d5cbab7e0
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: df2f3593f904c5c6c6c9af0ae635a2e152f9eb82
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106275886"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871071"
 ---
 # <a name="quickstart-use-the-azure-storage-sdk-v11-for-net-to-manage-a-queue"></a>Quickstart: De Azure Storage SDK V11 voor .NET gebruiken om een wachtrij te beheren
 
@@ -31,19 +31,19 @@ Download en installeer vervolgens .NET Core 2.0 voor uw besturingssysteem. Als u
 
 ### <a name="windows"></a>Windows
 
-- Installeer [.NET Core voor Windows](https://www.microsoft.com/net/download/windows) of [.NET Framework](https://www.microsoft.com/net/download/windows) (opgenomen in Visual Studio voor Windows)
+- Installeer [.NET Core SDK voor Windows of](https://dotnet.microsoft.com/download) de [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework) (opgenomen in Visual Studio voor Windows)
 - Installeer [Visual Studio voor Windows](https://www.visualstudio.com/). Als u van .NET Core gebruikmaakt, is het installeren van Visual Studio optioneel.
 
 Zie [Choose between .NET Core and .NET Framework for server apps](/dotnet/standard/choosing-core-framework-server) (Kiezen tussen .NET Core en .NET Framework voor server-apps) voor informatie over de keuze tussen .NET Core en .NET Framework.
 
 ### <a name="linux"></a>Linux
 
-- Installeer [.NET Core voor Linux](https://www.microsoft.com/net/download/linux)
+- Apps [.NET Core SDK Linux installeren](/dotnet/core/install/linux)
 - Installeer desgewenst [Visual Studio Code](https://www.visualstudio.com/) en de [C#-extensie](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
 ### <a name="macos"></a>macOS
 
-- Installeer [.NET Core voor macOS](https://www.microsoft.com/net/download/macos).
+- Installeer [.NET Core SDK voor macOS.](https://dotnet.microsoft.com/download)
 - Installeer desgewenst [Visual Studio voor Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
 
 ## <a name="download-the-sample-application"></a>De voorbeeldtoepassing downloaden
@@ -283,4 +283,4 @@ In deze quickstart hebt u geleerd u hoe u berichten aan een wachtrij kunt toevoe
 > [!div class="nextstepaction"]
 > [Communiceren tussen toepassingen met Azure Queue Storage](/learn/modules/communicate-between-apps-with-azure-queue-storage/index)
 
-- Zie voor meer informatie over .NET Core [Aan de slag met .NET in 10 minuten](https://www.microsoft.com/net/learn/get-started/).
+- Zie voor meer informatie over .NET Core [Aan de slag met .NET in 10 minuten](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).

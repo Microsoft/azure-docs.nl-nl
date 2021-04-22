@@ -1,6 +1,6 @@
 ---
 title: Gebruik & CLI Azure Machine Learning installeren
-description: Meer informatie over het gebruik van de Azure CLI-extensie voor ML voor het maken van & beheren van resources zoals uw werkruimte, gegevensstores, gegevenssets, pijplijnen, modellen en implementaties.
+description: Leer hoe u de Azure CLI-extensie voor ML kunt gebruiken om & resources te maken, zoals uw werkruimte, gegevensstores, gegevenssets, pijplijnen, modellen en implementaties.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 04/02/2021
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 8e912e141ab769f3121fcccdecb9c3952920572f
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: f30cd528a329708a7478b1a4a343f7be3b9eac04
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107516209"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107877782"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Installeer & CLI-extensie voor Azure Machine Learning
 
@@ -23,9 +23,9 @@ De Azure Machine Learning CLI is een uitbreiding op [de Azure CLI,](/cli/azure/)
 
 + Experimenten uitvoeren om machine learning maken
 
-+ Modellen machine learning voor klantgebruik registreren
++ De machine learning registreren voor klantgebruik
 
-+ De levenscyclus van uw machine learning verpakken, implementeren machine learning bijhouden
++ De levenscyclus van uw machine learning verpakken, implementeren machine learning volgen
 
 De CLI is geen vervanging voor de Azure Machine Learning SDK. Het is een aanvullend hulpprogramma dat is geoptimaliseerd voor het afhandelen van zeer geparameteriseerde taken die geschikt zijn voor automatisering.
 
@@ -39,7 +39,7 @@ De CLI is geen vervanging voor de Azure Machine Learning SDK. Het is een aanvull
 
 ## <a name="full-reference-docs"></a>Volledige referentie docs
 
-Zoek de [volledige referentie docs voor de azure-cli-ml-extensie van Azure CLI.](/cli/azure/ml/)
+Zoek de [volledige referentie docs voor de azure-cli-ml-extensie van Azure CLI](/cli/azure/ml/).
 
 ## <a name="connect-the-cli-to-your-azure-subscription"></a>De CLI verbinden met uw Azure-abonnement
 
@@ -64,7 +64,7 @@ De extensie wordt automatisch geïnstalleerd wanneer u voor het eerst een opdrac
 
 ## <a name="update-the-extension"></a>De extensie bijwerken
 
-Gebruik de volgende opdracht om Machine Learning CLI-extensie bij te werken:
+Gebruik de volgende Machine Learning cli-extensie bij te werken:
 
 ```azurecli-interactive
 az extension update -n azure-cli-ml
@@ -94,9 +94,9 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
     az ml workspace create -w myworkspace -g myresourcegroup
     ```
 
-    Zie az [ml workspace create voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-create)
+    Zie az [ml workspace create voor meer informatie.](/cli/azure/ml/workspace#az_ml_workspace_create)
 
-+ Koppel een werkruimteconfiguratie aan een map om contextuele kennis van cli mogelijk te maken.
++ Koppel een werkruimteconfiguratie aan een map om contextuele kennis van CLI mogelijk te maken.
 
     ```azurecli-interactive
     az ml folder attach -w myworkspace -g myresourcegroup
@@ -104,7 +104,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
 
     Met deze opdracht maakt u `.azureml` een subdirectory met voorbeeld runconfig- en conda-omgevingsbestanden. Het bevat ook een `config.json` bestand dat wordt gebruikt om te communiceren met uw Azure Machine Learning werkruimte.
 
-    Zie az ml folder attach voor [meer informatie.](/cli/azure/ext/azure-cli-ml/ml/folder#ext-azure-cli-ml-az-ml-folder-attach)
+    Zie az [ml folder attach voor meer informatie.](/cli/azure/ml/folder#az_ml_folder_attach)
 
 + Koppel een Azure Blob-container als een gegevensopslag.
 
@@ -112,7 +112,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
     az ml datastore attach-blob  -n datastorename -a accountname -c containername
     ```
 
-    Zie az [ml datastore attach-blob voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/datastore#ext-azure-cli-ml-az-ml-datastore-attach-blob)
+    Zie az [ml datastore attach-blob voor meer informatie.](/cli/azure/ml/datastore#az_ml_datastore_attach-blob)
 
 + Bestanden uploaden naar een gegevensstore.
 
@@ -120,7 +120,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
     az ml datastore upload  -n datastorename -p sourcepath
     ```
 
-    Zie az [ml datastore upload voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/datastore#ext-azure-cli-ml-az-ml-datastore-upload)
+    Zie az [ml datastore upload voor meer informatie.](/cli/azure/ml/datastore#az_ml_datastore_upload)
 
 + Koppel een AKS-cluster als een rekendoel.
 
@@ -128,7 +128,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
     az ml computetarget attach aks -n myaks -i myaksresourceid -g myresourcegroup -w myworkspace
     ```
 
-    Zie az [ml computetarget attach aks](/cli/azure/ext/azure-cli-ml/ml/computetarget/attach#ext-azure-cli-ml-az-ml-computetarget-attach-aks) voor meer informatie
+    Zie az [ml computetarget attach aks](/cli/azure/ml/computetarget/attach#az_ml_computetarget_attach-aks) voor meer informatie
 
 ### <a name="compute-clusters"></a>Rekenclusters
 
@@ -140,7 +140,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
 
 
 
-+ Een nieuw beheerd rekencluster met beheerde identiteit maken
++ Een nieuw beheerd rekencluster maken met een beheerde identiteit
 
   + Door de gebruiker toegewezen beheerde identiteit
 
@@ -165,46 +165,46 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt voor het beheren van res
         az ml computetarget amlcompute identity assign --name cpu-cluster '[system]'
         ```
 
-Zie az [ml computetarget create amlcompute voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)
+Zie az [ml computetarget create amlcompute voor meer informatie.](/cli/azure/ml/computetarget/create#az_ml_computetarget_create_amlcompute)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-note.md)]
 
 <a id="computeinstance"></a>
 
 ### <a name="compute-instance"></a>Rekenproces
-Reken-exemplaren beheren.  In alle onderstaande voorbeelden is de naam van het reken-exemplaar **CPU**
+Reken-exemplaren beheren.  In alle onderstaande voorbeelden is de naam van het reken-exemplaar **cpu**
 
-+ Maak een nieuw rekeninstance.
++ Maak een nieuwe berekeningsinstance.
 
     ```azurecli-interactive
     az ml computetarget create computeinstance -n cpu -s "STANDARD_D3_V2" -v
     ```
 
-    Zie az [ml computetarget create computeinstance voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-computeinstance)
+    Zie az [ml computetarget create computeinstance voor meer informatie.](/cli/azure/ml/computetarget/create#az_ml_computetarget_create_computeinstance)
 
-+ Een compute-instance stoppen.
++ Een rekeninstantie stoppen.
 
     ```azurecli-interactive
     az ml computetarget computeinstance stop -n cpu -v
     ```
 
-    Zie az [ml computetarget computeinstance stop voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop)
+    Zie az [ml computetarget computeinstance stop voor meer informatie.](/cli/azure/ml/computetarget/computeinstance#az_ml_computetarget_computeinstance_stop)
 
-+ Start een compute-instance.
++ Start een berekeningsinstance.
 
     ```azurecli-interactive
     az ml computetarget computeinstance start -n cpu -v
     ```
 
-    Zie az [ml computetarget computeinstance start voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start)
+    Zie az [ml computetarget computeinstance start voor meer informatie.](/cli/azure/ml/computetarget/computeinstance#az_ml_computetarget_computeinstance_start)
 
-+ Start een rekeninstantie opnieuw.
++ Start een rekeninstance opnieuw op.
 
     ```azurecli-interactive
     az ml computetarget computeinstance restart -n cpu -v
     ```
 
-    Zie az [ml computetarget computeinstance restart voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart)
+    Zie az [ml computetarget computeinstance restart voor meer informatie.](/cli/azure/ml/computetarget/computeinstance#az_ml_computetarget_computeinstance_restart)
 
 + Een rekeninstantie verwijderen.
 
@@ -212,7 +212,7 @@ Reken-exemplaren beheren.  In alle onderstaande voorbeelden is de naam van het r
     az ml computetarget delete -n cpu -v
     ```
 
-    Zie az [ml computetarget delete computeinstance voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget#ext-azure-cli-ml-az-ml-computetarget-delete)
+    Zie az [ml computetarget delete computeinstance voor meer informatie.](/cli/azure/ml/computetarget#az_ml_computetarget_delete)
 
 
 ## <a name="run-experiments"></a><a id="experiments"></a>Experimenten uitvoeren
@@ -224,13 +224,13 @@ Reken-exemplaren beheren.  In alle onderstaande voorbeelden is de naam van het r
     ```
 
     > [!TIP]
-    > Met `az ml folder attach` de opdracht maakt u een `.azureml` subdirectory, die twee voorbeeld-runconfig-bestanden bevat. 
+    > Met `az ml folder attach` de opdracht maakt u een `.azureml` subdirectory, die twee voorbeeldrunconfig-bestanden bevat. 
     >
-    > Als u een Python-script hebt dat een run configuration-object programmatisch maakt, kunt u [RunConfig.save()](/python/api/azureml-core/azureml.core.runconfiguration#save-path-none--name-none--separate-environment-yaml-false-) gebruiken om het op te slaan als een runconfig-bestand.
+    > Als u een Python-script hebt dat programmatisch een run configuration-object maakt, kunt u [RunConfig.save()](/python/api/azureml-core/azureml.core.runconfiguration#save-path-none--name-none--separate-environment-yaml-false-) gebruiken om het op te slaan als een runconfig-bestand.
     >
     > Het volledige runconfig-schema vindt u in dit [JSON-bestand](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json). Het schema documenteert zichzelf via de `description` sleutel van elk object. Daarnaast zijn er enums voor mogelijke waarden en een sjabloonfragment aan het einde.
 
-    Zie az [ml run submit-script voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-submit-script)
+    Zie az [ml run submit-script voor meer informatie.](/cli/azure/ml/run#az_ml_run_submit_script)
 
 * Bekijk een lijst met experimenten:
 
@@ -238,11 +238,11 @@ Reken-exemplaren beheren.  In alle onderstaande voorbeelden is de naam van het r
     az ml experiment list
     ```
 
-    Zie az [ml experiment list voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/experiment#ext-azure-cli-ml-az-ml-experiment-list)
+    Zie az [ml experiment list voor meer informatie.](/cli/azure/ml/experiment#az_ml_experiment_list)
 
 ### <a name="hyperdrive-run"></a>HyperDrive uitvoeren
 
-U kunt HyperDrive met Azure CLI gebruiken om uitvoeringen voor het afstemmen van parameters uit te voeren. Maak eerst een HyperDrive-configuratiebestand in de volgende indeling. Zie [Hyperparameters afstemmen voor uw modelartikel](how-to-tune-hyperparameters.md) voor meer informatie over de afstemmingsparameterparameters voor hyperparameters.
+U kunt HyperDrive met Azure CLI gebruiken om uitvoeringen voor het afstemmen van parameters uit te voeren. Maak eerst een HyperDrive-configuratiebestand in de volgende indeling. Zie [hyperparameters afstemmen voor uw modelartikel](how-to-tune-hyperparameters.md) voor meer informatie over de afstemmingsparameterparameters van hyperparameters.
 
 ```yml
 # hdconfig.yml
@@ -268,7 +268,7 @@ Voeg dit bestand toe naast de run-configuratiebestanden. Verzend vervolgens een 
 az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configuration-name <hdconfig> my_train.py
 ```
 
-Let op *de sectie argumenten* in runconfig en *parameterruimte* in HyperDrive-configuratie. Ze bevatten de opdrachtregelargumenten die moeten worden doorgegeven aan het trainingsscript. De waarde in runconfig blijft hetzelfde voor elke iteratie, terwijl het bereik in HyperDrive-configuratie wordt iterated. Geef niet hetzelfde argument op in beide bestanden.
+Let op *de sectie argumenten* in runconfig en *parameterruimte* in HyperDrive-configuratie. Ze bevatten de opdrachtregelargumenten die moeten worden doorgegeven aan het trainingsscript. De waarde in runconfig blijft voor elke iteratie hetzelfde, terwijl het bereik in de HyperDrive-configuratie wordt iterated. Geef niet hetzelfde argument op in beide bestanden.
 
 ## <a name="dataset-management"></a>Gegevenssetbeheer
 
@@ -282,7 +282,7 @@ De volgende opdrachten laten zien hoe u met gegevenssets in uw Azure Machine Lea
 
     Gebruik voor informatie over de indeling van het JSON-bestand dat wordt gebruikt om de gegevensset te `az ml dataset register --show-template` definiëren.
 
-    Zie az [ml dataset register voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-register)
+    Zie az [ml dataset register voor meer informatie.](/cli/azure/ml/dataset#az_ml_dataset_register)
 
 + Een lijst met alle gegevenssets in een werkruimte maken:
 
@@ -290,7 +290,7 @@ De volgende opdrachten laten zien hoe u met gegevenssets in uw Azure Machine Lea
     az ml dataset list
     ```
 
-    Zie az [ml dataset list voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-list)
+    Zie az [ml dataset list voor meer informatie.](/cli/azure/ml/dataset#az_ml_dataset_list)
 
 + Details van een gegevensset op te halen:
 
@@ -298,7 +298,7 @@ De volgende opdrachten laten zien hoe u met gegevenssets in uw Azure Machine Lea
     az ml dataset show -n dataset-name
     ```
 
-    Zie az [ml dataset show voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-show)
+    Zie az [ml dataset show voor meer informatie.](/cli/azure/ml/dataset#az_ml_dataset_show)
 
 + Registratie van een gegevensset ongedaan maken:
 
@@ -306,11 +306,11 @@ De volgende opdrachten laten zien hoe u met gegevenssets in uw Azure Machine Lea
     az ml dataset unregister -n dataset-name
     ```
 
-    Zie az [ml dataset unregister](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-archive)voor meer informatie.
+    Zie az [ml dataset unregister](/cli/azure/ml/dataset#az_ml_dataset_archive)voor meer informatie.
 
 ## <a name="environment-management"></a>Omgevingsbeheer
 
-Met de volgende opdrachten wordt gedemonstreerd hoe u omgevingen voor Azure Machine Learning [werkruimte](how-to-configure-environment.md) maakt, registreert en vermeldt:
+De volgende opdrachten laten zien hoe u een lijst met omgevingen voor Azure Machine Learning werkruimte [maakt,](how-to-configure-environment.md) registreert en vermeldt:
 
 + Maak scaffolding-bestanden voor een omgeving:
 
@@ -318,7 +318,7 @@ Met de volgende opdrachten wordt gedemonstreerd hoe u omgevingen voor Azure Mach
     az ml environment scaffold -n myenv -d myenvdirectory
     ```
 
-    Zie az [ml environment scaffold voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-scaffold)
+    Zie az [ml environment scaffold voor meer informatie.](/cli/azure/ml/environment#az_ml_environment_scaffold)
 
 + Een omgeving registreren:
 
@@ -326,7 +326,7 @@ Met de volgende opdrachten wordt gedemonstreerd hoe u omgevingen voor Azure Mach
     az ml environment register -d myenvdirectory
     ```
 
-    Zie az [ml environment register voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-register)
+    Zie az [ml environment register voor meer informatie.](/cli/azure/ml/environment#az_ml_environment_register)
 
 + Lijst met geregistreerde omgevingen:
 
@@ -334,7 +334,7 @@ Met de volgende opdrachten wordt gedemonstreerd hoe u omgevingen voor Azure Mach
     az ml environment list
     ```
 
-    Zie az [ml environment list voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-list)
+    Zie az [ml environment list voor meer informatie.](/cli/azure/ml/environment#az_ml_environment_list)
 
 + Een geregistreerde omgeving downloaden:
 
@@ -342,11 +342,11 @@ Met de volgende opdrachten wordt gedemonstreerd hoe u omgevingen voor Azure Mach
     az ml environment download -n myenv -d downloaddirectory
     ```
 
-    Zie az [ml environment download voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-download)
+    Zie az [ml environment download voor meer informatie.](/cli/azure/ml/environment#az_ml_environment_download)
 
 ### <a name="environment-configuration-schema"></a>Omgevingsconfiguratieschema
 
-Als u de opdracht hebt gebruikt, wordt er een sjabloonbestand gegenereerd dat kan worden gewijzigd en gebruikt om aangepaste `az ml environment scaffold` `azureml_environment.json` omgevingsconfiguraties te maken met de CLI. Het object op het hoogste niveau wordt losjes aan de [`Environment`](/python/api/azureml-core/azureml.core.environment%28class%29) klasse in de Python-SDK toegelaten. 
+Als u de opdracht hebt gebruikt, wordt er een sjabloonbestand gegenereerd dat kan worden gewijzigd en gebruikt om aangepaste `az ml environment scaffold` `azureml_environment.json` omgevingsconfiguraties te maken met de CLI. Het object op het hoogste niveau wordt losjes aan [`Environment`](/python/api/azureml-core/azureml.core.environment%28class%29) de klasse in de Python-SDK toegelaten. 
 
 ```json
 {
@@ -390,14 +390,14 @@ Als u de opdracht hebt gebruikt, wordt er een sjabloonbestand gegenereerd dat ka
 }
 ```
 
-In de volgende tabel worden elk veld op het hoogste niveau in het JSON-bestand, het type en een beschrijving beschreven. Als een objecttype is gekoppeld aan een klasse uit de Python SDK, is er een losse 1:1-overeenkomst tussen elk JSON-veld en de naam van de openbare variabele in de Python-klasse. In sommige gevallen kan het veld worden toe te staan aan een constructorargument in plaats van een klassevariabele. Het veld wordt bijvoorbeeld `environmentVariables` aan de variabele in de klasse toe te `environment_variables` [`Environment`](/python/api/azureml-core/azureml.core.environment%28class%29) staan.
+De volgende tabel bevat elk veld op het hoogste niveau in het JSON-bestand, het type en een beschrijving. Als een objecttype is gekoppeld aan een klasse van de Python SDK, is er een losse 1:1-overeenkomst tussen elk JSON-veld en de naam van de openbare variabele in de Python-klasse. In sommige gevallen kan het veld worden toe te staan aan een constructorargument in plaats van een klassevariabele. Het veld wordt bijvoorbeeld `environmentVariables` aan de variabele in de klasse toe te `environment_variables` [`Environment`](/python/api/azureml-core/azureml.core.environment%28class%29) staan.
 
 | JSON-veld | Type | Description |
 |---|---|---|
 | `name` | `string` | Naam van de omgeving. Begin de naam niet met **Microsoft** of **AzureML.** |
 | `version` | `string` | Versie van de omgeving. |
 | `environmentVariables` | `{string: string}` | Een hash-kaart van namen en waarden van omgevingsvariabelen. |
-| `python` | [`PythonSection`](/python/api/azureml-core/azureml.core.environment.pythonsection)hat definieert de Python-omgeving en -interpreter voor gebruik op de doelrekenresource. |
+| `python` | [`PythonSection`](/python/api/azureml-core/azureml.core.environment.pythonsection)hat definieert de Python-omgeving en interpreter voor gebruik op de doelrekenresource. |
 | `docker` | [`DockerSection`](/python/api/azureml-core/azureml.core.environment.dockersection) | Hiermee definieert u instellingen voor het aanpassen van de Docker-afbeelding die is gebouwd op de specificaties van de omgeving. |
 | `spark` | [`SparkSection`](/python/api/azureml-core/azureml.core.environment.sparksection) | In de sectie worden Spark-instellingen geconfigureerd. Het wordt alleen gebruikt wanneer framework is ingesteld op PySpark. |
 | `databricks` | [`DatabricksSection`](/python/api/azureml-core/azureml.core.databricks.databrickssection) | Hiermee configureert u Databricks-bibliotheekafhankelijkheden. |
@@ -413,9 +413,9 @@ De volgende opdrachten laten zien hoe u werkt met machine learning pijplijnen:
     az ml pipeline create -n mypipeline -y mypipeline.yml
     ```
 
-    Zie az [ml pipeline create voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/pipeline#ext-azure-cli-ml-az-ml-pipeline-create)
+    Zie az [ml pipeline create voor meer informatie.](/cli/azure/ml/pipeline#az_ml_pipeline_create)
 
-    Zie Define [machine learning pipelines in YAML (Pijplijnen definiëren in YAML) voor meer informatie over het YAML-pijplijnbestand.](reference-pipeline-yaml.md)
+    Zie Define machine learning pipelines in YAML voor meer informatie over het [YAML-bestand van de pijplijn.](reference-pipeline-yaml.md)
 
 + Een pijplijn uitvoeren:
 
@@ -423,9 +423,9 @@ De volgende opdrachten laten zien hoe u werkt met machine learning pijplijnen:
     az ml run submit-pipeline -n myexperiment -y mypipeline.yml
     ```
 
-    Zie az [ml run submit-pipeline voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-submit-pipeline)
+    Zie az [ml run submit-pipeline voor meer informatie.](/cli/azure/ml/run#az_ml_run_submit_pipeline)
 
-    Zie Define [machine learning pipelines in YAML (Pijplijnen definiëren in YAML) voor machine learning informatie over het YAML-pijplijnbestand.](reference-pipeline-yaml.md)
+    Zie Define [machine learning pipelines in YAML (Pijplijnen definiëren in YAML) voor meer informatie over het YAML-pijplijnbestand.](reference-pipeline-yaml.md)
 
 + Een pijplijn plannen:
 
@@ -433,9 +433,9 @@ De volgende opdrachten laten zien hoe u werkt met machine learning pijplijnen:
     az ml pipeline create-schedule -n myschedule -e myexpereiment -i mypipelineid -y myschedule.yml
     ```
 
-    Zie az [ml pipeline create-schedule voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/pipeline#ext-azure-cli-ml-az-ml-pipeline-create-schedule)
+    Zie az [ml pipeline create-schedule voor meer informatie.](/cli/azure/ml/pipeline#az_ml_pipeline_create-schedule)
 
-    Zie Define [machine learning pipelines in YAML (Pijplijnen definiëren in YAML) voor machine learning informatie over het YAML-bestand voor pijplijnen.](reference-pipeline-yaml.md#schedules)
+    Zie Define machine learning pipelines in YAML (Pijplijnen definiëren in YAML) machine learning informatie over het [YAML-bestand voor pijplijnen.](reference-pipeline-yaml.md#schedules)
 
 ## <a name="model-registration-profiling-deployment"></a>Modelregistratie, profilering, implementatie
 
@@ -447,25 +447,25 @@ De volgende opdrachten laten zien hoe u een getraind model registreert en vervol
     az ml model register -n mymodel -p sklearn_regression_model.pkl
     ```
 
-    Zie az [ml model register voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-register)
+    Zie az [ml model register voor meer informatie.](/cli/azure/ml/model#az_ml_model_register)
 
 + **OPTIONEEL** Profileer uw model voor optimale CPU- en geheugenwaarden voor implementatie.
     ```azurecli-interactive
     az ml model profile -n myprofile -m mymodel:1 --ic inferenceconfig.json -d "{\"data\": [[1,2,3,4,5,6,7,8,9,10],[10,9,8,7,6,5,4,3,2,1]]}" -t myprofileresult.json
     ```
 
-    Zie az [ml model profile voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-profile)
+    Zie az [ml model profile voor meer informatie.](/cli/azure/ml/model#az_ml_model_profile)
 
 + Uw model implementeren in AKS
     ```azurecli-interactive
     az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json --ct akscomputetarget
     ```
     
-    Zie Configuratieschema voor de deference voor meer informatie over het schema van [het deferentieconfiguratiebestand.](#inferenceconfig)
+    Zie Configuratieschema voor de deferentie voor meer informatie over het schema [van het deferentieconfiguratiebestand.](#inferenceconfig)
     
-    Zie Implementatieconfiguratieschema voor meer informatie over het [implementatieconfiguratiebestandschema.](#deploymentconfig)
+    Zie Implementatieconfiguratieschema voor meer informatie over het schema van het [implementatieconfiguratiebestand.](#deploymentconfig)
 
-    Zie az [ml model deploy voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy)
+    Zie az [ml model deploy voor meer informatie.](/cli/azure/ml/model#az_ml_model_deploy)
 
 <a id="inferenceconfig"></a>
 
@@ -491,6 +491,6 @@ De volgende opdrachten laten zien hoe u een getraind model registreert en vervol
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Opdrachtverwijzing voor de cli Machine Learning extensie](/cli/azure/ext/azure-cli-ml/ml).
+* [Opdrachtverwijzing voor de cli Machine Learning extensie](/cli/azure/ml).
 
-* [Modellen trainen en machine learning met behulp van Azure Pipelines](/azure/devops/pipelines/targets/azure-machine-learning)
+* [Modellen trainen en machine learning implementeren met behulp van Azure Pipelines](/azure/devops/pipelines/targets/azure-machine-learning)

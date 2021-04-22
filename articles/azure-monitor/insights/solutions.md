@@ -1,17 +1,17 @@
 ---
 title: Bewakingsoplossingen in Azure Monitor | Microsoft Docs
-description: Bewakingsoplossingen in Azure Monitor zijn een verzameling regels voor logica, visualisatie en gegevensverzameling die metrische gegevens bieden die zijn rond een bepaald probleemgebied.  Dit artikel bevat informatie over het installeren en gebruiken van bewakingsoplossingen.
+description: Bewakingsoplossingen in Azure Monitor zijn een verzameling regels voor logica, visualisatie en gegevensverzameling die metrische gegevens bieden die zijn geslingereerd rond een bepaald probleemgebied.  Dit artikel bevat informatie over het installeren en gebruiken van bewakingsoplossingen.
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 8a18a47331eb5d4a9ed5578cca320beef5e0ba45
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 6a98571f513e25d801acd4f4a9c2901dcd56fabc
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107766983"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869217"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Bewakingsoplossingen in Azure Monitor
 
@@ -48,7 +48,7 @@ Klik op de naam van een oplossing om de overzichtspagina te openen. Op deze pagi
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Gebruik de [opdracht az monitor log-analytics solution list](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-list) om de bewakingsoplossingen weer te geven die in uw abonnement zijn geïnstalleerd.   Voordat u de `list` opdracht gaat uitvoeren, volgt u de vereisten in [Een bewakingsoplossing installeren.](#install-a-monitoring-solution)
+Gebruik de [opdracht az monitor log-analytics solution list](/cli/azure/monitor/log-analytics/solution#az_monitor_log_analytics_solution_list) om de bewakingsoplossingen weer te geven die in uw abonnement zijn geïnstalleerd.   Voordat u de `list` opdracht gaat uitvoeren, volgt u de vereisten in [Een bewakingsoplossing installeren.](#install-a-monitoring-solution)
 
 ```azurecli
 # List all log-analytics solutions in the current subscription.
@@ -114,7 +114,7 @@ Leden van de community kunnen beheeroplossingen indienen bij Azure-quickstartsja
 
    - Open Cloud Shell door naar te gaan [https://shell.azure.com](https://shell.azure.com)
 
-   - Selecteer de **Cloud Shell** in de menubalk in de rechterbovenhoek van de [Azure Portal](https://portal.azure.com)
+   - Selecteer de **Cloud Shell** in de menubalk rechtsboven in de [Azure Portal](https://portal.azure.com)
 
 1. Meld u aan.
 
@@ -142,7 +142,7 @@ Leden van de community kunnen beheeroplossingen indienen bij Azure-quickstartsja
 
 Wanneer u een oplossing installeert, moet u een [Log Analytics-werkruimte](../logs/manage-access.md) selecteren waarin de oplossing wordt geïnstalleerd en waar de gegevens worden verzameld.  Met de Azure CLI beheert u werkruimten met behulp van de [opdrachten az monitor log-analytics workspace](/cli/azure/monitor/log-analytics/workspace) reference.  Volg het proces dat wordt beschreven in [Log Analytics-werkruimte en Automation-account](#log-analytics-workspace-and-automation-account) om een werkruimte en account te koppelen.
 
-Gebruik de [oplossing az monitor log-analytics create om](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution) een bewakingsoplossing te installeren.  Parameters tussen vierkante haken zijn optioneel.
+Gebruik de [oplossing az monitor log-analytics create om](/cli/azure/monitor/log-analytics/solution) een bewakingsoplossing te installeren.  Parameters tussen vierkante haken zijn optioneel.
 
 ```azurecli
 az monitor log-analytics solution create --name
@@ -218,7 +218,7 @@ New-AzMonitorLogAnalyticsSolution -Type Containers -ResourceGroupName MyResource
 
 ## <a name="log-analytics-workspace-and-automation-account"></a>Log Analytics-werkruimte en Automation-account
 
-Voor alle bewakingsoplossingen is een [Log Analytics-werkruimte vereist](../logs/manage-access.md) om gegevens op te slaan die door de oplossing zijn verzameld en om de zoekopdrachten en weergaven in logboeken te hosten. Voor sommige oplossingen is ook een [Automation-account](../../automation/automation-security-overview.md) vereist voor runbooks en gerelateerde resources. De werkruimte en het account moeten voldoen aan de volgende vereisten.
+Voor alle bewakingsoplossingen is een [Log Analytics-werkruimte vereist](../logs/manage-access.md) om gegevens op te slaan die door de oplossing zijn verzameld en om de zoekopdrachten en weergaven in logboeken te hosten. Voor sommige oplossingen is ook een [Automation-account](../../automation/automation-security-overview.md) vereist om runbooks en gerelateerde resources te bevatten. De werkruimte en het account moeten voldoen aan de volgende vereisten.
 
 * Elke installatie van een oplossing kan slechts één Log Analytics-werkruimte en één Automation-account gebruiken. U kunt de oplossing afzonderlijk installeren in meerdere werkruimten.
 * Als voor een oplossing een Automation-account is vereist, moeten de Log Analytics-werkruimte en het Automation-account aan elkaar zijn gekoppeld. Een Log Analytics-werkruimte kan slechts aan één Automation-account worden gekoppeld en een Automation-account kan slechts aan één Log Analytics-werkruimte worden gekoppeld.
@@ -241,7 +241,7 @@ Als u een geïnstalleerde oplossing wilt verwijderen via de portal, zoekt u deze
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u een geïnstalleerde oplossing wilt verwijderen met behulp van de Azure CLI, gebruikt [u de opdracht az monitor log-analytics solution delete.](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-delete)
+Als u een geïnstalleerde oplossing wilt verwijderen met behulp van de Azure CLI, gebruikt [u de opdracht az monitor log-analytics solution delete.](/cli/azure/monitor/log-analytics/solution#az_monitor_log_analytics_solution_delete)
 
 ```azurecli
 az monitor log-analytics solution delete --name

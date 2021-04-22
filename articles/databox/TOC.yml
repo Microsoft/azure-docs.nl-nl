@@ -238,7 +238,7 @@
     - name: Naslaginformatie
       items:
         - name: Azure CLI
-          href: /cli/azure/ext/databox/databox
+          href: /cli/azure/databox
         - name: Azure PowerShell
           href: /powershell/module/az.databox
         - name: .NET-API 's

@@ -107,7 +107,7 @@
       items:
         - name: Gegevens transformeren met toewijzingsgegevensstromen
           items:
-            - name: Best practices voor het landen van gegevens in het lake met ADLS Gen2
+            - name: Best practices voor landingsgegevens in het lake met ADLS Gen2
               href: tutorial-data-flow-write-to-lake.md
             - name: Gegevens in het lake transformeren met Delta Lake
               href: tutorial-data-flow-delta-lake.md
@@ -506,7 +506,7 @@
           href: compute-linked-services.md
     - name: Controlestroom
       items:
-        - name: Activiteit Variabele aan append
+        - name: Activiteit variabele appen
           href: control-flow-append-variable-activity.md
         - name: Execute Pipeline-activiteit
           href: control-flow-execute-pipeline-activity.md
@@ -528,7 +528,7 @@
           href: control-flow-until-activity.md
         - name: Validatieactiviteit
           href: control-flow-validation-activity.md
-        - name: Activiteit Wachten
+        - name: Wachtactiviteit
           href: control-flow-wait-activity.md
         - name: Webactiviteit
           href: control-flow-web-activity.md
@@ -592,7 +592,7 @@
           href: control-flow-system-variables.md
         - name: Toewijzingsgegevensstromen parameteriseren
           href: parameters-data-flow.md
-        - name: Parameters opgeven
+        - name: Parameters aanpassen
           href: how-to-expression-language-functions.md
     - name: Beveiliging
       items:
@@ -716,7 +716,7 @@
       items:
         - name: Een Data Factory verbinden met Azure Purview
           href: connect-data-factory-to-azure-purview.md
-        - name: Gegevens in ADF ontdekken en verkennen met behulp van Purview
+        - name: Gegevens in ADF ontdekken en verkennen met Behulp van Purview
           href: how-to-discover-explore-purview-data.md
     - name: Scenario's
       items:
@@ -744,7 +744,7 @@
               href: how-to-sqldb-to-cosmosdb.md
             - name: Dedupliceren en null-checks met snippets
               href: how-to-data-flow-dedupe-nulls-snippets.md
-            - name: Gegevens uit AML-modellen verwerken met behulp van een gegevensstroom
+            - name: Gegevens van AML-modellen verwerken met behulp van een gegevensstroom
               href: scenario-dataflow-process-data-aml-models.md
         - name: SSIS-migratie van on-premises
           items:
@@ -827,7 +827,7 @@
     - name: Ingebouwde modules voor Azure Policy
       href: policy-reference.md
     - name: Azure CLI
-      href: /cli/azure/ext/datafactory/datafactory
+      href: /cli/azure/datafactory
 - name: Resources
   items:
     - name: Whitepapers

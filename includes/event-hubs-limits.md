@@ -1,5 +1,5 @@
 ---
-Titel: include file description: include file services: Event-hubs Author: spelluru MS. service: Event-hubs MS. topic: include MS. date: 03/31/2021 MS. Author: spelluru MS. Custom: "include file", "FastTrack-Edit", "IOT", "Event-hubs"
+titel: include file description: include file services: event-hubs author: spelltitel ms.service: event-hubs ms.topic: include ms.date: 03/31/2021 ms.author: spell author ms.custom: "include file","fasttrack-edit","iot","event-hubs"
 
 ---
 
@@ -13,12 +13,12 @@ De volgende limieten gelden in alle lagen.
 | Aantal Event Hubs-naamruimten per abonnement |- |100 |
 | Aantal event hubs per naamruimte | Volgende aanvragen voor het maken van een nieuwe event hub worden geweigerd. |10 |
 | Grootte van een Event Hub-naam |- | 256 tekens |
-| Groote van de naam van een consumentengroep | Voor het Kafka-protocol is geen gebruikers groep gemaakt. | <p>Kafka: 256 tekens</p><p>AMQP: 50 tekens |
+| Groote van de naam van een consumentengroep | Het Kafka-protocol vereist niet dat er een consumentengroep wordt gemaakt. | <p>Kafka: 256 tekens</p><p>AMQP: 50 tekens |
 | Aantal niet-epoche ontvangers per consumentengroep |- |5 |
 | Aantal autorisatieregels per naamruimte | Volgende aanvragen voor het maken van een autorisatieregel worden geweigerd.|12 |
 | Aantal aanroepen van de methode GetRuntimeInformation |  - | 50 per seconde | 
 | Aantal virtuele netwerken (VNet) | - | 128 | 
-| Aantal IP-configuratie regels | - | 128 | 
+| Aantal IP-configuratieregels | - | 128 | 
 
 ### <a name="basic-vs-standard-tiers"></a>Basic- vs. Standard-lagen
 De volgende tabel geeft de limieten weer die mogelijk anders zijn voor basic- en standard-lagen. 
@@ -34,8 +34,8 @@ De volgende tabel geeft de limieten weer die mogelijk anders zijn voor basic- en
 
 > [!NOTE]
 >
-> U kunt gebeurtenissen afzonderlijk of in batch publiceren. 
-> De publicatie limiet (volgens SKU) is van toepassing ongeacht of het nu gaat om één gebeurtenis of een batch. Het publiceren van gebeurtenissen die groter zijn dan de maximale drempel waarde, wordt geweigerd.
+> U kunt gebeurtenissen afzonderlijk of in batch worden gepubliceerd. 
+> De publicatielimiet (volgens SKU) is van toepassing, ongeacht of het om één gebeurtenis of om een batch gaat. Publicatiegebeurtenissen die groter zijn dan de maximale drempelwaarde, worden geweigerd.
 
 ### <a name="dedicated-tier-vs-standard-tier"></a>Toegewezen laag vs. Standard-laag
 De Event Hubs Dedicated-aanbieding wordt gefactureerd tegen een vaste maandelijkse prijs, met een minimum van 4 uur gebruik. De Dedicated-laag biedt alle functies van het Standard-abonnement, maar met schaalcapaciteit voor grote bedrijven en limieten voor klanten met veeleisende werkbelastingen. 
@@ -45,7 +45,7 @@ Raadpleeg dit [document](../articles/event-hubs/event-hubs-dedicated-cluster-cre
 | Functie | Standard | Toegewezen |
 | --- |:---|:---|
 | Bandbreedte | 20 TU's (tot 40 TU's) | 20 CU's |
-| Naamruimten |  1 | 50 per CU |
+| Naamruimten |  100 per abonnement | 50 per CU (100 per abonnement) |
 | Event Hubs |  10 per naamruimte | 1000 per naamruimte |
 | Ingangsgebeurtenissen | Betalen per miljoen gebeurtenissen | Inbegrepen |
 | Berichtgrootte | 1\.000.000 bytes | 1\.000.000 bytes |

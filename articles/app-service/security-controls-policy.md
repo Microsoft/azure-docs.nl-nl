@@ -1,16 +1,16 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure App Service
 description: Toont beschikbare besturingselementen voor naleving van Azure Policy-regelgeving voor Azure App Service. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: sample
 ms.service: app-service
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: ac9f548408482a45f76239b49107f2a6e285346f
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 53b936f29ebbece20c7f0fa39c8e115356380c2d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107505735"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107863749"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-app-service"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure App Service
 

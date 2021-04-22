@@ -1,6 +1,6 @@
 ---
 title: Programmatisch Azure-abonnementen voor een Microsoft Partner-overeenkomst maken met de nieuwste API's
-description: Meer informatie over hoe u met de nieuwste versies van REST API, Azure CLI, Azure PowerShell en Azure Resource Manager sjablonen Azure-abonnementen kunt maken voor een micro soft-partner overeenkomst.
+description: Leer hoe u programmatisch Azure-abonnementen voor een Microsoft Partner-overeenkomst maakt met behulp van de nieuwste versies van REST API, Azure CLI, Azure PowerShell en Azure Resource Manager sjablonen.
 author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
@@ -9,12 +9,12 @@ ms.date: 03/12/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 5a731aab924e63eac468a22862f35aeff76bc068
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 69d8910ffe0e45c4c47a035d5c32e71f19d9e04a
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104593948"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870657"
 ---
 # <a name="programmatically-create-azure-subscriptions-for-a-microsoft-partner-agreement-with-the-latest-apis"></a>Programmatisch Azure-abonnementen voor een Microsoft Partner-overeenkomst maken met de nieuwste API's
 
@@ -79,7 +79,7 @@ Gebruik Azure CLI of REST API om deze waarde op te halen.
 ```azurecli
 az billing account list
 ```
-Er wordt een lijst weer gegeven met alle facturerings accounts waartoe u toegang hebt.
+U krijgt een lijst terug met alle factureringsrekeningen waar u toegang toe hebt.
 
 ```json
 [
@@ -104,7 +104,7 @@ Er wordt een lijst weer gegeven met alle facturerings accounts waartoe u toegang
 ]
 ```
 
-Gebruik de eigenschap displayName om het facturerings account te identificeren waarvoor u abonnementen wilt maken. Zorg ervoor dat agreementType van het account gelijk is aan MicrosoftPartnerAgreement. Kopieer de naam voor het account. Als u bijvoorbeeld een abonnement voor het contoso-facturerings account wilt maken, kopieert u 99a13315-XXXX-XXXX-XXXX-XXXXXXXXXXXX: XXXXXXXX-XXXX-XXXX-XXXX-xxxxxxxxxxxx_xxxx-xx-xx. Plak de waarde ergens, zodat u deze in de volgende stap kunt gebruiken.
+Gebruik de eigenschap displayName om de factureringsrekening te identificeren waarvoor u abonnementen wilt maken. Zorg ervoor dat agreementType van het account gelijk is aan MicrosoftPartnerAgreement. Kopieer de naam voor het account. Als u bijvoorbeeld een abonnement voor het Contoso-factureringsaccount wilt maken, kopieert u 99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx-xx. Plak de waarde ergens, zodat u deze in de volgende stap kunt gebruiken.
 
 ---
 
@@ -235,7 +235,7 @@ Gebruik Azure CLI of REST API om deze waarde op te halen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Voer de volgende aanvraag uit met de `name` gekopieerde van de eerste stap ( ```99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx``` ) en de klant die is `name` gekopieerd uit de vorige stap ( ```acba85c9-xxxx-xxxx-xxxx-xxxxxxxxxxxx``` ).
+Maak de volgende aanvraag, met de die u hebt gekopieerd uit de eerste stap ( ) en de klant die u in de vorige stap `name` ```99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx``` hebt gekopieerd ( `name` ```acba85c9-xxxx-xxxx-xxxx-xxxxxxxxxxxx``` ).
 
 ```azurecli
  az billing customer show --expand "enabledAzurePlans,resellers" --account-name "99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx" --name "acba85c9-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -363,7 +363,7 @@ Geef de optionele *resellerId* door die in de tweede stap is gekopieerd in de `N
 
 Installeer eerst de extensie door `az extension add --name account` en `az extension add --name alias` uit te voeren.
 
-Voer de volgende [az account alias create](/cli/azure/ext/account/account/alias#ext_account_az_account_alias_create)-opdracht uit. 
+Voer de volgende [az account alias create](/cli/azure/account/alias#az_account_alias_create)-opdracht uit. 
 
 ```azurecli
 az account alias create --name "sampleAlias" --billing-scope "/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx" --display-name "Dev Team Subscription" --workload "Production"
@@ -389,9 +389,9 @@ Geef de optionele *resellerId* door die in de tweede stap is gekopieerd in de `a
 
 ## <a name="use-arm-template"></a>ARM-sjabloon gebruiken
 
-In de vorige sectie is geleerd hoe u een abonnement maakt met Power shell, CLI of REST API. Als u het maken van abonnementen wilt automatiseren, kunt u overwegen een Azure Resource Manager sjabloon (ARM-sjabloon) te gebruiken.
+In de vorige sectie hebt u laten zien hoe u een abonnement maakt met PowerShell, CLI of REST API. Als u het maken van abonnementen wilt automatiseren, kunt u een arm-sjabloon (ARM Azure Resource Manager sjabloon) gebruiken.
 
-Met de volgende sjabloon maakt u een abonnement. `billingScope`Geef voor de klant-id op. `targetManagementGroup`Geef voor de beheer groep op waar u het abonnement wilt maken.
+Met de volgende sjabloon maakt u een abonnement. Geef `billingScope` voor de klant-id op. Geef `targetManagementGroup` voor de beheergroep op waar u het abonnement wilt maken.
 
 ```json
 {
@@ -435,7 +435,7 @@ Met de volgende sjabloon maakt u een abonnement. `billingScope`Geef voor de klan
 }
 ```
 
-Implementeer de sjabloon op het [niveau van de beheer groep](../../azure-resource-manager/templates/deploy-to-management-group.md).
+Implementeer de sjabloon op [beheergroepniveau.](../../azure-resource-manager/templates/deploy-to-management-group.md)
 
 ### <a name="rest"></a>[REST](#tab/rest)
 
@@ -443,7 +443,7 @@ Implementeer de sjabloon op het [niveau van de beheer groep](../../azure-resourc
 PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/mg1/providers/Microsoft.Resources/deployments/exampledeployment?api-version=2020-06-01
 ```
 
-Met een aanvraag tekst:
+Met een aanvraag body:
 
 ```json
 {

@@ -7,16 +7,16 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/30/2020
-ms.openlocfilehash: b81d9b4a637965dd103d8fa89305424686a0c72c
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 8086ce0e5964d4e37a5ffc3082d5f2856058e4e5
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107789911"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875481"
 ---
 # <a name="azure-cli-script-sample---create-a-logic-app"></a>Voorbeeld van Azure CLI-script - een logische app maken
 
-Met dit script maakt u een voorbeeld van een logische app via de [Azure CLI Logic Apps extensie](/cli/azure/ext/logic/logic), ( `az logic` ). Voor een gedetailleerde handleiding voor het maken en beheren van logische apps via de Azure CLI, zie de Logic Apps [quickstart voor de Azure CLI.](quickstart-logic-apps-azure-cli.md)
+Met dit script maakt u een voorbeeld van een logische app via de [Azure CLI Logic Apps extensie](/cli/azure/logic), ( `az logic` ). Voor een gedetailleerde handleiding voor het maken en beheren van logische apps via de Azure CLI, zie de Logic Apps [quickstart voor de Azure CLI.](quickstart-logic-apps-azure-cli.md)
 
 > [!WARNING]
 > De Azure CLI Logic Apps-extensie is momenteel *experimenteel* en *niet gedekt door klantenondersteuning*. Wees voorzichtig wanneer u deze CLI-extensie gebruikt, vooral als u ervoor kiest de extensie in productieomgevingen te gebruiken.
@@ -140,7 +140,7 @@ Voordat u het voorbeeldscript gaat uitvoeren, moet u eerst een voorbeeldwerkstro
 
     1. Vervang aanvullende connectorgegevens als u een andere e-mailconnector gebruikt dan de Office 365 Outlook-connector.
 
-    1. Vervang de tijdelijke aanduiding abonnementswaarden ( ) voor uw `00000000-0000-0000-0000-000000000000` verbindings-id's ( en ) onder de `connectionId` `id` parameter connections ( ) door uw `$connections` eigen abonnementswaarden.
+    1. Vervang de tijdelijke aanduiding abonnementswaarden ( ) voor uw verbindings-id's ( en ) onder de `00000000-0000-0000-0000-000000000000` `connectionId` parameter `id` connections ( ) door uw eigen `$connections` abonnementswaarden.
 
 1. Sla uw wijzigingen op.
 
@@ -198,7 +198,7 @@ In dit voorbeeldscript worden de volgende opdrachten gebruikt om een nieuwe reso
 | Opdracht | Opmerkingen |
 | ------- | ----- |
 | [`az group create`](/cli/azure/group#az_group_create) | Hiermee maakt u een resourcegroep waarin de resources van uw logische app worden opgeslagen. |
-| [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create) | Hiermee maakt u een logische app op basis van de werkstroom die is gedefinieerd in de parameter `--definition` . |
+| [`az logic workflow create`](/cli/azure/logic/workflow#az_logic_workflow_create) | Hiermee maakt u een logische app op basis van de werkstroom die is gedefinieerd in de parameter `--definition` . |
 | [`az group delete`](/cli/azure/vm/extension) | Hiermee verwijdert u een resourcegroep en alle geneste resources. |
 
 ## <a name="next-steps"></a>Volgende stappen

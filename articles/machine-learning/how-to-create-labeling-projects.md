@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: 62801d40295762b0066f0d2887d7d528ee7b7c2a
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ff1783dd31b8139940e56d24ae82866b428838b1
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656819"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861153"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
@@ -24,7 +24,7 @@ Leer hoe u gegevenslabelprojecten maakt en uitvoert om gegevens te taggen in Azu
 ## <a name="data-labeling-capabilities"></a>Mogelijkheden voor het labelen van gegevens
 
 > [!Important]
-> Gegevens installatie kopieën moeten beschikbaar zijn in een Azure Blob-gegevens opslag. (Als u geen bestaande gegevensopslag hebt, kunt u afbeeldingen uploaden tijdens het maken van het project.)
+> Gegevensafbeeldingen moeten beschikbaar zijn in een Azure Blob-gegevensopslag. (Als u geen bestaande gegevensopslag hebt, kunt u afbeeldingen uploaden tijdens het maken van het project.)
 
 Met de functie voor gegevens labelen van Azure Machine Learning kunt u gebruikmaken van een centrale locatie voor het maken, beheren en bewaken van labelprojecten:
  - Coördineer gegevens, labels en teamleden om labeltaken op efficiënte wijze te beheren. 
@@ -53,11 +53,7 @@ Als u een project wilt maken, selecteert u **Project toevoegen**. Geef het proje
 * Kies **Afbeeldingsclassificatie met meerdere klassen** voor projecten wanneer u slechts *één label* uit een set labels wilt toepassen op een afbeelding.
 * Kies **Afbeeldingsclassificatie met meerdere labels** voor projecten wanneer u *een of meer* labels uit een set labels wilt toepassen op een afbeelding. Een foto van een hond kan bijvoorbeeld worden gelabeld met zowel *hond* als *overdag*.
 * Kies **Object-id (begrenzingsvak)** voor projecten wanneer u een label en een begrenzingsvak wilt toewijzen aan elk object in een afbeelding.
-* Kies **exemplaar segmentatie (veelhoek) (preview)** voor projecten wanneer u een label wilt toewijzen en een veelhoek rond elk object binnen een afbeelding wilt tekenen.
-
-> [!IMPORTANT]
-> Exemplaar segmentatie (veelhoek) bevindt zich in de open bare preview.
-> De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+* Kies **Exemplaarsegmentatie (Veelhoek)** voor projecten wanneer u een label wilt toewijzen en een veelhoek rond elk object in een afbeelding wilt tekenen.
 
 Selecteer **Volgende** wanneer u klaar bent om door te gaan.
 
@@ -107,7 +103,7 @@ Als u van plan bent nieuwe afbeeldingen toe te voegen aan uw gegevensset, gebrui
 
 Als u meer afbeeldingen aan uw project wilt toevoegen, gebruikt u [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) om te uploaden naar de juiste map in de Blob-opslag. 
 
-Schakel het selectievakje voor **Incrementele vernieuwing inschakelen** in wanneer u wilt dat het project doorlopend controleert op nieuwe gegevens in de gegevensopslag. Deze gegevens worden eenmaal per dag in het project geplaatst, zodat u na het toevoegen van nieuwe gegevens aan het gegevens archief moet wachten voordat deze in uw project worden weer gegeven.  U kunt een tijds tempel bekijken voor wanneer de gegevens voor het laatst zijn vernieuwd in het gedeelte **Incrementeel vernieuwen** van het tabblad **Details** van het project.
+Schakel het selectievakje voor **Incrementele vernieuwing inschakelen** in wanneer u wilt dat het project doorlopend controleert op nieuwe gegevens in de gegevensopslag. Wanneer deze gegevens eenmaal per dag in uw project worden ingetrokken wanneer deze zijn ingeschakeld, moet u wachten nadat u nieuwe gegevens aan de gegevensstore hebt toevoegen voordat deze in uw project worden weer te geven.  U ziet een tijdstempel voor wanneer gegevens voor het laatst zijn vernieuwd in de sectie **Incrementeel** vernieuwen van **het tabblad Details** voor uw project.
 
 Schakel dit selectievakje uit als u niet wilt dat nieuwe afbeeldingen die worden weergegeven in de gegevensopslag, worden toegevoegd aan het project.
 

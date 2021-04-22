@@ -1,7 +1,7 @@
 ---
-title: Een reken instantie maken en beheren
+title: Een reken-exemplaar maken en beheren
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het maken en beheren van een Azure Machine Learning Compute-instantie. Gebruiken als uw ontwikkel omgeving of als reken doel voor dev/test-doel einden.
+description: Meer informatie over het maken en beheren van een Azure Machine Learning compute-instantie. Gebruik als uw ontwikkelomgeving of als rekendoel voor ontwikkel-/testdoeleinden.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,44 +11,44 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 2778f52b312e5d2fda7879b834fcd204285b7144
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 5ac525ae062efca25601c9e63a5c8f16f2be29be
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105628948"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861215"
 ---
-# <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Een Azure Machine Learning Compute-exemplaar maken en beheren
+# <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Een reken-Azure Machine Learning maken en beheren
 
-Meer informatie over het maken en beheren van een [reken instantie](concept-compute-instance.md) in uw Azure machine learning-werk ruimte.
+Meer informatie over het maken en beheren van een [reken-exemplaar](concept-compute-instance.md) in Azure Machine Learning werkruimte.
 
-Gebruik een reken instantie als uw volledig geconfigureerde en beheerde ontwikkel omgeving in de Cloud. Voor ontwikkel-en test doeleinden kunt u het exemplaar ook gebruiken als een [trainings berekenings doel](concept-compute-target.md#train) of voor een [doel gerichtheid](concept-compute-target.md#deploy).   Een reken instantie kan meerdere taken parallel uitvoeren en heeft een taak wachtrij. Als ontwikkel omgeving kan een reken instantie niet worden gedeeld met andere gebruikers in uw werk ruimte.
+Gebruik een rekenomgeving als uw volledig geconfigureerde en beheerde ontwikkelomgeving in de cloud. Voor ontwikkeling en testen kunt u het exemplaar ook gebruiken als een rekendoel voor training [of](concept-compute-target.md#train) voor [een deferentiedoel.](concept-compute-target.md#deploy)   Een reken-exemplaar kan meerdere taken parallel uitvoeren en heeft een taakwachtrij. Als ontwikkelomgeving kan een reken-exemplaar niet worden gedeeld met andere gebruikers in uw werkruimte.
 
 In dit artikel leert u het volgende:
 
 * Een rekenproces maken 
-* Een reken instantie beheren (starten, stoppen, opnieuw starten, verwijderen)
-* Het Terminal venster openen 
-* R-of python-pakketten installeren
+* Een reken-exemplaar beheren (starten, stoppen, opnieuw opstarten, verwijderen)
+* Toegang tot het terminalvenster 
+* R- of Python-pakketten installeren
 * Nieuwe omgevingen of Jupyter-kernels maken
 
-Reken instanties kunnen taken veilig uitvoeren in een [virtuele netwerk omgeving](how-to-secure-training-vnet.md), zonder dat ondernemingen de SSH-poorten hoeven te openen. De taak wordt uitgevoerd in een omgeving met containers en verpakt uw model afhankelijkheden in een docker-container. 
+Reken-exemplaren kunnen taken veilig uitvoeren in een omgeving met een virtueel [netwerk,](how-to-secure-training-vnet.md)zonder dat ondernemingen SSH-poorten moeten openen. De taak wordt uitgevoerd in een containeromgeving en verpakt uw modelafhankelijkheden in een Docker-container. 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
+* Een Azure Machine Learning-werkruimte. Zie Create [an Azure Machine Learning workspace (Een werkruimte Azure Machine Learning maken) voor meer informatie.](how-to-manage-workspace.md)
 
-* De [Azure cli-extensie voor machine learning service](reference-azure-machine-learning-cli.md), [Azure machine learning python SDK](/python/api/overview/azure/ml/intro)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
+* De [Azure CLI-extensie voor Machine Learning service](reference-azure-machine-learning-cli.md), Azure Machine Learning Python [SDK](/python/api/overview/azure/ml/intro)of de [Azure Machine Learning Visual Studio Code-extensie](tutorial-setup-vscode-extension.md).
 
 ## <a name="create"></a>Maken
 
-**Geschatte tijd**: ongeveer 5 minuten.
+**Geschatte tijd:** Ongeveer 5 minuten.
 
-Het maken van een reken instantie is een eenmalig proces voor uw werk ruimte. U kunt de compute opnieuw gebruiken als een ontwikkel werkstation of als reken doel voor training. Er kunnen meerdere reken instanties aan uw werk ruimte zijn gekoppeld.
+Het maken van een rekenproces is een een enkel proces voor uw werkruimte. U kunt de rekenkracht hergebruiken als ontwikkelwerkstation of als rekendoel voor training. U kunt meerdere reken-exemplaren koppelen aan uw werkruimte.
 
-De toegewezen kernen per regio per VM-serie quota en het totale regionale quotum, dat van toepassing is op het maken van een reken instantie, worden gecombineerd en gedeeld met Azure Machine Learning trainings berekenings cluster quotum. Wanneer het reken exemplaar wordt gestopt, wordt er geen quotum vrijgegeven om ervoor te zorgen dat u het reken exemplaar opnieuw kunt starten. Houd er rekening mee dat het niet mogelijk is om de grootte van de virtuele machine van reken instanties te wijzigen nadat deze is gemaakt.
+De toegewezen kernen per regio per VM-familiequotum en het totale regionale quotum, dat van toepassing is op het maken van een rekenproces, worden samengevoegd en gedeeld met Azure Machine Learning training van rekenclusterquota. Als u de reken-instantie stopt, wordt er geen quotum uitgebracht om ervoor te zorgen dat u de reken-instantie opnieuw kunt starten. Houd er rekening mee dat het niet mogelijk is om de grootte van de virtuele machine van het reken exemplaar te wijzigen zodra deze is gemaakt.
 
-In het volgende voor beeld ziet u hoe u een reken instantie maakt:
+In het volgende voorbeeld wordt gedemonstreerd hoe u een reken-exemplaar maakt:
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -80,10 +80,10 @@ except ComputeTargetException:
     instance.wait_for_completion(show_output=True)
 ```
 
-Voor meer informatie over de klassen, methoden en para meters die in dit voor beeld worden gebruikt, raadpleegt u de volgende referentie documenten:
+Zie de volgende referentiedocumenten voor meer informatie over de klassen, methoden en parameters die in dit voorbeeld worden gebruikt:
 
-* [Klasse ComputeInstance](/python/api/azureml-core/azureml.core.compute.computeinstance.computeinstance)
-* [ComputeTarget. Create](/python/api/azureml-core/azureml.core.compute.computetarget#create-workspace--name--provisioning-configuration-)
+* [ComputeInstance-klasse](/python/api/azureml-core/azureml.core.compute.computeinstance.computeinstance)
+* [ComputeTarget.create](/python/api/azureml-core/azureml.core.compute.computetarget#create-workspace--name--provisioning-configuration-)
 * [ComputeInstance.wait_for_completion](/python/api/azureml-core/azureml.core.compute.computeinstance(class)#wait-for-completion-show-output-false--is-delete-operation-false-)
 
 
@@ -93,48 +93,48 @@ Voor meer informatie over de klassen, methoden en para meters die in dit voor be
 az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 ```
 
-Zie voor meer informatie de referentie [AZ ml computetarget Create computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext_azure_cli_ml_az_ml_computetarget_create_computeinstance) .
+Zie de naslaginformatie [over az ml computetarget create computeinstance voor meer](/cli/azure/ml/computetarget/create#az_ml_computetarget_create_computeinstance) informatie.
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
-Maak in uw werk ruimte in Azure Machine Learning Studio een nieuw reken exemplaar van het gedeelte **Compute** of in de sectie **notebooks** , wanneer u klaar bent om een van uw notitie blokken uit te voeren.
+Maak in uw werkruimte in Azure Machine Learning-studio een nieuw reken-exemplaar vanuit de sectie **Compute** of in de sectie Notebooks wanneer u klaar bent om een van uw **notebooks** uit te voeren.
 
-Zie [Compute-doelen maken in azure machine learning Studio](how-to-create-attach-compute-studio.md#compute-instance)voor meer informatie over het maken van een reken instantie in de Studio.
+Zie Rekendoelen maken in Azure Machine Learning-studio voor meer informatie over het maken van [een reken-Azure Machine Learning-studio.](how-to-create-attach-compute-studio.md#compute-instance)
 
 ---
 
-U kunt ook een reken instantie met een [Azure Resource Manager sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance)maken. 
+U kunt ook een reken-exemplaar maken met een [Azure Resource Manager sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance). 
 
-### <a name="create-on-behalf-of-preview"></a>Maken namens (preview-versie)
+### <a name="create-on-behalf-of-preview"></a>Maken namens (preview)
 
-Als beheerder kunt u een compute-instantie maken namens een gegevens wetenschapper en de instantie hieraan toewijzen met:
-* [Azure Resource Manager sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance).  Zie [identiteits object-Id's zoeken voor verificatie configuratie](../healthcare-apis/fhir/find-identity-object-ids.md)voor meer informatie over het vinden van de TenantID en ObjectID die nodig zijn in deze sjabloon.  U kunt deze waarden ook vinden in de Azure Active Directory Portal.
+Als beheerder kunt u namens een data scientist een reken-exemplaar maken en het exemplaar aan hen toewijzen met:
+* [Azure Resource Manager sjabloon .](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance)  Zie Id's van [identiteitsobjecten](../healthcare-apis/fhir/find-identity-object-ids.md)zoeken voor verificatieconfiguratie voor meer informatie over het vinden van de TenantID en ObjectID die nodig zijn in deze sjabloon.  U kunt deze waarden ook vinden in Azure Active Directory portal.
 * REST-API
 
-De gegevens wetenschapper u het Compute-exemplaar maakt voor de behoeften van [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../role-based-access-control/overview.md) : 
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/starten/actie*
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie*
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie*
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/applicationaccess/actie*
+De data scientist voor wie u de reken-instantie maakt, heeft de volgende machtigingen voor op rollen gebaseerd toegangsbeheer [van Azure (Azure RBAC)](../role-based-access-control/overview.md) nodig: 
+* *Microsoft.MachineLearningServices/workspaces/computes/start/action*
+* *Microsoft.MachineLearningServices/workspaces/computes/stop/action*
+* *Microsoft.MachineLearningServices/workspaces/computes/restart/action*
+* *Microsoft.MachineLearningServices/workspaces/computes/applicationaccess/action*
 
-De gegevens wetenschapper kunnen het reken proces starten, stoppen en opnieuw starten. Ze kunnen het reken exemplaar gebruiken voor:
+De data scientist kan de reken-instantie starten, stoppen en opnieuw starten. Ze kunnen de reken-instantie gebruiken voor:
 * Jupyter
-* Jjupyterlab
+* JupyterLab
 * RStudio
 * Geïntegreerde notebooks
 
 ## <a name="manage"></a>Beheren
 
-Een reken instantie starten, stoppen, opnieuw starten en verwijderen. Een reken instantie wordt niet automatisch omlaag geschaald, dus zorg ervoor dat u de resource stopt om lopende kosten te voor komen.
+Een reken-exemplaar starten, stoppen, opnieuw starten en verwijderen. Een reken-exemplaar wordt niet automatisch omlaag geschaald, dus zorg ervoor dat u de resource stopt om doorlopende kosten te voorkomen.
 
 > [!TIP]
-> Het Compute-exemplaar heeft 120 GB besturingssysteem schijf. Als er onvoldoende schijf ruimte beschikbaar is, [gebruikt u de Terminal](how-to-access-terminal.md) om ten minste 1-2 GB te wissen voordat u het reken exemplaar stopt of opnieuw opstart.
+> Het reken exemplaar heeft een besturingssysteemschijf van 120 GB. Als u geen schijfruimte meer hebt, gebruikt u de [terminal](how-to-access-terminal.md) om ten minste 1-2 GB te leeg te maken voordat u de reken-instantie stopt of opnieuw start.
 
 # <a name="python"></a>[Python](#tab/python)
 
-In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
+In de onderstaande voorbeelden is de naam van het reken exemplaar **instance**
 
-* Status ophalen
+* Status op halen
 
     ```python
     # get_status() gets the latest status of the ComputeInstance target
@@ -173,7 +173,7 @@ In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
+In de onderstaande voorbeelden is de naam van het reken exemplaar **instance**
 
 * Stoppen
 
@@ -181,7 +181,7 @@ In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
     az ml computetarget stop computeinstance -n instance -v
     ```
 
-    Zie [AZ ml computetarget stop computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop)voor meer informatie.
+    Zie az [ml computetarget stop computeinstance voor meer informatie.](/cli/azure/ml/computetarget/computeinstance#az_ml_computetarget_computeinstance_stop)
 
 * Starten 
 
@@ -189,7 +189,7 @@ In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
     az ml computetarget start computeinstance -n instance -v
     ```
 
-    Zie [AZ ml computetarget start computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start)voor meer informatie.
+    Zie az [ml computetarget start computeinstance voor meer informatie.](/cli/azure/ml/computetarget/computeinstance#az_ml_computetarget_computeinstance_start)
 
 * Opnieuw starten 
 
@@ -197,7 +197,7 @@ In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
     az ml computetarget restart computeinstance -n instance -v
     ```
 
-    Zie [AZ ml computetarget restart computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart)voor meer informatie.
+    Zie az [ml computetarget restart computeinstance voor meer informatie.](/cli/azure/ml/computetarget/computeinstance#az_ml_computetarget_computeinstance_restart)
 
 * Verwijderen
 
@@ -205,43 +205,43 @@ In de onderstaande voor beelden is de naam van het reken exemplaar **instance**
     az ml computetarget delete -n instance -v
     ```
 
-    Zie [AZ ml computetarget delete computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget#ext-azure-cli-ml-az-ml-computetarget-delete)voor meer informatie.
+    Zie az [ml computetarget delete computeinstance voor meer informatie.](/cli/azure/ml/computetarget#az_ml_computetarget_delete)
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
-Selecteer in uw werk ruimte in Azure Machine Learning Studio **Compute** en selecteer vervolgens **Compute instance** bovenin.
+Selecteer in uw werkruimte Azure Machine Learning-studio **compute** en selecteer vervolgens **Rekenin exemplaar** bovenaan.
 
-![Een reken instantie beheren](./media/concept-compute-instance/manage-compute-instance.png)
+![Een reken-exemplaar beheren](./media/concept-compute-instance/manage-compute-instance.png)
 
 U kunt de volgende acties uitvoeren:
 
-* Een nieuw reken exemplaar maken 
-* Vernieuw het tabblad Compute instances.
-* Een reken instantie starten, stoppen en opnieuw starten.  U betaalt voor de instantie wanneer deze wordt uitgevoerd. Stop de reken instantie wanneer u deze niet gebruikt om de kosten te verlagen. Als u een reken instantie stopt, wordt de toewijzing ervan ongedaan. Start het vervolgens opnieuw wanneer u het nodig hebt.
-* Een reken instantie verwijderen.
-* De lijst met reken instanties filteren om alleen de items weer te geven die u hebt gemaakt.
+* Een nieuwe reken-instantie maken 
+* Vernieuw het tabblad Reken-exemplaren.
+* Een reken-exemplaar starten, stoppen en opnieuw starten.  U betaalt voor de instantie wanneer deze wordt uitgevoerd. Stop de reken-instantie wanneer u deze niet gebruikt om de kosten te verlagen. Als u een reken-exemplaar stopt, wordt de toewijzing ervan weer in de weg gerekend. Start deze opnieuw wanneer u deze nodig hebt.
+* Een reken-exemplaar verwijderen.
+* Filter de lijst met reken-exemplaren om alleen de exemplaren weer te geven die u hebt gemaakt.
 
-Voor elk reken exemplaar in uw werk ruimte die u hebt gemaakt (of die u voor u hebt gemaakt) kunt u het volgende doen:
+Voor elke reken-instantie in uw werkruimte die u hebt gemaakt (of die voor u is gemaakt), kunt u het volgende doen:
 
-* Toegang tot Jupyter, Jjupyterlab, RStudio op het reken exemplaar
-* SSH naar Compute-instantie. SSH-toegang is standaard uitgeschakeld, maar kan worden ingeschakeld op het moment dat het reken proces wordt gemaakt. SSH-toegang is via het mechanisme voor open bare/persoonlijke sleutels. Op het tabblad krijgt u details over SSH-verbindingen zoals IP-adres, gebruikers naam en poort nummer.
-* Details ophalen over een specifiek reken exemplaar, zoals het IP-adres en de regio.
+* Toegang tot Jupyter, JupyterLab, RStudio op de reken-instantie
+* SSH in reken-exemplaar. SSH-toegang is standaard uitgeschakeld, maar kan worden ingeschakeld tijdens het maken van het rekenproces. SSH-toegang is via een mechanisme voor openbare/persoonlijke sleutels. Op het tabblad vindt u details voor de SSH-verbinding, zoals IP-adres, gebruikersnaam en poortnummer.
+* Meer informatie over een specifiek reken-exemplaar, zoals IP-adres en regio.
 
 ---
 
 
-Met [Azure RBAC](../role-based-access-control/overview.md) kunt u bepalen welke gebruikers in de werk ruimte een reken instantie kunnen maken, verwijderen, starten, stoppen en opnieuw starten. Alle gebruikers in de rol Inzender en eigenaar van de werk ruimte kunnen reken instanties maken, verwijderen, starten, stoppen en opnieuw starten in de werk ruimte. Maar alleen de maker van een specifiek reken exemplaar of de gebruiker die is toegewezen als deze namens hen is gemaakt, heeft toegang tot Jupyter, Jjupyterlab en RStudio op die reken instantie. Een reken instantie is toegewezen aan één gebruiker met hoofd toegang en kan worden terminal in via Jupyter/Jjupyterlab/RStudio. Reken instantie heeft aanmelding voor één gebruiker en alle acties gebruiken de identiteit van die gebruiker voor Azure RBAC en de toewijzing van experimenten. SSH-toegang wordt beheerd via het mechanisme voor open bare/persoonlijke sleutels.
+[Met Azure RBAC](../role-based-access-control/overview.md) kunt u bepalen welke gebruikers in de werkruimte een reken-exemplaar kunnen maken, verwijderen, starten, stoppen en opnieuw starten. Alle gebruikers in de rol Inzender en Eigenaar van de werkruimte kunnen reken-instanties in de werkruimte maken, verwijderen, starten, stoppen en opnieuw starten. Alleen de maker van een specifiek reken-exemplaar of de gebruiker die is toegewezen als deze namens hem of haar is gemaakt, heeft echter toegang tot Jupyter, JupyterLab en RStudio op dat reken-exemplaar. Een reken-exemplaar is toegewezen aan één gebruiker met hoofdtoegang en kan worden geterminal via Jupyter/JupyterLab/RStudio. Het rekenproces heeft een aanmelding voor één gebruiker en alle acties gebruiken de identiteit van die gebruiker voor Azure RBAC en de toewijzing van experiment-runs. SSH-toegang wordt beheerd via een mechanisme voor openbare/persoonlijke sleutels.
 
 Deze acties kunnen worden beheerd door Azure RBAC:
-* *Micro soft. MachineLearningServices/werk ruimten/reken-en lees bewerkingen*
+* *Microsoft.MachineLearningServices/workspaces/computes/read*
 * *Microsoft.MachineLearningServices/workspaces/computes/write*
-* *Micro soft. MachineLearningServices/werk ruimten/berekenen/verwijderen*
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/starten/actie*
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie*
-* *Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie*
+* *Microsoft.MachineLearningServices/workspaces/computes/delete*
+* *Microsoft.MachineLearningServices/workspaces/computes/start/action*
+* *Microsoft.MachineLearningServices/workspaces/computes/stop/action*
+* *Microsoft.MachineLearningServices/workspaces/computes/restart/action*
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [De terminal van het reken exemplaar openen](how-to-access-terminal.md)
+* [Toegang tot de terminal van het reken exemplaar](how-to-access-terminal.md)
 * [Bestanden maken en beheren](how-to-manage-files.md)
-* [Een trainings uitvoering verzenden](how-to-set-up-training-targets.md)
+* [Een trainingsrun verzenden](how-to-set-up-training-targets.md)

@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 03/18/2021
-ms.openlocfilehash: 499cb3c978a67f9ef71e6ad9dd03be9f05b45729
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: e0d40a4e0e376a42841bd8df5d76e5c83d11b1e3
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726966"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107865478"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Azure Time Series Insights Gen2-gebeurtenisbronnen
 
@@ -29,7 +29,7 @@ Gebeurtenissen moeten worden verzonden als JSON met UTF-8-codering.
 
 De gebeurtenisbron is de koppeling tussen uw hub en uw Azure Time Series Insights Gen2-omgeving en er wordt een afzonderlijke resource van het type `Time Series Insights event source` gemaakt in uw resourcegroep. De IoT Hub of Event Hub-resource(s) kunnen zich in hetzelfde Azure-abonnement als uw Azure Time Series Insights Gen2-omgeving of een ander abonnement. Het is echter een best practice uw Azure Time Series Insights-omgeving en de IoT Hub of Event Hub binnen dezelfde Azure-regio te kunnen onder brengen.
 
-U kunt de [Azure Portal,](./tutorials-set-up-tsi-environment.md#create-an-azure-time-series-insights-gen2-environment) [Azure CLI,](https://docs.microsoft.com/cli/azure/ext/timeseriesinsights/tsi/event-source) [Azure Resource Manager-sjablonen](time-series-insights-manage-resources-using-azure-resource-manager-template.md)en de [REST API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) gebruiken om gebeurtenisbronnen van uw omgeving te maken, bewerken of verwijderen.
+U kunt de [Azure Portal,](./tutorials-set-up-tsi-environment.md#create-an-azure-time-series-insights-gen2-environment) [Azure CLI,](/cli/azure/tsi/event-source) [Azure Resource Manager-sjablonen](time-series-insights-manage-resources-using-azure-resource-manager-template.md)en de [REST API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) gebruiken om gebeurtenisbronnen van uw omgeving te maken, bewerken of verwijderen.
 
 > [!WARNING]
 > Beperk de openbare internettoegang niet tot een hub of gebeurtenisbron die wordt gebruikt door Time Series Insights anders wordt de benodigde verbinding verbroken.
@@ -78,7 +78,7 @@ Wanneer u een gebeurtenisbron maakt, kunt u opgeven welke bestaande gegevens moe
 - Volg het principe van de minste bevoegdheden bij het verstrekken van verbindingsreeksen voor gebeurtenisbron. Voor Event Hubs configureert u een beleid voor gedeelde toegang met alleen de *claim* verzenden en gebruikt IoT Hub alleen de *service-verbindingsmachtiging.*
 
 > [!CAUTION]
-> Als u uw IoT Hub of Event Hub verwijdert en opnieuw een nieuwe resource met dezelfde naam maakt, moet u een nieuwe gebeurtenisbron maken en de nieuwe IoT Hub of Event Hub koppelen. Gegevens worden pas opgenomen wanneer u deze stap hebt voltooid.
+> Als u uw IoT Hub of Event Hub verwijdert en een nieuwe resource met dezelfde naam opnieuw maakt, moet u een nieuwe gebeurtenisbron maken en de nieuwe IoT Hub of Event Hub koppelen. Gegevens worden pas opgenomen wanneer u deze stap hebt voltooid.
 
 ## <a name="production-workloads"></a>Productieworkloads
 
@@ -121,6 +121,6 @@ De tijdzone offset moet worden opgemaakt als een van de volgende:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Lees de [JSON-regels voor plat maken en escapen](./concepts-json-flattening-escaping-rules.md) om te begrijpen hoe gebeurtenissen worden opgeslagen.
+- Lees de [JSON-regels voor plat maken en escapen om](./concepts-json-flattening-escaping-rules.md) te begrijpen hoe gebeurtenissen worden opgeslagen.
 
 - Inzicht in de doorvoerbeperkingen van [uw omgeving](./concepts-streaming-ingress-throughput-limits.md)

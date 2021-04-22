@@ -6,12 +6,12 @@ ms.author: edoyle
 ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: subject-moving-resources
-ms.openlocfilehash: 9f3fcdc56b4e8d7873872212cb62f57a7669b459
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: bce61a00ae1b6b451927b43dbcf19ddb615f79a5
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726624"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861171"
 ---
 # <a name="move-a-service-fabric-mesh-application-to-another-azure-region"></a>Een toepassing Service Fabric Mesh verplaatsen naar een andere Azure-regio
 
@@ -49,7 +49,7 @@ In dit artikel wordt beschreven hoe u uw Service Fabric Mesh en de resources erv
 
 1. Wanneer de implementatie is voltooid, test u de eindpunten van de toepassing om de functionaliteit van uw toepassing te controleren.
 
-2. U kunt de status van uw toepassing ook controleren door de toepassingsstatus te controleren[(az mesh app show](/cli/azure/ext/mesh/mesh/app#ext-mesh-az-mesh-app-show)) en de toepassingslogboeken en ([az mesh code-package-log](/cli/azure/ext/mesh/mesh/code-package-log)) opdrachten te controleren met behulp van [de Azure Service Fabric Mesh CLI](./service-fabric-mesh-quickstart-deploy-container.md#set-up-service-fabric-mesh-cli).
+2. U kunt de status van uw toepassing ook controleren door de toepassingsstatus te controleren[(az mesh app show](/cli/azure/mesh/app#az_mesh_app_show)) en de toepassingslogboeken en ([az mesh code-package-log](/cli/azure/mesh/code-package-log)) opdrachten te controleren met behulp van [de Azure Service Fabric Mesh CLI](./service-fabric-mesh-quickstart-deploy-container.md#set-up-service-fabric-mesh-cli).
 
 ## <a name="commit"></a>Doorvoeren
 

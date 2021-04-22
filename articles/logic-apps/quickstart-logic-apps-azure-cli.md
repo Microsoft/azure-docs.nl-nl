@@ -7,16 +7,16 @@ ms.reviewer: estfan, logicappspm
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli, contperf-fy21q2
 ms.date: 11/23/2020
-ms.openlocfilehash: bc172fd1702addf8f4e34094452a779b09320a4d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: afc39673a30f5c99455696c7a075cb1a6a33ecd1
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97033371"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875499"
 ---
 # <a name="quickstart-create-and-manage-logic-apps-using-the-azure-cli"></a>Quickstart: Logische apps maken en beheren met behulp van Azure CLI
 
-Deze quickstart laat zien hoe u logische apps maakt en beheert door de [Azure CLI Logic Apps-extensie](/cli/azure/ext/logic/logic) (`az logic`) te gebruiken. Vanaf de opdrachtregel kunt u een logische app maken door het JSON-bestand te gebruiken voor een werkstroomdefinitie van een logische app. Vervolgens kunt u uw logische app beheren door bewerkingen zoals `list`, `show` (`get`), `update` en `delete` uit te voeren vanaf de opdrachtregel.
+Deze quickstart laat zien hoe u logische apps maakt en beheert door de [Azure CLI Logic Apps-extensie](/cli/azure/logic) (`az logic`) te gebruiken. Vanaf de opdrachtregel kunt u een logische app maken door het JSON-bestand te gebruiken voor een werkstroomdefinitie van een logische app. Vervolgens kunt u uw logische app beheren door bewerkingen zoals `list`, `show` (`get`), `update` en `delete` uit te voeren vanaf de opdrachtregel.
 
 > [!WARNING]
 > De Azure CLI Logic Apps-extensie is momenteel *experimenteel* en *niet gedekt door klantenondersteuning*. Wees voorzichtig wanneer u deze CLI-extensie gebruikt, vooral als u ervoor kiest de extensie in productieomgevingen te gebruiken.
@@ -69,7 +69,7 @@ Wanneer u de opdrachten uitvoert om uw logische app te maken of bij te werken, w
 
 ## <a name="create-logic-apps-from-cli"></a>Logische apps maken met CLI
 
-U kunt een werkstroom voor logische apps maken via Azure CLI met behulp van de opdracht [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create) met een JSON-bestand voor de definitie.
+U kunt een werkstroom voor logische apps maken via Azure CLI met behulp van de opdracht [`az logic workflow create`](/cli/azure/logic/workflow#az_logic_workflow_create) met een JSON-bestand voor de definitie.
 
 ```azurecli
 
@@ -86,7 +86,7 @@ az logic workflow create --definition
 
 ```
 
-Uw opdracht moet de volgende [vereiste parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-required-parameters) bevatten:
+Uw opdracht moet de volgende [vereiste parameters](/cli/azure/logic/workflow#az_logic_workflow_create-required-parameters) bevatten:
 
 | Parameter | Waarde | Beschrijving |
 | --------- | ----- | ----------- |
@@ -95,7 +95,7 @@ Uw opdracht moet de volgende [vereiste parameters](/cli/azure/ext/logic/logic/wo
 | Naam | `--name -n` | De naam van uw logische app. De naam mag alleen letters, cijfers, afbreekstreepjes (`-`), onderstrepingstekens (`_`), haakjes (`()`) en punten (`.`) bevatten. De naam moet ook uniek zijn binnen alle regio’s. |
 | Naam van de resourcegroep | `--resource-group -g` | De [Azure-resourcegroep](../azure-resource-manager/management/overview.md) waarin u uw logische app wilt maken. [Maak een resourcegroep](#example---create-resource-group) voor uw logische app voordat u begint, als u die nog niet hebt. |
 
-U kunt ook aanvullende [optionele parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-optional-parameters) opnemen om het toegangsbeheer, de eindpunten, het integratieaccount, de integratieserviceomgeving, de status en de resourcetags van uw logische app te configureren.
+U kunt ook aanvullende [optionele parameters](/cli/azure/logic/workflow#az_logic_workflow_create-optional-parameters) opnemen om het toegangsbeheer, de eindpunten, het integratieaccount, de integratieserviceomgeving, de status en de resourcetags van uw logische app te configureren.
 
 ### <a name="example---create-logic-app"></a>Voorbeeld - Logische app maken
 
@@ -111,9 +111,9 @@ Wanneer uw werkstroom is gemaakt, toont CLI de JSON-code van uw nieuwe werkstroo
 
 ## <a name="update-logic-apps-from-cli"></a>Logische apps bijwerken met CLI
 
-U kunt de werkstroom van een logische app ook bijwerken via Azure CLI met behulp van de opdracht [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create).
+U kunt de werkstroom van een logische app ook bijwerken via Azure CLI met behulp van de opdracht [`az logic workflow create`](/cli/azure/logic/workflow#az_logic_workflow_create).
 
-Uw opdracht moet dezelfde [vereiste parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-required-parameters) bevatten als wanneer u [een logische app maakt](#create-logic-apps-from-cli). U kunt ook dezelfde [optionele parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create-optional-parameters) toevoegen als wanneer u een logische app maakt.
+Uw opdracht moet dezelfde [vereiste parameters](/cli/azure/logic/workflow#az_logic_workflow_create-required-parameters) bevatten als wanneer u [een logische app maakt](#create-logic-apps-from-cli). U kunt ook dezelfde [optionele parameters](/cli/azure/logic/workflow#az_logic_workflow_create-optional-parameters) toevoegen als wanneer u een logische app maakt.
 
 ```azurecli
 
@@ -144,16 +144,16 @@ Wanneer uw werkstroom is bijgewerkt, toont CLI de bijgewerkte werkstroomdefiniti
 
 ## <a name="delete-logic-apps-from-cli"></a>Logische apps verwijderen met CLI
 
-U kunt de werkstroom van een logische app verwijderen via Azure CLI met behulp van de opdracht [`az logic workflow delete`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-delete).
+U kunt de werkstroom van een logische app verwijderen via Azure CLI met behulp van de opdracht [`az logic workflow delete`](/cli/azure/logic/workflow#az_logic_workflow_delete).
 
-Uw opdracht moet de volgende [vereiste parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-delete-required-parameters) bevatten:
+Uw opdracht moet de volgende [vereiste parameters](/cli/azure/logic/workflow#az_logic_workflow_delete-required-parameters) bevatten:
 
 | Parameter | Waarde | Beschrijving |
 | --------- | ----- | ----------- |
 | Naam | `--name -n` | De naam van uw logische app. |
 | Naam van de resourcegroep | `-resource-group -g` | De resourcegroep waarin uw logische app zich bevindt. |
 
-U kunt ook een [optionele parameter](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-delete-optional-parameters) opnemen om bevestigingsprompts over te slaan, namelijk `--yes -y`.
+U kunt ook een [optionele parameter](/cli/azure/logic/workflow#az_logic_workflow_delete-optional-parameters) opnemen om bevestigingsprompts over te slaan, namelijk `--yes -y`.
 
 ```azurecli
 
@@ -187,7 +187,7 @@ Nadat u op de bevestigingsprompt hebt gereageerd met `y`, wordt de logische app 
 
 ## <a name="show-logic-apps-in-cli"></a>Logische apps weergeven in CLI
 
-U kunt een specifieke werkstroom voor een logische app ophalen met behulp van de opdracht [`az logic workflow show`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-show).
+U kunt een specifieke werkstroom voor een logische app ophalen met behulp van de opdracht [`az logic workflow show`](/cli/azure/logic/workflow#az_logic_workflow_show).
 
 ```azurecli
 
@@ -196,7 +196,7 @@ az logic workflow show --name
 
 ```
 
-Uw opdracht moet de volgende [vereiste parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-show-required-parameters) bevatten
+Uw opdracht moet de volgende [vereiste parameters](/cli/azure/logic/workflow#az_logic_workflow_show-required-parameters) bevatten
 
 | Parameter | Waarde | Beschrijving |
 | --------- | ----- | ----------- |
@@ -215,9 +215,9 @@ az logic workflow show --resource-group "testResourceGroup" --name "testLogicApp
 
 ## <a name="list-logic-apps-in-cli"></a>Logische apps vermelden in CLI
 
-U kunt uw logische apps per abonnement vermelden met behulp van de opdracht [`az logic workflow list`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-list). Deze opdracht retourneert de JSON-code voor de werkstromen van uw logische apps.
+U kunt uw logische apps per abonnement vermelden met behulp van de opdracht [`az logic workflow list`](/cli/azure/logic/workflow#az_logic_workflow_list). Deze opdracht retourneert de JSON-code voor de werkstromen van uw logische apps.
 
-U kunt uw resultaten filteren op de volgende [optionele parameters](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-list-optional-parameters):
+U kunt uw resultaten filteren op de volgende [optionele parameters](/cli/azure/logic/workflow#az_logic_workflow_list-optional-parameters):
 
 | Parameter | Waarde | Beschrijving |
 | --------- | ----- | ----------- |

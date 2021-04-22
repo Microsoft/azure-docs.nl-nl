@@ -3,12 +3,12 @@ title: 'Quickstart: Een blauwdruk maken met de Azure CLI'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de Azure CLI.
 ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: fbe5c12f1c94d4b59dbdc2a97b6a4cb9af5a2328
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 506877eddd78ce54681bd4870e1d9040b4738c27
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563664"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107877404"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met Azure CLI
 
@@ -17,7 +17,7 @@ Als u leert hoe u blauwdrukken maakt en toewijst, kunnen er algemene patronen wo
 ## <a name="prerequisites"></a>Vereisten
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
-- Als u nog geen Azure-blauw drukken hebt gebruikt, registreert u de resource provider via Azure CLI met `az provider register --namespace Microsoft.Blueprint` .
+- Als u de resourceprovider nog niet Azure Blueprints gebruikt, registreert u de resourceprovider via Azure CLI met `az provider register --namespace Microsoft.Blueprint` .
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -117,7 +117,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
 
      > [!NOTE]
      > Gebruik de bestandsnaam _blueprint.json_ bij het importeren van uw blauwdrukdefinities.
-     > Deze bestandsnaam wordt gebruikt bij het aanroepen van [az blueprint import](/cli/azure/ext/blueprint/blueprint#ext_blueprint_az_blueprint_import).
+     > Deze bestandsnaam wordt gebruikt bij het aanroepen van [az blueprint import](/cli/azure/blueprint#az_blueprint_import).
 
      Het blauwdrukobject wordt standaard gemaakt in het standaardabonnement. Als u de beheergroep wilt opgeven, gebruikt u de parameter **beheergroep**. Als u het abonnement wilt opgeven, gebruikt u de parameter **abonnement**.
 
@@ -168,7 +168,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
      ```
 
      > [!NOTE]
-     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` `/` voor parameter waarden die het pad bevatten. In dit geval wordt de waarde voor **para meters** `artifacts/policyTags.json` .
+     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` voor `/` parameterwaarden die het pad bevatten. In dit geval wordt de waarde voor **parameters** `artifacts/policyTags.json` .
 
 1. Voeg nog een beleidstoewijzing toe voor de Storage-tag (gebruik hierbij de parameter _storageAccountType_ opnieuw) aan het abonnement. Deze aanvullende beleidstoewijzingsartefact laat zien dat een in de blauwdruk gedefinieerde parameter door meer dan één artefact kan worden gebruikt. In dit voorbeeld wordt **storageAccountType** gebruikt voor het instellen van een tag op de resourcegroep. Deze waarde geeft informatie over het opslagaccount dat in de volgende stap wordt gemaakt. In dit voorbeeld wordt het ingebouwde beleid _Tag met standaardwaarde op resourcegroepen toepassen_ met een GUID van `49c88fc8-6fd1-46fd-a676-f12d1d3a4c71` gebruikt.
 
@@ -198,7 +198,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
      ```
 
      > [!NOTE]
-     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` `/` voor parameter waarden die het pad bevatten. In dit geval wordt de waarde voor **para meters** `artifacts/policyStorageTags.json` .
+     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` voor `/` parameterwaarden die het pad bevatten. In dit geval wordt de waarde voor **parameters** `artifacts/policyStorageTags.json` .
 
 1. Voeg een sjabloon toe onder resourcegroep. De parameter **template** voor een ARM-sjabloon bevat de normale JSON-onderdelen van de sjabloon. De sjabloon maakt ook opnieuw gebruik van de blauwdrukparameters **storageAccountType**, **tagName** en **tagValue** door ze allemaal door te geven aan de sjabloon. De blauwdrukparameters zijn voor de sjabloon beschikbaar door de parameter **parameters** te gebruiken. Binnen de sjabloon-JSON wordt dat sleutel-waardepaar gebruikt om de waarde in te voeren. De namen van de blauwdruk- en sjabloonparameters kunnen dezelfde zijn.
 
@@ -284,7 +284,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
      ```
 
      > [!NOTE]
-     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` `/` voor parameter waarden die het pad bevatten. In dit geval wordt de waarde voor de **sjabloon** weer `artifacts/templateStorage.json` en worden **para meters** weer `artifacts/templateStorageParams.json` .
+     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` voor `/` parameterwaarden die het pad bevatten. In dit geval wordt de waarde voor **de sjabloon** en worden `artifacts/templateStorage.json` de **parameters** `artifacts/templateStorageParams.json` .
 
 1. Voeg een roltoewijzing toe onder resourcegroep. Net als bij de vorige vermelding van een roltoewijzing wordt in het onderstaande voorbeeld de definitie-id van de rol **Eigenaar** gebruikt en krijgt deze een andere parameter van de blauwdruk. In dit voorbeeld wordt de ingebouwde rol van _Eigenaar_ met een GUID van `8e3af657-a8ff-443c-a75c-2fe8c4bcb635` gebruikt.
 

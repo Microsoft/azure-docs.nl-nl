@@ -356,7 +356,7 @@ items:
                     items:
                       - name: Toegewezen SQL-pooltransacties
                         href: sql/develop-transactions.md
-                      - name: Best practices voor transacties voor toegewezen SQL-pool
+                      - name: Transacties met best practices voor toegewezen SQL-pool
                         displayname: 'Transaction, best, practices'
                         href: sql/develop-transaction-best-practices.md
                   - name: Door de gebruiker gedefinieerde schema's
@@ -1148,7 +1148,7 @@ items:
             href: ./machine-learning/tutorial-cognitive-services-sentiment.md
           - name: Anomaliedetectie met Cognitive Services
             href: ./machine-learning/tutorial-cognitive-services-anomaly.md
-          - name: Bouw machine learning toepassingen met Microsoft Machine Learning for Apache Spark (preview)
+          - name: Bouw machine learning toepassingen met Behulp van Microsoft Machine Learning for Apache Spark (preview)
             href: ./machine-learning/tutorial-build-applications-use-mmlspark.md
   - name: Data Catalog en governance
     items:
@@ -1167,7 +1167,7 @@ items:
   - name: Naslaginformatie
     items:
       - name: Azure CLI
-        href: /cli/azure/ext/synapse/
+        href: /cli/azure/
       - name: Sorteringstypen van de database
         href: sql/reference-collation-types.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
       - name: Aan de slag

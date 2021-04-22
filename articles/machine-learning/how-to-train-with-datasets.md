@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: edb7ebc94d2706d1bf20db8ed9a869107163ff8d
-ms.sourcegitcommit: aa00fecfa3ad1c26ab6f5502163a3246cfb99ec3
+ms.openlocfilehash: 0b2bb49863e07e6f06512e868ed12ecf00cc11c2
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107387986"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872385"
 ---
 # <a name="train-models-with-azure-machine-learning-datasets"></a>Modellen trainen met Azure Machine Learning gegevenssets 
 
@@ -152,7 +152,7 @@ mnist_ds = Dataset.File.from_files(path = web_paths)
 ```
 ### <a name="where-to-write-training-output"></a>Waar u trainingsuitvoer schrijft
 
-U kunt opgeven waar u uw trainingsresultaten wilt schrijven met een [OutputFileDatasetConfig-object](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig). 
+U kunt opgeven waar u de trainingsresultaten wilt schrijven met een [OutputFileDatasetConfig-object](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig). 
 
 Met OutputFileDatasetConfig-objecten kunt u het volgende doen: 
 
@@ -282,7 +282,7 @@ In het volgende codevoorbeeld wordt in de uitvoeringsconfiguratie aangegeven wel
 src.run_config.source_directory_data_store = "workspaceblobstore" 
 ```
 
-## <a name="notebook-examples"></a>Notebookvoorbeelden
+## <a name="notebook-examples"></a>Notebook-voorbeelden
 
 + Zie de notebooks voor gegevenssets voor aanvullende voorbeelden en [concepten van gegevenssets.](https://aka.ms/dataset-tutorial)
 + Zie hoe u [gegevenssets parametriseert in uw ML-pijplijnen.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb)
@@ -290,7 +290,7 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 * **Initialisatie van gegevensset is mislukt: Er** is een time-out voor het moment dat het bevestigingspunt gereed is: 
-  * Als u geen regels voor [](../virtual-network/network-security-groups-overview.md) uitgaande netwerkbeveiligingsgroep hebt en , update en de afhankelijkheden ervan gebruiken voor de meest recente versie van de specifieke secundaire versie, of als u deze gebruikt in een uitvoering, maakt u uw omgeving opnieuw zodat de meest recente patch met de oplossing kan worden `azureml-sdk>=1.12.0` `azureml-dataset-runtime` geïnstalleerd. 
+  * Als u geen regels voor [](../virtual-network/network-security-groups-overview.md) uitgaande netwerkbeveiligingsgroep hebt en , update en de afhankelijkheden ervan gebruiken om de meest recente te zijn voor de specifieke secundaire versie, of als u deze gebruikt in een uitvoering, maakt u uw omgeving opnieuw zodat de meest recente patch met de oplossing kan worden `azureml-sdk>=1.12.0` `azureml-dataset-runtime` geïnstalleerd. 
   * Als u `azureml-sdk<1.12.0` gebruikt, upgradet u naar de nieuwste versie.
   * Als u uitgaande NSG-regels hebt, moet u ervoor zorgen dat er een uitgaande regel is die al het verkeer voor de servicetag `AzureResourceMonitor` toestaat.
 
@@ -316,7 +316,7 @@ Als u een bestands share gebruikt voor andere workloads, zoals gegevensoverdrach
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Automatisch trainen machine learning modellen](how-to-auto-train-remote.md) met TabularDatasets.
+* [Automatisch trainen machine learning modellen](how-to-configure-auto-train.md#data-source-and-format) met TabularDatasets.
 
 * [Modellen voor afbeeldingsclassificatie](https://aka.ms/filedataset-samplenotebook) trainen met FileDatasets.
 

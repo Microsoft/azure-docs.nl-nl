@@ -13,20 +13,20 @@ metadata:
   author: BlackMist
   ms.date: 09/21/2020
   ms.custom: contperf-fy21q1
-  ms.openlocfilehash: f2cf2622ab4fedbe501eca3053d749694f831390
-  ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+  ms.openlocfilehash: 11815192c0076ed826ede60bfbb741caf87545c1
+  ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/09/2021
-  ms.locfileid: "102520401"
+  ms.lasthandoff: 04/22/2021
+  ms.locfileid: "107872025"
 landingContent:
 - title: 'Aan de slag: Code-first'
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Aan de slag met python-scripts
+    - text: Aan de slag met Python-scripts
       url: tutorial-1st-experiment-sdk-setup-local.md
-    - text: Aan de slag met Jupyter-notebooks (python)
+    - text: Aan de slag met Jupyter-notebooks (Python)
       url: tutorial-1st-experiment-sdk-setup.md
     - text: Batch-interferentie met ML-pijplijnen (Python)
       url: tutorial-pipeline-batch-scoring-classification.md
@@ -75,7 +75,7 @@ landingContent:
     - text: REST-API
       url: /rest/api/azureml/
     - text: Machine learning-CLI
-      url: /cli/azure/ext/azure-cli-ml/ml
+      url: /cli/azure/ml
 - title: Zoeken naar Studio (klassiek)
   linkLists:
   - linkListType: overview

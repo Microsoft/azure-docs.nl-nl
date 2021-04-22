@@ -8,22 +8,22 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/06/2021
 ms.author: mbullwin
-ms.openlocfilehash: 261dbb7cab2ac17a39777241d24e2c73cf550873
-ms.sourcegitcommit: 6686a3d8d8b7c8a582d6c40b60232a33798067be
+ms.openlocfilehash: 656270c80e8da0ece83bb04190fa7e5710a0203e
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107799849"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107880280"
 ---
-Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor JavaScript. Volg deze stappen om het pakket te installeren en te beginnen met het gebruik van de algoritmen die door de service worden geleverd. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
+Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor JavaScript. Volg deze stappen om het pakket te installeren en de algoritmen van de service te gaan gebruiken. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
 Gebruik de Anomaly Detector multivariate clientbibliotheek voor JavaScript voor het volgende:
 
 * Anomalieën op systeemniveau detecteren uit een groep tijdreeksen.
 * Wanneer een afzonderlijke tijdreeks u niet veel vertelt en u alle signalen moet bekijken om een probleem te detecteren.
-* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende soorten sensoren die verschillende aspecten van de systeemtoestand meten.
+* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende typen sensoren die verschillende aspecten van de systeemtoestand meten.
 
-[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/anomalydetector/ai-anomaly-detector)  |  [Pakket (npm)](https://www.npmjs.com/package/@azure/ai-anomaly-detector)
+[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/anomalydetector/ai-anomaly-detector)  |  [Pakket (npm)](https://www.npmjs.com/package/@azure/ai-anomaly-detector)  |  [Voorbeeldcode](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/anomalydetector/ai-anomaly-detector/samples/v3/javascript/sample_multivariate_detection.js)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -67,7 +67,7 @@ const endpoint = "YOUR_ENDPOINT";
 const data_source = "YOUR_SAMPLE_ZIP_FILE_LOCATED_IN_AZURE_BLOB_STORAGE_WITH_SAS";
 ```
 
- Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, tijdstempel en waarde. Alle tijdreeksen moeten worden ingepakt in één zip-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, een tijdstempel en een waarde. Alle tijdreeksen moeten worden ingepakt in één ZIP-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren
 
@@ -140,7 +140,7 @@ console.log("TRAINING FINISHED.")
 
 ## <a name="detect-anomalies"></a>Afwijkingen detecteren
 
-Gebruik de `detectAnomaly` functies en om te bepalen of er afwijkingen in uw `getDectectionResult` gegevensbron zijn.
+Gebruik de `detectAnomaly` functies en om te bepalen of er afwijkingen zijn in uw `getDectectionResult` gegevensbron.
 
 ```javascript
 console.log("Start detecting...")
@@ -184,6 +184,8 @@ console.log("New model has been deleted.")
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
+Voordat u de toepassing gaat uitvoeren, kan het handig zijn om uw code te controleren op de [volledige voorbeeldcode](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/anomalydetector/ai-anomaly-detector/samples/v3/javascript/sample_multivariate_detection.js)
+
 Voer de toepassing uit met de opdracht `node` in uw quickstart-bestand.
 
 ```console
@@ -192,4 +194,4 @@ node index.js
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Anomaly Detector multivariate best practices (best practices voor meerdere varianten)](../../concepts/best-practices-multivariate.md)
+* [Anomaly Detector best practices voor meerdere varianten](../../concepts/best-practices-multivariate.md)

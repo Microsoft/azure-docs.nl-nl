@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/25/2021
+ms.date: 04/21/2021
 ms.author: v-jansk
-ms.openlocfilehash: 1e52d4ff5ccb5047ed82cca2764e98a8bd212305
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.openlocfilehash: 8476c4891cef9d9055b16c7ac574e569ecf5b3f2
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107836170"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864860"
 ---
 # <a name="get-documents-status"></a>De status van documenten op halen
 
@@ -37,7 +37,7 @@ Verzend een `GET` aanvraag naar:
 GET https://<NAME-OF-YOUR-RESOURCE>.cognitiveservices.azure.com/translator/text/batch/v1.0-preview.1/batches/{id}/documents
 ```
 
-Meer informatie over het vinden [van uw aangepaste domeinnaam](../get-started-with-document-translation.md#find-your-custom-domain-name).
+Meer informatie over het vinden van [uw aangepaste domeinnaam](../get-started-with-document-translation.md#find-your-custom-domain-name).
 
 > [!IMPORTANT]
 >
@@ -88,7 +88,7 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |waarde|DocumentStatusDetail []|De detailstatus van afzonderlijke documenten die hieronder worden vermeld.|
 |value.path|tekenreeks|Locatie van het document of de map.|
 |value.createdDateTimeUtc|tekenreeks|Datum/tijd van bewerking gemaakt.|
-|value.lastActionDateTimeUt|tekenreeks|Datum/tijd waarin de status van de bewerking is bijgewerkt.|
+|value.lastActionDateTimeUt|tekenreeks|De datum waarop de status van de bewerking is bijgewerkt.|
 |value.status|status|Lijst met mogelijke statussen voor een taak of document.<ul><li>Geannuleerd</li><li>Annuleren</li><li>Mislukt</li><li>Niet gestart</li><li>Wordt uitgevoerd</li><li>Geslaagd</li><li>ValidationFailed</li></ul>|
 |value.to|tekenreeks|Naar taal.|
 |value.progress|tekenreeks|Voortgang van de vertaling, indien beschikbaar.|
@@ -103,7 +103,7 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
 |Doel|tekenreeks|Haalt de bron van de fout op. Dit zijn bijvoorbeeld 'documenten' of 'document-id' in het geval van een ongeldig document.|
 |innerError|InnerErrorV2|Nieuwe interne foutindeling, die voldoet aan Cognitive Services API-richtlijnen. Het bevat vereiste eigenschappen: ErrorCode, message en optional properties target, details(sleutelwaardepaar), interne fout (dit kan worden genest).|
-|innerError.code|tekenreeks|Haalt de codefoutreeks op.|
+|innerError.code|tekenreeks|Haalt een codefoutreeks op.|
 |innerError.message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
 
 ## <a name="examples"></a>Voorbeelden

@@ -96,6 +96,8 @@
               href: connect-azure-kubernetes-service.md
             - name: Azure SQL-databaselogboeken
               href: connect-azure-sql-logs.md
+            - name: Azure Storage-accounts
+              href: connect-azure-storage-account.md
             - name: Azure Web Application Firewall (WAF)
               href: connect-azure-waf.md
             - name: Defender for IoT (voorheen ASC voor IoT)
@@ -214,9 +216,9 @@
                   items:
                     - name: AI Vectra Detect
                       href: connect-ai-vectra-detect.md
-                    - name: Akamai Security Events
+                    - name: Akamai-beveiligingsgebeurtenissen
                       href: connect-akamai-security-events.md
-                    - name: ClearPass voor ClearPass
+                    - name: Aruba ClearPass
                       href: connect-aruba-clearpass.md
                     - name: Broadcom Symantec DLP
                       href: connect-broadcom-symantec-dlp.md
@@ -298,7 +300,7 @@
     - name: Belangrijkste Azure Sentinel werkmappen
       href: top-workbooks.md
     - name: Azure CLI
-      href: /cli/azure/ext/sentinel/sentinel
+      href: /cli/azure/sentinel
     - name: Azure RBAC-rollen
       items:
         - name: Alle Azure-rollen
@@ -325,13 +327,13 @@
       items:
         - name: Overzicht van Kusto-query's
           href: /azure/data-explorer/kusto/query/
-        - name: Snelzoek naar kusto-querytaal
+        - name: Snelzoekverwijzing kusto-querytaal
           href: /azure/data-explorer/kql-quick-reference
-        - name: Azure Monitor logboekquery optimaliseren
+        - name: Azure Monitor van logboekquery's
           href: ../azure-monitor/logs/query-optimization.md
     - name: UEBA-verrijkingen
       href: ueba-enrichments.md
-    - name: CEF-logboekveldtoewijzing
+    - name: Toewijzing van CEF-logboekveld
       href: cef-name-mapping.md
 - name: Resources
   items:

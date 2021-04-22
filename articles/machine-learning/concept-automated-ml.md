@@ -1,7 +1,7 @@
 ---
 title: Wat is geautomatiseerde ML? AutoML
 titleSuffix: Azure Machine Learning
-description: Meer informatie over hoe Azure Machine Learning automatisch een model kunt genereren met behulp van de para meters en criteria die u opgeeft.
+description: Ontdek hoe Azure Machine Learning automatisch een model kunt genereren met behulp van de parameters en criteria die u op geeft.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,104 +10,102 @@ author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: cbc147cb0aabc0540e3a91c99243aa88a8cca146
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.openlocfilehash: 6f8f775e474b47cbfd5f3b4aca8987a009a7f6e1
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107210789"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874131"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Wat is geautomatiseerde machine learning (AutoML)?
 
-Automatische machine learning, ook wel geautomatiseerd ML of AutoML genoemd, is het proces van het automatiseren van de tijdrovende, terugkerende taken van het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. Automatische ML in Azure Machine Learning is gebaseerd op een door braak van onze [micro soft research-afdeling](https://www.microsoft.com/research/project/automl/).
+Geautomatiseerde machine learning, ook wel geautomatiseerde ML of AutoML genoemd, is het proces van het automatiseren van de tijdrovende, iteratieve taken van machine learning modelontwikkeling. Hiermee kunnen gegevenswetenschappers, analisten en ontwikkelaars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit en tegelijkertijd de kwaliteit van het model handhaven. Geautomatiseerde ML in Azure Machine Learning is gebaseerd op een doorbrak van onze [Microsoft Research-afdeling.](https://www.microsoft.com/research/project/automl/)
 
-De traditionele ontwikkeling van machine learning modellen is het bronnen-intensief, waardoor de kennis en tijd van het domein belang rijk zijn voor het produceren en vergelijken van tien tallen modellen. Met automatische machine learning versnelt u de tijd die nodig is om productie-Ready ML-modellen te verkrijgen met een geweldig gemak en efficiëntie.
+Traditionele machine learning modelontwikkeling is resource-intensief, wat veel domeinkennis en -tijd vereist om tientallen modellen te produceren en te vergelijken. Met geautomatiseerde machine learning versnelt u de tijd die nodig is om ml-modellen die gereed zijn voor productie met veel gemak en efficiëntie te krijgen.
 
 ## <a name="automl-in-azure-machine-learning"></a>AutoML in Azure Machine Learning
 
-Azure Machine Learning biedt twee ervaring voor het werken met automatische ML:
+Azure Machine Learning biedt twee ervaringen voor het werken met geautomatiseerde ML:
 
-* Voor code ervaring hebben klanten [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro).  Aan de slag met [zelf studie: automatische machine learning gebruiken om de taxi tarieven te voors pellen](tutorial-auto-train-models.md).
+* Voor klanten met code-ervaring gebruikt [Azure Machine Learning Python SDK.](/python/api/overview/azure/ml/intro)  Aan de slag met [Zelfstudie: Geautomatiseerde machine learning om taxiritten te voorspellen.](tutorial-auto-train-models.md)
 
-* Voor klanten met een beperkte of geen code ervaring Azure Machine Learning Studio op [https://ml.azure.com](https://ml.azure.com/) .  Aan de slag met deze zelf studies:
-    * [Zelf studie: een classificatie model maken met geautomatiseerd ml in azure machine learning](tutorial-first-experiment-automated-ml.md).
+* Voor klanten met beperkte/geen code-ervaring kunt Azure Machine Learning-studio op [https://ml.azure.com](https://ml.azure.com/) .  Ga aan de slag met deze zelfstudies:
+    * [Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning](tutorial-first-experiment-automated-ml.md).
     *  [Zelfstudie: Vraag voorspellen met automatische machine learning](tutorial-automated-ml-forecast.md)
 
 
-## <a name="when-to-use-automl-classify-regression--forecast"></a>Wanneer gebruikt u AutoML: classificeren, regressie, & prognose
+## <a name="when-to-use-automl-classify-regression--forecast"></a>Wanneer u AutoML gebruikt: classificeren, regressie, & voorspellen
 
-Pas automatische ML toe als u wilt dat Azure Machine Learning een model traint en afstemt met behulp van de doel metriek die u opgeeft. Automatische ML democratiseert, doordat het ontwikkel proces van het machine learning model en biedt gebruikers de mogelijkheid om een end-to-end machine learning-pijp lijn te identificeren voor een probleem.
+Pas geautomatiseerde ML toe wanneer u Azure Machine Learning model voor u wilt trainen en afstemmen met behulp van de doelmetrische gegevens die u opgeeft. Geautomatiseerde ML democratiseert het machine learning-modelontwikkelingsproces en stelt de gebruikers, ongeacht hun expertise op het gebied van data science, in staat om een end-to-end machine learning-pijplijn te identificeren voor elk probleem.
 
-Gegevens wetenschappers, analisten en ontwikkel aars in verschillende branches kunnen gebruikmaken van automatische MILLILITERs:
-+ Oplossingen voor ML implementeren zonder uitgebreide programmeer kennis
-+ Bespaar tijd en resources
-+ Best practices voor data wetenschappen gebruiken
-+ Flexibel probleem oplossing bieden-oplossen
+Gegevenswetenschappers, analisten en ontwikkelaars in verschillende branches kunnen geautomatiseerde ML gebruiken voor het volgende:
++ ML-oplossingen implementeren zonder uitgebreide programmeerkennis
++ Tijd en resources besparen
++ Best practices voor data science gebruiken
++ Flexibele probleemoplossing bieden
 
 ### <a name="classification"></a>Classificatie
 
-Classificatie is een algemene machine learning taak. Classificatie is een soort gecontroleerde lessen waarin modellen informatie leren met behulp van trainings gegevens en deze informatie kan Toep assen op nieuwe gegevens. Azure Machine Learning biedt featurizations specifiek voor deze taken, zoals diepe Neural featurizers voor de classificatie van netwerk tekst. Meer informatie over [parametrisatie-opties](how-to-configure-auto-features.md#featurization). 
+Classificatie is een veelvoorkomende machine learning taak. Classificatie is een type leren onder supervisie waarin modellen leren met behulp van trainingsgegevens en deze kennis toepassen op nieuwe gegevens. Azure Machine Learning biedt featurizations specifiek voor deze taken, zoals deep neural network text featurizers voor classificatie. Meer informatie over [featurization-opties.](how-to-configure-auto-features.md#featurization) 
 
-Het belangrijkste doel van classificatie modellen is om te voors pellen welke categorieën nieuwe gegevens zijn op basis van de informatie van de trainings gegevens. Voor beelden van veelvoorkomende classificaties zijn fraude detectie, handschrift herkenning en object detectie. Meer informatie en een voor beeld bekijken van [een classificatie model maken met automatische milliliters](tutorial-first-experiment-automated-ml.md).
+Het belangrijkste doel van classificatiemodellen is om te voorspellen in welke categorieën nieuwe gegevens vallen op basis van de trainingsgegevens. Veelvoorkomende classificatievoorbeelden zijn fraudedetectie, handschriftherkenning en objectdetectie. Zie Een classificatiemodel maken met geautomatiseerde ML voor meer informatie en een [voorbeeld.](tutorial-first-experiment-automated-ml.md)
 
-Zie voor beelden van classificatie en geautomatiseerde machine learning in deze python-notebooks: [fraude detectie](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb), [marketing voorspelling](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb)en [gegevens classificatie van nieuws groep](https://towardsdatascience.com/automated-text-classification-using-machine-learning-3df4f4f9570b)
+Zie voorbeelden van classificatie en geautomatiseerde machine learning in deze Python-notebooks: [Fraudedetectie,](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb) [Marketingvoorspelling](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb)en [Newsgroup-gegevensclassificatie](https://towardsdatascience.com/automated-text-classification-using-machine-learning-3df4f4f9570b)
 
 ### <a name="regression"></a>Regressie
 
-Net als bij de classificatie zijn regressie taken ook een veelvoorkomende taak onder toezicht. Azure Machine Learning biedt [featurizations specifiek voor deze taken](how-to-configure-auto-features.md#featurization).
+Net als bij classificatie zijn regressietaken ook een algemene leertaak onder supervisie. Azure Machine Learning biedt [specifieke featurizations voor deze taken.](how-to-configure-auto-features.md#featurization)
 
-Anders dan classificatie waarbij voorspelde uitvoer waarden categorische zijn, hebben regressie modellen voor speld numerieke uitvoer waarden op basis van onafhankelijke voor spellingen. In regressie is het doel om te helpen de relatie tot stand te brengen tussen deze onafhankelijke voorspellingsvariabelen door te schatten hoe één variabele de andere beïnvloedt. Bijvoorbeeld prijs voor auto Mobile op basis van functies zoals het beslagen van gas, veiligheids classificatie, enzovoort. Lees meer informatie en Bekijk een voor beeld van [regressie met automatische machine learning](tutorial-auto-train-models.md).
+Anders dan bij classificatie waarbij voorspelde uitvoerwaarden categorisch zijn, voorspellen regressiemodellen numerieke uitvoerwaarden op basis van onafhankelijke voorspellingen. In regressie is het doel om te helpen de relatie tot stand te brengen tussen deze onafhankelijke voorspellingsvariabelen door te schatten hoe één variabele de andere beïnvloedt. Bijvoorbeeld de prijs van auto's op basis van functies zoals, kilometerstand bij gas, veiligheidsclassificatie, enzovoort. Meer informatie en een voorbeeld van [regressie met geautomatiseerde machine learning](tutorial-auto-train-models.md).
 
-Bekijk voor beelden van regressie en automatische machine learning voor voor spellingen in deze python-notebooks: CPU-prestaties voors [pellen](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-explanation-featurization/auto-ml-regression-explanation-featurization.ipynb), 
+Zie voorbeelden van regressie en geautomatiseerde machine learning voor voorspellingen in deze Python-notebooks: [CPU-prestatievoorspelling](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-explanation-featurization/auto-ml-regression-explanation-featurization.ipynb), 
 
-### <a name="time-series-forecasting"></a>Prognose van Time-Series
+### <a name="time-series-forecasting"></a>Prognose voor tijdreeksen
 
-Het maken van prognoses is een integraal onderdeel van een bedrijf, of het nu gaat om inkomsten, inventaris, verkoop of klant vraag. U kunt automatische ML gebruiken om technieken en benaderingen te combi neren en een aanbevolen prognose voor de time-series van hoge kwaliteit te krijgen. Meer informatie over deze procedure: [geautomatiseerde machine learning voor time series-prognoses](how-to-auto-train-forecast.md). 
+Het bouwen van prognoses is een integraal onderdeel van elk bedrijf, of het nu gaat om omzet, inventaris, verkoop of vraag van klanten. U kunt geautomatiseerde ML gebruiken om technieken en benaderingen te combineren en een aanbevolen tijdreeksprognose van hoge kwaliteit te krijgen. Meer informatie met deze zelf-how-to: [geautomatiseerde machine learning voor tijdreeksprognoses.](how-to-auto-train-forecast.md) 
 
-Een geautomatiseerd experiment in de tijd reeks wordt behandeld als een multidimensionale regressie probleem. De waarden voor de laatste tijd reeksen zijn ' gedraaid ' om aanvullende dimensies te krijgen voor de regressor hierop samen met andere voor spellingen. Deze methode, in tegens telling tot de methoden van de klassieke tijd reeks, heeft een voor deel van het gebruik van natuurlijk meerdere contextuele variabelen en hun relatie met elkaar tijdens de training. Automatische ML leert een enkelvoudig, maar vaak intern vertakkings model voor alle items in de gegevensset en de voor spellingen Horizons. Er zijn meer gegevens beschikbaar voor het schatten van model parameters en generalisatie naar onzichtbaar serie.
+Een geautomatiseerd tijdreeksexperiment wordt behandeld als een multivariate regressieprobleem. Waarden uit eerdere tijdreeksen worden 'draaiend' om extra dimensies voor de regressor te worden, samen met andere voorspellingen. Deze benadering heeft, in tegenstelling tot klassieke tijdreeksmethoden, een voordeel van het op natuurlijke wijze opnemen van meerdere contextuele variabelen en hun relatie met elkaar tijdens de training. Geautomatiseerde ML leert één, maar vaak intern vertakt model voor alle items in de gegevensset en voorspellingsperioden. Er zijn dus meer gegevens beschikbaar voor het schatten van modelparameters en generalisatie voor niet-geziene reeksen.
 
-De geavanceerde prognose configuratie bevat:
-* Kerst detectie en parametrisatie
-* time-series-en DNN-leerers (automatisch ARIMA, Prophet, ForecastTCN)
-* veel modellen bieden ondersteuning via groepering
-* Cross-Origin-Kruis validatie
-* Configureer bare lags
-* statistische functies van het Rolling venster
+Geavanceerde prognoseconfiguratie omvat:
+* vakantiedetectie en -featurization
+* tijdreeks- en DNN-studenten (Auto-ARIMA, Timeline, ForecastTCN)
+* ondersteuning voor veel modellen via groepering
+* kruisvalidatie rolling-origin
+* configureerbare vertragingen
+* functies voor aggregatie van rolling window
 
 
-Bekijk voor beelden van regressie en automatische machine learning voor voor spellingen in deze python-notebooks: [verkoop prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb), [vraag prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)en [drank productie prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-beer-remote/auto-ml-forecasting-beer-remote.ipynb).
+Zie voorbeelden van regressie en geautomatiseerde machine learning voor voorspellingen [](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb)in deze Python-notebooks: Verkoopprognose, [](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)Vraagprognose en [Prognose voor productie.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-beer-remote/auto-ml-forecasting-beer-remote.ipynb)
 
-## <a name="how-automated-ml-works"></a>Hoe geautomatiseerd ML werkt
+## <a name="how-automated-ml-works"></a>Hoe geautomatiseerde ML werkt
 
-Tijdens de training maakt Azure Machine Learning een aantal pijp lijnen parallel die verschillende algoritmen en para meters voor u proberen. De service herhaalt een combi natie van ML-algoritmen die zijn gekoppeld aan functie selecties, waarbij elke herhaling een model met een trainings Score produceert. Hoe hoger de score, hoe beter het model wordt beschouwd als uw gegevens.  Het wordt gestopt zodra de afsluit criteria die in het experiment zijn gedefinieerd, zijn gevonden. 
+Tijdens de training Azure Machine Learning een aantal pijplijnen parallel gemaakt waarmee verschillende algoritmen en parameters voor u worden geprobeerd. De service doormaakt ml-algoritmen die zijn gekoppeld aan functieselecties, waarbij elke iteratie een model met een trainingsscore produceert. Hoe hoger de score, hoe beter het model wordt beschouwd als 'passend' in uw gegevens.  Deze wordt gestopt zodra deze voldoet aan de exitcriteria die zijn gedefinieerd in het experiment. 
 
-Met **Azure machine learning** kunt u uw automatische ml-experimenten ontwerpen en uitvoeren met de volgende stappen:
+Met **Azure Machine Learning** kunt u uw geautomatiseerde ML-trainingsexperimenten ontwerpen en uitvoeren met de volgende stappen:
 
-1. **Bepaal welk ml-probleem** moet worden opgelost: classificatie, prognose of regressie
+1. **Identificeer het ML-probleem** dat moet worden opgelost: classificatie, prognose of regressie
 
-1. **Kies of u de python-SDK of de web-ervaring van Studio wilt gebruiken**: meer informatie over de pariteit tussen de [python-SDK en Studio Web Experience](#parity).
+1. **Kies of u de Python SDK** of de studio-webervaring wilt gebruiken: meer informatie over de pariteit tussen de [Python SDK en de Studio-webervaring.](#parity)
 
-   * Voor een beperkte of geen code-ervaring kunt u de Azure Machine Learning Studio Web Experience op [https://ml.azure.com](https://ml.azure.com/)  
-   * Bekijk voor python-ontwikkel aars de [Azure machine learning PYTHON SDK](how-to-configure-auto-train.md) 
+   * Voor beperkte of geen code-ervaring kunt u de Azure Machine Learning-studio webervaring op [https://ml.azure.com](https://ml.azure.com/)  
+   * Voor Python-ontwikkelaars raadpleegt u [de Azure Machine Learning Python SDK](how-to-configure-auto-train.md) 
     
-1. **Geef de bron en de indeling van de gelabelde trainings gegevens op**: numpy-matrices of Panda-data frame
+1. **Geef de bron en indeling van de gelabelde trainingsgegevens** op: Numpy-matrices of Pandas-gegevensframe
 
-1. **Configureer het reken doel voor model training**, zoals uw [lokale computer, Azure machine learning reken processen, externe vm's of Azure Databricks](how-to-set-up-training-targets.md).  Meer informatie over geautomatiseerde training [op een externe bron](how-to-auto-train-remote.md).
+1. **Configureer het rekendoel voor modeltraining,** zoals uw lokale [computer, Azure Machine Learning Computes,](how-to-set-up-training-targets.md)externe VM's of Azure Databricks .
 
-1. **Configureer de para meters voor automatische machine learning** die bepalen hoeveel iteraties boven verschillende modellen, afstemming-instellingen, geavanceerde preverwerking/parametrisatie en welke metrische gegevens er moeten worden weer gegeven bij het bepalen van het beste model.  
-1. **Verzend de trainings uitvoering.**
+1. Configureer de geautomatiseerde **machine learning-parameters** die bepalen hoeveel iteraties er worden gebruikt voor verschillende modellen, hyperparameterinstellingen, geavanceerde voorverwerking/parametrisatie en welke metrische gegevens u moet bekijken bij het bepalen van het beste model.  
+1. **Verzend de trainingsrun.**
 
 1. **De resultaten bekijken** 
 
-In het volgende diagram ziet u dit proces. 
+Het volgende diagram illustreert dit proces. 
 ![Geautomatiseerde machine learning](./media/concept-automated-ml/automl-concept-diagram2.png)
 
 
-U kunt ook de informatie over geregistreerde uitvoeringen controleren, die de [metrische gegevens bevat](how-to-understand-automated-ml.md) die tijdens de uitvoering zijn verzameld. De trainings uitvoering produceert een met python geserialiseerd object ( `.pkl` bestand) dat het model en de voor verwerking van gegevens bevat.
+U kunt ook de vastgelegde gegevens van de run inspecteren, die [metrische gegevens bevat](how-to-understand-automated-ml.md) die tijdens de run zijn verzameld. De trainingsrun produceert een geseraliseerd Python-object (bestand) dat het `.pkl` model en de voorverwerking van gegevens bevat.
 
-Hoewel het bouwen van modellen geautomatiseerd is, kunt u ook [zien hoe belang rijke of relevante functies](how-to-configure-auto-train.md#explain) voor de gegenereerde modellen zijn.
-
-Meer informatie over het gebruik van een [extern Compute-doel](how-to-auto-train-remote.md).
+Hoewel het bouwen van modellen geautomatiseerd is, kunt u ook [leren hoe belangrijk of relevant de functies zijn](how-to-configure-auto-train.md#explain) voor de gegenereerde modellen.
 
 
 
@@ -116,183 +114,183 @@ Meer informatie over het gebruik van een [extern Compute-doel](how-to-auto-train
 
 ## <a name="feature-engineering"></a>Functie-engineering
 
-Feature engineering is het proces van het gebruik van domein kennis van de gegevens voor het maken van functies waarmee u beter ML-algoritmen kunt leren. In Azure Machine Learning worden technieken voor schalen en normalisatie toegepast om functie techniek te vergemakkelijken. Deze technieken en functie techniek worden gezamenlijk aangeduid als parametrisatie.
+Functie-engineering is het proces waarbij domeinkennis van de gegevens wordt gebruikt om functies te maken waarmee ML-algoritmen beter kunnen leren. In Azure Machine Learning worden schaal- en normalisatietechnieken toegepast om de feature engineering. Gezamenlijk worden deze technieken en feature engineering aangeduid als featurization.
 
-Voor automatische machine learning experimenten wordt parametrisatie automatisch toegepast, maar kan ook worden aangepast op basis van uw gegevens. Meer [informatie over wat parametrisatie is inbegrepen](how-to-configure-auto-features.md#featurization).  
+Voor geautomatiseerde machine learning wordt featurization automatisch toegepast, maar kan ook worden aangepast op basis van uw gegevens. [Meer informatie over wat featurization is opgenomen.](how-to-configure-auto-features.md#featurization)  
 
 > [!NOTE]
-> Automatische machine learning parametrisatie stappen (functie normalisatie, het verwerken van ontbrekende gegevens, het converteren van tekst naar numerieke waarde, enzovoort) worden onderdeel van het onderliggende model. Wanneer u het model gebruikt voor voor spellingen, worden dezelfde parametrisatie-stappen die tijdens de training worden toegepast, automatisch toegepast op de invoer gegevens.
+> Geautomatiseerde machine learning functienormalisatie (functienormalisatie, verwerking van ontbrekende gegevens, het converteren van tekst naar numerieke gegevens, enzovoort) maken deel uit van het onderliggende model. Wanneer u het model voor voorspellingen gebruikt, worden dezelfde featurization-stappen die tijdens de training worden toegepast, automatisch toegepast op uw invoergegevens.
 
-### <a name="automatic-featurization-standard"></a>Automatische parametrisatie (standaard)
+### <a name="automatic-featurization-standard"></a>Automatische featurization (standaard)
 
-In elk automatisch machine learning experiment worden uw gegevens automatisch geschaald of genormaliseerd om de Help-algoritmen goed uit te voeren. Tijdens de model training wordt een van de volgende schalen of normalisatie technieken toegepast op elk model. Meer informatie over hoe AutoML helpt [om te voor komen dat gegevens in uw modellen worden gespreid en niet in evenwicht worden gegeven](concept-manage-ml-pitfalls.md) .
+In elk geautomatiseerd machine learning experiment worden uw gegevens automatisch geschaald of genormaliseerd om algoritmen goed te laten presteren. Tijdens het trainen van het model wordt een van de volgende schaal- of normalisatietechnieken toegepast op elk model. Meer informatie over hoe AutoML helpt te voorkomen dat gegevens in uw modellen [overfitting](concept-manage-ml-pitfalls.md) en onevenwichtigheid veroorzaken.
 
-|Schaal &nbsp; & &nbsp; verwerking| Description |
+|Verwerking &nbsp; & &nbsp; schalen| Description |
 | ------------- | ------------- |
-| [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Functies standaardiseren door het gemiddelde en de schaal aanpassing te verwijderen voor eenheids variantie  |
-| [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Transformeert functies door elke functie te schalen op basis van het minimum en maximum van die kolom  |
-| [MaxAbsScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MaxAbsScaler.html#sklearn.preprocessing.MaxAbsScaler) |Elke functie schalen met de Maxi maal absolute waarde |
-| [RobustScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html) |Deze schaal functies op basis van hun quantile bereik |
-| [ASSISTENT](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) |Lineaire dimensionaliteit door de gegevens uit de enkelvoudige waarde te desamen stellen om deze te projecteren in een gereduceerde ruimte |
-| [TruncatedSVDWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html) |Deze transformator voert lineaire dimensionaliteit uit met behulp van een afgekapte enkelvouds waarde (SVD). In tegens telling tot PCA worden met deze Estimator de gegevens niet gecentreerd voordat de enkelvoudige waarde wordt uitgevouwen. Dit betekent dat deze kan werken met scipy. sparse-matrices |
-| [SparseNormalizer](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html) | Elk voor beeld (dat wil zeggen, elke rij van de gegevens matrix) met ten minste één niet-nul onderdeel, wordt afzonderlijk van andere steek proeven opnieuw geschaald, zodat de norm (L1 of L2) gelijk is aan 1 |
+| [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Functies standaardiseren door het gemiddelde te verwijderen en te schalen naar eenheidsvariantie  |
+| [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Transformeert functies door elke functie te schalen op het minimum en maximum van die kolom  |
+| [MaxAbsScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MaxAbsScaler.html#sklearn.preprocessing.MaxAbsScaler) |Elke functie schalen met de maximale absolute waarde |
+| [RobustScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html) |Deze scaler is voorzien van hun kwantielbereik |
+| [Pca](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) |Linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space (Lineaire dimensionaliteitsvermindering met behulp van enkelvoudige waardeafleding van de gegevens om deze naar een lager dimensionale ruimte te projecteren) |
+| [AfgekaptSVDWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html) |Met deze transformator wordt lineaire dimensionaliteitsvermindering uitgevoerd door middel van afgekapte enkelvoudige waardedecompositie (SVD). In tegenstelling tot PCA centreert deze estimator de gegevens niet voordat de enkelvoudige waarde wordt ontleding bewerkt, wat betekent dat deze efficiënt kan werken met scipy.sparse-matrices |
+| [SparseNormalizer](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html) | Elk voorbeeld (dat wil zeggen, elke rij van de gegevensmatrix) met ten minste één niet-nulonderdeel wordt onafhankelijk van andere steekproeven opnieuw geschaald, zodat de norm (l1 of l2) gelijk is aan één |
 
-### <a name="customize-featurization"></a>Parametrisatie aanpassen
+### <a name="customize-featurization"></a>Featurization aanpassen
 
-Er zijn ook extra technieken voor functie techniek, zoals code ring en trans formaties, beschikbaar. 
+Er feature engineering extra technieken beschikbaar, zoals codering en transformaties. 
 
 Schakel deze instelling in met:
 
-+ Azure Machine Learning studio: **automatische parametrisatie** inschakelen in de sectie **aanvullende configuratie weer geven** [met de volgende stappen](how-to-use-automated-ml-for-ml-models.md#customize-featurization).
++ Azure Machine Learning-studio: Schakel **Automatische featurization** in de **sectie Aanvullende configuratie** weergeven in met deze [stappen](how-to-use-automated-ml-for-ml-models.md#customize-featurization).
 
-+ Python-SDK: Geef `"feauturization": 'auto' / 'off' / 'FeaturizationConfig'` in uw [AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig) -object op. Meer informatie over het [inschakelen van parametrisatie](how-to-configure-auto-features.md). 
++ Python SDK: geef `"feauturization": 'auto' / 'off' / 'FeaturizationConfig'` op in uw [AutoMLConfig-object.](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig) Meer informatie over het [inschakelen van featurization](how-to-configure-auto-features.md). 
 
-## <a name="ensemble-models"></a><a name="ensemble"></a> Ensemble-modellen
+## <a name="ensemble-models"></a><a name="ensemble"></a> Ensemblemodellen
 
-Automatische machine learning ondersteunt ensemble-modellen die standaard zijn ingeschakeld. Ensemble Learning verbetert de machine learning resultaten en voorspellende prestaties door het combi neren van meerdere modellen, in tegens telling tot het gebruik van één model. De ensembles herhalingen worden weer gegeven als de laatste herhalingen van de uitvoering. Automatische machine learning maakt gebruik van zowel stem-als gestapelde ensemble-methoden voor het combi neren van modellen:
+Geautomatiseerde machine learning ondersteuning voor ensemblemodellen, die standaard zijn ingeschakeld. Ensemble learning verbetert machine learning resultaten en voorspellende prestaties door meerdere modellen te combineren in plaats van afzonderlijke modellen te gebruiken. De ensemble-iteraties worden weergegeven als de laatste iteraties van uw run. Geautomatiseerde machine learning maakt gebruik van stem- en stacking-ensemblemethoden voor het combineren van modellen:
 
-* **Stem**: voor speld op basis van het gewogen gemiddelde van voorspelde klasse-kansen (voor classificatie taken) of voorspelde regressie doelen (voor regressie taken).
-* **Stapelen**: stacking combineert heterogene-modellen en treinen een meta model op basis van de uitvoer van de afzonderlijke modellen. De huidige standaard-META modellen zijn LogisticRegression voor classificatie taken en ElasticNet voor regressie-en prognose taken.
+* **Stemmen:** voorspelt op basis van het gewogen gemiddelde van voorspelde klassekansen (voor classificatietaken) of voorspelde regressiedoelen (voor regressietaken).
+* **Stapelen:** stapelen combineert heterogene modellen en traint een metamodel op basis van de uitvoer van de afzonderlijke modellen. De huidige standaard metamodellen zijn LogisticRegression voor classificatietaken en ElasticNet voor regressie-/prognosetaken.
 
-Het [selectie algoritme van Caruana ensemble](http://www.niculescu-mizil.org/papers/shotgun.icml04.revised.rev2.pdf) met gesorteerde ensemble-initialisatie wordt gebruikt om te bepalen welke modellen er moeten worden gebruikt in de ensemble. Op hoog niveau initialiseert dit algoritme de ensemble met Maxi maal vijf modellen met de beste afzonderlijke scores en verifieert dat deze modellen binnen 5% drempelwaarde van de beste score zijn om een slechte initiële ensemble te voor komen. Vervolgens wordt voor elke ensemble-iteratie een nieuw model toegevoegd aan de bestaande ensemble en wordt de resulterende score berekend. Als een nieuw model de bestaande ensemble-score heeft verbeterd, wordt de ensemble bijgewerkt met het nieuwe model.
+Het [selectiealgoritme van het Caruana-ensemble](http://www.niculescu-mizil.org/papers/shotgun.icml04.revised.rev2.pdf) met gesorteerde ensemble-initialisatie wordt gebruikt om te bepalen welke modellen in het ensemble moeten worden gebruikt. Op hoog niveau initialiseert dit algoritme het ensemble met maximaal vijf modellen met de beste afzonderlijke scores en wordt gecontroleerd of deze modellen binnen de drempelwaarde van 5% van de beste score liggen om een slecht eerste ensemble te voorkomen. Vervolgens wordt voor elke ensemble-iteratie een nieuw model toegevoegd aan het bestaande ensemble en wordt de resulterende score berekend. Als een nieuw model de bestaande ensemblescore heeft verbeterd, wordt het ensemble bijgewerkt met het nieuwe model.
 
-Zie de [procedure](how-to-configure-auto-train.md#ensemble) voor het wijzigen van standaard-ensemble-instellingen in automatische machine learning.
+Zie de [how-to voor het](how-to-configure-auto-train.md#ensemble) wijzigen van standaardinstellingen voor ensembles in geautomatiseerde machine learning.
 
-## <a name="guidance-on-local-vs-remote-managed-ml-compute-targets"></a><a name="local-remote"></a>Richt lijnen voor lokale versus extern beheerde ML Compute-doelen
+## <a name="guidance-on-local-vs-remote-managed-ml-compute-targets"></a><a name="local-remote"></a>Richtlijnen voor lokale versus extern beheerde ML-rekendoelen
 
-De webinterface voor automatische ML maakt altijd gebruik van een extern [Compute-doel](concept-compute-target.md).  Maar wanneer u de python-SDK gebruikt, kiest u een lokale Compute of een extern Compute-doel voor de automatische ML-training.
+De webinterface voor geautomatiseerde ML maakt altijd gebruik van een extern [rekendoel.](concept-compute-target.md)  Maar wanneer u de Python-SDK gebruikt, kiest u een lokaal rekendoel of een extern rekendoel voor geautomatiseerde ML-training.
 
-* **Lokale Compute**: training vindt plaats op de computer van uw lokale laptop of virtuele machine. 
-* **Externe Compute**: training vindt plaats op machine learning compute-clusters.  
+* **Lokale rekenkracht:** Training vindt plaats op uw lokale laptop of VM-rekenkracht. 
+* **Extern berekenen:** training vindt plaats op Machine Learning rekenclusters.  
 
-### <a name="choose-compute-target"></a>Reken doel kiezen
-Houd rekening met deze factoren bij het kiezen van het berekenings doel:
+### <a name="choose-compute-target"></a>Rekendoel kiezen
+Houd rekening met deze factoren bij het kiezen van uw rekendoel:
 
- * **Kies een lokale Compute**: als uw scenario wordt gebruikt voor initiële onderzoeken of demo's met behulp van kleine gegevens en korte treinen (d.w.z. seconden of een paar minuten per onderliggend item), kan de training op uw lokale computer een betere keuze zijn.  Er is geen instel tijd, de infrastructuur resources (uw PC of virtuele machine) zijn direct beschikbaar.
- * **Kies een Remote ml Compute-Cluster**: als u training hebt met grotere gegevens sets, zoals in productie training, modellen maken die langere treinen nodig hebben, biedt externe Compute veel betere end-to-end tijd prestaties, omdat `AutoML` parallelliseren-treinen worden verdeeld over de knoop punten van het cluster. Op externe Compute wordt de opstart tijd voor de interne infra structuur ongeveer 1,5 minuten per onderliggende uitvoering toegevoegd, plus extra minuten voor de cluster infrastructuur als de virtuele machines nog niet actief zijn.
+ * **Kies een lokale berekening:** als uw scenario gaat over initiële verkenningen of demo's met behulp van kleine gegevens en korte trainen (dat wil zeggen seconden of een paar minuten per onderliggende run), is training op uw lokale computer mogelijk een betere keuze.  Er is geen installatietijd, de infrastructuurbronnen (uw pc of VM) zijn rechtstreeks beschikbaar.
+ * Een extern **ML-rekencluster** kiezen: als u met grotere gegevenssets traint, zoals bij het maken van modellen voor productietraining die langere training nodig hebben, biedt externe rekenkracht veel betere end-to-end-tijdprestaties, omdat de trainen op de knooppunten van het cluster parallel worden `AutoML` uitgevoerd. Op een externe berekening wordt de opstarttijd voor de interne infrastructuur ongeveer 1,5 minuten per onderliggende run, plus extra minuten voor de clusterinfrastructuur als de VM's nog niet actief zijn.
 
-### <a name="pros-and-cons"></a>Voor-en nadelen
-Houd rekening met deze voor delen en nadelen bij het kiezen van lokaal versus extern.
+### <a name="pros-and-cons"></a>Voor- en nadelen
+Houd rekening met deze voor- en nadelen bij het kiezen van lokale versus externe.
 
-|  | Professionals (voor delen)  |Nadelen (handicaps)  |
+|  | Voordelen (voordelen)  |Nadelen (handicaps)  |
 |---------|---------|---------|---------|
-|**Lokaal Compute-doel** |  <li> Geen omgevings start tijd   | <li>  Subset van functies<li>  Kan parallelliseren niet uitvoeren <li> Erger voor grote gegevens. <li>Geen gegevens streaming tijdens training <li>  Geen DNN-parametrisatie <li> Alleen python SDK |
-|**Remote ML compute-clusters**|  <li> Volledige set functies <li> Parallelliseren onderliggende uitvoeringen <li>   Ondersteuning voor grote gegevens<li>  Op DNN gebaseerde parametrisatie <li>  Dynamische schaal baarheid van berekenings cluster op aanvraag <li> Er is ook geen code-ervaring (Web-UI) beschikbaar  |  <li> Opstart tijd voor cluster knooppunten <li> Opstart tijd voor elke onderliggende uitvoering    |
+|**Lokaal rekendoel** |  <li> Geen opstarttijd omgeving   | <li>  Subset van functies<li>  Kan runs niet parallelliseren <li> Slechter voor grote gegevens. <li>Geen gegevensstreaming tijdens training <li>  Geen op DNN gebaseerde featurization <li> Alleen Python SDK |
+|**Externe ML-rekenclusters**|  <li> Volledige set functies <li> Onderliggende runs parallelliseren <li>   Ondersteuning voor grote gegevens<li>  Op DNN gebaseerde featurization <li>  Dynamische schaalbaarheid van rekencluster op aanvraag <li> No-code experience (web-UI) also available (Geen code-ervaring (webinterface) ook beschikbaar  |  <li> Opstarttijd voor clusterknooppunten <li> Opstarttijd voor elke onderliggende run    |
 
 ### <a name="feature-availability"></a>Beschikbaarheid van functies 
 
- Meer functies zijn beschikbaar wanneer u de externe Compute gebruikt, zoals wordt weer gegeven in de volgende tabel. 
+ Er zijn meer functies beschikbaar wanneer u de externe berekening gebruikt, zoals wordt weergegeven in de onderstaande tabel. 
 
 | Functie                                                    | Extern | Lokaal | 
 |------------------------------------------------------------|--------|-------|
-| Gegevens streaming (ondersteuning voor grote gegevens, Maxi maal 100 GB)          | ✓      |       | 
-| DNN: op BERT gebaseerde tekst parametrisatie en training             | ✓      |       |
-| Out-of-the-box GPU-ondersteuning (training en interferentie)        | ✓      |       |
-| Ondersteuning voor afbeeldings classificatie en labeling                  | ✓      |       |
-| Automatische ARIMA-, Prophet-en ForecastTCN-modellen voor prognoses | ✓      |       | 
-| Meerdere uitvoeringen/herhalingen parallel                       | ✓      |       |
-| Modellen maken met interpretiteit in de gebruikers interface van AutoML Studio Web Experience      | ✓      |       |
-| Functie techniek aanpassen in de gebruikers interface van Studio Web Experience| ✓      |       |
-| Azure ML afstemming tuning                             | ✓      |       |
-| Ondersteuning voor werk stromen van Azure ML-pipeline                         | ✓      |       |
-| Een uitvoering voortzetten                                             | ✓      |       |
+| Gegevensstreaming (ondersteuning voor grote gegevens, maximaal 100 GB)          | ✓      |       | 
+| Op DNN gebaseerde tekst featurization en training op basis van DNN             | ✓      |       |
+| Out-of-the-box GPU-ondersteuning (training en deference)        | ✓      |       |
+| Ondersteuning voor afbeeldingsclassificatie en labels                  | ✓      |       |
+| Auto-ARIMA- En PrognoseTCN-modellen voor prognoses | ✓      |       | 
+| Meerdere runs/iteraties parallel                       | ✓      |       |
+| Modellen met interpreteerbaarheid maken in de gebruikersinterface van AutoML Studio-webervaring      | ✓      |       |
+| Aanpassing van functie-engineering in de gebruikersinterface van studio-webervaring| ✓      |       |
+| Hyperparameter-afstemming van Azure ML                             | ✓      |       |
+| Ondersteuning voor Azure ML Pipeline-werkstroom                         | ✓      |       |
+| Doorgaan met uitvoeren                                             | ✓      |       |
 | Prognose                                                | ✓      | ✓     |
-| Experimenten maken en uitvoeren in notitie blokken                    | ✓      | ✓     |
-| Info en metrische gegevens van experimenten registreren en visualiseren in de gebruikers interface | ✓      | ✓     |
-| Gegevens Guardrails                                            | ✓      | ✓     |
+| Experimenten maken en uitvoeren in notebooks                    | ✓      | ✓     |
+| De gegevens en metrische gegevens van het experiment registreren en visualiseren in de gebruikersinterface | ✓      | ✓     |
+| Gegevensbescherming                                            | ✓      | ✓     |
 
 ## <a name="many-models"></a>Veel modellen 
 
-De [vele modellen oplossings versneller](https://aka.ms/many-models) (preview) is gebaseerd op Azure machine learning en maakt het u mogelijk om honderden of zelfs duizenden machine learning modellen te trainen, te gebruiken en te beheren.
+De [](https://aka.ms/many-models) oplossingsversneller Veel modellen (preview) bouwt voort op Azure Machine Learning en stelt u in staat om geautomatiseerde ML te gebruiken voor het trainen, gebruiken en beheren van honderden of zelfs duizenden machine learning modellen.
 
-Het bouwen van een model __voor elk exemplaar of individu__ in de volgende scenario's kan bijvoorbeeld leiden tot betere resultaten:
+Het bouwen van een model __voor elke instantie of elk individu__ in de volgende scenario's kan bijvoorbeeld leiden tot verbeterde resultaten:
 
-* De verkoop voor elke afzonderlijke winkel voors pellen
-* Voor speld onderhoud voor honderden olie putjes
-* Het aanpassen van een ervaring voor individuele gebruikers.
+* Verkoop voor elke afzonderlijke winkel voorspellen
+* Voorspellend onderhoud voor honderden olievelden
+* Een ervaring aanpassen voor afzonderlijke gebruikers.
 
 <a name="parity"></a>
 
-### <a name="experiment-settings"></a>Instellingen voor experimenteren 
+### <a name="experiment-settings"></a>Experimentinstellingen 
 
-Met de volgende instellingen kunt u uw geautomatiseerde ML experiment configureren. 
+Met de volgende instellingen kunt u uw geautomatiseerde ML-experiment configureren. 
 
-| |De Python-SDK|De web-ervaring van Studio|
+| |De Python-SDK|De studio-webervaring|
 ----|:----:|:----:
-|**Gegevens in Train/validatie sets splitsen**| ✓|✓
+|**Gegevens splitsen in sets voor trainen/valideren**| ✓|✓
 |**Ondersteunt ML-taken: classificatie, regressie en prognose**| ✓| ✓
-|**Optimaliseert op basis van primaire metriek**| ✓| ✓
-|**Biedt ondersteuning voor Azure ML Compute als Compute target** | ✓|✓
-|**Prognose horizon, target lags & Rolling venster configureren**|✓|✓
-|**Afsluit criteria instellen** |✓|✓ 
-|**Gelijktijdige herhalingen instellen**| ✓|✓
+|**Optimaliseert op basis van primaire metrische gegevens**| ✓| ✓
+|**Ondersteunt Azure ML Compute als rekendoel** | ✓|✓
+|**Prognoseperiode configureren, doelvertraging & rolling window**|✓|✓
+|**Exitcriteria instellen** |✓|✓ 
+|**Gelijktijdige iteraties instellen**| ✓|✓
 |**Kolommen verwijderen**| ✓|✓
-|**Blok algoritmen**|✓|✓
-|**Kruis validatie** |✓|✓
+|**Algoritmen blokkeren**|✓|✓
+|**Kruisvalidatie** |✓|✓
 |**Ondersteunt training op Azure Databricks clusters**| ✓|
-|**Functie namen van ontworpen weer geven**|✓|
-|**Parametrisatie-samen vatting**| ✓|
-|**Parametrisatie voor feest dagen**|✓|
-|**Uitgebreide niveaus van het logboek bestand**| ✓|
+|**Namen van ontworpen functies weergeven**|✓|
+|**Samenvatting van featurization**| ✓|
+|**Featurization voor feestdagen**|✓|
+|**Verbosity-niveaus van logboekbestanden**| ✓|
 
-### <a name="model-settings"></a>Model instellingen
+### <a name="model-settings"></a>Modelinstellingen
 
-Deze instellingen kunnen worden toegepast op het beste model als resultaat van uw geautomatiseerde ML-experiment.
+Deze instellingen kunnen worden toegepast op het beste model als gevolg van uw geautomatiseerde ML-experiment.
 
-| |De Python-SDK|De web-ervaring van Studio|
+| |De Python-SDK|De studio-webervaring|
 |----|:----:|:----:|
-|**Beste model registratie, implementatie, uitleg**| ✓|✓|
-|**Stem ensemble inschakelen & stack-ensembles modellen**| ✓|✓|
-|**Beste model weer geven op basis van niet-primaire metriek**|✓||
-|**Compatibiliteit met ONNX-modellen in-of uitschakelen**|✓||
+|**Beste modelregistratie, implementatie, uitleg**| ✓|✓|
+|**Stemmende ensemble-& stack-ensemblemodellen inschakelen**| ✓|✓|
+|**Beste model tonen op basis van niet-primaire metrische gegevens**|✓||
+|**Compatibiliteit met ONNX-modellen in-/uitschakelen**|✓||
 |**Het model testen** | ✓| |
 
-### <a name="run-control-settings"></a>Instellingen voor beheer uitvoeren
+### <a name="run-control-settings"></a>Instellingen voor besturingselementen uitvoeren
 
-Met deze instellingen kunt u de uitvoeringen van uw experiment en de onderliggende uitvoeringen controleren en beheren. 
+Met deze instellingen kunt u uw experiment en de onderliggende runs controleren en beheren. 
 
-| |De Python-SDK|De web-ervaring van Studio|
+| |De Python-SDK|De studio-webervaring|
 |----|:----:|:----:|
-|**Samenvattings tabel uitvoeren**| ✓|✓|
-|**Uitvoeringen annuleren & onderliggende uitvoeringen**| ✓|✓|
-|**Guardrails ophalen**| ✓|✓|
-|**Uitvoeringen onderbreken & hervatten**| ✓| |
+|**Samenvattingstabel uitvoeren**| ✓|✓|
+|**Runs annuleren & onderliggende runs**| ✓|✓|
+|**Beveiligingsrails krijgen**| ✓|✓|
+|**De & hervatten onderbreken**| ✓| |
 
 <a name="use-with-onnx"></a>
 
 ## <a name="automl--onnx"></a>AutoML & ONNX
 
-Met Azure Machine Learning kunt u automatische ML gebruiken om een python-model samen te stellen en dit te converteren naar de ONNX-indeling. Zodra de modellen de ONNX-indeling hebben, kunnen ze op verschillende platforms en apparaten worden uitgevoerd. Meer informatie over het [versnellen van ml-modellen met ONNX](concept-onnx.md).
+Met Azure Machine Learning kunt u geautomatiseerde ML gebruiken om een Python-model te bouwen en dit te laten omzetten naar de ONNX-indeling. Zodra de modellen de ONNX-indeling hebben, kunnen ze worden uitgevoerd op verschillende platforms en apparaten. Meer informatie over [het versnellen van ML-modellen met ONNX](concept-onnx.md).
 
-Lees hoe u kunt converteren naar ONNX-indeling [in dit Jupyter notebook-voor beeld](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb). Meer informatie over de [algoritmen die worden ondersteund in ONNX](how-to-configure-auto-train.md#select-your-experiment-type).
+Zie hoe u kunt converteren naar ONNX-indeling [in dit Jupyter Notebook-voorbeeld.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) Ontdek welke [algoritmen worden ondersteund in ONNX.](how-to-configure-auto-train.md#select-your-experiment-type)
 
-De ONNX-runtime biedt ook ondersteuning voor C#, zodat u het model dat automatisch in uw C#-apps is gebouwd, kunt gebruiken zonder dat u hoeft te coderen of een van de netwerk latenties die REST-eind punten introduceren. Meer informatie over het [gebruik van een AUTOML ONNX-model in een .NET-toepassing met ml.net](./how-to-use-automl-onnx-model-dotnet.md) en het dezicht van [ONNX-modellen met de C#-API van ONNX runtime](https://github.com/plaidml/onnxruntime/blob/plaidml/docs/CSharp_API.md). 
+De ONNX-runtime ondersteunt ook C#, zodat u het model dat automatisch is gebouwd in uw C#-apps kunt gebruiken zonder dat u hoeft te coderen of een van de netwerklatentie die REST-eindpunten introduceren. Meer informatie over het gebruik van een [AutoML ONNX-model in](./how-to-use-automl-onnx-model-dotnet.md) een .NET-toepassing met ML.NET en de deferencing van [ONNX-modellen met de ONNX runtime C#-API.](https://github.com/plaidml/onnxruntime/blob/plaidml/docs/CSharp_API.md) 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Er zijn meerdere resources waarmee u aan de slag kunt met AutoML. 
+Er zijn meerdere resources om u op weg te helpen met AutoML. 
 
-### <a name="tutorials-how-tos"></a>Zelf studie/uitleg
-Zelf studies zijn end-to-end inleidende voor beelden van AutoML-scenario's.
-+ **Voor een code-eerste ervaring** volgt u de [zelf studie: automatisch een regressie model trainen met Azure machine learning python SDK](tutorial-auto-train-models.md).
+### <a name="tutorials-how-tos"></a>Zelfstudies/handleidingen
+Zelfstudies zijn end-to-end inleidende voorbeelden van AutoML-scenario's.
++ **Voor een eerste code-ervaring** volgt u de [Zelfstudie: Automatisch een regressiemodel](tutorial-auto-train-models.md)trainen met Azure Machine Learning Python SDK.
 
- + **Voor een weinig of geen code** kunt u de [zelf studie: Maak Automatische ml-classificatie modellen met Azure machine learning Studio](tutorial-first-experiment-automated-ml.md).
+ + **Zie voor een ervaring met** weinig of geen code de [Zelfstudie: Geautomatiseerde ML-classificatiemodellen maken met Azure Machine Learning-studio](tutorial-first-experiment-automated-ml.md).
 
-Artikelen bevatten aanvullende details over de functionaliteit die AutoML biedt. Bijvoorbeeld: 
+Artikelen met meer informatie over de functionaliteit die AutoML biedt. Bijvoorbeeld: 
 
-+ De instellingen voor automatische trainings experimenten configureren
-    + In Azure Machine Learning Studio [gaat u](how-to-use-automated-ml-for-ml-models.md)als volgt te werk. 
-    + Gebruik de python-SDK om de [volgende stappen uit te voeren](how-to-configure-auto-train.md).
++ De instellingen voor automatische trainingsexperimenten configureren
+    + Gebruik Azure Machine Learning-studio stappen in [de volgende stappen.](how-to-use-automated-ml-for-ml-models.md) 
+    + Gebruik deze stappen met [](how-to-configure-auto-train.md)de Python-SDK.
 
-+  Meer informatie over het automatisch trainen van Time Series-gegevens met behulp [van deze stappen](how-to-auto-train-forecast.md).
++  Ontdek met deze stappen hoe u automatisch kunt trainen met behulp [van tijdreeksgegevens.](how-to-auto-train-forecast.md)
 
-### <a name="jupyter-notebook-samples"></a>Voor beelden van Jupyter-notebook 
+### <a name="jupyter-notebook-samples"></a>Voorbeelden van Jupyter-notebooks 
 
-Bekijk gedetailleerde code voorbeelden en gebruik cases in de [github-notebook opslagplaats voor automatische machine learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/)-voor beelden.
+Bekijk gedetailleerde codevoorbeelden en gebruiksvoorbeelden in de [GitHub-notebookopslagplaats voor geautomatiseerde machine learning voorbeelden.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/)
 
 ### <a name="python-sdk-reference"></a>Naslaginformagtie over de Python-SDK
 
-Verdiep uw expertise over SDK-ontwerp patronen en klassen specificaties met de [referentie documentatie](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig)van de AutoML-klasse. 
+U kunt uw expertise op het gebied van SDK-ontwerppatronen en klassespecificaties verdiepen met de naslagdocumentatie voor [AutoML-klassen.](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig) 
 
 > [!Note]
-> Geautomatiseerde machine learning mogelijkheden zijn ook beschikbaar in andere micro soft-oplossingen, zoals [ml.net](/dotnet/machine-learning/automl-overview), [HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md), [Power bi](/power-bi/service-machine-learning-automated) en [SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)
+> Automatische machine learning zijn ook beschikbaar in andere Microsoft-oplossingen, zoals [ML.NET,](/dotnet/machine-learning/automl-overview) [HDInsight,](../hdinsight/spark/apache-spark-run-machine-learning-automl.md) [Power BI](/power-bi/service-machine-learning-automated) en [SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)

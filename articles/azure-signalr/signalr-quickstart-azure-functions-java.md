@@ -10,12 +10,12 @@ ms.devlang: java
 ms.custom:
 - devx-track-java
 - mode-api
-ms.openlocfilehash: 15453fb8177248087cbec98fd734bcff3bf66868
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 0d93b9b645aaf4190a36dbc523d40dec2757a18b
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107533241"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869793"
 ---
 # <a name="quickstart-use-java-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>Quickstart: Java gebruiken om een chatruimte met Azure Functions en SignalR Service te maken
 
@@ -31,7 +31,7 @@ Met Azure SignalR Service kunt u eenvoudig realtime functionaliteit toevoegen aa
    > De vereiste SignalR Service-bindingen in Java worden alleen ondersteund in Azure Function Core Tools versie 2.4.419 (hostversie 2.0.12332) of hoger.
 
    > [!NOTE]
-   > [.NET Core SDK](https://www.microsoft.com/net/download) moet zijn geïnstalleerd voor Azure Functions Core Tools om de extensies te installeren. Er is echter geen kennis van .NET vereist om JavaScript Azure-functie-apps te bouwen.
+   > [.NET Core SDK](https://dotnet.microsoft.com/download) moet zijn geïnstalleerd voor Azure Functions Core Tools om de extensies te installeren. Er is echter geen kennis van .NET vereist om JavaScript Azure-functie-apps te bouwen.
 
 - [Java Developer Kit](https://www.azul.com/downloads/zulu/), versie 8
 - [Apache Maven](https://maven.apache.org), versie 3.0 of hoger

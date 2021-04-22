@@ -1,6 +1,6 @@
 ---
-title: Azure Active Directory gegevens verbinden met Azure Sentinel | Microsoft Docs
-description: Meer informatie over het verzamelen van gegevens van Azure Active Directory en het streamen van Azure AD-aanmeld-, audit-en provisioning-Logboeken in azure Sentinel.
+title: Verbinding Azure Active Directory gegevens maken met Azure Sentinel | Microsoft Docs
+description: Informatie over het verzamelen van gegevens van Azure Active Directory en het streamen van aanmeldings-, audit- en inrichtingslogboeken van Azure AD naar Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -13,56 +13,56 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/20/2021
+ms.date: 04/21/2021
 ms.author: yelevin
-ms.openlocfilehash: f8931fedb380cf81d72b7b5280a5795498daaa57
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d2cfc2d592c24cf5d15a489ea4bde36ea3c2f863
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99251978"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872367"
 ---
-# <a name="connect-azure-active-directory-azure-ad-data-to-azure-sentinel"></a>Azure Active Directory (Azure AD)-gegevens verbinden met Azure Sentinel
+# <a name="connect-azure-active-directory-azure-ad-data-to-azure-sentinel"></a>Verbinding Azure Active Directory (Azure AD)-gegevens met Azure Sentinel
 
-U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) te verzamelen en deze in de Azure-Sentinel te streamen. Met de connector kunt u de volgende logboek typen streamen:
+U kunt de Azure Sentinel connector van de Azure Active Directory gebruiken [](../active-directory/fundamentals/active-directory-whatis.md) om deze gegevens te verzamelen en naar Azure Sentinel. Met de connector kunt u de volgende logboektypen streamen:
 
-- [**Aanmeld logboeken**](../active-directory/reports-monitoring/concept-all-sign-ins.md), die informatie bevatten over [interactieve gebruikers aanmeldingen](../active-directory/reports-monitoring/concept-all-sign-ins.md#user-sign-ins) waarbij een gebruiker een verificatie factor biedt.
+- [**Aanmeldingslogboeken,**](../active-directory/reports-monitoring/concept-all-sign-ins.md)die informatie bevatten over [interactieve aanmeldingen](../active-directory/reports-monitoring/concept-all-sign-ins.md#user-sign-ins) van gebruikers waarbij een gebruiker een verificatiefactor biedt.
 
-    De Azure AD-connector bevat nu de volgende drie aanvullende categorieën aanmeldings logboeken, die momenteel als **Preview-versie** beschikbaar zijn:
+    De Azure AD-connector bevat nu de volgende drie extra categorieën aanmeldingslogboeken, die momenteel in **preview zijn:**
     
-    - [**Niet-interactieve aanmeldings logboeken van gebruikers**](../active-directory/reports-monitoring/concept-all-sign-ins.md#non-interactive-user-sign-ins), die informatie bevatten over aanmeldingen die zijn uitgevoerd door een client namens een gebruiker zonder interactie of verificatie factor van de gebruiker.
+    - [**Niet-interactieve**](../active-directory/reports-monitoring/concept-all-sign-ins.md#non-interactive-user-sign-ins)aanmeldingslogboeken van gebruikers, die informatie bevatten over aanmeldingen die worden uitgevoerd door een client namens een gebruiker zonder tussenkomst of verificatiefactor van de gebruiker.
     
-    - [**Logboeken met Service-Principal-aanmelding**](../active-directory/reports-monitoring/concept-all-sign-ins.md#service-principal-sign-ins), die informatie bevatten over aanmeldingen per app en service-principals die geen gebruik maken van een gebruiker. In deze aanmeldingen biedt de app of service een referentie voor het verifiëren of openen van bronnen.
+    - [**Aanmeldingslogboeken van de service-principal,**](../active-directory/reports-monitoring/concept-all-sign-ins.md#service-principal-sign-ins)die informatie bevatten over aanmeldingen door apps en service-principals waarbij geen gebruiker betrokken is. Bij deze aanmeldingen verstrekt de app of service namens zichzelf een referentie om resources te verifiëren of te openen.
     
-    - [**Aanmeldings logboeken voor beheerde identiteiten**](../active-directory/reports-monitoring/concept-all-sign-ins.md#managed-identity-for-azure-resources-sign-ins), die informatie bevatten over aanmeldingen door Azure-resources met geheimen die door Azure worden beheerd. Zie [Wat zijn beheerde identiteiten voor Azure-resources?](../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.
+    - [**Aanmeldingslogboeken voor**](../active-directory/reports-monitoring/concept-all-sign-ins.md#managed-identity-for-azure-resources-sign-ins)beheerde identiteiten, die informatie bevatten over aanmeldingen door Azure-resources met geheimen die worden beheerd door Azure. Zie Wat zijn beheerde [identiteiten voor Azure-resources? voor meer informatie.](../active-directory/managed-identities-azure-resources/overview.md)
 
-- [**Audit logboeken**](../active-directory/reports-monitoring/concept-audit-logs.md), die informatie bevatten over systeem activiteiten die betrekking hebben op gebruikers-en groeps beheer, beheerde toepassingen en Directory-activiteiten.
+- [**Auditlogboeken,**](../active-directory/reports-monitoring/concept-audit-logs.md)die informatie bevatten over systeemactiviteiten met betrekking tot gebruikers- en groepsbeheer, beheerde toepassingen en directory-activiteiten.
 
-- Het [**inrichten van Logboeken**](../active-directory/reports-monitoring/concept-provisioning-logs.md) (ook in **Preview**), die informatie over de systeem activiteit bevatten over gebruikers, groepen en rollen die worden ingericht door de Azure AD-inrichtings service. 
+- [**Inrichtingslogboeken**](../active-directory/reports-monitoring/concept-provisioning-logs.md) (ook in **PREVIEW)** die informatie over systeemactiviteit bevatten over gebruikers, groepen en rollen die zijn ingericht door de Azure AD-inrichtingsservice. 
 
 > [!IMPORTANT]
-> Zoals hierboven aangegeven, zijn enkele van de beschik bare logboek typen momenteel als **Preview-versie** beschikbaar. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> Zoals hierboven is aangegeven, zijn enkele van de beschikbare logboektypen momenteel beschikbaar als **PREVIEW.** Zie de aanvullende gebruiksvoorwaarden voor [Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voorwaarden die van toepassing zijn op Azure-functies die bètaversies of preview-functies hebben of die nog niet algemeen beschikbaar zijn.
 ## <a name="prerequisites"></a>Vereisten
 
-- Elke Azure AD-licentie (Free/O365/P1/P2) is voldoende voor het opnemen van aanmeldings Logboeken in azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
+- Een Azure Active Directory P1- of P2-licentie is vereist om aanmeldingslogboeken op te nemen in Azure Sentinel. Een Azure AD-licentie (Free/O365/P1/P2) is voldoende om de andere logboektypen op te nemen. Er kunnen extra kosten per gigabyte worden toegepast voor Azure Monitor (Log Analytics) en Azure Sentinel.
 
-- Aan uw gebruiker moet de rol Azure Sentinel contributor worden toegewezen in de werk ruimte.
+- Aan uw gebruiker moet de rol inzender Azure Sentinel de werkruimte zijn toegewezen.
 
-- Aan uw gebruiker moet de rol van globale beheerder of beveiligings beheerder zijn toegewezen voor de Tenant waarvan u de logboeken wilt streamen.
+- Aan uw gebruiker moeten de rollen Globale beheerder of Beveiligingsbeheerder zijn toegewezen voor de tenant van waaruit u de logboeken wilt streamen.
 
-- Uw gebruiker moet lees-en schrijf machtigingen hebben voor de diagnostische instellingen van Azure AD om de verbindings status te kunnen zien. 
+- Uw gebruiker moet lees- en schrijfmachtigingen hebben voor de diagnostische azure AD-instellingen om de verbindingsstatus te kunnen zien. 
 
 ## <a name="connect-to-azure-active-directory"></a>Verbinding maken met Azure Active Directory
 
-1. Selecteer in azure Sentinel **Data connectors** in het navigatie menu.
+1. Selecteer Azure Sentinel **gegevensconnectoren in** het navigatiemenu.
 
-1. Selecteer in de galerie data connectors de optie **Azure Active Directory** en selecteer vervolgens **pagina connector openen**.
+1. Selecteer in de galerie met gegevensconnectoren **Azure Active Directory** selecteer vervolgens **Pagina connector openen.**
 
-1. Schakel de selectie vakjes in naast de logboek typen die u wilt streamen naar Azure Sentinel (zie hierboven) en klik op **verbinden**.
+1. Markeer de selectievakjes naast de logboektypen die u wilt streamen naar Azure Sentinel (zie hierboven) en klik op **Verbinden.**
 
 ## <a name="find-your-data"></a>Uw gegevens zoeken
 
-Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **Logboeken**, onder de sectie **LogManagement** , in de volgende tabellen:
+Nadat er een verbinding tot stand is gebracht, worden de gegevens weergegeven in **Logboeken,** onder de **sectie LogManagement,** in de volgende tabellen:
 
 - `SigninLogs`
 - `AuditLogs`
@@ -71,9 +71,9 @@ Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **
 - `AADManagedIdentitySignInLogs`
 - `AADProvisioningLogs`
 
-Als u de Azure AD-logboeken wilt doorzoeken, voert u de relevante tabel naam boven in het query venster in.
+Als u een query wilt uitvoeren op de Azure AD-logboeken, voert u de relevante tabelnaam boven aan het queryvenster in.
 
 ## <a name="next-steps"></a>Volgende stappen
-In dit document hebt u geleerd hoe u Azure Active Directory kunt verbinden met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
-- Meer informatie over hoe u [inzicht krijgt in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
+In dit document hebt u geleerd hoe u verbinding maakt Azure Active Directory met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
+- Meer informatie over het [krijgen van inzicht in uw gegevens en mogelijke bedreigingen.](quickstart-get-visibility.md)
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats-built-in.md).

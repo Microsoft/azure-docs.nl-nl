@@ -1,68 +1,68 @@
 ---
-title: Azure-IoT Central uitbreiden met aangepaste regels en meldingen | Microsoft Docs
-description: Als oplossings ontwikkelaar kunt u een IoT Central-toepassing configureren om e-mail meldingen te verzenden wanneer een apparaat stopt met het verzenden van telemetrie. Deze oplossing maakt gebruik van Azure Stream Analytics, Azure Functions en SendGrid.
-author: TheJasonAndrew
-ms.author: v-anjaso
+title: Uw Azure IoT Central uitbreiden met aangepaste regels en meldingen | Microsoft Docs
+description: Als oplossingsontwikkelaar configureert u een IoT Central voor het verzenden van e-mailmeldingen wanneer een apparaat stopt met het verzenden van telemetrie. Deze oplossing maakt Azure Stream Analytics, Azure Functions en SendGrid.
+author: philmea
+ms.author: philmea
 ms.date: 02/09/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc, devx-track-csharp
 manager: philmea
-ms.openlocfilehash: 824308b66803d2dfa05383ff06ce97c48626619d
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a65d9dbaed4d197c2e0843e73ff3f45b8678017e
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102179337"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864213"
 ---
 # <a name="extend-azure-iot-central-with-custom-rules-using-stream-analytics-azure-functions-and-sendgrid"></a>Azure IoT Central uitbreiden met aangepaste regels met behulp van Stream Analytics, Azure Functions en SendGrid
 
-In deze hand leiding wordt uitgelegd hoe u als ontwikkel aars van oplossingen uw IoT Central-toepassing kunt uitbreiden met aangepaste regels en meldingen. Het voor beeld toont het verzenden van een melding naar een operator wanneer een apparaat stopt met het verzenden van telemetrie. De oplossing gebruikt een [Azure stream Analytics](../../stream-analytics/index.yml) query om te detecteren wanneer een apparaat stopt met het verzenden van telemetrie. De Stream Analytics taak gebruikt [Azure functions](../../azure-functions/index.yml) om e-mail meldingen te verzenden met [SendGrid](https://sendgrid.com/docs/for-developers/partners/microsoft-azure/).
+In deze handleiding ziet u, als ontwikkelaar van oplossingen, hoe u uw IoT Central uitbreidt met aangepaste regels en meldingen. In het voorbeeld ziet u hoe een melding naar een operator wordt verzonden wanneer een apparaat stopt met het verzenden van telemetrie. De oplossing gebruikt een [Azure Stream Analytics](../../stream-analytics/index.yml) om te detecteren wanneer een apparaat is gestopt met het verzenden van telemetrie. De Stream Analytics maakt gebruik van [Azure Functions](../../azure-functions/index.yml) voor het verzenden van e-mailberichten met [behulp van SendGrid.](https://sendgrid.com/docs/for-developers/partners/microsoft-azure/)
 
-In deze hand leiding wordt uitgelegd hoe u IoT Central uitbreidt dan wat u al kunt doen met de ingebouwde regels en acties.
+In deze handleiding ziet u hoe u uw IoT Central verder kunt uitbreiden dan wat het al kan doen met de ingebouwde regels en acties.
 
-In deze hand leiding leert u het volgende:
+In deze handleiding leert u het volgende:
 
-* Telemetrie streamen vanuit een IoT Central-toepassing met *doorlopende gegevens export*.
-* Maak een Stream Analytics query die detecteert wanneer een apparaat stopt met het verzenden van gegevens.
-* Een e-mail melding verzenden met behulp van de Azure Functions-en SendGrid-Services.
+* Telemetrie streamen vanuit een IoT Central met behulp van *continue gegevensexport.*
+* Maak een Stream Analytics query die detecteert wanneer een apparaat is gestopt met het verzenden van gegevens.
+* Verzend een e-mailmelding met behulp Azure Functions en SendGrid-services.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u de stappen in deze hand leiding wilt uitvoeren, hebt u een actief Azure-abonnement nodig.
+Als u de stappen in deze handleiding wilt uitvoeren, hebt u een actief Azure-abonnement nodig.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 ### <a name="iot-central-application"></a>IoT Central-toepassing
 
-Maak een IoT Central-toepassing op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) met de volgende instellingen:
+Maak een IoT Central toepassing op de [Azure IoT Central Application Manager-website](https://aka.ms/iotcentral) met de volgende instellingen:
 
 | Instelling | Waarde |
 | ------- | ----- |
-| Prijs plan | Standard |
-| Toepassingsjabloon | Analyses in de Store-voor waarde |
-| De naam van de toepassing | Accepteer de standaard waarde of kies uw eigen naam |
-| URL | Accepteer de standaard waarde of kies uw eigen unieke URL-voor voegsel |
-| Directory | Uw Azure Active Directory-Tenant |
+| Prijsplan | Standard |
+| Toepassingsjabloon | In-store analytics – bewaking van voorwaarden |
+| De naam van de toepassing | Accepteer de standaardwaarde of kies uw eigen naam |
+| URL | Accepteer de standaardwaarde of kies uw eigen unieke URL-voorvoegsel |
+| Directory | Uw Azure Active Directory-tenant |
 | Azure-abonnement | Uw Azure-abonnement |
 | Region | Uw dichtstbijzijnde regio |
 
-In de voor beelden en scherm afbeeldingen in dit artikel wordt gebruikgemaakt van de **Verenigde Staten** regio. Kies een locatie dicht bij u en zorg ervoor dat u alle resources in dezelfde regio maakt.
+In de voorbeelden en schermafbeeldingen in dit artikel wordt de **Verenigde Staten** gebruikt. Kies een locatie dicht bij u in de buurt en zorg ervoor dat u al uw resources in dezelfde regio maakt.
 
-Deze toepassings sjabloon bevat twee gesimuleerde Thermo staat-apparaten die telemetrie verzenden.
+Deze toepassingssjabloon bevat twee gesimuleerde thermostaatapparaten die telemetrie verzenden.
 
 ### <a name="resource-group"></a>Resourcegroep
 
-Gebruik de [Azure Portal om een resource groep te maken](https://portal.azure.com/#create/Microsoft.ResourceGroup) met de naam **DetectStoppedDevices** die de andere resources bevat die u maakt. Maak uw Azure-resources op dezelfde locatie als uw IoT Central-toepassing.
+Gebruik de [Azure Portal om een resourcegroep](https://portal.azure.com/#create/Microsoft.ResourceGroup) met de naam **DetectStoppedDevices te** maken die de andere resources bevat die u maakt. Maak uw Azure-resources op dezelfde locatie als uw IoT Central toepassing.
 
 ### <a name="event-hubs-namespace"></a>Event Hubs-naamruimte
 
-Gebruik de [Azure Portal om een event hubs naam ruimte te maken](https://portal.azure.com/#create/Microsoft.EventHub) met de volgende instellingen:
+Gebruik de [Azure Portal om een Event Hubs maken met](https://portal.azure.com/#create/Microsoft.EventHub) de volgende instellingen:
 
 | Instelling | Waarde |
 | ------- | ----- |
-| Naam    | De naam van de naam ruimte kiezen |
+| Naam    | Kies de naam van uw naamruimte |
 | Prijscategorie | Basic |
 | Abonnement | Uw abonnement |
 | Resourcegroep | DetectStoppedDevices |
@@ -71,11 +71,11 @@ Gebruik de [Azure Portal om een event hubs naam ruimte te maken](https://portal.
 
 ### <a name="stream-analytics-job"></a>Stream Analytics-taak
 
-Gebruik de [Azure Portal om een stream Analytics-taak te maken](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob)  met de volgende instellingen:
+Gebruik de [Azure Portal om een nieuwe Stream Analytics maken](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob)  met de volgende instellingen:
 
 | Instelling | Waarde |
 | ------- | ----- |
-| Naam    | Kies de naam van uw taak |
+| Naam    | De naam van uw taak kiezen |
 | Abonnement | Uw abonnement |
 | Resourcegroep | DetectStoppedDevices |
 | Locatie | VS - oost |
@@ -88,7 +88,7 @@ Gebruik de [Azure Portal om een functie-app te maken](https://portal.azure.com/#
 
 | Instelling | Waarde |
 | ------- | ----- |
-| Naam van app    | De naam van de functie-app kiezen |
+| Naam van app    | De naam van uw functie-app kiezen |
 | Abonnement | Uw abonnement |
 | Resourcegroep | DetectStoppedDevices |
 | Besturingssysteem | Windows |
@@ -101,23 +101,23 @@ Gebruik de [Azure Portal om een functie-app te maken](https://portal.azure.com/#
 
 Als u geen Sendgrid-account hebt, maakt u een [gratis account](https://app.sendgrid.com/) voordat u begint.
 
-1. Selecteer in de Sendgrid-dashboard instellingen in het menu links **API-sleutels**.
-1. Klik op **API-sleutel maken.**
-1. Noem de nieuwe API-sleutel **AzureFunctionAccess.**
-1. Klik op **& weer gave maken**.
+1. Selecteer API-sleutels in de Sendgrid-dashboardinstellingen in **het menu links.**
+1. Klik **op API-sleutel maken.**
+1. Noem de nieuwe **API-sleutel AzureFunctionAccess.**
+1. Klik **op Maken & weergave.**
 
-    :::image type="content" source="media/howto-create-custom-rules/sendgrid-api-keys.png" alt-text="Scherm afbeelding van de SendGrid-API-sleutel maken.":::
+    :::image type="content" source="media/howto-create-custom-rules/sendgrid-api-keys.png" alt-text="Schermopname van De SendGrid-API-sleutel maken.":::
 
-Daarna krijgt u een API-sleutel. Sla deze teken reeks op voor later gebruik.
+Daarna krijgt u een API-sleutel. Sla deze tekenreeks op voor later gebruik.
 
 ## <a name="create-an-event-hub"></a>Een Event Hub maken
 
-U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te exporteren naar een Event Hub. In deze sectie maakt u een Event Hub voor het ontvangen van telemetrie van uw IoT Central-toepassing. De Event Hub levert de telemetrie naar uw Stream Analytics-taak voor verwerking.
+U kunt een toepassing IoT Central om continu telemetrie te exporteren naar een Event Hub. In deze sectie maakt u een Event Hub om telemetrie te ontvangen van uw IoT Central toepassing. De Event Hub levert de telemetrie aan uw Stream Analytics taak voor verwerking.
 
-1. Ga in het Azure Portal naar uw Event Hubs-naam ruimte en selecteer **+ Event hub**.
-1. Geef uw Event Hub **centralexport** een naam en selecteer **maken**.
+1. Navigeer Azure Portal naar uw Event Hubs en selecteer **+ Event Hub**.
+1. Noem uw Event Hub **centralexport** en selecteer **Maken.**
 
-De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding: 
+Uw Event Hubs-naamruimte ziet er als volgt uit: 
 
 ```:::image type="content" source="media/howto-create-custom-rules/event-hubs-namespace.png" alt-text="Screenshot of Event Hubs namespace." border="false":::
 
@@ -226,7 +226,7 @@ To test the function in the portal, first choose **Logs** at the bottom of the c
 [{"deviceid":"test-device-1","time":"2019-05-02T14:23:39.527Z"},{"deviceid":"test-device-2","time":"2019-05-02T14:23:50.717Z"},{"deviceid":"test-device-3","time":"2019-05-02T14:24:28.919Z"}]
 ```
 
-De functie logboek berichten worden weer gegeven in het deel venster **Logboeken** :
+De functielogboekberichten worden weergegeven in het **deelvenster Logboeken:**
 
 ```:::image type="content" source="media/howto-create-custom-rules/function-app-logs.png" alt-text="Function log output":::
 
@@ -241,31 +241,31 @@ test-device-2    2019-05-02T14:23:50.717Z
 test-device-3    2019-05-02T14:24:28.919Z
 ```
 
-## <a name="add-stream-analytics-query"></a>Stream Analytics query toevoegen
+## <a name="add-stream-analytics-query"></a>Een Stream Analytics toevoegen
 
-Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wanneer een apparaat meer dan 120 seconden stopt met het verzenden van telemetrie. De query gebruikt de telemetrie van de Event Hub als invoer. De taak verzendt de query resultaten naar de functie-app. In deze sectie configureert u de Stream Analytics taak:
+Deze oplossing gebruikt een Stream Analytics om te detecteren wanneer een apparaat meer dan 120 seconden geen telemetrie meer verstuurt. De query gebruikt de telemetrie van de Event Hub als invoer. De taak verzendt de queryresultaten naar de functie-app. In deze sectie configureert u de Stream Analytics taak:
 
-1. Navigeer in het Azure Portal naar uw Stream Analytics-taak, onder **taak topologie** Selecteer **invoer**, kies **+ stroom invoer toevoegen** en kies vervolgens **Event hub**.
-1. Gebruik de informatie in de volgende tabel om de invoer te configureren met behulp van de Event Hub die u eerder hebt gemaakt en kies vervolgens **Opslaan**:
+1. Navigeer in Azure Portal naar uw Stream Analytics taak,  selecteer onder Takentopologie de optie **Invoer,** kies **+ Stroominvoer** toevoegen en kies **vervolgens Event Hub**.
+1. Gebruik de informatie in de volgende tabel om de invoer te configureren met behulp van de Event Hub die u eerder hebt gemaakt en kies vervolgens **Opslaan:**
 
     | Instelling | Waarde |
     | ------- | ----- |
     | Invoeralias | centraltelemetry |
     | Abonnement | Uw abonnement |
-    | Event hub-naamruimte | De Event hub-naam ruimte |
-    | Naam van de Event Hub | Bestaande- **centralexport** gebruiken |
+    | Event hub-naamruimte | Uw Event Hub-naamruimte |
+    | Naam van de Event Hub | Bestaande gebruiken - **centralexport** |
 
-1. Selecteer onder **taak topologie** **uitvoer**, kies **+ toevoegen** en kies **Azure function**.
-1. Gebruik de informatie in de volgende tabel om de uitvoer te configureren en kies vervolgens **Opslaan**:
+1. Selecteer **onder Takentopologie** **de optie Uitvoer,** kies **+ Toevoegen** en kies vervolgens **Azure Function.**
+1. Gebruik de informatie in de volgende tabel om de uitvoer te configureren en kies vervolgens **Opslaan:**
 
     | Instelling | Waarde |
     | ------- | ----- |
-    | Uitvoeralias | emailnotification |
+    | Uitvoeralias | e-mailnotificatie |
     | Abonnement | Uw abonnement |
     | Functie-app | Uw functie-app |
     | Functie  | HttpTrigger1 |
 
-1. Selecteer bij **taak topologie** de optie **query** en vervang de bestaande query door de volgende SQL:
+1. Selecteer **query onder Takentopologie** **en** vervang de bestaande query door de volgende SQL:
 
     ```sql
     with
@@ -307,38 +307,38 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
     ```
 
 1. Selecteer **Opslaan**.
-1. Als u de Stream Analytics taak wilt starten, kiest u **overzicht**, **Start**, vervolgens **nu** en **Start** u het volgende:
+1. Als u de Stream Analytics wilt starten, **kiest** u Overzicht, vervolgens **Start**, **vervolgens Nu** en **vervolgens Start**:
 
-    :::image type="content" source="media/howto-create-custom-rules/stream-analytics.png" alt-text="Scherm opname van Stream Analytics.":::
+    :::image type="content" source="media/howto-create-custom-rules/stream-analytics.png" alt-text="Schermopname van Stream Analytics.":::
 
-## <a name="configure-export-in-iot-central"></a>Exporteren configureren in IoT Central 
+## <a name="configure-export-in-iot-central"></a>Export configureren in IoT Central 
 
-Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt.
+[Navigeer Azure IoT Central toepassingsbeheerwebsite](https://aka.ms/iotcentral) naar de IoT Central toepassing die u hebt gemaakt.
 
-In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
+In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. De export configureren:
 
-1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
-1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**: 
+1. Navigeer **naar de pagina Gegevensexport,** selecteer + **Nieuw** en klik **vervolgens Azure Event Hubs**.
+1. Gebruik de volgende instellingen om de export te configureren en selecteer vervolgens **Opslaan:** 
 
     | Instelling | Waarde |
     | ------- | ----- |
     | Weergavenaam | Exporteren naar Event Hubs |
     | Ingeschakeld | Uit |
     | Type gegevens dat moet worden geëxporteerd | Telemetrie |
-    | Verrijken | Voer de gewenste sleutel/waarde in van de manier waarop u de geëxporteerde gegevens wilt ordenen | 
-    | Doel | Nieuwe maken en informatie invoeren voor het exporteren van de gegevens |
+    | Verrijkingen | Voer de gewenste sleutel/waarde in van de manier waarop u wilt dat de geëxporteerde gegevens worden geordend | 
+    | Doel | Nieuwe maken en informatie invoeren voor waar de gegevens worden geëxporteerd |
 
-    :::image type="content" source="media/howto-create-custom-rules/cde-configuration.png" alt-text="Scherm opname van het exporteren van gegevens.":::
+    :::image type="content" source="media/howto-create-custom-rules/cde-configuration.png" alt-text="Schermopname van de gegevensexport.":::
 
-Wacht tot de export status **actief** is voordat u doorgaat.
+Wacht totdat de exportstatus Actief is **voordat** u doorgaat.
 
 ## <a name="test"></a>Testen
 
-Als u de oplossing wilt testen, kunt u de continue gegevens export uitschakelen van IoT Central naar gesimuleerde gestopte apparaten:
+Als u de oplossing wilt testen, kunt u de continue gegevensexport uitschakelen IoT Central gesimuleerde gestopte apparaten:
 
-1. Navigeer in uw IoT Central-toepassing naar de pagina voor het **exporteren van gegevens** en selecteer de configuratie **exporteren naar Event hubs** exporteren.
-1. Stel **ingeschakeld** in op **uit** en kies **Opslaan**.
-1. Na ten minste twee minuten ontvangt het **e-** mail adres een of meer e-mails die eruitzien als de volgende voorbeeld inhoud:
+1. Navigeer in IoT Central toepassing naar de pagina **Gegevensexport** en selecteer exporteren naar **Event Hubs** exportconfiguratie.
+1. Stel **Ingeschakeld in op** **Uit** en kies **Opslaan.**
+1. Na ten minste twee minuten ontvangt het **e-mailadres Aan** een of meer e-mailberichten die lijken op de volgende voorbeeldinhoud:
 
     ```txt
     The following device(s) have stopped sending telemetry:
@@ -349,16 +349,16 @@ Als u de oplossing wilt testen, kunt u de continue gegevens export uitschakelen 
 
 ## <a name="tidy-up"></a>Opruimen
 
-Als u wilt opruimen na deze procedure en overbodige kosten wilt voor komen, verwijdert u de resource groep **DetectStoppedDevices** in de Azure Portal.
+Verwijder de resourcegroep **DetectStoppedDevices** in de Azure Portal om deze op te schonen en onnodige kosten te Azure Portal.
 
-U kunt de IoT Central toepassing verwijderen van de **beheer** pagina binnen de toepassing.
+U kunt de IoT Central verwijderen van de **beheerpagina** in de toepassing.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding hebt u het volgende geleerd:
+In deze handleiding hebt u het volgende geleerd:
 
-* Telemetrie streamen vanuit een IoT Central-toepassing met *doorlopende gegevens export*.
-* Maak een Stream Analytics query die detecteert wanneer een apparaat stopt met het verzenden van gegevens.
-* Een e-mail melding verzenden met behulp van de Azure Functions-en SendGrid-Services.
+* Telemetrie streamen vanuit een IoT Central met behulp van *continue gegevensexport.*
+* Maak een Stream Analytics query die detecteert wanneer een apparaat is gestopt met het verzenden van gegevens.
+* Verzend een e-mailmelding met behulp Azure Functions en SendGrid-services.
 
-Nu u weet hoe u aangepaste regels en meldingen kunt maken, is de voorgestelde volgende stap informatie over het [uitbreiden van Azure IOT Central met aangepaste analyses](howto-create-custom-analytics.md).
+Nu u weet hoe u aangepaste regels en meldingen maakt, is de voorgestelde volgende stap het uitbreiden van Azure IoT Central [met aangepaste analyses.](howto-create-custom-analytics.md)

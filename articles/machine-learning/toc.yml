@@ -345,7 +345,7 @@
             - name: Verbinding maken met Azure-opslag (Python)
               displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore'
               href: how-to-access-data.md
-            - name: Toegang tot opslaggegevens op basis van identiteit
+            - name: Op identiteit gebaseerde gegevenstoegang tot opslag
               displayName: 'blob, access, data lake, datastore, managed identity'
               href: how-to-identity-based-data-access.md
             - name: Gegevens uit gegevensarchief ophalen (Python)
@@ -437,9 +437,6 @@
         - name: Geautomatiseerde ML gebruiken met Databricks
           displayName: automl
           href: how-to-configure-databricks-automl-environment.md
-        - name: Externe compute-doelen gebruiken
-          displayName: automl automated auto ml
-          href: how-to-auto-train-remote.md
         - name: Automatisch een prognosemodel trainen
           displayName: time series
           href: how-to-auto-train-forecast.md
@@ -622,7 +619,7 @@
       displayName: 'environments, curated environments'
       href: resource-curated-environments.md
     - name: Azure CLI
-      href: /cli/azure/ext/azure-cli-ml/ml
+      href: /cli/azure/ml
 - name: Resources
   items:
     - name: Releaseopmerkingen

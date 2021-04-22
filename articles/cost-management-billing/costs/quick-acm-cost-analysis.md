@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: contperf-fy21q2, devx-track-azurecli
-ms.openlocfilehash: 9b73eeccad6d17df8c711671c56fbb7cee20b17a
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 4d0062258919de29750b644b2f8e12990e25098b
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107484724"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873201"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Quickstart: Kosten verkennen en analyseren met kostenanalyse
 
@@ -68,7 +68,7 @@ De initiële kostenanalyseweergave omvat de volgende gebieden.
 
 ### <a name="understand-forecast"></a>Prognose begrijpen
 
-Op basis van uw recente gebruik geven kostenprognoses een geschatte kostenraming weer voor de geselecteerde periode. Als er een budget is ingesteld in Kostenanalyse, kunt u zien wanneer de geraamde uitgaven waarschijnlijk de budgetdrempelwaarde overschrijden. Het prognosemodel kan toekomstige kosten voor maximaal een jaar voorspellen. Selecteer filters om de gedetailleerde geraamde kosten voor de geselecteerde dimensie weer te geven.
+Op basis van uw recente gebruik tonen kostenprognoses een geschatte kostenraming voor de geselecteerde periode. Als een budget is ingesteld in Kostenanalyse, kunt u zien wanneer de geraamde uitgaven waarschijnlijk de budgetdrempelwaarde overschrijden. Het prognosemodel kan toekomstige kosten voor maximaal een jaar voorspellen. Selecteer filters om de gedetailleerde geraamde kosten voor de geselecteerde dimensie weer te geven.
 
 Het prognosemodel is gebaseerd op een regressiemodel voor tijdreeksen. Er zijn ten minste tien dagen van recente kosten- en gebruiksgegevens nodig om kosten nauwkeurig te kunnen schatten. Voor een bepaalde periode vereist het prognosemodel gelijke delen van trainingsgegevens voor de prognoseperiode. Voor een prognose van drie maanden bijvoorbeeld zijn ten minste drie maanden aan recente kosten- en gebruiksgegevens vereist.
 
@@ -169,7 +169,7 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-Nadat u zich hebt aangemeld, gebruikt u de opdracht [az costmanagement query](/cli/azure/ext/costmanagement/costmanagement#ext_costmanagement_az_costmanagement_query) om query's uit te voeren op de gebruiksgegevens van de maand tot heden voor uw abonnement:
+Nadat u zich hebt aangemeld, gebruikt u de opdracht [az costmanagement query](/cli/azure/costmanagement#az_costmanagement_query) om query's uit te voeren op de gebruiksgegevens van de maand tot heden voor uw abonnement:
 
 ```azurecli
 az costmanagement query --timeframe MonthToDate --type Usage \
@@ -186,7 +186,7 @@ az costmanagement query --timeframe MonthToDate --type Usage \
 
 De parameter **--dataset-filter** gebruikt een JSON-tekenreeks of een `@json-file`.
 
-U kunt ook de opdrachten [az costmanagement export](/cli/azure/ext/costmanagement/costmanagement/export) gebruiken om gebruiksgegevens te exporteren naar een Azure-opslagaccount. U kunt de gegevens van daaruit downloaden.
+U kunt ook de opdrachten [az costmanagement export](/cli/azure/costmanagement/export) gebruiken om gebruiksgegevens te exporteren naar een Azure-opslagaccount. U kunt de gegevens van daaruit downloaden.
 
 1. Maak een resourcegroep of gebruik een bestaande resourcegroep. Voer de opdracht [az group create](/cli/azure/group#az_group_create) uit om een resourcegroep te maken:
 
@@ -200,7 +200,7 @@ U kunt ook de opdrachten [az costmanagement export](/cli/azure/ext/costmanagemen
    az storage account create --resource-group TreyNetwork --name cmdemo
    ```
 
-1. Voer de opdracht [az costmanagement export create](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_create) uit om de export te maken:
+1. Voer de opdracht [az costmanagement export create](/cli/azure/costmanagement/export#az_costmanagement_export_create) uit om de export te maken:
 
    ```azurecli
    az costmanagement export create --name DemoExport --type Usage \

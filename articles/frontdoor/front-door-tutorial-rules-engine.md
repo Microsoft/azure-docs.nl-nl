@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/09/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4f81d8a75cab38bccbfe0ca0f6405baafeb83459
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: e64f27480126fdf444f8dd72abc2d66c78b30407
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106068180"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868803"
 ---
 # <a name="tutorial-configure-your-rules-engine"></a>Zelfstudie: Regelengine configureren
 
@@ -96,7 +96,7 @@ In deze zelfstudie leert u het volgende:
     az network front-door routing-rule update -g {rg} -f {front_door} -n {routing_rule_name} --remove rulesEngine # case sensitive word ‘rulesEngine’
     ```
 
-Voor meer informatie vindt u [hier](/cli/azure/ext/front-door/network/front-door/rules-engine) een volledige lijst met opdrachten voor de AFD-regelengine.   
+Voor meer informatie vindt u [hier](/cli/azure/network/front-door/rules-engine) een volledige lijst met opdrachten voor de AFD-regelengine.   
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

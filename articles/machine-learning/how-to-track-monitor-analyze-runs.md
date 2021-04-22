@@ -11,12 +11,12 @@ ms.reviewer: sgilley
 ms.date: 04/19/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 01c3dacc2754a3df6afb87b160ca2feea81807ad
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.openlocfilehash: af591a5defcef1e8d043d54f08447324a34a10c4
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107820347"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876291"
 ---
 # <a name="start-monitor-and-track-run-history"></a>De run history starten, bewaken en bijhouden
 
@@ -101,7 +101,7 @@ U hebt de volgende items nodig:
     
         Met deze opdracht maakt u `.azureml` een subdirectory met voorbeeld runconfig- en conda-omgevingsbestanden. Het bevat ook een `config.json` bestand dat wordt gebruikt om te communiceren met uw Azure Machine Learning werkruimte.
     
-        Zie az [ml folder attach voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/folder?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach)
+        Zie az [ml folder attach voor meer informatie.](/cli/azure/ml/folder?preserve-view=true&view=azure-cli-latest#az_ml_folder_attach)
     
     2. Gebruik de volgende opdracht om de run te starten. Wanneer u deze opdracht gebruikt, geeft u de naam op van het runconfig-bestand (de tekst vóór .runconfig als u naar uw bestandssysteem kijkt) op basis van de \* parameter -c.
     
@@ -116,7 +116,7 @@ U hebt de volgende items nodig:
         >
         > Zie voor meer voorbeeld van runconfig-bestanden. [https://github.com/MicrosoftDocs/pipelines-azureml/](https://github.com/MicrosoftDocs/pipelines-azureml/)
     
-        Zie az [ml run submit-script voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script)
+        Zie az [ml run submit-script voor meer informatie.](/cli/azure/ml/run?preserve-view=true&view=azure-cli-latest#az_ml_run_submit-script)
 
     # <a name="studio"></a>[Studio](#tab/azure-studio)
 
@@ -167,7 +167,7 @@ U hebt de volgende items nodig:
     
         Deze opdracht retourneert een JSON-document met informatie over de runs voor dit experiment.
     
-        Zie az [ml experiment list voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/experiment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list)
+        Zie az [ml experiment list voor meer informatie.](/cli/azure/ml/experiment?preserve-view=true&view=azure-cli-latest#az_ml_experiment_list)
     
     * Als u informatie over een specifieke run wilt weergeven, gebruikt u de volgende opdracht. Vervang `runid` door de id van de run:
     
@@ -177,7 +177,7 @@ U hebt de volgende items nodig:
     
         Deze opdracht retourneert een JSON-document met informatie over de run.
     
-        Zie az [ml run show voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-show)
+        Zie az [ml run show voor meer informatie.](/cli/azure/ml/run?preserve-view=true&view=azure-cli-latest#az_ml_run_show)
     
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
@@ -197,7 +197,7 @@ Op de **pagina Alle runs kunt** u de lijst met runs filteren op tags, experiment
     
 :::image type="content" source="media/how-to-track-monitor-analyze-runs/custom-views.gif" alt-text="Schermopname: een aangepaste weergave maken":::
     
-1. Als u de runlogboeken wilt weergeven, selecteert u een specifieke run en op het tabblad **Uitvoer en** logboeken vindt u diagnostische en foutlogboeken voor uw run.
+1. Als u de runlogboeken wilt weergeven, selecteert u een specifieke run en op het tabblad **Uitvoer en** logboeken vindt u diagnostische logboeken en foutlogboeken voor uw run.
 
 ## <a name="run-description"></a>Beschrijving van de run 
 
@@ -259,7 +259,7 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw runs te o
     az ml run update -r runid --add-tag quality='fantastic run'
     ```
     
-    Zie az [ml run update voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-update)
+    Zie az [ml run update voor meer informatie.](/cli/azure/ml/run?preserve-view=true&view=azure-cli-latest#az_ml_run_update)
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
     
@@ -302,7 +302,7 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw runs te o
     1. Gebruik de **knop Filter toevoegen** en selecteer Filteren op tags om uw runs te filteren op tag die is toegewezen aan de run(s). <br><br>
     OF
     
-    1. Gebruik de zoekbalk om snel runs te vinden door te zoeken op de metagegevens van de run, zoals de status van de run, beschrijvingen, experimentnamen en de naam van de inzender. 
+    1. Gebruik de zoekbalk om snel runs te vinden door te zoeken op de metagegevens van de run, zoals de status van de run, beschrijvingen, namen van experimenten en de naam van de inzender. 
     
 ## <a name="cancel-or-fail-runs"></a>Runs annuleren of mislukken
 
@@ -337,7 +337,7 @@ Als u een run wilt annuleren met behulp van de CLI, gebruikt u de volgende opdra
 az ml run cancel -r runid -w workspace_name -e experiment_name
 ```
 
-Zie az [ml run cancel voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-cancel)
+Zie az [ml run cancel voor meer informatie.](/cli/azure/ml/run?preserve-view=true&view=azure-cli-latest#az_ml_run_cancel)
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
@@ -474,7 +474,7 @@ root_run(current_child_run).log("MyMetric", f"Data from child run {current_child
 
     ![Nieuwe waarschuwingsregel](./media/how-to-track-monitor-analyze-runs/new-alert-rule.png)
 
-1. Zie [logboekwaarschuwingen maken en beheren met behulp van Azure Monitor.](../azure-monitor/alerts/alerts-log.md)
+1. Zie [logboekwaarschuwingen maken en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md).
 
 ## <a name="example-notebooks"></a>Voorbeeldnotebooks
 

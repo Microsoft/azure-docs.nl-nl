@@ -1,15 +1,15 @@
 ---
 title: Azure Blockchain Service beheren met behulp van Azure CLI
-description: Hoe u uw Azure Blockchain Service met Azure CLI
+description: Een Azure Blockchain Service beheren met Azure CLI
 ms.date: 07/23/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: 63401f5ce5cd35f63915e03b7f0362811d2660ec
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 55df56274aa5baa946b60c27cf49723d59c928a1
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107768049"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107865923"
 ---
 # <a name="manage-azure-blockchain-service-using-azure-cli"></a>Azure Blockchain Service beheren met behulp van Azure CLI
 
@@ -39,7 +39,7 @@ Zie Azure CLI installeren als u liever de CLI lokaal installeert [en gebruikt.](
 
     Wanneer u met extensieverwijzingen voor de Azure-CLI werkt, moet u eerst de extensie installeren.  Azure CLI-extensies geven u toegang tot experimentele opdrachten en opdrachten in een evaluatieversie die nog niet zijn verzonden als onderdeel van de kern-CLI.  Zie [Extensies gebruiken met Azure CLI](/cli/azure/azure-cli-extensions-overview) voor meer informatie over extensies, waaronder het bijwerken en verwijderen ervan.
 
-    Installeer de [extensie voor Azure Blockchain Service](/cli/azure/ext/blockchain/blockchain) door de volgende opdracht uit te voeren:
+    Installeer de [extensie voor Azure Blockchain Service](/cli/azure/blockchain) door de volgende opdracht uit te voeren:
 
     ```azurecli-interactive
     az extension add --name blockchain
@@ -47,7 +47,7 @@ Zie Azure CLI installeren als u liever de CLI lokaal installeert [en gebruikt.](
 
 ## <a name="create-blockchain-member"></a>Blockchain-lid maken
 
-Voorbeeld: [hiermee maakt u een blockchain-lid](/cli/azure/ext/blockchain/blockchain/member#ext-blockchain-az-blockchain-member-create) in Azure Blockchain Service het quorum-grootboekprotocol in een nieuw consortium wordt uitgevoerd.
+Voorbeeld: [hiermee maakt u een blockchain-lid](/cli/azure/blockchain/member#az_blockchain_member_create) in Azure Blockchain Service het quorum-grootboekprotocol in een nieuw consortium wordt uitgevoerd.
 
 ```azurecli
 az blockchain member create \
@@ -66,7 +66,7 @@ az blockchain member create \
 | **resource-group** | De naam van de resourcegroep waarin Azure Blockchain Service-resources worden gemaakt. |
 | **name** | A unieke naam waarmee uw Azure Blockchain Service-blockchainlid wordt geïdentificeerd. De naam wordt gebruikt voor het openbare adres van het eindpunt. Bijvoorbeeld `myblockchainmember.blockchain.azure.com`. |
 | **location** | Azure-regio waarin het blockchainlid wordt gemaakt. Bijvoorbeeld `eastus`. Kies de locatie die zich het dichtst bij uw gebruikers of uw andere Azure-toepassingen bevindt. Functies zijn mogelijk niet in alle regio's beschikbaar. |
-| **password** | Het wachtwoord voor het standaardtransactieknooppunt van het lid. Gebruik het wachtwoord voor basisverificatie als u verbinding maakt met het openbare eindpunt van het standaardtransactieknooppunt van het blockchain-lid. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken dat geen nummerteken(#), procent(%) komma(,), ster(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
+| **password** | Het wachtwoord voor het standaardtransactieknooppunt van het lid. Gebruik het wachtwoord voor basisverificatie als u verbinding maakt met het openbare eindpunt van het standaardtransactieknooppunt van het blockchain-lid. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken zijn dat geen getalteken(#), procent(%) komma(,), star(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
 | **protocol** | Het blockchainprotocol. Momenteel wordt het *Quorum*-protocol ondersteund. |
 | **consortium** | De naam van het consortium waaraan u kunt deelnemen of dat u kunt maken. Zie [Azure Blockchain Service-consortium](consortium.md) voor meer informatie over consortiums. |
 | **consortium-management-account-password** | Het wachtwoord voor het consortiumaccount wordt ook wel het lidaccountwachtwoord genoemd. Het wachtwoord van het lidaccount wordt gebruikt voor het versleutelen van de persoonlijke sleutel voor het Ethereum-account dat voor het lid wordt gemaakt. U gebruikt het lidaccount en het wachtwoord van het lidaccount voor het beheer van consortiums. |
@@ -74,7 +74,7 @@ az blockchain member create \
 
 ## <a name="change-blockchain-member-passwords-or-firewall-rules"></a>Wachtwoorden van blockchain-leden of firewallregels wijzigen
 
-In [dit voorbeeld worden het wachtwoord, het](/cli/azure/ext/blockchain/blockchain/member#ext-blockchain-az-blockchain-member-update)wachtwoord voor consortiumbeheer en de firewallregel van een blockchain-lid bijgewerkt.
+In [dit voorbeeld worden het wachtwoord, het](/cli/azure/blockchain/member#az_blockchain_member_update)wachtwoord voor consortiumbeheer en de firewallregel van een blockchain-lid bijgewerkt.
 
 ```azurecli
 az blockchain member update \
@@ -89,13 +89,13 @@ az blockchain member update \
 |---------|-------------|
 | **resource-group** | De naam van de resourcegroep waarin Azure Blockchain Service-resources worden gemaakt. |
 | **name** | Naam die uw Azure Blockchain Service identificeert. |
-| **password** | Het wachtwoord voor het standaardtransactieknooppunt van het lid. Gebruik het wachtwoord voor basisverificatie als u verbinding maakt met het openbare eindpunt van het standaardtransactieknooppunt van het blockchain-lid. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken dat geen nummerteken(#), procent(%) komma(,), ster(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
+| **password** | Het wachtwoord voor het standaardtransactieknooppunt van het lid. Gebruik het wachtwoord voor basisverificatie als u verbinding maakt met het openbare eindpunt van het standaardtransactieknooppunt van het blockchain-lid. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken zijn dat geen getalteken(#), procent(%) komma(,), star(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
 | **consortium-management-account-password** | Het wachtwoord voor het consortiumaccount wordt ook wel het lidaccountwachtwoord genoemd. Het wachtwoord van het lidaccount wordt gebruikt voor het versleutelen van de persoonlijke sleutel voor het Ethereum-account dat voor het lid wordt gemaakt. U gebruikt het lidaccount en het wachtwoord van het lidaccount voor het beheer van consortiums. |
-| **firewallregels** | Begin- en eind-IP-adres voor ip-lijst met toegestane IP-adressen. |
+| **firewallregels** | Lijst met toegestane IP-adressen voor begin- en eind-IP-adressen. |
 
 ## <a name="create-transaction-node"></a>Transactie-knooppunt maken
 
-[Maak een transactie-knooppunt binnen](/cli/azure/ext/blockchain/blockchain/transaction-node#ext-blockchain-az-blockchain-transaction-node-create) een bestaand blockchainlid. Door transactieknooppunten toe te voegen, kunt u de beveiligingsisolatie verhogen en de belasting verdelen. U kunt bijvoorbeeld een transactie-knooppunt-eindpunt hebben voor verschillende clienttoepassingen.
+[Maak een transactie-knooppunt](/cli/azure/blockchain/transaction-node#az_blockchain_transaction_node_create) binnen een bestaand blockchainlid. Door transactieknooppunten toe te voegen, kunt u de beveiligingsisolatie verhogen en de belasting verdelen. U kunt bijvoorbeeld een transactie-knooppunt-eindpunt hebben voor verschillende clienttoepassingen.
 
 ```azurecli
 az blockchain transaction-node create \
@@ -110,12 +110,12 @@ az blockchain transaction-node create \
 | **resource-group** | De naam van de resourcegroep waarin Azure Blockchain Service-resources worden gemaakt. |
 | **location** | Azure-regio van het blockchainlid. |
 | **member-name** | Naam die uw Azure Blockchain Service identificeert. |
-| **password** | Het wachtwoord voor het transactie-knooppunt. Gebruik het wachtwoord voor basisverificatie wanneer u verbinding maakt met het openbare eindpunt van het transactie-knooppunt. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken zijn dat geen getalteken(#), procent(%) komma(,), star(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
+| **password** | Het wachtwoord voor het transactie-knooppunt. Gebruik het wachtwoord voor basisverificatie wanneer u verbinding maakt met het openbare eindpunt van het transactie-knooppunt. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken dat geen nummerteken(#), procent(%) komma(,), ster(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
 | **name** | Naam van transactie-knooppunt. |
 
 ## <a name="change-transaction-node-password"></a>Wachtwoord voor transactie-knooppunt wijzigen
 
-Voorbeeld [werkt een wachtwoord voor een transactie-knooppunt](/cli/azure/ext/blockchain/blockchain/transaction-node#ext-blockchain-az-blockchain-transaction-node-update) bij.
+Voorbeeld [werkt een wachtwoord voor een transactie-knooppunt](/cli/azure/blockchain/transaction-node#az_blockchain_transaction_node_update) bij.
 
 ```azurecli
 az blockchain transaction-node update \
@@ -129,12 +129,12 @@ az blockchain transaction-node update \
 |---------|-------------|
 | **resource-group** | De naam van de resourcegroep Azure Blockchain Service resources bestaan. |
 | **member-name** | Naam die uw Azure Blockchain Service identificeert. |
-| **password** | Het wachtwoord voor het transactie-knooppunt. Gebruik het wachtwoord voor basisverificatie wanneer u verbinding maakt met het openbare eindpunt van het transactie-knooppunt. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken zijn dat geen getalteken(#), procent(%) komma(,), star(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
+| **password** | Het wachtwoord voor het transactie-knooppunt. Gebruik het wachtwoord voor basisverificatie wanneer u verbinding maakt met het openbare eindpunt van het transactie-knooppunt. Het wachtwoord moet voldoen aan drie van de volgende vier vereisten: de lengte moet tussen 12 & 72 tekens, 1 kleine letters, 1 hoofdletter, 1 getal en 1 speciaal teken dat geen nummerteken(#), procent(%) komma(,), ster(*), back quote( \` ), double quote("), single quote('), dash(-) en semicolumn(;)|
 | **name** | Naam van transactie-knooppunt. |
 
-## <a name="list-api-keys"></a>API-sleutels op een lijst zetten
+## <a name="list-api-keys"></a>API-sleutels opslijst
 
-API-sleutels kunnen worden gebruikt voor toegang tot knooppunt, vergelijkbaar met gebruikersnaam en wachtwoord. Er zijn twee API-sleutels ter ondersteuning van sleutelrotatie. Gebruik de volgende opdracht om uw [API-sleutels weer te geven.](/cli/azure/ext/blockchain/blockchain/member#ext-blockchain-az-blockchain-transaction-node-list-api-key)
+API-sleutels kunnen worden gebruikt voor knooppunttoegang die vergelijkbaar is met de gebruikersnaam en het wachtwoord. Er zijn twee API-sleutels ter ondersteuning van sleutelrotatie. Gebruik de volgende opdracht om uw [API-sleutels weer te geven.](/cli/azure/blockchain/member#az_blockchain_transaction_node_list-api-key)
 
 ```azurecli
 az blockchain member list-api-key \
@@ -145,11 +145,11 @@ az blockchain member list-api-key \
 | Parameter | Beschrijving |
 |---------|-------------|
 | **resource-group** | De naam van de resourcegroep Azure Blockchain Service resources bestaan. |
-| **name** | Naam van het Azure Blockchain Service blockchain-lid |
+| **name** | Naam van het Azure Blockchain Service blockchainlid |
 
 ## <a name="regenerate-api-keys"></a>API-sleutels opnieuw maken
 
-Gebruik de volgende opdracht om [uw API-sleutels opnieuw te maken.](/cli/azure/ext/blockchain/blockchain/member#ext-blockchain-az-blockchain-transaction-node-regenerate-api-key)
+Gebruik de volgende opdracht om [uw API-sleutels opnieuw te maken.](/cli/azure/blockchain/member#az_blockchain_transaction_node_regenerate-api-key)
 
 ```azurecli
 az blockchain member regenerate-api-key \
@@ -166,7 +166,7 @@ az blockchain member regenerate-api-key \
 
 ## <a name="delete-a-transaction-node"></a>Een transactie-knooppunt verwijderen
 
-Hiermee [verwijdert u bijvoorbeeld een transactie-knooppunt voor blockchain-leden.](/cli/azure/ext/blockchain/blockchain/transaction-node#ext-blockchain-az-blockchain-transaction-node-delete)
+Voorbeeld: [hiermee verwijdert u een blockchain-lidtransactie-knooppunt](/cli/azure/blockchain/transaction-node#az_blockchain_transaction_node_delete).
 
 ```azurecli
 az blockchain transaction-node delete \
@@ -183,7 +183,7 @@ az blockchain transaction-node delete \
 
 ## <a name="delete-a-blockchain-member"></a>Een blockchain-lid verwijderen
 
-Hiermee [verwijdert u bijvoorbeeld een blockchain-lid](/cli/azure/ext/blockchain/blockchain/member#ext-blockchain-az-blockchain-member-delete).
+In [dit voorbeeld wordt een blockchain-lid verwijderd.](/cli/azure/blockchain/member#az_blockchain_member_delete)
 
 ```azurecli
 az blockchain member delete \
@@ -216,7 +216,7 @@ az role assignment create \
 
 **Voorbeeld:**
 
-Verleen een Azure AD-gebruiker toegang tot het knooppunt aan **blockchainlid:**
+Verleen een Azure AD-gebruiker toegang tot knooppunttoegang tot **blockchain-lid:**
 
 ```azurecli
 az role assignment create \
@@ -236,7 +236,7 @@ az role assignment create \
                             --scope /subscriptions/mySubscriptionId/resourceGroups/contosoResourceGroup/providers/Microsoft.Blockchain/blockchainMembers/contosoMember1/transactionNodes/contosoTransactionNode1
 ```
 
-### <a name="grant-node-access-for-azure-ad-group-or-application-role"></a>Knooppunttoegang verlenen voor azure AD-groep of -toepassingsrol
+### <a name="grant-node-access-for-azure-ad-group-or-application-role"></a>Knooppunttoegang verlenen voor Azure AD-groep of -toepassingsrol
 
 ```azurecli
 az role assignment create \
@@ -252,7 +252,7 @@ az role assignment create \
 
 **Voorbeeld:**
 
-Knooppunttoegang verlenen voor de **toepassingsrol**
+Knooppunttoegang verlenen voor **toepassingsrol**
 
 ```azurecli
 az role assignment create \

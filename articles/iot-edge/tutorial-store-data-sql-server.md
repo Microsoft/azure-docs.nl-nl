@@ -9,18 +9,18 @@ ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 709c7bf352635ffb1c17f6cb24aee59dcae2e033
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: bd64c95bcf59cef27aa988712315403c00a5dfd7
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479760"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871251"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Zelfstudie: Gegevens aan de rand opslaan met SQL Server-databases
 
 [!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
-Implementeer een SQL Server module voor het opslaan van gegevens op een apparaat met Azure IoT Edge Linux-containers.
+Implementeer een SQL Server module voor het opslaan van gegevens op een apparaat met Azure IoT Edge linux-containers.
 
 Gebruik Azure IoT Edge en SQL Server voor het opslaan en opvragen van gegevens aan de rand. Azure IoT Edge heeft basisopslagmogelijkheden waarmee berichten in cache worden geplaatst als een apparaat offline is, en worden doorgestuurd wanneer de verbinding weer tot stand is gebracht. Mogelijk wilt u echter meer geavanceerde opslagmogelijkheden, zoals het lokaal kunnen opvragen van gegevens. Uw IoT Edge-apparaten kunnen lokale databases gebruiken om complexere computing uit te voeren zonder een verbinding met IoT Hub in stand te hoeven houden.
 
@@ -51,7 +51,7 @@ Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlop
 In deze zelfstudie wordt een Azure Functions-module gebruikt om gegevens naar de SQL Server te verzenden. Om een IoT Edge-module te ontwikkelen met Azure Functions, installeert de volgende aanvullende vereisten op uw ontwikkelcomputer:
 
 * [C#-extensie voor Visual Studio Code (van OmniSharp) voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
-* [.NET Core 2.1 SDK](https://www.microsoft.com/net/download).
+* [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet/2.1).
 
 ## <a name="create-a-function-project"></a>Een functieproject maken
 

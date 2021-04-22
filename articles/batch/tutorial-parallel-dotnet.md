@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: a990a5480a8a6462bb6ef9f84070b78768628fd0
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 8c172b16fa1f80944394ffb8db8ebba0319b7bc2
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97106526"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870927"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Zelfstudie: een parallelle workload uitvoeren met Azure Batch met behulp van de .NET API
 
@@ -31,7 +31,7 @@ In deze zelfstudie zet u MP4-mediabestanden parallel om in de MP3-indeling met b
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Visual Studio 2017 of later](https://www.visualstudio.com/vs) of [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) voor Linux, macOS of Windows.
+* [Visual Studio 2017 of hoger](https://www.visualstudio.com/vs)of [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet/2.1) voor Linux, macOS of Windows.
 
 * Een Batch-account en een gekoppeld Azure Storage-account. Raadpleeg de Batch-quickstarts met behulp van [Azure Portal](quick-create-portal.md) of [Azure CLI](quick-create-cli.md) voor instructies voor het maken van deze accounts.
 

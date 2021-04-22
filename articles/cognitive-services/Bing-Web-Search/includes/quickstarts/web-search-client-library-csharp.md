@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 10/19/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d391586ade9e9a58344f9b1666802a453770152a
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
-ms.translationtype: HT
+ms.openlocfilehash: ff4a29cd2da98d6782d2e3bae5078e92bc43eaca
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386480"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107880981"
 ---
 Met de Bing Web Search-clientbibliotheek kunt u Bing Web Search eenvoudig integreren in uw C#-toepassing. In deze snelstartgids leert u hoe u een instantie maakt voor een client, een aanvraag verzendt en het antwoord weergeeft.
 
@@ -27,7 +27,7 @@ Voordat u verdergaat met deze snelstart moet u beschikken over:
 * [Visual Studio Code 2017](https://code.visualstudio.com/download)
   * [C# voor Visual Studio Code](https://visualstudio.microsoft.com/downloads/)
   * [NuGet Package Manager](https://github.com/jmrog/vscode-nuget-package-manager)
-* [.NET Core-SDK](https://www.microsoft.com/net/download)
+* [.NET Core-SDK](https://dotnet.microsoft.com/download)
 
 [!INCLUDE [bing-web-search-quickstart-signup](~/includes/bing-web-search-quickstart-signup.md)]
 

@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure-netwerkservices
 description: Een Azure Policy ingebouwde beleidsdefinities voor Azure-netwerkservices. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: reference
 author: KumudD
 ms.author: kumud
 ms.service: virtual-network
 ms.custom: subject-policy-reference
-ms.openlocfilehash: ad39c73e84f0143cc8216a71db5d69fb157ad5c6
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 05f22f8c4941594db2e6b7e5bc06734bb9cffb4b
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107496980"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861970"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-networking-services"></a>Azure Policy ingebouwde definities voor Azure-netwerkservices
 

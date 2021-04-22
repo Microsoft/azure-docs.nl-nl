@@ -1,75 +1,75 @@
 ---
-title: Resources die zijn gekoppeld aan een onderhouds configuratie verplaatsen naar een andere regio
-description: Meer informatie over het verplaatsen van resources die zijn gekoppeld aan een VM-onderhouds configuratie naar een andere Azure-regio
+title: Resources die zijn gekoppeld aan een onderhoudsconfiguratie verplaatsen naar een andere regio
+description: Meer informatie over het verplaatsen van resources die zijn gekoppeld aan een VM-onderhoudsconfiguratie naar een andere Azure-regio
 author: shants123
 ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 03/04/2020
 ms.author: shants
-ms.openlocfilehash: 88082c441dafdc7571f2b9775bfc07ebe3ca5aa4
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 4427071edf237d82e8a99d44678d77d23e180fff
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98730503"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107865239"
 ---
-# <a name="move-resources-in-a-maintenance-control-configuration-to-another-region"></a>Resources in een onderhouds beheer configuratie verplaatsen naar een andere regio
+# <a name="move-resources-in-a-maintenance-control-configuration-to-another-region"></a>Resources in een onderhoudsbeheerconfiguratie verplaatsen naar een andere regio
 
-Volg dit artikel om de resources die zijn gekoppeld aan een onderhouds configuratie te verplaatsen naar een andere Azure-regio. Mogelijk wilt u een configuratie om een aantal redenen verplaatsen. Om bijvoorbeeld te profiteren van een nieuwe regio, voor het implementeren van functies of services die beschikbaar zijn in een bepaalde regio, om te voldoen aan de interne beleids-en beheer vereisten, of als reactie op de capaciteits planning.
+Volg dit artikel om resources die zijn gekoppeld aan een onderhoudsbeheerconfiguratie te verplaatsen naar een andere Azure-regio. Mogelijk wilt u een configuratie om een aantal redenen verplaatsen. Bijvoorbeeld om te profiteren van een nieuwe regio, om functies of services te implementeren die beschikbaar zijn in een specifieke regio, om te voldoen aan de vereisten voor intern beleid en governance, of in reactie op capaciteitsplanning.
 
-Met [onderhouds beheer](maintenance-control.md), met aangepaste onderhouds configuraties, kunt u bepalen hoe platform updates worden toegepast op vm's en aan voor Azure toegewezen hosts. Er zijn enkele scenario's voor het verplaatsen van onderhouds beheer over regio's:
+[Met onderhoudsbeheer,](maintenance-control.md)met aangepaste onderhoudsconfiguraties, kunt u bepalen hoe platformupdates worden toegepast op VM's en op Toegewezen Azure-hosts. Er zijn een aantal scenario's voor het verplaatsen van onderhoudsbeheer tussen regio's:
 
-- Als u de resources wilt verplaatsen die zijn gekoppeld aan een onderhouds configuratie, maar niet de configuratie zelf, volgt u dit artikel.
-- Volg [deze instructies](move-region-maintenance-configuration.md)om de configuratie van uw onderhouds controle te verplaatsen, maar niet de resources die zijn gekoppeld aan de configuratie.
-- Als u de onderhouds configuratie en de bijbehorende resources wilt verplaatsen, volgt u eerst [deze instructies](move-region-maintenance-configuration.md). Volg vervolgens de instructies in dit artikel.
+- Als u de resources wilt verplaatsen die zijn gekoppeld aan een onderhoudsconfiguratie, maar niet de configuratie zelf, volgt u dit artikel.
+- Volg deze instructies om de configuratie van uw onderhoudsbeheer te verplaatsen, maar niet de resources die aan de configuratie [zijn gekoppeld.](move-region-maintenance-configuration.md)
+- Volg eerst deze instructies om zowel de onderhoudsconfiguratie als de bijbehorende resources [te verplaatsen.](move-region-maintenance-configuration.md) Volg vervolgens de instructies in dit artikel.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint met het verplaatsen van de resources die zijn gekoppeld aan een onderhouds configuratie:
+Voordat u begint met het verplaatsen van de resources die zijn gekoppeld aan een onderhoudsbeheerconfiguratie:
 
-- Zorg ervoor dat de resources die u verplaatst zich in de nieuwe regio bevinden voordat u begint.
-- Controleer de configuraties voor onderhouds beheer die zijn gekoppeld aan de Azure Vm's en de voor Azure toegewezen hosts die u wilt verplaatsen. Controleer elke resource afzonderlijk. Er is momenteel geen manier om configuraties voor meerdere resources op te halen.
-- Bij het ophalen van configuraties voor een bron:
-    - Zorg ervoor dat u de abonnements-ID voor het account gebruikt, niet een door Azure toegewezen host-ID.
-    - CLI: de para meter--Output Table wordt alleen gebruikt voor de Lees baarheid en kan worden verwijderd of gewijzigd.
-    - Power shell: de Format-Table naam parameter wordt alleen gebruikt voor de Lees baarheid en kan worden verwijderd of gewijzigd.
-    - Als u Power shell gebruikt, wordt er een fout bericht weer geven als u configuraties probeert te vermelden voor een resource die geen gekoppelde configuraties heeft. De fout ziet er ongeveer als volgt uit: ' bewerking mislukt met status: ' is niet gevonden '. Details: 404-client fout: niet gevonden voor URL.
+- Zorg ervoor dat de resources die u verplaatst, aanwezig zijn in de nieuwe regio voordat u begint.
+- Controleer de onderhoudsbeheerconfiguraties die zijn gekoppeld aan de Azure-VM's en Toegewezen Azure-hosts die u wilt verplaatsen. Controleer elke resource afzonderlijk. Er is momenteel geen manier om configuraties voor meerdere resources op te halen.
+- Bij het ophalen van configuraties voor een resource:
+    - Zorg ervoor dat u de abonnements-id voor het account gebruikt, niet een Azure Dedicated Host-id.
+    - CLI: De parameter --output table wordt alleen gebruikt voor leesbaarheid en kan worden verwijderd of gewijzigd.
+    - PowerShell: de parameter Format-Table name wordt alleen gebruikt voor de leesbaarheid en kan worden verwijderd of gewijzigd.
+    - Als u PowerShell gebruikt, krijgt u een foutmelding als u configuraties probeert weer te geven voor een resource die geen bijbehorende configuraties heeft. De fout is vergelijkbaar met: 'Bewerking is mislukt met status: Niet gevonden'. Details: 404 Client error: Not Found for URL'.
 
     
-## <a name="prepare-to-move"></a>Voorbereiden om te verplaatsen
+## <a name="prepare-to-move"></a>Voorbereiden op verplaatsen
 
-1. Voordat u begint, moet u deze variabelen definiëren. We hebben hier een voor beeld gegeven.
+1. Definieer deze variabelen voordat u begint. We hebben voor elk voorbeeld een voorbeeld gegeven.
 
     **Variabele** | **Details** | **Voorbeeld**
     --- | ---
-    $subId | ID voor het abonnement dat de onderhouds configuraties bevat | "ons-abonnement-ID"
-    $rsrcGroupName | Naam van resource groep (Azure VM) | "VMResourceGroup"
-    $vmName | Naam van de VM-resource |  MyVM
-    $adhRsrcGroupName |  Resource groep (toegewezen hosts) | "HostResourceGroup"
-    $adh | Toegewezen hostnaam | "myHost"
-    $adhParentName | Naam van bovenliggende resource | HostGroup
+    $subId | Id voor abonnement met de onderhoudsconfiguraties | 'our-subscription-ID'
+    $rsrcGroupName | Naam van resourcegroep (Azure-VM) | 'VMResourceGroup'
+    $vmName | VM-resourcenaam |  'myVM'
+    $adhRsrcGroupName |  Resourcegroep (toegewezen hosts) | 'HostResourceGroup'
+    $adh | Toegewezen hostnaam | 'myHost'
+    $adhParentName | Naam van bovenliggende resource | "HostGroup"
     
-2. De onderhouds configuraties ophalen met de Power shell [-opdracht Get-AZConfigurationAssignment](/powershell/module/az.maintenance/get-azconfigurationassignment) :
+2. De onderhoudsconfiguraties ophalen met behulp van de [PowerShell-opdracht Get-AZConfigurationAssignment:](/powershell/module/az.maintenance/get-azconfigurationassignment)
 
-    - Voer voor voor Azure toegewezen hosts de volgende handelingen uit:
+    - Voer voor Azure Dedicated Hosts het volgende uit:
         ```
         Get-AzConfigurationAssignment -ResourceGroupName $adhRsrcGroupName -ResourceName $adh -ResourceType hosts -ProviderName Microsoft.Compute -ResourceParentName $adhParentName -ResourceParentType hostGroups | Format-Table Name
         ```
 
-    - Voor virtuele Azure-machines voert u de volgende handelingen uit:
+    - Voer voor Azure-VM's het volgende uit:
 
         ```
         Get-AzConfigurationAssignment -ResourceGroupName $rgName -ResourceName $vmName -ProviderName Microsoft.Compute -ResourceType virtualMachines | Format-Table Name
         ```
-3. De onderhouds configuraties ophalen met de CLI [AZ-onderhouds toewijzing](/cli/azure/ext/maintenance/maintenance/assignment) opdracht:
+3. De onderhoudsconfiguraties ophalen met behulp van de [CLI-opdracht az maintenance assignment:](/cli/azure/maintenance/assignment)
 
-    - Voor met Azure toegewezen hosts:
+    - Voor Toegewezen Azure-hosts:
 
         ```
         az maintenance assignment list --subscription $subId --resource-group $adhRsrcGroupName --resource-name $adh --resource-type hosts --provider-name Microsoft.Compute --resource-parent-name $adhParentName --resource-parent-type hostGroups --query "[].{HostResourceGroup:resourceGroup,ConfigName:name}" --output table
         ```
 
-    - Voor Azure-Vm's:
+    - Voor Azure-VM's:
 
         ```
         az maintenance assignment list --subscription $subId --provider-name Microsoft.Compute --resource-group $rsrcGroupName --resource-name $vmName --resource-type virtualMachines --query "[].{HostResourceGroup:resourceGroup, ConfigName:name}" --output table
@@ -78,19 +78,19 @@ Voordat u begint met het verplaatsen van de resources die zijn gekoppeld aan een
 
 ## <a name="move"></a>Verplaatsen 
 
-1. [Volg deze instructies](../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) om de virtuele Azure-machines te verplaatsen naar de nieuwe regio.
-2. Nadat de resources zijn verplaatst, moet u de onderhouds configuraties opnieuw Toep assen op de resources in de nieuwe regio, afhankelijk van het feit of u de onderhouds configuraties hebt verplaatst. U kunt een onderhouds configuratie Toep assen op een resource met behulp van [Power shell](../virtual-machines/maintenance-control-powershell.md) of [cli](../virtual-machines/maintenance-control-cli.md).
+1. [Volg deze instructies om](../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) de Azure-VM's naar de nieuwe regio te verplaatsen.
+2. Nadat de resources zijn verplaatst, past u de onderhoudsconfiguraties waar nodig opnieuw toe op de resources in de nieuwe regio, afhankelijk van of u de onderhoudsconfiguraties hebt verplaatst. U kunt een onderhoudsconfiguratie toepassen op een resource met behulp [van PowerShell](../virtual-machines/maintenance-control-powershell.md) of [CLI.](../virtual-machines/maintenance-control-cli.md)
 
 
-## <a name="verify-the-move"></a>De verplaatsing controleren
+## <a name="verify-the-move"></a>De overstap controleren
 
-Controleer de bronnen in de nieuwe regio en controleer de bijbehorende configuraties voor de resources in de nieuwe regio. 
+Controleer de resources in de nieuwe regio en controleer de bijbehorende configuraties voor de resources in de nieuwe regio. 
 
-## <a name="clean-up-source-resources"></a>Bron resources opschonen
+## <a name="clean-up-source-resources"></a>Bronbronnen ops schonen
 
-Na de verplaatsing kunt u overwegen de verplaatste resources te verwijderen in de bron regio.
+Na de overstap kunt u overwegen om de verplaatste resources in de bronregio te verwijderen.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Volg [deze instructies](move-region-maintenance-configuration.md) als u onderhouds configuraties moet verplaatsen. 
+Volg [deze instructies](move-region-maintenance-configuration.md) als u onderhoudsconfiguraties moet verplaatsen. 

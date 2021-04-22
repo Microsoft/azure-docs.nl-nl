@@ -5,12 +5,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 07/08/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ab0995a49f944344b6914bd0e51f1d437dd28c69
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 1bc1f67277741dfa12209451375301cec7a63e9f
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107766738"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871405"
 ---
 # <a name="subscribe-to-events-for-a-blob-storage-account-with-azure-cli"></a>Abonneren op gebeurtenissen voor een Blob Storage-account met Azure CLI
 
@@ -31,7 +31,7 @@ In dit script wordt de volgende opdracht gebruikt om het abonnement op de gebeur
 | Opdracht | Opmerkingen |
 |---|---|
 | [az eventgrid event-subscription create](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_create) | Hiermee wordt een Event Grid-abonnement gemaakt. |
-| [az eventgrid event-subscription create](/cli/azure/ext/eventgrid/eventgrid/event-subscription#ext-eventgrid-az-eventgrid-event-subscription-create) - extensieversie | Hiermee wordt een Event Grid-abonnement gemaakt. |
+| [az eventgrid event-subscription create](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_create) - extensieversie | Hiermee wordt een Event Grid-abonnement gemaakt. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

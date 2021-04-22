@@ -11,16 +11,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/23/2021
 ms.custom: seodec18, has-adal-ref, devx-track-azurecli
-ms.openlocfilehash: 225e72bc00ce0a80ff655a76562b5c6b70b7fa79
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 8e50b650eaffe3d0ec8d3d2cd1841bd139d33750
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479488"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107867508"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Verificatie en autorisatie voor Azure Time Series Insights-API
 
-Afhankelijk van uw bedrijfsbehoeften kan uw oplossing een of meer clienttoepassingen bevatten die u [](/rest/api/time-series-insights/reference-data-access-overview)gebruikt om te communiceren met de API's Azure Time Series Insights uw omgeving. Azure Time Series Insights voert verificatie uit met [behulp van Azure AD-beveiligingstokens op basis van OAUTH 2.0.](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims) Als u uw client(s) wilt verifiëren, moet u een bearer-token met de juiste machtigingen krijgen en dit doorgeven samen met uw API-aanroepen. In dit document worden verschillende methoden beschreven voor het verkrijgen van referenties die u kunt gebruiken om een Bearer-token op te halen en te verifiëren, waaronder het gebruik van beheerde identiteit en Azure Active Directory app-registratie.
+Afhankelijk van uw bedrijfsbehoeften kan uw oplossing een of meer clienttoepassingen bevatten die u [](/rest/api/time-series-insights/reference-data-access-overview)gebruikt om te communiceren met de API's Azure Time Series Insights uw omgeving. Azure Time Series Insights voert verificatie uit met [behulp van Azure AD-beveiligingstokens op basis van OAUTH 2.0.](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims) Als u uw client(s) wilt verifiëren, moet u een bearer-token met de juiste machtigingen krijgen en dit doorgeven samen met uw API-aanroepen. In dit document worden verschillende methoden beschreven voor het verkrijgen van referenties die u kunt gebruiken om een bearer-token op te halen en te verifiëren, waaronder het gebruik van beheerde identiteit en Azure Active Directory app-registratie.
 
 ## <a name="managed-identities"></a>Beheerde identiteiten
 
@@ -75,11 +75,11 @@ Volg de stappen in [Een toepassing registreren.](../active-directory/develop/qui
 
 ## <a name="step-2-grant-access"></a>Stap 2: Toegang verlenen
 
-Wanneer uw Azure Time Series Insights een aanvraag ontvangt, wordt eerst het bearer-token van de aanroeper gevalideerd. Als de validatie is uitgevoerd, is de aanroeper geverifieerd en wordt er een andere controle uitgevoerd om ervoor te zorgen dat de aanroeper is gemachtigd om de aangevraagde actie uit te voeren. Als u een gebruiker of service-principal wilt machtigen, moet u deze eerst toegang verlenen tot de omgeving door de rol Lezer of Inzender aan hen toe te wijzen.
+Wanneer uw Azure Time Series Insights een aanvraag ontvangt, wordt eerst het bearer-token van de aanroeper gevalideerd. Als de validatie is uitgevoerd, is de aanroeper geverifieerd en wordt er een andere controle uitgevoerd om ervoor te zorgen dat de aanroeper is gemachtigd om de aangevraagde actie uit te voeren. Als u een gebruiker of service-principal wilt machtigen, moet u deze eerst toegang verlenen tot de omgeving door deze de rol Lezer of Inzender toe te wijzen.
 
 - Als u toegang wilt verlenen via [Azure Portal](https://portal.azure.com/) gebruikersinterface, volgt u de instructies in het artikel [Gegevens toegang verlenen tot een omgeving.](concepts-access-policies.md) Wanneer u de gebruiker selecteert, kunt u zoeken naar de beheerde identiteit of app-registratie op naam of id.
 
-- Voer de volgende opdracht uit om toegang te verlenen met behulp van de Azure CLI. Bekijk hier de documentatie [voor](/cli/azure/ext/timeseriesinsights/tsi/access-policy) de volledige lijst met opdrachten die beschikbaar zijn voor het beheren van toegang.
+- Voer de volgende opdracht uit om toegang te verlenen met behulp van de Azure CLI. Bekijk hier de documentatie [voor](/cli/azure/tsi/access-policy) de volledige lijst met opdrachten die beschikbaar zijn voor het beheren van toegang.
 
    ```azurecli-interactive
    az tsi access-policy create --name "ap1" --environment-name "env1" --description "some description" --principal-object-id "aGuid" --roles Reader Contributor --resource-group "rg1"
@@ -148,7 +148,7 @@ In deze sectie worden veelgebruikte HTTP-aanvraagheaders en -parameters beschrev
 
 Vereiste aanvraagheaders worden hieronder beschreven.
 
-| Vereiste aanvraagheader | Beschrijving |
+| Vereiste aanvraagheader | Description |
 | --- | --- |
 | Autorisatie | Voor verificatie met Azure Time Series Insights moet een geldig OAuth 2.0 Bearer-token worden doorgegeven in de [autorisatie-header](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate). |
 
@@ -157,7 +157,7 @@ Vereiste aanvraagheaders worden hieronder beschreven.
 
 Optionele aanvraagheaders worden hieronder beschreven.
 
-| Optionele aanvraagheader | Beschrijving |
+| Optionele aanvraagheader | Description |
 | --- | --- |
 | Inhoudstype | wordt `application/json` alleen ondersteund. |
 | x-ms-client-request-id | Een clientaanvraag-id. De service registreert deze waarde. Hiermee kan de service de werking van services traceren. |
@@ -166,7 +166,7 @@ Optionele aanvraagheaders worden hieronder beschreven.
 
 Optionele maar aanbevolen antwoordheaders worden hieronder beschreven.
 
-| Antwoordheader | Beschrijving |
+| Antwoordheader | Description |
 | --- | --- |
 | Inhoudstype | Alleen `application/json` wordt ondersteund. |
 | x-ms-request-id | Door de server gegenereerde aanvraag-id. Kan worden gebruikt om contact op te nemen met Microsoft om een aanvraag te onderzoeken. |
@@ -197,4 +197,4 @@ Optionele url-queryreeksparameters omvatten het instellen van een time-out voor 
 
 * Lees Query Gen2 data using C# (Gen2-gegevens opvragen met C# ) voor voorbeeldcode die de codevoorbeelden van de Gen2 Azure Time Series Insights API [aanroept.](./time-series-insights-update-query-data-csharp.md)
 
-* Lees de naslagdocumentatie over de [Query-API voor api-referentiegegevens.](/rest/api/time-series-insights/reference-query-apis)
+* Lees de naslagdocumentatie over de [Query-API voor api-naslaginformatie.](/rest/api/time-series-insights/reference-query-apis)

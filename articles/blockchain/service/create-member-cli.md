@@ -5,12 +5,12 @@ ms.date: 07/23/2020
 ms.topic: quickstart
 ms.reviewer: ravastra
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 2d94640e1c6a037893fb1ad9198b82195c46dd24
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: da099aa75168e52d0024f4a4381c77b3e9ce67ab
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107768121"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876648"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-azure-cli"></a>Quickstart: Een Azure Blockchain Service-blockchainlid maken met behulp van Azure CLI
 
@@ -46,7 +46,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, hebt u voor 
 
     Wanneer u met extensieverwijzingen voor de Azure-CLI werkt, moet u eerst de extensie installeren.  Azure CLI-extensies geven u toegang tot experimentele opdrachten en opdrachten in een evaluatieversie die nog niet zijn verzonden als onderdeel van de kern-CLI.  Zie [Extensies gebruiken met Azure CLI](/cli/azure/azure-cli-extensions-overview) voor meer informatie over extensies, waaronder het bijwerken en verwijderen ervan.
 
-    Installeer de [extensie voor Azure Blockchain Service](/cli/azure/ext/blockchain/blockchain) door de volgende opdracht uit te voeren:
+    Installeer de [extensie voor Azure Blockchain Service](/cli/azure/blockchain) door de volgende opdracht uit te voeren:
 
     ```azurecli-interactive
     az extension add --name blockchain

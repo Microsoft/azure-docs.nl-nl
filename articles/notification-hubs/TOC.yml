@@ -24,9 +24,9 @@
       items:
         - name: Firebase Cloud Messaging
           items:
-            - name: Push meldingen verzenden naar alle registraties (huidige SDK)
+            - name: Pushmeldingen verzenden naar alle registraties (huidige SDK)
               href: android-sdk.md
-            - name: Push meldingen verzenden naar alle registraties (verouderde SDK)
+            - name: Pushmeldingen verzenden naar alle registraties (verouderde SDK)
               href: notification-hubs-android-push-notification-google-fcm-get-started.md
             - name: Pushmeldingen verzenden naar specifieke apparaten
               href: push-notifications-android-specific-devices-firebase-cloud-messaging.md
@@ -50,9 +50,9 @@
           items:
             - name: Vereisten voor iOS-zelfstudies
               href: ios-sdk-get-started.md
-            - name: Doel-C (huidige SDK)
+            - name: Objective-C (huidige SDK)
               href: ios-sdk-current.md
-            - name: Doel-C (verouderde SDK)
+            - name: Objective-C (verouderde SDK)
               href: ios-sdk-legacy.md
         - name: Pushmeldingen verzenden naar specifieke apparaten
           href: notification-hubs-ios-xplat-segmented-apns-push-notification.md
@@ -158,7 +158,7 @@
     - name: .NET
       href: /dotnet/api/microsoft.azure.notificationhubs
     - name: Azure CLI
-      href: /cli/azure/ext/notification-hub/notification-hub
+      href: /cli/azure/notification-hub
     - name: PowerShell
       href: /powershell/module/az.notificationhubs
     - name: REST

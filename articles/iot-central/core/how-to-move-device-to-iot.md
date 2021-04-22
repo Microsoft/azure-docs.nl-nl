@@ -1,44 +1,44 @@
 ---
 title: Een apparaat verplaatsen naar Azure IoT Central van IoT Hub
-description: Het apparaat verplaatsen naar Azure IoT Central van IoT Hub
-author: TheRealJasonAndrew
-ms.author: v-anjaso
+description: Apparaat verplaatsen naar Azure IoT Central van IoT Hub
+author: philmea
+ms.author: philmea
 ms.date: 02/20/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 543c3f1c72857098540cc2a77e8a0093b907b799
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 79aead5b374714e7856897a9b85349198341cb3d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102210832"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872727"
 ---
 # <a name="how-to-transfer-a-device-to-azure-iot-central-from-iot-hub"></a>Een apparaat overdragen naar Azure IoT Central van IoT Hub
 
-*Dit artikel is van toepassing op Opera tors en ontwikkel aars van apparaten.*  
+*Dit artikel is van toepassing op operators en apparaatontwikkelaars.*  
 
-In dit artikel wordt beschreven hoe u een apparaat overbrengt naar een Azure IoT Central-toepassing vanuit een IoT Hub. 
+In dit artikel wordt beschreven hoe u een apparaat naar een Azure IoT Central van een IoT Hub. 
 
-Een apparaat maakt eerst verbinding met een DPS-eind punt om de informatie op te halen die nodig is om verbinding te maken met uw toepassing. Intern gebruikt uw IoT Central-toepassing een IoT-hub voor het afhandelen van connectiviteit met apparaten.  
+Een apparaat maakt eerst verbinding met een DPS-eindpunt om de informatie op te halen die nodig is om verbinding te maken met uw toepassing. Intern gebruikt uw IoT Central een IoT-hub voor het afhandelen van apparaatconnectiviteit.  
 
-Een apparaat kan rechtstreeks worden verbonden met een IoT-hub met behulp van een connection string of DPS. [Azure IOT hub Device Provisioning Service (DPS)](../../iot-dps/about-iot-dps.md) is de route voor IOT Central.
+Een apparaat kan rechtstreeks met een IoT-hub worden verbonden met behulp van connection string of DPS. [Azure IoT Hub Device Provisioning Service (DPS)](../../iot-dps/about-iot-dps.md) is de route voor IoT Central.
 
 ## <a name="to-move-the-device-to-azure-iot-central"></a>Het apparaat verplaatsen naar Azure IoT Central
 
-Als u een apparaat wilt verbinden met IoT Central van de IoT Hub moet een apparaat worden bijgewerkt met:
+Als u een apparaat wilt verbinden IoT Central de IoT Hub moet een apparaat worden bijgewerkt met:
 
-* De [scope-id](../../iot-dps/concepts-service.md) van de IOT Central toepassing.
-* Een sleutel die is afgeleid van de [groeps-SAS](concepts-get-connected.md) -sleutel of [het X. 509-certificaat](../../iot-hub/iot-hub-x509ca-overview.md)
+* De [bereik-id](../../iot-dps/concepts-service.md) van de IoT Central toepassing.
+* Een sleutel die is afgeleid van de [GROEPS-SAS-sleutel](concepts-get-connected.md) of [het X.509-certificaat](../../iot-hub/iot-hub-x509ca-overview.md)
 
-Voor de interactie met IoT Central moet er een apparaatprofiel zijn dat de eigenschappen/telemetrie/opdrachten modelleert die het apparaat implementeert. Zie voor meer informatie verbinding maken met [IOT Central](concepts-get-connected.md) en [Wat zijn Device-sjablonen?](concepts-device-templates.md)
+Als u met IoT Central wilt werken, moet er een apparaatsjabloon zijn die de eigenschappen/telemetrie/opdrachten die het apparaat implementeert, model modeleert. Zie Voor meer informatie [Verbinding maken met](concepts-get-connected.md) IoT Central en Wat zijn [apparaatsjablonen?](concepts-device-templates.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u een ontwikkelaar van een apparaat bent, kunt u het volgende doen:
+Als u een apparaatontwikkelaar bent, zijn enkele voorgestelde volgende stappen:
 
-- Bekijk een voor beeld van een code die laat zien hoe u SAS-tokens gebruikt in [de zelf studie: een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md)
-- Meer informatie over het [verbinden van apparaten met X. 509-certificaten met behulp van Node.js apparaat-SDK voor IOT Central toepassing](how-to-connect-devices-x509.md)
-- Meer informatie over het [controleren van de connectiviteit van apparaten met behulp van Azure cli](./howto-monitor-devices-azure-cli.md)
-- Meer informatie over het [definiëren van een nieuw IOT-apparaattype in uw Azure IOT Central-toepassing](./howto-set-up-template.md)
-- Meer informatie over [Azure IOT edge apparaten en Azure IOT Central](./concepts-iot-edge.md)
+- Bekijk enkele voorbeeldcodes die laten zien hoe u SAS-tokens gebruikt in Zelfstudie: Een clienttoepassing maken en verbinden [met uw Azure IoT Central toepassing](tutorial-connect-device.md)
+- Meer informatie over het verbinden van apparaten met [X.509-certificaten met behulp van Node.js device SDK voor IoT Central Application](how-to-connect-devices-x509.md)
+- Meer informatie over het [bewaken van apparaatconnectiviteit met behulp van Azure CLI](./howto-monitor-devices-azure-cli.md)
+- Meer informatie over [het definiëren van een nieuw IoT-apparaattype in uw Azure IoT Central toepassing](./howto-set-up-template.md)
+- Meer informatie [Azure IoT Edge apparaten en Azure IoT Central](./concepts-iot-edge.md)

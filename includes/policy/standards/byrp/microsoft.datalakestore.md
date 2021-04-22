@@ -2,19 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: c92593a6c5d234c8e057d91f0f74826d683487cb
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: cb5894edc39804bcc9959857da97b13bb200f3b2
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107500652"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878489"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
-De [Azure Security-benchmark](../../../../articles/security/benchmarks/overview.md) biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. Bekijk de [toewijzingsbestanden van de Azure Security-benchmark](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines) om te zien hoe deze service volledig is toegewezen aan de Azure Security-benchmark.
+De [Azure Security-benchmark](/security/benchmark/azure/introduction) biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. Bekijk de [toewijzingsbestanden van de Azure Security-benchmark](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines) om te zien hoe deze service volledig is toegewezen aan de Azure Security-benchmark.
 
 Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../../../../articles/governance/policy/samples/azure-security-benchmark.md) om te zien hoe de beschikbare ingebouwde modules voor Azure Policy voor alle Azure-services zijn toegewezen aan deze nalevingsstandaard.
 
@@ -24,7 +24,7 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 ## <a name="azure-security-benchmark-v1"></a>Azure Security Benchmark v1
 
-De [Azure Security-benchmark](../../../../articles/security/benchmarks/overview.md) biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. Bekijk de [toewijzingsbestanden van de Azure Security-benchmark](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines) om te zien hoe deze service volledig is toegewezen aan de Azure Security-benchmark.
+De [Azure Security-benchmark](/security/benchmark/azure/introduction) biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. Bekijk de [toewijzingsbestanden van de Azure Security-benchmark](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines) om te zien hoe deze service volledig is toegewezen aan de Azure Security-benchmark.
 
 Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../../../../articles/governance/policy/samples/azure-security-benchmark.md) om te zien hoe de beschikbare ingebouwde modules voor Azure Policy voor alle Azure-services zijn toegewezen aan deze nalevingsstandaard.
 
@@ -34,7 +34,7 @@ Raadpleeg [Naleving van Azure Policy-regelgeving - Azure Security-benchmark](../
 
 ## <a name="cis-microsoft-azure-foundations-benchmark-130"></a>CIS Microsoft Azure Foundations Benchmark 1.3.0
 
-Zie [Azure Policy Regulatory Compliance - CIS Microsoft Azure Foundations Benchmark 1.3.0 (Naleving van regelgeving - CIS Microsoft Azure Foundations Benchmark 1.3.0)](../../../../articles/governance/policy/samples/cis-azure-1-3-0.md)om te zien hoe de beschikbare Azure Policy-ingebouwde omgevingen voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
+Zie [Azure Policy Regulatory Compliance - CIS Microsoft Azure Foundations Benchmark 1.3.0 (Naleving van regelgeving - CIS Microsoft Azure Foundations Benchmark 1.3.0)](../../../../articles/governance/policy/samples/cis-azure-1-3-0.md)om te zien hoe de beschikbare Azure Policy-ingebouwde Azure Policy voor alle Azure-services zijn toe te schrijven aan deze nalevingsstandaard.
 Zie [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/benchmark/azure/)voor meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
@@ -43,7 +43,7 @@ Zie [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/bench
 
 ## <a name="cmmc-level-3"></a>CMMC-niveau 3
 
-Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving - [CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn toe te Azure Policy deze nalevingsstandaard.
+Zie Azure Policy Regulatory Compliance - CMMC Level 3 (Naleving van regelgeving [- CMMC-niveau 3)](../../../../articles/governance/policy/samples/cmmc-l3.md)om te zien hoe de beschikbare Azure Policy voor alle Azure-services zijn Azure Policy deze nalevingsstandaard.
 Zie Cybersecurity [Maturity Model Certification (CMMC) voor](https://www.acq.osd.mil/cmmc/docs/CMMC_Model_Main_20200203.pdf)meer informatie over deze nalevingsstandaard.
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |

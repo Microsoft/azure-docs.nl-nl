@@ -1,6 +1,6 @@
 ---
-title: Veelvoorkomende fouten bij het oplossen van problemen met Azure automanage
-description: Veelvoorkomende fouten bij onboarding en het oplossen van problemen
+title: Veelvoorkomende Azure Automanage onboarding-fouten oplossen
+description: Veelvoorkomende fouten bij het onboarden van Automanage en hoe u deze kunt oplossen
 author: asinn826
 ms.service: virtual-machines
 ms.subservice: automanage
@@ -8,48 +8,47 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: alsin
-ms.openlocfilehash: 3c9f1b76bb707a296da00ac503482efe6a22385b
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: 6ee0164dd8243d30cf691350352757f2503e34c8
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106278334"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862971"
 ---
-# <a name="troubleshoot-common-automanage-onboarding-errors"></a>Veelvoorkomende fouten bij het onboarden van problemen oplossen
-Automatisch beheer kan een machine niet op de service voorbereiden. In dit document wordt uitgelegd hoe u implementatie fouten oplost, delen enkele veelvoorkomende oorzaken van het mislukken van implementaties en een beschrijving van mogelijke volgende stappen bij een oplossing.
+# <a name="troubleshoot-common-automanage-onboarding-errors"></a>Veelvoorkomende onboardingfouten met Automanage oplossen
+Met Automanage kan de onboarding van een machine op de service mislukken. In dit document wordt uitgelegd hoe u implementatiefouten kunt oplossen, worden enkele veelvoorkomende redenen voor het mislukken van implementaties beschreven en worden mogelijke volgende stappen voor het oplossen van problemen beschreven.
 
-## <a name="troubleshooting-deployment-failures"></a>Implementatie fouten oplossen
-Als u een machine onboardt op automatisch beheer, wordt er een Azure Resource Manager implementatie gemaakt. Zie voor meer informatie de implementatie voor meer informatie over de oorzaak van de fout. Er zijn koppelingen naar de implementaties in de flyout fout detail, afbeelding hieronder.
+## <a name="troubleshooting-deployment-failures"></a>Implementatiefouten oplossen
+Als u een machine onboardt voor Automatisch beheer, wordt er een Azure Resource Manager gemaakt. Zie de implementatie voor meer informatie over waarom de implementatie is mislukt. De flyout met foutdetails bevat koppelingen naar de implementaties, zoals hieronder wordt weergegeven.
 
-:::image type="content" source="media\common-errors\failure-flyout.png" alt-text="Flyout voor fout Details van automanage.":::
+:::image type="content" source="media\common-errors\failure-flyout.png" alt-text="Flyout voor foutdetails voor automatischmanage.":::
 
-### <a name="check-the-deployments-for-the-resource-group-containing-the-failed-vm"></a>Controleer de implementaties voor de resource groep met de mislukte VM
-De fout-flyout bevat een koppeling naar de implementaties in de resource groep die de computer bevat waarop de onboarding is mislukt. De flyout bevat ook de naam van het voor voegsel dat u kunt gebruiken voor het filteren van implementaties met. Als u op de koppeling implementatie klikt, wordt u naar de Blade implementaties geleid, waar u vervolgens de implementaties kunt filteren om de implementaties van automatisch beheer op uw computer te bekijken. Als u in meerdere regio's implementeert, moet u ervoor zorgen dat u op de implementatie in de juiste regio klikt.
+### <a name="check-the-deployments-for-the-resource-group-containing-the-failed-vm"></a>Controleer de implementaties voor de resourcegroep met de mislukte VM
+De flyout voor fouten bevat een koppeling naar de implementaties in de resourcegroep die de machine bevat die de onboarding heeft mislukt. De flyout bevat ook een voorvoegselnaam die u kunt gebruiken om implementaties mee te filteren. Als u op de implementatiekoppeling klikt, gaat u naar de blade Implementaties, waar u vervolgens implementaties kunt filteren om Implementaties automatisch op uw computer te kunnen beheeren. Als u in meerdere regio's implementeert, moet u op de implementatie in de juiste regio klikken.
 
 ### <a name="check-the-deployments-for-the-subscription-containing-the-failed-vm"></a>Controleer de implementaties voor het abonnement met de mislukte VM
-Als er geen fouten worden weer geven in de implementatie van de resource groep, is de volgende stap het bekijken van de implementaties in uw abonnement met de virtuele machine waarvoor de onboarding is mislukt. Klik in de flyout fout op de koppeling **implementaties voor abonnement** en filter implementaties met behulp van het filter auto **Manage-DefaultResourceGroup** . Gebruik de naam van de resource groep van de Blade fout om implementaties te filteren. De naam van de implementatie is een achtervoegsel met een regio naam. Als u in meerdere regio's implementeert, moet u ervoor zorgen dat u op de implementatie in de juiste regio klikt.
+Als u geen fouten ziet in de implementatie van de resourcegroep, is de volgende stap om te kijken naar de implementaties in uw abonnement met de VM die de onboarding heeft mislukt. Klik op **de koppeling Implementaties voor** abonnement in de flyout met fouten en filter implementaties met behulp van het filter **Automanage-DefaultResourceGroup.** Gebruik de naam van de resourcegroep op de blade Fouten om implementaties te filteren. De naam van de implementatie krijgt het achtervoegsel een regionaam. Als u in meerdere regio's implementeert, moet u op de implementatie in de juiste regio klikken.
 
-### <a name="check-deployments-in-a-subscription-linked-to-a-log-analytics-workspace"></a>Implementaties controleren in een abonnement dat is gekoppeld aan een Log Analytics-werk ruimte
-Als er geen mislukte implementaties worden weer geven in de resource groep of het abonnement dat uw defecte virtuele machine bevat, en als uw virtuele machine is verbonden met een Log Analytics-werk ruimte in een ander abonnement, gaat u naar het abonnement dat is gekoppeld aan uw Log Analytics-werk ruimte en controleert u op mislukte implementaties.
+### <a name="check-deployments-in-a-subscription-linked-to-a-log-analytics-workspace"></a>Implementaties controleren in een abonnement dat is gekoppeld aan een Log Analytics-werkruimte
+Als u geen mislukte implementaties ziet in de resourcegroep of het abonnement met uw mislukte VM en als uw mislukte VM is verbonden met een Log Analytics-werkruimte in een ander abonnement, gaat u naar het abonnement dat is gekoppeld aan uw Log Analytics-werkruimte en controleert u op mislukte implementaties.
 
 ## <a name="common-deployment-errors"></a>Veelvoorkomende implementatiefouten
 
 Fout |  Oplossing
 :-----|:-------------|
-Fout met onvoldoende machtigingen voor het account voor automanaged | Deze fout kan optreden als u onlangs een abonnement met een nieuwe account voor automanage hebt verplaatst naar een nieuwe Tenant. Stappen om deze fout op te lossen, vindt u [hier](./repair-automanage-account.md).
-Werkruimte regio komt niet overeen met vereisten voor de toewijzing van regio's | De computer kan niet worden vrijgegeven door automatisch beheer, omdat de Log Analytics werk ruimte waaraan de machine momenteel is gekoppeld, niet is toegewezen aan een ondersteunde automatiserings regio. Zorg ervoor dat uw bestaande Log Analytics-werk ruimte en het Automation-account zich in een [ondersteunde regio toewijzing](../automation/how-to/region-mappings.md)bevinden.
-De toegang is geweigerd vanwege het weigeren van de toewijzing met de naam die door de beheerde toepassing is gemaakt. | Er is een [denyAssignment](https://docs.microsoft.com/azure/role-based-access-control/deny-assignments) gemaakt in uw resource, waardoor automanage geen toegang heeft tot uw resource. Deze denyAssignment is mogelijk gemaakt door een [blauw druk](https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking) of een [beheerde toepassing](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/overview).
-"OS Information: name = ' (null), ver = ' (null), agent status = ' niet gereed '." | Zorg ervoor dat u een [Mini maal ondersteunde agent versie](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/support-extensions-agent-version)uitvoert, de agent wordt uitgevoerd[(Linux](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/linux-azure-guest-agent) en [Windows](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/windows-azure-guest-agent)) en dat de agent up-to-date is ([Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) en [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows)).
-Het besturings systeem kan niet worden bepaald voor de VM-besturingssysteem naam:, ver. Controleer of de VM-agent wordt uitgevoerd, of de huidige status gereed is. | Zorg ervoor dat u een [Mini maal ondersteunde agent versie](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/support-extensions-agent-version)uitvoert, de agent wordt uitgevoerd[(Linux](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/linux-azure-guest-agent) en [Windows](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/windows-azure-guest-agent)) en dat de agent up-to-date is ([Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) en [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows)).
-
-' Er is een fout in de VM opgetreden bij het verwerken van de extensie ' IaaSAntimalware ' ' | Zorg ervoor dat er al een andere antimalware/antivirus aanbieding op uw virtuele machine is geïnstalleerd. Als dat niet lukt, neemt u contact op met de ondersteuning.
-ASC-werk ruimte: de Log Analytics-service wordt momenteel niet ondersteund op _locatie_. | Controleer of uw virtuele machine zich in een [ondersteunde regio](./automanage-virtual-machines.md#supported-regions)bevindt.
-De sjabloon implementatie is mislukt vanwege een overtreding van het beleid. Zie de Details voor meer informatie. | Er is een beleid dat het voor komen dat automanage de virtuele machine onboardt. Controleer de beleids regels die worden toegepast op uw abonnement of resource groep met uw virtuele machine die u wilt voorbereiden op automanage.
-De toewijzing is mislukt; Er is geen aanvullende informatie beschikbaar | Open een aanvraag met Microsoft Azure ondersteuning.
+Fout bij onvoldoende machtigingen voor account automatischmanage | Deze fout kan optreden als u onlangs een abonnement met een nieuw Automanage-account hebt verplaatst naar een nieuwe tenant. Stappen voor het oplossen van deze fout bevinden zich [hier.](./repair-automanage-account.md)
+Werkruimteregio komt niet overeen met vereisten voor regiotoewijzing | Automanage kan geen onboarding van uw computer maken omdat de Log Analytics-werkruimte waar de machine momenteel aan is gekoppeld, niet is gekoppeld aan een ondersteunde Automation-regio. Zorg ervoor dat uw bestaande Log Analytics-werkruimte en Automation-account zich in een [ondersteunde regiotoewijzing bevinden.](../automation/how-to/region-mappings.md)
+'Toegang geweigerd vanwege de toewijzing voor weigeren met de naam 'Systeemte weigeren toewijzing gemaakt door beheerde toepassing'' | Er [is een denyAssignment](https://docs.microsoft.com/azure/role-based-access-control/deny-assignments) gemaakt voor uw resource, waardoor Automanage geen toegang heeft tot uw resource. Deze denyAssignment kan zijn gemaakt door een [blauwdruk](https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking) of een [beheerde toepassing](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/overview).
+"Os Information: Name='(null)', ver='(null)', agent status='Not Ready'." | Zorg ervoor dat u een minimaal ondersteunde [agentversie](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/support-extensions-agent-version)gebruikt, dat de agent wordt uitgevoerd[(Linux](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/linux-azure-guest-agent) en [Windows)](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/windows-azure-guest-agent)en dat de agent up-to-date is[(Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) en [Windows).](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows)
+"Kan het besturingssysteem voor de naam van het VM-besturingssysteem niet bepalen:, ver . Controleer of de VM-agent wordt uitgevoerd. De huidige status is Gereed. | Zorg ervoor dat u een minimaal ondersteunde [agentversie](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/support-extensions-agent-version)gebruikt, dat de agent wordt uitgevoerd[(Linux](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/linux-azure-guest-agent) en [Windows)](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/windows-azure-guest-agent)en dat de agent up-to-date is[(Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) en [Windows).](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows)
+'VM heeft een fout gerapporteerd bij het verwerken van extensie 'IaaSAntimalware' | Zorg ervoor dat er geen andere antimalware-/antivirusaanbieding al is geïnstalleerd op uw VM. Als dat mislukt, neem dan contact op met de ondersteuning.
+ASC-werkruimte: Automanage biedt momenteel geen ondersteuning voor de Log Analytics-service op _locatie_. | Controleer of uw VM zich in een [ondersteunde regio bevindt.](./automanage-virtual-machines.md#supported-regions)
+De sjabloonimplementatie is mislukt vanwege een schending van het beleid. Raadpleeg de details voor meer informatie. | Er is een beleid waardoor automanage de onboarding van uw VM verhindert. Controleer de beleidsregels die worden toegepast op uw abonnement of resourcegroep met de VM die u wilt onboarden naar Automanage.
+'De toewijzing is mislukt; er is geen aanvullende informatie beschikbaar' | Open een case met Microsoft Azure ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over Azure automanage](./automanage-virtual-machines.md)
+* [Meer informatie over Azure Automanage](./automanage-virtual-machines.md)
 
 > [!div class="nextstepaction"]
-> [Schakel automanage in voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)
+> [Automanage inschakelen voor virtuele machines in de Azure Portal](quick-create-virtual-machines-portal.md)

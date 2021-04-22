@@ -6,14 +6,14 @@ ms.subservice: reservations
 author: bandersmsft
 ms.reviewer: yashesvi
 ms.topic: how-to
-ms.date: 03/29/2021
+ms.date: 04/21/2021
 ms.author: banders
-ms.openlocfilehash: 1523ca77b06281b84ed57fbc0e2e49ffede85fb4
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: e8a5e6d40b745efb7fcd50919cd27664b3406b7d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105934339"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862845"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Reserveringen voor Azure-resources beheren
 
@@ -35,7 +35,7 @@ Als u een reserveringsorder wilt zien, gaat u naar **Reserveringen** en selectee
 
 ![Voorbeeld van details van een reserveringsorder, met reserveringsorder-id ](./media/manage-reserved-vm-instance/reservation-order-details.png)
 
-Voor een reservering worden de machtigingen van de bijbehorende reserveringsorder overgenomen. Als u een reserve ring wilt omruilen of terugbetalen, moet de gebruiker worden toegevoegd aan de reserverings order.
+Voor een reservering worden de machtigingen van de bijbehorende reserveringsorder overgenomen. Als u een reservering wilt inruilen of een restitutie wilt aanvragen, moet de gebruiker worden toegevoegd aan de reserveringsorder.
 
 ## <a name="change-the-reservation-scope"></a>Het reserveringsbereik wijzigen
 
@@ -57,8 +57,8 @@ Het bereik is alleen van toepassing op afzonderlijke abonnementen met tarieven v
 
 De volgende gebruikers kunnen standaard reserveringen weergeven en beheren:
 
-- De persoon die de reserve ring heeft gekocht en de account eigenaar voor het facturerings abonnement krijgen Azure RBAC-toegang tot de reserverings order.
--  Enterprise Overeenkomst-en micro soft-klanten overeenkomst facturerings inzenders kunnen alle reserve ringen beheren van Cost Management + facturering > reserverings transacties > Selecteer de blauwe banner.
+- De persoon die de reservering heeft gekocht en de accounteigenaar voor het factureringsabonnement krijgen Azure RBAC-toegang tot de reserveringsorder.
+-  Enterprise Agreement en Microsoft-klantovereenkomst kunnen alle reserveringen beheren vanuit Cost Management + Billing > reserveringstransacties > de blauwe banner te selecteren.
 
 U hebt twee opties om toe te staan dat andere personen reserveringen beheren:
 
@@ -177,23 +177,9 @@ Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie over Azure-reserveringen:
-
-- [Wat zijn reserveringen voor Azure?](save-compute-costs-reservations.md)
-
-Een serviceabonnement kopen:
-- [Vooruitbetalen voor Virtual Machines met Azure Reserved VM Instances](../../virtual-machines/prepay-reserved-vm-instances.md)
-- [Vooruitbetalen voor compute-resources van SQL Database met gereserveerde capaciteit voor Azure SQL Database](../../azure-sql/database/reserved-capacity-overview.md)
-- [Vooruitbetalen voor Azure Cosmos DB-resources met gereserveerde capaciteit van Azure Cosmos DB](../../cosmos-db/cosmos-db-reserved-capacity.md)
-
-Een softwareabonnement kopen:
-- [Vooruitbetalen voor Red Hat-software-abonnementen vanuit Azure Reservations](../../virtual-machines/linux/prepay-suse-software-charges.md)
-- [Vooruitbetalen voor SUSE-software-abonnementen vanuit Azure Reservations](../../virtual-machines/linux/prepay-suse-software-charges.md)
-
-Inzicht in kortingen en gebruik:
-- [Inzicht in de manier waarop de korting voor VM-reserveringen wordt toegepast](../manage/understand-vm-reservation-charges.md)
-- [Inzicht in de manier waarop de korting voor het Red Hat Enterprise Linux-softwareabonnement wordt toegepast](understand-rhel-reservation-charges.md)
-- [Inzicht in de manier waarop de korting voor het SUSE Linux Enterprise-softwareabonnement wordt toegepast](understand-suse-reservation-charges.md)
-- [Inzicht in de manier waarop andere reserveringskortingen worden toegepast](understand-reservation-charges.md)
-- [Inzicht in het gebruik van reserveringen voor uw abonnement met betalen per gebruik](understand-reserved-instance-usage.md)
-- [Inzicht in het gebruik van reserveringen voor Enterprise-inschrijvingen](understand-reserved-instance-usage-ea.md)
-- [Kosten van Windows-software zijn niet inbegrepen bij reserveringen](reserved-instance-windows-software-costs.md)
+ - [Reserveringsgebruik weergeven](reservation-utilization.md)
+ - [Omruilen en restitutie](exchange-and-refund-azure-reservations.md)
+ - [Reserveringen verlengen](reservation-renew.md)
+ - [Overdrachten tussen tenants](troubleshoot-reservation-transfers-between-tenants.md)
+ - [Een koper van een reservering zoeken in Azure-logboeken](find-reservation-purchaser-from-logs.md)
+ - [Een reservering verlengen](reservation-renew.md)

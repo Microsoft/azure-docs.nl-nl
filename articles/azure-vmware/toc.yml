@@ -144,7 +144,7 @@
       items:
         - name: Algemeen
           href: /azure/azure-vmware/faq#general
-        - name: Communicatie van de klant
+        - name: Klantcommunicatie
           href: /azure/azure-vmware/faq#customer-communication
         - name: Configuratie en installatie
           href: /azure/azure-vmware/faq#configuration-and-setup
@@ -172,14 +172,14 @@
           href: 'https://youtu.be/BoQYvqzb6Y8'
         - name: Migratie- en capaciteitsplanning
           href: 'https://youtu.be/NoNG-hkksrA'
-        - name: vCenter-& NSX-T-wachtwoorden roteren met behulp van Azure Logic App
+        - name: VCenter-& NSX-T-wachtwoorden roteren met behulp van Azure Logic App
           href: 'https://youtu.be/cK1qY3knj88'
 - name: Naslaginformatie
   items:
     - name: REST-API
       href: /rest/api/avs
     - name: Azure CLI
-      href: /cli/azure/ext/vmware/vmware
+      href: /cli/azure/vmware
     - name: Azure PowerShell
       href: /powershell/module/az.vmware/
     - name: Terraform Azure-provider

@@ -1,5 +1,5 @@
 ---
-title: Apparaat-telemetrie verzenden naar Azure IoT Hub quickstart (Python)
+title: 'Snelstart: Apparaat-telemetrie Azure IoT Hub verzenden (Python)'
 description: In deze quickstart gebruikt u de Azure IoT Hub Device SDK voor Python om telemetrie van een apparaat naar een IoT-hub te verzenden.
 author: timlt
 ms.author: timlt
@@ -7,25 +7,25 @@ ms.service: iot-develop
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 03/24/2021
-ms.openlocfilehash: ea0b161a9038666e1e7ddd5a6c6af2078afff8aa
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: be44ecf6dd154a21fd024ee37d92f61504350664
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107766516"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876422"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-azure-iot-hub-python"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een Azure IoT-hub (Python)
 
 **Van toepassing op**: [Ontwikkeling van apparaattoepassing](about-iot-develop.md#device-application-development)
 
-In deze quickstart leert u een eenvoudige werkstroom voor het ontwikkelen van IoT-apparaattoepassing. U gebruikt de Azure CLI om een Azure IoT-hub en een apparaat te maken. Vervolgens gebruikt u de Azure IoT Python SDK om een gesimuleerd clientapparaat te bouwen en telemetrie te verzenden naar de hub. 
+In deze quickstart leert u een eenvoudige werkstroom voor het ontwikkelen van IoT-apparaten. U gebruikt de Azure CLI om een Azure IoT-hub en een apparaat te maken. Vervolgens gebruikt u de Azure IoT Python SDK om een gesimuleerd clientapparaat te bouwen en telemetrie te verzenden naar de hub. 
 
 ## <a name="prerequisites"></a>Vereisten
 - Als u geen Azure-abonnement hebt, [kunt u er gratis een maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 - Azure CLI. U kunt alle opdrachten in deze quickstart uitvoeren met behulp van de Azure Cloud Shell, een interactieve CLI-shell die in uw browser wordt uitgevoerd. Als u de Cloud Shell gebruikt, hoeft u niets te installeren. Als u ervoor kiest om de CLI lokaal te gebruiken, hebt u voor deze snelstart versie 2.0.76 of hoger van Azure CLI nodig. Voer az --version uit om de versie te zoeken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u CLI wilt installeren of upgraden.
 - [Python 3.7+](https://www.python.org/downloads/). Zie [Functies van Azure IoT-apparaten](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device#azure-iot-device-features) voor andere versies van Python die worden ondersteund.
     
-    Voer uit om ervoor te zorgen dat uw Python-versie up-to-date `python --version` is. Als u zowel Python 2 als Python 3 hebt geïnstalleerd en een Python 3-omgeving gebruikt, installeert u alle bibliotheken met behulp van `pip3` . Met deze opdracht zorgt u ervoor dat de bibliotheken zijn geïnstalleerd in uw Python 3-runtime.
+    Voer uit om ervoor te zorgen dat uw Python-versie is `python --version` bijgewerkt. Als u zowel Python 2 als Python 3 hebt geïnstalleerd en een Python 3-omgeving gebruikt, installeert u alle bibliotheken met behulp van `pip3` . Met deze opdracht zorgt u ervoor dat de bibliotheken worden geïnstalleerd in uw Python 3-runtime.
     > [!IMPORTANT]
     > Selecteer in het Python-installatieprogramma de optie Python **toevoegen aan PAD**. Als Python 3.7 of hoger al is geïnstalleerd, controleert u of u de Python-installatiemap hebt toegevoegd aan de `PATH` omgevingsvariabele.
 
@@ -51,8 +51,8 @@ In deze sectie gebruikt u de Python SDK om berichten van uw gesimuleerde apparaa
     ```console
     pip install azure-iot-device
     ```
-1. Stel beide van de volgende omgevingsvariabelen in, zodat het gesimuleerde apparaat verbinding kan maken met Azure IoT.
-    * Stel een omgevingsvariabele in met de naam `IOTHUB_DEVICE_CONNECTION_STRING` . Gebruik voor de variabele waarde de apparaatwaarde connection string u in de vorige sectie hebt opgeslagen.
+1. Stel beide van de volgende omgevingsvariabelen in, zodat uw gesimuleerde apparaat verbinding kan maken met Azure IoT.
+    * Stel een omgevingsvariabele in met de naam `IOTHUB_DEVICE_CONNECTION_STRING` . Gebruik voor de variabele waarde de apparaat-connection string die u in de vorige sectie hebt opgeslagen.
     * Stel een omgevingsvariabele in met de naam `IOTHUB_DEVICE_SECURITY_TYPE` . Gebruik voor de variabele de letterlijke tekenreekswaarde `connectionString` .
 
     **Windows (cmd)**
@@ -65,7 +65,7 @@ In deze sectie gebruikt u de Python SDK om berichten van uw gesimuleerde apparaa
     ```
 
     > [!NOTE]
-    > Voor Windows CMD zijn er geen aanhalingstekens rond de tekenreekswaarden voor elke variabele.
+    > Voor Windows CMD staan er geen aanhalingstekens rond de tekenreekswaarden voor elke variabele.
 
     **PowerShell**
 
@@ -85,22 +85,22 @@ In deze sectie gebruikt u de Python SDK om berichten van uw gesimuleerde apparaa
     export IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
     ```
 
-1. Voer in uw open CLI-shell de [opdracht az iot hub monitor-events](/cli/azure/ext/azure-iot/iot/hub#ext-azure-iot-az-iot-hub-monitor-events) uit om te beginnen met het controleren op gebeurtenissen op uw gesimuleerde IoT-apparaat.  Gebeurtenisberichten worden in de terminal afgedrukt wanneer ze binnenkomen.
+1. Voer in uw open CLI-shell de [opdracht az iot hub monitor-events](/cli/azure/iot/hub#az_iot_hub_monitor_events) uit om te beginnen met het controleren op gebeurtenissen op uw gesimuleerde IoT-apparaat.  Gebeurtenisberichten worden in de terminal afgedrukt wanneer ze binnenkomen.
 
     ```azurecli
     az iot hub monitor-events --output table --hub-name {YourIoTHubName}
     ```
 
-1. Voer in uw Python-terminal de code uit voor het geïnstalleerde *voorbeeldbestand simple_thermostat.py.* Deze code heeft toegang tot het gesimuleerde IoT-apparaat en verzendt een bericht naar de IoT-hub.
+1. Voer in de Python-terminal de code uit voor het geïnstalleerde *voorbeeldbestand simple_thermostat.py.* Deze code heeft toegang tot het gesimuleerde IoT-apparaat en verzendt een bericht naar de IoT-hub.
 
     Het Python-voorbeeld uitvoeren vanuit de terminal:
     ```console
     python ./simple_thermostat.py
     ```
     > [!NOTE]
-    > In dit codevoorbeeld wordt gebruikgemaakt van Azure IoT Plug en Play, waarmee u slimme apparaten in uw oplossingen kunt integreren zonder handmatige configuratie.  De meeste voorbeelden in deze documentatie maken standaard gebruik van IoT Plug en Play. Zie Wat [is IoT](../iot-pnp/overview-iot-plug-and-play.md) PnP? voor meer informatie over de voordelen van IoT PnP en cases voor het al dan niet gebruiken Plug en Play ervan.
+    > In dit codevoorbeeld wordt gebruikgemaakt van Azure IoT Plug en Play, waarmee u slimme apparaten in uw oplossingen kunt integreren zonder handmatige configuratie.  De meeste voorbeelden in deze documentatie gebruiken standaard IoT-Plug en Play. Zie Wat [is IoT](../iot-pnp/overview-iot-plug-and-play.md) PnP? voor meer informatie over de voordelen van Io Plug en Play T PnP en cases voor het al dan niet gebruiken ervan.
 
- Wanneer de Python-code een bericht van uw apparaat naar de IoT-hub verzendt, wordt het bericht weergegeven in de CLI-shell die gebeurtenissen bewakingt:
+ Wanneer met de Python-code een bericht van uw apparaat naar de IoT-hub wordt gestuurd, wordt het bericht weergegeven in de CLI-shell waarin gebeurtenissen worden gecontroleerd:
 
 ```output
 Starting event monitor, use ctrl-c to stop...
@@ -134,9 +134,9 @@ Een resourcegroep verwijderen op naam:
     ```
 
 ## <a name="next-steps"></a>Volgende stappen
-In deze quickstart hebt u een eenvoudige Azure IoT-toepassingswerkstroom geleerd voor het veilig verbinden van een apparaat met de cloud en het verzenden van telemetrie van apparaat naar cloud. U hebt de Azure CLI gebruikt om een IoT-hub en een apparaat te maken. Vervolgens hebt u de Azure IoT Python SDK gebruikt om een gesimuleerd apparaat te bouwen en telemetrie te verzenden naar de hub. 
+In deze quickstart hebt u een eenvoudige Azure IoT-toepassingswerkstroom geleerd voor het veilig verbinden van een apparaat met de cloud en het verzenden van apparaat-naar-cloud-telemetrie. U hebt de Azure CLI gebruikt om een IoT-hub en een apparaat te maken. Vervolgens hebt u de Azure IoT Python SDK gebruikt om een gesimuleerd apparaat te bouwen en telemetrie naar de hub te verzenden. 
 
-Als volgende stap verkent u de Azure IoT Python SDK via toepassingsvoorbeelden.
+Als volgende stap kunt u de Azure IoT Python SDK verkennen via toepassingsvoorbeelden.
 
 - [Asynchrone voorbeelden:](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-hub-scenarios)deze map bevat asynchrone Python-voorbeelden voor meer IoT Hub scenario's.
 - [Synchrone voorbeelden:](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/sync-samples)deze map bevat Python-voorbeelden voor gebruik met Python 2.7 of synchrone compatibiliteitsscenario's voor Python 3.6+

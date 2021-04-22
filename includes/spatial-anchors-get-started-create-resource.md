@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 11/20/2020
 ms.author: parkerra
-ms.openlocfilehash: 596b73f8fb205b6a5681fecf3d00fd2a67c1f59f
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
-ms.translationtype: HT
+ms.openlocfilehash: 2c85e26d5a9115b00621c4099e3ed36afb224e3f
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97628675"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107880543"
 ---
 ## <a name="create-a-spatial-anchors-resource"></a>Een Spatial Anchors-resource maken
 
@@ -76,7 +76,7 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
 
    [!INCLUDE [resource group intro text](resource-group.md)]
 
-   U kunt uw huidige accounts voor ruimtelijke ankers voor een resourcegroep weergeven met behulp van de opdracht [az spatial-anchors-account list](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_list):
+   U kunt uw huidige accounts voor ruimtelijke ankers voor een resourcegroep weergeven met behulp van de opdracht [az spatial-anchors-account list](/cli/azure/spatial-anchors-account#az_spatial_anchors_account_list):
 
    ```azurecli
    az spatial-anchors-account list --resource-group myResourceGroup
@@ -88,13 +88,13 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
    az spatial-anchors-account list
    ```
 
-1. Voer de opdracht [az spatial-anchors-account create](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_create) uit om een account voor ruimtelijke ankers te maken:
+1. Voer de opdracht [az spatial-anchors-account create](/cli/azure/spatial-anchors-account#az_spatial_anchors_account_create) uit om een account voor ruimtelijke ankers te maken:
 
    ```azurecli
    az spatial-anchors-account create --resource-group myResourceGroup --name MySpatialAnchorsQuickStart --location eastus2
    ```
 
-1. Geef de resource-eigenschappen weer met behulp van de opdracht [az spatial-anchors-account show](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_show):
+1. Geef de resource-eigenschappen weer met behulp van de opdracht [az spatial-anchors-account show](/cli/azure/spatial-anchors-account#az_spatial_anchors_account_show):
 
    ```azurecli
    az spatial-anchors-account show --resource-group myResourceGroup --name MySpatialAnchorsQuickStart
@@ -102,7 +102,7 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
 
    Kopieer de waarde voor **Account-id** van de resource en de waarde voor **Accountdomein** van de resource naar een teksteditor voor later gebruik.
 
-1. Voer de opdracht [az spatial-anchors-account key show](/cli/azure/ext/mixed-reality/spatial-anchors-account/key#ext_mixed_reality_az_spatial_anchors_account_key_show) uit om uw primaire en secundaire sleutels op te halen:
+1. Voer de opdracht [az spatial-anchors-account key show](/cli/azure/spatial-anchors-account/key#az_spatial_anchors_account_key_show) uit om uw primaire en secundaire sleutels op te halen:
 
    ```azurecli
    az spatial-anchors-account key show --resource-group myResourceGroup --name MySpatialAnchorsQuickStart
@@ -110,14 +110,14 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
 
    Kopieer de sleutelwaarden naar een teksteditor voor later gebruik.
 
-   Als u sleutels opnieuw wilt genereren, gebruikt u de opdracht [az spatial-anchors-account key renew](/cli/azure/ext/mixed-reality/spatial-anchors-account/key#ext_mixed_reality_az_spatial_anchors_account_key_renew):
+   Als u sleutels opnieuw wilt genereren, gebruikt u de opdracht [az spatial-anchors-account key renew](/cli/azure/spatial-anchors-account/key#az_spatial_anchors_account_key_renew):
 
    ```azurecli
    az spatial-anchors-account key renew --resource-group myResourceGroup --name example --key primary
    az spatial-anchors-account key renew --resource-group myResourceGroup --name example --key secondary
    ```
 
-U kunt een account verwijderen met de opdracht [az spatial-anchors-account delete](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_delete):
+U kunt een account verwijderen met de opdracht [az spatial-anchors-account delete](/cli/azure/spatial-anchors-account#az_spatial_anchors_account_delete):
 
 ```azurecli
 az spatial-anchors-account delete --resource-group myResourceGroup --name MySpatialAnchorsQuickStart

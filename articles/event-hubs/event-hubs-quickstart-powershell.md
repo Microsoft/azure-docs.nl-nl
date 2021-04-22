@@ -3,12 +3,12 @@ title: 'Quickstart: Een event hub maken met behulp van PowerShell - Azure Event 
 description: In deze snelstart wordt beschreven hoe u een event hub maakt met behulp van Azure PowerShell en vervolgens gebeurtenissen verzendt en ontvangt met behulp van .NET Standard SDK.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 1c81024a9195e463eeaaf384d5cbbd1e0054c485
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: be2761bedd3198d25cb279e6a8ff188db6a51de2
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "88933950"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873753"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-powershell"></a>Quickstart: Een event hub maken met behulp van Azure PowerShell
 
@@ -24,7 +24,7 @@ Het volgende moet zijn geïnstalleerd om deze zelfstudie te voltooien:
 
 - Azure-abonnement. Als u nog geen abonnement hebt, [maakt u een gratis account][] voordat u begint.
 - [Visual Studio 2019](https://www.visualstudio.com/vs).
-- [.NET Standard SDK](https://www.microsoft.com/net/download/windows), versie 2.0 of hoger.
+- [.NET Core SDK](https://dotnet.microsoft.com/download)versie 2.0 of hoger.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

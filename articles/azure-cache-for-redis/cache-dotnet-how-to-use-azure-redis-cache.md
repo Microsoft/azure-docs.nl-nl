@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: devx-track-csharp, mvc
 ms.date: 06/18/2020
-ms.openlocfilehash: 71e973e359c21c9ec6a77de93b8b56dfa16da342
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: effab14316c4a959f22467b9cc50984b6571da55
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107739166"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872151"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-framework"></a>Quickstart: Azure Cache voor Redis in .NET Framework gebruiken
 
@@ -21,13 +21,13 @@ In deze quickstart neemt u Azure Cache voor Redis op in een .NET Framework-app v
 
 ## <a name="skip-to-the-code-on-github"></a>Ga naar de code op GitHub
 
-Als u direct naar de code wilt gaan, bekijkt u [de .NET Framework quickstart](https://github.com/Azure-Samples/azure-cache-redis-samples/tree/main/quickstart/dotnet) op GitHub.
+Als u direct naar de code wilt gaan, bekijkt u de [.NET Framework quickstart](https://github.com/Azure-Samples/azure-cache-redis-samples/tree/main/quickstart/dotnet) op GitHub.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/)
-- [.NET Framework 4 of hoger](https://www.microsoft.com/net/download/dotnet-framework-runtime) is vereist voor de client StackExchange.Redis.
+- [.NET Framework 4 of hoger](https://dotnet.microsoft.com/download/dotnet-framework) is vereist voor de client StackExchange.Redis.
 
 ## <a name="create-a-cache"></a>Een cache maken
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
@@ -128,7 +128,7 @@ De waarde van de appSetting *CacheConnection* wordt gebruikt om vanuit Azure Por
 
 ## <a name="handle-redisconnectionexception-and-socketexception-by-reconnecting"></a>RedisConnectionException en SocketException verwerken door opnieuw verbinding te maken
 
-Een aanbevolen best practice bij het aanroepen van methoden op is om te proberen en uitzonderingen automatisch op te lossen door de verbinding te sluiten `ConnectionMultiplexer` `RedisConnectionException` en opnieuw te `SocketException` maken.
+Een aanbevolen best practice bij het aanroepen van methoden op is om te proberen en uitzonderingen automatisch op te lossen door de verbinding te sluiten `ConnectionMultiplexer` en opnieuw tot stand te `RedisConnectionException` `SocketException` brengen.
 
 Voeg de volgende `using`-instructies toe aan *Program.cs*:
 

@@ -3,12 +3,12 @@ title: Programmatisch Azure-dashboards maken
 description: Gebruik een dashboard in de Azure Portal als een sjabloon om op programmatische wijze Azure-dashboards te maken. Bevat JSON-verwijzing.
 ms.topic: how-to
 ms.date: 12/4/2020
-ms.openlocfilehash: 416eeb772e347b28fcb4a4dcc93c746562ea3571
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 92848ac238ff11a90afc82713639b8abebf076ec
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107767055"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878790"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Programmatisch Azure-dashboards maken
 
@@ -658,27 +658,27 @@ Bereid uw omgeving voor op Azure CLI.
 
 - In deze voorbeelden wordt het volgende dashboard gebruikt: [portal-dashboard-template-testvm.jsop](https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-portal/portal-dashboard-template-testvm.json). Vervang inhoud tussen vierkante haken door uw waarden.
 
-Voer de [opdracht az portal dashboard create](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_create) uit om een dashboard te maken:
+Voer de [opdracht az portal dashboard create](/cli/azure/portal/dashboard#az_portal_dashboard_create) uit om een dashboard te maken:
 
 ```azurecli
 az portal dashboard create --resource-group myResourceGroup --name 'Simple VM Dashboard' \
    --input-path portal-dashboard-template-testvm.json --location centralus
 ```
 
-U kunt een dashboard bijwerken met behulp van de opdracht [az portal dash board update](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_update):
+U kunt een dashboard bijwerken met behulp van de opdracht [az portal dash board update](/cli/azure/portal/dashboard#az_portal_dashboard_update):
 
 ```azurecli
 az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Dashboard' \
 --input-path portal-dashboard-template-testvm.json --location centralus
 ```
 
-Bekijk de details van een dashboard door de opdracht [az portal dashboard show uit te](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_show) voeren:
+Bekijk de details van een dashboard door de opdracht [az portal dashboard show uit te](/cli/azure/portal/dashboard#az_portal_dashboard_show) voeren:
 
 ```azurecli
 az portal dashboard show --resource-group myResourceGroup --name 'Simple VM Dashboard'
 ```
 
-Als u alle dashboards voor het huidige abonnement wilt zien, gebruikt u [az portal dash board List](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_list):
+Als u alle dashboards voor het huidige abonnement wilt zien, gebruikt u [az portal dash board List](/cli/azure/portal/dashboard#az_portal_dashboard_list):
 
 ```azurecli
 az portal dashboard list
@@ -694,4 +694,4 @@ az portal dashboard list --resource-group myResourceGroup
 
 Zie Manage Azure Portal settings and preferences (Instellingen en voorkeuren beheren) [voor meer informatie over desktops.](set-preferences.md)
 
-Zie [az portal dash board](/cli/azure/ext/portal/portal/dashboard) voor meer informatie over Azure CLI-ondersteuning voor dashboards.
+Zie [az portal dash board](/cli/azure/portal/dashboard) voor meer informatie over Azure CLI-ondersteuning voor dashboards.

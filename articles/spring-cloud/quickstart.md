@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 6ae56e4e1586a875d4d3d75d41580f375df0eebf
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: b0d82213dd7015c331d36480426ec7edfa72a202
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105962846"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107886799"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren
 
@@ -345,11 +345,11 @@ Dit zijn de vereisten voor het voltooien van deze snelstart:
 
 ## <a name="generate-a-spring-cloud-project"></a>Een Spring Cloud-project genereren
 
-Begin met [Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.9.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client) om een voorbeeldproject te genereren met aanbevolen afhankelijkheden voor Azure Spring Cloud. In de volgende afbeelding ziet u de Initializr-configuratie voor dit voorbeeldproject.
+Begin met [Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.10.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client) om een voorbeeldproject te genereren met aanbevolen afhankelijkheden voor Azure Spring Cloud. In de volgende afbeelding ziet u de Initializr-configuratie voor dit voorbeeldproject.
 ```url
-https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.10.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=hellospring&name=hellospring&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.hellospring&dependencies=web,cloud-eureka,actuator,cloud-starter-sleuth,cloud-starter-zipkin,cloud-config-client
 ```
-Houd er rekening mee dat in dit voor beeld Java versie 8 wordt gebruikt.  Als u Java versie 11 wilt gebruiken, wijzigt u de optie onder **project meta data**.
+Houd er rekening mee dat in dit voorbeeld Java versie 8 wordt gebruikt.  Als u Java versie 11 wilt gebruiken, wijzigt u de optie onder **Projectmetagegevens**.
 
   ![Initializr-pagina](media/spring-cloud-quickstart-java/initializr-page.png)
 
@@ -414,7 +414,7 @@ Met de volgende procedure wordt de toepassing gebouwd en geïmplementeerd met be
     az extension add --name spring-cloud
     ```
     
-1. Maak de app waaraan een openbaar eind punt is toegewezen. Als u Java 11 gebruikt, neem dan de `--runtime-version=Java_11` Switch op.
+1. Maak de app met een openbaar eindpunt toegewezen. Als u Java 11 gebruikt, moet u de `--runtime-version=Java_11` switch opnemen.
 
     ```azurecli
     az spring-cloud app create -n hellospring -s <service instance name> -g <resource group name> --assign-endpoint true

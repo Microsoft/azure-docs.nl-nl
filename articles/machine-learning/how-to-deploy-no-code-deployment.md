@@ -1,33 +1,33 @@
 ---
-title: Geen code-implementatie (preview-versie)
+title: Geen code-implementatie (preview)
 titleSuffix: Azure Machine Learning
-description: Als u geen code implementeert, kunt u een model implementeren als een webservice zonder dat u hand matig een invoer script hoeft te maken.
+description: Zonder code-implementatie kunt u een model implementeren als een webservice zonder dat u handmatig een invoerscript hoeft te maken.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: gopalv
 author: gvashishtha
 ms.date: 07/31/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: deploy
 ms.reviewer: larryfr
-ms.openlocfilehash: a17126695aa5138d1df7fd17cfaa2f5f75ad1004
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d1d74369dde0118d055261b8c04df36d250221b4
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "93324926"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107889408"
 ---
-# <a name="preview-no-code-model-deployment"></a>Evaluatie Implementatie van geen code model
+# <a name="preview-no-code-model-deployment"></a>(Preview) Implementatie van model zonder code
 
-Implementatie zonder code model is momenteel als preview-versie beschikbaar en ondersteunt de volgende machine learning frameworks:
+Implementatie van model zonder code is momenteel in preview en ondersteunt de volgende machine learning frameworks:
 
-## <a name="tensorflow-savedmodel-format"></a>Tensor flow SavedModel-indeling
-Tensor flow-modellen moeten worden geregistreerd in **SavedModel-indeling** om te kunnen werken met implementatie zonder code modellen.
+## <a name="tensorflow-savedmodel-format"></a>TensorFlow SavedModel-indeling
+TensorFlow-modellen moeten worden geregistreerd in **savedmodel-indeling** om te kunnen werken met modelimplementatie zonder code.
 
-Zie [deze koppeling](https://www.tensorflow.org/guide/saved_model) voor meer informatie over het maken van een SavedModel.
+Zie [deze koppeling](https://www.tensorflow.org/guide/saved_model) voor informatie over het maken van een SavedModel.
 
-We ondersteunen een tensor flow-versie die wordt vermeld onder ' Tags ' op het [tensor flow voor DockerHub](https://registry.hub.docker.com/r/tensorflow/serving/tags).
+We ondersteunen een TensorFlow-versie die wordt vermeld onder Tags op [TensorFlow Serving DockerHub](https://registry.hub.docker.com/r/tensorflow/serving/tags).
 
 ```python
 from azureml.core import Model
@@ -45,9 +45,9 @@ service = Model.deploy(ws, service_name, [model])
 
 ## <a name="onnx-models"></a>ONNX-modellen
 
-Registratie en implementatie van het ONNX-model worden ondersteund voor elk ONNX-Afleidings diagram. De stappen voor preprocess en postprocess worden momenteel niet ondersteund.
+ONNX-modelregistratie en -implementatie wordt ondersteund voor elke ONNX-deferentiegrafiek. Voorverwerkings- en naverwerkingsstappen worden momenteel niet ondersteund.
 
-Hier volgt een voor beeld van hoe u een MNIST ONNX-model registreert en implementeert:
+Hier is een voorbeeld van hoe u een MNIST ONNX-model registreert en implementeert:
 
 ```python
 from azureml.core import Model
@@ -63,19 +63,19 @@ service_name = 'onnx-mnist-service'
 service = Model.deploy(ws, service_name, [model])
 ```
 
-Zie [een Azure machine learning model gebruiken dat is geïmplementeerd als een webservice](./how-to-consume-web-service.md)om een model te scoren. Veel ONNX-projecten maken gebruik van protobuf-bestanden om trainings-en validatie gegevens op te slaan, waardoor het moeilijk is om te weten wat de door de service verwachte gegevens indeling is. Als model ontwikkelaar kunt u het beste documenten voor uw ontwikkel aars documenteren:
+Zie Consume an [Azure Machine Learning model deployed as a web service (Een](./how-to-consume-web-service.md)model gebruiken dat is geïmplementeerd als een webservice) om een model te scoren. Veel ONNX-projecten gebruiken protobuf-bestanden om trainings- en validatiegegevens compact op te slaan, waardoor het lastig kan zijn om te weten wat de gegevensindeling van de service verwacht. Als modelontwikkelaar moet u het volgende documenteren voor uw ontwikkelaars:
 
-* Invoer indeling (JSON of binair)
-* De vorm van invoer gegevens en het type (bijvoorbeeld een matrix met zwevende vormen [100100, 3])
-* Domein informatie (bijvoorbeeld voor een afbeelding, de kleur ruimte, de volg orde van onderdelen en of de waarden genormaliseerd zijn)
+* Invoerindeling (JSON of binair)
+* Vorm en type invoergegevens (bijvoorbeeld een matrix met floats van vorm [100.100,3])
+* Domeingegevens (bijvoorbeeld voor een afbeelding, de kleurruimte, onderdeelorder en of de waarden zijn genormaliseerd)
 
-Als u Pytorch gebruikt, bevat het [exporteren van modellen van Pytorch naar ONNX](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) de details over conversie en beperkingen. 
+Als u Pytorch gebruikt, vindt u in Modellen exporteren van [PyTorch naar ONNX](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) de details over conversie en beperkingen. 
 
-## <a name="scikit-learn-models"></a>Scikit-modellen leren
+## <a name="scikit-learn-models"></a>Scikit-learn-modellen
 
-Er wordt geen code model implementatie ondersteund voor alle ingebouwde scikit-informatie over model typen.
+Er wordt geen implementatie van codemodellen ondersteund voor alle ingebouwde scikit-learn-modeltypen.
 
-Hier volgt een voor beeld van het registreren en implementeren van een sklearn-model zonder extra code:
+Hier is een voorbeeld van het registreren en implementeren van een sklearn-model zonder extra code:
 
 ```python
 from azureml.core import Model
@@ -95,7 +95,7 @@ service = Model.deploy(ws, service_name, [model])
 ```
 
 > [!NOTE]
-> Modellen die ondersteuning bieden voor predict_proba, gebruiken deze methode standaard. Als u dit wilt overschrijven om te voors pellen, kunt u de bericht tekst als volgt wijzigen:
+> Modellen die ondersteuning bieden predict_proba gebruiken die methode standaard. Als u dit wilt overschrijven om Predict te gebruiken, kunt u de POST-body wijzigen zoals hieronder wordt weergegeven:
 
 ```python
 import json
@@ -115,7 +115,7 @@ print(output)
 ```
 
 > [!NOTE]
-> Deze afhankelijkheden zijn opgenomen in de vooraf gemaakte scikit-informatie over de de:
+> Deze afhankelijkheden zijn opgenomen in de vooraf gebouwde scikit-learn-deference-container:
 
 ```yaml
     - dill
@@ -132,10 +132,10 @@ print(output)
 
 * [Problemen met een mislukte implementatie oplossen](how-to-troubleshoot-deployment.md)
 * [Implementeren naar Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md)
-* [Client toepassingen maken voor het gebruik van webservices](how-to-consume-web-service.md)
+* [Clienttoepassingen maken om webservices te gebruiken](how-to-consume-web-service.md)
 * [Webservice bijwerken](how-to-deploy-update-web-service.md)
-* [Een model implementeren met behulp van een aangepaste docker-installatie kopie](how-to-deploy-custom-docker-image.md)
+* [Een model implementeren met behulp van een aangepaste Docker-afbeelding](how-to-deploy-custom-docker-image.md)
 * [TLS gebruiken om een webservice te beveiligen via Azure Machine Learning](how-to-secure-web-service.md)
-* [Uw Azure Machine Learning modellen bewaken met Application Insights](how-to-enable-app-insights.md)
+* [Uw Azure Machine Learning bewaken met Application Insights](how-to-enable-app-insights.md)
 * [Gegevens verzamelen voor modellen in productie](how-to-enable-data-collection.md)
-* [Gebeurtenis waarschuwingen en triggers maken voor model implementaties](how-to-use-event-grid.md)
+* [Gebeurteniswaarschuwingen en triggers maken voor modelimplementaties](how-to-use-event-grid.md)

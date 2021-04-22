@@ -1,21 +1,21 @@
 ---
 title: Scikit-learn trainen machine learning modellen
 titleSuffix: Azure Machine Learning
-description: Meer informatie over Azure Machine Learning u in staat stelt om een scikit-learn-trainingsklus uit te schalen met behulp van rekenbronnen in de elastische cloud.
+description: Meer informatie over Azure Machine Learning u in staat stelt om een scikit-learn-trainingsklus uit te schalen met behulp van elastische cloudrekenbronnen.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: jordane
 author: jpe316
 ms.date: 09/28/2020
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ef64d94ed3e860895bcc81a1429008205a1a8acb
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.topic: how-to
+ms.custom: devx-track-python
+ms.openlocfilehash: 3337607c8e4dd9dca230456cdf268ec3fbfb2f12
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107817103"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107884404"
 ---
 # <a name="train-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Scikit-learn-modellen op schaal trainen met Azure Machine Learning
 
@@ -27,10 +27,10 @@ Of u nu een machine learning scikit-learn-model vanaf de basis traint of een bes
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voer deze code uit op een van deze omgevingen:
+Voer deze code uit in een van deze omgevingen:
  - Azure Machine Learning rekenproces : er zijn geen downloads of installatie nodig
 
-    - Voltooi de [zelfstudie: Omgeving en werkruimte instellen om](tutorial-1st-experiment-sdk-setup.md)  een toegewezen notebookserver te maken die vooraf is geladen met de SDK en de voorbeeldopslagplaats.
+    - Voltooi de [Zelfstudie: Omgeving en werkruimte instellen om](tutorial-1st-experiment-sdk-setup.md)  een toegewezen notebookserver te maken die vooraf is geladen met de SDK en de voorbeeldopslagplaats.
     - Zoek in de map met voorbeeldentraining op de notebookserver een voltooid en uitgebreid notebook door te navigeren naar deze map: **how-to-use-azureml > ml-frameworks > scikit-learn > train-hyperparameter-tune-deploy-with-sklearn** folder.
 
  - Uw eigen Jupyter Notebook server
@@ -102,7 +102,7 @@ Zie Softwareomgevingen maken en gebruiken in Azure Machine Learning voor meer in
 
 ### <a name="create-a-scriptrunconfig"></a>Een ScriptRunConfig maken
 Maak een ScriptRunConfig-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren.
-Argumenten voor uw trainingsscript worden doorgegeven via de opdrachtregel als deze zijn opgegeven in de `arguments` parameter .
+Eventuele argumenten voor uw trainingsscript worden doorgegeven via de opdrachtregel als deze is opgegeven in de `arguments` parameter .
 
 Met de volgende code wordt een ScriptRunConfig-object geconfigureerd voor het verzenden van uw taak voor uitvoering op uw lokale computer.
 
@@ -137,12 +137,12 @@ run.wait_for_completion(show_output=True)
 ```
 
 > [!WARNING]
-> Azure Machine Learning voert trainingsscripts uit door de volledige bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [.ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neem u deze niet op in de bronmap . Open in plaats daarvan uw gegevens met behulp van een Azure [ML-gegevensset](how-to-train-with-datasets.md).
+> Azure Machine Learning voert trainingsscripts uit door de volledige bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [.ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neem u het niet op in de bronmap . Open in plaats daarvan uw gegevens met behulp van een Azure [ML-gegevensset](how-to-train-with-datasets.md).
 
-### <a name="what-happens-during-run-execution"></a>Wat er gebeurt tijdens de uitvoering
-Wanneer de uitvoering wordt uitgevoerd, worden de volgende fasen uitgevoerd:
+### <a name="what-happens-during-run-execution"></a>Wat gebeurt er tijdens de uitvoering
+Wanneer de uitvoering wordt uitgevoerd, doorloop deze de volgende fasen:
 
-- **Voorbereiden:** er wordt een Docker-afbeelding gemaakt op basis van de omgeving die is gedefinieerd. De afbeelding wordt geüpload naar het containerregister van de werkruimte en in de cache opgeslagen voor latere runs. Logboeken worden ook gestreamd naar de uitvoeringsgeschiedenis en kunnen worden bekeken om de voortgang te controleren. Als in plaats daarvan een gecureerde omgeving wordt opgegeven, wordt de back-of-backing van de gecureerde omgeving in de cache gebruikt.
+- **Voorbereiden:** er wordt een Docker-afbeelding gemaakt op basis van de omgeving die is gedefinieerd. De afbeelding wordt geüpload naar het containerregister van de werkruimte en in de cache opgeslagen voor latere runs. Logboeken worden ook gestreamd naar de uitvoeringsgeschiedenis en kunnen worden bekeken om de voortgang te controleren. Als in plaats daarvan een gecureerde omgeving wordt opgegeven, wordt de back-back-van die gecureerde omgeving in de cache gebruikt.
 
 - **Schalen:** het cluster probeert omhoog te schalen als het Batch AI cluster meer knooppunten nodig heeft om de uitvoering uit te voeren dan momenteel beschikbaar zijn.
 
@@ -152,7 +152,7 @@ Wanneer de uitvoering wordt uitgevoerd, worden de volgende fasen uitgevoerd:
 
 ## <a name="save-and-register-the-model"></a>Het model opslaan en registreren
 
-Zodra u het model hebt getraind, kunt u het opslaan en registreren in uw werkruimte. Met modelregistratie kunt u uw modellen opslaan en versiebeheeren in uw werkruimte om [het modelbeheer en de implementatie te vereenvoudigen.](concept-model-management-and-deployment.md)
+Zodra u het model hebt getraind, kunt u het opslaan en registreren in uw werkruimte. Met modelregistratie kunt u uw modellen opslaan en versiebeheer in uw werkruimte gebruiken om [het modelbeheer en de implementatie te vereenvoudigen.](concept-model-management-and-deployment.md)
 
 Voeg de volgende code toe aan uw trainingsscript, train_iris.py, om het model op te slaan. 
 
@@ -162,7 +162,7 @@ import joblib
 joblib.dump(svm_model_linear, 'model.joblib')
 ```
 
-Registreer het model bij uw werkruimte met de volgende code. Door de parameters , en op te geven, wordt de implementatie van `model_framework` het model zonder code `model_framework_version` `resource_configuration` beschikbaar. Met modelimplementatie zonder code kunt u uw model rechtstreeks implementeren als een webservice vanuit het geregistreerde model. Het object definieert de [`ResourceConfiguration`](/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration) rekenresource voor de webservice.
+Registreer het model bij uw werkruimte met de volgende code. Door de parameters `model_framework` , en op te `model_framework_version` `resource_configuration` geven, wordt de implementatie van het model zonder code beschikbaar. Met modelimplementatie zonder code kunt u uw model rechtstreeks implementeren als een webservice vanuit het geregistreerde model. Het object definieert de [`ResourceConfiguration`](/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration) rekenresource voor de webservice.
 
 ```Python
 from azureml.core import Model
@@ -177,11 +177,11 @@ model = run.register_model(model_name='sklearn-iris',
 
 ## <a name="deployment"></a>Implementatie
 
-Het model dat u zojuist hebt geregistreerd, kan op exact dezelfde manier worden geïmplementeerd als elk ander geregistreerd model in Azure ML. De implementatie-how-to bevat een sectie over het registreren [](how-to-deploy-and-where.md#choose-a-compute-target) van modellen, maar u kunt direct verder gaan met het maken van een rekendoel voor implementatie, omdat u al een geregistreerd model hebt.
+Het model dat u zojuist hebt geregistreerd, kan op exact dezelfde manier worden geïmplementeerd als elk ander geregistreerd model in Azure ML. De implementatie-how-to bevat een sectie over het registreren van modellen, maar u kunt direct naar het maken van een [rekendoel](how-to-deploy-and-where.md#choose-a-compute-target) voor implementatie gaan, omdat u al een geregistreerd model hebt.
 
 ### <a name="preview-no-code-model-deployment"></a>(Preview) Implementatie van model zonder code
 
-In plaats van de traditionele implementatieroute kunt u ook de implementatiefunctie zonder code (preview) voor scikit-learn gebruiken. Implementatie van model zonder code wordt ondersteund voor alle ingebouwde scikit-learn-modeltypen. Door uw model te registreren zoals hierboven wordt weergegeven met de parameters , en , kunt u gewoon de statische functie `model_framework` gebruiken om uw model te `model_framework_version` `resource_configuration` [`deploy()`](/python/api/azureml-core/azureml.core.model%28class%29#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) implementeren.
+In plaats van de traditionele implementatieroute kunt u ook de implementatiefunctie zonder code (preview) voor scikit-learn gebruiken. Implementatie van model zonder code wordt ondersteund voor alle ingebouwde scikit-learn-modeltypen. Door uw model te registreren zoals hierboven wordt weergegeven met de parameters , en , kunt u gewoon de statische functie gebruiken `model_framework` om uw model te `model_framework_version` `resource_configuration` [`deploy()`](/python/api/azureml-core/azureml.core.model%28class%29#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) implementeren.
 
 ```python
 web_service = Model.deploy(ws, "scikit-learn-service", [model])
@@ -201,7 +201,7 @@ De volledige [informatie over implementatie](how-to-deploy-and-where.md) in Azur
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een scikit-learn-model getraind en geregistreerd en geleerd over implementatieopties. Zie deze andere artikelen voor meer informatie over Azure Machine Learning.
+In dit artikel hebt u een scikit-learn-model getraind en geregistreerd en meer geleerd over implementatieopties. Zie deze andere artikelen voor meer informatie over Azure Machine Learning.
 
 * [Metrische gegevens van de run bijhouden tijdens de training](how-to-log-view-metrics.md)
 * [Hyperparameters afstemmen](how-to-tune-hyperparameters.md)

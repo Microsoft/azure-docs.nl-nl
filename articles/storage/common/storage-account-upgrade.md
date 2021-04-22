@@ -1,7 +1,7 @@
 ---
 title: Upgraden naar een v2-opslagaccount voor algemeen gebruik
 titleSuffix: Azure Storage
-description: Upgrade naar algemeen v2-opslagaccounts met behulp van Azure Portal, PowerShell of de Azure CLI. Geef een toegangslaag op voor blobgegevens.
+description: Upgrade naar v2-opslagaccounts voor algemeen gebruik met behulp van Azure Portal, PowerShell of de Azure CLI. Geef een toegangslaag op voor blobgegevens.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,30 +9,30 @@ ms.topic: how-to
 ms.date: 03/30/2021
 ms.author: tamram
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: d6d94efea52d920b8bfe69be2ee07c8b829792d8
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 786eb981acd61d952f95f89a7d90e4f732f3cda4
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107484095"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107887644"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Upgraden naar een v2-opslagaccount voor algemeen gebruik
 
-V2-opslagaccounts voor algemeen gebruik ondersteunen de nieuwste Azure Storage functies en bevatten alle functionaliteit van algemeen v1- en Blob Storage-accounts. Accounts voor algemeen gebruik v2 worden aanbevolen voor de meeste opslagscenario's. Accounts voor algemeen gebruik v2 bieden de laagste capaciteitsprijzen per gigabyte voor Azure Storage en concurrerende transactieprijzen in de branche. Accounts voor algemeen gebruik v2 ondersteunen standaardaccounttoegangslagen van hot- of cool- en blob-lagen tussen hot, cool of archief.
+V2-opslagaccounts voor algemeen gebruik ondersteunen de nieuwste Azure Storage functies en bevatten alle functionaliteit van algemeen v1- en Blob Storage-accounts. V2-accounts voor algemeen gebruik worden aanbevolen voor de meeste opslagscenario's. V2-accounts voor algemeen gebruik bieden de laagste capaciteitsprijzen per gigabyte voor Azure Storage en concurrerende transactieprijzen in de branche. V2-accounts voor algemeen gebruik bieden ondersteuning voor standaardaccounttoegangslagen van hot- of cool- en blob-lagen tussen hot, cool of archive.
 
-Upgraden naar een v2-opslagaccount voor algemeen gebruik vanuit uw accounts voor algemeen gebruik v1 of Blob Storage is eenvoudig. U kunt een upgrade uitvoeren met Azure Portal, PowerShell of Azure CLI. Er is geen uitvaltijd of het risico op gegevensverlies bij een upgrade naar een v2-opslagaccount voor algemeen gebruik. De accountupgrade vindt plaats via een eenvoudige Azure Resource Manager die het accounttype wijzigt.
+Upgraden naar een v2-opslagaccount voor algemeen gebruik vanuit uw accounts voor algemeen gebruik v1 of Blob Storage is eenvoudig. U kunt een upgrade uitvoeren met Azure Portal, PowerShell of Azure CLI. Er is geen downtime of het risico op gegevensverlies bij een upgrade naar een v2-opslagaccount voor algemeen gebruik. De accountupgrade vindt plaats via een Azure Resource Manager bewerking die het accounttype wijzigt.
 
 > [!IMPORTANT]
-> Het upgraden van een algemeen v1- of Blob Storage-account naar algemeen v2 is permanent en kan niet ongedaan worden gemaakt.
+> Het upgraden van een algemeen v1- of Blob Storage-account naar algemeen gebruik v2 is permanent en kan niet ongedaan worden gemaakt.
 
 > [!NOTE]
-> Hoewel Microsoft voor de meeste scenario's algemeen v2-accounts aanbeveelt, blijft Microsoft ondersteuning bieden voor accounts voor algemeen gebruik v1 voor nieuwe en bestaande klanten. U kunt v1-opslagaccounts voor algemeen gebruik in nieuwe regio's maken wanneer Azure Storage beschikbaar is in deze regio's. Microsoft is momenteel niet van plan om ondersteuning voor accounts voor algemeen gebruik v1 af te ronden en zal ten minste één jaar vooraf kennisgeving doen voordat een Azure Storage functie wordt afgeschaft. Microsoft blijft beveiligingsupdates leveren voor v1-accounts voor algemeen gebruik, maar er wordt geen nieuwe functieontwikkeling verwacht voor dit accounttype.
+> Hoewel Microsoft voor de meeste scenario's algemeen v2-accounts aanbeveelt, blijft Microsoft ondersteuning bieden voor accounts voor algemeen gebruik v1 voor nieuwe en bestaande klanten. U kunt v1-opslagaccounts voor algemeen gebruik maken in nieuwe regio's wanneer Azure Storage beschikbaar is in deze regio's. Microsoft is momenteel niet van plan ondersteuning voor accounts voor algemeen gebruik v1 af te nemen en zal ten minste één jaar vooraf melden voordat een van de Azure Storage wordt afgeschaft. Microsoft blijft beveiligingsupdates leveren voor v1-accounts voor algemeen gebruik, maar er wordt geen nieuwe functieontwikkeling verwacht voor dit accounttype.
 >
-> Voor nieuwe Azure-regio's die na 1 oktober 2020 online zijn gekomen, zijn de prijzen voor accounts voor algemeen gebruik v1 gewijzigd en komen deze overeen met prijzen voor accounts voor algemeen gebruik v2 in deze regio's. De prijzen voor accounts voor algemeen gebruik v1 in Azure-regio's die vóór 1 oktober 2020 bestonden, zijn niet gewijzigd. Zie de pagina met prijzen voor meer informatie over prijzen voor accounts voor algemeen gebruik v1 in Azure Storage regio. Kies uw regio en selecteer vervolgens naast **Prijsaanbiedingen** de optie **Overige.**
+> Voor nieuwe Azure-regio's die na 1 oktober 2020 online zijn gekomen, zijn de prijzen voor accounts voor algemeen gebruik v1 gewijzigd en komen deze overeen met de prijzen voor accounts voor algemeen gebruik v2 in deze regio's. De prijzen voor v1-accounts voor algemeen gebruik in Azure-regio's die vóór 1 oktober 2020 bestonden, zijn niet gewijzigd. Zie de pagina met prijzen voor algemene v1-accounts in een specifieke regio voor Azure Storage prijsinformatie. Kies uw regio en selecteer vervolgens naast **Prijsaanbiedingen** de optie **Overige.**
 
 ## <a name="upgrade-an-account"></a>Een account upgraden
 
-Als u een v1- of Blob Storage-account voor algemeen gebruik wilt upgraden naar een v2-account voor algemeen gebruik, gebruikt u Azure Portal, PowerShell of Azure CLI.
+Als u een algemeen v1- of Blob Storage-account wilt upgraden naar een v2-account voor algemeen gebruik, gebruikt u Azure Portal, PowerShell of Azure CLI.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -41,7 +41,7 @@ Als u een v1- of Blob Storage-account voor algemeen gebruik wilt upgraden naar e
 3. Klik in **de sectie** Instellingen op **Configuratie.**
 4. Klik onder **Soort account** op **Upgrade**.
 5. Typ bij **Upgrade bevestigen** de naam van uw account.
-6. Klik **onder** aan de blade op Upgraden.
+6. Klik **onderaan** de blade op Upgraden.
 
     ![Soort account upgraden](../blobs/media/storage-blob-account-upgrade/upgrade-to-gpv2-account.png)
 
@@ -71,16 +71,16 @@ az storage account update -g <resource-group> -n <storage-account> --set kind=St
 
 ## <a name="specify-an-access-tier-for-blob-data"></a>Een toegangslaag voor blobgegevens opgeven
 
-V2-accounts voor algemeen gebruik ondersteunen alle Azure Storage-services en -gegevensobjecten, maar toegangslagen zijn alleen beschikbaar voor blok-blobs in Blob Storage. Wanneer u een upgrade naar een v2-opslagaccount voor algemeen gebruik hebt uitgevoerd, kunt u een standaardaccounttoegangslaag van 'hot' of 'cool' opgeven, waarmee wordt aangegeven welke standaardlaag uw blobgegevens worden geüpload alsof de parameter voor de afzonderlijke blobtoegangslaag niet is opgegeven.
+Accounts voor algemeen gebruik v2 ondersteunen alle Azure-opslagservices en -gegevensobjecten, maar toegangslagen zijn alleen beschikbaar voor blok-blobs in Blob Storage. Wanneer u een upgrade naar een v2-opslagaccount voor algemeen gebruik hebt uitgevoerd, kunt u een standaardaccounttoegangslaag van hot of cool opgeven. Dit geeft aan dat de standaardlaag uw blobgegevens worden geüpload alsof de parameter voor de afzonderlijke blobtoegangslaag niet is opgegeven.
 
 Met blob-toegangslagen kunt u de meest rendabele opslag kiezen op basis van uw verwachte gebruikspatronen. Blok-blobs kunnen worden opgeslagen in een hot-, cool- of archieflaag. Zie Azure [Blob-opslag: Hot-, Cool-](../blobs/storage-blob-storage-tiers.md)en Archive Storage-lagen voor meer informatie over toegangslagen.
 
-Standaard wordt een nieuw opslagaccount gemaakt in de hot-toegangslaag en kan een algemeen v1-opslagaccount worden geüpgraded naar de hot- of cool-accountlaag. Als er geen accounttoegangslaag is opgegeven bij de upgrade, wordt deze standaard geüpgraded naar hot. Als u wilt verkennen welke toegangslaag u voor uw upgrade wilt gebruiken, moet u rekening houden met uw huidige scenario voor gegevensgebruik. Er zijn twee typische gebruikersscenario's voor migratie naar een v2-account voor algemeen gebruik:
+Standaard wordt een nieuw opslagaccount gemaakt in de hot-toegangslaag en kan een algemeen v1-opslagaccount worden bijgewerkt naar de opslaglaag voor 'hot' of 'cool' account. Als er geen accounttoegangslaag is opgegeven bij de upgrade, wordt deze standaard bijgewerkt naar hot. Als u wilt verkennen welke toegangslaag u voor uw upgrade wilt gebruiken, kunt u uw huidige scenario voor gegevensgebruik overwegen. Er zijn twee typische gebruikersscenario's voor migratie naar een v2-account voor algemeen gebruik:
 
 * U hebt een bestaand v1-opslagaccount voor algemeen gebruik en wilt een upgrade evalueren naar een v2-opslagaccount voor algemeen gebruik, met de juiste opslagtoegangslaag voor blobgegevens.
 * U hebt besloten om een v2-opslagaccount voor algemeen gebruik te gebruiken of u hebt er al een en wilt evalueren of u de toegangslaag voor 'hot' of 'cool' opslag moet gebruiken voor blobgegevens.
 
-In beide gevallen is de eerste prioriteit het schatten van de kosten voor het opslaan, openen en gebruiken van uw gegevens die zijn opgeslagen in een opslagaccount voor algemeen gebruik v2 en deze te vergelijken met uw huidige kosten.
+In beide gevallen is de eerste prioriteit het schatten van de kosten voor het opslaan, openen en gebruiken van uw gegevens die zijn opgeslagen in een v2-opslagaccount voor algemeen gebruik en deze te vergelijken met uw huidige kosten.
 
 ## <a name="pricing-and-billing"></a>Prijzen en facturering
 
@@ -88,7 +88,7 @@ Het upgraden van een v1-opslagaccount naar een v2-account voor algemeen gebruik 
 
 Alle opslagaccounts maken gebruik van een prijsmodel voor het opslaan van blobs op basis van laag van elke blob. Als u een opslagaccount gebruikt, zijn de volgende factureringsvoorwaarden van toepassing:
 
-* **Opslagkosten:** naast de hoeveelheid opgeslagen gegevens, zijn de kosten voor het opslaan van gegevens afhankelijk van de opslagtoegangslaag. De kosten per GB nemen af als de laag minder dynamisch ('cooler') wordt.
+* **Opslagkosten:** naast de hoeveelheid opgeslagen gegevens, variëren de kosten voor het opslaan van gegevens, afhankelijk van de opslagtoegangslaag. De kosten per GB nemen af als de laag minder dynamisch ('cooler') wordt.
 
 * **Kosten van gegevenstoegang**: de kosten voor gegevenstoegang nemen toe als de laag minder dynamisch ('cooler') wordt. Voor gegevens in de cool- en archive storage-toegangslaag worden kosten in rekening gebracht per gigabyte aan gegevenstoegang voor leesgegevens.
 
@@ -98,7 +98,7 @@ Alle opslagaccounts maken gebruik van een prijsmodel voor het opslaan van blobs 
 
 * **Kosten voor uitgaande gegevensoverdracht**: uitgaande gegevensoverdracht (gegevens die buiten een Azure-regio worden overgedragen) worden gefactureerd voor bandbreedtegebruik per GB, net zoals bij opslagaccounts voor algemeen gebruik.
 
-* **De opslagtoegangslaag wijzigen:** als u de toegangslaag voor accountopslag van Cool in Hot verandert, worden kosten in rekening brengen die gelijk zijn aan het lezen van alle bestaande gegevens in het opslagaccount. Als u de toegangslaag van het account echter wilt wijzigen van 'hot' naar 'cool', worden er kosten in rekening brengen die gelijk zijn aan het schrijven van alle gegevens naar de cool-laag (alleen GPv2-accounts).
+* **De opslagtoegangslaag wijzigen:** als u de toegangslaag voor de accountopslag wilt wijzigen van Cool in Hot, worden kosten in rekening brengen die gelijk zijn aan het lezen van alle bestaande gegevens in het opslagaccount. Als u de toegangslaag van het account echter wilt wijzigen van 'hot' naar 'cool', worden er kosten in rekening gesteld die gelijk zijn aan het schrijven van alle gegevens naar de cool-laag (alleen GPv2-accounts).
 
 > [!NOTE]
 > Zie de pagina [Prijzen voor Azure Storage](https://azure.microsoft.com/pricing/details/storage/) voor meer informatie over het prijsmodel voor opslagaccounts. Zie de pagina [Prijsinformatie voor bandbreedte](https://azure.microsoft.com/pricing/details/data-transfers/) voor meer informatie over de kosten voor uitgaande gegevensoverdracht.
@@ -136,7 +136,7 @@ Voor het controleren van gegevenstoegangspatronen voor Blob Storage, moet u de m
 
 Als u een goede schatting wilt maken van uw gegevensverbruik en toegangspatroon, raden we u aan voor de metrische gegevens een retentieperiode te kiezen die een goede afspiegeling is van uw normale gebruik en dat als uitgangspunt te nemen. Een optie is de metrische gegevens zeven dagen te bewaren en de gegevens elke week te verzamelen en aan het einde van de maand te analyseren. Een andere optie is de metrische gegevens van de afgelopen 30 dagen te bewaren en deze gegevens aan het einde van deze periode van 30 dagen te verzamelen en te analyseren.
 
-Zie Metrische opslaganalysegegevens voor meer informatie over het inschakelen, verzamelen en weergeven van metrische [gegevens.](../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+Zie Metrische gegevens van Opslaganalyse voor meer informatie over het inschakelen, verzamelen en weergeven van metrische [gegevens.](../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 
 > [!NOTE]
 > Het opslaan, openen en downloaden van analytische gegevens wordt op dezelfde manier in rekening gebracht als normale gebruikersgegevens.
@@ -174,7 +174,7 @@ Voor het schatten van de kosten voor het openen van gegevens in Blob Storage-acc
 De overdrachtskosten van geo-replicatiegegevens voor Blob Storage-accounts kan ook worden berekend met behulp van de schatting voor de hoeveelheid gegevens die wordt geschreven bij gebruik van een GRS- of RA-GRS-opslagaccount.
 
 > [!NOTE]
-> Voor een gedetailleerder voorbeeld over het berekenen van de kosten voor het gebruik van de toegangslaag voor 'hot' of 'cool storage' kunt u de veelgestelde vragen 'What are Hot and Cool access tiers and how should I determine *which to use?' raadplegen.* op de [pagina met prijzen voor Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
+> Voor een gedetailleerder voorbeeld over het berekenen van de kosten voor het gebruik van de hot- of cool storage-toegangslaag, bekijkt u de veelgestelde vragen 'Wat zijn hot- en cool-toegangslagen en hoe moet ik bepalen welke u wilt *gebruiken?'* op de [pagina met prijzen voor Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
 
 ## <a name="next-steps"></a>Volgende stappen
 

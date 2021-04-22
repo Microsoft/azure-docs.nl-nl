@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: d8f74e438175758b1f09e1809b5eba15c1b26c3c
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.openlocfilehash: a52bcc9a2649592bef7b6f8d09cdde96226b77ea
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107873627"
+ms.locfileid: "107886114"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Kosten voor Azure Machine Learning
 
@@ -53,7 +53,7 @@ Zie prijzen Azure Machine Learning [voor meer informatie.](https://azure.microso
 
 ## <a name="understand-the-full-billing-model-for-azure-machine-learning"></a>Inzicht in het volledige factureringsmodel voor Azure Machine Learning
 
-Azure Machine Learning wordt uitgevoerd op een Azure-infrastructuur die samen met de kosten Azure Machine Learning u de nieuwe resource implementeert. Het is belangrijk om te begrijpen dat extra infrastructuur kosten kan genereren. U moet die kosten beheren wanneer u de geïmplementeerde resources wijzigt. 
+Azure Machine Learning wordt uitgevoerd op een Azure-infrastructuur die samen met de kosten Azure Machine Learning u de nieuwe resource implementeert. Het is belangrijk om te begrijpen dat extra infrastructuur kosten kan genereren. U moet die kosten beheren wanneer u geïmplementeerde resources wijzigt. 
 
 ### <a name="costs-that-typically-accrue-with-azure-machine-learning"></a>Kosten die doorgaans worden gemaakt met Azure Machine Learning
 
@@ -64,7 +64,7 @@ Wanneer u resources maakt voor een Azure Machine Learning werkruimte, worden er 
 * [Key Vault](https://azure.microsoft.com/pricing/details/key-vault?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
 * [Application Insights](https://azure.microsoft.com/en-us/pricing/details/monitor?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
  
-### <a name="costs-might-accrue-after-resource-deletion"></a>De kosten kunnen toenemen na verwijdering van de resource
+### <a name="costs-might-accrue-after-resource-deletion"></a>De kosten kunnen toenemen na het verwijderen van een resource
 
 Wanneer u een werkruimte Azure Machine Learning in de Azure Portal of met Azure CLI verwijdert, blijven de volgende resources bestaan. Ze blijven kosten maken totdat u ze verwijdert.
 
@@ -106,20 +106,20 @@ Met gegevens die voortdurend veranderen, hebt u snelle en gestroomlijnde modeltr
 
 Azure Machine Learning kunnen het beheerde Azure Machine Learning compute-cluster, ook wel AmlCompute genoemd, gebruiken. AmlCompute biedt ondersteuning voor tal van GPU- en CPU-opties. AmlCompute wordt intern namens uw abonnement gehost door Azure Machine Learning. Het biedt dezelfde beveiliging, naleving en governance op enterprise-niveau op Azure IaaS-cloudschaal.
 
-Omdat deze rekenpools zich in de IaaS-infrastructuur van Azure- kunnen, kunt u uw training implementeren, schalen en beheren met dezelfde beveiligings- en nalevingsvereisten als de rest van uw infrastructuur.  Deze implementaties worden uitgevoerd in uw abonnement en voldoen aan uw governanceregels. Meer informatie over [Azure Machine Learning compute.](how-to-create-attach-compute-cluster.md)
+Omdat deze rekenpools zich in de IaaS-infrastructuur van Azure kunnen nesten, kunt u uw training implementeren, schalen en beheren met dezelfde beveiligings- en nalevingsvereisten als de rest van uw infrastructuur.  Deze implementaties worden uitgevoerd in uw abonnement en voldoen aan uw governanceregels. Meer informatie over [Azure Machine Learning compute.](how-to-create-attach-compute-cluster.md)
 
 ### <a name="configure-training-clusters-for-autoscaling"></a>Trainingsclusters configureren voor automatisch schalen
 
 Clusters automatisch schalen op basis van de vereisten van uw workload helpen uw kosten te verlagen, zodat u alleen gebruikt wat u nodig hebt.
 
-AmlCompute-clusters zijn ontworpen om dynamisch te schalen op basis van uw workload. Het cluster kan worden geschaald tot het maximum aantal knooppunten dat u configureert. Wanneer elke run is voltooid, worden knooppunten door het cluster vrijgeven en geschaald naar het geconfigureerde minimumaantal knooppunten.
+AmlCompute-clusters zijn ontworpen om dynamisch te schalen op basis van uw workload. Het cluster kan worden geschaald tot het maximum aantal knooppunten dat u configureert. Wanneer elke run is voltooid, zal het cluster knooppunten vrijgeven en schalen naar het geconfigureerde minimale aantal knooppunten.
 
 [!INCLUDE [min-nodes-note](../../includes/machine-learning-min-nodes.md)]
 
 U kunt ook de hoeveelheid tijd configureren dat het knooppunt inactief is voordat u omlaag schaalt. Niet-actieve tijd vóór omlaag schalen is standaard ingesteld op 120 seconden.
 
 + Als u minder iteratief experimenteert, vermindert u deze tijd om kosten te besparen.
-+ Als u zeer iteratieve dev/test-experimenten wilt uitvoeren, moet u mogelijk de tijd verhogen zodat u niet betaalt voor constant omhoog en omlaag schalen na elke wijziging in uw trainingsscript of -omgeving.
++ Als u een zeer iteratieve dev/test-experimenten hebt uitgevoerd, moet u mogelijk de tijd verhogen zodat u niet betaalt voor constant omhoog en omlaag schalen na elke wijziging in uw trainingsscript of -omgeving.
 
 AmlCompute-clusters kunnen worden geconfigureerd voor uw veranderende workloadvereisten in Azure Portal, met behulp van de [AmlCompute SDK-klasse](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute), [AmlCompute CLI](/cli/azure/ml/computetarget/create#az_ml_computetarget_create_amlcompute), met de [REST API's](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable).
 
@@ -162,6 +162,6 @@ Azure Machine Learning Compute ondersteunt inherent gereserveerde instanties. Al
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer [informatie over het optimaliseren van uw cloudinvestering met Azure Cost Management](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Meer informatie over kostenbeheer met [kostenanalyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Meer informatie over het beheren van kosten met [kostenanalyse](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 - Meer informatie over het voorkomen [van onverwachte kosten.](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
 - Neem de [Cost Management](/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) de begeleide cursus.

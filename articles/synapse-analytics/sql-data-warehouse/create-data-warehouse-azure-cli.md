@@ -9,12 +9,12 @@ ms.subservice: sql-dw
 ms.date: 11/20/2020
 ms.author: jrasnick
 ms.custom: azure-synapse, devx-track-azurecli
-ms.openlocfilehash: 712405ec7ba61e05bb587efc3e6393192d820e97
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.openlocfilehash: 3903aa0be5ffa63bc4292371c59002846ec9363c
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107865473"
+ms.locfileid: "107892090"
 ---
 # <a name="quickstart-create-a-synapse-sql-pool-with-azure-cli"></a>Quickstart: Een Synapse SQL-pool maken met Azure CLI
 

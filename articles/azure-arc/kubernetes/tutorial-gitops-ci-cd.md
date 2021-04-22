@@ -1,20 +1,20 @@
 ---
-title: 'Zelfstudie: CI/CD implementeren met GitOps met behulp Azure Arc Kubernetes-clusters'
-description: Deze zelfstudie bespreekt het instellen van een CI/CD-oplossing met behulp van GitOps met Azure Arc Kubernetes-clusters. Zie het artikel CI/CD Workflow using GitOps - Azure Arc enabled Kubernetes (CI/CD-werkstroom met GitOps - kubernetes met ingeschakelde Kubernetes) voor een conceptuele versie van deze werkstroom.
+title: 'Zelfstudie: CI/CD implementeren met GitOps met behulp Azure Arc Kubernetes-clusters met ingeschakelde clusters'
+description: Deze zelfstudie bespreekt het instellen van een CI/CD-oplossing met behulp van GitOps met Azure Arc Kubernetes-clusters. Zie het artikel CI/CD Workflow using GitOps - Azure Arc enabled Kubernetes (CI/CD-werkstroom met Behulp van GitOps - kubernetes met kubernetes) voor een conceptueel ontwerp van deze werkstroom.
 author: tcare
 ms.author: tcare
 ms.service: azure-arc
 ms.topic: tutorial
 ms.date: 03/03/2021
 ms.custom: template-tutorial, devx-track-azurecli
-ms.openlocfilehash: 9a228ce6f8b18afb77b656765abbad0bb4ae877f
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: e44422d1074bd4ad824ed416cd09584a6564d0f3
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107589139"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107891820"
 ---
-# <a name="tutorial-implement-cicd-with-gitops-using-azure-arc-enabled-kubernetes-clusters"></a>Zelfstudie: CI/CD implementeren met GitOps met behulp Azure Arc Kubernetes-clusters
+# <a name="tutorial-implement-cicd-with-gitops-using-azure-arc-enabled-kubernetes-clusters"></a>Zelfstudie: CI/CD implementeren met GitOps met behulp Azure Arc Kubernetes-clusters met ingeschakelde clusters
 
 
 In deze zelfstudie stelt u een CI/CD-oplossing in met behulp van GitOps met Azure Arc Kubernetes-clusters. Met behulp van de Azure Vote-voorbeeld-app gaat u het volgende doen:
@@ -24,11 +24,11 @@ In deze zelfstudie stelt u een CI/CD-oplossing in met behulp van GitOps met Azur
 > * Verbind uw toepassing en GitOps-repos met Azure-repos.
 > * IMPORTEER CI/CD-pijplijnen.
 > * Verbind uw Azure Container Registry (ACR) met Azure DevOps en Kubernetes.
-> * Maak omgevingsvariabelegroepen.
+> * Omgevingsvariabelegroepen maken.
 > * Implementeer de `dev` omgevingen `stage` en .
 > * Test de toepassingsomgevingen.
 
-Als u geen azure™ hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+Als u geen azure™abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -58,19 +58,19 @@ In deze zelfstudie wordt ervan uitgenomen dat u bekend bent met Azure DevOps, Az
 
 ## <a name="import-application-and-gitops-repos-into-azure-repos"></a>Toepassings- en GitOps-repos importeren in Azure-repos
 
-Importeer [een toepassings-repo](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#application-repo) en [een GitOps-repo](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#gitops-repo) in Azure-repos. Gebruik voor deze zelfstudie de volgende voorbeeld-repatriëringen:
+Importeer [een toepassings-repo](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#application-repo) en [een GitOps-repo](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#gitops-repo) in Azure Repos. Gebruik voor deze zelfstudie de volgende voorbeeld-repos:
 
 * **arc-cicd-demo-src application** repo
    * Url: https://github.com/Azure/arc-cicd-demo-src
    * Bevat het voorbeeld van de Azure Vote-app die u gaat implementeren met behulp van GitOps.
 * **arc-cicd-demo-gitops** GitOps-repo
    * Url: https://github.com/Azure/arc-cicd-demo-gitops
-   * Werkt als basis voor uw clusterbronnen met de Azure Vote-app.
+   * Werkt als basis voor uw clusterbronnen die de Azure Vote-app gebruiken.
 
 Meer informatie over [het importeren van Git-repo's.](/azure/devops/repos/git/import-git-repository)
 
 >[!NOTE]
-> Het importeren en gebruiken van twee afzonderlijke opslagplaatsen voor toepassings- en GitOps-opslagplaatsen kan de beveiliging en eenvoud verbeteren. De machtigingen en zichtbaarheid van de toepassing en de GitOps-opslagplaatsen kunnen afzonderlijk worden afgestemd.
+> Het importeren en gebruiken van twee afzonderlijke opslagplaatsen voor toepassings- en GitOps-opslagplaatsen kan de beveiliging en eenvoud verbeteren. De machtigingen en zichtbaarheid van de toepassing en GitOps-opslagplaatsen kunnen afzonderlijk worden afgestemd.
 > De clusterbeheerder kan bijvoorbeeld de wijzigingen in de toepassingscode niet vinden die relevant zijn voor de gewenste status van het cluster. Een toepassingsontwikkelaar hoeft daarentegen niet de specifieke parameters voor elke omgeving te kennen. Een set testwaarden die dekking bieden voor de parameters kan voldoende zijn.
 
 ## <a name="connect-the-gitops-repo"></a>Verbinding maken met de GitOps-repo
@@ -108,7 +108,7 @@ De CI/CD-werkstroom vult de manifestmap met extra manifesten om de app te implem
    `--git-path=arc-cicd-cluster/manifests`
 
    > [!NOTE]
-   > Als u een HTTPS-connection string en verbindingsproblemen hebt, moet u ervoor zorgen dat u het voorvoegsel gebruikersnaam weglaten in de URL. Moet bijvoorbeeld `https://alice@dev.azure.com/contoso/arc-cicd-demo-gitops` zijn `alice@` verwijderd. De `--https-user` geeft in plaats daarvan de gebruiker op, bijvoorbeeld `--https-user alice` .
+   > Als u een HTTPS-connection string verbindingsproblemen hebt, moet u het voorvoegsel voor de gebruikersnaam weglaten in de URL. Moet bijvoorbeeld `https://alice@dev.azure.com/contoso/arc-cicd-demo-gitops` zijn `alice@` verwijderd. De `--https-user` geeft in plaats daarvan de gebruiker op, bijvoorbeeld `--https-user alice` .
 
 1. Controleer de status van de implementatie in Azure Portal.
    * Als dit lukt, ziet u de `dev` naamruimten en `stage` die in uw cluster zijn gemaakt.
@@ -117,17 +117,17 @@ De CI/CD-werkstroom vult de manifestmap met extra manifesten om de app te implem
 
 Nu u een GitOps-verbinding hebt gesynchroniseerd, moet u de CI/CD-pijplijnen importeren die de manifesten maken.
 
-De toepassings-repo bevat een map met de pijplijnen die `.pipeline` u gaat gebruiken voor PR's, CI en CD. Importeer en wijzig de naam van de drie pijplijnen in de voorbeeld-repo:
+De toepassings-repo bevat een map met de pijplijnen die u gaat gebruiken voor `.pipeline` PR's, CI en CD. Importeer en wijzig de naam van de drie pijplijnen in de voorbeeld-repo:
 
 | Naam van pijplijnbestand | Description |
 | ------------- | ------------- |
-| [`.pipelines/az-vote-pr-pipeline.yaml`](https://github.com/Azure/arc-cicd-demo-src/blob/master/.pipelines/az-vote-pr-pipeline.yaml)  | De toepassings-PR-pijplijn, met de **naam arc-cicd-demo-src PR** |
-| [`.pipelines/az-vote-ci-pipeline.yaml`](https://github.com/Azure/arc-cicd-demo-src/blob/master/.pipelines/az-vote-ci-pipeline.yaml) | De toepassings-CI-pijplijn met **de naam arc-cicd-demo-src CI** |
-| [`.pipelines/az-vote-cd-pipeline.yaml`](https://github.com/Azure/arc-cicd-demo-src/blob/master/.pipelines/az-vote-cd-pipeline.yaml) | De cd-pijplijn van de toepassing met **de naam arc-cicd-demo-src CD** |
+| [`.pipelines/az-vote-pr-pipeline.yaml`](https://github.com/Azure/arc-cicd-demo-src/blob/master/.pipelines/az-vote-pr-pipeline.yaml)  | De toepassings-PR-pijplijn met **de naam arc-cicd-demo-src PR** |
+| [`.pipelines/az-vote-ci-pipeline.yaml`](https://github.com/Azure/arc-cicd-demo-src/blob/master/.pipelines/az-vote-ci-pipeline.yaml) | De CI-toepassingspijplijn met **de naam arc-cicd-demo-src CI** |
+| [`.pipelines/az-vote-cd-pipeline.yaml`](https://github.com/Azure/arc-cicd-demo-src/blob/master/.pipelines/az-vote-cd-pipeline.yaml) | De toepassings-CD-pijplijn met de naam **arc-cicd-demo-src CD** |
 
 
 
-## <a name="connect-your-acr"></a>Verbinding maken met uw ACR
+## <a name="connect-your-acr"></a>Uw ACR verbinden
 Zowel uw pijplijnen als het cluster gebruiken ACR om Docker-afbeeldingen op te slaan en op te halen.
 
 ### <a name="connect-acr-to-azure-devops"></a>ACR verbinden met Azure DevOps
@@ -136,14 +136,14 @@ Tijdens het CI-proces implementeert u uw toepassingscontainers in een register. 
 1. Open in Azure DevOps de **pagina Serviceverbindingen** op de pagina projectinstellingen. Open in TFS de **pagina Services** via het **instellingenpictogram** in de bovenste menubalk.
 2. Kies **+ Nieuwe serviceverbinding** en selecteer het type serviceverbinding dat u nodig hebt.
 3. Vul de parameters voor de serviceverbinding in. Voor deze zelfstudie:
-   * Noem de serviceverbinding **arc-demo-acr**. 
+   * Noem de serviceverbinding **arc-demo-acr.** 
    * Selecteer **myResourceGroup** als de resourcegroep.
-4. Selecteer Toegang **verlenen aan alle pijplijnen.** 
-   * Met deze optie worden YAML-pijplijnbestanden geautoriseerd voor serviceverbindingen. 
+4. Selecteer toegang **verlenen aan alle pijplijnen.** 
+   * Met deze optie worden YAML-pijplijnbestanden voor serviceverbindingen geautoriseerd. 
 5. Kies **OK om** de verbinding te maken.
 
 ### <a name="connect-acr-to-kubernetes"></a>ACR verbinden met Kubernetes
-Schakel uw Kubernetes-cluster in om afbeeldingen op te halen uit uw ACR. Als het privé is, is verificatie vereist.
+Schakel uw Kubernetes-cluster in om afbeeldingen op te halen uit uw ACR. Als dit privé is, is verificatie vereist.
 
 #### <a name="connect-acr-to-existing-aks-clusters"></a>ACR verbinden met bestaande AKS-clusters
 
@@ -166,7 +166,7 @@ kubectl create secret docker-registry <secret-name> \
     --docker-password=<service-principal-password>
 ```
 
-Om te voorkomen dat u voor elke pod een imagePullSecret moet instellen, kunt u overwegen om imagePullSecret toe te voegen aan het Service-account in de `dev` `stage` naamruimten en . Zie de [Kubernetes-zelfstudie](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#add-imagepullsecrets-to-a-service-account) voor meer informatie.
+Om te voorkomen dat u voor elke pod een imagePullSecret moet instellen, kunt u overwegen de imagePullSecret toe te voegen aan het serviceaccount in de `dev` `stage` naamruimten en . Zie de [Kubernetes-zelfstudie](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#add-imagepullsecrets-to-a-service-account) voor meer informatie.
 
 ## <a name="create-environment-variable-groups"></a>Omgevingsvariabelegroepen maken
 
@@ -177,22 +177,22 @@ Om te voorkomen dat u voor elke pod een imagePullSecret moet instellen, kunt u o
 | -------- | ----- |
 | AZ_ACR_NAME | (uw ACR-exemplaar, bijvoorbeeld. azurearctest.azurecr.io) |
 | AZURE_SUBSCRIPTION | (uw Azure-serviceverbinding, die **arc-demo-acr** moet zijn van eerder in de zelfstudie) |
-| AZURE_VOTE_IMAGE_REPO | Het volledige pad naar de Azure Vote-app-repo, bijvoorbeeld azurearctest.azurecr.io/azvote |
+| AZURE_VOTE_IMAGE_REPO | Het volledige pad naar de Azure Vote App-repo, bijvoorbeeld azurearctest.azurecr.io/azvote |
 | ENVIRONMENT_NAME | Dev |
 | MANIFESTS_BRANCH | `master` |
-| MANIFESTS_REPO | De Git connection string voor uw GitOps-repo |
+| MANIFESTS_REPO | De Git-connection string voor uw GitOps-repo |
 | Pat | Een [gemaakt PAT-token](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate#create-a-pat) met bronmachtigingen voor lezen/schrijven. Sla deze op voor later gebruik bij het maken van `stage` de variabele groep. |
 | SRC_FOLDER | `azure-vote` | 
 | TARGET_CLUSTER | `arc-cicd-cluster` |
 | TARGET_NAMESPACE | `dev` |
 
 > [!IMPORTANT]
-> Markeer uw PAT als geheimtype. In uw toepassingen kunt u geheimen uit een [Azure KeyVault koppelen.](/azure/devops/pipelines/library/variable-groups#link-secrets-from-an-azure-key-vault)
+> Markeer uw PAT als een geheimtype. In uw toepassingen kunt u geheimen uit een [Azure KeyVault koppelen.](/azure/devops/pipelines/library/variable-groups#link-secrets-from-an-azure-key-vault)
 >
-### <a name="stage-environment-variable-group"></a>Omgevingsvariabelegroep faseer
+### <a name="stage-environment-variable-group"></a>Omgevingsvariabelegroep fase
 
 1. Kloon **de variabelegroep az-vote-app-dev.**
-1. Wijzig de naam in **az-vote-app-stage**.
+1. Wijzig de naam in **az-vote-app-stage.**
 1. Controleer de volgende waarden voor de bijbehorende variabelen:
 
 | Variabele | Waarde |
@@ -207,15 +207,15 @@ Nu de CI- en CD-pijplijnen zijn gemaakt, moet u de CI-pijplijn uitvoeren om de a
 
 ### <a name="ci-pipeline"></a>CI-pijplijn
 
-Tijdens de eerste ci-pijplijn wordt er mogelijk een resourceautorisatiefout weergegeven bij het lezen van de naam van de serviceverbinding.
+Tijdens de eerste ci-pijplijn wordt mogelijk een resourceautorisatiefout weergegeven bij het lezen van de naam van de serviceverbinding.
 1. Controleer of de variabele die wordt gebruikt, AZURE_SUBSCRIPTION.
-1. Autor het gebruik.
+1. Autor hetzelfde gebruik.
 1. De pijplijn opnieuw uit te proberen.
 
 De CI-pijplijn:
 * Zorgt ervoor dat de toepassingswijziging alle geautomatiseerde kwaliteitscontroles voor implementatie doorstaat.
-* Wordt er een extra validatie uitgevoerd die niet kan worden voltooid in de pr-pijplijn.
-    * Specifiek voor GitOps publiceert de pijplijn ook de artefacten voor de door commit die door de CD-pijplijn wordt geïmplementeerd.
+* Wordt er een extra validatie uitgevoerd die niet kan worden voltooid in de pijplijn voor pr-gegevens?
+    * Specifiek voor GitOps publiceert de pijplijn ook de artefacten voor de door commit die wordt geïmplementeerd door de CD-pijplijn.
 * Controleert of de Docker-afbeelding is gewijzigd en of de nieuwe afbeelding wordt pusht.
 
 ### <a name="cd-pipeline"></a>CD-pijplijn
@@ -227,10 +227,10 @@ De geslaagde CI-pijplijn-run activeert de CD-pijplijn om het implementatieproces
 >    * Dit moet `arc-cicd-demo-src CI` zijn.
 > 1. De CI-pijplijn opnieuw uit te proberen.
 
-Zodra de sjabloon en het manifest zijn gewijzigd in de GitOps-repo, maakt de CD-pijplijn een door commit, pusht u deze en maakt u een pr ter goedkeuring.
+Zodra de sjabloon en het manifest zijn gewijzigd in de GitOps-repo, maakt de CD-pijplijn een door commit, pusht deze en maakt een pr ter goedkeuring.
 1. Open de pr-koppeling in de `Create PR` taakuitvoer.
 1. Controleer de wijzigingen in de GitOps-repo. U ziet het volgende:
-   * Helm-sjabloonwijzigingen op hoog niveau.
+   * Wijzigingen in helm-sjablonen op hoog niveau.
    * Kubernetes-manifesten op laag niveau die de onderliggende wijzigingen in de gewenste status tonen. Flux implementeert deze manifesten.
 1. Als alles er goed uitziet, keurt u de aanvraag goed en voltooit u deze.
 
@@ -254,9 +254,9 @@ Als in de dev-omgeving een onderbreking na de implementatie wordt gedetecteerd, 
 1. Geef de goedkeurders en een optioneel bericht op.
 1. Selecteer **opnieuw Maken** om de handmatige goedkeuringscontrole te voltooien.
 
-Zie de zelfstudie Goedkeuring en controles [definiëren voor meer](/azure/devops/pipelines/process/approvals) informatie.
+Zie de zelfstudie Goedkeuring en controles definiëren voor [meer](/azure/devops/pipelines/process/approvals) informatie.
 
-De volgende keer dat de CD-pijplijn wordt uitgevoerd, wordt de pijplijn onderbroken nadat de GitOps-pr is gemaakt. Controleer of de wijziging juist is gesynchroniseerd en de basisfunctionaliteit doorstaat. Keur de controle van de pijplijn goed om de wijziging naar de volgende omgeving te laten stromen.
+De volgende keer dat de CD-pijplijn wordt uitgevoerd, wordt de pijplijn onderbroken nadat de GitOps-pr is gemaakt. Controleer of de wijziging correct is gesynchroniseerd en de basisfunctionaliteit doorstaat. Keur de controle van de pijplijn goed om de wijziging naar de volgende omgeving te laten stromen.
 
 ## <a name="make-an-application-change"></a>Een toepassingswijziging aanbrengen
 
@@ -271,42 +271,42 @@ Met deze basislijnset met sjablonen en manifesten die de status in het cluster v
 
 ## <a name="pr-validation-pipeline"></a>Pijplijn voor PR-validatie
 
-De pr-pijplijn is de eerste verdedigingslinie tegen een foute wijziging. Gebruikelijke kwaliteitscontroles van toepassingscodes omvatten linting en statische analyse. Vanuit het oogpunt van GitOps moet u ook dezelfde kwaliteit garanderen voor de resulterende infrastructuur die moet worden geïmplementeerd.
+De pr-pijplijn is de eerste verdedigingslinie tegen een foute wijziging. Gebruikelijke kwaliteitscontroles voor toepassingscodes omvatten linting en statische analyse. Vanuit het perspectief van GitOps moet u ook dezelfde kwaliteit garanderen voor de resulterende infrastructuur die moet worden geïmplementeerd.
 
-De Dockerfile- en Helm-grafieken van de toepassing kunnen linting gebruiken op een vergelijkbare manier als de toepassing.
+De Dockerfile- en Helm-grafieken van de toepassing kunnen linting op een vergelijkbare manier gebruiken als de toepassing.
 
-Fouten die zijn gevonden tijdens linting, variëren van:
+Fouten die zijn aangetroffen tijdens linting, variëren van:
 * ONJUIST opgemaakte YAML-bestanden, naar
 * Suggesties voor best practice, zoals het instellen van CPU- en geheugenlimieten voor uw toepassing.
 
 > [!NOTE]
 > Als u de beste dekking wilt krijgen van Helm-linting in een echte toepassing, moet u waarden vervangen die redelijk vergelijkbaar zijn met die in een echte omgeving.
 
-Fouten die zijn gevonden tijdens het uitvoeren van de pijplijn, worden weergegeven in de sectie met testresultaten van de uitvoering. Hier kunt u het volgende doen:
-* Houd de nuttige statistieken voor de fouttypen bij.
+Fouten die zijn aangetroffen tijdens het uitvoeren van de pijplijn, worden weergegeven in de sectie met testresultaten van de uitvoering. Hier kunt u het volgende doen:
+* Houd de nuttige statistieken over de fouttypen bij.
 * Zoek de eerste door commit waarop ze zijn gedetecteerd.
-* Stack-traceerstijlkoppelingen naar de codesecties die de fout hebben veroorzaakt.
+* Stack traceerstijlkoppelingen naar de codesecties die de fout hebben veroorzaakt.
 
-Zodra de pijplijn is uitgevoerd, hebt u de kwaliteit van de toepassingscode en de sjabloon die deze gaat implementeren gegarandeerd. U kunt nu de pr goedkeuren en voltooien. De CI wordt opnieuw uitgevoerd en de sjablonen en manifesten worden opnieuw gemaakt voordat de CD-pijplijn wordt activeert.
+Zodra de pijplijn is uitgevoerd, hebt u de kwaliteit van de toepassingscode en de sjabloon die deze implementeert gegarandeerd. U kunt de pr nu goedkeuren en voltooien. De CI wordt opnieuw uitgevoerd en de sjablonen en manifesten worden opnieuw gemaakt voordat de CD-pijplijn wordt activeert.
 
 > [!TIP]
-> Vergeet in een echte omgeving niet om vertakkingsbeleid in te stellen om ervoor te zorgen dat de pr uw kwaliteitscontroles doorstaat. Zie het artikel Vertakkingsbeleid instellen [voor meer](/azure/devops/repos/git/branch-policies) informatie.
+> Vergeet in een echte omgeving niet om vertakkingsbeleid in te stellen om ervoor te zorgen dat de pr uw kwaliteitscontroles doorstaat. Zie het artikel [Vertakkingsbeleid instellen voor meer](/azure/devops/repos/git/branch-policies) informatie.
 
 ## <a name="cd-process-approvals"></a>Goedkeuringen voor CD-processen
 
 Een geslaagde CI-pijplijn-run activeert de CD-pijplijn om het implementatieproces te voltooien. Net als bij de eerste keer dat u de CD-pijplijn kunt gebruiken, implementeert u incrementeel in elke omgeving. Deze keer moet u voor de pijplijn elke implementatieomgeving goedkeuren.
 
 1. Keur de implementatie in de omgeving `dev` goed.
-1. Zodra de sjabloon en het manifest zijn gewijzigd in de GitOps-repo, maakt de CD-pijplijn een door commit, pusht deze en maakt een pr ter goedkeuring.
+1. Zodra de sjabloon en het manifest zijn gewijzigd in de GitOps-repo, maakt de CD-pijplijn een door commit, pusht u deze en maakt u een pr ter goedkeuring.
 1. Open de pr-koppeling in de taak.
 1. Controleer de wijzigingen in de GitOps-repo. U ziet het volgende:
-   * Wijzigingen in helm-sjablonen op hoog niveau.
+   * Helm-sjabloonwijzigingen op hoog niveau.
    * Kubernetes-manifesten op laag niveau die de onderliggende wijzigingen in de gewenste status tonen.
 1. Als alles er goed uitziet, keurt u de aanvraag goed en voltooit u deze.
 1. Wacht totdat de installatie is voltooid.
 1. Als basistest gaat u naar de toepassingspagina en controleert u of in de stem-app nu Tabs versus Spaties worden weergegeven.
    * Doorsturen van de poort lokaal `kubectl` met behulp van en controleren of de app correct werkt met behulp van: `kubectl port-forward -n dev svc/azure-vote-front 8080:80`
-   * Bekijk de Azure Vote-app in uw browser op en controleer of de stemkeuzes zijn http://localhost:8080/ gewijzigd in Tabs vs Spaces. 
+   * Bekijk de Azure Vote-app in uw browser op en http://localhost:8080/ controleer of de stemkeuzes zijn gewijzigd in Tabs vs Spaces. 
 1. Herhaal stap 1-7 voor de `stage` omgeving.
 
 Uw implementatie is nu voltooid. Hiermee wordt de CI/CD-werkstroom beëindigd.
@@ -332,9 +332,9 @@ Als u deze toepassing verder niet gaat gebruiken, verwijdert u alle resources me
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u een volledige CI/CD-werkstroom ingesteld die DevOps implementeert van toepassingsontwikkeling tot implementatie. Wijzigingen in de app activeren automatisch validatie en implementatie, door handmatige goedkeuringen.
+In deze zelfstudie hebt u een volledige CI/CD-werkstroom ingesteld die DevOps implementeert van toepassingsontwikkeling tot implementatie. Wijzigingen in de app activeren automatisch validatie en implementatie, wat wordt geregeld door handmatige goedkeuringen.
 
-Ga naar ons conceptuele artikel voor meer informatie over GitOps en configuraties met kubernetes Azure Arc kubernetes.
+Ga naar ons conceptuele artikel voor meer informatie over GitOps en configuraties met kubernetes Azure Arc kubernetes ingeschakeld.
 
 > [!div class="nextstepaction"]
 > [CI/CD-werkstroom met GitOps - kubernetes Azure Arc ingeschakeld](https://docs.microsoft.com/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd)

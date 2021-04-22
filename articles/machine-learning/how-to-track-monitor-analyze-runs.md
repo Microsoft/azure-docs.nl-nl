@@ -9,14 +9,14 @@ author: swinner95
 ms.author: shwinne
 ms.reviewer: sgilley
 ms.date: 04/19/2021
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: af591a5defcef1e8d043d54f08447324a34a10c4
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.topic: how-to
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: d50820e954c1a34f1ccffe133a338538bf0abd18
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107876291"
+ms.locfileid: "107888526"
 ---
 # <a name="start-monitor-and-track-run-history"></a>De run history starten, bewaken en bijhouden
 
@@ -197,7 +197,7 @@ Op de **pagina Alle runs kunt** u de lijst met runs filteren op tags, experiment
     
 :::image type="content" source="media/how-to-track-monitor-analyze-runs/custom-views.gif" alt-text="Schermopname: een aangepaste weergave maken":::
     
-1. Als u de runlogboeken wilt weergeven, selecteert u een specifieke run en op het tabblad **Uitvoer en** logboeken vindt u diagnostische logboeken en foutlogboeken voor uw run.
+1. Als u de runlogboeken wilt weergeven, selecteert u een specifieke run en op het tabblad **Uitvoer en** logboeken vindt u diagnostische en foutlogboeken voor uw run.
 
 ## <a name="run-description"></a>Beschrijving van de run 
 
@@ -302,7 +302,7 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw runs te o
     1. Gebruik de **knop Filter toevoegen** en selecteer Filteren op tags om uw runs te filteren op tag die is toegewezen aan de run(s). <br><br>
     OF
     
-    1. Gebruik de zoekbalk om snel runs te vinden door te zoeken op de metagegevens van de run, zoals de status van de run, beschrijvingen, namen van experimenten en de naam van de inzender. 
+    1. Gebruik de zoekbalk om snel runs te vinden door te zoeken op de metagegevens van de run, zoals de status van de run, beschrijvingen, experimentnamen en de naam van de inzender. 
     
 ## <a name="cancel-or-fail-runs"></a>Runs annuleren of mislukken
 
@@ -430,7 +430,7 @@ child_run.parent.id
 
 ### <a name="query-child-runs"></a>Onderliggende query's uitvoeren
 
-Als u een query wilt uitvoeren op de onderliggende runs van een specifiek bovenliggend, gebruikt u de [`get_children()`](/python/api/azureml-core/azureml.core.run%28class%29#get-children-recursive-false--tags-none--properties-none--type-none--status-none---rehydrate-runs-true-) methode . Met ``recursive = True`` het argument kunt u een query uitvoeren op een geneste structuur van kinderen en grootsgeplaatst.
+Als u een query wilt uitvoeren op de onderliggende runs van een specifiek bovenliggend bovenliggend, gebruikt u de [`get_children()`](/python/api/azureml-core/azureml.core.run%28class%29#get-children-recursive-false--tags-none--properties-none--type-none--status-none---rehydrate-runs-true-) methode . Met ``recursive = True`` het argument kunt u een query uitvoeren op een geneste structuur van kinderen en grootsgeplaatst.
 
 ```python
 print(parent_run.get_children())
@@ -466,7 +466,7 @@ root_run(current_child_run).log("MyMetric", f"Data from child run {current_child
     1. Selecteer in **de Doeldetails** de werkruimte **Verzenden naar Log Analytics** en geef het abonnement **en** de **Log Analytics-werkruimte op.** 
 
     > [!NOTE]
-    > De **Azure Log Analytics-werkruimte** is een ander type Azure-resource dan **de Azure Machine Learning Service werkruimte**. Als er geen opties in die lijst staan, kunt u [een Log Analytics-werkruimte maken.](../azure-monitor/logs/quick-create-workspace.md) 
+    > De **Azure Log Analytics-werkruimte** is een ander type Azure-resource dan **Azure Machine Learning Service werkruimte**. Als er geen opties in die lijst staan, kunt u [een Log Analytics-werkruimte maken.](../azure-monitor/logs/quick-create-workspace.md) 
     
     ![Waar kunt u een e-mailmelding opslaan?](./media/how-to-track-monitor-analyze-runs/log-location.png)
 
@@ -474,7 +474,7 @@ root_run(current_child_run).log("MyMetric", f"Data from child run {current_child
 
     ![Nieuwe waarschuwingsregel](./media/how-to-track-monitor-analyze-runs/new-alert-rule.png)
 
-1. Zie [logboekwaarschuwingen maken en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-log.md).
+1. Zie [logboekwaarschuwingen maken en beheren met behulp van Azure Monitor.](../azure-monitor/alerts/alerts-log.md)
 
 ## <a name="example-notebooks"></a>Voorbeeldnotebooks
 

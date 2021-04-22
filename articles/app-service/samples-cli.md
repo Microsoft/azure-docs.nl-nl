@@ -6,12 +6,12 @@ ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
 ms.topic: sample
 ms.date: 07/07/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 51cdd470c9ae970d5945f8d5399cea67a44037f0
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 61283cac5f9b0c4e720732ec5d9d019eeb89198c
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107483381"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107890992"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>CLI-voorbeelden voor Azure App Service
 

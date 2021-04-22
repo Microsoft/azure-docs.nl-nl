@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 07/21/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: b0ea5728618c7b69403fcc4c0a3575b70fac6038
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 5a27fdc91f376127f26ba9f207ca72d8ada8a7b9
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107482599"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107891748"
 ---
 # <a name="deploy-azure-spring-cloud-in-a-virtual-network"></a>Een Azure Spring Cloud implementeren in een virtueel netwerk
 
@@ -27,7 +27,7 @@ De implementatie maakt het volgende mogelijk:
 * Klanten kunnen de inkomende en uitgaande netwerkcommunicatie voor Azure Spring Cloud beheren.
 
 > [!Note]
-> U kunt uw virtuele Azure-netwerk alleen selecteren wanneer u een nieuw Azure Spring Cloud service-exemplaar maakt. U kunt niet wijzigen om een ander virtueel netwerk te gebruiken nadat Azure Spring Cloud is gemaakt.
+> U kunt uw virtuele Azure-netwerk alleen selecteren wanneer u een nieuw Azure Spring Cloud service-exemplaar. U kunt niet wijzigen om een ander virtueel netwerk te gebruiken nadat Azure Spring Cloud is gemaakt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -80,7 +80,7 @@ Sla stap 1, 2 en 3 over als u al een virtueel netwerk hebt voor het hosten van e
 1. Selecteer **Controleren en maken**. Laat voor de rest de standaardwaarden staan, en selecteer **Maken**.
 
 ## <a name="grant-service-permission-to-the-virtual-network"></a>Machtiging voor service verlenen aan het virtuele netwerk
-Azure Spring Cloud hebt **eigenaarsmachtiging** voor uw virtuele netwerk nodig om een toegewezen en dynamische service-principal op het virtuele netwerk te verlenen voor verdere implementatie en onderhoud.
+Azure Spring Cloud heeft **eigenaarsmachtiging** voor uw virtuele netwerk nodig om een toegewezen en dynamische service-principal in het virtuele netwerk te verlenen voor verdere implementatie en onderhoud.
 
 Selecteer het virtuele netwerk **azure-spring-cloud-vnet** dat u eerder hebt gemaakt.
 
@@ -166,7 +166,7 @@ Deze netwerkresources zijn verbonden met het virtuele netwerk dat is gemaakt in 
 
 ## <a name="using-smaller-subnet-ranges"></a>Kleinere subnetbereiken gebruiken
 
-In deze tabel ziet u het maximum aantal app-exemplaren dat Azure Spring Cloud met behulp van kleinere subnetbereiken.
+Deze tabel toont het maximum aantal app-exemplaren dat Azure Spring Cloud ondersteuning biedt voor het gebruik van kleinere subnetbereiken.
 
 | CIDR voor app-subnet | Totaal aantal IP's | Beschikbare IP's | Maximum aantal app-exemplaren                                        |
 | --------------- | --------- | ------------- | ------------------------------------------------------------ |
@@ -180,23 +180,23 @@ Voor subnetten zijn vijf IP-adressen gereserveerd in Azure, en er zijn minstens 
 
 Voor een subnet voor een serviceruntime is /28 de minimale grootte. De grootte heeft geen invloed op het aantal app-exemplaren.
 
-## <a name="bring-your-own-route-table"></a>Bring Your Own Route-tabel
+## <a name="bring-your-own-route-table"></a>Bring Your Own Route Table
 
 Azure Spring Cloud ondersteunt het gebruik van bestaande subnetten en routetabellen.
 
-Als uw aangepaste subnetten geen routetabellen bevatten, maakt Azure Spring Cloud ze voor elk van de subnetten en voegt u er regels aan toe gedurende de levenscyclus van het exemplaar. Als uw aangepaste subnetten routetabellen bevatten, Azure Spring Cloud de bestaande routetabellen tijdens exemplaarbewerkingen bevestigd en voegt/updates en/of regels dienovereenkomstig toe voor bewerkingen.
+Als uw aangepaste subnetten geen routetabellen bevatten, maakt Azure Spring Cloud ze voor elk van de subnetten en voegt u er regels aan toe gedurende de levenscyclus van het exemplaar. Als uw aangepaste subnetten routetabellen bevatten, Azure Spring Cloud de bestaande routetabellen tijdens exemplaarbewerkingen en voegt/updates en/of regels dienovereenkomstig toe voor bewerkingen.
 
 > [!Warning] 
-> Aangepaste regels kunnen worden toegevoegd aan de aangepaste routetabellen en worden bijgewerkt. Regels worden echter wel toegevoegd door Azure Spring Cloud en deze mogen niet worden bijgewerkt of verwijderd. Regels zoals 0.0.0.0/0 moeten altijd aanwezig zijn in een bepaalde routetabel en zijn toe te staan aan het doel van uw internetgateway, zoals een NVA of een andere gateway voor een ingang. Wees voorzichtig bij het bijwerken van regels wanneer alleen uw aangepaste regels worden gewijzigd.
+> Aangepaste regels kunnen worden toegevoegd aan de aangepaste routetabellen en worden bijgewerkt. Regels worden echter toegevoegd door Azure Spring Cloud en deze mogen niet worden bijgewerkt of verwijderd. Regels zoals 0.0.0.0/0 moeten altijd aanwezig zijn in een bepaalde routetabel en worden toe te staan aan het doel van uw internetgateway, zoals een NVA of een andere gateway voor een ingang. Wees voorzichtig bij het bijwerken van regels wanneer alleen uw aangepaste regels worden gewijzigd.
 
 
 ### <a name="route-table-requirements"></a>Vereisten voor routetabel
 
 De routetabellen waaraan uw aangepaste vnet is gekoppeld, moeten voldoen aan de volgende vereisten:
 
-* U kunt uw Azure-routetabellen alleen aan uw vnet koppelen wanneer u een nieuw Azure Spring Cloud service-exemplaar. U kunt niet wijzigen om een andere routetabel te gebruiken nadat Azure Spring Cloud is gemaakt.
+* U kunt uw Azure-routetabellen alleen aan uw vnet koppelen wanneer u een nieuw Azure Spring Cloud service-exemplaar maakt. U kunt niet wijzigen om een andere routetabel te gebruiken nadat Azure Spring Cloud is gemaakt.
 * Zowel het subnet van de microservicetoepassing als het subnet van de serviceruntime moet zijn verbonden met verschillende routetabellen of aan geen van beide.
-* Machtigingen moeten worden toegewezen voordat het exemplaar wordt gemaakt. Zorg ervoor dat u Azure *Spring Cloud-eigenaar toe* te staan aan uw routetabellen.
+* Machtigingen moeten worden toegewezen voordat het exemplaar wordt gemaakt. Zorg ervoor dat u Azure *Spring Cloud-eigenaar toe te* staan aan uw routetabellen.
 * De gekoppelde routetabelresource kan niet worden bijgewerkt nadat het cluster is gemaakt. Hoewel de resource van de routetabel niet kan worden bijgewerkt, kunnen aangepaste regels worden gewijzigd in de routetabel.
 * U kunt een routetabel met meerdere exemplaren niet opnieuw gebruiken vanwege mogelijke conflicterende routeringsregels.
 

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: mvc, devx-track-azurecli
 ms.topic: quickstart
 ms.date: 03/06/2021
-ms.openlocfilehash: 7526644e02b0ed4d0522ad00a27b691ece98754a
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 3017d10abc910233e0627037349c0dfd966fd88e
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479233"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107883792"
 ---
 # <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-postgresql---flexible-server"></a>Quickstart: Verbinding maken en query's uitvoeren met Azure CLI met Azure Database for PostgreSQL - Flexible Server
 
@@ -25,7 +25,7 @@ In deze quickstart wordt gedemonstreerd hoe u verbinding maakt met een Azure Dat
 - Een Azure-account. Als u geen account hebt, kunt u [een gratis proefversie krijgen](https://azure.microsoft.com/free/).
 - Installeer de nieuwste versie van [Azure CLI](/cli/azure/install-azure-cli) (2.20.0 of hoger)
 - Meld u aan met behulp van Azure CLI met ```az login``` de opdracht 
-- Schakel parameterpersistence in met ```az config param-persist on``` . Parameterpersistence helpt u bij het gebruik van lokale context zonder dat u veel argumenten zoals resourcegroep of locatie moet herhalen.
+- Schakel parameter persistentie in met ```az config param-persist on``` . Parameterpersistence helpt u bij het gebruik van lokale context zonder dat u veel argumenten zoals resourcegroep of locatie moet herhalen.
 
 ## <a name="create-an-postgresql-flexible-server"></a>Een Flexibele PostgreSQL-server maken
 

@@ -4,17 +4,16 @@ titleSuffix: Azure Load Balancer
 description: In deze zelfstudie implementeert u een Azure Load Balancer met meer dan één beschikbaarheidsset in de back-endpool.
 author: asudbring
 ms.author: allensu
-ms.service: virtual-network
-ms.subservice: nat
+ms.service: load-balancer
 ms.topic: tutorial
-ms.date: 04/16/2021
+ms.date: 04/21/2021
 ms.custom: template-tutorial
-ms.openlocfilehash: 21ff43217a7b2bd874a384f3b07a48d5223a1be2
-ms.sourcegitcommit: 089c2bd1ac4861f43c4b89396d3d056a6eef4913
+ms.openlocfilehash: 71115da01f47572d77243f25204d5b1127db22cd
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107602347"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107887158"
 ---
 # <a name="tutorial-create-a-load-balancer-with-more-than-one-availability-set-in-the-backend-pool-using-the-azure-portal"></a>Zelfstudie: Een load balancer met meer dan één beschikbaarheidsset in de back-Azure Portal
 
@@ -40,7 +39,7 @@ In deze zelfstudie leert u het volgende:
 
 In deze sectie maakt u een virtueel netwerk voor de load balancer en de andere resources die in de zelfstudie worden gebruikt.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 2. Voer in het zoekvak boven aan de portal Virtueel **netwerk in.**
 
@@ -200,7 +199,7 @@ U maakt een taakverdelingsregel voor poort **80** met uitgaande SNAT uitgeschake
     | Poort | Laat de standaardwaarde **80 staan.** |
     | Pad | Laat de standaardwaarde **/** staan. |
     | Interval | Laat de standaardwaarde **van 5 seconden** staan. |
-    | Drempelwaarde voor beschadigde status | Laat de standaardwaarde **staan op 2** opeenvolgende fouten. |
+    | Drempelwaarde voor beschadigde status | Laat de standaardwaarde **van twee opeenvolgende** fouten staan. |
 
 11. Selecteer **Toevoegen**.
 
@@ -416,7 +415,7 @@ In deze sectie detecteert u het openbare IP-adres van de load balancer. U gebrui
 
     :::image type="content" source="./media/tutorial-multi-availability-sets-portal/verify-load-balancer.png" alt-text="Test load balancer webbrowser." border="true":::
 
-6. Selecteer Vernieuwen in de browser om te zien hoe het verkeer wordt verdeeld over de andere virtuele machines in de back-endpool.
+6. Selecteer Vernieuwen in de browser om het verkeer naar de andere virtuele machines in de back-endpool te bekijken.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

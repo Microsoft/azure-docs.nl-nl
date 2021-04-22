@@ -7,46 +7,46 @@ ms.service: mysql
 ms.custom: mvc, devx-track-azurecli
 ms.topic: quickstart
 ms.date: 03/01/2021
-ms.openlocfilehash: e0fd5969a3c4f84b6e8f98e99335bf120179e7af
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 5abc71a4df8dd27e80a7590d53159be95d46e441
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107481086"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107883846"
 ---
 # <a name="quickstart-connect-and-query-with-azure-cli--with-azure-database-for-mysql---flexible-server"></a>Quickstart: Verbinding maken en query's uitvoeren met Azure CLI met Azure Database for MySQL - Flexible Server
 
 > [!IMPORTANT]
 > Azure Database for MySQL - Flexible Server is momenteel beschikbaar als openbare preview.
 
-In deze quickstart wordt gedemonstreerd hoe u verbinding maakt met een Azure Database for MySQL Flexible Server met behulp van Azure CLI met ```az mysql flexible-server connect``` de opdracht . Met deze opdracht kunt u de connectiviteit met uw databaseserver testen en query's rechtstreeks op uw server uitvoeren.  U kunt ook de opdracht uitvoeren in een interactieve modus gebruiken voor het uitvoeren van meerdere query's.
+In deze quickstart wordt gedemonstreerd hoe u verbinding maakt met een Azure Database for MySQL Flexible Server met behulp van Azure CLI met ```az mysql flexible-server connect``` de opdracht . Met deze opdracht kunt u de connectiviteit met uw databaseserver testen en query's rechtstreeks op uw server uitvoeren.  U kunt ook de opdracht uitvoeren in een interactieve modus voor het uitvoeren van meerdere query's.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account. Als u geen account hebt, kunt u [een gratis proefversie krijgen](https://azure.microsoft.com/free/).
 - Installeer de nieuwste versie van [Azure CLI](/cli/azure/install-azure-cli) (2.20.0 of hoger)
 - Meld u aan met behulp van Azure CLI met ```az login``` de opdracht 
-- Schakel parameterpersistence in met ```az config param-persist on``` . Parameterpersistence helpt u bij het gebruik van lokale context zonder veel argumenten te herhalen, zoals resourcegroep of locatie, enzovoort.
+- Schakel parameterpersistence in met ```az config param-persist on``` . Persistentie van parameters helpt u bij het gebruik van lokale context zonder dat u veel argumenten zoals resourcegroep of locatie moet herhalen, enzovoort.
 
 ## <a name="create-an-mysql-flexible-server"></a>Een MySQL Flexible Server maken
 
-We maken eerst een beheerde MySQL-server. Voer [Azure Cloud Shell](https://shell.azure.com/)volgende script uit en noteer de **servernaam,** gebruikersnaam en het **wachtwoord** die zijn gegenereerd met deze opdracht. 
+We maken eerst een beheerde MySQL-server. Voer [Azure Cloud Shell](https://shell.azure.com/)het volgende script uit en noteer de **servernaam** **,** gebruikersnaam en  **wachtwoord** die zijn gegenereerd op basis van deze opdracht.
 
 ```azurecli
 az mysql flexible-server create --public-access <your-ip-address>
 ```
 
-U kunt aanvullende argumenten voor deze opdracht geven om deze aan te passen. Zie alle argumenten voor [az mysql flexible-server create.](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_create)
+U kunt aanvullende argumenten voor deze opdracht geven om deze aan te passen. Bekijk alle argumenten voor [az mysql flexible-server create.](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_create)
 
 ## <a name="create-a-database"></a>Een database maken
-Voer de volgende opdracht uit om een database, **newdatabase,** te maken als u er nog geen hebt gemaakt.
+Voer de volgende opdracht uit om een database te maken, **newdatabase** als u er nog geen hebt gemaakt.
 
 ```azurecli
 az mysql flexible-server db create -d newdatabase
 ```
 
 ## <a name="view-all-the-arguments"></a>Alles weergeven argumenten op te geven
-U kunt alle argumenten voor deze opdracht weergeven met ```--help``` argument. 
+U kunt alle argumenten voor deze opdracht weergeven met ```--help``` argument . 
 
 ```azurecli
 az mysql flexible-server connect --help
@@ -71,14 +71,14 @@ Command group 'mysql flexible-server' is in preview and under development. Refer
 Connecting to newdatabase database.
 Successfully connected to mysqldemoserver1.
 ```
-Probeer de volgende oplossingen als de verbinding is mislukt:
+Als de verbinding is mislukt, probeert u deze oplossingen:
 - Controleer of poort 3306 is geopend op uw clientmachine.
 - als de gebruikersnaam en het wachtwoord van de serverbeheerder juist zijn
 - als u een firewallregel hebt geconfigureerd voor uw clientmachine
 - Als u uw server hebt geconfigureerd met privétoegang in virtuele netwerken, moet u ervoor zorgen dat uw clientmachine zich in hetzelfde virtuele netwerk.
 
 ## <a name="run-single-query"></a>Eén query uitvoeren
-Voer de volgende opdracht uit om één query uit te voeren met ```--querytext``` behulp van argument , ```-q``` .
+Voer de volgende opdracht uit om één query uit te voeren met ```--querytext``` argument , ```-q``` .
 
 ```azurecli
 az mysql flexible-server connect -n <server-name> -u <username> -p "<password>" -d <database-name> --querytext "<query text>"
@@ -110,7 +110,7 @@ test   200
 test   200
 ```
 
-## <a name="run-multiple-queries-using-interactive-mode"></a>Meerdere query's uitvoeren met behulp van de interactieve modus
+## <a name="run-multiple-queries-using-interactive-mode"></a>Meerdere query's uitvoeren met de interactieve modus
 U kunt meerdere query's uitvoeren met behulp van **de interactieve** modus. Voer de volgende opdracht uit om de interactieve modus in te schakelen
 
 ```azurecli

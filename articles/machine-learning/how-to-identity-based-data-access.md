@@ -1,113 +1,113 @@
 ---
-title: Op identiteit gebaseerde gegevens toegang tot opslag Services op Azure
+title: Op identiteit gebaseerde gegevenstoegang tot opslagservices in Azure
 titleSuffix: Machine Learning
-description: Meer informatie over het gebruik van gegevens toegang op basis van identiteit om verbinding te maken met opslag Services in azure met Azure Machine Learning gegevens opslag en de Machine Learning python-SDK.
+description: Meer informatie over het gebruik van op identiteit gebaseerde gegevenstoegang om verbinding te maken met opslagservices in Azure met Azure Machine Learning-gegevensopslag en de python Machine Learning-SDK.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: sihhu
 author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 02/22/2021
-ms.custom: how-to, contperf-fy21q1, devx-track-python, data4ml
-ms.openlocfilehash: a46f54bd037dcf8d71ba3fbafb2ba0fd961a32cc
-ms.sourcegitcommit: c3739cb161a6f39a9c3d1666ba5ee946e62a7ac3
+ms.custom: contperf-fy21q1, devx-track-python, data4ml
+ms.openlocfilehash: 8bc85e8991ebf0a5ba7418f63943b0515c9f264d
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107210649"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107884998"
 ---
-# <a name="connect-to-storage-by-using-identity-based-data-access-preview"></a>Verbinding maken met de opslag met behulp van op identiteit gebaseerde gegevens toegang (preview-versie)
+# <a name="connect-to-storage-by-using-identity-based-data-access-preview"></a>Verbinding maken met opslag met behulp van op identiteit gebaseerde gegevenstoegang (preview)
 
 >[!IMPORTANT]
-> De functies die in dit artikel worden weer gegeven, zijn beschikbaar als preview-versie. Ze moeten worden beschouwd als [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functies die op elk gewenst moment kunnen worden gewijzigd.
+> De functies in dit artikel zijn beschikbaar als preview-versie. Ze moeten worden beschouwd als [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functies die op elk moment kunnen worden gewijzigd.
 
-In dit artikel leert u hoe u verbinding kunt maken met opslag Services in azure met behulp van identiteits gegevens toegang en Azure Machine Learning data stores via de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro).  
+In dit artikel leert u hoe u verbinding maakt met opslagservices in Azure met behulp van op identiteit gebaseerde gegevenstoegang en Azure Machine Learning-gegevensopslag via de [Azure Machine Learning SDK voor Python.](/python/api/overview/azure/ml/intro)  
 
-Normaal gesp roken gebruiken gegevens toegangs rechten op basis van referenties om te bevestigen dat u gemachtigd bent om toegang te krijgen tot de opslag service. Ze houden verbindings gegevens, zoals uw abonnements-ID en Token autorisatie, op in de [sleutel kluis](https://azure.microsoft.com/services/key-vault/) die is gekoppeld aan de werk ruimte. Wanneer u een gegevens opslag maakt die gebruikmaakt van op identiteit gebaseerde toegang tot Data Services, wordt uw Azure-account ([Azure Active Directory token](../active-directory/fundamentals/active-directory-whatis.md)) gebruikt om te bevestigen dat u gemachtigd bent om toegang te krijgen tot de opslag service. In dit scenario worden er geen verificatie referenties opgeslagen. Alleen de gegevens van het opslag account worden opgeslagen in het gegevens archief. 
+Normaal gesproken gebruiken gegevensopslag op basis van referenties toegang om te bevestigen dat u toegang hebt tot de opslagservice. Ze bewaren verbindingsgegevens, zoals uw abonnements-id en tokenautorisatie, in de [sleutelkluis](https://azure.microsoft.com/services/key-vault/) die is gekoppeld aan de werkruimte. Wanneer u een gegevensopslag maakt die gebruikmaakt van op identiteit gebaseerde gegevenstoegang, wordt uw Azure-account[(Azure Active Directory-token)](../active-directory/fundamentals/active-directory-whatis.md)gebruikt om te bevestigen dat u toegang hebt tot de opslagservice. In dit scenario worden geen verificatiereferenties opgeslagen. Alleen de gegevens van het opslagaccount worden opgeslagen in de gegevensopslag. 
 
-Zie [verbinding maken met Storage services op Azure](how-to-access-data.md)als u gegevens opslag wilt maken die gebruikmaken van verificatie op basis van referenties, zoals toegangs sleutels of service-principals.
+Zie Verbinding maken met opslagservices in Azure voor het maken van gegevensopslag die gebruikmaken van verificatie op basis [van referenties,](how-to-access-data.md)zoals toegangssleutels of service-principals.
 
-## <a name="identity-based-data-access-in-azure-machine-learning"></a>Toegang tot gegevens op basis van identiteiten in Azure Machine Learning
+## <a name="identity-based-data-access-in-azure-machine-learning"></a>Gegevenstoegang op basis van identiteit in Azure Machine Learning
 
-Er zijn twee scenario's waarin u toegang tot gegevens op basis van identiteiten kunt Toep assen in Azure Machine Learning. Deze scenario's zijn geschikt voor toegang op basis van identiteiten wanneer u met vertrouwelijke gegevens werkt en meer nauw keuriger gegevens toegangs beheer nodig hebt:
+Er zijn twee scenario's waarin u op identiteit gebaseerde gegevenstoegang kunt toepassen in Azure Machine Learning. Deze scenario's zijn geschikt voor toegang op basis van identiteiten wanneer u met vertrouwelijke gegevens werkt en meer gedetailleerd toegangsbeheer nodig hebt:
 
-- Opslag Services openen
-- machine learning modellen trainen met persoonlijke gegevens
+- Toegang tot opslagservices
+- Trainingsmodellen machine learning persoonlijke gegevens
 
-### <a name="accessing-storage-services"></a>Opslag Services openen
+### <a name="accessing-storage-services"></a>Toegang tot opslagservices
 
-U kunt verbinding maken met opslag Services via toegang tot de identiteit op basis van gegevens met Azure Machine Learning data stores of [Azure machine learning gegevens sets](how-to-create-register-datasets.md). 
+U kunt verbinding maken met opslagservices via op identiteit gebaseerde gegevenstoegang met Azure Machine Learning gegevensopslag of [Azure Machine Learning gegevenssets](how-to-create-register-datasets.md). 
 
-Uw verificatie referenties worden meestal opgeslagen in een gegevens opslag, die wordt gebruikt om ervoor te zorgen dat u gemachtigd bent om toegang te krijgen tot de opslag service. Wanneer deze referenties worden geregistreerd via gegevens opslag, kunnen gebruikers met de rol van werkruimte lezer ze ophalen. Deze schaal van toegang kan voor sommige organisaties een beveiligings probleem zijn. [Meer informatie over de rol van de werkruimte lezer.](how-to-assign-roles.md#default-roles) 
+Uw verificatiereferenties worden meestal bewaard in een gegevensopslag, die wordt gebruikt om ervoor te zorgen dat u toegang hebt tot de opslagservice. Wanneer deze referenties zijn geregistreerd via gegevensstores, kan elke gebruiker met de rol lezer van de werkruimte deze ophalen. Deze schaal van toegang kan voor sommige organisaties een beveiligingsrisico zijn. [Meer informatie over de rol Lezer van de werkruimte.](how-to-assign-roles.md#default-roles) 
 
-Wanneer u toegang tot gegevens op basis van een identiteit gebruikt, vraagt Azure Machine Learning u om uw Azure Active Directory-token voor verificatie van gegevens toegang in plaats van uw referenties in het gegevens archief te bewaren. Op die manier wordt het beheer van gegevens toegang op het opslag niveau toegestaan en blijven referenties vertrouwelijk. 
+Wanneer u op identiteit gebaseerde gegevenstoegang gebruikt, wordt Azure Machine Learning gevraagd om uw Azure Active Directory-token voor verificatie van gegevenstoegang in plaats van uw referenties in de gegevensstore te bewaren. Met deze benadering is gegevenstoegangsbeheer op opslagniveau mogelijk en blijven referenties vertrouwelijk. 
 
-Hetzelfde gedrag geldt wanneer u:
+Hetzelfde gedrag is van toepassing wanneer u:
 
-* [Maak rechtstreeks vanuit opslag-url's een gegevensset](#use-data-in-storage). 
-* Werk samen met gegevens interactief via een Jupyter Notebook op uw lokale computer of [reken instantie](concept-compute-instance.md).
+* [Maak een gegevensset rechtstreeks vanuit opslag-URL's.](#use-data-in-storage) 
+* Interactief met gegevens werken via een Jupyter Notebook op uw lokale computer of [reken-exemplaar](concept-compute-instance.md).
 
 > [!NOTE]
-> De referenties die zijn opgeslagen via verificatie op basis van referenties zijn abonnements-Id's, SAS-tokens (Shared Access Signature) en toegangs sleutel voor opslag en Service-Principal-informatie, zoals client-Id's en Tenant-Id's.
+> Referenties die zijn opgeslagen via verificatie op basis van referenties, zijn abonnements-ID's, SAS-tokens (Shared Access Signature) en informatie over de opslagtoegangssleutel en service-principal, zoals client-ID's en tenant-ID's.
 
-### <a name="model-training-on-private-data"></a>Model training over privé gegevens
+### <a name="model-training-on-private-data"></a>Modeltraining voor privégegevens
 
-Bepaalde machine learning scenario's hebben betrekking op trainings modellen met persoonlijke gegevens. In dergelijke gevallen moeten gegevens wetenschappers trainings werk stromen uitvoeren zonder dat ze worden blootgesteld aan de vertrouwelijke invoer gegevens. In dit scenario wordt een beheerde identiteit van de trainings Compute gebruikt voor de verificatie van gegevens toegang. Met deze aanpak kunnen opslag beheerders toegang krijgen tot de gegevens lezer van de opslag-BLOB voor de beheerde identiteit die de trainings Compute gebruikt om de trainings taak uit te voeren. De individuele gegevens wetenschappers hoeven geen toegang te krijgen. Zie [Managed Identity instellen op een berekenings cluster](how-to-create-attach-compute-cluster.md#managed-identity)voor meer informatie.
+Bepaalde machine learning hebben betrekking op trainingsmodellen met persoonlijke gegevens. In dergelijke gevallen moeten gegevenswetenschappers trainingswerkstromen uitvoeren zonder dat ze worden blootgesteld aan de vertrouwelijke invoergegevens. In dit scenario wordt een beheerde identiteit van het trainingsrekenproces gebruikt voor verificatie van gegevenstoegang. Met deze benadering kunnen opslagbeheerders Storage Blob Data Reader toegang verlenen tot de beheerde identiteit die door de trainingsrekenkracht wordt gebruikt om de trainings job uit te voeren. De afzonderlijke gegevenswetenschappers hoeven geen toegang te krijgen. Zie Beheerde identiteit instellen op [een rekencluster voor meer informatie.](how-to-create-attach-compute-cluster.md#managed-identity)
 
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer de [gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
+- Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 
-- Een Azure-opslag account met een ondersteund opslag type. Deze opslag typen worden ondersteund in Preview: 
+- Een Azure-opslagaccount met een ondersteund opslagtype. Deze opslagtypen worden ondersteund in de preview-versie: 
     - [Azure Blob Storage](../storage/blobs/storage-blobs-overview.md)
     - [Azure Data Lake Storage Gen1](../data-lake-store/index.yml)
     - [Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md)
     - [Azure SQL Database](../azure-sql/database/sql-database-paas-overview.md)
 
-- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install).
+- De [Azure Machine Learning-SDK voor Python](/python/api/overview/azure/ml/install).
 
 - Een Azure Machine Learning-werkruimte.
   
-  [Maak een Azure machine learning-werk ruimte](how-to-manage-workspace.md) of gebruik een [bestaand item via de python-SDK](how-to-manage-workspace.md#connect-to-a-workspace). 
+  Maak [een Azure Machine Learning werkruimte of](how-to-manage-workspace.md) gebruik een bestaande werkruimte via de Python [SDK.](how-to-manage-workspace.md#connect-to-a-workspace) 
 
-## <a name="storage-access-permissions"></a>Toegangs machtigingen voor opslag
+## <a name="storage-access-permissions"></a>Toegangsmachtigingen voor opslag
 
-Om ervoor te zorgen dat u veilig verbinding maakt met uw opslag service op Azure, moet u voor Azure Machine Learning toegang hebben tot de bijbehorende gegevens opslag.
+Om ervoor te zorgen dat u veilig verbinding maakt met uw opslagservice in Azure, moet Azure Machine Learning toegang hebben tot de bijbehorende gegevensopslag.
 
-Gegevens toegang op basis van identiteiten ondersteunt verbindingen met alleen de volgende opslag Services:
+Op identiteit gebaseerde gegevenstoegang ondersteunt alleen verbindingen met de volgende opslagservices:
 
 * Azure Blob Storage
 * Azure Data Lake Storage Gen1
 * Azure Data Lake Storage Gen2
 * Azure SQL Database
 
-Voor toegang tot deze opslag Services moet u ten minste toegang hebben tot de [opslag BLOB-gegevens lezer](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) . Alleen eigen aars van opslag accounts kunnen [uw toegangs niveau wijzigen via de Azure Portal](../storage/common/storage-auth-aad-rbac-portal.md).
+Als u toegang wilt krijgen tot deze opslagservices, moet u ten minste toegang hebben [tot Storage Blob Data Reader.](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) Alleen eigenaren van opslagaccounts [kunnen uw toegangsniveau wijzigen via de Azure Portal](../storage/common/storage-auth-aad-rbac-portal.md).
 
-Als u een model op een extern Compute-doel wilt trainen, moet aan de compute-identiteit ten minste de rol van BLOB-gegevens lezer voor opslag van de opslag service worden verleend. Meer informatie over het [instellen van een beheerde identiteit op een berekenings cluster](how-to-create-attach-compute-cluster.md#managed-identity).
+Als u een model traint op een extern rekendoel, moet aan de rekenidentiteit ten minste de rol Lezer van opslagblobgegevens van de opslagservice worden verleend. Meer informatie over [het instellen van een beheerde identiteit op een rekencluster.](how-to-create-attach-compute-cluster.md#managed-identity)
 
 ## <a name="work-with-virtual-networks"></a>Werken met virtuele netwerken
 
-Azure Machine Learning kan standaard niet communiceren met een opslag account dat zich achter een firewall of in een virtueel netwerk bevindt.
+Standaard kunnen Azure Machine Learning niet communiceren met een opslagaccount dat zich achter een firewall of in een virtueel netwerk bevinden.
 
-U kunt opslag accounts zodanig configureren dat ze alleen toegang hebben tot binnen specifieke virtuele netwerken. Deze configuratie vereist extra stappen om ervoor te zorgen dat gegevens niet buiten het netwerk worden gelekt. Dit gedrag is hetzelfde voor op referenties gebaseerde gegevens toegang. Zie [scenario's voor virtuele netwerken configureren](how-to-access-data.md#virtual-network)voor meer informatie. 
+U kunt opslagaccounts zo configureren dat alleen toegang vanuit specifieke virtuele netwerken wordt toegestaan. Deze configuratie vereist extra stappen om ervoor te zorgen dat gegevens niet buiten het netwerk worden gelekt. Dit gedrag is hetzelfde voor toegang tot gegevens op basis van referenties. Zie Scenario's voor virtuele netwerken [configureren voor meer informatie.](how-to-access-data.md#virtual-network) 
 
-## <a name="create-and-register-datastores"></a>Gegevens opslag maken en registreren
+## <a name="create-and-register-datastores"></a>Gegevensstores maken en registreren
 
-Wanneer u een opslag service in azure registreert als een Data Store, maakt en registreert u die gegevens archief automatisch aan een specifieke werk ruimte. Zie [opslag toegangs machtigingen](#storage-access-permissions) voor hulp bij de vereiste machtigings typen. Zie [werken met virtuele netwerken](#work-with-virtual-networks) voor meer informatie over het maken van verbinding met gegevens opslag achter virtuele netwerken.
+Wanneer u een opslagservice in Azure registreert als een gegevensopslag, maakt en registreert u die gegevensopslag automatisch in een specifieke werkruimte. Zie [Toegangsmachtigingen voor opslag](#storage-access-permissions) voor hulp bij vereiste machtigingstypen. Zie [Werken met virtuele netwerken voor](#work-with-virtual-networks) meer informatie over het maken van verbinding met gegevensopslag achter virtuele netwerken.
 
-In de volgende code ziet u het ontbreken van verificatie parameters zoals `sas_token` , `account_key` , `subscription_id` en de Service-Principal `client_id` . Dit weglating geeft aan dat Azure Machine Learning toegang tot gegevens op basis van identiteiten gebruikt voor verificatie. Het maken van gegevens opslag gebeurt doorgaans interactief in een notebook of via Studio. Uw Azure Active Directory-token wordt dus gebruikt voor verificatie van gegevens toegang.
+In de volgende code ziet u dat er geen verificatieparameters `sas_token` zijn, zoals `account_key` , , en `subscription_id` de service-principal `client_id` . Deze weglating geeft aan dat Azure Machine Learning op identiteit gebaseerde gegevenstoegang gebruikt voor verificatie. Het maken van gegevensstores gebeurt doorgaans interactief in een notebook of via de studio. Uw Azure Active Directory wordt dus gebruikt voor verificatie van gegevenstoegang.
 
 > [!NOTE]
-> Namen van gegevens opslag mogen alleen bestaan uit kleine letters, cijfers en onderstrepings tekens. 
+> Gegevensstorenamen mogen alleen bestaan uit kleine letters, cijfers en onderstrepingstekens. 
 
 ### <a name="azure-blob-container"></a>Azure Blob-container
 
-Als u een Azure Blob-container wilt registreren als gegevens opslag, gebruikt u [`register_azure_blob_container()`](/python/api/azureml-core/azureml.core.datastore%28class%29#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-) .
+Gebruik om een Azure Blob-container te registreren als een [`register_azure_blob_container()`](/python/api/azureml-core/azureml.core.datastore%28class%29#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-) gegevensopslag.
 
-De volgende code maakt de `credentialless_blob` gegevens opslag, registreert deze aan de `ws` werk ruimte en wijst deze toe aan de `blob_datastore` variabele. Deze Data Store heeft toegang tot de `my_container_name` BLOB-container op het `my-account-name` opslag account.
+Met de volgende code maakt u de gegevensstore, registreert u deze `credentialless_blob` in de werkruimte en wijst u deze toe aan de variabele `ws` `blob_datastore` . Deze gegevensopslag heeft toegang tot de `my_container_name` blobcontainer in `my-account-name` het opslagaccount.
 
 ```Python
 # Create blob datastore without credentials.
@@ -119,9 +119,9 @@ blob_datastore = Datastore.register_azure_blob_container(workspace=ws,
 
 ### <a name="azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1
 
-Gebruik [register_azure_data_lake ()](/python/api/azureml-core/azureml.core.datastore.datastore#register-azure-data-lake-workspace--datastore-name--store-name--tenant-id-none--client-id-none--client-secret-none--resource-url-none--authority-url-none--subscription-id-none--resource-group-none--overwrite-false--grant-workspace-access-false-) om een gegevens opslag te registreren die verbinding maakt met Azure data Lake Storage gen1.
+Gebruik [register_azure_data_lake() om](/python/api/azureml-core/azureml.core.datastore.datastore#register-azure-data-lake-workspace--datastore-name--store-name--tenant-id-none--client-id-none--client-secret-none--resource-url-none--authority-url-none--subscription-id-none--resource-group-none--overwrite-false--grant-workspace-access-false-) een gegevensstore te registreren die verbinding maakt met Azure Data Lake Storage Gen1.
 
-De volgende code maakt de `credentialless_adls1` gegevens opslag, registreert deze aan de `workspace` werk ruimte en wijst deze toe aan de `adls_dstore` variabele. Deze Data Store heeft toegang tot het `adls_storage` Azure data Lake Storage-account.
+Met de volgende code maakt u de gegevensstore, registreert u deze `credentialless_adls1` in de werkruimte en wijst u deze toe aan de variabele `workspace` `adls_dstore` . Deze gegevensstore heeft toegang tot `adls_storage` Azure Data Lake Storage account.
 
 ```Python
 # Create Azure Data Lake Storage Gen1 datastore without credentials.
@@ -133,9 +133,9 @@ adls_dstore = Datastore.register_azure_data_lake(workspace = workspace,
 
 ### <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
 
-Gebruik [register_azure_data_lake_gen2 ()](/python/api/azureml-core/azureml.core.datastore.datastore#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) om een gegevens opslag te registreren die verbinding maakt met Azure data Lake Storage Gen2.
+Gebruik [register_azure_data_lake_gen2() om](/python/api/azureml-core/azureml.core.datastore.datastore#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) een gegevensstore te registreren die verbinding maakt met Azure Data Lake Storage Gen2.
 
-De volgende code maakt de `credentialless_adls2` gegevens opslag, registreert deze aan de `ws` werk ruimte en wijst deze toe aan de `adls2_dstore` variabele. Deze Data Store heeft toegang tot het bestands systeem `tabular` in het `myadls2` opslag account.  
+Met de volgende code maakt u de gegevensstore, registreert u deze `credentialless_adls2` in de werkruimte en wijst u deze toe aan de variabele `ws` `adls2_dstore` . Dit gegevensopslag heeft toegang tot het bestandssysteem `tabular` in het `myadls2` opslagaccount.  
 
 ```python
 # Create Azure Data Lake Storage Gen2 datastore without credentials.
@@ -145,32 +145,32 @@ adls2_dstore = Datastore.register_azure_data_lake_gen2(workspace=ws,
                                                        account_name='myadls2')
 ```
 
-## <a name="use-data-in-storage"></a>Gegevens in de opslag gebruiken
+## <a name="use-data-in-storage"></a>Gegevens in opslag gebruiken
 
-U wordt aangeraden [Azure machine learning gegevens sets](how-to-create-register-datasets.md) te gebruiken wanneer u met uw gegevens in Storage communiceert met Azure machine learning. 
+We raden u aan om Azure Machine Learning [gegevenssets te gebruiken](how-to-create-register-datasets.md) wanneer u met uw gegevens in de opslag werkt met Azure Machine Learning. 
 
-Gegevens sets worden verpakt in een vertraagd geëvalueerd voor het verbruikte object voor machine learning taken als training. Met gegevens sets kunt u ook bestanden van elke indeling [downloaden of koppelen](how-to-train-with-datasets.md#mount-vs-download) van Azure Storage-services zoals Azure Blob Storage en Azure data Lake Storage naar een reken doel.
+Gegevenssets verpakken uw gegevens in een lazily geëvalueerd verbruiksobject voor machine learning taken zoals training. Met gegevenssets kunt [](how-to-train-with-datasets.md#mount-vs-download) u ook bestanden van elke indeling downloaden of aan een rekendoel toevoegen vanuit Azure-opslagservices, Azure Blob Storage en Azure Data Lake Storage aan een rekendoel.
 
 
-U hebt de volgende opties om gegevens sets te maken met toegang op basis van identiteiten. Bij het maken van dit type gegevensset wordt uw Azure Active Directory-token gebruikt voor verificatie van gegevens toegang. 
+Als u gegevenssets wilt maken met op identiteit gebaseerde gegevenstoegang, hebt u de volgende opties. Dit type gegevensset maakt gebruik van uw Azure Active Directory-token voor verificatie van gegevenstoegang. 
 
-*  Referentie paden van data stores die ook toegang tot gegevens op basis van identiteiten gebruiken. 
-<br>In het volgende voor beeld `blob_datastore` bestaat al en maakt gebruik van identiteits gegevens toegang.   
+*  Referentiepaden van gegevensstores die ook gebruikmaken van op identiteit gebaseerde gegevenstoegang. 
+<br>In het volgende voorbeeld `blob_datastore` bestaat al en wordt gebruikgemaakt van op identiteit gebaseerde gegevenstoegang.   
 
     ```python
     blob_dataset = Dataset.Tabular.from_delimited_files(blob_datastore,'test.csv') 
     ```
 
-* Sla het maken van Data Store over en maak rechtstreeks gegevens sets van opslag-Url's. Deze functionaliteit ondersteunt momenteel alleen Azure-blobs en Azure Data Lake Storage Gen1 en Gen2.
+* Sla het maken van gegevensopslag over en maak gegevenssets rechtstreeks vanuit opslag-URL's. Deze functionaliteit ondersteunt momenteel alleen Azure-blobs en Azure Data Lake Storage Gen1 gen2.
 
     ```python
     blob_dset = Dataset.File.from_files('https://myblob.blob.core.windows.net/may/keras-mnist-fashion/')
     ```
 
-Wanneer u een trainings taak indient die gebruikmaakt van een gegevensset die is gemaakt met gegevens toegang op basis van identiteit, wordt de beheerde identiteit van de trainings Compute gebruikt voor verificatie van gegevens toegang. Uw Azure Active Directory-token wordt niet gebruikt. Voor dit scenario moet u ervoor zorgen dat aan de beheerde identiteit van de compute wordt voldaan ten minste de rol van BLOB-gegevens lezer voor opslag van de opslag service. Zie [Managed Identity instellen op compute clusters](how-to-create-attach-compute-cluster.md#managed-identity)voor meer informatie. 
+Wanneer u een trainings job indient die gebruik maakt van een gegevensset die is gemaakt met op identiteit gebaseerde gegevenstoegang, wordt de beheerde identiteit van de trainingsrekenset gebruikt voor verificatie van gegevenstoegang. Uw Azure Active Directory token wordt niet gebruikt. Voor dit scenario moet u ervoor zorgen dat aan de beheerde identiteit van de rekenkracht ten minste de rol Lezer van opslagblobgegevens van de opslagservice wordt verleend. Zie Beheerde identiteit instellen op rekenclusters [voor meer informatie.](how-to-create-attach-compute-cluster.md#managed-identity) 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een Azure Machine Learning-gegevensset maken](how-to-create-register-datasets.md)
+* [Een gegevensset Azure Machine Learning maken](how-to-create-register-datasets.md)
 * [Trainen met gegevenssets](how-to-train-with-datasets.md)
-* [Een gegevens opslag maken met toegang op basis van sleutels](how-to-access-data.md)
+* [Een gegevensstore maken met op sleutels gebaseerde gegevenstoegang](how-to-access-data.md)

@@ -1,65 +1,65 @@
 ---
-title: Diagnostische logboeken van Azure Kubernetes service (AKS) verbinden met Azure Sentinel
-description: Informatie over het gebruik van Azure Policy om Diagnostische logboeken van Azure Kubernetes-service te verbinden met Azure Sentinel.
+title: Verbinding maken Azure Kubernetes Service diagnostische logboeken (AKS) met Azure Sentinel
+description: Informatie over het gebruik van Azure Policy om verbinding te maken Azure Kubernetes Service diagnostische logboeken met Azure Sentinel.
 author: yelevin
 manager: rkarlin
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: how-to
-ms.date: 03/07/2021
+ms.date: 04/22/2021
 ms.author: yelevin
-ms.openlocfilehash: c3a4593aa92acededf9784974b2a1e2dd3cfb319
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: f1ef860f1b84de84c42996a7523af8ce174d5981
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102507174"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107890794"
 ---
-# <a name="connect-azure-kubernetes-service-diagnostics-logs"></a>Verbinding maken met Azure Kubernetes service Diagnostics-logboeken
+# <a name="connect-azure-kubernetes-service-diagnostics-logs"></a>Verbinding Azure Kubernetes Service diagnostische logboeken
 
-Azure Kubernetes service (AKS) is een open-source, volledig beheerde container service waarmee u docker-containers en op containers gebaseerde toepassingen in een cluster omgeving kunt implementeren, schalen en beheren.
+Azure Kubernetes Service (AKS) is een open source, volledig beheerde container orchestration-service waarmee u Docker-containers en containertoepassingen in een clusteromgeving kunt implementeren, schalen en beheren.
 
-Met deze connector kunt u Diagnostische logboeken van Azure Kubernetes service (AKS) streamen naar Azure Sentinel, zodat u de activiteiten in al uw instanties voortdurend kunt bewaken. 
+Met deze connector kunt u diagnostische logboeken Azure Kubernetes Service AKS (AKS) streamen naar Azure Sentinel, zodat u de activiteiten in al uw exemplaren continu kunt bewaken. 
 
-Meer informatie over het [bewaken van de Azure Kubernetes-service](../azure-monitor/containers/container-insights-overview.md) en over [AKS Diagnostic-telemetrie](../aks/view-control-plane-logs.md).
+Meer informatie over [bewaking van Azure Kubernetes Service](../azure-monitor/containers/container-insights-overview.md) en over [diagnostische AKS-telemetrie.](../aks/view-control-plane-logs.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-AKS-logboeken opnemen in azure Sentinel:
+AKS-logboeken opnemen in Azure Sentinel:
 
-- U moet lees-en schrijf machtigingen hebben voor de Azure Sentinel-werk ruimte.
+- U moet lees- en schrijfmachtigingen hebben voor de Azure Sentinel werkruimte.
 
-- Als u Azure Policy wilt gebruiken om een beleid voor het streamen van Logboeken toe te passen op AKS-resources, moet u de rol van eigenaar toegewezen zijn voor het bereik van beleids toewijzing.
+- Als u Azure Policy om een beleid voor logboekstreaming toe te passen op AKS-resources, moet u de rol Eigenaar hebben voor het bereik van de beleidstoewijzing.
 
-## <a name="connect-to-azure-kubernetes-service"></a>Verbinding maken met de Azure Kubernetes-service
+## <a name="connect-to-azure-kubernetes-service"></a>Verbinding maken met Azure Kubernetes Service
 
-Deze connector gebruikt Azure Policy voor het Toep assen van één configuratie van een logboek streaming van Azure Kubernetes service op een verzameling exemplaren, gedefinieerd als een bereik. U kunt de logboek typen die zijn opgenomen vanuit de Azure Kubernetes-service weer geven aan de linkerkant van de connector pagina onder **gegevens typen**.
+Deze connector gebruikt Azure Policy om één configuratie Azure Kubernetes Service voor logboekstreaming toe te passen op een verzameling resources, gedefinieerd als een bereik. U ziet de logboektypen die zijn opgenomen Azure Kubernetes Service aan de linkerkant van de connectorpagina, onder **Gegevenstypen.**
 
-1. Selecteer in het navigatie menu van de Azure-Sentinel **Data connectors**.
+1. Selecteer in Azure Sentinel navigatiemenu **Gegevensconnectoren.**
 
-1. Selecteer **Azure Kubernetes service (AKS)** in de galerie met gegevens connectors en selecteer vervolgens **connector pagina openen** in het voorbeeld venster.
+1. Selecteer **Azure Kubernetes Service (AKS) in** de galerie met gegevensconnectoren en selecteer vervolgens **Connectorpagina** openen in het voorbeeldvenster.
 
-1. Vouw in de sectie **configuratie** van de pagina connector **Diagnostische logboeken inschakelen in azure KUBERNETES service (AKS)** uit.
+1. Vouw in **de sectie** Configuratie van de connectorpagina diagnostische logboeken streamen uit vanuit uw **Azure Kubernetes Service (AKS) op schaal**.
 
-1. Selecteer de knop **wizard Azure Policy toewijzing starten** .
+1. Selecteer de **knop Azure Policy wizard Toewijzing** starten.
 
-    De wizard beleids toewijzing wordt geopend, klaar om een nieuw beleid te maken met de naam **Deploy-configure Diagnostic Settings for Azure Kubernetes service to log Analytics Workspace**.
+    De wizard beleidstoewijzing wordt geopend, klaar om een nieuw beleid te maken met de naam Implementeren - Diagnostische instellingen configureren voor Azure Kubernetes Service **naar Log Analytics-werkruimte**.
 
-    1. Klik op het tabblad **basis beginselen** op de knop met de drie puntjes onder **bereik** om uw abonnement te selecteren (en eventueel een resource groep). U kunt ook een beschrijving toevoegen.
+    1. Klik op **het** tabblad Basisinformatie op de knop met de drie puntjes onder **Bereik** om uw abonnement (en eventueel een resourcegroep) te selecteren. U kunt ook een beschrijving toevoegen.
 
-    1. Kies op het tabblad **para meters** de Azure Sentinel-werk ruimte in de vervolg keuzelijst **log Analytics werk ruimte** . De resterende vervolg keuzelijst velden vertegenwoordigen de beschik bare typen diagnose Logboeken. Geef op ' True ' alle logboek typen op die u wilt opnemen.
+    1. Laat op **het** tabblad Parameters de **velden Effect** en **Setting name** staan. Kies uw Azure Sentinel werkruimte in de **vervolgkeuzelijst Log** Analytics-werkruimte. De resterende vervolgkeuzevelden vertegenwoordigen de beschikbare typen diagnostische logboeken. Laat alle logboektypen die u wilt opnemen gemarkeerd als Waar.
 
-    1. Als u het beleid wilt Toep assen op uw bestaande resources, selecteert u het tabblad **herstel** en schakelt u het selectie vakje **een herstel taak maken** in.
+    1. Het beleid wordt toegepast op resources die in de toekomst worden toegevoegd. Als u het beleid ook wilt toepassen  op uw bestaande resources, selecteert u het tabblad Herstel en selecteert u het selectievakje Een **hersteltaak** maken.
 
-    1. Klik op het tabblad **Beoordelen en maken** op **Maken**. Uw beleid wordt nu toegewezen aan het bereik dat u hebt gekozen.
+    1. Klik op het tabblad **Beoordelen en maken** op **Maken**. Uw beleid is nu toegewezen aan het bereik dat u hebt gekozen.
 
 > [!NOTE]
 >
-> Met deze specifieke gegevens connector wordt de verbindings status indicator (een kleur balk in de galerie met gegevens connectors en verbindings pictogrammen naast de namen van gegevens typen) alleen weer gegeven als *verbonden* (groen) als de gegevens op een bepaald moment in de afgelopen twee weken zijn opgenomen. Als er twee weken zijn geslaagd zonder opname van gegevens, wordt de connector weer gegeven als niet-verbonden. Op het moment dat er meer gegevens worden opgehaald, wordt de status *verbonden* geretourneerd.
+> Met deze specifieke gegevensconnector worden de connectiviteitsstatusindicatoren (een kleurstree in de galerie met  gegevensconnectoren en verbindingspictogrammen naast de gegevenstypenamen) alleen weergegeven als verbonden (groen) als gegevens op een bepaald moment in de afgelopen 14 dagen zijn opgenomen. Zodra er 14 dagen zijn verstreken zonder dat er gegevens worden opgenomen, wordt de verbinding met de connector verbroken. Zodra er meer gegevens worden verzameld, wordt *de verbonden* status weer terug.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit document hebt u geleerd hoe u de Azure Kubernetes-service kunt verbinden met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
+In dit document hebt u geleerd hoe u Azure Policy verbinding kunt Azure Kubernetes Service met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 
-- Meer informatie over hoe u [inzicht krijgt in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
+- Meer informatie over het [krijgen van inzicht in uw gegevens en mogelijke bedreigingen.](quickstart-get-visibility.md)
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats-built-in.md).

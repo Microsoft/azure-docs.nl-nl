@@ -1,7 +1,7 @@
 ---
 title: Migreren van schatters naar ScriptRunConfig
 titleSuffix: Azure Machine Learning
-description: Migratie handleiding voor de migratie van schattingen naar ScriptRunConfig voor het configureren van trainings taken.
+description: Migratiehandleiding voor het migreren van estimators naar ScriptRunConfig voor het configureren van trainingstaken.
 services: machine-learning
 author: mx-iao
 ms.author: minxia
@@ -9,48 +9,48 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 12/14/2020
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: ae0623a11b940a4d142f6bfae02d4b20727a6f55
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.topic: how-to
+ms.custom: devx-track-python, contperf-fy21q1
+ms.openlocfilehash: daf142f6e49a09556d05faf4eea23b31a2cab995
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102518869"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107888832"
 ---
-# <a name="migrating-from-estimators-to-scriptrunconfig"></a>Migreren van schattingen naar ScriptRunConfig
+# <a name="migrating-from-estimators-to-scriptrunconfig"></a>Migreren van estimators naar ScriptRunConfig
 
-Tot nu toe zijn er meerdere methoden voor het configureren van een trainings taak in Azure Machine Learning via de SDK, met inbegrip van schattingen, ScriptRunConfig en de RunConfiguration op lagere niveaus.   Om deze dubbel zinnigheid en inconsistentie op te lossen, vereenvoudigen we het taak configuratie proces in azure ML.  U moet nu ScriptRunConfig gebruiken als de aanbevolen optie voor het configureren van trainings taken. 
+Tot nu toe zijn er meerdere methoden voor het configureren van een trainings job in Azure Machine Learning via de SDK, waaronder estimators, ScriptRunConfig en RunConfiguration op lager niveau.   Om deze dubbelzinnigheid en inconsistentie aan te pakken, vereenvoudigen we het taakconfiguratieproces in Azure ML.  U moet nu ScriptRunConfig gebruiken als de aanbevolen optie voor het configureren van trainingstaken. 
 
-Schattingen zijn afgeschaft met de 1.19.0-versie van de python-SDK. U moet ook in het algemeen voor komen dat u zelf een RunConfiguration-object kunt instantiëren en in plaats daarvan uw taak configureren met behulp van de klasse ScriptRunConfig.
+Estimators zijn afgeschaft met de versie 1.19.0 van de Python SDK. Over het algemeen moet u ook voorkomen dat u zelf expliciet een RunConfiguration-object maakt en in plaats daarvan uw taak configureert met behulp van de klasse ScriptRunConfig.
 
-Dit artikel heeft betrekking op algemene overwegingen bij de migratie van schattingen naar ScriptRunConfig.
+In dit artikel worden veelvoorkomende overwegingen beschreven bij het migreren van estimators naar ScriptRunConfig.
 
 > [!IMPORTANT]
-> Als u wilt migreren naar ScriptRunConfig van schattingen, moet u >= 1.15.0 van de python-SDK gebruiken.
+> Als u wilt migreren naar ScriptRunConfig vanuit Estimators, moet u ervoor zorgen dat u >= 1.15.0 van de Python SDK gebruikt.
 
-## <a name="scriptrunconfig-documentation-and-samples"></a>Documentatie en voor beelden ScriptRunConfig
-Azure Machine Learning documentatie en voor beelden zijn bijgewerkt om [ScriptRunConfig](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig) te gebruiken voor taak configuratie en-verzen ding.
+## <a name="scriptrunconfig-documentation-and-samples"></a>ScriptRunConfig-documentatie en -voorbeelden
+Azure Machine Learning en voorbeelden zijn bijgewerkt voor het gebruik [van ScriptRunConfig](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig) voor het configureren en indienen van de taak.
 
-Raadpleeg de volgende documentatie voor meer informatie over het gebruik van ScriptRunConfig:
+Raadpleeg de volgende documentatie voor informatie over het gebruik van ScriptRunConfig:
 * [Trainingsuitvoering configureren en verzenden](how-to-set-up-training-targets.md)
-* [PyTorch training-uitvoeringen configureren](how-to-train-pytorch.md)
-* [Tensor flow training-uitvoeringen configureren](how-to-train-tensorflow.md)
-* [Scikit configureren-trainings uitvoeringen leren](how-to-train-scikit-learn.md)
+* [PyTorch-trainings runs configureren](how-to-train-pytorch.md)
+* [TensorFlow-trainingsuit runs configureren](how-to-train-tensorflow.md)
+* [Scikit-learn-trainings runs configureren](how-to-train-scikit-learn.md)
 
-Raadpleeg bovendien de volgende voor beelden & zelf studies:
-* [Azure-MachineLearningNotebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks)
+Raadpleeg daarnaast de volgende voorbeelden & zelfstudies:
+* [Azure/MachineLearningNotebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks)
 * [Azure/azureml-examples](https://github.com/Azure/azureml-examples)
 
-## <a name="defining-the-training-environment"></a>De trainings omgeving definiëren
-Hoewel de verschillende Framework-schattingen vooraf geconfigureerde omgevingen hebben die worden ondersteund door docker-installatie kopieën, zijn de Dockerfiles voor deze installatie kopieën persoonlijk.  Daarom hebt u geen veel transparantie in wat deze omgevingen bevatten. Daarnaast nemen de schattingen in de omgeving-gerelateerde configuraties als afzonderlijke para meters (zoals `pip_packages` , `custom_docker_image` ) op hun respectieve constructors.
+## <a name="defining-the-training-environment"></a>De trainingsomgeving definiëren
+Hoewel de verschillende frameworkschattingen vooraf geconfigureerde omgevingen hebben die worden gebruikt door Docker-afbeeldingen, zijn de Dockerfiles voor deze afbeeldingen privé.  Daarom hebt u niet veel transparantie in wat deze omgevingen bevatten. Bovendien nemen de estimators omgevingsgerelateerde configuraties op als afzonderlijke parameters (zoals `pip_packages` , ) op hun respectieve `custom_docker_image` constructors.
 
-Wanneer u ScriptRunConfig gebruikt, worden alle omgevings configuraties ingekapseld in het `Environment` object dat wordt door gegeven aan de `environment` para meter van de ScriptRunConfig-constructor. Als u een trainings taak wilt configureren, geeft u een omgeving met alle afhankelijkheden die nodig zijn voor uw trainings script. Als er geen omgeving wordt opgegeven, gebruikt Azure ML een van de basis installatie kopieën van Azure ML, met name de naam die wordt gedefinieerd door `azureml.core.environment.DEFAULT_CPU_IMAGE` , als de standaard omgeving. Er zijn een aantal manieren om een omgeving te bieden:
+Wanneer u ScriptRunConfig gebruikt, worden alle omgevingsconfiguraties ingekapseld in het -object dat wordt doorgegeven aan de parameter van de `Environment` `environment` ScriptRunConfig-constructor. Als u een trainings job wilt configureren, geeft u een omgeving op met alle afhankelijkheden die vereist zijn voor uw trainingsscript. Als er geen omgeving is opgegeven, gebruikt Azure ML een van de Azure ML-basisafbeeldingen, met name de omgeving die is gedefinieerd door `azureml.core.environment.DEFAULT_CPU_IMAGE` , als de standaardomgeving. Er zijn een aantal manieren om een omgeving te bieden:
 
-* Het gebruik van een gehoste [omgeving met een bedrijfs netwerk](how-to-use-environments.md#use-a-curated-environment) is standaard vooraf gedefinieerde omgevingen die beschikbaar zijn in uw werk ruimte. Er is een overeenkomende toegewezen omgeving voor elk van de vooraf geconfigureerde docker-installatie kopieën van Framework/Version die een back-up van elk Framework-Estimator.
+* [Een gecureerde omgeving gebruiken:](how-to-use-environments.md#use-a-curated-environment) gecureerde omgevingen zijn standaard vooraf gedefinieerde omgevingen die beschikbaar zijn in uw werkruimte. Er is een bijbehorende gecureerde omgeving voor elk van de vooraf geconfigureerde Docker-framework-/versie-afbeeldingen die een back-van-elke framework-estimator maakten.
 * [Uw eigen aangepaste omgeving definiëren](how-to-use-environments.md)
 
-Hier volgt een voor beeld van het gebruik van de PyTorch 1,6-omgeving met curator voor training:
+Hier is een voorbeeld van het gebruik van de gecureerde PyTorch 1.6-omgeving voor training:
 
 ```python
 from azureml.core import Workspace, ScriptRunConfig, Environment
@@ -65,7 +65,7 @@ src = ScriptRunConfig(source_directory='.',
                       environment=pytorch_env)
 ```
 
-Als u **omgevings variabelen** wilt opgeven die worden ingesteld voor het proces waarin het trainings script wordt uitgevoerd, gebruikt u het omgevings object:
+Als u **omgevingsvariabelen wilt opgeven** die worden ingesteld voor het proces waarin het trainingsscript wordt uitgevoerd, gebruikt u het object Environment:
 ```
 myenv.environment_variables = {"MESSAGE":"Hello from Azure Machine Learning"}
 ```
@@ -73,13 +73,13 @@ myenv.environment_variables = {"MESSAGE":"Hello from Azure Machine Learning"}
 Zie voor meer informatie over het configureren en beheren van Azure ML-omgevingen:
 * [Omgevingen gebruiken](how-to-use-environments.md)
 * [Gecureerde omgevingen](resource-curated-environments.md)
-* [Train met een aangepaste docker-installatie kopie](how-to-train-with-custom-image.md)
+* [Trainen met een aangepaste Docker-afbeelding](how-to-train-with-custom-image.md)
 
 ## <a name="using-data-for-training"></a>Gegevens gebruiken voor training
 ### <a name="datasets"></a>Gegevenssets
-Als u een Azure ML-gegevensset gebruikt voor training, geeft u de gegevensset door als een argument voor uw script met behulp van de `arguments` para meter. Als u dit doet, wordt het gegevenspad (koppelings punt of download traject) in uw trainings script via argumenten weer gegeven.
+Als u een Azure ML-gegevensset gebruikt voor training, geeft u de gegevensset als argument aan uw script door met behulp van de `arguments` parameter . Als u dit doet, krijgt u het gegevenspad (het bevestigingspunt of downloadpad) via argumenten in uw trainingsscript op.
 
-In het volgende voor beeld wordt een trainings taak geconfigureerd waarbij de FileDataset, `mnist_ds` wordt gekoppeld aan de externe compute.
+In het volgende voorbeeld wordt een trainings job geconfigureerd waarbij de FileDataset, `mnist_ds` , wordt toegevoegd aan de externe rekenkracht.
 ```python
 src = ScriptRunConfig(source_directory='.',
                       script='train.py',
@@ -89,7 +89,7 @@ src = ScriptRunConfig(source_directory='.',
 ```
 
 ### <a name="datareference-old"></a>DataReference (oud)
-We raden u aan om Azure ML-gegevens sets te gebruiken op de oude DataReferencee manier als u DataReferences nog steeds gebruikt om een wille keurige reden, moet u uw taak als volgt configureren:
+Hoewel we het gebruik van Azure ML-gegevenssets op de oude DataReference-manier aanraden, moet u uw taak als volgt configureren als u DataReferences nog steeds gebruikt:
 ```python
 # if you want to pass a DataReference object, such as the below:
 datastore = ws.get_default_datastore()
@@ -104,12 +104,12 @@ src.run_config.data_references = {data_ref.data_reference_name: data_ref.to_conf
 ```
 
 Zie voor meer informatie over het gebruik van gegevens voor training:
-* [Train met gegevens sets in azure ML](./how-to-train-with-datasets.md)
+* [Trainen met gegevenssets in Azure ML](./how-to-train-with-datasets.md)
 
 ## <a name="distributed-training"></a>Gedistribueerde training
-Als u een gedistribueerde taak voor training moet configureren, moet u de `distributed_job_config` para meter in de ScriptRunConfig-constructor opgeven. Geef een [MpiConfiguration](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration), [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration)of [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration) door voor gedistribueerde taken van de respectieve typen.
+Als u een gedistribueerde taak wilt configureren voor training, doet u dit door de parameter op te geven `distributed_job_config` in de ScriptRunConfig-constructor. Geef een [MpiConfiguration,](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration) [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration)of [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration) door voor gedistribueerde taken van de respectieve typen.
 
-In het volgende voor beeld wordt een PyTorch-trainings taak geconfigureerd voor het gebruik van gedistribueerde training met MPI/Horovod:
+In het volgende voorbeeld wordt een PyTorch-trainings job geconfigureerd voor het gebruik van gedistribueerde training met MPI/Horovod:
 ```python
 from azureml.core.runconfig import MpiConfiguration
 
@@ -122,10 +122,10 @@ src = ScriptRunConfig(source_directory='.',
 
 Zie voor meer informatie:
 * [Gedistribueerde training met PyTorch](how-to-train-pytorch.md#distributed-training)
-* [Gedistribueerde training met tensor flow](how-to-train-tensorflow.md#distributed-training)
+* [Gedistribueerde training met TensorFlow](how-to-train-tensorflow.md#distributed-training)
 
 ## <a name="miscellaneous"></a>Diversen
-Als u om een of andere reden toegang moet krijgen tot het onderliggende RunConfiguration-object voor een ScriptRunConfig, kunt u dit als volgt doen:
+Als u om welke reden dan ook toegang nodig hebt tot het onderliggende RunConfiguration-object voor een ScriptRunConfig, kunt u dit als volgt doen:
 ```
 src.run_config
 ```

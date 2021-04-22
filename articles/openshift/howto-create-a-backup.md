@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: c8bf722bd77372cd89e7c64757347b5fd07eb1ed
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 1be3c1182ef5491f70d4010d4c7e73ef43b87853
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107481358"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107883900"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Een toepassingsback-Azure Red Hat OpenShift 4-cluster maken
 
@@ -107,7 +107,7 @@ velero install \
 
 ## <a name="create-a-backup-with-velero"></a>Een back-up maken met Velero
 
-Als u een back-up van een toepassing wilt maken met Velero, moet u de naamruimte opnemen waarin deze toepassing zich in zich.  Als u een naamruimte hebt en alle resources in die naamruimte in de back-up wilt opnemen, moet u `nginx-example` de volgende opdracht uitvoeren in de terminal:
+Als u een back-up van een toepassing wilt maken met Velero, moet u de naamruimte opnemen waarin deze toepassing zich in deze toepassing.  Als u een naamruimte hebt en alle resources in die naamruimte in de back-up wilt opnemen, moet u de `nginx-example` volgende opdracht uitvoeren in de terminal:
 
 ```bash
 velero create backup <name of backup> --include-namespaces=nginx-example
@@ -122,7 +122,7 @@ Een geslaagde back-up wordt `phase:Completed` uitgevoerd en de objecten worden i
 
 ## <a name="create-a-backup-with-velero-to-include-snapshots"></a>Een back-up maken met Velero om momentopnamen op te nemen
 
-Als u een toepassingsback-up wilt maken met Velero om de permanente volumes van uw toepassing op te nemen, moet u de naamruimte opnemen waarin de toepassing zich in zich heeft en de vlag opnemen bij het maken van de `snapshot-volumes=true` back-up
+Als u een toepassingsback-up wilt maken met Velero om de permanente volumes van uw toepassing op te nemen, moet u de naamruimte van de toepassing opnemen en de vlag opnemen bij het maken van de `snapshot-volumes=true` back-up
 
 ```bash
 velero backup create <name of backup> --include-namespaces=nginx-example --snapshot-volumes=true --include-cluster-resources=true
@@ -143,11 +143,11 @@ Zie Backup OpenShift resources the native way (Back-up maken van [OpenShift-reso
 In dit artikel is een Azure Red Hat OpenShift 4-clustertoepassing geback-upt. U hebt geleerd hoe u:
 
 > [!div class="checklist"]
-> * Een back-up van een OpenShift v4-clustertoepassing maken met velero
+> * Een back-up van een OpenShift v4-clustertoepassing maken met behulp van Velero
 > * Een back-up van een OpenShift v4-clustertoepassing maken met momentopnamen met behulp van Velero
 
 
-Lees het volgende artikel voor meer informatie over het maken van een Azure Red Hat OpenShift herstellen van een clustertoepassing met vier clusters.
+Lees het volgende artikel voor meer informatie over het maken van een Azure Red Hat OpenShift 4 clustertoepassing herstellen.
 
 * [Herstel van een Azure Red Hat OpenShift 4-clustertoepassing maken](howto-create-a-restore.md)
 * [Herstel van een Azure Red Hat OpenShift 4-clustertoepassing maken, inclusief momentopnamen](howto-create-a-restore.md)

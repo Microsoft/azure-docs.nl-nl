@@ -6,15 +6,15 @@ author: sdgilley
 ms.author: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: 8f1d648c38760865752c87624dfcb112933650c7
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.openlocfilehash: 3418eeb2ada6951c45e24961c6dc2c45a74f32d3
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107872619"
+ms.locfileid: "107885016"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Tags toevoegen aan afbeeldingen in een labelproject 
 

@@ -1,7 +1,7 @@
 ---
-title: Python-ontwikkel omgeving instellen
+title: Python-ontwikkelomgeving instellen
 titleSuffix: Azure Machine Learning
-description: Stel Azure Machine Learning python-ontwikkel omgevingen in Jupyter notebooks, Visual Studio code, Azure Databricks en data Science Virtual Machines in.
+description: Stel Azure Machine Learning Python-ontwikkelomgevingen in Jupyter Notebooks, Visual Studio Code, Azure Databricks en Data Science Virtual Machines.
 services: machine-learning
 author: rastala
 ms.author: roastala
@@ -9,41 +9,41 @@ ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: larryfr
 ms.date: 03/22/2021
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 7f35f9196fb4ab67de724ba73982fed69ac81361
-ms.sourcegitcommit: b4fbb7a6a0aa93656e8dd29979786069eca567dc
+ms.topic: how-to
+ms.custom: devx-track-python, contperf-fy21q1, devx-track-azurecli
+ms.openlocfilehash: 18b23dc8b7ed8b074ac3afbc7d44e5d132a2ee58
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107306837"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107890074"
 ---
-# <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Stel een python-ontwikkel omgeving in voor Azure Machine Learning
+# <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Een Python-ontwikkelomgeving instellen voor Azure Machine Learning
 
-Meer informatie over het configureren van een python-ontwikkel omgeving voor Azure Machine Learning.
+Meer informatie over het configureren van een Python-ontwikkelomgeving voor Azure Machine Learning.
 
-In de volgende tabel ziet u elke ontwikkel omgeving die in dit artikel wordt behandeld, samen met de voor-en nadelen.
+In de volgende tabel ziet u elke ontwikkelomgeving die in dit artikel wordt behandeld, samen met voor- en nadelen.
 
 | Omgeving | Voordelen | Nadelen |
 | --- | --- | --- |
-| [Lokale omgeving](#local) | Volledig beheer van uw ontwikkel omgeving en afhankelijkheden. Voer uit met een hulp programma, omgeving of IDE van uw keuze. | Duurt langer om aan de slag te gaan. De benodigde SDK-pakketten moeten worden geïnstalleerd en er moet ook een omgeving worden geïnstalleerd als u er nog geen hebt. |
-| [De Data Science Virtual Machine (DSVM)](#dsvm) | Vergelijkbaar met het Cloud Compute-exemplaar (python en de SDK zijn vooraf geïnstalleerd), maar met extra populaire gegevens wetenschap en machine learning-hulpprogram ma's vooraf geïnstalleerd. Eenvoudig te schalen en combi neren met andere aangepaste hulp middelen en werk stromen. | Een langzamere aan de slag-ervaring in vergelijking met het Cloud Compute-exemplaar. |
-| [Azure Machine Learning-rekeninstantie](#compute-instance) | Eenvoudigste manier om aan de slag te gaan. De volledige SDK is al geïnstalleerd in uw werk ruimte-VM en de notitieblok zelfstudies zijn vooraf gekloond en klaar om te worden uitgevoerd. | Geen controle over uw ontwikkel omgeving en afhankelijkheden. Er zijn extra kosten verbonden aan de virtuele Linux-machine (VM kan worden gestopt wanneer deze niet wordt gebruikt om kosten te voor komen). Zie de [prijs informatie](https://azure.microsoft.com/pricing/details/virtual-machines/linux/). |
-| [Azure Databricks](how-to-configure-databricks-automl-environment.md) | Ideaal voor het uitvoeren van grootschalige intensieve machine learning werk stromen op het schaal bare Apache Spark platform. | Overbodig voor experimentele machine learning, of kleinschalige experimenten en werk stromen. Er zijn extra kosten gemaakt voor Azure Databricks. Zie de [prijs informatie](https://azure.microsoft.com/pricing/details/databricks/). |
+| [Lokale omgeving](#local) | Volledige controle over uw ontwikkelomgeving en afhankelijkheden. Voer uit met elk build-hulpprogramma, elke omgeving of IDE van uw keuze. | Het duurt langer om aan de slag te gaan. De benodigde SDK-pakketten moeten worden geïnstalleerd en er moet ook een omgeving worden geïnstalleerd als u er nog geen hebt. |
+| [De Data Science Virtual Machine (DSVM)](#dsvm) | Vergelijkbaar met het cloud-gebaseerde reken-exemplaar (Python en de SDK zijn vooraf geïnstalleerd), maar met extra populaire hulpprogramma's voor gegevenswetenschap en machine learning vooraf geïnstalleerd. Eenvoudig te schalen en te combineren met andere aangepaste hulpprogramma's en werkstromen. | Een tragere aan de slag-ervaring vergeleken met de cloudgebaseerde reken-instantie. |
+| [Azure Machine Learning-rekeninstantie](#compute-instance) | De eenvoudigste manier om aan de slag te gaan. De volledige SDK is al geïnstalleerd in uw werkruimte-VM en notebookzelfstudies zijn vooraf gekloond en klaar om te worden uitgevoerd. | Geen controle over uw ontwikkelomgeving en afhankelijkheden. Extra kosten voor Linux-VM (VM kan worden gestopt wanneer deze niet in gebruik is om kosten te voorkomen). Zie [prijsinformatie.](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) |
+| [Azure Databricks](how-to-configure-databricks-automl-environment.md) | Ideaal voor het uitvoeren van grootschalige intensieve machine learning werkstromen op het schaalbare Apache Spark platform. | Overkill voor experimentele machine learning experimenten en werkstromen op kleinere schaal. Extra kosten voor Azure Databricks. Zie [prijsinformatie.](https://azure.microsoft.com/pricing/details/databricks/) |
 
-Dit artikel bevat ook extra tips voor het gebruik van de volgende hulpprogram ma's:
+Dit artikel bevat ook aanvullende gebruikstips voor de volgende hulpprogramma's:
 
-* Jupyter-notebooks: als u al Jupyter-notebooks gebruikt, heeft de SDK een aantal extra's die u moet installeren.
+* Jupyter Notebooks: als u Jupyter Notebooks al gebruikt, heeft de SDK enkele extra's die u moet installeren.
 
-* Visual Studio code: als u Visual Studio code gebruikt, bevat de [uitbrei ding](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) van de Azure machine learning uitgebreide taal ondersteuning voor python, evenals functies om met de Azure machine learning veel handiger en productief te werken.
+* Visual Studio Code: als u Visual Studio Code gebruikt, bevat de [Azure Machine Learning-extensie](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) uitgebreide taalondersteuning voor Python en functies om het werken met de Azure Machine Learning veel handiger en productiever te maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Azure Machine Learning werk ruimte. Als u er geen hebt, kunt u een Azure Machine Learning-werk ruimte maken met behulp van de [Azure Portal](how-to-manage-workspace.md)-, [Azure CLI](how-to-manage-workspace-cli.md#create-a-workspace)-en [Azure Resource Manager-sjablonen](how-to-create-workspace-template.md).
+* Azure Machine Learning werkruimte. Als u nog geen werkruimte hebt, kunt u een Azure Machine Learning maken via de [Azure Portal,](how-to-manage-workspace.md) [Azure CLI](how-to-manage-workspace-cli.md#create-a-workspace)en [Azure Resource Manager sjablonen.](how-to-create-workspace-template.md)
 
-### <a name="local-and-dsvm-only-create-a-workspace-configuration-file"></a><a id="workspace"></a> Alleen lokale en DSVM: een configuratie bestand voor een werk ruimte maken
+### <a name="local-and-dsvm-only-create-a-workspace-configuration-file"></a><a id="workspace"></a> Alleen lokale en DSVM: een configuratiebestand voor de werkruimte maken
 
-Het configuratie bestand van de werk ruimte is een JSON-bestand dat de SDK vertelt hoe er met uw Azure Machine Learning-werk ruimte moet worden gecommuniceerd. Het bestand heeft de naam *config.jsop* en heeft de volgende indeling:
+Het configuratiebestand van de werkruimte is een JSON-bestand dat de SDK vertelt hoe deze moet communiceren met Azure Machine Learning werkruimte. Het bestand heeft de *config.jsop* en heeft de volgende indeling:
 
 ```json
 {
@@ -53,21 +53,21 @@ Het configuratie bestand van de werk ruimte is een JSON-bestand dat de SDK verte
 }
 ```
 
-Dit JSON-bestand moet zich in de mapstructuur bevinden die uw python-scripts of Jupyter-notebooks bevat. Deze kan zich in dezelfde map bevindt, in een submap met de naam *. azureml* of in een bovenliggende map.
+Dit JSON-bestand moet zich in de mapstructuur met uw Python-scripts of Jupyter Notebooks. Deze kan zich in dezelfde map, een submap met de naam *.azureml* of in een bovenliggende map.
 
-Als u dit bestand uit uw code wilt gebruiken, gebruikt u de- [`Workspace.from_config`](/python/api/azureml-core/azureml.core.workspace.workspace#from-config-path-none--auth-none---logger-none---file-name-none-) methode. Met deze code worden de gegevens uit het bestand geladen en wordt verbinding gemaakt met uw werk ruimte.
+Als u dit bestand uit uw code wilt gebruiken, gebruikt u de [`Workspace.from_config`](/python/api/azureml-core/azureml.core.workspace.workspace#from-config-path-none--auth-none---logger-none---file-name-none-) methode . Deze code laadt de informatie uit het bestand en maakt verbinding met uw werkruimte.
 
-Maak een werkruimte configuratie bestand op een van de volgende manieren:
+Maak een configuratiebestand voor de werkruimte op een van de volgende manieren:
 
 * Azure Portal
 
-    **Down load het bestand**: In de [Azure Portal](https://ms.portal.azure.com)selecteert u  **config.jsdownloaden** in het gedeelte **overzicht** van uw werk ruimte.
+    **Download het bestand**: selecteer in [Azure Portal](https://ms.portal.azure.com)de optie config.js **downloaden in** de **sectie** Overzicht van uw werkruimte.
 
     ![Azure Portal](./media/how-to-configure-environment/configure.png)
 
-* Azure Machine Learning python-SDK
+* Azure Machine Learning Python SDK
 
-    Maak een script om verbinding te maken met uw Azure Machine Learning-werk ruimte en gebruik de [`write_config`](/python/api/azureml-core/azureml.core.workspace.workspace#write-config-path-none--file-name-none-) methode om uw bestand te genereren en op te slaan als *. azureml/config.jsop*. Zorg ervoor dat u `subscription_id` , `resource_group` en `workspace_name` met uw eigen vervangen.
+    Maak een script om verbinding te maken met uw Azure Machine Learning werkruimte en gebruik de methode om uw bestand te genereren en op te slaan [`write_config`](/python/api/azureml-core/azureml.core.workspace.workspace#write-config-path-none--file-name-none-) als *.azureml/config.jsop*. Zorg ervoor dat u `subscription_id` , en vervangt door uw `resource_group` `workspace_name` eigen.
 
     ```python
     from azureml.core import Workspace
@@ -86,102 +86,102 @@ Maak een werkruimte configuratie bestand op een van de volgende manieren:
 
 ## <a name="local-computer-or-remote-vm-environment"></a><a id="local"></a>Lokale computer of externe VM-omgeving
 
-U kunt een omgeving instellen op een lokale computer of op een externe virtuele machine, zoals een Azure Machine Learning Reken instantie of Data Science VM. 
+U kunt een omgeving instellen op een lokale computer of externe virtuele machine, zoals een Azure Machine Learning compute-exemplaar of Data Science VM. 
 
-Een lokale ontwikkel omgeving of externe VM configureren:
+Een lokale ontwikkelomgeving of externe VM configureren:
 
-1. Maak een virtuele python-omgeving (virtualenv, Conda).
+1. Maak een virtuele Python-omgeving (virtualenv, conda).
 
     > [!NOTE]
-    > Hoewel dit niet vereist is, is het raadzaam om [Anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) te gebruiken voor het beheren van python virtuele omgevingen en het installeren van pakketten.
+    > Hoewel dit niet vereist is, is het raadzaam [anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) te gebruiken om virtuele Python-omgevingen te beheren en pakketten te installeren.
 
     > [!IMPORTANT]
-    > Als u gebruikmaakt van Linux of macOS en een andere shell dan bash gebruikt (bijvoorbeeld zsh), kunnen er fouten optreden wanneer u sommige opdrachten uitvoert. U kunt dit probleem omzeilen door de `bash` opdracht te gebruiken om een nieuwe bash-shell te starten en de opdrachten daar uit te voeren.
+    > Als u Linux of macOS gebruikt en een andere shell dan bash gebruikt (bijvoorbeeld zsh), kunnen er fouten optreden wanneer u een aantal opdrachten uit te voeren. U kunt dit probleem oplossen door de opdracht te `bash` gebruiken om een nieuwe bash-shell te starten en de opdrachten daar uit te voeren.
 
-1. Activeer de zojuist gemaakte virtuele python-omgeving.
-1. Installeer de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/install).
-1. Als u uw lokale omgeving wilt configureren voor het gebruik van uw Azure Machine Learning-werk ruimte, [maakt u een configuratie bestand voor de werk ruimte](#workspace) of gebruikt u een bestaand.
+1. Activeer uw zojuist gemaakte virtuele Python-omgeving.
+1. Installeer de [Azure Machine Learning Python SDK.](/python/api/overview/azure/ml/install)
+1. Als u uw lokale omgeving wilt configureren voor het gebruik van Azure Machine Learning werkruimte, maakt u [een](#workspace) configuratiebestand voor de werkruimte of gebruikt u een bestaande werkruimte.
 
-Nu u uw lokale omgeving hebt ingesteld, kunt u aan de slag gaan met Azure Machine Learning. Raadpleeg de Azure Machine Learning aan de slag- [hand leiding voor python](tutorial-1st-experiment-sdk-setup-local.md) om aan de slag te gaan.
+Nu u uw lokale omgeving hebt ingesteld, kunt u aan de slag met Azure Machine Learning. Zie de [Azure Machine Learning aan de slag met Python om](tutorial-1st-experiment-sdk-setup-local.md) aan de slag te gaan.
 
 ### <a name="jupyter-notebooks"></a><a id="jupyter"></a>Jupyter Notebooks
 
-Wanneer u een lokale Jupyter Notebook server uitvoert, is het raadzaam om een IPython-kernel te maken voor uw python virtuele omgeving. Dit zorgt ervoor dat het import gedrag van de kernel en het pakket wordt gegarandeerd.
+Wanneer u een lokale Jupyter Notebook server, is het raadzaam om een IPython-kernel te maken voor uw virtuele Python-omgeving. Dit zorgt ervoor dat het verwachte gedrag voor het importeren van kernels en pakketten wordt gegarandeerd.
 
-1. Omgevings specifieke IPython-kernels inschakelen
+1. Omgevingsspecifieke IPython-kernels inschakelen
 
     ```bash
     conda install notebook ipykernel
     ```
 
-1. Maak een kernel voor uw python virtuele omgeving. Zorg ervoor dat u vervangt door `<myenv>` de naam van uw python virtuele omgeving.
+1. Maak een kernel voor uw virtuele Python-omgeving. Zorg ervoor dat u vervangt `<myenv>` door de naam van uw virtuele Python-omgeving.
 
     ```bash
     ipython kernel install --user --name <myenv> --display-name "Python (myenv)"
     ```
 
-1. De Jupyter Notebook-server starten
+1. Start de Jupyter Notebook server
 
-Raadpleeg de [opslag plaats Azure machine learning notitie blokken](https://github.com/Azure/MachineLearningNotebooks) om aan de slag te gaan met Azure machine learning-en Jupyter-notebooks.
+Zie de [Azure Machine Learning notebooks om](https://github.com/Azure/MachineLearningNotebooks) aan de slag te gaan met Azure Machine Learning en Jupyter Notebooks.
 
 > [!NOTE]
 > Een door de community gestuurde opslagplaats met voorbeelden vindt u op https://github.com/Azure/azureml-examples.
 
 ### <a name="visual-studio-code"></a><a id="vscode"></a>Visual Studio Code
 
-Visual Studio code gebruiken voor ontwikkeling:
+Als u Visual Studio Code wilt gebruiken voor ontwikkeling:
 
 1. Installeer [Visual Studio Code](https://code.visualstudio.com/Download).
-1. Installeer de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md) (preview).
+1. Installeer de [Azure Machine Learning Visual Studio Code-extensie](tutorial-setup-vscode-extension.md) (preview).
 
-Als u de Visual Studio code-extensie hebt geïnstalleerd, gebruikt u deze voor het volgende:
+Nadat u de Visual Studio Code-extensie hebt geïnstalleerd, gebruikt u deze om:
 
-* [Uw Azure Machine Learning-resources beheren](how-to-manage-resources-vscode.md)
-* [Verbinding maken met een Azure Machine Learning Reken instantie](how-to-set-up-vs-code-remote.md)
+* [Uw Azure Machine Learning beheren](how-to-manage-resources-vscode.md)
+* [Verbinding maken met een Azure Machine Learning reken-exemplaar](how-to-set-up-vs-code-remote.md)
 * [Experimenten uitvoeren en fouten opsporen](how-to-debug-visual-studio-code.md)
-* [Implementeer getrainde modellen](tutorial-train-deploy-image-classification-model-vscode.md).
+* [Getrainde modellen implementeren.](tutorial-train-deploy-image-classification-model-vscode.md)
 
-## <a name="azure-machine-learning-compute-instance"></a><a id="compute-instance"></a>Reken instantie Azure Machine Learning
+## <a name="azure-machine-learning-compute-instance"></a><a id="compute-instance"></a>Azure Machine Learning compute-exemplaar
 
-Het Azure Machine Learning [Compute-exemplaar](concept-compute-instance.md) is een veilig, op de cloud gebaseerd Azure-werk station dat gegevens wetenschappers biedt met een Jupyter notebook server, jjupyterlab en een volledig beheerde machine learning omgeving.
+De Azure Machine Learning compute-instantie [is](concept-compute-instance.md) een beveiligd, cloudgebaseerd Azure-werkstation dat gegevenswetenschappers een Jupyter Notebook-server, JupyterLab en een volledig beheerde machine learning biedt.
 
-Er is niets om te installeren of te configureren voor een reken instantie.  
+Er is niets om te installeren of configureren voor een reken-exemplaar.  
 
-Maak een wille keurig moment in uw Azure Machine Learning-werk ruimte. Geef een naam op en geef een Azure VM-type op. Probeer het nu met deze [zelf studie: omgeving en werk ruimte voor installatie](tutorial-1st-experiment-sdk-setup.md).
+Maak er op elk gewenst moment een vanuit uw Azure Machine Learning werkruimte. Geef alleen een naam op en geef een Azure-VM-type op. Probeer het nu met deze [zelfstudie: Omgeving en werkruimte instellen.](tutorial-1st-experiment-sdk-setup.md)
 
-Zie [een Azure machine learning Compute-instantie maken en beheren](how-to-create-manage-compute-instance.md)voor meer informatie over reken instanties, waaronder het installeren van pakketten.
+Zie Create and manage an Azure Machine Learning compute instance (Een reken-exemplaar maken Azure Machine Learning beheren) voor meer informatie over reken-exemplaren, waaronder het [installeren van pakketten.](how-to-create-manage-compute-instance.md)
 
 > [!TIP]
-> [Stop het reken](how-to-create-manage-compute-instance.md#manage)proces om te voor komen dat er kosten in rekening worden gebracht voor een ongebruikte Compute-instantie.
+> Als u wilt voorkomen dat er kosten in rekening worden gebracht voor een ongebruikt rekenin exemplaar, [stopt u het rekenin exemplaar](how-to-create-manage-compute-instance.md#manage).
 
-Naast een Jupyter Notebook-server en-Jjupyterlab kunt u reken instanties gebruiken in de [functie voor geïntegreerde notebooks in azure machine learning Studio](how-to-run-jupyter-notebooks.md).
+Naast een Jupyter Notebook-server en JupyterLab kunt u reken-exemplaren gebruiken in de geïntegreerde [notebookfunctie in Azure Machine Learning-studio](how-to-run-jupyter-notebooks.md).
 
-U kunt ook de Azure Machine Learning Visual Studio code-extensie gebruiken om [verbinding te maken met een extern Compute-exemplaar met behulp van VS code](how-to-set-up-vs-code-remote.md).
+U kunt ook de code-extensie Azure Machine Learning Visual Studio gebruiken om verbinding te maken met een [extern rekenexe exemplaar met behulp van VS Code.](how-to-set-up-vs-code-remote.md)
 
 ## <a name="data-science-virtual-machine"></a><a id="dsvm"></a>Data Science Virtual Machine
 
-De Data Science VM is een aangepaste installatie kopie van een virtuele machine (VM) die u kunt gebruiken als een ontwikkel omgeving. Het is ontworpen voor data wetenschappen werk dat vooraf geconfigureerde hulpprogram ma's en software zoals:
+De Data Science VM is een aangepaste VM-afbeelding (virtuele machine) die u als ontwikkelomgeving kunt gebruiken. Het is ontworpen voor data science-werk met vooraf geconfigureerde hulpprogramma's en software, zoals:
 
-  - Pakketten zoals tensor flow, PyTorch, Scikit-learn, XGBoost en de Azure Machine Learning SDK
-  - Populaire hulp middelen voor gegevens wetenschap, zoals zelfstandig en analyse van Spark
-  - Azure-hulpprogram ma's zoals Azure CLI, AzCopy en Storage Explorer
-  - Integrated Development Environments (Ide's) zoals Visual Studio code en PyCharm
-  - Jupyter Notebook server
+  - Pakketten zoals TensorFlow, PyTorch, Scikit-learn, XGBoost en de Azure Machine Learning SDK
+  - Populaire data science-hulpprogramma's, zoals een zelfstandige Spark-versie en een drill-functie
+  - Azure-hulpprogramma's zoals de Azure CLI, AzCopy en Storage Explorer
+  - Geïntegreerde ontwikkelomgevingen (IDE's), zoals Visual Studio Code en PyCharm
+  - Jupyter Notebook Server
 
-Zie de [hand leiding voor data Science VM-hulpprogram](data-science-virtual-machine/tools-included.md)ma's voor een uitgebreidere lijst met hulpprogram ma's.
+Zie de handleiding Data Science VM hulpprogramma's voor een uitgebreidere lijst met [hulpprogramma's.](data-science-virtual-machine/tools-included.md)
 
 > [!IMPORTANT]
-> Als u van plan bent om de Data Science VM te gebruiken als een [reken doel](concept-compute-target.md) voor uw training of voor het afleiden van taken, wordt alleen Ubuntu ondersteund.
+> Als u van plan bent om [](concept-compute-target.md) de Data Science VM als rekendoel voor uw trainings- of deferentietaken te gebruiken, wordt alleen Ubuntu ondersteund.
 
-Als u de Data Science VM als een ontwikkel omgeving wilt gebruiken:
+Als u de Data Science VM als een ontwikkelomgeving wilt gebruiken:
 
-1. Maak een Data Science VM met een van de volgende methoden:
+1. Maak een Data Science VM een van de volgende methoden:
 
-    * Gebruik de Azure Portal voor het maken van een [Ubuntu](data-science-virtual-machine/dsvm-ubuntu-intro.md) -of [Windows](data-science-virtual-machine/provision-vm.md) DSVM.
-    * [Maak een Data Science VM met arm-sjablonen](data-science-virtual-machine/dsvm-tutorial-resource-manager.md).
+    * Gebruik de Azure Portal om een [Ubuntu-](data-science-virtual-machine/dsvm-ubuntu-intro.md) of Windows-DSVM te maken. [](data-science-virtual-machine/provision-vm.md)
+    * [Maak een Data Science VM met arm-sjablonen.](data-science-virtual-machine/dsvm-tutorial-resource-manager.md)
     * Azure CLI gebruiken
 
-        Als u een Ubuntu-Data Science VM wilt maken, gebruikt u de volgende opdracht:
+        Als u een Ubuntu-Data Science VM, gebruikt u de volgende opdracht:
 
         ```azurecli-interactive
         # create a Ubuntu Data Science VM in your resource group
@@ -190,7 +190,7 @@ Als u de Data Science VM als een ontwikkel omgeving wilt gebruiken:
         az vm create --resource-group YOUR-RESOURCE-GROUP-NAME --name YOUR-VM-NAME --image microsoft-dsvm:linux-data-science-vm-ubuntu:linuxdsvmubuntu:latest --admin-username YOUR-USERNAME --admin-password YOUR-PASSWORD --generate-ssh-keys --authentication-type password
         ```
 
-        Als u een Windows-DSVM wilt maken, gebruikt u de volgende opdracht:
+        Gebruik de volgende opdracht om een Windows-DSVM te maken:
 
         ```azurecli-interactive
         # create a Windows Server 2016 DSVM in your resource group
@@ -212,14 +212,14 @@ Als u de Data Science VM als een ontwikkel omgeving wilt gebruiken:
         conda activate AzureML
         ```
 
-1. Als u de Data Science VM wilt configureren voor het gebruik van uw Azure Machine Learning-werk ruimte, [maakt u een configuratie bestand voor de werk ruimte](#workspace) of gebruikt u een bestaande.
+1. Als u de Data Science VM voor het gebruik van Azure Machine Learning [werkruimte,](#workspace) maakt u een configuratiebestand voor de werkruimte of gebruikt u een bestaand configuratiebestand.
 
-Net als bij lokale omgevingen kunt u Visual Studio code en de [Azure machine learning Visual Studio code-extensie](#vscode) gebruiken om te communiceren met Azure machine learning.
+Net als bij lokale omgevingen kunt u Visual Studio Code en de [Azure Machine Learning Visual Studio Code-extensie gebruiken](#vscode) om te communiceren met Azure Machine Learning.
 
-Zie [Data Science virtual machines](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)voor meer informatie.
+Zie Data [Science Virtual Machines voor meer informatie.](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Train een model](tutorial-train-models-with-aml.md) op Azure machine learning met de MNIST-gegevensset.
-- Zie de [Naslag informatie voor de Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro). 
+- [Train een model](tutorial-train-models-with-aml.md) op Azure Machine Learning met de MNIST-gegevensset.
+- Zie de [Azure Machine Learning SDK voor Python.](/python/api/overview/azure/ml/intro) 

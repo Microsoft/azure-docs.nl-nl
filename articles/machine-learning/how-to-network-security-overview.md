@@ -1,7 +1,7 @@
 ---
-title: Overzicht van virtuele netwerk isolatie en beveiliging
+title: Overzicht van isolatie en beveiliging van virtuele netwerken
 titleSuffix: Azure Machine Learning
-description: Gebruik een geïsoleerd Azure-Virtual Network met Azure Machine Learning voor het beveiligen van werkruimte bronnen en reken omgevingen.
+description: Gebruik een geïsoleerde Azure-Virtual Network met Azure Machine Learning om werkruimte-resources en rekenomgevingen te beveiligen.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,181 +9,181 @@ ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
 ms.date: 03/02/2021
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: 1c3d9b286a8262efa126ba9c661c50dd88e78b64
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.topic: how-to
+ms.custom: devx-track-python, references_regions, contperf-fy21q1
+ms.openlocfilehash: e6b8a4bbbe596ec06f7f9b445dbaa439e1207e46
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103573469"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107888706"
 ---
-# <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
+# <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van isolatie van virtuele netwerken en privacy
 
-In dit artikel leert u hoe u virtuele netwerken (VNets) kunt gebruiken voor het beveiligen van netwerk communicatie in Azure Machine Learning. In dit artikel wordt een voorbeeld scenario gebruikt om te laten zien hoe u een volledig virtueel netwerk configureert.
+In dit artikel leert u hoe u virtuele netwerken (VNets) gebruikt voor het beveiligen van netwerkcommunicatie in Azure Machine Learning. In dit artikel wordt een voorbeeldscenario gebruikt om u te laten zien hoe u een volledig virtueel netwerk configureert.
 
-Dit artikel maakt deel uit van een reeks van vijf delen die u begeleidt bij het beveiligen van een Azure Machine Learning werk stroom. We raden u ten zeerste aan dit overzichts artikel te lezen om de concepten eerst te begrijpen. 
+Dit artikel is deel één van een vijfdelige reeks die u bij het beveiligen van een Azure Machine Learning werkstroom. We raden u ten zeerste aan dit overzichtsartikel te lezen om eerst inzicht te krijgen in de concepten. 
 
-Dit zijn de andere artikelen in deze serie:
+Hier zijn de andere artikelen in deze reeks:
 
-**1. VNet-overzicht**  >  [2. Beveilig de werk ruimte](how-to-secure-workspace-vnet.md)  >  [3. De trainings omgeving](how-to-secure-training-vnet.md)  >  [4 beveiligen. Beveilig de vergoedings omgeving](how-to-secure-inferencing-vnet.md)  >  [5. De functionaliteit van Studio inschakelen](how-to-enable-studio-virtual-network.md)
+**1. VNet-overzicht**  >  [2. Beveilig de werkruimte](how-to-secure-workspace-vnet.md)  >  [3. Beveilig de trainingsomgeving](how-to-secure-training-vnet.md)  >  [4. Beveilig de deferencing-omgeving](how-to-secure-inferencing-vnet.md)  >  [5. Studio-functionaliteit inschakelen](how-to-enable-studio-virtual-network.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-In dit artikel wordt ervan uitgegaan dat u bekend bent met de volgende onderwerpen:
-+ [Virtuele netwerken van Azure](../virtual-network/virtual-networks-overview.md)
+In dit artikel wordt ervan uitgenomen dat u bekend bent met de volgende onderwerpen:
++ [Virtuele Azure-netwerken](../virtual-network/virtual-networks-overview.md)
 + [IP-netwerken](../virtual-network/public-ip-addresses.md)
 + [Azure Private Link](how-to-configure-private-link.md)
-+ [Netwerk beveiligings groepen (NSG)](../virtual-network/network-security-groups-overview.md)
-+ [Netwerk firewalls](../firewall/overview.md)
++ [Netwerkbeveiligingsgroepen (NSG's)](../virtual-network/network-security-groups-overview.md)
++ [Netwerkfirewalls](../firewall/overview.md)
 ## <a name="example-scenario"></a>Voorbeeldscenario
 
-In deze sectie leert u hoe een gemeen schappelijk netwerk scenario is ingesteld om Azure Machine Learning communicatie met persoonlijke IP-adressen te beveiligen.
+In deze sectie leert u hoe een veelvoorkomende netwerkscenario wordt ingesteld voor het beveiligen Azure Machine Learning communicatie met privé-IP-adressen.
 
-De volgende tabel vergelijkt de manier waarop Services toegang hebben tot verschillende onderdelen van een Azure Machine Learning netwerk met een VNet en zonder een VNet.
+In de onderstaande tabel wordt vergeleken hoe services toegang hebben tot verschillende onderdelen van een Azure Machine Learning netwerk, zowel met een VNet als zonder een VNet.
 
-| Scenario | Werkruimte | Gekoppelde resources | Trainings Compute-omgeving | Reken omgeving afwijzen |
+| Scenario | Werkruimte | Gekoppelde resources | Rekenomgeving trainen | Deferencing-rekenomgeving |
 |-|-|-|-|-|-|
 |**Geen virtueel netwerk**| Openbare IP | Openbare IP | Openbare IP | Openbare IP |
-|**Resources in een virtueel netwerk beveiligen**| Privé-IP (persoonlijk eind punt) | Openbaar IP-adres (Service-eind punt) <br> **of** <br> Privé-IP (persoonlijk eind punt) | Privé IP-adres | Privé IP-adres  | 
+|**Resources in een virtueel netwerk beveiligen**| Privé-IP-adres (privé-eindpunt) | Openbaar IP-adres (service-eindpunt) <br> **- of -** <br> Privé-IP-adres (privé-eindpunt) | Privé IP-adres | Privé IP-adres  | 
 
-* **Werk ruimte** : Maak een persoonlijk eind punt van uw VNet om verbinding te maken met een privé-koppeling in de werk ruimte. Het persoonlijke eind punt verbindt de werk ruimte met het vnet via verschillende privé IP-adressen.
-* Gekoppelde service-eind punten of privé-eind punten **van resources** gebruiken om verbinding te maken met werkruimte bronnen zoals Azure storage, Azure Key Vault en Azure container Services.
-    * **Service-eind punten** bieden de identiteit van uw virtuele netwerk aan de Azure-service. Wanneer u service-eind punten in uw virtuele netwerk hebt ingeschakeld, kunt u een regel voor het virtuele netwerk toevoegen om de Azure-service bronnen te beveiligen in uw virtuele netwerk. Service-eind punten gebruiken open bare IP-adressen.
-    * **Privé-eind punten** zijn netwerk interfaces waarmee u een beveiligde verbinding kunt maken met een service van een persoonlijke Azure-koppeling. Privé-eind punt gebruikt een privé-IP-adres uit uw VNet, waardoor de service effectief in uw VNet wordt gezet.
-* **Training Compute Access** -Access-Compute-doelen zoals Azure machine learning Compute-instantie en Azure machine learning reken clusters veilig met privé-IP-adressen. 
-* **Berekenen van Compute Access** -Access Azure Kubernetes Services (AKS)-reken clusters met persoonlijke IP-adressen.
+* **Werkruimte:** maak een privé-eindpunt van uw VNet om verbinding te maken met Private Link in de werkruimte. Het privé-eindpunt verbindt de werkruimte met het vnet via verschillende privé-IP-adressen.
+* **Gekoppelde resource:** gebruik service-eindpunten of privé-eindpunten om verbinding te maken met werkruimteresources zoals Azure Storage, Azure Key Vault en Azure Container Services.
+    * **Service-eindpunten bieden** de identiteit van uw virtuele netwerk aan de Azure-service. Zodra u service-eindpunten in uw virtuele netwerk hebt ingeschakeld, kunt u een regel voor een virtueel netwerk toevoegen om de Azure-servicebronnen te beveiligen in uw virtuele netwerk. Service-eindpunten gebruiken openbare IP-adressen.
+    * **Privé-eindpunten zijn** netwerkinterfaces die u veilig verbinden met een powered by Azure Private Link. Privé-eindpunt maakt gebruik van een privé-IP-adres van uw VNet, waardoor de service effectief in uw VNet wordt gebruikt.
+* **Rekentoegang trainen:** krijg toegang tot trainingsrekendoelen zoals Azure Machine Learning Compute Instance en Azure Machine Learning compute-clusters veilig met privé-IP-adressen. 
+* **Berekeningstoegang deductie:** toegang tot AKS-rekenclusters (Azure Kubernetes Services) met privé-IP-adressen.
 
 
-In de volgende vijf secties ziet u hoe u het netwerk scenario kunt beveiligen dat hierboven wordt beschreven. Als u uw netwerk wilt beveiligen, moet u het volgende doen:
+In de volgende vijf secties ziet u hoe u het hierboven beschreven netwerkscenario beveiligt. Als u uw netwerk wilt beveiligen, moet u het volgende doen:
 
-1. Beveilig de [**werk ruimte en de bijbehorende resources**](#secure-the-workspace-and-associated-resources).
-1. Beveilig de [**trainings omgeving**](#secure-the-training-environment).
-1. Beveilig de [**omgeving**](#secure-the-inferencing-environment)voor het afwijzen van interferentie.
-1. Optioneel: [**Schakel de Studio-functionaliteit in**](#optional-enable-studio-functionality).
-1. [**Firewall instellingen**](#configure-firewall-settings)configureren.
-1. Configureer [DNS-naam omzetting](#custom-dns).
-## <a name="secure-the-workspace-and-associated-resources"></a>De werk ruimte en de bijbehorende resources beveiligen
+1. Beveilig de [**werkruimte en de bijbehorende resources.**](#secure-the-workspace-and-associated-resources)
+1. Beveilig de [**trainingsomgeving.**](#secure-the-training-environment)
+1. Beveilig [**de deferencing-omgeving.**](#secure-the-inferencing-environment)
+1. Optioneel: schakel [**studiofunctionaliteit in.**](#optional-enable-studio-functionality)
+1. Configureer [**firewallinstellingen.**](#configure-firewall-settings)
+1. Configureer [DNS-naamresolutie.](#custom-dns)
+## <a name="secure-the-workspace-and-associated-resources"></a>De werkruimte en de bijbehorende resources beveiligen
 
-Gebruik de volgende stappen om uw werk ruimte en de bijbehorende resources te beveiligen. Met deze stappen kunnen uw services communiceren in het virtuele netwerk.
+Gebruik de volgende stappen om uw werkruimte en de bijbehorende resources te beveiligen. Met deze stappen kunnen uw services communiceren in het virtuele netwerk.
 
-1. Maak een [persoonlijke werk ruimte voor koppelen](how-to-secure-workspace-vnet.md#secure-the-workspace-with-private-endpoint) om communicatie tussen uw VNet en de werk ruimte mogelijk te maken.
-1. Voeg de volgende services toe aan het virtuele _netwerk met behulp van_ een service- __eind__ punt of een __persoonlijk eind punt__. U moet ook vertrouwde micro soft-Services toegang geven tot deze services:
+1. Maak een [werkruimte Private Link ingeschakeld om](how-to-secure-workspace-vnet.md#secure-the-workspace-with-private-endpoint) communicatie tussen uw VNet en werkruimte mogelijk te maken.
+1. Voeg de volgende services toe aan het virtuele netwerk met _behulp_ van een __service-eindpunt__ of een __privé-eindpunt.__ U moet vertrouwde gebruikers ook toegang Microsoft-services tot deze services:
     
-    | Service | Eindpunt gegevens | Vertrouwde informatie toestaan |
+    | Service | Eindpuntgegevens | Vertrouwde gegevens toestaan |
     | ----- | ----- | ----- |
-    | __Azure Key Vault__| [Service-eind punt](../key-vault/general/overview-vnet-service-endpoints.md)</br>[Persoonlijk eind punt](../key-vault/general/private-link-service.md) | [Vertrouwde micro soft-Services toestaan deze firewall over te slaan](how-to-secure-workspace-vnet.md#secure-azure-key-vault) |
-    | __Azure Storage-account__ | [Service-eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints)</br>[Persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints) | [Toegang verlenen aan vertrouwde Azure-Services](../storage/common/storage-network-security.md#grant-access-to-trusted-azure-services) |
-    | __Azure Container Registry__ | [Service-eind punt](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr)</br>[Persoonlijk eind punt](../container-registry/container-registry-private-link.md) | [Vertrouwde services toestaan](../container-registry/allow-access-trusted-services.md) |
+    | __Azure Key Vault__| [Service-eindpunt](../key-vault/general/overview-vnet-service-endpoints.md)</br>[Privé-eindpunt](../key-vault/general/private-link-service.md) | [Vertrouwde gebruikers toestaan Microsoft-services firewall te omzeilen](how-to-secure-workspace-vnet.md#secure-azure-key-vault) |
+    | __Azure Storage-account__ | [Service-eindpunt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints)</br>[Privé-eindpunt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints) | [Toegang verlenen aan vertrouwde Azure-services](../storage/common/storage-network-security.md#grant-access-to-trusted-azure-services) |
+    | __Azure Container Registry__ | [Service-eindpunt](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr)</br>[Privé-eindpunt](../container-registry/container-registry-private-link.md) | [Vertrouwde services toestaan](../container-registry/allow-access-trusted-services.md) |
 
 
-![Architectuur diagram dat laat zien hoe de werk ruimte en gekoppelde resources met elkaar communiceren via service-eind punten of particuliere eind punten binnen een VNet](./media/how-to-network-security-overview/secure-workspace-resources.png)
+![Architectuurdiagram waarin wordt getoond hoe de werkruimte en de bijbehorende resources met elkaar communiceren via service-eindpunten of privé-eindpunten in een VNet](./media/how-to-network-security-overview/secure-workspace-resources.png)
 
-Zie [een Azure machine learning-werk ruimte beveiligen](how-to-secure-workspace-vnet.md)voor gedetailleerde instructies voor het uitvoeren van deze stappen. 
-
-### <a name="limitations"></a>Beperkingen
-
-Voor het beveiligen van uw werk ruimte en de bijbehorende resources binnen een virtueel netwerk gelden de volgende beperkingen:
-- Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de regio's Azure Government of Azure China 21Vianet.
-- Alle resources moeten zich achter hetzelfde VNet bevindt. Subnetten binnen hetzelfde VNet zijn echter toegestaan.
-
-## <a name="secure-the-training-environment"></a>De trainings omgeving beveiligen
-
-In deze sectie leert u hoe u de trainings omgeving in Azure Machine Learning kunt beveiligen. U leert ook hoe Azure Machine Learning een trainings taak voltooit om te begrijpen hoe de netwerk configuraties samen werken.
-
-Gebruik de volgende stappen om de trainings omgeving te beveiligen:
-
-1. Maak een Azure Machine Learning [Compute-exemplaar en computer cluster in het virtuele netwerk](how-to-secure-training-vnet.md#compute-instance) om de trainings taak uit te voeren.
-1. [Sta binnenkomende communicatie van Azure batch service toe](how-to-secure-training-vnet.md#mlcports) zodat de batch-service taken kan verzenden naar uw reken resources. 
-
-![Architectuur diagram dat laat zien hoe u beheerde reken clusters en instanties kunt beveiligen](./media/how-to-network-security-overview/secure-training-environment.png)
-
-Zie [een trainings omgeving beveiligen](how-to-secure-training-vnet.md)voor meer informatie over het uitvoeren van deze stappen. 
-
-### <a name="example-training-job-submission"></a>Voor beeld van het verzenden van trainings taken 
-
-In deze sectie leert u hoe Azure Machine Learning veilig communiceert tussen services om een trainings taak te verzenden. Hier ziet u hoe alle configuraties samen werken om de communicatie te beveiligen.
-
-1. De-client uploadt trainings scripts en trainings gegevens naar opslag accounts die zijn beveiligd met een service of persoonlijk eind punt.
-
-1. De client verzendt een trainings taak naar de Azure Machine Learning-werk ruimte via het persoonlijke eind punt.
-
-1. Azure Batch Services ontvangt de taak vanuit de werk ruimte en verzendt de trainings taak naar de reken omgeving via de open bare load balancer die is ingericht met de reken resource. 
-
-1. De reken resource ontvangt de taak en begint met de training. De reken resources hebben toegang tot beveiligde opslag accounts voor het downloaden van trainings bestanden en het uploaden van uitvoer.
+Zie Secure an Azure Machine Learning workspace (Een werkruimte beveiligen) voor gedetailleerde instructies over het voltooien [Azure Machine Learning stappen.](how-to-secure-workspace-vnet.md) 
 
 ### <a name="limitations"></a>Beperkingen
 
-- Azure Compute-exemplaren en Azure compute-clusters moeten zich in hetzelfde VNet, dezelfde regio en hetzelfde abonnement bevinden als de werk ruimte en de bijbehorende resources. 
+Voor het beveiligen van uw werkruimte en de bijbehorende resources binnen een virtueel netwerk gelden de volgende beperkingen:
+- Het gebruik van Azure Machine Learning werkruimte met een privékoppeling is niet beschikbaar in de regio'Azure Government of Azure China 21Vianet privékoppeling.
+- Alle resources moeten zich achter hetzelfde VNet hebben. Subnetten binnen hetzelfde VNet zijn echter toegestaan.
 
-## <a name="secure-the-inferencing-environment"></a>De omgeving voor het afwijzen beveiligen
+## <a name="secure-the-training-environment"></a>De trainingsomgeving beveiligen
 
-In deze sectie vindt u informatie over de beschik bare opties voor het beveiligen van een omgeving voor het afwijzen van een interferentie. U wordt aangeraden Azure Kubernetes Services-clusters (AKS) te gebruiken voor productie-implementaties met een hoge schaal.
+In deze sectie leert u hoe u de trainingsomgeving beveiligt in Azure Machine Learning. U leert ook hoe Azure Machine Learning een trainings job voltooit om te begrijpen hoe de netwerkconfiguraties samenwerken.
+
+Gebruik de volgende stappen om de trainingsomgeving te beveiligen:
+
+1. Maak een Azure Machine Learning [reken-exemplaar en computercluster in het virtuele netwerk om](how-to-secure-training-vnet.md#compute-instance) de trainings job uit te voeren.
+1. [Sta binnenkomende communicatie van Azure Batch Service toe,](how-to-secure-training-vnet.md#mlcports) zodat Batch Service taken kan verzenden naar uw rekenbronnen. 
+
+![Architectuurdiagram waarin wordt getoond hoe u beheerde rekenclusters en exemplaren kunt beveiligen](./media/how-to-network-security-overview/secure-training-environment.png)
+
+Zie Een trainingsomgeving beveiligen voor gedetailleerde instructies over het voltooien [van deze stappen.](how-to-secure-training-vnet.md) 
+
+### <a name="example-training-job-submission"></a>Voorbeeld van het indienen van trainings job 
+
+In deze sectie leert u hoe Azure Machine Learning veilig communiceert tussen services om een trainings job te verzenden. Dit laat zien hoe al uw configuraties samenwerken om de communicatie te beveiligen.
+
+1. De client uploadt trainingsscripts en trainingsgegevens naar opslagaccounts die zijn beveiligd met een service of privé-eindpunt.
+
+1. De client verstuurt een trainings job naar de Azure Machine Learning via het privé-eindpunt.
+
+1. Azure Batch-services ontvangen de taak van de werkruimte en verzenden de trainings job naar de rekenomgeving via de openbare load balancer die is ingericht met de rekenresource. 
+
+1. De rekenresource ontvangt de taak en begint met de training. De rekenbronnen hebben toegang tot beveiligde opslagaccounts om trainingsbestanden te downloaden en uitvoer te uploaden.
+
+### <a name="limitations"></a>Beperkingen
+
+- Azure Compute instance en Azure Compute clusters moeten zich in hetzelfde VNet, dezelfde regio en hetzelfde abonnement als de werkruimte en de bijbehorende resources. 
+
+## <a name="secure-the-inferencing-environment"></a>De deferencing-omgeving beveiligen
+
+In deze sectie leert u welke opties beschikbaar zijn voor het beveiligen van een deferencing-omgeving. U wordt aangeraden AKS-clusters (Azure Kubernetes Services) te gebruiken voor grootschalige productie-implementaties.
 
 U hebt twee opties voor AKS-clusters in een virtueel netwerk:
 
 - Implementeer of koppel een standaard AKS-cluster aan uw VNet.
-- Koppel een persoonlijk AKS-cluster aan uw VNet.
+- Koppel een privé-AKS-cluster aan uw VNet.
 
-**Standaard AKS-clusters** hebben een besturings vlak met open bare IP-adressen. U kunt tijdens de implementatie een standaard AKS-cluster toevoegen aan uw VNet of een cluster koppelen nadat het is gemaakt.
+**Standaard AKS-clusters** hebben een besturingsvlak met openbare IP-adressen. U kunt een standaard AKS-cluster aan uw VNet toevoegen tijdens de implementatie of een cluster koppelen nadat het is gemaakt.
 
-**Persoonlijke AKS-clusters** hebben een besturings vlak, dat alleen toegankelijk is via privé ip's. Persoonlijke AKS-clusters moeten worden gekoppeld nadat het cluster is gemaakt.
+**Privé-AKS-clusters** hebben een besturingsvlak dat alleen toegankelijk is via privé-IP's. Privé-AKS-clusters moeten worden gekoppeld nadat het cluster is gemaakt.
 
-Voor gedetailleerde instructies over het toevoegen van standaard-en privé clusters, zie een omgeving voor het afwijzen van [een interferentie beveiligen](how-to-secure-inferencing-vnet.md). 
+Zie Secure [an inferencing environment](how-to-secure-inferencing-vnet.md)(Een deferencing-omgeving beveiligen) voor gedetailleerde instructies over het toevoegen van standaard- en privéclusters. 
 
-In het volgende netwerk diagram ziet u een beveiligde Azure Machine Learning-werk ruimte met een persoonlijk AKS-cluster dat is gekoppeld aan het virtuele netwerk.
+In het volgende netwerkdiagram ziet u een Azure Machine Learning werkruimte met een privé-AKS-cluster dat is gekoppeld aan het virtuele netwerk.
 
-![Architectuur diagram waarin wordt getoond hoe een persoonlijk AKS-cluster moet worden gekoppeld aan het virtuele netwerk. Het AKS-besturings vlak wordt buiten het klant VNet geplaatst](./media/how-to-network-security-overview/secure-inferencing-environment.png)
-
-### <a name="limitations"></a>Beperkingen
-- AKS-clusters moeten deel uitmaken van hetzelfde VNet als de werk ruimte en de bijbehorende resources. 
-
-## <a name="optional-enable-public-access"></a>Optioneel: open bare toegang inschakelen
-
-U kunt de werk ruimte achter een VNet beveiligen met behulp van een persoonlijk eind punt en toch toegang toestaan via het open bare Internet. De initiële configuratie is hetzelfde als de [beveiliging van de werk ruimte en de bijbehorende resources](#secure-the-workspace-and-associated-resources). 
-
-Nadat u de werk ruimte hebt beveiligd met een persoonlijke koppeling, [schakelt u open bare toegang in](how-to-configure-private-link.md#enable-public-access). Daarna kunt u toegang krijgen tot de werk ruimte vanuit het open bare Internet en het VNet.
+![Architectuurdiagram waarin wordt getoond hoe u een privé-AKS-cluster koppelt aan het virtuele netwerk. Het AKS-besturingsvlak wordt buiten het VNet van de klant geplaatst](./media/how-to-network-security-overview/secure-inferencing-environment.png)
 
 ### <a name="limitations"></a>Beperkingen
+- AKS-clusters moeten deel uitmaken van hetzelfde VNet als de werkruimte en de bijbehorende resources. 
 
-- Als u Azure Machine Learning Studio via het open bare Internet gebruikt, kunnen sommige functies, zoals de ontwerper, geen toegang krijgen tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account.
-## <a name="optional-enable-studio-functionality"></a>Optioneel: de functionaliteit van Studio inschakelen
+## <a name="optional-enable-public-access"></a>Optioneel: Openbare toegang inschakelen
 
-[De werk ruimte beveiligen](#secure-the-workspace-and-associated-resources)  >  [De trainings omgeving beveiligen](#secure-the-training-environment)  >  [De omgeving](#secure-the-inferencing-environment)  >  voor het afwijzen beveiligen De **functionaliteit**  >  van Studio inschakelen [Firewall instellingen configureren](#configure-firewall-settings)
+U kunt de werkruimte achter een VNet beveiligen met behulp van een privé-eindpunt en nog steeds toegang via het openbare internet toestaan. De eerste configuratie is hetzelfde als het [beveiligen van de werkruimte en de bijbehorende resources.](#secure-the-workspace-and-associated-resources) 
 
-Als uw opslag zich in een VNet bevindt, moet u eerst aanvullende configuratie stappen uitvoeren om de volledige functionaliteit in [Studio](overview-what-is-machine-learning-studio.md)in te scha kelen. De volgende functie is standaard uitgeschakeld:
+Nadat u de werkruimte hebt beveiligen met een privékoppeling, kunt u [vervolgens Openbare toegang inschakelen.](how-to-configure-private-link.md#enable-public-access) Hierna hebt u toegang tot de werkruimte via zowel het openbare internet als het VNet.
 
-* Bekijk de gegevens in de Studio.
-* Gegevens visualiseren in de ontwerp functie.
-* Implementeer een model in de ontwerp functie.
+### <a name="limitations"></a>Beperkingen
+
+- Als u een Azure Machine Learning-studio via het openbare internet, hebben sommige functies, zoals de ontwerpfunctie, mogelijk geen toegang tot uw gegevens. Dit probleem doet zich voor wanneer de gegevens worden opgeslagen op een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage account.
+## <a name="optional-enable-studio-functionality"></a>Optioneel: Studio-functionaliteit inschakelen
+
+[De werkruimte beveiligen](#secure-the-workspace-and-associated-resources)  >  [De trainingsomgeving beveiligen](#secure-the-training-environment)  >  [De deferencingomgeving beveiligen](#secure-the-inferencing-environment)  >  **Studio-functionaliteit inschakelen**  >  [Firewallinstellingen configureren](#configure-firewall-settings)
+
+Als uw opslag zich in een VNet, moet u eerst aanvullende configuratiestappen uitvoeren om volledige functionaliteit in de studio in [te schakelen.](overview-what-is-machine-learning-studio.md) De volgende functie is standaard uitgeschakeld:
+
+* Bekijk een voorbeeld van gegevens in de studio.
+* Gegevens visualiseren in de ontwerpfunctie.
+* Implementeer een model in de ontwerpfunctie.
 * Een AutoML-experiment verzenden.
-* Een label project starten.
+* Start een labelproject.
 
-Als u de volledige studio-functionaliteit wilt inschakelen binnen een VNet, raadpleegt [u Azure machine learning Studio gebruiken in een virtueel netwerk](how-to-enable-studio-virtual-network.md#configure-data-access-in-the-studio). De Studio ondersteunt opslag accounts met behulp van service-eind punten of privé-eind punten.
+Zie Use Azure Machine Learning-studio in a virtual network (Een virtuele netwerk gebruiken) als u de volledige studio-functionaliteit in een VNet [wilt inschakelen.](how-to-enable-studio-virtual-network.md#configure-data-access-in-the-studio) De studio ondersteunt opslagaccounts die gebruikmaken van service-eindpunten of privé-eindpunten.
 
 ### <a name="limitations"></a>Beperkingen
 
-[Gegevens labeling met ml-](how-to-create-labeling-projects.md#use-ml-assisted-data-labeling) ondersteuning ondersteunt geen standaard opslag accounts die zijn beveiligd achter een virtueel netwerk. U moet een niet-standaard opslag account gebruiken voor het labelen van ML-gesteunde gegevens. Houd er rekening mee dat het niet-standaard opslag account kan worden beveiligd achter het virtuele netwerk. 
+[Door ML ondersteunde gegevenslabels bieden](how-to-create-labeling-projects.md#use-ml-assisted-data-labeling) geen ondersteuning voor standaardopslagaccounts die zijn beveiligd achter een virtueel netwerk. U moet een niet-standaardopslagaccount gebruiken voor het labelen van door ML ondersteunde gegevens. Let op: het niet-standaard opslagaccount kan worden beveiligd achter het virtuele netwerk. 
 
 ## <a name="configure-firewall-settings"></a>Firewallinstellingen configureren
 
-Configureer uw firewall om de toegang tot uw Azure Machine Learning werkruimte bronnen en het open bare Internet te beheren. We raden u aan Azure Firewall te kunnen gebruiken voor het beveiligen van uw netwerk. Als u vragen hebt over het toestaan van communicatie via uw firewall, raadpleegt u de documentatie voor de firewall die u gebruikt.
+Configureer uw firewall om de toegang tot uw Azure Machine Learning werkruimte-resources en het openbare internet te beheren. Hoewel we u Azure Firewall, moet u andere firewallproducten kunnen gebruiken om uw netwerk te beveiligen. Als u vragen hebt over het toestaan van communicatie via uw firewall, raadpleegt u de documentatie voor de firewall die u gebruikt.
 
-Zie [werk ruimte gebruiken achter een firewall](how-to-access-azureml-behind-firewall.md)voor meer informatie over Firewall instellingen.
+Zie Werkruimte achter een firewall gebruiken voor meer informatie [over firewallinstellingen.](how-to-access-azureml-behind-firewall.md)
 
 ## <a name="custom-dns"></a>Aangepaste DNS
 
-Als u een aangepaste DNS-oplossing voor uw virtuele netwerk wilt gebruiken, moet u host-records toevoegen voor uw werk ruimte.
+Als u een aangepaste DNS-oplossing voor uw virtuele netwerk wilt gebruiken, moet u hostrecords voor uw werkruimte toevoegen.
 
-Zie [een werk ruimte gebruiken met een aangepaste DNS-server](how-to-custom-dns.md)voor meer informatie over de vereiste domein namen en IP-adressen.
+Zie Een werkruimte gebruiken met een aangepaste DNS-server voor meer informatie over de vereiste [domeinnamen en IP-adressen.](how-to-custom-dns.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit artikel maakt deel uit van een virtuele netwerk reeks van vijf delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
+Dit artikel is deel één van een vijfdelige reeks virtuele netwerken. Zie de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
 
-* [Deel 2: overzicht van virtuele netwerken](how-to-secure-workspace-vnet.md)
-* [Deel 3: de trainings omgeving beveiligen](how-to-secure-training-vnet.md)
-* [Deel 4: de omgeving voor het afwijzen van interferentie beveiligen](how-to-secure-inferencing-vnet.md)
-* [Deel 5: de functionaliteit van Studio inschakelen](how-to-enable-studio-virtual-network.md)
+* [Deel 2: Overzicht van virtueel netwerk](how-to-secure-workspace-vnet.md)
+* [Deel 3: De trainingsomgeving beveiligen](how-to-secure-training-vnet.md)
+* [Deel 4: De deferencing-omgeving beveiligen](how-to-secure-inferencing-vnet.md)
+* [Deel 5: Studio-functionaliteit inschakelen](how-to-enable-studio-virtual-network.md)
 
-Zie ook het artikel over het gebruik van [aangepaste DNS](how-to-custom-dns.md) voor naam omzetting.
+Zie ook het artikel over het gebruik van [aangepaste DNS voor](how-to-custom-dns.md) naamresolutie.

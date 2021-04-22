@@ -149,7 +149,7 @@
   items:
     - name: Aanbevolen procedures
       items:
-        - name: Prestaties en betrouw baarheid
+        - name: Prestaties en betrouwbaarheid
           href: functions-best-practices.md
           displayName: best practices
         - name: Verbindingen beheren
@@ -158,7 +158,7 @@
         - name: Opslagoverwegingen
           href: storage-considerations.md
           displayName: 'encryption, keys, mount, files'
-        - name: Fout afhandeling en functionele nieuwe pogingen
+        - name: Foutafhandeling en nieuwe functies
           href: functions-bindings-error-pages.md
           displayName: best practices
         - name: Beveiliging
@@ -267,6 +267,8 @@
             - name: Ontwikkeling in Core Tools
               href: functions-run-local.md
               displayName: 'local, runtime'
+            - name: Event Grid lokale ontwikkeling van blobtriggers
+              href: functions-event-grid-blob-trigger.md
         - name: Functies maken
           items:
             - name: HTTP-trigger
@@ -279,7 +281,7 @@
                   href: ./functions-create-your-first-function-visual-studio.md
                 - name: Visual Studio Code
                   href: ./create-first-function-vs-code-csharp.md
-                - name: C# geïsoleerd (.NET 5)
+                - name: C# isolated (.NET 5)
                   href: dotnet-isolated-process-developer-howtos.md
                 - name: Java met behulp van Gradle
                   href: functions-create-first-java-gradle.md
@@ -309,7 +311,7 @@
               href: functions-create-scheduled-function.md
         - name: Verbinding maken met services
           items:
-            - name: Verbinding maken met Services
+            - name: Verbinding maken met services
               displayName: 'bindings,integrate'
               href: add-bindings-existing-function.md
             - name: Azure Cosmos DB - portal
@@ -440,7 +442,7 @@
               href: start-stop-vms/deploy.md
             - name: Beheren en bewaken
               href: start-stop-vms/manage.md
-            - name: Vm's voor starten/stoppen verwijderen
+            - name: VM's starten/stoppen verwijderen
               href: start-stop-vms/remove.md
             - name: Problemen oplossen
               href: start-stop-vms/troubleshoot.md
@@ -462,11 +464,11 @@
           href: functions-recover-storage-account.md
         - name: Python-functies
           items:
-            - name: Algemene probleem oplossing
+            - name: Algemene probleemoplossing
               href: recover-python-functions.md
             - name: Schaal en prestaties
               href: python-scale-performance-reference.md
-            - name: Geheugen profilering
+            - name: Geheugenprofilering
               href: python-memory-profiler-reference.md
 - name: Naslaginformatie
   items:

@@ -1,5 +1,5 @@
 ---
-title: Deep Learning Keras-modellen trainen
+title: Keras-modellen voor deep learning trainen
 titleSuffix: Azure Machine Learning
 description: Leer hoe u een Deep Neural Network-classificatiemodel van Keras traint en registreert dat wordt uitgevoerd op TensorFlow met behulp van Azure Machine Learning.
 services: machine-learning
@@ -9,35 +9,34 @@ ms.author: minxia
 author: mx-iao
 ms.reviewer: peterlu
 ms.date: 09/28/2020
-ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: 555ec90bbd73cee401f6f35aa04598792d2f24f4
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.topic: how-to
+ms.openlocfilehash: 5a641f349b070f3b4cb285b3d0007baa54219683
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107817142"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107884422"
 ---
 # <a name="train-keras-models-at-scale-with-azure-machine-learning"></a>Keras-modellen op schaal trainen met Azure Machine Learning
 
 In dit artikel leert u hoe u uw Keras-trainingsscripts kunt uitvoeren met Azure Machine Learning.
 
-De voorbeeldcode in dit artikel laat zien hoe u een Keras-classificatiemodel traint en registreert dat is gebouwd met behulp van de TensorFlow-back-Azure Machine Learning. Het maakt gebruik van de populaire [MNIST-gegevensset](http://yann.lecun.com/exdb/mnist/) voor het classificeren van handgeschreven cijfers met behulp van een Deep Neural Network (DNN) dat is gebouwd met behulp van de [Keras Python-bibliotheek](https://keras.io) die wordt uitgevoerd boven op [TensorFlow.](https://www.tensorflow.org/overview)
+De voorbeeldcode in dit artikel laat zien hoe u een Keras-classificatiemodel traint en registreert dat is gebouwd met behulp van de TensorFlow-back-Azure Machine Learning. Het maakt gebruik van de populaire [MNIST-gegevensset](http://yann.lecun.com/exdb/mnist/) voor het classificeren van handgeschreven cijfers met behulp van een Deep Neural Network (DNN) dat is gebouwd met behulp van de [Keras Python-bibliotheek](https://keras.io) die wordt uitgevoerd boven [op TensorFlow.](https://www.tensorflow.org/overview)
 
-Keras is een neurale netwerk-API op hoog niveau die kan worden uitgevoerd boven op andere populaire DNN-frameworks om de ontwikkeling te vereenvoudigen. Met Azure Machine Learning kunt u snel trainingstaken uitschalen met behulp van elastische cloudrekenbronnen. U kunt ook uw trainings- en versiemodellen bijhouden, modellen implementeren en nog veel meer.
+Keras is een neurale netwerk-API op hoog niveau waarmee andere populaire DNN-frameworks kunnen worden uitgevoerd om de ontwikkeling te vereenvoudigen. Met Azure Machine Learning kunt u trainingstaken snel uitschalen met behulp van rekenbronnen voor elastische cloud. U kunt ook uw trainings- en versiemodellen bijhouden, modellen implementeren en nog veel meer.
 
 Of u nu een Keras-model vanaf de basis ontwikkelt of een bestaand model naar de cloud brengt, Azure Machine Learning kan u helpen bij het bouwen van modellen die gereed zijn voor productie.
 
 > [!NOTE]
-> Als u de Keras API **tf.keras** gebruikt die is ingebouwd in TensorFlow en niet het zelfstandige Keras-pakket, raadpleegt u in plaats daarvan [TensorFlow-modellen trainen.](how-to-train-tensorflow.md)
+> Als u de Keras API **tf.keras** gebruikt die is ingebouwd in TensorFlow en niet het zelfstandige Keras-pakket, raadpleegt u [Train TensorFlow models (TensorFlow-modellen trainen).](how-to-train-tensorflow.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voer deze code uit op een van deze omgevingen:
+Voer deze code uit in een van deze omgevingen:
 
 - Azure Machine Learning rekenproces : er zijn geen downloads of installatie nodig
 
-     - Voltooi de [zelfstudie: Omgeving en werkruimte instellen om](tutorial-1st-experiment-sdk-setup.md) een toegewezen notebookserver te maken die vooraf is geladen met de SDK en de voorbeeldopslagplaats.
+     - Voltooi de [Zelfstudie: Omgeving en werkruimte instellen om](tutorial-1st-experiment-sdk-setup.md) een toegewezen notebookserver te maken die vooraf is geladen met de SDK en de voorbeeldopslagplaats.
     - Zoek in de map met voorbeelden op de notebookserver een voltooid en uitgebreid notebook door te navigeren naar deze map: **how-to-use-azureml > ml-frameworks > keras > train-hyperparameter-tune-deploy-with-keras** folder.
 
  - Uw eigen Jupyter Notebook server
@@ -46,7 +45,7 @@ Voer deze code uit op een van deze omgevingen:
     - [Maak een configuratiebestand voor de werkruimte.](how-to-configure-environment.md#workspace)
     - [De voorbeeldscriptbestanden downloaden](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/keras/train-hyperparameter-tune-deploy-with-keras) `keras_mnist.py` En `utils.py`
 
-    U kunt ook een voltooide Jupyter Notebook [van](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/keras/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) deze handleiding vinden op de pagina met GitHub-voorbeelden. Het notebook bevat uitgebreide secties over intelligente hyperparameterafstemming, modelimplementatie en notebookwidgets.
+    U vindt ook een voltooide [Jupyter Notebook van](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/keras/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) deze handleiding op de pagina met GitHub-voorbeelden. Het notebook bevat uitgebreide secties over intelligente afstemming van hyperparameters, modelimplementatie en notebookwidgets.
 
 ## <a name="set-up-the-experiment"></a>Het experiment instellen
 
@@ -78,7 +77,7 @@ ws = Workspace.from_config()
 
 ### <a name="create-a-file-dataset"></a>Een bestandsset maken
 
-Een `FileDataset` object verwijst naar een of meer bestanden in de gegevensstore van uw werkruimte of openbare URL's. De bestanden kunnen elke indeling hebben en de klasse biedt u de mogelijkheid om de bestanden te downloaden of aan uw rekenkracht te monteren. Door een te `FileDataset` maken, maakt u een verwijzing naar de locatie van de gegevensbron. Als u transformaties op de gegevensset hebt toegepast, worden deze ook opgeslagen in de gegevensset. De gegevens blijven bewaard op de bestaande locatie, dus maakt u geen extra opslagkosten. Zie de [handleiding voor](./how-to-create-register-datasets.md) het pakket voor `Dataset` meer informatie.
+Een `FileDataset` object verwijst naar een of meer bestanden in de gegevensstore of openbare URL's van uw werkruimte. De bestanden kunnen elke indeling hebben en de klasse biedt u de mogelijkheid om de bestanden te downloaden of aan uw rekenkracht te toevoegen. Door een te `FileDataset` maken, maakt u een verwijzing naar de locatie van de gegevensbron. Als u transformaties op de gegevensset hebt toegepast, worden deze ook opgeslagen in de gegevensset. De gegevens blijven bewaard op de bestaande locatie, dus maakt u geen extra opslagkosten. Zie de [handleiding voor](./how-to-create-register-datasets.md) het pakket voor `Dataset` meer informatie.
 
 ```python
 from azureml.core.dataset import Dataset
@@ -92,7 +91,7 @@ web_paths = [
 dataset = Dataset.File.from_files(path=web_paths)
 ```
 
-U kunt de methode gebruiken om de gegevensset te registreren bij uw werkruimte, zodat deze kan worden gedeeld met anderen, opnieuw kan worden gebruikt in verschillende experimenten en door de naam kan worden verwezen in uw `register()` trainingsscript.
+U kunt de methode gebruiken om de gegevensset te registreren bij uw werkruimte, zodat ze kunnen worden gedeeld met anderen, kunnen worden hergebruikt in verschillende experimenten en er in uw trainingsscript naar kan worden verwezen `register()` met de naam.
 
 ```python
 dataset = dataset.register(workspace=ws,
@@ -127,7 +126,7 @@ Zie het artikel Wat is een rekendoel? voor meer informatie over [rekendoelen.](c
 
 ### <a name="define-your-environment"></a>Uw omgeving definiëren
 
-Definieer de Azure [ML-omgeving](concept-environments.md) die de afhankelijkheden van uw trainingsscript inkapseld.
+Definieer de Azure [ML-omgeving](concept-environments.md) waarin de afhankelijkheden van uw trainingsscript zijn ingekapseld.
 
 Definieer eerst uw Conda-afhankelijkheden in een YAML-bestand; In dit voorbeeld heeft het bestand de naam `conda_dependencies.yml` .
 
@@ -143,7 +142,7 @@ dependencies:
   - matplotlib
 ```
 
-Maak een Azure ML-omgeving op deze conda-omgevingsspecificatie. De omgeving wordt tijdens runtime verpakt in een Docker-container.
+Maak een Azure ML-omgeving aan de hand van deze Conda-omgevingsspecificatie. De omgeving wordt tijdens runtime verpakt in een Docker-container.
 
 Als er geen basisafbeelding is opgegeven, gebruikt Azure ML standaard een CPU-afbeelding `azureml.core.environment.DEFAULT_CPU_IMAGE` als basisafbeelding. Omdat in dit voorbeeld training wordt uitgevoerd op een GPU-cluster, moet u een GPU-basisafbeelding opgeven met de benodigde GPU-stuurprogramma's en -afhankelijkheden. Azure ML onderhoudt een set basisafbeeldingen die zijn gepubliceerd op Microsoft Container Registry (MCR) die u kunt gebruiken. Zie de [GitHub-opslagplaats Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) voor meer informatie.
 
@@ -157,7 +156,7 @@ keras_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.0-c
 
 Zie Softwareomgevingen maken en gebruiken in Azure Machine Learning voor meer informatie over het maken [en gebruiken van omgevingen.](how-to-use-environments.md)
 
-## <a name="configure-and-submit-your-training-run"></a>Uw trainingsrun configureren en verzenden
+## <a name="configure-and-submit-your-training-run"></a>De trainingsrun configureren en verzenden
 
 ### <a name="create-a-scriptrunconfig"></a>Een ScriptRunConfig maken
 Haal eerst de gegevens op uit de gegevensstore van de werkruimte met behulp van de `Dataset` klasse .
@@ -171,7 +170,7 @@ dataset.to_path()
 
 Maak een ScriptRunConfig-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren.
 
-Alle argumenten voor uw trainingsscript worden doorgegeven via de opdrachtregel als deze is opgegeven in de `arguments` parameter . De DatasetConsumptionConfig voor onze FileDataset wordt als argument doorgegeven aan het trainingsscript voor het `--data-folder` argument . Azure ML zet deze DatasetConsumptionConfig om naar het bevestigingspunt van de back-datastore, die vervolgens vanuit het trainingsscript kan worden gebruikt.
+Eventuele argumenten voor uw trainingsscript worden doorgegeven via de opdrachtregel als deze is opgegeven in de `arguments` parameter . De DatasetConsumptionConfig voor onze FileDataset wordt doorgegeven als argument voor het trainingsscript voor het `--data-folder` argument . Azure ML zet deze DatasetConsumptionConfig om naar het bevestigingspunt van de back-datastore, die vervolgens toegankelijk is vanuit het trainingsscript.
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -192,7 +191,7 @@ src = ScriptRunConfig(source_directory=script_folder,
 Zie Configure [and submit training runs](how-to-set-up-training-targets.md)(Trainingsuit runs configureren en verzenden) voor meer informatie over het configureren van taken met ScriptRunConfig.
 
 > [!WARNING]
-> Als u eerder de TensorFlow-estimator hebt gebruikt om uw Keras-trainingstaken te configureren, moet u er rekening mee houden dat estimators zijn afgeschaft vanaf de 1.19.0 SDK-release. Met Azure ML SDK >= 1.15.0 is ScriptRunConfig de aanbevolen manier om trainingstaken te configureren, inclusief de taken die gebruikmaken van frameworks voor deep learning. Zie de migratiehandleiding [Estimator to ScriptRunConfig voor](how-to-migrate-from-estimators-to-scriptrunconfig.md)veelvoorkomende migratievragen.
+> Als u eerder de TensorFlow-estimator hebt gebruikt om uw Keras-trainingstaken te configureren, moet u er rekening mee houden dat estimators vanaf de 1.19.0 SDK-release zijn afgeschaft. Met Azure ML SDK >= 1.15.0 is ScriptRunConfig de aanbevolen manier om trainingstaken te configureren, inclusief de manier waarop deep learning-frameworks worden gebruikt. Zie de migratiehandleiding [Estimator to ScriptRunConfig voor](how-to-migrate-from-estimators-to-scriptrunconfig.md)veelvoorkomende migratievragen.
 
 ### <a name="submit-your-run"></a>Uw run verzenden
 
@@ -203,10 +202,10 @@ run = Experiment(workspace=ws, name='Tutorial-Keras-Minst').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
-### <a name="what-happens-during-run-execution"></a>Wat gebeurt er tijdens de uitvoering
-Wanneer de uitvoering wordt uitgevoerd, doorloop deze de volgende fasen:
+### <a name="what-happens-during-run-execution"></a>Wat er gebeurt tijdens de uitvoering
+Wanneer de uitvoering wordt uitgevoerd, worden de volgende fasen uitgevoerd:
 
-- **Voorbereiden:** er wordt een Docker-afbeelding gemaakt op basis van de omgeving die is gedefinieerd. De afbeelding wordt geüpload naar het containerregister van de werkruimte en in de cache opgeslagen voor latere runs. Logboeken worden ook gestreamd naar de uitvoeringsgeschiedenis en kunnen worden bekeken om de voortgang te controleren. Als in plaats daarvan een gecureerde omgeving wordt opgegeven, wordt de back-back-van die gecureerde omgeving in de cache gebruikt.
+- **Voorbereiden:** er wordt een Docker-afbeelding gemaakt op basis van de omgeving die is gedefinieerd. De afbeelding wordt geüpload naar het containerregister van de werkruimte en in de cache opgeslagen voor latere runs. Logboeken worden ook gestreamd naar de uitvoeringsgeschiedenis en kunnen worden bekeken om de voortgang te controleren. Als in plaats daarvan een gecureerde omgeving wordt opgegeven, wordt de back-of-backing van de gecureerde omgeving in de cache gebruikt.
 
 - **Schalen:** het cluster probeert omhoog te schalen als het Batch AI cluster meer knooppunten nodig heeft om de uitvoering uit te voeren dan momenteel beschikbaar zijn.
 
@@ -216,16 +215,16 @@ Wanneer de uitvoering wordt uitgevoerd, doorloop deze de volgende fasen:
 
 ## <a name="register-the-model"></a>Het model registreren
 
-Zodra u het model hebt getraind, kunt u het registreren bij uw werkruimte. Met modelregistratie kunt u uw modellen opslaan en versiebeheeren in uw werkruimte om [het modelbeheer en de implementatie te vereenvoudigen.](concept-model-management-and-deployment.md)
+Zodra u het model hebt getraind, kunt u het registreren bij uw werkruimte. Met modelregistratie kunt u uw modellen opslaan en versiebeheer in uw werkruimte gebruiken om [het modelbeheer en de implementatie te vereenvoudigen.](concept-model-management-and-deployment.md)
 
 ```Python
 model = run.register_model(model_name='keras-mnist', model_path='outputs/model')
 ```
 
 > [!TIP]
-> De implementatie-how-to bevat een sectie over het registreren [](how-to-deploy-and-where.md#choose-a-compute-target) van modellen, maar u kunt direct verder gaan met het maken van een rekendoel voor implementatie, omdat u al een geregistreerd model hebt.
+> De implementatie-how-to bevat een sectie over het registreren van modellen, maar u kunt direct naar het maken van een [rekendoel](how-to-deploy-and-where.md#choose-a-compute-target) voor implementatie gaan, omdat u al een geregistreerd model hebt.
 
-U kunt ook een lokale kopie van het model downloaden. Dit kan handig zijn voor het lokaal uitvoeren van aanvullende modelvalidatiewerkzaamheden. In het trainingsscript, , wordt het model met een TensorFlow-opslagobject opgeslagen in een lokale map `keras_mnist.py` (lokaal voor het rekendoel). U kunt het run-object gebruiken om een kopie uit de run history te downloaden.
+U kunt ook een lokale kopie van het model downloaden. Dit kan handig zijn voor het lokaal uitvoeren van aanvullende modelvalidatiewerkzaamheden. In het trainingsscript, , wordt het model met een TensorFlow-opslagobject opgeslagen in een lokale map `keras_mnist.py` (lokaal voor het rekendoel). U kunt het run-object gebruiken om een kopie uit de geschiedenis van de run te downloaden.
 
 ```Python
 # Create a model folder in the current directory
@@ -242,7 +241,7 @@ for f in run.get_file_names():
 
 In dit artikel hebt u een Keras-model getraind en geregistreerd op Azure Machine Learning. Als u wilt weten hoe u een model implementeert, gaat u verder met ons artikel over modelimplementatie.
 
-* [Hoe en waar u modellen implementeert](how-to-deploy-and-where.md)
+* [Modellen implementeren en waar](how-to-deploy-and-where.md)
 * [Metrische gegevens van de run bijhouden tijdens de training](how-to-log-view-metrics.md)
 * [Hyperparameters afstemmen](how-to-tune-hyperparameters.md)
 * [Een getraind model implementeren](how-to-deploy-and-where.md)

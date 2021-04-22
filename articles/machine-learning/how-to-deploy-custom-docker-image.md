@@ -1,7 +1,7 @@
 ---
-title: Modellen implementeren met aangepaste Docker-afbeelding
+title: Modellen implementeren met een aangepaste Docker-afbeelding
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het gebruik van een aangepaste Docker-basisafbeelding voor het implementeren van uw Azure Machine Learning modellen. Hoewel Azure Machine Learning een standaardbasisafbeelding voor u biedt, kunt u ook uw eigen basisafbeelding gebruiken.
+description: Meer informatie over het gebruik van een aangepaste Docker-basisafbeelding om uw Azure Machine Learning implementeren. Hoewel Azure Machine Learning een standaardbasisafbeelding voor u biedt, kunt u ook uw eigen basisafbeelding gebruiken.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,27 +9,27 @@ ms.author: sagopal
 author: saachigopal
 ms.reviewer: larryfr
 ms.date: 11/16/2020
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, deploy
-ms.openlocfilehash: f621bb2a7d4543620d22ab85fb8b44752c9989ac
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.topic: how-to
+ms.custom: devx-track-python, deploy
+ms.openlocfilehash: bd83d9f30712adf671f9a6f2dd15760c3466f175
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107376253"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107889714"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Een model implementeren met behulp van een aangepaste Docker-basisafbeelding
 
 Meer informatie over het gebruik van een aangepaste Docker-basisafbeelding bij het implementeren van getrainde modellen met Azure Machine Learning.
 
-Azure Machine Learning gebruikt een Standaard Docker-basis-docker-afbeelding als er geen is opgegeven. U vindt de specifieke Docker-afbeelding die wordt gebruikt met `azureml.core.runconfig.DEFAULT_CPU_IMAGE` . U kunt ook een Azure Machine Learning __gebruiken om__ een specifieke basisafbeelding te selecteren of een aangepaste basisafbeelding gebruiken die u op te geven.
+Azure Machine Learning gebruikt een Standaard Docker-basis-docker-afbeelding als er geen is opgegeven. U vindt de specifieke Docker-afbeelding die wordt gebruikt met `azureml.core.runconfig.DEFAULT_CPU_IMAGE` . U kunt ook een Azure Machine Learning __gebruiken om__ een specifieke basisafbeelding te selecteren of een aangepaste basisafbeelding gebruiken die u op verstrekt.
 
-Een basisafbeelding wordt gebruikt als het beginpunt wanneer een installatie afbeelding wordt gemaakt voor een implementatie. Het biedt het onderliggende besturingssysteem en de onderliggende onderdelen. Tijdens het implementatieproces worden vervolgens extra onderdelen, zoals uw model, conda-omgeving en andere assets, toegevoegd aan de afbeelding.
+Een basisafbeelding wordt gebruikt als het beginpunt wanneer een installatiebestand wordt gemaakt voor een implementatie. Het biedt het onderliggende besturingssysteem en de onderliggende onderdelen. Tijdens het implementatieproces worden vervolgens extra onderdelen, zoals uw model, conda-omgeving en andere assets, toegevoegd aan de afbeelding.
 
-Normaal gesproken maakt u een aangepaste basisafbeelding wanneer u Docker wilt gebruiken om uw afhankelijkheden te beheren, een betere controle over onderdeelversies wilt behouden of tijd wilt besparen tijdens de implementatie. Mogelijk wilt u ook software installeren die vereist is voor uw model, waarbij het installatieproces lang duurt. Als u de software installeert bij het maken van de basisafbeelding, hoeft u deze niet voor elke implementatie te installeren.
+Normaal gesproken maakt u een aangepaste basisafbeelding wanneer u Docker wilt gebruiken om uw afhankelijkheden te beheren, een betere controle over onderdeelversies te behouden of tijd te besparen tijdens de implementatie. Mogelijk wilt u ook software installeren die vereist is voor uw model, waarbij het installatieproces lang duurt. Als u de software installeert bij het maken van de basisafbeelding, hoeft u deze niet voor elke implementatie te installeren.
 
 > [!IMPORTANT]
-> Wanneer u een model implementeert, kunt u geen kernonderdelen zoals de webserver of IoT Edge overschrijven. Deze onderdelen bieden een bekende werkomgeving die wordt getest en ondersteund door Microsoft.
+> Wanneer u een model implementeert, kunt u geen kernonderdelen zoals de webserver of de IoT Edge overschrijven. Deze onderdelen bieden een bekende werkomgeving die wordt getest en ondersteund door Microsoft.
 
 > [!WARNING]
 > Microsoft kan mogelijk niet helpen bij het oplossen van problemen die worden veroorzaakt door een aangepaste afbeelding. Als u problemen ondervindt, wordt u mogelijk gevraagd om de standaardafbeelding te gebruiken of een van de afbeeldingen die Microsoft verstrekt om te zien of het probleem specifiek is voor uw afbeelding.
@@ -44,28 +44,28 @@ Dit document is onderverdeeld in twee secties:
 * Een Azure Machine Learning-werkruimte. Zie het artikel Een werkruimte maken [voor meer](how-to-manage-workspace.md) informatie.
 * De [Azure Machine Learning SDK](/python/api/overview/azure/ml/install). 
 * De [Azure CLI](/cli/azure/install-azure-cli).
-* De [CLI-extensie voor Azure Machine Learning.](reference-azure-machine-learning-cli.md)
+* De [CLI-extensie voor Azure Machine Learning](reference-azure-machine-learning-cli.md).
 * Een [Azure Container Registry](../container-registry/index.yml) of een ander Docker-register dat toegankelijk is op internet.
-* Bij de stappen in dit document wordt ervan uitgenomen dat u bekend bent met het maken en gebruiken van __een deferentieconfiguratieobject__ als onderdeel van de modelimplementatie. Zie Waar te implementeren en hoe [voor meer informatie.](how-to-deploy-and-where.md)
+* Bij de stappen in dit document wordt ervan uitgenomen dat u bekend bent met het maken en gebruiken van een __deferentieconfiguratieobject__ als onderdeel van de modelimplementatie. Zie Waar te implementeren en hoe [voor meer informatie.](how-to-deploy-and-where.md)
 
 ## <a name="create-a-custom-base-image"></a>Een aangepaste basisafbeelding maken
 
 Bij de informatie in deze sectie wordt ervan uitgenomen dat u een Azure Container Registry docker-afbeeldingen op te slaan. Gebruik de volgende controlelijst bij het plannen van aangepaste afbeeldingen voor Azure Machine Learning:
 
-* Gebruikt u de Azure Container Registry gemaakt voor de Azure Machine Learning werkruimte of een zelfstandige Azure Container Registry?
+* Gebruikt u de Azure Container Registry gemaakt voor de werkruimte Azure Machine Learning of een zelfstandige Azure Container Registry?
 
-    Wanneer u afbeeldingen gebruikt die zijn opgeslagen in __het containerregister voor de werkruimte,__ hoeft u zich niet te verifiëren bij het register. Verificatie wordt afgehandeld door de werkruimte.
+    Wanneer u afbeeldingen gebruikt die zijn opgeslagen in __het containerregister voor__ de werkruimte, hoeft u zich niet te verifiëren bij het register. Verificatie wordt afgehandeld door de werkruimte.
 
     > [!WARNING]
-    > De Azure Container Registry voor uw werkruimte wordt gemaakt wanneer u voor het eerst een model traint of __implementeert__ met behulp van de werkruimte. Als u een nieuwe werkruimte hebt gemaakt, maar niet hebt getraind of een model hebt gemaakt, Azure Container Registry er geen nieuwe werkruimte voor de werkruimte.
+    > De Azure Container Registry voor uw werkruimte wordt __gemaakt wanneer u__ voor het eerst een model traint of implementeert met behulp van de werkruimte. Als u een nieuwe werkruimte hebt gemaakt, maar niet hebt getraind of een model hebt gemaakt, Azure Container Registry er geen werkruimte meer voor de werkruimte.
 
     Wanneer u afbeeldingen gebruikt die zijn opgeslagen in een zelfstandig __containerregister,__ moet u een service-principal configureren die ten minste leestoegang heeft. Vervolgens geeft u de service-principal-id (gebruikersnaam) en het wachtwoord op voor iedereen die gebruikmaakt van afbeeldingen uit het register. De uitzondering hierop is als u het containerregister openbaar toegankelijk maakt.
 
-    Zie Een privécontainerregister maken Azure Container Registry informatie over het maken [van een privécontainerregister.](../container-registry/container-registry-get-started-azure-cli.md)
+    Zie Een privécontainerregister maken Azure Container Registry informatie [over het maken van een privécontainerregister.](../container-registry/container-registry-get-started-azure-cli.md)
 
-    Zie verificatie met service-principals voor Azure Container Registry informatie [Azure Container Registry het gebruik van service-principals.](../container-registry/container-registry-auth-service-principal.md)
+    Zie verificatie met service-principals Azure Container Registry voor Azure Container Registry het gebruik [van service-principals.](../container-registry/container-registry-auth-service-principal.md)
 
-* Azure Container Registry en afbeeldingsgegevens: geef de naam van de afbeelding op aan iedereen die deze moet gebruiken. Er wordt bijvoorbeeld verwezen naar een installatie afbeelding met de naam , die is opgeslagen in een register met de naam , als bij het gebruik van de `myimage` `myregistry` installatie afbeelding voor `myregistry.azurecr.io/myimage` modelimplementatie
+* Azure Container Registry en afbeeldingsgegevens: geef de naam van de afbeelding op aan iedereen die deze moet gebruiken. Er wordt bijvoorbeeld verwezen naar een installatieafbeelding met de naam , die is opgeslagen in een register met de naam , als bij het gebruik van de installatie afbeelding `myimage` `myregistry` voor `myregistry.azurecr.io/myimage` modelimplementatie
 
 ### <a name="image-requirements"></a>Vereisten voor installatiekopieën
 
@@ -76,7 +76,7 @@ Azure Machine Learning ondersteunt alleen Docker-afbeeldingen die de volgende so
 
 Als u Gegevenssets wilt gebruiken, installeert u het pakket libfuse-dev. Zorg er ook voor dat u alle gebruikersruimtepakketten installeert die u mogelijk nodig hebt.
 
-Azure ML onderhoudt een set CPU- en GPU-basisafbeeldingen die zijn gepubliceerd naar Microsoft Container Registry die u eventueel kunt gebruiken (of verwijzen) in plaats van uw eigen aangepaste afbeelding te maken. Als u de Dockerfiles voor deze afbeeldingen wilt zien, raadpleegt u de [GitHub-opslagplaats Azure/AzureML-Containers.](https://github.com/Azure/AzureML-Containers)
+Azure ML onderhoudt een set CPU- en GPU-basisafbeeldingen die zijn gepubliceerd naar Microsoft Container Registry die u eventueel kunt gebruiken (of waarnaar wordt verwezen) in plaats van uw eigen aangepaste afbeelding te maken. Als u de Dockerfiles voor deze afbeeldingen wilt zien, raadpleegt u de [GitHub-opslagplaats Azure/AzureML-Containers.](https://github.com/Azure/AzureML-Containers)
 
 Voor GPU-afbeeldingen biedt Azure ML momenteel zowel cuda9- als cuda10-basisafbeeldingen. De belangrijkste afhankelijkheden die in deze basisafbeeldingen zijn geïnstalleerd, zijn:
 
@@ -89,13 +89,13 @@ Voor GPU-afbeeldingen biedt Azure ML momenteel zowel cuda9- als cuda10-basisafbe
 | nccl | - | - | 2.4 | 2.4 |
 | git | 2.7.4 | 2.7.4 | 2.7.4 | 2.7.4 |
 
-De CPU-installatie afbeeldingen zijn gebouwd op ubuntu16.04. De GPU-afbeeldingen voor cuda9 zijn gebouwd vanuit nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04. De GPU-afbeeldingen voor cuda10 zijn gebouwd vanuit nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04.
+De CPU-installatie afbeeldingen zijn gebaseerd op ubuntu16.04. De GPU-afbeeldingen voor cuda9 zijn gebouwd vanuit nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04. De GPU-afbeeldingen voor cuda10 zijn gebouwd vanuit nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04.
 <a id="getname"></a>
 
 > [!IMPORTANT]
 > Wanneer u aangepaste Docker-afbeeldingen gebruikt, is het raadzaam pakketversies vast te maken om de reproduceerbaarheid te verbeteren.
 
-### <a name="get-container-registry-information"></a>Informatie over containerregisters verkrijgen
+### <a name="get-container-registry-information"></a>Containerregistergegevens op halen
 
 In deze sectie leert u hoe u de naam van de Azure Container Registry voor uw Azure Machine Learning werkruimte.
 
@@ -208,9 +208,9 @@ Als u een aangepaste afbeelding wilt gebruiken, hebt u de volgende informatie no
 * Als de afbeelding zich in een __privéopslagplaats ,__ hebt u de volgende informatie nodig:
 
     * Het __registeradres__. Bijvoorbeeld `myregistry.azureecr.io`.
-    * Een gebruikersnaam en __wachtwoord voor__ __de service-principal__ die leestoegang tot het register hebben.
+    * Een gebruikersnaam en __wachtwoord voor__ __een service-principal__ die leestoegang tot het register hebben.
 
-    Als u deze informatie niet hebt, spreekt u met de beheerder voor de Azure Container Registry die uw afbeelding bevat.
+    Als u deze informatie niet hebt, spreekt u met de beheerder voor de Azure Container Registry uw afbeelding bevat.
 
 ### <a name="publicly-available-base-images"></a>Openbaar beschikbare basisafbeeldingen
 
@@ -234,7 +234,7 @@ Zie de opslagplaats Azure Machine Learning [containers op](https://github.com/Az
 
 ### <a name="use-an-image-with-the-azure-machine-learning-sdk"></a>Een afbeelding gebruiken met de Azure Machine Learning SDK
 
-Als u een afbeelding wilt gebruiken die is opgeslagen in de **Azure Container Registry** voor uw werkruimte of een **containerregister** dat openbaar toegankelijk is, stelt u de volgende omgevingskenmerken [](/python/api/azureml-core/azureml.core.environment.environment) in:
+Als u een afbeelding wilt gebruiken die is opgeslagen in de Azure Container Registry voor uw werkruimte **of** een containerregister dat openbaar toegankelijk **is,** stelt u de volgende omgevingskenmerken [](/python/api/azureml-core/azureml.core.environment.environment) in:
 
 + `docker.enabled=True`
 + `docker.base_image`: stel in op het register en het pad naar de afbeelding.
@@ -277,7 +277,7 @@ inference_config = InferenceConfig(entry_script="score.py",
                                    environment=myenv)
 ```
 
-Op dit moment kunt u doorgaan met de implementatie. Met het volgende codefragment wordt bijvoorbeeld een webservice lokaal geïmplementeerd met behulp van de deferentieconfiguratie en de aangepaste installatie afbeelding:
+Op dit moment kunt u doorgaan met de implementatie. Met het volgende codefragment wordt bijvoorbeeld een webservice lokaal geïmplementeerd met behulp van de deference-configuratie en de aangepaste installatie afbeelding:
 
 ```python
 from azureml.core.webservice import LocalWebservice, Webservice
@@ -295,9 +295,9 @@ Zie Omgevingen maken en beheren voor training en implementatie voor meer informa
 ### <a name="use-an-image-with-the-machine-learning-cli"></a>Een afbeelding gebruiken met de Machine Learning CLI
 
 > [!IMPORTANT]
-> Momenteel kan Machine Learning CLI afbeeldingen uit de Azure Container Registry gebruiken voor uw werkruimte of openbaar toegankelijke opslagplaatsen. Er kunnen geen afbeeldingen uit zelfstandige privéregisters worden gebruikt.
+> Momenteel kan Machine Learning CLI gebruikmaken van afbeeldingen uit de Azure Container Registry voor uw werkruimte of openbaar toegankelijke opslagplaatsen. Er kunnen geen afbeeldingen uit zelfstandige privéregisters worden gebruikt.
 
-Voordat u een model implementeert met behulp van Machine Learning CLI, maakt u een [omgeving](/python/api/azureml-core/azureml.core.environment.environment) die gebruikmaakt van de aangepaste afbeelding. Maak vervolgens een deferentieconfiguratiebestand dat verwijst naar de omgeving. U kunt de omgeving ook rechtstreeks in het deferentieconfiguratiebestand definiëren. In het volgende JSON-document wordt gedemonstreerd hoe u verwijst naar een afbeelding in een openbaar containerregister. In dit voorbeeld wordt de omgeving inline gedefinieerd:
+Voordat u een model implementeert met behulp van Machine Learning CLI, maakt u een [omgeving](/python/api/azureml-core/azureml.core.environment.environment) die gebruikmaakt van de aangepaste afbeelding. Maak vervolgens een deferentieconfiguratiebestand dat verwijst naar de omgeving. U kunt de omgeving ook rechtstreeks in het deference-configuratiebestand definiëren. In het volgende JSON-document wordt gedemonstreerd hoe u verwijst naar een afbeelding in een openbaar containerregister. In dit voorbeeld wordt de omgeving inline gedefinieerd:
 
 ```json
 {
@@ -343,15 +343,15 @@ Voordat u een model implementeert met behulp van Machine Learning CLI, maakt u e
 }
 ```
 
-Dit bestand wordt gebruikt met de `az ml model deploy` opdracht . De `--ic` parameter wordt gebruikt om het configuratiebestand voor de deferentie op te geven.
+Dit bestand wordt gebruikt met de `az ml model deploy` opdracht . De `--ic` parameter wordt gebruikt om het configuratiebestand voor de deference op te geven.
 
 ```azurecli
 az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json --ct akscomputetarget
 ```
 
-Zie de sectie 'modelregistratie, profilering en implementatie' van de CLI-extensie voor Azure Machine Learning voor meer informatie over het implementeren van een model met behulp [van de ML](reference-azure-machine-learning-cli.md#model-registration-profiling-deployment) CLI.
+Zie de sectie 'modelregistratie, profilering en implementatie' van de CLI-extensie voor Azure Machine Learning voor meer informatie over het implementeren van een model met behulp van de ML [CLI.](reference-azure-machine-learning-cli.md#model-registration-profiling-deployment)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [waar u kunt implementeren en hoe](how-to-deploy-and-where.md).
-* Meer informatie over [het trainen en implementeren machine learning modellen met behulp van Azure Pipelines.](/azure/devops/pipelines/targets/azure-machine-learning)
+* Meer informatie over [waar te implementeren en hoe](how-to-deploy-and-where.md).
+* Meer informatie over het [trainen en implementeren machine learning modellen met behulp van Azure Pipelines.](/azure/devops/pipelines/targets/azure-machine-learning)

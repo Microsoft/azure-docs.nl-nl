@@ -9,14 +9,14 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 07/17/2020
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, deploy
-ms.openlocfilehash: 46dc9e48ba68189253885ae823457a62c3c4426e
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.topic: how-to
+ms.custom: devx-track-python, deploy
+ms.openlocfilehash: 651e158009c87449bef339d131edbb188763b45f
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107877800"
+ms.locfileid: "107885448"
 ---
 # <a name="deploy-your-existing-model-with-azure-machine-learning"></a>Uw bestaande model implementeren met Azure Machine Learning
 
@@ -270,7 +270,7 @@ az ml model deploy -n myservice -m sentiment:1 --ic inferenceConfig.json --dc de
 
 Zie de naslaginformatie over [az ml model deploy voor meer](/cli/azure/ml/model#az_ml_model_deploy) informatie.
 
-Zie Modellen implementeren voor meer informatie over [implementatie.](how-to-deploy-and-where.md)
+Zie How [and where to deploy models (Modellen implementeren) voor meer informatie over implementatie.](how-to-deploy-and-where.md)
 
 ## <a name="request-response-consumption"></a>Verbruik van aanvraag-antwoord
 

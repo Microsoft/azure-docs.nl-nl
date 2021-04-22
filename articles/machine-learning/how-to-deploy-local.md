@@ -8,14 +8,14 @@ ms.subservice: core
 ms.author: laobri
 author: lobrien
 ms.date: 11/20/2020
-ms.topic: conceptual
-ms.custom: how-to, deploy
-ms.openlocfilehash: 75836580fc2dc5a2090047865610e26d856387b0
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.topic: how-to
+ms.custom: deploy
+ms.openlocfilehash: 6e9a53a36403e24fa9573c6e65ae062a23bd9cb6
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107861208"
+ms.locfileid: "107889570"
 ---
 # <a name="deploy-models-trained-with-azure-machine-learning-on-your-local-machines"></a>Modellen implementeren die zijn getraind met Azure Machine Learning op uw lokale machines 
 

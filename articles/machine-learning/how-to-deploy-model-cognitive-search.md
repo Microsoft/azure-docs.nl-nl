@@ -1,65 +1,65 @@
 ---
 title: Een model implementeren voor gebruik met Cognitive Search
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het gebruik van Azure Machine Learning voor het implementeren van een model voor gebruik met Cognitive Search. Het model wordt gebruikt als aangepaste vaardigheid voor het verrijken van de zoek ervaring.
+description: Meer informatie over het gebruik Azure Machine Learning het implementeren van een model voor gebruik met Cognitive Search. Het model wordt gebruikt als een aangepaste vaardigheid om de zoekervaring te verrijken.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: cgronlun
 author: cjgronlund
 ms.reviewer: larryfr
 ms.date: 03/11/2021
 ms.custom: deploy
-ms.openlocfilehash: 22c8880cbcde1f1a55fa66beee0323e0348e1164
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 5a6fc35db56d016362f006e401ddb156e931440b
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103149610"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107889480"
 ---
 # <a name="deploy-a-model-for-use-with-cognitive-search"></a>Een model implementeren voor gebruik met Cognitive Search
 
 
 In dit artikel leert u hoe u Azure Machine Learning kunt gebruiken om een model te implementeren voor gebruik met [Azure Cognitive Search](../search/search-what-is-azure-search.md).
 
-Cognitive Search voert inhouds verwerking uit via heterogene-inhoud, zodat deze kan worden doorzocht door mensen of toepassingen. Dit proces kan worden uitgebreid met behulp van een model dat is geïmplementeerd vanuit Azure Machine Learning.
+Cognitive Search voert inhoudsverwerking uit op heterogene inhoud, om query's door mensen of toepassingen mogelijk te maken. Dit proces kan worden verbeterd met behulp van een model dat is geïmplementeerd vanuit Azure Machine Learning.
 
-Azure Machine Learning kunt een getraind model implementeren als een webservice. De webservice wordt vervolgens Inge sloten in een Cognitive Search _vaardigheid_, die onderdeel wordt van de verwerkings pijplijn.
+Azure Machine Learning kunt een getraind model implementeren als een webservice. De webservice wordt vervolgens ingesloten in een Cognitive Search _vaardigheid_, die deel gaat uitmaken van de verwerkingspijplijn.
 
 > [!IMPORTANT]
-> De informatie in dit artikel is specifiek voor de implementatie van het model. Het bevat informatie over de ondersteunde implementatie configuraties waarmee het model door Cognitive Search kan worden gebruikt.
+> De informatie in dit artikel is specifiek voor de implementatie van het model. Het bevat informatie over de ondersteunde implementatieconfiguraties waarmee het model kan worden gebruikt door Cognitive Search.
 >
-> Zie voor meer informatie over het configureren van Cognitive Search voor het gebruik van het geïmplementeerde model de zelf studie [een aangepaste vaardigheid bouwen en implementeren met Azure machine learning](../search/cognitive-search-tutorial-aml-custom-skill.md) .
+> Zie de zelfstudie Een aangepaste vaardigheid bouwen en implementeren Cognitive Search het geïmplementeerde model voor meer informatie over het configureren Azure Machine Learning het [geïmplementeerde](../search/cognitive-search-tutorial-aml-custom-skill.md) model.
 >
-> Zie voor het voor beeld waarop de zelf studie is gebaseerd [https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill) .
+> Zie voor het voorbeeld op basis van de [https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill) zelfstudie.
 
-Bij het implementeren van een model voor gebruik met Azure Cognitive Search moet de implementatie voldoen aan de volgende vereisten:
+Wanneer u een model implementeert voor gebruik met Azure Cognitive Search, moet de implementatie voldoen aan de volgende vereisten:
 
-* Gebruik de Azure Kubernetes-service om het model te hosten voor demijnen.
-* Schakel trans port Layer Security (TLS) in voor de Azure Kubernetes-service. TLS wordt gebruikt voor het beveiligen van HTTPS-communicatie tussen Cognitive Search en het geïmplementeerde model.
-* Het invoer script moet het `inference_schema` pakket gebruiken om een OpenAPI-schema (Swagger) te genereren voor de service.
-* Het invoer script moet ook JSON-gegevens als invoer accepteren en JSON als uitvoer genereren.
+* Gebruik Azure Kubernetes Service om het model te hosten voor de deferie.
+* Schakel Transport Layer Security (TLS) in voor de Azure Kubernetes Service. TLS wordt gebruikt om HTTPS-communicatie tussen Cognitive Search en het geïmplementeerde model te beveiligen.
+* Het invoerscript moet het pakket `inference_schema` gebruiken om een OpenAPI-schema (Swagger) voor de service te genereren.
+* Het invoerscript moet ook JSON-gegevens als invoer accepteren en JSON als uitvoer genereren.
 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
+* Een Azure Machine Learning-werkruimte. Zie Create [an Azure Machine Learning workspace (Een werkruimte Azure Machine Learning maken) voor meer informatie.](how-to-manage-workspace.md)
 
-* Een python-ontwikkel omgeving met de Azure Machine Learning SDK geïnstalleerd. Zie [Azure machine learning SDK](/python/api/overview/azure/ml/install)voor meer informatie.  
+* Een Python-ontwikkelomgeving met de Azure Machine Learning SDK geïnstalleerd. Zie voor meer informatie [Azure Machine Learning SDK.](/python/api/overview/azure/ml/install)  
 
-* Een geregistreerd model. Als u geen model hebt, gebruikt u het voorbeeld notitieblok op [https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill) .
+* Een geregistreerd model. Als u geen model hebt, gebruikt u het voorbeeldnoteboek op [https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill) .
 
-* Algemene informatie [over hoe en waar modellen moeten worden geïmplementeerd](how-to-deploy-and-where.md).
+* Een algemeen begrip van [hoe en waar modellen moeten worden geïmplementeerd.](how-to-deploy-and-where.md)
 
 ## <a name="connect-to-your-workspace"></a>Verbinding maken met uw werkruimte
 
-Een Azure Machine Learning-werk ruimte biedt een centrale locatie voor het werken met alle artefacten die u maakt wanneer u Azure Machine Learning gebruikt. De werk ruimte houdt een geschiedenis bij van alle uitvoeringen van de training, met inbegrip van Logboeken, metrische gegevens, uitvoer en een moment opname van uw scripts.
+Een Azure Machine Learning biedt een centrale plaats om te werken met alle artefacten die u maakt wanneer u Azure Machine Learning. De werkruimte houdt een geschiedenis bij van alle trainingsuitvoer, inclusief logboeken, metrische gegevens, uitvoer en een momentopname van uw scripts.
 
-Gebruik de volgende code om verbinding te maken met een bestaande werk ruimte:
+Gebruik de volgende code om verbinding te maken met een bestaande werkruimte:
 
 > [!IMPORTANT]
-> Dit codefragment verwacht dat de werkruimteconfiguratie wordt opgeslagen in de huidige of de bovenliggende map. Zie [Azure machine learning-werk ruimten maken en beheren](how-to-manage-workspace.md)voor meer informatie. Zie [Een configuratiebestand voor een werkruimte maken](how-to-configure-environment.md#workspace) voor meer informatie over de configuratie als bestand opslaan.
+> Dit codefragment verwacht dat de werkruimteconfiguratie wordt opgeslagen in de huidige of de bovenliggende map. Zie Create and manage Azure Machine Learning workspaces (Werkruimten maken [Azure Machine Learning beheren) voor meer informatie.](how-to-manage-workspace.md) Zie [Een configuratiebestand voor een werkruimte maken](how-to-configure-environment.md#workspace) voor meer informatie over de configuratie als bestand opslaan.
 
 ```python
 from azureml.core import Workspace
@@ -75,19 +75,19 @@ except:
 
 ## <a name="create-a-kubernetes-cluster"></a>Een Kubernetes-cluster maken
 
-**Geschatte tijd**: circa 20 minuten.
+**Geschatte tijd:** ongeveer 20 minuten.
 
-Een Kubernetes-cluster is een set virtuele-machine-instanties (knoop punten genaamd) die worden gebruikt voor het uitvoeren van container toepassingen.
+Een Kubernetes-cluster is een set exemplaren van virtuele machines (knooppunten genoemd) die worden gebruikt voor het uitvoeren van toepassingen in containers.
 
-Wanneer u een model implementeert van Azure Machine Learning naar de Azure Kubernetes-service, worden het model en alle assets die nodig zijn voor het hosten van de service als een webservice, verpakt in een docker-container. Deze container wordt vervolgens geïmplementeerd op het cluster.
+Wanneer u een model implementeert van Azure Machine Learning naar Azure Kubernetes Service, worden het model en alle assets die nodig zijn om het als een webservice te hosten, verpakt in een Docker-container. Deze container wordt vervolgens geïmplementeerd op het cluster.
 
-De volgende code laat zien hoe u een nieuw Azure Kubernetes service (AKS)-cluster maakt voor uw werk ruimte:
+De volgende code laat zien hoe u een nieuw AKS Azure Kubernetes Service cluster (AKS) voor uw werkruimte maakt:
 
 > [!TIP]
-> U kunt ook een bestaande Azure Kubernetes-service toevoegen aan uw Azure Machine Learning-werk ruimte. Zie [modellen implementeren in azure Kubernetes service](how-to-deploy-azure-kubernetes-service.md)voor meer informatie.
+> U kunt ook een bestaande Azure Kubernetes Service aan uw Azure Machine Learning werkruimte. Zie How to deploy models to Azure Kubernetes Service [(Modellen implementeren naar Azure Kubernetes Service) voor meer Azure Kubernetes Service.](how-to-deploy-azure-kubernetes-service.md)
 
 > [!IMPORTANT]
-> U ziet dat de code de `enable_ssl()` methode gebruikt om TLS (trans port Layer Security) voor het cluster in te scha kelen. Dit is vereist wanneer u van plan bent het geïmplementeerde model van Cognitive Services te gebruiken.
+> U ziet dat de code de `enable_ssl()` methode gebruikt om Transport Layer Security (TLS) voor het cluster in teschakelen. Dit is vereist wanneer u van plan bent het geïmplementeerde model te gebruiken vanuit Cognitive Services.
 
 ```python
 from azureml.core.compute import AksCompute, ComputeTarget
@@ -119,19 +119,19 @@ except Exception as e:
 ```
 
 > [!IMPORTANT]
-> In azure wordt u gefactureerd zolang het AKS-cluster bestaat. Zorg ervoor dat u uw AKS-cluster verwijdert wanneer u klaar bent.
+> Azure factureren u zolang het AKS-cluster bestaat. Zorg ervoor dat u uw AKS-cluster verwijdert wanneer u klaar bent met het cluster.
 
-Zie [How to Deploy to Azure Kubernetes service](how-to-deploy-azure-kubernetes-service.md)(Engelstalig) voor meer informatie over het gebruik van AKS met Azure machine learning.
+Zie How to deploy to Azure Kubernetes Service (Implementeren naar een Azure Kubernetes Service) voor meer informatie over het gebruik van AKS [Azure Machine Learning.](how-to-deploy-azure-kubernetes-service.md)
 
-## <a name="write-the-entry-script"></a>Het invoer script schrijven
+## <a name="write-the-entry-script"></a>Het invoerscript schrijven
 
-Het invoer script ontvangt gegevens die zijn verzonden naar de webservice, geeft deze door aan het model en retourneert de Score resultaten. Met het volgende script wordt het model bij het opstarten geladen en wordt het model vervolgens gebruikt voor het beoordelen van gegevens. Dit bestand wordt ook wel genoemd `score.py` .
+Het invoerscript ontvangt gegevens die naar de webservice worden verzonden, geeft deze door aan het model en retourneert de scoreresultaten. Het volgende script laadt het model bij het opstarten en gebruikt vervolgens het model om gegevens te scoren. Dit bestand wordt ook wel `score.py` genoemd.
 
 > [!TIP]
-> Het invoerscript is specifiek voor uw model. Het script moet bijvoorbeeld weten dat het Framework kan worden gebruikt met uw model, gegevens indelingen, enzovoort.
+> Het invoerscript is specifiek voor uw model. Het script moet bijvoorbeeld het framework kennen dat moet worden gebruikt met uw model, gegevensindelingen, enzovoort.
 
 > [!IMPORTANT]
-> Wanneer u van plan bent het geïmplementeerde model van Azure Cognitive Services te gebruiken, moet u het `inference_schema` pakket gebruiken om het genereren van schema's voor de implementatie in te scha kelen. Dit pakket biedt onderdelen waarmee u de invoer-en uitvoer gegevens indeling kunt definiëren voor de webservice die gebruikmaakt van het model.
+> Wanneer u van plan bent het geïmplementeerde model te gebruiken vanuit Azure Cognitive Services, moet u het pakket gebruiken om het genereren van schema's voor `inference_schema` de implementatie mogelijk te maken. Dit pakket biedt verdelers waarmee u de invoer- en uitvoergegevensindeling kunt definiëren voor de webservice die de deferentie uitvoert met behulp van het model.
 
 ```python
 from azureml.core.model import Model
@@ -189,11 +189,11 @@ def run(raw_data):
         return json.dumps({"error": result, "tb": traceback.format_exc()})
 ```
 
-Voor meer informatie over invoer scripts, Zie [hoe en waar u wilt implementeren](how-to-deploy-and-where.md).
+Zie How and where to deploy (Hoe en waar implementeren) [voor meer informatie over invoerscripts.](how-to-deploy-and-where.md)
 
-## <a name="define-the-software-environment"></a>De software omgeving definiëren
+## <a name="define-the-software-environment"></a>De softwareomgeving definiëren
 
-De omgevings klasse wordt gebruikt voor het definiëren van de python-afhankelijkheden voor de service. Het bevat afhankelijkheden die worden vereist door het model en het script. In dit voor beeld installeert het pakketten van de gewone pypi-index, evenals van een GitHub opslag plaats. 
+De omgevingsklasse wordt gebruikt om de Python-afhankelijkheden voor de service te definiëren. Het bevat afhankelijkheden die vereist zijn voor zowel het model als het invoerscript. In dit voorbeeld worden pakketten geïnstalleerd vanuit de reguliere pypi-index en vanuit een GitHub-opslagplaats. 
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies 
@@ -210,14 +210,14 @@ myenv = Environment(name='myenv')
 myenv.python.conda_dependencies = conda_deps
 ```
 
-Zie [omgevingen maken en beheren voor training en implementatie](how-to-use-environments.md)voor meer informatie over omgevingen.
+Zie Omgevingen maken en beheren voor training en implementatie voor meer [informatie over omgevingen.](how-to-use-environments.md)
 
-## <a name="define-the-deployment-configuration"></a>De implementatie configuratie definiëren
+## <a name="define-the-deployment-configuration"></a>De implementatieconfiguratie definiëren
 
-De implementatie configuratie definieert de Azure Kubernetes service-hosting omgeving die wordt gebruikt om de webservice uit te voeren.
+De implementatieconfiguratie definieert de Azure Kubernetes Service hostomgeving die wordt gebruikt om de webservice uit te voeren.
 
 > [!TIP]
-> Als u niet zeker weet wat het geheugen, de CPU of GPU nodig heeft voor uw implementatie, kunt u een profile ring gebruiken om deze informatie te lezen. Zie [hoe en wanneer u een model implementeert](how-to-deploy-and-where.md)voor meer informatie.
+> Als u niet zeker bent over de geheugen-, CPU- of GPU-behoeften van uw implementatie, kunt u profilering gebruiken om deze te leren. Zie How [and where to deploy a model (Een model implementeren) voor meer informatie.](how-to-deploy-and-where.md)
 
 ```python
 from azureml.core.model import Model
@@ -241,22 +241,22 @@ aks_config = AksWebservice.deploy_configuration(autoscale_enabled=True,
                                                        max_request_wait_time=5000)
 ```
 
-Zie de referentie documentatie voor [AksService.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-)voor meer informatie.
+Zie voor meer informatie de referentiedocumentatie voor [AksService.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-).
 
-## <a name="define-the-inference-configuration"></a>De configuratie voor het afstellen van interferentie definiëren
+## <a name="define-the-inference-configuration"></a>De deferentieconfiguratie definiëren
 
-Het afwijzen van de configuratie punten voor het inbrengen van het script en het omgevings object:
+De deferentieconfiguratie wijst naar het invoerscript en het omgevingsobject:
 
 ```python
 from azureml.core.model import InferenceConfig
 inf_config = InferenceConfig(entry_script='score.py', environment=myenv)
 ```
 
-Zie de referentie documentatie voor [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig)voor meer informatie.
+Zie de referentiedocumentatie voor [InferenceConfig voor meer informatie.](/python/api/azureml-core/azureml.core.model.inferenceconfig)
 
 ## <a name="deploy-the-model"></a>Het model implementeren
 
-Implementeer het model op uw AKS-cluster en wacht tot het uw service heeft gemaakt. In dit voor beeld worden twee geregistreerde modellen geladen uit het REGI ster en geïmplementeerd in AKS. Na de implementatie worden `score.py` deze modellen door het bestand in de implementatie geladen en gebruikt om een deinterferentie uit te voeren.
+Implementeer het model in uw AKS-cluster en wacht tot het uw service heeft gemaakt. In dit voorbeeld worden twee geregistreerde modellen uit het register geladen en geïmplementeerd in AKS. Na de implementatie worden deze modellen geladen door het bestand in de implementatie `score.py` en gebruikt om deferentie uit te voeren.
 
 ```python
 from azureml.core.webservice import AksWebservice, Webservice
@@ -277,11 +277,11 @@ aks_service.wait_for_deployment(show_output = True)
 print(aks_service.state)
 ```
 
-Zie de referentie documentatie voor [model](/python/api/azureml-core/azureml.core.model.model)voor meer informatie.
+Zie de referentiedocumentatie voor Model voor [meer informatie.](/python/api/azureml-core/azureml.core.model.model)
 
-## <a name="issue-a-sample-query-to-your-service"></a>Een voorbeeld query voor uw service uitgeven
+## <a name="issue-a-sample-query-to-your-service"></a>Een voorbeeldquery aan uw service uitgeven
 
-In het volgende voor beeld wordt gebruikgemaakt van de implementatie-informatie die is opgeslagen in de `aks_service` variabele door de vorige code sectie. Deze variabele wordt gebruikt om de Score-URL en het verificatie token op te halen die nodig zijn om te communiceren met de service:
+In het volgende voorbeeld worden de implementatiegegevens gebruikt die zijn opgeslagen in `aks_service` de variabele in de vorige codesectie. Deze variabele wordt gebruikt om de scoring-URL en het verificatie token op te halen die nodig zijn om te communiceren met de service:
 
 ```python
 import requests
@@ -308,14 +308,14 @@ Het resultaat dat door de service wordt geretourneerd, is vergelijkbaar met de v
 
 ## <a name="connect-to-cognitive-search"></a>Verbinding maken met Cognitive Search
 
-Zie voor meer informatie over het gebruik van dit model van Cognitive Search de zelf studie [een aangepaste vaardigheid bouwen en implementeren met Azure machine learning](../search/cognitive-search-tutorial-aml-custom-skill.md) .
+Zie de zelfstudie Een aangepaste vaardigheid bouwen Cognitive Search implementeren met Azure Machine Learning model voor meer informatie over het [gebruik van Azure Machine Learning.](../search/cognitive-search-tutorial-aml-custom-skill.md)
 
 ## <a name="clean-up-the-resources"></a>Resources opschonen
 
-Als u het AKS-cluster specifiek voor dit voor beeld hebt gemaakt, verwijdert u uw resources Nadat u deze hebt getest met Cognitive Search.
+Als u het AKS-cluster specifiek voor dit voorbeeld hebt gemaakt, verwijdert u uw resources nadat u klaar bent met het testen met Cognitive Search.
 
 > [!IMPORTANT]
-> Azure factureert u op basis van hoe lang het AKS-cluster wordt geïmplementeerd. Zorg ervoor dat u het opschoont nadat u klaar bent.
+> Azure befacturen u op basis van hoe lang het AKS-cluster wordt geïmplementeerd. Zorg ervoor dat u het opschoont nadat u klaar bent.
 
 ```python
 aks_service.delete()

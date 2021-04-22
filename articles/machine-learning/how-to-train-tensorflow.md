@@ -1,29 +1,28 @@
 ---
 title: Een TensorFlow-model trainen en implementeren
 titleSuffix: Azure Machine Learning
-description: Meer informatie over Azure Machine Learning u in staat stelt om een TensorFlow-trainingswerkstroom uit te schalen met behulp van elastische cloudrekenbronnen.
+description: Meer informatie over Azure Machine Learning u in staat stelt om een TensorFlow-trainingswerkstroom uit te schalen met behulp van rekenbronnen in de elastische cloud.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: minxia
 author: mx-iao
 ms.date: 09/28/2020
-ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: 0eac999fa53679ef67c2a322bd8cc7841197d493
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.topic: how-to
+ms.openlocfilehash: 9875902e0197d57dfe97d24b6cfd18484a32c65f
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107819138"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107888400"
 ---
 # <a name="train-tensorflow-models-at-scale-with-azure-machine-learning"></a>TensorFlow-modellen op schaal trainen met Azure Machine Learning
 
-In dit artikel leert u hoe u uw [TensorFlow-trainingsscripts](https://www.tensorflow.org/overview) op schaal kunt uitvoeren met behulp Azure Machine Learning.
+In dit artikel leert u hoe u uw [TensorFlow-trainingsscripts op](https://www.tensorflow.org/overview) schaal kunt uitvoeren met behulp Azure Machine Learning.
 
 In dit voorbeeld wordt een TensorFlow-model traint en geregistreerd om handgeschreven cijfers te classificeren met behulp van een Deep Neural Network (DNN).
 
-Of u nu een TensorFlow-model vanaf de basis ontwikkelt of een bestaand [model](how-to-deploy-existing-model.md) naar de cloud brengt, u kunt Azure Machine Learning gebruiken om opensource-trainingstaken uit te schalen voor het bouwen, implementeren, versien en bewaken van modellen van productieklasse.
+Of u nu een TensorFlow-model vanaf de basis ontwikkelt of een bestaand [model naar](how-to-deploy-existing-model.md) de cloud brengt, u kunt Azure Machine Learning gebruiken om opensource-trainingstaken uit te schalen voor het bouwen, implementeren, versie- en bewaken van modellen op productiekwaliteit.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -31,8 +30,8 @@ Voer deze code uit in een van deze omgevingen:
 
  - Azure Machine Learning rekenproces : er zijn geen downloads of installatie nodig
 
-     - Voltooi de [zelfstudie: Omgeving en werkruimte instellen om](tutorial-1st-experiment-sdk-setup.md) een toegewezen notebookserver te maken die vooraf is geladen met de SDK en de voorbeeldopslagplaats.
-    - Zoek in de map samples deep learning op de notebookserver een voltooid en uitgebreid notebook door te navigeren naar deze map: **how-to-use-azureml > ml-frameworks > tensorflow > train-hyperparameter-tune-deploy-with-tensorflow** folder. 
+     - Voltooi de [Zelfstudie: Omgeving en werkruimte instellen om](tutorial-1st-experiment-sdk-setup.md) een toegewezen notebookserver te maken die vooraf is geladen met de SDK en de voorbeeldopslagplaats.
+    - Zoek in de map samples deep learning op de notebookserver een voltooide en uitgebreide notebook door te navigeren naar deze map: **how-to-use-azureml > ml-frameworks > tensorflow > train-hyperparameter-tune-deploy-with-tensorflow** folder. 
  
  - Uw eigen Jupyter Notebook server
 
@@ -40,7 +39,7 @@ Voer deze code uit in een van deze omgevingen:
     - [Maak een configuratiebestand voor de werkruimte.](how-to-configure-environment.md#workspace)
     - [De voorbeeldscriptbestanden downloaden](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/tensorflow/train-hyperparameter-tune-deploy-with-tensorflow) `tf_mnist.py` En `utils.py`
      
-    U vindt ook een voltooide [Jupyter Notebook van](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/train-hyperparameter-tune-deploy-with-tensorflow/train-hyperparameter-tune-deploy-with-tensorflow.ipynb) deze handleiding op de pagina met GitHub-voorbeelden. Het notebook bevat uitgebreide secties over intelligente afstemming van hyperparameters, modelimplementatie en notebookwidgets.
+    U kunt ook een voltooide Jupyter Notebook [van](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/train-hyperparameter-tune-deploy-with-tensorflow/train-hyperparameter-tune-deploy-with-tensorflow.ipynb) deze handleiding vinden op de pagina met GitHub-voorbeelden. Het notebook bevat uitgebreide secties over intelligente hyperparameterafstemming, modelimplementatie en notebookwidgets.
 
 ## <a name="set-up-the-experiment"></a>Het experiment instellen
 
@@ -76,7 +75,7 @@ ws = Workspace.from_config()
 
 ### <a name="create-a-file-dataset"></a>Een bestandsset maken
 
-Een `FileDataset` object verwijst naar een of meer bestanden in de gegevensstore van uw werkruimte of openbare URL's. De bestanden kunnen elke indeling hebben en de klasse biedt u de mogelijkheid om de bestanden te downloaden of aan uw rekenkracht te monteren. Door een te `FileDataset` maken, maakt u een verwijzing naar de locatie van de gegevensbron. Als u transformaties op de gegevensset hebt toegepast, worden deze ook opgeslagen in de gegevensset. De gegevens blijven bewaard op de bestaande locatie, dus maakt u geen extra opslagkosten. Zie de [handleiding voor](./how-to-create-register-datasets.md) het pakket voor `Dataset` meer informatie.
+Een `FileDataset` object verwijst naar een of meer bestanden in de gegevensstore of openbare URL's van uw werkruimte. De bestanden kunnen elke indeling hebben en de klasse biedt u de mogelijkheid om de bestanden te downloaden of aan uw rekenkracht te toevoegen. Door een te `FileDataset` maken, maakt u een verwijzing naar de locatie van de gegevensbron. Als u transformaties op de gegevensset hebt toegepast, worden deze ook opgeslagen in de gegevensset. De gegevens blijven bewaard op de bestaande locatie, dus maakt u geen extra opslagkosten. Zie de [handleiding voor](./how-to-create-register-datasets.md) het pakket voor `Dataset` meer informatie.
 
 ```python
 from azureml.core.dataset import Dataset
@@ -90,7 +89,7 @@ web_paths = [
 dataset = Dataset.File.from_files(path=web_paths)
 ```
 
-Gebruik de methode om de gegevensset te registreren bij uw werkruimte, zodat deze kan worden gedeeld met anderen, opnieuw kan worden gebruikt in verschillende experimenten en er in uw trainingsscript naar kan worden verwezen met `register()` een naam.
+Gebruik de methode om de gegevensset te registreren bij uw werkruimte, zodat ze kunnen worden gedeeld met anderen, kunnen worden hergebruikt in verschillende experimenten en kunnen worden aangeduid met de naam in uw `register()` trainingsscript.
 
 ```python
 dataset = dataset.register(workspace=ws,
@@ -171,7 +170,7 @@ dependencies:
   - tensorflow-gpu==2.2.0
 ```
 
-Maak een Azure ML-omgeving op deze conda-omgevingsspecificatie. De omgeving wordt tijdens runtime verpakt in een Docker-container.
+Maak een Azure ML-omgeving aan de hand van deze Conda-omgevingsspecificatie. De omgeving wordt tijdens runtime verpakt in een Docker-container.
 
 Als er geen basisafbeelding is opgegeven, gebruikt Azure ML standaard een CPU-afbeelding `azureml.core.environment.DEFAULT_CPU_IMAGE` als basisafbeelding. Omdat in dit voorbeeld training wordt uitgevoerd op een GPU-cluster, moet u een GPU-basisafbeelding opgeven met de benodigde GPU-stuurprogramma's en -afhankelijkheden. Azure ML onderhoudt een set basisafbeeldingen die zijn gepubliceerd op Microsoft Container Registry (MCR) die u kunt gebruiken. Zie de [GitHub-opslagplaats Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) voor meer informatie.
 
@@ -188,11 +187,11 @@ tf_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudn
 
 Zie Softwareomgevingen maken en gebruiken in Azure Machine Learning voor meer informatie over het maken [en gebruiken van omgevingen.](how-to-use-environments.md)
 
-## <a name="configure-and-submit-your-training-run"></a>Uw trainingsrun configureren en verzenden
+## <a name="configure-and-submit-your-training-run"></a>De trainingsrun configureren en verzenden
 
 ### <a name="create-a-scriptrunconfig"></a>Een ScriptRunConfig maken
 
-Maak een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig)-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren. Alle argumenten voor uw trainingsscript worden doorgegeven via de opdrachtregel als deze is opgegeven in de `arguments` parameter .
+Maak een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig)-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren. Argumenten voor uw trainingsscript worden doorgegeven via de opdrachtregel als deze zijn opgegeven in de `arguments` parameter .
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -211,7 +210,7 @@ src = ScriptRunConfig(source_directory=script_folder,
 ```
 
 > [!WARNING]
-> Azure Machine Learning voert trainingsscripts uit door de volledige bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [.ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neem u het niet op in de bronmap . Open in plaats daarvan uw gegevens met behulp van een Azure [ML-gegevensset](how-to-train-with-datasets.md).
+> Azure Machine Learning voert trainingsscripts uit door de volledige bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [.ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neem u deze niet op in de bronmap . Open in plaats daarvan uw gegevens met behulp van een Azure [ML-gegevensset](how-to-train-with-datasets.md).
 
 Zie Configure [and submit training runs](how-to-set-up-training-targets.md)(Trainingsuit runs configureren en verzenden) voor meer informatie over het configureren van taken met ScriptRunConfig.
 
@@ -220,7 +219,7 @@ Zie Configure [and submit training runs](how-to-set-up-training-targets.md)(Trai
 
 ### <a name="submit-a-run"></a>Een run verzenden
 
-Het [object Run](/python/api/azureml-core/azureml.core.run%28class%29) biedt de interface voor de run history terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
+Het [object Run](/python/api/azureml-core/azureml.core.run%28class%29) biedt de interface naar de run history terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
 
 ```Python
 run = Experiment(workspace=ws, name='Tutorial-TF-Mnist').submit(src)
@@ -239,7 +238,7 @@ Wanneer de uitvoering wordt uitgevoerd, worden de volgende fasen uitgevoerd:
 
 ## <a name="register-or-download-a-model"></a>Een model registreren of downloaden
 
-Zodra u het model hebt getraind, kunt u het registreren bij uw werkruimte. Met modelregistratie kunt u uw modellen opslaan en versiebeheer in uw werkruimte gebruiken om [het modelbeheer en de implementatie te vereenvoudigen.](concept-model-management-and-deployment.md) Optioneel: door de parameters `model_framework` , en op te `model_framework_version` `resource_configuration` geven, wordt de implementatie van het model zonder code beschikbaar. Hierdoor kunt u uw model rechtstreeks implementeren als een webservice vanuit het geregistreerde model en definieert het -object de `ResourceConfiguration` rekenresource voor de webservice.
+Zodra u het model hebt getraind, kunt u het registreren bij uw werkruimte. Met modelregistratie kunt u uw modellen opslaan en versiebeheeren in uw werkruimte om [het modelbeheer en de implementatie te vereenvoudigen.](concept-model-management-and-deployment.md) Optioneel: door de parameters , en op te geven, wordt de implementatie van `model_framework` het model zonder code `model_framework_version` `resource_configuration` beschikbaar. Hierdoor kunt u uw model rechtstreeks implementeren als een webservice vanuit het geregistreerde model en definieert het -object de `ResourceConfiguration` rekenresource voor de webservice.
 
 ```Python
 from azureml.core import Model
@@ -252,7 +251,7 @@ model = run.register_model(model_name='tf-mnist',
                            resource_configuration=ResourceConfiguration(cpu=1, memory_in_gb=0.5))
 ```
 
-U kunt ook een lokale kopie van het model downloaden met behulp van het object Run. In het trainingsscript wordt het model met een TensorFlow-opslagobject opgeslagen in een lokale map `tf_mnist.py` (lokaal voor het rekendoel). U kunt het run-object gebruiken om een kopie te downloaden.
+U kunt ook een lokale kopie van het model downloaden met behulp van het object Run. In het trainingsscript wordt het model met een TensorFlow-opslagobject opgeslagen in een lokale `tf_mnist.py` map (lokaal voor het rekendoel). U kunt het run-object gebruiken om een kopie te downloaden.
 
 ```Python
 # Create a model folder in the current directory
@@ -264,17 +263,17 @@ run.download_files(prefix='outputs/model', output_directory='./model', append_pr
 
 Azure Machine Learning ondersteunt ook gedistribueerde TensorFlow-taken met meerdere knooppunt, zodat u uw trainingsworkloads kunt schalen. U kunt eenvoudig gedistribueerde TensorFlow-taken uitvoeren en Azure ML beheert de orchestration voor u.
 
-Azure ML ondersteunt het uitvoeren van gedistribueerde TensorFlow-taken met zowel Horovod als de ingebouwde gedistribueerde trainings-API van TensorFlow.
+Azure ML ondersteunt het uitvoeren van gedistribueerde TensorFlow-taken met zowel Horovod als de ingebouwde api voor gedistribueerde training van TensorFlow.
 
 ### <a name="horovod"></a>Horovod
-[Horovod](https://github.com/uber/horovod) is een opensource- en reduceerkader voor gedistribueerde training dat is ontwikkeld door Uber. Het biedt een eenvoudig pad naar het schrijven van gedistribueerde TensorFlow-code voor training.
+[Horovod](https://github.com/uber/horovod) is een open source, all reduce framework voor gedistribueerde training dat is ontwikkeld door Uber. Het biedt een eenvoudig pad voor het schrijven van gedistribueerde TensorFlow-code voor training.
 
 Uw trainingscode moet worden instrumenteerd met Horovod voor gedistribueerde training. Raadpleeg de Horovod-documentatie voor meer informatie over het gebruik van Horovod met TensorFlow:
 
 Raadpleeg de Horovod-documentatie voor meer informatie over het gebruik van Horovod met TensorFlow:
 
 * [Horovod met TensorFlow](https://github.com/horovod/horovod/blob/master/docs/tensorflow.rst)
-* [Horovod met De Keras-API van TensorFlow](https://github.com/horovod/horovod/blob/master/docs/keras.rst)
+* [Horovod met Keras-API van TensorFlow](https://github.com/horovod/horovod/blob/master/docs/keras.rst)
 
 Zorg er ook voor dat uw trainingsomgeving het **horovod-pakket** bevat. Als u een door TensorFlow gecureerde omgeving gebruikt, is horovod al opgenomen als een van de afhankelijkheden. Als u uw eigen omgeving gebruikt, moet u ervoor zorgen dat de horovod-afhankelijkheid is opgenomen, bijvoorbeeld:
 
@@ -303,13 +302,13 @@ src = ScriptRunConfig(source_directory=project_folder,
                       distributed_job_config=MpiConfiguration(node_count=2))
 ```
 
-Zie Distributed TensorFlow with Horovod (Gedistribueerde TensorFlow met Horovod) voor een volledige zelfstudie over het uitvoeren van [gedistribueerde TensorFlow met Horovod op](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/distributed-tensorflow-with-horovod)Azure ML.
+Zie Distributed [TensorFlow with Horovod (Gedistribueerde TensorFlow met Horovod)](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/distributed-tensorflow-with-horovod)voor een volledige zelfstudie over het uitvoeren van gedistribueerde TensorFlow met Horovod op Azure ML.
 
 ### <a name="tfdistribute"></a>tf.distribute
 
-Als u een native [gedistribueerde TensorFlow](https://www.tensorflow.org/guide/distributed_training) in uw trainingscode gebruikt, bijvoorbeeld de API van TensorFlow 2.x, kunt u de gedistribueerde taak ook starten `tf.distribute.Strategy` via Azure ML. 
+Als u native gedistribueerde [TensorFlow](https://www.tensorflow.org/guide/distributed_training) gebruikt in uw trainingscode, bijvoorbeeld de API van TensorFlow 2.x, kunt u de gedistribueerde taak ook starten `tf.distribute.Strategy` via Azure ML. 
 
-Geef om dit te doen een [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration) op als `distributed_job_config` parameter van de ScriptRunConfig-constructor. Als u `tf.distribute.experimental.MultiWorkerMirroredStrategy` gebruikt, geeft u `worker_count` de op in de TensorflowConfiguration die overeenkomt met het aantal knooppunten voor uw trainings job.
+Geef een [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration) op als parameter van de `distributed_job_config` ScriptRunConfig-constructor. Als u `tf.distribute.experimental.MultiWorkerMirroredStrategy` gebruikt, geeft u `worker_count` de op in de TensorflowConfiguration die overeenkomt met het aantal knooppunten voor uw trainings job.
 
 ```python
 import os
@@ -328,7 +327,7 @@ src = ScriptRunConfig(source_directory=source_dir,
                       distributed_job_config=distr_config)
 ```
 
-In TensorFlow is de `TF_CONFIG` omgevingsvariabele vereist voor training op meerdere computers. Azure ML configureert en stelt de variabele op `TF_CONFIG` de juiste wijze in voor elke werker voordat u het trainingsscript gaat uitvoeren. U kunt toegang `TF_CONFIG` krijgen vanuit uw trainingsscript als dat nodig is via `os.environ['TF_CONFIG']` .
+In TensorFlow is de `TF_CONFIG` omgevingsvariabele vereist voor training op meerdere computers. Azure ML configureert en stelt de variabele `TF_CONFIG` op de juiste wijze in voor elke werker voordat u het trainingsscript gaat uitvoeren. U kunt toegang `TF_CONFIG` krijgen vanuit uw trainingsscript als dat nodig is via `os.environ['TF_CONFIG']` .
 
 Voorbeeldstructuur van `TF_CONFIG` set op een Chief Worker-knooppunt:
 ```JSON
@@ -345,7 +344,7 @@ Als uw trainingsscript gebruikmaakt van de parameterserverstrategie voor gedistr
 
 ## <a name="deploy-a-tensorflow-model"></a>Een TensorFlow-model implementeren
 
-De implementatie-how-to bevat een sectie over het registreren [](how-to-deploy-and-where.md#choose-a-compute-target) van modellen, maar u kunt direct verder gaan met het maken van een rekendoel voor implementatie, omdat u al een geregistreerd model hebt.
+De implementatie-how-to bevat een sectie over het registreren van modellen, maar u kunt direct naar het maken van een [rekendoel](how-to-deploy-and-where.md#choose-a-compute-target) voor implementatie gaan, omdat u al een geregistreerd model hebt.
 
 ### <a name="preview-no-code-model-deployment"></a>(Preview) Implementatie van model zonder code
 

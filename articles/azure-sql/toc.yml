@@ -39,9 +39,9 @@
               href: database/maintenance-window.md
             - name: Onderhoudsvenster configureren
               href: database/maintenance-window-configure.md
-            - name: Veelgestelde vragen over onderhouds Vensters
+            - name: Veelgestelde vragen over onderhoudsvensters
               href: database/maintenance-window-faq.yml
-            - name: Voorafgaande meldingen
+            - name: Meldingen vooraf
               href: database/advance-notifications.md
         - name: OLTP in het geheugen
           href: in-memory-oltp-overview.md
@@ -153,9 +153,9 @@
       items:
         - name: Verhogingen van quotum aanvragen
           href: database/quota-increase-request.md
-        - name: Taak automatisering met elastische taken
+        - name: Taakautomatisering met elastische taken
           href: database/job-automation-overview.md
-        - name: Taak automatisering met SQL-Agent
+        - name: Taakautomatisering met SQL Agent
           href: database/job-automation-managed-instances.md
         - name: Verbinding maken en query's uitvoeren vanuit apps
           items:
@@ -211,7 +211,7 @@
               href: database/monitoring-with-dmvs.md
             - name: Inzicht in blokkeren en blokkeren oplossen
               href: database/understand-resolve-blocking.md
-            - name: De maximale mate van parallellisme configureren (MAXDOP)
+            - name: De maximale mate van parallellisme (MAXDOP) configureren
               href: database/configure-max-degree-of-parallelism.md
             - name: Diagnostische logboektelemetrie
               href: database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md
@@ -286,7 +286,7 @@
             - name: Hyperscale
               href: database/service-tier-hyperscale.md
             - name: Veelgestelde vragen over Hyperscale
-              href: database/service-tier-hyperscale-frequently-asked-questions-faq.md
+              href: database/service-tier-hyperscale-frequently-asked-questions-faq.yml
         - name: Kosten voorspellen en beheren
           href: database/cost-management.md
     - name: Snelstartgidsen
@@ -347,15 +347,15 @@
               href: database/migrate-sqlite-db-to-azure-sql-serverless-offline-tutorial.md
     - name: Migratiehandleidingen
       items:
-        - name: Vanuit Access
+        - name: Vanuit toegang
           href: migration-guides/database/access-to-sql-database-guide.md
-        - name: Van Db2
+        - name: Uit Db2
           href: migration-guides/database/db2-to-sql-database-guide.md
         - name: Van Oracle
           href: migration-guides/database/oracle-to-sql-database-guide.md
-        - name: Van MySQL
+        - name: Vanuit MySQL
           href: migration-guides/database/mysql-to-sql-database-guide.md
-        - name: Van SAP ASE
+        - name: Vanuit SAP ASE
           href: migration-guides/database/sap-ase-to-sql-database.md
         - name: Vanaf SQL Server
           items:
@@ -363,7 +363,7 @@
               href: migration-guides/database/sql-server-to-sql-database-overview.md
             - name: Migrate
               href: migration-guides/database/sql-server-to-sql-database-guide.md
-            - name: Beoordelings regels
+            - name: Evaluatieregels
               href: migration-guides/database/sql-server-to-sql-database-assessment-rules.md
     - name: Concepten
       items:
@@ -510,7 +510,7 @@
               href: database/elastic-pool-resource-management.md
             - name: Prestatiediagnoses hyperschalen
               href: database/hyperscale-performance-diagnostics.md
-            - name: T-SQL-ruw blok keren
+            - name: T-SQL CRUD blokkeren
               href: database/block-crud-tsql.md
         - name: Beveiligen
           items:
@@ -761,7 +761,7 @@
               href: managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md
     - name: Migratiehandleidingen
       items:
-        - name: Van Db2
+        - name: Uit Db2
           href: migration-guides/managed-instance/db2-to-managed-instance-guide.md
         - name: Van Oracle
           href: migration-guides/managed-instance/oracle-to-managed-instance-guide.md
@@ -773,7 +773,7 @@
               href: migration-guides/managed-instance/sql-server-to-managed-instance-guide.md
             - name: Prestatiebasislijn
               href: migration-guides/managed-instance/sql-server-to-managed-instance-performance-baseline.md
-            - name: Beoordelings regels
+            - name: Evaluatieregels
               href: migration-guides/managed-instance/sql-server-to-sql-managed-instance-assessment-rules.md
     - name: Concepten
       items:
@@ -1019,7 +1019,7 @@
           href: managed-instance/alerts-create.md
         - name: Handmatig een failover initiëren vanaf een beheerd exemplaar
           href: managed-instance/user-initiated-failover.md
-        - name: Data base migreren met de replay-service voor logboek registratie
+        - name: Database migreren met behulp van Log Replay Service
           href: managed-instance/log-replay-service-migrate.md
     - name: Voorbeelden
       items:
@@ -1076,13 +1076,13 @@
                   href: virtual-machines/windows/application-patterns-development-strategies.md
                 - name: Prestaties
                   items:
-                    - name: Snelle controle lijst
+                    - name: Snelle controlelijst
                       href: virtual-machines/windows/performance-guidelines-best-practices-checklist.md
                     - name: VM-grootte
                       href: virtual-machines/windows/performance-guidelines-best-practices-vm-size.md
                     - name: Storage
                       href: virtual-machines/windows/performance-guidelines-best-practices-storage.md
-                    - name: Basis lijn verzamelen
+                    - name: Basislijn verzamelen
                       href: virtual-machines/windows/performance-guidelines-best-practices-collect-baseline.md
             - name: Beheer
               items:
@@ -1252,7 +1252,7 @@
               href: virtual-machines/linux/rhel-high-availability-stonith-tutorial.md
             - name: Listener voor beschikbaarheidsgroep configureren voor SQL Server in virtuele RHEL-machines in Azure
               href: virtual-machines/linux/rhel-high-availability-listener-tutorial.md
-            - name: Altijd on-beschikbaarheids groep instellen met DH2i DxEnterprise
+            - name: Always On-beschikbaarheidsgroep instellen met DH2i DxEnterprise
               href: virtual-machines/linux/dh2i-high-availability-tutorial.md
         - name: Resources
           items:

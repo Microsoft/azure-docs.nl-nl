@@ -1,21 +1,21 @@
 ---
 title: GitHub-acties voor CI/CD
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het maken van een GitHub Actions voor het trainen van een model op Azure Machine Learning
+description: Meer informatie over het maken van een GitHub Actions werkstroom voor het trainen van een model op Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 author: juliakm
 ms.author: jukullam
 ms.date: 10/19/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: github-actions-azure
-ms.openlocfilehash: 6505523aa367eaf202ece81a4253429e864e169a
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 9bc12c74043deea4e9c9ec9bcc457b0b82f09cbc
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107780367"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107889300"
 ---
 # <a name="use-github-actions-with-azure-machine-learning"></a>Gebruik GitHub Actions met Azure Machine Learning
 
@@ -39,7 +39,7 @@ Het bestand heeft vier secties:
 |---------|---------|
 |**Verificatie** | 1. Definieer een service-principal. <br /> 2. Maak een GitHub-opslagplaats. |
 |**Verbinding maken** | 1. Maak verbinding met machine learning werkruimte. <br /> 2. Verbinding maken met een rekendoel. |
-|**Uitvoeren** | 1. Dien een trainingsrun in. |
+|**Uitvoeren** | 1. Een trainingsrun verzenden. |
 |**Implementeren** | 1. Het model registreren in Azure Machine Learning register. 1. Het model implementeren. |
 
 ## <a name="create-repository"></a>Opslagplaats maken

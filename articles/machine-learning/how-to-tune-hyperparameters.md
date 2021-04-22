@@ -9,14 +9,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 02/26/2021
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: ec01561c5c44c850b32187629552b1bdb99537e7
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.topic: how-to
+ms.custom: devx-track-python, contperf-fy21q1
+ms.openlocfilehash: 77d5a5bda3e108b0366e27cb2c8c16986633f71d
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107819174"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107888382"
 ---
 # <a name="hyperparameter-tuning-a-model-with-azure-machine-learning"></a>Hyperparameter die een model afstemmt met Azure Machine Learning
 
@@ -41,7 +41,7 @@ Azure Machine Learning kunt u hyperparameter-afstemming automatiseren en experim
 
 ## <a name="define-the-search-space"></a>De zoekruimte definiëren
 
-Stem hyperparameters af door het bereik van waarden te verkennen dat voor elke hyperparameter is gedefinieerd.
+U kunt hyperparameters afstemmen door het bereik van waarden te verkennen dat voor elke hyperparameter is gedefinieerd.
 
 Hyperparameters kunnen discrete of continue zijn en hebben een distributie van waarden die worden beschreven door een [parameterexpressie](/python/api/azureml-train-core/azureml.train.hyperdrive.parameter_expressions).
 
@@ -77,7 +77,7 @@ De continue hyperparameters worden opgegeven als een distributie over een doorlo
 * `uniform(low, high)` - Retourneert een waarde die gelijkmatig is verdeeld tussen laag en hoog
 * `loguniform(low, high)` - Retourneert een waarde die is getekend op basis van exp(uniform(low, high)) zodat de logaritme van de retourwaarde gelijkmatig wordt verdeeld
 * `normal(mu, sigma)` - Retourneert een echte waarde die normaal gesproken wordt gedistribueerd met gemiddelde mu en standaarddeviatie sigma
-* `lognormal(mu, sigma)` - Retourneert een waarde die is getekend op basis van exp(normal(mu, sigma)) zodat de logaritme van de retourwaarde normaal wordt verdeeld
+* `lognormal(mu, sigma)` - Retourneert een waarde die is getekend op basis van exp(normal(mu, sigma)) zodat de logaritme van de retourwaarde normaal wordt gedistribueerd
 
 Een voorbeeld van een parameterruimtedefinitie:
 
@@ -137,7 +137,7 @@ param_sampling = GridParameterSampling( {
 
 Bayesiaanse steekproeven worden aanbevolen als u voldoende budget hebt om de hyperparameterruimte te verkennen. Voor de beste resultaten raden we een maximum aantal runs aan dat groter is dan of gelijk is aan 20 keer het aantal hyperparameters dat wordt afgestemd. 
 
-Het aantal gelijktijdige runs heeft invloed op de effectiviteit van het afstemmingsproces. Een kleiner aantal gelijktijdige runs kan leiden tot betere convergentie van steekproeven, omdat de kleinere mate van parallellelisme het aantal runs verhoogt dat voordeel heeft van eerder voltooide runs.
+Het aantal gelijktijdige runs heeft invloed op de effectiviteit van het afstemmingsproces. Een kleiner aantal gelijktijdige runs kan leiden tot betere convergentie van steekproeven, omdat de kleinere mate van parallelle parallellelisme het aantal runs verhoogt dat voordeel heeft van eerder voltooide runs.
 
 Bayesiaanse steekproeven bieden alleen ondersteuning `choice` voor `uniform` , en `quniform` distributies over de zoekruimte.
 
@@ -212,7 +212,7 @@ Geef de volgende configuratieparameters op:
 
 * `slack_factor` of `slack_amount` : de slack die is toegestaan met betrekking tot de best presterende trainingsrun. `slack_factor` geeft de toegestane slack aan als een verhouding. `slack_amount` geeft de toegestane slack aan als een absoluut bedrag in plaats van een verhouding.
 
-    Denk bijvoorbeeld aan een Bandit-beleid dat wordt toegepast op interval 10. Stel dat de best presterende uitvoering bij interval 10 een primaire metrische waarde heeft gerapporteerd, 0,8 is met als doel het primaire metrische gegevens te maximaliseren. Als in het beleid een van 0,2 wordt opgegeven, wordt elke training beëindigd waarvan de beste metrische gegevens bij interval 10 kleiner zijn dan `slack_factor` 0,66 (0,8/(1+)). `slack_factor`
+    Denk bijvoorbeeld aan een Bandit-beleid dat wordt toegepast op interval 10. Stel dat de best presterende uitvoering op interval 10 een primaire metrische waarde heeft gerapporteerd, 0,8 is met het doel om het primaire metrische gegevens te maximaliseren. Als in het beleid een van 0,2 wordt opgegeven, wordt elke training beëindigd waarvan de beste metrische gegevens bij interval 10 kleiner zijn dan `slack_factor` 0,66 (0,8/(1+)). `slack_factor`
 * `evaluation_interval`: (optioneel) de frequentie voor het toepassen van het beleid
 * `delay_evaluation`: (optioneel) vertraagt de eerste beleidsevaluatie voor een opgegeven aantal intervallen
 
@@ -283,7 +283,7 @@ Beheer uw resourcebudget door het maximum aantal trainings runs op te geven.
 
 Geef daarnaast het maximum aantal trainingsruns op dat gelijktijdig moet worden uitgevoerd tijdens het afstemmen van de hyperparameter.
 
-* `max_concurrent_runs`: (optioneel) Maximum aantal runs dat gelijktijdig kan worden uitgevoerd. Als dit niet is opgegeven, worden alle runs parallel uitgevoerd. Indien opgegeven, moet een geheel getal tussen 1 en 100 zijn.
+* `max_concurrent_runs`: (optioneel) Maximum aantal runs dat gelijktijdig kan worden uitgevoerd. Als dit niet wordt opgegeven, worden alle runs parallel uitgevoerd. Indien opgegeven, moet een geheel getal tussen 1 en 100 zijn.
 
 >[!NOTE] 
 >Het aantal gelijktijdige runs wordt beperkt tot de resources die beschikbaar zijn in het opgegeven rekendoel. Zorg ervoor dat het rekendoel de beschikbare resources voor de gewenste gelijktijdigheid heeft.
@@ -402,7 +402,7 @@ resume_child_run_2 = Run(experiment, "resume_child_run_ID_2")
 child_runs_to_resume = [resume_child_run_1, resume_child_run_2]
 ```
 
-U kunt uw experiment voor het afstemmen van hyperparameters configureren om de start van een eerder experiment te warmen of afzonderlijke trainings runs hervatten met behulp van de optionele parameters `resume_from` `resume_child_runs` en in de configuratie:
+U kunt uw experiment voor het afstemmen van hyperparameters configureren om de start van een eerder experiment op te warmen of afzonderlijke trainings runs te hervatten met behulp van de optionele parameters `resume_from` `resume_child_runs` en in de configuratie:
 
 ```Python
 from azureml.train.hyperdrive import HyperDriveConfig
@@ -418,7 +418,7 @@ hd_config = HyperDriveConfig(run_config=script_run_config,
                              max_concurrent_runs=4)
 ```
 
-## <a name="visualize-hyperparameter-tuning-runs"></a>Hyperparameter-afstemmings runs visualiseren
+## <a name="visualize-hyperparameter-tuning-runs"></a>Afstemmings runs van hyperparameters visualiseren
 
 U kunt de afstemmings runs van uw hyperparameters visualiseren in Azure Machine Learning-studio of u kunt een notebookwidget gebruiken.
 

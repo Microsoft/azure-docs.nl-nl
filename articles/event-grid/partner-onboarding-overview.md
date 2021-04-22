@@ -3,12 +3,12 @@ title: Overzicht van onboarding van partners (Azure Event Grid)
 description: Biedt een overzicht van hoe u onboarding kunt Event Grid partner.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 40d0afe0aaeb40412948eb304a36a3627566551b
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.openlocfilehash: 9af80efc1ba342768f9bb6d504f921b52494d955
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107869685"
+ms.locfileid: "107890704"
 ---
 # <a name="partner-onboarding-overview-azure-event-grid"></a>Overzicht van onboarding van partners (Azure Event Grid)
 
@@ -42,8 +42,8 @@ Met de functie Partnergebeurtenissen kunt u gebeurtenissen publiceren naar Azure
 
 ### <a name="customer-flow"></a>Klantstroom
 
-1. Uw klant bezoekt de Azure Portal om de Azure-abonnements-id en resourcegroep te noteren waarin ze het partneronderwerp willen maken.
-1. De klant vraagt een partneronderwerp aan via uw systeem. Als antwoord maakt u een gebeurtenistunnel naar de naamruimte van uw partner.
+1. Uw klant bezoekt de Azure Portal om de azure-abonnements-id en resourcegroep te noteren waarin ze het partneronderwerp willen maken.
+1. De klant vraagt een partneronderwerp aan via uw systeem. Als reactie maakt u een gebeurtenistunnel naar de naamruimte van uw partner.
 1. Event Grid maakt een **partneronderwerp in** behandeling in het Azure-abonnement en de resourcegroep van de klant.
 
     ![Een gebeurteniskanaal maken](./media/partner-onboarding-how-to/create-event-tunnel-partner-topic.png)
@@ -58,7 +58,7 @@ Het volgende resourcemodel is voor partnergebeurtenissen.
 ### <a name="partner-registrations"></a>Partnerregistraties
 * Resource: `partnerRegistrations`
 * Gebruikt door: Partners
-* Beschrijving: legt de globale metagegevens van de SaaS-partner (Software as a Service) vast (bijvoorbeeld naam, weergavenaam, beschrijving, URI instellen).
+* Beschrijving: legt de globale metagegevens van de SaaS-partner (software as a service) vast (bijvoorbeeld naam, weergavenaam, beschrijving, URI instellen).
     
     Het maken of bijwerken van een partnerregistratie is een self-serve bewerking voor de partners. Met deze self-serve-mogelijkheid kunnen partners de volledige end-to-end-stroom bouwen en testen.
     
@@ -92,7 +92,7 @@ Het volgende resourcemodel is voor partnergebeurtenissen.
 * Bereik: Globaal
 
 ## <a name="publish-events-to-event-grid"></a>Gebeurtenissen publiceren naar Event Grid
-Wanneer u een partnernaamruimte maakt in een Azure-regio, krijgt u een regionaal eindpunt en de bijbehorende auth-sleutels. Publiceer batches met gebeurtenissen naar dit eindpunt voor alle gebeurteniskanalen van klanten in die naamruimte. Op basis van het bronveld in de gebeurtenis Azure Event Grid elke gebeurtenis aan de bijbehorende partneronderwerpen.
+Wanneer u een partnernaamruimte maakt in een Azure-regio, krijgt u een regionaal eindpunt en bijbehorende auth-sleutels. Publiceer batches met gebeurtenissen naar dit eindpunt voor alle gebeurteniskanalen van klanten in die naamruimte. Op basis van het bronveld in de gebeurtenis Azure Event Grid elke gebeurtenis aan de bijbehorende partneronderwerpen.
 
 ### <a name="event-schema-cloudevents-v10"></a>Gebeurtenisschema: CloudEvents v1.0
 Gebeurtenissen publiceren naar Azure Event Grid met behulp van het CloudEvents 1.0-schema. Event Grid ondersteunt zowel de gestructureerde modus als de batchmodus. CloudEvents 1.0 is het enige ondersteunde gebeurtenisschema voor partnernaamruimten.
@@ -153,7 +153,7 @@ Nadat u een bericht hebt geplaatst op het eindpunt van de partnernaamruimte, ont
   * [ARM-sjabloon](/azure/templates/microsoft.eventgrid/allversions)
   * [ARM-sjabloonschema](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2020-04-01-preview/Microsoft.EventGrid.json)
   * [REST-API's](/azure/templates/microsoft.eventgrid/2020-04-01-preview/partnernamespaces)
-  * [CLI-extensie](/cli/azure/)
+  * [CLI-extensie](/cli/azure/eventgrid)
 
 ### <a name="sdks"></a>SDK's
   * [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.EventGrid/5.3.1-preview)

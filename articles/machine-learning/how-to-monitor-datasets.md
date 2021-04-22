@@ -9,14 +9,14 @@ ms.reviewer: sgilley
 ms.author: copeters
 author: lostmygithubaccount
 ms.date: 06/25/2020
-ms.topic: conceptual
-ms.custom: how-to, data4ml, contperf-fy21q2
-ms.openlocfilehash: 95fb2dfeea98b988eaeaea43efc4ea44fd6e33fd
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.topic: how-to
+ms.custom: data4ml, contperf-fy21q2
+ms.openlocfilehash: e73b14e24fffacde11e355ae5a4caf0cb76f07ba
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107770305"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107884872"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Gegevensdrift (preview) detecteren in gegevenssets
 
@@ -54,7 +54,7 @@ Oorzaken van gegevensdrift zijn onder andere:
 
 - Upstream-proceswijzigingen, zoals een sensor die wordt vervangen, die de meeteenheden wijzigt van inches in centimeters. 
 - Problemen met de gegevenskwaliteit, zoals een defecte sensor die altijd 0 leest.
-- Natuurlijke afwijking in de gegevens, zoals het wijzigen van de gemiddelde temperatuur met de jaargetijde.
+- Natuurlijke afwijking in de gegevens, zoals gemiddelde temperatuurswisselingen met de jaargetijde.
 - Wijziging in relatie tussen functies of covariantieverschuiving. 
 
 Azure Machine Learning vereenvoudigt de detectie van driften door één metrische gegevens te berekenen die de complexiteit abstraheert van gegevenssets die worden vergeleken.  Deze gegevenssets kunnen honderden functies en tienduizenden rijen hebben. Zodra er een afwijking is gedetecteerd, zoomt u in op welke functies de afwijking veroorzaken.  Vervolgens inspecteert u metrische gegevens op functieniveau om fouten op te sporen en de hoofdoorzaak van de afwijking te isoleren.
@@ -96,7 +96,7 @@ Gegevenssetmonitors zijn afhankelijk van de volgende Azure-services.
 
 U [controleert Azure machine learning gegevenssets op](how-to-create-register-datasets.md) gegevensdrift. Wanneer u een gegevenssetmonitor maakt, verwijst u naar uw:
 * Basislijnset: meestal de trainingsset voor een model.
-* De doelgegevensset , meestal modelinvoergegevens, wordt in de tijd vergeleken met uw basislijngegevensset. Deze vergelijking betekent dat voor uw doelset een tijdstempelkolom moet zijn opgegeven.
+* De doelgegevensset , meestal modelinvoergegevens, wordt in de tijd vergeleken met uw basislijngegevensset. Deze vergelijking betekent dat uw doel gegevensset een tijdstempelkolom moet hebben opgegeven.
 
 De monitor vergelijkt de basislijn- en doelsets.
 
@@ -226,7 +226,7 @@ monitor = monitor.enable_schedule()
 
 :::image type="content" source="media/how-to-monitor-datasets/wizard.png" alt-text="Een monitorwizard maken":::
 
-* **Selecteer doel gegevensset**.  De doelgegevensset is een tabellaire gegevensset met een opgegeven tijdstempelkolom die wordt geanalyseerd op gegevensdrift. De doelgegevensset moet functies hebben die gemeenschappelijk zijn met de basislijngegevensset en moet een gegevensset zijn `timeseries` waaraan nieuwe gegevens worden toegevoegd. Historische gegevens in de doelgegevensset kunnen worden geanalyseerd of nieuwe gegevens kunnen worden bewaakt.
+* **Selecteer doel gegevensset**.  De doelgegevensset is een gegevensset in tabelvorm met een opgegeven tijdstempelkolom die wordt geanalyseerd op gegevensdrift. De doelgegevensset moet functies hebben die gemeenschappelijk zijn met de basislijngegevensset en moet een gegevensset zijn `timeseries` waaraan nieuwe gegevens worden toegevoegd. Historische gegevens in de doelgegevensset kunnen worden geanalyseerd of nieuwe gegevens kunnen worden bewaakt.
 
 * **Selecteer basislijnset.**  Selecteer de tabellaire gegevensset die moet worden gebruikt als basislijn voor vergelijking van de doelset gedurende een bepaalde periode.  De basislijnset moet functies hebben die gemeenschappelijk zijn met de doelset.  Selecteer een tijdsbereik om een segment van de doelset te gebruiken of geef een afzonderlijke gegevensset op die moet worden gebruikt als basislijn.
 
@@ -310,13 +310,13 @@ Selecteer in deze grafiek één datum om de functiedistributie tussen het doel e
 
 ## <a name="metrics-alerts-and-events"></a>Metrische gegevens, waarschuwingen en gebeurtenissen
 
-Er kunnen metrische gegevens worden opgevraagd in [Azure-toepassing Insights-resource](../azure-monitor/app/app-insights-overview.md) die is gekoppeld aan machine learning werkruimte. U hebt toegang tot alle functies van Application Insights instellen voor aangepaste waarschuwingsregels en actiegroepen om een actie te activeren, zoals een e-mail/sms/push/spraak of Azure-functie. Raadpleeg de volledige documentatie Application Insights voor meer informatie. 
+Metrische gegevens kunnen worden opgevraagd in [de Azure-toepassing Insights-resource](../azure-monitor/app/app-insights-overview.md) die is gekoppeld aan uw machine learning werkruimte. U hebt toegang tot alle functies van Application Insights instellen voor aangepaste waarschuwingsregels en actiegroepen om een actie te activeren, zoals een e-mail/sms/push/spraak of Azure-functie. Raadpleeg de volledige documentatie Application Insights voor meer informatie. 
 
 Als u wilt beginnen, gaat u naar [Azure Portal](https://portal.azure.com) en selecteert u de **pagina Overzicht van uw** werkruimte.  De gekoppelde Application Insights resource staat aan de rechterkant:
 
 [![Overzicht van de Azure Portal](./media/how-to-monitor-datasets/ap-overview.png)](media/how-to-monitor-datasets/ap-overview-expanded.png)
 
-Selecteer Logboeken (Analytics) onder Bewaking in het linkerdeelvenster:
+Selecteer Logboeken (Analyse) onder Bewaking in het linkerdeelvenster:
 
 ![Overzicht van Application Insights](./media/how-to-monitor-datasets/ai-overview.png)
 

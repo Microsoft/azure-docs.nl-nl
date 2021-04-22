@@ -1,6 +1,6 @@
 ---
-title: Aan de slag Azure IoT Hub het beheer van apparaten (Node) | Microsoft Docs
-description: Het gebruik van IoT Hub om het apparaat op afstand opnieuw op te starten. U gebruikt de Azure IoT SDK voor Node.js om een gesimuleerde apparaat-app te implementeren die een directe methode en een service-app bevat die de directe methode aanroept.
+title: Aan de slag Azure IoT Hub apparaatbeheer (Node) | Microsoft Docs
+description: Het gebruik van IoT Hub om het opnieuw opstarten van een extern apparaat te starten. U gebruikt de Azure IoT SDK voor Node.js om een gesimuleerde apparaat-app te implementeren die een directe methode en een service-app bevat die de directe methode aanroept.
 author: wesmc7777
 manager: philmea
 ms.author: wesmc
@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: mqtt, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 557cdc5fb71f998dc0b69e52148cc93da7cc8ea7
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 774a8fa05dd5044a07450deb675a6761de9869a3
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107477975"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107890632"
 ---
 # <a name="get-started-with-device-management-nodejs"></a>Aan de slag met apparaatbeheer (Node.js)
 
@@ -22,7 +22,7 @@ ms.locfileid: "107477975"
 
 In deze zelfstudie ontdekt u hoe u:
 
-* Gebruik de [Azure Portal](https://portal.azure.com) om een IoT Hub en maak een apparaat-id in uw IoT-hub.
+* Gebruik de [Azure Portal](https://portal.azure.com) om een IoT Hub te maken en een apparaat-id te maken in uw IoT-hub.
 
 * Maak een gesimuleerde apparaat-app die een directe methode bevat waarmee dat apparaat opnieuw wordt opgestart. Directe methoden worden aangeroepen vanuit de cloud.
 
@@ -30,13 +30,13 @@ In deze zelfstudie ontdekt u hoe u:
 
 Aan het einde van deze zelfstudie hebt u twee Node.js console-apps:
 
-* **dmpatterns_getstarted_device.js**, die verbinding maakt met uw IoT-hub met de apparaat-id die u eerder hebt gemaakt, ontvangt een directe methode voor opnieuw opstarten, simuleert een fysieke herstart en rapporteert de tijd voor de laatste keer opnieuw opstarten.
+* **dmpatterns_getstarted_device.js,** dat verbinding maakt met uw IoT-hub met de apparaat-id die u eerder hebt gemaakt, een directe methode voor opnieuw opstarten ontvangt, een fysieke herstart simuleert en de tijd rapporteert voor de laatste keer opnieuw opstarten.
 
-* **dmpatterns_getstarted_service.js**, waarmee een directe methode wordt aanroept in de gesimuleerde apparaat-app, het antwoord wordt weergegeven en de bijgewerkte gerapporteerde eigenschappen worden weergegeven.
+* **dmpatterns_getstarted_service.js**, waarmee een directe methode in de gesimuleerde apparaat-app wordt aanroept, wordt het antwoord weergegeven en de bijgewerkte gerapporteerde eigenschappen weergegeven.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Node.js versie 10.0.x of hoger. [In Uw ontwikkelomgeving voorbereiden](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) wordt beschreven hoe u Node.js installeert voor deze zelfstudie in Windows of Linux.
+* Node.js versie 10.0.x of hoger. [In Prepare your development environment (Uw](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) ontwikkelomgeving voorbereiden) wordt beschreven hoe u Node.js installeert voor deze zelfstudie in Windows of Linux.
 
 * Een actief Azure-account. (Als u geen account hebt, kunt u binnen een paar minuten een [gratis account](https://azure.microsoft.com/pricing/free-trial/) maken.)
 
@@ -58,7 +58,7 @@ In deze sectie doet u het volgende:
 
 * Het opnieuw opstarten van een gesimuleerd apparaat activeren
 
-* Gebruik de gerapporteerde eigenschappen om query's voor apparaattwee in te stellen om apparaten te identificeren en wanneer ze voor het laatst opnieuw zijn opgestart
+* Gebruik de gerapporteerde eigenschappen om query's voor apparaat dubbels in te stellen om apparaten te identificeren en wanneer ze voor het laatst opnieuw zijn opgestart
 
 1. U maakt een lege map met de naam **simulateddevice**.  Maak in de map **simulateddevice** een bestand met de naam package.json door achter de opdrachtprompt de volgende opdracht op te geven.  Accepteer alle standaardwaarden:
 
@@ -66,7 +66,7 @@ In deze sectie doet u het volgende:
     npm init
     ```
 
-2. Voer bij de opdrachtprompt in de map **manageddevice** de volgende opdracht uit om het **azure-iot-device** Device SDK-pakket en **het azure-iot-device-mqtt-pakket te** installeren:
+2. Voer bij de opdrachtprompt in de map **manageddevice** de volgende opdracht uit om het **azure-iot-device** Device SDK-pakket en **het azure-iot-device-mqtt-pakket** te installeren:
 
     ```cmd/sh
     npm install azure-iot-device azure-iot-device-mqtt --save
@@ -83,7 +83,7 @@ In deze sectie doet u het volgende:
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Voeg een **connectionString**-variabele toe en gebruik deze om een **client** exemplaar te maken.  Vervang de waarde van de tijdelijke aanduiding door de connection string u eerder hebt gekopieerd in Een nieuw apparaat `{yourdeviceconnectionstring}` [registreren in de IoT-hub](#register-a-new-device-in-the-iot-hub).  
+5. Voeg een **connectionString**-variabele toe en gebruik deze om een **client** exemplaar te maken.  Vervang de waarde van de tijdelijke aanduiding door de connection string die u eerder hebt gekopieerd in Een nieuw apparaat `{yourdeviceconnectionstring}` [registreren in de IoT-hub](#register-a-new-device-in-the-iot-hub).  
 
     ```javascript
     var connectionString = '{yourdeviceconnectionstring}';
@@ -132,7 +132,7 @@ In deze sectie doet u het volgende:
     };
     ```
 
-7. Open de verbinding met uw IoT-hub en start de listener voor directe methoden:
+7. Open de verbinding met uw IoT-hub en start de directe methodelistener:
 
     ```javascript
     client.open(function(err) {
@@ -148,9 +148,9 @@ In deze sectie doet u het volgende:
 8. Sla hetdmpatterns_getstarted_device.js **op** en sluit het.
 
 > [!NOTE]
-> Om de zaken niet nodeloos ingewikkeld te maken, is in deze handleiding geen beleid voor opnieuw proberen geïmplementeerd. In productiecode moet u beleid voor opnieuw proberen implementeren (zoals exponentieel afschaf, zoals voorgesteld in het artikel [Transient Fault Handling](/azure/architecture/best-practices/transient-faults).
+> Om de zaken niet nodeloos ingewikkeld te maken, is in deze handleiding geen beleid voor opnieuw proberen geïmplementeerd. In productiecode moet u beleidsregels voor opnieuw proberen implementeren (zoals exponentieel uitvalt), zoals voorgesteld in het artikel [Transient Fault Handling](/azure/architecture/best-practices/transient-faults)(Afhandeling van tijdelijke fouten).
 
-## <a name="get-the-iot-hub-connection-string"></a>De IoT-hub-connection string
+## <a name="get-the-iot-hub-connection-string"></a>De IoT Hub-connection string
 
 [!INCLUDE [iot-hub-howto-device-management-shared-access-policy-text](../../includes/iot-hub-howto-device-management-shared-access-policy-text.md)]
 
@@ -158,9 +158,9 @@ In deze sectie doet u het volgende:
 
 ## <a name="trigger-a-remote-reboot-on-the-device-using-a-direct-method"></a>Een externe herstart op het apparaat activeren met behulp van een directe methode
 
-In deze sectie maakt u een Node.js-console-app die een externe herstart op een apparaat start met behulp van een directe methode. De app maakt gebruik van query's van apparaattwee om de laatste keer dat het apparaat opnieuw wordt opgestart te ontdekken.
+In deze sectie maakt u een Node.js-console-app die een externe herstart op een apparaat start met behulp van een directe methode. De app maakt gebruik van query's voor apparaattwee om de laatste keer dat het apparaat opnieuw wordt opgestart te ontdekken.
 
-1. Maak een lege map met **de naam triggerrebootondevice**. Maak in **de map triggerrebootondevice** een package.json file met behulp van de volgende opdracht bij de opdrachtprompt. Accepteer alle standaardwaarden:
+1. Maak een lege map met **de naam triggerrebootondevice**. Maak in **de map triggerrebootondevice** een package.jsbestand met behulp van de volgende opdracht bij de opdrachtprompt. Accepteer alle standaardwaarden:
 
     ```cmd/sh
     npm init
@@ -183,7 +183,7 @@ In deze sectie maakt u een Node.js-console-app die een externe herstart op een a
     var Client = require('azure-iothub').Client;
     ```
 
-5. Voeg de volgende variabeledeclaraties toe en vervang de waarde van de tijdelijke aanduiding door de IoT-hub connection string die u eerder hebt gekopieerd in De `{iothubconnectionstring}` [IoT-hub connection string:](#get-the-iot-hub-connection-string)
+5. Voeg de volgende variabeledeclaraties toe en vervang de waarde van de tijdelijke aanduiding door de IoT-hub connection string die u eerder hebt gekopieerd in De `{iothubconnectionstring}` [IoT-hub-connection string:](#get-the-iot-hub-connection-string)
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -236,7 +236,7 @@ In deze sectie maakt u een Node.js-console-app die een externe herstart op een a
     };
     ```
 
-8. Voeg de volgende code toe om de functies aan te roepen die de directe methode voor opnieuw opstarten activeren en een query uit te voeren voor de laatste keer dat de computer opnieuw wordt opgestart:
+8. Voeg de volgende code toe om de functies aan te roepen die de directe methode voor opnieuw opstarten activeren en een query uitvoeren voor de laatste keer dat de computer opnieuw wordt opgestart:
 
     ```javascript
     startRebootDevice();
@@ -261,13 +261,13 @@ U bent nu klaar om de apps uit te voeren.
     node dmpatterns_getstarted_service.js
     ```
 
-3. U ziet de reactie van het apparaat op de directe methode voor opnieuw opstarten en de status van opnieuw opstarten in de console.
+3. U ziet de reactie van het apparaat op de directe methode voor opnieuw opstarten en de status van het opnieuw opstarten in de console.
 
-   Hieronder ziet u de reactie van het apparaat op de directe methode voor opnieuw opstarten die door de service is verzonden:
+   Hieronder ziet u de reactie van het apparaat op de directe methode voor opnieuw opstarten die door de service wordt verzonden:
 
-   ![uitvoer van beheerdevice-app](./media/iot-hub-node-node-device-management-get-started/device.png)
+   ![uitvoer van manageddevice-app](./media/iot-hub-node-node-device-management-get-started/device.png)
 
-   Hieronder ziet u de service die het opnieuw opstarten activeert en de apparaatt dubbel pollt voor de laatste keer dat het apparaat opnieuw wordt opgestart:
+   Hieronder ziet u de service die het opnieuw opstarten activeert en de apparaattweede polling voor de laatste keer dat het apparaat opnieuw wordt opgestart:
 
    ![triggerrebootondevice app output](./media/iot-hub-node-node-device-management-get-started/service.png)
 

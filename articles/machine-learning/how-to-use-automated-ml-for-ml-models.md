@@ -9,25 +9,25 @@ ms.author: nibaccam
 author: cartacioS
 ms.reviewer: nibaccam
 ms.date: 12/20/2020
-ms.topic: conceptual
-ms.custom: how-to, automl
-ms.openlocfilehash: 5718e0e3732f57b46500f9d2cdb1165e883ca44f
-ms.sourcegitcommit: d3bcd46f71f578ca2fd8ed94c3cdabe1c1e0302d
+ms.topic: how-to
+ms.custom: automl
+ms.openlocfilehash: e744f7bb4d457e18f73c308fa5eaf29918b97e88
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107575578"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107888310"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Geautomatiseerde modellen maken, controleren en implementeren machine learning met Azure Machine Learning
 
 
-In dit artikel leert u hoe u geautomatiseerde machine learning maakt, verkent en implementeert zonder één regel code in Azure Machine Learning-studio.
+In dit artikel leert u hoe u geautomatiseerde machine learning-modellen maakt, verkent en implementeert zonder één regel code in Azure Machine Learning-studio.
 
-Geautomatiseerde machine learning is een proces waarbij het beste machine learning algoritme voor uw specifieke gegevens wordt geselecteerd. Met dit proces kunt u snel machine learning genereren. [Meer informatie over geautomatiseerde machine learning](concept-automated-ml.md).
+Geautomatiseerde machine learning is een proces waarin het beste machine learning dat u voor uw specifieke gegevens kunt gebruiken, voor u wordt geselecteerd. Met dit proces kunt u snel machine learning genereren. [Meer informatie over geautomatiseerde machine learning.](concept-automated-ml.md)
  
-Voor een end-to-end-voorbeeld kunt u de zelfstudie voor het maken van een classificatiemodel met [Azure Machine Learning van de geautomatiseerde ML-interface van de Azure Machine Learning gebruiken.](tutorial-first-experiment-automated-ml.md) 
+Voor een end-to-end-voorbeeld kunt u de zelfstudie voor het maken van een classificatiemodel met [de geautomatiseerde ML-interface Azure Machine Learning gebruiken.](tutorial-first-experiment-automated-ml.md) 
 
-Configureer voor een op code gebaseerde Python-ervaring uw geautomatiseerde [machine learning experimenten](how-to-configure-auto-train.md) met de Azure Machine Learning SDK.
+Voor een python-ervaring op basis van code configureert u [uw geautomatiseerde machine learning experimenten](how-to-configure-auto-train.md) met de Azure Machine Learning SDK.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -60,13 +60,13 @@ Anders ziet u een lijst met uw recente geautomatiseerde machine learning experim
     >* Gegevens moeten in tabelvorm zijn.
     >* De waarde die u wilt voorspellen (doelkolom) moet aanwezig zijn in de gegevens.
 
-    1. Als u een nieuwe gegevensset wilt maken op basis van een bestand op uw lokale computer, selecteert **u +Gegevensset maken** en selecteert u **vervolgens Uit lokaal bestand.** 
+    1. Als u een nieuwe gegevensset wilt maken op basis van een bestand op uw lokale computer, selecteert u **+Gegevensset maken** en selecteert u **vervolgens Uit lokaal bestand.** 
 
     1. Geef in **het formulier Basisinformatie** uw gegevensset een unieke naam en geef een optionele beschrijving op. 
 
-    1. Selecteer **Volgende om** het formulier Gegevens opslaan en **bestandsselectie te openen.** In dit formulier selecteert u waar u uw gegevensset wilt uploaden. de standaardopslagcontainer die automatisch wordt gemaakt met uw werkruimte of kies een opslagcontainer die u wilt gebruiken voor het experiment. 
+    1. Selecteer **Volgende om** het formulier Gegevens archief en **bestandsselectie te openen.** In dit formulier selecteert u waar u uw gegevensset wilt uploaden. de standaardopslagcontainer die automatisch wordt gemaakt met uw werkruimte of kies een opslagcontainer die u wilt gebruiken voor het experiment. 
     
-        1. Als uw gegevens zich achter een virtueel netwerk, moet u de **validatiefunctie** overslaan inschakelen om ervoor te zorgen dat de werkruimte toegang heeft tot uw gegevens. Zie Use Azure Machine Learning-studio in an Azure virtual network (Een virtuele [azure-netwerk gebruiken) voor meer informatie.](how-to-enable-studio-virtual-network.md) 
+        1. Als uw gegevens zich achter een virtueel netwerk, moet u de **validatiefunctie** overslaan inschakelen om ervoor te zorgen dat de werkruimte toegang heeft tot uw gegevens. Zie Use [Azure Machine Learning-studio in an Azure virtual network (Gebruik Azure Machine Learning-studio in een virtueel Azure-netwerk) voor meer informatie.](how-to-enable-studio-virtual-network.md) 
     
     1. Selecteer **Bladeren om** het gegevensbestand voor uw gegevensset te uploaden. 
 
@@ -91,7 +91,7 @@ Anders ziet u een lijst met uw recente geautomatiseerde machine learning experim
         Selecteer **Next**.
 1. Selecteer de zojuist gemaakte gegevensset zodra deze wordt weergegeven. U kunt ook een voorbeeld van de gegevensset en voorbeeldstatistieken bekijken. 
 
-1. Selecteer op **het formulier Configure run** de optie Create **new** en voer **Tutorial-automl-deploy in** als de naam van het experiment.
+1. Selecteer in **het formulier Run** configureren de optie Nieuwe **maken** en voer **Tutorial-automl-deploy in** als de naam van het experiment.
 
 1. Selecteer een doelkolom; dit is de kolom waar u voorspellingen op wilt doen.
 
@@ -115,7 +115,7 @@ Anders ziet u een lijst met uw recente geautomatiseerde machine learning experim
 
     Selecteer **Next**.
 
-1. Selecteer op **het formulier Taaktype** en instellingen het taaktype: classificatie, regressie of prognose. Zie [Ondersteunde taaktypen](concept-automated-ml.md#when-to-use-automl-classify-regression--forecast) voor meer informatie.
+1. Selecteer op **het formulier Taaktype** en instellingen het taaktype: classificatie, regressie of prognose. Zie [ondersteunde taaktypen](concept-automated-ml.md#when-to-use-automl-classify-regression--forecast) voor meer informatie.
 
     1. Voor **classificatie** kunt u ook deep learning inschakelen.
     
@@ -128,20 +128,20 @@ Anders ziet u een lijst met uw recente geautomatiseerde machine learning experim
     
         1. Tijdkolom *selecteren:* deze kolom bevat de tijdgegevens die moeten worden gebruikt.
 
-        1. *Prognoseperiode selecteren:* geef aan hoeveel tijdseenheden (minuten/uren/dagen/weken/maanden/jaren) het model voor de toekomst kan voorspellen. Hoe verder het model is vereist om in de toekomst te voorspellen, hoe minder nauwkeurig het wordt. [Meer informatie over prognoses en prognoseperioden.](how-to-auto-train-forecast.md)
+        1. *Prognoseperiode selecteren:* geef aan hoeveel tijdseenheden (minuten/uren/dagen/weken/maanden/jaren) het model in de toekomst kan voorspellen. Hoe verder het model nodig is om in de toekomst te voorspellen, hoe minder nauwkeurig het wordt. [Meer informatie over prognoses en prognoseperiode](how-to-auto-train-forecast.md).
 
-1. (Optioneel) Aanvullende configuratie-instellingen weergeven: aanvullende instellingen die u kunt gebruiken om de trainings job beter te beheren. Anders worden de standaardinstellingen toegepast op basis van de selectie en gegevens van het experiment. 
+1. (Optioneel) Configuratie-instellingen voor optellingen weergeven: aanvullende instellingen die u kunt gebruiken om de trainings job beter te beheren. Anders worden de standaardinstellingen toegepast op basis van de selectie en gegevens van het experiment. 
 
     Aanvullende configuraties|Description
     ------|------
     Primaire metrische gegevens| Belangrijkste metrische gegevens die worden gebruikt om uw model te scoren. [Meer informatie over metrische modelgegevens.](how-to-configure-auto-train.md#primary-metric)
-    Uitleg geven over het beste model | Selecteer in- of uitschakelen om uitleg over het aanbevolen model weer te geven. <br> Deze functionaliteit is momenteel niet beschikbaar voor [bepaalde prognosealgoritmen](how-to-machine-learning-interpretability-automl.md#interpretability-during-training-for-the-best-model). 
-    Geblokkeerd algoritme| Selecteer algoritmen die u wilt uitsluiten van de trainings job. <br><br> Algoritmen toestaan is alleen beschikbaar voor [SDK-experimenten.](how-to-configure-auto-train.md#supported-models) <br> Zie de [ondersteunde modellen voor elk taaktype.](/python/api/azureml-automl-core/azureml.automl.core.shared.constants.supportedmodels)
-    Criterium voor afsluiten| Wanneer aan een van deze criteria wordt voldaan, wordt de trainings job gestopt. <br> *Tijd van trainingsklus (uren)*: hoe lang de trainings job mag worden uitgevoerd. <br> *Drempelwaarde voor metrische score:* minimale metrische score voor alle pijplijnen. Dit zorgt ervoor dat als u een gedefinieerd doelmetrische gegevens hebt die u wilt bereiken, u niet meer tijd kwijt bent aan de trainings job dan nodig is.
+    Uitleg geven over het beste model | Schakel deze optie in of uit om uitleg over het aanbevolen beste model weer te geven. <br> Deze functionaliteit is momenteel niet beschikbaar voor [bepaalde prognosealgoritmen.](how-to-machine-learning-interpretability-automl.md#interpretability-during-training-for-the-best-model) 
+    Geblokkeerd algoritme| Selecteer algoritmen die u wilt uitsluiten van de trainings job. <br><br> Het toestaan van algoritmen is alleen beschikbaar voor [SDK-experimenten.](how-to-configure-auto-train.md#supported-models) <br> Zie de [ondersteunde modellen voor elk taaktype.](/python/api/azureml-automl-core/azureml.automl.core.shared.constants.supportedmodels)
+    Criterium voor afsluiten| Wanneer aan een van deze criteria wordt voldaan, wordt de trainings job gestopt. <br> *Tijd van trainingsklus (uren)*: hoe lang de trainings job mag worden uitgevoerd. <br> *Drempelwaarde voor metrische score:* Minimale metrische score voor alle pijplijnen. Dit zorgt ervoor dat als u een gedefinieerd doelmetrische gegevens hebt die u wilt bereiken, u niet meer tijd kwijt bent aan de trainings job dan nodig is.
     Validatie| Selecteer een van de kruisvalidatieopties die u in de trainings job wilt gebruiken. <br> [Meer informatie over kruisvalidatie.](how-to-configure-cross-validation-data-splits.md#prerequisites)<br> <br>Prognoses ondersteunen alleen k-voudige kruisvalidatie.
     Gelijktijdigheid| *Maximum aantal gelijktijdige iteraties:* maximum aantal pijplijnen (iteraties) dat in de trainings job moet worden getest. De taak wordt niet meer dan het opgegeven aantal iteraties uitgevoerd. Meer informatie over hoe geautomatiseerde ML meerdere [onderliggende runs uitvoert op clusters](how-to-configure-auto-train.md#multiple-child-runs-on-clusters).
 
-1. (Optioneel) Featurization-instellingen weergeven: als u Automatische featurization wilt **inschakelen** in het formulier Aanvullende configuratie-instellingen, worden standaard featurization-technieken toegepast.  In De **featurization-instellingen weergeven** kunt u deze standaardinstellingen wijzigen en dienovereenkomstig aanpassen. Meer informatie over [het aanpassen van featurizations.](#customize-featurization) 
+1. (Optioneel) Featurization-instellingen weergeven: als u Automatische featurization wilt **inschakelen** in het formulier Aanvullende configuratie-instellingen, worden de standaardtechnieken voor featurization toegepast.  In de **instellingen voor featurization weergeven** kunt u deze standaardwaarden wijzigen en dienovereenkomstig aanpassen. Meer informatie over [het aanpassen van featurizations.](#customize-featurization) 
 
     ![Schermopname van het dialoogvenster Taaktype selecteren met De featurization-instellingen weergeven omlijst.](media/how-to-use-automated-ml-for-ml-models/view-featurization-settings.png)
 
@@ -155,7 +155,7 @@ Kolom| Aanpassing
 ---|---
 Inbegrepen | Hiermee geeft u op welke kolommen moeten worden op te nemen voor training.
 Functietype| Wijzig het waardetype voor de geselecteerde kolom.
-Impute met| Selecteer met welke waarde u ontbrekende waarden wilt imputeeren in uw gegevens.
+Impute met| Selecteer met welke waarde ontbrekende waarden in uw gegevens moeten worden toe te staan.
 
 ![Azure Machine Learning-studio voor aangepaste featurization](media/how-to-use-automated-ml-for-ml-models/custom-featurization.png)
 
@@ -164,11 +164,11 @@ Impute met| Selecteer met welke waarde u ontbrekende waarden wilt imputeeren in 
 Selecteer **Voltooien om** uw experiment uit te voeren. Het voorbereiden van het experiment kan tot 10 minuten duren. Trainingstaken kunnen nog 2-3 minuten meer kosten voordat het uitvoeren van elke pijplijn is voltooid.
 
 > [!NOTE]
-> De algoritmen die door geautomatiseerde ML worden gebruikt, hebben inherente willekeurigheid die een kleine variatie kan veroorzaken in de uiteindelijke score voor metrische gegevens van een aanbevolen model, zoals nauwkeurigheid. Geautomatiseerde ML voert indien nodig ook bewerkingen uit op gegevens zoals trainen/testen splitsen, splitsing voor trainen/valideren of kruisvalidatie. Dus als u meerdere keren een experiment met dezelfde configuratie-instellingen en primaire metrische gegevens hebt uitgevoerd, ziet u waarschijnlijk variatie in elke experimenten uiteindelijke score voor metrische gegevens vanwege deze factoren. 
+> De algoritmen die door geautomatiseerde ML worden gebruikt, hebben inherente willekeurigheid die een kleine variatie kan veroorzaken in de uiteindelijke score voor metrische gegevens van een aanbevolen model, zoals nauwkeurigheid. Geautomatiseerde ML voert indien nodig ook bewerkingen uit op gegevens zoals trainen/testen splitsen, splitsing voor trainen/valideren of kruisvalidatie. Dus als u meerdere keren een experiment met dezelfde configuratie-instellingen en primaire metrische gegevens hebt uitgevoerd, zult u waarschijnlijk variatie zien in elke metrische score van elke experimenten als gevolg van deze factoren. 
 
 ### <a name="view-experiment-details"></a>Experimentdetails weergeven
 
-Het **scherm Details** uitvoeren wordt geopend op het tabblad **Details.** In dit scherm ziet u een samenvatting van de experimentuit voeren met inbegrip van een statusbalk boven naast het nummer van de run. 
+Het **scherm Details uitvoeren** wordt geopend op het tabblad **Details.** In dit scherm ziet u een samenvatting van de experimentuit voeren met inbegrip van een statusbalk boven naast het nummer van de run. 
 
 Het tabblad **Modellen** bevat een lijst met de gemaakte modellen, op volgorde van de metrische score. Standaardstaat het model dat het hoogst scoort op basis van het gekozen metrische gegeven bovenaan de lijst. Terwijl de trainingstaak meer modellen uitprobeert, worden deze toegevoegd aan de lijst. Gebruik dit om een snelle vergelijking te krijgen van de metrische gegevens voor de tot dusver geproduceerde modellen.
 
@@ -176,20 +176,20 @@ Het tabblad **Modellen** bevat een lijst met de gemaakte modellen, op volgorde v
 
 ### <a name="view-training-run-details"></a>Details van trainingsruns weergeven
 
-Zoom in op een van de voltooide modellen om details van de trainingsuitvoering  te bekijken, zoals een modeloverzicht op het **tabblad Model** of grafieken met metrische prestatiegegevens op het tabblad Metrische gegevens. Meer informatie [over grafieken.](how-to-understand-automated-ml.md)
+Zoom in op een van de voltooide modellen om details van de trainingsuitvoering te bekijken, zoals een modeloverzicht op het **tabblad Model** of grafieken met metrische prestatiegegevens op het tabblad **Metrische** gegevens. Meer informatie over [grafieken.](how-to-understand-automated-ml.md)
 
 [![Iteratiedetails](media/how-to-use-automated-ml-for-ml-models/iteration-details.png)](media/how-to-use-automated-ml-for-ml-models/iteration-details-expanded.png)
 
 ## <a name="model-explanations-preview"></a>Uitleg bij model (preview)
 
-Om uw model beter te begrijpen, kunt u zien welke gegevensfuncties (onbewerkt of ontworpen) de voorspellingen van het model hebben beïnvloed met het dashboard voor modeluit leggen. 
+Voor een beter begrip van uw model kunt u zien welke gegevensfuncties (onbewerkt of ontworpen) de voorspellingen van het model hebben beïnvloed met het dashboard voor modeluit uitleg. 
 
-Het dashboard voor model uitleg biedt een algemene analyse van het getrainde model, samen met de voorspellingen en uitleg. U kunt ook inzoomen op een afzonderlijk gegevenspunt en de afzonderlijke functie-belangrijkheid. [Meer informatie over de uitleg over dashboardvisualisaties.](how-to-machine-learning-interpretability-aml.md#visualizations)
+Het dashboard voor model uitleg biedt een algemene analyse van het getrainde model, samen met de voorspellingen en uitleg. U kunt hiermee ook inzoomen op een afzonderlijk gegevenspunt en de afzonderlijke functie-belangrijkheid. [Meer informatie over de uitleg over dashboardvisualisaties](how-to-machine-learning-interpretability-aml.md#visualizations).
 
 Om uitleg te krijgen over een bepaald model, 
 
 1. Selecteer op **het** tabblad Modellen het model dat u wilt begrijpen. 
-1. Selecteer de **knop Model** uitleggen en geef een berekening op die kan worden gebruikt om de uitleg te genereren.
+1. Selecteer de **knop Model uitleggen** en geef een berekening op die kan worden gebruikt om de uitleg te genereren.
 1. Controleer het **tabblad Onderliggende runs** op de status. 
 1. Als u klaar is, gaat u naar **het tabblad Uitleg (preview)** dat het uitlegdashboard bevat. 
 
@@ -200,20 +200,20 @@ Om uitleg te krijgen over een bepaald model,
 Zodra u het beste model hebt gevonden, is het tijd om dit te implementeren als een webservice, om nieuwe gegevens te voorspellen.
 
 >[!TIP]
-> Als u een model wilt implementeren dat is gegenereerd via het pakket met de Python SDK, moet u `automl` uw model [registreren](how-to-deploy-and-where.md?tabs=python#register-a-model-from-an-azure-ml-training-run-1) bij de werkruimte. 
+> Als u een model wilt implementeren dat is gegenereerd via het pakket met de Python SDK, moet u uw model registreren `automl` bij de werkruimte. [](how-to-deploy-and-where.md?tabs=python#register-a-model-from-an-azure-ml-training-run-1) 
 >
-> Zodra het model is geregistreerd, kunt u het vinden in de studio door Modellen te **selecteren** in het linkerdeelvenster. Zodra u uw model hebt  geopend, kunt u de knop Implementeren bovenaan het scherm selecteren en vervolgens de instructies volgen zoals beschreven in stap **2** van de sectie Uw **model** implementeren.
+> Zodra het model is geregistreerd, kunt u het vinden in de studio door **Modellen te selecteren** in het linkerdeelvenster. Zodra u het model hebt  geopend, kunt u de knop Implementeren bovenaan het scherm selecteren en vervolgens de instructies volgen zoals beschreven in stap **2** van de sectie Uw **model** implementeren.
 
 Geautomatiseerde ML helpt u bij het implementeren van het model zonder code te schrijven:
 
 1. U hebt een aantal opties voor implementatie. 
 
-    + Optie 1: implementeer het beste model volgens de metrische criteria die u hebt gedefinieerd. 
+    + Optie 1: implementeer het beste model op basis van de metrische criteria die u hebt gedefinieerd. 
         1. Nadat het experiment is voltooid, gaat u naar de bovenliggende run-pagina door **1 uitvoeren bovenaan** het scherm te selecteren. 
         1.  Selecteer het model dat wordt vermeld in de **sectie Beste modeloverzicht.** 
         1. Selecteer **Implementeren** linksboven in het venster. 
 
-    + Optie 2: Een specifieke model iteratie implementeren vanuit dit experiment.
+    + Optie 2: Een specifieke model-iteratie van dit experiment implementeren.
         1. Selecteer het gewenste model op het tabblad **Modellen**
         1. Selecteer **Implementeren** linksboven in het venster.
 
@@ -229,7 +229,7 @@ Geautomatiseerde ML helpt u bij het implementeren van het model zonder code te s
     Aangepaste implementatie-assets gebruiken| Schakel deze functie in als u uw eigen scorescript en omgevingsbestand wilt uploaden. [Meer informatie over scorescripts](how-to-deploy-and-where.md).
 
     >[!Important]
-    > Bestandsnamen moeten uit minder dan 32 tekens bestaan en moeten beginnen en eindigen met alfanumerieke tekens. De rest van de naam mag streepjes, onderstrepingstekens, punten en alfanumerieke tekens bevatten. Spaties zijn niet toegestaan.
+    > Bestandsnamen moeten minder dan 32 tekens lang zijn en moeten beginnen en eindigen met alfanumerieke tekens. De rest van de naam mag streepjes, onderstrepingstekens, punten en alfanumerieke tekens bevatten. Spaties zijn niet toegestaan.
 
     Het menu *Geavanceerd* biedt standaard implementatiefuncties, zoals [gegevensverzameling](how-to-enable-app-insights.md), en instellingen voor het gebruik van resources. Als u deze standaardwaarden wilt overschrijven, kunt u dit doen in dit menu.
 
@@ -240,6 +240,6 @@ U hebt nu een operationele webservice om voorspellingen te genereren. U kunt de 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het gebruik van een webservice](how-to-consume-web-service.md).
-* [Inzicht in geautomatiseerde machine learning resultaten](how-to-understand-automated-ml.md).
+* [Meer informatie over het gebruik van een webservice.](how-to-consume-web-service.md)
+* [Geautomatiseerde machine learning begrijpen.](how-to-understand-automated-ml.md)
 * [Meer informatie over geautomatiseerde machine learning](concept-automated-ml.md) en Azure Machine Learning.

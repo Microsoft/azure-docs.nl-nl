@@ -8,14 +8,17 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 04/21/2021
 ms.author: yelevin
-ms.openlocfilehash: b4260d31b587f2a20d7bc9d4c4e3e6a0d225a416
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.openlocfilehash: e9f27b5cc3c4cb526dbcf6e6511fcd53e3c2fe67
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107879126"
+ms.locfileid: "107891716"
 ---
 # <a name="connect-azure-storage-account-diagnostics-logs"></a>Diagnostische Azure Storage van uw account verbinden
+
+> [!IMPORTANT]
+> De Azure Storage-accountconnector is momenteel beschikbaar in **preview.** Zie de aanvullende gebruiksvoorwaarden voor [Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voorwaarden die van toepassing zijn op Azure-functies die bètaversies of preview-functies hebben of die nog niet algemeen beschikbaar zijn.
 
 Azure Storage account is een cloudoplossing voor moderne scenario's voor gegevensopslag. Het bevat al uw gegevensobjecten: blobs, bestanden, wachtrijen, tabellen en schijven.
 
@@ -43,7 +46,7 @@ Deze connector gebruikt Azure Policy om één configuratie voor logboekstreaming
 
 1. Selecteer de **knop Wizard Azure Policy starten.**
 
-    De wizard beleidstoewijzing wordt geopend, klaar voor het maken van een nieuw beleid met de naam Diagnostische instellingen configureren voor **opslagaccounts naar Log Analytics-werkruimte**.
+    De wizard Beleidstoewijzing wordt geopend, klaar voor het maken van een nieuw beleid met de naam Diagnostische instellingen configureren voor **opslagaccounts naar Log Analytics-werkruimte.**
 
     1. Klik op **het** tabblad Basisinformatie op de knop met de drie puntjes naast **Bereik** om uw abonnement (en eventueel een resourcegroep) te selecteren. U kunt ook een beschrijving toevoegen.
 

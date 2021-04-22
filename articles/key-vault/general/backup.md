@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 3/18/2021
 ms.author: sudbalas
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 399f55d379f99a784fed97d7e9f72c456eb1f914
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 6941054eae0c234fa895012050ad83de50f4a1dd
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107484809"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107890470"
 ---
 # <a name="azure-key-vault-backup"></a>Back-up voor Azure Key Vault
 

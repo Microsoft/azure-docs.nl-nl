@@ -1,23 +1,23 @@
 ---
 title: Aangepaste e-mailverificatie met SendGrid
 titleSuffix: Azure AD B2C
-description: Leer hoe u kunt integreren met SendGrid om de verificatie-e-mail aan te passen die naar uw klanten wordt verzonden wanneer ze zich registreren, zodat ze uw Azure AD B2C toepassingen kunnen gebruiken.
+description: Leer hoe u kunt integreren met SendGrid om de verificatie-e-mail aan te passen die naar uw klanten wordt verzonden wanneer ze zich registreren om uw Azure AD B2C toepassingen te gebruiken.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/19/2021
+ms.date: 04/21/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: d63e7916423038e53c375b2be4114582cf4d6152
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: a56f8339535c64c6eeac1b06c04aa7c89cd38356
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107725760"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107886384"
 ---
 # <a name="custom-email-verification-with-sendgrid"></a>Aangepaste e-mailverificatie met SendGrid
 
@@ -48,7 +48,7 @@ Zorg ervoor dat u de sectie voltooit waarin u [een SendGrid API-sleutel maakt.](
 
 Sla vervolgens de SendGrid-API-sleutel op in een Azure AD B2C-beleidssleutel waarnaar uw beleid moet verwijzen.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C tenant. Selecteer het **filter Map en abonnement** in het bovenste menu en kies uw Azure AD B2C map.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer op de pagina Overzicht **de optie Identity Experience Framework**.
@@ -261,7 +261,7 @@ Dit voorbeeld van een weergavebesturingselement is geconfigureerd voor:
 
 1. Verzamel het `email` type adresclaim van de gebruiker.
 1. Wacht tot de gebruiker het `verificationCode` claimtype heeft verstrekt met de code die naar de gebruiker is verzonden.
-1. Ga terug `email` naar het zelfver bevestigde technische profiel dat een verwijzing naar dit weergavebesturingselement heeft.
+1. Ga terug `email` naar het zelfver bevestigde technische profiel met een verwijzing naar dit weergavebesturingselement.
 1. Genereer met `SendCode` behulp van de actie een OTP-code en verzend een e-mailbericht met de OTP-code naar de gebruiker.
 
 ![E-mailactie verificatiecode verzenden](media/custom-email-sendgrid/display-control-verification-email-action-01.png)
@@ -304,7 +304,7 @@ Voeg onder inhoudsdefinities, nog steeds binnen `<BuildingBlocks>` , de volgende
 Het `GenerateOtp` technische profiel genereert een code voor het e-mailadres. Het `VerifyOtp` technische profiel verifieert de code die is gekoppeld aan het e-mailadres. U kunt de configuratie van de indeling en de vervaldatum van het een time-wachtwoord wijzigen. Zie Define a one-time password technical profile (Een technisch profiel voor een [eendtijdswachtwoord](one-time-password-technical-profile.md)definiëren) voor meer informatie over technische OTP-profielen.
 
 > [!NOTE]
-> OTP-codes die worden gegenereerd door het protocol Web.TPEngine.Providers.OneTimePasswordProtocolProvider, zijn gekoppeld aan de browsersessie. Dit betekent dat een gebruiker unieke OTP-codes kan genereren in verschillende browsersessies die elk geldig zijn voor de bijbehorende sessies. Een OTP-code die wordt gegenereerd door de ingebouwde gebruikersstroom is daarentegen onafhankelijk van de browsersessie, dus als een gebruiker een nieuwe OTP-code genereert in een nieuwe browsersessie, wordt de vorige OTP-code vervangen.
+> OTP-codes die worden gegenereerd door het protocol Web.TPEngine.Providers.OneTimePasswordProtocolProvider, zijn gekoppeld aan de browsersessie. Dit betekent dat een gebruiker unieke OTP-codes kan genereren in verschillende browsersessies die elk geldig zijn voor de bijbehorende sessies. Een OTP-code die wordt gegenereerd door de ingebouwde e-mailprovider is daarentegen onafhankelijk van de browsersessie, dus als een gebruiker een nieuwe OTP-code genereert in een nieuwe browsersessie, vervangt deze de vorige OTP-code.
 
 Voeg de volgende technische profielen toe aan het `<ClaimsProviders>` -element.
 
@@ -385,9 +385,9 @@ Voeg net als bij de technische OTP-profielen de volgende technische profielen to
 
 ## <a name="make-a-reference-to-the-displaycontrol"></a>Een verwijzing naar DisplayControl maken
 
-Voeg in de laatste stap een verwijzing toe naar de DisplayControl die u hebt gemaakt. Vervang uw bestaande `LocalAccountSignUpWithLogonEmail` en `LocalAccountDiscoveryUsingEmailAddress` zelf-bevestigde technische profielen door het volgende. Als u een eerdere versie van het Azure AD B2C gebruikt. Deze technische profielen gebruiken `DisplayClaims` met een verwijzing naar DisplayControl.
+Voeg in de laatste stap een verwijzing toe naar de DisplayControl die u hebt gemaakt. Vervang uw bestaande `LocalAccountSignUpWithLogonEmail` `LocalAccountDiscoveryUsingEmailAddress` en zelfbewaarde technische profielen door het volgende. Als u een eerdere versie van het Azure AD B2C gebruikt. Deze technische profielen gebruiken `DisplayClaims` met een verwijzing naar DisplayControl.
 
-Zie Zelf-bevestigd technisch [profiel en](restful-technical-profile.md) [DisplayControl](display-controls.md)voor meer informatie.
+Zie Zelf-bevestigd technisch [profiel en](restful-technical-profile.md) [DisplayControl voor meer informatie.](display-controls.md)
 
 ```xml
 <ClaimsProvider>
@@ -428,10 +428,10 @@ Zie Zelf-bevestigd technisch [profiel en](restful-technical-profile.md) [Display
 
 ## <a name="optional-localize-your-email"></a>[Optioneel] Uw e-mail lokaliseren
 
-Als u het e-mailbericht wilt lokaliseren, moet u gelokaliseerde tekenreeksen verzenden naar SendGrid of uw e-mailprovider. U kunt bijvoorbeeld het onderwerp, de hoofdcode, het codebericht of de handtekening van het e-mailbericht lokaliseren. Als u dit wilt doen, kunt u de transformatie van [GetLocalizedStringsTransformation-claims](string-transformations.md) gebruiken om gelokaliseerde tekenreeksen naar claimtypen te kopiëren. De `GenerateEmailRequestBody` claimtransformatie, waarmee de JSON-nettolading wordt gegenereerd, maakt gebruik van invoerclaims die de gelokaliseerde tekenreeksen bevatten.
+Als u het e-mailbericht wilt lokaliseren, moet u gelokaliseerde tekenreeksen verzenden naar SendGrid of uw e-mailprovider. U kunt bijvoorbeeld het onderwerp, de hoofdcode, het codebericht of de handtekening van het e-mailbericht localiseren. Als u dit wilt doen, kunt u de transformatie voor [GetLocalizedStringsTransformation-claims](string-transformations.md) gebruiken om gelokaliseerde tekenreeksen te kopiëren naar claimtypen. De `GenerateEmailRequestBody` claimtransformatie, die de JSON-nettolading genereert, maakt gebruik van invoerclaims die de gelokaliseerde tekenreeksen bevatten.
 
 1. Definieer in uw beleid de volgende tekenreeksclaims: onderwerp, bericht, codeIntro en handtekening.
-1. Definieer [een transformatie voor GetLocalizedStringsTransformation-claims](string-transformations.md) om gelokaliseerde tekenreekswaarden in de claims uit stap 1 te vervangen.
+1. Definieer [een transformatie voor GetLocalizedStringsTransformation-claims](string-transformations.md) om gelokaliseerde tekenreekswaarden te vervangen door de claims uit stap 1.
 1. Wijzig de `GenerateEmailRequestBody` claimtransformatie om invoerclaims te gebruiken met het volgende XML-fragment.
 1. Werk uw SendGrid-sjabloon bij om dynamische parameters te gebruiken in plaats van alle tekenreeksen die worden gelokaliseerd door Azure AD B2C.
 
@@ -532,7 +532,7 @@ Als u het e-mailbericht wilt lokaliseren, moet u gelokaliseerde tekenreeksen ver
     
 ## <a name="optional-localize-the-ui"></a>[Optioneel] De gebruikersinterface lokaliseren
 
-Met het element Lokalisatie kunt u meerdere talen of talen in het beleid ondersteunen voor de gebruikerstrajecten. Met de lokalisatieondersteuning in beleidsregels kunt u taalspecifieke tekenreeksen opgeven voor zowel de elementen van de gebruikersinterface [voor](localization-string-ids.md#verification-display-control-user-interface-elements)controle als foutberichten met een [wachtwoord voor één keer.](localization-string-ids.md#one-time-password-error-messages) Voeg de volgende LocalizedString toe aan uw LocalizedResources. 
+Met het element Lokalisatie kunt u meerdere talen of talen in het beleid ondersteunen voor de gebruikerstrajecten. Met de lokalisatieondersteuning in beleidsregels kunt u taalspecifieke tekenreeksen opgeven voor zowel elementen van de gebruikersinterface [voor](localization-string-ids.md#verification-display-control-user-interface-elements)controleweergave van verificatie als foutberichten met een [wachtwoord voor één keer.](localization-string-ids.md#one-time-password-error-messages) Voeg de volgende LocalizedString toe aan uw LocalizedResources. 
 
 ```XML
 <LocalizedResources Id="api.custom-email.en">
@@ -570,6 +570,6 @@ Nadat u de gelokaliseerde tekenreeksen hebt toevoegen, verwijdert u de metagegev
 U vindt een voorbeeld van een aangepast beleid voor e-mailverificatie op GitHub:
 
 - [Aangepaste e-mailverificatie - DisplayControls](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-email-verifcation-displaycontrol)
-- Zie Define a RESTful technical profile in an Azure AD B2C [custom policy (Een technisch RESTful-profiel](restful-technical-profile.md)definiëren in een Azure AD B2C beleid) voor meer informatie over het gebruik van een aangepaste REST API of een HTTP-gebaseerde SMTP-e-mailprovider.
+- Zie Define a RESTful technical profile in an Azure AD B2C custom policy (Een technisch RESTful-profiel definiëren in een Azure AD B2C aangepast beleid) voor meer informatie over het gebruik van een aangepaste REST API of een HTTP-gebaseerde [SMTP-e-mailprovider.](restful-technical-profile.md)
 
 ::: zone-end

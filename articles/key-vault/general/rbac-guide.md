@@ -9,25 +9,25 @@ ms.topic: how-to
 ms.date: 04/15/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 9806327c7393c3ba1fdab09acfb5545d6026e5cf
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.openlocfilehash: f565d0d6cbb3ccd7e380334de1d5b4cc78f15502
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107818458"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107887284"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control"></a>Toegang bieden tot Key Vault, certificaten en geheimen met op rollen gebaseerd toegangsbeheer van Azure
 
 > [!NOTE]
-> Key Vault resourceprovider ondersteunt twee resourcetypen: **kluizen en** **beheerde HMS's.** Toegangsbeheer dat in dit artikel wordt beschreven, is alleen van toepassing **op kluizen**. Zie Toegangsbeheer voor beheerde HSM voor meer informatie over [toegangsbeheer voor beheerde HSM.](../managed-hsm/access-control.md)
+> Key Vault resourceprovider ondersteunt twee resourcetypen: **kluizen** en **beheerde HMS's.** Toegangsbeheer dat in dit artikel wordt beschreven, is alleen van toepassing **op kluizen**. Zie Toegangsbeheer voor beheerde HSM voor meer informatie over [toegangsbeheer voor beheerde HSM.](../managed-hsm/access-control.md)
 
 Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) is een autorisatiesysteem dat is gebouwd op [Azure Resource Manager](../../azure-resource-manager/management/overview.md) dat een fijner toegangsbeheer van Azure-resources biedt.
 
 Met Azure RBAC kunnen gebruikers machtigingen voor sleutels, geheimen en certificaten beheren. Het biedt één plek voor het beheren van alle machtigingen in alle sleutelkluizen. 
 
-Het Azure RBAC-model biedt de mogelijkheid om machtigingen in te stellen op verschillende bereikniveaus: beheergroep, abonnement, resourcegroep of afzonderlijke resources.  Azure RBAC voor key vault biedt ook de mogelijkheid om afzonderlijke machtigingen te hebben voor afzonderlijke sleutels, geheimen en certificaten
+Het Azure RBAC-model biedt de mogelijkheid om machtigingen in te stellen op verschillende bereikniveaus: beheergroep, abonnement, resourcegroep of afzonderlijke resources.  Azure RBAC voor Key Vault biedt ook de mogelijkheid om afzonderlijke machtigingen te hebben voor afzonderlijke sleutels, geheimen en certificaten
 
-Zie Op rollen gebaseerd toegangsbeheer [van Azure (Azure RBAC)](../../role-based-access-control/overview.md)voor meer informatie.
+Zie Op rollen gebaseerd [toegangsbeheer van Azure (Azure RBAC)](../../role-based-access-control/overview.md)voor meer informatie.
 
 ## <a name="best-practices-for-individual-keys-secrets-and-certificates"></a>Best practices voor afzonderlijke sleutels, geheimen en certificaten
 
@@ -201,7 +201,7 @@ New-AzRoleAssignment -RoleDefinitionName 'Key Vault Secrets Officer' -Applicatio
 ### <a name="test-and-verify"></a>Testen en verifiëren
 
 > [!NOTE]
-> Browsers gebruiken caching en het vernieuwen van pagina's is vereist na het verwijderen van roltoewijzingen.<br>
+> Browsers gebruiken caching en paginavernieuwing is vereist na het verwijderen van roltoewijzingen.<br>
 > Enkele minuten toestaan dat roltoewijzingen worden vernieuwd
 
 1. Valideer het toevoegen van een nieuw geheim Key Vault de rol Secrets Officer op key vault-niveau.

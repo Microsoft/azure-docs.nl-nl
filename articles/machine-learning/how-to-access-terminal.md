@@ -1,104 +1,104 @@
 ---
-title: Toegang tot een compute instance-terminal in uw werk ruimte
+title: Toegang krijgen tot een reken-exemplaarterminal in uw werkruimte
 titleSuffix: Azure Machine Learning
-description: Gebruik de Terminal op een reken instantie voor git-bewerkingen, om pakketten te installeren en kernels toe te voegen.
+description: Gebruik de terminal op een reken-exemplaar voor Git-bewerkingen, om pakketten te installeren en kernels toe te voegen.
 services: machine-learning
 author: abeomor
 ms.author: osomorog
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: how-to
 ms.date: 02/05/2021
-ms.openlocfilehash: 6f6c8e309fde92b0c2cf6fabac3489557b0b6b93
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 44167abd3c602b62dc101298d227744c6bc485b6
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106062383"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107890279"
 ---
-# <a name="access-a-compute-instance-terminal-in-your-workspace"></a>Een reken instantie-terminal openen in uw werk ruimte
+# <a name="access-a-compute-instance-terminal-in-your-workspace"></a>Toegang tot een reken-exemplaarterminal in uw werkruimte
 
-Toegang tot de terminal van een reken instantie in uw werk ruimte:
+Toegang tot de terminal van een reken-exemplaar in uw werkruimte voor het volgende:
 
-* Gebruik bestanden uit Git-en versie bestanden. Deze bestanden worden opgeslagen in het bestands systeem van de werk ruimte, niet beperkt tot één reken instantie.
-* Pakketten installeren op het reken exemplaar.
-* Maak extra kernels op het reken exemplaar.
+* Gebruik bestanden uit Git en versiebestanden. Deze bestanden worden opgeslagen in uw bestandssysteem van de werkruimte, niet beperkt tot één reken-exemplaar.
+* Installeer pakketten op het reken-exemplaar.
+* Maak extra kernels op de reken-instantie.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://aka.ms/AMLFree) aan voordat u begint.
 * Een Machine Learning-werkruimte. Raadpleeg [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md).
 
-## <a name="access-a-terminal"></a>Toegang tot een Terminal
+## <a name="access-a-terminal"></a>Toegang tot een terminal
 
-Voor toegang tot de terminal:
+Toegang krijgen tot de terminal:
 
-1. Open uw werk ruimte in [Azure machine learning Studio](https://ml.azure.com).
-1. Selecteer aan de linkerkant **notitie blokken**.
-1. Selecteer de **Open Terminal** -installatie kopie.
+1. Open uw werkruimte in [Azure Machine Learning-studio](https://ml.azure.com).
+1. Selecteer aan de linkerkant **Notebooks.**
+1. Selecteer de **afbeelding Terminal openen.**
 
-    :::image type="content" source="media/how-to-use-terminal/open-terminal-window.png" alt-text="Terminal venster openen":::
+    :::image type="content" source="media/how-to-use-terminal/open-terminal-window.png" alt-text="Terminalvenster openen":::
 
-1. Wanneer een reken instantie wordt uitgevoerd, wordt het Terminal venster voor dat Compute-exemplaar weer gegeven.
-1. Als er geen reken instantie wordt uitgevoerd, gebruikt u de sectie **Compute** aan de rechter kant om een reken instantie te starten of te maken.
-    :::image type="content" source="media/how-to-use-terminal/start-or-create-compute.png" alt-text="Een reken instantie starten of maken":::
+1. Wanneer een reken-exemplaar wordt uitgevoerd, wordt het terminalvenster voor dat reken exemplaar weergegeven.
+1. Wanneer er geen reken-exemplaar wordt uitgevoerd, gebruikt u de **sectie Compute** aan de rechterkant om een reken-exemplaar te starten of te maken.
+    :::image type="content" source="media/how-to-use-terminal/start-or-create-compute.png" alt-text="Een reken-exemplaar starten of maken":::
 
-Naast de bovenstaande stappen kunt u ook toegang krijgen tot de Terminal vanuit:
+Naast de bovenstaande stappen hebt u ook toegang tot de terminal vanuit:
 
-* RStudio: Selecteer het tabblad **Terminal** aan de rechter bovenhoek.
-* Jupyter Lab: Selecteer de tegel **Terminal** onder de **andere** kop op het tabblad Start.
-* Jupyter: Selecteer **nieuwe>Terminal** rechtsboven op het tabblad bestanden.
-* SSH naar de computer als u SSH-toegang hebt ingeschakeld toen het reken exemplaar werd gemaakt.
+* RStudio: selecteer **linksboven het** tabblad Terminal.
+* Jupyter Lab: selecteer de **tegel Terminal** onder de **kop Overige** op het tabblad Start.
+* Jupyter: selecteer **Nieuwe>Terminal** rechtsboven in het tabblad Bestanden.
+* SSH naar de computer, als u SSH-toegang hebt ingeschakeld toen het rekenin exemplaar werd gemaakt.
 
-## <a name="copy-and-paste-in-the-terminal"></a>Kopiëren en plakken in de Terminal
+## <a name="copy-and-paste-in-the-terminal"></a>Kopiëren en plakken in de terminal
 
-> * Windows: `Ctrl-Insert` kopiëren en gebruiken `Ctrl-Shift-v` of `Shift-Insert` Plakken.
-> * Mac OS: `Cmd-c` om te kopiëren en `Cmd-v` te plakken.
-> * FireFox/IE ondersteunt mogelijk geen juiste Klembord machtigingen.
+> * Windows: `Ctrl-Insert` kopiëren en gebruiken of `Ctrl-Shift-v` `Shift-Insert` plakken.
+> * Mac OS: `Cmd-c` kopiëren en `Cmd-v` plakken.
+> * FireFox/IE biedt mogelijk geen goede ondersteuning voor klembordmachtigingen.
 
-## <a name="use-files-from-git-and-version-files"></a><a name=git></a> Bestanden van Git-en versie bestanden gebruiken
+## <a name="use-files-from-git-and-version-files"></a><a name=git></a> Bestanden uit Git en versiebestanden gebruiken
 
-Toegang tot alle Git-bewerkingen van de Terminal. Alle Git-bestanden en-mappen worden opgeslagen in het bestands systeem van de werk ruimte. Met deze opslag kunt u deze bestanden van een reken instantie in uw werk ruimte gebruiken.
+Toegang tot alle Git-bewerkingen vanuit de terminal. Alle Git-bestanden en -mappen worden opgeslagen in het bestandssysteem van uw werkruimte. Met deze opslag kunt u deze bestanden gebruiken vanuit elk reken exemplaar in uw werkruimte.
 
 > [!NOTE]
-> Voeg uw bestanden en mappen toe aan de map **~/cloudfiles/code/users** , zodat deze in al uw Jupyter-omgevingen zichtbaar zijn.
+> Voeg uw bestanden en mappen overal toe onder de **map ~/cloudfiles/code/Users,** zodat ze zichtbaar zijn in al uw Jupyter-omgevingen.
 
-Meer informatie over [het klonen van Git-opslag plaatsen in het bestands systeem van de werk ruimte](concept-train-model-git-integration.md#clone-git-repositories-into-your-workspace-file-system).
+Meer informatie over [het klonen van Git-opslagplaatsen in het bestandssysteem van uw werkruimte.](concept-train-model-git-integration.md#clone-git-repositories-into-your-workspace-file-system)
 
 ## <a name="install-packages"></a>Pakketten installeren
 
- Pakketten installeren vanuit een Terminal venster. Installeer Python-pakketten in de **Python 3,6-AzureML-** omgeving.  R-pakketten installeren in de **R** -omgeving.
+ Installeer pakketten vanuit een terminalvenster. Installeer Python-pakketten in de **Python 3.6 - AzureML-omgeving.**  Installeer R-pakketten in de **R-omgeving.**
 
-U kunt pakketten ook rechtstreeks installeren in Jupyter Notebook of RStudio:
+U kunt pakketten ook rechtstreeks in Jupyter Notebook of RStudio installeren:
 
-* RStudio gebruik het tabblad **pakketten** aan de rechter kant of op het tabblad **console** linksboven.  
-* Python: Voeg een installatie code toe en voer deze uit in een Jupyter Notebook-cel.
+* RStudio Gebruik het **tabblad Pakketten** rechtsonder of het **tabblad Console** linksboven.  
+* Python: voeg installatiecode toe en voer deze uit in Jupyter Notebook cel.
 
 > [!NOTE]
-> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd**, in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
+> Voor pakketbeheer in een notebook gebruikt u **%pip** of **%conda** magic-functies om automatisch pakketten te installeren in de **kernel** die momenteel wordt uitgevoerd, in plaats van **!pip** of **!conda,** die verwijst naar alle pakketten (inclusief pakketten buiten de huidige kernel)
 
 ## <a name="add-new-kernels"></a>Nieuwe kernels toevoegen
 
 > [!WARNING]
->  Zorg er tijdens het aanpassen van het reken proces voor dat u de **azureml_py36** Conda-omgeving of de **python 3,6-azureml-** kernel niet verwijdert. Dit is nodig voor de functionaliteit van Jupyter/Jjupyterlab
+>  Zorg er tijdens het aanpassen van het reken exemplaar voor dat u de **azureml_py36** conda-omgeving of **Python 3.6 - AzureML-kernel niet** verwijdert. Dit is nodig voor jupyter-/JupyterLab-functionaliteit
 
-Een nieuwe Jupyter-kernel toevoegen aan het reken exemplaar:
+Een nieuwe Jupyter-kernel toevoegen aan het reken-exemplaar:
 
-1. Gebruik het Terminal venster om een nieuwe omgeving te maken.  De onderstaande code maakt bijvoorbeeld `newenv` :
+1. Gebruik het terminalvenster om een nieuwe omgeving te maken.  Met de onderstaande code wordt bijvoorbeeld `newenv` gemaakt:
 
     ```shell
     conda create --name newenv
     ```
 
-1. Activeer de omgeving.  Bijvoorbeeld na het maken van `newenv` :
+1. Activeer de omgeving.  Bijvoorbeeld na het maken `newenv` van :
 
     ```shell
     conda activate newenv
     ```
 
-1. PIP-en ipykernel-pakket installeren in de nieuwe omgeving en een kernel maken voor die Conda env
+1. Installeer het pip- en ipykernel-pakket in de nieuwe omgeving en maak een kernel voor die conda-env
 
     ```shell
     conda install pip
@@ -106,10 +106,10 @@ Een nieuwe Jupyter-kernel toevoegen aan het reken exemplaar:
     python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
     ```
 
-Een van de [beschik bare Jupyter-kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) kan worden geïnstalleerd.
+Een van de [beschikbare Jupyter Kernels kan](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) worden geïnstalleerd.
 
-## <a name="manage-terminal-sessions"></a>Terminal sessies beheren
+## <a name="manage-terminal-sessions"></a>Terminalsessies beheren
 
- Selecteer **actieve sessies weer geven** in de Terminal-werk balk om een lijst weer te geven met alle actieve Terminal sessies. Als er geen actieve sessies zijn, wordt dit tabblad uitgeschakeld.
+ Selecteer **Actieve sessies weergeven** in de terminalwerkbalk voor een lijst met alle actieve terminalsessies. Als er geen actieve sessies zijn, wordt dit tabblad uitgeschakeld.
 
-Sluit alle ongebruikte sessies om de resources van uw reken instantie te bewaren.
+Sluit ongebruikte sessies om de resources van uw rekenin exemplaar te behouden.

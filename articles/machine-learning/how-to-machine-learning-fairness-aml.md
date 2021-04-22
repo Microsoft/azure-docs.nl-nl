@@ -1,7 +1,7 @@
 ---
-title: Beoordeling van ML-modellen verdeling in python (preview-versie)
+title: De redelijkheid van ML-modellen beoordelen in Python (preview)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het beoordelen en beperken van de verdeling van uw machine learning-modellen met behulp van Fairlearn en de Azure Machine Learning python SDK.
+description: Meer informatie over het beoordelen en beperken van de redelijkheid van uw machine learning modellen met behulp van Fairlearn en Azure Machine Learning Python SDK.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,46 +9,46 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: luquinta
 ms.date: 11/16/2020
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python, responsible-ml
-ms.openlocfilehash: 70ad5d6d88dabb51e022a1fc5c011341b06f02fd
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.topic: how-to
+ms.custom: devx-track-python, responsible-ml
+ms.openlocfilehash: 3b71347f9375ebb24befe665c031af9cd7ad7cc3
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105640675"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107884836"
 ---
-# <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Gebruik Azure Machine Learning met het open-source pakket Fairlearn om de verdeling van ML-modellen te beoordelen (preview-versie)
+# <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Gebruik Azure Machine Learning het opensource-pakket Fairlearn om de redelijkheid van ML-modellen (preview) te beoordelen
 
-In deze hand leiding vindt u informatie over het gebruik van het [Fairlearn](https://fairlearn.github.io/) open-source python-pakket met Azure machine learning om de volgende taken uit te voeren:
+In deze handleiding leert u hoe u het open-source [Python-pakket Fairlearn](https://fairlearn.github.io/) kunt gebruiken met Azure Machine Learning volgende taken uit te voeren:
 
-* Evalueer de verdeling van de voor spellingen van uw model. Zie de [verdeling in machine learning artikel](concept-fairness-ml.md)voor meer informatie over verdeling in machine learning.
-* Upload, vermeld en down load verdeling Assessment Insights naar/van Azure Machine Learning Studio.
-* Bekijk een verdeling-evaluatie dashboard in Azure Machine Learning Studio om te communiceren met uw model (s) ' verdeling Insights.
+* Evalueer de redelijkheid van uw modelvoorspellingen. Zie voor meer informatie over redelijkheid in machine learning artikel machine learning [redelijkheid.](concept-fairness-ml.md)
+* Upload, vermeld en download inzichten in de beoordeling van redelijkheid naar/van Azure Machine Learning-studio.
+* Bekijk een dashboard voor een redelijkheidsevaluatie in Azure Machine Learning-studio om te communiceren met de redelijkheidsinzichten van uw model(en).
 
 >[!NOTE]
-> Verdeling-evaluatie is geen louter technische oefening. **Dit pakket kan u helpen bij het beoordelen van de verdeling van een machine learning model, maar u kunt alleen besluiten configureren en beslissingen nemen over de manier waarop het model werkt.**  Hoewel dit pakket helpt kwantitatieve metrische gegevens te identificeren om verdeling te beoordelen, moeten ontwikkel aars van machine learning modellen ook een kwalitatieve analyse uitvoeren om de verdeling van hun eigen modellen te evalueren.
+> Een redelijkheidsevaluatie is geen uitsluitend technische oefening. **Met dit pakket kunt u de redelijkheid van een machine learning model beoordelen, maar alleen u kunt configureren en beslissingen nemen over hoe het model presteert.**  Hoewel dit pakket helpt om kwantitatieve metrische gegevens te identificeren om de redelijkheid te evalueren, moeten ontwikkelaars van machine learning-modellen ook een kwalitatieve analyse uitvoeren om de redelijkheid van hun eigen modellen te evalueren.
 
-## <a name="azure-machine-learning-fairness-sdk"></a>Azure Machine Learning verdeling SDK 
+## <a name="azure-machine-learning-fairness-sdk"></a>Azure Machine Learning Fairness SDK 
 
-De Azure Machine Learning verdeling SDK, `azureml-contrib-fairness` , integreert het open source python-pakket [Fairlearn](http://fairlearn.github.io), binnen Azure machine learning. Bekijk deze [voorbeeld notitieblokken](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness)voor meer informatie over de integratie van Fairlearn in azure machine learning. Voor meer informatie over Fairlearn raadpleegt u de voorbeeld [handleiding](https://fairlearn.org/v0.6.0/auto_examples/) en de [voorbeeld notitieblokken](https://github.com/fairlearn/fairlearn/tree/master/notebooks). 
+De Azure Machine Learning Fairness SDK, , integreert het `azureml-contrib-fairness` opensource Python-pakket [Fairlearn](http://fairlearn.github.io)in Azure Machine Learning. Bekijk deze voorbeeldnotenotes voor meer informatie over de integratie van Fairlearn in [Azure Machine Learning.](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness) Zie de voorbeeldhandleiding en [](https://fairlearn.org/v0.6.0/auto_examples/) voorbeeldnotenotes voor meer informatie [over](https://github.com/fairlearn/fairlearn/tree/master/notebooks)Fairlearn. 
 
-Gebruik de volgende opdrachten om de- `azureml-contrib-fairness` en-pakketten te installeren `fairlearn` :
+Gebruik de volgende opdrachten om de pakketten `azureml-contrib-fairness` en `fairlearn` te installeren:
 ```bash
 pip install azureml-contrib-fairness
 pip install fairlearn==0.4.6
 ```
-Latere versies van Fairlearn moeten ook in de volgende voorbeeld code werken.
+Latere versies van Fairlearn moeten ook werken in de volgende voorbeeldcode.
 
 
 
-## <a name="upload-fairness-insights-for-a-single-model"></a>Verdeling Insights voor één model uploaden
+## <a name="upload-fairness-insights-for-a-single-model"></a>Redelijkheidsinzichten uploaden voor één model
 
-In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We uploaden model verdeling Insights in Azure Machine Learning en bekijken het verdeling Assessment dash board in Azure Machine Learning Studio.
+In het volgende voorbeeld ziet u hoe u het pakket voor redelijkheid gebruikt. We uploaden modelinzichten voor redelijkheid naar Azure Machine Learning en zien het dashboard voor de beoordeling van de redelijkheid in Azure Machine Learning-studio.
 
-1. Train een voorbeeld model in Jupyter Notebook. 
+1. Een voorbeeldmodel trainen in Jupyter Notebook. 
 
-    Voor de gegevensset wordt gebruikgemaakt van de bekende verzamelings gegevens voor volwassenen die worden opgehaald uit OpenML. We pretenden een probleem met de lenings beslissing met het label dat aangeeft of een individu een eerdere lening opnieuw heeft betaald. We gaan een model trainen om te voors pellen of voorheen onschuldlijke personen een lening zullen terugbetalen. Een dergelijk model kan worden gebruikt bij het nemen van uitbetalings beslissingen.
+    Voor de gegevensset gebruiken we de bekende volkstellingsgegevensset voor volwassenen, die we ophalen van OpenML. We doen alsof we een probleem hebben met de beslissing over een lening met het label dat aangeeft of een persoon een eerdere lening heeft afgelost. We trainen een model om te voorspellen of eerder niet-geziene personen een lening zullen afsluiten. Een dergelijk model kan worden gebruikt bij het nemen van beslissingen over leningen.
 
     ```python
     import copy
@@ -134,9 +134,9 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We upload
                        y_pred={"lr_model": lr_predictor.predict(X_test)})
     ```
 
-2. Meld u aan bij Azure Machine Learning en registreer uw model.
+2. Meld u aan Azure Machine Learning en registreer uw model.
    
-    Het verdeling-dash board kan worden geïntegreerd met geregistreerde of niet-geregistreerde modellen. Registreer uw model in Azure Machine Learning met de volgende stappen:
+    Het redelijkheidsdashboard kan worden geïntegreerd met geregistreerde of niet-geregistreerde modellen. Registreer uw model in Azure Machine Learning met de volgende stappen:
     ```python
     from azureml.core import Workspace, Experiment, Model
     import joblib
@@ -162,9 +162,9 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We upload
     lr_reg_id = register_model("fairness_logistic_regression", lr_predictor)
     ```
 
-3. Metrische gegevens van precompute verdeling.
+3. Metrische gegevens voor redelijkheid vooraf berekenen.
 
-    Maak een dash board-woorden lijst met behulp van het `metrics` pakket Fairlearn. De- `_create_group_metric_set` methode heeft argumenten die vergelijkbaar zijn met de dash board-constructor, behalve dat de gevoelige functies worden door gegeven als een woorden lijst (om ervoor te zorgen dat er namen beschikbaar zijn). U moet ook het type voor spelling (binaire classificatie in dit geval) opgeven bij het aanroepen van deze methode.
+    Maak een dashboard-woordenlijst met behulp van het pakket van `metrics` Fairlearn. De methode heeft argumenten die vergelijkbaar zijn met de Dashboard-constructor, behalve dat de gevoelige functies worden doorgegeven als een woordenlijst (om ervoor te zorgen `_create_group_metric_set` dat namen beschikbaar zijn). We moeten ook het type voorspelling opgeven (binaire classificatie in dit geval) bij het aanroepen van deze methode.
 
     ```python
     #  Create a dictionary of model(s) you want to assess for fairness 
@@ -177,14 +177,14 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We upload
                                         sensitive_features=sf,
                                         prediction_type='binary_classification')
     ```
-4. Upload de vooraf berekende metrische verdeling-gegevens.
+4. Upload de vooraf becomputte metrische gegevens voor redelijkheid.
     
-    Importeer nu `azureml.contrib.fairness` pakket om de upload uit te voeren:
+    Importeer nu `azureml.contrib.fairness` het pakket om het uploaden uit te voeren:
 
     ```python
     from azureml.contrib.fairness import upload_dashboard_dictionary, download_dashboard_by_upload_id
     ```
-    Maak een experiment, vervolgens een uitvoering en upload het dash board ernaar:
+    Maak een experiment, vervolgens een Uitvoeren en upload het dashboard naar het experiment:
     ```python
     exp = Experiment(ws, "Test_Fairness_Census_Demo")
     print(exp)
@@ -205,37 +205,37 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We upload
     finally:
         run.complete()
     ```
-5. Het verdeling-dash board controleren vanuit Azure Machine Learning Studio
+5. Controleer het redelijkheidsdashboard Azure Machine Learning-studio
 
-    Als u de vorige stappen hebt voltooid (upload gegenereerde verdeling Insights naar Azure Machine Learning), kunt u het verdeling-dash board weer geven in [Azure machine learning Studio](https://ml.azure.com). Dit dash board is hetzelfde visualisatie dashboard dat is opgenomen in Fairlearn, zodat u de verschillen kunt analyseren tussen de subgroepen van uw gevoelige functie (bijvoorbeeld mannelijk versus vrouwelijk).
-    Volg een van deze paden om toegang te krijgen tot het visualisatie dashboard in Azure Machine Learning studio:
+    Als u de vorige stappen hebt voltooid (door gegenereerde redelijkheidsinzichten te uploaden naar Azure Machine Learning), kunt u het redelijkheidsdashboard bekijken in [Azure Machine Learning-studio](https://ml.azure.com). Dit dashboard is hetzelfde visualisatiedashboard als in Fairlearn, zodat u de verschillen tussen de subgroepen van uw gevoelige functie (bijvoorbeeld mannen versus vrouwen) kunt analyseren.
+    Volg een van deze paden om toegang te krijgen tot het visualisatiedashboard in Azure Machine Learning-studio:
 
-    * **Het deel venster experimenten (preview)**
-    1. Selecteer **experimenten** in het linkerdeel venster om een lijst met experimenten te bekijken die u op Azure machine learning hebt uitgevoerd.
-    1. Selecteer een bepaald experiment om alle uitvoeringen in dat experiment weer te geven.
-    1. Selecteer een run en vervolgens het tabblad **verdeling** naar het visualisatie Dashboard van de toelichting.
-    1. Klik na de overloop op het tabblad **verdeling** op een **verdeling-id** in het menu aan de rechter kant.
-    1. Configureer uw dash board door uw gevoelige kenmerk, de metrische gegevens over prestaties en de verdeling-waarde van belang voor land te selecteren op de pagina verdeling Assessment.
-    1. Schakel het grafiek type over van de ene naar de andere om te zien hoe goed de **toewijzing** is en de **kwaliteit van de service** .
+    * **Deelvenster Experimenten (preview)**
+    1. Selecteer **Experimenten** in het linkerdeelvenster voor een lijst met experimenten die u hebt uitgevoerd op Azure Machine Learning.
+    1. Selecteer een bepaald experiment om alle runs in dat experiment te bekijken.
+    1. Selecteer een run en vervolgens het tabblad **Redelijkheid** naar het visualisatiedashboard van de uitleg.
+    1. Zodra u op het **tabblad Redelijkheid** komt, klikt u op een **redelijkheids-id** in het menu aan de rechterkant.
+    1. Configureer uw dashboard door uw gevoelige kenmerk, metrische prestatie- en redelijkheidsmetrische gegevens te selecteren om op de pagina voor de redelijkheidsevaluatie te komen.
+    1. Schakel het grafiektype van het  ene naar het andere om de toewijzings- en kwaliteit van **service-schade te** bekijken.
 
 
 
-    [![Toewijzing van verdeling-dash board](./media/how-to-machine-learning-fairness-aml/dashboard-1.png)](./media/how-to-machine-learning-fairness-aml/dashboard-1.png#lightbox)
+    [![Verdelingsdashboardtoewijzing](./media/how-to-machine-learning-fairness-aml/dashboard-1.png)](./media/how-to-machine-learning-fairness-aml/dashboard-1.png#lightbox)
     
-    [![Verdeling-Dash Board Quality of Service](./media/how-to-machine-learning-fairness-aml/dashboard-2.png)](./media/how-to-machine-learning-fairness-aml/dashboard-2.png#lightbox)
-    * **Deel venster modellen**
-    1. Als u het oorspronkelijke model hebt geregistreerd door de vorige stappen te volgen, kunt u **modellen** selecteren in het linkerdeel venster om de app weer te geven.
-    1. Selecteer een model en klik vervolgens op het tabblad **verdeling** om het visualisatie Dashboard van de uitleg weer te geven.
+    [![Fairness Dashboard Quality of Service](./media/how-to-machine-learning-fairness-aml/dashboard-2.png)](./media/how-to-machine-learning-fairness-aml/dashboard-2.png#lightbox)
+    * **Deelvenster Modellen**
+    1. Als u het oorspronkelijke model hebt geregistreerd door de vorige stappen te volgen, kunt u **Modellen** selecteren in het linkerdeelvenster om het weer te geven.
+    1. Selecteer een model en vervolgens het tabblad **Redelijkheid** om het visualisatiedashboard met uitleg weer te geven.
 
-    Raadpleeg de [Gebruikers handleiding](https://fairlearn.org/v0.6.0/user_guide/assessment.html#fairlearn-dashboard)van Fairlearn voor meer informatie over het visualisatie dashboard en wat het bevat.
+    Raadpleeg de gebruikershandleiding van Fairlearn voor meer informatie over het [visualisatiedashboard](https://fairlearn.org/v0.6.0/user_guide/assessment.html#fairlearn-dashboard)en wat het bevat.
 
-## <a name="upload-fairness-insights-for-multiple-models"></a>Verdeling Insights voor meerdere modellen uploaden
+## <a name="upload-fairness-insights-for-multiple-models"></a>Redelijkheidsinzichten uploaden voor meerdere modellen
 
-Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluaties verschillen, kunt u meer dan één model door geven aan het visualisatie dashboard en de prestaties van de verdeling-afwegingen vergelijken.
+Als u meerdere modellen wilt vergelijken en wilt zien hoe de redelijkheidsevaluaties verschillen, kunt u meer dan één model doorgeven aan het visualisatiedashboard en hun balans tussen prestaties en redelijkheid vergelijken.
 
 1. Uw modellen trainen:
     
-    We gaan nu een tweede classificatie maken op basis van een ondersteunings vector machine Estimator en een verdeling dashboard woordenlijst uploaden met behulp van het pakket van Fairlearn `metrics` . We gaan ervan uit dat het eerder getrainde model nog steeds beschikbaar is.
+    We maken nu een tweede classificatie, op basis van een Support Vector Machine-estimator, en uploaden een woordenlijst voor het redelijkheidsdashboard met behulp van het pakket van `metrics` Fairlearn. We gaan ervan uit dat het eerder getrainde model nog steeds beschikbaar is.
 
 
     ```python
@@ -257,7 +257,7 @@ Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluati
 
 2. Uw modellen registreren
 
-    Registreer beide modellen in Azure Machine Learning. Voor het gemak slaat u de resultaten op in een woorden lijst, waarmee het `id` geregistreerde model (een teken reeks in `name:version` indeling) wordt toegewezen aan de voor spelling zelf:
+    Registreer vervolgens beide modellen binnen Azure Machine Learning. Voor het gemak kunt u de resultaten opslaan in een woordenlijst, die de van het geregistreerde model (een tekenreeks in indeling) toekent `id` `name:version` aan de voorspeller zelf:
 
     ```python
     model_dict = {}
@@ -269,9 +269,9 @@ Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluati
     model_dict[svm_reg_id] = svm_predictor
     ```
 
-3. Het Fairlearn-dash board lokaal laden
+3. Het Fairlearn-dashboard lokaal laden
 
-    Voordat u de verdeling Insights uploadt in Azure Machine Learning, kunt u deze voor spellingen bekijken in een lokaal opgeroepen Fairlearn-dash board. 
+    Voordat u de redelijkheidsinzichten uploadt naar Azure Machine Learning, kunt u deze voorspellingen onderzoeken in een lokaal aangeroepen Fairlearn-dashboard. 
 
 
 
@@ -289,9 +289,9 @@ Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluati
                     y_pred=ys_pred)
     ```
 
-3. Metrische gegevens van precompute verdeling.
+3. Metrische gegevens voor redelijkheid vooraf berekenen.
 
-    Maak een dash board-woorden lijst met behulp van het `metrics` pakket Fairlearn.
+    Maak een dashboard-woordenlijst met behulp van het pakket van `metrics` Fairlearn.
 
     ```python
     sf = { 'Race': A_test.race, 'Sex': A_test.sex }
@@ -303,14 +303,14 @@ Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluati
                                         sensitive_features=sf,
                                         prediction_type='binary_classification')
     ```
-4. Upload de vooraf berekende metrische verdeling-gegevens.
+4. Upload de vooraf becomputte metrische gegevens voor redelijkheid.
     
-    Importeer nu `azureml.contrib.fairness` pakket om de upload uit te voeren:
+    Importeer nu `azureml.contrib.fairness` het pakket om het uploaden uit te voeren:
 
     ```python
     from azureml.contrib.fairness import upload_dashboard_dictionary, download_dashboard_by_upload_id
     ```
-    Maak een experiment, vervolgens een uitvoering en upload het dash board ernaar:
+    Maak een experiment, vervolgens een Uitvoeren en upload het dashboard naar het:
     ```python
     exp = Experiment(ws, "Compare_Two_Models_Fairness_Census_Demo")
     print(exp)
@@ -333,23 +333,23 @@ Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluati
     ```
 
 
-    Net als bij de vorige sectie kunt u een van de hierboven beschreven paden volgen (via **experimenten** of **modellen**) in azure machine learning Studio om toegang te krijgen tot het visualisatie dashboard en de twee modellen te vergelijken met de voor waarden van verdeling en prestaties.
+    Net als in de vorige sectie kunt u een van de hierboven beschreven paden (via **experimenten** of modellen **)** in Azure Machine Learning-studio volgen om toegang te krijgen tot het visualisatiedashboard en de twee modellen te vergelijken op het gebied van redelijkheid en prestaties.
 
 
-## <a name="upload-unmitigated-and-mitigated-fairness-insights"></a>Niet-verholpen en verkleinde verdeling-inzichten uploaden
+## <a name="upload-unmitigated-and-mitigated-fairness-insights"></a>Niet-gemitigeerde en beperkt inzicht in redelijkheid uploaden
 
-U kunt de [beperkende algoritmen](https://fairlearn.org/v0.6.0/user_guide/mitigation.html)van Fairlearn gebruiken, de gegenereerde gereduceerde model (s) vergelijken met het oorspronkelijke ongebruikte model en door de Verwissel bare prestaties/verdeling te navigeren tussen de vergeleken modellen.
+U kunt de risicobeperkingsalgoritmen van Fairlearn gebruiken, de gegenereerde beperkt model(s) vergelijken met het oorspronkelijke niet-gemitigeerde model en navigeren tussen de prestatie-/redelijkheids-afwegingen tussen de vergeleken modellen. [](https://fairlearn.org/v0.6.0/user_guide/mitigation.html)
 
-Bekijk dit [voorbeeld notitieblok](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/fairness/fairlearn-azureml-mitigation.ipynb)voor een voor beeld van het gebruik van het risico voor het beperken van de [raster zoek actie](https://fairlearn.org/v0.6.0/user_guide/mitigation.html#grid-search) (waarmee een verzameling verlaagde modellen met verschillende verdeling en prestaties wordt gemaakt). 
+Bekijk dit voorbeeldnotenoteboek voor een voorbeeld van het gebruik van het risicobeperkingsalgoritme van [Grid Search](https://fairlearn.org/v0.6.0/user_guide/mitigation.html#grid-search) (waarmee een verzameling van verkleinde modellen wordt gemaakt met verschillende afwegingen op het gebied van redelijkheid en [prestaties).](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/fairness/fairlearn-azureml-mitigation.ipynb) 
 
-Als u meerdere modellen uploadt met behulp van ' verdeling Insights in één keer uitvoeren, kunt u modellen vergelijken met betrekking tot verdeling en prestaties. U kunt klikken op een van de modellen die worden weer gegeven in de model vergelijkings grafiek om de gedetailleerde verdeling inzichten van het desbetreffende model te bekijken.
+Door de redelijkheidsinzichten van meerdere modellen in één uitvoering te uploaden, kunt u modellen vergelijken met betrekking tot redelijkheid en prestaties. U kunt op een van de modellen klikken die worden weergegeven in de modelvergelijkingsgrafiek om de gedetailleerde redelijkheidsinzichten van het specifieke model te bekijken.
 
 
-[![Fairlearn-dash board voor model vergelijking](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
+[![Fairlearn-dashboard voor modelvergelijking](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Meer informatie over model verdeling](concept-fairness-ml.md)
+[Meer informatie over model redelijkheid](concept-fairness-ml.md)
 
-[Azure Machine Learning voorbeeld notitieblokken voor verdeling bekijken](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness)
+[Bekijk de Azure Machine Learning voor redelijkheidsvoorbeelden](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness)

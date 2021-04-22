@@ -1,44 +1,44 @@
 ---
-title: '& verzamelen van de logboek bestanden van de pijp lijn controleren'
+title: Pijplijnlogboekbestanden & bewaken
 titleSuffix: Azure Machine Learning
-description: Voeg logboek registratie toe aan uw training en batch Score pijplijnen en Bekijk de geregistreerde resultaten in Application Insights.
+description: Voeg logboekregistratie toe aan uw trainings- en batchscorepijplijnen en bekijk de vastgelegde resultaten in Application Insights.
 services: machine-learning
 author: NilsPohlmann
 ms.author: nilsp
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 08/11/2020
-ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 7ed27eba66b3d18bed8017934fce85928b961392
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.topic: how-to
+ms.custom: devx-track-python
+ms.openlocfilehash: cb455eb5eaf91377ca8dedc827ff89113f51b71a
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102520044"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107884890"
 ---
-# <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>machine learning pijplijn logboek bestanden verzamelen in Application Insights voor waarschuwingen en fout opsporing
+# <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>Logboekbestanden machine learning pijplijn verzamelen in Application Insights voor waarschuwingen en debuggen
 
 
-De bibliotheek [Opentellingen](https://opencensus.io/quickstart/python/) python kan worden gebruikt om logboeken naar Application Insights te routeren vanuit uw scripts. Door Logboeken van pijplijn uitvoeringen op één plek samen te voegen, kunt u query's maken en problemen vaststellen. Met behulp van Application Insights kunt u Logboeken in de loop van de tijd bijhouden en de pijp lijn logboeken vergelijken met de verschillende uitvoeringen.
+De [OpenCensus](https://opencensus.io/quickstart/python/) Python-bibliotheek kan worden gebruikt om logboeken om te Application Insights vanuit uw scripts. Door logboeken van pijplijn-runs op één plek te aggregeren, kunt u query's maken en problemen diagnosticeren. Met Application Insights kunt u logboeken in de loop van de tijd bijhouden en pijplijnlogboeken vergelijken voor verschillende runs.
 
-Als u uw logboeken eenmaal hebt uitgevoerd, wordt er een overzicht van uitzonde ringen en fout berichten weer geven. Omdat Application Insights integreert met Azure-waarschuwingen, kunt u ook waarschuwingen maken op basis van Application Insights query's.
+Als uw logboeken eenmaal zijn op hun plaats, krijgt u een geschiedenis van uitzonderingen en foutberichten. Omdat Application Insights integreert met Azure-waarschuwingen, kunt u ook waarschuwingen maken op basis van Application Insights query's.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Volg de stappen om een [Azure machine learning](./how-to-manage-workspace.md) -werk ruimte te maken en [uw eerste pijp lijn te maken](./how-to-create-machine-learning-pipelines.md)
-* [Configureer uw ontwikkel omgeving](./how-to-configure-environment.md) om de Azure machine learning SDK te installeren.
-* Installeer het pakket [Opentellings Azure monitor-export](https://pypi.org/project/opencensus-ext-azure/) programma lokaal:
+* Volg de stappen om een werkruimte [Azure Machine Learning](./how-to-manage-workspace.md) maken en uw [eerste pijplijn te maken](./how-to-create-machine-learning-pipelines.md)
+* [Configureer uw ontwikkelomgeving](./how-to-configure-environment.md) om de Azure Machine Learning SDK te installeren.
+* Installeer het [Pakket voor export van OpenCensus Azure Monitor-export:](https://pypi.org/project/opencensus-ext-azure/)
   ```python
   pip install opencensus-ext-azure
   ```
-* Een [Application Insights-exemplaar](../azure-monitor/app/opencensus-python.md) maken (dit document bevat ook informatie over het ophalen van de Connection String voor de resource)
+* Een Application Insights [maken](../azure-monitor/app/opencensus-python.md) (dit document bevat ook informatie over het verkrijgen van de connection string voor de resource)
 
 ## <a name="getting-started"></a>Aan de slag
 
-Deze sectie is een inleiding die specifiek is voor het gebruik van opentellingen vanuit een Azure Machine Learning pijp lijn. Zie voor een gedetailleerde zelf studie [Opentellingen Azure monitor-Exporters](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)
+Deze sectie is een inleiding die specifiek is voor het gebruik van OpenCensus vanuit een Azure Machine Learning pijplijn. Zie [OpenCensus](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) Azure Monitor Export voor een gedetailleerde zelfstudie
 
-Voeg een PythonScriptStep toe aan uw Azure ML-pijp lijn. Configureer uw [RunConfiguration](/python/api/azureml-core/azureml.core.runconfiguration) met de afhankelijkheid van opentellingen-ext-Azure. Configureer de `APPLICATIONINSIGHTS_CONNECTION_STRING` omgevings variabele.
+Voeg een PythonScriptStep toe aan uw Azure ML-pijplijn. Configureer [uw RunConfiguration](/python/api/azureml-core/azureml.core.runconfiguration) met de afhankelijkheid opencensus-ext-azure. Configureer de `APPLICATIONINSIGHTS_CONNECTION_STRING` omgevingsvariabele.
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies
@@ -71,14 +71,14 @@ pipeline = Pipeline(workspace=ws, steps=[sample_step])
 pipeline.submit(experiment_name="Logging_Experiment")
 ```
 
-Maak een bestand met de naam `sample_step.py`. Importeer de AzureLogHandler-klasse om logboeken naar Application Insights te routeren. U moet ook de python-logboek bibliotheek importeren.
+Maak een bestand met de naam `sample_step.py`. Importeer de klasse AzureLogHandler om logboeken naar uw Application Insights. U moet ook de Python-bibliotheek voor logboekregistratie importeren.
 
 ```python
 from opencensus.ext.azure.log_exporter import AzureLogHandler
 import logging
 ```
 
-Voeg vervolgens de AzureLogHandler toe aan de python-logboek registratie.
+Voeg vervolgens de AzureLogHandler toe aan de Python-logboeken.
 
 ```python
 logger = logging.getLogger(__name__)
@@ -90,34 +90,34 @@ logger.addHandler(AzureLogHandler())
 logger.warning("I will be sent to Application Insights")
 ```
 
-## <a name="logging-with-custom-dimensions"></a>Logboek registratie met aangepaste dimensies
+## <a name="logging-with-custom-dimensions"></a>Logboekregistratie met aangepaste dimensies
  
-Standaard hebben logboeken die zijn doorgestuurd naar Application Insights onvoldoende context om terug te gaan naar de uitvoering of het experiment. Om ervoor te zorgen dat de logboeken actie kunnen ondernemen voor het diagnosticeren van problemen, zijn er extra velden nodig. 
+Standaard hebben logboeken die worden doorgestuurd Application Insights onvoldoende context om terug te gaan naar de run of het experiment. Er zijn extra velden nodig om de logboeken bruikbaar te maken voor het diagnosticeren van problemen. 
 
-Om deze velden toe te voegen, kunnen aangepaste dimensies worden toegevoegd om context te bieden aan een logboek bericht. Een voor beeld is wanneer iemand logboeken wil weer geven over meerdere stappen in dezelfde pijplijn uitvoering.
+Als u deze velden wilt toevoegen, kunt u Aangepaste dimensies toevoegen om context te bieden aan een logboekbericht. Een voorbeeld is wanneer iemand logboeken in meerdere stappen in dezelfde pijplijn-run wil weergeven.
 
-Aangepaste dimensies vormen een woorden lijst met sleutel waarden (opgeslagen als teken reeks, teken reeks). De woorden lijst wordt vervolgens naar Application Insights verzonden en als kolom weer gegeven in de query resultaten. De afzonderlijke dimensies kunnen worden gebruikt als [query parameters](#additional-helpful-queries).
+Aangepaste dimensies zijn een woordenlijst met sleutel-waardeparen (opgeslagen als tekenreeks, tekenreeks). De woordenlijst wordt vervolgens verzonden naar Application Insights en weergegeven als een kolom in de queryresultaten. De afzonderlijke dimensies kunnen worden gebruikt als [queryparameters.](#additional-helpful-queries)
 
-### <a name="helpful-context-to-include"></a>Nuttige context voor opname
+### <a name="helpful-context-to-include"></a>Nuttige context om op te nemen
 
-| Veld                          | Reden/voor beeld                                                                                                                                                                       |
+| Veld                          | Redenering/voorbeeld                                                                                                                                                                       |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| parent_run_id                  | Kan Logboeken voor hen met dezelfde parent_run_id zoeken om logboeken gedurende een bepaalde periode voor alle stappen te bekijken, in plaats van elke afzonderlijke stap uit te voeren                                        |
-| step_id                        | Kan Logboeken voor hen met dezelfde step_id zoeken om te zien waar een probleem is opgetreden met een smalle omvang tot alleen de afzonderlijke stap                                                        |
-| step_name                      | Kan Logboeken opvragen om de stap prestaties in de loop van de tijd te bekijken. Helpt u ook een step_id voor recente uitvoeringen te vinden, zonder dat u in de portal-gebruikers interface                                          |
-| experiment_name                | Kan query's uitvoeren op Logboeken om de prestaties van het experiment in de loop der tijd te bekijken. Helpt u ook een parent_run_id of step_id te vinden voor recente uitvoeringen, zonder dat u zich in de portal-gebruikers interface                   |
-| run_url                 | Kan rechtstreeks een koppeling naar de uitvoering voor onderzoek opgeven. |
+| parent_run_id                  | Kan logboeken opvragen voor logboeken met dezelfde parent_run_id logboeken gedurende een bepaalde periode voor alle stappen te bekijken, in plaats van elke afzonderlijke stap te moeten bekijken                                        |
+| step_id                        | Kan logboeken opvragen voor logboeken met dezelfde step_id om te zien waar een probleem is opgetreden met een beperkt bereik tot alleen de afzonderlijke stap                                                        |
+| step_name                      | Kan query's uitvoeren op logboeken om de prestaties van stappen in de tijd te bekijken. Helpt ook bij het vinden van een step_id recente runs zonder in de gebruikersinterface van de portal te duiken                                          |
+| experiment_name                | Kan query's uitvoeren op logboeken om de prestaties van het experiment in de tijd te bekijken. Helpt ook bij het vinden van parent_run_id of step_id recente runs zonder in de gebruikersinterface van de portal te duiken                   |
+| run_url                 | Kan een koppeling rechtstreeks terug naar de run geven voor onderzoek. |
 
 **Andere nuttige velden**
 
-Deze velden kunnen extra code instrumentatie vereisen en worden niet door de uitvoerings context verschaft.
+Deze velden vereisen mogelijk extra code-instrumentatie en worden niet geleverd door de context van de run.
 
-| Veld                   | Reden/voor beeld                                                                                                                                                                                                           |
+| Veld                   | Redenering/voorbeeld                                                                                                                                                                                                           |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| build_url/build_version | Als met CI/CD wordt geïmplementeerd, kan dit veld logboeken koppelen aan de code versie die de logica van de stap en pijp lijn heeft gegeven. Deze koppeling kan meer helpen bij het vaststellen van problemen of het identificeren van modellen met specifieke eigenschappen (logboek/metrieke waarden) |
-| run_type                       | Kan onderscheid maken tussen verschillende model typen of training versus scores worden uitgevoerd |
+| build_url/build_version | Als u CI/CD gebruikt om te implementeren, kan dit veld logboeken correleren met de codeversie die de stap- en pijplijnlogica heeft opgegeven. Deze koppeling kan u verder helpen bij het diagnosticeren van problemen of het identificeren van modellen met specifieke eigenschappen (logboek-/metrische waarden) |
+| run_type                       | Kan onderscheid maken tussen verschillende modeltypen of trainings- en scoreuit runs |
 
-### <a name="creating-a-custom-dimensions-dictionary"></a>Een woorden lijst voor aangepaste dimensies maken
+### <a name="creating-a-custom-dimensions-dictionary"></a>Een woordenlijst voor aangepaste dimensies maken
 
 ```python
 from azureml.core import Run
@@ -137,33 +137,33 @@ custom_dimensions = {
 logger.info("I will be sent to Application Insights with Custom Dimensions", extra= {"custom_dimensions":custom_dimensions})
 ```
 
-## <a name="opencensus-python-logging-considerations"></a>Berekenings gebeurtenissen opentellingen python
+## <a name="opencensus-python-logging-considerations"></a>Overwegingen bij logboekregistratie van OpenCensus Python
 
-De opentellings AzureLogHandler wordt gebruikt voor het routeren van python-logboeken naar Application Insights. Als gevolg hiervan moeten de nuances van python-logboeken worden overwogen. Wanneer een logboek wordt gemaakt, heeft het een standaard logboek niveau en worden logboeken weer gegeven die groter zijn dan of gelijk zijn aan dat niveau. Een goede referentie voor het gebruik van python-logboek registratie functies is de [logboek registratie Cookbook](https://docs.python.org/3/howto/logging-cookbook.html).
+De OpenCensus AzureLogHandler wordt gebruikt om Python-logboeken naar de Application Insights. Als gevolg hiervan moeten logboekregistratienuances van Python in aanmerking worden genomen. Wanneer een logboek wordt gemaakt, heeft deze een standaardlogboekniveau en worden logboeken weergegeven die groter zijn dan of gelijk zijn aan dat niveau. Een goede referentie voor het gebruik van Python-logboekregistratiefuncties is [het Logboekregistratiegids.](https://docs.python.org/3/howto/logging-cookbook.html)
 
-De `APPLICATIONINSIGHTS_CONNECTION_STRING` omgevings variabele is vereist voor de bibliotheek Opentellingen. We raden u aan deze omgevings variabele in te stellen in plaats van deze in te geven als een pijplijn parameter om te voor komen dat verbindings reeksen met ongecodeerde tekst worden door gegeven
+De `APPLICATIONINSIGHTS_CONNECTION_STRING` omgevingsvariabele is nodig voor de OpenCensus-bibliotheek. We raden u aan deze omgevingsvariabele in te stellen in plaats van deze door te geven als pijplijnparameter om te voorkomen dat verbindingsreeksen met platte tekst worden doorgegeven.
 
-## <a name="querying-logs-in-application-insights"></a>Query's uitvoeren op Logboeken in Application Insights
+## <a name="querying-logs-in-application-insights"></a>Query's uitvoeren op logboeken in Application Insights
 
-De logboeken die naar Application Insights worden gerouteerd, worden weer gegeven onder traceringen of uitzonde ringen. Zorg ervoor dat u uw tijd venster bijwerkt om de pijplijn uitvoering op te maken.
+De logboeken die naar Application Insights, worden onder 'traces' of 'exceptions' (uitzonderingen) te zien. Zorg ervoor dat u het tijdvenster aanpast om de pijplijnuit voeren op te nemen.
 
-![Query resultaat Application Insights](./media/how-to-debug-pipelines-application-insights/traces-application-insights-query.png)
+![Application Insights queryresultaat](./media/how-to-debug-pipelines-application-insights/traces-application-insights-query.png)
 
-In het resultaat van Application Insights worden het logboek bericht en het niveau, het bestandspad en het code regel nummer weer gegeven. Hierin worden ook alle aangepaste dimensies weer gegeven die zijn opgenomen. In deze afbeelding toont de customDimensions-woorden lijst de sleutel/waardeparen van het vorige [code voorbeeld](#creating-a-custom-dimensions-dictionary).
+Het resultaat in Application Insights het logboekbericht en -niveau, het bestandspad en het coderegelnummer. Er worden ook aangepaste dimensies in opgenomen. In deze afbeelding toont de woordenlijst customDimensions de sleutel-waardeparen uit het vorige [codevoorbeeld](#creating-a-custom-dimensions-dictionary).
 
 ### <a name="additional-helpful-queries"></a>Aanvullende nuttige query's
 
-In enkele van de onderstaande query's wordt gebruikgemaakt van ' customDimensions. level '. Deze ernst niveaus komen overeen met het niveau waarmee het python-logboek oorspronkelijk is verzonden. Zie [Azure monitor-logboek query's](/azure/data-explorer/kusto/query/)voor meer informatie over query's.
+Sommige van de onderstaande query's gebruiken 'customDimensions.Level'. Deze ernstniveaus komen overeen met het niveau waar het Python-logboek oorspronkelijk mee is verzonden. Zie logboekquery's voor [Azure Monitor meer informatie over query's.](/azure/data-explorer/kusto/query/)
 
 | Gebruiksvoorbeeld                                                               | Query                                                                                              |
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| De resultaten vastleggen voor een specifieke aangepaste dimensie, bijvoorbeeld ' parent_run_id ' | <pre>traces \| <br>where customDimensions.parent_run_id == '931024c2-3720-11ea-b247-c49deda841c1</pre> |
-| De resultaten van de logboeken voor alle trainingen worden in de afgelopen 7 dagen uitgevoerd                     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.run_type == 'training'</pre>           |
-| Resultaten vastleggen met severityLevel-fout in de afgelopen 7 dagen              | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR'                     |
-| Aantal logboek resultaten met severityLevel-fout in de afgelopen 7 dagen     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR' \| <br>summarize count()</pre> |
+| Logboekresultaten voor specifieke aangepaste dimensies, bijvoorbeeld 'parent_run_id' | <pre>traces \| <br>where customDimensions.parent_run_id == '931024c2-3720-11ea-b247-c49deda841c1</pre> |
+| Logboekresultaten voor alle trainingsuit runs in de afgelopen 7 dagen                     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.run_type == 'training'</pre>           |
+| Logboekresultaten met ernstNiveaufout van de afgelopen 7 dagen              | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR'                     |
+| Aantal logboekresultaten met ernstNiveaufout in de afgelopen 7 dagen     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR' \| <br>summarize count()</pre> |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Logboeken in uw Application Insights-exemplaar hebt, kunnen ze worden gebruikt om [Azure monitor-waarschuwingen](../azure-monitor/alerts/alerts-overview.md#what-you-can-alert-on) in te stellen op basis van query resultaten.
+Zodra u logboeken in uw Application Insights hebt, kunnen ze worden gebruikt om Azure Monitor [op](../azure-monitor/alerts/alerts-overview.md#what-you-can-alert-on) basis van queryresultaten in te stellen.
 
-U kunt ook resultaten van query's toevoegen aan een [Azure-dash board](../azure-monitor/app/tutorial-app-dashboards.md#add-logs-query) voor meer inzichten.
+U kunt ook resultaten van query's toevoegen aan een [Azure-dashboard](../azure-monitor/app/tutorial-app-dashboards.md#add-logs-query) voor meer inzichten.

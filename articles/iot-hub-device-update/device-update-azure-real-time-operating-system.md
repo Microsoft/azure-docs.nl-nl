@@ -1,55 +1,55 @@
 ---
-title: Update van het apparaat voor Azure Real-Time-Operating System | Microsoft Docs
-description: Aan de slag met het apparaat bijwerken voor Azure realtime-besturings systeem
+title: Apparaatupdate voor azure-besturingssysteem in realtime | Microsoft Docs
+description: Aan de slag met Apparaatupdate voor Azure Real-Time-besturingssysteem
 author: valls
 ms.author: valls
 ms.date: 3/18/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 66da860a5cdae1f5c7c18e4136b1f2d960492ca8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 40ff9431288e7afa39ea1b83706170e94866db11
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105629050"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107887357"
 ---
-# <a name="device-update-for-azure-iot-hub-tutorial-using-azure-real-time-operating-system-rtos"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van Azure real-time besturings systeem (RTO'S)
+# <a name="device-update-for-azure-iot-hub-tutorial-using-azure-real-time-operating-system-rtos"></a>Zelfstudie apparaatupdate voor Azure IoT Hub met behulp van Het realtime-besturingssysteem van Azure (RTOS)
 
-In deze zelf studie leert u hoe u de update van het apparaat voor IoT Hub agent maakt in azure RTO'S NetX Duo. Het biedt ook eenvoudige Api's voor ontwikkel aars om de update mogelijkheid van het apparaat te integreren in hun toepassing. Bekijk de voor [beelden](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU) van de evaluatie boards voor belangrijkste halfgeleiders die de aan de slag-hand leidingen bevatten voor meer informatie over het configureren, bouwen en implementeren van de over-the-Air (OTA)-updates op de apparaten.
+In deze zelfstudie wordt bestudie hoe u de apparaatupdate voor IoT Hub-agent maakt in Azure RTOS NetXMbo. Het biedt ook eenvoudige API's voor ontwikkelaars om de apparaatupdatefunctie in hun toepassing te integreren. Bekijk [voorbeelden van](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU) belangrijke evaluatieborden met de aan de slag-handleidingen voor het configureren, bouwen en implementeren van de OTA-updates (over-the-air) op de apparaten.
 
 In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
 > * Aan de slag
-> * Uw apparaat labelen
+> * Uw apparaat taggen
 > * Een apparaatgroep maken
-> * Een update voor een installatie kopie implementeren
-> * De update-implementatie controleren
+> * Een update van een afbeelding implementeren
+> * De update-implementatie bewaken
 
 Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
-* Toegang tot een IoT Hub. U wordt aangeraden een S1-laag (Standard) of hoger te gebruiken.
-* Een update-exemplaar van het apparaat en het account dat is gekoppeld aan uw IoT Hub. Volg de hand leiding voor het [maken en koppelen](http://create-device-update-account.md/) van een update account voor een apparaat als u dit nog niet eerder hebt gedaan.
+* Toegang tot een IoT Hub. U wordt aangeraden een S1(Standard)-laag of hoger te gebruiken.
+* Een apparaatupdate-exemplaar en een account die zijn gekoppeld aan uw IoT Hub. Volg de handleiding voor het [maken en koppelen van een](create-device-update-account.md) apparaatupdateaccount als u dit nog niet eerder hebt gedaan.
 
 ## <a name="get-started"></a>Aan de slag
 
-Elk bord-specifiek voor beeld van een Azure RTO'S-project bevat code en documentatie over het gebruik van update voor het bijwerken van het apparaat voor IoT Hub. 
-1. Down load de bord-specifieke voorbeeld bestanden van [Azure rto's en update](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU)-voor beelden van apparaten.
-2. Zoek naar de map docs in het gedownloade voor beeld.
-3. Volg de stappen in de documenten voor het voorbereiden van Azure-resources, het account en het registreren van IoT-apparaten.
-5. Volg de documenten volgende om een nieuwe firmware-installatie kopie te maken en een manifest voor uw bord te importeren.
-6. Vervolgens publiceert u de installatie kopie van de firmware en het manifest naar de update voor het apparaat voor IoT Hub.
-7. Down load het project tot slot en voer het op uw apparaat uit.
+Elk board-specifiek voorbeeldproject Azure RTOS bevat code en documentatie over het gebruik van Apparaatupdate voor IoT Hub op het project. 
+1. Download de board-specifieke voorbeeldbestanden van Azure RTOS [voorbeelden van apparaatupdates.](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU)
+2. Zoek de map docs in het gedownloade voorbeeld.
+3. Volg in de documenten de stappen voor het voorbereiden van Azure-resources en het account en het registreren van IoT-apparaten.
+5. Volg vervolgens de documenten om een nieuwe firmware-afbeelding te maken en een manifest voor uw bord te importeren.
+6. Publiceer vervolgens de firmware-afbeelding en het manifest naar Apparaatupdate voor IoT Hub.
+7. Download ten slotte het project en voer het uit op uw apparaat.
 
-Meer informatie over [Azure rto's](https://docs.microsoft.com/azure/rtos/).  
+Meer informatie over [Azure RTOS](https://docs.microsoft.com/azure/rtos/).  
 
-## <a name="tag-your-device"></a>Uw apparaat labelen
+## <a name="tag-your-device"></a>Uw apparaat taggen
 
-1. Zorg ervoor dat de apparaat-app uit de vorige stap wordt uitgevoerd.
-2. Meld u aan bij [Azure Portal](https://portal.azure.com) en navigeer naar de IOT hub.
-3. Zoek in het navigatie deel venster van IoT-apparaten naar uw IoT-apparaat en navigeer naar het dubbele apparaat.
-4. Verwijder in het dubbele apparaat alle bestaande waarde voor het bijwerken van het apparaat door ze in te stellen op null.
-5. Voeg een nieuwe waarde voor het update label van het apparaat toe, zoals hieronder wordt weer gegeven.
+1. Zorg ervoor dat de apparaattoepassing wordt uitgevoerd vanuit de vorige stap.
+2. Meld u [aan Azure Portal](https://portal.azure.com) en navigeer naar de IoT Hub.
+3. Zoek in IoT-apparaten in het navigatiedeelvenster aan de linkerkant uw IoT-apparaat en navigeer naar de apparaat dubbel.
+4. Verwijder in de apparaat dubbel een bestaande waarde voor de tag Apparaatupdate door deze in te stellen op null.
+5. Voeg een nieuwe waarde voor de tag Apparaatupdate toe, zoals hieronder wordt weergegeven.
 
 ```JSON
     "tags": {
@@ -57,52 +57,52 @@ Meer informatie over [Azure rto's](https://docs.microsoft.com/azure/rtos/).
             }
 ```
 
-## <a name="create-update-group"></a>Update groep maken
+## <a name="create-update-group"></a>Updategroep maken
 
-1. Ga naar de IoT Hub die u eerder hebt verbonden met het update-exemplaar van uw apparaat.
-2. Selecteer de optie apparaat bijwerken onder Automatische Apparaatbeheer in de navigatie balk aan de linkerkant.
-3. Selecteer het tabblad groepen boven aan de pagina. 
-4. Selecteer de knop toevoegen om een nieuwe groep te maken.
-5. Selecteer in de lijst het IoT Hub label dat u in de vorige stap hebt gemaakt. Selecteer update groep maken.
+1. Ga naar de IoT Hub u eerder verbinding hebt met uw apparaatupdate-exemplaar.
+2. Selecteer de optie Apparaatupdates onder Automatisch apparaatbeheer in de navigatiebalk aan de linkerkant.
+3. Selecteer het tabblad Groepen bovenaan de pagina. 
+4. Selecteer de knop Toevoegen om een nieuwe groep te maken.
+5. Selecteer de IoT Hub tag die u in de vorige stap hebt gemaakt in de lijst. Selecteer Updategroep maken.
 
-   :::image type="content" source="media/create-update-group/select-tag.PNG" alt-text="Scherm opname van label selectie." lightbox="media/create-update-group/select-tag.PNG":::
+   :::image type="content" source="media/create-update-group/select-tag.PNG" alt-text="Schermopname van tagselectie." lightbox="media/create-update-group/select-tag.PNG":::
 
-[Meer informatie](create-update-group.md) over het toevoegen van tags en het maken van update groepen
+[Meer informatie over](create-update-group.md) het toevoegen van tags en het maken van updategroepen
 
 ## <a name="deploy-new-firmware"></a>Nieuwe firmware implementeren
 
-1. Zodra de groep is gemaakt, ziet u een nieuwe update die beschikbaar is voor uw apparaatgroep, met een koppeling naar de update onder in behandeling zijnde updates. Mogelijk moet u één keer vernieuwen. 
-2. Klik op de beschik bare update.
-3. Bevestig dat de juiste groep is geselecteerd als de doel groep. Plan uw implementatie en selecteer vervolgens update implementeren.
+1. Zodra de groep is gemaakt, ziet u een nieuwe update die beschikbaar is voor uw apparaatgroep, met een koppeling naar de update onder Updates in behandeling. Mogelijk moet u eenmaal vernieuwen. 
+2. Klik op de beschikbare update.
+3. Controleer of de juiste groep is geselecteerd als de doelgroep. Plan uw implementatie en selecteer vervolgens Update implementeren.
 
    :::image type="content" source="media/deploy-update/select-update.png" alt-text="Update selecteren" lightbox="media/deploy-update/select-update.png":::
 
-4. De compliance-grafiek weer geven. U ziet dat de update nu wordt uitgevoerd. 
+4. Bekijk de compatibiliteitsgrafiek. U ziet nu dat de update wordt uitgevoerd. 
 
-   :::image type="content" source="media/deploy-update/update-in-progress.png" alt-text="De update wordt uitgevoerd" lightbox="media/deploy-update/update-in-progress.png":::
+   :::image type="content" source="media/deploy-update/update-in-progress.png" alt-text="Update wordt uitgevoerd" lightbox="media/deploy-update/update-in-progress.png":::
 
-5. Nadat het apparaat is bijgewerkt, ziet u dat uw nalevings diagram en de update van de implementatie gegevens overeenkomen. 
+5. Nadat uw apparaat is bijgewerkt, ziet u de compatibiliteitsgrafiek en de update van de implementatiedetails. 
 
-   :::image type="content" source="media/deploy-update/update-succeeded.png" alt-text="Update geslaagd" lightbox="media/deploy-update/update-succeeded.png":::
+   :::image type="content" source="media/deploy-update/update-succeeded.png" alt-text="Update is geslaagd" lightbox="media/deploy-update/update-succeeded.png":::
 
 ## <a name="monitor-an-update-deployment"></a>Een update-implementatie bewaken
 
-1. Selecteer het tabblad implementaties boven aan de pagina.
+1. Selecteer het tabblad Implementaties bovenaan de pagina.
 
-   :::image type="content" source="media/deploy-update/deployments-tab.png" alt-text="Tabblad implementaties" lightbox="media/deploy-update/deployments-tab.png":::
+   :::image type="content" source="media/deploy-update/deployments-tab.png" alt-text="Tabblad Implementaties" lightbox="media/deploy-update/deployments-tab.png":::
 
-2. Selecteer de implementatie die u hebt gemaakt om de details van de implementatie weer te geven.
+2. Selecteer de implementatie die u hebt gemaakt om de implementatiedetails weer te geven.
 
    :::image type="content" source="media/deploy-update/deployment-details.png" alt-text="Implementatiedetails" lightbox="media/deploy-update/deployment-details.png":::
 
-3. Selecteer vernieuwen om de meest recente status gegevens weer te geven. Herhaal dit proces totdat de status is gewijzigd in geslaagd.
+3. Selecteer Vernieuwen om de meest recente statusdetails weer te geven. Ga door met dit proces totdat de status verandert in Geslaagd.
 
-U hebt nu een voltooide end-to-end update van de installatie kopie voltooid met update voor het bijwerken van het apparaat voor IoT Hub op een Raspberry Pi 3 B +-apparaat. 
+U hebt nu een end-to-end-update van de afbeelding voltooid met Apparaatupdate voor IoT Hub op een Raspberry Pi 3 B+-apparaat. 
 
 ## <a name="cleanup-resources"></a>Resources opruimen
 
-Wanneer u uw apparaat-update account, instance, IoT Hub en IoT-apparaat niet meer nodig hebt opschonen. 
+Wanneer u uw apparaatupdateaccount, exemplaar, IoT Hub en IoT-apparaat niet meer hoeft op te schonen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bekijk voor meer informatie over Azure RTO'S en hoe het werkt met Azure IoT https://azure.com/rtos .
+Bekijk voor meer Azure RTOS en hoe het werkt met Azure https://azure.com/rtos IoT.

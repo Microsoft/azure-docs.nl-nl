@@ -4,12 +4,12 @@ description: 'Quickstart: Meer informatie over het maken van een dashboard in Az
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
 ms.date: 12/4/2020
-ms.openlocfilehash: 581c8cc4c2da275467bc39c5c2008b29a5bc0e0e
-ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.openlocfilehash: 76d4e3b9c1c906dd91a7355af2c7cb957ef6ac95
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/22/2021
-ms.locfileid: "107875751"
+ms.locfileid: "107891730"
 ---
 # <a name="quickstart-create-an-azure-portal-dashboard-with-azure-cli"></a>Quickstart: Een Azure Portal-dashboard maken met Azure CLI
 

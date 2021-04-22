@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/27/2019
-ms.openlocfilehash: dd0532469cd4390d9a72900dcebc22994239325b
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 7d1e6fd1929f109da97e985ec4ac291799e15c09
+ms.sourcegitcommit: 5ce88326f2b02fda54dad05df94cf0b440da284b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107479148"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107891088"
 ---
 # <a name="tutorial-add-an-azure-sql-database-elastic-pool-to-a-failover-group"></a>Zelfstudie: Een elastische pool van Azure SQL Database toevoegen aan een failovergroep
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]

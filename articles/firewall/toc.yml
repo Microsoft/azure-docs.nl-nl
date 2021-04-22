@@ -36,7 +36,7 @@
       href: premium-features.md
     - name: Azure Firewall Premium in de portal
       href: premium-portal.md
-    - name: Premium-certificaten Azure Firewall
+    - name: Azure Firewall Premium-certificaten
       href: premium-certificates.md
     - name: FQDN-tags
       href: fqdn-tags.md
@@ -64,7 +64,7 @@
       href: fqdn-filtering-network-rules.md
     - name: Beveiligingsbasislijn
       href: security-baseline.md
-    - name: Ondersteuning voor actieve FTP
+    - name: Actieve FTP-ondersteuning
       href: active-ftp-support.md
 - name: Instructiegidsen
   items:
@@ -99,14 +99,14 @@
       href: firewall-workbook.md
     - name: Firewall Premium implementeren en configureren
       href: premium-deploy.md
-    - name: CA-ondernemings certificaten implementeren voor Premium
+    - name: Ca-certificaten voor ondernemingen implementeren voor Premium
       href: premium-deploy-certificates-enterprise-ca.md
     - name: Migreren naar Azure Firewall Premium
       href: premium-migrate.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/ext/azure-firewall/network/firewall
+      href: /cli/azure/network/firewall
     - name: Azure PowerShell
       href: /powershell/module/az.network/new-azfirewall
     - name: .NET

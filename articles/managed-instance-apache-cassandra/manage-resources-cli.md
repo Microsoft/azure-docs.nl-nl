@@ -1,48 +1,48 @@
 ---
-title: Een beheerd exemplaar van Azure beheren voor Apache Cassandra-resources met behulp van Azure CLI
-description: Meer informatie over de algemene opdrachten voor het automatiseren van het beheer van uw door Azure beheerde exemplaar voor Apache Cassandra met behulp van Azure CLI.
+title: Azure Managed Instance voor Apache Cassandra-resources beheren met behulp van Azure CLI
+description: Meer informatie over de algemene opdrachten voor het automatiseren van het beheer van uw Azure Managed Instance voor Apache Cassandra met behulp van Azure CLI.
 author: TheovanKraay
 ms.service: managed-instance-apache-cassandra
 ms.topic: how-to
 ms.date: 03/15/2021
 ms.author: thvankra
-ms.openlocfilehash: 3e44625d23a302c58ea065a4fc3ecec5605e60b9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: ea28bf21424f0624b4f1bb5856a17672c1c7b106
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103564521"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875445"
 ---
-# <a name="manage-azure-managed-instance-for-apache-cassandra-resources-using-azure-cli-preview"></a>Een beheerd exemplaar van Azure beheren voor Apache Cassandra-resources met behulp van Azure CLI (preview)
+# <a name="manage-azure-managed-instance-for-apache-cassandra-resources-using-azure-cli-preview"></a>Azure Managed Instance voor Apache Cassandra-resources beheren met behulp van Azure CLI (preview)
 
-In dit artikel worden algemene opdrachten beschreven voor het automatiseren van het beheer van uw door Azure beheerde exemplaar voor Apache Cassandra-clusters met behulp van Azure CLI.
+In dit artikel worden algemene opdrachten beschreven voor het automatiseren van het beheer van uw Azure Managed Instance voor Apache Cassandra-clusters met behulp van Azure CLI.
 
 > [!IMPORTANT]
-> Een door Azure beheerde instantie voor Apache Cassandra is momenteel beschikbaar als open bare preview.
+> Azure Managed Instance voor Apache Cassandra is momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 > [!IMPORTANT]
-> Voor dit artikel is de Azure CLI-versie 2.17.1 of hoger vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+> Voor dit artikel is azure CLI versie 2.17.1 of hoger vereist. Als u een Azure Cloud Shell, is de meest recente versie al geïnstalleerd.
 >
-> Het beheren van een beheerd exemplaar van Azure voor Apache Cassandra-resources kan niet worden gewijzigd omdat dit inbreuk maakt op de manier waarop Azure Resource Manager met resource-Uri's werkt.
+> De naam van Azure Managed Instance voor Apache Cassandra-resources kan niet worden gewijzigd, omdat dit in strijd is met hoe Azure Resource Manager met resource-URI's werkt.
 
-## <a name="azure-managed-instance-for-apache-cassandra-clusters"></a>Door Azure beheerde instantie voor Apache Cassandra-clusters
+## <a name="azure-managed-instance-for-apache-cassandra-clusters"></a>Azure Managed Instance voor Apache Cassandra-clusters
 
-In de volgende secties wordt beschreven hoe u een beheerd exemplaar van Azure beheert voor Apache Cassandra-clusters, waaronder:
+In de volgende secties wordt gedemonstreerd hoe u Azure Managed Instance voor Apache Cassandra-clusters beheert, waaronder:
 
-* [Een beheerd exemplaar cluster maken](#create-cluster)
-* [Een beheerd exemplaar cluster verwijderen](#delete-cluster)
-* [De cluster Details ophalen](#get-cluster-details)
-* [De status van het cluster knooppunt ophalen](#get-cluster-status)
-* [Clusters op resource groep weer geven](#list-clusters-resource-group)
-* [Clusters weer geven op abonnements-ID](#list-clusters-subscription)
+* [Een beheerd exemplaarcluster maken](#create-cluster)
+* [Een beheerd exemplaarcluster verwijderen](#delete-cluster)
+* [De clusterdetails op halen](#get-cluster-details)
+* [De status van het clusterknooppunt op te halen](#get-cluster-status)
+* [Clusters per resourcegroep opslijst](#list-clusters-resource-group)
+* [Clusters op abonnements-id in een lijst zetten](#list-clusters-subscription)
 
-### <a name="create-a-managed-instance-cluster"></a><a id="create-cluster"></a>Een beheerd exemplaar cluster maken
+### <a name="create-a-managed-instance-cluster"></a><a id="create-cluster"></a>Een beheerd exemplaarcluster maken
 
-Een door Azure beheerd exemplaar maken voor Apache Cassandra-cluster met behulp van de opdracht [AZ Managed-Cassandra cluster create](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_create) :
+Maak een Azure Managed Instance voor een Apache Cassandra-cluster met behulp van [de opdracht az managed-cassandra cluster create:](/cli/azure/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_cluster_create)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -63,9 +63,9 @@ az managed-cassandra cluster create \
     --initial-cassandra-admin-password $initialCassandraAdminPassword \
 ```
 
-### <a name="delete-a-managed-instance-cluster"></a><a id="delete-cluster"></a>Een beheerd exemplaar cluster verwijderen
+### <a name="delete-a-managed-instance-cluster"></a><a id="delete-cluster"></a>Een beheerd exemplaarcluster verwijderen
 
-Verwijder een cluster met behulp van de opdracht [AZ Managed-Cassandra cluster delete](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_delete) :
+Verwijder een cluster met de opdracht [az managed-cassandra cluster delete:](/cli/azure/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_cluster_delete)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -76,9 +76,9 @@ az managed-cassandra cluster delete \
     --resource-group $resourceGroupName
 ```
 
-### <a name="get-the-cluster-details"></a><a id="get-cluster-details"></a>De cluster Details ophalen
+### <a name="get-the-cluster-details"></a><a id="get-cluster-details"></a>De clusterdetails op halen
 
-Cluster Details ophalen met behulp van de opdracht [AZ Managed-Cassandra cluster show](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_show) :
+Haal clusterdetails op met [behulp van de opdracht az managed-cassandra cluster show:](/cli/azure/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_cluster_show)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -89,9 +89,9 @@ az managed-cassandra cluster show \
     --resource-group $resourceGroupName
 ```
 
-### <a name="get-the-cluster-node-status"></a><a id="get-cluster-status"></a>De status van het cluster knooppunt ophalen
+### <a name="get-the-cluster-node-status"></a><a id="get-cluster-status"></a>De status van het clusterknooppunt op te halen
 
-Cluster Details ophalen met behulp van de opdracht [AZ Managed-Cassandra cluster node-status](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_node_status) :
+Haal clusterdetails op met [behulp van de opdracht az managed-cassandra cluster node-status:](/cli/azure/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_cluster_node_status)
 
 ```azurecli-interactive
 clusterName='cassandra-hybrid-cluster'
@@ -102,9 +102,9 @@ az managed-cassandra cluster node-status \
     --resource-group $resourceGroupName
 ```
 
-### <a name="list-the-clusters-by-resource-group"></a><a id="list-clusters-resource-group"></a>De clusters op resource groep weer geven
+### <a name="list-the-clusters-by-resource-group"></a><a id="list-clusters-resource-group"></a>De clusters per resourcegroep opn genoemd
 
-Clusters op resource groep weer geven met behulp van de opdracht [AZ Managed-Cassandra cluster List](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_list) :
+Gebruik de opdracht az [managed-cassandra cluster list](/cli/azure/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_cluster_list) om clusters per resourcegroep weer te geven:
 
 ```azurecli-interactive
 subscriptionId='MySubscriptionId'
@@ -114,9 +114,9 @@ az managed-cassandra cluster list\
     --resource-group $resourceGroupName
 ```
 
-### <a name="list-clusters-by-subscription-id"></a><a id="list-clusters-subscription"></a>Clusters weer geven op abonnements-ID
+### <a name="list-clusters-by-subscription-id"></a><a id="list-clusters-subscription"></a>Clusters op abonnements-id in een lijst zetten
 
-Clusters op abonnements-ID weer geven met behulp van de opdracht [AZ Managed-Cassandra cluster List](/cli/azure/ext/cosmosdb-preview/managed-cassandra?view=azure-cli-latest&preserve-view=true) :
+Vermeld clusters op abonnements-id met behulp van [de opdracht az managed-cassandra cluster list:](/cli/azure/managed-cassandra?view=azure-cli-latest&preserve-view=true)
 
 ```azurecli-interactive
 # set your subscription id
@@ -125,19 +125,19 @@ az account set -s <subscription id>
 az managed-cassandra cluster list
 ```
 
-## <a name="the-managed-instance-datacenters"></a><a id="managed-instance-datacenter"></a>Het beheerde exemplaar van data centers
+## <a name="the-managed-instance-datacenters"></a><a id="managed-instance-datacenter"></a>De datacentra van het beheerde exemplaar
 
-In de volgende secties wordt beschreven hoe u een beheerd exemplaar van Azure beheert voor Apache Cassandra-data centers, met inbegrip van:
+In de volgende secties wordt gedemonstreerd hoe u Azure Managed Instance voor Apache Cassandra-datacenters beheert, waaronder:
 
-* [Een Data Center maken](#create-datacenter)
-* [Een Data Center verwijderen](#delete-datacenter)
-* [Details van Data Center ophalen](#get-datacenter-details)
-* [Een Data Center bijwerken of schalen](#update-datacenter)
-* [Data centers in een cluster ophalen](#get-datacenters-cluster)
+* [Een datacenter maken](#create-datacenter)
+* [Een datacenter verwijderen](#delete-datacenter)
+* [Datacentergegevens op halen](#get-datacenter-details)
+* [Een datacenter bijwerken of schalen](#update-datacenter)
+* [Datacenters in een cluster opsommen](#get-datacenters-cluster)
 
-### <a name="create-a-datacenter"></a><a id="create-datacenter"></a>Een Data Center maken
+### <a name="create-a-datacenter"></a><a id="create-datacenter"></a>Een datacenter maken
 
-Maak een Data Center met behulp van de opdracht [AZ Managed-Cassandra Data Center Create](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_create) :
+Maak een datacenter met behulp van [de opdracht az managed-cassandra datacenter create:](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_create)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -155,9 +155,9 @@ az managed-cassandra datacenter create \
     --node-count 3 
 ```
 
-### <a name="delete-a-datacenter"></a><a id="delete-datacenter"></a>Een Data Center verwijderen
+### <a name="delete-a-datacenter"></a><a id="delete-datacenter"></a>Een datacenter verwijderen
 
-Een Data Center verwijderen met behulp van de opdracht [AZ Managed-Cassandra Data Center delete](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_delete) :
+Verwijder een datacenter met de opdracht [az managed-cassandra datacenter delete:](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_delete)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -170,9 +170,9 @@ az managed-cassandra datacenter delete \
     --data-center-name $dataCenterName 
 ```
 
-### <a name="get-datacenter-details"></a><a id="get-datacenter-details"></a>Details van Data Center ophalen
+### <a name="get-datacenter-details"></a><a id="get-datacenter-details"></a>Datacentergegevens op halen
 
-Details van Data Center ophalen met behulp van de opdracht [AZ Managed-Cassandra Data Center show](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_show) :
+Haal gegevens van het datacenter op met [behulp van de opdracht az managed-cassandra datacenter show:](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_show)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -185,9 +185,9 @@ az managed-cassandra datacenter show \
     --data-center-name $dataCenterName 
 ```
 
-### <a name="update-or-scale-a-datacenter"></a><a id="update-datacenter"></a>Een Data Center bijwerken of schalen
+### <a name="update-or-scale-a-datacenter"></a><a id="update-datacenter"></a>Een datacenter bijwerken of schalen
 
-Een Data Center bijwerken of schalen (op schaal wijzigen nodeCount waarde) met behulp van de opdracht [AZ Managed-Cassandra Data Center update](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_update) :
+Werk een datacenter bij of schaal deze (om de waarde van nodeCount te wijzigen) met behulp van [de opdracht az managed-cassandra datacenter update:](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_update)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -203,9 +203,9 @@ az managed-cassandra datacenter update \
     --node-count 13 
 ```
 
-### <a name="get-the-datacenters-in-a-cluster"></a><a id="get-datacenters-cluster"></a>De data centers in een cluster ophalen
+### <a name="get-the-datacenters-in-a-cluster"></a><a id="get-datacenters-cluster"></a>De datacenters in een cluster opsommen
 
-Data centers in een cluster ophalen met behulp van de opdracht [AZ Managed-Cassandra Data Center List](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_list) :
+Haal datacenters op in een cluster met behulp van [de opdracht az managed-cassandra datacenter list:](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_list)
 
 ```azurecli-interactive
 resourceGroupName='MyResourceGroup'
@@ -218,5 +218,5 @@ az managed-cassandra datacenter list \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een beheerd exemplaar cluster maken op basis van de Azure Portal](create-cluster-portal.md)
+* [Een beheerd exemplaarcluster maken op Azure Portal](create-cluster-portal.md)
 * [Een beheerd Apache Spark cluster implementeren met Azure Databricks](deploy-cluster-databricks.md)

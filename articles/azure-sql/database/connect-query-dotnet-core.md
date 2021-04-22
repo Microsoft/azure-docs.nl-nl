@@ -12,17 +12,17 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 1d25f43ef5a694d8b94710055bf1be72a7fcb45c
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 221b69d428556b031efd3bd91e16d12cfeb71393
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "97705208"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874797"
 ---
 # <a name="quickstart-use-net-core-c-to-query-a-database"></a>Quickstart: .NET Core (C#) gebruiken om een query uit te voeren op een database
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-In deze quickstart gebruikt u [.NET Core](https://www.microsoft.com/net/) en C#-code om verbinding te maken met een database. Vervolgens moet u een Transact-SQL-instructie uitvoeren om een query op gegevens uit te voeren.
+In deze quickstart gebruikt u [.NET Core](https://dotnet.microsoft.com) en C#-code om verbinding te maken met een database. Vervolgens moet u een Transact-SQL-instructie uitvoeren om een query op gegevens uit te voeren.
 
 > [!TIP]
 > In de volgende Microsoft-leermodule leert u gratis [Een ASP.NET-toepassing ontwikkelen en configureren die een query uitvoert op een Azure SQL Database](/learn/modules/develop-app-that-queries-azure-sql/)
@@ -32,7 +32,7 @@ In deze quickstart gebruikt u [.NET Core](https://www.microsoft.com/net/) en C#-
 U hebt het volgende nodig om deze quickstart te voltooien:
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
-- [.NET Core voor uw besturingssysteem](https://www.microsoft.com/net/core) moet zijn geïnstalleerd.
+- [.NET Core SDK voor uw besturingssysteem geïnstalleerd.](https://dotnet.microsoft.com/download)
 - Een database waarin u een query kunt uitvoeren. 
 
   [!INCLUDE[create-configure-database](../includes/create-configure-database.md)]

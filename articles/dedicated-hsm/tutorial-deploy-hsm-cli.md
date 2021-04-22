@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2021
 ms.author: keithp
-ms.openlocfilehash: fa1c01c2d9da19ec1f60878de83a509b7cf561e8
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b845ecabe74040e154886476a8ba28efecc99325
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105606824"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868857"
 ---
 # <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-the-azure-cli"></a>Zelfstudie: HSM's implementeren in een bestaand virtueel netwerk met behulp van Azure CLI
 
@@ -102,7 +102,7 @@ az network vnet subnet create \
 
 Nadat u uw netwerk hebt geconfigureerd, gebruikt u deze Azure CLI-opdrachten om uw HSM's in te richten.
 
-1. Gebruik de opdracht [az dedicated-hsm create](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_create) om de eerste HSM in te richten. De HSM heet hsm1. Vervang uw abonnement:
+1. Gebruik de opdracht [az dedicated-hsm create](/cli/azure/dedicated-hsm#az_dedicated_hsm_create) om de eerste HSM in te richten. De HSM heet hsm1. Vervang uw abonnement:
 
    ```azurecli
    az dedicated-hsm create --location westus --name hsm1 --resource-group myRG --network-profile-network-interfaces \
@@ -111,7 +111,7 @@ Nadat u uw netwerk hebt geconfigureerd, gebruikt u deze Azure CLI-opdrachten om 
 
    Het duurt gewoonlijk maximaal 25 tot 30 minuten totdat deze implementatie is voltooid, waarvan het grootste gedeelte wordt gebruikt voor de HSM-apparaten.
 
-1. Als u een huidige HSM wilt bekijken, voert u de opdracht [az dedicated-hsm show](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_show) uit:
+1. Als u een huidige HSM wilt bekijken, voert u de opdracht [az dedicated-hsm show](/cli/azure/dedicated-hsm#az_dedicated_hsm_show) uit:
 
    ```azurecli
    az dedicated-hsm show --resource group myRG --name hsm1
@@ -124,19 +124,19 @@ Nadat u uw netwerk hebt geconfigureerd, gebruikt u deze Azure CLI-opdrachten om 
         /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Network/virtualNetworks/MyHSM-vnet/subnets/MyHSM-vnet
    ```
 
-1. Voer de opdracht [az dedicated-hsm list](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_list) uit om gegevens van uw huidige HSM's weer te geven:
+1. Voer de opdracht [az dedicated-hsm list](/cli/azure/dedicated-hsm#az_dedicated_hsm_list) uit om gegevens van uw huidige HSM's weer te geven:
 
    ```azurecli
    az dedicated-hsm list --resource-group myRG
    ```
 
-Er zijn een aantal andere opdrachten die nuttig kunnen zijn. U kunt de opdracht [az dedicated-hsm update](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_update) gebruiken om een HSM bij te werken:
+Er zijn een aantal andere opdrachten die nuttig kunnen zijn. U kunt de opdracht [az dedicated-hsm update](/cli/azure/dedicated-hsm#az_dedicated_hsm_update) gebruiken om een HSM bij te werken:
 
 ```azurecli
 az dedicated-hsm update --resource-group myRG –name hsm1
 ```
 
-Als u een HSM wilt verwijderen, gebruikt u de opdracht [az dedicated-hsm delete](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_delete):
+Als u een HSM wilt verwijderen, gebruikt u de opdracht [az dedicated-hsm delete](/cli/azure/dedicated-hsm#az_dedicated_hsm_delete):
 
 ```azurecli
 az dedicated-hsm delete --resource-group myRG –name hsm1
@@ -233,7 +233,7 @@ De uitvoer ziet eruit zoals weergegeven in de onderstaande afbeelding:
 
 ![Schermopname van de uitvoer in het PowerShell-venster.](media/tutorial-deploy-hsm-cli/hsm-show-output.png)
 
-Op dit moment hebt u alle resources toegewezen voor een implementatie van twee HSM's met hoge beschikbaarheid en hebt u de toegang en operationele status gevalideerd. Voor verdere configuratie of tests is meer werk met het HSM-apparaat zelf vereist. Hiervoor moet u de instructies in de Thales Luna 7 HSM-beheer handleiding hoofd stuk 7 volgen om de HSM te initialiseren en partities te maken. Alle documentatie en software zijn direct beschikbaar vanaf Thales voor downloaden zodra u bent geregistreerd in de [Thales-portal voor klanten ondersteuning](https://supportportal.thalesgroup.com/csm) en een klant-id hebt. Download versie 7.2 van de clientsoftware om alle vereiste onderdelen op te halen.
+Op dit moment hebt u alle resources toegewezen voor een implementatie van twee HSM's met hoge beschikbaarheid en hebt u de toegang en operationele status gevalideerd. Voor verdere configuratie of tests is meer werk met het HSM-apparaat zelf vereist. Volg hiervoor de instructies in hoofdstuk 7 van de Thales Luna 7 HSM Administration Guide om de HSM te initialiseren en partities te maken. Alle documentatie en software zijn rechtstreeks bij Thales beschikbaar om te worden gedownload zodra u bent geregistreerd in de [Thales-klantondersteuningsportal](https://supportportal.thalesgroup.com/csm) en een klant-id hebt. Download versie 7.2 van de clientsoftware om alle vereiste onderdelen op te halen.
 
 ## <a name="delete-or-clean-up-resources"></a>Resources verwijderen of opschonen
 

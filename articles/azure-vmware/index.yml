@@ -9,12 +9,12 @@ metadata:
   author: shortpatti
   ms.author: v-patsho
   ms.date: 04/20/2021
-  ms.openlocfilehash: 8c754c7855848db3119d987a4147b08cd3aa2115
-  ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+  ms.openlocfilehash: 54a304e145d995e484f149488fbf5d4f0ad7854f
+  ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 04/20/2021
-  ms.locfileid: "107765337"
+  ms.lasthandoff: 04/22/2021
+  ms.locfileid: "107878052"
 landingContent:
 - title: Over Azure VMware Solution
   linkLists:
@@ -44,7 +44,7 @@ landingContent:
     links:
     - text: Algemeen
       url: /azure/azure-vmware/faq#general
-    - text: Klantcommunicatie
+    - text: Communicatie van de klant
       url: /azure/azure-vmware/faq#customer-communication
     - text: Configuratie en installatie
       url: /azure/azure-vmware/faq#configuration-and-setup
@@ -163,7 +163,7 @@ landingContent:
     - text: REST-API
       url: /rest/api/avs
     - text: Azure CLI
-      url: /cli/azure/ext/vmware/vmware
+      url: /cli/azure/vmware
     - text: Azure PowerShell
       url: /powershell/module/az.vmware
     - text: Terraform Azure-provider

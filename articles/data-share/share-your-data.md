@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 03/24/2021
-ms.openlocfilehash: 8e149270d8f98cbf72d3864d238a3d8ddfd61c67
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: b8d49e3b3c6f6407fe241e00ada5039bd94fd706
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105639546"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870873"
 ---
 # <a name="tutorial-share-data-using-azure-data-share"></a>Zelfstudie: Gegevens delen met Azure Data Share  
 
@@ -45,7 +45,7 @@ Hieronder ziet u de lijst met vereisten voor het delen van gegevens vanuit een S
 
 * Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW) met tabellen en weergaven die u wilt delen.
 * Machtiging om naar de databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**.
-* De beheerder van de SQL-Server **Azure Active Directory**
+* **Azure Active Directory beheerder van** de SQL-server
 * Toegang tot SQL Server-firewall. U kunt dit doen via de volgende stappen: 
     1. Ga in Azure Portal naar SQL-server. Selecteer *Firewalls en virtuele netwerken* in de linkernavigatiebalk.
     1. Klik op **Ja** bij *Toestaan dat Azure-services en -resources toegang tot deze server krijgen*.
@@ -136,13 +136,13 @@ Gebruik deze opdrachten om de resource te maken:
    az group create --name testresourcegroup --location "East US 2"
    ```
 
-1. Voer de opdracht [az datashare account create](/cli/azure/ext/datashare/datashare/account#ext_datashare_az_datashare_account_create) uit om een Data Share-account te maken:
+1. Voer de opdracht [az datashare account create](/cli/azure/datashare/account#az_datashare_account_create) uit om een Data Share-account te maken:
 
    ```azurecli
    az datashare account create --resource-group testresourcegroup --name datashareaccount --location "East US 2" 
    ```
 
-   Voer de opdracht [az datashare account list](/cli/azure/ext/datashare/datashare/account#ext_datashare_az_datashare_account_list) uit om uw Data Share-account weer te geven:
+   Voer de opdracht [az datashare account list](/cli/azure/datashare/account#az_datashare_account_list) uit om uw Data Share-account weer te geven:
 
    ```azurecli
    az datashare account list --resource-group testresourcegroup
@@ -172,7 +172,7 @@ Gebruik deze opdrachten om de resource te maken:
 
     ![Gegevenssets toevoegen aan de share](./media/datasets.png "Gegevenssets")
 
-1. Selecteer het type gegevensset dat u wilt toevoegen. Welke lijst met typen gegevensset wordt weergegeven, is afhankelijk van het type share (momentopname of in-place) dat u in de vorige stap hebt geselecteerd. Als u deelt vanuit een Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), wordt u gevraagd om een verificatie methode te maken voor het weer geven van tabellen. Selecteer AAD-verificatie en schakel het selectie vakje **gegevens delen toestaan om het bovenstaande script voor het maken van gebruikers namens mij uit te voeren**. 
+1. Selecteer het type gegevensset dat u wilt toevoegen. Welke lijst met typen gegevensset wordt weergegeven, is afhankelijk van het type share (momentopname of in-place) dat u in de vorige stap hebt geselecteerd. Als u deelt vanuit een Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), wordt u gevraagd om de verificatiemethode om tabellen weer te bieden. Selecteer AAD-verificatie en schakel het selectievakje Allow Data Share to run the above **'create user' script on my behalf in.** 
 
     ![AddDatasets](./media/add-datasets.png "Gegevenssets toevoegen")    
 
@@ -210,7 +210,7 @@ Gebruik deze opdrachten om de resource te maken:
    az storage container create --name ContosoMarketplaceContainer --account-name ContosoMarketplaceAccount
    ```
 
-1. Voer de opdracht [az datashare create](/cli/azure/ext/datashare/datashare#ext_datashare_az_datashare_create) uit om uw Data Share te maken:
+1. Voer de opdracht [az datashare create](/cli/azure/datashare#az_datashare_create) uit om uw Data Share te maken:
 
    ```azurecli
    az datashare create --resource-group testresourcegroup \
@@ -218,7 +218,7 @@ Gebruik deze opdrachten om de resource te maken:
      --description "Data Share" --share-kind "CopyBased" --terms "Confidential"
    ```
 
-1. Gebruik de opdracht [az datashare invitation create](/cli/azure/ext/datashare/datashare/invitation#ext_datashare_az_datashare_invitation_create) om de uitnodiging voor het opgegeven adres te maken:
+1. Gebruik de opdracht [az datashare invitation create](/cli/azure/datashare/invitation#az_datashare_invitation_create) om de uitnodiging voor het opgegeven adres te maken:
 
    ```azurecli
    az datashare invitation create --resource-group testresourcegroup \

@@ -1,24 +1,24 @@
 ---
-title: Een inhouds bibliotheek maken voor het implementeren van Vm's in azure VMware-oplossing
-description: Maak een inhouds bibliotheek voor het implementeren van een virtuele machine in een privécloud van Azure VMware-oplossing.
+title: Een inhoudsbibliotheek maken voor het implementeren van VM's in Azure VMware Solution
+description: Maak een inhoudsbibliotheek voor het implementeren van een VM in Azure VMware Solution privécloud.
 ms.topic: how-to
 ms.date: 02/03/2021
-ms.openlocfilehash: a50b12ef8e139bf7de171398fd28f74fc3f310c9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: b27d2682d8799bec6b09a08e5063359113b20a88
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100382001"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873879"
 ---
-# <a name="create-a-content-library-to-deploy-vms-in-azure-vmware-solution"></a>Een inhouds bibliotheek maken voor het implementeren van Vm's in azure VMware-oplossing
+# <a name="create-a-content-library-to-deploy-vms-in-azure-vmware-solution"></a>Een inhoudsbibliotheek maken voor het implementeren van VM's in Azure VMware Solution
 
 In een inhoudsbibliotheek wordt inhoud in de vorm van bibliotheekitems opgeslagen en beheerd. Eén bibliotheekitem bestaat uit een of meer bestanden die u gebruikt voor het implementeren van virtuele machines (VM's). 
 
-In dit artikel gaan we de procedure voor het maken van een inhouds bibliotheek door lopen.  Vervolgens gaan we een virtuele machine implementeren met een ISO-installatie kopie uit de inhouds bibliotheek.
+In dit artikel wordt de procedure voor het maken van een inhoudsbibliotheek doorlopen.  Vervolgens gaan we een VM implementeren met behulp van een ISO-afbeelding uit de inhoudsbibliotheek.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Een NSX-T-segment (logische switch) en een beheerde DHCP-service zijn vereist om deze zelf studie te volt ooien.  Zie het artikel [DHCP in azure VMware Solution beheren](manage-dhcp.md) voor meer informatie.
+Een NSX-T-segment (logische switch) en een beheerde DHCP-service zijn vereist om deze zelfstudie te voltooien.  Zie voor meer informatie het [artikel DHCP beheren in Azure VMware Solution.](manage-dhcp.md)
 
 ## <a name="create-a-content-library"></a>Maak een inhoudsbibliotheek
 
@@ -26,9 +26,9 @@ Een NSX-T-segment (logische switch) en een beheerde DHCP-service zijn vereist om
 
    ![Selecteer Menu-> Inhoudsbibliotheken](./media/content-library/vsphere-menu-content-libraries.png)
 
-1. Selecteer de knop **toevoegen** om een nieuwe inhouds bibliotheek te maken.
+1. Selecteer de **knop Toevoegen** om een nieuwe inhoudsbibliotheek te maken.
 
-   ![Selecteer de knop toevoegen om een nieuwe inhouds bibliotheek te maken.](./media/content-library/create-new-content-library.png)
+   ![Selecteer de knop Toevoegen om een nieuwe inhoudsbibliotheek te maken.](./media/content-library/create-new-content-library.png)
 
 1. Geef een naam op en bevestig het IP-adres van de vCenter-server en selecteer **Volgende**.
 
@@ -92,10 +92,10 @@ Nu de inhoudsbibliotheek is gemaakt, kunt u een ISO-installatiekopie toevoegen o
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u een inhouds bibliotheek hebt gemaakt voor het implementeren van Vm's in azure VMware-oplossing, kunt u het volgende weten:
+Nu u het maken van een inhoudsbibliotheek voor het implementeren van VM's in Azure VMware Solution hebt behandeld, kunt u het volgende leren:
 
-- [VMware-HCX implementeren en configureren](tutorial-deploy-vmware-hcx.md) voor het migreren van VM-workloads naar uw privécloud.
-- [Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen](lifecycle-management-of-azure-vmware-solution-vms.md).
+- [VM-workloads migreren naar uw privécloud](tutorial-deploy-vmware-hcx.md)
+- [Levenscyclusbeheer van Azure VMware Solution-VM's](lifecycle-management-of-azure-vmware-solution-vms.md)
 
 <!-- LINKS - external-->
 

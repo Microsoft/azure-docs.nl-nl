@@ -6,12 +6,12 @@ ms.author: spelluru
 ms.date: 10/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d0a94f346f9d3cf7a05a1ca6e1b37d4d008f3e75
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: a7b03727c574dcee1cd56144a521f36de6dc48c6
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102179660"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861369"
 ---
 # <a name="tutorial-update-inventory-using-azure-portal-and-topicssubscriptions"></a>Zelfstudie: Voorraad bijwerken met Azure Portal en onderwerpen/abonnementen
 
@@ -36,7 +36,7 @@ Als u nog geen abonnement op Azure hebt, kunt u een [gratis account][] maken voo
 Het volgende moet zijn geïnstalleerd om deze zelfstudie te voltooien:
 
 - [Visual Studio 2017 update 3 (versie 15.3, 26730.01)](https://www.visualstudio.com/vs) of hoger.
-- [NET Core SDK](https://www.microsoft.com/net/download/windows), versie 2.0 of later.
+- [NET Core SDK](https://dotnet.microsoft.com/download), versie 2.0 of later.
 
 ## <a name="service-bus-topics-and-subscriptions"></a>Service Bus-onderwerpen en -abonnementen
 
@@ -97,7 +97,7 @@ Ga als volgt te werk om de code uit te voeren:
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u deze niet meer nodig hebt, verwijdert u de naam ruimte en het onderwerp. Selecteer deze resources hiervoor in de portal en klik op **Verwijderen**.
+Verwijder de naamruimte en het onderwerp wanneer u deze niet meer nodig hebt. Selecteer deze resources hiervoor in de portal en klik op **Verwijderen**.
 
 ## <a name="understand-the-sample-code"></a>De voorbeeldcode begrijpen
 

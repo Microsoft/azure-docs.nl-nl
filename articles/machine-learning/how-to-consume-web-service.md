@@ -1,7 +1,7 @@
 ---
-title: Client maken voor model dat is geïmplementeerd als webservice
+title: Client maken voor een model dat is geïmplementeerd als webservice
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het aanroepen van een webservice-eind punt dat is gegenereerd bij het implementeren van een model van Azure Machine Learning.
+description: Meer informatie over het aanroepen van een webservice-eindpunt dat is gegenereerd toen een model werd geïmplementeerd vanuit Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,46 +11,46 @@ ms.reviewer: larryfr
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-csharp
-ms.openlocfilehash: e9fb801fce3e47fc83febeddd6f331ce2af207e6
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 8cab9331cdd4c15ab76b7c33f956be15ec2259ef
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102506970"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861189"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Een Azure Machine Learning-model gebruiken dat als een webservice is geïmplementeerd
 
 
-Als u een Azure Machine Learning-model implementeert als webservice, wordt een REST API-eindpunt gemaakt. U kunt gegevens naar dit eindpunt verzenden en de voorspelling ontvangen die door het model wordt geretourneerd. In dit document leest u hoe u clients voor de webservice maakt met behulp van C#, go, Java en python.
+Als u een Azure Machine Learning-model implementeert als webservice, wordt een REST API-eindpunt gemaakt. U kunt gegevens naar dit eindpunt verzenden en de voorspelling ontvangen die door het model wordt geretourneerd. In dit document leert u hoe u clients maakt voor de webservice met behulp van C#, Go, Java en Python.
 
-U maakt een webservice wanneer u een model implementeert in uw lokale omgeving, Azure Container Instances, Azure Kubernetes-service of veld-Programmeer bare poort matrices (FPGA). U haalt de URI op die wordt gebruikt om toegang te krijgen tot de webservice met behulp van de [Azure machine learning SDK](/python/api/overview/azure/ml/intro). Als verificatie is ingeschakeld, kunt u ook de SDK gebruiken om de verificatie sleutels of-tokens op te halen.
+U maakt een webservice wanneer u een model implementeert in uw lokale omgeving, Azure Container Instances, Azure Kubernetes Service of field-programmable gate arrays (FPGA). U haalt de URI op die wordt gebruikt voor toegang tot de webservice met behulp van [Azure Machine Learning SDK](/python/api/overview/azure/ml/intro). Als verificatie is ingeschakeld, kunt u ook de SDK gebruiken om de verificatiesleutels of tokens op te halen.
 
-De algemene werk stroom voor het maken van een client die gebruikmaakt van een machine learning-webservice:
+De algemene werkstroom voor het maken van een client die gebruikmaakt van machine learning webservice is:
 
-1. Gebruik de SDK om de verbindings gegevens op te halen.
-1. Bepaal het type aanvraag gegevens dat door het model wordt gebruikt.
+1. Gebruik de SDK om de verbindingsgegevens op te halen.
+1. Bepaal het type aanvraaggegevens dat door het model wordt gebruikt.
 1. Maak een toepassing die de webservice aanroept.
 
 > [!TIP]
-> De voor beelden in dit document zijn hand matig gemaakt zonder de specificaties voor het gebruik van OpenAPI (Swagger). Als u een OpenAPI-specificatie hebt ingeschakeld voor uw implementatie, kunt u hulpprogram ma's zoals [Swagger-CodeGen](https://github.com/swagger-api/swagger-codegen) gebruiken om client bibliotheken voor uw service te maken.
+> De voorbeelden in dit document worden handmatig gemaakt zonder het gebruik van OpenAPI-specificaties (Swagger). Als u een OpenAPI-specificatie voor uw implementatie hebt ingeschakeld, kunt u hulpprogramma's zoals [swagger-codegen](https://github.com/swagger-api/swagger-codegen) gebruiken om clientbibliotheken voor uw service te maken.
 
 ## <a name="connection-information"></a>Verbindingsgegevens
 
 > [!NOTE]
-> Gebruik de Azure Machine Learning SDK om informatie over de webservice op te halen. Dit is een python-SDK. U kunt elke taal gebruiken om een-client voor de service te maken.
+> Gebruik de Azure Machine Learning SDK om de webservicegegevens op te halen. Dit is een Python SDK. U kunt elke taal gebruiken om een client voor de service te maken.
 
-De klasse [azureml. core. webservice](/python/api/azureml-core/azureml.core.webservice%28class%29) bevat de informatie die u nodig hebt voor het maken van een-client. De volgende `Webservice` eigenschappen zijn handig voor het maken van een client toepassing:
+De [klasse azureml.core.Webservice](/python/api/azureml-core/azureml.core.webservice%28class%29) biedt de informatie die u nodig hebt om een client te maken. De volgende `Webservice` eigenschappen zijn handig voor het maken van een clienttoepassing:
 
-* `auth_enabled` -Als de sleutel verificatie is ingeschakeld, `True` anders, `False` .
-* `token_auth_enabled` -Als token verificatie is ingeschakeld, `True` anders, `False` .
-* `scoring_uri` -Het REST API adres.
-* `swagger_uri` -Het adres van de OpenAPI-specificatie. Deze URI is beschikbaar als u automatische schema generatie hebt ingeschakeld. Zie [modellen implementeren met Azure machine learning](how-to-deploy-and-where.md)voor meer informatie.
+* `auth_enabled`- Als sleutelverificatie is ingeschakeld, `True` ; anders . `False`
+* `token_auth_enabled`- Als tokenverificatie is ingeschakeld, `True` ; anders . `False`
+* `scoring_uri` - Het REST API adres.
+* `swagger_uri` - Het adres van de OpenAPI-specificatie. Deze URI is beschikbaar als u automatische schemageneratie hebt ingeschakeld. Zie Modellen implementeren met [Azure Machine Learning voor meer Azure Machine Learning.](how-to-deploy-and-where.md)
 
 Er zijn verschillende manieren om deze informatie op te halen voor geïmplementeerde webservices:
 
 # <a name="python"></a>[Python](#tab/python)
 
-* Wanneer u een model implementeert, `Webservice` wordt er een object geretourneerd met informatie over de service:
+* Wanneer u een model implementeert, `Webservice` wordt een -object geretourneerd met informatie over de service:
 
     ```python
     service = Model.deploy(ws, "myservice", [model], inference_config, deployment_config)
@@ -59,7 +59,7 @@ Er zijn verschillende manieren om deze informatie op te halen voor geïmplemente
     print(service.swagger_uri)
     ```
 
-* U kunt gebruiken `Webservice.list` voor het ophalen van een lijst met geïmplementeerde webservices voor modellen in uw werk ruimte. U kunt filters toevoegen om de lijst met geretourneerde gegevens te beperken. Zie de naslag documentatie voor de [webservice](/python/api/azureml-core/azureml.core.webservice.webservice.webservice) voor meer informatie over wat kan worden gefilterd.
+* U kunt gebruiken `Webservice.list` om een lijst met geïmplementeerde webservices voor modellen in uw werkruimte op te halen. U kunt filters toevoegen om de lijst met geretourneerde gegevens te beperken. Zie de naslagdocumentatie voor [Webservice.list](/python/api/azureml-core/azureml.core.webservice.webservice.webservice) voor meer informatie over waar op kan worden gefilterd.
 
     ```python
     services = Webservice.list(ws)
@@ -67,7 +67,7 @@ Er zijn verschillende manieren om deze informatie op te halen voor geïmplemente
     print(services[0].swagger_uri)
     ```
 
-* Als u de naam van de geïmplementeerde service weet, kunt u een nieuwe instantie van maken `Webservice` en de werk ruimte en de service naam als para meters opgeven. Het nieuwe object bevat informatie over de geïmplementeerde service.
+* Als u de naam van de geïmplementeerde service weet, kunt u een nieuw exemplaar van maken en de werkruimte en `Webservice` servicenaam opgeven als parameters. Het nieuwe object bevat informatie over de geïmplementeerde service.
 
     ```python
     service = Webservice(workspace=ws, name='myservice')
@@ -77,7 +77,7 @@ Er zijn verschillende manieren om deze informatie op te halen voor geïmplemente
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de naam van de geïmplementeerde service weet, gebruikt u de opdracht [AZ ml service show](/cli/azure/ext/azure-cli-ml/ml/service#ext_azure_cli_ml_az_ml_service_show) :
+Als u de naam van de geïmplementeerde service weet, gebruikt u de [opdracht az ml service show:](/cli/azure/ml/service#az_ml_service_show)
 
 ```azurecli
 az ml service show -n <service-name>
@@ -85,15 +85,15 @@ az ml service show -n <service-name>
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-In Azure Machine Learning Studio selecteert u __eind punten__, __realtime-eind punten__ en vervolgens de naam van het eind punt. In Details voor het eind punt bevat het veld __rest-eind punt__ de Score-URI. De __Swagger-URI__ bevat de SWAGGER-URI.
+Selecteer Azure Machine Learning-studio __eindpunten,__ __realtime-eindpunten__ en vervolgens de naam van het eindpunt. In details voor het eindpunt bevat het __veld REST-eindpunt__ de scoring-URI. De __Swagger-URI__ bevat de swagger-URI.
 
 ---
 
-In de volgende tabel ziet u hoe deze Uri's eruitzien:
+In de volgende tabel ziet u hoe deze URI's eruit zien:
 
 | URI-type | Voorbeeld |
 | ----- | ----- |
-| Score ring-URI | `http://104.214.29.152:80/api/v1/service/<service-name>/score` |
+| Scoring-URI | `http://104.214.29.152:80/api/v1/service/<service-name>/score` |
 | Swagger-URI | `http://104.214.29.152/api/v1/service/<service-name>/swagger.json` |
 
 > [!TIP]
@@ -101,37 +101,37 @@ In de volgende tabel ziet u hoe deze Uri's eruitzien:
 
 ### <a name="secured-web-service"></a>Beveiligde webservice
 
-Als u de geïmplementeerde webservice met een TLS/SSL-certificaat hebt beveiligd, kunt u [https](https://en.wikipedia.org/wiki/HTTPS) gebruiken om verbinding te maken met de service met behulp van de Score of SWAGGER-URI. Met HTTPS kunt u de communicatie tussen een client en een webservice beveiligen door de communicatie tussen de twee te versleutelen. Versleuteling maakt gebruik van [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security). TLS wordt soms nog steeds aangeduid als *Secure Sockets Layer* (SSL). Dit is de voorafgaande taak van TLS.
+Als u de geïmplementeerde webservice hebt beveiligd met een TLS/SSL-certificaat, kunt u [HTTPS](https://en.wikipedia.org/wiki/HTTPS) gebruiken om verbinding te maken met de service met behulp van de scoring- of swagger-URI. HTTPS helpt de communicatie tussen een client en een webservice te beveiligen door communicatie tussen de twee te versleutelen. Voor [versleuteling Transport Layer Security (TLS) gebruikt.](https://en.wikipedia.org/wiki/Transport_Layer_Security) TLS wordt soms nog steeds aangeduid *als Secure Sockets Layer* (SSL), de voorloper van TLS.
 
 > [!IMPORTANT]
-> Webservices die door Azure Machine Learning worden geïmplementeerd, ondersteunen alleen TLS-versie 1,2. Zorg ervoor dat deze versie wordt ondersteund bij het maken van een client toepassing.
+> Webservices die zijn geïmplementeerd door Azure Machine Learning bieden alleen ondersteuning voor TLS-versie 1.2. Wanneer u een clienttoepassing maakt, moet u ervoor zorgen dat deze versie wordt ondersteund.
 
-Zie [TLS gebruiken om een webservice te beveiligen via Azure machine learning](how-to-secure-web-service.md)voor meer informatie.
+Zie Use TLS to secure a web service through Azure Machine Learning (TLS gebruiken om een webservice te [beveiligen via Azure Machine Learning).](how-to-secure-web-service.md)
 
 ### <a name="authentication-for-services"></a>Verificatie voor services
 
-Azure Machine Learning biedt twee manieren om de toegang tot uw webservices te beheren.
+Azure Machine Learning biedt twee manieren om de toegang tot uw webservices te controleren.
 
-|Verificatiemethode|ACI|AKS|
+|Verificatiemethode|Aci|AKS|
 |---|---|---|
 |Sleutel|Standaard uitgeschakeld| Standaard ingeschakeld|
 |Token| Niet beschikbaar| Standaard uitgeschakeld |
 
-Wanneer u een aanvraag verzendt naar een service die is beveiligd met een sleutel of token, gebruikt u de __autorisatie__ -header om de sleutel of het token door te geven. De sleutel of het token moet zijn geformatteerd als `Bearer <key-or-token>` , waarbij `<key-or-token>` de sleutel of Token waarde is.
+Bij het verzenden van een aanvraag naar een service die  is beveiligd met een sleutel of token, gebruikt u de autorisatieheader om de sleutel of het token door te geven. De sleutel of token moet worden opgemaakt als , waarbij de waarde `Bearer <key-or-token>` van uw sleutel of `<key-or-token>` token is.
 
-Het belangrijkste verschil tussen sleutels en tokens is dat **sleutels statisch zijn en hand matig opnieuw kunnen worden gegenereerd** en dat **tokens na verloop van tijd moeten worden vernieuwd**. Verificatie op basis van sleutels wordt ondersteund voor Azure container instance en Azure Kubernetes Service geïmplementeerde webservices en verificatie op basis van tokens is **alleen** beschikbaar voor Azure Kubernetes-service-implementaties. Zie voor meer informatie over het configureren van verificatie [verificatie configureren voor modellen die als webservices zijn geïmplementeerd](how-to-authenticate-web-service.md).
+Het belangrijkste verschil tussen sleutels en tokens is dat sleutels statisch zijn en handmatig opnieuw kunnen worden ge regenereerd **en** dat tokens na verloop van verloop moeten **worden vernieuwd.** Op sleutels gebaseerde auth wordt ondersteund voor Azure Container Instance en Azure Kubernetes Service geïmplementeerde webservices, en op token gebaseerde auth **is** alleen beschikbaar voor Azure Kubernetes Service implementaties. Zie Verificatie configureren voor modellen die zijn geïmplementeerd als webservices voor meer informatie over het [configureren van verificatie.](how-to-authenticate-web-service.md)
 
 
 #### <a name="authentication-with-keys"></a>Verificatie met sleutels
 
-Wanneer u verificatie voor een implementatie inschakelt, maakt u automatisch verificatie sleutels.
+Wanneer u verificatie inschakelen voor een implementatie, maakt u automatisch verificatiesleutels.
 
-* Verificatie is standaard ingeschakeld wanneer u naar de Azure Kubernetes-service implementeert.
-* Verificatie is standaard uitgeschakeld wanneer u implementeert naar Azure Container Instances.
+* Verificatie is standaard ingeschakeld wanneer u implementeert in Azure Kubernetes Service.
+* Verificatie is standaard uitgeschakeld wanneer u implementeert in Azure Container Instances.
 
-Als u de verificatie wilt beheren, gebruikt `auth_enabled` u de para meter bij het maken of bijwerken van een implementatie.
+Als u verificatie wilt controleren, gebruikt u `auth_enabled` de parameter bij het maken of bijwerken van een implementatie.
 
-Als verificatie is ingeschakeld, kunt u de `get_keys` methode gebruiken om een primaire en secundaire verificatie sleutel op te halen:
+Als verificatie is ingeschakeld, kunt u de methode gebruiken om een primaire en `get_keys` secundaire verificatiesleutel op te halen:
 
 ```python
 primary, secondary = service.get_keys()
@@ -139,38 +139,38 @@ print(primary)
 ```
 
 > [!IMPORTANT]
-> Als u een sleutel opnieuw moet genereren, gebruikt u [`service.regen_key`](/python/api/azureml-core/azureml.core.webservice%28class%29) .
+> Als u een sleutel opnieuw wilt maken, gebruikt u [`service.regen_key`](/python/api/azureml-core/azureml.core.webservice%28class%29) .
 
 #### <a name="authentication-with-tokens"></a>Verificatie met tokens
 
-Wanneer u token verificatie inschakelt voor een webservice, moet een gebruiker een Azure Machine Learning JWT-token voor de webservice opgeven om deze te openen. 
+Wanneer u tokenverificatie voor een webservice inschakelen, moet een gebruiker een Azure Machine Learning JWT-token aan de webservice om toegang te krijgen. 
 
-* Token verificatie is standaard uitgeschakeld wanneer u implementeert in azure Kubernetes service.
-* Token authenticatie wordt niet ondersteund wanneer u implementeert naar Azure Container Instances.
+* Tokenverificatie is standaard uitgeschakeld wanneer u implementeert in Azure Kubernetes Service.
+* Tokenverificatie wordt niet ondersteund wanneer u implementeert in Azure Container Instances.
 
-Als u de verificatie van tokens wilt beheren, gebruikt `token_auth_enabled` u de para meter bij het maken of bijwerken van een implementatie.
+Als u tokenverificatie wilt controleren, gebruikt u `token_auth_enabled` de parameter bij het maken of bijwerken van een implementatie.
 
-Als token verificatie is ingeschakeld, kunt u de `get_token` methode gebruiken om een Bearer-token op te halen en de verval tijd van tokens:
+Als tokenverificatie is ingeschakeld, kunt u de methode gebruiken om een Bearer-token en de verlooptijd van `get_token` tokens op te halen:
 
 ```python
 token, refresh_by = service.get_token()
 print(token)
 ```
 
-Als u de [Azure CLI en de uitbrei ding machine learning](reference-azure-machine-learning-cli.md)hebt, kunt u de volgende opdracht gebruiken om een token op te halen:
+Als u de Azure CLI en de extensie [machine learning hebt,](reference-azure-machine-learning-cli.md)kunt u de volgende opdracht gebruiken om een token op te halen:
 
 ```azurecli
 az ml service get-access-token -n <service-name>
 ```
 
 > [!IMPORTANT]
-> Momenteel is de enige manier om het token op te halen met behulp van de Azure Machine Learning SDK of de Azure CLI machine learning-extensie.
+> Momenteel kunt u het token alleen ophalen met behulp van de Azure Machine Learning-SDK of de Azure CLI machine learning extensie.
 
-U moet een nieuw token aanvragen na de tijd van de token `refresh_by` . 
+U moet na de tijd van het token een nieuw token `refresh_by` aanvragen. 
 
-## <a name="request-data"></a>Gegevens opvragen
+## <a name="request-data"></a>Gegevens aanvragen
 
-De REST API verwacht dat de hoofd tekst van de aanvraag een JSON-document is met de volgende structuur:
+De REST API verwacht dat de body van de aanvraag een JSON-document is met de volgende structuur:
 
 ```json
 {
@@ -182,14 +182,14 @@ De REST API verwacht dat de hoofd tekst van de aanvraag een JSON-document is met
 ```
 
 > [!IMPORTANT]
-> De structuur van de gegevens moet overeenkomen met het Score script en het model in de service. Het Score script kan de gegevens wijzigen voordat deze aan het model worden door gegeven.
+> De structuur van de gegevens moet overeenkomen met wat het scorescript en model in de service verwachten. Het scorescript kan de gegevens wijzigen voordat deze aan het model worden doorgeven.
 
 ### <a name="binary-data"></a>Binaire gegevens
 
-Zie [binaire gegevens](how-to-deploy-advanced-entry-script.md#binary-data)voor meer informatie over het inschakelen van ondersteuning voor binaire gegevens in uw service.
+Zie Binaire gegevens voor meer informatie over het inschakelen van ondersteuning voor binaire gegevens in [uw service.](how-to-deploy-advanced-entry-script.md#binary-data)
 
 > [!TIP]
-> Het inschakelen van ondersteuning voor binaire gegevens vindt plaats in het score.py-bestand dat wordt gebruikt door het geïmplementeerde model. Gebruik van de client de HTTP-functionaliteit van uw programmeer taal. Zo verzendt het volgende code fragment de inhoud van een JPG-bestand naar een webservice:
+> Het inschakelen van ondersteuning voor binaire gegevens vindt plaats in score.py bestand dat wordt gebruikt door het geïmplementeerde model. Gebruik vanuit de client de HTTP-functionaliteit van uw programmeertaal. Het volgende fragment verzendt bijvoorbeeld de inhoud van een JPG-bestand naar een webservice:
 >
 > ```python
 > import requests
@@ -201,11 +201,11 @@ Zie [binaire gegevens](how-to-deploy-advanced-entry-script.md#binary-data)voor m
 
 ### <a name="cross-origin-resource-sharing-cors"></a>CORS (Cross-Origin Resource Sharing, cross-origin-resource delen)
 
-Zie [Cross-Origin-resource delen](how-to-deploy-advanced-entry-script.md#cors)voor meer informatie over het inschakelen van CORS-ondersteuning in uw service.
+Zie [Cross-origin resource sharing](how-to-deploy-advanced-entry-script.md#cors)voor meer informatie over het inschakelen van CORS-ondersteuning in uw service.
 
-## <a name="call-the-service-c"></a>De service (C#) aanroepen
+## <a name="call-the-service-c"></a>De service aanroepen (C#)
 
-In dit voor beeld ziet u hoe u C# kunt gebruiken om de webservice aan te roepen die vanuit de [trein in het notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb) -voor beeld is gemaakt:
+In dit voorbeeld wordt gedemonstreerd hoe u C# gebruikt om de webservice aan te roepen die is gemaakt vanuit het voorbeeld [Trainen in notebook:](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb)
 
 ```csharp
 using System;
@@ -294,7 +294,7 @@ De geretourneerde resultaten zijn vergelijkbaar met het volgende JSON-document:
 
 ## <a name="call-the-service-go"></a>De service aanroepen (Go)
 
-In dit voor beeld ziet u hoe u kunt gebruiken om de webservice aan te roepen die is gemaakt vanuit de [trein in het notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb) -voor beeld:
+In dit voorbeeld wordt gedemonstreerd hoe u Go gebruikt om de webservice aan te roepen die is gemaakt vanuit het voorbeeld [Trainen in notebook:](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb)
 
 ```go
 package main
@@ -386,7 +386,7 @@ De geretourneerde resultaten zijn vergelijkbaar met het volgende JSON-document:
 
 ## <a name="call-the-service-java"></a>De service aanroepen (Java)
 
-Dit voor beeld laat zien hoe u Java gebruikt voor het aanroepen van de webservice die is gemaakt op basis van de [trein in het notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb) -voor beeld:
+In dit voorbeeld wordt gedemonstreerd hoe u Java gebruikt om de webservice aan te roepen die is gemaakt vanuit het voorbeeld [Trainen in notebook:](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb)
 
 ```java
 import java.io.IOException;
@@ -464,9 +464,9 @@ De geretourneerde resultaten zijn vergelijkbaar met het volgende JSON-document:
 [217.67978776218715, 224.78937091757172]
 ```
 
-## <a name="call-the-service-python"></a>De service aanroepen (python)
+## <a name="call-the-service-python"></a>De service aanroepen (Python)
 
-In dit voor beeld wordt gedemonstreerd hoe u python gebruikt om de webservice aan te roepen die is gemaakt via de [trein in een notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb) -voor beeld:
+In dit voorbeeld ziet u hoe u Python gebruikt voor het aanroepen van de webservice die is gemaakt vanuit het voorbeeld [Trainen in notebook:](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/notebook_runner/training_notebook.ipynb)
 
 ```python
 import requests
@@ -525,11 +525,11 @@ De geretourneerde resultaten zijn vergelijkbaar met het volgende JSON-document:
 ```
 
 
-## <a name="web-service-schema-openapi-specification"></a>Web Service-schema (OpenAPI-specificatie)
+## <a name="web-service-schema-openapi-specification"></a>Webserviceschema (OpenAPI-specificatie)
 
-Als u automatische schema generatie hebt gebruikt met uw implementatie, kunt u het adres van de OpenAPI-specificatie voor de service ophalen met behulp van de [eigenschap swagger_uri](/python/api/azureml-core/azureml.core.webservice.local.localwebservice#swagger-uri). (Bijvoorbeeld `print(service.swagger_uri)` .) Gebruik een GET-aanvraag of open de URI in een browser om de specificatie op te halen.
+Als u automatische schemageneratie hebt gebruikt voor uw implementatie, kunt u het adres van de OpenAPI-specificatie voor de service op halen met behulp van [swagger_uri eigenschap](/python/api/azureml-core/azureml.core.webservice.local.localwebservice#swagger-uri). `print(service.swagger_uri)`(Bijvoorbeeld.) Gebruik een GET-aanvraag of open de URI in een browser om de specificatie op te halen.
 
-Het volgende JSON-document is een voor beeld van een schema (OpenAPI-specificatie) dat is gegenereerd voor een implementatie:
+Het volgende JSON-document is een voorbeeld van een schema (OpenAPI-specificatie) dat is gegenereerd voor een implementatie:
 
 ```json
 {
@@ -663,22 +663,22 @@ Het volgende JSON-document is een voor beeld van een schema (OpenAPI-specificati
 }
 ```
 
-Zie [OpenAPI Specification](https://swagger.io/specification/)(Engelstalig) voor meer informatie.
+Zie [OpenAPI-specificatie voor meer informatie.](https://swagger.io/specification/)
 
-Zie [Swagger-CodeGen](https://github.com/swagger-api/swagger-codegen)voor een hulp programma waarmee client bibliotheken kunnen worden gemaakt op basis van de specificatie.
+Zie [swagger-codegen](https://github.com/swagger-api/swagger-codegen)voor een hulpprogramma dat clientbibliotheken op de specificatie kan maken.
 
 
 > [!TIP]
-> U kunt het schema-JSON-document ophalen nadat u de service hebt geïmplementeerd. Gebruik de [eigenschap swagger_uri](/python/api/azureml-core/azureml.core.webservice.local.localwebservice#swagger-uri) van de geïmplementeerde webservice (bijvoorbeeld `service.swagger_uri` ) om de URI naar het Swagger-bestand van de lokale webservice op te halen.
+> U kunt het JSON-document voor het schema ophalen nadat u de service hebt geïmplementeerd. Gebruik de [swagger_uri van](/python/api/azureml-core/azureml.core.webservice.local.localwebservice#swagger-uri) de geïmplementeerde webservice (bijvoorbeeld ) om de URI naar het Swagger-bestand van de lokale `service.swagger_uri` webservice op te halen.
 
-## <a name="consume-the-service-from-power-bi"></a>De service van Power BI gebruiken
+## <a name="consume-the-service-from-power-bi"></a>De service van Power BI
 
-Power BI ondersteunt het gebruik van Azure Machine Learning webservices om de gegevens in Power BI te verrijken met voor spellingen. 
+Power BI ondersteunt het gebruik van Azure Machine Learning webservices om de gegevens in de Power BI te verrijken met voorspellingen. 
 
-Als u een webservice wilt genereren die wordt ondersteund voor gebruik in Power BI, moet het schema ondersteuning bieden voor de indeling die wordt vereist door Power BI. [Meer informatie over het maken van een door Power bi ondersteund schema](./how-to-deploy-advanced-entry-script.md#power-bi-compatible-endpoint).
+Als u een webservice wilt genereren die wordt ondersteund voor gebruik in Power BI, moet het schema de indeling ondersteunen die is vereist door Power BI. [Informatie over het maken van een Power BI ondersteund schema](./how-to-deploy-advanced-entry-script.md#power-bi-compatible-endpoint).
 
 Zodra de webservice is geïmplementeerd, kan deze worden gebruikt vanuit Power BI-gegevensstromen. [Een Azure Machine Learning-webservice gebruiken vanuit Power BI](/power-bi/service-machine-learning-integration).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga naar het [Azure Architecture Center](/azure/architecture/reference-architectures/ai/realtime-scoring-python)om een referentie architectuur voor realtime-scores van python-en diepe leer modellen te bekijken.
+Als u een referentiearchitectuur wilt weergeven voor het in realtime scoren van Python- en Deep Learning-modellen, gaat u naar het [Azure Architecture Center.](/azure/architecture/reference-architectures/ai/realtime-scoring-python)

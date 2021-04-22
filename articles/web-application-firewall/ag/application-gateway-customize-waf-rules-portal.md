@@ -1,71 +1,65 @@
 ---
-title: Regels aanpassen met behulp van portal-Azure Web Application firewall
-description: Dit artikel bevat informatie over het aanpassen van de firewall regels voor webtoepassingen in Application Gateway met de Azure Portal.
+title: Regels aanpassen met behulp van de portal - Azure Web Application Firewall
+description: Dit artikel bevat informatie over het aanpassen van Web Application Firewall regels in Application Gateway met de Azure Portal.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/14/2019
+ms.date: 04/21/2021
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: c4635333614ee1c0fd0322c29a659380fb4315c9
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 0ab122d178e5390a53e5a3a39f1b7763b298dc6d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "74048379"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878322"
 ---
-# <a name="customize-web-application-firewall-rules-using-the-azure-portal"></a>De firewall regels voor web-apps aanpassen met behulp van de Azure Portal
+# <a name="customize-web-application-firewall-rules-using-the-azure-portal"></a>Pas Web Application Firewall regels aan met behulp van de Azure Portal
 
-De Azure-toepassing gateway Web Application firewall (WAF) biedt beveiliging voor webtoepassingen. Deze beveiligingen worden verzorgd door de OWASP (open Web Application Security project) kern regelset (CRS). Sommige regels kunnen valse positieven veroorzaken en werkelijk verkeer blok keren. Daarom biedt Application Gateway de mogelijkheid om regel groepen en regels aan te passen. Zie voor meer informatie over de specifieke regel groepen en regels de [lijst met CRS-regel groepen en-regels voor Web Application firewall](application-gateway-crs-rulegroups-rules.md).
+De Azure Application Gateway Web Application Firewall (WAF) biedt beveiliging voor webtoepassingen. Deze beveiligingen worden geboden door de Open Web Application Security Project (OWASP) Core Rule Set (CRS). Sommige regels kunnen fout-positieven veroorzaken en echt verkeer blokkeren. Daarom biedt Application Gateway de mogelijkheid om regelgroepen en regels aan te passen. Zie List of Web Application Firewall CRS rule groups and rules (Lijst met crs-regelgroepen en -regels) voor meer informatie over de specifieke [regelgroepen en regels.](application-gateway-crs-rulegroups-rules.md)
 
 >[!NOTE]
-> Als uw toepassings gateway geen gebruik maakt van de WAF-laag, wordt de optie voor het bijwerken van de toepassings gateway naar de laag WAF weer gegeven in het rechterdeel venster. 
+> Als uw toepassingsgateway niet gebruik maakt van de WAF-laag, wordt de optie voor het upgraden van de toepassingsgateway naar de WAF-laag weergegeven in het rechterdeelvenster. 
 
-![WAF inschakelen][fig1]
+:::image type="content" source="../media/application-gateway-customize-waf-rules-portal/1.png" alt-text="WAF inschakelen"::: 
 
-## <a name="view-rule-groups-and-rules"></a>Regel groepen en-regels weer geven
+## <a name="view-rule-groups-and-rules"></a>Regelgroepen en regels weergeven
 
-**Regel groepen en-regels weer geven**
-1. Blader naar de Application Gateway en selecteer **Web Application firewall**.  
-2. Selecteer uw **WAF-beleid**.
-2. Selecteer **beheerde regels**.
+**Regelgroepen en regels weergeven**
+1. Blader naar de toepassingsgateway en selecteer vervolgens **Web Application Firewall.**  
+2. Selecteer uw **WAF-beleid.**
+2. Selecteer **Beheerde regels.**
 
-   In deze weer gave ziet u een tabel op de pagina van alle regel groepen die zijn opgegeven met de gekozen regelset. Alle selectie vakjes van de regel zijn geselecteerd.
+   In deze weergave ziet u een tabel op de pagina van alle regelgroepen die zijn opgegeven met de gekozen regelset. Alle selectievakjes van de regel zijn geselecteerd.
 
-## <a name="disable-rule-groups-and-rules"></a>Regel groepen en regels uitschakelen
+## <a name="disable-rule-groups-and-rules"></a>Regelgroepen en regels uitschakelen
 
 > [!IMPORTANT]
-> Wees voorzichtig met het uitschakelen van regel groepen of regels. Dit kan u bloot stellen aan verhoogde beveiligings Risico's.
+> Wees voorzichtig bij het uitschakelen van regelgroepen of regels. Dit kan leiden tot verhoogde beveiligingsrisico's.
 
-Wanneer u regels uitschakelt, kunt u een volledige regel groep of specifieke regels onder een of meer regel groepen uitschakelen. 
+**Regelgroepen of specifieke regels uitschakelen**
 
-**Regel groepen of specifieke regels uitschakelen**
+   1. Zoek naar de regels of regelgroepen die u wilt uitschakelen.
+   2. Schakel de selectievakjes in voor de regels die u wilt uitschakelen. 
+   3. Selecteer de actie boven aan de pagina (in-/uitschakelen) voor de geselecteerde regels.
+   2. Selecteer **Opslaan**.
+    :::image type="content" source="../media/application-gateway-customize-waf-rules-portal/figure3.png" alt-text="Uitgeschakelde regels opslaan"::: 
 
-   1. Zoek naar de regels of regel groepen die u wilt uitschakelen.
-   2. Schakel de selectie vakjes in voor de regels die u wilt uitschakelen. 
-   3. Selecteer de actie boven aan de pagina (inschakelen/uitschakelen) voor de geselecteerde regels.
-   2. Selecteer **Opslaan**. 
+## <a name="mandatory-rules"></a>Verplichte regels
 
-![Wijzigingen opslaan][3]
-
-## <a name="mandatory-rules"></a>Regels verplicht
-
-De volgende lijst bevat voor waarden die ervoor zorgen dat de WAF de aanvraag in de modus voor preventie blokkeert. In de detectie modus worden ze geregistreerd als uitzonde ringen.
+De volgende lijst bevat voorwaarden die ervoor zorgen dat de WAF de aanvraag blokkeert in de preventiemodus. In de detectiemodus worden ze geregistreerd als uitzonderingen.
 
 Deze kunnen niet worden geconfigureerd of uitgeschakeld:
 
-* Fout bij het parseren van de aanvraag tekst leidt ertoe dat de aanvraag wordt geblokkeerd, tenzij de hoofd inspectie is uitgeschakeld (XML-, JSON-, formulier gegevens)
-* De gegevens lengte van de aanvraag tekst (zonder bestanden) is groter dan de geconfigureerde limiet
-* De aanvraag tekst (inclusief bestanden) is groter dan de limiet
+* Als de aanvraag niet kan worden geparseerd, wordt de aanvraag geblokkeerd, tenzij de controle van de body is uitgeschakeld (XML, JSON, formuliergegevens)
+* De gegevenslengte van de aanvraag body (zonder bestanden) is groter dan de geconfigureerde limiet
+* Aanvraag body (inclusief bestanden) is groter dan de limiet
 * Er is een interne fout opgetreden in de WAF-engine
 
-CRS 3. x specifiek:
+CRS 3.x specifiek:
 
-* Drempel waarde voor binnenkomende afwijkings Score overschreden
+* Inkomende anomaliescore heeft drempelwaarde overschreden
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u de uitgeschakelde regels hebt geconfigureerd, kunt u meer informatie over het weer geven van uw WAF-logboeken bekijken. Zie [Application Gateway Diagnostics (diagnostische](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging)gegevens) voor meer informatie.
-
-[fig1]: ../media/application-gateway-customize-waf-rules-portal/1.png
-[3]: ../media/application-gateway-customize-waf-rules-portal/figure3.png
+Nadat u de uitgeschakelde regels hebt geconfigureerd, kunt u leren hoe u uw WAF-logboeken kunt weergeven. Zie diagnostische Application Gateway [voor meer informatie.](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging)

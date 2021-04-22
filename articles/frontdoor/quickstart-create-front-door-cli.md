@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/19/2021
 ms.author: duau
-ms.openlocfilehash: 99204a2d4c3a2455f0916878fb09a348dc79ac7a
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 3567d5af31b0c7bc2443e3d02426a5bb7aba06f7
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107778751"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861999"
 ---
 # <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application-using-azure-cli"></a>Quickstart: Een Front Door maken voor een wereldwijde webtoepassing met hoge beschikbaarheid met Azure CLI
 
@@ -67,7 +67,7 @@ Als u nog geen web-app hebt, voert u het volgende script uit om twee voorbeelden
 
 ### <a name="create-app-service-plans"></a>App Service-abonnementen maken
 
-Voordat u de web-apps kunt maken, hebt u twee App Service-plannen nodig, één in VS *-* centraal en de tweede in *VS - oost.*
+Voordat u de web-apps kunt maken, hebt u twee App Service-abonnementen nodig, één in *VS -* centraal en de tweede in VS *- oost.*
 
 Maak App Service-abonnementen met de opdracht [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create&preserve-view=true):
 
@@ -105,7 +105,7 @@ Noteer de standaardhostnaam van elke web-app, zodat u de backend-adressen kunt d
 
 Maak een eenvoudige Front Door met de standaardinstellingen voor taakverdeling, statustest en routeringsregels door de volgende stappen uit te voeren:
 
-Front Door maken met [az network front-door create](/cli/azure/ext/front-door/network/front-door#ext_front_door_az_network_front_door_create&preserve-view=true):
+Front Door maken met [az network front-door create](/cli/azure/network/front-door#az_network_front_door_create&preserve-view=true):
 
 ```azurecli-interactive
 az network front-door create \

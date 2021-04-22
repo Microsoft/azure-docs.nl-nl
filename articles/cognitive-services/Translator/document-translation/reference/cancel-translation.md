@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/25/2021
+ms.date: 04/21/2021
 ms.author: v-jansk
-ms.openlocfilehash: 3de052f50676065a6656f77a0ea68cf8c9ab46a8
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.openlocfilehash: e3b7da30f54b9d9468b46a2cd0972a3397e5cdce
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107836162"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107865102"
 ---
 # <a name="cancel-translation"></a>Vertaling annuleren
 
@@ -74,7 +74,7 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |--- |--- |--- |
 |id|tekenreeks|Id van de bewerking.|
 |createdDateTimeUtc|tekenreeks|Datum/tijd van bewerking gemaakt.|
-|lastActionDateTimeUtc|tekenreeks|Datum/tijd waarin de status van de bewerking is bijgewerkt.|
+|lastActionDateTimeUtc|tekenreeks|De datum waarop de status van de bewerking is bijgewerkt.|
 |status|Tekenreeks|Lijst met mogelijke statussen voor een taak of document: <ul><li>Geannuleerd</li><li>Annuleren</li><li>Mislukt</li><li>Niet gestart</li><li>Wordt uitgevoerd</li><li>Geslaagd</li><li>ValidationFailed</li></ul>|
 |samenvatting|StatusSummary|Samenvatting met de details die hieronder worden vermeld.|
 |summary.total|geheel getal|Telling van het totale aantal documenten.|

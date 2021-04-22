@@ -8,16 +8,16 @@ ms.topic: article
 ms.date: 02/23/2021
 ms.author: msangapu
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 5a4572c1292f691f1883a720d07c3f0130f1c8f3
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 3610c4a571d73631ed39d416c72d0d6004dd170d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107480287"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871755"
 ---
 # <a name="open-an-ssh-session-to-a-linux-container-in-azure-app-service"></a>Open een SSH-sessie naar een Linux-container in Azure App Service
 
-[Secure Shell (SSH)](https://wikipedia.org/wiki/Secure_Shell) wordt vaak gebruikt om beheeropdrachten op afstand uit te voeren vanaf een opdrachtregelterminal. App Service op Linux biedt SSH-ondersteuning in de app-container. 
+[Secure Shell (SSH)](https://wikipedia.org/wiki/Secure_Shell) wordt vaak gebruikt om beheeropdrachten op afstand uit te voeren vanuit een opdrachtregelterminal. App Service op Linux biedt SSH-ondersteuning in de app-container. 
 
 ![Linux App Service SSH](./media/configure-linux-open-ssh-session/app-service-linux-ssh.png)
 
@@ -51,7 +51,7 @@ az webapp create-remote-connection --subscription <subscription-id> --resource-g
 > `&` aan het einde van de opdracht is alleen voor het gemak als u Cloud Shell. Het proces wordt op de achtergrond uitgevoerd, zodat u de volgende opdracht in dezelfde shell kunt uitvoeren.
 
 > [!NOTE]
-> Als deze opdracht mislukt, zorg er dan voor [dat externe foutopsporing](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0) is *uitgeschakeld* met de volgende opdracht:
+> Als deze opdracht mislukt, moet u ervoor zorgen dat [externe foutopsporing](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0) is *uitgeschakeld* met de volgende opdracht:
 >
 > ```azurecli-interactive
 > az webapp config set --resource-group <resource-group-name> -n <app-name> --remote-debugging-enabled=false
@@ -71,7 +71,7 @@ Open een SSH-sessie met uw container met de client van uw keuze, met behulp van 
 ssh root@127.0.0.1 -p <port>
 ```
 
-Wanneer u hier om wordt gevraagd, typt `yes` u om door te gaan met het maken van verbinding. Vervolgens wordt u om het wachtwoord gevraagd. Gebruik `Docker!` , dat eerder voor u is weergegeven.
+Wanneer u hier om wordt gevraagd, typt `yes` u om door te gaan met het maken van verbinding. Vervolgens wordt u om het wachtwoord gevraagd. Gebruik `Docker!` , dat eerder aan u is weergegeven.
 
 <pre>
 Warning: Permanently added '[127.0.0.1]:21382' (ECDSA) to the list of known hosts.
@@ -120,9 +120,9 @@ Load average: 0.07 0.04 0.08 4/765 45738
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt vragen en zorgen posten op het [Azure-forum](/answers/topics/azure-webapps.html).
+U kunt vragen en zorgen posten op het [Azure-forum.](/answers/topics/azure-webapps.html)
 
-Voor meer informatie over Web App for Containers, zie:
+Zie voor meer informatie over Web App for Containers:
 
 * [Introductie van externe debugging van Node.js-apps op Azure App Service van VS Code](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0)
 * [Quickstart: Een aangepaste container uitvoeren op App Service](quickstart-custom-container.md?pivots=container-linux)

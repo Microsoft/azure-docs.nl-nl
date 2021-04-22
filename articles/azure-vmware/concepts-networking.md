@@ -1,75 +1,75 @@
 ---
-title: Concepten-netwerk-interconnectiviteit
-description: Meer informatie over belang rijke aspecten en gebruiks voorbeelden van netwerken en interconnectiviteit in azure VMware-oplossing.
+title: Concepten - Interconnectiviteit tussen netwerken
+description: Meer informatie over belangrijke aspecten en gebruiksgevallen van netwerken en interconnectiviteit in Azure VMware Solution.
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: 4c964151c49e2fea56031dd24bacf4655753a18d
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a6c86c0a9eb8e07a91a094ddf5d6fb77b0eddf67
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "103491806"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871683"
 ---
-# <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution-netwerken en interconnectiviteit-concepten
+# <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution en interconnectiviteitsconcepten
 
 [!INCLUDE [avs-networking-description](includes/azure-vmware-solution-networking-description.md)]
 
-Er zijn twee manieren om interconnectiviteit te maken in de privécloud van Azure VMware-oplossing:
+Er zijn twee manieren om interconnectiviteit in de Azure VMware Solution privécloud:
 
-- Met [**eenvoudige Azure-interconnectiviteit**](#azure-virtual-network-interconnectivity) kunt u uw privécloud beheren en gebruiken met slechts één virtueel netwerk in Azure. Deze implementatie is het meest geschikt voor evaluaties of implementaties van Azure VMware-oplossingen waarvoor geen toegang nodig is vanuit on-premises omgevingen.
+- [**Met interconnectiviteit van**](#azure-virtual-network-interconnectivity) alleen Azure kunt u uw privécloud beheren en gebruiken met slechts één virtueel netwerk in Azure. Deze implementatie is het meest geschikt voor Azure VMware Solution evaluaties of implementaties waarvoor geen toegang vanuit on-premises omgevingen is vereist.
 
-- [**Volledig on-premises naar privécloud interconnectiviteit**](#on-premises-interconnectivity) breidt de basis implementatie van alleen Azure uit met interconnectiviteit tussen on-premises en Azure VMware-oplossingen voor persoonlijke Clouds.
+- [**Volledige interconnectiviteit van on-premises**](#on-premises-interconnectivity) naar privécloud breidt de basis-azure-implementatie uit met interconnectiviteit tussen on-premises en Azure VMware Solution privéclouds.
  
-In dit artikel worden de belangrijkste concepten besproken waarmee netwerken en interconnectiviteit worden gemaakt, met inbegrip van vereisten en beperkingen. In dit artikel vindt u de informatie die u nodig hebt om uw netwerk te configureren voor gebruik met de Azure VMware-oplossing.
+In dit artikel worden de belangrijkste concepten beschreven die netwerken en interconnectiviteit tot stand brengen, inclusief vereisten en beperkingen. In dit artikel vindt u de informatie die u moet weten om uw netwerk te configureren voor gebruik met Azure VMware Solution.
 
-## <a name="azure-vmware-solution-private-cloud-use-cases"></a>Azure VMware-oplossing Private Cloud Use cases
+## <a name="azure-vmware-solution-private-cloud-use-cases"></a>Azure VMware Solution van privéclouds
 
-De use cases voor persoonlijke Clouds van Azure VMware-oplossingen zijn:
-- Nieuwe workloads voor virtuele VMware-machines in de Cloud
-- VM-werk belasting bursting naar de Cloud (alleen on-premises naar Azure VMware-oplossing)
-- Migratie van VM-workloads naar de Cloud (alleen on-premises naar Azure VMware-oplossing)
-- Herstel na nood geval (Azure VMware-oplossing voor Azure VMware-oplossing of on-premises naar Azure VMware-oplossing)
-- Verbruik van Azure-Services
+De gebruiksgevallen voor Azure VMware Solution privé clouds zijn onder andere:
+- Nieuwe VMware-VM-workloads in de cloud
+- Bursting van VM-workloads naar de cloud (on-premises Azure VMware Solution alleen)
+- Migratie van VM-workloads naar de cloud (on-premises Azure VMware Solution alleen)
+- Herstel na noodherstel (Azure VMware Solution naar Azure VMware Solution of on-premises naar Azure VMware Solution)
+- Verbruik van Azure-services
 
 > [!TIP]
-> Alle use cases voor de Azure VMware Solution service zijn ingeschakeld met on-premises-verbinding met de privécloud.
+> Alle use cases voor de Azure VMware Solution-service zijn ingeschakeld met on-premises naar privécloudconnectiviteit.
 
-## <a name="azure-virtual-network-interconnectivity"></a>Azure Virtual Network interconnectiviteit
+## <a name="azure-virtual-network-interconnectivity"></a>Interconnectiviteit van virtueel Azure-netwerk
 
-U kunt uw virtuele Azure-netwerk verbinden met de Azure VMware-oplossing voor de privécloud-implementatie. U kunt uw persoonlijke cloud van Azure VMware-oplossingen beheren, werk belastingen gebruiken in uw privécloud en toegang krijgen tot andere Azure-Services.
+U kunt uw virtuele Azure-netwerk verbinden met Azure VMware Solution implementatie van de privécloud. U kunt uw privécloud Azure VMware Solution, workloads in uw privécloud gebruiken en toegang krijgen tot andere Azure-services.
 
-In het onderstaande diagram ziet u de basis netwerk interconnectiviteit die zijn ingesteld op het moment van een implementatie van een privécloud. De logische netwerken tussen een virtueel netwerk in Azure en een privécloud worden weer gegeven. Deze verbinding wordt tot stand gebracht via een back-ExpressRoute die deel uitmaakt van de Azure VMware-oplossings service. De interconnectiviteit voldoet aan de volgende primaire use-cases:
+In het onderstaande diagram ziet u de basisnetwerk interconnectiviteit die tot stand is gebracht op het moment van de implementatie van een privécloud. Het toont de logische netwerken tussen een virtueel netwerk in Azure en een privécloud. Deze connectiviteit wordt tot stand gebracht via een back-Azure VMware Solution ExpressRoute. De interconnectiviteit voldoet aan de volgende primaire gebruiksgevallen:
 
-- Inkomende toegang tot de vCenter-Server en NSX-T-beheer die toegankelijk is vanaf virtuele machines in uw Azure-abonnement.
-- Uitgaande toegang van Vm's op de privécloud naar Azure-Services.
-- Binnenkomende toegang van workloads die worden uitgevoerd in de privécloud.
+- Inkomende toegang tot de vCenter-server en NSX-T-manager die toegankelijk is vanaf VM's in uw Azure-abonnement.
+- Uitgaande toegang van VM's in de privécloud naar Azure-services.
+- Inkomende toegang van workloads die worden uitgevoerd in de privécloud.
 
 
-:::image type="content" source="media/concepts/adjacency-overview-drawing-single.png" alt-text="Basis-virtueel netwerk naar connectiviteit in de privécloud" border="false":::
+:::image type="content" source="media/concepts/adjacency-overview-drawing-single.png" alt-text="Basisverbinding van virtueel netwerk naar privécloud" border="false":::
 
 ## <a name="on-premises-interconnectivity"></a>On-premises interconnectiviteit
 
-In het volledig interconnected scenario hebt u toegang tot de Azure VMware-oplossing vanuit uw Azure Virtual Network (s) en on-premises. Deze implementatie is een uitbrei ding van de basis implementatie die wordt beschreven in de vorige sectie. Een ExpressRoute-circuit is vereist om vanuit on-premises verbinding te maken met uw persoonlijke cloud van Azure VMware-oplossing in Azure.
+In het volledig onderling verbonden scenario hebt u toegang tot de Azure VMware Solution uw virtuele Azure-netwerk(s) en on-premises. Deze implementatie is een uitbreiding van de basis implementatie die in de vorige sectie is beschreven. Een ExpressRoute-circuit is vereist om on-premises verbinding te maken met Azure VMware Solution privécloud in Azure.
 
-In het onderstaande diagram ziet u de interconnectiviteit on-premises naar de privécloud, waarmee de volgende gebruiks voorbeelden worden ingeschakeld:
+In het onderstaande diagram ziet u de interconnectiviteit tussen on-premises en privéclouds, waardoor de volgende gebruiksgevallen mogelijk zijn:
 
-- Hot/koude vCenter vMotion tussen on-premises en Azure VMware-oplossing.
-- On-premises naar Azure VMware-oplossing persoonlijke Cloud beheer toegang.
+- Hot/cold vCenter vMotion tussen on-premises en Azure VMware Solution.
+- On-premises om Azure VMware Solution toegang tot privécloudbeheer te bieden.
 
-:::image type="content" source="media/concepts/adjacency-overview-drawing-double.png" alt-text="Virtuele netwerken en on-premises volledige particuliere cloud connectiviteit" border="false":::
+:::image type="content" source="media/concepts/adjacency-overview-drawing-double.png" alt-text="Connectiviteit van virtuele netwerken en on-premises volledige privéclouds" border="false":::
 
-Voor een volledige interconnectiviteit voor uw privécloud moet u ExpressRoute Global Reach inschakelen en vervolgens een autorisatie sleutel en een privé-peering-ID aanvragen voor Global Reach in de Azure Portal. De autorisatie sleutel en de peering-ID worden gebruikt om Global Reach te maken tussen een ExpressRoute-circuit in uw abonnement en het ExpressRoute-circuit voor uw privécloud. Zodra de twee ExpressRoute-circuits zijn gekoppeld, worden netwerk verkeer tussen uw on-premises omgevingen gerouteerd naar uw privécloud. Voor meer informatie over de procedures raadpleegt u de [zelf studie over het maken van een ExpressRoute Global Reach peering naar een privécloud](tutorial-expressroute-global-reach-private-cloud.md).
+Voor volledige interconnectiviteit met uw privécloud moet u ExpressRoute Global Reach inschakelen en vervolgens een autorisatiesleutel en persoonlijke peering-id voor Global Reach in de Azure Portal. De autorisatiesleutel en peering-id worden gebruikt om een Global Reach tot stand te brengen tussen een ExpressRoute-circuit in uw abonnement en het ExpressRoute-circuit voor uw privécloud. Zodra de twee ExpressRoute-circuits zijn gekoppeld, wordt netwerkverkeer tussen uw on-premises omgevingen naar uw privécloud gerouterd. Zie de zelfstudie voor het maken van een [ExpressRoute-Global Reach peering met een privécloud](tutorial-expressroute-global-reach-private-cloud.md)voor meer informatie over de procedures.
 
 ## <a name="limitations"></a>Beperkingen
 [!INCLUDE [azure-vmware-solutions-limits](includes/azure-vmware-solutions-limits.md)]
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-Nu u de Azure VMware-oplossingen voor netwerk-en interconnectiviteit-concepten hebt behandeld, wilt u mogelijk meer informatie over:
+Nu u de verschillende netwerk- Azure VMware Solution en interconnectiviteitsconcepten hebt behandeld, kunt u het volgende leren:
 
-- [Concepten van Azure VMware-oplossingen opslag](concepts-storage.md).
-- [Concepten van Azure VMware-oplossings identiteiten](concepts-identity.md).
-- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
+- [Azure VMware Solution opslagconcepten](concepts-storage.md)
+- [Azure VMware Solution identiteitsconcepten](concepts-identity.md)
+- [Een resource Azure VMware Solution inschakelen](enable-azure-vmware-solution.md)
 
 <!-- LINKS - external -->
 [enable Global Reach]: ../expressroute/expressroute-howto-set-global-reach.md

@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 04/08/2021
-ms.openlocfilehash: 1c9434d137114560b5585b081961497412dfbf69
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 375a8f6613ff90edd3df635c8236196aab62b6ac
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107770251"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861135"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een cluster met Azure Kubernetes Service maken en koppelen
 
@@ -44,7 +44,7 @@ Azure Machine Learning kunt getrainde modellen machine learning implementeren in
 
     Geautoriseerde IP-adresbereiken werken alleen met Standard Load Balancer.
 
-- Wanneer **u een** AKS-cluster koppelt, moet het zich in hetzelfde Azure-abonnement als uw Azure Machine Learning-werkruimte.
+- Wanneer **u een** AKS-cluster koppelt, moet het zich in hetzelfde Azure-abonnement als uw Azure Machine Learning werkruimte.
 
 - Als u een privé-AKS-cluster wilt gebruiken (met Azure Private Link), moet u eerst het cluster maken en het vervolgens **koppelen** aan de werkruimte. Zie Een privé-Azure Kubernetes Service [maken voor meer informatie.](../aks/private-clusters.md)
 
@@ -52,23 +52,23 @@ Azure Machine Learning kunt getrainde modellen machine learning implementeren in
  
  - Als u modellen wilt  implementeren op GPU-knooppunten of **FPGA-knooppunten** (of een specifieke SKU), moet u een cluster maken met de specifieke SKU. Er is geen ondersteuning voor het maken van een secundaire knooppuntgroep in een bestaand cluster en het implementeren van modellen in de secundaire knooppuntgroep.
  
-- Wanneer u een cluster maakt of koppelt, kunt u selecteren of u het cluster wilt maken __voor dev-test__ of __productie.__ Als u een AKS-cluster wilt maken  voor __ontwikkeling,__ validatie en testen in plaats van productie, stelt u het __clusterdoel__ in __op dev-test.__ Als u het clusterdoel niet opgeeft, wordt er __een productiecluster__ gemaakt. 
+- Wanneer u een cluster maakt of koppelt, kunt u selecteren of u het cluster wilt maken __voor dev-test__ of __productie.__ Als u een AKS-cluster wilt maken  voor __ontwikkeling,__ validatie __en__ testen in plaats van productie, stelt u het __clusterdoel__ in __op dev-test.__ Als u het clusterdoel niet opgeeft, wordt er __een productiecluster__ gemaakt. 
 
     > [!IMPORTANT]
     > Een __dev-testcluster__ is niet geschikt voor verkeer op productieniveau en kan de deferentietijden verhogen. Dev/test-clusters bieden ook geen garantie voor fouttolerantie.
 
-- Als het cluster wordt gebruikt voor productie bij het maken of koppelen van een __cluster,__ moet het ten minste 12 virtuele __CPU's bevatten.__ Het aantal virtuele CPU's kan worden berekend door het aantal  knooppunten __in__ het cluster te vermenigvuldigen met het aantal kernen dat wordt geleverd door de geselecteerde VM-grootte. Als u bijvoorbeeld een VM-grootte van 'Standard_D3_v2' gebruikt, die 4 virtuele kernen heeft, moet u 3 of hoger selecteren als het aantal knooppunten.
+- Als het cluster voor productie wordt gebruikt bij het maken of koppelen van een __cluster,__ moet het ten minste 12 virtuele __CPU's bevatten.__ Het aantal virtuele CPU's kan worden berekend door het aantal  knooppunten __in__ het cluster te vermenigvuldigen met het aantal kernen dat wordt geleverd door de geselecteerde VM-grootte. Als u bijvoorbeeld de VM-grootte 'Standard_D3_v2' gebruikt, die 4 virtuele kernen heeft, moet u 3 of meer knooppunten selecteren.
 
-    Voor een __dev-test-cluster__ stellen we ten minste twee virtuele CPU's op.
+    Voor een __dev-testcluster__ stellen we ten minste twee virtuele CPU's op.
 
-- De Azure Machine Learning SDK biedt geen ondersteuning voor het schalen van een AKS-cluster. Als u de knooppunten in het cluster wilt schalen, gebruikt u de gebruikersinterface voor uw AKS-cluster in Azure Machine Learning-studio. U kunt alleen het aantal knooppunt wijzigen, niet de VM-grootte van het cluster. Zie de volgende artikelen voor meer informatie over het schalen van de knooppunten in een AKS-cluster:
+- De Azure Machine Learning SDK biedt geen ondersteuning voor het schalen van een AKS-cluster. Als u de knooppunten in het cluster wilt schalen, gebruikt u de gebruikersinterface voor uw AKS-cluster in de Azure Machine Learning-studio. U kunt alleen het aantal knooppunt wijzigen, niet de VM-grootte van het cluster. Zie de volgende artikelen voor meer informatie over het schalen van de knooppunten in een AKS-cluster:
 
-    - [Het aantal knooppunt in een AKS-cluster handmatig schalen](../aks/scale-cluster.md)
+    - [Het aantal knooppunt handmatig schalen in een AKS-cluster](../aks/scale-cluster.md)
     - [Automatische schaalset van clusters instellen in AKS](../aks/cluster-autoscaler.md)
 
-- __Werk het cluster niet rechtstreeks bij met behulp van een YAML-configuratie.__ Hoewel Azure Kubernetes Services updates via YAML-configuratie ondersteunt, Azure Machine Learning implementaties uw wijzigingen overschrijven. De enige twee YAML-velden die niet worden overschreven, zijn __aanvraaglimieten__ en __CPU en geheugen.__
+- __Werk het cluster niet rechtstreeks bij met behulp van een YAML-configuratie.__ Hoewel Azure Kubernetes Services updates via YAML-configuratie ondersteunt, Azure Machine Learning implementaties uw wijzigingen overschrijven. De enige twee YAML-velden die  niet worden overschreven, zijn aanvraaglimieten en __cpu en geheugen.__
 
-- Het maken van een AKS-cluster Azure Machine Learning-studio gebruikersinterface, SDK of CLI-extensie is __niet__ idempotent. Als u de resource opnieuw probeert te maken, t resulteert dit in een foutmelding dat er al een cluster met dezelfde naam bestaat.
+- Het maken van een AKS-cluster Azure Machine Learning-studio gebruikersinterface, SDK of CLI-extensie is __niet__ idempotent. Als u de resource opnieuw probeert te maken, wordt er een foutbericht weergegeven dat er al een cluster met dezelfde naam bestaat.
     
     - Het gebruik van Azure Resource Manager sjabloon en de resource [Microsoft.MachineLearningServices/workspaces/computes](/azure/templates/microsoft.machinelearningservices/2019-11-01/workspaces/computes) om een AKS-cluster te maken, is ook __niet__ idempotent. Als u de sjabloon opnieuw probeert te gebruiken om een bestaande resource bij te werken, ontvangt u dezelfde foutmelding.
 
@@ -87,7 +87,7 @@ Deze methoden voor het maken van een AKS-cluster maken gebruik __van de standaar
 Bij **het koppelen van** een bestaand AKS-cluster ondersteunen we alle momenteel ondersteunde AKS-versies.
 
 > [!NOTE]
-> Er zijn mogelijk randgevallen waarbij u een ouder cluster hebt dat niet meer wordt ondersteund. In dit geval retourneert de attach-bewerking een fout en worden de momenteel ondersteunde versies weergegeven.
+> Er zijn mogelijk randgevallen waarbij u een ouder cluster hebt dat niet meer wordt ondersteund. In dit geval retourneert de bewerking koppelen een fout en worden de momenteel ondersteunde versies weergegeven.
 >
 > U kunt **preview-versies** koppelen. Preview-functionaliteit wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Ondersteuning voor het gebruik van preview-versies is mogelijk beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
@@ -114,7 +114,7 @@ KubernetesVersion    Upgrades
 1.15.11              1.15.12, 1.16.10, 1.16.13
 ```
 
-Als u de standaardversie wilt vinden die wordt gebruikt bij **het** maken van een cluster via Azure Machine Learning, kunt u de parameter gebruiken om `--query` de standaardversie te selecteren:
+Als u de standaardversie  wilt vinden die wordt gebruikt bij het maken van een cluster via Azure Machine Learning, kunt u de `--query` parameter gebruiken om de standaardversie te selecteren:
 
 ```azurecli-interactive
 az aks get-versions -l westus --query "orchestrators[?default == `true`].orchestratorVersion" -o table
@@ -198,7 +198,7 @@ Zie de volgende referentiedocumenten voor meer informatie over de klassen, metho
 az ml computetarget create aks -n myaks
 ```
 
-Zie de naslaginformatie [over az ml computetarget create aks voor meer](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-aks) informatie.
+Zie de naslaginformatie [over az ml computetarget create aks voor meer](/cli/azure/ml/computetarget/create#az_ml_computetarget_create_aks) informatie.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -210,14 +210,14 @@ Zie Rekendoelen maken in Azure Machine Learning-studio voor meer informatie over
 
 **Geschatte tijd:** Ongeveer 5 minuten.
 
-Als u al een AKS-cluster in uw Azure-abonnement hebt, kunt u het gebruiken met uw werkruimte.
+Als u al een AKS-cluster in uw Azure-abonnement hebt, kunt u dit gebruiken met uw werkruimte.
 
 > [!TIP]
 > Het bestaande AKS-cluster kan zich in een andere Azure-regio dan uw Azure Machine Learning-werkruimte.
 
 
 > [!WARNING]
-> Maak niet meerdere gelijktijdige bijlagen aan hetzelfde AKS-cluster vanuit uw werkruimte. U kunt bijvoorbeeld één AKS-cluster koppelen aan een werkruimte met twee verschillende namen. Elke nieuwe bijlage verbreekt de vorige bestaande bijlage(en).
+> Maak niet meerdere gelijktijdige bijlagen aan hetzelfde AKS-cluster vanuit uw werkruimte. U kunt bijvoorbeeld één AKS-cluster koppelen aan een werkruimte met twee verschillende namen. Elke nieuwe bijlage zal de vorige bestaande bijlage(en) breken.
 >
 > Als u een AKS-cluster opnieuw wilt koppelen, bijvoorbeeld om TLS of een andere clusterconfiguratie-instelling te wijzigen, moet u eerst de bestaande bijlage verwijderen met behulp van [AksCompute.detach()](/python/api/azureml-core/azureml.core.compute.akscompute#detach--).
 
@@ -225,9 +225,9 @@ Zie de volgende artikelen voor meer informatie over het maken van een AKS-cluste
 
 * [Een AKS-cluster maken (CLI)](/cli/azure/aks?bc=%2fazure%2fbread%2ftoc.json&toc=%2fazure%2faks%2fTOC.json#az_aks_create)
 * [Een AKS-cluster maken (portal)](../aks/kubernetes-walkthrough-portal.md)
-* [Een AKS-cluster maken (ARM-sjabloon in Azure-snelstartsjablonen)](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aks-azml-targetcompute)
+* [Een AKS-cluster maken (ARM-sjabloon in Azure-quickstartsjablonen)](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aks-azml-targetcompute)
 
-In het volgende voorbeeld ziet u hoe u een bestaand AKS-cluster aan uw werkruimte koppelt:
+In het volgende voorbeeld ziet u hoe u een bestaand AKS-cluster koppelt aan uw werkruimte:
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -275,7 +275,7 @@ Gebruik de volgende opdracht om het bestaande cluster aan uw werkruimte te koppe
 az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w myworkspace
 ```
 
-Zie de naslaginformatie [over az ml computetarget attach aks voor meer](/cli/azure/ext/azure-cli-ml/ml/computetarget/attach#ext-azure-cli-ml-az-ml-computetarget-attach-aks) informatie.
+Zie de naslaginformatie [over az ml computetarget attach aks voor meer](/cli/azure/ml/computetarget/attach#az_ml_computetarget_attach_aks) informatie.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

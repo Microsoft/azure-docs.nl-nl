@@ -4,12 +4,12 @@ description: In deze quickstart voert u een Azure Batch-voorbeeldtaak en -taken 
 ms.topic: quickstart
 ms.date: 08/17/2020
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 48166faa016defb719d8b48c2fff84de32f6c2e4
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 1c2328db520042ceff1861b740313befbed0e20d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106168243"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876720"
 ---
 # <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Snelstartgids: Uw eerste Azure Batch-taak uitvoeren met .NET API
 
@@ -25,7 +25,7 @@ Nadat u deze snelstartgids hebt voltooid, begrijpt u de belangrijkste principes 
 
 - Een Batch-account en een gekoppeld Azure Storage-account. Raadpleeg de Batch-quickstarts met behulp van [Azure Portal](quick-create-portal.md) of [Azure CLI](quick-create-cli.md) voor instructies voor het maken van deze accounts.
 
-- [Visual Studio 2017 of later](https://www.visualstudio.com/vs) of [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) voor Linux, macOS of Windows. 
+- [Visual Studio 2017 of hoger](https://www.visualstudio.com/vs)of [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet/2.1) voor Linux, macOS of Windows. 
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

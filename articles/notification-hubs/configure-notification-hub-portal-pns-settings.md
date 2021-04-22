@@ -12,12 +12,12 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5dd1044895ba55d1fbc6be7f4f4a2d7f615daa16
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 31d915cd44bcf60f3515eb1a84309980f45d40b0
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94887260"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868281"
 ---
 # <a name="quickstart-set-up-push-notifications-in-a-notification-hub"></a>Quickstart: Pushmeldingen instellen in een notification hub
 
@@ -75,13 +75,13 @@ U hebt de **API-sleutel** voor uw Google Firebase Cloud Messaging-project (FCM) 
 
 ### <a name="set-up-push-notifications-for-google-fcm"></a>Pushmeldingen instellen voor Google FCM
 
-1. Gebruik de opdracht[az notification-hub credential gcm update](/cli/azure/ext/notification-hub/notification-hub/credential/gcm#ext-notification-hub-az-notification-hub-credential-gcm-update) om uw Google API-sleutel toe te voegen aan uw notification hub.
+1. Gebruik de opdracht[az notification-hub credential gcm update](/cli/azure/notification-hub/credential/gcm#az_notification_hub_credential_gcm_update) om uw Google API-sleutel toe te voegen aan uw notification hub.
 
    ```azurecli
    az notification-hub credential gcm update --resource-group spnhubrg --namespace-name spnhubns    --notification-hub-name spfcmtutorial1nhub --google-api-key myKey
    ```
 
-2. De Android-app heeft een verbindingsreeks nodig om verbinding te maken met de notification hub.  Gebruik de opdracht [az notification-hub authorization-rule list](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list) om het beschikbare toegangsbeleid weer te geven.  Gebruik de opdracht [az notification-hub authorization-rule list-keys](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys) om de verbindingsreeksen voor het toegangsbeleid te verkrijgen.  Geef de **primaryConnectionString** of **secondaryConnectionString** in de `--query`-parameter op om de primaire verbindingsreeks rechtstreeks te verkrijgen.
+2. De Android-app heeft een verbindingsreeks nodig om verbinding te maken met de notification hub.  Gebruik de opdracht [az notification-hub authorization-rule list](/cli/azure/notification-hub/authorization-rule#az_notification_hub_authorization_rule_list) om het beschikbare toegangsbeleid weer te geven.  Gebruik de opdracht [az notification-hub authorization-rule list-keys](/cli/azure/notification-hub/authorization-rule#az_notification_hub_authorization_rule_list_keys) om de verbindingsreeksen voor het toegangsbeleid te verkrijgen.  Geef de **primaryConnectionString** of **secondaryConnectionString** in de `--query`-parameter op om de primaire verbindingsreeks rechtstreeks te verkrijgen.
 
    ```azurecli
    #list access policies for a notification hub
@@ -94,7 +94,7 @@ U hebt de **API-sleutel** voor uw Google Firebase Cloud Messaging-project (FCM) 
    az notification-hub authorization-rule list-keys --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --name myAccessPolicyName --query primaryConnectionString
    ```
 
-3. Gebruik de opdracht [az notification-hub test-send](/cli/azure/ext/notification-hub/notification-hub#ext-notification-hub-az-notification-hub-test-send) om het verzenden van berichten naar de Android-app te testen.
+3. Gebruik de opdracht [az notification-hub test-send](/cli/azure/notification-hub#az_notification_hub_test_send) om het verzenden van berichten naar de Android-app te testen.
 
    ```azurecli
    #test with message body
@@ -104,7 +104,7 @@ U hebt de **API-sleutel** voor uw Google Firebase Cloud Messaging-project (FCM) 
    az notification-hub test-send --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --notification-format gcm --payload "{\"data\":{\"message\":\"my JSON string\"}}"
    ```
 
-Verkrijg Azure CLI-verwijzingen voor andere platforms met de opdracht [az notification-hub credential](/cli/azure/ext/notification-hub/notification-hub/credential).
+Verkrijg Azure CLI-verwijzingen voor andere platforms met de opdracht [az notification-hub credential](/cli/azure/notification-hub/credential).
 
 Zie [Pushmeldingen naar Android-apparaten verzenden met Firebase](notification-hubs-android-push-notification-google-fcm-get-started.md) voor meer informatie over het verzenden van meldingen naar een Android-app.
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 11/04/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 23615daf4a07e02b01bbd5a9cdf57ec9a81a2b76
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
-ms.translationtype: HT
+ms.openlocfilehash: 241b7c0c07d1fbaa6a43c6be4b264424612f538a
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347388"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869037"
 ---
 ::: zone target="docs"
 
@@ -52,11 +52,11 @@ Meld u aan bij de Azure Portal op [https://aka.ms/azuredataboxfromdiskdocs](http
 
 > [!div class="checklist"]
 >
-> - **Vereisten controleren** : Controleer het aantal schijven en kabels, het besturingssysteem en overige software.
-> - **Aansluiten en ontgrendelen** : Sluit het apparaat aan en ontgrendel de schijf om de gegevens te kopiëren.
-> - **Gegevens kopiëren naar de schijf en valideren** : Kopieer de gegevens naar de schijven in de van tevoren gemaakte mappen.
-> - **Schijven retourneren** : Retourneer de schijven naar het Azure-datacenter waar de gegevens zijn geüpload naar uw opslagaccount.
-> - **Gegevens in Azure controleren** : Controleer of uw gegevens zijn geüpload naar uw opslagaccount voordat u deze van de server met brongegevens verwijdert.
+> - **Vereisten controleren**: Controleer het aantal schijven en kabels, het besturingssysteem en overige software.
+> - **Aansluiten en ontgrendelen**: Sluit het apparaat aan en ontgrendel de schijf om de gegevens te kopiëren.
+> - **Gegevens kopiëren naar de schijf en valideren**: Kopieer de gegevens naar de schijven in de van tevoren gemaakte mappen.
+> - **Schijven retourneren**: Retourneer de schijven naar het Azure-datacenter waar de gegevens zijn geüpload naar uw opslagaccount.
+> - **Gegevens in Azure controleren**: Controleer of uw gegevens zijn geüpload naar uw opslagaccount voordat u deze van de server met brongegevens verwijdert.
 
 ::: zone-end
 
@@ -94,7 +94,7 @@ Gebruik deze Azure CLI-opdrachten om een Data Box Disk-taak te maken.
    az storage account create --resource-group databox-rg --name databoxtestsa
    ```
 
-1. Voer de opdracht [az databox job create](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_create) uit om een Data Box-taak te maken met de SKU DataBoxDisk:
+1. Voer de opdracht [az databox job create](/cli/azure/databox/job#az_databox_job_create) uit om een Data Box-taak te maken met de SKU DataBoxDisk:
 
    ```azurecli
    az databox job create --resource-group databox-rg --name databoxdisk-job \
@@ -104,37 +104,37 @@ Gebruik deze Azure CLI-opdrachten om een Data Box Disk-taak te maken.
        --storage-account databoxtestsa --expected-data-size 1
    ```
 
-1. Voer de opdracht [az databox job update](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_update) uit om een taak bij te werken, zoals in dit voorbeeld, waar u de naam en het e-mailadres van een contactpersoon wijzigt:
+1. Voer de opdracht [az databox job update](/cli/azure/databox/job#az_databox_job_update) uit om een taak bij te werken, zoals in dit voorbeeld, waar u de naam en het e-mailadres van een contactpersoon wijzigt:
 
    ```azurecli
    az databox job update -g databox-rg --name databox-job --contact-name "Robert Anic" --email-list RobertAnic@contoso.com
    ```
 
-   Voer de opdracht [az databox job show](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_show) uit om informatie te krijgen over de taak:
+   Voer de opdracht [az databox job show](/cli/azure/databox/job#az_databox_job_show) uit om informatie te krijgen over de taak:
 
    ```azurecli
    az databox job show --resource-group databox-rg --name databox-job
    ```
 
-   Gebruik de opdracht [az databox job list]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list) om alle Data Box-taken voor een resourcegroep te zien:
+   Gebruik de opdracht [az databox job list]( /cli/azure/databox/job#az_databox_job_list) om alle Data Box-taken voor een resourcegroep te zien:
 
    ```azurecli
    az databox job list --resource-group databox-rg
    ```
 
-   Voer de opdracht [az databox job cancel](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_cancel) uit om een taak te annuleren:
+   Voer de opdracht [az databox job cancel](/cli/azure/databox/job#az_databox_job_cancel) uit om een taak te annuleren:
 
    ```azurecli
    az databox job cancel –resource-group databox-rg --name databox-job --reason "Cancel job."
    ```
 
-   Voer de opdracht [az databox job delete](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_delete) uit om een taak te verwijderen:
+   Voer de opdracht [az databox job delete](/cli/azure/databox/job#az_databox_job_delete) uit om een taak te verwijderen:
 
    ```azurecli
    az databox job delete –resource-group databox-rg --name databox-job
    ```
 
-1. Gebruik de opdracht [az databox job list-credentials]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list_credentials) om de referenties voor een Data Box-taak weer te geven:
+1. Gebruik de opdracht [az databox job list-credentials]( /cli/azure/databox/job#az_databox_job_list_credentials) om de referenties voor een Data Box-taak weer te geven:
 
    ```azurecli
    az databox job list-credentials --resource-group "databox-rg" --name "databoxdisk-job"
@@ -170,9 +170,9 @@ Deze stap neemt ongeveer 5 minuten in beslag.
 
 De duur van deze bewerking hangt af van de hoeveelheid gegevens.
 
-1. Het station bevat de mappen *PageBlob* , *BlockBlob* , *AzureFile* , *ManagedDisk* en *DataBoxDiskImport*. De gegevens die als blok-blobs moeten worden geïmporteerd in de *BlockBlob* -map, kunt u slepen en neerzetten om ze te kopiëren. Kopieer op dezelfde manier gegevens als VHD/VHDX naar de map *PageBlob* en bijbehorende gegevens naar *AzureFile*. Kopieer de VHD's, die u als beheerde schijven wilt uploaden, naar een map onder *ManagedDisk*.
+1. Het station bevat de mappen *PageBlob*, *BlockBlob*, *AzureFile*, *ManagedDisk* en *DataBoxDiskImport*. De gegevens die als blok-blobs moeten worden geïmporteerd in de *BlockBlob*-map, kunt u slepen en neerzetten om ze te kopiëren. Kopieer op dezelfde manier gegevens als VHD/VHDX naar de map *PageBlob* en bijbehorende gegevens naar *AzureFile*. Kopieer de VHD's, die u als beheerde schijven wilt uploaden, naar een map onder *ManagedDisk*.
 
-    Er wordt voor elke submap onder de *BlockBlob* - en *PageBlob* -map een container gemaakt in het Azure-opslagaccount. Er wordt een bestandsshare gemaakt voor een submap onder *AzureFile*.
+    Er wordt voor elke submap onder de *BlockBlob*- en *PageBlob*-map een container gemaakt in het Azure-opslagaccount. Er wordt een bestandsshare gemaakt voor een submap onder *AzureFile*.
 
     Alle bestanden onder de mappen *BlockBlob* en *PageBlob* worden naar een standaardcontainer `$root` onder het Azure-opslagaccount gekopieerd. Kopieer bestanden naar een map in *AzureFile*. Bestanden die rechtstreeks naar de map *AzureFile* worden gekopieerd, mislukken en worden geüpload als blok-blobs.
 

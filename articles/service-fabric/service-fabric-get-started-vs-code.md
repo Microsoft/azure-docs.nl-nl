@@ -1,36 +1,36 @@
 ---
-title: Aan de slag met Azure Service Fabric met VS code
-description: Dit artikel bevat een overzicht van het maken van Service Fabric-toepassingen met Visual Studio code.
+title: Azure Service Fabric met VS Code Aan de slag
+description: Dit artikel is een overzicht van het maken van Service Fabric toepassingen met behulp Visual Studio Code.
 author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.custom: devx-track-js
-ms.openlocfilehash: a655199d854462285ca98a2d8f454c483c061f99
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7d54b4b048632324a58708f893a4778a56137916
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "92316658"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876075"
 ---
-# <a name="service-fabric-for-visual-studio-code"></a>Service Fabric voor Visual Studio code
+# <a name="service-fabric-for-visual-studio-code"></a>Service Fabric voor Visual Studio Code
 
-De [uitbrei ding Service Fabric reliable Services voor VS code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-service-fabric-reliable-services) biedt de hulpprogram ma's die nodig zijn voor het maken, bouwen en fouten opsporen van service Fabric toepassingen op Windows-, Linux-en macOS-besturings systemen.
+De [Service Fabric Reliable Services-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-service-fabric-reliable-services) voor VS Code biedt de hulpprogramma's die nodig zijn voor het maken, bouwen en opsporen van fouten in Service Fabric windows-, Linux- en macOS-besturingssystemen.
 
-Dit artikel bevat een overzicht van de vereisten en instellingen van de uitbrei ding, evenals het gebruik van de verschillende opdrachten die worden geleverd door de uitbrei ding. 
+In dit artikel vindt u een overzicht van de vereisten en installatie van de extensie, evenals het gebruik van de verschillende opdrachten die door de extensie worden geleverd. 
 
 > [!IMPORTANT]
-> Service Fabric Java-toepassingen kunnen worden ontwikkeld op Windows-computers, maar kunnen alleen worden geïmplementeerd op Azure Linux-clusters. Fout opsporing van Java-toepassingen wordt niet ondersteund in Windows.
+> Service Fabric Java-toepassingen kunnen worden ontwikkeld op Windows-machines, maar kunnen alleen worden geïmplementeerd op Azure Linux-clusters. Het debuggen van Java-toepassingen wordt niet ondersteund in Windows.
 
 ## <a name="prerequisites"></a>Vereisten
 
-De volgende vereiste onderdelen moeten worden geïnstalleerd in alle omgevingen.
+De volgende vereisten moeten worden geïnstalleerd in alle omgevingen.
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
 * [Git](https://git-scm.com/)
 * [Service Fabric SDK](./service-fabric-get-started.md)
-* Yeoman-generatoren: Installeer de juiste Generators voor uw toepassing
+* Yeoman Generators : installeer de juiste generatoren voor uw toepassing
 
    ```sh
    npm install -g yo
@@ -40,92 +40,92 @@ De volgende vereiste onderdelen moeten worden geïnstalleerd in alle omgevingen.
    npm install -g generator-azuresfguest
    ```
 
-De volgende vereiste onderdelen moeten worden geïnstalleerd voor Java-ontwikkeling:
+De volgende vereisten moeten worden geïnstalleerd voor Java-ontwikkeling:
 
-* [Java SDK](/azure/developer/java/fundamentals/java-jdk-long-term-support) (versie 1,8)
+* [Java SDK](/azure/developer/java/fundamentals/java-jdk-long-term-support) (versie 1.8)
 * [Gradle](https://gradle.org/install/)
-* [Fout opsporing voor Java versus code-uitbrei ding](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug) Nodig voor fout opsporing van Java-Services. Fout opsporing van Java-Services wordt alleen ondersteund in Linux. U kunt dit doen door te klikken op het pictogram extensies in de **activiteiten balk** in VS code en te zoeken naar de uitbrei ding of via de VS code Marketplace.
+* [Debugger voor Java VS Code-extensie](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug) Nodig om fouten in Java-services op te sporen. Het debuggen van Java-services wordt alleen ondersteund in Linux. U kunt installeren door te klikken op het pictogram Extensies **in** de activiteitenbalk in VS Code en te zoeken naar de extensie, of via de VS Code Marketplace.
 
-De volgende vereiste onderdelen moeten worden geïnstalleerd voor .NET core/C#-ontwikkeling:
+De volgende vereisten moeten worden geïnstalleerd voor .NET Core/C#-ontwikkeling:
 
-* [.Net core](https://www.microsoft.com/net/learn/get-started) (versie 2.0.0 of hoger)
-* [C# voor Visual Studio code (aangedreven door OmniSharp) versus code-uitbrei ding](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) Nodig voor fout opsporing van C#-Services. U kunt dit doen door te klikken op het pictogram extensies in de **activiteiten balk** in VS code en te zoeken naar de uitbrei ding of via de VS code Marketplace.
+* [.NET Core](https://dotnet.microsoft.com/download) (versie 2.0.0 of hoger)
+* [C# for Visual Studio Code (powered by OmniSharp) VS Code-extensie](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) Nodig om fouten in C#-services op te sporen. U kunt installeren door te klikken op het pictogram Extensies **in** de activiteitenbalk in VS Code en te zoeken naar de extensie, of via de VS Code Marketplace.
 
 ## <a name="setup"></a>Instellen
 
 1. Open VS Code.
-2. Klik op het pictogram uitbrei dingen in de **activiteiten balk** aan de linkerkant van VS code. Zoek naar "Service Fabric". Klik op **installeren** voor de uitbrei ding service Fabric reliable Services.
+2. Klik op het pictogram Extensies in **de activiteitenbalk** aan de linkerkant van VS Code. Zoek naar 'Service Fabric'. Klik **op Installeren** voor de Service Fabric Reliable Services extensie.
 
 ## <a name="commands"></a>Opdracht
-De uitbrei ding Service Fabric Reliable Services voor VS code biedt een groot aantal opdrachten waarmee ontwikkel aars Service Fabric projecten kunnen maken en implementeren. U kunt opdrachten vanuit het **opdracht palet** aanroepen door op, op de `(Ctrl + Shift + p)` opdracht naam in de invoer balk te drukken en de gewenste opdracht te selecteren in de lijst prompt. 
+De Service Fabric Reliable Services-extensie voor VS Code biedt veel opdrachten om ontwikkelaars te helpen bij het maken en implementeren van Service Fabric projecten. U kunt opdrachten aanroepen vanuit het **opdrachtpalet** door op te drukken, de naam van de opdracht in de invoerbalk te typen en de gewenste opdracht `(Ctrl + Shift + p)` te selecteren in de lijst met prompts. 
 
-* Service Fabric: toepassing maken 
-* Service Fabric: toepassing publiceren 
-* Service Fabric: toepassing implementeren 
-* Service Fabric: toepassing verwijderen  
-* Service Fabric: toepassing bouwen 
-* Service Fabric: toepassing opschonen 
+* Service Fabric: Toepassing maken 
+* Service Fabric: Toepassing publiceren 
+* Service Fabric: Toepassing implementeren 
+* Service Fabric: Toepassing verwijderen  
+* Service Fabric: Toepassing bouwen 
+* Service Fabric: Toepassing ops schonen 
 
-### <a name="service-fabric-create-application"></a>Service Fabric: toepassing maken
+### <a name="service-fabric-create-application"></a>Service Fabric: Toepassing maken
 
-Met de **service Fabric: opdracht maken** wordt een nieuwe service Fabric toepassing gemaakt in uw huidige werk ruimte. Afhankelijk van welke Yeoman-generators zijn geïnstalleerd op uw ontwikkel computer, kunt u verschillende soorten Service Fabric toepassing maken, met inbegrip van Java-, C#-, container-en gast projecten. 
+Met **Service Fabric: Toepassing maken maakt** u een nieuwe Service Fabric toepassing in uw huidige werkruimte. Afhankelijk van welke Yeoman-generatoren op uw ontwikkelmachine zijn geïnstalleerd, kunt u verschillende typen Service Fabric-toepassing maken, waaronder Java-, C#-, Container- en Gastprojecten. 
 
-1.  Selecteer de **service Fabric: opdracht toepassing maken**
-2.  Selecteer het type voor uw nieuwe Service Fabric-toepassing. 
+1.  Selecteer de **Service Fabric: Toepassing maken**
+2.  Selecteer het type voor de nieuwe Service Fabric toepassing. 
 3.  Voer de naam in van de toepassing die u wilt maken
-3.  Selecteer het type service dat u wilt toevoegen aan uw Service Fabric-toepassing. 
-4.  Volg de aanwijzingen om de naam van de service te wijzigen. 
-5.  De nieuwe Service Fabric-toepassing wordt weer gegeven in de werk ruimte.
-6.  Open de map nieuwe toepassing, zodat deze de hoofdmap wordt in de werk ruimte. U kunt nu door gaan met het uitvoeren van opdrachten.
+3.  Selecteer het type service dat u wilt toevoegen aan uw Service Fabric toepassing. 
+4.  Volg de aanwijzingen om de service een naam te geven. 
+5.  De nieuwe Service Fabric wordt weergegeven in de werkruimte.
+6.  Open de nieuwe toepassingsmap zodat deze de hoofdmap in de werkruimte wordt. U kunt hier doorgaan met het uitvoeren van opdrachten.
 
-### <a name="service-fabric-add-service"></a>Service Fabric: service toevoegen
-Met de opdracht **service Fabric: add service** voegt u een nieuwe service toe aan een bestaande service Fabric-toepassing. De toepassing waaraan de service wordt toegevoegd, moet de hoofd directory van de werk ruimte zijn. 
+### <a name="service-fabric-add-service"></a>Service Fabric: Service toevoegen
+De **Service Fabric: Service toevoegen voegt** een nieuwe service toe aan een bestaande Service Fabric toepassing. De toepassing waar de service aan wordt toegevoegd, moet de hoofdmap van de werkruimte zijn. 
 
-1.  Selecteer de optie **service Fabric: service toevoegen** .
-2.  Selecteer het type van uw huidige Service Fabric-toepassing. 
-3.  Selecteer het type service dat u wilt toevoegen aan uw Service Fabric-toepassing. 
-4.  Volg de aanwijzingen om de naam van de service te wijzigen. 
-5.  De nieuwe service wordt weer gegeven in de projectmap. 
+1.  Selecteer de **Service Fabric: Opdracht Service** toevoegen.
+2.  Selecteer het type van uw huidige Service Fabric toepassing. 
+3.  Selecteer het type service dat u wilt toevoegen aan uw Service Fabric toepassing. 
+4.  Volg de aanwijzingen om de service een naam te geven. 
+5.  De nieuwe service wordt weergegeven in de projectmap. 
 
-### <a name="service-fabric-publish-application"></a>Service Fabric: toepassing publiceren
-Met de **service Fabric: opdracht publicatie toepassing** wordt uw service Fabric toepassing geïmplementeerd op een extern cluster. Het doel cluster kan een beveiligd of een niet-beveiligd cluster zijn. Als er geen para meters zijn ingesteld in Cloud.jsop, wordt de toepassing geïmplementeerd naar het lokale cluster.
+### <a name="service-fabric-publish-application"></a>Service Fabric: Toepassing publiceren
+Met **de Service Fabric: Toepassing publiceren** implementeert u uw Service Fabric op een extern cluster. Het doelcluster kan een beveiligd of onbeveiligd cluster zijn. Als parameters niet zijn ingesteld in Cloud.jsingeschakeld, wordt de toepassing geïmplementeerd in het lokale cluster.
 
-1.  De eerste keer dat de toepassing is gebouwd, wordt een Cloud.jsin het bestand gegenereerd in de projectmap.
-2.  Voer de waarden in voor het cluster waarmee u verbinding wilt maken in de Cloud.jsin het bestand.
-3.  Selecteer de opdracht **service Fabric: toepassing publiceren** .
-4.  Bekijk het doel cluster met Service Fabric Explorer om te bevestigen dat de toepassing is geïnstalleerd. 
+1.  De eerste keer dat de toepassing wordt gebouwd, wordt Cloud.jsbestand gegenereerd in de projectmap.
+2.  Voer de waarden in voor het cluster met wie u verbinding wilt maken in Cloud.jsbestand.
+3.  Selecteer de **Service Fabric: De opdracht Toepassing** publiceren.
+4.  Bekijk het doelcluster met Service Fabric Explorer om te bevestigen dat de toepassing is geïnstalleerd. 
 
-### <a name="service-fabric-deploy-application-localhost"></a>Service Fabric: Deploy-toepassing (localhost)
-Met de **service Fabric: toepassings opdracht implementeren** wordt uw service Fabric toepassing geïmplementeerd op uw lokale cluster. Zorg ervoor dat het lokale cluster wordt uitgevoerd voordat u de opdracht gebruikt. 
+### <a name="service-fabric-deploy-application-localhost"></a>Service Fabric: Toepassing implementeren (Localhost)
+De **Service Fabric: Toepassing implementeren implementeert** uw Service Fabric toepassing in uw lokale cluster. Zorg ervoor dat uw lokale cluster wordt uitgevoerd voordat u de opdracht gebruikt. 
 
-1. Selecteer de **service Fabric: toepassings opdracht implementeren**
-2. Bekijk het lokale cluster met Service Fabric Explorer (http: \/ /localhost: 19080/Explorer) om te bevestigen dat de toepassing is geïnstalleerd. Dit kan enige tijd duren. het is dus een ogen blik geduld.
-3. U kunt ook **service Fabric: opdracht toepassing publiceren** zonder para meters die zijn ingesteld in de Cloud.jsin het bestand om te implementeren in een lokaal cluster.
+1. Selecteer de **Service Fabric: Toepassing** implementeren
+2. Bekijk het lokale cluster met Service Fabric Explorer (http: \/ /localhost:19080/Explorer) om te bevestigen dat de toepassing is geïnstalleerd. Dit kan enige tijd duren, dus wees patiënt.
+3. U kunt ook de **volgende Service Fabric:** Toepassing publiceren zonder parameters in het bestand Cloud.jste implementeren naar een lokaal cluster.
 
 > [!NOTE]
-> Het implementeren van Java-toepassingen voor het lokale cluster wordt niet ondersteund op Windows-computers.
+> Het implementeren van Java-toepassingen in het lokale cluster wordt niet ondersteund op Windows-computers.
 
-### <a name="service-fabric-remove-application"></a>Service Fabric: toepassing verwijderen
-Met de **service Fabric: opdracht Remove Application** wordt een service Fabric-toepassing verwijderd uit het cluster waarop deze eerder is geïmplementeerd, met behulp van de VS code-extensie. 
+### <a name="service-fabric-remove-application"></a>Service Fabric: Toepassing verwijderen
+Met **de Service Fabric: Toepassing** verwijderen verwijdert u een Service Fabric-toepassing uit het cluster waar deze eerder is geïmplementeerd met behulp van de VS Code-extensie. 
 
-1.  Selecteer de optie **service Fabric: toepassing verwijderen** .
-2.  Bekijk het cluster met Service Fabric Explorer om te bevestigen dat de toepassing is verwijderd. Dit kan enige tijd duren. het is dus een ogen blik geduld.
+1.  Selecteer de **Service Fabric: Toepassing** verwijderen.
+2.  Bekijk het cluster met Service Fabric Explorer om te bevestigen dat de toepassing is verwijderd. Dit kan enige tijd duren, dus wees patiënt.
 
-### <a name="service-fabric-build-application"></a>Service Fabric: toepassing bouwen
-Met de **service Fabric: toepassings opdracht bouwen** kunt u Java-of C# service Fabric-toepassingen maken. 
+### <a name="service-fabric-build-application"></a>Service Fabric: Toepassing bouwen
+Met **Service Fabric: Build Application-opdracht** kunt u Java- of C#-Service Fabric bouwen. 
 
-1.  Zorg ervoor dat u zich in de hoofdmap van de toepassing bevindt voordat u deze opdracht uitvoert. De opdracht geeft het type toepassing aan (C# of Java) en bouwt uw toepassing dienovereenkomstig samen.
-2.  Selecteer de opdracht **service Fabric: toepassing bouwen** .
-3.  De uitvoer van het bouw proces wordt geschreven naar de geïntegreerde Terminal.
+1.  Zorg ervoor dat u zich in de hoofdmap van de toepassing voor het uitvoeren van deze opdracht. De opdracht identificeert het type toepassing (C# of Java) en bouwt uw toepassing dienovereenkomstig.
+2.  Selecteer de **opdracht Service Fabric: Toepassing** bouwen.
+3.  De uitvoer van het bouwproces wordt naar de geïntegreerde terminal geschreven.
 
-### <a name="service-fabric-clean-application"></a>Service Fabric: toepassing opschonen
-Met de opdracht **service Fabric: toepassing opschonen** worden alle JAR-bestanden en systeem eigen bibliotheken verwijderd die door de build zijn gegenereerd. Alleen geldig voor Java-toepassingen. 
+### <a name="service-fabric-clean-application"></a>Service Fabric: Toepassing ops schonen
+De **Service Fabric: Clean Application verwijdert** alle JAR-bestanden en native bibliotheken die zijn gegenereerd door de build. Alleen geldig voor Java-toepassingen. 
 
-1.  Zorg ervoor dat u zich in de hoofdmap van de toepassing bevindt voordat u deze opdracht uitvoert. 
-2.  Selecteer de opdracht **service Fabric: toepassing opschonen** .
+1.  Zorg ervoor dat u zich in de hoofdmap van de toepassing voor het uitvoeren van deze opdracht. 
+2.  Selecteer de **Service Fabric: Clean Application.**
 3.  De uitvoer van het schone proces wordt naar de geïntegreerde terminal geschreven.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het [ontwikkelen en opsporen van fouten in C# service Fabric-toepassingen met VS code](./service-fabric-develop-csharp-applications-with-vs-code.md).
-* Meer informatie over het [ontwikkelen en opsporen van fouten in Java service Fabric-toepassingen met VS code](./service-fabric-develop-java-applications-with-vs-code.md).
+* Meer informatie over het [ontwikkelen en opsporen van fouten in C# Service Fabric toepassingen met VS Code](./service-fabric-develop-csharp-applications-with-vs-code.md).
+* Meer informatie over het [ontwikkelen en opsporen van fouten in Java Service Fabric toepassingen met VS Code](./service-fabric-develop-java-applications-with-vs-code.md).

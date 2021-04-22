@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 01/28/2021
 ms.author: victorh
-ms.openlocfilehash: c976ea236ae1d37cc0a543b10a9de55609035632
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: aa7123a1c4dea5fcede3e94250576f6677671176
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98986749"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872241"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-tls-termination-using-the-azure-portal"></a>Zelfstudie: Een toepassingsgateway configureren met TLS-beëindiging met Azure Portal
 
@@ -36,7 +36,7 @@ Meld u aan bij Azure Portal op [https://portal.azure.com](https://portal.azure.c
 
 ## <a name="create-a-self-signed-certificate"></a>Een zelfondertekend certificaat maken
 
-In deze sectie gebruikt u [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) om een zelfondertekend certificaat te maken. U uploadt het certificaat naar Azure Portal wanneer u de listener voor de toepassingsgateway maakt.
+In deze sectie gebruikt u [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate) om een zelfondertekend certificaat te maken. U uploadt het certificaat naar Azure Portal wanneer u de listener voor de toepassingsgateway maakt.
 
 Open als beheerder op uw lokale computer een Windows PowerShell-venster. Voer de volgende opdracht uit om het certificaat te maken:
 
@@ -56,7 +56,7 @@ Thumbprint                                Subject
 E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630  CN=www.contoso.com
 ```
 
-Gebruik [Export-PfxCertificate](/powershell/module/pkiclient/export-pfxcertificate) met de vingerafdruk die is geretourneerd om een ​​PFX-bestand uit het certificaat te exporteren. Zorg ervoor dat uw wachtwoord tussen de 4 en 12 tekens lang is:
+Gebruik [Export-PfxCertificate](/powershell/module/pki/export-pfxcertificate) met de vingerafdruk die is geretourneerd om een ​​PFX-bestand uit het certificaat te exporteren. Zorg ervoor dat uw wachtwoord tussen de 4 en 12 tekens lang is:
 
 
 ```powershell
@@ -106,7 +106,7 @@ Export-PfxCertificate `
    > [!NOTE]
    > Voor de Application Gateway v2 SKU kunt u alleen een **openbare** front-end-IP-configuratie kiezen. De privé frontend-IP-configuratie is op dit moment niet ingeschakeld voor deze v2-SKU.
 
-2. Kies **Nieuw toevoegen** voor het **open bare IP-adres** en voer *myAGPublicIPAddress* in voor de naam van het open bare IP-adres en selecteer vervolgens **OK**. 
+2. Kies **Nieuwe toevoegen** voor het openbare **IP-adres** en voer *myAGPublicIPAddress* in als de naam van het openbare IP-adres. Selecteer vervolgens **OK.** 
 
    ![Nieuwe toepassingsgateway maken: front-ends](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
 
@@ -116,7 +116,7 @@ Export-PfxCertificate `
 
 De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endpools kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP's, interne IP's, FQDN's (Fully Qualified Domain Name) en multitenant back-ends als Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
 
-1. Selecteer op het tabblad **back** -end **een back-end-groep toevoegen**.
+1. Selecteer op **het tabblad Back-ends** de optie **Een back-endpool toevoegen.**
 
 2. Voer in het venster **Een back-endpool toevoegen** dat wordt geopend, de volgende waarden in om een lege back-endpool te maken:
 
@@ -133,7 +133,7 @@ De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers d
 
 In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die u hebt gemaakt met een regel voor doorsturen.
 
-1. Selecteer **een regel voor door sturen toevoegen** in de kolom **routerings regels** .
+1. Selecteer **Een routeringsregel toevoegen** in de kolom **Routeringsregels.**
 
 2. Voer in het venster **Een regel voor doorsturen toevoegen** dat wordt geopend, *myRoutingRule* in als de **Regelnaam**.
 
@@ -144,12 +144,12 @@ In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
     - **Protocol**: Selecteer **HTTPS**.
     - **Poort**: Controleer of 443 is opgegeven voor de poort.
 
-   Onder **https-instellingen**:
+   Onder **HTTPS-instellingen:**
 
-   - **Een certificaat kiezen** : Selecteer **een certificaat uploaden**.
+   - **Een certificaat kiezen:** selecteer **Een certificaat uploaden.**
    - **PFX-certificaatbestand**: blader naar en het bestand c:\appgwcert.pfx dat u eerder hebt gemaakt en selecteer het bestand.
    - **Certificaatnaam**: voer *mycert1* in als de naam van het certificaat.
-   - **Wacht woord** : Typ het wacht woord dat u hebt gebruikt om het certificaat te maken.
+   - **Wachtwoord:** typ het wachtwoord dat u hebt gebruikt om het certificaat te maken.
   
         Accepteer de standaardwaarden voor de overige instellingen in het tabblad **Listener** en selecteer vervolgens het tabblad **Back-enddoelen** om de rest van de regel voor doorsturen te configureren.
 
@@ -157,7 +157,7 @@ In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
 
 4. Selecteer in het tabblad **Back-enddoelen** de optie **myBackendPool** als het **Back-enddoel**.
 
-5. Voor de **http-instelling** selecteert u **Nieuw toevoegen** om een nieuwe http-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de naam van de **http-instelling**. Accepteer de standaard waarden voor de overige instellingen in het venster **een HTTP-instelling toevoegen** en selecteer vervolgens **toevoegen** om terug te gaan naar het venster een regel voor het **routeren van een route ring toevoegen** . 
+5. Voor de **HTTP-instelling** selecteert **u Nieuwe toevoegen** om een nieuwe HTTP-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in **het venster Een HTTP-instelling** toevoegen dat wordt geopend *myHTTPSetting* in als naam van **de HTTP-instelling.** Accepteer de standaardwaarden voor de andere instellingen in het  venster **Een HTTP-instelling** toevoegen en selecteer vervolgens Toevoegen om terug te keren naar het venster Een regel **voor doorsturen** toevoegen. 
 
    :::image type="content" source="./media/create-ssl-portal/application-gateway-create-httpsetting.png" alt-text="Nieuwe toepassingsgateway maken: HTTP-instelling":::
 
@@ -211,7 +211,7 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
     ![Aangepaste extensie installeren](./media/application-gateway-create-gateway-portal/application-gateway-extension.png)
 
-2. Wijzig de locatie-instelling voor uw omgeving en voer vervolgens de volgende opdracht uit om IIS op de virtuele machine te installeren: 
+2. Wijzig de locatie-instelling voor uw omgeving en voer de volgende opdracht uit om IIS op de virtuele machine te installeren: 
 
    ```azurepowershell-interactive
           Set-AzVMExtension `
@@ -235,11 +235,11 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 3. Selecteer **myBackendPool**.
 
-4. Onder **doel type**, selecteer **virtuele machine** in de vervolg keuzelijst.
+4. Selecteer **onder Doeltype** **de optie Virtuele machine** in de vervolgkeuzelijst.
 
-5. Onder **doel** selecteert u de netwerk interface onder **myVM** in de vervolg keuzelijst.
+5. Selecteer **onder** Doel de netwerkinterface onder **myVM** in de vervolgkeuzelijst.
 
-6. Herhaal dit om de netwerk interface voor **myVM2** toe te voegen.
+6. Herhaal dit om de netwerkinterface voor **myVM2 toe te voegen.**
 
     ![Back-endservers toevoegen](./media/application-gateway-create-gateway-portal/application-gateway-backend.png)
 

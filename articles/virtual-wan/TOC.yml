@@ -10,10 +10,10 @@
     - name: ARM-sjablonen
       expanded: true
       items:
-        - name: Any-to-any-route ring
+        - name: Any-to-any-routering
           displayName: Resource Manager Any-to-any routing
           href: quickstart-any-to-any-template.md
-        - name: Routeren naar gedeelde services VNets
+        - name: Route naar VNets voor gedeelde services
           displayName: Resource Manager route to shared services VNets
           href: quickstart-route-shared-services-vnet-template.md
 - name: Zelfstudies
@@ -63,7 +63,7 @@
           href: scenario-isolate-vnets-custom.md
         - name: Virtuele netwerken en vertakkingen isoleren
           href: scenario-isolate-virtual-networks-branches.md
-        - name: VNets gedeelde services
+        - name: VNets voor gedeelde services
           href: scenario-shared-services-vnet.md
         - name: Routeren via een NVA
           href: scenario-route-through-nva.md
@@ -71,7 +71,7 @@
           href: scenario-route-through-nvas-custom.md
         - name: Azure Firewall - aangepast
           href: scenario-route-between-vnets-firewall.md
-        - name: Application Gateway-en back-end-Pools
+        - name: Application Gateway en back-Application Gateway pools
           href: scenario-secured-hub-app-gateway.md
     - name: Bewaking
       items:
@@ -117,6 +117,8 @@
           href: virtual-wan-site-to-site-portal.md
         - name: Virtuele netwerkgateway verbinden met een virtual WAN
           href: connect-virtual-network-gateway-vwan.md
+        - name: Een pakketopname uitvoeren
+          href: virtual-wan-site-to-site-packet-capture.md
         - name: Aangepast IPsec-beleid configureren
           href: virtual-wan-custom-ipsec-portal.md
         - name: NAT-regels configureren
@@ -129,13 +131,13 @@
           href: certificates-point-to-site.md
         - name: Azure AD-tenant configureren
           href: openvpn-azure-ad-tenant.md
-        - name: Client profielen
+        - name: Clientprofielen
           items:
-            - name: Globaal en op de hub gebaseerde profielen downloaden
+            - name: Wereldwijde en op hub gebaseerde profielen downloaden
               href: global-hub-profile.md
-            - name: Profiel gegevens ophalen en weer geven
+            - name: Profielgegevens extraheren en weergeven
               href: about-vpn-profile-download.md
-            - name: Profielen implementeren met intune
+            - name: Profielen implementeren met Intune
               href: vpn-profile-intune.md
         - name: VPN-clients
           items:
@@ -143,11 +145,11 @@
               href: openvpn-azure-ad-client.md
             - name: OpenVPN
               href: howto-openvpn-clients.md?
-        - name: Always-On tunnels configureren
+        - name: Tunnels Always-On configureren
           items:
-            - name: Gebruikers tunnel
+            - name: Gebruikerstunnel
               href: howto-always-on-user-tunnel.md
-            - name: Tunnel van apparaat
+            - name: Apparaattunnel
               href: howto-always-on-device-tunnel.md
         - name: Verificatie
           items:
@@ -188,7 +190,7 @@
     - name: REST
       href: /rest/api/azure
     - name: Azure CLI
-      href: /cli/azure/ext/virtual-wan
+      href: /cli/azure/
     - name: Python-SDK
       href: 'https://azuresdkdocs.blob.core.windows.net/$web/python/azure-mgmt-network/10.0.0/azure.mgmt.network.v2019_02_01.operations.html#azure.mgmt.network.v2019_02_01.operations.VirtualWansOperations'
 - name: Resources

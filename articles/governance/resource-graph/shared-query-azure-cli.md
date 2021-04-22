@@ -3,12 +3,12 @@ title: 'Quickstart: Een gedeelde query maken met Azure CLI'
 description: In deze quickstart volgt u de stappen om de Resource Graph-extensie voor Azure CLI in te schakelen en een gedeelde query te maken.
 ms.date: 02/05/2021
 ms.topic: quickstart
-ms.openlocfilehash: ec1b010771790339a13777624f04c7bd2db01f11
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 2befc2b6895cd9d2c797fc8ed0e28a27eb6e73e8
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99594363"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870549"
 ---
 # <a name="quickstart-create-a-resource-graph-shared-query-using-azure-cli"></a>Quickstart: Een gedeelde Resource Graph-query maken met Azure CLI
 
@@ -58,7 +58,7 @@ Nu de Azure CLI-extensie is toegevoegd aan uw gewenste omgeving, kunt u een gede
    az group create --name 'resource-graph-queries' --location 'westus2'
    ```
 
-1. Maak de gedeelde Azure Resource Graph-query met behulp van de `graph`-extensie en de opdracht [az graph shared-query create](/cli/azure/ext/resource-graph/graph/shared-query#ext_resource_graph_az_graph_shared_query_create):
+1. Maak de gedeelde Azure Resource Graph-query met behulp van de `graph`-extensie en de opdracht [az graph shared-query create](/cli/azure/graph/shared-query#az_graph_shared_query_create):
 
    ```azurecli-interactive
    # Create the Azure Resource Graph shared query
@@ -68,14 +68,14 @@ Nu de Azure CLI-extensie is toegevoegd aan uw gewenste omgeving, kunt u een gede
       --resource-group 'resource-graph-queries'
    ```
 
-1. Geef de gedeelde query's op in de nieuwe resourcegroep. De [AZ Graph Shared-query List](/cli/azure/ext/resource-graph/graph/shared-query#ext_resource_graph_az_graph_shared_query_list) opdracht retourneert een matrix met waarden.
+1. Geef de gedeelde query's op in de nieuwe resourcegroep. De [AZ Graph Shared-query List](/cli/azure/graph/shared-query#az_graph_shared_query_list) opdracht retourneert een matrix met waarden.
 
    ```azurecli-interactive
    # List all the Azure Resource Graph shared queries in a resource group
    az graph shared-query list --resource-group 'resource-graph-queries'
    ```
 
-1. Als u slechts één gedeeld queryresultaat wilt ontvangen, gebruik dan de opdracht [az graph shared-query show](/cli/azure/ext/resource-graph/graph/shared-query#ext_resource_graph_az_graph_shared_query_show).
+1. Als u slechts één gedeeld queryresultaat wilt ontvangen, gebruik dan de opdracht [az graph shared-query show](/cli/azure/graph/shared-query#az_graph_shared_query_show).
 
    ```azurecli-interactive
    # Show a specific Azure Resource Graph shared query
@@ -83,7 +83,7 @@ Nu de Azure CLI-extensie is toegevoegd aan uw gewenste omgeving, kunt u een gede
       --name 'Summarize resources by location'
    ```
 
-1. Voer de gedeelde query uit in Azure CLI met de `{{shared-query-uri}}`-syntaxis in een opdracht [az graph query](/cli/azure/ext/resource-graph/graph#ext_resource_graph_az_graph_query).
+1. Voer de gedeelde query uit in Azure CLI met de `{{shared-query-uri}}`-syntaxis in een opdracht [az graph query](/cli/azure/graph#az_graph_query).
    Kopieer eerst het `id`-veld uit de resultaten van de vorige `show`-opdracht. Vervang de `shared-query-uri`-tekst in het voorbeeld door de waarde uit het veld `id`, maar laat de omliggende tekens `{{` en `}}` staan.
 
    ```azurecli-interactive
@@ -100,7 +100,7 @@ Een andere manier om gedeelde Resource Graph-query's te vinden, is via het Azure
 
 Als u de gedeelde Resource Graph-query, -resourcegroep en -extensie uit uw Azure CLI-omgeving wilt verwijderen, kunt u dit doen met de volgende opdracht:
 
-- [az graph shared-query delete](/cli/azure/ext/resource-graph/graph/shared-query#ext_resource_graph_az_graph_shared_query_delete)
+- [az graph shared-query delete](/cli/azure/graph/shared-query#az_graph_shared_query_delete)
 - [az group delete](/cli/azure/group#az_group_delete)
 - [az extension remove](/cli/azure/extension#az_extension_remove)
 

@@ -8,19 +8,19 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d89cc41ed26124ae4ad2e6689be6d59278c3d9da
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d753061c6141dd0ca75415cab5502e7fa350cd90
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94542164"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873537"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-using-a-simple-azure-cli-command---az-mysql-up-preview"></a>Quickstart: Een Azure Database for MySQL maken met behulp van de eenvoudige Azure CLI-opdracht az mysql up (preview-versie)
 
 > [!IMPORTANT]
-> De Azure CLI-opdracht [az mysql up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) is momenteel beschikbaar als preview-versie.
+> De Azure CLI-opdracht [az mysql up](/cli/azure/mysql#az_mysql_up) is momenteel beschikbaar als preview-versie.
 
-Azure Database voor MySQL is een beheerde service waarmee u MySQL-databases met hoge beschikbaarheid in de cloud kunt uitvoeren, beheren en schalen. De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf de opdrachtregel of in scripts. In deze quickstart ontdekt u hoe u de opdracht [az mysql up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) gebruikt om een Azure Database for MySQL-server te maken met behulp van de Azure CLI. Naast het maken van de server worden met de opdracht `az mysql up` ook een voorbeelddatabase en een hoofdgebruiker in die database gemaakt, de firewall geopend voor Azure-services en standaardfirewallregels voor de clientcomputer gemaakt. Hiermee kunt u het ontwikkelingsproces versnellen.
+Azure Database voor MySQL is een beheerde service waarmee u MySQL-databases met hoge beschikbaarheid in de cloud kunt uitvoeren, beheren en schalen. De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf de opdrachtregel of in scripts. In deze quickstart ontdekt u hoe u de opdracht [az mysql up](/cli/azure/mysql#az_mysql_up) gebruikt om een Azure Database for MySQL-server te maken met behulp van de Azure CLI. Naast het maken van de server worden met de opdracht `az mysql up` ook een voorbeelddatabase en een hoofdgebruiker in die database gemaakt, de firewall geopend voor Azure-services en standaardfirewallregels voor de clientcomputer gemaakt. Hiermee kunt u het ontwikkelingsproces versnellen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,7 +42,7 @@ az account set --subscription <subscription id>
 
 ## <a name="create-an-azure-database-for-mysql-server"></a>Een Azure-database voor MySQL-server maken
 
-Als u de opdrachten wilt gebruiken, installeert u de extensie [db-up](/cli/azure/ext/db-up). Als een fout wordt geretourneerd, moet u controleren of de nieuwste versie van de Azure CLI is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli).
+Als u de opdrachten wilt gebruiken, installeert u de extensie [db-up](/cli/azure/). Als een fout wordt geretourneerd, moet u controleren of de nieuwste versie van de Azure CLI is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli).
 
 ```azurecli
 az extension add --name db-up
@@ -71,7 +71,7 @@ admin-user | Door het systeem gegenereerd | De gebruikersnaam voor aanmelding al
 admin-password | Door het systeem gegenereerd | Het wachtwoord van het beheerdersaccount.
 
 > [!NOTE]
-> Zie de [Azure CLI-documentatie](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) voor meer informatie over de opdracht `az mysql up` en de aanvullende parameters.
+> Zie de [Azure CLI-documentatie](/cli/azure/mysql#az_mysql_up) voor meer informatie over de opdracht `az mysql up` en de aanvullende parameters.
 
 Zodra uw server is gemaakt, zijn de volgende instellingen beschikbaar:
 
@@ -88,7 +88,7 @@ Zodra uw server is gemaakt, zijn de volgende instellingen beschikbaar:
 
 Nadat de opdracht `az mysql up` is voltooid, wordt een lijst met verbindingstekenreeksen voor populaire programmeertalen geretourneerd. Deze verbindingstekenreeksen worden vooraf geconfigureerd met de specifieke kenmerken van uw zojuist gemaakte Azure Database for MySQL-server.
 
-U kunt de opdracht [az mysql show-connection-string](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-show-connection-string) gebruiken om deze verbindingstekenreeksen opnieuw te vermelden.
+U kunt de opdracht [az mysql show-connection-string](/cli/azure/mysql#az_mysql_show_connection_string) gebruiken om deze verbindingstekenreeksen opnieuw te vermelden.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -98,7 +98,7 @@ Verwijder alle resources die u hebt gemaakt in de quickstart met behulp van de v
 az mysql down --delete-group
 ```
 
-Als u alleen de zojuist gemaakte server wilt verwijderen, kunt u de opdracht [az mysql down](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-down) uitvoeren.
+Als u alleen de zojuist gemaakte server wilt verwijderen, kunt u de opdracht [az mysql down](/cli/azure/mysql#az_mysql_down) uitvoeren.
 
 ```azurecli
 az mysql down

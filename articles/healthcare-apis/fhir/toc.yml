@@ -96,7 +96,7 @@
     - name: Gegevens converteren
       expanded: false
       items:
-        - name: Sjablonen voor de extensie $convert-data-en FHIR-Converter
+        - name: $convert-data en FHIR Converter Extension Templates
           href: convert-data.md
     - name: ID's van identiteitsobjecten vinden
       href: find-identity-object-ids.md
@@ -137,14 +137,14 @@
       href: fhir-faq.md
     - name: Ondersteunde functies
       href: fhir-features-supported.md
-    - name: GitHub-projecten
+    - name: GitHub Projects
       href: fhir-github-projects.md
     - name: Partnerecosysteem
       href: partner-ecosystem.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/ext/healthcareapis/healthcareapis
+      href: /cli/azure/healthcareapis
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md

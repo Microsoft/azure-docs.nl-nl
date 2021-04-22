@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: f9a14ee6ee3e10b36d64ec11fc23807efe2bfaf2
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 84fe935c1122d3d5c65423341b8760643257f992
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "94966561"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868567"
 ---
 # <a name="tutorial-enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Zelfstudie: Het apparaat registreren bij een IoT-hub met behulp van IoT Hub Device Provisioning Service-client (.NET)
 
@@ -32,7 +32,7 @@ Voordat u verder gaat, moeten uw apparaat en diens *Hardware Security Module* zi
 * Visual Studio
 
 > [!NOTE]
-> Visual Studio is niet vereist. De installatie van [.NET](https://www.microsoft.com/net) is voldoende en ontwikkelaars kunnen een willekeurige editor gebruiken op Windows of Linux.  
+> Visual Studio is niet vereist. De installatie van [.NET](https://dotnet.microsoft.com) is voldoende en ontwikkelaars kunnen een willekeurige editor gebruiken op Windows of Linux.  
 
 Deze zelfstudie simuleert de periode tijdens of direct na het hardwareproductieproces, wanneer apparaatgegevens aan de inrichtingsservice worden toegevoegd. Deze code wordt doorgaans uitgevoerd op een pc of fabrieksapparaat waarop .NET-code kan worden uitgevoerd. De code mag niet aan de apparaten zelf worden toegevoegd.
 

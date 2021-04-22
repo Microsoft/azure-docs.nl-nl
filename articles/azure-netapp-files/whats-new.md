@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 04/19/2021
+ms.date: 04/21/2021
 ms.author: b-juche
-ms.openlocfilehash: 3c6da2137f2db43284ce7a533ff763e9ef157f35
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: fa028d8fffd2a4097b5bf7d7326d355ae56aebd7
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107726642"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862809"
 ---
 # <a name="whats-new-in-azure-netapp-files"></a>Wat is er nieuw in Azure NetApp Files
 
@@ -27,23 +27,27 @@ Azure NetApp Files wordt regelmatig bijgewerkt. In dit artikel wordt een overzic
 
 ## <a name="april-2021"></a>April 2021
 
+* [Ondersteuning voor SMB-continue beschikbaarheid (CA) voor FSLogix-gebruikersprofielcontainers](azure-netapp-files-create-volumes-smb.md#add-an-smb-volume) (preview)  
+
+    [FSLogix](/fslogix/overview) is een set oplossingen waarmee niet-permanente Windows-computeromgevingen worden verbeterd, ingeschakeld en vereenvoudigd. FSLogix-oplossingen zijn geschikt voor virtuele omgevingen in zowel openbare als privé clouds. FSLogix-oplossingen kunnen ook worden gebruikt om meer draagbare computersessies te maken wanneer u fysieke apparaten gebruikt. FSLogix kan worden gebruikt voor dynamische toegang tot permanente gebruikersprofielcontainers die zijn opgeslagen in gedeelde SMB-opslag in het netwerk, waaronder Azure NetApp Files. Om de FSLogix-tolerantie voor onderhoudsgebeurtenissen voor opslagservice verder te verbeteren, biedt Azure NetApp Files uitgebreide ondersteuning voor SMB Transparent Failover via [SMB-shares voor](azure-netapp-files-create-volumes-smb.md#add-an-smb-volume) continue beschikbaarheid (CA) op Azure NetApp Files voor gebruikersprofielcontainers. Zie Azure NetApp Files [Windows Virtual Desktop oplossingen](azure-netapp-files-solution-architectures.md#windows-virtual-desktop) voor meer informatie.  
+
 * [SMB3-protocolversleuteling](azure-netapp-files-create-volumes-smb.md#add-an-smb-volume) (preview) 
 
     U kunt nu SMB3-protocolversleuteling inschakelen Azure NetApp Files SMB- en dual-protocolvolumes. Deze functie maakt versleuteling mogelijk voor in-flight SMB3-gegevens, met behulp van het [AES-CCM-algoritme op SMB 3.0 en het AES-GCM-algoritme voor SMB 3.1.1-verbindingen.](/windows-server/storage/file-server/file-server-smb-overview#features-added-in-smb-311-with-windows-server-2016-and-windows-10-version-1607) SMB-clients die geen SMB3-versleuteling gebruiken, hebben geen toegang tot dit volume. Data-at-rest wordt versleuteld, ongeacht deze instelling. SMB-versleuteling verbetert de beveiliging verder. Dit kan echter van invloed zijn op de client (CPU-overhead voor het versleutelen en ontsleutelen van berichten). Dit kan ook van invloed zijn op het gebruik van opslagresources (afname van doorvoer). U moet de impact van de versleutelingsprestaties op uw toepassingen testen voordat u workloads in productie implementeert.
 
 * [Active Directory Domain Services LDAP-gebruikerstoewijzing (ADDS) met uitgebreide NFS-groepen](configure-ldap-extended-groups.md) (preview)   
 
-    Standaard ondersteunt Azure NetApp Files maximaal 16 groeps-ID's bij het verwerken van NFS-gebruikersreferenties, zoals gedefinieerd in [RFC 5531.](https://tools.ietf.org/html/rfc5531) Met deze nieuwe mogelijkheid kunt u nu het maximum verhogen tot 1024 als u gebruikers hebt die lid zijn van meer dan het standaard aantal groepen. Ter ondersteuning van deze mogelijkheid kunnen NFS-volumes nu ook worden toegevoegd aan ADDS LDAP, waardoor Active Directory LDAP-gebruikers met uitgebreide groepen vermeldingen (met maximaal 1024 groepen) toegang hebben tot het volume. 
+    Standaard ondersteunt Azure NetApp Files maximaal 16 groeps-ID's bij het verwerken van NFS-gebruikersreferenties, zoals gedefinieerd in [RFC 5531.](https://tools.ietf.org/html/rfc5531) Met deze nieuwe mogelijkheid kunt u nu het maximum verhogen tot 1024 als u gebruikers hebt die lid zijn van meer dan het standaard aantal groepen. Ter ondersteuning van deze mogelijkheid kunnen NFS-volumes nu ook worden toegevoegd aan ADDS LDAP, waarmee Active Directory LDAP-gebruikers met uitgebreide groepen vermeldingen (met maximaal 1024 groepen) toegang krijgen tot het volume. 
 
 ## <a name="march-2021"></a>Maart 2021
  
 * [SMB-shares voor continue beschikbaarheid (CA)](azure-netapp-files-create-volumes-smb.md#add-an-smb-volume) (preview)  
 
-    Met SMB Transparent Failover kunt u onderhoudsbewerkingen uitvoeren op de Azure NetApp Files-service zonder dat de verbinding met servertoepassingen die gegevens op SMB-volumes opslaan en openen, wordt onderbroken. Ter ondersteuning van SMB Transparent Failover ondersteunt Azure NetApp Files nu de optie SMB Continuous Availability shares voor gebruik met SQL Server-toepassingen via SMB die worden uitgevoerd op Azure-VM's. Deze functie wordt momenteel ondersteund op Windows SQL Server. Linux SQL Server wordt momenteel niet ondersteund. Het inschakelen van deze functie SQL Server aanzienlijke prestatieverbeteringen en schaal- en kostenvoordelen voor één exemplaar, Always-On failoverclusterin exemplaar en Always-On implementaties van [beschikbaarheidsgroep.](azure-netapp-files-solution-architectures.md#sql-server) Zie [Voordelen van het gebruik Azure NetApp Files voor SQL Server implementatie.](solutions-benefits-azure-netapp-files-sql-server.md)
+    Met SMB Transparent Failover kunt u onderhoudsbewerkingen uitvoeren op de Azure NetApp Files-service zonder dat de verbinding met servertoepassingen die gegevens op SMB-volumes opslaan en openen, wordt onderbroken. Ter ondersteuning van SMB Transparent Failover ondersteunt Azure NetApp Files nu de optie SMB Continuous Availability shares voor gebruik met SQL Server-toepassingen via SMB die worden uitgevoerd op Azure-VM's. Deze functie wordt momenteel ondersteund in Windows SQL Server. Linux SQL Server wordt momenteel niet ondersteund. Het inschakelen van deze functie SQL Server aanzienlijke prestatieverbeteringen en schaal- en kostenvoordelen voor één exemplaar, Always-On failoverclusterin exemplaar en Always-On implementaties van [beschikbaarheidsgroep.](azure-netapp-files-solution-architectures.md#sql-server) Zie [Voordelen van het gebruik Azure NetApp Files voor SQL Server implementatie.](solutions-benefits-azure-netapp-files-sql-server.md)
 
 * [Automatisch het formaat van een replicatiedoelvolume tussen regio's aanpassen](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume)
 
-    In een replicatierelatie tussen regio's wordt het formaat van een doelvolume automatisch bijgewerkt op basis van de grootte van het bronvolume. Het doelvolume hoeft dus niet afzonderlijk te worden geseed. Dit gedrag voor het automatisch aanpassen van de omvang is van toepassing wanneer de volumes zich in een actieve replicatierelatie of wanneer replicatie-peering wordt verbroken met de hersynsyn sync-bewerking. Deze functie werkt alleen als u voldoende ruimte in de capaciteitspools hebt voor zowel de bron- als de doelvolumes.
+    In een replicatierelatie tussen regio's wordt het formaat van een doelvolume automatisch bijgewerkt op basis van de grootte van het bronvolume. U hoeft de omvang van het doelvolume dus niet afzonderlijk te aanpassen. Dit gedrag voor het automatisch aanpassen van de omvang is van toepassing wanneer de volumes zich in een actieve replicatierelatie of wanneer replicatie-peering wordt verbroken met de hersynsync-bewerking. Deze functie werkt alleen als u voldoende ruimte in de capaciteitspools hebt voor zowel de bron- als de doelvolumes.
 
 ## <a name="december-2020"></a>December 2020
 

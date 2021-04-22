@@ -8,12 +8,12 @@ ms.custom:
 - devx-track-azurecli
 - devx-track-azurepowershell
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: fb287333ba8b0b4fc0bb35ce91d2e3113ff50e2b
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.openlocfilehash: 45173a74c0e3189c1f356aea2f8024ff15409f32
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107831110"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107866193"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-from-the-command-line"></a>Quickstart: Een C#-functie maken in Azure vanaf de opdrachtregel
 
@@ -35,7 +35,7 @@ Er is ook een [Versie op basis van Visual Studio Code](create-first-function-vs-
 
 + Een Azure-account krijgen <abbr title="Het profiel dat factureringsgegevens voor Azure-gebruik bijhoudt.">account</abbr> met een actief <abbr title="De basisstructuur van de organisatie waarin u resources in Azure beheert, meestal gekoppeld aan een individu of afdeling binnen een organisatie.">abonnement</abbr>. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 
-+ Installeer [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
++ .NET [Core 3.1 SDK installeren](https://dotnet.microsoft.com/download)
 
 + Installeer [Azure Functions Core Tools](functions-run-local.md#v2) versie 3.x.
 
